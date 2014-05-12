@@ -11,15 +11,13 @@ MASTER_SITES=	http://upower.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	D-Bus daemon for simplifying power management tasks
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	intlhack glib20
+USE_GNOME=	intlhack glib20 introspection:build,run
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
