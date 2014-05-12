@@ -1,4 +1,4 @@
-@unexec if cmp -s %D/etc/muc.xml.sample %D/etc/muc.xml; then rm -f %D/etc/muc.xml; fi
 bin/mu-conference
+@unexec if cmp -s %D/etc/muc.xml.sample %D/etc/muc.xml; then rm -f %D/etc/muc.xml; fi
 etc/muc.xml.sample
-@exec cp -n %D/%F %B/muc.xml
+@exec if [ ! -f %D/etc/muc.xml ]; then cp -p %D/%F %B/muc.xml; fi

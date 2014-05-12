@@ -3,7 +3,7 @@
 
 PORTNAME=	mu-conference
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.gna.org/mu-conference/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,8 +13,8 @@ COMMENT=	Multi-User Conferencing component for Jabber
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libidn.so:${PORTSDIR}/dns/libidn
 
 USES=		pkgconfig
 USE_GNOME=	glib20
@@ -40,8 +40,7 @@ PORTDOCS=	*
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
@@ -97,26 +96,20 @@ post-patch:
 		${WRKSRC}/muc-default.xml
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mu-conference ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/muc-default.xml ${PREFIX}/etc/muc.xml.sample
-	@if ! [ -f ${PREFIX}/etc/muc.xml ]; then \
-		${INSTALL_DATA} ${WRKSRC}/muc-default.xml ${PREFIX}/etc/muc.xml; \
-	fi
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/scripts
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mu-conference ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/muc-default.xml ${STAGEDIR}${PREFIX}/etc/muc.xml.sample
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/scripts
 .for FILE in README.FreeBSD.jabberd14 README.FreeBSD.jabberd2 README.FreeBSD.external
-	@${INSTALL_DATA} ${WRKDIR}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for FILE in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/scripts/README ${DOCSDIR}/scripts
+	${INSTALL_DATA} ${WRKSRC}/scripts/README ${STAGEDIR}${DOCSDIR}/scripts
 .for FILE in roommaker.pl roomname.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${FILE} ${DOCSDIR}/scripts
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${FILE} ${STAGEDIR}${DOCSDIR}/scripts
 .endfor
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
