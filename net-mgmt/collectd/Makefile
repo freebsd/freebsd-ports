@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -252,7 +252,7 @@ PLIST_SUB+=	NUTUPS="@comment "
 .if ${PORT_OPTIONS:MINTERFACE}
 USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-interface
-LIB_DEPENDS+=	statgrab:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS+=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 PLIST_SUB+=	INTERFACE=""
 CONFIGURE_ENV+=	LIBS="`pkg-config --libs libstatgrab`"
 .else
