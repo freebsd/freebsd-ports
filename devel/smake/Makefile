@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable make program with automake features
 
+BROKEN_i386=	Does not compile
+
 LICENSE=	CDDL GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE_CDDL=	${WRKSRC}/CDDL.Schily.txt
