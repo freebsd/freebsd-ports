@@ -1,14 +1,14 @@
-lib/gio/modules/libgiognomeproxy.a
-lib/gio/modules/libgiognomeproxy.la
-lib/gio/modules/libgiognomeproxy.so
-lib/gio/modules/libgiognutls.a
-lib/gio/modules/libgiognutls.la
-lib/gio/modules/libgiognutls.so
-lib/gio/modules/libgiolibproxy.a
-lib/gio/modules/libgiolibproxy.la
-lib/gio/modules/libgiolibproxy.so
-libexec/glib-pacrunner
-share/dbus-1/services/org.gtk.GLib.PACRunner.service
+%%GNOME_PROXY%%lib/gio/modules/libgiognomeproxy.a
+%%GNOME_PROXY%%lib/gio/modules/libgiognomeproxy.la
+%%GNOME_PROXY%%lib/gio/modules/libgiognomeproxy.so
+%%GNUTLS%%lib/gio/modules/libgiognutls.a
+%%GNUTLS%%lib/gio/modules/libgiognutls.la
+%%GNUTLS%%lib/gio/modules/libgiognutls.so
+%%PROXY%%lib/gio/modules/libgiolibproxy.a
+%%PROXY%%lib/gio/modules/libgiolibproxy.la
+%%PROXY%%lib/gio/modules/libgiolibproxy.so
+%%PROXY%%libexec/glib-pacrunner
+%%PROXY%%share/dbus-1/services/org.gtk.GLib.PACRunner.service
 share/locale/an/LC_MESSAGES/glib-networking.mo
 share/locale/ar/LC_MESSAGES/glib-networking.mo
 share/locale/as/LC_MESSAGES/glib-networking.mo
@@ -93,5 +93,7 @@ share/locale/zh_TW/LC_MESSAGES/glib-networking.mo
 @dirrmtry share/locale/as
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
+%%PROXY%%@dirrmtry share/dbus-1/services
+%%PROXY%%@dirrmtry share/dbus-1
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
