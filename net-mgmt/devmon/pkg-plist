@@ -25,7 +25,6 @@ devmon/devmon
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 @dirrm devmon/modules
 @dirrmtry devmon
-@unexec rmdir /var/run/devmon
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extras
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
