@@ -1,5 +1,3 @@
-lib/geany/commander.a
-lib/geany/commander.la
 lib/geany/commander.so
 %%DOCSDIR%%/commander/AUTHORS
 %%DOCSDIR%%/commander/COPYING

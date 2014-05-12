@@ -32,17 +32,11 @@ include/geany/templates.h
 include/geany/toolbar.h
 include/geany/ui_utils.h
 include/geany/utils.h
-lib/geany/classbuilder.la
 lib/geany/classbuilder.so
-lib/geany/export.la
 lib/geany/export.so
-lib/geany/filebrowser.la
 lib/geany/filebrowser.so
-lib/geany/htmlchars.la
 lib/geany/htmlchars.so
-lib/geany/saveactions.la
 lib/geany/saveactions.so
-lib/geany/splitwindow.la
 lib/geany/splitwindow.so
 libdata/pkgconfig/geany.pc
 man/man1/geany.1.gz

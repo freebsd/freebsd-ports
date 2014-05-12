@@ -1,5 +1,3 @@
-lib/geany/geanygendoc.a
-lib/geany/geanygendoc.la
 lib/geany/geanygendoc.so
 %%DOCSDIR%%/geanygendoc/AUTHORS
 %%DOCSDIR%%/geanygendoc/COPYING

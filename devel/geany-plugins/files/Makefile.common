@@ -13,10 +13,8 @@ CONFLICTS_INSTALL=	geany-plugins-0.*
 
 EXTRA_PATCHES=  ${.CURDIR}/../../devel/geany-plugins/files/extrapatch-configure
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS+=	libtool
-USES+=		gmake pkgconfig
+USES+=		gmake libtool pkgconfig tar:bzip2
 USE_GNOME+=	gtk20
 
 # geany-plugins-l10n is not a plugin, thus special treatment

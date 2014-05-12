@@ -1,5 +1,3 @@
-lib/geany/shiftcolumn.a
-lib/geany/shiftcolumn.la
 lib/geany/shiftcolumn.so
 %%DOCSDIR%%/shiftcolumn/AUTHORS
 %%DOCSDIR%%/shiftcolumn/COPYING

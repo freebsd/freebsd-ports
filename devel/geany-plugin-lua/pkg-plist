@@ -1,8 +1,4 @@
-lib/geany-plugins/geanylua/libgeanylua.a
-lib/geany-plugins/geanylua/libgeanylua.la
 lib/geany-plugins/geanylua/libgeanylua.so
-lib/geany/geanylua.a
-lib/geany/geanylua.la
 lib/geany/geanylua.so
 %%DOCSDIR%%/geanylua/AUTHORS
 %%DOCSDIR%%/geanylua/COPYING

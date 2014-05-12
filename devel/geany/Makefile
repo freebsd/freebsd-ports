@@ -3,6 +3,7 @@
 
 PORTNAME=	geany
 PORTVERSION=	1.23.1
+PORTREVISION=	1
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
@@ -13,9 +14,8 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
