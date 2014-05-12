@@ -13,12 +13,11 @@ COMMENT=	Linux-compatibility ktrace.out processor
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/emulators/linux_base-gentoo-stage3
 
+USES=		uidfix
 ONLY_FOR_ARCHS=	i386 amd64
 NO_MANCOMPRESS=	yes
-MAN1=		linux_kdump.1.gz
-PLIST_FILES=	bin/linux_kdump
+PLIST_FILES=	bin/linux_kdump man/man1/linux_kdump.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -34,5 +33,13 @@ IGNORE=	requires ktrace source present in ${SRC_BASE}/usr.bin/ktrace
 .if exists(${LINUXBASE}/etc/fedora-release)
 IGNORE=	does not build with the default linux base, use the package instead
 .endif
+
+pre-install:
+	${MKDIR} ${STAGEDIR}/bin ${STAGEDIR}/man/man1
+
+post-install:
+	${MV} -i ${STAGEDIR}/bin/linux_kdump ${STAGEDIR}/${PREFIX}/bin
+	${MV} -i ${STAGEDIR}/man/man1/linux_kdump.1.gz ${STAGEDIR}/${PREFIX}/man/man1
+	${RMDIR} ${STAGEDIR}/bin ${STAGEDIR}/man/man1 ${STAGEDIR}/man
 
 .include <bsd.port.post.mk>
