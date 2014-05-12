@@ -12,6 +12,8 @@ COMMENT=	An open source version of Colonization
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DOCS
+
 USES=		zip
 NO_BUILD=	yes
 SUB_FILES=	freecol
@@ -22,27 +24,19 @@ PLIST_FILES=	bin/freecol
 PORTDATA=	*
 PORTDOCS=	*
 
-DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;StrategyGame;" "false"
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;StrategyGame;" true
 
 post-extract:
 	@${MV} ${WRKDIR}/freecol ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/freecol ${PREFIX}/bin/
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/FreeCol.jar ${DATADIR}/
-	@${INSTALL_DATA} ${WRKSRC}/freecol.xpm ${DATADIR}/
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR}/)
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} jars ${DATADIR}/)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/FreeCol.pdf ${DOCSDIR}/
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/freecol ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/FreeCol.jar ${STAGEDIR}${DATADIR}/
+	@${INSTALL_DATA} ${WRKSRC}/freecol.xpm ${STAGEDIR}${DATADIR}/
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}/)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} jars ${STAGEDIR}${DATADIR}/)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/FreeCol.pdf ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
