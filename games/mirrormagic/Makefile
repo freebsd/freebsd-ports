@@ -3,7 +3,7 @@
 
 PORTNAME=	mirrormagic
 PORTVERSION=	2.0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -26,6 +26,13 @@ SCOREDIR=	/var/games/${PORTNAME}
 
 SUB_FILES=	pkg-deinstall pkg-install
 SUB_LIST=	SCOREDIR="${SCOREDIR}"
+
+DESKTOP_ENTRIES="Mirror Magic" \
+		"" \
+		"" \
+		"${PORTNAME}" \
+		"Game;LogicGame;" \
+		""
 
 OPTIONS_DEFINE=	SDL
 OPTIONS_DEFAULT=SDL
