@@ -713,6 +713,7 @@
     SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
+    SUBDIR += py-geoalchemy
     SUBDIR += py-hiredis
     SUBDIR += py-htsql
     SUBDIR += py-htsql-mysql
