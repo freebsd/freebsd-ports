@@ -1,21 +1,17 @@
---- ./Makefile.in.orig	2005-06-04 15:52:52.000000000 +0100
-+++ ./Makefile.in	2010-07-26 12:40:15.000000000 +0100
-@@ -2,7 +2,6 @@
- CFLAGS = -Wall @CFLAGS@ @DEFS@
- CPPFLAGS = @CPPFLAGS@ @DEFS@
- LDFLAGS = @LDFLAGS@ @LIBS@
--INSTALL = @INSTALL@
- 
- prefix = @prefix@
- mandir = @mandir@
-@@ -19,9 +18,8 @@
- 	cp -i free `which free`
+--- ./Makefile.in.orig	2014-01-21 10:11:40.000000000 +0000
++++ ./Makefile.in	2014-05-10 02:49:19.171834039 +0100
+@@ -21,10 +21,10 @@
  
  install:
--	strip free
- 	-$(INSTALL) -d $(bindir)
+ 	strip free
+-	-$(INSTALL) -d $(bindir)
+-	-$(INSTALL) -d $(mandir)/man1
 -	$(INSTALL) -m 755 free $(bindir)/freecolor
-+	$(INSTALL_PROGRAM) free $(bindir)/freecolor
+-	$(INSTALL) -m 644 freecolor.1 $(mandir)/man1/freecolor.1
++	-$(INSTALL) -d $(DESTDIR)$(bindir)
++	-$(INSTALL) -d $(DESTDIR)$(mandir)/man1
++	$(INSTALL) -m 755 free $(DESTDIR)$(bindir)/freecolor
++	$(INSTALL) -m 644 freecolor.1 $(DESTDIR)$(mandir)/man1/freecolor.1
  
  clean:
  	rm -f core free *~
