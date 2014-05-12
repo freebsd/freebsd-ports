@@ -2,7 +2,7 @@ A flexible backup tool
 
 Features:
    o Easy to configure
-   o Uses dump, afio, GNU tar, cpio, star, pax, or zip archivers
+   o Uses dump, afio, GNU tar, cpio, pax, or zip archivers
    o Full and numbered levels of incremental backup (acts like "dump")
    o Compression and buffering options for all backup types
    o Does remote filesystems (over rsh/ssh; no special service)
