@@ -1,8 +1,24 @@
-$FreeBSD$
-
---- bonnie++.cpp.orig	Mon Aug 25 17:08:46 2003
-+++ bonnie++.cpp	Mon Aug 25 17:08:46 2003
-@@ -322,11 +322,7 @@
+--- bonnie++.cpp.orig	2009-07-03 04:38:14.000000000 +0200
++++ bonnie++.cpp	2014-05-10 12:04:25.000000000 +0200
+@@ -73,7 +73,7 @@
+   void set_io_chunk_size(int size)
+     { delete m_buf; pa_new(size, m_buf, m_buf_pa); m_io_chunk_size = size; }
+   void set_file_chunk_size(int size)
+-    { delete m_buf; m_buf = new char[__max(size, m_io_chunk_size)]; m_file_chunk_size = size; }
++    { delete m_buf; m_buf = new char[max(size, m_io_chunk_size)]; m_file_chunk_size = size; }
+ 
+   // Return the page-aligned version of the local buffer
+   char *buf() { return m_buf_pa; }
+@@ -138,7 +138,7 @@
+  , m_buf(NULL)
+  , m_buf_pa(NULL)
+ {
+-  pa_new(__max(m_io_chunk_size, m_file_chunk_size), m_buf, m_buf_pa);
++  pa_new(max(m_io_chunk_size, m_file_chunk_size), m_buf, m_buf_pa);
+   SetName(".");
+ }
+ 
+@@ -294,11 +294,7 @@
        {
          char *sbuf = _strdup(optarg);
          char *size = strtok(sbuf, ":");
@@ -14,7 +30,7 @@ $FreeBSD$
          size = strtok(NULL, "");
          if(size)
          {
-@@ -411,15 +407,6 @@
+@@ -384,17 +380,8 @@
      if(file_size % 1024 > 512)
        file_size = file_size + 1024 - (file_size % 1024);
    }
@@ -27,10 +43,14 @@ $FreeBSD$
 -    usage();
 -  }
 -#endif
-   globals.byte_io_size = __min(file_size, globals.byte_io_size);
-   globals.byte_io_size = __max(0, globals.byte_io_size);
+-  globals.byte_io_size = __min(file_size, globals.byte_io_size);
+-  globals.byte_io_size = __max(0, globals.byte_io_size);
++  globals.byte_io_size = min(file_size, globals.byte_io_size);
++  globals.byte_io_size = max(0, globals.byte_io_size);
  
-@@ -503,14 +490,6 @@
+   if(machine == NULL)
+   {
+@@ -465,14 +452,6 @@
       && (directory_max_size < directory_min_size || directory_max_size < 0
       || directory_min_size < 0) )
      usage();
