@@ -12,8 +12,7 @@ PKGNAMESUFFIX=	04
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to aggregate people from multiple sources
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
@@ -21,7 +20,7 @@ CONFLICTS=	folks-0.[6-9].[0-9]*
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-USE_GNOME=	intlhack gnomehier
+USE_GNOME=	intlhack gnomehier introspection:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
