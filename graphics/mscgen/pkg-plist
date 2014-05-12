@@ -1,4 +1,5 @@
 bin/mscgen
+man/man1/mscgen.1.gz
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
