@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+[ "$2" != "POST-DEINSTALL" ] && exit 0
+
+rmdir "%%SCOREDIR%%" 2>/dev/null
+
+if [ -e "%%SCOREDIR%%" ]; then
+	echo
+	echo "To completely remove the port, please remove the following"
+	echo "directory manually, if it's no longer needed:"
+	echo
+	echo "    %%SCOREDIR%%"
+	echo
+fi
