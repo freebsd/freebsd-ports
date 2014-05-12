@@ -1,4 +1,6 @@
 sbin/portfwd
+man/man5/portfwd.cfg.5.gz
+man/man8/portfwd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
