@@ -11,10 +11,11 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java parser for e-mail message streams
 
+LICENSE=	APACHE20
+
 RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
 
-LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+OPTIONS_DEFINE=	DOCS
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -27,17 +28,14 @@ PLIST_FILES=	%%JAVAJARDIR%%/apache-${PORTNAME}-core.jar \
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/apache-${PORTNAME}-core-${PORTVERSION}.jar \
-		${JAVAJARDIR}/apache-${PORTNAME}-core.jar
+		${STAGEDIR}${JAVAJARDIR}/apache-${PORTNAME}-core.jar
 	${INSTALL_DATA} ${WRKSRC}/apache-${PORTNAME}-dom-${PORTVERSION}.jar \
-		${JAVAJARDIR}/apache-${PORTNAME}-dom.jar
+		${STAGEDIR}${JAVAJARDIR}/apache-${PORTNAME}-dom.jar
 	${INSTALL_DATA} ${WRKSRC}/apache-${PORTNAME}-storage-${PORTVERSION}.jar \
-		${JAVAJARDIR}/apache-${PORTNAME}-storage.jar
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}
-.endif
+		${STAGEDIR}${JAVAJARDIR}/apache-${PORTNAME}-storage.jar
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
