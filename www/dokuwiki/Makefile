@@ -13,6 +13,9 @@ COMMENT=	Simple and easy to use wiki, no database required
 
 LICENSE=	GPLv2
 
+# 2014-05-12 upstream re-rolled the DISTFILE w/o changing it's name!
+# Somebody needs to advise upstream they need a RCS, or VCS!
+
 DIST_VER=	${PORTNAME}-2014-05-05
 USE_PHP=	gd mbstring openssl pcre session xml zlib
 NO_BUILD=	YES
