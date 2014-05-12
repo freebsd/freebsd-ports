@@ -3,7 +3,7 @@
 
 PORTNAME=	libkate
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 		libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake libtool:oldver
 USE_LDCONFIG=	yes
 
 CFLAGS+=	"-I${LOCALBASE}/include"
