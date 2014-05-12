@@ -7,4 +7,4 @@ like servers, checkout counters, and tunnels. It also provides monitor variables
 to aid in gathering statistics. Random variates are provided by the standard
 Python random module.
 
-WWW: http://simpy.sourceforge.net/
+WWW: http://simpy.readthedocs.org/en/latest/
