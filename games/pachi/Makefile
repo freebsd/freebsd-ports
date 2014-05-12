@@ -3,7 +3,7 @@
 
 PORTNAME=	pachi
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/dragontech/Pachi%20el%20marciano/Pachi%20el%20marciano%20${PORTVERSION}
 DISTNAME=	pachi_source
@@ -21,8 +21,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/Pachi
 
-SCOREDIR=	/var/games/pachi
+SCOREDIR=	/var/games/${PORTNAME}
 SCOREFILE=	${SCOREDIR}/scores.dat
+
+SUB_FILES=      pkg-deinstall pkg-install
+SUB_LIST=       SCOREDIR="${SCOREDIR}" SCOREFILE="${SCOREFILE}"
 
 PORTDATA=	*
 
