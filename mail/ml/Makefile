@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.uni-koeln.de/windows/xcontrib/
 
-MAINTAINER=	mjl@luckie.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 IMAP client
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
