@@ -1,5 +1,6 @@
 bin/motor
 bin/motorsync
+man/man1/motor.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/motor.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/motor.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/motor.mo
