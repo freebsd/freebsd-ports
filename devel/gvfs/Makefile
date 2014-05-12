@@ -4,7 +4,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	1.12.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,8 +19,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix intlhack intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -29,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-obexftp \
 		--disable-bluray \
 		--disable-afc
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE
 OPTIONS_DEFAULT=AVAHI SAMBA GPHOTO2 CDDA HAL
@@ -92,8 +92,6 @@ PLIST_SUB+=	HAL="@comment "
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gio/modules/lib*.so
 	@${MKDIR} ${STAGEDIR}${DATADIR}/remote-volume-monitors
 	${TOUCH} ${STAGEDIR}${DATADIR}/remote-volume-monitors/.keep
 
