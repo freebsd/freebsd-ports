@@ -1,6 +1,5 @@
-lib/mediastreamer/plugins/libmsilbc.a
-lib/mediastreamer/plugins/libmsilbc.la
 lib/mediastreamer/plugins/libmsilbc.so
 lib/mediastreamer/plugins/libmsilbc.so.0
+lib/mediastreamer/plugins/libmsilbc.so.0.0.0
 @dirrmtry lib/mediastreamer/plugins
 @dirrmtry lib/mediastreamer
