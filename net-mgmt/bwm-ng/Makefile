@@ -3,20 +3,21 @@
 
 PORTNAME=	bwm-ng
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.gropp.org/bwm-ng/
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A small and simple bandwidth monitor
 
-LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
-MAN1=		bwm-ng.1
-PLIST_FILES=	bin/bwm-ng
+PLIST_FILES=	bin/bwm-ng man/man1/bwm-ng.1.gz
 
-CONFIGURE_ENV=	LIBS="`pkg-config --libs libstatgrab`"
+CONFIGURE_ENV=	CPPFLAGS="-std=gnu89 `pkg-config --cflags libstatgrab`" \
+		LIBS="`pkg-config --libs libstatgrab`"
+CONFIGURE_ARGS=	--with-libstatgrab
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
