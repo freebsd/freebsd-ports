@@ -13,6 +13,8 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Webtools for eclipse
 
+LICENSE=	EPL
+
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf \
 		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef \
@@ -21,7 +23,6 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 WRKSRC=		${WRKDIR}/eclipse
 USES=		zip
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>
