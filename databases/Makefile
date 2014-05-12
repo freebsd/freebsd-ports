@@ -897,6 +897,7 @@
     SUBDIR += tokyotyrant
     SUBDIR += tora
     SUBDIR += tuning-primer
+    SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += useracc
     SUBDIR += usogres
