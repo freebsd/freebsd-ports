@@ -10,10 +10,13 @@ MASTER_SITES=	http://mydns.bboy.net/download/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	DNS server designed to utilize the MySQL database
 
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	ALIAS OPENSSL PGSQL NLS DOCS NLS
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
-USES=		iconv
-USE_BZIP2=	yes
+USES=		tar:bzip2 iconv
 
 USE_RC_SUBR=	mydns
 
@@ -21,14 +24,8 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 INFO=		mydns
-MAN5=		mydns.conf.5
-MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydnsptrconvert.8 mydns-conf.8
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 
@@ -65,27 +62,17 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_PGSQL=yes          Build with PostgreSQL support"
-	@${ECHO} "      WITH_ALIAS=yes          Enable server side aliases"
-	@${ECHO} "      WITH_OPENSSL=yes        Enable OpenSSL (needed if MySQL is linked with OpenSSL)"
-	@${ECHO} ""
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/contrib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/contrib/*.php ${DOCSDIR}/contrib/
-	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pl ${DOCSDIR}/contrib/
-	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pm ${DOCSDIR}/contrib/
-	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/*.php ${STAGEDIR}${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pl ${STAGEDIR}${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pm ${STAGEDIR}${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${STAGEDIR}${DOCSDIR}/contrib/
 .endif
-	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample
-	@${CAT} ${PKGMESSAGE}
+	@${STAGEDIR}${PREFIX}/sbin/mydns --dump-config > ${STAGEDIR}${PREFIX}/etc/mydns.conf.sample
 
 .include <bsd.port.mk>
