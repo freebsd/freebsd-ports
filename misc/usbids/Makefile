@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	usbids
-PORTVERSION=	20140203
+PORTVERSION=	20140505
 CATEGORIES=	misc
 MASTER_SITES=	http://files.etoilebsd.net/usbids/
 
