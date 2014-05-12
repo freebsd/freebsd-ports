@@ -12,9 +12,8 @@ COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-USES=		pathfix
+USES=		pathfix tar:bzip2
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	libgsf
 USE_LDCONFIG=	yes
 
