@@ -1,0 +1,17 @@
+%%PERL5_MAN3%%/Test::Net::LDAP.3.gz
+%%PERL5_MAN3%%/Test::Net::LDAP::Mock.3.gz
+%%PERL5_MAN3%%/Test::Net::LDAP::Util.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net/LDAP/.packlist
+%%SITE_PERL%%/Test/Net/LDAP.pm
+%%SITE_PERL%%/Test/Net/LDAP/Mixin.pm
+%%SITE_PERL%%/Test/Net/LDAP/Mock.pm
+%%SITE_PERL%%/Test/Net/LDAP/Mock/Data.pm
+%%SITE_PERL%%/Test/Net/LDAP/Mock/Node.pm
+%%SITE_PERL%%/Test/Net/LDAP/Util.pm
+@dirrm %%SITE_PERL%%/Test/Net/LDAP/Mock
+@dirrm %%SITE_PERL%%/Test/Net/LDAP
+@dirrm %%SITE_PERL%%/Test/Net
+@dirrmtry %%SITE_PERL%%/Test
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
