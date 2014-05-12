@@ -29,7 +29,6 @@ PLIST_FILES=	bin/udfdump \
 		bin/cd_disect \
 		bin/mmc_format
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFUSE}
@@ -54,5 +53,7 @@ post-patch:
 .if ${PORT_OPTIONS:MFUSE}
 	${CP} ${UDFCLIENTFS_DIR}/${UDFCLIENTFS_NAME}.c ${WRKSRC}
 .endif
+	@${REINPLACE_CMD} -e 's,$$(bindir),$$(DESTDIR)$$(bindir),g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
