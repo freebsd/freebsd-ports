@@ -709,15 +709,6 @@ share/gnome/help/gnucash-help/it/figures/left.png
 share/gnome/help/gnucash-help/it/figures/right.png
 share/gnome/help/gnucash-help/it/figures/up.png
 share/gnome/help/gnucash-help/it/gnucash-help.xml
-share/omf/gnucash-guide/gnucash-guide-C.omf
-share/omf/gnucash-guide/gnucash-guide-de.omf
-share/omf/gnucash-guide/gnucash-guide-it.omf
-share/omf/gnucash-guide/gnucash-guide-ja.omf
-share/omf/gnucash-help/gnucash-help-C.omf
-share/omf/gnucash-help/gnucash-help-de.omf
-share/omf/gnucash-help/gnucash-help-it.omf
-@dirrm share/omf/gnucash-help
-@dirrm share/omf/gnucash-guide
 @dirrm share/gnome/help/gnucash-help/it/figures
 @dirrm share/gnome/help/gnucash-help/it
 @dirrm share/gnome/help/gnucash-help/de/figures
