@@ -2,37 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.17
+PORTVERSION=	0.90
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://dl.ambiweb.de/mirrors/ftp.i-scream.org/%SUBDIR%/ \
-		ftp://ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://ftp.uk.i-scream.org/pub/i-scream/libstatgrab/ \
+		http://dl.ambiweb.de/mirrors/ftp.i-scream.org/libstatgrab/ \
+		http://ftp.i-scream.org/pub/i-scream/libstatgrab/
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Provides a useful interface to system statistics
 
-DIST_SUBDIR=	i-scream
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
 
-CONFIGURE_ARGS+=	--disable-examples
+CONFIGURE_ARGS=	--disable-examples
 
-.ifdef(WITHOUT_STATGRAB)
-CONFIGURE_ARGS+=	--disable-statgrab
-PLIST_SUB+=		STATGRAB="@comment "
+OPTIONS_DEFINE=	TOOLS
+OPTIONS_DEFAULT=	TOOLS
+
+TOOLS_DESC=	Build and install statgrab and saidar
+
+OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTOOLS}
+USES+=		shebangfix perl5
+SHEBANG_FILES=	src/statgrab/statgrab-make-mrtg-config.in \
+		src/statgrab/statgrab-make-mrtg-index.in
 .else
-PLIST_SUB+=		STATGRAB=""
-.endif
-
-.ifdef(WITHOUT_SAIDAR)
-CONFIGURE_ARGS+=	--disable-saidar
-PLIST_SUB+=		SAIDAR="@comment "
-.else
-PLIST_SUB+=		SAIDAR=""
+CONFIGURE_ARGS+=	--disable-statgrab --disable-saidar
 .endif
 
 .include <bsd.port.mk>
