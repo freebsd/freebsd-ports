@@ -5,8 +5,7 @@ PORTNAME=	f-prot
 PORTVERSION=	6.5.1.5927
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
-		http://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
+MASTER_SITES=	http://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
 DISTNAME=	fp-FreeBSD-x86_32-ws-${PORTVERSION}
 
 MAINTAINER=	tdb@FreeBSD.org
