@@ -62,7 +62,7 @@ Notes:
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><lt>2.8.0_5</lt></range>
+	<range><le>2.8.0_5</le></range>
       </package>
     </affects>
     <description>
