@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	3.0.2
-PORTREVISION=	5
+DISTVERSION=	3.0.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -331,7 +330,8 @@ CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--without-rlm_yubikey \
 		--without-rlm_sql_oracle \
 		--without-rlm_securid \
-		--with-vmps
+		--with-vmps \
+		--with-collectdclient-lib-dir=/dev/null
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=--with-pic
@@ -348,7 +348,7 @@ SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 post-patch:
 # never try to find execinfo.h (needed until we can enable/disable backtrace
-	@${REINPLACE_CMD} -e '/execinfo.h/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/#include <execinfo.h>/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -Ee "s:tests/all.mk ::" ${WRKSRC}/src/all.mk
 	@${CP} ${WRKSRC}/m4/ax_with_prog.m4 ${WRKSRC}
 # Patch raddb/certs/Makefile for the full path to the openssl binary (using
@@ -373,5 +373,9 @@ pre-configure:
 # Replace -pthread with ${PTHREAD_LIBS} in configure(.in) files
 	@${FIND} -E ${WRKSRC} -regex '.*/configure(\.in)?$$' -exec \
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" {} \;
+
+post-build:
+	@${FIND} ${WRKSRC}/build/lib -type f -name '*.so' -exec ${STRIP_CMD} {} \;
+	@${FIND} ${WRKSRC}/build/bin -type f -exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.post.mk>

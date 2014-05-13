@@ -5,8 +5,8 @@ bin/dhcpclient
 bin/rad_counter
 bin/radattr
 bin/radclient
-bin/radconf2xml
 bin/radcrypt
+bin/radeapclient
 bin/radlast
 bin/radsniff
 bin/radsqlrelay
@@ -16,6 +16,7 @@ bin/radzap
 bin/rlm_ippool_tool
 bin/smbencrypt
 include/freeradius/base64.h
+include/freeradius/build.h
 include/freeradius/conf.h
 include/freeradius/conffile.h
 include/freeradius/detail.h
@@ -278,7 +279,6 @@ man/man5/rlm_sql.5.gz
 man/man5/rlm_unix.5.gz
 man/man5/unlang.5.gz
 man/man5/users.5.gz
-man/man8/radconf2xml.8.gz
 man/man8/radcrypt.8.gz
 man/man8/raddebug.8.gz
 man/man8/radiusd.8.gz
@@ -509,6 +509,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/sqlcounter
 %%EXAMPLESDIR%%/raddb/mods-available/sqlippool
 %%EXAMPLESDIR%%/raddb/mods-available/sradutmp
+%%EXAMPLESDIR%%/raddb/mods-available/unbound
 %%EXAMPLESDIR%%/raddb/mods-available/unix
 %%EXAMPLESDIR%%/raddb/mods-available/unpack
 %%EXAMPLESDIR%%/raddb/mods-available/utf8
@@ -579,6 +580,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/setup.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/unbound/default.conf
 %%EXAMPLESDIR%%/raddb/mods-enabled/always
 %%EXAMPLESDIR%%/raddb/mods-enabled/attr_filter
 %%EXAMPLESDIR%%/raddb/mods-enabled/cache_eap
@@ -677,6 +679,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.bluecoat
 %%DATADIR%%/dictionary.bristol
 %%DATADIR%%/dictionary.broadsoft
+%%DATADIR%%/dictionary.brocade
 %%DATADIR%%/dictionary.bskyb
 %%DATADIR%%/dictionary.bt
 %%DATADIR%%/dictionary.cablelabs
@@ -827,6 +830,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.xylan
 %%DATADIR%%/dictionary.yubico
 %%DATADIR%%/dictionary.zeus
+%%DATADIR%%/dictionary.zte
 %%DATADIR%%/dictionary.zyxel
 @unexec rmdir "/var/run/radiusd" >/dev/null 2>&1 || :
 @unexec rmdir "/var/log/radacct" >/dev/null 2>&1 || :
@@ -835,6 +839,7 @@ sbin/radmin
 @dirrm %%EXAMPLESDIR%%/raddb/sites-available
 @dirrm %%EXAMPLESDIR%%/raddb/policy.d
 @dirrm %%EXAMPLESDIR%%/raddb/mods-enabled
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/unbound
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql
