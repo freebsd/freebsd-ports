@@ -9,12 +9,10 @@ MASTER_SITES=	http://www.mavetju.org/download/adopted/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Ubiquitous network traffic analysis tool - FreeBSD 7 version for FreeBSD 8
 
-PLIST_FILES=	bin/tcpdump398
-MAN1=		tcpdump398.1
+PLIST_FILES=	bin/tcpdump398 man/man1/tcpdump398.1.gz
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
@@ -25,7 +23,7 @@ post-build:
 	${GUNZIP_CMD} ${WRKSRC}/tcpdump.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${PREFIX}/bin/tcpdump398
-	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${MAN1PREFIX}/man/man1/tcpdump398.1
+	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${STAGEDIR}${PREFIX}/bin/tcpdump398
+	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/tcpdump398.1
 
 .include <bsd.port.post.mk>
