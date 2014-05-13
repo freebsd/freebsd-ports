@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e7bb3885-da40-11e3-9ecb-2c4138874f7d">
+    <topic>libxml2 -- lack of end-of-document check DoS</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><le>2.8.0_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2877">
+	  <p>parser.c in libxml2 before 2.9.0, as used in Google
+	     Chrome before 28.0.1500.71 and other products, allows remote
+	     attackers to cause a denial of service (out-of-bounds read)
+	     via a document that ends abruptly, related to the lack of
+	     certain checks for the XML_PARSER_EOF state.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2877</cvename>
+      <url>https://git.gnome.org/browse/libxml2/tag/?id=CVE-2013-2877</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2877</url>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2877</url>
+    </references>
+    <dates>
+      <discovery>2013-04-11</discovery>
+      <entry>2013-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="efdd0edc-da3d-11e3-9ecb-2c4138874f7d">
     <topic>libxml2 -- entity substitution DoS</topic>
     <affects>
