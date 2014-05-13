@@ -6,5 +6,4 @@ PKGNAMEPREFIX=
 PHP_LANG=	de
 MASTERDIR=	${.CURDIR}/../../lang/php_doc
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
