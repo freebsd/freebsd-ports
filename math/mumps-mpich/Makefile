@@ -5,5 +5,4 @@ MASTERDIR=		${.CURDIR}/../mumps
 
 WITH_MPI=		yes
 
-NO_STAGE=	yes
 .include "../mumps/Makefile"
