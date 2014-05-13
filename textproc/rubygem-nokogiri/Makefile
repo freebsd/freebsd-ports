@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nokogiri
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.6.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,8 @@ COMMENT=	HTML, XML, SAX, and Reader parser
 
 LICENSE=	MIT
 
-GEM_ENV=	LC_CTYPE=UTF-8 NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+GEM_ENV=	LC_CTYPE=UTF-8
+CONFIGURE_ARGS=	--use-system-libraries
 
 USE_GNOME=	libxml2 libxslt
 
