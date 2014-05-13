@@ -701,8 +701,10 @@ lib/scribus/plugins/libsvgexplugin.so
 lib/scribus/plugins/libsvgimplugin.so
 lib/scribus/plugins/libtransformeffect.so
 lib/scribus/plugins/libwmfimplugin.so
+man/de/man1/scribus.1.gz
+man/man1/scribus.1.gz
+man/pl/man1/scribus.1.gz
 share/applications/scribus.desktop
-share/mime/application/vnd.scribus.xml
 share/mime/packages/scribus.xml
 share/mimelnk/application/vnd.scribus.desktop
 share/pixmaps/scribus.png
@@ -3545,8 +3547,6 @@ share/pixmaps/scribus.png
 @dirrm include/scribus
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
-@dirrmtry share/emacs/site-lisp
-@dirrmtry share/emacs
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
 @dirrmtry man/de/man1
