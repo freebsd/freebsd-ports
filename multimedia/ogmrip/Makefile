@@ -3,7 +3,7 @@
 
 PORTNAME=	ogmrip
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
 		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		dvdread.4:${PORTSDIR}/multimedia/libdvdread
+		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		mencoder:${PORTSDIR}/multimedia/mencoder \

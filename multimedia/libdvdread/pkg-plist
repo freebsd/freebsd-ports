@@ -1,4 +1,3 @@
-bin/dvdread-config
 include/dvdread/bitreader.h
 include/dvdread/dvd_reader.h
 include/dvdread/dvd_udf.h
@@ -10,7 +9,6 @@ include/dvdread/nav_read.h
 include/dvdread/nav_types.h
 lib/libdvdread.a
 lib/libdvdread.so
-lib/libdvdread.so.4
-lib/libdvdread.so.4.2.1
+lib/libdvdread.so.5
 libdata/pkgconfig/dvdread.pc
 @dirrm include/dvdread
