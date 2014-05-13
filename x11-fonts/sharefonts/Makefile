@@ -11,6 +11,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of shareware ATM fonts from the CICA archives
 
 RESTRICTED=	Shareware: cannot be distributed without prior authorization
+BROKEN=		does not fetch
 
 NO_BUILD=	yes
 
