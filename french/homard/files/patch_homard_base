@@ -1,0 +1,11 @@
+--- homard_base.orig	2014-05-11 21:57:51.000000000 +0200
++++ homard_base	2014-05-11 22:04:52.000000000 +0200
+@@ -34,7 +34,7 @@
+ # identifie au systeme.
+ # Ex : /home/aster/outils/HOMARD/Linux64/HOMARD_V10.4.out
+ # Seule cette variable est a parametrer pour une nouvelle installation.
+-    rep_homard_ref_defaut = os.path.normpath(os.path.dirname(os.path.dirname(os.path.abspath(os.path.realpath(sys.argv[0])))))
++    rep_homard_ref_defaut = %%HOMARDDIR%%
+ #
+ #==================================================================================================#
+ #
