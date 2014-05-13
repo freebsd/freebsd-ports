@@ -3,7 +3,7 @@
 
 PORTNAME=	libexo
 PORTVERSION=	0.10.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/exo/${PORTVERSION:R}
@@ -21,12 +21,13 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/lib//}
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
+INSTALL_TARGET=	install-strip
+USES=		desktop-file-utils gmake libtool:oldver pathfix perl5 \
+		pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11
-USES=		desktop-file-utils gmake pathfix perl5 pkgconfig
 
 OPTIONS_DEFINE=	DOCS NLS
 
