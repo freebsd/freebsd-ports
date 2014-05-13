@@ -9,11 +9,14 @@ MASTER_SITES=	http://www.enderunix.org/spamguard/
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	MTA spam prevention program for qmail/postfix/sendmail
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
+LICENSE=	BSD3CLAUSE
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_AUTOTOOLS=	automake
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 DOCS=		AUTHORS CHANGELOG COPYING INSTALL \
 		POST-INSTALL README THANKS README.DigitalUnix \
@@ -23,17 +26,12 @@ DOCS_TR=	BENIOKU BENIOKU.DigitalUnix COPYING DEGISIKLIKLER \
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 pre-configure:
-	        cd ${WRKSRC}; \
-		./autogen.sh
+	cd ${WRKSRC}; ./autogen.sh
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/tr
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	cd ${WRKSRC}/tr && ${INSTALL_DATA} ${DOCS_TR} ${DOCSDIR}/tr
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tr
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/tr && ${INSTALL_DATA} ${DOCS_TR} ${STAGEDIR}${DOCSDIR}/tr
 
 .include <bsd.port.mk>
