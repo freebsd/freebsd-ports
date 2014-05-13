@@ -5,30 +5,30 @@ PORTNAME=	engine_pkcs11
 PORTVERSION=	0.1.8
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
+MASTER_SITES=	SF/opensc/${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Implementation of a PKCS\#11 engine for OpenSSL
 
-LIB_DEPENDS=	p11.2:${PORTSDIR}/security/libp11
+LICENSE=	BSD2CLAUSE
 
-USE_AUTOTOOLS=	libtool
+LIB_DEPENDS=	libp11.so:${PORTSDIR}/security/libp11
+
+OPTIONS_DEFINE=	DOCS
+
+USES=		libtool pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
 PORTDOCS=	*
 
-.ifndef(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--enable-doc
-.else
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
 .include <bsd.port.mk>
