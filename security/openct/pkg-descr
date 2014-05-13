@@ -7,4 +7,4 @@ applications can use it with minimal overhead.
 OpenCT also has a primitive mechanism to export smart card
 readers to remote machines via tcp/ip.
 
-WWW:	http://www.opensc-project.org/openct/
+WWW: https://github.com/OpenSC/openct
