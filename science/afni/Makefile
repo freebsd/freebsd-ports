@@ -35,6 +35,8 @@ USES=		gettext iconv gmake motif
 
 NO_STAGE=	yes
 BROKEN=	R_io.so fails to build with R-3.0.2
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-06-13
 
 .include <bsd.port.pre.mk>
 
