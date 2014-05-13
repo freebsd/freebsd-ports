@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-power-manager
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

@@ -13,6 +13,7 @@ lib/libgnome-media-profiles.a
 lib/libgnome-media-profiles.la
 lib/libgnome-media-profiles.so
 lib/libgnome-media-profiles.so.0
+lib/libgnome-media-profiles.so.0.0.0
 libdata/pkgconfig/gnome-media-profiles.pc
 share/applications/gnome-sound-recorder.desktop
 %%PULSE%%share/applications/gnome-volume-control.desktop

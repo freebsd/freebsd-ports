@@ -288,6 +288,7 @@ share/GConf/gsettings/shotwell.convert
 @dirrm share/gnome/help/shotwell/C/figures
 @dirrm share/gnome/help/shotwell/C
 @dirrm share/gnome/help/shotwell
+@dirrmtry share/appdata
 @dirrm libexec/shotwell
 @dirrm lib/shotwell/plugins/builtin
 @dirrm lib/shotwell/plugins

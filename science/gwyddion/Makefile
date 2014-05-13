@@ -3,7 +3,7 @@
 
 PORTNAME=	gwyddion
 PORTVERSION=	2.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -16,9 +16,8 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
-USE_XZ=		yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info tar:xz
 USE_GNOME=	gconf2 gtk20 libxml2
 USE_GL=		glu
 GNU_CONFIGURE=	yes
