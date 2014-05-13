@@ -1,7 +1,6 @@
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
-etc/xml2Conf.sh
 include/libxml2/libxml/DOCBparser.h
 include/libxml2/libxml/HTMLparser.h
 include/libxml2/libxml/HTMLtree.h
@@ -54,6 +53,7 @@ lib/libxml2.la
 lib/libxml2.so
 lib/libxml2.so.2
 lib/libxml2.so.%%LIBVERSION%%
+lib/xml2Conf.sh
 libdata/pkgconfig/libxml-2.0.pc
 share/aclocal/libxml.m4
 man/man1/xml2-config.1.gz
