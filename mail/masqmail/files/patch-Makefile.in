@@ -5,7 +5,7 @@
  
  
 -install-data-local: log_dir spool_dir uid_bit conf_dir tpl_dir run_dir doc_dir rmail
-+install-data-local: log_dir spool_dir uid_bit conf_dir tpl_dir run_dir rmail
++install-data-local: uid_bit conf_dir tpl_dir rmail
  
  uninstall-local: rm-rmail rm-doc_dir rm-tpl_dir rm-conf_dir rm-run_dir rm-spool_dir rm-log_dir
  

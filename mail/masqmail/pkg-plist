@@ -1,8 +1,18 @@
 bin/mservdetect
-etc/masqmail/masqmail.conf-dist
-etc/masqmail/masqmail.route-dist
-etc/masqmail/localnet.route-dist
-etc/masqmail/openssl.route-dist
+@owner mailnull
+@group mail
+%%ETCDIR%%/localnet.route-dist
+%%ETCDIR%%/masqmail.conf-dist
+%%ETCDIR%%/masqmail.route-dist
+%%ETCDIR%%/openssl.route-dist
+@owner
+@group
+man/man1/mservdetect.1.gz
+man/man5/masqmail.aliases.5.gz
+man/man5/masqmail.conf.5.gz
+man/man5/masqmail.route.5.gz
+man/man8/masqmail.8.gz
+man/man8/rmail.8.gz
 sbin/masqmail
 sbin/rmail
 %%DATADIR%%/tpl/failmsg.tpl
@@ -13,30 +23,30 @@ sbin/rmail
 %%DATADIR%%/tpl/warnmsg.tpl.de
 %%DATADIR%%/tpl/warnmsg.tpl.fr
 %%DATADIR%%/tpl/warnmsg.tpl.it
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.ipaq
-%%PORTDOCS%%%%DOCSDIR%%/docs/ppp-setup
-%%PORTDOCS%%%%DOCSDIR%%/docs/simple-local-setup
-%%PORTDOCS%%%%DOCSDIR%%/docs/oem-option
-%%PORTDOCS%%%%DOCSDIR%%/docs/uucp-setup
-%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.agenda
-%%PORTDOCS%%%%DOCSDIR%%/docs/howto-release
-%%PORTDOCS%%%%DOCSDIR%%/docs/howto-static-linking
-%%PORTDOCS%%%%DOCSDIR%%/docs/README
-%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.linux
-%%PORTDOCS%%%%DOCSDIR%%/docs/agenda-config.site
-%%PORTDOCS%%%%DOCSDIR%%/docs/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/docs/simple-relay-setup
-%%PORTDOCS%%%%DOCSDIR%%/docs/howto-report-bugs
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/docs/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.agenda
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.ipaq
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.linux
+%%PORTDOCS%%%%DOCSDIR%%/docs/README
+%%PORTDOCS%%%%DOCSDIR%%/docs/agenda-config.site
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-release
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-report-bugs
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-static-linking
+%%PORTDOCS%%%%DOCSDIR%%/docs/oem-option
+%%PORTDOCS%%%%DOCSDIR%%/docs/ppp-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/simple-local-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/simple-relay-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/uucp-setup
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/tpl
 @dirrm %%DATADIR%%
-@dirrm etc/masqmail
+@dirrm %%ETCDIR%%
