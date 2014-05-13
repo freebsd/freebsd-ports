@@ -1,0 +1,11 @@
+--- PORD/lib/Makefile.orig	2011-05-10 14:56:32.000000000 +0200
++++ PORD/lib/Makefile	2013-08-11 18:31:47.000000000 +0200
+@@ -22,7 +22,7 @@
+ 	$(CC) $(COPTIONS) -c $*.c $(OUTC)$*.o
+ 
+ libpord$(LIBEXT):$(OBJS)
+-	$(AR)$@ $(OBJS)
++	$(AR) $@ $(OBJS)
+ 	$(RANLIB) $@
+ 
+ clean:

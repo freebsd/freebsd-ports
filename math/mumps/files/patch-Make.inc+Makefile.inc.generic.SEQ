@@ -1,30 +1,33 @@
---- Make.inc/Makefile.inc.generic.SEQ.orig	Fri Apr 14 08:00:50 2006
-+++ Make.inc/Makefile.inc.generic.SEQ	Fri May 26 10:27:58 2006
-@@ -42,20 +42,20 @@
- #          Metis is now available as an internal ordering for MUMPS.
+--- Make.inc/Makefile.inc.generic.SEQ.orig	2011-05-10 14:56:32.000000000 +0200
++++ Make.inc/Makefile.inc.generic.SEQ	2013-08-11 18:13:02.000000000 +0200
+@@ -41,7 +41,7 @@
+ #          Metis/ParMetis and SCOTCH/PT-SCOTCH (ver 5.1 and later) orderings are now available for MUMPS.
+ #
  
- 
--#LSCOTCHDIR = $(HOME)/JY/emilio/bin/generic
-+#LSCOTCHDIR = @LOCALBASE@/lib
- #LSCOTCH   = -L$(LSCOTCHDIR) -lesmumps  -lfax -lorder -lscotch -lsymbol -ldof -lgraph -lcommon -lm
- 
- LPORDDIR = ../PORD/lib/
- IPORD    = -I../PORD/include/
+-#SCOTCHDIR  = ${HOME}/scotch_5.1_esmumps
++#SCOTCHDIR  = @LOCALBASE@
+ #ISCOTCH    = -I$(SCOTCHDIR)/include 
+ # You have to choose one among the following two lines depending on
+ # the type of analysis you want to perform. If you want to perform only
+@@ -57,7 +57,7 @@
+ IPORD    = -I$(topdir)/PORD/include/
  LPORD    = -L$(LPORDDIR) -lpord
  
--#LMETISDIR = Directory containing Metis library
-+LMETISDIR = @LOCALBASE@/lib
- #IMETIS    = # Metis doesn't need include files (Fortran interface avail.)
- #LMETIS    = -L$(LMETISDIR) -lmetis
+-#LMETISDIR = /local/metis/
++#LMETISDIR = @LOCALBASE@/lib
+ #IMETIS    = # Should be provided if you use parmetis
  
- # Corresponding variables reused later
- #ORDERINGS = -Dmetis -Dpord
+ # You have to choose one among the following two lines depending on
+@@ -72,7 +72,7 @@
+ # The following variables will be used in the compilation process.
+ # Please note that -Dptscotch and -Dparmetis imply -Dscotch and -Dmetis respectively.
+ #ORDERINGSF = -Dscotch -Dmetis -Dpord -Dptscotch -Dparmetis
 -ORDERINGSF  = -Dpord
 +ORDERINGSF  += -Dpord
  ORDERINGSC  = $(ORDERINGSF)
+ 
  LORDERINGS = $(LMETIS) $(LPORD) $(LSCOTCH)
- IORDERINGS = $(IMETIS) $(IPORD) $(ISCOTCH)
-@@ -69,11 +69,11 @@
+@@ -95,11 +95,11 @@
  # RM : remove files
  RM      = /bin/rm -f
  # CC : C compiler
@@ -37,9 +40,14 @@
 -FL      = f90
 +FL      = @FC@
  # AR : Archive object in a library
- AR      = ar vr
- # RANLIB : generate index of an archive file
-@@ -89,10 +89,10 @@
+ #      keep a space at the end if options have to be separated from lib name
+ AR      = ar vr 
+@@ -112,14 +112,14 @@
+ # the sequential library provided by MUMPS, to use instead
+ # of ScaLAPACK and MPI.
+ INCSEQ  = -I$(topdir)/libseq
+-LIBSEQ  = -Llibseq -lmpiseq
++LIBSEQ  = -L$(topdir)/libseq -lmpiseq
  
  # DEFINE HERE YOUR BLAS LIBRARY
  
@@ -48,11 +56,11 @@
  
  # DEFINE HERE YOUR PTHREAD LIBRARY
 -LIBOTHERS = -lpthread
-+LIBOTHERS = @PTHREAD_LIBS@  @FORTRANLIBS@
++LIBOTHERS = @PTHREAD_LIBS@ @GCCLIBDIR@  @FORTRANLIBS@
  
  # FORTRAN/C COMPATIBILITY:
  #  Use:
-@@ -105,12 +105,12 @@
+@@ -132,12 +132,12 @@
  #     leave empty if your Fortran compiler does not change the symbols.
  #
  

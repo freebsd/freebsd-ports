@@ -13,4 +13,4 @@ format; elemental format.
 - Partial factorization and Schur complement matrix.
 - Several orderings interfaced : AMD, AMF, PORD, METIS
 
-WWW:	http://graal.ens-lyon.fr/MUMPS/
+WWW: http://graal.ens-lyon.fr/MUMPS/

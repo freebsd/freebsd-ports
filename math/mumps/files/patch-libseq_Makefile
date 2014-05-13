@@ -1,0 +1,11 @@
+--- libseq/Makefile.orig	2011-05-10 14:56:39.000000000 +0200
++++ libseq/Makefile	2013-08-11 18:05:34.000000000 +0200
+@@ -10,7 +10,7 @@
+ libmpiseq: libmpiseq$(PLAT)$(LIBEXT)
+ 
+ libmpiseq$(PLAT)$(LIBEXT): mpi.o mpic.o elapse.o
+-	$(AR)$@ mpi.o mpic.o elapse.o
++	$(AR) $@ mpi.o mpic.o elapse.o
+ 	$(RANLIB) $@
+ .f.o:
+ 	$(FC) $(OPTF)              -c $*.f $(OUTF)$*.o

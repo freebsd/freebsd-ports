@@ -1,0 +1,16 @@
+--- src/Makefile.orig	2011-05-10 14:56:32.000000000 +0200
++++ src/Makefile	2013-08-11 18:08:25.000000000 +0200
+@@ -53,11 +53,11 @@
+ 
+ 
+ $(libdir)/libmumps_common$(PLAT)$(LIBEXT):	$(OBJS_COMMON)
+-	$(AR)$@ $?
++	$(AR) $@ $?
+ 	$(RANLIB) $@
+ 
+ $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT):    $(OBJS)
+-	$(AR)$@ $?
++	$(AR) $@ $?
+ 	$(RANLIB) $@
+ 
+ $(ARITH)mumps_load.o:		$(ARITH)mumps_comm_buffer.o \
