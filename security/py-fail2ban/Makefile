@@ -2,7 +2,7 @@
 
 PORTNAME=	fail2ban
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -47,7 +47,7 @@ post-patch:
 		${WRKSRC}/config/fail2ban.conf
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR}
+	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR} ${STAGEDIR}/var/run/fail2ban
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .for file in fail2ban-client fail2ban-regex fail2ban-server fail2ban
