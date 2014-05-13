@@ -5,7 +5,7 @@ PORTNAME=	qcomicbook
 PORTVERSION=	0.9.0
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://qcomicbook.linux-projects.net/releases/
+MASTER_SITES=	http://qcomicbook.org/releases/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt-based comic book archive viewer
@@ -13,9 +13,10 @@ COMMENT=	Qt-based comic book archive viewer
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
+
+USES=		cmake:outsource pkgconfig
 USE_QT4=	corelib gui linguist_build moc_build qmake_build rcc_build \
 		uic_build xml
-USES=		cmake:outsource pkgconfig
 
 OPTIONS_DEFINE=	7ZIP ACE RAR ZIP
 
