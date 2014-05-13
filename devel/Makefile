@@ -4249,6 +4249,7 @@
     SUBDIR += rubygem-grape-entity
     SUBDIR += rubygem-grape-swagger
     SUBDIR += rubygem-grit
+    SUBDIR += rubygem-gyoku
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-highline
