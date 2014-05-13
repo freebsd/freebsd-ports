@@ -1,0 +1,2 @@
+# Add this line to /etc/crontab
+*/5 * * * *	%%WWWUSER%%	%%PREFIX%%/%%MAGENTODIR%%/cron.sh
