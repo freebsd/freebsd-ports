@@ -11,8 +11,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Network grep
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-pcap-restart
 MAKE_JOBS_UNSAFE=	yes
@@ -22,13 +21,11 @@ OPTIONS_DEFAULT=	PCRE IPV6
 PCRE_DESC=		Use PCRE instead of GNU regex
 PORTS_PCAP_DESC=	Use ports PCAP instead of system PCAP
 
-MAN8=		ngrep.8
-PLIST_FILES=	bin/ngrep
+PLIST_FILES=	bin/ngrep man/man8/ngrep.8.gz
 
 PORTDOCS=	CHANGES.txt CREDITS.txt INSTALL.txt LICENSE.txt \
 		README.txt REGEX.txt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
@@ -54,12 +51,12 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	@if [ -f ${WRKSRC}/${file} ]; then \
-		${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}; \
 	else \
-		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}; \
 	fi
 .endfor
 .endif
