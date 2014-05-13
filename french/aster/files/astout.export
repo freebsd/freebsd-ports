@@ -1,0 +1,16 @@
+# parameters
+P actions astout
+P version %%VER%%
+P debug nodebug
+P mode interactif
+P ncpus 1
+P nbmaxnook 500
+P cpresok RESOK
+P facmtps 3
+P tpsjob 300
+
+# list of the test to run
+F list /tmp/list_seq D 0
+
+# results destination
+R resu_test /tmp/resu_test R 0

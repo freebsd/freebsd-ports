@@ -19,10 +19,6 @@ TARNAME=	${PORTNAME:C|-edf||}
 TARNAME=	${PORTNAME}
 .endif
 
-.if ${PORTNAME} == homard
-DVSFX=		.all
-.endif
-
 .if ${PORTNAME} != aster
 post-extract:
 	(cd ${WRKDIR} &&	\
