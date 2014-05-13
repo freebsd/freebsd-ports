@@ -5,7 +5,6 @@ PORTNAME=	freedt
 PORTVERSION=	0.22
 CATEGORIES=	sysutils
 MASTER_SITES=	http://offog.org/files/ \
-		ftp://ftp.i-scream.org/pub/offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
 
 MAINTAINER=	tdb@FreeBSD.org
