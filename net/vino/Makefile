@@ -12,9 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC server that allows for remote access to your GNOME desktop
 
-LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig
@@ -29,11 +29,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	vino-server.schemas
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-libnotify=yes
 .else
 CONFIGURE_ARGS+=--enable-libnotify=no
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
