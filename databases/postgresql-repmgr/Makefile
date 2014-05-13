@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.repmgr.org/download/
 DISTNAME=	repmgr-${PORTVERSION}
 
-MAINTAINER=	alp@sfedu.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL replication manager
 
 LICENSE=	GPLv3
