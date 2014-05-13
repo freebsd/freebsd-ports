@@ -3,7 +3,7 @@
 
 PORTNAME=	vobcopy
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vobcopy.org/download/ \
 		CRITICAL
@@ -11,7 +11,7 @@ MASTER_SITES=	http://vobcopy.org/download/ \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Decrypts and copies DVD .vob files
 
-LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh

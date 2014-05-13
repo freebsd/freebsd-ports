@@ -3,6 +3,7 @@
 
 PORTNAME=	libdvdnav
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdnav
 MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \
@@ -25,7 +26,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--incdir="${PREFIX}/include/dvdnav" \
 		--disable-opts \
 		--cc="${CC}"
-USES=	tar:xz gmake
+USES=	tar:xz gmake pkgconfig:build
 CONFLICTS=	libdvdnav-mplayer-[0-9]*
 USE_LDCONFIG=	yes
 

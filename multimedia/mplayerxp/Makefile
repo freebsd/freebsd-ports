@@ -3,7 +3,7 @@
 
 PORTNAME=	mplayerxp
 PORTVERSION=	0.7.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 # dvd support
 .if ${PORT_OPTIONS:MDVDNAV}
-LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ARGS+=	--enable-libdvdread
 .else
