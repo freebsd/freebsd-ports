@@ -1049,6 +1049,21 @@
      return __high;
    }
  
+--- libstdc++-v3/config/os/bsd/openbsd/os_defines.h.orig
++++ libstdc++-v3/config/os/bsd/openbsd/os_defines.h
+@@ -38,4 +38,12 @@
+ #define _GLIBCXX_USE_C99_FLOAT_TRANSCENDENTALS_DYNAMIC _GLIBCXX_USE_C99_DYNAMIC
+ #define _GLIBCXX_USE_C99_FP_MACROS_DYNAMIC _GLIBCXX_USE_C99_DYNAMIC
+ 
++/* max_align_t is defined in ginclude/stddef.h which OpenBSD intentionally
++   excludes.  Bringing the definition here fixes the libstdc++ build. */
++
++typedef struct {
++  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
++  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
++} max_align_t;
++
+ #endif
 --- libstdc++-v3/acinclude.m4.orig
 +++ libstdc++-v3/acinclude.m4
 @@ -1989,6 +1989,9 @@
