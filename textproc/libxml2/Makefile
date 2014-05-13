@@ -58,6 +58,11 @@ post-patch:
 		${WRKSRC}/${f}
 .endfor
 
+.if !defined(MASTERDIR)
+post-install:
+	@${RM} -rf ${STAGEDIR}${PREFIX}/share/gtk-doc/html/libxml2
+.endif
+
 .include <bsd.port.mk>
 
 .endif
