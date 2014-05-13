@@ -58,7 +58,7 @@ Notes:
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="efdd0edc-da3d-11e3-9ecb-2c4138874f7d">
-    <topic>libxml2 -- entity substituton DoS</topic>
+    <topic>libxml2 -- entity substitution DoS</topic>
     <affects>
       <package>
 	<name>libxml2</name>
@@ -71,7 +71,7 @@ Notes:
 	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/05/06/4">
 	  <p>It was discovered that libxml2, a library providing
 	     support to read, modify and write XML files, incorrectly
-	     performs entity substituton in the doctype prolog, even if
+	     performs entity substitution in the doctype prolog, even if
 	     the application using libxml2 disabled any entity
 	     substitution.  A remote attacker could provide a
 	     specially-crafted XML file that, when processed, would lead
