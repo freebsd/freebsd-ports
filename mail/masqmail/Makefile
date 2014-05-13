@@ -3,55 +3,43 @@
 
 PORTNAME=	masqmail
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://marmaro.de/prog/masqmail/files/
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Mail server for hosts, not permanently connected to the internet
 
-.if !defined (NO_INSTALL_MANPAGES)
-MAN1=		mservdetect.1
-MAN5=		masqmail.aliases.5 masqmail.conf.5 masqmail.route.5
-MAN8=		masqmail.8 rmail.8
-.endif
+LICENSE=	GPLv2
 
 USE_GNOME=	glib20
 USES=		pkgconfig
 USE_RC_SUBR=	masqmail
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-trigraphs
-CONFIGURE_ARGS+=	--with-user=mailnull --with-group=mail \
-		--with-confdir=${PREFIX}/etc/masqmail --with-logdir=/var/log/masqmail
+CONFIGURE_ARGS=	--with-user=mailnull --with-group=mail \
+		--with-confdir=${ETCDIR} --with-logdir=/var/log/masqmail
 
-OPTIONS_DEFINE=	RESOLVER AUTH DEBUG
+OPTIONS_DEFINE=	RESOLVER AUTH DEBUG DOCS
 OPTIONS_DEFAULT=	RESOLVER AUTH
 RESOLVER_DESC=	Resolver
 AUTH_DESC=	SMTP AUTH (RFC2554) support
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+AUTH_CONFIGURE_ENABLE=	auth
+DEBUG_CONFIGURE_ENABLE=	debug
+RESOLVER_CONFIGURE_ENABLE=	resolver
 
-.if ! ${PORT_OPTIONS:MRESOLVER}
-CONFIGURE_ARGS+=	--disable-resolver
-.endif
-.if ${PORT_OPTIONS:MAUTH}
-CONFIGURE_ARGS+=	--enable-auth
-.endif
-.if ! ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--disable-debug
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '/sed.*SENDMAIL/ s|$$(DESTDIR)||' ${WRKSRC}/Makefile.in
 
 post-install:
-	${CHOWN} mailnull:mail ${PREFIX}/etc/masqmail
-	${INSTALL_DATA} -o mailnull -g mail ${WRKSRC}/examples/masqmail.conf ${PREFIX}/etc/masqmail/masqmail.conf-dist
-	${INSTALL_DATA} -o mailnull -g mail ${WRKSRC}/examples/example.route ${PREFIX}/etc/masqmail/masqmail.route-dist
-	${INSTALL_DATA} -o mailnull -g mail ${WRKSRC}/examples/localnet.route ${PREFIX}/etc/masqmail/localnet.route-dist
-	${INSTALL_DATA} -o mailnull -g mail ${WRKSRC}/examples/openssl.route ${PREFIX}/etc/masqmail/openssl.route-dist
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/masqmail.conf ${STAGEDIR}${ETCDIR}/masqmail.conf-dist
+	${INSTALL_DATA} ${WRKSRC}/examples/example.route ${STAGEDIR}${ETCDIR}/masqmail.route-dist
+	${INSTALL_DATA} ${WRKSRC}/examples/localnet.route ${STAGEDIR}${ETCDIR}/localnet.route-dist
+	${INSTALL_DATA} ${WRKSRC}/examples/openssl.route ${STAGEDIR}${ETCDIR}/openssl.route-dist
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
+	cd ${WRKSRC} && ${CP} ChangeLog NEWS AUTHORS COPYING README TODO INSTALL THANKS ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/docs/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/docs
-	cd ${WRKSRC} && ${CP} ChangeLog NEWS AUTHORS COPYING README TODO INSTALL THANKS ${DOCSDIR}
-	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/docs/)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
