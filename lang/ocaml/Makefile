@@ -1,6 +1,7 @@
 # Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
 
+# for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 PORTNAME=	ocaml
 PORTVERSION=	4.01.0
 PORTREVISION=	1
