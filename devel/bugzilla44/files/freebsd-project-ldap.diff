@@ -1,0 +1,11 @@
+--- Bugzilla/Auth/Verify/LDAP.pm	2014-05-06 17:26:02.000000000 +0100
++++ Bugzilla/Auth/Verify/LDAP.pm	2014-05-11 20:59:58.715356171 +0100
+@@ -132,7 +132,7 @@
+         }
+ 
+     } else {
+-        $params->{bz_username} = $username;
++        $params->{bz_username} = $username . '@freebsd.org';
+     }
+ 
+     $params->{realname}  ||= $user_entry->get_value("displayName");
