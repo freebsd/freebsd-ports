@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mwlib.rl
-PORTVERSION=	0.14.3
+PORTVERSION=	0.14.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate Pdfs from Mediawiki Markup
+
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/texvc:${PORTSDIR}/print/texvc \
 		${LOCALBASE}/bin/fribidi:${PORTSDIR}/converters/fribidi \
@@ -18,9 +20,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/texvc:${PORTSDIR}/print/texvc \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.0:${PORTSDIR}/textproc/py-pygments
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext zip
+USES=			zip
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
