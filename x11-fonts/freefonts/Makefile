@@ -23,6 +23,8 @@ BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 # "placed into the public domain and may [not be] sold")
 
 RESTRICTED=	License prohibits redistribution; see individual .license files
+BROKEN=		does not fetch
+
 NO_WRKSUBDIR=	yes
 
 FONTDIR?=	${PREFIX}/lib/X11/fonts/freefont
