@@ -20,7 +20,6 @@ EXCLUDE=	cocoa-ide lisp-kernel scripts
 
 USE_ASDF=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 
 .include <bsd.port.pre.mk>
@@ -55,26 +54,22 @@ do-build:
 		--eval "(quit)"
 
 do-install:
-	@${MKDIR} ${CCL_DIRECTORY}
-	@${CP} -r ${WRKSRC}/* ${CCL_DIRECTORY}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ccl
+	@${CP} -r ${WRKSRC}/* ${STAGEDIR}${CCL_DIRECTORY}
 	@for i in ${EXCLUDE}; do \
-		${RM} -r -f ${CCL_DIRECTORY}/$${i}; \
+		${RM} -r -f ${STAGEDIR}${CCL_DIRECTORY}/$${i}; \
 	done
-	@${INSTALL_SCRIPT} ${WRKDIR}/ccl.sh ${PREFIX}/bin/ccl
+	@${INSTALL_SCRIPT} ${WRKDIR}/ccl.sh ${STAGEDIR}${PREFIX}/bin/ccl
 
 post-install:
-	@cd ${WRKSRC} && ${ECHO_CMD} | ${SETENV} -u CCL_DEFAULT_DIRECTORY ./${FX86CL} --no-init --batch --quiet \
-		--eval "(require 'asdf)" \
-		--eval '(load "/usr/local/etc/asdf-init.lisp")' \
-		--eval "(quit)"
-	@cd ${PREFIX}; ${FIND} lib/ccl/* -type d -empty \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/ccl/* -type d -empty \
 		| ${SORT} \
 		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
 		> ${CCL_PLIST}
-	@cd ${PREFIX}; ${FIND} lib/ccl/* -type f -o -type l \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/ccl/* -type f -o -type l \
 		| ${SORT} \
 		>> ${CCL_PLIST}
-	@cd ${PREFIX}; ${FIND} lib/ccl/* -type d | ${SORT} -r \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/ccl/* -type d | ${SORT} -r \
 	    	| ${SED} -e 's/^/@dirrm /g' \
 		>> ${CCL_PLIST}
 	@${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
@@ -82,6 +77,5 @@ post-install:
 	@${ECHO_CMD} "r ${CCL_PLIST}"		>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	@cd ${WRKDIR} && ex < ex.script > /dev/null
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
