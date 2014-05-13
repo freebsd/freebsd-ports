@@ -1209,6 +1209,7 @@
     SUBDIR += py-zope.tal
     SUBDIR += py-zpt
     SUBDIR += py2html
+    SUBDIR += py3-libxml2
     SUBDIR += pychm
     SUBDIR += pystemmer
     SUBDIR += qprint
