@@ -95,7 +95,6 @@ PLIST_FILES +=	%%JAVAJARDIR%%/${FILE}
 PLIST_FILES +=	%%JAVAJARDIR%%/${FILE}
 .endfor
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRESRCS}
@@ -167,30 +166,28 @@ PORTDOCS=	*
 .endif
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}
 .for FILE in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/.jar/-${PORTVERSION}.RELEASE.jar/} \
-		${JAVAJARDIR}/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/.jar/-${PORTVERSION}.RELEASE.jar/} \
+		${STAGEDIR}${JAVAJARDIR}/${FILE}
 .endfor
 .for FILE in ${SOURCES}
-	@${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/-sources.jar/-${PORTVERSION}.RELEASE-sources.jar/} \
-		${JAVAJARDIR}/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/-sources.jar/-${PORTVERSION}.RELEASE-sources.jar/} \
+		${STAGEDIR}${JAVAJARDIR}/${FILE}
 .endfor
 .for FILE in ${JAVADOC}
-	@${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/-javadoc.jar/-${PORTVERSION}.RELEASE-javadoc.jar/} \
-		${JAVAJARDIR}/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/-javadoc.jar/-${PORTVERSION}.RELEASE-javadoc.jar/} \
+		${STAGEDIR}${JAVAJARDIR}/${FILE}
 .endfor
-.if ${PORT_OPTIONS:MRESRCS}
 .for FILE in ${RESOURCE_FILES}
-	@${INSTALL_DATA} `${FIND} "${WRKSRC}" -name ${FILE} -print` \
-		${JAVASHAREDIR}/${FILE}
+	${INSTALL_DATA} `${FIND} "${WRKSRC}" -name ${FILE} -print` \
+		${STAGEDIR}${JAVASHAREDIR}/${FILE}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/notice.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-	@cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/notice.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
