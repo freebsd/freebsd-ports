@@ -6,7 +6,7 @@ PORTVERSION=	1.1.8
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3395/
 
-MAINTAINER=	alp@sfedu.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL utility to reorganize tables
 
 LICENSE=	BSD
