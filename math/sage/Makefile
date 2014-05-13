@@ -51,52 +51,6 @@ pre-extract:
 	@${ECHO_MSG} ${CHOWN} -hR ${BINOWN}:${BINGRP} ${PREFIX}/${PORTNAME}-${PORTVERSION}
 	@${ECHO_MSG}
 	@sleep 60
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# If you want to fetch the source tarball and you don\'t trust the
-	@${ECHO_MSG} \# ports system to do this, you can type:
-	@${ECHO_MSG}
-	@${ECHO_MSG} ${FETCH_CMD} -o ${DISTDIR} http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/${DISTNAME}${EXTRACT_SUFX}
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# Extracting the source files automatically can be time-consuming,
-	@${ECHO_MSG} \# and it takes up space in the ports tree. You can prevent this by
-	@${ECHO_MSG} \# extracting the files into a temporary directory.
-	@${ECHO_MSG}
-	@${ECHO_MSG} ${TAR} -x -C /tmp -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# Next you\'ll need to navigate to that directory for the remainder
-	@${ECHO_MSG} \# of the commands.
-	@${ECHO_MSG}
-	@${ECHO_MSG} cd /tmp/${DISTNAME}
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# Now, patching files is usually done automatically by the ports
-	@${ECHO_MSG} \# system, but you can make it take considerably more time by doing
-	@${ECHO_MSG} \# it by hand. The following command may be helpful, unless you\'re
-	@${ECHO_MSG} \# using a C shell.
-	@${ECHO_MSG}
-	@${ECHO_MSG} "for i in ${PORTSDIR}/math/sage/files/patch-\*; do patch -p0 < $i; done"
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# Next, you\'ll need to issue a couple more commands yourself, but you
-	@${ECHO_MSG} \# are saving so much time already, it practically pays for itself. 
-	@${ECHO_MSG} \# Issue the following command, and then type in everything it tells you
-	@${ECHO_MSG} \# to do.
-	@${ECHO_MSG}
-	@${ECHO_MSG} make -C ${PORTSDIR}/math/sage -n post-patch | sed -e 's,${WRKSRC}/,,'
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# Building the port is easy. If you type "make", it will build the port,
-	@${ECHO_MSG} \# but you can build it in a much more intelligent way by doing:
-	@${ECHO_MSG} 
-	@${ECHO_MSG} ${DO_MAKE_BUILD}
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# Then, type:
-	@${ECHO_MSG}
-	@${ECHO_MSG} ${RM} -rf tmp/.sage
-	@${ECHO_MSG} ${CHMOD} -R a+rX .
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# Now you can follow the directions above about installing the program.
-	@${ECHO_MSG} \# Enjoy the following 60-second forced pause while you think about all
-	@${ECHO_MSG} \# the time you just saved!
-	@${ECHO_MSG}
-	@sleep 60
 
 PLIST_FILES=	bin/sage
 USE_GCC=	yes
