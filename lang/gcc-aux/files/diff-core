@@ -1,3 +1,7 @@
+--- gcc/DEV-PHASE.orig
++++ gcc/DEV-PHASE
+@@ -0,0 +1 @@
++release
 --- /dev/null
 +++ gcc/config/dragonfly-stdint.h
 @@ -0,0 +1,56 @@
@@ -323,6 +327,62 @@
 +
 +#define INTPTR_TYPE       (LONG_TYPE_SIZE == 64 ? "long int" : "int")
 +#define UINTPTR_TYPE      (LONG_TYPE_SIZE == 64 ? "long unsigned int" : "unsigned int")
+--- gcc/config/openbsd-libpthread.h.orig
++++ gcc/config/openbsd-libpthread.h
+@@ -18,5 +18,5 @@
+    along with GCC; see the file COPYING3.  If not see
+    <http://www.gnu.org/licenses/>.  */
+ 
+-#define OBSD_LIB_SPEC "%{!shared:%{pthread:-lpthread} -lc}"
++#define OBSD_LIB_SPEC "%{pthread:-lpthread%{!shared:%{p|pg:_p}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
+ 
+--- gcc/config/openbsd.h.orig
++++ gcc/config/openbsd.h
+@@ -108,9 +108,9 @@
+    This two-stage defines makes it easy to pick that for targets that
+    have subspecs.  */
+ #ifdef CPP_CPU_SPEC
+-#define OBSD_CPP_SPEC "%(cpp_cpu) %{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define OBSD_CPP_SPEC "%(cpp_cpu) %{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
+ #else
+-#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
+ #endif
+ 
+ #undef LIB_SPEC
+@@ -143,6 +143,9 @@
+ #define LIB_SPEC OBSD_LIB_SPEC
+ #endif
+ 
++#undef LINK_PIE_SPEC
++#define LINK_PIE_SPEC "%{pie:-pie} %{p|pg|nopie:-nopie} "
++
+ #define TARGET_POSIX_IO
+ 
+ /* All new versions of OpenBSD have C99 functions.  We redefine this hook
+@@ -285,5 +288,12 @@
+ 
+ /* Storage layout.  */
+ 
++/* Silence "unsafe GNU crap" messages */
++#define NO_UNSAFE_BUILTINS
++
++/* The system headers on OpenBSD are C++-aware.  */
++#undef NO_IMPLICIT_EXTERN_C
++#define NO_IMPLICIT_EXTERN_C
++
+ 
+ #define HAVE_ENABLE_EXECUTE_STACK
+--- gcc/config/openbsd.opt.orig
++++ gcc/config/openbsd.opt
+@@ -32,4 +32,7 @@
+ pthread
+ Driver
+ 
++rdynamic
++Driver
++
+ ; This comment is to ensure we retain the blank line above.
 --- /dev/null
 +++ gcc/config/i386/dragonfly.h
 @@ -0,0 +1,105 @@
@@ -505,9 +565,49 @@
 +#if defined(HAVE_LD_EH_FRAME_HDR)
 +#define LINK_EH_SPEC "%{!static:--eh-frame-hdr} "
 +#endif
+--- gcc/config/i386/openbsd.h.orig
++++ gcc/config/i386/openbsd.h
+@@ -38,10 +38,10 @@
+ 
+ /* This must agree with <machine/ansi.h> */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"
+@@ -49,6 +49,9 @@
+ #undef WCHAR_TYPE_SIZE
+ #define WCHAR_TYPE_SIZE 32
+ 
++#undef WINT_TYPE
++#define WINT_TYPE "int"
++
+ /* Assembler format: overall framework.  */
+ 
+ #undef ASM_APP_ON
+--- gcc/config/i386/openbsdelf.h.orig
++++ gcc/config/i386/openbsdelf.h
+@@ -97,9 +97,12 @@
+    %{shared:-shared} %{R*} \
+    %{static:-Bstatic} \
+    %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
+    %{assert*} \
+    -dynamic-linker /usr/libexec/ld.so"
+ 
++#define SUBTARGET32_DEFAULT_CPU "i486"
++
+ #undef STARTFILE_SPEC
+ #define STARTFILE_SPEC "\
+ 	%{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} %{!p:crt0%O%s}} \
 --- gcc/ginclude/stddef.h.orig
 +++ gcc/ginclude/stddef.h
-@@ -50,12 +50,21 @@
+@@ -50,6 +50,11 @@
     one less case to deal with in the following.  */
  #if defined (__BSD_NET2__) || defined (____386BSD____) || (defined (__FreeBSD__) && (__FreeBSD__ < 5)) || defined(__NetBSD__)
  #include <machine/ansi.h>
@@ -519,17 +619,7 @@
  #endif
  /* On FreeBSD 5, machine/ansi.h does not exist anymore... */
  #if defined (__FreeBSD__) && (__FreeBSD__ >= 5)
- #include <sys/_types.h>
- #endif
- 
-+#if defined(__DragonFly__)
-+#include <sys/types.h>
-+#endif
-+
- /* In 4.3bsd-net2, machine/ansi.h defines these symbols, which are
-    defined if the corresponding type is *not* defined.
-    FreeBSD-2.1 defines _MACHINE_ANSI_H_ instead of _ANSI_H_.
-@@ -133,6 +142,7 @@
+@@ -133,6 +138,7 @@
  #ifndef _BSD_PTRDIFF_T_
  #ifndef ___int_ptrdiff_t_h
  #ifndef _GCC_PTRDIFF_T
@@ -537,7 +627,7 @@
  #define _PTRDIFF_T
  #define _T_PTRDIFF_
  #define _T_PTRDIFF
-@@ -141,10 +151,12 @@
+@@ -141,10 +147,12 @@
  #define _BSD_PTRDIFF_T_
  #define ___int_ptrdiff_t_h
  #define _GCC_PTRDIFF_T
@@ -550,7 +640,7 @@
  #endif /* _GCC_PTRDIFF_T */
  #endif /* ___int_ptrdiff_t_h */
  #endif /* _BSD_PTRDIFF_T_ */
-@@ -198,6 +210,7 @@
+@@ -198,6 +206,7 @@
  #define _GCC_SIZE_T
  #define _SIZET_
  #if (defined (__FreeBSD__) && (__FreeBSD__ >= 5)) \
@@ -558,15 +648,6 @@
    || defined(__FreeBSD_kernel__)
  /* __size_t is a typedef on FreeBSD 5, must not trash it. */
  #elif defined (__VMS__)
-@@ -306,7 +319,7 @@
- /* FreeBSD 5 can't be handled well using "traditional" logic above
-    since it no longer defines _BSD_RUNE_T_ yet still desires to export
-    rune_t in some cases... */
--#if defined (__FreeBSD__) && (__FreeBSD__ >= 5)
-+#if defined (__DragonFly__) || (defined (__FreeBSD__) && (__FreeBSD__ >= 5))
- #if !defined (_ANSI_SOURCE) && !defined (_POSIX_SOURCE)
- #if __BSD_VISIBLE
- #ifndef _RUNE_T_DECLARED
 --- include/libiberty.h.orig
 +++ include/libiberty.h
 @@ -106,7 +106,16 @@
@@ -1257,6 +1338,60 @@
  #endif
 +#endif
  }
+--- gcc/builtins.c.orig
++++ gcc/builtins.c
+@@ -125,9 +125,11 @@
+ static rtx expand_builtin_mempcpy (tree, rtx, enum machine_mode);
+ static rtx expand_builtin_mempcpy_args (tree, tree, tree, rtx,
+ 					enum machine_mode, int);
++#ifndef NO_UNSAFE_BUILTINS
+ static rtx expand_builtin_strcpy (tree, rtx);
+ static rtx expand_builtin_strcpy_args (tree, tree, rtx);
+ static rtx expand_builtin_stpcpy (tree, rtx, enum machine_mode);
++#endif
+ static rtx expand_builtin_strncpy (tree, rtx);
+ static rtx builtin_memset_gen_str (void *, HOST_WIDE_INT, enum machine_mode);
+ static rtx expand_builtin_memset (tree, rtx, enum machine_mode);
+@@ -3370,6 +3372,7 @@
+ # define CODE_FOR_movstr CODE_FOR_nothing
+ #endif
+ 
++#ifndef NO_UNSAFE_BUILTINS
+ /* Expand into a movstr instruction, if one is available.  Return NULL_RTX if
+    we failed, the caller should emit a normal call, otherwise try to
+    get the result in TARGET, if convenient.  If ENDP is 0 return the
+@@ -3521,6 +3524,7 @@
+       return expand_movstr (dst, src, target, /*endp=*/2);
+     }
+ }
++#endif
+ 
+ /* Callback routine for store_by_pieces.  Read GET_MODE_BITSIZE (MODE)
+    bytes from constant string DATA + OFFSET and return it as target
+@@ -6140,9 +6144,11 @@
+       break;
+ 
+     case BUILT_IN_STRCPY:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_strcpy (exp, target);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_STRNCPY:
+@@ -6152,9 +6158,11 @@
+       break;
+ 
+     case BUILT_IN_STPCPY:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_stpcpy (exp, target, mode);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_MEMCPY:
 --- gcc/config.gcc.orig
 +++ gcc/config.gcc
 @@ -687,6 +687,26 @@
@@ -1326,7 +1461,36 @@
  	;;
  i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	tm_file="i386/i386.h i386/unix.h i386/bsd.h i386/gas.h i386/gstabs.h openbsd-oldgas.h openbsd.h i386/openbsd.h"
-@@ -4109,6 +4140,8 @@
+@@ -1375,6 +1406,7 @@
+ 	use_collect2=yes
+ 	;;
+ i[34567]86-*-openbsd*)
++	tm_defines="${tm_defines} PIE_DEFAULT=1"
+ 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
+ 	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/openbsdelf.h"
+ 	extra_options="${extra_options} openbsd.opt"
+@@ -1382,6 +1414,7 @@
+ 	gnu_ld=yes
+ 	;;
+ x86_64-*-openbsd*)
++	tm_defines="${tm_defines} PIE_DEFAULT=1"
+ 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
+ 	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/x86-64.h i386/openbsdelf.h"
+ 	extra_options="${extra_options} openbsd.opt"
+@@ -2927,6 +2960,12 @@
+     arch_without_sse2=yes
+     arch_without_64bit=yes
+     ;;
++  i386-*-openbsd*)
++    arch=i486
++    cpu=generic
++    arch_without_sse2=yes
++    arch_without_64bit=yes
++    ;;
+   i386-*-*)
+     arch=i386
+     cpu=i386
+@@ -4109,6 +4148,8 @@
  		;;
  	i[34567]86-*-mingw* | x86_64-*-mingw*)
  		;;
@@ -1348,13 +1512,13 @@
 +      gcc_cv_target_dl_iterate_phdr=no
 +    fi
 +  ;;
-+# *-*-netbsd* | *-*-openbsd*)
-+# if grep dl_iterate_phdr $target_header_dir/link_elf.h > /dev/null 2>&1; then
-+#     gcc_cv_target_dl_iterate_phdr=yes
-+#   else
-+#     gcc_cv_target_dl_iterate_phdr=no
-+#   fi
-+# ;;
++ *-*-netbsd*)
++ if grep dl_iterate_phdr $target_header_dir/link_elf.h > /dev/null 2>&1; then
++     gcc_cv_target_dl_iterate_phdr=yes
++   else
++     gcc_cv_target_dl_iterate_phdr=no
++   fi
++ ;;
  esac
  
  if test x$gcc_cv_target_dl_iterate_phdr = xyes; then
@@ -1495,29 +1659,38 @@
    	tmake_file="${tmake_file} t-softfp-tf"
 --- libcilkrts/runtime/os-unix.c.orig
 +++ libcilkrts/runtime/os-unix.c
-@@ -56,6 +56,8 @@
+@@ -56,6 +56,12 @@
      // Uses sysconf(_SC_NPROCESSORS_ONLN) in verbose output
  #elif defined  __FreeBSD__
  // No additional include files
 +#elif defined __DragonFly__
 +// No additional include files
++#elif defined __NetBSD__
++// No additional include files
++#elif defined __OpenBSD__
++// No additional include files
  #elif defined __CYGWIN__
  // Cygwin on Windows - no additional include files
  #elif defined  __VXWORKS__
-@@ -374,7 +376,7 @@
+@@ -374,7 +380,8 @@
      assert((unsigned)count == count);
  
      return count;
 -#elif defined  __FreeBSD__ || defined __CYGWIN__
-+#elif defined  __FreeBSD__ || defined __CYGWIN__ || defined __DragonFly__
++#elif defined __FreeBSD__ || defined __CYGWIN__ || defined __DragonFly__ \
++   || defined __NetBSD__ || defined __OpenBSD__
      int ncores = sysconf(_SC_NPROCESSORS_ONLN);
  
      return ncores;
-@@ -402,6 +404,8 @@
+@@ -402,6 +409,12 @@
      // On MacOS, call sched_yield to yield quantum.  I'm not sure why we
      // don't do this on Linux also.
      sched_yield();
 +#elif defined(__DragonFly__)
++    sched_yield();
++#elif defined(__NetBSD__)
++    sched_yield();
++#elif defined(__OpenBSD__)
 +    sched_yield();
  #elif defined(__MIC__)
      // On MIC, pthread_yield() really trashes things.  Arch's measurements
