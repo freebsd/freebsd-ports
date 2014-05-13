@@ -833,6 +833,7 @@
     SUBDIR += pecl-oauth
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
+    SUBDIR += pecl-yp
     SUBDIR += pen
     SUBDIR += pfflowd
     SUBDIR += pfinger
