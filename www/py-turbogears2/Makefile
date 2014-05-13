@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://www.turbogears.org/2.1/downloads/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python-Based Framework for Rapid Web Development
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0.9.4:${PORTSDIR}/devel/py-ToscaWidgets \
@@ -30,8 +30,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0.9.4:${PORTSDIR}/devel/py-Tos
 		${PYTHON_PKGNAMEPREFIX}mako>=0:${PORTSDIR}/textproc/py-mako \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9.4:${PORTSDIR}/devel/py-babel
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
