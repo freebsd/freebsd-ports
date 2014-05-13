@@ -2,4 +2,4 @@ Libp11 is a library implementing a small layer
 on top of PKCS#11 API to make using PKCS#11
 implementations easier.
 
-WWW:	http://www.opensc-project.org/libp11/
+WWW: https://github.com/OpenSC/libp11/wiki

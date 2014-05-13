@@ -4,19 +4,19 @@
 PORTNAME=	libp11
 PORTVERSION=	0.2.8
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
+MASTER_SITES=	SF/opensc/${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Small layer on top of PKCS\#11 API
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=	libltdl libtool
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USE_AUTOTOOLS=	libltdl
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GNOME=	ltverhack
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
@@ -26,26 +26,20 @@ CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 
 PORTDOCS=	*
 
-.ifndef(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--enable-doc
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure
-.ifndef(NOPORTDOCS)
 	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am: install-dist_docDATA|' \
 		${WRKSRC}/doc/Makefile.in
-.else
-	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am:|' \
-		${WRKSRC}/doc/Makefile.in
-.endif
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA}	${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}	${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
