@@ -6,9 +6,9 @@ include/unique-1.0/unique/uniquemessage.h
 include/unique-1.0/unique/uniqueversion.h
 lib/girepository-1.0/Unique-1.0.typelib
 lib/libunique-1.0.a
-lib/libunique-1.0.la
 lib/libunique-1.0.so
-lib/libunique-1.0.so.2
+lib/libunique-1.0.so.0
+lib/libunique-1.0.so.0.100.6
 libdata/pkgconfig/unique-1.0.pc
 share/gir-1.0/Unique-1.0.gir
 %%DOCSDIR%%/UniqueApp.html

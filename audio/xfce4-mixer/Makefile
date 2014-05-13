@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -13,12 +13,11 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Volume control for the Xfce desktop
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
-USES=		gmake pkgconfig gettext pathfix
-USE_BZIP2=	yes
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel xfconf
 USE_GSTREAMER=	good

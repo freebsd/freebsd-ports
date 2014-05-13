@@ -38,15 +38,14 @@ include/libslab/tile.h
 include/mate-window-settings-2.0/mate-window-manager.h
 include/mate-window-settings-2.0/mate-wm-manager.h
 lib/libmate-window-settings.a
-lib/libmate-window-settings.la
 lib/libmate-window-settings.so
 lib/libmate-window-settings.so.1
+lib/libmate-window-settings.so.1.0.0
 lib/libslab.a
-lib/libslab.la
 lib/libslab.so
 lib/libslab.so.0
+lib/libslab.so.0.0.0
 lib/window-manager-settings/libmarco.a
-lib/window-manager-settings/libmarco.la
 lib/window-manager-settings/libmarco.so
 libdata/pkgconfig/libslab.pc
 libdata/pkgconfig/mate-default-applications.pc

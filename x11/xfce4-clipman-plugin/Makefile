@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -18,11 +19,10 @@ QRCODE_DESC=	QR Code support
 UNIQUE_DESC=	Unique (single instance) support
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gtk20 intltool intlhack glib20
 USE_XFCE=	configenv libexo libmenu libutil panel xfconf
 USE_XORG=	xtst xproto
-USES=		pkgconfig gettext gmake
+USES=		gettext gmake libtool pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.options.mk>

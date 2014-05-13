@@ -3,7 +3,7 @@
 
 PORTNAME=	gmpc
 PORTVERSION=	11.8.16
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
@@ -21,9 +21,9 @@ LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 gtk20 libglade2
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pathfix pkgconfig
 CONFIGURE_ARGS=	--enable-system-libsexy
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
