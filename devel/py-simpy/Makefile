@@ -23,8 +23,6 @@ PYDISTUTILS_PKGNAME=	SimPy
 OPTIONS_DEFINE=	TKINTER
 TKINTER_DESC=	py-tkinter for plot
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTKINTER}
