@@ -57,6 +57,47 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b060ee50-daba-11e3-99f2-bcaec565249c">
+    <topic>libXfont -- X Font Service Protocol and Font metadata file handling issues</topic>
+    <affects>
+      <package>
+	<name>libXfont</name>
+	<range><lt>1.4.7_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2014-May/002431.html">
+	  <p>Ilja van Sprundel, a security researcher with IOActive, has
+	    discovered several issues in the way the libXfont library
+	    handles the responses it receives from xfs servers, and has
+	    worked with X.Org's security team to analyze, confirm, and fix
+	    these issues.</p>
+	  <p>Most of these issues stem from libXfont trusting the font server
+	    to send valid protocol data, and not verifying that the values
+	    will not overflow or cause other damage.  This code is commonly
+	    called from the X server when an X Font Server is active in the
+	    font path, so may be running in a setuid-root process depending
+	    on the X server in use.  Exploits of this path could be used by
+	    a local, authenticated user to attempt to raise privileges; or
+	    by a remote attacker who can control the font server to attempt
+	    to execute code with the privileges of the X server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0209</cvename>
+      <cvename>CVE-2014-0210</cvename>
+      <cvename>CVE-2014-0211</cvename>
+      <url>http://lists.x.org/archives/xorg-announce/2014-May/002431.html</url>
+    </references>
+    <dates>
+      <discovery>2014-05-13</discovery>
+      <entry>2014-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e7bb3885-da40-11e3-9ecb-2c4138874f7d">
     <topic>libxml2 -- lack of end-of-document check DoS</topic>
     <affects>
