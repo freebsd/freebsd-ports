@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qb
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,7 +14,6 @@ COMMENT=	PHP Accelerator designed mainly for graphic work
 LICENSE=	PHP301
 
 CONFIGURE_ARGS=	--with-cpu=native
-NO_WRKSUBDIR=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		tar:tgz
