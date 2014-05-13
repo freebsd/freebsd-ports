@@ -16,18 +16,19 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/roget
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/roget-fpw/roget/data
-	${MKDIR} ${PREFIX}/share/dict/roget-fpw/roget/gaiji
-	${INSTALL_DATA} ${WRKSRC}/roget/data/honmon ${PREFIX}/share/dict/roget-fpw/roget/data
-	${INSTALL_DATA} ${WRKSRC}/roget/gaiji/gai16h ${PREFIX}/share/dict/roget-fpw/roget/gaiji
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/roget-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme.pkg readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/roget-fpw/roget/data
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/roget-fpw/roget/gaiji
+	${INSTALL_DATA} ${WRKSRC}/roget/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/roget-fpw/roget/data
+	${INSTALL_DATA} ${WRKSRC}/roget/gaiji/gai16h \
+		${STAGEDIR}${PREFIX}/share/dict/roget-fpw/roget/gaiji
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/roget-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.pkg readme.txt \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
