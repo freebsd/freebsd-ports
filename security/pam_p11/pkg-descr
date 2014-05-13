@@ -18,4 +18,4 @@ certificate chains, certificate authorities, revocation
 lists or OCSP. Perfect for the small installation with no
 frills.
 
-WWW:	http://www.opensc-project.org/pam_p11/
+WWW: https://github.com/OpenSC/OpenSC/wiki/pam_p11-simple-RSA-authentication-with-PKCS%2311-modules
