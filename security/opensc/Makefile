@@ -24,7 +24,7 @@ OPENCT_DESC=	Use OpenCT backend
 CTAPI_DESC=	Use CT-API backend
 SM_DESC=	Enable secure messaging support
 
-USES=		pkgconfig gmake
+USES=		libtool:keepla pkgconfig gmake
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -41,12 +41,12 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENCT}
-LIB_DEPENDS+=	openct:${PORTSDIR}/security/openct
+LIB_DEPENDS+=	libopenct.so:${PORTSDIR}/security/openct
 CONFIGURE_ARGS+=--enable-openct
 .endif
 
 .if ${PORT_OPTIONS:MPCSC}
-LIB_DEPENDS+=	pcsclite:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 .else
 CONFIGURE_ARGS+=--disable-pcsc
 .endif
@@ -69,14 +69,5 @@ CONFIGURE_ARGS+=--enable-doc
 post-patch:
 	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} 's|install-data-am: install-htmlDATA install-man|install-data-am: install-man|' \
-		${WRKSRC}/doc/Makefile.in ${WRKSRC}/doc/tools/Makefile.in
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
