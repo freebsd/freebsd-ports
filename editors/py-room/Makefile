@@ -20,7 +20,6 @@ USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyRoom
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' \
