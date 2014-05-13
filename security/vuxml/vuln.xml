@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="efdd0edc-da3d-11e3-9ecb-2c4138874f7d">
+    <topic>libxml2 -- entity substituton DoS</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.8.0_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/05/06/4">
+	  <p>It was discovered that libxml2, a library providing
+	     support to read, modify and write XML files, incorrectly
+	     performs entity substituton in the doctype prolog, even if
+	     the application using libxml2 disabled any entity
+	     substitution.  A remote attacker could provide a
+	     specially-crafted XML file that, when processed, would lead
+	     to the exhaustion of CPU and memory resources or file
+	     descriptors.</p>
+	  <p>This issue was discovered by Daniel Berrange of Red Hat.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0191</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2014/05/06/4</url>
+      <url>https://git.gnome.org/browse/libxml2/tag/?id=CVE-2014-0191</url>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0191</url>
+    </references>
+    <dates>
+      <discovery>2013-12-03</discovery>
+      <entry>2014-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1959e847-d4f0-11e3-84b0-0018fe623f2b">
     <topic>OpenSSL -- NULL pointer dereference / DoS</topic>
     <affects>
