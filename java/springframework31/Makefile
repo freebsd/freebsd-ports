@@ -50,7 +50,6 @@ JAR_FILES=	org.springframework.aop.jar \
 PLIST_FILES +=	%%JAVAJARDIR%%/${f}
 .endfor
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRESRCS}
@@ -128,23 +127,21 @@ PORTDOCS=	*
 .endif
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}
 .for f in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/dist/${f:S/.jar/-${PORTVERSION}.RELEASE.jar/} \
-		${JAVAJARDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/dist/${f:S/.jar/-${PORTVERSION}.RELEASE.jar/} \
+		${STAGEDIR}${JAVAJARDIR}/${f}
 .endfor
-.if ${PORT_OPTIONS:MRESRCS}
 .for f in ${RESOURCE_FILES}
-	@${INSTALL_DATA} `${FIND} "${WRKSRC}" -name ${f} -print` \
-		${JAVASHAREDIR}/${f}
+	${INSTALL_DATA} `${FIND} "${WRKSRC}" -name ${f} -print | ${TAIL} -1` \
+		${STAGEDIR}${JAVASHAREDIR}/${f}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/changelog.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/notice.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-	@cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/changelog.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/notice.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
