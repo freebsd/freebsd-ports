@@ -1,11 +1,12 @@
-%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin/distel.beam
-%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin/distel_ie.beam
-%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin/fdoc.beam
-%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin/otp_doc.beam
-%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src/distel.erl
-%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src/distel_ie.erl
-%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
-%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src/otp_doc.erl
+lib/erlang/lib/distel
+lib/erlang/lib/distel-%%VERSION%%/ebin/distel.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/distel_ie.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/fdoc.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/otp_doc.beam
+lib/erlang/lib/distel-%%VERSION%%/src/distel.erl
+lib/erlang/lib/distel-%%VERSION%%/src/distel_ie.erl
+lib/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
+lib/erlang/lib/distel-%%VERSION%%/src/otp_doc.erl
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -49,8 +50,8 @@
 @dirrm %%EMACS_SITE_LISPDIR%%/distel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src
-@dirrm %%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin
-@dirrm %%LIB32DIR%%/erlang/lib/distel-%%VERSION%%
-@exec ln -sf distel-%%VERSION%% %D/%%LIB32DIR%%/erlang/lib/distel
-@unexec rm -f %D/%%LIB32DIR%%/erlang/lib/distel
+@dirrm lib/erlang/lib/distel-%%VERSION%%/src
+@dirrm lib/erlang/lib/distel-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/distel-%%VERSION%%
+@dirrmtry lib/erlang/lib
+@dirrmtry lib/erlang
