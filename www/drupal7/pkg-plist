@@ -231,6 +231,7 @@
 %%DRUPAL_BASE%%/modules/aggregator/tests/aggregator_test.module
 %%DRUPAL_BASE%%/modules/aggregator/tests/aggregator_test_atom.xml
 %%DRUPAL_BASE%%/modules/aggregator/tests/aggregator_test_rss091.xml
+%%DRUPAL_BASE%%/modules/aggregator/tests/aggregator_test_title_entities.xml
 %%DRUPAL_BASE%%/modules/block/block-admin-display-form.tpl.php
 %%DRUPAL_BASE%%/modules/block/block.admin.inc
 %%DRUPAL_BASE%%/modules/block/block.api.php
@@ -655,6 +656,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud_hook_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud_hook_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud_hook_test.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/entity_crud.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_query.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_query_access_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/entity_query_access_test.module
@@ -802,6 +804,7 @@
 %%DRUPAL_BASE%%/modules/syslog/syslog.install
 %%DRUPAL_BASE%%/modules/syslog/syslog.module
 %%DRUPAL_BASE%%/modules/syslog/syslog.test
+%%DRUPAL_BASE%%/modules/system/form.api.php
 %%DRUPAL_BASE%%/modules/system/html.tpl.php
 %%DRUPAL_BASE%%/modules/system/image.gd.inc
 %%DRUPAL_BASE%%/modules/system/language.api.php
@@ -834,6 +837,8 @@
 %%DRUPAL_BASE%%/modules/system/system.tokens.inc
 %%DRUPAL_BASE%%/modules/system/system.updater.inc
 %%DRUPAL_BASE%%/modules/system/theme.api.php
+%%DRUPAL_BASE%%/modules/system/tests/cron_queue_test.info
+%%DRUPAL_BASE%%/modules/system/tests/cron_queue_test.module
 %%DRUPAL_BASE%%/modules/taxonomy/taxonomy-term.tpl.php
 %%DRUPAL_BASE%%/modules/taxonomy/taxonomy.admin.inc
 %%DRUPAL_BASE%%/modules/taxonomy/taxonomy.api.php
@@ -1111,6 +1116,7 @@
 @dirrm %%DRUPAL_BASE%%/modules/tracker
 @dirrm %%DRUPAL_BASE%%/modules/toolbar
 @dirrm %%DRUPAL_BASE%%/modules/taxonomy
+@dirrm %%DRUPAL_BASE%%/modules/system/tests
 @dirrm %%DRUPAL_BASE%%/modules/system
 @dirrm %%DRUPAL_BASE%%/modules/syslog
 @dirrm %%DRUPAL_BASE%%/modules/statistics
