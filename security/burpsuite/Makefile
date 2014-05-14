@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	burpsuite
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	security java
 MASTER_SITES=	http://www.portswigger.net/burp/ \
 		LOCAL/sbz
