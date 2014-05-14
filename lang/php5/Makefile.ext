@@ -126,7 +126,7 @@ CONFIGURE_ARGS+=--enable-hash \
 .endif
 
 .if ${PHP_MODNAME} == "iconv"
-CONFIGURE_ARGS+=--with-iconv
+CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
 
 USES+=	iconv:translit
 .endif
@@ -206,7 +206,10 @@ MYSQLND_DESC=	Use MySQL Native Driver
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
-CONFIGURE_ARGS+=--enable-odbc
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
+
+CONFIGURE_ARGS+=--enable-odbc \
+		--with-unixODBC=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "openssl"
@@ -255,6 +258,8 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_odbc"
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
@@ -325,9 +330,9 @@ CONFIGURE_ARGS+=--enable-shmop
 
 .if ${PHP_MODNAME} == "simplexml"
 CONFIGURE_ARGS+=--enable-simplexml \
+		--with-pcre-dir=${LOCALBASE} \
 		--with-libxml-dir=${LOCALBASE}
 
-CFLAGS+=	-I${LOCALBASE}/include
 USES+=		pkgconfig
 USE_GNOME=	libxml2
 .endif
@@ -419,9 +424,10 @@ USE_PHP_BUILD=	yes
 
 .if ${PHP_MODNAME} == "xmlrpc"
 CONFIGURE_ARGS+=--with-xmlrpc \
-		--with-libxml-dir=${LOCALBASE}
+		--with-libxml-dir=${LOCALBASE} \
+		--with-iconv-dir=${LOCALBASE}
 
-USES+=		iconv
+USES+=		iconv::translit
 USE_GNOME=	libxml2
 
 PHP_HEADER_DIRS=libxmlrpc
@@ -549,22 +555,12 @@ post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
 
-.if ${PHP_MODNAME} == "odbc"
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
-.endif
-
 .if ${PHP_MODNAME} == "pdo_dblib"
 .	if ${PORT_OPTIONS:MMSSQL}
 LIB_DEPENDS+=	libsybdb.so:${PORTSDIR}/databases/freetds-msdblib
 .	else
 LIB_DEPENDS+=	libct.so:${PORTSDIR}/databases/freetds
 .	endif
-.endif
-
-.if ${PHP_MODNAME} == "pdo_odbc"
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
