@@ -21,8 +21,4 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--localstatedir=/var
 
-MAN5=		confman.conf.5
-MAN8=		confadmin.8 confaudit.8 confexport.8 confman.8 confsync.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
