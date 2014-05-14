@@ -17,11 +17,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	%%EMACS_SITE_LISPDIR%%/paredit.el
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${PREFIX}/${EMACS_SITE_LISPDIR}/paredit.el
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/paredit.el
 
 .include <bsd.port.mk>
