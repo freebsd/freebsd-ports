@@ -3,36 +3,27 @@
 
 PORTNAME=	mpdas
 PORTVERSION=	0.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
-MAINTAINER=	hrkfdn@gmail.com
+MAINTAINER=	henrik@affekt.org	
 COMMENT=	MPD AudioScrobbler written in C++ supporting the latest protocol
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libmpd.so:${PORTSDIR}/audio/libmpd
 
-USES=		pkgconfig
-NO_STAGE=	yes
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 
 USE_RC_SUBR=	mpdas
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/mpdas
+PLIST_FILES=	bin/mpdas \
+		man/man1/mpdas.1.gz
 
-MAN1=		mpdas.1
-MANCOMPRESSED=	no
-
-post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local#${PREFIX}#g; \
-		s#MANPREFIX#MAN_PREFIX#g' ${WRKSRC}/Makefile
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mpdas ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mpdas.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
