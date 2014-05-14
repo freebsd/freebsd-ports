@@ -7,7 +7,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.9.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -74,14 +74,23 @@ OPTIONS_DEFAULT=	SYSLOG DEBUG DAEMON CLAMAV CLAMAV_LOCAL \
 			HASH MYSQL MYSQL_COMPRESS PGSQL SQLITE3
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5
-USE_AUTOTOOLS=	libtool
+USES=		perl5 libtool shebangfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	${PTHREAD_CFLAGS}
+
+SHEBANG_FILES=	src/tools/dspam_logrotate \
+		src/tools/dspam_notify.pl \
+		src/tools/dspam_train.in \
+		webui/cgi-bin/templates/de/strings.pl \
+		webui/cgi-bin/templates/strings.pl \
+		webui/cgi-bin/templates/fr/strings.pl \
+		webui/cgi-bin/templates/es-es/strings.pl \
+		webui/cgi-bin/templates/pt-br/strings.pl \
+		webui/cgi-bin/*.cgi
 
 .ifdef(GDBS)
 CFLAGS+=	-g -DDEBUG
@@ -490,10 +499,6 @@ pre-configure:
 .endif
 
 post-install:
-	${CP} ${WRKSRC}/src/dspam.conf ${WRKSRC}/src/dspam.conf.sample
-	cd ${WRKSRC}/src/ && \
-		${INSTALL_DATA} dspam.conf.sample ${STAGEDIR}${PREFIX}/etc
-
 ########
 # stupid hack until I figure out where/how to patch
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
@@ -525,9 +530,6 @@ post-install:
 .endif	# NOPORTEXAMPLES
 
 .if ${PORT_OPTIONS:MWEBUI}
-.	for I in admin.cgi admingraph.cgi configure.pl dspam.cgi graph.cgi templates/strings.pl
-		${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/webui/cgi-bin/${I}
-.	endfor
 	${MV} ${WRKSRC}/webui/cgi-bin/configure.pl ${WRKSRC}/webui/cgi-bin/configure.pl.sample
 	cd ${WRKSRC}/webui/cgi-bin && ${MKDIR} ${STAGEDIR}${WWWDIR} && \
 		${INSTALL_SCRIPT} configure.pl.sample ${STAGEDIR}${WWWDIR}/ && \
