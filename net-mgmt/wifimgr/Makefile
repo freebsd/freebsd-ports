@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wifimgr
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 		CRITICAL
@@ -11,13 +10,10 @@ MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 MAINTAINER=	fbsd@opal.com
 COMMENT=	WiFi Networks Manager
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		desktop-file-utils pkgconfig tar:bzip2
 USE_XORG=	x11
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	NLS
 
@@ -31,7 +27,5 @@ CFLAGS+=	-DWITHOUT_NLS
 PLIST_SUB+=	NLS="@comment "
 MAKE_ENV+=	WITHOUT_NLS=${WITHOUT_NLS}
 .endif
-
-MAN8=		wifimgr.8
 
 .include <bsd.port.mk>
