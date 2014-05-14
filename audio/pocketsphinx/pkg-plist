@@ -9,9 +9,9 @@ include/pocketsphinx/pocketsphinx_export.h
 include/pocketsphinx/ps_lattice.h
 include/pocketsphinx/ps_mllr.h
 lib/libpocketsphinx.a
-lib/libpocketsphinx.la
 lib/libpocketsphinx.so
-lib/libpocketsphinx.so.2
+lib/libpocketsphinx.so.1
+lib/libpocketsphinx.so.1.1.0
 libdata/pkgconfig/pocketsphinx.pc
 man/man1/pocketsphinx_batch.1.gz
 man/man1/pocketsphinx_continuous.1.gz
