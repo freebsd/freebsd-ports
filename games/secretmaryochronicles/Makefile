@@ -2,59 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	secretmaryochronicles
-PORTVERSION=	1.10.git20120512
-PORTREVISION=	6
+PORTVERSION=	1.10.git20140514
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
-#		SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}
+# it could use github.com/Quintus/SMC, but it needs to be packaged
+# by hand as it uses submodules
 DISTNAME=	smc-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
-BROKEN=		Does not compile with graphics/cegui 0.8.3.
+BROKEN=		does not run, cegui 0.8 support still in development
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libCEGUIBase-0.so:${PORTSDIR}/graphics/cegui \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libpng15.so:${PORTSDIR}/graphics/png
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libfreeimage.so:${PORTSDIR}/graphics/freeimage \
+		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26
+BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
+		bison:${PORTSDIR}/devel/bison
 
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	aclocal:env autoheader:env autoconf:env automake:env
-GNU_CONFIGURE=	yes
+USES=		tar:bzip2 cmake:outsource gettext pkgconfig compiler:c++11-lib
 USE_SDL=	sdl image mixer ttf
-USE_GL=		gl glu
-USES=		gettext gmake pkgconfig
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-DBOOST_FILESYSTEM_VERSION=3
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GL=		gl
 
 DATADIR=	${PREFIX}/share/smc
 
-WRKSRC=		${WRKDIR}/smc
+WRKSRC=		${WRKDIR}/SMC
 
-PORTDOCS=	controls.html history.html style.css
+CMAKE_SOURCE_PATH=${WRKSRC}/smc
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/smc
+PORTDATA=	*
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/autogen.sh
-
-run-autotools:
-	cd ${WRKSRC} && ${SH} ./autogen.sh
-	@${REINPLACE_CMD} -e '/^LIBS =/ s|$$|$$(INTLLIBS)|' \
-		${WRKSRC}/src/Makefile.in
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
-.  endfor
-.endif
+	cd ${WRKSRC}/smc/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
