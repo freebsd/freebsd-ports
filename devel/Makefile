@@ -4315,6 +4315,7 @@
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
+    SUBDIR += rubygem-nori
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
