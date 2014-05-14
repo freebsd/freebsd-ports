@@ -4,3 +4,7 @@ lib/libbgpdump.so
 include/bgpdump_attr.h
 include/bgpdump_formats.h
 include/bgpdump_lib.h
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
