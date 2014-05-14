@@ -8,6 +8,12 @@ libexec/confman/confexport
 libexec/confman/conflock
 libexec/confman/confman_precommit
 libexec/confman/confsync
+man/man5/confman.conf.5.gz
+man/man8/confadmin.8.gz
+man/man8/confaudit.8.gz
+man/man8/confexport.8.gz
+man/man8/confman.8.gz
+man/man8/confsync.8.gz
 sbin/confadmin
 sbin/confman
 %%DATADIR%%/confadmindoc.sh
