@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	nano
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3b2
+DISTVERSION=	2.3.3pre2
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	http://www.nano-editor.org/dist/test/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	eadler@FreeBSD.org
