@@ -11,16 +11,12 @@ etc/c-icap/srv_url_check.conf.default
 etc/c-icap/virus_scan.conf.default
 @exec [ -f %B/virus_scan.conf ] || cp %B/%f %B/virus_scan.conf
 lib/c_icap/clamav_mod.a
-lib/c_icap/clamav_mod.la
 lib/c_icap/clamav_mod.so
 lib/c_icap/clamd_mod.a
-lib/c_icap/clamd_mod.la
 lib/c_icap/clamd_mod.so
 lib/c_icap/srv_url_check.a
-lib/c_icap/srv_url_check.la
 lib/c_icap/srv_url_check.so
 lib/c_icap/virus_scan.a
-lib/c_icap/virus_scan.la
 lib/c_icap/virus_scan.so
 man/man8/c-icap-mods-sguardDB.8.gz
 %%DATADIR%%/templates/srv_url_check/en/DENY
