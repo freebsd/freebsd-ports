@@ -15,25 +15,16 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	README
-PORTEXAMPLES=	example.c
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bgpdump ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/libbgpdump.* ${PREFIX}/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/bgpdump ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/libbgpdump.* ${STAGEDIR}${PREFIX}/lib
 .for i in bgpdump_attr.h bgpdump_formats.h bgpdump_lib.h
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/include
 .endfor
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.c ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/example.c ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

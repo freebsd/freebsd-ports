@@ -12,4 +12,4 @@ Entry formats:
           - BGP messages (OPEN, UPDATE, NOTIFY, KEEPALIVE)
           - BGP state changes
 
-WWW:	http://www.ris.ripe.net/source/
+WWW: http://www.ris.ripe.net/source/
