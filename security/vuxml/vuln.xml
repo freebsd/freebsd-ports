@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cdf450fc-db52-11e3-a9fc-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>34.0.1847.137</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>3 security fixes in this release:</p>
+	  <ul>
+	    <li>[358038] High CVE-2014-1740: Use-after-free in WebSockets.
+	      Credit to Collin Payne.</li>
+	    <li>[349898] High CVE-2014-1741: Integer overflow in DOM ranges.
+	      Credit to John Butler.</li>
+	    <li>[356690] High CVE-2014-1742: Use-after-free in editing. Credit
+	      to cloudfuzzer.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1740</cvename>
+      <cvename>CVE-2014-1741</cvename>
+      <cvename>CVE-2014-1742</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-05-13</discovery>
+      <entry>2014-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b060ee50-daba-11e3-99f2-bcaec565249c">
     <topic>libXfont -- X Font Service Protocol and Font metadata file handling issues</topic>
     <affects>
