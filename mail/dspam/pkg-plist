@@ -14,11 +14,13 @@ bin/dspam_merge
 %%PGSQL%%bin/dspam_pg2int8
 bin/dspam_stats
 bin/dspam_train
-@unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
-etc/dspam.conf.sample
-@exec chown %%DSPAM_OWNER%%:%%DSPAM_GROUP%% %D/%F
-@exec chmod 640 %D/%F
-@exec cp -np %D/%F %B/dspam.conf
+@owner %%DSPAM_OWNER%%
+@group %%DSPAM_GROUP%%
+@mode 640
+@sample etc/dspam.conf.sample
+@mode
+@group
+@owner
 include/dspam/buffer.h
 include/dspam/config.h
 include/dspam/config_shared.h
@@ -35,9 +37,9 @@ include/dspam/read_config.h
 include/dspam/storage_driver.h
 include/dspam/tokenizer.h
 lib/libdspam.a
-lib/libdspam.la
 lib/libdspam.so
 lib/libdspam.so.7
+lib/libdspam.so.7.0.0
 man/man1/dspam.1.gz
 man/man1/dspam_clean.1.gz
 man/man1/dspam_dump.1.gz
@@ -54,21 +56,21 @@ man/man3/dspam_getsource.3.gz
 man/man3/dspam_destroy.3.gz
 man/man3/dspam_detach.3.gz
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.a
-%%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.la
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so.7
+%%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so.7.0.0
 %%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.a
-%%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.la
 %%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.so
 %%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.so.7
+%%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.so.7.0.0
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.a
-%%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.la
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so.7
+%%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so.7.0.0
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.a
-%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.la
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7
+%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7.0.0
 @dirrm lib/dspam
 libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
@@ -226,5 +228,6 @@ firstrun.txt.sample
 firstspam.txt.sample
 quarantinefull.txt.sample
 @cwd /
+@dirrmtry %%LOG_DIR%%
 @dirrm %%DSPAM_HOME%%
 @exec chown %%DSPAM_HOME_OWNER%%:%%DSPAM_HOME_GROUP%% %%DSPAM_HOME%%
