@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	fgrun
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	games
-MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAGNAME}.tar.gz?dummy=
+MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAGNAME}.tar.gz?dummy= \
+		LOCAL/martymac
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	A graphical frontend to run FlightGear Flight Simulator
@@ -23,13 +23,12 @@ WRKSRC=		${WRKDIR}/${GO_ACCOUNT}-${GO_PROJECT}
 
 CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
 
-USE_GCC=	yes
 USES=		cmake
 USE_GL=		gl
 
 GO_ACCOUNT=	fg
 GO_PROJECT=	fgrun
-GO_TAGNAME=	90e936c01e28feac4a9c3e28d5227980fb8f1e1d
+GO_TAGNAME=	e13e42811239008fded7685d8f2311bb571f6a58
 FETCH_ARGS?=	-o ${DISTDIR}/${DISTFILES}
 
 OPTIONS_DEFINE=	NLS

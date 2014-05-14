@@ -1,12 +1,14 @@
---- src/fgrun_pty.cxx.orig	2008-10-18 17:32:33.000000000 +0800
-+++ src/fgrun_pty.cxx	2008-10-18 17:33:12.000000000 +0800
-@@ -28,6 +28,9 @@
- #  include <pty.h>
+--- src/fgrun_pty.cxx.orig	2014-05-12 04:35:04.000000000 +0800
++++ src/fgrun_pty.cxx	2014-05-12 04:35:29.000000000 +0800
+@@ -40,6 +40,11 @@
+ #include <fcntl.h>	// O_RDWR
  #endif
  
 +#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <termios.h>
 +#include <libutil.h>
 +
- #if defined(HAVE_UTMP_H)
- #  include <utmp.h>
- #endif
+ #include <stdlib.h> //needed on some linux systems for grantpt()
+ #include <string.h> //strcpy is not necessarily already included
+ /**
