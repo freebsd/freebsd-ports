@@ -3,9 +3,10 @@
 
 PORTNAME=	webkitgtk
 PORTVERSION=	1.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	pywebkitgtk
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -17,12 +18,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
-PROJECTHOST=	pywebkitgtk
-
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20 libxslt pygtk2
-USES=		gmake pathfix pkgconfig
 USE_PYTHON=	yes
 
 .include <bsd.port.mk>
