@@ -3,22 +3,8 @@ bin/socklog-conf
 bin/socklog
 bin/tryto
 bin/uncat
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/benefits.html
-%%PORTDOCS%%%%DOCSDIR%%/configuration.html
-%%PORTDOCS%%%%DOCSDIR%%/examples.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/network.html
-%%PORTDOCS%%%%DOCSDIR%%/notify.html
-%%PORTDOCS%%%%DOCSDIR%%/readme.solaris.html
-%%PORTDOCS%%%%DOCSDIR%%/socklog-check.8.html
-%%PORTDOCS%%%%DOCSDIR%%/socklog-conf.8.html
-%%PORTDOCS%%%%DOCSDIR%%/socklog.8.html
-%%PORTDOCS%%%%DOCSDIR%%/tryto.1.html
-%%PORTDOCS%%%%DOCSDIR%%/uncat.1.html
-%%PORTDOCS%%%%DOCSDIR%%/upgrade.html
-%%PORTDOCS%%%%DOCSDIR%%/usedietlibc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/tryto.1.gz
+man/man1/uncat.1.gz
+man/man8/socklog-check.8.gz
+man/man8/socklog-conf.8.gz
+man/man8/socklog.8.gz
