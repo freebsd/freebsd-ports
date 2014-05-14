@@ -11,8 +11,7 @@ COMMENT=	Helps to install application configuration files
 
 LICENSE=	GPLv3
 
-USES=		perl5
-USE_BZIP2=	yes
+USES=		perl5 tar:bzip2
 HAS_CONFIGURE=	yes
 
 USE_AUTOTOOLS=	automake aclocal autoconf
