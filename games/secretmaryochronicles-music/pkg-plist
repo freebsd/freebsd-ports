@@ -48,3 +48,5 @@
 @dirrm %%DATADIR%%/music/overworld
 @dirrm %%DATADIR%%/music/land
 @dirrm %%DATADIR%%/music/game
+@dirrmtry %%DATADIR%%/music
+@dirrmtry %%DATADIR%%
