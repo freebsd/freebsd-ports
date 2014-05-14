@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gnome3/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/x11/gnome3/Makefile 19608 2014-05-07 09:56:12Z gusi $
 
 PORTNAME=	gnome3
 PORTVERSION=	3.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -80,7 +80,7 @@ RUN_DEPENDS+=	empathy>=3.0.0:${PORTSDIR}/net-im/empathy \
 		alacarte>=3.0.0:${PORTSDIR}/deskutils/alacarte
 
 .if ${PORT_OPTIONS:MMAPI}
-#RUN_DEPENDS+=	evolution-mapi>=3.0.0:${PORTSDIR}/mail/evolution-mapi
+RUN_DEPENDS+=	evolution-mapi>=3.0.0:${PORTSDIR}/mail/evolution-mapi
 .endif
 .endif # !gnome3-lite section
 

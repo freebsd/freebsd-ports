@@ -1,9 +1,7 @@
 bin/gnome-documents
 lib/gnome-documents/girepository-1.0/Gd-1.0.typelib
 lib/gnome-documents/girepository-1.0/GdPrivate-1.0.typelib
-lib/gnome-documents/libgd.la
 lib/gnome-documents/libgd.so
-lib/gnome-documents/libgdprivate-1.0.la
 lib/gnome-documents/libgdprivate-1.0.so
 libexec/gnome-documents-service
 man/man1/gnome-documents.1.gz

@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports-experimental/trunk/net/vinagre/Makefile 19501 2014-04-14 19:41:06Z gusi $
+#  $MCom: ports/trunk/net/vinagre/Makefile 19642 2014-05-13 06:29:21Z gusi $
 
 PORTNAME=	vinagre
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
+RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
 		shared-mime-info tar:xz
@@ -31,30 +31,18 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	TELEPATHY RDP
 OPTIONS_DEFAULT=TELEPATHY RDP
 TELEPATHY_DESC=	Telepathy integration
 RDP_DESC=	MS Windows remote desktop support
+TELEPATHY_CONFIGURE_WITH=	telepathy
+TELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+			libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+RDP_CONFIGURE_ENABLE=	rdp
+RDP_RUN_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTELEPATHY}
-LIB_DEPENDS+=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-PLIST_SUB+=	TELEPATHY=""
-.else
-CONFIGURE_ARGS+=--without-telepathy
-PLIST_SUB+=	TELEPATHY="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRDP}
-RUN_DEPENDS+=	xfreerdp:${PORTSDIR}/net/freerdp
-CONFIGURE_ARGS+=--enable-rdp
-PLIST_SUB+=	RDP=""
-.else
-CONFIGURE_ARGS+=--disable-rdp
-PLIST_SUB+=	RDP="@comment "
-.endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

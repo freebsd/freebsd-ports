@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-mines/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/games/gnome-mines/Makefile 19643 2014-05-13 06:32:01Z gusi $
 
 PORTNAME=	gnome-mines
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

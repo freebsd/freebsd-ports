@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/www/epiphany/Makefile 19437 2014-04-01 13:07:17Z gusi $
+#   $MCom: ports/trunk/www/epiphany/Makefile 19626 2014-05-12 16:13:10Z gusi $
 
 PORTNAME=	epiphany
-PORTVERSION=	3.12.0
-PORTREVISION=	1
+PORTVERSION=	3.12.1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

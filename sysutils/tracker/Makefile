@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/tracker/Makefile 19580 2014-04-26 08:25:59Z gusi $
+#    $MCom: ports/trunk/sysutils/tracker/Makefile 19616 2014-05-09 09:31:40Z gusi $
 
 PORTNAME=	tracker
-PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -16,6 +15,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libhal.so:${PORTSDIR}/sysutils/hal \
 		libraptor.so:${PORTSDIR}/textproc/raptor \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libicutu.so:${PORTSDIR}/devel/icu \
 		libmediaart-1.0.so:${PORTSDIR}/multimedia/libmediaart \
 		librest-0.7.so:${PORTSDIR}/devel/librest
 RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
@@ -38,6 +38,8 @@ CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \
 		--with-session-bus-services-dir=${LOCALBASE}/share/dbus-1/services \
 		--disable-libiptcdata --enable-miner-fs \
 		--disable-meegotouch  --disable-miner-flickr \
+		--enable-icu-charset-detection \
+		--disable-enca \
 		--enable-tracker-preferences \
 		--disable-libosinfo \
 		--enable-generic-media-extractor=gstreamer

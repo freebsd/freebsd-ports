@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/five-or-more/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/games/five-or-more/Makefile 19620 2014-05-12 08:22:17Z gusi $
 
 PORTNAME=	five-or-more
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

@@ -1,16 +1,16 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/archivers/file-roller/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/archivers/file-roller/Makefile 19645 2014-05-13 06:55:22Z gusi $
 
 PORTNAME=	file-roller
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An archive manager for zip files, tar, etc
+COMMENT=	Archive manager for zip files, tar, etc
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
@@ -30,24 +30,19 @@ CONFIGURE_ARGS=	--disable-packagekit
 PORTDOCS=	AUTHORS NEWS README TODO ChangeLog
 GLIB_SCHEMAS=	org.gnome.FileRoller.gschema.xml
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	NAUTILUS
 OPTIONS_DEFAULT=NAUTILUS
 NAUTILUS_DESC=	Enable Nautilus extension
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNAUTILUS}
-USE_GNOME+=	nautilus3
-PLIST_SUB+=	NAUTILUS=""
-.else
-PLIST_SUB+=	NAUTILUS="@comment "
-CONFIGURE_ARGS+=--disable-nautilus-actions
-.endif
+NAUTILUS_USE=	GNOME=nautilus3
+NAUTILUS_CONFIGURE_ENABLE=	nautilus-actions
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/fr-command-tar.c \
 		${WRKSRC}/src/fr-command-zip.c
+
+.include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
@@ -56,8 +51,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-fileroller.so
 
+.if ${PORT_OPTIONS:MNAUTILUS}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-fileroller.so
+.endif	
 
 .include <bsd.port.mk>
-

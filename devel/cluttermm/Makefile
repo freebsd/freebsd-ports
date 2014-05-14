@@ -1,10 +1,9 @@
 # Created by: Gustau Pérez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/cluttermm/Makefile 19593 2014-04-28 11:41:58Z gusi $
+#   $MCom: ports/trunk/devel/cluttermm/Makefile 19621 2014-05-12 08:35:22Z gusi $
 
 PORTNAME=	cluttermm
-PORTVERSION=	1.17.2
-PORTREVISION=	1
+PORTVERSION=	1.17.3
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

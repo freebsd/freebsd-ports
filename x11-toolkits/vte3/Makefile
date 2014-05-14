@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/vte3/Makefile 19582 2014-04-26 16:58:36Z gusi $
+#   $MCom: ports/trunk/x11-toolkits/vte3/Makefile 19635 2014-05-12 20:33:07Z gusi $
 
 PORTNAME?=	vte
-PORTVERSION=	0.36.1
+PORTVERSION=	0.36.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/gnome-pty-helper/vte/}/${PORTVERSION:R}

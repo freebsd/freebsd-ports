@@ -26,6 +26,36 @@ share/help/C/bijiben/search.page
 share/help/C/bijiben/share.page
 share/help/C/bijiben/figures/HighContrast_apps_scalable_bijiben.svg
 share/help/C/bijiben/figures/notes-scr.png
+share/help/cs/bijiben/colors.page
+share/help/cs/bijiben/create.page
+share/help/cs/bijiben/cut-copy-paste.page
+share/help/cs/bijiben/delete.page
+share/help/cs/bijiben/formatting.page
+share/help/cs/bijiben/index.page
+share/help/cs/bijiben/introduction.page
+share/help/cs/bijiben/legal.xml
+share/help/cs/bijiben/listing.page
+share/help/cs/bijiben/notebooks.page
+share/help/cs/bijiben/rename.page
+share/help/cs/bijiben/search.page
+share/help/cs/bijiben/share.page
+share/help/cs/bijiben/figures/HighContrast_apps_scalable_bijiben.svg
+share/help/cs/bijiben/figures/notes-scr.png
+share/help/el/bijiben/colors.page
+share/help/el/bijiben/create.page
+share/help/el/bijiben/cut-copy-paste.page
+share/help/el/bijiben/delete.page
+share/help/el/bijiben/formatting.page
+share/help/el/bijiben/index.page
+share/help/el/bijiben/introduction.page
+share/help/el/bijiben/legal.xml
+share/help/el/bijiben/listing.page
+share/help/el/bijiben/notebooks.page
+share/help/el/bijiben/rename.page
+share/help/el/bijiben/search.page
+share/help/el/bijiben/share.page
+share/help/el/bijiben/figures/HighContrast_apps_scalable_bijiben.svg
+share/help/el/bijiben/figures/notes-scr.png
 share/help/es/bijiben/colors.page
 share/help/es/bijiben/create.page
 share/help/es/bijiben/cut-copy-paste.page
@@ -71,6 +101,21 @@ share/help/hu/bijiben/search.page
 share/help/hu/bijiben/share.page
 share/help/hu/bijiben/figures/HighContrast_apps_scalable_bijiben.svg
 share/help/hu/bijiben/figures/notes-scr.png
+share/help/pt_BR/bijiben/colors.page
+share/help/pt_BR/bijiben/create.page
+share/help/pt_BR/bijiben/cut-copy-paste.page
+share/help/pt_BR/bijiben/delete.page
+share/help/pt_BR/bijiben/formatting.page
+share/help/pt_BR/bijiben/index.page
+share/help/pt_BR/bijiben/introduction.page
+share/help/pt_BR/bijiben/legal.xml
+share/help/pt_BR/bijiben/listing.page
+share/help/pt_BR/bijiben/notebooks.page
+share/help/pt_BR/bijiben/rename.page
+share/help/pt_BR/bijiben/search.page
+share/help/pt_BR/bijiben/share.page
+share/help/pt_BR/bijiben/figures/HighContrast_apps_scalable_bijiben.svg
+share/help/pt_BR/bijiben/figures/notes-scr.png
 share/icons/HighContrast/scalable/apps/bijiben.svg
 share/icons/hicolor/16x16/apps/bijiben.png
 share/icons/hicolor/22x22/apps/bijiben.png
@@ -142,10 +187,16 @@ share/mime/packages/bijiben.xml
 @dirrm %%DATADIR%%/icons/hicolor/16x16
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
+@dirrm share/help/pt_BR/bijiben/figures
+@dirrm share/help/pt_BR/bijiben
 @dirrm share/help/hu/bijiben/figures
 @dirrm share/help/hu/bijiben
 @dirrm share/help/fr/bijiben/figures
 @dirrm share/help/fr/bijiben
 @dirrm share/help/es/bijiben/figures
 @dirrm share/help/es/bijiben
+@dirrm share/help/el/bijiben/figures
+@dirrm share/help/el/bijiben
+@dirrm share/help/cs/bijiben/figures
+@dirrm share/help/cs/bijiben
 @dirrm %%DATADIR%%

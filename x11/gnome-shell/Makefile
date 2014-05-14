@@ -1,9 +1,9 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/x11/gnome-shell/Makefile 19422 2014-03-31 21:02:35Z kwm $
+#   $MCom: ports/trunk/x11/gnome-shell/Makefile 19665 2014-05-14 10:36:28Z gusi $
 
 PORTNAME=	gnome-shell
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -58,9 +58,5 @@ post-patch:
 		${WRKSRC}/browser-plugin/Makefile.in
 	@${REINPLACE_CMD} -e 's|libnm-glib libnm-util ||g' \
 		${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnome-shell/libgnome-shell*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnome-shell-browser-plugin.so
 
 .include <bsd.port.mk>

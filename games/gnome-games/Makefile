@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/games/gnome-games/Makefile 19551 2014-04-16 20:14:17Z gusi $
+#   $MCom: ports/trunk/games/gnome-games/Makefile 19643 2014-05-13 06:32:01Z gusi $
 
 PORTNAME=	gnome-games
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
+
 CATEGORIES=	games gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty

@@ -1,9 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/irc/polari/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/irc/polari/Makefile 19667 2014-05-14 11:12:23Z gusi $
 
 PORTNAME=	polari
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,7 +23,7 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/polari/libpolari-1.0.so
+#post-install:
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/polari/libpolari-1.0.so
 
 .include <bsd.port.mk>

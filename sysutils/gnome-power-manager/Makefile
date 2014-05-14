@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/sysutils/gnome-power-manager/Makefile 19443 2014-04-02 07:40:41Z gusi $
+#   $MCom: ports/trunk/sysutils/gnome-power-manager/Makefile 19622 2014-05-12 09:47:14Z gusi $
 
 PORTNAME=	gnome-power-manager
-PORTVERSION=	3.12.0
+PORTVERSION=	3.12.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,7 +13,7 @@ COMMENT=	Power management system for the GNOME Desktop
 
 LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack
 MAKE_JOBS_UNSAFE=yes

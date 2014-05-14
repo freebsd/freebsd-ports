@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/misc/gnome-devel-docs/Makefile 19527 2014-04-15 09:54:06Z gusi $
+#   $MCom: ports/trunk/misc/gnome-devel-docs/Makefile 19639 2014-05-13 05:37:44Z gusi $
 
 PORTNAME=	gnome-devel-docs
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

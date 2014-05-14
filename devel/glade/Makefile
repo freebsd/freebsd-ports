@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/devel/glade/Makefile 19525 2014-04-15 07:00:19Z gusi $
+#   $MCom: ports/trunk/devel/glade/Makefile 19660 2014-05-13 20:38:03Z gusi $
 
 PORTNAME=	glade
-PORTVERSION=	3.18.2
+PORTVERSION=	3.18.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,19 +26,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCSDIR=	${PREFIX}/share/doc/gladeui-2
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	3
-USE_GNOME+=	py3gobject3
-PLIST_SUB+=	PYTHON:=""
-CONFIGURE_ARGS+=--enable-python
-.else
-CONFIGURE_ARGS+=--disable-python
-PLIST_SUB+=	PYTHON:="@comment "
-.endif
+PYTHON_CONFIGURE_ENABLE=	python
+PYTHON_USE=	PYTHON=3 GNOME=py3gobject3
 
 .include <bsd.port.mk>

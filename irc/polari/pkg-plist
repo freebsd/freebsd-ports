@@ -9,6 +9,7 @@ share/glib-2.0/schemas/org.gnome.polari.gschema.xml
 share/icons/hicolor/256x256/apps/polari.png
 share/locale/ar/LC_MESSAGES/polari.mo
 share/locale/ca/LC_MESSAGES/polari.mo
+share/locale/ca@valencia/LC_MESSAGES/polari.mo
 share/locale/cs/LC_MESSAGES/polari.mo
 share/locale/da/LC_MESSAGES/polari.mo
 share/locale/de/LC_MESSAGES/polari.mo

@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/x11/gnome-desktop/Makefile 19546 2014-04-16 12:35:04Z gusi $
+#   $MCom: ports/trunk/x11/gnome-desktop/Makefile 19656 2014-05-13 18:19:46Z gusi $
 
 PORTNAME=	gnome-desktop
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -42,9 +42,6 @@ post-patch:
 		${WRKSRC}/desktop-docs/fdl/Makefile.in \
 		${WRKSRC}/desktop-docs/gpl/Makefile.in \
 		${WRKSRC}/desktop-docs/lgpl/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnome-desktop-3.so.10
 
 .include <bsd.port.mk>
 

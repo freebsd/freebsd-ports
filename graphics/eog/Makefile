@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/graphics/eog/Makefile 19504 2014-04-14 21:10:37Z gusi $
+#   $MCom: ports/trunk/graphics/eog/Makefile 19640 2014-05-13 06:01:37Z gusi $
 
 PORTNAME=	eog
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,18 +11,19 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The Eye Of Gnome image viewer
 
-BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
+BUILD_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		itstool:${PORTSDIR}/textproc/itstool \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libpeas-gtk-1.0.so:${PORTSDIR}/devel/libpeas \
 		liblcms.so:${PORTSDIR}/graphics/lcms
-RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_GNOME=	gnomeprefix intlhack librsvg2 gtk30 gnomedesktop3 \
 		introspection:build
+USES=		desktop-file-utils gettext gmake pathfix \
+		pkgconfig tar:xz
 INSTALLS_ICONS=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

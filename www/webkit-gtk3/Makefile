@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19651 2014-05-13 09:43:00Z kwm $
 
 PORTNAME=	webkit
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3
@@ -39,6 +39,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_DOLT_BASH=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-svg-fonts \
 		--enable-geolocation \
@@ -67,53 +68,33 @@ SHEBANG_FILES=	\
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk3
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
 
-OPTIONS_DEFINE=	WEBGL WEBAUDIO DEBUG FULLDEBUG WEBKIT2
-OPTIONS_DEFAULT=WEBGL WEBAUDIO WEBKIT2
-WEBKIT2_DESC=	Build WebKit2 API library
+OPTIONS_DEFINE=	WEBGL WEBAUDIO DEBUG FULLDEBUG
+OPTIONS_DEFAULT=WEBGL WEBAUDIO
 WEBAUDIO_DESC=	Web audio support
 WEBGL_DESC=	Enable Web GL support
 DEBUG_DESC=	Just enable debug symbols
 FULLDEBUG_DESC=	Enable asserts and other debug support
 
+WEBGL_CONFIGURE_ENABLE=	webgl
+WEBGL_USE=	GL=gl
+WEBAUDIO_CONFIGURE_ENABLE=	web-audio
+FULLDEBUG_CONFIGURE_ENABLE=	debug
+DEBUG_CONFIGURE_ON=	--enable-debug-symbols=yes
+DEBUG_CONFIGURE_OFF=	--disable-debug-symbols
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWEBGL}
-USE_GL=		gl
-CONFIGURE_ARGS+=--enable-webgl
-.else
-CONFIGURE_ARGS+=--disable-webgl
-.endif
-
-.if ${PORT_OPTIONS:MWEBAUDIO}
-CONFIGURE_ARGS+=--enable-web-audio
-.else
-CONFIGURE_ARGS+=--disable-web-audio
-.endif
-
-.if ${PORT_OPTIONS:MFULLDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.else
-CONFIGURE_ARGS+=--disable-debug
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug-symbols=yes
-.endif
 
 # gtest to use <tr1/tuple,> while libc++ only has <tuple>
 CPPFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE
 # Shutup warning spam
 CXXFLAGS+=	-Wno-c++11-extensions -Qunused-arguments
 
-.if ${PORT_OPTIONS:MWEBKIT2}
 CONFIGURE_ARGS+=--enable-webkit2
-PLIST_SUB+=	WEBKIT2=""
-
 # We need clang + libc++ or gcc 4.7+. gcc has libstdc++ conflict between
 # gcc port and base. This originates from icu
 CXXFLAGS+=	-stdlib=libc++
 LDFLAGS+=	-stdlib=libc++
-. if ${OSVERSION}<1000019
+.if ${OSVERSION}<1000019
 BUILD_DEPENDS+=	clang33>=3.3_1:${PORTSDIR}/lang/clang33 \
 		libc++>=0:${PORTSDIR}/devel/libc++
 RUN_DEPENDS+=	libc++>=0:${PORTSDIR}/devel/libc++
@@ -121,17 +102,6 @@ CC=		clang33
 CXX=		clang++33
 CPP=		clang-cpp33
 CONFIGURE_ENV+=	CC=${CC} CXX=${CXX} CPP=${CPP}
-. endif
-.else
-# we need clang also for !Webkit2 builds
-. if ${OSVERSION}<1000019
-BUILD_DEPENDS+=	clang33>=3.3_1:${PORTSDIR}/lang/clang33
-CC=		clang33
-CXX=		clang++33
-CPP=		clang-cpp33
-CONFIGURE_ARGS+=--disable-webkit2
-. endif
-PLIST_SUB+=	WEBKIT2="@comment "
 .endif
 
 .if ${ARCH} == powerpc64
@@ -166,7 +136,5 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Programs/MiniBrowser \
 		${STAGEDIR}${PREFIX}/bin/
 .endif
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkit2gtk-3.0/injected-bundle/libwebkit2gtkinjectedbundle.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
 .include <bsd.port.post.mk>

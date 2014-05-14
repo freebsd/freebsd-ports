@@ -29,6 +29,31 @@ share/help/C/gnome-system-monitor/process-status.page
 share/help/C/gnome-system-monitor/process-update-speed.page
 share/help/C/gnome-system-monitor/solaris-mode.page
 share/help/C/gnome-system-monitor/units.page
+share/help/de/gnome-system-monitor/commandline.page
+share/help/de/gnome-system-monitor/cpu-check.page
+share/help/de/gnome-system-monitor/cpu-mem-normal.page
+share/help/de/gnome-system-monitor/cpu-multicore.page
+share/help/de/gnome-system-monitor/fs-device.page
+share/help/de/gnome-system-monitor/fs-diskusage.page
+share/help/de/gnome-system-monitor/fs-info.page
+share/help/de/gnome-system-monitor/fs-showall.page
+share/help/de/gnome-system-monitor/index.page
+share/help/de/gnome-system-monitor/legal.xml
+share/help/de/gnome-system-monitor/mem-check.page
+share/help/de/gnome-system-monitor/mem-swap.page
+share/help/de/gnome-system-monitor/memory-map-use.page
+share/help/de/gnome-system-monitor/net-bits.page
+share/help/de/gnome-system-monitor/process-explain.page
+share/help/de/gnome-system-monitor/process-files.page
+share/help/de/gnome-system-monitor/process-identify-file.page
+share/help/de/gnome-system-monitor/process-identify-hog.page
+share/help/de/gnome-system-monitor/process-kill.page
+share/help/de/gnome-system-monitor/process-many.page
+share/help/de/gnome-system-monitor/process-priority-change.page
+share/help/de/gnome-system-monitor/process-status.page
+share/help/de/gnome-system-monitor/process-update-speed.page
+share/help/de/gnome-system-monitor/solaris-mode.page
+share/help/de/gnome-system-monitor/units.page
 share/help/el/gnome-system-monitor/commandline.page
 share/help/el/gnome-system-monitor/cpu-check.page
 share/help/el/gnome-system-monitor/cpu-mem-normal.page
@@ -104,6 +129,31 @@ share/help/fr/gnome-system-monitor/process-status.page
 share/help/fr/gnome-system-monitor/process-update-speed.page
 share/help/fr/gnome-system-monitor/solaris-mode.page
 share/help/fr/gnome-system-monitor/units.page
+share/help/hu/gnome-system-monitor/commandline.page
+share/help/hu/gnome-system-monitor/cpu-check.page
+share/help/hu/gnome-system-monitor/cpu-mem-normal.page
+share/help/hu/gnome-system-monitor/cpu-multicore.page
+share/help/hu/gnome-system-monitor/fs-device.page
+share/help/hu/gnome-system-monitor/fs-diskusage.page
+share/help/hu/gnome-system-monitor/fs-info.page
+share/help/hu/gnome-system-monitor/fs-showall.page
+share/help/hu/gnome-system-monitor/index.page
+share/help/hu/gnome-system-monitor/legal.xml
+share/help/hu/gnome-system-monitor/mem-check.page
+share/help/hu/gnome-system-monitor/mem-swap.page
+share/help/hu/gnome-system-monitor/memory-map-use.page
+share/help/hu/gnome-system-monitor/net-bits.page
+share/help/hu/gnome-system-monitor/process-explain.page
+share/help/hu/gnome-system-monitor/process-files.page
+share/help/hu/gnome-system-monitor/process-identify-file.page
+share/help/hu/gnome-system-monitor/process-identify-hog.page
+share/help/hu/gnome-system-monitor/process-kill.page
+share/help/hu/gnome-system-monitor/process-many.page
+share/help/hu/gnome-system-monitor/process-priority-change.page
+share/help/hu/gnome-system-monitor/process-status.page
+share/help/hu/gnome-system-monitor/process-update-speed.page
+share/help/hu/gnome-system-monitor/solaris-mode.page
+share/help/hu/gnome-system-monitor/units.page
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ar/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/as/LC_MESSAGES/gnome-system-monitor.mo
@@ -236,12 +286,16 @@ share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm share/help/hu/gnome-system-monitor
+@dirrmtry share/help/hu
 @dirrm share/help/fr/gnome-system-monitor
 @dirrmtry share/help/fr
 @dirrm share/help/es/gnome-system-monitor
 @dirrmtry share/help/es
 @dirrm share/help/el/gnome-system-monitor
 @dirrmtry share/help/el
+@dirrm share/help/de/gnome-system-monitor
+@dirrmtry share/help/de
 @dirrm share/help/C/gnome-system-monitor
 @dirrmtry share/help/C
 @dirrmtry share/help

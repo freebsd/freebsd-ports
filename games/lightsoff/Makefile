@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/lightsoff/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/games/lightsoff/Makefile 19631 2014-05-12 20:02:07Z gusi $
 
 PORTNAME=	lightsoff
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

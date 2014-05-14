@@ -27,6 +27,7 @@ share/icons/hicolor/256x256/apps/gnome-sound-recorder.png
 share/icons/hicolor/32x32/apps/gnome-sound-recorder.png
 share/icons/hicolor/48x48/apps/gnome-sound-recorder.png
 share/locale/ca/LC_MESSAGES/gnome-sound-recorder.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/cs/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/da/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/de/LC_MESSAGES/gnome-sound-recorder.mo
@@ -55,6 +56,7 @@ share/locale/sk/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/sl/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/sr/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-sound-recorder.mo
+share/locale/sv/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/te/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/uk/LC_MESSAGES/gnome-sound-recorder.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-sound-recorder.mo

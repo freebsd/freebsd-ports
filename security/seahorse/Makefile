@@ -1,10 +1,9 @@
 # Created by: Dave McKay <dave@mu.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/security/seahorse/Makefile 19530 2014-04-15 14:24:24Z kwm $
+#   $MCom: ports/trunk/security/seahorse/Makefile 19659 2014-05-13 20:21:33Z gusi $
 
 PORTNAME=	seahorse
-PORTVERSION=	3.12.0
-PORTREVISION=	1
+PORTVERSION=	3.12.2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,6 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+		valac:${PORTSDIR}/lang/vala \
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
@@ -34,27 +34,14 @@ GLIB_SCHEMAS=	org.gnome.seahorse.gschema.xml \
 		org.gnome.seahorse.manager.gschema.xml \
 		org.gnome.seahorse.window.gschema.xml
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	LDAP NOTIFY AVAHI
 OPTIONS_DEFAULT=LDAP NOTIFY AVAHI
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-.else
-CONFIGURE_ARGS+=--disable-ldap
-.endif
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-.else
-CONFIGURE_ARGS+=--disable-libnotify
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
-.else
-CONFIGURE_ARGS+=--disable-sharing
-.endif
+LDAP_CONFIGURE_ENABLE=	ldap
+LDAP_USE=	OPENLDAP=yes
+NOTIFY_CONFIGURE_ENABLE=	libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+AVAHI_CONFIGURE_ENABLE=	sharing
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 .include <bsd.port.mk>

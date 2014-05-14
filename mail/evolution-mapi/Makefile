@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution-mapi3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/mail/evolution-mapi/Makefile 19619 2014-05-12 08:21:15Z gusi $
 
 PORTNAME=	evolution-mapi
-PORTVERSION=	3.6.3
+PORTVERSION=	3.12.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,22 +11,20 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Evolution plugin to connect to Microsoft Exchange servers
 
-BUILD_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
+		evolution>=3.0.0:${PORTSDIR}/mail/evolution
 LIB_DEPENDS=	libmapi.so:${PORTSDIR}/mail/libmapi
-RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution
+RUN_DEPENDS=	evolution>=3.0.0:${PORTSDIR}/mail/evolution
 
-BROKEN=		needs newer libmapi which needs samba4 update.
-
-EVO_VER=	3.6.3
-USE_XZ=		yes
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gconf2
+USES=		gettext gmake libtool pkgconfig tar:xz
+USE_GNOME=	intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS"=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
+CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-VERSION=	3.0
+VERSION=	3.12
 PLIST_SUB=	VERSION=${VERSION}
 
 post-patch:

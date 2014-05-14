@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-chess/Makefile 19588 2014-04-28 06:19:57Z gusi $
+#   $MCom: ports/trunk/games/gnome-chess/Makefile 19620 2014-05-12 08:22:17Z gusi $
 
 PORTNAME=	gnome-chess
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

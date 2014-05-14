@@ -3,7 +3,7 @@
 #   $MCom: ports-experimental/trunk/sysutils/gnome-settings-daemon/Makefile 19545 2014-04-16 12:23:11Z gusi $
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -43,6 +43,7 @@ CONFIGURE_ARGS=	--disable-gudev \
 #--with-pnpids=${LOCALBASE}/share/libgnome-desktop-3.0/pnp.ids
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CUPS SMARTCARD
 OPTIONS_DEFAULT=CUPS SMARTCARD
@@ -89,6 +90,5 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/cursor-plugin.gschema.override \
 		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnome-settings-daemon-3.0/lib*.so
 
 .include <bsd.port.mk>

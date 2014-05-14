@@ -62,6 +62,92 @@ share/help/C/seahorse/subkeys-add.page
 share/help/C/seahorse/subkeys-examine.page
 share/help/C/seahorse/subkeys-revoke.page
 share/help/C/seahorse/media/seahorse.png
+share/help/de/seahorse/glossary.page
+share/help/de/seahorse/index.page
+share/help/de/seahorse/introduction.page
+share/help/de/seahorse/key-servers-add.page
+share/help/de/seahorse/keyring-change-default.page
+share/help/de/seahorse/keyring-create.page
+share/help/de/seahorse/keyring-lock.page
+share/help/de/seahorse/keyring-unlock.page
+share/help/de/seahorse/keyring-update-password.page
+share/help/de/seahorse/keyring.page
+share/help/de/seahorse/legal.xml
+share/help/de/seahorse/misc-key-backup.page
+share/help/de/seahorse/misc-key-fingerprint.page
+share/help/de/seahorse/passwords-stored-create.page
+share/help/de/seahorse/passwords-view.page
+share/help/de/seahorse/passwords.page
+share/help/de/seahorse/pgp-create.page
+share/help/de/seahorse/pgp-delete.page
+share/help/de/seahorse/pgp-expiration-change.page
+share/help/de/seahorse/pgp-expired.page
+share/help/de/seahorse/pgp-export.page
+share/help/de/seahorse/pgp-import.page
+share/help/de/seahorse/pgp-photoid.page
+share/help/de/seahorse/pgp-publish.page
+share/help/de/seahorse/pgp-retrieve-remote.page
+share/help/de/seahorse/pgp-sign.page
+share/help/de/seahorse/pgp-subkeys.page
+share/help/de/seahorse/pgp-sync.page
+share/help/de/seahorse/pgp-userid-add.page
+share/help/de/seahorse/pgp-userid-primary.page
+share/help/de/seahorse/pgp-userid-remove.page
+share/help/de/seahorse/pgp-userid.page
+share/help/de/seahorse/pgp.page
+share/help/de/seahorse/ssh-connect-remote.page
+share/help/de/seahorse/ssh-create-vs-setup.page
+share/help/de/seahorse/ssh-create.page
+share/help/de/seahorse/ssh-export.page
+share/help/de/seahorse/ssh-import.page
+share/help/de/seahorse/ssh.page
+share/help/de/seahorse/subkeys-add.page
+share/help/de/seahorse/subkeys-examine.page
+share/help/de/seahorse/subkeys-revoke.page
+share/help/de/seahorse/media/seahorse.png
+share/help/el/seahorse/glossary.page
+share/help/el/seahorse/index.page
+share/help/el/seahorse/introduction.page
+share/help/el/seahorse/key-servers-add.page
+share/help/el/seahorse/keyring-change-default.page
+share/help/el/seahorse/keyring-create.page
+share/help/el/seahorse/keyring-lock.page
+share/help/el/seahorse/keyring-unlock.page
+share/help/el/seahorse/keyring-update-password.page
+share/help/el/seahorse/keyring.page
+share/help/el/seahorse/legal.xml
+share/help/el/seahorse/misc-key-backup.page
+share/help/el/seahorse/misc-key-fingerprint.page
+share/help/el/seahorse/passwords-stored-create.page
+share/help/el/seahorse/passwords-view.page
+share/help/el/seahorse/passwords.page
+share/help/el/seahorse/pgp-create.page
+share/help/el/seahorse/pgp-delete.page
+share/help/el/seahorse/pgp-expiration-change.page
+share/help/el/seahorse/pgp-expired.page
+share/help/el/seahorse/pgp-export.page
+share/help/el/seahorse/pgp-import.page
+share/help/el/seahorse/pgp-photoid.page
+share/help/el/seahorse/pgp-publish.page
+share/help/el/seahorse/pgp-retrieve-remote.page
+share/help/el/seahorse/pgp-sign.page
+share/help/el/seahorse/pgp-subkeys.page
+share/help/el/seahorse/pgp-sync.page
+share/help/el/seahorse/pgp-userid-add.page
+share/help/el/seahorse/pgp-userid-primary.page
+share/help/el/seahorse/pgp-userid-remove.page
+share/help/el/seahorse/pgp-userid.page
+share/help/el/seahorse/pgp.page
+share/help/el/seahorse/ssh-connect-remote.page
+share/help/el/seahorse/ssh-create-vs-setup.page
+share/help/el/seahorse/ssh-create.page
+share/help/el/seahorse/ssh-export.page
+share/help/el/seahorse/ssh-import.page
+share/help/el/seahorse/ssh.page
+share/help/el/seahorse/subkeys-add.page
+share/help/el/seahorse/subkeys-examine.page
+share/help/el/seahorse/subkeys-revoke.page
+share/help/el/seahorse/media/seahorse.png
 share/help/es/seahorse/glossary.page
 share/help/es/seahorse/index.page
 share/help/es/seahorse/introduction.page
@@ -105,6 +191,49 @@ share/help/es/seahorse/subkeys-add.page
 share/help/es/seahorse/subkeys-examine.page
 share/help/es/seahorse/subkeys-revoke.page
 share/help/es/seahorse/media/seahorse.png
+share/help/ru/seahorse/glossary.page
+share/help/ru/seahorse/index.page
+share/help/ru/seahorse/introduction.page
+share/help/ru/seahorse/key-servers-add.page
+share/help/ru/seahorse/keyring-change-default.page
+share/help/ru/seahorse/keyring-create.page
+share/help/ru/seahorse/keyring-lock.page
+share/help/ru/seahorse/keyring-unlock.page
+share/help/ru/seahorse/keyring-update-password.page
+share/help/ru/seahorse/keyring.page
+share/help/ru/seahorse/legal.xml
+share/help/ru/seahorse/misc-key-backup.page
+share/help/ru/seahorse/misc-key-fingerprint.page
+share/help/ru/seahorse/passwords-stored-create.page
+share/help/ru/seahorse/passwords-view.page
+share/help/ru/seahorse/passwords.page
+share/help/ru/seahorse/pgp-create.page
+share/help/ru/seahorse/pgp-delete.page
+share/help/ru/seahorse/pgp-expiration-change.page
+share/help/ru/seahorse/pgp-expired.page
+share/help/ru/seahorse/pgp-export.page
+share/help/ru/seahorse/pgp-import.page
+share/help/ru/seahorse/pgp-photoid.page
+share/help/ru/seahorse/pgp-publish.page
+share/help/ru/seahorse/pgp-retrieve-remote.page
+share/help/ru/seahorse/pgp-sign.page
+share/help/ru/seahorse/pgp-subkeys.page
+share/help/ru/seahorse/pgp-sync.page
+share/help/ru/seahorse/pgp-userid-add.page
+share/help/ru/seahorse/pgp-userid-primary.page
+share/help/ru/seahorse/pgp-userid-remove.page
+share/help/ru/seahorse/pgp-userid.page
+share/help/ru/seahorse/pgp.page
+share/help/ru/seahorse/ssh-connect-remote.page
+share/help/ru/seahorse/ssh-create-vs-setup.page
+share/help/ru/seahorse/ssh-create.page
+share/help/ru/seahorse/ssh-export.page
+share/help/ru/seahorse/ssh-import.page
+share/help/ru/seahorse/ssh.page
+share/help/ru/seahorse/subkeys-add.page
+share/help/ru/seahorse/subkeys-examine.page
+share/help/ru/seahorse/subkeys-revoke.page
+share/help/ru/seahorse/media/seahorse.png
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/as/LC_MESSAGES/seahorse.mo
 share/locale/ast/LC_MESSAGES/seahorse.mo
@@ -272,9 +401,18 @@ share/locale/zh_TW/LC_MESSAGES/seahorse.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm share/help/ru/seahorse/media
+@dirrm share/help/ru/seahorse
+@dirrmtry share/help/ru
 @dirrm share/help/es/seahorse/media
 @dirrm share/help/es/seahorse
 @dirrmtry share/help/es
+@dirrm share/help/el/seahorse/media
+@dirrm share/help/el/seahorse
+@dirrmtry share/help/el
+@dirrm share/help/de/seahorse/media
+@dirrm share/help/de/seahorse
+@dirrmtry share/help/de
 @dirrm share/help/C/seahorse/media
 @dirrm share/help/C/seahorse
 @dirrmtry share/help/C

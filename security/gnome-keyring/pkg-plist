@@ -17,6 +17,9 @@ lib/pam_gnome_keyring.la
 lib/pam_gnome_keyring.so
 lib/pkcs11/gnome-keyring-pkcs11.la
 lib/pkcs11/gnome-keyring-pkcs11.so
+man/man1/gnome-keyring-3.1.gz
+man/man1/gnome-keyring-daemon.1.gz
+man/man1/gnome-keyring.1.gz
 share/GConf/gsettings/org.gnome.crypto.cache.convert
 share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service

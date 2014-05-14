@@ -1,9 +1,9 @@
 # Created by: ade, archie
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/x11-fm/nautilus/Makefile 19340 2014-03-25 20:57:54Z gusi $
+#   $MCom: ports/trunk/x11-fm/nautilus/Makefile 19657 2014-05-13 18:54:09Z gusi $
 
 PORTNAME=	nautilus
-PORTVERSION=	3.12.0
+PORTVERSION=	3.12.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -32,27 +32,15 @@ CONFIGURE_ARGS=	--disable-packagekit
 
 GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	TRACKER
 OPTIONS_DEFAULT=TRACKER
 TRACKER_DESC=	Tracker support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTRACKER}
-LIB_DEPENDS+=	libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker
-CONFIGURE_ARGS+=--enable-tracker=yes
-PLIST_SUB+=	TRACKER=""
-.else
-CONFIGURE_ARGS+=--enable-tracker=no
-PLIST_SUB+=	TRACKER="@comment "
-.endif
+TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker
+TRACKER_CONFIGURE_ENABLE=	tracker
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnautilus-extension.so*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-sendto.so
 
 .include <bsd.port.mk>

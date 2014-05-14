@@ -41,7 +41,7 @@ lib/glade/modules/libgladegtk.so
 lib/libgladeui-2.la
 lib/libgladeui-2.so
 lib/libgladeui-2.so.6
-lib/libgladeui-2.so.6.1.2
+lib/libgladeui-2.so.6.1.3
 libdata/pkgconfig/gladeui-2.0.pc
 man/man1/glade-previewer.1.gz
 man/man1/glade.1.gz

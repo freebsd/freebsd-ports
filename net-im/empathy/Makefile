@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/net-im/empathy/Makefile 19491 2014-04-14 15:07:51Z gusi $
+#   $MCom: ports/trunk/net-im/empathy/Makefile 19664 2014-05-14 10:21:15Z gusi $
 
 PORTNAME=	empathy
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -55,6 +55,7 @@ CONFIGURE_ARGS=	--disable-Werror \
 GLIB_SCHEMAS=	org.gnome.Empathy.gschema.xml \
 		org.gnome.telepathy-account-widgets.gschema.xml
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	JABBER MSN IRC SALUT HAZE MAP CHEESE
 OPTIONS_DEFAULT=JABBER MSN IRC SALUT      MAP
 JABBER_DESC=	Enable jabber (XMPP) client support
@@ -64,54 +65,21 @@ SALUT_DESC=	Enable link-local (serverless) XMPP support
 HAZE_DESC=	Enable libpurple protocol integration
 MAP_DESC=	Enable graphical map support
 CHEESE_DESC=	Enable cheese camera support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJABBER}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-gabble:${PORTSDIR}/net-im/telepathy-gabble
-.endif
-
-.if ${PORT_OPTIONS:MMSN}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-butterfly:${PORTSDIR}/net-im/telepathy-butterfly
-.endif
-
-.if ${PORT_OPTIONS:MIRC}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-idle:${PORTSDIR}/net-im/telepathy-idle
-.endif
-
-.if ${PORT_OPTIONS:MSALUT}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telepathy-salut
-.endif
-
-.if !defined(WITHOUT_HAZE)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
-.endif
-
-.if ${PORT_OPTIONS:MMAP}
-USE_GL=		gl
-LIB_DEPENDS+=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain
-CONFIGURE_ARGS+=--enable-map
-PLIST_SUB+=	MAP=""
-.else
-CONFIGURE_ARGS+=--disable-map
-PLIST_SUB+=	MAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCHEESE}
-BUILD_DEPENDS+=	cheese>=0:${PORTSDIR}/multimedia/cheese
-RUN_DEPENDS+=	cheese>=0:${PORTSDIR}/multimedia/cheese
-CONFIGURE_ARGS+=--with-cheese
-.else
-CONFIGURE_ARGS+=--without-cheese
-.endif
+JABBER_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-gabble:${PORTSDIR}/net-im/telepathy-gabble
+MSN_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-butterfly:${PORTSDIR}/net-im/telepathy-butterfly
+IRC_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-idle:${PORTSDIR}/net-im/telepathy-idle
+SALUT_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telepathy-salut
+HAZE_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
+MAP_USE=		GL=gl
+MAP_LIB_DEPENDS=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain
+MAP_CONFIGURE_ENABLE=	map	
+CHEESE_BUILD_DEPENDS=	cheese>=0:${PORTSDIR}/multimedia/cheese
+CHEESE_RUN_DEPENDS=	cheese>=0:${PORTSDIR}/multimedia/cheese
+CHEESE_CONFIGURE_WITH=	cheese	
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|clutter-gst-1.0|clutter-gst-2.0|g ;\
 		s|MISSION_CONTROL_PLUGINS_DIR=`pkg-config -|MISSION_CONTROL_PLUGINS_DIR=$${libdir}/`pkg-config -|g' \
 			${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/empathy/libempathy-*3.12.1.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mission-control-plugins.0/mcp-account-manager-goa.so
 
 .include <bsd.port.mk>

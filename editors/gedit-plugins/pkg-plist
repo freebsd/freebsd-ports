@@ -148,7 +148,7 @@
 %%PYTHON%%lib/gedit/plugins/textsize/viewactivatable.pyc
 %%PYTHON%%lib/gedit/plugins/textsize/viewactivatable.pyo
 %%PYTHON%%lib/gedit/plugins/wordcompletion.plugin
-share/gedit/plugins/colorschemer/ui/schemer.ui
+%%PYTHON%%share/gedit/plugins/colorschemer/ui/schemer.ui
 %%PYTHON%%share/gedit/plugins/commander/modules/align.py
 %%PYTHON%%share/gedit/plugins/commander/modules/align.pyc
 %%PYTHON%%share/gedit/plugins/commander/modules/align.pyo
@@ -792,7 +792,9 @@ share/help/zh_TW/gedit/word-completion.page
 %%PYTHON%%@dirrm share/gedit/plugins/commander/modules/find
 %%PYTHON%%@dirrm share/gedit/plugins/commander/modules
 %%PYTHON%%@dirrm share/gedit/plugins/commander
-@dirrmtry share/gedit/plugins
+%%PYTHON%%@dirrm share/gedit/plugins/colorschemer/ui
+%%PYTHON%%@dirrm share/gedit/plugins/colorschemer
+%%PYTHON%%@dirrmtry share/gedit/plugins
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -843,7 +845,4 @@ share/help/zh_TW/gedit/word-completion.page
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrm share/gedit/plugins/colorschemer/ui
-@dirrm share/gedit/plugins/colorschemer
-@dirrm lib/gedit/plugins/colorschemer
-
+%%PYTHON%%@dirrm lib/gedit/plugins/colorschemer

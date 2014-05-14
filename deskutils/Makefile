@@ -73,6 +73,7 @@
     SUBDIR += gnome-documents
     SUBDIR += gnome-epub-thumbnailer
     SUBDIR += gnome-font-viewer
+    SUBDIR += gnome-initial-setup
     SUBDIR += gnome-main-menu
     SUBDIR += gnome-maps
     SUBDIR += gnome-photos
@@ -82,6 +83,7 @@
     SUBDIR += gnome-system-log
     SUBDIR += gnome-tweak-tool
     SUBDIR += gnome-utils
+    SUBDIR += gnome-weather
     SUBDIR += gnote
     SUBDIR += gnotime
     SUBDIR += gnustep-notebook
