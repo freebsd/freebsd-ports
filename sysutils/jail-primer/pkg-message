@@ -4,5 +4,7 @@
 First issue "rehash" command to enable the jail-primer scripts (if using csh).
 Then issue "man jail-primer" to read about jail-primer usage.
 
+Note: Be sure you are at 10.0-RELEASE-p2
+
 #
 #
