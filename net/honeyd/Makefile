@@ -11,9 +11,11 @@ MASTER_SITES=	http://www.honeyd.org/uploads/ \
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Simulate virtual network hosts (honeypots)
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
-		dnet.1:${PORTSDIR}/net/libdnet
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent \
+		libdnet.so:${PORTSDIR}/net/libdnet \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
@@ -27,12 +29,6 @@ CONFIGURE_ARGS+=	--with-python
 CONFIGURE_ARGS+=	--without-python
 .endif
 
-LICENSE=	GPLv2
-
-MAN1=		honeydctl.1
-MAN8=		honeyd.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_PYTHON)
@@ -50,17 +46,17 @@ post-configure:
 # Have to make this directory, the Makefile is stupid and tries to
 # install stuff here without making it.
 pre-install:
-	@${MKDIR} ${DATADIR}/webserver
+	@${MKDIR} ${STAGEDIR}${DATADIR}/webserver
 
 post-install:
-	@${MKDIR} ${DATADIR}/scripts/snmp
+	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts/snmp
 	@cd ${WRKSRC}/scripts && \
 		${INSTALL_DATA} README* INSTALL* kuang2.conf \
-			${DATADIR}/scripts && \
-		${INSTALL_SCRIPT} *.pl *.sh ${DATADIR}/scripts
+			${STAGEDIR}${DATADIR}/scripts && \
+		${INSTALL_SCRIPT} *.pl *.sh ${STAGEDIR}${DATADIR}/scripts
 	@cd ${WRKSRC}/scripts/snmp && \
 		${INSTALL_DATA} README default.snmp *.tpl \
-			${DATADIR}/scripts/snmp && \
-		${INSTALL_SCRIPT} *.pl ${DATADIR}/scripts/snmp
+			${STAGEDIR}${DATADIR}/scripts/snmp && \
+		${INSTALL_SCRIPT} *.pl ${STAGEDIR}${DATADIR}/scripts/snmp
 
 .include <bsd.port.post.mk>
