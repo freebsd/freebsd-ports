@@ -51,6 +51,419 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cdf450fc-db52-11e3-a9fc-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>34.0.1847.137</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>3 security fixes in this release:</p>
+	  <ul>
+	    <li>[358038] High CVE-2014-1740: Use-after-free in WebSockets.
+	      Credit to Collin Payne.</li>
+	    <li>[349898] High CVE-2014-1741: Integer overflow in DOM ranges.
+	      Credit to John Butler.</li>
+	    <li>[356690] High CVE-2014-1742: Use-after-free in editing. Credit
+	      to cloudfuzzer.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1740</cvename>
+      <cvename>CVE-2014-1741</cvename>
+      <cvename>CVE-2014-1742</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-05-13</discovery>
+      <entry>2014-05-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b060ee50-daba-11e3-99f2-bcaec565249c">
+    <topic>libXfont -- X Font Service Protocol and Font metadata file handling issues</topic>
+    <affects>
+      <package>
+	<name>libXfont</name>
+	<range><lt>1.4.7_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2014-May/002431.html">
+	  <p>Ilja van Sprundel, a security researcher with IOActive, has
+	    discovered several issues in the way the libXfont library
+	    handles the responses it receives from xfs servers, and has
+	    worked with X.Org's security team to analyze, confirm, and fix
+	    these issues.</p>
+	  <p>Most of these issues stem from libXfont trusting the font server
+	    to send valid protocol data, and not verifying that the values
+	    will not overflow or cause other damage.  This code is commonly
+	    called from the X server when an X Font Server is active in the
+	    font path, so may be running in a setuid-root process depending
+	    on the X server in use.  Exploits of this path could be used by
+	    a local, authenticated user to attempt to raise privileges; or
+	    by a remote attacker who can control the font server to attempt
+	    to execute code with the privileges of the X server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0209</cvename>
+      <cvename>CVE-2014-0210</cvename>
+      <cvename>CVE-2014-0211</cvename>
+      <url>http://lists.x.org/archives/xorg-announce/2014-May/002431.html</url>
+    </references>
+    <dates>
+      <discovery>2014-05-13</discovery>
+      <entry>2014-05-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e7bb3885-da40-11e3-9ecb-2c4138874f7d">
+    <topic>libxml2 -- lack of end-of-document check DoS</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><le>2.8.0_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2877">
+	  <p>parser.c in libxml2 before 2.9.0, as used in Google
+	     Chrome before 28.0.1500.71 and other products, allows remote
+	     attackers to cause a denial of service (out-of-bounds read)
+	     via a document that ends abruptly, related to the lack of
+	     certain checks for the XML_PARSER_EOF state.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2877</cvename>
+      <url>https://git.gnome.org/browse/libxml2/tag/?id=CVE-2013-2877</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2877</url>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2877</url>
+    </references>
+    <dates>
+      <discovery>2013-04-11</discovery>
+      <entry>2013-07-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="efdd0edc-da3d-11e3-9ecb-2c4138874f7d">
+    <topic>libxml2 -- entity substitution DoS</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><le>2.8.0_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/05/06/4">
+	  <p>It was discovered that libxml2, a library providing
+	     support to read, modify and write XML files, incorrectly
+	     performs entity substitution in the doctype prolog, even if
+	     the application using libxml2 disabled any entity
+	     substitution.  A remote attacker could provide a
+	     specially-crafted XML file that, when processed, would lead
+	     to the exhaustion of CPU and memory resources or file
+	     descriptors.</p>
+	  <p>This issue was discovered by Daniel Berrange of Red Hat.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0191</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2014/05/06/4</url>
+      <url>https://git.gnome.org/browse/libxml2/tag/?id=CVE-2014-0191</url>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0191</url>
+    </references>
+    <dates>
+      <discovery>2013-12-03</discovery>
+      <entry>2014-05-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1959e847-d4f0-11e3-84b0-0018fe623f2b">
+    <topic>OpenSSL -- NULL pointer dereference / DoS</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenBSD and David Ramos reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/05/02/5">
+	  <p>Applications that use SSL_MODE_RELEASE_BUFFERS, such as nginx/apache,
+	  are prone to a race condition which may allow a remote attacker to
+	  crash the current service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2014/05/02/5</url>
+      <url>https://rt.openssl.org/Ticket/Display.html?user=guest&amp;pass=guest&amp;id=3321</url>
+      <cvename>CVE-2014-0198</cvename>
+    </references>
+    <dates>
+      <discovery>2014-05-02</discovery>
+      <entry>2014-05-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="89709e58-d497-11e3-a3d5-5453ed2e2b49">
+    <topic>qt4-xml -- XML Entity Expansion Denial of Service</topic>
+    <affects>
+      <package>
+	<name>qt4-xml</name>
+	<range><lt>4.8.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Richard J. Moore reports:</p>
+	<blockquote cite="http://lists.qt-project.org/pipermail/announce/2013-December/000036.html">
+	  <p>QXmlSimpleReader in Qt versions prior to 5.2 supports
+	    expansion of internal entities in XML documents without
+	    placing restrictions to ensure the document does not cause
+	    excessive memory usage. If an application using this API
+	    processes untrusted data then the application may use
+	    unexpected amounts of memory if a malicious document is
+	    processed.</p>
+	  <p>It is possible to construct XML documents using internal
+	    entities that consume large amounts of memory and other
+	    resources to process, this is known as the 'Billion Laughs'
+	    attack. Qt versions prior to 5.2 did not offer protection
+	    against this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4549</cvename>
+      <url>http://lists.qt-project.org/pipermail/announce/2013-December/000036.html</url>
+    </references>
+    <dates>
+      <discovery>2013-12-05</discovery>
+      <entry>2014-05-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6fb521b0-d388-11e3-a790-000c2980a9f3">
+    <topic>strongswan -- Remote Authentication Bypass</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>strongSwan developers report:</p>
+	<blockquote cite="www.strongswan.org/blog/2014/04/14/strongswan-authentication-bypass-vulnerability-(cve-2014-2338).html">
+	  <p>Remote attackers are able to bypass authentication by rekeying an
+	    IKE_SA during (1) initiation or (2) re-authentication, which
+	    triggers the IKE_SA state to be set to established.</p>
+	  <p>Only installations that actively initiate or re-authenticate IKEv2
+	    IKE_SAs are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2338</cvename>
+      <url>http://www.strongswan.org/blog/2014/04/14/strongswan-authentication-bypass-vulnerability-%28cve-2014-2338%29.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-12</discovery>
+      <entry>2014-05-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="670d732a-cdd4-11e3-aac2-0022fb6fcf92">
+    <topic>mohawk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mohawk</name>
+	<range><lt>2.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The mohawk project reports:</p>
+	<blockquote cite="http://fossil.bsdsx.fr/mohawk/tktview?name=1707f0e351">
+	  <p>Segfault when parsing malformed / unescaped url, coredump when setting syslog facility.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://fossil.bsdsx.fr/mohawk/tktview?name=1707f0e351</url>
+      <url>http://fossil.bsdsx.fr/mohawk/tktview?name=1c7565019e</url>
+    </references>
+    <dates>
+      <discovery>2014-04-10</discovery>
+      <entry>2014-04-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7cf25a0c-d031-11e3-947b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>34.0.1847.132</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports (belatedly):</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>9 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[354967] High CVE-2014-1730: Type confusion in V8. Credit to
+	      Anonymous.</li>
+	    <li>[349903] High CVE-2014-1731: Type confusion in DOM. Credit to
+	      John Butler.</li>
+	    <li>[359802] High CVE-2014-1736: Integer overflow in V8. Credit to
+	      SkyLined working with HP's Zero Day Initiative.</li>
+	    <li>[352851] Medium CVE-2014-1732: Use-after-free in Speech
+	      Recognition. Credit to Khalil Zhani.</li>
+	    <li>[351103] Medium CVE-2014-1733: Compiler bug in Seccomp-BPF.
+	      Credit to Jed Davis.</li>
+	    <li>[367314] CVE-2014-1734: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[359130, 359525, 360429] CVE-2014-1735: Multiple
+	      vulnerabilities in V8 fixed in version 3.24.35.33.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1730</cvename>
+      <cvename>CVE-2014-1731</cvename>
+      <cvename>CVE-2014-1732</cvename>
+      <cvename>CVE-2014-1733</cvename>
+      <cvename>CVE-2014-1734</cvename>
+      <cvename>CVE-2014-1735</cvename>
+      <cvename>CVE-2014-1736</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-04-24</discovery>
+      <entry>2014-04-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="985d4d6c-cfbd-11e3-a003-b4b52fce4ce8">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>29.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>24.5.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>29.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.26</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.5.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.26</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>24.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-34 Miscellaneous memory safety hazards
+	    (rv:29.0 / rv:24.5)</p>
+	  <p>MFSA 2014-35 Privilege escalation through Mozilla Maintenance
+	    Service Installer</p>
+	  <p>MFSA 2014-36 Web Audio memory corruption issues</p>
+	  <p>MFSA 2014-37 Out of bounds read while decoding JPG images</p>
+	  <p>MFSA 2014-38 Buffer overflow when using non-XBL object as
+	    XBL</p>
+	  <p>MFSA 2014-39 Use-after-free in the Text Track Manager
+	    for HTML video</p>
+	  <p>MFSA 2014-41 Out-of-bounds write in Cairo</p>
+	  <p>MFSA 2014-42 Privilege escalation through Web Notification
+	    API</p>
+	  <p>MFSA 2014-43 Cross-site scripting (XSS) using history
+	    navigations</p>
+	  <p>MFSA 2014-44 Use-after-free in imgLoader while resizing
+	    images</p>
+	  <p>MFSA 2014-45 Incorrect IDNA domain name matching for
+	    wildcard certificates</p>
+	  <p>MFSA 2014-46 Use-after-free in nsHostResolve</p>
+	  <p>MFSA 2014-47 Debugger can bypass XrayWrappers
+	    with JavaScript</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1492</cvename>
+      <cvename>CVE-2014-1518</cvename>
+      <cvename>CVE-2014-1519</cvename>
+      <cvename>CVE-2014-1520</cvename>
+      <cvename>CVE-2014-1522</cvename>
+      <cvename>CVE-2014-1523</cvename>
+      <cvename>CVE-2014-1524</cvename>
+      <cvename>CVE-2014-1525</cvename>
+      <cvename>CVE-2014-1526</cvename>
+      <cvename>CVE-2014-1527</cvename>
+      <cvename>CVE-2014-1528</cvename>
+      <cvename>CVE-2014-1529</cvename>
+      <cvename>CVE-2014-1530</cvename>
+      <cvename>CVE-2014-1531</cvename>
+      <cvename>CVE-2014-1532</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-34.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-35.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-36.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-37.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-38.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-39.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-41.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-42.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-43.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-44.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-45.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-46.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-47.html</url>
+      <url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2014-04-29</discovery>
+      <entry>2014-04-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59e72db2-cae6-11e3-8420-00e0814cab4e">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
