@@ -15,7 +15,8 @@ COMMENT=	ASCII to PostScript filter
 USES=		shebangfix perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
-CONFIGURE_ENV=	PERL="${perl_CMD}"
+SHEBANG_FILES=	scripts/diffpp.in scripts/sliceprint.in
+perl_OLD_CMD=	@PERLPROG@
 
 CONFLICTS?=	enscript-a4-* enscript-letterdj-*
 
