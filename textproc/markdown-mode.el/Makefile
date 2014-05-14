@@ -20,12 +20,8 @@ USE_EMACS=	yes
 
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/markdown-mode.el
 
-NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
-		${PREFIX}/${EMACS_SITE_LISPDIR}/markdown-mode.el
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/markdown-mode.el
 
 .include <bsd.port.mk>
