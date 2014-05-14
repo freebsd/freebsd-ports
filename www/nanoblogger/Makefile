@@ -10,6 +10,8 @@ MASTER_SITES=	http://nanoblogger.sourceforge.net/downloads/
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Small weblog engine written in Bash for the command line
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
@@ -36,9 +38,6 @@ do-install:
 	@${CP} ${WRKSRC}/welcome-to-nb.txt ${STAGEDIR}${DATADIR}
 
 post-install:
-	@if [ ! -f ${STAGEDIR}${PREFIX}/etc/nb.conf ]; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/etc/nb.conf.sample ${STAGEDIR}${PREFIX}/etc/nb.conf; \
-	fi
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in COPYING ChangeLog README TODO copyright
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
