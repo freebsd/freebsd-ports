@@ -16,7 +16,7 @@
  
  struct route_flag {
  	const char	*name;
-@@ -92,15 +98,21 @@ static const	struct route_flag route_fla
+@@ -92,15 +98,23 @@ static const	struct route_flag route_fla
  	FLAG(DYNAMIC),
  	FLAG(MODIFIED),
  	FLAG(DONE),
@@ -31,7 +31,9 @@
  	FLAG(BLACKHOLE),
  	FLAG(PROTO2),
  	FLAG(PROTO1),
++#ifdef RTF_PRCLONING
  	FLAG(PRCLONING),
++#endif
 +#ifdef RTF_WASCLONED
  	FLAG(WASCLONED),
 +#endif

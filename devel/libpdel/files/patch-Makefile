@@ -1,0 +1,14 @@
+--- Makefile.orig	2014-04-26 19:31:00.000000000 -0300
++++ Makefile	2014-04-26 19:31:40.000000000 -0300
+@@ -2,6 +2,11 @@
+ 
+ LIB=		pdel
+ 
++BINOWN!=	/usr/bin/id -n -u
++BINGRP!=	/usr/bin/id -n -g
++SHAREOWN=	${BINOWN}
++SHAREGRP=	${BINGRP}
++
+ SUBDIRS=	config http io net ppp structs sys tmpl util
+ 
+ VERSION!=	grep -w PDEL_VERSION_STRING ${.CURDIR}/version.h \
