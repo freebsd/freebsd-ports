@@ -1,0 +1,13 @@
+--- cegui/src/CMakeLists.txt.orig	2013-12-07 13:37:08.000000000 +0400
++++ cegui/src/CMakeLists.txt	2014-05-13 02:26:12.794972513 +0400
+@@ -91,6 +91,10 @@
+     target_link_libraries(${CEGUI_TARGET_NAME} ${CMAKE_DL_LIBS})
+ endif()
+ 
++if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++    target_link_libraries(${CEGUI_TARGET_NAME} execinfo)
++endif()
++
+ if (APPLE AND CEGUI_BUILD_SHARED_LIBS_WITH_STATIC_DEPENDENCIES)
+     set_property(TARGET ${CEGUI_TARGET_NAME} APPEND PROPERTY LINK_FLAGS "-framework Carbon")
+ endif()

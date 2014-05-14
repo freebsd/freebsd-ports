@@ -1,4 +1,4 @@
-bin/toluappcegui-0.8
+%%LUA%%bin/toluappcegui-0.8
 include/cegui-0/CEGUI/Affector.h
 include/cegui-0/CEGUI/Animation.h
 include/cegui-0/CEGUI/AnimationInstance.h
@@ -56,10 +56,12 @@ include/cegui-0/CEGUI/GlobalEventSet.h
 include/cegui-0/CEGUI/IconvStringTranscoder.h
 include/cegui-0/CEGUI/Image.h
 include/cegui-0/CEGUI/ImageCodec.h
-include/cegui-0/CEGUI/ImageCodecModules/DevIL/ImageCodec.h
-include/cegui-0/CEGUI/ImageCodecModules/DevIL/ImageCodecModule.h
-include/cegui-0/CEGUI/ImageCodecModules/FreeImage/ImageCodec.h
-include/cegui-0/CEGUI/ImageCodecModules/FreeImage/ImageCodecModule.h
+%%CORONA%%include/cegui-0/CEGUI/ImageCodecModules/Corona/ImageCodec.h
+%%CORONA%%include/cegui-0/CEGUI/ImageCodecModules/Corona/ImageCodecModule.h
+%%DEVIL%%include/cegui-0/CEGUI/ImageCodecModules/DevIL/ImageCodec.h
+%%DEVIL%%include/cegui-0/CEGUI/ImageCodecModules/DevIL/ImageCodecModule.h
+%%FREEIMAGE%%include/cegui-0/CEGUI/ImageCodecModules/FreeImage/ImageCodec.h
+%%FREEIMAGE%%include/cegui-0/CEGUI/ImageCodecModules/FreeImage/ImageCodecModule.h
 include/cegui-0/CEGUI/ImageCodecModules/STB/ImageCodec.h
 include/cegui-0/CEGUI/ImageCodecModules/STB/ImageCodecModule.h
 include/cegui-0/CEGUI/ImageCodecModules/TGA/ImageCodec.h
@@ -109,41 +111,52 @@ include/cegui-0/CEGUI/RenderedStringTextComponent.h
 include/cegui-0/CEGUI/RenderedStringWidgetComponent.h
 include/cegui-0/CEGUI/RenderedStringWordWrapper.h
 include/cegui-0/CEGUI/Renderer.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/EventPusher.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/GeometryBuffer.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/ImageCodec.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/MemoryFile.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/RenderTarget.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/Renderer.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/RendererDef.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/ResourceProvider.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/Texture.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/TextureTarget.h
+%%IRRLICHT%%include/cegui-0/CEGUI/RendererModules/Irrlicht/WindowTarget.h
 include/cegui-0/CEGUI/RendererModules/Null/GeometryBuffer.h
 include/cegui-0/CEGUI/RendererModules/Null/RenderTarget.h
 include/cegui-0/CEGUI/RendererModules/Null/Renderer.h
 include/cegui-0/CEGUI/RendererModules/Null/Texture.h
 include/cegui-0/CEGUI/RendererModules/Null/TextureTarget.h
-include/cegui-0/CEGUI/RendererModules/Ogre/GeometryBuffer.h
-include/cegui-0/CEGUI/RendererModules/Ogre/ImageCodec.h
-include/cegui-0/CEGUI/RendererModules/Ogre/RenderTarget.h
-include/cegui-0/CEGUI/RendererModules/Ogre/Renderer.h
-include/cegui-0/CEGUI/RendererModules/Ogre/ResourceProvider.h
-include/cegui-0/CEGUI/RendererModules/Ogre/Texture.h
-include/cegui-0/CEGUI/RendererModules/Ogre/TextureTarget.h
-include/cegui-0/CEGUI/RendererModules/Ogre/WindowTarget.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GL.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GL3FBOTextureTarget.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GL3GeometryBuffer.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GL3Renderer.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GLFBOTextureTarget.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GLGeometryBuffer.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GLRenderer.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GLXPBTextureTarget.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GeometryBufferBase.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/GlmPimpl.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/RenderTarget.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/RendererBase.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/Shader.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/ShaderManager.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/StandardShaderFrag.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/StandardShaderVert.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/StateChangeWrapper.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/Texture.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/TextureTarget.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/ViewportTarget.h
-include/cegui-0/CEGUI/RendererModules/OpenGL/WGLPBTextureTarget.h
+%%OGRE%%include/cegui-0/CEGUI/RendererModules/Ogre/GeometryBuffer.h
+%%OGRE%%include/cegui-0/CEGUI/RendererModules/Ogre/ImageCodec.h
+%%OGRE%%include/cegui-0/CEGUI/RendererModules/Ogre/RenderTarget.h
+%%OGRE%%include/cegui-0/CEGUI/RendererModules/Ogre/Renderer.h
+%%OGRE%%include/cegui-0/CEGUI/RendererModules/Ogre/ResourceProvider.h
+%%OGRE%%include/cegui-0/CEGUI/RendererModules/Ogre/Texture.h
+%%OGRE%%include/cegui-0/CEGUI/RendererModules/Ogre/TextureTarget.h
+%%OGRE%%include/cegui-0/CEGUI/RendererModules/Ogre/WindowTarget.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GL.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GL3FBOTextureTarget.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GL3GeometryBuffer.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GL3Renderer.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GLFBOTextureTarget.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GLGeometryBuffer.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GLRenderer.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GLXPBTextureTarget.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GeometryBufferBase.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/GlmPimpl.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/RenderTarget.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/RendererBase.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/Shader.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/ShaderManager.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/StandardShaderFrag.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/StandardShaderVert.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/StateChangeWrapper.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/Texture.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/TextureTarget.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/ViewportTarget.h
+%%ANYOPENGL%%include/cegui-0/CEGUI/RendererModules/OpenGL/WGLPBTextureTarget.h
 include/cegui-0/CEGUI/RenderingContext.h
 include/cegui-0/CEGUI/RenderingSurface.h
 include/cegui-0/CEGUI/RenderingWindow.h
@@ -153,8 +166,8 @@ include/cegui-0/CEGUI/Scheme.h
 include/cegui-0/CEGUI/SchemeManager.h
 include/cegui-0/CEGUI/Scheme_xmlHandler.h
 include/cegui-0/CEGUI/ScriptModule.h
-include/cegui-0/CEGUI/ScriptModules/Lua/Functor.h
-include/cegui-0/CEGUI/ScriptModules/Lua/ScriptModule.h
+%%LUA%%include/cegui-0/CEGUI/ScriptModules/Lua/Functor.h
+%%LUA%%include/cegui-0/CEGUI/ScriptModules/Lua/ScriptModule.h
 include/cegui-0/CEGUI/SimpleTimer.h
 include/cegui-0/CEGUI/Singleton.h
 include/cegui-0/CEGUI/Size.h
@@ -218,10 +231,17 @@ include/cegui-0/CEGUI/WindowRendererSets/Core/Tree.h
 include/cegui-0/CEGUI/XMLAttributes.h
 include/cegui-0/CEGUI/XMLHandler.h
 include/cegui-0/CEGUI/XMLParser.h
-include/cegui-0/CEGUI/XMLParserModules/Expat/XMLParser.h
-include/cegui-0/CEGUI/XMLParserModules/Expat/XMLParserModule.h
-include/cegui-0/CEGUI/XMLParserModules/Libxml2/XMLParser.h
-include/cegui-0/CEGUI/XMLParserModules/Libxml2/XMLParserModule.h
+%%EXPAT%%include/cegui-0/CEGUI/XMLParserModules/Expat/XMLParser.h
+%%EXPAT%%include/cegui-0/CEGUI/XMLParserModules/Expat/XMLParserModule.h
+%%LIBXML2%%include/cegui-0/CEGUI/XMLParserModules/Libxml2/XMLParser.h
+%%LIBXML2%%include/cegui-0/CEGUI/XMLParserModules/Libxml2/XMLParserModule.h
+%%RAPIDXML%%include/cegui-0/CEGUI/XMLParserModules/RapidXML/XMLParser.h
+%%RAPIDXML%%include/cegui-0/CEGUI/XMLParserModules/RapidXML/XMLParserModule.h
+%%TINYXML%%include/cegui-0/CEGUI/XMLParserModules/TinyXML/XMLParser.h
+%%TINYXML%%include/cegui-0/CEGUI/XMLParserModules/TinyXML/XMLParserModule.h
+%%XERCES%%include/cegui-0/CEGUI/XMLParserModules/Xerces/XMLParser.h
+%%XERCES%%include/cegui-0/CEGUI/XMLParserModules/Xerces/XMLParserModule.h
+%%XERCES%%include/cegui-0/CEGUI/XMLParserModules/Xerces/XMLParserProperties.h
 include/cegui-0/CEGUI/XMLSerializer.h
 include/cegui-0/CEGUI/falagard/ComponentBase.h
 include/cegui-0/CEGUI/falagard/Dimensions.h
@@ -296,35 +316,43 @@ include/cegui-0/CEGUI/widgets/Tree.h
 include/cegui-0/CEGUI/widgets/TreeItem.h
 include/cegui-0/CEGUI/widgets/VerticalLayoutContainer.h
 lib/cegui-0.8/libCEGUICoreWindowRendererSet.so
-lib/cegui-0.8/libCEGUIDevILImageCodec.so
-lib/cegui-0.8/libCEGUIExpatParser.so
-lib/cegui-0.8/libCEGUIFreeImageImageCodec.so
+%%CORONA%%lib/cegui-0.8/libCEGUICoronaImageCodec.so
+%%DEVIL%%lib/cegui-0.8/libCEGUIDevILImageCodec.so
+%%EXPAT%%lib/cegui-0.8/libCEGUIExpatParser.so
+%%FREEIMAGE%%lib/cegui-0.8/libCEGUIFreeImageImageCodec.so
+%%LIBXML2%%lib/cegui-0.8/libCEGUILibXMLParser.so
+%%RAPIDXML%%lib/cegui-0.8/libCEGUIRapidXMLParser.so
 lib/cegui-0.8/libCEGUISTBImageCodec.so
 lib/cegui-0.8/libCEGUITGAImageCodec.so
-lib/cegui-0.8/libCEGUILibXMLParser.so
+%%TINYXML%%lib/cegui-0.8/libCEGUITinyXMLParser.so
+%%XERCES%%lib/cegui-0.8/libCEGUIXercesParser.so
 lib/libCEGUIBase-0.so
 lib/libCEGUIBase-0.so.2
 lib/libCEGUIBase-0.so.2.2.2
 lib/libCEGUICommonDialogs-0.so
 lib/libCEGUICommonDialogs-0.so.2
 lib/libCEGUICommonDialogs-0.so.2.2.2
+%%IRRLICHT%%lib/libCEGUIIrrlichtRenderer-0.so
+%%IRRLICHT%%lib/libCEGUIIrrlichtRenderer-0.so.2
+%%IRRLICHT%%lib/libCEGUIIrrlichtRenderer-0.so.2.2.2
+%%LUA%%lib/libCEGUILuaScriptModule-0.so
+%%LUA%%lib/libCEGUILuaScriptModule-0.so.2
+%%LUA%%lib/libCEGUILuaScriptModule-0.so.2.2.2
 lib/libCEGUINullRenderer-0.so
 lib/libCEGUINullRenderer-0.so.2
 lib/libCEGUINullRenderer-0.so.2.2.2
-lib/libCEGUIOgreRenderer-0.so
-lib/libCEGUIOgreRenderer-0.so.2
-lib/libCEGUIOgreRenderer-0.so.2.2.2
-lib/libCEGUILuaScriptModule-0.so
-lib/libCEGUILuaScriptModule-0.so.2
-lib/libCEGUILuaScriptModule-0.so.2.2.2
-lib/libCEGUIOpenGLRenderer-0.so
-lib/libCEGUIOpenGLRenderer-0.so.2
-lib/libCEGUIOpenGLRenderer-0.so.2.2.2
-libdata/pkgconfig/CEGUI-0-LUA.pc
+%%OGRE%%lib/libCEGUIOgreRenderer-0.so
+%%OGRE%%lib/libCEGUIOgreRenderer-0.so.2
+%%OGRE%%lib/libCEGUIOgreRenderer-0.so.2.2.2
+%%ANYOPENGL%%lib/libCEGUIOpenGLRenderer-0.so
+%%ANYOPENGL%%lib/libCEGUIOpenGLRenderer-0.so.2
+%%ANYOPENGL%%lib/libCEGUIOpenGLRenderer-0.so.2.2.2
+%%IRRLICHT%%libdata/pkgconfig/CEGUI-0-IRRLICHT.pc
+%%LUA%%libdata/pkgconfig/CEGUI-0-LUA.pc
 libdata/pkgconfig/CEGUI-0-NULL.pc
-libdata/pkgconfig/CEGUI-0-OGRE.pc
-libdata/pkgconfig/CEGUI-0-OPENGL.pc
-libdata/pkgconfig/CEGUI-0-OPENGL3.pc
+%%OGRE%%libdata/pkgconfig/CEGUI-0-OGRE.pc
+%%OPENGL%%libdata/pkgconfig/CEGUI-0-OPENGL.pc
+%%OPENGL3%%libdata/pkgconfig/CEGUI-0-OPENGL3.pc
 libdata/pkgconfig/CEGUI-0.pc
 share/cegui-0/animations/GameMenu.anims
 share/cegui-0/animations/example.anims
@@ -441,27 +469,32 @@ share/cegui-0/xml_schemas/Imageset.xsd
 share/cegui-0/xml_schemas/Samples.xsd
 @dirrm include/cegui-0/CEGUI/CommonDialogs/ColourPicker
 @dirrm include/cegui-0/CEGUI/CommonDialogs
-@dirrm include/cegui-0/CEGUI/ImageCodecModules/DevIL
-@dirrm include/cegui-0/CEGUI/ImageCodecModules/FreeImage
+%%CORONA%%@dirrm include/cegui-0/CEGUI/ImageCodecModules/Corona
+%%DEVIL%%@dirrm include/cegui-0/CEGUI/ImageCodecModules/DevIL
+%%FREEIMAGE%%@dirrm include/cegui-0/CEGUI/ImageCodecModules/FreeImage
 @dirrm include/cegui-0/CEGUI/ImageCodecModules/STB
 @dirrm include/cegui-0/CEGUI/ImageCodecModules/TGA
 @dirrm include/cegui-0/CEGUI/ImageCodecModules
+%%IRRLICHT%%@dirrm include/cegui-0/CEGUI/RendererModules/Irrlicht
 @dirrm include/cegui-0/CEGUI/RendererModules/Null
-@dirrm include/cegui-0/CEGUI/RendererModules/Ogre
-@dirrm include/cegui-0/CEGUI/RendererModules/OpenGL
+%%OGRE%%@dirrm include/cegui-0/CEGUI/RendererModules/Ogre
+%%OPENGL%%@dirrm include/cegui-0/CEGUI/RendererModules/OpenGL
 @dirrm include/cegui-0/CEGUI/RendererModules
-@dirrm include/cegui-0/CEGUI/ScriptModules/Lua
-@dirrm include/cegui-0/CEGUI/ScriptModules
+%%LUA%%@dirrm include/cegui-0/CEGUI/ScriptModules/Lua
+%%LUA%%@dirrm include/cegui-0/CEGUI/ScriptModules
 @dirrm include/cegui-0/CEGUI/WindowRendererSets/Core
 @dirrm include/cegui-0/CEGUI/WindowRendererSets
-@dirrm include/cegui-0/CEGUI/XMLParserModules/Expat
-@dirrm include/cegui-0/CEGUI/XMLParserModules/Libxml2
-@dirrm include/cegui-0/CEGUI/XMLParserModules
+%%EXPAT%%@dirrm include/cegui-0/CEGUI/XMLParserModules/Expat
+%%LIBXML2%%@dirrm include/cegui-0/CEGUI/XMLParserModules/Libxml2
+%%RAPIDXML%%@dirrm include/cegui-0/CEGUI/XMLParserModules/RapidXML
+%%TINYXML%%@dirrm include/cegui-0/CEGUI/XMLParserModules/TinyXML
+%%XERCES%%@dirrm include/cegui-0/CEGUI/XMLParserModules/Xerces
+%%XMLPARSERS%%@dirrm include/cegui-0/CEGUI/XMLParserModules
 @dirrm include/cegui-0/CEGUI/falagard
 @dirrm include/cegui-0/CEGUI/widgets
 @dirrm include/cegui-0/CEGUI
 @dirrm include/cegui-0
-@dirrm lib/cegui-0.8
+@dirrmtry lib/cegui-0.8
 @dirrm share/cegui-0/animations
 @dirrm share/cegui-0/fonts
 @dirrm share/cegui-0/imagesets
@@ -471,4 +504,3 @@ share/cegui-0/xml_schemas/Samples.xsd
 @dirrm share/cegui-0/schemes
 @dirrm share/cegui-0/xml_schemas
 @dirrm share/cegui-0
-
