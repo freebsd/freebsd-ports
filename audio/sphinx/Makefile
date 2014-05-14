@@ -3,7 +3,7 @@
 
 PORTNAME=	sphinx
 PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmu${PORTNAME}/${PORTNAME}2/0.4
 DISTNAME=	sphinx2-0.4
@@ -11,12 +11,12 @@ DISTNAME=	sphinx2-0.4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 
-DEST=		${WRKSRC}/src/libsphinx2/
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-USES=		gmake
-USE_AUTOTOOLS=libtool
+USES=		gmake libtool shebangfix
+SHEBANG_FILES=	scripts/sphinx2-demo.in
+perl_OLD_CMD=	@PERL@ -w
 
 # contains i386 sound code
 ONLY_FOR_ARCHS=	i386
@@ -36,7 +36,7 @@ post-build:
 	${ECHO_CMD} "proper testing or source review by the"	>> ${PKGMESSAGE}
 	${ECHO_CMD} "FreeBSD maintainer."			>> ${PKGMESSAGE}
 
-pre-install:
-	${CAT} ${PKGMESSAGE}
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsphinx2*.so
 
 .include <bsd.port.mk>
