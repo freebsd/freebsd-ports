@@ -1,6 +1,8 @@
 bin/rssroll
+@sample etc/rssrollrc.sample
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 www/cgi-bin/rssroll.cgi
-etc/rssrollrc.sample
 www/data/rssroll/css/common.css
 www/data/rssroll/css/default.css
 www/data/rssroll/html/header.html
