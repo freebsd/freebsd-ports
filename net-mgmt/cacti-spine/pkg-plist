@@ -1,5 +1,2 @@
 bin/spine
-@unexec if cmp -s %D/etc/spine.conf %D/%%EXAMPLESDIR%%/spine.conf; then rm -f %D/etc/spine.conf; fi
-%%EXAMPLESDIR%%/spine.conf
-@exec [ -f %D/etc/spine.conf ] || cp %D/%%EXAMPLESDIR%%/spine.conf %D/etc/spine.conf
-@dirrm %%EXAMPLESDIR%%
+etc/spine.conf.sample
