@@ -18,7 +18,7 @@ bin/rt-mailgate
 %%RT_ETC_DIR%%/schema.mysql
 @exec chmod 0750 %D/%%RT_ETC_DIR%%
 @exec chgrp rt %D/%%RT_ETC_DIR%%
-@group
+@group wheel
 %%SITE_PERL%%/RT.pm
 %%SITE_PERL%%/RT/ACE.pm
 %%SITE_PERL%%/RT/ACL.pm
@@ -267,7 +267,7 @@ sbin/rt-test-dependencies
 sbin/rt-validate-aliases
 sbin/rt-validator
 sbin/standalone_httpd
-@group
+@group wheel
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-2.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.0
