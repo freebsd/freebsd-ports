@@ -18,30 +18,14 @@ WRKSRC=		${WRKDIR}
 DATADIR=	${PREFIX}/share/smc
 NO_BUILD=	yes
 
-PORTDOCS=	Addon_-_Music_Readme.txt
-
-NO_STAGE=	yes
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-patch:
-# The pointyhat build system doesn't like spaces in $PORTDOCS,
-# so this makes it happier
-	${MV} ${WRKSRC}/docs/Addon\ -\ Music\ Readme.txt \
-		${WRKSRC}/docs/Addon_-_Music_Readme.txt
-
 do-install:
-	cd ${WRKSRC}/data && \
-		${FIND} music | ${CPIO} -pdmvu ${DATADIR}
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
-.endfor
-.endif
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} music ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/Addon\ -\ Music\ Readme.txt \
+		${STAGEDIR}${DOCSDIR}/Addon_-_Music_Readme.txt
 
 .include <bsd.port.mk>
