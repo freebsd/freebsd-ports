@@ -13,15 +13,13 @@ COMMENT=	A tool to check shared library links
 
 LICENSE=	BSD
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse
 
 MAKE_ARGS=	PREFIX="${PREFIX}"
 
-MAN1=		libchk.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	sbin/libchk
+PLIST_FILES=	man/man1/libchk.1.gz \
+		sbin/libchk
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
