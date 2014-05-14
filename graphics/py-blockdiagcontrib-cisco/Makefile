@@ -12,15 +12,7 @@ COMMENT=	Networking shapes for blockdiag designed by Cisco
 RUN_DEPENDS=	${PKGNAMEPREFIX}blockdiag>=0.8.0:${PORTSDIR}/graphics/py-blockdiag
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-
-NO_STAGE=	yes
-x-generate-plist:
-	${FIND} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG} -type f | ${SORT} | \
-	${SED} -e 's,${PYTHON_SITELIBDIR},%%PYTHON_SITELIBDIR%%,' \
-	-e 's,${PYEASYINSTALL_EGG},%%PYEASYINSTALL_EGG%%,' >> pkg-plist.new
-	${FIND} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG} -type d -depth | ${SORT} -r | \
-	${SED} -e 's,${PYTHON_SITELIBDIR},@dirrm %%PYTHON_SITELIBDIR%%,' \
-	-e 's,${PYEASYINSTALL_EGG},%%PYEASYINSTALL_EGG%%,' >> pkg-plist.new
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
