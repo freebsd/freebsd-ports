@@ -1,5 +1,3 @@
-lib/geany/addons.a
-lib/geany/addons.la
 lib/geany/addons.so
 %%DOCSDIR%%/addons/AUTHORS
 %%DOCSDIR%%/addons/COPYING

@@ -12,13 +12,13 @@ include/rpm/rpmspec.h
 include/rpm/rpmurl.h
 include/rpm/stringbuf.h
 lib/librpm.a
-lib/librpm.la
 lib/librpm.so
 lib/librpm.so.0
+lib/librpm.so.0.0.0
 lib/librpmbuild.a
-lib/librpmbuild.la
 lib/librpmbuild.so
 lib/librpmbuild.so.0
+lib/librpmbuild.so.0.0.0
 lib/rpm/brp-compress
 lib/rpm/brp-redhat
 lib/rpm/brp-sparc64-linux

@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A portable and small webserver written in C
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	popular-[0-9]*
@@ -18,7 +20,6 @@ OPTIONS_DEFINE=	LOG PHP
 OPTIONS_DEFAULT=	LOG PHP
 LOG_DESC=	Enable loggin
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHP}
@@ -39,10 +40,10 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sources/pserv ${PREFIX}/sbin/
-	${MKDIR} ${PREFIX}/etc/pserv
-	${INSTALL_DATA} ${WRKSRC}/defaults/mime_types.dat ${PREFIX}/etc/pserv/mime.types
-	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/pserv/pserv.conf.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/pserv.sh ${PREFIX}/etc/rc.d/
+	${INSTALL_PROGRAM} ${WRKSRC}/sources/pserv ${STAGEDIR}${PREFIX}/sbin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pserv
+	${INSTALL_DATA} ${WRKSRC}/defaults/mime_types.dat ${STAGEDIR}${PREFIX}/etc/pserv/mime.types
+	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${STAGEDIR}${PREFIX}/etc/pserv/pserv.conf.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/pserv.sh ${STAGEDIR}${PREFIX}/etc/rc.d/
 
 .include <bsd.port.mk>

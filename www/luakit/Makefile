@@ -3,6 +3,7 @@
 
 PORTNAME=	luakit
 PORTVERSION=	2012.09.13r1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	gugabsd@mundounix.com.br

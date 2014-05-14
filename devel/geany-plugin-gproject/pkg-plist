@@ -1,5 +1,3 @@
-lib/geany/gproject.a
-lib/geany/gproject.la
 lib/geany/gproject.so
 %%DOCSDIR%%/gproject/AUTHORS
 %%DOCSDIR%%/gproject/COPYING

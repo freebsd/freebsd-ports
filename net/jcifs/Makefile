@@ -12,7 +12,8 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	The Java CIFS Client Library
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -24,17 +25,12 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
-.endif
-.if !defined(NOPORTEXAMPLES)
-	cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
-	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
-.endif
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
+	cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} \;
+	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
 
 .include <bsd.port.mk>

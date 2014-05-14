@@ -23,6 +23,7 @@ keygen_cmd="shibboleth_sp_keygen"
 
 shibboleth_sp_user=%%SHIBD_USER%%
 shibboleth_sp_group=%%SHIBD_GROUP%%
+www_group=%%WWWGROUP%%
 
 load_rc_config $name
 
@@ -36,11 +37,15 @@ shibboleth_sp_configtest() {
 		run_rc_command keygen
 	else
 		# update from 2.4.x, chown %%SHIBD_USER%% the key and cert
-	       	for f in ${confdir}/${key} ${confdir}/${cert}; do
-			set X `stat ${f}`
-			test $6 != ${shibboleth_sp_user} && chown ${shibboleth_sp_user}:${shibboleth_sp_group} ${f}
-		done
+	       	chown ${shibboleth_sp_user}:${shibboleth_sp_group} ${confdir}/${key} ${confdir}/${cert}
+		chmod 400 ${confdir}/${key}
+		chmod 444 ${confdir}/${cert}
 	fi
+	# In FreeBSD 10 (r258664), /var/cache mode is corrected to 755. make sure we have that mode.
+	chmod 755 /var/cache
+	install -d -o ${shibboleth_sp_user} -g ${shibboleth_sp_group} /var/log/shibboleth
+	install -d -o ${shibboleth_sp_user} -g ${shibboleth_sp_group} /var/cache/shibboleth
+	install -d -o ${shibboleth_sp_user} -g ${www_group} -m 750 /var/run/shibboleth
 	${command} ${shibboleth_sp_flags} -u ${shibboleth_sp_user} -g ${shibboleth_sp_group} -t
 }
 

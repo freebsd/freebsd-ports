@@ -16,6 +16,8 @@ COMMENT=	Wrapper code to start/stop a Java application as a daemon
 
 LICENSE=	APACHE20
 
+OPTIONS_DEFINE=	DOCS
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
@@ -29,18 +31,11 @@ PLIST_FILES=	bin/jsvc %%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/jsvc ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKBIN}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKBIN} && ${COPYTREE_SHARE} apidocs ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/jsvc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKBIN}/${DISTNAME}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKBIN} && ${COPYTREE_SHARE} apidocs ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

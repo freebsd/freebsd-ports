@@ -14,8 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USES=		iconv
-USE_BZIP2=	yes
+USES=		tar:bzip2 iconv
 USE_SDL=	sdl
 USE_GL=		gl
 

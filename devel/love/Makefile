@@ -3,7 +3,7 @@
 
 PORTNAME=	love
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel games
 MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		gmake openal
+USES=		gmake openal dos2unix
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 USE_LUA=	5.1+
@@ -30,7 +30,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib
 WRKSRC=		${WRKDIR}/love-${PORTVERSION}
-USE_DOS2UNIX=	yes
+DOS2UNIX_FILES=	src/modules/graphics/opengl/GLee.h
 
 PLIST_FILES=	bin/love
 

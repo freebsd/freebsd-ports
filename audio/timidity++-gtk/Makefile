@@ -9,6 +9,5 @@ COMMENT=	Gtk interface for TiMidity++
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 PLIST_FILES=	bin/gtkmidi ${TIMID_LIBDIR}/interface_g.so
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

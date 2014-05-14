@@ -1,0 +1,17 @@
+--- configure.orig	2014-05-08 17:21:32.000000000 +0400
++++ configure	2014-05-08 17:23:08.000000000 +0400
+@@ -12988,13 +12988,11 @@
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <libintl.h>
+-extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
+ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return (int) gettext ("");
+   ;
+   return 0;
+ }

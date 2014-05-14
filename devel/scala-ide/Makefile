@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}-20130918
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Scala plugin for the Eclipse IDE
 
+LICENSE=	BSD3CLAUSE
+
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 OPTIONS_DEFINE=	WTP
@@ -22,7 +24,6 @@ USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/site
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWTP}

@@ -2,28 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	libsbml
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	5.10.0
 CATEGORIES=	biology devel
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sbml/${PORTNAME}/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITE_SUBDIR=	sbml/${PORTNAME}/${PORTVERSION}/stable
+DISTNAME=	libSBML-${PORTVERSION}-core-src
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API Library for Working with SBML File
+
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-OPTIONS_DEFINE=	PYTHON RUBY
+OPTIONS_DEFINE=	PYTHON RUBY EXAMPLES
 
-USES=		gmake zip
-USE_GCC=	any
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -46,14 +44,15 @@ PLIST_SUB+=		WITH_RUBY="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#' \
+	${REINPLACE_CMD} -e 's#%%PREFIX%%#${STAGEDIR}${PREFIX}#' \
 		${WRKSRC}/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples \
-		&& ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; \
-		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
+		&& ${FIND} . -type f -name "._Makefile.in" -exec ${RM} -f {} \; \
+		&& ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/\{} \; \
+		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${EXAMPLESDIR}/\{} \;
 .endif
 .include <bsd.port.mk>

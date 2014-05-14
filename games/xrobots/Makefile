@@ -13,12 +13,10 @@ COMMENT=	Fight off villainous robots (X version)
 
 USES=		imake
 USE_XORG=	x11 xaw xext xmu xt sm ice
-WRKSRC=		${WRKDIR}/xrobots-1.0
-MAN6=		xrobots.6
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL} -c -g games -m 664 ${FILESDIR}/xrobotscores ${PREFIX}/lib/X11
+	${CP} ${FILESDIR}/xrobotscores ${STAGEDIR}${PREFIX}/lib/X11
 
 post-patch:
 	${REINPLACE_CMD} -e 's|__PREFIX__|${PREFIX}|g' \

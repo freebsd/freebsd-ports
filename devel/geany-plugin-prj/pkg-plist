@@ -1,5 +1,3 @@
-lib/geany/geanyprj.a
-lib/geany/geanyprj.la
 lib/geany/geanyprj.so
 %%DOCSDIR%%/geanyprj/AUTHORS
 %%DOCSDIR%%/geanyprj/COPYING

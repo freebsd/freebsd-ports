@@ -67,7 +67,7 @@ USE_GSTREAMER+=	vorbis ogg theora vp8 good
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
+USE_GNOME+=	gtk20 libxml2
 .endif
 
 .if ${PORT_OPTIONS:MKDE4}

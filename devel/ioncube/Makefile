@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ioncube
-DISTVERSION=	4.5.3
+DISTVERSION=	4.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads3.ioncube.com/loader_downloads/ \
 		http://dl.ispsystem.info/ioncube/${DISTVERSION}/ \
@@ -24,11 +24,6 @@ DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-# FreeBSD 10 is unsupported
-.if ${OSVERSION} >= 1000000
-IGNORE=	is unsupported on FreeBSD 10
-.endif
-
 # Detect OS version for distname
 VER=	8
 .if ${OSVERSION} >= 900000

@@ -3,7 +3,7 @@
 
 PORTNAME=	ntfs
 PORTVERSION=	2014.2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
@@ -17,9 +17,9 @@ LICENSE=	GPLv2
 
 CONFLICTS_BUILD=	bonobo-1.*
 CONFLICTS_INSTALL=	ntfsprogs-*
-USES=		fuse pkgconfig iconv
+USES=		fuse pkgconfig iconv libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external --disable-ldconfig
 CPPFLAGS+=	-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include
@@ -50,10 +50,11 @@ post-patch:
 		${WRKSRC}/libntfs-3g/object_id.c \
 		${WRKSRC}/libntfs-3g/reparse.c \
 		${WRKSRC}/libntfs-3g/security.c
-	@${REINPLACE_CMD} -e 's|\($$(AM_CFLAGS)\) \(-I$$(top_srcdir)/include/ntfs-3g\)|\2 \1|' \
-		${WRKSRC}/libntfs-3g/Makefile.in
+	@${REINPLACE_CMD} -e 's|\($$(AM_CFLAGS)\) \(-I$$(top_srcdir)/include/ntfs-3g\)|\2 \1|; \
+		/install-exec-hook:/,/^$$/ s|^@.*||' ${WRKSRC}/libntfs-3g/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libntfs-3g.so
 
 .include <bsd.port.post.mk>

@@ -11,8 +11,7 @@ COMMENT=	Strategy hexagon game
 
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 
 DESKTOP_ENTRIES="Hexxagon" "Strategy Game" "" \

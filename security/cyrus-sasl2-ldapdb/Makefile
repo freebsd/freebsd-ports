@@ -2,9 +2,10 @@
 
 PORTNAME=	ldapdb
 PORTVERSION=	2.1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
+		http://cyrusimap.org/releases/
 PKGNAMEPREFIX=	cyrus-sasl-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
@@ -21,8 +22,8 @@ DISTINFO_FILE=	${CYRUS_SASL2_DIR}/distinfo
 PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKSRC}/plugins
 
+USES=		libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
@@ -52,9 +53,9 @@ CONFIGURE_ARGS+=--enable-ldapdb --with-ldap=${LOCALBASE}
 MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 
 PLIST_FILES=	lib/sasl2/libldapdb.a \
-		lib/sasl2/libldapdb.la \
 		lib/sasl2/libldapdb.so \
-		lib/sasl2/libldapdb.so.3
+		lib/sasl2/libldapdb.so.3 \
+		lib/sasl2/libldapdb.so.3.0.0
 
 .include <bsd.port.pre.mk>
 

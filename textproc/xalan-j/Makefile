@@ -11,10 +11,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-bin
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Apache XSLT processor for transforming XML documents
 
+LICENSE=	APACHE20
+
 RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
 
-LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		zip
 USE_JAVA=	yes
@@ -32,28 +33,29 @@ PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|} bin/xalan-j
 
 SUB_FILES=	xalan-j.sh
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
 .for jarfile in ${JARFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${jarfile} ${JAVAJARDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${jarfile} ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} -n " ${jarfile}"
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 	@${ECHO_MSG} " [ DONE ]"
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing script in ${PREFIX}/bin/..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/xalan-j.sh ${PREFIX}/bin/xalan-j
+	@${INSTALL_SCRIPT} ${WRKDIR}/xalan-j.sh ${STAGEDIR}${PREFIX}/bin/xalan-j
 	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>

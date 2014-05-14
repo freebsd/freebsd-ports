@@ -12,7 +12,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 DATADIR=	${PREFIX}/share/stardict
 DICTDIR=	${DATADIR}/dic

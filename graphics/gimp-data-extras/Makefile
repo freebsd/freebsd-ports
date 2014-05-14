@@ -23,5 +23,4 @@ USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

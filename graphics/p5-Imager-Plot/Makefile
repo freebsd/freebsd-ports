@@ -8,8 +8,11 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl extension for generating fancy graphic plots in color
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager
 RUN_DEPENDS:=	${BUILD_DEPENDS}

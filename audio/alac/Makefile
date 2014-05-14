@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 DISTNAME=	${PORTNAME}_decoder-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Basic decoder for Apple Lossless Audio Codec files (ALAC)
@@ -16,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_decoder
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	alac
 
+USES=		tar:tgz
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/alac

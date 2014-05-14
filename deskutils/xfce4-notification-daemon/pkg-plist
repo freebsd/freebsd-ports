@@ -1,6 +1,5 @@
 bin/notification-settings
 lib/xfce4/notification-daemon-xfce/engines/libstandard.a
-lib/xfce4/notification-daemon-xfce/engines/libstandard.la
 lib/xfce4/notification-daemon-xfce/engines/libstandard.so
 libexec/xfce4/notification-daemon-xfce
 share/applications/notification-settings.desktop

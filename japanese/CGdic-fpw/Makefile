@@ -9,23 +9,21 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/CGdic1.5h/
 DISTNAME=	CGdic1.5h-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Japanese dictionary for CG (EPWING V1 format)
+COMMENT=	Japanese dictionary for CG (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cg
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/CGdic-fpw/cg/data
-	${INSTALL_DATA} ${WRKSRC}/cg/data/honmon ${PREFIX}/share/dict/CGdic-fpw/cg/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/CGdic-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/CGdic-fpw/cg/data
+	${INSTALL_DATA} ${WRKSRC}/cg/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/CGdic-fpw/cg/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs ${STAGEDIR}${PREFIX}/share/dict/CGdic-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

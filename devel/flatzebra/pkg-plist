@@ -1,7 +1,6 @@
 lib/libflatzebra-0.1.so.2
+lib/libflatzebra-0.1.so.2.0.0
 lib/libflatzebra-0.1.so
-lib/libflatzebra-0.1.la
-lib/libflatzebra-0.1.a
 libdata/pkgconfig/flatzebra-0.1.pc
 include/flatzebra/Couple.h
 include/flatzebra/Joystick.h

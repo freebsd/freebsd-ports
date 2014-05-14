@@ -9,17 +9,17 @@ MASTER_SITES=	LOCAL/bf
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Standard math functions missing from the FreeBSD libm
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libmpc.so:${PORTSDIR}/math/mpc
 
 USE_LDCONFIG=	yes
-USE_XZ=		yes
+USES=		tar:xz uidfix
 
 MAKE_ENV=	LDADD=-lmpc LIB=missing SHLIB_MAJOR="${SHLIB_MAJOR}" \
-		SRCCONF=/dev/null SRCS="${SRCS}"
+		SRCCONF=/dev/null SRCS="${SRCS}" __MAKE_CONF=/dev/null
 
-OPTIONS_DEFINE=	PROFILE
+OPTIONS_DEFINE=	PROFILE EXAMPLES
 
 PLIST_FILES=	include/missing_complex.h \
 		include/missing_math.h \
@@ -31,19 +31,16 @@ SRCS=		libmissing.c
 
 CFLAGS+=	-fno-builtin -fno-math-errno -I. -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+PORTEXAMPLES=	${SRCS}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 1000054
 LDFLAGS+=	-Wl,-z,interpose
 .endif
 
-.if ${PORT_OPTIONS:MPROFILE} || defined(WITH_PROFILE)
-.if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
-IGNORE =	you have defined WITH_PROFILE, but have also defined\
-WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
-.elif !exists(/usr/lib/libc_p.a)
+.if ${PORT_OPTIONS:MPROFILE}
+.if !exists(/usr/lib/libc_p.a)
 IGNORE  =	you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
@@ -81,11 +78,8 @@ check regression-test test: build
 
 post-install:
 	@cd ${WRKSRC}; ${INSTALL_DATA} missing_complex.h missing_math.h \
-	${PREFIX}/include
-.if !${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	${STAGEDIR}${PREFIX}/include
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
-PORTEXAMPLES=	${SRCS}
-.endif
 .include <bsd.port.mk>

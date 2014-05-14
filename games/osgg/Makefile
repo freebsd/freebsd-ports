@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OldSkool Gravity Game
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_SDL=	sdl image ttf mixer
 USE_GL=		yes
 

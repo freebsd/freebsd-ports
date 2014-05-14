@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	6.7.0
-PORTREVISION=	1
+PORTVERSION=	6.9.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
@@ -16,14 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 		libebml.so:${PORTSDIR}/textproc/libebml \
+		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 		libmatroska.so:${PORTSDIR}/multimedia/libmatroska
 
-USES=		pkgconfig gettext iconv compiler:c++11-lib
-USE_XZ=		yes
+USES=		pkgconfig gettext iconv compiler:c++11-lib tar:xz
 GNU_CONFIGURE=	yes
-USE_RAKE=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -36,12 +33,13 @@ CONFIGURE_ARGS=	--disable-qt \
 		--with-boost-regex=boost_regex
 
 OPTIONS_DEFINE=	WXGTK FLAC CURL
-OPTIONS_DEFAULT=WXGTK FLAC CURL
+OPTIONS_DEFAULT=WXGTK FLAC 
 
 BROKEN_sparc64=	Does not install on sparc64
 
 OPTIONS_SUB=	yes
-WXGTK_USE=	WX=2.8+
+WXGTK_USES=	desktop-file-utils shared-mime-info
+WXGTK_USE=	wx=3.0
 WXGTK_CONFIGURE_ENABLE=	gui
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
@@ -56,9 +54,9 @@ MAKE_ENV+=	V=1
 .endif
 
 do-build:
-	@(cd ${WRKSRC}/; unset PREFIX; ${RAKE_BIN})
+	@(cd ${WRKSRC}/; unset PREFIX; ./drake ${_MAKE_JOBS})
 
 do-install:
-	@(cd ${WRKSRC}/; unset PREFIX;  ${RAKE_BIN} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/; unset PREFIX;  ./drake ${_MAKE_JOBS} ${MAKE_ARGS} install)
 
 .include <bsd.port.mk>

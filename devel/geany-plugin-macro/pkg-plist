@@ -1,5 +1,3 @@
-lib/geany/geanymacro.a
-lib/geany/geanymacro.la
 lib/geany/geanymacro.so
 %%DOCSDIR%%/geanymacro/AUTHORS
 %%DOCSDIR%%/geanymacro/COPYING

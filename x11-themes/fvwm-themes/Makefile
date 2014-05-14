@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-extra-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@brandon.dvalentine.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for the Fvwm2 window manager
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \

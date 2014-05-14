@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jmref
-PORTVERSION=	18.4
+PORTVERSION=	18.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://iphome.hhi.de/suehring/tml/download/
 DISTNAME=	jm${PORTVERSION}

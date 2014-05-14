@@ -9,6 +9,7 @@ MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+DIST_SUBDIR=	esecanna
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for VJE-Delta 2.5
@@ -16,17 +17,15 @@ COMMENT=	Esecanna module for VJE-Delta 2.5
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
-DIST_SUBDIR=    esecanna
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/esecanna
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/esecanna
 .for i in README CHANGES
-	${INSTALL_DATA} ${WRKSRC}/${i}.jp ${PREFIX}/share/doc/esecanna/${i}.vje25.jp
+	${INSTALL_DATA} ${WRKSRC}/${i}.jp \
+		${STAGEDIR}${PREFIX}/share/doc/esecanna/${i}.vje25.jp
 .endfor
-.endif
 
 .include <bsd.port.mk>

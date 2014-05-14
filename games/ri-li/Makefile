@@ -10,9 +10,8 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}%20Linux_Unix/${PORTNAME}%20V${PORTVE
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Drive a toy wood train in many levels - snake-like arcade game
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
-USES=		gmake
 USE_SDL=	sdl mixer
 
 CPPFLAGS+=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include

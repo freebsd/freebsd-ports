@@ -10,7 +10,7 @@ DISTNAME=	lua-mode.el
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	jre@vineyard.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing Lua scripts
 
 NO_BUILD=	yes

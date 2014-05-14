@@ -9,15 +9,14 @@ MASTER_SITE_SUBDIR=	phpgroupware/phpgroupware/${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PHP=	yes
 WANT_PHP_MOD=	yes
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-		@${MKDIR} -p ${PREFIX}/www/data-dist/phpgroupware
-		@${CP} -r ${WRKSRC}/* ${PREFIX}/www/data-dist/phpgroupware
+		@${MKDIR} ${STAGEDIR}${PREFIX}/www/data-dist/phpgroupware
+		cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/www/data-dist/phpgroupware
 
 .include <bsd.port.mk>

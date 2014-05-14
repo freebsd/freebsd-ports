@@ -18,4 +18,8 @@ to your /etc/rc.conf
 
 	# service devd restart
 
+4) Optionally add a user to the "webcamd" group
+
+	# pw groupmod webcamd -m <username>
+
 *********************************************************************

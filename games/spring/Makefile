@@ -3,7 +3,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	94.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION} \
 		http://springrts.com/dl/

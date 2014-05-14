@@ -5,6 +5,63 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140511:
+  AFFECTS: users of databases/firebird*
+  AUTHOR: bapt@FreeBSD.org
+
+  The default version of databases/firebird* have been changed to support
+  DEFAULT_VERSIONS variable
+
+  DEFAULT_VERSIONS=firebird=2.5
+
+20140507:
+  AFFECTS: users of lang/open-cobol
+  AUTHOR: johans@FreeBSD.org
+
+  lang/open-cobol was moved to lang/gnu-cobol to match the new package
+  name. Please do the following according to package manager used.
+
+  # portmaster -o lang/gnu-cobol lang/open-cobol
+    or
+  # portupgrade -fo lang/gnu-cobol lang/open-cobol
+    or
+  # pkg set -o lang/open-cobol:lang/gnu-cobol
+
+20140506:
+  AFFECTS: users of ports-mgmt/portshaker
+  AUTHOR: romain@FreeBSD.org
+
+  ports-mgmt/portshaker was updated to avoid creating an aditional 'ports'
+  subdirectory when merging to a poudriere_tree without ZFS, so that
+  portshaker's default location matches poudriere's default location.
+  
+  Users of poudriere on non-ZFS systems should not anymore have to pass extra
+  options to poudriere for it to find the ports tree.
+
+20140506:
+  AFFECTS: users of security/yassl
+  AUTHOR: gahr@FreeBSD.org
+
+  security/yassl was moved to security/cyassl to match the original package
+  name.  Please do the following according to package manager used.
+
+  # portmaster -o security/cyassl security/yassl
+    or
+  # portupgrade -fo security/cyassl security/yassl
+    or
+  # pkg set -o security/yassl:security/cyassl
+
+20140505:
+  AFFECTS: users of databases/libiodbc
+  AUTHOR: bapt@FreeBSD.org
+
+  libiodbc no longer provide the odbc compatibility
+
+  Rebuild all ports that are linked to libiodbc
+  # portmaster -r libiodbc
+  or
+  # portupgrade -r databases/libiodbc
+
 20140503:
   AFFECTS: users of science/hdf5* and science/netcdf*
   AUTHOR: sunpoet@FreeBSD.org

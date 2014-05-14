@@ -1,6 +1,6 @@
---- ./Makefile.orig	2011-06-24 16:25:27.000000000 +0200
-+++ ./Makefile	2012-09-17 13:38:44.926563330 +0200
-@@ -16,14 +16,14 @@
+--- Makefile.orig	2014-05-04 20:11:04.000000000 -0700
++++ Makefile	2014-05-04 20:13:48.000000000 -0700
+@@ -16,28 +16,28 @@
  # along with this program; if not, write to the Free Software
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  
@@ -10,22 +10,21 @@
 -CC=gcc
 +CC?=gcc
  
- VERSION=1.6.0
+ VERSION=1.7.0
  TREE_DEST=tree
  BINDIR=${prefix}/bin
 -MAN=tree.1
 +MAN=doc/tree.1
  MANDIR=${prefix}/man/man1
- OBJS=tree.o unix.o html.o xml.o hash.o color.o
+ OBJS=tree.o unix.o html.o xml.o json.o hash.o color.o
  
-@@ -31,13 +31,13 @@
+ # Uncomment options below for your particular OS:
  
  # Linux defaults:
- #CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
--CFLAGS=-O4 -Wall  -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
--LDFLAGS=-s
-+#CFLAGS=-O4 -Wall  -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
-+#LDFLAGS=-s
+-CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
++#CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+ #CFLAGS=-O4 -Wall  -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+ #LDFLAGS=-s
  
  # Uncomment for FreeBSD:
 -#CFLAGS=-O2 -Wall -fomit-frame-pointer
@@ -37,7 +36,7 @@
  
  # Uncomment for Solaris:
  #CC=cc
-@@ -93,13 +93,11 @@
+@@ -94,13 +94,11 @@
  	if [ -f tree.o ]; then rm *.o; fi
  	rm -f *~
  
@@ -45,7 +44,7 @@
 -	install -d $(BINDIR)
 -	install -d $(MANDIR)
 -	if [ -e $(TREE_DEST) ]; then \
--		install -s $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
+-		install $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
 -	fi
 -	install doc/$(MAN) $(MANDIR)/$(MAN)
 +install: $(TREE_DEST)

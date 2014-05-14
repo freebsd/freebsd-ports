@@ -6,7 +6,7 @@ PORTVERSION=	4.34
 CATEGORIES=	japanese print
 MASTER_SITES=	http://wt1.ld.infoseek.co.jp/sources/
 
-MAINTAINER=	kawahara@pine.kuee.kyoto-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text file to postscript converter (with Japanese support)
 
 USE_BZIP2=	yes

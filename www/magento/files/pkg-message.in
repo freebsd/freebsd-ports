@@ -1,4 +1,4 @@
-POST-INSTALL CONFIGURATION FOR MOODLE
+POST-INSTALL CONFIGURATION FOR MAGENTO
 =====================================
 
 1) Create a MySQL user and a database for Magento to store all
@@ -19,8 +19,11 @@ POST-INSTALL CONFIGURATION FOR MOODLE
 3) Visit your Magento site with a browser (i.e.,
    http://your.server.com/magento/), and you should
    be taken to the install.php script, which will lead
-   you through creating a config.php file and then
-   setting up Moodle, creating an admin account, etc.
+   you through creating the app/etc/local.xml file and then
+   setting up Magento, creating an admin account, etc.
+
+4) After installation consider setting app/etc back to mode 755 for security
+   reasons.
 
 For more information, see the INSTALL DOCUMENTATION:
 

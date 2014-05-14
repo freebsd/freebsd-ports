@@ -6,7 +6,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=		sysutils
 MASTER_SITES=	SF/root-tools/cdeploy/0.2
 
-MAINTAINER=		aihal@users.sourceforge.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Deploy a set of configuration files to a target file system
 
 USE_BZIP2=		yes

@@ -445,15 +445,40 @@
 +end Ada.Interrupts.Names;
 --- gcc/ada/adaint.c.orig
 +++ gcc/ada/adaint.c
-@@ -1144,6 +1144,7 @@
-   strcpy (path, "GNAT-XXXXXX");
+@@ -577,8 +577,8 @@
+   GNAT_STRUCT_STAT stat_result;
+   int fd;
+ 
+-  sprintf (full_path, "%s%c%s", dir, DIR_SEPARATOR, file);
+-  sprintf (temp_file, "%s%cTMP-%ld-%ld",
++  snprintf (full_path, 256, "%s%c%s", dir, DIR_SEPARATOR, file);
++  snprintf (temp_file, 256, "%s%cTMP-%ld-%ld",
+            dir, DIR_SEPARATOR, (long)getpid(), (long)getppid ());
+ 
+   /* Create the temporary file and write the process number.  */
+@@ -745,7 +745,8 @@
+   strcpy (encoding, "encoding=utf8");
+   *e_length = strlen (encoding);
+ #else
+-  strcpy (os_name, filename);
++  /* o_length is initialized with max os_name size (2x filename size) */
++  strncpy (os_name, filename, *o_length);
+   *o_length = strlen (filename);
+   *e_length = 0;
+ #endif
+@@ -1141,9 +1142,10 @@
+   int fd;
+   int o_fmode = O_BINARY;
+ 
+-  strcpy (path, "GNAT-XXXXXX");
++  strncpy (path, "GNAT-XXXXXX", 12);
  
  #if (defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) \
 +  || defined (__DragonFly__) \
    || defined (linux) || defined(__GLIBC__)) && !defined (__vxworks)
    return mkstemp (path);
  #elif defined (__Lynx__)
-@@ -1310,7 +1311,49 @@
+@@ -1310,7 +1312,49 @@
      free (pname);
    }
  
@@ -471,9 +496,9 @@
 +  char *datadir = getenv ("ANDROID_DATA");
 +
 +  if (datadir == NULL)
-+    strcpy (tmp_filename, "/data/local/tmp/gnat-XXXXXX");
++    strncpy (tmp_filename, "/data/local/tmp/gnat-XXXXXX", L_tmpnam);
 +  else
-+    sprintf (tmp_filename, "%s/local/tmp/gnat-XXXXXX", datadir);
++    snprintf (tmp_filename, L_tmpnam, "%s/local/tmp/gnat-XXXXXX", datadir);
 +
 +  testfd = mkstemp (tmp_filename);
 +  if (testfd != -1)
@@ -485,9 +510,9 @@
 +  char *sdcard = getenv ("EXTERNAL_STORAGE");
 +
 +  if (sdcard == NULL)
-+    strcpy (tmp_filename, "/sdcard/gnat-XXXXXX");
++    strncpy (tmp_filename, "/sdcard/gnat-XXXXXX", L_tmpnam);
 +  else
-+    sprintf (tmp_filename, "%s/gnat-XXXXXX", sdcard);
++    snprintf (tmp_filename, L_tmpnam, "%s/gnat-XXXXXX", sdcard);
 +
 +  testfd = mkstemp (tmp_filename);
 +  if (testfd != -1)
@@ -503,7 +528,19 @@
    || defined (__OpenBSD__) || defined(__GLIBC__)
  #define MAX_SAFE_PATH 1000
    char *tmpdir = getenv ("TMPDIR");
-@@ -2562,7 +2605,9 @@
+@@ -1318,9 +1362,9 @@
+   /* If tmpdir is longer than MAX_SAFE_PATH, revert to default value to avoid
+      a buffer overflow.  */
+   if (tmpdir == NULL || strlen (tmpdir) > MAX_SAFE_PATH)
+-    strcpy (tmp_filename, "/tmp/gnat-XXXXXX");
++    strncpy (tmp_filename, "/tmp/gnat-XXXXXX", L_tmpnam);
+   else
+-    sprintf (tmp_filename, "%s/gnat-XXXXXX", tmpdir);
++    snprintf (tmp_filename, L_tmpnam, "%s/gnat-XXXXXX", tmpdir);
+ 
+   close (mkstemp(tmp_filename));
+ #elif defined (__vxworks) && !(defined (__RTP__) || defined (VTHREADS))
+@@ -2562,7 +2606,9 @@
  {
    int cores = 1;
  
@@ -514,7 +551,7 @@
    cores = (int) sysconf (_SC_NPROCESSORS_ONLN);
  
  #elif defined (__hpux__)
-@@ -3608,35 +3653,6 @@
+@@ -3608,35 +3654,6 @@
  }
  #endif
  
@@ -5725,7 +5762,7 @@
 +end System.OS_Interface;
 --- /dev/null
 +++ gcc/ada/s-osinte-openbsd.ads
-@@ -0,0 +1,648 @@
+@@ -0,0 +1,640 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                  GNAT RUN-TIME LIBRARY (GNARL) COMPONENTS                --
@@ -5774,7 +5811,7 @@
 +package System.OS_Interface is
 +   pragma Preelaborate;
 +
-+   pragma Linker_Options ("-pthread");
++   pragma Linker_Options ("-lpthread");
 +
 +   subtype int            is Interfaces.C.int;
 +   subtype short          is Interfaces.C.short;
@@ -5883,21 +5920,13 @@
 +   --  sigcontext is architecture dependent, so define it private
 +   type struct_sigcontext is private;
 +
-+   type old_struct_sigaction is record
++   type struct_sigaction is record
 +      sa_handler : System.Address;
 +      sa_mask    : sigset_t;
 +      sa_flags   : int;
 +   end record;
-+   pragma Convention (C, old_struct_sigaction);
++   pragma Convention (C, struct_sigaction);
 +
-+   type new_struct_sigaction is record
-+      sa_handler : System.Address;
-+      sa_flags   : int;
-+      sa_mask    : sigset_t;
-+   end record;
-+   pragma Convention (C, new_struct_sigaction);
-+
-+   subtype struct_sigaction is new_struct_sigaction;
 +   type struct_sigaction_ptr is access all struct_sigaction;
 +
 +   SIG_BLOCK   : constant := 1;
@@ -5948,9 +5977,6 @@
 +   end record;
 +   pragma Convention (C, struct_timezone);
 +
-+   procedure usleep (useconds : unsigned_long);
-+   pragma Import (C, usleep, "usleep");
-+
 +   -------------------------
 +   -- Priority Scheduling --
 +   -------------------------
@@ -5968,6 +5994,8 @@
 +   -------------
 +
 +   type pid_t is private;
++
++   Self_PID : constant pid_t;
 +
 +   function kill (pid : pid_t; sig : Signal) return int;
 +   pragma Import (C, kill, "kill");
@@ -6356,6 +6384,7 @@
 +   pragma Convention (C, struct_sigcontext);
 +
 +   type pid_t is new int;
++   Self_PID : constant pid_t := 0;
 +
 +   type time_t is new int;
 +
@@ -6994,7 +7023,7 @@
      || defined (__GLIBC__) || defined (__APPLE__)
        eof_ch = termios_rec.c_cc[VEOF];
  
-@@ -853,8 +856,11 @@
+@@ -853,8 +856,12 @@
  /* Darwin, Free BSD, Linux, where component tm_gmtoff is present in
     struct tm */
  
@@ -7003,6 +7032,7 @@
 +#elif defined (__APPLE__) \
 +  || defined (__DragonFly__) \
 +  || defined (__FreeBSD__) \
++  || defined (__OpenBSD__) \
 +  || defined (linux) \
 +  || defined (__GLIBC__)
  {
@@ -7010,7 +7040,7 @@
    *off = tp.tm_gmtoff;
 --- /dev/null
 +++ gcc/ada/system-dragonfly-x86.ads
-@@ -0,0 +1,143 @@
+@@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                        GNAT RUN-TIME COMPONENTS                          --
@@ -7145,6 +7175,7 @@
 +   Stack_Check_Probes        : constant Boolean := True;
 +   Stack_Check_Limits        : constant Boolean := False;
 +   Support_Aggregates        : constant Boolean := True;
++   Support_Atomic_Primitives : constant Boolean := True;
 +   Support_Composite_Assign  : constant Boolean := True;
 +   Support_Composite_Compare : constant Boolean := True;
 +   Support_Long_Shifts       : constant Boolean := True;
@@ -7156,7 +7187,7 @@
 +end System;
 --- /dev/null
 +++ gcc/ada/system-dragonfly-x86_64.ads
-@@ -0,0 +1,143 @@
+@@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                        GNAT RUN-TIME COMPONENTS                          --
@@ -7291,6 +7322,7 @@
 +   Stack_Check_Probes        : constant Boolean := True;
 +   Stack_Check_Limits        : constant Boolean := False;
 +   Support_Aggregates        : constant Boolean := True;
++   Support_Atomic_Primitives : constant Boolean := True;
 +   Support_Composite_Assign  : constant Boolean := True;
 +   Support_Composite_Compare : constant Boolean := True;
 +   Support_Long_Shifts       : constant Boolean := True;
@@ -7302,7 +7334,7 @@
 +end System;
 --- /dev/null
 +++ gcc/ada/system-netbsd-x86.ads
-@@ -0,0 +1,143 @@
+@@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                        GNAT RUN-TIME COMPONENTS                          --
@@ -7437,6 +7469,7 @@
 +   Stack_Check_Probes        : constant Boolean := True;
 +   Stack_Check_Limits        : constant Boolean := False;
 +   Support_Aggregates        : constant Boolean := True;
++   Support_Atomic_Primitives : constant Boolean := True;
 +   Support_Composite_Assign  : constant Boolean := True;
 +   Support_Composite_Compare : constant Boolean := True;
 +   Support_Long_Shifts       : constant Boolean := True;
@@ -7448,7 +7481,7 @@
 +end System;
 --- /dev/null
 +++ gcc/ada/system-netbsd-x86_64.ads
-@@ -0,0 +1,143 @@
+@@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                        GNAT RUN-TIME COMPONENTS                          --
@@ -7583,6 +7616,7 @@
 +   Stack_Check_Probes        : constant Boolean := True;
 +   Stack_Check_Limits        : constant Boolean := False;
 +   Support_Aggregates        : constant Boolean := True;
++   Support_Atomic_Primitives : constant Boolean := True;
 +   Support_Composite_Assign  : constant Boolean := True;
 +   Support_Composite_Compare : constant Boolean := True;
 +   Support_Long_Shifts       : constant Boolean := True;
@@ -7594,7 +7628,7 @@
 +end System;
 --- /dev/null
 +++ gcc/ada/system-openbsd-x86.ads
-@@ -0,0 +1,143 @@
+@@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                        GNAT RUN-TIME COMPONENTS                          --
@@ -7604,7 +7638,7 @@
 +--                                 S p e c                                  --
 +--                          (OpenBSD/x86 Version)                        --
 +--                                                                          --
-+--          Copyright (C) 1992-2011, Free Software Foundation, Inc.         --
++--          Copyright (C) 1992-2012, Free Software Foundation, Inc.         --
 +--                                                                          --
 +-- This specification is derived from the Ada Reference Manual for use with --
 +-- GNAT. The copyright notice above, and the license provisions that follow --
@@ -7729,10 +7763,11 @@
 +   Stack_Check_Probes        : constant Boolean := True;
 +   Stack_Check_Limits        : constant Boolean := False;
 +   Support_Aggregates        : constant Boolean := True;
++   Support_Atomic_Primitives : constant Boolean := True;
 +   Support_Composite_Assign  : constant Boolean := True;
 +   Support_Composite_Compare : constant Boolean := True;
 +   Support_Long_Shifts       : constant Boolean := True;
-+   Always_Compatible_Rep     : constant Boolean := True;
++   Always_Compatible_Rep     : constant Boolean := False;
 +   Suppress_Standard_Library : constant Boolean := False;
 +   Use_Ada_Main_Program_Name : constant Boolean := False;
 +   ZCX_By_Default            : constant Boolean := False;
@@ -7740,7 +7775,7 @@
 +end System;
 --- /dev/null
 +++ gcc/ada/system-openbsd-x86_64.ads
-@@ -0,0 +1,143 @@
+@@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                        GNAT RUN-TIME COMPONENTS                          --
@@ -7748,9 +7783,9 @@
 +--                               S Y S T E M                                --
 +--                                                                          --
 +--                                 S p e c                                  --
-+--                        (OpenBSD/x86_64 Version)                       --
++--                         (OpenBSD/x86_64 Version)                         --
 +--                                                                          --
-+--          Copyright (C) 1992-2011, Free Software Foundation, Inc.         --
++--          Copyright (C) 1992-2012, Free Software Foundation, Inc.         --
 +--                                                                          --
 +-- This specification is derived from the Ada Reference Manual for use with --
 +-- GNAT. The copyright notice above, and the license provisions that follow --
@@ -7875,10 +7910,11 @@
 +   Stack_Check_Probes        : constant Boolean := True;
 +   Stack_Check_Limits        : constant Boolean := False;
 +   Support_Aggregates        : constant Boolean := True;
++   Support_Atomic_Primitives : constant Boolean := True;
 +   Support_Composite_Assign  : constant Boolean := True;
 +   Support_Composite_Compare : constant Boolean := True;
 +   Support_Long_Shifts       : constant Boolean := True;
-+   Always_Compatible_Rep     : constant Boolean := True;
++   Always_Compatible_Rep     : constant Boolean := False;
 +   Suppress_Standard_Library : constant Boolean := False;
 +   Use_Ada_Main_Program_Name : constant Boolean := False;
 +   ZCX_By_Default            : constant Boolean := False;
@@ -8367,7 +8403,7 @@
 +
 +  EH_MECHANISM=
 +  THREADSLIB= -lpthread
-+  GMEM_LIB =
++  GMEM_LIB = gmemlib
 +  LIBRARY_VERSION := $(LIB_VERSION)
 +  MISCLIB = -lutil
 +endif
@@ -8400,7 +8436,7 @@
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
-+  EH_MECHANISM=-gcc
++  EH_MECHANISM=
 +  THREADSLIB= -lpthread
 +  GMEM_LIB = gmemlib
 +  LIBRARY_VERSION := $(LIB_VERSION)

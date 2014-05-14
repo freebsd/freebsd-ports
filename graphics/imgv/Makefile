@@ -8,7 +8,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A unique and feature rich Image Viewer
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \

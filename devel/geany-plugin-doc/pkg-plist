@@ -1,5 +1,3 @@
-lib/geany/geanydoc.a
-lib/geany/geanydoc.la
 lib/geany/geanydoc.so
 %%DOCSDIR%%/geanydoc/AUTHORS
 %%DOCSDIR%%/geanydoc/COPYING

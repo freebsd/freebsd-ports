@@ -7,12 +7,8 @@ MASTERDIR=	${.CURDIR}/../../devel/libtool
 COMMENT=	System independent dlopen wrapper
 
 LICENSE=	LGPL21
-CONFIGURE_ENV=	LTVERHACK=1
-MAKE_ENV=	LTVERHACK=1
-USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-LIBTOOLFILES=	libltdl/configure
+USES=		libtool:keepla
 CONFIGURE_ARGS=	--enable-ltdl-install
 
 CONFIGURE_WRKSRC=${WRKSRC}/libltdl
@@ -21,5 +17,6 @@ INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 INFO=		# empty
+INSTALL_TARGET=	install-strip
 
 .include "${MASTERDIR}/Makefile"

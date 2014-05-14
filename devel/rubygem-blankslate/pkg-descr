@@ -1,0 +1,6 @@
+rubygem-blankslate provides a base class where almost all of the methods from
+Object and Kernel have been removed. This is useful when providing proxy object
+and other classes that make heavy use of method_missing.
+
+WWW: https://github.com/masover/blankslate
+RG:  https://rubygems.org/gems/blankslate

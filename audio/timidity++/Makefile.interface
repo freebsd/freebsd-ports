@@ -14,7 +14,7 @@ INTERFACE=	${PKGNAMESUFFIX:S/^-//}
 DESCR=		${.CURDIR}/pkg-descr
 
 .if exists(${.CURDIR}/pkg-plist)
-PLIST=		${.CURDIR}/pkg-plist	
+PLIST=		${.CURDIR}/pkg-plist
 .else
 PLIST=		${NONEXISTENT}
 .endif
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=--with-includes=${LOCALBASE}/include \
 		--enable-ncurses
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIB_DEPENDS+=	slang.2:${PORTSDIR}/japanese/libslang
+LIB_DEPENDS+=	libslang.so:${PORTSDIR}/japanese/libslang
 .endif
 
 .if ${INTERFACE} == "tcltk"
@@ -70,14 +70,14 @@ DOCFILES=	README.tk
 DOCLANG=	C ja_JP.eucJP
 
 .if defined(JAPANESE)
-LIB_DEPENDS+=	tk80jp.1:${PORTSDIR}/japanese/tk80
+LIB_DEPENDS+=	libtk80jp.so:${PORTSDIR}/japanese/tk80
 
 CONFIGURE_ARGS+=	--with-tcl-includes=${LOCALBASE}/include/tcl8.0jp \
 		--with-tk-includes=${LOCALBASE}/include/tk8.0jp \
 		--with-tcl-libs=${LOCALBASE}/lib --with-tk-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	WISH=wish8.0jp
 .else
-LIB_DEPENDS+=	tk84:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS+=	libtk84.so:${PORTSDIR}/x11-toolkits/tk84
 
 CONFIGURE_ARGS+=	--with-tcl-includes=${LOCALBASE}/include/tcl8.4 \
 		--with-tk-includes=${LOCALBASE}/include/tk8.4 \
@@ -110,16 +110,16 @@ DOCLANG=	C ja_JP.eucJP
 
 post-install::
 .if ${INTERFACE} == "emacs"
-	@${MKDIR} ${PREFIX}/${ELISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/interface/timidity.el ${PREFIX}/${ELISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/interface/timidity.el ${STAGEDIR}${PREFIX}/${ELISPDIR}
 .endif
 .if ${INTERFACE} == "xaw"
-	@${MKDIR} ${PREFIX}/lib/X11/${EUCJP_LOCALE}/app-defaults
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/${EUCJP_LOCALE}/app-defaults
 	${INSTALL_DATA} ${WRKSRC}/TiMidity.ad \
-		${PREFIX}/lib/X11/app-defaults/TiMidity
+		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/TiMidity
 	${INSTALL_DATA} ${WRKSRC}/TiMidity-uj.ad \
-		${PREFIX}/lib/X11/${EUCJP_LOCALE}/app-defaults/TiMidity
+		${STAGEDIR}${PREFIX}/lib/X11/${EUCJP_LOCALE}/app-defaults/TiMidity
 .endif
 .if defined(LINK)
-	${LN} -sf ${PREFIX}/bin/timidity ${PREFIX}/bin/${LINK}
+	${LN} -sf ${PREFIX}/bin/timidity ${STAGEDIR}${PREFIX}/bin/${LINK}
 .endif

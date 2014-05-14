@@ -17,19 +17,16 @@ include/openct/tlv.h
 include/openct/types.h
 include/openct/ctapi.h
 lib/libopenct.a
-lib/libopenct.la
 lib/libopenct.so
 lib/libopenct.so.1
+lib/libopenct.so.1.0.0
 lib/libopenctapi.a
-lib/libopenctapi.la
 lib/libopenctapi.so
 %%PCSC%%lib/openct-ifd.a
-%%PCSC%%lib/openct-ifd.la
 %%PCSC%%lib/openct-ifd.so
 libdata/pkgconfig/libopenct.pc
+man/man1/openct-tool.1.gz
 sbin/ifdhandler
 sbin/ifdproxy
 sbin/openct-control
-%%EXAMPLESDIR%%/etoken.conf
 @dirrm include/openct
-@dirrm %%EXAMPLESDIR%%

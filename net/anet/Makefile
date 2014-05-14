@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anet
-PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}
@@ -14,11 +13,11 @@ COMMENT=	Networking library for Ada
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-USES=		ada
-USE_BZIP2=	yes
+USES=		ada tar:bzip2
 ALL_TARGET=	build_lib
 MAKE_ARGS+=	NUM_CPUS=${MAKE_JOBS_NUMBER} \
-		LIBRARY_KIND=static
+		LIBRARY_KIND=static \
+		OS=bsd
 
 OPTIONS_DEFINE=	TEST DOCS
 TEST_DESC=	Run unit test suite before installation
@@ -42,10 +41,6 @@ USES+=		gmake
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"lo"|"lo0"|g' \
-		${WRKSRC}/tests/net_ifaces_tests.adb \
-		${WRKSRC}/tests/socket_tests.adb \
-		${WRKSRC}/tests/type_tests.adb
 	@${REINPLACE_CMD} -e 's|dynamic|static|g' \
 		${WRKSRC}/gnat/anet.gpr
 	@${REINPLACE_CMD} -e 's|DESTDIR|DEST2|g' \

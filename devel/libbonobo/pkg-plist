@@ -57,10 +57,12 @@ lib/libbonobo-2.a
 lib/libbonobo-2.la
 lib/libbonobo-2.so
 lib/libbonobo-2.so.0
+lib/libbonobo-2.so.0.0.0
 lib/libbonobo-activation.a
 lib/libbonobo-activation.la
 lib/libbonobo-activation.so
 lib/libbonobo-activation.so.4
+lib/libbonobo-activation.so.4.0.0
 lib/orbit-2.0/Bonobo_module.a
 lib/orbit-2.0/Bonobo_module.la
 lib/orbit-2.0/Bonobo_module.so

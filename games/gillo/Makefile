@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${JAM}:${PORTSDIR}/devel/jam \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_GL=		gl
 USE_SDL=	yes
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	wcslib
 PORTVERSION=	4.13.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
@@ -22,24 +23,14 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 # For most users it will not be required.
 
 OPTIONS_DEFINE=	CFITSIO PGPLOT
+OPTIONS_SUB=	yes
 CFITSIO_DESC=	Add cfitsio support (for tests only)
 PGPLOT_DESC=	Add pgplot support (for tests only)
 
-.include <bsd.port.options.mk>
-
-# The configure script unconditionally searches for the cftisio library
-# and uses it if found.
-
-.if ${PORT_OPTIONS:MCFITSIO} || exists(${LOCALBASE}/lib/libcfitsio.so)
-PLIST_SUB+=		HPXCVT=""
-LIB_DEPENDS+=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
-.else
-PLIST_SUB+=		HPXCVT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPGPLOT}
-LIB_DEPENDS+=	libpgplot.so:${PORTSDIR}/graphics/pgplot
-.endif
+CFITSIO_CONFIGURE_WITH=	cfitsio
+CFITSIO_LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
+PGPLOT_CONFIGURE_WITH=	pgplot
+PGPLOT_LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${STAGEDIR}${PREFIX}/libdata#g' \

@@ -1,8 +1,9 @@
-# Created by: rpsfa@rit.edu
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
 
 PORTNAME=		vmware-vsphere-cli
-PORTVERSION=		5.1.0
+PORTVERSION=		5.5.0
+PORTREVISION=		1
 CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
@@ -23,18 +24,15 @@ RUN_DEPENDS=		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 			p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 			p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 
-USES=			perl5
+USES=			perl5 shebangfix
 USE_PERL5=		configure
-RESTRICTED=		Downloading requires acceptance of license agreement
-NO_CDROM=		Distribution requires acceptance of license agreement
-NO_PACKAGE=		Distribution requires acceptance of license agreement
+RESTRICTED=		May not be redistributed.  Must accept license to download.
+NO_CDROM=		May not be redistributed.  Must accept license to download.
+NO_PACKAGE=		May not be redistributed.  Must accept license to download.
+SHEBANG_FILES=		bin/* apps/host/* apps/general/* apps/vm/*
 
-MAN3=			VMware::VIM25Runtime.3 VMware::VIM2Stub.3 VMware::VIM2Runtime.3 \
-			VMware::VICommon.3 VMware::VILib.3 VMware::VIM25Stub.3
+DISTREL=		1384587
 
-DISTREL=		780721
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
@@ -62,17 +60,20 @@ post-extract:
 	@${RM} ${WRKSRC}/vmware-install.pl
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|%%EXAMPLESDIR%%|${STAGEDIR}${EXAMPLESDIR}|g' ${WRKSRC}/Makefile.PL
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/vicfg-* ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/svmotion ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/vmware-cmd ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/vmkfstools ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/vifs ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/vihostupdate ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/vihostupdate35 ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/viperl-support ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vicfg-* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/svmotion ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vmware-cmd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vmkfstools ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vifs ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vihostupdate ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vihostupdate35 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/viperl-support ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/apps/host/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/apps/general/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/apps/vm/* ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

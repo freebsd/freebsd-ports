@@ -1,5 +1,3 @@
-lib/geany/debugger.a
-lib/geany/debugger.la
 lib/geany/debugger.so
 %%DOCSDIR%%/debugger/AUTHORS
 %%DOCSDIR%%/debugger/COPYING

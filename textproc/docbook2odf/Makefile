@@ -6,7 +6,7 @@ PORTVERSION=	0.244
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://open.comsultia.com/docbook2odf/dwn/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Convert docbook document to Oasis Open Document
 
 LICENSE=	GPLv2
@@ -23,7 +23,6 @@ USE_PERL5=	run
 NO_BUILD=	yes
 
 PORTEXAMPLES=	*
-
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
@@ -33,11 +32,14 @@ post-patch:
 
 do-install:
 	${LN} -sf ${DATADIR}/utils/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "tests utils xsl" ${STAGEDIR}${DATADIR})
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/bindings/desktop/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	${LN} -sf ${EXAMPLESDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "tests utils xsl" \
+		${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/bindings/desktop/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}
+	${LN} -sf ${EXAMPLESDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

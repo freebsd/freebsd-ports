@@ -2,7 +2,8 @@
 
 OPTIONS_DEFINE=		\
 	DOCS		\
-	MODPERL
+	MODPERL		\
+	FREEBSD
 
 OPTIONS_GROUP=	UI DBBACKEND REPORTING ATTACHMENT EMAIL WEBSERVICE AUTH ADMIN
 
@@ -54,6 +55,7 @@ BMP2PNG_DESC=		BMP Attachments to PNGs
 CHARTING_MODULES_DESC=	Bug charting support
 CONTRIB_DESC=		Install user-contributed scripts
 EXPORT_IMPORT_DESC=	Import/export bugs (via XML)
+FREEBSD_DESC=		Patch used for the FreeBSD project
 GRAPH_REPORTS_DESC=	Graphical Reports
 INBOUND_EMAIL_DESC=	Inbound Email
 JSONRPC_DESC=		JSON-RPC Interface

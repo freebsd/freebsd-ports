@@ -12,9 +12,8 @@ COMMENT=	Qt4 based configuration manager for DOSBox
 
 RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 
-USE_BZIP2=	yes
 USE_QT4=	gui network xml uic_build moc_build qmake_build rcc_build
-USES=		qmake
+USES=		qmake tar:bzip2
 
 PLIST_FILES=	bin/dboxfe \
 		bin/dboxfetray \

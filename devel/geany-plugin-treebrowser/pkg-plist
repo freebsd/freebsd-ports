@@ -1,5 +1,3 @@
-lib/geany/treebrowser.a
-lib/geany/treebrowser.la
 lib/geany/treebrowser.so
 %%DOCSDIR%%/treebrowser/AUTHORS
 %%DOCSDIR%%/treebrowser/COPYING

@@ -3,7 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	3.0.6
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-3.0/ \
 		http://rpm.org/releases/historical/rpm-3.0.x/ \
@@ -18,9 +18,9 @@ OPTIONS_DEFINE=	NLS
 
 CONFLICTS=	rpm-[45].* rpm[45]-*
 
-USES=		gmake shebangfix
+USES=		gmake libtool shebangfix
 SHEBANG_FILES=	scripts/*
-USE_AUTOTOOLS=	automake14 autoconf213 libtool
+USE_AUTOTOOLS=	automake14 autoconf213
 CONFIGURE_ARGS=	--with-glob
 USE_LDCONFIG=	yes
 MAKE_ENV=	OLD_PO_FILE_INPUT=1

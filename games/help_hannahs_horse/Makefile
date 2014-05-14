@@ -21,8 +21,6 @@ WRKSRC=		${WRKDIR}/hhh-2008-03-29
 USES=		gmake
 USE_SDL=	sdl image mixer ttf
 ALL_TARGET=	# empty
-CFLAGS+=	-Wno-tautological-compare -Wno-deprecated-writable-strings \
-		-Wno-self-assign-field
 
 PORTDOCS=	CHANGELOG README
 OPTIONS_DEFINE=	DOCS

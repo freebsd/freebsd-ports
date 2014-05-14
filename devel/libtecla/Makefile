@@ -6,7 +6,7 @@ PORTVERSION=	1.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
-MAINTAINER=	mike@fth-devel.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive command line editing facilities
 
 LICENSE=	MIT

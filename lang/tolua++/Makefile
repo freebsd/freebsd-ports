@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.codenix.com/~tolua/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An extended version of tolua, a tool to integrate C/C++ code with Lua
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_LUA=	5.1
 USE_SCONS=	yes
 SCONS_ARGS=	prefix=${PREFIX} SONAME="libtolua++-${LUA_VER}.so"

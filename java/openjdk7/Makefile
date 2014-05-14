@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		dos2unix iconv gmake zip
 USE_XORG+=	x11 xext xi xrender xt xtst
-MAKE_ARGS=	CC=${CC} CXX=${CXX} HOST_CC=${CC}
+MAKE_ARGS=	CC=${CC:Q} CXX=${CXX:Q} HOST_CC=${CC:Q}
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DEBUG POLICY TZUPDATE
@@ -103,9 +103,9 @@ BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
 		${LOCALBASE}/openjdk6 \
 		${LOCALBASE}/bootstrap-openjdk
 
-DEBUG_MAKE_ENV=	ALT_OBJCOPY="/nonexistent"
+DEBUG_MAKE_ENV=	ALT_OBJCOPY=${NONEXISTENT}
 POLICY_MAKE_ENV=	UNLIMITED_CRYPTO=1
-TZUPDATE_RUN_DEPENDS=  ${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+TZUPDATE_RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 
 .include <bsd.port.options.mk>
 

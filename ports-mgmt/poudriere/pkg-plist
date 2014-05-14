@@ -1,0 +1,35 @@
+bin/poudriere
+@sample etc/poudriere.conf.sample
+libexec/poudriere/cpdup
+libexec/poudriere/dirempty
+libexec/poudriere/dirwatch
+libexec/poudriere/make_index
+man/man8/poudriere.8.gz
+%%DATADIR%%/awk/dependency_loop.awk
+%%DATADIR%%/awk/humanize.awk
+%%DATADIR%%/awk/json.awk
+%%DATADIR%%/awk/make_index.awk
+%%DATADIR%%/awk/siginfo_buildtime.awk
+%%DATADIR%%/bulk.sh
+%%DATADIR%%/clean.sh
+%%DATADIR%%/common.sh
+%%DATADIR%%/daemon.sh
+%%DATADIR%%/distclean.sh
+%%DATADIR%%/html/index.html
+%%DATADIR%%/html/jquery-1.9.1.min.js
+%%DATADIR%%/html/logo.jpg
+%%DATADIR%%/html/poudriere.css
+%%DATADIR%%/html/poudriere.js
+%%DATADIR%%/jail.sh
+%%DATADIR%%/options.sh
+%%DATADIR%%/ports.sh
+%%DATADIR%%/queue.sh
+%%DATADIR%%/status.sh
+%%DATADIR%%/testport.sh
+%%ZSH%%share/zsh/site-functions/_poudriere
+%%ZSH%%@dirrmtry share/zsh/site-functions
+%%ZSH%%@dirrmtry share/zsh/
+@dirrmtry libexec/poudriere
+@dirrmtry %%DATADIR%%/awk
+@dirrmtry %%DATADIR%%/html
+@dirrmtry %%DATADIR%%

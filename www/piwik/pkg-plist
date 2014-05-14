@@ -145,6 +145,7 @@
 %%WWWDIR%%/core/Option.php
 %%WWWDIR%%/core/Period.php
 %%WWWDIR%%/core/Period/Day.php
+%%WWWDIR%%/core/Period/Factory.php
 %%WWWDIR%%/core/Period/Month.php
 %%WWWDIR%%/core/Period/Range.php
 %%WWWDIR%%/core/Period/Week.php
@@ -828,6 +829,7 @@
 %%WWWDIR%%/libs/upgradephp/README
 %%WWWDIR%%/libs/upgradephp/upgrade.php
 %%WWWDIR%%/misc/How to install Piwik.html
+%%WWWDIR%%/misc/cron/.htaccess
 %%WWWDIR%%/misc/cron/archive.php
 %%WWWDIR%%/misc/cron/archive.sh
 %%WWWDIR%%/misc/cron/updatetoken.php
@@ -1281,6 +1283,7 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Thomson.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/TiPhone.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Toshiba.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Unknown.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Vertu.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Vestel.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Videocon.ico
@@ -1293,7 +1296,6 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Zonda.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/eTouch.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/i-mobile.ico
-%%WWWDIR%%/plugins/DevicesDetection/images/brand/unknown.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/camera.png
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/carbrowser.png
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/computer.png
@@ -1348,6 +1350,7 @@
 %%WWWDIR%%/plugins/Events/lang/nl.json
 %%WWWDIR%%/plugins/Events/lang/pt-br.json
 %%WWWDIR%%/plugins/Events/lang/ro.json
+%%WWWDIR%%/plugins/Events/lang/sl.json
 %%WWWDIR%%/plugins/Events/lang/sr.json
 %%WWWDIR%%/plugins/Events/lang/sv.json
 %%WWWDIR%%/plugins/Events/lang/ta.json
@@ -1477,9 +1480,10 @@
 %%WWWDIR%%/plugins/Installation/Controller.php
 %%WWWDIR%%/plugins/Installation/FormDatabaseSetup.php
 %%WWWDIR%%/plugins/Installation/FormFirstWebsiteSetup.php
-%%WWWDIR%%/plugins/Installation/FormGeneralSetup.php
+%%WWWDIR%%/plugins/Installation/FormSuperUser.php
 %%WWWDIR%%/plugins/Installation/Installation.php
 %%WWWDIR%%/plugins/Installation/ServerFilesGenerator.php
+%%WWWDIR%%/plugins/Installation/SystemCheck.php
 %%WWWDIR%%/plugins/Installation/View.php
 %%WWWDIR%%/plugins/Installation/javascripts/installation.js
 %%WWWDIR%%/plugins/Installation/stylesheets/installation.css
@@ -1488,19 +1492,19 @@
 %%WWWDIR%%/plugins/Installation/templates/_integrityDetails.twig
 %%WWWDIR%%/plugins/Installation/templates/_systemCheckLegend.twig
 %%WWWDIR%%/plugins/Installation/templates/_systemCheckSection.twig
-%%WWWDIR%%/plugins/Installation/templates/databaseCheck.twig
 %%WWWDIR%%/plugins/Installation/templates/databaseSetup.twig
 %%WWWDIR%%/plugins/Installation/templates/finished.twig
 %%WWWDIR%%/plugins/Installation/templates/firstWebsiteSetup.twig
-%%WWWDIR%%/plugins/Installation/templates/generalSetup.twig
 %%WWWDIR%%/plugins/Installation/templates/layout.twig
 %%WWWDIR%%/plugins/Installation/templates/reuseTables.twig
+%%WWWDIR%%/plugins/Installation/templates/setupSuperUser.twig
 %%WWWDIR%%/plugins/Installation/templates/systemCheck.twig
 %%WWWDIR%%/plugins/Installation/templates/systemCheckPage.twig
 %%WWWDIR%%/plugins/Installation/templates/tablesCreation.twig
 %%WWWDIR%%/plugins/Installation/templates/trackingCode.twig
 %%WWWDIR%%/plugins/Installation/templates/welcome.twig
 %%WWWDIR%%/plugins/LanguagesManager/API.php
+%%WWWDIR%%/plugins/LanguagesManager/Commands/CompareKeys.php
 %%WWWDIR%%/plugins/LanguagesManager/Commands/CreatePull.php
 %%WWWDIR%%/plugins/LanguagesManager/Commands/FetchFromOTrance.php
 %%WWWDIR%%/plugins/LanguagesManager/Commands/LanguageCodes.php
@@ -2058,7 +2062,11 @@
 %%WWWDIR%%/plugins/SitesManager/stylesheets/SitesManager.less
 %%WWWDIR%%/plugins/SitesManager/templates/_displayJavascriptCode.twig
 %%WWWDIR%%/plugins/SitesManager/templates/displayJavascriptCode.twig
+%%WWWDIR%%/plugins/SitesManager/templates/global-settings.twig
 %%WWWDIR%%/plugins/SitesManager/templates/index.twig
+%%WWWDIR%%/plugins/SitesManager/templates/init-script.twig
+%%WWWDIR%%/plugins/SitesManager/templates/sites-management.twig
+%%WWWDIR%%/plugins/SitesManager/templates/sites-manager-heading.twig
 %%WWWDIR%%/plugins/Transitions/API.php
 %%WWWDIR%%/plugins/Transitions/Controller.php
 %%WWWDIR%%/plugins/Transitions/Transitions.php
@@ -2917,12 +2925,14 @@
 %%WWWDIR%%/plugins/Zeitgeist/templates/simpleLayoutHeader.tpl
 %%WWWDIR%%/tests/README.md
 %%WWWDIR%%/vendor/autoload.php
+%%WWWDIR%%/vendor/bin/phpunit
 %%WWWDIR%%/vendor/composer/ClassLoader.php
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_files.php
 %%WWWDIR%%/vendor/composer/autoload_namespaces.php
 %%WWWDIR%%/vendor/composer/autoload_psr4.php
 %%WWWDIR%%/vendor/composer/autoload_real.php
+%%WWWDIR%%/vendor/composer/include_paths.php
 %%WWWDIR%%/vendor/composer/installed.json
 %%WWWDIR%%/vendor/leafo/lessphp/.gitignore
 %%WWWDIR%%/vendor/leafo/lessphp/.travis.yml
@@ -3010,6 +3020,47 @@
 %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Tester/CommandTester.php
 %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/composer.json
 %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/phpunit.xml.dist
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/.gitignore
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/CHANGELOG.md
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Dumper.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Escaper.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Exception/DumpException.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Exception/ExceptionInterface.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Exception/ParseException.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Exception/RuntimeException.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Inline.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/LICENSE
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Parser.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/README.md
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/DumperTest.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsAnchorAlias.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsBasicTests.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsBlockMapping.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsDocumentSeparator.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsErrorTests.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsFlowCollections.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsFoldedScalars.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsNullsAndEmpties.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsSpecificationExamples.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsTypeTransfers.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/embededPhp.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/escapedCharacters.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/index.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/sfComments.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/sfCompact.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/sfMergeKey.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/sfObjects.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/sfQuotes.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/sfTests.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/unindentedCollections.yml
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/InlineTest.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/ParseExceptionTest.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/ParserTest.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/YamlTest.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Unescaper.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Yaml.php
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/composer.json
+%%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/phpunit.xml.dist
 %%WWWDIR%%/vendor/tedivm/jshrink/.gitignore
 %%WWWDIR%%/vendor/tedivm/jshrink/.travis.yml
 %%WWWDIR%%/vendor/tedivm/jshrink/LICENSE
@@ -3220,6 +3271,13 @@
 @dirrm %%WWWDIR%%/vendor/tedivm/jshrink/src
 @dirrm %%WWWDIR%%/vendor/tedivm/jshrink
 @dirrm %%WWWDIR%%/vendor/tedivm
+@dirrm %%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures
+@dirrm %%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Tests
+@dirrm %%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Exception
+@dirrm %%WWWDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml
+@dirrm %%WWWDIR%%/vendor/symfony/yaml/Symfony/Component
+@dirrm %%WWWDIR%%/vendor/symfony/yaml/Symfony
+@dirrm %%WWWDIR%%/vendor/symfony/yaml
 @dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Tester
 @dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
 @dirrm %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Output
@@ -3245,6 +3303,7 @@
 @dirrm %%WWWDIR%%/vendor/leafo/lessphp
 @dirrm %%WWWDIR%%/vendor/leafo
 @dirrm %%WWWDIR%%/vendor/composer
+@dirrm %%WWWDIR%%/vendor/bin
 @dirrm %%WWWDIR%%/vendor
 @dirrm %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/tests

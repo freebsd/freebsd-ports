@@ -17,9 +17,8 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 dos2unix cmake gettext gmake openal:al,alut pkgconfig
 USE_GL=		gl glu glut
-USES=		cmake dos2unix gettext gmake openal:al,alut pkgconfig
 USE_SDL=	sdl
 DOS2UNIX_FILES=	lib/irrlicht/source/Irrlicht/Makefile
 CMAKE_ARGS=	-DUSE_WIIUSE=NO

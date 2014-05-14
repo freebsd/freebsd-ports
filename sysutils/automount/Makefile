@@ -10,7 +10,7 @@ MASTER_SITES=	https://raw.github.com/vermaden/automount/master/ \
 MAINTAINER=	vermaden@interia.pl
 COMMENT=	FreeBSD's devd(8) based automount solution
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	sbin/automount etc/devd/automount_devd.conf etc/automount.conf.sample
 
@@ -22,7 +22,6 @@ NTFS3G_DESC=		Enable NTFS write support with ntfs-3g over FUSE
 EXT4_DESC=		Support EXT4 filesystem
 EXFAT_DESC=		Support Microsoft exFAT filesystem
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNTFS3G}
@@ -38,9 +37,8 @@ RUN_DEPENDS+=	fusefs-exfat>=0:${PORTSDIR}/sysutils/fusefs-exfat
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/automount             ${PREFIX}/sbin
-	${INSTALL_DATA}   ${WRKSRC}/automount_devd.conf   ${PREFIX}/etc/devd/automount_devd.conf
-	${INSTALL_DATA}   ${WRKSRC}/automount.conf.sample ${PREFIX}/etc/automount.conf.sample
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_SCRIPT} ${WRKSRC}/automount             ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA}   ${WRKSRC}/automount_devd.conf   ${STAGEDIR}${PREFIX}/etc/devd/automount_devd.conf
+	${INSTALL_DATA}   ${WRKSRC}/automount.conf.sample ${STAGEDIR}${PREFIX}/etc/automount.conf.sample
 
 .include <bsd.port.mk>

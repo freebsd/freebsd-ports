@@ -3,7 +3,7 @@
 
 PORTNAME=	poco
 PORTVERSION=	1.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-ssl
@@ -16,18 +16,14 @@ BROKEN=		Fails to build
 
 CONFLICTS=	poco-[0-9]*
 
-OPTIONS_DEFINE=	TEST SAMPLES MYSQL SQLITE
+OPTIONS_DEFINE=	TEST SAMPLES MYSQL SQLITE ODBC
 SAMPLES_DESC=	Build sample programs
-UODBC_DESC=	Build with ODBC driver
-IODBC_DESC=	Build with iODBC driver
 
-OPTIONS_RADIO=	ODBC
-OPTIONS_RADIO_ODBC=	UODBC IODBC
-ODBC_DESC=	ODBC Driver
-
-OPTIONS_DEFAULT=	MYSQL IODBC SQLITE
+OPTIONS_DEFAULT=	MYSQL SQLITE
 
 CONFIGURE_ARGS= --config=FreeBSD
+
+USES=		gmake tar:bzip2
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -44,17 +40,8 @@ CONFIGURE_ARGS+= --no-samples
 # ODBC
 #
 
-.if ! ${PORT_OPTIONS:MUODBC} && ! ${PORT_OPTIONS:MIODBC}
-CONFIGURE_ARGS+= --omit=Data/ODBC
-.endif
-
-.if ${PORT_OPTIONS:MUODBC} && ! ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
-.endif
-
-.if ${PORT_OPTIONS:MIODBC} && ! ${PORT_OPTIONS:MUODBC}
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
-.endif
+ODBC_CONFIGURE_OFF= --omit=Data/ODBC
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/libiodbc
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
@@ -69,8 +56,6 @@ CONFIGURE_ARGS+= --omit=Data/SQLite
 .endif
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

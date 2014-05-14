@@ -1,4 +1,4 @@
-@unexec cmp -s %D/etc/ipv6mon.conf.dist %D/etc/ipv6mon.conf && rm -f %D/etc/ipv6mon.conf || true
-etc/ipv6mon.conf.dist
-@exec if [ ! -r %D/etc/ipv6mon.conf ]; then install -m 444 %D/etc/ipv6mon.conf.dist %D/etc/ipv6mon.conf; fi
+@sample etc/ipv6mon.conf.sample
 sbin/ipv6mon
+man/man5/ipv6mon.conf.5.gz
+man/man8/ipv6mon.8.gz

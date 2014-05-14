@@ -12,5 +12,3 @@
 @dirrm %%SLIMDIR%%/Plugins/LazySearch2/HTML/EN
 @dirrm %%SLIMDIR%%/Plugins/LazySearch2/HTML
 @dirrm %%SLIMDIR%%/Plugins/LazySearch2
-@dirrmtry %%SLIMDIR%%/Plugins
-@dirrmtry %%SLIMDIR%%

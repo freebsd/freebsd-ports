@@ -3,6 +3,7 @@
 
 PORTNAME=	jogamp-jogl
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics devel java
 MASTER_SITES=	http://jogamp.org/deployment/jogamp-current/archive/Sources/
 DISTFILES=	jogl-v${PORTVERSION}.tar.7z \
@@ -44,17 +45,17 @@ post-patch:
 
 pre-build:
 	@(cd ${WRKDIR}/gluegen/make; \
-		${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
+		${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} all.no_junit)
 
 do-install:
-	${INSTALL_LIB} ${WRKDIR}/gluegen/build/obj/libgluegen-rt.so \
-		${STAGEDIR}${PREFIX}/lib/libgluegen2-rt.so
-	${INSTALL_DATA} ${WRKDIR}/gluegen/build/gluegen-rt.jar \
-		${STAGEDIR}${JAVAJARDIR}/gluegen2-rt.jar
-	${INSTALL_DATA} ${WRKDIR}/gluegen/build/gluegen.jar \
-		${STAGEDIR}${JAVAJARDIR}/gluegen2.jar
-	${INSTALL_LIB} ${WRKDIR}/jogl/build/lib/*.so \
+	${INSTALL_LIB} \
+		${WRKDIR}/gluegen/build/obj/libgluegen2-rt.so \
+		${WRKDIR}/jogl/build/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} \
+		${WRKDIR}/gluegen/build/gluegen2-rt.jar \
+		${WRKDIR}/gluegen/build/gluegen2.jar \
+		${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKDIR}/jogl/build/jar/jogl-all.jar \
 		${STAGEDIR}${JAVAJARDIR}/jogl2.jar
 

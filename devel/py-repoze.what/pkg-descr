@@ -14,4 +14,4 @@ a backend-independent API. For example, it would be easy for you
 to switch from one back-end to another, and even use this framework
 to migrate the data.
 
-WWW:	http://what.repoze.org/docs/1.x/
+WWW: http://what.repoze.org/docs/1.x/

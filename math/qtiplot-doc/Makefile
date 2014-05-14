@@ -15,7 +15,7 @@ BUILD_DEPENDS=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular/html/docbook.dsl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 DATADIR=	${PREFIX}/share/qtiplot/manual
 WRKSRC=		${WRKDIR}/${DISTNAME}/manual
 

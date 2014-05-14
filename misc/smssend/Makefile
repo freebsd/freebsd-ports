@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	laszlof
 
-MAINTAINER=	mico@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to send a SMS to any GSM
 
 LIB_DEPENDS=	skyutils-2.9.9:${PORTSDIR}/misc/skyutils

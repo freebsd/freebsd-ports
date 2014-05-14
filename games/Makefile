@@ -343,7 +343,6 @@
     SUBDIR += gno3dtet
     SUBDIR += gnome-chess
     SUBDIR += gnome-games
-    SUBDIR += gnome-games-extra-data
     SUBDIR += gnome-klotski
     SUBDIR += gnome-mahjongg
     SUBDIR += gnome-mines

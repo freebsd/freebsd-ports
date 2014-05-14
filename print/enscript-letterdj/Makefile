@@ -8,5 +8,4 @@ PS=		Letterdj
 
 MASTERDIR=	${.CURDIR}/../enscript-letter
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -3,7 +3,7 @@
 
 PORTNAME=	scribes
 PORTVERSION=	0.4.b954
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://launchpadlibrarian.net/66129407/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-dev-${PORTVERSION:E:S/b/build/}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml \
 		yelp:${PORTSDIR}/x11/yelp
 
-USES=		gettext gmake shebangfix tar:bzip2
+USES=		desktop-file-utils gettext gmake shebangfix tar:bzip2
 SHEBANG_FILES=	scribes.in
 USE_GNOME=	gnomeprefix pygnomeextras pygtksourceview gnomedocutils
 USE_PYTHON=	yes
@@ -30,8 +30,7 @@ INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-install:
-	@${PYTHON_CMD} -m compileall ${PREFIX}/lib/scribes
+	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall lib/scribes)
 
 .include <bsd.port.mk>

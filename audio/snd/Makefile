@@ -23,9 +23,6 @@ CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
 ALL_TARGET=	snd snd-info sndplay
 MAKE_JOBS_UNSAFE=	yes
-NO_STAGE=	yes
-
-MAN1=		snd.1
 
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -84,30 +81,30 @@ post-patch:
 
 do-install:
 .for i in snd snd-info sndplay
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/snd.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/snd.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 .if ${PORT_OPTIONS:MS7}
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
-	@${MKDIR} ${DATADIR}/tools
-	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${DATADIR}/tools
-	@${MKDIR} ${DATADIR}/sndins/samples
-	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.scm ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/tools
+	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${STAGEDIR}${DATADIR}/tools
+	@${MKDIR} ${STAGEDIR}${DATADIR}/sndins/samples
+	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${STAGEDIR}${DATADIR}/sndins/samples
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in HISTORY.Snd README.Snd
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/pix
-	${INSTALL_DATA} ${WRKSRC}/pix/*.png ${DOCSDIR}/pix
-	cd ${WRKSRC} && ${PAX} -r -w tutorial ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pix
+	${INSTALL_DATA} ${WRKSRC}/pix/*.png ${STAGEDIR}${DOCSDIR}/pix
+	cd ${WRKSRC} && ${PAX} -r -w tutorial ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

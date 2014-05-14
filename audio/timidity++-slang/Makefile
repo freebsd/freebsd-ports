@@ -10,6 +10,5 @@ COMMENT=	Slang interface for TiMidity++
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 PLIST_FILES=	${TIMID_LIBDIR}/interface_s.so
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

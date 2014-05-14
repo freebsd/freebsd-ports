@@ -18,16 +18,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes
 PYEASYINSTALL_ARCHDEP=	yes
 
-OPTIONS_DEFINE= UNIXODBC
-OPTIONS_DEFAULT=UNIXODBC
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 BUILD_DEPENDS+=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
-.else
-LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
-.endif
 
 .include <bsd.port.mk>

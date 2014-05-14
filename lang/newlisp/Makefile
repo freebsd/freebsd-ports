@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newlisp
-PORTVERSION=	10.5.4
+PORTVERSION=	10.6.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 EXTRACT_SUFX=	.tgz
@@ -10,18 +10,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
 
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
 CONFLICTS=	newlisp-devel-[0-9]*
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 
-MAN1=		newlisp.1 newlispdoc.1
-
 REINPLACE_ARGS=	-i ""
 
-MODULES=	canvas cgi crypto ftp getopts infix macro odbc pop3 \
+MODULES=	canvas cgi crypto ftp getopts infix odbc pop3 \
 		postscript smtp smtpx stat unix xmlrpc-client zlib
 
 DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
@@ -43,7 +43,7 @@ CFLAGS+=	-DNEWLISP64
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 MODULES+=	gmp
 PLIST_SUB+=	GMP=""
 .else
@@ -51,7 +51,7 @@ PLIST_SUB+=	GMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
 MODULES+=	gsl
 PLIST_SUB+=	GSL=""
 .else

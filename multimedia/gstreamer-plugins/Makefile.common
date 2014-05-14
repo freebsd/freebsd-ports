@@ -467,7 +467,7 @@ gst_sdl_PLIST_FILES=	${GST_LIB_DIR}/libgstsdl.la \
 gst_sdl_DIST=	bad
 
 # shout2
-gst_shout2_LIB_DEPENDS+=	libshout.so.5:${PORTSDIR}/audio/libshout2
+gst_shout2_LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout
 gst_shout2_PLIST_FILES=		${GST_LIB_DIR}/libgstshout2.la \
 				${GST_LIB_DIR}/libgstshout2.so
 

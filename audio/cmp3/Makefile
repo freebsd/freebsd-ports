@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs
 
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes
-USE_GCC=	any
 MAKE_ARGS=	install_directory=${STAGEDIR}${PREFIX}/bin
 
 PORTDOCS=	README sample.cmp3rc

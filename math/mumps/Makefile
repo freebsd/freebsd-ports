@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mumps
-PORTVERSION=	4.8.4
-PORTREVISION=	4
+PORTVERSION=	4.10.0
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://graal.ens-lyon.fr/MUMPS/		\
@@ -14,10 +13,14 @@ DISTNAME=	MUMPS_${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 
+LICENSE=	Public_Domain
+LICENSE_NAME=	"Public Domain"
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 #-----------------------------------------------------------------------
 
 # WARNING: Non-serviceable parts inside, can break other ports
-NO_STAGE=	yes
 # You may define these options/knobs:
 #
 # FFLAGS: Fortran compiler flags for gfortran
@@ -32,8 +35,10 @@ SLAVEDIRS=	math/mumps-mpich
 
 USES=		fortran
 
+MAKE_JOBS_UNSAFE=yes
+
 FORTRANLIBS=	-lgfortran
-GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+GCCLIBDIR=	${LDFLAGS}
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math
@@ -52,11 +57,11 @@ PLIST_SUB+=	MUMPSVERSION=${PORTVERSION}
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS_LIBS=	-lf77blas
 LAPACK_LIBS=	-lalapack -lcblas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 BLAS_LIBS=	-lblas
 LAPACK_LIBS=	-llapack
 .endif
@@ -66,7 +71,7 @@ PKGNAMESUFFIX+=		-mpich
 BUILD_DEPENDS+=	${LOCALBASE}/include/mpif.h:${PORTSDIR}/net/mpich2 \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 # Note: -l?mumps still requires to be linked with -lblacs + -lscalapack
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2 \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
@@ -82,12 +87,12 @@ PLIST_SUB+=	WITH_LIBSEQ=""
 PLIST_SUB+=	WITH_LIBSEQ="@comment "
 .endif
 
-post-patch:
+pre-configure:
 .ifdef WITH_MPI
-	@${INSTALL_DATA} ${WRKSRC}/Make.inc/Makefile.inc.generic \
+	${INSTALL_DATA} ${WRKSRC}/Make.inc/Makefile.inc.generic \
 		${WRKSRC}/Makefile.inc
 .else
-	@${INSTALL_DATA} ${WRKSRC}/Make.inc/Makefile.inc.generic.SEQ \
+	${INSTALL_DATA} ${WRKSRC}/Make.inc/Makefile.inc.generic.SEQ \
 		${WRKSRC}/Makefile.inc
 .endif
 
@@ -100,7 +105,6 @@ pre-build:
 	s+@FORTRANLIBS@+${FORTRANLIBS}+g; \
 	s+@PTHREAD_LIBS@+${PTHREAD_LIBS}+g; \
 	s+@BLAS_LIBS@+${BLAS_LIBS}+ ; \
-	s+../PORD+${WRKSRC}/PORD+; \
 	s+@LOCALBASE@+${LOCALBASE}+g;' \
 		${WRKSRC}/Makefile.inc
 .ifdef WITH_MPI
@@ -111,24 +115,24 @@ pre-build:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/lib/lib*.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/lib*.a ${STAGEDIR}${PREFIX}/lib
 .ifndef WITH_MPI
-	${INSTALL_DATA} ${WRKSRC}/libseq/libmpiseq.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libseq/libmpiseq.a ${STAGEDIR}${PREFIX}/lib
 .endif
 .ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.ps ${DOCSDIR}
-	${GZIP_CMD} ${DOCSDIR}/userguide_${PORTVERSION}.ps
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.ps ${STAGEDIR}${DOCSDIR}
+	${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/userguide_${PORTVERSION}.ps
 .endif
 .ifndef NOPORTEXAMPLES
-	@${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 . for ex in Makefile README *.c *.F input_simpletest_*
-	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
 . for ex in c_example *simpletest
-	${INSTALL_PROGRAM} ${WRKSRC}/examples/${ex} ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
 .endif
 

@@ -20,8 +20,8 @@ USES=		iconv zip
 WRKSRC=		${WRKDIR}/vmi-${PORTNAME}-8bc9f64
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${ICONV_PREFIX}/include
+LDFLAGS+=	-L${ICONV_PREFIX}/lib
 
 DOCS_EN=	COPYING ChangeLog
 DOCS_JA=	ChangeLog.ja README.ja

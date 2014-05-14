@@ -22,29 +22,27 @@ USE_EMACS=	yes
 DISTEL_DOCS=	AUTHORS ChangeLog INSTALL INSTALL.WIN32 NEWS README README.ie-session
 DISTEL_ROOT=	${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 do-build:
 	@${MKDIR} ${WRKSRC}/ebin
 	@cd ${WRKSRC} && erlc -W0 -o ebin/ +debug_info src/*.erl
 
 do-install:
-	@${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/elisp/*el ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/elisp/*el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@for FILE in ${DISTEL_DOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${STAGEDIR}${DOCSDIR}; \
 	done
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKSRC}/doc/distel/*.html ${DOCSDIR}/html
-	@${MKDIR} ${DISTEL_ROOT}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/distel/*.html ${STAGEDIR}${DOCSDIR}/html
 .endif
-	@${MKDIR} ${DISTEL_ROOT}/src
-	@${MKDIR} ${DISTEL_ROOT}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/src/*.erl ${DISTEL_ROOT}/src
-	@${INSTALL_DATA} ${WRKSRC}/ebin/*.beam ${DISTEL_ROOT}/ebin
-	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DISTEL_ROOT}/src
+	@${MKDIR} ${STAGEDIR}${DISTEL_ROOT}/ebin
+	@${INSTALL_DATA} ${WRKSRC}/src/*.erl ${STAGEDIR}${DISTEL_ROOT}/src
+	@${INSTALL_DATA} ${WRKSRC}/ebin/*.beam ${STAGEDIR}${DISTEL_ROOT}/ebin
+	@${LN} -sf ${DISTNAME} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}
 
 .include <bsd.port.mk>

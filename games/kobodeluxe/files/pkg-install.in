@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+[ -e "%%SCOREDIR%%/kobo-deluxe/scores" ] && exit 0
+
+mkdir -p "%%SCOREDIR%%/kobo-deluxe/scores"
+chgrp -R games "%%SCOREDIR%%"
+chmod g+w "%%SCOREDIR%%/kobo-deluxe/scores"

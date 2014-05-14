@@ -18,11 +18,8 @@ PYDISTUTILS_PKGNAME=	EditObj
 WRKSRC=		${WRKDIR}/EditObj-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-editobj
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demo/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

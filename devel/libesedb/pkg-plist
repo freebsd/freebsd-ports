@@ -8,9 +8,9 @@ include/libesedb/extern.h
 include/libesedb/features.h
 include/libesedb/types.h
 lib/libesedb.a
-lib/libesedb.la
 lib/libesedb.so
 lib/libesedb.so.1
+lib/libesedb.so.1.0.0
 libdata/pkgconfig/libesedb.pc
 man/man1/esedbinfo.1.gz
 man/man3/libesedb.3.gz

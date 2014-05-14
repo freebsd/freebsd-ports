@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	smashbattle
@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/beta-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	8-bit style platform battle game
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/battle/Battle

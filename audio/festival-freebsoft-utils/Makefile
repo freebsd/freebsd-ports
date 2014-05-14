@@ -9,12 +9,13 @@ MASTER_SITES=	http://www.freebsoft.org/pub/projects/${PORTNAME}/
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Festival utilities focused on interaction with Speech Dispatcher
 
+OPTIONS_DEFINE=	DOCS
+
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
 		sox:${PORTSDIR}/audio/sox
 
 NO_BUILD=	yes
 USES=		iconv
-NO_STAGE=	yes
 
 PORTDOCS=	ANNOUNCE NEWS README
 
@@ -22,19 +23,13 @@ INFO=		${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${MKDIR} ${LOCALBASE}/share/festival/lib
-	cd ${WRKSRC} && ${INSTALL_DATA} *.scm ${LOCALBASE}/share/festival/lib
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${PORTNAME}.info ${PREFIX}/${INFO_PATH}
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/festival/lib
+	cd ${WRKSRC} && ${INSTALL_DATA} *.scm ${STAGEDIR}${PREFIX}/share/festival/lib
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${PORTNAME}.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

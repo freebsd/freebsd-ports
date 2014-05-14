@@ -3,18 +3,18 @@
 
 PORTNAME=	sphinxbase
 PORTVERSION=	0.8
+PORTREVISION= 	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU Sphinx Speech recognition system base
 
-USE_LDCONFIG=	yes
-USES=		bison gmake pathfix
-USE_AUTOTOOLS=	libtool
-
+USES=		bison gmake pathfix libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-python --without-lapack
 CONFIGURE_ENV+=	HAVE_DOXYGEN=no
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -44,5 +44,8 @@ CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsphinx*.so
 
 .include <bsd.port.mk>

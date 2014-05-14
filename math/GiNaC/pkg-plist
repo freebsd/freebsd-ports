@@ -48,9 +48,9 @@ include/ginac/tensor.h
 include/ginac/version.h
 include/ginac/wildcard.h
 lib/libginac.a
-lib/libginac.la
 lib/libginac.so
-lib/libginac.so.3
+lib/libginac.so.2
+lib/libginac.so.2.1.0
 libdata/pkgconfig/ginac.pc
 man/man1/ginsh.1.gz
 man/man1/viewgar.1.gz

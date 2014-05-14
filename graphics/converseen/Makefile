@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	converseen
-PORTVERSION=	0.6.8
+PORTVERSION=	0.7.1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%200.6/
+MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%200.7/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Easy to use graphics conversion utility
 
 LIB_DEPENDS=	libMagick++.so:${PORTSDIR}/graphics/ImageMagick
 
-USE_BZIP2=	yes
-USES=		cmake gettext iconv
+USES=		cmake gettext iconv tar:bzip2
 USE_QT4=	corelib gui linguist_build moc_build qmake_build \
 		rcc_build uic_build
 

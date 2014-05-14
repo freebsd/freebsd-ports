@@ -39,12 +39,14 @@ LLNEXTGEN_DESC=		Build with grammar verification
 
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
+.if ${OPSYS} == FreeBSD
 .if ${OSVERSION} < 900044
 BROKEN=		Only compiles on FreeBSD 9,10 and 11
 .endif
 
 .if ${OSVERSION} >= 1000000
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MLLNEXTGEN}

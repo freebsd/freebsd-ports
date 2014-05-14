@@ -4,7 +4,8 @@ PORTNAME=	saslauthd
 PORTVERSION=	2.1.26
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
+		http://cyrusimap.org/releases/
 PKGNAMEPREFIX=	cyrus-sasl-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
@@ -43,7 +44,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--disable-krb4
 CONFIGURE_ENV+=	andrew_cv_runpath_switch=none
 
-OPTIONS_DEFINE=		BDB OPENLDAP HTTPFORM
+OPTIONS_DEFINE=		BDB DOCS OPENLDAP HTTPFORM
 BDB_CONFIGURE_ON=	--with-dblib=berkeley \
 			--with-bdb-libdir=${BDB_LIB_DIR} \
 			--with-bdb-incdir=${BDB_INCLUDE_DIR} \

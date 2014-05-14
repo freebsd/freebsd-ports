@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.98.1
-PORTREVISION=	2
+PORTVERSION=	0.98.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -11,6 +11,8 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR \
 		EXPERIMENTAL DOCS IPV6 DMG_XAR
@@ -48,6 +50,7 @@ DMG_XAR_USE=		GNOME=libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake
+INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 PORTDOCS=	*

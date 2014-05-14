@@ -8,11 +8,14 @@ CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Business::OnlinePayment backend module for OCV
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Business::OnlinePayment backend module for OCV
 
-BUILD_DEPENDS=	p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment \
-		p5-Business-OCV>=0:${PORTSDIR}/finance/p5-Business-OCV
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Business-OCV>=0:${PORTSDIR}/finance/p5-Business-OCV \
+		p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

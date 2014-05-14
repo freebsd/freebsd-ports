@@ -29,7 +29,6 @@ WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -59,34 +58,34 @@ post-build:
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} -f {} \;
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/uzbl-core ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/uzbl-core ${STAGEDIR}${PREFIX}/bin
 .for f in uzbl-event-manager uzbl-browser uzbl-tabbed
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/config.h ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/config.h ${STAGEDIR}${DOCSDIR}
 .for f in COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
 		multiple-instances-management performance url-editing
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}/${f}
 .endfor
 .for f in AUTHORS README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
 .endfor
-	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} vim ${DOCSDIR})
+	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} vim ${STAGEDIR}${DOCSDIR})
 .endif
 .if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}/examples/data/dforms ${DATADIR}/examples/config
+	${MKDIR} ${STAGEDIR}${DATADIR}/examples/data/dforms ${STAGEDIR}${DATADIR}/examples/config
 .for f in data/bookmarks \
 	data/dforms/bbs.archlinux.org \
 	config/style.css data/uzbl.png
-		${INSTALL_DATA} ${WRKSRC}/examples/${f} ${DATADIR}/examples/${f}
+		${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${DATADIR}/examples/${f}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/examples/config/config ${DATADIR}/examples/config/config
+	${INSTALL_DATA} ${WRKSRC}/examples/config/config ${STAGEDIR}${DATADIR}/examples/config/config
 	(cd ${WRKSRC}/examples/data && \
-		${COPYTREE_BIN} plugins ${DATADIR}/examples/data/)
+		${COPYTREE_BIN} plugins ${STAGEDIR}${DATADIR}/examples/data/)
 	(cd ${WRKSRC}/examples/data && \
-		${COPYTREE_BIN} scripts ${DATADIR}/examples/data/)
+		${COPYTREE_BIN} scripts ${STAGEDIR}${DATADIR}/examples/data/)
 .endif
 
 .include <bsd.port.mk>

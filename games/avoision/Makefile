@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	avoision
@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/avsn/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Simple collect-dots-avoid-blocks game
 
 LICENSE=	GPLv2 CCbyNCSA3

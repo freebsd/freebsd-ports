@@ -11,10 +11,11 @@ COMMENT=	Ruby bindings for libarchive
 
 LICENSE=	BSD3CLAUSE
 
+USES=		dos2unix
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-USE_DOS2UNIX=	ext/depend
+DOS2UNIX_FILES=	ext/depend
 
 .include <bsd.port.mk>

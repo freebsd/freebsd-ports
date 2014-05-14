@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unix-Statgrab
-PORTVERSION=	0.04
-PORTREVISION=	1
+PORTVERSION=	0.104
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,12 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Perl extension for collecting information about the machine
 
+BUILD_DEPENDS=	p5-Config-AutoConf>=0.19:${PORTSDIR}/devel/p5-Config-AutoConf
 LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 
 USES=		perl5 pkgconfig
-USE_PERL5=	configure
-
-CONFIGURE_ARGS+=	INC="`pkg-config libstatgrab --cflags`" \
-			LIBS="`pkg-config libstatgrab --libs`"
+USE_PERL5=	configure modbuild
 
 .include <bsd.port.mk>

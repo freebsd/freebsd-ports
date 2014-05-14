@@ -3,7 +3,7 @@
 
 PORTNAME=	mac
 PORTVERSION=	3.99.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://supermmx.org/resources/linux/mac/ CENKES
 DISTNAME=	${PORTNAME}-3.99-u4-b5
@@ -11,9 +11,11 @@ DISTNAME=	${PORTNAME}-3.99-u4-b5
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 

@@ -12,8 +12,7 @@ DISTNAME=	QtCurve-Gtk2-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QtCurve GTK2 Theme Engine
 
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 .include <bsd.port.mk>

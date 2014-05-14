@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clang-cheri
-PORTVERSION=	3.4.20140423
-PORTREVISION=	1
+PORTVERSION=	3.4.20140505
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -84,6 +83,10 @@ COMMANDS=	\
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 .include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == "gcc"
+BROKEN=	build errors when C++11 compiler is gcc
+.endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion

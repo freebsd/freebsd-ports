@@ -122,6 +122,8 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 %%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.rtf
 %%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.txt
 %%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack.xml
+%%MANUAL%%%%DOCSDIR%%/UserManual.pdf
+%%MANUAL%%%%DOCSDIR%%/UserManual_fr_FR.pdf
 %%NLS%%%%DATADIR%%/nls/VirtualBox_bg.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_ca.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_ca_VA.qm
@@ -664,6 +666,7 @@ include/virtualbox/xpcom/xpcom-config.h
 %%WEBSERVICE%%@dirrm %%DATADIR%%/sdk
 @dirrm %%DATADIR%%/samples
 %%NLS%%@dirrm %%DATADIR%%/nls
+%%MANUAL%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/idl
 @dirrm %%DATADIR%%
 @dirrm lib/virtualbox/components

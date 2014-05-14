@@ -3,7 +3,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.7
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	CRITICAL/
 PKGNAMEPREFIX=	xfce4-
@@ -22,7 +22,7 @@ RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	librsvg2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil libgui
@@ -59,12 +59,11 @@ CONFIGURE_ARGS+=	--disable-close-button
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(notification-daemon-xfce\)-1.0|\1|' \
-		${WRKSRC}/src/daemon/Makefile.am \
 		${WRKSRC}/src/daemon/Makefile.in \
-		${WRKSRC}/src/themes/bubble/Makefile.am \
 		${WRKSRC}/src/themes/bubble/Makefile.in \
-		${WRKSRC}/src/themes/standard/Makefile.am \
 		${WRKSRC}/src/themes/standard/Makefile.in
+	@${REINPLACE_CMD} '/GTK_LIBS =/s/$$/ -lgmodule-2.0/' \
+		${WRKSRC}/src/daemon/Makefile.in
 .if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's|\(USE_NLS=\)yes|\1no|' ${WRKSRC}/configure
 .endif

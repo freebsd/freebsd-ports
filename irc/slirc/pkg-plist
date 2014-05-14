@@ -23,17 +23,17 @@ lib/slirc/scripts/standard.sl
 lib/slirc/scripts/tab-ex.sl
 @dirrm lib/slirc/scripts
 @dirrm lib/slirc
-%%PORTDOCS%%share/doc/slirc/BUGS
-%%PORTDOCS%%share/doc/slirc/CHANGES
-%%PORTDOCS%%share/doc/slirc/COPYING
-%%PORTDOCS%%share/doc/slirc/FAQ
-%%PORTDOCS%%share/doc/slirc/LACK-OF-WARRANTY
-%%PORTDOCS%%share/doc/slirc/README
-%%PORTDOCS%%share/doc/slirc/README.dropin
-%%PORTDOCS%%share/doc/slirc/README.gutsbonesbloodtoilsweat
-%%PORTDOCS%%%%JA%%share/doc/slirc/README.ja
-%%PORTDOCS%%share/doc/slirc/TODO
-%%PORTDOCS%%share/doc/slirc/VFile.txt
-%%PORTDOCS%%share/doc/slirc/slirc.hlp
-%%PORTDOCS%%share/doc/slirc/utilsfun.txt
-%%PORTDOCS%%@dirrm share/doc/slirc
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/LACK-OF-WARRANTY
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.dropin
+%%PORTDOCS%%%%DOCSDIR%%/README.gutsbonesbloodtoilsweat
+%%PORTDOCS%%%%JA%%%%DOCSDIR%%/README.ja
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/VFile.txt
+%%PORTDOCS%%%%DOCSDIR%%/slirc.hlp
+%%PORTDOCS%%%%DOCSDIR%%/utilsfun.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

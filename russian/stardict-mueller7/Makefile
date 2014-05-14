@@ -8,7 +8,7 @@ MASTER_SITES=	http://abloz.com/huzheng/stardict-dic/ru/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Mueller English-Russian dictionary
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"
 .include <bsd.port.mk>

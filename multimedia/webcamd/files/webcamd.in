@@ -9,8 +9,8 @@
 # webcamd_enable="YES"
 #
 # Optional:
-# webcamd_flags="-m v4l2.vflip=1"
-# webcamd_flags="-m v4l2.hflip=1"
+# webcamd_flags="-m v4l2-dev.vflip=1"
+# webcamd_flags="-m v4l2-dev.hflip=1"
 #
 
 webcamd_enable=${webcamd_enable-"NO"}

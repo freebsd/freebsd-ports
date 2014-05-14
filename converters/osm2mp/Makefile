@@ -20,8 +20,7 @@ RUN_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		perl5
+USES=		tar:bzip2 perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 

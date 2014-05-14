@@ -154,8 +154,6 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/grains/__init__.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/core.py
 %%PYTHON_SITELIBDIR%%/salt/grains/core.pyc
-%%PYTHON_SITELIBDIR%%/salt/grains/external_ip.py
-%%PYTHON_SITELIBDIR%%/salt/grains/external_ip.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/extra.py
 %%PYTHON_SITELIBDIR%%/salt/grains/extra.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/junos.py
@@ -1085,37 +1083,37 @@ man/man1/salt-ssh.1.gz
 man/man1/salt-syndic.1.gz
 man/man1/salt.1.gz
 man/man7/salt.7.gz
-@dirrm %%PYTHON_SITELIBDIR%%/salt/wheel
-@dirrm %%PYTHON_SITELIBDIR%%/salt/utils/validate
-@dirrm %%PYTHON_SITELIBDIR%%/salt/utils/decorators
-@dirrm %%PYTHON_SITELIBDIR%%/salt/utils
-@dirrm %%PYTHON_SITELIBDIR%%/salt/transport
-@dirrm %%PYTHON_SITELIBDIR%%/salt/tops
-@dirrm %%PYTHON_SITELIBDIR%%/salt/templates/virt
-@dirrm %%PYTHON_SITELIBDIR%%/salt/templates/rh_ip
-@dirrm %%PYTHON_SITELIBDIR%%/salt/templates/debian_ip
-@dirrm %%PYTHON_SITELIBDIR%%/salt/templates
-@dirrm %%PYTHON_SITELIBDIR%%/salt/states
-@dirrm %%PYTHON_SITELIBDIR%%/salt/search
-@dirrm %%PYTHON_SITELIBDIR%%/salt/runners
-@dirrm %%PYTHON_SITELIBDIR%%/salt/roster
-@dirrm %%PYTHON_SITELIBDIR%%/salt/returners
-@dirrm %%PYTHON_SITELIBDIR%%/salt/renderers
-@dirrm %%PYTHON_SITELIBDIR%%/salt/pillar
-@dirrm %%PYTHON_SITELIBDIR%%/salt/output
-@dirrm %%PYTHON_SITELIBDIR%%/salt/modules
-@dirrm %%PYTHON_SITELIBDIR%%/salt/log/handlers
-@dirrm %%PYTHON_SITELIBDIR%%/salt/log
-@dirrm %%PYTHON_SITELIBDIR%%/salt/grains
-@dirrm %%PYTHON_SITELIBDIR%%/salt/fileserver
-@dirrm %%PYTHON_SITELIBDIR%%/salt/ext
-@dirrm %%PYTHON_SITELIBDIR%%/salt/cloud/deploy
-@dirrm %%PYTHON_SITELIBDIR%%/salt/cloud/clouds
-@dirrm %%PYTHON_SITELIBDIR%%/salt/cloud
+@dirrmtry %%ETCDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/salt/auth
+@dirrm %%PYTHON_SITELIBDIR%%/salt/cli
 @dirrm %%PYTHON_SITELIBDIR%%/salt/client/ssh/wrapper
 @dirrm %%PYTHON_SITELIBDIR%%/salt/client/ssh
 @dirrm %%PYTHON_SITELIBDIR%%/salt/client
-@dirrm %%PYTHON_SITELIBDIR%%/salt/cli
-@dirrm %%PYTHON_SITELIBDIR%%/salt/auth
+@dirrm %%PYTHON_SITELIBDIR%%/salt/cloud/clouds
+@dirrm %%PYTHON_SITELIBDIR%%/salt/cloud/deploy
+@dirrm %%PYTHON_SITELIBDIR%%/salt/cloud
+@dirrm %%PYTHON_SITELIBDIR%%/salt/ext
+@dirrm %%PYTHON_SITELIBDIR%%/salt/fileserver
+@dirrm %%PYTHON_SITELIBDIR%%/salt/grains
+@dirrm %%PYTHON_SITELIBDIR%%/salt/log/handlers
+@dirrm %%PYTHON_SITELIBDIR%%/salt/log
+@dirrm %%PYTHON_SITELIBDIR%%/salt/modules
+@dirrm %%PYTHON_SITELIBDIR%%/salt/output
+@dirrm %%PYTHON_SITELIBDIR%%/salt/pillar
+@dirrm %%PYTHON_SITELIBDIR%%/salt/renderers
+@dirrm %%PYTHON_SITELIBDIR%%/salt/returners
+@dirrm %%PYTHON_SITELIBDIR%%/salt/roster
+@dirrm %%PYTHON_SITELIBDIR%%/salt/runners
+@dirrm %%PYTHON_SITELIBDIR%%/salt/search
+@dirrm %%PYTHON_SITELIBDIR%%/salt/states
+@dirrm %%PYTHON_SITELIBDIR%%/salt/templates/debian_ip
+@dirrm %%PYTHON_SITELIBDIR%%/salt/templates/rh_ip
+@dirrm %%PYTHON_SITELIBDIR%%/salt/templates/virt
+@dirrm %%PYTHON_SITELIBDIR%%/salt/templates
+@dirrm %%PYTHON_SITELIBDIR%%/salt/tops
+@dirrm %%PYTHON_SITELIBDIR%%/salt/transport
+@dirrm %%PYTHON_SITELIBDIR%%/salt/utils/decorators
+@dirrm %%PYTHON_SITELIBDIR%%/salt/utils/validate
+@dirrm %%PYTHON_SITELIBDIR%%/salt/utils
+@dirrm %%PYTHON_SITELIBDIR%%/salt/wheel
 @dirrm %%PYTHON_SITELIBDIR%%/salt
-@dirrmtry %%ETCDIR%%

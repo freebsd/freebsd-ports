@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	PDF generator using HTML and CSS
 
+LICENSE=	APACHE20
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.11.1:${PORTSDIR}/www/py-html5lib \
 		${PYTHON_PKGNAMEPREFIX}reportlab2>=2.1:${PORTSDIR}/print/py-reportlab2 \
 		${PYTHON_PKGNAMEPREFIX}imaging>=0.1:${PORTSDIR}/graphics/py-imaging \
@@ -18,5 +20,4 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.11.1:${PORTSDIR}/www/py-html5lib
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

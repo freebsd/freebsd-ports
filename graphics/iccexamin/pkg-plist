@@ -21,4 +21,3 @@ share/pixmaps/iccexamin.png
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
 @dirrmtry share/fonts
-@dirrmtry share/applications

@@ -17,7 +17,6 @@ SHEBANG_FILES=	Examples/gdsinfo Examples/scalegds
 WRKSRC=		${WRKDIR}/${PORTNAME:tu}-${PORTVERSION}
 PLIST_FILES=	bin/gdsinfo bin/gds2gdt bin/gdt2gds bin/scalegds
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/Examples/gdsinfo ${WRKSRC}/Examples/scalegds
@@ -29,6 +28,6 @@ post-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/Examples/gdsinfo \
 		${WRKSRC}/Examples/scalegds \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

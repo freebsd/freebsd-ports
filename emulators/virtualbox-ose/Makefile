@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.10
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -48,10 +49,12 @@ GROUPS=		${VBOXGROUP}
 VBOX_FRONTENDS=	VBoxAutostart VBoxHeadless
 VBOX_GUEST_VER=	${PORTVERSION}
 
-OPTIONS_DEFINE=	QT4 DEBUG GUESTADDITIONS DBUS PULSEAUDIO UDPTUNNEL VDE VNC WEBSERVICE NLS X11 VPX PYTHON
-OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL VNC WEBSERVICE PYTHON
+OPTIONS_DEFINE=	DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO PYTHON \
+		QT4 UDPTUNNEL VDE VNC VPX WEBSERVICE X11
+OPTIONS_DEFAULT=	DBUS PYTHON QT4 UDPTUNNEL VNC WEBSERVICE X11
 OPTIONS_SUB=	yes
 DEBUG_DESC=	Debug symbols, additional logs and assertions
+MANUAL_DESC=	Build with user manual
 QT4_DESC=	Build with QT4 Frontend
 GUESTADDITIONS_DESC=	Build with Guest Additions
 UDPTUNNEL_DESC=	Build with UDP tunnel support
@@ -65,6 +68,8 @@ PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_CONFIGURE_OFF=	--disable-dbus
+
+MANUAL_CONFIGURE_OFF=	--disable-docs
 
 VNC_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
 VNC_CONFIGURE_ON=	--enable-vnc
@@ -116,7 +121,8 @@ CONFIGURE_ARGS+=--build-headless
 
 .if ${PORT_OPTIONS:MQT4}
 QT_NONSTANDARD=	yes
-USE_QT4=	gui network moc_build opengl uic_build rcc_build linguist
+USE_QT4=	linguist_build moc_build rcc_build uic_build
+USE_QT4+=	gui network opengl
 INSTALLS_ICONS=	yes
 VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
 .else
@@ -143,6 +149,10 @@ RESTRICTED_FILES=	${GUESTADDITIONS}
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_BUILDTYPE=	debug
 KMK_FLAGS+=	BUILD_TYPE=debug
+.endif
+
+.if ${PORT_OPTIONS:MMANUAL}
+USE_TEX=	dvipsk:build formats:build texlive
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
@@ -251,6 +261,11 @@ do-install:
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/virtualbox
 	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components VBoxExtPackHelperApp" ${STAGEDIR}${PREFIX}/lib/virtualbox
+
+.if ${PORT_OPTIONS:MMANUAL}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/UserManual*.pdf ${STAGEDIR}${DOCSDIR}
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/VirtualBox/qtnls && ${COPYTREE_SHARE} "*.qm" ${STAGEDIR}${DATADIR}/nls

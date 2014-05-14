@@ -1,3 +1,6 @@
+%%PYTHON_LIBDIR%%/site-packages/py2play/setup.py
+%%PYTHON_LIBDIR%%/site-packages/py2play/setup.pyc
+%%PYTHON_LIBDIR%%/site-packages/py2play/setup.pyo
 %%PYTHON_SITELIBDIR%%/py2play/__init__.py
 %%PYTHON_SITELIBDIR%%/py2play/action.py
 %%PYTHON_SITELIBDIR%%/py2play/character.py

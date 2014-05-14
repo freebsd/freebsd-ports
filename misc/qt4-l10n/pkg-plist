@@ -1,6 +1,7 @@
 %%QT_L10NDIR%%/assistant_cs.qm
 %%QT_L10NDIR%%/assistant_da.qm
 %%QT_L10NDIR%%/assistant_de.qm
+%%QT_L10NDIR%%/assistant_eu.qm
 %%QT_L10NDIR%%/assistant_fr.qm
 %%QT_L10NDIR%%/assistant_hu.qm
 %%QT_L10NDIR%%/assistant_ja.qm
@@ -25,6 +26,7 @@
 %%QT_L10NDIR%%/designer_zh_TW.qm
 %%QT_L10NDIR%%/linguist_cs.qm
 %%QT_L10NDIR%%/linguist_de.qm
+%%QT_L10NDIR%%/linguist_eu.qm
 %%QT_L10NDIR%%/linguist_fr.qm
 %%QT_L10NDIR%%/linguist_hu.qm
 %%QT_L10NDIR%%/linguist_ja.qm
@@ -40,6 +42,7 @@
 %%QT_L10NDIR%%/qt_da.qm
 %%QT_L10NDIR%%/qt_de.qm
 %%QT_L10NDIR%%/qt_es.qm
+%%QT_L10NDIR%%/qt_eu.qm
 %%QT_L10NDIR%%/qt_fa.qm
 %%QT_L10NDIR%%/qt_fr.qm
 %%QT_L10NDIR%%/qt_gl.qm
@@ -47,6 +50,7 @@
 %%QT_L10NDIR%%/qt_help_cs.qm
 %%QT_L10NDIR%%/qt_help_da.qm
 %%QT_L10NDIR%%/qt_help_de.qm
+%%QT_L10NDIR%%/qt_help_eu.qm
 %%QT_L10NDIR%%/qt_help_fr.qm
 %%QT_L10NDIR%%/qt_help_gl.qm
 %%QT_L10NDIR%%/qt_help_hu.qm
@@ -71,6 +75,8 @@
 %%QT_L10NDIR%%/qt_uk.qm
 %%QT_L10NDIR%%/qt_zh_CN.qm
 %%QT_L10NDIR%%/qt_zh_TW.qm
+%%QT_L10NDIR%%/qtconfig_eu.qm
+%%QT_L10NDIR%%/qtconfig_he.qm
 %%QT_L10NDIR%%/qtconfig_hu.qm
 %%QT_L10NDIR%%/qtconfig_ja.qm
 %%QT_L10NDIR%%/qtconfig_ko.qm
@@ -80,6 +86,8 @@
 %%QT_L10NDIR%%/qtconfig_uk.qm
 %%QT_L10NDIR%%/qtconfig_zh_CN.qm
 %%QT_L10NDIR%%/qtconfig_zh_TW.qm
+%%QT_L10NDIR%%/qtscript_eu.qm
+%%QT_L10NDIR%%/qvfb_eu.qm
 %%QT_L10NDIR%%/qvfb_hu.qm
 %%QT_L10NDIR%%/qvfb_ja.qm
 %%QT_L10NDIR%%/qvfb_ko.qm

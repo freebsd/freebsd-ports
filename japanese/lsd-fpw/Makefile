@@ -9,23 +9,22 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/lsd/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Japanese - English Dictionary for Life Science (EPWING V1 format)
+COMMENT=	Japanese - English Dictionary for Life Science (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/lsd
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/lsd-fpw/lsd/data
-	${INSTALL_DATA} ${WRKSRC}/lsd/data/honmon ${PREFIX}/share/dict/lsd-fpw/lsd/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/lsd-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme.pkg readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/lsd-fpw/lsd/data
+	${INSTALL_DATA} ${WRKSRC}/lsd/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/lsd-fpw/lsd/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs ${STAGEDIR}${PREFIX}/share/dict/lsd-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.pkg readme.txt \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

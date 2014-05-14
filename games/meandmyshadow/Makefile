@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	meandmyshadow
-PORTVERSION=	0.4
-PORTREVISION=	4
+PORTVERSION=	0.4.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Me and My Shadow puzzle/platform game
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 

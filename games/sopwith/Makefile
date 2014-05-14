@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sopwith
-PORTVERSION=	1.7.4
-PORTREVISION=	3
+PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/sdl-${PORTNAME}/sdl_${PORTNAME}/${PORTVERSION}
 
@@ -15,7 +15,4 @@ USE_SDL=	sdl
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-MAN6=		sopwith.6
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

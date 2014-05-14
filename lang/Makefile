@@ -100,6 +100,7 @@
     SUBDIR += gnatdroid-armv7
     SUBDIR += gnatdroid-binutils
     SUBDIR += gnatdroid-sysroot
+    SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
     SUBDIR += go
@@ -193,7 +194,6 @@
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += oorexx
-    SUBDIR += open-cobol
     SUBDIR += opendylan
     SUBDIR += otcl
     SUBDIR += p2c
@@ -250,6 +250,7 @@
     SUBDIR += polyml
     SUBDIR += ptoc
     SUBDIR += pure
+    SUBDIR += py-clojure
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
     SUBDIR += pypy

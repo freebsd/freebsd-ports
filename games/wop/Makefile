@@ -15,8 +15,7 @@ COMMENT=	Free real-time Worms game
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 USE_SDL=	sdl net mixer ttf image
 
 DATAVERSION=	2005-12-21

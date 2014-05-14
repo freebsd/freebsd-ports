@@ -2,39 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	quodlibet
-PORTVERSION=	2.2
-PORTREVISION=	7
+PORTVERSION=	2.6.3
 CATEGORIES=	multimedia audio python gnome
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://bitbucket.org/lazka/${PORTNAME}-files/raw/default/releases/
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
-BROKEN=		Fails to install
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
-USES=		gettext
+USES=		display gettext
 USE_PYDISTUTILS=	yes
-USE_DISPLAY=	yes
+PYDISTUTILS_INSTALLNOSINGLE=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-pydistutils
+
 USE_GSTREAMER=	gconf good python
 
-MAN1=		exfalso.1 quodlibet.1
-
 OPTIONS_DEFINE=	FLAC MP3 AAC MUSEPACK OGG SPC SPEEX VORBIS WAVPACK DBUS REMOTE EXTENSIONS
-SPC_DESC=	SPC (SNES ROM audio) support
+
+OPTIONS_DEFAULT=	FLAC MP3 AAC MUSEPACK OGG SPC SPEEX VORBIS WAVPACK DBUS REMOTE
+
+SPC_DESC=	SPC (SNES ROM audio) support on i386
 SPEEX_DESC=	OGG/Speex audio support
 REMOTE_DESC=	Enable remote playback
 EXTENSIONS_DESC=	Enable extensions
 
-OPTIONS_DEFAULT=	FLAC MP3 AAC MUSEPACK OGG SPC SPEEX VORBIS WAVPACK DBUS REMOTE
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOGG}
 USE_GSTREAMER+=	ogg
@@ -44,7 +44,7 @@ USE_GSTREAMER+=	ogg
 USE_GSTREAMER+=	vorbis
 .endif
 
-.if ${PORT_OPTIONS:MSPC}
+.if ${PORT_OPTIONS:MSPC} && ${ARCH} == i386
 USE_GSTREAMER+=	spc
 .endif
 
@@ -61,17 +61,17 @@ USE_GSTREAMER+=	flac
 .endif
 
 .if ${PORT_OPTIONS:MMUSEPACK}
-LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
+LIB_DEPENDS+=	libmpcdec.so:${PORTSDIR}/audio/musepack
 USE_GSTREAMER+=	musepack
 .endif
 
 .if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	libwavpack.so:${PORTSDIR}/audio/wavpack
 USE_GSTREAMER+=	wavpack
 .endif
 
 .if ${PORT_OPTIONS:MAAC}
-LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
+LIB_DEPENDS+=	libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
 USE_GSTREAMER+=	faad
 .endif
 
@@ -88,14 +88,6 @@ USE_GSTREAMER+=	gnomevfs
 
 .if ${PORT_OPTIONS:MEXTENSIONS}
 USE_GNOME+=	pygnomeextras
-PLIST_SUB+=	EXTENSIONS=""
-.else
-PLIST_SUB+=	EXTENSIONS="@comment "
 .endif
 
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

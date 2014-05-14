@@ -13,6 +13,9 @@ DISTNAME=	SimPy-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Simulation in Python
 
+LICENSE=	LGPL21
+
+NO_ARCH=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	SimPy
@@ -20,11 +23,7 @@ PYDISTUTILS_PKGNAME=	SimPy
 OPTIONS_DEFINE=	TKINTER
 TKINTER_DESC=	py-tkinter for plot
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTKINTER}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
@@ -32,8 +31,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkint
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

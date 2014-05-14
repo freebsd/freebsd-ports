@@ -13,5 +13,4 @@ MASTERDIR=	${.CURDIR}/../../cad/gmsh
 
 WITH_OCC=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -10,8 +10,7 @@ DISTNAME=	QtCurve-KDE4-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QtCurve Qt4 widget style
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_QT4=	dbus gui svg imageformats_run \
 		qmake_build uic_build moc_build rcc_build
 CFLAGS+=	-I${LOCALBASE}/include

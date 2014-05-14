@@ -12,6 +12,9 @@ MASTER_SITE_SUBDIR=	ale
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java-PDF Library
 
+LICENSE=	MPL LGPL20
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
 		${JAVAJARDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j \
 		${JAVAJARDIR}/pdf-renderer.jar:${PORTSDIR}/print/pdf-renderer
@@ -19,36 +22,41 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
 		${JAVAJARDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j \
 		${JAVAJARDIR}/pdf-renderer.jar:${PORTSDIR}/print/pdf-renderer
 
-USE_BZIP2=	yes
+OPTIONS=	DOCS
+
+USES=		tar:bzip2
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	jar jar.rtf jar.rups
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-PORTDOCS=	*
-.endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-rtf.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-rups.jar \
 		bin/${PORTNAME}-rups
 
-NO_STAGE=	yes
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	javadoc
+.endif
+
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/lib/iText.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${INSTALL_DATA} ${WRKDIR}/lib/iText-rtf.jar \
-		${JAVAJARDIR}/${PORTNAME}-rtf.jar
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-rtf.jar
 	@${INSTALL_DATA} ${WRKDIR}/lib/iText-rups.jar \
-		${JAVAJARDIR}/${PORTNAME}-rups.jar
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-rups.jar
 	@${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME}-rups \
-		${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/apidocs
-	@${CP} -R ${WRKDIR}/build/docs/* ${DOCSDIR}/apidocs
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/apidocs
+		${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs
+	@${CP} -R ${WRKDIR}/build/docs/* ${STAGEDIR}${DOCSDIR}/apidocs
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}/apidocs
 .endif
 
 .include <bsd.port.mk>

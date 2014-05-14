@@ -17,9 +17,9 @@ COMMENT=	Open source Mathematics software
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
-		lapack:${PORTSDIR}/math/lapack \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas \
+		liblapack.so:${PORTSDIR}/math/lapack \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 # 387 option: this only makes a difference for the amd64 architecture.  Causes
@@ -28,10 +28,29 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 OPTIONS_DEFINE_amd64=	387
 387_DESC=		Use 387 instead of SSE FPU
 
-# Keep NO_SAGE set, since otherwise the resulting package is huge.
-NO_STAGE=	yes
-
 .include <bsd.port.options.mk>
+
+pre-extract:
+	@${ECHO_MSG}
+	@${ECHO_MSG} \# The best way to build this port is to first type \"make build\".
+	@${ECHO_MSG} \# If you type \"make\" or \"make install\", this will cause the building of a
+	@${ECHO_MSG} \# package, which will take a considerable amount of time and space.
+	@${ECHO_MSG}
+	@${ECHO_MSG} \# After this, an easier way to install everything is to type:
+	@${ECHO_MSG}
+	@${ECHO_MSG} ${MV} ${WRKSRC} ${PREFIX}/.
+	@${ECHO_MSG}
+	@${ECHO_MSG} \# The next four lines are only needed if you want sage in ${PREFIX}/bin.
+	@${ECHO_MSG}
+	@${ECHO_MSG} "${SED} -e \"s+#SAGE_ROOT.*+SAGE_ROOT=${PREFIX}/${PORTNAME}-${PORTVERSION}+\" \\"
+	@${ECHO_MSG} "        ${PREFIX}/${PORTNAME}-${PORTVERSION}/sage > ${PREFIX}/bin/sage"
+	@${ECHO_MSG} ${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/sage
+	@${ECHO_MSG} ${CHMOD} ${BINMODE} ${PREFIX}/bin/sage
+	@${ECHO_MSG}
+	@${ECHO_MSG} \# The next line will provide write protection for sage.
+	@${ECHO_MSG} ${CHOWN} -hR ${BINOWN}:${BINGRP} ${PREFIX}/${PORTNAME}-${PORTVERSION}
+	@${ECHO_MSG}
+	@sleep 60
 
 PLIST_FILES=	bin/sage
 USE_GCC=	yes
@@ -98,44 +117,25 @@ check regression-test test: build
 	cd ${WRKSRC} && ${SETENV} DOT_SAGE=${WRKSRC}/tmp/.sage ./sage -testall
 	${RM} -f ${WRKSRC}/python*.core
 
-INSTALL_SAGE_DIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
-pre-install:
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# Instead of doing \"make install\", you can simply perform the commands:
-	@${ECHO_MSG}
-	@${ECHO_MSG} ${MV} ${WRKSRC} ${PREFIX}/.
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# The next four lines are only needed if you want sage in ${PREFIX}/bin.
-	@${ECHO_MSG}
-	@${ECHO_MSG} "${SED} -e \"s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+\" \\"
-	@${ECHO_MSG} "        ${INSTALL_SAGE_DIR}/sage > ${PREFIX}/bin/sage"
-	@${ECHO_MSG} ${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/sage
-	@${ECHO_MSG} ${CHMOD} ${BINMODE} ${PREFIX}/bin/sage
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# The next line will provide write protection for sage.
-	@${ECHO_MSG} ${CHOWN} -hR ${BINOWN}:${BINGRP} ${INSTALL_SAGE_DIR}
-	@${ECHO_MSG}
-	@sleep 60
-
+INSTALL_SAGE_DIR=	${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION}
 do-install:
 	cd ${WRKDIR} && ${FIND} -s ${WRKSRC} | \
 		${GREP} -v '^${WRKSRC}/upstream/' | \
 		${GREP} -v '^${WRKSRC}/tmp' | \
 		${SED} -e 's#${WRKDIR}/##' | \
-		${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${PREFIX}
+		${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}
 	${ECHO_CMD} | ${SETENV} DOT_SAGE=${INSTALL_SAGE_DIR}/tmp/.sage ${INSTALL_SAGE_DIR}/sage
 	${RM} -rf ${INSTALL_SAGE_DIR}/tmp/.sage
-	${SED} -e "s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+" ${WRKSRC}/sage > ${PREFIX}/bin/sage
-	${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/sage
-	${CHMOD} ${BINMODE} ${PREFIX}/bin/sage
+	${SED} -e "s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+" ${WRKSRC}/sage > ${STAGEDIR}${PREFIX}/bin/sage
+	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/sage
 
 post-install:
 	@${FIND} -s ${INSTALL_SAGE_DIR} -not -type d | \
-		${SED} -e 's#${PREFIX}/##' >> ${TMPPLIST}
+		${SED} -e 's#${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${FIND} -s ${INSTALL_SAGE_DIR} -type d -empty | \
-		${SED} -e 's#${PREFIX}/#@exec ${MKDIR} %D/#' >> ${TMPPLIST}
+		${SED} -e 's#${STAGEDIR}${PREFIX}/#@exec ${MKDIR} %D/#' >> ${TMPPLIST}
 	@${FIND} -s ${INSTALL_SAGE_DIR} -type d -depth | \
-		${SED} -e 's#${PREFIX}/#@dirrm #' >> ${TMPPLIST}
+		${SED} -e 's#${STAGEDIR}${PREFIX}/#@dirrm #' >> ${TMPPLIST}
 
 .include <bsd.port.pre.mk>
 

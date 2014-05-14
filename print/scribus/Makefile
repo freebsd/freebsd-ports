@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -37,12 +37,7 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -Wno-ferror-limit
 
-MAN1=		scribus.1
-MANLANG=	"" pl de
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
 post-install:
-	${LN} ${DATADIR}/icons/scribus.png ${PREFIX}/share/pixmaps/
+	${LN} -sf ${DATADIR}/icons/scribus.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>

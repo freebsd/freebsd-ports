@@ -1,0 +1,3 @@
+An implementation of Clojure in pure (dynamic) Python.
+
+WWW: https://github.com/halgari/clojure-py

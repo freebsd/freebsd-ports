@@ -14,7 +14,6 @@ include/OIS/OISObject.h
 include/OIS/OISPrereqs.h
 lib/libOIS-1.2.0.so
 lib/libOIS.a
-lib/libOIS.la
 lib/libOIS.so
 libdata/pkgconfig/OIS.pc
 @dirrm include/OIS

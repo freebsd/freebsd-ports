@@ -2,6 +2,7 @@
 
 PORTNAME=	fail2ban
 PORTVERSION=	0.9.0
+PORTREVISION=	2
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -46,8 +47,14 @@ post-patch:
 		${WRKSRC}/config/fail2ban.conf
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR}
+	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR} ${STAGEDIR}/var/run/fail2ban
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+.for file in fail2ban-client fail2ban-regex fail2ban-server fail2ban
+	@${INSTALL_MAN} ${WRKSRC}/man/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.endfor
+	@${INSTALL_MAN} ${WRKSRC}/man/jail.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/fail2ban-jail.conf.5
+	@${TOUCH} ${STAGEDIR}${FAIL2BAN_DBDIR}/.keep_me
+	@${TOUCH} ${STAGEDIR}/var/run/fail2ban/.keep_me
 
 .include <bsd.port.mk>

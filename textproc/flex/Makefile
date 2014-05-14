@@ -2,6 +2,7 @@
 
 PORTNAME=	flex
 PORTVERSION=	2.5.39
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -16,7 +17,7 @@ USES=		bison gmake tar:bzip2
 GNU_CONFIGURE=	yes
 # install flex header to its own dir to avoid conflict with system flex.
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex --disable-shared
-CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4 MAKEINFO="makeinfo --no-split"
 INSTALL_TARGET=	install-strip
 
 INFO=		flex
@@ -28,11 +29,8 @@ NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -Ee 's/tests//' \
-		-e 's/^([[:space:]]*)\$$\(RANLIB\) ([^ ;]*)/\1chmod u+w \2;&/' \
-		-e '/echo.*RANLIB/,+1d' \
+		-e '/mode=compile ..CC/s/\\$$/-fPIC -DPIC &/' \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's/@MAKEINFO@/& --no-split/g' \
-		${WRKSRC}/doc/Makefile.in
 	${RM} -f ${WRKSRC}/doc/*.info*
 
 .include <bsd.port.mk>

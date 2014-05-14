@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.denpa.org/~go/xmulti/
 DISTFILES=	xmul200b4.tgz
 
-MAINTAINER=	toru@tenchi.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 mascot based on gal-game "To Heart"
 
 WRKSRC=		${WRKDIR}/xmulti200beta4

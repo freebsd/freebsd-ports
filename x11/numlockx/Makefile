@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://home.kde.org/~seli/numlockx/ \
 		CRITICAL
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turns on numlock in X
 
 USE_XORG=	x11 xext xtst

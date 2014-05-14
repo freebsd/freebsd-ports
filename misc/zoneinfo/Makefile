@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2014b
+DISTVERSION=	2014c
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iana.org/tz/releases/ \
 		ftp://munnari.oz.au/pub/
@@ -29,7 +29,6 @@ NO_PACKAGE=	Overwrites files in the base system
 MASTER_SITES+=	http://people.freebsd.org/~edwin/
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # The following country codes can be missing from /usr/share/misc/iso3166 and
@@ -52,9 +51,9 @@ do-build:
 		${LEAPFILE} -y ${.OBJDIR}/yearistype ${TZFILES}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/zoneinfo
-	${CP} -R -p ${WRKSRC}/zoneinfo/ ${PREFIX}/share/zoneinfo
-	${INSTALL_DATA} ${WRKSRC}/zone.tab ${PREFIX}/share/zoneinfo
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zoneinfo
+	${CP} -R -p ${WRKSRC}/zoneinfo/ ${STAGEDIR}${PREFIX}/share/zoneinfo
+	${INSTALL_DATA} ${WRKSRC}/zone.tab ${STAGEDIR}${PREFIX}/share/zoneinfo
 
 post-install:
 	@if [ -f /var/db/zoneinfo -a -O /var/db/zoneinfo -a \

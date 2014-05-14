@@ -3,12 +3,12 @@
 
 PORTNAME=	repoze.what-pylons
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The repoze.what v1 plugin for Pylons/TG2 integration
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=0.9.7:${PORTSDIR}/www/py-pylons \
@@ -19,5 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

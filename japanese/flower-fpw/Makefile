@@ -9,23 +9,22 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/Flower/
 DISTNAME=	Flower-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dictionary for flowers (EPWING V1 format)
+COMMENT=	Dictionary for flowers (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/flower
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/flower-fpw/flower/data
-	${INSTALL_DATA} ${WRKSRC}/flower/data/honmon ${PREFIX}/share/dict/flower-fpw/flower/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/flower-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/flower-fpw/flower/data
+	${INSTALL_DATA} ${WRKSRC}/flower/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/flower-fpw/flower/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/flower-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

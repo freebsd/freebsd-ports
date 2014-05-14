@@ -14,8 +14,6 @@ COMMENT=	Displays large Japanese letters on the standard output
 
 ALL_TARGET=	kbanner
 CFLAGS+=	-Wno-error=return-type
-MAN1=		kbanner.1
-PLIST_FILES=	bin/kbanner
+PLIST_FILES=	bin/kbanner man/man1/kbanner.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

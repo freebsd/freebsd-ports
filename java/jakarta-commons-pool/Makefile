@@ -12,30 +12,36 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Jakarta Object-pooling API
 
+LICENSE=	APACHE20
+
+OPTIONS_DEFINE=	DOCS
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 ALL_TARGET=	build-jar
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-.endif
-
-PORTDOCS=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	javadoc
+.endif
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/dist/docs && ${FIND} api \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 

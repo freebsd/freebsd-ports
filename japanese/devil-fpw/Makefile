@@ -16,16 +16,16 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/devil
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/devil-fpw/devil/data
-	${INSTALL_DATA} ${WRKSRC}/devil/data/honmon ${PREFIX}/share/dict/devil-fpw/devil/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/devil-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme.pkg readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/devil-fpw/devil/data
+	${INSTALL_DATA} ${WRKSRC}/devil/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/devil-fpw/devil/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/devil-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.pkg readme.txt \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

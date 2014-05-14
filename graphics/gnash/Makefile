@@ -3,7 +3,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 
@@ -23,7 +23,6 @@ USES=		tar:bzip2 pkgconfig gmake
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
-WANT_GNOME=	yes
 USE_GCC=	any
 WANT_GSTREAMER=	yes
 USE_GNOME=	libxml2
@@ -122,7 +121,7 @@ CONFIGURE_ARGS+=	--disable-kparts4
 GNASH_GUIS=
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	gtk20 atk gconf2
+USE_GNOME+=	gtk20 atk gconf2
 GNASH_GUIS+=	gtk
 .endif
 

@@ -8,7 +8,6 @@ include/sqlite/result.hpp
 include/sqlite/transaction.hpp
 include/sqlite/view.hpp
 lib/libvsqlitepp.a
-lib/libvsqlitepp.la
 lib/libvsqlitepp.so
 lib/libvsqlitepp.so.3
 lib/libvsqlitepp.so.3.0.0

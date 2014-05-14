@@ -1,6 +1,16 @@
 %%AGENT%%@stopdaemon exilog
+@owner www
+@group www
+etc/exilog.conf-dist
+@owner
+@group
 %%AGENT%%sbin/exilog_agent.pl
 sbin/exilog_cleanup.pl
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/exilog.txt
+%%PORTDOCS%%%%DOCSDIR%%/mysql-db-script.sql
+%%PORTDOCS%%%%DOCSDIR%%/pgsql-db-script.sql
+%%EXILOGDIR%%/.htaccess
 %%EXILOGDIR%%/exilog_cgi.pl
 %%EXILOGDIR%%/exilog_cgi_html.pm
 %%EXILOGDIR%%/exilog_cgi_messages.pm
@@ -8,12 +18,11 @@ sbin/exilog_cleanup.pl
 %%EXILOGDIR%%/exilog_cgi_queues.pm
 %%EXILOGDIR%%/exilog_cgi_servers.pm
 %%EXILOGDIR%%/exilog_config.pm
+%%EXILOGDIR%%/exilog_jscript.js
 %%EXILOGDIR%%/exilog_parse.pm
 %%EXILOGDIR%%/exilog_sql.pm
-%%EXILOGDIR%%/exilog_util.pm
-%%EXILOGDIR%%/exilog_jscript.js
 %%EXILOGDIR%%/exilog_stylesheet.css
-%%EXILOGDIR%%/.htaccess
+%%EXILOGDIR%%/exilog_util.pm
 %%EXILOGDIR%%/icons/address.png
 %%EXILOGDIR%%/icons/arrival.png
 %%EXILOGDIR%%/icons/arrival_auth.png
@@ -53,11 +62,6 @@ sbin/exilog_cleanup.pl
 %%EXILOGDIR%%/icons/stopwatch.png
 %%EXILOGDIR%%/icons/timerange.png
 %%EXILOGDIR%%/icons/unknown.png
-etc/exilog.conf-dist
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/exilog.txt
-%%PORTDOCS%%%%DOCSDIR%%/mysql-db-script.sql
-%%PORTDOCS%%%%DOCSDIR%%/pgsql-db-script.sql
 @dirrm %%EXILOGDIR%%/icons
 @dirrm %%EXILOGDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

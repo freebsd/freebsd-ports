@@ -13,7 +13,6 @@ COMMENT=	MIDI-capable synthesizer for X
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
@@ -81,15 +80,15 @@ pre-install:
 
 do-install:
 .if defined(PLUGIN)
-	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth.so ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth.so ${STAGEDIR}${PREFIX}/lib
 .else
-	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth ${STAGEDIR}${PREFIX}/bin
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ii in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${ii} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

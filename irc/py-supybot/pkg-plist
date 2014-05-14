@@ -6,6 +6,12 @@ bin/supybot-plugin-doc
 bin/supybot-plugin-package
 bin/supybot-test
 bin/supybot-wizard
+man/man1/supybot-adduser.1.gz
+man/man1/supybot-botchk.1.gz
+man/man1/supybot-plugin-create.1.gz
+man/man1/supybot-plugin-doc.1.gz
+man/man1/supybot-wizard.1.gz
+man/man1/supybot.1.gz
 %%PYTHON_SITELIBDIR%%/supybot/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/__init__.pyc
 %%PYTHON_SITELIBDIR%%/supybot/__init__.pyo

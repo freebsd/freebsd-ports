@@ -28,7 +28,8 @@ USE_QT5=	core dbus qmake_build buildtools_build
 QT_DIST=	base
 USE_XORG=	x11 xi xrender
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-no-eglfs
+CONFIGURE_ARGS=	-no-eglfs \
+		-no-evdev
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}

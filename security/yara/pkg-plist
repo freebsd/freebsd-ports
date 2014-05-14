@@ -4,5 +4,6 @@ include/yara.h
 lib/libyara.a
 lib/libyara.la
 lib/libyara.so
-lib/libyara.so.0
+lib/libyara.so.2
 man/man1/yara.1.gz
+man/man1/yarac.1.gz

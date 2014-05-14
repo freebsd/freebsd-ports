@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	A simple chart library for Python
+COMMENT=	Simple chart library for Python
 
 USE_BZIP2=	yes
 USE_PYTHON_RUN=	yes
@@ -20,7 +20,6 @@ PORTEXAMPLES=	*
 NO_BUILD=	yes
 NO_INSTALL_MANPAGES=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -31,16 +30,16 @@ post-patch:
 		${XARGS} ${RM} -rf
 
 do-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 	@(cd ${WRKSRC}/${PORTNAME}/ && \
-	     ${COPYTREE_SHARE} \* ${PYTHON_SITELIBDIR}/${PORTNAME})
+	     ${COPYTREE_SHARE} \* ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME})
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 -d ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 -d ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.post.mk>

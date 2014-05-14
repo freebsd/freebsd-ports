@@ -10,15 +10,13 @@ MASTER_SITES=	http://thekonst.net/download/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A powerful text mode based programming IDE
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		iconv
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
-
-NO_STAGE=	yes
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS NLS
+
+USES=		tar:bzip2 gmake iconv
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
 .include <bsd.port.options.mk>
 
@@ -31,17 +29,14 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
-MAN1=		motor.1
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|zxvf|&o|' ${WRKSRC}/share/Makefile.in
 	@${REINPLACE_CMD} -e 's|strndup|my_strndup|' ${WRKSRC}/parser/src/parser.c \
 		${WRKSRC}/parser/src/strfn.c ${WRKSRC}/parser/include/strfn.h
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} FAQ README ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC} ; ${INSTALL_DATA} FAQ README ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+--- src/SFML/Window/Makefile.orig	2009-05-28 19:57:08.000000000 +0400
++++ src/SFML/Window/Makefile	2009-07-07 19:51:46.000000000 +0400
+@@ -18,10 +18,10 @@
+ 	$(AR) $(ARFLAGS) $(LIBNAME) $(OBJ)
+ 
+ libsfml-window.so: $(OBJ)
+-	$(CPP) $(LDFLAGS) -Wl,-soname,$(LIB).$(VERSION) -o $(LIBNAME) $(OBJ) $(OBJGLEW) -lX11 -lXrandr -lGL
++	$(CXX) $(LDFLAGS) -Wl,-soname,$(LIB).$(VERSION) -o $(LIBNAME) $(OBJ) $(OBJGLEW) -lX11 -lXrandr -lGL
+ 
+ $(OBJ): %.o: %.cpp
+-	$(CPP) -o $@ -c $< $(CFLAGS)
++	$(CXX) -o $@ -c $< $(CXXFLAGS)
+ 
+ .PHONY: clean mrproper
+ 

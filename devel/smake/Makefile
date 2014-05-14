@@ -9,10 +9,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable make program with automake features
 
-DEPRECATED=	Abandonware, broken with modern com
-EXPIRATION_DATE=	2014-05-12
-
-BROKEN=	Does not build with modern compilers
+BROKEN_i386=	Does not compile
 
 LICENSE=	CDDL GPLv2
 LICENSE_COMB=	multi
@@ -27,6 +24,15 @@ MAKE_ARGS=	INS_BASE=${PREFIX} DEFMANBASE=. CC="${CC}" CCOM="${CC}"
 RULEUSED=	"`${WRKSRC}/conf/oarch.sh`"
 PLIST_SUB=	RULESUSED="${RULEUSED}"
 
-#BROKEN_i386=	fails to find correct configuration file
+MKLINKS=	${WRKSRC}/RULES/MKLINKS
+GCCRULE=	${WRKSRC}/RULES/cc-gcc.rul
+
+pre-build:
+	@${CHMOD} +w ${MKLINKS} ${GCCRULE}
+	@${REINPLACE_CMD} -e 's/gcc$$/${CC}/' ${GCCRULE}
+	@${ECHO_CMD} "\$$symlink i386-freebsd-cc.rul ${ARCH}-freebsd-${CC}.rul" >> ${MKLINKS}
+
+pre-install:
+	${STRIP_CMD} ${WRKSRC}/smake/OBJ/${ARCH}-freebsd-${CC}/smake
 
 .include <bsd.port.mk>

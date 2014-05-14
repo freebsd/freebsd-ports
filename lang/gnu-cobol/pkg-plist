@@ -1,0 +1,29 @@
+bin/cob-config
+bin/cobc
+bin/cobcrun
+include/libcob.h
+include/libcob/codegen.h
+include/libcob/common.h
+include/libcob/exception.def
+include/libcob/system.def
+lib/gnu-cobol/CBL_OC_DUMP.so
+lib/libcob.a
+lib/libcob.so
+lib/libcob.so.1
+lib/libcob.so.1.0.0
+%%DATADIR%%/config/bs2000.conf
+%%DATADIR%%/config/cobol2002.conf
+%%DATADIR%%/config/cobol85.conf
+%%DATADIR%%/config/default.conf
+%%DATADIR%%/config/ibm.conf
+%%DATADIR%%/config/mf.conf
+%%DATADIR%%/config/mvs.conf
+%%DATADIR%%/copy/screenio.cpy
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/gnu-cobol.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/gnu-cobol.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gnu-cobol.mo
+@dirrm include/libcob
+@dirrm lib/gnu-cobol
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/copy
+@dirrm %%DATADIR%%

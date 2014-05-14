@@ -3,6 +3,7 @@
 
 PORTNAME=	glances
 PORTVERSION=	1.7.6
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/nicolargo/glances/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ LICENSE=	LGPL3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.0.0:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}psutil>=2.0.0:${PORTSDIR}/sysutils/py-psutil
 
-OPTIONS_DEFINE=	DOCS MANPAGES NLS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -24,9 +25,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/glances \
-		%%ETCDIR%%/glances.conf.sample \
-		%%MANPAGES%%man/man1/glances.1.gz \
+PLIST_FILES=	%%ETCDIR%%/glances.conf.sample \
+		man/man1/glances.1.gz \
 		%%NLS%%share/locale/es/LC_MESSAGES/glances.mo \
 		%%NLS%%share/locale/fr/LC_MESSAGES/glances.mo \
 		%%NLS%%share/locale/it/LC_MESSAGES/glances.mo \

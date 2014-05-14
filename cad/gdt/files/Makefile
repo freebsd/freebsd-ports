@@ -34,7 +34,7 @@ clean:
 	rm -f *.o ${PROG}
 
 install:
-	${BSD_INSTALL_PROGRAM} ${PROG} ${PREFIX}/bin
+	${BSD_INSTALL_PROGRAM} ${PROG} ${DESTDIR}${PREFIX}/bin
 
 .for P in ${PROG}
 ${P}: ${OBJS.${P}}

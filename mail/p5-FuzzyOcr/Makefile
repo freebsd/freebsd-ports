@@ -10,10 +10,10 @@ MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:tl}/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		import:${PORTSDIR}/graphics/ImageMagick			\
@@ -23,6 +23,11 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx
 
 CONFLICTS=	p5-FuzzyOcr-devel-[0-9]*
+
+DEPRECATED=	Unmaintained upstream, no ports depending on it. Use mail/p5-FuzzyOcr-devel instead
+EXPIRATION_DATE=2014-06-20
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		perl5
 NO_BUILD=	yes

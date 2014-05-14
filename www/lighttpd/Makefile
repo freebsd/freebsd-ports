@@ -3,7 +3,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -17,21 +17,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	lthack
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig tar:bzip2
 
-#.if !defined(_BUILDING_LIGHTTPD_MODULE)
-#USE_AUTOTOOLS=	libtool
-#.else
-USE_AUTOTOOLS=	autoconf autoheader aclocal automake libtool
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing
-#.endif
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd --enable-static
+USE_AUTOTOOLS=	autoconf autoheader aclocal automake
+AUTOMAKE_ARGS=	-a -c -f
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd
+INSTALL_TARGET=	install-strip
 
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
@@ -82,7 +76,7 @@ PLIST_SUB+=		LOGROOT="${LIGHTTPD_LOGROOT}" \
 
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 # Default REQUIRE to rc.d script
@@ -94,7 +88,7 @@ PORTDOCS=	${DOCS}
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-openssl \
 			--with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libs=${OPENSSLLIB}
@@ -203,18 +197,10 @@ post-install:
 .for FILE in ${LIGHTTPD_CONF_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/${FILE}.sample
-.if !exists(${STAGEDIR}${PREFIX}/etc/lighttpd/${FILE})
-	@${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
-		${STAGEDIR}${PREFIX}/etc/lighttpd/${FILE}
-.endif
 .endfor
 .for FILE in ${LIGHTTPD_CONF_D_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/${FILE}.sample
-.if !exists(${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/${FILE})
-	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
-		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/${FILE}
-.endif
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d/vhosts.template
@@ -241,4 +227,4 @@ regression-test: test
 
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

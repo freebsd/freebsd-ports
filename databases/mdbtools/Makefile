@@ -3,6 +3,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.7.1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/brianb/mdbtools/archive/
 DISTNAME=	${PORTVERSION}
@@ -15,7 +16,7 @@ LICENSE=	GPLv2
 # To build man-pages
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		txt2man:${PORTSDIR}/textproc/txt2man
-LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
 USES=		bison pkgconfig iconv
 USE_AUTOTOOLS=	libtool autoconf automake
@@ -24,7 +25,7 @@ USE_GNOME=	glib20
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
-		--with-iodbc=${LOCALBASE}
+		--with-unixodbc=${LOCALBASE}
 
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 

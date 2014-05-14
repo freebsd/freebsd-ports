@@ -6,7 +6,7 @@ PORTVERSION=	0.04
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	yar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A consistency check utility for MPEG Layer 2 or 3 files or streams
 
 MAN1=		mp3ck.1

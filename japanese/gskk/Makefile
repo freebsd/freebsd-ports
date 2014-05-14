@@ -23,10 +23,7 @@ EXTRACT_AFTER_ARGS=	> ${PORTNAME}.t
 PLIST_FILES=	share/canna/dic/canna/dics.dir.${PORTNAME} \
 		share/canna/dic/canna/${PORTNAME}.cbd \
 		share/canna/dic/canna/${PORTNAME}.cld
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README.FreeBSD
-.endif
 
 SUB_FILES=	README.FreeBSD pkg-message
 SUB_LIST+=	DICDIR=${DICDIR} PORTNAME=${PORTNAME}
@@ -37,21 +34,18 @@ DICS=		${PORTNAME}.cbd ${PORTNAME}.cld
 DICSFILE=	dics.dir.${PORTNAME}
 DICDIR=		${PREFIX}/share/canna/dic/canna
 
-INSTALL_DIC=	${INSTALL} ${COPY} -o bin -g bin -m 664
+INSTALL_DIC=	${INSTALL} ${COPY} -m 664
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	cd ${WRKDIR} && mkbindic ${PORTNAME}.t
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_DIC} ${DICS} ${DICDIR}
-	${INSTALL_DIC} ${FILESDIR}/${DICSFILE} ${DICDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DICDIR}
+	(cd ${WRKSRC} && ${INSTALL_DIC} ${DICS} ${STAGEDIR}${DICDIR})
+	${INSTALL_DIC} ${FILESDIR}/${DICSFILE} ${STAGEDIR}${DICDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

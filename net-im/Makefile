@@ -169,6 +169,7 @@
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur
     SUBDIR += tox
+    SUBDIR += toxic
     SUBDIR += ttytter
     SUBDIR += turpial
     SUBDIR += twirssi

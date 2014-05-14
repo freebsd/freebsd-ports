@@ -12,25 +12,23 @@ MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
 MAINTAINER=	malus.x@gmail.com
 COMMENT=	Reference DLNA open-source implementation
 
-LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		tar:bzip2 gmake pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-optimize \
-			--includedir=${LOCALBASE}/include \
-			--libdir=${LOCALBASE}/lib
+			--includedir="${PREFIX}/include" \
+			--libdir="${PREFIX}/lib"
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's#\(PKGCONFIG_DIR = \).*#\1${LOCALBASE}/libdata/pkgconfig#' \
+		's#\(PKGCONFIG_DIR = \).*#\1${STAGEDIR}${PREFIX}/libdata/pkgconfig#' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.pre.mk>

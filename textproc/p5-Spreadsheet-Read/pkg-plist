@@ -1,6 +1,8 @@
+bin/ss2tk
+bin/xls2csv
+bin/xlscat
+bin/xlsgrep
 %%PERL5_MAN3%%/Spreadsheet::Read.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/Read/.packlist
 %%SITE_PERL%%/Spreadsheet/Read.pm
-@dirrmtry %%SITE_PERL%%/Spreadsheet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/Read
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet

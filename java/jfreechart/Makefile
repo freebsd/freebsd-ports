@@ -30,7 +30,6 @@ PORTDOCS=	*
 PLIST_FILES=	%%JAVAJARDIR%%/jfreechart.jar \
 		%%JAVAJARDIR%%/gnujaxp.jar
 
-NO_STAGE=	yes
 pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
@@ -39,19 +38,12 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 do-install:
-	@${ECHO_MSG} -n  ">> Installing .jar files in ${JAVAJARDIR}/..."
-	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${INSTALL_DATA} ${WRKSRC}/lib/gnujaxp.jar ${JAVAJARDIR}/gnujaxp.jar
-	@${ECHO_MSG} " [DONE]"
+	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${WRKSRC}/lib/gnujaxp.jar ${STAGEDIR}${JAVAJARDIR}/gnujaxp.jar
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_COMPILE)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/javadoc && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${ECHO_MSG} " [DONE]"
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/javadoc && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

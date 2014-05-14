@@ -20,17 +20,11 @@ PLIST_SUB=	ORACLE_PREFIX="${ORACLE_PREFIX}"
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 do-install:
-	@${CP} -pRP ${WRKSRC}/network ${WRKSRC}/ocommon ${WRKSRC}/rdbms \
-		${ORACLE_HOME}
-	@${LN} -sf rdbms/lib ${ORACLE_HOME}/lib
-	@${ECHO_CMD} "-lwrap" >> ${ORACLE_HOME}/lib/sysliblist
-
-post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MKDIR} ${STAGEDIR}${ORACLE_HOME}
+	${CP} -pRP ${WRKSRC}/network ${WRKSRC}/ocommon ${WRKSRC}/rdbms \
+		${STAGEDIR}${ORACLE_HOME}
+	${LN} -sf rdbms/lib ${STAGEDIR}${ORACLE_HOME}/lib
+	@${ECHO_CMD} "-lwrap" >> ${STAGEDIR}${ORACLE_HOME}/lib/sysliblist
 
 .include <bsd.port.mk>

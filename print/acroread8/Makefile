@@ -20,11 +20,11 @@ LICENSE_PERMS=	auto-accept
 
 RUN_DEPENDS=	acroreadwrapper>=0.0.20100806:${PORTSDIR}/print/acroreadwrapper
 
+USES=		tar:bzip2
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	cups-libs gtk2 pango libgcrypt libgpg-error
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
 NO_BUILD=	yes
@@ -66,23 +66,17 @@ INSTALLDIR=	${PREFIX}/${ACRODIR}
 INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			InstallDir=${INSTALLDIR} \
 			UNAME_r="Linux Compatibility on FreeBSD" \
-			${SH} ./INSTALL --install_path=${INSTALLDIR} > /dev/null
+			${SH} ./INSTALL --install_path=${STAGEDIR}${INSTALLDIR} > /dev/null
 
-NO_STAGE=	yes
 pre-install:
 	@${MKDIR} ${WRKDIR}/bin
 	@${INSTALL_SCRIPT} \
 		${WRKDIR}/ln ${WRKDIR}/rm ${WRKDIR}/mv \
 		${WRKDIR}/bin
 do-install:
-	@${ECHO_CMD} Installing...
-	@${MKDIR} ${PREFIX}/share/desktop-directories
-	@${MKDIR} ${INSTALLDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/desktop-directories
+	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC} > /dev/null
-
-.if ${ADOBE_LANG:tu} != ENU
-post-install:
-	@${CAT} ${PKGMESSAGE}
-.endif
+	${SED} -i "" -e "s,${STAGEDIR},," ${STAGEDIR}${INSTALLDIR}/Adobe/Reader8/Reader/GlobalPrefs/.config
 
 .include <bsd.port.mk>

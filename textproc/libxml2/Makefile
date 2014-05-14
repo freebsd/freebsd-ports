@@ -1,5 +1,5 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
-# $FreeBSD$
+# $FreeBSD: head/textproc/libxml2/Makefile 354000 2014-05-13 21:25:15Z kwm $
 #    $MCom: ports/trunk/textproc/libxml2/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	libxml2
@@ -24,6 +24,7 @@ CONFIGURE_ARGS?=--with-iconv=${ICONVBASE} \
 		--with-html-subdir=${PORTNAME} \
 		--with-lzma=/usr \
 		--without-python
+INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	*.py */*.py */*/*.py
 
 PLIST_SUB+=	LIBVERSION=${PORTVERSION}
@@ -33,15 +34,15 @@ PLIST_SUB+=	LIBVERSION=${PORTVERSION}
 OPTIONS_DEFINE= SCHEMA THREADS MEM_DEBUG XMLLINT_HIST THREAD_ALLOC
 OPTIONS_DEFAULT=SCHEMA THREADS
 SCHEMA_DESC=	XML schema support
-SCHEMA_CONFIGURE_WITH=schemas
+SCHEMA_CONFIGURE_WITH=	schemas
 THREADS_DESC=	Threads support
-THREADS_CONFIGURE_WITH=threads
+THREADS_CONFIGURE_WITH=	threads
 MEM_DEBUG_DESC= Memory debugging (DEVELOPERS ONLY!)
-MEM_DEBUG_CONFIGURE_WITH=mem-debug
+MEM_DEBUG_CONFIGURE_WITH=	mem-debug
 XMLLINT_HIST_DESC= History for xmllint
-XMLLINT_HIST_CONFIGURE_WITH=history
+XMLLINT_HIST_CONFIGURE_WITH=	history
 THREAD_ALLOC_DESC= Per-thread memory (DEVELOPERS ONLY!)
-THREAD_ALLOC_CONFIGURE_WITH=thread-alloc
+THREAD_ALLOC_CONFIGURE_WITH=	thread-alloc
 
 .endif # !defined(MASTERDIR)
 
@@ -53,12 +54,13 @@ post-patch:
 .for f in catalog.c xmlcatalog.c xmllint.c doc/xmllint.1
 	@${REINPLACE_CMD} -e \
 		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
-		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' ${WRKSRC}/${f}
+		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' \
+		${WRKSRC}/${f}
 .endfor
 
 .if !defined(MASTERDIR)
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxml2.so.2
+	@${RM} -rf ${STAGEDIR}${PREFIX}/share/gtk-doc/html/libxml2
 .endif
 
 .include <bsd.port.mk>

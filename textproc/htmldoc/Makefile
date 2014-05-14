@@ -19,7 +19,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg	\
 
 OPTIONS_DEFINE=	HTMLDOCGUI
 HTMLDOCGUI_DESC=	Build GUI front-end
-USE_BZIP2=	yes
+
+USES=	tar:bzip2
 
 GNU_CONFIGURE=	yes
 # Configure seems broken and ignores these ATM:

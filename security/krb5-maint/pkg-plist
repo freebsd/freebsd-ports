@@ -7,8 +7,14 @@ bin/kinit
 bin/klist
 bin/kpasswd
 bin/krb5-config
-bin/kswitch
+@mode 04755
+@owner root
+@group wheel
 bin/ksu
+@mode
+@owner root
+@group wheel
+bin/kswitch
 bin/ktutil
 bin/kvno
 bin/sclient

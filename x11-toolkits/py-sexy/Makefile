@@ -10,7 +10,7 @@ MASTER_SITES=	http://releases.chipx86.com/libsexy/sexy-python/ \
 		CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Libsexy bindings for Python
 
 LICENSE=	LGPL21

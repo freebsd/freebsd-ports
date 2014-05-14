@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ProjectTox-Core
-PORTVERSION=	0.140421
+PORTVERSION=	0.140508
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,11 +18,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	ProjectTox-Core
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	38e3b35
+GH_COMMIT=	52bfd7c
 
-USE_AUTOTOOLS=	automake autoconf libtoolize
-USES=		pkgconfig
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
+USES=		pkgconfig pathfix libtool
 USE_LDCONFIG=	yes
+PATHFIX_MAKEFILEIN=	Makefile.am
+INSTALL_TARGET=		install-strip
 
 OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	SODIUM NACL
@@ -58,6 +61,5 @@ CONFIGURE_ARGS+=	--with-nacl-libs=${LOCALBASE}/lib
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure.ac
-	cd ${WRKSRC} && ./autogen.sh
 
 .include <bsd.port.mk>

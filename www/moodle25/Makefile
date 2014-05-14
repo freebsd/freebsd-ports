@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable25/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Course management system based on social constructionism
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
@@ -25,7 +27,6 @@ OPTIONS_DEFAULT=MYSQL
 MSSQL_DESC=	MS SQL Server support
 MIMETEX_DESC=	mimeTeX filter functionality support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -58,26 +59,22 @@ MOODLEDIR?=	www/moodle
 MOODLEDATADIR?=	moodledata
 
 pre-install:
-	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >${PLIST}
+	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
+	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
+	@${ECHO_CMD} "@mode 755" >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >>${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${MOODLEDIR}?g" >> ${PLIST}
 	@${ECHO} @dirrm ${MOODLEDATADIR} >> ${PLIST}
+	@${ECHO_CMD} "@mode" >> ${PLIST}
+	@${ECHO_CMD} "@group" >> ${PLIST}
+	@${ECHO_CMD} "@owner" >> ${PLIST}
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${MOODLEDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDIR}' \
-		>> ${TMPPLIST}
-	${CHMOD} -R 755 ${PREFIX}/${MOODLEDIR}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${PREFIX}/${MOODLEDIR}' >> ${TMPPLIST}
-
-	@${INSTALL} -d ${PREFIX}/${MOODLEDATADIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDATADIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDATADIR}' \
-		>> ${TMPPLIST}
-	${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}' >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MIMETEX}
-	${LN} -sf ${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi ${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${MOODLEDIR}
+	@${INSTALL} -d ${STAGEDIR}${PREFIX}/${MOODLEDATADIR}
+.if ${PORT_OPTIONS:MMIMETEX}
+	${LN} -sf ${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi \
+		${STAGEDIR}${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
 .endif
 
 post-install:

@@ -1,5 +1,5 @@
---- Makefile.in.orig	2001-07-29 02:43:49.000000000 -0300
-+++ Makefile.in	2009-09-20 11:17:07.000000000 -0300
+--- Makefile.in.orig	2001-07-29 07:43:49.000000000 +0200
++++ Makefile.in	2014-05-08 00:46:44.189113048 +0200
 @@ -5,19 +5,19 @@
  #  initial_directory is now set in the config file
  mpg123_location   := "mpg123"
@@ -23,7 +23,16 @@
  
  ## Define this for bufferring or add other parameters to mpg123 and ogg123
  mpg123_params := -b 320
-@@ -42,7 +42,7 @@
+@@ -35,14 +35,14 @@
+ 
+ VERSION="2.0pre6"
+ WKGDIR=cmp3-kenrevs
+-PARAMS= -DCMP3_VER="\$(VERSION)\" -DEXEC_LOC="\$(mpg123_location)\" \
+-    -DCMP3_CONFIG="\$(config_file)\" -DOGG_LOC="\$(ogg123_location)\"
++PARAMS= -DCMP3_VER=\"$(VERSION)\" -DEXEC_LOC=\"$(mpg123_location)\" \
++    -DCMP3_CONFIG=\"$(config_file)\" -DOGG_LOC=\"$(ogg123_location)\"
+ RNMP3PARAMS= -DVERSION="\$(VERSION)\"
+ # Something for me and my cd changer, you definately don't want it as it
  # stands. Change the code to do something else you want it to do...
  #PARAMS +=-DMY_CD
  LIBS= -lform -lncurses

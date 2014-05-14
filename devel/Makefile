@@ -61,6 +61,7 @@
     SUBDIR += appdata-tools
     SUBDIR += apr1
     SUBDIR += apr2
+    SUBDIR += arcanist
     SUBDIR += arduino
     SUBDIR += arduino-glcd
     SUBDIR += arduino-irremote
@@ -143,7 +144,6 @@
     SUBDIR += bpython
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
-    SUBDIR += bsdlibdwarf
     SUBDIR += bufferpool
     SUBDIR += bug-buddy
     SUBDIR += bugzilla40
@@ -1086,6 +1086,7 @@
     SUBDIR += libpff
     SUBDIR += libphish
     SUBDIR += libphk
+    SUBDIR += libphutil
     SUBDIR += libplist
     SUBDIR += libpo6
     SUBDIR += libpthread-stubs
@@ -1118,6 +1119,7 @@
     SUBDIR += libsoup-reference
     SUBDIR += libspark2012
     SUBDIR += libstatgrab
+    SUBDIR += libstatgrab0
     SUBDIR += libstrfunc
     SUBDIR += libstroke
     SUBDIR += libsysinfo
@@ -2881,6 +2883,7 @@
     SUBDIR += p5-Test-More-UTF8
     SUBDIR += p5-Test-Most
     SUBDIR += p5-Test-Name-FromLine
+    SUBDIR += p5-Test-Net-LDAP
     SUBDIR += p5-Test-Net-RabbitMQ
     SUBDIR += p5-Test-NoTabs
     SUBDIR += p5-Test-NoWarnings
@@ -3754,6 +3757,7 @@
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
     SUBDIR += py-pyechonest
+    SUBDIR += py-pyelftools
     SUBDIR += py-pyev
     SUBDIR += py-pyflakes
     SUBDIR += py-pygit2
@@ -4156,6 +4160,7 @@
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
     SUBDIR += rubygem-bioruby
+    SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bugspots
@@ -4255,6 +4260,7 @@
     SUBDIR += rubygem-grape-entity
     SUBDIR += rubygem-grape-swagger
     SUBDIR += rubygem-grit
+    SUBDIR += rubygem-gyoku
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-highline
@@ -4271,6 +4277,7 @@
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-jammit
+    SUBDIR += rubygem-jekyll-coffeescript
     SUBDIR += rubygem-jeweler
     SUBDIR += rubygem-jquery-ui-themes
     SUBDIR += rubygem-jruby-jars
@@ -4292,9 +4299,11 @@
     SUBDIR += rubygem-main
     SUBDIR += rubygem-map
     SUBDIR += rubygem-mash
+    SUBDIR += rubygem-mercenary
     SUBDIR += rubygem-metaclass
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-method_source
+    SUBDIR += rubygem-mini_portile
     SUBDIR += rubygem-minitest
     SUBDIR += rubygem-minitest4
     SUBDIR += rubygem-mirror
@@ -4421,6 +4430,8 @@
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-timers1
     SUBDIR += rubygem-tins
+    SUBDIR += rubygem-tins0
+    SUBDIR += rubygem-toml
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
@@ -4468,6 +4479,7 @@
     SUBDIR += serdisplib
     SUBDIR += sfio
     SUBDIR += sfml
+    SUBDIR += sfml1
     SUBDIR += sfslite
     SUBDIR += sfslite-dbg
     SUBDIR += sfslite-noopt
@@ -4630,6 +4642,7 @@
     SUBDIR += xdg-utils
     SUBDIR += xfce4-dev-tools
     SUBDIR += xfce4-vala
+    SUBDIR += xlocale
     SUBDIR += xmake
     SUBDIR += xmltooling
     SUBDIR += xorg-macros

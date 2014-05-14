@@ -3,6 +3,7 @@
 
 PORTNAME=	qcl
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://tph.tuwien.ac.at/~oemer/tgz/
 EXTRACT_SUFX=	.tgz

@@ -3,18 +3,18 @@
 
 PORTNAME=	ssss
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/ssss/
 
-MAINTAINER=	luke@novum.am.lublin.pl
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Shamir's Secret Sharing Scheme
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
-PLIST_FILES=	bin/ssss-combine bin/ssss-split
+PLIST_FILES=	bin/ssss-combine bin/ssss-split man/man1/ssss.1.gz
 
-MAN1=		ssss.1
+post-patch:
+	${REINPLACE_CMD} 's,(DESTDIR),&$$(PREFIX),' ${WRKSRC}/Makefile
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

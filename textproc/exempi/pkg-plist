@@ -5,6 +5,7 @@ lib/libexempi.a
 lib/libexempi.la
 lib/libexempi.so
 lib/libexempi.so.3
+lib/libexempi.so.3.2.1
 libdata/pkgconfig/exempi-2.0.pc
 @dirrm include/exempi-2.0/exempi
 @dirrm include/exempi-2.0

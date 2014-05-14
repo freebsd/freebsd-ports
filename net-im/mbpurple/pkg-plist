@@ -19,6 +19,5 @@ share/purple/ca-certs/EquifaxSecureGlobaleBusinessCA.pem
 @dirrmtry share/pixmaps/pidgin/protocols/48
 @dirrmtry share/pixmaps/pidgin/protocols
 @dirrmtry share/pixmaps/pidgin
-@dirrmtry share/pixmaps
 @dirrmtry share/purple/ca-certs
 @dirrmtry share/purple

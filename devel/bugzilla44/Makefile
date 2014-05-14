@@ -154,6 +154,10 @@ RUN_DEPENDS+=	p5-File-MimeInfo>=0.16:${PORTSDIR}/devel/p5-File-MimeInfo \
 		p5-IO-stringy>=2.110:${PORTSDIR}/devel/p5-IO-stringy
 .endif
 
+.if ${PORT_OPTIONS:MFREEBSD}
+EXTRA_PATCHES=	${FILESDIR}/freebsd-project-ldap.diff
+.endif
+
 post-extract:
 	@${RM} -rf ${WRKSRC}/.bzr
 	@${RM} -f ${WRKSRC}/.bzrignore ${WRKSRC}/.gitignore ${WRKSRC}/.gitrev \

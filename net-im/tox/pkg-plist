@@ -2,13 +2,13 @@ bin/DHT_bootstrap
 include/tox/tox.h
 include/tox/toxav.h
 lib/libtoxav.a
-lib/libtoxav.la
 %%SODIUM%%lib/libtoxav.so
 %%SODIUM%%lib/libtoxav.so.0
+%%SODIUM%%lib/libtoxav.so.0.0.0
 lib/libtoxcore.a
-lib/libtoxcore.la
 %%SODIUM%%lib/libtoxcore.so
 %%SODIUM%%lib/libtoxcore.so.0
+%%SODIUM%%lib/libtoxcore.so.0.0.0
 libdata/pkgconfig/libtoxav.pc
 libdata/pkgconfig/libtoxcore.pc
 @dirrm include/tox

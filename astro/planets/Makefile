@@ -3,19 +3,18 @@
 
 PORTNAME=	planets
 PORTVERSION=	0.1.13
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	GENTOO/distfiles \
 		http://planets.homedns.org/dist/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Orbital simulator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
-
-USES=		gmake
+USES=		gmake tar:tgz
+USE_OCAML=	yes
 USE_XORG=	x11
 ALL_TARGET=	${PORTNAME}
 

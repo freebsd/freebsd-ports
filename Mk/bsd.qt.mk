@@ -26,7 +26,7 @@ Qt_Pre_Include=	bsd.qt.mk
 
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
-QT4_VERSION?=	4.8.5
+QT4_VERSION?=	4.8.6
 QT5_VERSION?=	5.2.1
 
 QT_PREFIX?=		${LOCALBASE}

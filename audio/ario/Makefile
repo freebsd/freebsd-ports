@@ -3,7 +3,7 @@
 
 PORTNAME=	ario
 PORTVERSION=	1.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
 		libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20

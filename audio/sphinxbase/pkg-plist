@@ -49,12 +49,12 @@ include/sphinxbase/strfuncs.h
 include/sphinxbase/unlimit.h
 include/sphinxbase/yin.h
 lib/libsphinxad.a
-lib/libsphinxad.la
 lib/libsphinxad.so
 lib/libsphinxad.so.0
+lib/libsphinxad.so.0.0.1
 lib/libsphinxbase.a
-lib/libsphinxbase.la
 lib/libsphinxbase.so
-lib/libsphinxbase.so.2
+lib/libsphinxbase.so.1
+lib/libsphinxbase.so.1.1.1
 libdata/pkgconfig/sphinxbase.pc
 @dirrm include/sphinxbase

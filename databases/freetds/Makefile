@@ -3,7 +3,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.64
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
@@ -14,14 +14,14 @@ COMMENT=	Sybase/Microsoft TDS protocol library
 
 TDS_VER?=	5.0
 
-USES=		iconv
-USE_GMAKE=	yes
-GNU_GONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env libtool
+USES=		iconv gmake libtool:keepla
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:env
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 

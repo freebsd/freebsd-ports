@@ -9,7 +9,7 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Converter of many types of CD-ROM image file formats into ISO-9660
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/iat man/man1/iat.1.gz

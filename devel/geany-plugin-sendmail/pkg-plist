@@ -1,5 +1,3 @@
-lib/geany/geanysendmail.a
-lib/geany/geanysendmail.la
 lib/geany/geanysendmail.so
 %%DOCSDIR%%/geanysendmail/AUTHORS
 %%DOCSDIR%%/geanysendmail/COPYING

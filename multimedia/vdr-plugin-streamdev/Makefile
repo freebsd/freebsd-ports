@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-streamdev
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.6.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/953/:release \
+MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1580/:release \
 		LOCAL:snapshot
 MASTER_SITE_SUBDIR=	nox/:snapshot
 DISTFILES=	${DISTNAME:S/plugin-//}${EXTRACT_SUFX}:release
@@ -24,6 +23,11 @@ VDR_PLUGIN_MAKEFILES=	${WRKSRC}/client/Makefile \
 		${WRKSRC}/server/Makefile
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
+
+pre-patch:
+	@${CP} ${WRKSRC}/Makefile-1.7.33 ${WRKSRC}/Makefile
+	@${CP} ${WRKSRC}/client/Makefile-1.7.33 ${WRKSRC}/client/Makefile
+	@${CP} ${WRKSRC}/server/Makefile-1.7.33 ${WRKSRC}/server/Makefile
 
 post-patch: post-patch-plugin
 	@${LN} -s ../locale ${WRKSRC}

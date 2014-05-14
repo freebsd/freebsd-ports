@@ -27,7 +27,6 @@ PORTDOCS=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/jcommon.jar %%JAVAJARDIR%%/jcommon-xml.jar
 
-NO_STAGE=	yes
 pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
@@ -36,16 +35,12 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 do-install:
-	@${ECHO_MSG} -n  ">> Installing .jar files in ${JAVAJARDIR}/..."
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-xml-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}-xml.jar
-	@${ECHO_MSG} " [DONE]"
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-xml-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-xml.jar
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_COMPILE)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/javadoc && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${ECHO_MSG} " [DONE]"
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/javadoc && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

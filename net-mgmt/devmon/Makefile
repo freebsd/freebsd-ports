@@ -3,7 +3,7 @@
 
 PORTNAME=	devmon
 DISTVERSION=	0.3.1-beta1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -29,7 +29,6 @@ OPTIONS_DEFINE=	MYSQL
 
 REINPLACE_ARGS=	-i ''
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -43,23 +42,22 @@ pre-install:
 	(cd ${WRKSRC} && ${MV} devmon.cfg devmon.cfg.dist)
 
 do-install:
-	${INSTALL} -d ${PREFIX}/devmon
-	${INSTALL} -d ${PREFIX}/devmon/modules
-	${INSTALL_SCRIPT} ${WRKSRC}/devmon ${PREFIX}/devmon/
-	${INSTALL_DATA} ${WRKSRC}/devmon.cfg.dist ${PREFIX}/devmon/
-	(cd ${WRKSRC}/modules && ${COPYTREE_SHARE} \* ${PREFIX}/devmon/modules/)
+	${INSTALL} -d ${STAGEDIR}/${PREFIX}/devmon
+	${INSTALL} -d ${STAGEDIR}/${PREFIX}/devmon/modules
+	${INSTALL_SCRIPT} ${WRKSRC}/devmon ${STAGEDIR}/${PREFIX}/devmon/
+	${INSTALL_DATA} ${WRKSRC}/devmon.cfg.dist ${STAGEDIR}/${PREFIX}/devmon/
+	(cd ${WRKSRC}/modules && ${COPYTREE_SHARE} \* ${STAGEDIR}/${PREFIX}/devmon/modules/)
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL} -d ${DOCSDIR}/docs
-	${INSTALL} -d ${DOCSDIR}/extras
-	${INSTALL} -d -o ${USERS} -g ${GROUPS} /var/run/devmon
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/docs/)
-	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} \* ${DOCSDIR}/extras/)
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}/${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}/${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}/
+	${INSTALL} -d ${STAGEDIR}/${DOCSDIR}/docs
+	${INSTALL} -d ${STAGEDIR}/${DOCSDIR}/extras
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DOCSDIR}/docs/)
+	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DOCSDIR}/extras/)
 .endif
 
 .include <bsd.port.mk>

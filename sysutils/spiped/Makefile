@@ -10,34 +10,28 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	cperciva@tarsnap.com
 COMMENT=	Daemon for creating secure symmetric pipes
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-# Ask to have man pages installed
-MAKE_ARGS=	MAN1DIR=${MANPREFIX}/man/man1
-MAN1=		spiped.1 spipe.1
-
-# Binaries go into ${PREFIX}/bin
-MAKE_ARGS+=	BINDIR=${PREFIX}/bin
+# Install into ${STAGEDIR}${PREFIX}
+MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin
+MAKE_ARGS+=	MAN1DIR=${STAGEDIR}${PREFIX}/man/man1
 
 # Force __BSD_VISIBLE on since it works and improves performance
 MAKE_ARGS+=	CFLAGS="-O2 -D__BSD_VISIBLE"
 
 PORTDOCS=	BUILDING CHANGELOG COPYRIGHT README STYLE
-PLIST_FILES=	bin/spiped bin/spipe
+PLIST_FILES=	bin/spipe \
+		bin/spiped \
+		man/man1/spipe.1.gz \
+		man/man1/spiped.1.gz
 
 USE_RC_SUBR=	spiped
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

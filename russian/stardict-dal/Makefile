@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-ru-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dal's Explanatory Dictionary
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"
 .include <bsd.port.mk>

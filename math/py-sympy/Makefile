@@ -2,26 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	sympy
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.5
 CATEGORIES=	math python
 MASTER_SITES=	GOOGLE_CODE \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Python Library For Symbolic Mathematics
+COMMENT=	Python Library For Symbolic Mathematics
 
 LICENSE=	BSD
 
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-
-MAN1=	isympy.1
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	PYGLET
 PYGLET_DESC=	Enable plotting support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYGLET}

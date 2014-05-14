@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High performance real-time physics library
 
-USES=		gmake zip:infozip
-USE_DOS2UNIX=	*
+USES=		gmake zip:infozip dos2unix
+DOS2UNIX_FILES=	build/gnu/tokamak.make
 
 MAKEFILE=	tokamak.make
 ALL_TARGET=	# empty

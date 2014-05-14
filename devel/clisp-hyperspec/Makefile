@@ -14,10 +14,10 @@ NO_CDROM=	Commercial redistribution prohibited
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/* ${DOCSDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/HyperSpec-Legalese.text ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/HyperSpec-README.text ${STAGEDIR}${DOCSDIR}
+	${CP} -r ${WRKSRC}/HyperSpec ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

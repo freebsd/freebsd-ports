@@ -4,7 +4,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.31
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -23,11 +23,11 @@ LIB_DEPENDS?=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
-USE_GNOME+=	ltverhack glib20 intltool introspection
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USE_GNOME+=	glib20 intltool introspection
 USE_GNOME_SUBR=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--with-distro=freebsd \
 		--with-dbus-system-socket=unix:path=/var/run/dbus/system_bus_socket \
 		--disable-monodoc \
@@ -38,6 +38,7 @@ CONFIGURE_ARGS?=--with-distro=freebsd \
 		--enable-compat-howl
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_KQUEUE
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .if ${AVAHI_SLAVE} == no
 CONFLICTS=	howl-[0-9]*
@@ -121,7 +122,7 @@ post-build: avahi-post-build
 
 avahi-post-build:
 .for f in ${AVAHI_PKGCONFIG}
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${f}
 .endfor
 
@@ -152,14 +153,7 @@ avahi-post-install:
 .if ${AVAHI_SLAVE}==no
 	${INSTALL_DATA} ${FILESDIR}/org.freedesktop.Avahi.service \
 		${STAGEDIR}${PREFIX}/share/dbus-1/system-services
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
-.elif ${AVAHI_SLAVE}==gtk3
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavahi-ui-gtk3.so.0
-.elif ${AVAHI_SLAVE}==libdns
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdns_sd.so.1
-.elif ${AVAHI_SLAVE}==qt4
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavahi-qt4.so.1
 .endif
-.endif # avahi-header
+.endif # ! avahi-header
 
 .include <bsd.port.mk>

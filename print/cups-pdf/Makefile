@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.cups-pdf.de/src/ \
 		http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	simon@olofsson.de
-COMMENT=	A virtual printer for CUPS to produce PDF files
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Virtual printer for CUPS to produce PDF files
 
 LICENSE=GPLv2
 LICENSE_FILE=${WRKSRC}/COPYING
@@ -20,6 +20,11 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GHOSTSCRIPT_RUN=	yes
+
+OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFAULT=	DOCS
+
+.include <bsd.port.options.mk>
 
 SUBST_CMD=		-e "s,\#GhostScript /usr/bin/gs,GhostScript ${LOCALBASE}/bin/gs," \
 			-e 's,\#GSTmp /var/tmp,GSTmp /tmp,' \
@@ -49,7 +54,6 @@ SUBST_CMD+=	-e 's,\#Out /var/spool/cups-pdf/$${USER},Out ${OUTPUT_DIRECTORY},'
 SUBST_CMD+=	-e "s,\#Log /var/log/cups,Log ${LOG_DIRECTORY},"
 .endif
 
-NO_STAGE=	yes
 pre-everything::
 .if !defined(PDF_VERSION) || !defined(HOME_SUBDIR) || \
 !defined(OUTPUT_DIRECTORY) || !defined(LOG_DIRECTORY)
@@ -82,23 +86,18 @@ do-build:
 	cd ${WRKSRC}/src; ${CC} ${CFLAGS} -o cups-pdf cups-pdf.c
 
 do-install:
-	${MKDIR} ${PREFIX}/libexec/cups/backend
-	${INSTALL} -o root -g wheel -m 0700 ${WRKSRC}/src/cups-pdf ${PREFIX}/libexec/cups/backend
-	${MKDIR} ${PREFIX}/share/cups/model
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/cups/backend
+	${INSTALL} ${WRKSRC}/src/cups-pdf ${STAGEDIR}${PREFIX}/libexec/cups/backend
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/cups/backend/cups-pdf
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/cups/model
 	${INSTALL_DATA} ${WRKSRC}/extra/CUPS-PDF.ppd \
-	${PREFIX}/share/cups/model/CUPS-PDF.ppd
-	${MKDIR} ${PREFIX}/etc/cups
-	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
-	${PREFIX}/etc/cups/cups-pdf.conf.sample
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+		${STAGEDIR}${PREFIX}/share/cups/model/CUPS-PDF.ppd
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cups
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/cups/cups-pdf.conf ]; then \
-	${CP} -p ${PREFIX}/etc/cups/cups-pdf.conf.sample \
-	${PREFIX}/etc/cups/cups-pdf.conf ; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
+		${STAGEDIR}${PREFIX}/etc/cups/cups-pdf.conf.sample
 
 .include <bsd.port.mk>

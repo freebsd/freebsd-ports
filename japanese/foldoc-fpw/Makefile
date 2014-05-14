@@ -9,23 +9,25 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/foldoc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Free On-line Dictionary of Computing (EPWING V1 format)
+COMMENT=	Free On-line Dictionary of Computing (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/foldoc
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/foldoc-fpw/foldoc/data
-	${MKDIR} ${PREFIX}/share/dict/foldoc-fpw/foldoc/gaiji
-	${INSTALL_DATA} ${WRKSRC}/foldoc/data/honmon ${PREFIX}/share/dict/foldoc-fpw/foldoc/data
-	${INSTALL_DATA} ${WRKSRC}/foldoc/gaiji/gai16h ${PREFIX}/share/dict/foldoc-fpw/foldoc/gaiji
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/foldoc-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/foldoc-fpw/foldoc/data
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/foldoc-fpw/foldoc/gaiji
+	${INSTALL_DATA} ${WRKSRC}/foldoc/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/foldoc-fpw/foldoc/data
+	${INSTALL_DATA} ${WRKSRC}/foldoc/gaiji/gai16h \
+		${STAGEDIR}${PREFIX}/share/dict/foldoc-fpw/foldoc/gaiji
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/foldoc-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

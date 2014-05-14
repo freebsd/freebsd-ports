@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-NO_STAGE=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
@@ -26,17 +25,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/spiralmodular-0.2.2
 
+ia64_BROKEN=	Does not compile on ia64
+
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -ffast-math
-.endif
-
-.if ${ARCH} == "ia64"
-BROKEN=		Does not compile on ia64
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=-O3 -ffast-math
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's@(-O3|-ffast-math)@@g; \
@@ -46,40 +39,26 @@ post-patch:
 		s|^SpiralSound/Plugins/MidiPlugin/Makefile||; \
 		s|MidiPlugin||' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
 	@${REINPLACE_CMD} -e 's|-I/usr/X11R6/include|-I${LOCALBASE}/include|' \
 		${WRKSRC}/SpiralSound/Plugins/LADSPAPlugin/Makefile.in
-
 	@${REINPLACE_CMD} -e 's|O_SYNC|O_FSYNC|' \
 		${WRKSRC}/SpiralSound/Midi.C
-
-	@${REINPLACE_CMD} -e \
-		's|True|true|; s|False|false|' \
+	@${REINPLACE_CMD} -e 's|True|true|; s|False|false|' \
 		${WRKSRC}/SpiralSound/Plugins/MatrixPlugin/MatrixPlugin.C
-
-	@${REINPLACE_CMD} -e \
-		's|JackPort::||' \
+	@${REINPLACE_CMD} -e 's|JackPort::||' \
 		${WRKSRC}/SpiralSound/Plugins/JackPlugin/JackPlugin.h
-
-	@${REINPLACE_CMD} -e \
-		's|CVGUI::||' \
+	@${REINPLACE_CMD} -e 's|CVGUI::||' \
 		${WRKSRC}/SpiralSound/Plugins/ControllerPlugin/ControllerPluginGUI.h
-
-	@${REINPLACE_CMD} -e \
-		's|Sample::||' \
+	@${REINPLACE_CMD} -e 's|Sample::||' \
 		${WRKSRC}/SpiralSound/Sample.h
-
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -E -e \
-		's|-ldl||; \
-		s|-lrt||; \
-		s|g\+\+|$$(CXX)|; \
-		/^CC[[:space:]]*=.+$$/d; \
-		/^CXX[[:space:]]*=.+$$/d; \
+		's,-l(dl|rt),,; s|g\+\+|$$(CXX)|; \
+		/^(CC|CXX)[[:space:]]*=.+$$/d; s|-lpthread|${PTHREAD_LIBS}|g; \
 		s,@FLTK_(C|CXX)FLAGS@,-I${LOCALBASE}/include,; \
-		s|-lpthread|${PTHREAD_LIBS}|g'
+		s,(bin|lib)dir),DESTDIR)$$(&,'
+	@${FIND} ${WRKSRC} -type f -name "*.C" -o -name "*.cpp" -o -name "*.h" \
+		| ${XARGS} ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; \
+		/^#include "FL/s|.h"$$|.H"|; \
+		s|fl_file_chooser.H|Fl_File_Chooser.H|g'
 
-	@${FIND} ${WRKSRC} -type f -name "*.C" -o -name "*.cpp" -o -name "*.h" | ${XARGS} \
-	   ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; /^#include "FL/s|.h"$$|.H"|; \
-	   s|fl_file_chooser.H|Fl_File_Chooser.H|g'
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

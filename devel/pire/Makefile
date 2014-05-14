@@ -3,6 +3,7 @@
 
 PORTNAME=	pire
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,9 +16,9 @@ GH_COMMIT=	012bedf
 
 LICENSE=	LGPL3
 
-USE_AUTOTOOLS=	autoconf automake libtool libtoolize
+USE_AUTOTOOLS=	autoconf automake libtoolize
 GNU_CONFIGURE=	yes
-USES=		gmake bison
+USES=		gmake bison libtool
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
@@ -28,6 +29,9 @@ UNITTEST_DESC=	Compile with unittest support
 
 .include <bsd.port.options.mk>
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpire*.so
+
 run-autotools:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -fi
 
@@ -35,7 +39,7 @@ run-autotools:
 BUILD_DEPENDS+=	cppunit-config:${PORTSDIR}/devel/cppunit
 CONFIGURE_ARGS=	--with-cppunit-prefix=${LOCALBASE}
 
-regression-test:
+regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check || \
 		(${CAT} ${WRKSRC}/tests/test-suite.log; false)
 .endif

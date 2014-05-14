@@ -1,15 +1,32 @@
-
 $FreeBSD$
 
---- Makefile.orig
-+++ Makefile
-@@ -103,8 +103,8 @@
+--- Makefile.orig	2011-02-28 17:04:15.000000000 -0300
++++ Makefile	2014-05-08 11:03:24.000000000 -0300
+@@ -38,7 +38,7 @@
+ # installation prefix.
+ #
+ #LZO_SUPPORT = 1
+-#LZO_DIR = /usr/local
++#LZO_DIR = $(LOCALBASE)
+ 
+ ########### Building LZMA support #############
+ #
+@@ -103,7 +103,7 @@
  
  CFLAGS ?= -O2
  CFLAGS += $(EXTRA_CFLAGS) $(INCLUDEDIR) -D_FILE_OFFSET_BITS=64 \
 -	-D_LARGEFILE_SOURCE -D_GNU_SOURCE -DCOMP_DEFAULT=\"$(COMP_DEFAULT)\" \
 +	-D_LARGEFILE_SOURCE -DFNM_EXTMATCH=0 -D_GNU_SOURCE -DCOMP_DEFAULT=\"$(COMP_DEFAULT)\" \
-	-Wall
+ 	-Wall
  
  LIBS = -lpthread -lm
- ifeq ($(GZIP_SUPPORT),1)
+@@ -253,6 +253,6 @@
+ 
+ .PHONY: install
+ install: mksquashfs unsquashfs
+-	mkdir -p $(INSTALL_DIR)
+-	cp mksquashfs $(INSTALL_DIR)
+-	cp unsquashfs $(INSTALL_DIR)
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	${BSD_INSTALL_PROGRAM} mksquashfs $(DESTDIR)$(PREFIX)/bin
++	${BSD_INSTALL_PROGRAM} unsquashfs $(DESTDIR)$(PREFIX)/bin

@@ -3,7 +3,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics math java
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
@@ -16,17 +16,18 @@ LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick	\
 		cdf:${PORTSDIR}/science/cdf
 
 USE_XORG=	xinerama xext xpm xmu sm ice
-USES=		bison motif gmake
+USES=		bison motif gmake libtool
 USE_GCC=	any
 USE_GL=		yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	ARCH="${OPSYS:tl}"
+CONFIGURE_ENV=	ARCH=freebsd
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 NO_MTREE=	yes
-PLIST_SUB=	ARCH=${OPSYS:tl}
+PLIST_SUB=	ARCH=freebsd
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_HDF) && !defined(WITHOUT_NETCDF)

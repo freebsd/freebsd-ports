@@ -3,6 +3,7 @@ bin/celtdec
 include/celt/celt.h
 include/celt/celt_types.h
 include/celt/celt_header.h
+lib/libcelt0.so.2.0.0
 lib/libcelt0.so.2
 lib/libcelt0.so
 lib/libcelt0.la

@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		tar:bzip2 gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	POPT_CFLAGS="$$(pkg-config --cflags popt)" \
 		POPT_LIBS="$$(pkg-config --libs popt)"
@@ -30,14 +29,15 @@ AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
 AALIB_CONFIGURE_WITH=	aalib
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+NLS_CPPFLAGS=		-I${LOCALBASE}/include
+NLS_LDFLAGS=		-L${LOCALBASE}/lib
+NLS_CONFIGURE_ENV=	LIBS="-lintl"
 READLINE_USES=		readline
 READLINE_CONFIGURE_WITH=	readline
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lpthread|-pthread|' \
+		's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure
 
 post-install:

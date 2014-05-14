@@ -15,9 +15,8 @@ LICENSE=	MIT ZLIB
 
 MANUAL_PACKAGE_BUILD=	huge
 
-USES=		gmake
+USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
 USE_AUTOTOOLS=	aclocal automake autoconf:env

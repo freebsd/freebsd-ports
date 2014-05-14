@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/
 
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
+LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes
@@ -49,11 +50,10 @@ CONFIGURE_ARGS+=	--without-libldap
 ALL_TARGET=	 -C ftp-proxy
 .endif
 
-MAN8=		ftp-proxy.8
-MAN5=		ftp-proxy.conf.5
+MAKE_ARGS=	INST_ROOT=${STAGEDIR} CONF_DST=ftp-proxy.conf.sample
+
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # XXX: newer autoconf's rely on the compiler result, not the preprocessor

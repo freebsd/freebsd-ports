@@ -8,16 +8,17 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	xride@FreeBSD.org
-COMMENT=	A python logging module
+COMMENT=	Python logging module
+
+LICENSE=	MIT
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-NO_STAGE=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

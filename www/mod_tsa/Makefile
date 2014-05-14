@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://am.nesiac.org/static/ \
 		http://ubique.spb.ru/src/
 
-MAINTAINER=	ubique@peterhost.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time stamping authority (RFC 3161) module for apache
 
 OPTIONS_DEFINE=	MYSQL PGSQL FIREBIRD DEBUG DEBUG_MEMORY

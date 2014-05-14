@@ -1,6 +1,7 @@
 # Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
 
+# for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 PORTNAME=	ocaml
 PORTVERSION=	4.01.0
 PORTREVISION=	1
@@ -110,7 +111,7 @@ CONFIGURE_ARGS+=-no-tk
 
 OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/}
 
-.if ${OCAML_ARCH} == power
+.if defined(NO_PROFILE) || ${OCAML_ARCH} == power || ${OPSYS} == DragonFly
 PLIST_SUB+=	PROF="@comment "
 .else
 PLIST_SUB+=	PROF=""

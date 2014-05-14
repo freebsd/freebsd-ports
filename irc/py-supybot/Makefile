@@ -23,17 +23,16 @@ MANCOMPRESSED=	no
 MAN1=	supybot.1 supybot-adduser.1 supybot-wizard.1 supybot-botchk.1 \
 	supybot-plugin-create.1 supybot-plugin-doc.1
 
-NO_STAGE=	yes
 post-install:
 .for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${f} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/docs/GETTING_STARTED ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/GETTING_STARTED ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}

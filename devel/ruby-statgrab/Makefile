@@ -3,6 +3,7 @@
 
 PORTNAME=	statgrab
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A set of Ruby bindings for libstatgrab
 
-LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	libstatgrab0.so:${PORTSDIR}/devel/libstatgrab0
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

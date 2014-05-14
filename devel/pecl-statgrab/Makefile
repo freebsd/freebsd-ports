@@ -3,6 +3,7 @@
 
 PORTNAME=	statgrab
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,15 +14,10 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A PECL extension to retrieve information from libstatgrab
 
-LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	libstatgrab0.so:${PORTSDIR}/devel/libstatgrab0
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -ldevstat ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-statgrab=${LOCALBASE}
 

@@ -34,10 +34,13 @@ lib/yorick/i-start/README
 lib/yorick/i/README
 lib/yorick/i/basfix.i
 lib/yorick/i/bessel.i
+lib/yorick/i/bezier.i
 lib/yorick/i/bowtie.i
 lib/yorick/i/button.i
 lib/yorick/i/calendar.i
 lib/yorick/i/cheby.i
+lib/yorick/i/cie.i
+lib/yorick/i/cmap.i
 lib/yorick/i/collec.i
 lib/yorick/i/color.i
 lib/yorick/i/convol.i
@@ -49,6 +52,7 @@ lib/yorick/i/demo2.i
 lib/yorick/i/demo3.i
 lib/yorick/i/demo4.i
 lib/yorick/i/demo5.i
+lib/yorick/i/dichromat.i
 lib/yorick/i/digit2.i
 lib/yorick/i/ellipse.i
 lib/yorick/i/elliptic.i
@@ -61,10 +65,12 @@ lib/yorick/i/fits.i
 lib/yorick/i/gamma.i
 lib/yorick/i/gammp.i
 lib/yorick/i/gcd.i
+lib/yorick/i/hsv2rgb.i
 lib/yorick/i/hydra.i
 lib/yorick/i/idlsave.i
 lib/yorick/i/ieee.i
 lib/yorick/i/kepler.i
+lib/yorick/i/lab2rgb.i
 lib/yorick/i/legndr.i
 lib/yorick/i/levmar.i
 lib/yorick/i/make.i
@@ -96,6 +102,7 @@ lib/yorick/i/series.i
 lib/yorick/i/show.i
 lib/yorick/i/silo.i
 lib/yorick/i/slice3.i
+lib/yorick/i/spanarc.i
 lib/yorick/i/spline.i
 lib/yorick/i/splinef.i
 lib/yorick/i/string.i
@@ -113,8 +120,10 @@ lib/yorick/i/testoxy.i
 lib/yorick/i/testp.i
 lib/yorick/i/teststr.i
 lib/yorick/i/textload.i
+lib/yorick/i/torgb.i
 lib/yorick/i/txpath.i
 lib/yorick/i/unsigned.i
+lib/yorick/i/ylm.i
 lib/yorick/i/ylmdec.i
 lib/yorick/i/zroots.i
 lib/yorick/i0/README

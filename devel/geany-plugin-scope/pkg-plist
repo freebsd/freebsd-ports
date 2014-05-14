@@ -1,5 +1,3 @@
-lib/geany/scope.a
-lib/geany/scope.la
 lib/geany/scope.so
 %%DOCSDIR%%/scope/AUTHORS
 %%DOCSDIR%%/scope/COPYING

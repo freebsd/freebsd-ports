@@ -1,5 +1,3 @@
-lib/geany/geanyvc.a
-lib/geany/geanyvc.la
 lib/geany/geanyvc.so
 %%DOCSDIR%%/geanyvc/AUTHORS
 %%DOCSDIR%%/geanyvc/COPYING

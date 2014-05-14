@@ -1485,7 +1485,7 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .endif
 
-.if defined(WANT_GECKO) || defined(USE_GECKO)
+.if defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
 
@@ -1947,7 +1947,7 @@ IGNORE=	Do not define STAGEDIR in command line
 .include "${PORTSDIR}/Mk/bsd.fpc.mk"
 .endif
 
-.if defined(WANT_GECKO) || defined(USE_GECKO)
+.if defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
 
@@ -3340,6 +3340,9 @@ check-vulnerable:
 		if [ -n "${WITH_PKGNG}" ]; then \
 			if [ -x "${PKG_BIN}" ]; then \
 				vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
+				if [ "$${vlist}" = "0 problem(s) in the installed packages found." ]; then \
+					vlist=""; \
+				fi; \
 			elif [ "${PORTNAME}" = "pkg" ]; then \
 				vlist=""; \
 			fi; \
@@ -4272,7 +4275,7 @@ security-check:
 	| ${XARGS} -0 -J % ${FIND} % -prune ! -type l -type f -print0 2> /dev/null \
 	| ${XARGS} -0 -n 1 ${OBJDUMP} -R 2> /dev/null > ${WRKDIR}/.PLIST.objdump; \
 	if \
-		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${PORTSDIR}/Tools/scripts/security-check.awk \
+		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${SCRIPTSDIR}/security-check.awk \
 		  ${WRKDIR}/.PLIST.flattened ${WRKDIR}/.PLIST.objdump ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable; \
 	then \
 		www_site=$$(cd ${.CURDIR} && ${MAKE} www-site); \
@@ -6544,9 +6547,10 @@ _STAGE_DEP=		build
 _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install generate-plist \
 				pre-su-install
 .if defined(NEED_ROOT)
-_STAGE_SUSEQ=	create-users-groups do-install desktop-file-post-install \
+_STAGE_SUSEQ=	create-users-groups do-install \
 				kmod-post-install shared-mime-post-install \
 				webplugin-post-install post-install post-install-script \
+				desktop-file-post-install \
 				move-uniquefiles post-stage compress-man patch-lafiles \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
@@ -6556,9 +6560,10 @@ _STAGE_SUSEQ=	create-users-groups do-install desktop-file-post-install \
 _STAGE_SUSEQ+=	stage-qa
 .endif
 .else
-_STAGE_SEQ+=	create-users-groups do-install desktop-file-post-install \
+_STAGE_SEQ+=	create-users-groups do-install \
 				kmod-post-install shared-mime-post-install \
 				webplugin-post-install post-install post-install-script \
+				desktop-file-post-install \
 				move-uniquefiles post-stage compress-man patch-lafiles \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \

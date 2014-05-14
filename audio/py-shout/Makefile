@@ -3,6 +3,7 @@
 
 PORTNAME=	shout
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://downloads.us.xiph.org/releases/libshout/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Python bindings for libshout2
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 

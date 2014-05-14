@@ -343,8 +343,7 @@ gst_resindvd_RUN_DEPENDS=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
 gst_rtmp_LIB_DEPENDS=	librtmp.so.0:${PORTSDIR}/multimedia/librtmp
 
 # shout2
-# keep the version to tell de difference between libshout and libshout2
-gst_shout2_LIB_DEPENDS=	libshout.so.5:${PORTSDIR}/audio/libshout2
+gst_shout2_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 
 # sidplay
 gst_sidplay_LIB_DEPENDS=	libsidplay.so:${PORTSDIR}/audio/libsidplay

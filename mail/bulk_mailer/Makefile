@@ -6,7 +6,7 @@ PORTVERSION=	1.13
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.utk.edu/pub/moore/bulk_mailer/ \
-		LOCAL/mat
+		LOCAL/mat/${PORTNAME}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Speeds delivery to mailing lists by sorting & batching addresses

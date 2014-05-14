@@ -3,7 +3,7 @@
 
 PORTNAME=	mmpython
 PORTVERSION=	0.4.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Retrieves metadata from mp3, ogg, avi, jpg, and other formats
 
-LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd
 
 USE_PYTHON=	yes

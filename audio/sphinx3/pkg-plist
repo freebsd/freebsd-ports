@@ -86,9 +86,9 @@ include/sphinx3/word_fsg.h
 include/sphinx3/word_graph.h
 include/sphinx3/word_ugprob.h
 lib/libs3decoder.a
-lib/libs3decoder.la
 lib/libs3decoder.so
 lib/libs3decoder.so.0
+lib/libs3decoder.so.0.0.6
 libdata/pkgconfig/sphinx3.pc
 %%DATADIR%%/doc/BN_AM_HUB96-97.doc
 %%DATADIR%%/doc/BN_AM_HUB96-97.htm

@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	2.12.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	20
@@ -18,7 +18,7 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20 libglade2
-USES=		gmake pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		gmake libtool:keepla pathfix perl5 pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	parser/*.pl
 USE_PERL5=	run
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}

@@ -56,7 +56,6 @@ citrix_ica-*		net/citrix_ica		License prohibits redistribution
 cli_freebsd*		sysutils/arcconf	May not be redistributed in binary form
 clustalw-*		biology/clustalw	No commercial use
 coldwar_demo*		games/linux-coldwar-demo	Redistribution is limited, see license
-condor_src-*		sysutils/condor		Requires (free) registration
 contool-*		sysutils/contool	Do not incorporate the source code into a product which is subsequently sold
 cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
@@ -105,7 +104,7 @@ foiltex*		textproc/foiltex	Redistribution on a not-for-profit basis only
 fp-freebsd-ws-*		security/f-prot		Free for personal users on personal workstations only
 fuse-emulator-roms*	emulators/fuse-roms	No explicit permission to redistribute
 Opus-22.rom		emulators/fuse-roms	No explicit permission to redistribute
-freefonts-*		x11-fonts/freefonts	Some of the fonts are shareware.  Some are freeware.  Permission must be obtained before distributing at least four (mazama.license, muriel.license, roosthea.license, shf_____.license).  Two have inconsistent licenses (tempofon.license and tempoita.license say "placed into the public domain and may [not be] sold")
+freefonts-*		x11-fonts/freefonts	License prohibits redistribution; see individual .license files
 freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
 fvcom/sourcecode1.tar.gz	science/fvcom	Requires (free) registration
@@ -143,13 +142,11 @@ jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
 jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
-jdk-6*-i586.bin		java/linux-sun-jdk16	Redistribution of repackaged binaries not permitted
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged binaries not permitted
 jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries not permitted
 jfbuild_src_*		games/jfsw		Must be distributed only through the Internet and free of charge
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled binaries is not permitted
 jpgraph-2.*		graphics/jpgraph2	The free version cannot be used in a commercial context
-jre-6*-i586.bin		java/linux-sun-jre16	License does not allow distribution with fee
 jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow distribution with fee
 jre-8*-i586.tar.gz	java/linux-oracle-jre18	License does not allow distribution with fee
 jta-*.zip		java/jta		See the license
@@ -225,7 +222,7 @@ seatools_cli.tar	sysutils/seatools	Redistribution is not permitted
 serialmail-*		mail/serialmail		No license -- see http://cr.yp.to/softwarelaw.html
 serious.sam*		games/linux-ssamtfe	Redistribution limited
 serious.sam*		games/linux-ssamtse	Redistribution limited
-sharefonts-*		x11-fonts/sharefonts	Shareware.  Cannot be distributed without prior authorization
+sharefonts-*		x11-fonts/sharefonts	Shareware: cannot be distributed without prior authorization
 shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download

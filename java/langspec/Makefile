@@ -11,18 +11,18 @@ COMMENT=	The Java Language Specification
 
 USES=		zip
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 PORTDOCS=	*
 
 .if defined(NOPORTDOCS)
 IGNORE=		installs *only* documentation, unset NOPORTDOCS
 .endif
 
-NO_STAGE=	yes
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${CP} -R ${WRKSRC}/*.html ${WRKSRC}/*.gif ${WRKSRC}/chars \
+		${STAGEDIR}${DOCSDIR}
 	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.mk>

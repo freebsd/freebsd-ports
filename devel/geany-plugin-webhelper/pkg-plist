@@ -1,5 +1,3 @@
-lib/geany/webhelper.a
-lib/geany/webhelper.la
 lib/geany/webhelper.so
 %%DOCSDIR%%/webhelper/AUTHORS
 %%DOCSDIR%%/webhelper/COPYING

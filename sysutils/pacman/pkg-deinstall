@@ -4,12 +4,18 @@
 #
 
 case $2 in
-DEINSTALL)
-	echo ""
-	echo "To completely remove the port, please remove the following"
-	echo "directories and the content manualy:"
-	echo ""
-	echo "/var/lib/pacman prefix/var/cache/pacman"
-	echo ""
+POST-DEINSTALL)
+	rmdir /var/cache/pacman/pkg 2>/dev/null || true
+	rmdir /var/cache/pacman 2>/dev/null || true
+	rmdir /var/lib/pacman 2>/dev/null || true
+	rmdir /var/lib 2>/dev/null || true
+	if [ -e /var/lib/pacman -o -e /var/cache/pacman ]; then
+		echo ""
+		echo "To completely remove the port, please remove the following"
+		echo "directories and the content manualy:"
+		echo ""
+		echo "    /var/lib/pacman /var/cache/pacman"
+		echo ""
+	fi
 	;;
 esac

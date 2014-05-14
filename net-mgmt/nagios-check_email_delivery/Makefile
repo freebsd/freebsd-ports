@@ -3,6 +3,7 @@
 
 PORTNAME=	check_email_delivery
 PORTVERSION=	0.7.1b
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://buhacoff.net/software/check_email_delivery/archive/ \
 		http://mirrors.rit.edu/zi/
@@ -17,7 +18,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
 		p5-Mail-IMAPClient>=0:${PORTSDIR}/mail/p5-Mail-IMAPClient
 
-USES=		perl5
+USES=		perl5 shebangfix
+SCRIPTS=	check_email_delivery check_email_delivery_epn \
+		check_imap_quota check_imap_quota_epn \
+		check_imap_receive check_imap_receive_epn \
+		check_smtp_send check_smtp_send_epn \
+		imap_ssl_cert imap_ssl_cert_epn
+SHEBANG_FILES=	${SCRIPTS}
 USE_PERL5=	run
 NO_BUILD=	yes
 DOC_FILES=	check_email_delivery.html check_email_delivery.pod \
@@ -28,25 +35,17 @@ DOC_FILES=	check_email_delivery.html check_email_delivery.pod \
 
 PORTSCOUT=	ignore:1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKSRC}/check_email_delivery ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_email_delivery_epn ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_quota ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_quota_epn ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_receive ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_receive_epn ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_smtp_send ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/check_smtp_send_epn ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/imap_ssl_cert ${PREFIX}/libexec/nagios/
-	${INSTALL_SCRIPT} ${WRKSRC}/imap_ssl_cert_epn ${PREFIX}/libexec/nagios/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+.for file in ${SCRIPTS}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/libexec/nagios/
+.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

@@ -1,4 +1,5 @@
 %%XPI_XPIDIR%%/bootstrap.js
+%%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/chrome/content/errors.html
 %%XPI_XPIDIR%%/chrome/content/objtabs.css
 %%XPI_XPIDIR%%/chrome/content/ui/composer.js
@@ -37,14 +38,6 @@
 %%XPI_XPIDIR%%/chrome/locale/ar/sendReport.dtd
 %%XPI_XPIDIR%%/chrome/locale/ar/sidebar.dtd
 %%XPI_XPIDIR%%/chrome/locale/ar/subscriptionSelection.dtd
-%%XPI_XPIDIR%%/chrome/locale/ast/composer.dtd
-%%XPI_XPIDIR%%/chrome/locale/ast/filters.dtd
-%%XPI_XPIDIR%%/chrome/locale/ast/firstRun.properties
-%%XPI_XPIDIR%%/chrome/locale/ast/global.properties
-%%XPI_XPIDIR%%/chrome/locale/ast/overlay.dtd
-%%XPI_XPIDIR%%/chrome/locale/ast/sendReport.dtd
-%%XPI_XPIDIR%%/chrome/locale/ast/sidebar.dtd
-%%XPI_XPIDIR%%/chrome/locale/ast/subscriptionSelection.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/composer.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/filters.dtd
 %%XPI_XPIDIR%%/chrome/locale/bg/firstRun.properties
@@ -157,6 +150,14 @@
 %%XPI_XPIDIR%%/chrome/locale/et/sendReport.dtd
 %%XPI_XPIDIR%%/chrome/locale/et/sidebar.dtd
 %%XPI_XPIDIR%%/chrome/locale/et/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/eu/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/eu/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/eu/firstRun.properties
+%%XPI_XPIDIR%%/chrome/locale/eu/global.properties
+%%XPI_XPIDIR%%/chrome/locale/eu/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/eu/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/eu/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/eu/subscriptionSelection.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa/composer.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa/filters.dtd
 %%XPI_XPIDIR%%/chrome/locale/fa/firstRun.properties
@@ -301,14 +302,6 @@
 %%XPI_XPIDIR%%/chrome/locale/lv/sendReport.dtd
 %%XPI_XPIDIR%%/chrome/locale/lv/sidebar.dtd
 %%XPI_XPIDIR%%/chrome/locale/lv/subscriptionSelection.dtd
-%%XPI_XPIDIR%%/chrome/locale/mn/composer.dtd
-%%XPI_XPIDIR%%/chrome/locale/mn/filters.dtd
-%%XPI_XPIDIR%%/chrome/locale/mn/firstRun.properties
-%%XPI_XPIDIR%%/chrome/locale/mn/global.properties
-%%XPI_XPIDIR%%/chrome/locale/mn/overlay.dtd
-%%XPI_XPIDIR%%/chrome/locale/mn/sendReport.dtd
-%%XPI_XPIDIR%%/chrome/locale/mn/sidebar.dtd
-%%XPI_XPIDIR%%/chrome/locale/mn/subscriptionSelection.dtd
 %%XPI_XPIDIR%%/chrome/locale/ms/composer.dtd
 %%XPI_XPIDIR%%/chrome/locale/ms/filters.dtd
 %%XPI_XPIDIR%%/chrome/locale/ms/firstRun.properties
@@ -317,6 +310,14 @@
 %%XPI_XPIDIR%%/chrome/locale/ms/sendReport.dtd
 %%XPI_XPIDIR%%/chrome/locale/ms/sidebar.dtd
 %%XPI_XPIDIR%%/chrome/locale/ms/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/nb-NO/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/nb-NO/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/nb-NO/firstRun.properties
+%%XPI_XPIDIR%%/chrome/locale/nb-NO/global.properties
+%%XPI_XPIDIR%%/chrome/locale/nb-NO/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/nb-NO/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/nb-NO/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/nb-NO/subscriptionSelection.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/composer.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/filters.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/firstRun.properties
@@ -483,13 +484,12 @@
 %%XPI_XPIDIR%%/chrome/skin/social/twitter.png
 %%XPI_XPIDIR%%/chrome/skin/social/weibo.png
 %%XPI_XPIDIR%%/chrome/skin/subscriptionSelection.css
-%%XPI_XPIDIR%%/chrome.manifest
-%%XPI_XPIDIR%%/defaults/patterns.ini
 %%XPI_XPIDIR%%/defaults/prefs.js
 %%XPI_XPIDIR%%/icon.png
 %%XPI_XPIDIR%%/icon64.png
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/lib/Public.jsm
+%%XPI_XPIDIR%%/lib/antiadblockInit.js
 %%XPI_XPIDIR%%/lib/appSupport.js
 %%XPI_XPIDIR%%/lib/contentPolicy.js
 %%XPI_XPIDIR%%/lib/customizableUI.js
@@ -517,7 +517,6 @@
 @dirrm %%XPI_XPIDIR%%/chrome/content/ui
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ar
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ast
 @dirrm %%XPI_XPIDIR%%/chrome/locale/bg
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ca
 @dirrm %%XPI_XPIDIR%%/chrome/locale/cs
@@ -532,6 +531,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
 @dirrm %%XPI_XPIDIR%%/chrome/locale/es-MX
 @dirrm %%XPI_XPIDIR%%/chrome/locale/et
+@dirrm %%XPI_XPIDIR%%/chrome/locale/eu
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fa
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fi
 @dirrm %%XPI_XPIDIR%%/chrome/locale/fr
@@ -550,8 +550,8 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ko
 @dirrm %%XPI_XPIDIR%%/chrome/locale/lt
 @dirrm %%XPI_XPIDIR%%/chrome/locale/lv
-@dirrm %%XPI_XPIDIR%%/chrome/locale/mn
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ms
+@dirrm %%XPI_XPIDIR%%/chrome/locale/nb-NO
 @dirrm %%XPI_XPIDIR%%/chrome/locale/nl
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pl
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR

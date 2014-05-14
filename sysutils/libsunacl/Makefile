@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Wrapper providing SunOS NFSv4 ACL API
 
+LICENSE=	BSD2CLAUSE
+
 USES=		uidfix
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/sunacl.h lib/libsunacl.a lib/libsunacl.so.1 lib/libsunacl.so

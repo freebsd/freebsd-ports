@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.2.3
-PORTREVISION=	1
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/

@@ -9,23 +9,22 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/ASCIIdates98/
 DISTNAME=	${PORTNAME:S/-fpw//}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Japanese dictionary for PC terms in '98 ASCII Dates Book (EPWING V1 format)
+COMMENT=	Japanese dictionary for PC terms in '98 ASCII Dates Book (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ascdates
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/ASCIIdates98-fpw/ascdates/data
-	${INSTALL_DATA} ${WRKSRC}/ascdates/data/honmon ${PREFIX}/share/dict/ASCIIdates98-fpw/ascdates/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/ASCIIdates98-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/ASCIIdates98-fpw/ascdates/data
+	${INSTALL_DATA} ${WRKSRC}/ascdates/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/ASCIIdates98-fpw/ascdates/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/ASCIIdates98-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

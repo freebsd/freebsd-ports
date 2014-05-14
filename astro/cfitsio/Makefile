@@ -3,6 +3,7 @@
 
 PORTNAME=	cfitsio
 PORTVERSION=	3.360
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -22,9 +23,10 @@ OPTIONS_DEFINE=	DOCS
 
 ALL_TARGET=	libcfitsio.a shared
 CFLAGS+=	-I${INCLUDEDIR}
-CONFIGURE_ARGS=	ZLIB_SOURCES="" ac_cv_prog_FC=f2c
+CONFIGURE_ARGS=	ac_cv_prog_FC=f2c
+CONFIGURE_ENV=	LIBS="-L${LIBDIR} -lz"
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LIBDIR} -lz
+MAKE_ARGS=	ZLIB_SOURCES="zlib/zcompress.c zlib/zuncompress.c"
 USE_LDCONFIG=	yes
 USES=		pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -35,9 +37,6 @@ PORTDOCS=	*
 
 SHLIB_MAJOR_VER=2
 SHLIB_MINOR_VER=${PORTVERSION:S/0$//}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${ZLIB_SOURCES[:=a-z\.]*}||' ${WRKSRC}/Makefile.in
 
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${STAGEDIR}${PREFIX}/include/

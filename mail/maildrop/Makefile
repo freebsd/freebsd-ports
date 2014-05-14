@@ -114,7 +114,7 @@ post-patch:
 		-e "s/\(deliverquota.html\)/maildrop-\1/" ${WRKSRC}/${f}
 .endfor
 .if ${PORT_OPTIONS:MAUTHLIB}
-	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
+	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -L${LOCALBASE}/lib/courier-authlib|' \
 		${WRKSRC}/libs/maildrop/Makefile.in
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"

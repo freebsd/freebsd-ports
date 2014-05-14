@@ -1,0 +1,53 @@
+From nox Mon Sep 17 00:00:00 2001
+From: Juergen Lock <nox@jelal.kn-bremen.de>
+Date: 05 May 2014 00:54:00 +0200
+Subject: Handle bsd-user FreeBSD hw.pagesizes sysctl
+
+hw.pagesizes is defined as OID_AUTO so the mib can change; find out
+it's value at the first hw.* sysctl syscall.
+Handle it by returning only getpagesize() for now.
+
+Signed-off-by: Juergen Lock <nox@jelal.kn-bremen.de>
+
+--- a/bsd-user/freebsd/os-sys.c
++++ b/bsd-user/freebsd/os-sys.c
+@@ -227,6 +227,7 @@ abi_long do_freebsd_sysctl(CPUArchState 
+         default:
+             {
+                 static int oid_hw_availpages;
++                static int oid_hw_pagesizes;
+ 
+                 if (!oid_hw_availpages) {
+                     int real_oid[CTL_MAXNAME+2];
+@@ -235,6 +236,13 @@ abi_long do_freebsd_sysctl(CPUArchState 
+                     if (sysctlnametomib("hw.availpages", real_oid, &len) >= 0)
+                         oid_hw_availpages = real_oid[1];
+                 }
++                if (!oid_hw_pagesizes) {
++                    int real_oid[CTL_MAXNAME+2];
++                    size_t len = sizeof(real_oid) / sizeof(int);
++
++                    if (sysctlnametomib("hw.pagesizes", real_oid, &len) >= 0)
++                        oid_hw_pagesizes = real_oid[1];
++                }
+ 
+                 if (oid_hw_availpages && snamep[1] == oid_hw_availpages) {
+                     long lvalue;
+@@ -252,6 +260,17 @@ abi_long do_freebsd_sysctl(CPUArchState 
+                     }
+                     goto out;
+                 }
++
++                if (oid_hw_pagesizes && snamep[1] == oid_hw_pagesizes) {
++                    // XXX some targets do superpages now too... */
++                    if (oldlen) {
++                        (*(abi_ulong *)holdp) = tswapal((abi_ulong)getpagesize());
++                        ((abi_ulong *)holdp)[1] = 0;
++                    }
++                    holdlen = sizeof(abi_ulong) * 2;
++                    ret = 0;
++                    goto out;
++                }
+                 break;
+             }
+         }

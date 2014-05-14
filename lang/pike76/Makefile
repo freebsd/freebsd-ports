@@ -26,18 +26,14 @@ CONFLICTS=	pike7[28]-[0-9]*
 CONFLICTS_BUILD=nettle-[2-9]*
 
 OPTIONS_DEFINE=	TTF FREETYPE OPT_CFLAGS MYSQL FFMPEG PGSQL \
-		SANE PDF SVG2 TDS FFTW
-OPTIONS_DEFAULT=TTF FREETYPE OPT_CFLAGS MYSQL NOODBC
-OPTIONS_SINGLE=	ODBC
-OPTIONS_SINGLE_ODBC=	NOODBC UNIXODBC IODBC
+		SANE PDF SVG2 TDS FFTW ODBC
+OPTIONS_DEFAULT=TTF FREETYPE OPT_CFLAGS MYSQL
 
 TTF_DESC?=	Add FreeType 1 support
 FREETYPE_DESC?=	Add FreeType 2 support
 OPT_CFLAGS_DESC?=	Enable additional compiliation optimizations
 FFMPEG_DESC?=	Add FFmpeg support
-NOODBC_DESC?=	No ODBC support (default)
-UNIXODBC_DESC?=	Add UnixODBC support
-IODBC_DESC?=	Add iODBC support
+ODBC_DESC?=	Add ODBC support
 SANE_DESC?=	Add SANE support
 PDF_DESC?=	Add PDF support
 SVG2_DESC?=	Add SVG2 support
@@ -154,17 +150,10 @@ CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
-.if ${PORT_OPTIONS:MUNIXODBC}
+.if ${PORT_OPTIONS:MODBC}
 LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc
-.endif
-
-.if ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
-CONFIGURE_ARGS+=	--with-odbc
-.endif
-
-.if ${PORT_OPTIONS:MNOODBC}
+.else
 CONFIGURE_ARGS+=	--without-odbc
 .endif
 

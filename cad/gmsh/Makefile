@@ -3,7 +3,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	2.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -109,6 +109,7 @@ CMAKE_ARGS+=	-DENABLE_GMM=OFF
 .if defined(WITH_OCC)
 LIB_DEPENDS+=	libTKernel.so:${PORTSDIR}/cad/opencascade
 CMAKE_ARGS+=	-DENABLE_OCC=ON -DOCC_INC=${LOCALBASE}/include/OpenCASCADE
+CFLAGS+=	-DHAVE_CONFIG_H -DHAVE_WOK_CONFIG_H -DFREEBSD
 CONFLICTS=	gmsh-2.*
 .else
 CMAKE_ARGS+=	-DENABLE_OCC=OFF

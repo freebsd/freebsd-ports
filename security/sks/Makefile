@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sks
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	security
 MASTER_SITES=	http://cdn.bitbucket.org/skskeyserver/sks-keyserver/downloads/
 EXTRACT_SUFX=	.tgz

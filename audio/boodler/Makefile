@@ -9,12 +9,13 @@ MASTER_SITES=	http://www.eblong.com/zarf/boodler/
 DISTFILES=	boodler-153.tar.gz boodler-snd-021902.tar.gz
 
 MAINTAINER=	daniel+boodler@pelleg.org
-COMMENT=	A programmable soundscape tool
+COMMENT=	Programmable soundscape tool
 
 RESTRICTED=	no commercial use
 RESTRICTED_FILES=	boodler-snd-021902.tar.gz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 USES=		gmake
 USE_PYTHON=	2
 DRIVER?=	oss
@@ -53,18 +54,14 @@ do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/effects ${WRKSRC}/boodle/
 
 do-install:
-	@${ECHO_MSG} "Installing files"
-	@${INSTALL_SCRIPT} ${WRKSRC}/wrapper/boodler ${PREFIX}/bin/
-	@${MKDIR} ${BHOME}
-	@${INSTALL_SCRIPT} ${WRKSRC}/boodler.py ${BHOME}
-	@${MKDIR} ${BHOME}/boodle/ ${BHOME}/effects/ ${BHOME}/boodler-snd/
+	@${INSTALL_SCRIPT} ${WRKSRC}/wrapper/boodler ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${BHOME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/boodler.py ${STAGEDIR}${BHOME}
+	@${MKDIR} ${STAGEDIR}${BHOME}/boodle/ ${STAGEDIR}${BHOME}/effects/ ${STAGEDIR}${BHOME}/boodler-snd/
 	@${CHMOD} -R u+w,a+r,og-w ${WRKDIR}/boodler-snd
 	@${FIND} ${WRKDIR}/boodler-snd -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@cd ${WRKDIR} && ${CP} -pPR boodler/boodle boodler/effects boodler-snd ${BHOME}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@cd ${WRKDIR} && ${CP} -pPR boodler/boodle boodler/effects boodler-snd ${STAGEDIR}${BHOME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

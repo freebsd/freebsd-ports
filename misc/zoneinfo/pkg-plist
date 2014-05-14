@@ -206,6 +206,7 @@
 %%DATADIR%%/Antarctica/Palmer
 %%DATADIR%%/Antarctica/Rothera
 %%DATADIR%%/Antarctica/Syowa
+%%DATADIR%%/Antarctica/Troll
 %%DATADIR%%/Antarctica/Vostok
 %%DATADIR%%/Arctic/Longyearbyen
 %%DATADIR%%/Asia/Aden
@@ -466,20 +467,3 @@
 %%DATADIR%%/WET
 %%DATADIR%%/posixrules
 %%DATADIR%%/zone.tab
-@dirrm %%DATADIR%%/SystemV
-@dirrm %%DATADIR%%/Pacific
-@dirrm %%DATADIR%%/Indian
-@dirrm %%DATADIR%%/Europe
-@dirrm %%DATADIR%%/Etc
-@dirrm %%DATADIR%%/Australia
-@dirrm %%DATADIR%%/Atlantic
-@dirrm %%DATADIR%%/Asia
-@dirrm %%DATADIR%%/Arctic
-@dirrm %%DATADIR%%/Antarctica
-@dirrm %%DATADIR%%/America/North_Dakota
-@dirrm %%DATADIR%%/America/Kentucky
-@dirrm %%DATADIR%%/America/Indiana
-@dirrm %%DATADIR%%/America/Argentina
-@dirrm %%DATADIR%%/America
-@dirrm %%DATADIR%%/Africa
-@dirrmtry %%DATADIR%%

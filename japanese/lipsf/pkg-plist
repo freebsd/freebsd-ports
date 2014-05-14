@@ -1,7 +1,0 @@
-bin/lipsf
-bin/pols
-%%PORTDOCS%%share/doc/lipsf/HISTORY
-%%PORTDOCS%%share/doc/lipsf/Install
-%%PORTDOCS%%share/doc/lipsf/README
-%%PORTDOCS%%share/doc/lipsf/TECHKNOW
-%%PORTDOCS%%@dirrm share/doc/lipsf

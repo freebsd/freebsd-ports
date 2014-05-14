@@ -1,0 +1,14 @@
+%%PERL5_MAN3%%/Text::VisualWidth.3.gz
+%%PERL5_MAN3%%/Text::VisualWidth::EUC_JP.3.gz
+%%PERL5_MAN3%%/Text::VisualWidth::UTF8.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/VisualWidth.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/VisualWidth/EUC_JP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/VisualWidth/UTF8.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VisualWidth/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VisualWidth/VisualWidth.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VisualWidth/VisualWidth.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VisualWidth/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VisualWidth
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Text/VisualWidth
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text

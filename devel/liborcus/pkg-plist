@@ -32,17 +32,17 @@ include/liborcus-0.6/orcus/spreadsheet/export_interface.hpp
 include/liborcus-0.6/orcus/spreadsheet/import_interface.hpp
 include/liborcus-0.6/orcus/spreadsheet/types.hpp
 lib/liborcus-0.6.a
-lib/liborcus-0.6.la
 lib/liborcus-0.6.so
 lib/liborcus-0.6.so.0
+lib/liborcus-0.6.so.0.0.0
 lib/liborcus-mso-0.6.a
-lib/liborcus-mso-0.6.la
 lib/liborcus-mso-0.6.so
 lib/liborcus-mso-0.6.so.0
+lib/liborcus-mso-0.6.so.0.0.0
 lib/liborcus-parser-0.6.a
-lib/liborcus-parser-0.6.la
 lib/liborcus-parser-0.6.so
 lib/liborcus-parser-0.6.so.0
+lib/liborcus-parser-0.6.so.0.0.0
 libdata/pkgconfig/liborcus-0.6.pc
 @dirrm include/liborcus-0.6/orcus/spreadsheet
 @dirrm include/liborcus-0.6/orcus/ooxml

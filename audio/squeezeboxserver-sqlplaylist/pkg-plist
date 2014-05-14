@@ -178,5 +178,3 @@
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/ConfigManager
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList
-@dirrmtry %%SLIMDIR%%/Plugins
-@dirrmtry %%SLIMDIR%%

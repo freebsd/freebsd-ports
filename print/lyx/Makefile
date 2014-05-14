@@ -19,8 +19,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 		libmythes-1.2.so:${PORTSDIR}/textproc/mythes
 
-MAJOR_VERSION=	2.0
-MINOR_VERSION=	8
+MAJOR_VERSION=	2.1
+MINOR_VERSION=	0
 
 USES=		desktop-file-utils gmake iconv pkgconfig perl5
 USE_PYTHON=	2
@@ -45,14 +45,5 @@ HUNSPELL_CONFIGURE_OFF=	--without-hunspell
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
-
-.include <bsd.port.options.mk>
-
-post-install:
-# Manually install the 48x48 icon and .desktop file.
-# Will not be needed in the 2.1 series, see LyX tickets 2820 and 7919.
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${WRKSRC}/lib/images/lyx.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${FILESDIR}/lyx.desktop ${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>

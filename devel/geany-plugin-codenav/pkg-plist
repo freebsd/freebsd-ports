@@ -1,5 +1,3 @@
-lib/geany/codenav.a
-lib/geany/codenav.la
 lib/geany/codenav.so
 %%DOCSDIR%%/codenav/AUTHORS
 %%DOCSDIR%%/codenav/COPYING

@@ -3,6 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.34
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
@@ -16,14 +17,13 @@ COMMENT=	Perl Compatible Regular Expressions library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		libtool:oldver pathfix tar:bzip2
 USE_LDCONFIG=	yes
-USES=	pathfix
 CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 		--enable-pcre8 --enable-pcre16 --enable-pcre32 \
 		--enable-pcretest-libedit
-MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		STACK_RECURSION
 OPTIONS_DEFAULT=	STACK_RECURSION
@@ -46,10 +46,6 @@ PORTDOCS=	*
 # prone to segfaults from stack exhaustion when matching certain patterns
 .if !${PORT_OPTIONS:MSTACK_RECURSION}
 CONFIGURE_ARGS+=	--disable-stack-for-recursion
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
 .endif
 
 # Optional knobs that accept positive integer parameters (see pcrebuild(3)):
@@ -90,8 +86,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e '/^install-data-am/,/^$$/ s,install-(dist_doc|dist_html|html)DATA,,g' \
 		${WRKSRC}/Makefile.in
 .endif
-# work around for a autoconf assumption, to fix c++ linking with clang
-	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "conftest\\.$$objext"|g' ${WRKSRC}/configure
 
 #prevent regression test coredumps from causing failures on the
 #package-building cluster:
@@ -103,7 +97,7 @@ TESTLOGS?=	RunGrepTest RunTest pcre_jit_test pcre_scanner_unittest \
 
 check regression-test test: build
 	@cd ${WRKSRC} ; \
-	${SETENV} ${MAKE_ENV} ${CORELIMIT} ${MAKE} ${MAKE_ARGS} check ; \
+	${SETENV} ${MAKE_ENV} ${CORELIMIT} ${MAKE_CMD} ${MAKE_ARGS} check ; \
 	for _l in ${TESTLOGS} ; do if ${TEST} -f $${_l}.log ; then \
 	${PRINTF} "\n\n$${_l}.log\n\n\n" ; ${CAT} $${_l}.log ; fi ; done
 

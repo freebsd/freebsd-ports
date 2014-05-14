@@ -1,6 +1,5 @@
 bin/gnp
-%%GNOME:%%share/gnome/apps/Applications/gnotepad+.desktop
-%%GNOME:%%share/gnome/apps/Applications/gnotepad+.spec
+man/man1/gnp.1.gz
 share/gnome/help/gnotepad+/C/index.html
 share/gnome/help/gnotepad+/C/index-5.html
 share/gnome/help/gnotepad+/C/topic.dat

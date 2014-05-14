@@ -40,7 +40,6 @@ PKGNAMESUFFIX=	-${PHP_LANG}
 PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
 
 .if ${PHP_LANG} == en
-NO_STAGE=	yes
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may set PHP_LANG to"
@@ -58,9 +57,9 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${PHPDOCDIR}
-	${FIND} ${WRK_SRC} -type d | ${SED} -e "s,${WRK_SRC},${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
+	${FIND} ${WRK_SRC} -type d | ${SED} -e "s,${WRK_SRC},${STAGEDIR}${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
 	for f in `${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e 's,${WRK_SRC},,'`; do \
-		${INSTALL_DATA} ${WRK_SRC}/$$f ${PHPDOCDIR}/$$f; \
+		${INSTALL_DATA} ${WRK_SRC}/$$f ${STAGEDIR}${PHPDOCDIR}/$$f; \
 	done
 
 # this is for the maintainer only

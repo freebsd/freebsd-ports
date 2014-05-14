@@ -26,9 +26,9 @@ lib/libibus-qt.so
 lib/libibus-qt.so.1
 lib/libibus-qt.so.1.3.0
 lib/qt4/plugins/inputmethods/libqtim-ibus.so
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/qt4/plugins/inputmethods
 @dirrm include/ibus-qt

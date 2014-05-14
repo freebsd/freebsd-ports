@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ocaml-ounit-port@kotka.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml unit test framework
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \

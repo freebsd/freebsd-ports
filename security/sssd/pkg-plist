@@ -1,17 +1,48 @@
-sbin/sssd
-sbin/sss_usermod
-sbin/sss_userdel
-sbin/sss_useradd
-sbin/sss_obfuscate
-sbin/sss_groupshow
-sbin/sss_groupmod
-sbin/sss_groupdel
-sbin/sss_groupadd
-sbin/sss_debuglevel
-sbin/sss_cache
-sbin/sss_seed
 bin/sss_ssh_authorizedkeys
 bin/sss_ssh_knownhostsproxy
+@sample %%ETCDIR%%/sssd.conf.sample
+include/ipa_hbac.h
+include/sss_idmap.h
+include/sss_sudo.h
+lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.so
+lib/libipa_hbac.so
+lib/libipa_hbac.so.0
+lib/libipa_hbac.so.0.0.1
+lib/libsss_idmap.so
+lib/libsss_idmap.so.0
+lib/libsss_idmap.so.0.0.1
+lib/libsss_sudo.so
+lib/nss_sss.so
+lib/nss_sss.so.2
+lib/nss_sss.so.2.0.0
+lib/pam_sss.so
+%%PYTHON_SITELIBDIR%%/SSSDConfig-1.9.6-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.py
+%%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.py
+%%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.pyc
+%%PYTHON_SITELIBDIR%%/pyhbac.so
+%%PYTHON_SITELIBDIR%%/pysss.so
+%%PYTHON_SITELIBDIR%%/pysss_murmur.so
+lib/shared-modules/ldb/memberof.so
+lib/sssd/libsss_ad.so
+lib/sssd/libsss_ipa.so
+lib/sssd/libsss_krb5.so
+lib/sssd/libsss_ldap.so
+lib/sssd/libsss_proxy.so
+lib/sssd/libsss_simple.so
+libdata/pkgconfig/ipa_hbac.pc
+libdata/pkgconfig/sss_idmap.pc
+libexec/sssd/krb5_child
+libexec/sssd/ldap_child
+libexec/sssd/proxy_child
+libexec/sssd/sssd_be
+libexec/sssd/sssd_nss
+libexec/sssd/sssd_pam
+libexec/sssd/sssd_ssh
+libexec/sssd/sssd_sudo
 man/es/man1/sss_ssh_authorizedkeys.1.gz
 man/es/man1/sss_ssh_knownhostsproxy.1.gz
 man/es/man5/sssd-ad.5.gz
@@ -57,11 +88,11 @@ man/fr/man8/sss_userdel.8.gz
 man/fr/man8/sss_usermod.8.gz
 man/fr/man8/sssd.8.gz
 man/fr/man8/sssd_krb5_locator_plugin.8.gz
-man/ja/man5/sssd-ad.5.gz
-man/ja/man5/sssd-krb5.5.gz
 man/ja/man1/sss_ssh_authorizedkeys.1.gz
 man/ja/man1/sss_ssh_knownhostsproxy.1.gz
+man/ja/man5/sssd-ad.5.gz
 man/ja/man5/sssd-ipa.5.gz
+man/ja/man5/sssd-krb5.5.gz
 man/ja/man5/sssd-ldap.5.gz
 man/ja/man5/sssd-simple.5.gz
 man/ja/man5/sssd.conf.5.gz
@@ -127,68 +158,28 @@ man/uk/man8/sss_userdel.8.gz
 man/uk/man8/sss_usermod.8.gz
 man/uk/man8/sssd.8.gz
 man/uk/man8/sssd_krb5_locator_plugin.8.gz
-libexec/sssd/sssd_pam
-libexec/sssd/sssd_nss
-libexec/sssd/sssd_be
-libexec/sssd/sssd_sudo
-libexec/sssd/sssd_ssh
-libexec/sssd/proxy_child
-libexec/sssd/ldap_child
-libexec/sssd/krb5_child
-libdata/pkgconfig/ipa_hbac.pc
-lib/sssd/libsss_simple.so
-lib/sssd/libsss_simple.la
-lib/sssd/libsss_proxy.so
-lib/sssd/libsss_proxy.la
-lib/sssd/libsss_ldap.so
-lib/sssd/libsss_ldap.la
-lib/sssd/libsss_krb5.so
-lib/sssd/libsss_krb5.la
-lib/sssd/libsss_ipa.so
-lib/sssd/libsss_ipa.la
-lib/pam_sss.so.5
-lib/pam_sss.so
-lib/pam_sss.la
-lib/nss_sss.so.2
-lib/nss_sss.so.1
-lib/nss_sss.so
-lib/nss_sss.la
-lib/libipa_hbac.so.0
-lib/libipa_hbac.so
-lib/libipa_hbac.la
-lib/libsss_idmap.so.0
-lib/libsss_idmap.so
-lib/libsss_idmap.la
-libdata/pkgconfig/sss_idmap.pc
-lib/libsss_sudo.so
-lib/libsss_sudo.la
-lib/sssd/libsss_ad.so
-lib/sssd/libsss_ad.la
-lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.so
-lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.la
-lib/shared-modules/ldb/memberof.so
-lib/shared-modules/ldb/memberof.la
-%%PYTHON_SITELIBDIR%%/pysss.so
-%%PYTHON_SITELIBDIR%%/pysss.la
-%%PYTHON_SITELIBDIR%%/pysss_murmur.so
-%%PYTHON_SITELIBDIR%%/pysss_murmur.la
-%%PYTHON_SITELIBDIR%%/pyhbac.so
-%%PYTHON_SITELIBDIR%%/pyhbac.la
-%%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.pyc
-%%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.pyc
-%%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.pyc
-%%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig-1.9.6-py%%PYTHON_VER%%.egg-info
-include/ipa_hbac.h
-include/sss_sudo.h
-include/sss_idmap.h
-@dirrmtry lib/shared-modules/ldb
-@dirrmtry lib/shared-modules
-@dirrm %%PYTHON_SITELIBDIR%%/SSSDConfig
+sbin/sss_cache
+sbin/sss_debuglevel
+sbin/sss_groupadd
+sbin/sss_groupdel
+sbin/sss_groupmod
+sbin/sss_groupshow
+sbin/sss_obfuscate
+sbin/sss_seed
+sbin/sss_useradd
+sbin/sss_userdel
+sbin/sss_usermod
+sbin/sssd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libsss_sudo_doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/idmap_doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/hbac_doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm libexec/sssd
 @dirrm lib/sssd/modules
 @dirrm lib/sssd
+@dirrm %%PYTHON_SITELIBDIR%%/SSSDConfig
+@dirrmtry %%ETCDIR%%
 @dirrmtry man/uk/man8
 @dirrmtry man/uk/man5
 @dirrmtry man/uk/man1
@@ -209,19 +200,6 @@ include/sss_idmap.h
 @dirrmtry man/es/man5
 @dirrmtry man/es/man1
 @dirrmtry man/es
-@dirrmtry etc/sssd
-@dirrmtry share/sssd/sssd/sssd.api.d
-@dirrmtry share/sssd/sssd
-@dirrmtry share/sssd
-@dirrm libexec/sssd
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/libsss_sudo_doc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/idmap_doc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/hbac_doc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@unexec if cmp -s %D/etc/sssd/sssd.conf.sample %D/etc/sssd/sssd.conf; then rm -f %D/etc/sssd/sssd.conf; fi
-etc/sssd/sssd.conf.sample
-@exec if [ ! -f %D/etc/sssd/sssd.conf ]; then cp -p %D/%F %B/sssd.conf; fi
 @unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
 @unexec if [ -d /var/db/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss`` to remove any additional files."; fi
 @unexec if [ -d /var/db/sss_mc ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss_mc`` to remove any additional files."; fi

@@ -18,6 +18,8 @@ RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+PORTSCOUT=	skipv:1.0700
+
 USES=		perl5
 USE_PERL5=	configure
 

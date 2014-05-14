@@ -1,5 +1,5 @@
---- ./Makefile.orig	2013-09-30 20:32:00.000000000 +0200
-+++ ./Makefile	2013-10-11 22:07:08.167887693 +0200
+--- ./Makefile.orig	2014-04-28 16:57:38.000000000 +0200
++++ ./Makefile	2014-05-06 21:21:37.798136726 +0200
 @@ -69,7 +69,7 @@
  #    ask for a package with convenience libraries instead -- we'll try to provide
  #    them somewhere in the near future.
@@ -62,9 +62,18 @@
 -    LUA_PACKAGE = lua5.1
 +    LUA_PACKAGE = lua-5.1
    endif
-   INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I)
+   INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I | sed -e 's/-I/-isystem /')
    CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
-@@ -754,7 +752,7 @@
+@@ -611,7 +609,7 @@
+ 
+ ifndef BUILD_SQLITE
+   ifeq ($(shell grep -q sqlite3_prepare $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
+-    # INCLUDES_L += -isystem $(SQLITE_INCLUDE_DIR)
++    INCLUDES_L += -isystem $(SQLITE_INCLUDE_DIR)
+     LIBS += $(SQLITE_LIB)
+     ifneq ($(shell grep -q sqlite3_prepare_v2 $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
+       DEFINES_L += -DANCIENT_SQLITE
+@@ -756,7 +754,7 @@
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
@@ -73,7 +82,7 @@
  endif
  
  ifdef PCH
-@@ -878,7 +876,7 @@
+@@ -880,7 +878,7 @@
      INSTALL_FONTS += $(PROPORTIONAL_FONT)
    endif
  else
@@ -82,7 +91,7 @@
    ifeq (,$(SYS_PROPORTIONAL_FONT))
      SYS_PROPORTIONAL_FONT = $(shell dir=/usr/local/share/fonts ; [ -d $$dir ] && find $$dir -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
    endif
-@@ -901,7 +899,7 @@
+@@ -903,7 +901,7 @@
      INSTALL_FONTS += $(MONOSPACED_FONT)
    endif
  else
@@ -91,9 +100,9 @@
    ifeq (,$(SYS_MONOSPACED_FONT))
      SYS_MONOSPACED_FONT = $(shell dir=/usr/local/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_MONOSPACED_FONT)|head -n 1)
    endif
-@@ -1091,7 +1089,7 @@
-                    cmd-name.h
+@@ -1099,7 +1097,7 @@
  
+ LANGUAGES = $(filter-out en, $(notdir $(wildcard dat/descript/??)))
  SRC_PKG_BASE  := stone_soup
 -SRC_VERSION   := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
 +SRC_VERSION   := $(shell cat util/release_ver)

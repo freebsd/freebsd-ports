@@ -24,7 +24,7 @@
  evap.o: evap/evap.h evap/evap.c
  	@echo '  making evap.o ...'
 -	$(CC) -DP_EVAP_MM_PATH=\"$(BIN)/paiccmm.a\" -c $$CFLAGS evap/evap.c
-+	$(CC) -DP_EVAP_MM_PATH=\"$(DATA)/paiccmm.a\" -c $$CFLAGS evap/evap.c
++	$(CC) -DP_EVAP_MM_PATH=\"$(PREFIX)/libdata/paiccmm.a\" -c $$CFLAGS evap/evap.c
  
  paicc.o: paicc.c evap.o evap/evap.h evap/paicc_pdt_out
 @@ -47,14 +47,10 @@

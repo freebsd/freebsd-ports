@@ -5,7 +5,7 @@
      os_win32=yes
      ;;
 -*linux*)
-+*linux*|*freebsd*)
++*linux*|*dragonfly*|*freebsd*)
      use_builtin_timezone=no
      os_win32=no
      ;;

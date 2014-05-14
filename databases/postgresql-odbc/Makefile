@@ -2,6 +2,7 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	09.01.0200
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	odbc/versions/src
@@ -14,44 +15,28 @@ COMMENT=	PostgreSQL ODBC driver
 
 LICENSE=	LGPL20
 
+USES=		libtool pgsql
 USE_OPENSSL=	yes
-USE_PGSQL=	yes
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	odbc/
-PLIST_FILES=	lib/psqlodbcw.la lib/psqlodbcw.so
+PORTEXAMPELS=	odbc/
+PLIST_FILES=	lib/psqlodbcw.so
 
-.if !defined(WITH_IODBC) || defined(WITH_UNIXODBC)
-# I.e. even if WITH_IODBC is defined
 LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 BUILD_DEPENDS+=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
-.else
-LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
-CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 
-# Modify a suffix in this case
-PKGNAMESUFFIX=	-iodbc
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-DATADIR_1=	${DATADIR}/odbc
+DATADIR_1=	${EXAMPLESDIR}/odbc
 DOCSDIR_1=	${DOCSDIR}/odbc
 post-install:
-.if ${PORT_OPTIONS:MDATA}
-	@${MKDIR} ${DATADIR_1}
-	${INSTALL_DATA} ${WRKSRC}/*.sql ${DATADIR_1}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR_1}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR_1}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR_1}
+	${INSTALL_DATA} ${WRKSRC}/*.sql ${STAGEDIR}${DATADIR_1}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR_1}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR_1}
 
 .include <bsd.port.mk>

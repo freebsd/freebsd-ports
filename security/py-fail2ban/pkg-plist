@@ -199,6 +199,13 @@ bin/fail2ban-server
 %%PYTHON_SITELIBDIR%%/fail2ban/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/fail2ban/tests/utils.py
 %%PYTHON_SITELIBDIR%%/fail2ban/tests/utils.pyc
+man/man1/fail2ban-client.1.gz
+man/man1/fail2ban-regex.1.gz
+man/man1/fail2ban-server.1.gz
+man/man1/fail2ban.1.gz
+man/man5/fail2ban-jail.conf.5.gz
+/var/db/fail2ban/.keep_me
+/var/run/fail2ban/.keep_me
 @dirrm %%PYTHON_SITELIBDIR%%/fail2ban/tests
 @dirrm %%PYTHON_SITELIBDIR%%/fail2ban/server
 @dirrm %%PYTHON_SITELIBDIR%%/fail2ban/client
@@ -208,3 +215,5 @@ bin/fail2ban-server
 @dirrmtry %%ETCDIR%%/fail2ban.d
 @dirrmtry %%ETCDIR%%/action.d
 @dirrmtry %%ETCDIR%%
+@dirrmtry /var/run/fail2ban
+@dirrmtry /var/db/fail2ban

@@ -3,6 +3,7 @@
 
 PORTNAME=	epwutil
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/epwutil/
 
@@ -10,34 +11,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities to manage Japanese EPWING or Electric-Book based CD-ROM
 
 MAKEFILE=	makefile.unx
-MANLANG=	ja
 
 EPWPROGS=	bookinfo catdump squeeze
-EPWDOCS=	epwutil.doc
-EPWDOCDIR=	share/doc/epwutil
 
-NO_STAGE=	yes
+PLIST_FILES=	${EPWPROGS:S|^|bin/|} ${EPWPROGS:S|^|man/ja/man1/|:S|$|.1.gz|}
+PORTDOCS=	epwutil.doc
+
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 .for file in ${EPWPROGS}
-	cd ${WRKSRC};\
-	${INSTALL_PROGRAM} ${file} ${PREFIX}/bin;\
-	${INSTALL_MAN} ${file}.man ${MANPREFIX}/man/${MANLANG}/cat1/${file}.1
-.if !defined(NOMANCOMPRESS)
-	${GZIP_CMD} ${MANPREFIX}/man/${MANLANG}/cat1/${file}.1
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${file}.man \
+		${STAGEDIR}${MANPREFIX}/man/ja/man1/${file}.1
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${EPWDOCDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${EPWDOCS} ${PREFIX}/${EPWDOCDIR}
-.endif
-
-post-install:
-.for file in ${EPWPROGS}
-	${ECHO_CMD} man/${MANLANG}/cat1/${file}.1${MANEXT} >> ${TMPPLIST}
-.endfor
-.if !defined(NOPORTDOCS)
-	${ECHO_CMD} ${EPWDOCDIR}/${EPWDOCS} >> ${TMPPLIST}
-	${ECHO_CMD} "@dirrm ${EPWDOCDIR}" >> ${TMPPLIST}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

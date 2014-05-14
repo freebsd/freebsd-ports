@@ -3,7 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 		libgdal.so:${PORTSDIR}/graphics/gdal \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libiodbc.so:${PORTSDIR}/databases/libiodbc \
+		libodbc.so:${PORTSDIR}/databases/unixODBC \
 		liblas.so:${PORTSDIR}/devel/liblas \
 		libopencv_ml.so:${PORTSDIR}/graphics/opencv
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -33,7 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_core
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 USE_WX=		3.0
-USES=		compiler:features iconv:wchar_t dos2unix
+USES=		compiler:gcc-c++11-lib iconv:wchar_t dos2unix libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WX_UNICODE=	yes
 
@@ -63,15 +63,6 @@ VIGRA_BUILD_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigr
 VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
 
 .include <bsd.port.pre.mk>
-
-# CLANG is not able to handle neither Fortran nor OpenMP
-USE_GCC=	yes
-.if ${COMPILER_FEATURES:Mlibc++}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
-CFLAGS+=	-isystem ${LOCALBASE}/include/c++/v1
-CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
-LDFLAGS+=	-L${LOCALBASE}/lib/c++
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e's|wx-config |${WX_CONFIG} |g' \
@@ -109,6 +100,5 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_saga_api-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_gdi-${PORTVERSION}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/saga/*.so
-	${RM} ${STAGEDIR}${PREFIX}/lib/saga/*.la
 
 .include <bsd.port.post.mk>

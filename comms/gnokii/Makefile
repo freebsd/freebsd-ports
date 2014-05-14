@@ -3,7 +3,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.31
-PORTREVISION=	4
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 GROUPS=		${PORTNAME}
-USES=		gettext gmake pkgconfig tar:bzip2
+USES=		gettext gmake libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 WANT_GNOME=	yes
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=	MSM='@comment '
 . endif
 . if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 PLIST_SUB+=	PGM=''
 . else
 CONFIGURE_ARGS+=	--disable-postgres

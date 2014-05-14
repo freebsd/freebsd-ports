@@ -13,8 +13,7 @@ COMMENT=	LaTeX Development Environment
 LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
 
-USES=		desktop-file-utils pkgconfig qmake
-USE_BZIP2=	yes
+USES=		desktop-file-utils pkgconfig qmake tar:bzip2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_QT4=	gui network xml webkit \
 		moc_build rcc_build uic_build

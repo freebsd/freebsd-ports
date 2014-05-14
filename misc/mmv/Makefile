@@ -11,7 +11,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}_1.01b-15.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Move/Copy/Append/Link multiple files
 
 CFLAGS+=	-DHAS_DIRENT

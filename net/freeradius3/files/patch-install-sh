@@ -1,0 +1,11 @@
+--- ./install-sh.orig	2014-05-13 12:44:10.000000000 -0400
++++ ./install-sh	2014-05-13 12:44:43.000000000 -0400
+@@ -120,7 +120,7 @@
+ 		instcmd=:
+ 		chmodcmd=""
+ 	else
+-		instcmd=mkdir
++		instcmd="mkdir -p"
+ 	fi
+ else
+ 

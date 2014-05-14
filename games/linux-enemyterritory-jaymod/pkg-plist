@@ -2,7 +2,7 @@ bin/et-jaymod
 bin/etded-jaymod
 @unexec if cmp %D/lib/enemyterritory/jaymod/jaymod.cfg %D/lib/enemyterritory/jaymod/jaymod.cfg.sample; then rm -f %D/lib/enemyterritory/jaymod/jaymod.cfg; fi
 %%DATADIR%%/jaymod.cfg.sample
-@exec if [ ! -f %D/lib/enemyterritory/jaymod/jaymod.cfg ] ; then cp -p %D/lib/enemyterritory/jaymod/jaymod.cfg.sample %D/lib/enemyterritory/jaymod/jaymod.cfg; fi
+@exec if [ ! -f %D/lib/enemyterritory/jaymod/jaymod.cfg ] ; then cp -p %D/%F %B/jaymod.cfg; fi
 %%DATADIR%%/%%CLIENT_PK3%%
 %%DATADIR%%/linux/convert_shrub
 %%DATADIR%%/linux/serverctl
@@ -18,7 +18,7 @@ bin/etded-jaymod
 %%DATADIR%%/qagame.mp.i386.so
 @unexec if cmp %D/lib/enemyterritory/jaymod/server.cfg %D/lib/enemyterritory/jaymod/server.cfg.sample; then rm -f %D/lib/enemyterritory/jaymod/server.cfg; fi
 %%DATADIR%%/server.cfg.sample
-@exec if [ ! -f %D/lib/enemyterritory/jaymod/server.cfg ] ; then cp -p %D/lib/enemyterritory/jaymod/server.cfg.sample %D/lib/enemyterritory/jaymod/server.cfg; fi
+@exec if [ ! -f %D/lib/enemyterritory/jaymod/server.cfg ] ; then cp -p %D/%F %B/server.cfg; fi
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/jaymod.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

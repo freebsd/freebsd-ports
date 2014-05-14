@@ -4,6 +4,7 @@ PORTNAME=	foreman
 PORTVERSION=	0.63.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PORTREVISION=	1
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Process manager for applications with multiple components
@@ -15,5 +16,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+PLIST_FILES=	bin/foreman
 
 .include <bsd.port.mk>

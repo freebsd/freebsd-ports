@@ -12,7 +12,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fly a little plane around and shoot things and drop bombs
 
 USE_SDL=	sdl
-USE_DOS2UNIX=	yes
+USES=		dos2unix
+DOS2UNIX_GLOB=	*.cpp
 SUB_FILES=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}

@@ -3,44 +3,45 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.92.79
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 LICENSE=	LGPL20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TDS_VER?=	5.0
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv libtool:keepla pkgconfig
 GNU_GONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env libtool
+USE_AUTOTOOLS=	autoconf:env
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 
 # OPTIONS_DEFINE=	OPENSSL GNUTLS IODBC UNIXODBC MSDBLIB
-OPTIONS_DEFINE=	MSDBLIB ODBCWIDE
+OPTIONS_DEFINE=	MSDBLIB ODBCWIDE ODBC
 
-OPTIONS_SINGLE=	ODBC SSL
-OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
+OPTIONS_SINGLE=	SSL
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 
-OPTIONS_DEFAULT=	OPENSSL IODBC
+OPTIONS_DEFAULT=	OPENSSL
 
 OPENSSL_DESC=	Use OpenSSL
 GNUTLS_DESC=	Use GnuTLS
-IODBC_DESC=	Depend on iodbc
-UNIXODBC_DESC=	Depend on unixodbc
 MSDBLIB_DESC=	MS SQL Server compatibility (breaks databases/sybtcl)
 ODBCWIDE_DESC=	Enable Wide ODBC Support
+ODBC_DESC=	ODBC driver
 
 CONFLICTS=	freetds-0.64.[0-9]
 
@@ -60,21 +61,8 @@ LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .endif
 
-.if ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
-CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MIODBC} || ${PORT_OPTIONS:MUNIXODBC}
-PLIST_SUB+=	ODBC=""
-.else
-PLIST_SUB+=	ODBC="@comment "
-.endif
 
 # We cannot use msdblib-style by default, because port databases/sybtcl
 # relies on sybase-style dblib

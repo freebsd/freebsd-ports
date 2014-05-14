@@ -1,6 +1,6 @@
 include/matheval.h
-info/libmatheval.info
 lib/libmatheval.a
 lib/libmatheval.so
 lib/libmatheval.so.1
+lib/libmatheval.so.1.0.0
 libdata/pkgconfig/libmatheval.pc

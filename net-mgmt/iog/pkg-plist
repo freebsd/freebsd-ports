@@ -1,3 +1,6 @@
+@owner iog
+@group www
+iog/iog
 iog/iog-%%VERSION%%/Artistic
 iog/iog-%%VERSION%%/BER.pm
 iog/iog-%%VERSION%%/README
@@ -6,10 +9,11 @@ iog/iog-%%VERSION%%/howto-iog.html
 iog/iog-%%VERSION%%/in.gif
 iog/iog-%%VERSION%%/index.php
 iog/iog-%%VERSION%%/iog
-@unexec if cmp -s %D/iog/iog-%%VERSION%%/iog.cfg %D/iog/iog-%%VERSION%%/iog.cfg.sample; then rm -f %D/iog/iog-%%VERSION%%/iog.cfg; fi
-iog/iog-%%VERSION%%/iog.cfg.sample
+iog/iog-%%VERSION%%/iog.cfg
+@sample iog/iog-%%VERSION%%/iog.cfg.sample
 iog/iog-%%VERSION%%/ioglogo.gif
 iog/iog-%%VERSION%%/out.gif
-iog/iog
 @dirrmtry iog/iog-%%VERSION%%
 @dirrmtry iog
+@owner
+@group

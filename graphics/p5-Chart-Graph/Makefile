@@ -8,8 +8,10 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl extension for a front-end to gnuplot, XRT, and Xmgrace
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		xmgrace:${PORTSDIR}/math/grace \

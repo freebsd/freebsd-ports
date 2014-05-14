@@ -1,146 +1,87 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
 
-PORTNAME=	OpenCASCADE
-PORTVERSION=	6.6.0
-PORTREVISION=	2
+PORTNAME=	opencascade
+PORTVERSION=	6.7.1
+PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	http://files.opencascade.com/OCCT/OCC_${PORTVERSION}_release/
-DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation
 
 LICENSE=	OCTPL
-LICENSE_NAME=	Open CASCADE Technology Public License
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_NAME=	LGPL21 with exception
+LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		bison shebangfix
+# Check ${WRKSRC}/dox/overview/Overview.md
+# and ${WRKSRC}/dox/dev_guides/building
+USES=		bison cmake compiler dos2unix gmake shebangfix tk
 USE_XORG=	xmu
-SHEBANG_FILES=	adm/cmake/draw.sh env_amk.sh draw.sh xcode.sh env.sh draw_amk.sh	\
-		codeblocks.sh custom.sh custom_amk.sh.in
+DOS2UNIX_FILES=	adm/templates/*
+SHEBANG_FILES=	adm/templates/env.sh.in adm/templates/draw.sh		\
+		adm/templates/custom.sh.in adm/templates/custom.sh.main	\
+		adm/start.tcl draw.sh xcode.sh env.sh custom.sh.in	\
+		gendoc codeblocks.sh
 
-OPTIONS_DEFINE=	TBB VIS OCAF DE DRAW FI QT JAVA DATA DOCS EXAMPLES
+OPTIONS_DEFINE=	TBB VIS
 TBB_DESC=	"Build with TBB"
 VIS_DESC=	"Build Visualizazion module (requires OpenGL, freetype, ftgl and gl2ps)"
-OCAF_DESC=	"Build Application Framework (requires VIS)"
-DE_DESC=	"Build DataExchange module (requires OCAF)"
-DRAW_DESC=	"Build Test Harness (requires DE and TCL)"
-FI_DESC=	"Enable freeimage support"
-QT_DESC=	"Enable QT support"
-JAVA_DESC=	"Enable Java support"
-OPTIONS_DEFAULT=TBB VIS OCAF DE DRAW FI DATA DOCS EXAMPLES
+OPTIONS_DEFAULT=TBB VIS
+OPTIONS_SUB=	yes
 
-WRKSRC=		${WRKDIR}/ros
 REINPLACE_ARGS=	-i ""
-USE_AUTOTOOLS=	aclocal libtoolize autoheader automake
-LIBTOOLIZE_ARGS=--force --copy --automake
-AUTOMAKE_ARGS=	--add-missing --copy --gnu
-ACLOCAL_ARGS=
-CPPFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV=	LOCCROOT=${LOCCROOT}
+CFLAGS+=	-I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${TCL_LIBDIR} -L${TK_LIBDIR}
+CMAKE_ARGS+=	-D3RDPARTY_TCL_INCLUDE_DIR=${TCL_INCLUDEDIR}	\
+		-D3RDPARTY_TCL_LIBRARY=${TCL_LIBDIR}		\
+		-D3RDPARTY_TCL_DLL=libtcl${TCL_VER:C|\.||}	\
+		-DINSTALL_DIR=${OCCROOT}/
 USE_LDCONFIG=	yes
 
 LOCCROOT=	OpenCAS
 OCCROOT=	${PREFIX}/${LOCCROOT}
-PLIST_SUB=	OCCROOT="${LOCCROOT}"
+PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${COMPILER_TYPE}
 
-NO_STAGE=	yes
+TBB_LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb
+TBB_CMAKE_ON=		-DUSE_TBB:BOOL=ON
+
+VIS_CMAKE_ON=		-DUSE_FREEIMAGE:BOOL=ON -DUSE_GL2PS:BOOL=ON
+VIS_USE=		GL=glu
+VIS_LIB_DEPENDS=	libftgl.so:${PORTSDIR}/graphics/ftgl		\
+			libfreetype.so:${PORTSDIR}/print/freetype2	\
+			libgl2ps.so:${PORTSDIR}/print/gl2ps		\
+			libfreeimageplus.so:${PORTSDIR}/graphics/freeimage
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTBB}
-LIB_DEPENDS+=	libtbb.so:${PORTSDIR}/devel/tbb
-CONFIGURE_ARGS+=--with-tbb-include=${LOCALBASE}/include	\
-		--with-tbb-library=${LOCALBASE}/lib
-.endif
-
 .if ${PORT_OPTIONS:MVIS}
-CONFIGURE_ARGS+=--enable-vis			\
-		--with-ftgl=${LOCALBASE}	\
-		--with-freetype=${LOCALBASE}	\
-		--with-gl2ps=${LOCALBASE}
-USE_GL=		glu
-LIB_DEPENDS+=	libftgl.so:${PORTSDIR}/graphics/ftgl		\
-		libfreetype.so:${PORTSDIR}/print/freetype2	\
-		libgl2ps.so:${PORTSDIR}/print/gl2ps
-PLIST_SUB+=	VIS=""
-. if ${PORT_OPTIONS:MOCAF}
-CONFIGURE_ARGS+=--enable-caf
-PLIST_SUB+=	OCAF=""
-.  if ${PORT_OPTIONS:MDE}
-CONFIGURE_ARGS+=--enable-dxe
-PLIST_SUB+=	DE=""
-.   if ${PORT_OPTIONS:MDRAW}
-CONFIGURE_ARGS+=--enable-draw			\
-		--with-tcl=${TCL_LIBDIR}	\
-		--with-tk=${TK_LIBDIR}
-USES+=		tk
-LIB_DEPENDS+=	libitcl.so.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
-		libTix${TIX_VER}.so:${PORTSDIR}/x11-toolkits/tix
-ITCL_VER=	3
-TIX_VER=	8.4.3
-TIX_MM=		8.4.3
-PLIST_SUB+=	DRAW=""
-.   else
-CONFIGURE_ARGS+=--without-tcl --disable-draw
-PLIST_SUB+=	DRAW="@comment "
-.   endif
-.  else
-CONFIGURE_ARGS+=--disable-dxe --without-tcl --disable-draw
-PLIST_SUB+=	DRAW="@comment " DE="@comment "
-.  endif
-. else
-CONFIGURE_ARGS+=--disable-caf --without-tcl --disable-draw --disable-dxe
-PLIST_SUB+=	DE="@comment " DRAW="@comment " OCAF="@comment "
-. endif
-.else
-CONFIGURE_ARGS+=--disable-vis --without-tcl --disable-draw --disable-dxe --disable-caf
-PLIST_SUB+=	VIS="@comment " DRAW="@comment " DE="@comment " OCAF="@comment "
+CMAKE_ARGS+=	-D3RDPARTY_FREETYPE_DIR=${LOCALBASE}	\
+		-D3RDPARTY_FREEIMAGE_DIR=${LOCALBASE}	\
+		-D3RDPARTY_GL2PS_DIR=${LOCALBASE}	\
+		-D3RDPARTY_TBB_DIR=${LOCALBASE}		\
+		-D3RDPARTY_TBB_DLL=${LOCALBASE}/lib	\
+		-D3RDPARTY_TBB_MALLOC_DLL=${LOCALBASE}/lib
 .endif
 
-.if ${PORT_OPTIONS:MFI}
-LIB_DEPENDS+=	libfreeimageplus.so:${PORTSDIR}/graphics/freeimage
-CONFIGURE_ARGS+=--with-freeimage=${LOCALBASE}
-.else
-PLIST_SUB+=	FI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MQT}
-USE_QT4=	corelib gui
-CONFIGURE_ARGS+=--with-qt=${LOCALBASE}
-LDFLAGS+=	-L${QT_LIBDIR}
-.else
-PLIST_SUB+=	QT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MJAVA}
-USE_JAVA=	yes
-JAVA_VERSION=	1.6+
-CONFIGURE_ARGS+=--with-java-include=${JAVA_HOME}/include
-.else
-CONFIGURE_ARGS+=--without-java-include
-PLIST_SUB+=	JAVA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDATA}
-PORTDATA=	*
-.endif
 .if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-PORTEXAMPLES=	*
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash		\
+		doxygen:${PORTSDIR}/devel/doxygen	\
+		dot:${PORTSDIR}/graphics/graphviz	\
+		pdflatex:${PORTSDIR}/print/teTeX-base	\
+		inkscape:${PORTSDIR}/graphics/inkscape
+RUN_DEPENDS+=	${LOCALBASE}/www/MathJax/MathJax.js:${PORTSDIR}/www/mathjax
 .endif
 
-F_MALLOC=	OSD/OSD_signal_WNT.cxx OSD/OSD_Csharedmemory.c OSD/OSD_MemInfo.cxx	\
-		OSD/OSD_Thread.cxx OSD/OSD.cxx OSD/OSD_SharedLibrary.cxx		\
-		OSD/OSD_MemInfo.cxx MMgt/MMgt_StackManager.cxx Image/Image_PixMap.cxx	\
-		Standard/Standard_MMgrOpt.cxx Standard/Standard.cxx StepFile/step.yacc	\
-		StepFile/recfile.pc ExprIntrp/ExprIntrp.tab.c
+.if ${ARCH} == "i386"
+BITS=	32
+.else
+BITS=	64
+.endif
 
 pre-everything::
 	@${ECHO_MSG}
@@ -149,38 +90,55 @@ pre-everything::
 	@${ECHO_MSG}
 
 pre-configure:
-.if ${PORT_OPTIONS:MQT}
-	${REINPLACE_CMD} -e 's|$$qt/include|${QT_INCDIR}|g' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|' ${WRKSRC}/gendoc
+.for mod in TKDraw TKViewerTest
+	${REINPLACE_CMD} -e 's|tcl8.6|tcl${TCL_VER:C|\.||}|;s|tk8.6|tk${TK_VER:C|\.||}|'	\
+		${WRKSRC}/adm/cmake/${mod}/CMakeLists.txt
+.endfor
+.for es in env.sh adm/templates/env.sh.in
+	${REINPLACE_CMD} -e 's|lin|bsd|' ${WRKSRC}/${es}
+.endfor
+
+post-build:
+.if ${PORT_OPTIONS:MDOCS}
+	(cd ${WRKSRC} && ./gendoc -overview)
 .endif
-	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${F_MALLOC:C|^|${WRKSRC}/src/|}
 
 post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include/OpenCASCADE
-	${RM} -f ${OCCROOT}/src/OS/*.orig ${OCCROOT}/src/DrawResources/*.orig	\
-		${PREFIX}/include/OpenCASCADE/Standard_CLocaleSentry.hxx.orig
-	cd ${WRKSRC}/src && ${COPYTREE_SHARE} UnitsAPI ${OCCROOT}/src
-.if ${PORT_OPTIONS:MDATA}
-	${MKDIR} ${DATADIR}
-. for dir in data tests
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR}
-. endfor
-.endif
+	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/bin/DRAWEXE	\
+		${STAGEDIR}${PREFIX}/bin/
+	(cd ${STAGEDIR}${PREFIX}/bin &&							\
+	${LN} -sf DRAWEXE ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/bin/DRAWEXE)
+	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/lib/lib*.so	\
+		${STAGEDIR}${PREFIX}/lib/
+	(cd ${STAGEDIR}${PREFIX}/lib							\
+	&& for l in lib*.so; do								\
+	${MV} $${l} $${l}.0;								\
+	${LN} -sf $${l}.0 $${l};							\
+	${LN} -sf $${l}.0 ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/lib/$${l};	\
+	done)
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/OpenCASCADE
+	(cd ${STAGEDIR}${OCCROOT}/inc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/OpenCASCADE)
+	${RM} -rf ${STAGEDIR}${OCCROOT}/inc
+	${MKDIR} ${STAGEDIR}${OCCROOT}/inc
+	(cd ${STAGEDIR}${PREFIX}/include/OpenCASCADE		\
+	&& for i in *; do					\
+	${LN} -sf $${i} ${STAGEDIR}${OCCROOT}/inc/$${i};	\
+	done)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} tests ${STAGEDIR}${OCCROOT})
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/overview && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/latex
 .endif
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
 	${MKDIR} /tmp/testOCC
 	bash -c "\
-	cd ${OCCROOT} && . ${OCCROOT}/env_amk.sh &&	\
-	CSF_TestScriptsPath=${DATADIR}/tests	\
-	CSF_TestDataPath=${DATADIR}/data	\
+	cd ${OCCROOT} && . ${OCCROOT}/env.sh &&	\
+	CSF_TestScriptsPath=${OCCROOT}/tests	\
+	CSF_TestDataPath=${OCCROOT}/data	\
 	DRAWEXE -f ${FILESDIR}/regtest "
 .endif
 

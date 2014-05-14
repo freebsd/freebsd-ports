@@ -1,0 +1,42 @@
+Compatibility with Ruby < 2.0, where RbConfig::CONFIG['rubyarchhdrdir'] does not exist.
+Submitted upstream: https://github.com/dajobe/redland-bindings/pull/8
+
+Fetch redland.so's suffix from the right variable.
+Submitted upstream: https://github.com/dajobe/redland-bindings/pull/9
+--- configure.orig	2014-05-11 17:39:24.000000000 +0300
++++ configure	2014-05-11 17:39:27.000000000 +0300
+@@ -12297,6 +12297,7 @@
+       RUBY_ARCHDIR=`$RUBY -rrbconfig -e "print RbConfig::CONFIG['archdir']"`
+   ruby_install_dir_config=`$RUBY -rrbconfig -e "puts RbConfig::CONFIG['$ruby_install_dir_variable']"`
+   ruby_header_dir_config=`$RUBY -rrbconfig -e "puts RbConfig::CONFIG['rubyhdrdir']"`
++  ruby_arch_config=`$RUBY -rrbconfig -e "puts RbConfig::CONFIG['arch']"`
+   ruby_arch_header_dir_config=`$RUBY -rrbconfig -e "puts RbConfig::CONFIG['rubyarchhdrdir']"`
+   ruby_arch_install_dir_config=`$RUBY -rrbconfig -e "puts RbConfig::CONFIG['$ruby_arch_install_dir_variable']"`
+   librubyarg_shared=`$RUBY -rrbconfig -e "puts RbConfig::CONFIG['LIBRUBYARG_SHARED']"`
+@@ -12328,9 +12329,15 @@
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking Ruby headers dir" >&5
+ $as_echo_n "checking Ruby headers dir... " >&6; }
+   if test "X$ruby_header_dir_config" != "Xnil" -a "X$ruby_header_dir_config" != "X"; then
+-    RUBY_INCLUDES="$RUBY_INCLUDES -I$ruby_header_dir_config -I$ruby_arch_header_dir_config"
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $RUBY_INCLUDES from RbConfig::CONFIG rubyhdrdir and rubyarchhdrdir" >&5
++    if test -d "$ruby_arch_header_dir_config"; then
++      RUBY_INCLUDES="$RUBY_INCLUDES -I$ruby_header_dir_config -I$ruby_arch_header_dir_config"
++      { $as_echo "$as_me:${as_lineno-$LINENO}: result: $RUBY_INCLUDES from RbConfig::CONFIG rubyhdrdir and rubyarchhdrdir" >&5
+ $as_echo "$RUBY_INCLUDES from RbConfig::CONFIG rubyhdrdir and rubyarchhdrdir" >&6; }
++    elif test -d "$ruby_header_dir_config/$ruby_arch_config"; then
++      RUBY_INCLUDES="$RUBY_INCLUDES -I$ruby_header_dir_config -I$ruby_header_dir_config/$ruby_arch_config"
++      { $as_echo "$as_me:${as_lineno-$LINENO}: result: $RUBY_INCLUDES from RbConfig::CONFIG rubyhdrdir and arch" >&5
++$as_echo "$RUBY_INCLUDES from RbConfig::CONFIG rubyhdrdir and arch" >&6; }
++    fi
+   else
+     if test -r "$RUBY_ARCHDIR/ruby.h"; then
+       RUBY_INCLUDES="$RUBY_INCLUDES -I$RUBY_ARCHDIR"
+@@ -12371,7 +12378,7 @@
+   as_fn_error $? "No such RUBY linking type $ruby_linking" "$LINENO" 5
+   ;;
+   esac
+-  RUBY_SO_SUFFIX=$php_linking
++  RUBY_SO_SUFFIX=$ruby_linking
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking Ruby Linking" >&5
+ $as_echo_n "checking Ruby Linking... " >&6; }
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: compile '$RUBY_CFLAGS' link '$RUBY_LDFLAGS' suffix $RUBY_SO_SUFFIX" >&5

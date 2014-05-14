@@ -3,7 +3,7 @@
 
 PORTNAME=	enscript
 PORTVERSION=	1.6.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	print
 MASTER_SITES=	http://www.codento.com/people/mtr/genscript/
 PKGNAMESUFFIX=	-${PAPERSIZE}
@@ -12,14 +12,15 @@ DISTNAME=	enscript-${PORTVERSION}
 MAINTAINER?=	rafan@FreeBSD.org
 COMMENT=	ASCII to PostScript filter
 
+USES=		shebangfix perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
-NO_STAGE=	yes
+SHEBANG_FILES=	scripts/diffpp.in scripts/sliceprint.in
+perl_OLD_CMD=	@PERLPROG@
 
 CONFLICTS?=	enscript-a4-* enscript-letterdj-*
 
 INFO=		enscript
-MAN1=		diffpp.1 enscript.1 sliceprint.1 states.1
 
 PAPERSIZE?=	letter
 PS?=		Letter

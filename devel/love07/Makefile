@@ -3,7 +3,7 @@
 
 PORTNAME=	love
 PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel games
 MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
 PORTSCOUT=	limit:^0\.7\.
 
-USES=		gmake openal
+USES=		gmake openal dos2unix
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 USE_LUA=	5.1+
@@ -34,7 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib \
 		--program-suffix=07
 WRKSRC=		${WRKDIR}/love-HEAD
-USE_DOS2UNIX=	yes
+DOS2UNIX_FILES=	src/modules/graphics/opengl/GLee.h
 
 PLIST_FILES=	bin/love07
 

@@ -15,9 +15,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libftgl.so:${PORTSDIR}/graphics/ftgl
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
 USE_SDL=	sdl image
 USE_GL=		gl glu
 

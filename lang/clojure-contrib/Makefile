@@ -8,6 +8,9 @@ MASTER_SITES=	http://cloud.github.com/downloads/clojure/clojure-contrib/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Extensions and enhancements to the Clojure libraries
 
+DEPRECATED=	monolithic contrib library is obsolete
+EXPIRATION_DATE=2014-06-14
+
 LICENSE=	EPL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/clojure:${PORTSDIR}/lang/clojure

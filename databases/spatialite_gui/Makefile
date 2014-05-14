@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Graphical User Interface (GUI) tool supporting SpatiaLite
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	libgaiagraphics.so:${PORTSDIR}/graphics/libgaiagraphics \
 		libfreexl.so:${PORTSDIR}/textproc/freexl \
 		libspatialite.so:${PORTSDIR}/databases/spatialite
@@ -28,5 +30,4 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/spatialite_gui
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

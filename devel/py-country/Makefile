@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	country
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 MASTER_SITE_SUBDIR=source/p/pycountry
@@ -12,7 +12,7 @@ DISTNAME=	pycountry-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python API for ISO country, subdivision, language and currency
 
-USES=		gettext:build
+USES=		zip gettext:build
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

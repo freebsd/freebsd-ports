@@ -3,7 +3,7 @@
 
 PORTNAME=	modula3
 PORTVERSION=	5.8.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	https://modula3.elegosoft.com/cm3/releng/ \
 		http://downloads.dragonlace.net/m3/ \
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COM_LICENSE
 LICENSE_NAME=	CM3 License defined by DEC and Critical Mass copyrights
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
 NEWBOOTDIR=	${WRKDIR}/new-bootstrap/bootstrap
 SRCDISTFILE=	cm3-src-all-${PORTVERSION}-REL.tgz
@@ -28,8 +28,7 @@ DST2=		m3-bootstrap.x86_64.DRAGONFLY.36.tar.bz2:boot
 ONLY_FOR_ARCHS=		amd64
 CONFLICTS_INSTALL=	cvsup-*
 
-USES=		gmake
-USE_PGSQL=	yes
+USES=		gmake pgsql
 USE_XORG=	xaw xmu xext xt sm ice x11
 USE_GL=		gl glu
 USE_GCC=	any

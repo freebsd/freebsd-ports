@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	superdatetime
-PORTVERSION=	5.9.14
+PORTVERSION=	5.9.16
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	squeezeboxserver-
@@ -17,15 +17,15 @@ RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 PROJECTHOST=	grebrown-projects
 
 USES=		zip
-NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SLIMDIR?=	squeezeboxserver
 PLIST_SUB+=	SLIMDIR=${SLIMDIR}
 
 do-install:
-	${MKDIR} ${PREFIX}/${SLIMDIR}/Plugins/SuperDateTime
-	${CP} -R ${WRKSRC}/SuperDateTime/* ${PREFIX}/${SLIMDIR}/Plugins/SuperDateTime
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SLIMDIR}/Plugins/SuperDateTime
+	${CP} -R ${WRKSRC}/SuperDateTime/* ${STAGEDIR}${PREFIX}/${SLIMDIR}/Plugins/SuperDateTime
 
 .include <bsd.port.mk>

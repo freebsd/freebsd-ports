@@ -1,5 +1,3 @@
-lib/geany/geniuspaste.a
-lib/geany/geniuspaste.la
 lib/geany/geniuspaste.so
 %%DOCSDIR%%/geniuspaste/AUTHORS
 %%DOCSDIR%%/geniuspaste/COPYING

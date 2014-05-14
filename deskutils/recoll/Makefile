@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.19.10
-PORTREVISION=	1
+PORTVERSION=	1.19.13
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
@@ -11,8 +10,6 @@ MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Personal full text search package, based on Xapian
 
 LICENSE=	GPLv2
-
-BROKEN=		Unfetchable
 
 BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
@@ -109,9 +106,13 @@ post-patch:
 		${WRKSRC}/recollinstall.in
 
 post-install:
+	@(cd ${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR}/recoll && ${RM} *.pyc)
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/recoll/librecoll.so.${VERSION}
-.for l in recoll rclextract
+
+.if ${PORT_OPTIONS:MPYTHON}
+. for l in recoll rclextract
 	${STRIP_CMD} ${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR}/recoll/${l}.so
-.endfor
+. endfor
+.endif
 
 .include <bsd.port.mk>

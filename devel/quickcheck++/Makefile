@@ -10,25 +10,23 @@ MASTER_SITE_SUBDIR=	tota/${PORTNAME}
 DISTNAME=	quickcheck_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A tool for testing C++ programs automatically, inspired by QuickCheck
+COMMENT=	Tool for testing C++ programs automatically, inspired by QuickCheck
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 NO_BUILD=	yes
 
 PORTDOCS=	COPYRIGHT README
 PORTEXAMPLES=	examples.cc
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOCS DOXYGEN
 DOXYGEN_DESC=	Build documentation with doxygen
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS) && ${PORT_OPTIONS:MDOXYGEN}
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PORTDOCS+=	html
 
@@ -37,20 +35,16 @@ pre-install:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/include/quickcheck
-	@${INSTALL_DATA} ${WRKSRC}/quickcheck/* ${PREFIX}/include/quickcheck
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/quickcheck
+	${INSTALL_DATA} ${WRKSRC}/quickcheck/* ${STAGEDIR}${PREFIX}/include/quickcheck
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in COPYRIGHT README
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.if defined(WITH_DOXYGEN)
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOXYGEN}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 .endif
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

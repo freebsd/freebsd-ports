@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	jail-primer
-PORTVERSION=	0.0
+PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	jail-primer@a1poweruser.com
 COMMENT=	Third Generation Jail System Solution
 
-USE_BZIP2=	yes
+LICENSE=	BSD2CLAUSE
+
+USES=		tar:bzip2
 NO_BUILD=	yes
 
 do-install:

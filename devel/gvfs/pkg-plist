@@ -26,9 +26,11 @@ lib/gio/modules/libgvfsdbus.so
 %%AVAHI%%lib/libgvfscommon-dnssd.la
 %%AVAHI%%lib/libgvfscommon-dnssd.so
 %%AVAHI%%lib/libgvfscommon-dnssd.so.0
+%%AVAHI%%lib/libgvfscommon-dnssd.so.0.0.0
 lib/libgvfscommon.la
 lib/libgvfscommon.so
 lib/libgvfscommon.so.0
+lib/libgvfscommon.so.0.0.0
 libexec/gvfsd-afp
 libexec/gvfsd-afp-browse
 %%FUSE%%libexec/gvfs-fuse-daemon

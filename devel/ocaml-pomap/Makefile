@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pomap
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/pomap/downloads/
 PKGNAMEPREFIX=	ocaml-
@@ -29,7 +29,6 @@ EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -42,14 +41,15 @@ PLIST_DIRSTRY+=	${OCAML_EXAMPLESDIR:S,^${PREFIX}/,,}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS.txt CHANGES.txt README.md
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

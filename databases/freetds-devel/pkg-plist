@@ -34,13 +34,16 @@ lib/libct.a
 lib/libct.la
 lib/libct.so
 lib/libct.so.4
+lib/libct.so.4.0.0
 lib/libsybdb.a
 lib/libsybdb.la
 lib/libsybdb.so
 lib/libsybdb.so.5
-%%ODBC%%lib/libtdsodbc.so.0
-%%ODBC%%lib/libtdsodbc.so
-%%ODBC%%lib/libtdsodbc.la
-%%ODBC%%lib/libtdsodbc.a
-%%ODBC%%bin/bsqlodbc
+lib/libsybdb.so.5.0.0
+lib/libtdsodbc.so.0.0.0
+lib/libtdsodbc.so.0
+lib/libtdsodbc.so
+lib/libtdsodbc.la
+lib/libtdsodbc.a
+bin/bsqlodbc
 @dirrm etc/freetds

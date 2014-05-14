@@ -2,35 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	flexdock
-PORTVERSION=	1.1
+PORTVERSION=	1.2.4
 CATEGORIES=	devel java
-MASTER_SITES=	http://java.net/downloads/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	http://forge.scilab.org/index.php/p/${PORTNAME}/downloads/get/
 
-MAINTAINER=	otacilio.neto@bsd.com.br
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Swing windowing and docking framework
 
-USES=		zip
 USE_ANT=	yes
 USE_JAVA=	yes
-
-NO_WRKSUBDIR=	yes
 
 ALL_TARGET=	dist
 
 PLIST_FILES=	${JAVAJARDIR:C^${PREFIX}/^^}/${PORTNAME}.jar
 PORTDOCS=	"User Guide.pdf" api
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_DATA}	${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation files..."
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/build/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
-	@${ECHO_MSG} " [ DONE ]"
-.endif
+do-install:
+	${INSTALL_DATA}	${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/build/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

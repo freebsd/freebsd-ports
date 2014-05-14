@@ -3,6 +3,7 @@
 
 PORTNAME=	pocketsphinx
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
@@ -11,12 +12,11 @@ COMMENT=	Speech recognition system
 
 LIB_DEPENDS=	libsphinxad.so:${PORTSDIR}/audio/sphinxbase
 
-USES=		gmake pathfix pkgconfig
-USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-
-CONFIGURE_ARGS+=	--without-python
+USES=		gmake pathfix pkgconfig libtool
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--without-python
 CONFIGURE_ENV+=	HAVE_DOXYGEN=no
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -28,5 +28,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|^([[:space:]]+programs )\\$$|\1|;' \
 		-e '/[[:space:]]+gst-plugin$$/D;' \
 		${WRKSRC}/src/Makefile.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpocketsphinx.so
 
 .include <bsd.port.mk>

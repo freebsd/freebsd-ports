@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rawdog
-PORTVERSION=	2.18
+PORTVERSION=	2.19
 CATEGORIES=	news python
 MASTER_SITES=	http://offog.org/files/ \
-		ftp://ftp.i-scream.org/pub/offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
 
 MAINTAINER=	tdb@FreeBSD.org
@@ -17,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedpars
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	README
 

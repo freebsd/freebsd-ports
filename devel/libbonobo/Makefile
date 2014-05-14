@@ -4,7 +4,7 @@
 
 PORTNAME=	libbonobo
 PORTVERSION=	2.32.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,13 +12,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Component and compound document system for GNOME2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
-USES=		bison gettext pathfix pkgconfig gmake perl5
+USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig perl5
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack libxml2 orbit2 referencehack

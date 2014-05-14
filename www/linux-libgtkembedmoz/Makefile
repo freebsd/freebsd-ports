@@ -13,9 +13,8 @@ COMMENT=	HTML rendering library
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
-USES=		uidfix
+USES=		uidfix tar:bzip2
 USE_LINUX=	yes
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/nvu-1.0
 PLIST_SUB=	MOZLIBDIR=${MOZLIBDIR}

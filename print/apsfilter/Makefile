@@ -19,7 +19,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		hpijs:${PORTSDIR}/print/hpijs
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_SUBMAKE=	yes
 WRKSRC=		${WRKDIR}/apsfilter
 HAS_CONFIGURE=	yes
@@ -47,14 +47,11 @@ ATALK_DESC=	remote printing on AppleTalk remote printer
 SAMBA_DESC=	remote printing on Windows remote printer
 COMPRESS_DESC=	print compressed documents
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-MAKE_ARGS=	-DDOCS
+DOCS_MAKE_ARGS=	-DDOCS
 PORTDOCS=	ANNOUNCE FAQ HOWTO-BUGREPORTS apsfilter4.png \
 		README.BSD handbook.html README.TeX paper
-.endif
+
+.include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MX11)
 # XXX Hack.  If you've done something like "-DWITHOUT_X11" on the command line
@@ -129,10 +126,8 @@ RUN_DEPENDS+=	${_DEPENDS_$D}
 RUN_DEPENDS+=	${_DEPENDS_CONVERT}
 .endif
 
-MAN1=		apsfilter.1 aps2file.1 apsfilter-bug.1 apspreview.1
-MAN5=		apsfilterrc.5
-
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	${RM} -f ${STAGEDIR}${PREFIX}/etc/apsfilter/basedir
+	${LN} -sfn ${PREFIX}/share/apsfilter ${STAGEDIR}${PREFIX}/etc/apsfilter/basedir
 
 .include <bsd.port.mk>

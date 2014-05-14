@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Open Source Geography Education application
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	mspack:${PORTSDIR}/archivers/libmspack \
 		spatialite:${PORTSDIR}/databases/spatialite \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
@@ -45,7 +47,6 @@ PLIST_FILES=	bin/LibreAtlas
 DESKTOP_ENTRIES="LibreAtlas" "${COMMENT}" "" "LibreAtlas" \
 		"Graphics;Viewer;" true
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|$${WX_CONFIG}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \

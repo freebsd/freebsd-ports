@@ -12,7 +12,7 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Drawing physics-based puzzle game
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 desktop-file-utils
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image
 INSTALLS_ICONS=	yes
@@ -24,11 +24,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DINSTALL_BASE_PATH=\"\\\"${DATADIR}\\\"\"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	MOREFPS
+OPTIONS_DEFAULT=MOREFPS
 MOREFPS_DESC=	Smoother graphics support
 
-OPTIONS_DEFAULT=	MOREFPS
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -42,7 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^Exec=.*|Exec=${PORTNAME}|; /^X-Icon-Path/ d' \
 		${WRKSRC}/data/${PORTNAME}.desktop
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
+post-build:
+	${STRIP_CMD} ${WRKSRC}/${PORTNAME}
 
 .include <bsd.port.mk>

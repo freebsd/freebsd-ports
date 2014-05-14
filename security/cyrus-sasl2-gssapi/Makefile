@@ -2,9 +2,10 @@
 
 PORTNAME=	gssapi
 PORTVERSION=	2.1.26
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
+		http://cyrusimap.org/releases/
 PKGNAMEPREFIX=	cyrus-sasl-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
@@ -21,8 +22,8 @@ DISTINFO_FILE=	${CYRUS_SASL2_DIR}/distinfo
 PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKSRC}/plugins
 
+USES=		libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
@@ -62,9 +63,9 @@ MIT_LIB_DEPENDS=	libkrb5support.so:${PORTSDIR}/security/krb5
 MIT_LDFLAGS=		"-R${KRB5_HOME}/lib"
 
 PLIST_FILES=	lib/sasl2/libgssapiv2.a \
-		lib/sasl2/libgssapiv2.la \
 		lib/sasl2/libgssapiv2.so \
-		lib/sasl2/libgssapiv2.so.3
+		lib/sasl2/libgssapiv2.so.3 \
+		lib/sasl2/libgssapiv2.so.3.0.0
 
 .if !defined(HEIMDAL_HOME)
 HEIMDAL_HOME=	${PREFIX}
@@ -77,9 +78,9 @@ KRB5_HOME=	${PREFIX}
 
 .if ${PORT_OPTIONS:MHEIMDAL}
 PLIST_FILES+=	lib/sasl2/libgs2.a \
-		lib/sasl2/libgs2.la \
 		lib/sasl2/libgs2.so \
-		lib/sasl2/libgs2.so.3
+		lib/sasl2/libgs2.so.3 \
+		lib/sasl2/libgs2.so.3.0.0
 .endif
 
 .if ${OPENSSLBASE} == /usr

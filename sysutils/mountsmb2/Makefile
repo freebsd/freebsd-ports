@@ -7,7 +7,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lippe
 
-MAINTAINER=	citycat4@ngs.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMB/CIFS shares mounting scripts to do it at login
 
 RUN_DEPENDS=	nbtscan:${PORTSDIR}/net-mgmt/nbtscan \

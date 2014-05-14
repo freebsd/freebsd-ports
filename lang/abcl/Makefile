@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	abcl
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://abcl.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	fischer.frank@gmail.com
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An implementation of ANSI Common Lisp in Java
 
 PLIST_FILES=	share/java/classes/abcl.jar \

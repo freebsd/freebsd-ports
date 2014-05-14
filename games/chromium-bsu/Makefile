@@ -25,36 +25,29 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	*
 PORTDATA=	*
 
-MAN6=		chromium-bsu.6
+OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_SINGLE=	AUDIO VIDEO
+OPTIONS_SINGLE_AUDIO=	OPENAL SDL_MIXER
+OPTIONS_SINGLE_VIDEO=	SDL GLUT
+OPTIONS_DEFAULT=	OPENAL SDL
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	SDL_MIXER GLUT NLS DOCS
-SDL_MIXER_DESC=	Use SDL_mixer instead of OpenAL for audio
-GLUT_DESC=	Use GLUT instead of SDL for video
+VIDEO_DESC=	Video output selection
+AUDIO_DESC=	Audio output selection
+OPENAL_DESC=	Use OpenAL for audio
+SDL_MIXER_DESC=	Use SDL_mixer for audio
+SDL_DESC=	Use SDL for video output
+GLUT_DESC=	Use GLUT for video output
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGLUT}
-USE_GL+=	glut
-CONFIGURE_ARGS+=--disable-sdl --disable-sdlimage
-.else
-USE_SDL+=	sdl image
-CONFIGURE_ARGS+=--disable-glut
-.endif
-
-.if ${PORT_OPTIONS:MSDL_MIXER}
-USE_SDL+=	mixer
-CONFIGURE_ARGS+=--disable-openal
-.else
-USES+=		openal:al,alut
-CONFIGURE_ARGS+=--disable-sdlmixer
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+SDL_MIXER_USE=		SDL=mixer
+SDL_MIXER_CONFIGURE_ENABLE=sdlmixer
+OPENAL_USES=		openal:al,alut
+OPENAL_CONFIGURE_ENABLE=openal
+GLUT_USE=		GL=glut
+GLUT_CONFIGURE_ENABLE=	glut
+SDL_USE=		SDL=sdl,image
+SDL_CONFIGURE_ENABLE=	sdl sdlimage
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

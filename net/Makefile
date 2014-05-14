@@ -243,7 +243,6 @@
     SUBDIR += iodine
     SUBDIR += ip6_int
     SUBDIR += ipa_ipfw
-    SUBDIR += ipfw-graph
     SUBDIR += ipgrab
     SUBDIR += iplog
     SUBDIR += ipsorc
@@ -843,6 +842,7 @@
     SUBDIR += pecl-oauth
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
+    SUBDIR += pecl-yp
     SUBDIR += pen
     SUBDIR += pfflowd
     SUBDIR += pfinger
@@ -1034,6 +1034,7 @@
     SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-iproto
     SUBDIR += rubygem-macaddr
+    SUBDIR += rubygem-netrc
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-network_interface

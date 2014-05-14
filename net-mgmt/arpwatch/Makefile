@@ -6,14 +6,13 @@ PORTVERSION=	2.1.a15
 PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+		GENTOO/distfiles
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet

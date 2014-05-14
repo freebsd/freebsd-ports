@@ -30,9 +30,10 @@ USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
-		--disable-xpcom --disable-sdl-ttf --disable-pulse \
-		--disable-alsa --disable-dbus --disable-python
+CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal
+CONFIGURE_ARGS+=--disable-alsa --disable-dbus --disable-docs \
+		--disable-libvpx --disable-pulse --disable-python \
+		--disable-sdl-ttf --disable-xpcom
 
 CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
 
@@ -62,6 +63,7 @@ MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
 .endif
 
 .if ${PORT_OPTIONS:MX11}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/X:${PORTSDIR}/x11-servers/xorg-server
 VBOX_WITH_X11=	1
 USE_XORG=	xcursor xmu inputproto xorg-server xrandr
 .else

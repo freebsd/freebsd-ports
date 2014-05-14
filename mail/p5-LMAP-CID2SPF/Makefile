@@ -2,19 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	LMAP-CID2SPF
-DISTVERSION=	0.9
+PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.baschny.de/spf/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Module to convert between Microsoft's Caller-ID and SPF		#'
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		perl5 shebangfix
 USE_PERL5=	configure
-CONFIGURE_SCRIPT=Makefile.PL
+
+SHEBANG_FILES=	cid2spf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${SITE_PERL}/LMAP

@@ -29,7 +29,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-samba=${LOCALBASE}
-CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""
+CONFIGURE_ENV=	ac_cv_path_DOXYGEN="" \
+		PYTHON_CONFIG=${LOCALBASE}/bin/python${PYTHON_VER}-config
 SHEBANG_FILES=	libmapi/conf/mparse.pl \
 		script/check_exchange \
 		setup/openchange_newuser \

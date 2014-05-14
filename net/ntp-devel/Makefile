@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p440
+PORTVERSION=	4.2.7p443
 CATEGORIES=	net ipv6
 PKGNAMESUFFIX=	-devel
-MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
-		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
+MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ntp-dev/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/ntp-dev/
 DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/.r/-rc/}

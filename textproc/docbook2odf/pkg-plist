@@ -367,4 +367,3 @@ share/pixmaps/docbook2odf.png
 @dirrm %%DATADIR%%/tests/graphics
 @dirrm %%DATADIR%%/tests
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

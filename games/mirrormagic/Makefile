@@ -3,7 +3,7 @@
 
 PORTNAME=	mirrormagic
 PORTVERSION=	2.0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -13,16 +13,30 @@ COMMENT=	Arcade style game with stereo sound for X Window System
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \
 		X11_PATH="${LOCALBASE}"
-WANT_SDL=	yes
+USE_GCC=	any # doesn't start otherwise (UB?)
+
+PORTDATA=	*
+PORTDOCS=	*
+
+SCOREDIR=	/var/games/${PORTNAME}
+
+SUB_FILES=	pkg-deinstall pkg-install
+SUB_LIST=	SCOREDIR="${SCOREDIR}"
+
+DESKTOP_ENTRIES="Mirror Magic" \
+		"" \
+		"" \
+		"${PORTNAME}" \
+		"Game;LogicGame;" \
+		""
 
 OPTIONS_DEFINE=	SDL
-OPTIONS_DEFAULT=	SDL
+OPTIONS_DEFAULT=SDL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}
@@ -43,17 +57,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|inline||' ${WRKSRC}/src/libgame/*.[ch]
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mirrormagic ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${TAR} -C ${WRKSRC} -cf - graphics levels music scores sounds | \
-		${TAR} -C ${DATADIR} -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	@${CHMOD} 777 ${DATADIR}/scores
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/mirrormagic ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics levels music scores sounds" \
+		${STAGEDIR}${DATADIR}
+	${RMDIR} ${STAGEDIR}${DATADIR}/scores
+	${LN} -s ${SCOREDIR} ${STAGEDIR}${DATADIR}/scores
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CHANGES CREDITS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

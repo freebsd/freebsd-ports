@@ -11,7 +11,7 @@ DISTNAME=	moon-lander_${PORTVERSION}.orig
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Land a spacecraft on the moon
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_SDL=	mixer image sdl
 

@@ -13,4 +13,8 @@ NOTE: This port has been compiled with a default pwcheck_method of
       Cyrus-IMAPd 2.X port.  You should also check the
       %%PREFIX%%/lib/sasl2/*.conf files for the correct
       pwcheck_method.
+      If you want to use GSSAPI mechanism, install
+      ports/security/cyrus-sasl2-gssapi.
+      If you want to use LDAP auxprop plugin, install
+      ports/security/cyrus-sasl2-ldapdb.
 

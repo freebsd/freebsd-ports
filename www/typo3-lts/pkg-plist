@@ -2245,6 +2245,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Cache/Exception/InvalidCacheException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Cache/Exception/InvalidDataException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Cache/Exception/NoSuchCacheException.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Cache/Exception/NoSuchCacheGroupException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Cache/Frontend/AbstractFrontend.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Cache/Frontend/FrontendInterface.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Cache/Frontend/PhpFrontend.php
@@ -2799,10 +2800,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Framework/Frontend/ResponseContent.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Framework/Scripts/Request.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Page/PageRendererTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource/BaseTestCase.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource/Driver/LocalDriverTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource/FolderTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource/ResourceStorageTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Utility/File/ExtendedFileUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/FunctionalTestCase.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/FunctionalTestCaseBootstrapUtility.php
@@ -3088,15 +3085,11 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Documentation/To-doList/Oracle/Index.rst
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Migrations/Code/ClassAliasMap.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Resources/Private/Language/locallang_em.xlf
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Functional/ClassImplementationRegistrationTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/AbstractTestCase.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/DatabaseConnectionMssqlTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/DatabaseConnectionOracleTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/DatabaseConnectionPostgresqlTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/DatabaseConnectionTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/FakeDatabaseConnection.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/Fixtures/mssql.config.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/Fixtures/oci8.config.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/Fixtures/postgresql.config.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/SqlParserTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/composer.json
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/ext_conf_template.txt
@@ -3506,13 +3499,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Fixture/SlotFixture.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Fixture/TxClassWithGettersAndSetters.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Fixture/ValueObject.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/BaseTestCase.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain/Model/FileContextTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain/Model/Fixture/FileContext.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain/Model/Fixture/data_sys_file.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain/Model/Fixture/data_sys_file_collection.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain/Model/Fixture/data_sys_file_reference.xml
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain/Model/Fixture/data_sys_file_storage.xml
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Fixtures/Extensions/blog_example/Classes/Domain/Model/Administrator.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Fixtures/Extensions/blog_example/Classes/Domain/Model/Blog.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Fixtures/Extensions/blog_example/Classes/Domain/Model/Comment.php
@@ -3547,6 +3533,8 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Persistence/AddTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Persistence/CountTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Persistence/Fixtures/blogs.xml
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Persistence/Fixtures/categories.xml
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Persistence/Fixtures/category-mm.xml
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Persistence/Fixtures/post-tag-mm.xml
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Persistence/Fixtures/posts.xml
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Persistence/Fixtures/tags.xml
@@ -5242,6 +5230,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Private/.htaccess
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/fileadmin-temp-htaccess
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/fileadmin-temp-index.html
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/fileadmin-user_upload-temp-importexport-htaccess
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/uploads-index.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Private/Font/README.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/install/Resources/Private/Font/vera.ttf
@@ -11082,9 +11071,6 @@
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Fixtures/Extensions/blog_example
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Fixtures/Extensions
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Fixtures
-@dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain/Model/Fixture
-@dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain/Model
-@dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional/Domain
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Functional
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests/Fixture
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Tests
@@ -11181,10 +11167,8 @@
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/res/oracle
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/res
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/mod1
-@dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database/Fixtures
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit/Database
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Unit
-@dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests/Functional
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Tests
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Resources/Private/Language
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/Resources/Private
@@ -11351,8 +11335,6 @@
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Integrity
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Utility/File
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Utility
-@dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource/Driver
-@dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Resource
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Page
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Framework/Scripts
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Functional/Framework/Frontend/Hook
@@ -11865,3 +11847,5 @@
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%
 @dirrmtry %%WWWDIR%%-LTS
+@owner
+@group

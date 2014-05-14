@@ -17,9 +17,10 @@ CONFLICTS_INSTALL=	p5-ack-[0-9]* ack-[0-9]*
 ALL_TARGET=	ack
 CFLAGS+=	-Wno-error=return-type
 
-MANLANG=	ja
-MAN1=		ack.1
-PLIST_FILES=	bin/ack
+PLIST_FILES=	bin/ack man/ja/man1/ack.1.gz
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -E 's,(BINARY|MANUAL)),DESTDIR)$$(&,' \
+		${WRKSRC}/Makefile
+
 .include <bsd.port.mk>

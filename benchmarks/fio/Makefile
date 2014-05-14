@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fio
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.9
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
@@ -11,8 +11,7 @@ COMMENT=	FIO - flexible IO tester
 
 LICENSE=	GPLv2
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 OPTIONS_DEFINE=	GNUPLOT
 GNUPLOT_DESC=	Support for plotting graphs

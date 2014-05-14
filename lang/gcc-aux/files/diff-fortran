@@ -40,26 +40,3 @@
  
  $as_echo "#define GTHREAD_USE_WEAK 0" >>confdefs.h
  
---- libquadmath/Makefile.in.orig
-+++ libquadmath/Makefile.in
-@@ -402,10 +402,9 @@
- 
- # AM_CONDITIONAL on configure option --generated-files-in-srcdir
- @BUILD_LIBQUADMATH_TRUE@@GENINSRC_TRUE@STAMP_GENINSRC = stamp-geninsrc
--@BUILD_INFO_FALSE@@BUILD_LIBQUADMATH_TRUE@STAMP_BUILD_INFO = 
-+@BUILD_LIBQUADMATH_TRUE@STAMP_BUILD_INFO =
- 
- # AM_CONDITIONAL on configure check ACX_CHECK_PROG_VER([MAKEINFO])
--@BUILD_INFO_TRUE@@BUILD_LIBQUADMATH_TRUE@STAMP_BUILD_INFO = stamp-build-info
- @BUILD_LIBQUADMATH_TRUE@CLEANFILES = $(STAMP_GENINSRC) $(STAMP_BUILD_INFO) libquadmath.info
- @BUILD_LIBQUADMATH_TRUE@MAINTAINERCLEANFILES = $(srcdir)/libquadmath.info
- 
-@@ -1300,7 +1299,7 @@
- 
- info-am: $(INFO_DEPS)
- 
--install-data-am: install-info-am install-nodist_libsubincludeHEADERS
-+install-data-am: install-nodist_libsubincludeHEADERS
- 
- install-dvi: install-dvi-am
- 

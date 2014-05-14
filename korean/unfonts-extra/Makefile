@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	http://kldp.net/frs/download.php/1435/
 
 FONTCAT=	extra

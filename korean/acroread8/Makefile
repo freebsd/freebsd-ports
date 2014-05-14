@@ -8,5 +8,4 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	KOR
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

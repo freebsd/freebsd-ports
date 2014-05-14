@@ -4,7 +4,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.24.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	24
@@ -13,21 +13,19 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+
 
-USE_XZ=		yes
+USES+=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	atkmm gtk20 ltverhack:1 pangomm
+USE_GNOME=	atkmm gtk20 pangomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-documentation \
-		--enable-static=yes
+CONFIGURE_ARGS=	--disable-documentation
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 

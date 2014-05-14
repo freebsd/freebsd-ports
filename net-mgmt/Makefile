@@ -107,6 +107,7 @@
     SUBDIR += macroscope
     SUBDIR += mbrowse
     SUBDIR += mk-livestatus
+    SUBDIR += monitoring-plugins
     SUBDIR += mrtg
     SUBDIR += mrtg-ping-probe
     SUBDIR += mtrace
@@ -206,6 +207,7 @@
     SUBDIR += p5-GRNOC-TL1
     SUBDIR += p5-MRTG-Parse
     SUBDIR += p5-Mon
+    SUBDIR += p5-Monitoring-Plugin
     SUBDIR += p5-NSNMP
     SUBDIR += p5-Nagios-Object
     SUBDIR += p5-Nagios-Plugin

@@ -10,6 +10,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, blog aware, static site generator
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-classifier>=1.3:${PORTSDIR}/devel/rubygem-classifier \
 		rubygem-colorator>=0.1:${PORTSDIR}/textproc/rubygem-colorator \
 		rubygem-commander>=4.1.3:${PORTSDIR}/devel/rubygem-commander \
@@ -23,6 +25,7 @@ RUN_DEPENDS=	rubygem-classifier>=1.3:${PORTSDIR}/devel/rubygem-classifier \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/jekyll
 
 .include <bsd.port.mk>

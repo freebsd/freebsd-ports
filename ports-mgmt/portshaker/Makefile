@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	portshaker
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 PORTREVISION?=	0
 CATEGORIES?=	ports-mgmt
 DISTNAME=	portshaker-${PORTVERSION}
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	smortex
 GH_PROJECT=	portshaker
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	4b9cdfe
+GH_COMMIT=	b88edd7
 
 .if ${PORTNAME} == "portshaker"
 OPTIONS_DEFINE=	RSYNC SVN GIT HG

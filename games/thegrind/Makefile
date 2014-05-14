@@ -1,13 +1,13 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	thegrind
 PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/radius-engine/ld21/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Simple game about escaping from work
 
 LICENSE=	GPLv2
@@ -24,7 +24,6 @@ USE_GL=		glu
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 
-
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png \
@@ -32,7 +31,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 PLIST_DIRS=	%%DATADIR%%
 
 PORTDOCS=	ChangeLog
-
 OPTIONS_DEFINE=	DOCS
 
 post-install:

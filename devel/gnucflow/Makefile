@@ -13,9 +13,8 @@ COMMENT=	Tool to chart control flow within the C program
 
 CONFLICTS=	bsdcflow-[0-9]* cflow-[0-9]*
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
-USES=		gmake
 
 INFO=		cflow
 

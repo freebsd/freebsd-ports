@@ -21,6 +21,7 @@
 %%QT_INCDIR%%/Qt/qatomic_i386.h
 %%QT_INCDIR%%/Qt/qatomic_ia64.h
 %%QT_INCDIR%%/Qt/qatomic_integrity.h
+%%QT_INCDIR%%/Qt/qatomic_m68k.h
 %%QT_INCDIR%%/Qt/qatomic_macosx.h
 %%QT_INCDIR%%/Qt/qatomic_mips.h
 %%QT_INCDIR%%/Qt/qatomic_parisc.h
@@ -469,6 +470,7 @@
 %%QT_INCDIR%%/QtCore/qatomic_i386.h
 %%QT_INCDIR%%/QtCore/qatomic_ia64.h
 %%QT_INCDIR%%/QtCore/qatomic_integrity.h
+%%QT_INCDIR%%/QtCore/qatomic_m68k.h
 %%QT_INCDIR%%/QtCore/qatomic_macosx.h
 %%QT_INCDIR%%/QtCore/qatomic_mips.h
 %%QT_INCDIR%%/QtCore/qatomic_parisc.h

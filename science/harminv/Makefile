@@ -19,13 +19,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
 USE_LDCONFIG=	yes
 
-MAN1=	harminv.1
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile \
+		libblas.so:${PORTSDIR}/math/blas \
+		liblapack.so:${PORTSDIR}/math/lapack
 
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile \
-		blas.2:${PORTSDIR}/math/blas \
-		lapack.4:${PORTSDIR}/math/lapack
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's#%%PKGDIR%%#${PREFIX}/libdata#g' \
 		${WRKSRC}/Makefile.in

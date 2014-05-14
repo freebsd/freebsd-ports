@@ -191,7 +191,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/${_MYSQL_SERVER}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqld.a:${PORTSDIR}/${_MYSQL_SERVER}
 .endif
 .else
-LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/${_MYSQL_CLIENT}
+LIB_DEPENDS+=	libmysqlclient.so.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/${_MYSQL_CLIENT}
 .endif
 .else
 IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
@@ -266,7 +266,7 @@ IGNORE?=		cannot install: does not work with postgresql${PGSQL_VER}-client (Post
 .	endfor
 .endif # IGNORE_WITH_PGSQL
 
-LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
+LIB_DEPENDS+=	libpq.so.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 
 _USE_PGSQL_DEP=			contrib docs pgtcl pltcl plperl server
 _USE_PGSQL_DEP_contrib=	pgbench
@@ -532,19 +532,15 @@ USE_FIREBIRD=	${WITH_FIREBIRD_VER}
 .endif
 
 .if ${USE_FIREBIRD:tl} == "yes"
-FIREBIRD_VER=	25
+FIREBIRD_VER=	${FIREBIRD_DEFAULT:S/.//}
 .else
 FIREBIRD_VER=	${USE_FIREBIRD}
 .endif
 
-.if ${FIREBIRD_VER} == "2"
-LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
-.elif ${FIREBIRD_VER} == "20"
-LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
-.elif ${FIREBIRD_VER} == "21"
-LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird21-client
+.if ${FIREBIRD_VER} == "21"
+LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird21-client
 .elif ${FIREBIRD_VER} == "25"
-LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird25-client
+LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
 .else
 IGNORE=		cannot install: unknown Firebird version: ${FIREBIRD_VER}
 .endif

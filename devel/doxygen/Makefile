@@ -74,7 +74,7 @@ PLIST_FILES+=	bin/doxywizard
 
 pre-configure:
 	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
-		${ECHO} "unix:tlIBS += ${ICONV_LIB}" >> $$pro; done
+		${ECHO} "unix:LIBS += ${ICONV_LIB}" >> $$pro; done
 	@${CHMOD} +x ${WRKSRC}/configure
 
 post-configure:

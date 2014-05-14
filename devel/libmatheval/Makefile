@@ -3,21 +3,26 @@
 
 PORTNAME=	libmatheval
 PORTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	devel math
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A library of procedures for evaluating mathematical functions
+COMMENT=	Library to evaluate mathematical functions
 
-BUILD_DEPENDS=	flex>0:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	flex>=2.5.39_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	LEXLIB=-lfl_pic MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
-USES=	pathfix
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+USES=		libtool pathfix
+INSTALL_TARGET=	install-strip
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+INFO=		libmatheval
 
 post-patch:
 	${RM} ${WRKSRC}/doc/libmatheval.info

@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr
 PORTVERSION=	1.7.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
@@ -13,7 +13,8 @@ COMMENT=	Video Disk Recorder - development version
 BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=    libjpeg.so:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig \
+		xorg-fonts-truetype>=0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 
 OPTIONS_DEFINE=		IPTVPATCH TTXPATCH STB0899_SIGNAL
 IPTVPATCH_DESC=		Stops EIT scans on IPTV channels
@@ -22,7 +23,8 @@ DVBPATCH_DESC=		DVB audio patch for some countries
 STB0899_SIGNAL_DESC=	STB0899 signal strength patch
 OPTIONS_DEFAULT=	IPTVPATCH TTXPATCH
 
-USES=		pkgconfig gettext iconv:wchar_t gmake tar:bzip2
+USES=		pkgconfig gettext iconv:wchar_t gmake shebangfix tar:bzip2
+SHEBANG_FILES=	svdrpsend
 DIST_SUBDIR=	vdr
 PORTDOCS=	COPYING INSTALL MANUAL README HISTORY
 CONFDIR=	$(ETCDIR)
@@ -104,7 +106,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${CONFDIR}/plugins
 	${INSTALL_DATA} ${FILESDIR}/remote.conf ${STAGEDIR}${CONFDIR}/remote.conf.sample
 	for i in $$(cd ${WRKSRC} && ls *.conf); do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${STAGEDIR}${CONFDIR}/$$i.sample; \
+		${MV} -i ${STAGEDIR}${CONFDIR}/$$i \
+			${STAGEDIR}${CONFDIR}/$$i.sample; \
 	done
 	${INSTALL_SCRIPT} ${WRKDIR}/vdr-waitdvb ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}

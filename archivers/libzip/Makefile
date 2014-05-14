@@ -3,6 +3,7 @@
 
 PORTNAME=	libzip
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
@@ -11,7 +12,7 @@ COMMENT=	C library for reading, creating, and modifying ZIP archives
 
 GNU_CONFIGURE=	yes
 MAKE_ENV=	LC_ALL="C"
-USES=		pathfix tar:xz
+USES=		libtool pathfix tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

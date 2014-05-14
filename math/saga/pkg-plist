@@ -1,14 +1,11 @@
 bin/saga_cmd
 bin/saga_gui
 lib/libsaga_api-%%PORTVERSION%%.so
-lib/libsaga_api.la
 lib/libsaga_api.so
 lib/libsaga_gdi-%%PORTVERSION%%.so
-lib/libsaga_gdi.la
 lib/libsaga_gdi.so
 %%PYTHON_SITELIBDIR%%/_saga_api-%%PORTVERSION%%.so
 %%PYTHON_SITELIBDIR%%/_saga_api.a
-%%PYTHON_SITELIBDIR%%/_saga_api.la
 %%PYTHON_SITELIBDIR%%/_saga_api.so
 %%PYTHON_SITELIBDIR%%/saga_api.py
 %%PYTHON_SITELIBDIR%%/saga_api.pyc
@@ -82,7 +79,6 @@ lib/saga/libtin_viewer.so
 %%VIGRA%%lib/saga/libvigra.so
 man/man1/saga_cmd.1.gz
 man/man1/saga_gui.1.gz
-share/applications/saga_gui.desktop
 %%DATADIR%%/saga.png
 %%DATADIR%%/saga_tip.txt
 @dirrmtry %%DATADIR%%

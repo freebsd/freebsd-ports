@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tanglet
@@ -7,14 +7,13 @@ CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 
 COMMENT=	Single player word finding game based on Boggle
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
-USES=		qmake
+USES=		qmake tar:bzip2
 USE_QT4=	moc_build rcc_build gui iconengines_run imageformats_run
 LDFLAGS+=	-lz
 INSTALLS_ICONS=	yes

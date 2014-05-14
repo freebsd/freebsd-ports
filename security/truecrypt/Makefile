@@ -3,7 +3,7 @@
 
 PORTNAME=	truecrypt
 PORTVERSION=	7.1a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/wxwindows/${WX_VER}/:wxwidgets \
 		ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-11/v2-20/:rsa \
@@ -23,12 +23,10 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 
-USES=		fuse iconv pkgconfig
-USE_GMAKE=	yes
+USES=		fuse iconv pkgconfig gmake
 RESTRICTED=	May not be redistributed.  Must accept license to download.
 NO_CDROM=	May not be redistributed.  Must accept license to download.
 NO_PACKAGE=	May not be redistributed.  Must accept license to download.
-NO_STAGE=	yes
 
 TC_SRCFILE=	TrueCrypt_${PORTVERSION}_Source.tar.gz
 WX_VER=		2.8.12
@@ -86,14 +84,11 @@ do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${NOGUI} WXSTATIC=1 PKCS11_INC=${WRKDIR}/rsa)
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/Main/truecrypt ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/Main/truecrypt ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/License.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Release/Setup\ Files/TrueCrypt\ User\ Guide.pdf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/License.txt ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Release/Setup\ Files/TrueCrypt\ User\ Guide.pdf ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

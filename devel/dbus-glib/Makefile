@@ -4,6 +4,7 @@
 
 PORTNAME=	dbus-glib
 PORTVERSION=	0.100.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
 
@@ -12,9 +13,9 @@ COMMENT=	GLib bindings for the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
-USE_GNOME=	gnomehack glib20 ltverhack
-USES=		gettext gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
 		--disable-gtk-doc \
