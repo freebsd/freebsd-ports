@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signing-party
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
@@ -39,6 +39,11 @@ EXAMPLES=	caff/caffrc.sample gpg-mailkeys/example.gpg-mailkeysrc
 PORTEXAMPLES=	${EXAMPLES:T}
 
 PORTDOCS=	*
+
+do-extract:
+	${MKDIR} ${WRKSRC}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EXTRACT_ONLY} \
+		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/doc/signing-party/caff/caffrc\.sample|${EXAMPLESDIR}/caffrc.sample|' \
