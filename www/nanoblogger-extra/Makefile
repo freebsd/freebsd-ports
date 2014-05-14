@@ -9,6 +9,8 @@ MASTER_SITES=	http://nanoblogger.sourceforge.net/downloads/
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Extras for nanoblogger, a small weblog engine
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	nb:${PORTSDIR}/www/nanoblogger
 
 WRKSRC=		${WRKDIR}/nanoblogger-${PORTVERSION}
@@ -16,26 +18,21 @@ DATADIR=	${PREFIX}/share/nanoblogger
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
 .for data in default lang plugins
-	@( cd ${WRKSRC}/${data} && ${CHMOD} 777 ${WRKSRC}/${data}/* && \
-		${COPYTREE_SHARE} \* ${DATADIR}/${data} "! -empty" )
+	@( cd ${WRKSRC}/${data} && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/${data} "! -empty" )
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in COPYING ChangeLog README
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}/html
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}/html
 
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/examples/nanoblogger.bash_completion ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/examples/nanoblogger.bash_completion ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
