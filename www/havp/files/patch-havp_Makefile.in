@@ -1,13 +1,15 @@
 --- havp/Makefile.in.orig	2007-09-11 15:42:44.000000000 -0300
-+++ havp/Makefile.in	2008-02-18 08:38:17.000000000 -0300
-@@ -26,30 +26,7 @@
++++ havp/Makefile.in	2014-05-14 16:38:18.000000000 -0300
+@@ -25,31 +25,8 @@
+ 
  install: all
  	$(INSTALL) -d $(DESTDIR)$(sbindir)
- 	$(INSTALL) -m 755 havp $(DESTDIR)$(sbindir)/havp
+-	$(INSTALL) -m 755 havp $(DESTDIR)$(sbindir)/havp
 -	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/log/havp
 -	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/tmp/havp
 -	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/run/havp
 -	$(INSTALL) -d $(DESTDIR)/etc/init.d
++	$(BSD_INSTALL_PROGRAM) -m 755 havp $(DESTDIR)$(sbindir)/havp
  	$(INSTALL) -m 644 ../etc/havp/havp.config $(DESTDIR)$(sysconfdir)/havp/havp.config.default
 -	@if [ ! -f $(DESTDIR)$(sysconfdir)/havp/havp.config ]; then \
 -		echo "$(INSTALL) -m 644 ../etc/havp/havp.config $(DESTDIR)$(sysconfdir)/havp/havp.config"; \
