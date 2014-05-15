@@ -7,7 +7,7 @@
 %%WWWDIR%%/calendars/US Holidays.ics
 %%WWWDIR%%/calendars/Work.ics
 %%WWWDIR%%/calendars/publish.php
-%%WWWDIR%%/config.inc.php-default
+@sample %%WWWDIR%%/config.inc.php.sample
 %%WWWDIR%%/day.php
 %%WWWDIR%%/error.php
 %%WWWDIR%%/functions/admin_functions.php

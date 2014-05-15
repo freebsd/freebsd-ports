@@ -1,4 +1,5 @@
 bin/pal
+man/man1/pal.1.gz
 %%DATADIR%%/australia.pal
 %%DATADIR%%/austria.pal
 %%DATADIR%%/birth-death.pal

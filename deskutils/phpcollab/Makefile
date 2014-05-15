@@ -3,47 +3,34 @@
 
 PORTNAME=	phpcollab
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/phpcollab/final/${PORTVERSION}/
-DISTNAME=	phpcollab-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHPcollab is project management and collaboration over the internet
 
 USES=		zip
-USE_PHP+=	mysql
-USE_MYSQL=	yes
 NO_BUILD=	yes
-WWWOWN=		www
-WWWGRP=		${WWWOWN}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+SHAREOWN=	${WWWOWN}
+SHAREGRP=	${WWWGRP}
 
-PKGMESSAGE=	${WRKDIR}/${PORTNAME}/pkg-message
-SUB_FILES=      pkg-message
+SUB_FILES=	pkg-message
 PLIST_DIRSTRY=	%%WWWDIR%%
 
-OPTIONS_DEFINE=	PGSQL APACHE LIGHTTPD
-LIGHTTPD_DESC=	Use Lighttpd webserver
+OPTIONS_DEFAULT=MYSQL APACHE
+OPTIONS_SINGLE=	WEBSERVER DB
+OPTIONS_SINGLE_WEBSERVER=	APACHE LIGHTTPD
+OPTIONS_SINGLE_DB=	PGSQL MYSQL
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-.endif
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22
-.endif
-.if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
-.endif
+MYSQL_USE=	PHP=mysql MYSQL=yes
+PGSQL_USE=	PHP=pgsql,pdo_pgsql PGSQL=yes
+APACHE_USE=	APACHE_RUN=22
+LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/ww/lighttpd
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@${CP} -r ${WRKDIR}/phpcollab/* ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

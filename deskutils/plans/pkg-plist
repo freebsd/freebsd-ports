@@ -1,17 +1,3 @@
-@exec   if [ ! -f %D/%%WWWDIR%%/data/calendars.xml ] ; then cp -p %D/%F %B/calendars.xml; fi
-@exec   if [ ! -f %D/%%WWWDIR%%/data/email_reminders.xml ] ; then cp -p %D/%F %B/email_reminders.xml; fi
-@exec   if [ ! -f %D/%%WWWDIR%%/data/events.xml ] ; then cp -p %D/%F %B/events.xml; fi
-@exec   if [ ! -f %D/%%WWWDIR%%/data/new_calendars.xml ] ; then cp -p %D/%F %B/new_calendars.xml; fi
-@exec   if [ ! -f %D/%%WWWDIR%%/data/pending_actions.xml ] ; then cp -p %D/%F %B/pending_actions.xml; fi
-@exec   if [ ! -f %D/%%WWWDIR%%/data/users.xml ] ; then cp -p %D/%F %B/users.xml; fi
-@exec   if [ ! -f %D/%%WWWDIR%%/plans_config.pl ] ; then cp -p %D/%F %B/plans_config.pl; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/calendars.xml.default %D/%%WWWDIR%%/data/calendars.xml; then rm -f %D/%%WWWDIR%%/data/calendars.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/email_reminders.xml.default %D/%%WWWDIR%%/data/email_reminders.xml; then rm -f %D/%%WWWDIR%%/data/email_reminders.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/events.xml.default %D/%%WWWDIR%%/data/events.xml; then rm -f %D/%%WWWDIR%%/data/events.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/new_calendars.xml.default %D/%%WWWDIR%%/data/new_calendars.xml; then rm -f %D/%%WWWDIR%%/data/new_calendars.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/pending_actions.xml.default %D/%%WWWDIR%%/data/pending_actions.xml; then rm -f %D/%%WWWDIR%%/data/pending_actions.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/data/users.xml.default %D/%%WWWDIR%%/data/users.xml; then rm -f %D/%%WWWDIR%%/data/users.xml; fi
-@unexec if cmp -s %D/%%WWWDIR%%/plans_config.pl.default %D/%%WWWDIR%%/plans_config.pl; then rm -f %D/%%WWWDIR%%/plans_config.pl; fi
 %%WWWDIR%%/Error.pm
 %%WWWDIR%%/JSON/PP.pm
 %%WWWDIR%%/JSON/PP/Boolean.pm
@@ -21,12 +7,12 @@
 %%WWWDIR%%/Time/Normalize.pm
 %%WWWDIR%%/cz_czech.pl
 %%WWWDIR%%/danish.pl
-%%WWWDIR%%/data/calendars.xml.default
-%%WWWDIR%%/data/email_reminders.xml.default
-%%WWWDIR%%/data/events.xml.default
-%%WWWDIR%%/data/new_calendars.xml.default
-%%WWWDIR%%/data/pending_actions.xml.default
-%%WWWDIR%%/data/users.xml.default
+@sample %%WWWDIR%%/data/calendars.xml.sample
+@sample %%WWWDIR%%/data/email_reminders.xml.sample
+@sample %%WWWDIR%%/data/events.xml.sample
+@sample %%WWWDIR%%/data/new_calendars.xml.sample
+@sample %%WWWDIR%%/data/pending_actions.xml.sample
+@sample %%WWWDIR%%/data/users.xml.sample
 %%WWWDIR%%/de_german.pl
 %%WWWDIR%%/email_reminders.cgi
 %%WWWDIR%%/fr_french.pl
@@ -36,7 +22,7 @@
 %%WWWDIR%%/nl_dutch.pl
 %%WWWDIR%%/plans.cgi
 %%WWWDIR%%/plans_check.cgi
-%%WWWDIR%%/plans_config.pl.default
+@sample %%WWWDIR%%/plans_config.pl.sample
 %%WWWDIR%%/plans_lib.pl
 %%WWWDIR%%/plans_unit_test.pl
 %%WWWDIR%%/sp_spanish.pl
