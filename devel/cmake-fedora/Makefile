@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-modules-only
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Set of cmake modules for fedora developers
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 WRKSRC=		${WRKDIR}/Modules
 NO_BUILD=	yes
