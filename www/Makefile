@@ -1798,6 +1798,7 @@
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-html2haml
     SUBDIR += rubygem-http-cookie
+    SUBDIR += rubygem-httpi
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
     SUBDIR += rubygem-innate
