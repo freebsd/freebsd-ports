@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.ossec.net/files/ \
 PKGNAMESUFFIX=	-server
 
 MAINTAINER=	brd@FreeBSD.org
-COMMENT?=	A security tool to monitor and check logs and intrusions
+COMMENT?=	Security tool to monitor and check logs and intrusions
 
 USE_RC_SUBR=	ossec-hids
 
