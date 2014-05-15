@@ -3,7 +3,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.2.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
+BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		liba52.so:${PORTSDIR}/audio/liba52 \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
@@ -30,27 +31,21 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libfaad.so:${PORTSDIR}/audio/faad \
 		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
-
-BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
-
 .if !defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=	libdvdcss.so.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
+# DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
+# and src/input/libdvdnav/dvd_input.c (dlopen'ed)
+LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USES=		gmake iconv pathfix perl5 pkgconfig compiler:features tar:xz
+USES=		compiler gmake iconv libtool:keepla pathfix perl5 pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
-USE_XORG=	sm x11 xv xinerama
+USE_XORG=	x11 xv xinerama
 USE_GL=		gl glu
 USE_PERL5=	build
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		THREAD_LIBS="${PTHREAD_LIBS}" \
-		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${LOCALBASE}/include/ffmeg
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--enable-ipv6 \
 		--with-external-libmad \
@@ -65,24 +60,14 @@ CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--enable-dvb
 
 OPTIONS_DEFINE=	CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
-		IMAGEMAGICK GTK2 WAVPACK VAAPI LIBBLURAY
+		IMAGEMAGICK PIXBUF WAVPACK VAAPI LIBBLURAY
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
 # Please sync with XINE_PLUGINSDIR in multimedia/xine
 # and multimedia/vdr-plugin-xineliboutput
 PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/2.3"
 
-# DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
-# and src/input/libdvdnav/dvd_input.c (dlopen'ed)
-DVDCSS_LIBVERSION=	3
-
-PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
-
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} != "clang"
-CFLAGS+= 	-fno-force-addr
-.endif
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 CFLAGS+=	-fomit-frame-pointer
@@ -169,7 +154,7 @@ PLIST_SUB+=	WITH_AALIB="@comment "
 CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
 .endif
 
-.if ${PORT_OPTIONS:MMAGICK}
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 LIB_DEPENDS+=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
@@ -177,8 +162,8 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 CONFIGURE_ARGS+=	--without-imagemagick
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
+.if ${PORT_OPTIONS:MPIXBUF}
+USE_GNOME+=	gdkpixbuf2
 PLIST_SUB+=	WITH_GTK2=""
 .else
 PLIST_SUB+=	WITH_GTK2="@comment "
@@ -224,6 +209,8 @@ PLIST_SUB+=	WITH_VIDIX="@comment "
 CONFIGURE_ARGS+=	--disable-vidix
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 .if ${COMPILER_TYPE} == "clang"
 	@${REINPLACE_CMD} -e 's|-fno-rename-registers||' \
@@ -233,36 +220,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/src/video_out/Makefile.in
 .endif
-.for f in libtool ltmain.sh
-	@${REINPLACE_CMD} -e \
-		'/freebsd-elf)/,/;;/ s|major="\.$$current"|major=.`expr $$current - $$age`|; \
-		/freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|' \
-		${WRKSRC}/${f}
-.endfor
-	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
-		${WRKSRC}/src/input/input_dvd.c
-	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
-		${WRKSRC}/misc/cdda_server.c
-	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
-		${WRKSRC}/src/input/libdvdnav/dvd_input.c
 	@${REINPLACE_CMD} -e "s|#define _ATOM QT_ATOM('', '', '', '')||" \
 		${WRKSRC}/src/demuxers/demux_qt.c
-
-pre-configure:
 	@${REINPLACE_CMD} -e \
-		's|THREAD_LIBS=".*"|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
-		 s|THREAD_CFLAGS=".*"|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
-		 s|-L/usr/local/lib||g ; \
-		 s|-I/usr/local/include||g ; \
-		 s|-lgiconv|${ICONV_LIB}|g ; \
-		 s|-funroll-loops||g ; \
-		 s|LIBFFMPEG_CFLAGS|LIBFFMPEG_CPPFLAGS|g ; \
-		 s|echo aout|echo elf|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		 's|-malign-loops|-falign-loops|g ; \
-		  s|-malign-jumps|-falign-jumps|g ; \
-		  s|-malign-functions|-falign-functions|g ; \
-		  s|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' \
+		's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

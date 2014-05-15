@@ -28,7 +28,8 @@ COMMENT=	Versatile DVD ripper and video transcoder
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
+		yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
@@ -40,13 +41,15 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libtheoradec.so:${PORTSDIR}/multimedia/libtheora \
 		libtheoraenc.so:${PORTSDIR}/multimedia/libtheora \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-RUN_DEPENDS=	${LOCALBASE}/lib/libdvdcss.so:${PORTSDIR}/multimedia/libdvdcss
+.if !defined(PACKAGE_BUILDING)
+# DVDCSS version hardcoded in contrib/libdvdread/libdvdread/src/dvd_input.c (dlopen'ed)
+LIB_DEPENDS+=	${LOCALBASE}/lib/libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
+.endif
 
-USES=		gmake pkgconfig iconv
-USE_AUTOTOOLS=	libtool aclocal
-LIBTOOLFILES=	configure
+GNU_CONFIGURE=	yes
+USES=		gmake iconv libtool pkgconfig
+USE_AUTOTOOLS=	autoconf:env automake:env
 USE_PYTHON_BUILD=	yes
-WANT_GNOME=	yes
 
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 PLIST_FILES=	bin/HandBrakeCLI
@@ -65,22 +68,22 @@ OPTIONS_DEFINE=	X11
 X11_DESC=	Build GTK+2 based GUI program
 OPTIONS_DEFAULT=	X11
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Recent GNU binutils are required to handle inline SSSE3 asm (in x264), and
 # to support --exclude-libs option for ld(1) when building GUI program
 .if ${PORT_OPTIONS:MX11} || ${OSVERSION} < 802509 || \
 	${OSVERSION} >= 900000 && ${OSVERSION} < 900033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
-CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--disable-gtk-update-checks --disable-gst
 LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify
-USE_GNOME=	gtk20
+USE_GNOME+=	gtk20
 PLIST_FILES+=	bin/HandBrake
 .else
 CONFIGURE_ARGS+=	--disable-gtk
@@ -92,9 +95,6 @@ LDFLAGS+=	-lc++
 .else
 LDFLAGS+=	-lstdc++
 .endif
-
-run-autotools-aclocal:
-	@${DO_NADA}
 
 # HandBrake tries to fetch its dependencies during build phase, which is not
 # considered good in FreeBSD.  Instead, we will prepare everything manually.
@@ -135,8 +135,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl|-lc| ; s|\[dl\]|[c]|' \
 		${BUILD_WRKSRC}/contrib/libbluray/libbluray-0.2.3/configure.ac
 	@${REINPLACE_CMD} -e 's|<malloc|<stdlib|' ${WRKSRC}/libhb/fifo.c
-	@${REINPLACE_CMD} -e 's|libdvdcss\.so\.2|libdvdcss.so|' \
-		${BUILD_WRKSRC}/contrib/libdvdread/libdvdread/src/dvd_input.c
 	@${FIND} ${WRKSRC} -type f -name '*.[ch]' -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e '/#include/s|hb\.h|hb-of-handbrake.h|'
 	@${REINPLACE_CMD} -e "s|ToolProbe( 'GCC.gcc',   'gcc',|ToolProbe( 'GCC.gcc',   '${CC}',|" \
@@ -160,4 +158,4 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gtk/src/ghb ${STAGEDIR}${PREFIX}/bin/HandBrake
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
