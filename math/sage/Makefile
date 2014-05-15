@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sage
-PORTVERSION=	6.1.1
-PORTREVISION=	1
+PORTVERSION=	6.2
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
@@ -16,7 +15,9 @@ COMMENT=	Open source Mathematics software
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		convert:${PORTSDIR}/graphics/ImageMagick \
-		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
+		automake:${PORTSDIR}/devel/automake \
+		autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas \
 		liblapack.so:${PORTSDIR}/math/lapack \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
@@ -32,25 +33,11 @@ OPTIONS_DEFINE_amd64=	387
 
 pre-extract:
 	@${ECHO_MSG}
-	@${ECHO_MSG} \# The best way to build this port is to first type \"make build\".
-	@${ECHO_MSG} \# If you type \"make\" or \"make install\", this will cause the building of a
-	@${ECHO_MSG} \# package, which will take a considerable amount of time and space.
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# After this, an easier way to install everything is to type:
-	@${ECHO_MSG}
-	@${ECHO_MSG} ${MV} ${WRKSRC} ${PREFIX}/.
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# The next four lines are only needed if you want sage in ${PREFIX}/bin.
-	@${ECHO_MSG}
-	@${ECHO_MSG} "${SED} -e \"s+#SAGE_ROOT.*+SAGE_ROOT=${PREFIX}/${PORTNAME}-${PORTVERSION}+\" \\"
-	@${ECHO_MSG} "        ${PREFIX}/${PORTNAME}-${PORTVERSION}/sage > ${PREFIX}/bin/sage"
-	@${ECHO_MSG} ${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/sage
-	@${ECHO_MSG} ${CHMOD} ${BINMODE} ${PREFIX}/bin/sage
-	@${ECHO_MSG}
-	@${ECHO_MSG} \# The next line will provide write protection for sage.
-	@${ECHO_MSG} ${CHOWN} -hR ${BINOWN}:${BINGRP} ${PREFIX}/${PORTNAME}-${PORTVERSION}
-	@${ECHO_MSG}
-	@sleep 60
+	@${ECHO_MSG} Instead of installing the port, which will take a considerable amount of
+	@${ECHO_MSG} extra time and space, you can instead type \"make build\".  Then you can move
+	@${ECHO_MSG} work/${PORTNAME}-${PORTVERSION} to wherever you like, and run sage from there.
+	@${ECHO_MSG} However, there is no guarantee that this alternative will always work.
+	@sleep 10
 
 PLIST_FILES=	bin/sage
 USE_GCC=	yes
@@ -64,12 +51,6 @@ CXXFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
 # Note that the above addition to LDFLAGS, as a side effect, provides a
 # work-around for the make(1) idiosyncracy mentioned in PR 164361 (which
 # otherwise breaks the build of the maxima sub-package).
-
-USE_AUTOTOOLS=	autoconf
-run-autotools:
-		@${DO_NADA}
-do-configure:
-		@${DO_NADA}
 
 # Optimization flags will be defined by the source
 CFLAGS:=	${CFLAGS:C/^-O.*$//}
