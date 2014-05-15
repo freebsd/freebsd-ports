@@ -80,7 +80,7 @@ bin/cassandra-shuffle
 %%DATADIR%%/lib/metrics-core-2.2.0.jar
 %%DATADIR%%/lib/netty-3.6.6.Final.jar
 %%CQL%%%%DATADIR%%/lib/thrift-python-internal-only-0.7.0.zip
-%%CQL%%%%DATADIR%%/lib/cql-internal-only-1.4.0.zip
+%%CQL%%%%DATADIR%%/lib/cql-internal-only-1.4.1.zip
 %%JNA%%%%DATADIR%%/lib/jna.jar
 %%JNA%%%%DATADIR%%/lib/jna-platform.jar
 %%MX4J%%%%DATADIR%%/lib/mx4j-tools.jar
