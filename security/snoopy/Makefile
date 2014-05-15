@@ -4,8 +4,6 @@
 PORTNAME=	snoopy
 PORTVERSION=	1.9.0
 CATEGORIES=	security
-MASTER_SITES=	GH \
-		GHC
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	execve() wrapper and logger
@@ -26,8 +24,6 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 USE_GITHUB=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} '/^LIBS=/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/README.md
@@ -35,9 +31,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/detect ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_LIB} ${WRKSRC}/snoopy.so ${STAGEDIR}${PREFIX}/lib/
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
