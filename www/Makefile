@@ -581,7 +581,6 @@
     SUBDIR += ompload
     SUBDIR += oops
     SUBDIR += opencart
-    SUBDIR += openx
     SUBDIR += openxmldir
     SUBDIR += opera
     SUBDIR += opera-devel
@@ -1734,6 +1733,7 @@
     SUBDIR += resin3
     SUBDIR += retawq
     SUBDIR += reviewboard
+    SUBDIR += revive-adserver
     SUBDIR += rnews
     SUBDIR += roundup
     SUBDIR += rsskit

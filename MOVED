@@ -6103,3 +6103,4 @@ databases/firebird20-server|databases/firebird25-server|2014-05-11|Firebird 2.0 
 archivers/star||2014-05-15|Has expired: Depends on deprecated smake
 editors/ved||2014-05-15|Has expired: Depends on deprecated smake
 japanese/chasen||2014-05-15|Has expired: Unmaintained since 2001
+www/openx|www/revive-adserver|Upstream obsolete, forked
