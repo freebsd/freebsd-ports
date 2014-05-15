@@ -3,7 +3,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -26,8 +26,7 @@ X264_COMMIT=	3361d59a0a83dcb8b321cc0eb8e6ba68ca49c7d4
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
 X264_SNAPSHOT=	20130827
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
@@ -43,7 +42,8 @@ X11_OUTPUT_DESC=	Enable X11 Output
 CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include" \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
 			--enable-static --enable-shared \
-			--disable-opencl
+			--disable-opencl \
+			--disable-swscale
 
 PLIST_SUB+=	X264_BUILD=${X264_BUILD}
 
