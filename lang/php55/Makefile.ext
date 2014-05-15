@@ -431,7 +431,7 @@ CONFIGURE_ARGS+=--with-xmlrpc \
 		--with-libxml-dir=${LOCALBASE} \
 		--with-iconv-dir=${LOCALBASE}
 
-USES+=		iconv::translit
+USES+=		iconv:translit
 USE_GNOME=	libxml2
 
 PHP_HEADER_DIRS=libxmlrpc
