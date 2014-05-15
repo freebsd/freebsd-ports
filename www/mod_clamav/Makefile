@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_clamav
 PORTVERSION=	0.23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
 		http://www.kommunity.net/download/mod_clamav/
