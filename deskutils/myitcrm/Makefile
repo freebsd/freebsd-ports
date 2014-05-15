@@ -62,7 +62,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	(@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} '${WWW_IGNORE}')
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} '${WWW_IGNORE}')
 .for ent in ${WRITEABLE}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/${ent}
 	@${CHMOD} u+w ${STAGEDIR}${WWWDIR}/${ent}
