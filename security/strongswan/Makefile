@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.1.1
-PORTREVISION=	1
+PORTVERSION=	5.1.3
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -13,9 +12,8 @@ COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USE_BZIP2=	yes
+USES=		libtool:keepla tar:bzip2
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -23,7 +21,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--enable-kernel-pfroute  \
 		--disable-kernel-netlink  \
-		--disable-tools  \
 		--disable-scripts  \
 		--disable-gmp \
 		--enable-openssl \
@@ -43,7 +40,7 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE IKEv1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL SQLITE \
-		TESTVECTOR UNBOUND XAUTH
+		TESTVECTOR TOOLS UNBOUND XAUTH
 OPTIONS_SUB=	yes
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
@@ -55,6 +52,7 @@ IPSECKEY_DESC=	Enable authentication with IPSECKEY resource records with DNSSEC
 KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
 LOADTESTER_DESC=	Enable load testing plugin
 TESTVECTOR_DESC=	Enable crypto test vectors
+TOOLS_DESC=	Enable PKI tools
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 XAUTH_DESC=	Enable XAuth password verification
 
@@ -77,6 +75,7 @@ MYSQL_USE=		USE_MYSQL=yes
 SQLITE_CONFIGURE_ON=	--enable-sqlite
 SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
+TOOLS_CONFIGURE_OFF=	--disable-tools
 UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
@@ -89,6 +88,12 @@ PLIST_SUB+=	SIMAKA=""
 PLIST_SUB+=	SIMAKA="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MEAPDYNAMIC} || ${PORT_OPTIONS:MEAPAKA3GPP2}
+PLIST_SUB+=	DYNAKA=""
+.else
+PLIST_SUB+=	DYNAKA="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=	--enable-attr-sql --enable-sql
 PLIST_SUB+=	SQL=""
@@ -96,9 +101,26 @@ PLIST_SUB+=	SQL=""
 PLIST_SUB+=	SQL="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MIKEv1} || ${PORT_OPTIONS:MXAUTH}
+PLIST_SUB+=	XAUTHGEN=""
+.else
+PLIST_SUB+=	XAUTHGEN="@comment "
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/strongswan.d
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/strongswan.d/charon
 	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/strongswan.conf ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/ipsec.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/strongswan.d/*.* ${STAGEDIR}${EXAMPLESDIR}/strongswan.d
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/strongswan.d/charon/*.* ${STAGEDIR}${EXAMPLESDIR}/strongswan.d/charon
+.for i in strongswan hydra tls charon
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ipsec/lib${i}.so.0.0.0
+.endfor
+.for i in aes des blowfish rc2 md4 md5 sha1 sha2 random nonce hmac cmac xcbc x509 revocation constraints pubkey pkcs1 pkcs7 pkcs8 pkcs12 pgp dnskey sshkey pem openssl fips-prf attr kernel-pfkey kernel-pfroute resolve socket-default stroke updown eap-identity eap-md5 eap-mschapv2 eap-tls eap-ttls eap-peap whitelist addrblock
+	${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/lib/ipsec/plugins/libstrongswan-${i}.so
+.endfor
 
 .include <bsd.port.mk>
