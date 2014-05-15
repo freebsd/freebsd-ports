@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httrack
-PORTVERSION=	3.48.3
-PORTREVISION=	1
+PORTVERSION=	3.48.6
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
 		http://mirror.httrack.com/historical/ \
@@ -17,12 +16,13 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	DOCS
 
-CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
+CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
 CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${PREFIX}/lib/httrack
-USES=		gmake iconv shebangfix
+USES=		gmake iconv libtool shebangfix
 
 PORTDATA=	*
 PORTDOCS=	*
