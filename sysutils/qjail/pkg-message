@@ -10,9 +10,13 @@ For the BIG PICTURE issue "man qjail-howto".
 
 ########################################################################
 
+If your host is running 10.0-RELEASE be sure you apply system security 
+update. You need to be at 10.0-RELEASE-p2.  Run the following commands
+to apply system security updates.
+   freebsd-update  fetch 
+   freebsd-update  install
 
-For instructions on upgrading jail filesystems
-Read %%EXAMPLESDIR%%/upgrade-info.txt
+########################################################################
 
 
 
