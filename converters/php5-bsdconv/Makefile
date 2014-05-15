@@ -19,7 +19,6 @@ GH_ACCOUNT=	buganini
 GH_COMMIT=	daf6890
 GH_PROJECT=	php-${PORTNAME}
 
-NO_STAGE=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
