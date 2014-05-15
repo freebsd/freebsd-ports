@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmesa
-PORTVERSION=	10.1.1
-PORTREVISION=	1
+PORTVERSION=	10.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -14,11 +13,11 @@ COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
-USES+=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig tar:bzip2 libtool
 USE_LDCONFIG=	yes
 USE_PYTHON=	2
 USE_XORG=	x11 xext
-USE_AUTOTOOLS=	autoconf automake libtool
+USE_AUTOTOOLS=	autoconf automake libtool:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-osmesa \
 		--disable-driglx-direct \
