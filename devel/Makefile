@@ -1636,6 +1636,7 @@
     SUBDIR += p5-Config-Grammar
     SUBDIR += p5-Config-INI
     SUBDIR += p5-Config-INI-Simple
+    SUBDIR += p5-Config-Identity
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-IniHash
     SUBDIR += p5-Config-IniRegEx
