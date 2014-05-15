@@ -63,6 +63,11 @@ RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
 LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
 . endif
 
+. if !defined(WITHOUT_LAPACK)
+# Don't really need Fortran, but required to link with blas/lapack
+USES+=	fortran
+. endif
+
 DOCBASE=	README.txt
 PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros		\
