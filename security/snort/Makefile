@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-PORTVERSION=	2.9.6.0
-PORTREVISION=	1
+PORTVERSION=	2.9.6.1
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
@@ -75,9 +74,8 @@ PULLEDPORK_RUN_DEPENDS=	pulledpork.pl:${PORTSDIR}/security/pulledpork
 USE_RC_SUBR=	snort
 SUB_FILES=	pkg-message
 
-USES=		pathfix
+USES=		pathfix libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -130,6 +128,9 @@ post-patch:
 		-e '/normalize_icmp6/s/^preprocessor/#preprocessor/' \
 		${WRKSRC}/etc/snort.conf
 .endif
+
+post-build:
+	@${FIND} ${WRKSRC}/src -name '*.0' -type f -exec ${STRIP_CMD} {} \;
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${RULES_DIR} ${STAGEDIR}${LOGS_DIR} \
