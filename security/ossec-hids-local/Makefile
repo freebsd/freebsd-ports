@@ -7,5 +7,4 @@ LOCAL_ONLY=	yes
 
 MASTERDIR=	${.CURDIR}/../ossec-hids-server
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
