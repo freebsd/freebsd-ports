@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	asis
-PORTVERSION=	2013
+PORTVERSION=	2014
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	GNAT implementation of Ada Semantic Interface Specification
@@ -43,8 +42,6 @@ post-install:
 	   ${SORT} -r | ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' \
 	   -e '/share\/gps$$/d' -e '/share\/gps\/plug-ins$$/d' \
 	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
 	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
 	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
 
