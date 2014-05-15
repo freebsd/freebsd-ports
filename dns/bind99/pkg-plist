@@ -342,7 +342,7 @@ sbin/named-journalprint
 sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
-%%BASE%%@unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
+%%BASE%%%%BIND_DESTETC%%/rndc.conf.sample
 %%NOBASE%%@sample %%ETCDIR%%/rndc.conf.sample
 %%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
 %%NOBASE%%%%ETCDIR%%/named.root
