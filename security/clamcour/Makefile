@@ -3,7 +3,7 @@
 
 PORTNAME=	clamcour
 PORTVERSION=	0.3.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.becrux.com/pages/projects/clamcour/
 
