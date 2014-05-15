@@ -1,8 +1,7 @@
-@unexec if cmp -s %D/%%WWWDIR%%/conf.php %D/%%WWWDIR%%/conf-default.php; then rm -f %D/%%WWWDIR%%/conf.php; fi
 %%WWWDIR%%/backup/.htaccess
 %%WWWDIR%%/backup/bigdump.php
 %%WWWDIR%%/cache/index.php
-%%WWWDIR%%/conf-default.php
+@sample %%WWWDIR%%/conf.php.sample
 %%WWWDIR%%/cron/.htaccess
 %%WWWDIR%%/cron/backup.php
 %%WWWDIR%%/cron/index.php
@@ -1360,4 +1359,3 @@
 @dirrm %%WWWDIR%%/cron
 @dirrmtry %%WWWDIR%%/cache
 @dirrm %%WWWDIR%%/backup
-@exec if [ ! -f %D/%%WWWDIR%%/conf.php ]; then cp -p %D/%%WWWDIR%%/conf-default.php %D/%%WWWDIR%%/conf.php; fi

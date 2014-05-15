@@ -1,0 +1,3 @@
+*** By default kiba-dock is empty.
+*** To add launchers, look at and run the script
+	%%DATADIR%%/populate-dock.sh

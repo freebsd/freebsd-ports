@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 MAN1=		pal.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -28,10 +27,10 @@ post-build:
 	${REINPLACE_CMD} -e "s,VERSION,${PORTVERSION},g" ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.1.template
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pal ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/share/*.pal ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.conf ${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.1.template ${PREFIX}/man/man1/pal.1
+	${INSTALL_PROGRAM} ${WRKSRC}/pal ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/share/*.pal ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.conf ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.1.template ${STAGEDIR}${MANPREFIX}/man/man1/pal.1
 
 .include <bsd.port.post.mk>

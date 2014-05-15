@@ -17,28 +17,21 @@ RUN_DEPENDS=	remind:${PORTSDIR}/deskutils/remind
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 
-MAN1=		wyrd.1
-MAN5=		wyrdrc.5
-PLIST_FILES=	bin/wyrd etc/wyrdrc
+PLIST_FILES=	bin/wyrd etc/wyrdrc man/man1/wyrd.1.gz man/man5/wyrdrc.5.gz
 PORTDOCS=	manual.html manual.pdf
 
 OPTIONS_DEFINE=	UTF8 DOCS
 UTF8_CONFIGURE_ENABLE=	utf8
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} 's|gcc|${CC}|' ${WRKSRC}/curses/curses.ml
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wyrd.opt ${PREFIX}/bin/wyrd
-	${INSTALL_DATA} ${WRKSRC}/wyrdrc ${PREFIX}/etc/wyrdrc
-	${INSTALL_MAN} ${WRKSRC}/doc/wyrd.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/wyrdrc.5 ${MAN5PREFIX}/man/man5
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/wyrd.opt ${STAGEDIR}${PREFIX}/bin/wyrd
+	${INSTALL_DATA} ${WRKSRC}/wyrdrc ${STAGEDIR}${PREFIX}/etc/wyrdrc
+	${INSTALL_MAN} ${WRKSRC}/doc/wyrd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/wyrdrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
