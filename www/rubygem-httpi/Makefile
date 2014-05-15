@@ -3,7 +3,7 @@
 
 PORTNAME=	httpi
 PORTVERSION=	0.9.7
-CATEGORIES=	devel rubygems
+CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	joe@thrallingpenguin.com
