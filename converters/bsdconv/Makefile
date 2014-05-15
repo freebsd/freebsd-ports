@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	CHINESE EBCDIC
 CHINESE_DESC=	Extra Chinese codecs
 EBCDIC_DESC=	EBCDIC codecs
 
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	PREFIX=${PREFIX}
@@ -46,6 +45,6 @@ PLIST_SUB+=	EBCDIC="@comment "
 .endif
 
 pre-install:
-	${MKDIR} ${DATADIR}/ ${DATADIR}/from/ ${DATADIR}/inter/ ${DATADIR}/to/
+	${MKDIR} ${STAGEDIR}${DATADIR}/ ${STAGEDIR}${DATADIR}/from/ ${STAGEDIR}${DATADIR}/inter/ ${STAGEDIR}${DATADIR}/to/
 
 .include <bsd.port.mk>
