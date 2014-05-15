@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	ARP level "ping" utility
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
