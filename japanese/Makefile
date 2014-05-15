@@ -32,7 +32,6 @@
     SUBDIR += cannadic
     SUBDIR += cdrom2
     SUBDIR += celrw
-    SUBDIR += chasen
     SUBDIR += chasen-base
     SUBDIR += cmigemo
     SUBDIR += cmigemo-dict
