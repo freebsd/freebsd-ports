@@ -1,6 +1,7 @@
 %%PORTNAME%%/active-response/bin/disable-account.sh
 %%PORTNAME%%/active-response/bin/firewall-drop.sh
 %%PORTNAME%%/active-response/bin/host-deny.sh
+%%PORTNAME%%/active-response/bin/ip-customblock.sh
 %%PORTNAME%%/active-response/bin/ipfw.sh
 %%PORTNAME%%/active-response/bin/ipfw_mac.sh
 %%PORTNAME%%/active-response/bin/ossec-tweeter.sh
@@ -24,10 +25,9 @@
 %%PORTNAME%%/etc/shared/win_malware_rcl.txt
 %%PORTNAME%%/etc/shared/win_audit_rcl.txt
 %%PORTNAME%%/etc/shared/win_applications_rcl.txt
-@unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
-%%PORTNAME%%/etc/ossec.conf.sample
+@sample %%PORTNAME%%/etc/ossec.conf.sample
 %%PORTNAME%%/etc/internal_options.conf
-@unexec if test ! -s %D/%%PORTNAME%%/logs/ossec.log; then rm -f %D/%%PORTNAME%%/logs/ossec.log; fi
+%%PORTNAME%%/logs/ossec.log
 %%PORTNAME%%/agentless/main.exp
 %%PORTNAME%%/agentless/sshlogin.exp
 %%PORTNAME%%/agentless/ssh_asa-fwsmconfig_diff
