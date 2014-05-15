@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -96,6 +96,8 @@ TZUPDATE_DESC=		Update the time zone data
 POLICY_CONFIGURE_ENABLE=unlimited-crypto
 TZUPDATE_RUN_DEPENDS=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 
+JAVAVMS_COMMENT=	OpenJDK${JDK_MAJOR_VERSION}
+
 .if !defined(BUILD_JRE)
 OPTIONS_DEFINE+=	TEST
 OPTIONS_DEFAULT+=	RELEASE
@@ -113,6 +115,7 @@ TEST_CONFIGURE_ON=	--with-jtreg=${WRKDIR}/jtreg
 TEST_DISTFILES=		jtreg${JTREG_VERSION}-${JTREG_BUILD_NUMBER}.tar.gz:jtreg
 .else
 CONFIGURE_ARGS+=	--disable-debug-symbols
+JAVAVMS_COMMENT+=	JRE
 .endif
 
 .include <bsd.port.options.mk>
@@ -197,6 +200,7 @@ post-patch:
 	    ${WRKSRC}/jdk/src/bsd/doc/man/*.1
 	@${REINPLACE_CMD} -e 's|%%ICONV_CPPFLAGS%%|${ICONV_CPPFLAGS}|' \
 	    -e 's|%%ICONV_LDFLAGS%%|${ICONV_LDFLAGS}|' \
+	    ${WRKSRC}/jdk/make/lib/Awt2dLibraries.gmk \
 	    ${WRKSRC}/jdk/make/lib/CoreLibraries.gmk \
 	    ${WRKSRC}/jdk/make/lib/ServiceabilityLibraries.gmk
 	@${CHMOD} 755 ${WRKSRC}/configure
@@ -237,10 +241,6 @@ do-install:
 	    ${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${INSTALLDIR} -type d | ${SORT} -r | \
 	    ${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.if !defined(BUILD_JRE)
-	@${ECHO} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # OpenJDK${JDK_MAJOR_VERSION}'" >> ${TMPPLIST}
-.else
-	@${ECHO} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # OpenJDK${JDK_MAJOR_VERSION} JRE'" >> ${TMPPLIST}
-.endif
+	@${ECHO} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # ${JAVAVMS_COMMENT}'" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

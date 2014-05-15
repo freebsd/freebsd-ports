@@ -141,33 +141,41 @@
      CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DLINUX"
 --- hotspot/make/bsd/makefiles/build_vm_def.sh
 +++ hotspot/make/bsd/makefiles/build_vm_def.sh
-@@ -1,12 +1,22 @@
+@@ -1,12 +1,28 @@
  #!/bin/sh
  
  # If we're cross compiling use that path for nm
 -if [ "$CROSS_COMPILE_ARCH" != "" ]; then 
+-NM=$ALT_COMPILER_PATH/nm
 +if [ "$CROSS_COMPILE_ARCH" != "" ]; then
- NM=$ALT_COMPILER_PATH/nm
++    NM=$ALT_COMPILER_PATH/nm
  else
- NM=nm
+-NM=nm
++    NM=nm
  fi
  
 -$NM -Uj $* | awk '
 -   { if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 }
 -   '
-+if [ "$(uname -s)" = Darwin ]; then
-+    $NM -Uj $* | awk '
-+        { if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 }
-+    '
-+    exit
-+fi
-+$NM --defined-only $* \
-+    | awk '{
-+              if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 ";"
-+              if ($3 ~ /^UseSharedSpaces$/) print "\t" $3 ";"
-+              if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
-+          }' \
-+    | sort -u
++case "$(uname -s)" in
++Darwin )
++    $NM -Uj $@ | awk '{
++        if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3
++    }' ;;
++OpenBSD )
++    $NM $@ | awk '{
++        if ($2 == "U") next
++        if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 ";"
++        if ($3 ~ /^UseSharedSpaces$/) print "\t" $3 ";"
++        if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
++    }' | sort -u ;;
++* )
++    $NM --defined-only $@ | awk '{
++        if ($3 ~ /^_ZTV/ || $3 ~ /^gHotSpotVM/) print "\t" $3 ";"
++        if ($3 ~ /^UseSharedSpaces$/) print "\t" $3 ";"
++        if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
++    }' | sort -u ;;
++esac
 --- hotspot/make/bsd/makefiles/debug.make
 +++ hotspot/make/bsd/makefiles/debug.make
 @@ -35,7 +35,10 @@
@@ -4408,6 +4416,15 @@
          OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libawt_headless, \
          DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
  
+@@ -1245,6 +1266,8 @@
+   else ifeq ($(OPENJDK_TARGET_OS), solaris)
+     # Solaris still uses OPENWIN_LIB ..
+     LIBSPLASHSCREEN_LDFLAGS_SUFFIX += -L$(OPENWIN_LIB)$(OPENJDK_TARGET_CPU_ISADIR) -lX11 -lXext $(LIBM) -lpthread
++  else ifeq ($(OPENJDK_TARGET_OS), bsd)
++    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -liconv -pthread
+   else	# .. all other Unixes can use X_LIBS
+     LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -lpthread
+   endif
 --- jdk/make/lib/CoreLibraries.gmk
 +++ jdk/make/lib/CoreLibraries.gmk
 @@ -81,7 +81,7 @@
@@ -9990,14 +10007,3 @@
  
    ifneq (,$$($1_BIN))
      $$(error BIN has been replaced with OBJECT_DIR)
---- nashorn/test/script/jfx.js
-+++ nashorn/test/script/jfx.js
-@@ -89,7 +89,7 @@
-     var sb = new StringBuffer(goldenDir);
-     if (OSInfo.getOSType() == OSType.WINDOWS) {
-         f2 = new File(sb.append(fsep + "windows.png").toString());
--    } else if (OSInfo.getOSType() == OSType.LINUX) {
-+    } else if (OSInfo.getOSType() == OSType.LINUX || OSInfo.getOSType() == OSType.BSD) {
-         f2 = new File(sb.append(fsep + "linux.png").toString());
-     } else if (OSInfo.getOSType() == OSType.MACOSX) {
-         f2 = new File(sb.append(fsep + "macosx.png").toString());

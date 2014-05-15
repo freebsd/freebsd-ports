@@ -1361,3 +1361,14 @@
      PS=":"
      FS="/"
      ;;
+--- nashorn/test/script/jfx.js
++++ nashorn/test/script/jfx.js
+@@ -89,7 +89,7 @@
+     var sb = new StringBuffer(goldenDir);
+     if (OSInfo.getOSType() == OSType.WINDOWS) {
+         f2 = new File(sb.append(fsep + "windows.png").toString());
+-    } else if (OSInfo.getOSType() == OSType.LINUX) {
++    } else if (OSInfo.getOSType() == OSType.LINUX || OSInfo.getOSType() == OSType.BSD) {
+         f2 = new File(sb.append(fsep + "linux.png").toString());
+     } else if (OSInfo.getOSType() == OSType.MACOSX) {
+         f2 = new File(sb.append(fsep + "macosx.png").toString());
