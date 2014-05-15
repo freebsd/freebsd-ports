@@ -2,7 +2,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
@@ -118,6 +118,9 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/opera ${STAGEDIR}${PREFIX}/bin/
 	${TAR} -C ${WRKSRC} -cf - lib man share | ${TAR} -C ${STAGEDIR}${PREFIX} -xf -
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d
+	${INSTALL_DATA} ${FILESDIR}/libmap.conf \
+		${STAGEDIR}${PREFIX}/etc/libmap.d/opera.conf
 
 # target to build distinfo for both arch
 makesum-all:
