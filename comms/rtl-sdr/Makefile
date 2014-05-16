@@ -3,6 +3,7 @@
 
 PORTNAME=	rtl-sdr
 PORTVERSION=	20140210
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -13,8 +14,8 @@ COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
+USES=		gmake pkgconfig libtool
+USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtoolize:env
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
