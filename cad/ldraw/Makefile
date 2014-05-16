@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ldraw
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ldraw.org/library/updates/
 DISTNAME=	complete
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	LDraw parts library
 
 LICENSE=	CDDL CCbyNCSA2
@@ -24,13 +24,13 @@ USES=		dos2unix gmake zip:infozip
 DOS2UNIX_GLOB=	*.h makefile mklist.c *.txt *.dat
 
 PORTDOCS=	Readme.txt
-
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message
 
 post-extract-script:
-	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo -d ${WRKSRC}/mklist ${WRKSRC}/mklist1_6.zip)
+	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo -d \
+		${WRKSRC}/mklist ${WRKSRC}/mklist1_6.zip)
 	@(cd ${WRKSRC}/mklist/include && ${MV} * ..)
 
 post-patch:
@@ -41,7 +41,7 @@ post-patch:
 		${WRKSRC}/mklist/mklist.c
 
 do-build:
-	@(cd ${WRKSRC}/mklist ; ${GMAKE} ${MAKE_ENV})
+	@(cd ${WRKSRC}/mklist && ${GMAKE} ${MAKE_ENV})
 
 do-install:
 .for f in models p parts LDCfgalt.ldr LDConfig.ldr LDConfig_TLG.ldr
@@ -49,12 +49,12 @@ do-install:
 .endfor
 
 	${INSTALL_PROGRAM} ${WRKSRC}/mklist/mklist ${STAGEDIR}${DATADIR}
-	@(cd ${STAGEDIR}${DATADIR} ; ./mklist -d)
+	@(cd ${STAGEDIR}${DATADIR} && ./mklist -d)
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL}\
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL} \
 		-type f >> ${TMPPLIST} && \
 		${FIND} ${DATADIR_REL} -type d -o -type l | ${SORT} -r | \
 		${SED} 's|^|@dirrm |' >> ${TMPPLIST}

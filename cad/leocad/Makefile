@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	leocad
-PORTVERSION=	0.80.2
-PORTREVISION=	1
+PORTVERSION=	0.80.3
 CATEGORIES=	cad
 MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz
+DISTFILES=	LeoCAD-Source-${PORTVERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.tgz
+EXTRACT_ONLY=	LeoCAD-Source-${PORTVERSION}.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	CAD program that uses bricks similar to those found in many toys
 
 LICENSE=	GPLv2
@@ -26,8 +25,7 @@ USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 USE_GL=		glut
 USE_GNOME=	gtk20
 
-PORTDOCS=	CREDITS.txt README.txt TODO.txt
-
+PORTDOCS=	CREDITS.txt README.txt
 OPTIONS_DEFINE=	DOCS
 
 OPTIONS_SINGLE=	LIBRARY
@@ -38,7 +36,7 @@ LDRAW_DESC=	Library from LDraw symlink, mostly fewer pieces
 LEOCAD_DESC=	Library from LeoCad file, mostly more pieces
 
 INSTALLS_ICONS=	yes
-ICON_SIZES=	16x16 24x24 32x32 48x48 128x128 256x256
+ICON_SIZES=	16x16 24x24 32x32 48x48 64x64 128x128 256x256 512x512
 
 .include <bsd.port.options.mk>
 
@@ -60,12 +58,11 @@ post-patch:
 		s|docs.files = docs/README.txt docs/CREDITS.txt docs/COPYING.txt|docs.files = |' \
 		${WRKSRC}/${PORTNAME}.pro
 
-.for s in 16 24 32 48 128 256
+.for s in 16 24 32 48 64 128 256 512
 	@cd ${WRKSRC}/tools/icon && \
-		${MV} icon${s}.png ${PORTNAME}_${s}x${s}.png
+		${MV} ${PORTNAME}-${s}.png ${PORTNAME}_${s}x${s}.png
 .endfor
 	@cd ${WRKSRC}/tools/icon && ${CP} -a ${PORTNAME}_128x128.png icon128.png
-	@cd ${WRKSRC}/tools/icon && ${MV} icon.svg ${PORTNAME}.svg
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -83,8 +80,10 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/tools/icon/${PORTNAME}.svg \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
+.for i in document*.png icon*.png
+	@cd ${WRKSRC}/tools/icon && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DATADIR}
+.endfor
 	@${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/docs/leocad.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
