@@ -3,6 +3,7 @@
 
 PORTNAME=	gnatpython
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -12,7 +13,7 @@ COMMENT=	Python package used in Ada testsuites
 LICENSE=	GPLv3
 
 SNAPSHOT=	20140205
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
