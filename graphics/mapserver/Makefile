@@ -180,12 +180,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
 
 .if ${PORT_OPTIONS:MMAPSERV}
-	${MKDIR} ${STAGEDIR}${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/apache${APACHE_VERSION}/cgi-bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/mapserv ${STAGEDIR}${PREFIX}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${PHP_EXTENSION_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php/php_mapscript.so \
 		${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}/
 .endif
