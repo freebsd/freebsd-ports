@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MathJax
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	www
 
 MAINTAINER=	lukasz.stelmach@iem.pw.edu.pl
@@ -13,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mathjax
 GH_TAGNAME=	v${PORTVERSION}
 
-WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-54280bb
+WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-705548f
 
 # Changing permissions of 30k files with find -exec (COPYTREE) is way
 # too slow.
