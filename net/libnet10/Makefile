@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/ \
 MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	10
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for creating IP packets
 
 CFLAGS+=	-fPIC
