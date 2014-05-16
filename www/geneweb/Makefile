@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	geneweb
-PORTVERSION=	6.06
+PORTVERSION=	6.07
 CATEGORIES=	www
-MASTER_SITES=	http://opensource.geneanet.org/attachments/download/211/
+MASTER_SITES=	http://opensource.geneanet.org/attachments/download/240/
 DISTNAME=	gw-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
@@ -21,7 +21,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GTK2
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
@@ -32,18 +31,17 @@ PLIST_SUB+=	GUI=""
 PLIST_SUB+=	GUI="@comment "
 .endif
 
-MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwc2.1 gwu.1 gwd.1 consang.1 gwsetup.1
-
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 SUB_FILES+=	pkg-message
 USE_RC_SUBR=	gwd
 
 post-install:
 	(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} distrib)
-	${INSTALL_DATA} ${WRKSRC}/etc/a.gwf ${PREFIX}/share/geneweb
-	${MKDIR} ${PREFIX}/share/geneweb/distribution
-	${CP} -a ${WRKSRC}/distribution ${PREFIX}/share/geneweb/
-	${INSTALL_SCRIPT} ${FILESDIR}/install.sh ${PREFIX}/share/geneweb
-	${CHMOD} -R go+r  ${PREFIX}/share/geneweb ${_MANPAGES}
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKSRC}/etc/a.gwf ${STAGEDIR}${PREFIX}/share/geneweb
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/geneweb/distribution
+	@${CP} -a ${WRKSRC}/distribution ${STAGEDIR}${PREFIX}/share/geneweb/
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gwc1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/geneweb/distribution/gw/gwc1
+	@${INSTALL_SCRIPT} ${FILESDIR}/install.sh ${STAGEDIR}${PREFIX}/share/geneweb
 
 .include <bsd.port.mk>
