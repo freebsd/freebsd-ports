@@ -16,10 +16,9 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/liquibase.jar ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/liquibase ${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/liquibase.jar ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/liquibase ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
