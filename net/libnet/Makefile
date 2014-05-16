@@ -9,7 +9,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/libnet-dev
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for creating IP packets
 
 LATEST_LINK=	${PORTNAME}${SHORT_VER}
