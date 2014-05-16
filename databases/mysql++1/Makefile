@@ -20,23 +20,22 @@ USE_LDCONFIG=	yes
 
 CONFLICTS=	${PORTNAME}*-2.*
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/userman/html ${DOCSDIR}/refman/html
-	@${INSTALL_DATA} ${WRKSRC}/doc/userman/html/* ${DOCSDIR}/userman/html
-	@${INSTALL_DATA} ${WRKSRC}/doc/refman/html/* ${DOCSDIR}/refman/html
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/*.cpp ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/*.h ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/Makefile.simple ${EXAMPLESDIR}/Makefile.temp
-	@${SED} -e "s|/usr/include/mysql++|${PREFIX}/include/mysql++|" < ${EXAMPLESDIR}/Makefile.temp | \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/userman/html ${STAGEDIR}${DOCSDIR}/refman/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/userman/html/* ${STAGEDIR}${DOCSDIR}/userman/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/refman/html/* ${STAGEDIR}${DOCSDIR}/refman/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/*.cpp ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/*.h ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/README ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/Makefile.simple ${STAGEDIR}${EXAMPLESDIR}/Makefile.temp
+	@${SED} -e "s|/usr/include/mysql++|${PREFIX}/include/mysql++|" < ${STAGEDIR}${EXAMPLESDIR}/Makefile.temp | \
 		${SED} -e "s|/usr/include/mysql|${LOCALBASE}/include/mysql|" | \
 		${SED} -e "s|-lmysqlpp|-L${PREFIX}/lib -L${LOCALBASE}/lib/mysql -lmysqlpp|" \
-		> ${EXAMPLESDIR}/Makefile
-	@${RM} -f ${EXAMPLESDIR}/Makefile.temp
+		> ${STAGEDIR}${EXAMPLESDIR}/Makefile
+	@${RM} -f ${STAGEDIR}${EXAMPLESDIR}/Makefile.temp
 .endif
 
 .include <bsd.port.mk>
