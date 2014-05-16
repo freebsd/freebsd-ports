@@ -3,6 +3,7 @@
 
 PORTNAME=	adabooch
 PORTVERSION=	20130322
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR= booch95/booch95/${PORTVERSION}
@@ -16,8 +17,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
 
-USES=		ada gmake
-USE_BZIP2=	yes
+USES=		ada gmake tar:bzip2
 HAS_CONFIGURE=	yes
 ALL_TARGET=	libs
 
