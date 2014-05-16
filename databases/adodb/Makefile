@@ -55,7 +55,7 @@ do-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR} ${STAGEDIR}${DOCSDIR}/cute_icons_for_site
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/cute_icons_for_site
 	@cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f -name '*.txt' \
 		-exec ${INSTALL_MAN} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR}/{} \;
 	@cd ${WRKSRC}/docs; ${FIND} . -type f \
