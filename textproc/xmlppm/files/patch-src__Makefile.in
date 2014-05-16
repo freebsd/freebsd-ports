@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2014-05-17 01:23:05.000000000 +0300
++++ src/Makefile.in	2014-05-17 01:23:13.000000000 +0300
+@@ -176,7 +176,7 @@
+ xmlppm_SOURCES = xmlppm.cpp Args.cpp Args.h Version.h
+ xmlppm_LDADD = libxmlppm.a 
+ AM_CFLAGS = -Wall -ansi -pedantic -Wno-sign-compare -Wno-unknown-pragmas -Wno-conversion
+-AM_CXXFLAGS = -fno-exceptions -fno-rtti -fcheck-new -Wall -ansi -pedantic -Wno-sign-compare -Wno-unknown-pragmas -Wno-conversion
++AM_CXXFLAGS = -fno-exceptions -fno-rtti -Wall -ansi -pedantic -Wno-sign-compare -Wno-unknown-pragmas -Wno-conversion
+ xmlunppm_SOURCES = xmlunppm.cpp Args.cpp Args.h Version.h
+ xmlunppm_LDADD = libxmlppm.a
+ lib_LIBRARIES = libxmlppm.a 
