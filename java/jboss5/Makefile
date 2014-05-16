@@ -9,7 +9,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/JBoss/JBoss-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source J2EE application server (5.x family)
 
 LATEST_LINK=	jboss5
