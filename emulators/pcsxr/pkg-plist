@@ -40,25 +40,11 @@ lib/pcsxr/cfgDFInput
 lib/pcsxr/cfgDFCdrom
 lib/pcsxr/cfgDFSound
 lib/pcsxr/cfgDFNet
-lib/pcsxr/libBladeSio1.a
-lib/pcsxr/libBladeSio1.la
 lib/pcsxr/libBladeSio1.so
-lib/pcsxr/libDFXVideo.a
-lib/pcsxr/libDFXVideo.la
 lib/pcsxr/libDFXVideo.so
-lib/pcsxr/libpeopsxgl.a
-lib/pcsxr/libpeopsxgl.la
 lib/pcsxr/libpeopsxgl.so
-lib/pcsxr/libDFInput.a
-lib/pcsxr/libDFInput.la
 lib/pcsxr/libDFInput.so
-lib/pcsxr/libDFSound.a
-lib/pcsxr/libDFSound.la
 lib/pcsxr/libDFSound.so
-lib/pcsxr/libDFCdrom.a
-lib/pcsxr/libDFCdrom.la
 lib/pcsxr/libDFCdrom.so
-lib/pcsxr/libDFNet.a
-lib/pcsxr/libDFNet.la
 lib/pcsxr/libDFNet.so
 @dirrm lib/pcsxr
