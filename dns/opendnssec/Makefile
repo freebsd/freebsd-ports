@@ -75,9 +75,6 @@ post-install:
 		@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
 	${INSTALL_DATA} ${SCRIPTDATA:S|^|${WRKSRC}/enforcer/utils/|} ${STAGEDIR}${DATADIR}
 #	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/var/opendnssec
 
