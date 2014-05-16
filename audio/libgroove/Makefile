@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgroove
-PORTVERSION=	3.1.1
+PORTVERSION=	4.0.1
 CATEGORIES=	audio
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -17,10 +17,11 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/libav \
 		libSDL2.so:${PORTSDIR}/devel/sdl20
 
 USES=		cmake:outsource 
+CMAKE_ARGS=	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	andrewrk
-GH_COMMIT=	580170f
+GH_COMMIT=	ee115e5
 
 PLIST_SUB+=	VER1=${PORTVERSION:R:R} \
     		VER3=${PORTVERSION}
