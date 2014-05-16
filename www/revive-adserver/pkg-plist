@@ -3653,4 +3653,7 @@
 @dirrmtry %%WWWDIR%%/etc/changes/tasks
 @dirrmtry %%WWWDIR%%/etc/changes
 @dirrmtry %%WWWDIR%%/etc
+@owner root
+@group wheel
+@mode
 @dirrmtry %%WWWDIR%%

@@ -3,6 +3,7 @@
 
 PORTNAME=	revive-adserver
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.revive-adserver.org/
 
