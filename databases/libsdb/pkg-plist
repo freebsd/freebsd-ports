@@ -7,3 +7,9 @@ lib/libsdb.a
 lib/libsdb.so
 lib/libsdb.so.0
 lib/libsdb.so.%%VERSION%%
+man/man3/sdb.3.gz
+man/man3/sdb_close.3.gz
+man/man3/sdb_init.3.gz
+man/man3/sdb_open.3.gz
+man/man3/sdb_query.3.gz
+man/man8/sdbd.8.gz
