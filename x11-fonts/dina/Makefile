@@ -1,35 +1,34 @@
 # $FreeBSD$
 
 PORTNAME=	dina
-PORTVERSION=	2.89
+PORTVERSION=	2.92
 CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/rakuco
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	A monospace bitmap font, primarily aimed at programmers
 
-# IANAL, but the license looks close enough to a standard BSD license that
-# auto-accept and all the other permissions look like reasonable defaults here.
-LICENSE=	custom
-LICENSE_NAME=	Custom License
-LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE=	MIT
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 FONTDIR=	lib/X11/fonts/${PORTNAME}
-NO_BUILD=	yes
-PLIST_SUB+=	FONTDIR=${FONTDIR}
+PLIST_SUB=	FONTDIR=${FONTDIR}
 
-NO_STAGE=	yes
+BDFLIST=	Dina_i400-10.bdf Dina_i400-8.bdf Dina_i400-9.bdf \
+		Dina_i700-10.bdf Dina_i700-8.bdf Dina_i700-9.bdf \
+		Dina_r400-10.bdf Dina_r400-6.bdf Dina_r400-8.bdf \
+		Dina_r400-9.bdf Dina_r700-10.bdf Dina_r700-8.bdf \
+		Dina_r700-9.bdf
+
+do-build:
+.for BDF in ${BDFLIST}
+	cd ${WRKSRC}/BDF && bdftopcf -t -o ${BDF:S/.bdf/.pcf/} ${BDF}
+.endfor
+	${GZIP_CMD} ${WRKSRC}/BDF/*.pcf
+
 do-install:
-	@${MKDIR} ${PREFIX}/${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${PREFIX}/${FONTDIR}
-
-post-install:
-	@cd ${PREFIX}/${FONTDIR} && mkfontdir
-	@${CP} ${PREFIX}/${FONTDIR}/fonts.dir ${PREFIX}/${FONTDIR}/fonts.scale
-	@command fc-cache -f -v ${PREFIX}/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/BDF/*.pcf.gz ${STAGEDIR}${PREFIX}/${FONTDIR}
 
 .include <bsd.port.mk>
