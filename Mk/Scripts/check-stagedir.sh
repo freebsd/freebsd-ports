@@ -64,9 +64,16 @@ parse_plist() {
 			esac
 		;;
 		# Handle [file] Keywords
-		@info\ *|@sample\ *)
+		@info\ *)
 			set -- $line
 			shift
+			echo "${comment}${cwd}/$@"
+		;;
+		@sample\ *)
+			set -- $line
+			shift
+			# Ignore the actual file if it is in stagedir
+			echo "@comment ${cwd}/${@%.sample}"
 			echo "${comment}${cwd}/$@"
 		;;
 		# Handle [dirrmty] Keywords
