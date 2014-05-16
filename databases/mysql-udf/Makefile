@@ -24,7 +24,6 @@ PLIST_FILES+=	lib/mysql/plugin/udf_${MODULE}.so
 
 PLIST_DIRS=	lib/mysql/plugin
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
@@ -39,12 +38,9 @@ do-build:
 .endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/mysql/plugin
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/mysql/plugin
 .for MODULE in ${MODULES}
-	${INSTALL_PROGRAM} ${WRKSRC}/udf_${MODULE}.so ${PREFIX}/lib/mysql/plugin/udf_${MODULE}.so
+	${INSTALL_PROGRAM} ${WRKSRC}/udf_${MODULE}.so ${STAGEDIR}${PREFIX}/lib/mysql/plugin/udf_${MODULE}.so
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
