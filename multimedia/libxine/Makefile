@@ -3,7 +3,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.2.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -65,7 +65,8 @@ OPTIONS_DEFINE=	CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
 # Please sync with XINE_PLUGINSDIR in multimedia/xine
 # and multimedia/vdr-plugin-xineliboutput
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/2.3"
+PLUGINSDIR=	lib/xine/plugins/2.3
+PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 
 .include <bsd.port.options.mk>
 
@@ -225,5 +226,13 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' \
 		${WRKSRC}/configure
+
+# XXX older nvidia-driver versions don't support opengl 2.0 so this
+# plugin might not get built:
+post-install:
+.if !exists(${STAGEDIR}${PREFIX}/${PLUGINSDIR}/xineplug_vo_out_opengl2.so)
+	${REINPLACE_CMD} -e '/xineplug_vo_out_opengl2.so/d' \
+		${TMPPLIST}
+.endif
 
 .include <bsd.port.post.mk>
