@@ -39,6 +39,8 @@ EPIPHANY_BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 EPIPHANY_RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 EPIPHANY_CONFIGURE_ENABLE=	epiphany-extension
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MEPIPHANY}
 PLIST_SUB+=	EPIPHANY=""
 .else
