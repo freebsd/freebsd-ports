@@ -17,13 +17,6 @@
 %%DATADIR%%/adodb-xmlschema.inc.php
 %%DATADIR%%/adodb-xmlschema03.inc.php
 %%DATADIR%%/adodb.inc.php
-%%DATADIR%%/pivottable.inc.php
-%%DATADIR%%/rsfilter.inc.php
-%%DATADIR%%/server.php
-%%DATADIR%%/toexport.inc.php
-%%DATADIR%%/tohtml.inc.php
-%%DATADIR%%/xmlschema.dtd
-%%DATADIR%%/xmlschema03.dtd
 %%DATADIR%%/contrib/toxmlrpc.inc.php
 %%DATADIR%%/datadict/datadict-access.inc.php
 %%DATADIR%%/datadict/datadict-db2.inc.php
@@ -53,9 +46,9 @@
 %%DATADIR%%/drivers/adodb-informix72.inc.php
 %%DATADIR%%/drivers/adodb-ldap.inc.php
 %%DATADIR%%/drivers/adodb-mssql.inc.php
-%%DATADIR%%/drivers/adodb-mssqlnative.inc.php
 %%DATADIR%%/drivers/adodb-mssql.inc.php.bak
 %%DATADIR%%/drivers/adodb-mssql_n.inc.php
+%%DATADIR%%/drivers/adodb-mssqlnative.inc.php
 %%DATADIR%%/drivers/adodb-mssqlpo.inc.php
 %%DATADIR%%/drivers/adodb-mysql.inc.php
 %%DATADIR%%/drivers/adodb-mysqli.inc.php
@@ -109,10 +102,10 @@
 %%DATADIR%%/lang/adodb-ro.inc.php
 %%DATADIR%%/lang/adodb-ru1251.inc.php
 %%DATADIR%%/lang/adodb-sv.inc.php
-%%DATADIR%%/lang/adodb_th.inc.php
 %%DATADIR%%/lang/adodb-uk1251.inc.php
-%%DATADIR%%/pear/readme.Auth.txt
+%%DATADIR%%/lang/adodb_th.inc.php
 %%DATADIR%%/pear/Auth/Container/ADOdb.php
+%%DATADIR%%/pear/readme.Auth.txt
 %%DATADIR%%/perf/perf-db2.inc.php
 %%DATADIR%%/perf/perf-informix.inc.php
 %%DATADIR%%/perf/perf-mssql.inc.php
@@ -120,6 +113,9 @@
 %%DATADIR%%/perf/perf-mysql.inc.php
 %%DATADIR%%/perf/perf-oci8.inc.php
 %%DATADIR%%/perf/perf-postgres.inc.php
+%%DATADIR%%/pivottable.inc.php
+%%DATADIR%%/rsfilter.inc.php
+%%DATADIR%%/server.php
 %%DATADIR%%/session/adodb-compress-bzip2.php
 %%DATADIR%%/session/adodb-compress-gzip.php
 %%DATADIR%%/session/adodb-cryptsession.php
@@ -143,12 +139,6 @@
 %%DATADIR%%/session/old/crypt.inc.php
 %%DATADIR%%/session/session_schema.xml
 %%DATADIR%%/session/session_schema2.xml
-%%DATADIR%%/xsl/convert-0.1-0.2.xsl
-%%DATADIR%%/xsl/convert-0.1-0.3.xsl
-%%DATADIR%%/xsl/convert-0.2-0.1.xsl
-%%DATADIR%%/xsl/convert-0.2-0.3.xsl
-%%DATADIR%%/xsl/remove-0.2.xsl
-%%DATADIR%%/xsl/remove-0.3.xsl
 %%TESTS%%%%DATADIR%%/tests/benchmark.php
 %%TESTS%%%%DATADIR%%/tests/client.php
 %%TESTS%%%%DATADIR%%/tests/pdo.php
@@ -178,23 +168,31 @@
 %%TESTS%%%%DATADIR%%/tests/tmssql.php
 %%TESTS%%%%DATADIR%%/tests/xmlschema.xml
 %%TESTS%%%%DATADIR%%/tests/xmlschema-mssql.xml
+%%DATADIR%%/toexport.inc.php
+%%DATADIR%%/tohtml.inc.php
+%%DATADIR%%/xmlschema.dtd
+%%DATADIR%%/xmlschema03.dtd
+%%DATADIR%%/xsl/convert-0.1-0.2.xsl
+%%DATADIR%%/xsl/convert-0.1-0.3.xsl
+%%DATADIR%%/xsl/convert-0.2-0.1.xsl
+%%DATADIR%%/xsl/convert-0.2-0.3.xsl
+%%DATADIR%%/xsl/remove-0.2.xsl
+%%DATADIR%%/xsl/remove-0.3.xsl
+%%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb.gif
+%%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb2.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs-active-record.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-adodb.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-datadict.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-oracle.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-perf.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs-session.old.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-session.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs-session.old.htm
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/old-changelog.htm
 %%PORTDOCS%%%%DOCSDIR%%/readme.htm
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/tips_portable_sql.htm
 %%PORTDOCS%%%%DOCSDIR%%/tute.htm
-%%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb.gif
-%%PORTDOCS%%%%DOCSDIR%%/cute_icons_for_site/adodb2.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cute_icons_for_site
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/datadict
 @dirrm %%DATADIR%%/drivers
@@ -205,6 +203,8 @@
 @dirrm %%DATADIR%%/perf
 @dirrm %%DATADIR%%/session/old
 @dirrm %%DATADIR%%/session
-@dirrm %%DATADIR%%/xsl
 %%TESTS%%@dirrm %%DATADIR%%/tests
+@dirrm %%DATADIR%%/xsl
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cute_icons_for_site
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
