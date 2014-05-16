@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2006-08-25 13:32:28.000000000 +0800
++++ Makefile.in	2014-05-16 10:48:32.130238965 +0800
+@@ -99,15 +99,15 @@ all:
+ 
+ 
+ install_lib:
+-	test -d $(LIBDIR) || mkdir $(LIBDIR)
+-	for i in $(LIBFILES); do echo $$i; cp $$i $(LIBDIR); done
++	test -d $(DESTDIR)$(LIBDIR) || mkdir $(DESTDIR)$(LIBDIR)
++	for i in $(LIBFILES); do echo $$i; cp $$i $(DESTDIR)$(LIBDIR); done
+ 
+ install_bin:
+-	test -d $(BINDIR) || mkdir $(BINDIR)
++	test -d $(DESTDIR)$(BINDIR) || mkdir $(DESTDIR)$(BINDIR)
+ 	for i in $(BINFILES); do \
+ 		echo $$i; \
+-		sed -e "s@$(MYPERL)@$(PERL)@" -e 's@dblibdir *= *".*"@dblibdir = "$(LIBDIR)"@'  -e 's@dbbindir *= *".*"@dbbindir = "$(BINDIR)"@' <$$i >$(BINDIR)/$$i; \
+-		chmod +x $(BINDIR)/$$i; \
++		sed -e "s@$(MYPERL)@$(PERL)@" -e 's@dblibdir *= *".*"@dblibdir = "$(LIBDIR)"@'  -e 's@dbbindir *= *".*"@dbbindir = "$(BINDIR)"@' <$$i >$(DESTDIR)$(BINDIR)/$$i; \
++		chmod +x $(DESTDIR)$(BINDIR)/$$i; \
+ 	done
+ 
+ install: install_lib install_bin

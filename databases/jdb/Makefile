@@ -13,5 +13,4 @@ USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/lib/jdb
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
