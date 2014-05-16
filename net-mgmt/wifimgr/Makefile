@@ -3,6 +3,7 @@
 
 PORTNAME=	wifimgr
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 		CRITICAL
@@ -19,6 +20,10 @@ OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} >= 901504
+MAKE_ENV+=	INSTALL="install -U"
+.endif
+
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext pkgconfig
 PLIST_SUB+=	NLS=""
@@ -26,6 +31,11 @@ PLIST_SUB+=	NLS=""
 CFLAGS+=	-DWITHOUT_NLS
 PLIST_SUB+=	NLS="@comment "
 MAKE_ENV+=	WITHOUT_NLS=${WITHOUT_NLS}
+.endif
+
+post-patch:
+.if ${OSVERSION} < 901504
+	@${REINPLACE_CMD} -e 's/-o root -g wheel//' ${WRKSRC}/src/Makefile
 .endif
 
 .include <bsd.port.mk>
