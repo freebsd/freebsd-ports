@@ -17,10 +17,6 @@ HAS_CONFIGURE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
 USE_LDCONFIG=	yes
 
-MAN3=		sdb.3 sdb_init.3 sdb_open.3 sdb_close.3 sdb_query.3
-MAN8=		sdbd.8
-
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

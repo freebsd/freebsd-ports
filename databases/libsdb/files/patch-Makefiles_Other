@@ -1,6 +1,6 @@
---- Makefiles/Other.orig	Tue Sep 13 00:26:50 2005
-+++ Makefiles/Other	Tue Sep 13 00:27:45 2005
-@@ -24,16 +24,13 @@
+--- Makefiles/Other.orig	2008-04-30 16:38:02.000000000 +0800
++++ Makefiles/Other	2014-05-16 10:07:54.769419058 +0800
+@@ -24,18 +24,15 @@ $(STATICLIB): $(STATICOBJ)
  
  $(SHAREDLIB): $(SHAREDOBJ)
  	rm -f $(SHAREDLIB)
@@ -15,8 +15,12 @@
 -	mkdir -p $(LIBDIR)
 -	cp $(SOVERSION) $(LIBDIR)
 -	cp $(STATICLIB) $(LIBDIR)
-+	$(BSD_INSTALL_PROGRAM) $(SOVERSION) $(LIBDIR)
-+	$(BSD_INSTALL_DATA) $(STATICLIB) $(LIBDIR)
- 	cd $(LIBDIR) && ln -s $(SOVERSION) $(SHAREDLIB)
- 	cd $(LIBDIR) && ln -s $(SOVERSION) $(SONAME)
+-	cd $(LIBDIR) && ln -s $(SOVERSION) $(SHAREDLIB)
+-	cd $(LIBDIR) && ln -s $(SOVERSION) $(SONAME)
++	$(BSD_INSTALL_PROGRAM) $(SOVERSION) $(DESTDIR)$(LIBDIR)
++	$(BSD_INSTALL_DATA) $(STATICLIB) $(DESTDIR)$(LIBDIR)
++	cd $(DESTDIR)$(LIBDIR) && ln -s $(SOVERSION) $(SHAREDLIB)
++	cd $(DESTDIR)$(LIBDIR) && ln -s $(SOVERSION) $(SONAME)
  
+ uninstall-lib:
+ 	cd $(LIBDIR) && rm -f $(SHAREDLIB) $(STATICLIB) $(SOVERSION) $(SONAME)
