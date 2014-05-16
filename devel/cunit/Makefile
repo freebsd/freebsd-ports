@@ -33,10 +33,8 @@ USE_LDCONFIG=	yes
 
 DATADIR=	${PREFIX}/share/CUnit
 DOCSDIR=	${PREFIX}/share/doc/CUnit
-EXAMPLESDIR=	${PREFIX}/share/examples/CUnit
 PORTDATA=	*
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
 AUTOMAKE_ARGS=	--add-missing
 LIBTOOLIZE_ARGS=--copy --force --install

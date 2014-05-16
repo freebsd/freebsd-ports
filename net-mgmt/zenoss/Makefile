@@ -86,8 +86,6 @@ post-patch:
 	@${ECHO} ${ZENHOME} > ${WRKSRC}/zenhome
 	@${REINPLACE_CMD} -e "s,g++,${CXX},g" \
 		${WRKSRC}/build-functions.sh
-	@${REINPLACE_CMD} -e "s,g++-4.0,${CXX},g" \
-		${WRKSRC}/rrdeps.sh
 
 do-build:
 	@${DO_NADA}

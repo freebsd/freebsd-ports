@@ -39,6 +39,12 @@ EPIPHANY_BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 EPIPHANY_RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 EPIPHANY_CONFIGURE_ENABLE=	epiphany-extension
 
+.if ${PORT_OPTIONS:MEPIPHANY}
+PLIST_SUB+=	EPIPHANY=""
+.else
+PLIST_SUB+=	EPIPHANY="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|glib/gerror|glib|' \
 		${WRKSRC}/src/gwget-application.h
