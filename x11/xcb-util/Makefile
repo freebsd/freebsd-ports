@@ -12,8 +12,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A module with libxcb/libX11 extension/replacement libraries
 
 XORG_CAT=	lib
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_XORG=	xau xcb xdmcp
 
 post-patch:
