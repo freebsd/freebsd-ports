@@ -6104,3 +6104,4 @@ archivers/star||2014-05-15|Has expired: Depends on deprecated smake
 editors/ved||2014-05-15|Has expired: Depends on deprecated smake
 japanese/chasen||2014-05-15|Has expired: Unmaintained since 2001
 www/openx|www/revive-adserver|2014-05-15|Upstream obsolete, forked
+security/clamav-devel||2014-05-16|Retire, older than security/clamav

@@ -86,7 +86,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 # force to use -lthr until it's not fixed.
 PTHREAD_LIBS=	-lthr
 
-CONFLICTS?=	clamav-devel-[0-9]* clamav-milter-[0-9]*
+CONFLICTS?=	clamav-milter-[0-9]*
 
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
