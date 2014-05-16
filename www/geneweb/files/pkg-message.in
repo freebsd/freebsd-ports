@@ -16,4 +16,14 @@ http://opensource.geneanet.org/projects/geneweb/wiki
 and/or to the GeneWeb mailing list GeneWeb@yahoogroups.com if you need
 help.
 
+Main Makefile in GeneWeb 6.07 does not build the experimental GUI, however
+it remains in the codebase. GTK2 option is being retained in this port in
+case the GUI becomes part of the main Makefile again in a later version.
+
+If you notice odd failures, e.g., when editing a family, make sure you are
+using an up-to-date template. Additional attributes, e.g., occupation got
+added around v6.06, and if your template does not include this, you will
+likely experience problems as the code throws an exception when trying to
+edit a family.
+
 ==========================================================================

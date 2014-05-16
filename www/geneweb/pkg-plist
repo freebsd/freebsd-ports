@@ -7,6 +7,14 @@ bin/gwc1
 bin/gwc2
 bin/gwd
 bin/gwu
+man/man1/consang.1.gz
+man/man1/ged2gwb.1.gz
+man/man1/gwb2ged.1.gz
+man/man1/gwc.1.gz
+man/man1/gwc2.1.gz
+man/man1/gwd.1.gz
+man/man1/gwsetup.1.gz
+man/man1/gwu.1.gz
 %%DATADIR%%/a.gwf
 %%DATADIR%%/distribution/CHANGES.txt
 %%DATADIR%%/distribution/LICENSE.txt
@@ -31,6 +39,9 @@ bin/gwu
 %%DATADIR%%/distribution/gw/etc/forum.txt
 %%DATADIR%%/distribution/gw/etc/hed.txt
 %%DATADIR%%/distribution/gw/etc/index.txt
+%%DATADIR%%/distribution/gw/etc/jquery_1_9_1_min.js
+%%DATADIR%%/distribution/gw/etc/jquery_placeholder_min.js
+%%DATADIR%%/distribution/gw/etc/miss_evt.txt
 %%DATADIR%%/distribution/gw/etc/moved.txt
 %%DATADIR%%/distribution/gw/etc/particles.txt
 %%DATADIR%%/distribution/gw/etc/perso.txt
@@ -139,6 +150,7 @@ bin/gwu
 %%DATADIR%%/distribution/gw/etc/templm/relmenu.txt
 %%DATADIR%%/distribution/gw/etc/templm/toolbar.txt
 %%DATADIR%%/distribution/gw/etc/templm/trl.txt
+%%DATADIR%%/distribution/gw/etc/templm/upddata.txt
 %%DATADIR%%/distribution/gw/etc/templm/updfam.txt
 %%DATADIR%%/distribution/gw/etc/templm/updind.txt
 %%DATADIR%%/distribution/gw/etc/templm/updmenu.txt
@@ -157,6 +169,7 @@ bin/gwu
 %%DATADIR%%/distribution/gw/etc/upddata.txt
 %%DATADIR%%/distribution/gw/etc/updfam.txt
 %%DATADIR%%/distribution/gw/etc/updhist.txt
+%%DATADIR%%/distribution/gw/etc/updhist_diff.txt
 %%DATADIR%%/distribution/gw/etc/updind.txt
 %%DATADIR%%/distribution/gw/etc/updmenu.txt
 %%DATADIR%%/distribution/gw/etc/welcome.txt
@@ -278,6 +291,8 @@ bin/gwu
 %%DATADIR%%/distribution/gw/images/picto_branche_patronymique.png
 %%DATADIR%%/distribution/gw/images/picto_calendar.png
 %%DATADIR%%/distribution/gw/images/picto_cle.png
+%%DATADIR%%/distribution/gw/images/picto_edit_big.png
+%%DATADIR%%/distribution/gw/images/picto_edit_small.png
 %%DATADIR%%/distribution/gw/images/picto_fleche_blanche.png
 %%DATADIR%%/distribution/gw/images/picto_fleche_bleu.png
 %%DATADIR%%/distribution/gw/images/picto_loupe.png
@@ -362,9 +377,6 @@ bin/gwu
 %%DATADIR%%/distribution/gw/update_nldb
 %%DATADIR%%/distribution/gwd
 %%DATADIR%%/distribution/gwsetup
-%%GUI%%%%DATADIR%%/distribution/geneweb_gui
-%%GUI%%%%DATADIR%%/distribution/gw/gui_lex.txt
-%%GUI%%%%DATADIR%%/distribution/gw/gui
 %%DATADIR%%/etc/accent.txt
 %%DATADIR%%/etc/advanced.txt
 %%DATADIR%%/etc/anclist.txt
@@ -383,6 +395,9 @@ bin/gwu
 %%DATADIR%%/etc/forum.txt
 %%DATADIR%%/etc/hed.txt
 %%DATADIR%%/etc/index.txt
+%%DATADIR%%/etc/jquery_1_9_1_min.js
+%%DATADIR%%/etc/jquery_placeholder_min.js
+%%DATADIR%%/etc/miss_evt.txt
 %%DATADIR%%/etc/moved.txt
 %%DATADIR%%/etc/particles.txt
 %%DATADIR%%/etc/perso.txt
@@ -491,6 +506,7 @@ bin/gwu
 %%DATADIR%%/etc/templm/relmenu.txt
 %%DATADIR%%/etc/templm/toolbar.txt
 %%DATADIR%%/etc/templm/trl.txt
+%%DATADIR%%/etc/templm/upddata.txt
 %%DATADIR%%/etc/templm/updfam.txt
 %%DATADIR%%/etc/templm/updind.txt
 %%DATADIR%%/etc/templm/updmenu.txt
@@ -509,6 +525,7 @@ bin/gwu
 %%DATADIR%%/etc/upddata.txt
 %%DATADIR%%/etc/updfam.txt
 %%DATADIR%%/etc/updhist.txt
+%%DATADIR%%/etc/updhist_diff.txt
 %%DATADIR%%/etc/updind.txt
 %%DATADIR%%/etc/updmenu.txt
 %%DATADIR%%/etc/welcome.txt
@@ -612,6 +629,8 @@ bin/gwu
 %%DATADIR%%/images/picto_branche_patronymique.png
 %%DATADIR%%/images/picto_calendar.png
 %%DATADIR%%/images/picto_cle.png
+%%DATADIR%%/images/picto_edit_big.png
+%%DATADIR%%/images/picto_edit_small.png
 %%DATADIR%%/images/picto_fleche_blanche.png
 %%DATADIR%%/images/picto_fleche_bleu.png
 %%DATADIR%%/images/picto_loupe.png
@@ -636,40 +655,39 @@ bin/gwu
 %%DATADIR%%/lang/start.txt
 %%DATADIR%%/lang/start_utf8.txt
 %%DATADIR%%/lang/version.txt
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/images/flags
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/etc/templx
-@dirrm %%DATADIR%%/etc/templm
-@dirrm %%DATADIR%%/etc/templh
-@dirrm %%DATADIR%%/etc/templf
-@dirrm %%DATADIR%%/etc/templd
-@dirrm %%DATADIR%%/etc/templc
-@dirrm %%DATADIR%%/etc/templb
-@dirrm %%DATADIR%%/etc/templa
-@dirrm %%DATADIR%%/etc/templ502
-@dirrm %%DATADIR%%/etc/perso_module
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%/distribution/gw/setup/lang
-@dirrm %%DATADIR%%/distribution/gw/setup
-@dirrm %%DATADIR%%/distribution/gw/old
-@dirrm %%DATADIR%%/distribution/gw/lang
-@dirrm %%DATADIR%%/distribution/gw/images/flags
-@dirrm %%DATADIR%%/distribution/gw/images
+@dirrm %%DATADIR%%/distribution/gw/etc/perso_module
+@dirrm %%DATADIR%%/distribution/gw/etc/templ502
+@dirrm %%DATADIR%%/distribution/gw/etc/templa
+@dirrm %%DATADIR%%/distribution/gw/etc/templb
+@dirrm %%DATADIR%%/distribution/gw/etc/templc
+@dirrm %%DATADIR%%/distribution/gw/etc/templd
+@dirrm %%DATADIR%%/distribution/gw/etc/templf
+@dirrm %%DATADIR%%/distribution/gw/etc/templh
+@dirrm %%DATADIR%%/distribution/gw/etc/templm
+@dirrm %%DATADIR%%/distribution/gw/etc/templx
+@dirrm %%DATADIR%%/distribution/gw/etc
 @dirrm %%DATADIR%%/distribution/gw/gwtp_tmp/lang
 @dirrm %%DATADIR%%/distribution/gw/gwtp_tmp
-@dirrm %%DATADIR%%/distribution/gw/etc/templx
-@dirrm %%DATADIR%%/distribution/gw/etc/templm
-@dirrm %%DATADIR%%/distribution/gw/etc/templh
-@dirrm %%DATADIR%%/distribution/gw/etc/templf
-@dirrm %%DATADIR%%/distribution/gw/etc/templd
-@dirrm %%DATADIR%%/distribution/gw/etc/templc
-@dirrm %%DATADIR%%/distribution/gw/etc/templb
-@dirrm %%DATADIR%%/distribution/gw/etc/templa
-@dirrm %%DATADIR%%/distribution/gw/etc/templ502
-@dirrm %%DATADIR%%/distribution/gw/etc/perso_module
-@dirrm %%DATADIR%%/distribution/gw/etc
+@dirrm %%DATADIR%%/distribution/gw/images/flags
+@dirrm %%DATADIR%%/distribution/gw/images
+@dirrm %%DATADIR%%/distribution/gw/lang
+@dirrmtry %%DATADIR%%/distribution/gw/old
+@dirrm %%DATADIR%%/distribution/gw/setup/lang
+@dirrm %%DATADIR%%/distribution/gw/setup
 @dirrm %%DATADIR%%/distribution/gw
 @dirrm %%DATADIR%%/distribution
+@dirrm %%DATADIR%%/etc/perso_module
+@dirrm %%DATADIR%%/etc/templ502
+@dirrm %%DATADIR%%/etc/templa
+@dirrm %%DATADIR%%/etc/templb
+@dirrm %%DATADIR%%/etc/templc
+@dirrm %%DATADIR%%/etc/templd
+@dirrm %%DATADIR%%/etc/templf
+@dirrm %%DATADIR%%/etc/templh
+@dirrm %%DATADIR%%/etc/templm
+@dirrm %%DATADIR%%/etc/templx
+@dirrm %%DATADIR%%/etc
+@dirrm %%DATADIR%%/images/flags
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
-@exec mkdir -p %D/%%DATADIR%%/distribution/gw/old
