@@ -1435,6 +1435,7 @@
     SUBDIR += teckit
     SUBDIR += tei-guidelines-p3
     SUBDIR += tei-p3
+    SUBDIR += templates_parser
     SUBDIR += tet-aspell
     SUBDIR += tex2im
     SUBDIR += texi2db
