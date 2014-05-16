@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Convert any document from and to any LibreOffice supported format
 
 LICENSE=	GPLv2
@@ -30,6 +30,8 @@ DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	errcode.txt filters.txt formats.txt office-installations.txt \
 		selinux.txt unoconv.1.txt
+
+OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME} pkg-message
 

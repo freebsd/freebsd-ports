@@ -3,13 +3,18 @@
 
 PORTNAME=	brickutils
 PORTVERSION=	0.1.6.1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/ \
+		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/:docs \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	BrickUtils-${PORTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	BrickUtils-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	BrickUtils-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}_icons${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Utility for building models with LEGO
 
 LICENSE=	GPLv3
@@ -23,7 +28,10 @@ WRKSRC=		${WRKDIR}/BrickUtils-${PORTVERSION}
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 
-PORTDOCS=	ChangeLog
+PORTDOCS=       *
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	ChangeLog
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME} \
@@ -31,6 +39,13 @@ SUB_FILES=	${PORTNAME} \
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+= 	${PORTNAME}-manual-it.pdf:docs \
+		${PORTNAME}-manual.pdf:docs
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}|' \
@@ -61,7 +76,10 @@ do-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@(cd ${_DISTDIR} && ${CP} -a *.pdf ${STAGEDIR}${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
