@@ -8,6 +8,7 @@ libexec/gprbuild/gprlib
 share/gpr/_default.gpr
 share/gprconfig/asm.xml
 share/gprconfig/c.xml
+share/gprconfig/clean.xml
 share/gprconfig/compilers.xml
 share/gprconfig/cpp.xml
 share/gprconfig/cross.xml

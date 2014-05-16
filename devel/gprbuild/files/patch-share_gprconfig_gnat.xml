@@ -1,4 +1,4 @@
---- share/gprconfig/gnat.xml.orig	2013-01-16 21:07:55.000000000 +0000
+--- share/gprconfig/gnat.xml.orig	2013-09-16 15:29:28.000000000 +0000
 +++ share/gprconfig/gnat.xml
 @@ -63,7 +63,7 @@
     </config>
