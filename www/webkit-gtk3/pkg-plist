@@ -1,5 +1,4 @@
 bin/GtkLauncher-3
-bin/MiniBrowser
 bin/jsc-3
 include/webkitgtk-3.0/JavaScriptCore/JSBase.h
 include/webkitgtk-3.0/JavaScriptCore/JSContextRef.h
