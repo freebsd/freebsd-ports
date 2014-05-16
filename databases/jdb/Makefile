@@ -3,13 +3,14 @@
 
 PORTNAME=	jdb
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JDB/
 
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	JDB manipulates flat-ASCII databases from shell scripts
 
-USES=		perl5
+USES=		perl5 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/lib/jdb
 
