@@ -12,33 +12,23 @@ EXTRACT_SUFX=	.orig.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 
-LICENSE=	GPLv2
 NOT_FOR_ARCHS=	sparc64
 USES=		pathfix gmake pkgconfig
-USE_CSTD=	gnu89
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	${PORTNAME} pkg-message
 
 MAKE_ARGS+=	CFLAGS+="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15" LDFLAGS+=-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	cd ${WRKSRC} && \
-	    ${FIND} campaigns contrib maps scripts -type d \
-	    -exec ${MKDIR} "${DATADIR}/{}" \; && \
-	    ${FIND} campaigns contrib maps scripts -type f \
-	    -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-	${INSTALL_PROGRAM} ${WRKSRC}/wartool ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/build.sh ${DATADIR}
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "campaigns contrib maps scripts" ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/wartool ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/build.sh ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
