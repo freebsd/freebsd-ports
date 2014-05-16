@@ -17,17 +17,18 @@ INVALID_BDB_VER=2
 USERS=	rdfdb
 GROUPS=	rdfdb
 
-WRKSRC=	${WRKDIR}/rdfdb
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/rdfdb
+USES=		gmake
 MAKEFILE=	makefile
 ALL_TARGET=
 CFLAGS+=	${PTHREAD_CFLAGS} -Wno-return-type
+SUB_LIST+=	RDFDB_PORT="${RDFDB_PORT}" RDFDB_DIR="${RDFDB_DIR}"
+USE_RC_SUBR=	rdfdb-server
 
 RDFDB_PORT?=	7001
 
-PLIST_FILES=	bin/rdfdb bin/rdfdb etc/rc.d/rdfdb-server.sh
+PLIST_FILES=	bin/rdfdb
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS:S/"//g},g' \
@@ -36,12 +37,6 @@ post-patch:
 		${WRKSRC}/makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rdfdb ${PREFIX}/bin
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%RDFDB_DIR%%|${RDFDB_DIR}|g; \
-		s|%%RDFDB_PORT%%|${RDFDB_PORT}|g" \
-		< ${FILESDIR}/rdfdb-server.sh.tmpl \
-		> ${PREFIX}/etc/rc.d/rdfdb-server.sh
-	@${CHMOD} 554 ${PREFIX}/etc/rc.d/rdfdb-server.sh
-	@${CHOWN} root:rdfdb ${PREFIX}/etc/rc.d/rdfdb-server.sh
+	${INSTALL_PROGRAM} ${WRKSRC}/rdfdb ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
