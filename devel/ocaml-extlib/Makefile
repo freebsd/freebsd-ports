@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	extlib
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
@@ -19,24 +19,18 @@ USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAMLFIND_PLIST=yes
 
-ALL_TARGET=	all opt
+USES=		gmake
+ALL_TARGET=	all opt doc
+MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	doc
-PLIST_DIRSTRY=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
-.endif
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
