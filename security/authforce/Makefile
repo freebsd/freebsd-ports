@@ -3,60 +3,54 @@
 
 PORTNAME=	authforce
 PORTVERSION=	0.9.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security www
-MASTER_SITES=	http://cloud.github.com/downloads/zlandau/authforce/
+MASTER_SITES=	GHC
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	CURL NLS
-
-USES=		ncurses readline
-GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 NO_CCACHE=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	zlandau
+
+USES=		ncurses readline tar:bzip2 
+GNU_CONFIGURE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		authforce
 
 PLIST_FILES=	bin/authforce \
+		man/man1/authforce.1.gz \
 		%%DATADIR%%/blank.lst \
 		%%DATADIR%%/dummy.lst \
 		%%DATADIR%%/password.lst \
 		%%DATADIR%%/username.lst \
-		%%DATADIR%%/userpass.lst \
-		man/man1/authforce.1.gz
-
+		%%DATADIR%%/userpass.lst
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		CURL NLS
 
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-.else
-CONFIGURE_ARGS+=	--without-curl
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_FILES+=	share/locale/nl/LC_MESSAGES/authforce.mo
-CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_WITH=	curl
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_PLIST_FILES=	share/locale/nl/LC_MESSAGES/authforce.mo
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^pwlistsdir = / s|/data$$||' ${WRKSRC}/data/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/^mangdir = / s|/mang$$|/man1|' ${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e \
-		'/<curl\/types.h>/d' ${WRKSRC}/src/http.c
-.for i in extract.c methods.c misc.c
-	@${REINPLACE_CMD} -e \
-		's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/src/${i}
-.endfor
+	@${FIND} ${WRKSRC}/src -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^\(#include <curl/types.h>\)|/* \1 */| ; \
+		 s|^\(#include <malloc.h>\)|/* \1 */|'
 
 .include <bsd.port.mk>
