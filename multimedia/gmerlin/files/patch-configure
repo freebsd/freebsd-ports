@@ -1,6 +1,6 @@
---- configure.orig	2011-01-08 09:50:08.000000000 +0900
-+++ configure	2011-06-29 01:06:34.000000000 +0900
-@@ -1042,6 +1042,7 @@
+--- configure.orig	2014-03-18 03:42:33.000000000 +0900
++++ configure	2014-03-18 03:57:27.000000000 +0900
+@@ -1048,6 +1048,7 @@
  with_x
  enable_pulseaudio
  enable_lqt
@@ -8,7 +8,43 @@
  enable_libvisual
  enable_libcdio
  enable_musicbrainz
-@@ -15115,9 +15116,9 @@
+@@ -6324,7 +6325,7 @@
+   rm -rf conftest*
+   ;;
+ 
+-x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
++amd64-*freebsd*|x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
+ s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
+   # Find out which ABI we are using.
+   echo 'int i;' > conftest.$ac_ext
+@@ -6336,7 +6337,7 @@
+     case `/usr/bin/file conftest.o` in
+       *32-bit*)
+ 	case $host in
+-	  x86_64-*kfreebsd*-gnu)
++	  amd64-*freebsd*|x86_64-*kfreebsd*-gnu)
+ 	    LD="${LD-ld} -m elf_i386_fbsd"
+ 	    ;;
+ 	  x86_64-*linux*)
+@@ -6355,7 +6356,7 @@
+ 	;;
+       *64-bit*)
+ 	case $host in
+-	  x86_64-*kfreebsd*-gnu)
++	  amd64-*freebsd*|x86_64-*kfreebsd*-gnu)
+ 	    LD="${LD-ld} -m elf_x86_64_fbsd"
+ 	    ;;
+ 	  x86_64-*linux*)
+@@ -11240,7 +11241,7 @@
+ 	for ac_word in $CC $CFLAGS $CPPFLAGS $LDFLAGS; do
+ 	 if test -n "$ac_prev"; then
+ 	   case $ac_word in
+-	     i?86 | x86_64 | ppc | ppc64)
++	     amd64 | i?86 | x86_64 | ppc | ppc64)
+ 	       if test -z "$ac_arch" || test "$ac_arch" = "$ac_word"; then
+ 		 ac_arch=$ac_word
+ 	       else
+@@ -15396,9 +15397,9 @@
  V4LCONVERT_REQUIRED="0.5.7"
  have_v4lconvert=false
  
@@ -21,3 +57,21 @@
                   yes) test_v4lconvert=true ;;
                   no) test_v4lconvert=false ;;
                 esac
+@@ -17345,7 +17346,7 @@
+ case $host_cpu in
+   i[3-7]86)
+     lqt_cpu_family=x86;;
+-  x86_64*)
++  amd64* | x86_64*)
+     lqt_cpu_family=x86;;
+   powerpc | powerpc64)
+     lqt_cpu_family=ppc;;
+@@ -17520,7 +17521,7 @@
+ $as_echo "IA32" >&6; }
+     ARCH_X86=true
+     ;;
+-  x86_64*)
++  amd64* | x86_64*)
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: x86_64" >&5
+ $as_echo "x86_64" >&6; }
+     ARCH_X86=true
