@@ -10,11 +10,11 @@ DISTNAME=	wnn7-elisp-el-1.02-1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Wnn7 elisp client
+COMMENT=	Wnn7 elisp client
 
-EMACSDIR=	${PREFIX}/share/emacs/site-lisp
+EMACSDIR=	${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 ELISPDIR=	${EMACSDIR}/wnn7egg
-SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages
+SITEPKGDIR=	${STAGEDIR}${PREFIX}/lib/xemacs/site-packages
 XELISPDIR=	${SITEPKGDIR}/lisp/wnn7egg
 DOCSDIR=	${PREFIX}/share/doc/wnn7egg
 MANIFEST=	MANIFEST.wnn7egg
@@ -24,7 +24,8 @@ NO_BUILD=	yes
 
 PORTDOCS=	README Setup_wnn7egg
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${ELISPDIR} ${XELISPDIR}
 	${MKDIR} ${ELISPDIR}/its-v309 ${XELISPDIR}/its-v309
@@ -35,9 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xemacs21/*.el ${XELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/xemacs21/its-v309/*.el ${XELISPDIR}/its-v309
 	${INSTALL_DATA} ${WRKSRC}/xemacs21/eggrc-wnn7 ${XELISPDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
