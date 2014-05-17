@@ -10,5 +10,5 @@ OCaml-values are reported in a very human-readable way. Another module
 in the library allows you to extract and replace sub-expressions in
 S-expressions.
 
-Author:	Markus Mottl <mmottl@janestcapital.com>
-WWW: http://ocaml.janestcapital.com/
+Author: Markus Mottl <mmottl@janestcapital.com>
+WWW: http://janestreet.github.io/
