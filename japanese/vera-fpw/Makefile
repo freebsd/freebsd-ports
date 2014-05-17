@@ -18,18 +18,19 @@ EXTRACT_BEFORE_ARGS=	-qL
 VERA_VER=	1.8
 VERAFPW_VER=	1.0.3
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/vera-fpw/vera/data
-	${MKDIR} ${PREFIX}/share/dict/vera-fpw/vera/gaiji
-	${INSTALL_DATA} ${WRKSRC}/vera/data/honmon ${PREFIX}/share/dict/vera-fpw/vera/data
-	${INSTALL_DATA} ${WRKSRC}/vera/gaiji/gai16h ${PREFIX}/share/dict/vera-fpw/vera/gaiji
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/vera-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme.txt vera.tex
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/vera-fpw/vera/data
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/vera-fpw/vera/gaiji
+	${INSTALL_DATA} ${WRKSRC}/vera/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/vera-fpw/vera/data
+	${INSTALL_DATA} ${WRKSRC}/vera/gaiji/gai16h \
+		${STAGEDIR}${PREFIX}/share/dict/vera-fpw/vera/gaiji
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/vera-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.txt vera.tex \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
