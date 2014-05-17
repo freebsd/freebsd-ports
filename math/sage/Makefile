@@ -74,17 +74,17 @@ post-patch:
 # Create the wrappers for the compiler invocations.
 	@${MKDIR} ${WRKSRC}/local/bin
 	@${LN} -s -f ${LOCALBASE}/bin/gmake ${WRKSRC}/local/bin/make
-	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${CC}#' \
+	@${SED} -e "s#%%CC%%#`which ${CC}`#" \
 		-e 's#%%LDFLAGS%%#${LDFLAGS} ${FPM_FLAG}#' \
 		${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/cc
 	@${CHMOD} +x ${WRKSRC}/local/bin/cc
 	@${LN} -s -f cc ${WRKSRC}/local/bin/gcc
-	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${CXX}#' \
+	@${SED} -e "s#%%CC%%#`which ${CXX}`#" \
 		-e 's#%%LDFLAGS%%#${LDFLAGS} ${FPM_FLAG}#' \
 		${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/c++
 	@${CHMOD} +x ${WRKSRC}/local/bin/c++
 	@${LN} -s -f c++ ${WRKSRC}/local/bin/g++
-	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${FC}#' \
+	@${SED} -e "s#%%CC%%#`which ${FC}`#" \
 		-e 's#%%LDFLAGS%%#${LDFLAGS} ${FPM_FLAG}#' \
 		${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/gfortran
 	@${CHMOD} +x ${WRKSRC}/local/bin/gfortran
