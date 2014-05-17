@@ -270,12 +270,14 @@ lib/gwyddion/modules/process/calcoefs_new.so
 lib/gwyddion/modules/process/calcoefs_simple.so
 lib/gwyddion/modules/process/calcoefs_view.so
 lib/gwyddion/modules/process/calibrate.so
+lib/gwyddion/modules/process/col_synth.so
 lib/gwyddion/modules/process/convolution_filter.so
 lib/gwyddion/modules/process/correct_affine.so
 lib/gwyddion/modules/process/crosscor.so
 lib/gwyddion/modules/process/curvature.so
 lib/gwyddion/modules/process/cwt.so
 lib/gwyddion/modules/process/deposit_synth.so
+lib/gwyddion/modules/process/domain_synth.so
 lib/gwyddion/modules/process/drift.so
 lib/gwyddion/modules/process/dwt.so
 lib/gwyddion/modules/process/dwtanisotropy.so
@@ -309,6 +311,7 @@ lib/gwyddion/modules/process/linecorrect.so
 lib/gwyddion/modules/process/lno_synth.so
 lib/gwyddion/modules/process/local_contrast.so
 lib/gwyddion/modules/process/mark_with.so
+lib/gwyddion/modules/process/mask_edt.so
 lib/gwyddion/modules/process/maskcor.so
 lib/gwyddion/modules/process/maskops.so
 lib/gwyddion/modules/process/mcrop.so
@@ -339,7 +342,9 @@ lib/gwyddion/modules/process/tipops.so
 lib/gwyddion/modules/process/unrotate.so
 lib/gwyddion/modules/process/volumize.so
 lib/gwyddion/modules/process/volumize_layers.so
+lib/gwyddion/modules/process/wave_synth.so
 lib/gwyddion/modules/process/xydenoise.so
+%%PYTHON%%lib/gwyddion/modules/pygwy.so
 lib/gwyddion/modules/tool/crop.so
 lib/gwyddion/modules/tool/distance.so
 lib/gwyddion/modules/tool/filter.so
@@ -373,22 +378,23 @@ lib/gwyddion/modules/volume/volume_invert.so
 %%RUBY%%lib/gwyddion/ruby/gwyddion/dump.rb
 lib/libgwyapp2.so
 lib/libgwyapp2.so.0
-lib/libgwyapp2.so.0.10.0
+lib/libgwyapp2.so.0.10.1
 lib/libgwyddion2.so
 lib/libgwyddion2.so.0
-lib/libgwyddion2.so.0.11.0
+lib/libgwyddion2.so.0.12.0
 lib/libgwydgets2.so
 lib/libgwydgets2.so.0
-lib/libgwydgets2.so.0.14.1
+lib/libgwydgets2.so.0.14.2
 lib/libgwydraw2.so
 lib/libgwydraw2.so.0
 lib/libgwydraw2.so.0.2.0
 lib/libgwymodule2.so
 lib/libgwymodule2.so.0
-lib/libgwymodule2.so.0.6.1
+lib/libgwymodule2.so.0.7.0
 lib/libgwyprocess2.so
 lib/libgwyprocess2.so.0
-lib/libgwyprocess2.so.0.19.0
+lib/libgwyprocess2.so.0.20.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gwy.so
 libdata/pkgconfig/gwyddion.pc
 libexec/gwyddion/plugins/file/dump
 %%RUBY%%libexec/gwyddion/plugins/process/invert_narray.rb
@@ -404,6 +410,7 @@ man/man1/gwyddion.1.gz
 man/man1/gwyddion-thumbnailer.1.gz
 %%PERL%%man/man3/Gwyddion::dump.3pm.gz
 share/applications/gwyddion.desktop
+%%PYTHON%%share/gtksourceview-2.0/language-specs/pygwy.lang
 %%DATADIR%%/glmaterials/Alien-Alloy
 %%DATADIR%%/glmaterials/Black-Plastic
 %%DATADIR%%/glmaterials/Black-Rubber
@@ -460,6 +467,7 @@ share/applications/gwyddion.desktop
 %%DATADIR%%/gradients/Halcyon
 %%DATADIR%%/gradients/Lines
 %%DATADIR%%/gradients/Maple
+%%DATADIR%%/gradients/MetroPro
 %%DATADIR%%/gradients/NT-MDT
 %%DATADIR%%/gradients/Neon
 %%DATADIR%%/gradients/Olive
@@ -606,6 +614,7 @@ share/applications/gwyddion.desktop
 %%DATADIR%%/pixmaps/gwy_zoom_out-24.png
 %%DATADIR%%/pixmaps/gwyddion.ico
 %%DATADIR%%/pixmaps/splash.png
+%%PYTHON%%%%DATADIR%%/pygwy/gwyutils.py
 %%DATADIR%%/ui/toolbox.xml
 share/icons/hicolor/48x48/apps/gwyddion.png
 share/locale/cs/LC_MESSAGES/gwyddion.mo
@@ -618,6 +627,7 @@ share/mime/packages/gwyddion.xml
 share/thumbnailers/gwyddion.thumbnailer
 @dirrmtry share/thumbnailers
 @dirrm %%DATADIR%%/ui
+%%PYTHON%%@dirrm %%DATADIR%%/pygwy
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/gradients
 @dirrm %%DATADIR%%/glmaterials
