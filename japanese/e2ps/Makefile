@@ -9,11 +9,13 @@ MASTER_SITES=	http://wt1.ld.infoseek.co.jp/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text file to postscript converter (with Japanese support)
 
-USE_BZIP2=	yes
-DOCDIR=		${PREFIX}/share/doc/${PKGBASE}
+USES=		tar:bzip2
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/e2ps bin/e2lpr
+PORTDOCS=	README.euc README.english
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 		cd ${WRKSRC} && \
@@ -21,11 +23,9 @@ post-patch:
 		${SED} -e '/Times-Roman$$/,/^Gothic-Medium.Katakana$$/{s,$$,\\,;}' ps-font.c.orig > ps-font.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/e2ps ${PREFIX}/bin
-	${LN} -sf ${PREFIX}/bin/e2ps ${PREFIX}/bin/e2lpr
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	cd ${WRKSRC} ; ${INSTALL_DATA} README.euc README.english ${DOCDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/e2ps ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ${PREFIX}/bin/e2ps ${STAGEDIR}${PREFIX}/bin/e2lpr
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
