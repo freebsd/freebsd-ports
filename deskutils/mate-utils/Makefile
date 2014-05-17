@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-utils
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -17,15 +18,14 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
-USE_MATE=	autogen common:build docutils intlhack ltverhack \
-		panel
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_MATE=	autogen common:build docutils intlhack panel
 USE_XORG=	x11 xext
 USE_GNOME=	glib20 gnomehier gtk20
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtool libtoolize:env
+USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtoolize:env
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-maintainer-flags=no \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
