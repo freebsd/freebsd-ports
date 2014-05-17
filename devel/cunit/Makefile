@@ -3,6 +3,7 @@
 
 PORTNAME=	cunit
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/CUnit/${PORTVERSION:R}-${PORTVERSION:E}
 DISTNAME=	CUnit-${PORTVERSION:R}-${PORTVERSION:E}
@@ -14,17 +15,18 @@ LICENSE=	LGPL20
 
 CONFLICTS=	c-unit-[0-9]*
 
-OPTIONS_DEFINE=	AUT BAS CON CUR DEB EXA ITE MEM
-OPTIONS_DEFAULT=AUT BAS CON
+OPTIONS_DEFINE=	AUTOMATED BASIC CONSOLE CURSES DEBUG EXAMPLES MEMTRACE TEST
+OPTIONS_DEFAULT=AUTOMATED BASIC CONSOLE CURSES DEBUG EXAMPLES MEMTRACE TEST
+#OPTIONS_DEFAULT=AUTOMATED BASIC CONSOLE
 OPTIONS_SUB=	yes
-AUT_DESC=	Automated (XML) interface
-BAS_DESC=	Basic interface
-CON_DESC=	Console interface
-CUR_DESC=	Curses interface
-DEB_DESC=	Debug interface
-EXA_DESC=	Example programs
-ITE_DESC=	Internal test program
-MEM_DESC=	Internal memory tracking
+AUTOMATED_DESC=	Automated (XML) interface
+BASIC_DESC=	Basic interface
+CONSOLE_DESC=	Console interface
+CURSES_DESC=	Curses interface
+DEBUG_DESC=	Debug interface
+EXAMPLES_DESC=	Example programs
+MEMTRACE_DESC=	Internal memory tracking
+TEST_DESC=	Internal test program
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix tar:bzip2
@@ -42,18 +44,18 @@ AUTOMAKE_ARGS=	--add-missing
 LIBTOOLIZE_ARGS=--copy --force --install
 PATHFIX_MAKEFILEIN=	Makefile.am
 
-AUT_CONFIGURE_ENABLE=	automated
-BAS_CONFIGURE_ENABLE=	basic
-CON_CONFIGURE_ENABLE=	console
-CUR_CONFIGURE_ENABLE=	curses
-DEB_CONFIGURE_ENABLE=	debug
-EXA_CONFIGURE_ENABLE=	examples
-ITE_CONFIGURE_ENABLE=	test
-MEM_CONFIGURE_ENABLE=	memtrace
+AUTOMATED_CONFIGURE_ENABLE=	automated
+BASIC_CONFIGURE_ENABLE=	basic
+CONSOLE_CONFIGURE_ENABLE=	console
+CURSES_CONFIGURE_ENABLE=curses
+DEBUG_CONFIGURE_ENABLE=debug
+EXAMPLES_CONFIGURE_ENABLE=	examples
+MEMTRACE_CONFIGURE_ENABLE=	memtrace
+TEST_CONFIGURE_ENABLE=	test
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/headers/Makefile.am
-	@${REINPLACE_CMD} -e 's|/@PACKAGE@/Examples/|/examples/@PACKAGE@/|g' ${WRKSRC}/Examples/*/Makefile.in
+	@${REINPLACE_CMD} -e 's|/@PACKAGE@/Examples/|/examples/@PACKAGE@/|g' ${WRKSRC}/Examples/*/Makefile.am
 	@${REINPLACE_CMD} -e 's|CUnit-[A-Z][a-z]*\.[a-z]*|${DATADIR}/&|' ${WRKSRC}/CUnit/Sources/Automated/Automated.c
 	@${REINPLACE_CMD} -e '/fprintf/ s|Memory-Dump\.[a-z]*|${DATADIR}/&|' ${WRKSRC}/CUnit/Sources/Framework/MyMem.c
 
