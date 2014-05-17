@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netCDF4
-PORTVERSION=	1.0.5
-PORTREVISION=	4
+PORTVERSION=	1.0.8
 CATEGORIES=	science python
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	netcdf4-python
+MASTER_SITES=	GH
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,26 +17,35 @@ LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libnetcdf.so:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+USE_GITHUB=	yes
+GH_ACCOUNT=	Unidata
+GH_PROJECT=	netcdf4-python
+GH_TAGNAME=	v${PORTVERSION}rel
+GH_COMMIT=	1344040
 
-USES=		dos2unix
-DOS2UNIX_FILES=	utils/nc3tonc4
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-MAKE_ENV=	HDF5_INCDIR=${LOCALBASE}/include \
-		HDF5_LIBDIR=${LOCALBASE}/lib \
-		NETCDF4_INCDIR=${LOCALBASE}/include \
-		NETCDF4_LIBDIR=${LOCALBASE}/lib
+
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		"/dirstosearch/s|=.*|= ['${LOCALBASE}']|" ${WRKSRC}/setup.py
+	@${ECHO_CMD} -n > ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "[options]" >> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "use_ncconfig=True" >> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "ncconfig=${LOCALBASE}/bin/nc-config" \
+		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "[directories]" >> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HDF5_libdir=${LOCALBASE}/lib" \
+		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HDF5_incdir=${LOCALBASE}/include" \
+		>> ${WRKSRC}/setup.cfg
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
