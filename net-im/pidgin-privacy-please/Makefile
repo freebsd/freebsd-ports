@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgin-privacy-please
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,8 +17,10 @@ BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pkgconfig
 USE_GNOME=	gtk20
-USE_LDCONFIG=	${PREFIX}/lib/pidgin
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

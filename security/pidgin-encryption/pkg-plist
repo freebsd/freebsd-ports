@@ -1,5 +1,3 @@
-lib/pidgin/encrypt.a
-lib/pidgin/encrypt.la
 lib/pidgin/encrypt.so
 %%NLS%%share/locale/cs/LC_MESSAGES/pidgin-encryption.mo
 %%NLS%%share/locale/da/LC_MESSAGES/pidgin-encryption.mo
@@ -32,4 +30,3 @@ share/pixmaps/pidgin-encryption/icon_out_capable.png
 share/pixmaps/pidgin-encryption/icon_out_lock.png
 share/pixmaps/pidgin-encryption/icon_out_unlock.png
 @dirrm share/pixmaps/pidgin-encryption
-@dirrmtry lib/pidgin

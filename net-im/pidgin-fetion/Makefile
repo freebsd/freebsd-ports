@@ -3,7 +3,7 @@
 
 PORTNAME=	fetion
 PORTVERSION=	0.98.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/ \
 		LOCAL/avl
@@ -12,15 +12,16 @@ PKGNAMEPREFIX=	pidgin-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetion protocol plugin for libpurple
 
-LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BZIP2=	yes
+LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
+
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		libtool pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+PLIST_FILES=	lib/purple-2/libfetion.so
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.10.9
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -12,8 +12,7 @@ DISTNAME=	pidgin-${PORTVERSION}
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig pathfix
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME?=	gnomeprefix intlhack glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
@@ -336,7 +335,7 @@ post-patch:
 			${WRKSRC}/libpurple/purple-url-handler
 .if defined(PIDGIN_SLAVE)
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[$$][(]top_builddir[)]/libpurple/libpurple.la|${LOCALBASE}/lib/libpurple.la|g'
+		's|$$(top_builddir)/libpurple/libpurple.la|-lpurple|'
 .endif
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH}
 

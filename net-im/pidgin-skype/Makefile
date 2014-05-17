@@ -3,6 +3,7 @@
 
 PORTNAME=	pidgin-skype
 PORTVERSION=	0.0.0.664
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mandree
 DISTFILES=	pidgin-skype-svn-r${PORTVERSION:E}.tar.xz
@@ -17,9 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin \
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
     ${LOCALBASE}/bin/skype:${PORTSDIR}/net-im/skype
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:xz
 USE_GNOME=	glib20
-USE_XZ=		yes
 
 # this is a local target to build a tarball
 build-tarball: ${DISTFILES}
@@ -66,7 +66,7 @@ do-build:
 	cd ${WRKSRC} && ${CC} ${CPPFLAGS} ${CFLAGS} ${mycflags} \
 			-o libskype.so libskype.c ${mylibs}
 .if ${PORT_OPTIONS:MNLS}
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} -C ${BUILD_WRKSRC} locales
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} -C ${BUILD_WRKSRC} locales
 .endif
 
 do-install:

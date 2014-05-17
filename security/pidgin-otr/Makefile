@@ -2,9 +2,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	4.0.0
-# Please do not bump PORTREVISION for this port unless you have
-# confirmed via testing that it is necessary
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net-im net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 PKGNAMEPREFIX=	pidgin-
@@ -21,13 +19,19 @@ LIB_DEPENDS=	libotr.so.5:${PORTSDIR}/security/libotr \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libpurple.so:${PORTSDIR}/net-im/libpurple
 
-USE_GNOME=	intltool
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pkgconfig
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
 		--with-libotr-inc-prefix=${LOCALBASE}/include
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000036 && ${ARCH} == i386
+LDFLAGS+=	-lssp_nonshared
+.endif
 
 .include <bsd.port.mk>
