@@ -1,0 +1,32 @@
+# $FreeBSD$
+
+PORTNAME=	Test-OpenLDAP
+PORTVERSION=	0.05
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Perl extension to creates temp instance of slapd to run tests against
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	\
+	p5-Data-UUID>0:${PORTSDIR}/devel/p5-Data-UUID \
+	p5-perl-ldap>0:${PORTSDIR}/net/p5-perl-ldap \
+	${LOCALBASE}/libexec/slapd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-server \
+	p5-URI>0:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+USES=		perl5
+USE_PERL5=	configure
+USE_OPENLDAP=	yes
+
+#MAKE_ENV=	PATH=${PATH}:${PREFIX}/libexec
+CONFIGURE_ENV=	PATH=${PATH}:${PREFIX}/libexec
+
+pre-configure:
+	printenv
+
+.include <bsd.port.mk>
