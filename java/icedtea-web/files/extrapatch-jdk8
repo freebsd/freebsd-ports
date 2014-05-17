@@ -11,21 +11,6 @@
  export IT_JAVACFLAGS=$(IT_JAVAC_SETTINGS) -source $(IT_LANGUAGE_SOURCE_VERSION) -target $(IT_CLASS_TARGET_VERSION)
  
  #
-@@ -2189,6 +2189,14 @@
- 	  ln -sf ./$(JRE_ARCH_DIR) \
- 	    $(BOOT_DIR)/jre/lib/$(INSTALL_ARCH_DIR); \
- 	fi;
-+	mkdir -p $(BOOT_DIR)/lib && \
-+	ln -sf $(SYSTEM_JDK_DIR)/lib/$(JRE_ARCH_DIR) \
-+	  $(BOOT_DIR)/lib/ && \
-+	if ! test -d $(BOOT_DIR)/lib/$(INSTALL_ARCH_DIR); \
-+	  then \
-+	  ln -sf ./$(JRE_ARCH_DIR) \
-+	    $(BOOT_DIR)/lib/$(INSTALL_ARCH_DIR); \
-+	fi;
- 	mkdir -p $(BOOT_DIR)/include && \
- 	for i in $(SYSTEM_JDK_DIR)/include/*; do \
- 	  test -r $$i | continue; \
 --- configure	2014-04-02 06:21:18.000335000 -0400
 +++ configure	2014-05-15 17:04:42.000000000 -0400
 @@ -626,6 +626,8 @@
