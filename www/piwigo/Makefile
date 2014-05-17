@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwigo
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/ \
 		SF/${PORTNAME}/Piwigo/${PORTVERSION}
@@ -10,15 +10,19 @@ MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/ \
 MAINTAINER=	glz@hidden-powers.com
 COMMENT=	PHP based Web Gallery
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
+
 NO_BUILD=	yes
 USE_PHP=	calendar ctype dom exif filter gd gettext hash iconv json \
-		mbstring mcrypt mhash mysql mysqli openssl pcre pdf pdo posix session \
-		simplexml sockets spl tokenizer xml xmlreader xmlwriter zlib
+		mbstring mcrypt mhash mysql mysqli openssl pcre pdf pdo posix \
+		session simplexml sockets spl tokenizer xml xmlreader \
+		xmlwriter zlib
 USES=		zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
+SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST+=	CP="${CP}" \
 		MKDIR="${MKDIR}" \
 		CHOWN="${CHOWN}" \
@@ -30,13 +34,11 @@ OPTIONS_DEFINE=	IMAGICK
 OPTIONS_DEFAULT=IMAGICK
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 
-PORTDOCS=	COPYING README_en.txt README_fr.txt
+PORTDOCS=	README_ca.txt README_en.txt README_fr.txt
 
 PLIST_SUB+=	WWWOWN="${WWWOWN}" \
 		WWWGRP="${WWWGRP}" \
 		CHOWN="${CHOWN}"
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIMAGICK}
@@ -48,32 +50,42 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
 post-extract:
-	@${CHMOD} -R o-w ${WRKSRC}
+	@${MV} ${WRKSRC}/local ${WRKSRC}/local.sample
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
+	@${FIND} -d ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
+	@${FIND} -d ${WRKSRC} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${INSTALL} -d ${EXAMPLESDIR}/
-	@cd ${WRKSRC}/tools/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
+	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/
+	@cd ${WRKSRC}/tools/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 .endif
-
-	@${RM} -fr ${WRKSRC}/doc/ ${WRKSRC}/tools/ ${WRKSRC}/_data/ ${WRKSRC}/upload/
-	@${MV} ${WRKSRC}/local/ ${WRKSRC}/local.sample/
-	@cd ${WRKSRC}/ && ${COPYTREE_INSTALL} . ${WWWDIR}
+	@cd ${WRKSRC}/doc/ && ${RM} ${PORTDOCS}
+	@${RM} -fr ${WRKSRC}/tools ${WRKSRC}/_data ${WRKSRC}/upload
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}
+	@${TAR} -C ${WRKSRC} -cf - . | \
+			${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
-
-# Own version with our owners and we also have to protect if
-# galleries is read-only.
-COPYTREE_INSTALL=	${SH} -c '(${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$0 && \
-		${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-		2>&1) && \
-		${FIND} -d $$0 $$2 -type d -exec ${CHMOD} 755 $$1/{} \; && \
-		${FIND} -d $$0 $$2 -type f -exec ${CHMOD} ${SHAREMODE} $$1/{} \;' --
+	@if [ ! -e ${STAGEDIR}${WWWDIR}/local ]; then \
+		${INSTALL} -d ${STAGEDIR}${WWWDIR}/local/ ; \
+		${CP} -a ${STAGEDIR}${WWWDIR}/local.sample/ \
+			${STAGEDIR}${WWWDIR}/local/ ; \
+	fi;
+	@${CHOWN} -fR ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/plugins
+	@if [ ! -e ${STAGEDIR}${WWWDIR}/upload ]; then \
+		${INSTALL} -d ${STAGEDIR}${WWWDIR}/upload/ ; \
+		${CHMOD} 750 ${STAGEDIR}${WWWDIR}/upload ; \
+		${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/upload ; \
+	fi
+	@if [ ! -e ${STAGEDIR}${WWWDIR}/_data ]; then \
+		${INSTALL} -d ${STAGEDIR}${WWWDIR}/_data/ ; \
+		${CHMOD} 777 ${STAGEDIR}${WWWDIR}/_data ; \
+		${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/_data ; \
+	fi
 
 .include <bsd.port.post.mk>
