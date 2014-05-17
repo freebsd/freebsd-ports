@@ -3,6 +3,7 @@
 
 PORTNAME=	xmlppm
 PORTVERSION=	0.98.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 		http://www.cs.cornell.edu/People/jcheney/xmlppm/
