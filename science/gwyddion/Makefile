@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.35
-PORTREVISION=	2
+PORTVERSION=	2.36
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -22,8 +21,8 @@ USE_GNOME=	gconf2 gtk20 libxml2
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk-doc \
-		--disable-pygwy --without-gtksourceview \
 		--without-kde4-thumbnailer
+INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
@@ -36,15 +35,16 @@ OPTIONS_DEFINE=		PERL PYTHON RUBY UNIQUE
 OPTIONS_DEFAULT=	PERL PYTHON UNIQUE
 OPTIONS_SUB=		yes
 
-PERL_CONFIGURE_WITH=	perl
 PERL_USES=		perl5
-PYTHON_CONFIGURE_WITH=	python
-PYTHON_USE=		PYTHON=yes
-RUBY_CONFIGURE_WITH=	ruby
+PERL_CONFIGURE_WITH=	perl
+PYTHON_USE=		GNOME=pygtksourceview PYTHON=yes
+PYTHON_CONFIGURE_ENABLE= 	pygwy
+PYTHON_CONFIGURE_WITH=	gtksourceview python
 RUBY_USE=		RUBY=yes
+RUBY_CONFIGURE_WITH=	ruby
 UNIQUE_DESC=		Remote controle backend support
-UNIQUE_CONFIGURE_WITH=	unique
 UNIQUE_LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+UNIQUE_CONFIGURE_WITH=	unique
 
 post-patch:
 	@${REINPLACE_CMD} -e \
