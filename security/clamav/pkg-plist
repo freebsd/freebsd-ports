@@ -45,3 +45,4 @@ man/man8/clamd.8.gz
 @dirrmtry %%RUNDIR%%
 @group
 @owner
+@cwd %%RESETPREFIX%%
