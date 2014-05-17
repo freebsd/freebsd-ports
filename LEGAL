@@ -231,7 +231,7 @@ sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
 stat.tar.Z		math/unixstat		License does not allow redistribution of binaries
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
-stuffit*		archivers/stuffit	Shareware -- should not redistribute
+stuffit*		archivers/stuffit	Only unmodified original package can be distributed
 su2-1.3.tar.gz		sysutils/su2		Do not sell for profit
 susv2.tar.bz2		misc/susv2		Redistribution of the documents is not permitted
 susv3.tar.bz2		misc/susv3		Redistribution of the documents is not permitted
