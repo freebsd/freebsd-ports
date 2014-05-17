@@ -832,66 +832,66 @@ sbin/radmin
 %%DATADIR%%/dictionary.zeus
 %%DATADIR%%/dictionary.zte
 %%DATADIR%%/dictionary.zyxel
-@unexec rmdir "/var/run/radiusd" >/dev/null 2>&1 || :
-@unexec rmdir "/var/log/radacct" >/dev/null 2>&1 || :
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/raddb/sites-enabled
-@dirrm %%EXAMPLESDIR%%/raddb/sites-available
-@dirrm %%EXAMPLESDIR%%/raddb/policy.d
-@dirrm %%EXAMPLESDIR%%/raddb/mods-enabled
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/unbound
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb
+@dirrm include/freeradius
+@dirrm %%LIBDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/concepts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/configuration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/deployment
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/vendor
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/raddb/certs
+@dirrm %%EXAMPLESDIR%%/raddb/mods-available
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/attr_filter
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/files
+%%RLMPERL%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/perl
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/preprocess
+%%RLMPYTHON%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/python
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras/wimax
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql
-%%RLMPYTHON%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/python
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/preprocess
-%%RLMPERL%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/perl
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/files
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/attr_filter
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/unbound
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config
-@dirrm %%EXAMPLESDIR%%/raddb/mods-available
-@dirrm %%EXAMPLESDIR%%/raddb/certs
+@dirrm %%EXAMPLESDIR%%/raddb/mods-enabled
+@dirrm %%EXAMPLESDIR%%/raddb/policy.d
+@dirrm %%EXAMPLESDIR%%/raddb/sites-available
+@dirrm %%EXAMPLESDIR%%/raddb/sites-enabled
 @dirrm %%EXAMPLESDIR%%/raddb
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/vendor
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/deployment
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/configuration
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/concepts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LIBDIR%%
-@dirrm include/freeradius
+@dirrm %%DATADIR%%
 @exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
 @exec chmod -R g-w,o-rwx %D/etc/raddb
 @exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi
 @exec for i in /var/log/radius.log /var/log/radutmp /var/log/radwtmp; do if [ ! -f ${i} ]; then touch ${i}; chmod go= ${i}; fi; done
 @exec mkdir -p /var/run/radiusd
+@unexec rmdir "/var/log/radacct" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/radiusd" >/dev/null 2>&1 || :

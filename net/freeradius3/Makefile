@@ -3,6 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -344,7 +345,15 @@ SUB_LIST+=	RADIUS_USER="${RADIUS_USER}" \
 		RADDB="${PREFIX}/etc/raddb" \
 		LOGDIR="${LOGDIR}" \
 		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}"
-SUB_LIST+=	REQUIRE="${_REQUIRE}"
+SUB_LIST+=	REQUIRE="${_REQUIRE}" OPENSSL1XMSG="${OPENSSL1XMSG}"
+
+.if ${OSVERSION} > 1000000
+OPENSSL1XMSG=	"If you are running FreeBSD 10.0-RELEASE or higher, you will receive an OpenSSL warning."
+OPENSSL1XMSG+=	"Please verify that your system is patched and then add the following to your config:"
+OPENSSL1XMSG+=	"security.allow_vulnerable_openssl = 'CVE-2014-0160'"
+.else
+OPENSSL1XMSG=	""
+.endif
 
 post-patch:
 # never try to find execinfo.h (needed until we can enable/disable backtrace
