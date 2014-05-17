@@ -1,0 +1,10 @@
+--- demos/web_elements/web_elements.gpr.orig	2014-05-15 19:48:07.000000000 +0000
++++ demos/web_elements/web_elements.gpr
+@@ -25,6 +25,7 @@ project Web_Elements is
+ 
+    package Builder is
+       for Default_Switches ("Ada") use ("-gnat05");
++      for Executable ("web_elements.adb") use "web_elements_program";
+    end Builder;
+ 
+ end Web_Elements;
