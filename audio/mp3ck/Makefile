@@ -9,8 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A consistency check utility for MPEG Layer 2 or 3 files or streams
 
-MAN1=		mp3ck.1
-PLIST_FILES=	bin/mp3ck
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+
+PLIST_FILES=	bin/mp3ck man/man1/mp3ck.1.gz
 
 .include <bsd.port.mk>
