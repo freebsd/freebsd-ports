@@ -4,21 +4,21 @@
 
 PORTNAME=	glabels
 PORTVERSION=	2.2.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A program to create labels and business cards
+COMMENT=	Program to create labels and business cards
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui gnomedocutils \
-		desktopfileutils intlhack ltverhack
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info tar:bzip2
+USE_GNOME=	gnomeprefix libgnomeui gnomedocutils intlhack
 WANT_GNOME=	yes
-USES=		gettext gmake pkgconfig
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-update-desktopdb --disable-update-mimedb
 CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
 LDFLAGS+=	-L${LOCALBASE}/lib
 
