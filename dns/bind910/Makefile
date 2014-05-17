@@ -2,7 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	9.10.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -56,7 +56,7 @@ FILTER_AAAA_DESC=	Enable filtering of AAAA records
 CRYPTO_DESC=		Choose which crypto engine to use
 NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 GEOIP_DESC=		Allow geographically based ACL.
-GOST_DESC=		Enable GOST ciphers (DSO incompatible with chroot) 
+GOST_DESC=		Enable GOST ciphers, needs SSL (see help)
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -154,6 +154,9 @@ PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
+.if ${PORT_OPTIONS:MGOST}
+WITH_OPENSSL_PORT=yes
+.endif
 .else
 ETCDIR=		${PREFIX}/etc
 PLIST_SUB+=	NOBASE="@comment " BASE=""

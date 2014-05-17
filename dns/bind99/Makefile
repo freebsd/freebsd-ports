@@ -2,7 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	9.9.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -47,7 +47,7 @@ LARGE_FILE_DESC=	64-bit file support
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 FILTER_AAAA_DESC=	Enable filtering of AAAA records
-GOST_DESC=		Enable GOST ciphers (DSO incompatible with chroot) 
+GOST_DESC=		Enable GOST ciphers, needs SSL (see help)
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -168,8 +168,14 @@ SUB_LIST+=	BIND_DESTETC="${BIND_DESTETC}"
 PLIST_SUB+=	NOBASE="" BASE="@comment "
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
+.if ${PORT_OPTIONS:MGOST}
+WITH_OPENSSL_PORT=yes
+.endif
 .else
 PLIST_SUB+=	NOBASE="@comment " BASE=""
+.if ${PORT_OPTIONS:MSSL}
+WITH_OPENSSL_PORT=	yes
+.endif
 .endif
 
 .if !defined(BIND_TOOLS_SLAVE)
