@@ -2886,6 +2886,7 @@
     SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Number-Delta
     SUBDIR += p5-Test-Object
+    SUBDIR += p5-Test-OpenLDAP
     SUBDIR += p5-Test-Output
     SUBDIR += p5-Test-POE-Client-TCP
     SUBDIR += p5-Test-POE-Server-TCP
