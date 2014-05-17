@@ -4,7 +4,7 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.8.17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	08
@@ -19,13 +19,13 @@ PORTSCOUT=	ignore
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_XZ=		yes
-USE_GNOME=	gnomeprefix intlhack gtk20 libgsf ltverhack
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomeprefix intlhack gtk20 libgsf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		SHORT_VER=0.8
 
@@ -39,9 +39,5 @@ USE_GNOME+=	gconf2
 .else
 CONFIGURE_ARGS+=--with-config-backend=keyfile
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoffice-0.8.so.8
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/goffice/*/plugins/*/*.so
 
 .include <bsd.port.mk>
