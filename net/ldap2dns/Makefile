@@ -3,8 +3,9 @@
 
 PORTNAME=	ldap2dns
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://cloud.github.com/downloads/bklang/ldap2dns/
+MASTER_SITES=	GHC
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintain DNS zones using an LDAP directory
@@ -14,35 +15,35 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
-OPTIONS_DEFINE=	DOCS
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		perl5
+USE_GITHUB=	yes
+GH_ACCOUNT=	bklang
+
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	scripts/*.pl
 USE_PERL5=	run
-USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		ldap2dns.1
-
 PORTDOCS=	*
-
 PLIST_FILES=	bin/ldap2dns \
 		bin/ldap2dnsd \
+		man/man1/ldap2dns.1.gz \
 		%%DATADIR%%/axfr2ldap.pl \
 		%%DATADIR%%/data2ldif.pl \
 		%%DATADIR%%/ldap2dns.schema \
 		%%DATADIR%%/ldap2tinydns-conf
 PLIST_DIRS=	%%DATADIR%%
 
+OPTIONS_DEFINE=		DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC=|CC?=| ; \
-		s|^LD=.*|LD=$$(CC)|' ${WRKSRC}/Makefile
+		 s|^LD=.*|LD=$$(CC)|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|"/etc|"${PREFIX}/etc|' ${WRKSRC}/ldap2dns.c
 	@${REINPLACE_CMD} -e \
@@ -51,18 +52,18 @@ post-patch:
 		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/ldap2tinydns-conf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ldap2dns ${PREFIX}/bin
-	${LN} -sf ldap2dns ${PREFIX}/bin/ldap2dnsd
-	${INSTALL_MAN} ${WRKSRC}/ldap2dns.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ldap2dns.schema ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ldap2tinydns-conf ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/axfr2ldap.pl ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/data2ldif.pl ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/README.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example.ldif ${DOCSDIR}
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ldap2dns \
+		${STAGEDIR}${PREFIX}/bin)
+	${LN} -sf ldap2dns ${STAGEDIR}${PREFIX}/bin/ldap2dnsd
+	(cd ${WRKSRC} && ${INSTALL_MAN} ldap2dns.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ldap2dns.schema ldap2tinydns-conf \
+		${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/scripts && ${INSTALL_SCRIPT} axfr2ldap.pl data2ldif.pl \
+		${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} README.html example.ldif \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
