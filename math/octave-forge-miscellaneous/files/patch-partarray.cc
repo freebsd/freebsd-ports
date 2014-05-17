@@ -18,8 +18,8 @@
              {
                error ("%s: argument %i: wrong dimensions",
                       fname.c_str (), i + 2);
-+              delete(bidc);
-+              delete(eidc);
++              delete[](bidc);
++              delete[](eidc);
                return Cell ();
              }
            cnidx =
@@ -29,8 +29,8 @@
      }
 -  if (error_state)
 +  if (error_state) {
-+    delete(bidc);
-+    delete(eidc);
++    delete[](bidc);
++    delete[](eidc);
      return Cell ();
 +  }
  
@@ -40,8 +40,8 @@
            }
      }
  
-+  delete(bidc);
-+  delete(eidc);
++  delete[](bidc);
++  delete[](eidc);
    return retval;
  }
  
