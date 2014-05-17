@@ -1,6 +1,0 @@
-share/dict/lookup-package/srd-fpw.el
-share/dict/lookup-package/extract-srd.pl
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README.TXT
-@dirrm share/dict/lookup-package
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
