@@ -10,5 +10,4 @@ MASTERDIR=	${.CURDIR}/../skk-jisyo
 
 DESCR=		${.CURDIR}/pkg-descr
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
