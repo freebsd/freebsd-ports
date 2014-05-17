@@ -5,7 +5,7 @@ PORTNAME=	MathJax
 PORTVERSION=	2.3
 CATEGORIES=	www
 
-MAINTAINER=	lukasz.stelmach@iem.pw.edu.pl
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Cross-browser JavaScript display engine for mathematics
 
 NO_BUILD=	yes
