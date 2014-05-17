@@ -11,8 +11,12 @@ PHP configuration is OK and that you have an MySQL database.
 The local directory contains the empty structure 
 used to store local configuration.
 
+If you are upgrading, alwyas read the documentation
+on the site. There may be special steps you need to
+bring your site to the new version.
+
 Make sure the ownership and mode of the installation
-match your intended use.
+directores and files match your intended use.
 
 If you included ImageMagick, don't forget to set
 $conf['ext_imagick_dir'] = '%%LOCALBASE%%/bin/';
