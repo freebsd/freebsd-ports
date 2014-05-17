@@ -49,49 +49,27 @@ include/pidgin/minidialog.h
 include/pidgin/pidgin.h
 include/pidgin/pidginstock.h
 include/pidgin/pidgintooltip.h
-%%CAP%%lib/pidgin/cap.la
 %%CAP%%lib/pidgin/cap.so
-lib/pidgin/convcolors.la
 lib/pidgin/convcolors.so
-lib/pidgin/extplacement.la
 lib/pidgin/extplacement.so
-lib/pidgin/gestures.la
 lib/pidgin/gestures.so
-%%EVO%%lib/pidgin/gevolution.la
 %%EVO%%lib/pidgin/gevolution.so
-lib/pidgin/gtkbuddynote.la
 lib/pidgin/gtkbuddynote.so
-lib/pidgin/history.la
 lib/pidgin/history.so
-lib/pidgin/iconaway.la
 lib/pidgin/iconaway.so
-lib/pidgin/markerline.la
 lib/pidgin/markerline.so
-%%DBUS%%lib/pidgin/musicmessaging.la
 %%DBUS%%lib/pidgin/musicmessaging.so
-lib/pidgin/notify.la
 lib/pidgin/notify.so
-lib/pidgin/pidginrc.la
 lib/pidgin/pidginrc.so
-lib/pidgin/relnot.la
 lib/pidgin/relnot.so
-lib/pidgin/sendbutton.la
 lib/pidgin/sendbutton.so
-lib/pidgin/spellchk.la
 lib/pidgin/spellchk.so
-lib/pidgin/themeedit.la
 lib/pidgin/themeedit.so
-lib/pidgin/ticker.la
 lib/pidgin/ticker.so
-lib/pidgin/timestamp.la
 lib/pidgin/timestamp.so
-lib/pidgin/timestamp_format.la
 lib/pidgin/timestamp_format.so
-%%VV%%lib/pidgin/vvconfig.la
 %%VV%%lib/pidgin/vvconfig.so
-lib/pidgin/xmppconsole.la
 lib/pidgin/xmppconsole.so
-lib/pidgin/xmppdisco.la
 lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
 share/applications/pidgin.desktop
@@ -712,11 +690,11 @@ share/pixmaps/pidgin/tray/hicolor/index.theme
 @dirrm share/pixmaps/pidgin/emotes/none
 @dirrm share/pixmaps/pidgin/emotes/small
 @dirrm share/pixmaps/pidgin/emotes
-@dirrmtry share/pixmaps/pidgin/protocols/16
-@dirrmtry share/pixmaps/pidgin/protocols/22
-@dirrmtry share/pixmaps/pidgin/protocols/48
-@dirrmtry share/pixmaps/pidgin/protocols/scalable
-@dirrmtry share/pixmaps/pidgin/protocols
+@dirrm share/pixmaps/pidgin/protocols/16
+@dirrm share/pixmaps/pidgin/protocols/22
+@dirrm share/pixmaps/pidgin/protocols/48
+@dirrm share/pixmaps/pidgin/protocols/scalable
+@dirrm share/pixmaps/pidgin/protocols
 @dirrm share/pixmaps/pidgin/status/11/rtl
 @dirrm share/pixmaps/pidgin/status/11
 @dirrm share/pixmaps/pidgin/status/16/rtl
@@ -746,4 +724,4 @@ share/pixmaps/pidgin/tray/hicolor/index.theme
 @dirrm share/pixmaps/pidgin/tray/hicolor
 @dirrm share/pixmaps/pidgin/tray
 @dirrm share/pixmaps/pidgin
-@dirrmtry lib/pidgin
+@dirrm lib/pidgin

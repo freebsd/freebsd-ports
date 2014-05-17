@@ -1,4 +1,3 @@
-lib/purple-2/libsipe.la
 lib/purple-2/libsipe.so
 %%NLS%%share/locale/ar/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pidgin-sipe.mo
@@ -31,7 +30,7 @@ share/pixmaps/pidgin/protocols/24/sipe.png
 share/pixmaps/pidgin/protocols/32/sipe.png
 share/pixmaps/pidgin/protocols/48/sipe.png
 share/pixmaps/pidgin/protocols/scalable/sipe.svg
-@dirrm share/pixmaps/pidgin/protocols/32
-@dirrm share/pixmaps/pidgin/protocols/24
+@dirrmtry share/pixmaps/pidgin/protocols/32
+@dirrmtry share/pixmaps/pidgin/protocols/24
 @dirrm share/locale/fr_CA/LC_MESSAGES
 @dirrm share/locale/fr_CA

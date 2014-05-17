@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgin-audacious-remote
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://pidginaudacious.sourceforge.net/files/ \
 		ftp://ftp.lissyara.su/users/gx_ua/distfiles/
@@ -15,8 +15,9 @@ BUILD_DEPENDS=	audacious>=2.2:${PORTSDIR}/multimedia/audacious \
 		pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		tar:bzip2 pkgconfig
+USES=		libtool pkgconfig tar:bzip2
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
 
 .include <bsd.port.mk>
