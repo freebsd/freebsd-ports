@@ -27,5 +27,6 @@ SSE2_CFLAGS=	-msse2
 .if exists(${PATCHDIR})
 RESTRICTED=     license only allows redistribution and use of unmodified source and binaries
 .endif
+LEGAL_TEXT=	license restricts redistribution of source and binaries
 
 .include <bsd.port.post.mk>
