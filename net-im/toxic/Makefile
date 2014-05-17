@@ -24,6 +24,13 @@ SUB_FILES=	pkg-message
 USES=		ncurses:port pkgconfig
 USE_AUTOTOOLS=	autoconf aclocal
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900033
+USE_BINUTILS=	yes
+LDFLAGS+=	-B${LOCALBASE}/bin
+.endif
+
 run-autotools:
 	cd ${CONFIGURE_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${AUTORECONF} -if
 
@@ -33,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/toxic.conf ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
