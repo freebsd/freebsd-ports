@@ -31,6 +31,7 @@ include/GL/internal/dri_interface.h
 %%NEW%%lib/libdricore%%VERSION%%.la
 %%NEW%%lib/libdricore%%VERSION%%.so
 %%NEW%%lib/libdricore%%VERSION%%.so.1
+%%NEW%%lib/libdricore%%VERSION%%.so.1.0.0
 %%NEW%%%%GALLIUM%%lib/libllvmradeon%%VERSION%%.la
 %%NEW%%%%GALLIUM%%lib/libllvmradeon%%VERSION%%.so
 libdata/pkgconfig/dri.pc

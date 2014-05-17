@@ -3,12 +3,14 @@
 
 PORTNAME=	libglesv2
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL ES v2 library
 
+BUILD_DEPENDS=	expat>=0:${PORTSDIR}/textproc/expat2
 LIB_DEPENDS+=	libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+		libglapi.so:${PORTSDIR}/graphics/libglapi
 
 .include <bsd.port.options.mk>
 
