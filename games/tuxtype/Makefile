@@ -11,21 +11,17 @@ DISTFILES=	${PORTNAME}_w_fonts-${PORTVERSION}${EXTRACT_SUFX} \
 		${T4K_DISTFILE}:t4k_common
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An educational typing tutor starring Tux the Linux Penguin
+COMMENT=	Educational typing tutor starring Tux the Linux Penguin
 
 LICENSE=	GPLv3 # (or later)
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
-OPTIONS_DEFINE=	NLS SVG DOCS
-OPTIONS_DEFAULT=	SVG
-
 WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}
 
+USES=		gmake iconv perl5 pkgconfig
 USE_GNOME=	libxml2
 USE_SDL=	image mixer net pango sdl
-USES=		iconv perl5 pkgconfig
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	T4K_COMMON_CFLAGS="-I${T4K_WRKSRC}/src" \
 		T4K_COMMON_LIBS="${T4K_WRKSRC}/src/.libs/libt4k_common.a" \
@@ -35,40 +31,33 @@ CPPFLAGS+=	$$(pkg-config --cflags SDL_Pango) -I${LOCALBASE}/include \
 		-DHAVE_ALPHASORT -DHAVE_SCANDIR -DHAVE_FSYNC -DICONV_CONST=""
 LDFLAGS+=	$$(pkg-config --libs SDL_Pango) -L${LOCALBASE}/lib ${ICONV_LIB}
 
+OPTIONS_DEFINE=		DOCS NLS SVG
+OPTIONS_DEFAULT=	SVG
+OPTIONS_SUB=		yes
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+SVG_USE_GNOME=		librsvg2
+SVG_CONFIGURE_WITH=	rsvg
+
 T4K_NAME=	t4k_common
 T4K_VERSION=	0.1.1
 T4K_DISTFILE=	${T4K_NAME}-${T4K_VERSION}${EXTRACT_SUFX}
 T4K_WRKSRC=	${WRKDIR}/${T4K_NAME}-${T4K_VERSION}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSVG}
-USE_GNOME+=	librsvg2
-.else
-CONFIGURE_ARGS+=--without-rsvg
-.endif
-
-# use multiple make jobs for T4K_WRKSRC
-_make_jobs=	-j${MAKE_JOBS_NUMBER}
-
 post-extract:
 	@${LN} -sf ${T4K_WRKSRC} ${WRKDIR}/${T4K_NAME}
 
 post-patch:
-.for file in convert_utf.h mysetenv.h practice.c
-	@${ECHO_CMD} >> ${WRKSRC}/src/${file}
+.for i in convert_utf.h mysetenv.h practice.c
+	@${ECHO_CMD} >> ${WRKSRC}/src/${i}
 .endfor
 	@${REINPLACE_CMD} -e \
-		'/doc[[:space:]]/d' ${WRKSRC}/Makefile.in
+		'/-R$$found_dir/s|^|#|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/[[:blank:]]VERSION/d' ${WRKSRC}/config.h.in
+	@${REINPLACE_CMD} -e \
+		'/doc[[:blank:]]/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|/bin/bash|/bin/sh| ; \
 		 s|^sed |gsed |' ${WRKSRC}/data/scripts/sed-linux.sh
@@ -86,18 +75,16 @@ pre-configure:
 		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}")
 
 pre-build:
-	@(cd ${T4K_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${_make_jobs} ${ALL_TARGET})
+	@(cd ${T4K_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} -j${MAKE_JOBS_NUMBER} ${ALL_TARGET})
 
 post-install:
-	@${ECHO_CMD} -n > ${ETCDIR}/.keep_me
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog OFL README TODO
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	@${ECHO_CMD} -n > ${STAGEDIR}${ETCDIR}/.keep_me
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in AUTHORS ChangeLog OFL README TODO
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-	@${MKDIR} ${DOCSDIR}/en
-	${INSTALL_DATA} ${WRKSRC}/doc/en/*.html ${DOCSDIR}/en
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/en
+	(cd ${WRKSRC}/doc/en && ${INSTALL_DATA} *.html ${STAGEDIR}${DOCSDIR}/en)
 
 .include <bsd.port.mk>
