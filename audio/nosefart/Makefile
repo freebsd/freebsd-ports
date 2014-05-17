@@ -14,7 +14,6 @@ COMMENT=	Player for NES Sound Format (NSF)
 LICENSE=	GPLv2
 
 USES=		gmake
-NO_STAGE=	yes
 MAKE_ENV=	INSTALL="${INSTALL}" COPY="${COPY}" STRIP="${STRIP}" \
 		BINGRP="${BINGRP}" BINMODE="${BINMODE}" BINOWN="${BINOWN}"
 
@@ -22,5 +21,8 @@ PLIST_FILES=	bin/nosefart
 
 pre-build:
 	@${RM} -rf ${BUILD_WRKSRC}/nsfobj
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/nsfobj/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
