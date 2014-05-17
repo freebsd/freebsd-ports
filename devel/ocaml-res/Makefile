@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	res
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/res/downloads/
 PKGNAMEPREFIX=	ocaml-
@@ -11,8 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically Resizing Contiguous Memory for OCaml
 
 LICENSE=	LGPL21
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
@@ -29,27 +27,16 @@ EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_DIRSTRY+=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_DIRSTRY+=	${OCAML_EXAMPLESDIR:S,^${PREFIX}/,,}
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS.txt CHANGES.txt README.md TODO.md
-	cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} *.ml ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.ml \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
