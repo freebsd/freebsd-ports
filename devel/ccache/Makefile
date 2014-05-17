@@ -3,7 +3,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.1.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		CRITICAL
@@ -22,6 +22,7 @@ SUB_FILES=	${HOWTO} world-ccache pkg-message ccache-update-links.sh
 PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html
 
 OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC DOCS TINDERBOX COLORS
+OPTIONS_DEFAULT=COLORS
 
 COLORS_DESC=	Support compiler colors
 CLANGLINK_DESC=	Create clang compiler links if clang is installed
