@@ -87,7 +87,7 @@ create-manifest:
 .if defined(PKG_NOTES)
 	@${ECHO_CMD} -n "annotations: {" >> ${MANIFESTF}
 .for note in ${PKG_NOTES}
-	@${ECHO_CMD} -n ' ${note}: "${PKG_NOTE_${note}:Q}",' >> ${MANIFESTF}
+	@${ECHO_CMD} -n ' ${note}: "${PKG_NOTE_${note}:S/"/\"/g}",' >> ${MANIFESTF}
 .endfor
 	@${ECHO_CMD} " }" >> ${MANIFESTF}
 .endif
