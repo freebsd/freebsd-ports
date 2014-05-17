@@ -1301,6 +1301,15 @@
      EXCLUDES := $(EXCLUDES), \
 --- jdk/make/CompileLaunchers.gmk
 +++ jdk/make/CompileLaunchers.gmk
+@@ -49,7 +49,7 @@
+   ORIGIN_ROOT := /..
+ endif
+ 
+-ifeq ($(OPENJDK_TARGET_OS), macosx)
++ifneq ($(findstring $(OPENJDK_TARGET_OS), bsd macosx), )
+   ORIGIN_ARG := $(call SET_EXECUTABLE_ORIGIN)
+ else
+   ORIGIN_ARG := $(call SET_EXECUTABLE_ORIGIN,$(ORIGIN_ROOT)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli)
 @@ -60,7 +60,7 @@
  # System.loadLibrary("jawt") first. This was the behaviour described in the
  # devloper documentation of JAWT and what worked with OpenJDK6.
@@ -1310,7 +1319,20 @@
    ORIGIN_ARG += $(call SET_EXECUTABLE_ORIGIN,$(ORIGIN_ROOT)/lib$(OPENJDK_TARGET_CPU_LIBDIR))
  endif
  
-@@ -147,14 +147,17 @@
+@@ -89,6 +89,12 @@
+ 
+   $1_LDFLAGS := $3
+   $1_LDFLAGS_SUFFIX :=
++  ifeq ($(OPENJDK_TARGET_OS), bsd)
++    $1_LDFLAGS += -Wl,--whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
++        -Wl,--no-whole-archive
++    $1_LDFLAGS_SUFFIX += -pthread
++  endif
++
+   ifeq ($(OPENJDK_TARGET_OS), macosx)
+     $1_PLIST_FILE := Info-cmdline.plist
+     ifneq ($(11), )
+@@ -147,9 +153,11 @@
            -DLIBARCHNAME='"$(OPENJDK_TARGET_CPU_LEGACY)"' \
            -DLAUNCHER_NAME='"$(LAUNCHER_NAME)"' \
            -DPROGNAME='"$1"' $(DPACKAGEPATH) \
@@ -1322,48 +1344,33 @@
        LDFLAGS := $(LDFLAGS_JDKEXE) \
            $(ORIGIN_ARG) \
            $$($1_LDFLAGS), \
-       LDFLAGS_macosx := $(call SET_SHARED_LIBRARY_NAME,$1), \
-       LDFLAGS_linux := -lpthread \
-+      LDFLAGS_bsd := -pthread \
-           $(call SET_SHARED_LIBRARY_NAME,$(LIBRARY_PREFIX)$(SHARED_LIBRARY_SUFFIX)), \
-       LDFLAGS_solaris := $$($1_LDFLAGS_solaris) \
-           $(call SET_SHARED_LIBRARY_NAME,$(LIBRARY_PREFIX)$(SHARED_LIBRARY_SUFFIX)), \
-@@ -165,6 +168,7 @@
-           $(JDK_OUTPUTDIR)/objs/libjava/java.lib advapi32.lib $5, \
-       LDFLAGS_SUFFIX_linux := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli $(LIBDL) -lc, \
-       LDFLAGS_SUFFIX_solaris := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli -lthread $(LIBDL) -lc, \
-+      LDFLAGS_SUFFIX_bsd := -L$(JDK_OUTPUTDIR)/lib$(OPENJDK_TARGET_CPU_LIBDIR)/jli -ljli -lc, \
-       OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/$1_objs$(OUTPUT_SUBDIR), \
-       OUTPUT_DIR := $$($1_OUTPUT_DIR_ARG)$(OUTPUT_SUBDIR), \
-       PROGRAM := $1, \
-@@ -457,6 +461,7 @@
+@@ -180,7 +188,7 @@
+ 
+   BUILD_LAUNCHERS += $$(BUILD_LAUNCHER_$1)
+ 
+-  ifeq ($(OPENJDK_TARGET_OS), macosx)
++  ifneq ($(findstring $(OPENJDK_TARGET_OS), bsd macosx), )
+     $$(BUILD_LAUNCHER_$1): $(JDK_OUTPUTDIR)/objs/libjli_static.a
+   endif
+ 
+@@ -456,6 +464,7 @@
+     CFLAGS_release := -DPRODUCT, \
      CFLAGS_linux := -fPIC, \
      CFLAGS_solaris := -KPIC, \
-     CFLAGS_macosx := -fPIC, \
 +    CFLAGS_bsd := -fPIC, \
+     CFLAGS_macosx := -fPIC, \
      MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libunpack/mapfile-vers-unpack200, \
      LDFLAGS := $(UNPACKEXE_ZIPOBJS), \
-     LDFLAGS_windows := $(CXXFLAGS_JDKEXE), \
-@@ -465,6 +470,7 @@
-         $(call SET_SHARED_LIBRARY_ORIGIN), \
-     LDFLAGS_linux := -lc, \
-     LDFLAGS_solaris := $(UNPACKEXE_LDFLAGS_solaris) -lc, \
-+    LDFLAGS_bsd := -lc, \
-     LDFLAGS_SUFFIX := $(LIBCXX), \
-     OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/unpackexe$(OUTPUT_SUBDIR), \
-     OUTPUT_DIR := $(JDK_OUTPUTDIR)/objs/unpackexe$(OUTPUT_SUBDIR), \
-@@ -522,6 +528,10 @@
+@@ -518,7 +527,7 @@
+   endif
+ endif
+ 
+-ifeq ($(OPENJDK_TARGET_OS), linux)
++ifneq ($(findstring $(OPENJDK_TARGET_OS), linux bsd), )
    BUILD_JEXEC := 1
  endif # OPENJDK_TARGET_OS
  
-+ifeq ($(OPENJDK_TARGET_OS), bsd)
-+  BUILD_JEXEC := 1
-+endif # OPENJDK_TARGET_OS
-+
- #
- # jdk/make/java/jexec/Makefile
- #
-@@ -554,6 +564,7 @@
+@@ -554,6 +563,7 @@
            $(BUILD_JEXEC_INC), \
        CFLAGS_linux := -fPIC, \
        CFLAGS_solaris := -KPIC, \
@@ -1371,17 +1378,19 @@
        LDFLAGS := $(LDFLAGS_JDKEXE) \
            $(call SET_SHARED_LIBRARY_NAME,$(LIBRARY_PREFIX)$(SHARED_LIBRARY_SUFFIX)), \
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/jexec_obj, \
-@@ -576,6 +587,9 @@
- ifeq ($(OPENJDK_TARGET_OS), solaris)
+@@ -570,10 +580,7 @@
+ # The java-rmi.cgi script in bin/ only gets delivered in certain situations
+ #
+ JAVA_RMI_CGI := $(JDK_OUTPUTDIR)/bin$(OUTPUT_SUBDIR)/java-rmi.cgi
+-ifeq ($(OPENJDK_TARGET_OS), linux)
+-  BUILD_LAUNCHERS += $(JAVA_RMI_CGI)
+-endif
+-ifeq ($(OPENJDK_TARGET_OS), solaris)
++ifneq ($(findstring $(OPENJDK_TARGET_OS), linux solaris bsd), )
    BUILD_LAUNCHERS += $(JAVA_RMI_CGI)
  endif
-+ifeq ($(OPENJDK_TARGET_OS), bsd)
-+  BUILD_LAUNCHERS += $(JAVA_RMI_CGI)
-+endif
  
- # TODO:
- # On windows java-rmi.cgi shouldn't be bundled since Java 1.2, but has been built all
-@@ -601,7 +615,7 @@
+@@ -601,7 +608,7 @@
  LINK_JSPAWNHELPER_OBJECTS := $(JDK_OUTPUTDIR)/objs/libjava/childproc.o
  LINK_JSPAWNHELPER_FLAGS :=
  
@@ -1392,15 +1401,15 @@
  
 --- jdk/make/CopyFiles.gmk
 +++ jdk/make/CopyFiles.gmk
-@@ -31,6 +31,8 @@
+@@ -29,6 +29,8 @@
+ 
+ ifeq ($(OPENJDK_TARGET_OS), windows)
    OPENJDK_TARGET_OS_INCLUDE = $(INCLUDEDIR)/win32
- else ifeq ($(OPENJDK_TARGET_OS), macosx)
-   OPENJDK_TARGET_OS_INCLUDE = $(INCLUDEDIR)/darwin
 +else ifeq ($(OPENJDK_TARGET_OS), bsd)
 +  OPENJDK_TARGET_OS_INCLUDE = $(INCLUDEDIR)/$(shell uname -s | ${TR} "[:upper:]" "[:lower:]")
+ else ifeq ($(OPENJDK_TARGET_OS), macosx)
+   OPENJDK_TARGET_OS_INCLUDE = $(INCLUDEDIR)/darwin
  endif
- 
- #
 @@ -323,23 +325,23 @@
  	$(RM) $(@)
          # Now check for other permutations
@@ -1436,61 +1445,72 @@
          endif
 --- jdk/make/Images.gmk
 +++ jdk/make/Images.gmk
-@@ -237,8 +237,11 @@
- ifeq ($(OPENJDK_TARGET_OS), linux)
+@@ -234,11 +234,11 @@
+ endif
+ 
+ JDK_LIB_FILES := $(NOT_JRE_LIB_FILES)
+-ifeq ($(OPENJDK_TARGET_OS), linux)
++ifneq ($(findstring $(OPENJDK_TARGET_OS), linux bsd),)
    JDK_LIB_FILES += jexec
  endif
-+ifeq ($(OPENJDK_TARGET_OS), bsd)
-+  JDK_LIB_FILES += jexec
-+endif
  
 -ifneq ($(findstring $(OPENJDK_TARGET_OS), linux solaris),) # If Linux or Solaris
 +ifneq ($(findstring $(OPENJDK_TARGET_OS), linux solaris bsd),) # If Linux, Solaris, or BSD
      JDK_LIB_FILES += $(LIBRARY_PREFIX)jli$(SHARED_LIBRARY_SUFFIX) \
  		     $(LIBRARY_PREFIX)jawt$(SHARED_LIBRARY_SUFFIX)
  endif
-@@ -393,6 +396,10 @@
+@@ -389,7 +389,7 @@
+     MAN_SRC_DIR = $(MAN_SRC_BASEDIR)/solaris/doc
+     MAN1_SUBDIR = sun/man/man1
+   endif
+-  ifeq ($(OPENJDK_TARGET_OS), macosx)
++  ifneq ($(findstring $(OPENJDK_TARGET_OS), bsd macosx),)
      MAN_SRC_DIR = $(MAN_SRC_BASEDIR)/bsd/doc
      MAN1_SUBDIR = man
    endif
-+  ifeq ($(OPENJDK_TARGET_OS), bsd)
-+    MAN_SRC_DIR := $(MAN_SRC_BASEDIR)/bsd/doc
-+    MAN1_SUBDIR := man
-+  endif
- 
-   $(JRE_IMAGE_DIR)/man/man1/%: $(MAN_SRC_DIR)/$(MAN1_SUBDIR)/%
- 	$(ECHO) $(LOG_INFO) Copying $(patsubst $(OUTPUT_ROOT)/%,%,$@)
-@@ -465,6 +472,16 @@
- 	$(CD) $(@D) && $(RM) ja && $(LN) -s ja_JP.UTF-8 ja
+@@ -445,7 +445,7 @@
+ 	$(install-file)
    endif
  
-+  ifeq ($(OPENJDK_TARGET_OS), bsd)
-+    $(JRE_IMAGE_DIR)/man/ja:
-+	$(ECHO) $(LOG_INFO) Creating $(patsubst $(OUTPUT_ROOT)/%,%,$@)
-+	$(CD) $(@D) && $(RM) ja && $(LN) -s ja_JP.UTF-8 ja
-+
-+    $(JDK_IMAGE_DIR)/man/ja:
-+	$(ECHO) $(LOG_INFO) Creating $(patsubst $(OUTPUT_ROOT)/%,%,$@)
-+	$(CD) $(@D) && $(RM) ja && $(LN) -s ja_JP.UTF-8 ja
-+  endif
-+
-   ifeq ($(OPENJDK_TARGET_OS), linux)
+-  ifeq ($(OPENJDK_TARGET_OS), linux)
++  ifneq ($(findstring $(OPENJDK_TARGET_OS), linux bsd macosx),)
+     $(JRE_IMAGE_DIR)/man/ja:
+ 	$(ECHO) $(LOG_INFO) Creating $(patsubst $(OUTPUT_ROOT)/%,%,$@)
+ 	$(CD) $(@D) && $(RM) ja && $(LN) -s ja_JP.UTF-8 ja
+@@ -453,19 +453,7 @@
+     $(JDK_IMAGE_DIR)/man/ja:
+ 	$(ECHO) $(LOG_INFO) Creating $(patsubst $(OUTPUT_ROOT)/%,%,$@)
+ 	$(CD) $(@D) && $(RM) ja && $(LN) -s ja_JP.UTF-8 ja
+-  endif
+-
+-  ifeq ($(OPENJDK_TARGET_OS), macosx)
+-    $(JRE_IMAGE_DIR)/man/ja:
+-	$(ECHO) $(LOG_INFO) Creating $(patsubst $(OUTPUT_ROOT)/%,%,$@)
+-	$(CD) $(@D) && $(RM) ja && $(LN) -s ja_JP.UTF-8 ja
+-
+-    $(JDK_IMAGE_DIR)/man/ja:
+-	$(ECHO) $(LOG_INFO) Creating $(patsubst $(OUTPUT_ROOT)/%,%,$@)
+-	$(CD) $(@D) && $(RM) ja && $(LN) -s ja_JP.UTF-8 ja
+-  endif
+ 
+-  ifeq ($(OPENJDK_TARGET_OS), linux)
      JRE_MAN_PAGE_LIST = $(addprefix $(JRE_IMAGE_DIR)/man/man1/, $(JRE_MAN_PAGES)) \
          $(addprefix $(JRE_IMAGE_DIR)/man/ja_JP.UTF-8/man1/, $(JRE_MAN_PAGES)) \
-@@ -497,6 +514,16 @@
-         $(JDK_IMAGE_DIR)/man/ja
+         $(JRE_IMAGE_DIR)/man/ja
+@@ -487,16 +475,6 @@
+         $(addprefix $(JDK_IMAGE_DIR)/man/ja_JP.PCK/man1/, $(JDK_MAN_PAGES))
    endif
  
-+  ifeq ($(OPENJDK_TARGET_OS), bsd)
-+    JRE_MAN_PAGE_LIST := $(addprefix $(JRE_IMAGE_DIR)/man/man1/, $(JRE_MAN_PAGES)) \
-+        $(addprefix $(JRE_IMAGE_DIR)/man/ja_JP.UTF-8/man1/, $(JRE_MAN_PAGES)) \
-+        $(JRE_IMAGE_DIR)/man/ja
-+
-+    JDK_MAN_PAGE_LIST := $(addprefix $(JDK_IMAGE_DIR)/man/man1/, $(JDK_MAN_PAGES)) \
-+        $(addprefix $(JDK_IMAGE_DIR)/man/ja_JP.UTF-8/man1/, $(JDK_MAN_PAGES)) \
-+    $(JDK_IMAGE_DIR)/man/ja
-+  endif
-+
+-  ifeq ($(OPENJDK_TARGET_OS), macosx)
+-    JRE_MAN_PAGE_LIST = $(addprefix $(JRE_IMAGE_DIR)/man/man1/, $(JRE_MAN_PAGES)) \
+-        $(addprefix $(JRE_IMAGE_DIR)/man/ja_JP.UTF-8/man1/, $(JRE_MAN_PAGES)) \
+-        $(JRE_IMAGE_DIR)/man/ja
+-
+-    JDK_MAN_PAGE_LIST = $(addprefix $(JDK_IMAGE_DIR)/man/man1/, $(JDK_MAN_PAGES)) \
+-        $(addprefix $(JDK_IMAGE_DIR)/man/ja_JP.UTF-8/man1/, $(JDK_MAN_PAGES)) \
+-        $(JDK_IMAGE_DIR)/man/ja
+-  endif
+-
  endif # Windows
  
  ################################################################################
@@ -4384,30 +4404,30 @@
      VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
      RC_FLAGS := $(RC_FLAGS) \
          -D "JDK_FNAME=lcms.dll" \
-@@ -821,6 +838,7 @@
+@@ -819,6 +836,7 @@
+     LDFLAGS_SUFFIX := $(BUILD_LIBFONTMANAGER_FONTLIB), \
+     LDFLAGS_SUFFIX_linux := -lawt $(LIBM) $(LIBCXX) -ljava -ljvm -lc, \
      LDFLAGS_SUFFIX_solaris := -lawt -lawt_xawt -lc $(LIBM) $(LIBCXX) -ljava -ljvm, \
++    LDFLAGS_SUFFIX_bsd := -lawt $(LIBM) $(LIBCXX) -ljava -ljvm -lc, \
      LDFLAGS_SUFFIX_macosx := -lawt $(LIBM) $(LIBCXX) -undefined dynamic_lookup \
          -ljava -ljvm, \
-+    LDFLAGS_SUFFIX_bsd := -lawt $(LIBM) $(LIBCXX) -ljava -ljvm -lc, \
      LDFLAGS_SUFFIX_windows := $(WIN_JAVA_LIB) advapi32.lib user32.lib gdi32.lib \
-         $(WIN_AWT_LIB), \
-     VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
-@@ -963,6 +981,7 @@
+@@ -962,6 +980,7 @@
+       OPTIMIZATION := LOW, \
        CFLAGS := $(CFLAGS_JDKLIB), \
        CFLAGS_linux := $(HEADLESS_CFLAG), \
-       CFLAGS_macosx := -I$(JDK_TOPDIR)/src/solaris/native/sun/awt, \
 +      CFLAGS_bsd := $(HEADLESS_CFLAG), \
+       CFLAGS_macosx := -I$(JDK_TOPDIR)/src/solaris/native/sun/awt, \
        MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libjawt/mapfile-vers, \
        LDFLAGS := $(LDFLAGS_JDKLIB) \
-           $(call SET_SHARED_LIBRARY_ORIGIN), \
-@@ -971,6 +990,7 @@
+@@ -969,6 +988,7 @@
+       LDFLAGS_solaris := -L$(OPENWIN_HOME)/sfw/lib$(OPENJDK_TARGET_CPU_ISADIR) -L$(OPENWIN_LIB)$(OPENJDK_TARGET_CPU_ISADIR), \
+       LDFLAGS_SUFFIX_linux := $(JAWT_LIBS) $(LDFLAGS_JDKLIB_SUFFIX), \
        LDFLAGS_SUFFIX_solaris := $(JAWT_LIBS) $(LDFLAGS_JDKLIB_SUFFIX) -lXrender, \
++      LDFLAGS_SUFFIX_bsd := $(JAWT_LIBS) $(LDFLAGS_JDKLIB_SUFFIX), \
        LDFLAGS_SUFFIX_macosx := -Xlinker -rpath -Xlinker @loader_path $(JAWT_LIBS) \
            -framework Cocoa $(LDFLAGS_JDKLIB_SUFFIX), \
-+      LDFLAGS_SUFFIX_bsd := $(JAWT_LIBS) $(LDFLAGS_JDKLIB_SUFFIX), \
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libjawt, \
-       DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
- 
 @@ -1169,6 +1189,7 @@
          REORDER := $(LIBAWT_HEADLESS_REORDER), \
          LDFLAGS_SUFFIX_linux := -ljvm -lawt -lm $(LIBDL) -ljava, \
@@ -4436,22 +4456,22 @@
    ifeq ($(ENABLE_DEBUG_SYMBOLS), true)
      LIBVERIFY_OPTIMIZATION := LOW
    endif
-@@ -202,6 +202,7 @@
+@@ -198,6 +198,7 @@
+     LDFLAGS_SUFFIX_posix := -ljvm -lverify, \
+     LDFLAGS_SUFFIX_solaris := -lsocket -lnsl -lscf $(LIBDL) $(BUILD_LIBFDLIBM) -lc, \
+     LDFLAGS_SUFFIX_linux := $(LIBDL) $(BUILD_LIBFDLIBM), \
++    LDFLAGS_SUFFIX_bsd := $(BUILD_LIBFDLIBM), \
+     LDFLAGS_SUFFIX_macosx := -L$(JDK_OUTPUTDIR)/objs/ -lfdlibm \
          -framework CoreFoundation \
          -framework Foundation \
-         -framework Security -framework SystemConfiguration, \
-+    LDFLAGS_SUFFIX_bsd := $(BUILD_LIBFDLIBM), \
-     LDFLAGS_SUFFIX_windows := -export:winFileHandleOpen -export:handleLseek \
-         jvm.lib $(BUILD_LIBFDLIBM) $(WIN_VERIFY_LIB) \
-         shell32.lib delayimp.lib -DELAYLOAD:shell32.dll \
-@@ -267,6 +268,7 @@
+@@ -266,6 +267,7 @@
+         $(WIN_JAVA_LIB), \
      LDFLAGS_SUFFIX_linux := -ljvm -ljava $(LIBZ), \
      LDFLAGS_SUFFIX_solaris := -ljvm -ljava $(LIBZ) -lc, \
-     LDFLAGS_SUFFIX_macosx := $(LIBZ) -ljava -ljvm, \
 +    LDFLAGS_SUFFIX_bsd := -ljvm -ljava $(LIBZ), \
+     LDFLAGS_SUFFIX_macosx := $(LIBZ) -ljava -ljvm, \
      VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
      RC_FLAGS := $(RC_FLAGS) \
-         -D "JDK_FNAME=zip.dll" \
 @@ -376,7 +378,7 @@
  # Append defines depending on target platform
  LIBJLI_CFLAGS += $(OPENJDK_TARGET_CPU_JLI_CFLAGS)
@@ -4461,11 +4481,12 @@
    LIBJLI_CFLAGS += -DPACKAGE_PATH=\"$(PACKAGE_PATH)\"
  endif
  
-@@ -412,9 +414,11 @@
+@@ -411,10 +413,12 @@
+         $(call SET_SHARED_LIBRARY_ORIGIN), \
      LDFLAGS_linux := $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
      LDFLAGS_solaris := $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
-     LDFLAGS_macosx := -framework Cocoa -framework Security -framework ApplicationServices, \
 +    LDFLAGS_bsd := $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
+     LDFLAGS_macosx := -framework Cocoa -framework Security -framework ApplicationServices, \
      LDFLAGS_SUFFIX_solaris := $(LIBZ) $(LIBDL) -lc, \
      LDFLAGS_SUFFIX_linux := $(LIBZ) $(LIBDL) -lc -lpthread, \
      LDFLAGS_SUFFIX_macosx := $(LIBZ), \
@@ -4473,38 +4494,26 @@
      LDFLAGS_SUFFIX_windows := \
          -export:JLI_Launch \
          -export:JLI_ManifestIterate \
-@@ -479,6 +483,23 @@
- 	$(call install-file)
+@@ -458,9 +462,9 @@
  
-   BUILD_LIBRARIES += $(JDK_OUTPUTDIR)/objs/libjli_static.a
-+else ifeq ($(OPENJDK_TARGET_OS), bsd)
-+  $(eval $(call SetupNativeCompilation,BUILD_LIBJLI_STATIC, \
-+      LIBRARY := jli_static, \
-+      OUTPUT_DIR := $(JDK_OUTPUTDIR)/objs, \
-+      SRC := $(BUILD_LIBJLI_SRC_DIRS), \
-+      INCLUDE_FILES := $(BUILD_LIBJLI_FILES), \
-+      LANG := C, \
-+      OPTIMIZATION := HIGH, \
-+      CFLAGS := $(CFLAGS_JDKLIB) $(LIBJLI_CFLAGS), \
-+      LDFLAGS := -nostdlib -r, \
-+      OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libjli_static, \
-+      DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
-+
-+  $(JDK_OUTPUTDIR)/objs/libjli_static.a: $(BUILD_LIBJLI_STATIC)
-+	$(call install-file)
-+
-+  BUILD_LIBRARIES += $(JDK_OUTPUTDIR)/objs/libjli_static.a
- endif
+   BUILD_LIBRARIES += $(BUILD_LIBJLI_STATIC)
  
- ##########################################################################################
-@@ -496,6 +517,7 @@
+-else ifeq ($(OPENJDK_TARGET_OS), macosx)
++else ifneq ($(findstring $(OPENJDK_TARGET_OS), bsd macosx), )
+   #
+-  # On macosx they do partial (incremental) linking of libjli_static.a
++  # On BSD they do partial (incremental) linking of libjli_static.a
+   # code it here...rather than add support to NativeCompilation
+   # as this is first time I see it
+   $(eval $(call SetupNativeCompilation,BUILD_LIBJLI_STATIC, \
+@@ -495,6 +499,7 @@
+     MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libnpt/mapfile-vers, \
      LDFLAGS := $(LDFLAGS_JDKLIB) \
          $(call SET_SHARED_LIBRARY_ORIGIN), \
-     LDFLAGS_macosx := -liconv, \
 +    LDFLAGS_bsd := -liconv, \
+     LDFLAGS_macosx := -liconv, \
      LDFLAGS_SUFFIX_windows := -export:nptInitialize -export:nptTerminate, \
      LDFLAGS_SUFFIX_solaris := -lc, \
-     VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
 --- jdk/make/lib/NetworkingLibraries.gmk
 +++ jdk/make/lib/NetworkingLibraries.gmk
 @@ -42,7 +42,7 @@
@@ -4562,14 +4571,14 @@
      LDFLAGS_SUFFIX_macosx := -ljava -lnet -pthread -framework CoreFoundation, \
      LDFLAGS_SUFFIX :=, \
      VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
-@@ -176,6 +194,7 @@
+@@ -175,6 +193,7 @@
+         LDFLAGS_SUFFIX_linux := -lpthread $(LIBDL) -ljava -ljvm, \
          LDFLAGS_SUFFIX_posix := -lnio -lnet, \
          LDFLAGS_SUFFIX_solaris := -lsocket -ljava -ljvm -lc, \
-         LDFLAGS_SUFFIX_macosx := -ljava -ljvm, \
 +        LDFLAGS_SUFFIX_bsd := -pthread -ljava -ljvm, \
+         LDFLAGS_SUFFIX_macosx := -ljava -ljvm, \
          OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libsctp, \
          DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
- 
 --- jdk/make/lib/ServiceabilityLibraries.gmk
 +++ jdk/make/lib/ServiceabilityLibraries.gmk
 @@ -30,7 +30,7 @@
@@ -4581,42 +4590,58 @@
    LIBATTACH_EXCLUDE_FILES += BsdVirtualMachine.c
  endif
  
-@@ -80,6 +80,7 @@
-     MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libdt_socket/mapfile-vers, \
-     LDFLAGS := $(LDFLAGS_JDKLIB) \
+@@ -82,6 +82,7 @@
          $(call SET_SHARED_LIBRARY_ORIGIN), \
-+    LDFLAGS_SUFFIX_bsd := -pthread, \
      LDFLAGS_SUFFIX_linux := -lpthread, \
      LDFLAGS_SUFFIX_solaris := -lnsl -lsocket -lc, \
++    LDFLAGS_SUFFIX_bsd := -pthread, \
      LDFLAGS_SUFFIX_windows := $(LDFLAGS_JDKLIB_SUFFIX) -export:jdwpTransport_OnLoad ws2_32.lib, \
-@@ -249,10 +250,12 @@
+     VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
+     RC_FLAGS := $(RC_FLAGS) \
+@@ -249,12 +250,15 @@
          $(LIBINSTRUMENT_LDFLAGS), \
      LDFLAGS_linux := $(call SET_SHARED_LIBRARY_ORIGIN,/jli), \
      LDFLAGS_solaris := $(call SET_SHARED_LIBRARY_ORIGIN,/jli), \
-+    LDFLAGS_bsd := $(call SET_SHARED_LIBRARY_ORIGIN,/jli), \
++    LDFLAGS_bsd := -Xlinker --whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
++        -Xlinker --no-whole-archive, \
      LDFLAGS_macosx := -Xlinker -all_load $(JDK_OUTPUTDIR)/objs/libjli_static.a \
          -framework Cocoa -framework Security -framework ApplicationServices, \
      LDFLAGS_SUFFIX := $(LIBINSTRUMENT_LDFLAGS_SUFFIX), \
      LDFLAGS_SUFFIX_macosx := -liconv $(LIBZ), \
-+    LDFLAGS_SUFFIX_bsd := -liconv $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli, \
      LDFLAGS_SUFFIX_solaris := $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli $(LIBDL) -lc, \
      LDFLAGS_SUFFIX_linux := $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli $(LIBDL), \
++    LDFLAGS_SUFFIX_bsd := -liconv $(LIBZ), \
      VERSIONINFO_RESOURCE := $(JDK_TOPDIR)/src/windows/resource/version.rc, \
-@@ -293,8 +296,12 @@
-   BUILD_LIBMANAGEMENT_EXCLUDES += MacosxOperatingSystem.c
+     RC_FLAGS := $(RC_FLAGS) \
+         -D "JDK_FNAME=instrument.dll" \
+@@ -263,7 +267,7 @@
+     OBJECT_DIR := $(LIBINSTRUMENT_DIR), \
+     DEBUG_SYMBOLS := true))
+ 
+-ifneq (, $(findstring $(OPENJDK_TARGET_OS), macosx windows))
++ifneq (, $(findstring $(OPENJDK_TARGET_OS), bsd macosx windows))
+   $(BUILD_LIBINSTRUMENT): $(JDK_OUTPUTDIR)/objs/$(LIBRARY_PREFIX)jli_static$(STATIC_LIBRARY_SUFFIX)
+ else
+   $(BUILD_LIBINSTRUMENT): $(INSTALL_LIBRARIES_HERE)/jli/$(LIBRARY_PREFIX)jli$(SHARED_LIBRARY_SUFFIX)
+@@ -289,12 +293,16 @@
+   BUILD_LIBMANAGEMENT_EXCLUDES += LinuxOperatingSystem.c
  endif
  
 +ifneq ($(OPENJDK_TARGET_OS), bsd)
 +  BUILD_LIBMANAGEMENT_EXCLUDES += BsdOperatingSystem.c
 +endif
 +
+ ifneq ($(OPENJDK_TARGET_OS), macosx)
+   BUILD_LIBMANAGEMENT_EXCLUDES += MacosxOperatingSystem.c
+ endif
+ 
  LIBMANAGEMENT_OPTIMIZATION := HIGH
 -ifneq ($(findstring $(OPENJDK_TARGET_OS), solaris linux), )
 +ifneq ($(findstring $(OPENJDK_TARGET_OS), solaris linux bsd), )
    ifeq ($(ENABLE_DEBUG_SYMBOLS), true)
      LIBMANAGEMENT_OPTIMIZATION := LOW
    endif
-@@ -337,7 +344,7 @@
+@@ -337,7 +345,7 @@
  BUILD_LIBHPROF_LDFLAGS :=
  
  LIBHPROF_OPTIMIZATION := HIGHEST
