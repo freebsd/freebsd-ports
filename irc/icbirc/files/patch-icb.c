@@ -1,6 +1,16 @@
---- icb.c.orig	Fri Nov 19 06:14:28 2004
-+++ icb.c	Tue Aug 28 05:09:38 2007
-@@ -40,8 +40,8 @@
+--- icb.c.orig	2004-11-19 06:14:28.000000000 +0900
++++ icb.c	2014-05-17 02:34:25.000000000 +0900
+@@ -30,7 +30,9 @@
+  *
+  */
+ 
++#if 0
+ static const char rcsid[] = "$Id: icb.c,v 1.15 2004/11/18 21:14:28 dhartmei Exp $";
++#endif
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -40,8 +42,8 @@
  
  extern int	 sync_write(int, const char *, int);
  
@@ -11,7 +21,7 @@
  static void		 icb_ico(int, const char *);
  static void		 icb_iwl(int, const char *, const char *, long,
  			    long, const char *, const char *);
-@@ -108,7 +108,7 @@
+@@ -108,7 +110,7 @@
   */
  
  void
@@ -20,7 +30,7 @@
  {
  	while (**s && strchr(skip, **s) != NULL)
  		(*s)++;
-@@ -149,7 +149,7 @@
+@@ -149,7 +151,7 @@
  }
  
  static unsigned char
@@ -29,7 +39,7 @@
  {
  	unsigned char i = 0, j = 0, k = 0;
  
-@@ -175,10 +175,10 @@
+@@ -175,10 +177,10 @@
  }
  
  static void
@@ -42,7 +52,7 @@
  	unsigned char i, j;
  	char s[8192];
  
-@@ -254,7 +254,7 @@
+@@ -254,7 +256,7 @@
  			char old_nick[256], new_nick[256];
  
  			scan(&a, old_nick, sizeof(old_nick), " ", " ");
@@ -51,7 +61,7 @@
  				return;
  			a += 21;
  			scan(&a, new_nick, sizeof(new_nick), " ", " ");
-@@ -268,7 +268,7 @@
+@@ -268,7 +270,7 @@
  			char nick[256], topic[256];
  
  			scan(&a, nick, sizeof(nick), " ", " ");
@@ -60,7 +70,7 @@
  				return;
  			a += 23;
  			scan(&a, topic, sizeof(topic), "", "\"");
-@@ -279,13 +279,13 @@
+@@ -279,13 +281,13 @@
  			char old_mod[256], new_mod[256];
  
  			scan(&a, old_mod, sizeof(old_mod), " ", " ");
@@ -76,7 +86,7 @@
  				snprintf(s, sizeof(s),
  				    ":%s MODE %s +o %s\r\n",
  				    icb_hostid, irc_channel, old_mod);
-@@ -297,7 +297,7 @@
+@@ -297,7 +299,7 @@
  			char nick[256];
  
  			scan(&a, nick, sizeof(nick), " ", " ");
@@ -85,7 +95,7 @@
  				return;
  			snprintf(s, sizeof(s), ":%s KICK %s %s :booted\r\n",
  			    icb_moderator, irc_channel, nick);
-@@ -508,7 +508,7 @@
+@@ -508,7 +510,7 @@
  		cmd[off++] = 0;
  		cmd[0] = off - 1;
  		/* cmd[0] <= MAX_MSG_SIZE */
@@ -94,7 +104,7 @@
  	}
  }
  
-@@ -533,7 +533,7 @@
+@@ -533,7 +535,7 @@
  		cmd[off++] = 0;
  		cmd[0] = off - 1;
  		/* cmd[0] <= MAX_MSG_SIZE */
