@@ -16,4 +16,11 @@ project Templates_Parser is
    end case;
    for Externally_Built use "true";
 
+   package Naming is
+      for Implementation ("Templates_Parser.Input")
+        use "templates_parser-input__standalone.adb";
+      for Implementation ("Templates_Parser_Tasking")
+        use "templates_parser_tasking__standard_tasking.adb";
+   end Naming;
+
 end Templates_Parser;
