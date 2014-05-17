@@ -15,5 +15,4 @@ JAPANESE=	yes
 
 PLIST_FILES=	${TIMID_LIBDIR}/interface_s.so
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
