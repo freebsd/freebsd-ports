@@ -18,9 +18,9 @@ include/mate-dict/gdict/gdict-utils.h
 include/mate-dict/gdict/gdict-version.h
 include/mate-dict/gdict/gdict.h
 lib/libmatedict.a
-lib/libmatedict.la
 lib/libmatedict.so
 lib/libmatedict.so.6
+lib/libmatedict.so.6.0.7
 libdata/pkgconfig/mate-dict.pc
 libexec/mate-dictionary-applet
 man/man1/mate-dictionary.1.gz
