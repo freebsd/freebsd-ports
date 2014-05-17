@@ -7,6 +7,7 @@ include/GLES3/gl3platform.h
 lib/libGLESv2.la
 lib/libGLESv2.so
 lib/libGLESv2.so.2
+lib/libGLESv2.so.2.0.0
 libdata/pkgconfig/glesv2.pc
 @dirrmtry include/GLES3
 @dirrmtry include/GLES2
