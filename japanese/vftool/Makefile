@@ -27,12 +27,9 @@ FONTSDIR=	${PREFIX}/share/fonts
 JFMDIR=		${WRKDIR}/share/texmf/fonts/tfm/ptex
 TARGETDIRS=	vf-n2a vf-a2n vf-a2bk vf-p2pn
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+ia64_BROKEN=	Coredump during build on ia64
 
-.if ${ARCH} == "ia64"
-BROKEN=		Coredump during build on ia64
-.endif
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	(cd ${WRKDIR}; \
@@ -46,20 +43,15 @@ post-extract:
 	)
 
 do-install:
-	@(cd ${FONTSDIR}; ${MKDIR} ${TARGETDIRS})
-	@(cd ${WRKSRC}; \
-	${INSTALL_PROGRAM} mka2bkvf mka2nvf mkn2avf mkp2nvf ${PREFIX}/bin; \
-	)
-.for t in ${TARGETDIRS}
-	@${INSTALL_DATA} ${WRKSRC}/${t}/* ${FONTSDIR}/${t}
-.endfor
-	@${INSTALL_DATA} ${WRKSRC}/jfm/* ${FONTSDIR}/vf-a2bk
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}; \
-	${INSTALL_SCRIPT} MKASC2BKall MKASC2NTT MKNTT2ASC MKPTEX2PNTT ${DOCSDIR}; \
-	${INSTALL_DATA} Makefile README vfdata.doc ${DOCSDIR}; \
-	)
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} mka2bkvf mka2nvf mkn2avf mkp2nvf \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${TARGETDIRS}" \
+		${STAGEDIR}${FONTSDIR})
+	${INSTALL_DATA} ${WRKSRC}/jfm/* ${STAGEDIR}${FONTSDIR}/vf-a2bk
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} MKASC2BKall MKASC2NTT MKNTT2ASC \
+		MKPTEX2PNTT ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} Makefile README vfdata.doc \
+		${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
