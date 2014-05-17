@@ -19,7 +19,8 @@ USES=		lha
 
 MAKEFILE=	${FILESDIR}/Makefile
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@(cd ${WRKSRC}; lha xiqf utility.lzh src/dayinfo.c )
 	@${ECHO_MSG} "===>  Extracting tbl file for ${DISTNAME}"
@@ -38,9 +39,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/*.cnf
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/today.doc ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/today.doc ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
