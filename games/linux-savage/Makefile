@@ -20,7 +20,7 @@ COMMENT=	The Savage game (Linux version)
 USE_LINUX=	yes
 USE_LINUX_APPS=	libvorbis tiff
 NO_BUILD=	yes
-RESTRICTED=	Savage is freeware, but i am not sure of its license
+RESTRICTED=	Freeware, but license terms are unclear
 NO_PACKAGE=	Package will be 150MB, set FORCE_PACKAGE if you really want it
 PLIST_SUB+=	SAVAGEDIR="${SAVAGEDIR}"
 SUB_FILES=	pkg-message savage savage_editor

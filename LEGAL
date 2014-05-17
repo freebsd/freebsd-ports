@@ -72,7 +72,7 @@ djbdns*			dns/djbdns		No license -- see http://cr.yp.to/softwarelaw.html
 djbdns-1.05.tar.gz	mail/qmail-conf		No license -- see http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
 dlv			lang/dlv		Not sure if we can redistribute it
-dmd-*			lang/dmd		No redistribution of non validated binaries
+dmd-*			lang/dmd1		No redistribution of non validated binaries
 dn*.tgz			emulators/darcnes	Commercial use is restricted
 doom3-linux-*		games/linux-doom3	Redistribution is limited, see license; Requested by id Software
 doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Requested by id Software
@@ -170,7 +170,7 @@ linuxq3ademo-*		games/linux-quake3-demo	Restrictive license by Loki Software
 linuxsampler-*		audio/linuxsampler	Commercial use is prohibited
 lpac-*			audio/lpac		No commercial use
 l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
-l_fc_p*_*.*.*.tar.gz	lang/ifc		No redistribution allowed
+l_fc_p*_*.*.*.tar.gz	lang/ifc		Intel forbids any redistribution
 macopix-*.tar.gz	games/macopix		Contains commercial character data
 madfufw-*		audio/madfufw		No redistribution of firmware files
 majesty_demo*		games/linux-majesty-demo	Redistribution is limited, see license
@@ -210,7 +210,7 @@ Radiator/*		net/radiator		Commercial software
 RakNet-*		devel/raknet		Special authorization granted to distribute version 3.x under GPLv3
 rapid-*			math/rapid		No commercial use
 raproxy*.tar.gz		audio/raproxy		License allows only use in a firewall, or with RA products
-rarbsd-*		archivers/rar		Only unmodified, original package can be distributed
+rarbsd-*		archivers/rar		only unmodified original package can be distributed
 RealPlayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
 rftg-*			games/rftg		Redistribution not authorized
 ricty-*			japanese/font-ricty	Redistribution not allowed
@@ -226,7 +226,7 @@ sharefonts-*		x11-fonts/sharefonts	Shareware: cannot be distributed without prio
 shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
-skype*			net-im/skype		Not for redistribution
+skype*			net-im/skype		Redistribution prohibited
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
 stat.tar.Z		math/unixstat		License does not allow redistribution of binaries
@@ -263,7 +263,7 @@ uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any
 vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos
 ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.  For personal use only.  Must accept license to download.
 vice-*			emulators/vice		ROMs are copyrighted by Commodore Business Machines
-VMware-vSphere-Perl*	net/vmware-vsphere-cli	May not be redistributed.  Must accept license to download.
+VMware-vSphere-Perl*	net/vmware-vsphere-cli	Downloading requires acceptance of license agreement
 vpnc-*			security/vpnc		Redistribution is not allowed if linked against OpenSSL
 vst_sdk2_3.zip		audio/ardour		Redistribution of the VST PlugIns SDK is not allowed
 vtkmpeg2encode.tar.gz	multimedia/vtkmpeg2encode	The MPEG2 format and all software that uses it is subject to patent restrictions
