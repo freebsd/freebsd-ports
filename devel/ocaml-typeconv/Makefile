@@ -2,47 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	type-conv
-PORTVERSION=	108.07.00
+PORTVERSION=	109.60.01
 CATEGORIES=	devel
 MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}/individual
-DISTNAME=	${PORTNAME:S,-,_,}-${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTVERSION:R}.00/individual
 PKGNAMEPREFIX=	ocaml-
+DISTNAME=	${PORTNAME:S,-,_,}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Type conversion routines for OCaml
 
 LICENSE=	BSD
 
-
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAMLFIND_PLIST=yes
 OCAML_PKGDIRS=	${PORTNAME:S,-,_,}
 
+USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs
 MAKE_JOBS_UNSAFE=yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME:S,-,_,}
+
 PORTDOCS=	*
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_DIRSTRY=	${OCAML_DOCSDIR:S,^${PREFIX}/,,}
-.endif
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in CHANGES.txt README.md
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
