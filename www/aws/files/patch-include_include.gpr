@@ -1,8 +1,6 @@
-$NetBSD: patch-include_include.gpr,v 1.1 2012/07/08 20:14:28 marino Exp $
-
---- include/include.gpr.orig	2011-01-25 20:52:57.000000000 +0000
+--- include/include.gpr.orig	2014-05-15 19:48:07.000000000 +0000
 +++ include/include.gpr
-@@ -40,6 +40,7 @@ project Include is
+@@ -31,6 +31,7 @@ library project Include is
  
     for Library_Name use "aws_include";
     for Library_Kind use Shared.Library_Type;

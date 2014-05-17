@@ -1,6 +1,31 @@
---- src/src.gpr.orig	2011-01-09 15:47:58.000000000 +0100
-+++ src/src.gpr	2013-04-25 20:08:01.000000000 +0200
-@@ -77,7 +77,7 @@
+--- src/src.gpr.orig	2014-05-15 19:48:07.000000000 +0000
++++ src/src.gpr
+@@ -21,13 +21,14 @@ with "../.build/projects/aws_xmlada";
+ with "../shared";
+ with "../include/include";
+ with "../ssl/ssl";
++with "../templates_parser/temparse";
+ 
+ library project Src is
+ 
+    for Languages use ("Ada", "Project file", "makefile");
+ 
+    for Source_Dirs use
+-     ("core", "extended", "../templates_parser/src", "../config/src",
++     ("core", "extended", "../config/src",
+       "../config/ssl", "../" & Shared.Target_Dir & "/setup/src", ".");
+ 
+    --  XMLAda Installed, add xsrc and soap directories
+@@ -35,7 +36,7 @@ library project Src is
+    case Shared.XMLAda is
+       when "Installed" =>
+          for Source_Dirs use project'Source_Dirs &
+-           ("xsrc", "soap", "../templates_parser/xsrc");
++           ("xsrc", "soap");
+       when "Disabled" =>
+          null;
+    end case;
+@@ -67,7 +68,7 @@ library project Src is
              when "Windows_NT" =>
                 for Library_Options use ("-lwsock32", "-lws2_32");
              when others =>
@@ -9,12 +34,30 @@
           end case;
  
           case Shared.LDAP is
-@@ -88,7 +88,7 @@
+@@ -78,7 +79,7 @@ library project Src is
                         Project'Library_Options & ("-lwldap32");
                    when others =>
                       for Library_Options use
 -                       Project'Library_Options & ("-lldap");
 +                       Project'Library_Options & ("-L@PREFIX@/lib", "-lldap");
                 end case;
+ 
              when "Disabled" =>
-                null;
+@@ -123,17 +124,6 @@ library project Src is
+       for Implementation_Suffix ("makefile") use ".txt";
+       for Implementation_Exceptions ("makefile") use ("makefile");
+ 
+-      -- Templates Parser
+-
+-      for Specification ("Templates_Parser.Configuration")
+-        use "templates_parser-configuration__aws.ads";
+-
+-      for Implementation ("Templates_Parser.Input")
+-        use "templates_parser-input__aws.adb";
+-
+-      for Implementation ("Templates_Parser_Tasking")
+-        use "templates_parser_tasking__standard_tasking.adb";
+-
+       --  SOCKLIB
+ 
+       case Shared.SOCKLIB is
