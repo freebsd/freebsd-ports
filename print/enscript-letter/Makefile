@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	enscript
-PORTVERSION=	1.6.4
-PORTREVISION=	6
+PORTVERSION=	1.6.6
 CATEGORIES+=	print
-MASTER_SITES=	http://www.codento.com/people/mtr/genscript/
+MASTER_SITES=	GNU
 PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTNAME=	enscript-${PORTVERSION}
 
-MAINTAINER?=	rafan@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	ASCII to PostScript filter
 
 USES=		shebangfix perl5
@@ -31,5 +30,8 @@ PS?=		Letter
 	@${ECHO} "Possible values are:  a4, letter, or letterdj"
 	@${FALSE}
 .endif
+
+post-configure:
+	${REINPLACE_CMD} -e 's|/usr/bin/perl|$${prefix}/bin/perl|g' ${WRKSRC}/scripts/Makefile
 
 .include <bsd.port.mk>
