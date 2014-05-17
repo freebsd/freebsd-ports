@@ -1,8 +1,4 @@
-%%TOOLS%%bin/atf-config
-%%TOOLS%%bin/atf-report
-%%TOOLS%%bin/atf-run
 bin/atf-sh
-%%TOOLS%%bin/atf-version
 include/atf-c++.hpp
 include/atf-c++/build.hpp
 include/atf-c++/check.hpp
@@ -22,147 +18,105 @@ include/atf-c/tc.h
 include/atf-c/tp.h
 include/atf-c/utils.h
 lib/libatf-c++.a
-lib/libatf-c++.la
 lib/libatf-c++.so
-lib/libatf-c++.so.0
+lib/libatf-c++.so.1
+lib/libatf-c++.so.1.0.0
 lib/libatf-c.a
-lib/libatf-c.la
 lib/libatf-c.so
 lib/libatf-c.so.0
+lib/libatf-c.so.0.0.0
 libdata/pkgconfig/atf-c++.pc
 libdata/pkgconfig/atf-c.pc
 libdata/pkgconfig/atf-sh.pc
 libexec/atf-check
+man/man1/atf-check.1.gz
+man/man1/atf-sh.1.gz
+man/man1/atf-test-program.1.gz
+man/man3/atf-c-api.3.gz
+man/man3/atf-c++-api.3.gz
+man/man3/atf-sh-api.3.gz
+man/man4/atf-test-case.4.gz
 share/aclocal/atf-c++.m4
 share/aclocal/atf-c.m4
 share/aclocal/atf-common.m4
 share/aclocal/atf-sh.m4
-%%TOOLS%%%%DATADIR%%/atf-run.hooks
 %%DATADIR%%/libatf-sh.subr
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%TOOLS%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/atf-run.hooks
-%%TOOLS%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/common.conf
-%%TOOLS%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests-results.css
-%%TOOLS%%share/xml/atf/tests-results.dtd
-%%TOOLS%%share/xsl/atf/tests-results.xsl
-%%TOOLS%%tests/atf/Atffile
-tests/atf/Kyuafile
-tests/atf/atf-c++/Atffile
-tests/atf/atf-c++/Kyuafile
-tests/atf/atf-c++/atf_c++_test
-tests/atf/atf-c++/build_test
-tests/atf/atf-c++/check_test
-tests/atf/atf-c++/config_test
-tests/atf/atf-c++/detail/Atffile
-tests/atf/atf-c++/detail/Kyuafile
-tests/atf/atf-c++/detail/application_test
-tests/atf/atf-c++/detail/env_test
-tests/atf/atf-c++/detail/exceptions_test
-tests/atf/atf-c++/detail/expand_test
-tests/atf/atf-c++/detail/fs_test
-tests/atf/atf-c++/detail/parser_test
-tests/atf/atf-c++/detail/process_test
-tests/atf/atf-c++/detail/sanity_test
-tests/atf/atf-c++/detail/text_test
-tests/atf/atf-c++/detail/ui_test
-tests/atf/atf-c++/macros_hpp_test.cpp
-tests/atf/atf-c++/macros_test
-tests/atf/atf-c++/pkg_config_test
-tests/atf/atf-c++/tests_test
-tests/atf/atf-c++/unused_test.cpp
-tests/atf/atf-c++/utils_test
-tests/atf/atf-c/Atffile
-tests/atf/atf-c/Kyuafile
-tests/atf/atf-c/atf_c_test
-tests/atf/atf-c/build_test
-tests/atf/atf-c/check_test
-tests/atf/atf-c/config_test
-tests/atf/atf-c/detail/Atffile
-tests/atf/atf-c/detail/Kyuafile
-tests/atf/atf-c/detail/dynstr_test
-tests/atf/atf-c/detail/env_test
-tests/atf/atf-c/detail/fs_test
-tests/atf/atf-c/detail/list_test
-tests/atf/atf-c/detail/map_test
-tests/atf/atf-c/detail/process_helpers
-tests/atf/atf-c/detail/process_test
-tests/atf/atf-c/detail/sanity_test
-tests/atf/atf-c/detail/test_helpers_test
-tests/atf/atf-c/detail/text_test
-tests/atf/atf-c/detail/user_test
-tests/atf/atf-c/error_test
-tests/atf/atf-c/macros_h_test.c
-tests/atf/atf-c/macros_test
-tests/atf/atf-c/pkg_config_test
-tests/atf/atf-c/tc_test
-tests/atf/atf-c/tp_test
-tests/atf/atf-c/unused_test.c
-tests/atf/atf-c/utils_test
-%%TOOLS%%tests/atf/atf-config/Atffile
-%%TOOLS%%tests/atf/atf-config/Kyuafile
-%%TOOLS%%tests/atf/atf-config/integration_test
-%%TOOLS%%tests/atf/atf-report/Atffile
-%%TOOLS%%tests/atf/atf-report/Kyuafile
-%%TOOLS%%tests/atf/atf-report/fail_helper
-%%TOOLS%%tests/atf/atf-report/integration_test
-%%TOOLS%%tests/atf/atf-report/misc_helpers
-%%TOOLS%%tests/atf/atf-report/pass_helper
-%%TOOLS%%tests/atf/atf-report/reader_test
-%%TOOLS%%tests/atf/atf-run/Atffile
-%%TOOLS%%tests/atf/atf-run/Kyuafile
-%%TOOLS%%tests/atf/atf-run/atffile_test
-%%TOOLS%%tests/atf/atf-run/bad_metadata_helper
-%%TOOLS%%tests/atf/atf-run/config_test
-%%TOOLS%%tests/atf/atf-run/expect_helpers
-%%TOOLS%%tests/atf/atf-run/fs_test
-%%TOOLS%%tests/atf/atf-run/integration_test
-%%TOOLS%%tests/atf/atf-run/io_test
-%%TOOLS%%tests/atf/atf-run/misc_helpers
-%%TOOLS%%tests/atf/atf-run/pass_helper
-%%TOOLS%%tests/atf/atf-run/requirements_test
-%%TOOLS%%tests/atf/atf-run/several_tcs_helper
-%%TOOLS%%tests/atf/atf-run/signals_test
-%%TOOLS%%tests/atf/atf-run/test_program_test
-%%TOOLS%%tests/atf/atf-run/user_test
-%%TOOLS%%tests/atf/atf-run/zero_tcs_helper
-tests/atf/atf-sh/Atffile
-tests/atf/atf-sh/Kyuafile
-tests/atf/atf-sh/atf-check_test
-tests/atf/atf-sh/atf_check_test
-tests/atf/atf-sh/config_test
-tests/atf/atf-sh/integration_test
-tests/atf/atf-sh/misc_helpers
-tests/atf/atf-sh/normalize_test
-tests/atf/atf-sh/tc_test
-tests/atf/atf-sh/tp_test
-tests/atf/test-programs/Atffile
-tests/atf/test-programs/Kyuafile
-tests/atf/test-programs/c_helpers
-tests/atf/test-programs/config_test
-tests/atf/test-programs/cpp_helpers
-tests/atf/test-programs/expect_test
-tests/atf/test-programs/fork_test
-tests/atf/test-programs/meta_data_test
-tests/atf/test-programs/result_test
-tests/atf/test-programs/sh_helpers
-tests/atf/test-programs/srcdir_test
-@dirrm tests/atf/test-programs
-@dirrm tests/atf/atf-sh
-%%TOOLS%%@dirrm tests/atf/atf-run
-%%TOOLS%%@dirrm tests/atf/atf-report
-%%TOOLS%%@dirrm tests/atf/atf-config
-@dirrm tests/atf/atf-c/detail
-@dirrm tests/atf/atf-c++/detail
-@dirrm tests/atf/atf-c++
-@dirrm tests/atf/atf-c
-@dirrm tests/atf
-%%TOOLS%%@dirrm share/xsl/atf
-%%TOOLS%%@dirrm share/xsl
-%%TOOLS%%@dirrm share/xml/atf
-%%TOOLS%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%TEST%%tests/atf/Kyuafile
+%%TEST%%tests/atf/atf-c/Kyuafile
+%%TEST%%tests/atf/atf-c/macros_h_test.c
+%%TEST%%tests/atf/atf-c/unused_test.c
+%%TEST%%tests/atf/atf-c/atf_c_test
+%%TEST%%tests/atf/atf-c/build_test
+%%TEST%%tests/atf/atf-c/check_test
+%%TEST%%tests/atf/atf-c/config_test
+%%TEST%%tests/atf/atf-c/error_test
+%%TEST%%tests/atf/atf-c/macros_test
+%%TEST%%tests/atf/atf-c/tc_test
+%%TEST%%tests/atf/atf-c/tp_test
+%%TEST%%tests/atf/atf-c/utils_test
+%%TEST%%tests/atf/atf-c/pkg_config_test
+%%TEST%%tests/atf/atf-c/detail/Kyuafile
+%%TEST%%tests/atf/atf-c/detail/dynstr_test
+%%TEST%%tests/atf/atf-c/detail/env_test
+%%TEST%%tests/atf/atf-c/detail/fs_test
+%%TEST%%tests/atf/atf-c/detail/list_test
+%%TEST%%tests/atf/atf-c/detail/map_test
+%%TEST%%tests/atf/atf-c/detail/process_helpers
+%%TEST%%tests/atf/atf-c/detail/process_test
+%%TEST%%tests/atf/atf-c/detail/sanity_test
+%%TEST%%tests/atf/atf-c/detail/text_test
+%%TEST%%tests/atf/atf-c/detail/user_test
+%%TEST%%tests/atf/atf-c/detail/version_helper
+%%TEST%%tests/atf/atf-c++/Kyuafile
+%%TEST%%tests/atf/atf-c++/macros_hpp_test.cpp
+%%TEST%%tests/atf/atf-c++/unused_test.cpp
+%%TEST%%tests/atf/atf-c++/atf_c++_test
+%%TEST%%tests/atf/atf-c++/build_test
+%%TEST%%tests/atf/atf-c++/check_test
+%%TEST%%tests/atf/atf-c++/config_test
+%%TEST%%tests/atf/atf-c++/macros_test
+%%TEST%%tests/atf/atf-c++/tests_test
+%%TEST%%tests/atf/atf-c++/utils_test
+%%TEST%%tests/atf/atf-c++/pkg_config_test
+%%TEST%%tests/atf/atf-c++/detail/Kyuafile
+%%TEST%%tests/atf/atf-c++/detail/application_test
+%%TEST%%tests/atf/atf-c++/detail/auto_array_test
+%%TEST%%tests/atf/atf-c++/detail/env_test
+%%TEST%%tests/atf/atf-c++/detail/exceptions_test
+%%TEST%%tests/atf/atf-c++/detail/fs_test
+%%TEST%%tests/atf/atf-c++/detail/process_test
+%%TEST%%tests/atf/atf-c++/detail/sanity_test
+%%TEST%%tests/atf/atf-c++/detail/text_test
+%%TEST%%tests/atf/atf-c++/detail/version_helper
+%%TEST%%tests/atf/atf-sh/Kyuafile
+%%TEST%%tests/atf/atf-sh/misc_helpers
+%%TEST%%tests/atf/atf-sh/atf_check_test
+%%TEST%%tests/atf/atf-sh/atf-check_test
+%%TEST%%tests/atf/atf-sh/config_test
+%%TEST%%tests/atf/atf-sh/integration_test
+%%TEST%%tests/atf/atf-sh/normalize_test
+%%TEST%%tests/atf/atf-sh/tc_test
+%%TEST%%tests/atf/atf-sh/tp_test
+%%TEST%%tests/atf/test-programs/Kyuafile
+%%TEST%%tests/atf/test-programs/c_helpers
+%%TEST%%tests/atf/test-programs/cpp_helpers
+%%TEST%%tests/atf/test-programs/sh_helpers
+%%TEST%%tests/atf/test-programs/config_test
+%%TEST%%tests/atf/test-programs/expect_test
+%%TEST%%tests/atf/test-programs/meta_data_test
+%%TEST%%tests/atf/test-programs/result_test
+%%TEST%%tests/atf/test-programs/srcdir_test
+%%TEST%%@dirrm tests/atf/test-programs
+%%TEST%%@dirrm tests/atf/atf-sh
+%%TEST%%@dirrm tests/atf/atf-c/detail
+%%TEST%%@dirrm tests/atf/atf-c++/detail
+%%TEST%%@dirrm tests/atf/atf-c++
+%%TEST%%@dirrm tests/atf/atf-c
+%%TEST%%@dirrm tests/atf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm include/atf-c++
