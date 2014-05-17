@@ -3,7 +3,7 @@
 
 PORTNAME=	vuxml
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security textproc
 MASTER_SITES=	http://www.vuxml.org/dtd/vuxml-1/
 DISTFILES=	vuxml-10.dtd  vuxml-model-10.mod \
@@ -14,6 +14,8 @@ DIST_SUBDIR=	vuxml
 MAINTAINER=	ports-secteam@FreeBSD.org
 COMMENT=	Vulnerability and eXposure Markup Language DTD
 
+LICENSE=	BSD2CLAUSE
+
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr \
 		${LOCALBASE}/share/xml/dtd/xhtml-modularization/VERSION:${PORTSDIR}/textproc/xhtml-modularization \
 		${LOCALBASE}/share/xml/dtd/xhtml-basic/xhtml-basic10.dtd:${PORTSDIR}/textproc/xhtml-basic
@@ -23,6 +25,9 @@ USE_PYTHON_RUN=	yes
 NO_MTREE=	YES
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}
+PLIST_SUB=	XMLCAT_RM="${XMLCAT_RM}" XMLCAT_ADD="${XMLCAT_ADD}" \
+		SGMLCAT_RM="${SGMLCAT_RM}" SGMLCAT_ADD="${SGMLCAT_ADD}" \
+		dir_DTD="${dir_DTD}"
 
 dir_DTD=	share/xml/dtd/vuxml
 
@@ -42,11 +47,8 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove CATALOG \
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
-PLIST=		${WRKDIR}/PLIST
-
 VUXML_FILE?=	${PKGDIR}/vuln.xml
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -54,24 +56,11 @@ do-extract:
 	${CP} ${_DISTDIR}/${f} ${WRKDIR}/${f}
 .endfor
 
-pre-install:
-	${CP} ${PKGDIR}/pkg-plist ${PLIST}
-	${ECHO} "@unexec ${XMLCAT_RM}" >> ${PLIST}
-	${ECHO} "@exec ${XMLCAT_ADD}" >> ${PLIST}
-	${ECHO} "@unexec ${SGMLCAT_RM}" >> ${PLIST}
-	${ECHO} "@exec ${SGMLCAT_ADD}" >> ${PLIST}
-	${ECHO} "@dirrm ${dir_DTD}" >> ${PLIST}
-	${ECHO} '@unexec rmdir %D share/xml/dtd 2>/dev/null || true' >> \
-	    ${PLIST}
-
 do-install:
-	@[ -d ${PREFIX}/${dir_DTD} ] || \
-	    ${MKDIR} ${PREFIX}/${dir_DTD}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_DTD}
 .for f in ${DISTFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${dir_DTD}/${f}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${dir_DTD}/${f}
 .endfor
-	${XMLCAT_ADD}
-	${SGMLCAT_ADD}
 
 validate: tidy
 	@${SH} ${FILESDIR}/validate.sh "${VUXML_FILE}"
@@ -94,7 +83,7 @@ validate: tidy
 		${ECHO_CMD} Consider using ${VUXML_FILE}.unexpanded for final commit; \
 		return 1; \
 	fi
-	${PYTHON_CMD} files/extra-validation.py
+	${PYTHON_CMD} ${FILESDIR}/extra-validation.py
 
 tidy: vuln.xml
 	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \
