@@ -5,25 +5,34 @@ PORTNAME=	tty-clock
 PORTVERSION=	2.0.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://github.com/xorg62/${PORTNAME}/tarball/
-DISTNAME=	a82fd71
-EXTRACT_SUFX=	# none
+MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal based clock
 
-WRKSRC=		"${WRKDIR}/xorg62-${PORTNAME}-${DISTNAME}"
+LICENSE=	BSD
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	xorg62
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	a82fd71
+
+USES=		ncurses
+ALL_TARGET=	tty-clock
+
 PLIST_FILES=	bin/tty-clock
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS \+=|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|LDFLAGS =|LDFLAGS \+=|' ${WRKSRC}/Makefile
-
-do-build:
-	cd ${WRKSRC} && ${MAKE}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tty-clock ${STAGEDIR}${PREFIX}/bin
+	@${REINPLACE_CMD} -e \
+		'/^CC/s| =| ?=| ; \
+		 s|/usr/local|$${PREFIX}| ; \
+		 /^CFLAGS/s| =| +=| ; \
+		 s|-Wall -g|-Wall| ; \
+		 /^LDFLAGS/s| =| +=| ; \
+		 /@echo /s|^|#| ; \
+		 s|@$${CC} |$${CC} | ; \
+		 s|@cp |$${BSD_INSTALL_PROGRAM} | ; \
+		 s| $${INSTALLPATH}| $${DESTDIR}$${INSTALLPATH}| ; \
+		 /@chmod /s|^|#|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
