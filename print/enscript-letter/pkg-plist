@@ -18,6 +18,7 @@ man/man1/states.1.gz
 %%DATADIR%%/88597.enc
 %%DATADIR%%/88599.enc
 %%DATADIR%%/a2ps.hdr
+%%DATADIR%%/afm/MustRead.html
 %%DATADIR%%/afm/agd.afm
 %%DATADIR%%/afm/agdo.afm
 %%DATADIR%%/afm/agw.afm
@@ -88,6 +89,7 @@ man/man1/states.1.gz
 %%DATADIR%%/hl/diffu.st
 %%DATADIR%%/hl/elisp.st
 %%DATADIR%%/hl/enscript.st
+%%DATADIR%%/hl/f90.st
 %%DATADIR%%/hl/fortran.st
 %%DATADIR%%/hl/fortran_pp.st
 %%DATADIR%%/hl/haskell.st
@@ -117,7 +119,6 @@ man/man1/states.1.gz
 %%DATADIR%%/hl/pyrex.st
 %%DATADIR%%/hl/python.st
 %%DATADIR%%/hl/rfc.st
-%%DATADIR%%/hl/ruby.st
 %%DATADIR%%/hl/scheme.st
 %%DATADIR%%/hl/sh.st
 %%DATADIR%%/hl/skill.st
