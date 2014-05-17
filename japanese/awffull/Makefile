@@ -10,5 +10,4 @@ MASTERDIR=	${.CURDIR}/../../www/awffull
 
 EXTRA_PATCHES=	${.CURDIR}/files/awffull-ja.diff
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
