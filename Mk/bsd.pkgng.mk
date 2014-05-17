@@ -84,6 +84,13 @@ create-manifest:
 	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="on" ; ${ECHO_MSG} -n " ${opt}: $${match:-off}," >> ${MANIFESTF}
 .endfor
 	@${ECHO_CMD} "}" >> ${MANIFESTF}
+.if defined(PKG_NOTES)
+	@${ECHO_CMD} -n "annotations: {" >> ${MANIFESTF}
+.for note in ${PKG_NOTES}
+	@${ECHO_CMD} -n ' ${note}: "${PKG_NOTE_${note}:Q}",' >> ${MANIFESTF}
+.endfor
+	@${ECHO_CMD} " }" >> ${MANIFESTF}
+.endif
 	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
 	${RM} -f ${METADIR}/+PRE_INSTALL ; \
 	for a in ${PKGPREINSTALL}; do \
