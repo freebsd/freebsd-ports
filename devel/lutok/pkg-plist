@@ -7,9 +7,9 @@ include/lutok/state.hpp
 include/lutok/state.ipp
 include/lutok/test_utils.hpp
 lib/liblutok.a
-lib/liblutok.la
 lib/liblutok.so
 lib/liblutok.so.3
+lib/liblutok.so.3.0.0
 libdata/pkgconfig/lutok.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
