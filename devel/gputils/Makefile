@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gputils
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	tijl@FreeBSD.org
-COMMENT=	A set of utilities for Microchip PIC microcontrollers
+COMMENT=	Utilities for Microchip PIC microcontrollers
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	gplink-[0-9]*
 GNU_CONFIGURE=	yes
