@@ -16,48 +16,44 @@ LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
-USES=		iconv
-USE_DOS2UNIX=	yes
-USE_GCC=	any			# XXX: uses nested functions
+USES=		compiler:nestedfct dos2unix iconv
 MAKE_ENV=	FreeBSD=defined
 
-MAN1=		kissdx.1
 USE_RC_SUBR=	kissdx
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	etc/kissdx.conf sbin/kissdx sbin/kissd-pretrigger \
-		sbin/kissd-posttrigger
 PORTDOCS=	README
-
-NO_STAGE=	yes
+PLIST_FILES=	etc/kissdx.conf man/man1/kissdx.1.gz  \
+		sbin/kissd-posttrigger sbin/kissd-pretrigger sbin/kissdx
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|Linux|Unix| ; s|/etc/|${PREFIX}&|' \
-		${WRKSRC}/kissdx.1
-	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}&|' ${WRKSRC}/config.c
-	@${RM} ${WRKSRC}/kissdx.o
+	@${REINPLACE_CMD} -e \
+		's|Linux|Unix| ; \
+		 s|/etc/|${PREFIX}&|' ${WRKSRC}/kissdx.1
+	@${REINPLACE_CMD} -e \
+		's|/etc/|${PREFIX}&|' ${WRKSRC}/config.c
 # Fix parallel (-jX) builds: sanitize dependencies
-	@${REINPLACE_CMD} -e 's|^\.o :|${PORTNAME}: $$(OBJS)| ; \
-		/^all:/s| $$(OBJS)||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|-liconv|${ICONV_LIB}| ; \
+		 s|^\.o :|${PORTNAME}: $$(OBJS)| ; \
+		 /^all:/s| $$(OBJS)||' ${WRKSRC}/Makefile
+
+pre-build:
+	@${RM} -f ${WRKSRC}/kissdx.o
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/kissdx ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/kissd-pretrigger ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/kissd-posttrigger ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/kissdx.conf ${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/kissdx.1 ${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} kissdx \
+		${STAGEDIR}${PREFIX}/sbin)
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} kissd-pretrigger kissd-posttrigger \
+		${STAGEDIR}${PREFIX}/sbin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} kissdx.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC} && ${INSTALL_DATA} kissdx.conf \
+		${STAGEDIR}${PREFIX}/etc)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
