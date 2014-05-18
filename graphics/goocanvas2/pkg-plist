@@ -18,9 +18,9 @@ include/goocanvas-2.0/goocanvasutils.h
 include/goocanvas-2.0/goocanvaswidget.h
 lib/girepository-1.0/GooCanvas-2.0.typelib
 lib/libgoocanvas-2.0.a
-lib/libgoocanvas-2.0.la
 lib/libgoocanvas-2.0.so
 lib/libgoocanvas-2.0.so.9
+lib/libgoocanvas-2.0.so.9.3.0
 libdata/pkgconfig/goocanvas-2.0.pc
 share/gir-1.0/GooCanvas-2.0.gir
 %%NLS%%share/locale/en_GB/LC_MESSAGES/goocanvas2.mo
