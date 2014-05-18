@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pnp
-PORTVERSION=	0.6.18
-PORTREVISION=	1
+PORTVERSION=	0.6.21
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=pnp4nagios/PNP-0.6
@@ -19,21 +18,18 @@ RUN_DEPENDS?=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5
+USES=		perl5 dos2unix
 
 OPTIONS_DEFINE=	PDF
 OPTIONS_DEFAULT=	PDF
 PDF_DESC=	Use built-in fpdf library to produce PDF views
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PHP=	gd iconv json pcre simplexml sockets xml zlib
 
 WANT_PHP_WEB=	yes
 USE_RC_SUBR=	npcd
-MAN8=		npcd.8
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	'.*\.\(php\|js\|txt\)$$'
 
 NAGIOSDIR?=	/var/spool/nagios
@@ -68,6 +64,7 @@ CONFIGURE_ARGS+=	\
 MAKE_ARGS=	INSTALL_OPTS=
 INSTALL_TARGET=	install install-config
 
+PLIST_SUB+=	NAGIOSDIR=${NAGIOSDIR}
 SUB_FILES=	pkg-install \
 		pkg-deinstall \
 		pkg-message
@@ -82,6 +79,7 @@ PNP_USE_FPDF=	1
 .else
 PNP_USE_FPDF=	0
 .endif
+
 post-patch:
 	@${REINPLACE_CMD} \
   -e's|^\$$conf\['\''use_fpdf'\''\] = [[:digit:]];|$$conf['\''use_fpdf'\''] = ${PNP_USE_FPDF};|' \
@@ -89,14 +87,9 @@ post-patch:
   -e's|/usr/local/check_mk/|/usr/local/share/check_mk/|g' \
   -e's|/usr/local/nagios/var/rw/live|/${NAGIOSDIR}/rw/live|' \
   "${WRKSRC}/sample-config/pnp/config.php.in"
-
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${LN} -fs ../en_US/dwnld.html ${WRKSRC}/share/pnp/documents/de_DE/dwnld.html
 
 post-install:
-.for m in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/man/${m} ${MAN8PREFIX}/man/man8/${m}
-.endfor
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_MAN} ${WRKSRC}/man/npcd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>
