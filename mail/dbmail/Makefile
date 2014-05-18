@@ -3,6 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.1.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.1/ \
 		http://git.dbmail.eu/paul/dbmail/snapshot/
@@ -29,16 +30,16 @@ SIEVE_DESC=	Sieve mail sorting language support
 
 OPTIONS_SUB=	yes
 
-USE_AUTOTOOLS=	libtool autoheader autoconf
+INSTALL_TARGET=	install-strip
+USE_AUTOTOOLS=	autoheader autoconf
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_OPENSSL=	yes
-USES=		gmake shebangfix pkgconfig
+USES=		gmake libtool pkgconfig shebangfix
 SHEBANG_FILES=	man/fixsp.pl
 
-CFLAGS+=	-fPIC ${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-zdb=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc --enable-manpages
 
 MAKE_ARGS+=	mandir=${MANPREFIX}/man
@@ -73,7 +74,5 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dbmail/libauth_sql.so.0 \
-		${STAGEDIR}${PREFIX}/lib/dbmail/libdbmail.so.0
 
 .include <bsd.port.mk>
