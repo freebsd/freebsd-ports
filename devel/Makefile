@@ -240,6 +240,7 @@
     SUBDIR += clig
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
+    SUBDIR += clojure-cider
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
@@ -324,6 +325,7 @@
     SUBDIR += cxxtools
     SUBDIR += d-feet
     SUBDIR += darts
+    SUBDIR += dash.el
     SUBDIR += dasm
     SUBDIR += datadraw
     SUBDIR += dbus
@@ -406,6 +408,7 @@
     SUBDIR += elib-emacs21
     SUBDIR += entity
     SUBDIR += epm
+    SUBDIR += epl.el
     SUBDIR += epydoc
     SUBDIR += eric4
     SUBDIR += eris
@@ -3412,6 +3415,7 @@
     SUBDIR += pire
     SUBDIR += pit
     SUBDIR += pkgconf
+    SUBDIR += pkg-info.el
     SUBDIR += plan9port
     SUBDIR += pmccabe
     SUBDIR += pmd
