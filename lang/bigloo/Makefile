@@ -3,9 +3,11 @@
 
 PORTNAME=	bigloo
 PORTVERSION=	4.1a.2
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/indes/fp/Bigloo/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}-${PORTVERSION:E}
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scheme interpreter and native code compiler
@@ -16,7 +18,6 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmp.so:${PORTSDIR}/math/gmp
 
-BROKEN=		Checksum and size mismatch
 USES=		compiler:c++0x gmake
 USE_EMACS=	yes
 HAS_CONFIGURE=	yes
