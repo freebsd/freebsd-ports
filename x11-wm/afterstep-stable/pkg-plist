@@ -1377,7 +1377,7 @@ lib/libAfterStep.a
 %%DATADIR%%/wharf
 %%DATADIR%%/winlist
 %%DATADIR%%/wintabs
-share/gnome/wm-properties/AfterStep.desktop
+share/applications/AfterStep.desktop
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/start/7_About_AfterStep
 @dirrm %%DATADIR%%/start/5_Quit
@@ -1454,3 +1454,4 @@ share/gnome/wm-properties/AfterStep.desktop
 @dirrm include/libAfterStep
 @dirrm include/libAfterConf
 @dirrm include/libASGTK
+@dirrmtry share/applications
