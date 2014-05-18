@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.23
-PORTREVISION=	1
+PORTVERSION=	0.6.24
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
@@ -19,7 +18,7 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	NLS DOCS SSH FTP FTPS S3 GDOCS CLOUDFILES GIO U1
+OPTIONS_DEFINE=	NLS DOCS SSH FTP FTPS S3 GDOCS CLOUDFILES GIO
 OPTIONS_DEFAULT=SSH FTP FTPS S3
 CLOUDFILES_DESC=Install CloudFiles backend
 FTP_DESC=	Install FTP backend
@@ -28,7 +27,6 @@ GDOCS_DESC=	Install Google Docs backend
 GIO_DESC=	Install GIO backend
 S3_DESC=	Install Amazon S3 backend
 SSH_DESC=	Install SSH/SCP/SFTP backend
-U1_DESC=	Install Ubuntu One backend
 
 PORTDOCS=	COPYING README README-REPO README-LOG tarfile-LICENSE \
 			tarfile-CHANGES CHANGELOG
@@ -42,14 +40,12 @@ GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:${PORTSDIR}/devel/py-gdata
 CLOUDFILES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudfiles>0:${PORTSDIR}/net/py-cloudfiles
 GIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>0:${PORTSDIR}/devel/py-gobject \
 					dbus>0:${PORTSDIR}/devel/dbus
-U1_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2 \
-					${PYTHON_PKGNAMEPREFIX}oauthlib>0:${PORTSDIR}/security/py-oauthlib
 
 .include <bsd.port.options.mk>
 
 post-patch:
 .if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e '54,62d' \
+	@${REINPLACE_CMD} -e '56,67d' \
 		${WRKSRC}/setup.py
 .endif
 .if empty(PORT_OPTIONS:MSSH)
@@ -80,9 +76,6 @@ post-patch:
 .endif
 .if empty(PORT_OPTIONS:MGIO)
 	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/giobackend.py
-.endif
-.if empty(PORT_OPTIONS:MU1)
-	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/u1backend.py
 .endif
 
 post-install:
