@@ -7,7 +7,7 @@ PORTEPOCH=		1
 CATEGORIES=		mail ipv6
 EXTRACT_SUFX=
 
-MAINTAINER=	bzeeb+freebsd+ports@zabbadoz.net
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 
 LICENSE=	BSD3CLAUSE
