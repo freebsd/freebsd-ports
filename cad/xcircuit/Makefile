@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.7.57
+PORTVERSION=	3.8.58
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -28,8 +28,8 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/${PORTNAME}.gif" \
 		"${PORTNAME}" "" "false"
 
-# Restrict to stable (odd) versions, indicated by the second component.
-PORTSCOUT=	limitw:1,odd
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s| == | = |g ; \
