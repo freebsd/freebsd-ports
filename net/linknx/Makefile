@@ -12,6 +12,8 @@ COMMENT=	Rule-based event handling in a KNX installation
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to configure
+
 LIB_DEPENDS=	libpthsem.so:${PORTSDIR}/devel/pthsem
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 
