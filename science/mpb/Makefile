@@ -12,6 +12,8 @@ COMMENT=	MIT Photonic-Bands
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw \
 		libhdf5.so:${PORTSDIR}/science/hdf5 \
