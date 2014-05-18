@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipsumdump
-PORTVERSION=	1.82
-PORTREVISION=	2
+PORTVERSION=	1.84
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 
@@ -14,7 +13,7 @@ USES=		gmake perl5
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
 
-PORTDOCS=	README
+PORTDOCS=	README.md
 PLIST_FILES=	bin/ipaggcreate bin/ipsumdump bin/ipaggmanip \
 		man/man1/${PORTNAME}.1.gz man/man1/ipaggmanip.1.gz \
 		man/man1/ipaggcreate.1.gz
@@ -36,6 +35,6 @@ CATEGORIES+=	ipv6
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

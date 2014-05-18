@@ -8,4 +8,4 @@ traffic based on its contents, anonymize IP addresses, and sort packets from
 multiple dumps by timestamp.  Also, it can optionally create a tcpdump file
 containing actual packet data.
 
-WWW: http://www.cs.ucla.edu/~kohler/ipsumdump/
+WWW: http://www.cs.ucla.edu/~kohler/ipsumdump
