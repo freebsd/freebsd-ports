@@ -20,7 +20,7 @@ ADDINS_DIR=	lib/tomboy/addins
 PLIST_FILES=${ADDINS_DIR}/Wordcount.dll
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}${ADDINS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/Wordcount.dll ${STAGEDIR}${PREFIX}${ADDINS_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ADDINS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/Wordcount.dll ${STAGEDIR}${PREFIX}/${ADDINS_DIR}
 
 .include <bsd.port.mk>
