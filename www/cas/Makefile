@@ -10,6 +10,8 @@ MASTER_SITES=	http://cas.havoc.ru/download/
 MAINTAINER=	lunkov@gmail.com
 COMMENT=	C++ Application Server, version 2
 
+BROKEN=		Fails to build
+
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		pcre:${PORTSDIR}/devel/pcre       \
 		ctpp2:${PORTSDIR}/textproc/ctpp2
