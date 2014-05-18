@@ -9,7 +9,6 @@ MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
 		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
 		http://mirrors.xmission.com/gimp/%SUBDIR%/
-
 MASTER_SITE_SUBDIR=	gimp/fonts
 
 MAINTAINER=	olgeni@FreeBSD.org
