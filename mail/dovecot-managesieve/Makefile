@@ -3,6 +3,7 @@
 
 PORTNAME=	dovecot-managesieve
 PORTVERSION=	0.11.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
@@ -22,5 +23,4 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-dovecot=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC` \
 		--with-dovecot-sieve=`${MAKE} -C ${PORTSDIR}/mail/dovecot-sieve -V WRKSRC`
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
