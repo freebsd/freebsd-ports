@@ -3,6 +3,7 @@
 
 PORTNAME=	gloox
 PORTVERSION=	1.0.10
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
@@ -14,22 +15,20 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 
-USES=		compiler:c++11-lang libtool:keepla pathfix pkgconfig tar:bzip2
-USE_LDCONFIG=	yes
+USES=		libtool:keepla pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900033
-USE_BINUTILS=	yes
-LDFLAGS+=	-B${LOCALBASE}/bin
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lgcrypt||' ${WRKSRC}/configure
+		's| -ansi|| ; \
+		 s| -lgcrypt||' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's| -pedantic|| ; \
+		 s| -pipe||'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
