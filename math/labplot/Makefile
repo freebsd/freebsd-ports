@@ -2,41 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	labplot
-DISTVERSION=	2.0.0.beta2
-PORTREVISION=	4
+PORTVERSION=	2.0.1
 CATEGORIES=	math kde
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data plotting and function analysis tool for KDE
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
-OPTIONS_DEFINE=	CDF HDF5 NETCDF
-CDF_DESC=	CDF data support
-HDF5_DESC=	HDF5 data support
-NETCDF_DESC=	NetCDF data support
-
-WRKSRC=		${WRKDIR}/beta2
-
-USES=		tar:bzip2 cmake shared-mime-info
+USE_BZIP2=	yes
+USES=		cmake shared-mime-info
 USE_XORG=	xft xpm
 USE_GCC=	yes
 USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-CMAKE_ARGS=	-DOPJ_LIBRARY:STRING=""
-INSTALLS_ICONS=	yes
-
-CDF_LIB_DEPENDS=	libcdf.so:${PORTSDIR}/science/cdf
-CDF_CMAKE_OFF=		-DCDF_LIBRARY:STRING=""
-
-HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
-HDF5_CMAKE_OFF=		-DHDF5_LIBRARY:STRING=""
-
-NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
-NETCDF_CMAKE_OFF=	-DNETCDF_LIBRARY:STRING=""
 
 post-patch:
 	@${REINPLACE_CMD} -e \
