@@ -13,6 +13,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Interprets Ruby code embedded in a text file like PHP/ePerl/ASP/JSP
 
 BROKEN=		broken with ruby1.9 threads
+DEPRECATED=	Only for threadless ruby, use ruby-gem erubis instead
+EXPIRATION_DATE=	2014-06-20
 
 USE_RUBY=	yes
 
