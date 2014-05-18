@@ -2,26 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	clojure-mode.el
-PORTVERSION=	20090718
-PORTREVISION=	10
+PORTVERSION=	2.1.1
+PORTEPOCH=	1
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://distfiles.scode.org/ports/
 DISTNAME=	clojure-mode-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for the Clojure language
 
+LICENSE=	GPLv3
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	clojure-emacs
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	cb3810a
+GH_PROJECT=	clojure-mode
+
 USE_EMACS=	yes
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/clojure-mode
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/clojure-mode.el ${PREFIX}/${EMACS_SITE_LISPDIR}/clojure-mode.el
-	${INSTALL_DATA} ${WRKSRC}/clojure-test-mode.el ${PREFIX}/${EMACS_SITE_LISPDIR}/clojure-test-mode.el
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/clojure-mode.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/clojure-test-mode.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 .include <bsd.port.mk>
