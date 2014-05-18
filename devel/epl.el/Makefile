@@ -1,0 +1,27 @@
+# $FreeBSD$
+
+PORTNAME=	epl.el
+PORTVERSION=	0.7
+CATEGORIES=	devel elisp
+DISTNAME=	epl-${PORTVERSION}
+
+MAINTAINER=	rpaulo@FreeBSD.org
+COMMENT=	Emacs Package Library
+
+LICENSE=	GPLv3
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	cask
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	4f88ed0
+GH_PROJECT=	epl
+
+USE_EMACS=	yes
+
+NO_BUILD=	yes
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/epl.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+
+.include <bsd.port.mk>
