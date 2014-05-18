@@ -1,0 +1,8 @@
+--- tools/installastheme.pl.in.orig	2014-05-17 11:39:07.000000000 -0700
++++ tools/installastheme.pl.in	2014-05-17 11:39:14.000000000 -0700
+@@ -1,4 +1,4 @@
+-#!@PERL@
++#!%%LOCALBASE%%/bin/perl
+ 
+ use strict;
+ use Cwd;
