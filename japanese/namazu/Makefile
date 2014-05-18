@@ -21,5 +21,7 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} '/^int main/ s|uchar|char|' ${WRKSRC}/namazu.c
+
 .include <bsd.port.mk>
