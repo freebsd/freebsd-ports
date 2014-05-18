@@ -5,23 +5,20 @@ PORTNAME=	openbubbles
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.freewebs.com/lasindi/${PORTNAME}/ \
-		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}_icons${EXTRACT_SUFX}:icons
+		${PORTNAME}_icons${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Clone of Evan Bailey's game Bubbles
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_SDL=	sdl gfx image
 GNU_CONFIGURE=	yes
-CFLAGS+=	-w
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
-
 OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
