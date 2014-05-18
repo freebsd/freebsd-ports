@@ -15,9 +15,9 @@ include/libmatewnck/libmatewnck/window.h
 include/libmatewnck/libmatewnck/workspace.h
 lib/girepository-1.0/Matewnck-1.0.typelib
 lib/libmatewnck.a
-lib/libmatewnck.la
 lib/libmatewnck.so
 lib/libmatewnck.so.0
+lib/libmatewnck.so.0.0.0
 libdata/pkgconfig/libmatewnck.pc
 %%DOCSDIR%%/MatewnckApplication.html
 %%DOCSDIR%%/MatewnckClassGroup.html

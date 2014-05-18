@@ -8,9 +8,9 @@ include/mate-desktop-2.0/libmateui/mate-rr-config.h
 include/mate-desktop-2.0/libmateui/mate-rr-labeler.h
 include/mate-desktop-2.0/libmateui/mate-rr.h
 lib/libmate-desktop-2.a
-lib/libmate-desktop-2.la
 lib/libmate-desktop-2.so
 lib/libmate-desktop-2.so.17
+lib/libmate-desktop-2.so.17.1.4
 libdata/pkgconfig/mate-desktop-2.0.pc
 man/man1/mate-about.1.gz
 share/MateConf/gsettings/mate-desktop.convert

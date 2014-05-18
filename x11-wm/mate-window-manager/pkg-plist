@@ -10,9 +10,9 @@ include/marco-1/marco-private/theme-parser.h
 include/marco-1/marco-private/theme.h
 include/marco-1/marco-private/util.h
 lib/libmarco-private.a
-lib/libmarco-private.la
 lib/libmarco-private.so
 lib/libmarco-private.so.0
+lib/libmarco-private.so.0.0.0
 libdata/pkgconfig/libmarco-private.pc
 man/man1/marco-message.1.gz
 man/man1/marco-theme-viewer.1.gz

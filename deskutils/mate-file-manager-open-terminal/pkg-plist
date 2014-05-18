@@ -1,5 +1,3 @@
-lib/caja/extensions-2.0/libcaja-open-terminal.a
-lib/caja/extensions-2.0/libcaja-open-terminal.la
 lib/caja/extensions-2.0/libcaja-open-terminal.so
 share/MateConf/gsettings/caja-open-terminal.convert
 share/locale/am/LC_MESSAGES/caja-open-terminal.mo

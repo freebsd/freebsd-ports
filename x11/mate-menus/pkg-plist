@@ -1,13 +1,12 @@
 etc/xdg/menus/mate-applications.menu
 etc/xdg/menus/mate-settings.menu
 include/mate-menus/matemenu-tree.h
+lib/girepository-1.0/MateMenu-2.0.typelib
 lib/libmate-menu.a
-lib/libmate-menu.la
 lib/libmate-menu.so
 lib/libmate-menu.so.2
-lib/girepository-1.0/MateMenu-2.0.typelib
+lib/libmate-menu.so.2.4.9
 %%PYTHON_SITELIBDIR%%/matemenu.a
-%%PYTHON_SITELIBDIR%%/matemenu.la
 %%PYTHON_SITELIBDIR%%/matemenu.so
 libdata/pkgconfig/libmate-menu.pc
 share/gir-1.0/MateMenu-2.0.gir
