@@ -1,2 +1,4 @@
-SHA256 (pythonchess-0.6.tgz) = 944249decbd8699acb8749c268d8932bbfe2b89c1d1f3375e95ba52c7a926552
-SIZE (pythonchess-0.6.tgz) = 40919
+SHA256 (pythonchess/PythonChess_v0.7.zip) = ebf10767e6c83ea90e39ccee07064929f969862995daae439b6e5edb3def1526
+SIZE (pythonchess/PythonChess_v0.7.zip) = 160772
+SHA256 (pythonchess/pythonchess.png) = 5f4fb6ca2280935b7696bf48e4215c2dcd1c286cbd8fc04cff24524c9d0c9fc0
+SIZE (pythonchess/pythonchess.png) = 680

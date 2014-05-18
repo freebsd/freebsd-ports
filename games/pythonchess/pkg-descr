@@ -1,4 +1,7 @@
-pythonchess is a computer chess program for human vs. computer games.
-pythonchess is a complete chess program with alpha-beta search, hashing,
-pondering, iterative deepening, etc. implemented in Python programming
-language.
+Chess for player vs. player, player vs. AI, or AI vs. AI.
+Uses Tkinter to get initial game parameters.
+Uses Pygame to draw the board and pieces and to get user
+mouse clicks. Run with the “-h” option to get full listing
+of available command line flags.
+
+WWW: http://yakinikuman.wordpress.com/python-chess/
