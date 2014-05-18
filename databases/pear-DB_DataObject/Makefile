@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.11.2
+PORTVERSION=	1.11.3
 CATEGORIES=	databases pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	An SQL Builder, Object Interface to Database Tables
+COMMENT=	SQL Builder, Object Interface to Database Tables
 
 BUILD_DEPENDS=	pear-DB>=1.7.0:${PORTSDIR}/databases/pear-DB \
 		pear-Date>=1.4.3:${PORTSDIR}/devel/pear-Date
