@@ -1,4 +1,5 @@
 bin/hope
+man/man1/hope.1.gz
 share/hope/lib.new/Standard.hop
 share/hope/lib/Standard.hop
 share/hope/lib/arith.hop
