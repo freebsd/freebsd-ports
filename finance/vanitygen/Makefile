@@ -3,32 +3,36 @@
 
 PORTNAME=	vanitygen
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	finance
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/archive/
-DISTNAME=	${PORTVERSION}
+MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone vanity address generator for bitcoin
 
+LICENSE=	AGPLv3
+
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	samr7
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	20130402
+GH_COMMIT=	b9237a0
+
+USES=		gmake
+USE_OPENSSL=	yes
+ALL_TARGET=	most
+
 PLIST_FILES=	bin/keyconv bin/vanitygen
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 post-patch:
-	@${REINPLACE_CMD} \
-	    	-e 's|CFLAGS=|CFLAGS=-I${LOCALBASE}/include -L${LOCALBASE}/lib |g' \
-		-e 's| oclvanitygen oclvanityminer||g' \
-	    	${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|-lpcre|$$(shell pcre-config --libs)| ; \
+		 s|-lpthread|-pthread $$(LDFLAGS)| ; \
+		 s|^\(CFLAGS\).*|\1+=$$(shell pcre-config --cflags)|' \
+		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/keyconv ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/vanitygen ${STAGEDIR}${PREFIX}/bin/
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} keyconv vanitygen \
+		${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
