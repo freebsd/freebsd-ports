@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	ucc160
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C Compiler Which Implements the ANSI C89 Standard
 
 USES=		dos2unix zip
@@ -24,6 +24,6 @@ post-patch:	.SILENT
 		-e 's/$$^/$$>/g' \
 		${WRKSRC}/driver/Makefile \
 		${WRKSRC}/ucl/Makefile
+	${REINPLACE_CMD} -e 's#$${PREFIX}#${STAGEDIR}${PREFIX}#g' ${WRKSRC}/Makefile
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
