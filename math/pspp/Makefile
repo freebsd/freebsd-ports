@@ -10,8 +10,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
-LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
-		gslcblas:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils \
+		libgslcblas.so:${PORTSDIR}/math/gsl
 
 OPTIONS_DEFINE=	GUI PGSQL
 
@@ -38,7 +38,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	gladeui-1:${PORTSDIR}/devel/glade3
+LIB_DEPENDS+=	libgladeui-1.so:${PORTSDIR}/devel/glade3
 RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
 USE_GNOME+=	libglade2
 CONFIGURE_ARGS+=	--with-gui-tools
