@@ -1,0 +1,5 @@
+CIDER (formerly nrepl.el) is the Clojure IDE and REPL for Emacs, built on top
+of nREPL, the Clojure networked REPL server. It's a great alternative to the
+now deprecated combination of SLIME + swank-clojure.
+
+WWW: https://github.com/clojure-emacs/cider
