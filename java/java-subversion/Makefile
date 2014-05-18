@@ -16,9 +16,10 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 .endif
 PKGDIR=		${.CURDIR}
 
-USE_GCC=	any
+USES+=		compiler
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 JAVA_OS=	native
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
@@ -28,6 +29,13 @@ SVN_BUILD_BINDINGS=yes
 .include "${MASTERDIR}/Makefile.common"
 
 CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} --with-jikes=no
+
+post-configure:
+.if ${COMPILER_TYPE} == clang
+	@${REINPLACE_CMD} "s#^LT_CXX_LIBADD = .*#LT_CXX_LIBADD =#" ${WRKSRC}/Makefile
+.else
+	@${DO_NADA}
+.endif
 
 do-build:
 	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
