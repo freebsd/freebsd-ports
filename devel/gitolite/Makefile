@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	gitolite
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.3.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GH \
+		LOCAL/milki \
 		LOCAL/tdb
 DISTNAME=	g-${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc
-GH_COMMIT=	926bd5f
+GH_COMMIT=	3dad4f8
 GH_TAGNAME=	${GH_COMMIT}
 
 CONFLICTS=	gitolite-[^3]*
@@ -66,14 +67,10 @@ do-install:
 	@${LN} -s ${PREFIX}/libexec/gitolite/gitolite ${STAGEDIR}${PREFIX}/bin/gitolite
 
 post-install:
-.if ! ${PORT_OPTIONS:MDOCS}
-	-@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
-.endif
-
-.if ! ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	README.txt CHANGELOG
+.if ${PORT_OPTIONS:MDOCS}
+	-@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
