@@ -1262,7 +1262,6 @@
     SUBDIR += msgpack
     SUBDIR += msp430-binutils
     SUBDIR += msp430-gcc
-    SUBDIR += msp430-gcc3
     SUBDIR += msp430-gdb
     SUBDIR += msp430-libc
     SUBDIR += msp430mcu
