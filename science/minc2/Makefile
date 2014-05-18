@@ -24,6 +24,8 @@ COMMENT=	Medical Imaging NetCDF
 
 LICENSE=	BSD
 
+BROKEN=		Fails to build
+
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
 		libhdf5.so:${PORTSDIR}/science/hdf5
 
