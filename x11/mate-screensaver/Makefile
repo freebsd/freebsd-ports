@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-screensaver
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -16,9 +17,8 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GL=		gl
-USE_XZ=		yes
 USE_MATE=	desktop libmatekbd menus
 USE_XORG=	ice sm x11 xext xtst xxf86misc xxf86vm xscrnsaver
 USE_GNOME=	glib20 gnomehier gtk20 intlhack

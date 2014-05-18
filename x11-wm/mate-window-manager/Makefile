@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-window-manager
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,21 +16,17 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_MATE=	dialogs docutils
 USE_XORG=	x11 xcomposite xcursor xdamage xrandr
-USE_GNOME=	gdkpixbuf2 glib20 gnomehier gtk20 intlhack ltverhack pango
+USE_GNOME=	gdkpixbuf2 glib20 gnomehier gtk20 intlhack pango
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk=2.0
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET= install-strip
 
 GLIB_SCHEMAS=	org.mate.marco.gschema.xml
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmarco-private.so.0
 
 .include <bsd.port.mk>

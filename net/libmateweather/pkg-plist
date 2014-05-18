@@ -7,9 +7,9 @@ include/libmateweather/mateweather-xml.h
 include/libmateweather/timezone-menu.h
 include/libmateweather/weather.h
 lib/libmateweather.a
-lib/libmateweather.la
 lib/libmateweather.so
 lib/libmateweather.so.1
+lib/libmateweather.so.1.6.9
 libdata/pkgconfig/mateweather.pc
 %%DOCSDIR%%/MateWeatherLocationEntry.html
 %%DOCSDIR%%/MateWeatherTimezoneMenu.html

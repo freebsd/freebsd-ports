@@ -1,15 +1,7 @@
 bin/mate-notification-properties
-lib/mate-notification-daemon/engines/libcoco.a
-lib/mate-notification-daemon/engines/libcoco.la
 lib/mate-notification-daemon/engines/libcoco.so
-lib/mate-notification-daemon/engines/libnodoka.a
-lib/mate-notification-daemon/engines/libnodoka.la
 lib/mate-notification-daemon/engines/libnodoka.so
-lib/mate-notification-daemon/engines/libslider.a
-lib/mate-notification-daemon/engines/libslider.la
 lib/mate-notification-daemon/engines/libslider.so
-lib/mate-notification-daemon/engines/libstandard.a
-lib/mate-notification-daemon/engines/libstandard.la
 lib/mate-notification-daemon/engines/libstandard.so
 libexec/mate-notification-daemon
 man/man1/mate-notification-properties.1.gz

@@ -23,14 +23,8 @@ include/eom-2.20/eom/eom-thumbnail.h
 include/eom-2.20/eom/eom-transform.h
 include/eom-2.20/eom/eom-window.h
 lib/eom/plugins/fullscreen.eom-plugin
-lib/eom/plugins/libfullscreen.a
-lib/eom/plugins/libfullscreen.la
 lib/eom/plugins/libfullscreen.so
-lib/eom/plugins/libreload.a
-lib/eom/plugins/libreload.la
 lib/eom/plugins/libreload.so
-lib/eom/plugins/libstatusbar-date.a
-lib/eom/plugins/libstatusbar-date.la
 lib/eom/plugins/libstatusbar-date.so
 lib/eom/plugins/reload.eom-plugin
 lib/eom/plugins/statusbar-date.eom-plugin
@@ -468,6 +462,7 @@ share/omf/eom/eom-zh_TW.omf
 @dirrm share/mate-image-viewer/icons/hicolor
 @dirrm share/mate-image-viewer/icons
 @dirrm share/mate-image-viewer
+@dirrm share/doc/eom
 @dirrm lib/eom/plugins
 @dirrm lib/eom
 @dirrm include/eom-2.20/eom

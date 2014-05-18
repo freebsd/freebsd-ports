@@ -165,5 +165,6 @@ share/pixmaps/mate-logo-white.svg
 @dirrmtry share/desktop-directories
 @dirrmtry share/backgrounds/cosmos
 @dirrmtry share/backgrounds
+@dirrmtry share/applications/screensavers
 @dirrm libexec/mate-screensaver
 @dirrmtry etc/xdg/menus
