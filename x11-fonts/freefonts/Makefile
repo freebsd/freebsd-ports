@@ -5,10 +5,11 @@ PORTNAME=	freefonts
 PORTVERSION=	0.10
 PORTREVISION=	5
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
+MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
+		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
+		http://mirrors.xmission.com/gimp/%SUBDIR%/
+
 MASTER_SITE_SUBDIR=	gimp/fonts
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 # "placed into the public domain and may [not be] sold")
 
 RESTRICTED=	License prohibits redistribution; see individual .license files
-BROKEN=		does not fetch
 
 NO_WRKSUBDIR=	yes
 
