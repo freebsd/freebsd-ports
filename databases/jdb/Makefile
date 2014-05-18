@@ -13,17 +13,14 @@ COMMENT=	JDB manipulates flat-ASCII databases from shell scripts
 USES=		perl5 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/lib/jdb
-SHEBANG_FILES=	bin/db2dcliff bin/dbcol bin/dbcolcreate bin/dbcoldefine \
-		bin/dbcoldiff bin/dbcolhisto bin/dbcolize bin/dbcolmerge \
-		bin/dbcolmovingstats bin/dbcolmultiscale bin/dbcolneaten \
-		bin/dbcolpercentile bin/dbcolrename bin/dbcolscorrelate \
-		bin/dbcolsplittocols bin/dbcolsplittorows bin/dbcolstats \
-		bin/dbcoltighten bin/dbfilesplit bin/dbformmail bin/dbjoin \
-		bin/dblistize bin/dbrow bin/dbmultistats bin/dbrecolize \
-		bin/dbrowaccumulate bin/dbrowdiff bin/dbrowenumerate \
-		bin/dbroweval bin/dbrowsplituniq bin/dbrowuniq bin/dbsort \
-		bin/dbstats bin/dbstripcomments bin/dbstripextraheaders \
-		bin/dbstripleadingspace bin/db_to_html_table \
-		bin/ipchain_logs_to_db bin/kitrace_to_db bin/tcpdump_to_db
+SHEBANG_FILES=	db2dcliff dbcol dbcolcreate dbcoldefine dbcoldiff dbcolhisto \
+		dbcolize dbcolmerge dbcolmovingstats dbcolmultiscale \
+		dbcolneaten dbcolpercentile dbcolrename dbcolscorrelate \
+		dbcolsplittocols dbcolsplittorows dbcolstats dbcoltighten \
+		dbfilesplit dbformmail dbjoin dblistize dbrow dbmultistats \
+		dbrecolize dbrowaccumulate dbrowdiff dbrowenumerate dbroweval \
+		dbrowsplituniq dbrowuniq dbsort dbstats dbstripcomments \
+		dbstripextraheaders dbstripleadingspace db_to_html_table \
+		ipchain_logs_to_db kitrace_to_db tcpdump_to_db
 
 .include <bsd.port.mk>
