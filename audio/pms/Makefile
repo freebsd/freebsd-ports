@@ -3,7 +3,7 @@
 
 PORTNAME=	pms
 PORTVERSION=	0.42
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -13,19 +13,23 @@ COMMENT=	A ncurses-based client for the Music Player Daemon
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
-
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/pms.1.gz
 
-CONFIGURE_ENV=	STRIP=${STRIP_CMD}
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	REGEX
+
+REGEX_DESC=	Support boost regex pattern matching
+
+REGEX_LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
+REGEX_CONFIGURE_ENABLE=	regex
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
