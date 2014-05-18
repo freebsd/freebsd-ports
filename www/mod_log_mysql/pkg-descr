@@ -14,3 +14,5 @@ Key features are:
     * Won't loose data if the database server is down.
 
 Note: this module requires mod_log_config-st
+
+WWW: http://bsdforge.com/projects/www/mod_log_mysql/
