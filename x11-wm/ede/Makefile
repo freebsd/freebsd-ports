@@ -17,20 +17,21 @@ LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-		jam:${PORTSDIR}/devel/jam \
-		python:${PORTSDIR}/lang/python
+		jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-OPTIONS_DEFINE=	HAL
-HAL_DESC=	Enable HAL support
-
-USES=		fam iconv gettext pathfix pkgconfig shared-mime-info
+USES=		fam iconv:translit gettext pathfix pkgconfig \
+		shared-mime-info shebangfix
+SHEBANG_FILES=	doc/asciidoc/asciidoc.py
+python_OLD_CMD=	${SETENV} python
+python_CMD=	${PYTHON_CMD}
 USE_XORG=	xcomposite xft xinerama xpm xrandr
-USE_PYTHON=	yes
+USE_PYTHON=	2
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PEKWM_CXXFLAGS="${CXXFLAGS}"
 CONFIGURE_ARGS=	--with-edelib_path=${EDELIB_WRKSRC} \
 		--with-fltk-path=${LOCALBASE}
 INSTALL_ICONS=	yes
@@ -41,14 +42,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	pekwm-[0-9]*
 
+OPTIONS_DEFINE=		HAL
+
+HAL_LIB_DEPENDS=	libhal.so.1:${PORTSDIR}/sysutils/hal
+HAL_CONFIGURE_ENABLE=	hal
+
 EDELIB_NAME=	edelib
 EDELIB_VERSION=	${PORTVERSION}
 EDELIB_DISTNAME=${EDELIB_NAME}-${EDELIB_VERSION}
 EDELIB_DISTFILE=${EDELIB_DISTNAME}${EXTRACT_SUFX}
 EDELIB_WRKSRC=	${WRKDIR}/${EDELIB_DISTNAME}
-
-HAL_LIB_DEPENDS=	libhal.so.1:${PORTSDIR}/sysutils/hal
-HAL_CONFIGURE_OFF=	--disable-hal
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -60,6 +63,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$(CC)|@CXX@| ; \
 		 s|-lstdc++||' ${WRKSRC}/Jamconfig.in
+	@${REINPLACE_CMD} -e \
+		 '/desktop-links/s|^|#|' ${WRKSRC}/data/Jamfile
 
 pre-configure:
 	@(cd ${EDELIB_WRKSRC} \
