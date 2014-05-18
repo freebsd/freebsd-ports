@@ -1,9 +1,0 @@
-Ptools is a toolset based on Solaris ptools functionality.
-
-At this time, four tools are provided:
-* pargs - Display process arguments
-* pldd - Display dynamic linker dependencies
-* pwdx - Display process working directory
-* ptree - Display process hierarchy as tree (with jail option -j)
-
-WWW: http://shewolf.com.pl/ptools/
