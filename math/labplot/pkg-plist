@@ -6,7 +6,13 @@ share/apps/LabPlot2/pics/auto-scale-all.png
 share/apps/LabPlot2/pics/auto-scale-x.png
 share/apps/LabPlot2/pics/auto-scale-y.png
 share/apps/LabPlot2/pics/axis-horizontal.png
+share/apps/LabPlot2/pics/axis-horizontal.svg
 share/apps/LabPlot2/pics/axis-vertical.png
+share/apps/LabPlot2/pics/axis-vertical.svg
+share/apps/LabPlot2/pics/cartesian-plot-four-axes.svg
+share/apps/LabPlot2/pics/cartesian-plot-two-axes-centered-origin.svg
+share/apps/LabPlot2/pics/cartesian-plot-two-axes-centered.svg
+share/apps/LabPlot2/pics/cartesian-plot-two-axes.svg
 share/apps/LabPlot2/pics/editbreaklayout.png
 share/apps/LabPlot2/pics/editgrid.png
 share/apps/LabPlot2/pics/edithlayout.png
@@ -18,6 +24,7 @@ share/apps/LabPlot2/pics/shift-up-y.png
 share/apps/LabPlot2/pics/x-zoom-in.png
 share/apps/LabPlot2/pics/x-zoom-out.png
 share/apps/LabPlot2/pics/xy-curve.png
+share/apps/LabPlot2/pics/xy-curve.svg
 share/apps/LabPlot2/pics/y-zoom-in.png
 share/apps/LabPlot2/pics/y-zoom-out.png
 share/apps/LabPlot2/pics/zoom-in-x.png
@@ -32,26 +39,9 @@ share/icons/hicolor/32x32/apps/LabPlot2.png
 share/icons/hicolor/48x48/apps/LabPlot2.png
 share/icons/hicolor/512x512/apps/LabPlot2.png
 share/icons/hicolor/64x64/apps/LabPlot2.png
-share/mime/packages/lml.desktop
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
+share/icons/hicolor/scalable/apps/LabPlot2.svgz
+share/mime/packages/labplot2.xml
 @dirrmtry share/icons/hicolor/512x512/apps
 @dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/apps/LabPlot2/pics
-@dirrmtry share/apps/LabPlot2
-@dirrmtry share/apps
-@dirrmtry share/applications/kde4
+@dirrm share/apps/LabPlot2/pics
+@dirrm share/apps/LabPlot2
