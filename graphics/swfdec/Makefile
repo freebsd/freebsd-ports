@@ -4,7 +4,7 @@
 
 PORTNAME=	swfdec
 PORTVERSION=	0.8.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.8/
 
@@ -14,11 +14,12 @@ COMMENT=	Flash Rendering Library
 LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-USES=		pkgconfig pathfix
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk20 ltverhack
+USE_GNOME=	gtk20
 USE_GSTREAMER=	core good mp3 ffmpeg
-USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
 
@@ -27,7 +28,7 @@ PLIST_SUB=	VERSION=${PORTVERSION:R}
 OPTIONS_DEFINE=	PULSEAUDIO
 PULSEAUDIO_DESC="Enable the PulseAudio sound module"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
@@ -44,8 +45,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libswfdec-${PORTVERSION:R}.so.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libswfdec-gtk-${PORTVERSION:R}.so.0
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

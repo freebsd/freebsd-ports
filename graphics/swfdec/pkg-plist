@@ -32,13 +32,13 @@ include/swfdec-%%VERSION%%/swfdec/swfdec_system.h
 include/swfdec-%%VERSION%%/swfdec/swfdec_url.h
 include/swfdec-%%VERSION%%/swfdec/swfdec_version.h
 lib/libswfdec-%%VERSION%%.a
-lib/libswfdec-%%VERSION%%.la
 lib/libswfdec-%%VERSION%%.so
 lib/libswfdec-%%VERSION%%.so.0
+lib/libswfdec-%%VERSION%%.so.0.0.0
 lib/libswfdec-gtk-%%VERSION%%.a
-lib/libswfdec-gtk-%%VERSION%%.la
 lib/libswfdec-gtk-%%VERSION%%.so
 lib/libswfdec-gtk-%%VERSION%%.so.0
+lib/libswfdec-gtk-%%VERSION%%.so.0.0.0
 libdata/pkgconfig/swfdec-%%VERSION%%.pc
 libdata/pkgconfig/swfdec-gtk-%%VERSION%%.pc
 share/gtk-doc/html/swfdec/SwfdecAsArray.html
