@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
-USES=		perl5 gmake
-USE_XZ=		yes
+USES=		perl5 gmake tar:xz
 USE_PERL5=	build
 MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	bios
@@ -39,5 +38,6 @@ do-install:
 	@${FIND} -d ${WRKSRC} -type d -empty -delete
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "bios efi32 efi64" ${STAGEDIR}${DATADIR})
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/syslinux/bios/mtools/syslinux
 
 .include <bsd.port.mk>
