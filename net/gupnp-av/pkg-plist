@@ -20,9 +20,9 @@ include/gupnp-av-1.0/libgupnp-av/gupnp-protocol-info.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-search-criteria-parser.h
 lib/girepository-1.0/GUPnPAV-1.0.typelib
 lib/libgupnp-av-1.0.a
-lib/libgupnp-av-1.0.la
 lib/libgupnp-av-1.0.so
 lib/libgupnp-av-1.0.so.2
+lib/libgupnp-av-1.0.so.2.0.0
 libdata/pkgconfig/gupnp-av-1.0.pc
 share/gir-1.0/GUPnPAV-1.0.gir
 share/gtk-doc/html/gupnp-av/GUPnPCDSLastChangeParser.html
@@ -53,12 +53,6 @@ share/gtk-doc/html/gupnp-av/left.png
 share/gtk-doc/html/gupnp-av/right.png
 share/gtk-doc/html/gupnp-av/style.css
 share/gtk-doc/html/gupnp-av/up.png
-%%DATADIR%%/av.xsd
-%%DATADIR%%/didl-lite-v2.xsd
-%%DATADIR%%/simpledc20021212.xsd
-%%DATADIR%%/upnp.xsd
-%%DATADIR%%/xml.xsd
-@dirrm %%DATADIR%%
 @dirrm share/gtk-doc/html/gupnp-av
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
