@@ -1,4 +1,5 @@
 bin/gupnp-binding-tool
+include/gupnp-1.0/libgupnp/gupnp-acl.h
 include/gupnp-1.0/libgupnp/gupnp-context-manager.h
 include/gupnp-1.0/libgupnp/gupnp-context.h
 include/gupnp-1.0/libgupnp/gupnp-control-point.h
@@ -18,9 +19,9 @@ include/gupnp-1.0/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.0/libgupnp/gupnp.h
 lib/girepository-1.0/GUPnP-1.0.typelib
 lib/libgupnp-1.0.a
-lib/libgupnp-1.0.la
 lib/libgupnp-1.0.so
 lib/libgupnp-1.0.so.4
+lib/libgupnp-1.0.so.4.0.0
 libdata/pkgconfig/gupnp-1.0.pc
 share/gir-1.0/GUPnP-1.0.gir
 share/gtk-doc/html/gupnp/GUPnPContext.html
@@ -54,8 +55,10 @@ share/gtk-doc/html/gupnp/home.png
 share/gtk-doc/html/gupnp/index.html
 share/gtk-doc/html/gupnp/index.sgml
 share/gtk-doc/html/gupnp/ix01.html
+share/gtk-doc/html/gupnp/left-insensitive.png
 share/gtk-doc/html/gupnp/left.png
 share/gtk-doc/html/gupnp/overview.html
+share/gtk-doc/html/gupnp/right-insensitive.png
 share/gtk-doc/html/gupnp/right.png
 share/gtk-doc/html/gupnp/schemas-device.html
 share/gtk-doc/html/gupnp/schemas-service.html
@@ -63,6 +66,7 @@ share/gtk-doc/html/gupnp/schemas.html
 share/gtk-doc/html/gupnp/server-tutorial.html
 share/gtk-doc/html/gupnp/style.css
 share/gtk-doc/html/gupnp/tutorial.html
+share/gtk-doc/html/gupnp/up-insensitive.png
 share/gtk-doc/html/gupnp/up.png
 @dirrmtry share/gtk-doc/html/gupnp
 @dirrmtry share/gtk-doc/html
