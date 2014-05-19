@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.2.48
+PORTVERSION=	2.2.64
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A WikiWikiWeb clone using PHP
+COMMENT=	WikiWikiWeb clone using PHP
 
 USE_PHP=	mbstring session
 WANT_PHP_WEB=	yes
