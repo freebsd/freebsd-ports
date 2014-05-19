@@ -3,7 +3,7 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	4.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \
 		http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool:oldver pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
+
+PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	DVDCSS
 .if !defined(PACKAGE_BUILDING)
