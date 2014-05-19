@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numix
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	GH GHC
 PKGNAMESUFFIX=	-theme
@@ -17,7 +17,7 @@ RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engin
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Numix
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	e28f03b
+GH_COMMIT=	3160668
 
 USE_GITHUB=	yes
 NO_BUILD=	yes
@@ -28,10 +28,6 @@ OPTIONS_DEFAULT=	NOTIFYD
 NOTIFYD_DESC=	Install xfce4-notifyd theme
 
 .include <bsd.port.options.mk>
-
-post-extract:
-# Remove Unity theme
-	@${RM} ${WRKSRC}/gtk-3.0/apps/unity.css
 
 post-patch:
 # Remove .orig files
