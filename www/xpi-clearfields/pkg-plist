@@ -1,4 +1,4 @@
-%%XPI_XPIDIR%%/chrome/content/.installed.html.swp
+%%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/chrome/content/clearfields.js
 %%XPI_XPIDIR%%/chrome/content/clearfields.xbl
 %%XPI_XPIDIR%%/chrome/content/clearfields.xul
@@ -34,15 +34,14 @@
 %%XPI_XPIDIR%%/chrome/skin/toolbarbutton.css
 %%XPI_XPIDIR%%/chrome/skin/x-hover.png
 %%XPI_XPIDIR%%/chrome/skin/x-normal.png
-%%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/locale/el-GR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/hu-HU
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ko-KR
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome/skin/dark
-@dirrm %%XPI_XPIDIR%%/chrome/skin
-@dirrm %%XPI_XPIDIR%%/chrome
+@dirrmtry %%XPI_XPIDIR%%/chrome/content
+@dirrmtry %%XPI_XPIDIR%%/chrome/locale/de-DE
+@dirrmtry %%XPI_XPIDIR%%/chrome/locale/el-GR
+@dirrmtry %%XPI_XPIDIR%%/chrome/locale/en-US
+@dirrmtry %%XPI_XPIDIR%%/chrome/locale/hu-HU
+@dirrmtry %%XPI_XPIDIR%%/chrome/locale/ko-KR
+@dirrmtry %%XPI_XPIDIR%%/chrome/locale
+@dirrmtry %%XPI_XPIDIR%%/chrome/skin/dark
+@dirrmtry %%XPI_XPIDIR%%/chrome/skin
+@dirrmtry %%XPI_XPIDIR%%/chrome
