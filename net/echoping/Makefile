@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	echoping
-PORTVERSION=	6.0.0
-PORTREVISION=	4
+PORTVERSION=	6.0.2
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
+MASTER_SITES=	SF
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A ping-like program that uses TCP and/or HTTP
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		idn.17:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
+		libidn.so:${PORTSDIR}/dns/libidn
 
+USES=	libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
@@ -28,7 +28,6 @@ OPTIONS_DEFAULT=	LDAP
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
-MAN1+=		echoping_ldap.1
 PING_PLUGINS+=	ldap
 PLIST_SUB=	WITH_LDAP=""
 .else
@@ -37,7 +36,6 @@ PLIST_SUB=	WITH_LDAP="@comment "
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-MAN1+=		echoping_postgresql.1
 PING_PLUGINS+=	postgresql
 PLIST_SUB+=	WITH_PGSQL=""
 .else
@@ -49,8 +47,5 @@ PLIST_SUB+=	WITH_PGSQL="@comment "
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
 BROKEN=		Does not link on ia64 or powerpc
 .endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
 
 .include <bsd.port.post.mk>
