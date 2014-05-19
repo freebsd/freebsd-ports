@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffe
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/ff-extractor/ff-extractor/${PORTVERSION}
 
