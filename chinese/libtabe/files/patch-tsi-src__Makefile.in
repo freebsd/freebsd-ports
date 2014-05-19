@@ -1,0 +1,13 @@
+--- ./tsi-src/Makefile.in.orig	2014-05-19 15:30:26.484091387 +0800
++++ ./tsi-src/Makefile.in	2014-05-19 15:30:43.205088750 +0800
+@@ -57,7 +57,7 @@
+ 	$(RM) Makefile
+ 
+ install: all
+-	if [ ! -d $(datadir) ]; then $(INSTALL) -d $(datadir); fi
+-	$(INSTALL_DATA) $(TSIDB) $(datadir)
+-	$(INSTALL_DATA) $(YINDB) $(datadir)
++	if [ ! -d $(DESTDIR)$(datadir) ]; then $(INSTALL) -d $(DESTDIR)$(datadir); fi
++	$(INSTALL_DATA) $(TSIDB) $(DESTDIR)$(datadir)
++	$(INSTALL_DATA) $(YINDB) $(DESTDIR)$(datadir)
+ 

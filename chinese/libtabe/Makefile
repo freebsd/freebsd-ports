@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-shared
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
@@ -56,14 +55,14 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tsi-src/README ${DOCSDIR}/README.tsi
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tsi-src/README ${STAGEDIR}${DOCSDIR}/README.tsi
 .if !defined(WITHOUT_X11)
-	${INSTALL_DATA} ${WRKSRC}/src/supports/bims/README ${DOCSDIR}/README.bims
+	${INSTALL_DATA} ${WRKSRC}/src/supports/bims/README ${STAGEDIR}${DOCSDIR}/README.bims
 .endif
 .for DOC in BoPoMoFo.shtml Changes Changes.pre-0.1 TODO ZuYinCode.txt \
 		et26.txt libtabe.sgml
-	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
