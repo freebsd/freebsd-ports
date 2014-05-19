@@ -17,13 +17,19 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	A Markov based SpamFilter
 
-LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
+LICENSE= GPLv2
+
+LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
 CRM114RELEASENAME=BlameMichelson
 
 USES=		gettext iconv
+USE_CSTD=gnu89
 
-MAKE_ARGS=	CC="${CC}" prefix="${PREFIX}" \
+OPTIONS_DEFINE= NORMALIZEMIME
+NORMALIZEMIME_DESC= Normalize MIME encoding
+
+MAKE_ARGS=	CC="${CC}" prefix="${STAGEDIR}${PREFIX}" \
 		LIBS="${LIBS}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
@@ -43,30 +49,15 @@ CRM_FILES=	mailfilter.crm mailfilter.cf mailreaver.crm mailtrainer.crm \
 		blacklist.mfp.example whitelist.mfp.example crm114-mode.el \
 		reto_procmailrc.recipe
 
-OPTIONS_DEFINE=	PGO
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPGO}
-MAKE_ARGS+=	CFLAGS="${CFLAGS} -fprofile-use" \
-		LDFLAGS="${LDFLAGS} -fprofile-use"
-.else
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 	  's,^((LD|C)FLAGS),#\1,;;s,^(prefix=),#\1,;;s,^(.*-install),#\1,' \
 	  ${WRKSRC}/Makefile
-
-.if ${PORT_OPTIONS:MPGO}
-.if target(pre-build)
-.error Makefile error since pre-build target has already been defined
-.endif
-pre-build: pgo
-.endif
 
 # Peter Jeremy recommended the use of b64decode and md5 20040302
 post-install:
@@ -87,30 +78,15 @@ post-install:
 	@${REINPLACE_CMD} -Ee 's|^#(.*/b64decode -pr/)|\1|' \
 	  ${WRKSRC}/mailfilter.cf
 .endif
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	for i in ${CRM_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${EXAMPLESDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${EXAMPLESDIR}; \
 	done
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@for i in ${WRKSRC}/[^G]*.txt ${WRKSRC}/README; do \
-		${INSTALL_DATA} $${i} ${DOCSDIR}; \
+		${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR}; \
 	done
 .endif
-
-.if ${PORT_OPTIONS:MPGO}
-pgo: pgo-build pgo-run pgo-clean
-
-pgo-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} CFLAGS="${CFLAGS} -fprofile-generate" LDFLAGS="${LDFLAGS} -fprofile-generate" ${ALL_TARGET})
-
-pgo-run:
-# Check everything to generate profiling information.
-# We will ignore any errors.
-	@-(cd ${BUILD_WRKSRC}; ${MAKE} megatest)
-
-pgo-clean:
-	@(cd ${BUILD_WRKSRC}; ${MAKE} clean)
-.endif # if ${PORT_OPTIONS:MPGO}
 
 .include <bsd.port.mk>
