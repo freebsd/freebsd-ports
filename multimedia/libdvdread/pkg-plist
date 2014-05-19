@@ -8,6 +8,7 @@ include/dvdread/nav_print.h
 include/dvdread/nav_read.h
 include/dvdread/nav_types.h
 lib/libdvdread.a
+@comment lib/libdvdread.la
 lib/libdvdread.so
 lib/libdvdread.so.5
 libdata/pkgconfig/dvdread.pc
