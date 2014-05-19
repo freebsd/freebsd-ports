@@ -13,5 +13,4 @@ PLIST=		${.CURDIR}/pkg-plist
 DOCLANG=	pt_BR.ISO8859-1
 DOCLANG_PREFIX=	pt_BR
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

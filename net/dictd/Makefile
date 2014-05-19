@@ -9,6 +9,8 @@ MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER?=	clsung@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
 USE_RC_SUBR=	${PORTNAME}

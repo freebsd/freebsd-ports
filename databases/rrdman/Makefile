@@ -15,8 +15,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	YES
 USES=		perl5
-PLIST_FILES=	bin/rrd_hwreapply
-MAN1=		rrd_hwreapply.1
+PLIST_FILES=	bin/rrd_hwreapply man/man1/rrd_hwreapply.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

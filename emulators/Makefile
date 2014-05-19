@@ -112,6 +112,7 @@
     SUBDIR += qemu
     SUBDIR += qemu-devel
     SUBDIR += qemu-launcher
+    SUBDIR += qemu-user-static
     SUBDIR += qmc2
     SUBDIR += qtemu
     SUBDIR += quasi88

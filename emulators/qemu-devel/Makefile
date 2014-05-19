@@ -7,12 +7,12 @@ PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	QEMU CPU Emulator - development version
+COMMENT?=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 tar:bzip2
@@ -23,7 +23,6 @@ USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
-CONFLICTS_INSTALL=	qemu-[0-9]*
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS BSD_USER \
@@ -41,6 +40,10 @@ X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
+
+.if !defined(QEMU_USER_STATIC)
+CONFLICTS_INSTALL=	qemu-[0-9]*
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -70,6 +73,13 @@ CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-smartcard-nss --disable-libssh2
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
+.if defined(QEMU_USER_STATIC)
+.if ${ARCH} != "amd64"
+CONFIGURE_ARGS+=	--target-list=i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user
+.else
+CONFIGURE_ARGS+=	--target-list=i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user,mips64el-bsd-user
+.endif
+.else
 .if ${PORT_OPTIONS:MX86_TARGETS}
 .if ${PORT_OPTIONS:MBSD_USER}
 .if ${ARCH} != "amd64"
@@ -86,6 +96,7 @@ CONFIGURE_ARGS+=	--disable-bsd-user
 .else
 .if ${ARCH} != "amd64"
 CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,aarch64-softmmu,alpha-softmmu,arm-softmmu,cris-softmmu,lm32-softmmu,m68k-softmmu,microblaze-softmmu,microblazeel-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,or32-softmmu,ppc-softmmu,ppcemb-softmmu,ppc64-softmmu,sh4-softmmu,sh4eb-softmmu,sparc-softmmu,sparc64-softmmu,s390x-softmmu,xtensa-softmmu,xtensaeb-softmmu,unicore32-softmmu,moxie-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user
+.endif
 .endif
 .endif
 .endif
@@ -108,6 +119,14 @@ PLIST_SUB+=	BSD_USER64=""
 PLIST_SUB+=	NONX86="@comment "
 .else
 PLIST_SUB+=	NONX86=""
+.endif
+
+.if defined(QEMU_USER_STATIC)
+PLIST_SUB+=	SOFTMMU="@comment "
+PLIST_SUB+=	STATIC="-static"
+.else
+PLIST_SUB+=	SOFTMMU=""
+PLIST_SUB+=	STATIC=""
 .endif
 
 .if ${PORT_OPTIONS:MGNS3}
@@ -269,6 +288,7 @@ post-configure:
 		${WRKSRC}/config-host.mak
 .endif
 
+.if !target(post-install)
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
@@ -281,5 +301,6 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/qemu-ifdown ]; then \
 	    ${CP} -p ${STAGEDIR}${PREFIX}/etc/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc/qemu-ifdown ; \
 	fi
+.endif
 
 .include <bsd.port.mk>

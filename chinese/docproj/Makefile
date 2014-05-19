@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	0.1.20060303
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	chinese
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -14,6 +14,8 @@ DISTFILES=	# none
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Supportive tools for Chinese docproj build
 
+LICENSE=	BSD2CLAUSE
+
 RUN_DEPENDS=	gbklatex:${PORTSDIR}/print/latex-cjk
 
 USES=	iconv
@@ -21,8 +23,10 @@ USES=	iconv
 WRKSRC=		${WRKDIR}/src
 
 SRC=		${.CURDIR}/src
+MAKE_ARGS+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/cjktexsty
+
 do-fetch:
 	@${DO_NADA}
 
