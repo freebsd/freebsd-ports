@@ -87,6 +87,18 @@ man/man1/vile.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/config.doc
 %%PORTDOCS%%%%DOCSDIR%%/dir.doc
 %%PORTDOCS%%%%DOCSDIR%%/filters.doc
+%%PORTDOCS%%%%DOCSDIR%%/html/Vileserv.html
+%%PORTDOCS%%%%DOCSDIR%%/html/config.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir.html
+%%PORTDOCS%%%%DOCSDIR%%/html/filters.html
+%%PORTDOCS%%%%DOCSDIR%%/html/macros.html
+%%PORTDOCS%%%%DOCSDIR%%/html/menus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/modes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/oleauto.html
+%%PORTDOCS%%%%DOCSDIR%%/html/perl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/vile-hlp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/vile-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/visvile.html
 %%PORTDOCS%%%%DOCSDIR%%/macros.doc
 %%PORTDOCS%%%%DOCSDIR%%/menus.doc
 %%PORTDOCS%%%%DOCSDIR%%/modes.doc
@@ -141,23 +153,6 @@ man/man1/vile.1.gz
 %%DATADIR%%/loaderrs.rc
 %%DATADIR%%/lua.keywords
 %%DATADIR%%/m4.keywords
-%%DATADIR%%/macros/color-ls.rc
-%%DATADIR%%/macros/complete.rc
-%%DATADIR%%/macros/dates.rc
-%%DATADIR%%/macros/digraphs.rc
-%%DATADIR%%/macros/gnugpg.rc
-%%DATADIR%%/macros/loaderrs.rc
-%%DATADIR%%/macros/manpage.rc
-%%DATADIR%%/macros/modes.rc
-%%DATADIR%%/macros/palettes.rc
-%%DATADIR%%/macros/pictmode.rc
-%%DATADIR%%/macros/search.rc
-%%DATADIR%%/macros/shifts.rc
-%%DATADIR%%/macros/showeach.rc
-%%DATADIR%%/macros/vileinit.rc
-%%DATADIR%%/macros/vilemenu.rc
-%%DATADIR%%/macros/vileperl.rc
-%%DATADIR%%/macros/which.rc
 %%DATADIR%%/mail.keywords
 %%DATADIR%%/mailcap.keywords
 %%DATADIR%%/make.keywords
@@ -247,7 +242,7 @@ man/man1/vile.1.gz
 %%DATADIR%%/zsh.keywords
 %%PERL%%@dirrm %%DATADIR%%/perl/Vile
 %%PERL%%@dirrm %%DATADIR%%/perl
-@dirrm %%DATADIR%%/macros
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/vile

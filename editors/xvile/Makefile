@@ -1,13 +1,13 @@
 # Created by: pgf
 # $FreeBSD$
 
-PORTNAME=	xvile
-PORTVERSION=	9.8l
+PORTNAME=	vile
+PORTVERSION=	9.8m
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
-		ftp://invisible-island.net/vile/current/
-DISTNAME=	vile-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+		ftp://invisible-island.net/vile/current/ \
+		http://invisible-mirror.net/archives/vile/current/
+PKGNAMEPREFIX=	x
 
 PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
 PATCHFILES=	# none
@@ -19,24 +19,24 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	reflex:${PORTSDIR}/textproc/reflex
 
-USES=		pkgconfig shebangfix
+USES=		pkgconfig shebangfix tar:tgz
 SHEBANG_FILES=	macros/lxvile macros/lxvile-fonts perl/vileget
 USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	cf_cv_crypt_works=yes
 CONFIGURE_ARGS=	--disable-imake \
 		--enable-fontset \
 		--with-xpm \
 		--with-pixmapdir=${PREFIX}/share/pixmaps
 MAKEFILE=	makefile
-
-DATADIR=	${PREFIX}/share/vile
+INSTALL_TARGET=	install install-doc install-html
 
 CONFLICTS_INSTALL=	vile-[0-9]*
 
 OPTIONS_DEFINE=		DOCS FILTERS ICONV PERL
 OPTIONS_RADIO=		MENUS
 OPTIONS_RADIO_MENUS=	MOTIF XAW XAW3D
-OPTIONS_DEFAULT=	ICONV
+OPTIONS_DEFAULT=	FREETYPE ICONV
 OPTIONS_SUB=		yes
 
 FILTERS_DESC=		Loadable filters
@@ -76,24 +76,17 @@ CONFIGURE_ARGS+=	--with-screen=x11
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^DOCDIR|#DOCDIR|' ${WRKSRC}/makefile.in
+		's|$$(datadir)/doc|@datadir@/doc/vile| ; \
+		 s|$$(datadir)/html|$$(docdir)/html| ; \
+		 s|\($$(DOCDIR)\) \($$(MANDIR)\)|\1 $$(HTMLDIR) \2|' \
+		${WRKSRC}/makefile.in
 	@${REINPLACE_CMD} -e \
-		'/^Icons/s|=.*|=${PREFIX}/share/pixmaps/vile_48x48.png|' \
+		'/^Icon/s|=.*|=${PREFIX}/share/pixmaps/vile.xpm| ; \
+		 /^Categories/s|Applicasion;||' \
 		${WRKSRC}/macros/*.desktop
 
 post-install:
-	(cd ${WRKSRC}/icons && ${INSTALL_DATA} vile_48x48.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps)
 	(cd ${WRKSRC}/macros && ${INSTALL_DATA} *.desktop \
 		${STAGEDIR}${DESKTOPDIR})
-	@${MKDIR} ${STAGEDIR}${DATADIR}/macros
-	(cd ${WRKSRC}/macros && ${INSTALL_DATA} *.rc \
-		${STAGEDIR}${DATADIR}/macros)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.doc \
-		${STAGEDIR}${DOCSDIR})
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html \
-		${STAGEDIR}${DOCSDIR}/html)
 
 .include <bsd.port.mk>
