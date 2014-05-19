@@ -5,7 +5,7 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	6
+PORTREVISION?=	0	
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 .endif
 
-PROFTPD_VERSION=	1.3.4d
+PROFTPD_VERSION=	1.3.5
 
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -111,6 +111,7 @@ MODULES+=	mod_ban \
 		mod_copy \
 		mod_ctrls_admin \
 		mod_deflate \
+		mod_dnsbl \
 		mod_dynmasq \
 		mod_exec \
 		mod_ifsession \
@@ -129,6 +130,7 @@ MODULES+=	mod_ban \
 		mod_sftp_sql \
 		mod_shaper \
 		mod_site_misc \
+		mod_snmp \
 		mod_sql \
 		mod_sql_passwd \
 		mod_tls \
@@ -207,7 +209,7 @@ CONFIGURE_ARGS+=	ac_cv_lib_iconv_iconv_open=no \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|proftpd\.conf|proftpd.conf.sample|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|proftpd\.conf |proftpd.conf.sample |g' ${WRKSRC}/Makefile.in
 
 pre-configure:
 	@${ECHO_MSG} "==> Configuring with following modules:"
