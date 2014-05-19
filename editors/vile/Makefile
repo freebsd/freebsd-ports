@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8l
+PORTVERSION=	9.8m
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
-		ftp://invisible-island.net/vile/current/
-EXTRACT_SUFX=	.tgz
+		ftp://invisible-island.net/vile/current/ \
+		http://invisible-mirror.net/archives/vile/current/
 
 PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
 PATCHFILES=	# none
@@ -18,10 +18,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	reflex:${PORTSDIR}/textproc/reflex
 
-USES=		pkgconfig shebangfix
+USES=		pkgconfig shebangfix tar:tgz
 SHEBANG_FILES=	perl/vileget
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	cf_cv_crypt_works=yes
 MAKEFILE=	makefile
+INSTALL_TARGET=	install install-doc install-html
 
 CONFLICTS_INSTALL=	xvile-[0-9]*
 
@@ -46,14 +48,9 @@ PLIST_SUB+=	SO_EXT=""
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^DOCDIR|#DOCDIR|' ${WRKSRC}/makefile.in
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/macros
-	(cd ${WRKSRC}/macros && ${INSTALL_DATA} *.rc \
-		${STAGEDIR}${DATADIR}/macros)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.doc \
-		${STAGEDIR}${DOCSDIR})
+		's|$$(datadir)/doc|@datadir@/doc/vile| ; \
+		 s|$$(datadir)/html|$$(docdir)/html| ; \
+		 s|\($$(DOCDIR)\) \($$(MANDIR)\)|\1 $$(HTMLDIR) \2|' \
+		${WRKSRC}/makefile.in
 
 .include <bsd.port.mk>
