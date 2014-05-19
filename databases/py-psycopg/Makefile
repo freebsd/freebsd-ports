@@ -49,7 +49,6 @@ EXAMPLES=	binary.py bool.py bounded.py commit.py copy_from.py \
 DOCS=		AUTHORS COPYING CREDITS ChangeLog FAQ INSTALL NEWS \
 		README RELEASE-1.0 SUCCESS TODO
 
-NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_ZOPE)
 	@${ECHO} ""
@@ -63,22 +62,23 @@ post-build:
 .endif
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/psycopgmodule.so \
-		${PYTHON_SITELIBDIR}
+		${STAGEDIR}${PYTHON_SITELIBDIR}
 .if defined(WITH_ZOPE)
-	${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/ZPsycopgDA
-	${CP} -R ${WRKSRC}/ZPsycopgDA ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
+	${MKDIR} ${STAGEDIR}${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/ZPsycopgDA
+	${CP} -R ${WRKSRC}/ZPsycopgDA ${STAGEDIR}${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/examples/${f} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	@${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .if !defined(BATCH) && defined(WITH_ZOPE)
