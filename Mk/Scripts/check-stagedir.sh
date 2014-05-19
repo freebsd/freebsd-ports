@@ -288,6 +288,13 @@ check_orphans_from_plist() {
 		case "${path}" in
 		*.bak) ;;
 		*.orig) ;;
+		*/.DS_Store) ;;
+		*/.cvsignore) ;;
+		*/.git/*|'@dirrmtry '*/.git) ;;
+		*/.gitattributes|*/.gitignore|*/.gitmodules) ;;
+		*/.svn/*|'@dirrmtry '*/.svn) ;;
+		*/.svnignore) ;;
+		*/CVS/*|'@dirrmtry '*/CVS) ;;
 		*/info/dir|info/dir) ;;
 		lib/X11/fonts/*/fonts.dir) ;;
 		lib/X11/fonts/*/fonts.scale) ;;
