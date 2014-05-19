@@ -21,6 +21,4 @@ GH_ACCOUNT=	buganini
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
 GH_COMMIT=	c48c74c
 
-NO_STAGE=	yes
-
 .include <bsd.port.mk>

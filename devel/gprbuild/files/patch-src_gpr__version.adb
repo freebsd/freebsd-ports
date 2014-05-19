@@ -1,4 +1,4 @@
---- src/gpr_version.adb.orig	2013-04-16 14:36:02.000000000 +0000
+--- src/gpr_version.adb.orig	2014-04-17 09:50:17.000000000 +0000
 +++ src/gpr_version.adb
 @@ -65,14 +65,7 @@ package body GPR_Version is
           end if;

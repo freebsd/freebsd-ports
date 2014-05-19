@@ -12,7 +12,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port of Namazu and Japanese support modules
 
-LIB_DEPENDS=	nmz.8:${PORTSDIR}/databases/namazu2
+LIB_DEPENDS=	libnmz.so:${PORTSDIR}/databases/namazu2
 RUN_DEPENDS=	ja-p5-nkf>=0:${PORTSDIR}/japanese/p5-nkf
 
 PLIST=		"@comment this plist is intentionally left empty"
@@ -25,7 +25,6 @@ RUN_DEPENDS+=	ja-p5-Text-Kakasi>=0:${PORTSDIR}/japanese/p5-Text-Kakasi
 RUN_DEPENDS+=	ja-p5-MeCab>=0:${PORTSDIR}/japanese/p5-MeCab
 .endif
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../databases/namazu2/Makefile.common"
 
 NO_BUILD=	yes

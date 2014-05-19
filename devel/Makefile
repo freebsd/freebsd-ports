@@ -242,6 +242,7 @@
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
     SUBDIR += cluttermm
+    SUBDIR += clojure-cider
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
@@ -326,6 +327,7 @@
     SUBDIR += cxxtools
     SUBDIR += d-feet
     SUBDIR += darts
+    SUBDIR += dash.el
     SUBDIR += dasm
     SUBDIR += datadraw
     SUBDIR += dbus
@@ -408,6 +410,7 @@
     SUBDIR += elib-emacs21
     SUBDIR += entity
     SUBDIR += epm
+    SUBDIR += epl.el
     SUBDIR += epydoc
     SUBDIR += eric4
     SUBDIR += eris
@@ -1266,7 +1269,6 @@
     SUBDIR += msgpack
     SUBDIR += msp430-binutils
     SUBDIR += msp430-gcc
-    SUBDIR += msp430-gcc3
     SUBDIR += msp430-gdb
     SUBDIR += msp430-libc
     SUBDIR += msp430mcu
@@ -1640,6 +1642,7 @@
     SUBDIR += p5-Config-Grammar
     SUBDIR += p5-Config-INI
     SUBDIR += p5-Config-INI-Simple
+    SUBDIR += p5-Config-Identity
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-IniHash
     SUBDIR += p5-Config-IniRegEx
@@ -2889,6 +2892,7 @@
     SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Number-Delta
     SUBDIR += p5-Test-Object
+    SUBDIR += p5-Test-OpenLDAP
     SUBDIR += p5-Test-Output
     SUBDIR += p5-Test-POE-Client-TCP
     SUBDIR += p5-Test-POE-Server-TCP
@@ -3416,6 +3420,7 @@
     SUBDIR += pire
     SUBDIR += pit
     SUBDIR += pkgconf
+    SUBDIR += pkg-info.el
     SUBDIR += plan9port
     SUBDIR += pmccabe
     SUBDIR += pmd
@@ -3671,6 +3676,7 @@
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
     SUBDIR += py-jcc
+    SUBDIR += py-jdcal
     SUBDIR += py-jellyfish
     SUBDIR += py-jira
     SUBDIR += py-jmespath
@@ -4288,6 +4294,7 @@
     SUBDIR += rubygem-kafo_parsers
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
+    SUBDIR += rubygem-launchy22
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little_plugger
@@ -4326,6 +4333,7 @@
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
+    SUBDIR += rubygem-nori
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4

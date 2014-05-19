@@ -21,7 +21,7 @@ USE_PERL5=      configure
 INSTALL_TARGET=	pure_install
 
 post-install:
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
+	${INSTALL} -d -m 755 \
 		${STAGEDIR}${PREFIX}/share/doc/w3mir
 	cd ${WRKSRC} && ${INSTALL_DATA} \
 		README Artistic w3mir-HOWTO.html example.cfg \

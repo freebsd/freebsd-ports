@@ -3,8 +3,10 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.6.0b1
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cfengine.com/source-code/download?file=
+MASTER_SITES=	http://cfengine.com/source-code/download?file= \
+		https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port

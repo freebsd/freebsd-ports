@@ -22,12 +22,13 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 		tiff:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig shebangfix tar:bzip2
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango
 USE_XORG+=	ice sm x11 xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xrandr xrender
 GNU_CONFIGURE=	yes
+SHEBANG_FILES=	tools/ascommand.pl \
+		tools/importasmenu
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=--disable-ascp \
 		--enable-i18n \
@@ -37,6 +38,7 @@ CONFIGURE_ARGS+=--disable-ascp \
 		--with-jpeg-includes="${LOCALBASE}/include" \
 		--with-png-includes="${LOCALBASE}/include" \
 		--with-gif
+MAKE_ENV+=	HOME=-
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-devel-${PORTVERSION}
 
@@ -58,13 +60,18 @@ CONFIGURE_ARGS+=	--enable-different-looknfeels
 CONFIGURE_ARGS+=	--disable-savewindows
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${PREFIX}/share/gnome/wm-properties)
 PLIST_SUB+=	GNOME=""
 .else
 PLIST_SUB+=	GNOME="@comment "
+.endif
+
+.if ${OSVERSION} >= 1000000
+STATIC_LIBEXECINFO=
+.else
+STATIC_LIBEXECINFO=	${LOCALBASE}/lib/libexecinfo.a
 .endif
 
 post-extract:
@@ -88,9 +95,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,ft_version,libafterstep_version,g' \
 		${WRKSRC}/${f}
 .endfor
-.for f in configure libAfterBase/configure libAfterConf/Makefile.in libAfterImage/configure
+.for f in configure libAfterBase/configure libAfterConf/Makefile.in libAfterImage/configure tools/makeastheme.pl.in tools/installastheme.pl.in
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} \
+		-e 's,%%STATIC_LIBEXECINFO%%,${STATIC_LIBEXECINFO},g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

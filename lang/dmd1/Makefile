@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Official compiler for the D 1.0 programming language
 
-NO_PACKAGE=	Packages are not validation-tested by the developer
+NO_PACKAGE=	No redistribution of non validated binaries
 USES=		gmake zip
 PORTDOCS=	*.txt html/ phobos/
 WRKSRC=		${WRKDIR}/${PORTNAME}/src/${PORTNAME}

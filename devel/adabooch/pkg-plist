@@ -217,6 +217,7 @@ include/bc/bc-support-dynamic.ads
 include/bc/bc-support-exceptions.ads
 include/bc/bc-support-hash_tables.adb
 include/bc/bc-support-hash_tables.ads
+include/bc/bc-support-high_resolution_time-clock.adb
 include/bc/bc-support-high_resolution_time.adb
 include/bc/bc-support-high_resolution_time.ads
 include/bc/bc-support-indefinite_bounded.adb

@@ -83,8 +83,14 @@ create-manifest:
 .for opt in ${COMPLETE_OPTIONS_LIST}
 	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="on" ; ${ECHO_MSG} -n " ${opt}: $${match:-off}," >> ${MANIFESTF}
 .endfor
-.undef opt
 	@${ECHO_CMD} "}" >> ${MANIFESTF}
+.if defined(PKG_NOTES)
+	@${ECHO_CMD} -n "annotations: {" >> ${MANIFESTF}
+.for note in ${PKG_NOTES}
+	@${ECHO_CMD} -n ' ${note}: "${PKG_NOTE_${note}:S/"/\"/g}",' >> ${MANIFESTF}
+.endfor
+	@${ECHO_CMD} " }" >> ${MANIFESTF}
+.endif
 	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
 	${RM} -f ${METADIR}/+PRE_INSTALL ; \
 	for a in ${PKGPREINSTALL}; do \
@@ -248,19 +254,19 @@ do-package: ${TMPPLIST}
 	done
 	@${MKDIR} ${WRKDIR}/pkg
 	@if ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${WRKDIR}/pkg ${PKGNAME}; then \
-	      if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
-	          ${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
-			      || ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
-		      if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
-			      if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
-			    	  if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
-		    			  ${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
-	    				  exit 1; \
-    				  fi; \
-	    		  fi ; \
-	    		  ${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
-	    	  fi; \
-	      fi; \
+		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
+			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
+				|| ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+			if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
+				if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
+					if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
+						${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
+						exit 1; \
+					fi; \
+				fi ; \
+				${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
+			fi; \
+		fi; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \

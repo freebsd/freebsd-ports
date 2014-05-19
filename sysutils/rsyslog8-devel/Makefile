@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.1.6
+PORTVERSION=	8.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -19,9 +19,7 @@ LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
 
-PORTSCOUT=	limit:^8\.1
-PORTDOCS=	*
-PORTEXAMPLES=	*
+PORTSCOUT=	limit:^8\.3
 PKGNAMESUFFIX=	8-devel
 
 OPTIONS_DEFINE=	DBI DOCS GNUTLS GSSAPI MYSQL PGSQL RELP RFC3195 SNMP
@@ -74,7 +72,7 @@ CONFIGURE_ARGS+=--disable-gssapi-krb5
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 PLIST_FILES+=	lib/rsyslog/ommysql.so \
-					lib/rsyslog/ommysql.la
+		lib/rsyslog/ommysql.la
 .else
 CONFIGURE_ARGS+=--disable-mysql
 .endif
@@ -83,7 +81,7 @@ CONFIGURE_ARGS+=--disable-mysql
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-pgsql
 PLIST_FILES+=	lib/rsyslog/ompgsql.so \
-					lib/rsyslog/ompgsql.la
+		lib/rsyslog/ompgsql.la
 .else
 CONFIGURE_ARGS+=--disable-pgsql
 .endif
@@ -158,11 +156,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${STAGEDIR}${DOCSDIR}/
-	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/rsyslog-example.conf ${STAGEDIR}${EXAMPLESDIR}
-.for l in lmregexp lmzlibw lmnet lmnetstrms lmstrmsrv lmnsd_ptcp lmcry_gcry lmtcpsrv lmtcpclt immark imuxsock imtcp imudp omtesting imklog impstats omstdout imfile imdiag ommail
+.for l in lmregexp lmzlibw lmnet lmnetstrms lmstrmsrv lmnsd_ptcp lmcry_gcry lmtcpsrv lmtcpclt mmexternal immark imuxsock imtcp imudp omtesting imklog impstats omstdout imfile imdiag ommail
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/rsyslog/${l}.so
 .endfor
 

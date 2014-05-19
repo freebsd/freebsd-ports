@@ -1,5 +1,0 @@
-bin/e2ps
-bin/e2lpr
-%%PORTDOCS%%share/doc/ja-e2ps/README.euc
-%%PORTDOCS%%share/doc/ja-e2ps/README.english
-%%PORTDOCS%%@dirrm share/doc/ja-e2ps

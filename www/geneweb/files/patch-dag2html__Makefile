@@ -1,0 +1,12 @@
+--- ./dag2html/Makefile.orig	2013-03-01 03:06:49.000000000 -0600
++++ ./dag2html/Makefile	2014-05-14 07:00:04.000000000 -0500
+@@ -1,7 +1,7 @@
+ # $Id: Makefile,v 5.1 2007-07-11 16:15:21 ddr Exp $
+ 
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/share/man/man1
++BINDIR=$(STAGING)$(PREFIX)/bin
++MANDIR=$(STAGING)$(PREFIX)/share/man/man1
+ OCAMLC=ocamlc
+ OCAMLOPT=ocamlopt
+ OCARGS=

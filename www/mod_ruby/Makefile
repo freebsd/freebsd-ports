@@ -9,8 +9,12 @@ MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An Apache module that embeds Ruby interpreter within
+
+BROKEN=		broken with ruby1.9 threads
+DEPRECATED=	Only for threadless ruby 
+EXPIRATION_DATE=	2014-06-20
 
 USES=		perl5
 USE_APACHE=	22

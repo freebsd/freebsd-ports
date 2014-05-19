@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-file-archiver
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	archivers mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,21 +16,21 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:xz
 USE_MATE=	autogen caja common:build docutils intlhack
 USE_XORG=	sm
 USE_GNOME=	glib20 gnomehier gtk20
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtool libtoolize:env
+USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtoolize:env
 CONFIGURE_ARGS=	--disable-packagekit \
 		--with-gtk=2.0
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PATHFIX_MAKEFILEIN=	Makefile.*
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.engrampa.gschema.xml
 

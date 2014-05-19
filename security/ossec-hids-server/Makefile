@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	ossec-hids
-PORTVERSION=	2.7
+PORTVERSION=	2.7.1
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/ \
 		http://www.ossec.net/files/old/
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	A security tool to monitor and check logs and intrusions
+MAINTAINER=	brd@FreeBSD.org
+COMMENT?=	Security tool to monitor and check logs and intrusions
 
 USE_RC_SUBR=	ossec-hids
+
+CFLAGS+=	-ferror-limit=0
 
 .if defined(MAINTAINER_MODE)
 UID_FILES+=	../../UIDs
@@ -31,7 +33,6 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	PORTNAME=${PORTNAME}
 PORTDOCS=	BUGS CONFIG CONTRIBUTORS INSTALL LICENSE README
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 800067
 # Add string function that didn't exist until 8.x
@@ -64,8 +65,8 @@ CONFLICTS=	ossec-hids-client-[0-9]* ossec-hids-local-[0-9]*
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|PREFIX|${PREFIX}/${PORTNAME}|' ${WRKSRC}/src/LOCATION
 	@${REINPLACE_CMD} 's|PREFIX|${PREFIX}/${PORTNAME}|' ${WRKSRC}/src/headers/defs.h
+	@${ECHO} "DIR=\"${STAGEDIR}${PREFIX}/${PORTNAME}\"" > ${WRKSRC}/src/LOCATION
 
 do-build:
 .if defined(WITH_DB)
@@ -98,27 +99,19 @@ do-install:
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/${PORTNAME}/etc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/etc
 
 .if defined(CLIENT_ONLY)
-	@${CP} ${WRKSRC}/etc/ossec-agent.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
-	@if [ ! -f ${PREFIX}/${PORTNAME}/etc/ossec.conf ]; then \
-	${CP} ${WRKSRC}/etc/ossec-agent.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf; \
-	fi
+	@${CP} ${WRKSRC}/etc/ossec-agent.conf ${STAGEDIR}${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
 .elif defined(LOCAL_ONLY)
-	${CP} ${WRKSRC}/etc/ossec-local.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
-	@if [ ! -f ${PREFIX}/${PORTNAME}/etc/ossec.conf ]; then \
-	${CP} ${WRKSRC}/etc/ossec-local.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf; \
-	fi
+	${CP} ${WRKSRC}/etc/ossec-local.conf ${STAGEDIR}${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
 .else
-	@if [ ! -f ${PREFIX}/${PORTNAME}/etc/ossec.conf ]; then \
-	${CP} ${WRKSRC}/etc/ossec-server.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf; \
-	fi
+	${CP} ${WRKSRC}/etc/ossec-server.conf ${STAGEDIR}${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}

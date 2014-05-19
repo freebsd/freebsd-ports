@@ -17,8 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	dansguardian
-USES=		iconv pkgconfig shebangfix
-USE_BZIP2=	yes
+USES=		iconv pkgconfig shebangfix tar:bzip2
 
 CONFLICTS=	dansguardian-2.10.*
 

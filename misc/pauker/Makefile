@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pauker
-DISTVERSION=	1.8RC2
-PORTREVISION=	1
+DISTVERSION=	1.8
 CATEGORIES=	misc java
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -16,16 +15,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar bin/${PORTNAME}
-
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${SED} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
-	    -e "s:%%JAVAJARDIR%%:${JAVAJARDIR}:" \
-	    -e "s:%%PORTNAME%%:${PORTNAME}:" \
-	    ${FILESDIR}/pauker.sh > ${PREFIX}/bin/${PORTNAME}
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/${PORTNAME}
-	@${CHMOD} a+rx ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/pauker.jar
+	@${PRINTF} "#!/bin/sh\nexec \"${JAVA}\" -jar \"${JAVAJARDIR}/pauker.jar\" \"\$$@\"\n" > ${WRKDIR}/pauker
+	@${INSTALL_SCRIPT} ${WRKDIR}/pauker ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

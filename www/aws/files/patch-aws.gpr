@@ -1,0 +1,71 @@
+--- aws.gpr.orig	2014-05-15 19:48:07.000000000 +0000
++++ aws.gpr
+@@ -44,7 +44,8 @@ aggregate library project AWS is
+             when "Windows_NT" =>
+                for Library_Options use ("-lwsock32", "-lws2_32");
+             when others =>
+-               null;
++               for Library_Options use ("-R", "-Wl,-R,@PREFIX@/lib" &
++                  ":@PREFIX@/lib/templates_parser.relocatable");
+          end case;
+ 
+          case Shared.LDAP is
+@@ -55,7 +56,7 @@ aggregate library project AWS is
+                        Project'Library_Options & ("-lwldap32");
+                   when others =>
+                      for Library_Options use
+-                       Project'Library_Options & ("-lldap");
++                       Project'Library_Options & ("-L@PREFIX@/lib", "-lldap");
+                end case;
+ 
+             when "Disabled" =>
+@@ -69,49 +70,4 @@ aggregate library project AWS is
+ 
+    package Builder renames Shared.Builder;
+ 
+-   -------------
+-   -- Install --
+-   -------------
+-
+-   package Install is
+-      --  examples
+-
+-      for Artifacts ("share/examples/aws/images")
+-        use ("demos/runme/aws_*.png");
+-      for Artifacts ("share/examples/aws/templates")
+-        use ("demos/web_mail/*html");
+-
+-      --  support files (templates)
+-
+-      for Artifacts ("share/examples/aws/templates")
+-        use ("templates_parser/tools/templates.tads");
+-      for Artifacts ("share/examples/aws/web_elements")
+-        use ("web_elements/menu_css", "web_elements/notebook",
+-             "web_elements/rounded_boxes", "web_elements/icons",
+-             "web_elements/javascripts",
+-             "web_elements/mime.types", "web_elements/readme.txt");
+-
+-      case Shared.S_Target is
+-         when "Windows_NT" =>
+-            for Artifacts ("lib/aws")
+-              use (Shared.Target_Dir & "/common/win32/aws.coff");
+-         when others =>
+-            null;
+-      end case;
+-
+-      -- documentations
+-
+-      for Artifacts ("share/doc/aws") use ("docs/build/html");
+-      for Artifacts ("share/doc/aws/pdf") use ("docs/build/latex/*.pdf");
+-      for Artifacts ("share/doc/aws/templates_parser")
+-        use ("templates_parser/docs/build/html");
+-      for Artifacts ("share/doc/aws/templates_parser/pdf")
+-        use ("templates_parser/docs/build/latex/*.pdf");
+-
+-      --  gps plug-ins
+-
+-      for Artifacts ("share/gps/plug-ins") use ("gps/*.xml", "gps/aws.py");
+-
+-   end Install;
+-
+ end AWS;

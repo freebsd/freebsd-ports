@@ -3,7 +3,7 @@
 
 PORTNAME=	havp
 PORTVERSION=	0.91
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.server-side.de/download/ \
 		http://bio3k.softboard.ru/uploads/arch/ \
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.server-side.de/download/ \
 MAINTAINER=	ayu@commun.jp
 COMMENT=	HTTP Antivirus Proxy
 
-LIB_DEPENDS=	clamav.7:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
@@ -34,7 +34,6 @@ SSL_DESC=	SSL proxying (not scanned, only forwarded!)
 CLAMAV_DESC=	libclamav support
 TROPHIE_DESC=	Trend Micro (Trophie) support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -55,16 +54,11 @@ CONFIGURE_ARGS+=	--enable-trophie
 CONFIGURE_ARGS+=	--disable-trophie
 .endif
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
-	@[ -f ${PREFIX}/etc/havp/havp.config ] || \
-		${CP} ${PREFIX}/etc/havp/havp.config.default ${PREFIX}/etc/havp/havp.config
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} ${WRKSRC}/etc/havp/blacklist ${EXAMPLESDIR}/blacklist.sample
-	@${CP} -R ${WRKSRC}/etc/havp/templates ${EXAMPLESDIR}
-	@${CP} ${WRKSRC}/etc/havp/whitelist ${EXAMPLESDIR}/whitelist.sample
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${CP} ${WRKSRC}/etc/havp/blacklist ${STAGEDIR}${EXAMPLESDIR}/blacklist.sample
+	@${CP} -R ${WRKSRC}/etc/havp/templates ${STAGEDIR}${EXAMPLESDIR}
+	@${CP} ${WRKSRC}/etc/havp/whitelist ${STAGEDIR}${EXAMPLESDIR}/whitelist.sample
+	@${MKDIR} ${STAGEDIR}${LOG_DIR} ${STAGEDIR}${TMP_DIR} ${STAGEDIR}${RUN_DIR}
 
 .include <bsd.port.mk>

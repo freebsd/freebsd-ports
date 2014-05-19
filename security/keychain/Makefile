@@ -12,10 +12,9 @@ COMMENT=	User-friendly front-end to ssh-agent(1)
 
 LICENSE=	GPLv2
 
-USES=		gmake perl5
+USES=		gmake perl5 tar:bzip2
 USE_PERL5=	build
 OPTIONS_DEFINE=	DOCS
-USE_BZIP2=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/keychain.1.gz

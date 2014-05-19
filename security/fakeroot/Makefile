@@ -3,6 +3,7 @@
 
 PORTNAME=	fakeroot
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/fakeroot
@@ -13,10 +14,10 @@ COMMENT=	Simulate the root user behaviour
 
 LICENSE=	GPLv3
 
-USES=	tar:bzip2
+USES=	tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-ipc=tcp
-USE_AUTOTOOLS=		libtool
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

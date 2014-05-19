@@ -4,7 +4,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.9.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -19,7 +19,7 @@ COMMENT?=	XML parser library for GNOME
 GNU_CONFIGURE=	yes
 USES=		gmake iconv libtool:keepla pathfix pkgconfig shebangfix
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS?=--with-iconv=${ICONVBASE} \
+CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--with-lzma=/usr \
@@ -60,7 +60,7 @@ post-patch:
 
 .if !defined(MASTERDIR)
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/share/gtk-doc/html/libxml2
+	@${RM} -rf ${STAGEDIR}${PREFIX}/share/gtk-doc
 .endif
 
 .include <bsd.port.mk>

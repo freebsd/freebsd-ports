@@ -2,6 +2,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USES=		desktop-file-utils gmake iconv pkgconfig readline \
 		shared-mime-info tar:xz
-USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
+USE_XORG=	x11 xext xinerama xscrnsaver xtst xv xxf86vm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \
 		--disable-nvtvsimple \
@@ -34,7 +35,6 @@ XINE_PLUGINSDIR=	lib/xine/plugins/2.3
 OPTIONS_DEFINE=		AALIB CACA CURL DOCS LIRC NLS XFT
 OPTIONS_DEFAULT=	CURL XFT
 OPTIONS_DEFINE_i386=	WIN32_CODECS
-OPTIONS_DEFAULT_i386=	WIN32_CODECS
 OPTIONS_SUB=		yes
 
 AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
@@ -60,10 +60,6 @@ XFT_CONFIGURE_ENABLE=	xft
 
 .if ${OSVERSION} < 1000052
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-
-.if empty(ICONV_CONFIGURE_ARG)
-CONFIGURE_ARGS+=	--without-libiconv-prefix
 .endif
 
 post-patch:

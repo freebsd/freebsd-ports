@@ -1,6 +1,7 @@
 %%PORTNAME%%/active-response/bin/disable-account.sh
 %%PORTNAME%%/active-response/bin/firewall-drop.sh
 %%PORTNAME%%/active-response/bin/host-deny.sh
+%%PORTNAME%%/active-response/bin/ip-customblock.sh
 %%PORTNAME%%/active-response/bin/ipfw_mac.sh
 %%PORTNAME%%/active-response/bin/ipfw.sh
 %%PORTNAME%%/active-response/bin/ossec-tweeter.sh
@@ -11,7 +12,6 @@
 %%PORTNAME%%/bin/clear_stats
 %%PORTNAME%%/bin/list_agents
 %%PORTNAME%%/bin/manage_agents
-%%PORTNAME%%/bin/ossec-agentd
 %%PORTNAME%%/bin/ossec-agentlessd
 %%PORTNAME%%/bin/ossec-analysisd
 %%PORTNAME%%/bin/ossec-authd
@@ -35,8 +35,7 @@
 %%PORTNAME%%/bin/verify-agent-conf
 %%PORTNAME%%/etc/decoder.xml
 %%PORTNAME%%/etc/internal_options.conf
-@unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
-%%PORTNAME%%/etc/ossec.conf.sample
+@sample %%PORTNAME%%/etc/ossec.conf.sample
 %%PORTNAME%%/etc/shared/rootkit_files.txt
 %%PORTNAME%%/etc/shared/rootkit_trojans.txt
 %%PORTNAME%%/etc/shared/system_audit_rcl.txt
@@ -46,8 +45,14 @@
 %%PORTNAME%%/etc/shared/cis_debian_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel5_linux_rcl.txt
-@unexec if test ! -s %D/%%PORTNAME%%/logs/ossec.log; then rm -f %D/%%PORTNAME%%/logs/ossec.log; fi
-@unexec if test ! -s %D/%%PORTNAME%%/logs/active-responses.log; then rm -f %D/%%PORTNAME%%/logs/active-responses.log; fi
+@owner ossec
+@group ossec
+@mode 660
+%%PORTNAME%%/logs/active-responses.log
+%%PORTNAME%%/logs/ossec.log
+@owner
+@group
+@mode
 %%PORTNAME%%/rules/apache_rules.xml
 %%PORTNAME%%/rules/arpwatch_rules.xml
 %%PORTNAME%%/rules/asterisk_rules.xml
@@ -122,6 +127,9 @@
 %%PORTNAME%%/agentless/ssh_pixconfig_diff
 %%PORTNAME%%/agentless/sshlogin.exp
 %%PORTNAME%%/agentless/su.exp
+@owner root
+@group ossec
+@mode 550
 @dirrmtry %%PORTNAME%%/.ssh
 @dirrmtry %%PORTNAME%%/active-response/bin
 @dirrmtry %%PORTNAME%%/active-response
@@ -129,26 +137,31 @@
 @dirrmtry %%PORTNAME%%/bin
 @dirrmtry %%PORTNAME%%/etc/shared
 @dirrmtry %%PORTNAME%%/etc
+@dirrmtry %%PORTNAME%%/queue/rootcheck
+@dirrmtry %%PORTNAME%%/rules
+@dirrmtry %%PORTNAME%%/tmp
+@dirrmtry %%PORTNAME%%/var/run
+@dirrmtry %%PORTNAME%%/var
+@owner ossec
+@mode 770
+@dirrmtry %%PORTNAME%%/queue/alerts
+@dirrmtry %%PORTNAME%%/queue/ossec
+@mode 750
+@dirrmtry %%PORTNAME%%/queue/fts
+@dirrmtry %%PORTNAME%%/queue/syscheck
+@dirrmtry %%PORTNAME%%/queue/diff
+@dirrmtry %%PORTNAME%%/queue/agentless
+@dirrmtry %%PORTNAME%%/stats
 @dirrmtry %%PORTNAME%%/logs/alerts
 @dirrmtry %%PORTNAME%%/logs/archives
 @dirrmtry %%PORTNAME%%/logs/firewall
 @dirrmtry %%PORTNAME%%/logs
+@owner ossecr
 @dirrmtry %%PORTNAME%%/queue/agent-info
-@dirrmtry %%PORTNAME%%/queue/agentless
-@dirrmtry %%PORTNAME%%/queue/alerts
-@dirrmtry %%PORTNAME%%/queue/diff
-@dirrmtry %%PORTNAME%%/queue/fts
-@dirrmtry %%PORTNAME%%/queue/ossec
 @dirrmtry %%PORTNAME%%/queue/rids
-@dirrmtry %%PORTNAME%%/queue/rootcheck
-@dirrmtry %%PORTNAME%%/queue/syscheck
+@owner ossec
+@mode 550
 @dirrmtry %%PORTNAME%%/queue
-@dirrmtry %%PORTNAME%%/rules
-@dirrmtry %%PORTNAME%%/stats/hourly-average
-@dirrmtry %%PORTNAME%%/stats/totals
-@dirrmtry %%PORTNAME%%/stats/weekly-average
-@dirrmtry %%PORTNAME%%/stats
-@dirrmtry %%PORTNAME%%/tmp
-@dirrmtry %%PORTNAME%%/var/run
-@dirrmtry %%PORTNAME%%/var
+@owner root
+@mode 550
 @dirrmtry %%PORTNAME%%

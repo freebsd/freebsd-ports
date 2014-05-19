@@ -3,7 +3,7 @@
 
 PORTNAME=	x10
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel java
 MASTER_SITES=	http://dist.codehaus.org/x10/dependencies/ \
 		SF
@@ -56,6 +56,7 @@ post-patch:
 	${CP} ${DISTDIR}/org.eclipse.equinox.common_3.6.0.v20100503.jar ${WRKSRC}/lib
 	${CP} ${DISTDIR}/commons-math-2.2.jar ${WRKSRC}/lib
 	${CP} ${DISTDIR}/bdwgc-7.1.tar.gz ${WRKDIR}/x10.runtime/src-cpp/bdwgc
+	(cd ${WRKDIR}/x10.runtime/src-cpp/bdwgc/src && tar zxvf ../bdwgc-7.1.tar.gz && ${REINPLACE_CMD} -e 's|freebsd1\*|freebsd1.*|g' configure)
 
 do-install:
 .for f in X10Launcher apgas precommit x10 x10c x10c++ x10j

@@ -1,0 +1,33 @@
+--  This is a workaround for the nasty habit gprlib has of using
+--  ${LOCALBASE}/lib/templates_parser as the OBJECT_DIR, dumping .lexch
+--  files there which is a build violation.  By copying the prebuilt
+--  library and ali files over to the project object directory and using
+--  a custom gpr file restricts the libaws.lexch generation there.
+
+with "../shared";
+
+project TemParse is
+
+   for Library_Name use "templates_parser";
+   for Library_Kind use Shared.Library_Type;
+   case Shared.Library_Type is
+      when "relocatable" =>
+         for Library_Version use "libtemplates_parser.so";
+         for Source_Dirs use ("@PREFIX@/include/templates_parser.relocatable");
+      when others =>
+         for Source_Dirs use ("@PREFIX@/include/templates_parser");
+   end case;
+   for Object_Dir use "../" & Shared'Object_Dir & "/temparse";
+   for Library_Dir use "../" & Shared'Library_Dir & "/temparse";
+   for Externally_Built use "true";
+
+   package Naming is
+      --  for Specification ("Templates_Parser.Configuration")
+      --    use "templates_parser-configuration__aws.ads";
+      for Implementation ("Templates_Parser.Input")
+        use "templates_parser-input__standalone.adb";
+      for Implementation ("Templates_Parser_Tasking")
+        use "templates_parser_tasking__standard_tasking.adb";
+   end Naming;
+
+end TemParse;

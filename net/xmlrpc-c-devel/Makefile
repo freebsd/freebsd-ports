@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DEBUG CURL LIBWWW CPLUSPLUS
 OPTIONS_DEFAULT=CURL LIBWWW CPLUSPLUS
@@ -20,12 +20,13 @@ CPLUSPLUS_DESC=	 Build xmlrpc-c c++ libs and tools
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
-USES=		gmake
+USES=		gmake tar:xz
 OPTIONS_SUB=	yes
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
+MAKE_ENV+=	INSTALL_SHLIB="${INSTALL_LIB}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 USE_LDCONFIG=	yes
 
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
@@ -60,5 +61,7 @@ post-patch:
 		${WRKSRC}/src/xmlrpc_server_abyss.c
 	@${REINPLACE_CMD} -e 's,sys/unistd.h,unistd.h,' \
 		${WRKSRC}/test/cpp/server_abyss.cpp
+	@${REINPLACE_CMD} -e '/^INSTALL_/s/=/\?=/' \
+		${WRKSRC}/config.mk.in
 
 .include <bsd.port.post.mk>

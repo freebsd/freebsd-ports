@@ -20,11 +20,10 @@ USE_GNOME=	glib20
 USE_MYSQL=	yes
 USES=		cmake pkgconfig
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/CMakeLists.txt
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mydumper ${WRKSRC}/myloader ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/mydumper ${WRKSRC}/myloader ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

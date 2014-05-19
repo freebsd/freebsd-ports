@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_clamav
 PORTVERSION=	0.23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
 		http://www.kommunity.net/download/mod_clamav/
@@ -18,17 +18,10 @@ USE_AUTOTOOLS=	libtool
 USE_APACHE=	22
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		CLAMAVDEVEL
-CLAMAVDEVEL_DESC=	development version of CLAMAV
-
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCLAMAVDEVEL}
-LIB_DEPENDS+=	libclamav.so:${PORTSDIR}/security/clamav-devel
-.else
 CLAMAV_PORT=	security/clamav
 LIB_DEPENDS+=	libclamav.so:${PORTSDIR}/security/clamav
-.endif
 
 CONFIGURE_ARGS=	--with-apxs=${APXS} \
 		--libdir=${PREFIX}/lib/apache2

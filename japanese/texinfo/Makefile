@@ -18,17 +18,16 @@ COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 
-USE_GMAKE=	yes
+USES=		gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j
-INSTALL_TARGET=	install install-tex
-CFLAGS+=	"-DEUC=1"
+
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMFLOCAL}
+INSTALL_TARGET=	install install-tex
+
+CFLAGS+=	"-DEUC=1"
+
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL}
 TEXMFLOCAL=	share/texmf-local
 
-MAN1=		jinfo.1 jinfokey.1 jinstall-info.1 jmakeinfo.1 jtexindex.1 jtexi2dvi.1
-MAN5=		jinfo.5 jtexinfo.5
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

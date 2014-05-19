@@ -12,10 +12,9 @@ include/mucharmap-2.0/mucharmap/mucharmap-script-codepoint-list.h
 include/mucharmap-2.0/mucharmap/mucharmap-type-builtins.h
 include/mucharmap-2.0/mucharmap/mucharmap-unicode-info.h
 include/mucharmap-2.0/mucharmap/mucharmap.h
-lib/libmucharmap.a
-lib/libmucharmap.la
 lib/libmucharmap.so
 lib/libmucharmap.so.7
+lib/libmucharmap.so.7.0.0
 libdata/pkgconfig/mucharmap-2.pc
 share/applications/mucharmap.desktop
 share/locale/af/LC_MESSAGES/mucharmap.mo

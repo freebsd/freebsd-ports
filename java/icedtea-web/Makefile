@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.6 1.7
 USE_PERL5=	build
 USE_XORG=	x11
 USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix
@@ -79,7 +78,9 @@ WEBPLUGIN_FILES=IcedTeaPlugin.so
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION} == "1.6.0"
+.if ${JAVA_PORT_VERSION} == "1.8.0"
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-jdk8
+.elif ${JAVA_PORT_VERSION} == "1.6.0"
 pre-extract:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "IMPORTANT: To build IcedTea-Web ${PORTVERSION}, you have to turn on 'ICEDTEA' option"

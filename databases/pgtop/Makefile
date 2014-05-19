@@ -18,7 +18,4 @@ RUN_DEPENDS=	p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	pgtop.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ library project ADACURSES is
    for Externally_Built use "True";
 
    package Linker is
-      for switches ("Ada") use ("-L@PREFIX@/lib", "-lncurses");
+      for Linker_Options use ("-L@PREFIX@/lib", "-Wl,-R,@PREFIX@/lib");
    end Linker;
 
 end ADACURSES;

@@ -10,33 +10,30 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/1814/
 MAINTAINER=	pea@raveland.org
 COMMENT=	Import CSV data and Large Object to PostgreSQL
 
-MAN1=		pgloader.1
-
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/share/python-support,${PYTHON_SITELIBDIR},' ${WRKSRC}/pgloader/options.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pgloader.py ${PREFIX}/bin/pgloader
-	${INSTALL_MAN} ${WRKSRC}/pgloader.1 ${MAN1PREFIX}/man/man1
-	${MKDIR} ${PYTHON_SITELIBDIR}/pgloader
-	@cd ${WRKSRC}/pgloader && ${COPYTREE_SHARE} \* ${PYTHON_SITELIBDIR}/pgloader/
-	${MKDIR} ${PYTHON_SITELIBDIR}/pgloader/reformat
-	@cd ${WRKSRC}/reformat && ${COPYTREE_SHARE} \* ${PYTHON_SITELIBDIR}/pgloader/reformat/
+	${INSTALL_SCRIPT} ${WRKSRC}/pgloader.py ${STAGEDIR}${PREFIX}/bin/pgloader
+	${INSTALL_MAN} ${WRKSRC}/pgloader.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/pgloader
+	@cd ${WRKSRC}/pgloader && ${COPYTREE_SHARE} \* ${STAGEDIR}${PYTHON_SITELIBDIR}/pgloader/
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/pgloader/reformat
+	@cd ${WRKSRC}/reformat && ${COPYTREE_SHARE} \* ${STAGEDIR}${PYTHON_SITELIBDIR}/pgloader/reformat/
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/BUGS.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TODO.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/pgloader.1.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/BUGS.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TODO.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/pgloader.1.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

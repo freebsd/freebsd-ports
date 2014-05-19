@@ -2,33 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	geoapi
-PORTVERSION=	2.1.1
+PORTVERSION=	3.0.0
 CATEGORIES=	graphics geography
-MASTER_SITES=	SF
-DISTNAME=	GeoAPI-2_1_1
+MASTER_SITES=	SF/${PORTNAME}/
+DISTNAME=	GeoAPI-3_0_0
 
-MAINTAINER=	wenheping@gmail.com
-COMMENT=	A Java interface API based upon OGC Standards
+MAINTAINER=	wen@FreeBSD.org
+COMMENT=	Java interface API based upon OGC Standards
 
 USES=		zip
 NO_BUILD=	yes
 USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 
-JARFILES=	geoapi-${PORTVERSION} jsr108-0.01 geoapi-nogenerics-${PORTVERSION}
+JARFILES=	geoapi-${PORTVERSION} jsr-275-0.9.3 geoapi-conformance-${PORTVERSION}
 DOCS=		README.txt
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
 .for jar in ${JARFILES}
-	${INSTALL_DATA} ${WRKSRC}/binaries/${jar}.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKDIR}/${jar}.jar ${STAGEDIR}${JAVAJARDIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/javadoc \
-		&& ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
-		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
+		&& ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
+		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;
 .endif
 
 .include <bsd.port.mk>

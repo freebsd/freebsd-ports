@@ -11,11 +11,11 @@ PKGNAMESUFFIX=	-mysql${MYSQL_VER}
 MAINTAINER=	dudu@dudu.ro
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
+USES=		gmake
 USE_MYSQL=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --enable-thread-check
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 PLIST_SUB+=	VER=${PORTVERSION}
 
 CONFLICTS=	${PORTNAME}*-1.*
@@ -23,17 +23,16 @@ CONFLICTS=	${PORTNAME}*-1.*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} pdf ${DOCSDIR})
-	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} html ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} pdf ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 .endif
 .ifndef(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.h ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.cpp ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.h ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.cpp ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

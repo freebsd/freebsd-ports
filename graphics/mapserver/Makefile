@@ -35,7 +35,6 @@ WFS_DESC=		WFS Server support
 WCS_DESC=               WCS Server support
 MAPSERV_DESC=		Mapserv cgi interface support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAPSERV}
@@ -176,31 +175,31 @@ PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
 
 do-install:
 .for f in ${PROG_FILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/libmapserver.so.${PORTVERSION} ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
 
 .if ${PORT_OPTIONS:MMAPSERV}
-	${MKDIR} ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/mapserv ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/apache${APACHE_VERSION}/cgi-bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/mapserv ${STAGEDIR}${PREFIX}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php/php_mapscript.so \
-		${LOCALBASE}/${PHP_EXTENSION_DIR}/
+		${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}/
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-	(cd ${WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${PYTHON_SITELIBDIR}/)
+	(cd ${WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${STAGEDIR}${PYTHON_SITELIBDIR}/)
 .endif
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.6.4.0 ${PREFIX}/lib/libmapserver.so.1
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.1 ${PREFIX}/lib/libmapserver.so
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.6.4.0 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.1
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 .if ${PORT_OPTIONS:MPHP}
-	@${ECHO_MSG} "Please add the line extension=php_mapscript.so to ${LOCALBASE}/etc/php/extensions.ini"
+	@${ECHO_MSG} "Please add the line extension=php_mapscript.so to ${PREFIX}/etc/php/extensions.ini"
 .endif
 
 .include <bsd.port.mk>

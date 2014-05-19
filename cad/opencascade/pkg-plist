@@ -65,7 +65,7 @@
 %%OCCROOT%%/bsd%%BITS%%/%%CC%%/lib/libTKXmlXCAF.so
 %%OCCROOT%%/bsd%%BITS%%/%%CC%%/lib/libTKernel.so
 %%OCCROOT%%/custom.sh
-%%OCCROOT%%/custom_%%CC%%_64_.sh
+%%OCCROOT%%/custom_%%CC%%_%%BITS%%_.sh
 %%OCCROOT%%/data/csfdb/Motor-c.csfdb
 %%OCCROOT%%/data/csfdb/Motor-compound.csfdb
 %%OCCROOT%%/data/iges/bearing.iges

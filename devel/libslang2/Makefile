@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	libslang-1.*.j[0-9]
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -58,6 +58,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's, install[_-]docs,,g; /MKINSDIR.*DEST_SLSH_DOC_DIR/d' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/slsh/Makefile.in
+	@${REINPLACE_CMD} -e '/RANLIB.*DEST_LIBDIR/d' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's,INSTALL_MODULE,INSTALL_LIB,g' \
+		${WRKSRC}/modules/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	liblouis
-PORTVERSION=	1.5.2
+PORTVERSION=	2.5.4
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://www.liblouis.org/downloads/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-source Braille Translator And Back-translator
+
+LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -27,10 +29,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tables/*.ctb ${STAGEDIR}${DATADIR}/tables/
 	${INSTALL_DATA} ${WRKSRC}/tables/*.utb ${STAGEDIR}${DATADIR}/tables/
 	${INSTALL_DATA} ${WRKSRC}/tables/*.cti ${STAGEDIR}${DATADIR}/tables/
-	${INSTALL_DATA} ${WRKSRC}/tables/*.utb2 ${STAGEDIR}${DATADIR}/tables/
 	${INSTALL_DATA} ${WRKSRC}/tables/*.dis ${STAGEDIR}${DATADIR}/tables/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in liblouis-guide.html liblouis-guide.txt
+.for i in liblouis.html liblouis.txt
 	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 

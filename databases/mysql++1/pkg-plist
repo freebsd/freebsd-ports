@@ -12,6 +12,7 @@ include/mysql++/field_names.h
 include/mysql++/field_types.h
 include/mysql++/fields.h
 include/mysql++/manip.h
+include/mysql++/myset.h
 include/mysql++/mysql++.h
 include/mysql++/mysql++.hh
 include/mysql++/null.h
@@ -20,7 +21,6 @@ include/mysql++/query.h
 include/mysql++/resiter.h
 include/mysql++/result.h
 include/mysql++/row.h
-include/mysql++/myset.h
 include/mysql++/sql_query.h
 include/mysql++/sql_string.h
 include/mysql++/sqlplus.hh

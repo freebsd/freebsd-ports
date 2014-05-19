@@ -2,41 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	liblouisxml
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library Provide Complete Braille Transcription Services
 
-LIB_DEPENDS=	louis.2:${PORTSDIR}/devel/liblouis
+LICENSE=	GPLv3
+
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	liblouis.so:${PORTSDIR}/devel/liblouis
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
+USE_GCC=	yes
 
 INFO=		liblouisxml-guide
-MAN1=		msword2brl.1 xml2brl.1
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${REINPLACE_CMD} -e \
 		's#@libdir@#${PREFIX}/libdata#g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's#doc lbx_files#lbx_files#g' ${WRKSRC}/Makefile.in
+
+post-build:
+.for i in msword2brl xml2brl pdf2brl rtf2brl
+	@${REINPLACE_CMD} -e 's#/bin/bash#${LOCALBASE}/bin/bash#g' ${WRKSRC}/tools/${i}
+.endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in liblouisxml-guide.html liblouisxml-guide.txt copyright-notice \
-	example_canonical.cfg example_default.cfg example_html.sem example_math.sem
-	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in liblouisxml.html liblouisxml.txt
+	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
-	${INSTALL_MAN} ${WRKSRC}/doc/liblouisxml-guide.info ${PREFIX}/info
-	${INSTALL_MAN} ${WRKSRC}/doc/msword2brl.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/xml2brl.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/liblouisxml.info ${STAGEDIR}${PREFIX}/info
 
 .include <bsd.port.mk>

@@ -87,8 +87,8 @@ Licenses_Include_MAINTAINER=         portmgr@FreeBSD.org
 # Case 2: license only known by the port (aka "unknown").
 #
 # In this case LICENSE_{PERMS,NAME} are mandatory, in addition to
-# either LICENSE_FILE or LICENSE_TEXT. Optional variables are
-# LICENSE_{GROUPS,NOTES}.
+# either LICENSE_FILE or LICENSE_TEXT. Optional variable is
+# LICENSE_GROUPS.
 #
 # Available components for LICENSE_PERMS:
 # dist-mirror	- No free redistribution of distfile (like FTP mirroring; RESTRICTED).

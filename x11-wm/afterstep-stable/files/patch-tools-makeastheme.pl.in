@@ -1,0 +1,8 @@
+--- tools/makeastheme.pl.in.orig	2014-05-17 11:41:45.000000000 -0700
++++ tools/makeastheme.pl.in	2014-05-17 11:41:52.000000000 -0700
+@@ -1,4 +1,4 @@
+-#!@PERL@
++#!%%LOCALBASE%%/usr/bin/perl
+ 
+ use strict;
+ 

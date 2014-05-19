@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pd
-DISTVERSION=	0.45-4
+DISTVERSION=	0.45-5
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/
 
@@ -16,12 +15,11 @@ LICENSE=	BSD
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 
-OPTIONS_DEFINE=	ALSA FFTW JACK DOCS
-OPTIONS_DEFAULT=FFTW
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
-USES=		gettext gmake libtool:keepla pkgconfig shebangfix tk:wrapper
+USES=		gettext gmake libtool pkgconfig shebangfix tcl:wrapper \
+		tk:wrapper
 SHEBANG_FILES=	tcl/pkg_mkIndex.tcl
 SHEBANG_LANG=	tclsh
 tclsh_OLD_CMD=	/usr/bin/tclsh
@@ -35,16 +33,16 @@ CONFIGURE_ENV=	ac_cv_lib_pthread_pthread_create=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-DESKTOP_ENTRIES=	"Pd" "${COMMENT}" \
-			"${LOCALBASE}/lib/pd/tcl/pd.ico" "pd" "" false
+DESKTOP_ENTRIES="Pd" "" "${PREFIX}/lib/pd/tcl/pd.ico" "pd" "" false
+
+OPTIONS_DEFINE=		ALSA DOCS FFTW JACK
+OPTIONS_DEFAULT=	FFTW
 
 ALSA_CONFIGURE_ENABLE=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-
 FFTW_CONFIGURE_ENABLE=	fftw
 FFTW_BUILD_DEPENDS=	fftw3>0:${PORTSDIR}/math/fftw3
 FFTW_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
-
 JACK_CONFIGURE_ENABLE=	jack
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
@@ -100,5 +98,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
 	@${LN} -sf ${DOCSDIR} ${STAGEDIR}${PREFIX}/lib/pd/doc
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/pd -name "*.pd_linux" | ${XARGS} \
+		${STRIP_CMD}
 
 .include <bsd.port.mk>

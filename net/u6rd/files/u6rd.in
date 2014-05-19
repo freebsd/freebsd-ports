@@ -15,6 +15,7 @@ u6rd_my_v4_addr=${u6rd_my_v4_addr:-""}	# Your global IPv4 address
 u6rd_my_v6_addr=${u6rd_my_v6_addr:-""}	# Your global IPv6 address (addr/len)
 u6rd_defaultrouter=${u6rd_defaultrouter:-""}
 u6rd_interface=${u6rd_interface:-"tun0"}
+u6rd_interface_flags=${u6rd_interface_flags:-"inet6 -nud"}
 u6rd_username=${u6rd_username:-"nobody"}
 
 . /etc/rc.subr
@@ -51,34 +52,41 @@ plen_equal()
 
 start_precmd()
 {
-	ifconfig ${u6rd_interface} create
+	ifconfig ${u6rd_interface} create ${iface_fib}
 	ifconfig ${u6rd_interface} inet6 -ifdisabled >/dev/null 2>&1
-	ifconfig ${u6rd_interface} inet6 -nud
+	if [ -n "${u6rd_interface_flags}" ]; then
+		ifconfig ${u6rd_interface} ${u6rd_interface_flags}
+	fi
 	if [ -n "${u6rd_my_v6_addr}" ]; then
 		ifconfig ${u6rd_interface} inet6 ${u6rd_my_v6_addr}
 	fi
 	ifconfig ${u6rd_interface} up
 	if ! plen_equal ${u6rd_prefix} ${u6rd_my_v6_addr}; then
-		route delete -inet6 ${u6rd_prefix} >/dev/null 2>&1
-		route add -inet6 ${u6rd_prefix} ::1 -ifp ${u6rd_interface}
+		route delete -inet6 ${u6rd_prefix} ${route_fib} >/dev/null 2>&1
+		route add -inet6 ${u6rd_prefix} ::1 -ifp ${u6rd_interface} ${route_fib}
 	fi
 	if [ -n "${u6rd_defaultrouter}" ]; then
-		route delete -inet6 default >/dev/null 2>&1
-		route add -inet6 default ${u6rd_defaultrouter}
+		route delete -inet6 default ${route_fib} >/dev/null 2>&1
+		route add -inet6 default ${u6rd_defaultrouter} ${route_fib}
 	fi
 }
 
 stop_postcmd()
 {
 	if [ -n "${u6rd_defaultrouter}" ]; then
-		route delete -inet6 default
+		route delete -inet6 default ${route_fib}
 	fi
 	if ! plen_equal ${u6rd_prefix} ${u6rd_my_v6_addr}; then
-		route delete -inet6 ${u6rd_prefix}
+		route delete -inet6 ${u6rd_prefix} ${route_fib}
 	fi
 	ifconfig ${u6rd_interface} destroy
 }
 
 load_rc_config ${name}
 command_args="-u ${u6rd_username} ${u6rd_interface} ${u6rd_prefix} ${u6rd_relay_v4_addr} ${u6rd_my_v4_addr}"
+if [ -n "${u6rd_fib}" ]; then
+	iface_fib="fib ${u6rd_fib}"
+	route_fib="-fib ${u6rd_fib}"
+	u6rd_fib=
+fi
 run_rc_command "$1"

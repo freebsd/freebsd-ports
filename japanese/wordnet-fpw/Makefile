@@ -9,7 +9,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/wordnet/
 DISTNAME=	wordnet-${WN_VER}-fpw${WNFPW_VER}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A English - English Dictionary (EPWING V1 format)
+COMMENT=	English - English Dictionary (EPWING V1 format)
 
 USES=		zip:infozip
 NO_BUILD=	yes
@@ -18,15 +18,15 @@ EXTRACT_BEFORE_ARGS=	-qL
 WNFPW_VER=	1.1.3
 WN_VER=		1.6
 
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/wordnet-fpw/wordnet/data
-	${INSTALL_DATA} ${WRKSRC}/wordnet/data/honmon ${PREFIX}/share/dict/wordnet-fpw/wordnet/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/wordnet-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/wordnet-fpw/wordnet/data
+	${INSTALL_DATA} ${WRKSRC}/wordnet/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/wordnet-fpw/wordnet/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/wordnet-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

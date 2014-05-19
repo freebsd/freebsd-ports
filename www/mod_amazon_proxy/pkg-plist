@@ -1,4 +1,2 @@
 %%APACHEMODDIR%%/mod_amazon_proxy.so
-@unexec if cmp -s %D/%%APACHEETCDIR%%/Includes/httpd-amazon-proxy.conf.sample %D/%%APACHEETCDIR%%/Includes/httpd-amazon-proxy.conf; then rm -f %D/%%APACHEETCDIR%%/Includes/httpd-amazon-proxy.conf; fi
-%%APACHEETCDIR%%/Includes/httpd-amazon-proxy.conf.sample
-@exec [ -f %B/%%APACHEETCDIR%%/Includes/httpd-amazon-proxy.conf ] || cp %B/%f %B/%%APACHEETCDIR%%/Includes/httpd-amazon-proxy.conf
+@sample %%APACHEETCDIR%%/Includes/httpd-amazon-proxy.conf.sample

@@ -2,28 +2,55 @@
 # $FreeBSD$
 
 PORTNAME=	pythonchess
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.7
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alepulver
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://sites.google.com/site/purplesaguaroinc/myfiles/ \
+		SF/nemysisfreebsdp/games/:icons
+DISTFILES=	${PORTNAME:S/p/P/:S/c/C/}_v${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME:S/p/P/:S/c/C/}_v${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Small program for playing chess against the computer
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
-USE_PYTHON=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME:S/p/P/:S/c/C/}
+
+USES=	dos2unix zip
+DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
+USE_PYTHON=	2
+
+SUB_FILES=	${PORTNAME}
+
+DESKTOP_ENTRIES="Python Chess" "" "${PORTNAME}" \
+                "${PORTNAME}" "Game;BoardGame;" ""
+
+post-patch:
+	@${FIND} ${WRKDIR} -name Thumbs.db -or -name pygame2exe_Chess.py | \
+		${XARGS} ${RM} -fr
+	@${REINPLACE_CMD} -e 's|^.*#!.*python.*$$|#!${PYTHON_CMD}|' \
+		${WRKSRC}/*.py
+	@(cd ${WRKSRC} && ${RM} *.py.bak)
 
 do-build:
-	@(${ECHO_CMD} "#!${SH}"; \
-	  ${ECHO_CMD} "cd ${DATADIR} && ${PYTHON_CMD} board.py") \
-	  > ${WRKDIR}/${PORTNAME}
+	${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.gif *.py *.txt ${STAGEDIR}${DATADIR})
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKDIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} images ${STAGEDIR}${DATADIR})
+.for f in *.py *.pyc *.py
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
+.endfor
+
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>

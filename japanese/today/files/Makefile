@@ -23,12 +23,12 @@ OBJS_CAL = calendar.o $(OBJSC1)
 all: today calendar dayinfo
 
 install: today calendar dayinfo
-	${BSD_INSTALL_PROGRAM} today ${PREFIX}/bin/today
-	${BSD_INSTALL_PROGRAM} calendar ${PREFIX}/bin/calendar-today
-	${BSD_INSTALL_PROGRAM} dayinfo ${PREFIX}/bin/dayinfo
-	${BSD_INSTALL_DATA} today.cnf ${PREFIX}/etc
-	mkdir -p ${PREFIX}/share/today
-	${BSD_INSTALL_DATA} *.tbl ${PREFIX}/share/today
+	${BSD_INSTALL_PROGRAM} today ${DESTDIR}${PREFIX}/bin/today
+	${BSD_INSTALL_PROGRAM} calendar ${DESTDIR}${PREFIX}/bin/calendar-today
+	${BSD_INSTALL_PROGRAM} dayinfo ${DESTDIR}${PREFIX}/bin/dayinfo
+	${BSD_INSTALL_DATA} today.cnf ${DESTDIR}${PREFIX}/etc
+	mkdir -p ${DESTDIR}${PREFIX}/share/today
+	${BSD_INSTALL_DATA} *.tbl ${DESTDIR}${PREFIX}/share/today
 #	mkdir -p ${PREFIX}/share/doc/ja/today
 #	${BSD_INSTALL_DATA} today.doc ${PREFIX}/share/doc/ja/today
 

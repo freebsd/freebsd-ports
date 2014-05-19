@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/rinetd-${PORTVERSION}
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 
 PORTDOCS=	index.html
 PLIST_FILES=	sbin/rinetd \

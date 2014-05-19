@@ -16,10 +16,11 @@ RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 
 ALL_TARGET=	Wordcount.dll
 
-PLIST_FILES=	lib/tomboy/addins/Wordcount.dll
+ADDINS_DIR=	lib/tomboy/addins
+PLIST_FILES=${ADDINS_DIR}/Wordcount.dll
 
-NO_STAGE=	yes
 do-install:
-	cd ${WRKSRC} && ${INSTALL_DATA} Wordcount.dll ${PREFIX}/lib/tomboy/addins/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ADDINS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/Wordcount.dll ${STAGEDIR}${PREFIX}/${ADDINS_DIR}
 
 .include <bsd.port.mk>

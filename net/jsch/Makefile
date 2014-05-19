@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	jsch
-PORTVERSION=	0.1.49
+PORTVERSION=	0.1.51
 CATEGORIES=	net java security
 MASTER_SITES=	SF
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A pure Java implementation of SSH2
+COMMENT=	Pure Java implementation of SSH2
 
 USES=		zip
 USE_JAVA=	yes

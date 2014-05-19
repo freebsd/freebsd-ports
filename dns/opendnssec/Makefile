@@ -3,6 +3,7 @@
 
 PORTNAME=	opendnssec
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
@@ -47,13 +48,13 @@ SQLITE_USE=	yes
 .if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--with-database-backend=mysql
 USE_MYSQL=	compat
-PORTDATA=	migrate_adapters_1.mysql migrate_keyshare_mysql.pl \
+SCRIPTDATA=	migrate_adapters_1.mysql migrate_keyshare_mysql.pl \
 		migrate_zone_delete.mysql migrate_id_mysql.pl migrate_to_ng_mysql.pl
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 BUILD_DEPENDS+=	sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3
-PORTDATA=	database_create.sqlite3 migrate_keyshare_sqlite3.pl \
+SCRIPTDATA=	database_create.sqlite3 migrate_keyshare_sqlite3.pl \
 		migrate_adapters_1.sqlite3 migrate_to_ng_sqlite.pl
 .endif
 
@@ -74,10 +75,7 @@ post-install:
 		@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
-	${INSTALL_DATA} ${PORTDATA:S|^|${WRKSRC}/enforcer/utils/|} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${SCRIPTDATA:S|^|${WRKSRC}/enforcer/utils/|} ${STAGEDIR}${DATADIR}
 #	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/var/opendnssec
 
 .include <bsd.port.mk>

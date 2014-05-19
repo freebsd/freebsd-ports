@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-08-11 21:54:41.000000000 +0000
+--- Makefile.in.orig	2013-11-20 14:58:55.000000000 +0000
 +++ Makefile.in
-@@ -826,10 +826,10 @@ host=@host@
+@@ -824,10 +824,10 @@ host=@host@
  target=@target@
  
  ifeq (${target}, ${host})
@@ -14,7 +14,7 @@
  
  else
    target_prefix=${prefix}/${target}
-@@ -886,10 +886,10 @@ install:
+@@ -884,10 +884,10 @@ install:
  	# pre-built and packaged with sources.
  	if [ -r docs/polyorb_ug.html ]; \
  	then \

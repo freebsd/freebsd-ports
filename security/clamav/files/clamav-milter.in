@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: clamav_milter
-# REQUIRE: LOGIN clamd
+# REQUIRE: LOGIN clamav_clamd
 # BEFORE: mail
 # KEYWORD: shutdown
 

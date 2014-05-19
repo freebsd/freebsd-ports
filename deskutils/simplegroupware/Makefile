@@ -16,16 +16,13 @@ USE_APACHE_RUN=	22
 USE_MYSQL=	yes
 USE_PHP=	mysql
 
-PKGMESSAGE=	${WRKDIR}/${PORTNAME}/pkg-message
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-do-install:
-	${MKDIR} ${WWWDIR}/
-	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${WWWDIR}/
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+SHAREOWN=	${WWWOWN}
+SHAREGRP=	${WWWGRP}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

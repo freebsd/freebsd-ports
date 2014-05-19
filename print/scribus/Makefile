@@ -27,12 +27,11 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
-USE_XZ=		yes
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	libartlgpl2 libxml2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
-USES=		cmake desktop-file-utils pkgconfig shared-mime-info
+USES=		cmake desktop-file-utils pkgconfig shared-mime-info tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -Wno-ferror-limit

@@ -10,8 +10,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/3.99
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fast MP3 encoder kit
 
-USES=		gmake iconv
-USE_AUTOTOOLS=	libtool
+USES=		gmake iconv libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest

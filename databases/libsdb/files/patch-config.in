@@ -1,13 +1,13 @@
---- config.in.orig	Sat Feb 19 01:20:21 2005
-+++ config.in	Tue Sep 13 01:40:14 2005
-@@ -78,21 +78,22 @@
+--- config.in.orig	2008-04-30 16:38:02.000000000 +0800
++++ config.in	2014-05-16 10:25:15.024329118 +0800
+@@ -81,21 +81,22 @@ sdbd: sdbd.o sdb-config
  	$(CC) -I. -L. -lsdb $(LDFLAGS) -o $@ sdbd.o
  
  install-man:
 -	mkdir -p $(MANDIR)/man3 && cp $(MAN3) $(MANDIR)/man3
 -	mkdir -p $(MANDIR)/man8 && cp $(MAN8) $(MANDIR)/man8
-+	$(BSD_INSTALL_MAN) $(MAN3) $(MANDIR)/man3
-+	$(BSD_INSTALL_MAN) $(MAN8) $(MANDIR)/man8
++	$(BSD_INSTALL_MAN) $(MAN3) $(DESTDIR)$(MANDIR)/man3
++	$(BSD_INSTALL_MAN) $(MAN8) $(DESTDIR)$(MANDIR)/man8
  
  uninstall-man:
  	cd $(MANDIR)/man3 && rm -f $(MAN3)
@@ -15,15 +15,15 @@
  
  install-prog: $(PROGS)
 -	mkdir -p $(BINDIR) && cp $(PROGS) $(BINDIR)
-+	$(BSD_INSTALL_PROGRAM) sdb_client sdbd_client sdbd $(BINDIR)
-+	$(BSD_INSTALL_SCRIPT) sdb-config $(BINDIR)
++	$(BSD_INSTALL_PROGRAM) sdb_client sdbd_client sdbd $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_SCRIPT) sdb-config $(DESTDIR)$(BINDIR)
  
  uninstall-prog:
  	cd $(BINDIR) && rm -f $(PROGS)
  
  install-header:
 -	mkdir -p $(INCDIR) && cp $(HEADERS) $(INCDIR)
-+	$(BSD_INSTALL_DATA) $(HEADERS) $(INCDIR)
++	$(BSD_INSTALL_DATA) $(HEADERS) $(DESTDIR)$(INCDIR)
  
  uninstall-header:
  	cd $(INCDIR) && rm -f $(HEADERS)

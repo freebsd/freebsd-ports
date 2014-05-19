@@ -2,6 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	9.10.0.1
+PORTREVISION=	2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -34,7 +35,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=	IPV6 SSL THREADS SIGCHASE IDN
-OPTIONS_DEFINE=		IDN LARGE_FILE \
+OPTIONS_DEFINE=		IDN LARGE_FILE GOST \
 			FIXED_RRSET SIGCHASE IPV6 THREADS GSSAPI FILTER_AAAA
 OPTIONS_RADIO=	CRYPTO
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
@@ -55,6 +56,7 @@ FILTER_AAAA_DESC=	Enable filtering of AAAA records
 CRYPTO_DESC=		Choose which crypto engine to use
 NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 GEOIP_DESC=		Allow geographically based ACL.
+GOST_DESC=		Enable GOST ciphers, needs SSL (see help)
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -96,6 +98,8 @@ NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
 GEOIP_CONFIGURE_WITH=	geoip
 GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+
+GOST_CONFIGURE_WITH=	gost
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
 DLZ_POSTGRESQL_USE=		pgsql=yes
@@ -150,6 +154,9 @@ PLIST_SUB+=	NOBASE="" BASE="@comment "
 SUB_LIST+=	NOBASE="" BASE="@comment "
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
+.if ${PORT_OPTIONS:MGOST}
+WITH_OPENSSL_PORT=yes
+.endif
 .else
 ETCDIR=		${PREFIX}/etc
 PLIST_SUB+=	NOBASE="@comment " BASE=""

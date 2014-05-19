@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_jail
-PORTVERSION=	1.73
+PORTVERSION=	1.77
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,7 +14,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/pkg_jail bin/pkg_update \
 		man/man1/pkg_jail.1.gz man/man1/pkg_update.1.gz
 PORTDOCS=	README
-MAN1=		pkg_jail.1 pkg_update.1
+LMAN1=		pkg_jail.1 pkg_update.1
 
 OPTIONS_DEFINE=	DOCS
 
@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/pkg_jail ${FILESDIR}/pkg_update \
 		${STAGEDIR}${PREFIX}/bin/
-.for i in ${MAN1}
+.for i in ${LMAN1}
 	${INSTALL_MAN} ${FILESDIR}/${i} ${STAGEDIR}${PREFIX}/man/man1/
 .endfor
 .if ${PORT_OPTIONS:MDOCS}

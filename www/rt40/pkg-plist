@@ -18,7 +18,7 @@ etc/rt40/schema.SQLite
 etc/rt40/schema.mysql
 @exec chmod 0750 %D/etc/rt40
 @exec chgrp rt %D/etc/rt40
-@group
+@group wheel
 %%SITE_PERL%%/RT.pm
 %%SITE_PERL%%/RT/ACE.pm
 %%SITE_PERL%%/RT/ACL.pm
@@ -232,7 +232,7 @@ sbin/rt-test-dependencies
 sbin/rt-validate-aliases
 sbin/rt-validator
 sbin/standalone_httpd
-@group
+@group wheel
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-2.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.0
@@ -265,6 +265,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/network-diagram.svg
 %%PORTDOCS%%%%DOCSDIR%%/schema.dot
 %%PORTDOCS%%%%DOCSDIR%%/security.pod
+%%PORTDOCS%%%%DOCSDIR%%/writing_extensions.pod
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.SQLite
@@ -342,6 +343,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.SQLite
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.9.8/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0-customfield-checkbox-extension
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc2/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc4/schema.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.0rc4/schema.Pg
@@ -1754,3 +1756,4 @@ sbin/standalone_httpd
 @dirrmtry %%SITE_PERL%%/RT/Action
 @dirrmtry %%SITE_PERL%%/RT
 @dirrmtry etc/rt40
+

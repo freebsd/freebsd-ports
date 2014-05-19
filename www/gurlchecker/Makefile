@@ -3,7 +3,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.10.1
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	547
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Gnome program to check a page/website for broken links
 
-LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2
+LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
 
 OPTIONS_DEFINE=	CROCO TIDY CLAMAV GNUTLS
 CROCO_DESC=Library for CSS2 validation
@@ -37,25 +37,25 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCROCO}
-LIB_DEPENDS+=	croco-0.6.3:${PORTSDIR}/textproc/libcroco
+LIB_DEPENDS+=	libcroco-0.6.so:${PORTSDIR}/textproc/libcroco
 .else
 CONFIGURE_ARGS+=	--disable-croco
 .endif
 
 .if ${PORT_OPTIONS:MTIDY}
-LIB_DEPENDS+=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS+=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib
 .else
 CONFIGURE_ARGS+=	--disable-tidy
 .endif
 
 .if ${PORT_OPTIONS:MCLAMAV}
-LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	libclamav.so:${PORTSDIR}/security/clamav
 .else
 CONFIGURE_ARGS+=	--disable-clamav
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif

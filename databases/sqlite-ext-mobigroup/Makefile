@@ -28,7 +28,6 @@ PLIST_DIRS=	libexec/${DIST_SUBDIR}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPRESS}
@@ -65,41 +64,41 @@ do-build:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/${DIST_SUBDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MCOMPRESS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/ext/_compress/libsqlitecompress.so ${PREFIX}/libexec/${DIST_SUBDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/ext/_compress/libsqlitecompress.so ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
 .endif
 .if ${PORT_OPTIONS:MINET}
-	@${INSTALL_PROGRAM} ${WRKSRC}/ext/inet/libsqliteipv4.so ${PREFIX}/libexec/${DIST_SUBDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/ext/inet/libsqliteipv4.so ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
 .	if ${PORT_OPTIONS:MDOCS}
 		@${SED} '/\/\*/d;/\*\//,$$d' ${WRKSRC}/ext/inet/ipv4-ext.c > ${WRKSRC}/ext/inet/README-ipv4.txt
-		@${INSTALL_DATA} ${WRKSRC}/ext/inet/README-ipv4.txt ${DOCSDIR}
+		@${INSTALL_DATA} ${WRKSRC}/ext/inet/README-ipv4.txt ${STAGEDIR}${DOCSDIR}
 .	endif
 .	if ${PORT_OPTIONS:MEXAMPLES}
-		@${INSTALL_DATA} ${WRKSRC}/ext/inet/ipv4-ext.sql ${EXAMPLESDIR}
+		@${INSTALL_DATA} ${WRKSRC}/ext/inet/ipv4-ext.sql ${STAGEDIR}${EXAMPLESDIR}
 .	endif
 .endif
 .if ${PORT_OPTIONS:MENV}
-	@${INSTALL_PROGRAM} ${WRKSRC}/ext/env/libsqliteenv.so ${PREFIX}/libexec/${DIST_SUBDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/ext/env/libsqliteenv.so ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
 .	if ${PORT_OPTIONS:MDOCS}
 		@${SED} '/\/\*/d;/\*\//,$$d' ${WRKSRC}/ext/env/env.c > ${WRKSRC}/ext/env/README-env.txt
-		@${INSTALL_DATA} ${WRKSRC}/ext/env/README-env.txt ${DOCSDIR}
+		@${INSTALL_DATA} ${WRKSRC}/ext/env/README-env.txt ${STAGEDIR}${DOCSDIR}
 .	endif
 .endif
 .if ${PORT_OPTIONS:MMD5}
-	@${INSTALL_PROGRAM} ${WRKSRC}/ext/md5/libsqlitemd5.so ${PREFIX}/libexec/${DIST_SUBDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/ext/md5/libsqlitemd5.so ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
 .	if ${PORT_OPTIONS:MDOCS}
 		@${SED} '/\/\*/d;/\*\//,$$d' ${WRKSRC}/ext/md5/md5.c > ${WRKSRC}/ext/md5/README-md5.txt
-		@${INSTALL_DATA} ${WRKSRC}/ext/md5/README-md5.txt ${DOCSDIR}
+		@${INSTALL_DATA} ${WRKSRC}/ext/md5/README-md5.txt ${STAGEDIR}${DOCSDIR}
 .	endif
 .	if ${PORT_OPTIONS:MEXAMPLES}
-		@${INSTALL_DATA} ${WRKSRC}/ext/md5/md5.sql ${EXAMPLESDIR}
+		@${INSTALL_DATA} ${WRKSRC}/ext/md5/md5.sql ${STAGEDIR}${EXAMPLESDIR}
 .	endif
 .endif
 

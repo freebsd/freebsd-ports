@@ -7,7 +7,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.9.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -19,7 +19,7 @@ COMMENT=	Bayesian spam filter
 MIN_OPTIONS_VER=	${PORTNAME}-3.9.0
 
 OPTIONS_DEFINE=	SYSLOG DEBUG VERBOSE_DEBUG BNR_DEBUG PREF_EXT DAEMON \
-		CLAMAV CLAMAV_DEVEL CLAMAV_LOCAL EXTERNAL_LOOKUP \
+		CLAMAV CLAMAV_LOCAL EXTERNAL_LOOKUP \
 		USER_HOMEDIR TRUSTED_USERS VIRT_USERS LONG_USERNAMES \
 		LARGE_SCALE DOMAIN_SCALE NICESENDMAIL POSTFIX_MBC \
 		QMAIL WEBUI LIGHTTPD
@@ -37,7 +37,6 @@ BNR_DEBUG_DESC=	Debug for BNR
 PREF_EXT_DESC=	Preferences in database not in files
 DAEMON_DESC=	Daemonize dspam; speaks LMTP or DLMTP
 CLAMAV_DESC=	ClamAV support
-CLAMAV_DEVEL_DESC=	ClamAV devel version support
 CLAMAV_LOCAL_DESC=	RUN_DEPEND on selected ClamAV
 MYSQL_DESC=	MySQL 5.X.x as back-end
 MYSQL_COMPRESS_DESC=	Compress dspam <--> MySQL
@@ -74,14 +73,23 @@ OPTIONS_DEFAULT=	SYSLOG DEBUG DAEMON CLAMAV CLAMAV_LOCAL \
 			HASH MYSQL MYSQL_COMPRESS PGSQL SQLITE3
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5
-USE_AUTOTOOLS=	libtool
+USES=		perl5 libtool shebangfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	${PTHREAD_CFLAGS}
+
+SHEBANG_FILES=	src/tools/dspam_logrotate \
+		src/tools/dspam_notify.pl \
+		src/tools/dspam_train.in \
+		webui/cgi-bin/templates/de/strings.pl \
+		webui/cgi-bin/templates/strings.pl \
+		webui/cgi-bin/templates/fr/strings.pl \
+		webui/cgi-bin/templates/es-es/strings.pl \
+		webui/cgi-bin/templates/pt-br/strings.pl \
+		webui/cgi-bin/*.cgi
 
 .ifdef(GDBS)
 CFLAGS+=	-g -DDEBUG
@@ -172,15 +180,6 @@ _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 CONFIGURE_ARGS+=	--enable-clamav
 .	if ${PORT_OPTIONS:MCLAMAV_LOCAL}
 RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
-SUB_LIST+=	CLAMD=clamd
-.	else
-SUB_LIST+=	CLAMD=
-.	endif
-.endif
-.if ${PORT_OPTIONS:MCLAMAV_DEVEL}
-CONFIGURE_ARGS+=	--enable-clamav
-.	if ${PORT_OPTIONS:MCLAMAV_LOCAL}
-RUN_DEPENDS+=	clamav-devel>=0:${PORTSDIR}/security/clamav-devel
 SUB_LIST+=	CLAMD=clamd
 .	else
 SUB_LIST+=	CLAMD=
@@ -490,10 +489,6 @@ pre-configure:
 .endif
 
 post-install:
-	${CP} ${WRKSRC}/src/dspam.conf ${WRKSRC}/src/dspam.conf.sample
-	cd ${WRKSRC}/src/ && \
-		${INSTALL_DATA} dspam.conf.sample ${STAGEDIR}${PREFIX}/etc
-
 ########
 # stupid hack until I figure out where/how to patch
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
@@ -525,9 +520,6 @@ post-install:
 .endif	# NOPORTEXAMPLES
 
 .if ${PORT_OPTIONS:MWEBUI}
-.	for I in admin.cgi admingraph.cgi configure.pl dspam.cgi graph.cgi templates/strings.pl
-		${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/webui/cgi-bin/${I}
-.	endfor
 	${MV} ${WRKSRC}/webui/cgi-bin/configure.pl ${WRKSRC}/webui/cgi-bin/configure.pl.sample
 	cd ${WRKSRC}/webui/cgi-bin && ${MKDIR} ${STAGEDIR}${WWWDIR} && \
 		${INSTALL_SCRIPT} configure.pl.sample ${STAGEDIR}${WWWDIR}/ && \

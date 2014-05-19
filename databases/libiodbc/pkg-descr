@@ -5,9 +5,9 @@ function sequence checking, driver function invocation, etc.
 
 Applications linked with the iODBC driver manager will be able - through ODBC
 function calls - to access simultaneously different types of data sources
-within one process through suitable ODBC drivers. 
-		
+within one process through suitable ODBC drivers.
+
 iODBC is freely redistributable under either the GNU Library General Public
 Licence (LGPL) or the BSD licence.
 
-WWW:     http://www.iodbc.org/
+WWW: http://www.iodbc.org/

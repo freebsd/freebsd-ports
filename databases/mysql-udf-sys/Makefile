@@ -18,12 +18,8 @@ WRKSRC=		${WRKDIR}
 PLIST_FILES=	lib/mysql/plugin/lib_mysqludf_sys.so
 PLIST_DIRS=	lib/mysql/plugin
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|; s|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

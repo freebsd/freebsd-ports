@@ -17,6 +17,7 @@ include/GL/wmesa.h
 %%NEW%%lib/.libGL/libGL.la
 lib/.libGL/libGL.so
 lib/.libGL/libGL.so.1
+%%NEW%%lib/.libGL/libGL.so.1.2.0
 libdata/pkgconfig/gl.pc
 @dirrm lib/.libGL
 @dirrmtry include/GL

@@ -18,40 +18,30 @@ USE_PHP=	curl \
 		session \
 		xml
 
+USES=	gettext
+
 WANT_PHP_MOD=	yes
 
-OPTIONS_DEFINE=	ADDONS PGSQL NLS
+OPTIONS_DEFINE=	ADDONS NLS
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	PGSQL MYSQL
+OPTIONS_DEFAULT=	NLS MYSQL
 ADDONS_DESC=	install additional workgroup features (addons)
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+NLS_USES=		gettext
+PGSQL_USE=	PGSQL=server
+MYSQL_USE=	MYSQL=server
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql74-server
-.else
-USE_MYSQL=	server
-.endif
-
-.if ${PORT_OPTIONS:MADDONS}
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-addons-${PORTVERSION}${EXTRACT_SUFX}
-PLIST_SUB+=	ADDONS=""
-.else
-PLIST_SUB+=	ADDONS="@comment "
-.endif
-
+ADDONS_DISTFILES=	${PORTNAME}-addons-${PORTVERSION}${EXTRACT_SUFX}
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME:R}
+WRKSRC=	${WRKDIR}/${PORTNAME}
+
+SHAREOWN=	${WWWOWN}
+SHAREGRP=	${WWWGRP}
 
 do-install:
-	@${CP} -r ${WRKSRC} ${PREFIX}/www/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/moregroupware
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

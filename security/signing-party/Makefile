@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	signing-party
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
@@ -13,6 +14,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Various OpenPGP related tools
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+		p5-Net-IDN-Encode>=0:${PORTSDIR}/textproc/p5-Net-IDN-Encode \
 		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		p5-GnuPG-Interface>=0:${PORTSDIR}/security/p5-GnuPG-Interface \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
@@ -39,6 +41,11 @@ EXAMPLES=	caff/caffrc.sample gpg-mailkeys/example.gpg-mailkeysrc
 PORTEXAMPLES=	${EXAMPLES:T}
 
 PORTDOCS=	*
+
+do-extract:
+	${MKDIR} ${WRKSRC}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EXTRACT_ONLY} \
+		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/doc/signing-party/caff/caffrc\.sample|${EXAMPLESDIR}/caffrc.sample|' \

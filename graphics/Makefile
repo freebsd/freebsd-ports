@@ -507,6 +507,7 @@
     SUBDIR += libgeotiff
     SUBDIR += libgfx
     SUBDIR += libggi
+    SUBDIR += libglapi
     SUBDIR += libglesv2
     SUBDIR += libgltext
     SUBDIR += libgnomecanvas

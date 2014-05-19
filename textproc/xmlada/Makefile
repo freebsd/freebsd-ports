@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xmlada
-PORTVERSION=	4.4.0.0
-PORTREVISION=	3
+PORTVERSION=	4.4.2.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
+DISTNAME=	xmlada-gpl-${YEAR}-src
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore XML suite for the Ada language
@@ -13,12 +13,11 @@ COMMENT=	Adacore XML suite for the Ada language
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USES=		ada gmake
+YEAR=		2014
 NO_MTREE=	yes
-
-MAKE_JOBS_UNSAFE=	yes
-NO_LICENSES_INSTALL=	yes
+MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER}
+WRKSRC=		${WRKDIR}/xmlada-${YEAR}-src
 
 OPTIONS_DEFINE=	DOCS
 
@@ -45,16 +44,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/^all: \(.*\)/all: \1 docs/g' ${WRKSRC}/Makefile.in
 .endif
 
+do-build:
+	# Override build target to avoid -jX getting passed to makefile
+	# Parallel builds are handled with PROCESSORS setting
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
+
 post-install:
 	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/xmlada/_sources
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
-	   ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' -e '/share\/gps/d' \
-	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

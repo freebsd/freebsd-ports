@@ -10,7 +10,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=The "meta-port" for the SKK Japanese-input software
+COMMENT=	The "meta-port" for the SKK Japanese-input software
 
 RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORTSDIR}/japanese/skk-jisyo \
 		${LOCALBASE}/bin/skkdic-count:${PORTSDIR}/japanese/skk-tools \
@@ -23,5 +23,4 @@ SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
 
 do-install:	# empty
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,6 +16,14 @@ info/info-stnd.info
 @exec install-info %D/info/info.info %D/info/dir
 @exec install-info %D/info/texinfo %D/info/dir
 @exec install-info %D/info/info-stnd.info %D/info/dir
+man/man1/jinfo.1.gz
+man/man1/jinfokey.1.gz
+man/man1/jinstall-info.1.gz
+man/man1/jmakeinfo.1.gz
+man/man1/jtexi2dvi.1.gz
+man/man1/jtexindex.1.gz
+man/man5/jinfo.5.gz
+man/man5/jtexinfo.5.gz
 share/texinfo/texinfo.cat
 share/texinfo/texinfo.dtd
 share/texinfo/texinfo.xsl

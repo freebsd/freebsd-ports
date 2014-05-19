@@ -1,5 +1,3 @@
-libdata/ldconfig/pidgin-privacy-please
-lib/pidgin/libpidgin_pp.la
 lib/pidgin/libpidgin_pp.so
 share/locale/de/LC_MESSAGES/pidgin-privacy-please.mo
 share/locale/pl/LC_MESSAGES/pidgin-privacy-please.mo

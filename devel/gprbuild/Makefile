@@ -3,23 +3,20 @@
 
 PORTNAME=	gprbuild
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gprbuild-gpl-${YEAR}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore multi-language software build tool
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS+=	xmlada>=3.2:${PORTSDIR}/textproc/xmlada \
-		gnat_util>=2013:${PORTSDIR}/lang/gnat_util
+BUILD_DEPENDS+=	xmlada>=4.4:${PORTSDIR}/textproc/xmlada \
+		gnat_util>=20140422:${PORTSDIR}/lang/gnat_util
 
-WRKSRC=		${WRKDIR}/gprbuild-${YEAR}-src
-YEAR=		2013
-SNAPSHOT=	20130416
+YEAR=		2014
+SNAPSHOT=	20140417
 GNU_CONFIGURE=	yes
 USES=		ada gmake
 MAKE_ARGS+=	BUILD=production
@@ -33,13 +30,17 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-build:
 #	Recreate the do-build target without -j parameter
-#	It interferes with PROCESSORS configure argument
+#	It interferes with PROCESSORS make argument
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,@AUXPREFIX@,${PREFIX}/gcc-aux," \
-	  ${WRKSRC}/share/gprconfig/compilers.xml
+		${WRKSRC}/share/gprconfig/compilers.xml
+	# Try_Help is part of GNAT Pro, but it's not in GCC 4.9 yet
+	# It's not strictly needed. Before it just repeated usage.
+	# There are other messages; just suppress Try_Help on 4 files
+	${REINPLACE_CMD} -e '/Try_Help;/d' ${WRKSRC}/src/*-main.adb
 
 post-install:
 .if !${PORT_OPTIONS:MDOCS}

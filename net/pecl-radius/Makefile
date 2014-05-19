@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radius
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.7
 CATEGORIES=	net security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

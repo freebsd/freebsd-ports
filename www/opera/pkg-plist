@@ -1,4 +1,5 @@
 bin/opera
+etc/libmap.d/opera.conf
 lib/opera/gstreamer/plugins/libgstoperamatroska.so
 lib/opera/gstreamer/plugins/libgstoperavp8.so
 lib/opera/liboperagtk2.so
@@ -473,3 +474,4 @@ share/mime/packages/opera-extension.xml
 @dirrm lib/opera/gstreamer/plugins
 @dirrm lib/opera/gstreamer
 @dirrm lib/opera
+@dirrmtry etc/libmap.d

@@ -4,7 +4,7 @@ installed (see note 4).  But because of the security risk of downloading files
 without checksums, they can only be installed manually as follows:
 
 cd /usr/ports/math/sage
-make
+make build
 work/sage-*/sage -optional			# See note 1.
 work/sage-*/sage -i $OPTIONAL_PACKAGE_NAME	# See note 2.
 make install					# See note 3.

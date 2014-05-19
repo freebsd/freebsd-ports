@@ -2,21 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	qcl
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	science math
 MASTER_SITES=	http://tph.tuwien.ac.at/~oemer/tgz/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quantum computer simulator
 
 LICENSE=	GPLv2 # (or later)
 
-OPTIONS_DEFINE=	PLOTUTILS
-PLOTUTILS_DESC=	Plotting support via plotutils
-
-USES=		bison gmake readline
+USES=		bison gmake readline tar:tgz
 USE_GCC=	any
 
 PLIST_FILES=	bin/qcl \
@@ -27,6 +22,9 @@ PLIST_FILES=	bin/qcl \
 		%%DATADIR%%/shor.qcl %%DATADIR%%/test.qcl
 PLIST_DIRS=	%%DATADIR%%
 
+OPTIONS_DEFINE=		PLOTUTILS
+
+PLOTUTILS_DESC=		Plotting support via plotutils
 PLOTUTILS_LIB_DEPENDS=	libplotter.so:${PORTSDIR}/graphics/plotutils
 PLOTUTILS_CXXFLAGS=	-I${LOCALBASE}/include -DQCL_PLOT
 PLOTUTILS_LDFLAGS=	-L${LOCALBASE}/lib -lplotter

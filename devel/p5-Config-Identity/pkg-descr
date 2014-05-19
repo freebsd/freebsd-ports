@@ -1,0 +1,7 @@
+Config::Identity is a tool for loadiing (and optionally decrypting via GnuPG)
+user/pass identity information
+
+For GitHub API access, an identity is a "login"/"token" pair.
+For PAUSE access, an identity is a "user"/"password" pair.
+
+WWW: http://search.cpan.org/dist/Config-Identity/

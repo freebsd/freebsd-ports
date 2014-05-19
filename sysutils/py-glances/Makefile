@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glances
-PORTVERSION=	1.7.6
-PORTREVISION=	1
+PORTVERSION=	1.7.7
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/nicolargo/glances/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +26,7 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 PLIST_FILES=	%%ETCDIR%%/glances.conf.sample \
 		man/man1/glances.1.gz \
+		%%NLS%%share/locale/de/LC_MESSAGES/glances.mo \
 		%%NLS%%share/locale/es/LC_MESSAGES/glances.mo \
 		%%NLS%%share/locale/fr/LC_MESSAGES/glances.mo \
 		%%NLS%%share/locale/it/LC_MESSAGES/glances.mo \
@@ -41,7 +41,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/glances
 	${INSTALL_DATA} ${WRKSRC}/conf/glances.conf ${STAGEDIR}${PREFIX}/etc/glances/glances.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/man/glances.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-.for lang in es fr it pt_BR zh_CN
+.for lang in de es fr it pt_BR zh_CN
 	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}/LC_MESSAGES/glances.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/
 .endfor

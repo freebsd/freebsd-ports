@@ -2,10 +2,10 @@ Index: bgpd/printconf.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/printconf.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.10
-diff -u -p -r1.1.1.7 -r1.10
+retrieving revision 1.11
+diff -u -p -r1.1.1.7 -r1.11
 --- bgpd/printconf.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/printconf.c	8 Dec 2012 20:17:59 -0000	1.10
++++ bgpd/printconf.c	16 May 2014 00:36:26 -0000	1.11
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: printconf.c,v 1.70 2009/06/06 01:10:29 claudio Exp $	*/
 +/*	$OpenBSD: printconf.c,v 1.88 2012/09/23 09:39:18 claudio Exp $	*/
@@ -379,7 +379,7 @@ diff -u -p -r1.1.1.7 -r1.10
  	case MRT_ALL_IN:
  		return "all in";
  	case MRT_ALL_OUT:
-@@ -541,13 +648,12 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
+@@ -541,12 +648,12 @@ print_mrt(u_int32_t pid, u_int32_t gid, 
  			printf("%s%sdump ", prep, prep2);
  			if (m->rib[0])
  				printf("rib %s ", m->rib);
@@ -392,12 +392,11 @@ diff -u -p -r1.1.1.7 -r1.10
  			else
 -				printf("%s %s %d\n", mrt_type(m->type),
 -				    MRT2MC(m)->name,
--				    MRT2MC(m)->ReopenTimerInterval);
-+				printf(" %d\n", MRT2MC(m)->ReopenTimerInterval);
++				printf(" %ld\n",
+ 				    MRT2MC(m)->ReopenTimerInterval);
  		}
  }
- 
-@@ -612,26 +718,34 @@ peer_compare(const void *aa, const void 
+@@ -612,26 +719,34 @@ peer_compare(const void *aa, const void 
  void
  print_config(struct bgpd_config *conf, struct rib_names *rib_l,
      struct network_head *net_l, struct peer *peer_l,

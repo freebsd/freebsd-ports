@@ -35,19 +35,17 @@ PORTDOCS=	README
 
 CFLAGS+=	-I${PREFIX}/include -fPIC -lm -shared
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${SRCFILE} -o ${LIBFILE}
 
 do-install:
-	@${INSTALL} -d ${PREFIX}/libexec/${DIST_SUBDIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE} ${INST_DIR}
+	@${INSTALL} -d ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE} ${STAGEDIR}${INST_DIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@${CP} ${WRKDIR}/${PORTDOCS} ${DOCSDIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@${CP} ${WRKDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

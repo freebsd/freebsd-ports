@@ -6,7 +6,7 @@ PORTVERSION=	0.28
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Lightweight Open Sound Control implementation
 
 LICENSE=	LGPL21

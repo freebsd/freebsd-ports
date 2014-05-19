@@ -1,4 +1,4 @@
---- Makefile.in.orig	2013-06-30 18:36:28.000000000 +0000
+--- Makefile.in.orig	2014-03-25 08:03:23.000000000 +0000
 +++ Makefile.in
 @@ -83,72 +83,65 @@ run_test_valgrind: test
  	cd dom/test; valgrind --tool=memcheck --leak-check=full ./testxml -auto

@@ -1,6 +1,6 @@
---- share/gprconfig/targetset.xml.orig	2012-12-19 17:55:05.000000000 +0000
+--- share/gprconfig/targetset.xml.orig	2014-02-13 04:59:56.000000000 +0000
 +++ share/gprconfig/targetset.xml
-@@ -52,8 +52,8 @@
+@@ -66,8 +66,8 @@
  
    <!-- x86-solaris -->
    <targetset>
@@ -11,9 +11,12 @@
    </targetset>
  
    <!-- x86-windows (mingw) -->
-@@ -144,10 +144,32 @@
+@@ -156,19 +156,34 @@
+     <target>pent.*-cygwin.*</target>
+   </targetset>
  
-   <!-- Freebsd -->
+-  <!-- x86 Freebsd -->
++  <!-- Freebsd -->
    <targetset>
 -    <target>x86-freebsd</target>
      <target>i.86-.*freebsd.*</target>
@@ -21,12 +24,16 @@
 +    <target>x86_64-.*-freebsd.*</target>
    </targetset>
  
+-  <!-- x86_64 Freebsd -->
 +  <!-- DragonFlyBSD -->
-+  <targetset>
+   <targetset>
+-    <target>x86_64-freebsd</target>
+-    <target>x86_64-.*freebsd.*</target>
+-    <target>amd64-.*freebsd.*</target>
 +    <target>i.86-.*-dragonfly.*</target>
 +    <target>x86_64-.*-dragonfly.*</target>
-+  </targetset>
-+
+   </targetset>
+ 
 +  <!-- NetBSD -->
 +  <targetset>
 +    <target>i.86-.*-netbsd.*</target>

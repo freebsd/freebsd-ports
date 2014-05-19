@@ -1,14 +1,20 @@
+%%DATADIR%%/music/A New Journey.ogg
+%%DATADIR%%/music/Aberrations.ogg
 %%DATADIR%%/music/Advanced Simulacra.ogg
 %%DATADIR%%/music/Awakening.ogg
 %%DATADIR%%/music/By-Product.ogg
 %%DATADIR%%/music/Coherence.ogg
 %%DATADIR%%/music/Deprecation.ogg
+%%DATADIR%%/music/Enemy Unknown.ogg
 %%DATADIR%%/music/Inevitable.ogg
 %%DATADIR%%/music/Media Threat.ogg
+%%DATADIR%%/music/Nebula.ogg
+%%DATADIR%%/music/Orbital Elevator.ogg
+%%DATADIR%%/music/Through Space.ogg
 %%DATADIR%%/music/lose/Chimes They Fade.ogg
 %%DATADIR%%/music/lose/March Thee to Dis.ogg
 %%DATADIR%%/music/win/Apex Aleph.ogg
-@dirrm %%DATADIR%%/music/lose
 @dirrm %%DATADIR%%/music/win
+@dirrm %%DATADIR%%/music/lose
 @dirrmtry %%DATADIR%%/music
 @dirrmtry %%DATADIR%%

@@ -9,8 +9,8 @@ COMMENT=	A malware identification and classification tool
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plusvic
-GH_TAGNAME=	2.1.0
-GH_COMMIT=	1f0559b
+GH_TAGNAME=	v2.1.0
+GH_COMMIT=	6530e73
 
 USE_AUTOTOOLS=	libtool aclocal autoheader automake
 GNU_CONFIGURE=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake-fedora
-PORTVERSION=	1.0.5
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/c/m/cmake-fedora/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-modules-only
@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-modules-only
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Set of cmake modules for fedora developers
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 WRKSRC=		${WRKDIR}/Modules
 NO_BUILD=	yes

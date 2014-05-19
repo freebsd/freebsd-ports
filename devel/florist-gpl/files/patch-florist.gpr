@@ -1,4 +1,4 @@
---- florist.gpr.orig	2012-05-10 13:32:15.000000000 +0000
+--- florist.gpr.orig	2014-04-06 18:13:12.000000000 +0000
 +++ florist.gpr
 @@ -1,12 +1,9 @@
  project Florist is

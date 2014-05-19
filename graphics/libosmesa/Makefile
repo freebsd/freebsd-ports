@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmesa
-PORTVERSION=	10.1.1
+PORTVERSION=	10.1.3
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
@@ -14,11 +14,10 @@ COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
-USES+=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig tar:bzip2 libtool
 USE_LDCONFIG=	yes
 USE_PYTHON=	2
 USE_XORG=	x11 xext
-USE_AUTOTOOLS=	autoconf automake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-osmesa \
 		--disable-driglx-direct \
@@ -32,8 +31,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 MAKE_JOBS_UNSAFE=yes
 
-.include <bsd.port.pre.mk>
-
 INCLUDES=	gl.h gl_mangle.h glext.h glx.h glx_mangle.h \
 		glxext.h osmesa.h wglext.h wmesa.h
 
@@ -41,20 +38,16 @@ post-patch:
 	${REINPLACE_CMD} \
 	    -e '/^OSMESA_VERSION=/s|8|9|' \
 	    -e 's|-fno-builtin-memcmp||g' \
-	    ${WRKSRC}/configure.ac
-
-pre-configure:
-#	following line is borrowed from graphics/libGL/bsd.mesalib.mk
-	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=1 ${SH} autogen.sh
+	    ${WRKSRC}/configure
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/Mesa/GL
 .for inc in ${INCLUDES}
 	${INSTALL_DATA} ${WRKSRC}/include/GL/${inc} ${STAGEDIR}${PREFIX}/include/Mesa/GL/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/src/mesa/drivers/osmesa/.libs/libOSMesa.so.9 ${STAGEDIR}${PREFIX}/lib
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libOSMesa.so.9
-	${LN} -s libOSMesa.so.9 ${STAGEDIR}${PREFIX}/lib/libOSMesa.so
+	${INSTALL_LIB} ${WRKSRC}/src/mesa/drivers/osmesa/.libs/libOSMesa.so.9.0.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -s libOSMesa.so.9.0.0 ${STAGEDIR}${PREFIX}/lib/libOSMesa.so.9
+	${LN} -s libOSMesa.so.9.0.0 ${STAGEDIR}${PREFIX}/lib/libOSMesa.so
 	${INSTALL_DATA} ${WRKSRC}/src/mesa/drivers/osmesa/osmesa.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/osmesa.pc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,10 +1,9 @@
 include/mate-keyring-1/mate-keyring-memory.h
 include/mate-keyring-1/mate-keyring-result.h
 include/mate-keyring-1/mate-keyring.h
-lib/libmate-keyring.a
-lib/libmate-keyring.la
 lib/libmate-keyring.so
 lib/libmate-keyring.so.1
+lib/libmate-keyring.so.1.0.2
 libdata/pkgconfig/mate-keyring-1.pc
 share/doc/mate-keyring/ch01.html
 share/doc/mate-keyring/home.png

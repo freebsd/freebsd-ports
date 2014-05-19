@@ -1,5 +1,5 @@
---- MString.H.orig	Thu Jun 22 16:58:26 2000
-+++ MString.H	Sun Oct  1 22:32:31 2006
+--- MString.H.orig	2000-06-22 23:58:26.000000000 +0900
++++ MString.H	2014-04-01 01:01:42.000000000 +0900
 @@ -66,7 +66,7 @@
  #ifndef ___STRING_H___
  #define ___STRING_H___
@@ -17,14 +17,22 @@
  
  //#define STRING_DEBUG
  
-@@ -407,6 +408,10 @@
-     friend String& Cut(String      s) ;
-     friend String& Cut(const char *s) ;
- } ;
-+
-+String Mid(String, int, int) ;
-+String Left(const String&, int) ;
-+String Right(const String&, int) ;
+@@ -307,15 +308,15 @@
  
- // 整数から String へ
- String IntToString(int i) ;
+     // m 文字目から n 文字
+     String& Mid(int m, int n = 1) ;
+-    friend String Mid(String s, int m, int n = 1) ;
++    friend String Mid(String s, int m, int n) ;
+ 
+     // 左から n 文字
+     String& Left(int n = 1) ;
+-    friend String Left(const String& s, int n = 1) ;
++    friend String Left(const String& s, int n) ;
+ 
+     // 右から n 文字
+     String& Right(int n = 1) ;
+-    friend String Right(const String& s, int n = 1) ;
++    friend String Right(const String& s, int n) ;
+ 
+ 	String FileDirectory() const ;
+ 	String FileNamePart() const ;

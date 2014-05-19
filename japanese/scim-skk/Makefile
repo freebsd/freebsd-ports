@@ -4,7 +4,7 @@
 
 PORTNAME=	scim-skk
 PORTVERSION=	0.5.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	scim-imengine/18121
@@ -15,24 +15,18 @@ COMMENT=	SCIM IMEngine module like SKK
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv libtool pkgconfig
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+INSTALL_TARGET=	install-strip
+
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} "s|LOCALBASE|${LOCALBASE}|" ${WRKSRC}/src/scim_skk_prefs.h
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
-	@${ECHO}
 
 .include <bsd.port.mk>

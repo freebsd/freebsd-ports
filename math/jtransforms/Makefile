@@ -10,7 +10,10 @@ DISTNAME=	jtransforms-${PORTVERSION}-src
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A multithreaded FFT library written in pure Java
 
-USE_BZIP2=	yes
+LICENSE=	GPLv2 LGPL20 MPL
+LICENSE_COMB=	multi
+
+USES=		tar:bzip2
 USE_JAVA=	1.6+
 USE_ANT=	yes
 
@@ -18,8 +21,7 @@ WRKSRC=		${WRKDIR}/JTransforms
 
 PLIST_FILES=	%%JAVAJARDIR%%/jtransforms.jar
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/jtransforms-2.4.jar ${JAVAJARDIR}/jtransforms.jar
+	@${INSTALL_DATA} ${WRKSRC}/jtransforms-2.4.jar ${STAGEDIR}${JAVAJARDIR}/jtransforms.jar
 
 .include <bsd.port.mk>

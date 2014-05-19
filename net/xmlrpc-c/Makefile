@@ -20,11 +20,9 @@ LIBWWW_DESC=	Compile with libwww support
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-devel-[0-9]*
 
 USES=		gmake perl5
-USE_AUTOTOOLS=	libtool:env
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
-		CFLAGS_COMMON="${CFLAGS}"
+MAKE_ARGS=	CFLAGS_COMMON="${CFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 

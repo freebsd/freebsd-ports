@@ -5,8 +5,6 @@ PORTNAME=	ettercap
 PORTVERSION=	0.8.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	GH \
-		GHC
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network sniffer/interceptor/injector/logger for switched LANs

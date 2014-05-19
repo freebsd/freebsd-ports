@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	2014-05-14 17:35:13.000000000 -0300
++++ src/Makefile.in	2014-05-14 17:35:48.000000000 -0300
+@@ -1117,11 +1117,11 @@
+ 		mkdir -p $(DESTDIR)$(sysconfdir); \
+ 		chmod 755 $(DESTDIR)$(sysconfdir); \
+ 	fi
+-	-if test ! -f $(DESTDIR)$(sysconfdir)/dspam.conf; then \
+-		cp dspam.conf $(DESTDIR)$(sysconfdir)/dspam.conf; \
+-		chmod 640 $(DESTDIR)$(sysconfdir)/dspam.conf; \
+-		chown "$(dspam_owner)" $(DESTDIR)$(sysconfdir)/dspam.conf; \
+-		chgrp "$(dspam_group)" $(DESTDIR)$(sysconfdir)/dspam.conf; \
++	-if test ! -f $(DESTDIR)$(sysconfdir)/dspam.conf.sample; then \
++		cp dspam.conf $(DESTDIR)$(sysconfdir)/dspam.conf.sample; \
++		chmod 640 $(DESTDIR)$(sysconfdir)/dspam.conf.sample; \
++		chown "$(dspam_owner)" $(DESTDIR)$(sysconfdir)/dspam.conf.sample; \
++		chgrp "$(dspam_group)" $(DESTDIR)$(sysconfdir)/dspam.conf.sample; \
+ 	fi
+ 	-if test x"$(dspam_owner)" != xnone; then \
+                 chown "$(dspam_owner)" $(DESTDIR)$(bindir)/dspam; \

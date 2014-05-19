@@ -1,6 +1,4 @@
 bin/engrampa
-lib/caja/extensions-2.0/libcaja-engrampa.a
-lib/caja/extensions-2.0/libcaja-engrampa.la
 lib/caja/extensions-2.0/libcaja-engrampa.so
 libexec/engrampa/isoinfo.sh
 libexec/engrampa/rpm2cpio

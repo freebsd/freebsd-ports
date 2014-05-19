@@ -11,7 +11,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A set of (improved) artwiz fonts
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTS=		anorexia aqui cure cursor drift edges fkp gelly \

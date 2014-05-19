@@ -13,21 +13,14 @@ COMMENT=	Hyper NIKKI System, a CGI system for Electric Diary Interchange
 USES=		perl5
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-do-install:
-	@if [ -d ${DATADIR} ]; then ${RM} -rf ${DATADIR}; fi
-	${MKDIR} ${DATADIR}
-	${CP} -pR ${WRKSRC}/ ${DATADIR}
-	${CHOWN} -R 0:0 ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/hns-setup ${PREFIX}/bin/hns-setup
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/todayhns/todayhns ${PREFIX}/bin/todayhns
+PLIST_FILES=	bin/hns-setup bin/todayhns
+PORTDATA=	*
 
-post-install:
-	@cd ${WRKSRC} && ${FIND} . -type f -o -type l | \
-		${SED} 's,^\.,share/${PORTNAME},' | ${SORT} >> ${TMPPLIST}
-	@cd ${WRKSRC} && ${FIND} . -type d | \
-		${SED} 's,^\.,@dirrm share/${PORTNAME},' | ${SORT} -r \
-			>> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -pR ${WRKSRC}/ ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/hns-setup ${STAGEDIR}${PREFIX}/bin/hns-setup
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/todayhns/todayhns \
+		${STAGEDIR}${PREFIX}/bin/todayhns
 
 .include <bsd.port.mk>

@@ -15,20 +15,15 @@ MASTERDIR=	${.CURDIR}/../../deskutils/plan
 PLIST=	${WRKDIR}/PLIST
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
-NO_STAGE=	yes
+PORTDOCS=	plan_calEUC.ps
+
 post-build:
-.if !defined(NOPORTDOCS)
-	${ECHO_CMD} ${DOCSDIR:S|${PREFIX}/||}/plan_calEUC.ps > ${WRKDIR}/PLIST
-.endif
 	${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/PLIST
 
 post-install:
-	@${MKDIR} ${DATADIR}/netplan.dir
-	${CHMOD} 1777 ${DATADIR}/netplan.dir
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${.CURDIR}/files/plan_calEUC.ps ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}/netplan.dir
+	${CHMOD} 1777 ${STAGEDIR}${DATADIR}/netplan.dir
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${.CURDIR}/files/plan_calEUC.ps ${STAGEDIR}${DOCSDIR}
 
 .include	"${MASTERDIR}/Makefile"

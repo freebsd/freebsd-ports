@@ -1,63 +1,42 @@
 # $FreeBSD$
 
 PORTNAME=	atf
-PORTVERSION=	0.16
-PORTREVISION=	2
+PORTVERSION=	0.20
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/ \
+		LOCAL/jmmv
 
-MAINTAINER=	namor@hemio.de
-COMMENT=	Automated Testing Framework
+MAINTAINER=	jmmv@FreeBSD.org
+COMMENT=	C, C++ and shell libraries to write ATF-compliant test programs
 
-LICENSE=	BSD
-
-USE_LDCONFIG=	yes
-
-PROJECTHOST=	kyua
-
-MAN1=		atf-check.1 \
-		atf-sh.1 \
-		atf-test-program.1
-MAN3=		atf-c-api.3 \
-		atf-c++-api.3 \
-		atf-sh-api.3
-MAN4=		atf-test-case.4
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		libtool
 
-OPTIONS_DEFINE=	TOOLS
-OPTIONS_DEFAULT=TOOLS
-TOOLS_DESC=	Enable deprecated tools
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1000021
+.if exists(/usr/lib/libatf-c.a)
 IGNORE=	is already in the base system
 .endif
 
-.if ${PORT_OPTIONS:MTOOLS}
-CONFIGURE_ARGS+=	--enable-tools
-PLIST_SUB+=		TOOLS=""
-MAN1+=			atf-config.1 \
-			atf-report.1 \
-			atf-run.1 \
-			atf-version.1
-MAN5+=			atf-formats.5
-MAN7+=			atf.7
-.else
-PLIST_SUB+=		TOOLS="@comment "
-.endif
+OPTIONS_DEFINE=	DOCS TEST
 
-post-patch:
+.include <bsd.port.options.mk>
+
+MAKE_FLAGS+=	atf_pkgconfigdir=${PREFIX}/libdata/pkgconfig
 .if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e 's|install-docDATA[^:]||' ${WRKSRC}/Makefile.in
+MAKE_FLAGS+=	doc_DATA=
 .endif
-.if empty(PORT_OPTIONS:MEXAMPLES)
-	@${REINPLACE_CMD} -e 's|install-egDATA[^:]||' \
-			  -e 's|install-cssDATA[^:]||' ${WRKSRC}/Makefile.in
+.if empty(PORT_OPTIONS:MTEST)
+PLIST_SUB+=	TEST="@comment "
+.else
+PLIST_SUB+=	TEST=
 .endif
-	@${REINPLACE_CMD} -e 's|@atf_pkgconfigdir@|${PREFIX}/libdata/pkgconfig|' \
-	  ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+post-install:
+.if empty(PORT_OPTIONS:MTEST)
+	@${RM} -rf ${STAGEDIR}${PREFIX}/tests
+.endif
+
+.include <bsd.port.mk>

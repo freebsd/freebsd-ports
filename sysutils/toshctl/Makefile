@@ -3,19 +3,29 @@
 
 PORTNAME=	toshctl
 PORTVERSION=	0.0.0p3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freebie.miraclenet.co.th/notebook/toshctl/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command-line tool to access parts of the Toshiba hardware interface
+COMMENT=	Command-line tool to access parts of the Toshiba hardware interface
 
-ONLY_FOR_ARCHS=	i386
-PLIST_FILES=	bin/toshctl
+LICENSE=	GPLv2 # (or later)
 
 WRKSRC=		${WRKDIR}/toshctl
 
+USES=		tar:tgz
+
+PLIST_FILES=	bin/toshctl
+
+ONLY_FOR_ARCHS=	i386
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$$(CC)|$$(CXX)| ; \
+		 s|$$(CFLAGS)|$$(CXXFLAGS)|' ${WRKSRC}/Makefile
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} toshctl ${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>

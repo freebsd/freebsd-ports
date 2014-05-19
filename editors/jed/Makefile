@@ -26,7 +26,7 @@ PERMS_DESC=	Respect permissions by Root
 HOSTLOOKUP_DESC=Look-up for hostname
 
 OPTIONS_SUB=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

@@ -32,6 +32,8 @@ lib/rsyslog/lmtcpsrv.la
 lib/rsyslog/lmtcpsrv.so
 lib/rsyslog/lmzlibw.la
 lib/rsyslog/lmzlibw.so
+lib/rsyslog/mmexternal.la
+lib/rsyslog/mmexternal.so
 lib/rsyslog/ommail.la
 lib/rsyslog/ommail.so
 lib/rsyslog/omstdout.la

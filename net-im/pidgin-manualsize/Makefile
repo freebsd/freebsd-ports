@@ -3,7 +3,7 @@
 
 PORTNAME=	manualsize
 PORTVERSION=	0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://issv.org.ru/oss/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
@@ -20,12 +20,14 @@ MAKEFILE=	makefile
 
 PLIST_FILES=	lib/pidgin/manualsize.so
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 ALL_TARGET=	manualsize.so
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|-g root -m 755|-g wheel -m 755|g' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} 's/gcc/$$(CC)/' ${WRKSRC}/makefile
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pidgin
+	${INSTALL_LIB} ${WRKSRC}/manualsize.so ${STAGEDIR}${PREFIX}/lib/pidgin
 
 .include <bsd.port.mk>

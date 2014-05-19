@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	textproc www
 MASTER_SITES=	http://download.elasticsearch.org/kibana/kibana/
 
@@ -17,6 +17,6 @@ SUB_FILES=	pkg-message
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/config.js ${STAGEDIR}${WWWDIR}/config.js.sample
+	${MV} ${STAGEDIR}${WWWDIR}/config.js ${STAGEDIR}${WWWDIR}/config.js.sample
 
 .include <bsd.port.mk>

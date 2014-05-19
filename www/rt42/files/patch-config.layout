@@ -1,5 +1,5 @@
---- ./config.layout.orig	2014-01-08 20:31:41.000000000 +0000
-+++ ./config.layout	2014-01-14 07:14:21.825253688 +0000
+--- ./config.layout.orig	2014-05-06 17:59:04.000000000 +0100
++++ ./config.layout	2014-05-14 15:26:37.717215779 +0100
 @@ -103,31 +103,31 @@
  </Layout>
  
@@ -39,27 +39,6 @@
 +  customstaticdir:	${datadir}/static
 +  customlibdir:		${datadir}/lib
 +  customplugindir:	${datadir}/plugins
- </Layout>
- 
- <Layout Win32>
-@@ -149,13 +149,13 @@
-   logfiledir:		${localstatedir}/log
-   masonstatedir:	${localstatedir}/mason_data
-   sessionstatedir:	${localstatedir}/session_data
--  customdir:		${prefix}/local
--  custometcdir:		${customdir}/etc
--  customhtmldir:	${customdir}/html
--  customlexdir:		${customdir}/po
--  customstaticdir:	${customdir}/static
--  customlibdir:		${customdir}/lib
--  customplugindir:  ${customdir}/plugins
-+  customdir:		${prefix}
-+  custometcdir:		${datadir}/etc
-+  customhtmldir:	${customdir}/www+
-+  customlexdir:		${datadir}/po
-+  customstaticdir:	${datadir}/static
-+  customlibdir:		${datadir}/lib
-+  customplugindir:  ${datadir}/plugins
  </Layout>
  
  #   RH path layout.

@@ -8,9 +8,9 @@ bin/rtl_test
 include/rtl-sdr.h
 include/rtl-sdr_export.h
 lib/librtlsdr.a
-lib/librtlsdr.la
 lib/librtlsdr.so
 lib/librtlsdr.so.0
+lib/librtlsdr.so.0.0.5
 libdata/pkgconfig/librtlsdr.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.js

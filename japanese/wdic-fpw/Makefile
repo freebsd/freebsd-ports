@@ -16,18 +16,19 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/wdic
 EXTRACT_BEFORE_ARGS=	-qL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/wdic-fpw/wdic/data
-	${MKDIR} ${PREFIX}/share/dict/wdic-fpw/wdic/gaiji
-	${INSTALL_DATA} ${WRKSRC}/wdic/data/honmon ${PREFIX}/share/dict/wdic-fpw/wdic/data
-	${INSTALL_DATA} ${WRKSRC}/wdic/gaiji/gai16h ${PREFIX}/share/dict/wdic-fpw/wdic/gaiji
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/wdic-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme.1st readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/wdic-fpw/wdic/data
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/wdic-fpw/wdic/gaiji
+	${INSTALL_DATA} ${WRKSRC}/wdic/data/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/wdic-fpw/wdic/data
+	${INSTALL_DATA} ${WRKSRC}/wdic/gaiji/gai16h \
+		${STAGEDIR}${PREFIX}/share/dict/wdic-fpw/wdic/gaiji
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/wdic-fpw
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.1st readme.txt \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

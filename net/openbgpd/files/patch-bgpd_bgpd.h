@@ -2,10 +2,10 @@ Index: bgpd/bgpd.h
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.h,v
 retrieving revision 1.1.1.8
-retrieving revision 1.14
-diff -u -p -r1.1.1.8 -r1.14
+retrieving revision 1.15
+diff -u -p -r1.1.1.8 -r1.15
 --- bgpd/bgpd.h	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/bgpd.h	8 Dec 2012 20:17:59 -0000	1.14
++++ bgpd/bgpd.h	16 May 2014 00:36:26 -0000	1.15
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpd.h,v 1.241 2009/06/12 16:42:53 claudio Exp $ */
 +/*	$OpenBSD: bgpd.h,v 1.273 2012/09/18 10:10:00 claudio Exp $ */
@@ -661,7 +661,7 @@ diff -u -p -r1.1.1.8 -r1.14
 -	u_int16_t		id;
 -	u_int16_t		flags;
 +/* macros for IPv6 link-local address */
-+#if defined(__KAME__) && defined(IPV6_LINKLOCAL_PEER)
++#ifdef __KAME__
 +#define IN6_LINKLOCAL_IFINDEX(addr) \
 +        ((addr).s6_addr[2] << 8 | (addr).s6_addr[3])
 +

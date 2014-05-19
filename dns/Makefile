@@ -13,6 +13,7 @@
     SUBDIR += bind98
     SUBDIR += bind99
     SUBDIR += bindgraph
+    SUBDIR += bundy
     SUBDIR += c-ares
     SUBDIR += checkdns
     SUBDIR += credns

@@ -3,12 +3,12 @@
 
 PORTNAME=	flatzebra
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	A generic game engine for 2D double-buffering animation
+COMMENT=	Generic game engine for 2D double-buffering animation
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include

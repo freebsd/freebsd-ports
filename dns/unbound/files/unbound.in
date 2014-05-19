@@ -23,7 +23,7 @@ rcvar=unbound_enable
 command="%%PREFIX%%/sbin/unbound"
 extra_commands="reload"
 start_precmd="start_precmd"
-reload_precmd="%%PREFIX%%/sbin/unbound-checkconf >/dev/null" 
+reload_precmd="%%PREFIX%%/sbin/unbound-checkconf >/dev/null"
 
 load_rc_config $name
 
@@ -41,6 +41,7 @@ start_precmd()
 		su -m unbound -c "%%PREFIX%%/sbin/unbound-anchor ${unbound_anchorflags}"; \
 	fi &&
 	echo .
+	return 0
 }
 
 run_rc_command "$1"

@@ -3,7 +3,7 @@
 
 PORTNAME=	myitcrm
 PORTVERSION=	0.2.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/myitcrm/
 DISTNAME=	MyITCRM1-${PORTVERSION}
@@ -21,33 +21,26 @@ WRKSRC=		${WRKDIR}/MyITCRM-${PORTVERSION}
 SUB_FILES=	pkg-message
 PLIST_DIRSTRY=	%%WWWDIR%%
 PATCH_STRIP=	-p1
-WRITEABLE=	conf.php log/access.log cache
+WRITEABLE=	conf.php.sample log/access.log cache
 PORTEXAMPLES=	htaccess.txt
 PORTDOCS=	changelog.txt README.textile
 USE_DOS2UNIX=	yes
 
-OPTIONS_DEFINE=	APACHE PHPMOD LIGHTTPD NGINX
+OPTIONS_DEFINE=	APACHE PHPMOD LIGHTTPD NGINX DOCS EXAMPLES
 OPTIONS_DEFAULT=	APACHE
 PHPMOD_DESC=	Use PHP module for Apache
 NGINX_DESC=	Use Nginx
 
-NO_STAGE=	yes
+APACHE_USE=	APACHE_RUN=22+
+LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
+NGINX_RUN_DEPENDS=	nginx:${PORTSDIR}/www/nginx
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHPMOD}
 WANT_PHP_MOD=	yes
 .else
 WANT_PHP_CGI=	yes
-.endif
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
-.endif
-.if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
-.endif
-.if ${PORT_OPTIONS:MNGINX}
-RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 .endif
 
 # Set files to ignore.
@@ -64,31 +57,26 @@ rm-install:
 
 .endif
 
+post-patch:
+	${MV} ${WRKSRC}/conf-default.php ${WRKSRC}/conf.php.sample
+
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR} '${WWW_IGNORE}'
-	@if [ ! -f ${WWWDIR}/conf.php ]; then \
-		${CP} ${WWWDIR}/conf-default.php ${WWWDIR}/conf.php; \
-	 fi
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} '${WWW_IGNORE}')
 .for ent in ${WRITEABLE}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/${ent}
-	@${CHMOD} u+w ${WWWDIR}/${ent}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/${ent}
+	@${CHMOD} u+w ${STAGEDIR}${WWWDIR}/${ent}
 .endfor
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for ex in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${ex} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${ex} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif # PORTEXAMPLES
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif # PORTDOCS
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
 .if defined(MAINTAINER_MODE)
 	@${MAKE} -C ${.CURDIR} rm-install
 .endif

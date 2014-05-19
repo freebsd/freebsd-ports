@@ -11,15 +11,15 @@ bin/sigtool
 sbin/clamd
 include/clamav.h
 include/clamav-config.h
-lib/libclamav.la
 lib/libclamav.so
-lib/libclamav.so.7
-%%UNRAR%%lib/libclamunrar.la
+lib/libclamav.so.6
+lib/libclamav.so.6.1.22
 %%UNRAR%%lib/libclamunrar.so
-%%UNRAR%%lib/libclamunrar.so.7
-%%UNRAR%%lib/libclamunrar_iface.la
+%%UNRAR%%lib/libclamunrar.so.6
+%%UNRAR%%lib/libclamunrar.so.6.1.22
 %%UNRAR%%lib/libclamunrar_iface.so
-%%UNRAR%%lib/libclamunrar_iface.so.7
+%%UNRAR%%lib/libclamunrar_iface.so.6
+%%UNRAR%%lib/libclamunrar_iface.so.6.1.22
 libdata/pkgconfig/libclamav.pc
 man/man1/clambc.1.gz
 man/man1/clamconf.1.gz
@@ -37,3 +37,12 @@ man/man8/clamd.8.gz
 @sample etc/clamd.conf.sample
 @sample etc/freshclam.conf.sample
 %%MILTER%%@sample etc/clamav-milter.conf.sample
+@cwd /
+@owner %%CLAMAVUSER%%
+@group %%CLAMAVGROUP%%
+@dirrmtry %%DBDIR%%
+@dirrmtry %%LOGDIR%%
+@dirrmtry %%RUNDIR%%
+@group
+@owner
+@cwd %%RESETPREFIX%%

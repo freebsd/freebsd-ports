@@ -6,7 +6,6 @@ bin/od-session
 bin/od-start-im
 bin/online-prefs-sync-daemon
 bin/web-login-driver
-lib/pidgin/libdbus-api-plugin.la
 lib/pidgin/libdbus-api-plugin.so
 %%PYTHON_SITELIBDIR%%/ddm/AbstractModel.py
 %%PYTHON_SITELIBDIR%%/ddm/AbstractModel.pyc
@@ -29,7 +28,6 @@ lib/pidgin/libdbus-api-plugin.so
 %%PYTHON_SITELIBDIR%%/ddm/__init__.py
 %%PYTHON_SITELIBDIR%%/ddm/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ddm/__init__.pyo
-%%PYTHON_SITELIBDIR%%/nssdecrypt.la
 %%PYTHON_SITELIBDIR%%/nssdecrypt.so
 %%PYTHON_SITELIBDIR%%/pyonlinedesktop/__init__.py
 %%PYTHON_SITELIBDIR%%/pyonlinedesktop/__init__.pyc

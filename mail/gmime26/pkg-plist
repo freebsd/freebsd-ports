@@ -52,9 +52,9 @@ include/gmime-2.6/gmime/gmime-version.h
 include/gmime-2.6/gmime/gmime.h
 include/gmime-2.6/gmime/internet-address.h
 lib/libgmime-2.6.a
-lib/libgmime-2.6.la
 lib/libgmime-2.6.so
 lib/libgmime-2.6.so.0
+lib/libgmime-2.6.so.0.618.0
 libdata/pkgconfig/gmime-2.6.pc
 @dirrm include/gmime-2.6/gmime
 @dirrm include/gmime-2.6

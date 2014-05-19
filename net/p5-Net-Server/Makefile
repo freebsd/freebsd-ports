@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Server
-PORTVERSION=	2.007
+PORTVERSION=	2.008
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Configurable base class for writing internet servers in Perl
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IO-Multiplex>=1.01:${PORTSDIR}/devel/p5-IO-Multiplex
 RUN_DEPENDS:=	${BUILD_DEPENDS}

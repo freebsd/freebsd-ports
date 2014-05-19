@@ -10,17 +10,23 @@ PATCH_SITES=		http://debian.lcs.mit.edu/pub/usagi/ftp.v6.linux.or.jp/IPv6-2/netr
 PATCHFILES=		netris-0.5-v6-19991206a.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=		gavin.atkinson@ury.york.ac.uk
+MAINTAINER=		gavin@FreeBSD.org
 COMMENT=		A network head to head version of T*tris
+
+LICENSE=		GPLv2 # (or later)
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		--cc '${CC}' --copt '${CFLAGS}'
 CONFIGURE_ARGS+=	--enable-ipv6
-MAN1=			netris.1
 
-NO_STAGE=	yes
-post-install:
-	${INSTALL_MAN} ${FILESDIR}/netris.1 ${PREFIX}/man/man1
+PLIST_FILES=	bin/netris \
+		bin/sample-robot \
+		man/man1/netris.1.gz
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/netris ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/sr ${STAGEDIR}${PREFIX}/bin/sample-robot
+	${INSTALL_MAN} ${FILESDIR}/netris.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

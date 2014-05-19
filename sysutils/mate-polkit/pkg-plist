@@ -4,9 +4,9 @@ include/polkit-gtk-mate-1/polkitgtkmate/polkitgtkmatetypes.h
 include/polkit-gtk-mate-1/polkitgtkmate/polkitlockbutton.h
 lib/girepository-1.0/PolkitGtkMate-1.0.typelib
 lib/libpolkit-gtk-mate-1.a
-lib/libpolkit-gtk-mate-1.la
 lib/libpolkit-gtk-mate-1.so
 lib/libpolkit-gtk-mate-1.so.0
+lib/libpolkit-gtk-mate-1.so.0.0.0
 libdata/pkgconfig/polkit-gtk-mate-1.pc
 libexec/polkit-mate-authentication-agent-1
 share/gir-1.0/PolkitGtkMate-1.0.gir

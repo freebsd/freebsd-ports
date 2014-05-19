@@ -1,0 +1,12 @@
+--- build/pkgs/pynac/spkg-install-orig	2014-05-15 02:26:11.000000000 +0000
++++ build/pkgs/pynac/spkg-install	2014-05-15 02:19:32.000000000 +0000
+@@ -33,6 +33,9 @@
+ {
+     cd ${PYNACDIR}
+     PKG_CONFIG_PATH=${SAGE_LOCAL}/lib/pkgconfig; export PKG_CONFIG_PATH
++    aclocal
++    automake --add-missing
++    autoconf
+     ./configure --disable-static --prefix=${SAGE_LOCAL} --libdir="$SAGE_LOCAL/lib"
+     $MAKE
+     if [ $? -ne 0 ]; then

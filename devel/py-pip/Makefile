@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pip
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.6
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,8 +11,11 @@ COMMENT=	Tool for installing and managing Python packages
 
 LICENSE=	MIT
 
+DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_MAKE_ENV=	HOME=${WRKDIR}
+
 GH_ACCOUNT=	pypa
-GH_COMMIT=	e3f9e25
+GH_COMMIT=	437fb31
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,9 +40,7 @@ TOX_CMD=	${LOCALBASE}/bin/tox
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-MAKE_ENV+=	HOME=${WRKDIR}
 PYDISTUTILS_BUILD_TARGET+=	build_sphinx -n --all-files --fresh-env
 
 post-install:

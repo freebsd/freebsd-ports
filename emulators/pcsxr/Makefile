@@ -3,7 +3,7 @@
 
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.94.r87113
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
+USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtoolize:env
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -33,7 +33,7 @@ USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl
 
-USES=		tar:bzip2 dos2unix iconv gmake pkgconfig desktop-file-utils
+USES=		tar:bzip2 dos2unix iconv gmake pkgconfig libtool desktop-file-utils
 DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
 
 PORTDOCS=	ChangeLog README

@@ -1,8 +1,9 @@
 bin/album2m3u
 bin/album2pls
 bin/gmerlin
+bin/gmerlin-record
 bin/gmerlin-video-thumbnailer
-%%ALSAMIXER%%bin/gmerlin_alsamixer
+%%ALSA%%bin/gmerlin_alsamixer
 bin/gmerlin_imgconvert
 bin/gmerlin_imgdiff
 bin/gmerlin_kbd
@@ -11,7 +12,6 @@ bin/gmerlin_launcher
 bin/gmerlin_play
 bin/gmerlin_plugincfg
 bin/gmerlin_psnr
-bin/gmerlin-record
 bin/gmerlin_recorder
 bin/gmerlin_remote
 bin/gmerlin_ssim
@@ -221,7 +221,13 @@ lib/libgmerlin_gtk.so
 lib/libgmerlin_gtk.so.0
 libdata/pkgconfig/gmerlin-gtk.pc
 libdata/pkgconfig/gmerlin.pc
-%%ALSAMIXER%%share/applications/gmerlin-alsamixer.desktop
+man/man1/gmerlin-record.1.gz
+man/man1/gmerlin.1.gz
+man/man1/gmerlin_play.1.gz
+man/man1/gmerlin_remote.1.gz
+man/man1/gmerlin_transcoder.1.gz
+man/man1/gmerlin_transcoder_remote.1.gz
+%%ALSA%%share/applications/gmerlin-alsamixer.desktop
 share/applications/gmerlin-kbd.desktop
 share/applications/gmerlin-player.desktop
 share/applications/gmerlin-plugincfg.desktop

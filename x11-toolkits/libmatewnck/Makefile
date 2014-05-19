@@ -3,6 +3,7 @@
 
 PORTNAME=	libmatewnck
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -14,13 +15,10 @@ BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		bison gettext gmake libtool pathfix pkgconfig tar:xz
 USE_XORG=	x11 xres
-USE_GNOME=	gdkpixbuf2 glib20 gnomehier gtk20 intlhack \
-		introspection:build ltverhack
+USE_GNOME=	gdkpixbuf2 glib20 gnomehier gtk20 intlhack introspection:build
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
@@ -30,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	STARTUP
 OPTIONS_DEFAULT=STARTUP
 STARTUP_DESC=	Startup notification support
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.options.mk>
 
@@ -39,8 +38,5 @@ CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmatewnck.so.0
 
 .include <bsd.port.mk>

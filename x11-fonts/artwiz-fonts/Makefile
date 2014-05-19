@@ -13,7 +13,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A set of free fonts for X11 desktops
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/fluxbox-${PORTNAME}
 

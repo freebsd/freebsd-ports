@@ -1,4 +1,4 @@
---- sax/sax.gpr.orig	2013-06-30 18:36:28.000000000 +0000
+--- sax/sax.gpr.orig	2014-04-10 13:48:38.000000000 +0000
 +++ sax/sax.gpr
 @@ -10,6 +10,7 @@ project Sax is
     for Library_Dir use "lib/" & Project'Library_Kind;

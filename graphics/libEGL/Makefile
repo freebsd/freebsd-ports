@@ -3,7 +3,7 @@
 
 PORTNAME=	libEGL
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenEGL library
@@ -23,7 +23,7 @@ INSTALL_WRKSRC=	${WRKSRC}/src/egl
 .include <bsd.port.options.mk>
 
 .if ! defined(WITH_NEW_XORG)
-IGNORE=		Please enable WITH_NEW_XORG, libEGL needs libdrm higher then 2.4.24
+IGNORE=	Please enable WITH_NEW_XORG, libEGL needs libdrm higher then 2.4.24
 .endif
 
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"

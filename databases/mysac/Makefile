@@ -21,17 +21,15 @@ PLIST_FILES=	lib/libmysac.so \
 		lib/libmysac-static.a \
 		include/mysac.h
 
-NO_STAGE=	yes
 pre-build:
 	${TOUCH} ${WRKSRC}/make.deps
 
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/libmysac.so \
-		${PREFIX}/lib/libmysac.so
-	${LN} -sf ${PREFIX}/lib/libmysac.so \
-		${PREFIX}/lib/libmysac.so.0
-	${INSTALL_LIB} ${WRKSRC}/libmysac-static.a ${PREFIX}/lib/libmysac-static.a
-	${INSTALL_DATA} ${WRKSRC}/mysac.h ${PREFIX}/include/mysac.h
+		${STAGEDIR}${PREFIX}/lib/libmysac.so
+	${LN} -sf libmysac.so ${STAGEDIR}${PREFIX}/lib/libmysac.so.0
+	${INSTALL_LIB} ${WRKSRC}/libmysac-static.a ${STAGEDIR}${PREFIX}/lib/libmysac-static.a
+	${INSTALL_DATA} ${WRKSRC}/mysac.h ${STAGEDIR}${PREFIX}/include/mysac.h
 
 .include <bsd.port.pre.mk>
 

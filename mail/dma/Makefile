@@ -7,14 +7,12 @@ PORTEPOCH=		1
 CATEGORIES=		mail ipv6
 EXTRACT_SUFX=
 
-MAINTAINER=	bzeeb+freebsd+ports@zabbadoz.net
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_OPENSSL=	yes
-
-MAN8=		dma.8
 
 USE_GITHUB=	yes
 GH_COMMIT=	2bb8bcb
@@ -29,15 +27,17 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 USE_RC_SUBR=	dma_flushq
 SUB_FILES=	pkg-message
+PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 # Allow subports to extend.
 CONFFILES+=	dma.conf auth.conf
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
-IGNORE=	Does not build in 8.x
+EXTRA_PATCHES=	${.CURDIR:H:H}/mail/dma/files/extrapatch-8-spool.c
+.else
+EXTRA_PATCHES=  ${.CURDIR:H:H}/mail/dma/files/extrapatch-else-spool.c
 .endif
 
 pre-patch:
@@ -54,24 +54,15 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL} -o root -g mail -m 2555 ${WRKSRC}/dma/dma ${PREFIX}/libexec
+	${INSTALL} -o root -g mail -m 2555 ${WRKSRC}/dma/dma ${STAGEDIR}/${PREFIX}/libexec
 	${INSTALL} -o root -g mail -m 4550 \
-		${WRKSRC}/dma-mbox-create/dma-mbox-create ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/dma.8 ${PREFIX}/man/man8/
-	${MKDIR} ${PREFIX}/etc/dma
+		${WRKSRC}/dma-mbox-create/dma-mbox-create ${STAGEDIR}/${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/dma.8 ${STAGEDIR}/${PREFIX}/man/man8/
+	${MKDIR} ${STAGEDIR}/${PREFIX}/etc/dma
 .for i in ${CONFFILES}
-	${INSTALL_DATA} -m 0644 ${WRKSRC}/${i} ${PREFIX}/etc/dma/${i}.sample
+	${INSTALL_DATA} -m 0644 ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/etc/dma/${i}.sample
 .endfor
-	${CHMOD} o-r ${PREFIX}/etc/dma/auth.conf.sample
-.for i in ${CONFFILES}
-	if [ ! -f ${PREFIX}/etc/dma/${i} ]; then \
-		${CP} -p ${PREFIX}/etc/dma/${i}.sample \
-			${PREFIX}/etc/dma/${i} ; \
-	fi
-.endfor
-	${INSTALL} -d -o root -g mail -m 770 /var/spool/dma
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${CHMOD} o-r ${STAGEDIR}/${PREFIX}/etc/dma/auth.conf.sample
+	${INSTALL} -d -o root -g mail -m 770 ${STAGEDIR}/var/spool/dma
 
 .include <bsd.port.post.mk>

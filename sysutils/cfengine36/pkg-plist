@@ -335,3 +335,8 @@ sbin/rpmvercmp
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
 @dirrm libexec/cfengine
+@unexec rmdir "/var/cfengine/inputs" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine/modules" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine/outputs" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine/ppkeys" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine" >/dev/null 2>&1 || :

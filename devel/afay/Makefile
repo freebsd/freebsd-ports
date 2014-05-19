@@ -9,7 +9,7 @@ MASTER_SITES=	http://thiberlog.free.fr/src/
 DISTNAME=	${PORTNAME}_thiberlog_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	john_m_cooper@yahoo.com
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Improved aflex and ayacc Ada 95 scanner and parser generators
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

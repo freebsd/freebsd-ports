@@ -93,6 +93,7 @@ include/wine/windows/asptlb.idl
 include/wine/windows/asynot.idl
 include/wine/windows/asysta.idl
 include/wine/windows/atlbase.h
+include/wine/windows/atlcom.h
 include/wine/windows/atliface.h
 include/wine/windows/atliface.idl
 include/wine/windows/atlwin.h
@@ -270,6 +271,7 @@ include/wine/windows/dshow.h
 include/wine/windows/dsound.h
 include/wine/windows/dsrole.h
 include/wine/windows/dvdmedia.h
+include/wine/windows/dvoice.h
 include/wine/windows/dwmapi.h
 include/wine/windows/dwrite.h
 include/wine/windows/dwrite.idl
@@ -373,6 +375,7 @@ include/wine/windows/knownfolders.h
 include/wine/windows/ks.h
 include/wine/windows/ksguid.h
 include/wine/windows/ksmedia.h
+include/wine/windows/ksuuids.h
 include/wine/windows/lm.h
 include/wine/windows/lmaccess.h
 include/wine/windows/lmapibuf.h
@@ -1246,6 +1249,7 @@ lib/wine/fakedlls/itircl.dll
 lib/wine/fakedlls/itss.dll
 lib/wine/fakedlls/joy.cpl
 lib/wine/fakedlls/jscript.dll
+lib/wine/fakedlls/jsproxy.dll
 lib/wine/fakedlls/kernel32.dll
 lib/wine/fakedlls/keyboard.drv16
 lib/wine/fakedlls/krnl386.exe16
@@ -1624,6 +1628,7 @@ lib/wine/itircl.dll.so
 lib/wine/itss.dll.so
 lib/wine/joy.cpl.so
 lib/wine/jscript.dll.so
+lib/wine/jsproxy.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16.so
 lib/wine/krnl386.exe16.so
@@ -1697,6 +1702,7 @@ lib/wine/libimagehlp.def
 lib/wine/libimm32.def
 lib/wine/libinetcomm.def
 lib/wine/libiphlpapi.def
+lib/wine/libjsproxy.def
 lib/wine/libkernel.def
 lib/wine/libkernel32.def
 lib/wine/libloadperf.def

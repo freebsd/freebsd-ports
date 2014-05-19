@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.98.3
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -49,7 +49,7 @@ DMG_XAR_USE=		GNOME=libxml2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake libtool
 INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
@@ -58,7 +58,12 @@ PORTDOCS=	*
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
 RUNDIR=		/var/run/clamav
-PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
+PLIST_SUB+=	DBDIR=${DBDIR:S/^\///} \
+		LOGDIR=${LOGDIR:S/^\///} \
+		RUNDIR=${RUNDIR:S/^\///} \
+		CLAMAVUSER=${CLAMAVUSER} \
+		CLAMAVGROUP=${CLAMAVGROUP} \
+		RESETPREFIX=${PREFIX}
 PY_NO_THREAD=	${WRKDIR}/.python-has-no-threads
 USE_AUTOTOOLS=	libltdl
 OPTIONS_SUB=	yes
@@ -82,7 +87,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 # force to use -lthr until it's not fixed.
 PTHREAD_LIBS=	-lthr
 
-CONFLICTS?=	clamav-devel-[0-9]* clamav-milter-[0-9]*
+CONFLICTS?=	clamav-milter-[0-9]*
 
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
@@ -90,16 +95,16 @@ CLAMAVGROUP?=	clamav
 CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd.sock
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
-SUB_FILES=	pkg-install pkg-deinstall
+SUB_FILES=	pkg-deinstall
 SUB_LIST+=	DBDIR=${DBDIR} \
 		LOGDIR=${LOGDIR} \
 		RUNDIR=${RUNDIR} \
+		CHMOD=${CHMOD} \
+		CHOWN=${CHOWN} \
 		CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP} \
 		CLAMAV_CLAMD_SOCKET=${CLAMAV_CLAMD_SOCKET} \
-		CLAMAV_MILTER_SOCKET=${CLAMAV_MILTER_SOCKET} \
-		CHMOD=${CHMOD} \
-		CHOWN=${CHOWN}
+		CLAMAV_MILTER_SOCKET=${CLAMAV_MILTER_SOCKET}
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 ${LOGDIR}/\3|' \
@@ -119,6 +124,14 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
 .include <bsd.port.options.mk>
+
+.if ${CLAMAVUSER} == "clamav"
+USERS=	clamav
+.endif
+
+.if ${CLAMAVGROUP} == "clamav"
+GROUPS=	clamav mail
+.endif
 
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
@@ -179,7 +192,7 @@ pre-configure:
 	fi
 .endif
 
-.if ${PORT_OPTIONS:MTESTS} && ${OSVERSION} >= 700000
+.if ${PORT_OPTIONS:MTESTS}
 post-build:
 	@if [ ! -f "${PY_NO_THREAD}" ]; then \
 		${GMAKE} -C ${WRKSRC} check; \
@@ -188,7 +201,10 @@ post-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${STAGEDIR}${PREFIX}/include
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html \
+		  ${STAGEDIR}${DBDIR} \
+		  ${STAGEDIR}${LOGDIR} \
+		  ${STAGEDIR}${RUNDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${STAGEDIR}${DOCSDIR}/html
 

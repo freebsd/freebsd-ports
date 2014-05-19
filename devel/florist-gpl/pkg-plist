@@ -18,6 +18,8 @@ include/florist/posix-configurable_system_limits.ads
 include/florist/posix-error_codes.ads
 include/florist/posix-file_locking.adb
 include/florist/posix-file_locking.ads
+include/florist/posix-file_status-extensions.adb
+include/florist/posix-file_status-extensions.ads
 include/florist/posix-file_status.adb
 include/florist/posix-file_status.ads
 include/florist/posix-files.adb
@@ -125,6 +127,7 @@ lib/florist/posix-condition_variables.ali
 lib/florist/posix-configurable_file_limits.ali
 lib/florist/posix-configurable_system_limits.ali
 lib/florist/posix-file_locking.ali
+lib/florist/posix-file_status-extensions.ali
 lib/florist/posix-file_status.ali
 lib/florist/posix-files.ali
 lib/florist/posix-generic_shared_memory.ali

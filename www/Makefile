@@ -581,7 +581,6 @@
     SUBDIR += ompload
     SUBDIR += oops
     SUBDIR += opencart
-    SUBDIR += openx
     SUBDIR += openxmldir
     SUBDIR += opera
     SUBDIR += opera-devel
@@ -1734,6 +1733,7 @@
     SUBDIR += resin3
     SUBDIR += retawq
     SUBDIR += reviewboard
+    SUBDIR += revive-adserver
     SUBDIR += rnews
     SUBDIR += roundup
     SUBDIR += rsskit
@@ -1795,9 +1795,11 @@
     SUBDIR += rubygem-haml-rails
     SUBDIR += rubygem-heroku
     SUBDIR += rubygem-heroku-api
+    SUBDIR += rubygem-heroku-nav
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-html2haml
     SUBDIR += rubygem-http-cookie
+    SUBDIR += rubygem-httpi
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
     SUBDIR += rubygem-innate
@@ -1810,11 +1812,13 @@
     SUBDIR += rubygem-jruby-rack
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
+    SUBDIR += rubygem-kensa
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-less
     SUBDIR += rubygem-lighthouse-api
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
+    SUBDIR += rubygem-mechanize26
     SUBDIR += rubygem-merb-assets
     SUBDIR += rubygem-merb-core
     SUBDIR += rubygem-merb-haml
@@ -1824,7 +1828,9 @@
     SUBDIR += rubygem-multipart-post
     SUBDIR += rubygem-nanoc
     SUBDIR += rubygem-net-http-digest_auth
+    SUBDIR += rubygem-net-http-digest_auth11
     SUBDIR += rubygem-net-http-persistent
+    SUBDIR += rubygem-net-http-persistent25
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
     SUBDIR += rubygem-passenger

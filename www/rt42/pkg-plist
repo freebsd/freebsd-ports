@@ -3,22 +3,22 @@ bin/rt
 bin/rt-crontool
 bin/rt-mailgate
 @mode 0440
-etc/rt42/RT_Config.pm
-@unexec if cmp -s %D/etc/rt42/RT_SiteConfig.pm-dist %D/etc/rt42/RT_SiteConfig.pm ; then rm -f %D/etc/rt42/RT_SiteConfig.pm; fi
-etc/rt42/RT_SiteConfig.pm-dist
+%%RT_ETC_DIR%%/RT_Config.pm
+@unexec if cmp -s %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm-dist %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm ; then rm -f %D/%%RT_ETC_DIR%%/RT_SiteConfig.pm; fi
+%%RT_ETC_DIR%%/RT_SiteConfig.pm-dist
 @exec [ -f %B/RT_SiteConfig.pm ] || cp -p %D/%F %B/RT_SiteConfig.pm
 @mode
-etc/rt42/acl.Oracle
-etc/rt42/acl.Pg
-etc/rt42/acl.mysql
-etc/rt42/initialdata
-etc/rt42/schema.Oracle
-etc/rt42/schema.Pg
-etc/rt42/schema.SQLite
-etc/rt42/schema.mysql
-@exec chmod 0750 %D/etc/rt42
-@exec chgrp rt %D/etc/rt42
-@group
+%%RT_ETC_DIR%%/acl.Oracle
+%%RT_ETC_DIR%%/acl.Pg
+%%RT_ETC_DIR%%/acl.mysql
+%%RT_ETC_DIR%%/initialdata
+%%RT_ETC_DIR%%/schema.Oracle
+%%RT_ETC_DIR%%/schema.Pg
+%%RT_ETC_DIR%%/schema.SQLite
+%%RT_ETC_DIR%%/schema.mysql
+@exec chmod 0750 %D/%%RT_ETC_DIR%%
+@exec chgrp rt %D/%%RT_ETC_DIR%%
+@group wheel
 %%SITE_PERL%%/RT.pm
 %%SITE_PERL%%/RT/ACE.pm
 %%SITE_PERL%%/RT/ACL.pm
@@ -114,6 +114,7 @@ etc/rt42/schema.mysql
 %%SITE_PERL%%/RT/Interface/Web.pm
 %%SITE_PERL%%/RT/Interface/Web/Handler.pm
 %%SITE_PERL%%/RT/Interface/Web/Menu.pm
+%%SITE_PERL%%/RT/Interface/Web/Middleware/StaticHeaders.pm
 %%SITE_PERL%%/RT/Interface/Web/QueryBuilder.pm
 %%SITE_PERL%%/RT/Interface/Web/QueryBuilder/Tree.pm
 %%SITE_PERL%%/RT/Interface/Web/Request.pm
@@ -266,7 +267,7 @@ sbin/rt-test-dependencies
 sbin/rt-validate-aliases
 sbin/rt-validator
 sbin/standalone_httpd
-@group
+@group wheel
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-2.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.0
@@ -473,6 +474,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.1/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.2/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.2/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.4/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -800,6 +802,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/ShowUserEmailFrequency
 %%DATADIR%%/html/Elements/SimpleSearch
 %%DATADIR%%/html/Elements/Submit
+%%DATADIR%%/html/Elements/TSVExport
 %%DATADIR%%/html/Elements/Tabs
 %%DATADIR%%/html/Elements/TicketList
 %%DATADIR%%/html/Elements/TitleBox
@@ -1059,6 +1062,7 @@ sbin/standalone_httpd
 %%DATADIR%%/po/es.po
 %%DATADIR%%/po/et.po
 %%DATADIR%%/po/eu.po
+%%DATADIR%%/po/fa.po
 %%DATADIR%%/po/fi.po
 %%DATADIR%%/po/fr.po
 %%DATADIR%%/po/hr.po
@@ -1491,314 +1495,310 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/supersubs.js
 %%DATADIR%%/static/js/titlebox-state.js
 %%DATADIR%%/static/js/util.js
-@exec mkdir -p /var/run/rt42/session_data
-@exec mkdir -p /var/run/rt42/mason_data/obj
-@exec mkdir -p /var/run/rt42/mason_data/etc
-@exec mkdir -p /var/run/rt42/mason_data/cache
-@exec chmod -R 0750 /var/run/rt42/session_data /var/run/rt42/mason_data
-@exec chown -R www:www /var/run/rt42/session_data /var/run/rt42/mason_data
-@unexec rmdir "/var/run/rt42/session_data" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42/mason_data/obj" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42/mason_data/etc" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42/mason_data/cache" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42/mason_data" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/rt42" >/dev/null 2>&1 || :
-@dirrmtry www/rt42
-@dirrmtry %%DATADIR%%/static/js
-@dirrmtry %%DATADIR%%/static/images/tablesorter
-@dirrmtry %%DATADIR%%/static/images/jquery_ui
-@dirrmtry %%DATADIR%%/static/images/farbtastic
-@dirrmtry %%DATADIR%%/static/images/css
-@dirrmtry %%DATADIR%%/static/images
-@dirrmtry %%DATADIR%%/static/css/web2
-@dirrmtry %%DATADIR%%/static/css/rudder
-@dirrmtry %%DATADIR%%/static/css/images
-@dirrmtry %%DATADIR%%/static/css/base
-@dirrmtry %%DATADIR%%/static/css/ballard
-@dirrmtry %%DATADIR%%/static/css/aileron
-@dirrmtry %%DATADIR%%/static/css
-@dirrmtry %%DATADIR%%/static/RichText/skins/kama/images
-@dirrmtry %%DATADIR%%/static/RichText/skins/kama
-@dirrmtry %%DATADIR%%/static/RichText/skins
-@dirrmtry %%DATADIR%%/static/RichText/plugins/wsc/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/wsc
-@dirrmtry %%DATADIR%%/static/RichText/plugins/templates/templates/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/templates/templates
-@dirrmtry %%DATADIR%%/static/RichText/plugins/templates/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/templates
-@dirrmtry %%DATADIR%%/static/RichText/plugins/tabletools/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/tabletools
-@dirrmtry %%DATADIR%%/static/RichText/plugins/table/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/table
-@dirrmtry %%DATADIR%%/static/RichText/plugins/specialchar/dialogs/lang
-@dirrmtry %%DATADIR%%/static/RichText/plugins/specialchar/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/specialchar
-@dirrmtry %%DATADIR%%/static/RichText/plugins/smiley/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/smiley/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/smiley
-@dirrmtry %%DATADIR%%/static/RichText/plugins/showblocks/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/showblocks
-@dirrmtry %%DATADIR%%/static/RichText/plugins/scayt/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/scayt
-@dirrmtry %%DATADIR%%/static/RichText/plugins/preview
-@dirrmtry %%DATADIR%%/static/RichText/plugins/pastefromword/filter
-@dirrmtry %%DATADIR%%/static/RichText/plugins/pastefromword
-@dirrmtry %%DATADIR%%/static/RichText/plugins/pagebreak/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/pagebreak
-@dirrmtry %%DATADIR%%/static/RichText/plugins/magicline/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/magicline
-@dirrmtry %%DATADIR%%/static/RichText/plugins/liststyle/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/liststyle
-@dirrmtry %%DATADIR%%/static/RichText/plugins/link/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/link/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/link
-@dirrmtry %%DATADIR%%/static/RichText/plugins/image/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/image/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/image
-@dirrmtry %%DATADIR%%/static/RichText/plugins/iframe/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/iframe/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/iframe
-@dirrmtry %%DATADIR%%/static/RichText/plugins/forms/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/forms/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/forms
-@dirrmtry %%DATADIR%%/static/RichText/plugins/flash/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/flash/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/flash
-@dirrmtry %%DATADIR%%/static/RichText/plugins/find/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/find
-@dirrmtry %%DATADIR%%/static/RichText/plugins/fakeobjects/images
-@dirrmtry %%DATADIR%%/static/RichText/plugins/fakeobjects
-@dirrmtry %%DATADIR%%/static/RichText/plugins/div/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/div
-@dirrmtry %%DATADIR%%/static/RichText/plugins/dialog
-@dirrmtry %%DATADIR%%/static/RichText/plugins/colordialog/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/colordialog
-@dirrmtry %%DATADIR%%/static/RichText/plugins/clipboard/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/clipboard
-@dirrmtry %%DATADIR%%/static/RichText/plugins/about/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/about
-@dirrmtry %%DATADIR%%/static/RichText/plugins/a11yhelp/dialogs/lang
-@dirrmtry %%DATADIR%%/static/RichText/plugins/a11yhelp/dialogs
-@dirrmtry %%DATADIR%%/static/RichText/plugins/a11yhelp
-@dirrmtry %%DATADIR%%/static/RichText/plugins
-@dirrmtry %%DATADIR%%/static/RichText/lang
-@dirrmtry %%DATADIR%%/static/RichText
-@dirrmtry %%DATADIR%%/static
-@dirrmtry %%DATADIR%%/po
-@dirrmtry %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%/html/m/tickets
-@dirrmtry %%DATADIR%%/html/m/ticket
-@dirrmtry %%DATADIR%%/html/m/_elements
-@dirrmtry %%DATADIR%%/html/m
-@dirrmtry %%DATADIR%%/html/Widgets/Form
-@dirrmtry %%DATADIR%%/html/Widgets
-@dirrmtry %%DATADIR%%/html/User/Elements/Portlets
-@dirrmtry %%DATADIR%%/html/User/Elements
-@dirrmtry %%DATADIR%%/html/User
-@dirrmtry %%DATADIR%%/html/Tools
-@dirrmtry %%DATADIR%%/html/Ticket/Graphs/Elements
-@dirrmtry %%DATADIR%%/html/Ticket/Graphs
-@dirrmtry %%DATADIR%%/html/Ticket/Elements
-@dirrmtry %%DATADIR%%/html/Ticket/Attachment/WithHeaders
-@dirrmtry %%DATADIR%%/html/Ticket/Attachment
-@dirrmtry %%DATADIR%%/html/Ticket
-@dirrmtry %%DATADIR%%/html/SelfService/Helpers/Autocomplete
-@dirrmtry %%DATADIR%%/html/SelfService/Helpers
-@dirrmtry %%DATADIR%%/html/SelfService/Elements
-@dirrmtry %%DATADIR%%/html/SelfService/Attachment
-@dirrmtry %%DATADIR%%/html/SelfService/Article
-@dirrmtry %%DATADIR%%/html/SelfService
-@dirrmtry %%DATADIR%%/html/Search/Elements
-@dirrmtry %%DATADIR%%/html/Search
-@dirrmtry %%DATADIR%%/html/REST/1.0/ticket
-@dirrmtry %%DATADIR%%/html/REST/1.0/search
-@dirrmtry %%DATADIR%%/html/REST/1.0/NoAuth
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/user
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/transaction
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/ticket
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/queue
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/group
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/attachment
-@dirrmtry %%DATADIR%%/html/REST/1.0/Forms
-@dirrmtry %%DATADIR%%/html/REST/1.0
-@dirrmtry %%DATADIR%%/html/REST
-@dirrmtry %%DATADIR%%/html/Prefs
-@dirrmtry %%DATADIR%%/html/NoAuth/rss
-@dirrmtry %%DATADIR%%/html/NoAuth/js
-@dirrmtry %%DATADIR%%/html/NoAuth/iCal
-@dirrmtry %%DATADIR%%/html/NoAuth/css/web2
-@dirrmtry %%DATADIR%%/html/NoAuth/css/rudder
-@dirrmtry %%DATADIR%%/html/NoAuth/css/base
-@dirrmtry %%DATADIR%%/html/NoAuth/css/ballard
-@dirrmtry %%DATADIR%%/html/NoAuth/css/aileron
-@dirrmtry %%DATADIR%%/html/NoAuth/css
-@dirrmtry %%DATADIR%%/html/NoAuth/RichText
-@dirrmtry %%DATADIR%%/html/NoAuth/Helpers/CustomLogo
-@dirrmtry %%DATADIR%%/html/NoAuth/Helpers
-@dirrmtry %%DATADIR%%/html/NoAuth
-@dirrmtry %%DATADIR%%/html/Install/Elements
-@dirrmtry %%DATADIR%%/html/Install
-@dirrmtry %%DATADIR%%/html/Helpers/Toggle
-@dirrmtry %%DATADIR%%/html/Helpers/Autocomplete
-@dirrmtry %%DATADIR%%/html/Helpers
-@dirrmtry %%DATADIR%%/html/Errors/WebRemoteUser
-@dirrmtry %%DATADIR%%/html/Errors
-@dirrmtry %%DATADIR%%/html/Elements/RT__User
-@dirrmtry %%DATADIR%%/html/Elements/RT__Ticket
-@dirrmtry %%DATADIR%%/html/Elements/RT__Template
-@dirrmtry %%DATADIR%%/html/Elements/RT__Scrip
-@dirrmtry %%DATADIR%%/html/Elements/RT__SavedSearch
-@dirrmtry %%DATADIR%%/html/Elements/RT__Queue
-@dirrmtry %%DATADIR%%/html/Elements/RT__Group
-@dirrmtry %%DATADIR%%/html/Elements/RT__Dashboard
-@dirrmtry %%DATADIR%%/html/Elements/RT__CustomField
-@dirrmtry %%DATADIR%%/html/Elements/RT__Class
-@dirrmtry %%DATADIR%%/html/Elements/RT__Article
-@dirrmtry %%DATADIR%%/html/Elements/Crypt
-@dirrmtry %%DATADIR%%/html/Elements/CollectionAsTable
-@dirrmtry %%DATADIR%%/html/Elements
-@dirrmtry %%DATADIR%%/html/Download/CustomFieldValue
-@dirrmtry %%DATADIR%%/html/Download
-@dirrmtry %%DATADIR%%/html/Dashboards/Elements/ShowPortlet
-@dirrmtry %%DATADIR%%/html/Dashboards/Elements
-@dirrmtry %%DATADIR%%/html/Dashboards
-@dirrmtry %%DATADIR%%/html/Articles/Elements
-@dirrmtry %%DATADIR%%/html/Articles/Article/Elements
-@dirrmtry %%DATADIR%%/html/Articles/Article
-@dirrmtry %%DATADIR%%/html/Articles
-@dirrmtry %%DATADIR%%/html/Approvals/Elements
-@dirrmtry %%DATADIR%%/html/Approvals
-@dirrmtry %%DATADIR%%/html/Admin/Users
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Object
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Error
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Dumps
-@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder
-@dirrmtry %%DATADIR%%/html/Admin/Tools
-@dirrmtry %%DATADIR%%/html/Admin/Scrips/Elements
-@dirrmtry %%DATADIR%%/html/Admin/Scrips
-@dirrmtry %%DATADIR%%/html/Admin/Queues
-@dirrmtry %%DATADIR%%/html/Admin/Groups
-@dirrmtry %%DATADIR%%/html/Admin/Global/CustomFields
-@dirrmtry %%DATADIR%%/html/Admin/Global
-@dirrmtry %%DATADIR%%/html/Admin/Elements
-@dirrmtry %%DATADIR%%/html/Admin/CustomFields
-@dirrmtry %%DATADIR%%/html/Admin/Articles/Elements
-@dirrmtry %%DATADIR%%/html/Admin/Articles/Classes
-@dirrmtry %%DATADIR%%/html/Admin/Articles
-@dirrmtry %%DATADIR%%/html/Admin
-@dirrmtry %%DATADIR%%/html
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%/etc
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.9
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.8
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.7
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.5
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.23
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.22
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.21
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.20
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.19
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.18
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.17
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.16
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.15
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.14
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.13
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.12
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.11
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.10
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.0
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.9
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.19
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.18
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.13
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.12
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc7
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.8
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.7
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.5
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.9
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.8
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.6
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.4
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.2
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.0
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.87
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.86
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.85
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.82
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.81
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.3
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.19
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.15
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.10
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.5.1
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.3.11
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.3.0
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.17
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.15
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.0
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/reporting
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/incremental-export
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/extending
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/customizing
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/RT/URI
-@dirrmtry %%SITE_PERL%%/RT/Test
-@dirrmtry %%SITE_PERL%%/RT/Squish
+@dirrmtry %%RT_ETC_DIR%%
+@dirrmtry %%SITE_PERL%%/RT/Action
+@dirrmtry %%SITE_PERL%%/RT/Approval/Rule
+@dirrmtry %%SITE_PERL%%/RT/Approval
+@dirrmtry %%SITE_PERL%%/RT/Condition
+@dirrmtry %%SITE_PERL%%/RT/Crypt/GnuPG
+@dirrmtry %%SITE_PERL%%/RT/Crypt
+@dirrmtry %%SITE_PERL%%/RT/CustomFieldValues
+@dirrmtry %%SITE_PERL%%/RT/Dashboard
+@dirrmtry %%SITE_PERL%%/RT/DependencyWalker
+@dirrmtry %%SITE_PERL%%/RT/Graph
+@dirrmtry %%SITE_PERL%%/RT/I18N
+@dirrmtry %%SITE_PERL%%/RT/Interface/Email/Auth
+@dirrmtry %%SITE_PERL%%/RT/Interface/Email
+@dirrmtry %%SITE_PERL%%/RT/Interface/Web/Middleware
+@dirrmtry %%SITE_PERL%%/RT/Interface/Web/QueryBuilder
+@dirrmtry %%SITE_PERL%%/RT/Interface/Web
+@dirrmtry %%SITE_PERL%%/RT/Interface
+@dirrmtry %%SITE_PERL%%/RT/Lifecycle
+@dirrmtry %%SITE_PERL%%/RT/Migrate/Importer
+@dirrmtry %%SITE_PERL%%/RT/Migrate/Serializer
+@dirrmtry %%SITE_PERL%%/RT/Migrate
+@dirrmtry %%SITE_PERL%%/RT/Pod
+@dirrmtry %%SITE_PERL%%/RT/Record/Role
+@dirrmtry %%SITE_PERL%%/RT/Record
+@dirrmtry %%SITE_PERL%%/RT/Report/Tickets
+@dirrmtry %%SITE_PERL%%/RT/Report
+@dirrmtry %%SITE_PERL%%/RT/Search
+@dirrmtry %%SITE_PERL%%/RT/SearchBuilder/Role
+@dirrmtry %%SITE_PERL%%/RT/SearchBuilder
 @dirrmtry %%SITE_PERL%%/RT/Shredder/Plugin/Base
 @dirrmtry %%SITE_PERL%%/RT/Shredder/Plugin
 @dirrmtry %%SITE_PERL%%/RT/Shredder
-@dirrmtry %%SITE_PERL%%/RT/SearchBuilder/Role
-@dirrmtry %%SITE_PERL%%/RT/SearchBuilder
-@dirrmtry %%SITE_PERL%%/RT/Search
-@dirrmtry %%SITE_PERL%%/RT/Report/Tickets
-@dirrmtry %%SITE_PERL%%/RT/Report
-@dirrmtry %%SITE_PERL%%/RT/Record/Role
-@dirrmtry %%SITE_PERL%%/RT/Record
-@dirrmtry %%SITE_PERL%%/RT/Pod
-@dirrmtry %%SITE_PERL%%/RT/Migrate/Serializer
-@dirrmtry %%SITE_PERL%%/RT/Migrate/Importer
-@dirrmtry %%SITE_PERL%%/RT/Migrate
-@dirrmtry %%SITE_PERL%%/RT/Lifecycle
-@dirrmtry %%SITE_PERL%%/RT/Interface/Web/QueryBuilder
-@dirrmtry %%SITE_PERL%%/RT/Interface/Web
-@dirrmtry %%SITE_PERL%%/RT/Interface/Email/Auth
-@dirrmtry %%SITE_PERL%%/RT/Interface/Email
-@dirrmtry %%SITE_PERL%%/RT/Interface
-@dirrmtry %%SITE_PERL%%/RT/I18N
-@dirrmtry %%SITE_PERL%%/RT/Graph
-@dirrmtry %%SITE_PERL%%/RT/DependencyWalker
-@dirrmtry %%SITE_PERL%%/RT/Dashboard
-@dirrmtry %%SITE_PERL%%/RT/CustomFieldValues
-@dirrmtry %%SITE_PERL%%/RT/Crypt/GnuPG
-@dirrmtry %%SITE_PERL%%/RT/Crypt
-@dirrmtry %%SITE_PERL%%/RT/Condition
-@dirrmtry %%SITE_PERL%%/RT/Approval/Rule
-@dirrmtry %%SITE_PERL%%/RT/Approval
-@dirrmtry %%SITE_PERL%%/RT/Action
+@dirrmtry %%SITE_PERL%%/RT/Squish
+@dirrmtry %%SITE_PERL%%/RT/Test
+@dirrmtry %%SITE_PERL%%/RT/URI
 @dirrmtry %%SITE_PERL%%/RT
-@dirrmtry etc/rt42
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/customizing
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/extending
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/incremental-export
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/reporting
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.0
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.15
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.1.17
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.3.0
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.3.11
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.5.1
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.1
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.10
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.15
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.19
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.3
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.81
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.82
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.85
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.86
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.7.87
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.0
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.1
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.2
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.3
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.4
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.6
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.8
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.8.9
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.1
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.2
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.3
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.5
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.6
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.7
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/3.9.8
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc2
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc4
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.0rc7
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.1
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.12
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.13
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.18
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.19
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.3
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.4
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.6
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.9
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.0
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.1
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.10
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.11
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.12
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.13
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.14
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.15
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.16
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.17
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.18
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.19
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.20
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.21
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.22
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.23
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.4
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.5
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.6
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.7
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.8
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.9
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.1
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.2
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.4
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/etc
+@dirrmtry %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%/html/Admin/Articles/Classes
+@dirrmtry %%DATADIR%%/html/Admin/Articles/Elements
+@dirrmtry %%DATADIR%%/html/Admin/Articles
+@dirrmtry %%DATADIR%%/html/Admin/CustomFields
+@dirrmtry %%DATADIR%%/html/Admin/Elements
+@dirrmtry %%DATADIR%%/html/Admin/Global/CustomFields
+@dirrmtry %%DATADIR%%/html/Admin/Global
+@dirrmtry %%DATADIR%%/html/Admin/Groups
+@dirrmtry %%DATADIR%%/html/Admin/Queues
+@dirrmtry %%DATADIR%%/html/Admin/Scrips/Elements
+@dirrmtry %%DATADIR%%/html/Admin/Scrips
+@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Dumps
+@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Error
+@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Object
+@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder/Elements
+@dirrmtry %%DATADIR%%/html/Admin/Tools/Shredder
+@dirrmtry %%DATADIR%%/html/Admin/Tools
+@dirrmtry %%DATADIR%%/html/Admin/Users
+@dirrmtry %%DATADIR%%/html/Admin
+@dirrmtry %%DATADIR%%/html/Approvals/Elements
+@dirrmtry %%DATADIR%%/html/Approvals
+@dirrmtry %%DATADIR%%/html/Articles/Article/Elements
+@dirrmtry %%DATADIR%%/html/Articles/Article
+@dirrmtry %%DATADIR%%/html/Articles/Elements
+@dirrmtry %%DATADIR%%/html/Articles
+@dirrmtry %%DATADIR%%/html/Dashboards/Elements/ShowPortlet
+@dirrmtry %%DATADIR%%/html/Dashboards/Elements
+@dirrmtry %%DATADIR%%/html/Dashboards
+@dirrmtry %%DATADIR%%/html/Download/CustomFieldValue
+@dirrmtry %%DATADIR%%/html/Download
+@dirrmtry %%DATADIR%%/html/Elements/CollectionAsTable
+@dirrmtry %%DATADIR%%/html/Elements/Crypt
+@dirrmtry %%DATADIR%%/html/Elements/RT__Article
+@dirrmtry %%DATADIR%%/html/Elements/RT__Class
+@dirrmtry %%DATADIR%%/html/Elements/RT__CustomField
+@dirrmtry %%DATADIR%%/html/Elements/RT__Dashboard
+@dirrmtry %%DATADIR%%/html/Elements/RT__Group
+@dirrmtry %%DATADIR%%/html/Elements/RT__Queue
+@dirrmtry %%DATADIR%%/html/Elements/RT__SavedSearch
+@dirrmtry %%DATADIR%%/html/Elements/RT__Scrip
+@dirrmtry %%DATADIR%%/html/Elements/RT__Template
+@dirrmtry %%DATADIR%%/html/Elements/RT__Ticket
+@dirrmtry %%DATADIR%%/html/Elements/RT__User
+@dirrmtry %%DATADIR%%/html/Elements
+@dirrmtry %%DATADIR%%/html/Errors/WebRemoteUser
+@dirrmtry %%DATADIR%%/html/Errors
+@dirrmtry %%DATADIR%%/html/Helpers/Autocomplete
+@dirrmtry %%DATADIR%%/html/Helpers/Toggle
+@dirrmtry %%DATADIR%%/html/Helpers
+@dirrmtry %%DATADIR%%/html/Install/Elements
+@dirrmtry %%DATADIR%%/html/Install
+@dirrmtry %%DATADIR%%/html/NoAuth/Helpers/CustomLogo
+@dirrmtry %%DATADIR%%/html/NoAuth/Helpers
+@dirrmtry %%DATADIR%%/html/NoAuth/RichText
+@dirrmtry %%DATADIR%%/html/NoAuth/css/aileron
+@dirrmtry %%DATADIR%%/html/NoAuth/css/ballard
+@dirrmtry %%DATADIR%%/html/NoAuth/css/base
+@dirrmtry %%DATADIR%%/html/NoAuth/css/rudder
+@dirrmtry %%DATADIR%%/html/NoAuth/css/web2
+@dirrmtry %%DATADIR%%/html/NoAuth/css
+@dirrmtry %%DATADIR%%/html/NoAuth/iCal
+@dirrmtry %%DATADIR%%/html/NoAuth/js
+@dirrmtry %%DATADIR%%/html/NoAuth/rss
+@dirrmtry %%DATADIR%%/html/NoAuth
+@dirrmtry %%DATADIR%%/html/Prefs
+@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/attachment
+@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/group
+@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/queue
+@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/ticket
+@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/transaction
+@dirrmtry %%DATADIR%%/html/REST/1.0/Forms/user
+@dirrmtry %%DATADIR%%/html/REST/1.0/Forms
+@dirrmtry %%DATADIR%%/html/REST/1.0/NoAuth
+@dirrmtry %%DATADIR%%/html/REST/1.0/search
+@dirrmtry %%DATADIR%%/html/REST/1.0/ticket
+@dirrmtry %%DATADIR%%/html/REST/1.0
+@dirrmtry %%DATADIR%%/html/REST
+@dirrmtry %%DATADIR%%/html/Search/Elements
+@dirrmtry %%DATADIR%%/html/Search
+@dirrmtry %%DATADIR%%/html/SelfService/Article
+@dirrmtry %%DATADIR%%/html/SelfService/Attachment
+@dirrmtry %%DATADIR%%/html/SelfService/Elements
+@dirrmtry %%DATADIR%%/html/SelfService/Helpers/Autocomplete
+@dirrmtry %%DATADIR%%/html/SelfService/Helpers
+@dirrmtry %%DATADIR%%/html/SelfService
+@dirrmtry %%DATADIR%%/html/Ticket/Attachment/WithHeaders
+@dirrmtry %%DATADIR%%/html/Ticket/Attachment
+@dirrmtry %%DATADIR%%/html/Ticket/Elements
+@dirrmtry %%DATADIR%%/html/Ticket/Graphs/Elements
+@dirrmtry %%DATADIR%%/html/Ticket/Graphs
+@dirrmtry %%DATADIR%%/html/Ticket
+@dirrmtry %%DATADIR%%/html/Tools
+@dirrmtry %%DATADIR%%/html/User/Elements/Portlets
+@dirrmtry %%DATADIR%%/html/User/Elements
+@dirrmtry %%DATADIR%%/html/User
+@dirrmtry %%DATADIR%%/html/Widgets/Form
+@dirrmtry %%DATADIR%%/html/Widgets
+@dirrmtry %%DATADIR%%/html/m/_elements
+@dirrmtry %%DATADIR%%/html/m/ticket
+@dirrmtry %%DATADIR%%/html/m/tickets
+@dirrmtry %%DATADIR%%/html/m
+@dirrmtry %%DATADIR%%/html
+@dirrmtry %%DATADIR%%/lib
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/po
+@dirrmtry %%DATADIR%%/static/RichText/lang
+@dirrmtry %%DATADIR%%/static/RichText/plugins/a11yhelp/dialogs/lang
+@dirrmtry %%DATADIR%%/static/RichText/plugins/a11yhelp/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/a11yhelp
+@dirrmtry %%DATADIR%%/static/RichText/plugins/about/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/about
+@dirrmtry %%DATADIR%%/static/RichText/plugins/clipboard/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/clipboard
+@dirrmtry %%DATADIR%%/static/RichText/plugins/colordialog/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/colordialog
+@dirrmtry %%DATADIR%%/static/RichText/plugins/dialog
+@dirrmtry %%DATADIR%%/static/RichText/plugins/div/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/div
+@dirrmtry %%DATADIR%%/static/RichText/plugins/fakeobjects/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/fakeobjects
+@dirrmtry %%DATADIR%%/static/RichText/plugins/find/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/find
+@dirrmtry %%DATADIR%%/static/RichText/plugins/flash/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/flash/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/flash
+@dirrmtry %%DATADIR%%/static/RichText/plugins/forms/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/forms/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/forms
+@dirrmtry %%DATADIR%%/static/RichText/plugins/iframe/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/iframe/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/iframe
+@dirrmtry %%DATADIR%%/static/RichText/plugins/image/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/image/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/image
+@dirrmtry %%DATADIR%%/static/RichText/plugins/link/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/link/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/link
+@dirrmtry %%DATADIR%%/static/RichText/plugins/liststyle/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/liststyle
+@dirrmtry %%DATADIR%%/static/RichText/plugins/magicline/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/magicline
+@dirrmtry %%DATADIR%%/static/RichText/plugins/pagebreak/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/pagebreak
+@dirrmtry %%DATADIR%%/static/RichText/plugins/pastefromword/filter
+@dirrmtry %%DATADIR%%/static/RichText/plugins/pastefromword
+@dirrmtry %%DATADIR%%/static/RichText/plugins/preview
+@dirrmtry %%DATADIR%%/static/RichText/plugins/scayt/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/scayt
+@dirrmtry %%DATADIR%%/static/RichText/plugins/showblocks/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/showblocks
+@dirrmtry %%DATADIR%%/static/RichText/plugins/smiley/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/smiley/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/smiley
+@dirrmtry %%DATADIR%%/static/RichText/plugins/specialchar/dialogs/lang
+@dirrmtry %%DATADIR%%/static/RichText/plugins/specialchar/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/specialchar
+@dirrmtry %%DATADIR%%/static/RichText/plugins/table/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/table
+@dirrmtry %%DATADIR%%/static/RichText/plugins/tabletools/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/tabletools
+@dirrmtry %%DATADIR%%/static/RichText/plugins/templates/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/templates/templates/images
+@dirrmtry %%DATADIR%%/static/RichText/plugins/templates/templates
+@dirrmtry %%DATADIR%%/static/RichText/plugins/templates
+@dirrmtry %%DATADIR%%/static/RichText/plugins/wsc/dialogs
+@dirrmtry %%DATADIR%%/static/RichText/plugins/wsc
+@dirrmtry %%DATADIR%%/static/RichText/plugins
+@dirrmtry %%DATADIR%%/static/RichText/skins/kama/images
+@dirrmtry %%DATADIR%%/static/RichText/skins/kama
+@dirrmtry %%DATADIR%%/static/RichText/skins
+@dirrmtry %%DATADIR%%/static/RichText
+@dirrmtry %%DATADIR%%/static/css/aileron
+@dirrmtry %%DATADIR%%/static/css/ballard
+@dirrmtry %%DATADIR%%/static/css/base
+@dirrmtry %%DATADIR%%/static/css/images
+@dirrmtry %%DATADIR%%/static/css/rudder
+@dirrmtry %%DATADIR%%/static/css/web2
+@dirrmtry %%DATADIR%%/static/css
+@dirrmtry %%DATADIR%%/static/images/css
+@dirrmtry %%DATADIR%%/static/images/farbtastic
+@dirrmtry %%DATADIR%%/static/images/jquery_ui
+@dirrmtry %%DATADIR%%/static/images/tablesorter
+@dirrmtry %%DATADIR%%/static/images
+@dirrmtry %%DATADIR%%/static/js
+@dirrmtry %%DATADIR%%/static
+@dirrmtry %%DATADIR%%
+@dirrmtry %%WWWDIR%%42
+@unexec rmdir "/var/run/rt42/mason_data/cache" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt42/mason_data/etc" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt42/mason_data/obj" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt42/mason_data" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt42/session_data" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/rt42" >/dev/null 2>&1 || :

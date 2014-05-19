@@ -16,7 +16,7 @@ BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:bzip2
 USE_PERL5=	configure patch
 MAKE_JOBS_UNSAFE=	yes
 
@@ -25,7 +25,6 @@ SHEBANG_FILES=	lib/Razor2/Client/*.pm \
 		lib/Razor2/*.pm
 
 MAKE_ARGS+=	PERLPREFIX=${PREFIX}
-USE_BZIP2=	yes
 
 PORTSCOUT=	skipv:2.85
 

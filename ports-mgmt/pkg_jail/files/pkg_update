@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$Id: pkg_update,v 1.72 2013/01/02 13:46:24 cvs Exp $
+#	$Id: pkg_update,v 1.77 2014/05/16 09:08:12 cvs Exp $
 #	$FreeBSD$
 #
 # Copyright (c) 2001-2006
@@ -146,6 +146,178 @@ END {
 }' >> "${subs}"
 }
 
+read_env_local() {
+	local_env=""
+	if test -f "${fulldir}/Env.local"
+	then
+		echo "=== Reading ${fulldir}/Env.local"
+		local_env="env "`tr '\n' ' ' < "${fulldir}/Env.local"`
+	fi
+}
+
+run_pkg_add() {
+	read_env_local
+	if test "${pkgng}" = ""
+	then
+		${local_env} pkg_add "${pkgfile}"
+		if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+		then
+			return 0
+		fi
+	else
+		${local_env} pkg add "${pkgfile}"
+		installed=`pkg query -e "%o == ${dir}" '%o'`
+		if test "${installed}" = "${dir}"
+		then
+			return 0
+		fi
+	fi
+	return 1
+}
+
+run_pkg_installed() {
+	if test "${pkgng}" = ""
+	then
+		if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+		then
+			echo "#installed:	${pkgname} from ${dir}"
+			return 0
+		fi
+	else
+		installed=`pkg query -e "%o == ${dir}" '%o'`
+		if test "${installed}" = "${dir}"
+		then
+			echo "#installed:	${pkgname} from ${dir}"
+			return 0
+		fi
+	fi
+	return 1
+}
+
+run_pkg_add_missing() {
+	pkgname=`make -V PKGNAME`
+	pkgfile=`make -V PKGFILE`
+	dir="${fulldir##${portsdir}/}"
+	dir="${dir##${localdir}/}"
+	if test "${pkgng}" = ""
+	then
+		if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+		then
+			return 1
+		fi
+	else
+		installed=`pkg query -e "%o == ${dir}" '%o'`
+		if test "${installed}" = "${dir}"
+		then
+			return 1
+		fi
+	fi
+	if test ! -e "${pkgfile}"
+	then
+		return 0
+	fi
+	if run_pkg_add
+	then
+		return 1
+	fi
+	return 0
+}
+
+run_pkg_delete() {
+	pkgname=`make -V PKGNAME`
+	if test "${pkgng}" = ""
+	then
+		if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+		then
+			pkg_delete "${pkgname}"
+		else
+			echo "## current port is not installed: ${pkgname}"
+		fi
+	else
+		pkg delete "${pkgname}"
+	fi
+}
+
+run_pkg_delete_all() {
+	if test "${pkgng}" = ""
+	then
+		# rm -rf /usr/local/*
+		pkg_delete -a
+		pkg_delete -f ${pkg_dbdir}/* >/dev/null 2>&1
+		return
+	fi
+	installed=`pkg query -e '%p == /usr/local' '%o'; pkg query -e '%p == /compat/linux' '%o';`
+	if test "${installed}" = ""
+	then
+		return
+	fi
+	pkg delete -y -f ${installed}
+	return
+}
+
+run_pkg_info_installed() {
+	if test "${pkgng}" = ""
+	then
+		pkg_info -q -O "${1}"
+	else
+		pkg query -e "%o == ${1}" '%o'
+	fi
+}
+
+run_pkg_info_origin_file() {
+	if test "${pkgng}" = ""
+	then
+		pkg_info -q -o "${1}"
+	else
+		pkg info -q -o -F "${1}"
+	fi
+}
+
+run_pkg_info_origin_name() {
+	if test "${pkgng}" = ""
+	then
+		pkg_info -q -o "${1}"
+	else
+		pkg info -q -o "${1}"
+	fi
+}
+
+run_pkg_info_origin_all() {
+	if test "${pkgng}" = ""
+	then
+		pkg_info -q -o -a
+	else
+		pkg query '%o'
+	fi
+}
+
+run_pkg_info_dependecies() {
+	if test "${pkgng}" = ""
+	then
+		pkg_info -q -r "${1}" | sed 's|^@pkgdep ||'
+	else
+		pkg info -q -d -F "${1}"
+	fi
+}
+
+run_pkg_info_list() {
+	if test "${pkgng}" = ""
+	then
+		pkg_info
+	else
+		pkg info
+	fi
+}
+
+run_pkg_info_requiredby() {
+	if test "${pkgng}" = ""
+	then
+		pkg_info -qR "${1}"
+	else
+		pkg info -q -r "${1}"
+	fi
+}
+
 # check dependencies and decides if a ports needs to be rebuild
 # Usage: port_uptodate show
 # Usage: port_uptodate make
@@ -161,7 +333,8 @@ port_uptodate() {
 	#
 	case "$1" in
 	show*|make*)
-		base="${portsdir}/$(make -V PKGORIGIN)"
+		dir="$(make -V PKGORIGIN)"
+		base="${portsdir}/${dir}"
 		base1=`pwd`
 		base2=`cd "${base}" && pwd`
 		if test ! "${base1}" = "${base2}"
@@ -171,7 +344,6 @@ port_uptodate() {
 		fi
 		echo "## ${base}: port_uptodate $1 "
 		pkgname=`make -V PKGNAME`
-		dir=`make -V PORTDIRNAME`
 		pkgfile=`make -V PKGFILE`
 		mainpkg="${pkgname}"
 		for=""
@@ -180,9 +352,8 @@ port_uptodate() {
 		rm -f "${tmpupdated}" "${tmpfailed}"
 		while test "${found}" = ""
 		do
-			if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+			if run_pkg_installed
 			then
-				echo "#installed:	${pkgname} from ${dir}"
 				found="1"
 				break
 			fi
@@ -224,9 +395,8 @@ port_uptodate() {
 		fi
 		log=`echo "${dir}" | sed -e 's=/=,=g'`
 		pkgname=`cd ${fulldir} && make -V PKGNAME`
-		if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+		if run_pkg_installed
 		then
-			echo "#installed:	${pkgname} from ${dir}${for}"
 			continue
 		fi
 		pkgfile=`cd ${fulldir} && make -V PKGFILE`
@@ -247,9 +417,8 @@ port_uptodate() {
 					# check dependend package is ok!
 					( cd ${fulldir} && port_uptodate $1+ )
 					touch "${logdir}/check,${log}"
-					if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+					if run_pkg_installed
 					then
-						echo "#installed:	${pkgname} from ${dir}${for}"
 						continue
 					fi
 				fi
@@ -268,14 +437,7 @@ port_uptodate() {
 			echo "pkg_add ${pkgfile}"
 			case "$1" in
 			make*)
-				local_env=""
-				if test -f "${fulldir}/Env.local"
-				then
-					echo "=== Reading ${fulldir}/Env.local"
-					local_env="env "`tr '\n' ' ' < "${fulldir}/Env.local"`
-				fi
-				${local_env} pkg_add ${pkgfile}
-				if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+				if run_pkg_add
 				then
 					continue
 				fi
@@ -294,7 +456,7 @@ port_uptodate() {
 		make*)
 			echo "cd ${fulldir} && port_uptodate $1+"
 			( cd ${fulldir} && port_uptodate $1+ )
-			if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+			if run_pkg_installed
 			then
 				continue
 			fi
@@ -335,47 +497,66 @@ port_uptodate() {
 			echo "=== Reading ${base}/Env.local"
 			local_env="env "`tr '\n' ' ' < "${base}/Env.local"`
 		fi
-		echo "cd ${base} && ${local_env} make package >> ${logdir}/err,${log} 2>&1"
+		prefix="/usr/local"
+		if test ! -d "${prefix}"
+		then
+			mkdir -p "${prefix}"
+		fi
+		echo "cd ${base} && ${local_env} make package > ${logdir}/err,${log} 2>&1"
 		case "$1" in
 		make*)
 			( cd "${base}" && ${local_env} make package </dev/null >> "${logdir}/err,${log}" 2>&1 )
-			if test ! -e "${pkg_dbdir}/${pkgname}/+CONTENTS"
+			pkgfile=`cd "${base}" && make -V PKGFILE`
+			if test -e "${pkgfile}"
 			then
+				if test -f "${logdir}/build,${log}"
+				then
+					mv -f "${logdir}/build,${log}" "${logdir}/last,${log}"
+				fi
+				mv -f "${logdir}/err,${log}" "${logdir}/build,${log}"
+				( cd ${base} && make clean NOCLEANDEPENDS=yes )
+				if run_pkg_installed
+				then
+					return 0
+				fi
 				noinstall=`cd "${base}" && make -V NO_INSTALL`
 				case "${noinstall}" in
 				yes|YES)
+					return 0
+					;;
+				esac
+				nostage=`cd "${base}" && make -V NO_STAGE`
+				case "${nostage}" in
+				yes|YES)
+					echo "=====================================" >&2
+					echo "=== package ${pkgname} was not installed" >&2
+					echo "=====================================" >&2
+					echo "=== package ${pkgname} was not installed" \
+						>> ${logdir}/err,${log}
+					return 2
 					;;
 				*)
-					nostage=`cd "${base}" && make -V NO_STAGE`
-					case "${nostage}" in
-					yes|YES)
-						echo "=====================================" >&2
-						echo "=== package ${pkgname} was not installed" >&2
-						echo "=====================================" >&2
-						echo "=== package ${pkgname} was not installed" \
-							>> ${logdir}/err,${log}
-						return 2
-						;;
-					*)
-						# install staged package
-						pkgfile=`cd "${base}" && make -V PKGFILE`
-						${local_env} pkg_add ${pkgfile}
-						if test ! -e ${pkg_dbdir}/${pkgname}/+CONTENTS
-						then
-							echo "=====================================" >&2
-							echo "pkg_add ${pkgfile} failed, no ${pkgname}!" >&2
-							echo "=====================================" >&2
-							echo "=== package ${pkgname} can not be installed" \
-								>> ${logdir}/err,${log}
-						fi
-						;;
-					esac
-					;;
+					# install staged package
+					pkgfile=`cd "${base}" && make -V PKGFILE`
+					if run_pkg_add
+					then
+						return 0
+					fi
+					echo "=====================================" >&2
+					echo "=== pkg_add ${pkgfile}, no ${pkgname}!" >&2
+					echo "=====================================" >&2
+					echo "=== package ${pkgname} can not be installed" \
+						>> ${logdir}/err,${log}
+					return 2
 				esac
 			fi
 			pkgfile=`cd "${base}" && make -V PKGFILE`
 			if test -e "${pkgfile}"
 			then
+				if test -f "${logdir}/build,${log}"
+				then
+					mv -f "${logdir}/build,${log}" "${logdir}/last,${log}"
+				fi
 				mv -f "${logdir}/err,${log}" "${logdir}/build,${log}"
 				( cd ${base} && make clean NOCLEANDEPENDS=yes )
 			else
@@ -432,13 +613,14 @@ make_packages_in_dir() {
 		cd "${dir}" || return 69
 
 		wrkdir=`make -V WRKDIRPREFIX`
+		prefix="/usr/local"
 		if ! test "${wrkdir}" = ""
 		then
-			rm -rf ${wrkdir}/*
-			pkg_delete -f ${pkg_dbdir}/* >/dev/null 2>&1
-			rm -rf /usr/local/*
+			rm -rf "${wrkdir}"/*
+			run_pkg_delete_all
+			rm -rf "${prefix}"/*
 		fi
-		
+
 		port_uptodate show > "${tmpshow}"
 		err="${?}"
 
@@ -452,7 +634,7 @@ make_packages_in_dir() {
 			fi
 
 			make deinstall
-			pkg_delete ${pkg_dbdir}/* >/dev/null 2>&1
+			run_pkg_delete_all
 			if test -f ${localdir}/data/badfiles
 			then
 				grep -v "^#" ${localdir}/data/badfiles |
@@ -490,22 +672,22 @@ make_packages_in_dir() {
 				sed -e 's=^=@dirrm =' >> "${plistlog}"
 				rm -rf /root/GNUstep
 			fi
-			if test -d /usr/local
+			if test -d "${prefix}"
 			then
-				find -d /usr/local -type f -or -type l |
+				find -d "${prefix}" -type f -or -type l |
 				sort |
 				sed -f "${subs}" >> "${plistlog}"
 				if test -f "${portsdir}/Templates/BSD.local.dist"
 				then
-					cleanmtree /usr/local /tmp/local \
+					cleanmtree "${prefix}" /tmp/local \
 						"${portsdir}/Templates/BSD.local.dist"
 				else
-					cleanmtree /usr/local /tmp/local \
+					cleanmtree "${prefix}" /tmp/local \
 						"/etc/mtree/BSD.local.dist"
 				fi
-				if test -d /usr/local
+				if test -d "${prefix}"
 				then
-					find -d /usr/local -type d |
+					find -d "${prefix}" -type d |
 					sort -r |
 					sed -f "${subs}" |
 					plist_dir >> "${plistlog}"
@@ -539,40 +721,38 @@ make_packages_in_dir() {
 # Usage: add_packages_in_dir directory
 add_packages_in_dir() {
 	tmpshow="/tmp/check-package.$$"
-	dir="${1}"
-	if test "${dir}" = ""
+	fulldir="${1}"
+	if test "${fulldir}" = ""
 	then
 		return
 	fi
-	case "${dir}" in
+	case "${fulldir}" in
 	*nonexistent)
 		return
 		;;
 	esac
-	if test ! -d "${dir}"
+	if test ! -d "${fulldir}"
 	then
 		xdir="${portsdir}/${dir}"
 		if test ! -d "${xdir}"
 		then
-			echo "## dir does not exist: ${dir}"
+			echo "## dir does not exist: ${fulldir}"
 			return
 		fi
-		dir="${xdir}"
+		fulldir="${xdir}"
 	fi
 
 	(
-	echo "# checking: ${dir}"
-	cd "${dir}" || return 69
+	echo "# checking: ${fulldir}"
+	cd "${fulldir}" || return 69
 
 	port_uptodate show > "${tmpshow}"
 	err="${?}"
 	case "${err}" in
 	0)
-		pkgname=`make -V PKGNAME`
-		if test ! -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+		if run_pkg_add_missing
 		then
-			pkgfile=`make -V PKGFILE`
-			pkg_add ${pkgfile}
+			exit 1
 		fi
 		;;
 	1)
@@ -586,30 +766,30 @@ add_packages_in_dir() {
 # install the existing packages from a port to a host
 # Usage: install_packages_in_dir directory
 install_packages_in_dir() {
-	dir="${1}"
-	if test "${dir}" = ""
+	fulldir="${1}"
+	if test "${fulldir}" = ""
 	then
 		return
 	fi
-	case "${dir}" in
+	case "${fulldir}" in
 	*nonexistent)
 		return
 		;;
 	esac
-	if test ! -d "${dir}"
+	if test ! -d "${fulldir}"
 	then
-		xdir="${portsdir}/${dir}"
+		xdir="${portsdir}/${fulldir}"
 		if test ! -d "${xdir}"
 		then
-			movedto=`get_new_origin "${dir}"`
+			movedto=`get_new_origin "${fulldir}"`
 			if test "${movedto}" = "nonexistent"
 			then
-				echo "## port removed: ${dir}"
+				echo "## port removed: ${fulldir}"
 				return
 			fi
 			if test "${movedto}" = "${dir}"
 			then
-				echo "## dir does not exist: ${dir}"
+				echo "## dir does not exist: ${fulldir}"
 				return
 			fi
 			echo "## dir moved: ${dir} -> ${movedto}"
@@ -620,106 +800,83 @@ install_packages_in_dir() {
 				return
 			fi
 		fi
-		dir="${xdir}"
+		fulldir="${xdir}"
 	fi
 
 #	echo "# checking: ${dir}"
 	(
-	cd "${dir}" || return 69
-	pkgname=`make -V PKGNAME`
-	if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+	cd "${fulldir}" || return 69
+	if run_pkg_add_missing
 	then
-		return
+		echo "## package does not exist: ${pkgfile}"
+		echo "(cd ${fulldir} && make package)"
 	fi
-	pkgfile=`make -V PKGFILE`
-	if test -f "${pkgfile}"
-	then
-		echo "pkg_add ${pkgfile}"
-		pkg_add "${pkgfile}"
-		return
-	fi
-	echo "## package does not exist: ${pkgfile}"
-	echo "(cd ${dir} && make package)"
 	)
 }
 #
 # show the existing packages from a port to a host
 # Usage: show_packages_in_dir directory
 show_packages_in_dir() {
-	dir="${1}"
-	if test "${dir}" = ""
+	fulldir="${1}"
+	if test "${fulldir}" = ""
 	then
 		return
 	fi
-	case "${dir}" in
+	case "${fulldir}" in
 	*nonexistent)
 		return
 		;;
 	esac
-	if test ! -d "${dir}"
+	if test ! -d "${fulldir}"
 	then
 		xdir="${portsdir}/${dir}"
 		if test ! -d "${xdir}"
 		then
-			echo "## dir does not exist: ${dir}"
+			echo "## dir does not exist: ${fulldir}"
 			return
 		fi
-		dir="${xdir}"
+		fulldir="${xdir}"
 	fi
 
 	(
-#	echo "# checking: ${dir}"
-	cd "${dir}" || return 69
-	pkgname=`make -V PKGNAME`
-	if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+#	echo "# checking: ${fulldir}"
+	cd "${fulldir}" || return 69
+	if run_pkg_add_missing
 	then
-		return
+		echo "## package does not exist: ${pkgfile}"
+		echo "(cd ${dir} && make package)"
 	fi
-	pkgfile=`make -V PKGFILE`
-	if test -f "${pkgfile}"
-	then
-		echo "pkg_add ${pkgfile}"
-		return
-	fi
-	echo "## package does not exist: ${pkgfile}"
-	echo "(cd ${dir} && make package)"
 	)
 }
 #
 # delete the existing packages on this host
 # Usage: deinstall_packages_in_dir directory
 deinstall_packages_in_dir() {
-	dir="${1}"
-	if test "${dir}" = ""
+	fulldir="${1}"
+	if test "${fulldir}" = ""
 	then
 		return
 	fi
-	case "${dir}" in
+	case "${fulldir}" in
 	*nonexistent)
 		return
 		;;
 	esac
-	if test ! -d "${dir}"
+	if test ! -d "${fulldir}"
 	then
-		xdir="${portsdir}/${dir}"
+		xdir="${portsdir}/${fulldir}"
 		if test ! -d "${xdir}"
 		then
 			echo "## dir does not exist: ${dir}"
 			return
 		fi
-		dir="${xdir}"
+		fulldir="${xdir}"
 	fi
 
 	(
-#	echo "# checking: ${dir}"
-	cd "${dir}" || return 69
-	pkgname=`make -V PKGNAME`
-	if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
-	then
-		pkg_delete "${pkgname}"
-		return
-	fi
-	echo "## current port is not installed: ${pkgname}"
+#	echo "# checking: ${fulldir}"
+	cd "${fulldir}" || return 69
+	run_pkg_delete "${pkgname}"
 	)
 }
 #
@@ -829,7 +986,7 @@ fetch_recursive_distfiles_in_dir() {
 #
 move_dependent_away() {
 	local incache
-	grep -l -r "^[@]pkgdep ${1}"'$' "${pkginfo_cache}/" |
+	grep -l -r "^${1}"'$' "${pkginfo_cache}/" |
 	while read incache
 	do
 		file="${incache#${pkginfo_cache}/}"
@@ -870,9 +1027,10 @@ pkg_info_dependecies()
 		cat "${saved}"
 		return
 	fi
-	pkg_info -q -r ${1} |
+	run_pkg_info_dependecies "${1}" |
 	tee "${saved}"
 }
+
 #
 # check all packages in ${PACKAGES}/All/
 # Usage: clean_package_all
@@ -887,7 +1045,7 @@ clean_package_all() {
 			continue
 		fi
 		# ist this package up to date?
-		origin=`pkg_info -q -o ${i}`
+		origin=`run_pkg_info_origin_file "${i}"`
 		if test "${origin}" = ""
 		then
 			echo "${i}: missing origin"
@@ -916,15 +1074,15 @@ clean_package_all() {
 		ptarget="${pnew}"
 		#
 		# check each depended package
-		pkg_info_dependecies "${i}" |
-		while read dummy dep
+		pkg_info_dependecies "${ptarget}" |
+		while read dep
 		do
 			pmade="${dep}${ext}"
 			if test -f "${pmade}"
 			then
 				#
 				# find matching port directory (origin)
-				origin=`pkg_info -q -o ${pmade}`
+				origin=`run_pkg_info_origin_file ${pmade}`
 				if test "${origin}" = ""
 				then
 					echo "${i}: missing origin"
@@ -971,7 +1129,7 @@ clean_package_openssl() {
 	cd ${pkgall} || exit 69
 	for i in *
 	do
-		origin=`pkg_info -q -o ${i}`
+		origin=`run_pkg_info_origin_file ${i}`
 		if test "${origin}" = ""
 		then
 			continue
@@ -1136,7 +1294,12 @@ merge_distfiles() {
 # Usage: dependency_update
 dependency_update() {
 	#
-	pkg_info |
+	if test "${pkgng}" != ""
+	then
+		echo "pkg does not support target dependency_update" >&2
+		return
+	fi
+	run_pkg_info_list |
 	cut -d " " -f1 |
 	while read find
 	do
@@ -1145,10 +1308,10 @@ dependency_update() {
 		while read key depend
 		do
 #			echo "${find} needs ${depend}"
-			dir=`pkg_info -o -q ${depend} 2>/dev/null`
+			dir=`run_pkg_info_origin_name ${depend} 2>/dev/null`
 			if test "${dir}" = ""
 			then
-				dir=`pkg_info -o -q ${find}`
+				dir=`run_pkg_info_origin_name ${find}`
 				pkg="${depend%%-[0-9]*}"
 				if test ! -d "${portsdir}/${dir}"
 				then
@@ -1162,7 +1325,7 @@ dependency_update() {
 						continue
 					fi
 					neu=`cd "${depdir}" && make -V PKGNAME`
-					dirneu=`pkg_info -o -q "${neu}" 2>/dev/null`
+					dirneu=`run_pkg_info_origin_name "${neu}" 2>/dev/null`
 					pkgneu="${neu%%-[0-9]*}"
 					if test "${pkg}" = "${pkgneu}"
 					then
@@ -1205,7 +1368,7 @@ dependency_update() {
 			cat "${edit}" |
 			while read neu
 			do
-				dirneu=`pkg_info -o -q ${neu} 2>/dev/null`
+				dirneu=`run_pkg_info_origin_name ${neu} 2>/dev/null`
 				if test "${dirneu}" = ""
 				then
 					echo "${find} is required by ${neu} (not installed)"
@@ -1246,8 +1409,13 @@ update_origin() {
 		return
 	fi
 	echo "Updating: ${origin} -> ${movedto}"
+	if test "${pkgng}" != ""
+	then
+		pkg set -o "${origin}:${movedto}"
+		return
+	fi
 	sed -i -e "s=${origin}=${movedto}=" "${pkg_dbdir}/${installed}/+CONTENTS"
-	pkg_info -qR "${installed}" |
+	run_pkg_info_requiredby "${installed}" |
 	while read requiredby
 	do
 		if test "${requiredby}" = ""
@@ -1263,7 +1431,12 @@ make_version_list() {
 	if test ! -s "${cache}"
 	then
 		echo "pkg_version -v -L ="
-		pkg_version -v -L = /dev/null | grep -v bsdpan- > "${cache}"
+		if test "${pkgng}" = ""
+		then
+			pkg_version -v -L = /dev/null | grep -v bsdpan- > "${cache}"
+		else
+			pkg version -v -L = /dev/null | grep -v bsdpan- > "${cache}"
+		fi
 	fi
 }
 #
@@ -1284,7 +1457,7 @@ fix_moved_ports() {
 		egrep "Comparison failed" "${cache}" |
 		while read installed flag status failed
 		do
-			origin=`pkg_info -qo "${installed}"`
+			origin=`run_pkg_info_origin_name "${installed}"`
 			if test "${origin}" = ""
 			then
 				continue
@@ -1298,22 +1471,23 @@ fix_moved_ports() {
 delete_dependent_package() {
 	local installed 
 	installed="${1}"
-	edit="${pkg_dbdir}/${installed}/+REQUIRED_BY"
-	if test -s "${edit}"
-	then
-		cat "${edit}" |
-		while read requiredby
-		do
-			delete_dependent_package "${requiredby}"
-		done
-	fi
+        run_pkg_info_requiredby "${installed}" |
+	while read requiredby
+	do
+		delete_dependent_package "${requiredby}"
+	done
 	seenflag="${seen}/${installed}"
 	if test -e "${seenflag}"
 	then
 		return
 	fi
-	origin=`pkg_info -qo "${installed}"`
-	echo "pkg_delete ${installed}"
+	origin=`run_pkg_info_origin_name "${installed}"`
+	if test "${pkgng}" = ""
+	then
+		echo "pkg_delete ${installed}"
+	else
+		echo "pkg delete ${installed}"
+	fi
 	add_to_file "${todolist}" "${origin}" quiet
 	touch "${seenflag}"
 }
@@ -1382,6 +1556,11 @@ add_to_file( ) {
 #
 # replace-package package
 replace_package() {
+	if test "${pkgng}" != ""
+	then
+		echo "pkg does not support target replace_package" >&2
+		return
+	fi
 	tmp1="/tmp/replace-package.1"
 	tmp2="/tmp/replace-package.2"
 	tmp3="/tmp/replace-package.3"
@@ -1402,13 +1581,13 @@ replace_package() {
 		echo "${oldpkg}: package does exist as obsolete"
 		return
 	fi
-	origin=`pkg_info -q -o "${oldpkg}"`
+	origin=`run_pkg_info_origin_name "${oldpkg}"`
 	if test "${origin}" = ""
 	then
 		echo "${oldpkg}: missing origin"
 		return
 	fi
-	installed=`pkg_info -q -O "${origin}" | wc -l`
+	installed=`run_pkg_info_installed "${origin}" | wc -l`
         if test "${installed}" -ne 1
         then
 		echo "${oldpkg}: more than one package from ${origin} found"
@@ -1581,6 +1760,11 @@ set_fail_count() {
 # check dependency for easy deinstall
 easy_required_package() {
 	local installed contents pkgname deporigin movedto
+	if test "${pkgng}" != ""
+	then
+		echo "pkg does not support target easy_required_package" >&2
+		return
+	fi
 	installed="${1}"
 	if test -e "${required}/${installed}"
 	then
@@ -1619,28 +1803,29 @@ easy_dependent_package() {
 	then
 		return
 	fi
-	edit="${pkg_dbdir}/${installed}/+REQUIRED_BY"
-	if test -s "${edit}"
-	then
-		cat "${edit}" |
-		while read requiredby
-		do
-			easy_dependent_package "${requiredby}"
-		done
-	fi
+        run_pkg_info_requiredby "${installed}" |
+	while read requiredby
+	do
+		easy_dependent_package "${requiredby}"
+	done
 	if test -e "${seen}/${installed}"
 	then
 		return
 	fi
 	touch "${seen}/${installed}"
-	origin=`pkg_info -qo "${installed}"`
+	origin=`run_pkg_info_origin_name "${installed}"`
 	movedto=`get_new_origin "${origin}"`
 	pkgname=`cd "${portsdir}/${movedto}" && make -V PKGNAME`
 	pkgfile=`cd "${portsdir}/${movedto}" && make -V PKGFILE`
 	echo "#	${installed}	${portsdir}/${origin}"
 	if test -f "${pkgfile}"
 	then
-		remake="pkg_add ${pkgfile}"
+		if test "${pkgng}" = ""
+		then
+			remake="pkg_add ${pkgfile}"
+		else
+			remake="pkg add ${pkgfile}"
+		fi
 	else
 		remake="# missing package: ${pkgfile}"
 		echo "# missing package: ${pkgfile}"
@@ -1654,7 +1839,12 @@ easy_dependent_package() {
 	else
 		echo "${remake}" > "${easyremake}"
 	fi
-	echo "pkg_delete ${installed}" >> "${easyclean}"
+	if test "${pkgng}" = ""
+	then
+		echo "pkg_delete ${installed}" >> "${easyclean}"
+	else
+		echo "pkg delete ${installed}" >> "${easyclean}"
+	fi
 	if test -f "${failed}/${pkgname}"
 	then
 		echo "# updating dependend package ${pkgname}"
@@ -1686,7 +1876,7 @@ easy_process_output() {
 easy_update_package() {
 	local installed origin movedto pkgname
 	installed="${1}"
-	origin=`pkg_info -qo "${installed}"`
+	origin=`run_pkg_info_origin_name "${installed}"`
 	if test "${origin}" = ""
 	then
 		echo "# ${installed}: no origin"
@@ -1856,6 +2046,12 @@ nowarn="COMMENT=0 CATEGORIES=0 PORTVERSION=0"
 portsdir=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PORTSDIR`
 pkg_dbdir=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PKG_DBDIR`
 packages=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PACKAGES`
+if test -f /usr/sbin/pkg_add
+then
+	pkgng=""
+else
+	pkgng="yes"
+fi
 quiet_mkdir "${pkginfo_cache}"
 #
 target="${1}"
@@ -2056,8 +2252,8 @@ fix-moved-ports)
 	next_target "${@}"
 	;;
 list-installed-ports)
-	shift
-	pkg_info -qao "${@}"
+	run_pkg_info_origin_all
+	next_target "${@}"
 	;;
 show-version-list)
 	make_version_list
@@ -2097,13 +2293,13 @@ show-missing-reinstall)
 			echo "new     ${pkgname} installed"
 			continue
 		fi
-		installed=`pkg_info -qao | fgrep -x ${origin}`
+		installed=`run_pkg_info_installed "${origin}"`
 		if test "${installed}" != ""
 		then
 			echo "old     ${origin} installed"
 			continue
 		fi
-		installed=`pkg_info -qao | fgrep -x ${movedto}`
+		installed=`run_pkg_info_installed "${movedto}"`
 		if test "${installed}" != ""
 		then
 			echo "old     ${movedto} installed"
@@ -2147,7 +2343,7 @@ clean-reinstall)
 			remove_from_file "${todolist}" "${origin}"
 			continue
 		fi
-		installed=`pkg_info -qao | fgrep -x ${origin}`
+		installed=`run_pkg_info_installed "${origin}"`
 		if test "${installed}" != ""
 		then
 			remove_from_file "${todolist}" "${origin}"
@@ -2163,7 +2359,7 @@ clean-reinstall)
 	done
 	;;
 show-missing-installed)
-	/bin/sh "${0}" show-missing-packages `pkg_info -qao`
+	/bin/sh "${0}" show-missing-packages `run_pkg_info_origin_all`
 	;;
 reinstall)
 	exec /bin/sh "${0}" install-packages "${todolist}"
@@ -2215,7 +2411,7 @@ check-installed-ports)
 	) |
 	sed -e 's=^/usr/ports/==' |
 	sort -u > "${tmp1}"
-	pkg_info -qao |
+	run_pkg_info_origin_all |
 	sort -u > "${tmp2}"
 	obsolete=`comm -23 "${tmp1}" "${tmp2}"`
 	if test "${obsolete}"
@@ -2247,7 +2443,7 @@ check-installed-ports)
 				echo "${origin}"
 				continue
 			fi
-			pkgname=`pkg_info -qO ${origin}`
+			pkgname=`run_pkg_info_installed "${origin}"`
 			if test -s "${pkg_dbdir}/${pkgname}/+REQUIRED_BY"
 			then
 				echo "${origin} (old version, dependency)"
@@ -2267,7 +2463,7 @@ cvsup)
 	else
 		case "${sup}" in
 		*/cvsup)
-			installed=`pkg_info -qao | grep cvsup`
+			installed=`run_pkg_info_origin_all | grep cvsup`
 			if test "${installed}" = ""
 			then
 				for i in \

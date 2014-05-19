@@ -1,6 +1,6 @@
---- share/gprconfig/linker.xml.orig	2013-01-25 17:01:24.000000000 +0000
+--- share/gprconfig/linker.xml.orig	2014-02-13 04:59:56.000000000 +0000
 +++ share/gprconfig/linker.xml
-@@ -519,11 +519,14 @@
+@@ -599,11 +599,14 @@
      </config>
    </configuration>
  
@@ -16,7 +16,7 @@
         <target name="^.*irix.*$" />
      </targets>
      <config>
-@@ -557,10 +560,13 @@
+@@ -675,10 +678,13 @@
      </config>
    </configuration>
  
@@ -31,27 +31,20 @@
      </targets>
      <config>
     for Run_Path_Option  use ("-Wl,-rpath,");
-@@ -888,6 +894,9 @@
+@@ -1181,6 +1187,12 @@
         <target name="^.*mingw.*$" />
         <target name="^.*linux.*$" />
         <target name="^.*freebsd.*$" />
 +       <target name="^.*dragonfly.*$" />
 +       <target name="^.*openbsd.*$" />
 +       <target name="^.*netbsd.*$" />
-      </targets>
-     <compilers negate="true">
-        <compiler language="C++" />
-@@ -929,6 +938,9 @@
-        <target name="^.*mingw.*$" />
-        <target name="^.*linux.*$" />
-        <target name="^.*freebsd.*$" />
 +       <target name="^.*dragonfly.*$" />
 +       <target name="^.*openbsd.*$" />
 +       <target name="^.*netbsd.*$" />
       </targets>
      <compilers negate="true">
         <compiler language="C++" />
-@@ -970,6 +982,9 @@
+@@ -1265,6 +1277,9 @@
         <target name="^.*mingw.*$" />
         <target name="^.*linux.*$" />
         <target name="^.*freebsd.*$" />

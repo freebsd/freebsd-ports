@@ -29,25 +29,14 @@ msp430/include/sys/types.h
 msp430/lib/libc.a
 msp430/lib/libfp.a
 msp430/lib/libm.a
-%%GCC3%%msp430/lib/msp1/libc.a
-%%GCC3%%msp430/lib/msp1/libfp.a
-%%GCC3%%msp430/lib/msp1/libm.a
-%%GCC3%%msp430/lib/msp2/libc.a
-%%GCC3%%msp430/lib/msp2/libfp.a
-%%GCC3%%msp430/lib/msp2/libm.a
-%%GCC4%%msp430/lib/mcpu-430x/libc.a
-%%GCC4%%msp430/lib/mcpu-430x/libfp.a
-%%GCC4%%msp430/lib/mcpu-430x/libm.a
-%%GCC4%%msp430/lib/mcpu-430x/mmpy-16/libc.a
-%%GCC4%%msp430/lib/mcpu-430x/mmpy-16/libfp.a
-%%GCC4%%msp430/lib/mcpu-430x/mmpy-16/libm.a
-%%GCC4%%msp430/lib/mmpy-16/libc.a
-%%GCC4%%msp430/lib/mmpy-16/libfp.a
-%%GCC4%%msp430/lib/mmpy-16/libm.a
+msp430/lib/mcpu-430x/libc.a
+msp430/lib/mcpu-430x/libfp.a
+msp430/lib/mcpu-430x/libm.a
+msp430/lib/mcpu-430x/mmpy-16/libc.a
+msp430/lib/mcpu-430x/mmpy-16/libfp.a
+msp430/lib/mcpu-430x/mmpy-16/libm.a
+msp430/lib/mmpy-16/libc.a
+msp430/lib/mmpy-16/libfp.a
+msp430/lib/mmpy-16/libm.a
 @dirrm msp430/include/bits
 @dirrm msp430/include/sys
-%%GCC3%%@dirrm msp430/lib/msp1
-%%GCC3%%@dirrm msp430/lib/msp2
-%%GCC4%%@dirrm msp430/lib/mcpu-430x/mmpy-16
-%%GCC4%%@dirrm msp430/lib/mcpu-430x
-%%GCC4%%@dirrm msp430/lib/mmpy-16

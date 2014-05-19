@@ -25,27 +25,22 @@ PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}a
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	etasktut.pdf gpl.txt README
-.endif
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${EMACS_NAME} -batch -no-site-file\
 			--eval="(add-to-list 'load-path \"${WRKSRC}\")"\
 			-f batch-byte-compile *.el
 
 do-install:
-	${MKDIR} ${LISPDIR}
+	${MKDIR} ${STAGEDIR}${LISPDIR}
 .for i in *.el *.elc
-	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${LISPDIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

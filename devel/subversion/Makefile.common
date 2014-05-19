@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.8.8
-PORTREVISION?=	2
+PORTVERSION=	1.8.9
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion18
 MASTER_SITE_SUBDIR=	subversion
 
-USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
-USES+=		tar:bzip2 pkgconfig
+GNU_CONFIGURE=	yes
+USES+=		tar:bzip2 pkgconfig libtool
 
 LICENSE=	APACHE20
 
@@ -105,7 +105,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} "s#^LIBTOOL =.*#LIBTOOL = ${LIBTOOL}#" ${WRKSRC}/Makefile.in
 .if defined(SVN_BUILD_BINDINGS)
 	@${CP} ${FILESDIR}/build-outputs.mk ${WRKSRC}
 .endif

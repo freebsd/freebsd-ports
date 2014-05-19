@@ -3,7 +3,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -11,25 +11,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia framework
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		gavl.1:${PORTSDIR}/multimedia/gavl
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libgavl.so:${PORTSDIR}/multimedia/gavl \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS_DEFINE= ALSA CDDB CDIO ESOUND JACK JPEG LIBVISUAL \
-		OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME \
-		TIFF
-OPTIONS_DEFAULT=	CDDB CDIO JACK JPEG LIBVISUAL \
-		OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME \
-		TIFF
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
-		--without-doxygen --with-cpuflags=none --disable-musicbrainz
-USES=		pathfix gettext pkgconfig
+USES=		gettext pathfix pkgconfig
 USE_GNOME=	gtk20 libxml2
 USE_XORG=	x11 xext xfixes xinerama xv
 USE_GL=		gl
+USE_SQLITE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_func_inotify_init=no
+CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
+		--without-doxygen --with-cpuflags=none --disable-musicbrainz
 USE_LDCONFIG=	yes
 INSTALL_ICONS=	yes
 
@@ -37,134 +32,55 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		gmerlin
-MAN1=		gmerlin.1 \
-		gmerlin_play.1 \
-		gmerlin_remote.1 \
-		gmerlin_transcoder.1 \
-		gmerlin_transcoder_remote.1 \
-		gmerlin-record.1
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE= 	ALSA CDDB CDIO ESOUND JACK JPEG LIBVISUAL \
+			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF
+OPTIONS_DEFAULT=	CDDB CDIO JACK JPEG LIBVISUAL \
+			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF
+OPTIONS_SUB=		yes
 
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
-PLIST_SUB+=	ALSA=""
-.else
-CONFIGURE_ARGS+=--disable-alsa
-PLIST_SUB+=	ALSA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-PLIST_SUB+=	PULSEAUDIO=""
-.else
-CONFIGURE_ARGS+=--disable-pulseaudio
-PLIST_SUB+=	PULSEAUDIO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MQUICKTIME}
-LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
-PLIST_SUB+=	QUICKTIME=""
-.else
-CONFIGURE_ARGS+=--disable-lqt
-PLIST_SUB+=	QUICKTIME="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLIBVISUAL}
-LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
-.else
-CONFIGURE_ARGS+=--disable-libvisual
-.endif
-
-.if ${PORT_OPTIONS:MCDIO}
-LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio
-PLIST_SUB+=	CDIO=""
-.else
-CONFIGURE_ARGS+=--disable-libcdio
-PLIST_SUB+=	CDIO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCDDB}
-LIB_DEPENDS+=	cddb.4:${PORTSDIR}/audio/libcddb
-.else
-CONFIGURE_ARGS+=--disable-cddb
-.endif
-
-.if ${PORT_OPTIONS:MESOUND}
-LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
-PLIST_SUB+=	ESOUND=""
-.else
-CONFIGURE_ARGS+=--disable-esd
-PLIST_SUB+=	ESOUND="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
-PLIST_SUB+=	JACK=""
-.else
-CONFIGURE_ARGS+=--disable-jack
-PLIST_SUB+=	JACK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-PLIST_SUB+=	JPEG=""
-.else
-CONFIGURE_ARGS+=--disable-libjpeg
-PLIST_SUB+=	JPEG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-PLIST_SUB+=	PNG=""
-.else
-CONFIGURE_ARGS+=--disable-libpng
-PLIST_SUB+=	PNG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-PLIST_SUB+=	TIFF=""
-.else
-CONFIGURE_ARGS+=--disable-libtiff
-PLIST_SUB+=	TIFF="@comment "
-.endif
-
-# applications
-.if ${PORT_OPTIONS:MALSA}
-PLIST_SUB+=	ALSAMIXER=""
-.else
-CONFIGURE_ARGS+=--disable-alsamixer
-PLIST_SUB+=	ALSAMIXER="@comment "
-.endif
-
-# vendor ocflags from configure
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math
-CXXFLAGS+=	-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math
-.endif
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_OFF=	--disable-alsa --disable-alsamixer
+CDDB_LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
+CDDB_CONFIGURE_ARGS=	--disable-cddb
+CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+CDIO_CONFIGURE_OFF=	--disable-libcdio
+ESOUND_USE=		gnome=esound
+ESOUND_CONFIGURE_OFF=	--disable-esd
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_OFF=	--disable-jack
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_CONFIGURE_OFF=	--disable-libjpeg
+LIBVISUAL_LIB_DEPENDS=	libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04
+LIBVISUAL_CONFIGURE_OFF=--disable-libvisual
+OPTIMIZED_CFLAGS_CFLAGS=-O3 -funroll-loops -fomit-frame-pointer -ffast-math
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_OFF=	--disable-libpng
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=--disable-pulseaudio
+QUICKTIME_LIB_DEPENDS=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
+QUICKTIME_CONFIGURE_OFF=--disable-lqt
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_CONFIGURE_OFF=	--disable-libtiff
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-O3.*-ffast-math||g ; \
-		 s|-DGTK_DISABLE_DEPRECATED||g ; \
-		 /LIBS/ s|-ldl||g ; \
-		 s|^LDFLAGS="|&$${LDFLAGS} |g' ${WRKSRC}/configure
+		'/LIBS/s|-ldl || ; \
+		 s|^LDFLAGS="|&$${LDFLAGS} | ; \
+		 s|-DGTK_DISABLE_DEPRECATED|| ; \
+		 s|-lpthread|-pthread| ; \
+		 s|-O3.*-ffast-math||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
+		's|^texinfo_|#texinfo_|g' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|ln -sf $$(DESTDIR)|ln -sf |' ${WRKSRC}/icons/Makefile.in
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-ldl||g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g ; \
-		 /^LIBS = / s|$$| @LIBINTL@ ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/lib/Makefile.am ${WRKSRC}/lib/Makefile.in \
-		${WRKSRC}/tests/Makefile.am ${WRKSRC}/tests/Makefile.in \
-		${WRKSRC}/apps/*/Makefile.am ${WRKSRC}/apps/*/Makefile.in
-	@${REINPLACE_CMD} -e \
-		 's|^texinfo_|#texinfo_|g' ${WRKSRC}/doc/Makefile.in
+		 s|-lpthread|-pthread|g ; \
+		 /^LIBS = /s|$$| @LIBINTL@ -pthread|g'
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

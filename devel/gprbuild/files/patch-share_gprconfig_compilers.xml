@@ -1,6 +1,6 @@
---- share/gprconfig/compilers.xml.orig	2013-01-09 18:09:30.000000000 +0000
+--- share/gprconfig/compilers.xml.orig	2014-03-21 10:41:06.000000000 +0000
 +++ share/gprconfig/compilers.xml
-@@ -456,16 +456,15 @@
+@@ -657,16 +657,15 @@
      </version>
      <languages>Ada</languages>
      <variable name="gcc_version">

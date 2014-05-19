@@ -6,6 +6,7 @@ include/KHR/khrplatform.h
 lib/libEGL.la
 lib/libEGL.so
 lib/libEGL.so.1
+lib/libEGL.so.1.0.0
 libdata/pkgconfig/egl.pc
 @dirrmtry include/KHR
 @dirrmtry include/EGL

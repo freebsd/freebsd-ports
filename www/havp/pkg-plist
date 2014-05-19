@@ -120,6 +120,13 @@ etc/havp/havp.config.default
 @dirrm %%EXAMPLESDIR%%/templates
 %%EXAMPLESDIR%%/whitelist.sample
 @dirrm %%EXAMPLESDIR%%
+@cwd /
+@mode 755
+@owner havp
+@group havp
 @dirrmtry %%LOG_DIR%%
 @dirrmtry %%TMP_DIR%%
 @dirrmtry %%RUN_DIR%%
+@owner
+@group
+@mode

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MDB2
-DISTVERSION=	2.5.0b4
+DISTVERSION=	2.5.0b5
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org

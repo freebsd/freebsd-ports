@@ -1,0 +1,60 @@
+with "templates_parser";
+with "xmlada";
+
+project AWS is
+
+   type AWS_Kind_Type is ("static", "relocatable");
+   AWS_Kind : AWS_Kind_Type := external ("LIBRARY_TYPE", "static");
+
+   for Library_Name use "aws";
+   for Library_Kind use AWS_Kind;
+   case AWS_Kind is
+      when "relocatable" =>
+         for Source_Dirs use ("../../include/aws.relocatable");
+         for Library_Dir use "../../lib/aws.relocatable";
+         for Library_Version use "libaws.so";
+      when others =>
+         for Source_Dirs use ("../../include/aws");
+         for Library_Dir use "../../lib/aws";
+   end case;
+   for Externally_Built use "true";
+
+   package Linker is
+      for Linker_Options use ("-L@PREFIX@/lib", "-Wl,-R,@PREFIX@/lib"
+         @SSL@  , "-lssl", "-lcrypto"
+         @TLS@  , "-L@PREFIX@/lib/gnutls3", "-Wl,-R,@PREFIX@/lib/gnutls3"
+         @TLS@  , "-lgnutls"
+         @LDP@  , "-lldap"
+      );
+   end Linker;
+
+   package Naming is
+
+      @IP4@  for Implementation ("AWS.Net.Std") use "aws-net-std__gnat.adb";
+
+      @IP6@  for Implementation ("AWS.Net.Std") use "aws-net-std__ipv6.adb";
+
+      @STD@  for Implementation ("AWS.Net.SSL") use "aws-net-ssl__dummy.adb";
+      @STD@  for Specification ("AWS.Net.SSL.Certificate.Impl")
+      @STD@    use "aws-net-ssl-certificate-impl__dummy.ads";
+      @STD@  for Implementation ("AWS.Net.SSL.Certificate.Impl")
+      @STD@    use "aws-net-ssl-certificate-impl__dummy.adb";
+      @STD@  for Specification ("SSL.Thin") use "ssl-thin__dummy.ads";
+
+      @SSL@  for Implementation ("AWS.Net.SSL") use "aws-net-ssl__openssl.adb";
+      @SSL@  for Specification ("AWS.Net.SSL.Certificate.Impl")
+      @SSL@    use "aws-net-ssl-certificate-impl__openssl.ads";
+      @SSL@  for Implementation ("AWS.Net.SSL.Certificate.Impl")
+      @SSL@    use "aws-net-ssl-certificate-impl__openssl.adb";
+      @SSL@  for Specification ("SSL.Thin") use "ssl-thin__openssl.ads";
+
+      @TLS@  for Implementation ("AWS.Net.SSL") use "aws-net-ssl__gnutls.adb";
+      @TLS@  for Specification ("AWS.Net.SSL.Certificate.Impl")
+      @TLS@    use "aws-net-ssl-certificate-impl__gnutls.ads";
+      @TLS@  for Implementation ("AWS.Net.SSL.Certificate.Impl")
+      @TLS@    use "aws-net-ssl-certificate-impl__gnutls.adb";
+      @TLS@  for Specification ("SSL.Thin") use "ssl-thin__gnutls.ads";
+
+   end Naming;
+
+end AWS;

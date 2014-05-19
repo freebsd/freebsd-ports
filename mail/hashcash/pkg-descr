@@ -4,4 +4,4 @@ receive. A hashcash token constitutes a proof-of-work which takes a
 parameterizable amount of work to compute for the sender.  
 
 Author: Adam Back <adam@cypherspace.org>
-WWW:    http://www.hashcash.org/
+WWW: http://www.hashcash.org/
