@@ -1,0 +1,15 @@
+--- ./lib/Makefile.orig	2014-05-19 15:46:37.044025162 +0800
++++ ./lib/Makefile	2014-05-19 15:46:56.903021030 +0800
+@@ -65,9 +65,9 @@
+ all:	$(DBOWLIB)
+ 
+ install: dbow.h $(DBOWLIB)
+-	install -d $(DBOWDIR)
+-	install -C -m 444 dbow.h $(PREFIX)/include
+-	install -C -m 444 $(DBOWLIB) $(PREFIX)/lib
++	install -d $(DESTDIR)$(DBOWDIR)
++	install -C -m 444 dbow.h $(DESTDIR)$(PREFIX)/include
++	install -C -m 444 $(DBOWLIB) $(DESTDIR)$(PREFIX)/lib
+ 
+ clean:
+ 	rm -f $(DBOWLIB) $(OBJS) a.out errs core

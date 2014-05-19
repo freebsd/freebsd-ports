@@ -1,0 +1,10 @@
+--- ./doc/Makefile.orig	2014-05-19 15:47:03.978020008 +0800
++++ ./doc/Makefile	2014-05-19 15:47:12.697019517 +0800
+@@ -52,6 +52,6 @@
+ all:
+ 
+ install:
+-	install -C -m 444 dbow.1 $(PREFIX)/man/man1
++	install -C -m 444 dbow.1 $(DESTDIR)$(PREFIX)/man/man1
+ 
+ clean:

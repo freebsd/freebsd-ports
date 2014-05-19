@@ -15,9 +15,6 @@ MAKE_ENV+=	MYSQL_INC=${LOCALBASE}/include/mysql \
 
 USE_MYSQL=	yes
 
-MAN1=		dbow.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|CFLAGS=|CFLAGS+=|g" \
 			-e "s|^MYSQL_INC=|MYSQL_INC?=|" \
