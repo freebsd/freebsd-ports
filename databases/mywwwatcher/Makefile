@@ -20,18 +20,11 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@${CP} -Rp ${WRKSRC}/* ${WWWDIR}
-	@${CHGRP} -R ${WWWGRP} ${WWWDIR}
-	@${CHMOD} 775 ${WWWDIR}/ini
-	@${CHMOD} 775 ${WWWDIR}/query_archive
-	@${ECHO_CMD} ""
-
-post-install:
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@${CP} -Rp ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
+	@${CHGRP} -R ${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${CHMOD} 775 ${STAGEDIR}${WWWDIR}/ini
+	@${CHMOD} 775 ${STAGEDIR}${WWWDIR}/query_archive
 
 .include <bsd.port.mk>
