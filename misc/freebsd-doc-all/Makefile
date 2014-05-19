@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-doc-all
-PORTVERSION=	44393
+PORTVERSION=	44807
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	#empty
@@ -40,5 +40,4 @@ do-install:	# empty
 DEPENDS_TARGET="package"
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

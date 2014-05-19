@@ -12,5 +12,4 @@ PLIST=		${.CURDIR}/pkg-plist
 
 DOCLANG=	el_GR.ISO8859-7
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -13,5 +13,4 @@ PLIST=		${.CURDIR}/pkg-plist
 DOCLANG=	zh_CN.UTF-8
 DOCLANG_PREFIX=	zh_CN
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
