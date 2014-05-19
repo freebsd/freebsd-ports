@@ -13,7 +13,7 @@ COMMENT=	Python WSGI adapter module for Apache
 
 LICENSE=	APACHE20
 
-CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi2.* mod_wsgi2.* \
+CONFLICTS_INSTALL=${PKGNAMEPREFIX}mod_wsgi2.* mod_wsgi2.* \
 		${PKGNAMEPREFIX}mod_wsgi-2.* mod_wsgi-2.*
 
 PROJECTHOST=	modwsgi

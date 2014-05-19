@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_wsgi
 PORTVERSION=	2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -14,7 +14,10 @@ COMMENT=	Python WSGI adapter module for Apache
 
 LICENSE=	APACHE20
 
-CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-3.* ${PKGNAMEPREFIX}mod_wsgi3.* mod_wsgi-3.*
+CONFLICTS_INSTALL=${PKGNAMEPREFIX}mod_wsgi-3.* ${PKGNAMEPREFIX}mod_wsgi3.* mod_wsgi-3.*
+
+DEPRECATED=	No longer supported, please use www/mod_wsgi3 instead
+EXPIRATION_DATE=2014-06-30
 
 PROJECTHOST=	modwsgi
 
