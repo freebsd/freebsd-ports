@@ -33,9 +33,13 @@
 %%PERL5_MAN3%%/Search::Elasticsearch::Role::Logger.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Role::Scroll.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Role::Serializer.3.gz
+%%PERL5_MAN3%%/Search::Elasticsearch::Role::Serializer::JSON.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Role::Transport.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Scroll.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Serializer::JSON.3.gz
+%%PERL5_MAN3%%/Search::Elasticsearch::Serializer::JSON::Cpanel.3.gz
+%%PERL5_MAN3%%/Search::Elasticsearch::Serializer::JSON::PP.3.gz
+%%PERL5_MAN3%%/Search::Elasticsearch::Serializer::JSON::XS.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::TestServer.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Transport.3.gz
 %%PERL5_MAN3%%/Search::Elasticsearch::Util.3.gz
@@ -76,20 +80,26 @@
 %%SITE_PERL%%/Search/Elasticsearch/Role/Logger.pm
 %%SITE_PERL%%/Search/Elasticsearch/Role/Scroll.pm
 %%SITE_PERL%%/Search/Elasticsearch/Role/Serializer.pm
+%%SITE_PERL%%/Search/Elasticsearch/Role/Serializer/JSON.pm
 %%SITE_PERL%%/Search/Elasticsearch/Role/Transport.pm
 %%SITE_PERL%%/Search/Elasticsearch/Scroll.pm
 %%SITE_PERL%%/Search/Elasticsearch/Serializer/JSON.pm
+%%SITE_PERL%%/Search/Elasticsearch/Serializer/JSON/Cpanel.pm
+%%SITE_PERL%%/Search/Elasticsearch/Serializer/JSON/PP.pm
+%%SITE_PERL%%/Search/Elasticsearch/Serializer/JSON/XS.pm
 %%SITE_PERL%%/Search/Elasticsearch/TestServer.pm
 %%SITE_PERL%%/Search/Elasticsearch/Transport.pm
 %%SITE_PERL%%/Search/Elasticsearch/Util.pm
 %%SITE_PERL%%/Search/Elasticsearch/Util/API/Path.pm
 %%SITE_PERL%%/Search/Elasticsearch/Util/API/QS.pm
-%%SITE_PERL%%/mach/auto/Search/Elasticsearch/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/Search/Elasticsearch
-@dirrmtry %%SITE_PERL%%/mach/auto/Search
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Elasticsearch/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Elasticsearch
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
 @dirrm %%SITE_PERL%%/Search/Elasticsearch/Util/API
 @dirrm %%SITE_PERL%%/Search/Elasticsearch/Util
+@dirrm %%SITE_PERL%%/Search/Elasticsearch/Serializer/JSON
 @dirrm %%SITE_PERL%%/Search/Elasticsearch/Serializer
+@dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/Serializer
 @dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/CxnPool/Static
 @dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/CxnPool
 @dirrm %%SITE_PERL%%/Search/Elasticsearch/Role/Cxn
