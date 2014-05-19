@@ -3,7 +3,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
@@ -72,6 +72,7 @@ RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g' ${WRKSRC}/foomaticrip.c
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/foomaticrip.c
 	@${REINPLACE_CMD} -e '/filter.conf/ s|if|#if|g' ${WRKSRC}/Makefile.in
 
 post-install:
