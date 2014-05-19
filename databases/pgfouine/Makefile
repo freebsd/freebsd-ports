@@ -13,7 +13,6 @@ COMMENT=	PostgreSQL log analyzer
 NO_BUILD =	Yes
 USE_PHP=	gd pcre
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/bin/php,${LOCALBASE}/bin/php,g;' \
 		-e 's,!!PREFIX!!,${PREFIX},g' \
@@ -21,17 +20,17 @@ pre-configure:
 	${FIND} -d ${WRKSRC} -type d -name 'CVS' -exec ${RM} -rf {} \;
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pgfouine.php ${PREFIX}/bin/pgfouine
-	${INSTALL_SCRIPT} ${WRKSRC}/pgfouine_vacuum.php ${PREFIX}/bin/pgfouine_vacuum
-	${MKDIR} ${DATADIR}/include
-	${INSTALL_DATA} ${WRKSRC}/version.php ${DATADIR}
-	@cd ${WRKSRC}/include && ${COPYTREE_SHARE} \* ${DATADIR}/include/
+	${INSTALL_SCRIPT} ${WRKSRC}/pgfouine.php ${STAGEDIR}${PREFIX}/bin/pgfouine
+	${INSTALL_SCRIPT} ${WRKSRC}/pgfouine_vacuum.php ${STAGEDIR}${PREFIX}/bin/pgfouine_vacuum
+	${MKDIR} ${STAGEDIR}${DATADIR}/include
+	${INSTALL_DATA} ${WRKSRC}/version.php ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}/include && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/include/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS	${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog 	${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/THANKS 	${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/rpm-specific/sources/pgfouine-tutorial.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS	${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog 	${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/THANKS 	${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/rpm-specific/sources/pgfouine-tutorial.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
