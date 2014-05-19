@@ -17,7 +17,6 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/libav \
 		libSDL2.so:${PORTSDIR}/devel/sdl20
 
 USES=		cmake:outsource 
-CMAKE_ARGS=	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	andrewrk
