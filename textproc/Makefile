@@ -1315,6 +1315,7 @@
     SUBDIR += rubygem-markaby
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
+    SUBDIR += rubygem-nokogiri14
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-parslet
     SUBDIR += rubygem-phone
