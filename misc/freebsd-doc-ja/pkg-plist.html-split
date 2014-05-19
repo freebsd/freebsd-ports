@@ -238,7 +238,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nutshell.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/openssh.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/openssl.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/packages-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/permissions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-core.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-developers.html

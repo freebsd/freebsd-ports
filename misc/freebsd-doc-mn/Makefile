@@ -12,5 +12,4 @@ PLIST=		${.CURDIR}/pkg-plist
 
 DOCLANG=	mn_MN.UTF-8
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
