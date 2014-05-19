@@ -2,7 +2,7 @@
 
 PORTNAME=	clojure-cider
 PORTVERSION=	0.6.0
-CATEGORIES=	lang devel elisp
+CATEGORIES=	devel elisp
 DISTNAME=	cider-${PORTVERSION}
 
 MAINTAINER=	rpaulo@FreeBSD.org
