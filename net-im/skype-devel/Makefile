@@ -27,7 +27,7 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS+=alsalib alsa-plugins-oss expat fontconfig libasyncns \
-		libsigcpp20
+		libsigcpp20 xorglibs
 RESTRICTED=	Redistribution prohibited.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}
@@ -40,13 +40,6 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-USE_LINUX_APPS+=xorglibs
-.else
-USE_LINUX_APPS+=dri
-.endif
 
 .if ${PORT_OPTIONS:MVIDEO}
 RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
