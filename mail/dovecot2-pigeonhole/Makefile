@@ -5,7 +5,7 @@ PORTNAME=	dovecot-pigeonhole
 PORTVERSION=	0.4.2
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
+MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
 
 MAINTAINER=	bra@fsn.hu
