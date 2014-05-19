@@ -14,8 +14,6 @@ LICENSE=	MIT GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MAN1=		h5totxt.1 h5fromtxt.1 h5tovtk.1 h5topng.1 h5math.1
-
 GNU_CONFIGURE=	YES
 CFLAGS +=	-L${LOCALBASE}/lib -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libpng15 ${PTHREAD_LIBS}
@@ -25,5 +23,4 @@ LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libmatheval.so:${PORTSDIR}/devel/libmatheval
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
