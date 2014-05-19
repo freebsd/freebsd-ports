@@ -104,7 +104,7 @@ LIB_DEPENDS+=	libcups.so:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client
 BUILD_DEPENDS+=	cups-image${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-image
 COMMENT2=	Server
-USE_RC_SUBR=	cupsd
+USE_RC_SUBR=	cupsd cups_browsed
 PLIST_SUB+=	CACHEDIR="${CUPS_CACHEDIR}"
 .if ${ARCH} == "ia64"
 BROKEN=		stack-protector not supported on ia64
@@ -156,16 +156,15 @@ IGNORE=			You must select one and only one option to build for Zeroconf
 .endif
 LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
-PLIST_SUB+=		WITH_MDNSRESPONDER=""
+PLIST_SUB+=		MDNSRESPONDER="" DNSSD="@comment "
 .elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MAVAHI}
-CONFIGURE_ARGS+=	--enable-dnssd \
-			--with-dnssd-libs=${LOCALBASE}/lib/
-LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/avahi-libdns
-CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
-BROKEN=			missing function, see http://www.avahi.org/ticket/303
+CONFIGURE_ARGS+=	--enable-avahi
+LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+PLIST_SUB+=		MDNSRESPONDER="@comment " DNSSD=""
 .else
 CONFIGURE_ARGS+=	--disable-dnssd
-PLIST_SUB+=		WITH_MDNSRESPONDER="@comment "
+CONFIGURE_ARGS+=	--disable-avahi
+PLIST_SUB+=		MDNSRESPONDER="@comment " DNSSD="@comment "
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPAM}
@@ -289,8 +288,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/cups/libcups.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/man/cups-config.man ${STAGEDIR}${PREFIX}/man/man1/cups-config.1
 .elif defined(CUPS_IMAGE)
-	${INSTALL_DATA} ${WRKSRC}/cups/raster.h ${STAGEDIR}${PREFIX}/include/cups
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsimage.so.2
 .else
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupscgi.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsppdc.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcupsmime.so.1
 .if  ${PORT_OPTIONS:MGHOSTSCRIPT} || ${PORT_OPTIONS:MXPDF}
 	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops  ${STAGEDIR}${PREFIX}/libexec/cups/filter/
 .endif

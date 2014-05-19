@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: cups_browsed
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# cups_browsed_enable (bool):	Set to NO by default.
+#				Set it to YES to enable cups_browsed.
+#
+
+. /etc/rc.subr
+
+name=cups_browsed
+rcvar=cups_browsed_enable
+
+load_rc_config ${name}
+
+ : ${cups_browsed_enable:=NO}
+
+command=/usr/sbin/daemon
+pidfile=/var/run/cups-browsed.pid
+command_args="-p ${pidfile} %%PREFIX%%/sbin/cups-browsed"
+procname="%%PREFIX%%/sbin/cups-browsed"
+
+run_rc_command "$1"
