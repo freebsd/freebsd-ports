@@ -18,6 +18,7 @@ NO_BUILD=	yes
 USES=		tar:xz
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
+REINPLACE_ARGS=	-i ''
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 PLIST_SUB=	MANPREFIX=lib/node_modules/npm
@@ -26,8 +27,8 @@ NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 NODE_DEVEL_RUN_DEPENDS_OFF=	node>=0.8.0:${PORTSDIR}/www/node
 
 post-patch:
-	@${SED} -i '' -e 's|node cli.js|& --cache ${WRKDIR}/.cache|; /^install: / s| docclean||' ${WRKSRC}/Makefile
-	@${SED} -i '' -e 's|linkBins, linkMans|linkBins|' ${WRKSRC}/lib/build.js
+	@${REINPLACE_CMD} -e 's|node cli.js|& --cache ${WRKDIR}/.cache|; /^install: / s| docclean||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|linkBins, linkMans|linkBins|' ${WRKSRC}/lib/build.js
 	@${ECHO_CMD} "MANPATH ${MANPREFIX}/man" > ${WRKDIR}/npm.conf
 
 post-install:
@@ -35,7 +36,7 @@ post-install:
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 
 # maintainer section:
-# require: bash, git, gmake, node
+# require: bash, git, gmake, perl, node
 
 MS_DISTNAME=	${PORTNAME}-${MS_VERSION}
 MS_TAGS=	${MS_WRKSRC}/tags
@@ -49,7 +50,7 @@ GITHUB_TARBALL=	https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/archive/${GI
 GITHUB_USER=	npm
 GITHUB_VERSION=	v${MS_VERSION}
 
-maketar: do-clean extract
+maketar: do-clean
 	@${MKDIR} ${MS_WRKSRC}/
 	@${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/tags ${GITHUB_TAGSURL}
 	@${GREP} -o '/${GITHUB_USER}/${GITHUB_PROJECT}/archive/[^"]*\.tar\.gz' ${MS_WRKSRC}/tags | ${HEAD} -1 | ${CUT} -d/ -f5 | ${SED} 's|^v||; s|\.tar\.gz$$||' > ${MS_VERSIONFILE}
@@ -57,15 +58,15 @@ maketar: do-clean extract
 	@${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz ${GITHUB_TARBALL}
 	@${MKDIR} ${MS_WRKSRC}/${MS_DISTNAME}/
 	@${TAR} -xf ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz -C ${MS_WRKSRC}/${MS_DISTNAME}/ --strip-components 1
-	@${SED} -i '' -e '/manRoot/ s|, "share"||' ${MS_WRKSRC}/${MS_DISTNAME}/lib/build.js ${MS_WRKSRC}/${MS_DISTNAME}/lib/unbuild.js
-	@${SED} -i '' -e '1 s|#!/bin/bash|#!${LOCALBASE}/bin/bash|' ${MS_WRKSRC}/${MS_DISTNAME}/scripts/doc-build.sh
-	@${GREP} -lr share/man ${MS_WRKSRC}/${MS_DISTNAME}/doc/ ${MS_WRKSRC}/${MS_DISTNAME}/scripts/ | ${XARGS} -I % ${SED} -i '' 's|share/man|man|g' %
+	@${REINPLACE_CMD} -e '/manRoot/ s|, "share"||' ${MS_WRKSRC}/${MS_DISTNAME}/lib/build.js ${MS_WRKSRC}/${MS_DISTNAME}/lib/unbuild.js
+	@${REINPLACE_CMD} -e '1 s|#!/bin/bash|#!${LOCALBASE}/bin/bash|; s|perl -pi|perl -p|' ${MS_WRKSRC}/${MS_DISTNAME}/scripts/doc-build.sh
+	@${GREP} -lr share/man ${MS_WRKSRC}/${MS_DISTNAME}/doc/ ${MS_WRKSRC}/${MS_DISTNAME}/scripts/ | ${XARGS} -I % ${REINPLACE_CMD} 's|share/man|man|g' %
 	@cd ${MS_WRKSRC}/${MS_DISTNAME}/ && ${MAKE_CMD}
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type d -exec ${CHMOD} 755 '{}' \;
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -exec ${CHMOD} 644 '{}' \;
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -name '*.sh' -exec ${CHMOD} 755 '{}' \;
 	@cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${MS_DISTNAME}.tar.xz ${MS_DISTNAME}/
-	@${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile
+	@${REINPLACE_CMD} -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile
 	@sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
 	@cd ${.CURDIR}/ && ${MAKE_CMD} makesum
 
