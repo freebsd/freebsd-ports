@@ -7,9 +7,8 @@ include/zdb/SQLException.h
 include/zdb/URL.h
 include/zdb/zdb.h
 lib/libzdb.a
-lib/libzdb.la
 lib/libzdb.so
-lib/libzdb.so.9
-lib/libzdb.so.9.0.2
+lib/libzdb.so.11
+lib/libzdb.so.11.0.0
 libdata/pkgconfig/zdb.pc
 @dirrm include/zdb
