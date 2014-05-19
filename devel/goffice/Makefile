@@ -4,7 +4,7 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.8.17
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	08
@@ -19,7 +19,7 @@ PORTSCOUT=	ignore
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack gtk20 libgsf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
