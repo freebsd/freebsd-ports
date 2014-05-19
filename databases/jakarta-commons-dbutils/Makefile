@@ -27,22 +27,21 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	LICENSE.txt api
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/build.xml
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/dist/commons-dbutils-1.1.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/dist/docs && ${FIND} api \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
 	@${INSTALL_DATA} ${WRKSRC}/dist/LICENSE.txt \
-		${DOCSDIR}/
+		${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
 .endif
 
