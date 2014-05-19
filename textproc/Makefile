@@ -1159,6 +1159,7 @@
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
     SUBDIR += py-openpyxl
+    SUBDIR += py-openpyxl1
     SUBDIR += py-paragrep
     SUBDIR += py-pdfminer
     SUBDIR += py-pss
