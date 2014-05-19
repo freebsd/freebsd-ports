@@ -4283,6 +4283,7 @@
     SUBDIR += rubygem-kafo_parsers
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
+    SUBDIR += rubygem-launchy22
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little_plugger
