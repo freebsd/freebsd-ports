@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp
-PORTVERSION=	0.20.10
+PORTVERSION=	0.20.11
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -22,10 +22,17 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
+USE_CSTD=	c11
 USE_PYTHON_RUN=	yes
-USES=		gmake pathfix pkgconfig shebangfix tar:xz
+USES=		compiler:c11 gmake libtool pathfix pkgconfig shebangfix tar:xz
 
 SHEBANG_FILES=	tools/gupnp-binding-tool
 python_CMD=	${PYTHON_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == "clang"
+CPPFLAGS+=	-Wno-return-type
+.endif
+
+.include <bsd.port.post.mk>
