@@ -10,17 +10,12 @@ MASTER_SITES=	LOCAL/glebius
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	eGalax touch screen input driver for X.Org
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 XORG_CAT=	driver
-MAN4=		egalax.4x
+INSTALL_CMD=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505
-IGNORE=         is useless without uep(4) kernel driver
-.endif
 
 .if defined(WITH_NEW_XORG)
 IGNORE=		does not build with X server 1.12
