@@ -23,15 +23,3 @@
  ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL_DATA) qemu.1 "$(DESTDIR)$(mandir)/man1"
-@@ -341,7 +347,10 @@
- 	$(INSTALL_DIR) "$(DESTDIR)$(qemu_confdir)"
- 
- install-sysconfig: install-datadir install-confdir
--	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(qemu_confdir)"
-+	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(qemu_confdir)/target-x86_64.conf.sample"
-+	if [ ! -f "$(qemu_confdir)/target-x86_64.conf" ]; then \
-+	    $(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(qemu_confdir)"; \
-+	fi
- 
- install: all $(if $(BUILD_DOCS),install-doc) install-sysconfig \
- install-datadir install-localstatedir
