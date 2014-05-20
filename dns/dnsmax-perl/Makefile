@@ -15,20 +15,17 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-USES=		perl5 zip
+USES=		perl5 zip shebangfix
 
+SHEBANG_FILES=	dnsmax.pl
 PLIST_FILES=	bin/dnsmax-perl
 PORTDOCS=	LICENSE INSTALL README
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/dnsmax.pl ${PREFIX}/bin/dnsmax-perl
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/dnsmax.pl ${STAGEDIR}${PREFIX}/bin/dnsmax-perl
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/${DISTNAME} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/${DISTNAME} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
