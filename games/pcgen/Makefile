@@ -27,8 +27,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-PORTDOCS=	*
-
 do-install:
 	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} ";"
 	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} "{}" ${STAGEDIR}${DATADIR}/"{}" ";"
