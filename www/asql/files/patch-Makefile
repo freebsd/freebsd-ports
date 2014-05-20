@@ -1,5 +1,5 @@
---- Makefile.orig	2008-10-15 09:37:42.000000000 +0800
-+++ Makefile	2008-10-15 09:38:00.000000000 +0800
+--- Makefile.orig	2012-09-13 00:38:26.000000000 -0700
++++ Makefile	2014-05-20 07:09:07.000000000 -0700
 @@ -40,9 +40,8 @@
  	hg diff 2>/dev/null
  
@@ -7,8 +7,8 @@
 -	mkdir -p ${PREFIX}/usr/bin/
 -	cp bin/asql ${PREFIX}/usr/bin/asql
 -	chmod 755 ${PREFIX}/usr/bin/asql
-+	cp bin/asql ${PREFIX}/bin/asql
-+	chmod 755 ${PREFIX}/bin/asql
++	cp bin/asql ${DESTDIR}${PREFIX}/bin/asql
++	chmod 755 ${DESTDIR}${PREFIX}/bin/asql
  
  
  release: clean commands
