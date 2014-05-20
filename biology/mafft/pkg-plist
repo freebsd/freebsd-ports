@@ -25,12 +25,12 @@ libexec/mafft/disttbfast
 libexec/mafft/dndblast
 libexec/mafft/dndfast7
 libexec/mafft/dndpre
-libexec/mafft/dndpre2
 libexec/mafft/dvtditr
 libexec/mafft/f2cl
 libexec/mafft/getlag
 libexec/mafft/mafft-distance
 libexec/mafft/mafft-profile
+libexec/mafft/mafftash_premafft.pl
 libexec/mafft/makedirectionlist
 libexec/mafft/mccaskillwrap
 libexec/mafft/multi2hat3s
@@ -40,7 +40,6 @@ libexec/mafft/pairlocalalign
 libexec/mafft/regtable2seq
 libexec/mafft/replaceu
 libexec/mafft/restoreu
-libexec/mafft/rnatest
 libexec/mafft/score
 libexec/mafft/seq2regtable
 libexec/mafft/setcore
@@ -49,20 +48,24 @@ libexec/mafft/sextet5
 libexec/mafft/splittbfast
 libexec/mafft/tbfast
 libexec/mafft/version
+man/man1/mafft-homologs.1.gz
+man/man1/mafft.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/license
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.allowshift
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.dpparttree
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.fftns2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.fftnsi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.gins1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.ginsi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.ginsi.allowshift
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.lins1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.linsi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.parttree
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/samplerna
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/samplerna.qinsi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/samplerna.xinsi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/mafft
+@dirrmtry libexec/mafft
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
