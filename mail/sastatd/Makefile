@@ -3,12 +3,16 @@
 
 PORTNAME=		sastatd
 PORTVERSION=		0.05
+PORTREVISION=		1
 CATEGORIES=		mail perl5
 MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	CPAN:LONERR
 
 MAINTAINER=		oleg@mamontov.net
 COMMENT=		SpamAssassin statistic collecting server
+
+DEPRECATED=		Superseded by sysutils/p5-Tail-Stat
+EXPIRATION_DATE=	2014-06-20
 
 BUILD_DEPENDS=		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 			p5-Log-Dispatch>=2.26:${PORTSDIR}/devel/p5-Log-Dispatch \
