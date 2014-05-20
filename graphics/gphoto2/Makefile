@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
@@ -14,10 +14,11 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
-USES=		tar:bzip2 gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	POPT_CFLAGS="$$(pkg-config --cflags popt)" \
-		POPT_LIBS="$$(pkg-config --libs popt)"
+		POPT_LIBS="$$(pkg-config --libs popt)" \
+		ac_cv_lib_pthread_pthread_exit=no
 CONFIGURE_ARGS=	--without-cdk
 
 OPTIONS_DEFINE=		AALIB DOCS NLS READLINE
@@ -34,11 +35,6 @@ NLS_LDFLAGS=		-L${LOCALBASE}/lib
 NLS_CONFIGURE_ENV=	LIBS="-lintl"
 READLINE_USES=		readline
 READLINE_CONFIGURE_WITH=	readline
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|' \
-		${WRKSRC}/configure
 
 post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS ${STAGEDIR}${DOCSDIR})

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.3.1
-PORTREVISION=	2
+PORTVERSION=	2.5.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -21,6 +20,7 @@ CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
 		ac_cv_path_DOT=false \
 		ac_cv_path_DOXYGEN=false \
 		udevscriptdir=${WRKDIR}
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
