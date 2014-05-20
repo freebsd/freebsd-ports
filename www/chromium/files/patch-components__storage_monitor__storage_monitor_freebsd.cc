@@ -1,6 +1,6 @@
---- ./components/storage_monitor/storage_monitor_freebsd.cc.orig	2014-04-24 23:23:44.000000000 +0200
-+++ ./components/storage_monitor/storage_monitor_freebsd.cc	2014-04-24 23:23:44.000000000 +0200
-@@ -0,0 +1,98 @@
+--- ./components/storage_monitor/storage_monitor_freebsd.cc.orig	2014-05-04 14:38:46.000000000 +0200
++++ ./components/storage_monitor/storage_monitor_freebsd.cc	2014-05-04 15:17:12.000000000 +0200
+@@ -0,0 +1,102 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -27,6 +27,8 @@
 +#include "components/storage_monitor/storage_info.h"
 +
 +using content::BrowserThread;
++
++namespace storage_monitor {
 +
 +namespace {
 +
@@ -99,3 +101,5 @@
 +StorageMonitor* StorageMonitor::CreateInternal() {
 +  return new StorageMonitorFreeBSD();
 +}
++
++} // namespace storage_monitor
