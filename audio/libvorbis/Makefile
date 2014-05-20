@@ -12,8 +12,7 @@ COMMENT=	Audio compression codec library
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
-USES=		pathfix tar:xz
-USE_AUTOTOOLS=	libtool
+USES=		libtool:oldver pathfix tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
