@@ -1,8 +1,14 @@
 @owner openfire
 @group openfire
-%%ETCDIR%%/openfire.xml.sample
-%%ETCDIR%%/keystore.sample
-%%ETCDIR%%/truststore.sample
+@mode 0600
+@sample %%ETCDIR%%/openfire.xml.sample
+@sample %%ETCDIR%%/security.xml.sample
+@sample %%ETCDIR%%/keystore.sample
+@sample %%ETCDIR%%/truststore.sample
+@mode
+%%DATADIR%%/conf
+%%DATADIR%%/embedded-db
+%%DATADIR%%/logs
 %%DATADIR%%/lib/activation.jar
 %%DATADIR%%/lib/bcpg-jdk15on.jar
 %%DATADIR%%/lib/bcpkix-jdk15on.jar
@@ -21,9 +27,6 @@
 %%DATADIR%%/lib/servlet.jar
 %%DATADIR%%/lib/slf4j-log4j12.jar
 %%DATADIR%%/lib/startup.jar
-%%DATADIR%%/conf
-%%DATADIR%%/embedded-db
-%%DATADIR%%/logs
 %%DATADIR%%/plugins/admin/plugin.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/admin.tld
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/decorators.xml
@@ -184,6 +187,8 @@
 %%DATADIR%%/plugins/admin/webapp/style/lightbox.css
 %%DATADIR%%/plugins/admin/webapp/style/login.css
 %%DATADIR%%/plugins/admin/webapp/style/setup.css
+%%DATADIR%%/plugins/jitsivideobridge.jar
+%%DATADIR%%/plugins/rayo.jar
 %%PLUGINS%%%%DATADIR%%/plugins/fastpath.jar
 %%PLUGINS%%%%DATADIR%%/plugins/broadcast.jar
 %%PLUGINS%%%%DATADIR%%/plugins/clientControl.jar
