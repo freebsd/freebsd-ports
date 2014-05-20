@@ -35,5 +35,4 @@ sbin/lircmd
 etc/lircd.conf.sample
 @exec if [ ! -f %D/etc/lircd.conf ] ; then cp -p %D/%F %B/lircd.conf; fi
 @exec mkdir -p /var/run/lirc
-@unexec rm -f /var/run/lircd.pid 2> /dev/null || true
-@unexec rm -rf /var/run/lircd 2> /dev/null || true
+@unexec rmdir /var/run/lirc 2> /dev/null || true
