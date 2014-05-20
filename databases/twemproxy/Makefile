@@ -12,10 +12,16 @@ COMMENT=	Fast, light-weight proxy for memcached and redis
 
 LICENSE=	APACHE20
 
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+
 PLIST_FILES=	sbin/nutcracker \
 		man/man8/nutcracker.8.gz \
 		etc/nutcracker.yml.sample
 
+USE_GCC=	yes
 HAS_CONFIGURE=	yes
 
 do-install:
