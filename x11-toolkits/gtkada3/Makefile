@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gtkada-rm-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	marino@FreeBSD.org
-COMMENT=	Ada graphical toolkit based on Gtk2+
+COMMENT=	Ada graphical toolkit based on Gtk3 components
 
 LICENSE=	GPLv3
 
