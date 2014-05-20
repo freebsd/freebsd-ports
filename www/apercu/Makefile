@@ -12,7 +12,7 @@ COMMENT=	Summarize information from Apache logs
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/apercu ${MANPREFIX}/man/man1/apercu.1.gz
+PLIST_FILES=	bin/apercu man/man1/apercu.1.gz
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/ruby|${RUBY}|' ${WRKSRC}/apercu
@@ -20,6 +20,5 @@ pre-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/apercu ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/apercu.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${GZIP_CMD} ${STAGEDIR}${MANPREFIX}/man/man1/apercu.1
 
 .include <bsd.port.mk>
