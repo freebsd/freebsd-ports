@@ -10,9 +10,9 @@ PROJECTHOST=	ak-various-projects
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Tool that checks the ports tree for various errors
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USE_XZ=	yes
+USES=	tar:xz
 NO_ARCH=	yes
 NO_BUILD=	yes
 

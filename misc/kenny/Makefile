@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Translate text both to and from KennySpeak
 
+LICENSE=	ART10
+
 PROJECTHOST=	ak-various-projects
 
 CONFLICTS=	filters-*
@@ -36,7 +38,7 @@ post-extract:
 	@${POD2MAN} ${WRKDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
