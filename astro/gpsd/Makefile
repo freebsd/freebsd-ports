@@ -12,25 +12,13 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
-NO_STAGE=	yes
-USES=		pathfix pkgconfig
-USE_SCONS=	yes
+USES=		pathfix pkgconfig scons
 USE_RC_SUBR=	gpsd
 USE_PYTHON=	yes
-INSTALLS_EGGINFO=	yes
-PYDISTUTILS_EGGINFO=	gps-${PORTVERSION}.egg-info
 
-SCONS_BUILDENV=	CC=${CC}
-SCONS_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig" \
+MAKE_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig" \
 		chrpath=no
-
-MAN1=	cgps.1 gegps.1 gps.1 gpscat.1 gpsctl.1 gpsdecode.1 \
-	gpsfake.1  gpspipe.1 gpsprof.1 xgps.1 xgpsspeed.1 \
-	gpsmon.1 lcdgps.1
-MAN3=	libgps.3 libgpsd.3 libgpsmm.3 libQgpsmm.3
-MAN5=	srec.5 gpsd_json.5
-MAN8=	gpsd.8 gpsdctl.8 gpsinit.8
-MANCOMPRESSED=	no
+MAKE_ENV=	DESTDIR="${STAGEDIR}"
 
 OPTIONS_DEFINE=	AIVDM ASHTECH CPPBIND DBUS EARTHMATE EVERMORE FV18 GARMIN GARMINTXT \
 		GEOSTAR GPSCLOCK GTK2 IPV6 ITRAX MTK NAVCOM NETFEED NMEA NTPSHM NTRIP \
@@ -262,12 +250,10 @@ SCONS_ARGS+=	profiling=yes
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted
 # with these files when module is imported from root user
 post-install:
-	@${FIND} ${PYTHON_SITELIBDIR:C/^${LOCALBASE}/${PREFIX}/}/gps \
-		-name "*.py" -exec \
-		${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py {} \;
-	@${SETENV} PYTHONOPTIMIZE=yes \
-		${FIND} ${PYTHON_SITELIBDIR:C/^${LOCALBASE}/${PREFIX}/}/gps \
-		-name "*.py" -exec \
-		${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py {} \;
+	(cd ${STAGEDIR}${PREFIX} && \
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} && \
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
 .include <bsd.port.mk>
