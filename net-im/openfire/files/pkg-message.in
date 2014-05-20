@@ -5,5 +5,6 @@ The following sample configuration files have been
 placed in %%ETCDIR%%:
 
 openfire.xml.sample
+security.xml.sample
 keystore.sample
 truststore.sample
