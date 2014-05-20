@@ -62,8 +62,10 @@ do-build:
 	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh \
 		bin/googleearth.orig
 
+.if !defined(WITH_PKGNG)
 pre-su-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
