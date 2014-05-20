@@ -8,6 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
 DISTNAME=	grub-${PORTVERSION}_1
+WRKSRC=		${WRKDIR}/grub-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiboot boot loader
