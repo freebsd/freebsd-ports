@@ -44,6 +44,7 @@ CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
 		--with-db-path=/var/db/sss --with-pipe-path=/var/run/sss \
 		--with-pubconf-path=/var/run/sss --with-mcache-path=/var/db/sss_mc \
 		--with-unicode-lib=libunistring --with-autofs=no
+CONFIGURE_ENV=	XMLLINT="/bin/echo"
 CFLAGS+=	-fstack-protector-all
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 #DEBUG_FLAGS=  -g
