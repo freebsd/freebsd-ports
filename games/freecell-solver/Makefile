@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freecell-solver
-PORTVERSION=	3.24.0
+PORTVERSION=	3.26.0
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
