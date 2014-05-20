@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.16
-PORTREVISION?=	2
+PORTVERSION=	1.7.17
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion17
 PKGNAMESUFFIX=	17
 MASTER_SITE_SUBDIR=	subversion
 
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
-USES+=		pkgconfig
+GNU_CONFIGURE=	yes
+USES+=		tar:bzip2 pkgconfig libtool
 
 LICENSE=	APACHE20
 
@@ -116,7 +115,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} "s#^LIBTOOL =.*#LIBTOOL = ${LIBTOOL}#" ${WRKSRC}/Makefile.in
 .if defined(SVN_BUILD_BINDINGS)
 	@${CP} ${FILESDIR}/build-outputs.mk ${WRKSRC}
 .endif
@@ -124,10 +122,10 @@ post-patch:
 	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h
 .endif
 # shebangfix
-	${GREP} -Rl -e '#!/bin/b' -e '#!/bin/env' -e '#!/usr/bin/p' ${WRKSRC}/tools/ \
+	@${GREP} -Rl -e '#!/bin/b' -e '#!/bin/env' -e '#!/usr/bin/p' ${WRKSRC}/tools/ \
 		| ${XARGS} ${REINPLACE_CMD} -e '1s|#\!/bin/b|#\!/usr/local/bin/b|' \
 		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
 		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
 # remove all .bak files to clean the stage
-	${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
