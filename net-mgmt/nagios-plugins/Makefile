@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
