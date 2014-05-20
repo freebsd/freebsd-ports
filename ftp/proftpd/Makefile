@@ -5,7 +5,7 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	0	
+PORTREVISION?=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -48,7 +48,7 @@ PORTDOCS=	*
 .endif
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		gmake
+USES=		gmake libtool
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
@@ -67,6 +67,9 @@ CONFIGURE_ARGS=--localstatedir=${LOCALSTATEDIR} \
 		--enable-dso \
 		--disable-sendfile
 
+CONFIGURE_ENV+=	install_user=`${ID} -u` \
+		install_group=`${ID} -g`
+
 .if defined(_BUILDING_PROFTPD_MODULE)
 MODULES=		${_BUILDING_PROFTPD_MODULE}
 .for m in ${MODULES}
@@ -80,7 +83,6 @@ INSTALL_WRKSRC=	${WRKSRC}/modules
 PLIST=		${WRKDIR}/PLIST
 .for m in ${MODULES}
 PLIST_FILES+=	libexec/proftpd/${m}.a \
-		libexec/proftpd/${m}.la \
 		libexec/proftpd/${m}.so
 .endfor
 PLIST_DIRSTRY+=	libexec/proftpd
@@ -97,7 +99,7 @@ PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 
 .include <bsd.port.options.mk>
 
-.if defined(USE_OPENSSL)
+.if !defined(_BUILDING_PROFTPD_MODULE)
 CFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
 PROFTPD_LIBS+=	-lssl -lcrypto -L${OPENSSLLIB}
 .endif
@@ -167,7 +169,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
@@ -176,7 +178,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 .if ${PORT_OPTIONS:MMEMCACHE}
 MODULES+=		mod_memcache \
 			mod_tls_memcache
-LIB_DEPENDS+=		memcached:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=		libmemcached.so:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=	--enable-memcache
 PROFTPD_LIBS+=		-L${LOCALBASE}/lib -lmemcached -lmemcachedutil
 PLIST_SUB+=	MEMCACHE=""
@@ -234,9 +236,9 @@ pre-install:
 .else
 post-install:
 	@cd  ${STAGEDIR}${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf || ${TRUE}
-	@${MKDIR} ${STAGEDIR}${LOCALSTATEDIR}/proftpd
-	@cd  ${STAGEDIR}${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem || ${TRUE}
-	@cd  ${STAGEIDR}${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat || ${TRUE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/proftpd ${STAGEDIR}/var/run/proftpd
+	@cd ${STAGEDIR}${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem || ${TRUE}
+	@cd ${STAGEDIR}${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat || ${TRUE}
 .if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${CP} README* RELEASE_NOTES ${STAGEDIR}${DOCSDIR}
