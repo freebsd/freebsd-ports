@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140520:
+  AFFECTS: users of security/dropbear
+  AUTHOR: ak@FreeBSD.org
+
+  security/dropbear port separator syntax was changed (again), now using
+  host^port instead of host%port.
+
+  You may need to update your config files while updating to 2014.63 from
+  the previous versions.
+
 20140511:
   AFFECTS: users of databases/firebird*
   AUTHOR: bapt@FreeBSD.org
