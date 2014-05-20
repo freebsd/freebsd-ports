@@ -22,6 +22,9 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmp.so:${PORTSDIR}/math/gmp
 
+DEPRECATED=	Outdated: Users should switch to lang/pike78
+EXPIRATION_DATE=2014-07-01
+
 CONFLICTS=	pike7[28]-[0-9]*
 CONFLICTS_BUILD=nettle-[2-9]*
 
