@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CrossIP%20${PORTVERSION}
 MAINTAINER=	dan@algenta.com
 COMMENT=	Java DNS update client for the ThatIP protocol
 
+LICENSE=	GPLv2
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -20,12 +22,11 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	crossip.sh
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/CrossIP.jar ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/crossip.sh ${PREFIX}/bin/crossip
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/CrossIP.jar ${STAGEDIR}${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/crossip.sh ${STAGEDIR}${PREFIX}/bin/crossip
 
 .include <bsd.port.mk>
