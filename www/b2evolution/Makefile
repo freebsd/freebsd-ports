@@ -7,8 +7,8 @@ CATEGORIES=	www
 MASTER_SITES=	SF/evocms/${PORTNAME}/b2evo%20${PORTVERSION}-stable
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
 
-MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A multilingual, multiuser, multi-blog engine
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multilingual, multiuser, multi-blog engine
 
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
@@ -29,7 +29,6 @@ WARNING=	${PKGDIR}/pkg-warning
 OPTIONS_DEFINE=	MYSQL
 OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -47,11 +46,11 @@ pre-install:
 		&& ${ECHO_CMD} @dirrm ${B2EVO_DIR} >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/${B2EVO_DIR}
-	@${CHMOD} 755 ${PREFIX}/${B2EVO_DIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${B2EVO_DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${B2EVO_DIR}
-	@${CHMOD} 665 ${PREFIX}/${B2EVO_DIR}/blogs/conf/_config.php
+	${MKDIR} ${STAGEDIR}${PREFIX}/${B2EVO_DIR}
+	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/${B2EVO_DIR}
+	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${B2EVO_DIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${B2EVO_DIR}
+	@${CHMOD} 665 ${STAGEDIR}${PREFIX}/${B2EVO_DIR}/blogs/conf/_config.php
 
 post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
