@@ -22,7 +22,7 @@ USE_EFL=	imlib2
 USE_GL=		glut
 WRKSRC=		${WRKDIR}/sviewgl-src
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
-MAKE_ARGS=	CC=${CXX}
+MAKE_ARGS=	CC="${CXX}"
 
 PLIST_FILES=	bin/sviewgl
 

@@ -13,7 +13,7 @@ COMMENT=	Newer filter that converts RTF (MS Rich Text Format) into LaTeX
 LICENSE=	GPLv2
 
 USES=		gmake
-MAKE_ARGS=	CC=${CC} \
+MAKE_ARGS=	CC="${CC}" \
 		mandir=${MAN1PREFIX}/man/
 
 .include <bsd.port.mk>

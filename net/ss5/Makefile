@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-binpathbase=${PREFIX}/sbin \
 		--with-libpath=${PREFIX}/lib
 
 MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
-MAKE_ARGS+=	CC=${CC}
+MAKE_ARGS+=	CC="${CC}"
 CFLAGS+=	-DLDAP_DEPRECATED
 
 post-patch:

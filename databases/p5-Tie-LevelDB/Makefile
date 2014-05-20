@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
-MAKE_ARGS=	CC=${CXX}
+MAKE_ARGS=	CC="${CXX}"
 USE_PERL5=	configure
 USES=		gmake perl5
 

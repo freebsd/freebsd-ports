@@ -15,7 +15,7 @@ USES=		gmake dos2unix zip
 DOS2UNIX_FILES=	Source/LibOpenJPEG/opj_malloc.h
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/FreeImage
-MAKE_ARGS=	CC=${CC} CPP=${CPP} CXX=${CXX}
+MAKE_ARGS=	CC="${CC}" CPP="${CPP}" CXX="${CXX}"
 
 CFLAGS+=	-fexceptions -fvisibility=hidden
 
