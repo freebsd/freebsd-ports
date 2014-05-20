@@ -10,6 +10,8 @@ DISTNAME=	lzx_compress
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	LZX compression library
 
+LICENSE=	LGPL21
+
 USES=	uidfix
 USE_LDCONFIG=	yes
 

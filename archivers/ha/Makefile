@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	File archiver based on HSC compression method
 
+LICENSE=	GPLv2
+
 PROJECTHOST=	ak-various-projects
 
 NO_WRKSUBDIR=	yes

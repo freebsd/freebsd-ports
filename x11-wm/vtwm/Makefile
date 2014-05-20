@@ -14,9 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USE_XZ=	yes
-
-USES=	pkgconfig
+USES=	pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xft xinerama xpm xmu xrandr

@@ -20,12 +20,12 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	fli2gif.txt
 
 post-extract:
-	@cd ${WRKSRC} && ${UNZIP_CMD} -q source.zip \
+	@(cd ${WRKSRC} && ${UNZIP_CMD} -q source.zip \
 		&& ${LN} -sf GIF.CPP gif.cpp \
-		&& ${LN} -sf FLIPLAY.CPP fliplay.cpp
+		&& ${LN} -sf FLIPLAY.CPP fliplay.cpp)
 
 do-build:
-	@cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -o ${PORTNAME} *.cpp
+	(cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -o ${PORTNAME} *.cpp)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fli2gif ${STAGEDIR}${PREFIX}/bin
