@@ -5,4 +5,4 @@ standards-compliant RTP stack with full RTCP support. The design and
 implementation of ccRTP make it suitable for high capacity servers and 
 gateways as well as personal client applications. 
 
-WWW:	http://www.gnu.org/software/ccrtp/
+WWW: http://www.gnu.org/software/ccrtp/
