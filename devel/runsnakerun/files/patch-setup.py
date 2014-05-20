@@ -1,5 +1,5 @@
---- ./setup.py.orig	2013-06-15 16:18:59.000000000 +0200
-+++ ./setup.py	2013-06-15 16:19:45.000000000 +0200
+--- ./setup.py.orig	2014-05-20 15:27:26.000000000 +0200
++++ ./setup.py	2014-05-20 15:28:03.000000000 +0200
 @@ -34,8 +34,6 @@
  and package/module structures.""",
          'platforms': ['Any'],
@@ -14,7 +14,7 @@
          author = "Mike C. Fletcher",
          author_email = "mcfletch@vrplumber.com",
 -        install_requires = [
--            'SquareMap >= 1.0.1b3',
+-            'SquareMap >= 1.0.3',
 -        ],
          license = "BSD",
          package_dir = {
