@@ -13,6 +13,6 @@ COMMENT=	Perl binding to modified RSA (yamrsa)
 USES=	perl5
 USE_PERL5=	configure
 
-MAKE_ARGS=	CC=${CXX}
+MAKE_ARGS=	CC="${CXX}"
 
 .include <bsd.port.mk>

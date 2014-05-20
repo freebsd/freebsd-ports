@@ -57,7 +57,7 @@ CC=		clang
 CXX=		clang++
 CONFIGURE_ARGS+=	--disable-valgrind --disable-docs \
 			--enable-clang --mandir=${MANPREFIX}/man
-MAKE_ARGS+=		CC=${CC} CXX=${CXX} ARCH=x86_64
+MAKE_ARGS+=		CC="${CC}" CXX="${CXX}" ARCH=x86_64
 
 post-extract:
 	${MKDIR} ${WRKSRC}/${RUST_TARGET} && \

@@ -11,7 +11,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	MVD demo data streaming proxy over TCP/IP for QuakeWorld servers
 
 ALL_TARGET=	${PORTNAME}
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 do-install:

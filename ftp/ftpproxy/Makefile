@@ -14,7 +14,7 @@ COMMENT=	ftp proxy
 
 USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 
 PLIST_FILES=	sbin/ftp.proxy \
 		man/man1/ftp.proxy.1.gz

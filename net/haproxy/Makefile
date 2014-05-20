@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=PCRE DPCRE
 
 .include <bsd.port.options.mk>
 
-MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS CC=${CC}
+MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS CC="${CC}"
 
 .if ${PORT_OPTIONS:MDPCRE}
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre

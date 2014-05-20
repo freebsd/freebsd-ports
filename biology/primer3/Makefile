@@ -13,7 +13,7 @@ COMMENT=	Primer3 helps to choose primers for PCR reactions
 LICENSE=	GPLv2
 
 USES=		gmake
-MAKE_ARGS=	CC=${CC} CPP=${CXX}
+MAKE_ARGS=	CC="${CC}" CPP="${CXX}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PLIST_FILES=	bin/primer3
 

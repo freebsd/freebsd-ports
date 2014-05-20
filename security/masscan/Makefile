@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 USES=		gmake
 CFLAGS+=	-Wno-format
-MAKE_ARGS=	SYS=freebsd CC=${CC} CFLAGS="${CFLAGS}"
+MAKE_ARGS=	SYS=freebsd CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/masscan man/man8/masscan.8.gz
 

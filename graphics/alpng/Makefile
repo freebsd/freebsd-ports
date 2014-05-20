@@ -17,7 +17,7 @@ HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}
 MAKEFILE=	makefile
 USES=		gmake
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	include/alpng.h \

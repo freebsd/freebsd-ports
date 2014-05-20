@@ -11,7 +11,7 @@ COMMENT=	Template library used to deal with html code in CGI applications
 
 PLIST_FILES=	lib/${PORTNAME}.a bin/checktpl
 
-MAKE_ARGS+=	CC=${CC}
+MAKE_ARGS+=	CC="${CC}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/checktpl ${STAGEDIR}${PREFIX}/bin

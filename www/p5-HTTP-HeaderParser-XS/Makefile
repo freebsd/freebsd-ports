@@ -13,6 +13,6 @@ COMMENT=	XS extension for processing HTTP headers
 USES=		perl5
 USE_PERL5=	configure
 
-MAKE_ARGS+=	CC=${CXX} LD=${CXX}
+MAKE_ARGS=	CC="${CXX}" LD="${CXX}"
 
 .include <bsd.port.mk>

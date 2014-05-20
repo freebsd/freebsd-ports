@@ -12,7 +12,7 @@ COMMENT=	Requantize MPEG-2 streams without recompressing
 
 PATCH_STRIP=	-p1
 CFLAGS+=	-Duint=unsigned
-MAKE_ARGS+=	CC=${CC} CXX=${CXX}
+MAKE_ARGS+=	CC="${CC}" CXX="${CXX}"
 PLIST_FILES+=	bin/M2VRequantiser
 
 post-patch:

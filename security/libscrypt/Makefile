@@ -17,7 +17,7 @@ GH_ACCOUNT=	technion
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	457ff86
 
-MAKE_ARGS+=	CC=${CC} LIBDIR=${PREFIX}/lib
+MAKE_ARGS+=	CC="${CC}" LIBDIR=${PREFIX}/lib
 
 PLIST_FILES=	include/libscrypt.h \
 		lib/libscrypt.so \
