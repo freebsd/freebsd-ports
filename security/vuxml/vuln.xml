@@ -57,6 +57,57 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="64f3872b-e05d-11e3-9dd4-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>35.0.1916.114</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>23 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[356653] High CVE-2014-1743: Use-after-free in styles. Credit
+	      to cloudfuzzer.</li>
+	    <li>[359454] High CVE-2014-1744: Integer overflow in audio. Credit
+	      to Aaron Staple.</li>
+	    <li>[346192] High CVE-2014-1745: Use-after-free in SVG. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[364065] Medium CVE-2014-1746: Out-of-bounds read in media
+	      filters. Credit to Holger Fuhrmannek.</li>
+	    <li>[330663] Medium CVE-2014-1747: UXSS with local MHTML file.
+	      Credit to packagesu.</li>
+	    <li>[331168] Medium CVE-2014-1748: UI spoofing with scrollbar.
+	      Credit to Jordan Milne.</li>
+	    <li>[374649] CVE-2014-1749: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[358057] CVE-2014-3152: Integer underflow in V8 fixed in
+	      version 3.25.28.16.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1743</cvename>
+      <cvename>CVE-2014-1744</cvename>
+      <cvename>CVE-2014-1745</cvename>
+      <cvename>CVE-2014-1746</cvename>
+      <cvename>CVE-2014-1747</cvename>
+      <cvename>CVE-2014-1748</cvename>
+      <cvename>CVE-2014-1749</cvename>
+      <cvename>CVE-2014-3152</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-05-20</discovery>
+      <entry>2014-05-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cdf450fc-db52-11e3-a9fc-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
