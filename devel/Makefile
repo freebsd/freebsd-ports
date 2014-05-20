@@ -963,6 +963,7 @@
     SUBDIR += libdasm
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu-qt
+    SUBDIR += libdevq
     SUBDIR += libdfui
     SUBDIR += libdict
     SUBDIR += libdisasm
