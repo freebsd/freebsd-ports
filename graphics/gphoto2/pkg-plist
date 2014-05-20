@@ -23,8 +23,6 @@ man/man1/gphoto2.1.gz
 %%NLS%%share/locale/ro/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/gphoto2.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
 %%NLS%%share/locale/sk/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gphoto2.mo
@@ -32,4 +30,6 @@ man/man1/gphoto2.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gphoto2.mo
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
