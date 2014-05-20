@@ -3,7 +3,7 @@
 PORTNAME=	printscreen
 PORTVERSION=	1.4
 PORTREVISION=	1
-CATEGORIES=	graphics x11
+CATEGORIES=	x11 graphics
 MASTER_SITES=	# none
 DISTFILES=	# none
 
