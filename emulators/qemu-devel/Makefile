@@ -295,12 +295,8 @@ post-install:
 .endif
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
-	@if [ ! -f ${PREFIX}/etc/qemu-ifup ]; then \
-	    ${CP} -p ${STAGEDIR}${PREFIX}/etc/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc/qemu-ifup ; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/qemu-ifdown ]; then \
-	    ${CP} -p ${STAGEDIR}${PREFIX}/etc/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc/qemu-ifdown ; \
-	fi
+	@(cd ${STAGEDIR}${PREFIX}/etc/qemu && \
+		${MV} -i target-x86_64.conf target-x86_64.conf.sample)
 .endif
 
 .include <bsd.port.mk>
