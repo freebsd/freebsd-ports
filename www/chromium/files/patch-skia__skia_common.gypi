@@ -1,6 +1,6 @@
---- ./skia/skia_common.gypi.orig	2014-04-24 22:35:56.000000000 +0200
-+++ ./skia/skia_common.gypi	2014-04-24 23:23:47.000000000 +0200
-@@ -61,7 +61,7 @@
+--- ./skia/skia_common.gypi.orig	2014-04-30 22:41:33.000000000 +0200
++++ ./skia/skia_common.gypi	2014-05-04 14:38:48.000000000 +0200
+@@ -66,7 +66,7 @@
      }],
  
      #Settings for text blitting, chosen to approximate the system browser.

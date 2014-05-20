@@ -1,13 +1,13 @@
---- ./third_party/libvpx/unpack_lib_posix.sh.orig	2014-04-24 22:36:38.000000000 +0200
-+++ ./third_party/libvpx/unpack_lib_posix.sh	2014-04-24 23:23:48.000000000 +0200
+--- ./third_party/libvpx/unpack_lib_posix.sh.orig	2014-04-30 22:43:59.000000000 +0200
++++ ./third_party/libvpx/unpack_lib_posix.sh	2014-05-04 14:38:49.000000000 +0200
 @@ -1,4 +1,4 @@
 -#!/bin/bash -e
 +#!/usr/bin/env bash
  #
  # Copyright (c) 2012 The Chromium Authors. All rights reserved.
  # Use of this source code is governed by a BSD-style license that can be
-@@ -48,16 +48,12 @@
-   ar=$AR
+@@ -52,16 +52,12 @@
+   fi
  fi
  
 -obj_list="$($ar t $lib_file | grep '\.o$')"

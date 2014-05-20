@@ -1,5 +1,5 @@
---- ./content/renderer/media/webrtc_audio_capturer.cc.orig	2014-04-24 22:35:42.000000000 +0200
-+++ ./content/renderer/media/webrtc_audio_capturer.cc	2014-04-24 23:23:45.000000000 +0200
+--- ./content/renderer/media/webrtc_audio_capturer.cc.orig	2014-04-30 22:41:47.000000000 +0200
++++ ./content/renderer/media/webrtc_audio_capturer.cc	2014-05-04 14:38:47.000000000 +0200
 @@ -29,10 +29,10 @@
  // The listed rates below adds restrictions and WebRtcAudioDeviceImpl::Init()
  // will fail if the user selects any rate outside these ranges.
@@ -13,7 +13,7 @@
  #else
  const int kValidInputRates[] = {44100};
  #endif
-@@ -419,7 +419,7 @@
+@@ -430,7 +430,7 @@
  // CaptureCallback.
  #if defined(OS_WIN) || defined(OS_MACOSX)
    DCHECK_LE(volume, 1.0);

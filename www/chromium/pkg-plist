@@ -75,6 +75,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/cmdevtools.css
 %%DATADIR%%/resources/inspector/codemirror.css
 %%DATADIR%%/resources/inspector/CodeMirrorTextEditor.js
+%%DATADIR%%/resources/inspector/ConsolePanel.js
 %%DATADIR%%/resources/inspector/dataGrid.css
 %%DATADIR%%/resources/inspector/devtools.html
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
@@ -87,7 +88,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/HeapSnapshotWorker.js
 %%DATADIR%%/resources/inspector/helpScreen.css
 %%DATADIR%%/resources/inspector/inspector.css
-%%DATADIR%%/resources/inspector/inspector.js
 %%DATADIR%%/resources/inspector/Images/addIcon.png
 %%DATADIR%%/resources/inspector/Images/applicationCache.png
 %%DATADIR%%/resources/inspector/Images/back.png
@@ -135,10 +135,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/sessionStorage.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove_2x.png
-%%DATADIR%%/resources/inspector/Images/spinnerActive.gif
-%%DATADIR%%/resources/inspector/Images/spinnerActiveSelected.gif
-%%DATADIR%%/resources/inspector/Images/spinnerInactive.gif
-%%DATADIR%%/resources/inspector/Images/spinnerInactiveSelected.gif
 %%DATADIR%%/resources/inspector/Images/statusbarButtonGlyphs.png
 %%DATADIR%%/resources/inspector/Images/statusbarButtonGlyphs_2x.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerHorizontal.png
@@ -156,6 +152,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/inspectorCommon.css
 %%DATADIR%%/resources/inspector/LayersPanel.js
 %%DATADIR%%/resources/inspector/layersPanel.css
+%%DATADIR%%/resources/inspector/Main.js
 %%DATADIR%%/resources/inspector/navigatorView.css
 %%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/networkPanel.css

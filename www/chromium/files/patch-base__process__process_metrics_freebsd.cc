@@ -1,11 +1,9 @@
---- ./base/process/process_metrics_freebsd.cc.orig	2014-04-24 22:36:10.000000000 +0200
-+++ ./base/process/process_metrics_freebsd.cc	2014-04-24 23:23:41.000000000 +0200
-@@ -4,6 +4,10 @@
+--- ./base/process/process_metrics_freebsd.cc.orig	2014-04-30 22:41:43.000000000 +0200
++++ ./base/process/process_metrics_freebsd.cc	2014-05-04 14:38:46.000000000 +0200
+@@ -10,6 +10,8 @@
  
- #include "base/process/process_metrics.h"
+ #include "base/sys_info.h"
  
-+#include "base/sys_info.h"
-+
 +#include <unistd.h> /* getpagesize() */
 +
  namespace base {

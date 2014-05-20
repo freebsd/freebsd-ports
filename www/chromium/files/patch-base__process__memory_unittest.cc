@@ -1,5 +1,5 @@
---- ./base/process/memory_unittest.cc.orig	2014-04-24 22:36:10.000000000 +0200
-+++ ./base/process/memory_unittest.cc	2014-04-24 23:23:41.000000000 +0200
+--- ./base/process/memory_unittest.cc.orig	2014-04-30 22:41:43.000000000 +0200
++++ ./base/process/memory_unittest.cc	2014-05-04 16:09:01.000000000 +0200
 @@ -151,12 +151,12 @@
  
  // Android doesn't implement set_new_handler, so we can't use the
@@ -15,9 +15,9 @@
      !defined(OS_WIN) && \
      !defined(ADDRESS_SANITIZER) && !defined(THREAD_SANITIZER)
  
-@@ -372,5 +372,5 @@
- #endif  // !ARCH_CPU_64_BITS
- #endif  // OS_MACOSX
+@@ -427,5 +427,5 @@
+   EXPECT_TRUE(value_ == NULL);
+ }
  
 -#endif  // !defined(OS_ANDROID) && !defined(OS_OPENBSD) &&
 +#endif  // !defined(OS_ANDROID) && !defined(OS_BSD) &&

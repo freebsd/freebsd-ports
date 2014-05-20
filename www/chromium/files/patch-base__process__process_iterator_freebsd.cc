@@ -1,8 +1,8 @@
---- ./base/process/process_iterator_freebsd.cc.orig	2014-04-24 22:36:10.000000000 +0200
-+++ ./base/process/process_iterator_freebsd.cc	2014-04-24 23:23:41.000000000 +0200
-@@ -6,6 +6,10 @@
- 
+--- ./base/process/process_iterator_freebsd.cc.orig	2014-04-30 22:41:43.000000000 +0200
++++ ./base/process/process_iterator_freebsd.cc	2014-05-04 14:38:46.000000000 +0200
+@@ -8,6 +8,10 @@
  #include <sys/sysctl.h>
+ #include <unistd.h>
  
 +/* getuid() */
 +#include <unistd.h>
