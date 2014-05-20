@@ -10,8 +10,8 @@ COMMENT=	Python bindings for yara
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plusvic
-GH_TAGNAME=	2.1.0
-GH_COMMIT=	1f0559b
+GH_TAGNAME=	v2.1.0
+GH_COMMIT=	6530e73
 
 LIB_DEPENDS=	libyara.so:${PORTSDIR}/security/yara
 
