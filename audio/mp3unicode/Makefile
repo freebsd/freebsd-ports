@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	mp3unicode
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.2.1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	http://github.com/downloads/alonbl/mp3unicode/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ID3 tags charset converter
@@ -21,12 +20,5 @@ PLIST_FILES=	bin/mp3unicode \
 PORTDOCS=	COPYING README
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-pre-configure:
-.if !${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -e '/^install-data-am/s|install-dist_docDATA||' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>

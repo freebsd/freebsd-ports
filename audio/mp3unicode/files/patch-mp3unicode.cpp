@@ -1,12 +1,11 @@
---- ./mp3unicode.cpp.orig	2007-09-25 14:57:33.000000000 +0400
-+++ ./mp3unicode.cpp	2007-09-29 15:16:49.000000000 +0400
-@@ -200,9 +200,6 @@
+--- ./mp3unicode.cpp.orig	2012-05-07 12:03:19.000000000 +0000
++++ ./mp3unicode.cpp	2014-05-13 20:16:40.053475428 +0000
+@@ -229,7 +229,7 @@
  			if (
  				iconv (
  					cd,
--#if !defined(_LIBICONV_VERSION) || _LIBICONV_VERSION < 0x010B
--					(char **)
--#endif
- 					&from,
+-					(char **)&from,
++					&from,
  					&from_size,
  					&to,
+ 					&to_size
