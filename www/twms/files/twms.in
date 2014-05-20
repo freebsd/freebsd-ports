@@ -24,7 +24,7 @@ load_rc_config $name
 
 twms_start()
 {
-	su -m ${twms_user} -c "nohup $command >/dev/null 2>&1 & ; echo \$! " | tail -1 > ${pidfile}
+	su -m ${twms_user} -c "nohup $command >/dev/null 2>&1 & echo \$! " | tail -1 > ${pidfile}
 }
 
 twms_stop()
