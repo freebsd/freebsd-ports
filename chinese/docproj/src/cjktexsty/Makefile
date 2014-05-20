@@ -11,4 +11,9 @@ LDADD=		-L${LOCALBASE}/lib -liconv
 NO_MAN=
 NOMAN=
 
+.if defined(BSD_INSTALL_PROGRAM)
+install:
+	${BSD_INSTALL_PROGRAM} ${PROG} ${DESTDIR}${BINDIR}/${PROGNAME}
+.endif
+
 .include <bsd.prog.mk>
