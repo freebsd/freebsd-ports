@@ -1,6 +1,7 @@
 include/lzx_compress.h
 include/lzx_constants.h
 lib/liblzxcomp.a
+@comment lib/liblzxcomp_p.a
 lib/liblzxcomp.so
 lib/liblzxcomp.so.1
 man/man3/lzxcomp.3.gz
