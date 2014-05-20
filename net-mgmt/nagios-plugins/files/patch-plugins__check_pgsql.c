@@ -1,10 +1,10 @@
---- plugins/check_pgsql.c.orig	2008-01-30 11:17:46.000000000 +0100
-+++ plugins/check_pgsql.c	2008-01-30 11:18:00.000000000 +0100
-@@ -43,6 +43,7 @@
+--- ./plugins/check_pgsql.c.orig	2014-04-16 00:19:03.000000000 +0200
++++ ./plugins/check_pgsql.c	2014-05-20 23:08:11.000000000 +0200
+@@ -36,6 +36,7 @@
  #include "utils.h"
  
  #include "netutils.h"
 +#include "pg_config_manual.h"
  #include <libpq-fe.h>
+ #include <pg_config_manual.h>
  
- #define DEFAULT_DB "template1"
