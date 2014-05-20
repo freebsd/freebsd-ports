@@ -60,73 +60,73 @@ include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
 %%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.a
-%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.la
 %%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so
 %%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so.0
+%%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so.0.0.0
 %%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.a
-%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.la
 %%DYNAMIC_ENABLED%%%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.so
 %%DYNAMIC_ENABLED%%%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.so.0
+%%DYNAMIC_ENABLED%%%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.so.0.0.0
 lib/libsvn_client-1.a
-lib/libsvn_client-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_client-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_client-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_client-1.so.0.0.0
 lib/libsvn_delta-1.a
-lib/libsvn_delta-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_delta-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_delta-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_delta-1.so.0.0.0
 lib/libsvn_diff-1.a
-lib/libsvn_diff-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_diff-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_diff-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_diff-1.so.0.0.0
 lib/libsvn_fs-1.a
-lib/libsvn_fs-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_fs-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_fs-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_fs-1.so.0.0.0
 %%BDB%%lib/libsvn_fs_base-1.a
-%%BDB%%lib/libsvn_fs_base-1.la
 %%DYNAMIC_ENABLED%%%%BDB%%lib/libsvn_fs_base-1.so
 %%DYNAMIC_ENABLED%%%%BDB%%lib/libsvn_fs_base-1.so.0
+%%DYNAMIC_ENABLED%%%%BDB%%lib/libsvn_fs_base-1.so.0.0.0
 lib/libsvn_fs_fs-1.a
-lib/libsvn_fs_fs-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_fs_fs-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_fs_fs-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_fs_fs-1.so.0.0.0
 lib/libsvn_fs_util-1.a
-lib/libsvn_fs_util-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_fs_util-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_fs_util-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_fs_util-1.so.0.0.0
 lib/libsvn_ra-1.a
-lib/libsvn_ra-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_ra-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_ra-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_ra-1.so.0.0.0
 lib/libsvn_ra_local-1.a
-lib/libsvn_ra_local-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_ra_local-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_ra_local-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_ra_local-1.so.0.0.0
 %%NEON%%lib/libsvn_ra_neon-1.a
-%%NEON%%lib/libsvn_ra_neon-1.la
 %%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so
 %%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so.0
-lib/libsvn_ra_svn-1.a
-lib/libsvn_ra_svn-1.la
-%%DYNAMIC_ENABLED%%lib/libsvn_ra_svn-1.so
-%%DYNAMIC_ENABLED%%lib/libsvn_ra_svn-1.so.0
-lib/libsvn_repos-1.a
-lib/libsvn_repos-1.la
-%%DYNAMIC_ENABLED%%lib/libsvn_repos-1.so
-%%DYNAMIC_ENABLED%%lib/libsvn_repos-1.so.0
+%%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so.0.0.0
 %%SERF%%lib/libsvn_ra_serf-1.a
-%%SERF%%lib/libsvn_ra_serf-1.la
 %%DYNAMIC_ENABLED%%%%SERF%%lib/libsvn_ra_serf-1.so
 %%DYNAMIC_ENABLED%%%%SERF%%lib/libsvn_ra_serf-1.so.0
+%%DYNAMIC_ENABLED%%%%SERF%%lib/libsvn_ra_serf-1.so.0.0.0
+lib/libsvn_ra_svn-1.a
+%%DYNAMIC_ENABLED%%lib/libsvn_ra_svn-1.so
+%%DYNAMIC_ENABLED%%lib/libsvn_ra_svn-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_ra_svn-1.so.0.0.0
+lib/libsvn_repos-1.a
+%%DYNAMIC_ENABLED%%lib/libsvn_repos-1.so
+%%DYNAMIC_ENABLED%%lib/libsvn_repos-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_repos-1.so.0.0.0
 lib/libsvn_subr-1.a
-lib/libsvn_subr-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_subr-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_subr-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_subr-1.so.0.0.0
 lib/libsvn_wc-1.a
-lib/libsvn_wc-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_wc-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_wc-1.so.0
+%%DYNAMIC_ENABLED%%lib/libsvn_wc-1.so.0.0.0
 @comment enable modules in this order: dav_svn, authz_svn, dontdothat
 %%MOD_DAV_SVN%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dav_svn_module/d' %D/%%APACHEETCDIR%%/httpd.conf
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dav_svn.so
@@ -354,43 +354,43 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
-@dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%/server-side/mod_dontdothat
-@dirrm %%DATADIR%%/server-side
-@dirrm %%DATADIR%%/po
+%%TOOLS%%@dirrm bin/svn-tools
+@dirrm include/subversion-1
+@dirrm %%DATADIR%%/backup
+@dirrm %%DATADIR%%/bdb
+@dirrm %%DATADIR%%/buildbot/master/public_html
+@dirrm %%DATADIR%%/buildbot/master
+@dirrm %%DATADIR%%/buildbot/slaves/bb-openbsd
+@dirrm %%DATADIR%%/buildbot/slaves/centos
+@dirrm %%DATADIR%%/buildbot/slaves/i686-debian-sarge1
+@dirrm %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared
+@dirrm %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf
+@dirrm %%DATADIR%%/buildbot/slaves/ubuntu-x64
+@dirrm %%DATADIR%%/buildbot/slaves/win32-SharpSvn
+@dirrm %%DATADIR%%/buildbot/slaves/win32-xp-VS2005
+@dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
+@dirrm %%DATADIR%%/buildbot/slaves
+@dirrm %%DATADIR%%/buildbot
+@dirrm %%DATADIR%%/client-side/svnmucc
+@dirrm %%DATADIR%%/client-side
+@dirrm %%DATADIR%%/dev/benchmarks/large_dirs
+@dirrm %%DATADIR%%/dev/benchmarks/suite1
+@dirrm %%DATADIR%%/dev/benchmarks
+@dirrm %%DATADIR%%/dev/iz
+@dirrm %%DATADIR%%/dev/svnraisetreeconflict
+@dirrm %%DATADIR%%/dev/unix-build
+@dirrm %%DATADIR%%/dev/wc-ng
+@dirrm %%DATADIR%%/dev/windows-build
+@dirrm %%DATADIR%%/dev
+@dirrm %%DATADIR%%/diff
+@dirrm %%DATADIR%%/dist/templates
+@dirrm %%DATADIR%%/dist
+@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/hook-scripts/mailer/tests
 @dirrm %%DATADIR%%/hook-scripts/mailer
 @dirrm %%DATADIR%%/hook-scripts
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/dist/templates
-@dirrm %%DATADIR%%/dist
-@dirrm %%DATADIR%%/diff
-@dirrm %%DATADIR%%/dev/windows-build
-@dirrm %%DATADIR%%/dev/wc-ng
-@dirrm %%DATADIR%%/dev/unix-build
-@dirrm %%DATADIR%%/dev/svnraisetreeconflict
-@dirrm %%DATADIR%%/dev/iz
-@dirrm %%DATADIR%%/dev/benchmarks/suite1
-@dirrm %%DATADIR%%/dev/benchmarks/large_dirs
-@dirrm %%DATADIR%%/dev/benchmarks
-@dirrm %%DATADIR%%/dev
-@dirrm %%DATADIR%%/client-side/svnmucc
-@dirrm %%DATADIR%%/client-side
-@dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
-@dirrm %%DATADIR%%/buildbot/slaves/win32-xp-VS2005
-@dirrm %%DATADIR%%/buildbot/slaves/win32-SharpSvn
-@dirrm %%DATADIR%%/buildbot/slaves/ubuntu-x64
-@dirrm %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf
-@dirrm %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared
-@dirrm %%DATADIR%%/buildbot/slaves/i686-debian-sarge1
-@dirrm %%DATADIR%%/buildbot/slaves/centos
-@dirrm %%DATADIR%%/buildbot/slaves/bb-openbsd
-@dirrm %%DATADIR%%/buildbot/slaves
-@dirrm %%DATADIR%%/buildbot/master/public_html
-@dirrm %%DATADIR%%/buildbot/master
-@dirrm %%DATADIR%%/buildbot
-@dirrm %%DATADIR%%/bdb
-@dirrm %%DATADIR%%/backup
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/server-side/mod_dontdothat
+@dirrm %%DATADIR%%/server-side
+@dirrm %%DATADIR%%/xslt
 @dirrm %%DATADIR%%
-@dirrm include/subversion-1
-%%TOOLS%%@dirrm bin/svn-tools
