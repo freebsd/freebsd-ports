@@ -8,12 +8,11 @@ MASTER_SITES=	SF/${PORTNAME}/ATutor%202/
 DISTNAME=	ATutor-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	An Open Source Web-based Learning Content Management System (LCMS)
+COMMENT=	Open Source Web-based Learning Content Management System (LCMS)
 
 USE_PHP=	session mbstring zlib mysql
 WRKSRC=		${WRKDIR}/ATutor
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 NO_BUILD=	yes
@@ -30,15 +29,15 @@ pre-install:
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${ATUTDIR}?g" >> ${PLIST}
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WWWDIR}' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type d -exec ${CHMOD} a+x {} \;
-	@${INSTALL_DATA} -d ${ATUTDATDIR}
-	@${CHMOD} 777 ${ATUTDATDIR}
+	@${FIND} ${STAGEDIR}${WWWDIR} -type d -exec ${CHMOD} a+x {} \;
+	@${INSTALL_DATA} -d ${STAGEDIR}${ATUTDATDIR}
+	@${CHMOD} 777 ${STAGEDIR}${ATUTDATDIR}
 	@${ECHO_CMD} '@exec ${CHMOD} 777 ${ATUTDATDIR}' >> ${TMPPLIST}
-	@${CHMOD} 666 ${WWWDIR}/${ATUTCONFIG}
+	@${CHMOD} 666 ${STAGEDIR}${WWWDIR}/${ATUTCONFIG}
 	@${ECHO_CMD} '@exec ${CHMOD} 666 \
 		${WWWDIR}/${ATUTCONFIG}' >> ${TMPPLIST}
 
