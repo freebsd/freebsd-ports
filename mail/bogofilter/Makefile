@@ -22,9 +22,8 @@ UNICODE_DESC=		Normalize tokens to Unicode (UTF-8) (recommended)
 
 CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
-USES=		perl5
+USES=		perl5 tar:bzip2
 USE_PERL5=	run
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 UNICODE_USES=	iconv
