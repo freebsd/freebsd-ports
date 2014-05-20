@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 COMMENT=	PostgreSQL database (client)
