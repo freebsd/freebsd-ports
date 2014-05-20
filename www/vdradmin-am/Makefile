@@ -3,6 +3,7 @@
 
 PORTNAME=	vdradmin-am
 PORTVERSION=	3.6.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://andreas.vdr-developer.org/vdradmin-am/download/
 
@@ -27,7 +28,8 @@ RUN_DEPENDS=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
 
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1
-USES=		tar:bzip2
+USES=		shebangfix tar:bzip2
+SHEBANG_FILES=	vdradmind vdradmind.pl
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/}-${DISTVERSION}
 NO_BUILD=	yes
 USE_RC_SUBR=	vdradmind
