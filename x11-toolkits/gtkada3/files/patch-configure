@@ -1,0 +1,12 @@
+--- configure.orig	2014-05-18 00:52:57.000000000 +0000
++++ configure
+@@ -2158,6 +2158,9 @@ fi
+       ac_GNATLIB=`cd $ac_GNATDIR; ls libgnat-*.dll | sed 's,lib,,;s,.dll,,'`
+       OS_SPECIFIC_LINK_OPTIONS=-Wl,-L$ac_GNATDIR,-l$ac_GNATLIB
+       ;;
++   *dragonfly*|*bsd*)
++      TARGET_LFLAGS="-lm"
++      ;;
+    *darwin*)
+       SO_EXT=.dylib
+       if test x$CAN_BUILD_SHARED = xyes ; then
