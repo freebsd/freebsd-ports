@@ -235,10 +235,7 @@ pre-install:
 
 .else
 post-install:
-	@cd  ${STAGEDIR}${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf || ${TRUE}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/proftpd ${STAGEDIR}/var/run/proftpd
-	@cd ${STAGEDIR}${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem || ${TRUE}
-	@cd ${STAGEDIR}${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat || ${TRUE}
+	@${MKDIR} ${STAGEDIR}/var/run/proftpd
 .if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${CP} README* RELEASE_NOTES ${STAGEDIR}${DOCSDIR}
