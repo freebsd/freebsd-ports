@@ -1,0 +1,20 @@
+ASL can generate code for totally different processors.  These are implemented:
+
+Motorola 68000..68030,683xx including math co-processor and MMU; DSP56000;
+	Motorola/IBM MPC601/MPC505/PPC403; 6800, 6805, 6809, 68(HC)11 and
+	Hitachi 6301
+Hitachi 6309, H8 and SH7000/7600
+Rockwell 6502 and 65(S)C02
+CMD 65816
+Mitsubishi MELPS-740; MELPS-7700; MELPS-4500 and M16
+Intel MCS-48/41, MCS-51, MCS-96 and 8080/8085
+AMD 29K
+Siemens 80C166/167
+Zilog Z80, Z180, Z380 and Z8
+Toshiba TLCS-900(L), TLCS-90, TLCS-870, TLCS-47 and TLCS-9000
+Microchip PIC16C54..16C57, PIC16C84/PIC16C64 and PIC17C42
+SGS-Thomson ST62xx and 6804
+Texas Instruments TMS32010/32015, TMS3202x, TMS320C3x and TMS370xxx
+NEC uPD 78(C)1x and uPD 75xxx (a.k.a. 75K0)
+
+WWW: http://john.ccac.rwth-aachen.de:8000/as/

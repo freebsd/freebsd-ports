@@ -1,0 +1,33 @@
+# -------------------------------------------------------------------------
+# choose your compiler (must be ANSI-compliant!) and linker command, plus
+# any additionally needed flags
+
+LD = ${CC}
+LDFLAGS = -s
+
+# -------------------------------------------------------------------------
+# directories where binaries and includes should go during installation
+
+BINDIR = ${STAGEDIR}/${PREFIX}/bin
+# *INST are where things are installed to, vs where they are searched for
+INCDIR = ${PREFIX}/share/asl
+INCDIRINST = ${STAGEDIR}/${PREFIX}/share/asl
+LIBDIR = ${PREFIX}/share/asl
+LIBDIRINST = ${STAGEDIR}/${PREFIX}/share/asl
+MANDIR = ${STAGEDIR}/${PREFIX}/man
+DOCDIR =
+
+# -------------------------------------------------------------------------
+# language AS will speak to you
+# implemented so far:
+# lang_DE = german
+# lang_EN = english
+
+LANGRSC = lang_EN
+
+# -------------------------------------------------------------------------
+# character encoding to use (choose one of them)
+
+# CHARSET = CHARSET_ASCII7
+# CHARSET = CHARSET_IBM437
+CHARSET = CHARSET_ISO8859_1

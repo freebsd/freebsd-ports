@@ -1,0 +1,11 @@
+--- Makefile.orig	1999-08-01 07:11:01.000000000 +0930
++++ Makefile	2014-05-11 14:46:32.794473751 +0930
+@@ -60,7 +60,7 @@
+ 	cd tests; ./testall
+ 
+ install: $(ALLTARGETS)
+-	./install.sh $(BINDIR) $(INCDIR) $(MANDIR) $(LIBDIR) $(DOCDIR)
++	./install.sh $(BINDIR) $(INCDIRINST) $(MANDIR) $(LIBDIRINST) $(DOCDIR)
+ 
+ clean:
+ 	rm -f $(ALLTARGETS) $(RESCOMPTARGET) $(TEX2DOCTARGET) $(TEX2HTMLTARGET) *.$(OBJEXTENSION) *.p *.rsc tests/testlog

@@ -76,6 +76,7 @@
     SUBDIR += art
     SUBDIR += as31
     SUBDIR += asdlgen
+    SUBDIR += asl
     SUBDIR += asmutils
     SUBDIR += asmx
     SUBDIR += astah-community
