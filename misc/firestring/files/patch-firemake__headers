@@ -1,0 +1,11 @@
+--- firemake/headers.orig	2014-05-20 14:43:33.135642364 +0800
++++ firemake/headers	2014-05-20 14:43:44.118599465 +0800
+@@ -16,7 +16,7 @@ case $PHASE in
+ 		$ECHO "install_headers:"
+ 
+ 		for HEADER in $HEADERS; do
+-			$ECHO "	$INSTALL $HEADER \$(INCLUDEDIR) $INSTALL_USER $INSTALL_GROUP 0644"
++			$ECHO "	$INSTALL $HEADER \$(DESTDIR)\$(INCLUDEDIR) $INSTALL_USER $INSTALL_GROUP 0644"
+ 		done
+ 		$ECHO
+ 
