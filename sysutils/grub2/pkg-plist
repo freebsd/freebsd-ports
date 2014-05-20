@@ -50,6 +50,7 @@ bin/grub-render-label
 bin/grub-syslinux2cfg
 sbin/grub-macbless
 info/dir
+lib/charset.alias
 lib/grub/i386-pc/archelp.mod
 lib/grub/i386-pc/archelp.module
 lib/grub/i386-pc/boot_hybrid.image
@@ -144,6 +145,7 @@ lib/grub/i386-pc/xnu_uuid_test.mod
 lib/grub/i386-pc/xnu_uuid_test.module
 man/man1/grub-file.1.gz
 man/man1/grub-glue-efi.1.gz
+man/man1/grub-mkfont.1.gz
 man/man1/grub-mknetdir.1.gz
 man/man1/grub-render-label.1.gz
 man/man1/grub-syslinux2cfg.1.gz
