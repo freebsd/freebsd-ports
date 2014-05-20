@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2011-03-27 18:41:32.000000000 +0200
-+++ CMakeLists.txt	2012-04-16 12:13:31.000000000 +0200
-@@ -125,7 +125,7 @@
+--- CMakeLists.txt.orig	2014-05-04 01:56:54.000000000 +0200
++++ CMakeLists.txt	2014-05-20 10:27:42.000000000 +0200
+@@ -159,7 +159,7 @@
  endif()
  
  include_directories(${USES_UCOMMON_INCLUDE_DIRS})
@@ -9,3 +9,12 @@
  add_definitions(${USES_UCOMMON_CFLAGS})
  
  # by default we build static libs for windows, shared libs for unix.
+@@ -243,7 +243,7 @@
+ 
+     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ccaudio2.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/ccaudio2.pc)
+ 
+-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ccaudio2.pc DESTINATION ${INSTALL_LIBDIR}/pkgconfig)
++    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ccaudio2.pc DESTINATION libdata/pkgconfig)
+ endif()
+ 
+ install(FILES ${ccaudio_conf} DESTINATION ${SYSCONFDIR})
