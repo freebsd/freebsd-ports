@@ -3,6 +3,7 @@
 
 PORTNAME=	twms
 PORTVERSION=	0.02w
+PORTREVISION=	1
 CATEGORIES=	www astro
 MASTER_SITES=	GOOGLE_CODE
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:${PORTSDIR}/graphics/py-pyp
 		${PYTHON_SITELIBDIR}/web/__init__.py:${PORTSDIR}/www/webpy \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
@@ -32,7 +33,6 @@ USE_RC_SUBR=	twms
 USERS=		${TWMS_USER}
 GROUPS=		${TWMS_GROUP}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1,1 s|/usr/bin/python|/usr/bin/env python|' ${WRKSRC}/twms.py
 	@${REINPLACE_CMD} -e 's|/etc/twms/twms.conf|${PREFIX}/etc/twms.conf|' ${WRKSRC}/twms/twms.py
@@ -42,17 +42,11 @@ post-patch:
 		s|import fetchers|from twms &|' ${WRKSRC}/twms/twms.conf
 
 do-install:
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/twms
-	${INSTALL_DATA} ${WRKSRC}/twms/*.py ${PYTHONPREFIX_SITELIBDIR}/twms/
-	${INSTALL_SCRIPT} ${WRKSRC}/twms.py ${PREFIX}/bin/twms
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.jpg ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/twms/twms.conf ${PREFIX}/etc/twms.conf.default
-	@if [ ! -f ${PREFIX}/etc/twms.conf ]; then \
-		${CP} -p ${PREFIX}/etc/twms.conf.default ${PREFIX}/etc/twms.conf ; \
-	fi
-
-post-install:
-	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/twms
+	${INSTALL_DATA} ${WRKSRC}/twms/*.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/twms/
+	${INSTALL_SCRIPT} ${WRKSRC}/twms.py ${STAGEDIR}${PREFIX}/bin/twms
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.jpg ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/twms/twms.conf ${STAGEDIR}${PREFIX}/etc/twms.conf.default
 
 .include <bsd.port.mk>
