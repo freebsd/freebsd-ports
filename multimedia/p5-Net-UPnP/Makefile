@@ -10,10 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for UPnP
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/README
+
 USES=		perl5
 USE_PERL5=	configure
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/README
+PORTSCOUT=	ignore:1.41
 
 .include <bsd.port.mk>
