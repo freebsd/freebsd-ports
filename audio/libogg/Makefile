@@ -3,6 +3,7 @@
 
 PORTNAME=	libogg
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
