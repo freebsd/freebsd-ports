@@ -24,7 +24,7 @@ rcvar=sssd_enable
 load_rc_config "$name"
 
 : ${sssd_enable:=NO}
-: ${sssd_conf="%%PREFIX%%/etc/sssd/ssd.conf"}
+: ${sssd_conf="%%PREFIX%%/etc/sssd/sssd.conf"}
 : ${sssd_flags="-f -D"}
 
 command="%%PREFIX%%/sbin/$name"
