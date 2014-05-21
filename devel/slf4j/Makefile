@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slf4j
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.7
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.slf4j.org/dist/
 
@@ -28,12 +28,11 @@ PLIST_FILES=	%%JAVAJARDIR%%/slf4j-api.jar \
 		${JARFILES:S,^,%%DATADIR%%/,}
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/slf4j-api-${PORTVERSION}.jar ${JAVAJARDIR}/slf4j-api.jar
-	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/slf4j-api-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/slf4j-api.jar
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for jarfile in ${JARFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${jarfile:S,.jar$,-${PORTVERSION}.jar,} ${DATADIR}/${jarfile}
+	@${INSTALL_DATA} ${WRKSRC}/${jarfile:S,.jar$,-${PORTVERSION}.jar,} ${STAGEDIR}${DATADIR}/${jarfile}
 .endfor
 
 .include <bsd.port.mk>
