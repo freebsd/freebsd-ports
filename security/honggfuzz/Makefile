@@ -3,6 +3,7 @@
 
 PORTNAME=	honggfuzz
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -11,7 +12,6 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	General-purpose fuzzer with simple, command-line interface
 
 LICENSE=	APACHE20
-LICENSE_FILE=   ${WRKSRC}/COPYING
 
 USE_GMAKE=	yes
 
@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i "" -E "s,\.\./,," ${WRKSRC}/examples/*.sh
+	${REINPLACE_CMD} -i "" -E 's,gcc,${CC},' ${WRKSRC}/Makefile
 
 do-build:
 	@(cd ${WRKSRC}; ${GMAKE})
