@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	munger
-PORTVERSION=	5.4
+PORTVERSION=	5.6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -11,6 +11,7 @@ COMMENT=	Static lisp interpreter with text processing abilities
 
 LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
+DESTDIRNAME=	STAGEDIR
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	SQLITE
@@ -18,8 +19,5 @@ OPTIONS_DEFAULT=	SQLITE
 
 SQLITE_USE=	SQLITE=3
 SQLITE_MAKE_ARGS=	-DWITH_SQL
-
-post-patch:
-	@${REINPLACE_CMD} 's,MUNGERPATH|$${DEST},/MUNGERPATH|$${PREFIX}/bin,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
