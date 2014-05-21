@@ -32,6 +32,7 @@
 %%MKFONT%%share/grub/themes/starfield/terminal_box_w.png
 %%MKFONT%%share/grub/themes/starfield/theme.txt
 %%MKFONT%%share/grub/themes/starfield/COPYING.CC-BY-SA-3.0
+%%MKFONT%%man/man1/grub-mkfont.1.gz
 bin/grub-editenv
 bin/grub-fstest
 bin/grub-kbdcomp
@@ -145,7 +146,6 @@ lib/grub/i386-pc/xnu_uuid_test.mod
 lib/grub/i386-pc/xnu_uuid_test.module
 man/man1/grub-file.1.gz
 man/man1/grub-glue-efi.1.gz
-man/man1/grub-mkfont.1.gz
 man/man1/grub-mknetdir.1.gz
 man/man1/grub-render-label.1.gz
 man/man1/grub-syslinux2cfg.1.gz
