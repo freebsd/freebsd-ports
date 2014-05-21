@@ -1,5 +1,5 @@
---- ./third_party/WebKit/Source/web/WebInputEventFactoryGtk.cpp.orig	2014-04-24 22:39:57.000000000 +0200
-+++ ./third_party/WebKit/Source/web/WebInputEventFactoryGtk.cpp	2014-04-24 23:23:47.000000000 +0200
+--- ./third_party/WebKit/Source/web/WebInputEventFactoryGtk.cpp.orig	2014-04-30 22:47:14.000000000 +0200
++++ ./third_party/WebKit/Source/web/WebInputEventFactoryGtk.cpp	2014-05-04 14:38:48.000000000 +0200
 @@ -41,6 +41,8 @@
  #include <gtk/gtk.h>
  #include <stdlib.h>

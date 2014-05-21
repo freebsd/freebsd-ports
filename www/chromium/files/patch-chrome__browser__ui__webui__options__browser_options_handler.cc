@@ -1,6 +1,6 @@
---- ./chrome/browser/ui/webui/options/browser_options_handler.cc.orig	2014-04-24 22:35:00.000000000 +0200
-+++ ./chrome/browser/ui/webui/options/browser_options_handler.cc	2014-04-24 23:23:43.000000000 +0200
-@@ -313,7 +313,8 @@
+--- ./chrome/browser/ui/webui/options/browser_options_handler.cc.orig	2014-04-30 22:42:10.000000000 +0200
++++ ./chrome/browser/ui/webui/options/browser_options_handler.cc	2014-05-04 14:38:46.000000000 +0200
+@@ -328,7 +328,8 @@
      { "toolbarShowHomeButton", IDS_OPTIONS_TOOLBAR_SHOW_HOME_BUTTON },
      { "translateEnableTranslate",
        IDS_OPTIONS_TRANSLATE_ENABLE_TRANSLATE },
@@ -10,7 +10,7 @@
      { "showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS },
      { "themesNativeButton", IDS_THEMES_GTK_BUTTON },
      { "themesSetClassic", IDS_THEMES_SET_CLASSIC },
-@@ -620,7 +621,8 @@
+@@ -648,7 +649,8 @@
        "requestProfilesInfo",
        base::Bind(&BrowserOptionsHandler::HandleRequestProfilesInfo,
                   base::Unretained(this)));
@@ -20,7 +20,7 @@
    web_ui()->RegisterMessageCallback(
        "themesSetNative",
        base::Bind(&BrowserOptionsHandler::ThemesSetNative,
-@@ -1204,7 +1206,8 @@
+@@ -1298,7 +1300,8 @@
    ThemeService* theme_service = ThemeServiceFactory::GetForProfile(profile);
    bool is_native_theme = false;
  
@@ -30,7 +30,7 @@
    bool profile_is_managed = profile->IsManaged();
    is_native_theme = theme_service->UsingNativeTheme();
    base::FundamentalValue native_theme_enabled(!is_native_theme &&
-@@ -1226,7 +1229,8 @@
+@@ -1320,7 +1323,8 @@
    ThemeServiceFactory::GetForProfile(profile)->UseDefaultTheme();
  }
  

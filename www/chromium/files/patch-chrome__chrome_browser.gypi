@@ -1,6 +1,17 @@
---- ./chrome/chrome_browser.gypi.orig	2014-04-24 22:35:13.000000000 +0200
-+++ ./chrome/chrome_browser.gypi	2014-04-24 23:23:43.000000000 +0200
-@@ -2949,7 +2949,7 @@
+--- ./chrome/chrome_browser.gypi.orig	2014-04-30 22:42:53.000000000 +0200
++++ ./chrome/chrome_browser.gypi	2014-05-05 20:38:00.000000000 +0200
+@@ -1209,8 +1209,8 @@
+         'browser/media_galleries/imported_media_gallery_registry.h',
+         'browser/media_galleries/linux/mtp_device_delegate_impl_linux.cc',
+         'browser/media_galleries/linux/mtp_device_delegate_impl_linux.h',
+-        'browser/media_galleries/linux/mtp_device_object_enumerator.cc',
+-        'browser/media_galleries/linux/mtp_device_object_enumerator.h',
++        #'browser/media_galleries/linux/mtp_device_object_enumerator.cc',
++        #'browser/media_galleries/linux/mtp_device_object_enumerator.h',
+         'browser/media_galleries/linux/mtp_device_task_helper.cc',
+         'browser/media_galleries/linux/mtp_device_task_helper.h',
+         'browser/media_galleries/linux/mtp_device_task_helper_map_service.cc',
+@@ -3025,7 +3025,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -9,7 +20,7 @@
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -3077,7 +3077,7 @@
+@@ -3166,7 +3166,7 @@
              '../build/linux/system.gyp:xscrnsaver',
            ],
          }],
@@ -18,7 +29,7 @@
            'sources': [
              'app/chrome_breakpad_client.cc',
              'app/chrome_breakpad_client.h',
-@@ -3345,6 +3345,25 @@
+@@ -3434,6 +3434,25 @@
              ['exclude', '^third_party/mozilla_security_manager/'],
            ],
          }],

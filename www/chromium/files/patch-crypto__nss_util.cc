@@ -1,5 +1,5 @@
---- ./crypto/nss_util.cc.orig	2014-04-24 22:35:50.000000000 +0200
-+++ ./crypto/nss_util.cc	2014-04-24 23:23:45.000000000 +0200
+--- ./crypto/nss_util.cc.orig	2014-04-30 22:41:24.000000000 +0200
++++ ./crypto/nss_util.cc	2014-05-04 14:38:48.000000000 +0200
 @@ -13,7 +13,7 @@
  #include <prtime.h>
  #include <secmod.h>
@@ -19,9 +19,9 @@
  //
  // Because this function sets an environment variable it must be run before we
 @@ -149,10 +149,10 @@
-   file_util::FileSystemType fs_type = file_util::FILE_SYSTEM_UNKNOWN;
-   if (file_util::GetFileSystemType(database_dir, &fs_type))
-     db_on_nfs = (fs_type == file_util::FILE_SYSTEM_NFS);
+   base::FileSystemType fs_type = base::FILE_SYSTEM_UNKNOWN;
+   if (base::GetFileSystemType(database_dir, &fs_type))
+     db_on_nfs = (fs_type == base::FILE_SYSTEM_NFS);
 -#elif defined(OS_OPENBSD)
 +#elif defined(OS_BSD)
    struct statfs buf;
