@@ -3,7 +3,7 @@
 
 PORTNAME=	iulib
 PORTVERSION=	0.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -11,24 +11,27 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	A library of image understanding-related algorithms
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LICENSE=	APACHE20
+
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 OPTIONS_DEFINE=	SDL VIDIO
 SDL_DESC=	Enable SDL for graphical debugging
 VIDIO_DESC=	Enable Video Input/Output (using ffmpeg)
 
+USES=		libtool
 USE_GCC=	any
 USE_PYTHON_BUILD=	yes
-USE_AUTOTOOLS=	libtool aclocal automake autoconf
+USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}
@@ -40,7 +43,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVIDIO}
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 post-patch:
