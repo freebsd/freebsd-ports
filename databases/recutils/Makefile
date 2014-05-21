@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recutils
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
@@ -11,9 +11,9 @@ COMMENT=	Tools and libraries to access human-editable, plain text databases
 
 LICENSE=	GPLv3
 
+USES=		charsetfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		charsetfix
 
 INFO=		rec-mode recutils
 PORTDOCS=	AUTHORS ChangeLog NEWS README
