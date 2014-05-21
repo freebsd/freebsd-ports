@@ -87,6 +87,7 @@ bin/html_formfu_dumpconf.pl
 %%SITE_PERL%%/HTML/FormFu/Filter/CompoundSprintf.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/CopyValue.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/Encode.pm
+%%SITE_PERL%%/HTML/FormFu/Filter/ForceListValue.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/FormatNumber.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/HTMLEscape.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/HTMLScrubber.pm
@@ -146,6 +147,7 @@ bin/html_formfu_dumpconf.pl
 %%SITE_PERL%%/HTML/FormFu/Role/Element/FieldMethods.pm
 %%SITE_PERL%%/HTML/FormFu/Role/Element/Group.pm
 %%SITE_PERL%%/HTML/FormFu/Role/Element/Input.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/Layout.pm
 %%SITE_PERL%%/HTML/FormFu/Role/Element/MultiElement.pm
 %%SITE_PERL%%/HTML/FormFu/Role/Element/NonBlock.pm
 %%SITE_PERL%%/HTML/FormFu/Role/Element/ProcessOptionsFromModel.pm
@@ -166,27 +168,34 @@ bin/html_formfu_dumpconf.pl
 %%SITE_PERL%%/HTML/FormFu/Util.pm
 %%SITE_PERL%%/HTML/FormFu/Validator.pm
 %%SITE_PERL%%/HTML/FormFu/Validator/Callback.pm
+%%SITE_PERL%%/MooseX/Attribute/FormFuChained.pm
+%%SITE_PERL%%/MooseX/FormFuChainedAccessors.pm
+%%SITE_PERL%%/MooseX/Traits/Attribute/FormFuChained.pm
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/block
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/checkboxgroup
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/checkboxgroup_tag
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/content_button
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/end_block
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/end_form
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/errors
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_block
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_checkboxgroup_field
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_comment
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_contentbutton_field
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_errors
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_field
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_javascript
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_label
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_label_field
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_label_text
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_multi_field
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_parser
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_select_field
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field_layout_textarea_field
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/form
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/input
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/input_tag
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/label
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/label_element
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/multi
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/non_block
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/recaptcha
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/repeatable
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/select_tag
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/start_block
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/start_form
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/.packlist
 %%PERL5_MAN3%%/HTML::FormFu.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Attribute.3.gz
@@ -266,6 +275,7 @@ bin/html_formfu_dumpconf.pl
 %%PERL5_MAN3%%/HTML::FormFu::Filter::CompoundSprintf.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Filter::CopyValue.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Filter::Encode.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Filter::ForceListValue.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Filter::FormatNumber.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Filter::HTMLEscape.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Filter::HTMLScrubber.3.gz
@@ -308,34 +318,33 @@ bin/html_formfu_dumpconf.pl
 %%PERL5_MAN3%%/HTML::FormFu::Validator::Callback.3.gz
 man/man1/html_formfu_deploy.pl.1.gz
 man/man1/html_formfu_dumpconf.pl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/File
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/Repeatable
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Deflator
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Element
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Exception
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Filter
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/I18N
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Inflator
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Manual
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Model
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/OutputProcessor
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Plugin
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/QueryType/CGI
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/QueryType
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Constraint
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Element
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Filter
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Transformer
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Validator
+@dirrmtry %%SITE_PERL%%/HTML/FormFu
+@dirrmtry %%SITE_PERL%%/MooseX/Attribute
+@dirrmtry %%SITE_PERL%%/MooseX/Traits/Attribute
+@dirrmtry %%SITE_PERL%%/MooseX/Traits
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormFu
-@dirrmtry %%SITE_PERL%%/auto/share/dist
-@dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Validator
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Transformer
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Filter
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Element
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Constraint
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/QueryType/CGI
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/QueryType
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Plugin
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/OutputProcessor
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Model
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Manual
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Inflator
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/I18N
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Filter
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Exception
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Element
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Deflator
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/Repeatable
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/File
-@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint
-@dirrmtry %%SITE_PERL%%/HTML/FormFu
-@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu
