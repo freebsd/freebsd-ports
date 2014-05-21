@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2014-02-06 00:12:32.000000000 +0900
++++ ./Makefile.in	2014-05-07 20:05:51.000000000 +0900
+@@ -269,7 +269,7 @@
+ ACLOCAL_AMFLAGS = -I m4
+ AUTOMAKE_OPTIONS = foreign
+ EXTRA_DIST = config README.html leptonica-license.txt moller52.jpg version-notes.html make-for-auto make-for-local autobuild
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = lept.pc
+ SUBDIRS = src prog
+ all: config_auto.h
