@@ -23,9 +23,6 @@ MEGAHYPERDEATH_DESC=	Add the possibility of MEGA. HYPER. DEATH!
 
 OPTIONS_DEFAULT=	EXTRANKI
 
-MAN6=		robotfindskitten.6
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXTRANKI}
@@ -44,14 +41,14 @@ post-patch:
 		${WRKSRC}/doc/robotfindskitten.6
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/robotfindskitten ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/nki/vanilla.nki ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/robotfindskitten.6 ${MANPREFIX}/man/man6
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/robotfindskitten ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/nki/vanilla.nki ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/robotfindskitten.6 ${STAGEDIR}${MANPREFIX}/man/man6
 
 .if ${PORT_OPTIONS:MEXTRANKI}
 .for NKI in ${SUB_FILES}
-	${INSTALL_DATA} ${WRKDIR}/${NKI} ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${NKI} ${STAGEDIR}${DATADIR}
 .endfor
 .endif
 
