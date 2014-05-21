@@ -8328,7 +8328,19 @@
  
      /*
       * Prevent recursions. Since LD_LIBRARY_PATH is the one which will be set by
-@@ -928,9 +934,13 @@
+@@ -900,8 +906,9 @@
+  * onwards the filename returned in DL_info structure from dladdr is
+  * an absolute pathname so technically realpath isn't required.
+  * On Linux we read the executable name from /proc/self/exe.
+- * As a fallback, and for platforms other than Solaris and Linux,
+- * we use FindExecName to compute the executable name.
++ * On FreeBSD we read the executable name from /proc/curproc/file.
++ * As a fallback, and for platforms other than Solaris, Linux, and
++ * FreeBSD, we use FindExecName to compute the executable name.
+  */
+ const char*
+ SetExecname(char **argv)
+@@ -928,9 +935,13 @@
              }
          }
      }
@@ -8343,7 +8355,7 @@
          char buf[PATH_MAX+1];
          int len = readlink(self, buf, PATH_MAX);
          if (len >= 0) {
-@@ -938,7 +948,7 @@
+@@ -938,7 +949,7 @@
              exec_path = JLI_StringDup(buf);
          }
      }
@@ -8352,7 +8364,7 @@
      {
          /* Not implemented */
      }
-@@ -1000,7 +1010,7 @@
+@@ -1000,7 +1011,7 @@
  int
  ContinueInNewThread0(int (JNICALL *continuation)(void *), jlong stack_size, void * args) {
      int rslt;
@@ -8361,7 +8373,7 @@
      pthread_t tid;
      pthread_attr_t attr;
      pthread_attr_init(&attr);
-@@ -1025,7 +1035,7 @@
+@@ -1025,7 +1036,7 @@
      }
  
      pthread_attr_destroy(&attr);
@@ -8370,7 +8382,7 @@
      thread_t tid;
      long flags = 0;
      if (thr_create(NULL, stack_size, (void *(*)(void *))continuation, args, flags, &tid) == 0) {
-@@ -1036,7 +1046,7 @@
+@@ -1036,7 +1047,7 @@
        /* See above. Continue in current thread if thr_create() failed */
        rslt = continuation(args);
      }
@@ -8379,7 +8391,7 @@
      return rslt;
  }
  
-@@ -1044,13 +1054,13 @@
+@@ -1044,13 +1055,13 @@
  #define MAX_PID_STR_SZ   20
  
  void SetJavaLauncherPlatformProps() {
@@ -8570,6 +8582,21 @@
 +                osname.endsWith("BSD") ||
                  osname.contains("OS X"));
      }
+ 
+@@ -140,12 +141,12 @@
+     static int cmdIndex = UNINITIALIZED;
+ 
+     String[] lpcFirstCom = {
+-        "/usr/sbin/lpc status | grep : | sed -ne '1,1 s/://p'",
++        "/usr/sbin/lpc status all | grep ':$' | sed -ne '1,1 s/://p'",
+         "/usr/sbin/lpc status | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}'"
+     };
+ 
+     String[] lpcAllCom = {
+-        "/usr/sbin/lpc status all | grep : | sed -e 's/://'",
++        "/usr/sbin/lpc status all | grep ':$' | sed -e 's/://'",
+         "/usr/sbin/lpc status all | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}' | sort"
+     };
  
 --- jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java
 +++ jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java

@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -195,6 +195,7 @@ post-patch:
 	    ${WRKSRC}/common/autoconf/toolchain.m4 \
 	    ${WRKSRC}/configure \
 	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
+	    ${WRKSRC}/jdk/src/share/classes/sun/print/PSPrinterJob.java \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java
 	@${REINPLACE_CMD} -e 's|/usr/local/java/classes|${LOCALBASE}/share/java/classes|' \
 	    ${WRKSRC}/jdk/src/bsd/doc/man/*.1
