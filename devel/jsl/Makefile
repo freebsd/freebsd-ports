@@ -3,7 +3,7 @@
 
 PORTNAME=	jsl
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/jsl/ \
 		http://www.javascriptlint.com/download/
@@ -20,7 +20,6 @@ MAKE_ARGS=	OS_CFLAGS="-DXP_UNIX -DHAVE_VA_COPY -DVA_COPY=va_copy"
 CFLAGS+=	-fPIC
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 JSLCFG_CMD=	${UNAME} -sr | ${SED} 's, ,,'
@@ -29,6 +28,6 @@ post-patch:
 	${GREP} -v 'CC =' ${WRKSRC}/config/Linux_All.mk > ${WRKSRC}/config/$$(${JSLCFG_CMD}).mk
 
 do-install:
-	${INSTALL} ${WRKSRC}/$$(${JSLCFG_CMD})_DBG.OBJ/jsl ${PREFIX}/bin/jsl
+	${INSTALL_PROGRAM} ${WRKSRC}/$$(${JSLCFG_CMD})_DBG.OBJ/jsl ${STAGEDIR}${PREFIX}/bin/jsl
 
 .include <bsd.port.post.mk>
