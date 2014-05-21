@@ -3,7 +3,7 @@
 
 PORTNAME=	iet
 PORTVERSION=	1.4.20.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net kld
 MASTER_SITES=	SF/iscsitarget/iscsitarget/${PORTVERSION}/
 DISTNAME=	iscsitarget-${PORTVERSION}
@@ -22,11 +22,8 @@ SSP_UNSAFE=	kernel module does not support ssp
 BUILD_WRKSRC=	${WRKSRC}/freebsd
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-MAN5=		ietd.conf.5
-MAN8=		ietadm.8 ietd.8
-MANCOMPRESSED=	maybe
-
 USE_RC_SUBR=	ietd
+USES=		kmod uidfix
 
 KMODDIR=	${PREFIX}/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
@@ -34,7 +31,6 @@ MAKE_ENV+=	KMODDIR=${KMODDIR} DATADIR=${DATADIR} SYSDIR="${SRC_BASE}/sys"
 
 IET_CONF_FILES=	ietd.conf initiators.allow initiators.deny targets.allow
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)
@@ -46,11 +42,6 @@ BROKEN=		requires 8.0-RELEASE or higher
 .endif
 
 pre-install:
-	${MKDIR} ${DATADIR} ${KMODDIR} ${ETCDIR}
-
-post-install:
-.for f in ${IET_CONF_FILES}
-	@[ -f ${ETCDIR}/${f} ] || ${CP} ${DATADIR}/${f} ${ETCDIR}/
-.endfor
+	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${KMODDIR} ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.post.mk>
