@@ -5272,17 +5272,42 @@
 +}
 --- jdk/src/share/classes/sun/print/PSPrinterJob.java
 +++ jdk/src/share/classes/sun/print/PSPrinterJob.java
-@@ -1531,7 +1531,9 @@
+@@ -1531,9 +1531,33 @@
              pFlags |= NOSHEET;
              ncomps+=1;
          }
 -       if (System.getProperty("os.name").equals("Linux")) {
 +
 +       String osname = System.getProperty("os.name");
-+       if (osname.equals("Linux") || osname.equals("FreeBSD") || osname.equals("NetBSD") || osname.equals("OpenBSD") || osname.equals("Darwin")) {
++       if (osname.equals("Linux") || osname.endsWith("BSD") || osname.contains("OS X")) {
++            String lprPath = "/usr/bin/lpr";
++            if (osname.endsWith("BSD")) {
++                final PrintService pservice = getPrintService();
++                Boolean isIPPPrinter =
++                    (Boolean)java.security.AccessController.doPrivileged(
++                    new java.security.PrivilegedAction() {
++                        public Object run() {
++                            try {
++                                Class psClass =
++                                    Class.forName("sun.print.IPPPrintService");
++                                if (psClass.isInstance(pservice)) {
++                                    return Boolean.TRUE;
++                                }
++                            } catch (Throwable t) {
++                            }
++                            return Boolean.FALSE;
++                        }
++                    });
++                if (isIPPPrinter) {
++                    lprPath = "%%LOCALBASE%%/bin/lpr";
++                }
++            }
              execCmd = new String[ncomps];
-             execCmd[n++] = "/usr/bin/lpr";
+-            execCmd[n++] = "/usr/bin/lpr";
++            execCmd[n++] = lprPath;
              if ((pFlags & PRINTER) != 0) {
+                 execCmd[n++] = new String("-P" + printer);
+             }
 --- jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java
 +++ jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java
 @@ -49,8 +49,12 @@
@@ -9279,19 +9304,43 @@
 +}
 --- jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java
 +++ jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java
-@@ -119,7 +119,11 @@
+@@ -119,7 +119,9 @@
      }
  
      static boolean isBSD() {
 -        return osname.equals("Linux");
-+	return (osname.equals("Linux") ||
-+		osname.equals("FreeBSD") ||
-+		osname.equals("Darwin") ||
-+		osname.equals("NetBSD") ||
-+		osname.equals("OpenBSD"));
++        return (osname.equals("Linux") ||
++                osname.endsWith("BSD") ||
++                osname.contains("OS X"));
      }
  
      static final int UNINITIALIZED = -1;
+@@ -129,13 +131,13 @@
+     static int cmdIndex = UNINITIALIZED;
+ 
+     String[] lpcFirstCom = {
+-        "/usr/sbin/lpc status | grep : | sed -ne '1,1 s/://p'",
++        "/usr/sbin/lpc status all | grep ':$' | sed -ne '1,1 s/://p'",
+         "/usr/sbin/lpc status | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}'"
+     };
+ 
+     String[] lpcAllCom = {
+-        "/usr/sbin/lpc status | grep : | sed -e 's/://'",
+-        "/usr/sbin/lpc -a status | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}' | sort"
++        "/usr/sbin/lpc status all | grep ':$' | sed -e 's/://'",
++        "/usr/sbin/lpc status all | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}' | sort"
+     };
+ 
+     String[] lpcNameCom = {
+@@ -145,7 +147,7 @@
+ 
+ 
+     static int getBSDCommandIndex() {
+-        String command  = "/usr/sbin/lpc status";
++        String command  = "/usr/sbin/lpc status all";
+         String[] names = execCmd(command);
+ 
+         if ((names == null) || (names.length == 0)) {
 --- jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java
 +++ jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java
 @@ -38,9 +38,6 @@
