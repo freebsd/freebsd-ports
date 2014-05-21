@@ -18,7 +18,7 @@ COMMENT?=	XML parser library for GNOME
 
 GNU_CONFIGURE=	yes
 USES=		gmake iconv pathfix pkgconfig shebangfix
-USE_GNOME=	ltverhack:5
+USE_GNOME+=	ltverhack:5
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
 		--with-html-dir=${PREFIX}/share/doc \
