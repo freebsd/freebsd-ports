@@ -166,7 +166,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Adopt to cap_rights_t type change in FreeBSD src SVN r255219
-.if ${OSVERSION} > 1000052
+.if ${OSVERSION} > 1000052 && ${NVVERSION} < 3316700
 	${REINPLACE_CMD} -e 's/u_long cmd;/& cap_rights_t rights;/ ; \
 		s/CAP_IOCTL/cap_rights_init(\&rights, &)/' \
 			${WRKSRC}/src/nvidia_linux.c
