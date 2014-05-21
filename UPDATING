@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140521:
+  AFFECTS: users of databases/mariadb55*
+  AUTHOR: grembo@FreeBSD.org
+
+  The mariadb55-client and mariadb55-server port have been changed to
+  respect hier(7) and behave like the mysql ports. Therefore mysql-server
+  and mysql monitor will refuse to start if my.cnf exists in /etc or
+  /etc/mysql.
+
+  In case you're affected, please move /etc/my.cnf to /usr/local/etc and/or
+  /etc/mysql/my.cnf to /usr/local/etc/mysql.
+
 20140520:
   AFFECTS: users of security/dropbear
   AUTHOR: ak@FreeBSD.org
