@@ -3,6 +3,7 @@
 
 PORTNAME=	fs-uae
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fs-uae.net/stable/${PORTVERSION}/
 
@@ -12,7 +13,7 @@ COMMENT=	Amiga emulator
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libopenal.so:${PORTSDIR}/audio/openal
+		libopenal.so:${PORTSDIR}/audio/openal-soft
 
 USES=		gettext gmake pkgconfig
 USE_SDL=	sdl
