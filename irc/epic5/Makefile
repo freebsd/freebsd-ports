@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	epic5
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.10
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/ \
-		http://tehran.lain.pl/epic-mirror/EPIC5-PRODUCTION/ \
-		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC5-PRODUCTION/ \
 		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC5-PRODUCTION/
 
 MAINTAINER=	mp39590@gmail.com
@@ -35,8 +33,8 @@ CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-LIB_DEPENDS+=		tcl84:${PORTSDIR}/lang/tcl84
-CONFIGURE_ARGS+=	--with-tcl
+USES+=		tcl
+CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}/tclConfig.sh
 .else
 CONFIGURE_ARGS+=	--without-tcl
 .endif
