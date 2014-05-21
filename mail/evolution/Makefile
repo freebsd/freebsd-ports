@@ -1,9 +1,10 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution/Makefile 19617 2014-05-12 05:43:00Z gusi $
+#   $MCom: ports/trunk/mail/evolution/Makefile 19671 2014-05-17 18:45:02Z gusi $
 
 PORTNAME=	evolution
 PORTVERSION=	3.12.2
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,8 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		highlight:${PORTSDIR}/textproc/highlight \
-		spamassassin:${PORTSDIR}/mail/spamassassin
+		highlight:${PORTSDIR}/textproc/highlight
 LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
@@ -21,11 +21,10 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight \
-		spamassassin:${PORTSDIR}/mail/spamassassin
+RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
 
 USES=		desktop-file-utils bison gettext gmake libtool:keepla \
-		pathfix pkgconfig shebangfix tar:xz
+		pathfix perl5 pkgconfig tar:xz
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix gtkhtml4 \
 		intlhack
 GNU_CONFIGURE=	yes
@@ -38,7 +37,6 @@ CONFIGURE_ARGS=	--enable-nss=yes \
 CONFIGURE_ARGS+=--disable-image-inline
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-SHEBANG_FILES=	addressbook/tools/csv2vcard
 
 GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
 		org.gnome.evolution.addressbook.gschema.xml \

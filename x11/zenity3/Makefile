@@ -1,9 +1,10 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/zenity3/Makefile 19592 2014-04-28 10:11:43Z kwm $
+#   $MCom: ports/trunk/x11/zenity3/Makefile 19671 2014-05-17 18:45:02Z gusi $
 
 PORTNAME=	zenity
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gtkada-1.2.* zenity-2.*
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake pathfix pkgconfig perl5 tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

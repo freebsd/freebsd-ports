@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/py-gobject/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/devel/py-gobject/Makefile,v 1.58 2012/12/30 18:15:16 mezz Exp $
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -16,32 +16,32 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python bindings for GObject
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
-USE_XZ=		yes
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	glib20 introspection:build
-USE_PYTHON=	2.5+
+USES=		gmake pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 introspection:build,run
+USE_PYTHON=	2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-docs --disable-introspection
+CONFIGURE_ARGS=	--disable-docs --disable-introspection --with-ffi
+INSTALL_TARGET=	install-strip
 
 CONFLICTS=	py*-gtk-0*
 PLIST_SUB=	PYTHON_VER="${PYTHON_VER}"
 
+PYSHAREDIR=	${PREFIX}/share/pygobject/2.0/codegen
+
 post-install:
-	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PREFIX}/share/pygobject/2.0/codegen
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyglib-2.0-${PYTHON_VERSION}.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*/*/*.so
+	cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+	cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+	cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYSHAREDIR} -f ${PYSHAREDIR:S;${PREFIX}/;;}
+	cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYSHAREDIR} -f ${PYSHAREDIR:S;${PREFIX}/;;}
 
 .include <bsd.port.mk>

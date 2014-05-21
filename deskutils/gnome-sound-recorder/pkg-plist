@@ -3,7 +3,6 @@ lib/gnome-sound-recorder/libgd.la
 lib/gnome-sound-recorder/libgd.so
 lib/gnome-sound-recorder/girepository-1.0/Gd-1.0.typelib
 share/applications/org.gnome.SoundRecorder.desktop
-share/glib-2.0/schemas/org.gnome.gnome-sound-recorder.gschema.xml
 %%DATADIR%%/application.css
 %%DATADIR%%/application.js
 %%DATADIR%%/audioProfile.js

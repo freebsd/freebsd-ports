@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19651 2014-05-13 09:43:00Z kwm $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19669 2014-05-15 22:37:17Z kwm $
 
 PORTNAME=	webkit
 PORTVERSION=	2.4.2
@@ -132,9 +132,7 @@ post-patch:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Programs/GtkLauncher \
 		${STAGEDIR}${PREFIX}/bin/GtkLauncher-3
-.if ${PORT_OPTIONS:MWEBKIT2}
 	${INSTALL_PROGRAM} ${WRKSRC}/Programs/MiniBrowser \
 		${STAGEDIR}${PREFIX}/bin/
-.endif
 
 .include <bsd.port.post.mk>
