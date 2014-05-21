@@ -3,7 +3,7 @@
 
 PORTNAME=	qcad-partslib
 PORTVERSION=	2.1.2.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	ftp://www.ribbonsoft.com/archives/partlibrary/
 DISTNAME=	partlibrary-${PORTVERSION:S/.1$/-1/}
@@ -17,10 +17,9 @@ DATADIR=	share/qcad/library
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${DATADIR}
-	${TAR} -C ${PREFIX}/${DATADIR} --exclude CVS --unlink --strip-components 1	\
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/${DATADIR}
+	${TAR} -C ${STAGEDIR}/${PREFIX}/${DATADIR} --exclude CVS --unlink --strip-components 1  \
 		-xovf ${_DISTDIR}${DISTFILES} 2>&1 | ${AWK} '	\
 			$$1 != "x" {				\
 				print "ERROR: " $$0 > "/dev/stderr"; exit 1	\
