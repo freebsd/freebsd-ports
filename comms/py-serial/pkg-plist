@@ -29,6 +29,12 @@ bin/miniterm.py
 %%PYTHON_SITELIBDIR%%/serial/tools/list_ports.py
 %%PYTHON_SITELIBDIR%%/serial/tools/list_ports.pyc
 %%PYTHON_SITELIBDIR%%/serial/tools/list_ports.pyo
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_linux.py
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_linux.pyc
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_linux.pyo
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_osx.py
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_osx.pyc
+%%PYTHON_SITELIBDIR%%/serial/tools/list_ports_osx.pyo
 %%PYTHON_SITELIBDIR%%/serial/tools/list_ports_posix.py
 %%PYTHON_SITELIBDIR%%/serial/tools/list_ports_posix.pyc
 %%PYTHON_SITELIBDIR%%/serial/tools/list_ports_posix.pyo
@@ -56,13 +62,9 @@ bin/miniterm.py
 %%PYTHON_SITELIBDIR%%/serial/win32.py
 %%PYTHON_SITELIBDIR%%/serial/win32.pyc
 %%PYTHON_SITELIBDIR%%/serial/win32.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/serial/urlhandler
-@dirrm %%PYTHON_SITELIBDIR%%/serial/tools
-@dirrm %%PYTHON_SITELIBDIR%%/serial
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enhancedserial.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/port_publisher.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/port_publisher.sh
@@ -78,4 +80,8 @@ bin/miniterm.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxSerialConfigDialog.wxg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxTerminal.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxTerminal.wxg
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%/serial/tools
+@dirrmtry %%PYTHON_SITELIBDIR%%/serial/urlhandler
+@dirrmtry %%PYTHON_SITELIBDIR%%/serial
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
