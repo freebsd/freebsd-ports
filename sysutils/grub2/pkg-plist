@@ -51,7 +51,6 @@ bin/grub-render-label
 bin/grub-syslinux2cfg
 sbin/grub-macbless
 info/dir
-lib/charset.alias
 lib/grub/i386-pc/archelp.mod
 lib/grub/i386-pc/archelp.module
 lib/grub/i386-pc/boot_hybrid.image

@@ -81,4 +81,7 @@ pre-configure:
 post-configure:
 	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 ${WRKSRC}/grub-core
 
+post-install:
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/charset.alias
+
 .include <bsd.port.post.mk>
