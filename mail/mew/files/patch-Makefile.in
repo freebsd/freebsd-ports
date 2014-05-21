@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2009-02-02 15:39:04.000000000 +0900
-+++ ./Makefile.in	2010-01-04 12:06:16.000000000 +0900
-@@ -40,8 +40,8 @@
+--- ./Makefile.in.orig	2012-04-16 12:18:13.000000000 +0900
++++ ./Makefile.in	2014-04-14 20:03:59.000000000 +0900
+@@ -35,8 +35,8 @@
  ## A directory where mew*.el[c] will be installed.
  ##
  
@@ -11,7 +11,7 @@
  #elispdir  = $(prefix)/lib/xemacs/site-lisp
  #elispdir = $(prefix)/lib/emacs
  
-@@ -49,8 +49,8 @@
+@@ -44,8 +44,8 @@
  ## A directory where etc file will be installed.
  ##
  

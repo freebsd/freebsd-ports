@@ -7,8 +7,18 @@ bin/mewencode
 bin/mewest
 bin/mewl
 bin/smew
+@comment info/mew.info
+@comment %%PORTDOCS%%info/mew.ja.info
+man/man1/cmew.1.gz
+man/man1/incm.1.gz
+man/man1/mew-pinentry.1.gz
+man/man1/mewcat.1.gz
+man/man1/mewdecode.1.gz
+man/man1/mewencode.1.gz
+man/man1/mewest.1.gz
+man/man1/mewl.1.gz
+man/man1/smew.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/00api
-%%PORTDOCS%%%%DOCSDIR%%/00changes
 %%PORTDOCS%%%%DOCSDIR%%/00changes.0
 %%PORTDOCS%%%%DOCSDIR%%/00changes.1
 %%PORTDOCS%%%%DOCSDIR%%/00changes.2
@@ -21,6 +31,8 @@ bin/smew
 %%PORTDOCS%%%%DOCSDIR%%/00changes.6.2
 %%PORTDOCS%%%%DOCSDIR%%/00changes.6.3
 %%PORTDOCS%%%%DOCSDIR%%/00changes.6.4
+%%PORTDOCS%%%%DOCSDIR%%/00changes.6.5
+%%PORTDOCS%%%%DOCSDIR%%/00changes.6.6
 %%PORTDOCS%%%%DOCSDIR%%/00copyright
 %%PORTDOCS%%%%DOCSDIR%%/00copyright.ja
 %%PORTDOCS%%%%DOCSDIR%%/00diff
@@ -193,5 +205,4 @@ bin/smew
 %%EMACS_SITE_LISPDIR%%/mew/mew.elc
 @dirrm %%EMACS_SITE_LISPDIR%%/mew/etc
 @dirrm %%EMACS_SITE_LISPDIR%%/mew
-@dirrmtry %%EMACS_SITE_LISPDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
