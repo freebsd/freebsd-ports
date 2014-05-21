@@ -1,5 +1,5 @@
---- ./third_party/WebKit/Source/heap/ThreadState.cpp.orig	2014-04-24 22:39:56.000000000 +0200
-+++ ./third_party/WebKit/Source/heap/ThreadState.cpp	2014-04-24 23:23:47.000000000 +0200
+--- ./third_party/WebKit/Source/heap/ThreadState.cpp.orig	2014-04-30 22:47:13.000000000 +0200
++++ ./third_party/WebKit/Source/heap/ThreadState.cpp	2014-05-04 14:38:48.000000000 +0200
 @@ -43,13 +43,22 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif

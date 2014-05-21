@@ -1,5 +1,5 @@
---- ./tools/gyp/test/additional-targets/src/dir1/actions.gyp.orig	2014-04-24 22:37:02.000000000 +0200
-+++ ./tools/gyp/test/additional-targets/src/dir1/actions.gyp	2014-04-24 23:23:48.000000000 +0200
+--- ./tools/gyp/test/additional-targets/src/dir1/actions.gyp.orig	2014-04-30 22:44:27.000000000 +0200
++++ ./tools/gyp/test/additional-targets/src/dir1/actions.gyp	2014-05-04 14:38:49.000000000 +0200
 @@ -47,7 +47,7 @@
      },
    ],

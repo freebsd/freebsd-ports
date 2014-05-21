@@ -1,6 +1,6 @@
---- ./components/storage_monitor/storage_monitor_freebsd.h.orig	2014-04-24 23:23:44.000000000 +0200
-+++ ./components/storage_monitor/storage_monitor_freebsd.h	2014-04-24 23:23:44.000000000 +0200
-@@ -0,0 +1,43 @@
+--- ./components/storage_monitor/storage_monitor_freebsd.h.orig	2014-05-04 14:38:47.000000000 +0200
++++ ./components/storage_monitor/storage_monitor_freebsd.h	2014-05-04 15:15:00.000000000 +0200
+@@ -0,0 +1,47 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -26,6 +26,8 @@
 +#include "components/storage_monitor/storage_monitor.h"
 +#include "content/public/browser/browser_thread.h"
 +
++namespace storage_monitor {
++
 +class StorageMonitorFreeBSD : public StorageMonitor {
 + public:
 +  // Should only be called by browser start up code.
@@ -42,5 +44,7 @@
 +
 +  DISALLOW_COPY_AND_ASSIGN(StorageMonitorFreeBSD);
 +};
++
++} // namespace storage_monitor
 +
 +#endif  // COMPONENTS_STORAGE_MONITOR_STORAGE_MONITOR_FREEBSD_H_

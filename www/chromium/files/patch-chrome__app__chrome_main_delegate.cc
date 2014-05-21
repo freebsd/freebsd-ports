@@ -1,5 +1,5 @@
---- ./chrome/app/chrome_main_delegate.cc.orig	2014-04-24 22:34:55.000000000 +0200
-+++ ./chrome/app/chrome_main_delegate.cc	2014-04-24 23:23:42.000000000 +0200
+--- ./chrome/app/chrome_main_delegate.cc.orig	2014-04-30 22:42:53.000000000 +0200
++++ ./chrome/app/chrome_main_delegate.cc	2014-05-04 14:38:46.000000000 +0200
 @@ -95,7 +95,7 @@
  #include "ui/base/x/x11_util.h"
  #endif
@@ -45,7 +45,7 @@
        } else if (format_str == "human") {
          format = diagnostics::DiagnosticsWriter::HUMAN;
        } else {
-@@ -629,7 +629,7 @@
+@@ -630,7 +630,7 @@
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -54,7 +54,7 @@
    breakpad::SetBreakpadClient(g_chrome_breakpad_client.Pointer());
  #endif
  
-@@ -747,7 +747,7 @@
+@@ -748,7 +748,7 @@
  #endif
    }
  
@@ -63,7 +63,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -759,7 +759,7 @@
+@@ -760,7 +760,7 @@
      breakpad::InitCrashReporter(process_type);
  #endif  // defined(OS_ANDROID)
    }
@@ -72,7 +72,7 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -844,7 +844,7 @@
+@@ -845,7 +845,7 @@
    return process_type == switches::kNaClLoaderProcess ||
        process_type == switches::kRelauncherProcess;
  }

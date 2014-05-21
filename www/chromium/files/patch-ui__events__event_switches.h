@@ -1,5 +1,5 @@
---- ./ui/events/event_switches.h.orig	2014-04-24 22:35:16.000000000 +0200
-+++ ./ui/events/event_switches.h	2014-04-24 23:23:48.000000000 +0200
+--- ./ui/events/event_switches.h.orig	2014-04-30 22:42:57.000000000 +0200
++++ ./ui/events/event_switches.h	2014-05-04 14:38:49.000000000 +0200
 @@ -16,7 +16,7 @@
  EVENTS_BASE_EXPORT extern const char kTouchEventsEnabled[];
  EVENTS_BASE_EXPORT extern const char kTouchEventsDisabled[];
