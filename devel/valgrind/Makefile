@@ -32,11 +32,11 @@ MPI_DESC=	Enable build of MPI wrappers
 MPI_LIB_DEPENDS=	mpich:${PORTSDIR}/net/mpich2
 
 OPTIONS_SUB=	yes
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig gmake perl5
+USES=		pathfix tar:bzip2 pkgconfig gmake perl5 shebangfix
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
 
 PORTDOCS=	html
 

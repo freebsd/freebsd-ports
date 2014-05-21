@@ -77,6 +77,7 @@
     SUBDIR += art
     SUBDIR += as31
     SUBDIR += asdlgen
+    SUBDIR += asl
     SUBDIR += asmutils
     SUBDIR += asmx
     SUBDIR += astah-community
@@ -965,6 +966,7 @@
     SUBDIR += libdasm
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu-qt
+    SUBDIR += libdevq
     SUBDIR += libdfui
     SUBDIR += libdict
     SUBDIR += libdisasm

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	leptonica
-PORTVERSION=	1.69
-PORTREVISION=	2
+PORTVERSION=	1.70
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://www.leptonica.com/source/
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
@@ -18,10 +17,12 @@ LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 
 CONFLICTS=	leptonlib-[0-9]*
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 TESTS?=	generate compare
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)

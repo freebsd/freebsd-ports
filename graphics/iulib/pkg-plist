@@ -53,7 +53,6 @@ include/iulib/iulib.h
 include/iulib/vidio.h
 %%SDL%%include/iulib/SDL_lines.h
 lib/libiulib.a
-lib/libiulib.la
 lib/libiulib.so
 lib/libiulib.so.0
 @dirrm include/colib

@@ -3,6 +3,7 @@
 
 PORTNAME=	gssdp
 PORTVERSION=	0.14.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -24,7 +25,7 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 
 GTK3_CONFIGURE_WITH=	gtk
 GTK3_USE=		GNOME=gtk30

@@ -83,8 +83,9 @@ libexec/cups/backend/lpd
 libexec/cups/backend/snmp
 libexec/cups/backend/socket
 libexec/cups/backend/usb
-%%WITH_MDNSRESPONDER%%libexec/cups/backend/dnssd
-%%WITH_MDNSRESPONDER%%libexec/cups/backend/mdns
+%%DNSSD%%libexec/cups/backend/dnssd
+%%MDNSRESPONDER%%libexec/cups/backend/dnssd
+%%MDNSRESPONDER%%libexec/cups/backend/mdns
 libexec/cups/cgi-bin/admin.cgi
 libexec/cups/cgi-bin/classes.cgi
 libexec/cups/cgi-bin/help.cgi
@@ -1020,7 +1021,6 @@ share/locale/ru/cups_ru.po
 @dirrm libexec/cups/notifier
 @dirrm libexec/cups/monitor
 @exec mkdir -p %D/libexec/cups/driver
-@dirrmtry include/cups
 @dirrmtry libexec/cups/driver
 @dirrmtry libexec/cups/daemon
 @dirrmtry libexec/cups/cgi-bin

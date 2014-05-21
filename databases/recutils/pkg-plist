@@ -11,7 +11,7 @@ include/rec.h
 lib/librec.a
 lib/librec.la
 lib/librec.so
-lib/librec.so.0
+lib/librec.so.1
 man/man1/csv2rec.1.gz
 man/man1/rec2csv.1.gz
 man/man1/recdel.1.gz

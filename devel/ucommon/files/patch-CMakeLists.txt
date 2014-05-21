@@ -1,16 +1,5 @@
 --- CMakeLists.txt.orig	2014-05-05 09:49:48.000000000 +0200
 +++ CMakeLists.txt	2014-05-05 09:58:30.000000000 +0200
-@@ -37,7 +37,9 @@
- # when we override default install prefix, assume full path is used...
- 
- set(INSTALL_INCLUDEDIR include)
--set(INSTALL_BINDIR bin)
-+if(NOT INSTALL_BINDIR)
-+    set(INSTALL_BINDIR bin)
-+endif()
- 
- if(WIN32)
-     set(MODULE_FLAGS "-module -shared -no-undefined")
 @@ -53,6 +55,7 @@
      set(MODULE_FLAGS "-module -shared -avoid-version")
      set(SYSCONFDIR "/etc" CACHE PATH "config directory")

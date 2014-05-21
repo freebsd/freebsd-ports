@@ -15,7 +15,7 @@ WRKSRC=		${WRKDIR}/src
 
 PLIST_FILES=	bin/upackddir \
 		man/man1/upackddir.1.gz
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 
 post-patch:
 	${REINPLACE_CMD} -e 's|$$(DESTDIR)/usr|$$(DESTDIR)${PREFIX}|' ${WRKSRC}/Makefile

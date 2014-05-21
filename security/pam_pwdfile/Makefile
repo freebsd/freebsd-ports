@@ -16,16 +16,15 @@ PLIST_FILES=	lib/pam_pwdfile.so
 PORTDOCS=	README INSTALL changelog
 CFLAGS+=	-I${WRKSRC}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|#include <features.h>||g' ${WRKSRC}/pam_pwdfile.c
 	${CP} ${FILESDIR}/_pam_macros.h ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

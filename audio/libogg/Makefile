@@ -3,6 +3,7 @@
 
 PORTNAME=	libogg
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
@@ -10,8 +11,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Ogg bitstream library
 
-USES=		pathfix
-USE_AUTOTOOLS=	libtool
+USES=		libtool:oldver pathfix tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

@@ -3,9 +3,9 @@
 
 PORTNAME=	chmview
 PORTVERSION=	2.0b4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Extractor from .chm files
@@ -14,15 +14,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
 
-PROJECTHOST=	ak-various-projects
-
-USE_XZ=		yes
-USE_DOS2UNIX=	chmview.c utf8.c utf8.h
+USES=	tar:xz
 
 WRKSRC=		${WRKDIR}/src
+MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/chmview
-
-post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>

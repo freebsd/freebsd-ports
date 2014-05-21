@@ -186,7 +186,7 @@ share/doc/shibboleth/main.css
 @exec install -d -o %%SHIBD_USER%% -g %%SHIBD_GROUP%% -m 755 /var/log/shibboleth
 @exec install -d -o %%SHIBD_USER%% -g %%SHIBD_GROUP%% -m 755 /var/cache/shibboleth
 @exec install -d -o %%SHIBD_USER%% -g %%WWWGRP%% -m 750 /var/run/shibboleth
-@user %%SHIBD_USER%%
+@owner %%SHIBD_USER%%
 @group %%SHIBD_GROUP%%
 @dirrmtry /var/log/shibboleth
 @dirrmtry /var/cache/shibboleth

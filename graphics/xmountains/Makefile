@@ -27,7 +27,7 @@ post-extract:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.6
 
 do-build:
-	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} *.c -lX11 -lm -o ${PORTNAME}
+	(cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} *.c -lX11 -lm -o ${PORTNAME})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

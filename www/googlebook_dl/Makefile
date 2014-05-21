@@ -10,7 +10,7 @@ DISTFILES=	# none
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Command-line utility for downloading books from Google Books
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

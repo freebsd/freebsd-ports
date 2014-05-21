@@ -6169,3 +6169,4 @@ japanese/chasen||2014-05-15|Has expired: Unmaintained since 2001
 www/openx|www/revive-adserver|2014-05-15|Upstream obsolete, forked
 security/clamav-devel||2014-05-16|Retire, older than security/clamav
 devel/msp430-gcc3||2014-05-18|Version obsolete, use devel/msp430-gcc
+graphics/GraphicsMagick12|graphics/GraphicsMagick13|2014-05-20|Has expired: Unmaintained upstream, no ports depending on it. Use graphics/GraphicsMagick13 instead

@@ -10,15 +10,14 @@ MASTER_SITES=	http://pngquant.org/
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Converts 32-bit RGBA PNGs into 8-bit RGBA-palette PNGs
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_BZIP2=	yes
-USES=	gmake
+USES=	gmake tar:bzip2
 MAKE_ARGS+=	CC="${CC}"
 
 CPPFLAGS+=	$$(libpng-config --I_opts)

@@ -1,5 +1,5 @@
---- ./components/storage_monitor.gypi.orig	2014-04-24 22:35:26.000000000 +0200
-+++ ./components/storage_monitor.gypi	2014-04-24 23:23:44.000000000 +0200
+--- ./components/storage_monitor.gypi.orig	2014-04-30 22:43:04.000000000 +0200
++++ ./components/storage_monitor.gypi	2014-05-05 17:54:12.000000000 +0200
 @@ -20,10 +20,10 @@
          'storage_monitor/image_capture_device_manager.mm',
          'storage_monitor/media_storage_util.cc',
@@ -38,3 +38,14 @@
          'storage_monitor/volume_mount_watcher_win.cc',
          'storage_monitor/volume_mount_watcher_win.h',
        ],
+@@ -89,8 +91,8 @@
+       'sources': [
+         'storage_monitor/mock_removable_storage_observer.cc',
+         'storage_monitor/mock_removable_storage_observer.h',
+-        'storage_monitor/test_media_transfer_protocol_manager_linux.cc',
+-        'storage_monitor/test_media_transfer_protocol_manager_linux.h',
++        #'storage_monitor/test_media_transfer_protocol_manager_linux.cc',
++        #'storage_monitor/test_media_transfer_protocol_manager_linux.h',
+         'storage_monitor/test_portable_device_watcher_win.cc',
+         'storage_monitor/test_portable_device_watcher_win.h',
+         'storage_monitor/test_storage_monitor.cc',

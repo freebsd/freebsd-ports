@@ -6,7 +6,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mangler.org/downloads/
 
-MAINTAINER=	janik@hikarihq.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ventrilo VOIP compatible client
 
 LIB_DEPENDS=	libcelt0.so:${PORTSDIR}/audio/celt \

@@ -1,8 +1,6 @@
 bin/lftp
 bin/lftpget
-@unexec if cmp -s %D/etc/lftp.conf %D/etc/lftp.conf.sample; then rm -f %D/etc/lftp.conf; fi
-etc/lftp.conf.sample
-@exec if [ ! -f %D/etc/lftp.conf ]; then cp %B/%f %D/etc/lftp.conf; fi
+@sample etc/lftp.conf.sample
 lib/liblftp-jobs.a
 lib/liblftp-tasks.a
 %%DATADIR%%/convert-mozilla-cookies

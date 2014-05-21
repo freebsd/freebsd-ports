@@ -6,11 +6,8 @@ PORTVERSION=	1.4.2
 CATEGORIES=	www net
 MASTER_SITES=	http://www.lethargy.org/mod_log_spread/
 
-MAINTAINER=	apache@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	The backend of mod_log_spread
-
-DEPRECATED=	Depends on expired net/spread
-EXPIRATION_DATE=2014-05-01
 
 LICENSE=	ART10
 

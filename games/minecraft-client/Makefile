@@ -11,7 +11,7 @@ DISTFILES=	Minecraft.jar:minecraft \
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	janik@hikarihq.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for the block building game
 
 WRKSRC=		${WRKDIR}

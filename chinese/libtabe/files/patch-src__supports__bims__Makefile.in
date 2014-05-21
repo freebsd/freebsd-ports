@@ -1,0 +1,14 @@
+--- ./src/supports/bims/Makefile.in.orig	2014-05-19 15:27:54.010122398 +0800
++++ ./src/supports/bims/Makefile.in	2014-05-19 15:28:23.998115848 +0800
+@@ -59,7 +59,7 @@
+ 	$(RM) Makefile
+ 
+ install: all
+-	if [ ! -d $(libdir) ]; then $(INSTALL) -d $(libdir); fi
+-	if [ ! -d $(includedir) ]; then $(INSTALL) -d $(includedir); fi
+-	$(LIBTOOL) --mode=install $(INSTALL_DATA) $(LIBNAME) $(libdir)
+-	$(INSTALL_DATA) $(INCLUDES) $(includedir)
++	if [ ! -d $(DESTDIR)$(libdir) ]; then $(INSTALL) -d $(DESTDIR)$(libdir); fi
++	if [ ! -d $(DESTDIR)$(includedir) ]; then $(INSTALL) -d $(DESTDIR)$(includedir); fi
++	$(LIBTOOL) --mode=install $(INSTALL_DATA) $(LIBNAME) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(INCLUDES) $(DESTDIR)$(includedir)

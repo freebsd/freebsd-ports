@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 USES=		gmake pkgconfig tar:bzip2
 USE_TEX=	latex
 USE_GNOME=	gtk20
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 
 PLIST_FILES=	lib/pidgin/LaTeX.so
 

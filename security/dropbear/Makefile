@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dropbear
-PORTVERSION=	2013.62
+PORTVERSION=	2014.63
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
@@ -10,8 +10,7 @@ MAINTAINER=	ak@FreeBSD.org
 COMMENT=	SSH 2 server, designed to be usable in small memory environments
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=	gmake
+USES=	gmake tar:bzip2
 
 USE_RC_SUBR=	${PORTNAME}
 

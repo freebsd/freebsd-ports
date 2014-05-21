@@ -12,29 +12,23 @@ COMMENT=	IPv6 DNS server address autoconfiguration client
 
 LICENSE=	ISCL
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_RC_SUBR=	radns
 
 USERS=		radns
 GROUPS=		radns
 
-USE_RC_SUBR=	radns
 SUB_FILES=	pkg-message
-
-MAN8=		radns.8
 
 PORTDOCS=	LICENSE README README.FreeBSD NEWS
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "Installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

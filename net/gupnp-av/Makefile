@@ -3,6 +3,7 @@
 
 PORTNAME=	gupnp-av
 PORTVERSION=	0.12.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -22,7 +23,9 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
+
+PORTDATA=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-parameters||' ${WRKSRC}/tests/Makefile.in

@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/local/${PORTNAME}/ \
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	A collection of SNMP command line management tools
 
-LIB_DEPENDS=	gsnmp:${PORTSDIR}/net-mgmt/gsnmp
+LIB_DEPENDS=	libgsnmp.so:${PORTSDIR}/net-mgmt/gsnmp
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
@@ -19,6 +19,5 @@ USE_GNOME=	libxml2
 
 INFO=		scli
 PLIST_FILES=	bin/scli man/man1/scli.1.gz
-
 
 .include <bsd.port.mk>

@@ -9,9 +9,9 @@ include/gsnmp/session.h
 include/gsnmp/transport.h
 include/gsnmp/utils.h
 lib/libgsnmp.a
-lib/libgsnmp.la
 lib/libgsnmp.so
 lib/libgsnmp.so.0
+lib/libgsnmp.so.0.0.0
 libdata/pkgconfig/gsnmp.pc
 share/aclocal/gsnmp.m4
 man/man1/gsnmp-get.1.gz

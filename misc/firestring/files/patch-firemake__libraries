@@ -1,0 +1,17 @@
+--- firemake/libraries.orig	2004-02-25 03:37:56.000000000 +0800
++++ firemake/libraries	2014-05-20 14:41:35.994615240 +0800
+@@ -98,10 +98,10 @@ case $PHASE in
+ 		$ECHO "install_libraries: $LIBRARYLIST"
+ 		for LIBRARY in $LIBRARIES; do
+ 			dispn "	$LIBRARY..."
+-			$ECHO "	$INSTALL ${LIBRARY}.a \$(LIBDIR) $INSTALL_USER $INSTALL_GROUP 0755"
+-			$ECHO "	$INSTALL ${LIBRARY}.so.$VERSION \$(LIBDIR) $INSTALL_USER $INSTALL_GROUP 0755"
+-			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(LIBDIR)/${LIBRARY}.so.$VERSION2"
+-			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(LIBDIR)/${LIBRARY}.so"
++			$ECHO "	$INSTALL ${LIBRARY}.a \$(DESTDIR)\$(LIBDIR) $INSTALL_USER $INSTALL_GROUP 0755"
++			$ECHO "	$INSTALL ${LIBRARY}.so.$VERSION \$(DESTDIR)\$(LIBDIR) $INSTALL_USER $INSTALL_GROUP 0755"
++			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(DESTDIR)\$(LIBDIR)/${LIBRARY}.so.0"
++			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(DESTDIR)\$(LIBDIR)/${LIBRARY}.so"
+ 			disp "done"
+ 		done
+ 		$ECHO

@@ -3,6 +3,7 @@
 
 PORTNAME=	gupnp-igd
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -26,7 +27,7 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 
 PYTHON_CONFIGURE_ENABLE=python
 PYTHON_USE=		PYTHON=yes

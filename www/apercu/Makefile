@@ -12,15 +12,13 @@ COMMENT=	Summarize information from Apache logs
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-MAN1=		apercu.1
-PLIST_FILES=	bin/apercu
+PLIST_FILES=	bin/apercu man/man1/apercu.1.gz
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/ruby|${RUBY}|' ${WRKSRC}/apercu
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/apercu ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/apercu.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/apercu ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/apercu.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

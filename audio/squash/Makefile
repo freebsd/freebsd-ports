@@ -22,7 +22,7 @@ RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 USE_BZIP2=	yes
 USES=		gmake
 USE_RUBY=	yes
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 
 OPTIONS_DEFINE=	DOCS
 

@@ -52,6 +52,13 @@ mysql_create_auth_tables()
 
 mysql_prestart()
 {
+	local dir
+	for dir in /etc /etc/mysql; do
+		if [ -f "${dir}/my.cnf" ]; then
+			echo "Please move existing my.cnf file from ${dir} to %%PREFIX%%${dir}"
+			return 1
+		fi
+	done
 	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
 		mysql_create_auth_tables || return 1
 	fi

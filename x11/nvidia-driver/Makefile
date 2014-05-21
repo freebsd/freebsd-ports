@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	331.49
+DISTVERSION?=	331.67
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -56,6 +56,12 @@ EXTRA_PATCHES=	${FILESDIR}/legacy-patch-mk-nvidia.lib.mk
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-mk-nvidia.lib.mk
 .endif
 
+.if ${NVVERSION} >= 3048800
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-Makefile \
+		${FILESDIR}/extra-patch-src-nv-freebsd.h \
+		${FILESDIR}/extra-patch-src-nv-misc.h
+.endif
+
 .if ${NVVERSION} >= 3312000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x11-driver-Makefile
 .else
@@ -84,6 +90,11 @@ FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
 .if ${NVVERSION} >= 1952200
 OPTIONS_DEFINE+=	WBINVD
 WBINVD_DESC=		Flush CPU caches directly with WBINVD
+.endif
+
+.if ${NVVERSION} >= 3048800
+OPTIONS_DEFINE_i386=	PAE
+PAE_DESC=		Physical Address Extensions Kernel
 .endif
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
@@ -150,18 +161,18 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Adjust kmem(9) calls after FreeBSD src SVN r254025
-.if ${OSVERSION} > 1000040
+.if ${OSVERSION} > 1000040 && ${NVVERSION} < 3316700
 	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Adopt to cap_rights_t type change in FreeBSD src SVN r255219
-.if ${OSVERSION} > 1000052
+.if ${OSVERSION} > 1000052 && ${NVVERSION} < 3316700
 	${REINPLACE_CMD} -e 's/u_long cmd;/& cap_rights_t rights;/ ; \
 		s/CAP_IOCTL/cap_rights_init(\&rights, &)/' \
 			${WRKSRC}/src/nvidia_linux.c
 .endif
 # Argument count of vm_map_find() changed in FreeBSD src SVN r255426
-.if ${OSVERSION} > 1000054
+.if ${OSVERSION} > 1000054 && ${NVVERSION} < 3316700
 	${REINPLACE_CMD} -e 's/virtual_address, size,/& 0,/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
@@ -188,6 +199,10 @@ post-patch: .SILENT
 .endif
 .if ! ${PORT_OPTIONS:MLINUX}
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
+		${WRKSRC}/src/nv-freebsd.h
+.endif
+.if ${PORT_OPTIONS:MPAE}
+	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_PAE)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 .if ${PORT_OPTIONS:MWBINVD}

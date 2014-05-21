@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ccaudio2
-PORTVERSION=	2.0.5
-PORTREVISION=	6
+PORTVERSION=	2.1.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=ccaudio
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
@@ -15,12 +15,12 @@ LIB_DEPENDS=	libccgnu2.so:${PORTSDIR}/devel/commoncpp \
 		libgsm.so:${PORTSDIR}/audio/gsm \
 		libspeex.so:${PORTSDIR}/audio/speex
 
-CONFLICTS=	ccaudio-[0-9]*
-
-USES=		pathfix cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWITH_INCLUDES:PATH=${LOCALBASE}/include \
-   		-DWITH_LIBS:PATH=${LOCALBASE}/lib
+   		-DWITH_LIBS:PATH=${LOCALBASE}/lib \
+		-DINSTALL_MANDIR=man \
+		-DSYSCONFDIR=${PREFIX}/etc
 
 .include <bsd.port.mk>

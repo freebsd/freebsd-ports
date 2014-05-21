@@ -10,7 +10,7 @@ MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A cryptographic file system implemented as a user-space NFS server
 
 ALL_TARGET=	cfs
-MAKE_ARGS=	CC=cc
+MAKE_ARGS=	CC="${CC}"
 
 CFSD_BOOTSTRAP=	${PREFIX}/cfsd-bootstrap
 USE_RC_SUBR=	cfsd

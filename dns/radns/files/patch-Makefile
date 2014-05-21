@@ -1,0 +1,19 @@
+--- Makefile.orig	2012-02-22 13:24:35.000000000 +0800
++++ Makefile	2014-05-21 14:12:37.428927726 +0800
+@@ -20,11 +20,11 @@ radns: $(OBJS)
+ list.o: list.c list.h Makefile
+ 
+ install: $(TARGETS)
+-	install -m 755 radns $(PREFIX)/bin
+-	install -m 644 radns.man $(PREFIX)/man/man8/radns.8
+-	install -o radns -g radns -d $(ETCDIR)
+-	install -m 755 dhclient-exit-hooks $(ETCDIR)
+-	install -m 755 radns-script $(ETCDIR)
++	install -m 755 radns $(DESTDIR)$(PREFIX)/bin
++	install -m 644 radns.man $(DESTDIR)$(PREFIX)/man/man8/radns.8
++	install -d $(DESTDIR)$(ETCDIR)
++	install -m 755 dhclient-exit-hooks $(DESTDIR)$(ETCDIR)
++	install -m 755 radns-script $(DESTDIR)$(ETCDIR)
+ 
+ deinstall:
+ 	$(RM) -f $(PREFIX)/bin/radns

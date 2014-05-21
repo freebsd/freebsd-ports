@@ -204,6 +204,8 @@ post-build:
 post-install:	${MKREPOS_TARGET}
 .if ${PORT_OPTIONS:MTOOLS}
 	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/svn-tools/*
 .endif
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' --exclude '*.bak' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
@@ -215,6 +217,13 @@ post-install:	${MKREPOS_TARGET}
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve
 .endif
 
+.if ${PORT_OPTIONS:MMOD_DAV_SVN}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/*.so
+.endif
+
+.if !${PORT_OPTIONS:MSTATIC}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+.endif
 # ===============================================================================
 repository:	_mkrepos
 

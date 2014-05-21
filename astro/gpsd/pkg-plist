@@ -26,6 +26,29 @@ lib/libgpsd.so
 lib/libgpsd.so.21
 lib/libgpsd.so.21.0
 lib/libgpsd.so.21.0.0
+man/man1/cgps.1.gz
+man/man1/gegps.1.gz
+man/man1/gps.1.gz
+man/man1/gpscat.1.gz
+man/man1/gpsctl.1.gz
+man/man1/gpsdecode.1.gz
+man/man1/gpsfake.1.gz
+man/man1/gpsmon.1.gz
+man/man1/gpspipe.1.gz
+man/man1/gpsprof.1.gz
+man/man1/lcdgps.1.gz
+man/man1/xgps.1.gz
+man/man1/xgpsspeed.1.gz
+man/man3/libQgpsmm.3.gz
+man/man3/libgps.3.gz
+man/man3/libgpsd.3.gz
+man/man3/libgpsmm.3.gz
+man/man5/gpsd_json.5.gz
+man/man5/srec.5.gz
+man/man8/gpsd.8.gz
+man/man8/gpsdctl.8.gz
+man/man8/gpsinit.8.gz
+%%PYTHON_SITELIBDIR%%/gps-3.9.egg-info
 %%PYTHON_SITELIBDIR%%/gps/__init__.py
 %%PYTHON_SITELIBDIR%%/gps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gps/__init__.pyo
@@ -44,6 +67,8 @@ lib/libgpsd.so.21.0.0
 %%PYTHON_SITELIBDIR%%/gps/misc.pyo
 %%PYTHON_SITELIBDIR%%/gps/packet.so
 @dirrm %%PYTHON_SITELIBDIR%%/gps
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
 %%QTBIND%%libdata/pkgconfig/Qgpsmm.pc
 libdata/pkgconfig/libgps.pc
 libdata/pkgconfig/libgpsd.pc

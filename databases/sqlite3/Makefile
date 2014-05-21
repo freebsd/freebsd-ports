@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.4.2
+PORTVERSION=	3.8.4.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
-DISTNAME=	sqlite-autoconf-3080402
+DISTNAME=	sqlite-autoconf-3080403
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -43,10 +43,10 @@ UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
 
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
-RAMT_DESC=		Where to store temporary files
-TS0_DESC=		Always use temporary files
-TS1_DESC=		Files by default, allow changes with PRAGMA
-TS2_DESC=		Memory by default,allow changes with PRAGMA
+RAMT_DESC=		Where to store temporary file
+TS0_DESC=		Always use temporary file
+TS1_DESC=		File by default, change allowed PRAGMA
+TS2_DESC=		Memory by default, change allowed PRAGMA
 TS3_DESC=		Always use memory
 
 OPTIONS_RADIO_STAT=	STAT3 STAT4

@@ -4,7 +4,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.10.9
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -20,10 +20,7 @@ CONFIGURE_ARGS?=--disable-gtkui \
 		--with-dynamic-prpls=${PRPL_MODULES:S/,$//} \
 		--enable-static \
 		--disable-nm
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		PTHREAD_LIB="${PTHREAD_LIBS}"
-CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+INSTALL_TARGET=	install-strip
 
 .if !defined(PIDGIN_SLAVE)
 # Pidgin slave ports that require the following functionality, must explicitly
@@ -82,8 +79,6 @@ PLIST_SUB+=	CONSOLEUI=""
 .else
 PLIST_SUB+=	CONSOLEUI="@comment not installed: "
 .endif
-
-OPTIONSFILE=	${PORT_DBDIR}/${UNIQUENAME}/options
 
 CONFIGURE_ARGS+=--disable-doxygen
 
@@ -319,24 +314,13 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|-lpanel |-lpanel -lncurses|g' \
+	@${REINPLACE_CMD} \
 		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
 		-e 's|-lsilc -lsilcclient ${PTHREAD_LIBS} $$LIBDL|-lsilc -lsilcclient ${PTHREAD_LIBS} ${ICONV_LIB}|' \
-		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCL_VER} required|g' \
-		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCL_VER:E}|' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
-			${WRKSRC}/libpurple/purple-send \
-			${WRKSRC}/libpurple/purple-send-async
-	@${REINPLACE_CMD} -e 's|/python|/env python|' \
-	    		${WRKSRC}/libpurple/purple-remote \
-			${WRKSRC}/libpurple/purple-url-handler
 .if defined(PIDGIN_SLAVE)
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(top_builddir)/libpurple/libpurple.la|-lpurple|'
 .endif
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH}
 
 .include <bsd.port.post.mk>

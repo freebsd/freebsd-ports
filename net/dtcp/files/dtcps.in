@@ -54,4 +54,7 @@ dtcps_prestart() {
 
 load_rc_config $name
 command_args="-i ${dtcps_tunif} ${dtcps_prefix}"
+if [ -n "${dtcps_fib}" ]; then
+	command_args="-F ${dtcps_fib} ${command_args}"
+fi
 run_rc_command "$1"

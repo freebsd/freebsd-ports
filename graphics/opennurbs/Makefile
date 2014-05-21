@@ -13,7 +13,7 @@ MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Tools to accurately transfer 3-D geometry between applications
 
 USES=		iconv:build dos2unix gmake zip
-MAKE_ARGS=	CC=${CC} CCC=${CXX}
+MAKE_ARGS=	CC="${CC}" CCC="${CXX}"
 
 MAKEFILE=	makefile
 EXAMPLESDIR=	${STAGEDIR}${PREFIX}/libexec/openNURBS

@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.steve.org.uk/Software/asql/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Query Apache logfiles via SQL
 
 RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
@@ -16,7 +16,6 @@ RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/asql
-USES=		perl5
-
-NO_STAGE=	yes
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/asql
 .include <bsd.port.mk>
