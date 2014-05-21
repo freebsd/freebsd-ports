@@ -3,7 +3,7 @@
 
 PORTNAME=	elfkickers
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel sysutils
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/
 DISTNAME=	ELFkickers-${PORTVERSION}
@@ -12,42 +12,30 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Collection of programs to manipulate ELF files
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=		gmake
 
-PLIST_FILES=	bin/ebfc \
-		bin/elfls \
-		bin/elftoc \
-		bin/infect \
-		bin/objres \
-		bin/rebind \
-		bin/sstrip
-
+ELFBINS=	ebfc elfls elftoc infect objres rebind sstrip
 PORTDOCS=	COPYING Changelog README
 
-MAN1=		ebfc.1 elfls.1 elftoc.1 infect.1 objres.1 rebind.1 sstrip.1
-
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "\/elf.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's,linux/,,g' -e 's,asm/,,g'
+	@${GREP} -lR "gcc" ${WRKSRC}/*/Makefile | ${XARGS} \
+	${REINPLACE_CMD} -e 's,gcc,${CC},g'
 
 do-build:
-.for f in ${PLIST_FILES:S,bin/,,}
+.for f in ${ELFBINS}
 	@(cd ${WRKSRC}/$f; ${GMAKE})
 .endfor
 
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-.for f in ${PLIST_FILES:S,bin/,,}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}/${f} ${PREFIX}/bin
-.endfor
-.for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${f:S,.1,,}/${f} ${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+.for f in ${ELFBINS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}/${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${f}/${f:S,$,.1,} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 
 .include <bsd.port.mk>
