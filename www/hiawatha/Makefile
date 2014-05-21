@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	hiawatha
-PORTVERSION=	9.3.1
+PORTVERSION=	9.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
-		http://www.c-s.li/ports/
+		SF/fbsdports/hiawatha/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	chris@bsdjunk.com
 COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2
 
 PORTDOCS=	ChangeLog README.md
 CONFIG_FILES=	hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf \
-		index.xslt
+		error.xslt index.xslt
 
 SUB_FILES=	pkg-message
-USES=		cmake
+USES=		cmake compiler:c11
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	hiawatha
-WANT_GNOME=	yes
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_BINDIR=${PREFIX}/bin \
 		-DCMAKE_INSTALL_SBINDIR=${PREFIX}/sbin \
@@ -87,6 +86,6 @@ post-install:
 .endfor
 
 	@${MKDIR} ${STAGEDIR}${WWWDIR} ; \
-	${CP} ${WRKSRC}/extra/index.html ${STAGEDIR}${WWWDIR}/index.hiawatha.html
+	${INSTALL_DATA} ${WRKSRC}/extra/index.html ${STAGEDIR}${WWWDIR}/index.html.sample
 
 .include <bsd.port.mk>
