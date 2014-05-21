@@ -3,7 +3,7 @@
 
 PORTNAME=	gnet
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -11,13 +11,17 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A simple network library built upon Glib-2
 
-USES=		pkgconfig pathfix
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack glib20
+USES=		libtool pathfix pkgconfig
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--with-html-dir=${DOCSDIR}
 .else
 CONFIGURE_ARGS+=	--without-html-dir
