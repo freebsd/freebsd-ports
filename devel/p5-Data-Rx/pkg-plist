@@ -18,6 +18,7 @@
 %%PERL5_MAN3%%/Data::Rx::CoreType::str.3.gz
 %%PERL5_MAN3%%/Data::Rx::Failure.3.gz
 %%PERL5_MAN3%%/Data::Rx::FailureSet.3.gz
+%%PERL5_MAN3%%/Data::Rx::Manual::CustomTypes.3.gz
 %%PERL5_MAN3%%/Data::Rx::TypeBundle.3.gz
 %%PERL5_MAN3%%/Data::Rx::TypeBundle::Core.3.gz
 %%PERL5_MAN3%%/Data::Rx::Util.3.gz
@@ -41,6 +42,7 @@
 %%SITE_PERL%%/Data/Rx/CoreType/str.pm
 %%SITE_PERL%%/Data/Rx/Failure.pm
 %%SITE_PERL%%/Data/Rx/FailureSet.pm
+%%SITE_PERL%%/Data/Rx/Manual/CustomTypes.pod
 %%SITE_PERL%%/Data/Rx/TypeBundle.pm
 %%SITE_PERL%%/Data/Rx/TypeBundle/Core.pm
 %%SITE_PERL%%/Data/Rx/Util.pm
@@ -51,4 +53,5 @@
 @dirrm %%SITE_PERL%%/Data/Rx/CoreType
 @dirrm %%SITE_PERL%%/Data/Rx/CommonType
 @dirrm %%SITE_PERL%%/Data/Rx
+@dirrm %%SITE_PERL%%/Data/Rx/Manual
 @dirrmtry %%SITE_PERL%%/Data
