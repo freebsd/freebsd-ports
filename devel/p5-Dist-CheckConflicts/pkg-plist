@@ -3,5 +3,4 @@
 %%PERL5_MAN3%%/Dist::CheckConflicts.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/CheckConflicts
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/Dist
