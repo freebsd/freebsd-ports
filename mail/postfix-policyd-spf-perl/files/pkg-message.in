@@ -3,7 +3,7 @@ The service is not enabled by default.  Enable it by doing the following:
 1. Add the following to /etc/postfix/master.cf:
 
 	spf-policy unix -       n       n       -       0       spawn
-	  user=nobody argv=%%PREFIX%%/sbin/postfix-policyd-spf-perl
+	  user=nobody argv=%%PREFIX%%/libexec/postfix-policyd-spf-perl
 
    The user nobody is fine if you have no other daemons running as nobody.
    Otherwise, you should use a dedicated user and group for this policy

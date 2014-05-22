@@ -1,25 +1,26 @@
---- postfix-policyd-spf-perl.orig	2008-07-25 19:35:01.000000000 -0700
-+++ postfix-policyd-spf-perl	2009-01-25 16:46:38.991336330 -0800
-@@ -263,14 +263,14 @@
-             info => "%s: SPF %s: HELO/EHLO: %s",
-             $attr->{queue_id}, $helo_result, $attr->{helo_name}
-         );
+--- ./postfix-policyd-spf-perl.orig	2012-06-18 03:50:55.000000000 +0000
++++ ./postfix-policyd-spf-perl	2014-05-08 00:22:28.000000000 +0000
+@@ -284,7 +284,7 @@
+                 $attr->{helo_name} || '<UNKNOWN>'
+             );
+         };
 -        return "550 $helo_authority_exp";
 +        return "%%SPF_FAIL%% $helo_authority_exp";
      }
      elsif ($helo_result->is_code('temperror')) {
-         syslog(
-             info => "%s: SPF %s: HELO/EHLO: %s",
-             $attr->{queue_id}, $helo_result, $attr->{helo_name}
-         );
+         if ($VERBOSE) {
+@@ -294,7 +294,7 @@
+                 $attr->{helo_name} || '<UNKNOWN>'
+             );
+         };
 -        return "DEFER_IF_PERMIT SPF-Result=$helo_local_exp";
 +        return "%%SPF_TEMPERROR%% SPF-Result=$helo_local_exp";
      }
      elsif ($attr->{sender} eq '') {
-         syslog(
-@@ -334,10 +334,10 @@
-         $attr->{queue_id}, $mfrom_result, $attr->{sender}
-     );
+         if ($VERBOSE) {
+@@ -368,10 +368,10 @@
+         );
+     };
      if ($mfrom_result->is_code('fail')) {
 -        return "550 $mfrom_authority_exp";
 +        return "%%SPF_FAIL%% $mfrom_authority_exp";
