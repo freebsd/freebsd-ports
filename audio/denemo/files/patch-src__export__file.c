@@ -1,6 +1,6 @@
---- src/file.c.orig
-+++ src/file.c
-@@ -569,7 +569,7 @@
+--- src/export/file.c.orig
++++ src/export/file.c
+@@ -595,7 +595,7 @@
      {
        if (system_example_path == NULL)
          {

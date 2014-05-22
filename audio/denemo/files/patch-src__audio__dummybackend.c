@@ -1,5 +1,5 @@
---- src/dummybackend.c.orig
-+++ src/dummybackend.c
+--- src/audio/dummybackend.c.orig
++++ src/audio/dummybackend.c
 @@ -21,9 +21,11 @@
  static int const PLAYBACK_INTERVAL = 100000;
  
@@ -30,7 +30,7 @@
  static int
 @@ -125,7 +129,9 @@
  {
-   g_print ("initializing dummy audio backend\n");
+   g_message ("Initializing dummy audio backend");
  
 +#if 0
    start_process_thread ();
@@ -40,7 +40,7 @@
  
 @@ -137,7 +143,9 @@
  {
-   g_print ("initializing dummy MIDI backend\n");
+   g_message ("Initializing dummy MIDI backend");
  
 +#if 0
    start_process_thread ();
