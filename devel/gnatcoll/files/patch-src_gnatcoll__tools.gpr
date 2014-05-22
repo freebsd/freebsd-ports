@@ -1,0 +1,13 @@
+--- src/gnatcoll_tools.gpr.orig	2014-04-10 13:47:58.000000000 +0000
++++ src/gnatcoll_tools.gpr
+@@ -33,6 +33,9 @@ project GnatColl_Tools is
+    package Compiler renames GnatColl_Shared.Compiler;
+    package Binder   renames GnatColl_Shared.Binder;
+    package Ide      renames GnatColl_Shared.Ide;
+-   package Linker   renames GnatColl_Shared.Linker;
++   package Linker   is
++      for Leading_Switches ("Ada") use ("gnatcoll/static/set_std_prefix.o",
++         "gnatcoll/static/update_path.o");
++   end Linker;
+ 
+ end GnatColl_Tools;
