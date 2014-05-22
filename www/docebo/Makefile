@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.docebo.org/doceboCms/index.php?mn=docs&op=download&pi=5
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source e-Learning platform (LMS and LCMS)
 
+DEPRECATED=		Not maintained upstream
+EXPIRATION_DATE=	2014-08-22
+
 USE_PHP=	mysql
 USES=		zip
 SUB_FILES=	pkg-message
