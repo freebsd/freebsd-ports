@@ -19,10 +19,6 @@ RUN_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info \
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
-NO_STAGE=	yes
-MAN1=		mp3c.1
-MANCOMPRESSED=	no
-
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
@@ -40,6 +36,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|/dev/acd0|g' ${WRKSRC}/src/conf.c
 
 post-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/cdrip.sh ${LOCALBASE}/bin
+	${INSTALL_SCRIPT} ${DISTDIR}/cdrip.sh ${STAGEDIR}${LOCALBASE}/bin
 
 .include <bsd.port.mk>
