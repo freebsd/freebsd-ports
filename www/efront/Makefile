@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}learning/${PORTNAME}learning/eFront%20v3.6.6/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_build8242
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Elearning and Human Capital Development platform
+COMMENT=	Elearning and Human Capital Development platform
 
 USES=		zip
 USE_PHP=	mbstring zip iconv zlib spl ldap
@@ -21,25 +21,22 @@ EFRONT_DIRS=	libraries PEAR \
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 do-install:
-	@if [ ! -f ${WWWDIR} ]; then \
-		${MKDIR} ${WWWDIR} ; fi
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 .for i in ${EFRONT_FILES}
-	@cd ${WRKDIR} && ${CP} ${i} ${WWWDIR}
+	@cd ${WRKDIR} && ${CP} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
 .for i in ${EFRONT_DIRS}
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
+	@cd ${WRKDIR} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 
 post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}' \
 		>> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
