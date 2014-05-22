@@ -22,7 +22,7 @@ PLIST_DIRSTRY=	%%DATADIR%%
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
-	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/pl_PL.zip -C ${WRKSRC}/
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/pl_PL.zip -d ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

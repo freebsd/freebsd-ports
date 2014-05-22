@@ -95,6 +95,7 @@ UMOUNT?=	/sbin/umount
 UNAME?=		/usr/bin/uname
 UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
 UNZIP_CMD?=	${LOCALBASE}/bin/unzip
+UNZIP_NATIVE_CMD?=	/usr/bin/unzip
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
 XMKMF?=		${LOCALBASE}/bin/xmkmf
