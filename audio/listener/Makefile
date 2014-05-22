@@ -13,10 +13,7 @@ COMMENT=	A program to listen for and record sound activity
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-NO_STAGE=	yes
 PORTDOCS=	manual.html
-PLIST_FILES=	bin/setlistener bin/listener bin/listenersoundpipe \
-		etc/listener.conf.sample
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,8 +21,8 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
