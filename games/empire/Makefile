@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	empire
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
@@ -13,14 +12,8 @@ COMMENT=	Simulation of a full-scale war between two emperors
 
 LICENSE=	GPLv2
 
-CFLAGS+=	-w
-
-PORTDOCS=	AUTHORS BUGS NEWS README
-
+PORTDOCS=	AUTHORS BUGS HACKING NEWS README
 OPTIONS_DEFINE=	DOCS
-
-# Wrong versioning upstream
-PORTSCOUT=      skipv:1.11
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \
@@ -33,8 +26,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|static void|void|g' ${WRKSRC}/game.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/empire-logo.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
