@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ski
-PORTVERSION=	6.7
+PORTVERSION=	6.8
 CATEGORIES=	games python
 MASTER_SITES=	http://catb.org/~esr/ski/
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.png
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Skiing simulation with curses interface in python
@@ -23,7 +20,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -32,8 +28,8 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${PREFIX}/man/man6/
 
