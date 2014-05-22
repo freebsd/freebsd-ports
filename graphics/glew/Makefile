@@ -19,7 +19,7 @@ USE_XORG=	x11 xext xi xmu
 USE_GL=		yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
