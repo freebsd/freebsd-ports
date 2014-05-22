@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipython
-PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -51,4 +50,10 @@ post-install:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} == "3.1" || ${PYTHON_VER} == "3.2"
+IGNORE=		only Python versions 2.7, 3.3 and 3.4 are supported
+.endif
+
+.include <bsd.port.post.mk>
