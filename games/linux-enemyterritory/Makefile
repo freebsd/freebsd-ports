@@ -3,7 +3,7 @@
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|} \
 		${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|}
@@ -16,6 +16,7 @@ COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
+USE_LINUX_APPS=	xorglibs
 USES=		zip:infozip
 NO_CDROM=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/${PORTNAME}
