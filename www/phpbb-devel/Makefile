@@ -17,6 +17,8 @@ CONFLICTS=	phpbb-tw-[0-9]* phpbb-[0-9]* phpbb3-[0-9]
 USE_BZIP2=	yes
 
 IGNORE=		please use www/phpbb3 instead.
+DEPRECATED=	Use www/phpbb3 instead
+EXPIRATION_DATE=	2014-06-22
 
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
