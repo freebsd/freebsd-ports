@@ -13,6 +13,7 @@ lib/libsss_idmap.so.0
 lib/libsss_idmap.so.0.0.1
 lib/libsss_sudo.so
 lib/nss_sss.so
+lib/nss_sss.so.1
 lib/nss_sss.so.2
 lib/nss_sss.so.2.0.0
 lib/pam_sss.so
