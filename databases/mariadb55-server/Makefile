@@ -22,7 +22,8 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb55-client
-USES=		cmake gmake
+USES=		cmake gmake shebangfix
+SHEBANG_FILES=	scripts/*.sh
 NO_OPTIONS_SORT=yes
 
 OPTIONS_DEFINE+=	SSL OPENSSL PORTSSL FASTMTX
