@@ -851,6 +851,7 @@
     SUBDIR += py-poppler-qt4
     SUBDIR += py-pycha
     SUBDIR += py-pydot
+    SUBDIR += py-pygal
     SUBDIR += py-pyggel
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
