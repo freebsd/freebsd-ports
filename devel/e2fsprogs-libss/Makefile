@@ -1,7 +1,7 @@
 # Created by: Ben Kaduk <kaduk@mit.edu>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-libss
 
@@ -15,7 +15,6 @@ OPTIONS_EXCLUDE=	DOCS EXAMPLES IPV6 NLS
 CONFIGURE_ARGS=	--enable-elf-shlibs
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 GNU_CONFIGURE=	yes
-USES=		gmake
 USE_LDCONFIG=	yes
 ALL_TARGET=	subs
 INSTALL_WRKSRC=	${WRKSRC}/lib/ss

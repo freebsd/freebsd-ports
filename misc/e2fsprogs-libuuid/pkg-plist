@@ -4,7 +4,7 @@ lib/libuuid.so.1.2
 lib/libuuid.so.1
 lib/libuuid.so
 lib/libuuid.a
-lib/pkgconfig/uuid.pc
+libdata/pkgconfig/uuid.pc
 man/man1/uuidgen.1.gz
 man/man3/uuid.3.gz
 man/man3/uuid_clear.3.gz
@@ -20,7 +20,6 @@ man/man3/uuid_generate_time.3.gz
 man/man8/uuidd.8.gz
 sbin/uuidd
 @exec mkdir -p /var/run/libuuid
-@dirrmtry lib/pkgconfig
 @dirrm include/uuid
 @unexec %D/etc/rc.d/uuidd stop  >/dev/null 2>&1 || true
 @unexec rmdir /var/run/libuuid  >/dev/null 2>&1 || true
