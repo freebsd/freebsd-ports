@@ -1,0 +1,38 @@
+--- ./Makefile.in.orig	2014-03-13 03:33:04.000000000 +0000
++++ ./Makefile.in	2014-05-08 10:39:15.000000000 +0000
+@@ -345,7 +345,7 @@
+ SUBDIRS = src po
+ pixdir = $(datadir)/pixmaps
+ pix_DATA = pixmaps/asunder.png
+-EXTRA_DIST = asunder.desktop pixmaps/asunder.png syslogng
++EXTRA_DIST = asunder.desktop pixmaps/asunder.png
+ ACLOCAL_AMFLAGS = -I m4
+ desktopdir = $(datadir)/applications
+ desktop_DATA = asunder.desktop
+@@ -793,7 +793,6 @@
+ 
+ install-data-am: install-desktopDATA install-pixDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-recursive
+ 
+ install-dvi-am:
+@@ -851,7 +850,7 @@
+ 	distcheck distclean distclean-generic distclean-hdr \
+ 	distclean-tags distcleancheck distdir distuninstallcheck dvi \
+ 	dvi-am html html-am info info-am install install-am \
+-	install-data install-data-am install-data-hook \
++	install-data install-data-am \
+ 	install-desktopDATA install-dvi install-dvi-am install-exec \
+ 	install-exec-am install-html install-html-am install-info \
+ 	install-info-am install-man install-pdf install-pdf-am \
+@@ -863,9 +862,6 @@
+ 	uninstall-pixDATA
+ 
+ 
+-install-data-hook:
+-	cd syslogng && $(MAKE) install
+-
+ uninstall-hook: 
+ 	cd syslogng && $(MAKE) uninstall
+ 
