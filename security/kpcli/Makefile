@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kpcli
-PORTVERSION=	2.3
+PORTVERSION=	2.5
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/kpcli/
@@ -20,10 +20,10 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:${PORTSDIR}/security/p5-Crypt-Rijndael \
 		p5-Term-ShellUI>=0.9:${PORTSDIR}/shells/p5-Term-ShellUI \
 		p5-ReadLine-Gnu>=1.19:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		p5-Data-Password>=0:${PORTSDIR}/security/p5-Data-Password
-
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	kpcli
 PLIST_FILES=	bin/kpcli man/man1/${PORTNAME}.1.gz
 
 do-extract:
