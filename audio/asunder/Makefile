@@ -10,6 +10,7 @@ MAINTAINER=	frase@frase.id.au
 COMMENT=	Lightweight GTK+ CD ripper
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
 RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
