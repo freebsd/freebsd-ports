@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--without-postgresql
 USES+=			iconv
 CONFIGURE_ARGS+=	--with-iconv=${ICONV_PREFIX}
 .else
-CONFIGURE_ARGS+=	--with-iconv
+CONFIGURE_ARGS+=	--without-iconv
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
