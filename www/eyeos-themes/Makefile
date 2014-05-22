@@ -68,11 +68,11 @@ do-install:
 # Maintainer section
 create-plist: build
 	:>${PLIST}
-.for theme in ${OPTIONS:M*_THEME:S/_THEME//:O}
+.for theme in ${OPTIONS_DEFINE:M*_THEME:S/_THEME//:O}
 	${FIND} -s ${WRKSRC}/${theme} -type f -or -type l | \
 		${SED} -e 's#^${WRKSRC}/${theme}#%%${theme:tu}%%#' >> ${PLIST}
 .endfor
-.for theme in ${OPTIONS:M*_THEME:S/_THEME//:O}
+.for theme in ${OPTIONS_DEFINE:M*_THEME:S/_THEME//:O}
 	${FIND} -ds ${WRKSRC}/${theme} -type d | \
 		${SED} -e 's#^${WRKSRC}/${theme}#%%D${theme:tu}%%#' >> ${PLIST}
 .endfor

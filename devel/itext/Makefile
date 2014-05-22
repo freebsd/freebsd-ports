@@ -22,7 +22,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
 		${JAVAJARDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j \
 		${JAVAJARDIR}/pdf-renderer.jar:${PORTSDIR}/print/pdf-renderer
 
-OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 USES=		tar:bzip2
 USE_JAVA=	yes
