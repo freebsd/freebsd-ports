@@ -1,6 +1,30 @@
 bin/dancer2
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2/.packlist
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/MANIFEST.SKIP
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/Makefile.PL
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/config.yml
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/bin/+app.pl
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/environments/development.yml
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/environments/production.yml
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/lib/AppFile.pm
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/+dispatch.cgi
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/+dispatch.fcgi
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/404.html
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/500.html
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/favicon.ico
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/css/error.css
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/css/style.css
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/images/perldancer-bg.jpg
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/images/perldancer.jpg
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/javascripts/jquery.js
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/t/001_base.t
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/t/002_index_route.t
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/views/index.tt
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/views/layouts/main.tt
 %%SITE_PERL%%/Dancer2.pm
+%%SITE_PERL%%/Dancer2/CLI.pm
+%%SITE_PERL%%/Dancer2/CLI/Command/gen.pm
+%%SITE_PERL%%/Dancer2/CLI/Command/version.pm
 %%SITE_PERL%%/Dancer2/Config.pod
 %%SITE_PERL%%/Dancer2/Cookbook.pod
 %%SITE_PERL%%/Dancer2/Core.pm
@@ -17,7 +41,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Core/Request.pm
 %%SITE_PERL%%/Dancer2/Core/Request/Upload.pm
 %%SITE_PERL%%/Dancer2/Core/Response.pm
-%%SITE_PERL%%/Dancer2/Core/Role/Config.pm
+%%SITE_PERL%%/Dancer2/Core/Role/ConfigReader.pm
 %%SITE_PERL%%/Dancer2/Core/Role/DSL.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Engine.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Handler.pm
@@ -25,15 +49,12 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Core/Role/Hookable.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Logger.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Serializer.pm
-%%SITE_PERL%%/Dancer2/Core/Role/Server.pm
 %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory.pm
 %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory/File.pm
 %%SITE_PERL%%/Dancer2/Core/Role/StandardResponses.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Template.pm
 %%SITE_PERL%%/Dancer2/Core/Route.pm
 %%SITE_PERL%%/Dancer2/Core/Runner.pm
-%%SITE_PERL%%/Dancer2/Core/Server/PSGI.pm
-%%SITE_PERL%%/Dancer2/Core/Server/Standalone.pm
 %%SITE_PERL%%/Dancer2/Core/Session.pm
 %%SITE_PERL%%/Dancer2/Core/Time.pm
 %%SITE_PERL%%/Dancer2/Core/Types.pm
@@ -63,6 +84,9 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Test.pm
 %%SITE_PERL%%/Dancer2/Tutorial.pod
 %%PERL5_MAN3%%/Dancer2.3.gz
+%%PERL5_MAN3%%/Dancer2::CLI.3.gz
+%%PERL5_MAN3%%/Dancer2::CLI::Command::gen.3.gz
+%%PERL5_MAN3%%/Dancer2::CLI::Command::version.3.gz
 %%PERL5_MAN3%%/Dancer2::Config.3.gz
 %%PERL5_MAN3%%/Dancer2::Cookbook.3.gz
 %%PERL5_MAN3%%/Dancer2::Core.3.gz
@@ -79,7 +103,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Core::Request.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Request::Upload.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Response.3.gz
-%%PERL5_MAN3%%/Dancer2::Core::Role::Config.3.gz
+%%PERL5_MAN3%%/Dancer2::Core::Role::ConfigReader.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::DSL.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Engine.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Handler.3.gz
@@ -87,15 +111,12 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Core::Role::Hookable.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Logger.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Serializer.3.gz
-%%PERL5_MAN3%%/Dancer2::Core::Role::Server.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::SessionFactory.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::SessionFactory::File.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::StandardResponses.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Template.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Route.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Runner.3.gz
-%%PERL5_MAN3%%/Dancer2::Core::Server::PSGI.3.gz
-%%PERL5_MAN3%%/Dancer2::Core::Server::Standalone.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Session.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Time.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Types.3.gz
@@ -128,8 +149,9 @@ man/man1/dancer2.1.gz
 @dirrm %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory
 @dirrm %%SITE_PERL%%/Dancer2/Core/Role
 @dirrm %%SITE_PERL%%/Dancer2/Core/Request
-@dirrm %%SITE_PERL%%/Dancer2/Core/Server
 @dirrm %%SITE_PERL%%/Dancer2/Core
+@dirrm %%SITE_PERL%%/Dancer2/CLI/Command
+@dirrm %%SITE_PERL%%/Dancer2/CLI
 @dirrm %%SITE_PERL%%/Dancer2/Handler
 @dirrm %%SITE_PERL%%/Dancer2/Logger/Capture
 @dirrm %%SITE_PERL%%/Dancer2/Logger
@@ -139,4 +161,19 @@ man/man1/dancer2.1.gz
 @dirrm %%SITE_PERL%%/Dancer2/Template/Implementation
 @dirrm %%SITE_PERL%%/Dancer2/Template
 @dirrm %%SITE_PERL%%/Dancer2
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/views/layouts
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/views
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/t
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/javascripts
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/images
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public/css
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/public
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/lib
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/environments
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel/bin
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2/skel
+@dirrm %%SITE_PERL%%/auto/share/dist/Dancer2
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
+@dirrmtry %%SITE_PERL%%/auto
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer2

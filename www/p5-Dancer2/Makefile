@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.11
+PORTVERSION=	0.140001
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,7 @@ COMMENT=	Lightweight yet powerful web application framework
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	\
-	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
+RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 	p5-Capture-Tiny>=0.12:${PORTSDIR}/devel/p5-Capture-Tiny \
 	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 	p5-Crypt-URandom>0:${PORTSDIR}/security/p5-Crypt-URandom \
@@ -40,10 +39,9 @@ RUN_DEPENDS=	\
 	p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML \
 	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	\
-	p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime \
+TEST_DEPENDS=	p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime \
 	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
-	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 USES=		perl5
 USE_PERL5=	configure
