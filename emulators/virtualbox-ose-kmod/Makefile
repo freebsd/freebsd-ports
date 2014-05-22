@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.10
+DISTVERSION=	4.3.12
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -26,13 +26,19 @@ USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	i386 amd64
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal
-CONFIGURE_ARGS+=--disable-alsa --disable-dbus --disable-docs \
-		--disable-libvpx --disable-pulse --disable-python \
-		--disable-sdl-ttf --disable-xpcom
-CONFIGURE_ARGS+=--build-headless
+CONFIGURE_ARGS+=	--build-headless
+CONFIGURE_ARGS+=	--disable-alsa \
+			--disable-dbus \
+			--disable-docs \
+			--disable-libvpx \
+			--disable-pulse \
+			--disable-python \
+			--disable-sdl-ttf \
+			--disable-xpcom
+CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-4* virtualbox-ose-kmod-legacy-4*
+CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-4* \
+			virtualbox-ose-kmod-legacy-4*
 
 OPTIONS_DEFINE=	DEBUG VIMAGE
 OPTIONS_SUB=	yes
