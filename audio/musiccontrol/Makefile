@@ -18,16 +18,15 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
 		${LOCALBASE}/bin/simplemod:${PORTSDIR}/audio/simplemod
 
 USE_JAVA=	yes
-NO_STAGE=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 PLIST_FILES=	share/java/classes/MusicControl-${PORTVERSION}.jar bin/musiccontrol
 
 do-install:
-	@${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${DISTDIR}/MusicControl-${PORTVERSION}.jar ${JAVAJARDIR}/
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${DISTDIR}/MusicControl-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/
 	${SED} 's,%%LOCALBASE%%,${LOCALBASE},g ; s,%%JAVAJARDIR%%,${JAVAJARDIR},g' \
 		${FILESDIR}/musiccontrol > ${WRKDIR}/musiccontrol
-	${INSTALL_SCRIPT} ${WRKDIR}/musiccontrol ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/musiccontrol ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
