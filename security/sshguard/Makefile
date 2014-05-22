@@ -3,11 +3,11 @@
 
 PORTNAME=	sshguard
 PORTVERSION=	1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/sshguard-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT?=	Protect hosts from brute force attacks against ssh and other services
 
 CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.*
@@ -32,7 +32,7 @@ PKGMSG_FWBLOCK="  To activate or configure PF see http://sshguard.sf.net/doc/set
 .elif ${SSHGUARDFW} == ipfw
 PKGMSG_FWBLOCK="  Verify that IPFW is active with \"ipfw show\"."
 .elif ${SSHGUARDFW} == hosts
-PKGMSG_FWBLOCK="  Sshguard is going to use /etc/hosts.allow, I have touched it for you."
+PKGMSG_FWBLOCK="  Sshguard is going to use /etc/hosts.allow. Please remember to touch /etc/hosts.allow\!"
 .elif ${SSHGUARDFW} == ipfilter
 PKGMSG_FWBLOCK="  Sshguard will use /etc/ipf.rules as ruleset."
 .endif
