@@ -8,4 +8,4 @@ Libwhisker has a few design principles:
 - Contained: designed to not require external modules when possible
 - Localized: does not require installation to use
 
-WWW: http://www.wiretrip.net/rfp/lw.asp
+WWW: http://sourceforge.net/projects/whisker/
