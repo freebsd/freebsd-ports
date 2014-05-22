@@ -1,5 +1,5 @@
 libConfuse is a configuration file parser library, licensed under the terms of
-the LGPL, and written in C. It supports sections and (lists of) values
+the ISC, and written in C. It supports sections and (lists of) values
 (strings, integers, floats, booleans or other sections), as well as some other
 features (such as single/double-quoted strings, environment variable
 expansion, functions and nested include statements). It makes it very easy to
