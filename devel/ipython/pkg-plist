@@ -1,141 +1,135 @@
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/appconfig.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/display.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/example-embed-short.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/example-embed.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython-completion.bash
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython-get-history.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython-qtconsole.desktop
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython.desktop
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython_here_shell_extension.reg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/new-embed.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/seteditor.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inprocess/embedded_qtconsole.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inprocess/embedded_terminal.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/BackgroundJobs.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/example-demo.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/gui-glut.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/gui-gtk.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/gui-gtk3.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/gui-pyglet.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/gui-qt.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/gui-tk.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/gui-wx.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/internal_ipkernel.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/ipkernel_qtapp.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/ipkernel_wxapp.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Animations Using clear_output.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Cell Magics.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Custom Display Logic.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Cython Magics.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Data Publication API.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Frontend-Kernel Model.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Importing Notebooks.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Octave Magic.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 1 - Running Code.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 2 - Basic Output.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 3 - Plotting with Matplotlib.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 4 - Markdown Cells.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 5 - Rich Display System.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Progress Bars.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/R Magics.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Script Magics.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/SymPy Examples.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Trapezoid Rule.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Typesetting Math Using MathJax.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/animation.m4v
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/logo/logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/nbimp/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/nbimp/mynotebook.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/nbimp/nbs/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/nbimp/nbs/other.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/python-logo.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/InteractiveMPI-publish-data.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/InteractiveMPI.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/Parallel Magics.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/customresults.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/dagdeps.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/davinci/pwordfreq.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/davinci/wordfreq.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/demo/dependencies.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/demo/map.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/demo/noncopying.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/demo/throughput.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/demo/views.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/fetchparse.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/helloworld.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/helloworld.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/interengine/bintree.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/interengine/bintree_script.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/interengine/communicator.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/interengine/interengine.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/iopubwatcher.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/itermapresult.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/multiengine1.ipy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/multiengine2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/multienginemap.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/nwmerge.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/options/Parallel MC Options.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/parallel_mpi.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/parallel_pylab.ipy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/phistogram.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/pi/parallelpi.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/pi/pidigits.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/plotting/plotting_backend.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/plotting/plotting_frontend.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/rmt/rmt.ipy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/rmt/rmt.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/rmt/rmtkernel.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/task1.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/task1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/task2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/task_profiler.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/taskmap.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/taskmap.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/wave2D/RectPartitioner.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/wave2D/communicator.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/wave2D/parallelwave-mpi.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/wave2D/parallelwave.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/wave2D/wavesolver.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/workflow/client.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/workflow/job_wrapper.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/workflow/wmanager.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/ANSI Test.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/CSS Reference.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed3.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed_division.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed_no_division.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/heartbeat/gilsleep.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/heartbeat/hb_gil.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pylab-switch/Pylab Switching.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pylab_figshow.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/directview/directview.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/directview/directview.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/directview/directview.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/directview/widget.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/directview
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/pylab-switch
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/heartbeat
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/embed
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/workflow
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/wave2D
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/rmt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/plotting
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/pi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/options
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/interengine
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/demo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/davinci
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks/nbimp/nbs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks/nbimp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks/logo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/lib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inprocess
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/core
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Builtin Extensions/Cython Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Builtin Extensions/Index.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Builtin Extensions/Octave Magic.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Builtin Extensions/R Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Customization/Index.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Customization/appconfig.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/Index.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/embed_class_long.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/embed_class_short.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/embed_function.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/inprocess_qtconsole.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/inprocess_terminal.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/internal_ipkernel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/ipkernel_qtapp.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Embedding/ipkernel_wxapp.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/Background Jobs.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/Cell Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/Index.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/Script Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/example-demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/gui/gui-glut.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/gui/gui-gtk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/gui/gui-gtk3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/gui/gui-pyglet.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/gui/gui-qt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/gui/gui-tk.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/gui/gui-wx.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/ipython-completion.bash
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/ipython-get-history.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/ipython-qtconsole.desktop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/IPython Kernel/ipython.desktop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Index.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Beat Frequencies.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Custom Widgets.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Exploring Graphs.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Export As (nbconvert).ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Factoring.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/File Upload Widget.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Image Browser.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Image Processing.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Index.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Lorenz Differential Equations.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Nonblocking Console.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Using Interact.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Variable Inspector.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Widget Alignment.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Widget Basics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Widget Events.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Widget Placement.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Interactive Widgets/Widget Styles.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Animations Using clear_output.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Basic Output.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Connecting with the Qt Console.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Custom Display Logic.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Display System.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Importing Notebooks.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Index.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Markdown Cells.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Plotting with Matplotlib.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Raw Input.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Running Code.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/SymPy.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Trapezoid Rule.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/Typesetting Math Using MathJax.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/User Interface.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/images/animation.m4v
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/images/command_mode.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/images/edit_mode.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/images/menubar_toolbar.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/images/python_logo.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/nbpackage/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/nbpackage/mynotebook.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/nbpackage/nbs/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Notebook/nbpackage/nbs/other.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Data Publication API.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Index.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Monitoring an MPI Simulation - 1.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Monitoring an MPI Simulation - 2.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Monte Carlo Options.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Parallel Decorator and map.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Parallel Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Using Dill.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/Using MPI with IPython Parallel.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/customresults.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/daVinci Word Count/pwordfreq.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/daVinci Word Count/wordfreq.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/dagdeps.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/dependencies.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/fetchparse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/interengine/bintree.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/interengine/bintree_script.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/interengine/communicator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/interengine/interengine.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/iopubwatcher.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/itermapresult.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/nwmerge.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/phistogram.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/pi/parallelpi.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/pi/pidigits.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/rmt/rmt.ipy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/rmt/rmt.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/rmt/rmtkernel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/task_profiler.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/throughput.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/wave2D/RectPartitioner.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/wave2D/communicator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/wave2D/parallelwave-mpi.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/wave2D/parallelwave.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/wave2D/wavesolver.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/workflow/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/workflow/job_wrapper.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Parallel Computing/workflow/wmanager.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/ipython_logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utils/list_pyfiles.ipy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utils/list_subdirs.ipy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/utils
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/workflow
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/wave2D
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/rmt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/pi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/interengine
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing/daVinci Word Count
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Parallel Computing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Notebook/nbpackage/nbs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Notebook/nbpackage
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Notebook/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Notebook
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Interactive Widgets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/IPython Kernel/gui
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/IPython Kernel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Embedding
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Customization
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Builtin Extensions
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
