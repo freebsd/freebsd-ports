@@ -4090,6 +4090,7 @@ lib/webmin/cron/uninstall.pl
 lib/webmin/cron/useradmin_update.pl
 lib/webmin/custom/CHANGELOG
 lib/webmin/custom/acl_security.pl
+lib/webmin/custom/backup_config.pl
 lib/webmin/custom/cgi_args.pl
 lib/webmin/custom/config
 lib/webmin/custom/config-*-linux
@@ -5482,6 +5483,7 @@ lib/webmin/exports/help/anonuid.sv.UTF-8.html
 lib/webmin/exports/help/anonuid.sv.html
 lib/webmin/exports/help/anonuid.zh_TW.Big5.html
 lib/webmin/exports/help/anonuid.zh_TW.UTF-8.html
+lib/webmin/exports/help/auth.html
 lib/webmin/exports/help/client.ca.UTF-8.html
 lib/webmin/exports/help/client.ca.html
 lib/webmin/exports/help/client.es.UTF-8.html
@@ -5638,6 +5640,7 @@ lib/webmin/exports/help/noaccess.sv.UTF-8.html
 lib/webmin/exports/help/noaccess.sv.html
 lib/webmin/exports/help/noaccess.zh_TW.Big5.html
 lib/webmin/exports/help/noaccess.zh_TW.UTF-8.html
+lib/webmin/exports/help/pfs.html
 lib/webmin/exports/help/ro.ca.UTF-8.html
 lib/webmin/exports/help/ro.ca.html
 lib/webmin/exports/help/ro.es.UTF-8.html
@@ -5655,6 +5658,7 @@ lib/webmin/exports/help/ro.sv.UTF-8.html
 lib/webmin/exports/help/ro.sv.html
 lib/webmin/exports/help/ro.zh_TW.Big5.html
 lib/webmin/exports/help/ro.zh_TW.UTF-8.html
+lib/webmin/exports/help/sec.html
 lib/webmin/exports/help/squash.ca.UTF-8.html
 lib/webmin/exports/help/squash.ca.html
 lib/webmin/exports/help/squash.es.UTF-8.html
@@ -5716,6 +5720,7 @@ lib/webmin/exports/help/sync.it.UTF-8.html
 lib/webmin/exports/help/sync.it.html
 lib/webmin/exports/help/sync.nl.UTF-8.html
 lib/webmin/exports/help/sync.nl.html
+lib/webmin/exports/help/vers.html
 lib/webmin/exports/images/export.gif
 lib/webmin/exports/images/icon.gif
 lib/webmin/exports/images/smallicon.gif
@@ -5770,6 +5775,58 @@ lib/webmin/exports/medium.skill
 lib/webmin/exports/module.info
 lib/webmin/exports/restart_mountd.cgi
 lib/webmin/exports/save_export.cgi
+lib/webmin/fail2ban/CHANGELOG
+lib/webmin/fail2ban/atboot.cgi
+lib/webmin/fail2ban/backup_config.pl
+lib/webmin/fail2ban/config
+lib/webmin/fail2ban/config-debian-linux
+lib/webmin/fail2ban/config-redhat-linux
+lib/webmin/fail2ban/config.info
+lib/webmin/fail2ban/config.info.de
+lib/webmin/fail2ban/config.info.de.UTF-8
+lib/webmin/fail2ban/config.info.ms_MY
+lib/webmin/fail2ban/config.info.ms_MY.UTF-8
+lib/webmin/fail2ban/delete_actions.cgi
+lib/webmin/fail2ban/delete_filters.cgi
+lib/webmin/fail2ban/delete_jails.cgi
+lib/webmin/fail2ban/edit_action.cgi
+lib/webmin/fail2ban/edit_config.cgi
+lib/webmin/fail2ban/edit_filter.cgi
+lib/webmin/fail2ban/edit_jail.cgi
+lib/webmin/fail2ban/edit_jaildef.cgi
+lib/webmin/fail2ban/edit_manual.cgi
+lib/webmin/fail2ban/fail2ban-lib.pl
+lib/webmin/fail2ban/help/intro.html
+lib/webmin/fail2ban/images/actions.gif
+lib/webmin/fail2ban/images/config.gif
+lib/webmin/fail2ban/images/filters.gif
+lib/webmin/fail2ban/images/icon.gif
+lib/webmin/fail2ban/images/jails.gif
+lib/webmin/fail2ban/images/manual.gif
+lib/webmin/fail2ban/images/smallicon.gif
+lib/webmin/fail2ban/index.cgi
+lib/webmin/fail2ban/install_check.pl
+lib/webmin/fail2ban/lang/de
+lib/webmin/fail2ban/lang/de.UTF-8
+lib/webmin/fail2ban/lang/en
+lib/webmin/fail2ban/lang/en.UTF-8
+lib/webmin/fail2ban/lang/ms_MY
+lib/webmin/fail2ban/lang/ms_MY.UTF-8
+lib/webmin/fail2ban/list_actions.cgi
+lib/webmin/fail2ban/list_filters.cgi
+lib/webmin/fail2ban/list_jails.cgi
+lib/webmin/fail2ban/log_parser.pl
+lib/webmin/fail2ban/module.info
+lib/webmin/fail2ban/restart.cgi
+lib/webmin/fail2ban/save_action.cgi
+lib/webmin/fail2ban/save_config.cgi
+lib/webmin/fail2ban/save_filter.cgi
+lib/webmin/fail2ban/save_jail.cgi
+lib/webmin/fail2ban/save_jaildef.cgi
+lib/webmin/fail2ban/save_manual.cgi
+lib/webmin/fail2ban/start.cgi
+lib/webmin/fail2ban/stop.cgi
+lib/webmin/fail2ban/syslog_logs.pl
 lib/webmin/fastrpc.cgi
 lib/webmin/favicon.ico
 lib/webmin/fdisk/CHANGELOG
@@ -10677,6 +10734,7 @@ lib/webmin/lpadmin/unixware-lib.pl
 lib/webmin/lpadmin/view_job.cgi
 lib/webmin/lpadmin/webmin-driver.pl
 lib/webmin/lvm/CHANGELOG
+lib/webmin/lvm/backup_config.pl
 lib/webmin/lvm/cgi_args.pl
 lib/webmin/lvm/config
 lib/webmin/lvm/config.info
@@ -12908,6 +12966,7 @@ lib/webmin/nis/lang/zh_TW.UTF-8
 lib/webmin/nis/linux-lib.pl
 lib/webmin/nis/list_switches.cgi
 lib/webmin/nis/mandrake-linux-lib.pl
+lib/webmin/nis/md5-lib.pl
 lib/webmin/nis/module.info
 lib/webmin/nis/msc-linux-lib.pl
 lib/webmin/nis/nis-lib.pl
@@ -20535,6 +20594,7 @@ lib/webmin/status/lang/zh_CN
 lib/webmin/status/lang/zh_CN.UTF-8
 lib/webmin/status/lang/zh_TW.Big5
 lib/webmin/status/lang/zh_TW.UTF-8
+lib/webmin/status/ldap-monitor.pl
 lib/webmin/status/list_tmpls.cgi
 lib/webmin/status/load-monitor.pl
 lib/webmin/status/log_parser.pl
@@ -20578,6 +20638,7 @@ lib/webmin/status/services/samba.serv
 lib/webmin/status/services/sendmail.serv
 lib/webmin/status/services/squid.serv
 lib/webmin/status/services/xinetd.serv
+lib/webmin/status/slapd-monitor.pl
 lib/webmin/status/space-monitor.pl
 lib/webmin/status/squid-monitor.pl
 lib/webmin/status/sshd-monitor.pl
@@ -21353,6 +21414,7 @@ lib/webmin/tunnel/module.info
 lib/webmin/tunnel/seturl.cgi
 lib/webmin/tunnel/tunnel-lib.pl
 lib/webmin/ui-lib.pl
+lib/webmin/unauthenticated/filter_match.js
 lib/webmin/updown/CHANGELOG
 lib/webmin/updown/acl_security.pl
 lib/webmin/updown/cancel.cgi
@@ -23555,6 +23617,7 @@ lib/webmin/zones/zones-lib.pl
 @dirrm lib/webmin/updown/lang
 @dirrm lib/webmin/updown/images
 @dirrm lib/webmin/updown
+@dirrm lib/webmin/unauthenticated
 @dirrm lib/webmin/tunnel/lang
 @dirrm lib/webmin/tunnel/images
 @dirrm lib/webmin/tunnel
@@ -24304,6 +24367,10 @@ lib/webmin/zones/zones-lib.pl
 @dirrm lib/webmin/fdisk/images
 @dirrm lib/webmin/fdisk/help
 @dirrm lib/webmin/fdisk
+@dirrm lib/webmin/fail2ban/lang
+@dirrm lib/webmin/fail2ban/images
+@dirrm lib/webmin/fail2ban/help
+@dirrm lib/webmin/fail2ban
 @dirrm lib/webmin/exports/lang
 @dirrm lib/webmin/exports/images
 @dirrm lib/webmin/exports/help

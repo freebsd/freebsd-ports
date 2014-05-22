@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.680
+PORTVERSION=	1.690
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -62,6 +62,7 @@ do-build:
 	@${PYTHON_CMD} -mcompileall ${WRKSRC}/ajaxterm/ajaxterm/
 	@${PYTHON_CMD} -O -mcompileall ${WRKSRC}/ajaxterm/ajaxterm/
 	@${CC} ${CFLAGS} -o ${WRKSRC}/mount/freebsd-mounts-7 ${WRKSRC}/mount/freebsd-mounts-7.c
+	@${STRIP_CMD} ${WRKSRC}/mount/freebsd-mounts-7
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/webmin
