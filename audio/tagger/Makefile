@@ -7,8 +7,11 @@ CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI Ogg/Vorbis and MP3 ID3v1/ID3v1.1 tag editor
+
+DEPRECATED=	Ancient, unmaintained
+EXPIRATION_DATE=	2014-06-31
 
 USE_BZIP2=	yes
 USES=		gmake
