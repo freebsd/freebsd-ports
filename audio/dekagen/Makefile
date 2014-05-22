@@ -10,7 +10,6 @@ MASTER_SITES=	ftp://ftp.ibiblio.org/pub/linux/apps/sound/convert/
 MAINTAINER=	martin.kraft@fal.de
 COMMENT=	A frontend to rip, convert, and name MP3/Ogg
 
-NO_STAGE=	yes
 # The only reason for installing xmcd is, that dekagen uses cda
 # for CDDB inquiries. You can safely 'make -DWITHOUT_XMCD', if you
 # can do without inquiring the CDDB database. Dependencies of
@@ -28,10 +27,8 @@ RUN_DEPENDS+=	cda:${PORTSDIR}/audio/xmcd
 RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 .endif
 
-MAN1=		dekagen.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/dekagen
-
+NO_BUILD=	Shell Script
+PLIST_FILES=	bin/dekagen man/man1/dekagen.1.gz
 DEFAULT_CDROM_DEVICE?=	/dev/acd0
 
 post-patch:
@@ -39,9 +36,8 @@ post-patch:
 	's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 	${WRKSRC}/dekagen
 
-NO_BUILD=	Shell Script
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dekagen ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dekagen.1.gz ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/dekagen ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dekagen.1.gz ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
