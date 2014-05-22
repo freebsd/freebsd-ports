@@ -14,14 +14,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
-USE_BZIP2=	yes
-NO_STAGE=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	mpdscribble
-
-MAN1=		mpdscribble.1
 
 OPTIONS_DEFINE=	SOUP DOCS
 SOUP_DESC=	Use libsoup instead of libcurl
@@ -37,16 +33,13 @@ CONFIGURE_ARGS+=	--with-http-client=curl
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mpdscribble ${PREFIX}/bin/mpdscribble
-	${INSTALL_MAN} ${WRKSRC}/doc/mpdscribble.1 ${MANPREFIX}/man/man1/mpdscribble.1
-	${INSTALL_DATA} ${WRKSRC}/doc/mpdscribble.conf ${PREFIX}/etc/mpdscribble.conf.sample
-.if !exists(${PREFIX}/etc/mpdscribble.conf)
-	@(cd ${PREFIX}/etc && ${CP} mpdscribble.conf.sample mpdscribble.conf)
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpdscribble ${STAGEDIR}${PREFIX}/bin/mpdscribble
+	${INSTALL_MAN} ${WRKSRC}/doc/mpdscribble.1 ${STAGEDIR}${MANPREFIX}/man/man1/mpdscribble.1
+	${INSTALL_DATA} ${WRKSRC}/doc/mpdscribble.conf ${STAGEDIR}${PREFIX}/etc/mpdscribble.conf.sample
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
