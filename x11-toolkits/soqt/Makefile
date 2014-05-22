@@ -12,25 +12,29 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 toolkit library for Coin
 
-LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
+LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	libtool
-USES=		pathfix	gmake
+LIB_DEPENDS=	libCoin.so:${PORTSDIR}/graphics/Coin
+
+USES=		gmake libtool pathfix pkgconfig
 USE_QT4=	corelib opengl moc_build
-CPPFLAGS+=	-I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include
-LDFLAGS+=	-L${QT_LIBDIR} -L${LOCALBASE}/lib
-
+QT_NONSTANDARD=	yes
+USE_GL=		gl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
-
+CONFIGURE_ENV=	QTDIR="${QT_PREFIX}" MOC="${MOC}"
 CONFIGURE_ARGS=	--with-pthread=yes --with-coin=${LOCALBASE} \
 		--with-qt=${QT_LIBDIR}
 USE_LDCONFIG=	yes
 
-MAN1=		soqt-config.1
+CPPFLAGS+=	-I${QT_INCDIR}/Qt -I${QT_INCDIR} -I${LOCALBASE}/include
+LDFLAGS+=	-L${QT_LIBDIR} -L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/LDFLAGS/s| $$sim_ac_coin_ldflags|| ; \
+		 /CXXFLAGS/s| -fno-for-scope||' ${WRKSRC}/configure
+
 post-install:
-	@${TOUCH} ${PREFIX}/include/Inventor/Qt/engines/.keep_me
+	@${TOUCH} ${STAGEDIR}${PREFIX}/include/Inventor/Qt/engines/.keep_me
 
 .include <bsd.port.mk>
