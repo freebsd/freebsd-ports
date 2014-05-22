@@ -19,9 +19,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
-NO_STAGE=	yes
-USES=		perl5
+USES=		perl5 tar:bzip2
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mp3burn
@@ -33,6 +31,6 @@ post-patch:
 		-e 's|" -pad -audio"|" -tao -pad -audio"|' ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mp3burn ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mp3burn ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
