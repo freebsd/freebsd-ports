@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
 		--enable-quota \
 		--with-root-prefix='${PREFIX}'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
-MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
+MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
 .if !defined(MASTERDIR)
@@ -81,6 +81,11 @@ post-patch::
 .endfor
 
 .if ${MASTERDIR} == ${.CURDIR}
+pre-build:
+# fix up Makefile ordering for parallel builds
+	cd ${WRKSRC}/lib/et && ${DO_MAKE_BUILD} compile_et
+	cd ${WRKSRC}/e2fsck && ${DO_MAKE_BUILD} prof_err.h
+
 post-build:
 # Relink e2fsck statically - We need to make sure that tools for the root file
 # system are statically linked against anything that is outside the root fs,
