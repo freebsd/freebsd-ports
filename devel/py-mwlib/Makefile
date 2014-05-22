@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mwlib
-PORTVERSION=	0.15.11
+PORTVERSION=	0.15.14
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python's MediaWiki Parser and Utility Library
+
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsing>0:${PORTSDIR}/devel/py-parsing \
 		${PYTHON_PKGNAMEPREFIX}gevent>=0:${PORTSDIR}/devel/py-gevent \
@@ -29,10 +31,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsing>0:${PORTSDIR}/devel/py-parsing \
 
 USES=		zip
 USE_PYTHON=		2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
+PYDISTUTILS_AUTOPLIST=yes
 PYEASYINSTALL_ARCHDEP=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|lockfile==|lockfile>=|' \
