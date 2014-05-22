@@ -17,14 +17,12 @@ OPTIONS_DEFAULT=	GD
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-boost-program-options=boost_program_options \
 		--with-boost-thread=boost_thread
 CONFIGURE_ENV+=	"LIBS=-lboost_system"
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
