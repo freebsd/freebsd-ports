@@ -1,0 +1,7 @@
+include/sixel.h
+lib/libsixel.la
+lib/libsixel.so.0
+lib/libsixel.so
+lib/libsixel.a
+bin/img2sixel
+bin/sixel2png

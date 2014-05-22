@@ -1,0 +1,8 @@
+This package provides encoder/decoder implementation for DEC SIXEL graphics,
+and some converter programs.
+SIXEL is one of image formats for terminal imaging introduced by DEC VT series.
+Its data scheme is represented as a terminal-friendly escape sequence.
+So if you want to view a SIXEL image file, all you have to do is "cat" it to
+your terminal.
+
+WWW: https://github.com/saitoha/libsixel
