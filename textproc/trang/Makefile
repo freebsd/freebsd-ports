@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Multi-format schema converter based on RELAX NG
 
+LICENSE=	BSD3CLAUSE
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -22,15 +24,12 @@ PORTDOCS=	copying.txt trang-manual.html
 SUB_FILES=	trang.sh
 PLIST_FILES=	%%JAVAJARDIR%%/trang.jar bin/trang
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/trang.jar ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/trang.sh ${PREFIX}/bin/trang
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/trang.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/trang.sh ${STAGEDIR}${PREFIX}/bin/trang
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
