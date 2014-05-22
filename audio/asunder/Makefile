@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -11,7 +10,6 @@ MAINTAINER=	frase@frase.id.au
 COMMENT=	Lightweight GTK+ CD ripper
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
 RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
@@ -25,7 +23,7 @@ WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake desktop-file-utils pkgconfig tar:bzip2
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 glib20 intltool intlhack
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
