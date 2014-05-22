@@ -3,6 +3,7 @@
 
 PORTNAME=	gnat_util
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR= ${MS_SUBDIR}
@@ -25,7 +26,8 @@ MAKE_ENV=	MAKEOBJDIR=${WRKSRC}/obj
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/obj
-.for F in Makefile gnat_util.gpr sdefault_adb.gnat_util
+.for F in Makefile gnat_util.gpr sdefault_adb.gnat_util \
+	update_path.c set_std_prefix.c
 	@${CP} ${FILESDIR}/${F} ${WRKSRC}/
 .endfor
 .for F in ${GNAT_SRCS}
