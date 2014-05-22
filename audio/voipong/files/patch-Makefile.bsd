@@ -1,21 +1,38 @@
---- Makefile.bsd.orig	2009-08-21 22:13:38.000000000 -0300
-+++ Makefile.bsd	2009-08-21 22:15:08.000000000 -0300
-@@ -55,15 +55,15 @@
+--- Makefile.bsd.orig	2005-12-09 23:20:53.000000000 +0800
++++ Makefile.bsd	2014-05-22 20:40:35.717976146 +0800
+@@ -18,7 +18,7 @@
+ #	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ #
+ 
+-CC=cc
++#CC=cc
+ CFLAGS= -g -Wall -Iinclude
+ SHLIBS=-lpcap
+ 
+@@ -54,16 +54,16 @@ voipctl: voipctl.o voipongglobals.o
+ 	$(CC) -g -o voipctl voipctl.o voipongglobals.o conf.o miscutil.o $(CFLAGS) 
  
  install:
- 	mkdir -p /usr/local/etc/voipong
+-	mkdir -p /usr/local/etc/voipong
 -	mkdir -p /usr/local/etc/voipong/modules
-+	mkdir -p /usr/local/lib/voipong
- 	cp voipong /usr/local/bin/
- 	cp voipctl /usr/local/bin/
- 	cp etc/voipong.conf /usr/local/etc/voipong/
- 	chmod 750 /usr/local/bin/voipong
- 	chmod 750 /usr/local/bin/voipctl
- 	chmod 600 /usr/local/etc/voipong/voipong.conf
+-	cp voipong /usr/local/bin/
+-	cp voipctl /usr/local/bin/
+-	cp etc/voipong.conf /usr/local/etc/voipong/
+-	chmod 750 /usr/local/bin/voipong
+-	chmod 750 /usr/local/bin/voipctl
+-	chmod 600 /usr/local/etc/voipong/voipong.conf
 -	cp modvocoder_*.so /usr/local/etc/voipong/modules/
 -	chmod 500 /usr/local/etc/voipong/modules/*
-+	cp modvocoder_*.so /usr/local/lib/voipong/
-+	chmod 500 /usr/local/lib/voipong/*
++	mkdir -p $(DESTDIR)$(PREFIX)/etc/voipong
++	mkdir -p $(DESTDIR)$(PREFIX)/lib/voipong
++	cp voipong $(DESTDIR)$(PREFIX)/bin
++	cp voipctl $(DESTDIR)$(PREFIX)/bin
++	cp etc/voipong.conf $(DESTDIR)$(PREFIX)/etc/voipong
++	chmod 750 $(DESTDIR)$(PREFIX)/bin/voipong
++	chmod 750 $(DESTDIR)$(PREFIX)/bin/voipctl
++	chmod 600 $(DESTDIR)$(PREFIX)/etc/voipong/voipong.conf
++	cp modvocoder_*.so $(DESTDIR)$(PREFIX)/lib/voipong/
++	chmod 500 $(DESTDIR)$(PREFIX)/lib/voipong/*
  
  cls:
  	$(CLEARX)
