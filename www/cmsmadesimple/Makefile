@@ -25,23 +25,22 @@ CMS_FILES=	favicon_cms.ico fileloc.php include.php \
 WRITABLE_DIRS=	tmp tmp/templates_c tmp/cache \
 		uploads uploads/images modules
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 post-extract:
 	@cd ${WRKSRC} && ${RM} -f config.php
 
 do-install:
 .for i in ${CMS_DIRS}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
 .for i in ${CMS_FILES}
-	@cd ${WRKSRC} && ${CP} ${i} ${WWWDIR}/${i}
+	@cd ${WRKSRC} && ${CP} ${i} ${STAGEDIR}${WWWDIR}/${i}
 .endfor
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 
-	@if [ ! -f ${WWWDIR}/config.php ]; then \
-	${TOUCH} ${WWWDIR}/config.php ; fi
+	@if [ ! -f ${STAGEDIR}${WWWDIR}/config.php ]; then \
+	${TOUCH} ${STAGEDIR}${WWWDIR}/config.php ; fi
 
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
@@ -50,12 +49,12 @@ post-install:
 		>> ${TMPPLIST}
 
 .for i in ${WRITABLE_DIRS}
-	@${CHMOD} 775 ${WWWDIR}/${i}
+	@${CHMOD} 775 ${STAGEDIR}${WWWDIR}/${i}
 	@${ECHO_CMD} '@exec ${CHMOD} 775 ${WWWDIR}/${i}' \
 		>> ${TMPPLIST}
 .endfor
 
-	@${CHMOD} 666 ${WWWDIR}/config.php
+	@${CHMOD} 666 ${STAGEDIR}${WWWDIR}/config.php
 	@${ECHO_CMD} '@exec ${CHMOD} 666 ${WWWDIR}/config.php' \
 		>> ${TMPPLIST}
 
