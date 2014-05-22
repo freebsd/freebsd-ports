@@ -1,6 +1,6 @@
---- src/help.c.orig
-+++ src/help.c
-@@ -56,7 +56,7 @@
+--- src/ui/help.c.orig
++++ src/ui/help.c
+@@ -57,7 +57,7 @@
    GError *error = NULL;
  
    /* get the uri to the manual */

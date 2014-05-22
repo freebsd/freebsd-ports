@@ -1,6 +1,6 @@
---- src/mousing.c.orig	2011-09-28 05:03:47.000000000 +0200
-+++ src/mousing.c	2011-10-01 17:17:17.821965718 +0200
-@@ -211,7 +211,11 @@
+--- src/ui/mousing.c.orig
++++ src/ui/mousing.c
+@@ -215,7 +215,11 @@
    pi->nextmeasure = ((si->system_height > 0.5 || x_to_explain > GPOINTER_TO_INT (mwidthiterator->data)) && pi->measure_number >= rightmeasurenum);
  
    pi->the_staff = g_list_nth (si->thescore, pi->staff_number - 1);
