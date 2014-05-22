@@ -16,10 +16,8 @@ COMMENT=	A curses-based media player with vim-like keybinds
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
-NO_STAGE=	yes
 ALL_TARGET=	vitunes
-PLIST_FILES=	bin/vitunes
-MAN1=	vitunes.1
+PLIST_FILES=	bin/vitunes man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
