@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.10
-PORTREVISION=	2
+DISTVERSION=	4.3.12
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -30,16 +29,26 @@ USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal
-CONFIGURE_ARGS+=--disable-alsa --disable-dbus --disable-docs \
-		--disable-libvpx --disable-pulse --disable-python \
-		--disable-sdl-ttf --disable-xpcom
+CONFIGURE_ARGS+=	--disable-alsa \
+			--disable-dbus \
+			--disable-docs \
+			--disable-libvpx \
+			--disable-pulse \
+			--disable-python \
+			--disable-sdl-ttf \
+			--disable-xpcom
+CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
+CONFLICTS_INSTALL=	virtualbox-ose-[3,4]* \
+			virtualbox-ose-additions-devel-[3,4]* \
+			virtualbox-ose-devel-[3,4]* \
+			virtualbox-ose-legacy-[3,4]*
 
-OPTIONS_DEFINE=	DEBUG X11 OPENGL
+OPTIONS_DEFINE=	DEBUG OPENGL X11
 OPTIONS_DEFAULT=	X11
 OPTIONS_SUB=	yes
+
+OPENGL_CONFIGURE_OFF=	--disable-opengl
 
 .include <bsd.port.options.mk>
 
@@ -62,14 +71,6 @@ KMK_BUILDTYPE=	debug
 MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
 .endif
 
-.if ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/X:${PORTSDIR}/x11-servers/xorg-server
-VBOX_WITH_X11=	1
-USE_XORG=	xcursor xmu inputproto xorg-server xrandr
-.else
-VBOX_WITH_X11=
-.endif
-
 .if ${PORT_OPTIONS:MOPENGL}
 USE_XORG+=	xcomposite xdamage xext xfixes
 USE_GL=		gl
@@ -80,8 +81,14 @@ VBOX_LIBS=	VBoxOGL.so \
 		VBoxOGLfeedbackspu.so \
 		VBoxOGLpackspu.so \
 		VBoxOGLpassthroughspu.so
+.endif
+
+.if ${PORT_OPTIONS:MX11}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/X:${PORTSDIR}/x11-servers/xorg-server
+VBOX_WITH_X11=	1
+USE_XORG=	xcursor xmu inputproto xorg-server xrandr
 .else
-CONFIGURE_ARGS+=--disable-opengl
+VBOX_WITH_X11=
 .endif
 
 .if ${ARCH} == i386
