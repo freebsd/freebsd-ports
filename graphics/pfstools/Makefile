@@ -3,12 +3,14 @@
 
 PORTNAME=	pfstools
 PORTVERSION=	1.6.4
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	Tools for manipulating HDR images and video frames
+
+LICENSE=	LGPL21
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
@@ -24,8 +26,7 @@ CONFIGURE_ARGS=	--disable-jpeghdr --disable-matlab \
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/libdata/pkgconfig"
 CPPFLAGS+=	${PFS_CPPFLAGS}
 LDFLAGS+=	${PFS_LDFLAGS}
-USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 USES=	pkgconfig
 
@@ -34,46 +35,11 @@ OCTAVE_DESC=	Compile octave interface functions
 
 OPTIONS_DEFAULT=	TIFF
 
-MAN1=		pfsin.1 \
-		pfsout.1 \
-		pfsinppm.1 \
-		pfsinexr.1 \
-		pfsinrgbe.1 \
-		pfsintiff.1 \
-		pfsoutppm.1 \
-		pfsoutexr.1 \
-		pfsoutffmpeg.1 \
-		pfsinpfm.1 \
-		pfsoutpfm.1 \
-		pfsinmulti.1 \
-		pfsinimgmagick.1 \
-		pfsoutimgmagick.1 \
-		pfsinjpeghdr.1 \
-		pfsoutjpeghdr.1 \
-		pfsindcraw.1 \
-		pfsgamma.1 \
-		pfsclamp.1 \
-		pfstag.1 \
-		pfssize.1 \
-		pfsextractchannels.1 \
-		pfspanoramic.1 \
-		pfsrotate.1 \
-		pfsflip.1 \
-		pfscut.1 \
-		pfspad.1 \
-		pfscat.1 \
-		pfsabsolute.1
-MLINKS=		pfsoutppm.1 \
-		pfsouttiff.1 \
-		pfsoutppm.1 \
-		pfsoutrgbe.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNETPBM}
 CONFIGURE_ARGS+=--enable-ppm
-LIB_DEPENDS+=	netpbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS+=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
 PLIST_SUB+=	PPM=""
 .else
 CONFIGURE_ARGS+=--disable-ppm
@@ -84,7 +50,7 @@ PLIST_SUB+=	PPM="@comment "
 PFS_CPPFLAGS+=	${PTHREAD_CFLAGS}
 PFS_LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--enable-openexr --with-exrdir=${LOCALBASE}/include/OpenEXR
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	EXR=""
 .else
 CONFIGURE_ARGS+=--disable-openexr
@@ -93,7 +59,7 @@ PLIST_SUB+=	EXR="@comment "
 
 .if ${PORT_OPTIONS:MTIFF}
 CONFIGURE_ARGS+=--enable-tiff
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
 PLIST_SUB+=	TIFF=""
 .else
 CONFIGURE_ARGS+=--disable-tiff
@@ -105,7 +71,7 @@ PLIST_SUB+=	QT="@comment "
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--enable-imagemagick
-LIB_DEPENDS+=	Magick++.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagick++.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IM=""
 .else
 CONFIGURE_ARGS+=--disable-imagemagick
