@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GML
-PORTVERSION=	0.15
-PORTREVISION=	2
+PORTVERSION=	0.16
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module to Process Geography Markup Language
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Log-Report>=0.18:${PORTSDIR}/devel/p5-Log-Report \
 		p5-Test-Pod>=1.26:${PORTSDIR}/devel/p5-Test-Pod \
