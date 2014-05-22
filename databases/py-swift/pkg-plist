@@ -12,10 +12,12 @@ etc/swift/rsyncd.conf-sample
 etc/swift/swift-rsyslog.conf-sample
 etc/swift/swift.conf-sample
 man/man1/swift-account-auditor.1.gz
+man/man1/swift-account-info.1.gz
 man/man1/swift-account-reaper.1.gz
 man/man1/swift-account-replicator.1.gz
 man/man1/swift-account-server.1.gz
 man/man1/swift-container-auditor.1.gz
+man/man1/swift-container-info.1.gz
 man/man1/swift-container-replicator.1.gz
 man/man1/swift-container-server.1.gz
 man/man1/swift-container-sync.1.gz
