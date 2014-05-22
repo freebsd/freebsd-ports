@@ -1,5 +1,5 @@
 --- build.sh.orig	2014-02-24 05:44:13.000000000 +0900
-+++ build.sh	2014-03-14 21:49:48.000000000 +0900
++++ build.sh	2014-05-22 11:58:57.000000000 +0900
 @@ -1,7 +1,7 @@
  #!/bin/sh 
  
@@ -19,6 +19,15 @@
  *)
    # Assume Linux for the remaining variants
    case `arch` in
+@@ -261,7 +264,7 @@
+   echo "    64 bit coordinates enabled"
+ fi
+ 
+-gcc_path=`type gcc 2>/dev/null`
++gcc_path=`type $CC 2>/dev/null`
+ if [ "$gcc_path" = "" ]; then
+   echo "*** ERROR: unable to locate gcc in path"
+   exit 1
 @@ -284,11 +287,11 @@
    ;;
  esac

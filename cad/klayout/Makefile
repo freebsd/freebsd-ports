@@ -29,7 +29,8 @@ PLATFORMKEYWORD=freebsd-32-gcc-release
 
 do-build:
 	cd ${WRKSRC} && \
-	    ${SH} build.sh -platform ${PLATFORMKEYWORD} \
+	    ${SETENV} CC=${CC} CXX=${CXX} \
+		${SH} build.sh -platform ${PLATFORMKEYWORD} \
 		-qtbin ${QT_PREFIX}/bin \
 		-qtinc ${QT_INCDIR} \
 		-qtlib ${QT_LIBDIR}
