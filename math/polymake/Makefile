@@ -47,6 +47,8 @@ NO_STAGE=	yes
 .if ${PERL_LEVEL} >= 501400
 IGNORE=		does not build with Perl 5.14+
 .endif
+DEPRECATED=	Does not build with any supported version of Perl
+EXPIRATION_DATE=	2014-06-22
 
 pre-fetch:
 	@if [ ${MAKE_JOBS_NUMBER} -gt 1 ]; then \
