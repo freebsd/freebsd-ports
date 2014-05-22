@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	0.11.2
+PORTVERSION=	0.12.5
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -25,8 +25,7 @@ LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264 \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_PYTHON=	yes
 USE_XORG=	x11 xtst xfixes xcomposite xdamage xrandr
 
