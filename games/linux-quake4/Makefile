@@ -3,6 +3,7 @@
 
 PORTNAME=	quake4
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|quake4/linux/|} \
@@ -29,7 +30,6 @@ GERMANY_DESC=	Germany version
 
 OPTIONS_DEFAULT=	THREADS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
@@ -58,48 +58,48 @@ do-build:
 
 do-install:
 	# Executables
-	@${MKDIR} ${PREFIX}/${Q4DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${Q4DIR}
 .for FILE in quake4 q4ded
-	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}${FILE}.sh ${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 ${PREFIX}/${Q4DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}${FILE}.sh ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 ${STAGEDIR}${PREFIX}/${Q4DIR}
 .endfor
 .if ${PORT_OPTIONS:MTHREADS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}quake4smp.sh ${PREFIX}/bin/${PKGNAMEPREFIX}quake4smp
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/quake4smp.x86 ${PREFIX}/${Q4DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}quake4smp.sh ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}quake4smp
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/quake4smp.x86 ${STAGEDIR}${PREFIX}/${Q4DIR}
 .endif
 
 	# Punkbuster
-	@${MKDIR} ${PREFIX}/${Q4DIR}/pb/htm
-	@${MKDIR} ${PREFIX}/${Q4DIR}/q4base
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${Q4DIR}/pb/htm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${Q4DIR}/q4base
 	@cd ${WRKSRC} && \
 		${FIND} -E pb -type f -iregex ".*\.(so)" \
-			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \; && \
+			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \; && \
 		${FIND} -E pb/htm -type f -iregex ".*\.(htm)" \
-			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
+			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
 	# Q4base
 	 @cd ${WRKSRC} && \
 		${FIND} -E q4base -type f -iregex ".*\.(cfg|scriptcfg|pk4|off)" \
-			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
+			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
 
 	# All version (except germany) or only germany version
 .if ${PORT_OPTIONS:MGERMANY}
 	@cd ${WRKSRC}/germany && \
 		${FIND} -E q4base -type f -iregex ".*\.(pk4)" \
-			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
+			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
 .else
 	@cd ${WRKSRC}/us && \
 		${FIND} -E q4base -type f -iregex ".*\.(pk4)" \
-			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
+			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
 .endif
 
 	# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/Docs && \
-		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
-	${INSTALL_DATA} ${WRKSRC}/License.txt ${DOCSDIR}/LICENSE && \
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README && \
-	${INSTALL_DATA} ${WRKSRC}/pb/PBEULA.txt ${DOCSDIR}/PBEULA
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
+	${INSTALL_DATA} ${WRKSRC}/License.txt ${STAGEDIR}${DOCSDIR}/LICENSE && \
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README && \
+	${INSTALL_DATA} ${WRKSRC}/pb/PBEULA.txt ${STAGEDIR}${DOCSDIR}/PBEULA
 .endif
 
 post-install:
