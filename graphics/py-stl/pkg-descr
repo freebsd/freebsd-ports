@@ -8,4 +8,4 @@ stl2pdf: Creates a view of the STL model as a PDF. Requires graphics/py-cairo
 sltinfo: Either displays some information about a STL file or prints it in
 text format.
 
-WWW: http://rsmith.home.xs4all.nl/software/index.html
+WWW: http://rsmith.home.xs4all.nl/software/py-stl-stl2pov.html
