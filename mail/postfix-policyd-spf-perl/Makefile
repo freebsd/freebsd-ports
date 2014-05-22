@@ -2,22 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	postfix-policyd-spf-perl
-PORTVERSION=	2.007
+PORTVERSION=	2.010
 CATEGORIES=	mail
-MASTER_SITES=	http://www.openspf.org/blobs/
+MASTER_SITES=	https://launchpadlibrarian.net/107864701/
 
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	SPF policy service for Postfix written in Perl
 
-RUN_DEPENDS=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF \
+RUN_DEPENDS=	p5-Mail-SPF>=2.006:${PORTSDIR}/mail/p5-Mail-SPF \
 		p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-Sys-Hostname-Long>=0:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
 		p5-version>=0:${PORTSDIR}/devel/p5-version
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
 
-PLIST_FILES=	sbin/postfix-policyd-spf-perl
+PLIST_FILES=	libexec/postfix-policyd-spf-perl
+SHEBANG_FILES=	postfix-policyd-spf-perl
 
 SUB_LIST=	PREFIX=${PREFIX}
 SUB_FILES=	pkg-message
@@ -42,6 +44,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '${REINPLACE}' ${WRKSRC}/postfix-policyd-spf-perl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/postfix-policyd-spf-perl ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/postfix-policyd-spf-perl ${STAGEDIR}${PREFIX}/libexec
 
 .include <bsd.port.mk>
