@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=
 
-STRIP_FILES=	construct_mohawk create_sjisfnt decine decompile degob dekyra \
+STRIP_FILES=	construct_mohawk create_sjisfnt decine degob dekyra \
 		deriven descumm desword2 extract_mohawk gob_loadcalc \
 		scummvm-tools-cli
 
