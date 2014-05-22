@@ -3588,6 +3588,7 @@
     SUBDIR += py-cxx
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
+    SUBDIR += py-daemons
     SUBDIR += py-dal
     SUBDIR += py-darcsver
     SUBDIR += py-dateutil
