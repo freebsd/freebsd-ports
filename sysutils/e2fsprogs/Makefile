@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.42.9
+PORTVERSION=	1.42.10
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -13,12 +13,12 @@ COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 LICENSE=	GPLv2
 
 PATCH_STRIP=	-p1
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:xz
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
+		--enable-quota \
 		--with-root-prefix='${PREFIX}'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
@@ -76,7 +76,7 @@ post-patch::
 # disable f_mmp_garbage, fails on FreeBSD, and the resize*big_expand tests,
 # which are too unwieldy to run automatically (need too much free space).
 # f_extent_oobounds fails in Tinderbox and is fine outside, reason unclear.
-.for i in f_mmp_garbage f_extent_oobounds r_64bit_big_expand r_bigalloc_big_expand r_ext4_big_expand m_bigjournal
+.for i in f_mmp_garbage m_bigjournal r_64bit_big_expand r_bigalloc_big_expand r_ext4_big_expand
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
 .endfor
 
