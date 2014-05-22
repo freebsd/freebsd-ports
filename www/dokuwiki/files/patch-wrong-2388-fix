@@ -1,0 +1,11 @@
+--- ./inc/httputils.php.orig	2014-05-05 13:53:23.000000000 -0700
++++ ./inc/httputils.php	2014-05-22 15:24:54.000000000 -0700
+@@ -80,8 +80,6 @@
+         ob_end_clean();
+         exit;
+     }elseif($conf['xsendfile'] == 3){
+-        // FS#2388 nginx just needs the relative path.
+-        $file = DOKU_REL.substr($file, strlen(fullpath(DOKU_INC)) + 1);
+         header("X-Accel-Redirect: $file");
+         ob_end_clean();
+         exit;
