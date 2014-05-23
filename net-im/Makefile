@@ -162,7 +162,6 @@
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-sofiasip
     SUBDIR += tkabber
-    SUBDIR += tkabber-devel
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur
     SUBDIR += tox
