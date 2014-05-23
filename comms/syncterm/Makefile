@@ -16,13 +16,10 @@ WRKSRC=		${WRKDIR}/syncterm-${PORTVER}
 USES=		gmake
 MAKEFILE=	GNUmakefile
 PORTVER=	20110320
-MAN1=		syncterm.1
-MANCOMPRESSED=	yes
 
 OPTIONS_DEFINE=	X11 SDL DEBUG
 OPTIONS_DEFAULT=	X11 SDL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ONLY_FOR_ARCHS=		i386 amd64
