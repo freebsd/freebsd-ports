@@ -19,9 +19,19 @@ rcvar=collectdmon_enable
 
 command=%%PREFIX%%/sbin/${name}
 
+_dbdir=/var/db/collectd
+start_precmd="collectd_prepcmd"
+
 load_rc_config $name
 
 : ${collectdmon_enable="NO"}
 : ${collectdmon_flags="-c %%PREFIX%%/sbin/collectd"}
+
+collectd_prepcmd()
+{
+	if [ ! -d ${_dbdir} ] ; then
+		mkdir -p ${_dbdir}
+	fi
+}
 
 run_rc_command "$1"
