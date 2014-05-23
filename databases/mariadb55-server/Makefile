@@ -22,7 +22,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb55-client
-USES=		cmake gmake shebangfix
+USES=		cmake shebangfix
 SHEBANG_FILES=	scripts/*.sh
 NO_OPTIONS_SORT=yes
 
