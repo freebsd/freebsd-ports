@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xmlada
-PORTVERSION=	4.4.2.0
+PORTVERSION=	4.5.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
-DISTNAME=	xmlada-gpl-${YEAR}-src
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore XML suite for the Ada language
@@ -13,11 +12,10 @@ COMMENT=	Adacore XML suite for the Ada language
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USES=		ada gmake
-YEAR=		2014
-NO_MTREE=	yes
+USES=		ada gmake tar:bzip2
 MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER}
-WRKSRC=		${WRKDIR}/xmlada-${YEAR}-src
+ALL_TARGET=	static relocatable
+PLIST_SUB+=	LIBVER=4.5.0w
 
 OPTIONS_DEFINE=	DOCS
 
@@ -25,6 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+ALL_TARGET+=	docs
 .endif
 
 # Link options were added for sax, dom, schema, and input_sources libraries
@@ -40,9 +39,6 @@ post-patch:
 	  ${WRKSRC}/dom/dom.gpr \
 	  ${WRKSRC}/schema/schema.gpr \
 	  ${WRKSRC}/input_sources/input_sources.gpr
-.if ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's/^all: \(.*\)/all: \1 docs/g' ${WRKSRC}/Makefile.in
-.endif
 
 do-build:
 	# Override build target to avoid -jX getting passed to makefile
