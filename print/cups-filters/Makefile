@@ -21,6 +21,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
+MAKE_JOBS_UNSAFE=YES
 USES=		compiler:c++11-lib pathfix pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	filter/textonly
 USE_GNOME=	glib20
