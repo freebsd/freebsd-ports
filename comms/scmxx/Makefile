@@ -16,12 +16,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		scmxx.1
-MANLANG=	"" ru de it
 DOCS=		README docs/*.txt
 EXAMPLES=	sms.txt vCalendar.vcs vCard.vcf
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -32,11 +28,11 @@ post-patch:
 		${REINPLACE_CMD} -e "s|CFLAGS=|CFLAGS+=|g"
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
