@@ -3,6 +3,7 @@
 
 PORTNAME=	rxtx
 PORTVERSION=	2.2p2
+PORTREVISION=	1
 CATEGORIES=	comms java
 MASTER_SITES=	http://rxtx.qbang.org/pub/rxtx/ \
 		ftp://jarvi.dsl.frii.com/pub/rxtx/
