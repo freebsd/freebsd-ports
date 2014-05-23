@@ -3,280 +3,282 @@ bin/docear
 share/applications/docear.desktop
 share/docear/docear-icon48x48.png
 @dirrm share/docear
-share/java/docear/core/org.freeplane.core/lib/commons-io-2.4.jar
-share/java/docear/core/org.freeplane.core/lib/commons-lang-2.0.jar
-share/java/docear/core/org.freeplane.core/lib/flamingo-6.3-javadoc.jar
-share/java/docear/core/org.freeplane.core/lib/flamingo-6.3-sources.jar
-share/java/docear/core/org.freeplane.core/lib/flamingo-6.3.jar
-share/java/docear/core/org.freeplane.core/lib/forms-1.2.1.jar
-share/java/docear/core/org.freeplane.core/lib/freeplaneeditor.jar
-share/java/docear/core/org.freeplane.core/lib/freeplanemac.jar
-share/java/docear/core/org.freeplane.core/lib/freeplaneosgi.jar
-share/java/docear/core/org.freeplane.core/lib/freeplaneviewer.jar
-share/java/docear/core/org.freeplane.core/lib/gnu-regexp-1.1.4.jar
-share/java/docear/core/org.freeplane.core/lib/jortho.jar
-share/java/docear/core/org.freeplane.core/lib/SimplyHTML.jar
-share/java/docear/core/org.freeplane.core/lib/substance-6.3-javadoc.jar
-share/java/docear/core/org.freeplane.core/lib/substance-6.3-sources.jar
-share/java/docear/core/org.freeplane.core/lib/substance-6.3.jar
-share/java/docear/core/org.freeplane.core/lib/substance-flamingo-6.3-javadoc.jar
-share/java/docear/core/org.freeplane.core/lib/substance-flamingo-6.3-sources.jar
-share/java/docear/core/org.freeplane.core/lib/substance-flamingo-6.3.jar
-share/java/docear/core/org.freeplane.core/lib/substance-swingx-6.3-javadoc.jar
-share/java/docear/core/org.freeplane.core/lib/substance-swingx-6.3-sources.jar
-share/java/docear/core/org.freeplane.core/lib/substance-swingx-6.3.jar
-share/java/docear/core/org.freeplane.core/lib/trident.jar
-share/java/docear/core/org.freeplane.core/META-INF/MANIFEST.MF
-share/java/docear/doc/docear-welcome.mm
-share/java/docear/doc/examplepicture_nl.JPG
-share/java/docear/doc/FilterConsumer.jpg
-share/java/docear/doc/FilterConsumerEnd.jpg
-share/java/docear/doc/FilterConsumerUnfold.jpg
-share/java/docear/doc/freeplane.jpg
-share/java/docear/doc/freeplane.mm
-share/java/docear/doc/freeplaneApplications.mm
-share/java/docear/doc/freeplaneApplications_ja.mm
-share/java/docear/doc/freeplaneApplications_nl.mm
-share/java/docear/doc/freeplaneFunctions.mm
-share/java/docear/doc/freeplaneFunctions_ja.mm
-share/java/docear/doc/freeplaneFunctions_nl.mm
-share/java/docear/doc/freeplaneTutorial.jpg
-share/java/docear/doc/freeplaneTutorial.mm
-share/java/docear/doc/freeplaneTutorial.mmfilter
-share/java/docear/doc/freeplaneTutorial_ja.mm
-share/java/docear/doc/freeplaneTutorial_ja.mmfilter
-share/java/docear/doc/freeplaneTutorial_nl.jpg
-share/java/docear/doc/freeplaneTutorial_nl.mm
-share/java/docear/doc/freeplaneTutorial_nl.mmfilter
-share/java/docear/doc/freeplane_de.mm
-share/java/docear/doc/freeplane_es.mm
-share/java/docear/doc/freeplane_et.mm
-share/java/docear/doc/freeplane_fr.mm
-share/java/docear/doc/freeplane_functionality_nl.jpg
-share/java/docear/doc/freeplane_functionality_nl.mm
-share/java/docear/doc/freeplane_id.mm
-share/java/docear/doc/freeplane_it.mm
-share/java/docear/doc/freeplane_ja.mm
-share/java/docear/doc/freeplane_menuposition_nl.jpg
-share/java/docear/doc/freeplane_nl.jpg
-share/java/docear/doc/freeplane_ru.mm
-share/java/docear/doc/freeplane_vi.mm
-share/java/docear/doc/history_en.txt
-share/java/docear/doc/Images/doc/BackgroundContextMenu.png
-share/java/docear/doc/Images/doc/BackgroundContextMenu_nl.png
-share/java/docear/doc/Images/doc/freeplaneApplications.png
-share/java/docear/doc/Images/doc/HotKeysTable.png
-share/java/docear/doc/Images/doc/HotKeysTable_nl.png
-share/java/docear/doc/Images/doc/In-lineEditContextMenu.png
-share/java/docear/doc/Images/doc/MenusPropertiesPanel.png
-share/java/docear/doc/Images/doc/MenusPropertiesPanel_nl.png
-share/java/docear/doc/Images/doc/NodeContextMenu.png
-share/java/docear/doc/Images/key/alt.png
-share/java/docear/doc/Images/key/ctrl.png
-share/java/docear/doc/Images/key/delete.png
-share/java/docear/doc/Images/key/down.png
-share/java/docear/doc/Images/key/end.png
-share/java/docear/doc/Images/key/enter.png
-share/java/docear/doc/Images/key/esc.png
-share/java/docear/doc/Images/key/F1.png
-share/java/docear/doc/Images/key/F2.png
-share/java/docear/doc/Images/key/home.png
-share/java/docear/doc/Images/key/Ins.png
-share/java/docear/doc/Images/key/insert.png
-share/java/docear/doc/Images/key/left.png
-share/java/docear/doc/Images/key/pgdn.png
-share/java/docear/doc/Images/key/pgup.png
-share/java/docear/doc/Images/key/right.png
-share/java/docear/doc/Images/key/shift.png
-share/java/docear/doc/Images/key/space.png
-share/java/docear/doc/Images/key/tab.png
-share/java/docear/doc/Images/key/up.png
-share/java/docear/doc/Images/mouse/mouse.png
-share/java/docear/doc/Images/mouse/mouse_LB.png
-share/java/docear/doc/Images/mouse/mouse_LB_2x.png
-share/java/docear/doc/Images/mouse/mouse_RB.png
-share/java/docear/doc/Images/mouse/mouse_SB_click.png
-share/java/docear/doc/Images/mouse/mouse_SB_scroll.png
-share/java/docear/docear.png
-share/java/docear/docear.sh
-share/java/docear/docearConsole.exe
-share/java/docear/framework.jar
-share/java/docear/freeplanelauncher.jar
-share/java/docear/gitinfo.txt
-share/java/docear/init.xargs
-share/java/docear/license.txt
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/JabRef-2.7.1.jar
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.core/plugin.xml
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/build.xml
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/plugin.xml
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.article.layout
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.begin.layout
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.book.layout
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.end.layout
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.layout
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/readme.txt
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/readme.txt
-share/java/docear/plugins/org.docear.plugin.bibtex/lib/plugin.jar
-share/java/docear/plugins/org.docear.plugin.bibtex/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.docear.plugin.core/lib/commons-cli-1.2.jar
-share/java/docear/plugins/org.docear.plugin.core/lib/guava-14.0.1.jar
-share/java/docear/plugins/org.docear.plugin.core/lib/JHyperlink.jar
-share/java/docear/plugins/org.docear.plugin.core/lib/jna.jar
-share/java/docear/plugins/org.docear.plugin.core/lib/jpathwatch.jar
-share/java/docear/plugins/org.docear.plugin.core/lib/platform.jar
-share/java/docear/plugins/org.docear.plugin.core/lib/plugin.jar
-share/java/docear/plugins/org.docear.plugin.core/lib/swingworker-backport.jar
-share/java/docear/plugins/org.docear.plugin.core/license.txt
-share/java/docear/plugins/org.docear.plugin.core/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/docear-pdf-inspector.jar
-share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/iscwt.jar
-share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/isrt.jar
-share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jbig2.jar
-share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jPod.jar
-share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/plugin.jar
-share/java/docear/plugins/org.docear.plugin.pdfutilities/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.docear.plugin.services/lib/commons-codec-1.6.jar
-share/java/docear/plugins/org.docear.plugin.services/lib/commons-httpclient-3.1.jar
-share/java/docear/plugins/org.docear.plugin.services/lib/commons-logging-1.1.1.jar
-share/java/docear/plugins/org.docear.plugin.services/lib/jersey-apache-client-1.12.jar
-share/java/docear/plugins/org.docear.plugin.services/lib/jersey-client-1.12.jar
-share/java/docear/plugins/org.docear.plugin.services/lib/jersey-core-1.12.jar
-share/java/docear/plugins/org.docear.plugin.services/lib/jersey-multipart-1.12.jar
-share/java/docear/plugins/org.docear.plugin.services/lib/mimepull-1.3.jar
-share/java/docear/plugins/org.docear.plugin.services/lib/plugin.jar
-share/java/docear/plugins/org.docear.plugin.services/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.freeplane.plugin.bugreport/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.bugreport/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.freeplane.plugin.formula/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.formula/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.freeplane.plugin.latex/lib/COPYING
-share/java/docear/plugins/org.freeplane.plugin.latex/lib/jlatexmath.jar
-share/java/docear/plugins/org.freeplane.plugin.latex/lib/LICENSE
-share/java/docear/plugins/org.freeplane.plugin.latex/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.latex/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.freeplane.plugin.openmaps/lib/Gpl.txt
-share/java/docear/plugins/org.freeplane.plugin.openmaps/lib/JMapViewer.jar
-share/java/docear/plugins/org.freeplane.plugin.openmaps/lib/JMapViewer_src.jar
-share/java/docear/plugins/org.freeplane.plugin.openmaps/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.openmaps/lib/Readme.txt
-share/java/docear/plugins/org.freeplane.plugin.openmaps/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.freeplane.plugin.script/lib/groovy-all-LICENSE.txt
-share/java/docear/plugins/org.freeplane.plugin.script/lib/groovy-all.jar
-share/java/docear/plugins/org.freeplane.plugin.script/lib/jsyntaxpane.jar
-share/java/docear/plugins/org.freeplane.plugin.script/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.script/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-anim.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-awt-util.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-bridge.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-codec.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-css.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-dom.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-ext.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-extension.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-gui-util.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-gvt.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-parser.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-script.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-svg-dom.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-svggen.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-swing.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-transcoder.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-util.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-xml.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/js.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/pdf-transcoder.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/xerces_2_5_0.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/xml-apis-ext.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/lib/xml-apis.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.freeplane.plugin.workspace/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.workspace/META-INF/MANIFEST.MF
-share/java/docear/props.xargs
-share/java/docear/resources/gitinfo.properties
-share/java/docear/resources/ortho/dictionary_de.ortho
-share/java/docear/resources/ortho/dictionary_en.ortho
-share/java/docear/resources/ortho/dictionary_fr.ortho
-share/java/docear/resources/templates/conceptMap.mm
-share/java/docear/resources/templates/essay.mm
-share/java/docear/resources/templates/standard.mm
-share/java/docear/resources/xslt/mm2freeplane1_1-mm.xsl
-share/java/docear/resources/xslt/mm2html.xsl
-share/java/docear/resources/xslt/mm2latexartcl.xsl
-share/java/docear/resources/xslt/mm2latexbook.xsl
-share/java/docear/resources/xslt/mm2latexinput.xsl
-share/java/docear/resources/xslt/mm2msp_utf8.xsl
-share/java/docear/resources/xslt/mm2msp_utf8_TEMPLATE.mm
-share/java/docear/resources/xslt/mm2mwiki.xsl
-share/java/docear/resources/xslt/mm2oowriter.manifest.xsl
-share/java/docear/resources/xslt/mm2oowriter.xsl
-share/java/docear/resources/xslt/mm2opml.xsl
-share/java/docear/resources/xslt/mm2raw.xsl
-share/java/docear/resources/xslt/mm2text.xsl
-share/java/docear/resources/xslt/mm2wordml_utf8.xsl
-share/java/docear/resources/xslt/mm2wordml_utf8_TEMPLATE.mm
-share/java/docear/resources/xslt/mm2xbel.xsl
-share/java/docear/resources/xslt/mm2xls_utf8.xsl
-share/java/docear/resources/xslt/tohtml.xsl
-share/java/docear/resources/xslt/xbel2mm.xsl
-share/java/docear/scripts/apiGenerator.groovy
-share/java/docear/scripts/freeplane.dsld
-share/java/docear/scripts/installScriptAddOn.groovy
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/commons-io-2.4.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/commons-lang-2.0.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/flamingo-6.3-javadoc.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/flamingo-6.3-sources.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/flamingo-6.3.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/forms-1.2.1.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/freeplaneeditor.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/freeplanemac.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/freeplaneosgi.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/freeplaneviewer.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/gnu-regexp-1.1.4.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/jortho.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/SimplyHTML.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-6.3-javadoc.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-6.3-sources.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-6.3.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-flamingo-6.3-javadoc.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-flamingo-6.3-sources.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-flamingo-6.3.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-swingx-6.3-javadoc.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-swingx-6.3-sources.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/substance-swingx-6.3.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib/trident.jar
+%%JAVASHAREDIR%%/docear/core/org.freeplane.core/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/doc/docear-welcome.mm
+%%JAVASHAREDIR%%/docear/doc/examplepicture_nl.JPG
+%%JAVASHAREDIR%%/docear/doc/FilterConsumer.jpg
+%%JAVASHAREDIR%%/docear/doc/FilterConsumerEnd.jpg
+%%JAVASHAREDIR%%/docear/doc/FilterConsumerUnfold.jpg
+%%JAVASHAREDIR%%/docear/doc/freeplane.jpg
+%%JAVASHAREDIR%%/docear/doc/freeplane.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneApplications.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneApplications_ja.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneApplications_nl.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneFunctions.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneFunctions_ja.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneFunctions_nl.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneTutorial.jpg
+%%JAVASHAREDIR%%/docear/doc/freeplaneTutorial.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneTutorial.mmfilter
+%%JAVASHAREDIR%%/docear/doc/freeplaneTutorial_ja.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneTutorial_ja.mmfilter
+%%JAVASHAREDIR%%/docear/doc/freeplaneTutorial_nl.jpg
+%%JAVASHAREDIR%%/docear/doc/freeplaneTutorial_nl.mm
+%%JAVASHAREDIR%%/docear/doc/freeplaneTutorial_nl.mmfilter
+%%JAVASHAREDIR%%/docear/doc/freeplane_de.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_es.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_et.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_fr.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_functionality_nl.jpg
+%%JAVASHAREDIR%%/docear/doc/freeplane_functionality_nl.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_id.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_it.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_ja.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_menuposition_nl.jpg
+%%JAVASHAREDIR%%/docear/doc/freeplane_nl.jpg
+%%JAVASHAREDIR%%/docear/doc/freeplane_ru.mm
+%%JAVASHAREDIR%%/docear/doc/freeplane_vi.mm
+%%JAVASHAREDIR%%/docear/doc/history_en.txt
+%%JAVASHAREDIR%%/docear/doc/Images/doc/BackgroundContextMenu.png
+%%JAVASHAREDIR%%/docear/doc/Images/doc/BackgroundContextMenu_nl.png
+%%JAVASHAREDIR%%/docear/doc/Images/doc/freeplaneApplications.png
+%%JAVASHAREDIR%%/docear/doc/Images/doc/HotKeysTable.png
+%%JAVASHAREDIR%%/docear/doc/Images/doc/HotKeysTable_nl.png
+%%JAVASHAREDIR%%/docear/doc/Images/doc/In-lineEditContextMenu.png
+%%JAVASHAREDIR%%/docear/doc/Images/doc/MenusPropertiesPanel.png
+%%JAVASHAREDIR%%/docear/doc/Images/doc/MenusPropertiesPanel_nl.png
+%%JAVASHAREDIR%%/docear/doc/Images/doc/NodeContextMenu.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/alt.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/ctrl.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/delete.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/down.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/end.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/enter.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/esc.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/F1.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/F2.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/home.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/Ins.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/insert.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/left.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/pgdn.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/pgup.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/right.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/shift.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/space.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/tab.png
+%%JAVASHAREDIR%%/docear/doc/Images/key/up.png
+%%JAVASHAREDIR%%/docear/doc/Images/mouse/mouse.png
+%%JAVASHAREDIR%%/docear/doc/Images/mouse/mouse_LB.png
+%%JAVASHAREDIR%%/docear/doc/Images/mouse/mouse_LB_2x.png
+%%JAVASHAREDIR%%/docear/doc/Images/mouse/mouse_RB.png
+%%JAVASHAREDIR%%/docear/doc/Images/mouse/mouse_SB_click.png
+%%JAVASHAREDIR%%/docear/doc/Images/mouse/mouse_SB_scroll.png
+%%JAVASHAREDIR%%/docear/docear.png
+%%JAVASHAREDIR%%/docear/docear.sh
+%%JAVASHAREDIR%%/docear/docearConsole.exe
+%%JAVASHAREDIR%%/docear/framework.jar
+%%JAVASHAREDIR%%/docear/freeplanelauncher.jar
+%%JAVASHAREDIR%%/docear/gitinfo.txt
+%%JAVASHAREDIR%%/docear/init.xargs
+%%JAVASHAREDIR%%/docear/license.txt
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/docear-metadata-lib-0.0.1.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/JabRef-2.7.1.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.core/plugin.xml
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/build.xml
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/plugin.xml
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.article.layout
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.begin.layout
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.book.layout
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.end.layout
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/misq.layout
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/readme.txt
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/readme.txt
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/slf4j-jdk14-1.7.6.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib/commons-cli-1.2.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib/guava-14.0.1.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib/JHyperlink.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib/jna.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib/jpathwatch.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib/platform.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib/swingworker-backport.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/license.txt
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/docear-pdf-inspector.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/iscwt.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/isrt.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jbig2.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jPod.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/commons-codec-1.6.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/commons-httpclient-3.1.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/commons-logging-1.1.1.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/jersey-apache-client-1.12.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/jersey-client-1.12.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/jersey-core-1.12.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/jersey-multipart-1.12.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/mimepull-1.3.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.bugreport/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.bugreport/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.formula/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.formula/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.latex/lib/COPYING
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.latex/lib/jlatexmath.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.latex/lib/LICENSE
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.latex/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.latex/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps/lib/Gpl.txt
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps/lib/JMapViewer.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps/lib/JMapViewer_src.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps/lib/Readme.txt
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script/lib/groovy-all-LICENSE.txt
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script/lib/groovy-all.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script/lib/jsyntaxpane.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-anim.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-awt-util.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-bridge.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-codec.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-css.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-dom.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-ext.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-extension.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-gui-util.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-gvt.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-parser.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-script.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-svg-dom.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-svggen.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-swing.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-transcoder.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-util.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/batik-xml.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/js.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/pdf-transcoder.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/xerces_2_5_0.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/xml-apis-ext.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib/xml-apis.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.workspace/lib/plugin.jar
+%%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.workspace/META-INF/MANIFEST.MF
+%%JAVASHAREDIR%%/docear/props.xargs
+%%JAVASHAREDIR%%/docear/resources/gitinfo.properties
+%%JAVASHAREDIR%%/docear/resources/ortho/dictionary_de.ortho
+%%JAVASHAREDIR%%/docear/resources/ortho/dictionary_en.ortho
+%%JAVASHAREDIR%%/docear/resources/ortho/dictionary_fr.ortho
+%%JAVASHAREDIR%%/docear/resources/templates/conceptMap.mm
+%%JAVASHAREDIR%%/docear/resources/templates/essay.mm
+%%JAVASHAREDIR%%/docear/resources/templates/standard.mm
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2freeplane1_1-mm.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2html.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2latexartcl.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2latexbook.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2latexinput.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2msp_utf8.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2msp_utf8_TEMPLATE.mm
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2mwiki.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2oowriter.manifest.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2oowriter.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2opml.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2raw.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2text.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2wordml_utf8.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2wordml_utf8_TEMPLATE.mm
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2xbel.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2xls_utf8.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/tohtml.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/xbel2mm.xsl
+%%JAVASHAREDIR%%/docear/scripts/apiGenerator.groovy
+%%JAVASHAREDIR%%/docear/scripts/freeplane.dsld
+%%JAVASHAREDIR%%/docear/scripts/installScriptAddOn.groovy
 share/mime/packages/docear.xml
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrm share/java/docear/scripts
-@dirrm share/java/docear/resources/xslt
-@dirrm share/java/docear/resources/templates
-@dirrm share/java/docear/resources/ortho
-@dirrm share/java/docear/resources
-@dirrm share/java/docear/plugins/org.freeplane.plugin.workspace/META-INF
-@dirrm share/java/docear/plugins/org.freeplane.plugin.workspace/lib
-@dirrm share/java/docear/plugins/org.freeplane.plugin.workspace
-@dirrm share/java/docear/plugins/org.freeplane.plugin.svg/META-INF
-@dirrm share/java/docear/plugins/org.freeplane.plugin.svg/lib
-@dirrm share/java/docear/plugins/org.freeplane.plugin.svg
-@dirrm share/java/docear/plugins/org.freeplane.plugin.script/META-INF
-@dirrm share/java/docear/plugins/org.freeplane.plugin.script/lib
-@dirrm share/java/docear/plugins/org.freeplane.plugin.script
-@dirrm share/java/docear/plugins/org.freeplane.plugin.openmaps/META-INF
-@dirrm share/java/docear/plugins/org.freeplane.plugin.openmaps/lib
-@dirrm share/java/docear/plugins/org.freeplane.plugin.openmaps
-@dirrm share/java/docear/plugins/org.freeplane.plugin.latex/META-INF
-@dirrm share/java/docear/plugins/org.freeplane.plugin.latex/lib
-@dirrm share/java/docear/plugins/org.freeplane.plugin.latex
-@dirrm share/java/docear/plugins/org.freeplane.plugin.formula/META-INF
-@dirrm share/java/docear/plugins/org.freeplane.plugin.formula/lib
-@dirrm share/java/docear/plugins/org.freeplane.plugin.formula
-@dirrm share/java/docear/plugins/org.freeplane.plugin.bugreport/META-INF
-@dirrm share/java/docear/plugins/org.freeplane.plugin.bugreport/lib
-@dirrm share/java/docear/plugins/org.freeplane.plugin.bugreport
-@dirrm share/java/docear/plugins/org.docear.plugin.services/META-INF
-@dirrm share/java/docear/plugins/org.docear.plugin.services/lib
-@dirrm share/java/docear/plugins/org.docear.plugin.services
-@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/META-INF
-@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod
-@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib
-@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities
-@dirrm share/java/docear/plugins/org.docear.plugin.core/META-INF
-@dirrm share/java/docear/plugins/org.docear.plugin.core/lib
-@dirrm share/java/docear/plugins/org.docear.plugin.core
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/META-INF
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.core
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex
-@dirrm share/java/docear/plugins
-@dirrm share/java/docear/doc/Images/mouse
-@dirrm share/java/docear/doc/Images/key
-@dirrm share/java/docear/doc/Images/doc
-@dirrm share/java/docear/doc/Images
-@dirrm share/java/docear/doc
-@dirrm share/java/docear/core/org.freeplane.core/META-INF
-@dirrm share/java/docear/core/org.freeplane.core/lib
-@dirrm share/java/docear/core/org.freeplane.core
-@dirrm share/java/docear/core
-@dirrm share/java/docear
+@dirrm %%JAVASHAREDIR%%/docear/scripts
+@dirrm %%JAVASHAREDIR%%/docear/resources/xslt
+@dirrm %%JAVASHAREDIR%%/docear/resources/templates
+@dirrm %%JAVASHAREDIR%%/docear/resources/ortho
+@dirrm %%JAVASHAREDIR%%/docear/resources
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.workspace/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.workspace/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.workspace
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.svg
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.openmaps
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.latex/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.latex/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.latex
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.formula/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.formula/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.formula
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.bugreport/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.bugreport/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.bugreport
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.core
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex/lib
+@dirrm %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.bibtex
+@dirrm %%JAVASHAREDIR%%/docear/plugins
+@dirrm %%JAVASHAREDIR%%/docear/doc/Images/mouse
+@dirrm %%JAVASHAREDIR%%/docear/doc/Images/key
+@dirrm %%JAVASHAREDIR%%/docear/doc/Images/doc
+@dirrm %%JAVASHAREDIR%%/docear/doc/Images
+@dirrm %%JAVASHAREDIR%%/docear/doc
+@dirrm %%JAVASHAREDIR%%/docear/core/org.freeplane.core/META-INF
+@dirrm %%JAVASHAREDIR%%/docear/core/org.freeplane.core/lib
+@dirrm %%JAVASHAREDIR%%/docear/core/org.freeplane.core
+@dirrm %%JAVASHAREDIR%%/docear/core
+@dirrm %%JAVASHAREDIR%%/docear
