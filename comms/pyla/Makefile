@@ -22,7 +22,6 @@ DATADIR=	${PREFIX}/lib/pyla
 USE_PYTHON=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:
@@ -43,9 +42,9 @@ pre-install:
 		${SED} -e "s:^${WRKSRC}:@dirrm lib/pyla:g" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL} -m755 ${WRKDIR}/pyla.sh ${PREFIX}/bin/pyla
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL} -m755 ${WRKDIR}/pyla.sh ${STAGEDIR}${PREFIX}/bin/pyla
 	${TAR} -C ${WRKSRC} --exclude CVS -cf - . | \
-		${TAR} -C ${DATADIR} --unlink -xf -
+		${TAR} -C ${STAGEDIR}${DATADIR} --unlink -xf -
 
 .include <bsd.port.post.mk>
