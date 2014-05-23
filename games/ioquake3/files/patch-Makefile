@@ -1,5 +1,4 @@
---- Makefile.orig	2009-04-22 20:54:48.000000000 +0200
-+++ Makefile	2011-11-04 20:42:56.000000000 +0100
+Index: Makefile
 @@ -187,6 +187,8 @@
    # FIXME: introduce CLIENT_CFLAGS
    SDL_CFLAGS=$(shell pkg-config --cflags sdl|sed 's/-Dmain=SDL_main//')
@@ -9,7 +8,7 @@
  endif
  
  # version info
-@@ -521,44 +523,25 @@
+@@ -521,44 +523,30 @@
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -39,16 +38,6 @@
 -    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -ffast-math -funroll-loops \
 -      -fomit-frame-pointer -fexpensive-optimizations
 -  else
--  ifeq ($(ARCH),i386)
--    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -mtune=pentiumpro \
--      -march=pentium -fomit-frame-pointer -pipe -ffast-math \
--      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
--      -funroll-loops -fstrength-reduce
--    HAVE_VM_COMPILED=true
--  else
--    BASE_CFLAGS += -DNO_VM_COMPILED
--  endif
--  endif
 +   ifndef HOMEPATH
 +     HOMEPATH = /.ioquake3
 +   endif
@@ -64,7 +53,19 @@
 +    -DDEFAULT_LIBDIR=\\\"$(DEFAULT_LIBDIR)\\\" \
 +    -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
 +  CLIENT_CFLAGS += $(SDL_CFLAGS)
-+  HAVE_VM_COMPILED = true
++  # disable vm on i386
+   ifeq ($(ARCH),i386)
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -mtune=pentiumpro \
+-      -march=pentium -fomit-frame-pointer -pipe -ffast-math \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -funroll-loops -fstrength-reduce
+-    HAVE_VM_COMPILED=true
++	BASE_CFLAGS += -DNO_VM_COMPILED
+   else
+-    BASE_CFLAGS += -DNO_VM_COMPILED
+-  endif
++    HAVE_VM_COMPILED = true
+   endif
  
 -  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
 +  OPTIMIZEVM = -O3 -funroll-loops -fomit-frame-pointer
@@ -72,7 +73,7 @@
  
    SHLIBEXT=so
    SHLIBCFLAGS=-fPIC
-@@ -568,20 +551,52 @@
+@@ -568,20 +556,52 @@
    # don't need -ldl (FreeBSD)
    LIBS=-lm
  
@@ -107,8 +108,8 @@
 +    ifneq ($(USE_LOCAL_HEADERS),1)
 +      CLIENT_CFLAGS += $(VORBIS_CFLAGS)
 +    endif
-   endif
- 
++  endif
++
 +  ifeq ($(BUILD_CLIENT),1)
 +    BASE_CFLAGS += $(CLIENT_CFLAGS)
 +  endif
@@ -123,15 +124,15 @@
 +    ifeq ($(CROSS_COMPILING),1)
 +      BASE_CFLAGS += -m64
 +    endif
-+  endif
-+
+   endif
+ 
 +  RELEASE_CFLAGS = $(BASE_CFLAGS)
 +  DEBUG_CFLAGS = $(BASE_CFLAGS) -g
 +
  else # ifeq freebsd
  
  #############################################################################
-@@ -1442,6 +1457,9 @@
+@@ -1442,6 +1462,9 @@
    ifeq ($(ARCH),x86_64)
      Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
    endif
@@ -141,7 +142,7 @@
    ifeq ($(ARCH),ppc)
      Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
    endif
-@@ -1591,6 +1609,9 @@
+@@ -1591,6 +1614,9 @@
    ifeq ($(ARCH),x86_64)
      Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/ded/vm_x86_64_assembler.o
    endif
