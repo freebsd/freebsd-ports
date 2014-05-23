@@ -25,7 +25,6 @@ CONFLICTS=      kicad-2013*
 DOCVERSION=	1.1
 LIBVERSION=	1.0
 
-USES=		tar:bzip2
 #USE_GMAKE=	yes
 USE_GL=		glew glu
 USE_WX=		2.8
@@ -40,7 +39,7 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 #USE_GCC=	yes
-USES=		cmake gettext
+USES=		tar:bzip2 cmake gettext
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DCMAKE_BUILD_TYPE="Debug" \
