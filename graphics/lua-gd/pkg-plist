@@ -1,4 +1,4 @@
-lib/lua/%%LUA_VER%%/gd.so
+%%LUA_MODLIBDIR%%/gd.so
 %%PORTDOCS%%%%DOCSDIR%%/cat.png
 %%PORTDOCS%%%%DOCSDIR%%/catdiff.png
 %%PORTDOCS%%%%DOCSDIR%%/catmsg.png
