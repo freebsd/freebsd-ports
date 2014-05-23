@@ -9,10 +9,9 @@ DISTNAME=	Nou-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Dropline Nou Icons for Gnome
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 WRKSRC=		"${WRKDIR}/Nou"
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/.icon-theme.cache
 
