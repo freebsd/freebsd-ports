@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rawtherapee
-PORTVERSION=	4.0.12
-PORTREVISION=	1
+PORTVERSION=	4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -38,7 +37,8 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 		-DDESKTOPDIR="${DESKTOPDIR}" \
 		-DDATADIR="${DATADIR}" \
 		-DCMAKE_C_FLAGS="${CFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}" \
-		-DCMAKE_CXX_FLAGS="${CXXFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}"
+		-DCMAKE_CXX_FLAGS="${CXXFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}" \
+		-DCACHE_NAME_SUFFIX="4.1"
 SUB_FILES=	rawtherapee
 SUB_LIST=	RTDIR="${RTDIR}"
 INSTALLS_ICONS=	yes
@@ -49,8 +49,6 @@ OPTIONS_DEFINE=		OPTIMIZED_CFLAGS OPENMP
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
 OPENMP_DESC=		Enable multicore processing using OpenMP
 OPTIMIZED_CFLAGS_DESC=	Use extra compiler optimizations (requires SSE support)
-
-#.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
