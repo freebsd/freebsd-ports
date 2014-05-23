@@ -3,7 +3,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
@@ -36,7 +36,7 @@ AUTOMAKE_ARGS+=	--add-missing
 
 OPTIONS_DEFINE=	IPAUTH USER_INDEX MODIFY_QUOTA DOMAIN_AUTOFILL \
 		IDX IDX_SQL HELP SPAM_DETECTION SPAM_NEEDS_EMAIL \
-		CATCHALL TRIVIAL_PASSWORD NOCACHE
+		CATCHALL TRIVIAL_PASSWORD NOCACHE CRACKLIB
 OPTIONS_DEFAULT=IPAUTH IDX_SQL USER_INDEX CATCHALL TRIVIAL_PASSWORD
 IPAUTH_DESC=		Check IP address after login
 USER_INDEX_DESC=	Enable user index display
@@ -50,6 +50,7 @@ SPAM_NEEDS_EMAIL_DESC=	Append user's email to spam command #'
 CATCHALL_DESC=		Enable catch-all accounts
 TRIVIAL_PASSWORD_DESC=	Disallow password containing username
 NOCACHE_DESC=		Prohibit caching via http headers
+CRACKLIB_DESC=		Use cracklib to enforce stronger passwords
 
 CONFIGURE_ARGS+=	\
 	--enable-qmaildir=${QMAIL_PREFIX} \
@@ -85,6 +86,15 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-ezmlm-idx7.patch
 
 .if ${PORT_OPTIONS:MSPAM_DETECTION} && defined(SPAM_COMMAND)
 CONFIGURE_ARGS+=	--enable-spam-command="${SPAM_COMMAND}"
+.endif
+
+.if ${PORT_OPTIONS:MCRACKLIB}
+EXTRA_PATCHES+=		${FILESDIR}/cracklib.patch
+BUILD_DEPENDS+=		${LOCALBASE}/include/crack.h:${PORTSDIR}/security/cracklib
+CONFIGURE_ARGS+=	--enable-cracklib=${LOCALBASE}/libdata/cracklib/pw_dict
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=       -L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LIBS="-lcrack"
 .endif
 
 # vpopmail installation directory

@@ -1,0 +1,78 @@
+--- ./configure.in.orig	2011-01-14 13:35:14.000000000 -0800
++++ ./configure.in	2014-05-22 21:51:26.000000000 -0700
+@@ -26,6 +26,7 @@
+ dnl Checks for libraries.
+ AC_CHECK_LIB(crypt,crypt)
+ AC_CHECK_LIB(shadow,crypt)
++AC_CHECK_LIB(crack,FascistCheck)
+ #AC_CHECK_LIB(m,floor)
+ #AC_CHECK_LIB(nsl, gethostbyaddr)
+ #AC_CHECK_LIB(socket, getsockname)
+@@ -421,6 +422,31 @@
+ AC_DEFINE_UNQUOTED(SPAM_COMMAND, "$spam_command","")
+ AC_SUBST(SPAM_COMMAND)
+ 
++cracklib=no
++AC_ARG_ENABLE(cracklib, [  --enable-cracklib=PATH     Path to cracklib dictionary.],
++    cracklib="$enableval",
++    [
++        if test "$cracklib" = ""
++        then
++            AC_MSG_ERROR([Unable to find your cracklib directory, specify --enable-cracklib.])
++        fi
++    ] )
++
++if test "$cracklib" = "yes"
++then
++	cracklib="/usr/local/libdata/cracklib/pw_dict"
++fi
++
++case $cracklib in
++0*|n*|N*)
++	echo "checking whether to use password checking... no"
++	;;
++*)
++	AC_DEFINE_UNQUOTED(CRACKLIB,"$cracklib","")
++	echo "checking whether to use password checking... yes"
++	;;
++esac
++
+ HELP=no
+ AC_ARG_ENABLE(help, [  --enable-help  Display help links on login page.],
+     HELP="$enableval",)
+@@ -485,4 +511,7 @@
+ then
+         echo "      spam command = "$spam_command""
+ fi
+-
++if test "$cracklib" != "no"
++then
++	echo "cracklib dictionary= "$cracklib""
++fi
+--- ./user.c.orig	2014-05-22 21:51:03.000000000 -0700
++++ ./user.c	2014-05-22 21:52:14.000000000 -0700
+@@ -47,6 +47,9 @@
+ #include "user.h"
+ #include "util.h"
+ #include "vauth.h"
++#ifdef CRACKLIB
++#	include </usr/local/include/crack.h>
++#endif
+ 
+ 
+ #define HOOKS 1
+@@ -800,6 +803,14 @@
+        exit(0);
+      }
+ #endif
++#ifdef CRACKLIB
++    if ((tmpstr = FascistCheck(Password1, CRACKLIB)) != NULL ) {
++       sprintf(StatusMessage, "Bad password - %s\n", tmpstr);
++       moduser();
++       vclose();
++       exit(0);
++    }
++#endif
+     ret_code = vpasswd( ActionUser, Domain, Password1, USE_POP);
+     if ( ret_code != VA_SUCCESS ) {
+       snprintf (StatusMessage, sizeof(StatusMessage), "%s (%s)", html_text[140], 
