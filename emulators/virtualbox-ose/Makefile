@@ -284,7 +284,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MPYTHON}
 	cd ${KMK_BUILDDIR}/bin/sdk/installer && \
-	    ${SETENV} VBOX_INSTALL_PATH="${PREFIX}/lib/virtualbox" VBOX_SDK_PATH="${DATADIR}/sdk" \
+	    ${SETENV} VBOX_INSTALL_PATH="${PREFIX}/lib/virtualbox" \
 	    ${PYTHON_CMD} vboxapisetup.py install --root=${STAGEDIR}
 
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom
