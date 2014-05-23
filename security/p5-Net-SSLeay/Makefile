@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to SSL
 
+LICENSE=	OPENSSL
+
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
