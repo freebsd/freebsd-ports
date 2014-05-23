@@ -431,6 +431,13 @@ lib/virtualbox/VBoxXPCOMIPCD
 @group
 @mode
 %%QT4%%lib/virtualbox/VirtualBox.so
+lib/virtualbox/sdk
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.html
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.rtf
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.txt
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack.xml
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/%%ARCH%%/VBoxVNC.so
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/%%ARCH%%/VBoxVNCMain.so
 %%GUESTADDITIONS%%lib/virtualbox/additions/VBoxGuestAdditions.iso
 %%GUESTADDITIONS%%lib/virtualbox/additions/VBoxGuestAdditions_%%GUEST_VER%%.iso
 %%PYTHON%%lib/virtualbox/VBoxPython%%PYTHON_VERU%%.so
@@ -443,12 +450,6 @@ lib/virtualbox/components/VBoxSVCM.so
 lib/virtualbox/components/VBoxXPCOMBase.xpt
 lib/virtualbox/components/VBoxXPCOMIPCC.so
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
-%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.html
-%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.rtf
-%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.txt
-%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack.xml
-%%VNC%%lib/virtualbox/ExtensionPacks/VNC/%%ARCH%%/VBoxVNC.so
-%%VNC%%lib/virtualbox/ExtensionPacks/VNC/%%ARCH%%/VBoxVNCMain.so
 %%QT4%%share/applications/virtualbox.desktop
 %%MANUAL%%%%DOCSDIR%%/UserManual.pdf
 %%MANUAL%%%%DOCSDIR%%/UserManual_fr_FR.pdf
@@ -614,6 +615,7 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%DATADIR%%/samples/Makefile
 %%DATADIR%%/samples/tstVBoxAPIXPCOM.cpp
 %%WEBSERVICE%%%%DATADIR%%/sdk/bindings/webservice/vboxweb.wsdl
+%%PYTHON%%%%DATADIR%%/sdk/bindings/xpcom/python/xpcom
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi/VirtualBox_constants.py
@@ -653,9 +655,11 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/xpcom/client
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/xpcom
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vboxapi
+%%PYTHON%%@dirrm %%DATADIR%%/sdk/bindings/xpcom/python
+%%PYTHON%%@dirrm %%DATADIR%%/sdk/bindings/xpcom
 %%WEBSERVICE%%@dirrm %%DATADIR%%/sdk/bindings/webservice
-%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk/bindings
-%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk
+@dirrmtry %%DATADIR%%/sdk/bindings
+@dirrmtry %%DATADIR%%/sdk
 @dirrm %%DATADIR%%/samples
 %%NLS%%@dirrm %%DATADIR%%/nls
 @dirrm %%DATADIR%%/idl
