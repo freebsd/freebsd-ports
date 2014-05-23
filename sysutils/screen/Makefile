@@ -18,6 +18,8 @@ MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
 
+LICENSE=	GPLv3
+
 OPTIONS_DEFINE=	INFO MAN NETHACK XTERM_256 SHOWENC
 OPTIONS_DEFAULT=	INFO MAN NETHACK XTERM_256
 INFO_DESC=		Build and install info documentation
