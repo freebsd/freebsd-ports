@@ -10,8 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	spolyack@collaborativefusion.com
 COMMENT=	CLI to manage IPMI systems
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		tar:bzip2 gmake
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-intf-lan --enable-intf-lanplus \
