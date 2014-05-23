@@ -1,5 +1,5 @@
---- config.orig	2007-12-10 16:42:38.000000000 +0900
-+++ config	2007-12-10 16:42:28.000000000 +0900
+--- config.orig	2014-05-24 01:20:21.775436051 +0800
++++ config	2014-05-24 01:21:11.668434549 +0800
 @@ -1,9 +1,9 @@
  #############################################################
  #Linux/BSD/Mac
@@ -14,7 +14,7 @@
  # For Mac OS, comment the above line and uncomment this one
  #JDK=/Library/Java/Home
  
-@@ -23,7 +23,7 @@
+@@ -23,13 +23,13 @@ LIB_OPTION= -shared
  #LIB_OPTION= -dynamiclib -all_load
  
  ## On FreeBSD and Mac OS systems, the following line should be commented
@@ -22,4 +22,12 @@
 +#DLLIB= -ldl
  
  WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings
- INCS= -I$(JDK)/include -I$(JDK)/include/linux -I$(LUA_INCLUDES)
+-INCS= -I$(JDK)/include -I$(JDK)/include/linux -I$(LUA_INCLUDES)
++INCS= -I$(JDK)/include -I$(JDK)/include/freebsd -I$(LUA_INCLUDES)
+ CFLAGS= $(WARN) $(INCS)
+ 
+-CC= gcc
++#CC= gcc
+ 
+ 
+ #########################################################
