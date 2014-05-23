@@ -17,14 +17,12 @@ WRKSRC=		${WRKDIR}/VideoThumbnail
 
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/apps
-	@${CP} -r ${WRKSRC} ${PREFIX}/apps/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/VideoThumbnail
+	@${MKDIR} ${STAGEDIR}${PREFIX}/apps
+	${CP} -r ${WRKSRC} ${STAGEDIR}${PREFIX}/apps/
 
 .include <bsd.port.mk>
