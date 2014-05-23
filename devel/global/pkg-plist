@@ -14,11 +14,15 @@ bin/htags
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 lib/gtags/exuberant-ctags.a
-lib/gtags/exuberant-ctags.la
 lib/gtags/exuberant-ctags.so
 lib/gtags/user-custom.a
-lib/gtags/user-custom.la
 lib/gtags/user-custom.so
+man/man1/global.1.gz
+man/man1/globash.1.gz
+man/man1/gozilla.1.gz
+man/man1/gtags-cscope.1.gz
+man/man1/gtags.1.gz
+man/man1/htags.1.gz
 share/gtags/BOKIN_MODEL
 share/gtags/BOKIN_MODEL_FAQ
 share/gtags/BUILD_TOOLS

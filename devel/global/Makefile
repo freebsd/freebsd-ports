@@ -3,6 +3,7 @@
 
 PORTNAME=	global
 PORTVERSION=	6.2.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -10,21 +11,19 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
-USES=		perl5
+USES=		perl5 libtool
 
-MAN1=		global.1 globash.1 gozilla.1 gtags.1 gtags-cscope.1 htags.1
 INFO=		global
 
 DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E 's,^(gtags_DATA = )AUTHORS .* THANKS( \\$$),\1\2,' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 # This target is only meant to be used by the port maintainer.
