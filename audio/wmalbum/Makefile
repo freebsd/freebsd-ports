@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp to display album covers for XMMS
 
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \

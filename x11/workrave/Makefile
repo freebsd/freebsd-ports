@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSI prevention tool
 
 BUILD_DEPENDS=	gdome-config:${PORTSDIR}/textproc/gdome2
