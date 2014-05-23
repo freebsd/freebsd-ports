@@ -221,11 +221,6 @@ post-patch:
 	@${ECHO} 'VBOX_PATH_GSOAP_IMPORT = ${PREFIX}/share/gsoap/import' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $(VBOX_GCC_WARN) -Wno-long-long' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-.if empty(PORT_OPTIONS:MX11)
-	@${ECHO} 'VBOX_WITH_VDMA =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_WDDM =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_WDDM_W8 =' >> ${WRKSRC}/LocalConfig.kmk
-.endif
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
