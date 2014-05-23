@@ -4,10 +4,10 @@ bin/xpra_launcher
 %%ETCDIR%%/xorg.conf
 %%ETCDIR%%/xorg.conf.sample
 %%ETCDIR%%/xpra.conf.sample
-%%PYTHON_SITELIBDIR%%/xpra-0.12.5-py2.7.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/xpra-0.12.5-py2.7.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/xpra-0.12.5-py2.7.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/xpra-0.12.5-py2.7.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/xpra-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/xpra-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/xpra-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/xpra-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/xpra/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xpra/__init__.pyo
@@ -707,7 +707,7 @@ man/man1/xpra_launcher.1.gz
 @dirrmtry %%PYTHON_SITELIBDIR%%/xpra/x11/gtk_x11
 @dirrmtry %%PYTHON_SITELIBDIR%%/xpra/x11
 @dirrmtry %%PYTHON_SITELIBDIR%%/xpra
-@dirrmtry %%PYTHON_SITELIBDIR%%/xpra-0.12.5-py2.7.egg-info
+@dirrmtry %%PYTHON_SITELIBDIR%%/xpra-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 @dirrmtry %%DATADIR%%/icons
 @dirrmtry %%DATADIR%%/webm
 @dirrmtry %%DATADIR%%/www/include/web-socket-js
