@@ -9,7 +9,7 @@ MASTER_SITES=	http://pwsp.net/~qbob/ \
 		http://redundancy.redundancy.org/mirror/
 DISTNAME=	moodbar-0.1.2
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows the "moods" of audio tracks in Amarok
 
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \

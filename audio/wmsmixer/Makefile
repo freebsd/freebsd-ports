@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio mixer for the WindowMaker dock
 
 OPTIONS_DEFINE=	DOCS

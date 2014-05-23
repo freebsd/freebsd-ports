@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TexMakerX%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S:.0::}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX IDE derived from Texmaker
 
 LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler \

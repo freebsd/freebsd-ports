@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.luga.de/pytone/download/ \
 		http://redundancy.redundancy.org/mirror/
 DISTNAME=	PyTone-${PORTVERSION}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music jukebox written in Python with a curses GUI
 
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
