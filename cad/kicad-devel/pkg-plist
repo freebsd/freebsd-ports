@@ -1,8 +1,17 @@
+bin/_cvpcb.kiface
+bin/_eeschema.kiface
+bin/_gerbview.kiface
+bin/_pcb_calculator.kiface
+bin/_pcbnew.kiface
+bin/_pl_editor.kiface
 bin/bitmap2component
 bin/cvpcb
+bin/dxf2idf
 bin/eeschema
 bin/freeroute.jnlp
 bin/gerbview
+bin/idfcyl
+bin/idfrect
 bin/kicad
 bin/pcb_calculator
 bin/pcbnew
@@ -13,19 +22,123 @@ lib/kicad/plugins/netlist_form_OrcadPcb2.xsl
 lib/kicad/plugins/netlist_form_cadstar-RINF.xsl
 lib/kicad/plugins/netlist_form_cadstar.xsl
 lib/kicad/plugins/netlist_form_pads-pcb.xsl
-share/applications/eeschema.desktop
-share/applications/kicad.desktop
+%%DESKTOPDIR%%/bitmap2component.desktop
+%%DESKTOPDIR%%/cvpcb.desktop
+%%DESKTOPDIR%%/eeschema.desktop
+%%DESKTOPDIR%%/gerbview.desktop
+%%DESKTOPDIR%%/kicad.desktop
+%%DESKTOPDIR%%/pcbcalculator.desktop
+%%DESKTOPDIR%%/pcbnew.desktop
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/internat/CMakeLists.txt
+%%PORTDOCS%%%%DOCSDIR%%/internat/bg/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/bg/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/ca/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/ca/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/cs/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/cs/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/de/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/de/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/el_GR/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/el_GR/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/es/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/es/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/fi/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/fi/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/fr/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/fr/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/hu/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/hu/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/it/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/it/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/ja/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/ja/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/ko/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/ko/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/nl/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/nl/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/pl/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/pl/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/pt/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/pt/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/ru/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/ru/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/sl/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/sl/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/sv/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/sv/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/internat/zh_CN/kicad.mo
+%%PORTDOCS%%%%DOCSDIR%%/internat/zh_CN/kicad.po
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/README-bom.txt
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/bom-generation.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/bom_csv_by_ref.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/bom_csv_by_ref_v2.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/bom_csv_grouped_by_value.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/bom_html_by_value.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/bom_html_grouped_by_value.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/kicad_netlist_reader.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/round_robin.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/bom-in-python/round_value_robin.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/kicad-install.sh
+%%PORTDOCS%%%%DOCSDIR%%/scripts/lib_convert.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/library-repos-install.bat
+%%PORTDOCS%%%%DOCSDIR%%/scripts/library-repos-install.sh
+%%PORTDOCS%%%%DOCSDIR%%/scripts/osx_fixbundle.sh
+%%PORTDOCS%%%%DOCSDIR%%/scripts/test_kicad_plugin.py
+%%PORTDOCS%%%%DOCSDIR%%/scripts/test_plugin.py
+share/icons/hicolor/128x128/apps/3d.png
+share/icons/hicolor/128x128/apps/bitmap2component.png
+share/icons/hicolor/128x128/apps/cvpcb.png
+share/icons/hicolor/128x128/apps/eeschema.png
+share/icons/hicolor/128x128/apps/gerbview.png
+share/icons/hicolor/128x128/apps/kicad.png
+share/icons/hicolor/128x128/apps/pcbcalculator.png
+share/icons/hicolor/128x128/apps/pcbnew.png
+share/icons/hicolor/128x128/mimetypes/application-x-3d-project.png
+share/icons/hicolor/128x128/mimetypes/application-x-bitmap2component-project.png
+share/icons/hicolor/128x128/mimetypes/application-x-cvpcb-project.png
+share/icons/hicolor/128x128/mimetypes/application-x-eeschema-project.png
+share/icons/hicolor/128x128/mimetypes/application-x-gerbview-project.png
+share/icons/hicolor/128x128/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/128x128/mimetypes/application-x-pcbcalculator-project.png
+share/icons/hicolor/128x128/mimetypes/application-x-pcbnew-project.png
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/22x22/apps/kicad.png
 share/icons/hicolor/22x22/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/24x24/apps/kicad.png
 share/icons/hicolor/24x24/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/32x32/apps/kicad.png
 share/icons/hicolor/32x32/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/48x48/apps/bitmap2component.png
+share/icons/hicolor/48x48/apps/cvpcb.png
+share/icons/hicolor/48x48/apps/eeschema.png
+share/icons/hicolor/48x48/apps/gerbview.png
 share/icons/hicolor/48x48/apps/kicad.png
+share/icons/hicolor/48x48/apps/pcbcalculator.png
+share/icons/hicolor/48x48/apps/pcbnew.png
+share/icons/hicolor/48x48/mimetypes/application-x-bitmap2component-project.png
+share/icons/hicolor/48x48/mimetypes/application-x-cvpcb-project.png
+share/icons/hicolor/48x48/mimetypes/application-x-eeschema-project.png
+share/icons/hicolor/48x48/mimetypes/application-x-gerbview-project.png
 share/icons/hicolor/48x48/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/48x48/mimetypes/application-x-pcbcalculator-project.png
+share/icons/hicolor/48x48/mimetypes/application-x-pcbnew-project.png
+share/icons/hicolor/scalable/apps/3d.svg
+share/icons/hicolor/scalable/apps/bitmap2component.svg
+share/icons/hicolor/scalable/apps/cvpcb.svg
+share/icons/hicolor/scalable/apps/eeschema.svg
+share/icons/hicolor/scalable/apps/gerbview.svg
 share/icons/hicolor/scalable/apps/kicad.svg
+share/icons/hicolor/scalable/apps/pcbcalculator.svg
+share/icons/hicolor/scalable/apps/pcbnew.svg
+share/icons/hicolor/scalable/mimetypes/application-x-3d-project.svg
+share/icons/hicolor/scalable/mimetypes/application-x-bitmap2component-project.svg
+share/icons/hicolor/scalable/mimetypes/application-x-cvpcb-project.svg
+share/icons/hicolor/scalable/mimetypes/application-x-eeschema-project.svg
+share/icons/hicolor/scalable/mimetypes/application-x-gerbview-project.svg
 share/icons/hicolor/scalable/mimetypes/application-x-kicad-project.svg
-share/mime/packages/kicad.xml
-share/mimelnk/application/x-kicad-project.desktop
-share/mimelnk/application/x-kicad-schematic.desktop
+share/icons/hicolor/scalable/mimetypes/application-x-pcbcalculator-project.svg
+share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/complex_hierarchy/ampli_ht.sch
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy-cache.lib
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.cmp
@@ -116,9 +229,91 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/library/74xgxx.lib
 %%DATADIR%%/library/74xx.dcm
 %%DATADIR%%/library/74xx.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC/317Regulator-BuildingBlock-ModA_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC/317Regulator-BuildingBlock-ModA_RevC_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC/317Regulator-BuildingBlock-ModA_RevC_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC/317Regulator-BuildingBlock-ModA_RevC_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC/317Regulator-BuildingBlock-ModA_RevC_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModB_RevC/317Regulator-BuildingBlock-ModB_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModB_RevC/317Regulator-BuildingBlock-ModB_RevC_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModB_RevC/317Regulator-BuildingBlock-ModB_RevC_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModB_RevC/317Regulator-BuildingBlock-ModB_RevC_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModB_RevC/317Regulator-BuildingBlock-ModB_RevC_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModC_RevC/317Regulator-BuildingBlock-ModC_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModC_RevC/317Regulator-BuildingBlock-ModC_RevC_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModC_RevC/317Regulator-BuildingBlock-ModC_RevC_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModC_RevC/317Regulator-BuildingBlock-ModC_RevC_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModC_RevC/317Regulator-BuildingBlock-ModC_RevC_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModD_RevC/317Regulator-BuildingBlock-ModD_RevB_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModD_RevC/317Regulator-BuildingBlock-ModD_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModD_RevC/317Regulator-BuildingBlock-ModD_RevC_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModD_RevC/317Regulator-BuildingBlock-ModD_RevC_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModD_RevC/317Regulator-BuildingBlock-ModD_RevC_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModD_RevC/317Regulator-BuildingBlock-ModD_RevC_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModE_RevC/317Regler-BuildingBlock-ModE_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModE_RevC/317Regler-BuildingBlock-ModE_RevC_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModE_RevC/317Regler-BuildingBlock-ModE_RevC_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModE_RevC/317Regler-BuildingBlock-ModE_RevC_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModE_RevC/317Regler-BuildingBlock-ModE_RevC_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModF_RevC/317Regler-BuildingBlock-ModF_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModF_RevC/317Regler-BuildingBlock-ModF_RevC_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModF_RevC/317Regler-BuildingBlock-ModF_RevC_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModF_RevC/317Regler-BuildingBlock-ModF_RevC_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModF_RevC/317Regler-BuildingBlock-ModF_RevC_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModG_RevC/317Regler-BuildingBlock-ModG_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModG_RevC/317Regler-BuildingBlock-ModG_RevC_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModG_RevC/317Regler-BuildingBlock-ModG_RevC_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModG_RevC/317Regler-BuildingBlock-ModG_RevC_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModG_RevC/317Regler-BuildingBlock-ModG_RevC_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModH_RevC/317Regler-BuildingBlock-ModH_RevC_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModH_RevC/317Regler-BuildingBlock-ModH_RevC_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModH_RevC/317Regler-BuildingBlock-ModH_RevC_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModH_RevC/317Regler-BuildingBlock-ModH_RevC_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModH_RevC/317Regler-BuildingBlock-ModH_RevC_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB_19Apr2011-1.svg
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Standard-BuildingBlock_RevB/555-Oscillator-Standard-BuildingBlock_RevB_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Standard-BuildingBlock_RevB/555-Oscillator-Standard-BuildingBlock_RevB_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Standard-BuildingBlock_RevB/555-Oscillator-Standard-BuildingBlock_RevB_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Standard-BuildingBlock_RevB/555-Oscillator-Standard-BuildingBlock_RevB_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Standard-BuildingBlock_RevB/555-Oscillator-Standard-BuildingBlock_RevB_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-TwoPointRegulator-BuildingBlock_RevB/555-TwoPointRegulator-BuildingBlock_RevB_19Apr2011-cache.lib
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-TwoPointRegulator-BuildingBlock_RevB/555-TwoPointRegulator-BuildingBlock_RevB_19Apr2011.pdf
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-TwoPointRegulator-BuildingBlock_RevB/555-TwoPointRegulator-BuildingBlock_RevB_19Apr2011.png
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-TwoPointRegulator-BuildingBlock_RevB/555-TwoPointRegulator-BuildingBlock_RevB_19Apr2011.pro
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-TwoPointRegulator-BuildingBlock_RevB/555-TwoPointRegulator-BuildingBlock_RevB_19Apr2011.sch
+%%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-TwoPointRegulator-BuildingBlock_RevB/555-TwoPointRegulator-BuildingBlock_RevB_19Apr2011.svg
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModA_RevA/78xx-Regler-BuildingBlock_ModA_RevA-cache.lib
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModA_RevA/78xx-Regler-BuildingBlock_ModA_RevA.pdf
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModA_RevA/78xx-Regler-BuildingBlock_ModA_RevA.pro
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModA_RevA/78xx-Regler-BuildingBlock_ModA_RevA.sch
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModA_RevA/78xx-Regler-BuildingBlock_ModA_RevA.svg
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModB_RevA/78xx-Regler-BuildingBlock_ModB_RevA-cache.lib
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModB_RevA/78xx-Regler-BuildingBlock_ModB_RevA.pdf
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModB_RevA/78xx-Regler-BuildingBlock_ModB_RevA.pro
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModB_RevA/78xx-Regler-BuildingBlock_ModB_RevA.sch
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModB_RevA/78xx-Regler-BuildingBlock_ModB_RevA.svg
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModA_RevA/79xx-Regler-BuildingBlock_ModA_RevA-cache.lib
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModA_RevA/79xx-Regler-BuildingBlock_ModA_RevA.pdf
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModA_RevA/79xx-Regler-BuildingBlock_ModA_RevA.pro
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModA_RevA/79xx-Regler-BuildingBlock_ModA_RevA.sch
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModA_RevA/79xx-Regler-BuildingBlock_ModA_RevA.svg
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModB_RevA/79xx-Regler-BuildingBlock_ModB_RevA-cache.lib
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModB_RevA/79xx-Regler-BuildingBlock_ModB_RevA.pdf
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModB_RevA/79xx-Regler-BuildingBlock_ModB_RevA.pro
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModB_RevA/79xx-Regler-BuildingBlock_ModB_RevA.sch
+%%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModB_RevA/79xx-Regler-BuildingBlock_ModB_RevA.svg
+%%DATADIR%%/library/Buildingblocks/KatalogUeberKiCadBuildingBlocks_21Apr2013.pdf
+%%DATADIR%%/library/Buildingblocks/KiCAD-HierarchcalSchematicsAndBuildingBlocksRevA-EN.pdf
+%%DATADIR%%/library/Buildingblocks/KiCAD-HierarchischeSchaltplaeneUndBuildingBlocks3-DE.pdf
 %%DATADIR%%/library/CMakeLists.txt
 %%DATADIR%%/library/ac-dc.dcm
 %%DATADIR%%/library/ac-dc.lib
+%%DATADIR%%/library/actel.dcm
+%%DATADIR%%/library/actel.lib
 %%DATADIR%%/library/adc-dac.dcm
 %%DATADIR%%/library/adc-dac.lib
 %%DATADIR%%/library/analog_switches.dcm
@@ -140,9 +335,14 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/library/contrib_symbols_dl1eic/CMakeLists.txt
 %%DATADIR%%/library/contrib_symbols_dl1eic/SymbolsSimilarEN60617+oldDIN617-RevE8.lib
 %%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_DCDC-ACDC-Converter_RevC_20Jul2012.lib
+%%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_EN60617-10_HF-Radio_Catalog_DRAFT_19Aug2013.pdf
+%%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_EN60617-10_HF-Radio_DRAFT_12Sep2013.lib
 %%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_EN60617_13Mar2013.lib
 %%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_EN60617_13Mar2013.pdf
-%%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_ICs-Opto_RevB_29Dez2012.lib
+%%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_ICs-Diskrete_RevD10.lib
+%%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_ICs-Opto_RevB_16Sep2013.lib
+%%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_Microcontroller_Philips-NXP_RevA_06Oct2013.dcm
+%%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_Microcontroller_Philips-NXP_RevA_06Oct2013.lib
 %%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_Socket-DIN41612_RevA.lib
 %%DATADIR%%/library/contrib_symbols_dl1eic/Symbols_Transformer-Diskrete_RevA.lib
 %%DATADIR%%/library/cypress.lib
@@ -185,6 +385,8 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/library/microchip_pic12mcu.lib
 %%DATADIR%%/library/microchip_pic16mcu.dcm
 %%DATADIR%%/library/microchip_pic16mcu.lib
+%%DATADIR%%/library/microchip_pic18mcu.dcm
+%%DATADIR%%/library/microchip_pic18mcu.lib
 %%DATADIR%%/library/microcontrollers.dcm
 %%DATADIR%%/library/microcontrollers.lib
 %%DATADIR%%/library/motorola.dcm
@@ -247,31 +449,27 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/library/video.lib
 %%DATADIR%%/library/xilinx.dcm
 %%DATADIR%%/library/xilinx.lib
-%%DATADIR%%/modules/Allegro_ACS754_ACS755_ACS756_HallCurrentSensor_RevA.mod
-%%DATADIR%%/modules/Allegro_HallSensors_CB-PFF_CB-PSF_CB-FSS_Housings_24Oct2012.kicad_pcb
+%%DATADIR%%/modules/7Segment_16Sep2013.kicad_pcb
 %%DATADIR%%/modules/BNC-Sockets_RevA.kicad_pcb
 %%DATADIR%%/modules/Buzzer_Beeper_RevA_25Oct2010.kicad_pcb
 %%DATADIR%%/modules/CMakeLists.txt
-%%DATADIR%%/modules/Capacitors_SMD_RevA.kicad_pcb
-%%DATADIR%%/modules/Capacitors_SMD_RevA.mod
+%%DATADIR%%/modules/Capacitors_Elko_ThroughHole.kicad_pcb
 %%DATADIR%%/modules/Capacitors_ThroughHole_RevA.kicad_pcb
 %%DATADIR%%/modules/Choke_Axial_ThroughHole_RevB.kicad_pcb
 %%DATADIR%%/modules/Choke_Radial_ThroughHole_CD_Bobin_RevA.kicad_pcb
 %%DATADIR%%/modules/Choke_SMD_RevB_28Dez2012.kicad_pcb
 %%DATADIR%%/modules/Choke_Toroid_ThroughHole_RevC_06Aug2010.kicad_pcb
 %%DATADIR%%/modules/CommonModeChoke_Wuerth_Type-WE-CMB_RevA_24Oct2010.kicad_pcb
-%%DATADIR%%/modules/Crystals_RevB_20Apr2013.kicad_pcb
-%%DATADIR%%/modules/Crystals_RevB_20Apr2013.mod
+%%DATADIR%%/modules/Connectors_Serial_MOLEX.kicad_pcb
+%%DATADIR%%/modules/Crystals.kicad_pcb
 %%DATADIR%%/modules/DCDC-ACDC-Converter_1_RevC_20Jul2012.kicad_pcb
 %%DATADIR%%/modules/DCDC-ACDC-Converter_2_RevC_20Jul2012.kicad_pcb
-%%DATADIR%%/modules/DCDC-ACDC-Converter_RevC_20Jul2012.mod
-%%DATADIR%%/modules/Dioden_SMD_RevA_31May2013.kicad_pcb
-%%DATADIR%%/modules/Dioden_SMD_RevA_31May2013.mod
-%%DATADIR%%/modules/Dioden_ThroughHole_RevC.kicad_pcb
-%%DATADIR%%/modules/Dioden_ThroughHole_RevC.mod
-%%DATADIR%%/modules/Elko_ThroughHole_RevB-3_30Dec2011.kicad_pcb
-%%DATADIR%%/modules/Elko_ThroughHole_RevB-3_30Dec2011.mod
-%%DATADIR%%/modules/EuroBoardoutline_RevC.mod
+%%DATADIR%%/modules/DIP_Sockets.brd
+%%DATADIR%%/modules/DIP_Sockets_Special.brd
+%%DATADIR%%/modules/Diodes_SMD.kicad_pcb
+%%DATADIR%%/modules/Diodes_ThroughHole.kicad_pcb
+%%DATADIR%%/modules/Discret1.brd
+%%DATADIR%%/modules/Display.brd
 %%DATADIR%%/modules/EuroBoardoutline_RevC_Part1.kicad_pcb
 %%DATADIR%%/modules/EuroBoardoutline_RevC_Part2.kicad_pcb
 %%DATADIR%%/modules/EuroBoardoutline_RevC_Part3.kicad_pcb
@@ -279,175 +477,195 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/EuroBoardoutline_RevC_Part5.kicad_pcb
 %%DATADIR%%/modules/EuroBoardoutline_RevC_Part6.kicad_pcb
 %%DATADIR%%/modules/EuroBoardoutline_RevC_Part7.kicad_pcb
-%%DATADIR%%/modules/Fiducials_RevC_04Aug2012.kicad_pcb
-%%DATADIR%%/modules/Fiducials_RevC_04Aug2012.mod
-%%DATADIR%%/modules/Footprint-Symbols_RevD_28Aug2012.kicad_pcb
-%%DATADIR%%/modules/Footprint-Symbols_RevD_28Aug2012.mod
-%%DATADIR%%/modules/FuseholderAndFuses_RevD_28Aug2012.kicad_pcb
-%%DATADIR%%/modules/FuseholderAndFuses_RevD_28Aug2012.mod
-%%DATADIR%%/modules/Heatsinks_RevC.kicad_pcb
-%%DATADIR%%/modules/Heatsinks_RevC.mod
-%%DATADIR%%/modules/IR-directFET_Packages_RevB.kicad_pcb
-%%DATADIR%%/modules/IR-directFET_Packages_RevB.mod
-%%DATADIR%%/modules/Label_RevA_21Mar2011.mod
-%%DATADIR%%/modules/Measurement-Scala_RevA.kicad_pcb
-%%DATADIR%%/modules/Measurement-Scala_RevA.mod
-%%DATADIR%%/modules/Measurement_Point_RevA.kicad_pcb
-%%DATADIR%%/modules/Measurement_Point_RevA.mod
-%%DATADIR%%/modules/Mechanical_Socket-Plug_DIN41612-Stuff_RevA.kicad_pcb
-%%DATADIR%%/modules/Mechanical_Socket-Plug_DIN41612-Stuff_RevA.mod
-%%DATADIR%%/modules/MiniUniversalMate-N-LokSockets_13Aug2012.kicad_pcb
-%%DATADIR%%/modules/MiniUniversalMate-N-LokSockets_13Aug2012.mod
-%%DATADIR%%/modules/MountingHole_RevA.mod
-%%DATADIR%%/modules/NF-Transformer_ETAL_RevA_28Aug2012.kicad_pcb
-%%DATADIR%%/modules/NF-Transformer_ETAL_RevA_28Aug2012.mod
-%%DATADIR%%/modules/Neosid_Air-Coil_SML_HAMxx31A_HDMxx31A_RevA_25Apr2012.kicad_pcb
-%%DATADIR%%/modules/Neosid_Air-Coil_SML_HAMxx31A_HDMxx31A_RevA_25Apr2012.mod
-%%DATADIR%%/modules/Neosid_Filter_HF-Coil_25Apr2012.kicad_pcb
-%%DATADIR%%/modules/Neosid_Filter_HF-Coil_25Apr2012.mod
-%%DATADIR%%/modules/Neosid_Inductor_21Apr2012.kicad_pcb
-%%DATADIR%%/modules/Neosid_Inductor_21Apr2012.mod
-%%DATADIR%%/modules/Oddities_RevA_10Mar2011.kicad_pcb
-%%DATADIR%%/modules/Oddities_RevA_10Mar2011.mod
+%%DATADIR%%/modules/Fiducials.kicad_pcb
+%%DATADIR%%/modules/Footprint_Symbols.kicad_pcb
+%%DATADIR%%/modules/Fuse_Holders_and_Fuses.kicad_pcb
+%%DATADIR%%/modules/Heatsinks.kicad_pcb
+%%DATADIR%%/modules/Housings_ROHM.kicad_pcb
+%%DATADIR%%/modules/Housings_SIP9.kicad_pcb
+%%DATADIR%%/modules/Housings_SOT.kicad_pcb
+%%DATADIR%%/modules/Housings_SOT23_SOT143_TSOT6.kicad_pcb
+%%DATADIR%%/modules/Housings_TO-50.kicad_pcb
+%%DATADIR%%/modules/Housings_TO-78.kicad_pcb
+%%DATADIR%%/modules/IR-DirectFETs.kicad_pcb
+%%DATADIR%%/modules/LEDs.brd
+%%DATADIR%%/modules/LEM_HallEffectTransducers_RevA_13Oct2012.kicad_pcb
+%%DATADIR%%/modules/LQFP_TQFP_RevA_06Oct2013.kicad_pcb
+%%DATADIR%%/modules/Label_RevA_21Mar2011.brd
+%%DATADIR%%/modules/Measurement_Points.kicad_pcb
+%%DATADIR%%/modules/Measurement_Scales.kicad_pcb
+%%DATADIR%%/modules/Mechanical_Sockets.kicad_pcb
+%%DATADIR%%/modules/NF-Transformers_ETAL.kicad_pcb
+%%DATADIR%%/modules/Neosid_Air-Coils_SML.kicad_pcb
+%%DATADIR%%/modules/Neosid_Filters_HF-Coils.kicad_pcb
+%%DATADIR%%/modules/Neosid_Inductors.kicad_pcb
+%%DATADIR%%/modules/Oddities.kicad_pcb
 %%DATADIR%%/modules/OldSowjetAera_Transistor_RevA.kicad_pcb
-%%DATADIR%%/modules/Opto-Devices_RevC_03Oct2012.kicad_pcb
-%%DATADIR%%/modules/Opto-Devices_RevC_03Oct2012.mod
-%%DATADIR%%/modules/Oscillator-Modul_RevA.kicad_pcb
-%%DATADIR%%/modules/Oscillator-Modul_RevA.mod
-%%DATADIR%%/modules/Pentawatt_RevB_30Apr2011.kicad_pcb
-%%DATADIR%%/modules/Pentawatt_RevB_30Apr2011.mod
-%%DATADIR%%/modules/Potentiometer_Part1_RevB_02Aug2010.kicad_pcb
+%%DATADIR%%/modules/Opto-Devices.kicad_pcb
+%%DATADIR%%/modules/Oscillator-Modules.kicad_pcb
+%%DATADIR%%/modules/Oscillators.kicad_pcb
+%%DATADIR%%/modules/PFF_PSF_PSS_Leadforms.kicad_pcb
+%%DATADIR%%/modules/Pentawatts.kicad_pcb
 %%DATADIR%%/modules/Potentiometer_Part2_RevB_02Aug2010.kicad_pcb
-%%DATADIR%%/modules/Potentiometer_RevB_02Aug2010.mod
+%%DATADIR%%/modules/Potentiometers.kicad_pcb
 %%DATADIR%%/modules/Printtrafo_CHK_Part1_RevA_04Aug2010.kicad_pcb
 %%DATADIR%%/modules/Printtrafo_CHK_Part2_RevA_04Aug2010.kicad_pcb
 %%DATADIR%%/modules/Printtrafo_CHK_Part3_RevA_04Aug2010.kicad_pcb
-%%DATADIR%%/modules/Printtrafo_CHK_RevA_04Aug2010.mod
-%%DATADIR%%/modules/Relay_ThroughHole_RevB.kicad_pcb
-%%DATADIR%%/modules/Relay_ThroughHole_RevB.mod
-%%DATADIR%%/modules/Resistor_SMD_RevA.kicad_pcb
-%%DATADIR%%/modules/Resistor_SMD_RevA.mod
-%%DATADIR%%/modules/Resistor_ThroughHole_RevB_22Apr2011.kicad_pcb
-%%DATADIR%%/modules/Resistor_ThroughHole_RevB_22Apr2011.mod
-%%DATADIR%%/modules/Resistor_Universal-Experimental_RevA.kicad_pcb
-%%DATADIR%%/modules/Resistor_Universal-Experimental_RevA.mod
-%%DATADIR%%/modules/SI570_SI571_Oscillator_RevA_11Jun2012.kicad_pcb
-%%DATADIR%%/modules/SI570_SI571_Oscillator_RevA_11Jun2012.mod
-%%DATADIR%%/modules/SIP9_Housing_14Jun2013.kicad_pcb
-%%DATADIR%%/modules/SIP9_Housing_14Jun2013.mod
-%%DATADIR%%/modules/SOT126_SOT32_Housings_RevA_22Oct2012.kicad_pcb
-%%DATADIR%%/modules/SOT126_SOT32_Housings_RevA_22Oct2012.mod
-%%DATADIR%%/modules/SOT23_SOT143_SOT143R_TSOT6_MK06A_SC70-6_Housing_26Jul2012.kicad_pcb
-%%DATADIR%%/modules/SOT23_SOT143_SOT143R_TSOT6_MK06A_SC70-6_Housing_26Jul2012.mod
+%%DATADIR%%/modules/Relays_ThroughHole.kicad_pcb
+%%DATADIR%%/modules/Resistors_SMD.kicad_pcb
+%%DATADIR%%/modules/Resistors_ThroughHole.kicad_pcb
+%%DATADIR%%/modules/Resistors_Universal.kicad_pcb
 %%DATADIR%%/modules/SOT89-3_SOT89-5_Housing_RevA_02Sep2012.kicad_pcb
-%%DATADIR%%/modules/SOT89-3_SOT89-5_Housing_RevA_02Sep2012.mod
-%%DATADIR%%/modules/Socket_MOLEX-KK-System.kicad_pcb
-%%DATADIR%%/modules/Socket_MOLEX-KK-System.mod
-%%DATADIR%%/modules/Socket_WAGO734_RevA.kicad_pcb
-%%DATADIR%%/modules/Socket_WAGO734_RevA.mod
-%%DATADIR%%/modules/TO-50_Housings_RevA_21Apr2013.kicad_pcb
-%%DATADIR%%/modules/TO-50_Housings_RevA_21Apr2013.mod
-%%DATADIR%%/modules/TO-78_Housing_RevA_04Jun2013.kicad_pcb
-%%DATADIR%%/modules/TO-78_Housing_RevA_04Jun2013.mod
-%%DATADIR%%/modules/TO-92_Housings_06Jun2013.mod
+%%DATADIR%%/modules/Socket_WAGO734.kicad_pcb
+%%DATADIR%%/modules/Sockets_MOLEX_KK-System.kicad_pcb
+%%DATADIR%%/modules/Sockets_Mini-Universal.kicad_pcb
 %%DATADIR%%/modules/TO-92_Housings_06Jun2013_Part1.kicad_pcb
 %%DATADIR%%/modules/TO-92_Housings_06Jun2013_Part2.kicad_pcb
 %%DATADIR%%/modules/TO-92_Housings_06Jun2013_Part3.kicad_pcb
 %%DATADIR%%/modules/TantalCapacitors_SMD_RevA_28Aug2012.kicad_pcb
-%%DATADIR%%/modules/TerminalBlock_WAGO236-RM5mm_RevA2-cache.mod
-%%DATADIR%%/modules/TerminalBlock_WAGO236-RM5mm_RevA2.kicad_pcb
-%%DATADIR%%/modules/TransformerSMPS_ThroughHole_RevA.kicad_pcb
-%%DATADIR%%/modules/TransformerSMPS_ThroughHole_RevA.mod
-%%DATADIR%%/modules/Transistor_TO-220_RevB_03Sep2012.kicad_pcb
-%%DATADIR%%/modules/Transistor_TO-220_RevB_03Sep2012.mod
-%%DATADIR%%/modules/Transistor_TO-247_RevC.kicad_pcb
-%%DATADIR%%/modules/Transistor_TO-247_RevC.mod
+%%DATADIR%%/modules/Terminal_Blocks.kicad_pcb
+%%DATADIR%%/modules/Transformers_SMPS_ThroughHole.kicad_pcb
+%%DATADIR%%/modules/Transistor_TO-220_RevC_28Feb2014.kicad_pcb
 %%DATADIR%%/modules/Transistor_TO-247_RevC_Part1.kicad_pcb
 %%DATADIR%%/modules/Transistor_TO-247_RevC_Part2.kicad_pcb
-%%DATADIR%%/modules/VML0806_Housing_Rohm_RevA_26Oct2012.kicad_pcb
-%%DATADIR%%/modules/VML0806_Housing_Rohm_RevA_26Oct2012.mod
-%%DATADIR%%/modules/WireConnections-Bridges_RevA.kicad_pcb
-%%DATADIR%%/modules/WireConnections-Bridges_RevA.mod
-%%DATADIR%%/modules/WirePads_RevA_15Jun2010.kicad_pcb
-%%DATADIR%%/modules/WirePads_RevA_15Jun2010.mod
+%%DATADIR%%/modules/Wire_Connections_Bridges.kicad_pcb
+%%DATADIR%%/modules/Wire_Pads.kicad_pcb
 %%DATADIR%%/modules/affich.brd
 %%DATADIR%%/modules/capa_pol.equ
-%%DATADIR%%/modules/capacitors.mod
 %%DATADIR%%/modules/ci.equ
 %%DATADIR%%/modules/conn_DBxx.brd
 %%DATADIR%%/modules/conn_HExx.brd
-%%DATADIR%%/modules/connect.mod
 %%DATADIR%%/modules/connect1.brd
 %%DATADIR%%/modules/connect2.brd
-%%DATADIR%%/modules/connectors_molex_serial_53047-A123.kicad_pcb
-%%DATADIR%%/modules/connectors_molex_serial_53047-A123.mod
 %%DATADIR%%/modules/devcms.equ
 %%DATADIR%%/modules/device.equ
-%%DATADIR%%/modules/dip_sockets.brd
-%%DATADIR%%/modules/dip_sockets.mod
-%%DATADIR%%/modules/dip_sockets_special.brd
-%%DATADIR%%/modules/discret.mod
-%%DATADIR%%/modules/discret1.brd
-%%DATADIR%%/modules/display.brd
-%%DATADIR%%/modules/display.mod
-%%DATADIR%%/modules/divers.mod
+%%DATADIR%%/modules/footprints_doc/7Segment_16Sep2013.pdf
+%%DATADIR%%/modules/footprints_doc/7Segment_16Sep2013.ps
 %%DATADIR%%/modules/footprints_doc/Allegro_HallSensors_CB-PFF_CB-PSF_CB-FSS_Housings_24Oct2012.pdf
+%%DATADIR%%/modules/footprints_doc/Allegro_HallSensors_CB-PFF_CB-PSF_CB-FSS_Housings_24Oct2012.ps
 %%DATADIR%%/modules/footprints_doc/BNC-Sockets_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/BNC-Sockets_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Buzzer_Beeper_RevA_25Oct2010.pdf
+%%DATADIR%%/modules/footprints_doc/Buzzer_Beeper_RevA_25Oct2010.ps
 %%DATADIR%%/modules/footprints_doc/Capacitors_SMD_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Capacitors_SMD_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Capacitors_ThroughHole_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Capacitors_ThroughHole_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Choke_Axial_ThroughHole_RevB.pdf
+%%DATADIR%%/modules/footprints_doc/Choke_Axial_ThroughHole_RevB.ps
 %%DATADIR%%/modules/footprints_doc/Choke_Radial_ThroughHole_CD_Bobin_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Choke_Radial_ThroughHole_CD_Bobin_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Choke_SMD_RevB_28Dez2012.pdf
+%%DATADIR%%/modules/footprints_doc/Choke_SMD_RevB_28Dez2012.ps
 %%DATADIR%%/modules/footprints_doc/Choke_Toroid_ThroughHole_RevB_06Aug2010.pdf
+%%DATADIR%%/modules/footprints_doc/Choke_Toroid_ThroughHole_RevC_06Aug2010.ps
 %%DATADIR%%/modules/footprints_doc/CommonModeChoke_Wuerth_Type-WE-CMB_RevA_24Oct2010.pdf
+%%DATADIR%%/modules/footprints_doc/CommonModeChoke_Wuerth_Type-WE-CMB_RevA_24Oct2010.ps
 %%DATADIR%%/modules/footprints_doc/Crystals_RevB_20Apr2013.pdf
+%%DATADIR%%/modules/footprints_doc/Crystals_RevB_20Apr2013.ps
+%%DATADIR%%/modules/footprints_doc/DCDC-ACDC-Converter_1_RevC_20Jul2012.ps
+%%DATADIR%%/modules/footprints_doc/DCDC-ACDC-Converter_2_RevC_20Jul2012.ps
 %%DATADIR%%/modules/footprints_doc/DCDC-ACDC-Converter_RevC_20Jul2012.pdf
 %%DATADIR%%/modules/footprints_doc/Dioden_SMD_RevA_31May2013.pdf
+%%DATADIR%%/modules/footprints_doc/Dioden_SMD_RevA_31May2013.ps
 %%DATADIR%%/modules/footprints_doc/Dioden_ThroughHole_RevC.pdf
+%%DATADIR%%/modules/footprints_doc/Dioden_ThroughHole_RevC.ps
 %%DATADIR%%/modules/footprints_doc/Elko_ThroughHole_RevB-3_30Dec2011.pdf
+%%DATADIR%%/modules/footprints_doc/Elko_ThroughHole_RevB-3_30Dec2011.ps
 %%DATADIR%%/modules/footprints_doc/EuroBoardoutline_RevC.pdf
 %%DATADIR%%/modules/footprints_doc/Fiducials_RevC_04Aug2012.pdf
+%%DATADIR%%/modules/footprints_doc/Fiducials_RevC_04Aug2012.ps
 %%DATADIR%%/modules/footprints_doc/Footprint-Symbols_RevD_28Aug2012.pdf
-%%DATADIR%%/modules/footprints_doc/FuseholderAndFuses_RevD_28Aug2012.pdf
+%%DATADIR%%/modules/footprints_doc/Footprint-Symbols_RevD_28Aug2012.ps
+%%DATADIR%%/modules/footprints_doc/FuseholderAndFuses_RevD_02Oct2013.pdf
+%%DATADIR%%/modules/footprints_doc/FuseholderAndFuses_RevD_02Oct2013.ps
 %%DATADIR%%/modules/footprints_doc/Heatsinks_RevC.pdf
+%%DATADIR%%/modules/footprints_doc/Heatsinks_RevC.ps
 %%DATADIR%%/modules/footprints_doc/IR-directFET_Packages_RevB.pdf
+%%DATADIR%%/modules/footprints_doc/IR-directFET_Packages_RevB.ps
+%%DATADIR%%/modules/footprints_doc/LEM_HallEffectTransducers_RevA_13Oct2012.pdf
+%%DATADIR%%/modules/footprints_doc/LEM_HallEffectTransducers_RevA_13Oct2012.ps
+%%DATADIR%%/modules/footprints_doc/LQFP_TQFP_RevA_06Oct2013.pdf
+%%DATADIR%%/modules/footprints_doc/LQFP_TQFP_RevA_06Oct2013.ps
 %%DATADIR%%/modules/footprints_doc/Label_RevA_21Mar2011.pdf
+%%DATADIR%%/modules/footprints_doc/Label_RevA_21Mar2011.ps
 %%DATADIR%%/modules/footprints_doc/Measurement-Scala_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Measurement-Scala_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Measurement_Point_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Measurement_Point_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Mechanical_Socket-Plug_DIN41612-Stuff_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Mechanical_Socket-Plug_DIN41612-Stuff_RevA.ps
 %%DATADIR%%/modules/footprints_doc/MiniUniversalMate-N-LokSockets_13Aug2012.pdf
+%%DATADIR%%/modules/footprints_doc/MiniUniversalMate-N-LokSockets_13Aug2012.ps
 %%DATADIR%%/modules/footprints_doc/NF-Transformer_ETAL_RevA_28Aug2012.pdf
+%%DATADIR%%/modules/footprints_doc/NF-Transformer_ETAL_RevA_28Aug2012.ps
 %%DATADIR%%/modules/footprints_doc/Neosid_Air-Coil_SML_HAMxx31A_HDMxx31A_RevA_25Apr2012.pdf
+%%DATADIR%%/modules/footprints_doc/Neosid_Air-Coil_SML_HAMxx31A_HDMxx31A_RevA_25Apr2012.ps
 %%DATADIR%%/modules/footprints_doc/Neosid_Filter_HF-Coil_25Apr2012.pdf
+%%DATADIR%%/modules/footprints_doc/Neosid_Filter_HF-Coil_25Apr2012.ps
 %%DATADIR%%/modules/footprints_doc/Neosid_Inductor_21Apr2012.pdf
+%%DATADIR%%/modules/footprints_doc/Neosid_Inductor_21Apr2012.ps
 %%DATADIR%%/modules/footprints_doc/Oddities_RevA_10Mar2011.pdf
+%%DATADIR%%/modules/footprints_doc/Oddities_RevA_10Mar2011.ps
 %%DATADIR%%/modules/footprints_doc/OldSowjetAera_Transistor_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/OldSowjetAera_Transistor_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Opto-Devices_RevC_03Oct2012.pdf
+%%DATADIR%%/modules/footprints_doc/Opto-Devices_RevC_03Oct2012.ps
 %%DATADIR%%/modules/footprints_doc/Oscillator-Modul_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Oscillator-Modul_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Pentawatt_RevB_30Apr2011.pdf
+%%DATADIR%%/modules/footprints_doc/Pentawatt_RevB_30Apr2011.ps
+%%DATADIR%%/modules/footprints_doc/Potentiometer_Part1_RevB_02Aug2010.ps
+%%DATADIR%%/modules/footprints_doc/Potentiometer_Part2_RevB_02Aug2010.ps
 %%DATADIR%%/modules/footprints_doc/Potentiometer_RevB_02Aug2010.pdf
+%%DATADIR%%/modules/footprints_doc/Printtrafo_CHK_Part1_RevA_04Aug2010.ps
+%%DATADIR%%/modules/footprints_doc/Printtrafo_CHK_Part2_RevA_04Aug2010.ps
+%%DATADIR%%/modules/footprints_doc/Printtrafo_CHK_Part3_RevA_04Aug2010.ps
 %%DATADIR%%/modules/footprints_doc/Printtrafo_CHK_RevA_04Aug2010.pdf
-%%DATADIR%%/modules/footprints_doc/Relay_ThroughHole_RevB.pdf
+%%DATADIR%%/modules/footprints_doc/Relay_ThroughHole_RevC_07Oct2013.pdf
+%%DATADIR%%/modules/footprints_doc/Relay_ThroughHole_RevC_07Oct2013.ps
 %%DATADIR%%/modules/footprints_doc/Resistor_SMD_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Resistor_SMD_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Resistor_ThroughHole_RevB_22Apr2011.pdf
+%%DATADIR%%/modules/footprints_doc/Resistor_ThroughHole_RevB_22Apr2011.ps
 %%DATADIR%%/modules/footprints_doc/Resistor_Universal-Experimental_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Resistor_Universal-Experimental_RevA.ps
 %%DATADIR%%/modules/footprints_doc/SI570_SI571_Oscillator_RevA_11Jun2012.pdf
+%%DATADIR%%/modules/footprints_doc/SI570_SI571_Oscillator_RevA_11Jun2012.ps
 %%DATADIR%%/modules/footprints_doc/SIP9_Housing_14Jun2013.pdf
+%%DATADIR%%/modules/footprints_doc/SIP9_Housing_14Jun2013.ps
 %%DATADIR%%/modules/footprints_doc/SOT126_SOT32_Housings_RevA_22Oct2012.pdf
+%%DATADIR%%/modules/footprints_doc/SOT126_SOT32_Housings_RevA_22Oct2012.ps
 %%DATADIR%%/modules/footprints_doc/SOT23_SOT143_SOT143R_TSOT6_MK06A_SC70-6_Housing_26Jul2012.pdf
+%%DATADIR%%/modules/footprints_doc/SOT23_SOT143_SOT143R_TSOT6_MK06A_SC70-6_Housing_26Jul2012.ps
 %%DATADIR%%/modules/footprints_doc/SOT89-3_SOT89-5_Housing_RevA_02Sep2012.pdf
+%%DATADIR%%/modules/footprints_doc/SOT89-3_SOT89-5_Housing_RevA_02Sep2012.ps
 %%DATADIR%%/modules/footprints_doc/Socket_MOLEX-KK-System.pdf
+%%DATADIR%%/modules/footprints_doc/Socket_MOLEX-KK-System.ps
 %%DATADIR%%/modules/footprints_doc/Socket_WAGO734_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/Socket_WAGO734_RevA.ps
+%%DATADIR%%/modules/footprints_doc/TO-12_TO-18_TO-43_TO-42_Housings_11Jun2013.ps
 %%DATADIR%%/modules/footprints_doc/TO-50_Housings_RevA_21Apr2013.pdf
+%%DATADIR%%/modules/footprints_doc/TO-50_Housings_RevA_21Apr2013.ps
 %%DATADIR%%/modules/footprints_doc/TO-78_Housing_RevA_04Jun2013.pdf
+%%DATADIR%%/modules/footprints_doc/TO-78_Housing_RevA_04Jun2013.ps
 %%DATADIR%%/modules/footprints_doc/TO-92_Housings_06Jun2013.pdf
+%%DATADIR%%/modules/footprints_doc/TO-92_Housings_06Jun2013_Part1.ps
+%%DATADIR%%/modules/footprints_doc/TO-92_Housings_06Jun2013_Part2.ps
+%%DATADIR%%/modules/footprints_doc/TO-92_Housings_06Jun2013_Part3.ps
 %%DATADIR%%/modules/footprints_doc/TantalCapacitors_SMD_RevA_28Aug2012.pdf
+%%DATADIR%%/modules/footprints_doc/TantalCapacitors_SMD_RevA_28Aug2012.ps
 %%DATADIR%%/modules/footprints_doc/TerminalBlock_WAGO236-RM5mm_RevA2.pdf
+%%DATADIR%%/modules/footprints_doc/TerminalBlock_WAGO236-RM5mm_RevA2.ps
 %%DATADIR%%/modules/footprints_doc/TransformerSMPS_ThroughHole_RevA.pdf
+%%DATADIR%%/modules/footprints_doc/TransformerSMPS_ThroughHole_RevA.ps
 %%DATADIR%%/modules/footprints_doc/Transistor_TO-220_RevB_03Sep2012.pdf
+%%DATADIR%%/modules/footprints_doc/Transistor_TO-220_RevB_03Sep2012.ps
 %%DATADIR%%/modules/footprints_doc/Transistor_TO-247_RevC.pdf
+%%DATADIR%%/modules/footprints_doc/Transistor_TO-247_RevC_Part1.ps
+%%DATADIR%%/modules/footprints_doc/Transistor_TO-247_RevC_Part2.ps
 %%DATADIR%%/modules/footprints_doc/VML0806_Housing_Rohm_RevA_26Oct2012.pdf
+%%DATADIR%%/modules/footprints_doc/VML0806_Housing_Rohm_RevA_26Oct2012.ps
 %%DATADIR%%/modules/footprints_doc/WireConnections-Bridges_RevA.pdf
 %%DATADIR%%/modules/footprints_doc/WirePads_RevA_15Jun2010.pdf
 %%DATADIR%%/modules/footprints_doc/conn_DBxx.ps
@@ -465,23 +683,215 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/footprints_doc/sockets_DIP_special.ps
 %%DATADIR%%/modules/footprints_doc/sockets_PGA.ps
 %%DATADIR%%/modules/footprints_doc/sockets_miscellaneous.ps
-%%DATADIR%%/modules/inductors.mod
-%%DATADIR%%/modules/iut.mod
-%%DATADIR%%/modules/led.brd
-%%DATADIR%%/modules/led.mod
 %%DATADIR%%/modules/libcms-bga.brd
 %%DATADIR%%/modules/libcms.brd
-%%DATADIR%%/modules/libcms.mod
 %%DATADIR%%/modules/miscellaneous.brd
 %%DATADIR%%/modules/miscellaneous.equ
 %%DATADIR%%/modules/muonde.brd
-%%DATADIR%%/modules/muonde.mod
-%%DATADIR%%/modules/packages3d/Allegro_HallSensors_Wings3D_RevA_24Oct2012/Allegro_HallSensor_Package-CB-PFF_Faktor03937_RevA_24Oct2012.wings
-%%DATADIR%%/modules/packages3d/Allegro_HallSensors_Wings3D_RevA_24Oct2012/Allegro_HallSensor_Package-CB-PFF_Faktor03937_RevA_24Oct2012.wrl
-%%DATADIR%%/modules/packages3d/Allegro_HallSensors_Wings3D_RevA_24Oct2012/Allegro_HallSensor_Package-CB-PSF_Faktor03937_RevA_24Oct2012.wings
-%%DATADIR%%/modules/packages3d/Allegro_HallSensors_Wings3D_RevA_24Oct2012/Allegro_HallSensor_Package-CB-PSF_Faktor03937_RevA_24Oct2012.wrl
-%%DATADIR%%/modules/packages3d/Allegro_HallSensors_Wings3D_RevA_24Oct2012/Allegro_HallSensor_Package-CB-PSS_Faktor03937_RevA_24Oct2012.wings
-%%DATADIR%%/modules/packages3d/Allegro_HallSensors_Wings3D_RevA_24Oct2012/Allegro_HallSensor_Package-CB-PSS_Faktor03937_RevA_24Oct2012.wrl
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_HDSM531_HDSM533_Green_Faktor03937_Wings3D_RevA_17Sep2013.wings
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_HDSM531_HDSM533_Green_Faktor03937_Wings3D_RevA_17Sep2013.wrl
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_HDSM531_HDSM533_Orange_Faktor03937_Wings3D_RevA_17Sep2013.wings
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_HDSM531_HDSM533_Orange_Faktor03937_Wings3D_RevA_17Sep2013.wrl
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_HDSM531_HDSM533_Red_Faktor03937_Wings3D_RevA_17Sep2013.wings
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_HDSM531_HDSM533_Red_Faktor03937_Wings3D_RevA_17Sep2013.wrl
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_HDSM531_HDSM533_Yellow_Faktor03937_Wings3D_RevA_17Sep2013.wings
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_HDSM531_HDSM533_Yellow_Faktor03937_Wings3D_RevA_17Sep2013.wrl
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_LTS6760_LTS6780_Faktor03937_Wings3D_RevA_22Sep2013.wings
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_LTS6760_LTS6780_Faktor03937_Wings3D_RevA_22Sep2013.wrl
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_SBC18-11EGWA_Faktor03937_Wings3D_RevA_22Sep2013.wings
+%%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013/7Segment_SBC18-11EGWA_Faktor03937_Wings3D_RevA_22Sep2013.wrl
+%%DATADIR%%/modules/packages3d/BNC-Socket_Wings3D_RevA_22Sep2013/BNC-Socket_RevA_Faktor03937_22Sep2013.wings
+%%DATADIR%%/modules/packages3d/BNC-Socket_Wings3D_RevA_22Sep2013/BNC-Socket_RevA_Faktor03937_22Sep2013.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db15_female.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db15_female.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db15_female_pin90deg.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db15_female_pin90deg.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db15_male.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db15_male.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db15_male_pin90deg.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db15_male_pin90deg.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db25_female.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db25_female.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db25_female_pin90deg.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db25_female_pin90deg.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db25_male.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db25_male.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db25_male_pin90deg.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db25_male_pin90deg.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db37_female_pin90deg.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db37_female_pin90deg.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db9_female.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db9_female.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db9_female_pin90deg.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db9_female_pin90deg.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db9_male.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db9_male.wrl
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db9_male_pin90deg.wings
+%%DATADIR%%/modules/packages3d/Conn_DBxx/db9_male_pin90deg.wrl
+%%DATADIR%%/modules/packages3d/Conn_Europe/c64abfd.wings
+%%DATADIR%%/modules/packages3d/Conn_Europe/c64abfd.wrl
+%%DATADIR%%/modules/packages3d/Conn_Europe/c64abmd.wings
+%%DATADIR%%/modules/packages3d/Conn_Europe/c64abmd.wrl
+%%DATADIR%%/modules/packages3d/Conn_Europe/c64acfd.wings
+%%DATADIR%%/modules/packages3d/Conn_Europe/c64acfd.wrl
+%%DATADIR%%/modules/packages3d/Conn_Europe/c64acmd.wings
+%%DATADIR%%/modules/packages3d/Conn_Europe/c64acmd.wrl
+%%DATADIR%%/modules/packages3d/Conn_Europe/c96abcfd.wings
+%%DATADIR%%/modules/packages3d/Conn_Europe/c96abcfd.wrl
+%%DATADIR%%/modules/packages3d/Conn_Europe/c96abcmd.wings
+%%DATADIR%%/modules/packages3d/Conn_Europe/c96abcmd.wrl
+%%DATADIR%%/modules/packages3d/Conn_HExx/he10_10.wings
+%%DATADIR%%/modules/packages3d/Conn_HExx/he10_10.wrl
+%%DATADIR%%/modules/packages3d/Conn_HExx/he10_20.wings
+%%DATADIR%%/modules/packages3d/Conn_HExx/he10_20.wrl
+%%DATADIR%%/modules/packages3d/Connectors/POWER_21.wings
+%%DATADIR%%/modules/packages3d/Connectors/POWER_21.wrl
+%%DATADIR%%/modules/packages3d/Connectors/RJ45_8.wings
+%%DATADIR%%/modules/packages3d/Connectors/RJ45_8.wrl
+%%DATADIR%%/modules/packages3d/Connectors/SAS_mini_1888174.wrl
+%%DATADIR%%/modules/packages3d/Connectors/USB_type_B.wings
+%%DATADIR%%/modules/packages3d/Connectors/USB_type_B.wrl
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-2p-125dsa.wings
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-2p-125dsa.wrl
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-3p-125dsa.wings
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-3p-125dsa.wrl
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-4p-125dsa.wings
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-4p-125dsa.wrl
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-5p-125dsa.wings
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-5p-125dsa.wrl
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-6p-125dsa.wings
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-6p-125dsa.wrl
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-7p-125dsa.wings
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-7p-125dsa.wrl
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-8p-125dsa.wings
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-8p-125dsa.wrl
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-9p-125dsa.wings
+%%DATADIR%%/modules/packages3d/Connectors/conn_df13/df13-9p-125dsa.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin.png
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_01.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_01.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_02.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_02.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_03.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_03.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_04.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_04.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_05.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_05.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_06.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_06.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_07.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_07.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_08.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_08.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_09.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_09.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_10.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_10.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_11.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_11.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_12.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_12.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_13.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_13.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_14.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_14.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_15.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_15.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_16.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_16.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_17.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_17.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_18.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_18.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_19.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_19.wrl
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_20.wings
+%%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin/female_pcb_pin_20.wrl
+%%DATADIR%%/modules/packages3d/Connectors/fpc_conn_zif_smt_18.wings
+%%DATADIR%%/modules/packages3d/Connectors/fpc_conn_zif_smt_18.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_1x1_90.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_1x1_90.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_1x2_90.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_1x2_90.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_5x2.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_5x2.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_5x2_90.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_5x2_90.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/header_sockets.png
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_13x2.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_13x2.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_1x1.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_1x1.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_1x1_90.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_1x1_90.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_1x2.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_1x2.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_1x2_90.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_1x2_90.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_5x2.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_5x2.wrl
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_5x2_90.wings
+%%DATADIR%%/modules/packages3d/Connectors/header_sockets/socket_5x2_90.wrl
+%%DATADIR%%/modules/packages3d/Connectors/samtec-connectors/QMS-026-9.75-SL-D-A.wings
+%%DATADIR%%/modules/packages3d/Connectors/samtec-connectors/QMS-026-9.75-SL-D-A.wrl
+%%DATADIR%%/modules/packages3d/Connectors/subclick_horiz.wings
+%%DATADIR%%/modules/packages3d/Connectors/subclick_horiz.wrl
+%%DATADIR%%/modules/packages3d/Connectors/testpoint.wings
+%%DATADIR%%/modules/packages3d/Connectors/testpoint.wrl
+%%DATADIR%%/modules/packages3d/Connectors/testpoint_2pads.wrl
+%%DATADIR%%/modules/packages3d/Connectors/testpoint_pads.wings
+%%DATADIR%%/modules/packages3d/Connectors/usb/normal/usb_a/usb_a_through_hole.wings
+%%DATADIR%%/modules/packages3d/Connectors/usb/normal/usb_a/usb_a_through_hole.wrl
+%%DATADIR%%/modules/packages3d/Connectors/usb/normal/usb_b/usb_b_through_hole.wings
+%%DATADIR%%/modules/packages3d/Connectors/usb/normal/usb_b/usb_b_through_hole.wrl
+%%DATADIR%%/modules/packages3d/Connectors/usb/usb_pinout.png
+%%DATADIR%%/modules/packages3d/Connectors/usb_a_through_hole.wings
+%%DATADIR%%/modules/packages3d/Connectors/usb_a_through_hole.wrl
+%%DATADIR%%/modules/packages3d/Connectors/xrl3male_90deg.wings
+%%DATADIR%%/modules/packages3d/Connectors/xrl3male_90deg.wrl
+%%DATADIR%%/modules/packages3d/Connectors/xrl5male_90deg.wings
+%%DATADIR%%/modules/packages3d/Connectors/xrl5male_90deg.wrl
+%%DATADIR%%/modules/packages3d/Device/bnc-ci.wings
+%%DATADIR%%/modules/packages3d/Device/bnc-ci.wrl
+%%DATADIR%%/modules/packages3d/Device/bnc.wings
+%%DATADIR%%/modules/packages3d/Device/bnc.wrl
+%%DATADIR%%/modules/packages3d/Device/bornier_2.wings
+%%DATADIR%%/modules/packages3d/Device/bornier_2.wrl
+%%DATADIR%%/modules/packages3d/Device/bornier_3.wings
+%%DATADIR%%/modules/packages3d/Device/bornier_3.wrl
+%%DATADIR%%/modules/packages3d/Device/bornier_4.wings
+%%DATADIR%%/modules/packages3d/Device/bornier_4.wrl
+%%DATADIR%%/modules/packages3d/Device/bornier_5.wings
+%%DATADIR%%/modules/packages3d/Device/bornier_5.wrl
+%%DATADIR%%/modules/packages3d/Device/bornier_6.wings
+%%DATADIR%%/modules/packages3d/Device/bornier_6.wrl
+%%DATADIR%%/modules/packages3d/Device/crystal_low_profile.wings
+%%DATADIR%%/modules/packages3d/Device/crystal_low_profile.wrl
+%%DATADIR%%/modules/packages3d/Device/douille_4mm(black).wings
+%%DATADIR%%/modules/packages3d/Device/douille_4mm(black).wrl
+%%DATADIR%%/modules/packages3d/Device/douille_4mm(green).wings
+%%DATADIR%%/modules/packages3d/Device/douille_4mm(green).wrl
+%%DATADIR%%/modules/packages3d/Device/douille_4mm(red).wings
+%%DATADIR%%/modules/packages3d/Device/douille_4mm(red).wrl
+%%DATADIR%%/modules/packages3d/Device/polyswitch.wings
+%%DATADIR%%/modules/packages3d/Device/polyswitch.wrl
+%%DATADIR%%/modules/packages3d/Device/switch_push.wings
+%%DATADIR%%/modules/packages3d/Device/switch_push.wrl
+%%DATADIR%%/modules/packages3d/Device/switch_slide_right_angle_terminal.wings
+%%DATADIR%%/modules/packages3d/Device/switch_slide_right_angle_terminal.wrl
+%%DATADIR%%/modules/packages3d/Device/switch_slide_straight_terminal.wings
+%%DATADIR%%/modules/packages3d/Device/switch_slide_straight_terminal.wrl
+%%DATADIR%%/modules/packages3d/Device/switch_toggle_horizontal_right_angle_PC_terminal.wings
+%%DATADIR%%/modules/packages3d/Device/switch_toggle_horizontal_right_angle_PC_terminal.wrl
+%%DATADIR%%/modules/packages3d/Device/switch_toggle_right_angle_PC_terminal.wings
+%%DATADIR%%/modules/packages3d/Device/switch_toggle_right_angle_PC_terminal.wrl
+%%DATADIR%%/modules/packages3d/Device/switch_toggle_straight_terminal.wings
+%%DATADIR%%/modules/packages3d/Device/switch_toggle_straight_terminal.wrl
+%%DATADIR%%/modules/packages3d/Device/switch_toggle_straight_terminal_dt.wings
+%%DATADIR%%/modules/packages3d/Device/switch_toggle_straight_terminal_dt.wrl
+%%DATADIR%%/modules/packages3d/Device/transf_LL1538.wings
+%%DATADIR%%/modules/packages3d/Device/transf_LL1538.wrl
 %%DATADIR%%/modules/packages3d/Dioden_SMD_Wings3d_RevA_06Sep2012/D-PAK_TO252AA_Faktor03937_RevA_06Sep2012.wings
 %%DATADIR%%/modules/packages3d/Dioden_SMD_Wings3d_RevA_06Sep2012/D-PAK_TO252AA_Faktor03937_RevA_06Sep2012.wrl
 %%DATADIR%%/modules/packages3d/Dioden_SMD_Wings3d_RevA_06Sep2012/DD-PAK_TO263AB_Faktor03937_RevA_06Sep2012.wings
@@ -497,8 +907,48 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/Dioden_SMD_Wings3d_RevA_06Sep2012/SMB_Faktor03937_RevA_06Sep2012.wrl
 %%DATADIR%%/modules/packages3d/Dioden_SMD_Wings3d_RevA_06Sep2012/SMC_Faktor03937_RevA_06Sep2012.wings
 %%DATADIR%%/modules/packages3d/Dioden_SMD_Wings3d_RevA_06Sep2012/SMC_Faktor03937_RevA_06Sep2012.wrl
+%%DATADIR%%/modules/packages3d/FuseholdersAndfuses_Wings3D_RevA_02Oct2013/BladeFuse_CarType_Faktor03937_RevA_02Oct2013.wings
+%%DATADIR%%/modules/packages3d/FuseholdersAndfuses_Wings3D_RevA_02Oct2013/BladeFuse_CarType_Faktor03937_RevA_02Oct2013.wrl
+%%DATADIR%%/modules/packages3d/FuseholdersAndfuses_Wings3D_RevA_02Oct2013/BladeFuse_Mini_Faktor03937_RevA_02Oct2013.wings
+%%DATADIR%%/modules/packages3d/FuseholdersAndfuses_Wings3D_RevA_02Oct2013/BladeFuse_Mini_Faktor03937_RevA_02Oct2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_L8-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_L8-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MN-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MN-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MP-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MP-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MT-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MT-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MX-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MX-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MZ-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_MZ-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_S1-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_S1-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_SH-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_SH-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_SJ-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_SJ-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_SQ-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_SQ-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_ST-Outline_Faktor03937_RevA_28Sep2013.wings
+%%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013/IR-directFET_ST-Outline_Faktor03937_RevA_28Sep2013.wrl
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HTFS-Serie_LEM-HallEffectTransducer_Faktor03937_RevA_16Oct2013.wings
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HTFS-Serie_LEM-HallEffectTransducer_Faktor03937_RevA_16Oct2013.wrl
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX02_HX03_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wings
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX02_HX03_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wrl
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX04_HX05_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wings
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX04_HX05_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wrl
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX06_HX10_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wings
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX06_HX10_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wrl
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX15_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wings
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX15_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wrl
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX20_HX25_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wings
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX20_HX25_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wrl
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX50_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wings
+%%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012/HX50_LEM-HallEffectTransducer_Faktor03937_RevA_13Oct2013.wrl
 %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P1165_Faktor03937_RevA_30Aug2012.wings
-%%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P1165_Faktor03937_RevA_31Aug2012.wrl
+%%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P1165_Faktor03937_RevA_30Aug2012.wrl
 %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P1200_P3356_P3324_Faktor03937_RevA_30Aug2012.wings
 %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P1200_P3356_P3324_Faktor03937_RevA_30Aug2012.wrl
 %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P2781_Faktor03937_RevA_30Aug2012.wings
@@ -509,8 +959,410 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P3181_Faktor03937_RevA_30Aug2012.wrl
 %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P3188_P3191_Faktor03937_RevA_30Aug2012.wings
 %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012/NF-Transformer_ETAL_P3188_P3191_Faktor03937_RevA_30Aug2012.wrl
+%%DATADIR%%/modules/packages3d/OldSowjetAera_Transistor_Wings3D_RevA/OldSowjetAera_Transistor_Type-II_Faktor03937_RevA.wings
+%%DATADIR%%/modules/packages3d/OldSowjetAera_Transistor_Wings3D_RevA/OldSowjetAera_Transistor_Type-II_Faktor03937_RevA.wrl
 %%DATADIR%%/modules/packages3d/OldSowjetAera_Transistor_Wings3D_RevA/OldSowjetAera_Transistor_Type-I_Faktor03937_RevA.wings
 %%DATADIR%%/modules/packages3d/OldSowjetAera_Transistor_Wings3D_RevA/OldSowjetAera_Transistor_Type-I_Faktor03937_RevA.wrl
+%%DATADIR%%/modules/packages3d/PFF_PSF_PSS_Leadforms/PFF_Leadform_5pins.wings
+%%DATADIR%%/modules/packages3d/PFF_PSF_PSS_Leadforms/PFF_Leadform_5pins.wrl
+%%DATADIR%%/modules/packages3d/PFF_PSF_PSS_Leadforms/PSF_Leadform_5pins.wings.wings
+%%DATADIR%%/modules/packages3d/PFF_PSF_PSS_Leadforms/PSF_Leadform_5pins.wrl
+%%DATADIR%%/modules/packages3d/PFF_PSF_PSS_Leadforms/PSS_Leadform_5pins.wings
+%%DATADIR%%/modules/packages3d/PFF_PSF_PSS_Leadforms/PSS_Leadform_5pins.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/header_1x1_90.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/header_1x1_90.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/header_1x2_90.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/header_1x2_90.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/header_5x2_90.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/header_5x2_90.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/jumper.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/jumper.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/jumper_on.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/jumper_on.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pin_1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pin_1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pin_array_1x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pin_array_1x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_12x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_12x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_12x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_12x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_13x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_13x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_18x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_18x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_20x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_20x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_28x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_28x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_2x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_2x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_2x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_2x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_30x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_30x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_3x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_3x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_3x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_3x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_4x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_4x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_4x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_4x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_5x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_5x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_5x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_5x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_6x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_6x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_6x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_6x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_8x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_8x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_8x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_female_28x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_female_28x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_female_5x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_female_5x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_female_6x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_female_6x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_female_7x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/pins_array_female_7x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_1x1.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_1x1.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_1x1_90.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_1x1_90.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_1x2.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_1x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_1x2_90.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_1x2_90.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_5x2.wrl
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_5x2_90.wings
+%%DATADIR%%/modules/packages3d/Pin_Array/socket_5x2_90.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x01.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x01.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x02.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x02.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x03.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x03.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x04.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x04.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x05.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x05.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x06.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x06.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x07.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x07.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x08.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x08.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x09.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x09.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x10.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x10.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x11.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x11.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x12.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x12.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x13.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x13.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x14.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x14.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x15.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x15.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x16.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x16.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x17.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x17.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x18.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x18.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x19.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x19.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x20.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x20.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x21.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x21.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x22.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x22.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x23.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x23.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x24.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x24.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x25.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x25.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x26.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x26.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x27.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x27.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x28.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x28.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x29.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x29.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x30.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x30.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x31.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x31.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x32.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x32.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x33.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x33.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x34.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x34.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x35.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x35.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x36.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x36.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x37.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x37.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x38.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x38.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x39.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x39.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x40.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_1x40.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x01.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x01.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x02.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x02.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x03.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x03.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x04.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x04.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x05.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x05.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x06.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x06.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x07.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x07.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x08.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x08.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x09.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x09.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x10.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x10.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x11.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x11.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x12.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x12.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x13.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x13.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x14.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x14.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x15.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x15.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x16.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x16.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x17.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x17.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x18.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x18.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x19.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x19.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x20.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x20.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x21.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x21.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x22.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x22.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x23.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x23.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x24.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x24.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x25.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x25.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x26.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x26.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x27.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x27.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x28.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x28.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x29.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x29.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x30.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x30.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x31.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x31.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x32.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x32.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x33.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x33.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x34.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x34.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x35.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x35.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x36.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x36.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x37.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x37.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x38.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x38.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x39.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x39.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x40.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Angled_2x40.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x01.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x01.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x02.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x02.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x03.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x03.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x04.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x04.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x05.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x05.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x06.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x06.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x07.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x07.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x08.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x08.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x09.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x09.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x10.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x10.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x11.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x11.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x12.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x12.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x13.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x13.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x14.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x14.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x15.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x15.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x16.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x16.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x17.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x17.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x18.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x18.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x19.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x19.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x20.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x20.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x21.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x21.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x22.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x22.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x23.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x23.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x24.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x24.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x25.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x25.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x26.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x26.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x27.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x27.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x28.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x28.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x29.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x29.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x30.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x30.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x31.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x31.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x32.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x32.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x33.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x33.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x34.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x34.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x35.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x35.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x36.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x36.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x37.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x37.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x38.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x38.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x39.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x39.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x40.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_1x40.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x01.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x01.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x02.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x02.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x03.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x03.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x04.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x04.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x05.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x05.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x06.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x06.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x07.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x07.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x08.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x08.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x09.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x09.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x10.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x10.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x11.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x11.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x12.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x12.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x13.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x13.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x14.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x14.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x15.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x15.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x16.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x16.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x17.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x17.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x18.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x18.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x19.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x19.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x20.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x20.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x21.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x21.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x22.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x22.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x23.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x23.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x24.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x24.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x25.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x25.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x26.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x26.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x27.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x27.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x28.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x28.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x29.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x29.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x30.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x30.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x31.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x31.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x32.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x32.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x33.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x33.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x34.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x34.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x35.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x35.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x36.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x36.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x37.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x37.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x38.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x38.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x39.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x39.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x40.wings
+%%DATADIR%%/modules/packages3d/Pin_Headers/Pin_Header_Straight_2x40.wrl
+%%DATADIR%%/modules/packages3d/Relay_ThroughHole_Packages_Wings3d_RevC_07Oct2013/Relay_Schrack-RP3SL_Bistabil_Faktor03937_RevA_07Oct2013.wings
+%%DATADIR%%/modules/packages3d/Relay_ThroughHole_Packages_Wings3d_RevC_07Oct2013/Relay_Schrack-RP3SL_Bistabil_Faktor03937_RevA_07Oct2013.wrl
+%%DATADIR%%/modules/packages3d/Relay_ThroughHole_Packages_Wings3d_RevC_07Oct2013/Relay_Schrack-RP3SL_Faktor03937_RevA_07Oct2013.wings
+%%DATADIR%%/modules/packages3d/Relay_ThroughHole_Packages_Wings3d_RevC_07Oct2013/Relay_Schrack-RP3SL_Faktor03937_RevA_07Oct2013.wrl
 %%DATADIR%%/modules/packages3d/SIP9-Housing_Wings3d_14Jun2013/SIP9_Housing_Faktor03937_14Jun2013.wings
 %%DATADIR%%/modules/packages3d/SIP9-Housing_Wings3d_14Jun2013/SIP9_Housing_Faktor03937_14Jun2013.wrl
 %%DATADIR%%/modules/packages3d/SOT126_SOT32_Housings_Wings3D_RevA_22Oct2012/SO126-SOT32_Horizontal_Housing_Faktor03937_15Oct2012.wings
@@ -525,6 +1377,330 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/SOT89-3_SOT89-5_Housing_Wings3d_RevA_02Sep2012/SOT89-3_Housing_Faktor03937_RevA_02Sep2012.wrl
 %%DATADIR%%/modules/packages3d/SOT89-3_SOT89-5_Housing_Wings3d_RevA_02Sep2012/SOT89-5_Housing_Faktor03937_RevA_02Sep2012.wings
 %%DATADIR%%/modules/packages3d/SOT89-3_SOT89-5_Housing_Wings3d_RevA_02Sep2012/SOT89-5_Housing_Faktor03937_RevA_02Sep2012.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x01.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x01.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x02.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x02.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x03.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x03.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x04.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x04.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x05.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x05.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x06.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x06.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x07.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x07.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x08.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x08.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x09.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x09.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x10.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x10.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x11.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x11.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x12.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x12.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x13.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x13.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x14.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x14.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x15.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x15.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x16.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x16.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x17.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x17.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x18.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x18.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x19.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x19.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x20.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x20.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x21.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x21.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x22.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x22.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x23.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x23.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x24.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x24.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x25.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x25.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x26.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x26.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x27.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x27.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x28.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x28.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x29.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x29.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x30.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x30.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x31.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x31.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x32.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x32.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x33.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x33.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x34.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x34.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x35.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x35.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x36.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x36.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x37.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x37.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x38.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x38.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x39.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x39.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x40.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_1x40.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x01.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x01.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x02.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x02.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x03.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x03.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x04.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x04.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x05.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x05.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x06.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x06.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x07.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x07.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x08.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x08.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x09.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x09.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x10.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x10.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x11.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x11.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x12.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x12.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x13.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x13.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x14.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x14.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x15.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x15.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x16.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x16.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x17.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x17.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x18.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x18.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x19.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x19.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x20.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x20.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x21.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x21.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x22.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x22.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x23.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x23.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x24.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x24.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x25.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x25.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x26.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x26.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x27.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x27.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x28.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x28.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x29.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x29.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x30.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x30.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x31.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x31.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x32.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x32.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x33.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x33.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x34.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x34.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x35.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x35.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x36.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x36.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x37.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x37.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x38.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x38.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x39.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x39.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x40.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Angled_2x40.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x01.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x01.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x02.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x02.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x03.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x03.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x04.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x04.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x05.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x05.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x06.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x06.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x07.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x07.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x08.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x08.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x09.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x09.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x10.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x10.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x11.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x11.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x12.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x12.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x13.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x13.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x14.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x14.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x15.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x15.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x16.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x16.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x17.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x17.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x18.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x18.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x19.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x19.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x20.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x20.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x21.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x21.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x22.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x22.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x23.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x23.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x24.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x24.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x25.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x25.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x26.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x26.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x27.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x27.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x28.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x28.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x29.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x29.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x30.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x30.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x31.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x31.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x32.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x32.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x33.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x33.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x34.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x34.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x35.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x35.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x36.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x36.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x37.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x37.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x38.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x38.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x39.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x39.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x40.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_1x40.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x01.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x01.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x02.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x02.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x03.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x03.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x04.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x04.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x05.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x05.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x06.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x06.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x07.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x07.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x08.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x08.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x09.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x09.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x10.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x10.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x11.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x11.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x12.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x12.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x13.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x13.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x14.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x14.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x15.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x15.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x16.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x16.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x17.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x17.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x18.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x18.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x19.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x19.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x20.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x20.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x21.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x21.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x22.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x22.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x23.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x23.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x24.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x24.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x25.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x25.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x26.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x26.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x27.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x27.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x28.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x28.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x29.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x29.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x30.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x30.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x31.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x31.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x32.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x32.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x33.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x33.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x34.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x34.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x35.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x35.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x36.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x36.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x37.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x37.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x38.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x38.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x39.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x39.wrl
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x40.wings
+%%DATADIR%%/modules/packages3d/Socket_Strips/Socket_Strip_Straight_2x40.wrl
+%%DATADIR%%/modules/packages3d/TO-18_Housings_Wings3D_WRL_11Jun2013/TO-18_2Pin_Housing_Faktor03937_11Jun2013.wings
+%%DATADIR%%/modules/packages3d/TO-18_Housings_Wings3D_WRL_11Jun2013/TO-18_2Pin_Housing_Faktor03937_11Jun2013.wrl
+%%DATADIR%%/modules/packages3d/TO-18_Housings_Wings3D_WRL_11Jun2013/TO-18_3Pin_Housing_Faktor03937_11Jun2013.wings
+%%DATADIR%%/modules/packages3d/TO-18_Housings_Wings3D_WRL_11Jun2013/TO-18_3Pin_Housing_Faktor03937_11Jun2013.wrl
 %%DATADIR%%/modules/packages3d/TO-220-3_Transistor_DualDiodes_Wings3d_RevB_03Sep2012/TO220-Horizontal_MountedFromSolderSide_RevB_Faktor03937_03Sep2012.wings
 %%DATADIR%%/modules/packages3d/TO-220-3_Transistor_DualDiodes_Wings3d_RevB_03Sep2012/TO220-Horizontal_MountedFromSolderSide_RevB_Faktor03937_03Sep2012.wrl
 %%DATADIR%%/modules/packages3d/TO-220-3_Transistor_DualDiodes_Wings3d_RevB_03Sep2012/TO220-Horizontal_RevB_Faktor03937_03Sep2012.wings
@@ -563,195 +1739,6 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/TO263-3__RevA_06Sep2012/TO263-3_Faktor03937_RevA_06Sep2012.wrl
 %%DATADIR%%/modules/packages3d/VML0806_Housing_Rohm_Wings3d_RevA_26Oct2012/VML0806_Housing_Rohm_Faktor03937_26Oct2012.wings
 %%DATADIR%%/modules/packages3d/VML0806_Housing_Rohm_Wings3d_RevA_26Oct2012/VML0806_Housing_Rohm_Faktor03937_26Oct2012.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_female.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_female.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_female_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_female_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_male.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_male.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_male_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_male_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_female.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_female.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_female_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_female_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_male.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_male.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_male_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_male_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db37_female_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db37_female_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_female.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_female.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_female_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_female_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_male.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_male.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_male_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_male_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_HExx/he10_10.wings
-%%DATADIR%%/modules/packages3d/conn_HExx/he10_10.wrl
-%%DATADIR%%/modules/packages3d/conn_HExx/he10_20.wings
-%%DATADIR%%/modules/packages3d/conn_HExx/he10_20.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c64abfd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c64abfd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c64abmd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c64abmd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c64acfd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c64acfd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c64acmd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c64acmd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c96abcfd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c96abcfd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c96abcmd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c96abcmd.wrl
-%%DATADIR%%/modules/packages3d/connectors/POWER_21.wings
-%%DATADIR%%/modules/packages3d/connectors/POWER_21.wrl
-%%DATADIR%%/modules/packages3d/connectors/RJ45_8.wings
-%%DATADIR%%/modules/packages3d/connectors/RJ45_8.wrl
-%%DATADIR%%/modules/packages3d/connectors/USB_type_B.wings
-%%DATADIR%%/modules/packages3d/connectors/USB_type_B.wrl
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-2p-125dsa.wings
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-2p-125dsa.wrl
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-3p-125dsa.wings
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-3p-125dsa.wrl
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-4p-125dsa.wings
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-4p-125dsa.wrl
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-5p-125dsa.wings
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-5p-125dsa.wrl
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-6p-125dsa.wings
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-6p-125dsa.wrl
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-7p-125dsa.wings
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-7p-125dsa.wrl
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-8p-125dsa.wings
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-8p-125dsa.wrl
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-9p-125dsa.wings
-%%DATADIR%%/modules/packages3d/connectors/conn_df13/df13-9p-125dsa.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin.png
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_01.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_01.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_02.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_02.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_03.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_03.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_04.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_04.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_05.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_05.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_06.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_06.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_07.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_07.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_08.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_08.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_09.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_09.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_10.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_10.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_11.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_11.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_12.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_12.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_13.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_13.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_14.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_14.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_15.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_15.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_16.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_16.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_17.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_17.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_18.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_18.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_19.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_19.wrl
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_20.wings
-%%DATADIR%%/modules/packages3d/connectors/female_pcb_pin/female_pcb_pin_20.wrl
-%%DATADIR%%/modules/packages3d/connectors/fpc_conn_zif_smt_18.wings
-%%DATADIR%%/modules/packages3d/connectors/fpc_conn_zif_smt_18.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_1x1_90.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_1x1_90.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_1x2_90.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_1x2_90.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_5x2.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_5x2.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_5x2_90.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_5x2_90.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/header_sockets.png
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_13x2.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_13x2.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_1x1.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_1x1.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_1x1_90.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_1x1_90.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_1x2.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_1x2.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_1x2_90.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_1x2_90.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_5x2.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_5x2.wrl
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_5x2_90.wings
-%%DATADIR%%/modules/packages3d/connectors/header_sockets/socket_5x2_90.wrl
-%%DATADIR%%/modules/packages3d/connectors/samtec-connectors/QMS-026-9.75-SL-D-A.wings
-%%DATADIR%%/modules/packages3d/connectors/samtec-connectors/QMS-026-9.75-SL-D-A.wrl
-%%DATADIR%%/modules/packages3d/connectors/subclick_horiz.wings
-%%DATADIR%%/modules/packages3d/connectors/subclick_horiz.wrl
-%%DATADIR%%/modules/packages3d/connectors/testpoint.wings
-%%DATADIR%%/modules/packages3d/connectors/testpoint.wrl
-%%DATADIR%%/modules/packages3d/connectors/testpoint_2pads.wrl
-%%DATADIR%%/modules/packages3d/connectors/testpoint_pads.wings
-%%DATADIR%%/modules/packages3d/connectors/usb/normal/usb_a/usb_a_through_hole.wings
-%%DATADIR%%/modules/packages3d/connectors/usb/normal/usb_a/usb_a_through_hole.wrl
-%%DATADIR%%/modules/packages3d/connectors/usb/normal/usb_b/usb_b_through_hole.wings
-%%DATADIR%%/modules/packages3d/connectors/usb/normal/usb_b/usb_b_through_hole.wrl
-%%DATADIR%%/modules/packages3d/connectors/usb/usb_pinout.png
-%%DATADIR%%/modules/packages3d/connectors/usb_a_through_hole.wings
-%%DATADIR%%/modules/packages3d/connectors/usb_a_through_hole.wrl
-%%DATADIR%%/modules/packages3d/connectors/xrl3male_90deg.wings
-%%DATADIR%%/modules/packages3d/connectors/xrl3male_90deg.wrl
-%%DATADIR%%/modules/packages3d/connectors/xrl5male_90deg.wings
-%%DATADIR%%/modules/packages3d/connectors/xrl5male_90deg.wrl
-%%DATADIR%%/modules/packages3d/device/bnc-ci.wings
-%%DATADIR%%/modules/packages3d/device/bnc-ci.wrl
-%%DATADIR%%/modules/packages3d/device/bnc.wings
-%%DATADIR%%/modules/packages3d/device/bnc.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_2.wings
-%%DATADIR%%/modules/packages3d/device/bornier_2.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_3.wings
-%%DATADIR%%/modules/packages3d/device/bornier_3.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_4.wings
-%%DATADIR%%/modules/packages3d/device/bornier_4.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_5.wings
-%%DATADIR%%/modules/packages3d/device/bornier_5.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_6.wings
-%%DATADIR%%/modules/packages3d/device/bornier_6.wrl
-%%DATADIR%%/modules/packages3d/device/crystal_low_profile.wings
-%%DATADIR%%/modules/packages3d/device/crystal_low_profile.wrl
-%%DATADIR%%/modules/packages3d/device/douille_4mm(black).wings
-%%DATADIR%%/modules/packages3d/device/douille_4mm(black).wrl
-%%DATADIR%%/modules/packages3d/device/douille_4mm(green).wings
-%%DATADIR%%/modules/packages3d/device/douille_4mm(green).wrl
-%%DATADIR%%/modules/packages3d/device/douille_4mm(red).wings
-%%DATADIR%%/modules/packages3d/device/douille_4mm(red).wrl
-%%DATADIR%%/modules/packages3d/device/polyswitch.wings
-%%DATADIR%%/modules/packages3d/device/polyswitch.wrl
-%%DATADIR%%/modules/packages3d/device/switch_push.wings
-%%DATADIR%%/modules/packages3d/device/switch_push.wrl
-%%DATADIR%%/modules/packages3d/device/switch_slide_right_angle_terminal.wings
-%%DATADIR%%/modules/packages3d/device/switch_slide_right_angle_terminal.wrl
-%%DATADIR%%/modules/packages3d/device/switch_slide_straight_terminal.wings
-%%DATADIR%%/modules/packages3d/device/switch_slide_straight_terminal.wrl
-%%DATADIR%%/modules/packages3d/device/switch_toggle_horizontal_right_angle_PC_terminal.wings
-%%DATADIR%%/modules/packages3d/device/switch_toggle_horizontal_right_angle_PC_terminal.wrl
-%%DATADIR%%/modules/packages3d/device/switch_toggle_right_angle_PC_terminal.wings
-%%DATADIR%%/modules/packages3d/device/switch_toggle_right_angle_PC_terminal.wrl
-%%DATADIR%%/modules/packages3d/device/switch_toggle_straight_terminal.wings
-%%DATADIR%%/modules/packages3d/device/switch_toggle_straight_terminal.wrl
-%%DATADIR%%/modules/packages3d/device/switch_toggle_straight_terminal_dt.wings
-%%DATADIR%%/modules/packages3d/device/switch_toggle_straight_terminal_dt.wrl
-%%DATADIR%%/modules/packages3d/device/transf_LL1538.wings
-%%DATADIR%%/modules/packages3d/device/transf_LL1538.wrl
 %%DATADIR%%/modules/packages3d/dil/dil_10.wings
 %%DATADIR%%/modules/packages3d/dil/dil_10.wrl
 %%DATADIR%%/modules/packages3d/dil/dil_14.wings
@@ -897,6 +1884,89 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/dil/switches_90deg/ds_dp12_red.wrl
 %%DATADIR%%/modules/packages3d/dil/textool_40.wings
 %%DATADIR%%/modules/packages3d/dil/textool_40.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_12mm_disc.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_12mm_disc.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_13x4mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_13x4mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_18x5mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_18x5mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_18x6mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_18x6mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_18x8mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_18x8mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_3mm_disc.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_3mm_disc.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_6mm_disc.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_6mm_disc.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_7.5mm_disc.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_7.5mm_disc.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_7x2mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_7x2mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_7x4.5mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_7x4.5mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_7x6mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cnp_7x6mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_10x13mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_10x13mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_10x16mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_10x16mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_10x21mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_10x21mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_10x25mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_10x25mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_13x21mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_13x21mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_13x25mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_13x25mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_16x25mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_16x25mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_22x41mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_22x41mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_26x31mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_26x31mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_26x45mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_26x45mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_30x51mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_30x51mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_35x51mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_35x51mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_5x11mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_5x11mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_5x6mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_5x6mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_8x13mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_8x13mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_8x21mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cp_8x21mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_13x31mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_13x31mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_16x31mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_16x31mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_16x40mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_16x40mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_5x11mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_5x11mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_6x11mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_6x11mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_8x21mm.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/cpa_8x21mm.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_horiz_c1_5v8.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_horiz_c1_5v8.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_horiz_c1v7.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_horiz_c1v7.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_horiz_c2v10.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_horiz_c2v10.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_big.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_big.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_c1v5.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_c1v5.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_c1v7.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_c1v7.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_c1v8l.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_c1v8l.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_c2v10.wings
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/c_vert_c2v10.wrl
+%%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic/capacitor_electrolytic.png
 %%DATADIR%%/modules/packages3d/discret/SELF_WEPD4.wings
 %%DATADIR%%/modules/packages3d/discret/SELF_WEPD4.wrl
 %%DATADIR%%/modules/packages3d/discret/adjustable_rx2.wings
@@ -927,89 +1997,6 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/discret/capa_1_pas.wrl
 %%DATADIR%%/modules/packages3d/discret/capa_2pas_5x5mm.wings
 %%DATADIR%%/modules/packages3d/discret/capa_2pas_5x5mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_12mm_disc.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_12mm_disc.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_13x4mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_13x4mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_18x5mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_18x5mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_18x6mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_18x6mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_18x8mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_18x8mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_3mm_disc.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_3mm_disc.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_6mm_disc.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_6mm_disc.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_7.5mm_disc.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_7.5mm_disc.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_7x2mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_7x2mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_7x4.5mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_7x4.5mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_7x6mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cnp_7x6mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_10x13mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_10x13mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_10x16mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_10x16mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_10x21mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_10x21mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_10x25mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_10x25mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_13x21mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_13x21mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_13x25mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_13x25mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_16x25mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_16x25mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_22x41mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_22x41mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_26x31mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_26x31mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_26x45mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_26x45mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_30x51mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_30x51mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_35x51mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_35x51mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_5x11mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_5x11mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_5x6mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_5x6mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_8x13mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_8x13mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_8x21mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cp_8x21mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_13x31mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_13x31mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_16x31mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_16x31mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_16x40mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_16x40mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_5x11mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_5x11mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_6x11mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_6x11mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_8x21mm.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/cpa_8x21mm.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_horiz_c1_5v8.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_horiz_c1_5v8.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_horiz_c1v7.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_horiz_c1v7.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_horiz_c2v10.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_horiz_c2v10.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_big.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_big.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_c1v5.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_c1v5.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_c1v7.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_c1v7.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_c1v8l.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_c1v8l.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_c2v10.wings
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/c_vert_c2v10.wrl
-%%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic/capacitor_electrolytic.png
 %%DATADIR%%/modules/packages3d/discret/diode.wings
 %%DATADIR%%/modules/packages3d/discret/diode.wrl
 %%DATADIR%%/modules/packages3d/discret/emi_filter.wings
@@ -1514,76 +2501,96 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/divers/optoresistor_nls-32.wrl
 %%DATADIR%%/modules/packages3d/pga/pga120.wings
 %%DATADIR%%/modules/packages3d/pga/pga120.wrl
-%%DATADIR%%/modules/packages3d/pin_array/header_1x1_90.wings
-%%DATADIR%%/modules/packages3d/pin_array/header_1x1_90.wrl
-%%DATADIR%%/modules/packages3d/pin_array/header_1x2_90.wings
-%%DATADIR%%/modules/packages3d/pin_array/header_1x2_90.wrl
-%%DATADIR%%/modules/packages3d/pin_array/header_5x2_90.wings
-%%DATADIR%%/modules/packages3d/pin_array/header_5x2_90.wrl
-%%DATADIR%%/modules/packages3d/pin_array/jumper.wings
-%%DATADIR%%/modules/packages3d/pin_array/jumper.wrl
-%%DATADIR%%/modules/packages3d/pin_array/jumper_on.wings
-%%DATADIR%%/modules/packages3d/pin_array/jumper_on.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pin_1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pin_1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pin_array_1x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pin_array_1x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_12x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_12x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_12x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_12x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_13x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_13x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_18x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_18x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_20x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_20x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_28x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_28x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_2x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_2x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_2x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_2x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_30x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_30x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_3x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_3x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_3x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_3x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_4x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_4x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_4x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_4x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_5x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_5x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_5x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_5x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_6x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_6x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_6x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_6x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_8x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_8x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_8x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_female_28x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_female_28x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_female_5x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_female_5x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_female_6x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_female_6x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_female_7x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_female_7x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/socket_1x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/socket_1x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/socket_1x1_90.wings
-%%DATADIR%%/modules/packages3d/pin_array/socket_1x1_90.wrl
-%%DATADIR%%/modules/packages3d/pin_array/socket_1x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/socket_1x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/socket_1x2_90.wings
-%%DATADIR%%/modules/packages3d/pin_array/socket_1x2_90.wrl
-%%DATADIR%%/modules/packages3d/pin_array/socket_5x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/socket_5x2_90.wings
-%%DATADIR%%/modules/packages3d/pin_array/socket_5x2_90.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/C0402.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/C0402.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/C0603.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/C0603.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/C0805.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/C0805.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1206.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1206.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1210.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1210.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1808.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1808.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1812.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1812.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1825.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_1825.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_2220.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_2220.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_2225.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_2225.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_10x10.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_10x10.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_10x10_5.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_10x10_5.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_10x7_7.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_10x7_7.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_12_5x13_5.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_12_5x13_5.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_12_5x16.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_12_5x16.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_16x16_5.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_16x16_5.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_3x5_3.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_3x5_3.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_4x4_5.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_4x4_5.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_4x5_3.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_4x5_3.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_4x5_7.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_4x5_7.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_4x5_8.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_4x5_8.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_5x4_5.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_5x4_5.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_5x5_3.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_5x5_3.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_5x5_7.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_5x5_7.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_5x5_8.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_5x5_8.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x4_5.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x4_5.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x5_3.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x5_3.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x5_7.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x5_7.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x5_8.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x5_8.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x7_7.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_6_3x7_7.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_8x10.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_8x10.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_8x10_5.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_8x10_5.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_8x6_5.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_8x6_5.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_8x6_7.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_elec_8x6_7.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_A.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_A.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_B.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_B.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_C.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_C.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_D.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_D.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_E.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_E.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_R.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_R.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_S.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_S.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_T.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_T.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_U.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_U.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_V.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_V.wrl
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_X.wings
+%%DATADIR%%/modules/packages3d/smd/Capacitors/c_tant_X.wrl
 %%DATADIR%%/modules/packages3d/smd/IDG-300.wings
 %%DATADIR%%/modules/packages3d/smd/IDG-300.wrl
 %%DATADIR%%/modules/packages3d/smd/MSOP_10.wings
@@ -1608,96 +2615,6 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/smd/TSOC_6.wrl
 %%DATADIR%%/modules/packages3d/smd/TSSOP_28.wings
 %%DATADIR%%/modules/packages3d/smd/TSSOP_28.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/C0402.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/C0402.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/C0603.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/C0603.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/C0805.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/C0805.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1206.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1206.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1210.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1210.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1808.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1808.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1812.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1812.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1825.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_1825.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_2220.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_2220.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_2225.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_2225.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_10x10.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_10x10.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_10x10_5.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_10x10_5.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_10x7_7.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_10x7_7.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_12_5x13_5.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_12_5x13_5.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_12_5x16.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_12_5x16.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_16x16_5.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_16x16_5.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_3x5_3.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_3x5_3.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_4x4_5.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_4x4_5.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_4x5_3.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_4x5_3.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_4x5_7.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_4x5_7.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_4x5_8.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_4x5_8.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_5x4_5.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_5x4_5.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_5x5_3.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_5x5_3.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_5x5_7.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_5x5_7.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_5x5_8.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_5x5_8.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x4_5.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x4_5.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x5_3.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x5_3.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x5_7.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x5_7.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x5_8.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x5_8.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x7_7.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_6_3x7_7.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_8x10.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_8x10.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_8x10_5.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_8x10_5.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_8x6_5.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_8x6_5.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_8x6_7.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_elec_8x6_7.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_A.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_A.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_B.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_B.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_C.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_C.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_D.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_D.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_E.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_E.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_R.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_R.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_S.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_S.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_T.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_T.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_U.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_U.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_V.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_V.wrl
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_X.wings
-%%DATADIR%%/modules/packages3d/smd/capacitors/c_tant_X.wrl
 %%DATADIR%%/modules/packages3d/smd/chip_cms.wings
 %%DATADIR%%/modules/packages3d/smd/chip_cms.wrl
 %%DATADIR%%/modules/packages3d/smd/chip_cms_4pins.wings
@@ -1936,186 +2853,215 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/packages3d/valves/ecc83.wings
 %%DATADIR%%/modules/packages3d/valves/ecc83.wrl
 %%DATADIR%%/modules/pga_sockets.brd
-%%DATADIR%%/modules/pga_sockets.mod
 %%DATADIR%%/modules/pin_array.brd
-%%DATADIR%%/modules/pin_array.mod
-%%DATADIR%%/modules/powerint.mod
 %%DATADIR%%/modules/smd_active.equ
 %%DATADIR%%/modules/smd_capa_0805.equ
 %%DATADIR%%/modules/smd_capa_1206.equ
 %%DATADIR%%/modules/smd_capa_pol.equ
-%%DATADIR%%/modules/smd_capacitors.mod
-%%DATADIR%%/modules/smd_crystal&oscillator.mod
-%%DATADIR%%/modules/smd_lqfp.mod
 %%DATADIR%%/modules/smd_passive.equ
 %%DATADIR%%/modules/smd_resistor_0805.equ
 %%DATADIR%%/modules/smd_resistor_1206.equ
-%%DATADIR%%/modules/smd_resistors.mod
-%%DATADIR%%/modules/smd_soic_packages.mod
-%%DATADIR%%/modules/smd_ssop_packages.mod
 %%DATADIR%%/modules/smd_trans-diodes.equ
-%%DATADIR%%/modules/smd_transistors.mod
-%%DATADIR%%/modules/sockets.mod
 %%DATADIR%%/modules/sockets_miscellaneous.brd
 %%DATADIR%%/modules/standard-trans-diodes.equ
-%%DATADIR%%/modules/valves.mod
-%%DATADIR%%/template/fp_global_table
+%%DATADIR%%/template/CMakeLists.txt
+%%DATADIR%%/template/fp-lib-table.for-eagle-6.4.0
+%%DATADIR%%/template/fp-lib-table.for-github
+%%DATADIR%%/template/fp-lib-table.for-legacy
+%%DATADIR%%/template/fp-lib-table.for-pretty
+%%DATADIR%%/template/gost_landscape.kicad_wks
+%%DATADIR%%/template/gost_portrait.kicad_wks
 %%DATADIR%%/template/kicad.pro
-%%DOCSDIR%%/INSTALL.txt
-%%DOCSDIR%%/internat/CMakeLists.txt
-%%DOCSDIR%%/internat/bg/kicad.mo
-%%DOCSDIR%%/internat/bg/kicad.po
-%%DOCSDIR%%/internat/ca/kicad.mo
-%%DOCSDIR%%/internat/ca/kicad.po
-%%DOCSDIR%%/internat/cs/kicad.mo
-%%DOCSDIR%%/internat/cs/kicad.po
-%%DOCSDIR%%/internat/de/kicad.mo
-%%DOCSDIR%%/internat/de/kicad.po
-%%DOCSDIR%%/internat/el_GR/kicad.mo
-%%DOCSDIR%%/internat/el_GR/kicad.po
-%%DOCSDIR%%/internat/es/kicad.mo
-%%DOCSDIR%%/internat/es/kicad.po
-%%DOCSDIR%%/internat/fi/kicad.mo
-%%DOCSDIR%%/internat/fi/kicad.po
-%%DOCSDIR%%/internat/fr/kicad.mo
-%%DOCSDIR%%/internat/fr/kicad.po
-%%DOCSDIR%%/internat/hu/kicad.mo
-%%DOCSDIR%%/internat/hu/kicad.po
-%%DOCSDIR%%/internat/it/kicad.mo
-%%DOCSDIR%%/internat/it/kicad.po
-%%DOCSDIR%%/internat/ja/kicad.mo
-%%DOCSDIR%%/internat/ja/kicad.po
-%%DOCSDIR%%/internat/ko/kicad.mo
-%%DOCSDIR%%/internat/ko/kicad.po
-%%DOCSDIR%%/internat/nl/kicad.mo
-%%DOCSDIR%%/internat/nl/kicad.po
-%%DOCSDIR%%/internat/pl/kicad.mo
-%%DOCSDIR%%/internat/pl/kicad.po
-%%DOCSDIR%%/internat/pt/kicad.mo
-%%DOCSDIR%%/internat/pt/kicad.po
-%%DOCSDIR%%/internat/ru/kicad.mo
-%%DOCSDIR%%/internat/ru/kicad.po
-%%DOCSDIR%%/internat/sl/kicad.mo
-%%DOCSDIR%%/internat/sl/kicad.po
-%%DOCSDIR%%/internat/sv/kicad.mo
-%%DOCSDIR%%/internat/sv/kicad.po
-%%DOCSDIR%%/internat/zh_CN/kicad.mo
-%%DOCSDIR%%/internat/zh_CN/kicad.po
-%%DOCSDIR%%/scripts/bom-in-python/README-bom.txt
-%%DOCSDIR%%/scripts/bom-in-python/bom-generation.py
-%%DOCSDIR%%/scripts/bom-in-python/bom_csv_by_ref.py
-%%DOCSDIR%%/scripts/bom-in-python/bom_csv_by_ref_v2.py
-%%DOCSDIR%%/scripts/bom-in-python/bom_csv_grouped_by_value.py
-%%DOCSDIR%%/scripts/bom-in-python/bom_html_by_value.py
-%%DOCSDIR%%/scripts/bom-in-python/bom_html_grouped_by_value.py
-%%DOCSDIR%%/scripts/bom-in-python/kicad_netlist_reader.py
-%%DOCSDIR%%/scripts/bom-in-python/round_robin.py
-%%DOCSDIR%%/scripts/bom-in-python/round_value_robin.py
-%%DOCSDIR%%/scripts/lib_convert.py
-%%DOCSDIR%%/scripts/make_global_table.sh
-@dirrm lib/kicad/plugins
-@dirrm lib/kicad
-@unexec rmdir %D/share/applications 2> /dev/null || true
-@unexec rmdir %D/share/mimelnk/application 2> /dev/null || true
-@unexec rmdir %D/share/mimelnk 2> /dev/null || true
-@dirrm %%DATADIR%%/template
-@dirrm %%DATADIR%%/modules/packages3d/valves
-@dirrm %%DATADIR%%/modules/packages3d/to-xxx-packages
-@dirrm %%DATADIR%%/modules/packages3d/support
-@dirrm %%DATADIR%%/modules/packages3d/smd/smd_transistors
-@dirrm %%DATADIR%%/modules/packages3d/smd/smd_dil
-@dirrm %%DATADIR%%/modules/packages3d/smd/smd_crystal&oscillator
-@dirrm %%DATADIR%%/modules/packages3d/smd/resistors/R0805
-@dirrm %%DATADIR%%/modules/packages3d/smd/resistors/R0603
-@dirrm %%DATADIR%%/modules/packages3d/smd/resistors
-@dirrm %%DATADIR%%/modules/packages3d/smd/qfn
-@dirrm %%DATADIR%%/modules/packages3d/smd/capacitors
-@dirrm %%DATADIR%%/modules/packages3d/smd
-@dirrm %%DATADIR%%/modules/packages3d/pin_array
-@dirrm %%DATADIR%%/modules/packages3d/pga
-@dirrm %%DATADIR%%/modules/packages3d/divers
-@dirrm %%DATADIR%%/modules/packages3d/discret/xtal
-@dirrm %%DATADIR%%/modules/packages3d/discret/resistors/vertical
-@dirrm %%DATADIR%%/modules/packages3d/discret/resistors/horizontal
-@dirrm %%DATADIR%%/modules/packages3d/discret/resistors
-@dirrm %%DATADIR%%/modules/packages3d/discret/potentiometer
-@dirrm %%DATADIR%%/modules/packages3d/discret/multiwatt
-@dirrm %%DATADIR%%/modules/packages3d/discret/leds
-@dirrm %%DATADIR%%/modules/packages3d/discret/led_displays
-@dirrm %%DATADIR%%/modules/packages3d/discret/lcds
-@dirrm %%DATADIR%%/modules/packages3d/discret/capacitor/electrolytic
-@dirrm %%DATADIR%%/modules/packages3d/discret/capacitor
-@dirrm %%DATADIR%%/modules/packages3d/discret
-@dirrm %%DATADIR%%/modules/packages3d/dil/switches_90deg
-@dirrm %%DATADIR%%/modules/packages3d/dil/switches
-@dirrm %%DATADIR%%/modules/packages3d/dil/sockets
-@dirrm %%DATADIR%%/modules/packages3d/dil
-@dirrm %%DATADIR%%/modules/packages3d/device
-@dirrm %%DATADIR%%/modules/packages3d/connectors/usb/normal/usb_b
-@dirrm %%DATADIR%%/modules/packages3d/connectors/usb/normal/usb_a
-@dirrm %%DATADIR%%/modules/packages3d/connectors/usb/normal
-@dirrm %%DATADIR%%/modules/packages3d/connectors/usb
-@dirrm %%DATADIR%%/modules/packages3d/connectors/samtec-connectors
-@dirrm %%DATADIR%%/modules/packages3d/connectors/header_sockets
-@dirrm %%DATADIR%%/modules/packages3d/connectors/female_pcb_pin
-@dirrm %%DATADIR%%/modules/packages3d/connectors/conn_df13
-@dirrm %%DATADIR%%/modules/packages3d/connectors
-@dirrm %%DATADIR%%/modules/packages3d/conn_europe
-@dirrm %%DATADIR%%/modules/packages3d/conn_HExx
-@dirrm %%DATADIR%%/modules/packages3d/conn_DBxx
-@dirrm %%DATADIR%%/modules/packages3d/VML0806_Housing_Rohm_Wings3d_RevA_26Oct2012
-@dirrm %%DATADIR%%/modules/packages3d/TO263-3__RevA_06Sep2012
-@dirrm %%DATADIR%%/modules/packages3d/TO220AC_Dioden_Wings3d_RevA_20Apr2013
-@dirrm %%DATADIR%%/modules/packages3d/TO220-5_Pentawatt_Wings3d_RevA_24Oct2012
-@dirrm %%DATADIR%%/modules/packages3d/TO-78_Wings3D_RevA_06Jun2013
-@dirrm %%DATADIR%%/modules/packages3d/TO-220-3_Transistor_DualDiodes_Wings3d_RevB_03Sep2012
-@dirrm %%DATADIR%%/modules/packages3d/SOT89-3_SOT89-5_Housing_Wings3d_RevA_02Sep2012
-@dirrm %%DATADIR%%/modules/packages3d/SOT126_SOT32_Housings_Wings3D_RevA_22Oct2012
-@dirrm %%DATADIR%%/modules/packages3d/SIP9-Housing_Wings3d_14Jun2013
-@dirrm %%DATADIR%%/modules/packages3d/OldSowjetAera_Transistor_Wings3D_RevA
-@dirrm %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012
-@dirrm %%DATADIR%%/modules/packages3d/Dioden_SMD_Wings3d_RevA_06Sep2012
-@dirrm %%DATADIR%%/modules/packages3d/Allegro_HallSensors_Wings3D_RevA_24Oct2012
-@dirrm %%DATADIR%%/modules/packages3d
-@dirrm %%DATADIR%%/modules/footprints_doc
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/library/symbols
-@dirrm %%DATADIR%%/library/contrib_symbols_dl1eic
-@dirrm %%DATADIR%%/library
-@dirrm %%DATADIR%%/demos/video
-@dirrm %%DATADIR%%/demos/test_xil_95108
-@dirrm %%DATADIR%%/demos/sonde xilinx
-@dirrm %%DATADIR%%/demos/pspice
-@dirrm %%DATADIR%%/demos/pic_programmer
-@dirrm %%DATADIR%%/demos/microwave
-@dirrm %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213
-@dirrm %%DATADIR%%/demos/interf_u
-@dirrm %%DATADIR%%/demos/flat_hierarchy
-@dirrm %%DATADIR%%/demos/electric
-@dirrm %%DATADIR%%/demos/ecc83
-@dirrm %%DATADIR%%/demos/complex_hierarchy
-@dirrm %%DATADIR%%/demos
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/scripts/bom-in-python
-@dirrm %%DOCSDIR%%/scripts
-@dirrm %%DOCSDIR%%/internat/zh_CN
-@dirrm %%DOCSDIR%%/internat/sv
-@dirrm %%DOCSDIR%%/internat/sl
-@dirrm %%DOCSDIR%%/internat/ru
-@dirrm %%DOCSDIR%%/internat/pt
-@dirrm %%DOCSDIR%%/internat/pl
-@dirrm %%DOCSDIR%%/internat/nl
-@dirrm %%DOCSDIR%%/internat/ko
-@dirrm %%DOCSDIR%%/internat/ja
-@dirrm %%DOCSDIR%%/internat/it
-@dirrm %%DOCSDIR%%/internat/hu
-@dirrm %%DOCSDIR%%/internat/fr
-@dirrm %%DOCSDIR%%/internat/fi
-@dirrm %%DOCSDIR%%/internat/es
-@dirrm %%DOCSDIR%%/internat/el_GR
-@dirrm %%DOCSDIR%%/internat/de
-@dirrm %%DOCSDIR%%/internat/cs
-@dirrm %%DOCSDIR%%/internat/ca
-@dirrm %%DOCSDIR%%/internat/bg
-@dirrm %%DOCSDIR%%/internat
-@dirrm %%DOCSDIR%%
+%%DATADIR%%/template/pagelayout_default.kicad_wks
+%%DATADIR%%/template/pagelayout_logo.kicad_wks
+%%DATADIR%%/template/raspberrypi-gpio/meta/brd.png
+%%DATADIR%%/template/raspberrypi-gpio/meta/icon.png
+%%DATADIR%%/template/raspberrypi-gpio/meta/info.html
+%%DATADIR%%/template/raspberrypi-gpio/raspberrypi-gpio-cache.lib
+%%DATADIR%%/template/raspberrypi-gpio/raspberrypi-gpio.cmp
+%%DATADIR%%/template/raspberrypi-gpio/raspberrypi-gpio.kicad_pcb
+%%DATADIR%%/template/raspberrypi-gpio/raspberrypi-gpio.net
+%%DATADIR%%/template/raspberrypi-gpio/raspberrypi-gpio.pro
+%%DATADIR%%/template/raspberrypi-gpio/raspberrypi-gpio.sch
+%%DATADIR%%/template/raspberrypi-gpio/raspberrypi-gpio.stf
+%%DATADIR%%/template/stm32f100-discovery-shield/meta/board_stm32vl_discovery.png
+%%DATADIR%%/template/stm32f100-discovery-shield/meta/icon.png
+%%DATADIR%%/template/stm32f100-discovery-shield/meta/info.html
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield-cache.lib
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.cmp
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.dcm
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.kicad_pcb
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.lib
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.mod
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.net
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.pro
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.sch
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack.dcm
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack.lib
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack40-cache.lib
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack40.cmp
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack40.mod
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack40.net
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack40.pro
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack40.sch
+%%DATADIR%%/template/ti-stellaris-boosterpack40/boosterpack40_min.kicad_pcb
+%%DATADIR%%/template/ti-stellaris-boosterpack40/meta/icon.png
+%%DATADIR%%/template/ti-stellaris-boosterpack40/meta/info.html
+%%DATADIR%%/template/ti-stellaris-boosterpack40/meta/launchpad_standard40.png
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack.dcm
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack.lib
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack40_min-cache.lib
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack40_min.cmp
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack40_min.kicad_pcb
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack40_min.mod
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack40_min.net
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack40_min.pro
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/boosterpack40_min.sch
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/meta/icon.png
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/meta/info.html
+%%DATADIR%%/template/ti-stellaris-boosterpack40_min/meta/launchpad_standard40.png
+share/mime/packages/kicad.xml
+share/mimelnk/application/x-kicad-pcb.desktop
+share/mimelnk/application/x-kicad-project.desktop
+share/mimelnk/application/x-kicad-schematic.desktop
+@dirrmtry lib/kicad/plugins
+@dirrmtry lib/kicad
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/bg
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/ca
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/cs
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/de
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/el_GR
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/es
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/fi
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/fr
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/hu
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/it
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/ja
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/ko
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/nl
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/pl
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/pt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/ru
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/sl
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/sv
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat/zh_CN
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/internat
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/scripts/bom-in-python
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/scripts
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/demos/complex_hierarchy
+@dirrmtry %%DATADIR%%/demos/ecc83
+@dirrmtry %%DATADIR%%/demos/electric
+@dirrmtry %%DATADIR%%/demos/flat_hierarchy
+@dirrmtry %%DATADIR%%/demos/interf_u
+@dirrmtry %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213
+@dirrmtry %%DATADIR%%/demos/microwave
+@dirrmtry %%DATADIR%%/demos/pic_programmer
+@dirrmtry %%DATADIR%%/demos/pspice
+@dirrmtry %%DATADIR%%/demos/sonde xilinx
+@dirrmtry %%DATADIR%%/demos/test_xil_95108
+@dirrmtry %%DATADIR%%/demos/video
+@dirrmtry %%DATADIR%%/demos
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModB_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModC_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModD_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModE_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModF_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModG_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModH_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC
+@dirrmtry %%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Adjustable-BuildingBlock_RevB
+@dirrmtry %%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-Oscillator-Standard-BuildingBlock_RevB
+@dirrmtry %%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB/555-TwoPointRegulator-BuildingBlock_RevB
+@dirrmtry %%DATADIR%%/library/Buildingblocks/555-BuildingBlocks_RevB
+@dirrmtry %%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModA_RevA
+@dirrmtry %%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/78xx-Regler-BuildingBlock_ModB_RevA
+@dirrmtry %%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModA_RevA
+@dirrmtry %%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA/79xx-Regler-BuildingBlock_ModB_RevA
+@dirrmtry %%DATADIR%%/library/Buildingblocks/78xx_79xxRegler-BuildingBlocks_RevA
+@dirrmtry %%DATADIR%%/library/Buildingblocks
+@dirrmtry %%DATADIR%%/library/contrib_symbols_dl1eic
+@dirrmtry %%DATADIR%%/library/symbols
+@dirrmtry %%DATADIR%%/library
+@dirrmtry %%DATADIR%%/modules/footprints_doc
+@dirrmtry %%DATADIR%%/modules/packages3d/7Segment_HDSM531_HDSM533_Wings3D_RevA_17Sep2013
+@dirrmtry %%DATADIR%%/modules/packages3d/BNC-Socket_Wings3D_RevA_22Sep2013
+@dirrmtry %%DATADIR%%/modules/packages3d/Conn_DBxx
+@dirrmtry %%DATADIR%%/modules/packages3d/Conn_Europe
+@dirrmtry %%DATADIR%%/modules/packages3d/Conn_HExx
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors/conn_df13
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors/female_pcb_pin
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors/header_sockets
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors/samtec-connectors
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors/usb/normal/usb_a
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors/usb/normal/usb_b
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors/usb/normal
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors/usb
+@dirrmtry %%DATADIR%%/modules/packages3d/Connectors
+@dirrmtry %%DATADIR%%/modules/packages3d/Device
+@dirrmtry %%DATADIR%%/modules/packages3d/Dioden_SMD_Wings3d_RevA_06Sep2012
+@dirrmtry %%DATADIR%%/modules/packages3d/FuseholdersAndfuses_Wings3D_RevA_02Oct2013
+@dirrmtry %%DATADIR%%/modules/packages3d/IR-directFET_Packages_Wings3d_RevB_28Sep2013
+@dirrmtry %%DATADIR%%/modules/packages3d/LEM_HallEffectTransducers_Wings3d_RevA_13Oct2012
+@dirrmtry %%DATADIR%%/modules/packages3d/NF-Transformer_ETAL_Wings3d_RevA_28Aug2012
+@dirrmtry %%DATADIR%%/modules/packages3d/OldSowjetAera_Transistor_Wings3D_RevA
+@dirrmtry %%DATADIR%%/modules/packages3d/PFF_PSF_PSS_Leadforms
+@dirrmtry %%DATADIR%%/modules/packages3d/Pin_Array
+@dirrmtry %%DATADIR%%/modules/packages3d/Pin_Headers
+@dirrmtry %%DATADIR%%/modules/packages3d/Relay_ThroughHole_Packages_Wings3d_RevC_07Oct2013
+@dirrmtry %%DATADIR%%/modules/packages3d/SIP9-Housing_Wings3d_14Jun2013
+@dirrmtry %%DATADIR%%/modules/packages3d/SOT126_SOT32_Housings_Wings3D_RevA_22Oct2012
+@dirrmtry %%DATADIR%%/modules/packages3d/SOT89-3_SOT89-5_Housing_Wings3d_RevA_02Sep2012
+@dirrmtry %%DATADIR%%/modules/packages3d/Socket_Strips
+@dirrmtry %%DATADIR%%/modules/packages3d/TO-18_Housings_Wings3D_WRL_11Jun2013
+@dirrmtry %%DATADIR%%/modules/packages3d/TO-220-3_Transistor_DualDiodes_Wings3d_RevB_03Sep2012
+@dirrmtry %%DATADIR%%/modules/packages3d/TO-78_Wings3D_RevA_06Jun2013
+@dirrmtry %%DATADIR%%/modules/packages3d/TO220-5_Pentawatt_Wings3d_RevA_24Oct2012
+@dirrmtry %%DATADIR%%/modules/packages3d/TO220AC_Dioden_Wings3d_RevA_20Apr2013
+@dirrmtry %%DATADIR%%/modules/packages3d/TO263-3__RevA_06Sep2012
+@dirrmtry %%DATADIR%%/modules/packages3d/VML0806_Housing_Rohm_Wings3d_RevA_26Oct2012
+@dirrmtry %%DATADIR%%/modules/packages3d/dil/sockets
+@dirrmtry %%DATADIR%%/modules/packages3d/dil/switches
+@dirrmtry %%DATADIR%%/modules/packages3d/dil/switches_90deg
+@dirrmtry %%DATADIR%%/modules/packages3d/dil
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/Capacitor/electrolytic
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/Capacitor
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/lcds
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/led_displays
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/leds
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/multiwatt
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/potentiometer
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/resistors/horizontal
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/resistors/vertical
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/resistors
+@dirrmtry %%DATADIR%%/modules/packages3d/discret/xtal
+@dirrmtry %%DATADIR%%/modules/packages3d/discret
+@dirrmtry %%DATADIR%%/modules/packages3d/divers
+@dirrmtry %%DATADIR%%/modules/packages3d/pga
+@dirrmtry %%DATADIR%%/modules/packages3d/smd/Capacitors
+@dirrmtry %%DATADIR%%/modules/packages3d/smd/qfn
+@dirrmtry %%DATADIR%%/modules/packages3d/smd/resistors/R0603
+@dirrmtry %%DATADIR%%/modules/packages3d/smd/resistors/R0805
+@dirrmtry %%DATADIR%%/modules/packages3d/smd/resistors
+@dirrmtry %%DATADIR%%/modules/packages3d/smd/smd_crystal&oscillator
+@dirrmtry %%DATADIR%%/modules/packages3d/smd/smd_dil
+@dirrmtry %%DATADIR%%/modules/packages3d/smd/smd_transistors
+@dirrmtry %%DATADIR%%/modules/packages3d/smd
+@dirrmtry %%DATADIR%%/modules/packages3d/support
+@dirrmtry %%DATADIR%%/modules/packages3d/to-xxx-packages
+@dirrmtry %%DATADIR%%/modules/packages3d/valves
+@dirrmtry %%DATADIR%%/modules/packages3d
+@dirrmtry %%DATADIR%%/modules
+@dirrmtry %%DATADIR%%/template/raspberrypi-gpio/meta
+@dirrmtry %%DATADIR%%/template/raspberrypi-gpio
+@dirrmtry %%DATADIR%%/template/stm32f100-discovery-shield/meta
+@dirrmtry %%DATADIR%%/template/stm32f100-discovery-shield
+@dirrmtry %%DATADIR%%/template/ti-stellaris-boosterpack40/meta
+@dirrmtry %%DATADIR%%/template/ti-stellaris-boosterpack40
+@dirrmtry %%DATADIR%%/template/ti-stellaris-boosterpack40_min/meta
+@dirrmtry %%DATADIR%%/template/ti-stellaris-boosterpack40_min
+@dirrmtry %%DATADIR%%/template
+@dirrmtry %%DATADIR%%
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
