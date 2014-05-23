@@ -4,4 +4,10 @@ lib/libdvdcss.so
 lib/libdvdcss.so.2
 lib/libdvdcss.so.2.1.0
 libdata/pkgconfig/libdvdcss.pc
-@dirrm include/dvdcss
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrmtry include/dvdcss
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
