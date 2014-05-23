@@ -11,7 +11,9 @@ DISTNAME=	${PORTNAME}-0.6.0-rc1
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Tunnel IPv4 data through a DNS server
 
-PLIST_FILES=	bin/iodine sbin/iodined
+LICENSE=	BSD
+
+PLIST_FILES=	bin/iodine sbin/iodined man/man8/iodine.8.gz man/man8/iodined.8.gz
 
 PORTDOCS=	CHANGELOG README TODO
 
@@ -20,19 +22,20 @@ MLINKS=		iodine.8 iodined.8
 
 USE_RC_SUBR=	iodined
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodine ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodined ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodine ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodined ${STAGEDIR}${PREFIX}/sbin
 .for m in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/man/${m} ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/${m} ${STAGEDIR}${MANPREFIX}/man/man8
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${GZIP_CMD} ${STAGEDIR}${MANPREFIX}/man/man8/iodine.8
+	${LN} -s iodine.8.gz ${STAGEDIR}${MANPREFIX}/man/man8/iodined.8.gz
+.if !defined(PORT_OPTIONS:MDOCS)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

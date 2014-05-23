@@ -9,10 +9,14 @@ MASTER_SITES=	SF/${PORTNAME:S/_/-/}
 MAINTAINER=	freebsd@hm2k.org
 COMMENT=	Finds fastest CVSup server
 
+LICENSE=	BSD
+
 USES=		perl5
 
-MAN7=		fastest_cvsup.7
-PLIST_FILES=	bin/fastest_cvsup
+PLIST_FILES=	bin/fastest_cvsup man/man7/fastest_cvsup.7.gz
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/fastest_cvsup ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/fastest_cvsup.7 ${STAGEDIR}${PREFIX}/man/man7
+
 .include <bsd.port.mk>

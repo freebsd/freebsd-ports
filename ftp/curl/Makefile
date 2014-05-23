@@ -3,6 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.36.0
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -106,8 +107,9 @@ LIBSSH2_CONFIGURE_OFF=	--without-libssh2
 LIBSSH2_CONFIGURE_ON=	--with-libssh2=${LOCALBASE}
 LIBSSH2_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 NSS_CONFIGURE_OFF=	--without-nss
-NSS_CONFIGURE_ON=	--with-nss=${LOCALBASE}
+NSS_CONFIGURE_ON=	--with-nss=yes
 NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+NSS_USES=		pkgconfig
 OPENSSL_CONFIGURE_OFF=	--without-ssl
 OPENSSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
 OPENSSL_CPPFLAGS=	-I${OPENSSLINC}

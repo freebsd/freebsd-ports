@@ -3,27 +3,36 @@
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games linux
-MASTER_SITES=		${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|}
-#MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|}
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|} \
+		${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	et-linux-2.60b.x86
 DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch
 
-MAINTAINER=	benlutz@datacomm.ch
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
+USE_LINUX_APPS=	xorglibs
 USES=		zip:infozip
 NO_CDROM=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/${PORTNAME}
-INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 PATCH_260B_DIR=	Enemy Territory 2.60b
-USE_LINUX_APPS=	dri
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS NVIDIA_GL
+NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNVIDIA_GL}
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+USE_LINUX_APPS+=	dri
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \
@@ -45,58 +54,51 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_DIR} ${ETDIR}
+	${MKDIR} ${STAGEDIR}${ETDIR}
 
 .for DIR in etmain etmain/video pb
-	${INSTALL_DIR} ${ETDIR}/${DIR}
+	${MKDIR} ${STAGEDIR}${ETDIR}/${DIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
-	${INSTALL_DIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${RMDIR} ${WRKSRC}/Docs/Help/_private
-	${CP} -R ${WRKSRC}/Docs/* ${DOCSDIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/*
-	${FIND} ${DOCSDIR}/* -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${DOCSDIR}/* -type d -print0 | \
-		${XARGS} -0 ${CHMOD} ${BINMODE}
+	(cd ${WRKSRC}/Docs && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .for FILE in CHANGES pb/PB_EULA.txt
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
-	${CP} -R ${WRKSRC}/pb/htm ${ETDIR}/pb
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${ETDIR}/pb/htm
-	${FIND} ${ETDIR}/pb/htm -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${ETDIR}/pb/htm -type d -print0 | \
-		${XARGS} -0 ${CHMOD} ${BINMODE}
+	${MKDIR} ${STAGEDIR}${ETDIR}/pb/htm
+	(cd ${WRKSRC}/pb/htm && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${ETDIR}/pb/htm)
 
-	${INSTALL_SCRIPT} ${WRKSRC}/openurl.sh ${ETDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/openurl.sh ${STAGEDIR}${ETDIR}
 	${INSTALL_DATA} ${WRKSRC}/etmain/video/etintro.roq \
-		${ETDIR}/etmain/video
+		${STAGEDIR}${ETDIR}/etmain/video
 
 .for FILE in campaigncycle.cfg cgame.mp.i386.so hunkusage.dat lmscycle.cfg \
 	mp_bin.pk3 objectivecycle.cfg pak0.pk3 pak1.pk3 pak2.pk3 \
 	punkbuster.cfg qagame.mp.i386.so server.cfg stopwatchcycle.cfg \
 	ui.mp.i386.so
-	${INSTALL_DATA} ${WRKSRC}/etmain/${FILE} ${ETDIR}/etmain
+	${INSTALL_DATA} ${WRKSRC}/etmain/${FILE} ${STAGEDIR}${ETDIR}/etmain
 .endfor
 
 .for FILE in pbag.so pbags.so pbcl.db pbcl.so pbcls.so pbsv.db pbsv.so
-	${INSTALL_DATA} ${WRKSRC}/pb/${FILE} ${ETDIR}/pb
+	${INSTALL_DATA} ${WRKSRC}/pb/${FILE} ${STAGEDIR}${ETDIR}/pb
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/pb/pbweb.x86 ${ETDIR}/pb
+	${INSTALL_PROGRAM} ${WRKSRC}/pb/pbweb.x86 ${STAGEDIR}${ETDIR}/pb
 
-	${INSTALL_DIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ET.xpm ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ET.xpm ${STAGEDIR}${DATADIR}
 
 .for FILE in et.x86 etded.x86
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${FILE} ${ETDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${FILE} ${STAGEDIR}${ETDIR}
 .endfor
 
 .for FILE in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>

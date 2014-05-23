@@ -32,18 +32,16 @@ CONFIGURE_ARGS+=--disable-gallium-intel
 .endif
 
 post-install:
+	${RM} -f ${STAGEDIR}${PREFIX}/libdata/pkgconfig/dri.pc
+	${RM} -rf ${STAGEDIR}${PREFIX}/include/GL/internal
 .if defined(WITH_NEW_XORG)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/.libGL
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libGL* \
 		${STAGEDIR}${PREFIX}/lib/.libGL/
 	${RM} ${STAGEDIR}${PREFIX}/lib/libglapi*
-	${RM} -f ${STAGEDIR}${PREFIX}/libdata/pkgconfig/dri.pc
-	${RM} -rf ${STAGEDIR}${PREFIX}/include/GL/internal
 .else
 	${RM} ${STAGEDIR}${PREFIX}/include/GL/glu.h
 	${RM} ${STAGEDIR}${PREFIX}/include/GL/glu_mangle.h
-	${RM} -rf ${STAGEDIR}${PREFIX}/include/GL/internal
-	${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/dri.pc
 .endif
 
 .include <bsd.port.mk>

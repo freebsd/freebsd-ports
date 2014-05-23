@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.19.3
-PORTREVISION=	1
+PORTVERSION=	2.19.6
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -45,7 +44,8 @@ INFO=		internals \
 		lilypond-web \
 		music-glossary
 
-USES=		bison:build gettext gmake pkgconfig perl5
+USES=		bison:build gettext gmake pkgconfig perl5 compiler:c++11-lib
+USE_CXXSTD=	c++11
 USE_GHOSTSCRIPT=9
 USE_TEX=	latex
 USE_PYTHON=	-3

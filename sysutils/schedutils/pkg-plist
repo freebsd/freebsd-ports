@@ -1,3 +1,5 @@
 bin/getsched
 sbin/resched
 sbin/sched
+man/man8/sched.8.gz
+man/man8/resched.8.gz

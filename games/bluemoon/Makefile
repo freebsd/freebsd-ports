@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bluemoon
-PORTVERSION=	2.11
-PORTREVISION=	1
+PORTVERSION=	2.12
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 
@@ -21,7 +20,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	NEWS README
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -30,9 +28,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps 
+		${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

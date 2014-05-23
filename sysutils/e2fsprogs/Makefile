@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.42.9
+PORTVERSION=	1.42.10
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -13,15 +13,15 @@ COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 LICENSE=	GPLv2
 
 PATCH_STRIP=	-p1
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:xz
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
+		--enable-quota \
 		--with-root-prefix='${PREFIX}'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
-MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
+MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
 .if !defined(MASTERDIR)
@@ -76,11 +76,16 @@ post-patch::
 # disable f_mmp_garbage, fails on FreeBSD, and the resize*big_expand tests,
 # which are too unwieldy to run automatically (need too much free space).
 # f_extent_oobounds fails in Tinderbox and is fine outside, reason unclear.
-.for i in f_mmp_garbage f_extent_oobounds r_64bit_big_expand r_bigalloc_big_expand r_ext4_big_expand m_bigjournal
+.for i in f_mmp_garbage m_bigjournal r_64bit_big_expand r_bigalloc_big_expand r_ext4_big_expand
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
 .endfor
 
 .if ${MASTERDIR} == ${.CURDIR}
+pre-build:
+# fix up Makefile ordering for parallel builds
+	cd ${WRKSRC}/lib/et && ${DO_MAKE_BUILD} compile_et
+	cd ${WRKSRC}/e2fsck && ${DO_MAKE_BUILD} prof_err.h
+
 post-build:
 # Relink e2fsck statically - We need to make sure that tools for the root file
 # system are statically linked against anything that is outside the root fs,

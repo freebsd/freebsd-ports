@@ -1507,6 +1507,7 @@
     SUBDIR += py-django-haystack
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-keyedcache
+    SUBDIR += py-django-ldapdb
     SUBDIR += py-django-livesettings
     SUBDIR += py-django-mezzanine
     SUBDIR += py-django-mezzanine-filebrowser

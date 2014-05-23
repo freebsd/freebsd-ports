@@ -11,7 +11,7 @@ COMMENT=	A fast, simple, and transactional Java persistence engine
 
 LICENSE=	APACHE20
 
-OPTIONS=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		zip
 USE_JAVA=	yes

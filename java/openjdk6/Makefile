@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b31
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
@@ -245,7 +245,8 @@ post-patch:
 	    ${WRKSRC}/jdk/make/tools/freetypecheck/Makefile
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
 	    ${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp \
-	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
+	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
+	    ${WRKSRC}/jdk/src/share/classes/sun/print/PSPrinterJob.java
 .if ${PORT_OPTIONS:MPOLICY}
 	@${REINPLACE_CMD} -e 's|%%POLICY%%|unlimited|' \
 	    ${WRKSRC}/jdk/make/javax/crypto/Makefile

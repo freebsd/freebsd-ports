@@ -10,6 +10,6 @@ lib/libspectre.a
 lib/libspectre.la
 lib/libspectre.so
 lib/libspectre.so.1
-lib/libspectre.so.1.1.6
+lib/libspectre.so.1.1.7
 libdata/pkgconfig/libspectre.pc
 @dirrm include/libspectre

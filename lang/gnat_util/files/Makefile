@@ -10,7 +10,8 @@ C_FLAGS=	-O2
 ADB_SRCS!=	cd ${.CURDIR} && ls *.adb | sort -r
 GEN_SRCS=	sdefault.adb snames.adb xsnamest.adb
 ADS_SRCS=	rident.ads hostparm.ads err_vars.ads alloc.ads prj-com.ads
-LIB_SRCS+=	link.c ${GEN_SRCS} ${ADS_SRCS} ${ADB_SRCS:Nlib-*.adb}
+C_SRCS=		link.c update_path.c set_std_prefix.c
+LIB_SRCS+=	${C_SRCS} ${GEN_SRCS} ${ADS_SRCS} ${ADB_SRCS:Nlib-*.adb}
 LIB_OBJS=	${LIB_SRCS:R:S/$/.o/}
 
 .PHONY: all

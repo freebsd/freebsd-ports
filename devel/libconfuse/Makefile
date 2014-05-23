@@ -11,6 +11,8 @@ DISTNAME=	confuse-${PORTVERSION}
 MAINTAINER=	otis@freebsd.sk
 COMMENT=	Configuration file parsing library
 
+LICENSE=	ISCL
+
 .if defined(WITH_CHECK)
 LIB_DEPENDS+=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 .endif

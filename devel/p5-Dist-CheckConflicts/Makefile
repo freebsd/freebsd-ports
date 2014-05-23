@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dist-CheckConflicts
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -13,10 +13,10 @@ COMMENT=	Declare version conflicts for your dist
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-Module-Runtime>=0.009:${PORTSDIR}/devel/p5-Module-Runtime
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	configure run
 
 .include <bsd.port.mk>

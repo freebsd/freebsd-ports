@@ -580,6 +580,7 @@
     SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
+    SUBDIR += gnatcoll
     SUBDIR += gnatpython
     SUBDIR += gnome-common
     SUBDIR += gnome-js-common
@@ -2640,6 +2641,7 @@
     SUBDIR += p5-Religion
     SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
+    SUBDIR += p5-Return-MultiLevel
     SUBDIR += p5-Return-Type
     SUBDIR += p5-Return-Value
     SUBDIR += p5-Role-Basic
@@ -3594,6 +3596,7 @@
     SUBDIR += py-cxx
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
+    SUBDIR += py-daemons
     SUBDIR += py-dal
     SUBDIR += py-darcsver
     SUBDIR += py-dateutil
@@ -3781,6 +3784,7 @@
     SUBDIR += py-pytemplate
     SUBDIR += py-pytest
     SUBDIR += py-pytest-runner
+    SUBDIR += py-python-statsd
     SUBDIR += py-pythonbrew
     SUBDIR += py-pytz
     SUBDIR += py-pyutil

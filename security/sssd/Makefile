@@ -105,6 +105,7 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/examples/sssd-example.conf ${STAGEDIR}${ETCDIR}/sssd.conf.sample
+	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s nss_sss.so nss_sss.so.1)
 
 	# clean these up from the install; we create them in rc script start_precmd
 .for VARDIRS in db/sss db/sss_mc log/sssd run/sss/krb5.include.d run/sss/private run/sss

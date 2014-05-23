@@ -15,6 +15,8 @@ WANT_PHP_WEB=	yes
 
 CONFLICTS=	phpsysinfo-2.[0-9]*
 IGNORE=		please use www/phpsysinfo
+DEPRECATED=	Use www/phpsysinfo instead
+EXPIRATION_DATE=	2014-06-22
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}
 NO_BUILD=	yes

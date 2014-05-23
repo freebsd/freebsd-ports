@@ -1,0 +1,4 @@
+statsd is a client for Etsy's statsd server, a front end/proxy for the Graphite
+stats collection and graphing server.
+
+WWW: https://github.com/WoLpH/python-statsd

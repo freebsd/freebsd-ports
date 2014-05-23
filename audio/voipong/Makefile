@@ -12,22 +12,21 @@ COMMENT=	Detect Voice Over IP calls and dump them to separate wave files
 USE_LDCONFIG=	yes
 PORTDOCS=	ALGORITHMS AUTHORS ChangeLog COPYING INSTALL KNOWN_BUGS \
 		LICENSE  NEWS README THANKS TODO
-NO_STAGE=	yes
+MAKEFILE=	Makefile.bsd
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-post-patch:
-	${MV} ${WRKSRC}/Makefile.bsd ${WRKSRC}/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/users-manual
-	${INSTALL_DATA} ${WRKSRC}/docs/users-manual/*.html ${DOCSDIR}/users-manual/
-	${INSTALL_DATA} ${WRKSRC}/docs/users-manual/*.css ${DOCSDIR}/users-manual/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/users-manual
+	${INSTALL_DATA} ${WRKSRC}/docs/users-manual/*.html ${STAGEDIR}${DOCSDIR}/users-manual/
+	${INSTALL_DATA} ${WRKSRC}/docs/users-manual/*.css ${STAGEDIR}${DOCSDIR}/users-manual/
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
+
 .include <bsd.port.mk>

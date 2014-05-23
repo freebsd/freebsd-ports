@@ -30,11 +30,12 @@ SPEC_ROOT?=	${PREFIX}/${PORTNAME}
 
 DOCSDIR=	${SPEC_ROOT}/documents
 
-OPTIONS=	RESERVED_PORT	"Use privileged ports when doing NFS testing" on
+OPTIONS_DEFINE=	RESERVED_PORT
+OPTIONS_DEFAULT=	RESERVED_PORT
 
-.if defined(WITH_RESERVED_PORT)
-CFLAGS+=	-DRESVPORT
-.endif
+RESERVED_PORT_DESC=	Use privileged ports when doing NFS testing
+
+RESERVED_PORT_CFLAGS=	-DRESVPORT
 
 # Substitutions for pkg-plist
 PLIST_SUB+=	SPEC_ROOT=${SPEC_ROOT}

@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.docebo.org/doceboCms/index.php?mn=docs&op=download&pi=5
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source e-Learning platform (LMS and LCMS)
 
+DEPRECATED=		Not maintained upstream
+EXPIRATION_DATE=	2014-08-22
+
 USE_PHP=	mysql
 USES=		zip
 SUB_FILES=	pkg-message
@@ -18,21 +21,20 @@ DO_FILES=	config.php admin.php index.php
 DO_DIRS=	doceboCms doceboCore doceboCrm doceboEcom doceboLms doceboScs \
 		files install readmelicense template upgrade xml_language
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${INSTALL} -d ${WWWDIR}
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}
 
 .for i in ${DO_FILES}
-	@cd ${WRKDIR} && ${CP} ${i} ${WWWDIR}/
+	@cd ${WRKDIR} && ${CP} ${i} ${STAGEDIR}${WWWDIR}/
 .endfor
 .for i in ${DO_DIRS}
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} ${i} ${WWWDIR}/
+	@cd ${WRKDIR} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}/
 .endfor
 
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \

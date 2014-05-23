@@ -14,13 +14,15 @@ zip_ARGS?=	none
 
 EXTRACT_SUFX?=	.zip
 
-.if ${zip_ARGS} == infozip
-EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-
-EXTRACT_CMD?=		${UNZIP_CMD}
 EXTRACT_BEFORE_ARGS?=	-qo
 EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
-.elif ${zip_ARGS} != none
+
+.if ${zip_ARGS} == infozip
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_CMD?=		${UNZIP_CMD}
+.elif ${zip_ARGS} == none
+EXTRACT_CMD?=		${UNZIP_NATIVE_CMD}
+.else
 IGNORE=	Incorrect 'USES+=zip:${zip_ARGS}' expecting 'USES+=zip[:infozip]'
 .endif
 .endif
