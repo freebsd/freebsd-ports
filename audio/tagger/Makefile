@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI Ogg/Vorbis and MP3 ID3v1/ID3v1.1 tag editor
 
 DEPRECATED=	Ancient, unmaintained
-EXPIRATION_DATE=	2014-06-31
+EXPIRATION_DATE=	2014-06-30
 
 USE_BZIP2=	yes
 USES=		gmake
