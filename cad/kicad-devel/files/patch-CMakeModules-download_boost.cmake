@@ -1,48 +1,99 @@
---- CMakeModules/download_boost.cmake.orig	2013-09-13 07:40:43.000000000 +0000
-+++ CMakeModules/download_boost.cmake	2013-10-22 21:38:43.909426514 +0000
-@@ -103,9 +103,9 @@
-         PREFIX          "${PREFIX}"
-         DOWNLOAD_DIR    "${DOWNLOAD_DIR}"
--        URL             http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
-+        URL             file://${PROJECT_SOURCE_DIR}/boost_${BOOST_VERS}.tar.bz2
-         URL_MD5         ${BOOST_MD5}
+--- CMakeModules/download_boost.cmake.orig	2014-05-23 10:58:30.000000000 +0200
++++ CMakeModules/download_boost.cmake	2014-05-23 15:23:06.883291854 +0200
+@@ -93,5 +93,5 @@
  
-         # The patch command executes with the working directory set to <SOURCE_DIR>
--        PATCH_COMMAND   bzr patch -p0 "${PROJECT_SOURCE_DIR}/patches/boost.patch"
-+        PATCH_COMMAND   env BZR_HOME="${PROJECT_SOURCE_DIR}" bzr patch -p0 "${PROJECT_SOURCE_DIR}/patches/boost.patch"
+ # Default Toolset
+-set( BOOST_TOOLSET "toolset=gcc" )
++set( BOOST_TOOLSET "toolset=clang" )
  
-         # [Mis-]use this step to erase all the boost headers and libraries before
-@@ -140,9 +140,9 @@
-         PREFIX          "${PREFIX}"
-         DOWNLOAD_DIR    "${DOWNLOAD_DIR}"
--        URL             http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
-+        URL             file://${PROJECT_SOURCE_DIR}/boost_${BOOST_VERS}.tar.bz2
-         URL_MD5         ${BOOST_MD5}
+ if( KICAD_BUILD_STATIC OR APPLE )
+@@ -131,5 +131,5 @@
+     #message( STATUS "libs_csv:${libs_csv}" )
  
-         # The patch command executes with the working directory set to <SOURCE_DIR>
--        PATCH_COMMAND   bzr patch -p0 "${PROJECT_SOURCE_DIR}/patches/boost.patch"
-+        PATCH_COMMAND   env BZR_HOME=${PROJECT_SOURCE_DIR} bzr patch -p0 "${PROJECT_SOURCE_DIR}/patches/boost.patch"
+-    set( bootstrap ./bootstrap.sh --with-libraries=${libs_csv} )
++    set( bootstrap ./bootstrap.sh --with-${BOOST_TOOLSET} --with-libraries=${libs_csv} )
+     # pass to *both* C and C++ compilers
+     set( BOOST_CFLAGS   "cflags=${PIC_FLAG}" )
+@@ -186,5 +186,5 @@
+     PREFIX          "${PREFIX}"
  
-         # Dick 18-Aug-2013:
-@@ -167,5 +168,6 @@
+-    URL             http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
++    URL             file://${PROJECT_SOURCE_DIR}/boost_${BOOST_VERS}.tar.bz2
+     DOWNLOAD_DIR    "${DOWNLOAD_DIR}"
+     TIMEOUT         1200            # 20 minutes
+@@ -206,5 +206,5 @@
+     PATCH_COMMAND   bzr revert
+         # bzr revert is insufficient to remove "added" files:
+-        COMMAND     bzr clean-tree -q --force
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr clean-tree -q --force
+ 
+         COMMAND     ${PATCH_STR_CMD} "${PROJECT_SOURCE_DIR}/patches/boost_minkowski.patch"
+@@ -213,6 +213,6 @@
+         COMMAND     ${PATCH_STR_CMD} "${PROJECT_SOURCE_DIR}/patches/boost_macosx_x86.patch"        #https://svn.boost.org/trac/boost/ticket/8266
+         # tell bzr about "added" files by last patch:
+-        COMMAND     bzr add libs/context/src/asm/jump_i386_x86_64_sysv_macho_gas.S
+-        COMMAND     bzr add libs/context/src/asm/make_i386_x86_64_sysv_macho_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/jump_i386_x86_64_sysv_macho_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/make_i386_x86_64_sysv_macho_gas.S
+ 
+         COMMAND     ${PATCH_STR_CMD} "${PROJECT_SOURCE_DIR}/patches/boost_macosx_x86_build.patch"  #https://svn.boost.org/trac/boost/ticket/8266
+@@ -221,18 +221,18 @@
+         COMMAND     ${PATCH_STR_CMD} "${PROJECT_SOURCE_DIR}/patches/boost_mingw.patch"             #https://svn.boost.org/trac/boost/ticket/7262
+         # tell bzr about "added" files by last patch:
+-        COMMAND     bzr add libs/context/src/asm/make_i386_ms_pe_gas.S
+-        COMMAND     bzr add libs/context/src/asm/jump_i386_ms_pe_gas.S
+-        COMMAND     bzr add libs/context/src/asm/make_x86_64_ms_pe_gas.S
+-        COMMAND     bzr add libs/context/src/asm/jump_x86_64_ms_pe_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/make_i386_ms_pe_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/jump_i386_ms_pe_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/make_x86_64_ms_pe_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/jump_x86_64_ms_pe_gas.S
+ 
+         COMMAND     ${PATCH_STR_CMD} "${PROJECT_SOURCE_DIR}/patches/patch_macosx_context_ppc_v2.patch" #https://svn.boost.org/trac/boost/ticket/8266
+-        COMMAND     bzr add libs/context/build/Jamfile.v2
+-        COMMAND     bzr add libs/context/build/architecture.jam
+-        COMMAND     bzr add libs/context/src/asm/jump_combined_sysv_macho_gas.S
+-        COMMAND     bzr add libs/context/src/asm/jump_ppc32_sysv_macho_gas.S
+-        COMMAND     bzr add libs/context/src/asm/jump_ppc64_sysv_macho_gas.S
+-        COMMAND     bzr add libs/context/src/asm/make_combined_sysv_macho_gas.S
+-        COMMAND     bzr add libs/context/src/asm/make_ppc32_sysv_macho_gas.S
+-        COMMAND     bzr add libs/context/src/asm/make_ppc64_sysv_macho_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/build/Jamfile.v2
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/build/architecture.jam
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/jump_combined_sysv_macho_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/jump_ppc32_sysv_macho_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/jump_ppc64_sysv_macho_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/make_combined_sysv_macho_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/make_ppc32_sysv_macho_gas.S
++        COMMAND     BZR_HOME=${PROJECT_SOURCE_DIR} bzr add libs/context/src/asm/make_ppc64_sysv_macho_gas.S
+ 
+     # [Mis-]use this step to erase all the boost headers and libraries before
+@@ -240,5 +240,5 @@
+     UPDATE_COMMAND  ${CMAKE_COMMAND} -E remove_directory "${BOOST_ROOT}"
+ 
+-    BINARY_DIR      "${PREFIX}/src/boost/"
++    BINARY_DIR      "${PREFIX}/src/boost"
+     CONFIGURE_COMMAND ${bootstrap}
+ 
+@@ -297,5 +297,6 @@
  
  ExternalProject_Add_Step( boost bzr_commit_boost
 -    COMMAND bzr ci -q -m pristine <SOURCE_DIR>
 +    COMMAND env BZR_HOME=${PROJECT_SOURCE_DIR} bzr whoami "M R <mr@freebsd.org>"
-+    COMMAND env BZR_HOME=${PROJECT_SOURCE_DIR} bzr ci -q -m pristine <SOURCE_DIR>
++    COMMAND BZR_HOME=${PROJECT_SOURCE_DIR} bzr ci -q -m pristine <SOURCE_DIR>
      COMMENT "committing pristine boost files to 'boost scratch repo'"
      DEPENDERS patch
-@@ -175,5 +177,5 @@
+@@ -305,5 +306,5 @@
  ExternalProject_Add_Step( boost bzr_add_boost
      # add only the headers to the scratch repo, repo = "../.bzr" from ${headers_src}
--    COMMAND bzr add -q ${headers_src}
-+    COMMAND env BZR_HOME=${PROJECT_SOURCE_DIR} bzr add -q ${headers_src}
+-    COMMAND bzr add -q ${PREFIX}/src/boost
++    COMMAND BZR_HOME=${PROJECT_SOURCE_DIR} bzr add -q ${PREFIX}/src/boost
      COMMENT "adding pristine boost files to 'boost scratch repo'"
      DEPENDERS bzr_commit_boost
-@@ -182,5 +184,5 @@
+@@ -312,5 +313,5 @@
  
  ExternalProject_Add_Step( boost bzr_init_boost
 -    COMMAND bzr init -q <SOURCE_DIR>
-+    COMMAND env BZR_HOME=${PROJECT_SOURCE_DIR} bzr init -q <SOURCE_DIR>
++    COMMAND BZR_HOME=${PROJECT_SOURCE_DIR} bzr init -q <SOURCE_DIR>
      COMMENT "creating 'boost scratch repo' specifically for boost to track boost patches"
      DEPENDERS bzr_add_boost
