@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -12,7 +12,7 @@ COMMENT=	Systems & network statistics collection daemon
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf autoheader automake libltdl
 WANT_GNOME=	yes
@@ -54,10 +54,6 @@ RRDTOOL_DESC=		RRDTool
 RRDCACHED_DESC=		RRDTool Cached (require RRDTOOL)
 WRITE_HTTP_DESC=	write_http
 
-MAN1=		collectd.1 collectd-nagios.1 collectdmon.1
-MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
-		collectd-snmp.5 collectd-unixsock.5 collectd-perl.5 \
-		collectd-java.5 collectd-python.5 types.db.5
 USE_RC_SUBR=	collectd collectdmon
 
 USE_LDCONFIG=	yes
@@ -67,7 +63,6 @@ CONFLICTS=	collectd-5.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # NOTE: Feel free to submit patches adding support for any of these
@@ -153,8 +148,8 @@ PLIST_SUB+=	CGI="@comment "
 
 .if ${PORT_OPTIONS:MBIND}
 CONFIGURE_ARGS+=--enable-bind
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
 PLIST_SUB+=	BIND=""
 .  if empty(PORT_OPTIONS:MCURL)
 IGNORE=	BIND requires CURL. Either select CURL or deselect BIND
@@ -166,7 +161,7 @@ PLIST_SUB+=	BIND="@comment "
 
 .if ${PORT_OPTIONS:MAPACHE}
 CONFIGURE_ARGS+=--enable-apache
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	APACHE=""
 .  if empty(PORT_OPTIONS:MCURL)
 IGNORE=	APACHE requires CURL. Either select CURL or deselect APACHE
@@ -187,7 +182,7 @@ PLIST_SUB+=	APCUPS="@comment "
 
 .if ${PORT_OPTIONS:MCURL}
 CONFIGURE_ARGS+=--enable-curl --with-libcurl=${LOCALBASE}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 CONFIGURE_ARGS+=--disable-curl
@@ -199,7 +194,7 @@ PLIST_SUB+=	CURL="@comment "
 IGNORE=	using CURL_JSON requires CURL support
 .endif
 CONFIGURE_ARGS+=--enable-curl_json
-LIB_DEPENDS+=	yajl:${PORTSDIR}/devel/yajl
+LIB_DEPENDS+=	libyajl.so:${PORTSDIR}/devel/yajl
 PLIST_SUB+=	CURL_JSON=""
 .else
 CONFIGURE_ARGS+=--disable-curl_json --without-libyajl
@@ -211,7 +206,7 @@ PLIST_SUB+=	CURL_JSON="@comment "
 IGNORE=	using CURL_XML requires CURL support
 .endif
 CONFIGURE_ARGS+=--enable-curl_xml
-LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
 PLIST_SUB+=	CURL_XML=""
 .else
 CONFIGURE_ARGS+=--disable-curl_xml
@@ -220,7 +215,7 @@ PLIST_SUB+=	CURL_XML="@comment "
 
 .if ${PORT_OPTIONS:MDBI}
 CONFIGURE_ARGS+=--enable-dbi --with-libdbi=${LOCALBASE}
-LIB_DEPENDS+=	dbi:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
 PLIST_SUB+=	DBI=""
 .else
 CONFIGURE_ARGS+=--disable-dbi
@@ -237,12 +232,12 @@ PLIST_SUB+=	DISK="@comment "
 
 .if ${PORT_OPTIONS:MGCRYPT}
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 .endif
 
 .if ${PORT_OPTIONS:MNUTUPS}
 CONFIGURE_ARGS+=--enable-nut --with-upsclient
-LIB_DEPENDS+=	upsclient:${PORTSDIR}/sysutils/nut
+LIB_DEPENDS+=	libupsclient.so:${PORTSDIR}/sysutils/nut
 PLIST_SUB+=	NUTUPS=""
 .else
 CONFIGURE_ARGS+=--disable-nut --without-libupsclient
@@ -270,7 +265,7 @@ PLIST_SUB+=	MBMON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHED}
-LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=--enable-memcached
 CONFIGURE_ARGS+=--with-libmemcached=${LOCALBASE}
 PLIST_SUB+=	MEMCACHED=""
@@ -289,7 +284,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNGINX}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--enable-nginx
 PLIST_SUB+=	NGINX=""
 .  if empty(PORT_OPTIONS:MCURL)
@@ -301,15 +296,16 @@ PLIST_SUB+=	NGINX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFYDESKTOP}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=--enable-notify_desktop \
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=--enable-notify_desktop
 PLIST_SUB+=	NOTIFYDESKTOP=""
 .else
 CONFIGURE_ARGS+=--disable-notify_desktop
 PLIST_SUB+=	NOTIFYDESKTOP="@comment "
 .endif
+
 .if ${PORT_OPTIONS:MNOTIFYEMAIL}
-LIB_DEPENDS+=	esmtp:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=	libesmtp.so:${PORTSDIR}/mail/libesmtp
 CONFIGURE_ARGS+=--enable-notify_email
 CONFIGURE_ARGS+=--with-libesmtp=${PREFIX}
 PLIST_SUB+=	NOTIFYEMAIL=""
@@ -346,7 +342,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPING}
-LIB_DEPENDS+=	oping:${PORTSDIR}/net/liboping
+LIB_DEPENDS+=	liboping.so:${PORTSDIR}/net/liboping
 CONFIGURE_ARGS+=--enable-ping
 PLIST_SUB+=	PING=""
 .else
@@ -356,7 +352,7 @@ PLIST_SUB+=	PING="@comment "
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=		yes
-CONFIGURE_ARGS+=--enable-python
+CONFIGURE_ARGS+=--enable-python --with-python=${PYTHON_CMD}
 PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
@@ -364,7 +360,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MROUTEROS}
-LIB_DEPENDS+=	routeros:${PORTSDIR}/net/librouteros
+LIB_DEPENDS+=	librouteros.so:${PORTSDIR}/net/librouteros
 CONFIGURE_ARGS+=--enable-routeros --with-librouteros=${LOCALBASE}
 PLIST_SUB+=	ROUTEROS=""
 .else
@@ -373,7 +369,7 @@ PLIST_SUB+=	ROUTEROS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRRDTOOL}
-LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=--enable-rrdtool
 PLIST_SUB+=	RRD=""
 .else
@@ -390,7 +386,7 @@ PLIST_SUB+=	RRDCACHED="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
-LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--enable-snmp
 PLIST_SUB+=	SNMP=""
 .else
@@ -399,7 +395,7 @@ PLIST_SUB+=	SNMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTOKYOTYRANT}
-LIB_DEPENDS+=	tokyotyrant:${PORTSDIR}/databases/tokyotyrant
+LIB_DEPENDS+=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
 CONFIGURE_ARGS+=--enable-tokyotyrant
 CONFIGURE_ARGS+=--with-libtokyotyrant=${LOCALBASE}
 PLIST_SUB+=	TOKYOTYRANT=""
@@ -426,7 +422,7 @@ PLIST_SUB+=	WRITE_HTTP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--enable-xmms
 CFLAGS+=	`xmms-config --cflags`
 PLIST_SUB+=	XMMS=""
@@ -445,7 +441,8 @@ post-patch:
 		-e 's;@prefix@/var/;/var/;' \
 		-e 's;/var/lib/;/var/db/;' \
 		${WRKSRC}/src/collectd.conf.in
-	@${REINPLACE_CMD} -e '/$$[(]mkinstalldirs)/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/\$$[(]mkinstalldirs)/d' ${WRKSRC}/Makefile.in \
+		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} \
 		-e 's;/etc/collection\.conf;${WWWDIR}/collection.conf;' \
 		${WRKSRC}/contrib/collection.cgi
@@ -458,20 +455,11 @@ post-patch:
 		${WRKSRC}/configure.in
 
 post-install:
-	${MKDIR} /var/db/collectd
-	if [ ! -f ${PREFIX}/etc/collectd.conf ]; then \
-		${CP} -p ${PREFIX}/etc/collectd.conf.sample \
-			${PREFIX}/etc/collectd.conf ; \
-	fi
 .if ${PORT_OPTIONS:MCGI}
-	${MKDIR} ${WWWDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/collection.cgi ${WWWDIR}/
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/collection.cgi ${STAGEDIR}${WWWDIR}/
 	${INSTALL_DATA} ${WRKSRC}/contrib/collection.conf \
-		${WWWDIR}/collection.conf.sample
-	if [ ! -f ${WWWDIR}/collection.conf ]; then \
-		${CP} -p ${WWWDIR}/collection.conf.sample \
-			${WWWDIR}/collection.conf ; \
-	fi
+		${STAGEDIR}${WWWDIR}/collection.conf.sample
 .endif
 
 .include <bsd.port.mk>

@@ -1,125 +1,81 @@
 @stopdaemon collectd
 sbin/collectd
 sbin/collectdmon
-@unexec if cmp -s %D/etc/collectd.conf.sample %D/etc/collectd.conf; then rm -f %D/etc/collectd.conf; fi
-etc/collectd.conf.sample
-@exec if [ ! -f %B/collectd.conf ] ; then cp -p %B/%f %B/collectd.conf; fi
+@sample etc/collectd.conf.sample
 %%CGI%%%%WWWDIR%%/collection.cgi
-%%CGI%%@unexec if cmp -s %B/collection.conf.sample %B/collection.conf; then rm -f %B/collection.conf; fi
-%%CGI%%%%WWWDIR%%/collection.conf.sample
-%%CGI%%@exec if [ ! -f %B/collection.conf ] ; then cp -p %B/%f %B/collection.conf; fi
+%%CGI%%@sample %%WWWDIR%%/collection.conf.sample
 %%CGI%%@dirrmtry %%WWWDIR%%
 bin/collectd-nagios
-lib/libcollectdclient.la
 lib/libcollectdclient.so
 lib/libcollectdclient.so.0
-%%APACHE%%lib/collectd/apache.la
+lib/libcollectdclient.so.0.0.0
 %%APACHE%%lib/collectd/apache.so
-%%APCUPS%%lib/collectd/apcups.la
 %%APCUPS%%lib/collectd/apcups.so
-%%BIND%%lib/collectd/bind.la
 %%BIND%%lib/collectd/bind.so
-lib/collectd/cpu.la
 lib/collectd/cpu.so
-lib/collectd/csv.la
 lib/collectd/csv.so
-%%CURL%%lib/collectd/curl.la
 %%CURL%%lib/collectd/curl.so
-%%CURL_JSON%%lib/collectd/curl_json.la
 %%CURL_JSON%%lib/collectd/curl_json.so
-%%CURL_XML%%lib/collectd/curl_xml.la
 %%CURL_XML%%lib/collectd/curl_xml.so
-%%DBI%%lib/collectd/dbi.la
 %%DBI%%lib/collectd/dbi.so
-%%DISK%%lib/collectd/disk.la
 %%DISK%%lib/collectd/disk.so
-lib/collectd/df.la
 lib/collectd/df.so
-lib/collectd/dns.la
 lib/collectd/dns.so
-lib/collectd/email.la
 lib/collectd/email.so
-lib/collectd/exec.la
 lib/collectd/exec.so
 lib/collectd/filecount.so
-lib/collectd/filecount.la
-%%INTERFACE%%lib/collectd/interface.la
 %%INTERFACE%%lib/collectd/interface.so
-lib/collectd/load.la
 lib/collectd/load.so
-lib/collectd/logfile.la
 lib/collectd/logfile.so
-%%MBMON%%lib/collectd/mbmon.la
 %%MBMON%%lib/collectd/mbmon.so
-%%MEMCACHED%%lib/collectd/memcached.la
 %%MEMCACHED%%lib/collectd/memcached.so
-lib/collectd/memory.la
 lib/collectd/memory.so
-%%MYSQL%%lib/collectd/mysql.la
 %%MYSQL%%lib/collectd/mysql.so
-%%NGINX%%lib/collectd/nginx.la
 %%NGINX%%lib/collectd/nginx.so
-lib/collectd/network.la
 lib/collectd/network.so
-%%NOTIFYDESKTOP%%/notify_desktop.la
-%%NOTIFYDESKTOP%%/notify_desktop.so
-%%NOTIFYEMAIL%%/notify_email.la
-%%NOTIFYEMAIL%%/notify_email.so
-%%NUTUPS%%lib/collectd/nut.la
+%%NOTIFYDESKTOP%%lib/collectd/notify_desktop.so
+%%NOTIFYEMAIL%%lib/collectd/notify_email.so
 %%NUTUPS%%lib/collectd/nut.so
-lib/collectd/ntpd.la
 lib/collectd/ntpd.so
-%%OPENVPN%%lib/collectd/openvpn.la
 %%OPENVPN%%lib/collectd/openvpn.so
-%%PGSQL%%lib/collectd/postgresql.la
 %%PGSQL%%lib/collectd/postgresql.so
-%%PING%%lib/collectd/ping.la
 %%PING%%lib/collectd/ping.so
 %%PDNS%%lib/collectd/powerdns.so
-%%PDNS%%lib/collectd/powerdns.la
-%%PYTHON%%lib/collectd/python.la
 %%PYTHON%%lib/collectd/python.so
 lib/collectd/processes.so
-lib/collectd/processes.la
-%%ROUTEROS%%lib/collectd/routeros.la
 %%ROUTEROS%%lib/collectd/routeros.so
-%%RRD%%lib/collectd/rrdtool.la
 %%RRD%%lib/collectd/rrdtool.so
-%%RRDCACHED%%lib/collectd/rrdcached.la
 %%RRDCACHED%%lib/collectd/rrdcached.so
-%%SNMP%%lib/collectd/snmp.la
 %%SNMP%%lib/collectd/snmp.so
-lib/collectd/swap.la
 lib/collectd/swap.so
-lib/collectd/syslog.la
 lib/collectd/syslog.so
 lib/collectd/tail.so
-lib/collectd/tail.la
 lib/collectd/tcpconns.so
-lib/collectd/tcpconns.la
-%%TOKYOTYRANT%%lib/collectd/tokyotyrant.la
 %%TOKYOTYRANT%%lib/collectd/tokyotyrant.so
-lib/collectd/unixsock.la
 lib/collectd/unixsock.so
 lib/collectd/uptime.so
-lib/collectd/uptime.la
 lib/collectd/uuid.so
-lib/collectd/uuid.la
-%%VIRT%%lib/collectd/libvirt.la
 %%VIRT%%lib/collectd/libvirt.so
-%%WRITE_HTTP%%lib/collectd/write_http.la
 %%WRITE_HTTP%%lib/collectd/write_http.so
-%%XMMS%%lib/collectd/xmms.la
 %%XMMS%%lib/collectd/xmms.so
-lib/collectd/zfs_arc.la
 lib/collectd/zfs_arc.so
 include/collectd/client.h
 include/collectd/lcc_features.h
 libdata/pkgconfig/libcollectdclient.pc
+man/man1/collectd-nagios.1.gz
+man/man1/collectd.1.gz
+man/man1/collectdmon.1.gz
+man/man5/collectd-email.5.gz
+man/man5/collectd-exec.5.gz
+man/man5/collectd-java.5.gz
+man/man5/collectd-perl.5.gz
+man/man5/collectd-python.5.gz
+man/man5/collectd-snmp.5.gz
+man/man5/collectd-unixsock.5.gz
+man/man5/collectd.conf.5.gz
+man/man5/types.db.5.gz
 %%DATADIR%%/postgresql_default.conf
 %%DATADIR%%/types.db
 @dirrm lib/collectd
 @dirrm include/collectd
 @dirrm %%DATADIR%%
-@exec mkdir -p /var/db/collectd
-@unexec rmdir /var/db/collectd 2>/dev/null || true
