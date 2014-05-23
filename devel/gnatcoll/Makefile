@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatcoll
 PORTVERSION=	2014
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--without-iconv
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python=${PREFIX} \
 			--enable-pygobject
-USE_PYTHON=		2
+USE_PYTHON=		yes
 USE_GNOME=		pygobject3
 PYCOMPILE=		${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
 .else
@@ -98,14 +98,9 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
 
-pre-install:
-.if ${PORT_OPTIONS:MPYTHON}
-	${PYTHON_CMD} ${PYCOMPILE} ${WRKSRC}/share/plug-ins
-	${PYTHON_CMD} ${PYCOMPILE} ${WRKSRC}/share/library
-.endif
-
 post-install:
 	${RM} -rf ${STAGEDIR}${DOCSDIR}/html/_sources
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/gps
 .if ! ${PORT_OPTIONS:MEXAMPLES}
 	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}
 .endif
