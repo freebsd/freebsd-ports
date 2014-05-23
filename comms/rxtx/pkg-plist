@@ -1,7 +1,5 @@
 lib/ext/RXTXcomm.jar
-lib/%%ARCH%%/librxtxParallel-2.2pre1.so
-lib/%%ARCH%%/librxtxParallel.la
 lib/%%ARCH%%/librxtxParallel.so
-lib/%%ARCH%%/librxtxSerial-2.2pre1.so
-lib/%%ARCH%%/librxtxSerial.la
+lib/%%ARCH%%/librxtxParallel-2.2pre1.so
 lib/%%ARCH%%/librxtxSerial.so
+lib/%%ARCH%%/librxtxSerial-2.2pre1.so
