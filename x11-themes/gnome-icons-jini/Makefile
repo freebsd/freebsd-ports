@@ -15,7 +15,6 @@ WRKSRC=		${WRKDIR}
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@for FILE in ${WRKDIR}/JiniOrange/scalable/apps/haansoft-hwp.svg \
 		${WRKDIR}/JiniYellowishGreen/scalable/apps/haansoft-hwp.svg \
@@ -26,6 +25,6 @@ post-extract:
 	done
 
 do-install:
-	@cd ${WRKDIR} && ${FIND} Jini* | ${CPIO} -pdu ${PREFIX}/share/icons
+	cd ${WRKDIR} && ${FIND} Jini* | ${CPIO} -pdu ${STAGEDIR}${PREFIX}/share/icons
 
 .include <bsd.port.mk>
