@@ -1,6 +1,6 @@
+man/man5/swapd.conf.5.gz
+man/man8/swapd.8.gz
 sbin/swapd
 sbin/swapd_swapon
 sbin/swapd_swapoff
-@unexec if cmp -s %D/etc/swapd.conf %D/etc/swapd.conf.sample; then rm -f %D/etc/swapd.conf; fi
-etc/swapd.conf.sample
-@exec [ ! -f %B/swapd.conf ] && cp %B/%f %B/swapd.conf
+@sample etc/swapd.conf.sample
