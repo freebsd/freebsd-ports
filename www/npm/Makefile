@@ -21,7 +21,6 @@ MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 REINPLACE_ARGS=	-i ''
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
-PLIST_SUB=	MANPREFIX=lib/node_modules/npm
 
 NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 NODE_DEVEL_RUN_DEPENDS_OFF=	node>=0.8.0:${PORTSDIR}/www/node
