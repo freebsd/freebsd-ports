@@ -6,8 +6,8 @@ etc/shrpx.conf.sample
 include/spdylay/spdylay.h
 include/spdylay/spdylayver.h
 lib/libspdylay.a
-lib/libspdylay.la
 lib/libspdylay.so
 lib/libspdylay.so.7
+lib/libspdylay.so.7.0.3
 libdata/pkgconfig/libspdylay.pc
 @dirrm include/spdylay
