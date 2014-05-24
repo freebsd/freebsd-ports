@@ -3,6 +3,7 @@
 
 PORTNAME=	kyua-cli
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
@@ -29,6 +30,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 
 OPTIONS_SUB=		yes
 TEST_CONFIGURE_WITH=	atf
+TEST_BUILD_DEPENDS=	${PREFIX}/bin/atf-sh:${PORTSDIR}/devel/atf
+TEST_LIB_DEPENDS=	libatf-c++.so:${PORTSDIR}/devel/atf
+TEST_RUN_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
 
 .include <bsd.port.options.mk>
 

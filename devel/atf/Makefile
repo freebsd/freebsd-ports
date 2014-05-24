@@ -16,10 +16,6 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool
 
-.if exists(/usr/lib/libatf-c.a)
-IGNORE=	is already in the base system
-.endif
-
 OPTIONS_DEFINE=	DOCS TEST
 
 .include <bsd.port.options.mk>
