@@ -25,7 +25,8 @@ LICENSE_NAME=	The Clarified Artistic License
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
-USE=		perl5
+USES=		perl5
+USE_PERL5=	run
 USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes
 
@@ -35,12 +36,8 @@ NO_BUILD=	yes
 SUB_LIST+=	PERL="${PERL}"
 .endif
 
-.ifndef(NOPORTDOCS)
-PORTDOCS=	\
-		*
-.endif
+PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -71,49 +68,47 @@ post-configure:
 do-install:
 ## create site_perl
 # dirs
-	@${MKDIR} ${SITE_PERL:S|${LOCALBASE}|${PREFIX}|}/AmphetaDesk
-	@cd ${WRKSRC}/lib && \
+	@${MKDIR} ${SITE_PERL:S|${LOCALBASE}|${STAGEDIR}${PREFIX}|}/AmphetaDesk
+	@(cd ${WRKSRC}/lib && \
 		${FIND} * -type d ! -empty -print0 | \
 		${XARGS} -0 -x -n 10 -I {} \
-		${MKDIR} ${SITE_PERL:S|${LOCALBASE}|${PREFIX}|}/AmphetaDesk/{}
+		${MKDIR} ${SITE_PERL:S|${LOCALBASE}|${STAGEDIR}${PREFIX}|}/AmphetaDesk/{})
 # files
-	@cd ${WRKSRC}/lib && \
+	(cd ${WRKSRC}/lib && \
 		${FIND} * -type f -name "*pm" -print0 | \
 		${XARGS} -0 -x -n 10 -I {} \
-		${INSTALL_DATA} {} ${SITE_PERL:S|${LOCALBASE}|${PREFIX}|}/AmphetaDesk/{}
+		${INSTALL_DATA} {} ${SITE_PERL:S|${LOCALBASE}|${STAGEDIR}${PREFIX}|}/AmphetaDesk/{})
 # script
-	@${INSTALL_DATA} ${WRKSRC}/AmphetaDesk.pl \
-		${PREFIX}/bin/AmphetaDesk-real
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh \
-		${PREFIX}/bin/AmphetaDesk
+	${INSTALL_DATA} ${WRKSRC}/AmphetaDesk.pl \
+		${STAGEDIR}${PREFIX}/bin/AmphetaDesk-real
+	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh \
+		${STAGEDIR}${PREFIX}/bin/AmphetaDesk
 ## docs
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ext in html txt xml
-	@${INSTALL_DATA} ${WRKSRC}/docs/*.${ext} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.${ext} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}/images
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 .for ext in gif jpg
-	@${INSTALL_DATA} ${WRKSRC}/docs/images/*.${ext} \
-		${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/docs/images/*.${ext} \
+		${STAGEDIR}${DOCSDIR}/images
 .endfor
-.endif
 ## lists
-	@${MKDIR} ${DATADIR}/lists
-	@${INSTALL_DATA} ${WRKSRC}/data/lists/services-channels-recent.xml \
-		${DATADIR}/lists
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lists
+	${INSTALL_DATA} ${WRKSRC}/data/lists/services-channels-recent.xml \
+		${STAGEDIR}${DATADIR}/lists
 ## templates
 # dirs
-	@cd ${WRKSRC} && \
+	(cd ${WRKSRC} && \
 		${FIND} templates -type d ! -empty -print0 | \
 		${XARGS} -0 -x -n 10 -I {} \
-		${MKDIR} ${DATADIR}/{}
+		${MKDIR} ${STAGEDIR}${DATADIR}/{})
 # files
 .for ext in gif html ico png pict 
-	@cd ${WRKSRC} && \
+	(cd ${WRKSRC} && \
 		${FIND} templates -type f -name "*.${ext}" -print0 | \
 		${XARGS} -0 -x -n 10 -I {} \
-		${INSTALL_DATA} {} ${DATADIR}/{}
+		${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{})
 .endfor
 
 .include <bsd.port.post.mk>
