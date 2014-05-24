@@ -16,8 +16,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME:C/^font-//}-${PORTVERSION:C/.p.*$//}
-USE_BZIP2=	yes
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
@@ -58,7 +58,8 @@ OPTIONS_DEFINE=	DOCS
 do-build:
 	@${ECHO_CMD} -n "Compressing PCF fonts"
 	@cd ${WRKSRC} && for F in ${FONTNAMES}; do \
-		${LOCALBASE}/bin/bdftopcf bdf/$${F}.bdf | ${GZIP_CMD} > $${F}.pcf.gz; \
+		${LOCALBASE}/bin/bdftopcf bdf/$${F}.bdf | \
+		    ${GZIP_CMD} > $${F}.pcf.gz; \
 		${ECHO_CMD} -n "."; \
 	done
 	@${ECHO_CMD} "Done"
@@ -75,12 +76,11 @@ do-install:
 	    ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/*.pcf.gz .
 
 post-su-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
+	    POST-INSTALL
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
