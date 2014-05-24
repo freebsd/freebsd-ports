@@ -3,6 +3,7 @@
 
 PORTNAME=	kyua-atf-compat
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
@@ -21,6 +22,8 @@ OPTIONS_DEFINE=	DOCS TEST
 
 OPTIONS_SUB=		yes
 TEST_CONFIGURE_WITH=	atf
+TEST_BUILD_DEPENDS=	${PREFIX}/bin/atf-sh:${PORTSDIR}/devel/atf
+TEST_RUN_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
 
 .include <bsd.port.options.mk>
 
