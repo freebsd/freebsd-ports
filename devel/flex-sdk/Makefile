@@ -4,7 +4,7 @@ PORTNAME=	flex-sdk
 PORTVERSION=	4.6.0.23201
 CATEGORIES=	devel java
 MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.6/
-DISTFILES=	flex_sdk_${PORTVERSION}_mpl.zip
+DISTNAME=	flex_sdk_${PORTVERSION}_mpl
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Adobe Flex SDK
@@ -23,7 +23,6 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 SCRIPTS=	aasdoc acompc amxmlc asdoc compc copylocale digest \
 		fcsh fdb mxmlc optimizer
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -34,20 +33,20 @@ post-extract:
 
 do-install:
 .for i in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${PREFIX}/bin/${i}
+	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 
-	${MKDIR} ${JAVAJARDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${JAVAJARDIR}/${PORTNAME}/
-	${INSTALL_DATA} ${WRKSRC}/ant/lib/*.jar ${JAVAJARDIR}/${PORTNAME}/
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/ant/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/
 
-	${MKDIR} ${DATADIR}/frameworks
-	${CP} -r ${WRKSRC}/frameworks/ ${DATADIR}/frameworks/
+	${MKDIR} ${STAGEDIR}${DATADIR}/frameworks
+	${CP} -r ${WRKSRC}/frameworks/ ${STAGEDIR}${DATADIR}/frameworks/
 
-	${MKDIR} ${DATADIR}/asdoc/templates
-	${CP} -r ${WRKSRC}/asdoc/templates/ ${DATADIR}/asdoc/templates/
+	${MKDIR} ${STAGEDIR}${DATADIR}/asdoc/templates
+	${CP} -r ${WRKSRC}/asdoc/templates/ ${STAGEDIR}${DATADIR}/asdoc/templates/
 
-	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/*.htm ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -r ${WRKSRC}/*.htm ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.post.mk>
