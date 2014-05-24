@@ -1866,6 +1866,7 @@
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
+    SUBDIR += rubygem-savon
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
     SUBDIR += rubygem-select2-rails
