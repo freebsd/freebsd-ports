@@ -27,8 +27,6 @@ PORTDOCS=	*
 
 MAKE_ARGS+=	INCS="-I${LOCALBASE}/include/${LUA_SUBDIR}"
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -41,8 +39,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR} && \
-	${CP} ${WRKSRC}/doc/us/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
+	${CP} ${WRKSRC}/doc/us/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
