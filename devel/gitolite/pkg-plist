@@ -38,6 +38,7 @@ libexec/gitolite/commands/create
 libexec/gitolite/commands/creator
 libexec/gitolite/commands/desc
 libexec/gitolite/commands/fork
+libexec/gitolite/commands/git-annex-shell
 libexec/gitolite/commands/git-config
 libexec/gitolite/commands/help
 libexec/gitolite/commands/htpasswd
@@ -49,6 +50,7 @@ libexec/gitolite/commands/owns
 libexec/gitolite/commands/perms
 libexec/gitolite/commands/print-default-rc
 libexec/gitolite/commands/push
+libexec/gitolite/commands/readme
 libexec/gitolite/commands/rsync
 libexec/gitolite/commands/sshkeys-lint
 libexec/gitolite/commands/sskm
@@ -65,6 +67,7 @@ libexec/gitolite/syntactic-sugar/keysubdirs-as-groups
 libexec/gitolite/syntactic-sugar/macros
 libexec/gitolite/syntactic-sugar/refex-expr
 libexec/gitolite/triggers/bg
+libexec/gitolite/triggers/expand-deny-messages
 libexec/gitolite/triggers/partial-copy
 libexec/gitolite/triggers/post-compile/ssh-authkeys
 libexec/gitolite/triggers/post-compile/ssh-authkeys-shell-users
