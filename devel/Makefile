@@ -3338,6 +3338,7 @@
     SUBDIR += pecl-judy
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
+    SUBDIR += pecl-memoize
     SUBDIR += pecl-msgpack
     SUBDIR += pecl-ncurses
     SUBDIR += pecl-newt
