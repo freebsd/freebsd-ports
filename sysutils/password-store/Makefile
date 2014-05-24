@@ -2,6 +2,7 @@
 
 PORTNAME=	password-store
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://git.zx2c4.com/password-store/snapshot/
 
@@ -11,6 +12,7 @@ COMMENT=	Stores, retrieves, generates, and synchronizes passwords securely
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	bash>=0:${PORTSDIR}/shells/bash \
+		getopt>=0:${PORTSDIR}/misc/getopt \
 		gnupg>=2:${PORTSDIR}/security/gnupg \
 		pwgen>=0:${PORTSDIR}/sysutils/pwgen \
 		tree>=1.7:${PORTSDIR}/sysutils/tree
