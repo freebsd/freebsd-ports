@@ -28,23 +28,13 @@ ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 INSTALL_FILES=	Adobe-Korea1.cidToUnicode ISO-2022-KR.unicodeMap \
 		README ../dot.xpdfrc
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/korean
+	${MKDIR} ${STAGEDIR}${DATADIR}/korean
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} ${INSTALL_FILES} ${DATADIR}/korean
-	${MKDIR} ${DATADIR}/korean/CMap
-	cd ${DATADIR}/korean/CMap && \
-		${FIND} ${ADOBECMAPDIR}/ak12/CMap \
-			-type f -exec ${LN} -s -f {} . \;
-
-post-install:
-	exec < ${LOCALBASE}/etc/xpdfrc; \
-		${RM} -f ${LOCALBASE}/etc/xpdfrc; \
-		( ${GREP} -v "${EXTRARC}"; \
-		  ${ECHO_CMD} "include ${EXTRARC}" ) \
-		> ${LOCALBASE}/etc/xpdfrc
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${LOCALBASE}/etc/xpdfrc
-	${CHMOD} 0444 ${LOCALBASE}/etc/xpdfrc
+	    ${INSTALL_DATA} ${INSTALL_FILES} ${STAGEDIR}${DATADIR}/korean
+	${MKDIR} ${STAGEDIR}${DATADIR}/korean/CMap
+	cd ${STAGEDIR}${DATADIR}/korean/CMap && \
+	    ${FIND} ${ADOBECMAPDIR}/ak12/CMap \
+		-type f -exec ${LN} -s -f {} . \;
 
 .include <bsd.port.mk>
