@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitolite
-PORTVERSION=	3.5.3.1
+PORTVERSION=	3.6
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GH \
@@ -14,11 +14,12 @@ COMMENT=	An access control layer on top of git
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
+	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc
-GH_COMMIT=	3dad4f8
+GH_COMMIT=	ed28e60
 GH_TAGNAME=	${GH_COMMIT}
 
 CONFLICTS=	gitolite-[^3]*
@@ -66,7 +67,6 @@ do-install:
 	@(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} Gitolite ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/)
 	@${LN} -s ${PREFIX}/libexec/gitolite/gitolite ${STAGEDIR}${PREFIX}/bin/gitolite
 
-post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	-@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
