@@ -1,0 +1,38 @@
+@sample %%WWWDIR%%/conf/config.inc.php.sample
+%%WWWDIR%%/index.php
+%%WWWDIR%%/lang/ca.inc.php
+%%WWWDIR%%/lang/de.inc.php
+%%WWWDIR%%/lang/en.inc.php
+%%WWWDIR%%/lang/es.inc.php
+%%WWWDIR%%/lang/fr.inc.php
+%%WWWDIR%%/lang/it.inc.php
+%%WWWDIR%%/lang/nl.inc.php
+%%WWWDIR%%/lang/pl.inc.php
+%%WWWDIR%%/lang/pt-BR.inc.php
+%%WWWDIR%%/lang/ru.inc.php
+%%WWWDIR%%/lib/detectbrowserlanguage.php
+%%WWWDIR%%/lib/functions.inc.php
+%%WWWDIR%%/lib/recaptchalib.php
+%%WWWDIR%%/pages/change.php
+%%WWWDIR%%/pages/resetbyquestions.php
+%%WWWDIR%%/pages/resetbytoken.php
+%%WWWDIR%%/pages/sendsms.php
+%%WWWDIR%%/pages/sendtoken.php
+%%WWWDIR%%/pages/setquestions.php
+%%WWWDIR%%/style/accept.png
+%%WWWDIR%%/style/email.png
+%%WWWDIR%%/style/error.png
+%%WWWDIR%%/style/exclamation.png
+%%WWWDIR%%/style/favicon.ico
+%%WWWDIR%%/style/help.png
+%%WWWDIR%%/style/key.png
+%%WWWDIR%%/style/light.png
+%%WWWDIR%%/style/ltb-logo.png
+%%WWWDIR%%/style/styles.css
+%%WWWDIR%%/style/user_suit.png
+@dirrm %%WWWDIR%%/pages
+@dirrm %%WWWDIR%%/conf
+@dirrm %%WWWDIR%%/style
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/lib
+@dirrmtry %%WWWDIR%%

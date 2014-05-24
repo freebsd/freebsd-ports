@@ -1079,6 +1079,7 @@
     SUBDIR += sdl2_net
     SUBDIR += sdl_net
     SUBDIR += seda
+    SUBDIR += self-service-password
     SUBDIR += sendemail
     SUBDIR += sendfile
     SUBDIR += sendsms

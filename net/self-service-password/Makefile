@@ -1,0 +1,35 @@
+# Created by: Krzysztof Stryjek <ports@bsdserwis.com>
+# $FreeBSD$
+
+PORTNAME=	self-service-password
+PORTVERSION=	0.8
+CATEGORIES=	net www
+MASTER_SITES=	http://tools.ltb-project.org/attachments/download/497/
+DISTNAME=	ltb-project-${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	ports@bsdserwis.com
+COMMENT=	A set of PHP-scripts to change LDAP password over the web
+
+LICENSE=	GPLv2
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+USE_PHP=	ldap openssl session hash mhash mcrypt mbstring filter
+
+WANT_PHP_WEB=	yes
+
+CFGDIR=		conf
+CFGFILE=	config.inc.php
+
+SUB_LIST+=	PKGNAME=${PKGNAME}
+SUB_FILES=	pkg-message
+
+post-extract:
+	@${MV} ${WRKSRC}/${CFGDIR}/${CFGFILE} ${WRKSRC}/${CFGDIR}/${CFGFILE}.sample
+
+do-install:
+	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
+
+.include <bsd.port.mk>
