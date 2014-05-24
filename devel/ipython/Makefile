@@ -3,6 +3,7 @@
 
 PORTNAME=	ipython
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=2:${PORTSDIR}/misc/py-pexpect \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_GCC=        yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
 PYDISTUTILS_AUTOPLIST=yes
 
 OPTIONS_DEFINE=	X11 HTML_NOTEBOOK ZMQ
@@ -49,6 +51,15 @@ post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
+	@${ECHO_CMD} "/EASY-INSTALL"	> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "a"		>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "import os"	>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "os.environ[\"LD_LIBRARY_PATH\"]=\"${_GCC_RUNTIME}\"" >> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "."		>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "x!"		>> ${WRKDIR}/ex.script
+	@for file in ${STAGEDIR}${PREFIX}/bin/*; do \
+		ex $${file} < ${WRKDIR}/ex.script > /dev/null; \
+	done
 
 .include <bsd.port.pre.mk>
 
