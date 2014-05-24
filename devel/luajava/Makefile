@@ -23,6 +23,14 @@ MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	run
 DOS2UNIX_REGEX=	.*\.*
 
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION} == 1.7
+PLIST_SUB+= 	JDK17=""
+.else
+PLIST_SUB+= 	JDK17="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LUA_DIR%%|${PREFIX}|' ${WRKSRC}/config
 	@${REINPLACE_CMD} -e 's|%%LUA_LIBDIR%%|${LUA_LIBDIR}|' ${WRKSRC}/config
@@ -42,4 +50,4 @@ post-install:
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
