@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/canna/RK.h
 include/canna/jrkanji.h
 include/canna/keydef.h
@@ -17,6 +18,8 @@ lib/libcanna16.a
 lib/libcanna16.so
 lib/libcanna16.so.1
 %%DATADIR%%/default.canna
+@owner bin
+@group bin
 %%DATADIR%%/dic/default.cbp
 %%DATADIR%%/dic/english.cbp
 %%DATADIR%%/dic/jdaemon.cbp
@@ -31,6 +34,10 @@ lib/libcanna16.so.1
 %%DATADIR%%/dic/tut.cbp
 %%DATADIR%%/dic/vje.cbp
 %%DATADIR%%/dic/wx2+.cbp
+@exec chown bin:bin %D/%%DATADIR%%/dic
+@exec chmod 0775 %D/%%DATADIR%%/dic
+@owner root
+@group wheel
 %%DATADIR%%/sample/1.1.canna
 %%DATADIR%%/sample/1.2.canna
 %%DATADIR%%/sample/fixer.canna
@@ -61,8 +68,6 @@ lib/libcanna16.so.1
 %%DATADIR%%/sample/verbose.canna
 %%DATADIR%%/sample/vje.canna
 %%DATADIR%%/sample/wx2+.canna
-%%METAFILE%%
-@exec %%MTREE_CMD%% -qU -f %D/%%METAFILE%% -p %D/%%DATADIR%%/dic > /dev/null 2>&1
 @dirrm include/canna
 @dirrm %%DATADIR%%/sample/src
 @dirrm %%DATADIR%%/sample
