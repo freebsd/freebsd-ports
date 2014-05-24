@@ -66,19 +66,19 @@ man/man1/proxytrack.1.gz
 man/man1/webhttrack.1.gz
 share/applications/WebHTTrack-Websites.desktop
 share/applications/WebHTTrack.desktop
-share/icons/hicolor/16x16/apps/httrack.png
-share/icons/hicolor/32x32/apps/httrack.png
-share/icons/hicolor/48x48/apps/httrack.png
+%%ICONS%%share/icons/hicolor/16x16/apps/httrack.png
+%%ICONS%%share/icons/hicolor/32x32/apps/httrack.png
+%%ICONS%%share/icons/hicolor/48x48/apps/httrack.png
 share/pixmaps/httrack16x16.xpm
 share/pixmaps/httrack32x32.xpm
 share/pixmaps/httrack48x48.xpm
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+%%ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/16x16
+%%ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/32x32
+%%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/48x48
+%%ICONS%%@dirrmtry share/icons/hicolor
+%%ICONS%%@dirrmtry share/icons
 @dirrm lib/httrack
 @dirrm include/httrack
