@@ -1,0 +1,72 @@
+--- Makefile.orig	1995-03-06 22:00:20.000000000 +0800
++++ Makefile	2014-05-24 22:09:47.087270512 +0800
+@@ -5,19 +5,20 @@ CC=gcc
+ endif
+ 
+ # use cp backup option if you have gnu cp
+-CP=cp
+-CP=cp -b
++#CP=cp
++#CP=cp -b
++INSTALL_CMD=	install -c -o bin -g bin
+ 
+ # where you want to install
+ ifndef PREFIX
+-PREFIX=$(HOME)
++PREFIX=/usr/local
+ endif
+ 
+ # which shell do we use for the cflow to script?
+ # I know it works on bash on unix, it also should work with
+ # msh on ms-dog
+ ifndef CFLOW_SHELL
+-CFLOW_SHELL=/bin/bash
++CFLOW_SHELL=$(PREFIX)/bin/bash
+ endif
+ 
+ # actual location of prcc
+@@ -39,12 +40,13 @@ ifdef MALLOC_DEBUG
+ LOADLIBES=-L$(HOME)/lib -ldmalloc
+ endif
+ 
+-DEBUG=-g
+-OPT=-O
+-CFLAGS=-Wall $(DEBUG) $(OPT) $(DEFS)
++#DEBUG=-g
++#OPT=-O
++CFLAGS+=$(DEBUG) $(OPT) $(DEFS)
+ 
+ # set this to where to install
+-BINDIR=$(PREFIX)/bin
++BINDIR=$(DESTDIR)$(PREFIX)/bin
++MANDIR=$(DESTDIR)$(PREFIX)/man/man1
+ 
+ SRCS=cflow.sh prcc.c prcg.c
+ 
+@@ -64,17 +66,23 @@ PROTOTYPES= prcc.prototypes.h prcg.proto
+ prototypes: 	$(PROTOTYPES)
+ 
+ 
+-install:	install-cflow  install-bins
++install:	install-cflow  install-bins install-man
+ 
+ install-bins: $(BINDIR)/prcc $(BINDIR)/prcg
+ 
+ install-cflow:	$(BINDIR)/cflow
+ 
++install-man:	$(MANDIR)/cflow.1.gz
++
+ $(BINDIR)/prcc $(BINDIR)/prcg: $(BINDIR)/%:	%
+-	$(CP) $^ $@
++	$(INSTALL_CMD) $^ $@
+ 
+ $(BINDIR)/cflow:	cflow
+-	$(CP) $^ $@
++	$(INSTALL_CMD) -m0755 $^ $@
++
++$(MANDIR)/cflow.1.gz:	cflow.1
++	$(INSTALL_CMD) -m 0644 $^ $(MANDIR)
++	gzip -9nf $(MANDIR)/cflow.1
+ 
+ cflow:	cflow.sh
+ 	sed -e "s;@CFLOW_SHELL@;$(CFLOW_SHELL);g" \
