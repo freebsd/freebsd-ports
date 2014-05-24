@@ -10049,7 +10049,6 @@ lib/webmin/lang_list.txt
 lib/webmin/ldap-client/CHANGELOG
 lib/webmin/ldap-client/browser.cgi
 lib/webmin/ldap-client/check.cgi
-lib/webmin/ldap-client/config-*-linux
 lib/webmin/ldap-client/config-debian-linux-3.1
 lib/webmin/ldap-client/config-debian-linux-4.0-5.9
 lib/webmin/ldap-client/config-debian-linux-6.0-6.9
@@ -10148,7 +10147,6 @@ lib/webmin/ldap-server/backup_config.pl
 lib/webmin/ldap-server/bootup.cgi
 lib/webmin/ldap-server/cgi_args.pl
 lib/webmin/ldap-server/config
-lib/webmin/ldap-server/config-*-linux
 lib/webmin/ldap-server/config-Redhat-Enterprise-Linux-6.0-*
 lib/webmin/ldap-server/config-Scientific-Linux-6.0-*
 lib/webmin/ldap-server/config-Ubuntu-Linux-8.10-*
@@ -10274,7 +10272,6 @@ lib/webmin/ldap-useradmin/batch_exec.cgi
 lib/webmin/ldap-useradmin/batch_form.cgi
 lib/webmin/ldap-useradmin/cgi_args.pl
 lib/webmin/ldap-useradmin/config
-lib/webmin/ldap-useradmin/config-*-linux
 lib/webmin/ldap-useradmin/config-coherent-linux
 lib/webmin/ldap-useradmin/config-debian-linux
 lib/webmin/ldap-useradmin/config-debian-linux-3.1
@@ -10452,7 +10449,6 @@ lib/webmin/logrotate/CHANGELOG
 lib/webmin/logrotate/backup_config.pl
 lib/webmin/logrotate/cgi_args.pl
 lib/webmin/logrotate/config
-lib/webmin/logrotate/config-*-linux
 lib/webmin/logrotate/config-debian-linux
 lib/webmin/logrotate/config-freebsd
 lib/webmin/logrotate/config-open-linux
@@ -20478,7 +20474,6 @@ lib/webmin/status/cfengine-monitor.pl
 lib/webmin/status/cgi_args.pl
 lib/webmin/status/change-monitor.pl
 lib/webmin/status/config
-lib/webmin/status/config-*-linux
 lib/webmin/status/config-debian-linux
 lib/webmin/status/config-debian-linux-3.0
 lib/webmin/status/config-debian-linux-3.1-*
@@ -21131,7 +21126,6 @@ lib/webmin/time/CHANGELOG
 lib/webmin/time/acl_security.pl
 lib/webmin/time/apply.cgi
 lib/webmin/time/backup_config.pl
-lib/webmin/time/config-*-linux
 lib/webmin/time/config-freebsd
 lib/webmin/time/config-hpux
 lib/webmin/time/config-irix
@@ -22629,7 +22623,6 @@ lib/webmin/webalizer/acl_security.pl
 lib/webmin/webalizer/backup_config.pl
 lib/webmin/webalizer/cgi_args.pl
 lib/webmin/webalizer/config
-lib/webmin/webalizer/config-*-linux
 lib/webmin/webalizer/config-debian-linux-4.0-*
 lib/webmin/webalizer/config-freebsd
 lib/webmin/webalizer/config-gentoo-linux
