@@ -10,10 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Treat module source code as a template
 
-BROKEN=		Fails to configure
-
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install
+		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
