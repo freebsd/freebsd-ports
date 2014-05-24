@@ -15,18 +15,14 @@ CONFIGURE_ARGS=	--bindir="${PREFIX}/${CGIDIR}" \
 		--with-manpath=/usr/share/man:${LOCALBASE}/man \
 		--with-distro=freebsd --enable-lynx
 
+CGIDIR=		www/cgi-bin
 PLIST_SUB=	CGIDIR="${CGIDIR}"
-CGIDIR=	www/cgi-bin
 
-MAN1=	man2web.1
-MAN5=	man2web.conf.5
-
-NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/freebsd.h ${WRKSRC}/src/section_h/
 
 # default Apache configuration disallows symlinks in cgi-bin
 post-install:
-	${LN} -sf ${PREFIX}/${CGIDIR}/man2web ${PREFIX}/bin/man2web
+	${LN} -sf ${PREFIX}/${CGIDIR}/man2web ${STAGEDIR}${PREFIX}/bin/man2web
 
 .include <bsd.port.mk>
