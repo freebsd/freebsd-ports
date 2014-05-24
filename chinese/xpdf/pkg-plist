@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%DATADIR%%/chinese-simplified/Adobe-GB1.cidToUnicode
 %%DATADIR%%/chinese-simplified/EUC-CN.unicodeMap
 %%DATADIR%%/chinese-simplified/GBK.unicodeMap
