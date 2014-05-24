@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gtkada
-PORTVERSION=	3.8.3.0
+PORTVERSION=	3.8.3.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		gtkada-rm-${PORTVERSION}${EXTRACT_SUFX}
+		gtkada-rm-${RM_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada graphical toolkit based on Gtk3 components
@@ -23,6 +23,7 @@ ALL_TARGET=	src
 NO_MTREE=	yes
 PORTDOCS=	gtkada_rm gtkada_ug
 PORTEXAMPLES=	testgtk
+RM_VERSION=	3.8.3.0
 
 MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER} \
 		GL_SUPPORT=yes
@@ -30,10 +31,9 @@ MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER} \
 CONFLICTS_INSTALL=	gtkada-*
 
 CONFIGURE_ARGS+=	--with-GL=auto \
-			--disable-gtkextra \
-			--enable-build=Production
+			--disable-gtkextra
 
-OPTIONS_DEFINE=		DOCS NLS EXAMPLES
+OPTIONS_DEFINE=		DOCS NLS EXAMPLES DEBUG
 
 .include <bsd.port.options.mk>
 
@@ -48,12 +48,23 @@ USES+=			gettext
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-build=Debug
+.else
+CONFIGURE_ARGS+=	--enable-build=Production
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+= docs
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 ALL_TARGET+= tests
+.endif
+
+post-extract:
+.if ${PORTVERSION} != ${RM_VERSION}
+	${MV} ${WRKDIR}/gtkada-${RM_VERSION}/docs/* ${WRKSRC}/docs/
 .endif
 
 do-build:
