@@ -536,7 +536,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/locale/ext-lang-vn.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/locale/ext-lang-zh_CN.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/locale/ext-lang-zh_TW.js
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/charts.swf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/css/README.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/css/debug.css
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/css/ext-all-notheme.css
@@ -9319,3 +9318,5 @@
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3/templates
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%/typo3
 @dirrmtry %%WWWDIR%%_src-%%PORTVERSION%%
+@owner
+@group
