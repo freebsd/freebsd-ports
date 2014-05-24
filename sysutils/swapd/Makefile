@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/swapd/source/
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A daemon that watches free memory and manages swap files
 
+BROKEN=		Fails to build
+
 LIB_DEPENDS=	statgrab:${PORTSDIR}/devel/libstatgrab
 
 USES=		gmake pkgconfig
