@@ -30,21 +30,18 @@ LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=DOCS X11
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese/monafonts
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} ${PORTDOC_FILES} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/contrib
+	    ${INSTALL_DATA} ${PORTDOC_FILES} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
 	cd ${WRKSRC}/contrib && \
-		${INSTALL_DATA} ${PORTDOC_LISPS} ${DOCSDIR}/contrib
-.endif
+	    ${INSTALL_DATA} ${PORTDOC_LISPS} ${STAGEDIR}${DOCSDIR}/contrib
 
 .include <bsd.port.mk>
