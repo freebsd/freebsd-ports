@@ -3,7 +3,7 @@
 
 PORTNAME=	sj3
 PORTVERSION=	2.0.1.20
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/nork
 PKGNAMESUFFIX=	-lib
@@ -15,17 +15,23 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese input method, library part
 
+LICENSE=	MIT
+LICENSE_FILE=	${FILESDIR}/COPYING
+
 USES=		imake
-USE_GCC=	any
 USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=	yes
 SUB_FILES=	sj3_freebsd.tmpl
 SUB_LIST=	DESTDIR=${DESTDIR}
 
+PLIST_FILES=	include/sj3lib.h \
+		lib/libsj3lib.a \
+		lib/libsj3lib.so \
+		lib/libsj3lib.so.1
+
 POSTPATCHES=	${FILESDIR}/post-patch-Imakefile \
 		${FILESDIR}/post-patch-include-Const.h
 
-NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
 
