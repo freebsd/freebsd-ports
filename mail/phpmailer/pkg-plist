@@ -8,28 +8,51 @@
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/generatedocs.sh
 %%PORTDOCS%%%%DOCSDIR%%/pop3_article.txt
-%%PORTDOCS%%%%DOCSDIR%%/use_gmail.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LGPLv3.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/code_generator.phps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contents.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gmail.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer_mini.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_db_smtp_basic.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_mail_advanced.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_mail_basic.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_pop_before_smtp_advanced.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_pop_before_smtp_basic.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_sendmail_advanced.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_sendmail_basic.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_advanced.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_advanced_no_auth.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_basic.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_basic_no_auth.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_gmail_advanced.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp_gmail_basic.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailing_list.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pop_before_smtp.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/XRegExp.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shAutoloader.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shBrushPhp.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shCore.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shLegacy.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtp.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtp_no_auth.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCore.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCoreDefault.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCoreDjango.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCoreEclipse.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCoreEmacs.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCoreFadeToGrey.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCoreMDUltra.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCoreMidnight.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shCoreRDark.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeAppleScript.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeDefault.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeDjango.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeEclipse.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeEmacs.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeFadeToGrey.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeMDUltra.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeMidnight.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeRDark.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/shThemeVisualStudio.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/wrapping.png
+%%DATADIR%%/PHPMailerAutoload.php
 %%DATADIR%%/class.phpmailer.php
 %%DATADIR%%/class.pop3.php
 %%DATADIR%%/class.smtp.php
 %%DATADIR%%/composer.json
+%%DATADIR%%/extras/EasyPeasyICS.php
 %%DATADIR%%/extras/class.html2text.php
 %%DATADIR%%/extras/htmlfilter.php
 %%DATADIR%%/extras/ntlm_sasl_client.php
@@ -43,6 +66,7 @@
 %%DATADIR%%/language/phpmailer.lang-eo.php
 %%DATADIR%%/language/phpmailer.lang-es.php
 %%DATADIR%%/language/phpmailer.lang-et.php
+%%DATADIR%%/language/phpmailer.lang-fa.php
 %%DATADIR%%/language/phpmailer.lang-fi.php
 %%DATADIR%%/language/phpmailer.lang-fo.php
 %%DATADIR%%/language/phpmailer.lang-fr.php
@@ -50,6 +74,7 @@
 %%DATADIR%%/language/phpmailer.lang-hu.php
 %%DATADIR%%/language/phpmailer.lang-it.php
 %%DATADIR%%/language/phpmailer.lang-ja.php
+%%DATADIR%%/language/phpmailer.lang-lt.php
 %%DATADIR%%/language/phpmailer.lang-nl.php
 %%DATADIR%%/language/phpmailer.lang-no.php
 %%DATADIR%%/language/phpmailer.lang-pl.php
@@ -58,68 +83,22 @@
 %%DATADIR%%/language/phpmailer.lang-se.php
 %%DATADIR%%/language/phpmailer.lang-sk.php
 %%DATADIR%%/language/phpmailer.lang-tr.php
+%%DATADIR%%/language/phpmailer.lang-uk.php
 %%DATADIR%%/language/phpmailer.lang-zh.php
 %%DATADIR%%/language/phpmailer.lang-zh_cn.php
-%%DATADIR%%/test/contents.html
+%%DATADIR%%/test/fakepopserver.sh
 %%DATADIR%%/test/fakesendmail.sh
 %%DATADIR%%/test/phpmailerLangTest.php
 %%DATADIR%%/test/phpmailerTest.php
-%%DATADIR%%/test/test.png
+%%DATADIR%%/test/runfakepopserver.sh
 %%DATADIR%%/test/test_callback.php
 %%DATADIR%%/test/testbootstrap-dist.php
-%%DATADIR%%/test/testemail.php
-%%DATADIR%%/test_script/LGPLv3.txt
-%%DATADIR%%/test_script/contents.html
-%%DATADIR%%/test_script/images/aikido.gif
-%%DATADIR%%/test_script/images/bkgrnd.gif
-%%DATADIR%%/test_script/images/phpmailer.gif
-%%DATADIR%%/test_script/index.php
-%%DATADIR%%/test_script/scripts/clipboard.swf
-%%DATADIR%%/test_script/scripts/shBrushBash.js
-%%DATADIR%%/test_script/scripts/shBrushCSharp.js
-%%DATADIR%%/test_script/scripts/shBrushCpp.js
-%%DATADIR%%/test_script/scripts/shBrushCss.js
-%%DATADIR%%/test_script/scripts/shBrushDelphi.js
-%%DATADIR%%/test_script/scripts/shBrushDiff.js
-%%DATADIR%%/test_script/scripts/shBrushGroovy.js
-%%DATADIR%%/test_script/scripts/shBrushJScript.js
-%%DATADIR%%/test_script/scripts/shBrushJava.js
-%%DATADIR%%/test_script/scripts/shBrushPerl.js
-%%DATADIR%%/test_script/scripts/shBrushPhp.js
-%%DATADIR%%/test_script/scripts/shBrushPlain.js
-%%DATADIR%%/test_script/scripts/shBrushPython.js
-%%DATADIR%%/test_script/scripts/shBrushRuby.js
-%%DATADIR%%/test_script/scripts/shBrushScala.js
-%%DATADIR%%/test_script/scripts/shBrushSql.js
-%%DATADIR%%/test_script/scripts/shBrushVb.js
-%%DATADIR%%/test_script/scripts/shBrushXml.js
-%%DATADIR%%/test_script/scripts/shCore.js
-%%DATADIR%%/test_script/scripts/shLegacy.js
-%%DATADIR%%/test_script/src/shCore.js
-%%DATADIR%%/test_script/src/shLegacy.js
-%%DATADIR%%/test_script/styles/help.png
-%%DATADIR%%/test_script/styles/magnifier.png
-%%DATADIR%%/test_script/styles/page_white_code.png
-%%DATADIR%%/test_script/styles/page_white_copy.png
-%%DATADIR%%/test_script/styles/printer.png
-%%DATADIR%%/test_script/styles/shCore.css
-%%DATADIR%%/test_script/styles/shThemeDefault.css
-%%DATADIR%%/test_script/styles/shThemeDjango.css
-%%DATADIR%%/test_script/styles/shThemeEmacs.css
-%%DATADIR%%/test_script/styles/shThemeFadeToGrey.css
-%%DATADIR%%/test_script/styles/shThemeMidnight.css
-%%DATADIR%%/test_script/styles/shThemeRDark.css
-%%DATADIR%%/test_script/styles/wrapping.png
-%%DATADIR%%/test_script/test.html
-@dirrm %%DATADIR%%/test_script/styles
-@dirrm %%DATADIR%%/test_script/src
-@dirrm %%DATADIR%%/test_script/scripts
-@dirrm %%DATADIR%%/test_script/images
-@dirrm %%DATADIR%%/test_script
 @dirrm %%DATADIR%%/test
 @dirrm %%DATADIR%%/language
 @dirrm %%DATADIR%%/extras
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/styles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
