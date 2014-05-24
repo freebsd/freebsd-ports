@@ -24,11 +24,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/us/API/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/us/API/package-list
-%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/background.gif
+%%JDK17%%%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/background.gif
 %%PORTDOCS%%%%DOCSDIR%%/us/API/resources/inherit.gif
-%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/tab.gif
-%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/titlebar.gif
-%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/titlebar_end.gif
+%%JDK17%%%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/tab.gif
+%%JDK17%%%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/titlebar.gif
+%%JDK17%%%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/titlebar_end.gif
 %%PORTDOCS%%%%DOCSDIR%%/us/API/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/us/API/stylesheet.css
 %%PORTDOCS%%%%DOCSDIR%%/us/examples.html
