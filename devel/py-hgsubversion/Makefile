@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hgsubversion
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,9 @@ PYDISTUTILS_AUTOPLIST=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSUBVERTPY}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:${PORTSDIR}/devel/py-subversion
-.else
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subvertpy>=0:${PORTSDIR}/devel/py-subvertpy
+.else
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:${PORTSDIR}/devel/py-subversion
 .endif
 
 .include <bsd.port.mk>
