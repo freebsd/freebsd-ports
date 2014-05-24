@@ -17,4 +17,5 @@ include/asir/version.h
 include/asir/wsio.h
 include/asir/w_stdio.h
 lib/asir
+man/man1/asir.1.gz
 @dirrm include/asir
