@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 post-install:
-	@(cd ${STAGEDIR}${PREFIX}/lib ; ${STRIP_CMD} libmime.so.1; \
-		${LN} -sf libmime.so.1 libmime.so )
+	${LN} -sf libmime.so.1 ${STAGEDIR}${PREFIX}/lib/libmime.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmime.so
 
 .include <bsd.port.mk>
