@@ -611,6 +611,7 @@
     SUBDIR += gps
     SUBDIR += gpsim
     SUBDIR += gputils
+    SUBDIR += gradle
     SUBDIR += grantlee
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
