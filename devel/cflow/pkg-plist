@@ -1,3 +1,4 @@
 bin/cflow
 bin/prcc
 bin/prcg
+man/man1/cflow.1.gz
