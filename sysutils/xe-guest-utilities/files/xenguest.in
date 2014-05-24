@@ -19,7 +19,7 @@ rcvar=xenguest_enable
 
 load_rc_config $name
 
-: ${xe_daemon_enable:=NO}
+: ${xenguest_enable:=NO}
 
 pidfile=/var/run/xe-daemon.pid
 command="%%PREFIX%%/sbin/xe-daemon"
