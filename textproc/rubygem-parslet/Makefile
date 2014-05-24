@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parslet
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
