@@ -11,11 +11,7 @@ MAINTAINER=	pjm@gnu.org
 COMMENT=	Support for assertion checking and logging using GNU C and GDB
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 INFO=		nana
-MAN1=		nana.1 nana-clg.1
-MAN3=		nana.3 I.3 DI.3 L.3 DL.3 Q.3 Qstl.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
