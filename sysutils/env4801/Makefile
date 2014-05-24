@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	STATIC
 OPTIONS_DEFAULT=	STATIC
 STATIC_DESC=	Build a statically linked executable
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -39,8 +38,8 @@ post-extract:
 		${FILESDIR}/env4801.sh > ${WRKSRC}/env4801.sh
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/env4801 ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/env4801.sh ${PREFIX}/etc/rc.d
+	${INSTALL_PROGRAM} ${WRKSRC}/env4801 ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/env4801.sh ${STAGEDIR}${PREFIX}/etc/rc.d
 
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PKGMESSAGE}
