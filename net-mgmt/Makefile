@@ -33,6 +33,7 @@
     SUBDIR += cacti-spine
     SUBDIR += cdpd
     SUBDIR += cdpr
+    SUBDIR += centreon-clib
     SUBDIR += cflowd
     SUBDIR += check_logfiles
     SUBDIR += check_multi
