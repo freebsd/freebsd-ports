@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	bisoncpp
-PORTVERSION=	4.08.00
+PORTVERSION=	4.09.01
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/bisonc%2B%2B/${PORTVERSION}
-DISTNAME=	bisonc++_${PORTVERSION}
-EXTRACT_SUFX=	.orig.tar.gz
+DISTNAME=	bisonc++_${PORTVERSION}.orig
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	LALR(1) parser generator that generates C++ classes
@@ -16,10 +15,8 @@ BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		yodl>=3.0:${PORTSDIR}/textproc/yodl \
 		libbobcat>=3.18:${PORTSDIR}/devel/libbobcat
 
-DOCSDIR=	${PREFIX}/share/doc/bisonc++-${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/bisonc++
 PORTDOCS=	*
-
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 WRKSRC=		${WRKDIR}/bisonc++-${PORTVERSION}
 
@@ -44,8 +41,7 @@ SHEBANG_FILES=	build \
 		scanner/driver/build
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g; \
-		s|%%PORTVERSION%%|${PORTVERSION}|g' \
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/INSTALL.im
 	@${REINPLACE_CMD} 's|"g++|"${CXX}|' \
 		${WRKSRC}/INSTALL.im \

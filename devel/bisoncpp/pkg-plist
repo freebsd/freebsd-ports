@@ -1,9 +1,20 @@
 bin/bisonc++
 man/man1/bisonc++.1.gz
-share/bisonc++-%%PORTVERSION%%/bisonc++.cc
-share/bisonc++-%%PORTVERSION%%/bisonc++.h
-share/bisonc++-%%PORTVERSION%%/bisonc++.ih
-share/bisonc++-%%PORTVERSION%%/bisonc++base.h
-share/bisonc++-%%PORTVERSION%%/bisonc++polymorphic
-share/bisonc++-%%PORTVERSION%%/bisonc++polymorphic.inline
-@dirrm share/bisonc++-%%PORTVERSION%%
+share/bisonc++/bisonc++.cc
+share/bisonc++/bisonc++.h
+share/bisonc++/bisonc++.ih
+share/bisonc++/bisonc++base.h
+share/bisonc++/bisonc++polymorphic
+share/bisonc++/bisonc++polymorphic.inline
+share/bisonc++/debugdecl.in
+share/bisonc++/debugfunctions1.in
+share/bisonc++/debugfunctions2.in
+share/bisonc++/debugfunctions3.in
+share/bisonc++/debugincludes.in
+share/bisonc++/debuglookup.in
+share/bisonc++/lex.in
+share/bisonc++/ltype.in
+share/bisonc++/ltypedata.in
+share/bisonc++/print.in
+share/bisonc++/threading.in
+@dirrm share/bisonc++
