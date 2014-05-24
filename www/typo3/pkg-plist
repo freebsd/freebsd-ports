@@ -516,7 +516,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/locale/ext-lang-vn.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/locale/ext-lang-zh_CN.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/locale/ext-lang-zh_TW.js
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/charts.swf
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/css/README.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/css/debug.css
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/contrib/extjs/resources/css/ext-all-notheme.css
@@ -3124,6 +3123,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/ClassNamingUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/ClientUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/ExtensionMangementUtilityTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/GeneralUtilityFixture.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/MathUtilityTestClassWithStringRepresentationFixture.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/RuntimeException.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/Fixtures/clear.gif
@@ -10710,3 +10710,5 @@
 @dirrmtry %%WWWDIR%%/fileadmin/_temp_
 @dirrmtry %%WWWDIR%%/fileadmin
 @dirrmtry %%WWWDIR%%
+@owner
+@group
