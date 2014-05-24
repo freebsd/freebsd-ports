@@ -3,7 +3,7 @@
 
 PORTNAME=	jspwiki
 PORTVERSION=	2.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://www.ecyrd.com/~jalkanen/JSPWiki/${PORTVERSION}/
 DISTNAME=	JSPWiki-${PORTVERSION}-bin
@@ -26,25 +26,20 @@ PORTDOCS=	ChangeLog README ReleaseNotes JSPWiki-*.zip
 
 PLIST_SUB=	TOMCATDIR=${TOMCATDIR:S|^${PREFIX}/||}
 
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	AS
 OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
 OPTIONS_DEFAULT=	TOMCAT6
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOMCAT6}
 TOMCATVER=	apache-tomcat-6.0
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 .endif
 
 .if ${PORT_OPTIONS:MTOMCAT7}
 TOMCATVER=	apache-tomcat-7.0
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
 .endif
 
@@ -53,25 +48,14 @@ post-extract:
 	@${MKDIR} ${WRKDIR}/${WEBAPP}
 	@${TAR} xf ${WRKDIR}/${PORTNAME}/JSPWiki.war -C ${WRKDIR}/${WEBAPP}
 .for file in jspwiki.policy jspwiki.properties web.xml
-	@${MV} ${WRKDIR}/${WEBAPP}/WEB-INF/${file} ${WRKDIR}/${WEBAPP}/WEB-INF/${file}.example
+	@${MV} ${WRKDIR}/${WEBAPP}/WEB-INF/${file} ${WRKDIR}/${WEBAPP}/WEB-INF/${file}.sample
 .endfor
 
 do-install:
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${WEBAPPDIR}/${WEBAPP}
-	@(cd ${WRKDIR}/${WEBAPP} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${WEBAPP})
-	@for file in jspwiki.policy jspwiki.properties web.xml ; do \
-		if [ ! -e "${WEBAPPDIR}/${WEBAPP}/WEB-INF/$$file}" ]; then \
-			${ECHO_MSG} "	Installing local configuration file: ${WEBAPPDIR}/${WEBAPP}/WEB-INF/$$file"; \
-			${CP} ${WEBAPPDIR}/${WEBAPP}/WEB-INF/$${file}.example ${WEBAPPDIR}/${WEBAPP}/WEB-INF/$$file; \
-				else \
-					${ECHO_MSG} "	Preserving local configuration file: ${WEBAPPDIR}/${WEBAPP}/WEB-INF/$$file"; \
-		fi; \
-	done
+	@${MKDIR} ${STAGEDIR}${WEBAPPDIR}/${WEBAPP}
+	(cd ${WRKDIR}/${WEBAPP} && ${COPYTREE_SHARE} . ${STAGEDIR}${WEBAPPDIR}/${WEBAPP})
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKDIR}/${PORTNAME}/|} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKDIR}/${PORTNAME}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
