@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	linux-crashplan
-DISTVERSION=	3.5.3
-PORTREVISION=	2
+DISTVERSION=	3.6.3
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://download.crashplan.com/installs/linux/install/CrashPlan/
-DISTNAME=	CrashPlan_3.5.3_Linux
+DISTNAME=	CrashPlan_3.6.3_Linux
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wg@FreeBSD.org
