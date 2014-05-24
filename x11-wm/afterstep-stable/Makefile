@@ -3,7 +3,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	stable
@@ -92,5 +92,10 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,%%STATIC_LIBEXECINFO%%,${STATIC_LIBEXECINFO},g' \
 		${WRKSRC}/configure
+
+.if exists(${PREFIX}/share/gnome/wm-properties)
+pre-install:
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/gnome/wm-properties
+.endif
 
 .include <bsd.port.post.mk>

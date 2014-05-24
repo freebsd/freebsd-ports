@@ -1413,6 +1413,7 @@ man/man1/asimagexml.1x.gz
 %%DATADIR%%/winlist
 %%DATADIR%%/wintabs
 share/applications/AfterStep.desktop
+%%GNOME%%share/gnome/wm-properties/AfterStep.desktop
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/start/7_About_AfterStep
 @dirrm %%DATADIR%%/start/5_Quit
