@@ -24,7 +24,6 @@ OPTIONS_DEFAULT=	GAVL OPENCV
 GAVL_DESC=	Install gavl plugins
 OPENCV_DESC=	Install OpenCV plugins
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
 
 .include <bsd.port.options.mk>
