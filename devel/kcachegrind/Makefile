@@ -11,9 +11,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Profiler frontend for KDE
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USES=		cmake:outsource tar:xz
+USES=		cmake:outsource tar:xz shebangfix
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		corelib dbus gui
+SHEBANG_FILES=	converters/op2calltree converters/dprof2calltree \
+		converters/memprof2calltree
 
 OPTIONS_DEFINE=	DOT VALGRIND
 
