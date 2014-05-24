@@ -1,5 +1,5 @@
 bin/gnatcoll_db2ada
-bin/gnatinspect
+%%SQLITE%%bin/gnatinspect-xref
 %%PYTHON%%include/gnatcoll/gnatcoll-any_types-python.adb
 %%PYTHON%%include/gnatcoll/gnatcoll-any_types-python.ads
 include/gnatcoll/gnatcoll-any_types.adb
