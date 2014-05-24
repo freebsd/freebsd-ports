@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Web-based News Reader
 
+LICENSE=	GPLv2
+
 USE_PHP=	yes
 NO_BUILD=	yes
 
@@ -19,11 +21,11 @@ PNEWSDIR?=	www/pnews
 PNEWSFULLDIR=	${PREFIX}/${PNEWSDIR}
 PLIST_SUB+=	PNEWSDIR="${PNEWSDIR}"
 
-NO_STAGE=	yes
+post-extract:
+	${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -r
+
 do-install:
-	@${MKDIR} ${PNEWSFULLDIR}
-	@${CP} -R ${WRKSRC}/* ${PNEWSFULLDIR}
-	@${CP} -R ${WRKSRC}/.htaccess ${WRKSRC}/* ${PNEWSFULLDIR}
-	@${FIND} ${PNEWSFULLDIR} -path '*/.svn' | ${XARGS} ${RM} -fr
+	@${MKDIR} ${STAGEDIR}${PNEWSFULLDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PNEWSFULLDIR})
 
 .include <bsd.port.mk>
