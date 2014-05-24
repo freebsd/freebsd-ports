@@ -1,0 +1,6 @@
+bin/chkstow
+bin/stow
+%%SITE_PERL%%/Stow.pm
+%%SITE_PERL%%/Stow/Util.pm
+man/man8/stow.8.gz
+@dirrm %%SITE_PERL%%/Stow
