@@ -1,6 +1,6 @@
-%%ELISP_SUBDIR%%/css-mode.el
 %%XELISP_SUBDIR%%/css-mode.el
 %%PORTDOCS%%%%DOCSDIR%%/css-mode-doc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/xemacs/site-lisp
+%%ELISP_SUBDIR%%/css-mode.el
+@dirrmtry %%XELISP_SUBDIR%%
 @dirrmtry lib/xemacs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
