@@ -17,6 +17,6 @@ RUN_DEPENDS=	p5-Module-Runtime>=0.009:${PORTSDIR}/devel/p5-Module-Runtime
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 USES=		perl5
-USE_PERL5=	configure run
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
