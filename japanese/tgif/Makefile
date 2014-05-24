@@ -3,6 +3,7 @@
 
 PORTNAME=	tgif
 PORTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES=	japanese graphics
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-resource
@@ -22,13 +23,9 @@ PLIST_SUB=	XAPPLRESDIR=${XAPPLRESDIR}
 
 XAPPLRESDIR=	lib/X11/ja_JP.eucJP/app-defaults
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/${XAPPLRESDIR}
-	${INSTALL_DATA} ${FILESDIR}/Tgif.in ${PREFIX}/${XAPPLRESDIR}/Tgif.ja-dist
-	if ! test -r ${PREFIX}/${XAPPLRESDIR}/Tgif; then \
-		${INSTALL_DATA} ${FILESDIR}/Tgif.in \
-			${PREFIX}/${XAPPLRESDIR}/Tgif; \
-	fi
+	${MKDIR} ${STAGEDIR}${PREFIX}/${XAPPLRESDIR}
+	${INSTALL_DATA} ${FILESDIR}/Tgif.in \
+	    ${STAGEDIR}${PREFIX}/${XAPPLRESDIR}/Tgif.sample
 
 .include <bsd.port.mk>
