@@ -16,9 +16,9 @@ COMMENT=	The Grid Analysis and Display System
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		SUPPLIBS="${LOCALBASE}"
@@ -37,7 +37,6 @@ NETCDF_DESC=	Build netcdf-support
 PORTDATA=	*
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -49,7 +48,7 @@ PORTEXAMPLES=	*
 .endif
 
 .if ${PORT_OPTIONS:MHDF}
-LIB_DEPENDS+=		mfhdf.3:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=		libmfhdf.so:${PORTSDIR}/science/hdf
 CONFIGURE_ARGS+=	--with-hdf
 PLIST_SUB+=		NETCDF="@comment " HDF=""
 .endif
@@ -70,16 +69,16 @@ post-configure:
 
 post-install:
 .if !defined(NOPORTDATA)
-	${MKDIR} "${DATADIR}"
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . "${DATADIR}"
+	${MKDIR} "${STAGEDIR}${DATADIR}"
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . "${STAGEDIR}${DATADIR}"
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} "${EXAMPLESDIR}"
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . "${EXAMPLESDIR}"
+	${MKDIR} "${STAGEDIR}${EXAMPLESDIR}"
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . "${STAGEDIR}${EXAMPLESDIR}"
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} "${DOCSDIR}"
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . "${DOCSDIR}"
+	${MKDIR} "${STAGEDIR}${DOCSDIR}"
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . "${STAGEDIR}${DOCSDIR}"
 .endif
 
 .include <bsd.port.mk>
