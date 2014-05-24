@@ -3,4 +3,4 @@ include/gpkg.h
 lib/libgpkg.a
 lib/libgpkg.so
 lib/libgpkg.so.0
-lib/libgpkg.so.0.9.16
+lib/libgpkg.so.%%PORTVERSION%%
