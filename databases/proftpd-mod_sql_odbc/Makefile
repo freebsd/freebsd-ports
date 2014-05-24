@@ -10,12 +10,13 @@ COMMENT=	ODBC ProFTPD module
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+
 DESCR=		${.CURDIR}/pkg-descr
 
 LATEST_LINK=	${PKGNAMEPREFIX}-${PORTNAME}
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
-LIB_DEPENDS=	libiodbc.so.2:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS=	LIBS=-liodbc \
 		LD_LIBRARY_PATH="${LOCALBASE}/lib" \
 		LDFLAGS="-L${LOCALBASE}/lib"
