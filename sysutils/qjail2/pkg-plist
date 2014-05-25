@@ -3,6 +3,10 @@ etc/qjail.conf.sample
 etc/qjail.portsnap.conf
 etc/rc.d/qjail-jail2
 etc/rc.d/qjail2
+man/man8/qjail.8.gz
+man/man8/qjail-intro.8.gz
+man/man8/qjail-howto.8.gz
+man/man8/qjail.conf.8.gz
 %%EXAMPLESDIR%%/default/etc/make.conf
 %%EXAMPLESDIR%%/default/etc/motd
 %%EXAMPLESDIR%%/default/etc/periodic.conf
