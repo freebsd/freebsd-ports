@@ -15,9 +15,9 @@
   SHELL	= /bin/sh
   
 ! PREFIX ?= /usr/local
-! BINDIR	= ${PREFIX}/bin
-! MANDIR	= ${PREFIX}/man/man1
-! LIBDIR  = ${PREFIX}/lib
+! BINDIR	= ${DESTDIR}${PREFIX}/bin
+! MANDIR	= ${DESTDIR}${PREFIX}/man/man1
+! LIBDIR  = ${DESTDIR}${PREFIX}/lib
   PSROFF	= groff -Tps
   PSVIEW	= ghostview
   RM	= /bin/rm -f
