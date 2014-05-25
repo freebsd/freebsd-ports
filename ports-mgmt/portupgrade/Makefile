@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS
 CONFLICTS_INSTALL=	portupgrade-devel-*
 
 DIST_SUBDIR=	${PORTNAME}
-USES=		tar:bzip2
+USES=		tar:bzip2 uidfix
 USE_RUBY=	yes
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
