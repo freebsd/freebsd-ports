@@ -27,7 +27,6 @@ OPTIONS_DEFINE=	GD IMAGICK
 OPTIONS_DEFAULT=GD
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGD}
@@ -44,18 +43,19 @@ pre-patch:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${BBLOGDIR}
-	@${CHGRP} -R ${WWWGRP} ${PREFIX}/${BBLOGDIR}
-	@${CHMOD} 755 ${PREFIX}/${BBLOGDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${BBLOGDIR}
+	@${CHGRP} -R ${WWWGRP} ${STAGEDIR}${PREFIX}/${BBLOGDIR}
+	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/${BBLOGDIR}
 .for f in archives.php documentation.txt htaccess-cleanurls index.php item rss.php search.php section
-	${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/${BBLOGDIR}
+	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/${BBLOGDIR}
 .endfor
-	@${CP} -Rv ${WRKSRC}/* ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/compiled_templates/
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/cache/
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/cache/favorites.xml
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/config.php
+	@${CP} -Rv ${WRKSRC}/* ${STAGEDIR}${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}
+	@${CHMOD} 775 ${STAGEDIR}${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/compiled_templates/
+	@${CHMOD} 775 ${STAGEDIR}${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/cache/
+	@${CHMOD} 775 ${STAGEDIR}${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/cache/favorites.xml
+	@${CHMOD} 775 ${STAGEDIR}${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/config.php
+	@${MV} ${STAGEDIR}${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/config.php ${STAGEDIR}${PREFIX}/${BBLOGDIR}/${PORTNAME:tl}/config.php.sample
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

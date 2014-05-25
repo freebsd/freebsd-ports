@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDOCROOT%%/%%BBLOGURL%%/archives.php
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/admin.comments.php
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bBlog_plugins/admin.links.php
@@ -52,7 +54,9 @@
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/bblog.css
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/cache/favorites.xml
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/compiled_templates/this_file_is_here_so_the_directory_is_extracted
-%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php
+@unexec if cmp -s %D/%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php %D/%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php.sample; then rm -f %D/%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php; fi
+%%WWWDOCROOT%%/%%BBLOGURL%%/bblog/config.php.sample
+@exec cp -n %D/%F %B/config.php
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/cp.css
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/docs/LICENCE.txt
 %%WWWDOCROOT%%/%%BBLOGURL%%/bblog/docs/README.txt
