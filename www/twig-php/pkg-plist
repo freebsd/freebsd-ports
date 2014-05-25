@@ -1,0 +1,184 @@
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/CHANGELOG
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README.markdown
+%%DATADIR%%/lib/Twig/Autoloader.php
+%%DATADIR%%/lib/Twig/Compiler.php
+%%DATADIR%%/lib/Twig/CompilerInterface.php
+%%DATADIR%%/lib/Twig/Environment.php
+%%DATADIR%%/lib/Twig/Error/Loader.php
+%%DATADIR%%/lib/Twig/Error/Runtime.php
+%%DATADIR%%/lib/Twig/Error/Syntax.php
+%%DATADIR%%/lib/Twig/Error.php
+%%DATADIR%%/lib/Twig/ExistsLoaderInterface.php
+%%DATADIR%%/lib/Twig/ExpressionParser.php
+%%DATADIR%%/lib/Twig/Extension/Core.php
+%%DATADIR%%/lib/Twig/Extension/Debug.php
+%%DATADIR%%/lib/Twig/Extension/Escaper.php
+%%DATADIR%%/lib/Twig/Extension/Optimizer.php
+%%DATADIR%%/lib/Twig/Extension/Sandbox.php
+%%DATADIR%%/lib/Twig/Extension/Staging.php
+%%DATADIR%%/lib/Twig/Extension/StringLoader.php
+%%DATADIR%%/lib/Twig/Extension.php
+%%DATADIR%%/lib/Twig/ExtensionInterface.php
+%%DATADIR%%/lib/Twig/Filter/Function.php
+%%DATADIR%%/lib/Twig/Filter/Method.php
+%%DATADIR%%/lib/Twig/Filter/Node.php
+%%DATADIR%%/lib/Twig/Filter.php
+%%DATADIR%%/lib/Twig/FilterCallableInterface.php
+%%DATADIR%%/lib/Twig/FilterInterface.php
+%%DATADIR%%/lib/Twig/Function/Function.php
+%%DATADIR%%/lib/Twig/Function/Method.php
+%%DATADIR%%/lib/Twig/Function/Node.php
+%%DATADIR%%/lib/Twig/Function.php
+%%DATADIR%%/lib/Twig/FunctionCallableInterface.php
+%%DATADIR%%/lib/Twig/FunctionInterface.php
+%%DATADIR%%/lib/Twig/Lexer.php
+%%DATADIR%%/lib/Twig/LexerInterface.php
+%%DATADIR%%/lib/Twig/Loader/Array.php
+%%DATADIR%%/lib/Twig/Loader/Chain.php
+%%DATADIR%%/lib/Twig/Loader/Filesystem.php
+%%DATADIR%%/lib/Twig/Loader/String.php
+%%DATADIR%%/lib/Twig/LoaderInterface.php
+%%DATADIR%%/lib/Twig/Markup.php
+%%DATADIR%%/lib/Twig/Node/AutoEscape.php
+%%DATADIR%%/lib/Twig/Node/Block.php
+%%DATADIR%%/lib/Twig/Node/BlockReference.php
+%%DATADIR%%/lib/Twig/Node/Body.php
+%%DATADIR%%/lib/Twig/Node/Do.php
+%%DATADIR%%/lib/Twig/Node/Embed.php
+%%DATADIR%%/lib/Twig/Node/Expression/Array.php
+%%DATADIR%%/lib/Twig/Node/Expression/AssignName.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Add.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/And.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/BitwiseAnd.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/BitwiseOr.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/BitwiseXor.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Concat.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Div.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Equal.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/FloorDiv.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Greater.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/GreaterEqual.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/In.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Less.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/LessEqual.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Mod.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Mul.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/NotEqual.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/NotIn.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Or.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Power.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Range.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary/Sub.php
+%%DATADIR%%/lib/Twig/Node/Expression/Binary.php
+%%DATADIR%%/lib/Twig/Node/Expression/BlockReference.php
+%%DATADIR%%/lib/Twig/Node/Expression/Call.php
+%%DATADIR%%/lib/Twig/Node/Expression/Conditional.php
+%%DATADIR%%/lib/Twig/Node/Expression/Constant.php
+%%DATADIR%%/lib/Twig/Node/Expression/ExtensionReference.php
+%%DATADIR%%/lib/Twig/Node/Expression/Filter/Default.php
+%%DATADIR%%/lib/Twig/Node/Expression/Filter.php
+%%DATADIR%%/lib/Twig/Node/Expression/Function.php
+%%DATADIR%%/lib/Twig/Node/Expression/GetAttr.php
+%%DATADIR%%/lib/Twig/Node/Expression/MethodCall.php
+%%DATADIR%%/lib/Twig/Node/Expression/Name.php
+%%DATADIR%%/lib/Twig/Node/Expression/Parent.php
+%%DATADIR%%/lib/Twig/Node/Expression/TempName.php
+%%DATADIR%%/lib/Twig/Node/Expression/Test/Constant.php
+%%DATADIR%%/lib/Twig/Node/Expression/Test/Defined.php
+%%DATADIR%%/lib/Twig/Node/Expression/Test/Divisibleby.php
+%%DATADIR%%/lib/Twig/Node/Expression/Test/Even.php
+%%DATADIR%%/lib/Twig/Node/Expression/Test/Null.php
+%%DATADIR%%/lib/Twig/Node/Expression/Test/Odd.php
+%%DATADIR%%/lib/Twig/Node/Expression/Test/Sameas.php
+%%DATADIR%%/lib/Twig/Node/Expression/Test.php
+%%DATADIR%%/lib/Twig/Node/Expression/Unary/Neg.php
+%%DATADIR%%/lib/Twig/Node/Expression/Unary/Not.php
+%%DATADIR%%/lib/Twig/Node/Expression/Unary/Pos.php
+%%DATADIR%%/lib/Twig/Node/Expression/Unary.php
+%%DATADIR%%/lib/Twig/Node/Expression.php
+%%DATADIR%%/lib/Twig/Node/Flush.php
+%%DATADIR%%/lib/Twig/Node/For.php
+%%DATADIR%%/lib/Twig/Node/ForLoop.php
+%%DATADIR%%/lib/Twig/Node/If.php
+%%DATADIR%%/lib/Twig/Node/Import.php
+%%DATADIR%%/lib/Twig/Node/Include.php
+%%DATADIR%%/lib/Twig/Node/Macro.php
+%%DATADIR%%/lib/Twig/Node/Module.php
+%%DATADIR%%/lib/Twig/Node/Print.php
+%%DATADIR%%/lib/Twig/Node/Sandbox.php
+%%DATADIR%%/lib/Twig/Node/SandboxedModule.php
+%%DATADIR%%/lib/Twig/Node/SandboxedPrint.php
+%%DATADIR%%/lib/Twig/Node/Set.php
+%%DATADIR%%/lib/Twig/Node/SetTemp.php
+%%DATADIR%%/lib/Twig/Node/Spaceless.php
+%%DATADIR%%/lib/Twig/Node/Text.php
+%%DATADIR%%/lib/Twig/Node.php
+%%DATADIR%%/lib/Twig/NodeInterface.php
+%%DATADIR%%/lib/Twig/NodeOutputInterface.php
+%%DATADIR%%/lib/Twig/NodeTraverser.php
+%%DATADIR%%/lib/Twig/NodeVisitor/Escaper.php
+%%DATADIR%%/lib/Twig/NodeVisitor/Optimizer.php
+%%DATADIR%%/lib/Twig/NodeVisitor/SafeAnalysis.php
+%%DATADIR%%/lib/Twig/NodeVisitor/Sandbox.php
+%%DATADIR%%/lib/Twig/NodeVisitorInterface.php
+%%DATADIR%%/lib/Twig/Parser.php
+%%DATADIR%%/lib/Twig/ParserInterface.php
+%%DATADIR%%/lib/Twig/Sandbox/SecurityError.php
+%%DATADIR%%/lib/Twig/Sandbox/SecurityPolicy.php
+%%DATADIR%%/lib/Twig/Sandbox/SecurityPolicyInterface.php
+%%DATADIR%%/lib/Twig/SimpleFilter.php
+%%DATADIR%%/lib/Twig/SimpleFunction.php
+%%DATADIR%%/lib/Twig/SimpleTest.php
+%%DATADIR%%/lib/Twig/Template.php
+%%DATADIR%%/lib/Twig/TemplateInterface.php
+%%DATADIR%%/lib/Twig/Test/Function.php
+%%DATADIR%%/lib/Twig/Test/IntegrationTestCase.php
+%%DATADIR%%/lib/Twig/Test/Method.php
+%%DATADIR%%/lib/Twig/Test/Node.php
+%%DATADIR%%/lib/Twig/Test/NodeTestCase.php
+%%DATADIR%%/lib/Twig/Test.php
+%%DATADIR%%/lib/Twig/TestCallableInterface.php
+%%DATADIR%%/lib/Twig/TestInterface.php
+%%DATADIR%%/lib/Twig/Token.php
+%%DATADIR%%/lib/Twig/TokenParser/AutoEscape.php
+%%DATADIR%%/lib/Twig/TokenParser/Block.php
+%%DATADIR%%/lib/Twig/TokenParser/Do.php
+%%DATADIR%%/lib/Twig/TokenParser/Embed.php
+%%DATADIR%%/lib/Twig/TokenParser/Extends.php
+%%DATADIR%%/lib/Twig/TokenParser/Filter.php
+%%DATADIR%%/lib/Twig/TokenParser/Flush.php
+%%DATADIR%%/lib/Twig/TokenParser/For.php
+%%DATADIR%%/lib/Twig/TokenParser/From.php
+%%DATADIR%%/lib/Twig/TokenParser/If.php
+%%DATADIR%%/lib/Twig/TokenParser/Import.php
+%%DATADIR%%/lib/Twig/TokenParser/Include.php
+%%DATADIR%%/lib/Twig/TokenParser/Macro.php
+%%DATADIR%%/lib/Twig/TokenParser/Sandbox.php
+%%DATADIR%%/lib/Twig/TokenParser/Set.php
+%%DATADIR%%/lib/Twig/TokenParser/Spaceless.php
+%%DATADIR%%/lib/Twig/TokenParser/Use.php
+%%DATADIR%%/lib/Twig/TokenParser.php
+%%DATADIR%%/lib/Twig/TokenParserBroker.php
+%%DATADIR%%/lib/Twig/TokenParserBrokerInterface.php
+%%DATADIR%%/lib/Twig/TokenParserInterface.php
+%%DATADIR%%/lib/Twig/TokenStream.php
+@dirrm %%DATADIR%%/lib/Twig/Error
+@dirrm %%DATADIR%%/lib/Twig/Extension
+@dirrm %%DATADIR%%/lib/Twig/Filter
+@dirrm %%DATADIR%%/lib/Twig/Function
+@dirrm %%DATADIR%%/lib/Twig/Loader
+@dirrm %%DATADIR%%/lib/Twig/Node/Expression/Binary
+@dirrm %%DATADIR%%/lib/Twig/Node/Expression/Filter
+@dirrm %%DATADIR%%/lib/Twig/Node/Expression/Test
+@dirrm %%DATADIR%%/lib/Twig/Node/Expression/Unary
+@dirrm %%DATADIR%%/lib/Twig/Node/Expression
+@dirrm %%DATADIR%%/lib/Twig/Node
+@dirrm %%DATADIR%%/lib/Twig/NodeVisitor
+@dirrm %%DATADIR%%/lib/Twig/Sandbox
+@dirrm %%DATADIR%%/lib/Twig/Test
+@dirrm %%DATADIR%%/lib/Twig/TokenParser
+@dirrm %%DATADIR%%/lib/Twig
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
