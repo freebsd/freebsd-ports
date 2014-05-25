@@ -3,7 +3,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	3.2.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	SAVANNAH/${PORTNAME}/3.2.x/sources
@@ -13,7 +13,7 @@ COMMENT=	Web phone that supports SIP protocol
 
 LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm \
 		libspeex.so:${PORTSDIR}/audio/speex \
-		libeXosip2.so:${PORTSDIR}/net/libexosip2
+		libeXosip2.so:${PORTSDIR}/net/libexosip2-legacy
 
 CONFLICTS=	ortp-[0-9]*
 
