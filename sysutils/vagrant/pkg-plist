@@ -546,41 +546,6 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance/provider-virtualbox/network_intnet_spec.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance/shared/context_virtualbox.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance/skeletons/network_intnet/Vagrantfile
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/base.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/box_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/destroy_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/halt_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/init_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/networking/host_only_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/networking/port_forward_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/package_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/provisioning/basic_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/provisioning/chef_solo_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/provisioning/shell_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/resume_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/shared_folders_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_basic/README.md
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_basic/cookbooks/basic/recipes/default.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_json/README.md
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_json/cookbooks/basic/recipes/default.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/provisioner_multi/README.md
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/provisioner_multi/cookbooks/basic/recipes/default.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/ssh_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/config.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/isolated_environment.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/matchers/have_color.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/matchers/match_output.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/matchers/succeed.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/network_tests.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/output.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/shared/base_context.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/shared/command_examples.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/virtualbox.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/suspend_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/up_basic_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/up_with_box_url.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/vagrant_test.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/version_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/config/acceptance_boxes.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/support/isolated_environment.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/base.rb
@@ -745,6 +710,141 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/ansible/config_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/ansible/provisioner_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/support/shared/config.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/contrib/sudoers
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/contrib/sudoers/linux
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/contrib/sudoers/osx
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/lib/vagrant/machine_index.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/lib/vagrant/util/silence_warnings.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/global-status
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/global-status/command.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/global-status/plugin.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/rdp
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/rdp/command.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/rdp/config.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/rdp/errors.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/rdp/plugin.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/version
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/version/command.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/commands/version/plugin.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filter.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/communicator.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/config.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/errors.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/file_manager.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/helper.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/plugin.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/shell.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters/cat.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters/chmod.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters/chown.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters/grep.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters/rm.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters/test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters/uname.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/command_filters/which.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/scripts
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/communicators/winrm/scripts/elevated_shell.ps1.erb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/linux/cap/port.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/config.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/errors.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/guest.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/guest_network.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/plugin.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/cap
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/cap/change_host_name.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/cap/configure_networks.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/cap/halt.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/cap/mount_shared_folder.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/cap/reboot.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/scripts
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/scripts/mount_volume.ps1.erb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/scripts/reboot_detect.ps1
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/scripts/set_work_network.ps1
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/windows/scripts/winrs_v3_get_adapters.ps1
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/hosts/darwin
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/host.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/plugin.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/rdp.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/hosts/windows/cap/rdp.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/communicator.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/config.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/driver.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/errors.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/plugin.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/provider.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/synced_folder.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/build.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/compare_synced_folders.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/create.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/destroy.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/destroy_build_image.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/has_ssh.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/host_machine.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/host_machine_build_dir.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/host_machine_port_checker.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/host_machine_port_warning.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/host_machine_required.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/host_machine_sync_folders.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/host_machine_sync_folders_disable.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/is_build.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/is_host_machine_created.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/prepare_nfs_settings.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/prepare_nfs_valid_ids.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/prepare_ssh.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/start.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/stop.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/wait_for_running.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/cap
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/cap/public_address.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/command
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/command/logs.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/command/run.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/executor
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/executor/local.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/executor/vagrant.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/hostmachine
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/hostmachine/Vagrantfile
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/provisioners/chef/command_builder.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/templates/commands/init/Vagrantfile.min.erb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/templates/locales/comm_winrm.yml
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/templates/locales/command_rdp.yml
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/templates/locales/guest_windows.yml
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/templates/locales/providers_docker.yml
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/commands/global-status
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/commands/global-status/command_test.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/communicators
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/communicators/winrm
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/communicators/winrm/command_filter_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/communicators/winrm/communicator_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/communicators/winrm/config_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/communicators/winrm/helper_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/communicators/winrm/shell_test.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/windows
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/windows/config_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/windows/guest_network_test.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/windows/cap
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/windows/cap/change_host_name_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/windows/cap/halt_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/windows/cap/mount_shared_folder_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/guests/windows/cap/reboot_test.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/mint
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/mint/guest.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/guests/mint/plugin.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/docker/config_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/docker/driver_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/docker/synced_folder_test.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/docker/action/forwarded_ports.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/plugins/providers/hyperv/action/message_will_not_destroy.rb
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/chef/command_builder_test.rb
+@dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/docker
+%%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/vagrant/machine_index_test.rb
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/util
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v2
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v1
@@ -804,25 +904,6 @@ bin/vagrant
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/support
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/config
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/shared
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support/matchers
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/support
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/provisioner_multi/cookbooks/basic/recipes
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/provisioner_multi/cookbooks/basic
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/provisioner_multi/cookbooks
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/provisioner_multi
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_json/cookbooks/basic/recipes
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_json/cookbooks/basic
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_json/cookbooks
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_json
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_basic/cookbooks/basic/recipes
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_basic/cookbooks/basic
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_basic/cookbooks
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons/chef_solo_basic
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/skeletons
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/provisioning
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old/networking
-@dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance_old
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance/skeletons/network_intnet
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance/skeletons
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/acceptance/shared
