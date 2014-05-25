@@ -161,7 +161,7 @@ _LICENSE_PERMS_LPPL13=	dist-mirror dist-sell
 
 _LICENSE_NAME_LPPL13a=	LaTeX Project Public License version 1.3a
 _LICENSE_GROUPS_LPPL13a=	FSF OSI
-_LICENSE_PERMS_LPPL13a=	xdist-mirror dist-sell
+_LICENSE_PERMS_LPPL13a=	dist-mirror dist-sell
 
 _LICENSE_NAME_LPPL13b=	LaTeX Project Public License version 1.3b
 _LICENSE_GROUPS_LPPL13b=	FSF OSI
