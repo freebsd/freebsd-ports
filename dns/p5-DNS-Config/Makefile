@@ -3,13 +3,17 @@
 
 PORTNAME=	DNS-Config
 PORTVERSION=	0.66
-PORTREVISION=	0
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	DNS::Config is set of perl modules for name service configurations
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+OPTIONS_DEFINE=	DOCS
 
 USES=		perl5
 USE_PERL5=	configure patch
@@ -20,9 +24,7 @@ post-patch:
 			     -e '$$_="" if /(use|no) warnings/;'
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
