@@ -16,6 +16,8 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
+CONFLICTS_INSTALL=	guile2-[0-9]*
+
 USE_AUTOTOOLS=	autoconf libltdl
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes
