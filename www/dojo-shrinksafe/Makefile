@@ -21,14 +21,13 @@ PLIST_FILES=	bin/${PKGNAMEPREFIX}${PORTNAME} %%DATADIR%%/shrinksafe.jar \
 PLIST_DIRS=	%%DATADIR%%
 SUB_FILES=	${PKGNAMEPREFIX}${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${INSTALL} -d ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/shrinksafe.jar ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/js.jar ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME} ${PREFIX}/bin
+	@${INSTALL} -d ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/shrinksafe.jar ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/js.jar ${STAGEDIR}${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
