@@ -194,3 +194,4 @@
 %%X_FONTSDIR%%/misc/shnmk16minb.pcf.gz
 %%X_FONTSDIR%%/misc/shnmk16minbi.pcf.gz
 %%X_FONTSDIR%%/misc/shnmk16mini.pcf.gz
+@dirrmtry %%X_FONTSDIR%%/misc
