@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	fantasque-sans-mono
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://openfontlibrary.org/assets/downloads/${PORTNAME}/1baf065481fd4829a407040743378130/
+MASTER_SITES=	http://openfontlibrary.org/assets/downloads/${PORTNAME}/0b6ed5a8d3ed193d255fffda36e6b4a4/
 DISTNAME=	fantasque-sans-mono
 
 MAINTAINER=	rakuco@FreeBSD.org
