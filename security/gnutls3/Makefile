@@ -3,6 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	3.1.23
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v3.1/
 PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
@@ -10,7 +11,6 @@ PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 		libnettle.so:${PORTSDIR}/security/nettle \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit \
@@ -19,9 +19,7 @@ LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 
 GNUTLS_SUFFIX=	3
 
-USES=		gmake iconv pkgconfig tar:xz
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack
+USES=		gmake iconv libtool:keepla pkgconfig tar:xz
 USE_LDCONFIG=	${PREFIX}/lib/gnutls3
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -48,6 +46,8 @@ LIBTASN1_DESC=	Use libtasn1 from ports
 LIBDANE_DESC=	DNSSEC support for DANE (danetool3 --check)
 LIBDANE_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
 LIBDANE_CONFIGURE_OFF=	--disable-libdane
+
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
 CXX_CONFIGURE_ENABLE=	cxx
 
