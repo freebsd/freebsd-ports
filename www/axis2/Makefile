@@ -21,8 +21,6 @@ OPTIONS_SINGLE=	AS
 OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
 OPTIONS_DEFAULT=	TOMCAT6
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
@@ -50,35 +48,28 @@ CONF_EXT=	sample
 PORTEXAMPLES=	*
 
 do-install:
-	( ${MKDIR} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib && cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib)
-	( ${MKDIR} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/classes && cd ${WRKSRC}/webapp/WEB-INF/classes && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/WEB-INF/classes )$
-	( ${MKDIR} ${APPHOME}/webapps/${PORTNAME}/axis2-web && cd ${WRKSRC}/webapp/axis2-web && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/axis2-web )
-	( cd ${WRKSRC}/repository && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/WEB-INF )
-	@${CHOWN} ${SHAREGRP}:${SHAREOWN} ${APPHOME}/webapps/${PORTNAME}
-	@${INSTALL} -d -g ${SHAREGRP} -o ${SHAREOWN} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
+	( ${MKDIR} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib && cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib)
+	( ${MKDIR} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/classes && cd ${WRKSRC}/webapp/WEB-INF/classes && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/classes )$
+	( ${MKDIR} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/axis2-web && cd ${WRKSRC}/webapp/axis2-web && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/axis2-web )
+	( cd ${WRKSRC}/repository && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF )
+	@${CHOWN} ${SHAREGRP}:${SHAREOWN} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}
+	@${INSTALL} -d -g ${SHAREGRP} -o ${SHAREOWN} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
 	@(cd ${WRKSRC};${FIND} conf -type f | ${SED} -e '/${CONF_EXT}/d') \
 		| while read a; do \
 			${MV} ${WRKSRC}/$$a ${WRKSRC}/$$a.${CONF_EXT}; \
-			if [ ! -e "${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a" ]; then \
-				${ECHO_MSG} "	Installing local configuration file: ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a"; \
-				${INSTALL_DATA} ${WRKSRC}/$$a.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a; \
-			else \
-				${ECHO_MSG} "	Preserving local configuration file: ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a"; \
-			fi; \
+			${ECHO_CMD} "@unexec if cmp -s ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a.${CONF_EXT}; then rm -f ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a; fi" >> ${TMPPLIST}; \
+			${ECHO_CMD} "@exec cp -n ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/$$a" >> ${TMPPLIST}; \
 		done
-			${INSTALL_DATA} ${WRKSRC}/conf/*.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
+	${INSTALL_DATA} ${WRKSRC}/conf/*.${CONF_EXT} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF/conf
 	${MV} ${WRKSRC}/webapp/WEB-INF/web.xml ${WRKSRC}/webapp/WEB-INF/web.xml.${CONF_EXT}
-	@if [ ! -e "${APPHOME}/webapps/axis2/WEB-INF/web.xml" ]; then \
-		${ECHO_MSG} "	Installing local configuration file: ${APPHOME}/webapps/WEB-INF/web.xml"; \
-		${INSTALL_DATA} ${WRKSRC}/webapp/WEB-INF/web.xml.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/web.xml; \
-	else \
-		${ECHO_MSG} "	Preserving local configuration file: ${APPHOME}/webapps/${PORTNAME}/WEB-INF/web.xml"; \
-	fi;
-		${INSTALL_DATA} ${WRKSRC}/webapp/WEB-INF/web.xml.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF
+	${INSTALL_DATA} ${WRKSRC}/webapp/WEB-INF/web.xml.${CONF_EXT} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}/WEB-INF
+	${ECHO_CMD} "${APPHOME}/webapps/${PORTNAME}/WEB-INF/web.xml.${CONF_EXT}"
+	${ECHO_CMD} "@unexec if cmp -s ${APPHOME}/webapps/axis2/WEB-INF/web.xml ${APPHOME}/webapps/axis2/WEB-INF/web.xml.${CONF_EXT}; then rm -f ${APPHOME}/webapps/axis2/WEB-INF/web.xml; fi" >> ${TMPPLIST}
+	${ECHO_CMD} "@exec cp -n ${APPHOME}/webapps/axis2/WEB-INF/web.xml.${CONF_EXT} ${APPHOME}/webapps/axis2/WEB-INF/web.xml" >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
-	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} \;
+	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
 .endif
 
 .include <bsd.port.mk>
