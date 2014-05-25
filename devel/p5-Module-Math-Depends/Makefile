@@ -3,16 +3,18 @@
 
 PORTNAME=	Module-Math-Depends
 PORTVERSION=	0.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Convenience object for manipulating module dependencies
 
-BUILD_DEPENDS=	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
-		p5-version>=0:${PORTSDIR}/devel/p5-version
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
