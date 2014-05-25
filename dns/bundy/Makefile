@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bundy
-PORTVERSION=	0.20140512
+PORTVERSION=	0.20140524
 CATEGORIES=	dns
 MASTER_SITES=	GH GHC LOCAL/mat/bundy
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-s
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bundy-dns
-GH_COMMIT=	ce5d832
+GH_COMMIT=	b809bfb
 GH_TAGNAME=	${GH_COMMIT}
 
 USE_PYTHON=	3
@@ -56,7 +56,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
 IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
 .endif
 
