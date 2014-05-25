@@ -18,16 +18,12 @@ USE_PHP=	ctype pcre posix session tokenizer xml zlib
 NO_BUILD=	YES
 PHPBT=		www/data-dist/phpbt
 PLIST_SUB=	PHPBT=${PHPBT}
+SUB_FILES=	pkg-message
+SUB_LIST+=	PHPBT=${PHPBT}
 
-NO_STAGE=	yes
 do-install:
-	-${MKDIR} ${PREFIX}/${PHPBT}
-	@(cd ${WRKSRC} && ${CP} -R * ${PREFIX}/${PHPBT})
-	@${CHOWN} -R www:www ${PREFIX}/${PHPBT}
-
-post-install:
-	@${CAT} ${PKGMESSAGE} | \
-	${SED} -e 's|%%PREFIX%%|${PREFIX}|' | \
-	${SED} -e 's|%%PHPBT%%|${PHPBT}|'
+	-${MKDIR} ${STAGEDIR}${PREFIX}/${PHPBT}
+	@(cd ${WRKSRC} && ${CP} -R * ${STAGEDIR}${PREFIX}/${PHPBT})
+	@${CHOWN} -R www:www ${STAGEDIR}${PREFIX}/${PHPBT}
 
 .include <bsd.port.mk>
