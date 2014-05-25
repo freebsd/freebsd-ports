@@ -1,3 +1,4 @@
+bin/sip_reg
 include/eXosip2/eX_call.h
 include/eXosip2/eX_message.h
 include/eXosip2/eX_options.h
