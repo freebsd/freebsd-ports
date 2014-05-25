@@ -258,7 +258,7 @@ do-install:
 # TODO: change to ${_USE_PERL5:Mconfigure} when M::B creates .packlist
 .if ${USE_PERL5:Mconfigure} || ${USE_PERL5:Mmodbuildtiny} || ${USE_PERL5:Mfixpacklist}
 fix-packlist::
-	-@[ -d ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
+	-@[ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 .endif
 
 .if !target(regression-test)
