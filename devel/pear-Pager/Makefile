@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pager
-PORTVERSION=	2.4.8
+PORTVERSION=	2.4.9
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
