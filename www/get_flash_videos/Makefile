@@ -33,7 +33,6 @@ DISTFILE_DATE=	20120610
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
@@ -43,6 +42,6 @@ post-patch:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
-		${PREFIX}/bin/${PORTNAME}
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
