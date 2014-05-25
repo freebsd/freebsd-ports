@@ -683,7 +683,11 @@ ${_LICENSE_COOKIE}:
 	@${ECHO_MSG}
 .		if ${_LICENSE_COMB} != "single"
 .			for lic in ${_LICENSE_TO_ASK}
+.				if defined(WRKDIRPREFIX)
+	@${ECHO_MSG} "- ${lic} (${_LICENSE_NAME_${lic}}), available at ${_LICENSE_FILE_${lic}}"
+.				else
 	@${ECHO_MSG} "- ${lic} (${_LICENSE_NAME_${lic}}), available at ${_LICENSE_FILE_${lic}:S/${WRKDIR}\//${WRKDIR:T}\//}"
+.				endif
 .			endfor
 	@${ECHO_MSG}
 .		endif
