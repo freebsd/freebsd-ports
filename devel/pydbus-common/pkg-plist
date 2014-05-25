@@ -1,0 +1,24 @@
+include/dbus-1.0/dbus/dbus-python.h
+libdata/pkgconfig/dbus-python.pc
+%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.txt
+%%HTMLDOCS%%%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.html
+%%PORTDOCS%%%%DOCSDIR%%/HACKING.txt
+%%HTMLDOCS%%%%PORTDOCS%%%%DOCSDIR%%/HACKING.html
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%HTMLDOCS%%%%PORTDOCS%%%%DOCSDIR%%/NEWS.html
+%%PORTDOCS%%%%DOCSDIR%%/PY3PORT.txt
+%%HTMLDOCS%%%%PORTDOCS%%%%DOCSDIR%%/PY3PORT.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%HTMLDOCS%%%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
+%%HTMLDOCS%%%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-async-client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-service.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-signal-emitter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-signal-recipient.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/list-system-services.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry include/dbus-1.0/dbus
+@dirrmtry include/dbus-1.0

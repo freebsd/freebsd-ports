@@ -3998,10 +3998,14 @@
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
     SUBDIR += py_static_check
+    SUBDIR += py3-dbus
+    SUBDIR += py3-gobject3
     SUBDIR += pybaz
     SUBDIR += pybugz
     SUBDIR += pychecker
     SUBDIR += pycount
+    SUBDIR += pydbus-common
+    SUBDIR += pygobject3-common
     SUBDIR += pylint
     SUBDIR += pymacs
     SUBDIR += pyobfuscate
