@@ -8,8 +8,10 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	CursesForms-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Provide high level APIs for rapid UI design on the console
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Curses-Widgets>=0:${PORTSDIR}/devel/p5-Curses-Widgets
 RUN_DEPENDS:=	${BUILD_DEPENDS}
