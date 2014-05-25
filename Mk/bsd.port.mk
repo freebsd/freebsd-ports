@@ -5044,8 +5044,9 @@ lib-depends:
 				[ `file -b -L --mime-type $${_LIB_FILE}` = "application/x-sharedlib" ] || continue ; \
 			fi ; \
 			found=1 ; \
-			${ECHO_MSG} " - found"; \
+			${ECHO_MSG} -n " - found ($${_LIB_FILE})"; \
 		done ; \
+		${ECHO_MSG}; \
 		if [ $${found} -eq 0 ]; then \
 			${ECHO_MSG} " - not found"; \
 			${ECHO_MSG} "===>    Verifying for $$lib in $$dir"; \
