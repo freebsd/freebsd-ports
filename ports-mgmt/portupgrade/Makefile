@@ -3,6 +3,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	2.4.12
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \
@@ -39,17 +40,9 @@ INSTALL_TARGET+=	install-doc
 .endif
 
 # Reported that ruby-bdb is BROKEN with 2.0
-.if ${RUBY_VER} != 2.0
+.if ${RUBY_VER} != 2.0 && ${RUBY_VER} != 2.1
 # For PKG_DBDRIVER={bdb_btree,bdb_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
-.endif
-
-# Need to install working script(1)
-.if ${OSVERSION} < 801000
-PLIST_SUB+=	SCRIPT=""
-MAKE_ENV+=	NEED_COMPAT_SCRIPT=yes
-.else
-PLIST_SUB+=	SCRIPT="@comment "
 .endif
 
 post-install:
