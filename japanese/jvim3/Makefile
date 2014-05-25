@@ -12,8 +12,6 @@ DISTFILES=	vim-3.0.tar.gz jvim.2.1b.tar.gz
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanized Vim-3.0
 
-BROKEN=		Fails to link
-
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}.diff
 WRKSRC=		${WRKDIR}/vim
 BUILD_WRKSRC=	${WRKSRC}/src
@@ -32,9 +30,17 @@ OPTIONS_RADIO=	FEP
 OPTIONS_RADIO_FEP=	FREEWNN_CANNA DIRECT_CANNA WNN6 WNN7
 FEP_DESC=	Japanese FrontEnd Processor
 DIRECT_CANNA_DESC=	Canna support (direct)
+DIRECT_CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 FREEWNN_CANNA_DESC=	Canna and FreeWnn support (via ONEW library)
+FREEWNN_CANNA_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib \
+				libcanna.so:${PORTSDIR}/japanese/canna-lib
+FREEWNN_CANNA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-canna+freewnn.a:${PORTSDIR}/japanese/onew
 WNN6_DESC=	Wnn6 support
+WNN6_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib
+WNN6_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn6.a:${PORTSDIR}/japanese/onew
 WNN7_DESC=	Wnn7 support
+WNN7_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib
+WNN7_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn7.a:${PORTSDIR}/japanese/onew
 
 PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
 		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor.j
@@ -59,7 +65,6 @@ FEPOPT+=	-DJP_DEF=\"EEE\" -DFEPCTRL
 .endif
 
 #  Direct connection to Canna
-DIRECT_CANNA_LIB_DEPENDS+=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 .if ${PORT_OPTIONS:MDIRECT_CANNA}
 FEPOPT+=	-DCANNA
 FEPLIBS=	-lcanna -L${LOCALBASE}/lib
@@ -77,21 +82,14 @@ JVIM3RC=	"set fepctrl onewredraw"
 .endif
 
 # Connection by using ONEW library
-FREEWNN_CANNA_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib \
-				libcanna.so:${PORTSDIR}/japanese/canna-lib
-FREEWNN_CANNA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-canna+freewnn.a:${PORTSDIR}/japanese/onew
 .if ${PORT_OPTIONS:MFREEWNN_CANNA}
 FEPLIBS+=	-lonew-canna+freewnn -lcanna -ljd -lcrypt
 .endif
 
-WNN6_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib
-WNN6_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn6.a:${PORTSDIR}/japanese/onew
 .if ${PORT_OPTIONS:MWNN6}
 FEPLIBS+=	-lonew-wnn6 -ljd -lcrypt
 .endif
 
-WNN7_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib
-WNN7_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn7.a:${PORTSDIR}/japanese/onew
 .if ${PORT_OPTIONS:MWNN7}
 FEPLIBS+=	-lonew-wnn7 -ljd -lcrypt
 .endif
