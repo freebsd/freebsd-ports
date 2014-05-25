@@ -1,17 +1,19 @@
-       Devel::TraceFuncs provides utilities to trace the
-       execution of a program.  It can print traces that look
-       something like:
+Devel::TraceFuncs provides utilities to trace the
+execution of a program.  It can print traces that look
+something like:
 
-          +-> global: '0'
-          |  +-> main::fo(4, 5) (in ./t.pm:32): 'now then'
-          |  |  +-> main::fp(4, 5) (in ./t.pm:19)
-          |  |  |  +-> main::fq() (in ./t.pm:13)
-          |  |  |  |  que pee doll (in ./t.pm:8)
-          |  |  |  +-< main::fq() (in ./t.pm:13)
-          |  |  |  cee dee (in ./t.pm:14)
-          |  |  +-< main::fp(4, 5) (in ./t.pm:19)
-          |  |  ha
-          |  |  hs (in ./t.pm:20)
-          |  +-< main::fo(4, 5) (in ./t.pm:32): 'now then'
-          |  done (in ./t.pm:34)
-          +-< global: '0'
++-> global: '0'
+|  +-> main::fo(4, 5) (in ./t.pm:32): 'now then'
+|  |  +-> main::fp(4, 5) (in ./t.pm:19)
+|  |  |  +-> main::fq() (in ./t.pm:13)
+|  |  |  |  que pee doll (in ./t.pm:8)
+|  |  |  +-< main::fq() (in ./t.pm:13)
+|  |  |  cee dee (in ./t.pm:14)
+|  |  +-< main::fp(4, 5) (in ./t.pm:19)
+|  |  ha
+|  |  hs (in ./t.pm:20)
+|  +-< main::fo(4, 5) (in ./t.pm:32): 'now then'
+|  done (in ./t.pm:34)
++-< global: '0'
+
+WWW: http://search.cpan.org/dist/traceFunc/

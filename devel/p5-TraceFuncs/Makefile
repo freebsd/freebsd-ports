@@ -9,8 +9,11 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 DISTNAME=	traceFunc-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A perl5 module to trace function calls as they happen
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Perl5 module to trace function calls as they happen
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
