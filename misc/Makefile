@@ -91,6 +91,7 @@
     SUBDIR += figlet-fonts
     SUBDIR += findutils
     SUBDIR += firestring
+    SUBDIR += flag
     SUBDIR += floatator
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
