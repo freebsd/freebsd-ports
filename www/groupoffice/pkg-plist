@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%WWWDIR%%/CHANGELOG.TXT
 %%WWWDIR%%/FAQ.TXT
 %%WWWDIR%%/Group-Office.php

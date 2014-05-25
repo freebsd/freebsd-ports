@@ -27,7 +27,6 @@ IMAP_DESC=	IMAP support
 GD_DESC=	Gallery support (GD)
 WBXML_DESC=	Synchronization Support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAP}
@@ -47,10 +46,10 @@ LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2
 .endif
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/ ${WWWDIR}
-	@${TOUCH} ${WWWDIR}/config.php
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/config.php
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
+	@${TOUCH} ${STAGEDIR}${WWWDIR}/config.php
+	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/config.php
 	@${CAT} ${PKGMESSAGE}
 
 create-plist:
