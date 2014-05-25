@@ -1,23 +1,5 @@
---- engine.orig/Canna.c	1995-06-28 11:13:26.000000000 -0500
-+++ engine/Canna.c	2007-11-12 21:30:29.000000000 -0500
-@@ -33,6 +33,7 @@
- static int ready;
- static int CID;
- static int nbunsetsu;
-+static disp_kanji_buf();
- int ONEW_CannarcDone;
- 
- static ONEWkanakan_ready()
-@@ -102,7 +103,6 @@
- 	int comch;
- 	int rcode;
- 	char yomibuf[1024];
--	static disp_kanji_buf();
- 
- 	Onew_setupYomistr(startch,yomi,yomibuf);
- 	yomi = yomibuf;
---- onewlib.c.orig	1995-07-02 02:55:41.000000000 -0500
-+++ onewlib.c	2007-11-12 21:28:01.000000000 -0500
+--- onewlib.c.orig	1995-07-02 16:55:41.000000000 +0900
++++ onewlib.c	2014-05-25 11:55:49.000000000 +0900
 @@ -50,6 +50,11 @@
  int ONEW_I_SYNC_CHAR	= 0xFF;
  int ONEW_KK_OPDICT	= 'x';
