@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/app/adminer/adminer.php
 %%WWWDIR%%/app/adminer/app_config.php
@@ -1601,3 +1603,4 @@
 @dirrm %%WWWDIR%%/themes/classic
 @dirrm %%WWWDIR%%/themes
 @dirrmtry %%WWWDIR%%
+@unexec rmdir "/var/db/fusionpbx" >/dev/null 2>&1 || :
