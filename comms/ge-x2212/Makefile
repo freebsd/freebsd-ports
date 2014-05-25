@@ -18,16 +18,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-2
 PLIST_FILES=	bin/ge-x2212-2
 PORTDOCS=	schematic.txt
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/schematic.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/schematic.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
