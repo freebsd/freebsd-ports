@@ -1,105 +1,51 @@
---- Makefile.in.orig	2012-06-08 09:54:29.000000000 +0000
+--- Makefile.in.orig	2014-05-23 09:12:18.000000000 +0000
 +++ Makefile.in
-@@ -32,11 +32,12 @@ test-clean:
- 	(cd scripts; ./testsuites clean)
+@@ -5,14 +5,14 @@ RMDIR           = rm -rf
+ STRIP           = strip
+ AWK             = @AWK@
+ PERL            = perl
+-PYTHON          = python
++PYTHON          = $(PYTHON_CMD)
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA    = @INSTALL_DATA@
+ prefix          = @prefix@
+-bindir          = $(prefix)/bin
+-sharedir        = $(prefix)/share
+-examplesdir     = $(prefix)/share/examples/gps
++bindir          = $(DESTDIR)$(prefix)/bin
++sharedir        = $(DESTDIR)$(prefix)/share
++examplesdir     = $(DESTDIR)$(prefix)/share/examples/gps
  
- install-common:
--	$(MKDIR) $(bindir)
--	$(MKDIR) $(sharedir)
--	$(MKDIR) $(examplesdir)
--	$(MKDIR) $(sharedir)/gps
--	$(MKDIR) $(sharedir)/gps/docgen2
-+	$(MKDIR) $(DESTDIR)$(bindir)
-+	$(MKDIR) $(DESTDIR)$(sharedir)
-+	$(MKDIR) $(DESTDIR)$(examplesdir)
-+	$(MKDIR) $(DESTDIR)$(sharedir)/gps
-+	$(MKDIR) $(DESTDIR)$(sharedir)/gps/docgen2
-+	$(MKDIR) $(DESTDIR)$(sharedir)/gps/plug-ins
- ifeq ($(OS),Windows_NT)
- # On Windows we distribute two versions of subversion.xml, one that
- # supports Cygwin/Subversion and one for native Subversion.
-@@ -49,39 +50,34 @@ ifeq ($(OS),Windows_NT)
+ all default:
+ 	$(MAKE) -C gps default
+@@ -49,16 +49,6 @@ ifeq ($(OS),Windows_NT)
  		share/plug-ins/_subversion_ \
- 		> share/plug-ins/subversion_native_windows.xml
+ 		> share/plug-ins/subversion_native_windows.py
  endif
+-	$(RM) -f $(sharedir)/gps/GPS_old
 -	$(RM) $(sharedir)/gps/library/*.py
 -	$(RM) $(sharedir)/gps/library/*.xml
 -	$(RM) $(sharedir)/gps/plug-ins/*.py
 -	$(RM) $(sharedir)/gps/plug-ins/*.xml
+-	$(RM) -r $(sharedir)/gps/plug-ins/spark
+-	$(RM) $(sharedir)/gps/support/core/*.py
+-	$(RM) $(sharedir)/gps/support/ui/*.py
+-	${RM} ${sharedir}/gps/perspectives.xml
 -	$(RMDIR) $(sharedir)/gps/templates
  # update runtime.xml before copying the plug-ins files.
- 	(cd distrib; $(PERL) from_impunit.pl)
--	(cd share; tar cf - plug-ins/*.xml) | (cd $(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - plug-ins/*.xml) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
- ifeq ($(OS),Windows_NT)
- # Clean-up changes made above for Windows.
- 	$(MV) share/plug-ins/_subversion_ share/plug-ins/subversion.xml
- 	$(RM) share/plug-ins/subversion_native_windows.xml
+ 	-(cd distrib; $(PERL) from_impunit.pl)
+ # update light icon set
+@@ -71,12 +61,9 @@ ifeq ($(OS),Windows_NT)
+ 	$(MV) share/plug-ins/_subversion_ share/plug-ins/subversion.py
+ 	$(RM) share/plug-ins/subversion_native_windows.py
  endif
--	$(AWK) -f distrib/gnat_switches.awk < gnat/gnat_ugn.texi > $(sharedir)/gps/plug-ins/gnat_switches.py
--	(cd share; tar cf - plug-ins/*.py) | (cd $(sharedir)/gps; tar xf -)
--	(cd share; tar cf - plug-ins/gps_utils/*.py) | (cd $(sharedir)/gps; tar xf -)
 -	(cd share; tar cf - plug-ins/spark/*.py) | (cd $(sharedir)/gps; tar xf -)
--	(cd share; tar cf - plug-ins/*.png) | (cd $(sharedir)/gps; tar xf -)
--	(cd share; tar cf - plug-ins/images/*.png) | (cd $(sharedir)/gps; tar xf -)
--	(cd share; tar cf - library/*.xml) | (cd $(sharedir)/gps; tar xf -)
--	(cd share; tar cf - library/*.py) | (cd $(sharedir)/gps; tar xf -)
--	(cd share; tar cf - library/pygps/*.py) | (cd $(sharedir)/gps; tar xf -)
--	$(RM) $(sharedir)/gps/plug-ins/emacs.xml
--	$(RM) $(sharedir)/gps/plug-ins/python_doc.py
--	$(RM) $(sharedir)/gps/plug-ins/python_doc.pyc
--	$(RM) $(sharedir)/gps/shell_commands.xml
--	(cd share; tar cf - icons/)  | (cd $(sharedir)/gps; tar xf -)
--	(cd share; tar cf - templates/)  | (cd $(sharedir)/gps; tar xf -)
--	(cd share; tar cf - *.*)  | (cd $(sharedir)/gps; tar xf -)
-+	$(AWK) -f distrib/gnat_switches.awk < gnat/gnat_ugn.texi > $(DESTDIR)$(sharedir)/gps/plug-ins/gnat_switches.py
-+	(cd share; tar cf - plug-ins/*.py) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - plug-ins/gps_utils/*.py) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - plug-ins/spark/*.py) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - plug-ins/*.png) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - plug-ins/images/*.png) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - library/*.xml) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - library/*.py) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - library/pygps/*.py) | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	$(RM) $(DESTDIR)$(sharedir)/gps/plug-ins/emacs.xml
-+	$(RM) $(DESTDIR)$(sharedir)/gps/plug-ins/python_doc.py
-+	$(RM) $(DESTDIR)$(sharedir)/gps/plug-ins/python_doc.pyc
-+	$(RM) $(DESTDIR)$(sharedir)/gps/shell_commands.xml
-+	(cd share; tar cf - icons/)  | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - templates/)  | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
-+	(cd share; tar cf - *.*)  | (cd $(DESTDIR)$(sharedir)/gps; tar xf -)
- 	(cd docgen2/resources; tar cf - *.tmpl custom/*.css support/*.css support/*.js support/images/*.png) \
--		| (cd $(sharedir)/gps/docgen2; tar xf -)
-+		| (cd $(DESTDIR)$(sharedir)/gps/docgen2; tar xf -)
- 	$(MAKE) -C docs install
--	(cd examples; tar cf - --exclude .svn . ) | (cd $(examplesdir); tar xf -)
-+	(cd examples; tar cf - --exclude .svn . ) | (cd $(DESTDIR)$(examplesdir); tar xf -)
- 
- install: install-common
- ifeq ($(OS),Windows_NT)
-@@ -90,9 +86,9 @@ ifeq ($(OS),Windows_NT)
- 	$(INSTALL_PROGRAM) spark/obj/gnatspark.exe $(bindir)
- 	$(MAKE) -C common/expect install
- else
--	$(INSTALL_PROGRAM) gps/obj/gps $(bindir)
--	$(INSTALL_PROGRAM) gnatlib/src/obj/gnatinspect $(bindir)
--	$(INSTALL_PROGRAM) spark/obj/gnatspark $(bindir)
-+	$(INSTALL_PROGRAM) gps/obj/gps $(DESTDIR)$(bindir)
-+	$(INSTALL_PROGRAM) gnatlib/src/obj/gnatinspect $(DESTDIR)$(bindir)
-+	$(INSTALL_PROGRAM) spark/obj/gnatspark $(DESTDIR)$(bindir)
- endif
- 
- install-strip: install-common
-@@ -102,9 +98,9 @@ ifeq ($(OS),Windows_NT)
- 	$(INSTALL_PROGRAM) distrib/gps_run.cmd $(bindir)
- 	$(MAKE) -C common/expect install-strip
- else
--	$(INSTALL_PROGRAM) -s gps/obj/gps $(bindir)/gps_exe
--	$(INSTALL_PROGRAM) -s spark/obj/gnatspark $(bindir)
--	$(INSTALL_PROGRAM) distrib/.gps_wrapper $(bindir)/gps
-+	$(INSTALL_PROGRAM) -s gps/obj/gps $(DESTDIR)$(bindir)/gps_exe
-+	$(INSTALL_PROGRAM) -s spark/obj/gnatspark $(DESTDIR)$(bindir)
-+	$(INSTALL_PROGRAM) distrib/.gps_wrapper $(DESTDIR)$(bindir)/gps
- endif
- 
- test: force
+ 	(cd share; tar cf - plug-ins/images/*.png) | (cd $(sharedir)/gps; tar xf -)
+ 	(cd share; tar cf - library/*.py) | (cd $(sharedir)/gps; tar xf -)
+-	(cd share; tar cf - library/GPS_old/*.py) | (cd $(sharedir)/gps; tar xf -)
+ 	(cd share; tar cf - support/) | (cd $(sharedir)/gps; tar xf -)
+-	$(AWK) -f distrib/gnat_switches.awk < gnat/gnat_ugn.texi > $(sharedir)/gps/support/core/gnat_switches.py
+ 	$(RM) $(sharedir)/gps/plug-ins/emacs.xml
+ 	$(RM) $(sharedir)/gps/plug-ins/python_doc.py
+ 	$(RM) $(sharedir)/gps/plug-ins/python_doc.pyc
