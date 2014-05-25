@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/Smarty-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -34,21 +33,21 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php debug.tpl
-	@${INSTALL_DATA} ${WRKSRC}/libs/$f ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/libs/$f ${STAGEDIR}${DATADIR}
 .endfor
-	@${MKDIR} ${DATADIR}/internals
-	@${INSTALL_DATA} ${WRKSRC}/libs/internals/* ${DATADIR}/internals
-	@${MKDIR} ${DATADIR}/plugins
-	@${INSTALL_DATA} ${WRKSRC}/libs/plugins/* ${DATADIR}/plugins
+	@${MKDIR} ${STAGEDIR}${DATADIR}/internals
+	@${INSTALL_DATA} ${WRKSRC}/libs/internals/* ${STAGEDIR}${DATADIR}/internals
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins
+	@${INSTALL_DATA} ${WRKSRC}/libs/plugins/* ${STAGEDIR}${DATADIR}/plugins
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in BUGS FAQ INSTALL NEWS README
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}/manual
-	@cd ${WRKDIR}/manual-en && ${FIND} . | ${CPIO} --quiet -dumpR ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/manual
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/manual
+	@cd ${WRKDIR}/manual-en && ${FIND} . | ${CPIO} --quiet -dumpR ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}/manual
 .endif
 
 post-install:
