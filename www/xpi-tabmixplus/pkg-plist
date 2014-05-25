@@ -9,10 +9,11 @@
 %%XPI_XPIDIR%%/chrome/content/links/contentLinks.js
 %%XPI_XPIDIR%%/chrome/content/links/links.xul
 %%XPI_XPIDIR%%/chrome/content/links/newTab.xul
+%%XPI_XPIDIR%%/chrome/content/links/removeBlankTab.js
+%%XPI_XPIDIR%%/chrome/content/links/removeBlankTab.xul
 %%XPI_XPIDIR%%/chrome/content/links/setup.js
 %%XPI_XPIDIR%%/chrome/content/links/text_link.css
 %%XPI_XPIDIR%%/chrome/content/links/text_link.xul
-%%XPI_XPIDIR%%/chrome/content/links/unknownContentType.xul
 %%XPI_XPIDIR%%/chrome/content/links/userInterface.js
 %%XPI_XPIDIR%%/chrome/content/minit/autoReload.xul
 %%XPI_XPIDIR%%/chrome/content/minit/minit.js
@@ -20,7 +21,6 @@
 %%XPI_XPIDIR%%/chrome/content/minit/tabView.js
 %%XPI_XPIDIR%%/chrome/content/minit/tablib.js
 %%XPI_XPIDIR%%/chrome/content/overlay/browsr.css
-%%XPI_XPIDIR%%/chrome/content/overlay/browsr_17.css
 %%XPI_XPIDIR%%/chrome/content/overlay/tabContextMenu.xul
 %%XPI_XPIDIR%%/chrome/content/places/bookmarkProperties.xul
 %%XPI_XPIDIR%%/chrome/content/places/places.js
@@ -64,6 +64,7 @@
 %%XPI_XPIDIR%%/chrome/content/tab/tab.js
 %%XPI_XPIDIR%%/chrome/content/tab/tabbrowser.xml
 %%XPI_XPIDIR%%/chrome/content/tab/tabbrowser_4.xml
+%%XPI_XPIDIR%%/chrome/content/tab/tabbrowser_proxy.xml
 %%XPI_XPIDIR%%/chrome/content/tab/tabmix.xml
 %%XPI_XPIDIR%%/chrome/content/tab/tabmix_3.xml
 %%XPI_XPIDIR%%/chrome/content/tab/text.xml
@@ -327,8 +328,6 @@
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/mac/browser.css
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/mac/progress.css
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/win/browser.css
-%%XPI_XPIDIR%%/chrome/skin/app_version/4.0/win/browser_xp15.css
-%%XPI_XPIDIR%%/chrome/skin/app_version/4.0/win/browser_xp16.css
 %%XPI_XPIDIR%%/chrome/skin/app_version/4.0/win/progress.css
 %%XPI_XPIDIR%%/chrome/skin/arrow.png
 %%XPI_XPIDIR%%/chrome/skin/autoreload.png
@@ -364,14 +363,17 @@
 %%XPI_XPIDIR%%/license.txt
 %%XPI_XPIDIR%%/modules/AutoReload.jsm
 %%XPI_XPIDIR%%/modules/Decode.jsm
+%%XPI_XPIDIR%%/modules/DownloadLastDir.jsm
+%%XPI_XPIDIR%%/modules/DynamicRules.jsm
 %%XPI_XPIDIR%%/modules/MergeWindows.jsm
+%%XPI_XPIDIR%%/modules/Places.jsm
 %%XPI_XPIDIR%%/modules/RenameTab.jsm
 %%XPI_XPIDIR%%/modules/Services.jsm
 %%XPI_XPIDIR%%/modules/Shortcuts.jsm
 %%XPI_XPIDIR%%/modules/SingleWindowModeUtils.jsm
 %%XPI_XPIDIR%%/modules/Slideshow.jsm
+%%XPI_XPIDIR%%/modules/extensions/AddonManager.jsm
 %%XPI_XPIDIR%%/modules/extensions/CompatibilityCheck.jsm
-%%XPI_XPIDIR%%/modules/extensions/SessionManagerAddon.jsm
 %%XPI_XPIDIR%%/modules/extensions/TabGroupsManager.jsm
 %%XPI_XPIDIR%%/modules/log.jsm
 @dirrm %%XPI_XPIDIR%%/chrome/content/click
