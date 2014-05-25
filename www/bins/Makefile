@@ -29,7 +29,6 @@ RUN_DEPENDS=	\
 USES=		tar:bzip2 perl5
 USE_PERL5=	run
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 # additional scripts
 BINS_SCRIPTS=	tools/bins_txt2xml
@@ -49,16 +48,16 @@ post-patch::
 		${WRKSRC}/tools/bins_txt2xml
 
 do-install:
-	@${SETENV} PREFIX=${PREFIX} RC=${PREFIX}/share/bins ${WRKSRC}/install.sh
+	@${SETENV} LOCALE=${PREFIX}/share/locale DESTDIR=${STAGEDIR} PREFIX=${PREFIX} RC=${PREFIX}/share/bins ${WRKSRC}/install.sh
 
 post-install:
 .for file in ${BINS_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ext in ${DOC_EXTS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
