@@ -1,0 +1,11 @@
+--- dic/phono/newjis.kpdef.orig	2014-05-25 12:27:08.000000000 +0900
++++ dic/phono/newjis.kpdef	2014-05-25 12:27:27.000000000 +0900
+@@ -70,7 +70,7 @@
+ O	や
+ #ifndef ASCII
+ +	ゆ
+-#else/* ASCII */
++#else /* ASCII */
+ :	ゆ
+ #endif /* ASCII */
+ G	よ
