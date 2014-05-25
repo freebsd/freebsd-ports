@@ -23,7 +23,6 @@ NO_BUILD=	yes
 USE_PERL5=	run
 USE_APACHE_RUN=	22+
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SUB_FILES=	pkg-message
@@ -37,8 +36,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 do-install:
-	@${MKDIR} ${WWWDIR}/
-	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}/
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/
+	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
 post-install:
 	@${ECHO_MSG} ""
