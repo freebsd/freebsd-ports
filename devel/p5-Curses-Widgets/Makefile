@@ -8,8 +8,10 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	CursesWidgets-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Curses-based widgets and functions
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
 RUN_DEPENDS:=	${BUILD_DEPENDS}
