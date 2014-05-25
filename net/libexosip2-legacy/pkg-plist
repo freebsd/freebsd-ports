@@ -1,0 +1,14 @@
+include/eXosip2/eX_call.h
+include/eXosip2/eX_message.h
+include/eXosip2/eX_options.h
+include/eXosip2/eX_publish.h
+include/eXosip2/eX_refer.h
+include/eXosip2/eX_register.h
+include/eXosip2/eX_setup.h
+include/eXosip2/eX_subscribe.h
+include/eXosip2/eXosip.h
+lib/libeXosip2.a
+lib/libeXosip2.la
+lib/libeXosip2.so
+lib/libeXosip2.so.%%SHLIB_VER%%
+@dirrm include/eXosip2
