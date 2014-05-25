@@ -244,6 +244,7 @@
     SUBDIR += py-fonttools
     SUBDIR += py-pdf
     SUBDIR += py-pollyreports
+    SUBDIR += py-preppy
     SUBDIR += py-pyscript
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
