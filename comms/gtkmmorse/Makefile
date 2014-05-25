@@ -18,12 +18,11 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
-PLIST_FILES=	bin/gtkmmorse
-MAN1=		gtkmmorse.1
+PLIST_FILES=	bin/gtkmmorse \
+		man/man1/gtkmmorse.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ansi||g' -e 's|-pedantic||g' \
 		${WRKSRC}/src/Makefile.in
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
