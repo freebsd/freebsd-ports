@@ -21,7 +21,6 @@ SUB_FILES=	pkg-deinstall
 OPTIONS_DEFINE=	TOMCAT7
 TOMCAT7_DESC=	Use Tomcat instead of default Jetty
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOMCAT7}
@@ -77,10 +76,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^activemq.data/s|= |= ${APP_HOME}/|' ${WRKSRC}/var/config/config-substitutions.properties
 
 do-install:
-	${MKDIR} ${APP_HOME} && ${CHOWN} ${GERONIMO_USER}:${GERONIMO_GROUP} ${APP_HOME}
+	${MKDIR} ${STAGEDIR}${APP_HOME} && ${CHOWN} ${GERONIMO_USER}:${GERONIMO_GROUP} ${STAGEDIR}${APP_HOME}
 	@(cd ${WRKSRC} && ${FIND} . |\
-		 ${CPIO} -pdmu -R ${GERONIMO_USER}:${GERONIMO_GROUP} ${APP_HOME})
-	${INSTALL} -o ${GERONIMO_USER} -g ${GERONIMO_GROUP} -m 0644 /dev/null ${GERONIMO_OUT}
+		 ${CPIO} -pdmu -R ${GERONIMO_USER}:${GERONIMO_GROUP} ${STAGEDIR}${APP_HOME})
+	${INSTALL} -o ${GERONIMO_USER} -g ${GERONIMO_GROUP} -m 0644 /dev/null ${STAGEDIR}${GERONIMO_OUT}
+
 post-install:
 	@${ECHO_MSG} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
 	@${FIND} -s ${WRKSRC} -not -type d | \
