@@ -137,6 +137,7 @@
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
+    SUBDIR += libdrizzle-redux
     SUBDIR += libgda4
     SUBDIR += libgda4-bdb
     SUBDIR += libgda4-jdbc

@@ -1,0 +1,30 @@
+bin/libdrizzle-config
+include/libdrizzle-5.1/binlog.h
+include/libdrizzle-5.1/column.h
+include/libdrizzle-5.1/column_client.h
+include/libdrizzle-5.1/conn.h
+include/libdrizzle-5.1/conn_client.h
+include/libdrizzle-5.1/constants.h
+include/libdrizzle-5.1/drizzle.h
+include/libdrizzle-5.1/drizzle_client.h
+include/libdrizzle-5.1/error.h
+include/libdrizzle-5.1/field_client.h
+include/libdrizzle-5.1/libdrizzle.h
+include/libdrizzle-5.1/query.h
+include/libdrizzle-5.1/result.h
+include/libdrizzle-5.1/result_client.h
+include/libdrizzle-5.1/return.h
+include/libdrizzle-5.1/row_client.h
+include/libdrizzle-5.1/ssl.h
+include/libdrizzle-5.1/statement.h
+include/libdrizzle-5.1/structs.h
+include/libdrizzle-5.1/verbose.h
+include/libdrizzle-5.1/version.h
+include/libdrizzle-5.1/visibility.h
+lib/libdrizzle.a
+lib/libdrizzle.la
+lib/libdrizzle.so
+lib/libdrizzle.so.9
+%%PORTDOCS%%%%DOCSDIR%%/libdrizzle.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry include/libdrizzle-5.1
