@@ -2038,6 +2038,7 @@
     SUBDIR += tt-rss
     SUBDIR += ttf2eot
     SUBDIR += twig
+    SUBDIR += twig-php
     SUBDIR += twiki
     SUBDIR += twiki-BehaviourContrib
     SUBDIR += twiki-BlogAddOn
