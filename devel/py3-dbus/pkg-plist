@@ -33,18 +33,9 @@
 %%PYTHON_SITELIBDIR%%/dbus/glib.py
 %%PYTHON_SITELIBDIR%%/dbus/glib.pyc
 %%PYTHON_SITELIBDIR%%/dbus/glib.pyo
-%%PYTHON_SITELIBDIR%%/dbus/gobject_service.py
-%%PYTHON_SITELIBDIR%%/dbus/gobject_service.pyc
-%%PYTHON_SITELIBDIR%%/dbus/gobject_service.pyo
 %%PYTHON_SITELIBDIR%%/dbus/lowlevel.py
 %%PYTHON_SITELIBDIR%%/dbus/lowlevel.pyc
 %%PYTHON_SITELIBDIR%%/dbus/lowlevel.pyo
-%%PYTHON_SITELIBDIR%%/dbus/mainloop/__init__.py
-%%PYTHON_SITELIBDIR%%/dbus/mainloop/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dbus/mainloop/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.py
-%%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.pyc
-%%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.pyo
 %%PYTHON_SITELIBDIR%%/dbus/proxies.py
 %%PYTHON_SITELIBDIR%%/dbus/proxies.pyc
 %%PYTHON_SITELIBDIR%%/dbus/proxies.pyo
@@ -57,5 +48,11 @@
 %%PYTHON_SITELIBDIR%%/dbus/types.py
 %%PYTHON_SITELIBDIR%%/dbus/types.pyc
 %%PYTHON_SITELIBDIR%%/dbus/types.pyo
+%%PYTHON_SITELIBDIR%%/dbus/mainloop/__init__.py
+%%PYTHON_SITELIBDIR%%/dbus/mainloop/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dbus/mainloop/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.py
+%%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.pyc
+%%PYTHON_SITELIBDIR%%/dbus/mainloop/glib.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/dbus/mainloop
 @dirrm %%PYTHON_SITELIBDIR%%/dbus

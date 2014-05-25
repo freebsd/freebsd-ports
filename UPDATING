@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140525:
+  AFFECTS: users of devel/py-gobject3 and devel/py-dbus
+  AUTHOR: gnome@FreeBSD.org
+
+  py-gobject3 and py-dbus where split up in a common port (*-common),
+  python2 port (py-*) and python3 port (py3-*) port.
+
+  For port builds systems please follow the next following instructions:
+  Please delete the existing version to avoid conflicts.
+
+  # pkg delete -f py27-gobject3 py27-dbus
+  or
+  # pkg_delete devel/py-gobject3 devel/py-dbus
+
+  followed by:
+  # portmaster devel/py-gobject3 devel/py-dbus
+  or
+  # portinstall devel/py-gobject3 devel/py-dbus
+
 20140521:
   AFFECTS: users of databases/mariadb55*
   AUTHOR: grembo@FreeBSD.org
