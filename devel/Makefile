@@ -864,6 +864,7 @@
     SUBDIR += ioncube
     SUBDIR += ipython
     SUBDIR += ireport
+    SUBDIR += isl
     SUBDIR += itext
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
