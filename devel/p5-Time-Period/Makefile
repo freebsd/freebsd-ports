@@ -9,8 +9,11 @@ MASTER_SITE_SUBDIR=	CPAN:PRYAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Period-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A perl module that contains code to deal with time periods
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Perl module that contains code to deal with time periods
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
