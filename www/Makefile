@@ -517,6 +517,7 @@
     SUBDIR += mod_python33
     SUBDIR += mod_python35
     SUBDIR += mod_qos
+    SUBDIR += mod_realdoc
     SUBDIR += mod_remoteip
     SUBDIR += mod_reproxy
     SUBDIR += mod_rivet
