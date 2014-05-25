@@ -1,2 +1,4 @@
-SHA256 (ejabberd-2.1.13.tgz) = a80d1c72e435da31758261cb0c04fe750ac71fc3e33a3b606123efd3b3abc86d
-SIZE (ejabberd-2.1.13.tgz) = 1999853
+SHA256 (ejabberd-14.05.tgz) = 1f97b1625bab99c7328010ad576810e70ae5d5c89c701b92cbc8d1999e4014cd
+SIZE (ejabberd-14.05.tgz) = 2143652
+SHA256 (ejabberd-deps-0.tar.xz) = be2def83af3dee383a6d1e20348d628588898fda4aba4f4210beb966708fa620
+SIZE (ejabberd-deps-0.tar.xz) = 9939900
