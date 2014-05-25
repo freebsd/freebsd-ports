@@ -8,8 +8,11 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Keep a mirrored working copy of a repository path
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-SVN-Notify>=2.83:${PORTSDIR}/devel/p5-SVN-Notify \
 		p5-YAML>=0.81:${PORTSDIR}/textproc/p5-YAML
@@ -24,21 +27,11 @@ CONFIG_DESC=	Enable YAML syntax for post-commit hook
 SSH_DESC=	Enable SSH for remote working copy update
 RSYNC_DESC=	Enable rsync for remote working copy update
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCONFIG}
-BUILD_DEPENDS+=	p5-SVN-Notify-Config>=0.0906:${PORTSDIR}/devel/p5-SVN-Notify-Config
-RUN_DEPENDS+=	p5-SVN-Notify-Config>=0.0906:${PORTSDIR}/devel/p5-SVN-Notify-Config
-.endif
-
-.if ${PORT_OPTIONS:MSSH}
-BUILD_DEPENDS+=	p5-Net-SSH>=0.08:${PORTSDIR}/net/p5-Net-SSH
-RUN_DEPENDS+=	p5-Net-SSH>=0.08:${PORTSDIR}/net/p5-Net-SSH
-.endif
-
-.if ${PORT_OPTIONS:MRSYNC}
-BUILD_DEPENDS+=	p5-File-Rsync>=0.42:${PORTSDIR}/net/p5-File-Rsync
-RUN_DEPENDS+=	p5-File-Rsync>=0.42:${PORTSDIR}/net/p5-File-Rsync
-.endif
+CONFIG_BUILD_DEPENDS=	p5-SVN-Notify-Config>=0.0906:${PORTSDIR}/devel/p5-SVN-Notify-Config
+CONFIG_RUN_DEPENDS=	p5-SVN-Notify-Config>=0.0906:${PORTSDIR}/devel/p5-SVN-Notify-Config
+RSYNC_BUILD_DEPENDS=	p5-File-Rsync>=0.42:${PORTSDIR}/net/p5-File-Rsync
+RSYNC_RUN_DEPENDS=	p5-File-Rsync>=0.42:${PORTSDIR}/net/p5-File-Rsync
+SSH_BUILD_DEPENDS=	p5-Net-SSH>=0.08:${PORTSDIR}/net/p5-Net-SSH
+SSH_RUN_DEPENDS=	p5-Net-SSH>=0.08:${PORTSDIR}/net/p5-Net-SSH
 
 .include <bsd.port.mk>
