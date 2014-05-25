@@ -18,6 +18,8 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
+USES=		uidfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	portupgrade
