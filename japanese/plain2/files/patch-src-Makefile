@@ -1,6 +1,6 @@
 --- src/Makefile.orig	2011-10-01 00:07:58.000000000 +0900
 +++ src/Makefile	2011-10-01 00:08:17.000000000 +0900
-@@ -12,8 +12,8 @@
+@@ -12,8 +12,9 @@
  
  DEFINES=-DKANJI -DPICTURE -DHTML
  
@@ -8,10 +8,11 @@
 -CFLAGS= -fwritable-strings ${DEFINES} -DBSD -DDEBUG -O2 -s
 +CC?=gcc
 +CFLAGS?= -fwritable-strings ${DEFINES} -DBSD -DDEBUG -O2 -s
++CFLAGS+= ${DEFINES}
  
  #CC=cc
  #CFLAGS= -O -fwritable-strings ${DEFINES} -DBSD -DDEBUG
-@@ -33,8 +33,8 @@
+@@ -33,8 +34,8 @@
  OBJS_KANJI=roffout.o analyze.o table.o title.o picture.o ftitle.o
  
  HDRS=plain2.h table.h picture.h kanji.h
