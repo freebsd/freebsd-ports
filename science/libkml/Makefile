@@ -3,24 +3,30 @@
 
 PORTNAME=	libkml
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for parse, generate, and operate on KML
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/expat.h:${PORTSDIR}/textproc/expat2 \
-		${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl \
+		${LOCALBASE}/include/expat.h:${PORTSDIR}/textproc/expat2
 
+CONFIGURE_ARGS=	--disable-java --disable-python --disable-swig \
+		--with-expat-include-dir=${LOCALBASE}/include \
+		--with-expat-lib-dir=${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-USE_GCC=	yes
-USES=		gmake
 USE_LDCONFIG=	yes
+USES=		gmake libtool
 
-CFLAGS+=	-I${LOCALBASE}/include -Wno-long-long
-LDFLAGS+=	-L${LOCALBASE}/lib
+post-patch:
+	@${REINPLACE_CMD} -e '/SWIG_VERSION:4/ s|:4|#*.*.|' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} 's|-Werror||; s| -ansi -pedantic||' '{}' \;
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
 .include <bsd.port.mk>

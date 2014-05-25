@@ -28,13 +28,14 @@ include/kml/convenience/csv_file.h
 include/kml/convenience/csv_parser.h
 include/kml/convenience/element_counter.h
 include/kml/convenience/feature_list.h
-include/kml/convenience/gpx_trk_pt_handler.h
 include/kml/convenience/google_doc_list.h
 include/kml/convenience/google_maps_data.h
 include/kml/convenience/google_picasa_web.h
 include/kml/convenience/google_spreadsheets.h
+include/kml/convenience/gpx_trk_pt_handler.h
 include/kml/convenience/http_client.h
 include/kml/convenience/kmz_check_links.h
+include/kml/dom.h
 include/kml/dom/abstractlatlonbox.h
 include/kml/dom/abstractview.h
 include/kml/dom/atom.h
@@ -83,7 +84,7 @@ include/kml/dom/vec2.h
 include/kml/dom/visitor.h
 include/kml/dom/visitor_driver.h
 include/kml/dom/xal.h
-include/kml/dom.h
+include/kml/engine.h
 include/kml/engine/bbox.h
 include/kml/engine/clone.h
 include/kml/engine/engine_types.h
@@ -116,7 +117,6 @@ include/kml/engine/style_merger.h
 include/kml/engine/style_resolver.h
 include/kml/engine/style_splitter.h
 include/kml/engine/update.h
-include/kml/engine.h
 include/kml/regionator/feature_list_region_handler.h
 include/kml/regionator/feature_list_regionator.h
 include/kml/regionator/region_handler.h
@@ -125,6 +125,7 @@ include/kml/regionator/regionator_qid.h
 include/kml/regionator/regionator_util.h
 include/kml/third_party/boost_1_34_1/boost/assert.hpp
 include/kml/third_party/boost_1_34_1/boost/checked_delete.hpp
+include/kml/third_party/boost_1_34_1/boost/config.hpp
 include/kml/third_party/boost_1_34_1/boost/config/compiler/gcc.hpp
 include/kml/third_party/boost_1_34_1/boost/config/no_tr1/utility.hpp
 include/kml/third_party/boost_1_34_1/boost/config/platform/linux.hpp
@@ -136,7 +137,6 @@ include/kml/third_party/boost_1_34_1/boost/config/select_stdlib_config.hpp
 include/kml/third_party/boost_1_34_1/boost/config/stdlib/libstdcpp3.hpp
 include/kml/third_party/boost_1_34_1/boost/config/suffix.hpp
 include/kml/third_party/boost_1_34_1/boost/config/user.hpp
-include/kml/third_party/boost_1_34_1/boost/config.hpp
 include/kml/third_party/boost_1_34_1/boost/detail/workaround.hpp
 include/kml/third_party/boost_1_34_1/boost/intrusive_ptr.hpp
 include/kml/third_party/boost_1_34_1/boost/scoped_ptr.hpp
@@ -151,51 +151,51 @@ include/kml/xsd/xsd_type.h
 include/kml/xsd/xsd_util.h
 include/kml/xsd/xst_parser.h
 lib/libkmlbase.a
-lib/libkmlbase.la
 lib/libkmlbase.so
 lib/libkmlbase.so.0
+lib/libkmlbase.so.0.0.0
 lib/libkmlconvenience.a
-lib/libkmlconvenience.la
 lib/libkmlconvenience.so
 lib/libkmlconvenience.so.0
+lib/libkmlconvenience.so.0.0.0
 lib/libkmldom.a
-lib/libkmldom.la
 lib/libkmldom.so
 lib/libkmldom.so.0
+lib/libkmldom.so.0.0.0
 lib/libkmlengine.a
-lib/libkmlengine.la
 lib/libkmlengine.so
 lib/libkmlengine.so.0
+lib/libkmlengine.so.0.0.0
 lib/libkmlregionator.a
-lib/libkmlregionator.la
 lib/libkmlregionator.so
 lib/libkmlregionator.so.0
+lib/libkmlregionator.so.0.0.0
 lib/libkmlxsd.a
-lib/libkmlxsd.la
 lib/libkmlxsd.so
 lib/libkmlxsd.so.0
+lib/libkmlxsd.so.0.0.0
 lib/libminizip.a
-lib/libminizip.la
 lib/libminizip.so
 lib/libminizip.so.0
+lib/libminizip.so.0.0.0
 lib/liburiparser.a
-lib/liburiparser.la
 lib/liburiparser.so
 lib/liburiparser.so.1
-@dirrm include/kml/base
-@dirrm include/kml/convenience
-@dirrm include/kml/dom
-@dirrm include/kml/engine
-@dirrm include/kml/regionator
-@dirrm include/kml/third_party/boost_1_34_1/boost/config/compiler
-@dirrm include/kml/third_party/boost_1_34_1/boost/config/no_tr1
-@dirrm include/kml/third_party/boost_1_34_1/boost/config/platform
-@dirrm include/kml/third_party/boost_1_34_1/boost/config/stdlib
-@dirrm include/kml/third_party/boost_1_34_1/boost/config
+lib/liburiparser.so.1.0.5
+@dirrm lib/libkml
+@dirrm include/kml/xsd
 @dirrm include/kml/third_party/boost_1_34_1/boost/detail
+@dirrm include/kml/third_party/boost_1_34_1/boost/config/stdlib
+@dirrm include/kml/third_party/boost_1_34_1/boost/config/platform
+@dirrm include/kml/third_party/boost_1_34_1/boost/config/no_tr1
+@dirrm include/kml/third_party/boost_1_34_1/boost/config/compiler
+@dirrm include/kml/third_party/boost_1_34_1/boost/config
 @dirrm include/kml/third_party/boost_1_34_1/boost
 @dirrm include/kml/third_party/boost_1_34_1
 @dirrm include/kml/third_party
-@dirrm include/kml/xsd
+@dirrm include/kml/regionator
+@dirrm include/kml/engine
+@dirrm include/kml/dom
+@dirrm include/kml/convenience
+@dirrm include/kml/base
 @dirrm include/kml
-@dirrm lib/libkml
