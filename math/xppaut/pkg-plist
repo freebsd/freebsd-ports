@@ -67,12 +67,6 @@ man/man1/xppaut.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/xbm/woodgrain.xbm
 %%PORTDOCS%%%%DOCSDIR%%/xpp_doc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/xpp_sum.pdf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/._ex.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/._example.dylib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/._example.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/._getmax.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/._getmin.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/._t.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/6x6.ani
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/6x6.ode
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ode/V0.tab
