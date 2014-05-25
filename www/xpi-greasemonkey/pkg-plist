@@ -3,7 +3,6 @@
 %%XPI_XPIDIR%%/LICENSE.mit
 %%XPI_XPIDIR%%/LICENSE.mpl
 %%XPI_XPIDIR%%/chrome.manifest
-%%XPI_XPIDIR%%/components/gmIGreasemonkeyService.xpt
 %%XPI_XPIDIR%%/components/greasemonkey.js
 %%XPI_XPIDIR%%/components/scriptProtocol.js
 %%XPI_XPIDIR%%/content/addons4-overlay.js
@@ -17,7 +16,6 @@
 %%XPI_XPIDIR%%/content/install.js
 %%XPI_XPIDIR%%/content/install.xul
 %%XPI_XPIDIR%%/content/menucommander.js
-%%XPI_XPIDIR%%/content/miscapis.js
 %%XPI_XPIDIR%%/content/newscript.js
 %%XPI_XPIDIR%%/content/newscript.xul
 %%XPI_XPIDIR%%/content/options.js
@@ -244,6 +242,7 @@
 %%XPI_XPIDIR%%/modules/GM_setClipboard.js
 %%XPI_XPIDIR%%/modules/addons4.js
 %%XPI_XPIDIR%%/modules/constants.js
+%%XPI_XPIDIR%%/modules/miscapis.js
 %%XPI_XPIDIR%%/modules/parseScript.js
 %%XPI_XPIDIR%%/modules/prefmanager.js
 %%XPI_XPIDIR%%/modules/remoteScript.js
@@ -253,6 +252,7 @@
 %%XPI_XPIDIR%%/modules/scriptRequire.js
 %%XPI_XPIDIR%%/modules/scriptResource.js
 %%XPI_XPIDIR%%/modules/stats.js
+%%XPI_XPIDIR%%/modules/sync.js
 %%XPI_XPIDIR%%/modules/third-party/MatchPattern.js
 %%XPI_XPIDIR%%/modules/third-party/convert2RegExp.js
 %%XPI_XPIDIR%%/modules/third-party/droppedUrls.js
@@ -263,6 +263,7 @@
 %%XPI_XPIDIR%%/modules/util/checkCoralCache.js
 %%XPI_XPIDIR%%/modules/util/compareFirefoxVersion.js
 %%XPI_XPIDIR%%/modules/util/emptyEl.js
+%%XPI_XPIDIR%%/modules/util/enqueueRemoveFile.js
 %%XPI_XPIDIR%%/modules/util/getBinaryContents.js
 %%XPI_XPIDIR%%/modules/util/getBrowserWindow.js
 %%XPI_XPIDIR%%/modules/util/getContents.js
