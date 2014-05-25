@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Mar 25 14:28:24 1998
-+++ Makefile	Wed Mar 25 14:41:41 1998
+--- Makefile.orig	2014-05-11 17:18:47.000000000 -0700
++++ Makefile	2014-05-11 17:20:45.000000000 -0700
 @@ -0,0 +1,12 @@
 +#
 +# simple makefile for uemacs 
@@ -9,7 +9,7 @@
 +	(cd freebsd; make emacs)
 +
 +install:	all
-+	${BSD_INSTALL_PROGRAM} freebsd/emacs ${PREFIX}/bin/uemacs
-+	mkdir -p ${PREFIX}/share/uemacs
-+	${BSD_INSTALL_DATA} cmd/* ${PREFIX}/share/uemacs
-+	mv ${PREFIX}/share/uemacs/emacs.rc ${PREFIX}/share/uemacs/.emacsrc
++	${BSD_INSTALL_PROGRAM} freebsd/emacs ${DESTDIR}${PREFIX}/bin/uemacs
++	mkdir -p ${DESTDIR}${PREFIX}/share/uemacs
++	${BSD_INSTALL_DATA} cmd/* ${DESTDIR}${PREFIX}/share/uemacs
++	mv ${DESTDIR}${PREFIX}/share/uemacs/emacs.rc ${DESTDIR}${PREFIX}/share/uemacs/.emacsrc

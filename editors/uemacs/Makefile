@@ -12,7 +12,6 @@ COMMENT=	Full screen editor
 
 NO_CDROM=	Resale allowed for media cost only
 
-NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 USES=		zip:infozip
 EXTRACT_BEFORE_ARGS=	-Laq
