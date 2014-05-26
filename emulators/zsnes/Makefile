@@ -27,9 +27,8 @@ OPTIONS_DEFAULT=X11 JMA
 DEBUGGER_DESC=	ZSNES Debugger
 JMA_DESC=	JMA support
 
-USE_BZIP2=	yes
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-cpucheck
 

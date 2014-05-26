@@ -20,7 +20,7 @@ RESTRICTED=	xf25 contains copyright ROMs and cannot be distributed.
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 MAN1=		atari800.1
