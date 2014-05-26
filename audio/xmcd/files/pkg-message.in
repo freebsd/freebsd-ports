@@ -7,4 +7,12 @@ If you would like to submit data to CDDB you will need
 to install mail/mailx or add something similar to
 the following line in your Xdefaults:
 XMcd.cddbMailCmd:  mail -s '%S' %A <%F >/dev/null 2>&1
+
+xmcd and cda are not suid anymore, so if you want
+to allow non-root users to use xmcd or cda, either
+set the suid bit yourself, or even better, allow
+access to /dev/cd0 in /etc/devfs.conf, e.g.
+
+perm      /dev/cd0	   0664
+
 *******************************************************
