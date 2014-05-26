@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 
 PORTSCOUT=	skipv:1.9.0a1,1.9.0b1,1.9.0b2
 USE_PHP=	tokenizer
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-PHP_CompatInfo

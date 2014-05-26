@@ -15,8 +15,7 @@ BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM \
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_DOS2UNIX=	yes
-USES=		perl5
+USES=		dos2unix perl5
 USE_PERL5=	configure
 
 post-patch:

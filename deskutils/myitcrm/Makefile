@@ -13,7 +13,7 @@ COMMENT=	MyIT CRM is a CRM project designed for Computer Servicing and Repairs
 
 LICENSE=	GPLv3
 
-USES=		zip
+USES=		dos2unix zip
 USE_PHP=	mysql session xml
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/MyITCRM-${PORTVERSION}
@@ -24,7 +24,6 @@ PATCH_STRIP=	-p1
 WRITEABLE=	conf.php.sample log/access.log cache
 PORTEXAMPLES=	htaccess.txt
 PORTDOCS=	changelog.txt README.textile
-USE_DOS2UNIX=	yes
 
 OPTIONS_DEFINE=	APACHE PHPMOD LIGHTTPD NGINX DOCS EXAMPLES
 OPTIONS_DEFAULT=	APACHE
