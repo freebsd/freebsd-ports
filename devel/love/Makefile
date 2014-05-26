@@ -41,7 +41,9 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d; \
-		/test/ s|==|=|' ${WRKSRC}/configure
+		/test/ s|==|=|' \
+		-e "s/lua5.1/lua-${LUA_VER}/g" \
+		${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
