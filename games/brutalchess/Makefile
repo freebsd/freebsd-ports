@@ -16,16 +16,13 @@ COMMENT=	Nice looking OpenGL chess game
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XORG=	x11 xext xt xmu xi
 
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
-USE_DOS2UNIX=	yes
+GNU_CONFIGURE=	yes
+USES=		dos2unix gmake libtool
 USE_GL=		yes
 USE_SDL=	sdl image
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 pre-build:
 	${CHMOD} 0755 ${WRKSRC}/install-sh
-
-MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
