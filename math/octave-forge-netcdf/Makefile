@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-netcdf
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
