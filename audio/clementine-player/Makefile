@@ -2,11 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	clementine
-PORTVERSION=	1.2.1
-PORTREVISION=	7
+PORTVERSION=	1.2.3
 CATEGORIES=	audio
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}${PKGNAMESUFFIX}
+GH_PROJECT=	Clementine
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	c189ee5
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Cross-platform music player based on Amarok 1.4
@@ -19,7 +23,8 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf \
  	 	libqca.so:${PORTSDIR}/devel/qca \
 		libqjson.so:${PORTSDIR}/devel/qjson \
-		libfftw3.so:${PORTSDIR}/math/fftw3
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libechonest.so:${PORTSDIR}/audio/libechonest
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
