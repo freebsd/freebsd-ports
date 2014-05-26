@@ -11,12 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	READLINE NLS
-OPTIONS_DEFAULT=READLINE
-
-USE_BZIP2=	yes
-USES=		ncurses
+USES=		tar:bzip2 ncurses
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I macros
@@ -30,6 +27,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=		pinfo
 PLIST_FILES=	bin/pinfo etc/pinforc man/man1/pinfo.1.gz
 
+OPTIONS_DEFINE=	READLINE NLS
+OPTIONS_DEFAULT=READLINE
 READLINE_USES=	readline
 READLINE_CONFIGURE_WITH=	readline
 
