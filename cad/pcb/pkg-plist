@@ -1,10 +1,10 @@
 bin/MergePCBPS
 bin/Merge_dimPCBPS
 bin/pcb
-include/gts.h
-lib/libgts.a
 %%PORTDOCS%%man/man1/pcb.1.gz
 share/applications/pcb.desktop
+share/appdata/pcb.appdata.xml
+@dirrmtry share/appdata
 share/icons/hicolor/16x16/mimetypes/application-x-excellon-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-gerber-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-pcb-footprint-16.png
@@ -44,7 +44,6 @@ share/mime/application/x-pcb-layout.xml
 share/mime/application/x-pcb-netlist.xml
 @dirrmtry share/mime/application
 share/mime/packages/pcb.xml
-@dirrmtry share/mime/packages
 share/mimelnk/application/x-excellon.desktop
 share/mimelnk/application/x-gerber.desktop
 share/mimelnk/application/x-pcb-footprint.desktop
@@ -300,6 +299,7 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/geda/DIP28N.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP32.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP36.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP4.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP40.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP42.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP44.fp
@@ -1163,6 +1163,7 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/tools/apctools.zip
 %%DATADIR%%/tools/gerbertotk.c
 %%DATADIR%%/tools/pcb2ncap.tgz
+%%DATADIR%%/tools/pcbdiff
 %%DATADIR%%/tools/tgo2pcb.tcl
 %%DATADIR%%/tools/MergePCBPS
 %%DATADIR%%/tools/Merge_dimPCBPS
@@ -1187,7 +1188,6 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 @dirrm %%DATADIR%%/pcblib-newlib/amp
 @dirrm %%DATADIR%%/pcblib-newlib
 @dirrm %%DATADIR%%/newlib/tests
-@dirrm %%DATADIR%%/newlib/sockets
 @dirrm %%DATADIR%%/newlib/not_vetted_ingo
 @dirrm %%DATADIR%%/newlib/msp430
 @dirrm %%DATADIR%%/newlib/keystone
