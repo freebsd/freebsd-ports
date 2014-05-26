@@ -13,8 +13,7 @@ COMMENT=	SCIM table based Japanese input methods
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 RUN_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 GNU_CONFIGURE=	yes
 
 NO_STAGE=	yes

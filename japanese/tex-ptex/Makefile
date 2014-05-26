@@ -15,8 +15,7 @@ EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE}-source${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX
 
-USE_XZ=		yes
-USE_GMAKE=	yes
+USES=		tar:xz gmake
 USE_TEX=	texlive kpathsea web2c ptexenc texmf formats fmtutil
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	\

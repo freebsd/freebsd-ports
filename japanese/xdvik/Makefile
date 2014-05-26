@@ -25,7 +25,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 
 DIST_SUBDIR=	xdvik
 USE_TEX=	tetex base texmf
-USE_GMAKE=	YES
+USES=		gmake
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/${TEXMFDIR:S,texmf$,,} \
 		--enable-a4 --enable-shrink=${SHRINK} \

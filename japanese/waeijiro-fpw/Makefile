@@ -18,8 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freep
 
 MANUAL_PACKAGE_BUILD=Needs data from a CDROM
 RESTRICTED=	The original dictionary is not free
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 DICT_PATH?=	/cdrom
 SRCFILE?=	waeiji52.txt
 

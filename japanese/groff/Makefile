@@ -20,8 +20,7 @@ LICENSE=	GPLv2
 
 USE_GCC=	any
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		iconv:wchar_t
+USES=		iconv:wchar_t gmake
 
 CONFIGURE_ARGS=	--enable-multibyte
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}" \
