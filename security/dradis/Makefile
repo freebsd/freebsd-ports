@@ -36,7 +36,7 @@ USE_RUBY_FEATURES=	iconv
 RUBY_SHEBANG_FILES=	server/script/rails server/script/delayed_job
 RUBY_NO_BUILD_DEPENDS=	yes
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 DOS2UNIX_REGEX=	.*(css|rb|txt|js|RELEASE_NOTES)$$
 
 pre-install:

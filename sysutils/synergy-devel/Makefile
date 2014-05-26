@@ -14,9 +14,8 @@ COMMENT=	Mouse and keyboard sharing utility
 LICENSE=	GPLv2
 
 CONFLICTS=	synergy-[0-9]*
-USES=		cmake
+USES=		cmake dos2unix
 USE_XORG=	ice xtst x11 sm
-USE_DOS2UNIX=	yes
 
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 

@@ -12,12 +12,12 @@ USE_CABAL=	wxdirect>=0.90
 
 BROKEN=		does not build with any of the supported wx
 
+USES=		dos2unix
 USE_WX=		3.0
 WX_COMPS=	wx
 WX_UNICODE=	yes
 
 NOPORTDOCS=	yes
-USE_DOS2UNIX=	yes
 
 post-patch::
 	@${REINPLACE_CMD} 's|"wx-config"|"wxgtk2u-2.9-config"| ; \

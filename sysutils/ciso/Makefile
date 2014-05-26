@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	blttll@gmail.com
 COMMENT=	A tool to compress ISO images to CSO format
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 PLIST_FILES=	bin/ciso
 
 .include <bsd.port.mk>

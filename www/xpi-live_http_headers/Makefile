@@ -31,7 +31,7 @@ XPI_DIRS=	chrome/icons/default \
 		defaults/preferences \
 		defaults
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 DOS2UNIX_REGEX=	.*\.(js|rdf|txt)
 
 post-patch:

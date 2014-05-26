@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Yet Another LaTeX mode and html mode on Emacs
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_EMACS=	yes
 EMACS_NO_RUN_DEPENDS=	yes
 EMACS_NO_BUILD_DEPENDS=	yes

@@ -15,7 +15,8 @@ RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-USE_DOS2UNIX=	derby.properties
+USES=		dos2unix
+DOS2UNIX_FILES=	derby.properties
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message serviiod serviio-console

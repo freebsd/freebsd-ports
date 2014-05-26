@@ -16,7 +16,7 @@ DLURL?=	${PORTNAME}
 DLDIR=		www/${DLURL}
 PORTDOCS=	CHANGES.txt COPYING.txt UPGRADE.txt
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_APACHE_RUN=	22+
 USE_PHP=	mysql session ctype pcre
 NO_BUILD=	yes

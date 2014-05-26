@@ -14,10 +14,9 @@ COMMENT=	PHP-based user-friendly, open source shopping cart
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
-USES=		zip
+USES=		dos2unix zip
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.php
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}

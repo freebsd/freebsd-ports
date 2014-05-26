@@ -19,9 +19,9 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 
 REINPLACE_ARGS=	-e 's,%%PREFIX%%,${PREFIX},1' -i.bak
 
-USE_DOS2UNIX=	tickr.h
+DOS2UNIX_FILES=	tickr.h
 USE_GNOME=	desktopfileutils gtk20 libxml2
-USES=		pkgconfig
+USES=		dos2unix pkgconfig
 
 NO_STAGE=	yes
 post-patch:

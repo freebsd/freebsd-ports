@@ -11,8 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable networking library
 
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		dos2unix gmake
 MAKEFILE=	makefile.linux
 USE_LDCONFIG=	yes
 
