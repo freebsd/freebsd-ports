@@ -45,7 +45,7 @@ LOGO_DESC=		Enable a logoscreen when creating avis
 LOGO_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 LOGO_MAKE_ARGS=		LOGO=1
 LOGO_MAKE_ARG_OFF=	LOGO=0
-LUA_USE=		LUA=yes
+LUA_USES=		lua:51
 LUA_MAKE_ARGS=		LUA=1 SYSTEM_LUA=1
 LUA_MAKE_ARGS_OFF=	LUA=0
 OPENGL_USE=		GL=gl
