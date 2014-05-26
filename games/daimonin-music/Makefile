@@ -3,6 +3,7 @@
 
 PORTNAME=	daimonin-music
 PORTVERSION=	20120402
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/daimonin/Addon%20packs/Music/
 DISTNAME=	AllMusic
@@ -13,10 +14,15 @@ COMMENT=	Music for daimonin client
 
 NO_BUILD=	true
 USES=		zip:infozip
+NO_ARCH=	yes
 
 MYDATADIR=	${PREFIX}/share/daimonin
 
 EXTRACT_BEFORE_ARGS=	-aqo
+
+post-extract:
+	@${MV} ${WRKDIR}/media/media.txt ${WRKDIR}/media/media-music.txt
+	@${RM} -f ${WRKDIR}/media/orchestral.ogg
 
 do-install:
 	${MKDIR} ${STAGEDIR}${MYDATADIR}
