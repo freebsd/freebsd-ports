@@ -1,4 +1,4 @@
-# Created by: Andrey Zakhvatov
+# Created by: Andrey Zakhvatov <andy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nbench
@@ -11,15 +11,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BYTE Magazine's native benchmarks
 
 ALL_TARGET=	# empty
-MAKE_JOBS_UNSAFE=	yes
+
+PLIST_FILES=	bin/nbench share/nbench/NNET.DAT
+PORTDOCS=	README README.submit RESULTS bdoc.txt
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbench ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/NNET.DAT ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in README README.submit RESULTS bdoc.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
