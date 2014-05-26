@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/nicolasff/phpredis/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	nicolasff-phpredis-${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	PHP5-Extension for Redis
@@ -14,12 +12,16 @@ COMMENT=	PHP5-Extension for Redis
 LICENSE=	PHP301
 
 GITVERSION=	0f0661e
-WRKSRC=		${WRKDIR}/nicolasff-phpredis-${GITVERSION}
 
 USE_PHP=	session
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=5
+DEFAULT_VERSIONS=php=5
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	nicolasff
+GH_PROJECT=	phpredis
+GH_COMMIT=	8dac89e
 
 PHP_MODNAME=	redis
 
