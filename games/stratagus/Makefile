@@ -12,7 +12,8 @@ COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
 
 OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
@@ -20,8 +21,7 @@ OPTIONS_DEFAULT=	VORBIS
 USE_GL=		glu
 USE_SDL=	sdl
 USE_SQLITE=	3
-USE_LUA=	5.0+
-LUA_COMPS=	toluaxx
+USES=		lua:51
 USES=		cmake:outsource pkgconfig
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_APP:STRING="${TOLUAXX_CMD}" \

@@ -10,12 +10,8 @@ MASTER_SITES=	http://luaforge.net/frs/download.php/2105/
 MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	Lua scripting tool for Java
 
-USES=		gmake dos2unix
-USE_LUA=	5.1
+USES=		gmake dos2unix lua:51
 LUA_COMPS=	lua
-.if ${USE_LUA} == 5.0
-LUA_COMPS+=	compat51
-.endif
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

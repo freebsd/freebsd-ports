@@ -18,10 +18,9 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	depends on fpc which is only available for i386 and amd64
 
-USES=		tar:bzip2 cmake
+USES=		tar:bzip2 cmake lua:51
 USE_SDL=	sdl mixer image ttf net
 USE_FPC=	opengl libpng
-USE_LUA=	5.1+
 USE_QT4=	corelib gui moc_build network \
 		qmake_build rcc_build svg xml \
 		uic_build linguist_build

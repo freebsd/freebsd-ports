@@ -103,7 +103,7 @@ CONFIGURE_ARGS+=	--with-pcre=no
 .endif
 
 .if ${PORT_OPTIONS:MLUA} && !defined(LITE)
-USE_LUA=	5.1
+USES+=		lua:51
 CONFIGURE_ARGS+=--with-lua=${LUA_PREFIX}
 PLIST_SUB+=	LUA=""
 .else

@@ -14,8 +14,7 @@ LICENSE=	MIT
 
 NO_WRKSUBDIR=	yes
 
-USE_LUA=	5.1
-USES=	gmake
+USES=		lua:51 gmake
 
 CFLAGS+=	-fpic -I${LOCALBASE}/include -I${LUA_INCDIR} -I. \
 		-I${LOCALBASE}/include/postgresql/server

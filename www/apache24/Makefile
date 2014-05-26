@@ -113,8 +113,7 @@ MAKE_ENV+=	EXPR_COMPAT=yes \
 # here we do only OPTIONS fixups
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1+
-LUA_COMPS=	lua
+USES+=		lua:51
 .endif
 
 .if ${PORT_OPTIONS:MPROXY_HTML} || ${PORT_OPTIONS:MXML2ENC}

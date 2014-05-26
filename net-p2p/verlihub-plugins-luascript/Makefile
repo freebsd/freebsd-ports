@@ -12,6 +12,7 @@ MAINTAINER=	me@skylord.ru
 PLUGIN_NAME=	lua
 PLUGIN_DESC=	LuaScript
 
+USES=		lua:51
 USE_LUA=	5.1
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -31,7 +32,8 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOCKET}
-LUA_COMPS+=	socket:lib
+BUILD_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
+RUN_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
 CONFIGURE_ARGS+=	--with-luasocket
 
 post-patch::

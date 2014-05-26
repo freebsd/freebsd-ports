@@ -9,9 +9,8 @@ MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
 MAINTAINER=	ricardo.katz@gmail.com
 COMMENT=	This tool is used as classifier for mails, primarily as Anti Spam
 
-USE_GMAKE=	YES
+USES=		gmake lua:51
 USE_LDCONFIG=	YES
-USE_LUA=	5.1+
 ALL_TARGET=
 INSTALL_TARGET=	install
 

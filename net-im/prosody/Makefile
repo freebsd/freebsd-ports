@@ -25,9 +25,7 @@ GROUPS=		${USERS}
 USE_RC_SUBR=	prosody
 MANCOMPRESSED=	no
 
-USES=	gmake shebangfix
-USE_LUA=	5.1
-WANT_LUA_VER=	5.1
+USES=	gmake lua:51 shebangfix
 SHEBANG_LANG=	lua
 SHEBANG_FILES=	prosody prosodyctl
 lua_OLD_CMD=	${SETENV} lua

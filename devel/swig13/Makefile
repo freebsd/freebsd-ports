@@ -36,8 +36,7 @@ LUA_DESC=	Enable Lua support
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.0+
-LUA_COMPS=	lua:build
+USES+=		lua:51
 CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
 		--with-luaincl=${LUA_INCDIR} \
 		--with-lualib=${LUA_LIBDIR}

@@ -23,11 +23,10 @@ GH_ACCOUNT=	Bertram25
 GH_PROJECT=	ValyriaTear
 GH_COMMIT=	a324297
 
-USES=		cmake iconv openal
+USES=		cmake iconv openal lua:51
 CMAKE_ARGS=	-DUSE_PCH_COMPILATION=OFF
 USE_SDL=	sdl image ttf
 USE_GL=		gl
-USE_LUA=	5.1
 INSTALLS_ICONS=	yes
 LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
 

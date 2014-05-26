@@ -308,10 +308,9 @@ USE_QT4=	gui corelib moc_build rcc_build uic_build
 
 # This may become mandantory in the future
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=5.1+
-WANT_LUA_VER=5.1
-CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
-CONFIGURE_ARGS+=--enable-lua LUAC=luac-${WANT_LUA_VER}
+USES+=	lua:51
+CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
+CONFIGURE_ARGS+=--enable-lua LUAC=luac-${LUA_VER}
 .else
 CONFIGURE_ARGS+=--disable-lua
 .endif

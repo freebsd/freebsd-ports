@@ -33,7 +33,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 OPTIONS_DEFINE=	PYTHON_UTILS UNIXODBC
 PYTHON_UTILS_DESC=	Python scripts useful for administering MySQL
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+USES=		desktop-file-utils gettext gmake libtool lua:51 pathfix pkgconfig \
 		shebangfix shared-mime-info
 SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
 		ext/mysql-utilities/*.py \
@@ -50,8 +50,6 @@ USE_GCC=	any
 USE_GL=		gl
 USE_GNOME=	gnomehier gtk20 libxml2
 USE_PYTHON=	2
-USE_LUA=	5.1
-LUA_COMPS=	lua
 USE_MYSQL=	client
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtoolize aclocal automake autoheader autoconf

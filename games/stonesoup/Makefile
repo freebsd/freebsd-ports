@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/stone_soup-${PORTVERSION}/licence.txt
 
 USE_SQLITE=	yes
-USES=		bison compiler gmake perl5 pkgconfig tar:xz
-USE_LUA=	5.1
+USES=		bison compiler gmake perl5 pkgconfig tar:xz lua:51
 USE_PERL5=	build
 
 SAVEDIR=	\~/.stonesoup

@@ -13,12 +13,10 @@ COMMENT=	Simple widget toolkit using EFL
 LICENSE=	LGPL21
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		lua pathfix pkgconfig tar:bzip2
 USE_EFL=	ecore eio edbus efreet embryo edje emotion ethumb \
 		libtool_hack librt_hack modarch_hack
-USE_LUA=	5.1+
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 

@@ -24,11 +24,9 @@ LIB_DEPENDS=	CEGUIBase-0.so:${PORTSDIR}/graphics/cegui \
 		PocoNet.12:${PORTSDIR}/devel/poco \
 		physfs.1:${PORTSDIR}/devel/physfs
 
-USES=		cmake gettext gmake openal:al,alut pkgconfig
+USES=		cmake gettext gmake openal:al,alut pkgconfig lua:51 tar:bzip2
 USE_GL=		gl glu
-USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USE_LUA=	5.1
 
 CMAKE_ARGS+=	-DGETTEXT_SEARCH_PATH=${LOCALBASE}/lib
 

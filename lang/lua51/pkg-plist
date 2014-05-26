@@ -1,0 +1,17 @@
+bin/lua51
+bin/luac51
+include/lua51/lauxlib.h
+include/lua51/lua.h
+include/lua51/lua.hpp
+include/lua51/luaconf.h
+include/lua51/lualib.h
+lib/liblua-5.1.a
+lib/liblua-5.1.so
+libdata/pkgconfig/lua-5.1.pc
+man/man1/lua51.1.gz
+man/man1/luac51.1.gz
+@dirrmtry %%DATADIR%%/5.1
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/lua/5.1
+@dirrmtry lib/lua
+@dirrmtry include/lua51

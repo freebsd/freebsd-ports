@@ -25,8 +25,4 @@ USE_AUTOTOOLS=	autoconf:env
 
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/syslog-ng/
 
-.include <bsd.port.pre.mk>
-
-USE_LUA=	5.1+
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

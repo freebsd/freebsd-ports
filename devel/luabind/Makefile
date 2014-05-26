@@ -12,7 +12,7 @@ COMMENT=	Library that helps you create bindings between C++ and Lua
 
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
-USE_LUA=	5.1+
+USES=		lua
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I.. -I${LUA_INCDIR} -I${LOCALBASE}/include
