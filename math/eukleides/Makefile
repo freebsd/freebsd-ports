@@ -13,10 +13,8 @@ COMMENT=	A Euclidean geometry drawing language
 LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
 RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit
 
-USE_BZIP2=	yes
 USE_TEX=	latex
-USES=		bison gettext iconv
-USE_GMAKE=	yes
+USES=		bison gettext iconv gmake tar:bzip2
 
 MAN1=		eukleides.1 euktoeps.1 euktopdf.1 euktopst.1 euktotex.1
 

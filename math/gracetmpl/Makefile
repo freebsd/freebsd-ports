@@ -12,9 +12,8 @@ COMMENT=	Provide an easy way to use existing grace-files as a template
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		BIN_PREFIX="${PREFIX}/bin" \
 		LIB_PREFIX="${PREFIX}/lib" \

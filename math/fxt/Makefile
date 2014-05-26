@@ -12,7 +12,7 @@ COMMENT=	FFT code and related stuff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	makefile
 
 NO_STAGE=	yes
