@@ -10,7 +10,7 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Morse Code Generator
 
 USE_PYTHON=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	makefile
 ALL_TARGET=	ALL
 

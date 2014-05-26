@@ -17,10 +17,9 @@ LIB_DEPENDS=	ibus-1.0:${PORTSDIR}/textproc/ibus \
 		kmflcomp.0:${PORTSDIR}/textproc/kmflcomp
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_GNOME=	glib20
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

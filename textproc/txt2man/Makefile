@@ -12,7 +12,7 @@ COMMENT=	Converts flat ASCII text to man page format
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GMAKE=	yes
+USES=		gmake
 INSTALL_TARGET=	install prefix=${PREFIX}
 
 MAN1=		bookman.1 src2man.1 txt2man.1

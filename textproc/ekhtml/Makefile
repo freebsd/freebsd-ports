@@ -11,7 +11,7 @@ COMMENT=	El-Kabong is a speedy, yet forgiving, SAX-style HTML parser
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
