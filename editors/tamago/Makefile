@@ -20,7 +20,7 @@ COMMENT=	The Multilingual Input Method - Egg V4
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
 WRKSRC=		${WRKDIR}/egg-4.0.6+0.20041122cvs

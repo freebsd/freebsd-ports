@@ -13,7 +13,7 @@ COMMENT=	A full featured text editor written in assembler
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	OS=FREEBSD
 ONLY_FOR_ARCHS=	i386
 

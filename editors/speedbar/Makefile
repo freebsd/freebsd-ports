@@ -17,7 +17,7 @@ COMMENT=	Quick access to files and tags in an Emacs frame
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
-USE_GMAKE=	yes
+USES=		gmake
 CONFLICTS=	cedet*
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/speedbar

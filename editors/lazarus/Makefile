@@ -19,7 +19,6 @@ RUN_DEPENDS?=	#
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		gmake
-USE_GMAKE=	yes
 USE_GNOME=	#
 USE_FPC?=	fcl-base fcl-db fcl-fpcunit fcl-image fcl-process fcl-registry \
 		fcl-res fcl-xml iconvenc numlib pasjpeg x11
