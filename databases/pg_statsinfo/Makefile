@@ -9,7 +9,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Monitor statistics and activity of PostgreSQL
 
 USE_PGSQL=	server
-USE_GMAKE=	yes
+USES=		gmake
 
 MAKE_ARGS=	USE_PGXS=1 LDFLAGS=-lkvm
 

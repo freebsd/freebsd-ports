@@ -10,7 +10,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Lightweight Embedded Database Engine
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 HAM_DOCS=	README INSTALL ChangeLog TODO AUTHORS CREDITS

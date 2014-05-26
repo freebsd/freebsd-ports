@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=	PGSQL MYSQL
 
 USE_AUTOTOOLS=	aclocal automake autoconf autoheader libtool
 USE_QT4=	gui corelib sql xml network linguist moc_build uic_build rcc_build
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PREFIX2FIX=	doc/help/preferences.texi doc/help/preferences.html
