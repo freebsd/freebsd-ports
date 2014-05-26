@@ -10,6 +10,7 @@ COMMENT=	Functional and object-oriented language for the .NET platform
 
 LICENSE=	APACHE20
 
+USES=		mono
 BUILD_DEPENDS=	mono>=3.0:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono>=3.0:${PORTSDIR}/lang/mono
 
@@ -20,5 +21,4 @@ GH_COMMIT=	b0c16bb
 USES=		gmake pkgconfig
 USE_AUTOTOOLS=	autoconf
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

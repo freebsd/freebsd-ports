@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	DOCS
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
 
-USES=	gmake pathfix pkgconfig
+USES=	gmake mono pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING README
@@ -27,5 +27,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
