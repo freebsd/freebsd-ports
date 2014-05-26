@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 901504
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 901504
 MAKE_ENV+=	INSTALL="install -U"
 .endif
 
@@ -34,7 +34,7 @@ MAKE_ENV+=	WITHOUT_NLS=${WITHOUT_NLS}
 .endif
 
 post-patch:
-.if ${OSVERSION} < 901504
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 901504
 	@${REINPLACE_CMD} -e 's/-o root -g wheel//' ${WRKSRC}/src/Makefile
 .endif
 
