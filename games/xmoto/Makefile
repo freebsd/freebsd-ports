@@ -20,9 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		gmake dos2unix
+USES=		gmake dos2unix lua:51
 USE_GNOME=	libxml2
-USE_LUA=	5.1
 USE_SQLITE=	3
 USE_SDL=	sdl mixer ttf net
 USE_GL=		gl glu

@@ -16,10 +16,8 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
-USES=		openal:al pkgconfig
-USE_BZIP2=	yes
+USES=		openal:al pkgconfig lua:51 tar:bzip2
 USE_LDCONFIG=	yes
-USE_LUA=	5.0+
 USE_SDL=	image sdl
 USE_SCONS=	yes
 USE_PYTHON_BUILD=	yes

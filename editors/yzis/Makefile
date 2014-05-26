@@ -15,10 +15,8 @@ COMMENT=	Vi-like editor
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USES=		tar:bzip2 cmake gettext perl5
+USES=		tar:bzip2 cmake gettext perl5 lua:51
 USE_XORG=	x11 xext ice
-USE_LUA=	5.1
-LUA_COMPS=	lua
 USE_QT4=	qtestlib qmake_build rcc_build uic_build moc_build gui xml
 CMAKE_ARGS+=	-DLOCALBASE:STRING="${LOCALBASE}" \
 		-DLUA_INCDIR:STRING="${LUA_INCDIR}" \

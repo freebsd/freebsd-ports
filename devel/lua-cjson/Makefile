@@ -11,17 +11,15 @@ DISTNAME=	lua-cjson-${PORTVERSION}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fast JSON parsing and encoding support for Lua
 
-USE_LUA?=	5.1
+USES=		lua:51
+
+MAKE_ARGS=	LUA_VERSION=${LUA_VER}
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/cjson.so
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '16,18d; \
-		21s|^\(LUA_INCLUDE.*\)\(PREFIX\)\(.*\)|\1LOCALBASE\3/lua51|' \
+		21s|^\(LUA_INCLUDE.*\)\(PREFIX\)\(.*\)|\1LOCALBASE\3/lua${LUA_VER_STR}|' \
 		${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cjson.so ${LUA_MODLIBDIR}
 
 .include <bsd.port.mk>

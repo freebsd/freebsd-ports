@@ -11,10 +11,9 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake lua:51
 USE_SDL=	sdl image mixer gfx
-USE_LUA=	5.1+
-CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
+CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 USE_GCC=	any # doesn't build with clang
 
 PORTDATA=	*

@@ -16,10 +16,9 @@ LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_LUA=	5.1
-
+USES=		lua:51
 CFLAGS+=	-I${LUA_INCDIR} -I${LOCALBASE}/include
-LDFLAGS+=	-shared -L${LOCALBASE}/lib -lgd -L${LUA_LIBDIR} -llua -lm
+LDFLAGS+=	-shared -L${LOCALBASE}/lib -lgd -L${LUA_LIBDIR} -llua-${LUA_VER} -lm
 GDFEATURES=	`gdlib-config --features |sed -e "s/GD_/-DGD_/g"`
 
 .include <bsd.port.options.mk>

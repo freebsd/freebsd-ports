@@ -17,12 +17,10 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	v3.0-rc1
 GH_COMMIT=	22cd583
 
-USE_GMAKE=	yes
-USE_LUA?=	5.1
-LUA_COMPS=	lua
+USES=		lua:51 gmake pkgconfig
 
-CFLAGS+=    `pkgconf --cflags lua-${LUA_VER}` -I${LUA_INCDIR}
-LDFLAGS+=   -shared -L${LOCALBASE}/lib -L${LUA_LIBDIR}
+CFLAGS+=    `pkgconf --cflags lua-${LUA_VER}`
+LDFLAGS+=   -shared  `pkgconf --libs lua-${LUA_VER}`
 
 post-extract:
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile

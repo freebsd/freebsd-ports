@@ -13,8 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		cmake compiler:c++11-lang dos2unix pkgconfig
-USE_LUA=	yes
+USES=		cmake compiler:c++11-lang dos2unix lua:51 pkgconfig
 USE_SDL=	mixer
 DOS2UNIX_FILES=	CMake/FindFFmpeg.cmake \
 		CorsixTH/CMakeLists.txt \

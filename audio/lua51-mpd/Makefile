@@ -6,7 +6,7 @@ CATEGORIES=	audio
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	demelier.david@gmail.com
-COMMENT=	A Lua library for musicpd
+COMMENT=	Lua library for musicpd
 
 RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
 
@@ -17,13 +17,11 @@ GH_ACCOUNT=	silentbicycle
 GH_PROJECT=	lua-mpd
 GH_TAGNAME=	v0.1
 
+USES=		lua:51
 USE_GITHUB=	yes
-USE_LUA=	5.1
+NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-lua-${PORTNAME}-ca32f43
-
-do-build:
-	@${DO_NADA}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}

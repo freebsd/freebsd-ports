@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	aegisub
-PORTVERSION=	2.1.9
-PORTREVISION=	2
+PORTVERSION=	3.1.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
-		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
-		ftp://ftp2.aegisub.org/pub/archives/releases/source/:aegisub \
 		GH
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:aegisub ${FFMS_DISTFILE}
 
@@ -34,14 +31,12 @@ GH_COMMIT=	ec0ef9c
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		desktop-file-utils gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
 USE_GNOME=	intltool
-USE_WX=		2.8
-WX_COMPS=	wx contrib
+USE_WX=		3.0
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_GL=		glu
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-prec --without-lua50
 INSTALLS_ICONS=	yes
@@ -132,9 +127,9 @@ CONFIGURE_ARGS+=	--without-hunspell
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1+
+USES+=		lua
 CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" \
-		LUA_LDFLAGS="-L${LUA_LIBDIR} -llua"
+		LUA_LDFLAGS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 CPPFLAGS+=	-I${LUA_INCDIR}
 .else
 CONFIGURE_ARGS+=	--without-lua

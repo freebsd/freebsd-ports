@@ -11,19 +11,16 @@ COMMENT=	Roguelike game and as such a remake of the classic game Larn
 
 LICENSE=	GPLv3
 
-USES=		pkgconfig
-USE_LUA=	5.1
+USES=		gmake lua pkgconfig
 USE_GNOME=	glib20
-USE_GMAKE=	yes
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} 's|/usr/share/nlarn|${DATADIR}|' \
 		${WRKSRC}/src/game.c
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/nlarn ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${WRKSRC}/nlarn.ini-sample ${WRKSRC}/lib/* ${DATADIR}/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/nlarn ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${WRKSRC}/nlarn.ini-sample ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

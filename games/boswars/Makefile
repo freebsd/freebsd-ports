@@ -17,7 +17,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		theora:${PORTSDIR}/multimedia/libtheora \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
-USE_LUA=	5.1
+USES=		lua:51
 USE_SDL=	sdl
 USE_GL=		yes
 USE_SCONS=	yes

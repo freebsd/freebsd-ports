@@ -19,10 +19,8 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libbotan-1.10.so:${PORTSDIR}/security/botan110
 
 SUB_FILES=	pkg-message
-USE_BZIP2=	yes
-USES=		iconv pkgconfig gmake perl5
+USES=		iconv pkgconfig gmake perl5 lua:51 tar:bzip2
 USE_PERL5=	build
-USE_LUA=	5.1+
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes

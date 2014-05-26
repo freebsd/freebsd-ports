@@ -242,7 +242,7 @@ CONFIGURE_ARGS+=	--without-srtp
 .if ${PORT_OPTIONS:MLUA}
 CONFIGURE_ARGS+=	--with-lua
 CFLAGS+=	-I${LUA_INCDIR}
-USE_LUA=	yes
+USES+=		lua:51
 LDFLAGS+=	-L${LUA_LIBDIR}
 PLIST_SUB+=	WITH_LUA=""
 .else

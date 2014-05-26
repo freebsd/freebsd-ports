@@ -14,8 +14,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A wonderful puzzle game
 
 USE_SDL=	sdl mixer image ttf
-USE_LUA=	5.1
-USES=		gmake
+USES=		gmake lua
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}

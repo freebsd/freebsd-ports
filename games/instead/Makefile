@@ -12,9 +12,8 @@ COMMENT=	Simple Text Adventure, The Interpreter
 
 LICENSE=	MIT
 
-USES=		cmake:outsource pkgconfig iconv
+USES=		cmake:outsource pkgconfig iconv lua:51
 CMAKE_ARGS=	-DMANDIR=man
-USE_LUA=	5.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

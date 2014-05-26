@@ -14,7 +14,8 @@ COMMENT=	The MySQL Workbench
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libzip.so:${PORTSDIR}/archivers/libzip
+		libzip.so:${PORTSDIR}/archivers/libzip \
+		libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -27,12 +28,10 @@ LIBTOOLIZE_ARGS=-i -c -f
 USE_LDCONFIG=	${PREFIX}/lib/mysql-workbench
 SUBDIRS=	ext/yassl/taocrypt ext/yassl ext/ctemplate/ctemplate-src .
 
-USES=		dos2unix libtool
+USES=		dos2unix libtool lua:51
 DOS2UNIX_REGEX=	.*ext/yassl/.*(Makefile.am|configure.in)
 USE_GL=		gl
 USE_GNOME=	cairo gtkmm24 libglade2 libgnome libsigc++20 libxml2
-USE_LUA=	5.1
-LUA_COMPS=	lua
 
 CONFLICTS=	mysql-workbench-gpl*
 DATADIR=	${PREFIX}/share/mysql-workbench
@@ -40,7 +39,7 @@ DATADIR=	${PREFIX}/share/mysql-workbench
 CXXFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GNOME2_DIR="${LOCALBASE}" LUA_LIBS="-llua"
+CONFIGURE_ENV=	GNOME2_DIR="${LOCALBASE}" LUA_LIBS="-llua-${LUA_VER}"
 
 USE_MYSQL=	client
 DEFAULT_MYSQL_VER=	51
