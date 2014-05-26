@@ -19,9 +19,9 @@ GH_PROJECT=	common_lib
 GH_COMMIT=	c242861
 GH_TAGNAME=	${PORTVERSION}
 
-USE_DOS2UNIX=	Makefile
+DOS2UNIX_FILES=	Makefile
 ALL_TARGET=	compile doc
-USES=		gmake iconv:build
+USES=		dos2unix gmake iconv:build
 
 post-extract:
 	@${REINPLACE_CMD} -e "s@&lt;@<@g" -e "s@&gt;@>@g" ${WRKSRC}/doc/*.ndoc

@@ -17,7 +17,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I. -I${LOCALBASE}/include
 
-USE_DOS2UNIX=	*.h
+USES=		dos2unix
+DOS2UNIX_GLOB=	*.h
 
 PS_FILES=	dwarf.v2.pdf index.v2.pdf libdwarf2.1.pdf libdwarf2p.1.pdf mips_extensions.pdf
 

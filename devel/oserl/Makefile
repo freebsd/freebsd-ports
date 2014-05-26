@@ -20,8 +20,8 @@ GH_PROJECT=	oserl
 GH_COMMIT=	f14115d
 GH_TAGNAME=	${PORTVERSION}
 
-USE_DOS2UNIX=	Makefile
-USES=		gmake iconv
+DOS2UNIX_FILES=	Makefile
+USES=		dos2unix gmake iconv
 ALL_TARGET=	compile doc
 
 post-extract:

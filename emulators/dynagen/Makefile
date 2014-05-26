@@ -41,10 +41,10 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PORTDATA=	*
 
+USES=		dos2unix
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 ALL_TARGET=	# empty
-USE_DOS2UNIX=	yes
 
 NO_STAGE=	yes
 post-install:

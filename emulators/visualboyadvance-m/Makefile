@@ -22,14 +22,12 @@ GVBAM_DESC=	Build gvbam (GTK2 frontend)
 
 NLS_USES=	gettext
 
-USE_BZIP2=	yes
 WANT_GNOME=	yes
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 USE_XORG=	x11 xext
 USE_GL=		gl glu
 USE_SDL=	sdl
-USES=		cmake desktop-file-utils pkgconfig
+USES=		cmake desktop-file-utils dos2unix pkgconfig tar:bzip2
 CMAKE_ARGS+=	-DVERSION:STRING="${PORTVERSION}" -DSYSCONFDIR:STRING="${PREFIX}/etc"
 SVN_REV=	1001
 

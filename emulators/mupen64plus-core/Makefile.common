@@ -1,4 +1,5 @@
-USE_DOS2UNIX=		*.c *.cpp *.h *.H *.ini *.conf
+USES+=			dos2unix
+DOS2UNIX_GLOB=		*.c *.cpp *.h *.H *.ini *.conf
 
 DISTNAME=		${PORTNAME}-bundle-src-${PORTVERSION}
 PATCHDIR=		${.CURDIR}/files
