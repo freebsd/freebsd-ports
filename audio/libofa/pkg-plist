@@ -1,7 +1,7 @@
 include/ofa1/ofa.h
 lib/libofa.a
-lib/libofa.la
 lib/libofa.so
 lib/libofa.so.0
+lib/libofa.so.0.0.0
 libdata/pkgconfig/libofa.pc
 @dirrm include/ofa1
