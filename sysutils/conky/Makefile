@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=	--disable-imlib2
 .endif
 
 .if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
-USE_LUA=		5.1+
+USES+=			lua:51
 CONFIGURE_ARGS+=	--enable-lua
 .else
 CONFIGURE_ARGS+=	--disable-lua
