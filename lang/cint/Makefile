@@ -15,7 +15,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	${PREFIX}/lib/cint
 ALL_TARGET=
 MAN1=		cint.1 makecint.1

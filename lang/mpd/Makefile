@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS_REASON=	uses assembly code for the target machine
 CONFLICTS=	mpd-[^1]*
 NO_LATEST_LINK=	yes
 
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=	X11

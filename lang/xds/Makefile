@@ -16,7 +16,7 @@ RESTRICTED=	Excelsior forbids any redistribution
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses assembly code
 USE_LINUX=	yes
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/lib/x86
 

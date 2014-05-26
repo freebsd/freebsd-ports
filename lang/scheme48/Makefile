@@ -15,7 +15,7 @@ LICENSE=	BSD
 CONFLICTS=	scsh-[0-9]*
 
 ALL_TARGET=	enough
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 MAN1=		scheme48.1

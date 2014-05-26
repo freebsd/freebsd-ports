@@ -17,8 +17,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
 HUGS_DATE=	Sep2006
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
 #CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"

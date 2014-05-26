@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 MAN1=		elancc.1
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
