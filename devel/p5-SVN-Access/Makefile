@@ -26,7 +26,7 @@ PORTEXAMPLES=	svnaclmgr.pl
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_PROGRAM} ${PORTEXAMPLES} \
+	cd ${WRKSRC}/examples && ${INSTALL_SCRIPT} ${PORTEXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
