@@ -1,3 +1,5 @@
+@owner %%SSP_OWN%%
+@group %%SSP_GRP%%
 @sample %%WWWDIR%%/conf/config.inc.php.sample
 %%WWWDIR%%/index.php
 %%WWWDIR%%/lang/ca.inc.php

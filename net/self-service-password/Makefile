@@ -3,6 +3,7 @@
 
 PORTNAME=	self-service-password
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://tools.ltb-project.org/attachments/download/497/
 DISTNAME=	ltb-project-${PORTNAME}-${PORTVERSION}
@@ -22,6 +23,9 @@ WANT_PHP_WEB=	yes
 CFGDIR=		conf
 CFGFILE=	config.inc.php
 
+PLIST_SUB+=	SSP_OWN=${WWWOWN}
+PLIST_SUB+=	SSP_GRP=${WWWGRP}
+
 SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES=	pkg-message
 
@@ -30,6 +34,5 @@ post-extract:
 
 do-install:
 	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>
