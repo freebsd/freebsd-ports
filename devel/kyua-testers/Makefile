@@ -22,6 +22,7 @@ OPTIONS_SUB=		yes
 TEST_CONFIGURE_WITH=	atf
 TEST_LIB_DEPENDS=	libatf-c.so:${PORTSDIR}/devel/atf
 TEST_RUN_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
+TEST_USES=		pkgconfig
 
 .include <bsd.port.options.mk>
 
