@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -245,7 +245,8 @@ X264_CONFIGURE_ENABLE=	x264
 ZVBI_LIB_DEPENDS=	libzvbi.so:${PORTSDIR}/devel/libzvbi
 ZVBI_CONFIGURE_ENABLE=	zvbi
 
-USES=		desktop-file-utils iconv perl5 gmake pkgconfig tar:xz
+USES=		desktop-file-utils iconv libtool perl5 gmake pkgconfig tar:xz
+INSTALL_TARGET=	install-strip
 USE_PERL5=	build
 USE_CSTD=	gnu99
 WANT_GNOME=	yes
@@ -419,7 +420,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^DEFAULT_INCLUDES/s|$$| $$(GNUTLS_CFLAGS)|g' \
 		${WRKSRC}/modules/misc/Makefile.in
 
-post-install:
+add-plist-data:
 	@if [ -n "${MTREE_FILE}" ]; then \
 	{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
 		awk '{ sub(/^\.$$/, "", $$1); \
