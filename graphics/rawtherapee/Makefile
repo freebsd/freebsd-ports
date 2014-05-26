@@ -81,9 +81,9 @@ CMAKE_ARGS+=	-DOPTION_OMP:BOOL=ON
 CMAKE_ARGS+=	-DOPTION_OMP:BOOL=OFF
 .endif
 
-.if ${OSVERSION} >= 1100000
-BROKEN=		rawtherapee is known to crash on -HEAD and requires debugging that the maintainer cannot provide.
-.endif
+#.if ${OSVERSION} >= 1100000
+#BROKEN=		rawtherapee is known to crash on -HEAD and requires debugging that the maintainer cannot provide.
+#.endif
 
 # -------------------------------------------------------------------
 
