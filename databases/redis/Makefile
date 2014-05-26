@@ -23,7 +23,7 @@ TESTS_DESC=	Install lang/tcl for redis unit tests
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA?=	5.1
+USES+=		lua:51
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.lua
 CFLAGS+=	-fPIC
 LDFLAGS+=	-Wl,-E
