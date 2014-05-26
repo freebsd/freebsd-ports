@@ -46,7 +46,7 @@ USE_QT4=	corelib \
 QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	autoconf aclocal libtool
 CONFIGURE_SCRIPT=	autogen.sh
 GNU_CONFIGURE=	yes

@@ -18,7 +18,7 @@ BUILD_DEPENDS+=	smbd:${PORTSDIR}/${SAMBA_PORT}
 
 CONFIGURE_ARGS+=--with-samba-vfs-dir=${PREFIX}/lib/samba/vfs
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include

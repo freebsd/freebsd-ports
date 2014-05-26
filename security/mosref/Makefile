@@ -10,7 +10,7 @@ DISTNAME=		${PORTNAME}-2.0-beta3
 MAINTAINER=	pjdelport@gmail.com
 COMMENT=	Secure remote execution framework using a compact Scheme-influenced VM
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PORTDOCS=	ChangeLog TODO vm-implementation.tex vm-implementation.pdf
 

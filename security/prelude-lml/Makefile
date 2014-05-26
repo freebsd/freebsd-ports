@@ -20,12 +20,11 @@ LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu \
 		libnettle.so:${PORTSDIR}/security/nettle \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit
 
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-lml
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
-USES=		charsetfix gettext iconv pkgconfig
+USES=		charsetfix gettext iconv pkgconfig gmake
 
 OPTIONS_DEFINE=	FAM
 FAM_CONFIGURE_ENABLE=	fam

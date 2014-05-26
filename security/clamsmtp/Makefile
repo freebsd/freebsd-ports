@@ -11,7 +11,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	ClamAV anti-virus SMTP Filter
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	clamsmtpd
 SUB_LIST=	CLAMAV_PID_DIR=${CLAMAV_PID_DIR}
 SUB_FILES+=	pkg-message

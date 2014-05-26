@@ -16,8 +16,7 @@ BUILD_DEPENDS=	\
 	p5-openxpki>=0:${PORTSDIR}/security/p5-openxpki
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

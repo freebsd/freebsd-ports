@@ -13,7 +13,7 @@ COMMENT=	Source code auditing tool
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CONFIGURE_ARGS+=--with-expat-lib=${LOCALBASE}/lib \
 		--with-expat-include=${LOCALBASE}/include/xml \
 		--datadir=${DATADIR}
