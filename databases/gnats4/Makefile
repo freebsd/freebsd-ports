@@ -12,7 +12,7 @@ MAINTAINER=		vd@FreeBSD.org
 COMMENT=		GNATS, the GNU Problem Report Management System
 
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
+USES=			gmake
 
 LATEST_LINK=		${PKGNAMEPREFIX}gnats4${PKGNAMESUFFIX}
 CONFLICTS=		gnats-3.*
