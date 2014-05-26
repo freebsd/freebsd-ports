@@ -1,9 +1,9 @@
---- doc/Makefile.in.orig	2010-09-30 05:52:39.000000000 +0900
-+++ doc/Makefile.in	2010-10-01 03:54:10.000000000 +0900
-@@ -16,7 +16,7 @@
- @SET_MAKE@
- 
- VPATH = @srcdir@
+--- doc/Makefile.in.orig	2014-03-17 12:14:42.000000000 +0900
++++ doc/Makefile.in	2014-05-27 05:09:56.000000000 +0900
+@@ -33,7 +33,7 @@
+     esac; \
+     test $$am__dry = yes; \
+   }
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(docdir)
  pkgincludedir = $(includedir)/@PACKAGE@
