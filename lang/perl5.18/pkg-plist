@@ -42,305 +42,6 @@ bin/xsubpp
 bin/zipdetails
 %%MANCONF%%etc/man.d/perl%%PERL_VER%%.conf
 etc/perl5_version
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/.packlist
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Concise.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Showlex.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Terse.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Xref.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/EXTERN.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/INTERN.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/XSUB.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/av.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/bitcount.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/charclass_invlists.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/config.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cop.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cv.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/dosish.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/embed.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/embedvar.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/fakesdio.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/fakethr.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/feature.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/form.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/git_version.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/gv.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/handy.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/hv.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/hv_func.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/inline.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/intrpvar.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/iperlsys.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/keywords.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/l1_char_class_tab.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/malloc_ctl.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/metaconfig.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_data.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_raw.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_vtable.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mydtrace.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/nostdio.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/op.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/op_reg_common.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/opcode.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/opnames.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/overload.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pad.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/parser.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/patchlevel.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perl.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlapi.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlio.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perliol.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlsdio.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlsfio.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlvars.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perly.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pp.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pp_proto.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/proto.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/reentr.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regcharclass.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regcomp.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regexp.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regnodes.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/scope.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/sv.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/thread.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/time64.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/time64_config.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/uconfig.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/unicode_constants.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/unixish.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/utf8.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/utfebcdic.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/util.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/uudmap.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/warnings.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw/Bzip2.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw/Zlib.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config.pod
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config_git.pl
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config_heavy.pl
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Cwd.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/DB_File.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Data/Dumper.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/PPPort.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/Peek.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest/MD5.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest/SHA.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/DynaLoader.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Alias.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Byte.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CJKConstants.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN/HZ.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Config.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/EBCDIC.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Encoder.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Encoding.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/GSM0338.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Guess.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP/H2Z.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP/JIS7.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR/2022_KR.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header/ISO_2022_JP.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Name.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Symbol.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/TW.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode/UTF7.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Errno.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Fcntl.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/DosGlob.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Glob.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Cygwin.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Epoc.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Functions.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Mac.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/OS2.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Unix.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/VMS.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Win32.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util/Call.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util/FieldHash.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N/Langinfo.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Dir.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/File.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Handle.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Pipe.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Poll.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Seekable.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Select.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/INET.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/UNIX.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/Msg.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/Semaphore.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SharedMem.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SysV.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util/XS.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME/Base64.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME/QuotedPrint.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInt/FastCalc.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/NDBM_File.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/O.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Opcode.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/POSIX.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/POSIX.pod
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/encoding.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/mmap.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/scalar.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/via.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/SDBM_File.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar/Util.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Socket.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Storable.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys/Hostname.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys/Syslog.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Text/Soundex.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie/Hash/NamedCapture.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/HiRes.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/Piece.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/Seconds.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate/Locale.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Normalize.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/arybase.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/attributes.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/B.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/B.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/Bzip2.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/Bzip2.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/autosplit.ix
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/Zlib.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/Zlib.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/autosplit.ix
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd/Cwd.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd/Cwd.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/DB_File.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/DB_File.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/autosplit.ix
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort/PPPort.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort/PPPort.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek/Peek.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek/Peek.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA/SHA.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA/SHA.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN/CN.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN/CN.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Encode.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Encode.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP/JP.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP/JP.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR/KR.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR/KR.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW/TW.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW/TW.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob/DosGlob.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob/DosGlob.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/FieldHash.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/FieldHash.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/Util.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/Util.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo/Langinfo.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo/Langinfo.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV/SysV.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV/SysV.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/Util.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/Util.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc/FastCalc.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc/FastCalc.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File/NDBM_File.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File/NDBM_File.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode/Opcode.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode/Opcode.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX/POSIX.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX/POSIX.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding/encoding.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding/encoding.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap/mmap.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap/mmap.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar/scalar.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar/scalar.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via/via.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via/via.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File/SDBM_File.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File/SDBM_File.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket/Socket.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket/Socket.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname/Hostname.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname/Hostname.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog/Syslog.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog/Syslog.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex/Soundex.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex/Soundex.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture/NamedCapture.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture/NamedCapture.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes/HiRes.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes/HiRes.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate/Collate.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate/Collate.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase/arybase.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase/arybase.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes/attributes.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes/attributes.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro/mro.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro/mro.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re/re.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re/re.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/sdbm/extralibs.ld
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared/shared.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared/shared.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/threads.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/threads.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/encoding.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/lib.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/mro.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/ops.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/re.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads/shared.pm
 lib/perl5/%%PERL_VER%%/AnyDBM_File.pm
 lib/perl5/%%PERL_VER%%/App/Cpan.pm
 lib/perl5/%%PERL_VER%%/App/Prove.pm
@@ -1026,11 +727,925 @@ lib/perl5/%%PERL_VER%%/inc/latest/private.pm
 lib/perl5/%%PERL_VER%%/integer.pm
 lib/perl5/%%PERL_VER%%/less.pm
 lib/perl5/%%PERL_VER%%/locale.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/.packlist
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Concise.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Showlex.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Terse.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B/Xref.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/EXTERN.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/INTERN.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/XSUB.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/av.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/bitcount.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/charclass_invlists.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/config.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cop.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/cv.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/dosish.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/embed.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/embedvar.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/fakesdio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/fakethr.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/feature.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/form.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/git_version.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/gv.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/handy.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/hv.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/hv_func.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/inline.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/intrpvar.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/iperlsys.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/keywords.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/l1_char_class_tab.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/malloc_ctl.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/metaconfig.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_data.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_raw.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg_vtable.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mydtrace.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/nostdio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/op.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/op_reg_common.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/opcode.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/opnames.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/overload.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pad.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/parser.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/patchlevel.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perl.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlapi.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perliol.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlsdio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlsfio.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perlvars.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perly.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pp.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pp_proto.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/proto.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/reentr.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regcharclass.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regcomp.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regexp.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regnodes.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/scope.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/sv.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/thread.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/time64.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/time64_config.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/uconfig.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/unicode_constants.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/unixish.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/utf8.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/utfebcdic.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/util.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/uudmap.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/warnings.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw/Bzip2.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw/Zlib.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config.pod
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config_git.pl
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Config_heavy.pl
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Cwd.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/DB_File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Data/Dumper.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/PPPort.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/Peek.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest/MD5.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest/SHA.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/DynaLoader.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Alias.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Byte.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CJKConstants.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN/HZ.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Config.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/EBCDIC.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Encoder.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Encoding.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/GSM0338.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Guess.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP/H2Z.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP/JIS7.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR/2022_KR.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header/ISO_2022_JP.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Name.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Symbol.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/TW.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode/UTF7.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Errno.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Fcntl.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/DosGlob.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Glob.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Cygwin.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Epoc.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Functions.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Mac.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/OS2.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Unix.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/VMS.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec/Win32.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util/Call.pm
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/GDBM_File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util/FieldHash.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N/Langinfo.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Dir.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Handle.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Pipe.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Poll.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Seekable.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Select.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/INET.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/UNIX.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/Msg.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/Semaphore.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SharedMem.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SysV.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util/XS.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME/Base64.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME/QuotedPrint.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInt/FastCalc.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/NDBM_File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/O.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Opcode.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/POSIX.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/POSIX.pod
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/encoding.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/mmap.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/scalar.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO/via.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/SDBM_File.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar/Util.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Socket.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Storable.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys/Hostname.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys/Syslog.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Text/Soundex.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie/Hash/NamedCapture.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/HiRes.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/Piece.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time/Seconds.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate/Locale.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Normalize.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/arybase.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/attributes.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/B.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/B.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/Bzip2.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/Bzip2.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2/autosplit.ix
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/Zlib.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/Zlib.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/autosplit.ix
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd/Cwd.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd/Cwd.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/DB_File.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/DB_File.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/autosplit.ix
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort/PPPort.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort/PPPort.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek/Peek.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek/Peek.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA/SHA.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA/SHA.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN/CN.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN/CN.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Encode.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Encode.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP/JP.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP/JP.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR/KR.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR/KR.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW/TW.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW/TW.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob/DosGlob.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob/DosGlob.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.so
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/FieldHash.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/FieldHash.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/Util.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/Util.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo/Langinfo.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo/Langinfo.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV/SysV.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV/SysV.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/Util.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/Util.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc/FastCalc.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc/FastCalc.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File/NDBM_File.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File/NDBM_File.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode/Opcode.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode/Opcode.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX/POSIX.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX/POSIX.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding/encoding.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding/encoding.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap/mmap.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap/mmap.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar/scalar.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar/scalar.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via/via.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via/via.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File/SDBM_File.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File/SDBM_File.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket/Socket.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket/Socket.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname/Hostname.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname/Hostname.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog/Syslog.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog/Syslog.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex/Soundex.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex/Soundex.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture/NamedCapture.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture/NamedCapture.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes/HiRes.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes/HiRes.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece/Piece.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate/Collate.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate/Collate.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase/arybase.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase/arybase.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes/attributes.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes/attributes.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro/mro.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro/mro.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re/re.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re/re.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/sdbm/extralibs.ld
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared/shared.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared/shared.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/threads.bs
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/threads.so
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/encoding.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/lib.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/mro.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/ops.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/re.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads.pm
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads/shared.pm
 lib/perl5/%%PERL_VER%%/open.pm
 lib/perl5/%%PERL_VER%%/overload.pm
 lib/perl5/%%PERL_VER%%/overload/numbers.pm
 lib/perl5/%%PERL_VER%%/overloading.pm
 lib/perl5/%%PERL_VER%%/parent.pm
+%%MAN3%%/AnyDBM_File.3.gz
+%%MAN3%%/App::Cpan.3.gz
+%%MAN3%%/App::Prove.3.gz
+%%MAN3%%/App::Prove::State.3.gz
+%%MAN3%%/App::Prove::State::Result.3.gz
+%%MAN3%%/App::Prove::State::Result::Test.3.gz
+%%MAN3%%/Archive::Extract.3.gz
+%%MAN3%%/Archive::Tar.3.gz
+%%MAN3%%/Archive::Tar::File.3.gz
+%%MAN3%%/Attribute::Handlers.3.gz
+%%MAN3%%/AutoLoader.3.gz
+%%MAN3%%/AutoSplit.3.gz
+%%MAN3%%/B.3.gz
+%%MAN3%%/B::Concise.3.gz
+%%MAN3%%/B::Debug.3.gz
+%%MAN3%%/B::Deparse.3.gz
+%%MAN3%%/B::Lint.3.gz
+%%MAN3%%/B::Lint::Debug.3.gz
+%%MAN3%%/B::Showlex.3.gz
+%%MAN3%%/B::Terse.3.gz
+%%MAN3%%/B::Xref.3.gz
+%%MAN3%%/Benchmark.3.gz
+%%MAN3%%/CGI.3.gz
+%%MAN3%%/CGI::Apache.3.gz
+%%MAN3%%/CGI::Carp.3.gz
+%%MAN3%%/CGI::Cookie.3.gz
+%%MAN3%%/CGI::Fast.3.gz
+%%MAN3%%/CGI::Pretty.3.gz
+%%MAN3%%/CGI::Push.3.gz
+%%MAN3%%/CGI::Switch.3.gz
+%%MAN3%%/CGI::Util.3.gz
+%%MAN3%%/CORE.3.gz
+%%MAN3%%/CPAN.3.gz
+%%MAN3%%/CPAN::API::HOWTO.3.gz
+%%MAN3%%/CPAN::Debug.3.gz
+%%MAN3%%/CPAN::Distroprefs.3.gz
+%%MAN3%%/CPAN::FirstTime.3.gz
+%%MAN3%%/CPAN::HandleConfig.3.gz
+%%MAN3%%/CPAN::Kwalify.3.gz
+%%MAN3%%/CPAN::Meta.3.gz
+%%MAN3%%/CPAN::Meta::Converter.3.gz
+%%MAN3%%/CPAN::Meta::Feature.3.gz
+%%MAN3%%/CPAN::Meta::History.3.gz
+%%MAN3%%/CPAN::Meta::Prereqs.3.gz
+%%MAN3%%/CPAN::Meta::Requirements.3.gz
+%%MAN3%%/CPAN::Meta::Spec.3.gz
+%%MAN3%%/CPAN::Meta::Validator.3.gz
+%%MAN3%%/CPAN::Meta::YAML.3.gz
+%%MAN3%%/CPAN::Mirrors.3.gz
+%%MAN3%%/CPAN::Nox.3.gz
+%%MAN3%%/CPAN::Queue.3.gz
+%%MAN3%%/CPAN::Tarzip.3.gz
+%%MAN3%%/CPAN::Version.3.gz
+%%MAN3%%/CPANPLUS.3.gz
+%%MAN3%%/CPANPLUS::Backend.3.gz
+%%MAN3%%/CPANPLUS::Backend::RV.3.gz
+%%MAN3%%/CPANPLUS::Config.3.gz
+%%MAN3%%/CPANPLUS::Config::HomeEnv.3.gz
+%%MAN3%%/CPANPLUS::Configure.3.gz
+%%MAN3%%/CPANPLUS::Dist.3.gz
+%%MAN3%%/CPANPLUS::Dist::Autobundle.3.gz
+%%MAN3%%/CPANPLUS::Dist::Base.3.gz
+%%MAN3%%/CPANPLUS::Dist::Build.3.gz
+%%MAN3%%/CPANPLUS::Dist::Build::Constants.3.gz
+%%MAN3%%/CPANPLUS::Dist::MM.3.gz
+%%MAN3%%/CPANPLUS::Dist::Sample.3.gz
+%%MAN3%%/CPANPLUS::Error.3.gz
+%%MAN3%%/CPANPLUS::FAQ.3.gz
+%%MAN3%%/CPANPLUS::Hacking.3.gz
+%%MAN3%%/CPANPLUS::Internals.3.gz
+%%MAN3%%/CPANPLUS::Internals::Extract.3.gz
+%%MAN3%%/CPANPLUS::Internals::Fetch.3.gz
+%%MAN3%%/CPANPLUS::Internals::Report.3.gz
+%%MAN3%%/CPANPLUS::Internals::Search.3.gz
+%%MAN3%%/CPANPLUS::Internals::Source.3.gz
+%%MAN3%%/CPANPLUS::Internals::Source::Memory.3.gz
+%%MAN3%%/CPANPLUS::Internals::Source::SQLite.3.gz
+%%MAN3%%/CPANPLUS::Internals::Utils.3.gz
+%%MAN3%%/CPANPLUS::Module.3.gz
+%%MAN3%%/CPANPLUS::Module::Author.3.gz
+%%MAN3%%/CPANPLUS::Module::Author::Fake.3.gz
+%%MAN3%%/CPANPLUS::Module::Checksums.3.gz
+%%MAN3%%/CPANPLUS::Module::Fake.3.gz
+%%MAN3%%/CPANPLUS::Selfupdate.3.gz
+%%MAN3%%/CPANPLUS::Shell.3.gz
+%%MAN3%%/CPANPLUS::Shell::Classic.3.gz
+%%MAN3%%/CPANPLUS::Shell::Default.3.gz
+%%MAN3%%/CPANPLUS::Shell::Default::Plugins::CustomSource.3.gz
+%%MAN3%%/CPANPLUS::Shell::Default::Plugins::HOWTO.3.gz
+%%MAN3%%/CPANPLUS::Shell::Default::Plugins::Remote.3.gz
+%%MAN3%%/CPANPLUS::Shell::Default::Plugins::Source.3.gz
+%%MAN3%%/Carp.3.gz
+%%MAN3%%/Class::Struct.3.gz
+%%MAN3%%/Compress::Raw::Bzip2.3.gz
+%%MAN3%%/Compress::Raw::Zlib.3.gz
+%%MAN3%%/Compress::Zlib.3.gz
+%%MAN3%%/Config.3.gz
+%%MAN3%%/Config::Extensions.3.gz
+%%MAN3%%/Config::Perl::V.3.gz
+%%MAN3%%/Cwd.3.gz
+%%MAN3%%/DB.3.gz
+%%MAN3%%/DBM_Filter.3.gz
+%%MAN3%%/DBM_Filter::compress.3.gz
+%%MAN3%%/DBM_Filter::encode.3.gz
+%%MAN3%%/DBM_Filter::int32.3.gz
+%%MAN3%%/DBM_Filter::null.3.gz
+%%MAN3%%/DBM_Filter::utf8.3.gz
+%%MAN3%%/DB_File.3.gz
+%%MAN3%%/Data::Dumper.3.gz
+%%MAN3%%/Devel::InnerPackage.3.gz
+%%MAN3%%/Devel::PPPort.3.gz
+%%MAN3%%/Devel::Peek.3.gz
+%%MAN3%%/Devel::SelfStubber.3.gz
+%%MAN3%%/Digest.3.gz
+%%MAN3%%/Digest::MD5.3.gz
+%%MAN3%%/Digest::SHA.3.gz
+%%MAN3%%/Digest::base.3.gz
+%%MAN3%%/Digest::file.3.gz
+%%MAN3%%/DirHandle.3.gz
+%%MAN3%%/Dumpvalue.3.gz
+%%MAN3%%/DynaLoader.3.gz
+%%MAN3%%/Encode.3.gz
+%%MAN3%%/Encode::Alias.3.gz
+%%MAN3%%/Encode::Byte.3.gz
+%%MAN3%%/Encode::CJKConstants.3.gz
+%%MAN3%%/Encode::CN.3.gz
+%%MAN3%%/Encode::CN::HZ.3.gz
+%%MAN3%%/Encode::Config.3.gz
+%%MAN3%%/Encode::EBCDIC.3.gz
+%%MAN3%%/Encode::Encoder.3.gz
+%%MAN3%%/Encode::Encoding.3.gz
+%%MAN3%%/Encode::GSM0338.3.gz
+%%MAN3%%/Encode::Guess.3.gz
+%%MAN3%%/Encode::JP.3.gz
+%%MAN3%%/Encode::JP::H2Z.3.gz
+%%MAN3%%/Encode::JP::JIS7.3.gz
+%%MAN3%%/Encode::KR.3.gz
+%%MAN3%%/Encode::KR::2022_KR.3.gz
+%%MAN3%%/Encode::MIME::Header.3.gz
+%%MAN3%%/Encode::MIME::Name.3.gz
+%%MAN3%%/Encode::PerlIO.3.gz
+%%MAN3%%/Encode::Supported.3.gz
+%%MAN3%%/Encode::Symbol.3.gz
+%%MAN3%%/Encode::TW.3.gz
+%%MAN3%%/Encode::Unicode.3.gz
+%%MAN3%%/Encode::Unicode::UTF7.3.gz
+%%MAN3%%/English.3.gz
+%%MAN3%%/Env.3.gz
+%%MAN3%%/Errno.3.gz
+%%MAN3%%/Exporter.3.gz
+%%MAN3%%/Exporter::Heavy.3.gz
+%%MAN3%%/ExtUtils::CBuilder.3.gz
+%%MAN3%%/ExtUtils::CBuilder::Platform::Windows.3.gz
+%%MAN3%%/ExtUtils::Command.3.gz
+%%MAN3%%/ExtUtils::Command::MM.3.gz
+%%MAN3%%/ExtUtils::Constant.3.gz
+%%MAN3%%/ExtUtils::Constant::Base.3.gz
+%%MAN3%%/ExtUtils::Constant::Utils.3.gz
+%%MAN3%%/ExtUtils::Constant::XS.3.gz
+%%MAN3%%/ExtUtils::Embed.3.gz
+%%MAN3%%/ExtUtils::Install.3.gz
+%%MAN3%%/ExtUtils::Installed.3.gz
+%%MAN3%%/ExtUtils::Liblist.3.gz
+%%MAN3%%/ExtUtils::MM.3.gz
+%%MAN3%%/ExtUtils::MM_AIX.3.gz
+%%MAN3%%/ExtUtils::MM_Any.3.gz
+%%MAN3%%/ExtUtils::MM_BeOS.3.gz
+%%MAN3%%/ExtUtils::MM_Cygwin.3.gz
+%%MAN3%%/ExtUtils::MM_DOS.3.gz
+%%MAN3%%/ExtUtils::MM_Darwin.3.gz
+%%MAN3%%/ExtUtils::MM_MacOS.3.gz
+%%MAN3%%/ExtUtils::MM_NW5.3.gz
+%%MAN3%%/ExtUtils::MM_OS2.3.gz
+%%MAN3%%/ExtUtils::MM_QNX.3.gz
+%%MAN3%%/ExtUtils::MM_UWIN.3.gz
+%%MAN3%%/ExtUtils::MM_Unix.3.gz
+%%MAN3%%/ExtUtils::MM_VMS.3.gz
+%%MAN3%%/ExtUtils::MM_VOS.3.gz
+%%MAN3%%/ExtUtils::MM_Win32.3.gz
+%%MAN3%%/ExtUtils::MM_Win95.3.gz
+%%MAN3%%/ExtUtils::MY.3.gz
+%%MAN3%%/ExtUtils::MakeMaker.3.gz
+%%MAN3%%/ExtUtils::MakeMaker::Config.3.gz
+%%MAN3%%/ExtUtils::MakeMaker::FAQ.3.gz
+%%MAN3%%/ExtUtils::MakeMaker::Tutorial.3.gz
+%%MAN3%%/ExtUtils::Manifest.3.gz
+%%MAN3%%/ExtUtils::Miniperl.3.gz
+%%MAN3%%/ExtUtils::Mkbootstrap.3.gz
+%%MAN3%%/ExtUtils::Mksymlists.3.gz
+%%MAN3%%/ExtUtils::Packlist.3.gz
+%%MAN3%%/ExtUtils::ParseXS.3.gz
+%%MAN3%%/ExtUtils::ParseXS::Constants.3.gz
+%%MAN3%%/ExtUtils::ParseXS::Utilities.3.gz
+%%MAN3%%/ExtUtils::Typemaps.3.gz
+%%MAN3%%/ExtUtils::Typemaps::Cmd.3.gz
+%%MAN3%%/ExtUtils::Typemaps::InputMap.3.gz
+%%MAN3%%/ExtUtils::Typemaps::OutputMap.3.gz
+%%MAN3%%/ExtUtils::Typemaps::Type.3.gz
+%%MAN3%%/ExtUtils::XSSymSet.3.gz
+%%MAN3%%/ExtUtils::testlib.3.gz
+%%MAN3%%/Fatal.3.gz
+%%MAN3%%/Fcntl.3.gz
+%%MAN3%%/File::Basename.3.gz
+%%MAN3%%/File::CheckTree.3.gz
+%%MAN3%%/File::Compare.3.gz
+%%MAN3%%/File::Copy.3.gz
+%%MAN3%%/File::DosGlob.3.gz
+%%MAN3%%/File::Fetch.3.gz
+%%MAN3%%/File::Find.3.gz
+%%MAN3%%/File::Glob.3.gz
+%%MAN3%%/File::GlobMapper.3.gz
+%%MAN3%%/File::Path.3.gz
+%%MAN3%%/File::Spec.3.gz
+%%MAN3%%/File::Spec::Cygwin.3.gz
+%%MAN3%%/File::Spec::Epoc.3.gz
+%%MAN3%%/File::Spec::Functions.3.gz
+%%MAN3%%/File::Spec::Mac.3.gz
+%%MAN3%%/File::Spec::OS2.3.gz
+%%MAN3%%/File::Spec::Unix.3.gz
+%%MAN3%%/File::Spec::VMS.3.gz
+%%MAN3%%/File::Spec::Win32.3.gz
+%%MAN3%%/File::Temp.3.gz
+%%MAN3%%/File::stat.3.gz
+%%MAN3%%/FileCache.3.gz
+%%MAN3%%/FileHandle.3.gz
+%%MAN3%%/Filter::Simple.3.gz
+%%MAN3%%/Filter::Util::Call.3.gz
+%%MAN3%%/FindBin.3.gz
+%%GDBM%%%%MAN3%%/GDBM_File.3.gz
+%%MAN3%%/Getopt::Long.3.gz
+%%MAN3%%/Getopt::Std.3.gz
+%%MAN3%%/HTTP::Tiny.3.gz
+%%MAN3%%/Hash::Util.3.gz
+%%MAN3%%/Hash::Util::FieldHash.3.gz
+%%MAN3%%/I18N::Collate.3.gz
+%%MAN3%%/I18N::LangTags.3.gz
+%%MAN3%%/I18N::LangTags::Detect.3.gz
+%%MAN3%%/I18N::LangTags::List.3.gz
+%%MAN3%%/I18N::Langinfo.3.gz
+%%MAN3%%/IO.3.gz
+%%MAN3%%/IO::Compress::Base.3.gz
+%%MAN3%%/IO::Compress::Bzip2.3.gz
+%%MAN3%%/IO::Compress::Deflate.3.gz
+%%MAN3%%/IO::Compress::FAQ.3.gz
+%%MAN3%%/IO::Compress::Gzip.3.gz
+%%MAN3%%/IO::Compress::RawDeflate.3.gz
+%%MAN3%%/IO::Compress::Zip.3.gz
+%%MAN3%%/IO::Dir.3.gz
+%%MAN3%%/IO::File.3.gz
+%%MAN3%%/IO::Handle.3.gz
+%%MAN3%%/IO::Pipe.3.gz
+%%MAN3%%/IO::Poll.3.gz
+%%MAN3%%/IO::Seekable.3.gz
+%%MAN3%%/IO::Select.3.gz
+%%MAN3%%/IO::Socket.3.gz
+%%MAN3%%/IO::Socket::INET.3.gz
+%%MAN3%%/IO::Socket::UNIX.3.gz
+%%MAN3%%/IO::Uncompress::AnyInflate.3.gz
+%%MAN3%%/IO::Uncompress::AnyUncompress.3.gz
+%%MAN3%%/IO::Uncompress::Base.3.gz
+%%MAN3%%/IO::Uncompress::Bunzip2.3.gz
+%%MAN3%%/IO::Uncompress::Gunzip.3.gz
+%%MAN3%%/IO::Uncompress::Inflate.3.gz
+%%MAN3%%/IO::Uncompress::RawInflate.3.gz
+%%MAN3%%/IO::Uncompress::Unzip.3.gz
+%%MAN3%%/IO::Zlib.3.gz
+%%MAN3%%/IPC::Cmd.3.gz
+%%MAN3%%/IPC::Msg.3.gz
+%%MAN3%%/IPC::Open2.3.gz
+%%MAN3%%/IPC::Open3.3.gz
+%%MAN3%%/IPC::Semaphore.3.gz
+%%MAN3%%/IPC::SharedMem.3.gz
+%%MAN3%%/IPC::SysV.3.gz
+%%MAN3%%/JSON::PP.3.gz
+%%MAN3%%/JSON::PP::Boolean.3.gz
+%%MAN3%%/List::Util.3.gz
+%%MAN3%%/List::Util::XS.3.gz
+%%MAN3%%/Locale::Codes.3.gz
+%%MAN3%%/Locale::Codes::API.3.gz
+%%MAN3%%/Locale::Codes::Changes.3.gz
+%%MAN3%%/Locale::Codes::Constants.3.gz
+%%MAN3%%/Locale::Codes::Country.3.gz
+%%MAN3%%/Locale::Codes::Country_Codes.3.gz
+%%MAN3%%/Locale::Codes::Country_Retired.3.gz
+%%MAN3%%/Locale::Codes::Currency.3.gz
+%%MAN3%%/Locale::Codes::Currency_Codes.3.gz
+%%MAN3%%/Locale::Codes::Currency_Retired.3.gz
+%%MAN3%%/Locale::Codes::LangExt.3.gz
+%%MAN3%%/Locale::Codes::LangExt_Codes.3.gz
+%%MAN3%%/Locale::Codes::LangExt_Retired.3.gz
+%%MAN3%%/Locale::Codes::LangFam.3.gz
+%%MAN3%%/Locale::Codes::LangFam_Codes.3.gz
+%%MAN3%%/Locale::Codes::LangFam_Retired.3.gz
+%%MAN3%%/Locale::Codes::LangVar.3.gz
+%%MAN3%%/Locale::Codes::LangVar_Codes.3.gz
+%%MAN3%%/Locale::Codes::LangVar_Retired.3.gz
+%%MAN3%%/Locale::Codes::Language.3.gz
+%%MAN3%%/Locale::Codes::Language_Codes.3.gz
+%%MAN3%%/Locale::Codes::Language_Retired.3.gz
+%%MAN3%%/Locale::Codes::Script.3.gz
+%%MAN3%%/Locale::Codes::Script_Codes.3.gz
+%%MAN3%%/Locale::Codes::Script_Retired.3.gz
+%%MAN3%%/Locale::Country.3.gz
+%%MAN3%%/Locale::Currency.3.gz
+%%MAN3%%/Locale::Language.3.gz
+%%MAN3%%/Locale::Maketext.3.gz
+%%MAN3%%/Locale::Maketext::Cookbook.3.gz
+%%MAN3%%/Locale::Maketext::Guts.3.gz
+%%MAN3%%/Locale::Maketext::GutsLoader.3.gz
+%%MAN3%%/Locale::Maketext::Simple.3.gz
+%%MAN3%%/Locale::Maketext::TPJ13.3.gz
+%%MAN3%%/Locale::Script.3.gz
+%%MAN3%%/Log::Message.3.gz
+%%MAN3%%/Log::Message::Config.3.gz
+%%MAN3%%/Log::Message::Handlers.3.gz
+%%MAN3%%/Log::Message::Item.3.gz
+%%MAN3%%/Log::Message::Simple.3.gz
+%%MAN3%%/MIME::Base64.3.gz
+%%MAN3%%/MIME::QuotedPrint.3.gz
+%%MAN3%%/Math::BigFloat.3.gz
+%%MAN3%%/Math::BigInt.3.gz
+%%MAN3%%/Math::BigInt::Calc.3.gz
+%%MAN3%%/Math::BigInt::CalcEmu.3.gz
+%%MAN3%%/Math::BigInt::FastCalc.3.gz
+%%MAN3%%/Math::BigRat.3.gz
+%%MAN3%%/Math::Complex.3.gz
+%%MAN3%%/Math::Trig.3.gz
+%%MAN3%%/Memoize.3.gz
+%%MAN3%%/Memoize::AnyDBM_File.3.gz
+%%MAN3%%/Memoize::Expire.3.gz
+%%MAN3%%/Memoize::ExpireFile.3.gz
+%%MAN3%%/Memoize::ExpireTest.3.gz
+%%MAN3%%/Memoize::NDBM_File.3.gz
+%%MAN3%%/Memoize::SDBM_File.3.gz
+%%MAN3%%/Memoize::Storable.3.gz
+%%MAN3%%/Module::Build.3.gz
+%%MAN3%%/Module::Build::API.3.gz
+%%MAN3%%/Module::Build::Authoring.3.gz
+%%MAN3%%/Module::Build::Base.3.gz
+%%MAN3%%/Module::Build::Bundling.3.gz
+%%MAN3%%/Module::Build::Compat.3.gz
+%%MAN3%%/Module::Build::ConfigData.3.gz
+%%MAN3%%/Module::Build::Cookbook.3.gz
+%%MAN3%%/Module::Build::ModuleInfo.3.gz
+%%MAN3%%/Module::Build::Notes.3.gz
+%%MAN3%%/Module::Build::PPMMaker.3.gz
+%%MAN3%%/Module::Build::Platform::Amiga.3.gz
+%%MAN3%%/Module::Build::Platform::Default.3.gz
+%%MAN3%%/Module::Build::Platform::EBCDIC.3.gz
+%%MAN3%%/Module::Build::Platform::MPEiX.3.gz
+%%MAN3%%/Module::Build::Platform::MacOS.3.gz
+%%MAN3%%/Module::Build::Platform::RiscOS.3.gz
+%%MAN3%%/Module::Build::Platform::Unix.3.gz
+%%MAN3%%/Module::Build::Platform::VMS.3.gz
+%%MAN3%%/Module::Build::Platform::VOS.3.gz
+%%MAN3%%/Module::Build::Platform::Windows.3.gz
+%%MAN3%%/Module::Build::Platform::aix.3.gz
+%%MAN3%%/Module::Build::Platform::cygwin.3.gz
+%%MAN3%%/Module::Build::Platform::darwin.3.gz
+%%MAN3%%/Module::Build::Platform::os2.3.gz
+%%MAN3%%/Module::Build::Version.3.gz
+%%MAN3%%/Module::Build::YAML.3.gz
+%%MAN3%%/Module::CoreList.3.gz
+%%MAN3%%/Module::CoreList::Utils.3.gz
+%%MAN3%%/Module::Load.3.gz
+%%MAN3%%/Module::Load::Conditional.3.gz
+%%MAN3%%/Module::Loaded.3.gz
+%%MAN3%%/Module::Metadata.3.gz
+%%MAN3%%/Module::Pluggable.3.gz
+%%MAN3%%/Module::Pluggable::Object.3.gz
+%%MAN3%%/NDBM_File.3.gz
+%%MAN3%%/NEXT.3.gz
+%%MAN3%%/Net::Cmd.3.gz
+%%MAN3%%/Net::Config.3.gz
+%%MAN3%%/Net::Domain.3.gz
+%%MAN3%%/Net::FTP.3.gz
+%%MAN3%%/Net::NNTP.3.gz
+%%MAN3%%/Net::Netrc.3.gz
+%%MAN3%%/Net::POP3.3.gz
+%%MAN3%%/Net::Ping.3.gz
+%%MAN3%%/Net::SMTP.3.gz
+%%MAN3%%/Net::Time.3.gz
+%%MAN3%%/Net::hostent.3.gz
+%%MAN3%%/Net::libnetFAQ.3.gz
+%%MAN3%%/Net::netent.3.gz
+%%MAN3%%/Net::protoent.3.gz
+%%MAN3%%/Net::servent.3.gz
+%%MAN3%%/O.3.gz
+%%MAN3%%/Object::Accessor.3.gz
+%%MAN3%%/Opcode.3.gz
+%%MAN3%%/POSIX.3.gz
+%%MAN3%%/Package::Constants.3.gz
+%%MAN3%%/Params::Check.3.gz
+%%MAN3%%/Parse::CPAN::Meta.3.gz
+%%MAN3%%/Perl::OSType.3.gz
+%%MAN3%%/PerlIO.3.gz
+%%MAN3%%/PerlIO::encoding.3.gz
+%%MAN3%%/PerlIO::mmap.3.gz
+%%MAN3%%/PerlIO::scalar.3.gz
+%%MAN3%%/PerlIO::via.3.gz
+%%MAN3%%/PerlIO::via::QuotedPrint.3.gz
+%%MAN3%%/Pod::Checker.3.gz
+%%MAN3%%/Pod::Escapes.3.gz
+%%MAN3%%/Pod::Find.3.gz
+%%MAN3%%/Pod::Html.3.gz
+%%MAN3%%/Pod::InputObjects.3.gz
+%%MAN3%%/Pod::LaTeX.3.gz
+%%MAN3%%/Pod::Man.3.gz
+%%MAN3%%/Pod::ParseLink.3.gz
+%%MAN3%%/Pod::ParseUtils.3.gz
+%%MAN3%%/Pod::Parser.3.gz
+%%MAN3%%/Pod::Perldoc.3.gz
+%%MAN3%%/Pod::Perldoc::BaseTo.3.gz
+%%MAN3%%/Pod::Perldoc::GetOptsOO.3.gz
+%%MAN3%%/Pod::Perldoc::ToANSI.3.gz
+%%MAN3%%/Pod::Perldoc::ToChecker.3.gz
+%%MAN3%%/Pod::Perldoc::ToMan.3.gz
+%%MAN3%%/Pod::Perldoc::ToNroff.3.gz
+%%MAN3%%/Pod::Perldoc::ToPod.3.gz
+%%MAN3%%/Pod::Perldoc::ToRtf.3.gz
+%%MAN3%%/Pod::Perldoc::ToTerm.3.gz
+%%MAN3%%/Pod::Perldoc::ToText.3.gz
+%%MAN3%%/Pod::Perldoc::ToTk.3.gz
+%%MAN3%%/Pod::Perldoc::ToXml.3.gz
+%%MAN3%%/Pod::PlainText.3.gz
+%%MAN3%%/Pod::Select.3.gz
+%%MAN3%%/Pod::Simple.3.gz
+%%MAN3%%/Pod::Simple::Checker.3.gz
+%%MAN3%%/Pod::Simple::Debug.3.gz
+%%MAN3%%/Pod::Simple::DumpAsText.3.gz
+%%MAN3%%/Pod::Simple::DumpAsXML.3.gz
+%%MAN3%%/Pod::Simple::HTML.3.gz
+%%MAN3%%/Pod::Simple::HTMLBatch.3.gz
+%%MAN3%%/Pod::Simple::LinkSection.3.gz
+%%MAN3%%/Pod::Simple::Methody.3.gz
+%%MAN3%%/Pod::Simple::PullParser.3.gz
+%%MAN3%%/Pod::Simple::PullParserEndToken.3.gz
+%%MAN3%%/Pod::Simple::PullParserStartToken.3.gz
+%%MAN3%%/Pod::Simple::PullParserTextToken.3.gz
+%%MAN3%%/Pod::Simple::PullParserToken.3.gz
+%%MAN3%%/Pod::Simple::RTF.3.gz
+%%MAN3%%/Pod::Simple::Search.3.gz
+%%MAN3%%/Pod::Simple::SimpleTree.3.gz
+%%MAN3%%/Pod::Simple::Subclassing.3.gz
+%%MAN3%%/Pod::Simple::Text.3.gz
+%%MAN3%%/Pod::Simple::TextContent.3.gz
+%%MAN3%%/Pod::Simple::XHTML.3.gz
+%%MAN3%%/Pod::Simple::XMLOutStream.3.gz
+%%MAN3%%/Pod::Text.3.gz
+%%MAN3%%/Pod::Text::Color.3.gz
+%%MAN3%%/Pod::Text::Overstrike.3.gz
+%%MAN3%%/Pod::Text::Termcap.3.gz
+%%MAN3%%/Pod::Usage.3.gz
+%%MAN3%%/SDBM_File.3.gz
+%%MAN3%%/Safe.3.gz
+%%MAN3%%/Scalar::Util.3.gz
+%%MAN3%%/Search::Dict.3.gz
+%%MAN3%%/SelectSaver.3.gz
+%%MAN3%%/SelfLoader.3.gz
+%%MAN3%%/Socket.3.gz
+%%MAN3%%/Storable.3.gz
+%%MAN3%%/Symbol.3.gz
+%%MAN3%%/Sys::Hostname.3.gz
+%%MAN3%%/Sys::Syslog.3.gz
+%%MAN3%%/TAP::Base.3.gz
+%%MAN3%%/TAP::Formatter::Base.3.gz
+%%MAN3%%/TAP::Formatter::Color.3.gz
+%%MAN3%%/TAP::Formatter::Console.3.gz
+%%MAN3%%/TAP::Formatter::Console::ParallelSession.3.gz
+%%MAN3%%/TAP::Formatter::Console::Session.3.gz
+%%MAN3%%/TAP::Formatter::File.3.gz
+%%MAN3%%/TAP::Formatter::File::Session.3.gz
+%%MAN3%%/TAP::Formatter::Session.3.gz
+%%MAN3%%/TAP::Harness.3.gz
+%%MAN3%%/TAP::Harness::Beyond.3.gz
+%%MAN3%%/TAP::Object.3.gz
+%%MAN3%%/TAP::Parser.3.gz
+%%MAN3%%/TAP::Parser::Aggregator.3.gz
+%%MAN3%%/TAP::Parser::Grammar.3.gz
+%%MAN3%%/TAP::Parser::Iterator.3.gz
+%%MAN3%%/TAP::Parser::Iterator::Array.3.gz
+%%MAN3%%/TAP::Parser::Iterator::Process.3.gz
+%%MAN3%%/TAP::Parser::Iterator::Stream.3.gz
+%%MAN3%%/TAP::Parser::IteratorFactory.3.gz
+%%MAN3%%/TAP::Parser::Multiplexer.3.gz
+%%MAN3%%/TAP::Parser::Result.3.gz
+%%MAN3%%/TAP::Parser::Result::Bailout.3.gz
+%%MAN3%%/TAP::Parser::Result::Comment.3.gz
+%%MAN3%%/TAP::Parser::Result::Plan.3.gz
+%%MAN3%%/TAP::Parser::Result::Pragma.3.gz
+%%MAN3%%/TAP::Parser::Result::Test.3.gz
+%%MAN3%%/TAP::Parser::Result::Unknown.3.gz
+%%MAN3%%/TAP::Parser::Result::Version.3.gz
+%%MAN3%%/TAP::Parser::Result::YAML.3.gz
+%%MAN3%%/TAP::Parser::ResultFactory.3.gz
+%%MAN3%%/TAP::Parser::Scheduler.3.gz
+%%MAN3%%/TAP::Parser::Scheduler::Job.3.gz
+%%MAN3%%/TAP::Parser::Scheduler::Spinner.3.gz
+%%MAN3%%/TAP::Parser::Source.3.gz
+%%MAN3%%/TAP::Parser::SourceHandler.3.gz
+%%MAN3%%/TAP::Parser::SourceHandler::Executable.3.gz
+%%MAN3%%/TAP::Parser::SourceHandler::File.3.gz
+%%MAN3%%/TAP::Parser::SourceHandler::Handle.3.gz
+%%MAN3%%/TAP::Parser::SourceHandler::Perl.3.gz
+%%MAN3%%/TAP::Parser::SourceHandler::RawTAP.3.gz
+%%MAN3%%/TAP::Parser::Utils.3.gz
+%%MAN3%%/TAP::Parser::YAMLish::Reader.3.gz
+%%MAN3%%/TAP::Parser::YAMLish::Writer.3.gz
+%%MAN3%%/Term::ANSIColor.3.gz
+%%MAN3%%/Term::Cap.3.gz
+%%MAN3%%/Term::Complete.3.gz
+%%MAN3%%/Term::ReadLine.3.gz
+%%MAN3%%/Term::UI.3.gz
+%%MAN3%%/Term::UI::History.3.gz
+%%MAN3%%/Test.3.gz
+%%MAN3%%/Test::Builder.3.gz
+%%MAN3%%/Test::Builder::Module.3.gz
+%%MAN3%%/Test::Builder::Tester.3.gz
+%%MAN3%%/Test::Builder::Tester::Color.3.gz
+%%MAN3%%/Test::Harness.3.gz
+%%MAN3%%/Test::More.3.gz
+%%MAN3%%/Test::Simple.3.gz
+%%MAN3%%/Test::Tutorial.3.gz
+%%MAN3%%/Text::Abbrev.3.gz
+%%MAN3%%/Text::Balanced.3.gz
+%%MAN3%%/Text::ParseWords.3.gz
+%%MAN3%%/Text::Soundex.3.gz
+%%MAN3%%/Text::Tabs.3.gz
+%%MAN3%%/Text::Wrap.3.gz
+%%MAN3%%/Thread.3.gz
+%%MAN3%%/Thread::Queue.3.gz
+%%MAN3%%/Thread::Semaphore.3.gz
+%%MAN3%%/Tie::Array.3.gz
+%%MAN3%%/Tie::File.3.gz
+%%MAN3%%/Tie::Handle.3.gz
+%%MAN3%%/Tie::Hash.3.gz
+%%MAN3%%/Tie::Hash::NamedCapture.3.gz
+%%MAN3%%/Tie::Memoize.3.gz
+%%MAN3%%/Tie::RefHash.3.gz
+%%MAN3%%/Tie::Scalar.3.gz
+%%MAN3%%/Tie::StdHandle.3.gz
+%%MAN3%%/Tie::SubstrHash.3.gz
+%%MAN3%%/Time::HiRes.3.gz
+%%MAN3%%/Time::Local.3.gz
+%%MAN3%%/Time::Piece.3.gz
+%%MAN3%%/Time::Seconds.3.gz
+%%MAN3%%/Time::gmtime.3.gz
+%%MAN3%%/Time::localtime.3.gz
+%%MAN3%%/Time::tm.3.gz
+%%MAN3%%/UNIVERSAL.3.gz
+%%MAN3%%/Unicode::Collate.3.gz
+%%MAN3%%/Unicode::Collate::CJK::Big5.3.gz
+%%MAN3%%/Unicode::Collate::CJK::GB2312.3.gz
+%%MAN3%%/Unicode::Collate::CJK::JISX0208.3.gz
+%%MAN3%%/Unicode::Collate::CJK::Korean.3.gz
+%%MAN3%%/Unicode::Collate::CJK::Pinyin.3.gz
+%%MAN3%%/Unicode::Collate::CJK::Stroke.3.gz
+%%MAN3%%/Unicode::Collate::CJK::Zhuyin.3.gz
+%%MAN3%%/Unicode::Collate::Locale.3.gz
+%%MAN3%%/Unicode::Normalize.3.gz
+%%MAN3%%/Unicode::UCD.3.gz
+%%MAN3%%/User::grent.3.gz
+%%MAN3%%/User::pwent.3.gz
+%%MAN3%%/XSLoader.3.gz
+%%MAN3%%/arybase.3.gz
+%%MAN3%%/attributes.3.gz
+%%MAN3%%/autodie.3.gz
+%%MAN3%%/autodie::exception.3.gz
+%%MAN3%%/autodie::exception::system.3.gz
+%%MAN3%%/autodie::hints.3.gz
+%%MAN3%%/autouse.3.gz
+%%MAN3%%/base.3.gz
+%%MAN3%%/bigint.3.gz
+%%MAN3%%/bignum.3.gz
+%%MAN3%%/bigrat.3.gz
+%%MAN3%%/blib.3.gz
+%%MAN3%%/bytes.3.gz
+%%MAN3%%/charnames.3.gz
+%%MAN3%%/constant.3.gz
+%%MAN3%%/deprecate.3.gz
+%%MAN3%%/diagnostics.3.gz
+%%MAN3%%/encoding.3.gz
+%%MAN3%%/encoding::warnings.3.gz
+%%MAN3%%/feature.3.gz
+%%MAN3%%/fields.3.gz
+%%MAN3%%/filetest.3.gz
+%%MAN3%%/if.3.gz
+%%MAN3%%/inc::latest.3.gz
+%%MAN3%%/integer.3.gz
+%%MAN3%%/less.3.gz
+%%MAN3%%/lib.3.gz
+%%MAN3%%/locale.3.gz
+%%MAN3%%/mro.3.gz
+%%MAN3%%/open.3.gz
+%%MAN3%%/ops.3.gz
+%%MAN3%%/overload.3.gz
+%%MAN3%%/overloading.3.gz
+%%MAN3%%/parent.3.gz
+%%MAN3%%/re.3.gz
+%%MAN3%%/sigtrap.3.gz
+%%MAN3%%/sort.3.gz
+%%MAN3%%/strict.3.gz
+%%MAN3%%/subs.3.gz
+%%MAN3%%/threads.3.gz
+%%MAN3%%/threads::shared.3.gz
+%%MAN3%%/utf8.3.gz
+%%MAN3%%/vars.3.gz
+%%MAN3%%/version.3.gz
+%%MAN3%%/version::Internals.3.gz
+%%MAN3%%/vmsish.3.gz
+%%MAN3%%/warnings.3.gz
+%%MAN3%%/warnings::register.3.gz
 lib/perl5/%%PERL_VER%%/perl5db.pl
 lib/perl5/%%PERL_VER%%/perlfaq.pm
 lib/perl5/%%PERL_VER%%/pod/a2p.pod
@@ -2108,9 +2723,6 @@ lib/perl5/%%PERL_VER%%/version/Internals.pod
 lib/perl5/%%PERL_VER%%/vmsish.pm
 lib/perl5/%%PERL_VER%%/warnings.pm
 lib/perl5/%%PERL_VER%%/warnings/register.pm
-%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
-%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
-%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/GDBM_File.pm
 man/man1/a2p.1.gz
 man/man1/c2ph.1.gz
 man/man1/config_data.1.gz
@@ -2322,970 +2934,358 @@ man/man1/shasum.1.gz
 man/man1/splain.1.gz
 man/man1/xsubpp.1.gz
 man/man1/zipdetails.1.gz
-%%MAN3%%/AnyDBM_File.3.gz
-%%MAN3%%/App::Cpan.3.gz
-%%MAN3%%/App::Prove.3.gz
-%%MAN3%%/App::Prove::State.3.gz
-%%MAN3%%/App::Prove::State::Result.3.gz
-%%MAN3%%/App::Prove::State::Result::Test.3.gz
-%%MAN3%%/Archive::Extract.3.gz
-%%MAN3%%/Archive::Tar.3.gz
-%%MAN3%%/Archive::Tar::File.3.gz
-%%MAN3%%/Attribute::Handlers.3.gz
-%%MAN3%%/AutoLoader.3.gz
-%%MAN3%%/AutoSplit.3.gz
-%%MAN3%%/B.3.gz
-%%MAN3%%/B::Concise.3.gz
-%%MAN3%%/B::Debug.3.gz
-%%MAN3%%/B::Deparse.3.gz
-%%MAN3%%/B::Lint.3.gz
-%%MAN3%%/B::Lint::Debug.3.gz
-%%MAN3%%/B::Showlex.3.gz
-%%MAN3%%/B::Terse.3.gz
-%%MAN3%%/B::Xref.3.gz
-%%MAN3%%/Benchmark.3.gz
-%%MAN3%%/CGI.3.gz
-%%MAN3%%/CGI::Apache.3.gz
-%%MAN3%%/CGI::Carp.3.gz
-%%MAN3%%/CGI::Cookie.3.gz
-%%MAN3%%/CGI::Fast.3.gz
-%%MAN3%%/CGI::Pretty.3.gz
-%%MAN3%%/CGI::Push.3.gz
-%%MAN3%%/CGI::Switch.3.gz
-%%MAN3%%/CGI::Util.3.gz
-%%MAN3%%/CORE.3.gz
-%%MAN3%%/CPAN.3.gz
-%%MAN3%%/CPAN::API::HOWTO.3.gz
-%%MAN3%%/CPAN::Debug.3.gz
-%%MAN3%%/CPAN::Distroprefs.3.gz
-%%MAN3%%/CPAN::FirstTime.3.gz
-%%MAN3%%/CPAN::HandleConfig.3.gz
-%%MAN3%%/CPAN::Kwalify.3.gz
-%%MAN3%%/CPAN::Meta.3.gz
-%%MAN3%%/CPAN::Meta::Converter.3.gz
-%%MAN3%%/CPAN::Meta::Feature.3.gz
-%%MAN3%%/CPAN::Meta::History.3.gz
-%%MAN3%%/CPAN::Meta::Prereqs.3.gz
-%%MAN3%%/CPAN::Meta::Requirements.3.gz
-%%MAN3%%/CPAN::Meta::Spec.3.gz
-%%MAN3%%/CPAN::Meta::Validator.3.gz
-%%MAN3%%/CPAN::Meta::YAML.3.gz
-%%MAN3%%/CPAN::Mirrors.3.gz
-%%MAN3%%/CPAN::Nox.3.gz
-%%MAN3%%/CPAN::Queue.3.gz
-%%MAN3%%/CPAN::Tarzip.3.gz
-%%MAN3%%/CPAN::Version.3.gz
-%%MAN3%%/CPANPLUS.3.gz
-%%MAN3%%/CPANPLUS::Backend.3.gz
-%%MAN3%%/CPANPLUS::Backend::RV.3.gz
-%%MAN3%%/CPANPLUS::Config.3.gz
-%%MAN3%%/CPANPLUS::Config::HomeEnv.3.gz
-%%MAN3%%/CPANPLUS::Configure.3.gz
-%%MAN3%%/CPANPLUS::Dist.3.gz
-%%MAN3%%/CPANPLUS::Dist::Autobundle.3.gz
-%%MAN3%%/CPANPLUS::Dist::Base.3.gz
-%%MAN3%%/CPANPLUS::Dist::Build.3.gz
-%%MAN3%%/CPANPLUS::Dist::Build::Constants.3.gz
-%%MAN3%%/CPANPLUS::Dist::MM.3.gz
-%%MAN3%%/CPANPLUS::Dist::Sample.3.gz
-%%MAN3%%/CPANPLUS::Error.3.gz
-%%MAN3%%/CPANPLUS::FAQ.3.gz
-%%MAN3%%/CPANPLUS::Hacking.3.gz
-%%MAN3%%/CPANPLUS::Internals.3.gz
-%%MAN3%%/CPANPLUS::Internals::Extract.3.gz
-%%MAN3%%/CPANPLUS::Internals::Fetch.3.gz
-%%MAN3%%/CPANPLUS::Internals::Report.3.gz
-%%MAN3%%/CPANPLUS::Internals::Search.3.gz
-%%MAN3%%/CPANPLUS::Internals::Source.3.gz
-%%MAN3%%/CPANPLUS::Internals::Source::Memory.3.gz
-%%MAN3%%/CPANPLUS::Internals::Source::SQLite.3.gz
-%%MAN3%%/CPANPLUS::Internals::Utils.3.gz
-%%MAN3%%/CPANPLUS::Module.3.gz
-%%MAN3%%/CPANPLUS::Module::Author.3.gz
-%%MAN3%%/CPANPLUS::Module::Author::Fake.3.gz
-%%MAN3%%/CPANPLUS::Module::Checksums.3.gz
-%%MAN3%%/CPANPLUS::Module::Fake.3.gz
-%%MAN3%%/CPANPLUS::Selfupdate.3.gz
-%%MAN3%%/CPANPLUS::Shell.3.gz
-%%MAN3%%/CPANPLUS::Shell::Classic.3.gz
-%%MAN3%%/CPANPLUS::Shell::Default.3.gz
-%%MAN3%%/CPANPLUS::Shell::Default::Plugins::CustomSource.3.gz
-%%MAN3%%/CPANPLUS::Shell::Default::Plugins::HOWTO.3.gz
-%%MAN3%%/CPANPLUS::Shell::Default::Plugins::Remote.3.gz
-%%MAN3%%/CPANPLUS::Shell::Default::Plugins::Source.3.gz
-%%MAN3%%/Carp.3.gz
-%%MAN3%%/Class::Struct.3.gz
-%%MAN3%%/Compress::Raw::Bzip2.3.gz
-%%MAN3%%/Compress::Raw::Zlib.3.gz
-%%MAN3%%/Compress::Zlib.3.gz
-%%MAN3%%/Config.3.gz
-%%MAN3%%/Config::Extensions.3.gz
-%%MAN3%%/Config::Perl::V.3.gz
-%%MAN3%%/Cwd.3.gz
-%%MAN3%%/DB.3.gz
-%%MAN3%%/DBM_Filter.3.gz
-%%MAN3%%/DBM_Filter::compress.3.gz
-%%MAN3%%/DBM_Filter::encode.3.gz
-%%MAN3%%/DBM_Filter::int32.3.gz
-%%MAN3%%/DBM_Filter::null.3.gz
-%%MAN3%%/DBM_Filter::utf8.3.gz
-%%MAN3%%/DB_File.3.gz
-%%MAN3%%/Data::Dumper.3.gz
-%%MAN3%%/Devel::InnerPackage.3.gz
-%%MAN3%%/Devel::PPPort.3.gz
-%%MAN3%%/Devel::Peek.3.gz
-%%MAN3%%/Devel::SelfStubber.3.gz
-%%MAN3%%/Digest.3.gz
-%%MAN3%%/Digest::MD5.3.gz
-%%MAN3%%/Digest::SHA.3.gz
-%%MAN3%%/Digest::base.3.gz
-%%MAN3%%/Digest::file.3.gz
-%%MAN3%%/DirHandle.3.gz
-%%MAN3%%/Dumpvalue.3.gz
-%%MAN3%%/DynaLoader.3.gz
-%%MAN3%%/Encode.3.gz
-%%MAN3%%/Encode::Alias.3.gz
-%%MAN3%%/Encode::Byte.3.gz
-%%MAN3%%/Encode::CJKConstants.3.gz
-%%MAN3%%/Encode::CN.3.gz
-%%MAN3%%/Encode::CN::HZ.3.gz
-%%MAN3%%/Encode::Config.3.gz
-%%MAN3%%/Encode::EBCDIC.3.gz
-%%MAN3%%/Encode::Encoder.3.gz
-%%MAN3%%/Encode::Encoding.3.gz
-%%MAN3%%/Encode::GSM0338.3.gz
-%%MAN3%%/Encode::Guess.3.gz
-%%MAN3%%/Encode::JP.3.gz
-%%MAN3%%/Encode::JP::H2Z.3.gz
-%%MAN3%%/Encode::JP::JIS7.3.gz
-%%MAN3%%/Encode::KR.3.gz
-%%MAN3%%/Encode::KR::2022_KR.3.gz
-%%MAN3%%/Encode::MIME::Header.3.gz
-%%MAN3%%/Encode::MIME::Name.3.gz
-%%MAN3%%/Encode::PerlIO.3.gz
-%%MAN3%%/Encode::Supported.3.gz
-%%MAN3%%/Encode::Symbol.3.gz
-%%MAN3%%/Encode::TW.3.gz
-%%MAN3%%/Encode::Unicode.3.gz
-%%MAN3%%/Encode::Unicode::UTF7.3.gz
-%%MAN3%%/English.3.gz
-%%MAN3%%/Env.3.gz
-%%MAN3%%/Errno.3.gz
-%%MAN3%%/Exporter.3.gz
-%%MAN3%%/Exporter::Heavy.3.gz
-%%MAN3%%/ExtUtils::CBuilder.3.gz
-%%MAN3%%/ExtUtils::CBuilder::Platform::Windows.3.gz
-%%MAN3%%/ExtUtils::Command.3.gz
-%%MAN3%%/ExtUtils::Command::MM.3.gz
-%%MAN3%%/ExtUtils::Constant.3.gz
-%%MAN3%%/ExtUtils::Constant::Base.3.gz
-%%MAN3%%/ExtUtils::Constant::Utils.3.gz
-%%MAN3%%/ExtUtils::Constant::XS.3.gz
-%%MAN3%%/ExtUtils::Embed.3.gz
-%%MAN3%%/ExtUtils::Install.3.gz
-%%MAN3%%/ExtUtils::Installed.3.gz
-%%MAN3%%/ExtUtils::Liblist.3.gz
-%%MAN3%%/ExtUtils::MM.3.gz
-%%MAN3%%/ExtUtils::MM_AIX.3.gz
-%%MAN3%%/ExtUtils::MM_Any.3.gz
-%%MAN3%%/ExtUtils::MM_BeOS.3.gz
-%%MAN3%%/ExtUtils::MM_Cygwin.3.gz
-%%MAN3%%/ExtUtils::MM_DOS.3.gz
-%%MAN3%%/ExtUtils::MM_Darwin.3.gz
-%%MAN3%%/ExtUtils::MM_MacOS.3.gz
-%%MAN3%%/ExtUtils::MM_NW5.3.gz
-%%MAN3%%/ExtUtils::MM_OS2.3.gz
-%%MAN3%%/ExtUtils::MM_QNX.3.gz
-%%MAN3%%/ExtUtils::MM_UWIN.3.gz
-%%MAN3%%/ExtUtils::MM_Unix.3.gz
-%%MAN3%%/ExtUtils::MM_VMS.3.gz
-%%MAN3%%/ExtUtils::MM_VOS.3.gz
-%%MAN3%%/ExtUtils::MM_Win32.3.gz
-%%MAN3%%/ExtUtils::MM_Win95.3.gz
-%%MAN3%%/ExtUtils::MY.3.gz
-%%MAN3%%/ExtUtils::MakeMaker.3.gz
-%%MAN3%%/ExtUtils::MakeMaker::Config.3.gz
-%%MAN3%%/ExtUtils::MakeMaker::FAQ.3.gz
-%%MAN3%%/ExtUtils::MakeMaker::Tutorial.3.gz
-%%MAN3%%/ExtUtils::Manifest.3.gz
-%%MAN3%%/ExtUtils::Miniperl.3.gz
-%%MAN3%%/ExtUtils::Mkbootstrap.3.gz
-%%MAN3%%/ExtUtils::Mksymlists.3.gz
-%%MAN3%%/ExtUtils::Packlist.3.gz
-%%MAN3%%/ExtUtils::ParseXS.3.gz
-%%MAN3%%/ExtUtils::ParseXS::Constants.3.gz
-%%MAN3%%/ExtUtils::ParseXS::Utilities.3.gz
-%%MAN3%%/ExtUtils::Typemaps.3.gz
-%%MAN3%%/ExtUtils::Typemaps::Cmd.3.gz
-%%MAN3%%/ExtUtils::Typemaps::InputMap.3.gz
-%%MAN3%%/ExtUtils::Typemaps::OutputMap.3.gz
-%%MAN3%%/ExtUtils::Typemaps::Type.3.gz
-%%MAN3%%/ExtUtils::XSSymSet.3.gz
-%%MAN3%%/ExtUtils::testlib.3.gz
-%%MAN3%%/Fatal.3.gz
-%%MAN3%%/Fcntl.3.gz
-%%MAN3%%/File::Basename.3.gz
-%%MAN3%%/File::CheckTree.3.gz
-%%MAN3%%/File::Compare.3.gz
-%%MAN3%%/File::Copy.3.gz
-%%MAN3%%/File::DosGlob.3.gz
-%%MAN3%%/File::Fetch.3.gz
-%%MAN3%%/File::Find.3.gz
-%%MAN3%%/File::Glob.3.gz
-%%MAN3%%/File::GlobMapper.3.gz
-%%MAN3%%/File::Path.3.gz
-%%MAN3%%/File::Spec.3.gz
-%%MAN3%%/File::Spec::Cygwin.3.gz
-%%MAN3%%/File::Spec::Epoc.3.gz
-%%MAN3%%/File::Spec::Functions.3.gz
-%%MAN3%%/File::Spec::Mac.3.gz
-%%MAN3%%/File::Spec::OS2.3.gz
-%%MAN3%%/File::Spec::Unix.3.gz
-%%MAN3%%/File::Spec::VMS.3.gz
-%%MAN3%%/File::Spec::Win32.3.gz
-%%MAN3%%/File::Temp.3.gz
-%%MAN3%%/File::stat.3.gz
-%%MAN3%%/FileCache.3.gz
-%%MAN3%%/FileHandle.3.gz
-%%MAN3%%/Filter::Simple.3.gz
-%%MAN3%%/Filter::Util::Call.3.gz
-%%MAN3%%/FindBin.3.gz
-%%MAN3%%/Getopt::Long.3.gz
-%%MAN3%%/Getopt::Std.3.gz
-%%MAN3%%/HTTP::Tiny.3.gz
-%%MAN3%%/Hash::Util.3.gz
-%%MAN3%%/Hash::Util::FieldHash.3.gz
-%%MAN3%%/I18N::Collate.3.gz
-%%MAN3%%/I18N::LangTags.3.gz
-%%MAN3%%/I18N::LangTags::Detect.3.gz
-%%MAN3%%/I18N::LangTags::List.3.gz
-%%MAN3%%/I18N::Langinfo.3.gz
-%%MAN3%%/IO.3.gz
-%%MAN3%%/IO::Compress::Base.3.gz
-%%MAN3%%/IO::Compress::Bzip2.3.gz
-%%MAN3%%/IO::Compress::Deflate.3.gz
-%%MAN3%%/IO::Compress::FAQ.3.gz
-%%MAN3%%/IO::Compress::Gzip.3.gz
-%%MAN3%%/IO::Compress::RawDeflate.3.gz
-%%MAN3%%/IO::Compress::Zip.3.gz
-%%MAN3%%/IO::Dir.3.gz
-%%MAN3%%/IO::File.3.gz
-%%MAN3%%/IO::Handle.3.gz
-%%MAN3%%/IO::Pipe.3.gz
-%%MAN3%%/IO::Poll.3.gz
-%%MAN3%%/IO::Seekable.3.gz
-%%MAN3%%/IO::Select.3.gz
-%%MAN3%%/IO::Socket.3.gz
-%%MAN3%%/IO::Socket::INET.3.gz
-%%MAN3%%/IO::Socket::UNIX.3.gz
-%%MAN3%%/IO::Uncompress::AnyInflate.3.gz
-%%MAN3%%/IO::Uncompress::AnyUncompress.3.gz
-%%MAN3%%/IO::Uncompress::Base.3.gz
-%%MAN3%%/IO::Uncompress::Bunzip2.3.gz
-%%MAN3%%/IO::Uncompress::Gunzip.3.gz
-%%MAN3%%/IO::Uncompress::Inflate.3.gz
-%%MAN3%%/IO::Uncompress::RawInflate.3.gz
-%%MAN3%%/IO::Uncompress::Unzip.3.gz
-%%MAN3%%/IO::Zlib.3.gz
-%%MAN3%%/IPC::Cmd.3.gz
-%%MAN3%%/IPC::Msg.3.gz
-%%MAN3%%/IPC::Open2.3.gz
-%%MAN3%%/IPC::Open3.3.gz
-%%MAN3%%/IPC::Semaphore.3.gz
-%%MAN3%%/IPC::SharedMem.3.gz
-%%MAN3%%/IPC::SysV.3.gz
-%%MAN3%%/JSON::PP.3.gz
-%%MAN3%%/JSON::PP::Boolean.3.gz
-%%MAN3%%/List::Util.3.gz
-%%MAN3%%/List::Util::XS.3.gz
-%%MAN3%%/Locale::Codes.3.gz
-%%MAN3%%/Locale::Codes::API.3.gz
-%%MAN3%%/Locale::Codes::Changes.3.gz
-%%MAN3%%/Locale::Codes::Constants.3.gz
-%%MAN3%%/Locale::Codes::Country.3.gz
-%%MAN3%%/Locale::Codes::Country_Codes.3.gz
-%%MAN3%%/Locale::Codes::Country_Retired.3.gz
-%%MAN3%%/Locale::Codes::Currency.3.gz
-%%MAN3%%/Locale::Codes::Currency_Codes.3.gz
-%%MAN3%%/Locale::Codes::Currency_Retired.3.gz
-%%MAN3%%/Locale::Codes::LangExt.3.gz
-%%MAN3%%/Locale::Codes::LangExt_Codes.3.gz
-%%MAN3%%/Locale::Codes::LangExt_Retired.3.gz
-%%MAN3%%/Locale::Codes::LangFam.3.gz
-%%MAN3%%/Locale::Codes::LangFam_Codes.3.gz
-%%MAN3%%/Locale::Codes::LangFam_Retired.3.gz
-%%MAN3%%/Locale::Codes::LangVar.3.gz
-%%MAN3%%/Locale::Codes::LangVar_Codes.3.gz
-%%MAN3%%/Locale::Codes::LangVar_Retired.3.gz
-%%MAN3%%/Locale::Codes::Language.3.gz
-%%MAN3%%/Locale::Codes::Language_Codes.3.gz
-%%MAN3%%/Locale::Codes::Language_Retired.3.gz
-%%MAN3%%/Locale::Codes::Script.3.gz
-%%MAN3%%/Locale::Codes::Script_Codes.3.gz
-%%MAN3%%/Locale::Codes::Script_Retired.3.gz
-%%MAN3%%/Locale::Country.3.gz
-%%MAN3%%/Locale::Currency.3.gz
-%%MAN3%%/Locale::Language.3.gz
-%%MAN3%%/Locale::Maketext.3.gz
-%%MAN3%%/Locale::Maketext::Cookbook.3.gz
-%%MAN3%%/Locale::Maketext::Guts.3.gz
-%%MAN3%%/Locale::Maketext::GutsLoader.3.gz
-%%MAN3%%/Locale::Maketext::Simple.3.gz
-%%MAN3%%/Locale::Maketext::TPJ13.3.gz
-%%MAN3%%/Locale::Script.3.gz
-%%MAN3%%/Log::Message.3.gz
-%%MAN3%%/Log::Message::Config.3.gz
-%%MAN3%%/Log::Message::Handlers.3.gz
-%%MAN3%%/Log::Message::Item.3.gz
-%%MAN3%%/Log::Message::Simple.3.gz
-%%MAN3%%/MIME::Base64.3.gz
-%%MAN3%%/MIME::QuotedPrint.3.gz
-%%MAN3%%/Math::BigFloat.3.gz
-%%MAN3%%/Math::BigInt.3.gz
-%%MAN3%%/Math::BigInt::Calc.3.gz
-%%MAN3%%/Math::BigInt::CalcEmu.3.gz
-%%MAN3%%/Math::BigInt::FastCalc.3.gz
-%%MAN3%%/Math::BigRat.3.gz
-%%MAN3%%/Math::Complex.3.gz
-%%MAN3%%/Math::Trig.3.gz
-%%MAN3%%/Memoize.3.gz
-%%MAN3%%/Memoize::AnyDBM_File.3.gz
-%%MAN3%%/Memoize::Expire.3.gz
-%%MAN3%%/Memoize::ExpireFile.3.gz
-%%MAN3%%/Memoize::ExpireTest.3.gz
-%%MAN3%%/Memoize::NDBM_File.3.gz
-%%MAN3%%/Memoize::SDBM_File.3.gz
-%%MAN3%%/Memoize::Storable.3.gz
-%%MAN3%%/Module::Build.3.gz
-%%MAN3%%/Module::Build::API.3.gz
-%%MAN3%%/Module::Build::Authoring.3.gz
-%%MAN3%%/Module::Build::Base.3.gz
-%%MAN3%%/Module::Build::Bundling.3.gz
-%%MAN3%%/Module::Build::Compat.3.gz
-%%MAN3%%/Module::Build::ConfigData.3.gz
-%%MAN3%%/Module::Build::Cookbook.3.gz
-%%MAN3%%/Module::Build::ModuleInfo.3.gz
-%%MAN3%%/Module::Build::Notes.3.gz
-%%MAN3%%/Module::Build::PPMMaker.3.gz
-%%MAN3%%/Module::Build::Platform::Amiga.3.gz
-%%MAN3%%/Module::Build::Platform::Default.3.gz
-%%MAN3%%/Module::Build::Platform::EBCDIC.3.gz
-%%MAN3%%/Module::Build::Platform::MPEiX.3.gz
-%%MAN3%%/Module::Build::Platform::MacOS.3.gz
-%%MAN3%%/Module::Build::Platform::RiscOS.3.gz
-%%MAN3%%/Module::Build::Platform::Unix.3.gz
-%%MAN3%%/Module::Build::Platform::VMS.3.gz
-%%MAN3%%/Module::Build::Platform::VOS.3.gz
-%%MAN3%%/Module::Build::Platform::Windows.3.gz
-%%MAN3%%/Module::Build::Platform::aix.3.gz
-%%MAN3%%/Module::Build::Platform::cygwin.3.gz
-%%MAN3%%/Module::Build::Platform::darwin.3.gz
-%%MAN3%%/Module::Build::Platform::os2.3.gz
-%%MAN3%%/Module::Build::Version.3.gz
-%%MAN3%%/Module::Build::YAML.3.gz
-%%MAN3%%/Module::CoreList.3.gz
-%%MAN3%%/Module::CoreList::Utils.3.gz
-%%MAN3%%/Module::Load.3.gz
-%%MAN3%%/Module::Load::Conditional.3.gz
-%%MAN3%%/Module::Loaded.3.gz
-%%MAN3%%/Module::Metadata.3.gz
-%%MAN3%%/Module::Pluggable.3.gz
-%%MAN3%%/Module::Pluggable::Object.3.gz
-%%MAN3%%/NDBM_File.3.gz
-%%MAN3%%/NEXT.3.gz
-%%MAN3%%/Net::Cmd.3.gz
-%%MAN3%%/Net::Config.3.gz
-%%MAN3%%/Net::Domain.3.gz
-%%MAN3%%/Net::FTP.3.gz
-%%MAN3%%/Net::NNTP.3.gz
-%%MAN3%%/Net::Netrc.3.gz
-%%MAN3%%/Net::POP3.3.gz
-%%MAN3%%/Net::Ping.3.gz
-%%MAN3%%/Net::SMTP.3.gz
-%%MAN3%%/Net::Time.3.gz
-%%MAN3%%/Net::hostent.3.gz
-%%MAN3%%/Net::libnetFAQ.3.gz
-%%MAN3%%/Net::netent.3.gz
-%%MAN3%%/Net::protoent.3.gz
-%%MAN3%%/Net::servent.3.gz
-%%MAN3%%/O.3.gz
-%%MAN3%%/Object::Accessor.3.gz
-%%MAN3%%/Opcode.3.gz
-%%MAN3%%/POSIX.3.gz
-%%MAN3%%/Package::Constants.3.gz
-%%MAN3%%/Params::Check.3.gz
-%%MAN3%%/Parse::CPAN::Meta.3.gz
-%%MAN3%%/Perl::OSType.3.gz
-%%MAN3%%/PerlIO.3.gz
-%%MAN3%%/PerlIO::encoding.3.gz
-%%MAN3%%/PerlIO::mmap.3.gz
-%%MAN3%%/PerlIO::scalar.3.gz
-%%MAN3%%/PerlIO::via.3.gz
-%%MAN3%%/PerlIO::via::QuotedPrint.3.gz
-%%MAN3%%/Pod::Checker.3.gz
-%%MAN3%%/Pod::Escapes.3.gz
-%%MAN3%%/Pod::Find.3.gz
-%%MAN3%%/Pod::Html.3.gz
-%%MAN3%%/Pod::InputObjects.3.gz
-%%MAN3%%/Pod::LaTeX.3.gz
-%%MAN3%%/Pod::Man.3.gz
-%%MAN3%%/Pod::ParseLink.3.gz
-%%MAN3%%/Pod::ParseUtils.3.gz
-%%MAN3%%/Pod::Parser.3.gz
-%%MAN3%%/Pod::Perldoc.3.gz
-%%MAN3%%/Pod::Perldoc::BaseTo.3.gz
-%%MAN3%%/Pod::Perldoc::GetOptsOO.3.gz
-%%MAN3%%/Pod::Perldoc::ToANSI.3.gz
-%%MAN3%%/Pod::Perldoc::ToChecker.3.gz
-%%MAN3%%/Pod::Perldoc::ToMan.3.gz
-%%MAN3%%/Pod::Perldoc::ToNroff.3.gz
-%%MAN3%%/Pod::Perldoc::ToPod.3.gz
-%%MAN3%%/Pod::Perldoc::ToRtf.3.gz
-%%MAN3%%/Pod::Perldoc::ToTerm.3.gz
-%%MAN3%%/Pod::Perldoc::ToText.3.gz
-%%MAN3%%/Pod::Perldoc::ToTk.3.gz
-%%MAN3%%/Pod::Perldoc::ToXml.3.gz
-%%MAN3%%/Pod::PlainText.3.gz
-%%MAN3%%/Pod::Select.3.gz
-%%MAN3%%/Pod::Simple.3.gz
-%%MAN3%%/Pod::Simple::Checker.3.gz
-%%MAN3%%/Pod::Simple::Debug.3.gz
-%%MAN3%%/Pod::Simple::DumpAsText.3.gz
-%%MAN3%%/Pod::Simple::DumpAsXML.3.gz
-%%MAN3%%/Pod::Simple::HTML.3.gz
-%%MAN3%%/Pod::Simple::HTMLBatch.3.gz
-%%MAN3%%/Pod::Simple::LinkSection.3.gz
-%%MAN3%%/Pod::Simple::Methody.3.gz
-%%MAN3%%/Pod::Simple::PullParser.3.gz
-%%MAN3%%/Pod::Simple::PullParserEndToken.3.gz
-%%MAN3%%/Pod::Simple::PullParserStartToken.3.gz
-%%MAN3%%/Pod::Simple::PullParserTextToken.3.gz
-%%MAN3%%/Pod::Simple::PullParserToken.3.gz
-%%MAN3%%/Pod::Simple::RTF.3.gz
-%%MAN3%%/Pod::Simple::Search.3.gz
-%%MAN3%%/Pod::Simple::SimpleTree.3.gz
-%%MAN3%%/Pod::Simple::Subclassing.3.gz
-%%MAN3%%/Pod::Simple::Text.3.gz
-%%MAN3%%/Pod::Simple::TextContent.3.gz
-%%MAN3%%/Pod::Simple::XHTML.3.gz
-%%MAN3%%/Pod::Simple::XMLOutStream.3.gz
-%%MAN3%%/Pod::Text.3.gz
-%%MAN3%%/Pod::Text::Color.3.gz
-%%MAN3%%/Pod::Text::Overstrike.3.gz
-%%MAN3%%/Pod::Text::Termcap.3.gz
-%%MAN3%%/Pod::Usage.3.gz
-%%MAN3%%/SDBM_File.3.gz
-%%MAN3%%/Safe.3.gz
-%%MAN3%%/Scalar::Util.3.gz
-%%MAN3%%/Search::Dict.3.gz
-%%MAN3%%/SelectSaver.3.gz
-%%MAN3%%/SelfLoader.3.gz
-%%MAN3%%/Socket.3.gz
-%%MAN3%%/Storable.3.gz
-%%MAN3%%/Symbol.3.gz
-%%MAN3%%/Sys::Hostname.3.gz
-%%MAN3%%/Sys::Syslog.3.gz
-%%MAN3%%/TAP::Base.3.gz
-%%MAN3%%/TAP::Formatter::Base.3.gz
-%%MAN3%%/TAP::Formatter::Color.3.gz
-%%MAN3%%/TAP::Formatter::Console.3.gz
-%%MAN3%%/TAP::Formatter::Console::ParallelSession.3.gz
-%%MAN3%%/TAP::Formatter::Console::Session.3.gz
-%%MAN3%%/TAP::Formatter::File.3.gz
-%%MAN3%%/TAP::Formatter::File::Session.3.gz
-%%MAN3%%/TAP::Formatter::Session.3.gz
-%%MAN3%%/TAP::Harness.3.gz
-%%MAN3%%/TAP::Harness::Beyond.3.gz
-%%MAN3%%/TAP::Object.3.gz
-%%MAN3%%/TAP::Parser.3.gz
-%%MAN3%%/TAP::Parser::Aggregator.3.gz
-%%MAN3%%/TAP::Parser::Grammar.3.gz
-%%MAN3%%/TAP::Parser::Iterator.3.gz
-%%MAN3%%/TAP::Parser::Iterator::Array.3.gz
-%%MAN3%%/TAP::Parser::Iterator::Process.3.gz
-%%MAN3%%/TAP::Parser::Iterator::Stream.3.gz
-%%MAN3%%/TAP::Parser::IteratorFactory.3.gz
-%%MAN3%%/TAP::Parser::Multiplexer.3.gz
-%%MAN3%%/TAP::Parser::Result.3.gz
-%%MAN3%%/TAP::Parser::Result::Bailout.3.gz
-%%MAN3%%/TAP::Parser::Result::Comment.3.gz
-%%MAN3%%/TAP::Parser::Result::Plan.3.gz
-%%MAN3%%/TAP::Parser::Result::Pragma.3.gz
-%%MAN3%%/TAP::Parser::Result::Test.3.gz
-%%MAN3%%/TAP::Parser::Result::Unknown.3.gz
-%%MAN3%%/TAP::Parser::Result::Version.3.gz
-%%MAN3%%/TAP::Parser::Result::YAML.3.gz
-%%MAN3%%/TAP::Parser::ResultFactory.3.gz
-%%MAN3%%/TAP::Parser::Scheduler.3.gz
-%%MAN3%%/TAP::Parser::Scheduler::Job.3.gz
-%%MAN3%%/TAP::Parser::Scheduler::Spinner.3.gz
-%%MAN3%%/TAP::Parser::Source.3.gz
-%%MAN3%%/TAP::Parser::SourceHandler.3.gz
-%%MAN3%%/TAP::Parser::SourceHandler::Executable.3.gz
-%%MAN3%%/TAP::Parser::SourceHandler::File.3.gz
-%%MAN3%%/TAP::Parser::SourceHandler::Handle.3.gz
-%%MAN3%%/TAP::Parser::SourceHandler::Perl.3.gz
-%%MAN3%%/TAP::Parser::SourceHandler::RawTAP.3.gz
-%%MAN3%%/TAP::Parser::Utils.3.gz
-%%MAN3%%/TAP::Parser::YAMLish::Reader.3.gz
-%%MAN3%%/TAP::Parser::YAMLish::Writer.3.gz
-%%MAN3%%/Term::ANSIColor.3.gz
-%%MAN3%%/Term::Cap.3.gz
-%%MAN3%%/Term::Complete.3.gz
-%%MAN3%%/Term::ReadLine.3.gz
-%%MAN3%%/Term::UI.3.gz
-%%MAN3%%/Term::UI::History.3.gz
-%%MAN3%%/Test.3.gz
-%%MAN3%%/Test::Builder.3.gz
-%%MAN3%%/Test::Builder::Module.3.gz
-%%MAN3%%/Test::Builder::Tester.3.gz
-%%MAN3%%/Test::Builder::Tester::Color.3.gz
-%%MAN3%%/Test::Harness.3.gz
-%%MAN3%%/Test::More.3.gz
-%%MAN3%%/Test::Simple.3.gz
-%%MAN3%%/Test::Tutorial.3.gz
-%%MAN3%%/Text::Abbrev.3.gz
-%%MAN3%%/Text::Balanced.3.gz
-%%MAN3%%/Text::ParseWords.3.gz
-%%MAN3%%/Text::Soundex.3.gz
-%%MAN3%%/Text::Tabs.3.gz
-%%MAN3%%/Text::Wrap.3.gz
-%%MAN3%%/Thread.3.gz
-%%MAN3%%/Thread::Queue.3.gz
-%%MAN3%%/Thread::Semaphore.3.gz
-%%MAN3%%/Tie::Array.3.gz
-%%MAN3%%/Tie::File.3.gz
-%%MAN3%%/Tie::Handle.3.gz
-%%MAN3%%/Tie::Hash.3.gz
-%%MAN3%%/Tie::Hash::NamedCapture.3.gz
-%%MAN3%%/Tie::Memoize.3.gz
-%%MAN3%%/Tie::RefHash.3.gz
-%%MAN3%%/Tie::Scalar.3.gz
-%%MAN3%%/Tie::StdHandle.3.gz
-%%MAN3%%/Tie::SubstrHash.3.gz
-%%MAN3%%/Time::HiRes.3.gz
-%%MAN3%%/Time::Local.3.gz
-%%MAN3%%/Time::Piece.3.gz
-%%MAN3%%/Time::Seconds.3.gz
-%%MAN3%%/Time::gmtime.3.gz
-%%MAN3%%/Time::localtime.3.gz
-%%MAN3%%/Time::tm.3.gz
-%%MAN3%%/UNIVERSAL.3.gz
-%%MAN3%%/Unicode::Collate.3.gz
-%%MAN3%%/Unicode::Collate::CJK::Big5.3.gz
-%%MAN3%%/Unicode::Collate::CJK::GB2312.3.gz
-%%MAN3%%/Unicode::Collate::CJK::JISX0208.3.gz
-%%MAN3%%/Unicode::Collate::CJK::Korean.3.gz
-%%MAN3%%/Unicode::Collate::CJK::Pinyin.3.gz
-%%MAN3%%/Unicode::Collate::CJK::Stroke.3.gz
-%%MAN3%%/Unicode::Collate::CJK::Zhuyin.3.gz
-%%MAN3%%/Unicode::Collate::Locale.3.gz
-%%MAN3%%/Unicode::Normalize.3.gz
-%%MAN3%%/Unicode::UCD.3.gz
-%%MAN3%%/User::grent.3.gz
-%%MAN3%%/User::pwent.3.gz
-%%MAN3%%/XSLoader.3.gz
-%%MAN3%%/arybase.3.gz
-%%MAN3%%/attributes.3.gz
-%%MAN3%%/autodie.3.gz
-%%MAN3%%/autodie::exception.3.gz
-%%MAN3%%/autodie::exception::system.3.gz
-%%MAN3%%/autodie::hints.3.gz
-%%MAN3%%/autouse.3.gz
-%%MAN3%%/base.3.gz
-%%MAN3%%/bigint.3.gz
-%%MAN3%%/bignum.3.gz
-%%MAN3%%/bigrat.3.gz
-%%MAN3%%/blib.3.gz
-%%MAN3%%/bytes.3.gz
-%%MAN3%%/charnames.3.gz
-%%MAN3%%/constant.3.gz
-%%MAN3%%/deprecate.3.gz
-%%MAN3%%/diagnostics.3.gz
-%%MAN3%%/encoding.3.gz
-%%MAN3%%/encoding::warnings.3.gz
-%%MAN3%%/feature.3.gz
-%%MAN3%%/fields.3.gz
-%%MAN3%%/filetest.3.gz
-%%MAN3%%/if.3.gz
-%%MAN3%%/inc::latest.3.gz
-%%MAN3%%/integer.3.gz
-%%MAN3%%/less.3.gz
-%%MAN3%%/lib.3.gz
-%%MAN3%%/locale.3.gz
-%%MAN3%%/mro.3.gz
-%%MAN3%%/open.3.gz
-%%MAN3%%/ops.3.gz
-%%MAN3%%/overload.3.gz
-%%MAN3%%/overloading.3.gz
-%%MAN3%%/parent.3.gz
-%%MAN3%%/re.3.gz
-%%MAN3%%/sigtrap.3.gz
-%%MAN3%%/sort.3.gz
-%%MAN3%%/strict.3.gz
-%%MAN3%%/subs.3.gz
-%%MAN3%%/threads.3.gz
-%%MAN3%%/threads::shared.3.gz
-%%MAN3%%/utf8.3.gz
-%%MAN3%%/vars.3.gz
-%%MAN3%%/version.3.gz
-%%MAN3%%/version::Internals.3.gz
-%%MAN3%%/vmsish.3.gz
-%%MAN3%%/warnings.3.gz
-%%MAN3%%/warnings::register.3.gz
-%%GDBM%%%%MAN3%%/GDBM_File.3.gz
-@dirrm lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN
-@dirrm lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils
-@dirrm lib/perl5/%%PERL_VER%%/BSDPAN
-@unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
-@exec cd /usr/include && %D/bin/h2ph -d %D/%%SITE_PERL%%/%%PERL_ARCH%% *.h machine/*.h sys/*.h >/dev/null
-%%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/sdbm
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie/Hash
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Text
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInt
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Data
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B
-@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%
-@dirrm lib/perl5/%%PERL_VER%%/warnings
-@dirrm lib/perl5/%%PERL_VER%%/version
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/XIDS
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/XIDC
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/WB
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/VS
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Upper
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/UIdeo
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Term
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Scx
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Sc
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/STerm
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/SD
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/SB
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Radical
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/QMark
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Perl
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/PatWS
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/PatSyn
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Nv
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Nt
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFKDQC
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFKCQC
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFDQC
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFCQC
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NChar
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Math
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Lower
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Lb
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/LOE
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Jt
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/JoinC
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Jg
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/In
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ideo
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDST
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDSB
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDS
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDC
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hyphen
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hst
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hex
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/GrBase
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Gc
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/GCB
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ext
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ea
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dt
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dia
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dep
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dash
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/DI
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CompEx
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ccc
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Cased
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWU
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWT
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWL
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWKCF
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWCM
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWCF
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CI
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CE
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Blk
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/BidiM
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/BidiC
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Bc
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Alpha
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Age
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/AHex
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib
-@dirrm lib/perl5/%%PERL_VER%%/unicore/To
-@dirrm lib/perl5/%%PERL_VER%%/unicore
-@dirrm lib/perl5/%%PERL_VER%%/User
-@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale
-@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK
-@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate
-@dirrm lib/perl5/%%PERL_VER%%/Unicode
-@dirrm lib/perl5/%%PERL_VER%%/Time
-@dirrm lib/perl5/%%PERL_VER%%/Tie
-@dirrm lib/perl5/%%PERL_VER%%/Thread
-@dirrm lib/perl5/%%PERL_VER%%/Text
-@dirrm lib/perl5/%%PERL_VER%%/Test/Builder/Tester
-@dirrm lib/perl5/%%PERL_VER%%/Test/Builder
-@dirrm lib/perl5/%%PERL_VER%%/Test
-@dirrm lib/perl5/%%PERL_VER%%/Term/UI
-@dirrm lib/perl5/%%PERL_VER%%/Term
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/YAMLish
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Scheduler
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Result
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Iterator
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Harness
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter/File
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter/Console
-@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter
-@dirrm lib/perl5/%%PERL_VER%%/TAP
-@dirrm lib/perl5/%%PERL_VER%%/Search
-@dirrm lib/perl5/%%PERL_VER%%/Pod/Text
-@dirrm lib/perl5/%%PERL_VER%%/Pod/Simple
-@dirrm lib/perl5/%%PERL_VER%%/Pod/Perldoc
-@dirrm lib/perl5/%%PERL_VER%%/Pod
-@dirrm lib/perl5/%%PERL_VER%%/PerlIO/via
-@dirrm lib/perl5/%%PERL_VER%%/PerlIO
-@dirrm lib/perl5/%%PERL_VER%%/Perl
-@dirrm lib/perl5/%%PERL_VER%%/Parse/CPAN
-@dirrm lib/perl5/%%PERL_VER%%/Parse
-@dirrm lib/perl5/%%PERL_VER%%/Params
-@dirrm lib/perl5/%%PERL_VER%%/Package
-@dirrm lib/perl5/%%PERL_VER%%/Object
-@dirrm lib/perl5/%%PERL_VER%%/Net/FTP
-@dirrm lib/perl5/%%PERL_VER%%/Net
-@dirrm lib/perl5/%%PERL_VER%%/Module/Pluggable
-@dirrm lib/perl5/%%PERL_VER%%/Module/Load
-@dirrm lib/perl5/%%PERL_VER%%/Module/Build/Platform
-@dirrm lib/perl5/%%PERL_VER%%/Module/Build
-@dirrm lib/perl5/%%PERL_VER%%/Module/CoreList
-@dirrm lib/perl5/%%PERL_VER%%/Module
-@dirrm lib/perl5/%%PERL_VER%%/Memoize
-@dirrm lib/perl5/%%PERL_VER%%/Math/BigInt
-@dirrm lib/perl5/%%PERL_VER%%/Math/BigFloat
-@dirrm lib/perl5/%%PERL_VER%%/Math
-@dirrm lib/perl5/%%PERL_VER%%/Log/Message
-@dirrm lib/perl5/%%PERL_VER%%/Log
-@dirrm lib/perl5/%%PERL_VER%%/Locale/Maketext
-@dirrm lib/perl5/%%PERL_VER%%/Locale/Codes
-@dirrm lib/perl5/%%PERL_VER%%/Locale
-@dirrm lib/perl5/%%PERL_VER%%/JSON/PP
-@dirrm lib/perl5/%%PERL_VER%%/JSON
-@dirrm lib/perl5/%%PERL_VER%%/IPC
-@dirrm lib/perl5/%%PERL_VER%%/IO/Uncompress/Adapter
-@dirrm lib/perl5/%%PERL_VER%%/IO/Uncompress
-@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Zlib
-@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Zip
-@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Gzip
-@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Base
-@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Adapter
-@dirrm lib/perl5/%%PERL_VER%%/IO/Compress
-@dirrm lib/perl5/%%PERL_VER%%/IO
-@dirrm lib/perl5/%%PERL_VER%%/I18N/LangTags
-@dirrm lib/perl5/%%PERL_VER%%/I18N
-@dirrm lib/perl5/%%PERL_VER%%/HTTP
-@dirrm lib/perl5/%%PERL_VER%%/Getopt
-@dirrm lib/perl5/%%PERL_VER%%/Filter
-@dirrm lib/perl5/%%PERL_VER%%/File
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Typemaps
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/ParseXS
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Liblist
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Constant
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Command
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/Windows
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder
-@dirrm lib/perl5/%%PERL_VER%%/ExtUtils
-@dirrm lib/perl5/%%PERL_VER%%/Exporter
-@dirrm lib/perl5/%%PERL_VER%%/Encode
-@dirrm lib/perl5/%%PERL_VER%%/Digest
-@dirrm lib/perl5/%%PERL_VER%%/Devel
-@dirrm lib/perl5/%%PERL_VER%%/DBM_Filter
-@dirrm lib/perl5/%%PERL_VER%%/Config/Perl
-@dirrm lib/perl5/%%PERL_VER%%/Config
-@dirrm lib/perl5/%%PERL_VER%%/Compress
-@dirrm lib/perl5/%%PERL_VER%%/Class
-@dirrm lib/perl5/%%PERL_VER%%/Carp
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default/Plugins
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Module/Author
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Module
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Utils
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source/SQLite
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Constants
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/Build
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Dist
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Config
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Configure
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Backend
-@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS
-@dirrm lib/perl5/%%PERL_VER%%/CPAN/Meta
-@dirrm lib/perl5/%%PERL_VER%%/CPAN/Kwalify
-@dirrm lib/perl5/%%PERL_VER%%/CPAN/LWP
-@dirrm lib/perl5/%%PERL_VER%%/CPAN/HTTP
-@dirrm lib/perl5/%%PERL_VER%%/CPAN/FTP
-@dirrm lib/perl5/%%PERL_VER%%/CPAN/Exception
-@dirrm lib/perl5/%%PERL_VER%%/CPAN/API
-@dirrm lib/perl5/%%PERL_VER%%/CPAN
-@dirrm lib/perl5/%%PERL_VER%%/CGI
-@dirrm lib/perl5/%%PERL_VER%%/B/Lint
-@dirrm lib/perl5/%%PERL_VER%%/B
-@dirrm lib/perl5/%%PERL_VER%%/Attribute
-@dirrm lib/perl5/%%PERL_VER%%/Archive/Tar
-@dirrm lib/perl5/%%PERL_VER%%/Archive
 @dirrm lib/perl5/%%PERL_VER%%/App/Prove/State/Result
 @dirrm lib/perl5/%%PERL_VER%%/App/Prove/State
 @dirrm lib/perl5/%%PERL_VER%%/App/Prove
 @dirrm lib/perl5/%%PERL_VER%%/App
-@dirrm lib/perl5/%%PERL_VER%%/pod
-@dirrm lib/perl5/%%PERL_VER%%/perl/man/man3
-@unexec /bin/rm -f %D/lib/perl5/%%PERL_VER%%/perl/man/whatis
-@exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/perl/man
-@dirrm lib/perl5/%%PERL_VER%%/perl/man
-@dirrm lib/perl5/%%PERL_VER%%/perl
-@dirrm lib/perl5/%%PERL_VER%%/overload
-@dirrm lib/perl5/%%PERL_VER%%/inc/latest
-@dirrm lib/perl5/%%PERL_VER%%/inc
-@dirrm lib/perl5/%%PERL_VER%%/encoding
+@dirrm lib/perl5/%%PERL_VER%%/Archive/Tar
+@dirrm lib/perl5/%%PERL_VER%%/Archive
+@dirrm lib/perl5/%%PERL_VER%%/Attribute
+@dirrm lib/perl5/%%PERL_VER%%/B/Lint
+@dirrm lib/perl5/%%PERL_VER%%/B
+@dirrm lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN
+@dirrm lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils
+@dirrm lib/perl5/%%PERL_VER%%/BSDPAN
+@dirrm lib/perl5/%%PERL_VER%%/CGI
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/API
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/Exception
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/FTP
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/HTTP
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/Kwalify
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/LWP
+@dirrm lib/perl5/%%PERL_VER%%/CPAN/Meta
+@dirrm lib/perl5/%%PERL_VER%%/CPAN
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Backend
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Config
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Configure
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Dist/Build
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Dist
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Constants
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source/SQLite
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Source
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals/Utils
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Internals
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Module/Author
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Module
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default/Plugins
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell/Default
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS/Shell
+@dirrm lib/perl5/%%PERL_VER%%/CPANPLUS
+@dirrm lib/perl5/%%PERL_VER%%/Carp
+@dirrm lib/perl5/%%PERL_VER%%/Class
+@dirrm lib/perl5/%%PERL_VER%%/Compress
+@dirrm lib/perl5/%%PERL_VER%%/Config/Perl
+@dirrm lib/perl5/%%PERL_VER%%/Config
+@dirrm lib/perl5/%%PERL_VER%%/DBM_Filter
+@dirrm lib/perl5/%%PERL_VER%%/Devel
+@dirrm lib/perl5/%%PERL_VER%%/Digest
+@dirrm lib/perl5/%%PERL_VER%%/Encode
+@dirrm lib/perl5/%%PERL_VER%%/Exporter
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform/Windows
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder/Platform
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/CBuilder
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Command
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Constant
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Liblist
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/ParseXS
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils/Typemaps
+@dirrm lib/perl5/%%PERL_VER%%/ExtUtils
+@dirrm lib/perl5/%%PERL_VER%%/File
+@dirrm lib/perl5/%%PERL_VER%%/Filter
+@dirrm lib/perl5/%%PERL_VER%%/Getopt
+@dirrm lib/perl5/%%PERL_VER%%/HTTP
+@dirrm lib/perl5/%%PERL_VER%%/I18N/LangTags
+@dirrm lib/perl5/%%PERL_VER%%/I18N
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Adapter
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Base
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Gzip
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Zip
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress/Zlib
+@dirrm lib/perl5/%%PERL_VER%%/IO/Compress
+@dirrm lib/perl5/%%PERL_VER%%/IO/Uncompress/Adapter
+@dirrm lib/perl5/%%PERL_VER%%/IO/Uncompress
+@dirrm lib/perl5/%%PERL_VER%%/IO
+@dirrm lib/perl5/%%PERL_VER%%/IPC
+@dirrm lib/perl5/%%PERL_VER%%/JSON/PP
+@dirrm lib/perl5/%%PERL_VER%%/JSON
+@dirrm lib/perl5/%%PERL_VER%%/Locale/Codes
+@dirrm lib/perl5/%%PERL_VER%%/Locale/Maketext
+@dirrm lib/perl5/%%PERL_VER%%/Locale
+@dirrm lib/perl5/%%PERL_VER%%/Log/Message
+@dirrm lib/perl5/%%PERL_VER%%/Log
+@dirrm lib/perl5/%%PERL_VER%%/Math/BigFloat
+@dirrm lib/perl5/%%PERL_VER%%/Math/BigInt
+@dirrm lib/perl5/%%PERL_VER%%/Math
+@dirrm lib/perl5/%%PERL_VER%%/Memoize
+@dirrm lib/perl5/%%PERL_VER%%/Module/Build/Platform
+@dirrm lib/perl5/%%PERL_VER%%/Module/Build
+@dirrm lib/perl5/%%PERL_VER%%/Module/CoreList
+@dirrm lib/perl5/%%PERL_VER%%/Module/Load
+@dirrm lib/perl5/%%PERL_VER%%/Module/Pluggable
+@dirrm lib/perl5/%%PERL_VER%%/Module
+@dirrm lib/perl5/%%PERL_VER%%/Net/FTP
+@dirrm lib/perl5/%%PERL_VER%%/Net
+@dirrm lib/perl5/%%PERL_VER%%/Object
+@dirrm lib/perl5/%%PERL_VER%%/Package
+@dirrm lib/perl5/%%PERL_VER%%/Params
+@dirrm lib/perl5/%%PERL_VER%%/Parse/CPAN
+@dirrm lib/perl5/%%PERL_VER%%/Parse
+@dirrm lib/perl5/%%PERL_VER%%/Perl
+@dirrm lib/perl5/%%PERL_VER%%/PerlIO/via
+@dirrm lib/perl5/%%PERL_VER%%/PerlIO
+@dirrm lib/perl5/%%PERL_VER%%/Pod/Perldoc
+@dirrm lib/perl5/%%PERL_VER%%/Pod/Simple
+@dirrm lib/perl5/%%PERL_VER%%/Pod/Text
+@dirrm lib/perl5/%%PERL_VER%%/Pod
+@dirrm lib/perl5/%%PERL_VER%%/Search
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter/Console
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter/File
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Formatter
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Harness
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Iterator
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Result
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/Scheduler
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/SourceHandler
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser/YAMLish
+@dirrm lib/perl5/%%PERL_VER%%/TAP/Parser
+@dirrm lib/perl5/%%PERL_VER%%/TAP
+@dirrm lib/perl5/%%PERL_VER%%/Term/UI
+@dirrm lib/perl5/%%PERL_VER%%/Term
+@dirrm lib/perl5/%%PERL_VER%%/Test/Builder/Tester
+@dirrm lib/perl5/%%PERL_VER%%/Test/Builder
+@dirrm lib/perl5/%%PERL_VER%%/Test
+@dirrm lib/perl5/%%PERL_VER%%/Text
+@dirrm lib/perl5/%%PERL_VER%%/Thread
+@dirrm lib/perl5/%%PERL_VER%%/Tie
+@dirrm lib/perl5/%%PERL_VER%%/Time
+@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate/CJK
+@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate/Locale
+@dirrm lib/perl5/%%PERL_VER%%/Unicode/Collate
+@dirrm lib/perl5/%%PERL_VER%%/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/User
 @dirrm lib/perl5/%%PERL_VER%%/autodie/exception
 @dirrm lib/perl5/%%PERL_VER%%/autodie
+@dirrm lib/perl5/%%PERL_VER%%/encoding
+@dirrm lib/perl5/%%PERL_VER%%/inc/latest
+@dirrm lib/perl5/%%PERL_VER%%/inc
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Raw
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Compress
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Data
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/CN
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/JP
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/KR
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME/Header
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/MIME
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Spec
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Hash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/List
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInt
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Math
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Scalar
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Text
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie/Hash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Tie
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Collate
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Bzip2
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Raw
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DosGlob
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter
+%%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Hash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt/FastCalc
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInt
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/mmap
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Soundex
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash/NamedCapture
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/Hash
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/Piece
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Collate
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/arybase
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attributes
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/mro
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/sdbm
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads
+@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%
 @dirrmtry lib/perl5/%%PERL_VER%%/man/man3
 @exec install -d %D/lib/perl5/%%PERL_VER%%/man/man3
 @unexec /bin/rm -f %D/lib/perl5/%%PERL_VER%%/man/whatis
 @exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/man
 @dirrmtry lib/perl5/%%PERL_VER%%/man
-@dirrmtry lib/perl5/%%PERL_VER%%
-@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/sys
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/sys
-@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/machine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/machine
-@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrm lib/perl5/%%PERL_VER%%/overload
+@dirrm %%MAN3%%
+@unexec /bin/rm -f %D/lib/perl5/%%PERL_VER%%/perl/man/whatis
+@exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/perl/man
+@dirrm lib/perl5/%%PERL_VER%%/perl/man
+@dirrm lib/perl5/%%PERL_VER%%/perl
+@dirrm lib/perl5/%%PERL_VER%%/pod
+@dirrm lib/perl5/%%PERL_VER%%/unicore/To
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/AHex
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Age
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Alpha
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Bc
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/BidiC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/BidiM
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Blk
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CE
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CI
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWCF
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWCM
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWKCF
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWL
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWT
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CWU
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Cased
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ccc
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/CompEx
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/DI
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dash
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dep
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dia
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Dt
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ea
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ext
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/GCB
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Gc
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/GrBase
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hex
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hst
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Hyphen
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDS
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDSB
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/IDST
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Ideo
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/In
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Jg
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/JoinC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Jt
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/LOE
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Lb
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Lower
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Math
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NChar
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFCQC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFDQC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFKCQC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/NFKDQC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Nt
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Nv
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/PatSyn
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/PatWS
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Perl
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/QMark
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Radical
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/SB
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/SD
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/STerm
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Sc
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Scx
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Term
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/UIdeo
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Upper
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/VS
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/WB
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/XIDC
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib/XIDS
+@dirrm lib/perl5/%%PERL_VER%%/unicore/lib
+@dirrm lib/perl5/%%PERL_VER%%/unicore
+@dirrm lib/perl5/%%PERL_VER%%/version
+@dirrm lib/perl5/%%PERL_VER%%/warnings
+@dirrm lib/perl5/%%PERL_VER%%
+@unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
 @exec install -d %D/%%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%/auto
+@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/machine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/machine
+@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@exec cd /usr/include && %D/bin/h2ph -d %D/%%SITE_PERL%%/%%PERL_ARCH%% *.h machine/*.h sys/*.h >/dev/null
 @dirrmtry %%SITE_PERL%%
 @dirrmtry lib/perl5/site_perl
 @dirrmtry lib/perl5
