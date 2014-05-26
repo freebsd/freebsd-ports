@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
 PORTSCOUT=	limit:^0\.7\.
 
-USES=		gmake openal dos2unix lua:41
+USES=		gmake openal dos2unix lua:51
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
@@ -46,6 +46,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d' \
+		-e "s/lua5.1/lua-${LUA_VER}/g" \
 		${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MDOCS}
