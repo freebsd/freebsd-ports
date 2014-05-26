@@ -1,4 +1,5 @@
 aster/%%VE%%/bin/aster
+aster/%%VE%%/bin/asterd
 aster/%%VE%%/include/aster/aster.h
 aster/%%VE%%/include/aster/aster_core.h
 aster/%%VE%%/include/aster/aster_depend.h
@@ -11648,6 +11649,10 @@ aster/asrun/utils.pyo
 aster/bin/as_run
 aster/bin/auto_update.cron
 aster/bin/parallel_cp
+%%ASTK_CLIENT%%aster/ASTK/ASTK_SERV/etc/codeaster/astkrc/ASTKRC_INFO.txt
+%%ASTK_CLIENT%%aster/ASTK/ASTK_SERV/etc/codeaster/astkrc/config_serveurs
+%%ASTK_CLIENT%%aster/ASTK/ASTK_SERV/etc/codeaster/astkrc/outils
+%%ASTK_CLIENT%%aster/ASTK/ASTK_SERV/etc/codeaster/astkrc/prefs
 %%ASTK_CLIENT%%aster/outils/astk
 %%ASTK_CLIENT%%aster/outils/bsf
 %%EFICAS%%aster/outils/eficas
