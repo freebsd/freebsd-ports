@@ -13,12 +13,10 @@ COMMENT=	The Emacs Multi-Media System
 LICENSE=	GPLv3
 
 USES=		gmake
-NO_STAGE=	yes
 USE_EMACS=	yes
-MAKE_ENV+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
+MAKE_ENV+=	EMMSPREFIX=${STAGEDIR}${PREFIX} LOCALBASE=${LOCALBASE} \
 		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
 INFO=		emms
-MAN1=		emms-print-metadata.1
 
 .include <bsd.port.pre.mk>
 
