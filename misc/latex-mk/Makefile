@@ -14,7 +14,7 @@ BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 RUN_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 
 USE_TEX=	latex
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 LICENSE=	BSD

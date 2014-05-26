@@ -19,8 +19,7 @@ OPTIONS_DEFINE=	NLS SUBSHELL MC_IN_MC
 SUBSHELL_DESC=	Build with subshell support (only for bash!)
 MC_IN_MC_DESC=	Allow run mc inside mc (useful for mcedit)
 
-USES=		pkgconfig iconv
-USE_GMAKE=	yes
+USES=		pkgconfig iconv gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-included-slang \
 		--with-gettext \

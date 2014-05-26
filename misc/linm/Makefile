@@ -16,9 +16,8 @@ OPTIONS_DEFINE=	SMB
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-.*//}
 
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig gmake
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-cfgpath="${ETCDIR}"
 MAKE_JOBS_UNSAFE=	yes

@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run interactive programs non-interactively
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-9
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		detachtty.1
 MLINKS=		detachtty.1 attachtty.1
