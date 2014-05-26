@@ -14,7 +14,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

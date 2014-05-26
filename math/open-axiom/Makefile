@@ -13,12 +13,10 @@ COMMENT=	A computer algebra system
 BUILD_DEPENDS=	sbcl:${PORTSDIR}/lang/sbcl \
 		noweb:${PORTSDIR}/devel/noweb
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lisp=sbcl
-USE_GMAKE=	yes
 USE_XORG=	x11 ice sm xpm
-USES=		gettext iconv
+USES=		gettext iconv gmake tar:bzip2
 MAKE_JOBS_UNSAFE=yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 USE_CSTD=	c99
-USE_GMAKE=	yes
+USES=		gmake
 
 CONFIGURE_ARGS	=	--enable-dynamic-build --enable-static-build
 

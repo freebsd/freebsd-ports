@@ -37,7 +37,7 @@ LAPACK=		-llapack
 
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
-USE_GMAKE=	yes
+USES=		gmake
 
 DOCS=		README doc/arpackpp.ps.gz doc/bugs.txt doc/structure.txt
 

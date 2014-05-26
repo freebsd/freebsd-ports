@@ -13,7 +13,7 @@ COMMENT=	A C++ class SSE library for scientific computing
 LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack \
 		blas.2:${PORTSDIR}/math/blas
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen --prefix=${PREFIX} --includedir=${PREFIX}/include/LTL

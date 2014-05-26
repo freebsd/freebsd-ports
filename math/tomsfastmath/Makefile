@@ -12,8 +12,7 @@ COMMENT=	Portable fixed precision math library for fast exponentiations
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 ALL_TARGET=	default
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a

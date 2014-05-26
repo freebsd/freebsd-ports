@@ -18,9 +18,8 @@ LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libboost_graph.so:${PORTSDIR}/devel/boost-libs \
 		libCGAL.so:${PORTSDIR}/math/cgal
 
-USE_BZIP2=	yes
 USE_GCC=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 

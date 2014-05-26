@@ -16,10 +16,9 @@ RUN_DEPENDS=	pvm:${PORTSDIR}/net/pvm
 
 PVM_ROOT=	${PREFIX}/lib/pvm
 
-USE_GMAKE=	yes
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-USES=		gettext
+USES=		gettext gmake
 
 CONFIGURE_ENV=	LIBS=-L${PREFIX}/lib \
 		PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib

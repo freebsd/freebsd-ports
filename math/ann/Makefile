@@ -12,7 +12,7 @@ COMMENT=	A Library for Approximate Nearest Neighbor Searching
 
 WRKSRC=		${WRKDIR}/ann_1.1.2
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 post-install:
