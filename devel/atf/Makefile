@@ -2,6 +2,7 @@
 
 PORTNAME=	atf
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/jmmv
@@ -17,6 +18,7 @@ USE_LDCONFIG=	yes
 USES=		libtool
 
 OPTIONS_DEFINE=	DOCS TEST
+OPTIONS_DEFAULT=TEST
 
 .include <bsd.port.options.mk>
 
