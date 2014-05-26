@@ -102,7 +102,7 @@ GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
 .if !defined(USE_MAKEFILE)
-USES=		gmake
+USES+=		gmake
 MAKEFILE=	GNUmakefile
 .endif
 
