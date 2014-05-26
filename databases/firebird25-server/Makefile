@@ -20,9 +20,7 @@ CONFLICTS?=	${PORTNAME}20-client-* \
 
 LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
-USES=		bison
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		bison tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
