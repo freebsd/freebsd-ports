@@ -95,7 +95,7 @@ PERL_USES=	perl5
 PHP_USE=	PHP=yes PHP_BUILD=yes
 PYTHON_USE=	PYTHON_BUILD=yes
 RUBY_USE=	RUBY=yes
-LUA_USE=	LUA=yes
+LUA_USES=	lua
 TCL_USES=	tcl:build
 TK_USES= 	tk:build
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
