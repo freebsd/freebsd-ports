@@ -3,6 +3,7 @@
 
 PORTNAME=	tolua++
 PORTVERSION=	1.0.93
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.codenix.com/~tolua/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,7 +18,7 @@ SCONS_ARGS=	prefix=${PREFIX} SONAME="libtolua++-${LUA_VER}.so"
 CFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
 
-TGT_BINDIR=	${LUA_BINDIR:C/^${LOCALBASE}/${PREFIX}/}
+TGT_BINDIR=	${PREFIX}/bin
 TGT_INCDIR=	${LUA_INCDIR:C/^${LOCALBASE}/${PREFIX}/}
 TGT_LIBDIR=	${LUA_LIBDIR:C/^${LOCALBASE}/${PREFIX}/}
 
