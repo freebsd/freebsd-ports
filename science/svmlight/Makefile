@@ -19,7 +19,7 @@ RESTRICTED=	only for education and research
 CFLAGS+=	-fPIC
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LFLAGS="${CFLAGS}"
 NO_WRKSUBDIR=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes

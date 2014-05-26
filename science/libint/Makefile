@@ -9,8 +9,7 @@ MASTER_SITES=	http://www.files.chem.vt.edu/chem-dept/valeev/software/libint/src/
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Evaluate the integrals in modern atomic and molecular theory
 
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 USE_LDCONFIG=	yes
 ALL_TARGET=	# empty
 

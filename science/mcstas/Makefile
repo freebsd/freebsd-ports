@@ -19,9 +19,8 @@ RUN_DEPENDS=	PDL>=0:${PORTSDIR}/math/PDL \
 		p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 
 STRIP=
-USES=		perl5
+USES=		perl5 gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

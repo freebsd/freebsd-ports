@@ -24,7 +24,7 @@ RESTRICTED=	Must register to download at http://graphics.stanford.edu/projects/d
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/dtiquery \
 		bin/dtiprecompute_cmd \
