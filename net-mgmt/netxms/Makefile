@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netxms
-PORTVERSION=	1.2.13
+PORTVERSION=	1.2.14
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/ \
 		http://www.netxms.org/download/archive/
@@ -26,7 +26,7 @@ AGENT_DESC=	Install NetXMS agent
 NO_PACKAGE=	yes
 
 USE_OPENSSL=	yes
-USES=		iconv gmake perl5
+USES=		gmake iconv libtool perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
