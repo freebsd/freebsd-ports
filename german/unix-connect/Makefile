@@ -19,7 +19,6 @@ MANUAL_PACKAGE_BUILD=	needs hostname
 NEED_ROOT=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-#USE_GMAKE=     yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-user=news
 CONFIGURE_ARGS+=--with-group=dialer
