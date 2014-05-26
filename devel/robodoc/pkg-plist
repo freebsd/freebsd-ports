@@ -1,0 +1,24 @@
+bin/robodoc
+bin/robohdrs
+man/man1/robodoc.1.gz
+man/man1/robohdrs.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/manual.css
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/robodoc_example.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/Box.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/Box/RectangularBox.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/Box/SquareBox.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/Cargo.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/Loader.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/SmartLoader.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/Source/TruckPacker.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PerlExample/robodoc.rc
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/PerlExample/Source/Box
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/PerlExample/Source
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/PerlExample
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
