@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-zero/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter from MS Word to text, HTML, or LaTeX
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 MAN1=		word2x.1

@@ -10,8 +10,7 @@ MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library to extract valid data from within an Excel (.xls) spreadsheet
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv gmake
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

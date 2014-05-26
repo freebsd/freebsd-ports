@@ -16,7 +16,7 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	EXPAT_LIBDIR=${LOCALBASE}/lib \
 		EXPAT_INCDIR=${LOCALBASE}/include \
 		CAML_INCDIR=${LOCALBASE}/lib/ocaml

@@ -11,9 +11,8 @@ COMMENT=	A GNOME tool to find strings in a set of files
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext gmake
 USE_GNOME=	gnomehier libgnomeui
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
