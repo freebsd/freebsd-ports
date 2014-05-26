@@ -15,8 +15,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 MAKE_ARGS=	DESTDIR="${PREFIX}" LIBPATH="/lib" INCPATH="/include" \
 		DATAPATH="${DOCSDIR}/pdf"
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+
+USES=		gmake tar:bzip2
 ALL_TARGET=	library
 
 CFLAGS+=	-I${PREFIX}/include

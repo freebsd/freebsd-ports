@@ -16,8 +16,8 @@ USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
 USE_APACHE=	22+
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

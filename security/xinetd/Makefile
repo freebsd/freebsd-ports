@@ -12,7 +12,7 @@ COMMENT=	Replacement for inetd with better control and logging
 
 LICENSE=	BSD
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xinetd
 ALL_TARGET=	build

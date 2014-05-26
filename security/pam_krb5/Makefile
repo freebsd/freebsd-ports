@@ -15,9 +15,8 @@ CONFLICTS=		pam_krb5-rh-2.*
 
 MAN5=			pam_krb5.5
 
-USES=		perl5
+USES=		perl5 gmake
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
 
 .if defined(KRB5_IMPL) && ${KRB5_IMPL} == heimdal
 .if defined(HEIMDAL_HOME)
