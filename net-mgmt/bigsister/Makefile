@@ -18,8 +18,7 @@ RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \
 		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake
 USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes
 HAS_CONFIGURE=	yes

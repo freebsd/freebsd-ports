@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC bot for Nagios
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	nagircbot
 
 PLIST_FILES=	bin/nagircbot
