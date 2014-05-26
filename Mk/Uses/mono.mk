@@ -10,8 +10,8 @@
 .if !defined(_INCLUDE_USES_MONO_MK)
 _INCLUDE_USES_MONO_MK=	yes
 
-.if defined(objc_ARGS)
-IGNORE=	USES=objc takes no arguments
+.if defined(mon_ARGS)
+IGNORE=	USES=mono takes no arguments
 .endif
 
 # Set the location of the .wapi directory so we write to a location we
