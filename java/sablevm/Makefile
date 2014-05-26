@@ -17,9 +17,8 @@ RUN_DEPENDS=	fastjar:${PORTSDIR}/archivers/fastjar
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pkgconfig gettext iconv
+USES=		pkgconfig gettext iconv gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

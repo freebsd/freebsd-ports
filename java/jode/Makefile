@@ -19,7 +19,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NEED_JAVAC=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 
 GETOPT_JAR=	${JAVALIBDIR}/java-getopt.jar
