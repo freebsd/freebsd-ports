@@ -17,8 +17,7 @@ COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_XZ=		yes
+USES=		gmake tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

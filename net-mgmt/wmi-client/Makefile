@@ -14,11 +14,9 @@ COMMENT=		DCOM/WMI client implementation
 
 CONFLICTS=		zenoss-3*
 
-USE_BZIP2=		yes
 USE_AUTOTOOLS=		autoconf:env
 USE_PYTHON_BUILD=	yes
-USE_GMAKE=		yes
-USES=			iconv
+USES=			iconv gmake tar:bzip2
 USE_LDCONFIG=		yes
 
 MAKEFILE=		GNUmakefile
