@@ -423,9 +423,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  that the port needs MATE. Implies inclusion of
 #				  bsd.mate.mk. See bsd.mate.mk for more details.
 ##
-# USE_LUA		- If set, this port uses the Lua library and related
-#				  components. See bsd.lua.mk for more details.
-##
 # USE_WX		- If set, this port uses the WxWidgets library and related
 #				  components. See bsd.wx.mk for more details.
 ##
@@ -1497,10 +1494,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.mate.mk"
 .endif
 
-.if defined(WANT_LUA) || defined(USE_LUA) || defined(USE_LUA_NOT)
-.include "${PORTSDIR}/Mk/bsd.lua.mk"
-.endif
-
 .if defined(WANT_WX) || defined(USE_WX) || defined(USE_WX_NOT)
 .include "${PORTSDIR}/Mk/bsd.wx.mk"
 .endif
@@ -1912,10 +1905,6 @@ IGNORE=	Do not define STAGEDIR in command line
 
 .if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-.endif
-
-.if defined(USE_LUA) || defined(USE_LUA_NOT)
-.include "${PORTSDIR}/Mk/bsd.lua.mk"
 .endif
 
 .if defined(USE_WX) || defined(USE_WX_NOT)
