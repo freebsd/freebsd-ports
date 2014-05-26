@@ -13,8 +13,8 @@ COMMENT=	Cryptographic library implemented in SPARK
 
 LICENSE=	BSD3CLAUSE
 
-USES=		ada gmake
-USE_DOS2UNIX=	Makefile build/libsparkcrypto.gpr
+USES=		ada dos2unix gmake
+DOS2UNIX_FILES=	Makefile build/libsparkcrypto.gpr
 SPARKARCH:=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
 
 MAKE_ENV+=	SPARKARCH=${SPARKARCH} \

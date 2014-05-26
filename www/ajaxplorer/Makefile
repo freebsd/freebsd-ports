@@ -12,13 +12,12 @@ COMMENT=	Ajax web file management system
 LICENSE=	AGPLv3
 
 NO_BUILD=	yes
-USES=		shebangfix
+USES=		dos2unix shebangfix
 php_OLD_CMD=	/php
 SHEBANG_FILES=	plugins/core.mq/ws-server.php \
 		plugins/core.mq/vendor/phpws/demo_ssl.php \
 		plugins/core.mq/vendor/phpws/demo.php
 USE_PHP=	dom mcrypt gd
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.php
 WANT_PHP_WEB=	yes
 SUB_FILES=	pkg-deinstall pkg-install pkg-message

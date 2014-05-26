@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>

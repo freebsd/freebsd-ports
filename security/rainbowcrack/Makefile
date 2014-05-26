@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.semprixd.com/shares/ports/
 MAINTAINER=	semprix@gmx.com
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

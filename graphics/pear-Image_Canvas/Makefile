@@ -14,7 +14,6 @@ RUN_DEPENDS=	${PEARDIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color
 
 USE_PHP=	gd
 USES=		dos2unix
-USE_DOS2UNIX=	yes
 
 PEAR_AUTOINSTALL=	yes
 
