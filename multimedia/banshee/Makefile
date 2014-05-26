@@ -14,8 +14,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono \
-		${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
+LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
 		${LOCALBASE}/libdata/pkgconfig/taglib-sharp.pc:${PORTSDIR}/audio/taglib-sharp \
 		${LOCALBASE}/libdata/pkgconfig/mono-zeroconf.pc:${PORTSDIR}/net/mono-zeroconf \
 		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins \
@@ -32,8 +31,7 @@ YOUTUBE_DESC=	Build and/or install the Youtube extension
 
 OPTIONS_DEFAULT=BPMDETECT GIO MTP WEBKIT YOUTUBE
 
-USE_XZ=		yes
-USES=		desktop-file-utils gmake pathfix perl5 pkgconfig shared-mime-info
+USES=		desktop-file-utils gmake mono pathfix perl5 pkgconfig shared-mime-info tar:xz
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtksharp20 gnomesharp20
@@ -46,8 +44,6 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware --disable-boo
 
 .include <bsd.port.options.mk>
-
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
