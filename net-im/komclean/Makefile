@@ -13,7 +13,7 @@ COMMENT=	Web based LysKOM client
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	x11 xext xextproto xpm
 INSTALLS_ICONS=	yes
 MAN1=		komclean

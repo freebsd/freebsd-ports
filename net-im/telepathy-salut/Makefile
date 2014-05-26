@@ -14,8 +14,7 @@ LIB_DEPENDS=	avahi-glib.1:${PORTSDIR}/net/avahi-app \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 USE_GNOME=	gnomehack glib20 libxslt:build
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes

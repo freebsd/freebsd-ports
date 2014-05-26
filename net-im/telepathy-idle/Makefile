@@ -15,9 +15,8 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
 USE_PYTHON_BUILD=yes
 

@@ -18,12 +18,10 @@ LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
 IGNORE=		Doesn't build currently, missing components
 CONFLICTS=	folks-0.4.[0-9]*
 
-USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehier gnomehack intlhack ltverhack evolutiondataserver3
-USES=		gettext
+USES=		gettext gmake tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
