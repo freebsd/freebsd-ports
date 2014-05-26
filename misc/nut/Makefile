@@ -16,7 +16,7 @@ LICENSE=	GPLv2 # (or later)
 OPTIONS_DEFINE=	FLTK DOCS
 FLTK_DESC=	Install FLTK GUI
 
-USE_GMAKE=	yes
+USES=		gmake
 
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 

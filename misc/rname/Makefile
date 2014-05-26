@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Execute a program with a fake name
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 

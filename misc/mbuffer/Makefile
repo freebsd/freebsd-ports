@@ -15,7 +15,7 @@ COMMENT=	Tool for buffering data streams
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SHELL=${SH}
 

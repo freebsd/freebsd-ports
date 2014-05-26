@@ -13,8 +13,7 @@ COMMENT=	A command line file manager
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		ncurses
-USE_GMAKE=	yes
+USES=		ncurses gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
