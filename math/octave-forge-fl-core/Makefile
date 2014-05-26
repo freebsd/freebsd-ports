@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

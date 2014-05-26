@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	HOME=${WRKSRC}
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>

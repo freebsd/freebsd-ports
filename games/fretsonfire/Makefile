@@ -18,8 +18,9 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		${LOCALBASE}/share/${PORTNAME}/default.ttf:${PORTSDIR}/games/fretsonfire-data
 
+USES=		dos2unix
 USE_PYTHON=	yes
-USE_DOS2UNIX=	*.txt
+DOS2UNIX_FILES=	*.txt
 NO_BUILD=	yes
 
 DATADIR=	share/${PORTNAME}
