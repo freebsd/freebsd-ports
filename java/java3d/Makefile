@@ -26,6 +26,7 @@ DOCSSRC=	${WRKSRC}/j3d-core/build/freebsd/javadocs/docs-public
 PORTDOCS=	*
 
 NO_STAGE=	yes
+RESTRICTED=	License does not allow distribution
 
 OPTIONS_DEFINE=	DOCS
 
