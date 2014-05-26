@@ -8,7 +8,7 @@ CATEGORIES=	comms java
 MASTER_SITES=	#
 DISTNAME=	comm${PORTVERSION}
 
-MAINTAINER=	ari.suutari@syncrontech.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun's Java Communications API
 
 USES=		zip

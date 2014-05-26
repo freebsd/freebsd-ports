@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.openprinting.org/download/printdriver/auxfiles/HP/plugi
 DISTNAME=	hplip-${DISTVERSION}-plugin
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	amistry@am-productions.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary plugin for some HP Printers and All-in-One devices
 
 RUN_DEPENDS=	hp-plugin:${PORTSDIR}/print/hplip

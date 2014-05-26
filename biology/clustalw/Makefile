@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/clustalw2/%SUBDIR%/ \
 		http://www.clustal.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple alignment program for DNA or proteins
 
 RESTRICTED=	No commercial use.

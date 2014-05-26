@@ -45,7 +45,7 @@ DISTFILES=	source/Makefile \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}.tar.gz
 
-MAINTAINER=	dereckson@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce beautiful listings of source code with LaTeX
 
 USE_TEX=	latex

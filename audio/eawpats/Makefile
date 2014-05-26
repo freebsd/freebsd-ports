@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	eawpats12_full
 
-MAINTAINER=	lennox@cs.columbia.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eric A. Welsh's collection of Gravis Ultrasound MIDI patches
 
 RESTRICTED=	Some of the patches are marked no-commercial-use

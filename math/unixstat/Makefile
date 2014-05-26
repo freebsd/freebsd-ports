@@ -9,7 +9,7 @@ MASTER_SITES=	# must fetch manually
 DISTNAME=	stat
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	mwm@mired.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A statistics package designed for use with the Unix shell
 
 RESTRICTED=	License does not allow mass redistribution.

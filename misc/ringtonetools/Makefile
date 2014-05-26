@@ -6,7 +6,7 @@ PORTVERSION=	2.26
 CATEGORIES=	misc
 MASTER_SITES=	http://downloads.mikekohn.net/${PORTNAME}/
 
-MAINTAINER=	mike@mikekohn.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create/convert/listen to ringtones and logos for mobile phones
 
 RESTRICTED=	no-commercial-use

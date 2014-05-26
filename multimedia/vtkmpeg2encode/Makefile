@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.vtk.org/files/support/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
 DISTNAME=	vtkmpeg2encode
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VTK MPEG2 encoding library
 
 NO_CDROM=	the MPEG2 format and all software that uses it is subject to patent restrictions

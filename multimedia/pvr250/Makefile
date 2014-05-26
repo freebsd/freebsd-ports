@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
 IGNOREFILES=	hcwPVRP2.sys	# Varies from month to month
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hauppauge PVR-250/350 TV cards driver for the cxm device
 
 CONFLICTS=	pvrxxx-*

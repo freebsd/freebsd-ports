@@ -12,7 +12,7 @@ DISTFILES=	Cyberbit.ZIP
 DIST_SUBDIR=	cyberbit
 EXTRACT_ONLY=	Cyberbit.ZIP
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bitstream Cyberbit is a TrueType font covers Unicode 2.0
 
 RESTRICTED=	Redistribution not permitted; single user license only.

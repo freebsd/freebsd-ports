@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.srv.net/~kth/ \
 		ftp://ftp.42.org/pub/unix/games/
 DISTFILES=	ladder.tar
 
-MAINTAINER=	sec@42.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The old "ladder" game
 
 RESTRICTED=	possible copyright problems ?

@@ -7,7 +7,7 @@ CATEGORIES=	net linux
 MASTER_SITES=	#
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Really Small Message Broker, an MQTT supporting server
 
 NO_BUILD=	yes
