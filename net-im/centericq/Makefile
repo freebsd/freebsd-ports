@@ -10,10 +10,8 @@ MASTER_SITES=	http://thekonst.net/download/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode menu- and window-driven IM interface
 
-USE_BZIP2=	yes
-USES=		iconv
+USES=		iconv gmake tar:bzip2
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include

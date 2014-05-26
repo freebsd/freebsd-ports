@@ -18,7 +18,7 @@ PORTDOCS+=	AUTHORS NEWS README
 
 USE_EMACS=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
