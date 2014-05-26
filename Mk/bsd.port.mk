@@ -1527,19 +1527,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 USES+=	gmake
 .endif
 
-.if defined(USE_DOS2UNIX)
-.if ${USE_DOS2UNIX:tu}=="YES"
-DOS2UNIX_REGEX?=	.*
-.else
-.if ${USE_DOS2UNIX:M*/*}
-DOS2UNIX_FILES+=	${USE_DOS2UNIX}
-.else
-DOS2UNIX_GLOB+=	${USE_DOS2UNIX}
-.endif
-.endif
-USES+=	dos2unix
-.endif
-
 .if !defined(UID)
 UID!=	${ID} -u
 .endif
