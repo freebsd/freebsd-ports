@@ -19,9 +19,8 @@ SLAVEDIRS=	mail/gmime2-sharp
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}24
 USE_GNOME?=	glib20
-USES=		gmake pathfix pkgconfig iconv
+USES=		gmake pathfix pkgconfig iconv tar:xz
 USE_LDCONFIG=	yes
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 # www.freebsd.org/cgi/query-pr.cgi?pr=118092
 # Rename uudecode and uuencode to gmime-* to not conflict with userland
