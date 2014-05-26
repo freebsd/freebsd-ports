@@ -1,0 +1,50 @@
+--- Makefile.orig	2008-11-25 00:26:32.000000000 +0300
++++ Makefile	2014-05-26 13:44:10.000000000 +0400
+@@ -49,36 +49,29 @@
+ #
+ #
+ BSD_INSTALL_GAME_DIR?= \
+-	${INSTALL} -d -o ${GAMEOWN} -g ${GAMEGRP} -m ${GAMEDIRMODE}
++	${INSTALL} -d
+ #
+ BSD_INSTALL_GAME?=          \
+-        ${INSTALL} ${COPY} ${_STRIPFLAG_INSTALL} -o ${GAMEOWN} \
+-	-g ${GAMEGRP} -m ${GAMEMODE}
++        ${INSTALL} ${COPY} ${_STRIPFLAG_INSTALL} \
++	-m ${GAMEMODE}
+ #
+ BSD_INSTALL_GAME_DATA?=     \
+-        ${INSTALL} ${COPY} -o ${GAMEOWN} -g ${GAMEGRP} -m ${GAMEDATAMODE}
++        ${INSTALL} ${COPY} -m ${GAMEDATAMODE}
+ #
+ BSD_INSTALL_MAN?=           \
+-        ${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
++        ${INSTALL} ${COPY} -m ${MANMODE}
+ #
+ 
+ 
+ all: ${GAME} ${EDITOR}
+ 
+ install: ${GAME} ${EDITOR}
+-	${BSD_INSTALL_GAME_DIR} ${LIB}
+-	${BSD_INSTALL_GAME} ${GAME} ${BIN}
+-	${BSD_INSTALL_GAME} ${EDITOR} ${BIN}
+-	${BSD_INSTALL_GAME_DIR} /var/games
+-	touch golddig.scores
+-	${BSD_INSTALL_GAME_DATA} golddig.scores /var/games/golddig.scores
+-	${BSD_INSTALL_GAME_DATA} levs/goldlev* levs/default ${LIB}
+-	${BSD_INSTALL_MAN} golddig.6 ${MAN}/golddig.${MANEXT}
+-	${BSD_INSTALL_MAN} gdedit.6 ${MAN}/gdedit.${MANEXT}
+-	chgrp ${SCORE_GROUP} ${BIN}/${GAME}
+-	chmod g+s ${BIN}/${GAME}
+-	chgrp ${SCORE_GROUP} /var/games/golddig.scores
+-	chmod 0664 /var/games/golddig.scores
++	${BSD_INSTALL_GAME_DIR} ${DESTDIR}${LIB}
++	${BSD_INSTALL_GAME} ${GAME} ${DESTDIR}${BIN}
++	${BSD_INSTALL_GAME} ${EDITOR} ${DESTDIR}${BIN}
++	${BSD_INSTALL_GAME_DATA} levs/goldlev* levs/default ${DESTDIR}${LIB}
++	${BSD_INSTALL_MAN} golddig.6 ${DESTDIR}${MAN}/golddig.${MANEXT}
++	${BSD_INSTALL_MAN} gdedit.6 ${DESTDIR}${MAN}/gdedit.${MANEXT}
+ 
+ update: ${GAME} ${EDITOR}
+ 	cp ${GAME} ${EDITOR} ${BIN}
