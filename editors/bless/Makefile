@@ -31,5 +31,4 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 LATEST_LINK=	gtk-sharp10
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix perl5 pkgconfig
+USES=		gmake mono pathfix perl5 pkgconfig
 USE_PERL5=	run
 USE_GNOME=	gtkhtml3 vte librsvg2 libgnomecanvas \
 		libgnomeprintui libglade2 libgnomeui
@@ -33,5 +33,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/glib/glue/slist.c ${WRKSRC}/glib/glue/list.c
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
