@@ -12,12 +12,9 @@ DISTNAME=	incubating-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Port for .NET of the Apache Logging Services project
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
-
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		zip
+USES=		mono zip
 NO_BUILD=	yes
 
 SUB_FILES=	log4net.pc
@@ -45,5 +42,4 @@ do-install:
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
