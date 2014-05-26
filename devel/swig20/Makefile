@@ -26,8 +26,6 @@ ALL_TARGET=	# none
 
 CONFIGURE_ARGS+=--program-suffix=${VER}
 
-USE_LUA=	yes
-LUA_COMPS=	lua:build
 CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
 		--with-luaincl=${LUA_INCDIR} \
 		--with-lualib=${LUA_LIBDIR}
