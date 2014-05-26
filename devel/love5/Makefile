@@ -38,6 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|ILvoid|void|' ${WRKSRC}/src/opengl/Image.cpp \
 		${WRKSRC}/src/opengl/love_opengl.cpp
 	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d' \
+		-e "s/lua5.1/lua-${LUA_VER}/g" \
 		${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MDOCS}
