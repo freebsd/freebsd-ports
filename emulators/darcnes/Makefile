@@ -17,7 +17,7 @@ NO_CDROM=	Commercial use is restricted
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 WANT_GNOME=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" TARGET_CC="${CC}" CXX="${CXX}" TARGET_CXX="${CXX}" \
 		AS="${AS}" TARGET_AS="${CC}" LD="${LD}" TARGET_LD="${CC}"
 

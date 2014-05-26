@@ -17,8 +17,8 @@ LIB_DEPENDS=	alleg:${PORTSDIR}/devel/allegro \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+
+USES=		gmake tar:bzip2
 USE_SDL=	sdl
 USE_GNOME=	gnomehier
 MAKEFILE=	makefile
