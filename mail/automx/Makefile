@@ -1,33 +1,38 @@
 # $FreeBSD$
 
 PORTNAME=	automx
-PORTVERSION=	0.9.2
+PORTVERSION=	0.10.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.automx.org/download/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Handles mail account profile requests from mail clients
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_wsgi.so:${PORTSDIR}/www/mod_wsgi2 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:${PORTSDIR}/devel/py-ipaddr \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
-		wget:${PORTSDIR}/ftp/wget
+		${PYTHON_PKGNAMEPREFIX}m2crypto>=0:${PORTSDIR}/security/py-m2crypto \
+		wget:${PORTSDIR}/ftp/wget \
+		dig:${PORTSDIR}/dns/bind-tools
 
-USE_APACHE_RUN=	22+
+GH_ACCOUNT=	sys4
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	a438a2b
+
 USE_PYTHON=	yes
+USE_GITHUB=	yes
 NO_BUILD=	yes
 PORTDATA=	*
 PORTDOCS=	*
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=	MEMCACHE
+MEMCACHE_DESC=	Add memcahce support
+MEMCACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}memcached>=0:${PORTSDIR}/databases/py-memcached
 
 .include <bsd.port.options.mk>
-
-post-patch:
-# Generate pkg-message from INSTALL file; include lines from Section 5 onwards
-	line=$$(${SED} -ne '/^Web Server/=' ${WRKSRC}/INSTALL) && \
-		${SED} -ne "$$line,\$$p" ${WRKSRC}/INSTALL > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -42,5 +47,10 @@ do-install:
 .endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "[^m]*" ${STAGEDIR}${DOCSDIR})
+	${INSTALL_MAN} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/BASIC_CONFIGURATION_README ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
