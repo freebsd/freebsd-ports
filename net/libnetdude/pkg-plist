@@ -1,14 +1,13 @@
 bin/lndtool
 include/libnetdude/%%PORTVERSION%%/libnd.h
-include/libnetdude/%%PORTVERSION%%/libnd_types.h
 include/libnetdude/%%PORTVERSION%%/libnd_debug.h
 include/libnetdude/%%PORTVERSION%%/libnd_dumper.h
-include/libnetdude/%%PORTVERSION%%/libnd_macros.h
 include/libnetdude/%%PORTVERSION%%/libnd_filter.h
 include/libnetdude/%%PORTVERSION%%/libnd_filter_factory.h
 include/libnetdude/%%PORTVERSION%%/libnd_filter_registry.h
 include/libnetdude/%%PORTVERSION%%/libnd_globals.h
 include/libnetdude/%%PORTVERSION%%/libnd_init.h
+include/libnetdude/%%PORTVERSION%%/libnd_macros.h
 include/libnetdude/%%PORTVERSION%%/libnd_magic.h
 include/libnetdude/%%PORTVERSION%%/libnd_misc.h
 include/libnetdude/%%PORTVERSION%%/libnd_null_protocol.h
@@ -25,76 +24,62 @@ include/libnetdude/%%PORTVERSION%%/libnd_raw_protocol.h
 include/libnetdude/%%PORTVERSION%%/libnd_registry.h
 include/libnetdude/%%PORTVERSION%%/libnd_tcpdump.h
 include/libnetdude/%%PORTVERSION%%/libnd_timestamp.h
-include/libnetdude/%%PORTVERSION%%/libnd_tpm.h
 include/libnetdude/%%PORTVERSION%%/libnd_tp.h
+include/libnetdude/%%PORTVERSION%%/libnd_tpm.h
 include/libnetdude/%%PORTVERSION%%/libnd_trace.h
+include/libnetdude/%%PORTVERSION%%/libnd_types.h
+include/libnetdude/%%PORTVERSION%%/plugins/libnd_bpf.h
+include/libnetdude/%%PORTVERSION%%/plugins/libnd_cksumfix.h
 include/libnetdude/%%PORTVERSION%%/protocols/fddi/libnd_fddi.h
 include/libnetdude/%%PORTVERSION%%/protocols/icmp/libnd_icmp.h
 include/libnetdude/%%PORTVERSION%%/protocols/ip/libnd_ip.h
 include/libnetdude/%%PORTVERSION%%/protocols/snap/libnd_snap.h
-include/libnetdude/%%PORTVERSION%%/protocols/tcp/libnd_tcp.h
 include/libnetdude/%%PORTVERSION%%/protocols/tcp/libnd_tcb.h
+include/libnetdude/%%PORTVERSION%%/protocols/tcp/libnd_tcp.h
 include/libnetdude/%%PORTVERSION%%/protocols/udp/libnd_udp.h
 include/libnetdude/%%PORTVERSION%%/protocols/vlan/libnd_vlan.h
-include/libnetdude/%%PORTVERSION%%/plugins/libnd_cksumfix.h
-include/libnetdude/%%PORTVERSION%%/plugins/libnd_bpf.h
-lib/libnetdude.so.0
-lib/libnetdude.so
-lib/libnetdude.la
 lib/libnetdude.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_802_11.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_802_11.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_802_11.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_arp.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_arp.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_arp.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ethernet.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ethernet.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ethernet.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_fddi.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_fddi.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_fddi.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_icmp.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_icmp.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_icmp.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ip.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ip.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ip.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_sll.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_sll.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_sll.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_snap.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_snap.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_snap.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_tcp.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_tcp.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_tcp.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_udp.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_udp.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_udp.a
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_vlan.so
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_vlan.la
-%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_vlan.a
-%%DATADIR%%/%%PORTVERSION%%/plugins/libnd_cksumfix.so
-%%DATADIR%%/%%PORTVERSION%%/plugins/libnd_cksumfix.la
-%%DATADIR%%/%%PORTVERSION%%/plugins/libnd_cksumfix.a
-%%DATADIR%%/%%PORTVERSION%%/plugins/libnd_bpf.so
-%%DATADIR%%/%%PORTVERSION%%/plugins/libnd_bpf.la
+lib/libnetdude.so
+lib/libnetdude.so.0
+lib/libnetdude.so.0.0.0
 %%DATADIR%%/%%PORTVERSION%%/plugins/libnd_bpf.a
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/fddi
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/icmp
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/ip
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/snap
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/tcp
-@dirrm include/libnetdude/%%PORTVERSION%%/protocols/udp
+%%DATADIR%%/%%PORTVERSION%%/plugins/libnd_bpf.so
+%%DATADIR%%/%%PORTVERSION%%/plugins/libnd_cksumfix.a
+%%DATADIR%%/%%PORTVERSION%%/plugins/libnd_cksumfix.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_802_11.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_802_11.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_arp.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_arp.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ethernet.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ethernet.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_fddi.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_fddi.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_icmp.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_icmp.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ip.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_ip.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_sll.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_sll.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_snap.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_snap.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_tcp.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_tcp.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_udp.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_udp.so
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_vlan.a
+%%DATADIR%%/%%PORTVERSION%%/protocols/libnd_vlan.so
+@dirrm %%DATADIR%%/%%PORTVERSION%%/protocols
+@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins
+@dirrm %%DATADIR%%/%%PORTVERSION%%
+@dirrm %%DATADIR%%
 @dirrm include/libnetdude/%%PORTVERSION%%/protocols/vlan
+@dirrm include/libnetdude/%%PORTVERSION%%/protocols/udp
+@dirrm include/libnetdude/%%PORTVERSION%%/protocols/tcp
+@dirrm include/libnetdude/%%PORTVERSION%%/protocols/snap
+@dirrm include/libnetdude/%%PORTVERSION%%/protocols/ip
+@dirrm include/libnetdude/%%PORTVERSION%%/protocols/icmp
+@dirrm include/libnetdude/%%PORTVERSION%%/protocols/fddi
 @dirrm include/libnetdude/%%PORTVERSION%%/protocols
 @dirrm include/libnetdude/%%PORTVERSION%%/plugins
 @dirrm include/libnetdude/%%PORTVERSION%%
 @dirrm include/libnetdude
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/%%PORTVERSION%%/plugins
-@dirrm %%DATADIR%%/%%PORTVERSION%%/protocols
-@dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrm %%DATADIR%%
