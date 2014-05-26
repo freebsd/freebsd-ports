@@ -324,7 +324,7 @@ gst_opencv_PLIST_DIRSTRY=	share/gst-plugins-bad/${VERSION}/opencv_haarcascades \
 				share/gst-plugins-bad
 
 # openjpeg
-gst_openjpeg_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+gst_openjpeg_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 
 # opus
 gst_opus_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus

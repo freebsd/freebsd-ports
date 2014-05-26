@@ -7,3 +7,6 @@ include/mucbz.h
 include/mupdf.h
 include/muxps.h
 lib/libfitz.a
+man/man1/mudraw.1.gz
+man/man1/mupdf.1.gz
+man/man1/mutool.1.gz

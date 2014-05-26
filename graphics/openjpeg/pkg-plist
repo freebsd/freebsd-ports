@@ -1,20 +1,15 @@
-bin/image_to_j2k
-bin/j2k_dump
-bin/j2k_to_image
-include/openjpeg.h
-lib/libopenjpeg.so
-lib/libopenjpeg.so.1.5.2
-lib/libopenjpeg.so.2
-man/man1/image_to_j2k.1.gz
-man/man1/j2k_dump.1.gz
-man/man1/j2k_to_image.1.gz
-man/man3/libopenjpeg.3.gz
-%%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/LICENSE
-%%DATADIR%%/OpenJPEGConfig.cmake
-%%DATADIR%%/OpenJPEGTargets-%%CMAKE_BUILD_TYPE%%.cmake
-%%DATADIR%%/OpenJPEGTargets.cmake
-libdata/pkgconfig/libopenjpeg.pc
-libdata/pkgconfig/libopenjpeg1.pc
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+bin/opj_compress
+bin/opj_decompress
+bin/opj_dump
+include/openjpeg-%%VER%%/openjpeg.h
+include/openjpeg-%%VER%%/opj_config.h
+include/openjpeg-%%VER%%/opj_stdint.h
+lib/libopenjp2.so
+lib/libopenjp2.so.2.1.0
+lib/libopenjp2.so.7
+lib/openjpeg-%%VER%%/OpenJPEGConfig.cmake
+lib/openjpeg-%%VER%%/OpenJPEGTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/openjpeg-%%VER%%/OpenJPEGTargets.cmake
+libdata/pkgconfig/libopenjp2.pc
+@dirrmtry lib/openjpeg-%%VER%%
+@dirrmtry include/openjpeg-%%VER%%

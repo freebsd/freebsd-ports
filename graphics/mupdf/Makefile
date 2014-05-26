@@ -3,7 +3,7 @@
 
 PORTNAME=	mupdf
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
@@ -15,17 +15,16 @@ COMMENT=	Lightweight PDF viewer and toolkit
 
 LICENSE=	AGPLv3
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
-		openjpeg:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
+		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 
 USE_GMAKE=	yes
 MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man \
 		XCFLAGS=-I${LOCALBASE}/include
 USES=		pkgconfig
 USE_XORG=	x11 xext
-MAN1=		mupdf.1 mutool.1 mudraw.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
@@ -35,7 +34,6 @@ OPTIONS_DEFAULT=SCROLL
 SCROLL_DESC=	Build with scroll hacks
 JS_DESC=	JavaScript support (V8 engine)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${CC:T:Mclang} == "clang"
@@ -49,7 +47,7 @@ EXTRA_PATCHES+=	${FILESDIR}/scroll_hack-apps_pdfapp.c
 .endif
 
 .if ${PORT_OPTIONS:MJS}
-LIB_DEPENDS+=	v8:${PORTSDIR}/lang/v8
+LIB_DEPENDS+=	libv8.so:${PORTSDIR}/lang/v8
 MAKE_ARGS+=	V8_PRESENT=1 V8LIBS=-lv8
 .endif
 

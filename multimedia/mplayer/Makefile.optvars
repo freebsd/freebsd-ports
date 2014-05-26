@@ -68,7 +68,7 @@ NAS_CONFIGURE_OFF=	--disable-nas
 OPENAL_USES=		openal:soft
 OPENAL_CONFIGURE_OFF=	--disable-openal
 
-OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 OPENJPEG_CONFIGURE_OFF=	--disable-libopenjpeg
 
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
