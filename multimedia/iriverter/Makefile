@@ -13,9 +13,8 @@ COMMENT=	Cross-platform frontend to mencoder
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
 
 USE_JAVA=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 
 OPTIONS_DEFINE=	SWTDEVEL
 SWTDEVEL_DESC=	Use SWT Development port
