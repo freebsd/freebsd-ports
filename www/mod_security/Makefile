@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_security
 PORTVERSION=	2.7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -19,6 +19,7 @@ LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 USE_APACHE=	22+
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
+USES=		perl5
 
 AP_GENPLIST=	yes
 AP_INC=	${LOCALBASE}/include/libxml2
@@ -41,7 +42,7 @@ OPTIONS_DEFINE=	LUA MLOGC
 
 LUA_CONFIGURE_ON=	--with-lua=${LOCALBASE}
 LUA_CONFIGURE_OFF+=	--without-lua
-LUA_USE=		LUA=5.1+
+LUA_USES=		lua
 
 MLOGC_DESC=		Build ModSecurity Log Collector
 MLOGC_CONFIGURE_ON=	--with-curl=${LOCALBASE} --disable-errors
@@ -56,6 +57,9 @@ OPTIONSFILE=	${PORT_DBDIR}/www_mod_security/options
 REINPLACE_ARGS=	-i ""
 AP_EXTRAS+=	-DWITH_LIBXML2
 CONFIGURE_ARGS+=	--with-apxs=${APXS} --with-pcre=${LOCALBASE}
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/lua5.1/lua-${LUA_VER}/g" ${WRKSRC}/configure
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
