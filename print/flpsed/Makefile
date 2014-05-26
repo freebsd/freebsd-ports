@@ -14,7 +14,7 @@ LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
 USE_GHOSTSCRIPT=yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/flpsed
 MAN1=		flpsed.1

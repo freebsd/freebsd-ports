@@ -32,8 +32,7 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 # normazile WRKSRC so things like cups-pstoraster may work

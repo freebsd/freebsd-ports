@@ -26,7 +26,7 @@ RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
 USE_PYTHON=	yes
 USE_TEX=	base texmf
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	GNUmakefile
 
 .if !defined(NO_INSTALL_MANPAGES)

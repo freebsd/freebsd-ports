@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DVI to text/plain translator
 
 USE_TEX=	latex
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	# empty
