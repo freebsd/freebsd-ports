@@ -25,7 +25,6 @@ CONFLICTS=      kicad-2013*
 DOCVERSION=	1.1
 LIBVERSION=	1.0
 
-#USE_GMAKE=	yes
 USE_GL=		glew glu
 USE_WX=		2.8
 WX_UNICODE=	yes
