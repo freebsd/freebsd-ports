@@ -89,6 +89,244 @@ Notes:
     </dates>
   </vuln>
 
+  <vuln vid="02db20d7-e34a-11e3-bd92-bcaec565249c">
+    <topic>openjpeg -- Multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>openjpeg</name>
+	<range><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Openjpeg release notes report:</p>
+	<blockquote cite="http://openjpeg.googlecode.com/svn/tags/version.1.5.1/NEWS">
+	  <p>That CVE-2012-3535 and CVE-2012-3358 are fixed in the 1.5.1
+	    release.</p>
+	</blockquote>
+	<blockquote cite="http://openjpeg.googlecode.com/svn/tags/version.1.5.2/NEWS">
+	  <p>That CVE-2013-4289, CVE-2013-4290, CVE-2013-1447, CVE-2013-6045,
+	    CVE-2013-6052, CVE-2013-6054, CVE-2013-6053, CVE-2013-6887,
+	    where fixed in the 1.5.2 release.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3358</cvename>
+      <cvename>CVE-2012-3535</cvename>
+      <cvename>CVE-2013-1447</cvename>
+      <cvename>CVE-2013-4289</cvename>
+      <cvename>CVE-2013-4290</cvename>
+      <cvename>CVE-2013-6045</cvename>
+      <cvename>CVE-2013-6052</cvename>
+      <cvename>CVE-2013-6053</cvename>
+      <cvename>CVE-2013-6054</cvename>
+      <cvename>CVE-2013-6887</cvename>
+      <url>http://openjpeg.googlecode.com/svn/tags/version.1.5.1/NEWS</url>
+      <url>http://openjpeg.googlecode.com/svn/tags/version.1.5.2/NEWS</url>
+    </references>
+    <dates>
+      <discovery>2012-05-13</discovery>
+      <entry>2014-05-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="64f3872b-e05d-11e3-9dd4-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>35.0.1916.114</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>23 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[356653] High CVE-2014-1743: Use-after-free in styles. Credit
+	      to cloudfuzzer.</li>
+	    <li>[359454] High CVE-2014-1744: Integer overflow in audio. Credit
+	      to Aaron Staple.</li>
+	    <li>[346192] High CVE-2014-1745: Use-after-free in SVG. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[364065] Medium CVE-2014-1746: Out-of-bounds read in media
+	      filters. Credit to Holger Fuhrmannek.</li>
+	    <li>[330663] Medium CVE-2014-1747: UXSS with local MHTML file.
+	      Credit to packagesu.</li>
+	    <li>[331168] Medium CVE-2014-1748: UI spoofing with scrollbar.
+	      Credit to Jordan Milne.</li>
+	    <li>[374649] CVE-2014-1749: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[358057] CVE-2014-3152: Integer underflow in V8 fixed in
+	      version 3.25.28.16.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1743</cvename>
+      <cvename>CVE-2014-1744</cvename>
+      <cvename>CVE-2014-1745</cvename>
+      <cvename>CVE-2014-1746</cvename>
+      <cvename>CVE-2014-1747</cvename>
+      <cvename>CVE-2014-1748</cvename>
+      <cvename>CVE-2014-1749</cvename>
+      <cvename>CVE-2014-3152</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-05-20</discovery>
+      <entry>2014-05-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cdf450fc-db52-11e3-a9fc-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>34.0.1847.137</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>3 security fixes in this release:</p>
+	  <ul>
+	    <li>[358038] High CVE-2014-1740: Use-after-free in WebSockets.
+	      Credit to Collin Payne.</li>
+	    <li>[349898] High CVE-2014-1741: Integer overflow in DOM ranges.
+	      Credit to John Butler.</li>
+	    <li>[356690] High CVE-2014-1742: Use-after-free in editing. Credit
+	      to cloudfuzzer.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1740</cvename>
+      <cvename>CVE-2014-1741</cvename>
+      <cvename>CVE-2014-1742</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-05-13</discovery>
+      <entry>2014-05-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b060ee50-daba-11e3-99f2-bcaec565249c">
+    <topic>libXfont -- X Font Service Protocol and Font metadata file handling issues</topic>
+    <affects>
+      <package>
+	<name>libXfont</name>
+	<range><lt>1.4.7_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2014-May/002431.html">
+	  <p>Ilja van Sprundel, a security researcher with IOActive, has
+	    discovered several issues in the way the libXfont library
+	    handles the responses it receives from xfs servers, and has
+	    worked with X.Org's security team to analyze, confirm, and fix
+	    these issues.</p>
+	  <p>Most of these issues stem from libXfont trusting the font server
+	    to send valid protocol data, and not verifying that the values
+	    will not overflow or cause other damage.  This code is commonly
+	    called from the X server when an X Font Server is active in the
+	    font path, so may be running in a setuid-root process depending
+	    on the X server in use.  Exploits of this path could be used by
+	    a local, authenticated user to attempt to raise privileges; or
+	    by a remote attacker who can control the font server to attempt
+	    to execute code with the privileges of the X server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0209</cvename>
+      <cvename>CVE-2014-0210</cvename>
+      <cvename>CVE-2014-0211</cvename>
+      <url>http://lists.x.org/archives/xorg-announce/2014-May/002431.html</url>
+    </references>
+    <dates>
+      <discovery>2014-05-13</discovery>
+      <entry>2014-05-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e7bb3885-da40-11e3-9ecb-2c4138874f7d">
+    <topic>libxml2 -- lack of end-of-document check DoS</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><le>2.8.0_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2877">
+	  <p>parser.c in libxml2 before 2.9.0, as used in Google
+	     Chrome before 28.0.1500.71 and other products, allows remote
+	     attackers to cause a denial of service (out-of-bounds read)
+	     via a document that ends abruptly, related to the lack of
+	     certain checks for the XML_PARSER_EOF state.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2877</cvename>
+      <url>https://git.gnome.org/browse/libxml2/tag/?id=CVE-2013-2877</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2877</url>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2877</url>
+    </references>
+    <dates>
+      <discovery>2013-04-11</discovery>
+      <entry>2013-07-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="efdd0edc-da3d-11e3-9ecb-2c4138874f7d">
+    <topic>libxml2 -- entity substitution DoS</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><le>2.8.0_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/05/06/4">
+	  <p>It was discovered that libxml2, a library providing
+	     support to read, modify and write XML files, incorrectly
+	     performs entity substitution in the doctype prolog, even if
+	     the application using libxml2 disabled any entity
+	     substitution.  A remote attacker could provide a
+	     specially-crafted XML file that, when processed, would lead
+	     to the exhaustion of CPU and memory resources or file
+	     descriptors.</p>
+	  <p>This issue was discovered by Daniel Berrange of Red Hat.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0191</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2014/05/06/4</url>
+      <url>https://git.gnome.org/browse/libxml2/tag/?id=CVE-2014-0191</url>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0191</url>
+    </references>
+    <dates>
+      <discovery>2013-12-03</discovery>
+      <entry>2014-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1959e847-d4f0-11e3-84b0-0018fe623f2b">
     <topic>OpenSSL -- NULL pointer dereference / DoS</topic>
     <affects>
