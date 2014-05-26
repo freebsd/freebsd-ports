@@ -20,7 +20,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		ttf2pt1:${PORTSDIR}/print/ttf2pt1
 LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_TEX=	tetex latex
 
 MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \

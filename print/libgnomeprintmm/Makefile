@@ -14,10 +14,8 @@ COMMENT=	C++ bindings for the GNOME print support library
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		pkgconfig
+USES=		pkgconfig gmake tar:bzip2
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeprint
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

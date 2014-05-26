@@ -24,10 +24,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libTECkit.so:${PORTSDIR}/textproc/teckit
 
-USE_XZ=		yes
-USE_GMAKE=	yes
 USE_TEX=	texlive kpathsea web2c texmf formats fmtutil
-USES=		pkgconfig
+USES=		pkgconfig gmake tar:xz
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES= \
 	build-aux \
