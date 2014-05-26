@@ -11,22 +11,17 @@ MASTER_SITES=	http://oss.linbit.com/csync2/ \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Cluster synchronization tool
 
-LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
-		tasn1.7:${PORTSDIR}/security/libtasn1 \
-		gnutls.26:${PORTSDIR}/security/gnutls \
-		sqlite.2:${PORTSDIR}/databases/sqlite2 \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error.0:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync \
+		libtasn1.so:${PORTSDIR}/security/libtasn1 \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libsqlite.so:${PORTSDIR}/databases/sqlite2 \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error
 
 OPTIONS_DEFINE=	CSYNC2_COMPARE
 CSYNC2_COMPARE_DESC=	Install csync2-compare script
 
-USES=	pkgconfig
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-MAN1=		csync2.1
+USES=		pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
@@ -37,7 +32,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_RC_SUBR=	csync2
 
 PLIST_FILES=	etc/csync2.cfg-dist \
-		sbin/csync2
+		sbin/csync2 \
+		man/man1/csync2.1.gz
+
+SUB_FILES=	pkg-install
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCSYNC2_COMPARE}
 RUN_DEPENDS+=	bash>=0:${PORTSDIR}/shells/bash
@@ -47,12 +47,7 @@ CSYNC2_COMPARE=	csync2-compare
 CSYNC2_COMPARE=
 .endif
 
-SUB_FILES=	pkg-install
-
 post-patch:
 	${REINPLACE_CMD} -E "s#%%CSYNC2_COMPARE%%#${CSYNC2_COMPARE}#" ${WRKSRC}/Makefile.in
-
-post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
