@@ -2,9 +2,9 @@ include/bdd.h
 include/bvec.h
 include/fdd.h
 lib/libbdd.a
-lib/libbdd.la
 lib/libbdd.so
 lib/libbdd.so.0
+lib/libbdd.so.0.0.0
 %%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/bddnotes.ps
 %%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/buddy.ps
 %%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/tech.txt
