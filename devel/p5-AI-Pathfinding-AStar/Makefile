@@ -7,8 +7,11 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl implementation of the A* pathfinding algorithm
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Heap>=0:${PORTSDIR}/devel/p5-Heap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
