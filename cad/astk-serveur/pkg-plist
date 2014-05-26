@@ -1,4 +1,3 @@
-%%SERV%%%%MPI%%aster/aster-mpihosts
 %%CLIENT%%%%ASTKDIR%%/bin/astk
 %%CLIENT%%%%ASTKDIR%%/bin/bsf
 %%CLIENT%%%%ASTKDIR%%/etc/astkrc/ASTKRC_INFO.txt
@@ -433,6 +432,25 @@
 %%SERV%%%%ASTKDIR%%/bin/as_run
 %%SERV%%%%ASTKDIR%%/bin/auto_update.cron
 %%SERV%%%%ASTKDIR%%/bin/parallel_cp
+%%SERV%%%%ASTKDIR%%/etc/.mysql_connect_REX
+%%SERV%%%%ASTKDIR%%/etc/asrun
+%%SERV%%%%ASTKDIR%%/etc/aster
+%%SERV%%%%ASTKDIR%%/etc/codeaster/astkrc/.keep_me
+%%SERV%%%%ASTKDIR%%/etc/config_nodename
+%%SERV%%%%ASTKDIR%%/etc/plugins/__init__.py
+%%SERV%%%%ASTKDIR%%/etc/plugins/__init__.pyc
+%%SERV%%%%ASTKDIR%%/etc/plugins/__init__.pyo
+%%SERV%%%%ASTKDIR%%/etc/plugins/aster4_calcul.py
+%%SERV%%%%ASTKDIR%%/etc/plugins/aster4_calcul.pyc
+%%SERV%%%%ASTKDIR%%/etc/plugins/aster4_calcul.pyo
+%%SERV%%%%ASTKDIR%%/etc/plugins/ivanoe.py
+%%SERV%%%%ASTKDIR%%/etc/plugins/ivanoe.pyc
+%%SERV%%%%ASTKDIR%%/etc/plugins/ivanoe.pyo
+%%SERV%%%%ASTKDIR%%/etc/plugins/sge_pe.py
+%%SERV%%%%ASTKDIR%%/etc/plugins/sge_pe.pyc
+%%SERV%%%%ASTKDIR%%/etc/plugins/sge_pe.pyo
+%%SERV%%%%ASTKDIR%%/etc/profile.csh
+%%SERV%%%%ASTKDIR%%/etc/profile.sh
 %%SERV%%%%ASTKDIR%%/i18n/Makefile
 %%SERV%%%%ASTKDIR%%/i18n/asrun.fr.mo
 %%SERV%%%%ASTKDIR%%/i18n/asrun.fr.po
@@ -543,6 +561,7 @@
 %%SERV%%%%ASTKDIR%%/unittest/test_relocate.py
 %%SERV%%%%ASTKDIR%%/unittest/test_relocate.pyc
 %%SERV%%%%ASTKDIR%%/unittest/test_relocate.pyo
+%%SERV%%%%MPI%%aster/aster-mpihosts
 %%SERV%%%%ETCDIR%%/asrun
 %%SERV%%%%ETCDIR%%/aster
 %%SERV%%%%ETCDIR%%/config_nodename
@@ -578,6 +597,10 @@
 %%SERV%%@dirrm %%ASTKDIR%%/i18n/locale/fr
 %%SERV%%@dirrm %%ASTKDIR%%/i18n/locale
 %%SERV%%@dirrm %%ASTKDIR%%/i18n
+%%SERV%%@dirrm %%ASTKDIR%%/etc/plugins
+%%SERV%%@dirrmtry %%ASTKDIR%%/etc/codeaster/astkrc
+%%SERV%%@dirrmtry %%ASTKDIR%%/etc/codeaster
+%%SERV%%@dirrmtry %%ASTKDIR%%/etc
 %%SERV%%@dirrm %%ASTKDIR%%/bin
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/plugins
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/dev
