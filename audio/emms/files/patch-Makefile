@@ -16,10 +16,10 @@
 -MAN1DIR=$(PREFIX)/share/man/man1
 -SITELISP=$(PREFIX)/share/emacs/site-lisp/emms
 +DESTDIR?=
-+PREFIX?=$(DESTDIR)/usr/local
-+INFODIR?=$(PREFIX)/info
-+MAN1DIR?=$(PREFIX)/man/man1
-+SITELISP?=$(PREFIX)/$(EMACS_SITE_LISPDIR)/emms
++EMMSPREFIX?=$(DESTDIR)/usr/local
++INFODIR?=$(EMMSPREFIX)/info
++MAN1DIR?=$(EMMSPREFIX)/man/man1
++SITELISP?=$(EMMSPREFIX)/$(EMACS_SITE_LISPDIR)/emms
  
 -INSTALLINFO = /usr/sbin/install-info --info-dir=$(INFODIR)
 +INSTALLINFO?= /usr/bin/install-info --info-dir=$(INFODIR)
