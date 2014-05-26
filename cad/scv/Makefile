@@ -7,7 +7,7 @@ CATEGORIES=	cad devel
 MASTER_SITES=	# you have to register and manually fetch
 EXTRACT_SUFX=	-sysc2.2.12jun06.tgz
 
-MAINTAINER=	johnson.peter@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SystemC Verification library
 
 BUILD_DEPENDS=	${LOCALBASE}/systemc/lib-freebsd/libsystemc.a:${PORTSDIR}/cad/systemc

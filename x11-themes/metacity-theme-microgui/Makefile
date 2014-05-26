@@ -9,7 +9,7 @@ MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
 DISTNAME=	mcitymicrogui-default
 
-MAINTAINER=	douglas@douglasthrift.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The microGUI Sawfish theme for Metacity
 
 LICENSE=	GPLv2

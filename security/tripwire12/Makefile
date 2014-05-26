@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 PKGNAMESUFFIX=	12
 
-MAINTAINER=	jgreco@ns.sol.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File system security and verification program
 
 MAN5=		tw.config.5

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	et-linux-2.60b.x86
 DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch
 
-MAINTAINER=	bar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64

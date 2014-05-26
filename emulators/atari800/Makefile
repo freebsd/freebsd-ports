@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xf25.zip:x
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	gamato@users.sf.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari 8-bit computer emulator
 
 BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip

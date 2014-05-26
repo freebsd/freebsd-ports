@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/
 DISTFILES=	xchada01.lzh
 
-MAINTAINER=	motoyuki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display a dancing girl "ChaCha."
 
 USES=		lha

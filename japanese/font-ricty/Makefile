@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 
-MAINTAINER=	masaki@club.kyutech.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ricty - fonts for programming
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

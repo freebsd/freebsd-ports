@@ -4,7 +4,7 @@
 PORTREVISION=	2
 PKGNAMESUFFIX=	-mpi
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS+=	libmpi.so:${PORTSDIR}/net/openmpi
 

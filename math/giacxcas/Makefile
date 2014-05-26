@@ -10,7 +10,7 @@ MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/ \
 DISTFILES=	fltk-giac.tar.gz CoCoALib-0.9950.tgz giac-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	han@math.jussieu.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computer algebra system by Bernard Parisse
 
 LICENSE=	GPLv3

@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp6.nero.com/tools/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	NeroAACCodec-${PORTVERSION}
 
-MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nero AAC reference quality MPEG-4 and 3GPP audio codec
 
 USES=		dos2unix zip

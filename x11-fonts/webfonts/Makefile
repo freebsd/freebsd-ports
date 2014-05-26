@@ -14,7 +14,7 @@ DISTFILES=	andale32.exe:group1  arial32.exe:group1 arialb32.exe:group1 \
 		verdan32.exe:group1 webdin32.exe:group1
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kkonstan@duth.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType core fonts for the Web
 
 EXTRACT_DEPENDS=cabextract:${PORTSDIR}/archivers/cabextract

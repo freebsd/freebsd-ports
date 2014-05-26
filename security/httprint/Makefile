@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://net-square.com/zip%20folders/
 DISTNAME=	${PORTNAME}_freebsd_${PORTVERSION}
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web server fingerprinting tool
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/freebsd/
