@@ -3,7 +3,7 @@
 
 PORTNAME=	libofa
 PORTVERSION=	0.9.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -22,12 +22,11 @@ LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 PROJECTHOST=	musicip-libofa
-USE_DOS2UNIX=	yes
-USE_AUTOTOOLS=	libtool
-USES=		pathfix
+USES=		dos2unix libtool pathfix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
