@@ -15,19 +15,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake mono pathfix pkgconfig shebangfix
+bash_CMD=	${SH}
+SHEBANG_FILES=	src/MZClient/mzclient.in
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--disable-mdnsresponder
 MAKE_JOBS_UNSAFE=	yes
+DOCS_CONFIGURE_ENABLE=	docs
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--disable-docs
-.else
-CONFIGURE_ARGS+=	--enable-docs
-#BUILD_DEPENDS+=	${LOCALBASE}/bin/monodocer:${PORTSDIR}/devel/monodoc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
