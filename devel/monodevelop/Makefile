@@ -3,6 +3,7 @@
 
 PORTNAME=	monodevelop
 PORTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-2
@@ -17,9 +18,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:${PORTSDIR}/x11-toolkits/libgdiplus \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	gtksharp20 gnomesharp20
-USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
-USES=		desktop-file-utils gettext gmake pathfix shared-mime-info
+GNU_CONFIGURE=	yes
+USES=		desktop-file-utils gettext gmake libtool mono pathfix shared-mime-info \
+		tar:bzip2
+CONFIGURE_ARGS=	--disable-update-desktopdb \
+		--disable-update-mimedb
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	MONOEXT GIT SVN
@@ -45,5 +48,4 @@ post-patch:
 		${WRKSRC}/monodevelop.in \
 		${WRKSRC}/mdtool.in
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
