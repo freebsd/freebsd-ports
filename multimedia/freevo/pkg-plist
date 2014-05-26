@@ -2472,3 +2472,11 @@ etc/freevo/local_conf.py.example
 @dirrm %%DATADIR%%/skins/plugins
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%
+@owner freevo
+@group freevo
+@unexec rmdir /var/log/freevo 2>/dev/null || true
+@exec install -d -o freevo -g freevo -m 0755 /var/log/freevo
+@unexec rmdir /var/run/freevo 2>/dev/null || true
+@exec install -d -o freevo -g freevo -m 0755 /var/run/freevo
+@owner
+@group
