@@ -2,7 +2,7 @@
 
 PORTNAME=	gbrainy
 PORTVERSION=	2.2.2
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 
@@ -16,22 +16,14 @@ BUILD_DEPENDS=	mautil:${PORTSDIR}/devel/mono-addins \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GNOME=	desktopfileutils gnomehack gtksharp20 gnomesharp20
-USES=		gettext gmake pkgconfig
+USE_GNOME=	gtksharp20 gnomesharp20
+USES=		gettext gmake mono pathfix pkgconfig \
+		shebangfix
+SHEBANG_FILES=	src/Clients/Classical/gbrainy.in
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/src/Clients/Classical/gbrainy.in
-
-post-install:
-	@-update-desktop-database
-
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
