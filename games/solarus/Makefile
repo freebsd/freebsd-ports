@@ -11,7 +11,7 @@ COMMENT=	Zelda-like 2D game engine
 
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 		libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		liblua-5.1.so:${PORTSDIR}/lang/lua \
+		liblua-5.1.so:${PORTSDIR}/lang/lua51 \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg
 
