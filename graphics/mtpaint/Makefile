@@ -3,7 +3,7 @@
 
 PORTNAME=	mtpaint
 PORTVERSION=	3.40
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=nolcms
 .endif
 
 .if ${PORT_OPTIONS:MOPENJPEG}
-LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 CONFIGURE_ARGS+=jp2
 .else
 LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper

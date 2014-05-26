@@ -2,6 +2,7 @@
 
 PORTNAME=	opencinematools
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -9,9 +10,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Tools for creating multi-reel DCPs from MXF source material
 
-LIB_DEPENDS=	openjpeg.2:${PORTSDIR}/graphics/openjpeg \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		asdcp.0:${PORTSDIR}/multimedia/asdcplib
+LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libasdcp.so:${PORTSDIR}/multimedia/asdcplib
 
 USES=		dos2unix zip
 

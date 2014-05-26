@@ -3,7 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	1.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -95,7 +95,7 @@ CMAKE_ARGS+=	-DDONT_USE_RAWSPEED:BOOL=ON
 .endif
 
 .if ${PORT_OPTIONS:MOPENJPEG}
-LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 PLIST_FILES+=	lib/darktable/plugins/imageio/format/libj2k.so
 .else
 CMAKE_ARGS+=	-DUSE_OPENJPEG:BOOL=OFF
