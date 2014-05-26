@@ -6,7 +6,7 @@
  #include <errno.h>
 +#if defined(__linux__)
  #include <byteswap.h>
-+#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__DragonFly__)
 +#include <sys/endian.h>
 +#define bswap_32(x)	bswap32((x))
 +#endif
