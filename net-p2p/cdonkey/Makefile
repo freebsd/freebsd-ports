@@ -13,9 +13,8 @@ COMMENT=	Open and free core client for the eDonkey protocol
 
 WRKSRC=		${WRKDIR}/cDonkey-${PORTVERSION}
 
-USE_BZIP2=	yes
 USE_BDB=	41
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-berkeley-db="${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}"
 
