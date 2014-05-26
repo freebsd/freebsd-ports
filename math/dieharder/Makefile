@@ -13,11 +13,11 @@ COMMENT=	A random number generator testsuite
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

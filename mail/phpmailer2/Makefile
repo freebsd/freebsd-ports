@@ -12,7 +12,7 @@ COMMENT=	Full Featured Email Transfer Class for PHP4
 
 CONFLICTS=	phpmailer-5*
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 NO_BUILD=	yes
 USE_PHP=	pcre
 

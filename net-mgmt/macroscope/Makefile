@@ -17,9 +17,7 @@ LIB_DEPENDS=		lzo2:${PORTSDIR}/archivers/lzo2 \
 			gd:${PORTSDIR}/graphics/gd
 
 USE_RC_SUBR=		${PORTNAME}
-USE_BZIP2=		yes
-USE_DOS2UNIX=		yes
-USES=			cmake
+USES=			cmake dos2unix tar:bzip2
 
 OPTIONS_DEFINE=	FIREBIRD DOCS #MYSQL
 OPTIONS_DEFAULT=	FIREBIRD

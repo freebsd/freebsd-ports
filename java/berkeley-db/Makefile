@@ -21,7 +21,8 @@ JAVA_VERSION=	1.6+
 USE_ANT=	yes
 MAKE_ENV+=	JAVALIBDIR="${JAVALIBDIR}"
 MAKE_ARGS+=	-cp ${JAVALIBDIR}/junit.jar
-USE_DOS2UNIX=	build.xml
+USES=		dos2unix
+DOS2UNIX_FILES=	build.xml
 
 PLIST_FILES=	%%JAVAJARDIR%%/je.jar
 

@@ -10,8 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	The lightweight and functional object-oriented statistics
 
-USES=		perl5
+USES=		dos2unix perl5
 USE_PERL5=	configure
-USE_DOS2UNIX=	yes
 
 .include <bsd.port.mk>

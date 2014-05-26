@@ -14,9 +14,8 @@ LIB_DEPENDS=	gc-threaded.1:${PORTSDIR}/devel/boehm-gc-threaded
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake pkgconfig
+USES=		dos2unix gmake pkgconfig
 USE_AUTOTOOLS=	libtool:env
-USE_DOS2UNIX=	yes
 MAKE_JOBS_UNSAFE=	yes
 DOS2UNIX_REGEX= .*(Makefile|\.(c|h|neko|nml))$$
 

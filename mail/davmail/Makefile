@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
 
-USE_DOS2UNIX=	build.xml
+USES=		dos2unix
+DOS2UNIX_FILES=	build.xml
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

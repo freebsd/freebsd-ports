@@ -15,11 +15,10 @@ RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
 		${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal \
 		${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
 		${PYTHON_SITELIBDIR}/py2play/level.py:${PORTSDIR}/net-p2p/py-py2play
-LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d
+LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d
 
-USE_BZIP2=	yes
-USE_DOS2UNIX=	*.po *.mo
-USES=		gettext
+DOS2UNIX_GLOB=	*.po *.mo
+USES=		dos2unix gettext tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		glew
