@@ -3,7 +3,7 @@
 
 PORTNAME=	npapi-vlc
 PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc-webplugins/${PORTVERSION}/
 
