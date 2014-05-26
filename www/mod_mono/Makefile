@@ -16,16 +16,14 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		xsp:${PORTSDIR}/www/xsp
 
-USES=		pkgconfig
+USES=		libtool:oldver mono pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
 USE_APACHE=	22
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--man=${PREFIX}/man
+INSTALL_TARGET=	install
 
-MAN8=		mod_mono.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
 .if ${APACHE_VERSION} == 13
 MOD_MONOCONFDIR=${APACHEETCDIR}
 .else
@@ -38,5 +36,4 @@ post-patch:
 	@${REINPLACE_CMD} 's|%%MOD_MONOCONFDIR%%|${PREFIX}/${MOD_MONOCONFDIR}|g' \
 		${WRKSRC}/Makefile.in
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.post.mk>
