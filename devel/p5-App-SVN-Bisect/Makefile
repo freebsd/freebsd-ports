@@ -7,8 +7,10 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Binary search through svn revisions
+
+LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-IO-All>0:${PORTSDIR}/devel/p5-IO-All \
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck \
