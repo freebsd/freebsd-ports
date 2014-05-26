@@ -14,17 +14,14 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 BROKEN=		No more public distfiles
 
-USES=		gmake pathfix gettext iconv pkgconfig
+USES=		gmake mono pathfix gettext iconv pkgconfig
 USE_GNOME=	gnomeprefix intltool gtksharp20
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|.so.*"|.so"|g' ${WRKSRC}/cowbell.exe.config
 
-.include "${PORTSDIR}/lang/mono/bsd.mono.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

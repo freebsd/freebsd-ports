@@ -13,13 +13,10 @@ COMMENT=	Mono interface to the D-BUS messaging system
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
-
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake mono pathfix pkgconfig
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 .if ${OSVERSION} < 1000044
@@ -33,5 +30,4 @@ post-patch:
 		${WRKSRC}/src/dbus-sharp.dll.config
 .endif
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
