@@ -1,0 +1,58 @@
+--- fxlinuxprint.ppd.orig	2014-05-09 10:50:03.000000000 +0900
++++ fxlinuxprint.ppd	2014-05-09 10:51:32.000000000 +0900
+@@ -24,15 +24,15 @@
+ *LanguageEncoding: ISOLatin1
+ *PCFileName:	"FXLINUXPRINT.PPD"
+ *Manufacturer:	"FX"
+-*Product:	"FX Printer Driver for Linux"
++*Product:	"(FX Printer Driver)"
+ *cupsVersion:	1.1
+ *cupsManualCopies: True
+ *cupsModelNumber:  2
+ *cupsFilter:	"application/vnd.cups-pdfprintfx 0 pdftopjlfx"
+ *cupsFilter:	"application/vnd.cups-postscript 0 pstopdffx"
+-*ShortNickName: "FX Printer Driver for Linux"
+-*ModelName: "FX Printer Driver for Linux"
+-*NickName: "FX Printer Driver for Linux"
++*ShortNickName: "FX Printer Driver"
++*ModelName: "FX Printer Driver"
++*NickName: "FX Printer Driver"
+ *PSVersion:	"(3010.000) 550"
+ *PSVersion:	"(3010.000) 651"
+ *PSVersion:	"(3010.000) 652"
+@@ -73,7 +73,7 @@
+ *PageSize B5/B5 (182 x 257mm): "<</PageSize[516 729]/ImagingBBox null>>setpagedevice"
+ *PageSize Letter/Letter (8.5 x 11"): "<</PageSize[612 792]/ImagingBBox null>>setpagedevice"
+ *PageSize Legal/Legal (8.5 x 14"): "<</PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+-*PageSize Ledger/Ledger (11 x 17"): "<</PageSize[792 1224]/ImagingBBox null>>setpagedevice"
++*PageSize Tabloid/Tabloid (11 x 17"): "<</PageSize[792 1224]/ImagingBBox null>>setpagedevice"
+ *CloseUI: *PageSize
+ 
+ *OpenUI *PageRegion: PickOne
+@@ -86,7 +86,7 @@
+ *PageRegion B5/B5 (182 x 257mm): "<</PageSize[516 729]/ImagingBBox null>>setpagedevice"
+ *PageRegion Letter/Letter (8.5 x 11"): "<</PageSize[612 792]/ImagingBBox null>>setpagedevice"
+ *PageRegion Legal/Legal (8.5 x 14"): "<</PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+-*PageRegion Ledger/Ledger (11 x 17"): "<</PageSize[792 1224]/ImagingBBox null>>setpagedevice"
++*PageRegion Tabloid/Tabloid (11 x 17"): "<</PageSize[792 1224]/ImagingBBox null>>setpagedevice"
+ *CloseUI: *PageRegion
+ 
+ *DefaultImageableArea: A4
+@@ -97,7 +97,7 @@
+ *ImageableArea A5/A5 (148 x 210mm): "11.62 11.62 407.91 583.65 "
+ *ImageableArea B5/B5 (182 x 257mm): "11.62 11.62 504.28 716.88 "
+ *ImageableArea Legal/Legal (8.5 x 14"): "11.62 11.62 600.38 996.38 "
+-*ImageableArea Ledger/Ledger (11 x 17"): "11.62 11.62 780.38 1212.38 "
++*ImageableArea Tabloid/Tabloid (11 x 17"): "11.62 11.62 780.38 1212.38 "
+ 
+ *DefaultPaperDimension: A4
+ *PaperDimension Letter/Letter (8.5 x 11"): "612 792"
+@@ -107,7 +107,7 @@
+ *PaperDimension A5/A5 (148 x 210mm): "419 595"
+ *PaperDimension B5/B5 (182 x 257mm): "516 729"
+ *PaperDimension Legal/Legal (8.5 x 14"): "612 1008"
+-*PaperDimension Ledger/Ledger (11 x 17"): "792 1224"
++*PaperDimension Tabloid/Tabloid (11 x 17"): "792 1224"
+ 
+ *OpenUI *FXOutputMode/Print Mode: PickOne
+ *OrderDependency: 10.0 AnySetup *FXOutputMode
