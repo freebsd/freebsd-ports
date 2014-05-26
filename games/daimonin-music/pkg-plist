@@ -64,14 +64,13 @@ share/daimonin/media/frozen.ogg
 share/daimonin/media/ghost.ogg
 share/daimonin/media/jungle1.ogg
 share/daimonin/media/landing.ogg
-share/daimonin/media/media.txt
+share/daimonin/media/media-music.txt
 share/daimonin/media/ocean.ogg
-share/daimonin/media/orchestral.ogg
 share/daimonin/media/rainthunder.ogg
 share/daimonin/media/raspy.ogg
 share/daimonin/media/rubberfreak.ogg
 share/daimonin/media/spokyspace.ogg
 share/daimonin/media/swamp.ogg
 share/daimonin/media/thonkdonk.ogg
-@dirrm share/daimonin/media
-@dirrm share/daimonin
+@dirrmtry share/daimonin/media
+@dirrmtry share/daimonin
