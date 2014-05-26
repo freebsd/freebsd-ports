@@ -18,7 +18,7 @@ LIB_DEPENDS=	oop:${PORTSDIR}/devel/liboop \
 USE_CSTD=	c89
 GNU_CONFIGURE=	yes
 USE_XORG=	xau
-USES=		yes
+USES=		gmake
 INSTALL_TARGET=	install
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
 CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include
