@@ -12,7 +12,6 @@ COMMENT=	Calendar application
 
 USES=		pkgconfig gettext gmake
 USE_GNOME=	glib20
-USE_GMAKE=	yes
 ALL_TARGET=
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
