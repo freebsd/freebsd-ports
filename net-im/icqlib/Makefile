@@ -3,20 +3,22 @@
 
 PORTNAME=	icqlib
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library required by kicq (not libicq)
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libicq.so
 
 .include <bsd.port.mk>
