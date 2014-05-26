@@ -1,5 +1,11 @@
 bin/gdedit
+@group games
+@mode 2555
 bin/golddig
+@mode
+@group
+man/man6/gdedit.6.gz
+man/man6/golddig.6.gz
 %%DATADIR%%/default
 %%DATADIR%%/goldlev001
 %%DATADIR%%/goldlev002
@@ -28,4 +34,3 @@ bin/golddig
 %%DATADIR%%/goldlev025
 %%DATADIR%%/goldlev026
 @dirrm %%DATADIR%%
-@unexec [ -s /var/games/golddig.scores ] || rm -f /var/games/golddig.scores
