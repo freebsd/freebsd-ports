@@ -3,6 +3,7 @@
 
 PORTNAME=	astk
 DISTVERSION=	1.13.3-2
+PORTREVISION=	1
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -269,9 +270,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${inst_dir}
 	${CP} -R ${WRKSRC} ${STAGEDIR}${inst_dir}
 .if !defined(CLIENT_SEUL)
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${inst_dir}/ASTK_SERV/etc/codeaster/astkrc	\
+		${STAGEDIR}/${ETCDIR}
+	${TOUCH} ${STAGEDIR}${inst_dir}/ASTK_SERV/etc/codeaster/astkrc/.keep_me
 	${CP} -R ${WRKSRC}/etc/* ${STAGEDIR}${ETCDIR}
-	${RM} -rf ${STAGEDIR}${inst_dir}/ASTK_SERV/etc
 	(cd ${STAGEDIR}${PREFIX} \
 		 && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		 -d ${PREFIX} -f aster)
