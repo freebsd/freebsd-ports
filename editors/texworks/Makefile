@@ -51,7 +51,7 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1
+USES+=		lua:51
 PLIST_FILES+=	lib/texworks/libTWLuaPlugin.so
 .endif
 

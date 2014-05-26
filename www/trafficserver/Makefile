@@ -22,12 +22,10 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 USE_AUTOTOOLS=	autoconf automake libtool aclocal
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		pkgconfig tcl gmake perl5
+USES=		pkgconfig tcl gmake perl5 tar:bzip2 lua:51
 USE_OPENSSL=	yes
 USE_SQLITE=	yes
 USE_RC_SUBR=	${PORTNAME}
-USE_LUA=	5.1+
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USERS=		www
