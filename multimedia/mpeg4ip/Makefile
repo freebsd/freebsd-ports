@@ -27,7 +27,7 @@ RUN_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2
 
 USE_GNOME=	gtk20
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include ${PTHREAD_CFLAGS}

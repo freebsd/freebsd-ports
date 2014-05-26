@@ -12,7 +12,7 @@ COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 NOT_FOR_ARCHS=	sparc64
-USE_GMAKE=	yes
+USES=	gmake
 USE_XORG=	x11 xmu
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WRKSRC=${WRKSRC} X11BASE=${LOCALBASE}
 

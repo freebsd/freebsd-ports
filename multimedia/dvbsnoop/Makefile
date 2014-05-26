@@ -13,7 +13,7 @@ DVB_HEADERS=	dmx.h frontend.h
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/dvbsnoop.1.gz
