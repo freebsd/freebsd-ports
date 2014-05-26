@@ -310,7 +310,7 @@ USE_QT4=	gui corelib moc_build rcc_build uic_build
 .if ${PORT_OPTIONS:MLUA}
 USES+=	lua:51
 CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-CONFIGURE_ARGS+=--enable-lua LUAC=luac-${LUA_VER}
+CONFIGURE_ARGS+=--enable-lua LUAC=${LUAC_CMD}
 .else
 CONFIGURE_ARGS+=--disable-lua
 .endif
