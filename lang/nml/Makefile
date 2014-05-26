@@ -19,7 +19,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
 		-prefix ${PREFIX}
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	all opt opt.opt
 INSTALL_TARGET=	install installopt
 

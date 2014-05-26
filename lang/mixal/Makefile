@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.catb.org/~esr/mixal/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assembler and interpreter for Donald Knuth's mythical MIX computer
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 

@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX} --buildwith=gcc
 

@@ -26,7 +26,7 @@ BROKEN=		Fails to build
 
 DIST_SUBDIR=	sml-nj/${PORTVERSION}
 NO_WRKSUBDIR=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 ONLY_FOR_ARCHS=	i386
 

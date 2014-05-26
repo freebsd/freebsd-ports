@@ -10,8 +10,7 @@ MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Shakespeare programming language
 
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \
 		primes.spl reverse.spl shakesbeer.spl
