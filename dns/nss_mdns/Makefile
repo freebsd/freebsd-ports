@@ -12,7 +12,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	NSS module implementing multicast DNS name resolution
 
 USE_AUTOTOOLS=	autoconf automake libtool
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 AUTOTOOLSFILES=	aclocal.m4
 
