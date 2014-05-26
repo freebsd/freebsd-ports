@@ -19,7 +19,6 @@ CMAKE_ENV+=	TOLUA_INC="${LUA_INCDIR}"
 CMAKE_ARGS=	-DCEGUI_SAMPLES_ENABLED:BOOL=OFF \
 		-DCEGUI_BUILD_TESTS=OFF
 USE_LDCONFIG=	yes
-LUA_COMPS=	toluaxx # lua support is conditional though
 USES=		cmake pathfix pkgconfig compiler:c++11-lib
 
 PORTDOCS=	*
@@ -43,7 +42,8 @@ FREETYPE_CMAKE_OFF=	-DCEGUI_HAS_FREETYPE=OFF
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PCRE_CMAKE_ON=		-DCEGUI_HAS_PCRE_REGEX=ON
 PCRE_CMAKE_OFF=		-DCEGUI_HAS_PCRE_REGEX=OFF
-LUA_USE=		LUA=5.1 # LUA_COMPS set unconditionally above
+LUA_USES=		lua:51
+LUA_LIB_DEPENDS=	libtoluaxx-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
 LUA_CMAKE_ON=		-DCEGUI_BUILD_LUA_MODULE=ON -DCEGUI_BUILD_LUA_GENERATOR=ON
 LUA_CMAKE_OFF=		-DCEGUI_BUILD_LUA_MODULE=OFF -DCEGUI_BUILD_LUA_GENERATOR=OFF
 # this option is not currently used as it doesn't compile (see also CMAKE_ARGS below)
