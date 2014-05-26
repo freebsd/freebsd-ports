@@ -3,7 +3,7 @@
 
 PORTNAME=	gupnp-ui
 PORTVERSION=	0.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -22,6 +22,9 @@ MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USES=		pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|tests||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
