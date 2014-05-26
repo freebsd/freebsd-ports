@@ -24,10 +24,10 @@ NO_BUILD=	yes
 PLIST_FILES=	%%WWWDIR%%/index.php
 PLIST_DIRS=	%%WWWDIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${CP} kplaylist.1.8.505.php ${WWWDIR}/index.php
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR} 
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${CP} kplaylist.1.8.505.php \
+		${STAGEDIR}${WWWDIR}/index.php
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR} 
 
 .include <bsd.port.mk>
