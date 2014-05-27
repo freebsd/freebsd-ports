@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/pydbus-common/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/devel/pydbus-common/Makefile 19685 2014-05-25 13:11:28Z kwm $
 
 PORTNAME=	dbus
 PORTVERSION=	1.1.1
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	dbus-glib>=0:${PORTSDIR}/devel/dbus-glib
 
 SLAVE_PORT?=	no
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \

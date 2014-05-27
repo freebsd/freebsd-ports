@@ -1,0 +1,17 @@
+share/gnome-shell/extensions/gnome-shell-trash-extension/README
+share/gnome-shell/extensions/gnome-shell-trash-extension/extension.js
+share/gnome-shell/extensions/gnome-shell-trash-extension/locale/de/LC_MESSAGES/gnome-shell-trash-extension.mo
+share/gnome-shell/extensions/gnome-shell-trash-extension/locale/fr/LC_MESSAGES/gnome-shell-trash-extension.mo
+share/gnome-shell/extensions/gnome-shell-trash-extension/metadata.json
+share/gnome-shell/extensions/gnome-shell-trash-extension/po/de.po
+share/gnome-shell/extensions/gnome-shell-trash-extension/po/fr.po
+share/gnome-shell/extensions/gnome-shell-trash-extension/po/messages.pot
+share/gnome-shell/extensions/gnome-shell-trash-extension/po/pt_BR.po
+@dirrm share/gnome-shell/extensions/gnome-shell-trash-extension/locale/de/LC_MESSAGES
+@dirrm share/gnome-shell/extensions/gnome-shell-trash-extension/locale/de
+@dirrm share/gnome-shell/extensions/gnome-shell-trash-extension/locale/fr/LC_MESSAGES
+@dirrm share/gnome-shell/extensions/gnome-shell-trash-extension/locale/fr
+@dirrm share/gnome-shell/extensions/gnome-shell-trash-extension/locale
+@dirrm share/gnome-shell/extensions/gnome-shell-trash-extension/po
+@dirrm share/gnome-shell/extensions/gnome-shell-trash-extension
+@dirrmtry share/gnome-shell/extensions

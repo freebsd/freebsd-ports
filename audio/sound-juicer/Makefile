@@ -1,9 +1,9 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/sound-juicer/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/audio/sound-juicer/Makefile 19679 2014-05-23 14:35:58Z gusi $
 
 PORTNAME=	sound-juicer
-PORTVERSION=	3.11.90
+PORTVERSION=	3.12.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--enable-ignore-missing-cd
 INSTALLS_ICONS=	yes
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 
 GLIB_SCHEMAS=	org.gnome.sound-juicer.gschema.xml
 

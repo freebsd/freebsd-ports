@@ -1,0 +1,5 @@
+share/gnome-shell/extensions/audio-output-switcher@anduchs/README
+share/gnome-shell/extensions/audio-output-switcher@anduchs/extension.js
+share/gnome-shell/extensions/audio-output-switcher@anduchs/metadata.json
+@dirrm share/gnome-shell/extensions/audio-output-switcher@anduchs
+@dirrmtry share/gnome-shell/extensions

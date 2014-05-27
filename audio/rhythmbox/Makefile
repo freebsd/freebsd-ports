@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/rhythmbox/Makefile 19596 2014-04-28 20:14:19Z gusi $
+#   $MCom: ports/trunk/audio/rhythmbox/Makefile 19692 2014-05-26 07:42:16Z gusi $
 
 PORTNAME=	rhythmbox
-PORTVERSION=	3.0.2
-PORTREVISION=	4
+PORTVERSION=	3.0.3
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libmusicbrainz5.so:${PORTSDIR}/audio/libmusicbrainz5 \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libbrasero-media3.so:${PORTSDIR}/sysutils/brasero
 
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	intlhack gnomeprefix gtk30 introspection:build
 USE_XORG=	ice xproto

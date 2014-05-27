@@ -1,0 +1,87 @@
+lib/locale/bg/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/ca/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/cs/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/da/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/de/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/el/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/es/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/fi/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/fr/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/he/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/hu/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/it/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/ja/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/lt/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/nb/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/nl/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/pl/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/pt/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/ro/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/ru/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/sk/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/sv/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/uk/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/vi/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/zh_CN/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/zh_TW/LC_MESSAGES/gnome-shell-extension-openweather.mo
+share/gnome-shell/extensions/openweather-extension@jenslody.de/convenience.js
+share/gnome-shell/extensions/openweather-extension@jenslody.de/extension.js
+share/gnome-shell/extensions/openweather-extension@jenslody.de/metadata.json
+share/gnome-shell/extensions/openweather-extension@jenslody.de/prefs.js
+share/gnome-shell/extensions/openweather-extension@jenslody.de/stylesheet.css
+share/gnome-shell/extensions/openweather-extension@jenslody.de/weather-settings.ui
+@dirrmtry lib/locale/bg/LC_MESSAGES
+@dirrmtry lib/locale/bg
+@dirrmtry lib/locale/ca/LC_MESSAGES
+@dirrmtry lib/locale/ca
+@dirrmtry lib/locale/cs/LC_MESSAGES
+@dirrmtry lib/locale/cs
+@dirrmtry lib/locale/da/LC_MESSAGES
+@dirrmtry lib/locale/da
+@dirrmtry lib/locale/de/LC_MESSAGES
+@dirrmtry lib/locale/de
+@dirrmtry lib/locale/el/LC_MESSAGES
+@dirrmtry lib/locale/el
+@dirrmtry lib/locale/es/LC_MESSAGES
+@dirrmtry lib/locale/es
+@dirrmtry lib/locale/fi/LC_MESSAGES
+@dirrmtry lib/locale/fi
+@dirrmtry lib/locale/fr/LC_MESSAGES
+@dirrmtry lib/locale/fr
+@dirrmtry lib/locale/he/LC_MESSAGES
+@dirrmtry lib/locale/he
+@dirrmtry lib/locale/hu/LC_MESSAGES
+@dirrmtry lib/locale/hu
+@dirrmtry lib/locale/it/LC_MESSAGES
+@dirrmtry lib/locale/it
+@dirrmtry lib/locale/ja/LC_MESSAGES
+@dirrmtry lib/locale/ja
+@dirrmtry lib/locale/lt/LC_MESSAGES
+@dirrmtry lib/locale/lt
+@dirrmtry lib/locale/nb/LC_MESSAGES
+@dirrmtry lib/locale/nb
+@dirrmtry lib/locale/nl/LC_MESSAGES
+@dirrmtry lib/locale/nl
+@dirrmtry lib/locale/pl/LC_MESSAGES
+@dirrmtry lib/locale/pl
+@dirrmtry lib/locale/pt/LC_MESSAGES
+@dirrmtry lib/locale/pt
+@dirrmtry lib/locale/ro/LC_MESSAGES
+@dirrmtry lib/locale/ro
+@dirrmtry lib/locale/ru/LC_MESSAGES
+@dirrmtry lib/locale/ru
+@dirrmtry lib/locale/sk/LC_MESSAGES
+@dirrmtry lib/locale/sk
+@dirrmtry lib/locale/sv/LC_MESSAGES
+@dirrmtry lib/locale/sv
+@dirrmtry lib/locale/uk/LC_MESSAGES
+@dirrmtry lib/locale/uk
+@dirrmtry lib/locale/vi/LC_MESSAGES
+@dirrmtry lib/locale/vi
+@dirrmtry lib/locale/zh_CN/LC_MESSAGES
+@dirrmtry lib/locale/zh_CN
+@dirrmtry lib/locale/zh_TW/LC_MESSAGES
+@dirrmtry lib/locale/zh_TW
+@dirrmtry lib/locale
+@dirrm share/gnome-shell/extensions/openweather-extension@jenslody.de
+@dirrmtry share/gnome-shell/extensions

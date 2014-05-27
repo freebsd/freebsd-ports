@@ -20,9 +20,7 @@
 %%PYTHON_SITELIBDIR%%/gi/__pycache__/types.cpython-%%PYTVER%%.pyc
 %%PYTHON_SITELIBDIR%%/gi/__pycache__/types.cpython-%%PYTVER%%.pyo
 %%PYTHON_SITELIBDIR%%/gi/_constants.py
-%%PYTHON_SITELIBDIR%%/gi/_gi.la
 %%PYTHON_SITELIBDIR%%/gi/_gi.so
-%%PYTHON_SITELIBDIR%%/gi/_gi_cairo.la
 %%PYTHON_SITELIBDIR%%/gi/_gi_cairo.so
 %%PYTHON_SITELIBDIR%%/gi/_gobject/__init__.py
 %%PYTHON_SITELIBDIR%%/gi/_gobject/__pycache__/__init__.cpython-%%PYTVER%%.pyc
@@ -65,7 +63,7 @@
 %%PYTHON_SITELIBDIR%%/gi/repository/__pycache__/__init__.cpython-%%PYTVER%%.pyc
 %%PYTHON_SITELIBDIR%%/gi/repository/__pycache__/__init__.cpython-%%PYTVER%%.pyo
 %%PYTHON_SITELIBDIR%%/gi/types.py
-%%PYTHON_SITELIBDIR%%/pygobject-%%VERSION%%-py%%PYTHON_VERSION%%-freebsd-%%UNAME_R%%-%%ARCH%%.egg-info
+%%PYTHON_SITELIBDIR%%/pygobject-%%VERSION%%-py%%PYTHON_VERSION%%-%%OPSYS%%-%%UNAME_R%%-%%ARCH%%.egg-info
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.py
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__/__init__.cpython-%%PYTVER%%.pyc
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__pycache__/__init__.cpython-%%PYTVER%%.pyo

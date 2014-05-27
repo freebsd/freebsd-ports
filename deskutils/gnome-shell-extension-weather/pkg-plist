@@ -1,0 +1,96 @@
+lib/locale/ar/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/bg/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/ca/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/cs/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/da/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/de/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/el/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/es/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/eu/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/fa/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/fi/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/fr/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/he/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/hu/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/it/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/ja/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/lt/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/nb/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/nl/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/pl/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/pt/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/ro/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/ru/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/sk/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/sv/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/uk/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/vi/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/zh_CN/LC_MESSAGES/gnome-shell-extension-weather.mo
+lib/locale/zh_TW/LC_MESSAGES/gnome-shell-extension-weather.mo
+share/gnome-shell/extensions/weather-extension@xeked.com/convenience.js
+share/gnome-shell/extensions/weather-extension@xeked.com/extension.js
+share/gnome-shell/extensions/weather-extension@xeked.com/metadata.json
+share/gnome-shell/extensions/weather-extension@xeked.com/prefs.js
+share/gnome-shell/extensions/weather-extension@xeked.com/stylesheet.css
+share/gnome-shell/extensions/weather-extension@xeked.com/weather-settings.ui
+@dirrmtry lib/locale/ar/LC_MESSAGES
+@dirrmtry lib/locale/ar
+@dirrmtry lib/locale/bg/LC_MESSAGES
+@dirrmtry lib/locale/bg
+@dirrmtry lib/locale/ca/LC_MESSAGES
+@dirrmtry lib/locale/ca
+@dirrmtry lib/locale/cs/LC_MESSAGES
+@dirrmtry lib/locale/cs
+@dirrmtry lib/locale/da/LC_MESSAGES
+@dirrmtry lib/locale/da
+@dirrmtry lib/locale/de/LC_MESSAGES
+@dirrmtry lib/locale/de
+@dirrmtry lib/locale/el/LC_MESSAGES
+@dirrmtry lib/locale/el
+@dirrmtry lib/locale/es/LC_MESSAGES
+@dirrmtry lib/locale/es
+@dirrmtry lib/locale/eu/LC_MESSAGES
+@dirrmtry lib/locale/eu
+@dirrmtry lib/locale/fa/LC_MESSAGES
+@dirrmtry lib/locale/fa
+@dirrmtry lib/locale/fi/LC_MESSAGES
+@dirrmtry lib/locale/fi
+@dirrmtry lib/locale/fr/LC_MESSAGES
+@dirrmtry lib/locale/fr
+@dirrmtry lib/locale/he/LC_MESSAGES
+@dirrmtry lib/locale/he
+@dirrmtry lib/locale/hu/LC_MESSAGES
+@dirrmtry lib/locale/hu
+@dirrmtry lib/locale/it/LC_MESSAGES
+@dirrmtry lib/locale/it
+@dirrmtry lib/locale/ja/LC_MESSAGES
+@dirrmtry lib/locale/ja
+@dirrmtry lib/locale/lt/LC_MESSAGES
+@dirrmtry lib/locale/lt
+@dirrmtry lib/locale/nb/LC_MESSAGES
+@dirrmtry lib/locale/nb
+@dirrmtry lib/locale/nl/LC_MESSAGES
+@dirrmtry lib/locale/nl
+@dirrmtry lib/locale/pl/LC_MESSAGES
+@dirrmtry lib/locale/pl
+@dirrmtry lib/locale/pt/LC_MESSAGES
+@dirrmtry lib/locale/pt
+@dirrmtry lib/locale/ro/LC_MESSAGES
+@dirrmtry lib/locale/ro
+@dirrmtry lib/locale/ru/LC_MESSAGES
+@dirrmtry lib/locale/ru
+@dirrmtry lib/locale/sk/LC_MESSAGES
+@dirrmtry lib/locale/sk
+@dirrmtry lib/locale/sv/LC_MESSAGES
+@dirrmtry lib/locale/sv
+@dirrmtry lib/locale/uk/LC_MESSAGES
+@dirrmtry lib/locale/uk
+@dirrmtry lib/locale/vi/LC_MESSAGES
+@dirrmtry lib/locale/vi
+@dirrmtry lib/locale/zh_CN/LC_MESSAGES
+@dirrmtry lib/locale/zh_CN
+@dirrmtry lib/locale/zh_TW/LC_MESSAGES
+@dirrmtry lib/locale/zh_TW
+@dirrmtry lib/locale
+@dirrm share/gnome-shell/extensions/weather-extension@xeked.com
+@dirrmtry share/gnome-shell/extensions

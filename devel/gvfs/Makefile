@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/devel/gvfs/Makefile,v 1.85 2012/12/14 16:09:28 kwm Exp $
+# $FreeBSD: head/devel/gvfs/Makefile 353795 2014-05-12 10:28:51Z tijl $
+#   $MCom: ports/trunk/devel/gvfs/Makefile 19695 2014-05-26 11:08:22Z gusi $
 
 PORTNAME=	gvfs
-PORTVERSION=	1.12.3
-PORTREVISION=	3
+PORTVERSION=	1.20.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,6 +11,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME virtual file system
 
+BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
@@ -19,67 +19,61 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomeprefix intlhack intltool
-USE_LDCONFIG=	yes
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 gnomeprefix intlhack intltool libxslt:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-obexftp \
 		--disable-bluray \
 		--disable-afc
+
+CONFIGURE_ARGS+=\
+		--disable-gudev \
+		--disable-libsystemd-login \
+		--disable-udisks2 \
+		--disable-gdu \
+		--disable-udev \
+		--disable-goa \
+		--disable-keyring \
+		--disable-bluray \
+		--disable-libmtp \
+		--disable-gtk
+
 INSTALL_TARGET=	install-strip
 
+GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
+
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE
 OPTIONS_DEFAULT=AVAHI SAMBA GPHOTO2 CDDA HAL
 CDDA_DESC=	CDDA (enables HAL)
 GPHOTO2_DESC=	Gphoto 2 camera support (enables HAL)
 SAMBA_DESC=	Samba support
 
-GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
+FUSE_USES=	fuse
+FUSE_CONFIGURE_ENABLE=	fuse
+
+SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SAMBA_CONFIGURE_ENABLE=	samba
+
+CDDA_LIB_DEPENDS=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio
+CDDA_CONFIGURE_ENABLE=	cdda
+
+GPHOTO2_LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+GPHOTO2_CONFIGURE_ENABLE=	gphoto2
+
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_CONFIGURE_ENABLE=	avahi
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFUSE}
-USES+=		fuse
-PLIST_SUB+=	FUSE=""
-.else
-CONFIGURE_ARGS+=	--disable-fuse
-PLIST_SUB+=	FUSE="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MSAMBA}
-LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 GLIB_SCHEMAS+=	org.gnome.system.smb.gschema.xml
-PLIST_SUB+=	SMB=""
-.else
-CONFIGURE_ARGS+=	--disable-samba
-PLIST_SUB+=	SMB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCDDA}
-LIB_DEPENDS+=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio
-PLIST_SUB+=	CDDA=""
-.else
-CONFIGURE_ARGS+=	--disable-cdda
-PLIST_SUB+=	CDDA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGPHOTO2}
-LIB_DEPENDS+=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
-PLIST_SUB+=	GPHOTO2=""
-.else
-CONFIGURE_ARGS+=	--disable-gphoto2
-PLIST_SUB+=	GPHOTO2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 GLIB_SCHEMAS+=	org.gnome.system.dns_sd.gschema.xml
-PLIST_SUB+=	AVAHI=""
-.else
-CONFIGURE_ARGS+=--disable-avahi
-PLIST_SUB+=	AVAHI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHAL} || ${PORT_OPTIONS:MGPHOTO2} || ${PORT_OPTIONS:MCDDA}
@@ -90,6 +84,10 @@ PLIST_SUB+=	HAL=""
 CONFIGURE_ARGS+=--disable-hal
 PLIST_SUB+=	HAL="@comment "
 .endif
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=722411
+post-patch:
+	@${RM} ${WRKSRC}/monitor/hal/gvfsdbusutils.[ch]
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/remote-volume-monitors

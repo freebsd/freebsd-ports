@@ -77,7 +77,6 @@ include/rhythmbox/widgets/rb-task-list-display.h
 include/rhythmbox/widgets/rb-uri-dialog.h
 lib/girepository-1.0/MPID-3.0.typelib
 lib/girepository-1.0/RB-3.0.typelib
-lib/librhythmbox-core.la
 lib/librhythmbox-core.so
 lib/librhythmbox-core.so.8
 lib/librhythmbox-core.so.8.0.0
@@ -101,38 +100,50 @@ lib/librhythmbox-core.so.8.0.0
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/oldcache.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/__pycache__/oldcache.cpython-%%PYTVER%%.pyo
 lib/rhythmbox/plugins/audiocd/audiocd.plugin
-lib/rhythmbox/plugins/audiocd/libaudiocd.la
 lib/rhythmbox/plugins/audiocd/libaudiocd.so
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
-lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.la
 lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
+%%PYTHON%%lib/rhythmbox/plugins/context/AlbumTab.py
+%%PYTHON%%lib/rhythmbox/plugins/context/ArtistTab.py
+%%PYTHON%%lib/rhythmbox/plugins/context/ContextView.py
+%%PYTHON%%lib/rhythmbox/plugins/context/LastFM.py
+%%PYTHON%%lib/rhythmbox/plugins/context/LinksTab.py
+%%PYTHON%%lib/rhythmbox/plugins/context/LyricsTab.py
+%%PYTHON%%lib/rhythmbox/plugins/context/context.plugin
+%%PYTHON%%lib/rhythmbox/plugins/context/context.py
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/AlbumTab.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/AlbumTab.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/ArtistTab.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/ArtistTab.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/ContextView.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/ContextView.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LastFM.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LastFM.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LinksTab.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LinksTab.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LyricsTab.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/LyricsTab.cpython-%%PYTVER%%.pyo
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/context.cpython-%%PYTVER%%.pyc
+%%PYTHON%%lib/rhythmbox/plugins/context/__pycache__/context.cpython-%%PYTVER%%.pyo
 lib/rhythmbox/plugins/cd-recorder/cd-recorder.plugin
-lib/rhythmbox/plugins/cd-recorder/libcd-recorder.la
 lib/rhythmbox/plugins/cd-recorder/libcd-recorder.so
 %%DAAP%%lib/rhythmbox/plugins/daap/daap.plugin
-%%DAAP%%lib/rhythmbox/plugins/daap/libdaap.la
 %%DAAP%%lib/rhythmbox/plugins/daap/libdaap.so
 lib/rhythmbox/plugins/dbus-media-server/dbus-media-server.plugin
-lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.la
 lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.so
 lib/rhythmbox/plugins/fmradio/fmradio.plugin
-lib/rhythmbox/plugins/fmradio/libfmradio.la
 lib/rhythmbox/plugins/fmradio/libfmradio.so
 lib/rhythmbox/plugins/generic-player/generic-player.plugin
-lib/rhythmbox/plugins/generic-player/libgeneric-player.la
 lib/rhythmbox/plugins/generic-player/libgeneric-player.so
 %%GRILO%%lib/rhythmbox/plugins/grilo/grilo.plugin
-%%GRILO%%lib/rhythmbox/plugins/grilo/libgrilo.la
 %%GRILO%%lib/rhythmbox/plugins/grilo/libgrilo.so
 %%IPOD%%lib/rhythmbox/plugins/ipod/ipod.plugin
-%%IPOD%%lib/rhythmbox/plugins/ipod/libipod.la
 %%IPOD%%lib/rhythmbox/plugins/ipod/libipod.so
 %%PYTHON%%lib/rhythmbox/plugins/im-status/im-status.plugin
 %%PYTHON%%lib/rhythmbox/plugins/im-status/im-status.py
 %%PYTHON%%lib/rhythmbox/plugins/im-status/__pycache__/im-status.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/plugins/im-status/__pycache__/im-status.cpython-%%PYTVER%%.pyo
 lib/rhythmbox/plugins/iradio/iradio.plugin
-lib/rhythmbox/plugins/iradio/libiradio.la
 lib/rhythmbox/plugins/iradio/libiradio.so
 %%PYTHON%%lib/rhythmbox/plugins/lyrics/AstrawebParser.py
 %%PYTHON%%lib/rhythmbox/plugins/lyrics/DarkLyricsParser.py
@@ -184,19 +195,14 @@ lib/rhythmbox/plugins/iradio/libiradio.so
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/__pycache__/TrackListHandler.cpython-%%PYTVER%%.pyo
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/__pycache__/magnatune.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/plugins/magnatune/__pycache__/magnatune.cpython-%%PYTVER%%.pyo
-lib/rhythmbox/plugins/mmkeys/libmmkeys.la
 lib/rhythmbox/plugins/mmkeys/libmmkeys.so
 lib/rhythmbox/plugins/mmkeys/mmkeys.plugin
-lib/rhythmbox/plugins/mpris/libmpris.la
 lib/rhythmbox/plugins/mpris/libmpris.so
 lib/rhythmbox/plugins/mpris/mpris.plugin
-%%MTP%%lib/rhythmbox/plugins/mtpdevice/libmtpdevice.la
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/libmtpdevice.so
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/mtpdevice.plugin
-%%NOTIFY%%lib/rhythmbox/plugins/notification/libnotification.la
 %%NOTIFY%%lib/rhythmbox/plugins/notification/libnotification.so
 %%NOTIFY%%lib/rhythmbox/plugins/notification/notification.plugin
-lib/rhythmbox/plugins/power-manager/libpower-manager.la
 lib/rhythmbox/plugins/power-manager/libpower-manager.so
 lib/rhythmbox/plugins/power-manager/power-manager.plugin
 %%PYTHON%%lib/rhythmbox/plugins/python-console/pythonconsole.plugin
@@ -222,9 +228,8 @@ lib/rhythmbox/plugins/power-manager/power-manager.plugin
 %%PYTHON%%lib/rhythmbox/plugins/rb/__pycache__/rbconfig.cpython-%%PYTVER%%.pyo
 %%PYTHON%%lib/rhythmbox/plugins/rb/__pycache__/stringmatch.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/plugins/rb/__pycache__/stringmatch.cpython-%%PYTVER%%.pyo
-%%LIRC%%lib/rhythmbox/plugins/rblirc/librblirc.la
 %%LIRC%%lib/rhythmbox/plugins/rblirc/librblirc.so
-%%LIRC%%lib/rhythmbox/plugins/rblirc/rblirc.plugin
+lib/rhythmbox/plugins/rblirc/rblirc.plugin
 %%PYTHON%%lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.plugin
 %%PYTHON%%lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.py
 %%PYTHON%%lib/rhythmbox/plugins/rbzeitgeist/__pycache__/rbzeitgeist.cpython-%%PYTVER%%.pyc
@@ -239,10 +244,8 @@ lib/rhythmbox/plugins/power-manager/power-manager.plugin
 %%PYTHON%%lib/rhythmbox/plugins/replaygain/__pycache__/player.cpython-%%PYTVER%%.pyo
 %%PYTHON%%lib/rhythmbox/plugins/replaygain/__pycache__/replaygain.cpython-%%PYTVER%%.pyc
 %%PYTHON%%lib/rhythmbox/plugins/replaygain/__pycache__/replaygain.cpython-%%PYTVER%%.pyo
-lib/rhythmbox/sample-plugins/sample/libsample.la
 lib/rhythmbox/sample-plugins/sample/libsample.so
 lib/rhythmbox/sample-plugins/sample/sample.plugin
-lib/rhythmbox/sample-plugins/sample-vala/libsample-vala.la
 lib/rhythmbox/sample-plugins/sample-vala/libsample-vala.so
 lib/rhythmbox/sample-plugins/sample-vala/sample-vala.plugin
 %%PYTHON%%lib/rhythmbox/plugins/sendto/sendto.plugin
@@ -795,6 +798,17 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 %%DATADIR%%/plugins/audioscrobbler/Last.fm-symbolic.svg
 %%DATADIR%%/plugins/audioscrobbler/audioscrobbler-preferences.ui
 %%DATADIR%%/plugins/audioscrobbler/audioscrobbler-profile.ui
+%%PYTHON%%%%DATADIR%%/plugins/context/img/Allmusic16x16.png
+%%PYTHON%%%%DATADIR%%/plugins/context/img/Discogs16x16.png
+%%PYTHON%%%%DATADIR%%/plugins/context/img/Wikipedia16x16.png
+%%PYTHON%%%%DATADIR%%/plugins/context/img/lastfm.png
+%%PYTHON%%%%DATADIR%%/plugins/context/img/spinner.gif
+%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/album-tmpl.html
+%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/artist-tmpl.html
+%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/links-tmpl.html
+%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/loading.html
+%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/lyrics-tmpl.html
+%%PYTHON%%%%DATADIR%%/plugins/context/tmpl/main.css
 %%DAAP%%%%DATADIR%%/plugins/daap/daap-prefs.ui
 %%DAAP%%%%DATADIR%%/plugins/daap/daap-toolbar.ui
 %%DAAP%%%%DATADIR%%/plugins/daap/remote-icon.png
@@ -845,6 +859,9 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrm %%DATADIR%%/plugins/generic-player
 @dirrm %%DATADIR%%/plugins/fmradio
 %%DAAP%%@dirrm %%DATADIR%%/plugins/daap
+%%PYTHON%%@dirrm %%DATADIR%%/plugins/context/tmpl
+%%PYTHON%%@dirrm %%DATADIR%%/plugins/context/img
+%%PYTHON%%@dirrm %%DATADIR%%/plugins/context
 @dirrm %%DATADIR%%/plugins/audioscrobbler
 @dirrm %%DATADIR%%/plugins/audiocd
 @dirrm %%DATADIR%%/plugins
@@ -958,6 +975,8 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrm lib/rhythmbox/plugins/fmradio
 @dirrm lib/rhythmbox/plugins/dbus-media-server
 %%DAAP%%@dirrm lib/rhythmbox/plugins/daap
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/context/__pycache__
+%%PYTHON%%@dirrm lib/rhythmbox/plugins/context
 @dirrm lib/rhythmbox/plugins/cd-recorder
 @dirrm lib/rhythmbox/plugins/audioscrobbler
 @dirrm lib/rhythmbox/plugins/audiocd

@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19669 2014-05-15 22:37:17Z kwm $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19697 2014-05-26 12:27:28Z kwm $
 
 PORTNAME=	webkit
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3

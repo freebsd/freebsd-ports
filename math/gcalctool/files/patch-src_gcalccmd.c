@@ -1,6 +1,6 @@
 --- src/gcalccmd.c.orig	2009-12-08 21:27:37.000000000 -0500
 +++ src/gcalccmd.c	2010-01-24 13:38:19.000000000 -0500
-@@ -18,10 +18,12 @@
+@@ -18,16 +18,89 @@
   *  02111-1307, USA.
   */
  
@@ -11,9 +11,8 @@
  #include <sys/types.h>
 +#include <sys/param.h>
  #include <time.h>
- #include <locale.h>
  
-@@ -30,6 +32,77 @@
+ #include "mp-equation.h"
  
  #define MAXLINE 1024
  
@@ -88,6 +87,6 @@
 +}
 +#endif
 +
- static MpSerializer *result_serializer;
- 
  static void
+ solve(const char *equation)
+ {

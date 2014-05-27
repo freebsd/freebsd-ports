@@ -90,7 +90,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
 
 # GNOME 3 components
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
-		gnomemenus3 gtk30 gtkhtml4 gtksourceview3 libgda5 \
+		gnomemenus3 gnomepanel3 gtk30 gtkhtml4 gtksourceview3 libgda5 \
 		libgda5-ui libwnck3 metacity nautilus3 py3gobject3 \
 		pygobject3 vte3
 
@@ -368,7 +368,7 @@ gnomedesktop3_USE_GNOME_IMPL=	gtk30
 gnomedesktopsharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-sharp-2.0.pc
 gnomedesktopsharp20_BUILD_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
 gnomedesktopsharp20_RUN_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
-gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 libwnck
+gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel3 gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 libwnck
 gnomedesktopsharp20_GNOME_DESKTOP_VERSION=2
 
 libwnck_LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
@@ -398,6 +398,11 @@ librsvg2_USE_GNOME_IMPL=libgsf gtk20
 eel2_LIB_DEPENDS=	libeel-2.so:${PORTSDIR}/x11-toolkits/eel
 eel2_DETECT=		${LOCALBASE}/libdata/pkgconfig/eel-2.0.pc
 eel2_USE_GNOME_IMPL=	gnomedesktop
+
+gnomepanel3_LIB_DEPENDS=libpanel-applet-4.so:${PORTSDIR}/x11/gnome-panel
+gnomepanel3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libpanelapplet-4.0.pc
+gnomepanel3_USE_GNOME_IMPL=gnomedesktop3 libwnck3 gnomemenus3 gnomedocutils librsvg2
+gnomepanel3_GNOME_DESKTOP_VERSION=3
 
 nautilus3_LIB_DEPENDS=	libnautilus-extension.so:${PORTSDIR}/x11-fm/nautilus
 nautilus3_DETECT=	${LOCALBASE}/share/gir-1.0/Nautilus-3.0.gir
@@ -526,7 +531,7 @@ gnomedocutils_USE_GNOME_IMPL=	libxslt
 pygnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-desktop-2.0.pc
 pygnomedesktop_BUILD_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
 pygnomedesktop_RUN_DEPENDS=	${pygnomedesktop_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-desktop
-pygnomedesktop_USE_GNOME_IMPL=	pygnome2 libgnomeprintui gtksourceview libwnck nautilus2 metacity
+pygnomedesktop_USE_GNOME_IMPL=	pygnome2 libgnomeprintui gtksourceview gnomepanel libwnck nautilus2 metacity
 pygnomedesktop_GNOME_DESKTOP_VERSION=2
 
 gtksharp10_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc
@@ -542,7 +547,7 @@ gtksharp20_USE_GNOME_IMPL=	gtk20
 gnomesharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-sharp-2.0.pc
 gnomesharp20_BUILD_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
 gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
-gnomesharp20_USE_GNOME_IMPL=	gtkhtml3 gtksharp20 librsvg2 vte
+gnomesharp20_USE_GNOME_IMPL=	gnomepanel3 gtkhtml3 gtksharp20 librsvg2 vte
 
 libgnomekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so:${PORTSDIR}/x11/libgnomekbd
@@ -554,8 +559,9 @@ pygtksourceview_RUN_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkits/
 pygtksourceview_USE_GNOME_IMPL=	gtksourceview2 pygtk2
 
 gvfs_DETECT=		${LOCALBASE}/lib/libgvfscommon.so
-gvfs_LIB_DEPENDS=	libgvfscommon.so:${PORTSDIR}/devel/gvfs
-gvfs_USE_GNOME_IMPL=	glib20 gconf2
+gvfs_BUILD_DEPENDS=	gvfs>=0:${PORTSDIR}/devel/gvfs
+gvfs_RUN_DEPENDS=	gvfs>=0:${PORTSDIR}/devel/gvfs
+gvfs_USE_GNOME_IMPL=	glib20
 
 .if defined(MARCUSCOM_CVS)
 . if exists(${PORTSDIR}/Mk/bsd.gnome-experimental.mk)

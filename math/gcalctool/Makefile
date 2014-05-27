@@ -1,24 +1,23 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
-#    $MCom: ports/trunk/math/gcalctool/Makefile 18897 2013-11-18 16:14:39Z kwm $
+# $FreeBSD: head/math/gcalctool/Makefile 351007 2014-04-11 16:52:39Z bapt $
+#   $MCom: ports/math/gcalctool/Makefile,v 1.140 2010/11/15 22:06:10 kwm Exp $
 
 PORTNAME=	gcalctool
-PORTVERSION=	6.6.2
+PORTVERSION=	5.32.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 3 calculator tool based on the old calctool for OpenWindows
+COMMENT=	GNOME 2 calculator tool based on the old calctool for OpenWindows
 
-BUILD_DEPENDS=	yelp-build:${PORTSDIR}/textproc/yelp-tools \
-		itstool:${PORTSDIR}/textproc/itstool
+CONFLICTS=	gcalctool-2.31.*
 
-USE_XZ=		yes
-USES=		bison gettext gmake pathfix pkgconfig
+USES=		bison gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack libxml2
+USE_GNOME=	gnomeprefix intlhack gconf2 gnomedocutils gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

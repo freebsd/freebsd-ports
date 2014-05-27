@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/pygobject3-common/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/devel/pygobject3-common/Makefile 19696 2014-05-26 11:20:01Z gusi $
 
 PORTNAME=	gobject
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 PORTREVISION?=	0
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME
@@ -21,14 +21,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 SLAVE_PORT?=	no
 
-USES=		gmake pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 # this port doesn't work with py-gobject < 2.28.6_2, clungle below
 CONFLICTS=	py*-gtk-0* py*-gobject-2.*.[0-6] py*-gobject-2.*.[7-9] \
 		py*-gobject-2.*.6_1
 
-PLIST_SUB=	ARCH=${ARCH} UNAME_R=${UNAME_R} VERSION=${PORTVERSION}
+PLIST_SUB=	ARCH=${ARCH} UNAME_R=${UNAME_R} VERSION=${PORTVERSION} \
+		OPSYS=${OPSYS:tl}
 
 .if ${SLAVE_PORT} == no
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
