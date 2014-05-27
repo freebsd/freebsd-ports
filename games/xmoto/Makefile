@@ -54,6 +54,9 @@ DESKTOP_ENTRIES="XMoto" \
 		"Game;SportsGame;ArcadeGame;" \
 		false
 
+post-patch:
+	@${REINPLACE_CMD} -e "s/lua5.1/lua-${LUA_VER}/g" ${WRKSRC}/configure
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
