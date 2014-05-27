@@ -3,11 +3,10 @@
 
 PORTNAME=	gtkdps
 PORTVERSION=	0.3.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 #		ftp://ftp.gyve.org/pub/gtkDPS/
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dinoex
+MASTER_SITES=	LOCAL/dinoex
 DISTNAME=	gtkDPS-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,9 +14,9 @@ COMMENT=	Gtk bindings for the Display GhostScript System
 
 LIB_DEPENDS=	libdpstk.so:${PORTSDIR}/x11/dgs
 
+USES=		libtool
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-dps-includes=${LOCALBASE}/include \
 		--with-dps-libraries=${LOCALBASE}/lib
@@ -36,5 +35,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|gnulocaledir)|DESTDIR)$$(&|' \
 		${WRKSRC}/po/Makefile.in.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtkDPS.so
 
 .include <bsd.port.mk>
