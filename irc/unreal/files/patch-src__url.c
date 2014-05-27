@@ -1,6 +1,6 @@
---- src/url.c	2012-12-28 08:04:54.000000000 -0800
-+++ src/url.c	2012-12-31 18:03:14.000000000 -0800
-@@ -171,7 +171,7 @@
+--- ./src/url.c.orig	2013-11-24 20:24:26.000000000 +0100
++++ ./src/url.c	2014-05-23 00:34:33.000000000 +0200
+@@ -174,7 +174,7 @@
  	CURLcode res;
  	char *file = url_getfilename(url);
  	char *filename = unreal_getfilename(file);
@@ -9,7 +9,7 @@
  	FILE *fd;
  
  
-@@ -356,7 +356,7 @@
+@@ -359,7 +359,7 @@
  	{
  		char *file = url_getfilename(url);
  		char *filename = unreal_getfilename(file);
