@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07039
+PORTVERSION=	0.07040
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	des@FreeBSD.org
 COMMENT=	Dynamic definition of a DBIx::Class::Schema
 
 LICENSE=	ART10 GPLv1
