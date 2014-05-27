@@ -15,16 +15,12 @@ COMMENT=	Python bindings for exiv2
 LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2\
 		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
-USES=		gmake tar:bzip2
+USES=		scons tar:bzip2
 USE_PYTHON=	2
-USE_SCONS=	yes
 USE_LDCONFIG=	yes
-SCONS_ENV+=	PREFIX=${PREFIX} CPPPATH=${PREFIX}/include LIBPATH=${PREFIX}/lib
-SCONS_BUILDENV=	${SCONS_ENV} CXXFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-SCONS_ARGS+=	prefix=${PREFIX} use_env=1
+CXXFLAGS+=	-I${LOCALBASE}/include
+MAKE_ARGS+=	prefix=${PREFIX} use_env=1
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|python_inc_path\]|python_inc_path,\
 	"${PREFIX}/include"\]|' -e 's|LIBS=libs|LIBS=libs,\
@@ -32,10 +28,9 @@ post-patch:
 	${WRKSRC}/src/SConscript
 
 post-install:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		${PYTHON_SITELIBDIR}/pyexiv2
+	cd ${STAGEDIR}/${PYTHON_SITELIBDIR}/pyexiv2; ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py .
 
 regression-test: build
-	@cd ${WRKSRC} && ${SCONS_BIN} test
+	@cd ${WRKSRC} && ${MAKE_CMD} test
 
 .include <bsd.port.mk>
