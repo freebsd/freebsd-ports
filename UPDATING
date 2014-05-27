@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140527:
+  AFFECTS: users of databases/db6
+  AUTHOR: mandree@FreeBSD.org
+
+  Oracle BerkeleyDB 6.0 was upgraded to version 6.0.30.  Databases that
+  use BLOBs need to be upgraded using db_upgrade-6.0 before they can be
+  accessed again. See the manual for details:
+
+  <http://docs.oracle.com/cd/E17076_03/html/api_reference/C/db_upgrade.html>
+
+  Databases that do not use BLOBs are unaffected.
+
 20140526:
   AFFECTS: users of lang/lua
 
