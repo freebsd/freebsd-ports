@@ -19,7 +19,7 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 
 REINPLACE_ARGS=	-e 's,%%PREFIX%%,${PREFIX},1' -i.bak
 
-DOS2UNIX_FILES=	tickr.h
+DOS2UNIX_GLOB=	tickr.h
 USE_GNOME=	desktopfileutils gtk20 libxml2
 USES=		dos2unix pkgconfig
 
