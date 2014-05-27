@@ -1,8 +1,8 @@
---- include/config.h	2009-04-13 13:03:57.000000000 +0200
-+++ include/config.h	2009-08-18 16:16:39.000000000 +0200
-@@ -210,16 +210,16 @@
-  * these are only the recommened names and paths. Change as needed.
-  * You must define these to something, even if you don't really want them.
+--- ./include/config.h.orig	2013-11-24 20:24:26.000000000 +0100
++++ ./include/config.h	2014-05-23 00:34:32.000000000 +0200
+@@ -242,16 +242,16 @@
+  * line argument. These used as the default values for options absent from the user's
+  * unrealircd.conf.
   */
 -#define	CPATH		"unrealircd.conf"	/* server configuration file */
 -#define	MPATH		"ircd.motd"	/* server MOTD file */
@@ -27,14 +27,14 @@
  
  /* CHROOTDIR
   *
-@@ -245,8 +245,8 @@
-  * define IRC_USER to that user name.  This should only be defined if you
+@@ -277,8 +277,8 @@
+  * define IRC_USER to that user name.  This should only be defined if you 
   * are running as root and even then perhaps not.
   */
 -/* #define IRC_USER  "<user name>" */
 -/* #define IRC_GROUP "<group name>" */
 +#define IRC_USER  "%%USERS%%"
 +#define IRC_GROUP "%%GROUPS%%"
-
-
+ 
+ 
  /* SHOW_INVISIBLE_LUSERS

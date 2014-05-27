@@ -3,11 +3,12 @@
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.10.2
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.unrealircd.com/downloads/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	tanawts@gmail.com
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Unreal - the next generation ircd
 
 LICENSE=	GPLv2
@@ -56,48 +57,24 @@ ZIPLINKS_DESC=	Enable ziplinks support
 PREFIXAQ_DESC=	Enable prefixes for chanadmin and chanowner
 REMOTE_DESC=	Enable remote includes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
 DOCS=		Donation doc/Authors doc/coding-guidelines \
 		doc/example.conf doc/tao.of.irc \
 		doc/translations.txt doc/unreal32docs.html \
 		doc/technical/005.txt doc/technical/base64.txt \
 		doc/technical/protoctl.txt doc/technical/token.txt \
 		doc/technical/vl.txt
-.endif
 
-.if ${PORT_OPTIONS:MHUB}
-CONFIGURE_ARGS+=	--enable-hub
-.endif
-
-.if ${PORT_OPTIONS:MNOSPOOF}
-CONFIGURE_ARGS+=	--enable-nospoof
-.endif
-
-.if ${PORT_OPTIONS:MZIPLINKS}
-CONFIGURE_ARGS+=	--enable-ziplinks
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-inet6
-.endif
-
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	--enable-ssl
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-.endif
-
-.if ${PORT_OPTIONS:MREMOTE}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--enable-libcurl=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MPREFIXAQ}
-CONFIGURE_ARGS+=	--enable-prefixaq
-.endif
+HUB_CONFIGURE_ENABLE=	hub
+NOSPOOF_CONFIGURE_ENABLE=	nospoof
+ZIPLINKS_CONFIGURE_ENABLE=	ziplinks
+IPV6_CONFIGURE_ENABLE=	inet6
+SSL_CONFIGURE_ENABLE=	ssl
+SSL_USE=	OPENSSL=yes
+REMOTE_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+REMOTE_CONFIGURE_ON=	--enable-libcurl=${LOCALBASE}
+REMOTE_CONFIGURE_OFF=	--disable-libcurl
+PREFIXAQ_CONFIGURE_ENABLE=	prefixaq
 
 SQLMOD=		${PORTNAME}/SQLMod.tar.gz
 
@@ -134,52 +111,32 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e "/Your system does not support IPv6/ s|as_fn_error|echo|" ${WRKSRC}/configure
 do-install:
-	${INSTALL} -m 0700 ${WRKSRC}/src/ircd ${PREFIX}/libexec/ircd
-	${MKDIR} ${MODULESDIR}
-	${MKDIR} ${CONFIGDIR} || true
-	${MKDIR} ${CONFIGDIR}/aliases || true
-	${MKDIR} ${EXAMPLESDIR}/aliases
-	${MKDIR} ${RUNDIR}/tmp
-	${MKDIR} ${LOGDIR}
-	${TOUCH} ${CONFIGDIR}/ircd.motd
-	${TOUCH} ${CONFIGDIR}/ircd.rules
-	${INSTALL_DATA} ${WRKSRC}/badwords.*.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/help.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/spamfilter.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${EXAMPLESDIR}/unrealircd.conf
-	${INSTALL_DATA} ${WRKSRC}/aliases/*.conf ${EXAMPLESDIR}/aliases
-	${INSTALL} ${WRKSRC}/src/modules/*.so ${MODULESDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL} -m 0700 ${WRKSRC}/src/ircd ${STAGEDIR}${PREFIX}/libexec/ircd
+	${MKDIR} ${STAGEDIR}${MODULESDIR}
+	${MKDIR} ${STAGEDIR}${CONFIGDIR} || true
+	${MKDIR} ${STAGEDIR}${CONFIGDIR}/aliases || true
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/aliases
+	${MKDIR} ${STAGEDIR}${RUNDIR}/tmp
+	${MKDIR} ${STAGEDIR}${LOGDIR}
+	${TOUCH} ${STAGEDIR}${CONFIGDIR}/ircd.motd
+	${TOUCH} ${STAGEDIR}${CONFIGDIR}/ircd.rules
+	${INSTALL_DATA} ${WRKSRC}/badwords.*.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/help.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/spamfilter.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${STAGEDIR}${EXAMPLESDIR}/unrealircd.conf
+	${INSTALL_DATA} ${WRKSRC}/aliases/*.conf ${STAGEDIR}${EXAMPLESDIR}/aliases
+	${INSTALL} ${WRKSRC}/src/modules/*.so ${STAGEDIR}${MODULESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 post-install:
-	@[ -f ${CONFIGDIR}/aliases/aliases.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/aliases.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/aliases/anope.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/anope.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/aliases/auspice.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/auspice.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/aliases/cygnus.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/cygnus.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/aliases/epona.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/epona.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/aliases/generic.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/generic.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/aliases/genericstats.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/genericstats.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/aliases/ircservices.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/ircservices.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/aliases/operstats.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/aliases/operstats.conf ${CONFIGDIR}/aliases
-	@[ -f ${CONFIGDIR}/badwords.channel.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/badwords.channel.conf ${CONFIGDIR}
-	@[ -f ${CONFIGDIR}/badworks.message.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/badwords.message.conf ${CONFIGDIR}
-	@[ -f ${CONFIGDIR}/badwords.quit.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/badwords.quit.conf ${CONFIGDIR}
-	@[ -f ${CONFIGDIR}/help.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/help.conf ${CONFIGDIR}
-	@[ -f ${CONFIGDIR}/spamfilter.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/spamfilter.conf ${CONFIGDIR}
-	@[ -f ${CONFIGDIR}/unrealircd.conf ] || ${INSTALL_DATA} ${EXAMPLESDIR}/unrealircd.conf ${CONFIGDIR}
-	@${CHOWN} -R ${USERS}:${GROUPS} ${CONFIGDIR}
-	@${CHOWN} ${USERS}:${GROUPS} ${RUNDIR}
-	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR}
 .if defined(WITH_SQLMOD)
-	@${CP} ${WRKSRC}/SQLMod/sample.conf ${CONFIGDIR}/m_sqlmod.conf
-	@${CP} ${WRKSRC}/SQLMod/Changes ${DOCSDIR}/Changes.sqlmod
-	@${CP} ${WRKSRC}/SQLMod/README ${DOCSDIR}/README.sqlmod
-	@${CP} ${WRKSRC}/SQLMod/LICENSE ${DOCSDIR}/LICENSE.sqlmod
+	@${CP} ${WRKSRC}/SQLMod/sample.conf ${STAGEDIR}${CONFIGDIR}/m_sqlmod.conf
+	@${CP} ${WRKSRC}/SQLMod/Changes ${STAGEDIR}${DOCSDIR}/Changes.sqlmod
+	@${CP} ${WRKSRC}/SQLMod/README ${STAGEDIR}${DOCSDIR}/README.sqlmod
+	@${CP} ${WRKSRC}/SQLMod/LICENSE ${STAGEDIR}${DOCSDIR}/LICENSE.sqlmod
 .endif
 
 .include <bsd.port.mk>

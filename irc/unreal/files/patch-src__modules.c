@@ -1,6 +1,6 @@
---- src/modules.c	2009-04-13 13:03:58.000000000 +0200
-+++ src/modules.c	2009-08-20 15:32:56.000000000 +0200
-@@ -177,12 +177,12 @@
+--- ./src/modules.c.orig	2013-11-24 20:24:26.000000000 +0100
++++ ./src/modules.c	2014-05-23 00:34:33.000000000 +0200
+@@ -183,12 +183,12 @@
  {
  	char tempbuf[PATH_MAX+1];
  #ifndef _WIN32
@@ -15,7 +15,7 @@
  			strerror(errno));
  		if (!loop.ircd_booted)
  			exit(7);
-@@ -193,19 +193,19 @@
+@@ -199,19 +199,19 @@
  	{
  		if (!strcmp(dir->d_name, ".") || !strcmp(dir->d_name, ".."))
  			continue;
@@ -38,7 +38,7 @@
  			strcat(tempbuf, hData.cFileName);
  			remove(tempbuf);
  		}
-@@ -214,7 +214,7 @@
+@@ -220,7 +220,7 @@
  	{
  		if (!strcmp(hData.cFileName, ".") || !strcmp(hData.cFileName, ".."))
  			continue;
@@ -47,7 +47,7 @@
  		strcat(tempbuf, hData.cFileName);
  		remove(tempbuf);
  	}
-@@ -323,7 +323,7 @@
+@@ -329,7 +329,7 @@
  	path = path_;
  
  	

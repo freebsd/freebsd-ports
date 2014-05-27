@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- src/ircd.c	2011-11-05 02:25:24.000000000 -0700
-+++ src/ircd.c	2011-11-28 10:21:38.000000000 -0800
-@@ -1407,12 +1407,12 @@
+--- ./src/ircd.c.orig	2013-11-24 20:24:26.000000000 +0100
++++ ./src/ircd.c	2014-05-23 00:34:32.000000000 +0200
+@@ -1410,12 +1410,12 @@
  	}
  #endif
  #ifndef _WIN32
@@ -17,4 +15,3 @@ $FreeBSD$
   #if defined(USE_LIBCURL) && defined(REMOTEINC_SPECIALCACHE)
   	mkdir("cache");
   #endif
-
