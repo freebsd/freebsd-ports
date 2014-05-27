@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--without-guile
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USES=		lua:51
+USES+=		lua:51
 CONFIGURE_ARGS+=	--with-lua
 CPPFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
