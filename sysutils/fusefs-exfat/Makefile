@@ -19,8 +19,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 LIB_DEPENDS=	libublio.so:${PORTSDIR}/devel/libublio
 
-USES=		fuse iconv
-USE_SCONS=	yes
+USES=		fuse iconv scons
 
 PLIST_FILES=	bin/mount.exfat-fuse bin/mount.exfat man/man8/mount.exfat-fuse.8.gz
 
