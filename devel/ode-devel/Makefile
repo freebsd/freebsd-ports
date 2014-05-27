@@ -3,7 +3,7 @@
 
 PORTNAME=	ode
 DISTVERSION=	${ODEVER}-060223
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://opende.sourceforge.net/snapshots/
 PKGNAMESUFFIX=	-devel
@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/${ODEVER}-//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Articulated rigid body dynamics library (devel)
+
+DEPRECATED=	Outdated by devel/ode
+EXPIRATION_DATE=2014-06-27
 
 ODEVER=		0.5
 
