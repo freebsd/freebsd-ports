@@ -50,7 +50,7 @@ BLAS+=		-lg2c -lm
 FFLAGS_ADD=	-w -ffixed-line-length-none
 .endif
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		gmake
+USES+=		gmake
 ALL_TARGET=	all
 
 NO_STAGE=	yes
