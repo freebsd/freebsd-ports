@@ -10,6 +10,7 @@ EXTRACT_SUFX=	-distribution.zip
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Java based MathML rendering solution
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
