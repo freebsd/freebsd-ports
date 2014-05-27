@@ -113,7 +113,7 @@ LIB_DEPENDS+=		libev.so:${PORTSDIR}/devel/libev
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USES=		lua:51
+USES+=			lua:51
 CONFIGURE_ARGS+=	--with-lua
 CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 .endif
