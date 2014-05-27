@@ -3,7 +3,7 @@
 
 PORTNAME=	gltt
 PORTVERSION=	2.5.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://gltt.sourceforge.net/download/
 
@@ -12,8 +12,7 @@ COMMENT=	TrueType fonts rendering using OpenGL
 
 LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
@@ -25,5 +24,8 @@ CONFIGURE_ARGS=	--with-ttf-includes=${LOCALBASE}/include/freetype1 \
 		--with-glut-includes=${LOCALBASE}/include \
 		--with-glut-libraries=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgltt.so
 
 .include <bsd.port.mk>
