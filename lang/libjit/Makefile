@@ -3,6 +3,7 @@
 
 PORTNAME=	libjit
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SAVANNAH/dotgnu-pnet/libjit-releases
 
@@ -12,10 +13,11 @@ COMMENT=	Libjit implements Just-In-Time compilation functionality
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-USES=	pathfix gmake
-USE_AUTOTOOLS=	libtool
+USES=		pathfix gmake libtool
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CFLAGS+=	-O0
+INSTALL_TARGET=	install-strip
 
 INFO=		libjit
 
