@@ -13,15 +13,14 @@ COMMENT=	Futuristic real-time strategy game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		theora:${PORTSDIR}/multimedia/libtheora \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		lua:51
+USES=		lua:51 scons
 USE_SDL=	sdl
 USE_GL=		yes
-USE_SCONS=	yes
-SCONS_ARGS+=	opengl=1
+MAKE_ARGS+=	opengl=1
 CPPPATH=	${LOCALBASE}/include ${LUA_INCDIR}
 LIBPATH=	${LOCALBASE}/lib ${LUA_LIBDIR}
 CFLAGS+=	-DSTRATAGUS_LIB_PATH='"\"${DATADIR}\""'
@@ -31,11 +30,7 @@ DESKTOP_ENTRIES=	"Bos Wars" "${COMMENT}" "" \
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
@@ -45,16 +40,13 @@ post-patch:
 	${WRKSRC}/SConstruct
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in campaigns graphics intro languages maps patches scripts sounds units
-	${CP} -R ${WRKSRC}/${f} ${DATADIR}
+	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README.txt ${DOCSDIR}
-	${COPYTREE_SHARE} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
+	${COPYTREE_SHARE} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
