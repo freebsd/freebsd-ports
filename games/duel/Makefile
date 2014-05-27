@@ -5,8 +5,7 @@ PORTNAME=	duel
 PORTVERSION=	0.98
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alepulver
+MASTER_SITES=	LOCAL/alepulver
 DISTNAME=	lin${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,8 +14,7 @@ COMMENT=	Overhead, OpenGL space shooter
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libftgl.so:${PORTSDIR}/graphics/ftgl
 
-USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
+USES=		tar:bzip2 libtool
 USE_GL=		gl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
