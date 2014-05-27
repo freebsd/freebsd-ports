@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	wormux-*
 GNU_CONFIGURE=	yes
 USES=		dos2unix gmake pkgconfig tar:bzip2
 USE_SDL=	sdl image mixer ttf gfx net
-DOS2UNIX_FILES=	fixed_class.h
+DOS2UNIX_GLOB=	fixed_class.h
 
 OPTIONS_DEFINE=	FRIBIDI SERVER NLS DEBUG
 FRIBIDI_DESC=	Enable bi-directional unicode support
