@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 DATE=		20120802
 ONLY_FOR_ARCHS=	amd64
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_GCC=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -27,7 +27,6 @@ PLIST_FILES=	lib/liblite-malloc-shared.so \
 
 MAKE_ARGS+=	CXX=${CXX}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -37,13 +36,13 @@ PLIST_DIRS+=	share/doc/${PORTNAME}
 
 do-install:
 .for i in shared.so static.a
-	${INSTALL_LIB} ${WRKSRC}/liblite-malloc-${i} ${PREFIX}/lib/liblite-malloc-${i}
+	${INSTALL_LIB} ${WRKSRC}/liblite-malloc-${i} ${STAGEDIR}${PREFIX}/lib/liblite-malloc-${i}
 .endfor
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
