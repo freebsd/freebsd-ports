@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140526:
+  AFFECTS: users of lang/lua
+
+  lang/lua has been relaced by lang/lua51
+
+  For port builds system please follow the following instructions:
+
+  # portmaster -o lang/lua51 lang/lua
+  or
+  # portupgrade -fo lang/lua51 lang/lua
+  or
+  # pkg set -o lang/lua:lang/lua51
+
 20140525:
   AFFECTS: users of devel/py-gobject3 and devel/py-dbus
   AUTHOR: gnome@FreeBSD.org
