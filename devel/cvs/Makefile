@@ -5,7 +5,7 @@ PORTVERSION=	1.20120905
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/eadler
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version control system
 
 LICENSE=	GPLv2
@@ -16,7 +16,7 @@ INFO=		cvs cvsclient
 
 # bsd.stage.makes sets the wrong value for DESTDIR
 DESTDIRNAME=	NADA
-MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
+MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX} MK_KERBEROS_SUPPORT=yes
 
 .include <bsd.port.pre.mk>
 
