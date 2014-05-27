@@ -20,7 +20,6 @@ SUB_FILES+=	${PERIODICSCRIPT}
 RESTRICTED=	May not be redistributed in binary form
 NO_CDROM=	May not be redistributed in binary form
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800000
@@ -39,8 +38,8 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/freebsd${DIST_OSVER}/cmdline/arcconf ${PREFIX}/sbin
-	@${MKDIR} ${PREFIX}/etc/periodic/daily
-	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${PREFIX}/etc/periodic/daily
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd${DIST_OSVER}/cmdline/arcconf ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 
 .include <bsd.port.post.mk>
