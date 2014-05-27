@@ -1020,7 +1020,6 @@
     SUBDIR += libgii
     SUBDIR += libgit2
     SUBDIR += libgit2-glib
-    SUBDIR += libglade-java
     SUBDIR += libglade2
     SUBDIR += libglade2-reference
     SUBDIR += libglademm24
