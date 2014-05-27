@@ -18,16 +18,12 @@ SUB_FILES=	treeform
 
 WRKSRC=		${WRKDIR}/TreeForm
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/treeform ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/treeform ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} \
-		&& ${INSTALL_DATA} TreeForm.jar ${JAVAJARDIR} \
-		&& ${COPYTREE_SHARE} about.htm ${DATADIR} \
-		&& ${COPYTREE_SHARE} help ${DATADIR} \
-		&& ${COPYTREE_SHARE} image ${DATADIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		&& ${INSTALL_DATA} TreeForm.jar ${STAGEDIR}${JAVAJARDIR} \
+		&& ${COPYTREE_SHARE} about.htm ${STAGEDIR}${DATADIR} \
+		&& ${COPYTREE_SHARE} help ${STAGEDIR}${DATADIR} \
+		&& ${COPYTREE_SHARE} image ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
