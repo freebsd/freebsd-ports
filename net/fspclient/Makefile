@@ -9,15 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A ftp-like client for the FSP service
 
-USE_BZIP2=	yes
-USE_SCONS=	yes
-SCONS_ARGS=	prefix=${PREFIX}
+USES=		tar:bzip2 scons
+MAKE_ARGS=	prefix=${PREFIX}
 
-MAN1=		fsp.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/fsp
+PLIST_FILES=	bin/fsp man/man1/fsp.1.gz
+INSTALL_TARGET=	install prefix=${STAGEDIR}${PREFIX}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
