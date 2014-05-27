@@ -19,10 +19,8 @@ LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo \
 		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26
 
-USE_BZIP2=	yes
-USES=		gettext pkgconfig
-USE_SCONS=	yes
-SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
+USES=		gettext scons pkgconfig tar:bzip2
+MAKE_ARGS+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GNOME=	libxslt
 USE_LDCONFIG=	${PREFIX}/lib/ardour2 ${PREFIX}/lib/ardour2/surfaces
@@ -37,7 +35,7 @@ VST_DESC=	VST plugins support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVST}
-SCONS_ENV+=	VST=yes
+ONS_ENV+=	VST=yes
 BUILD_DEPENDS+=	winegcc:${PORTSDIR}/emulators/wine \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gsed:${PORTSDIR}/textproc/gsed
@@ -54,17 +52,17 @@ PLIST_SUB+=	VST="@comment "
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce
 .  if ${ARCH} == "amd64"
-SCONS_ENV+=	DIST_TARGET=x86_64
-SCONS_ENV+=	FPU_OPTIMIZATION=1
+MAKE_ARGS+=	DIST_TARGET=x86_64
+MAKE_ARGS+=	FPU_OPTIMIZATION=1
 .  elif ${MACHINE_CPU:Msse}
-SCONS_ENV+=	DIST_TARGET=i686
-SCONS_ENV+=	FPU_OPTIMIZATION=1
+MAKE_ARGS+=	DIST_TARGET=i686
+MAKE_ARGS+=	FPU_OPTIMIZATION=1
 .  else
-SCONS_ENV+=	DIST_TARGET=i386
-SCONS_ENV+=	FPU_OPTIMIZATION=0
+MAKE_ARGS+=	DIST_TARGET=i386
+MAKE_ARGS+=	FPU_OPTIMIZATION=0
 .  endif
 .else
-SCONS_ENV+=	FPU_OPTIMIZATION=0
+MAKE_ARGS+=	FPU_OPTIMIZATION=0
 .endif
 
 post-patch:
