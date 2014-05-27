@@ -18,9 +18,9 @@ include/SDLmm/sdlmm_surface.h
 include/SDLmm/sdlmm_timer.h
 include/SDLmm/sdlmm_videoinfo.h
 lib/libSDLmm.a
-lib/libSDLmm.la
 lib/libSDLmm.so
 lib/libSDLmm.so.8
+lib/libSDLmm.so.8.0.0
 man/man3/SDLmm.3.gz
 man/man3/SDLmm_Audio.3.gz
 man/man3/SDLmm_BaseSurface.3.gz
