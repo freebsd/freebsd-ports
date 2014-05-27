@@ -44,7 +44,7 @@ PLIST_FILES+=	%%LUA_MODLIBDIR%%/dbdsqlite3.so
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 ALL_TARGET+=	psql
 PLIST_FILES+=	%%LUA_MODLIBDIR%%/dbdpostgresql.so
 .endif
