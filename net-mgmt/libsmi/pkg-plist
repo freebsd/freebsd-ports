@@ -10,6 +10,7 @@ lib/libsmi.a
 lib/libsmi.la
 lib/libsmi.so
 lib/libsmi.so.2
+lib/libsmi.so.2.0.27
 libdata/pkgconfig/libsmi.pc
 share/aclocal/libsmi.m4
 share/smi/mibs/iana/IANA-ADDRESS-FAMILY-NUMBERS-MIB

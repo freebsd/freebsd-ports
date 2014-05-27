@@ -10,9 +10,9 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
 MAINTAINER=	saper@saper.info
 COMMENT=	A library to access SMI MIB information
 
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool:keepla pathfix pkgconfig
 PIBDIR=		${PREFIX}/share/smi/pibs
 MIBDIR=		${PREFIX}/share/smi/mibs
 GNU_CONFIGURE=	yes
