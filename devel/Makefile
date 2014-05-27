@@ -1007,7 +1007,6 @@
     SUBDIR += libg19draw
     SUBDIR += libgalago
     SUBDIR += libgamepad
-    SUBDIR += libgconf-java
     SUBDIR += libgdata
     SUBDIR += libgee
     SUBDIR += libgee06

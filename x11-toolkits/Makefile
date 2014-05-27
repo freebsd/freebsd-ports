@@ -99,7 +99,6 @@
     SUBDIR += libgnomeui
     SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
-    SUBDIR += libgtk-java
     SUBDIR += libgtksourceviewmm
     SUBDIR += libmatewnck
     SUBDIR += libpanelappletmm

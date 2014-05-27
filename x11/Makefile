@@ -168,7 +168,6 @@
     SUBDIR += libexo
     SUBDIR += libfm
     SUBDIR += libgnome
-    SUBDIR += libgnome-java
     SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd
     SUBDIR += libgnomemm26
