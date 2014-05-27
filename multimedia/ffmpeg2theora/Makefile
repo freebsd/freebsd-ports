@@ -15,9 +15,8 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libkate.so:${PORTSDIR}/multimedia/libkate \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora
 
-USE_BZIP2=	yes
-USES=		iconv pkgconfig scons
-MAKE_ENV=	APPEND_CCFLAGS="${CPPFLAGS}" APPEND_LINKFLAGS="${LDFLAGS}"
+USES=		iconv pkgconfig scons tar:bzip2
+MAKE_ENV=	APPEND_CCFLAGS="${CPPFLAGS}" APPEND_LINKFLAGS="${LDFLAGS}" CCFLAGS="${CPPFLAGS}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
