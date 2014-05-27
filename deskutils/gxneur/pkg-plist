@@ -1,14 +1,22 @@
 bin/gxneur
 man/man1/gxneur.1.gz
 share/applications/gxneur.desktop
+%%DATADIR%%/glade/abbr_add.glade
+%%DATADIR%%/glade/about.glade
+%%DATADIR%%/glade/action_add.glade
+%%DATADIR%%/glade/app_add.glade
+%%DATADIR%%/glade/choose_file.glade
+%%DATADIR%%/glade/config.glade
+%%DATADIR%%/glade/list.glade
+%%DATADIR%%/glade/rule_add.glade
 %%DATADIR%%/pixmaps/am.png
 %%DATADIR%%/pixmaps/bg.png
 %%DATADIR%%/pixmaps/by.png
 %%DATADIR%%/pixmaps/cz.png
 %%DATADIR%%/pixmaps/de.png
+%%DATADIR%%/pixmaps/ee.png
 %%DATADIR%%/pixmaps/en.png
 %%DATADIR%%/pixmaps/es.png
-%%DATADIR%%/pixmaps/ee.png
 %%DATADIR%%/pixmaps/fi.png
 %%DATADIR%%/pixmaps/fr.png
 %%DATADIR%%/pixmaps/ge.png
@@ -25,34 +33,15 @@ share/applications/gxneur.desktop
 %%DATADIR%%/pixmaps/pl.png
 %%DATADIR%%/pixmaps/pt.png
 %%DATADIR%%/pixmaps/ro.png
+%%DATADIR%%/pixmaps/ru.png
 %%DATADIR%%/pixmaps/se.png
 %%DATADIR%%/pixmaps/si.png
 %%DATADIR%%/pixmaps/sk.png
 %%DATADIR%%/pixmaps/sr.png
-%%DATADIR%%/pixmaps/ru.png
 %%DATADIR%%/pixmaps/ua.png
 %%DATADIR%%/pixmaps/us.png
 %%DATADIR%%/pixmaps/uz.png
 %%DATADIR%%/pixmaps/x3.png
-%%DATADIR%%/glade/abbr_add.glade
-%%DATADIR%%/glade/about.glade
-%%DATADIR%%/glade/action_add.glade
-%%DATADIR%%/glade/app_add.glade
-%%DATADIR%%/glade/choose_file.glade
-%%DATADIR%%/glade/config.glade
-%%DATADIR%%/glade/list.glade
-%%DATADIR%%/glade/rule_add.glade
-%%NLS%%share/locale/be/LC_MESSAGES/gxneur.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gxneur.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gxneur.mo
-%%NLS%%share/locale/he/LC_MESSAGES/gxneur.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/gxneur.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/gxneur.mo
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-share/icons/hicolor/16x16/apps/gxneur.png
 share/icons/hicolor/16x16/apps/gxneur-am.png
 share/icons/hicolor/16x16/apps/gxneur-bg.png
 share/icons/hicolor/16x16/apps/gxneur-by.png
@@ -85,9 +74,7 @@ share/icons/hicolor/16x16/apps/gxneur-ua.png
 share/icons/hicolor/16x16/apps/gxneur-us.png
 share/icons/hicolor/16x16/apps/gxneur-uz.png
 share/icons/hicolor/16x16/apps/gxneur-x3.png
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-share/icons/hicolor/22x22/apps/gxneur.png
+share/icons/hicolor/16x16/apps/gxneur.png
 share/icons/hicolor/22x22/apps/gxneur-am.png
 share/icons/hicolor/22x22/apps/gxneur-bg.png
 share/icons/hicolor/22x22/apps/gxneur-by.png
@@ -120,9 +107,7 @@ share/icons/hicolor/22x22/apps/gxneur-ua.png
 share/icons/hicolor/22x22/apps/gxneur-us.png
 share/icons/hicolor/22x22/apps/gxneur-uz.png
 share/icons/hicolor/22x22/apps/gxneur-x3.png
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-share/icons/hicolor/24x24/apps/gxneur.png
+share/icons/hicolor/22x22/apps/gxneur.png
 share/icons/hicolor/24x24/apps/gxneur-am.png
 share/icons/hicolor/24x24/apps/gxneur-bg.png
 share/icons/hicolor/24x24/apps/gxneur-by.png
@@ -155,9 +140,7 @@ share/icons/hicolor/24x24/apps/gxneur-ua.png
 share/icons/hicolor/24x24/apps/gxneur-us.png
 share/icons/hicolor/24x24/apps/gxneur-uz.png
 share/icons/hicolor/24x24/apps/gxneur-x3.png
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-share/icons/hicolor/32x32/apps/gxneur.png
+share/icons/hicolor/24x24/apps/gxneur.png
 share/icons/hicolor/32x32/apps/gxneur-am.png
 share/icons/hicolor/32x32/apps/gxneur-bg.png
 share/icons/hicolor/32x32/apps/gxneur-by.png
@@ -190,9 +173,7 @@ share/icons/hicolor/32x32/apps/gxneur-ua.png
 share/icons/hicolor/32x32/apps/gxneur-us.png
 share/icons/hicolor/32x32/apps/gxneur-uz.png
 share/icons/hicolor/32x32/apps/gxneur-x3.png
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-share/icons/hicolor/48x48/apps/gxneur.png
+share/icons/hicolor/32x32/apps/gxneur.png
 share/icons/hicolor/48x48/apps/gxneur-am.png
 share/icons/hicolor/48x48/apps/gxneur-bg.png
 share/icons/hicolor/48x48/apps/gxneur-by.png
@@ -225,9 +206,7 @@ share/icons/hicolor/48x48/apps/gxneur-ua.png
 share/icons/hicolor/48x48/apps/gxneur-us.png
 share/icons/hicolor/48x48/apps/gxneur-uz.png
 share/icons/hicolor/48x48/apps/gxneur-x3.png
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-share/icons/hicolor/scalable/apps/gxneur.svg
+share/icons/hicolor/48x48/apps/gxneur.png
 share/icons/hicolor/scalable/apps/gxneur-am.svg
 share/icons/hicolor/scalable/apps/gxneur-bg.svg
 share/icons/hicolor/scalable/apps/gxneur-by.svg
@@ -260,7 +239,28 @@ share/icons/hicolor/scalable/apps/gxneur-ua.svg
 share/icons/hicolor/scalable/apps/gxneur-us.svg
 share/icons/hicolor/scalable/apps/gxneur-uz.svg
 share/icons/hicolor/scalable/apps/gxneur-x3.svg
+share/icons/hicolor/scalable/apps/gxneur.svg
+%%NLS%%share/locale/be/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/he/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gxneur.mo
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
