@@ -1,8 +1,8 @@
 include/jamlib/jam.h
 lib/libjam.a
-lib/libjam.la
 lib/libjam.so
-lib/libjam.so.2
+lib/libjam.so.1
+lib/libjam.so.1.1.5
 man/man3/JAM_AddEmptyMessage.3.gz
 man/man3/JAM_AddMessage.3.gz
 man/man3/JAM_ChangeMsgHeader.3.gz
