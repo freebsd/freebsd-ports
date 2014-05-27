@@ -1,0 +1,21 @@
+--- ./Configure.orig	2014-04-23 03:36:51.000000000 +0200
++++ ./Configure	2014-05-23 01:02:51.000000000 +0200
+@@ -4948,7 +4948,7 @@
+ : Now check and see which directories actually exist, avoiding duplicates
+ for xxx in $dlist
+ do
+-    if $test -d $xxx; then
++    if $test -d $xxx || [ $xxx = $prefix/lib ]; then
+ 		case " $libpth " in
+ 		*" $xxx "*) ;;
+ 		*) libpth="$libpth $xxx";;
+@@ -9345,8 +9345,7 @@
+ 
+ : determine where add-on public executable scripts go
+ case "$sitescript" in
+-'')	dflt=$siteprefix/script
+-	$test -d $dflt || dflt=$sitebin ;;
++'')	dflt=$sitebin ;;
+ *)  dflt="$sitescript" ;;
+ esac
+ fn=d~+

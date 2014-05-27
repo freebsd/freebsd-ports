@@ -3,7 +3,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	3
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -25,11 +24,11 @@ LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 CONFLICTS_INSTALL=	perl5.14-* perl5.16-* perl5.18-*
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
-		MULTIPLICITY SITECUSTOMIZE USE_PERL
+		MULTIPLICITY SITECUSTOMIZE
 # it seems perl malloc has problems with threaded perl on FreeBSD
 OPTIONS_RADIO=	EXCLUSIVE
 OPTIONS_RADIO_EXCLUSIVE=	THREADS PERL_MALLOC
-OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD USE_PERL
+OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD
 
 EXCLUSIVE_DESC=	Exclusive OPTIONS
 GDBM_DESC=	GDBM_File extension
@@ -39,9 +38,7 @@ THREADS_DESC=		Build threaded perl
 PTHREAD_DESC=		Build with -pthread
 MULTIPLICITY_DESC=	Use multiplicity
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
-USE_PERL_DESC=		Rewrite links in /usr/bin
 
-#OPTIONS_EXCLUDE_AMD64=	THREADS
 OPTIONS_SUB=		yes
 DEBUG_CONFIGURE_ON=	-Doptimize="-g" -DDEBUGGING
 DEBUG_CONFIGURE_OFF=	-Doptimize="${CFLAGS}"
@@ -56,10 +53,13 @@ THREADS_CONFIGURE_OFF=	-Dusethreads=n
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
-PORTSCOUT=	limit:^${PERL_VER}.
+# For the latest Perl port, this should be:
+PORTSCOUT=	limitw:1,even
+# For the older Perl ports, this should be:
+#PORTSCOUT=	limit:^${PERL_VER}.
 
 # Remember to update Mk/Uses/perl5.mk too.
-PERL_VERSION=	5.18.2
+PERL_VERSION=	5.20.0
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
@@ -149,13 +149,6 @@ PLIST_SUB+=	MANCONF="@comment "
 .if ${PORT_OPTIONS:MTHREADS}
 WITH_PTHREAD=		yes
 .endif
-
-.if ${PORT_OPTIONS:MUSE_PERL}
-LINK_USRBIN=	yes
-.else
-LINK_USRBIN=	no
-.endif
-SUB_LIST+=	LINK_USRBIN=${LINK_USRBIN}
 
 BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \

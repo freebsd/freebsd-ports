@@ -55,6 +55,8 @@ PERL_VERSION=	5.14.4
 PERL_VERSION=	5.16.3
 .elif ${PERL5_DEFAULT} == 5.18
 PERL_VERSION=	5.18.2
+.elif ${PERL5_DEFAULT} == 5.20
+PERL_VERSION=	5.20.0
 .else
 IGNORE=	Invalid perl5 version ${PERL5_DEFAULT}
 .endif
@@ -82,7 +84,9 @@ PERL_ARCH?=		mach
 
 # there must always be a default to prevent dependency failures such
 # as "ports/lang: not found"
-.if    ${PERL_LEVEL} >= 501800
+.if    ${PERL_LEVEL} >= 502000
+PERL_PORT?=	perl5.20
+.elif    ${PERL_LEVEL} >= 501800
 PERL_PORT?=	perl5.18
 .elif    ${PERL_LEVEL} >= 501600
 PERL_PORT?=	perl5.16
