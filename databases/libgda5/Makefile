@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if ${LIBGDA5_SLAVE}==postgresql
-USE_PGSQL=		yes
+USES+=			pgsql
 CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-postgres

@@ -26,14 +26,12 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-4.0.pc:${PORTSDIR}/databases/libgda4-postgresql
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
-		pkgconfig shared-mime-info
+		pgsql pkgconfig shared-mime-info tar:bzip2
 USE_GNOME=	gnomedocutils gnomeprefix pygnomeextras
 USE_LDCONFIG=	yes
-USE_PGSQL=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -41,8 +39,8 @@ CONFIGURE_ARGS=	--with-postgres-utils=${LOCALBASE}/bin
 INSTALLS_ICONS=	yes
 
 # Note: USE_PGSQL has already been set above.
-BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-server
+RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-server
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libglom-1.12.so.0.0.0
