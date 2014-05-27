@@ -10,12 +10,5 @@ RUN_DEPENDS=	clamd:${PORTSDIR}/security/clamav
 
 CLAWS_PLUGINS_BUILD=	clamd
 
-post-install:
-	@${ECHO}
-	@${ECHO_CMD} "********************************************************************************"
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} "********************************************************************************"
-	@${ECHO}
-
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

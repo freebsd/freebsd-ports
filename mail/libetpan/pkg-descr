@@ -3,4 +3,4 @@ middleware for different kinds of mail access. When using the drivers
 interface, the interface is the same for all kinds of mail access, remote
 and local mailboxes.
 
-WWW: http://www.etpan.org/libetpan/
+WWW: http://www.etpan.org/libetpan.html

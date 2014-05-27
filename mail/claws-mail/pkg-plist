@@ -24,6 +24,7 @@ include/claws-mail/addrselect.h
 include/claws-mail/advsearch.h
 include/claws-mail/alertpanel.h
 include/claws-mail/autofaces.h
+include/claws-mail/avatars.h
 include/claws-mail/browseldap.h
 include/claws-mail/claws-features.h
 include/claws-mail/codeconv.h
@@ -69,6 +70,7 @@ include/claws-mail/edittags.h
 include/claws-mail/editvcard.h
 include/claws-mail/enriched.h
 include/claws-mail/etpan/etpan-errors.h
+include/claws-mail/etpan/etpan-ssl.h
 include/claws-mail/etpan/etpan-thread-manager-types.h
 include/claws-mail/etpan/etpan-thread-manager.h
 include/claws-mail/etpan/imap-thread.h
@@ -171,6 +173,7 @@ include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-x11-listener.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/gtkhotkey.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
 include/claws-mail/plugins/claws-mail/ical.h
+include/claws-mail/plugins/pgpcore/autocompletion.h
 include/claws-mail/plugins/pgpcore/passphrase.h
 include/claws-mail/plugins/pgpcore/pgp_utils.h
 include/claws-mail/plugins/pgpcore/pgp_viewer.h
@@ -239,11 +242,13 @@ include/claws-mail/uri_opener.h
 include/claws-mail/vcard.h
 include/claws-mail/viewtypes.h
 include/claws-mail/wizard.h
+lib/claws-mail/plugins/libravatar.so
 lib/claws-mail/plugins/pgpinline.deps
 lib/claws-mail/plugins/pgpmime.deps
 lib/claws-mail/plugins/smime.deps
 libdata/pkgconfig/claws-mail.pc
 man/man1/claws-mail.1.gz
+share/appdata/claws-mail.appdata.xml
 share/applications/claws-mail.desktop
 %%DATADIR%%/OOo2claws-mail.pl
 %%DATADIR%%/acroread2claws-mail.pl
@@ -305,6 +310,7 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/cs/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/de/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/es/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/claws-mail.mo
@@ -334,6 +340,7 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual
 @dirrmtry %%DOCSDIR%%
 @dirrmtry %%DATADIR%%
+@dirrmtry share/appdata
 @dirrmtry lib/claws-mail/plugins
 @dirrmtry lib/claws-mail
 @dirrm include/claws-mail/plugins/vcalendar
