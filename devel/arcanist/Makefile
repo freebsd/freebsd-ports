@@ -11,6 +11,8 @@ COMMENT=	Command line interface for Phabricator
 
 LICENSE=	APACHE20
 
+CONFLICTS=	arc-*
+
 PHP_DESTDIR=	lib/php/arcanist
 RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil \
 		bash:${PORTSDIR}/shells/bash

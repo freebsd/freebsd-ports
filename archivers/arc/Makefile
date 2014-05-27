@@ -11,6 +11,8 @@ COMMENT=	Create & extract files from DOS .ARC files
 
 LICENSE=	GPLv2
 
+CONFLICTS=	php5-arcanist-*
+
 PLIST_FILES=	bin/arc bin/marc man/man1/arc.1.gz
 PORTDOCS=	Arc521.doc
 
