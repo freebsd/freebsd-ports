@@ -43,9 +43,6 @@ LDAP=			Enable LDAP support
 PREFIX=			${KRB5_HOME}
 CFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
 LDFLAGS+=		-Wl,-rpath=${KRB5_HOME}/lib
-.if ${KRB5_HOME} != ${LOCALBASE}
-BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
-.endif
 .endif
 LDFLAGS+=		-L${LOCALBASE}/lib
 CFLAGS+=		-I${LOCALBASE}/include
@@ -54,6 +51,10 @@ USE_OPENSSL=		yes
 USE_RC_SUBR=		kpropd
 
 .include <bsd.port.pre.mk>
+
+.if defined(KRB5_HOME) && ${KRB5_HOME} != ${LOCALBASE}
+BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
+.endif
 
 .if ${PORT_OPTIONS:MDNS_FOR_REALM}
 CONFIGURE_ARGS+=	--enable-dns-for-realm
