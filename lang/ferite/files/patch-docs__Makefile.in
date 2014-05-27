@@ -1,0 +1,42 @@
+--- docs/Makefile.in.orig	2005-12-05 15:06:18.000000000 +0300
++++ docs/Makefile.in	2014-05-27 21:33:24.000000000 +0400
+@@ -347,6 +347,7 @@
+ 	  rm -f "$(DESTDIR)$(man1dir)/$$inst"; \
+ 	done
+ install-docsDATA: $(docs_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(docsdir)" || $(mkdir_p) "$(DESTDIR)$(docsdir)"
+ 	@list='$(docs_DATA)'; for p in $$list; do \
+@@ -355,6 +356,7 @@
+ 	  echo " $(docsDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docsdir)/$$f'"; \
+ 	  $(docsDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docsdir)/$$f"; \
+ 	done
++endif
+ 
+ uninstall-docsDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -639,17 +641,17 @@
+ 
+ 
+ capi:
+-	rm -rf generated/capi && $(srcdir)/build_c_api_docs.sh $(prefix)/bin/
++	rm -rf generated/capi && $(srcdir)/build_c_api_docs.sh ${DESTDIR}$(prefix)/bin/
+ 
+ install-data-local: capi
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(prefix)/share/doc/ferite/api; \
+-	$(prefix)/bin/feritedoc --regenerate; \
++	$(mkinstalldirs) ${DESTDIR}$(prefix)/share/doc/ferite/api; \
++	${DESTDIR}$(prefix)/bin/feritedoc --regenerate; \
+ 	if test -d $(srcdir)/generated/capi; then \
+-	  $(mkinstalldirs) $(prefix)/share/doc/ferite/capi; \
+-	  (cd $(srcdir)/generated; tar -cf - capi) | (cd $(prefix)/share/doc/ferite/; tar -xf -) \
++	  $(mkinstalldirs) ${DESTDIR}$(prefix)/share/doc/ferite/capi; \
++	  (cd $(srcdir)/generated; tar -cf - capi) | (cd ${DESTDIR}$(prefix)/share/doc/ferite/; tar -xf -) \
+ 	fi; \
+-	(cd $(srcdir); tar -cf - html-manuals) | (cd $(prefix)/share/doc/ferite/; tar -xf -)
++	(cd $(srcdir); tar -cf - html-manuals) | (cd ${DESTDIR}$(prefix)/share/doc/ferite/; tar -xf -)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
