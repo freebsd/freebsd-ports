@@ -14,10 +14,8 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 		libphysfs.so:${PORTSDIR}/devel/physfs
 
-USE_BZIP2=	yes
-USES=		iconv
-USE_SCONS=	yes
-SCONS_ARGS=	with_linuxusbmouse=0 \
+USES=		iconv scons tar:bzip2
+MAKE_ARGS=	with_linuxusbmouse=0 \
 		with_linuxevdev=0
 USE_SDL=	sdl image mixer
 
@@ -27,7 +25,6 @@ DESKTOP_ENTRIES="Pingus" "${COMMENT}" \
 
 PLIST=		${WRKDIR}/pkg-plist
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|add_path("data")|add_path("${DATADIR}")|g' \
 		${WRKSRC}/src/pingus_main.cpp
@@ -42,11 +39,10 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/data && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/win32/icon1.ico ${PREFIX}/share/pixmaps/${PORTNAME}.ico
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/win32/icon1.ico ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
 
 .include <bsd.port.mk>
