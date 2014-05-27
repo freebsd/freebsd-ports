@@ -15,25 +15,25 @@ LICENSE_TEXT=	Requires license from Microsoft, please see \
 		http://www.microsoft.com/en-us/legal/intellectualproperty/IPLicensing/Programs/exFATFileSystem.aspx
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
-LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
+LIB_DEPENDS=	libublio.so:${PORTSDIR}/devel/libublio
 
 PROJECTHOST=	exfat
 
-USE_SCONS=	yes
+USES=		scons
 
-MAN8=		exfatlabel.8 mkexfatfs.8 dumpexfat.8 exfatfsck.8
-PLIST_FILES=	sbin/exfatlabel sbin/dumpexfat sbin/exfatfsck sbin/mkexfatfs
+PLIST_FILES=	sbin/exfatlabel sbin/dumpexfat sbin/exfatfsck sbin/mkexfatfs \
+		man/man8/exfatlabel.8.gz man/man8/mkexfatfs.8.gz man/man8/exfatfsck.8.gz \
+		man/man8/dumpexfat.8.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/label/exfatlabel ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/dump/dumpexfat ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/fsck/exfatfsck ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/mkfs/mkexfatfs ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/label/exfatlabel.8 ${MAN8PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/mkfs/mkexfatfs.8 ${MAN8PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/dump/dumpexfat.8 ${MAN8PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/fsck/exfatfsck.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/label/exfatlabel ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/dump/dumpexfat ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/fsck/exfatfsck ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/mkfs/mkexfatfs ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/label/exfatlabel.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/mkfs/mkexfatfs.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/dump/dumpexfat.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/fsck/exfatfsck.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|' ${WRKSRC}/SConstruct
