@@ -6111,3 +6111,5 @@ graphics/GraphicsMagick12|graphics/GraphicsMagick13|2014-05-20|Has expired: Unma
 net-im/tkabber-devel|net-im/tkabber|2014-05-23|Has expired: Unfetchable, outdated by net-im/tkabber
 devel/libglade-java||2014-05-26|Has expired: Unmaintained, outdated not depend on
 lang/lua|lang/lua51|2014-05-26|Rename to allow multiple version of lua to coexist
+math/py-graphtool||2014-05-27|Has expired: Broken for more than 6 months
+devel/clint||2014-05-27|Has expired: Broken for more than 6 months

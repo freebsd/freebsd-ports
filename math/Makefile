@@ -556,7 +556,6 @@
     SUBDIR += py-gmpy
     SUBDIR += py-gnuplot
     SUBDIR += py-graphillion
-    SUBDIR += py-graphtool
     SUBDIR += py-gsl
     SUBDIR += py-igraph
     SUBDIR += py-mathdom

@@ -240,7 +240,6 @@
     SUBDIR += cld
     SUBDIR += clewn
     SUBDIR += clig
-    SUBDIR += clint
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider
     SUBDIR += cmake
