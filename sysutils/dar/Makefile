@@ -3,6 +3,7 @@
 
 PORTNAME=	dar
 PORTVERSION=	2.4.12
+PORTREVISION=	1
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -11,15 +12,16 @@ COMMENT=	Command-line backup tool, aimed for disks
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		pathfix shebangfix
+USES=		pathfix shebangfix libtool
 SHEBANG_FILES=	doc/samples/dar_backup doc/samples/*.bash doc/samples/*.sh
 USE_GCC=	any
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lelf"
 CONFIGURE_ARGS=	--datadir=${DATADIR} --disable-build-html \
 		--disable-upx --disable-libgcrypt-linking \
 		--disable-ea-support --disable-nodump-flag \
 		--disable-gnugetopt
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
