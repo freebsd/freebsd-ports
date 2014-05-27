@@ -1,5 +1,5 @@
---- geta/Makefile.in-	Mon Nov  5 20:54:25 2001
-+++ geta/Makefile.in	Mon Nov  5 20:54:45 2001
+--- geta/Makefile.in.orig	1999-01-28 20:03:25.000000000 +0800
++++ geta/Makefile.in	2014-05-27 17:38:57.800549718 +0800
 @@ -1,6 +1,6 @@
  CC = cc
 -CFLAGS = -O -L/usr/local/v6/lib -Wall
@@ -9,3 +9,12 @@
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
+@@ -11,7 +11,7 @@ geta: geta.c
+ 	$(CC) $(CFLAGS) -o geta geta.c $(LIBS)
+ 
+ install: geta
+-	$(INSTALL) geta @prefix@/bin
++	$(INSTALL) geta $(DESTDIR)@prefix@/bin
+ 
+ clean:
+ 	rm -f geta *.o *~ *.core
