@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=--with-mysql \
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=--with-pgsql \
 		--with-pgsql-include=${LOCALBASE}/include \
 		--with-pgsql-lib=${LOCALBASE}/lib

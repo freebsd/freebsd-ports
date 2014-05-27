@@ -14,8 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USES=	pkgconfig gettext iconv
-USE_BZIP2=	yes
+USES=	pkgconfig gettext iconv tar:bzip2
 USE_PYTHON=	yes
 CXXFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
@@ -65,7 +64,7 @@ PLIST_SUB+=	DBASE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGRESQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=	--with-postgres-incdir=${LOCALBASE}/include/ \
 			--with-postgres-libdir=${LOCALBASE}/lib
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"

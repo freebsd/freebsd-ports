@@ -68,7 +68,6 @@ PLIST_SUB=	DATABASE=${DATABASE} \
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHEADLESS}
@@ -91,9 +90,8 @@ PLIST_SUB+=	JDBC="mysql-connector-java.jar"
 
 #use version 90, application is certified w/ pg90
 .if ${PORT_OPTIONS:MPGSQL}
-WANT_PGSQL_VER=	90+
 JDBC=	postgresql-9.2-1002.jdbc4.jar
-USE_PGSQL=	yes
+USES+=	pgsql:90+
 DBUSER?=	pgsql
 DBPASS?=	pgsql
 DATABASE=	postgresql
@@ -148,13 +146,11 @@ post-patch:
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 	@${REINPLACE_CMD} -e 's|--DROP|-- DROP|' ${SQLSRC}/mysql/quartz.ddl
-
-post-patch-script:
 	@${ECHO_MSG} -n ">> Removing unneeded patched files..."
 	@${FIND} ${WRKDIR} -type f \( -name '*.orig' \) -delete
 	@${ECHO_MSG} " [ DONE ]"
 
-pre-build: extract patch
+pre-build:
 	@${MKDIR} ${JSREPO}/org/codehaus/mojo/cobertura-maven-plugin/2.5-Jaspersoft
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/cobertura-* ${JSREPO}/org/codehaus/mojo/cobertura-maven-plugin/2.5-Jaspersoft
 
