@@ -3,7 +3,7 @@
 
 PORTNAME=	lineak-xosdplugin
 PORTVERSION=	0.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	SF/lineak/lineak_xosdplugin/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak
@@ -17,18 +17,16 @@ LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd \
 		liblineak.so:${PORTSDIR}/sysutils/lineakd
 
 USE_XORG=	x11 xext xt
-USE_GMAKE=	yes
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_xosd_config_script="${TRUE}"
 USE_LDCONFIG=	yes
 
-CFLAGS+=		-fPIC
+CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		lineak_xosdplugin.1
-PLIST_FILES=	lib/lineakd/plugins/xosdplugin.la \
-		lib/lineakd/plugins/xosdplugin.so \
+PLIST_FILES=	lib/lineakd/plugins/xosdplugin.so \
 		man/man1/lineak_xosdplugin.1.gz
 
 post-patch:

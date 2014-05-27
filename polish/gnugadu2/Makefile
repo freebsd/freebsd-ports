@@ -3,7 +3,7 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/ggadu/gg2/${PORTVERSION}
 DISTNAME=	gg2-${PORTVERSION}
@@ -16,8 +16,7 @@ LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
-USES=		gettext gmake perl5 pkgconfig
+USES=		gettext gmake perl5 pkgconfig tar:bzip2 libtool
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xaw ice xscrnsaver
@@ -57,7 +56,6 @@ XOSD_DESC=	Enable On-Screen-Display messages
 
 #.if ${${HAVE_GNOME:Mesound}!="" && empty(PORT_OPTIONS:MESOUND)
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk> # can't change this untile HAVE_GNOME has been fixed
 
 .if ${PORT_OPTIONS:MAUTODETECT}
@@ -152,7 +150,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/src/plugins/GUI/gtkimhtml.c
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 # vim: set ts=8 sw=8:
 .include <bsd.port.post.mk>
