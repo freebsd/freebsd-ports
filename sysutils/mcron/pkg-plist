@@ -1,6 +1,7 @@
 bin/cron
 bin/crontab
 bin/mcron
+man/man1/mcron.1.gz
 %%DATADIR%%/config.scm
 %%DATADIR%%/core.scm
 %%DATADIR%%/environment.scm
