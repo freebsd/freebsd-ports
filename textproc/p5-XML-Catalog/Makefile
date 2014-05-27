@@ -22,6 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		dos2unix perl5
 USE_PERL5=	configure
-DOS2UNIX_FILES=	Catalog.pm
+DOS2UNIX_GLOB=	Catalog.pm
 
 .include <bsd.port.mk>
