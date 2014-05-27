@@ -383,9 +383,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (libtool, autoconf, autoheader, automake et al.)
 #				  See bsd.autotools.mk for more details.
 ##
-# USE_SCONS		- If set, this port uses the Python-based SCons build system
-#				  See bsd.scons.mk for more details.
-##
 # USE_EFL		- If set, this port use EFL libraries.
 #				  Implies inclusion of bsd.efl.mk.  (Also see
 #				  that file for more information on USE_EFL_*).
@@ -1889,10 +1886,6 @@ IGNORE=	Do not define STAGEDIR in command line
 
 .if defined(USE_QT4) || defined(USE_QT5)
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
-.endif
-
-.if defined(USE_SCONS)
-.include "${PORTSDIR}/Mk/bsd.scons.mk"
 .endif
 
 .if defined(USE_SDL) || defined(WANT_SDL)
