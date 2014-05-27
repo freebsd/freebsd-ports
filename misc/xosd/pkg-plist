@@ -2,9 +2,9 @@ bin/osd_cat
 bin/xosd-config
 include/xosd.h
 lib/libxosd.a
-lib/libxosd.la
 lib/libxosd.so
-lib/libxosd.so.4
+lib/libxosd.so.2
+lib/libxosd.so.2.2.14
 man/man1/osd_cat.1.gz
 man/man1/xosd-config.1.gz
 man/man3/xosd.3.gz

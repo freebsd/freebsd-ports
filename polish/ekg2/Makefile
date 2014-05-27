@@ -3,7 +3,7 @@
 
 PORTNAME=	ekg2
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgadu.so:${PORTSDIR}/polish/libgadu \
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig
+USES=		gmake iconv pathfix pkgconfig libtool
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
