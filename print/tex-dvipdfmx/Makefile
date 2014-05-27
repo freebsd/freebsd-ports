@@ -22,10 +22,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		paper:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 
-USES=		gmake tar:xz
+USES=		gmake pkgconfig tar:xz
 USE_TEX=	texlive kpathsea web2c texmf texhash
 TEXHASHDIR=	${TEXMFDISTDIR} ${TEXMFDIR}
-USES=		pkgconfig
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES= \
 	m4 \
