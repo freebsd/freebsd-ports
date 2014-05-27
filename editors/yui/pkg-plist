@@ -10,6 +10,7 @@ lib/yui/highlight_html
 lib/yui/keymap
 lib/yui/options
 lib/yui/yhelp.html
+man/man1/y.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
