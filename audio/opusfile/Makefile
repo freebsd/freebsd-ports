@@ -2,7 +2,7 @@
 
 PORTNAME=	opusfile
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		${MASTER_SITE_MOZILLA_EXTENDED}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 USES=		gmake libtool pkgconfig pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env
+USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
 MAKE_JOBS_UNSAFE=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 
