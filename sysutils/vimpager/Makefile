@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		vimpager
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.9
 CATEGORIES=		sysutils
 MASTER_SITES=	http://github.com/rkitover/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 
