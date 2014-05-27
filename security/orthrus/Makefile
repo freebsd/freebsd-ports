@@ -12,12 +12,10 @@ COMMENT=	One-Time Password System (OTP) alternative to OPIE or S/Key
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
 
-USE_SCONS=	yes
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		iconv
+USES=		iconv scons tar:bzip2
 PORTDOCS=	*
 
 NO_STAGE=	yes
