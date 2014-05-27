@@ -21,10 +21,9 @@ OPTIONS_DEFAULT=	VORBIS
 USE_GL=		glu
 USE_SDL=	sdl
 USE_SQLITE=	3
-USES=		lua:51
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource lua:51 pkgconfig
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
-		-DTOLUA++_APP:STRING="${TOLUAXX_CMD}" \
+		-DTOLUA++_APP:STRING="tolua++-${LUA_VER}" \
 		-DTOLUA++_INCLUDE_DIR:STRING="${LUA_INCDIR}" \
 		-DTOLUA++_LIBRARY:STRING="${LUA_LIBDIR}/libtolua++.so"
 
