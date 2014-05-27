@@ -1,28 +1,5 @@
 --- configure.orig	2012-11-28 13:51:02.000000000 -0500
 +++ configure	2012-12-17 01:11:49.000000000 -0500
-@@ -25305,9 +25305,9 @@ $as_echo "yes" >&6; }
- 		# searches the specified directory.
- 		#
- 		wireshark_save_CPPFLAGS="$CPPFLAGS"
--		CPPFLAGS="$CPPFLAGS -I$lua_dir/include"
-+		CPPFLAGS="$CPPFLAGS -I%%LUA_INCDIR%%"
- 		wireshark_save_LIBS="$LIBS"
--		LIBS="$LIBS -L$lua_dir/lib -llua -lm"
-+		LIBS="$LIBS -L%%LUA_LIBDIR%% -llua -lm"
- 		wireshark_save_LDFLAGS="$LDFLAGS"
- 		LDFLAGS="$LDFLAGS -L$lua_dir/lib"
- 	else
-@@ -25512,8 +25512,8 @@ if test "x$ac_cv_lib_lua_luaL_register" 
- 				# Put the "-I" and "-L" flags for lua into
- 				# LUA_INCLUDES and LUA_LIBS, respectively.
- 				#
--				LUA_LIBS="-L$lua_dir/lib -llua -lm"
--				LUA_INCLUDES="-I$lua_dir/include"
-+				LUA_LIBS="-L%%LUA_LIBDIR%% -llua -lm"
-+				LUA_INCLUDES="-I%%LUA_INCDIR%%"
- 			else
- 				LUA_LIBS="-llua -lm"
- 				LUA_INCLUDES=""
 @@ -26487,7 +26487,7 @@ $as_echo "yes" >&6; }
  	  # searches the specified directory.
  	  #
