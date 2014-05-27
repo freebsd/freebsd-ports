@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	db6
-PORTVERSION=	6.0.20
+PORTVERSION=	6.0.30
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--enable-cxx --enable-stl \
 		--bindir=${PREFIX}/bin/${PORTNAME}
 CONFIGURE_SCRIPT=	../dist/configure
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake libtool
 INSTALL_TARGET=	install_include install_lib install_utilities
 LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
