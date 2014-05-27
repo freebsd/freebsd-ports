@@ -14,8 +14,6 @@ COMMENT=	Westwood red alert game engine
 USES=		scons
 USE_SDL=	sdl mixer
 
-MAKE_ARGS=	${SCONS_ENV} SDL_CONFIG=${SDL_CONFIG}
-
 WRKSRC=		${WRKDIR}/freera++
 
 SUB_FILES=	pkg-message
