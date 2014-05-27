@@ -16,7 +16,7 @@ LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 CONFLICTS=	dynamips-[0-9]* dynamips-community-[0-9]*
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	${PORTNAME} nvram_export
 MAKE_ENV=	DYNAMIPS_ARCH=${DYNAMIPS_ARCH}\
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}\

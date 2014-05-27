@@ -287,9 +287,11 @@ lib/X11/xmcd/pixmaps/xmcd_a.px
 lib/X11/xmcd/pixmaps/xmcd_b.px
 lib/X11/xmcd/pixmaps/xmcd.xpm
 lib/X11/xmcd/scripts/genidx
+man/man1/cda.1.gz
+man/man1/xmcd.1.gz
 @dirrm lib/X11/xmcd/app-defaults
 @dirrm lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%
-@unexec rm -rf %D/lib/X11/xmcd/lib-FreeBSD_%%RELEASE%%-%%ARCH%% 2>&1 >/dev/null || true
+@dirrmtry lib/X11/xmcd/lib-FreeBSD_%%RELEASE%%-%%ARCH%%
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config
 @dirrm lib/X11/xmcd/discog/Blues/General_Blues

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/futurebsd/futurebsd/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Home Automation Software for the X10 FireCracker kit
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 ALL_TARGET=	br
 PLIST_FILES=	bin/br

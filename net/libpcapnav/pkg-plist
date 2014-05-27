@@ -1,22 +1,6 @@
 bin/pcapnav-config
 include/pcapnav.h
-lib/libpcapnav.so.0
-lib/libpcapnav.so
-lib/libpcapnav.la
 lib/libpcapnav.a
-%%PORTDOCS%%%%DOCSDIR%%/images/caution.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/note.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
-%%PORTDOCS%%%%DOCSDIR%%/api.html
-%%PORTDOCS%%%%DOCSDIR%%/a1466.html
-%%PORTDOCS%%%%DOCSDIR%%/c61.html
-%%PORTDOCS%%%%DOCSDIR%%/c17.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/pcapnav-pcapnav-debug.html
-%%PORTDOCS%%%%DOCSDIR%%/pcapnav-pcapnav-macros.html
-%%PORTDOCS%%%%DOCSDIR%%/pcapnav-pcapnav-timestamp.html
-%%PORTDOCS%%%%DOCSDIR%%/pcapnav-pcapnav.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/libpcapnav.so
+lib/libpcapnav.so.0
+lib/libpcapnav.so.0.0.0

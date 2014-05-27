@@ -21,9 +21,7 @@ LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf \
 		zinnia:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		pkgconfig iconv
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		pkgconfig iconv gmake tar:bzip2
 USE_PYTHON_BUILD=yes
 USE_OPENSSL=	yes
 

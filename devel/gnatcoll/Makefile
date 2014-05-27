@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatcoll
 PORTVERSION=	2014
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -24,7 +24,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		READLINE SYSLOG SQLITE PYTHON GTK PGSQL ICONV \
 			DOCS EXAMPLES
-OPTIONS_DEFAULT=	READLINE SYSLOG SQLITE PYTHON GTK PGSQL ICONV
+OPTIONS_DEFAULT=	READLINE SYSLOG SQLITE PYTHON GTK PGSQL
 OPTIONS_SUB=		yes
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 GTK_LIB_DEPENDS=	libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3
@@ -62,6 +62,8 @@ CONFIGURE_ARGS+=	--with-postgresql=${PREFIX}
 CONFIGURE_ARGS+=	--without-postgresql
 .endif
 
+# There might be something wrong with iconv support as seen in GPS crash.
+# That's why this option is not enabled by default
 .if ${PORT_OPTIONS:MICONV}
 USES+=			iconv
 CONFIGURE_ARGS+=	--with-iconv=${ICONV_PREFIX}
@@ -72,7 +74,7 @@ CONFIGURE_ARGS+=	--without-iconv
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python=${PREFIX} \
 			--enable-pygobject
-USE_PYTHON=		2
+USE_PYTHON=		yes
 USE_GNOME=		pygobject3
 PYCOMPILE=		${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
 .else
@@ -98,16 +100,15 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
 
-pre-install:
-.if ${PORT_OPTIONS:MPYTHON}
-	${PYTHON_CMD} ${PYCOMPILE} ${WRKSRC}/share/plug-ins
-	${PYTHON_CMD} ${PYCOMPILE} ${WRKSRC}/share/library
-.endif
-
 post-install:
 	${RM} -rf ${STAGEDIR}${DOCSDIR}/html/_sources
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/gps
 .if ! ${PORT_OPTIONS:MEXAMPLES}
 	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}
+.endif
+.if ${PORT_OPTIONS:MSQLITE}
+	# Rename gnatinspect to gnatinspect-xref to avoid GPS conflict
+	cd ${STAGEDIR}${PREFIX}/bin && ${MV} gnatinspect gnatinspect-xref
 .endif
 
 .include <bsd.port.mk>

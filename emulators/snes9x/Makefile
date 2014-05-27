@@ -14,9 +14,8 @@ COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
 USE_XORG=	x11 sm ice xext
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-extensions
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -2,19 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	jfreechart
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.17
 CATEGORIES=	java graphics
 MASTER_SITES=	SF/${PORTNAME}/1.%20JFreeChart/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A free Java class library for generating charts
+COMMENT=	Free Java class library for generating charts
+
+LICENSE=	LGPL21
 
 RUN_DEPENDS=	${JAVALIBDIR}/jcommon.jar:${PORTSDIR}/java/jcommon
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-.if !defined(WITHOUT_COMPILE)
+OPTIONS_DEFINE=	COMPILE
+OPTIONS_DEFAULT=COMPILE
+COMPILE_DESC=	Build from source
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCOMPILE}
 USE_ANT=	yes
 ALL_TARGET=	compile
 BUILD_WRKSRC=	${WRKSRC}/ant
@@ -22,28 +30,18 @@ BUILD_WRKSRC=	${WRKSRC}/ant
 NO_BUILD=	yes
 .endif
 
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_COMPILE)
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MCOMPILE}
 ALL_TARGET+=	javadoc
 PORTDOCS=	*
 .endif
 
-PLIST_FILES=	%%JAVAJARDIR%%/jfreechart.jar \
-		%%JAVAJARDIR%%/gnujaxp.jar
-
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
-	@${ECHO_MSG} ""
+PLIST_FILES=	%%JAVAJARDIR%%/jfreechart.jar
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	${INSTALL_DATA} ${WRKSRC}/lib/gnujaxp.jar ${STAGEDIR}${JAVAJARDIR}/gnujaxp.jar
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_COMPILE)
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MCOMPILE}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/javadoc && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/javadoc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

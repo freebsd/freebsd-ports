@@ -13,9 +13,8 @@ COMMENT=	Create a Makefile for Your Java files, ready to compile
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 NO_BUILD=	yes
 
 MAN1=		mmake.1

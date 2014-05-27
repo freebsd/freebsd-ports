@@ -7,8 +7,10 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Persist data across processes via shared memory
+
+LICENSE=	GPLv1
 
 BUILD_DEPENDS=	p5-IPC-ShareLite>=0:${PORTSDIR}/devel/p5-IPC-ShareLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}

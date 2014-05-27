@@ -17,6 +17,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
+USE_PERL5=	build fixpacklist run
 USES=		perl5
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/perl
 
@@ -25,7 +26,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(const char \*)""|(char \*)""|' ${WRKSRC}/gdal_wrap.cpp ${WRKSRC}/ogr_wrap.cpp
 
 post-install:
-	${SED} -i '' 's|^${STAGEDIR}||' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/GDAL/Const/.packlist ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/*/.packlist
 	${CHMOD} u+w ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/*/*.so
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Geo/*/*.so
 

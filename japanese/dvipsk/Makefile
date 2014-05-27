@@ -39,7 +39,7 @@ PLIST_SUB=	DVIPSDIR=${DVIPSDIR} \
 		FONTSMAPDIR=${FONTSMAPDIR} \
 		UPDMAP_SYS="${UPDMAP_SYS}"
 USE_TEX=	tetex base texmf
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-multiplatform \
 		--without-texinfo \

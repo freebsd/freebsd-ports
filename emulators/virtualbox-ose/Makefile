@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.12
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -221,11 +222,6 @@ post-patch:
 	@${ECHO} 'VBOX_PATH_GSOAP_IMPORT = ${PREFIX}/share/gsoap/import' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $(VBOX_GCC_WARN) -Wno-long-long' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-.if empty(PORT_OPTIONS:MX11)
-	@${ECHO} 'VBOX_WITH_VDMA =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_WDDM =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_WDDM_W8 =' >> ${WRKSRC}/LocalConfig.kmk
-.endif
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
@@ -251,6 +247,9 @@ pre-build:
 do-build:
 	cd ${WRKSRC} && ${SH} env.sh && \
 	    ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
+.if ${PORT_OPTIONS:MPYTHON}
+	${PYTHON_CMD} -mcompileall ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/python/xpcom
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -261,6 +260,7 @@ do-install:
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/virtualbox
 	cd ${KMK_BUILDDIR}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components VBoxExtPackHelperApp" ${STAGEDIR}${PREFIX}/lib/virtualbox
+	${LN} -sf ${DATADIR}/sdk ${STAGEDIR}${PREFIX}/lib/virtualbox
 
 .for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxBalloonCtrl ${VBOX_FRONTENDS} ${VBOX_WEB}
 	${INSTALL_PROGRAM} ${KMK_BUILDDIR}/bin/${f} ${STAGEDIR}${PREFIX}/lib/virtualbox/
@@ -287,9 +287,12 @@ do-install:
 	    ${SETENV} VBOX_INSTALL_PATH="${PREFIX}/lib/virtualbox" \
 	    ${PYTHON_CMD} vboxapisetup.py install --root=${STAGEDIR}
 
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	cd ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/python && ${COPYTREE_SHARE} "*" ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${PYTHON_CMD} -mcompileall ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom/
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom
+	cd ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/python/xpcom && \
+	    ${COPYTREE_SHARE} "*" ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom
+	@${MKDIR} ${STAGEDIR}${DATADIR}/sdk/bindings/xpcom/python
+	${LN} -sf ${PYTHON_SITELIBDIR}/xpcom \
+	    ${STAGEDIR}${DATADIR}/sdk/bindings/xpcom/python
 .endif
 
 .if ${PORT_OPTIONS:MQT4}

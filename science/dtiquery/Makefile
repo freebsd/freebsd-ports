@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	science biology
 MASTER_SITES=	http://graphics.stanford.edu/projects/dti/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stanford DTI Visualization tool
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt \
@@ -24,7 +24,7 @@ RESTRICTED=	Must register to download at http://graphics.stanford.edu/projects/d
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/dtiquery \
 		bin/dtiprecompute_cmd \

@@ -181,6 +181,7 @@
     SUBDIR += c4
     SUBDIR += calibrator
     SUBDIR += capstone
+    SUBDIR += catch
     SUBDIR += cbind
     SUBDIR += cbrowser
     SUBDIR += cc65
@@ -613,6 +614,7 @@
     SUBDIR += gps
     SUBDIR += gpsim
     SUBDIR += gputils
+    SUBDIR += gradle
     SUBDIR += grantlee
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
@@ -865,6 +867,7 @@
     SUBDIR += ioncube
     SUBDIR += ipython
     SUBDIR += ireport
+    SUBDIR += isl
     SUBDIR += itext
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
@@ -3342,6 +3345,7 @@
     SUBDIR += pecl-judy
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
+    SUBDIR += pecl-memoize
     SUBDIR += pecl-msgpack
     SUBDIR += pecl-ncurses
     SUBDIR += pecl-newt
@@ -4004,6 +4008,8 @@
     SUBDIR += py3-gobject3
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
+    SUBDIR += py3-dbus
+    SUBDIR += py3-gobject3
     SUBDIR += pybaz
     SUBDIR += pybugz
     SUBDIR += pychecker

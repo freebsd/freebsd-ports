@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	http://download.elasticsearch.org/elasticsearch/marvel/
 PKGNAMEPREFIX=	elasticsearch-plugin-
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ElasticSearch Mavel Monitoring Plugin
 
 LICENSE=	COMMERCIAL

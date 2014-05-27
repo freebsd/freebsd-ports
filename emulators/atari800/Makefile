@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xf25.zip:x
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	gamato@users.sf.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari 8-bit computer emulator
 
 BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
@@ -20,7 +20,7 @@ RESTRICTED=	xf25 contains copyright ROMs and cannot be distributed.
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 MAN1=		atari800.1

@@ -77,6 +77,7 @@ USES+=		lua
 
 .if ${PORT_OPTIONS:MDNSSEC}
 CFLAGS+=	-DHAVE_DNSSEC
+USES+=		pkgconfig
 LIB_DEPENDS+=	libnettle.so:${PORTSDIR}/security/nettle
 LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 .endif

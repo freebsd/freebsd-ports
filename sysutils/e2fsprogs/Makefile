@@ -65,9 +65,6 @@ libintl=
 .endif
 
 post-patch::
-	@${REINPLACE_CMD} -E -e \
-		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
-		${WRKSRC}/lib/*/Makefile.in
 # don't build/install libext2fs.info
 	@${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's/md5sum ([^ ]*)/printf "%s  %s\\n" $$(md5 -q \1) \1/' \

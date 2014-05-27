@@ -32,7 +32,8 @@ MASTER_SITES+=	http://cronolog.org/patches/:patches
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} cronolog-setugid-patch.txt:patches
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRA_PATCHES+=	${WRKDIR}/cronolog-setugid-patch.txt
-USE_DOS2UNIX=	../cronolog-setugid-patch.txt
+USES+=		dos2unix
+DOS2UNIX_FILES=	../cronolog-setugid-patch.txt
 
 post-extract:
 	@${CP} ${DISTDIR}/cronolog-setugid-patch.txt ${WRKDIR}/

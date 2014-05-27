@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -138,7 +138,7 @@ OPENCV_LIB_DEPENDS=	libopencv_imgproc.so:${PORTSDIR}/graphics/opencv-core
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
 # openjpeg
-OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
 # opus

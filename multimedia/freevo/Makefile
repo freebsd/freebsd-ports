@@ -3,12 +3,14 @@
 
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/Freevo%20releases/${PORTVERSION}
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Open source digital jukebox
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
@@ -26,18 +28,15 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 
 FREEVO_USER=	freevo
 FREEVO_GROUP=	${FREEVO_USER}
-FREEVO_UID=	523
-FREEVO_GID=	${FREEVO_UID}
 FREEVO_HOME=	/var/db/${FREEVO_USER}
+
+USERS=		${FREEVO_USER}
+GROUPS=		${FREEVO_GROUP}
 
 SUB_LIST+=	PYTHON_VERSION=${PYTHON_DEFAULT_VERSION} \
 		PORTVERSION=${PORTVERSION} \
-		FREEVO_USER=${FREEVO_USER} \
-		FREEVO_GROUP=${FREEVO_GROUP} \
-		FREEVO_UID=${FREEVO_UID} \
-		FREEVO_GID=${FREEVO_GID} \
 		FREEVO_HOME=${FREEVO_HOME}
-SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
 
 USES=		twisted:web
 USE_PYTHON=	yes
@@ -54,8 +53,6 @@ RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	NLS
 
@@ -85,10 +82,9 @@ do-configure:
 	@${DO_NADA}
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${MKDIR} ${CONFDIR}
-	${CHMOD} a+rx ${CONFDIR}
-	${INSTALL_DATA} ${WRKSRC}/local_conf.py.example ${CONFDIR}
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${CONFDIR}
+	${INSTALL_DATA} ${WRKSRC}/local_conf.py.example ${STAGEDIR}${CONFDIR}
+	${MKDIR} ${STAGEDIR}/var/log/freevo
+	${MKDIR} ${STAGEDIR}/var/run/freevo
 
 .include <bsd.port.mk>

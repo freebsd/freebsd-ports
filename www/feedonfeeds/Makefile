@@ -18,9 +18,8 @@ NO_BUILD=	yes
 DATADIR?=	${PREFIX}/www/data/feed-on-feeds
 WRKSRC=	${WRKDIR}/${PROJECTHOST}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/ ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

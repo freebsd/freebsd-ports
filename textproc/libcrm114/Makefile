@@ -13,7 +13,7 @@ LIB_DEPENDS=	tre:${PORTSDIR}/textproc/libtre
 
 LICENSE=	LGPL3
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 # pass stuff to gmake

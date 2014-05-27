@@ -24,7 +24,9 @@
 # SITE_PERL		- Directory name where site specific perl packages go.
 #				  This value is added to PLIST_SUB.
 # USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
-#				  patch, build, install or run phases.
+#				  patch, build, install or run phases.  The fixpacklist is
+#				  needed in some cases, when a .packlist is created, it may
+#				  reference ${STAGEDIR}
 #				  It can also have configure, modbuild and modbuildtiny when
 #				  the port needs to run Makefile.PL, Build.PL and a
 #				  Module::Build::Tiny flavor of Build.PL.
@@ -254,9 +256,9 @@ do-install:
 .endif # modbuild
 
 # TODO: change to ${_USE_PERL5:Mconfigure} when M::B creates .packlist
-.if ${USE_PERL5:Mconfigure} || ${USE_PERL5:Mmodbuildtiny}
-post-stage::
-	-@[ -d ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
+.if ${USE_PERL5:Mconfigure} || ${USE_PERL5:Mmodbuildtiny} || ${USE_PERL5:Mfixpacklist}
+fix-packlist::
+	-@[ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 .endif
 
 .if !target(regression-test)

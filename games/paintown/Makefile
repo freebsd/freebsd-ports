@@ -16,11 +16,10 @@ LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USE_BZIP2=	yes
+USES=		dos2unix tar:bzip2
 USE_SCONS=	yes
 USE_SDL=	yes
 INSTALLS_ICONS=	yes
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 
 SCONS_BUILDENV+=CPPPATH="${LOCALBASE}/include" \

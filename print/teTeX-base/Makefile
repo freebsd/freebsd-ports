@@ -27,7 +27,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 GD_PORT?=	graphics/gd
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GHOSTSCRIPT_RUN=	yes
 CONFIGURE_ARGS=	--disable-multiplatform \
 		--without-texinfo \

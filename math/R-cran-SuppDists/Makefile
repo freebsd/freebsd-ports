@@ -22,7 +22,8 @@ USES=	cran:auto-plist
 WRKSRC =		${WRKDIR}/${PORTNAME}
 
 .if defined(MAINTAINER_MODE)
-USE_DOS2UNIX=	../${BENCHMARK_SCRIPT}
+USES+=	dos2unix
+DOS2UNIX_FILES=	../${BENCHMARK_SCRIPT}
 
 post-extract:
 	@${CP} ${_DISTDIR}/${BENCHMARK_SCRIPT} ${WRKDIR}

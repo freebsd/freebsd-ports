@@ -1,0 +1,31 @@
+
+$FreeBSD$
+
+--- ejabberdctl.template.orig
++++ ejabberdctl.template
+@@ -68,10 +68,10 @@
+     EJABBERD_CONFIG_PATH=$ETCDIR/ejabberd.yml
+ fi
+ if [ "$LOGS_DIR" = "" ] ; then
+-    LOGS_DIR={{localstatedir}}/log/ejabberd
++     LOGS_DIR=/var/log/ejabberd
+ fi
+ if [ "$SPOOLDIR" = "" ] ; then
+-    SPOOLDIR={{localstatedir}}/lib/ejabberd
++     SPOOLDIR=/var/spool/ejabberd
+ fi
+ if [ "$EJABBERD_DOC_PATH" = "" ] ; then
+     EJABBERD_DOC_PATH={{docdir}}
+@@ -85,10 +85,10 @@
+         EJABBERDDIR={{libdir}}/ejabberd
+     fi
+     if [ "$EJABBERD_EBIN_PATH" = "" ] ; then
+-        EJABBERD_EBIN_PATH=$EJABBERDDIR/ebin
++     EJABBERD_EBIN_PATH={{rootdir}}/lib/erlang/lib/ejabberd/ebin
+     fi
+     if [ "$EJABBERD_PRIV_PATH" = "" ] ; then
+-        EJABBERD_PRIV_PATH=$EJABBERDDIR/priv
++     EJABBERD_PRIV_PATH={{rootdir}}/lib/erlang/lib/ejabberd/priv
+     fi
+     if [ "$EJABBERD_BIN_PATH" = "" ] ; then
+         EJABBERD_BIN_PATH=$EJABBERD_PRIV_PATH/bin

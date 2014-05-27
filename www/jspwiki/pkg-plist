@@ -1,6 +1,5 @@
-@unexec if cmp -s %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties.example; then rm -f %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties; else echo If permanently deleting this package, %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties must be removed manually; fi
-@unexec if cmp -s %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy.example; then rm -f %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy; else echo If permanently deleting this package, %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy must be removed manually; fi
-@unexec if cmp -s %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml.example; then rm -f %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml; else echo If permanently deleting this package, %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml must be removed manually; fi
+@owner www
+@group www
 %%TOMCATDIR%%/webapps/JSPWiki/Captcha.jsp
 %%TOMCATDIR%%/webapps/JSPWiki/Comment.jsp
 %%TOMCATDIR%%/webapps/JSPWiki/CookieError.jsp
@@ -32,10 +31,8 @@
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/dtd/web-app_2_3.dtd
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/geronimo-web.xml
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/groupdatabase.xml
-%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy.example
-@exec if [ ! -f %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy ]; then cp %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy.example %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy; fi
-%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties.example
-@exec if [ ! -f %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties ]; then cp %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties.example %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties; fi
+@sample %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.policy.sample
+@sample %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.properties.sample
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jspwiki.tld
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/jstl-fmt.tld
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/lib/JSPWiki.jar
@@ -67,8 +64,7 @@
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/lib/xmlrpc.jar
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/oscache.tld
 %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/userdatabase.xml
-%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml.example
-@exec if [ ! -f %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml ]; then cp %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml.example %D/%%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml; fi
+@sample %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/web.xml.sample
 %%TOMCATDIR%%/webapps/JSPWiki/Wiki.jsp
 %%TOMCATDIR%%/webapps/JSPWiki/Workflow.jsp
 %%TOMCATDIR%%/webapps/JSPWiki/admin/Admin.jsp
@@ -213,28 +209,31 @@
 %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/Smart/skin.css
 %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/Smart/skin.js
 %%TOMCATDIR%%/webapps/JSPWiki/templates/raw/ViewTemplate.jsp
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/raw
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/Smart/images
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/Smart
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/PlainVanilla 1024x768
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/PlainVanilla
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/OrderedList/images
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/OrderedList
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/images
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/editors
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/admin
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/META-INF
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/classes
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/dtd
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/lib
+@dirrmtry %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/admin
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/applets
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/error
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/images
 @dirrm %%TOMCATDIR%%/webapps/JSPWiki/scripts/fckeditor
 @dirrm %%TOMCATDIR%%/webapps/JSPWiki/scripts
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/images
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/error
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/applets
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/admin
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/lib
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/dtd
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF/classes
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/WEB-INF
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki/META-INF
-@dirrm %%TOMCATDIR%%/webapps/JSPWiki
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/admin
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/editors
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/images
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/OrderedList/images
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/OrderedList
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/PlainVanilla
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/PlainVanilla 1024x768
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/Smart/images
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins/Smart
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default/skins
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/default
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates/raw
+@dirrm %%TOMCATDIR%%/webapps/JSPWiki/templates
+@dirrmtry %%TOMCATDIR%%/webapps/JSPWiki
+@comment reset owner for docs and examples
+@owner root
+@group wheel

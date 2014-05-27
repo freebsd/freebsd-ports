@@ -1,0 +1,22 @@
+Preppy is ReportLab's templating system.  It was developed in late 2000 and has
+been in continual production use since then.  It is open source (BSD-license).
+
+The key features are:
+
+- *small*.  Preppy is a single Python module.  If you want a templating system
+  'in the box', it's easy to include it in your project
+- *easy to learn*.  It takes about one minute to scan all the features
+- *just Python*.  We have not invented another language, and if you want to do
+  something - includes, quoting, filters - you just use Python
+- *compiled to bytecode*: a .prep file gets compiled to a Python function in
+  a .pyc file
+- *easy to debug*: preppy generates proper Python exceptions, with the correct
+  line numbers for the .prep file.  You can follow tracebacks from Python
+  script to Preppy template and back, through multiple includes
+- *easy to type and read*.  We've been using ``{{this}}`` syntax since well
+  before Django was thought of
+- *8-bit safe*:  it makes no assumption that you are generating markup and does
+  nothing unexpected with whitespace; you could use it to generate images or
+  binary files if you wanted to.
+
+WWW: http://preppy.readthedocs.org/en/latest/

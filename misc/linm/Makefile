@@ -3,6 +3,7 @@
 
 PORTNAME=	linm
 DISTVERSION=	0.8.1-1
+PORTREVISION=	1
 CATEGORIES=	misc shells
 MASTER_SITES=	http://kldp.net/frs/download.php/4508/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -11,26 +12,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Mdir, mc-style terminal file manager
 
 LICENSE=	GPLv2 # (or later)
-
-OPTIONS_DEFINE=	SMB
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-.*//}
 
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig gmake libtool
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cfgpath="${ETCDIR}"
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	SMB
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSMB}
-LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	SMB=""
 .else
 CONFIGURE_ENV+=	ac_cv_lib_smbclient_smbc_new_context=no
@@ -46,11 +47,9 @@ post-patch:
 		${WRKSRC}/panel/vfs/libssh2/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog README README.ko_euckr README.ko_utf8
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -18,13 +18,11 @@ SUB_FILES=	pkg-message
 
 WANT_PHP_WEB=	yes
 
-NO_STAGE=	yes
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/www/truc"
-	${MKDIR} ${PREFIX}/www/truc
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/truc
 #	${MV} ${WRKSRC}/config_inc.php ${WRKSRC}/config_inc.php-dist
-	${CP} -R ${WRKSRC}/* ${PREFIX}/www/truc
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/truc
-	${CAT} ${PKGMESSAGE}
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${PREFIX}/www/truc
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/www/truc
 
 .include <bsd.port.mk>

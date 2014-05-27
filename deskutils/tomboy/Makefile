@@ -18,9 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp-2.4/gmime-sharp.dll:${PORTSDIR}/m
 		${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
 		mautil:${PORTSDIR}/devel/mono-addins
 
-USE_XZ=		yes
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gnomehack intlhack gnomeprefix gnomedesktopsharp20
+USES=		gettext gmake mono pathfix pkgconfig tar:xz
+USE_GNOME=	intlhack gnomeprefix gnomedesktopsharp20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
@@ -40,7 +39,7 @@ APPLET_DESC=	Enable GNOME panel applet
 PORTSCOUT=	limitw:1,even
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPPLET}
 CONFIGURE_ARGS+=--enable-panel-applet
@@ -60,5 +59,4 @@ post-patch:
 	@${REINPLACE_CMD} 's|gmime-sharp|gmime-sharp-2.4|g' \
 		${WRKSRC}/configure
 
-.include "${PORTSDIR}/lang/mono/bsd.mono.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

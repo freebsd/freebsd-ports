@@ -13,8 +13,7 @@ COMMENT=	HTML to LaTeX to PDF Converter
 
 LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
 
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS=	CXX="${CXX}" \

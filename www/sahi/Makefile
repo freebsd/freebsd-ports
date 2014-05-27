@@ -59,7 +59,8 @@ REINPLACE_ARGS=	-i '' -E \
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	BROWSER=${BROWSER} JAVA_HOME=${JAVA_HOME}
 
-USE_DOS2UNIX=	linux.xml os.properties sahi.properties
+USES=		dos2unix
+DOS2UNIX_FILES=	linux.xml os.properties sahi.properties
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f \( -name "*.orig" -or -name "*.bat" \) -delete

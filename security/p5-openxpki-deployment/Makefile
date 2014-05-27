@@ -24,8 +24,7 @@ MAN1=	openxpki-configure.1 \
 	openxpki-metaconf.1 \
 	openxpkiadm.1 \
 	openxpkictl.1
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 USE_RC_SUBR=	openxpki
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}

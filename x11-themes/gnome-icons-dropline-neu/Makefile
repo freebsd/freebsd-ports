@@ -9,9 +9,8 @@ DISTNAME=	Neu-${PORTVERSION}-PR3
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Dropline Neu Icons for Gnome
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 WRKSRC=		"${WRKDIR}/Neu"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

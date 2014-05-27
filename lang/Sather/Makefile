@@ -18,8 +18,7 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		gc-redirect.1:${PORTSDIR}/devel/boehm-gc-redirect
 BUILD_DEPENDS=	${LOCALBASE}/bin/libtool:${PORTSDIR}/devel/libtool
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 ALL_TARGET=	full optional
 MAN1=		sabrowse.1 sacomp.1
 

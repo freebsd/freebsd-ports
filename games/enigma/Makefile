@@ -12,12 +12,11 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
 LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c2 \
-		libpng.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png \
+		libtoluaxx-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
-USES=		gettext gmake
-USE_LUA=	5.1
-LUA_COMPS=	lua toluaxx
+USES=		gettext gmake lua:51
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cxxlua \

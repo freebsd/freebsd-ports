@@ -10,11 +10,8 @@ MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A C\# implementation of D-Bus
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
-
 OPTIONS_DEFINE=	DOCS
-USES=	gmake pathfix pkgconfig
+USES=	gmake mono pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING README
@@ -25,5 +22,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

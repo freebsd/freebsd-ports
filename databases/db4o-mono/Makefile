@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	A database engine for storing object into files
 
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
+USES=		mono
 
 REALVERSION=	5.5
 
@@ -34,6 +34,4 @@ post-install:
 	@${CHMOD} -R ugo-w,ugo+rX ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/mono/bsd.mono.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

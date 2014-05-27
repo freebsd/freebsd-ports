@@ -110,19 +110,19 @@ vkontakte_DESC=		Export images to VKontakte web service
 # wallpaper_DESC=	Set image as background on desktop
 yandexfotki_DESC=	Export images to Yandex web service
 
-.if !defined(NO_BUILD)
 DISTNAME=	digikam-${DIGIKAM_VER}
+DISTINFO_FILE=	${.CURDIR}/../../graphics/digikam-kde4/distinfo
 
 LICENSE?=	GPLv2
 
-USE_BZIP2=	yes
+USES+=		tar:bzip2
+
+.if !defined(NO_BUILD)
 USES+=		cmake
 USE_KDE4+=	automoc4 kdehier kdeprefix kdelibs
 USE_QT4+=	qmake_build moc_build rcc_build uic_build
 
 WRKSRC?=	${WRKDIR}/${DISTNAME}/extra/${PORTNAME}
-
-DISTINFO_FILE=	${.CURDIR}/../../graphics/digikam-kde4/distinfo
 
 . if defined(KIPI_PLUGIN)
 CONFLICTS_INSTALL=	kipi-plugins-2.*

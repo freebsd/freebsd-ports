@@ -21,7 +21,7 @@ RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_TEX=	base texmf
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 

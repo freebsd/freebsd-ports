@@ -21,8 +21,7 @@ DATADIR_NAME=	wireshark
 
 USE_PERL5=	build
 USE_PYTHON_BUILD=yes
-USES=		iconv gettext pkgconfig gmake perl5
-USE_BZIP2=	yes
+USES=		iconv gettext pkgconfig gmake perl5 tar:bzip2
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="${WIRESHARK_LIBS}"
@@ -66,7 +65,7 @@ ADNS_DESC=		Enable asynchronous DNS lookup support
 USE_XORG=		x11
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	WIRESHARK=bin/wireshark WIRESHARK_MAN=""
@@ -103,8 +102,9 @@ CONFIGURE_ARGS+=	--with-pcre=no
 .endif
 
 .if ${PORT_OPTIONS:MLUA} && !defined(LITE)
-USE_LUA=	5.1
-CONFIGURE_ARGS+=--with-lua=${LUA_PREFIX}
+USES+=		lua:51
+CONFIGURE_ARGS+=--with-lua=${PREFIX}
+CPPFLAGS+=	-I${LUA_INCDIR}
 PLIST_SUB+=	LUA=""
 .else
 CONFIGURE_ARGS+=--without-lua
@@ -166,13 +166,12 @@ CONFIGURE_ARGS+=--with-krb5=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LUA_INCDIR%%|${LUA_INCDIR}|g ; \
-	    	s|-Wl,--as-needed|| ; \
-	    	s|%%LUA_LIBDIR%%|${LUA_LIBDIR}|g' \
+	@${REINPLACE_CMD} -e 's|llua|llua-${LUA_VER}|g ; \
+		s|-Wl,--as-needed|| ' \
 		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/image/hi48-app-wireshark.png \
 	    ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -12,7 +12,7 @@ COMMENT=	Library to access directory structure and file attributes
 
 LICENSE=	MIT
 
-USE_LUA=	5.1
+USES=		lua:51
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keplerproject
@@ -25,9 +25,7 @@ ALL_TARGET=	lib
 PLIST_FILES=	%%LUA_MODLIBDIR%%/lfs.so
 PORTDOCS=	*
 
-MAKE_ARGS+=	INCS="-I${LOCALBASE}/include/${LUA_SUBDIR}"
-
-NO_STAGE=	yes
+MAKE_ARGS+=	INCS="-I${LUA_INCDIR}"
 
 OPTIONS_DEFINE=	DOCS
 
@@ -41,8 +39,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR} && \
-	${CP} ${WRKSRC}/doc/us/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
+	${CP} ${WRKSRC}/doc/us/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

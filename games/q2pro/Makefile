@@ -11,9 +11,7 @@ MASTER_SITE_SUBDIR=	alepulver
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II engine modification compatible with R1Q2
 
-USE_BZIP2=	yes
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		dos2unix gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	#
 

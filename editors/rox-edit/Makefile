@@ -13,10 +13,9 @@ COMMENT=	Text editor for the ROX desktop
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
+USES=		tar:bzip2
 USE_PYTHON=	yes
-USE_BZIP2=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
@@ -31,8 +30,7 @@ pre-install:
 	@${FIND} ${WRKSRC} -name *.bak | ${XARGS} ${RM}
 
 do-install:
-	@${MKDIR} ${PREFIX}/apps
-	@${CP} -r ${WRKSRC}/Edit ${PREFIX}/apps/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/Edit
+	@${MKDIR} ${STAGEDIR}${PREFIX}/apps
+	${CP} -r ${WRKSRC}/Edit ${STAGEDIR}${PREFIX}/apps/
 
 .include <bsd.port.mk>

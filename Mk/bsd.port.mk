@@ -144,7 +144,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Backup location(s) for distribution files and patch
 #				  files if not found locally and ${MASTER_SITES}/${PATCH_SITES}
 #				  Default:
-#				  http://ftp.FreeBSD.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
+#				  http://distcache.FreeBSD.org/ports-distfiles/${DIST_SUBDIR}/
 # MASTER_SITE_OVERRIDE
 #				- If set, override the MASTER_SITES setting with this
 #				  value.
@@ -422,9 +422,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_MATE		- A list of the MATE dependencies the port has. Implies
 #				  that the port needs MATE. Implies inclusion of
 #				  bsd.mate.mk. See bsd.mate.mk for more details.
-##
-# USE_LUA		- If set, this port uses the Lua library and related
-#				  components. See bsd.lua.mk for more details.
 ##
 # USE_WX		- If set, this port uses the WxWidgets library and related
 #				  components. See bsd.wx.mk for more details.
@@ -1497,10 +1494,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.mate.mk"
 .endif
 
-.if defined(WANT_LUA) || defined(USE_LUA) || defined(USE_LUA_NOT)
-.include "${PORTSDIR}/Mk/bsd.lua.mk"
-.endif
-
 .if defined(WANT_WX) || defined(USE_WX) || defined(USE_WX_NOT)
 .include "${PORTSDIR}/Mk/bsd.wx.mk"
 .endif
@@ -1525,19 +1518,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .if defined(USE_GMAKE)
 USES+=	gmake
-.endif
-
-.if defined(USE_DOS2UNIX)
-.if ${USE_DOS2UNIX:tu}=="YES"
-DOS2UNIX_REGEX?=	.*
-.else
-.if ${USE_DOS2UNIX:M*/*}
-DOS2UNIX_FILES+=	${USE_DOS2UNIX}
-.else
-DOS2UNIX_GLOB+=	${USE_DOS2UNIX}
-.endif
-.endif
-USES+=	dos2unix
 .endif
 
 .if !defined(UID)
@@ -1925,10 +1905,6 @@ IGNORE=	Do not define STAGEDIR in command line
 
 .if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-.endif
-
-.if defined(USE_LUA) || defined(USE_LUA_NOT)
-.include "${PORTSDIR}/Mk/bsd.lua.mk"
 .endif
 
 .if defined(USE_WX) || defined(USE_WX_NOT)
@@ -2555,7 +2531,7 @@ PATCH_SITES_TMP=
 
 # The primary backup site.
 MASTER_SITE_BACKUP?=	\
-	http://ftp.FreeBSD.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
+	http://distcache.FreeBSD.org/ports-distfiles/${DIST_SUBDIR}/
 MASTER_SITE_BACKUP:=	${MASTER_SITE_BACKUP:S^\${DIST_SUBDIR}/^^}
 
 # If the user has MASTER_SITE_FREEBSD set, go to the FreeBSD repository
@@ -5043,8 +5019,9 @@ lib-depends:
 				[ `file -b -L --mime-type $${_LIB_FILE}` = "application/x-sharedlib" ] || continue ; \
 			fi ; \
 			found=1 ; \
-			${ECHO_MSG} " - found"; \
+			${ECHO_MSG} -n " - found ($${_LIB_FILE})"; \
 		done ; \
+		${ECHO_MSG}; \
 		if [ $${found} -eq 0 ]; then \
 			${ECHO_MSG} " - not found"; \
 			${ECHO_MSG} "===>    Verifying for $$lib in $$dir"; \
@@ -6568,7 +6545,7 @@ _STAGE_SEQ+=	create-users-groups do-install \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-plist-sequence
+				move-uniquefiles-plist fix-plist-sequence fix-packlist
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
 .endif

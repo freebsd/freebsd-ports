@@ -14,7 +14,7 @@ COMMENT=	Ghost Port Scan
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 

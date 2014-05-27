@@ -11,7 +11,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A proxy that authenticates the user using the NTLM protocol
 
 USE_PYTHON=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 
 DOCS=		COPYING Install.txt changelog.txt readme.txt research.txt
 

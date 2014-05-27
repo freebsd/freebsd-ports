@@ -7,8 +7,13 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Interface to system call tracing interfaces
+
+LICENSE=	WTFPL2
+LICENSE_NAME=	Do What The Fuck You Want To Public License version 2
+LICENSE_FILE=	${WRKSRC}/README
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USES=		perl5
 USE_PERL5=	configure

@@ -43,7 +43,7 @@ CONFLICTS=	rpm-3.* rpm-4.* rpm4-*
 
 OPTIONS_SUB=	yes
 
-LUA_USE=	LUA=5.1-
+LUA_USES=	lua:5.1
 LUA_BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:${PORTSDIR}/textproc/syck
 LUA_CPPFLAGS=	-I${LUA_INCDIR}
 LUA_LDFLAGS=	-L${LUA_LIBDIR}

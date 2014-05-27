@@ -21,26 +21,24 @@ SUB_FILES=	esmska
 
 PORTDOCS=	readme.txt
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/esmska.jar ${DATADIR}/
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} gateways ${DATADIR}/)
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} icons ${DATADIR}/)
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} lib ${DATADIR}/)
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} license ${DATADIR}/)
-	${INSTALL_SCRIPT} ${WRKDIR}/esmska ${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/esmska.jar ${STAGEDIR}${DATADIR}/
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} gateways ${STAGEDIR}${DATADIR}/)
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} icons ${STAGEDIR}${DATADIR}/)
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} lib ${STAGEDIR}${DATADIR}/)
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} license ${STAGEDIR}${DATADIR}/)
+	${INSTALL_SCRIPT} ${WRKDIR}/esmska ${STAGEDIR}${PREFIX}/bin/
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
 

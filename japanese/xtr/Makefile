@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.abk.nu/pub/redist/xtr/
 DISTNAME=	${PORTNAME}1.50e-0.2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kattyo-ports@abk.nu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful Japanese text formatting processor
 
 MAN1=		xtr.1

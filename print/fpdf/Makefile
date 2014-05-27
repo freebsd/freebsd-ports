@@ -16,7 +16,7 @@ COMMENT=	A free PHP class to generate PDF files with pure PHP
 USE_PHP=	zlib
 
 FETCH_CMD=	${FETCH_BINARY} -ARr -o ${DISTDIR}/${DISTFILES}
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 NO_BUILD=	yes
 
 FPDF_DIR?=	share/fpdf

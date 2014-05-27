@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sendmail
-PORTVERSION=	8.14.8
+PORTVERSION=	8.14.9
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -20,13 +20,13 @@ SITE=		${FILESDIR}/site.config.m4.pre4
 PLIST=		${WRKDIR}/.PLIST.more
 DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
 		sendmail/TRACEFLAGS sendmail/SECURITY sendmail/TUNING
-MAN1=		mailq.1 newaliases.1 vacation.1
-MAN5=		aliases.5
-MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
+LMAN1=		mailq.1 newaliases.1 vacation.1
+LMAN5=		aliases.5
+LMAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 		mail.local.8 rmail.8 editmap.8
 SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
-PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
+PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==} MANPREFIX=${MANPREFIX:S=$=/=:S=${PREFIX}==:S=^/==}
 PKGMESSAGE=	${WRKSRC}/pkg-message
 MILTER_SOVER?=	6
 
@@ -251,13 +251,13 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libmilter.so
 .endif
 .endif
-.for i in ${MAN8}
+.for i in ${LMAN8}
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man8/
 .endfor
-.for i in ${MAN5}
+.for i in ${LMAN5}
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man5/
 .endfor
-.for i in ${MAN1}
+.for i in ${LMAN1}
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man1/
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/sendmail

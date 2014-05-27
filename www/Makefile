@@ -517,6 +517,7 @@
     SUBDIR += mod_python33
     SUBDIR += mod_python35
     SUBDIR += mod_qos
+    SUBDIR += mod_realdoc
     SUBDIR += mod_remoteip
     SUBDIR += mod_reproxy
     SUBDIR += mod_rivet
@@ -1759,6 +1760,7 @@
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-addressable
+    SUBDIR += rubygem-akami
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-anemone
     SUBDIR += rubygem-async_sinatra
@@ -1865,6 +1867,7 @@
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
+    SUBDIR += rubygem-savon
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
     SUBDIR += rubygem-select2-rails
@@ -1884,6 +1887,7 @@
     SUBDIR += rubygem-unicorn
     SUBDIR += rubygem-url-mount
     SUBDIR += rubygem-url_escape
+    SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webkit-gtk
     SUBDIR += rubygem-webkit-gtk2
     SUBDIR += rubygem-webmock
@@ -2034,6 +2038,7 @@
     SUBDIR += tt-rss
     SUBDIR += ttf2eot
     SUBDIR += twig
+    SUBDIR += twig-php
     SUBDIR += twiki
     SUBDIR += twiki-BehaviourContrib
     SUBDIR += twiki-BlogAddOn

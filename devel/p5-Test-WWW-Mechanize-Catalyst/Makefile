@@ -7,8 +7,11 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Test::WWW::Mechanize for Catalyst
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.9000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Moose>=0.67:${PORTSDIR}/devel/p5-Moose \
@@ -27,4 +30,3 @@ USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
-

@@ -20,10 +20,8 @@ CONFLICTS?=	${PORTNAME}20-client-* \
 
 LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
-USES=		bison
-USE_BZIP2=	yes
+USES=		bison gmake tar:bzip2
 USE_GCC=	any
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal libtool
 ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal \

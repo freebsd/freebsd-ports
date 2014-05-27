@@ -10,6 +10,8 @@ MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/594/
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Free Liberty Alliance Implementation
 
+BROKEN=		Fails to build
+
 RUN_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 

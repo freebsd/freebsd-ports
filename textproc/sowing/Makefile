@@ -13,9 +13,8 @@ COMMENT=	Text processing tools to generate documentation from source files
 BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
-USES=		perl5
+USES=		perl5 gmake
 USE_GHOSTSCRIPT=yes
-USE_GMAKE=	yes
 USE_TEX=	latex dvipsk
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"

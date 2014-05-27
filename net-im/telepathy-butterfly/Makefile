@@ -19,7 +19,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/papyon/__init__.py:${PORTSDIR}/net-im/papyon 
 USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

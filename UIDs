@@ -108,6 +108,7 @@ dnscache:*:184:184::0:0:dnscache pseudo-user:/nonexistent:/usr/sbin/nologin
 tinydns:*:185:185::0:0:tinydns pseudo-user:/nonexistent:/usr/sbin/nologin
 dnslog:*:186:186::0:0:dnslog pseudo-user:/nonexistent:/usr/sbin/nologin
 swift:*:187:187::0:0:Swift daemon pseudo-user:/nonexistent:/usr/sbin/nologin
+netxms:*:188:188::0:0:netxms pseudo-user:/nonexistent:/usr/sbin/nologin
 moinmoin:*:192:192::0:0:MoinMoin User:/nonexistent:/usr/sbin/nologin
 cups:*:193:193::0:0:Cups Owner:/nonexistent:/usr/sbin/nologin
 saned:*:194:194::0:0:SANE Scanner Daemon:/nonexistent:/bin/sh
@@ -178,6 +179,7 @@ radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
 skkserv:*:507:507::0:0:skkserv User:/nonexistent:/usr/sbin/nologin
 pwhois:*:512:512::0:0:pwhoisd User:/nonexistent:/usr/sbin/nologin
 nullmail:*:522:522::0:0:Nullmailer Mail System:/var/spool/nullmailer:/bin/sh
+freevo:*:523:523::0:0:Freevo User:/var/db/freevo:/bin/sh
 dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
 pgbouncer:*:534:534::0:0:Pgbouncer Daemon:/nonexistent:/usr/sbin/nologin
 redis:*:535:535::0:0:Redis Daemon:/nonexistent:/usr/sbin/nologin

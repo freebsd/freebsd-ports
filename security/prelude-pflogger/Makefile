@@ -12,7 +12,7 @@ COMMENT=	Prelude-PFlogger Listens at OpenBSD PF
 
 LIB_DEPENDS+=	prelude:${PORTSDIR}/security/libprelude
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-pflogger
 

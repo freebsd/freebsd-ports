@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 EXTRACT_SUFX=	-source.tar.gz
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D worm game for two players for X Window System
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png

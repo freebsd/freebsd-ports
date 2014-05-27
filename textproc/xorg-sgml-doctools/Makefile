@@ -10,7 +10,6 @@ COMMENT=	Stylesheets and entities for X.Org documentation
 
 XORG_CAT=       doc
 
-USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gmake
 
 .include <bsd.port.mk>

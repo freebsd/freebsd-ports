@@ -40,13 +40,11 @@ TESTS_DESC=	Build SDK test suite
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		pkgconfig
+USES=		pkgconfig gmake tar:xz
 USE_ANT=	yes
 USE_GL=		glu
-USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils gconf2 gtk20 gnomevfs2 libgnome libgnomeui
 USE_JAVA=	yes
-USE_XZ=		yes
 BZIP2_SUFX=	.tar.bz2
 ZIP_CMD?=	${LOCALBASE}/bin/zip
 

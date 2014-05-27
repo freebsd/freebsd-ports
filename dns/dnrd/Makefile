@@ -9,7 +9,7 @@ MASTER_SITES=		SF
 MAINTAINER=		natanael.copa@gmail.com
 COMMENT=		A proxy DNS daemon
 
-USE_GMAKE=		yes
+USES=		gmake
 USE_RC_SUBR=		${PORTNAME}
 GNU_CONFIGURE=		yes
 

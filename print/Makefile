@@ -33,6 +33,7 @@
     SUBDIR += cups-client
     SUBDIR += cups-cloud-print
     SUBDIR += cups-filters
+    SUBDIR += cups-fxlinuxprint
     SUBDIR += cups-image
     SUBDIR += cups-pdf
     SUBDIR += cups-pk-helper
@@ -244,6 +245,7 @@
     SUBDIR += py-fonttools
     SUBDIR += py-pdf
     SUBDIR += py-pollyreports
+    SUBDIR += py-preppy
     SUBDIR += py-pyscript
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab

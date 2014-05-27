@@ -2,9 +2,9 @@ include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui-device-store.h
 include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui-device-view.h
 include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui.h
 lib/libgupnp-ui-1.0.a
-lib/libgupnp-ui-1.0.la
 lib/libgupnp-ui-1.0.so
 lib/libgupnp-ui-1.0.so.0
+lib/libgupnp-ui-1.0.so.0.0.0
 libdata/pkgconfig/gupnp-ui-1.0.pc
 share/gtk-doc/html/gupnp-ui/GUPnPUIDeviceStore.html
 share/gtk-doc/html/gupnp-ui/GUPnPUIDeviceView.html

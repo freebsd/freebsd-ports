@@ -57,6 +57,80 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="688e73a2-e514-11e3-a52a-98fc11cdc4f5">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.359</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb14-14.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0510</cvename>
+      <cvename>CVE-2014-0516</cvename>
+      <cvename>CVE-2014-0517</cvename>
+      <cvename>CVE-2014-0518</cvename>
+      <cvename>CVE-2014-0519</cvename>
+      <cvename>CVE-2014-0520</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb14-14.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-13</discovery>
+      <entry>2014-05-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="02db20d7-e34a-11e3-bd92-bcaec565249c">
+    <topic>openjpeg -- Multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>openjpeg</name>
+	<range><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Openjpeg release notes report:</p>
+	<blockquote cite="http://openjpeg.googlecode.com/svn/tags/version.1.5.1/NEWS">
+	  <p>That CVE-2012-3535 and CVE-2012-3358 are fixed in the 1.5.1
+	    release.</p>
+	</blockquote>
+	<blockquote cite="http://openjpeg.googlecode.com/svn/tags/version.1.5.2/NEWS">
+	  <p>That CVE-2013-4289, CVE-2013-4290, CVE-2013-1447, CVE-2013-6045,
+	    CVE-2013-6052, CVE-2013-6054, CVE-2013-6053, CVE-2013-6887,
+	    where fixed in the 1.5.2 release.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3358</cvename>
+      <cvename>CVE-2012-3535</cvename>
+      <cvename>CVE-2013-1447</cvename>
+      <cvename>CVE-2013-4289</cvename>
+      <cvename>CVE-2013-4290</cvename>
+      <cvename>CVE-2013-6045</cvename>
+      <cvename>CVE-2013-6052</cvename>
+      <cvename>CVE-2013-6053</cvename>
+      <cvename>CVE-2013-6054</cvename>
+      <cvename>CVE-2013-6887</cvename>
+      <url>http://openjpeg.googlecode.com/svn/tags/version.1.5.1/NEWS</url>
+      <url>http://openjpeg.googlecode.com/svn/tags/version.1.5.2/NEWS</url>
+    </references>
+    <dates>
+      <discovery>2012-05-13</discovery>
+      <entry>2014-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="64f3872b-e05d-11e3-9dd4-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>

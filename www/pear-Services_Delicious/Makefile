@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_PHP=	openssl
 PEAR_AUTOINSTALL=	yes
 

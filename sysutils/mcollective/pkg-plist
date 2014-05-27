@@ -1,4 +1,3 @@
-bin/mc-call-agent
 bin/mco
 sbin/mcollectived
 %%DATADIR%%/agent/discovery.rb
@@ -81,6 +80,7 @@ sbin/mcollectived
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Aggregate/Result/NumericResult.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Application.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Applications.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/BackoffSuggestion.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Cache.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Client.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Config.html
@@ -114,6 +114,7 @@ sbin/mcollectived
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Matcher/Parser.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Matcher/Scanner.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Message.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/MessageNotReceived.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/MissingRPCData.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/MsgDoesNotMatchRequestID.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/MsgTTLExpired.html
@@ -145,6 +146,7 @@ sbin/mcollectived
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Security/Base.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/SecurityValidationFailed.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/Shell.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/UnexpectedMessageType.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/UnixDaemon.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/UnknownRPCAction.html
 %%PORTDOCS%%%%DOCSDIR%%/MCollective/UnknownRPCError.html
@@ -226,6 +228,7 @@ sbin/mcollectived
 %%RUBY_SITELIBDIR%%/mcollective/ddl/discoveryddl.rb
 %%RUBY_SITELIBDIR%%/mcollective/ddl/validatorddl.rb
 %%RUBY_SITELIBDIR%%/mcollective/discovery.rb
+%%RUBY_SITELIBDIR%%/mcollective/exceptions.rb
 %%RUBY_SITELIBDIR%%/mcollective/facts.rb
 %%RUBY_SITELIBDIR%%/mcollective/facts/base.rb
 %%RUBY_SITELIBDIR%%/mcollective/generators.rb

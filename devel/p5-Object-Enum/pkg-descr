@@ -5,5 +5,4 @@
   if ($color->is_red) {
   # it can't be yellow or green
 
-Author: Hans Dieter Pearcey
 WWW: http://search.cpan.org/dist/Object-Enum/

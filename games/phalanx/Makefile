@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/Version%20XXIII%20Beta
 DISTNAME=	${PORTNAME}-XXIII-beta
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Xboard-compatible chess playing program
 
 LICENSE=	GPLv2 # (or later)

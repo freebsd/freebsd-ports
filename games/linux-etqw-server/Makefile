@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-server
 DISTNAME=	ETQW${PKGNAMESUFFIX}-1.5-full.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ayu@commun.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enemy Territory: QUAKE Wars Server for Linux
 
 NO_CDROM=	Redistribution is limited

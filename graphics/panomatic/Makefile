@@ -15,9 +15,7 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
-USE_BZIP2=	yes
-USES=		gmake
-USE_DOS2UNIX=	yes
+USES=		dos2unix gmake tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -7,7 +7,7 @@
 .if !defined(_INCLUDE_USES_LUA_MK)
 _INCLUDE_USES_LUA_MK=	yes
 
-_LUA_VALID_VERSIONS=	52
+_LUA_VALID_VERSIONS=	52 51
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 _LUA_DEFAULT_VERSION=	${LUA_DEFAULT:S/.//}
@@ -96,11 +96,11 @@ MAKE_ENV+=	LUA_MODLIBDIR=${LUA_MODLIBDIR} \
 		LUA_LIBDIR=${LUA_LIBDIR}
 
 .if ${_LUA_ARGS:Mbuild}
-BUILD_DEPENDS+=	${LUA_CMD}:${PORTSDIR}/lang/lua${LUA_VER_STR:51=}
+BUILD_DEPENDS+=	${LUA_CMD}:${PORTSDIR}/lang/lua${LUA_VER_STR}
 .elfif ${_LUA_ARGS:Mrun}
-RUN_DEPENDS+=	${LUA_CMD}:${POTSDIR}/lang/lua${LUA_VER_STR:51=}
+RUN_DEPENDS+=	${LUA_CMD}:${POTSDIR}/lang/lua${LUA_VER_STR}
 .else
-LIB_DEPENDS+=	liblua-${LUA_VER}.so:${PORTSDIR}/lang/lua${LUA_VER_STR:51=}
+LIB_DEPENDS+=	liblua-${LUA_VER}.so:${PORTSDIR}/lang/lua${LUA_VER_STR}
 .endif
 
 .endif

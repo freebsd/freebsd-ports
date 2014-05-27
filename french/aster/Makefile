@@ -3,7 +3,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -43,7 +43,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-BROKEN=		WIP - it builds and runs, but yet some rough edges
 USES=		bison fortran tk
 USE_PYTHON=	2       # >2.5 and <3.0
 HAS_CONFIGURE=	yes
@@ -66,10 +65,6 @@ INTERACTIVE_SCRIPTS=	check_compilers.py setup.py
 
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.pre.mk>
-
-.if !exists(/compat/linux/proc/)
-IGNORE=	/compat/linux/proc/ must be mounted to build elements # Fixme
-.endif
 
 .if ${ARCH} == "i386"
 FLAGARCH=	-DP_LINUX -DLINUX
@@ -223,6 +218,7 @@ pre-configure:
 		${WRKSRC}/products.py
 	${REINPLACE_CMD} -e "s|'gfortran'|'${FC}'|g;s|'gcc'|'${CC}'|g"	\
 		-e "s|'g++'|'${CXX}'|g" ${WRKSRC}/check_compilers.py
+	${REINPLACE_CMD} -e 's|%%FILESDIR%%|${FILESDIR}|' ${WRKSRC}/as_setup.py
 .for sh in ${BASH2RC}
 	${REINPLACE_CMD} -e 's|/bin/bash|${SHELL_INSTALL_ASTER}|' ${WRKSRC}/${sh}
 .endfor
@@ -256,7 +252,7 @@ pre-configure:
 	${ECHO_CMD} "OPT_ENV = 'verbose=True'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_METIS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "INCLUDEDIR = ['${LOCALBASE}/include/metis', ]"			\
+	${ECHO_CMD} "INCLUDEDIR = ['${LOCALBASE}/include', '${LOCALBASE}/include/metis', ]"\
 			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_MUMPS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 .if ${MUMPS_PORT} == "mumps-mpich"
@@ -267,7 +263,8 @@ pre-configure:
 	${ECHO_CMD} "CXX='${CXX}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LD='${FC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90='${FC}'"				>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "MATHLIB='${lib_math} ${LDFLAGS} -lgfortran -lm'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "MATHLIB='${lib_math} ${LDFLAGS} -lgfortran -lm -lkvm'"		\
+		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "OTHERLIB='-Xlinker -export-dynamic -lutil ${PTHREAD_LIBS} -lz'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "SYSLIB='${PTHREAD_LIBS} -lz'"		>> ${WRKSRC}/setup.cfg
@@ -369,6 +366,8 @@ post-install:
 		-d ${PREFIX} -f ${inst_dir:S|${PREFIX}/||})
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py	\
 		-d ${PREFIX} -f ${inst_dir:S|${PREFIX}/||})
+	${CP} -p ${STAGEDIR}${inst_dir}/${VE}/bin/aster					\
+		${STAGEDIR}${inst_dir}/${VE}/bin/asterd
 	${STRIP_CMD} ${STAGEDIR}${inst_dir}/${VE}/bin/aster
 	${SED} -e 's|%%VER%%|${VE}|' < ${FILESDIR}/astout.export	\
 		> ${STAGEDIR}${inst_dir}/${VE}/astout.export
@@ -378,6 +377,9 @@ post-install:
 	${LN} -fs ${LOCALBASE}/bin/${outil} ${STAGEDIR}${tools_dir}/${outil}
 .endfor
 .if !defined(WITHOUT_ASTK_CLI)
+	${MKDIR} ${STAGEDIR}${PREFIX}/aster/ASTK/ASTK_SERV/etc/codeaster/astkrc
+	${LN} -fs ${ASTKDIR}/etc/astkrc/*	\
+		${STAGEDIR}${PREFIX}/aster/ASTK/ASTK_SERV/etc/codeaster/astkrc
 . for outil in astk bsf
 	${LN} -fs ${ASTKDIR}/bin/${outil} ${STAGEDIR}${tools_dir}/${outil}
 . endfor

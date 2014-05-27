@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
 		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
 		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
-		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg \
+		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libdcmdata.so:${PORTSDIR}/devel/dcmtk \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \

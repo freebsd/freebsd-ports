@@ -3,7 +3,7 @@
 
 PORTNAME=	canna
 PORTVERSION=	3.7p3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	canna/9565/
@@ -13,23 +13,14 @@ DISTNAME=	Canna${PORTVERSION:S/.//g}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Kana-to-Kanji conversion system, library part
 
-USES=		imake:notall
-USE_BZIP2=	yes
-USE_GCC=	any
-USE_LDCONFIG=	yes
-NO_INSTALL_MANPAGES=yes
-MAKE_JOBS_UNSAFE=	yes
-PLIST_SUB=	METAFILE="${METAFILE}" \
-		MTREE_CMD="${MTREE_CMD}"
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USES=		imake:notall tar:bzip2
+USE_LDCONFIG=	yes
 ALL_TARGET=	canna
 INSTALL_TARGET=	instsgs
-
-METAFILE=	${DATADIR_REL}/canna-lib-dic.meta
-
-NO_STAGE=	yes
-post-install:
-	${MTREE_CMD} -cdink uname,gname,mode,nochange \
-		-p ${DATADIR}/dic > ${PREFIX}/${METAFILE}
+NO_INSTALL_MANPAGES=yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

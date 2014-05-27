@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:${PORTSDIR}/devel/ocaml-e
 		${LOCALBASE}/${OCAML_SITELIBDIR}/calendar:${PORTSDIR}/devel/ocaml-calendar \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/csv:${PORTSDIR}/textproc/ocaml-csv
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes

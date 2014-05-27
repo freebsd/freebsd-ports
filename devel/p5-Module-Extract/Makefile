@@ -8,8 +8,11 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Base class for working with Perl distributions
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Archive-Extract>=0:${PORTSDIR}/archivers/p5-Archive-Extract
 RUN_DEPENDS:=	${BUILD_DEPENDS}

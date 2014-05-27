@@ -8,8 +8,10 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	CursesApplication-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Curses application development framework
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Curses-Forms>=0:${PORTSDIR}/devel/p5-Curses-Forms
 RUN_DEPENDS:=	${BUILD_DEPENDS}

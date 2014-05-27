@@ -13,13 +13,13 @@ COMMENT=	OpenGL based space-ship "shoot-em-up" game
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		gmake
+USES=		dos2unix gmake
 USE_SDL=	sdl mixer
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 
-USE_DOS2UNIX=	variables.cpp scene.cpp
+DOS2UNIX_FILES=	variables.cpp scene.cpp
 
 DESKTOP_ENTRIES=	"Glaxium" \
 			"Space-ship \"shoot-em-up\" game" \

@@ -12,7 +12,7 @@ COMMENT=	A connection pool server for PostgreSQL
 
 LICENSE=	BSD
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes

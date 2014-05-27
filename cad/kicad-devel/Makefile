@@ -25,15 +25,11 @@ CONFLICTS=      kicad-2013*
 DOCVERSION=	1.1
 LIBVERSION=	1.0
 
-USE_BZIP2=	yes
-#USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		glew glu
 USE_WX=		2.8
 WX_UNICODE=	yes
 USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
 USE_PYTHON=     yes
-
-#OPTIONS=	GTA2CORE "Apply additional Openmoko GTA2_CORE patches" off
 
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
@@ -41,21 +37,14 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-USE_GCC=	yes
-USES=		cmake gettext
+#USE_GCC=	yes
+USES=		tar:bzip2 cmake gettext
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
+		-DCMAKE_VERBOSE_MAKEFILE=ON \
+		-DCMAKE_BUILD_TYPE="Debug" \
 		-DKICAD_TESTING_VERSION=ON \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
-
-NO_STAGE=	yes
-
-#.if !defined(WITHOUT_GTA2CORE)
-#PATCH_STRIP=	-p1
-#EXTRA_PATCHES+= \
-#	${WRKDIR}/kicad-patches/eeschema-plot-only-mode.patch \
-#	${WRKDIR}/kicad-patches/streamline-erc.patch
-#.endif
 
 .if exists(${LOCALBASE}/bin/konqueror)
 RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kde4-baseapps
@@ -67,7 +56,6 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 BOOST_RELEASE=	     1.54.0
 BOOST_VERS=         ${BOOST_RELEASE:S|.|_|g}
 BZR_SRC_REV!=        bzr revno lp:kicad
-BZR_LIB_REV!=        bzr revno lp:~kicad-lib-committers/kicad/library
 BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 .else
 .include "Makefile.bzr_rev"
@@ -77,12 +65,8 @@ BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 
 # Updating to new rev:
 # make BOOTSTRAP=YES do-fetch
-# make makesum && make && make install
+# make makesum && make && make makeplist
 # < Check PLIST_FILE_LIST below >
-# make build-plist
-# make deinstall && make install && make package
-# pkg_deinstall /var/db/pkg/kicad-devel*
-# pkg_add /usr/ports/pkg_amd64/All/kicad-devel*
 
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
 FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bzr
@@ -98,14 +82,14 @@ do-fetch:
 	${MKDIR} ${WRKDIR}
 	${ECHO} ${WRKSRC}
 	bzr export -r ${BZR_SRC_REV} ${WRKSRC} lp:kicad
-	bzr export -r ${BZR_LIB_REV} ${WRKDIR}/kicad-library lp:~kicad-lib-committers/kicad/library
+	${FETCH_CMD} --no-verify-peer -o ${WRKDIR}/master.zip https://github.com/KiCad/kicad-library/archive/master.zip
 	bzr export -r ${BZR_DOC_REV} ${WRKDIR}/kicad-doc lp:~kicad-developers/kicad/doc
-	svn export \
-		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
 	fetch -o ${WRKDIR}/${DISTNAME}/boost_${BOOST_VERS}.tar.bz2 \
 		http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
-	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		${DISTNAME} kicad-library kicad-doc kicad-patches
+	cd ${WRKDIR}; \
+	tar xvf master.zip; \
+	tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
+		${DISTNAME} kicad-library-master kicad-doc kicad-patches
 	echo "BOOST_RELEASE=  ${BOOST_RELEASE}" > ${MASTERDIR}/Makefile.bzr_rev
 	echo "BOOST_VERS=  ${BOOST_VERS}"   >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_SRC_REV=  ${BZR_SRC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
@@ -141,11 +125,11 @@ pre-install:
 	@echo "${DATADIR}, ${DOCSDIR}"
 
 post-install:
-.for subdir in library modules
-	${CP} -Rp ${WRKDIR}/kicad-library/${subdir} ${DATADIR}
+.for subdir in library modules template
+	${CP} -Rp ${WRKDIR}/kicad-library-master/${subdir} ${STAGEDIR}${DATADIR}
 .endfor
 .for subdir in internat
-	${CP} -Rp ${WRKDIR}/kicad-doc/${subdir} ${DOCSDIR}
+	${CP} -Rp ${WRKDIR}/kicad-doc/${subdir} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 PLIST_FILE_LIST=	bin/freeroute.jnlp \
@@ -178,21 +162,21 @@ PLIST_SHAREDDIR_LIST=	share/mimelnk/application \
 
 build-plist:
 	${RM} -f ${PLIST}
-	cd ${PREFIX} && \
+	cd ${STAGEDIR}${PREFIX} && \
 		(ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
 		${SORT} >> ${PLIST}
-	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
-		${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
-		-e 's|${DOCSDIR}|%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
-	cd ${PREFIX} && \
+	${FIND} ${STAGEDIR}${DATADIR} ${DOCSDIR} -type f | \
+		${SED} -e 's|${STAGEDIR}${DATADIR}|%%DATADIR%%|' \
+		-e 's|${STAGEDIR}${DOCSDIR}|%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
+	cd ${STAGEDIR}${PREFIX} && \
 		${FIND} ${PLIST_DIR_LIST} -type d | \
 		${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
 .for subdir in ${PLIST_SHAREDDIR_LIST}
 	@${ECHO_CMD} '@unexec ${RMDIR} %D/${subdir} 2> /dev/null || true' >> ${PLIST}
 .endfor
-	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
-		${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
-			-e 's|${DOCSDIR}|%%DOCSDIR%%|' \
+	${FIND} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DOCSDIR} -type d | ${SORT} -r | \
+		${SED} -e 's|${STAGEDIR}${DATADIR}|%%DATADIR%%|' \
+			-e 's|${STAGEDIR}${DOCSDIR}|%%DOCSDIR%%|' \
 			-e 's|^|@dirrm |' >> ${PLIST}
 
 .include <bsd.port.mk>

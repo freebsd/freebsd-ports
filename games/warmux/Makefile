@@ -17,9 +17,9 @@ LIB_DEPENDS=	libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
 CONFLICTS_INSTALL=	wormux-*
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig tar:bzip2
+USES=		dos2unix gmake pkgconfig tar:bzip2
 USE_SDL=	sdl image mixer ttf gfx net
-USE_DOS2UNIX=	fixed_class.h
+DOS2UNIX_FILES=	fixed_class.h
 
 OPTIONS_DEFINE=	FRIBIDI SERVER NLS DEBUG
 FRIBIDI_DESC=	Enable bi-directional unicode support

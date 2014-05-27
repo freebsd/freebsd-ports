@@ -3,6 +3,7 @@
 
 PORTNAME=	policyd-weight
 PORTVERSION=	0.1.15.2
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/ \
 		LOCAL/ohauer
@@ -13,7 +14,7 @@ COMMENT=	Weighted policy daemon for postfix
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS \
+RUN_DEPENDS=	p5-Net-DNS>=0.72:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Net-IP>0:${PORTSDIR}/net-mgmt/p5-Net-IP
 
 SUB_FILES=	pkg-message

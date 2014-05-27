@@ -13,8 +13,8 @@ COMMENT=	Object-Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_DOS2UNIX=	Makefile.in
-USE_GMAKE=	yes
+USES=		dos2unix gmake
+DOS2UNIX_FILES=	Makefile.in
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}

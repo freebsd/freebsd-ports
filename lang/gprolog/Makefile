@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}"

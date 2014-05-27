@@ -13,7 +13,7 @@ COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 PORTDOCS=	README
 MAN1=		doscan.1
 

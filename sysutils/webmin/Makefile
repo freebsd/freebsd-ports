@@ -3,6 +3,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.690
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -55,6 +56,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 	@${FIND} ${WRKSRC} -name "*.pyc" -delete
+
+.for module in ldap-server ldap-client ldap-useradmin logrotate status time webalizer
+	@${RM} ${WRKSRC}/${module}/config-\*-linux 
+.endfor
 
 	@${PRINTF} "g/^FreeBSD/m0\nwq\n" | ex ${WRKSRC}/os_list.txt
 

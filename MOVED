@@ -4043,6 +4043,7 @@ devel/py-flakes|devel/py-pyflakes|2013-02-18|Renamed to correct upstream name
 net/samba4-devel|net/samba4|2013-02-18|Renamed to reflect maturity of upstream version
 net/libnet-devel|net/libnet|2013-02-18|Renamed to stable branch
 x11-fm/tkdesk||2013-02-19|Obsolete and unmaintained, doesn't run
+textproc/libmspub|print/libmspub|2013-02-21|Duplicate of print/libmspub
 emulators/bsnes|emulators/higan|2013-02-22|Renamed upstream
 sysutils/fio|benchmarks/fio|2013-02-22|Moved to benchmarks category
 japanese/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
@@ -6170,3 +6171,6 @@ www/openx|www/revive-adserver|2014-05-15|Upstream obsolete, forked
 security/clamav-devel||2014-05-16|Retire, older than security/clamav
 devel/msp430-gcc3||2014-05-18|Version obsolete, use devel/msp430-gcc
 graphics/GraphicsMagick12|graphics/GraphicsMagick13|2014-05-20|Has expired: Unmaintained upstream, no ports depending on it. Use graphics/GraphicsMagick13 instead
+net-im/tkabber-devel|net-im/tkabber|2014-05-23|Has expired: Unfetchable, outdated by net-im/tkabber
+devel/libglade-java||2014-05-26|Has expired: Unmaintained, outdated not depend on
+lang/lua|lang/lua51|2014-05-26|Rename to allow multiple version of lua to coexist

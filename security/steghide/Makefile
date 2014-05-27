@@ -17,9 +17,8 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext perl5
+USES=		gettext perl5 gmake
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fpermissive
 

@@ -137,6 +137,7 @@
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
+    SUBDIR += libdrizzle-redux
     SUBDIR += libgda4
     SUBDIR += libgda4-bdb
     SUBDIR += libgda4-jdbc
@@ -679,6 +680,14 @@
     SUBDIR += postgresql93-plpython
     SUBDIR += postgresql93-pltcl
     SUBDIR += postgresql93-server
+    SUBDIR += postgresql94-client
+    SUBDIR += postgresql94-contrib
+    SUBDIR += postgresql94-docs
+    SUBDIR += postgresql94-pgtcl
+    SUBDIR += postgresql94-plperl
+    SUBDIR += postgresql94-plpython
+    SUBDIR += postgresql94-pltcl
+    SUBDIR += postgresql94-server
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
     SUBDIR += proftpd-mod_sql_mysql

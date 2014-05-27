@@ -16,7 +16,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WANT_FINAL)
 CONFIGURE_ARGS+=	--enable-final
-USE_GMAKE=	yes
+USES=		gmake
 .endif
 
 pre-patch:

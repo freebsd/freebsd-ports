@@ -24,7 +24,6 @@ NO_BUILD=	yes
 
 OPTIONS_DEFINE=	APACHE DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
@@ -65,22 +64,22 @@ post-patch: .SILENT
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "assets build index.html \
-		tests" ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+		tests" ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
 .if ${PORT_OPTIONS:MAPACHE}
 .if !defined(MAINTAINER_MODE)
-	@if [ -d "${CONFDIR}" ]; then \
-	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}; \
+	@if [ -d "${STAGEDIR}${CONFDIR}" ]; then \
+	  ${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}; \
 	else \
 	  ${ECHO_MSG} "" ; \
 	  ${ECHO_MSG} "Please check your Apache 2.x installation -" ; \
@@ -93,10 +92,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MNLS}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

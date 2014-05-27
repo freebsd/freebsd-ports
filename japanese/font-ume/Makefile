@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ume
-PORTVERSION=	0.0.456
+PORTVERSION=	0.0.462
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}-font/22212
@@ -13,7 +13,7 @@ COMMENT=	Ume Japanese TrueType fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
@@ -53,10 +53,8 @@ do-install:
 post-su-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

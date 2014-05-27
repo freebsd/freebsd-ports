@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-03-25 08:03:23.000000000 +0000
+--- Makefile.in.orig	2014-05-22 22:46:42.000000000 +0000
 +++ Makefile.in
-@@ -83,72 +83,65 @@ run_test_valgrind: test
+@@ -83,72 +83,51 @@ run_test_valgrind: test
  	cd dom/test; valgrind --tool=memcheck --leak-check=full ./testxml -auto
  
  docs: force
@@ -34,25 +34,21 @@
  
  	@# prefix/lib/xmlada/relocatable/libxmlada.so -> libxmlada.so.4.4.0w
 -	cd ${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}
-+	cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}
- 
- 	@# prefix/lib/xmlada/relocatable/libxmlada.so.4.4 -> libxmlada.so.4.4.0w
+-
+-	@# prefix/lib/xmlada/relocatable/libxmlada.so.4.4 -> libxmlada.so.4.4.0w
 -	-cd ${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${VERSION}}
-+	-cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${VERSION}}
- 
- 	@# prefix/lib/xmlada/relocatable/libxmlada.so.4 -> libxmlada.so.4.4.0w
- ifneq (${basename ${basename ${VERSION}}},${basename ${VERSION}})
+-
+-	@# prefix/lib/xmlada/relocatable/libxmlada.so.4 -> libxmlada.so.4.4.0w
+-ifneq (${basename ${basename ${VERSION}}},${basename ${VERSION}})
 -	cd ${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${basename ${VERSION}}}
-+	cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${basename ${VERSION}}}
- 
- 	@# prefix/lib/libxmlada.so.4 -> prefix/lib/xmlada/relocatable/libxmlada.so.4.4.0w
+-
+-	@# prefix/lib/libxmlada.so.4 -> prefix/lib/xmlada/relocatable/libxmlada.so.4.4.0w
 -	cd ${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${basename ${VERSION}}}
-+	cd ${DESTDIR}${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${basename ${VERSION}}}
- endif
- 
- 	@# prefix/lib/libxmlada.so.4.4 -> prefix/lib/xmlada/relocatable/libxmlada.so.4.4.0w
+-endif
+-
+-	@# prefix/lib/libxmlada.so.4.4 -> prefix/lib/xmlada/relocatable/libxmlada.so.4.4.0w
 -	-cd ${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${VERSION}}
-+	-cd ${DESTDIR}${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${basename ${VERSION}}
++	cd ${DESTDIR}${xmllib}; ${LN_S} libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}
  
  	@# prefix/lib/libxmlada.so.4.4.0w -> prefix/lib/xmlada/relocatable/libxmlada.so.4.4.0w
 -	-cd ${libdir}; ${LN_S} xmlada/${LIBRARY_TYPE}/libxmlada_$*${LIBEXT}.${VERSION} libxmlada_$*${LIBEXT}.${VERSION}

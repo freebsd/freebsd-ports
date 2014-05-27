@@ -23,9 +23,8 @@ RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview	\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gettext
+USES=		gettext gmake
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
 
 MAN1=	gman.1x
 

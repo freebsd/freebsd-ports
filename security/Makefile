@@ -863,6 +863,7 @@
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-gpgr
+    SUBDIR += rubygem-gssapi
     SUBDIR += rubygem-hmac
     SUBDIR += rubygem-jugyo-twitter_oauth
     SUBDIR += rubygem-metasploit_data_models

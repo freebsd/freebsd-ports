@@ -3,17 +3,17 @@
 
 PORTNAME=	buddy
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BuDDy%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Binary Decision Diagram library
+COMMENT=	Binary Decision Diagram library
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
-USES=		gmake
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 DOCS=		doc/bddnotes.ps doc/buddy.ps doc/tech.txt README AUTHORS
 

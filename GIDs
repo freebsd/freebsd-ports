@@ -104,6 +104,7 @@ dnscache:*:184:
 tinydns:*:185:
 dnslog:*:186:
 swift:*:187:
+netxms:*:188:
 moinmoin:*:192:
 cups:*:193:
 saned:*:194:
@@ -173,6 +174,7 @@ radmind:*:506:
 skkserv:*:507:
 pwhois:*:512:
 nullmail:*:522:
+freevo:*:523:
 dkimproxy:*:525:
 pgbouncer:*:534:
 redis:*:535:

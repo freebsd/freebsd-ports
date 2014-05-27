@@ -15,7 +15,7 @@ COMMENT=	A LaTeX package for a tabular that spans multiple pages
 USE_TEX=	latex
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR}
-USE_GMAKE=	yes
+USES=		gmake
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr

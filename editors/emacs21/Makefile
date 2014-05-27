@@ -35,7 +35,7 @@ USE_XORG=	xpm
 .endif
 
 USE_AUTOTOOLS=	autoconf213
-USE_GMAKE=	yes
+USES=	gmake
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 .if defined(WITHOUT_X11)

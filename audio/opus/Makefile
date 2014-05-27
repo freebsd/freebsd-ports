@@ -2,15 +2,16 @@
 
 PORTNAME=	opus
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
-		https://ftp.mozilla.org/pub/mozilla.org/opus/
+		${MASTER_SITE_MOZILLA_EXTENDED}
+MASTER_SITE_SUBDIR=	opus
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
 
-USES=		gmake pathfix
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

@@ -16,7 +16,7 @@ LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
+USES=		gmake
 
 ALL_TARGET=	default
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"

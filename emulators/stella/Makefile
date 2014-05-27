@@ -15,7 +15,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

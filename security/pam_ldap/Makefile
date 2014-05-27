@@ -12,10 +12,9 @@ DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A pam module for authenticating with LDAP
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	build
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 PAM_LDAP_CONF?=	ldap.conf

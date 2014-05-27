@@ -39,18 +39,15 @@ bin/AmphetaDesk-real
 %%DATADIR%%/templates/default/popup.html
 %%DATADIR%%/templates/default/tpl_footer.html
 %%DATADIR%%/templates/default/tpl_header.html
-@dirrm %%DATADIR%%/templates/default/images
-@dirrm %%DATADIR%%/templates/default/gui
-@dirrm %%DATADIR%%/templates/default
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/lists
-@dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/AmphetaDesk/XML
-@dirrm %%SITE_PERL%%/AmphetaDesk/Text/Template
-@dirrm %%SITE_PERL%%/AmphetaDesk/Text
 @dirrm %%SITE_PERL%%/AmphetaDesk/AmphetaDesk/OS
 @dirrm %%SITE_PERL%%/AmphetaDesk/AmphetaDesk
+@dirrm %%SITE_PERL%%/AmphetaDesk/Text/Template
+@dirrm %%SITE_PERL%%/AmphetaDesk/Text
+@dirrm %%SITE_PERL%%/AmphetaDesk/XML
 @dirrm %%SITE_PERL%%/AmphetaDesk
-@dirrmtry %%SITE_PERL%%
-@dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5
+@dirrm %%DATADIR%%/lists
+@dirrm %%DATADIR%%/templates/default/gui
+@dirrm %%DATADIR%%/templates/default/images
+@dirrm %%DATADIR%%/templates/default
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%

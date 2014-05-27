@@ -4,13 +4,15 @@
 PORTNAME=	meshdev
 PORTVERSION=	0.5
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~gahr/distfiles/
+MASTER_SITE_SUBDIR=	gahr
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A mesh comparison software
+COMMENT=	Mesh comparison software
 
-USE_DOS2UNIX=	src/MeshDev.h
+USES=		dos2unix
+DOS2UNIX_FILES=	src/MeshDev.h
 
 BUILD_WRKSRC=	${WRKSRC}/build
 INSTALL_WRKSRC=	${WRKSRC}/bin

@@ -1,6 +1,5 @@
-%%JAVAJARDIR%%/axis.jar
-%%JAVAJARDIR%%/jaxrpc.jar
-%%JAVAJARDIR%%/saaj.jar
+@owner www
+@group www
 %%WEBAPPS%%/axis/EchoHeaders.jws
 %%WEBAPPS%%/axis/SOAPMonitorApplet.java
 %%WEBAPPS%%/axis/StockQuoteService.jws
@@ -173,37 +172,43 @@
 %%WEBAPPS%%/axis/i18nLib.jsp
 %%WEBAPPS%%/axis/index.html
 %%WEBAPPS%%/axis/index.jsp
-@dirrm %%WEBAPPS%%/axis/WEB-INF/lib
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example6
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example5
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example4
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example3
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example2
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example1
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide
+%%JAVAJARDIR%%/axis.jar
+%%JAVAJARDIR%%/jaxrpc.jar
+%%JAVAJARDIR%%/saaj.jar
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/addr
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/attachments
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/bidbuy
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/echo
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/encoding
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/faults
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/handler
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/integrationGuide/example1
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/integrationGuide/example2
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/integrationGuide
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/jaxrpc/address
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/jaxrpc/hello
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/jaxrpc
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/math
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/message
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/misc
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/perf
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/proxy
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/stock
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/swa
 @dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/transport/tcp
 @dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/transport
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/swa
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/stock
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/proxy
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/perf
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/misc
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/message
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/math
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/jaxrpc/hello
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/jaxrpc/address
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/jaxrpc
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/integrationGuide/example2
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/integrationGuide/example1
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/integrationGuide
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/handler
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/faults
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/encoding
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/echo
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/bidbuy
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/attachments
-@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/addr
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example1
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example2
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example3
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example4
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example5
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide/example6
+@dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/userguide
 @dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples
 @dirrm %%WEBAPPS%%/axis/WEB-INF/classes
+@dirrm %%WEBAPPS%%/axis/WEB-INF/lib
 @dirrm %%WEBAPPS%%/axis/WEB-INF
 @dirrm %%WEBAPPS%%/axis
+@comment reset owner for docs and examples
+@owner root
+@group wheel

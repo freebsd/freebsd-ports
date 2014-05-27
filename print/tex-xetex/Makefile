@@ -2,7 +2,7 @@
 
 PORTNAME=	xetex
 PORTVERSION=	0.9999
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/:web2c \
 		ftp://tug.org/historic/systems/texlive/2012/:texmf
@@ -19,15 +19,13 @@ COMMENT=	TeX System with Unicode and Modern Font Technologies
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libicuio.so:${PORTSDIR}/devel/icu \
-		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg \
+		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libTECkit.so:${PORTSDIR}/textproc/teckit
 
-USE_XZ=		yes
-USE_GMAKE=	yes
 USE_TEX=	texlive kpathsea web2c texmf formats fmtutil
-USES=		pkgconfig
+USES=		pkgconfig gmake tar:xz
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES= \
 	build-aux \

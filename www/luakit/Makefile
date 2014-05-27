@@ -24,9 +24,8 @@ GH_PROGECT=	${PORTNAME}
 GH_TAGNAME=	${PORTVERSION:C/r/-r/}
 GH_COMMIT=	0d5f4ab
 
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake lua:51
 USE_GNOME=	glib20 gtk20
-USE_LUA=	5.1
 MAKE_ARGS+=	USE_UNIQUE=1 NO_JAVASCRIPTCORE=1
 
 MAN1=		luakit.1

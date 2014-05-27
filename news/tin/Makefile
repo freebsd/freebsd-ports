@@ -3,6 +3,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
@@ -87,12 +88,11 @@ post-patch:
 		${WRKSRC}/tools/tinurl_handler.pl
 
 post-build:
-	cd ${WRKSRC}/po; ${GMAKE}
+	${GMAKE} -C ${WRKSRC}/po
 
 post-install:
-	cd ${STAGEDIR}${PREFIX}/etc;\
-		${INSTALL_DATA} ${WRKSRC}/doc/tin.defaults tin.defaults.dist;\
-		${CP} -pn tin.defaults.dist tin.defaults;
+	${INSTALL_DATA} ${WRKSRC}/doc/tin.defaults \
+		${STAGEDIR}${PREFIX}/etc/tin.defaults.sample
 	ln -sf tin ${STAGEDIR}${PREFIX}/bin/rtin
 
 .include <bsd.port.mk>

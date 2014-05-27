@@ -1,0 +1,29 @@
+%%CONTRIB%%%%DATADIR%%/dmenu/README.md
+%%CONTRIB%%%%DATADIR%%/dmenu/passmenu
+%%CONTRIB%%%%DATADIR%%/emacs/.gitignore
+%%CONTRIB%%%%DATADIR%%/emacs/Cask
+%%CONTRIB%%%%DATADIR%%/emacs/README.md
+%%CONTRIB%%%%DATADIR%%/emacs/password-store.el
+%%CONTRIB%%%%DATADIR%%/importers/1password2pass.rb
+%%CONTRIB%%%%DATADIR%%/importers/fpm2pass.pl
+%%CONTRIB%%%%DATADIR%%/importers/gorilla2pass.rb
+%%CONTRIB%%%%DATADIR%%/importers/kedpm2pass.py
+%%CONTRIB%%%%DATADIR%%/importers/keepass2pass.py
+%%CONTRIB%%%%DATADIR%%/importers/keepassx2pass.py
+%%CONTRIB%%%%DATADIR%%/importers/kwallet2pass.py
+%%CONTRIB%%%%DATADIR%%/importers/lastpass2pass.rb
+%%CONTRIB%%%%DATADIR%%/importers/pwsafe2pass.sh
+%%CONTRIB%%%%DATADIR%%/importers/revelation2pass.py
+%%CONTRIB%%%%DATADIR%%/pass.bash-completion
+%%CONTRIB%%%%DATADIR%%/pass.fish-completion
+%%CONTRIB%%%%DATADIR%%/pass.zsh-completion
+%%CONTRIB%%%%DATADIR%%/related-projects.txt
+%%CONTRIB%%@dirrmtry %%DATADIR%%
+%%CONTRIB%%@dirrmtry %%DATADIR%%/dmenu
+%%CONTRIB%%@dirrmtry %%DATADIR%%/emacs
+%%CONTRIB%%@dirrmtry %%DATADIR%%/importers
+%%PORTDOCS%%man/man1/pass.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-filter.sh
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+bin/pass
+libexec/pass

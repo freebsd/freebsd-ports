@@ -3,16 +3,16 @@
 
 PORTNAME=	Devel-Dumpvar
 PORTVERSION=	1.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A pure-OO reimplementation of dumpvar.pl
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Pure-OO reimplementation of dumpvar.pl
 
-BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure

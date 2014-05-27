@@ -10,7 +10,7 @@ DISTNAME=	ojdbc14.jar
 EXTRACT_SUFX=	# none
 DIST_SUBDIR=	oracle10g
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JDBC drivers for Oracle 10g
 
 USE_JAVA=	yes

@@ -13,8 +13,7 @@ DISTFILES=	lua_gettext.c?rev=${CVER} gettext.lua?rev=${LVER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext binding for Lua 5
 
-USE_LUA?=	5.1
-USES=		gettext
+USES=		gettext lua:51
 
 CVER=		1.15
 LVER=		${PORTVERSION}

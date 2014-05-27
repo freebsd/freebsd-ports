@@ -2,7 +2,7 @@
 
 PORTNAME=	keybinder
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	GENTOO/distfiles
 
@@ -35,7 +35,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1
+USES+=		lua:51
 CONFIGURE_ARGS+=	--with-lua-includes=${LUA_INCDIR}
 PLIST_SUB+=	LUA=""
 .else

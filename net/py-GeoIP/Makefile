@@ -4,14 +4,21 @@
 PORTNAME=	GeoIP
 PORTVERSION=	1.2.8
 CATEGORIES=	net python geography
-MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-Python-${PORTVERSION}
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Mapping of IP addresses/hostnames to country names in Python
 
-LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	maxmind
+GH_PROJECT=	geoip-api-python
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	993f63c
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
@@ -23,7 +30,6 @@ EXAMPLE_FILES=	README test.py test_city.py test_org.py test_region.py
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/GeoIP.so
 PORTEXAMPLES=	README test.py test_city.py test_org.py test_region.py
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/setup.py \
@@ -32,12 +38,10 @@ post-patch:
 		${WRKSRC}/test_org.py \
 		${WRKSRC}/test_region.py
 
-.if !defined(NOPORTEXAMPLES)
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in ${EXAMPLE_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

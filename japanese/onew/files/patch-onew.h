@@ -1,5 +1,5 @@
 --- onew.h.orig	1994-06-24 10:27:13.000000000 +0900
-+++ onew.h	2013-11-03 22:44:02.000000000 +0900
++++ onew.h	2014-05-25 11:45:20.000000000 +0900
 @@ -21,7 +21,7 @@
  
  #define LINESIZE	1024
@@ -9,7 +9,7 @@
  typedef char Mssgbuff[LINESIZE];
  typedef	char Pathname[LINESIZE];
  
-@@ -272,3 +272,23 @@
+@@ -272,3 +272,29 @@
  #define JVIM_RARROW	0xffffff83
  #define JVIM_HENKAN	0xffffff9f
  
@@ -33,3 +33,9 @@
 +int ONEW_getch0(int);
 +
 +int oeiJisyoTouroku(int, char *, char *, char *);
++
++int in_kana_mode(void);
++int Onew_RK_imode(void);
++int Onew_RK_imode_set(int);
++int Onew_defineKanamode(int, int, IFUNC);
++

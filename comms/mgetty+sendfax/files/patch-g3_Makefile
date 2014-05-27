@@ -3,7 +3,13 @@ $FreeBSD$
 
 --- g3/Makefile.orig
 +++ g3/Makefile
-@@ -45,8 +45,8 @@
+@@ -40,13 +40,13 @@
+ # install programs
+ #
+ 	for f in $(G3_PROGRAMS) ; do \
+-		$(INSTALL) -s -m 755 $$f $(BINDIR) ; \
++		$(INSTALL) -s -m 755 $$f $(STAGEDIR)$(BINDIR) ; \
+ 	done
  #
  # make symlink for "g3topbm" (so third-party fax viewers won't fail)
  #

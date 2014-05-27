@@ -7,13 +7,14 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl module for managing Subversion hook scripts
 
-RUN_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
-BUILD_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+LICENSE=	APACHE20
+
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

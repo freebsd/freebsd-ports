@@ -9,8 +9,11 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Light weight SQLite-specific schema migration
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-File-pushd>=1.00:${PORTSDIR}/devel/p5-File-pushd \
 		p5-IPC-Run3>=0.042:${PORTSDIR}/devel/p5-IPC-Run3 \

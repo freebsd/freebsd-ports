@@ -4,7 +4,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.24.5
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -103,7 +103,7 @@ PLIST_SUB+=	CAIRO="@comment "
 
 .if ${PORT_OPTIONS:MOPENJPEG}
 CONFIGURE_ARGS+=--enable-libopenjpeg
-LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 .else
 CONFIGURE_ARGS+=--disable-libopenjpeg
 .endif

@@ -19,8 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
 
 USE_BDB=	43
 USE_PYTHON=	yes
-USE_GMAKE=	yes
-USES=		desktop-file-utils gettext pathfix shared-mime-info
+USES=		desktop-file-utils gettext pathfix shared-mime-info gmake
 USE_GNOME=	pygnome2 pygnomeextras gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes

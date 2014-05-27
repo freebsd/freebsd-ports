@@ -19,10 +19,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_BZIP2=	yes
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig gmake tar:bzip2
 USE_BDB=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-berkeley-db
 USE_LDCONFIG=	yes

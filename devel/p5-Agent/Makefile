@@ -7,8 +7,10 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl module that provides a foundation for software agent developers
+
+LICENSE=	ARTPERL10
 
 BUILD_DEPENDS=	p5-Class-Tom>=0:${PORTSDIR}/devel/p5-Class-Tom
 RUN_DEPENDS:=	${BUILD_DEPENDS}

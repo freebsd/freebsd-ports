@@ -9,10 +9,7 @@ COMMENT=	Mono framework to create extensible applications
 
 LICENSE=	MIT
 
-LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono
-
-BUILD_DEPENDS+=	${LIB_PC_DEPENDS}
-RUN_DEPENDS+=	${LIB_PC_DEPENDS}
+USES=		mono
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mono
@@ -32,7 +29,6 @@ OPTIONS_DEFAULT=GTK2
 PLIST_SUB+=	VER=1.0.0
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtksharp20

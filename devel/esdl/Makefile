@@ -16,8 +16,8 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake
-USE_DOS2UNIX=	Makefile
+USES=		dos2unix gmake
+DOS2UNIX_GLOB=	Makefile
 USE_GL=		gl glu
 USE_SDL=	sdl
 ALL_TARGET=	target

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	openjpeg
-PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/openjpeg.mirror/${PORTVERSION}/
+#??
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source JPEG 2000 codec
@@ -16,9 +16,9 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
-USES=		cmake dos2unix
-DOS2UNIX_FILES=	libopenjpeg/opj_malloc.h
-GNU_CONFIGURE=	yes
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	VER=${PORTVERSION:R}
 
 .include <bsd.port.mk>

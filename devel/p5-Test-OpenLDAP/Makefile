@@ -2,6 +2,7 @@
 
 PORTNAME=	Test-OpenLDAP
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,10 +24,13 @@ USES=		perl5
 USE_PERL5=	configure
 USE_OPENLDAP=	yes
 
-#MAKE_ENV=	PATH=${PATH}:${PREFIX}/libexec
 CONFIGURE_ENV=	PATH=${PATH}:${PREFIX}/libexec
 
-pre-configure:
-	printenv
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|/usr/lib/openldap|${LOCALBASE}/libexec|' \
+		${WRKSRC}/lib/Test/OpenLDAP.pm
+	${RM} ${WRKSRC}/lib/Test/OpenLDAP.pm.bak \
+		${WRKSRC}/lib/Test/OpenLDAP.pm.orig
 
 .include <bsd.port.mk>

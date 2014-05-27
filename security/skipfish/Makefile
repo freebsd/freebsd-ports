@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn \
     		pcre:${PORTSDIR}/devel/pcre
-
-USE_GMAKE=	yes
+    		
+USES=		gmake
 SUB_FILES=	pkg-message
 
 .if !defined(NOPORTDOCS)

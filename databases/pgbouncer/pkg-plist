@@ -1,5 +1,11 @@
 bin/pgbouncer
-@unexec if cmp -s %D/etc/pgbouncer.ini %D/etc/pgbouncer.ini.sample; then rm -f %D/etc/pgbouncer.ini; fi
-etc/pgbouncer.ini.sample
-@exec [ -f %B/pgbouncer.ini ] || cp %B/%f %B/pgbouncer.ini
-etc/pgbouncer.users.sample
+man/man1/pgbouncer.1.gz
+man/man5/pgbouncer.5.gz
+@sample etc/pgbouncer.ini.sample
+@sample etc/pgbouncer.users.sample
+@exec [ -d %%PGBOUNCER_LOGDIR%% ] || mkdir -p %%PGBOUNCER_LOGDIR%%
+@exec chown %%PGBOUNCER_USER%%:%%PGBOUNCER_GROUP%% %%PGBOUNCER_LOGDIR%%
+@unexec if [ -z ${UPGRADE_PORT} ] ; then rmdir %%PGBOUNCER_LOGDIR%% 2>/dev/null; fi
+@exec [ -d %%PGBOUNCER_RUNDIR%% ] || mkdir -p %%PGBOUNCER_RUNDIR%%
+@exec chown %%PGBOUNCER_USER%%:%%PGBOUNCER_GROUP%% %%PGBOUNCER_RUNDIR%%
+@unexec if [ -z ${UPGRADE_PORT} ] ; then rmdir %%PGBOUNCER_RUNDIR%% 2>/dev/null; fi

@@ -11,20 +11,18 @@ DISTNAME=	rox-lib2-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Python libraries for ROX
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	yes
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 		${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
-NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 	@cd ${WRKSRC}/ROX-Lib2/python && ${PYTHON_CMD} make_docs.py
 
 do-install:
-	@${CP} -r ${WRKSRC}/ROX-Lib2 ${PREFIX}/lib
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/ROX-Lib2
+	${CP} -r ${WRKSRC}/ROX-Lib2 ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	simplog
 PORTVERSION=	0.9.3.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9.3.2:src
 DISTFILES=	${PORTNAME}-0.9.3.2.tar.gz:src \
@@ -11,25 +12,18 @@ DISTFILES=	${PORTNAME}-0.9.3.2.tar.gz:src \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete and powerful blogging tool
 
-DATADIR=	${PREFIX}/www/simplog
+LICENSE=	GPLv2
+
 NO_BUILD=	yes
-
+SUB_FILES=	pkg-message
 WRKSRC?=	${WRKDIR}/simplog
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-NO_STAGE=	yes
+post-extract:
+	${RMDIR} ${WRKSRC}/cache
+
 do-install:
-	@${ECHO} ""
-	@${ECHO} "===> Installing simplog"
-	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${CP} -r * ${DATADIR}
-
-post-install:
-	@${ECHO} ""
-	@${ECHO} "===> Congratulations"
-	@${ECHO} "The installation of simplog is complete, please check\
-	README in ${DATADIR} first."
-	@${ECHO} "For more informations, documentation is available at\
-	${DATADIR}/doc/index.php."
-	@${ECHO} ""
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${CP} -r * ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

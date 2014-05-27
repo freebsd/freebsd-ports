@@ -7,8 +7,13 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Thread-safe request/response queue with identifiable elements
+
+LICENSE=	AFL21
+LICENSE_NAME=	Academic Free License version 2.1
+LICENSE_FILE=	${WRKSRC}/License.txt
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USES=		perl5
 USE_PERL5=	configure

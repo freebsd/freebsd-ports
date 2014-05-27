@@ -116,6 +116,7 @@ include/wine/windows/asptlb.idl
 include/wine/windows/asynot.idl
 include/wine/windows/asysta.idl
 include/wine/windows/atlbase.h
+include/wine/windows/atlcom.h
 include/wine/windows/atliface.h
 include/wine/windows/atliface.idl
 include/wine/windows/atlwin.h
@@ -311,6 +312,7 @@ include/wine/windows/dshow.h
 include/wine/windows/dsound.h
 include/wine/windows/dsrole.h
 include/wine/windows/dvdmedia.h
+include/wine/windows/dvoice.h
 include/wine/windows/dwmapi.h
 include/wine/windows/dwrite.h
 include/wine/windows/dwrite.idl
@@ -414,6 +416,7 @@ include/wine/windows/knownfolders.h
 include/wine/windows/ks.h
 include/wine/windows/ksguid.h
 include/wine/windows/ksmedia.h
+include/wine/windows/ksuuids.h
 include/wine/windows/lm.h
 include/wine/windows/lmaccess.h
 include/wine/windows/lmapibuf.h
@@ -821,13 +824,10 @@ lib32/.libGL/dri/i965_dri.so
 %%OSREL9%%lib32/.libGL/dri/r128_dri.so
 %%OSREL10%%lib32/.libGL/dri/r128_dri.so
 lib32/.libGL/dri/r200_dri.so
-%%OSREL8%%lib32/.libGL/dri/r300_dri.so
-%%OSREL9%%lib32/.libGL/dri/r300_dri.so
-%%OSREL10%%lib32/.libGL/dri/r300_dri.so
-%%OSREL8%%lib32/.libGL/dri/r600_dri.so
-%%OSREL9%%lib32/.libGL/dri/r600_dri.so
-%%OSREL10%%lib32/.libGL/dri/r600_dri.so
+lib32/.libGL/dri/r300_dri.so
+lib32/.libGL/dri/r600_dri.so
 lib32/.libGL/dri/radeon_dri.so
+%%OSREL11%%lib32/.libGL/dri/radeonsi_dri.so
 %%OSREL8%%lib32/.libGL/dri/savage_dri.so
 %%OSREL9%%lib32/.libGL/dri/savage_dri.so
 %%OSREL10%%lib32/.libGL/dri/savage_dri.so
@@ -841,6 +841,7 @@ lib32/.libGL/dri/swrast_dri.so
 %%OSREL8%%lib32/.libGL/dri/unichrome_dri.so
 %%OSREL9%%lib32/.libGL/dri/unichrome_dri.so
 %%OSREL10%%lib32/.libGL/dri/unichrome_dri.so
+%%OSREL11%%lib32/.libGL/dri/vmwgfx_dri.so
 lib32/.libGL/libGL.so.1
 lib32/libGLU.so.1
 lib32/libX11-xcb.so.1
@@ -864,16 +865,21 @@ lib32/libdrm_intel.so.1
 lib32/libexpat.so.6
 lib32/libfontconfig.so.1
 lib32/libfreetype.so.6
+%%OSREL11%%lib32/libgcc_s.so.1
 lib32/libgettextpo.so.5
+%%OSREL11%%lib32/libglapi.so.0
 lib32/libgnutls.so.26
-lib32/libiconv.so.3
+%%OSREL8%%lib32/libiconv.so.3
+%%OSREL9%%lib32/libiconv.so.3
 lib32/libintl.so.9
 lib32/libjpeg.so.11
 lib32/liblcms2.so.2
+%%OSREL11%%lib32/libllvmradeon9.1.7.so
 lib32/libopenal.so.1
 %%OSREL11%%lib32/libpciaccess.so.0
 lib32/libpng15.so.15
 lib32/libpthread-stubs.so.0
+%%OSREL11%%lib32/libstdc++.so.6
 lib32/libwine.so
 lib32/libwine.so.1
 %%OSREL11%%lib32/libxcb-dri2.so.0
@@ -1342,6 +1348,7 @@ lib32/wine/fakedlls/itircl.dll
 lib32/wine/fakedlls/itss.dll
 lib32/wine/fakedlls/joy.cpl
 lib32/wine/fakedlls/jscript.dll
+lib32/wine/fakedlls/jsproxy.dll
 lib32/wine/fakedlls/kernel32.dll
 lib32/wine/fakedlls/keyboard.drv16
 lib32/wine/fakedlls/krnl386.exe16
@@ -1720,6 +1727,7 @@ lib32/wine/itircl.dll.so
 lib32/wine/itss.dll.so
 lib32/wine/joy.cpl.so
 lib32/wine/jscript.dll.so
+lib32/wine/jsproxy.dll.so
 lib32/wine/kernel32.dll.so
 lib32/wine/keyboard.drv16.so
 lib32/wine/krnl386.exe16.so
@@ -1793,6 +1801,7 @@ lib32/wine/libimagehlp.def
 lib32/wine/libimm32.def
 lib32/wine/libinetcomm.def
 lib32/wine/libiphlpapi.def
+lib32/wine/libjsproxy.def
 lib32/wine/libkernel.def
 lib32/wine/libkernel32.def
 lib32/wine/libloadperf.def

@@ -2,6 +2,7 @@
 
 PORTNAME=	atf
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/jmmv
@@ -16,11 +17,8 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool
 
-.if exists(/usr/lib/libatf-c.a)
-IGNORE=	is already in the base system
-.endif
-
 OPTIONS_DEFINE=	DOCS TEST
+OPTIONS_DEFAULT=TEST
 
 .include <bsd.port.options.mk>
 

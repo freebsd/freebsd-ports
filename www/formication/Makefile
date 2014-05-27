@@ -21,7 +21,6 @@ PORTDOCS=	BLURB COPYING feedback.fcn feedback.html formication.txt
 PLIST_FILES=	www/cgi-bin/formication.pl
 SUB_FILES+=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_DIRSTRY=	www/cgi-bin
@@ -32,12 +31,12 @@ post-patch:
 		${WRKSRC}/formication.pl
 
 do-install:
-	@${MKDIR} ${PREFIX}/www/cgi-bin
-	@${INSTALL_DATA} ${WRKSRC}/formication.pl ${PREFIX}/www/cgi-bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/cgi-bin
+	@${INSTALL_DATA} ${WRKSRC}/formication.pl ${STAGEDIR}${PREFIX}/www/cgi-bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 .	for i in ${PORTDOCS}
-	  @${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	  @${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .	endfor
 .endif
 

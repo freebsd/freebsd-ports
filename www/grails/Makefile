@@ -29,27 +29,26 @@ PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} \
 PLIST_DIRS=	${DATADIR:S,${PREFIX}/,,}/bin
 SUB_FILES=	edit-startGrails.sed pkg-message
 
-NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing data files in ${DATADIR}..."
 	@cd ${WRKSRC} \
-	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
+	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing and symlinking executables..."
-	@${MKDIR} ${DATADIR}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	@${REINPLACE_CMD} -f ${WRKDIR}/edit-startGrails.sed ${WRKSRC}/bin/startGrails
 .for file in ${SCRIPTFILES}
 	@${ECHO_MSG} -n " ${file}"
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${DATADIR}/bin/${file}
-	@${LN} -fs ${DATADIR}/bin/${file} ${PREFIX}/bin/${file}
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${STAGEDIR}${DATADIR}/bin/${file}
+	@${LN} -fs ${DATADIR}/bin/${file} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${WRKSRC}/doc \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 

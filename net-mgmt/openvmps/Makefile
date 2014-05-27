@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USE_RC_SUBR=	vmpsd
 
-USE_GMAKE=	yes
+USES=	gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--bindir=${PREFIX}/sbin
 

@@ -7,14 +7,17 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An XS implementation of the Heap::Simple interface
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	XS implementation of the Heap::Simple interface
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Heap-Simple>=0:${PORTSDIR}/devel/p5-Heap-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-CONFIGURE_ARGS+=-n
+CONFIGURE_ARGS=	-n
 
 .include <bsd.port.mk>

@@ -17,8 +17,7 @@ ALL_TARGET=	bsd
 LIBDIR=		-L${LUA_LIBDIR} -L${WRKSRC}/src/luasocket
 MAKE_ENV+=	INCDIR="-I${LUA_INCDIR} -I${WRKSRC}/src" LUAPATH=${LUA_MODSHAREDIR} \
 		CPATH=${LUA_MODLIBDIR}
-USE_LUA=	5.1
-WANT_LUA_VER=	5.1
+USES=		lua:51
 USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>

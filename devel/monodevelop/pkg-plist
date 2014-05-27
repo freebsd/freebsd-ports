@@ -319,6 +319,7 @@ share/locale/sv/LC_MESSAGES/monodevelop.mo
 share/locale/tr/LC_MESSAGES/monodevelop.mo
 share/locale/zh_CN/LC_MESSAGES/monodevelop.mo
 share/locale/zh_TW/LC_MESSAGES/monodevelop.mo
+share/mime/packages/monodevelop.xml
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48/apps

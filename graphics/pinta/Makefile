@@ -16,9 +16,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		Does not build
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gtksharp20 desktopfileutils
+USE_GNOME=	gtksharp20
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake mono pkgconfig
 
 MAN1=		pinta.1
 MANCOMPRESSED=	yes
@@ -27,6 +27,4 @@ NO_STAGE=	yes
 post-install:
 	-@update-desktop-database
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

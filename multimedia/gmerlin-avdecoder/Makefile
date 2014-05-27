@@ -3,7 +3,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -152,7 +152,7 @@ PLIST_SUB+=	CDIO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENJPEG}
-LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 .else
 CONFIGURE_ARGS+=--disable-openjpeg
 .endif

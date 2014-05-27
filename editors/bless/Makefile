@@ -10,8 +10,8 @@ MASTER_SITES=	http://download.gna.org/bless/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A high quality, full featured hex editor
 
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack gnomeprefix gnomedocutils gtksharp20
+USES=		gmake mono pathfix pkgconfig
+USE_GNOME=	gnomeprefix gnomedocutils gtksharp20
 GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)
@@ -31,5 +31,4 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

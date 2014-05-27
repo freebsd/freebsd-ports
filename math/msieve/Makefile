@@ -15,7 +15,7 @@ COMMENT=	Fast factorization of big integers using MPQS and GNFS
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:${PORTSDIR}/math/gmp-ecm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	ECM=1
 
 HEADERS=	mp.h msieve.h util.h

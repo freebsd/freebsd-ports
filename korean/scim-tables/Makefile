@@ -13,9 +13,8 @@ COMMENT=	SCIM table based Korean input methods
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 RUN_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

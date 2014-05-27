@@ -11,7 +11,7 @@ MAINTAINER=	freebsduser@paradisegreen.co.uk
 COMMENT=	A fast Viterbi CODEC library
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 MAKEFILE=	makefile
 

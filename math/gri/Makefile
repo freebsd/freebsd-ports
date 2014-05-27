@@ -12,8 +12,7 @@ COMMENT=	Extensible plotting language for producing scientific graphs
 
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
-USES=		readline
-USE_GMAKE=	yes
+USES=		readline gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-FreeBSD
 

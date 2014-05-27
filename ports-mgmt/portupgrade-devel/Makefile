@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	portupgrade
-PORTVERSION=	20131212
+PORTVERSION=	20140524
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
@@ -13,14 +14,16 @@ DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
+
+USES=		uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	portupgrade
-GH_COMMIT=	96722b2
+GH_COMMIT=	352086b
 GH_TAGNAME=	${GH_COMMIT}
 
 DIST_SUBDIR=	${PORTNAME}
@@ -40,16 +43,8 @@ INSTALL_TARGET+=	install-doc
 .endif
 
 # Reported that ruby-bdb is BROKEN with 2.0
-.if ${RUBY_VER} != 2.0
+.if ${RUBY_VER} != 2.0 && ${RUBY_VER} != 2.1
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
-.endif
-
-# Need to install working script(1)
-.if ${OSVERSION} < 801000
-PLIST_SUB+=	SCRIPT=""
-MAKE_ENV+=	NEED_COMPAT_SCRIPT=yes
-.else
-PLIST_SUB+=	SCRIPT="@comment "
 .endif
 
 regression-test: patch

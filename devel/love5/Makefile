@@ -16,10 +16,9 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		tar:bzip2 gmake dos2unix
+USES=		tar:bzip2 gmake dos2unix lua:51
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
-USE_LUA=	5.1+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
@@ -39,6 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|ILvoid|void|' ${WRKSRC}/src/opengl/Image.cpp \
 		${WRKSRC}/src/opengl/love_opengl.cpp
 	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d' \
+		-e "s/lua5.1/lua-${LUA_VER}/g" \
 		${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MDOCS}

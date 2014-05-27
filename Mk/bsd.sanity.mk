@@ -91,7 +91,7 @@ DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
 .endif
 
 .if defined(USE_DOS2UNIX)
-DEV_WARNING+=	"USE_DOS2UNIX is deprecated, please use USES=dos2unix"
+DEV_ERROR+=	"USE_DOS2UNIX is no longer supported, please use USES=dos2unix"
 .endif
 
 .if defined(LICENSE)

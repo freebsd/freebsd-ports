@@ -1,5 +1,5 @@
-BYTE Magazine's native benchmarks (also called BYTEmark), which are
-designed to expose the capabilities of a system's CPU, FPU, and memory
-system.
+This is a Linux/Unix port of release 2 of BYTE Magazine's BYTEmark benchmark
+program (previously known as BYTE's Native Mode Benchmarks).  It is designed
+to expose the capabilities of a system's CPU, FPU, and memory system.
 
 WWW: http://www.tux.org/~mayer/linux/bmark.html

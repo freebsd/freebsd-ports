@@ -108,6 +108,7 @@
     SUBDIR += groovy
     SUBDIR += gscheme
     SUBDIR += guile
+    SUBDIR += guile2
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
     SUBDIR += hiphop-php
@@ -145,8 +146,8 @@
     SUBDIR += linux-f10-libg2c
     SUBDIR += linux-f10-tcl85
     SUBDIR += linux-j
-    SUBDIR += lua
     SUBDIR += lua-mode.el
+    SUBDIR += lua51
     SUBDIR += lua52
     SUBDIR += luajit
     SUBDIR += lush

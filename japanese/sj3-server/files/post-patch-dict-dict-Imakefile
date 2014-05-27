@@ -1,0 +1,12 @@
+--- dict/dict/Imakefile.orig	2014-04-06 04:46:53.000000000 +0900
++++ dict/dict/Imakefile	2014-04-06 04:47:04.000000000 +0900
+@@ -59,9 +59,3 @@
+ 		$(RM) $(OBJS) $(OUTPUT)
+ 
+ InstallNamedNonExec(sj3main.dic,sj3main.dic,$(SJ3DICTDIR))
+-
+-install::
+-		if [ ! -d $(SJ3DICTDIR)/user ]; then \			@@\
+-		($(MKDIRHIER) $(SJ3DICTDIR)/user; \				@@\
+-		 chown $(SJ3OWNER) $(SJ3DICTDIR)/user; \		@@\
+-		 chgrp $(SJ3GROUP) $(SJ3DICTDIR)/user); fi

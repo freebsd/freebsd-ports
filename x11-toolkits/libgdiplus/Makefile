@@ -31,5 +31,4 @@ PLIST_FILES=	lib/libgdiplus.a \
 		lib/libgdiplus.so.0.0.0 \
 		libdata/pkgconfig/libgdiplus.pc
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

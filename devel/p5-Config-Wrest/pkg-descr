@@ -8,5 +8,4 @@ unprintable or problematic characters, sensible whitespace
 handling, support for Unicode data, nested sections, or blocks,
 of configuration data.
 
-Author: British Broadcasting Corporation
 WWW: http://search.cpan.org/dist/Config-Wrest/

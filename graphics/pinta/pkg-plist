@@ -92,5 +92,3 @@ share/icons/hicolor/scalable/apps/pinta.svg
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrm lib/pinta
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -15,7 +15,7 @@ MAN1=		pftabled.0
 PLIST_FILES=	bin/pftabled-client sbin/pftabled
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	PERLC PYTHONC
 OPTIONS_DEFAULT=	PERLC PYTHONC

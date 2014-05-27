@@ -8,7 +8,7 @@ CATEGORIES=	security
 #MASTER_SITES=	# http://download.bitdefender.com/freebsd/${BDREL}/final/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.2-fbsd${BDREL}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitDefender Console Antivirus for FreeBSD
 
 LIB_DEPENDS=	libc.so.5:${PORTSDIR}/misc/compat5x

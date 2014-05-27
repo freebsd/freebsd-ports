@@ -31,7 +31,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	pinentry-qt4:${PORTSDIR}/security/pinentry-qt4
 
-USES=		qmake zip
+USES=		dos2unix qmake zip
 USE_GNOME=	glib20
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_QT4=	corelib gui network xml script designer_build uic_build \
@@ -43,7 +43,7 @@ USE_LDCONFIG=	yes
 DESKTOP_ENTRIES="${BINARY}" "${COMMENT}" "${DATADIR}/retrosharelogo1.png" \
 		"${BINARY}" "Network;FileTransfer;" true
 
-USE_DOS2UNIX=	retroshare-gui/src/retroshare-gui.pro
+DOS2UNIX_FILES=	retroshare-gui/src/retroshare-gui.pro
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \

@@ -12,7 +12,7 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Yet Another Commodore +4 Emulator
 
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	yape
 

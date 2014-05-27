@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -19,6 +19,8 @@ COMMENT=	Practical Extraction and Report Language
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/Artistic
+LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
 CONFLICTS_INSTALL=	perl5.14-* perl5.16-* perl5.18-*
 

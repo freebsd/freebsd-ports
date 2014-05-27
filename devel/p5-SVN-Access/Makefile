@@ -7,29 +7,26 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl extension to manipulate SVN Access files
 
-BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
-		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
-RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
-		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash \
+		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-STRIP=
 PORTEXAMPLES=	svnaclmgr.pl
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${INSTALL_PROGRAM} ${PORTEXAMPLES} \
+	cd ${WRKSRC}/examples && ${INSTALL_SCRIPT} ${PORTEXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

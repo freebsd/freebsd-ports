@@ -1,5 +1,5 @@
 --- ./policyd-weight.orig	2011-09-03 15:55:02.000000000 +0200
-+++ ./policyd-weight	2014-03-15 17:15:33.000000000 +0100
++++ ./policyd-weight	2014-05-25 14:34:09.000000000 +0200
 @@ -320,7 +320,7 @@
  
  my $DEBUG        = 0;               # 1 or 0 - don't comment
@@ -133,6 +133,15 @@
      {
          mylog(warning=>"cache: couldn't change GID to user $GROUP: $!");
      }
+@@ -3588,7 +3587,7 @@
+             my    ($id, $bf, $qc, $anc, $nsc, $arc, $qb) = 
+             unpack('n   n    n    n     n     n     a*', $buf);
+ 
+-            my ($dn, $offset) = dn_expand(\$qb, 0);
++            my ($dn, $offset) = Net::DNS::Packet::dn_expand(\$qb, 0);
+ 
+             if(($id && $anc) && ($id == $oid) && ($query eq $dn))
+             {
 @@ -3842,7 +3841,7 @@
      my $helo = shift;
      my $ip   = shift;

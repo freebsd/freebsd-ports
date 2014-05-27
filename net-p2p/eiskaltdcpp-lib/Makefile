@@ -18,9 +18,7 @@ BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
 PROJECTHOST=	eiskaltdc
 
-USE_XZ=		yes
-USE_GCC=	yes
-USES=		cmake gettext
+USES=		cmake gettext tar:xz compiler:gcc-c++11-lib
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
@@ -38,9 +36,9 @@ CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF
 CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1
+USES+=		lua
 CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=ON
-IGNORE=	crashes on connect attempt if built with Lua support
+#IGNORE=	crashes on connect attempt if built with Lua support
 .else
 CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=OFF
 .endif

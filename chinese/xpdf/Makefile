@@ -40,19 +40,22 @@ TRAD_FILES=	Adobe-CNS1.cidToUnicode Big5.unicodeMap \
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-simplified
-	cd ${WRKSRC}/xpdf-chinese-simplified \
-		&& ${INSTALL_DATA} ${SIMP_FILES} ${STAGEDIR}${DATADIR}/chinese-simplified
+	cd ${WRKSRC}/xpdf-chinese-simplified && \
+	    ${INSTALL_DATA} ${SIMP_FILES} \
+		${STAGEDIR}${DATADIR}/chinese-simplified
 	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-traditional
-	cd ${WRKSRC}/xpdf-chinese-traditional \
-		&& ${INSTALL_DATA} ${TRAD_FILES} ${STAGEDIR}${DATADIR}/chinese-traditional
-	${INSTALL_DATA} ${WRKSRC}/dot.xpdfrc ${STAGEDIR}${DATADIR}/chinese-traditional
+	cd ${WRKSRC}/xpdf-chinese-traditional && \
+	    ${INSTALL_DATA} ${TRAD_FILES} \
+		${STAGEDIR}${DATADIR}/chinese-traditional
+	${INSTALL_DATA} ${WRKSRC}/dot.xpdfrc \
+	    ${STAGEDIR}${DATADIR}/chinese-traditional
 	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-traditional/CMap
 	cd ${STAGEDIR}${DATADIR}/chinese-traditional/CMap && \
-		${FIND} ${ADOBECMAPDIR}/ac15/CMap \
-			-type f -exec ${LN} -s -f {} . \;
+	    ${FIND} ${ADOBECMAPDIR}/ac15/CMap \
+		-type f -exec ${LN} -s -f {} . \;
 	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-simplified/CMap
 	cd ${STAGEDIR}${DATADIR}/chinese-simplified/CMap && \
-		${FIND} ${ADOBECMAPDIR}/ag15/CMap \
-			-type f -exec ${LN} -s -f {} . \;
+	    ${FIND} ${ADOBECMAPDIR}/ag15/CMap \
+		-type f -exec ${LN} -s -f {} . \;
 
 .include <bsd.port.mk>

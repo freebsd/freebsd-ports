@@ -10,7 +10,7 @@ MAINTAINER=	freebsduser@paradisegreen.co.uk
 COMMENT=	A Reed-Solomon CODEC library
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 MAKEFILE=	makefile
 

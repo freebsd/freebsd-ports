@@ -3,6 +3,7 @@
 
 PORTNAME=	xpaint
 PORTVERSION=	2.9.10.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg \
+		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \

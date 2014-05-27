@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.4
-PORTREVISION=	3
+PORTREVISION=	5
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -245,7 +245,8 @@ X264_CONFIGURE_ENABLE=	x264
 ZVBI_LIB_DEPENDS=	libzvbi.so:${PORTSDIR}/devel/libzvbi
 ZVBI_CONFIGURE_ENABLE=	zvbi
 
-USES=		desktop-file-utils iconv perl5 gmake pkgconfig tar:xz
+USES=		desktop-file-utils iconv libtool perl5 gmake pkgconfig tar:xz
+INSTALL_TARGET=	install-strip
 USE_PERL5=	build
 USE_CSTD=	gnu99
 WANT_GNOME=	yes
@@ -308,10 +309,9 @@ USE_QT4=	gui corelib moc_build rcc_build uic_build
 
 # This may become mandantory in the future
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=5.1+
-WANT_LUA_VER=5.1
-CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
-CONFIGURE_ARGS+=--enable-lua LUAC=luac-${WANT_LUA_VER}
+USES+=	lua:51
+CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
+CONFIGURE_ARGS+=--enable-lua LUAC=${LUAC_CMD}
 .else
 CONFIGURE_ARGS+=--disable-lua
 .endif
@@ -420,7 +420,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^DEFAULT_INCLUDES/s|$$| $$(GNUTLS_CFLAGS)|g' \
 		${WRKSRC}/modules/misc/Makefile.in
 
-post-install:
+add-plist-data:
 	@if [ -n "${MTREE_FILE}" ]; then \
 	{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
 		awk '{ sub(/^\.$$/, "", $$1); \

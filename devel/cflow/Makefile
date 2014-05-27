@@ -13,9 +13,6 @@ COMMENT=	A call graph generator for C code
 
 CONFLICTS=	bsdcflow-[0-9]* gnucflow-[0-9]*
 
-USE_GMAKE=	yes
-MAN1=		cflow.1
-MANCOMPRESSED=	yes
+USES=		gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -27,17 +27,14 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc \
 		--program-transform-name= --disable-cppunit --disable-debug \
 		--with-toluaxx=${TOLUAXX_CMD}
-CONFIGURE_ENV+=	LUA_LIBS="-L${LUA_LIBDIR} -llua" \
+CONFIGURE_ENV+=	LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}" \
 		LUA_CFLAGS="-I${LUA_INCDIR}" \
 		TOLUAXX="${TOLUAXX_CMD}"
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_LUA=	5.1
-LUA_COMPS=	toluaxx
-USES=		openal:al,alut pathfix pkgconfig compiler:c++11-lib
-USE_BZIP2=	YES
+USES=		openal:al,alut pathfix pkgconfig compiler:c++11-lib tar:bzip2
 
 OPTIONS_DEFINE=	DOCS
 

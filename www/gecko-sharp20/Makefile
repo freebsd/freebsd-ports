@@ -13,8 +13,7 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings to embed Mozilla
 
 USE_GNOME=	gtksharp20
-USES=		gmake pathfix pkgconfig gecko tar:bzip2
+USES=		gmake mono pathfix pkgconfig gecko tar:bzip2
 GNU_CONFIGURE=	yes
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

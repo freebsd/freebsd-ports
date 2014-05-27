@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	netifaces
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.10.3
 CATEGORIES=	net python
-MASTER_SITES=	http://alastairs-place.net/projects/netifaces/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	count@211.ru
 COMMENT=	Getting network addresses from Python
+
+LICENSE=	MIT
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

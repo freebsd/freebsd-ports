@@ -2,7 +2,7 @@
 
 PORTNAME=	web2c
 PORTVERSION=	20120701
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -12,9 +12,9 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX implementation translating WEB to C
 
-LIB_DEPENDS=	openjpeg:${PORTSDIR}/graphics/openjpeg \
-		png15:${PORTSDIR}/graphics/png \
-		zzip:${PORTSDIR}/devel/zziplib
+LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libzzip.so:${PORTSDIR}/devel/zziplib
 
 USE_TEX=	texlive kpathsea
 USES=		pkgconfig gmake tar:xz

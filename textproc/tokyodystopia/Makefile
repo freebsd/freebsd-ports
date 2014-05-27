@@ -12,7 +12,7 @@ COMMENT=	A full-text search system based on Tokyo Cabinet
 LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include
 

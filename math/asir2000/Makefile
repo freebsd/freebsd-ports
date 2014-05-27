@@ -2,33 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	asir
-PORTVERSION=	20110810
-PORTREVISION=	1
+PORTVERSION=	20140513
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \
-		http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
+		http://www.hboehm.info/gc/gc_source/
 DISTFILES=	${ASIR_SRC} ${ASIR_DOC} ${GC_SRC}
 EXTRACT_ONLY=	${ASIR_SRC}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	The system Risa/Asir is a general computer algebra system
 
-LIB_DEPENDS=	pari-gmp.2:${PORTSDIR}/math/pari
+LICENSE=	RALUL
+LICENSE_NAME=	Risa/Asir Limited Use License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+LIB_DEPENDS=	libpari.so:${PORTSDIR}/math/pari
 
 MAKE_JOBS_UNSAFE=	yes
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari --with-gc7
+CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-interval --with-pari --with-asir-gc
 ASIR_SRC_VERSION=	${PORTVERSION}
-ASIR_DOC_VERSION=	20110808
-GC_VERSION=	7.1
+ASIR_DOC_VERSION=	20131129
+GC_VERSION=	7.2
 ASIR_SRC=	asir-${ASIR_SRC_VERSION}${EXTRACT_SUFX}
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}${EXTRACT_SUFX}
 GC_SRC=		gc-${GC_VERSION}${EXTRACT_SUFX}
-MAN1=		asir.1
 WRKSRC=		${WRKDIR}/asir2000
 
 LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
@@ -36,10 +39,12 @@ LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
 		num primdec primdec_lex primdec_mod ratint robot solve sp \
 		sturm sym weight xm
 
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
 PORTDATA=	*
 
-NO_STAGE=	yes
+#NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -51,23 +56,27 @@ post-extract:
 	@${MKDIR} ${WRKDIR}/asirdoc
 	@${TAR} xfz ${DISTDIR}/${ASIR_DOC} -C ${WRKDIR}/asirdoc
 
+post-patch:
+	${REINPLACE_CMD} '-e s|$${DESTDIR}|${STAGEDIR}|g' \
+		${WRKSRC}/lib/Makefile.am
+
 post-install:
-	@${MKDIR} ${DATADIR}
-	@(\
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(\
 	   cd ${WRKSRC}/lib ; \
 	   for i in ${LIB_DATA} ; do \
-		${INSTALL_DATA} $$i ${DATADIR} ; \
+		${INSTALL_DATA} $$i ${STAGEDIR}${DATADIR} ; \
 	   done ;\
 	   make install-doc \
 	)
-	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_asir
-	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_plot
-	@${LN} -fs ${PREFIX}/bin/asir ${DATADIR}/ox_launch
-	@${LN} -fs ${DATADIR} ${PREFIX}/lib/asir
-	@${INSTALL_MAN} ${WRKDIR}/asirdoc/${MAN1} ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKDIR}/asirdoc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	${LN} -fs ${PREFIX}/bin/asir ${STAGEDIR}${DATADIR}/ox_asir
+	${LN} -fs ${PREFIX}/bin/asir ${STAGEDIR}${DATADIR}/ox_plot
+	${LN} -fs ${PREFIX}/bin/asir ${STAGEDIR}${DATADIR}/ox_launch
+	${LN} -fs ${DATADIR} ${STAGEDIR}${PREFIX}/lib/asir
+	${INSTALL_MAN} ${WRKDIR}/asirdoc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/asirdoc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>

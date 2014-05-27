@@ -14,31 +14,25 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake
-USE_AUTOTOOLS=	autoconf:env libtool
+USES=		gmake libtool lua:51
+USE_AUTOTOOLS=	autoconf:env
 
 VER=		${PORTVERSION:R}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} VER="${VER}"
 
+GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC -DPIC
 ALL_TARGET=	# none
 
-WANT_LUA=	yes
-WANT_LUA_VER=	5.0+
-
 CONFIGURE_ARGS+=--program-suffix=${VER}
 
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_LUA:Mlua-5.*} != ""
-USE_LUA=	yes
-LUA_COMPS=	lua:build
 CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
 		--with-luaincl=${LUA_INCDIR} \
 		--with-lualib=${LUA_LIBDIR}
-.endif
 
 OCTAVE_VER_CMD=	${LOCALBASE}/bin/octave-config -v 2>/dev/null || ${TRUE}
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	${SETENV} OCTAVE_VER=$$(${OCTAVE_VER_CMD}) \

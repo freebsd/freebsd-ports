@@ -16,10 +16,4 @@ variant of the multimethod, according to the argument types specified in
 the variants' definitions (see "Finding the "nearest" multimethod" for a 
 definition of "closest").
 
-The result is something akin to C++'s function overloading, but more 
-intelligent, since multimethods take the inheritance relationships of each 
-argument into account. Another way of thinking of the mechanism is that it 
-performs polymorphic dispatch on every argument of a method, not just the 
-first.
-
 WWW: http://search.cpan.org/dist/Class-Multimethods/

@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mcollective
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	A modern scalable datacenter orchestration framework
+COMMENT=	Modern scalable datacenter orchestration framework
 
 RUN_DEPENDS=	rubygem-stomp>=0:${PORTSDIR}/devel/rubygem-stomp
 
@@ -15,12 +15,12 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	mcollectived
 
-RUBY_SHEBANG_FILES=	bin/mcollectived bin/mco bin/mc-call-agent
+RUBY_SHEBANG_FILES=	bin/mcollectived bin/mco
 
 # don't make .bak files
 REINPLACE_ARGS=	-i ""
 
-SCRIPTS=	mco mc-call-agent
+SCRIPTS=	mco
 
 SUB_LIST+=	RUBY=${RUBY}
 

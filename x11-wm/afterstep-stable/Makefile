@@ -3,7 +3,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	stable
@@ -12,14 +12,14 @@ DISTNAME=	AfterStep-${PORTVERSION}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A stable version of the AfterStep window manager
 
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		gif:${PORTSDIR}/graphics/giflib \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libgif.so:${PORTSDIR}/graphics/giflib \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 
 USES=		gmake pkgconfig shebangfix tar:bzip2
@@ -41,16 +41,6 @@ CONFIGURE_ARGS+=--disable-ascp \
 MAKE_ENV+=	HOME=-
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-devel-${PORTVERSION}
-
-MAN1=		ASDatabase.1x ASDatabaseEntry.1x AfterStep.1x Align.1x \
-		Animate.1x AnimateTypes.1x Arrange.1x AutoExec.1x \
-		BalloonContents.1x Base.1x Bevel.1x ColorScheme.1x \
-		Feel.1x FeelWindowBox.1x Functions.1x Gravity.1x Look.1x \
-		MyBackground.1x MyFrame.1x MyStyle.1x Pager.1x \
-		PagerDecorations.1x Placement.1x Sound.1x SoundEvents.1x \
-		SupportedHints.1x TbarLayout.1x Wharf.1x WharfFolders.1x \
-		WharfSounds.1x WinCommand.1x WinList.1x WinTabs.1x \
-		afterstep_faq.1x asimagexml.1x
 
 .if defined(WITH_DIFFERENT_LOOKNFEELS)
 CONFIGURE_ARGS+=	--enable-different-looknfeels
@@ -102,5 +92,10 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,%%STATIC_LIBEXECINFO%%,${STATIC_LIBEXECINFO},g' \
 		${WRKSRC}/configure
+
+.if exists(${PREFIX}/share/gnome/wm-properties)
+pre-install:
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/gnome/wm-properties
+.endif
 
 .include <bsd.port.post.mk>

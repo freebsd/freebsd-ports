@@ -1,3 +1,4 @@
+man/man1/emms-print-metadata.1.gz
 %%EMACS_SITE_LISPDIR%%/emms/emms-auto.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-bookmarks.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-bookmarks.elc

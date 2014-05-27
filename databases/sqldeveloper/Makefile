@@ -8,7 +8,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
 DIST_SUBDIR=	oracle
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical tool for database development
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

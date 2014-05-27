@@ -1,6 +1,9 @@
 bin/bins
 bin/bins_edit
 bin/bins_txt2xml
+man/man1/bins-edit-gui.1.gz
+man/man1/bins.1.gz
+man/man1/bins_edit.1.gz
 %%DATADIR%%/binsrc
 %%DATADIR%%/templates.joi/details.html
 %%DATADIR%%/templates.joi/footer.html

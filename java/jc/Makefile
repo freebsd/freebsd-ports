@@ -19,8 +19,8 @@ NO_PACKAGE=	Takes too many resources to build
 
 MAN1=		jc.1
 
+USES=		gmake
 USE_JAVA=	yes
-USE_GMAKE=	yes
 JAVA_BUILD=	jre
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

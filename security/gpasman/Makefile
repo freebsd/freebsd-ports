@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password manager that stores password information encrypted
 
 PLIST_FILES=	bin/gpasman
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"

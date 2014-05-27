@@ -3,6 +3,7 @@
 
 PORTNAME=	libsocketcpp
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/libsocket/${PORTNAME}-stable/${PORTVERSION}
 
@@ -10,8 +11,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper library to the sockets
 
 LICENSE=	LGPL21 # (or later)
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsocketcpp.so
 
 .include <bsd.port.mk>

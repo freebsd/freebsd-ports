@@ -1,3 +1,4 @@
+%%LUA_MODLIBDIR%%/libluajava-1.1.so
 %%PORTDOCS%%%%DOCSDIR%%/br/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/br/history.html
 %%PORTDOCS%%%%DOCSDIR%%/br/index.html
@@ -23,7 +24,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/us/API/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/us/API/package-list
+%%JDK17%%%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/background.gif
 %%PORTDOCS%%%%DOCSDIR%%/us/API/resources/inherit.gif
+%%JDK17%%%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/tab.gif
+%%JDK17%%%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/titlebar.gif
+%%JDK17%%%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/titlebar_end.gif
 %%PORTDOCS%%%%DOCSDIR%%/us/API/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/us/API/stylesheet.css
 %%PORTDOCS%%%%DOCSDIR%%/us/examples.html
@@ -33,12 +38,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/us/luajava_128.png
 %%PORTDOCS%%%%DOCSDIR%%/us/manual.html
 %%JAVAJARDIR%%/luajava-1.1.jar
-%%LUA_MODLIBDIR%%/libluajava-1.1.so
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/br
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org/keplerproject/luajava
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org/keplerproject
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/us
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

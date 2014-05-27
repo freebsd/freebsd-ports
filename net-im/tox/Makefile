@@ -3,6 +3,7 @@
 
 PORTNAME=	ProjectTox-Core
 PORTVERSION=	0.140514
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
 
 LICENSE=	LGPL21

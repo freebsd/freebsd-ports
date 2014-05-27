@@ -91,10 +91,10 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 .else
 do-install:
-	@${MKDIR} ${PREFIX}/lib/frei0r-1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/frei0r-1
 . for FILE in ${FREI0R_PLUGINS}
 	@${INSTALL_LIB} ${BUILD_WRKSRC}/.libs/${FILE}.so \
-		${PREFIX}/lib/frei0r-1/${FILE}.so
+		${STAGEDIR}${PREFIX}/lib/frei0r-1/${FILE}.so
 . endfor
 .endif #!defined(FREI0R_PLUGINS)
 

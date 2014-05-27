@@ -12,8 +12,7 @@ COMMENT=	Library to drive graphical LC- and OLED displays
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

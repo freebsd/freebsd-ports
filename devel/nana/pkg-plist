@@ -1,11 +1,11 @@
 bin/nana
 bin/nana-c++lg
 bin/nana-clg
-bin/nana-run
-bin/nana-trace
 bin/nana-libtrace
-bin/nana-sfg
+bin/nana-run
 bin/nana-sfdir
+bin/nana-sfg
+bin/nana-trace
 include/DI.h
 include/DL.h
 include/GDB.h
@@ -13,10 +13,10 @@ include/I.h
 include/L.h
 include/L_buffer.h
 include/L_times.h
-include/cycles.h
 include/Q.h
 include/Qstl.h
 include/calls.h
+include/cycles.h
 include/eiffel.h
 include/nana-config.h
 include/nana.h
@@ -25,6 +25,15 @@ include/now.h
 lib/libnana.a
 libexec/nana-trace.gdb
 libexec/nanafilter
+man/man1/nana-clg.1.gz
+man/man1/nana.1.gz
+man/man3/DI.3.gz
+man/man3/DL.3.gz
+man/man3/I.3.gz
+man/man3/L.3.gz
+man/man3/Q.3.gz
+man/man3/Qstl.3.gz
+man/man3/nana.3.gz
 %%DATADIR%%/nana-run-init.gdb
 %%DATADIR%%/nana-run.gdb
 @dirrm %%DATADIR%%

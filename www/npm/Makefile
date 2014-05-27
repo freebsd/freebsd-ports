@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.12
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -21,7 +21,6 @@ MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 REINPLACE_ARGS=	-i ''
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
-PLIST_SUB=	MANPREFIX=lib/node_modules/npm
 
 NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 NODE_DEVEL_RUN_DEPENDS_OFF=	node>=0.8.0:${PORTSDIR}/www/node
@@ -58,10 +57,11 @@ maketar: do-clean
 	@${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz ${GITHUB_TARBALL}
 	@${MKDIR} ${MS_WRKSRC}/${MS_DISTNAME}/
 	@${TAR} -xf ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz -C ${MS_WRKSRC}/${MS_DISTNAME}/ --strip-components 1
+	@${REINPLACE_CMD} -e 's|ronn|marked|g' ${MS_WRKSRC}/${MS_DISTNAME}/Makefile ${MS_WRKSRC}/${MS_DISTNAME}/scripts/doc-build.sh
 	@${REINPLACE_CMD} -e '/manRoot/ s|, "share"||' ${MS_WRKSRC}/${MS_DISTNAME}/lib/build.js ${MS_WRKSRC}/${MS_DISTNAME}/lib/unbuild.js
-	@${REINPLACE_CMD} -e '1 s|#!/bin/bash|#!${LOCALBASE}/bin/bash|; s|perl -pi|perl -p|' ${MS_WRKSRC}/${MS_DISTNAME}/scripts/doc-build.sh
+	@${REINPLACE_CMD} -e '1 s|#!/bin/bash|#!${LOCALBASE}/bin/bash|; s|make|gmake|; s|perl -pi|perl -p|' ${MS_WRKSRC}/${MS_DISTNAME}/scripts/doc-build.sh
 	@${GREP} -lr share/man ${MS_WRKSRC}/${MS_DISTNAME}/doc/ ${MS_WRKSRC}/${MS_DISTNAME}/scripts/ | ${XARGS} -I % ${REINPLACE_CMD} 's|share/man|man|g' %
-	@cd ${MS_WRKSRC}/${MS_DISTNAME}/ && ${MAKE_CMD}
+	@cd ${MS_WRKSRC}/${MS_DISTNAME}/ && ${GMAKE}
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type d -exec ${CHMOD} 755 '{}' \;
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -exec ${CHMOD} 644 '{}' \;
 	@${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -name '*.sh' -exec ${CHMOD} 755 '{}' \;

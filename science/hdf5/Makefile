@@ -3,6 +3,7 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.8.13
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/releases/${DISTNAME}/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/releases/${DISTNAME}/src/ \
@@ -27,6 +28,7 @@ CONFIGURE_ARGS=	--enable-cxx \
 		--with-zlib=/usr
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool tar:bzip2
 

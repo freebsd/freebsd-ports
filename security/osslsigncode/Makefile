@@ -15,7 +15,7 @@ PLIST_FILES=	bin/osslsigncode
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_OPENSSL=	yes
 
 .if !defined(WITHOUT_CURL)

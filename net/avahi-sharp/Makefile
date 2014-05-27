@@ -9,9 +9,8 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for Avahi service discovery
 
 LIB_DEPENDS=	libavahi-core.so:${PORTSDIR}/net/avahi-app
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
+USES=		mono
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-sharp
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
@@ -28,5 +27,4 @@ post-patch:
 		${BUILD_WRKSRC}/avahi-sharp.dll.config.in
 	@${CP} ${WRKSRC}/avahi-sharp/avahi-sharp.dll.config.in ${WRKSRC}/avahi-sharp/avahi-sharp.dll.config
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include "${MASTERDIR}/Makefile"

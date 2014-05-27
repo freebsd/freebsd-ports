@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-demo-server
 DISTNAME=	ETQW-demo2-server-full.r1.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ayunyan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enemy Territory: QUAKE Wars Demo Server for Linux
 
 NO_CDROM=	Redistribution is limited

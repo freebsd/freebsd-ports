@@ -3,6 +3,7 @@
 
 PORTNAME=	fxite
 PORTVERSION=	0.92
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -21,12 +22,11 @@ GH_ACCOUNT=	yetanothergeek
 GH_TAGNAME=	FXITE-0_91
 GH_COMMIT=	c2ecac3
 
-USES=		gmake pkgconfig
-USE_LUA=	yes
+USES=		gmake pkgconfig lua:51 desktop-file-utils
 USE_AUTOTOOLS=	aclocal autoconf automake
 ACLOCAL_ARGS=	--force -I m4
 AUTOMAKE_ARGS=	--gnu --add-missing --copy
-CXXFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC -Wno-invalid-source-encoding -Wno-format
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS+=--with-system-lua \
 		--with-lua-pkg=lua-${LUA_VER}

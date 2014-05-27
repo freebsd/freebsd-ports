@@ -5,7 +5,7 @@
      // flags passed to the linker
  
 -#define SKEL    "/usr/share/bisonc++"
-+#define SKEL    "%%PREFIX%%/share/"${PROGRAM}"-%%PORTVERSION%%"
++#define SKEL    "%%PREFIX%%/share/"${PROGRAM}
      // the directory where the skeleton files are installed
      // Recompile options/data.cc if the skeleton location changes
  
@@ -22,15 +22,15 @@
      // the directory whre the manual page is stored
  
 -#define MANUAL   "/usr/share/doc/"${PROGRAM}"-doc/manual"
-+#define MANUAL   "%%PREFIX%%/share/doc/"${PROGRAM}"-%%PORTVERSION%%/manual"
++#define MANUAL   "%%PREFIX%%/share/doc/"${PROGRAM}"/manual"
      // the directory whre the manual page is stored
  
 -#define STD     "/usr/share/doc/"${PROGRAM}
-+#define STD     "%%PREFIX%%/share/doc/"${PROGRAM}"-%%PORTVERSION%%"
++#define STD     "%%PREFIX%%/share/doc/"${PROGRAM}
      // the directory where the standard documentation is stored 
  
 -#define EXTRA   "/usr/share/doc/"${PROGRAM}"-doc"
-+#define EXTRA   "%%PREFIX%%/share/doc/"${PROGRAM}"-%%PORTVERSION%%"
++#define EXTRA   "%%PREFIX%%/share/doc/"${PROGRAM}
      // the directory where the extra documentation is stored 
  
  

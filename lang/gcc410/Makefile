@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc410
-PORTVERSION=	4.10.0.s20140518
+PORTVERSION=	4.10.0.s20140525
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -33,7 +33,6 @@ GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USES=		gmake iconv perl5 tar:bzip2
-USE_GCC=	yes
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
@@ -51,6 +50,9 @@ BOOTSTRAP_DESC=		Build using a full bootstrap
 
 .include <bsd.port.pre.mk>
 
+.if exists(/usr/bin/clang) && ${ARCH} == "amd64"
+USE_GCC=	yes
+.endif
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .else

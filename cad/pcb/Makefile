@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcb
-PORTVERSION=	20110918
-PORTREVISION=	3
+PORTVERSION=	20140316
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,25 +20,44 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 CONFLICTS=	gts-[0-9]*
 
 USE_AUTOTOOLS=	autoconf
-USES=		gmake pkgconfig tk:run
+USES=		gmake pkgconfig tk:run shared-mime-info desktop-file-utils
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-pthread -L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
-PORTDOCS=	pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\
-		examples tutorial gcode.png gcode_control_img.png		\
-		gcode_tool_path.png
+PORTDOCS= \
+	pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\
+	examples tutorial gcode.png gcode_control_img.png		\
+	gcode_tool_path.png
 
-OPTIONS_DEFINE=	DOCS NLS X11
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=MOTIF GTK NONE
-OPTIONS_DEFAULT=DOCS X11 GTK
+OPTIONS_DEFAULT=DOCS GTK
+DOCS_CONFIGURE_ENABLE=	doc
+DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR}
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE} \
+			${ICONV_CONFIGURE_ARG}
+NLS_CONFIGURE_OFF=	--without-libintl \
+			--without-iconv
+NLS_USES=	gettext iconv
+.for L in fr nl ru pt_BR
+NLS_PLIST_FILES+=	share/locale/${L}/LC_MESSAGES/pcb.mo
+.endfor
 MOTIF_DESC=	Motif widgets
+MOTIF_USES=	motif
+MOTIF_CONFIGURE_ON=	--with-gui=lesstif
+MOTIF_CONFIGURE_ENV=	WISH=${WISH}
 GTK_DESC=	GIMP ToolKit widgets
+GTK_USE=	GNOME=gtk20
+GTK_CONFIGURE_ON=	--with-gui=gtk
+GTK_CONFIGURE_ENV=	WISH=${WISH}
 NONE_DESC=	No GUI support
+NONE_CONFIGURE_ON=	--without-gui
+NONE_CONFIGURE_ENV=	WISH=/usr/bin/true
 
 .for a in ia64 powerpc sparc64
 BROKEN_${a}=	Does not compile on ia64, powerpc, or sparc64
@@ -47,39 +65,8 @@ BROKEN_${a}=	Does not compile on ia64, powerpc, or sparc64
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=--enable-nls \
-		${ICONV_CONFIGURE_ARG} \
-		--with-libintl-prefix=${LOCALBASE}
-USES+=		gettext iconv
-.for L in fr nl ru
-PLIST_FILES+=	share/locale/${L}/LC_MESSAGES/pcb.mo
-.endfor
-.else
-CONFIGURE_ARGS+=--disable-nls \
-		--without-libiconv \
-		--without-libintl
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-.if ${PORT_OPTIONS:MNONE}
-CONFIGURE_ARGS+=	--without-gui
-CONFIGURE_ENV+=		WISH=${TRUE}
-.elif ${PORT_OPTIONS:MMOTIF}
-USES+=		motif
-CONFIGURE_ARGS+=	--with-gui=lesstif
-CONFIGURE_ENV+=		WISH=${WISH}
-.elif ${PORT_OPTIONS:MGTK}
-USE_GNOME=	gtk20 desktopfileutils
-CONFIGURE_ARGS+=	--with-gui=gtk
-CONFIGURE_ENV+=		WISH=${WISH}
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MDOCS}
 INFO=		pcb
-.else
-CONFIGURE_ARGS+=	--disable-doc
 .endif
 
 .include <bsd.port.mk>

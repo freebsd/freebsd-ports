@@ -15,7 +15,7 @@ BROKEN=		Fails to link
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
-USE_GMAKE=	yes
+USES=		gmake
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	README UserGuide.pdf

@@ -3,7 +3,7 @@
 
 PORTNAME=	gnat_util
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR= ${MS_SUBDIR}
@@ -35,6 +35,9 @@ post-extract:
 .endfor
 
 post-install:
+	# impunit is needed for GPS menus, just provide the source files
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/gcc/ada/impunit.* \
+		${STAGEDIR}${PREFIX}/include/gnat_util
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
 	   ${SORT} >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | \

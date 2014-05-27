@@ -13,7 +13,7 @@ COMMENT=	Universal Non-Uniform RANdom number generators
 LIB_DEPENDS=	rngstreams:${PORTSDIR}/math/rngstreams
 
 LICENSE=	GPLv2
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-urng-rngstream --with-urng-default=rngstream \
 		--enable-info

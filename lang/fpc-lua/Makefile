@@ -18,6 +18,6 @@ OPTIONS_DEFINE=	LUA
 LUA_DESC=	Install lua library
 OPTIONS_DEFAULT=	LUA
 
-LUA_LIB_DEPENDS=	liblua-5.1.so:${PORTSDIR}/lang/lua
+LUA_LIB_DEPENDS=	liblua-5.1.so:${PORTSDIR}/lang/lua51
 
 .include "${MASTERDIR}/Makefile"

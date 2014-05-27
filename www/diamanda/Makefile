@@ -25,15 +25,14 @@ USE_PYTHON=	yes
 USES=		tar:bzip2 gettext
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/home/piotr/svn/diamanda|${PREFIX}/${WWWDIR}|g' ${WRKSRC}/settings.py ${WRKSRC}/urls.py
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
 post-install:

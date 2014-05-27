@@ -624,6 +624,7 @@
     SUBDIR += opengtl
     SUBDIR += openimageio
     SUBDIR += openjpeg
+    SUBDIR += openjpeg15
     SUBDIR += openjump
     SUBDIR += opennurbs
     SUBDIR += openrm

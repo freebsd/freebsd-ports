@@ -10,7 +10,7 @@ COMMENT=	Web based conference management software
 
 RUN_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
-		pdftohtml:${PORTSDIR}/textproc/pdftohtml \
+		pdf-to-html:${PORTSDIR}/textproc/pdftohtml \
 		zip:${PORTSDIR}/archivers/zip
 
 USE_PHP=	mysqli gd session ctype
@@ -26,11 +26,10 @@ SUB_FILES=	pkg-message
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.vanheusden.com/listener/ \
 		http://redundancy.redundancy.org/mirror/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A program to listen for and record sound activity
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile

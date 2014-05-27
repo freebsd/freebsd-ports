@@ -22,11 +22,11 @@ RUN_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
 		${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
-USES=		zip
+USES=		dos2unix zip
 USE_ANT=	yes
 USE_JAVA=	1.3+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_DOS2UNIX=	build.xml
+DOS2UNIX_FILES=	build.xml
 
 ALL_TARGET=	package
 MAKE_ENV+=	CLASSPATH=${JYTHON_PREFIX}

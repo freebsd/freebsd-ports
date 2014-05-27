@@ -23,10 +23,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
 PORTSCOUT=	limit:^0\.7\.
 
-USES=		gmake openal dos2unix
+USES=		gmake openal dos2unix lua:51
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
-USE_LUA=	5.1+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
@@ -47,6 +46,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d' \
+		-e "s/lua5.1/lua-${LUA_VER}/g" \
 		${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MDOCS}

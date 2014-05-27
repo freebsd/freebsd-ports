@@ -13,7 +13,7 @@ COMMENT=	VLGothic Japanese TrueType fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
@@ -55,10 +55,8 @@ do-install:
 post-su-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

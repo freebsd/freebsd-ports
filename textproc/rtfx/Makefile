@@ -14,7 +14,7 @@ LIB_DEPENDS=	mba:${PORTSDIR}/devel/libmba \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --datarootdir=${PREFIX}
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/rtfx
 MAN1=		rtfx.1

@@ -6,7 +6,7 @@ PORTVERSION=	0.8.1
 CATEGORIES=	games
 MASTER_SITES=	#
 
-MAINTAINER=	miles@aronnax.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Race for the Galaxy AI, a computer version of the Rio Grande card game
 
 RESTRICTED=	Contains licensed graphics that must be fetched manually

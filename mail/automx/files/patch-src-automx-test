@@ -1,38 +1,37 @@
---- src/automx-test.orig	2013-03-30 18:45:31.000000000 +0000
-+++ src/automx-test	2013-12-21 20:34:11.520592847 +0000
+--- src/automx-test.orig	2014-01-03 08:38:38.000000000 +0000
++++ src/automx-test	2014-04-14 22:20:41.000000000 +0100
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  #
  # automx - auto configuration service
  # Copyright (c) 2011-2013 [*] sys4 AG
-@@ -18,19 +18,20 @@
- # You should have received a copy of the GNU General Public License
+@@ -19,17 +19,19 @@
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ #
  #
 +# Ported to sh to avoid a dependency on bash by crees@FreeBSD.org
 +#
- #
- VERSION="0.9.2"
+ VERSION="0.10.1"
  
  trap clean_exit EXIT
 -function clean_exit() {
 -	[[ -f "$OLREQUEST" ]] && rm "$OLREQUEST"
 -	[[ -f "$MBREQUEST" ]] && rm "$MBREQUEST"
+-	[[ -f "$MBCRESPONSE" ]] && rm "$MBCRESPONSE"
 +clean_exit() {
-+	rm -f "$OLREQUEST" "$MBREQUEST"
++	[ -f "$OLREQUEST" ] && rm "$OLREQUEST"
++	[ -f "$MBREQUEST" ] && rm "$MBREQUEST"
++	[ -f "$MBCRESPONSE" ] && rm "$MBCRESPONSE"
  }
  
  # We need a mail address
 -if [[ $1 ]]; then
 +if [ -n "$1" ]; then
  	PROFILE="$1"
--else 
-+else
+ else 
  	echo "Provide the mail address for which configuration settings should be retrieved."
- 	read -ep "Mail address: " PROFILE
- fi
-@@ -43,7 +44,7 @@
+@@ -44,7 +46,7 @@
  
  # Test Mozilla schema
  AUTOCONF="autoconfig.$DOMAIN"
@@ -41,7 +40,7 @@
  	CON="http://$AUTOCONF/mail/config-v1.1.xml?emailaddress=$PROFILE"
  	echo
  	echo "Testing Autoconfig ..."
-@@ -59,13 +60,12 @@
+@@ -60,13 +62,13 @@
  
  # Test Microsoft schema
  AUTODISC="autodiscover.$DOMAIN"
@@ -49,30 +48,27 @@
 +if [ -z "$(dig +short $AUTODISC)" ]; then
  	# default domain does not exist, try to discover non-default
  	AUTODISC="$(dig +short -t srv _autodiscover._tcp.$DOMAIN)"
--  	AUTODISC="${AUTODISC//* /}"
--  	AUTODISC="${AUTODISC%.*}"
-+	AUTODISC="$(echo $AUTODISC | sed 's,[^ ]* ,,g;s,\.[^.]*$,,')"
+   	AUTODISC="${AUTODISC//* /}"
+   	AUTODISC="${AUTODISC%.*}"
  fi
 -if [[ $AUTODISC ]]; then
 +if [ -n "$AUTODISC" ]; then
  	# Test Microsoft Outlook schema
  	CON="https://$AUTODISC/autodiscover/autodiscover.xml"
  	cat <<-REQ >$OLREQUEST
-@@ -76,7 +76,7 @@
- 		    <EMailAddress>$PROFILE</EMailAddress>
- 		  </Request>
- 		</Autodiscover>
--	REQ
-+REQ
- 	
- 	echo
- 	echo "Testing Autodiscover (Microsoft Outlook(tm)) ..."
-@@ -94,7 +94,7 @@
- 		    <EMailAddress>$PROFILE</EMailAddress>
- 		  </Request>
- 		</Autodiscover>
--	REQ
-+REQ
- 	
- 	echo
- 	echo "Testing Autodiscover (mobilesync) ..."
+@@ -111,13 +113,13 @@
+ 
+ # Test mobileconfig schema
+ AUTODISC="autodiscover.$DOMAIN"
+-if [[ -z $(dig +short $AUTODISC) ]]; then
++if [ -z "$(dig +short $AUTODISC)" ]; then
+ 	# default domain does not exist, try to discover non-default
+ 	AUTODISC="$(dig +short -t srv _autodiscover._tcp.$DOMAIN)"
+   	AUTODISC="${AUTODISC//* /}"
+   	AUTODISC="${AUTODISC%.*}"
+ fi
+-if [[ $AUTODISC ]]; then
++if [ -n "$AUTODISC" ]; then
+ 	# Test Apple mobileconfig schema
+ 	CON="https://$AUTODISC/mobileconfig"
+ 

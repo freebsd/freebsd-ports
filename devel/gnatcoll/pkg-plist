@@ -1,5 +1,5 @@
 bin/gnatcoll_db2ada
-bin/gnatinspect
+%%SQLITE%%bin/gnatinspect-xref
 %%PYTHON%%include/gnatcoll/gnatcoll-any_types-python.adb
 %%PYTHON%%include/gnatcoll/gnatcoll-any_types-python.ads
 include/gnatcoll/gnatcoll-any_types.adb
@@ -300,13 +300,8 @@ lib/gnatcoll/static/libgnatcoll_python.a
 lib/gnatcoll/static/libgnatcoll_readline.a
 lib/gnatcoll/static/libgnatcoll_sqlite.a
 %%DATADIR%%/dborm.py
-share/gps/support/core/gnatcoll/__init__.py
-share/gps/support/core/gnatcoll/runtime.py
 @dirrm include/gnatcoll
 @dirrm lib/gnat/gnatcoll
 @dirrm lib/gnatcoll/static
 @dirrm lib/gnatcoll
 @dirrm %%DATADIR%%
-@dirrm share/gps/support/core/gnatcoll
-@dirrmtry share/gps/support/core
-@dirrmtry share/gps/support

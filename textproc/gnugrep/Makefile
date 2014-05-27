@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grep
-PORTVERSION=	2.18
+PORTVERSION=	2.19
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
@@ -14,8 +14,7 @@ LICENSE=	GPLv3
 
 CONFLICTS=	bsd-grep-[0-9]*
 
-USES+=		charsetfix
-USE_XZ=		yes
+USES=		charsetfix tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

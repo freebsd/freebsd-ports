@@ -14,7 +14,7 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

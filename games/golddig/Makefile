@@ -3,23 +3,27 @@
 
 PORTNAME=	golddig
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.NetBSD.org/~chuck/gz/
 DISTNAME=	${PORTNAME}C${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Getting the Gold and Avoiding Death
 
 USE_XORG=	x11
-MAKE_ENV=	X11BASE="${LOCALBASE}"
+MAKE_ENV=	X11BASE="${LOCALBASE}" \
+		_STRIPFLAG_INSTALL="${STRIP}"
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN6=		gdedit.6 golddig.6
+SCOREFILE=	/var/games/golddig.scores
+
+SUB_FILES=	pkg-deinstall pkg-install
+SUB_LIST=	SCOREFILE="${SCOREFILE}"
 
 DESKTOP_ENTRIES="Gold Digger" "" "" "${PORTNAME}" "" ""
 
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "@PREFIX@" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@PREFIX@|${PREFIX}|'

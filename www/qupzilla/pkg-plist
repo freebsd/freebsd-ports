@@ -2,9 +2,11 @@ bin/qupzilla
 lib/libQupZilla.so
 lib/libQupZilla.so.1
 lib/libQupZilla.so.1.6
-lib/libQupZilla.so.1.6.3
+lib/libQupZilla.so.1.6.5
 lib/qupzilla/libAccessKeysNavigation.so
+%%GNOMEKEYRING%%lib/qupzilla/libGnomeKeyringPasswords.so
 lib/qupzilla/libGreaseMonkey.so
+%%KWALLET%%lib/qupzilla/libKWalletPasswords.so
 lib/qupzilla/libMouseGestures.so
 lib/qupzilla/libPIM.so
 lib/qupzilla/libStatusBarIcons.so
@@ -24,7 +26,9 @@ share/pixmaps/qupzilla.png
 %%DATADIR%%/locale/de_DE.qm
 %%DATADIR%%/locale/el_GR.qm
 %%DATADIR%%/locale/es_ES.qm
+%%DATADIR%%/locale/es_MX.qm
 %%DATADIR%%/locale/es_VE.qm
+%%DATADIR%%/locale/eu_ES.qm
 %%DATADIR%%/locale/fa_IR.qm
 %%DATADIR%%/locale/fr_FR.qm
 %%DATADIR%%/locale/gl_ES.qm
@@ -35,6 +39,7 @@ share/pixmaps/qupzilla.png
 %%DATADIR%%/locale/ja_JP.qm
 %%DATADIR%%/locale/ka_GE.qm
 %%DATADIR%%/locale/lg.qm
+%%DATADIR%%/locale/lv_LV.qm
 %%DATADIR%%/locale/nl_NL.qm
 %%DATADIR%%/locale/nqo.qm
 %%DATADIR%%/locale/pl_PL.qm
@@ -77,6 +82,7 @@ share/pixmaps/qupzilla.png
 %%DATADIR%%/locale/sr_RS@latin.qm
 %%DATADIR%%/locale/sv_SE.qm
 %%DATADIR%%/locale/uk_UA.qm
+%%DATADIR%%/locale/uz@Latn.qm
 %%DATADIR%%/locale/zh_CN.qm
 %%DATADIR%%/locale/zh_TW.qm
 %%DATADIR%%/themes/chrome/images/blankbutton-a.png

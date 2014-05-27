@@ -14,10 +14,8 @@ RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_GMAKE=	yes
-USE_BZIP2=	yes
 USE_EFL=	imlib2
-USES=		iconv gmake
+USES=		iconv gmake tar:bzip2
 
 MAN1=		adesklets.1 \
 		adesklets_checkin.1 \

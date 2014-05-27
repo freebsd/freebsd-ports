@@ -95,6 +95,7 @@
     SUBDIR += dkfilter
     SUBDIR += dkimproxy
     SUBDIR += dma
+    SUBDIR += dot-forward
     SUBDIR += dovecot
     SUBDIR += dovecot-antispam
     SUBDIR += dovecot-managesieve

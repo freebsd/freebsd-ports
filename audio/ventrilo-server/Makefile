@@ -8,7 +8,7 @@ MASTER_SITES=	# http://www.ventrilo.com/download.php
 PKGNAMESUFFIX=	-server
 DISTNAME=	ventrilo_srv-${PORTVERSION}-FreeBSD-i386
 
-MAINTAINER=	bob@immure.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server side of the Ventrilo group voice chat system
 
 LIB_DEPENDS=	libstdc\\+\\+.so.3:${PORTSDIR}/misc/compat4x \

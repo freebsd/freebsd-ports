@@ -13,7 +13,7 @@ LICENSE=	BSD
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>

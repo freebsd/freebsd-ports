@@ -73,7 +73,7 @@ XRANDR_CMAKE_OFF=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
 QT4_USE=		QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
 QT4_CMAKE_ON=		-DOSG_USE_QT=ON
 QT4_CMAKE_OFF=		-DOSG_USE_QT=OFF
-LUA_USE=		LUA=5.1
+LUA_USES=		lua:51
 V8_LIB_DEPENDS=		libv8.so:${PORTSDIR}/lang/v8
 PYTHON_USE=		PYTHON=2
 

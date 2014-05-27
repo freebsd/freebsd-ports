@@ -15,7 +15,7 @@ COMMENT=	The Traditional Chinese version of phpBB
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
 CONFLICTS=	phpbb-[0-9]*
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 
 # Get HOSTNAME
 .if exists(/sbin/sysctl)

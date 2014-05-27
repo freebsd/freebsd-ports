@@ -1,3 +1,11 @@
+@mode 600
+@sample etc/mgetty+sendfax/dialin.config.sample
+@sample etc/mgetty+sendfax/login.config.sample
+@sample etc/mgetty+sendfax/voice.conf.sample
+@mode
+@sample etc/mgetty+sendfax/faxheader.sample
+@sample etc/mgetty+sendfax/faxrunq.config.sample
+@sample etc/mgetty+sendfax/faxspool.rules.sample
 bin/autopvf
 bin/basictopvf
 bin/faxq
@@ -34,27 +42,11 @@ bin/sff2g3
 bin/vm
 bin/voctopvf
 bin/wavtopvf
-@unexec if cmp -s %D/etc/mgetty+sendfax/dialin.config %D/etc/mgetty+sendfax/dialin.config.dist; then rm -f %D/etc/mgetty+sendfax/dialin.config; fi
-etc/mgetty+sendfax/dialin.config.dist
-@exec if [ ! -f %D/etc/mgetty+sendfax/dialin.config ]; then cp %B/%f %D/etc/mgetty+sendfax/dialin.config; fi
-@unexec if cmp -s %D/etc/mgetty+sendfax/faxheader %D/etc/mgetty+sendfax/faxheader.dist; then rm -f %D/etc/mgetty+sendfax/faxheader; fi
-etc/mgetty+sendfax/faxheader.dist
-@exec if [ ! -f %D/etc/mgetty+sendfax/faxheader ]; then cp %B/%f %D/etc/mgetty+sendfax/faxheader; fi
-@unexec if cmp -s %D/etc/mgetty+sendfax/faxrunq.config %D/etc/mgetty+sendfax/faxrunq.config.dist; then rm -f %D/etc/mgetty+sendfax/faxrunq.config; fi
-etc/mgetty+sendfax/faxrunq.config.dist
-@exec if [ ! -f %D/etc/mgetty+sendfax/faxrunq.config ]; then cp %B/%f %D/etc/mgetty+sendfax/faxrunq.config; fi
-@unexec if cmp -s %D/etc/mgetty+sendfax/faxspool.rules %D/etc/mgetty+sendfax/faxspool.rules.sample; then rm -f %D/etc/mgetty+sendfax/faxspool.rules; fi
-etc/mgetty+sendfax/faxspool.rules.sample
-@exec if [ ! -f %D/etc/mgetty+sendfax/faxspool.rules ]; then cp %B/%f %D/etc/mgetty+sendfax/faxspool.rules; fi
-@unexec if cmp -s %D/etc/mgetty+sendfax/login.config %D/etc/mgetty+sendfax/login.config.dist; then rm -f %D/etc/mgetty+sendfax/login.config; fi
-etc/mgetty+sendfax/login.config.dist
-@exec if [ ! -f %D/etc/mgetty+sendfax/login.config ]; then cp %B/%f %D/etc/mgetty+sendfax/login.config; fi
-@unexec if cmp -s %D/etc/mgetty+sendfax/voice.conf %D/etc/mgetty+sendfax/voice.conf.dist; then rm -f %D/etc/mgetty+sendfax/voice.conf; fi
-etc/mgetty+sendfax/voice.conf.dist
-@exec if [ ! -f %D/etc/mgetty+sendfax/voice.conf ]; then cp %B/%f %D/etc/mgetty+sendfax/voice.conf; fi
 lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
+@mode 4711
 lib/mgetty+sendfax/faxq-helper
+@mode
 lib/mgetty+sendfax/samples/answer_fax.sh
 lib/mgetty+sendfax/samples/coverpg-pl.ps
 lib/mgetty+sendfax/samples/coverpg.pbm
@@ -88,6 +80,50 @@ lib/mgetty+sendfax/samples/new_fax.tiff
 lib/mgetty+sendfax/samples/new_fax.vacation
 lib/mgetty+sendfax/samples/printfax
 lib/mgetty+sendfax/samples/printfax.ps
+man/man1/autopvf.1.gz
+man/man1/basictopvf.1.gz
+man/man1/coverpg.1.gz
+man/man1/fax.1.gz
+man/man1/faxq.1.gz
+man/man1/faxrm.1.gz
+man/man1/faxrunq.1.gz
+man/man1/faxspool.1.gz
+man/man1/g32pbm.1.gz
+man/man1/g3cat.1.gz
+man/man1/lintopvf.1.gz
+man/man1/pbm2g3.1.gz
+man/man1/pvf.1.gz
+man/man1/pvfamp.1.gz
+man/man1/pvfcut.1.gz
+man/man1/pvfecho.1.gz
+man/man1/pvffft.1.gz
+man/man1/pvffile.1.gz
+man/man1/pvffilter.1.gz
+man/man1/pvfmix.1.gz
+man/man1/pvfnoise.1.gz
+man/man1/pvfreverse.1.gz
+man/man1/pvfsine.1.gz
+man/man1/pvfspeed.1.gz
+man/man1/pvftoau.1.gz
+man/man1/pvftobasic.1.gz
+man/man1/pvftolin.1.gz
+man/man1/pvftormd.1.gz
+man/man1/pvftovoc.1.gz
+man/man1/pvftowav.1.gz
+man/man1/rmdfile.1.gz
+man/man1/rmdtopvf.1.gz
+man/man1/sff2g3.1.gz
+man/man1/voctopvf.1.gz
+man/man1/wavtopvf.1.gz
+man/man1/zplay.1.gz
+man/man4/mgettydefs.4.gz
+man/man5/faxqueue.5.gz
+man/man8/callback.8.gz
+man/man8/faxq-helper.8.gz
+man/man8/faxrunqd.8.gz
+man/man8/mgetty.8.gz
+man/man8/sendfax.8.gz
+man/man8/vgetty.8.gz
 sbin/callback
 sbin/faxrunqd
 sbin/mgetty

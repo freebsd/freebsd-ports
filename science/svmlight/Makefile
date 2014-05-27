@@ -11,7 +11,7 @@ PATCH_SITES=	http://cpansearch.perl.org/src/KWILLIAMS/Algorithm-SVMLight-0.09/
 PATCHFILES=	SVMLight.patch
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of Support Vector Machines (SVMs) in C
 
 RESTRICTED=	only for education and research
@@ -19,7 +19,7 @@ RESTRICTED=	only for education and research
 CFLAGS+=	-fPIC
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LFLAGS="${CFLAGS}"
 NO_WRKSUBDIR=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes

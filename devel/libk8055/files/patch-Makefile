@@ -1,5 +1,5 @@
---- Makefile.orig	2011-12-31 03:12:14.464658120 +0000
-+++ Makefile	2011-12-31 03:12:42.754252842 +0000
+--- Makefile.orig	2006-07-29 18:03:43.000000000 +0800
++++ Makefile	2014-05-27 17:29:02.806622803 +0800
 @@ -1,22 +1,22 @@
 -cc = gcc
 +CC ?= gcc
@@ -32,7 +32,7 @@
  	-ln -sf libk8055.so.0.2 libk8055.so
  
  libk8055.c: k8055.h
-@@ -24,10 +24,10 @@
+@@ -24,29 +24,29 @@ libk8055.c: k8055.h
  all: k8055_prog libk8055.so.0.1
  
  %.o: %.c
@@ -45,3 +45,32 @@
  	strip $(exec)
      
  clean:
+ 	rm -f *.o libk8055.so libk8055.so.0.2 $(exec)
+     
+ install: k8055_prog libk8055.so.0.1
+-	cp -f $(exec) $(bindir)/
+-	if !(test -d $(libdir)); then \
+-	  mkdir $(libdir); \
++	cp -f $(exec) $(DESTDIR)$(bindir)/
++	if !(test -d $(DESTDIR)$(libdir)); then \
++	  mkdir $(DESTDIR)$(libdir); \
+ 	fi
+-	if !(test -d $(includedir)); then \
+-	  mkdir $(includedir); \
++	if !(test -d $(DESTDIR)$(includedir)); then \
++	  mkdir $(DESTDIR)$(includedir); \
+ 	fi
+-	cp -Pf lib* $(libdir)
+-	cp -f k8055.h $(includedir)
+-	if !(test -d $(mandir)); then \
+-	  mkdir $(mandir); \
++	cp -Pf lib* $(DESTDIR)$(libdir)
++	cp -f k8055.h $(DESTDIR)$(includedir)
++	if !(test -d $(DESTDIR)$(mandir)); then \
++	  mkdir $(DESTDIR)$(mandir); \
+ 	fi
+-	cp -f man/k8055.1.gz $(mandir)/
++	cp -f man/k8055.1.gz $(DESTDIR)$(mandir)/
+     
+ uninstall:
+ 	rm -f $(bindir)/$(exec) $(libdir)/libk8055* $(includedir)/k8055.h

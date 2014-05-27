@@ -18,8 +18,7 @@ COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
 
 CONFLICTS=	qhull-2011* afni-[0-9]*
 
-USES=		libtool
-USE_GMAKE=	yes
+USES=		libtool gmake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

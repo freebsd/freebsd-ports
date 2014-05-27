@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 
 MAN1=		gsi.1
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS =--enable-single-host --enable-gcc-opts
 CONFIGURE_ARGS+=--prefix=${PREFIX} --docdir=${PREFIX}/share/doc/gambit-c
