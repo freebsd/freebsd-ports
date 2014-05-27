@@ -3,7 +3,7 @@
 
 PORTNAME=	xparam
 PORTVERSION=	1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,8 +12,13 @@ COMMENT=	General-purpose tool for parameter handling in C++
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		gmake
+USES=		gmake libtool
 USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/libxparam.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxparam.so
 
 .include <bsd.port.mk>
