@@ -1,6 +1,6 @@
 bin/libxode-config
 include/libxode.h
 lib/libxode.a
-lib/libxode.la
 lib/libxode.so
-lib/libxode.so.2
+lib/libxode.so.1
+lib/libxode.so.1.1.0
