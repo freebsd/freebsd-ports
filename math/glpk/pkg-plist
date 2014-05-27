@@ -5,3 +5,4 @@ lib/libglpk.a
 lib/libglpk.la
 lib/libglpk.so
 lib/libglpk.so.36
+lib/libglpk.so.36.0.1

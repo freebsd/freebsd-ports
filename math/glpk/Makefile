@@ -3,6 +3,7 @@
 
 PORTNAME=	glpk
 PORTVERSION=	4.52.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -19,7 +20,7 @@ IODBC_DESC=	MathProg iodbc support
 MYSQL_DESC=	MathProg mysql support
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake libtool:keepla
 USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-D_LSEEK_DECLARED -I${LOCALBASE}/include
@@ -27,7 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-gmp
 CONFLICTS=	goblin-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIODBC} || ${PORT_OPTIONS:MMYSQL}
@@ -60,11 +60,11 @@ DOCS2=	dfeas.pdf gomory.pdf keller.pdf scaling.pdf updating.pdf
 PORTDOCS=	${DOCS1} ${DOCS2}
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/src/glplpx.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/src/glplpx.h ${STAGEDIR}${PREFIX}/include
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/doc ; \
-	${INSTALL_DATA} ${DOCS1} ${DOCS2:S|^|notes/|} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCS1} ${DOCS2:S|^|notes/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 check regression-test test: build
