@@ -6,7 +6,7 @@ PORTVERSION=	${SNAPSHOT:S/_//g}
 PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://ironsides.martincarlisle.com/
-DISTFILES=	ironsides_authoritative-${SNAPSHOT}.zip
+DISTNAME=	ironsides_authoritative-${SNAPSHOT}
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Authoritative DNS server formally verified by SPARK/Ada	
@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/spark2012/spark.ads:${PORTSDIR}/devel/libspark2012
 
-USES=		ada dos2unix
+USES=		ada dos2unix zip
 DOS2UNIX_FILES=	dfcs.usafa.edu.zonefile ironsides.1
 SNAPSHOT=	2014_02_20
 WRKSRC=		${WRKDIR}/${DISTFILES:S/.zip//}
