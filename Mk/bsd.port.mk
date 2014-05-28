@@ -3376,8 +3376,8 @@ do-fetch:
 				fi; \
 			fi; \
 			${ECHO_MSG} "=> $$file doesn't seem to exist in ${_DISTDIR}."; \
-			if [ ! -w ${DISTDIR} ]; then \
-			   ${ECHO_MSG} "=> ${DISTDIR} is not writable by you; cannot fetch."; \
+			if [ ! -w ${_DISTDIR} ]; then \
+			   ${ECHO_MSG} "=> ${_DISTDIR} is not writable by you; cannot fetch."; \
 			   exit 1; \
 			fi; \
 			if [ ! -z "$$select" ] ; then \
