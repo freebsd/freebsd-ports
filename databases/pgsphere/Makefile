@@ -17,8 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 MAKE_ARGS=	PG_CONFIG=${LOCALBASE}/bin/pg_config USE_PGXS=1 docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
-USE_PGSQL=	yes
-USES=		gmake
+USES=		gmake pgsql
 
 DATADIR=	${PREFIX}/share/postgresql
 DOCSDIR?=	${PREFIX}/share/doc/postgresql
