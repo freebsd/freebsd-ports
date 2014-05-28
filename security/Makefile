@@ -50,7 +50,6 @@
     SUBDIR += burpsuite
     SUBDIR += ca_root_nss
     SUBDIR += calife
-    SUBDIR += calife-devel
     SUBDIR += ccrypt
     SUBDIR += ccsrch
     SUBDIR += cfs
