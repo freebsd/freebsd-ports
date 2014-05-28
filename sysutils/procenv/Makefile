@@ -16,18 +16,12 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake perl5
 USE_AUTOTOOLS=	aclocal automake
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 
 PLIST_FILES=	bin/procenv \
 		man/man1/procenv.1.gz
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505
-BROKEN=		does not build on old ${OPSYS} versions
-.endif
 
 # Test to ensure procenv will actually run.
 #
@@ -42,4 +36,4 @@ test: regression-test
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/procenv
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
