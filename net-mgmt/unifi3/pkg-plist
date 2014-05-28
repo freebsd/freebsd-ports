@@ -1,9 +1,9 @@
 %%JAVASHAREDIR%%/unifi/readme.txt
 %%JAVASHAREDIR%%/unifi/bin/mongod
-%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.10.2519/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.10.2519/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.10.2519/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.10.2519/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.13.2598/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.13.2598/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.13.2598/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.13.2598/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/bundles.json
 %%JAVASHAREDIR%%/unifi/lib/MRJAdapter.jar
 %%JAVASHAREDIR%%/unifi/lib/ace.jar
@@ -91,17 +91,17 @@
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli/usercss-1.css
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli/usercss-2.css
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/cli/usercss-3.css
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/unifi.3.1.10.css
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/css/unifi.3.1.13.css
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/flex/expressInstall.swf
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-hotspot.3.1.10.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-lib.3.1.10.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-manage.3.1.10.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-msg_en_US.3.1.10.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-msg_zh_TW.3.1.10.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-shell.3.1.10.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-waiting.3.1.10.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-wizard.3.1.10.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi.3.1.10.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-hotspot.3.1.13.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-lib.3.1.13.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-manage.3.1.13.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-msg_en_US.3.1.13.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-msg_zh_TW.3.1.13.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-shell.3.1.13.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-waiting.3.1.13.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi-wizard.3.1.13.js
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/library/js/unifi.3.1.13.js
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/library/swf/MapApplet.swf
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/login.jsp
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/manage.jsp
@@ -279,13 +279,13 @@
 @dirrmtry %%JAVASHAREDIR%%/unifi/webapps/ROOT
 @dirrmtry %%JAVASHAREDIR%%/unifi/webapps
 @dirrmtry %%JAVASHAREDIR%%/unifi/lib
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.10.2519
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.13.2598
 @dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7P
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.10.2519
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.13.2598
 @dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7E
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.10.2519
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.13.2598
 @dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U2S48
-@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.10.2519
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.13.2598
 @dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/BZ2
 @dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware
 @dirrmtry %%JAVASHAREDIR%%/unifi/dl
