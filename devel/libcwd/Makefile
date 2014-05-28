@@ -3,17 +3,19 @@
 
 PORTNAME=	libcwd
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Debugging Support Library
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool
 USE_GCC=	any
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alloc --disable-location --disable-threading \
 		--disable-pch
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-D__GNU_LIBRARY__
