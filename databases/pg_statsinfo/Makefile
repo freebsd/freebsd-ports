@@ -8,10 +8,9 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/3429/
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Monitor statistics and activity of PostgreSQL
 
-USE_PGSQL=	server
-USES=		gmake
+USES=		gmake pgsql
+WANT_PGSQL=	server
 
 MAKE_ARGS=	USE_PGXS=1 LDFLAGS=-lkvm
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
