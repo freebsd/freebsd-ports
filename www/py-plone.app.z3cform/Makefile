@@ -6,7 +6,6 @@ PORTREVISION=	2
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
@@ -26,6 +25,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}collective.z3cform.datetimewidget>=0.1:${POR
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USES=			zope
+USES=			zope zip
 
 .include <bsd.port.mk>
