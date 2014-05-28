@@ -3,6 +3,7 @@
 
 PORTNAME=	cstringbuffer
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ # mirror, original disappeared
 
