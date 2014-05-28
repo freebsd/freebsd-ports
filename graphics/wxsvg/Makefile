@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -14,7 +14,7 @@ LICENSE=	LGPL21 # (or later)
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		gmake pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_WX=		3.0
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
