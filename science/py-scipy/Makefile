@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scipy
-PORTVERSION=	0.13.3
-PORTREVISION=	1
+PORTVERSION=	0.14.0
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		SF:source
@@ -29,13 +28,16 @@ OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 USES=		fortran
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	ATLAS DOCS SUITESPARSE
 OPTIONS_DEFAULT=SUITESPARSE
 ATLAS_DESC=	Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
-NO_STAGE=	yes
+PLIST_FILES=	%%PORTDOCS%%%%DOCSDIR%%/scipy-ref.pdf
+PLIST_DIRSTRY=	%%PORTDOCS%%%%DOCSDIR%%
+
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s@malloc\.h@stdlib.h@"
@@ -64,17 +66,9 @@ post-extract:
 	@${CP} ${DISTDIR}/scipy-ref.pdf ${WRKDIR}
 
 post-install:
-	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/scipy ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/scipy -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/scipy-ref.pdf ${DOCSDIR}
-	@${ECHO_CMD} ${DOCSDIR}/scipy-ref.pdf | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${ECHO_CMD} ${DOCSDIR} | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/scipy-ref.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
