@@ -16,8 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-DBI>=1.614:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		pgsql perl5
 USE_PERL5=	configure
-USE_PGSQL=	yes
 
 .include <bsd.port.mk>
