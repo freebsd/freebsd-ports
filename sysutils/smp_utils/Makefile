@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smp_utils
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
