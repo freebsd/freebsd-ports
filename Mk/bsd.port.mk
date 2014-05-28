@@ -1798,10 +1798,6 @@ IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps
 RUN_DEPENDS+=	${LINUX_BASE_PORT}
 .endif
 
-.if defined(USE_DISPLAY)
-USES+=	display
-.endif
-
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
 _GL_glesv2_LIB_DEPENDS=		libGLESv2.so:${PORTSDIR}/graphics/libglesv2
