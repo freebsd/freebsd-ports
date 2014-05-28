@@ -45,7 +45,7 @@ HPACK_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 IGNORE=		nghttp2 requires OpenSSL 1.0.1+
 .endif
 
-.if ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=--with-jemalloc
 .endif
 
