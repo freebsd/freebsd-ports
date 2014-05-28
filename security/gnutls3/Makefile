@@ -3,7 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	3.1.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v3.1/
 PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
