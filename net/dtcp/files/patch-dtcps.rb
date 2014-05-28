@@ -1,8 +1,8 @@
 Index: dtcps.rb
 diff -u dtcps.rb.orig dtcps.rb
 --- dtcps.rb.orig	2013-06-02 23:05:51.000000000 +0900
-+++ dtcps.rb	2014-05-19 01:24:45.817292755 +0900
-@@ -185,6 +185,10 @@
++++ dtcps.rb	2014-05-22 17:24:50.868385076 +0900
+@@ -185,6 +185,18 @@
      execute("ifconfig #{@name} mtu #{mtu}")
    end
  
@@ -10,10 +10,18 @@ diff -u dtcps.rb.orig dtcps.rb
 +    execute("ifconfig #{@name} fib #{fibnum}")
 +  end
 +
++  def setdescr(str = nil)
++    if str == nil
++      execute("ifconfig #{@name} -description >/dev/null 2>&1")
++    else
++      execute("ifconfig #{@name} description #{str} >/dev/null 2>&1")
++    end
++  end
++
    def linklocal
      `ifconfig #{@name} inet6`.each_line { |s|
        if s =~ /inet6 (fe80::[^ ]*)/
-@@ -226,6 +230,9 @@
+@@ -226,6 +238,9 @@
  	end
        }
      end
@@ -23,7 +31,7 @@ diff -u dtcps.rb.orig dtcps.rb
      @created = true
    end
  
-@@ -291,6 +298,9 @@
+@@ -291,6 +306,9 @@
      if !@tunif || @tunif == "ng"
        @name = mkpeer
        @created = true
@@ -33,7 +41,7 @@ diff -u dtcps.rb.orig dtcps.rb
        return
      end
  
-@@ -306,6 +316,9 @@
+@@ -306,6 +324,9 @@
        @name = mkpeer
        if @name == @tunif
  	@created = true
@@ -43,7 +51,23 @@ diff -u dtcps.rb.orig dtcps.rb
  	break
        end
  
-@@ -1173,13 +1186,14 @@
+@@ -724,6 +745,7 @@
+       }
+       delpeer(@tunif, @info[3], @info[2])
+     end
++    tunif.setdescr
+     _delete(@tunif)
+     @tunif = nil
+   end
+@@ -769,6 +791,7 @@
+       raise 'tunnel interface sold out'
+     end
+     debugmsg("#{s}: tunnel interface #{tunif.name}\n")
++    tunif.setdescr(user)
+ 
+     myaddr = nil
+     if type == 'host' || (type == 'network' && $network_with_peeraddr)
+@@ -1173,13 +1196,14 @@
  $tunif = TUNIF
  $ng_tunif = "ng"
  $cloning = TUNIF_CLONING
@@ -59,7 +83,7 @@ diff -u dtcps.rb.orig dtcps.rb
  rescue
    usage()
    exit 0
-@@ -1190,6 +1204,7 @@
+@@ -1190,6 +1214,7 @@
  $cloning = false if params["c"]
  $debug = params["d"]
  $daemonize = !params["D"]
