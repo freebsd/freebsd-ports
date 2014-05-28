@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Database
-PORTVERSION=	1.112
+PORTVERSION=	1.113
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Database handles ready for testing
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny \
