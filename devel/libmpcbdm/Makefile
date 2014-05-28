@@ -3,10 +3,10 @@
 
 PORTNAME=	libmpcbdm
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/libmpc8xx/libmpc8xx/${PORTVERSION} \
 		http://mbsd.msk.ru/dist/
-
 DISTNAME=	mpc8xx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,8 +14,9 @@ COMMENT=	Standalone library to control various mpc8xx boards
 
 WRKSRC=		${WRKDIR}/libmpc8xx
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
