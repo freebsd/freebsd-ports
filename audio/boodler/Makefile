@@ -11,7 +11,7 @@ DISTFILES=	boodler-153.tar.gz boodler-snd-021902.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmable soundscape tool
 
-RESTRICTED=	no commercial use
+RESTRICTED=	Not for commercial use
 RESTRICTED_FILES=	boodler-snd-021902.tar.gz
 
 OPTIONS_DEFINE=	DOCS
