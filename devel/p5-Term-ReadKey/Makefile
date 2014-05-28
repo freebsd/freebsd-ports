@@ -14,4 +14,6 @@ COMMENT=	A perl5 module for simple terminal control
 USES=		perl5
 USE_PERL5=	configure
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
