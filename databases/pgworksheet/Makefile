@@ -12,8 +12,7 @@ COMMENT=	Simple PostreSQL GUI front end
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyPgSQL/libpq/__init__.py:${PORTSDIR}/databases/py-pyPgSQL
 
-USE_PGSQL=	yes
-USE_BZIP2=	yes
+USES=		pgsql tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
