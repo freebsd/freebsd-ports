@@ -4,6 +4,7 @@ etc/foomatic/filter.conf.sample
 @exec if [ ! -f %D/etc/foomatic/filter.conf ]; then cp -p %D/%F %B/filter.conf; fi
 libexec/cups/backend/beh
 libexec/cups/filter/foomatic-rip
+libexec/cups/filter/foomatic-rip.exec
 lib/ppr/interfaces/foomatic-rip
 lib/ppr/lib/foomatic-rip
 man/man1/foomatic-rip.1.gz
