@@ -10,14 +10,13 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CRyptANalysis toolKit
 
-LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 GUILE_CONFIG=	${LOCALBASE}/bin/guile-config
 LDFLAGS+=	`${GUILE_CONFIG} link`
 CFLAGS+=	`${GUILE_CONFIG} compile`
-USE_USES=	gmake
 
 INFO=		crank
 
