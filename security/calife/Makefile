@@ -2,30 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	calife
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.3
 CATEGORIES=	security
 MASTER_SITES=	http://assets.keltia.net/calife/
-DISTNAME=	calife-3.0.1
-PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	thomas@FreeBSD.org
+MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	Lightweight alternative to sudo
 
-USE_BZIP2=	yes
+USES=		tar:xz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc
 
 CONFIGURE_ARGS+=	--with-pam
 
-CONFLICTS?=	calife-2.*
-
-MAN1=		calife.1
-MAN5=		calife.auth.5
-
-NO_STAGE=	yes
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/pam/freebsd5 ${PREFIX}/etc/pam.d/calife.sample
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	$(INSTALL_PROGRAM) ${WRKSRC}/calife ${STAGEDIR}${PREFIX}/bin/calife
+	$(INSTALL_MAN) ${WRKSRC}/calife.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	$(INSTALL_MAN) ${WRKSRC}/calife.auth.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	$(INSTALL_DATA) ${WRKSRC}/calife.auth-dist ${STAGEDIR}${PREFIX}/etc/calife.auth.sample
+	${INSTALL_DATA} ${WRKSRC}/pam/freebsd5 ${STAGEDIR}${PREFIX}/etc/pam.d/calife.sample
 
 .include <bsd.port.mk>
