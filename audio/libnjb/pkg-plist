@@ -22,7 +22,7 @@ bin/njb-tagtr
 bin/njb-tracks
 include/libnjb.h
 lib/libnjb.a
-lib/libnjb.la
 lib/libnjb.so
-lib/libnjb.so.6
+lib/libnjb.so.5
+lib/libnjb.so.5.1.1
 libdata/pkgconfig/libnjb.pc
