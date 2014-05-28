@@ -3,6 +3,7 @@
 
 PORTNAME=	nghttp2
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -21,7 +22,6 @@ OPTIONS_SUB=	yes
 CONFIGURE_ARGS=	--disable-python-bindings \
 		--enable-app \
 		--enable-examples \
-		--with-jemalloc \
 		--with-spdylay
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
@@ -45,10 +45,14 @@ HPACK_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 IGNORE=		nghttp2 requires OpenSSL 1.0.1+
 .endif
 
+.if ${OSVERSION} >= 1000000
+CONFIGURE_ARGS+=--with-jemalloc
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/JEMALLOC_LIBS/ s|-ljemalloc||' ${WRKSRC}/configure
 
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/lib/.libs/libnghttp2.so.3
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnghttp2.so.3.0.0
 
 .include <bsd.port.post.mk>
