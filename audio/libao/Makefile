@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	libao
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Portable audio output library
 
-USES=		pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-arts
+CONFIGURE_ARGS=	--enable-static \
+		--disable-arts
+# do not install
+MAKE_ARGS=	ckport_DATA=""
 
 OPTIONS_DEFINE=	DOCS ESOUND NAS PULSEAUDIO
 OPTIONS_SUB=	yes
