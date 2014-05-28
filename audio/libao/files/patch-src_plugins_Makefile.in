@@ -1,12 +1,11 @@
-$FreeBSD$
---- src/plugins/Makefile.in.orig	2010-06-05 15:49:54.000000000 +0200
-+++ src/plugins/Makefile.in	2010-06-05 15:50:28.000000000 +0200
-@@ -295,7 +295,7 @@ $(RECURSIVE_TARGETS):
+--- src/plugins/Makefile.in.orig	2014-05-28 16:19:02.000000000 +0200
++++ src/plugins/Makefile.in	2014-05-28 16:25:33.000000000 +0200
+@@ -388,7 +388,7 @@ $(am__recursive_targets):
  	  else \
  	    local_target="$$target"; \
  	  fi; \
--	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
-+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) LIBTOOL="$(LIBTOOL) --tag=disable-static" $$local_target) \
+-	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
++	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) AM_LIBTOOLFLAGS="--tag=disable-static" $$local_target) \
  	  || eval $$failcom; \
  	done; \
  	if test "$$dot_seen" = "no"; then \
