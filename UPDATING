@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130528:
+  AFFECTS: users of security/calife & security/calife-devel
+  AUTHOR: roberto@FreeBSD.org
+
+  Calife 2.8.x is now officially EoL.  Replace it with 3.0 (formerly
+  calife-devel).
+
+  For port builds system please follow the following instructions:
+  Please delete old version:
+
+  # pkg delete -f security/calife-devel
+  or
+  # pkg_delete security/calife-devel
+
+  and install security/calife.
+
+  Change origin if you had the old one:
+  # pkg set -o security/calife-devel:security/calife
+
 20140527:
   AFFECTS: users of databases/db6
   AUTHOR: mandree@FreeBSD.org
