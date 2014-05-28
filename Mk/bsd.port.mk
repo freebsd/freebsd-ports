@@ -4809,6 +4809,7 @@ checksum: fetch check-checksum-algorithms
 		fi; \
 	elif [ -n "${_CKSUMFILES:M*}" ]; then \
 		${ECHO_MSG} "=> No checksum file (${DISTINFO_FILE})."; \
+		exit 1; \
 	fi
 .endif
 
