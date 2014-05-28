@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 		libgeos.so:${PORTSDIR}/graphics/geos \
 		libjson.so:${PORTSDIR}/devel/json-c
-RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-server
 
 CONFLICTS=	postgis-1.* postgis-2.1.*
 
