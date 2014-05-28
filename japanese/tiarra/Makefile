@@ -3,7 +3,7 @@
 
 PORTNAME=	tiarra
 PORTVERSION=	20100212
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese irc ipv6
 MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2010/02/
 
