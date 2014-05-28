@@ -20,8 +20,11 @@
 %%SITE_PERL%%/Specio/Exporter.pm
 %%SITE_PERL%%/Specio/Helpers.pm
 %%SITE_PERL%%/Specio/Library/Builtins.pm
+%%SITE_PERL%%/Specio/OO.pm
 %%SITE_PERL%%/Specio/Registry.pm
 %%SITE_PERL%%/Specio/Role/Inlinable.pm
+%%SITE_PERL%%/Specio/TypeChecks.pm
+%%SITE_PERL%%/TODO.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Specio/.packlist
 %%PERL5_MAN3%%/Specio.3.gz
 %%PERL5_MAN3%%/Specio::Coercion.3.gz
@@ -45,8 +48,11 @@
 %%PERL5_MAN3%%/Specio::Exporter.3.gz
 %%PERL5_MAN3%%/Specio::Helpers.3.gz
 %%PERL5_MAN3%%/Specio::Library::Builtins.3.gz
+%%PERL5_MAN3%%/Specio::OO.3.gz
 %%PERL5_MAN3%%/Specio::Registry.3.gz
 %%PERL5_MAN3%%/Specio::Role::Inlinable.3.gz
+%%PERL5_MAN3%%/Specio::TypeChecks.3.gz
+%%PERL5_MAN3%%/TODO.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Specio
 @dirrm %%SITE_PERL%%/Specio/Role
 @dirrm %%SITE_PERL%%/Specio/Library
