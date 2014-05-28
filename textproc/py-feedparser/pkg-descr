@@ -1,16 +1,10 @@
-Universal Feed Parser is a Python module for downloading and parsing
-syndicated feeds. It can handle RSS 0.90, Netscape RSS 0.91, Userland
-RSS 0.91, RSS 0.92, RSS 0.93, RSS 0.94, RSS 1.0, RSS 2.0, Atom, and
-CDF feeds.
+Universal Feed Parser is a Python module for downloading and parsing syndicated
+feeds. It can handle RSS 0.90, Netscape RSS 0.91, Userland RSS 0.91, RSS 0.92,
+RSS 0.93, RSS 0.94, RSS 1.0, RSS 2.0, Atom 0.3, Atom 1.0, and CDF feeds.
 
-To use Universal Feed Parser, you will need Python 2.1 or later.
-Universal Feed Parser is not meant to run standalone; it is a module
-for you to use as part of a larger Python program.
+Universal Feed Parser is easy to use; the module is self-contained in a single
+file, feedparser.py, and it has one primary public function, parse.  parse
+takes a number of arguments, but only one is required, and it can be a URL, a
+local filename, or a raw string containing feed data in any format.
 
-Universal Feed Parser is easy to use; the module is self-contained in
-a single file, feedparser.py, and it has only one public function,
-parse.  parse takes a number of arguments, but only one is required,
-and it can be a URL, a local filename, or a raw string containing feed
-data in any format.
-
-WWW: http://feedparser.org/
+WWW: http://code.google.com/p/feedparser/

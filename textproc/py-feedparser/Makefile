@@ -3,20 +3,18 @@
 
 PORTNAME=	feedparser
 PORTVERSION=	5.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	RSS feed parser written in Python
+COMMENT=	Universal feed parser written in Python
 
-LICENSE=	BSD
+LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet
-
+USES=		tar:bzip2
 USE_PYTHON=	yes
-USE_BZIP2=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 
