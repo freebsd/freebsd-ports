@@ -149,6 +149,19 @@ man/man1/states.1.gz
 %%DATADIR%%/simple.hdr
 %%DATADIR%%/squeeze.hdr
 %%DATADIR%%/vms.enc
+%%NLS%%share/locale/ca/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/da/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/de/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/es/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/enscript.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/enscript.mo
 @dirrm %%DATADIR%%/afm
 @dirrm %%DATADIR%%/hl
 @dirrm %%DATADIR%%
