@@ -1,6 +1,14 @@
---- Makefile.in	2008-11-27 19:43:50.000000000 +0100
-+++ Makefile.in.port	2008-11-30 13:19:46.000000000 +0100
-@@ -55,7 +55,7 @@
+--- ./Makefile.in.orig	2014-05-22 18:11:41.000000000 +0200
++++ ./Makefile.in	2014-05-27 05:26:25.000000000 +0200
+@@ -53,7 +53,6 @@
+ EXEXTRA = piicon.eps *.views *.dat *.bib
+ DOCEXTRA = *.asy *.csv *.dat latexusage.tex externalprc.tex pixel.pdf
+ KEYWORDS = base $(ASYMPTOTE_SITEDIR)
+-LATEXFILES = asymptote.sty asycolors.sty ocg.sty latexmkrc 
+ CONTEXTFILES = colo-asy.tex
+ ASY = ./asy -dir base -config "" -render=0
+ 
+@@ -84,7 +83,7 @@
  asydir = $(datadir)/asymptote
  GUIdir = $(asydir)/GUI
  docdir = $(DESTDIR)@docdir@
@@ -8,4 +16,18 @@
 +exampledir = $(datadir)/examples/asymptote
  animationsdir = $(exampledir)/animations
  latexdir = $(DESTDIR)@latexdir@
- INSTALL = @INSTALL@
+ contextdir = $(DESTDIR)@contextdir@
+@@ -234,13 +233,11 @@
+ 	${INSTALL} -p -m 644 base/*.asy $(addprefix base/,$(EXTRA)) \
+ 		asy-keywords.el $(asydir)
+ 	${INSTALL} -p -m 755 GUI/*.py $(GUIdir)
+-	ln -sf @datadir@/asymptote/GUI/xasy.py $(bindir)/$(XNAME)
+ 	${INSTALL} -p -m 644 examples/*.asy $(addprefix examples/,$(EXEXTRA)) \
+ 	  doc/extra/*.asy $(addprefix doc/,$(DOCEXTRA)) $(exampledir)
+ 	${INSTALL} -p -m 644 examples/animations/*.asy \
+           examples/animations/inlinemovie.tex \
+ 	  examples/animations/inlinemovie3.tex $(animationsdir)
+-	-${INSTALL} -p -m 644 $(addprefix doc/,$(LATEXFILES)) $(latexdir)
+ 	-${INSTALL} -p -m 644 $(addprefix doc/,$(CONTEXTFILES)) $(contextdir)
+ 
+ install-html: html
