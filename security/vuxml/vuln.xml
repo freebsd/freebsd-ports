@@ -57,6 +57,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f99a4686-e694-11e3-9032-000c2980a9f3">
+    <topic>exim -- Remote Code Execution</topic>
+    <affects>
+      <package>
+	<name>exim</name>
+	<range><eq>4.82</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The exim development team reports:</p>
+	<blockquote cite="https://lists.exim.org/lurker/message/20140528.122536.a31d60a4.en.html">
+	  <p>When built with DMARC support, 4.82 is vulnerable to a remote
+	    code exeuction flaw.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2957</cvename>
+      <url>https://lists.exim.org/lurker/message/20140528.122536.a31d60a4.en.html</url>
+    </references>
+    <dates>
+      <discovery>2014-05-28</discovery>
+      <entry>2014-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="688e73a2-e514-11e3-a52a-98fc11cdc4f5">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
