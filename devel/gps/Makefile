@@ -94,6 +94,7 @@ post-patch:
 		${WRKSRC}/gnatlib/src/gnatcoll_readline.gpr.in \
 		${WRKSRC}/widgets/widgets.gpr
 	@${REINPLACE_CMD} -e 's| gnat/sdefault/sdefault.adb | |' \
+		-e 's;freebsd;freebsd*|*-dragonfly;g' \
 		${WRKSRC}/gnatlib/configure \
 		${WRKSRC}/gnatlib/configure.in
 	@${REINPLACE_CMD} -e 's|gnatlib/gnat_src|distrib|' \
