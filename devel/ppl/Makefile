@@ -3,6 +3,7 @@
 
 PORTNAME=	ppl
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/%SUBDIR%/ \
 		http://bugseng.com/products/ppl/download/ftp/releases/%SUBDIR%/
@@ -17,10 +18,9 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	libglpk.so:${PORTSDIR}/math/glpk \
 		libgmp.so:${PORTSDIR}/math/gmp
 
-USE_XZ=		yes
-USES=		gmake perl5
+USES=		gmake perl5 tar:xz libtool
 USE_PERL5=	build
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debugging \
 		--enable-optimization \
 		--enable-documentation \
@@ -49,7 +49,7 @@ post-patch:
 		'/for file in/s|COPYING||' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-.for i in libppl.so.13 libppl_c.so.4
+.for i in libppl.so libppl_c.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${i}
 .endfor
 
