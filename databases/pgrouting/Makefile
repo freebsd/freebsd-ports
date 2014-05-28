@@ -18,8 +18,7 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs\
 		libgmp.so:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	${LOCALBASE}/share/postgresql/contrib/postgis-2.1/postgis.sql:${PORTSDIR}/databases/postgis21
 
-USES=		cmake pkgconfig
-USE_PGSQL=	yes
+USES=		cmake pgsql pkgconfig
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
