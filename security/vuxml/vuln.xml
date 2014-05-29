@@ -70,7 +70,8 @@ Notes:
 	<p>Mumble reports:</p>
 	<blockquote cite="http://blog.mumble.info/mumble-1-2-6/">
 	  <p>SVG images with local file references could trigger client DoS</p>
-	  <p>The Mumble client did not properly HTML-escape some external strings before using them in a rich-text (HTML) context.</p>
+	  <p>The Mumble client did not properly HTML-escape some external strings
+	    before using them in a rich-text (HTML) context.</p>
 	</blockquote>
       </body>
     </description>
@@ -96,8 +97,10 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Mumble reports:</p>
 	<blockquote cite="http://blog.mumble.info/mumble-1-2-5/">
-	  <p>A malformed Opus voice packet sent to a Mumble client could trigger a NULL pointer dereference or an out-of-bounds array access.</p>
-	  <p>A malformed Opus voice packet sent to a Mumble client could trigger a heap-based buffer overflow.</p>
+	  <p>A malformed Opus voice packet sent to a Mumble client could trigger
+	    a NULL pointer dereference or an out-of-bounds array access.</p>
+	  <p>A malformed Opus voice packet sent to a Mumble client could trigger a
+	    heap-based buffer overflow.</p>
 	</blockquote>
       </body>
     </description>
