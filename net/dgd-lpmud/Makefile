@@ -21,7 +21,6 @@ NO_CDROM=	${NO_PACKAGE}
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/oconv.c ${WRKSRC}/
 	@${CP} ${FILESDIR}/Makefile.bin ${WRKSRC}/Makefile
@@ -33,33 +32,33 @@ do-configure:
 	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:" ${WRKSRC}/lpmud.dgd
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hname ${PREFIX}/bin/lpmud-hname
-	${INSTALL_PROGRAM} ${WRKSRC}/oconv ${PREFIX}/bin/lpmud-oconv
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lpmud.dgd ${PREFIX}/etc/${PORTNAME}/
-	${MKDIR} ${DATADIR}/lpmud
+	${INSTALL_PROGRAM} ${WRKSRC}/hname ${STAGEDIR}${PREFIX}/bin/lpmud-hname
+	${INSTALL_PROGRAM} ${WRKSRC}/oconv ${STAGEDIR}${PREFIX}/bin/lpmud-oconv
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lpmud.dgd ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/lpmud
 	cd ${WRKSRC}/2.4.5 && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/lpmud
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/lpmud
 	# Install an RC script for dgd-lpmud
 	${CAT} ${FILESDIR}/dgd-lpmud.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
 		-e "s:%%DATADIR%%:${DATADIR}:" > \
-		${PREFIX}/etc/rc.d/dgd-lpmud.sh.sample
-	${CHMOD} a+x ${PREFIX}/etc/rc.d/dgd-lpmud.sh.sample
-	${MV} ${DATADIR}/lpmud/ACCESS.ALLOW \
-		${DATADIR}/lpmud/ACCESS.ALLOW.example
-	${MV} ${DATADIR}/lpmud/ACCESS.DENY \
-		${DATADIR}/lpmud/ACCESS.DENY.example
+		${STAGEDIR}${PREFIX}/etc/rc.d/dgd-lpmud.sh.sample
+	${CHMOD} a+x ${STAGEDIR}${PREFIX}/etc/rc.d/dgd-lpmud.sh.sample
+	${MV} ${STAGEDIR}${DATADIR}/lpmud/ACCESS.ALLOW \
+		${STAGEDIR}${DATADIR}/lpmud/ACCESS.ALLOW.example
+	${MV} ${STAGEDIR}${DATADIR}/lpmud/ACCESS.DENY \
+		${STAGEDIR}${DATADIR}/lpmud/ACCESS.DENY.example
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
 	# Need a temporary directory for certain files
-	${MKDIR} ${DATADIR}/tmp
+	${MKDIR} ${STAGEDIR}${DATADIR}/tmp
 	# Link in the dgd docs
-	${LN} -sf ${PREFIX}/share/doc/dgd/kfun ${DATADIR}/lpmud/doc
+	${LN} -sf ${PREFIX}/share/doc/dgd/kfun ${STAGEDIR}${DATADIR}/lpmud/doc
 	# Set mudlib ownership
-	-@${CHOWN} -h -R mud:mud ${DATADIR}
+	-@${CHOWN} -h -R mud:mud ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
