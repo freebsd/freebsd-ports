@@ -658,8 +658,8 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%PYTHON%%@dirrm %%DATADIR%%/sdk/bindings/xpcom/python
 %%PYTHON%%@dirrm %%DATADIR%%/sdk/bindings/xpcom
 %%WEBSERVICE%%@dirrm %%DATADIR%%/sdk/bindings/webservice
-@dirrmtry %%DATADIR%%/sdk/bindings
-@dirrmtry %%DATADIR%%/sdk
+%%SDK%%@dirrm %%DATADIR%%/sdk/bindings
+%%SDK%%@dirrm %%DATADIR%%/sdk
 @dirrm %%DATADIR%%/samples
 %%NLS%%@dirrm %%DATADIR%%/nls
 @dirrm %%DATADIR%%/idl

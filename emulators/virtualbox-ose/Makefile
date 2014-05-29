@@ -158,6 +158,12 @@ USE_XORG=	xcursor xmu inputproto xinerama
 VBOX_FRONTENDS+=VBoxSDL
 .endif
 
+.if ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MWEBSERVICE}
+PLIST_SUB+=	SDK=""
+.else
+PLIST_SUB+=	SDK="@comment "
+.endif
+
 .if ${ARCH} == i386
 KMK_ARCH=	freebsd.x86
 PLIST_SUB+=	I386=""
@@ -241,12 +247,9 @@ post-patch:
 	@${ECHO} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 
-pre-build:
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/env.sh
-
 do-build:
-	cd ${WRKSRC} && ${SH} env.sh && \
-	    ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
+	cd ${WRKSRC} && \
+	    ${SH} -c '. env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
 .if ${PORT_OPTIONS:MPYTHON}
 	${PYTHON_CMD} -mcompileall ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/python/xpcom
 .endif
