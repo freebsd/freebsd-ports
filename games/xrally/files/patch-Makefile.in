@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2014-05-29 22:22:44.157202871 +0800
++++ Makefile.in	2014-05-29 22:24:33.669202590 +0800
+@@ -400,13 +400,13 @@ mostlyclean distclean maintainer-clean
+ @SOUND_FALSE@effects.c game.c
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(prefix)/share/$(bin_PROGRAMS)/maps
+-	$(mkinstalldirs) $(prefix)/share/$(bin_PROGRAMS)/sounds
+-	$(INSTALL_DATA) maps/* $(prefix)/share/$(bin_PROGRAMS)/maps
+-	$(INSTALL_DATA) sounds/* $(prefix)/share/$(bin_PROGRAMS)/sounds
+-	test -e "$(prefix)/share/$(bin_PROGRAMS)/hiscore" || >"$(prefix)/share/$(bin_PROGRAMS)/hiscore"
+-	chmod 666 $(prefix)/share/$(bin_PROGRAMS)/hiscore
+-	cp -r images $(prefix)/share/$(bin_PROGRAMS)
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/$(bin_PROGRAMS)/maps
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/$(bin_PROGRAMS)/sounds
++	$(INSTALL_DATA) maps/* $(DESTDIR)$(prefix)/share/$(bin_PROGRAMS)/maps
++	$(INSTALL_DATA) sounds/* $(DESTDIR)$(prefix)/share/$(bin_PROGRAMS)/sounds
++	test -e "$(DESTDIR)$(prefix)/share/$(bin_PROGRAMS)/hiscore" || >"$(DESTDIR)$(prefix)/share/$(bin_PROGRAMS)/hiscore"
++	chmod 666 $(DESTDIR)$(prefix)/share/$(bin_PROGRAMS)/hiscore
++	cp -r images $(DESTDIR)$(prefix)/share/$(bin_PROGRAMS)
+ 	@echo '--------------------------------------------------------------------- \nThe levels files were installed to $(prefix)/share/$(bin_PROGRAMS)/maps, \n the tilesets were installed to $(prefix)/share/$(bin_PROGRAMS)/images \n and the sound files were installed to $(prefix)/share/$(bin_PROGRAMS)/sounds \n----------------------------------------------------------------------'
+ 
+ uninstall-local:
