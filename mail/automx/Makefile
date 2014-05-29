@@ -29,10 +29,8 @@ PORTDOCS=	*
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	MEMCACHE
-MEMCACHE_DESC=	Add memcahce support
+MEMCACHE_DESC=	Add memcache support
 MEMCACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}memcached>=0:${PORTSDIR}/databases/py-memcached
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -49,8 +47,5 @@ do-install:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "[^m]*" ${STAGEDIR}${DOCSDIR})
 	${INSTALL_MAN} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/BASIC_CONFIGURATION_README ${STAGEDIR}${DOCSDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
