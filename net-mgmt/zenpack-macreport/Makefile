@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/zipball/master/
 DISTNAME=	zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 
-MAINTAINER=	zenoss@experts-exchange.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lists MAC address and the Device and Interface associated info
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
