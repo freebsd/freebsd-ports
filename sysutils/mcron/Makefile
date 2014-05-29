@@ -12,6 +12,7 @@ COMMENT=	100% compatible replacement for Vixie cron
 RUN_DEPENDS=	guile2>=2.0:${PORTSDIR}/lang/guile2
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
