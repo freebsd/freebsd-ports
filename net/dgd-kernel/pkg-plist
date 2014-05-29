@@ -1,5 +1,7 @@
 etc/dgd-kernel/kernel.dgd
 etc/rc.d/dgd-kernel.sh.sample
+@owner mud
+@group mud
 %%DATADIR%%/kernel/include/config.h
 %%DATADIR%%/kernel/include/kernel/access.h
 %%DATADIR%%/kernel/include/kernel/kernel.h
@@ -35,6 +37,8 @@ etc/rc.d/dgd-kernel.sh.sample
 %%DATADIR%%/kernel/kernel/sys/telnet_port.c
 %%DATADIR%%/kernel/kernel/sys/userd.c
 %%DATADIR%%/kernel/usr/System/initd.c
+@owner
+@group
 @unexec rm -f %D/%%DATADIR%%/kernel/kernel/data/* || true
 @unexec rm -f %D/%%DATADIR%%/kernel/include/float.h || true
 @unexec rm -f %D/%%DATADIR%%/kernel/include/limits.h || true

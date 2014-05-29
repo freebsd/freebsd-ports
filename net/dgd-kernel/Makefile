@@ -3,7 +3,7 @@
 
 PORTNAME=	dgd-kernel
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net games
 MASTER_SITES=	http://ftp.dworkin.nl/kernellib/ \
 		http://ftp.dworkin.nl/kernellib/patches/
@@ -49,7 +49,5 @@ do-install:
 post-install:
 	@# Need a temporary directory for certain files
 	@${MKDIR} ${STAGEDIR}${DATADIR}/tmp
-	@# Set mudlib ownership
-	-@${CHOWN} -h -R mud:mud ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
