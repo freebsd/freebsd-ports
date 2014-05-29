@@ -17,7 +17,7 @@ USE_AUTOTOOLS=	automake:env
 SPOOLDIR?=	/var/spool
 
 NO_CDROM=	Free for individuals and non-military, non-profit organisations only
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR}
 
