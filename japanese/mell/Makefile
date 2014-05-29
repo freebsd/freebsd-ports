@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://taiyaki.org/elisp/mell/src/
 
-MAINTAINER=	otsuji@users.sourceforge.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs Lisp for taiyaki-elisp, especially for the prime
 
 GNU_CONFIGURE=		yes

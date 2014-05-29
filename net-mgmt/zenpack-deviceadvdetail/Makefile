@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/epuzanov/${ZPACKPREFIX}${PORTNAME}/tarball/deviceadvdetail-2.7/
 DISTNAME=	epuzanov-${ZPACKPREFIX}${PORTNAME}-deviceadvdetail-2.7-0-g4cc7c48
 
-MAINTAINER=	zenoss@experts-exchange.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides additional hardware details for Zenoss
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}

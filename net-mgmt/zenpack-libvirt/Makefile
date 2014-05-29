@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=   https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
 DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 
-MAINTAINER=	zenoss@experts-exchange.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides monitoring of virtualization servers through Zenoss
 
 LICENSE=	GPLv2

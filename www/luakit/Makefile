@@ -5,7 +5,7 @@ PORTNAME=	luakit
 PORTVERSION=	2012.09.13r1
 CATEGORIES=	www
 
-MAINTAINER=	gugabsd@mundounix.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, small, webkit based browser framework extensible by Lua
 
 LICENSE=	GPLv3

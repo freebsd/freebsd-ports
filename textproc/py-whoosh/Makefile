@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Whoosh-${PORTVERSION}
 
-MAINTAINER=	gugabsd@mundounix.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Featureful full-text indexing and searching in Python
 
 USE_PYTHON=		yes
