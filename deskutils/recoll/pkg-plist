@@ -2,9 +2,7 @@
 bin/recollindex
 bin/recollq
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclconfig.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclconfig.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclextract.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/recoll.so
 lib/recoll/librecoll.so.%%VERSION%%
@@ -26,6 +24,8 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/examples/recoll.qss
 %%DATADIR%%/examples/recollindex.desktop
 %%DATADIR%%/filters/hotrecoll.py
+%%DATADIR%%/filters/msodump.zip
+%%DATADIR%%/filters/ppt-dump.py
 %%DATADIR%%/filters/rclabw
 %%DATADIR%%/filters/rclaptosidman
 %%DATADIR%%/filters/rclaudio
@@ -74,6 +74,8 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/filters/rclxml
 %%DATADIR%%/filters/rclzip
 %%DATADIR%%/filters/xdg-open
+%%DATADIR%%/filters/xls-dump.py
+%%DATADIR%%/filters/xlsxmltocsv.py
 %%DATADIR%%/images/aptosid-book.png
 %%DATADIR%%/images/aptosid-manual.png
 %%DATADIR%%/images/archive.png
@@ -113,11 +115,11 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/translations/recoll_xx.qm
 %%DATADIR%%/translations/recoll_zh.qm
 %%DATADIR%%/translations/recoll_zh_CN.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/filters
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%
-@dirrm lib/recoll
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/recoll
+@dirrm lib/recoll
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/filters
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
