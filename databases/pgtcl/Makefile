@@ -17,7 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 OPTIONS_DEFINE=	DOCS
 
+.if defined(PGTCL_SLAVE)
+USES=		pgsql:${PGTCL_SLAVE} tcl
+.else
 USES=		pgsql tcl
+.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR}
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
