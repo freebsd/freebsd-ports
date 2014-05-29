@@ -12,8 +12,7 @@ DISTNAME=	Glide3-FreeBSD-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to support 3dfx Voodoo3/4/5/Banshee with the DRI
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_XORG=	x11 xxf86dga xxf86vm
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake autoconf libtool
