@@ -5,11 +5,11 @@ PORTNAME=	dungeon
 PORTVERSION=	3.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/:source \
-	ftp://ftp.ifarchive.com/if-archive/games/source/:source \
-	http://mirror.ifarchive.org/if-archive/games/source/:source \
-	ftp://ftp.funet.fi/pub/misc/ifarchive/games/source/:source \
-	http://ifarchive.flavorplex.com/if-archive/games/source/:source \
-	http://eblong.com/zarf/glk/:glkterm
+		ftp://ftp.ifarchive.com/if-archive/games/source/:source \
+		http://mirror.ifarchive.org/if-archive/games/source/:source \
+		ftp://ftp.funet.fi/pub/misc/ifarchive/games/source/:source \
+		http://ifarchive.flavorplex.com/if-archive/games/source/:source \
+		http://eblong.com/zarf/glk/:glkterm
 DISTFILES=	dungn27s.zip:source \
 		dungn32b.zip:source \
 		dungeon-gdt-glk.tar.gz:source \
@@ -34,8 +34,6 @@ PORTDOCS=	HISTORY MANIFEST README
 MAKE_FLAGS+=	DATADIR=${DATADIR}
 MAKE_ENV+=	GDT_FLAG=-DHAVE_GDT
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -49,17 +47,20 @@ pre-patch:
 
 do-build:
 	@(cd ${WRKSRC}/glkterm && ${MAKE})
-	@(cd ${WRKSRC}/dungeon-gdt/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS})
+	@(cd ${WRKSRC}/dungeon-gdt/ && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS})
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/dungeon-gdt/dungeon ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/dungeon-gdt/dundat ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/DUNGEON.6 ${MAN6PREFIX}/man/man6/dungeon.6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/dungeon-gdt/dungeon \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/dungeon-gdt/dundat ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/DUNGEON.6 \
+		${STAGEDIR}${MAN6PREFIX}/man/man6/dungeon.6
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/dungn32b.zip ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/dungn32b.zip ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
