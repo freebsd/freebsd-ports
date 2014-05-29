@@ -5,7 +5,8 @@ PORTNAME=	cfengine
 PORTVERSION=	3.3.8
 PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cfengine.com/source-code/download?file=
+MASTER_SITES=	http://cfengine.com/source-code/download?file= \
+		https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 PKGNAMESUFFIX=	33
 
 MAINTAINER=	cy@FreeBSD.org
@@ -18,7 +19,7 @@ CONFLICTS=	cfengine-2* cfengine-3.[245]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
-USES=		gmake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -42,15 +43,10 @@ MYSQL_DESC=	Enable MySQL integration
 LIBVIRT_DESC=	Enable libvirt integration
 OPTIONS_DEFAULT=TOKYOCABINET
 
-MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
-	cf-report.8	cf-serverd.8	cf-execd.8	\
-	cf-know.8	cf-promises.8	cf-runagent.8
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!' \
 		${WRKSRC}/docs/Makefile.in
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}

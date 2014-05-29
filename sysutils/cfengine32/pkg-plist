@@ -1,6 +1,6 @@
-lib/libpromises.la
 lib/libpromises.so
 lib/libpromises.so.1
+lib/libpromises.so.1.0.0
 man/man8/cf-agent.8.gz
 man/man8/cf-execd.8.gz
 man/man8/cf-key.8.gz
@@ -263,8 +263,3 @@ share/cfengine/masterfiles/promises.cf
 @dirrm %%DOCSDIR%%
 @dirrm share/cfengine/masterfiles
 @dirrm share/cfengine
-@unexec rmdir "/var/cfengine/inputs" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/modules" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/outputs" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/ppkeys" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine" >/dev/null 2>&1 || :

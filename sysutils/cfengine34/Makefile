@@ -5,7 +5,8 @@ PORTNAME=	cfengine
 PORTVERSION=	3.4.5
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cfengine.com/source-code/download?file=
+MASTER_SITES=	http://cfengine.com/source-code/download?file= \
+		https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
@@ -22,6 +23,7 @@ CONFLICTS=	cfengine-2* cfengine-3.[235]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
+USES=		libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -50,7 +52,6 @@ PGSQL_DESC=	Enable PostgreSQL connector
 MYSQL_DESC=	Enable MySQL connector
 LIBVIRT_DESC=	Enable libvirt compatibility
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}
@@ -80,10 +81,6 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
 LIB_DEPENDS+=		libvirt.so:${PORTSDIR}/devel/libvirt
 .endif
-
-MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
-	cf-report.8	cf-serverd.8	cf-execd.8	\
-	cf-promises.8	cf-runagent.8
 
 post-patch:
 		@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!'\
