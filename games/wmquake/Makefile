@@ -12,8 +12,7 @@ MASTER_SITE_SUBDIR=	uqs
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Id Software\'s Quake I in a 64x64 WM dockapp window
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_GNOME=	gtk12
 
 PLIST_FILES=	bin/wmquake

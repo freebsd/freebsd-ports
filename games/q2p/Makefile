@@ -11,9 +11,8 @@ DISTNAME=	Q2P-0.2-2006-12-31
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced OpenGL-only Quake II engine
 
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_XORG=	xxf86dga xext xxf86vm x11
-USE_GMAKE=	yes
 ALL_TARGET=	release
 
 MAKE_ENV=	DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}"

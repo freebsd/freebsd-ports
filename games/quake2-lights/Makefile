@@ -15,8 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:data,src \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lights modification for Quake II
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}/src
 ALL_TARGET=	release

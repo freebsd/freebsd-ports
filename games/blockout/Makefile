@@ -15,7 +15,7 @@ COMMENT=	BlockOut II is an adaptation of the original Blockout DOS game
 ONLY_FOR_ARCHS=	i386
 
 USE_SDL=	mixer sdl
-USE_GMAKE=	yes
+USES=		gmake
 USE_GL=		gl glu
 
 WRKSRC=		${WRKDIR}/bl24_lin_src

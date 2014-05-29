@@ -16,9 +16,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-USE_GMAKE=	yes
+
 USE_SDL=	sdl mixer ttf
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME}/nethack
 HAS_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/sys/unix

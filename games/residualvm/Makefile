@@ -18,7 +18,7 @@ GH_COMMIT=	340bbe3
 
 USE_SDL=	sdl
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN6=		residualvm.6
 NO_MANCOMPRESS=	yes

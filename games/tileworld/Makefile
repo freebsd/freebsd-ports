@@ -13,7 +13,7 @@ COMMENT=	An emulation of the game "Chip's Challenge"
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
+USES=		gmake
 ALL_TARGET=	tworld
 DATADIR=	share/tworld
 
