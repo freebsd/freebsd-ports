@@ -13,19 +13,18 @@ COMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
 
 USE_XORG=	x11 xpm xext
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xroads ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/xroads
+	${INSTALL_PROGRAM} ${WRKSRC}/xroads ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xroads
 .for file in 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18
-	${INSTALL_DATA} ${WRKSRC}/map${file}.xrm ${PREFIX}/share/xroads
+	${INSTALL_DATA} ${WRKSRC}/map${file}.xrm ${STAGEDIR}${PREFIX}/share/xroads
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xroads
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/xroads
 .for file in BUGS CHANGELOG README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xroads
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/share/doc/xroads
 .endfor
 .endif
 
