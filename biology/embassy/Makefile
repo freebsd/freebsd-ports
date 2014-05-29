@@ -93,7 +93,7 @@ PLIST_SUB+=	PLIST_${app}=${PLIST_${app}}
 do-extract:
 .for app in ${APPLIST}
 	@ ${MKDIR} ${EMBASSY_WRKDIR}
-	@ cd ${EMBASSY_WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	@ cd ${EMBASSY_WRKDIR} && ${TAR} ${EXTRACT_BEFORE_ARGS} \
 	  ${_DISTDIR}/${${app}_DISTFILE} ${EXTRACT_AFTER_ARGS}
 	@ if [ `id -u` = 0 ]; then \
 	    ${CHMOD} -R ug-s ${${app}_WRKSRC}; \
