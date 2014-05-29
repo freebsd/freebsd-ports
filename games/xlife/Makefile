@@ -6,7 +6,7 @@ PORTVERSION=	6.7.6
 CATEGORIES=	games
 MASTER_SITES=	http://litwr2.atspace.eu/xlife/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	John Horton Conway's Game of Life
 
 LICENSE=	MIT GPLv2
@@ -14,20 +14,18 @@ LICENSE_COMB=	multi
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
-OPTIONS_DEFINE=	DOCS
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USE_BZIP2=	yes
-USES=		imake:notall
+USES=		imake:notall tar:bzip2
 USE_XORG=	x11
 
+DESKTOP_ENTRIES="XLife" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;Simulation;" ""
+
+OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
-
-DESKTOP_ENTRIES="XLife" "" "" "${PORTNAME}" "" false
-
-DOC_FILES=	CHANGES HACKING HOW-TO-INSTALL INSTALL MISSED README \
-		SHORT-INFO XLIFE-HISTORY.dot changelog.debian changelog.openbsd
+DOC_FILES=	CHANGES HACKING MISSED README \
+		SHORT-INFO XLIFE-HISTORY.dot
 
 .include <bsd.port.options.mk>
 
