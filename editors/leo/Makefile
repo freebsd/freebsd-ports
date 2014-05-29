@@ -5,7 +5,7 @@ PORTNAME=	leo
 PORTVERSION=	4.11
 CATEGORIES=	editors python
 MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}-final
-DISTFILES=	Leo-${PORTVERSION}-final.zip
+DISTNAME=	Leo-${PORTVERSION}-final
 DIST_SUBDIR=	leo
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,7 +25,7 @@ PYENCHANT_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-
 
 WRKSRC=		${WRKDIR}/Leo-${PORTVERSION}-final
 
-USES=		shebangfix
+USES=		shebangfix zip
 SHEBANG_FILES=	leo/doc/html/fixup.pl leo/scripts/LinixInstall.py
 USE_PYTHON=	yes
 
