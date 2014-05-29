@@ -4956,7 +4956,7 @@ ${deptype:tl}-depends:
 					inverse_dep=`${ECHO_CMD} $$prog | ${SED} \
 						-e 's/<=/=gt=/; s/</=ge=/; s/>=/=lt=/; s/>/=le=/' \
 						-e 's/=gt=/>/; s/=ge=/>=/; s/=lt=/</; s/=le=/<=/'`; \
-					pkg_info=`${PKG_INFO} -E "$$inverse_dep" >/dev/null 2>&1 || ${TRUE}`; \
+					pkg_info=`${PKG_INFO} -E "$$inverse_dep" 2>/dev/null || ${TRUE}`; \
 					if [ "$$pkg_info" != "" ]; then \
 						${ECHO_MSG} "===>   Found $$pkg_info, but you need to upgrade to $$prog."; \
 						exit 1; \
