@@ -2,24 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	ws2300
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	science python
-MASTER_SITES=	http://ace-host.stuart.id.au/russell/files/ws2300/ \
-		http://www.transit.hanse.de/mirror/ace-host.stuart.id.au/russell/files/ws2300/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}-1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Driver for the LaCrosse WS-2300 weather station
 
-USE_PYTHON=	yes
+LICENSE=	AGPLv3
+
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-MAN1=	ws2300.1
-
-NO_STAGE=	yes
 post-install:
-	#@${LN} -sf ${PYTHONPREFIX_SITELIBDIR}/ws2300.py ${PREFIX}/bin/ws2300
-	@${INSTALL_SCRIPT} ${FILESDIR}/ws2300 ${PREFIX}/bin/ws2300
-	@${INSTALL_MAN} ${WRKSRC}/ws2300.1 ${PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${FILESDIR}/ws2300 ${STAGEDIR}${PREFIX}/bin/ws2300
+	${INSTALL_MAN} ${WRKSRC}/ws2300.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
