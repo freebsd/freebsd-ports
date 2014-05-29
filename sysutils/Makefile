@@ -134,6 +134,7 @@
     SUBDIR += consolehm
     SUBDIR += consolekit
     SUBDIR += contool
+    SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreutils
     SUBDIR += cotty
