@@ -56,6 +56,7 @@ PLIST_DIRSTRY=	share/idl
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 			mozilla-plugin
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
