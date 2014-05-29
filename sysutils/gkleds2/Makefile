@@ -14,10 +14,9 @@ COMMENT=	GKrellM Leds for CapsLock, NumLock, and ScrollLock
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_XORG=	x11 xtst
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

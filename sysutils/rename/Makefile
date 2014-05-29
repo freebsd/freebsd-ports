@@ -12,7 +12,7 @@ MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Rename multiple files using regular expressions
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		rename.1

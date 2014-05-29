@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlitecachec.py:${PORTSDIR}/devel/py-yum-metad
 		${PYTHON_SITELIBDIR}/yum/__init__.py:${PORTSDIR}/sysutils/yum
 
 USE_PYTHON=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 BUILD_DEPENDS+=	ginstall:${PORTSDIR}/sysutils/coreutils
 GINSTALL=	ginstall

@@ -9,7 +9,7 @@ MASTER_SITES=	http://xjack.org/logtool/download/
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 
-USE_GMAKE=	yes
+USES=		gmake
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/${PORTNAME}

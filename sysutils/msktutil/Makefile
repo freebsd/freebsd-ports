@@ -11,8 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Utility to manage Active Directory interoperability
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 WANT_OPENLDAP_SASL=	yes

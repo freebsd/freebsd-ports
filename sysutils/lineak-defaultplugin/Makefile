@@ -18,7 +18,7 @@ LIB_DEPENDS=	lineak:${PORTSDIR}/sysutils/lineakd
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xt xtst xfixes
-USE_GMAKE=	yes
+USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--program-prefix=''

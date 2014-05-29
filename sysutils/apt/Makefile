@@ -19,8 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		gettext iconv
+USES=		gettext iconv gmake
 USE_BDB=	44+
 USE_LDCONFIG=	yes
 NO_FILTER_SHLIBS=	yes

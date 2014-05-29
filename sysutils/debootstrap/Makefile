@@ -15,7 +15,7 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	DESTDIR="${PREFIX}"
 
 MAN8=		debootstrap.8

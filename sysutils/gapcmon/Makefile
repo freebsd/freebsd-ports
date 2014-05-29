@@ -12,10 +12,8 @@ COMMENT=	Monitor apcupsd with GTK+2 GUI
 LICENSE=	GPLv2
 
 SUB_FILES=	pkg-message
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gconf2
-USES=		pkgconfig
+USES=		pkgconfig gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL README

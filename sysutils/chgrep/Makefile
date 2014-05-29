@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast string substitution across multiple files
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/chgrep man/man1/${PORTNAME}.1.gz
 
