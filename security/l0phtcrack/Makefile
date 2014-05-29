@@ -8,12 +8,11 @@ MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
 		http://www.cotse.com/sw/WinNT/
 DISTNAME=	lcsrc
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cracks SAMBA or Windows NT passwords
 
-USES=		dos2unix perl5
+USES=		dos2unix perl5 zip
 DOCDIR=		share/doc/${PORTNAME}
 RESTRICTED=	uses GNU getopt with BSDish-licensed code from OpenSSL
 NO_WRKSUBDIR=	yes
