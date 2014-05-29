@@ -15,11 +15,10 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 #
 # rpcc does not work with byacc, so just require BISON
 #
-USES=		bison
+USES=		bison gmake
 
 #
 # Map X.Y.Z.Q => X.Y

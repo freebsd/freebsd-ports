@@ -13,7 +13,7 @@ COMMENT=	Open Card Framework to PC/SC bridge
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_JAVA=	1.2+
 USE_LDCONFIG=	yes
 

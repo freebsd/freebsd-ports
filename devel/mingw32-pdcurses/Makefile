@@ -14,7 +14,7 @@ COMMENT=	Curses and Panel terminal library for Windows
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	gccwin32.mak
 WRKSRC=		${WRKDIR}/${DISTNAME}/win32
 MAKE_ARGS+=	CC=${PKGNAMEPREFIX}gcc LIBEXE=${PKGNAMEPREFIX}ar

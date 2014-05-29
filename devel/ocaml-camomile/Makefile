@@ -10,8 +10,7 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	A comprehensive Unicode library for objective caml language
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAML_LDCONFIG=yes

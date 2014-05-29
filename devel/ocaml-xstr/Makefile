@@ -20,7 +20,7 @@ USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAMLFIND_PLIST=yes
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	all opt
 
 NO_STAGE=	yes

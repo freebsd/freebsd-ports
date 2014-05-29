@@ -10,8 +10,7 @@ DISTNAME=	AROS-20060207-i386-all-sdk
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Software development kit (SDK) for the AROS Operating System
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

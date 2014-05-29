@@ -14,7 +14,7 @@ COMMENT=	Foreign function call libraries
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes

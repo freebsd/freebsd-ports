@@ -10,8 +10,7 @@ PKGNAMEPREFIX=	openwince-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of the useful include files for embedded developers
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 NO_STAGE=	yes
