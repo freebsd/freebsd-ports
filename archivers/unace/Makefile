@@ -8,7 +8,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
 
-MAINTAINER=	jonny@jonny.eng.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract, view & test ACE archives
 
 MAKE_JOBS_UNSAFE=	yes
