@@ -1,0 +1,25 @@
+Index: multimedia/vlc/files/patch-configure
+===================================================================
+--- multimedia/vlc/files/patch-configure	(revision 0)
++++ multimedia/vlc/files/patch-configure	(working copy)
+@@ -0,0 +1,20 @@
++--- configure.orig	2014-02-04 19:02:27.000000000 -0600
+++++ configure	2014-02-04 19:02:39.000000000 -0600
++@@ -26703,7 +26703,7 @@
++ if ac_fn_c_try_compile "$LINENO"; then :
++   ac_cv_altivec_inline="yes"
++ else
++-  CFLAGS="${CFLAGS} -Wa,-m7400"
+++  CFLAGS="${CFLAGS} -Wa,-maltivec"
++           cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++ /* end confdefs.h.  */
++ 
++@@ -26716,7 +26716,7 @@
++ }
++ _ACEOF
++ if ac_fn_c_try_compile "$LINENO"; then :
++-  ac_cv_altivec_inline="-Wa,-m7400"
+++  ac_cv_altivec_inline="-Wa,-maltivec"
++ else
++   ac_cv_altivec_inline=no
++ fi
