@@ -3,7 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.2.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 PKGNAMESUFFIX=	22
@@ -36,15 +36,15 @@ SIEVE_LIB_DEPENDS=	libsieve.so:${PORTSDIR}/mail/libsieve
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
-USES=		gmake pkgconfig
 
-CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-pkglibdir=${LOCALBASE}/lib/dbmail
 MAKE_ARGS+=	mandir=${MANPREFIX}/man
@@ -79,15 +79,6 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
 				${WRKSRC}/dbmail.h
-
-# remove leftovers which are not removed by some revisions of port
-# fixes the `Shared object "libpgsqldbmail.so.0" not found, required by "libdbmail.so.0"' error.
-pre-install:
-	@for f in 'a' 'la' 'so' 'so.0'; do \
-	  if [ -f ${STAGEDIR}${PREFIX}/lib/libdbmail.$$f ] ; then \
-	    ${RM} ${STAGEDIR}${PREFIX}/lib/libdbmail.$$f; \
-	  fi; \
-	done
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist

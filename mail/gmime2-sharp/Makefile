@@ -1,14 +1,14 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
-PKGNAMESUFFIX=	-sharp
+PKGNAMESUFFIX=	2-sharp
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for gmime
 
-IGNORE=		try to install weaked-named assembly into the GAC.
+IGNORE=		try to install weaked-named assembly into the GAC
 
 LIB_DEPENDS=	libgmime-2.0.so:${PORTSDIR}/mail/gmime2
 
@@ -18,17 +18,14 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USES=		mono pathfix
+USES=		mono
 USE_GNOME=	glib20 gtksharp20
 CONFIGURE_ARGS=	--enable-mono=yes
 
-LATEST_LINK=	gmime2-sharp
-
 # Else we conflict with mail/gmime2
-NOPORTDOCS=	yes
+OPTIONS_EXCLUDE=DOCS
 
 # Done in pre-configure because master port has a post-patch target already.
-NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's|.@GMIME_VERSION@||g' \
 		${WRKSRC}/mono/gmime-sharp.dll.config.in
