@@ -22,6 +22,12 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+CFLAGS+=	-mminimal-toc
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,LDFLAGS -no-undefined -lpsapi",& ;; \
 		dragonfly* | freebsd*),' ${WRKSRC}/configure
