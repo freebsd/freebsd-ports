@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Codespace-frugal STL implementation
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USE=		gmake tar:bzip2
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 HAS_CONFIGURE=	yes

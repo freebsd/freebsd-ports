@@ -35,9 +35,8 @@ BUILD_DEPENDS+=		psp-addr2line:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-strings:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-strip:${PORTSDIR}/devel/psptoolchain-binutils
 
-USE_BZIP2=		yes
-USE_GMAKE=		yes
 
+USES=		gmake tar:bzip2
 PATCH_WRKSRC=		${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 

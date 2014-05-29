@@ -14,7 +14,7 @@ COMMENT=	OCaml unit test framework
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
-USE_GMAKE=	yes
+USES=		gmake
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	README style.css *.html

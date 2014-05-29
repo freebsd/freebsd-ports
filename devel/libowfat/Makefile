@@ -9,8 +9,7 @@ MASTER_SITES=	http://dl.fefe.de/
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A general purpose library based on code by D. J. Bernstein
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 ALL_TARGET=	dep all
 
 MAKEFILE=	GNUmakefile

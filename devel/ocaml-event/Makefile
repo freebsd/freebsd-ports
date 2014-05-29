@@ -16,7 +16,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 ALL_TARGET=	all allopt
-USE_GMAKE=	yes
+USES=		gmake
 
 .ifndef(NOPORTDOCS)
 ALL_TARGET+=	doc

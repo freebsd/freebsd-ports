@@ -21,8 +21,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/${PSP_SDK_STAGE_PREFIX}/sdk/include/pspsdk.h:${POR
 			psp-ld:${PORTSDIR}/devel/psptoolchain-binutils \
 			${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin/psp-gcc:${PORTSDIR}/devel/psptoolchain-gcc-stage1
 
-USE_GMAKE=		yes
-
+USES=		gmake
 HAS_CONFIGURE=		yes
 CONFIGURE_ENV=		PATH=${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin:${PATH}
 MAKE_ENV=		PATH=${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin:${PATH}

@@ -38,9 +38,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		jpegtopnm:${PORTSDIR}/graphics/netpbm
 .endif
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext:build
+USES=		gettext:build tar:bzip2 gmake
 HAS_CONFIGURE=	yes
 
 CONFLICTS=	avr-libc-devel-[0-9]*

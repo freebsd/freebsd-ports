@@ -12,9 +12,8 @@ PKGNAMEPREFIX=		psptoolchain-
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
-USE_BZIP2=		yes
+USES=		gmake tar:bzip2
 USE_GCC=		any
-USE_GMAKE=		yes
 
 HAS_CONFIGURE=		yes
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-unknown-freebsd${OSREL}

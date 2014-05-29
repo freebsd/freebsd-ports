@@ -21,8 +21,7 @@ IGNORE=		doesn't build with vala 0.18+
 CONFIGURE_ARGS=	--disable-vtg-plugin --disable-gen-project
 CPPFLAGS=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_GNOME=	gnomehack glib20 intltool
 USE_LDCONFIG=	yes
 

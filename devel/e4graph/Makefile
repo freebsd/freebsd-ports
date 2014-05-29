@@ -17,7 +17,7 @@ LIB_DEPENDS=	mk4.0:${PORTSDIR}/databases/metakit \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
 		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} --enable-tcl \

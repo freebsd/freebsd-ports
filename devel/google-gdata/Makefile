@@ -17,7 +17,7 @@ BUILD_DEPENDS=	gmcs:${PORTSDIR}/lang/mono
 # google-gdata depends on _THIS_ version of zlib so make them happy.
 ZLIB_VERSION=	1.2.3
 
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 pre-configure:

@@ -18,7 +18,7 @@ RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
 		mtn:${PORTSDIR}/devel/monotone \
 		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_OCAML=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-local-lablgtk

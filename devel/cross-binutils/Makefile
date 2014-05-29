@@ -15,8 +15,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	christoph.mallon@gmx.de
 COMMENT=	GNU binutils port for cross-target development
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
 MAKE_JOBS_UNSAFE=	yes

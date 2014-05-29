@@ -20,10 +20,9 @@ BUILD_DEPENDS=	p5-Devel-Size>=0:${PORTSDIR}/devel/p5-Devel-Size \
 		p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	configure
 USE_EMACS=	yes
-USE_GMAKE=	yes
 
 INFO=	sepia
 

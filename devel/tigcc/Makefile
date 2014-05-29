@@ -17,9 +17,7 @@ DISTFILES=		gcc-core-4.1-20060728.tar.bz2:gcc \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		bison
+USES=		bison tar:bzip2 gmake
 NO_WRKSUBDIR=	yes
 
 NO_STAGE=	yes

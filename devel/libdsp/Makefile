@@ -15,7 +15,7 @@ COMMENT=	C++ class library of common digital signal processing functions
 WRKSRC=		${WRKDIR}/libdsp-src-${PORTVERSION}/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}
 
 USE_AUTOTOOLS=	libtool:env
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	MKDIR="${MKDIR}" INLINE_VER="${INLINE_VER}"
 MAKEFILE=	Makefile.BSD
 USE_LDCONFIG=	yes

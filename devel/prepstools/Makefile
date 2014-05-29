@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 USE_AUTOTOOLS=	libtool
 USE_PGSQL=	yes
 USES=		gmake pkgconfig
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui
 
 GNU_CONFIGURE=	yes
