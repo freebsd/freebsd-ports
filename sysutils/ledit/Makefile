@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	camlp5r:${PORTSDIR}/devel/ocaml-camlp5
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_OCAML=	yes
 
 ALL_TARGET=	all ledit.opt

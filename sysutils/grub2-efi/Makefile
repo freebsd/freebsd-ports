@@ -19,13 +19,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		help2man:${PORTSDIR}/misc/help2man
 
 SSP_UNSAFE=	yes
-USE_XZ=		yes
 USE_GCC=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		bison gettext
+USES=		bison gettext gmake tar:xz
 ONLY_FOR_ARCHS=	amd64
 MAKE_JOBS_UNSAFE=	yes
 

@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto Nice Daemon
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	default
 NOPRECIOUSMAKEVARS=	yes
 

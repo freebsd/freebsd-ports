@@ -14,8 +14,7 @@ COMMENT=	Various ELF related utils for ELF32, ELF64 binaries
 
 LICENSE=	GPLv2
 
-USE_XZ=		true
-USE_GMAKE=	true
+USES=		gmake tar:xz
 
 PLIST_FILES=	bin/dumpelf bin/pspax bin/scanelf bin/scanmacho
 

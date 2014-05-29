@@ -15,8 +15,7 @@ MAINTAINER=	rde@tavi.co.uk
 COMMENT=	A periodic command scheduler
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	build
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --localstatedir=/var \
 		--with-cflags="${CFLAGS}" \

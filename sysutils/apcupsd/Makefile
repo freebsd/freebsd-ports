@@ -22,7 +22,7 @@ USE_RC_SUBR=	apcupsd
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--with-nologin=/var/run \
 		--disable-install-distdir \

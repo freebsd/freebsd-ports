@@ -14,11 +14,9 @@ COMMENT=	Gnome Audio Cd Burner
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig gmake tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	pygnomedesktop intlhack
-USE_GMAKE=	yes
 USE_GSTREAMER=	core gnomevfs python
 USE_PYTHON=	yes
 

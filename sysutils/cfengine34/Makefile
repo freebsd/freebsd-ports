@@ -23,11 +23,10 @@ CONFLICTS=	cfengine-2* cfengine-3.[235]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
-USES=		libtool
+USES=		libtool gmake
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \

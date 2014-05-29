@@ -16,7 +16,7 @@ MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Allows formatting/partitioning/analysis/repairing of SCSI disks
 
 LIBSCHILY=	libschily-2.01.01a07.tar.gz
-USE_GMAKE=	yes
+USES=		gmake
 
 .include <bsd.port.pre.mk>
 

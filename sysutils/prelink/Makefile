@@ -12,9 +12,8 @@ COMMENT=	ELF prelinking utility to speed up dynamic linking
 LIB_DEPENDS=	argp:${PORTSDIR}/devel/argp-standalone
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize libtool
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-c -a

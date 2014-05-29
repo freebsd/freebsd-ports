@@ -11,7 +11,7 @@ DIST_SUBDIR=	lineak
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lineakd is a daemon which enables special keys on internet keyboards
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	x11 xext xt
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

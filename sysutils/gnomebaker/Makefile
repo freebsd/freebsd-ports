@@ -19,9 +19,8 @@ RUN_DEPENDS+=		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
 INSTALLS_OMF=		yes
-USES=		gettext
+USES=		gettext gmake
 USE_GSTREAMER=		vorbis mp3 flac
 INSTALLS_ICONS=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include

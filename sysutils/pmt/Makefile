@@ -10,8 +10,7 @@ MASTER_SITES=	http://hansmi.ch/download/pmt/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small collection of filters which can be added to UNIX pipes
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 
 PLIST_FILES=	bin/pmt
 
