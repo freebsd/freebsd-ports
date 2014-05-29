@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	edgar
-DISTVERSION=	1.15-1
+DISTVERSION=	1.16-1
 CATEGORIES=	games
 MASTER_SITES=	SF/legendof${PORTNAME}/${PORTVERSION:R}/
 PKGNAMEPREFIX=	legend-of-
@@ -33,7 +33,7 @@ NLS_USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC       = gcc|CC       = ${CC}|; \
-		s|$$(DESTDIR)/usr|${STAGEDIR}${LOCALBASE}|; \
+		s|$$(DESTDIR)/usr|$$(DESTDIR)/usr/local|; \
 		s|$$(PREFIX)/games/|$$(PREFIX)/bin/|; \
 		s|/share/games/edgar/|/share/edgar/|; \
 		s|-Wall ||; \
