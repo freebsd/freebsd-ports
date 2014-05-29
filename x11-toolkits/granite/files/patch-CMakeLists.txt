@@ -1,5 +1,5 @@
---- ./CMakeLists.txt.orig	2013-12-15 12:43:00.000000000 +0000
-+++ ./CMakeLists.txt	2013-12-26 19:54:31.000000000 +0000
+--- ./CMakeLists.txt.orig	2014-03-18 20:51:49.000000000 +0000
++++ ./CMakeLists.txt	2014-05-29 09:36:44.000000000 +0000
 @@ -24,12 +24,28 @@
  include (CPack)
  add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
@@ -29,7 +29,7 @@
  #
  # Packages in PKG_DEPS are used with the vala compiler and other related tools (not versioned.)
  # Packages in PKG_DEPS_CHECK are used with PKG-Config and for linking, etc. They can contain versions.
-@@ -42,19 +58,18 @@
+@@ -42,31 +58,37 @@
      gtk+-3.0
      gio-unix-2.0
      posix
@@ -52,11 +52,25 @@
  pkg_check_modules (DEPS REQUIRED ${PKG_DEPS_CHECK})
  
  set (VALAC_OPTIONS
-@@ -66,7 +81,6 @@
+      --thread
+      --target-glib=2.32)
+ 
+-if (CMAKE_SYSTEM_NAME MATCHES "Linux")
++if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+     set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=LINUX)
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
++    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=DragonFly)
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=FreeBSD)
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "NetBSD")
++    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=NetBSD)
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=OpenBSD)
  endif ()
  
  add_subdirectory (lib)
 -add_subdirectory (demo)
- add_subdirectory (doc)
+-add_subdirectory (doc)
++#add_subdirectory (doc)
  add_subdirectory (po)
  add_subdirectory (icons)
