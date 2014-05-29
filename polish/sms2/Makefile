@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 LATEST_LINK=	sms2
 
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
