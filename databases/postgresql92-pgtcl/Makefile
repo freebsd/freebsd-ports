@@ -1,11 +1,10 @@
 # $FreeBSD$
 
-WANT_PGSQL_VER=	92
-PKGNAMESUFFIX=	-postgresql${WANT_PGSQL_VER}
+PKGNAMESUFFIX=	-postgresql92
 
-CONFLICTS=	pgtcl-[0-9]* pgtcl-postgresql9[01]-[0-9]*
+CONFLICTS=	pgtcl-[0-9]* pgtcl-postgresql9[0134]-[0-9]*
 
+PGTCL_SLAVE=	9.2
 MASTERDIR=	${.CURDIR}/../pgtcl
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
