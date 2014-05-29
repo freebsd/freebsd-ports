@@ -90,7 +90,7 @@ Notes:
     <affects>
       <package>
 	<name>mumble</name>
-	<range><eq>1.2.4</eq></range>
+	<range><ge>1.2.4</ge><le>1.2.4_6</le></range>
       </package>
     </affects>
     <description>
