@@ -31,7 +31,7 @@ _INCLUDE_USES_PGSQL_MK=	yes
 #	to add dependencies; use WANT_PGSQL as explained above
 #
 
-VALID_PGSQL_VER=	8.4 9.0 9.1 9.2 9.3
+VALID_PGSQL_VER=	8.4 9.0 9.1 9.2 9.3 9.4
 
 # Override non-default LIBVERS like this:
 #PGSQL99_LIBVER=6
