@@ -13,7 +13,7 @@ COMMENT=	A portable CVS repository synchronization utility
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/COPYRIGHT
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	cvsyncd
 USE_OPENSSL=	yes
 

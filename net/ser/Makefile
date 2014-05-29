@@ -14,7 +14,7 @@ COMMENT=	Fast and configurable SIP proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	# empty
 USE_RC_SUBR=	ser
 CFLAGS+=	-I${LOCALBASE}/include

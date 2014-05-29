@@ -13,8 +13,8 @@ COMMENT=	Console/GTK+ TCP/IP Packets Forger
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USES=		gmake
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 

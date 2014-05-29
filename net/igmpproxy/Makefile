@@ -15,7 +15,7 @@ COMMENT=	Multicast forwarding IGMP proxy
 HOMEPAGE=	http://igmpproxy.sourceforge.net/
 
 USE_RC_SUBR=	igmpproxy
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

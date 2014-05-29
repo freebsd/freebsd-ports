@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/wired:${PORTSDIR}/net/wired
 WRKSRC=		${WRKDIR}/wired-tracker-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	trackerd
 
 MAN1=		trackerdctl.1

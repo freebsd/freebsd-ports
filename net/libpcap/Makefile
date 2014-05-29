@@ -10,8 +10,7 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		bison
+USES=		bison gmake
 USE_LDCONFIG=	yes
 
 .if defined(LIBPCAP_OVERWRITE_BASE)

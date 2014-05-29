@@ -13,7 +13,7 @@ COMMENT=	Linux UPnP Internet Gateway Device
 LIB_DEPENDS=	upnp.9:${PORTSDIR}/devel/upnp
 
 USE_RC_SUBR=	linuxigd
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN8=		upnpd.8

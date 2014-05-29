@@ -12,7 +12,7 @@ COMMENT=	Libpcab based fast traffic accounting program
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 
 USE_RC_SUBR=	traff
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS} -L${LOCALBASE}/lib

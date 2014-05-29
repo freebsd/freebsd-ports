@@ -17,9 +17,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
 
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USES=		iconv
+USES=		iconv gmake
 
 PLIST_FILES=	bin/wire
 

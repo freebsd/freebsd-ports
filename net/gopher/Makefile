@@ -14,7 +14,7 @@ MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Gopher client for access to a distributed document service
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \

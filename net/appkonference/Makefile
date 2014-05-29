@@ -13,7 +13,7 @@ BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 USE_CSTD=	gnu89
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}/konference
 
 PLIST_FILES=	lib/asterisk/modules/app_konference.so

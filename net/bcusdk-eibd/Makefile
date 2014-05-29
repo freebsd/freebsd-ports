@@ -15,7 +15,7 @@ LIB_DEPENDS=	pthsem.20:${PORTSDIR}/devel/pthsem
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CONFIGURE_ARGS+=--enable-onlyeibd \
 		--disable-usb \
 		--enable-eibnetip \

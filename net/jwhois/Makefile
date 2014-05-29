@@ -13,8 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=An improved WHOIS client capable of selecting server to query
 
 GNU_CONFIGURE=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois

@@ -13,7 +13,7 @@ COMMENT=	Cross-platform C++ library for network and low-level I/O programming
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 

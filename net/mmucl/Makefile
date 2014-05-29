@@ -13,7 +13,7 @@ COMMENT=	Powerful GUI MUD client written in TCL
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	BASE_DIR=${PREFIX} TCLSH=tclsh8.4 INFO_DIR=${PREFIX}/info \
 		INSTALL_INFO=/usr/bin/install-info
 INFO=		mmucl
