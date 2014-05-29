@@ -7,12 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	archivers tcl
 MASTER_SITES=	http://mkextensions.sourceforge.net/
 DISTNAME=	mkZiplib${PORTVERSION:S/.//}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GZIP and ZIP support for TCL; dynamically loadable
 
-USES+=		tcl
+USES+=		tcl zip
 
 WRKSRC=		${WRKDIR}/mkZiplib${PORTVERSION}
 
