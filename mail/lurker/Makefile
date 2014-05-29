@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-mimelib-local \
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	@cd ${WRKSRC} && ${TAR} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/mimelib-${MIMELIB_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
 
 post-install:
