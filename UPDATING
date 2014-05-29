@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130529
+  AFFECTS: users of databases/postgresql??-(server|client)
+  AUTHOR: mat@FreeBSD.org
+
+  PostgreSQL version 9.2 is now the default. To upgrade from a version
+  lower than 9.2, follow the instructions on the PostgreSQL.org website.
+  http://www.postgresql.org/docs/9.2/interactive/upgrading.html
+
+  When using binary packages, if you only use the client port, you can issue
+  the following command to follow the default version:
+
+  # pkg set -o databases/postgresql90-client:databases/postgresql92-client
+
 20130528:
   AFFECTS: users of security/calife & security/calife-devel
   AUTHOR: roberto@FreeBSD.org
