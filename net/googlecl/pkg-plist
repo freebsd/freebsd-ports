@@ -1,4 +1,5 @@
 bin/google
+man/man1/google.1.gz
 %%PYTHON_SITELIBDIR%%/googlecl/__init__.py
 %%PYTHON_SITELIBDIR%%/googlecl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/__init__.pyo
