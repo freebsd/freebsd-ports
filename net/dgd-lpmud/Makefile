@@ -3,7 +3,7 @@
 
 PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net games
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
 		http://ftp.dworkin.nl/dgd/lib/
@@ -58,7 +58,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/tmp
 	# Link in the dgd docs
 	${LN} -sf ${PREFIX}/share/doc/dgd/kfun ${STAGEDIR}${DATADIR}/lpmud/doc
-	# Set mudlib ownership
-	-@${CHOWN} -h -R mud:mud ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
