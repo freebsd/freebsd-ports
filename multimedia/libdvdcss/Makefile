@@ -26,15 +26,6 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PORTDOCS=	*
 .endif
 
-post-patch:
-.if ${PORT_OPTIONS:MDOXYGEN}
-# we do not want the latex documents... too many dependencies just
-# to get in ps what we already have in html
-	@${REINPLACE_CMD} '/^all:/s/stamp-latex//' ${WRKSRC}/doc/Makefile.in
-.else
-	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' ${WRKSRC}/Makefile.in
-.endif
-
 post-install:
 .if ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
