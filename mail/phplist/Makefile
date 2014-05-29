@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@bsdserwis.com
-COMMENT=	A full-featured open-source newsletter manager
+COMMENT=	Full-featured open-source newsletter manager
 
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
