@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 
 MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man \
 		XCFLAGS=-I${LOCALBASE}/include
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake zip
 USE_XORG=	x11 xext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source

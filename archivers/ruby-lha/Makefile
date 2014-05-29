@@ -9,11 +9,11 @@ MASTER_SITES=	http://arton.no-ip.info/data/lhalib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	lhalib-${PORTVERSION}
 DIST_SUBDIR=	ruby
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension to unpack LHA-compressed files
 
+USES=		zip
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF=	ext/extconf.rb
