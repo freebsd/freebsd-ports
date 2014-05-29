@@ -6,7 +6,7 @@ PORTVERSION=	0.2.10
 CATEGORIES=	dns security
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/credns/
 
-MAINTAINER=	jaap@NLnetLab.nl
+MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	A verifier performing validation in the DNS notify/transfer-chain
 
 USE_RC_SUBR=	credns
