@@ -30,6 +30,9 @@ INSTALLS_ICONS=	yes
 OPTIONS_DEFINE=	DBUS
 .endif
 
+# Wrong versioning upstream
+PORTSCOUT=      skipv:3.1.9.2
+
 SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS Changelog README
