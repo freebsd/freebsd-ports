@@ -124,7 +124,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-old-arch-i386
 
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
-EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-ia64
+EXTRA_PATCHES+=	${.CURDIR}/files/extra-arch-ia64
 .else
 PLIST_SUB+=	IA64_NA=""
 .endif
@@ -132,9 +132,9 @@ PLIST_SUB+=	IA64_NA=""
 .if ${ARCH} == powerpc || ${ARCH} == powerpc64
 PLIST_SUB+=	PPC_NA="@comment "
 .if defined(WITH_NEW_XORG)
-EXTRA_PATCHES=	${.CURDIR}/files/extra-new-arch-powerpc
+EXTRA_PATCHES+=	${.CURDIR}/files/extra-new-arch-powerpc
 .else
-EXTRA_PATCHES=	${.CURDIR}/files/extra-old-arch-powerpc
+EXTRA_PATCHES+=	${.CURDIR}/files/extra-old-arch-powerpc
 .endif
 .else
 PLIST_SUB+=	PPC_NA=""
