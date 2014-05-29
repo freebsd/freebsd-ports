@@ -20,8 +20,7 @@ PKGFILES=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc
 
 IGNORE=		doesn't build with current libmapi
 
-USES=		gettext tar:bzip2
-USE_GMAKE=	yes
+USES=		gettext tar:bzip2 gmake
 USE_GNOME=	evolutiondataserver
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -14,9 +14,8 @@ BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 
 CONFLICTS=	pserv-[0-9]* synce-librapi2-[0-9]*
 
-USES=		perl5
+USES=		perl5 gmake
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 PDM_MODULES=	any master

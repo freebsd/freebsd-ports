@@ -14,8 +14,7 @@ COMMENT=	Email autoresponder that gets data from LDAP
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
-USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv gmake
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}

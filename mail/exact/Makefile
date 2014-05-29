@@ -17,7 +17,7 @@ EXACTDIR?=	/var/exact
 PLIST_SUB+=	MAILUSER=${MAILUSER} MAILGROUP=${MAILGROUP} EXACTDIR=${EXACTDIR}
 
 FETCH_CMD=	/usr/bin/fetch -Rr
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${MAILUSER} \
 		--with-group=${MAILGROUP} \

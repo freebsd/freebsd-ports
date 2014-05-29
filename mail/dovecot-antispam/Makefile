@@ -17,8 +17,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:configure
 RUN_DEPENDS=	dovecot>=1.1.2:${PORTSDIR}/mail/dovecot
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/dovecot/imap
 
 MAN7=		dovecot-antispam.7

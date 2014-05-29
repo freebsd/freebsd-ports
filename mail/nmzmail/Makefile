@@ -13,7 +13,7 @@ COMMENT=	Fast mail searching for mutt
 RUN_DEPENDS=	namazu:${PORTSDIR}/databases/namazu2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/nmzmail
 PORTDOCS=	README	NEWS

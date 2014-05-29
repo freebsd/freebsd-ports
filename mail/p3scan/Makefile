@@ -17,7 +17,7 @@ PLIST_FILES=	etc/p3scan/p3scan.conf.sample etc/p3scan/p3scan.mail.sample \
 PLIST_DIRS=	etc/p3scan
 
 USE_GCC=	any
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	_LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" GMAKE=${GMAKE}
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
 PKGMESSAGE=	${WRKDIR}/pkg-message
