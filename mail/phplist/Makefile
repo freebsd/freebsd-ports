@@ -3,7 +3,7 @@
 
 PORTNAME=	phplist
 PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -15,6 +15,8 @@ RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 USE_PHP=	hash iconv imap mysql pcre session xml zlib
 NO_BUILD=	yes
+NO_ARCH=	yes
+
 PEARDIR?=	${LOCALBASE}/share/pear
 
 PORTDOCS=	BUGS INSTALL NEWS PEOPLE README README.batches \
@@ -23,12 +25,12 @@ PORTDOCS=	BUGS INSTALL NEWS PEOPLE README README.batches \
 		README.usertables README.utf8 TODO UPGRADE VERSION \
 		phplist.sql
 
-SUB_FILES=	phplist pkg-message
+SUB_FILES=	phplist
 
 .include <bsd.port.options.mk>
 
 post-extract:
-	@${MV} ${WRKSRC}/public_html/lists/config/config.php ${WRKSRC}/public_html/lists/config/config.php-dist
+	@${MV} ${WRKSRC}/public_html/lists/config/config.php ${WRKSRC}/public_html/lists/config/config.php.sample
 
 do-install:
 	@cd ${WRKSRC}/public_html/&&${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
@@ -37,6 +39,5 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
