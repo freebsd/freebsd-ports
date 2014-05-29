@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GENTOO} \
 MASTER_SITE_SUBDIR=	distfiles
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jonny@jonny.eng.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Buffer sporadic I/O for faster tape and pipe throughput
 
 PLIST_FILES=	bin/buffer \

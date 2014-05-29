@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.flux.utah.edu/pub/skill/	\
 		ftp://fast.cs.utah.edu/pub/skill/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jonny@jonny.eng.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SuperKILL, kill, or renice processes by pid, name, tty, or uid
 
 .include <bsd.port.mk>
