@@ -69,10 +69,6 @@ CONFIGURE_ENV+=		ac_cv_header_cups_cups_h=no
 CONFIGURE_ENV+=		sane_cv_use_libieee1284=no
 .endif
 
-post-extract:
-	@((cd ${DISTDIR} && ${CAT} ${DISTFILES:C/:[^:]+$//}) | (cd ${WRKDIR} \
-		&& ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} - ${EXTRACT_AFTER_ARGS}))
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^for ac_header in/s|libc.h|cups/cups.h| ; \
 		 s|-e .*/cups.h|"$$ac_cv_header_cups_cups_h" = "yes"|' \
