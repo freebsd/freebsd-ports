@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=	SOUND
 SOUND_DESC=	Enable sound support
 
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 

@@ -12,8 +12,8 @@ COMMENT=	Free pong-like game
 
 LICENSE=	GPLv2
 
+USES=		gmake
 USE_SDL=	sdl image net
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}

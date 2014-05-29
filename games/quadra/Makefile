@@ -14,12 +14,11 @@ COMMENT=	Tetris like game with multiplayer support
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_SDL=	sdl
 USE_XORG=	x11 xau xdmcp
 USE_AUTOTOOLS=	autoconf autoheader
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -21,8 +21,7 @@ LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 
 USE_SDL=	mixer ttf sdl
 USE_PYTHON=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYPACKAGE="${PYTHON_CMD}" ac_cv_path_P_SWIG=no
 CONFIGURE_ARGS=	--disable-py-debug

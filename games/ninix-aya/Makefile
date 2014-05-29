@@ -23,7 +23,7 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	DOCS NLS
 

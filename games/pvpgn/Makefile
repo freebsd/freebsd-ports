@@ -15,8 +15,7 @@ COMMENT=	Free Blizzard Battle.net emulation software
 
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
 
 USERS=		bnetd

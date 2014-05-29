@@ -13,7 +13,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A new variant of NetHack
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 
 VARDIR_REL=	var/games/${PORTNAME}

@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-/}
 MAINTAINER=	aaron@baugher.biz
 COMMENT=	Remake of the classic puzzle game Logical
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 

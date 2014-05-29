@@ -17,7 +17,7 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

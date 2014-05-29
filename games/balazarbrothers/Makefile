@@ -18,12 +18,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py
 		${PYTHON_SITELIBDIR}/tofu/__init__.py:${PORTSDIR}/net/py-tofu \
 		${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-vorbis
 
-USE_BZIP2=	yes
-USES=		gettext twisted
+USES=		gettext twisted tar:bzip2 gmake
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GL=		glew
-USE_GMAKE=	yes
 
 PYDISTUTILS_PKGNAME=	BalazarBrothers
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
