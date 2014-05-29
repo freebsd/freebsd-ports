@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 
-MAINTAINER=	otsuji@users.sourceforge.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PRedictive Input Method Editor(PRIME)
 
 LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary

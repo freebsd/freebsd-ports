@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt www
 MASTER_SITES=   https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/	
 DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 
-MAINTAINER=	zenoss@experts-exchange.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enables users to show any graph/multi graph reports on their dashboard
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}

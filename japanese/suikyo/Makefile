@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 
-MAINTAINER=	otsuji@users.sourceforge.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Romaji-Kana conversion Library for the prime
 
 USE_RUBY=	yes

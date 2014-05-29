@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.glenbarber.us/ports/net-mgmt/zenpack-${PORTNAME}/
 
-MAINTAINER=	zenoss@experts-exchange.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides the ability to quickly search for devices in Zenoss
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}

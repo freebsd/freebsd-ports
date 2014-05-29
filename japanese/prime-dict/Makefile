@@ -9,7 +9,7 @@ MASTER_SITES=	http://prime.sourceforge.jp/src/
 PKGNAMESUFFIX=	-dict
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	otsuji@users.sourceforge.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dictionary set for the prime
 
 USE_RUBY=	yes
