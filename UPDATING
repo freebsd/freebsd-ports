@@ -119,7 +119,7 @@ you update your ports collection, before attempting any port upgrades.
   ports-mgmt/portshaker was updated to avoid creating an aditional 'ports'
   subdirectory when merging to a poudriere_tree without ZFS, so that
   portshaker's default location matches poudriere's default location.
-  
+
   Users of poudriere on non-ZFS systems should not anymore have to pass extra
   options to poudriere for it to find the ports tree.
 
@@ -233,7 +233,7 @@ you update your ports collection, before attempting any port upgrades.
   # portupgrade -a
 
 20140416:
-  AFFECTS: users of print/freetype2 textproc/libxml2 x11/pixman 
+  AFFECTS: users of print/freetype2 textproc/libxml2 x11/pixman
            x11/libxcb and graphics/freeglut
   AUTHOR: x11@FreeBSD.org and gnome@FreeBSD.org
 
