@@ -16,7 +16,7 @@ LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	optshared
 MAKE_ENV=	PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \

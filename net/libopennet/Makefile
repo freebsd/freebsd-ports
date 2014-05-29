@@ -12,7 +12,7 @@ COMMENT=	A library for opening files over a network
 
 GNU_CONFIGURE=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 MAN3=		fopen_net.3 \

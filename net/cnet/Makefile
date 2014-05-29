@@ -16,7 +16,7 @@ COMMENT=	A networking simulator
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 USE_XORG=	xpm
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	# empty
 MAN1=		cnet.1
 

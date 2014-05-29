@@ -23,8 +23,7 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 
 CONFLICTS=	rabbitmq-c-devel-[0-9]*
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

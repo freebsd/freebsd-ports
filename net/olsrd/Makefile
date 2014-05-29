@@ -16,10 +16,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 .endif
 
-USE_BZIP2=	yes
-USES=		bison
-USE_GMAKE=	yes
-
+USES=		bison gmake tar:bzip2
 USE_RC_SUBR=	olsrd
 MAN8=		olsrd.8
 MAN5=		olsrd.conf.5

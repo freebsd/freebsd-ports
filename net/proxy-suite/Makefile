@@ -12,8 +12,7 @@ COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
 LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	autoconf
-USE_GMAKE=	yes
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 #
 # basic configure args

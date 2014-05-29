@@ -13,7 +13,7 @@ COMMENT=	Easily configured QOTD daemon with over 130 good quality quotes
 MAN1=		quoted.1
 MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 USE_RC_SUBR=	 ${PORTNAME}
 

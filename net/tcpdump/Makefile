@@ -12,7 +12,7 @@ COMMENT=	Ubiquitous network traffic analysis tool
 LIB_DEPENDS=	pcap:${PORTSDIR}/net/libpcap
 
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
+USES=		gmake
 
 UNPRIV_USER?=	nobody
 CHROOTDIR?=	/var/run/tcpdump

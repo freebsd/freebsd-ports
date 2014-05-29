@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	L4 health check daemon for IPFILTER
 
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 NO_STAGE=	yes

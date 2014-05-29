@@ -21,10 +21,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
+USES=		gmake
 USE_AUTOTOOLS=	libtool automake autoconf
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

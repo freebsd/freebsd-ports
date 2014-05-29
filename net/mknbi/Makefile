@@ -20,8 +20,7 @@ MLINKS+=	mknbi.1 ${i}
 
 PORTDOCS=	COPYING README LOG spec.txt
 
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 ONLY_FOR_ARCHS=	i386
 
 NO_STAGE=	yes

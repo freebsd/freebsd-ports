@@ -12,7 +12,7 @@ COMMENT=	Wired server
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	wired
 
 MAN1=		wiredctl.1

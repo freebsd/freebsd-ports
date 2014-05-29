@@ -14,8 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RC_SUBR=	mrouted
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 MAKE_ARGS=	sysconfdir=${PREFIX}/etc \
 		mandir=${MAN8PREFIX}/man/man8
 PORTDOCS=	README AUTHORS ChangeLog

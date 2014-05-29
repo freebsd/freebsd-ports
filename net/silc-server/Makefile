@@ -22,8 +22,7 @@ LIB_DEPENDS=	silc-1.1:${PORTSDIR}/devel/silc-toolkit
 
 SUB_FILES=	pkg-message pkg-deinstall
 USE_RC_SUBR=	silcd
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \

@@ -15,10 +15,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
 # Conflict due to x3270if
 CONFLICTS=	x3270-*
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-USES=		iconv readline
+USES=		iconv readline gmake
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

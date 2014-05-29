@@ -21,7 +21,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.16
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	xmu
 USE_WX=		2.8+
 WX_UNICODE=	yes

@@ -18,8 +18,7 @@ LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
 		rpc2.9:${PORTSDIR}/devel/rpc2 \
 		rvmlwp.3:${PORTSDIR}/devel/rvm
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--enable-${CODA_SUITE}
