@@ -1,176 +1,176 @@
 bin/xrally
-share/xrally/sounds/rally.mod
-share/xrally/sounds/default.mod
-share/xrally/maps/Test Level
-share/xrally/maps/Speedboat
-share/xrally/maps/Silver Level
-share/xrally/maps/Runner
-share/xrally/maps/Rox
-share/xrally/maps/Real Level
-share/xrally/maps/Leo Level
-share/xrally/maps/Easy Level
-share/xrally/maps/Classic Level
-share/xrally/images/xrally.xpm
-share/xrally/images/water/xrally_car.pov
-share/xrally/images/water/smoke.xpm
-share/xrally/images/water/road.xpm
-share/xrally/images/water/red_carUP.xpm
-share/xrally/images/water/red_carRIGHT.xpm
-share/xrally/images/water/red_carLEFT.xpm
-share/xrally/images/water/red_carDOWN.xpm
-share/xrally/images/water/pit.xpm
-share/xrally/images/water/out.xpm
-share/xrally/images/water/flag.xpm
-share/xrally/images/water/crash.xpm
-share/xrally/images/water/blue_carUP.xpm
-share/xrally/images/water/blue_carRIGHT.xpm
-share/xrally/images/water/blue_carLEFT.xpm
-share/xrally/images/water/blue_carDOWN.xpm
-share/xrally/images/water/block.xpm
-share/xrally/images/water/README
-share/xrally/images/test/xrally_car.pov
-share/xrally/images/test/test.sh
-share/xrally/images/test/smoke.pov
-share/xrally/images/test/road.xpm
-share/xrally/images/test/road.pov
-share/xrally/images/test/render.sh
-share/xrally/images/test/red_carUP.xpm
-share/xrally/images/test/red_carRIGHT.xpm
-share/xrally/images/test/red_carLEFT.xpm
-share/xrally/images/test/red_carDOWN.xpm
-share/xrally/images/test/out.xpm
-share/xrally/images/test/flag.xpm
-share/xrally/images/test/flag.pov
-share/xrally/images/test/blue_carUP.xpm
-share/xrally/images/test/blue_carRIGHT.xpm
-share/xrally/images/test/blue_carLEFT.xpm
-share/xrally/images/test/blue_carDOWN.xpm
-share/xrally/images/test/block8.xpm
-share/xrally/images/test/block7.xpm
-share/xrally/images/test/block6.xpm
-share/xrally/images/test/block5.xpm
-share/xrally/images/test/block4.xpm
-share/xrally/images/test/block3.xpm
-share/xrally/images/test/block2.xpm
-share/xrally/images/test/block.xpm
-share/xrally/images/test/block.pov
-share/xrally/images/rock/xrally_car.pov
-share/xrally/images/rock/test.sh
-share/xrally/images/rock/smoke.xpm
-share/xrally/images/rock/smoke.pov
-share/xrally/images/rock/road.xpm
-share/xrally/images/rock/road.pov
-share/xrally/images/rock/render.sh
-share/xrally/images/rock/red_carUP.xpm
-share/xrally/images/rock/red_carRIGHT.xpm
-share/xrally/images/rock/red_carLEFT.xpm
-share/xrally/images/rock/red_carDOWN.xpm
-share/xrally/images/rock/out.xpm
-share/xrally/images/rock/flag.xpm
-share/xrally/images/rock/flag.pov
-share/xrally/images/rock/crash.xpm
-share/xrally/images/rock/colors.inc
-share/xrally/images/rock/blue_carUP.xpm
-share/xrally/images/rock/blue_carRIGHT.xpm
-share/xrally/images/rock/blue_carLEFT.xpm
-share/xrally/images/rock/blue_carDOWN.xpm
-share/xrally/images/rock/block6.xpm
-share/xrally/images/rock/block5.xpm
-share/xrally/images/rock/block4.xpm
-share/xrally/images/rock/block3.xpm
-share/xrally/images/rock/block2.xpm
-share/xrally/images/rock/block.xpm
-share/xrally/images/rock/block.pov
-share/xrally/images/povaddict/xrally_car.pov
-share/xrally/images/povaddict/smoke.xpm
-share/xrally/images/povaddict/smoke.pov
-share/xrally/images/povaddict/road.xpm
-share/xrally/images/povaddict/road.pov
-share/xrally/images/povaddict/render.sh
-share/xrally/images/povaddict/red_carUP.xpm
-share/xrally/images/povaddict/red_carRIGHT.xpm
-share/xrally/images/povaddict/red_carLEFT.xpm
-share/xrally/images/povaddict/red_carDOWN.xpm
-share/xrally/images/povaddict/out.xpm
-share/xrally/images/povaddict/flag.xpm
-share/xrally/images/povaddict/flag.pov
-share/xrally/images/povaddict/crash.xpm
-share/xrally/images/povaddict/blue_carUP.xpm
-share/xrally/images/povaddict/blue_carRIGHT.xpm
-share/xrally/images/povaddict/blue_carLEFT.xpm
-share/xrally/images/povaddict/blue_carDOWN.xpm
-share/xrally/images/povaddict/block.xpm
-share/xrally/images/povaddict/block.pov
-share/xrally/images/mini-pov/xrally_car.pov
-share/xrally/images/mini-pov/test.sh
-share/xrally/images/mini-pov/smoke.xpm
-share/xrally/images/mini-pov/smoke.pov
-share/xrally/images/mini-pov/road.xpm
-share/xrally/images/mini-pov/road.pov
-share/xrally/images/mini-pov/render.sh
-share/xrally/images/mini-pov/red_carUP.xpm
-share/xrally/images/mini-pov/red_carRIGHT.xpm
-share/xrally/images/mini-pov/red_carLEFT.xpm
-share/xrally/images/mini-pov/red_carDOWN.xpm
-share/xrally/images/mini-pov/out.xpm
-share/xrally/images/mini-pov/flag.xpm
-share/xrally/images/mini-pov/flag.pov
-share/xrally/images/mini-pov/crash.xpm
-share/xrally/images/mini-pov/blue_carUP.xpm
-share/xrally/images/mini-pov/blue_carRIGHT.xpm
-share/xrally/images/mini-pov/blue_carLEFT.xpm
-share/xrally/images/mini-pov/blue_carDOWN.xpm
-share/xrally/images/mini-pov/block.xpm
-share/xrally/images/mini-pov/block.pov
-share/xrally/images/logocar2.xpm
-share/xrally/images/logocar.xpm
-share/xrally/images/logo.xpm
-share/xrally/images/default/smoke.xpm
-share/xrally/images/default/road4.xpm
-share/xrally/images/default/road3.xpm
-share/xrally/images/default/road2.xpm
-share/xrally/images/default/road.xpm
-share/xrally/images/default/red_carUP.xpm
-share/xrally/images/default/red_carRIGHT.xpm
-share/xrally/images/default/red_carLEFT.xpm
-share/xrally/images/default/red_carDOWN.xpm
-share/xrally/images/default/pit.xpm
-share/xrally/images/default/out.xpm
-share/xrally/images/default/out-4.1.xpm
-share/xrally/images/default/out-3.1.xpm
-share/xrally/images/default/flag.xpm
-share/xrally/images/default/crash.xpm
-share/xrally/images/default/blue_carUP.xpm
-share/xrally/images/default/blue_carRIGHT.xpm
-share/xrally/images/default/blue_carLEFT.xpm
-share/xrally/images/default/blue_carDOWN.xpm
-share/xrally/images/default/block4.xpm
-share/xrally/images/default/block3.xpm
-share/xrally/images/default/block2.xpm
-share/xrally/images/default/block.xpm
-share/xrally/images/classic/smoke.xpm
-share/xrally/images/classic/road.xpm
-share/xrally/images/classic/red_carUP.xpm
-share/xrally/images/classic/red_carRIGHT.xpm
-share/xrally/images/classic/red_carLEFT.xpm
-share/xrally/images/classic/red_carDOWN.xpm
-share/xrally/images/classic/out.xpm
-share/xrally/images/classic/flag.xpm
-share/xrally/images/classic/crash.xpm
-share/xrally/images/classic/blue_carUP.xpm
-share/xrally/images/classic/blue_carRIGHT.xpm
-share/xrally/images/classic/blue_carLEFT.xpm
-share/xrally/images/classic/blue_carDOWN.xpm
-share/xrally/images/classic/block.xpm
-share/xrally/hiscore
-@dirrm share/xrally/sounds
-@dirrm share/xrally/maps
-@dirrm share/xrally/images/water
-@dirrm share/xrally/images/test
-@dirrm share/xrally/images/rock
-@dirrm share/xrally/images/povaddict
-@dirrm share/xrally/images/mini-pov
-@dirrm share/xrally/images/default
-@dirrm share/xrally/images/classic
-@dirrm share/xrally/images
-@dirrm share/xrally
+%%DATADIR%%/hiscore
+%%DATADIR%%/images/classic/block.xpm
+%%DATADIR%%/images/classic/blue_carDOWN.xpm
+%%DATADIR%%/images/classic/blue_carLEFT.xpm
+%%DATADIR%%/images/classic/blue_carRIGHT.xpm
+%%DATADIR%%/images/classic/blue_carUP.xpm
+%%DATADIR%%/images/classic/crash.xpm
+%%DATADIR%%/images/classic/flag.xpm
+%%DATADIR%%/images/classic/out.xpm
+%%DATADIR%%/images/classic/red_carDOWN.xpm
+%%DATADIR%%/images/classic/red_carLEFT.xpm
+%%DATADIR%%/images/classic/red_carRIGHT.xpm
+%%DATADIR%%/images/classic/red_carUP.xpm
+%%DATADIR%%/images/classic/road.xpm
+%%DATADIR%%/images/classic/smoke.xpm
+%%DATADIR%%/images/default/block.xpm
+%%DATADIR%%/images/default/block2.xpm
+%%DATADIR%%/images/default/block3.xpm
+%%DATADIR%%/images/default/block4.xpm
+%%DATADIR%%/images/default/blue_carDOWN.xpm
+%%DATADIR%%/images/default/blue_carLEFT.xpm
+%%DATADIR%%/images/default/blue_carRIGHT.xpm
+%%DATADIR%%/images/default/blue_carUP.xpm
+%%DATADIR%%/images/default/crash.xpm
+%%DATADIR%%/images/default/flag.xpm
+%%DATADIR%%/images/default/out-3.1.xpm
+%%DATADIR%%/images/default/out-4.1.xpm
+%%DATADIR%%/images/default/out.xpm
+%%DATADIR%%/images/default/pit.xpm
+%%DATADIR%%/images/default/red_carDOWN.xpm
+%%DATADIR%%/images/default/red_carLEFT.xpm
+%%DATADIR%%/images/default/red_carRIGHT.xpm
+%%DATADIR%%/images/default/red_carUP.xpm
+%%DATADIR%%/images/default/road.xpm
+%%DATADIR%%/images/default/road2.xpm
+%%DATADIR%%/images/default/road3.xpm
+%%DATADIR%%/images/default/road4.xpm
+%%DATADIR%%/images/default/smoke.xpm
+%%DATADIR%%/images/logo.xpm
+%%DATADIR%%/images/logocar.xpm
+%%DATADIR%%/images/logocar2.xpm
+%%DATADIR%%/images/mini-pov/block.pov
+%%DATADIR%%/images/mini-pov/block.xpm
+%%DATADIR%%/images/mini-pov/blue_carDOWN.xpm
+%%DATADIR%%/images/mini-pov/blue_carLEFT.xpm
+%%DATADIR%%/images/mini-pov/blue_carRIGHT.xpm
+%%DATADIR%%/images/mini-pov/blue_carUP.xpm
+%%DATADIR%%/images/mini-pov/crash.xpm
+%%DATADIR%%/images/mini-pov/flag.pov
+%%DATADIR%%/images/mini-pov/flag.xpm
+%%DATADIR%%/images/mini-pov/out.xpm
+%%DATADIR%%/images/mini-pov/red_carDOWN.xpm
+%%DATADIR%%/images/mini-pov/red_carLEFT.xpm
+%%DATADIR%%/images/mini-pov/red_carRIGHT.xpm
+%%DATADIR%%/images/mini-pov/red_carUP.xpm
+%%DATADIR%%/images/mini-pov/render.sh
+%%DATADIR%%/images/mini-pov/road.pov
+%%DATADIR%%/images/mini-pov/road.xpm
+%%DATADIR%%/images/mini-pov/smoke.pov
+%%DATADIR%%/images/mini-pov/smoke.xpm
+%%DATADIR%%/images/mini-pov/test.sh
+%%DATADIR%%/images/mini-pov/xrally_car.pov
+%%DATADIR%%/images/povaddict/block.pov
+%%DATADIR%%/images/povaddict/block.xpm
+%%DATADIR%%/images/povaddict/blue_carDOWN.xpm
+%%DATADIR%%/images/povaddict/blue_carLEFT.xpm
+%%DATADIR%%/images/povaddict/blue_carRIGHT.xpm
+%%DATADIR%%/images/povaddict/blue_carUP.xpm
+%%DATADIR%%/images/povaddict/crash.xpm
+%%DATADIR%%/images/povaddict/flag.pov
+%%DATADIR%%/images/povaddict/flag.xpm
+%%DATADIR%%/images/povaddict/out.xpm
+%%DATADIR%%/images/povaddict/red_carDOWN.xpm
+%%DATADIR%%/images/povaddict/red_carLEFT.xpm
+%%DATADIR%%/images/povaddict/red_carRIGHT.xpm
+%%DATADIR%%/images/povaddict/red_carUP.xpm
+%%DATADIR%%/images/povaddict/render.sh
+%%DATADIR%%/images/povaddict/road.pov
+%%DATADIR%%/images/povaddict/road.xpm
+%%DATADIR%%/images/povaddict/smoke.pov
+%%DATADIR%%/images/povaddict/smoke.xpm
+%%DATADIR%%/images/povaddict/xrally_car.pov
+%%DATADIR%%/images/rock/block.pov
+%%DATADIR%%/images/rock/block.xpm
+%%DATADIR%%/images/rock/block2.xpm
+%%DATADIR%%/images/rock/block3.xpm
+%%DATADIR%%/images/rock/block4.xpm
+%%DATADIR%%/images/rock/block5.xpm
+%%DATADIR%%/images/rock/block6.xpm
+%%DATADIR%%/images/rock/blue_carDOWN.xpm
+%%DATADIR%%/images/rock/blue_carLEFT.xpm
+%%DATADIR%%/images/rock/blue_carRIGHT.xpm
+%%DATADIR%%/images/rock/blue_carUP.xpm
+%%DATADIR%%/images/rock/colors.inc
+%%DATADIR%%/images/rock/crash.xpm
+%%DATADIR%%/images/rock/flag.pov
+%%DATADIR%%/images/rock/flag.xpm
+%%DATADIR%%/images/rock/out.xpm
+%%DATADIR%%/images/rock/red_carDOWN.xpm
+%%DATADIR%%/images/rock/red_carLEFT.xpm
+%%DATADIR%%/images/rock/red_carRIGHT.xpm
+%%DATADIR%%/images/rock/red_carUP.xpm
+%%DATADIR%%/images/rock/render.sh
+%%DATADIR%%/images/rock/road.pov
+%%DATADIR%%/images/rock/road.xpm
+%%DATADIR%%/images/rock/smoke.pov
+%%DATADIR%%/images/rock/smoke.xpm
+%%DATADIR%%/images/rock/test.sh
+%%DATADIR%%/images/rock/xrally_car.pov
+%%DATADIR%%/images/test/block.pov
+%%DATADIR%%/images/test/block.xpm
+%%DATADIR%%/images/test/block2.xpm
+%%DATADIR%%/images/test/block3.xpm
+%%DATADIR%%/images/test/block4.xpm
+%%DATADIR%%/images/test/block5.xpm
+%%DATADIR%%/images/test/block6.xpm
+%%DATADIR%%/images/test/block7.xpm
+%%DATADIR%%/images/test/block8.xpm
+%%DATADIR%%/images/test/blue_carDOWN.xpm
+%%DATADIR%%/images/test/blue_carLEFT.xpm
+%%DATADIR%%/images/test/blue_carRIGHT.xpm
+%%DATADIR%%/images/test/blue_carUP.xpm
+%%DATADIR%%/images/test/flag.pov
+%%DATADIR%%/images/test/flag.xpm
+%%DATADIR%%/images/test/out.xpm
+%%DATADIR%%/images/test/red_carDOWN.xpm
+%%DATADIR%%/images/test/red_carLEFT.xpm
+%%DATADIR%%/images/test/red_carRIGHT.xpm
+%%DATADIR%%/images/test/red_carUP.xpm
+%%DATADIR%%/images/test/render.sh
+%%DATADIR%%/images/test/road.pov
+%%DATADIR%%/images/test/road.xpm
+%%DATADIR%%/images/test/smoke.pov
+%%DATADIR%%/images/test/test.sh
+%%DATADIR%%/images/test/xrally_car.pov
+%%DATADIR%%/images/water/README
+%%DATADIR%%/images/water/block.xpm
+%%DATADIR%%/images/water/blue_carDOWN.xpm
+%%DATADIR%%/images/water/blue_carLEFT.xpm
+%%DATADIR%%/images/water/blue_carRIGHT.xpm
+%%DATADIR%%/images/water/blue_carUP.xpm
+%%DATADIR%%/images/water/crash.xpm
+%%DATADIR%%/images/water/flag.xpm
+%%DATADIR%%/images/water/out.xpm
+%%DATADIR%%/images/water/pit.xpm
+%%DATADIR%%/images/water/red_carDOWN.xpm
+%%DATADIR%%/images/water/red_carLEFT.xpm
+%%DATADIR%%/images/water/red_carRIGHT.xpm
+%%DATADIR%%/images/water/red_carUP.xpm
+%%DATADIR%%/images/water/road.xpm
+%%DATADIR%%/images/water/smoke.xpm
+%%DATADIR%%/images/water/xrally_car.pov
+%%DATADIR%%/images/xrally.xpm
+%%DATADIR%%/maps/Classic Level
+%%DATADIR%%/maps/Easy Level
+%%DATADIR%%/maps/Leo Level
+%%DATADIR%%/maps/Real Level
+%%DATADIR%%/maps/Rox
+%%DATADIR%%/maps/Runner
+%%DATADIR%%/maps/Silver Level
+%%DATADIR%%/maps/Speedboat
+%%DATADIR%%/maps/Test Level
+%%DATADIR%%/sounds/default.mod
+%%DATADIR%%/sounds/rally.mod
+@dirrm %%DATADIR%%/images/classic
+@dirrm %%DATADIR%%/images/default
+@dirrm %%DATADIR%%/images/mini-pov
+@dirrm %%DATADIR%%/images/povaddict
+@dirrm %%DATADIR%%/images/rock
+@dirrm %%DATADIR%%/images/test
+@dirrm %%DATADIR%%/images/water
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%

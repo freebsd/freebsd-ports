@@ -15,11 +15,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_XORG=	x11 xi xpm
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAKE_ENV=	INCLUDES="-I${LOCALBASE}/include"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
