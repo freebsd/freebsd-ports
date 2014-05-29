@@ -136,7 +136,7 @@ FIXME=	gnus/binhex.elc gnus/uudecode.elc
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
-	-@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${f} \
+	-@${TAR} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${f} \
 		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
 .endfor
 
