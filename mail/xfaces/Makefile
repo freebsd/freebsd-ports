@@ -24,8 +24,7 @@ LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
 
 # GNU make properly processes some overridden rules in the makefile that
 # imake generates.  Specifically, installing the html docs.
-USES=		imake
-USE_GMAKE=	yes
+USES=		imake gmake
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 
 MAN1=		xfaces.1
