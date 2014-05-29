@@ -15,9 +15,8 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libgwenhywfar.so:${PORTSDIR}/devel/gwenhywfar \
 		libgmp.so:${PORTSDIR}/math/gmp
 
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext gmake
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"
