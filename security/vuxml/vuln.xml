@@ -57,6 +57,62 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="77e2e631-e742-11e3-9a25-5404a6a6412c">
+    <topic>mumble -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mumble</name>
+	<range><ge>1.2.0</ge><lt>1.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mumble reports:</p>
+	<blockquote cite="http://blog.mumble.info/mumble-1-2-6/">
+	  <p>SVG images with local file references could trigger client DoS</p>
+	  <p>The Mumble client did not properly HTML-escape some external strings before using them in a rich-text (HTML) context.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mumble.info/security/Mumble-SA-2014-005.txt</url>
+      <url>http://mumble.info/security/Mumble-SA-2014-006.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-04-16</discovery>
+      <entry>2014-05-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c2c8c84b-e734-11e3-9a25-5404a6a6412c">
+    <topic>mumble -- NULL pointer dereference and heap-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>mumble</name>
+	<range><eq>1.2.4</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mumble reports:</p>
+	<blockquote cite="http://blog.mumble.info/mumble-1-2-5/">
+	  <p>A malformed Opus voice packet sent to a Mumble client could trigger a NULL pointer dereference or an out-of-bounds array access.</p>
+	  <p>A malformed Opus voice packet sent to a Mumble client could trigger a heap-based buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0044</cvename>
+      <cvename>CVE-2014-0045</cvename>
+      <url>http://mumble.info/security/Mumble-SA-2014-001.txt</url>
+      <url>http://mumble.info/security/Mumble-SA-2014-002.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-01-25</discovery>
+      <entry>2014-05-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f99a4686-e694-11e3-9032-000c2980a9f3">
     <cancelled/>
   </vuln>
