@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	astroid
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	https://bitbucket.org/logilab/astroid/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-version-${PORTVERSION}
+DISTNAME=	${PORTNAME}-1.1
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Extension for Python compiler.ast module
@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	pytest:${PORTSDIR}/devel/py-logilab-common
 
-WRKSRC=			${WRKDIR}/logilab-astroid-f67f24131b3a
+WRKSRC=			${WRKDIR}/logilab-astroid-e003574ae51b
 MAKE_ENV=		NO_SETUPTOOLS=1
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
