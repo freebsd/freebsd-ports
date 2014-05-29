@@ -22,14 +22,13 @@ SHEBANG_LANG=	wish
 wish_OLD_CMD=	/usr/bin/wish
 wish_CMD=		${LOCALBASE}/bin/wish8.4
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/local/share/ttraffic/|${DATADIR}/|' \
 		${WRKSRC}/ttraffic.tcl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ttraffic.tcl ${PREFIX}/bin/ttraffic
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ttraffic.levels ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/ttraffic.tcl ${STAGEDIR}${PREFIX}/bin/ttraffic
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ttraffic.levels ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
