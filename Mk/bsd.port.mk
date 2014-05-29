@@ -1513,10 +1513,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
-.if defined(USE_GMAKE)
-USES+=	gmake
-.endif
-
 .if !defined(UID)
 UID!=	${ID} -u
 .endif
