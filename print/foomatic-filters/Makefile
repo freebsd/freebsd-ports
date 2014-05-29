@@ -80,7 +80,6 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foomatic-rip
 	mv ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip.exec
 	${INSTALL_SCRIPT} ${WRKDIR}/foomatic-rip-wrapper ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip
-	rm ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip.bak
+	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip
 
 .include <bsd.port.mk>
