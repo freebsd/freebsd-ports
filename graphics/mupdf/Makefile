@@ -20,10 +20,9 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
 		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 
-USE_GMAKE=	yes
 MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man \
 		XCFLAGS=-I${LOCALBASE}/include
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_XORG=	x11 xext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source

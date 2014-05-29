@@ -15,9 +15,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
 
-USE_BZIP2=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_GMAKE=	yes
+USES=		gmake bzip2
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
 CONFIGURE_ARGS+=	COMPILED_BY="ports@FreeBSD.org"

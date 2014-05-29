@@ -15,11 +15,10 @@ LIB_DEPENDS=	pfs-1.2:${PORTSDIR}/graphics/pfstools
 PFS_CPPFLAGS=	-I${LOCALBASE}/include
 PFS_LDFLAGS=	-L${LOCALBASE}/lib
 
-USES=		pkgconfig
+USES=		pkgconfig gmake
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PFS_CPPFLAGS}
 LDFLAGS+=	${PFS_LDFLAGS}
-USE_GMAKE=	yes
 
 MAN1=		pfstmo_pattanaik00.1 \
 		pfstmo_reinhard05.1 \
