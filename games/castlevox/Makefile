@@ -25,20 +25,18 @@ DESKTOP_ENTRIES="Castle Vox" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Game;StrategyGame;" false
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "Support docs *.jar" ${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/VoxIcon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "Support docs *.jar" ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/VoxIcon.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
