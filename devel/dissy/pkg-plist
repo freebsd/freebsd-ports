@@ -1,4 +1,5 @@
 bin/dissy
+man/man1/dissy.1.gz
 %%PYTHON_SITELIBDIR%%/dissy/Bookmark.py
 %%PYTHON_SITELIBDIR%%/dissy/Bookmark.pyc
 %%PYTHON_SITELIBDIR%%/dissy/Bookmark.pyo
