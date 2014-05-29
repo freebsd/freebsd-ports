@@ -7,11 +7,14 @@ share/postgresql/contrib/pgrouting-2.0/pgrouting.control
 share/postgresql/contrib/pgrouting-2.0/pgrouting.sql
 share/postgresql/contrib/pgrouting-2.0/pgrouting_dd_legacy.sql
 share/postgresql/contrib/pgrouting-2.0/pgrouting_legacy.sql
-share/postgresql/pgrouting--2.0.0.sql
-share/postgresql/pgrouting.control
-share/postgresql/pgrouting_dd_legacy.sql
-share/postgresql/pgrouting_legacy.sql
+%%OLDPG%%share/postgresql/pgrouting--2.0.0.sql
+%%OLDPG%%share/postgresql/pgrouting.control
+%%OLDPG%%share/postgresql/pgrouting_dd_legacy.sql
+%%OLDPG%%share/postgresql/pgrouting_legacy.sql
+%%NEWPG%%share/postgresql/extension/pgrouting--2.0.0.sql
+%%NEWPG%%share/postgresql/extension/pgrouting.control
+%%NEWPG%%share/postgresql/extension/pgrouting_dd_legacy.sql
+%%NEWPG%%share/postgresql/extension/pgrouting--2.0.0.sql.in
+%%NEWPG%%share/postgresql/extension/pgrouting.sql
+%%NEWPG%%share/postgresql/extension/pgrouting_legacy.sql
 @dirrmtry share/postgresql/contrib/pgrouting-2.0
-@dirrmtry share/postgresql/contrib
-@dirrmtry share/postgresql
-@dirrmtry lib/postgresql
