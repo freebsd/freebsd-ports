@@ -2,7 +2,7 @@
 
 PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	laszlof
@@ -26,9 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libclearlooks.so:$
 .endif
 
 do-install:
-	@${MKDIR} ${THEME_DIR}
-	@cd ${WRKSRC} && ${FIND} . -print | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} \
-		${STAGEDIR}${THEME_DIR}
+	${MKDIR} ${STAGEDIR}${THEME_DIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Clearlooks\* ${STAGEDIR}${THEME_DIR}
 
 .include <bsd.port.post.mk>
