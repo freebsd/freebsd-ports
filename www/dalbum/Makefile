@@ -12,33 +12,25 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Free, highly customizable PHP photo album
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+
 USE_PHP=	session pcre
 NO_BUILD=	yes
 
 DALBUM_DIR?=	www/photo
+NO_WRKSUBDIR=	yes
 
 PLIST_SUB+=	DALBUM_DIR=${DALBUM_DIR}
 SUB_LIST+=	DALBUM_DIR=${DALBUM_DIR}
 SUB_FILES=	pkg-message
-
-NO_STAGE=	yes
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} -p ${WRKSRC}
-	@if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS});\
-	then \
-		exit 1; \
-	fi
 
 post-patch:
 	@${REINPLACE_CMD} "s#%%LOCALBASE%%#${LOCALBASE}#" ${WRKSRC}/config/config.php
 	@${RM} ${WRKSRC}/config/config.php.*
 
 do-install:
-	@${MKDIR} -m 0775 ${PREFIX}/${DALBUM_DIR}
-	@cd ${WRKSRC} && ${FIND} . -print | ${CPIO} --quiet -pdum -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DALBUM_DIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} -m 0775 ${STAGEDIR}${PREFIX}/${DALBUM_DIR}
+	@cd ${WRKSRC} && ${FIND} . -print | \
+		${CPIO} --quiet -pdum -R ${WWWOWN}:${WWWGRP} \
+		${STAGEDIR}${PREFIX}/${DALBUM_DIR}
 
 .include <bsd.port.mk>
