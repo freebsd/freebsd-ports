@@ -9,23 +9,12 @@ MASTER_SITES=	http://0pointer.de/lennart/projects/libshbuf/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for Shared Buffer IPC
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # though COPYING says LGPL21
 
-OPTIONS_DEFINE=	DOXYGEN
-
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=	pathfix
+USES=		pathfix libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-lynx
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-CONFIGURE_ARGS+=	--enable-doxygen
-BUILD_DEPENDS+=	doxygen>0:${PORTSDIR}/devel/doxygen
-.else
-CONFIGURE_ARGS+=	--disable-doxygen
-.endif
+CONFIGURE_ARGS+=--disable-lynx --disable-doxygen
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
