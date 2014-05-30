@@ -2,24 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	cpulimit
-PORTVERSION=	1.4
+PORTVERSION=	2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/limitcpu/limitcpu/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
-COMMENT=	A program to limit the CPU usage of a process
+COMMENT=	Limit the CPU usage of a process
 
 LICENSE=	GPLv2
 
 CFLAGS+=	-lkvm -Wall -O2
-MANCOMPRESSED=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/cpulimit \
+				man/man1/cpulimit.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/||g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cpulimit ${STAGEDIR}${PREFIX}/bin/cpulimit
+	${INSTALL_MAN} ${WRKSRC}/cpulimit.1 ${STAGEDIR}${MANPREFIX}/man/man1/cpulimit.1
 
 .include <bsd.port.mk>

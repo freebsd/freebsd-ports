@@ -1,0 +1,15 @@
+--- ./Makefile.orig	2014-05-26 17:50:50.639513964 -0300
++++ ./Makefile	2014-05-26 17:51:17.773388294 -0300
+@@ -11,11 +11,8 @@
+ minix:
+ 	$(CC) -o cpulimit cpulimit.c $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
+ 
+-freebsd:
+-	$(CC) -o cpulimit cpulimit.c -lrt -DFREEBSD $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
+-
+ cpulimit: cpulimit.c
+-	$(CC) -o cpulimit cpulimit.c -lrt -DLINUX $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
++	$(CC) -o cpulimit cpulimit.c -lrt -lkvm -DFREEBSD $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
+ 
+ tests:
+ 	$(MAKE) -C test
