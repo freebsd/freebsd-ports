@@ -11,10 +11,10 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	mk@neon1.net
 COMMENT=	An Apache module to provide public key ticket based authentication
 
-
 USE_APACHE=	22+
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--apxs=${APXS}
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+AP_EXTRAS=	-DAPACHE22
+SRC_FILE=	src/mod_auth_pubtkt.c
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
