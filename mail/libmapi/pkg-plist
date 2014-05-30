@@ -118,20 +118,20 @@ share/openchange/pictures/header.jpg
 share/openchange/pictures/middle_bg.jpg
 share/openchange/pictures/nav_tab.gif
 share/openchange/pictures/pixel_grey.gif
-share/samba4/setup/AD/oc_provision_configuration.ldif
-share/samba4/setup/AD/oc_provision_configuration_finalize.ldif
-share/samba4/setup/AD/oc_provision_schema.ldif
-share/samba4/setup/AD/oc_provision_schema_attributes.ldif
-share/samba4/setup/AD/oc_provision_schema_auxiliary_class.ldif
-share/samba4/setup/AD/oc_provision_schema_container.ldif
-share/samba4/setup/AD/oc_provision_schema_modify.ldif
-share/samba4/setup/AD/oc_provision_schema_objectCategory.ldif
-share/samba4/setup/AD/oc_provision_schema_possSuperior.ldif
-share/samba4/setup/AD/oc_provision_schema_sub_CfgProtocol.ldif
-share/samba4/setup/AD/oc_provision_schema_sub_mailGateway.ldif
-share/samba4/setup/AD/oc_provision_schema_subcontainer.ldif
-share/samba4/setup/AD/prefixMap.txt
-share/samba4/setup/AD/provision_schema_basedn_modify.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_configuration.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_configuration_finalize.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_attributes.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_auxiliary_class.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_container.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_modify.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_objectCategory.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_possSuperior.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_sub_CfgProtocol.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_sub_mailGateway.ldif
+share/%%SAMBA%%/setup/AD/oc_provision_schema_subcontainer.ldif
+share/%%SAMBA%%/setup/AD/prefixMap.txt
+share/%%SAMBA%%/setup/AD/provision_schema_basedn_modify.ldif
 share/setup/mapistore/mapistore_namedprops.ldif
 share/setup/openchangedb/oc_provision_openchange_init.ldif
 share/setup/openchangedb/oc_provision_openchange_mailbox.ldif
@@ -141,7 +141,7 @@ share/setup/profiles/oc_profiles_schema.ldif
 @dirrm share/setup/openchangedb
 @dirrm share/setup/mapistore
 @dirrm share/setup
-@dirrm share/samba4/setup/AD
+@dirrm share/%%SAMBA%%/setup/AD
 @dirrm share/openchange/pictures
 @dirrm share/openchange
 @dirrm share/mapitest/lzxpress
