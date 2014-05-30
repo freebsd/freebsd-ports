@@ -14,6 +14,8 @@ PKGNAMESUFFIX=	-math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
