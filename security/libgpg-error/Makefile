@@ -3,6 +3,7 @@
 
 PORTNAME=	libgpg-error
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -12,9 +13,7 @@ COMMENT=	Common error values for all GnuPG components
 
 OPTIONS_DEFINE=	DOCS NLS
 
-USES=		gmake tar:bzip2
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack
+USES=		gmake libtool:keepla tar:bzip2
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
