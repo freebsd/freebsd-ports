@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	softhsm
-PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTVERSION=	1.3.7
 CATEGORIES=	security
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Software implementation of a Hardware Security Module (HSM)
+
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
