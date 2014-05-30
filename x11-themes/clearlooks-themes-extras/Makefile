@@ -12,11 +12,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extras colour schemes for Clearlooks engine theme
 
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 USE_GNOME=	gtk20
 
 THEME_DIR=	${PREFIX}/share/themes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc) || defined(WITH_GTKENGINE)
@@ -25,14 +25,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-the
 RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libclearlooks.so:${PORTSDIR}/x11-themes/clearlooks
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS})
-
 do-install:
 	@${MKDIR} ${THEME_DIR}
 	@cd ${WRKSRC} && ${FIND} . -print | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${THEME_DIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} \
+		${STAGEDIR}${THEME_DIR}
 
 .include <bsd.port.post.mk>
