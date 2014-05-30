@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 PORTEPOCH=	1
 CATEGORIES=	math python
-MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.0/}/:doc \
+MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
 		SF/${PORTNAME}/NumPy/${PORTVERSION}:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
