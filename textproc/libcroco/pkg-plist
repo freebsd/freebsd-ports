@@ -32,6 +32,7 @@ lib/libcroco-%%VERSION%%.a
 lib/libcroco-%%VERSION%%.la
 lib/libcroco-%%VERSION%%.so
 lib/libcroco-%%VERSION%%.so.3
+lib/libcroco-%%VERSION%%.so.3.0.1
 libdata/pkgconfig/libcroco-%%VERSION%%.pc
 share/gtk-doc/html/libcroco/ch01.html
 share/gtk-doc/html/libcroco/home.png
