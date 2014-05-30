@@ -104,10 +104,9 @@ include/tse3/util/PowerQuantise.h
 include/tse3/util/Snap.h
 include/tse3/util/Song.h
 include/tse3/util/Track.h
-lib/libtse3.a
-lib/libtse3.la
 lib/libtse3.so
 lib/libtse3.so.0
+lib/libtse3.so.0.0.0
 man/man1/tse3play.1.gz
 man/man3/tse3.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/About.html
