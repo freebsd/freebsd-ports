@@ -12,10 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interactive Python accessibility explorer for GNOME
 
-USE_BZIP2=	yes
 USE_GNOME=	pygnomedesktop atspi intlhack
 USE_PYTHON=	2
-USES=		display:configure gettext gmake pkgconfig
+USES=		display:configure gettext gmake pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

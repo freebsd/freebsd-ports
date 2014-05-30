@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME accessibility toolkit (ATK)
 
-USE_XZ=		yes
+USES=	tar:xz
 
 .if !defined(REFERENCE_PORT)
 
