@@ -16,13 +16,12 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 USE_GHOSTSCRIPT_RUN=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} "share/enscript/README.BIG5" > ${WRKDIR}/pkg-plist
 	@${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/pkg-plist
 
 post-install:
-	@${INSTALL_DATA} ${.CURDIR}/files/README.BIG5 ${PREFIX}/share/enscript
+	@${INSTALL_DATA} ${.CURDIR}/files/README.BIG5 ${STAGEDIR}${PREFIX}/share/enscript
 	@${CAT} ${PKGMESSAGE}
 
 .include "${MASTERDIR}/Makefile"
