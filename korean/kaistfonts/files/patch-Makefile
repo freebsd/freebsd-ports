@@ -1,6 +1,6 @@
 --- Makefile.orig	Wed Oct  1 22:41:26 1997
 +++ Makefile	Wed Oct  1 22:46:06 1997
-@@ -0,0 +1,17 @@
+@@ -0,0 +1,16 @@
 +.SUFFIXES: .bdf .pcf
 +
 +TMP=	${DISTFILES:%.gz=%}
@@ -10,11 +10,10 @@
 +all:	${PCF}
 +
 +install:
-+	-mkdir -p ${PREFIX}/lib/X11/fonts/local
++	-mkdir -p ${DESTDIR}${PREFIX}/lib/X11/fonts/local
 +	for i in ${PCF}; do \
-+		gzip -c < $$i > ${PREFIX}/lib/X11/fonts/local/$$i.gz; \
++		gzip -c < $$i > ${DESTDIR}${PREFIX}/lib/X11/fonts/local/$$i.gz; \
 +	done
-+	cd ${PREFIX}/lib/X11/fonts/local/ ; mkfontdir
 +
 +.bdf.pcf:
 +	bdftopcf $*.bdf > $*.pcf
