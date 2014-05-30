@@ -28,6 +28,8 @@ bin/gen_at_graph
 %%SITE_PERL%%/algotutor/graph/flwa
 %%SITE_PERL%%/algotutor/graph/pfs
 %%SITE_PERL%%/algotutor/utilalgo
+man/man1/algotutor.1.gz
+man/man1/gen_at_graph.1.gz
 share/algotutor/data/countries.gr
 share/algotutor/data/lv.gr
 share/algotutor/data/pts1.gr
