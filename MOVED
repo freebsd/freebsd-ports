@@ -6118,3 +6118,4 @@ graphics/cairo-java||2014-05-27|Has expired: Unmaintained, outdated not depend o
 devel/libgconf-java||2014-05-27|Has expired: Unmaintained, outdated not depend on
 x11/libgnome-java||2014-05-27|Has expired: Unmaintained, outdated not depend on
 security/calife-devel||2014-05-28|Replaced by security/calife
+sysutils/synergy-devel||2014-05-30|Replaced by sysutils/synergy
