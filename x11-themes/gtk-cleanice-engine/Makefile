@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-cleanice-engine
 PORTVERSION=	2.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/elysium-project/gtk-engines-cleanice/${PORTVERSION} \
 		SF/elysium-project/gtk-engines-cleanice/1.2.7:theme
@@ -14,9 +14,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic GTK+ 2.x theme engine
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
+INSTALL_TARGET=	install-strip
 
 THEME=		cleanice-theme-1.2.7
 THEMEDIR=	${WRKDIR}/${THEME}/Theme
