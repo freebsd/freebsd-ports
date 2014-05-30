@@ -16,15 +16,14 @@ WRKSRC=		${WRKDIR}/arphic
 
 TTF=		bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for ttf in ${TTF}
-	${INSTALL_DATA} ${WRKSRC}/font/${ttf} ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/font/${ttf} ${STAGEDIR}${FONTSDIR}
 .endfor
-	@${MKDIR} ${DATADIR}
-	${CP} -fr ${WRKSRC}/license ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/logo.gif ${WRKSRC}/release.txt ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -fr ${WRKSRC}/license ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/logo.gif ${WRKSRC}/release.txt ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
