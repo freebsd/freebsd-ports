@@ -16,9 +16,6 @@ COMMENT=	Manage remote serial consoles via TCP/IP
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
-MAN5=		conserver.cf.5
-MAN8=		autologin.8 console.8 conserver.8
-
 # Set this to where you want console(8) to connect to by default
 # or use something like ``make DEFAULTHOST=myserver.mydomain.net''
 DEFAULTHOST?=	localhost
@@ -27,12 +24,11 @@ MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}" DEFAULTPORT="${DEFAULTPORT}"
 #PKGMESSAGE=	${WRKDIR}/MESSAGE
 USE_RC_SUBR=	conserver
 
-NO_STAGE=	yes
 do-build:
 	${REINPLACE_CMD} -e 's:/usr/local/lib:${PREFIX}/etc:g'  \
 	    ${WRKSRC}/etc/conserver/cons.h
 .for d in etc/conserver etc/console etc/autologin
-	(cd ${WRKSRC}/$d && ${SETENV} ${MAKE_ENV} makeme \
+	@(cd ${WRKSRC}/$d && ${SETENV} ${MAKE_ENV} makeme \
 	    ${MAKE_ARGS} ${ALL_TARGET})
 .endfor
 	#@${SED} -e 's:/usr/local:${PREFIX}:g'  \
@@ -40,27 +36,27 @@ do-build:
 
 do-install:
 .for d in etc/conserver etc/console etc/autologin
-	@(cd ${WRKSRC}/$d && ${SETENV} ${MAKE_ENV} makeme \
+	(cd ${WRKSRC}/$d && ${SETENV} ${MAKE_ENV} makeme \
 	    ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/lib/conserver.cf/conserver.cf \
-	    ${PREFIX}/etc/conserver.cf.eg
+	    ${STAGEDIR}${PREFIX}/etc/conserver.cf.eg
 	@${SED} -e 's:/usr/local/lib:${PREFIX}/etc:g'  \
 	    ${WRKSRC}/lib/conserver.cf/conserver.cf.man  \
-	    > ${PREFIX}/man/man5/conserver.cf.5
+	    > ${STAGEDIR}${PREFIX}/man/man5/conserver.cf.5
 	@${SED} -e 's:/usr/local/etc:${PREFIX}/sbin:g'  \
 	    ${WRKSRC}/etc/autologin/autologin.man  \
-	    > ${PREFIX}/man/man8/autologin.8
+	    > ${STAGEDIR}${PREFIX}/man/man8/autologin.8
 	@${SED} -e 's:/usr/local/lib:${PREFIX}/etc:g'  \
 	    ${WRKSRC}/etc/conserver/conserver.man  \
-	    > ${PREFIX}/man/man8/conserver.8
+	    > ${STAGEDIR}${PREFIX}/man/man8/conserver.8
 	@${SED} -e 's:console\.itsd\.fedex\.com:${DEFAULTHOST}:g'  \
 	    ${WRKSRC}/etc/console/console.man  \
-	    > ${PREFIX}/man/man8/console.8
-	@${CHMOD} 0444 ${PREFIX}/man/man5/conserver.cf.5  \
-	    ${PREFIX}/man/man8/autologin.8  \
-	    ${PREFIX}/man/man8/conserver.8  \
-	    ${PREFIX}/man/man8/console.8
+	    > ${STAGEDIR}${PREFIX}/man/man8/console.8
+	@${CHMOD} 0444 ${STAGEDIR}${PREFIX}/man/man5/conserver.cf.5  \
+	    ${STAGEDIR}${PREFIX}/man/man8/autologin.8  \
+	    ${STAGEDIR}${PREFIX}/man/man8/conserver.8  \
+	    ${STAGEDIR}${PREFIX}/man/man8/console.8
 	@#	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
