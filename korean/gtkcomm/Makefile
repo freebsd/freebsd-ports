@@ -19,7 +19,6 @@ USE_PERL5=	build
 USE_GNOME=	glib20 gtk20
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -e 's|-lc_r||; s|DATADIRNAME=lib|DATADIRNAME=share|g' \
 	    ${WRKSRC}/configure
