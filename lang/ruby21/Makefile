@@ -56,8 +56,6 @@ EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
 
-.include <bsd.port.options.mk>
-
 USES=		tar:bzip2
 
 .include <bsd.port.pre.mk>
