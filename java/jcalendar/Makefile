@@ -21,23 +21,19 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 # has a potential conflict with devel/looks, both install a looksXXX.jar
 ###
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	cd ${WRKDIR}/build && \
 		${JAR} cmf ${WRKSRC}/${PORTNAME}.manifest \
 			${WRKDIR}/build/${PORTNAME}.jar *
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/build/${PORTNAME}.jar ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKDIR}/lib/looks-2.0.1.jar ${JAVAJARDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/doc && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKDIR}/build/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKDIR}/lib/looks-2.0.1.jar ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
