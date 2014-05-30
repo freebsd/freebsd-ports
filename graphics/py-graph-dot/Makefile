@@ -18,8 +18,6 @@ PROJECTHOST=	python-graph
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	python_graph_dot
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
