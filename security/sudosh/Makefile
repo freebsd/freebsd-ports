@@ -10,6 +10,9 @@ MASTER_SITES=		SF/${PORTNAME}/OldFiles
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		A sudo shell
 
+DEPRECATED=		Funcition replaced by sudo -s
+EXPIRATION_DATE=	2014-07-01
+
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
 GNU_CONFIGURE=		yes
