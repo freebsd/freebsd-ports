@@ -41,7 +41,6 @@ USES=		perl5
 USE_PERL5=	build
 
 # manually install hinted fonts
-NO_STAGE=	yes
 do-configure:
 .for FONTNAME in ${FONTLIST_MANUAL}
 	${GZIP_CMD} -cd ${_DISTDIR}/${FONTNAME}.bdf.gz \
@@ -57,11 +56,10 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
 .for FONTNAME in ${FONTLIST}
 	${INSTALL_DATA} ${WRKDIR}/${FONTNAME}.pcf.gz \
-			${PREFIX}/${FONTSDIR}
+			${STAGEDIR}${PREFIX}/${FONTSDIR}
 .endfor
-	@(cd ${PREFIX}/${FONTSDIR} && mkfontdir .)
 
 .include <bsd.port.mk>
