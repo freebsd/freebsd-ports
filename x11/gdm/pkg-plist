@@ -17,9 +17,9 @@ include/gdm/gdm-client-glue.h
 include/gdm/gdm-client.h
 include/gdm/gdm-sessions.h
 include/gdm/gdm-user-switching.h
-lib/libgdm.la
 lib/libgdm.so
 lib/libgdm.so.1
+lib/libgdm.so.1.0.0
 lib/girepository-1.0/Gdm-1.0.typelib
 libdata/pkgconfig/gdm.pc
 libexec/gdm-host-chooser

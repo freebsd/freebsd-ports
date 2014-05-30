@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-screensaver/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/x11/cinnamon-screensaver/Makefile 19704 2014-05-28 09:16:09Z gusi $
 
 PORTNAME=	cinnamon-screensaver
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.3
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
@@ -20,7 +20,7 @@ RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper \
 		gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd libxml2
 GNU_CONFIGURE=	yes
@@ -30,6 +30,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pam-prefix=${PREFIX}/etc/pam.d \
 		--without-systemd
+INSTALL_TARGET=	install-strip
 
 SUB_FILES+=	cinnamon-screensaver.pam
 

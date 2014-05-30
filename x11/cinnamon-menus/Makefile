@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-menus/Makefile 19579 2014-04-26 07:10:16Z kwm $
+#   $MCom: ports/trunk/x11/cinnamon-menus/Makefile 19704 2014-05-28 09:16:09Z gusi $
 
 PORTNAME=	cinnamon-menus
 PORTVERSION=	2.2.0
@@ -17,8 +17,9 @@ BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:${PORTSDIR}/x11/xkeyboard-config \
 		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
-USE_GNOME=	gnomehier gnomeprefix gtk30 intlhack introspection:build
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomehier gnomemenus3 gnomeprefix gtk30 intlhack \
+		introspection:build
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -26,14 +27,7 @@ USE_AUTOTOOLS=	autoconf automake libtool
 PATHFIX_MAKEFILEIN=	Makefile.am
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-patch:
-	@${SED} -e 's|/usr/local|${LOCALBASE}|g' \
-		< ${FILESDIR}/KDE.directory > ${WRKSRC}/KDE.directory
-
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/KDE.directory \
-		${STAGEDIR}${PREFIX}/share/desktop-directories
+INSTALL_TARGET=	install-strip
 
 pre-configure:
 	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh

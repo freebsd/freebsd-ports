@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/gthumb/Makefile 19673 2014-05-18 19:14:26Z gusi $
+#   $MCom: ports/trunk/graphics/gthumb/Makefile 19707 2014-05-28 11:54:05Z gusi $
 
 PORTNAME=	gthumb
 PORTVERSION=	3.2.8
@@ -53,6 +53,7 @@ GLIB_SCHEMAS=	org.gnome.gthumb.change-date.gschema.xml \
 
 PLIST_SUB=	GTHUMB_VER=3.2
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	EXIV2 CLUTTER GSTREAMER OPENRAW BRASERO YELP SECRET WEBP WEBSERVICES
 OPTIONS_DEFAULT=	EXIV2 CLUTTER GSTREAMER OPENRAW BRASERO YELP SECRET WEBP WEBSERVICES
 CLUTTER_DESC=	Fancy slideshows
@@ -62,82 +63,26 @@ BRASERO_DESC=	Write galleries to CD/DVD (large dependency)
 YELP_DESC=	Viewer for built-in help system
 SECRET_DESC=	Libsecret support for storing passwords
 WEBP_DESC=	Support for Google WebP conversion tool
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
-CONFIGURE_ARGS+=--enable-exiv2
-PLIST_SUB+=	EXIV2=""
-.else
-CONFIGURE_ARGS+=--disable-exiv2
-PLIST_SUB+=	EXIV2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCLUTTER}
-LIB_DEPENDS+=	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
-CONFIGURE_ARGS+=--enable-clutter
-.else
-CONFIGURE_ARGS+=--disable-clutter
-.endif
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER1=	yes
-CONFIGURE_ARGS+=--enable-gstreamer
-PLIST_SUB+=	GSTREAMER=""
-.else
-CONFIGURE_ARGS+=--disable-gstreamer
-PLIST_SUB+=	GSTREAMER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOPENRAW}
-LIB_DEPENDS+=	libopenrawgnome.so:${PORTSDIR}/graphics/libopenraw
-CONFIGURE_ARGS+=--enable-libopenraw
-.else
-CONFIGURE_ARGS+=--disable-libopenraw
-.endif
-
-.if ${PORT_OPTIONS:MWEBSERVICES}
-LIB_DEPENDS+=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 		
-CONFIGURE_ARGS+=--enable-libsoup --enable-webkit2 --enable-libjson-glib
-PLIST_SUB+=	WEBSERVICES=""
-.else
-CONFIGURE_ARGS+=--disable-libsoup --disable-webkit2 --disable-libjson-glib
-PLIST_SUB+=	WEBSERVICES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MBRASERO}
-LIB_DEPENDS+=	libbrasero-media3.so:${PORTSDIR}/sysutils/brasero
-CONFIGURE_ARGS+=--enable-libbrasero
-PLIST_SUB+=	BRASERO=""
-.else
-CONFIGURE_ARGS+=--disable-libbrasero
-PLIST_SUB+=	BRASERO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MYELP}
-RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
-.endif
-
-.if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=	libwebp.so:${PORTSDIR}/graphics/webp
-CONFIGURE_ARGS+=--enable-webp
-PLIST_SUB+=	WEBP=""
-.else
-CONFIGURE_ARGS+=--disable-webp
-PLIST_SUB+=	WEBP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSECRET}
-LIB_DEPENDS+=	libsecret-1.so:${PORTSDIR}/security/libsecret
-CONFIGURE_ARGS+=--enable-libsecret
-PLIST_SUB+=	SECRET=""
-.else
-CONFIGURE_ARGS+=--disable-libsecret
-PLIST_SUB+=	SECRET="@comment "
-.endif
+EXIV2_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+EXIV2_CONFIGURE_ENABLE=	exiv2
+CLUTTER_LIB_DEPENDS=	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+CLUTTER_CONFIGURE_ENABLE=	clutter
+GSTREAMER_USE=	GSTREAMER1=yes
+GSTREAMER_CONFIGURE_ENABLE=	gstreamer
+OPENRAW_LIB_DEPENDS=	libopenrawgnome.so:${PORTSDIR}/graphics/libopenraw
+OPENRAW_CONFIGURE_ENABLE=	libopenraw
+BRASERO_LIB_DEPENDS=	libbrasero-media3.so:${PORTSDIR}/sysutils/brasero
+BRASERO_CONFIGURE_ENABLE=	brasero	
+YELP_RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+SECRET_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
+SECRET_CONFIGURE_ENABLE=	secret	
+WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_CONFIGURE_ENABLE=	webp	
+WEBSERVICES_LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
+				libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
+				libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+WEBSERVICES_CONFIGURE_ON=	--enable-libsoup --enable-webkit2 --enable-libjson-glib	
+WEBSERVICES_CONFIGURE_OFF=	--disable-libsoup --disable-webkit2 --disable-libjson-glib
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gthumb/extensions/lib*.so

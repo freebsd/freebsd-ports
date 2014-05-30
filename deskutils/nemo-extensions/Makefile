@@ -1,10 +1,10 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/deskutils/nemo-extensions/Makefile 19618 2014-05-12 05:56:00Z gusi $
+#    $MCom: ports/trunk/deskutils/nemo-extensions/Makefile 19704 2014-05-28 09:16:09Z gusi $
 
 PORTNAME=	nemo-extensions
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm gnome
 DIST_SUBDIR=	gnome3
 
@@ -42,12 +42,13 @@ GH_TAGNAME=	${GH_COMMIT}
 
 USE_GNOME=	gconf2 gnomeprefix gnomedocutils gtksourceview3 intlhack \
 		introspection:build libxml2 pygtk2
-USES=		gettext gmake pathfix pkgconfig shebangfix
+USES=		gettext gmake libtool pathfix pkgconfig shebangfix
 SHEBANG_FILES=  nemo-dropbox/dropbox.in
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 NON_AUTO_EXTENSIONS=	nemo-dropbox nemo-fileroller nemo-preview
 AUTO_EXTENSIONS=	nemo-share

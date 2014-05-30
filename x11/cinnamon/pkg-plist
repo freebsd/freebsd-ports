@@ -86,7 +86,6 @@ man/man1/cinnamon.1.gz
 man/man1/cinnamon2d.1.gz
 man/man1/gnome-session-cinnamon.1.gz
 man/man1/gnome-session-cinnamon2d.1.gz
-share/applications/cinnamon-add-panel-launcher.desktop
 share/applications/cinnamon-menu-editor.desktop
 share/applications/cinnamon-settings-applets.desktop
 share/applications/cinnamon-settings-backgrounds.desktop
@@ -575,7 +574,6 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/js/ui/appSwitcher/timelineSwitcher.js
 %%DATADIR%%/search_providers/google.xml
 %%DATADIR%%/search_providers/wikipedia.xml
-%%DATADIR%%/shaders/dim-window.glsl
 %%DATADIR%%/theme/add-workspace-hover.png
 %%DATADIR%%/theme/add-workspace.png
 %%DATADIR%%/theme/calendar-arrow-left.svg
@@ -635,6 +633,8 @@ share/polkit-1/actions/org.cinnamon.settings-users.policy
 share/xsessions/cinnamon.desktop
 share/xsessions/cinnamon2d.desktop
 @dirrm share/xsessions
+share/icons/hicolor/16x16/categories/cs-backgrounds.svg
+share/icons/hicolor/16x16/categories/cs-desklets.svg
 share/icons/hicolor/scalable/categories/cs-applets.svg
 share/icons/hicolor/scalable/categories/cs-backgrounds.svg
 share/icons/hicolor/scalable/categories/cs-bluetooth.svg
@@ -683,7 +683,6 @@ share/icons/hicolor/scalable/emblems/cs-xlet-running.svg
 share/icons/hicolor/scalable/emblems/cs-xlet-system.svg
 share/icons/hicolor/scalable/emblems/cs-xlet-update.svg
 @dirrm %%DATADIR%%/theme
-@dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%/search_providers
 @dirrm %%DATADIR%%/js/ui/appSwitcher
 @dirrm %%DATADIR%%/js/ui

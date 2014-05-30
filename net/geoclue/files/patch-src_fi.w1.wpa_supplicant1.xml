@@ -1,0 +1,41 @@
+--- /dev/null	2014-05-26 11:34:48.000000000 +0000
++++ src/fi.w1.wpa_supplicant1.xml	2014-05-26 11:35:59.296015210 +0000
+@@ -0,0 +1,38 @@
++<?xml version="1.0"?>
++<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
++ "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
++<node>
++
++<interface name="fi.w1.wpa_supplicant1">
++
++<signal name="InterfaceAdded">
++<arg name="path" type="o"/>
++<arg name="properties" type="a{sv}"/>
++</signal>
++<signal name="InterfaceRemoved">
++<arg name="path" type="o"/>
++</signal>
++<property name="Interfaces" type="ao" access="read"/>
++</interface>
++
++<interface name="fi.w1.wpa_supplicant1.Interface">
++<signal name="BSSAdded">
++<arg name="path" type="o"/>
++<arg name="properties" type="a{sv}"/>
++</signal>
++<signal name="BSSRemoved">
++<arg name="path" type="o"/>
++</signal>
++<property name="State" type="s" access="read"/>
++<property name="Ifname" type="s" access="read"/>
++<property name="BSSs" type="ao" access="read"/>
++</interface>
++
++<interface name="fi.w1.wpa_supplicant1.BSS">
++<property name="SSID" type="ay" access="read"/>
++<property name="BSSID" type="ay" access="read"/>
++<property name="Signal" type="n" access="read"/>
++<property name="Frequency" type="q" access="read"/>
++</interface>
++
++</node>

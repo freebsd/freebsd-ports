@@ -62,16 +62,12 @@ lib/locale/zh_CN/LC_MESSAGES/nemo-preview.mo
 lib/locale/zh_HK/LC_MESSAGES/nemo-preview.mo
 lib/locale/zh_TW/LC_MESSAGES/nemo-preview.mo
 lib/nemo-preview/girepository-1.0/NemoPreview-1.0.typelib
-lib/nemo-preview/libnemo-preview-1.0.la
 lib/nemo-preview/libnemo-preview-1.0.so
 lib/nemo/extensions-3.0/libnemo-dropbox.a
-lib/nemo/extensions-3.0/libnemo-dropbox.la
 lib/nemo/extensions-3.0/libnemo-dropbox.so
 lib/nemo/extensions-3.0/libnemo-fileroller.a
-lib/nemo/extensions-3.0/libnemo-fileroller.la
 lib/nemo/extensions-3.0/libnemo-fileroller.so
 lib/nemo/extensions-3.0/libnemo-share.a
-lib/nemo/extensions-3.0/libnemo-share.la
 lib/nemo/extensions-3.0/libnemo-share.so
 libexec/nemo-preview-start
 man/man1/dropbox.1.gz

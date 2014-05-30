@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gdm/Makefile 19670 2014-05-16 16:30:12Z gusi $
+#   $MCom: ports/trunk/x11/gdm/Makefile 19700 2014-05-28 07:16:35Z kwm $
 
 PORTNAME=	gdm
 PORTVERSION=	3.12.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -44,7 +45,7 @@ USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	org.gnome.login-screen.gschema.xml
@@ -70,6 +71,7 @@ CONFIGURE_ARGS=	--disable-static \
 CONFIGURE_ARGS+=--with-default-pam-config=redhat
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAS_SA_LEN
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 SUB_FILES+=	gdm-launch-environment \
 		gdm-password \
@@ -149,8 +151,7 @@ post-install:
 
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
-
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdm.so.1
+#	@${RMDIR} ${STAGEDIR}/var/run/gdm
 
 # logwtmp lives here.
 .if ${OSVERSION} < 900000

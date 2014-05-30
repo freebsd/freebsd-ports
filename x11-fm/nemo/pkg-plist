@@ -14,9 +14,8 @@ include/nemo/libnemo-extension/nemo-property-page-provider.h
 include/nemo/libnemo-extension/nemo-property-page.h
 lib/girepository-1.0/Nemo-3.0.typelib
 lib/libnemo-extension.a
-lib/libnemo-extension.la
 lib/libnemo-extension.so
-lib/libnemo-extension.so.5
+lib/libnemo-extension.so.1.4.0
 libdata/pkgconfig/libnemo-extension.pc
 libexec/nemo-convert-metadata
 man/man1/nemo-connect-server.1.gz
@@ -35,13 +34,6 @@ share/icons/hicolor/22x22/apps/nemo.png
 share/icons/hicolor/24x24/apps/nemo.png
 share/icons/hicolor/32x32/apps/nemo.png
 share/icons/hicolor/scalable/actions/location-symbolic.svg
-share/icons/hicolor/scalable/actions/nemo-edit-find-symbolic.svg
-share/icons/hicolor/scalable/actions/nemo-folder-new-symbolic.svg
-share/icons/hicolor/scalable/actions/nemo-go-home-symbolic.svg
-share/icons/hicolor/scalable/actions/nemo-go-next-symbolic.svg
-share/icons/hicolor/scalable/actions/nemo-go-previous-symbolic.svg
-share/icons/hicolor/scalable/actions/nemo-go-up-symbolic.svg
-share/icons/hicolor/scalable/actions/nemo-view-refresh-symbolic.svg
 share/icons/hicolor/scalable/actions/sidebar-hide-symbolic.svg
 share/icons/hicolor/scalable/actions/sidebar-places-symbolic.svg
 share/icons/hicolor/scalable/actions/sidebar-show-symbolic.svg

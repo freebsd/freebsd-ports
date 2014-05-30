@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-desktop/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/x11/cinnamon-desktop/Makefile 19704 2014-05-28 09:16:09Z gusi $
 
 PORTNAME=	cinnamon-desktop
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:${PORTSDIR}/x11/
 		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile
 
 USE_XORG=	x11 xrandr xext
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

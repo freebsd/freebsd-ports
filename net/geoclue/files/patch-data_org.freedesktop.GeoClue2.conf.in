@@ -1,0 +1,43 @@
+--- data/org.freedesktop.GeoClue2.conf.in.orig	2014-02-24 18:07:18.000000000 +0000
++++ data/org.freedesktop.GeoClue2.conf.in	2014-05-26 11:06:39.353916380 +0000
+@@ -12,28 +12,19 @@
+     <!-- Only allow @dbus_srv_user@ to own the name on the bus -->
+     <allow own="org.freedesktop.GeoClue2"/>
+ 
+-    <!-- Also give @dbus_srv_user@ access to needed NetworkManager API -->
+-    <allow send_destination="org.freedesktop.NetworkManager"/>
++    <!-- Also give @dbus_srv_user@ access to wpa_supplicant API -->
++    <allow receive_sender="fi.w1.wpa_supplicant1"
++           receive_type="signal"/>
++
++    <allow send_destination="fi.w1.wpa_supplicant1"
++           send_interface="org.freedesktop.DBus.Properties"
++           send_member="Get"/>
++
++    <allow send_destination="fi.w1.wpa_supplicant1"
++           send_interface="org.freedesktop.DBus.Properties"
++           send_member="GetAll"/>
+ 
+-    <allow send_destination="org.freedesktop.NetworkManager"
++    <allow send_destination="fi.w1.wpa_supplicant1"
+            send_interface="org.freedesktop.DBus.Introspectable"/>
+-
+-    <allow send_destination="org.freedesktop.NetworkManager"
+-           send_interface="org.freedesktop.DBus.Properties"/>
+-
+-    <allow send_destination="org.freedesktop.NetworkManager"
+-           send_interface="org.freedesktop.NetworkManager"/>
+-
+-    <allow send_destination="org.freedesktop.NetworkManager"
+-           send_interface="org.freedesktop.NetworkManager.AccessPoint"/>
+-
+-    <allow send_destination="org.freedesktop.NetworkManager"
+-           send_interface="org.freedesktop.NetworkManager.Connection.Active"/>
+-
+-    <allow send_destination="org.freedesktop.NetworkManager"
+-           send_interface="org.freedesktop.NetworkManager.Device.Wireless"/>
+-
+-    <allow send_destination="org.freedesktop.NetworkManager"
+-           send_interface="org.freedesktop.NetworkManager.Device"/>
+   </policy>
+ </busconfig>

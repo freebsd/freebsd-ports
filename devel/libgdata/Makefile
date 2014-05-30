@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports-experimental/trunk/devel/libgdata/Makefile 19553 2014-04-20 07:23:27Z gusi $
+#    $MCom: ports/trunk/devel/libgdata/Makefile 19699 2014-05-28 05:16:15Z gusi $
 
 PORTNAME=	libgdata
-PORTVERSION=	0.14.1
+PORTVERSION=	0.14.3
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 

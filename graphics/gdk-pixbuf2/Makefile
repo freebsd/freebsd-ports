@@ -1,9 +1,9 @@
 # Created by: Ade Lovett <ade@lovett.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#    $MCom: ports/trunk/graphics/gdk-pixbuf2/Makefile 19698 2014-05-27 20:26:34Z kwm $
 
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	2.30.7
+PORTVERSION=	2.30.8
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2

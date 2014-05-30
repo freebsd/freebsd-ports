@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/editors/gedit/Makefile 19503 2014-04-14 21:06:16Z gusi $
+#   $MCom: ports/trunk/editors/gedit/Makefile 19708 2014-05-28 20:26:41Z gusi $
 
 PORTNAME=	gedit
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -34,6 +34,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="3.12"
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 		org.gnome.gedit.plugins.externaltools.gschema.xml \
@@ -43,8 +44,5 @@ GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 		org.gnome.gedit.plugins.pythonconsole.gschema.xml \
 		org.gnome.gedit.plugins.time.enums.xml \
 		org.gnome.gedit.plugins.time.gschema.xml
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gedit/plugins/lib*.so
 
 .include <bsd.port.mk>
