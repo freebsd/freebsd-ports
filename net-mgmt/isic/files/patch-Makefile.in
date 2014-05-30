@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2014-05-30 10:56:25.545291396 +0800
++++ Makefile.in	2014-05-30 10:59:03.796118183 +0800
+@@ -63,7 +63,7 @@
+ 	  tar -czvf isic-$(VERSION).tgz ./isic-$(VERSION)/* )
+ 
+ install: $(BINS) $(MAN)
+-	$(INSTALL) -m 0755 -d $(PREFIX)/bin
+-	$(INSTALL) -m 0755 -c $(BINS) $(PREFIX)/bin
+-	$(INSTALL) -m 0755 -d $(PREFIX)/man/man1
+-	${INSTALL} -m 0755 -c $(MAN) $(PREFIX)/man/man1
++	$(INSTALL) -m 0755 -d $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) -c $(BINS) $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -m 0755 -d $(DESTDIR)$(PREFIX)/man/man1
++	$(BSD_INSTALL_MAN) -c $(MAN) $(DESTDIR)$(PREFIX)/man/man1

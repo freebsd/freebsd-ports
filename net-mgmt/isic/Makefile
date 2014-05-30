@@ -3,27 +3,32 @@
 
 PORTNAME=	isic
 PORTVERSION=	0.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ISIC%20v${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	IP Stack Integrity Checker
 
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LICENSE=	BSD2CLAUSE
+
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
-
-MAN1=	isic.1
+USES=		tar:tgz
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
 post-patch:
+.if ${OSVERSION} > 900000
+	@${REINPLACE_CMD} -e 's|2147483647|2147483645|' \
+		${WRKSRC}/isic.h
+.endif
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
