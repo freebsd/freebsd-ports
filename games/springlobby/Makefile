@@ -12,13 +12,13 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform lobby client for the Spring RTS project
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	spring:${PORTSDIR}/games/spring
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USE_BZIP2=	yes
-USES=		cmake pkgconfig compiler:c++11-lib
+USES=		cmake pkgconfig compiler:c++11-lib tar:bzip2
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
 		-DENABLE_DEBUG_REPORT=FALSE
 USE_WX=		2.8+
