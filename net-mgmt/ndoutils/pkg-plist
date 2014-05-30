@@ -1,8 +1,8 @@
 @stopdaemon ndo2db
 bin/file2sock
 bin/log2ndo
-bin/ndo2db-3x
-bin/ndomod-3x.o
+bin/ndo2db
+bin/ndomod.o
 bin/sockdebug
 etc/nagios/misccommands.cfg-sample
 etc/nagios/ndo2db.cfg-sample
@@ -12,6 +12,70 @@ etc/nagios/ndoutils.cfg-sample
 %%PORTDOCS%%%%DOCSDIR%%/NDOUTILS DB Model.pdf
 %%PORTDOCS%%%%DOCSDIR%%/NDOUtils Documentation.odt
 %%PORTDOCS%%%%DOCSDIR%%/NDOUtils Documentation.pdf
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/Makefile.in
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/NDOUtils.xml
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/all-entities.ent
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/components.xml
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/ent/documents.ent
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/ent/names.ent
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/ent/plugins.ent
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/ent/protocols.ent
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/ent/urls.ent
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/ent/version.ent
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/example-configs.xml
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/installation.xml
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/introduction.xml
+%%PORTDOCS%%%%DOCSDIR%%/docbook/en-en/whatsnew.xml
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig1.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig10.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig11.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig12.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig13.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig2.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig3.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig4.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig5.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig6.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig7.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig8.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/fig9.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/important.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/logofullsize.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/note.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/images/tip.png
+%%PORTDOCS%%%%DOCSDIR%%/docbook/xsl/fo.xsl
+%%PORTDOCS%%%%DOCSDIR%%/docbook/xsl/html-chunked.xsl
+%%PORTDOCS%%%%DOCSDIR%%/docbook/xsl/html-single.xsl
+%%PORTDOCS%%%%DOCSDIR%%/docbook/xsl/titlepage.xml
+%%PORTDOCS%%%%DOCSDIR%%/docbook/xsl/titlepage.xsl
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/ch03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/components.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/example-configs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en-en/whatsnew.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig1.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig10.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig11.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig12.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig13.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig2.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig3.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig4.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig5.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig6.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig7.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig8.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fig9.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/important.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/logofullsize.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/note.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tip.png
 %%DATADIR%%/README
 %%DATADIR%%/installdb
 %%DATADIR%%/mysql-mods-1.4b5.sql
@@ -25,6 +89,8 @@ etc/nagios/ndoutils.cfg-sample
 %%DATADIR%%/mysql-upgrade-1.4b5.sql
 %%DATADIR%%/mysql-upgrade-1.4b6.sql
 %%DATADIR%%/mysql-upgrade-1.4b8.sql
+%%DATADIR%%/mysql-upgrade-2.0.0.sql
+%%DATADIR%%/mysql-upgrade-2.0.1.sql
 %%DATADIR%%/mysql.sql
 %%DATADIR%%/prepsql
 %%DATADIR%%/queries/comment_history.sql
@@ -63,4 +129,12 @@ etc/nagios/ndoutils.cfg-sample
 %%DATADIR%%/upgradedb
 @dirrm %%DATADIR%%/queries
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook/en-en/ent
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook/en-en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook/xsl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/en-en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
