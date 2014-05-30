@@ -1,0 +1,11 @@
+--- src/Makefile.in	2014-04-09 06:29:47.000000000 +0200
++++ src/Makefile.in	2014-05-21 18:47:57.000000000 +0200
+@@ -279,7 +279,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-WARNINGS = -Wall -Wextra -Wconversion -Wno-sign-conversion
++WARNINGS = -Wall -Wextra -Wconversion
+ AM_CFLAGS = -std=gnu99 $(fuse_CFLAGS) $(WARNINGS) $(am__append_3) \
+ 	$(am__append_7)
+ AM_CXXFLAGS = -std=c++98 $(fuse_CFLAGS) $(WARNINGS) $(am__append_4) \
