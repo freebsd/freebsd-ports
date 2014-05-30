@@ -340,6 +340,7 @@
     SUBDIR += dconf
     SUBDIR += dconf-editor
     SUBDIR += ddd
+    SUBDIR += dee
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
     SUBDIR += delta
