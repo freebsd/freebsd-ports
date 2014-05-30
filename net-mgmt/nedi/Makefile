@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/w
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cristi@net.utcluj.ro
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Discovery and Monitoring tool
 
 RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
