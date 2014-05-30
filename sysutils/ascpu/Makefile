@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/ascpu/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	CPU statistics monitor utility for XFree86
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so.11:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
@@ -18,12 +18,10 @@ CONFIGURE_ARGS=	--with-xpm-includes=${LOCALBASE}/include --with-xpm-library=${LO
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	EXTRA_LIBRARIES="-L${LOCALBASE}/lib"
 
-MAN1=		ascpu.1
-PLIST_FILES=	bin/ascpu
+PLIST_FILES=	bin/ascpu man/man1/ascpu.1.gz
 
-NO_STAGE=	yes
 do-install:
-	@ ${INSTALL_MAN} ${WRKSRC}/ascpu.man ${PREFIX}/man/man1/ascpu.1
-	@ ${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g kmem -m 2755 ${WRKSRC}/ascpu ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ascpu.man ${STAGEDIR}${PREFIX}/man/man1/ascpu.1
+	${INSTALL} ${STRIP} -o ${BINOWN} -g kmem -m 2755 ${WRKSRC}/ascpu ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
