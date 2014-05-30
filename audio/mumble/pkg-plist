@@ -4,7 +4,7 @@ lib/libcelt-mumble.so.0.7.0
 lib/libmumble.so
 lib/libmumble.so.1
 lib/libmumble.so.1.2
-lib/libmumble.so.1.2.5
+lib/libmumble.so.1.2.6
 man/man1/mumble.1.gz
 share/applications/mumble.desktop
 share/icons/hicolor/128x128/apps/mumble.png
