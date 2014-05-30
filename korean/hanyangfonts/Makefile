@@ -19,12 +19,11 @@ RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 
 SUB_FILES=	pkg-message
 
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=	yes
 
 FONTS=		hgm10 hgm12 hgm14 hgm16 hgm18 hgm20 \
 		hmm10 hmm12 hmm14 hmm16 hmm18 hmm20
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}; \
 	for fn in ${FONTS}; do \
@@ -33,11 +32,10 @@ do-build:
 	done; \
 
 do-install:
-	-${MKDIR} ${PREFIX}/lib/X11/fonts/local
-	@cd ${WRKSRC}; \
-	for f in ${FONTS}; do \
-		${INSTALL_DATA} "$$f".pcf.gz ${PREFIX}/lib/X11/fonts/local; \
-	done; \
-	mkfontdir ${PREFIX}/lib/X11/fonts/local
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/local
+.for f in ${FONTS}
+	${INSTALL_DATA} ${WRKSRC}/${f}.pcf.gz \
+		${STAGEDIR}${PREFIX}/lib/X11/fonts/local
+.endfor
 
 .include <bsd.port.mk>
