@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20130529
+20140529
   AFFECTS: users of databases/postgresql??-(server|client)
   AUTHOR: mat@FreeBSD.org
 
@@ -18,7 +18,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # pkg set -o databases/postgresql90-client:databases/postgresql92-client
 
-20130528:
+20140528:
   AFFECTS: users of security/calife & security/calife-devel
   AUTHOR: roberto@FreeBSD.org
 
