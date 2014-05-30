@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 MAKE_ARGS+=	PKG_PORTSDIR=${PORTSDIR}
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
-		PORTREVISION=${PORTREVISION}
+		PORTREVISION=${PORTREVISION} NO_PIE=yes
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
