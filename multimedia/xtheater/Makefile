@@ -3,7 +3,7 @@
 
 PORTNAME=	xtheater
 PORTVERSION=	1.0.0.p1
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/Xtheater/1.0.0-pre1
@@ -12,14 +12,12 @@ DISTNAME=	Xtheater-${PORTVERSION:S/.p/-pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG-1 player in GTK+ capable of playing MPEG-1 format streams
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
-USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
-USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_GL=		yes
-USES=		gmake
+USES=		gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gl
 
