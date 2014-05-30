@@ -3,7 +3,7 @@
 
 PORTNAME=	gaul
 PORTVERSION=	0.1849.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/0.1849
 DISTNAME=	${PORTNAME}-devel-${PORTVERSION:R}-${PORTVERSION:E}
@@ -11,15 +11,13 @@ DISTNAME=	${PORTNAME}-devel-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Genetic Algorithm Utility Library
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
-
-USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lcurses
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
