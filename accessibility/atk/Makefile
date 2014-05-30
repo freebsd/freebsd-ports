@@ -12,13 +12,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME accessibility toolkit (ATK)
 
-USES=	tar:xz
-
 .if !defined(REFERENCE_PORT)
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomehier glib20 ltverhack referencehack introspection:build
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
