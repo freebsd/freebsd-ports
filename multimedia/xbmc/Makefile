@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xbmc
-DISTVERSION=	13.0.rc1
+DISTVERSION=	13.1.rc1
 CATEGORIES=	multimedia
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		unzip:${PORTSDIR}/archivers/unzip \
 		nasm:${PORTSDIR}/devel/nasm \
 		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20 \
+		libtool:${PORTSDIR}/devel/libtool \
 		swig2.0:${PORTSDIR}/devel/swig20
 LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
@@ -52,11 +53,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
-GH_COMMIT=	2372235
-GH_TAGNAME=	Gotham_rc1
+GH_COMMIT=	6ac3af1
+GH_TAGNAME=	13.1rc1-Gotham
 
-USES=		gmake iconv:wchar_t pkgconfig
-USE_AUTOTOOLS=	autoconf libtool automake libltdl
+USES=		gmake iconv:wchar_t libtool pkgconfig
+USE_AUTOTOOLS=	autoconf automake libltdl
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xtst
 USE_GL=		glu
