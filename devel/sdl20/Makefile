@@ -2,6 +2,7 @@
 
 PORTNAME=	sdl2
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -11,10 +12,8 @@ COMMENT=	Cross-platform multimedia development API
 
 LICENSE=	ZLIB
 
-USES=		gmake iconv pathfix pkgconfig
-USE_GNOME=	ltverhack
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
+USES=		gmake iconv libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--disable-video-opengles \
