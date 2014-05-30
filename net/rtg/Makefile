@@ -3,25 +3,28 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	A flexible, high-performance SNMP statistics monitoring system
 
-LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LICENSE=	GPLv2
 
-MAN1=	rtgplot.1 rtgpoll.1
+LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_RC_SUBR=	rtgpoll
 USE_MYSQL=	yes
+WANT_PERL=	yes
+USES=		shebangfix
+SHEBANG_FILES=	etc/95.pl etc/report.pl
+SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 			--with-mysql=${LOCALBASE} \
 			--with-snmp=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ( ${OSVERSION} >= 800040 )
@@ -35,8 +38,5 @@ pre-configure:
 post-patch:
 	@${MV} ${WRKSRC}/etc/rtg.conf ${WRKSRC}/etc/rtg.conf.sample
 	@${MV} ${WRKSRC}/etc/routers ${WRKSRC}/etc/routers.sample
-
-post-install:
-	@${ECHO} "To enable the web interface, copy ${PREFIX}/bin/rtgplot to your site cgi-bin as rtgplot.cgi"
 
 .include <bsd.port.post.mk>
