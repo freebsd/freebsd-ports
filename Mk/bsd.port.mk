@@ -3325,6 +3325,8 @@ check-vulnerable:
 			${ECHO_MSG} "===>  ${PKGNAME} has known vulnerabilities:"; \
 			${ECHO_MSG} "$$vlist"; \
 			${ECHO_MSG} "=> Please update your ports tree and try again."; \
+			${ECHO_MSG} "=> Ports are marked vulnerable regardless of their being an update available."; \
+			${ECHO_MSG} "=> If you wish to ignore this vulnerability rebuild with 'make DISABLE_VULNERABILITIES=yes'"; \
 			exit 1; \
 		fi; \
 	fi
