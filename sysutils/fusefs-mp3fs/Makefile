@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	mp3fs
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.9
+PORTEPOCH=	1
 CATEGORIES=	sysutils audio
-MASTER_SITES=	https://github.com/downloads/khenriks/${PORTNAME}/
+MASTER_SITES=	https://github.com/khenriks/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	sterum@overrider.at
 COMMENT=	FUSE-based filesystem for transcoding flac to mp3 on the fly
 
-LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
-		FLAC:${PORTSDIR}/audio/flac \
-		id3tag:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
+		libFLAC.so:${PORTSDIR}/audio/flac \
+		libid3tag.so:${PORTSDIR}/audio/libid3tag
 
 FETCH_CMD=	fetch -Fpr
 
