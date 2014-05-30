@@ -7,7 +7,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/getmail/old-versions/ \
 		http://mirrors.closedsrc.org/getmail/
 
-MAINTAINER=	question+fbsdports@closedsrc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3/IMAP4 mail retriever with Maildir and command delivery
 
 LICENSE=	GPLv2
