@@ -61,6 +61,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.9.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.3.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_icinga_objects_oracle.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_oracle_sys.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/icinga_defines.sql
@@ -68,6 +69,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle-drop.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle-truncate.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/oracle.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.3.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.0.1.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.0.2-fix-object-relations.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.0.3.sql
@@ -89,6 +91,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.0.3.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.10.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.3.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.3.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.4.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.5.0.sql
@@ -2340,6 +2343,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/js/jquery-1.8.0.js
 %%ICINGAWWWDIR%%/js/jquery-1.8.0.min.js
 %%ICINGAWWWDIR%%/js/jquery.dd.js
+%%ICINGAWWWDIR%%/js/jquery.dd.min.js
 %%ICINGAWWWDIR%%/js/menu.js
 %%ICINGAWWWDIR%%/js/page_refresh.js
 %%ICINGAWWWDIR%%/js/skinnytip.js
