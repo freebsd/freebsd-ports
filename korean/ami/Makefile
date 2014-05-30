@@ -18,28 +18,17 @@ LICENSE=	GPLv2
 
 USES=		iconv gmake
 USE_GNOME=	gtk12 gdkpixbuf
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README README.en
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+NLS_LDFLAGS=	-L${LOCALBASE}/lib
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
 
 post-build:
 	( cd ${WRKSRC}/hanjadic && ${SETENV} ${MAKE_ENV} ${MAKE} )
@@ -47,10 +36,8 @@ post-build:
 	${CAT} ${DISTDIR}/ami.dic >> ${WRKDIR}/hanja.dic
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/ami
-	( cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR} )
-.endif
-	${INSTALL_DATA} ${WRKDIR}/hanja.dic ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	( cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR} )
+	${INSTALL_DATA} ${WRKDIR}/hanja.dic ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
