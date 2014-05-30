@@ -15,25 +15,16 @@ PATCHFILES=	ftp.pl_wupatch
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Mirror packages on remote sites
 
-PLIST_FILES=	bin/mirror \
-		bin/do_unlinks \
-		bin/pkgs_to_mmin \
-		bin/mirror-master \
-		lib/mirror/lchat.pl \
-		lib/mirror/dateconv.pl \
-		lib/mirror/ftp.pl \
-		lib/mirror/lsparse.pl \
-		lib/mirror/mirror.defaults.sample
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
-PLIST_DIRS=	lib/mirror
+USES=		perl5 shebangfix
+SHEBANG_FILES=	dateconv.pl ftp.pl  lchat.pl mirror.pl pkgs_to_mmin.pl \
+		do_unlinks.pl install.pl lsparse.pl mm.pl  prune_logs.pl
 
-USES=		perl5
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
-MAN1=		mirror.1 mirror-master.1
 
-NO_STAGE=	yes
 pre-install:
-	@${MKDIR} ${PREFIX}/lib/mirror
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mirror
 
 .include <bsd.port.mk>
