@@ -1,5 +1,3 @@
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libcleanice.a
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libcleanice.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libcleanice.so
 share/themes/CleanIce/index.theme
 share/themes/CleanIce/gtk-2.0/gtkrc
