@@ -16,7 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	build
 NO_BUILD=	yes
 
-MAN1=		algotutor.1 gen_at_graph.1
+MANPAGES=	algotutor.1 gen_at_graph.1
 BINFILES=	algotutor gen_at_graph
 LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
 		Edge.pm Graph.pm Heap.pm Line.pm PQueue.pm RBTree.pm \
@@ -26,27 +26,26 @@ LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
 USES=		shebangfix perl5
 SHEBANG_FILES=	algotutor
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,!!SITE_PERL!!,${SITE_PERL},' \
 		-e 's|!!PREFIX!!|${PREFIX}|g' \
 			${WRKSRC}/algotutor
 
 do-install:
-	${MKDIR} ${SITE_PERL}/algotutor
-	${MKDIR} ${PREFIX}/share/algotutor
-	${CP} -R ${WRKSRC}/data ${PREFIX}/share/algotutor
-	${CP} -R ${WRKSRC}/cgeom ${SITE_PERL}/algotutor
-	${CP} -R ${WRKSRC}/dp ${SITE_PERL}/algotutor
-	${CP} -R ${WRKSRC}/graph ${SITE_PERL}/algotutor
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${SITE_PERL}/algotutor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/algotutor
+	${CP} -R ${WRKSRC}/data ${STAGEDIR}${PREFIX}/share/algotutor
+	${CP} -R ${WRKSRC}/cgeom ${STAGEDIR}${SITE_PERL}/algotutor
+	${CP} -R ${WRKSRC}/dp ${STAGEDIR}${SITE_PERL}/algotutor
+	${CP} -R ${WRKSRC}/graph ${STAGEDIR}${SITE_PERL}/algotutor
+.for file in ${MANPAGES}
+	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 .for file in ${BINFILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file in ${LIBFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${SITE_PERL}/algotutor
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${SITE_PERL}/algotutor
 .endfor
 
 .include <bsd.port.mk>
