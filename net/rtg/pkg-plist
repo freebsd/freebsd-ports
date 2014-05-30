@@ -4,22 +4,24 @@ bin/rtgplot
 bin/rtgpoll
 contrib/README
 contrib/rtgtargmkr-with-modules-0.2.tar.gz
-etc/rtg/rtg.conf.sample
-etc/rtg/rtgtargmkr.pl
-etc/rtg/routers.sample
-etc/rtg/createdb
-etc/rtg/BER.pm
-etc/rtg/SNMP_Session.pm
-etc/rtg/SNMP_util.pm
+%%ETCDIR%%/rtg.conf.sample
+%%ETCDIR%%/rtgtargmkr.pl
+%%ETCDIR%%/routers.sample
+%%ETCDIR%%/createdb
+%%ETCDIR%%/BER.pm
+%%ETCDIR%%/SNMP_Session.pm
+%%ETCDIR%%/SNMP_util.pm
 include/common.h
 include/rtg.h
 include/rtgplot.h
+man/man1/rtgplot.1.gz
+man/man1/rtgpoll.1.gz
 www/data/95.php
 www/data/common.php
 www/data/rtg.php
 www/data/rtg.png
 www/data/rtgback.png
 www/data/view.php
-@dirrm contrib
-@dirrm etc/rtg
+@dirrmtry contrib
+@dirrmtry %%ETCDIR%%
 @dirrmtry www/data
