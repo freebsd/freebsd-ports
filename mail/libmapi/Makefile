@@ -3,6 +3,7 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://tracker.openchange.org/attachments/download/${DOWNLOADCODE}/
 DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
@@ -10,13 +11,13 @@ DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Open Source implementation of Microsoft Exchange protocols
 
-BUILD_DEPENDS=	samba4>=4.0.1:${PORTSDIR}/net/samba4 \
+BUILD_DEPENDS=	${SAMBA_DEP} \
 		p5-Parse-Pidl>=4.0.1:${PORTSDIR}/devel/p5-Parse-Pidl
 LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
 		libtdb.so:${PORTSDIR}/databases/tdb \
 		libtevent.so:${PORTSDIR}/devel/tevent \
 		libtalloc.so:${PORTSDIR}/devel/talloc
-RUN_DEPENDS=	samba4>=4.0.1:${PORTSDIR}/net/samba4
+RUN_DEPENDS=	${SAMBA_DEP}
 
 CODENAME=	QUADRANT
 DOWNLOADCODE=	244
@@ -37,13 +38,24 @@ SHEBANG_FILES=	libmapi/conf/mparse.pl \
 		setup/openchange_provision
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BOOST DOXYGEN
+OPTIONS_DEFINE=	BOOST DOXYGEN SAMBA40
 OPTIONS_DEFAULT=BOOST
 BOOST_LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 BOOST_CONFIGURE_ENV_OFF=	ov_cv_boost_thread=no
 BOOST_DESC=	libmapi C++ library (needs boost)
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_path_DOXYGEN=""
+SAMBA40_DESC=	Build agains samba 4.0 instead of 4.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSAMBA40}
+SAMBA_DEP=	samba4>=4.0.1:${PORTSDIR}/net/samba4
+PLIST_SUB+=	SAMBA=samba4
+.else
+SAMBA_DEP=	samba41>=4.1.0:${PORTSDIR}/net/samba41
+PLIST_SUB+=	SAMBA=samba41
+.endif
 
 CONFIGURE_ARGS+=	--disable-pymapi
 #  --enable-openchange-qt4 Compile OpenChange Qt4 wrapper.
