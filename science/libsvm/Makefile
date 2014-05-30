@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsvm
-PORTVERSION=	3.10
-PORTEPOCH=	1
+PORTVERSION=	3.18
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/
@@ -44,7 +43,6 @@ SUB_LIST=	DATADIR=${DATADIR}
 
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -70,15 +68,15 @@ do-install:
 .else
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/svm.h ${PREFIX}/include/
-	${INSTALL_LIB} ${WRKSRC}/libsvm.so.2 ${PREFIX}/lib/
-	${LN} -sf libsvm.so.2 ${PREFIX}/lib/libsvm.so
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/svm.h ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_LIB} ${WRKSRC}/libsvm.so.2 ${STAGEDIR}${PREFIX}/lib/
+	${LN} -sf libsvm.so.2 ${STAGEDIR}${PREFIX}/lib/libsvm.so
 	${MKDIR} ${DATADIR}
 	for f in ${TOOLS}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DATADIR}; \
+	  ${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DATADIR}; \
 	done
 
 .endif
@@ -87,7 +85,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	  ${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}; \
 	done
 .endif
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} != "-python"

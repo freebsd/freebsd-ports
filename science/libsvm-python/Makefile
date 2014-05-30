@@ -9,5 +9,4 @@ MASTERDIR=	${.CURDIR}/../../science/libsvm
 
 PLIST=		${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
