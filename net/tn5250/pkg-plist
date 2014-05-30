@@ -27,9 +27,9 @@ include/tn5250/window.h
 include/tn5250/wtd.h
 include/tn5250.h
 lib/lib5250.a
-lib/lib5250.la
 lib/lib5250.so
 lib/lib5250.so.0
+lib/lib5250.so.0.0.0
 %%DATADIR%%/README
 %%DATADIR%%/XTerm
 %%DATADIR%%/sample.termcap
