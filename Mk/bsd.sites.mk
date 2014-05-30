@@ -27,14 +27,9 @@
 .if !defined(IGNORE_MASTER_SITE_LOCAL)
 MASTER_SITE_LOCAL+= \
 	http://distcache.FreeBSD.org/local-distfiles/%SUBDIR%/ \
-	http://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.tw.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.cn.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+	http://distcache.us-east.FreeBSD.org/local-distfiles/%SUBDIR%/ \
+	http://distcache.eu.FreeBSD.org/local-distfiles/%SUBDIR%/ \
+	http://distcache.us-west.FreeBSD.org/local-distfiles/%SUBDIR%/
 
 MASTER_SITE_PORTS_JP+= \
 	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
