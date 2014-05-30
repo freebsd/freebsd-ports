@@ -33,7 +33,6 @@ SCRIPTS_ENV+=	USE_NMH=YES
 # full mime support needs mmencode/mmdecode from metamail
 RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 
-NO_STAGE=	yes
 # Additionally, exmh will use the following ports if present:
 # lang/expect
 # textproc/glimpse
@@ -44,8 +43,6 @@ NO_STAGE=	yes
 # audio/rplay
 
 PLIST_SUB=	EXMH_VERSION=${PORTVERSION}
-
-MAN1=		exmh.1
 
 .if defined(JAPANESE_EXMH)
 do-build:
@@ -60,7 +57,7 @@ do-build:
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} \
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${STAGEDIR}${PREFIX} \
 		WRKSRC=${WRKSRC} ${SH} ${SCRIPTDIR}/install
 
 

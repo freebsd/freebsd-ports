@@ -11,26 +11,23 @@ DISTNAME=	gDesklets-${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A framework for Gnome 2.x for desktop applets
 
-USE_BZIP2=	yes
-
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 
 OPTIONS_DEFINE=	GDBM
 
 WRKSRC=		${WRKDIR}/gDesklets-${PORTVERSION}
 
-USE_GNOME=	gnomehack gnomeprefix intlhack librsvg2 pygnomeextras
+USE_GNOME=	gnomeprefix intlhack librsvg2 pygnomeextras
 USE_PYTHON=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2 pathfix \
+		desktop-file-utils shared-mime-info libtool
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-
-MAN1=		${PORTNAME}.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
@@ -44,11 +41,11 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	@${MKDIR} ${DATADIR}/Displays
-	@${TOUCH} ${DATADIR}/Displays/.keep_me
-	@${MKDIR} ${DATADIR}/Sensors
-	@${TOUCH} ${DATADIR}/Sensors/.keep_me
-	@-update-mime-database ${PREFIX}/share/mime
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Displays
+	@${TOUCH} ${STAGEDIR}${DATADIR}/Displays/.keep_me
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Sensors
+	@${TOUCH} ${STAGEDIR}${DATADIR}/Sensors/.keep_me
+	@-update-mime-database ${STAGEDIR}${PREFIX}/share/mime
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

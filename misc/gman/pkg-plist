@@ -1,4 +1,5 @@
 bin/gman
 bin/gman.cgi
+man/man1/gman.1x.gz
 www/cgi-bin/gman.pl
 @dirrmtry www/cgi-bin

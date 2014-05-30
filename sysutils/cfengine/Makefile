@@ -5,5 +5,4 @@ CFENGINE_VERSION?=	35
 
 MASTERDIR=		${.CURDIR}/../cfengine${CFENGINE_VERSION}
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
