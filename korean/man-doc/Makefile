@@ -16,7 +16,6 @@ COMMENT=	Korean online manual pages
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
 
-NO_STAGE=	yes
 post-patch:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		-e 's,gnroff,groff,g' ${WRKSRC}/scripts/kman.in > ${WRKDIR}/kman
@@ -26,9 +25,9 @@ do-build:
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${GZIP_CMD}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/kman ${PREFIX}/bin
-	-${MKDIR} ${PREFIX}/share/man/ko_KR.eucKR
-	${TAR} -C ${WRKSRC} -cf - . | \
-		${TAR} -C ${PREFIX}/share/man/ko_KR.eucKR -xf -
+	${INSTALL_SCRIPT} ${WRKDIR}/kman ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ko_KR.eucKR
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/share/man/ko_KR.eucKR)
 
 .include <bsd.port.mk>
