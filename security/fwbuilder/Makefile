@@ -27,8 +27,8 @@ CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-[234].* \
 CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-* \
 		libfwbuilder-[234].* libfwbuilder-devel-*
 .endif
-LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
-		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt \
+		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
 PLIST_SUB=	BUILD_VERSION=${DISTVERSION}.${BUILD}
 USE_QT4=	corelib \
@@ -46,33 +46,26 @@ USE_QT4=	corelib \
 QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
-USES=		gmake
-USE_AUTOTOOLS=	autoconf aclocal libtool
+USES=		gmake libtool
+USE_AUTOTOOLS=	autoconf aclocal
 CONFIGURE_SCRIPT=	autogen.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
+		INSTALL_ROOT=${STAGEDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR}
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR} \
+		--prefix=${PREFIX}
 MAKE_ARGS+=	QTDIR="${QTDIR}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+MAKE_ENV=	INSTALL_ROOT=${STAGEDIR}
 USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
-
-MAN1=		fwbuilder.1 \
-		fwbedit.1 \
-		fwb_iosacl.1 \
-		fwb_ipt.1 \
-		fwb_ipf.1 \
-		fwb_ipfw.1 \
-		fwb_pix.1 \
-		fwb_pf.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800107
@@ -85,7 +78,7 @@ RUN_DEPENDS=	rcs:${PORTSDIR}/devel/rcs57
 .endif
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/fwbuilder
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fwbuilder
 	@${ECHO} If you are upgrading from a previous version of fwbuilder,
 	@${ECHO} please make sure to backup your fwbuilder database files
 	@${ECHO} prior to invoking fwbuilder for the first time.
