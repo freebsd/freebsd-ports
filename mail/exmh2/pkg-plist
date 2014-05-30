@@ -1,9 +1,15 @@
+@mode 555
+@owner bin
+@group bin
 bin/exmh
 bin/exmh-async
 bin/exmh-bg
 bin/exmh-strip
 bin/ftp.expect
 bin/inc.expect
+@mode 444
+@owner bin
+@group bin
 lib/exmh-%%EXMH_VERSION%%/PgpDecryptExpect
 lib/exmh-%%EXMH_VERSION%%/addr.tcl
 lib/exmh-%%EXMH_VERSION%%/aliases.tcl
@@ -219,6 +225,7 @@ lib/exmh-%%EXMH_VERSION%%/widgetText.tcl
 lib/exmh-%%EXMH_VERSION%%/widgets.tcl
 lib/exmh-%%EXMH_VERSION%%/xns.tcl
 lib/exmh-%%EXMH_VERSION%%/xnsgetmail.exp
+man/man1/exmh.1.gz
 @dirrm lib/exmh-%%EXMH_VERSION%%/bitmaps
 @dirrm lib/exmh-%%EXMH_VERSION%%/html
 @dirrm lib/exmh-%%EXMH_VERSION%%

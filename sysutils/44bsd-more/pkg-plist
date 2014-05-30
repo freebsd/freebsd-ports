@@ -1,4 +1,5 @@
 bin/44bsd-more
+man/man1/44bsd-more.1.gz
 share/misc/44bsd-more.help
 share/examples/44bsd-more/default.morerc
 share/examples/44bsd-more/less.morerc

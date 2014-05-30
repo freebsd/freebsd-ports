@@ -10,15 +10,13 @@ MASTER_SITE_SUBDIR=	cy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The pager installed with FreeBSD before less(1) was imported
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 
-MAN1=		44bsd-more.1
 CFLAGS=		-Wno-return-type
 
 RELDATE=	20000521
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -33,13 +31,13 @@ post-patch:
 	    ${WRKSRC}/ncommand.c
 
 do-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/more.1 ${PREFIX}/man/man1/44bsd-more.1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/more.1 ${STAGEDIR}${PREFIX}/man/man1/44bsd-more.1
 .for f in default.morerc less.morerc most.morerc
-	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/more.help ${PREFIX}/share/misc/44bsd-more.help
-	${INSTALL_PROGRAM} ${WRKSRC}/more ${PREFIX}/bin/44bsd-more
+	${INSTALL_DATA} ${WRKSRC}/more.help ${STAGEDIR}${PREFIX}/share/misc/44bsd-more.help
+	${INSTALL_PROGRAM} ${WRKSRC}/more ${STAGEDIR}${PREFIX}/bin/44bsd-more
 
 tarup:
 	cd ${WRKSRC} && tar cyf /tmp/${DISTFILES} RCS
