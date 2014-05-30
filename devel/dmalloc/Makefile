@@ -3,12 +3,13 @@
 
 PORTNAME=	dmalloc
 PORTVERSION=	5.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 # Version 5.5.2 is only available at this URL
 MASTER_SITES=	http://dmalloc.com/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Portable debug memory allocation library
 
 HAS_CONFIGURE=	yes
@@ -29,17 +30,20 @@ OPTIONS_DEFINE=	DOCS
 INSTALL_TARGET+=installdocs
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|\.@shlibext@|\.@shlibext@.1|' ${WRKSRC}/Makefile.in
-
 post-install:
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/dmalloc
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dmalloc
 	@(cd ${STAGEDIR}${PREFIX}/lib; \
+		${CHMOD} 644 libdmalloc.so.1; \
 		${STRIP_CMD} libdmalloc.so.1; \
 		${LN} -sf libdmalloc.so.1 libdmalloc.so; \
+		${CHMOD} 644 libdmallocxx.so.1; \
 		${STRIP_CMD} libdmallocxx.so.1; \
 		${LN} -sf libdmallocxx.so.1 libdmallocxx.so; \
+		${CHMOD} 644 libdmallocth.so.1; \
 		${STRIP_CMD} libdmallocth.so.1; \
 		${LN} -sf libdmallocth.so.1 libdmallocth.so; \
+		${CHMOD} 644 libdmallocthcxx.so.1; \
 		${STRIP_CMD} libdmallocthcxx.so.1; \
 		${LN} -sf libdmallocthcxx.so.1 libdmallocthcxx.so)
 
