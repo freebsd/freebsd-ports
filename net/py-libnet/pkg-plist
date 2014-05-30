@@ -1,8 +1,9 @@
-%%PYTHON_SITELIBDIR%%/_libnet.so
-%%PYTHON_SITELIBDIR%%/libnet.py
-%%PYTHON_SITELIBDIR%%/libnet.pyc
-%%PYTHON_SITELIBDIR%%/libnet.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-libnet-arp-req.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-libnet-icmp-echo-req.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-libnet-tcp-syn.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PYTHON_SITELIBDIR%%/libnet.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsv4.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icmp4echo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lnsh/dnsv4.libnet
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lnsh/tcpsyn.libnet
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lnsh/tcpxmas.libnet
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/lnsh
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
