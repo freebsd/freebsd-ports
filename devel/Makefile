@@ -1148,6 +1148,7 @@
     SUBDIR += libvirt
     SUBDIR += libvirt-glib
     SUBDIR += libvirt-java
+    SUBDIR += libvmdk
     SUBDIR += libvolume_id
     SUBDIR += libvshadow
     SUBDIR += libwfut
