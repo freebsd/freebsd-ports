@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct  8 15:38:51 2000
-+++ Makefile	Sat Mar 13 18:23:29 2004
+--- Makefile.orig	2000-10-09 00:38:51.000000000 +0200
++++ Makefile	2014-05-30 15:04:05.812325981 +0200
 @@ -1,8 +1,9 @@
 -CC = gcc
 +#CC = gcc
@@ -13,7 +13,7 @@
  
  SRCS = ksc5601_utf16.c \
  	ksc5601_utf16_table.c \
-@@ -12,27 +13,27 @@
+@@ -12,27 +13,24 @@
  OBJS = $(SRCS:.c=.o) 
  
  .c.o:
@@ -33,15 +33,17 @@
 +	rm -f $(OBJS) uniksc libuniksc.so.0 *~
  
  install:
- 	if ( test ! -d $(PREFIX)/bin ) ; then mkdir $(PREFIX)/bin ; fi
- 	if ( test ! -d $(PREFIX)/lib ) ; then mkdir $(PREFIX)/lib ; fi
- 	if ( test ! -d $(PREFIX)/include ) ; then mkdir $(PREFIX)/include ; fi
- 	cp -f uniksc $(PREFIX)/bin/uniksc
+-	if ( test ! -d $(PREFIX)/bin ) ; then mkdir $(PREFIX)/bin ; fi
+-	if ( test ! -d $(PREFIX)/lib ) ; then mkdir $(PREFIX)/lib ; fi
+-	if ( test ! -d $(PREFIX)/include ) ; then mkdir $(PREFIX)/include ; fi
+-	cp -f uniksc $(PREFIX)/bin/uniksc
 -	cp -f libuniksc.so.0.9 $(PREFIX)/lib/libuniksc.so.0.9
 -	ln -sf libuniksc.so.0.9 $(PREFIX)/lib/libuniksc.so.0
-+	cp -f libuniksc.so.0 $(PREFIX)/lib/libuniksc.so.0
+-	cp -f uniksc.h $(PREFIX)/include/uniksc.h
++	$(BSD_INSTALL_PROGRAM) uniksc $(DESTDIR)$(PREFIX)/bin/uniksc
++	$(BSD_INSTALL_LIB) libuniksc.so.0 $(DESTDIR)$(PREFIX)/lib/libuniksc.so.0
 +	#ln -sf libuniksc.so.0.9 $(PREFIX)/lib/libuniksc.so.0
- 	cp -f uniksc.h $(PREFIX)/include/uniksc.h
++	$(BSD_INSTALL_DATA) uniksc.h $(DESTDIR)$(PREFIX)/include/uniksc.h
  
  uninstall:
  	rm -f $(PREFIX)/bin/uniksc
