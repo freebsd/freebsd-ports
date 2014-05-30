@@ -2,7 +2,7 @@ include/libshbuf/shbuf.h
 include/libshbuf/shbuferr.h
 libdata/pkgconfig/shbuf.pc
 lib/libshbuf.a
-lib/libshbuf.la
 lib/libshbuf.so
-lib/libshbuf.so.1
+lib/libshbuf.so.0
+lib/libshbuf.so.0.1.0
 @dirrm include/libshbuf
