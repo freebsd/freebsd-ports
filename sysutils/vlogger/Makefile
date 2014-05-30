@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	http://n0rp.chemlab.org/${PORTNAME}/
 
-MAINTAINER=	question+fbsdports@closedsrc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logging utility for Apache servers with many virtual hosts
 
 LICENSE=	GPLv2
@@ -19,6 +19,11 @@ NO_BUILD=	yes
 SHEBANG_FILES=	vlogger
 
 OPTIONS_DEFINE=	EXAMPLES
+
+PLIST_FILES=	bin/vlogger \
+		man/man1/vlogger.1.gz
+PORTDATA=	mysql_create.sql
+PORTEXAMPLES=	vlogger-dbi.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
