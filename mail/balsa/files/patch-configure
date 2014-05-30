@@ -1,227 +1,47 @@
---- configure.orig	2010-02-14 15:51:21.000000000 -0500
-+++ configure	2010-02-14 15:51:21.000000000 -0500
-@@ -8884,7 +8884,7 @@ if test "${ac_cv_lib_ldap_ldap_search+se
+--- configure.orig	2014-04-30 13:56:20.982115758 +0000
++++ configure	2014-04-30 13:56:44.128114528 +0000
+@@ -15038,7 +15038,7 @@
+     conftest$ac_exeext conftest.$ac_ext
+ if test $have_res_init = no ; then
+     save_LIBS=$LIBS
+-    LIBS="$LIBS -lresolv"
++    LIBS="$LIBS"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <resolv.h>
+@@ -16088,7 +16088,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lldap -llber -lresolv $LIBS"
 +LIBS="-lldap -llber $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -8949,7 +8949,7 @@ cat >>confdefs.h <<\_ACEOF
- #define ENABLE_LDAP 1
- _ACEOF
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16122,7 +16122,7 @@
+ 
+ $as_echo "#define ENABLE_LDAP 1" >>confdefs.h
  
 -              LIBS="-lldap -llber -lresolv $LIBS"
 +              LIBS="-lldap -llber $LIBS"
  else
-   { { $as_echo "$as_me:$LINENO: error: *** You enabled LDAP but ldap library is not found." >&5
- $as_echo "$as_me: error: *** You enabled LDAP but ldap library is not found." >&2;}
-@@ -11365,13 +11365,13 @@ _ACEOF
- else
+   as_fn_error $? "*** You enabled LDAP but ldap library is not found." "$LINENO" 5
+ fi
+@@ -18071,8 +18071,6 @@
  
  
--{ $as_echo "$as_me:$LINENO: checking for new_pspell_manager in -lpspell" >&5
--$as_echo_n "checking for new_pspell_manager in -lpspell... " >&6; }
--if test "${ac_cv_lib_pspell_new_pspell_manager+set}" = set; then
-+{ $as_echo "$as_me:$LINENO: checking for new_aspell_manager in -laspell" >&5
-+$as_echo_n "checking for new_aspell_manager in -laspell... " >&6; }
-+if test "${ac_cv_lib_aspell_new_aspell_manager+set}" = set; then
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpspell -lstdc++ -lpspell-modules $LIBS"
-+LIBS="-laspell -lstdc++ -laspell-modules $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -11385,11 +11385,11 @@ cat >>conftest.$ac_ext <<_ACEOF
- #ifdef __cplusplus
- extern "C"
- #endif
--char new_pspell_manager ();
-+char new_aspell_manager ();
- int
- main ()
- {
--return new_pspell_manager ();
-+return new_aspell_manager ();
-   ;
-   return 0;
- }
-@@ -11415,12 +11415,12 @@ $as_echo "$ac_try_echo") >&5
- 	 test "$cross_compiling" = yes ||
- 	 $as_test_x conftest$ac_exeext
-        }; then
--  ac_cv_lib_pspell_new_pspell_manager=yes
-+  ac_cv_lib_aspell_new_aspell_manager=yes
- else
-   $as_echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
  
--	ac_cv_lib_pspell_new_pspell_manager=no
-+	ac_cv_lib_aspell_new_aspell_manager=no
+-$as_echo "#define _XOPEN_SOURCE 500" >>confdefs.h
+-
+ ac_fn_c_check_decl "$LINENO" "localtime_r" "ac_cv_have_decl_localtime_r" "#include <time.h>
+ "
+ if test "x$ac_cv_have_decl_localtime_r" = xyes; then :
+@@ -18339,7 +18337,7 @@
+   INSTALL_MIME_ICONS_FALSE=
  fi
  
- rm -rf conftest.dSYM
-@@ -11428,19 +11428,19 @@ rm -f core conftest.err conftest.$ac_obj
-       conftest$ac_exeext conftest.$ac_ext
- LIBS=$ac_check_lib_save_LIBS
- fi
--{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_pspell_new_pspell_manager" >&5
--$as_echo "$ac_cv_lib_pspell_new_pspell_manager" >&6; }
--if test "x$ac_cv_lib_pspell_new_pspell_manager" = x""yes; then
-+{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_aspell_new_aspell_manager" >&5
-+$as_echo "$ac_cv_lib_aspell_new_aspell_manager" >&6; }
-+if test "x$ac_cv_lib_aspell_new_aspell_manager" = x""yes; then
-   cat >>confdefs.h <<_ACEOF
- #define HAVE_LIBPSPELL 1
- _ACEOF
- 
--  LIBS="-lpspell $LIBS"
-+  LIBS="-laspell $LIBS"
- 
- else
- 
--            { { $as_echo "$as_me:$LINENO: error: *** Neither aspell >=0.50 (recommended) nor pspell (deprecated) library was found. Please check http://balsa.gnome.org for information on the required files. Alternatively, check config.log for clues." >&5
--$as_echo "$as_me: error: *** Neither aspell >=0.50 (recommended) nor pspell (deprecated) library was found. Please check http://balsa.gnome.org for information on the required files. Alternatively, check config.log for clues." >&2;}
-+            { { $as_echo "$as_me:$LINENO: error: *** Neither aspell >=0.50 (recommended) nor aspell (deprecated) library was found. Please check http://balsa.gnome.org for information on the required files. Alternatively, check config.log for clues." >&5
-+$as_echo "$as_me: error: *** Neither aspell >=0.50 (recommended) nor aspell (deprecated) library was found. Please check http://balsa.gnome.org for information on the required files. Alternatively, check config.log for clues." >&2;}
-    { (exit 1); exit 1; }; }
- 
- fi
-@@ -11448,18 +11448,18 @@ fi
- 
- fi
- 
--    if test "${ac_cv_header_pspell_pspell_h+set}" = set; then
--  { $as_echo "$as_me:$LINENO: checking for pspell/pspell.h" >&5
--$as_echo_n "checking for pspell/pspell.h... " >&6; }
--if test "${ac_cv_header_pspell_pspell_h+set}" = set; then
-+    if test "${ac_cv_header_aspell_aspell_h+set}" = set; then
-+  { $as_echo "$as_me:$LINENO: checking for aspell/aspell.h" >&5
-+$as_echo_n "checking for aspell/aspell.h... " >&6; }
-+if test "${ac_cv_header_aspell_aspell_h+set}" = set; then
-   $as_echo_n "(cached) " >&6
- fi
--{ $as_echo "$as_me:$LINENO: result: $ac_cv_header_pspell_pspell_h" >&5
--$as_echo "$ac_cv_header_pspell_pspell_h" >&6; }
-+{ $as_echo "$as_me:$LINENO: result: $ac_cv_header_aspell_aspell_h" >&5
-+$as_echo "$ac_cv_header_aspell_aspell_h" >&6; }
- else
-   # Is the header compilable?
--{ $as_echo "$as_me:$LINENO: checking pspell/pspell.h usability" >&5
--$as_echo_n "checking pspell/pspell.h usability... " >&6; }
-+{ $as_echo "$as_me:$LINENO: checking aspell/aspell.h usability" >&5
-+$as_echo_n "checking aspell/aspell.h usability... " >&6; }
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -11467,7 +11467,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
--#include <pspell/pspell.h>
-+#include <aspell/aspell.h>
- _ACEOF
- rm -f conftest.$ac_objext
- if { (ac_try="$ac_compile"
-@@ -11500,15 +11500,15 @@ rm -f core conftest.err conftest.$ac_obj
- $as_echo "$ac_header_compiler" >&6; }
- 
- # Is the header present?
--{ $as_echo "$as_me:$LINENO: checking pspell/pspell.h presence" >&5
--$as_echo_n "checking pspell/pspell.h presence... " >&6; }
-+{ $as_echo "$as_me:$LINENO: checking aspell/aspell.h presence" >&5
-+$as_echo_n "checking aspell/aspell.h presence... " >&6; }
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--#include <pspell/pspell.h>
-+#include <aspell/aspell.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
- case "(($ac_try" in
-@@ -11542,44 +11542,44 @@ $as_echo "$ac_header_preproc" >&6; }
- # So?  What about this header?
- case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
-   yes:no: )
--    { $as_echo "$as_me:$LINENO: WARNING: pspell/pspell.h: accepted by the compiler, rejected by the preprocessor!" >&5
--$as_echo "$as_me: WARNING: pspell/pspell.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
--    { $as_echo "$as_me:$LINENO: WARNING: pspell/pspell.h: proceeding with the compiler's result" >&5
--$as_echo "$as_me: WARNING: pspell/pspell.h: proceeding with the compiler's result" >&2;}
-+    { $as_echo "$as_me:$LINENO: WARNING: aspell/aspell.h: accepted by the compiler, rejected by the preprocessor!" >&5
-+$as_echo "$as_me: WARNING: aspell/aspell.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
-+    { $as_echo "$as_me:$LINENO: WARNING: aspell/aspell.h: proceeding with the compiler's result" >&5
-+$as_echo "$as_me: WARNING: aspell/aspell.h: proceeding with the compiler's result" >&2;}
-     ac_header_preproc=yes
-     ;;
-   no:yes:* )
--    { $as_echo "$as_me:$LINENO: WARNING: pspell/pspell.h: present but cannot be compiled" >&5
--$as_echo "$as_me: WARNING: pspell/pspell.h: present but cannot be compiled" >&2;}
--    { $as_echo "$as_me:$LINENO: WARNING: pspell/pspell.h:     check for missing prerequisite headers?" >&5
--$as_echo "$as_me: WARNING: pspell/pspell.h:     check for missing prerequisite headers?" >&2;}
--    { $as_echo "$as_me:$LINENO: WARNING: pspell/pspell.h: see the Autoconf documentation" >&5
--$as_echo "$as_me: WARNING: pspell/pspell.h: see the Autoconf documentation" >&2;}
--    { $as_echo "$as_me:$LINENO: WARNING: pspell/pspell.h:     section \"Present But Cannot Be Compiled\"" >&5
--$as_echo "$as_me: WARNING: pspell/pspell.h:     section \"Present But Cannot Be Compiled\"" >&2;}
--    { $as_echo "$as_me:$LINENO: WARNING: pspell/pspell.h: proceeding with the preprocessor's result" >&5
--$as_echo "$as_me: WARNING: pspell/pspell.h: proceeding with the preprocessor's result" >&2;}
--    { $as_echo "$as_me:$LINENO: WARNING: pspell/pspell.h: in the future, the compiler will take precedence" >&5
--$as_echo "$as_me: WARNING: pspell/pspell.h: in the future, the compiler will take precedence" >&2;}
-+    { $as_echo "$as_me:$LINENO: WARNING: aspell/aspell.h: present but cannot be compiled" >&5
-+$as_echo "$as_me: WARNING: aspell/aspell.h: present but cannot be compiled" >&2;}
-+    { $as_echo "$as_me:$LINENO: WARNING: aspell/aspell.h:     check for missing prerequisite headers?" >&5
-+$as_echo "$as_me: WARNING: aspell/aspell.h:     check for missing prerequisite headers?" >&2;}
-+    { $as_echo "$as_me:$LINENO: WARNING: aspell/aspell.h: see the Autoconf documentation" >&5
-+$as_echo "$as_me: WARNING: aspell/aspell.h: see the Autoconf documentation" >&2;}
-+    { $as_echo "$as_me:$LINENO: WARNING: aspell/aspell.h:     section \"Present But Cannot Be Compiled\"" >&5
-+$as_echo "$as_me: WARNING: aspell/aspell.h:     section \"Present But Cannot Be Compiled\"" >&2;}
-+    { $as_echo "$as_me:$LINENO: WARNING: aspell/aspell.h: proceeding with the preprocessor's result" >&5
-+$as_echo "$as_me: WARNING: aspell/aspell.h: proceeding with the preprocessor's result" >&2;}
-+    { $as_echo "$as_me:$LINENO: WARNING: aspell/aspell.h: in the future, the compiler will take precedence" >&5
-+$as_echo "$as_me: WARNING: aspell/aspell.h: in the future, the compiler will take precedence" >&2;}
- 
-     ;;
- esac
--{ $as_echo "$as_me:$LINENO: checking for pspell/pspell.h" >&5
--$as_echo_n "checking for pspell/pspell.h... " >&6; }
--if test "${ac_cv_header_pspell_pspell_h+set}" = set; then
-+{ $as_echo "$as_me:$LINENO: checking for aspell/aspell.h" >&5
-+$as_echo_n "checking for aspell/aspell.h... " >&6; }
-+if test "${ac_cv_header_aspell_aspell_h+set}" = set; then
-   $as_echo_n "(cached) " >&6
- else
--  ac_cv_header_pspell_pspell_h=$ac_header_preproc
-+  ac_cv_header_aspell_aspell_h=$ac_header_preproc
- fi
--{ $as_echo "$as_me:$LINENO: result: $ac_cv_header_pspell_pspell_h" >&5
--$as_echo "$ac_cv_header_pspell_pspell_h" >&6; }
-+{ $as_echo "$as_me:$LINENO: result: $ac_cv_header_aspell_aspell_h" >&5
-+$as_echo "$ac_cv_header_aspell_aspell_h" >&6; }
- 
- fi
--if test "x$ac_cv_header_pspell_pspell_h" = x""yes; then
-+if test "x$ac_cv_header_aspell_aspell_h" = x""yes; then
-   :
- else
--  { { $as_echo "$as_me:$LINENO: error: ** aspell/pspell library found but not related header files. This probably means corresponding aspell-devel package is not installed " >&5
--$as_echo "$as_me: error: ** aspell/pspell library found but not related header files. This probably means corresponding aspell-devel package is not installed " >&2;}
-+  { { $as_echo "$as_me:$LINENO: error: ** aspell/aspell library found but not related header files. This probably means corresponding aspell-devel package is not installed " >&5
-+$as_echo "$as_me: error: ** aspell/aspell library found but not related header files. This probably means corresponding aspell-devel package is not installed " >&2;}
-    { (exit 1); exit 1; }; }
- fi
- 
-@@ -11882,7 +11882,7 @@ fi
+-HICOLOR_ICON_DIR=`$PKG_CONFIG --variable=prefix gtk+-3.0`/share/icons/hicolor
++HICOLOR_ICON_DIR=/usr/local/share/icons/hicolor
  
  
- cat >>confdefs.h <<\_ACEOF
--#define _XOPEN_SOURCE 500
-+/*#define _XOPEN_SOURCE 500*/
- _ACEOF
  
- { $as_echo "$as_me:$LINENO: checking whether localtime_r is declared" >&5

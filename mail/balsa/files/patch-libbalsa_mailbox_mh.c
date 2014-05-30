@@ -1,5 +1,5 @@
---- libbalsa/mailbox_mh.c.orig	Wed May 16 13:49:05 2007
-+++ libbalsa/mailbox_mh.c	Thu May 31 01:09:09 2007
+--- libbalsa/mailbox_mh.c.orig	2013-03-04 19:36:37.000000000 +0000
++++ libbalsa/mailbox_mh.c	2014-04-30 13:49:32.084143219 +0000
 @@ -27,6 +27,8 @@
  /* to compile this on BSD/Darwin */
  #undef _POSIX_SOURCE
@@ -18,7 +18,7 @@
  };
  
  #define REAL_FLAGS(flags) (flags & LIBBALSA_MESSAGE_FLAGS_REAL)
-@@ -260,7 +262,7 @@ libbalsa_mailbox_mh_load_config(LibBalsa
+@@ -261,7 +263,7 @@
  
  #define MH_BASENAME(msg_info) \
      g_strdup_printf((msg_info->orig_flags & LIBBALSA_MESSAGE_FLAG_DELETED) ? \
@@ -27,7 +27,7 @@
  
  static GMimeStream *
  libbalsa_mailbox_mh_get_message_stream(LibBalsaMailbox * mailbox,
-@@ -335,7 +337,7 @@ static gint
+@@ -336,7 +338,7 @@
  lbm_mh_compare_fileno(const struct message_info ** a,
  		      const struct message_info ** b)
  {
@@ -36,7 +36,7 @@
  }
  
  static void
-@@ -352,7 +354,7 @@ lbm_mh_parse_mailbox(LibBalsaMailboxMh *
+@@ -353,7 +355,7 @@
  
      while ((filename = g_dir_read_name(dir)) != NULL) {
  	LibBalsaMessageFlag delete_flag = 0;
@@ -45,12 +45,12 @@
  
  	if (filename[0] == ',') {
  	    filename++;
-@@ -361,22 +363,22 @@ lbm_mh_parse_mailbox(LibBalsaMailboxMh *
+@@ -362,22 +364,22 @@
  	if (lbm_mh_check_filename(filename) == FALSE)
  	    continue;
  
--	if (sscanf(filename, "%d", &fileno) != 1)
-+	if (sscanf(filename, "%d", &mh_fileno) != 1)
+-	if (sscanf(filename, "%10d", &fileno) != 1)
++	if (sscanf(filename, "%10d", &mh_fileno) != 1)
              break;     /* FIXME report error? */
 -	if (fileno > mh->last_fileno)
 -	    mh->last_fileno = fileno;
@@ -74,7 +74,7 @@
  	    }
  	    msg_info->orig_flags = delete_flag;
  	}
-@@ -394,17 +396,17 @@ static const gchar *LibBalsaMailboxMhRep
+@@ -395,17 +397,17 @@
  static const gchar *LibBalsaMailboxMhRecent = "recent:";
  
  static void
@@ -96,7 +96,7 @@
  	return;
      }
  
-@@ -433,7 +435,7 @@ lbm_mh_handle_seq_line(LibBalsaMailboxMh
+@@ -434,7 +436,7 @@
  
      for (seq = sequences; *seq; seq++) {
  	guint end = 0;
@@ -105,12 +105,12 @@
  
  	if (!**seq)
  	    continue;
-@@ -444,11 +446,11 @@ lbm_mh_handle_seq_line(LibBalsaMailboxMh
- 	    if (sscanf(line, "%d", &end) != 1)
+@@ -445,11 +447,11 @@
+ 	    if (sscanf(line, "%10d", &end) != 1)
                  break; /* FIXME report error? */
  	}
--	if (sscanf(*seq, "%d", &fileno) != 1)
-+	if (sscanf(*seq, "%d", &mh_fileno) != 1)
+-	if (sscanf(*seq, "%10d", &fileno) != 1)
++	if (sscanf(*seq, "%10d", &mh_fileno) != 1)
              break;     /* FIXME report error? */
  	do
 -	    lbm_mh_set_flag(mh, fileno, flag);
@@ -120,7 +120,7 @@
      }
  
      g_strfreev(sequences);
-@@ -580,7 +582,7 @@ lbm_mh_check(LibBalsaMailboxMh * mh, con
+@@ -581,7 +583,7 @@
  	    sequences = g_strsplit(p, " ", 0);
  	    for (seq = sequences; *seq; seq++) {
  		guint end = 0;
@@ -129,12 +129,12 @@
  
  		if (!**seq)
  		    continue;
-@@ -591,15 +593,15 @@ lbm_mh_check(LibBalsaMailboxMh * mh, con
- 		    if (sscanf(p, "%d", &end) != 1)
+@@ -592,15 +594,15 @@
+ 		    if (sscanf(p, "%10d", &end) != 1)
                          break; /* FIXME report error? */
  		}
--		if (sscanf(*seq, "%d", &fileno) != 1)
-+		if (sscanf(*seq, "%d", &mh_fileno) != 1)
+-		if (sscanf(*seq, "%10d", &fileno) != 1)
++		if (sscanf(*seq, "%10d", &mh_fileno) != 1)
                      break; /* FIXME report error? */
  		do {
 -		    p = g_strdup_printf("%s/%d", path, fileno);
@@ -148,7 +148,7 @@
  	    }
  	    g_strfreev(sequences);
  	    break;
-@@ -686,7 +688,7 @@ libbalsa_mailbox_mh_check(LibBalsaMailbo
+@@ -687,7 +689,7 @@
  	else {
  	    g_ptr_array_remove(mh->msgno_2_msg_info, msg_info);
  	    g_hash_table_remove(mh->messages_info, 
@@ -157,7 +157,7 @@
  	    libbalsa_mailbox_local_msgno_removed(mailbox, msgno);
  	    if (renumber > msgno)
  		/* First message that needs renumbering. */
-@@ -763,11 +765,11 @@ lbm_mh_flag_line(struct message_info *ms
+@@ -764,11 +766,11 @@
      if (!(msg_info->local_info.flags & flag))
  	return;
  
@@ -172,7 +172,7 @@
  }
  
  static gboolean
-@@ -849,7 +851,7 @@ libbalsa_mailbox_mh_sync(LibBalsaMailbox
+@@ -850,7 +852,7 @@
  	    /* free old information */
  	    g_ptr_array_remove(mh->msgno_2_msg_info, msg_info);
  	    g_hash_table_remove(mh->messages_info, 
@@ -181,7 +181,7 @@
  	    libbalsa_mailbox_local_msgno_removed(mailbox, msgno);
  	} else {
  	    lbm_mh_flag_line(msg_info, LIBBALSA_MESSAGE_FLAG_NEW, &unseen);
-@@ -1038,7 +1040,7 @@ libbalsa_mailbox_mh_fetch_message_struct
+@@ -1039,7 +1041,7 @@
   * we'll just add new lines and let the next sync merge them with any
   * existing lines. */
  static void
@@ -190,7 +190,7 @@
  			LibBalsaMessageFlag flags)
  {
      FILE *fp;
-@@ -1049,13 +1051,13 @@ lbm_mh_update_sequences(LibBalsaMailboxM
+@@ -1050,13 +1052,13 @@
  	return;
  
      if (flags & LIBBALSA_MESSAGE_FLAG_NEW)
@@ -208,7 +208,7 @@
      fclose(fp);
  }
  
-@@ -1072,7 +1074,7 @@ libbalsa_mailbox_mh_add_message(LibBalsa
+@@ -1073,7 +1075,7 @@
      int fd;
      GMimeStream *out_stream;
      GMimeFilter *crlffilter;
@@ -217,7 +217,7 @@
      int retries;
      GMimeStream *in_stream;
  
-@@ -1115,14 +1117,14 @@ libbalsa_mailbox_mh_add_message(LibBalsa
+@@ -1116,14 +1118,14 @@
      libbalsa_mime_stream_shared_unlock(stream);
      g_object_unref(in_stream);
  
@@ -234,7 +234,7 @@
  	rename_status = libbalsa_safe_rename(tmp, new_filename);
  	g_free(new_filename);
  	if (rename_status != -1)
-@@ -1145,9 +1147,9 @@ libbalsa_mailbox_mh_add_message(LibBalsa
+@@ -1146,9 +1148,9 @@
                      "Too high activity?");
  	return FALSE;
      }
