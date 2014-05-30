@@ -69,8 +69,7 @@ post-install:
 	@${REINPLACE_CMD} \
 		-e 's:${STAGEDIR}::' \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/discog/discog.html \
-		${STAGEDIR}${PREFIX}/lib/X11/xmcd/config/config.sh \
-		${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-FreeBSD_9-amd64/README
+		${STAGEDIR}${PREFIX}/lib/X11/xmcd/config/config.sh
 	@${FIND} ${STAGEDIR} -name \*.bak -delete
 
 .include <bsd.port.mk>
