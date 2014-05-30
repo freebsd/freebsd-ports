@@ -11,7 +11,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}.diff.gz
 
 MAINTAINER=	dteske@FreeBSD.org
-COMMENT=	A text based Hotline Communications client for Unix
+COMMENT=	Text based Hotline Communications client for Unix
 
 LICENSE=	GPLv1
 
@@ -32,7 +32,6 @@ MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWARNINGS}
@@ -69,17 +68,16 @@ CONFIGURE_ARGS+=	--enable-xmms
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-PLIST_FILES=	\
-		bin/hx				\
+PLIST_FILES=	bin/hx				\
 		share/examples/shx/hxrc		\
 		share/examples/shx/hxvars
 
 PLIST_DIRS=	share/examples/shx
 
 do-install:
-	@${CP} -fv ${WRKSRC}/run/hx ${PREFIX}/bin/
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	@${CP} -fv ${WRKSRC}/run/hxrc ${PREFIX}/share/examples/${PORTNAME}/
-	@${CP} -fv ${WRKSRC}/run/hxvars ${PREFIX}/share/examples/${PORTNAME}/
+	${CP} -fv ${WRKSRC}/run/hx ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/${PORTNAME}
+	${CP} -fv ${WRKSRC}/run/hxrc ${STAGEDIR}${PREFIX}/share/examples/${PORTNAME}/
+	${CP} -fv ${WRKSRC}/run/hxvars ${STAGEDIR}${PREFIX}/share/examples/${PORTNAME}/
 
 .include <bsd.port.mk>
