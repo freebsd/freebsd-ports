@@ -4,10 +4,9 @@ include/clutter-1.0/clutter-gst/clutter-gst-version.h
 include/clutter-1.0/clutter-gst/clutter-gst-video-sink.h
 include/clutter-1.0/clutter-gst/clutter-gst-video-texture.h
 include/clutter-1.0/clutter-gst/clutter-gst.h
-lib/libclutter-gst-1.0.a
-lib/libclutter-gst-1.0.la
 lib/libclutter-gst-1.0.so
 lib/libclutter-gst-1.0.so.0
+lib/libclutter-gst-1.0.so.0.304.0
 lib/girepository-1.0/ClutterGst-1.0.typelib
 libdata/pkgconfig/clutter-gst-1.0.pc
 %%DOCSDIR%%/ClutterGstVideoSink.html
