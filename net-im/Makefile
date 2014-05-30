@@ -172,7 +172,6 @@
     SUBDIR += twitmail
     SUBDIR += vacuum-im
     SUBDIR += venom
-    SUBDIR += vicq
     SUBDIR += vqcc-gtk
     SUBDIR += yoono
     SUBDIR += ysm
