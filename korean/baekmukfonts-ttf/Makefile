@@ -20,19 +20,12 @@ FONTNAME=	baekmuk
 FONTSDIR=	lib/X11/fonts/${FONTNAME}${PKGNAMESUFFIX}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.ks ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/contrib/hconfig.ps ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf/fonts.dir ${PREFIX}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} COPYRIGHT COPYRIGHT.ks README \
+		contrib/hconfig.ps ttf/*.ttf ttf/fonts.dir \
+		${STAGEDIR}${PREFIX}/${FONTSDIR})
 	${INSTALL_DATA} ${WRKSRC}/ttf/fonts.scale.xtt \
-	    ${PREFIX}/${FONTSDIR}/fonts.scale
-
-post-install:
-	@-${PREFIX}/bin/fc-cache -s ${PREFIX}/${FONTSDIR} 2>/dev/null
+		${STAGEDIR}${PREFIX}/${FONTSDIR}/fonts.scale
 
 .include <bsd.port.mk>
