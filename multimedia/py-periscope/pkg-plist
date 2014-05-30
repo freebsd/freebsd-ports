@@ -1,3 +1,0 @@
-bin/periscope
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%DESKTOPDIR%%/periscope.desktop
