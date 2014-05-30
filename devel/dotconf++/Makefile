@@ -3,6 +3,7 @@
 
 PORTNAME=	dotconfpp
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF \
 		http://voodoo.com.ua/dotconfpp/
@@ -10,10 +11,10 @@ MASTER_SITES=	SF \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration file parser written in C++
 
-USES=		compiler:env
-USE_AUTOTOOLS=	libtool
-
+USES=		compiler:env libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
