@@ -1,10 +1,5 @@
 bin/cnagios
-@unexec if cmp -s %D/%%ETCDIR%%/cnagiosrc.sample %D/%%ETCDIR%%/cnagiosrc; then rm -f %D/%%ETCDIR%%/cnagiosrc; fi
-%%ETCDIR%%/cnagiosrc.sample
-@exec if [ ! -f %D/%%ETCDIR%%/cnagiosrc ] ; then cp -p %D/%F %B/cnagiosrc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cnagios.help.sample %D/%%ETCDIR%%/cnagios.help; then rm -f %D/%%ETCDIR%%/cnagios.help; fi
-%%ETCDIR%%/cnagios.help.sample
-@exec if [ ! -f %D/%%ETCDIR%%/cnagios.help ] ; then cp -p %D/%F %B/cnagios.help; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cnagios.pl.sample %D/%%ETCDIR%%/cnagios.pl; then rm -f %D/%%ETCDIR%%/cnagios.pl; fi
-%%ETCDIR%%/cnagios.pl.sample
-@exec if [ ! -f %D/%%ETCDIR%%/cnagios.pl ] ; then cp -p %D/%F %B/cnagios.pl; fi
+@sample %%ETCDIR%%/cnagios.help.sample
+@sample %%ETCDIR%%/cnagios.pl.sample
+@sample %%ETCDIR%%/cnagiosrc.sample
+man/man1/cnagios.1.gz

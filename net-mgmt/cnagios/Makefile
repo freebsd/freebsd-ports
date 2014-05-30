@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cnagios
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://noc.hep.wisc.edu/src/cnagios/ \
 		ftp://noc.hep.wisc.edu/src/cnagios/old-versions/
@@ -24,18 +24,8 @@ CONFIGURE_ARGS=	--with-etc-dir="${ETCDIR}" \
 USES=		perl5
 ALL_TARGET=	cnagios
 
-MAN1=		cnagios.1
-
-NO_STAGE=	yes
-post-install:
-	@if [ ! -f ${ETCDIR}/cnagiosrc ]; then \
-		${CP} -p ${ETCDIR}/cnagiosrc.sample ${ETCDIR}/cnagiosrc ; \
-	fi
-	@if [ ! -f ${ETCDIR}/cnagios.help ]; then \
-		${CP} -p ${ETCDIR}/cnagios.help.sample ${ETCDIR}/cnagios.help ; \
-	fi
-	@if [ ! -f ${ETCDIR}/cnagios.pl ]; then \
-		${CP} -p ${ETCDIR}/cnagios.pl.sample ${ETCDIR}/cnagios.pl ; \
-	fi
+post-patch:
+# check in next relase if version match, and adjust/remove the next line
+	${REINPLACE_CMD} -e 's/0.30/${PORTVERSION}/' ${WRKSRC}/version.h
 
 .include <bsd.port.mk>
