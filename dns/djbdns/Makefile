@@ -3,7 +3,7 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	19
+PORTREVISION?=	20
 PORTEPOCH?=	1
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
@@ -129,12 +129,13 @@ PLIST_SUB+=	WITH_IP6="@comment "
 post-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home.stage
 	@${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
 
 post-build:
 	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
 	@${MV} -f ${WRKSRC}/conf-home ${WRKSRC}/conf-home.sav
-	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
+	@${MV} -f ${WRKSRC}/conf-home.stage ${WRKSRC}/conf-home
 	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_home.o auto_home.c
 	@cd ${WRKSRC} ; ${DO_MAKE_BUILD} install instcheck
 	@${TOUCH} ${WRKSRC}/*-conf
