@@ -1144,6 +1144,7 @@
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
+    SUBDIR += libvhdi
     SUBDIR += libvirt
     SUBDIR += libvirt-glib
     SUBDIR += libvirt-java
