@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-03-28 17:45:52.000000000 +0200
-+++ Makefile.in	2012-05-25 19:38:11.948782413 +0200
-@@ -27,39 +27,20 @@
+--- ./Makefile.in.orig	2013-03-28 22:35:00.000000000 +0100
++++ ./Makefile.in	2014-05-01 14:23:32.000000000 +0200
+@@ -27,39 +27,11 @@
  
  
  install:
@@ -8,12 +8,12 @@
 -	  echo mv @prefix@/bin/cnagios @prefix@/bin/cnagios.OLD ; \
 -	  mv @prefix@/bin/cnagios @prefix@/bin/cnagios.OLD ; \
 -	fi
- 	@echo installing cnagios in @prefix@/bin
- 	@$(INSTALL) -c -m 755 cnagios @prefix@/bin/cnagios
- 
- 	@echo installing cnagios.1 in @prefix@/man/man1
- 	@$(INSTALL) -c -m 755 cnagios.1 @prefix@/man/man1/cnagios.1
- 
+-	@echo installing cnagios in @prefix@/bin
+-	@$(INSTALL) -c -m 755 cnagios @prefix@/bin/cnagios
+-
+-	@echo installing cnagios.1 in @prefix@/man/man1
+-	@$(INSTALL) -c -m 755 cnagios.1 @prefix@/man/man1/cnagios.1
+-
 -	@if [ ! -f @NAGIOS_ETC_DIR@/cnagiosrc ]; then \
 -	  echo installing cnagiosrc in @NAGIOS_ETC_DIR@ ; \
 -	  $(INSTALL) -c -m 644 cnagiosrc @NAGIOS_ETC_DIR@/cnagiosrc ; \
@@ -21,9 +21,7 @@
 -	  echo installing cnagiosrc as @NAGIOS_ETC_DIR@/cnagiosrc.NEW ; \
 -	  $(INSTALL) -c -m 644 cnagiosrc @NAGIOS_ETC_DIR@/cnagiosrc.NEW ; \
 -	fi
-+	echo installing cnagiosrc.sample in @NAGIOS_ETC_DIR@
-+	$(INSTALL) -c -m 644 cnagiosrc @NAGIOS_ETC_DIR@/cnagiosrc.sample
- 
+-
 -	@if [ ! -f @NAGIOS_ETC_DIR@/cnagios.help ]; then \
 -	  echo installing cnagios.help in @NAGIOS_ETC_DIR@ ; \
 -	  $(INSTALL) -c -m 644 cnagios.help @NAGIOS_ETC_DIR@/cnagios.help ; \
@@ -31,9 +29,7 @@
 -	  echo installing cnagios.help as @NAGIOS_ETC_DIR@/cnagios.help.NEW ; \
 -	  $(INSTALL) -c -m 644 cnagios.help @NAGIOS_ETC_DIR@/cnagios.help.NEW ; \
 -	fi
-+	echo installing cnagios.help.sample in @NAGIOS_ETC_DIR@
-+	$(INSTALL) -c -m 644 cnagios.help @NAGIOS_ETC_DIR@/cnagios.help.sample
- 
+-
 -	@if [ ! -f @NAGIOS_ETC_DIR@/cnagios.pl ]; then \
 -	  echo installing cnagios.pl in @NAGIOS_ETC_DIR@ ; \
 -	  $(INSTALL) -c -m 644 cnagios.pl @NAGIOS_ETC_DIR@/cnagios.pl ; \
@@ -41,8 +37,11 @@
 -	  echo installing cnagios.pl as @NAGIOS_ETC_DIR@/cnagios.pl.NEW ; \
 -	  $(INSTALL) -c -m 644 cnagios.pl @NAGIOS_ETC_DIR@/cnagios.pl.NEW ; \
 -	fi
-+	echo installing cnagios.pl in @NAGIOS_ETC_DIR@
-+	$(INSTALL) -c -m 644 cnagios.pl @NAGIOS_ETC_DIR@/cnagios.pl.sample
++	$(INSTALL) -c -m 755 cnagios $(DESTDIR)@prefix@/bin/cnagios
++	$(INSTALL) -c -m 444 cnagios.1 $(DESTDIR)@prefix@/man/man1/cnagios.1
++	$(INSTALL) -c -m 644 cnagiosrc $(DESTDIR)@NAGIOS_ETC_DIR@/cnagiosrc.sample
++	$(INSTALL) -c -m 644 cnagios.help $(DESTDIR)@NAGIOS_ETC_DIR@/cnagios.help.sample
++	$(INSTALL) -c -m 644 cnagios.pl $(DESTDIR)@NAGIOS_ETC_DIR@/cnagios.pl.sample
  
  install2:
  	@if [ -f /usr/local/bin/cnagios ]; then \
