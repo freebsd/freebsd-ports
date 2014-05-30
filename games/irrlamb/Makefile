@@ -11,11 +11,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D physics-based puzzle game
 
-LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
 RUN_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
 
-USE_SCONS=	yes
 USES=		scons dos2unix lua:51
 DOS2UNIX_FILES=	src/engine/save.h src/objects/orb.cpp src/objects/player.cpp
 
@@ -30,8 +29,6 @@ PORTDATA=	*
 
 DATA_DIRS=	art campaigns collision fonts levels meshes scenes scripts textures
 
-.include <bsd.port.options.mk>
-
 post-patch:
 .for dir in ${DATA_DIRS}
 	@${REINPLACE_CMD} -e 's|"\(${dir}/\)|"${DATADIR}/\1|' \
@@ -39,6 +36,7 @@ post-patch:
 		${WRKSRC}/src/objects/*.cpp ${WRKSRC}/meshes/*.irrmesh \
 		${WRKSRC}/scenes/*.irr
 .endfor
+	@${REINPLACE_CMD} -e "s/lua/lua-${LUA_VER}/g" ${WRKSRC}/SConstruct
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-install:

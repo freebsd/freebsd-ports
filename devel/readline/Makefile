@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 
 INFO=		readline rluserman history
 
-PATCHES=	1 2 3
+PATCHES=	1 2 3 4 5 6
 .for p in ${PATCHES:S/^/00/}
 PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
 .endfor

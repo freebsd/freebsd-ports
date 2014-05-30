@@ -17,7 +17,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A user-friendly graphical front end for the man system
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview	\
 		man2html:${PORTSDIR}/textproc/man2html
 
@@ -26,11 +26,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gettext gmake
 USE_GNOME=	gtk12
 
-MAN1=	gman.1x
-
 CXXFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+SHEBANG_LANG+=	perlw
+perlw_OLD_CMD=  /usr/bin/perl -w
+perlw_CMD=	${LOCALBASE}/bin/perl -w
+SHEBANG_FILES=	*.pl
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CXX =,#CXX =,g' \
 		-e 's,^CXXFLAGS =,CXXFLAGS+=,g' \
@@ -40,10 +43,10 @@ post-patch:
 		-e 's,\-lgtk \-lgdk \-lpthread ,`${GTK_CONFIG} \-\-libs gthread` ,g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gman ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/gman.pl ${PREFIX}/bin/gman.cgi
-	@${MKDIR} ${PREFIX}/www/cgi-bin
-	${INSTALL_SCRIPT} ${WRKSRC}/gman.pl ${PREFIX}/www/cgi-bin
-	${INSTALL_MAN} ${WRKSRC}/gman.1x ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/gman ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/gman.pl ${STAGEDIR}${PREFIX}/bin/gman.cgi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/cgi-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/gman.pl ${STAGEDIR}${PREFIX}/www/cgi-bin
+	${INSTALL_MAN} ${WRKSRC}/gman.1x ${STAGEDIR}${MANPREFIX}/man/man1
 	@${CAT} ${PKGMESSAGE}
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,12 +1,6 @@
 bin/zthread-config
-lib/libZThread-2.3.so
-lib/libZThread-2.3.so.2
-lib/libZThread.a
-lib/libZThread.la
-lib/libZThread.so
-share/aclocal/pthread.m4
-share/aclocal/zthread.m4
 include/zthread/AtomicCount.h
+include/zthread/Barrier.h
 include/zthread/BiasedReadWriteLock.h
 include/zthread/BlockingQueue.h
 include/zthread/BoundedQueue.h
@@ -25,9 +19,9 @@ include/zthread/FastRecursiveMutex.h
 include/zthread/Guard.h
 include/zthread/GuardedClass.h
 include/zthread/Lockable.h
-include/zthread/Mutex.h
 include/zthread/LockedQueue.h
 include/zthread/MonitoredQueue.h
+include/zthread/Mutex.h
 include/zthread/NonCopyable.h
 include/zthread/PoolExecutor.h
 include/zthread/Priority.h
@@ -50,5 +44,9 @@ include/zthread/ThreadedExecutor.h
 include/zthread/Time.h
 include/zthread/Waitable.h
 include/zthread/ZThread.h
-include/zthread/Barrier.h
+lib/libZThread-2.3.so.2
+lib/libZThread-2.3.so.2.0.0
+lib/libZThread.so
+share/aclocal/pthread.m4
+share/aclocal/zthread.m4
 @dirrm include/zthread

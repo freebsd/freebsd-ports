@@ -52,7 +52,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@for lang in ${FIREFOX_I18N_}; do \
-		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@firefox.mozilla.org);\
+		if ! (${UNZIP_CMD} -qo ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@firefox.mozilla.org);\
 		then \
 			exit 1; \
 		fi; \

@@ -1,14 +1,15 @@
 --- etc/Makefile.in.orig	2003-10-02 16:59:32.000000000 +0100
-+++ etc/Makefile.in	2010-07-04 03:34:26.379748720 +0100
++++ etc/Makefile.in	2014-05-10 17:29:11.995407415 +0100
 @@ -84,19 +84,19 @@
  install_sh = @install_sh@
  
  top_builddir = ..
 -etcdir = /etc
 -webdir = /web
+-reportsdir = /bin
 +etcdir = @etcdir@
 +webdir = @webdir@
- reportsdir = /bin
++reportsdir = @bindir@
  
 -ETC = rtg.conf rtgtargmkr.pl routers createdb BER.pm \
 +ETC = rtg.conf.sample rtgtargmkr.pl routers.sample createdb BER.pm \
@@ -25,21 +26,24 @@
  
  subdir = etc
  mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
-@@ -220,13 +220,13 @@
+@@ -220,14 +220,14 @@
  all:
  
  install: installdirs
 -	@for i in $(ETC) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(etcdir) ; echo "install: installed $$i in $(prefix)$(etcdir)" ; done
 -	@for i in $(WEB) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(webdir) ; echo "install: installed $$i in $(prefix)$(webdir)" ; done
-+	@for i in $(ETC) ; do $(INSTALL) $(srcdir)/$$i $(etcdir) ; echo "install: installed $$i in $(etcdir)" ; done
-+	@for i in $(WEB) ; do $(INSTALL) $(srcdir)/$$i $(webdir) ; echo "install: installed $$i in $(webdir)" ; done
- 	@for i in $(REPORTS) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(reportsdir) ; echo "install: installed $$i in $(prefix)$(reportsdir)" ; done
+-	@for i in $(REPORTS) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(reportsdir) ; echo "install: installed $$i in $(prefix)$(reportsdir)" ; done
++	@for i in $(ETC) ; do $(INSTALL) $(srcdir)/$$i $(DESTDIR)$(etcdir) ; echo "install: installed $$i in $(DESTDIR)$(etcdir)" ; done
++	@for i in $(WEB) ; do $(INSTALL) $(srcdir)/$$i $(DESTDIR)$(webdir) ; echo "install: installed $$i in $(DESTDIR)$(webdir)" ; done
++	@for i in $(REPORTS) ; do $(INSTALL) $(srcdir)/$$i $(DESTDIR)$(reportsdir) ; echo "install: installed $$i in $(DESTDIR)$(reportsdir)" ; done
  
  installdirs:
 -	$(mkinstalldirs) $(prefix)$(etcdir)
 -	$(mkinstalldirs) $(prefix)$(webdir)
-+	$(mkinstalldirs) $(etcdir)
-+	$(mkinstalldirs) $(webdir)
- 	$(mkinstalldirs) $(prefix)$(reportsdir)
+-	$(mkinstalldirs) $(prefix)$(reportsdir)
++	$(mkinstalldirs) $(DESTDIR)$(etcdir)
++	$(mkinstalldirs) $(DESTDIR)$(webdir)
++	$(mkinstalldirs) $(DESTDIR)$(reportsdir)
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

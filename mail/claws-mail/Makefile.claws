@@ -1,18 +1,17 @@
 # $FreeBSD$
 
-PORTVERSION=	3.9.3
+PORTVERSION=	3.10.0
 CATEGORIES?=	mail
-MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
+MASTER_SITES=	SF/claws-mail/Claws%20Mail/${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
-USES+=		gmake iconv pkgconfig
+USES+=		gmake iconv libtool pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --disable-dbus
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
 
 CLAWS_PLUGINS=	acpi_notifier \
 		address_keeper \
@@ -61,19 +60,17 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 .  for p in ${CLAWS_PLUGINS_BUILD}
 CONFIGURE_ARGS:=	${CONFIGURE_ARGS:S|--disable-${p}-plugin||}
-PLIST_FILES+=	lib/claws-mail/plugins/${p}.a  \
-		lib/claws-mail/plugins/${p}.la \
-		lib/claws-mail/plugins/${p}.so
+PLIST_FILES+=	lib/claws-mail/plugins/${p}.so
 .  endfor
 
 do-build:
 .  for p in ${CLAWS_PLUGINS_BUILD}
-	cd ${WRKSRC}/src/plugins/${p} && ${GMAKE}
+	cd ${WRKSRC}/src/plugins/${p} && ${MAKE_CMD}
 .  endfor
 
 do-install:
 .  for p in ${CLAWS_PLUGINS_BUILD}
-	cd ${WRKSRC}/src/plugins/${p} && ${GMAKE} install DESTDIR="${STAGEDIR}"
+	cd ${WRKSRC}/src/plugins/${p} && ${MAKE_CMD} install DESTDIR="${STAGEDIR}"
 .  endfor
 
 .endif

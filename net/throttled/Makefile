@@ -12,7 +12,7 @@ COMMENT=	Bandwidth shaping and QoS solution
 
 LICENSE=	GPLv3
 
-USE_GMAKE=	yes
+USES=		gmake
 
 USE_RC_SUBR=	${PORTNAME}
 

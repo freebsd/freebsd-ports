@@ -7,28 +7,23 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A web interface for music player daemon
+COMMENT=	Web interface for music player daemon
 
 LICENSE=	GPLv2
 
-NO_BUILD=	YES
+NO_BUILD=	yes
 USE_PHP=	pcre sockets
 
 PHPMP?=		${WWWDIR_REL}
 PLIST_SUB+=	PHPMP=${PHPMP}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${PHPMP}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PHPMP}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPMP}
-	@${CHMOD} -R 755 ${PREFIX}/${PHPMP}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHPMP}
+	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${PHPMP}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PHPMP}
+	@${CHMOD} -R 755 ${STAGEDIR}${PREFIX}/${PHPMP}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@if [ ! -f ${PREFIX}/${PHPMP}/config.php ]; then \
-		${CP} -p ${PREFIX}/${PHPMP}/config.php.sample \
-			${PREFIX}/${PHPMP}/config.php ; \
-	fi
 
 .include <bsd.port.mk>

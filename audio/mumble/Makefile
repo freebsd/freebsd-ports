@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mumble
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
@@ -55,10 +54,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_LIB} ${WRKSRC}/release/libcelt0.so.0.11.0 ${STAGEDIR}${PREFIX}/lib/libcelt-mumble.so.0.11.0
 	${INSTALL_LIB} ${WRKSRC}/release/libcelt0.so.0.7.0 ${STAGEDIR}${PREFIX}/lib/libcelt-mumble.so.0.7.0
-	${INSTALL_LIB} ${WRKSRC}/release/libmumble.so.1.2.5 ${STAGEDIR}${PREFIX}/lib/libmumble.so.1.2.5
-	${LN} -s ${PREFIX}/lib/libmumble.so.1.2.5 ${STAGEDIR}${PREFIX}/lib/libmumble.so
-	${LN} -s ${PREFIX}/lib/libmumble.so.1.2.5 ${STAGEDIR}${PREFIX}/lib/libmumble.so.1
-	${LN} -s ${PREFIX}/lib/libmumble.so.1.2.5 ${STAGEDIR}${PREFIX}/lib/libmumble.so.1.2
+	${INSTALL_LIB} ${WRKSRC}/release/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PORTVERSION}
+	${LN} -s ${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so
+	${LN} -s ${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.1
+	${LN} -s ${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.1.2
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/services
 	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.protocol ${STAGEDIR}${PREFIX}/share/services
 	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.desktop ${STAGEDIR}${PREFIX}/share/applications

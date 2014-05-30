@@ -17,6 +17,7 @@ EXTRACT_ONLY=	jMusic_1.6_inst.zip \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Composition in Java
 
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

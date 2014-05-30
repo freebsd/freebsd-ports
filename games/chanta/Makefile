@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/chanta/descargas/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free 2D jump and run game
 
+USES=		gmake
 USE_SDL=	sdl image mixer
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}

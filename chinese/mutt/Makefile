@@ -32,7 +32,6 @@ MUTT_SLAVE_HTML_PAGES=	1
 
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-NO_STAGE=	yes
 post-patch::
 	@${REINPLACE_CMD} -e '/^mutt_SOURCES/s/\\$$/ myiconv.c \\/' ${WRKSRC}/Makefile.am
 	@for i in ${.CURDIR}/files/patch-*; do \

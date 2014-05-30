@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.9.6
+PORTVERSION=	1.9.7
 CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
@@ -44,7 +44,6 @@ MOINSCRIPT=	${MOINDIR}/server/moin.wsgi
 BROKEN=		MOINTYPE must be a STANDALONE, FCGI, WSGI, MOD_PYTHON or CGI.
 .endif
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO}
 	@${ECHO} "Set MOINTYPE=(CGI|FCGI|WSGI|STANDALONE) to define"

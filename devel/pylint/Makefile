@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pylint
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -12,7 +12,7 @@ COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=1.0.0:${PORTSDIR}/devel/py-astroid
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=1.1.0:${PORTSDIR}/devel/py-astroid
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

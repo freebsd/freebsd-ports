@@ -241,7 +241,6 @@
     SUBDIR += cld
     SUBDIR += clewn
     SUBDIR += clig
-    SUBDIR += clint
     SUBDIR += clisp-hyperspec
     SUBDIR += cluttermm
     SUBDIR += clojure-cider
@@ -343,6 +342,7 @@
     SUBDIR += dconf
     SUBDIR += dconf-editor
     SUBDIR += ddd
+    SUBDIR += dee
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
     SUBDIR += delta
@@ -1010,7 +1010,6 @@
     SUBDIR += libg19draw
     SUBDIR += libgalago
     SUBDIR += libgamepad
-    SUBDIR += libgconf-java
     SUBDIR += libgdata
     SUBDIR += libgdata06
     SUBDIR += libgee
@@ -1150,9 +1149,11 @@
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
+    SUBDIR += libvhdi
     SUBDIR += libvirt
     SUBDIR += libvirt-glib
     SUBDIR += libvirt-java
+    SUBDIR += libvmdk
     SUBDIR += libvolume_id
     SUBDIR += libvshadow
     SUBDIR += libwfut

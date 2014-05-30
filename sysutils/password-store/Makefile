@@ -17,7 +17,7 @@ RUN_DEPENDS=	bash>=0:${PORTSDIR}/shells/bash \
 		pwgen>=0:${PORTSDIR}/sysutils/pwgen \
 		tree>=1.7:${PORTSDIR}/sysutils/tree
 
-OPTIONS_DEFINE=		GIT XCLIP CONTRIB
+OPTIONS_DEFINE=		GIT XCLIP CONTRIB DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
 GIT_DESC=		Enable git storage
@@ -59,10 +59,8 @@ do-install:
 	@(cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	@(cd ${WRKSRC}/src/completion && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 .endif
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_MAN} ${WRKSRC}/man/example-filter.sh ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_MAN} ${WRKSRC}/man/pass.1 ${STAGEDIR}${MANPREFIX}/man/man1/pass.1
-.endif
 
 .include <bsd.port.mk>

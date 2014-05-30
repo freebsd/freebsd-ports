@@ -10,7 +10,7 @@
      set( FREEBSD_RELEASE "${CMAKE_MATCH_1}" )
      set( FREEBSD_MAJOR "${CMAKE_MATCH_2}" )
      set( FREEBSD_MINOR "${CMAKE_MATCH_3}" )
-@@ -259,6 +260,11 @@
+@@ -259,6 +260,14 @@
        set( CONDOR_FREEBSD7 ON )
      elseif(FREEBSD_MAJOR MATCHES "8" )
        set( CONDOR_FREEBSD8 ON )
@@ -18,6 +18,9 @@
 +      set( CONDOR_FREEBSD9 ON )
 +    elseif(FREEBSD_MAJOR MATCHES "10" )
 +      set( CONDOR_FREEBSD10 ON )
++      set( CONDOR_FREEBSD9 ON )
++    elseif(FREEBSD_MAJOR MATCHES "11" )
++      set( CONDOR_FREEBSD11 ON )
 +      set( CONDOR_FREEBSD9 ON )
      endif()
      if( CMAKE_SYSTEM_PROCESSOR MATCHES "amd64" )

@@ -11,11 +11,11 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The traditional 4.4BSD rdist
 
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 NO_WRKSUBDIR=	yes
-MAN1=		44bsd-rdist.1
-PLIST_FILES=	bin/44bsd-rdist
+PLIST_FILES=	bin/44bsd-rdist \
+		man/man1/44bsd-rdist.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -23,13 +23,12 @@ PLIST_FILES=	bin/44bsd-rdist
 BUILD_DEPENDS=    rcs:${PORTSDIR}/devel/rcs57
 .endif
 
-NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC} ; co RCS/*,v
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rdist ${PREFIX}/bin/44bsd-rdist
-	${INSTALL_MAN} ${WRKSRC}/rdist.1 ${PREFIX}/man/man1/44bsd-rdist.1
+	${INSTALL_PROGRAM} ${WRKSRC}/rdist ${STAGEDIR}${PREFIX}/bin/44bsd-rdist
+	${INSTALL_MAN} ${WRKSRC}/rdist.1 ${STAGEDIR}${PREFIX}/man/man1/44bsd-rdist.1
 
 tarup:
 	-cd ${WRKSRC} ; ${RM} *

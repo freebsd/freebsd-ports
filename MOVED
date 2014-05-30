@@ -5779,7 +5779,7 @@ databases/ludia||2014-03-18|Has expired: Broken since June 2013
 lang/schemetoc||2014-03-18|Has expired: Broken since July 2013
 sysutils/cfengine-devel||2014-03-19|Has expired: Broken since June 2013
 sysutils/py-salt-cloud|sysutils/py-salt|2014-03-19|Removed:py-salt-cloud is now part of py-salt
-devel/py-pyzmq|net/py-pyzmq|2014-03-22|Move to a more suitable category with other ZeroMQ ports 
+devel/py-pyzmq|net/py-pyzmq|2014-03-22|Move to a more suitable category with other ZeroMQ ports
 audio/p5-Xmms|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
 audio/xmms-a52dec|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
 audio/xmms-audiofile|multimedia/audacious|2014-03-23|Has expired: Abandonware, please consider using multimedia/audacious instead
@@ -6174,3 +6174,12 @@ graphics/GraphicsMagick12|graphics/GraphicsMagick13|2014-05-20|Has expired: Unma
 net-im/tkabber-devel|net-im/tkabber|2014-05-23|Has expired: Unfetchable, outdated by net-im/tkabber
 devel/libglade-java||2014-05-26|Has expired: Unmaintained, outdated not depend on
 lang/lua|lang/lua51|2014-05-26|Rename to allow multiple version of lua to coexist
+math/py-graphtool||2014-05-27|Has expired: Broken for more than 6 months
+devel/clint||2014-05-27|Has expired: Broken for more than 6 months
+x11-toolkits/libgtk-java||2014-05-27|Has expired: Unmaintained, outdated not depend on
+graphics/cairo-java||2014-05-27|Has expired: Unmaintained, outdated not depend on
+devel/libgconf-java||2014-05-27|Has expired: Unmaintained, outdated not depend on
+x11/libgnome-java||2014-05-27|Has expired: Unmaintained, outdated not depend on
+security/calife-devel||2014-05-28|Replaced by security/calife
+sysutils/synergy-devel||2014-05-30|Replaced by sysutils/synergy
+net-im/vicq||2014-05-30|Has expired: Unmaintained, outdated not depend on

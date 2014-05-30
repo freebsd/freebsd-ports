@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 USE_AUTOTOOLS=	libtool aclocal autoconf libtoolize
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 MAN1=		torsocks.1 usewithtor.1

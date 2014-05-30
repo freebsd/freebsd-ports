@@ -15,7 +15,7 @@ LIB_DEPENDS=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-tls
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	libxml2
 MAKE_ENV=	CC_EXTRA_OPTS="${CFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \

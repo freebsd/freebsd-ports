@@ -20,9 +20,7 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
 		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
 
-USES=		dos2unix pkgconfig tar:bzip2
-USE_BZIP2=	yes
-USE_SCONS=	yes
+USES=		dos2unix pkgconfig scons tar:bzip2
 USE_GL=		gl glu
 USE_SDL=	mixer
 SUB_FILES=	pink-pony.sh

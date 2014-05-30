@@ -15,8 +15,6 @@ COMMENT=	Visual binary file editor
 # http://www.megalextoria.com/usenet-archive/news097f1/b120/alt/sources/00000521.html
 NO_CDROM=	This software may not be used to make a profit in any way.
 NO_WRKSUBDIR=	yes
-MAN1=		uzap.1
-PLIST_FILES=	bin/uzap
+PLIST_FILES=	bin/uzap man/man1/uzap.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,7 +31,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 .for df in ${DISTFILES:C,:.*,,}
-	@cd ${WRKDIR} && ${EXTRACT_CMD} \
+	@cd ${WRKDIR} && ${TAR} \
 		${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${df} \
 		${EXTRACT_AFTER_ARGS} -s ,^,${df:R}/,
 .endfor

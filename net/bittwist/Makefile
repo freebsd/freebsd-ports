@@ -10,7 +10,7 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		bittwist.1 bittwistb.1 bittwiste.1
 PLIST_FILES=	bin/bittwist bin/bittwistb bin/bittwiste

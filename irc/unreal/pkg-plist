@@ -110,18 +110,6 @@ lib/Unreal/m_who.so
 lib/Unreal/m_whois.so
 lib/Unreal/m_whowas.so
 libexec/ircd
-%%DOCSDIR%%/005.txt
-%%DOCSDIR%%/Authors
-%%DOCSDIR%%/Donation
-%%DOCSDIR%%/base64.txt
-%%DOCSDIR%%/coding-guidelines
-%%DOCSDIR%%/example.conf
-%%DOCSDIR%%/protoctl.txt
-%%DOCSDIR%%/tao.of.irc
-%%DOCSDIR%%/token.txt
-%%DOCSDIR%%/translations.txt
-%%DOCSDIR%%/unreal32docs.html
-%%DOCSDIR%%/vl.txt
 %%EXAMPLESDIR%%/aliases/aliases.conf
 %%EXAMPLESDIR%%/aliases/anope.conf
 %%EXAMPLESDIR%%/aliases/atheme.conf
@@ -138,17 +126,18 @@ libexec/ircd
 %%EXAMPLESDIR%%/help.conf
 %%EXAMPLESDIR%%/spamfilter.conf
 %%EXAMPLESDIR%%/unrealircd.conf
-%%SQLMOD%%%%DOCSDIR%%/Changes.sqlmod
-%%SQLMOD%%%%DOCSDIR%%/LICENSE.sqlmod
-%%SQLMOD%%%%DOCSDIR%%/README.sqlmod
 %%SQLMOD%%%%ETCDIR%%/m_sqlmod.conf
 %%SQLMOD%%lib/Unreal/m_sqlmod.so
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%EXAMPLESDIR%%/aliases
-@dirrm lib/Unreal
-@dirrmtry %%ETCDIR%%
+@dirrmtry lib/Unreal
+@dirrmtry %%EXAMPLESDIR%%/aliases
+@dirrmtry %%EXAMPLESDIR%%
+@owner ircd
+@group ircd
 @dirrmtry %%ETCDIR%%/aliases
+@dirrmtry %%ETCDIR%%
+@unexec rmdir "/var/log/ircd" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/ircd/tmp" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/ircd" >/dev/null 2>&1 || :
 @unexec if cmp -s %D/etc/Unreal/aliases/aliases.conf %D/%%EXAMPLESDIR%%/aliases/aliases.conf; then rm -f %D/etc/Unreal/aliases/aliases.conf; fi
 @exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
 @unexec if cmp -s %D/etc/Unreal/aliases/atheme.conf %D/%%EXAMPLESDIR%%/aliases/atheme.conf; then rm -f %D/etc/Unreal/aliases/atheme.conf; fi
@@ -181,3 +170,5 @@ libexec/ircd
 @exec [ -f %D/etc/Unreal/spamfilter.conf ] || cp %D/%%EXAMPLESDIR%%/spamfilter.conf %D/etc/Unreal/spamfilter.conf
 @unexec if cmp -s %D/etc/Unreal/unrealircd.conf %D/%%EXAMPLESDIR%%/unrealircd.conf; then rm -f %D/etc/Unreal/unrealircd.conf; fi
 @exec [ -f %D/etc/Unreal/unrealircd.conf ] || cp %D/%%EXAMPLESDIR%%/unrealircd.conf %D/etc/Unreal/unrealircd.conf
+@owner root
+@group wheel

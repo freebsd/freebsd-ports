@@ -15,7 +15,7 @@ USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_LDCONFIG=	yes
 
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

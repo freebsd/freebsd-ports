@@ -3,7 +3,7 @@
 
 PORTNAME=	xneur
 PORTVERSION=	0.15.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -14,8 +14,7 @@ COMMENT=	Auto keyboard switcher
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_BZIP2=	yes
-USES=		pkgconfig iconv
+USES=		pkgconfig iconv tar:bzip2 libtool
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -25,16 +24,12 @@ CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-MAN1=		xneur.1
-MAN5=		xneurrc.5
-
 OPTIONS_DEFINE=	ASPELL XOSD NLS X11
 OPTIONS_DEFAULT=	GSTREAMER ASPELL
 OPTIONS_RADIO=	SOUND
 OPTIONS_RADIO_SOUND=	GSTREAMER OPENAL
 XOSD_DESC=	Xosd support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -79,10 +74,5 @@ CONFIGURE_ARGS+=	--without-xosd
 
 post-patch:
 	@${MV} ${WRKSRC}/etc/xneurrc ${WRKSRC}/etc/xneurrc.sample
-
-post-install:
-.if !exists(${PREFIX}/etc/xneur/xneurrc)
-	${CP} -p ${PREFIX}/etc/xneur/xneurrc.sample ${PREFIX}/etc/xneur/xneurrc
-.endif
 
 .include <bsd.port.mk>

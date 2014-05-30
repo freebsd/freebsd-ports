@@ -3,7 +3,7 @@
 
 PORTNAME=	sdlmm
 PORTVERSION=	0.1.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/SDLmm/${PORTVERSION}
 DISTNAME=	SDLmm-${PORTVERSION}
@@ -11,9 +11,12 @@ DISTNAME=	SDLmm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ Wrapper for the SDL (Simple DirectMedia Layer)
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDLmm.so
 
 .include <bsd.port.mk>

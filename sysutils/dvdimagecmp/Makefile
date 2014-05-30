@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@thepentagon.org
 COMMENT=	A simple tool for comparing an image to a burned disc
 
-USE_GMAKE=	yes
+USES=		gmake
 
 CFLAGS+=	-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 

@@ -8,14 +8,14 @@ VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
 # Rename while installing..
 for i in exmh
 do
-	echo "install -c -o bin -g bin -m 444 $i.l ${PREFIX}/man/man1/$i.1"
-	install -c -o bin -g bin -m 444 $i.l ${PREFIX}/man/man1/$i.1
+	echo "install -c $i.l ${PREFIX}/man/man1/$i.1"
+	install -c $i.l ${PREFIX}/man/man1/$i.1
 done
 
 BINS="exmh-async exmh-bg exmh-strip exmh ftp.expect inc.expect"
 
-echo "install -c -o bin -g bin -m 755 ${BINS} ${PREFIX}/bin"
-install -c -o bin -g bin -m 755 ${BINS} ${PREFIX}/bin
+echo "install -c ${BINS} ${PREFIX}/bin"
+install -c ${BINS} ${PREFIX}/bin
 
 if [ ! -d ${PREFIX}/lib/exmh-${VERSION} ]
 then
@@ -25,8 +25,8 @@ fi
 
 LIBFILES='lib/*.tcl lib/*.bitmap lib/*.gif lib/*.ppm lib/help.* lib/tclIndex lib/app-defaults lib/app-defaults-* lib/*.mask lib/*.exp lib/mime.types lib/*.au lib/PgpDecryptExpect'
 
-echo "install -c -o bin -g bin -m 444 ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}"
-install -c -o bin -g bin -m 444 ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}
+echo "install -c ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}"
+install -c ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}
 
 if [ ! -d ${PREFIX}/lib/exmh-${VERSION}/html ]
 then
@@ -34,8 +34,8 @@ then
 	mkdir ${PREFIX}/lib/exmh-${VERSION}/html
 fi
 
-echo "install -c -o bin -g bin -m 444 lib/html/* lib/html/*.gif ${PREFIX}/lib/exmh-${VERSION}/html"
-install -c -o bin -g bin -m 444 lib/html/*.html lib/html/*.gif ${PREFIX}/lib/exmh-${VERSION}/html
+echo "install -c lib/html/* lib/html/*.gif ${PREFIX}/lib/exmh-${VERSION}/html"
+install -c lib/html/*.html lib/html/*.gif ${PREFIX}/lib/exmh-${VERSION}/html
 
 if [ ! -d ${PREFIX}/lib/exmh-${VERSION}/bitmaps ]
 then
@@ -43,7 +43,7 @@ then
 	mkdir ${PREFIX}/lib/exmh-${VERSION}/bitmaps
 fi
 
-echo "install -c -o bin -g bin -m 444 lib/bitmaps/bitmaps.defaults lib/bitmaps/*.xbm ${PREFIX}/lib/exmh-${VERSION}/bitmaps"
-install -c -o bin -g bin -m 444 lib/bitmaps/bitmaps.defaults lib/bitmaps/*.xbm ${PREFIX}/lib/exmh-${VERSION}/bitmaps
+echo "install -c lib/bitmaps/bitmaps.defaults lib/bitmaps/*.xbm ${PREFIX}/lib/exmh-${VERSION}/bitmaps"
+install -c lib/bitmaps/bitmaps.defaults lib/bitmaps/*.xbm ${PREFIX}/lib/exmh-${VERSION}/bitmaps
 
 

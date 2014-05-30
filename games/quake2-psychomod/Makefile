@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Psychomod modification for Quake II
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	release

@@ -11,7 +11,7 @@ COMMENT=	Flexible SMTP filter which can act also as transparent proxy
 
 LICENSE=	BSD
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	proxsmtpd

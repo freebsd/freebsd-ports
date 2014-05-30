@@ -10,33 +10,23 @@ MASTER_SITES=	http://www.sheltonsoft.ru/fileZ/software/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rich-featured multi-windows console text editor
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_AUTOTOOLS=	autoconf aclocal
 
 ACLOCAL_ARGS+=	-I m4
-
 MAKE_ENV+=	LIBPATH=${PREFIX}/lib
 
-MAN1=		y.1
+BROKEN_sparc64=	Does not compile on sparc64
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
-	${LN} -sf ${PREFIX}/lib/yui/help_eng.html ${PREFIX}/lib/yui/yhelp.html
-
+	${LN} -sf ${STAGEDIR}${PREFIX}/lib/yui/help_eng.html ${PREFIX}/lib/yui/yhelp.html
 .if $(PORT_OPTIONS:MDOCS)
-
-	@${MKDIR} ${DOCSDIR}
-
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in BUGS CHANGES COPYRIGHT TODO COPYRIGHT.ITK THANKS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

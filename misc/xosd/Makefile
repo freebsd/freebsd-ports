@@ -3,7 +3,7 @@
 
 PORTNAME=	xosd
 PORTVERSION=	2.2.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	SF/libxosd/libxosd/${PORTNAME}-${PORTVERSION}
 
@@ -12,16 +12,17 @@ COMMENT=	X11 on-screen-display program and library
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake pkgconfig libtool
 USE_CSTD=	gnu89
 USE_XORG=	x11 xext xt sm ice
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
 		LOCALBASE='${LOCALBASE}' \
 		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}'
 CONFIGURE_ARGS=	--disable-beep_media_player_plugin --disable-new-plugin
 PATCH_STRIP=	-p1
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS ChangeLog TODO
 

@@ -1,0 +1,4 @@
+Dee is a shared library that provides objects that help having multiple
+instances communicating over DBus.
+
+WWW: https://launchpad.net/dee

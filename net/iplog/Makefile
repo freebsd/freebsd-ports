@@ -10,7 +10,7 @@ MASTER_SITES=	SF/ojnk/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	TCP/IP traffic logging tool
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/epuzanov/${ZPACKPREFIX}${PORTNAME}/tarball/dellmon-2.4/
 DISTNAME=	epuzanov-${ZPACKPREFIX}${PORTNAME}-dellmon-2.4-0-g9697659
 
-MAINTAINER=	zenoss@experts-exchange.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides additional monitoring options for Dell machines
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}

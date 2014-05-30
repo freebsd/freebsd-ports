@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 USE_GNOME=	gnomehack gnomeprefix gtk20 libgnome librsvg2
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

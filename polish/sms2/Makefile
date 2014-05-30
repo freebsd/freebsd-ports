@@ -13,6 +13,9 @@ MASTER_SITES=	http://ceti.pl/~miki/komputery/download/sms/ \
 MAINTAINER=	pyzmen@kam.pl
 COMMENT=	Send SMS to cellular phones in Poland (Idea, ERA, Plus)
 
+DEPRECATED=	sms2 is no longer being developed, consider using alternative software.
+EXPIRATION_DATE=2014-06-30
+
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		gdbm.4:${PORTSDIR}/databases/gdbm \
@@ -20,7 +23,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 LATEST_LINK=	sms2
 
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

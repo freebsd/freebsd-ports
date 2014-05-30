@@ -32,4 +32,7 @@ extra_commands="reload"
 
 load_rc_config $name
 command_args="-u ${dtcpc_username} ${dtcpc_server}"
+if [ -n "${dtcpc_fib}" ]; then
+	command_args="-F ${dtcpc_fib} ${command_args}"
+fi
 run_rc_command "$1"

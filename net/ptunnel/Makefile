@@ -13,7 +13,7 @@ COMMENT=	Tunneling TCP connections over ICMP echo request and reply
 LICENSE=	BSD3CLAUSE
 
 WRKSRC=		${WRKDIR}/PingTunnel
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/ptunnel man/man8/ptunnel.8.gz
 

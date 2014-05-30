@@ -15,7 +15,7 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	all build_openssl
 MAKE_JOBS_UNSAFE=	yes
 

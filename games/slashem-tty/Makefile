@@ -11,7 +11,7 @@ DISTNAME=	se${PORTVERSION:S/.//g:tl}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A dungeon explorin', slashin', hackin' game
 
-USE_GMAKE=	yes
+USES=		gmake
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES+=	pkg-deinstall
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 recover.6 slashem.6

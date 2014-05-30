@@ -3,7 +3,7 @@
 
 PORTNAME=	Wnn7
 PORTVERSION=	2001.10.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.omronsoft.co.jp/SP/pcunix/sdk/wnn/
 PKGNAMESUFFIX=	-lib
@@ -14,13 +14,11 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn7 client library
 
 USES=		imake
-USE_GCC=	any
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \

@@ -13,7 +13,7 @@ COMMENT=	Transparent remote file access tool for emacsen
 
 USE_EMACS=	yes
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	autoconf
 
 TRAMP_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

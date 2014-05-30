@@ -12,7 +12,7 @@ COMMENT=	Advanced Disk Imager
 LIB_DEPENDS=	afflib:${PORTSDIR}/sysutils/afflib
 
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/aimage

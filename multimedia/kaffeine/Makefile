@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/ca.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,7 +24,6 @@ USES=		cmake gettext gmake
 USE_LDCONFIG=		yes
 USE_XORG=	xscrnsaver
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,add_subdirectory(x-test),,' ${WRKSRC}/po/CMakeLists.txt
 

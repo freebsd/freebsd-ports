@@ -12,7 +12,7 @@ COMMENT=	Utilities for the PalmOS flat-file database programs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libpdbtools.so \

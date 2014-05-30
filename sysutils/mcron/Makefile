@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	mcron
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.8
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	mcron
+MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 100% compatible replacement for Vixie cron
+MAINTAINER=	johans@FreeBSD.org
+COMMENT=	100% compatible replacement for Vixie cron
 
-BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	guile2>=2.0:${PORTSDIR}/lang/guile2
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
 INFO=		mcron
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

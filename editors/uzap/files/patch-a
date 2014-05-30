@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Mar 30 10:04:11 1989
-+++ Makefile	Sun Oct 19 02:17:28 2003
+--- Makefile.orig	1989-03-31 02:04:11.000000000 +0800
++++ Makefile	2014-05-27 21:34:34.280623089 +0800
 @@ -1,26 +1,28 @@
  # Makefile for Uzap.
 -BINDIR = /usr/local
@@ -34,8 +34,8 @@
  install: uzap
 -	install -s -m 771 uzap $(BINDIR)
 -	install -c -m 664 uzap.man $(MANDIR)/uzap.$(MSECT)
-+	install -s -m 755 -o bin -g bin uzap $(BINDIR)
-+	install -c -m 644 -o bin -g bin uzap.man $(MANDIR)/uzap.$(MSECT)
++	install -s -m 755 -o bin -g bin uzap $(DESTDIR)$(BINDIR)
++	install -c -m 644 -o bin -g bin uzap.man $(DESTDIR)$(MANDIR)/uzap.$(MSECT)
  
  clean:
 -	rm -f *.o core uzap

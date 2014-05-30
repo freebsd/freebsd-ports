@@ -1,6 +1,5 @@
 bin/nano
 bin/rnano
-info/dir
 man/man1/nano.1.gz
 man/man1/rnano.1.gz
 man/man5/nanorc.5.gz
@@ -51,6 +50,7 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/cmake.nanorc
 %%DATADIR%%/css.nanorc
 %%DATADIR%%/debian.nanorc
+%%DATADIR%%/default.nanorc
 %%DATADIR%%/fortran.nanorc
 %%DATADIR%%/gentoo.nanorc
 %%DATADIR%%/go.nanorc
@@ -58,6 +58,7 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/html.nanorc
 %%DATADIR%%/java.nanorc
 %%DATADIR%%/javascript.nanorc
+%%DATADIR%%/json.nanorc
 %%DATADIR%%/lua.nanorc
 %%DATADIR%%/makefile.nanorc
 %%DATADIR%%/man.nanorc
@@ -77,6 +78,7 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/spec.nanorc
 %%DATADIR%%/tcl.nanorc
 %%DATADIR%%/tex.nanorc
+%%DATADIR%%/texinfo.nanorc
 %%DATADIR%%/xml.nanorc
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
@@ -84,4 +86,7 @@ man/man5/nanorc.5.gz
 %%NLS%%%%DOCSDIR%%/fr/nanorc.5.html
 %%NLS%%%%DOCSDIR%%/fr/rnano.1.html
 %%NLS%%@dirrm %%DOCSDIR%%/fr
+@dirrmtry man/fr/man1
+@dirrmtry man/fr/man5
+@dirrmtry man/fr
 @dirrmtry %%DATADIR%%

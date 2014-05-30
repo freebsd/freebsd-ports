@@ -383,9 +383,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (libtool, autoconf, autoheader, automake et al.)
 #				  See bsd.autotools.mk for more details.
 ##
-# USE_SCONS		- If set, this port uses the Python-based SCons build system
-#				  See bsd.scons.mk for more details.
-##
 # USE_EFL		- If set, this port use EFL libraries.
 #				  Implies inclusion of bsd.efl.mk.  (Also see
 #				  that file for more information on USE_EFL_*).
@@ -1516,10 +1513,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
-.if defined(USE_GMAKE)
-USES+=	gmake
-.endif
-
 .if !defined(UID)
 UID!=	${ID} -u
 .endif
@@ -1622,9 +1615,11 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 
 # Reset value from bsd.own.mk.
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+.if !defined(INSTALL_STRIPPED)
 STRIP=	#none
 MAKE_ENV+=	DONTSTRIP=yes
 STRIP_CMD=	${TRUE}
+.endif
 DEBUG_FLAGS?=	-g
 CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
 .if defined(INSTALL_TARGET)
@@ -1801,10 +1796,6 @@ IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps
 RUN_DEPENDS+=	${LINUX_BASE_PORT}
 .endif
 
-.if defined(USE_DISPLAY)
-USES+=	display
-.endif
-
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
 _GL_glesv2_LIB_DEPENDS=		libGLESv2.so:${PORTSDIR}/graphics/libglesv2
@@ -1889,10 +1880,6 @@ IGNORE=	Do not define STAGEDIR in command line
 
 .if defined(USE_QT4) || defined(USE_QT5)
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
-.endif
-
-.if defined(USE_SCONS)
-.include "${PORTSDIR}/Mk/bsd.scons.mk"
 .endif
 
 .if defined(USE_SDL) || defined(WANT_SDL)
@@ -3338,6 +3325,8 @@ check-vulnerable:
 			${ECHO_MSG} "===>  ${PKGNAME} has known vulnerabilities:"; \
 			${ECHO_MSG} "$$vlist"; \
 			${ECHO_MSG} "=> Please update your ports tree and try again."; \
+			${ECHO_MSG} "=> Note: Vulnerable ports are marked as such even if there is no update available."; \
+			${ECHO_MSG} "=> If you wish to ignore this vulnerability rebuild with 'make DISABLE_VULNERABILITIES=yes'"; \
 			exit 1; \
 		fi; \
 	fi
@@ -3387,8 +3376,8 @@ do-fetch:
 				fi; \
 			fi; \
 			${ECHO_MSG} "=> $$file doesn't seem to exist in ${_DISTDIR}."; \
-			if [ ! -w ${DISTDIR} ]; then \
-			   ${ECHO_MSG} "=> ${DISTDIR} is not writable by you; cannot fetch."; \
+			if [ ! -w ${_DISTDIR} ]; then \
+			   ${ECHO_MSG} "=> ${_DISTDIR} is not writable by you; cannot fetch."; \
 			   exit 1; \
 			fi; \
 			if [ ! -z "$$select" ] ; then \
@@ -4819,6 +4808,7 @@ checksum: fetch check-checksum-algorithms
 		fi; \
 	elif [ -n "${_CKSUMFILES:M*}" ]; then \
 		${ECHO_MSG} "=> No checksum file (${DISTINFO_FILE})."; \
+		exit 1; \
 	fi
 .endif
 
@@ -4967,7 +4957,7 @@ ${deptype:tl}-depends:
 					inverse_dep=`${ECHO_CMD} $$prog | ${SED} \
 						-e 's/<=/=gt=/; s/</=ge=/; s/>=/=lt=/; s/>/=le=/' \
 						-e 's/=gt=/>/; s/=ge=/>=/; s/=lt=/</; s/=le=/<=/'`; \
-					pkg_info=`${PKG_INFO} -E "$$inverse_dep" || ${TRUE}`; \
+					pkg_info=`${PKG_INFO} -E "$$inverse_dep" 2>/dev/null || ${TRUE}`; \
 					if [ "$$pkg_info" != "" ]; then \
 						${ECHO_MSG} "===>   Found $$pkg_info, but you need to upgrade to $$prog."; \
 						exit 1; \
@@ -6532,7 +6522,7 @@ _STAGE_SUSEQ=	create-users-groups do-install \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-plist-sequence
+				move-uniquefiles-plist fix-plist-sequence fix-packlist
 .if defined(DEVELOPER)
 _STAGE_SUSEQ+=	stage-qa
 .endif

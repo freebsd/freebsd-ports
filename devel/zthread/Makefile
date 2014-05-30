@@ -3,7 +3,7 @@
 
 PORTNAME=	zthread
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/ZThread/${PORTVERSION}
 DISTNAME=	ZThread-${PORTVERSION}
@@ -11,12 +11,10 @@ DISTNAME=	ZThread-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform-independent object-oriented C++ threading library
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-ftime --disable-static
-USES=		gmake
 MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
-MAKE_ENV+=	SED=sed # req'd for LIBTOOL?!
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -34,5 +32,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libZThread.so
 
 .include <bsd.port.mk>

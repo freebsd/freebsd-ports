@@ -17,8 +17,6 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-PLIST_FILES=	bin/audiopreview
-MAN1=		audiopreview.1
+PLIST_FILES=	bin/audiopreview man/man1/audiopreview.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ PORTVERSION=	2.1.0
 CATEGORIES=	shells
 MASTER_SITES=	http://fishshell.com/files/${PORTVERSION}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	freebsd.users@gmail.com
 COMMENT=	User friendly command line shell
 
 LICENSE=	GPLv2

@@ -3,12 +3,12 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.49
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Common Lisp implementation
+COMMENT=	Common Lisp implementation
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GNU-GPL
@@ -28,7 +28,7 @@ WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${MANPREFIX}/man" \
 		--elispdir="${DATADIR}/emacs" --vimdir="${DATADIR}/vim" \
-		--docdir="${DOCSDIR}"
+		--docdir="${DOCSDIR}" --with-libiconv=${ICONV_PREFIX}
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 # Complaints if the environment changes between build stages.
 MAKE_ENV=	${CONFIGURE_ENV}

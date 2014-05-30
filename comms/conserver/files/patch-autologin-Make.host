@@ -5,7 +5,7 @@
  BINDIR=	${DESTDIR}/etc
  ',`
 -BINDIR=	${DESTDIR}/usr/local/etc
-+BINDIR=	${PREFIX}/sbin
++BINDIR=	${DESTDIR}${PREFIX}/sbin
  ')`
  
  INCLUDE=

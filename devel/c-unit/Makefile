@@ -12,7 +12,7 @@ COMMENT=	Unit testing framework for C
 CONFLICTS=	cunit-[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	autoheader
 USE_LDCONFIG=	yes
 

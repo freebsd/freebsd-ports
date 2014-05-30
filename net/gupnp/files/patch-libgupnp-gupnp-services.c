@@ -1,14 +1,6 @@
---- libgupnp/gupnp-service.c.orig	2013-02-20 20:35:57.000000000 +0800
-+++ libgupnp/gupnp-service.c	2013-03-15 16:04:28.277418472 +0800
-@@ -30,6 +30,7 @@
- #include <gobject/gvaluecollector.h>
- #include <gmodule.h>
- #include <libsoup/soup-date.h>
-+#include <libsoup/soup-date.h>
- #include <string.h>
- #include "gupnp-service.h"
- #include "gupnp-root-device.h"
-@@ -43,6 +44,8 @@
+--- libgupnp/gupnp-service.c.orig	2014-05-04 20:49:23.000000000 +0800
++++ libgupnp/gupnp-service.c	2014-05-28 13:01:03.041207000 +0800
+@@ -45,6 +45,8 @@
  
  #ifdef G_OS_WIN32
  #include <rpc.h>
@@ -17,7 +9,7 @@
  #else
  #include <uuid/uuid.h>
  #endif
-@@ -1100,9 +1103,19 @@
+@@ -1110,9 +1112,19 @@
  #else
          uuid_t id;
          char out[39];

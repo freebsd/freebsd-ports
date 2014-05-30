@@ -12,7 +12,7 @@ COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	_LDFLAGS="${LDFLAGS}"
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
 

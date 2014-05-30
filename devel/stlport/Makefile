@@ -11,11 +11,11 @@ DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptation of SGI\'s Standard Template Library
 
-USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/build/lib
 PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
-USE_GMAKE=	yes
+
+USES=		gmake tar:bzip2
 USE_GCC=	any
 COMPILER?=	gcc
 MAKEFILE=	${COMPILER}.mak

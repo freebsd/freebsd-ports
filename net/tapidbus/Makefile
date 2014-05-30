@@ -3,19 +3,19 @@
 
 PORTNAME=	tapidbus
 PORTVERSION=	0.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF/tapioca-voip/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction layer for interprocess communication
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
+USES=		pathfix pkgconfig gmake libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
-USES=		pathfix pkgconfig gmake
 USE_GNOME=	glib20
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -1,4 +1,5 @@
 bin/atari800
+man/man1/atari800.1.gz
 %%DATADIR%%/atari800.cfg
 %%DATADIR%%/ataribas.rom
 %%DATADIR%%/atariosb.rom
@@ -12,7 +13,6 @@ bin/atari800
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE

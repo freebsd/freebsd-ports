@@ -13,7 +13,7 @@ COMMENT=	PHP module wich connects the PHP object with the Java/ECMA 335 object
 
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 

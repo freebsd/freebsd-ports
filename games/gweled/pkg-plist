@@ -1,7 +1,13 @@
 bin/gweled
 share/applications/gweled.desktop
-@unexec [ -s %D/share/games/gweled.easy.scores ] || rm -f %D/share/games/gweled.easy.scores
-@unexec [ -s %D/share/games/gweled.timed.scores ] || rm -f %D/share/games/gweled.timed.scores
+@owner games
+@group games
+@mode 0644
+@sample share/games/gweled.easy.scores.sample
+@sample share/games/gweled.timed.scores.sample
+@owner
+@group
+@mode
 share/gweled/gweled.glade
 share/gweled/gweled_icon.png
 share/gweled/gweled_logo.png

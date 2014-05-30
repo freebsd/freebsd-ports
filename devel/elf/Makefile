@@ -14,7 +14,7 @@ COMMENT=	A commandline based ELF header analyzer
 MAN1=		elf.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/elf
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 NO_STAGE=	yes

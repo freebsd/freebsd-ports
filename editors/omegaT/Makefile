@@ -20,7 +20,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 USES=		zip
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VENDOR=openjdk
+JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.7+
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
@@ -35,13 +35,13 @@ DESKTOP_ENTRIES="OmegaT" "Translation memory application" \
 		"omegaT" "Office;WordProcessor;Java;" \
 		false
 
-NO_STAGE=	yes
 post-build:
 	@cd ${WRKDIR} && ${MV} 'dist' ${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/omegaT.sh ${PREFIX}/bin/${PORTNAME}
-	@cd ${WRKDIR} && ${COPYTREE_BIN}  ${PORTNAME}  ${JAVASHAREDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/omegat.prefs ${JAVASHAREDIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/omegaT.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
+	@cd ${WRKDIR} && ${COPYTREE_BIN}  ${PORTNAME}  ${STAGEDIR}${JAVASHAREDIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/omegat.prefs ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

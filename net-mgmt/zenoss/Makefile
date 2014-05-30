@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source1 \
 		JSBuilder2.zip:source2
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	zenoss@experts-exchange.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application, server, and network management platform
 
 LICENSE=	GPLv2

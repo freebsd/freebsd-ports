@@ -6,7 +6,7 @@ PORTVERSION=	4.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/old-versions/
 
-MAINTAINER=	question+fbsdports@closedsrc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to test for faulty memory subsystem
 
 LICENSE=	GPLv2

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library supporting Java primitive types
+COMMENT=	Library supporting Java primitive types
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -21,24 +21,23 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	jar
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PORTDOCS=	*
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	javadoc
-PORTDOCS=	LICENSE.txt api
 .endif
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [DONE]"
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/target/docs && ${FIND} api \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
-	@${ECHO_MSG} " [DONE]"
+	${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/target/docs && ${COPYTREE_SHARE} api ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

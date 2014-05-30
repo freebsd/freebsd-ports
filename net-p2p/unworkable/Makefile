@@ -11,10 +11,9 @@ COMMENT=	A Free BitTorrent Implementation
 
 LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
-USE_SCONS=	yes
+USES=		scons
 USE_OPENSSL=	yes
 
-SCONS_BUILDENV=	${SCONS_ENV}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/unworkable man/man1/unworkable.1.gz

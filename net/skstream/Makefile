@@ -10,8 +10,7 @@ MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28network%20lib%29/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An iostream based C++ socket library
 
-USE_GMAKE=	yes
-USES=		pathfix pkgconfig compiler:c++11-lib
+USES=		pathfix pkgconfig compiler:c++11-lib gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

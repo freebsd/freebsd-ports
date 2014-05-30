@@ -4,7 +4,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.10.9
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -21,6 +21,7 @@ CONFIGURE_ARGS?=--disable-gtkui \
 		--enable-static \
 		--disable-nm
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALL_TARGET=	install-strip
 
 .if !defined(PIDGIN_SLAVE)

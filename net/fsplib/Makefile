@@ -10,20 +10,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library implementing FSP protocol
 
 NO_WRKSUBDIR=	yes
-USE_SCONS=	yes
-SCONS_ARGS=	prefix=${PREFIX}
+USES=		scons
+MAKE_ARGS=	prefix=${PREFIX}
 
 PLIST_FILES=	include/fsplib.h lib/libfsplib.a
 
 OPTIONS_DEFINE=	SHARED
 SHARED_DESC=	Install shared library (EXPERIMENTAL)
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+SHARED_MAKE_ARGS+=	enable-shared=1
+SHARED_PLIST_FILES=	lib/libfsplib.so.0.0.0
 
-.if ${PORT_OPTIONS:MSHARED}
-SCONS_ARGS+=	enable-shared=1
-PLIST_FILES+=	lib/libfsplib.so.0.0.0
-.endif
+INSTALL_TARGET=	install prefix=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

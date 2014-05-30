@@ -48,7 +48,7 @@ do-install:
 			${STAGEDIR}${PREFIX}/lib/jitsi/lib
 # Native libraries
 	@${ECHO_CMD} ">> Installing native (${ARCH}) libraries..."
-	@cd ${WRKSRC}/lib/native/freebsd${ARCH:S/i386//:S/amd/-/} && \
+	@cd ${WRKSRC}/lib/native/freebsd${ARCH:S/i386//:S/amd/-/:S/x86_/-/} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/jitsi/lib/native
 # Wrapper script to run Jitsi
 	@${ECHO_CMD} ">> Installing wrapper script..."

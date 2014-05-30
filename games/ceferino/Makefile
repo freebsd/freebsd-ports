@@ -12,7 +12,7 @@ COMMENT=	Game similar to Super Pang
 
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
 

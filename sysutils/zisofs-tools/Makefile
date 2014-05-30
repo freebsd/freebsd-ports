@@ -14,8 +14,7 @@ COMMENT=	User utilities for zisofs
 PORTDOCS=	CHANGES COPYING INSTALL MRULES README
 
 USE_AUTOTOOLS=	autoconf
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"

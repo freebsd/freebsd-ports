@@ -1,6 +1,15 @@
-libexec/cfengine/libpromises.la
 libexec/cfengine/libpromises.so
 libexec/cfengine/libpromises.so.1
+libexec/cfengine/libpromises.so.1.0.0
+man/man8/cf-agent.8.gz
+man/man8/cf-execd.8.gz
+man/man8/cf-key.8.gz
+man/man8/cf-know.8.gz
+man/man8/cf-monitord.8.gz
+man/man8/cf-promises.8.gz
+man/man8/cf-report.8.gz
+man/man8/cf-runagent.8.gz
+man/man8/cf-serverd.8.gz
 sbin/cf-agent
 sbin/cf-execd
 sbin/cf-key
@@ -261,3 +270,10 @@ share/cfengine/CoreBase/promises.cf
 @dirrm share/cfengine/CoreBase
 @dirrm share/cfengine
 @dirrm libexec/cfengine
+@unexec rmdir "/var/cfengine/inputs" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine/masterfiles" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine/modules" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine/outputs" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine/ppkeys" >/dev/null 2>&1 || :
+@unexec rmdir "/var/cfengine" >/dev/null 2>&1 || :
+

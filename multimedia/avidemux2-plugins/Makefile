@@ -16,7 +16,6 @@ RUN_DEPENDS=	avidemux2_cli:${PORTSDIR}/multimedia/avidemux2
 MASTERDIR=	${.CURDIR}/../avidemux2
 PLIST=		${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CMAKE_ARGS+=	-DAVIDEMUX_SOURCE_DIR=${WRKSRC} -DAVIDEMUX_INSTALL_PREFIX:PATH="${PREFIX}" -DAVIDEMUX_CORECONFIG_DIR=${CONFIGURE_WRKSRC}/config

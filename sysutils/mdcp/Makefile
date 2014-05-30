@@ -10,7 +10,7 @@ MAINTAINER=	wamonzyne@hotmail.com
 COMMENT=	A fastest utility for copy from a disk device for many
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	sbin/mdcp
 

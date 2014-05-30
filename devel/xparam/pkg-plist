@@ -82,7 +82,6 @@ include/xparam/xpv_value_imp.h
 include/xparam.h
 include/xparam_extend.h
 lib/libxparam.a
-lib/libxparam.la
 lib/libxparam.so
 lib/libxparam.so.1
 @dirrm include/xparam

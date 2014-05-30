@@ -70,7 +70,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
-USE_DISPLAY=	yes
 USES=		perl5 gettext
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes

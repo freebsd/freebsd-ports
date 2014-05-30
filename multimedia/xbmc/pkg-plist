@@ -707,6 +707,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Turkish/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Ukrainian/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Uzbek/strings.po
+%%DATADIR%%/addons/skin.confluence/language/Vietnamese (Viet Nam)/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Vietnamese/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Welsh/strings.po
 %%DATADIR%%/addons/skin.confluence/media/CalibrateBottomRight.png
@@ -1483,6 +1484,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.vortex/resources/language/Portuguese/strings.po
 %%DATADIR%%/addons/visualization.vortex/resources/language/Romanian/strings.po
 %%DATADIR%%/addons/visualization.vortex/resources/language/Russian/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/Serbian/strings.po
 %%DATADIR%%/addons/visualization.vortex/resources/language/Slovak/strings.po
 %%DATADIR%%/addons/visualization.vortex/resources/language/Slovenian/strings.po
 %%DATADIR%%/addons/visualization.vortex/resources/language/Spanish (Argentina)/strings.po
@@ -1724,16 +1726,15 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Vietnamese/strings.po
 %%DATADIR%%/language/Welsh/langinfo.xml
 %%DATADIR%%/language/Welsh/strings.po
-%%DATADIR%%/media/AppIcon.png
 %%DATADIR%%/media/Fonts/arial.ttf
 %%DATADIR%%/media/Fonts/teletext.ttf
 %%DATADIR%%/media/Splash.png
-%%DATADIR%%/media/icon-flat-120x120.png
-%%DATADIR%%/media/icon-flat-256x256.png
-%%DATADIR%%/media/icon.png
+%%DATADIR%%/media/icon120x120.png
+%%DATADIR%%/media/icon16x16.png
+%%DATADIR%%/media/icon256x256.png
 %%DATADIR%%/media/icon32x32.png
+%%DATADIR%%/media/icon48x48.png
 %%DATADIR%%/media/weather.zip
-%%DATADIR%%/media/xbmc.icns
 %%DATADIR%%/sounds/Bursting Bubbles/nav.wav
 %%DATADIR%%/sounds/Bursting Bubbles/sounds.xml
 %%DATADIR%%/system/IRSSmap.xml
@@ -2067,6 +2068,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Spanish
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Slovenian
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Slovak
+@dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Serbian
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Russian
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Romanian
 @dirrmtry %%DATADIR%%/addons/visualization.vortex/resources/language/Portuguese (Brazil)
@@ -2340,6 +2342,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/skin.confluence/media/CenterRating
 @dirrmtry %%DATADIR%%/addons/skin.confluence/media
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Welsh
+@dirrmtry %%DATADIR%%/addons/skin.confluence/language/Vietnamese (Viet Nam)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Vietnamese
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Uzbek
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Ukrainian

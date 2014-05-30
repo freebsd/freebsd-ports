@@ -51,9 +51,9 @@ include/gmime-2.0/gmime/gmime.h
 include/gmime-2.0/gmime/internet-address.h
 lib/gmimeConf.sh
 lib/libgmime-2.0.a
-lib/libgmime-2.0.la
 lib/libgmime-2.0.so
-lib/libgmime-2.0.so.4
+lib/libgmime-2.0.so.2
+lib/libgmime-2.0.so.2.2.27
 libdata/pkgconfig/gmime-2.0.pc
 @dirrm include/gmime-2.0/gmime
 @dirrm include/gmime-2.0

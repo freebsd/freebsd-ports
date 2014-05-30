@@ -2,6 +2,8 @@ bin/lpmud-hname
 bin/lpmud-oconv
 etc/dgd-lpmud/lpmud.dgd
 etc/rc.d/dgd-lpmud.sh.sample
+@owner mud
+@group mud
 %%DATADIR%%/lpmud/ACCESS.ALLOW.example
 %%DATADIR%%/lpmud/ACCESS.DENY.example
 %%DATADIR%%/lpmud/Copyright
@@ -602,6 +604,8 @@ etc/rc.d/dgd-lpmud.sh.sample
 %%DATADIR%%/lpmud/room/wiz_hall.c
 %%DATADIR%%/lpmud/room/yard.c
 %%DATADIR%%/lpmud/unistn1e.debug.log
+@owner
+@group
 %%PORTDOCS%%%%DOCSDIR%%/README
 @exec mkdir -p %D/%%DATADIR%%/tmp
 @exec ln -sf %D/share/doc/dgd/kfun %D/%%DATADIR%%/lpmud/doc

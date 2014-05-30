@@ -13,9 +13,8 @@ include/gtkDPS/gtkDPSpaintsel.h
 include/gtkDPS/gtkDPSwidget.h
 include/gtkDPS/parseAFM.h
 lib/libgtkDPS.a
-lib/libgtkDPS.la
 lib/libgtkDPS.so
-lib/libgtkDPS.so.1
+lib/libgtkDPS.so.1.0.0
 share/aclocal/gtkDPS.m4
 %%NLS%%share/locale/ja/LC_MESSAGES/gtkDPS.mo
 @dirrm include/gtkDPS

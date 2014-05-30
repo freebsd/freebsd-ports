@@ -35,10 +35,9 @@ BUILD_DEPENDS=	p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
 		p5-Tk-Getopt>=0:${PORTSDIR}/x11-toolkits/p5-Tk-Getopt \
 		p5-Tk-TableMatrix>=0:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix
 
-USE_GMAKE=	yes
 #IS_INTERACTIVE=	yes
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 gmake
 USE_OPENLDAP=	yes
 
 INSTALL_TARGET=	node

@@ -9,7 +9,7 @@ MASTER_SITES=	http://people.csail.mit.edu/jrennie/ifile/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application of machine learning to e-mail filtering
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 

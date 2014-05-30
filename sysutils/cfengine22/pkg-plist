@@ -1,4 +1,3 @@
-lib/libcfengine.la
 lib/libcfengine.a
 sbin/cfagent
 sbin/cfdoc
@@ -56,8 +55,3 @@ man/man8/cfshow.8.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@unexec rmdir "/var/cfengine/inputs" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/modules" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/outputs" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine/ppkeys" >/dev/null 2>&1 || :
-@unexec rmdir "/var/cfengine" >/dev/null 2>&1 || :

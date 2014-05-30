@@ -1,5 +1,5 @@
-etc/hawk/daemon.conf.sample
-etc/hawk/php.conf.sample
+%%ETCDIR%%/daemon.conf.sample
+%%ETCDIR%%/php.conf.sample
 sbin/hawk
 %%WWWDIR%%/images/bluesphere.png
 %%WWWDIR%%/images/favicon.ico
@@ -15,6 +15,6 @@ sbin/hawk
 %%PORTDOCS%%%%DOCSDIR%%/create_hawk_db.sql
 %%PORTDOCS%%%%DOCSDIR%%/create_hawk_user.sql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/hawk
+@dirrmtry %%ETCDIR%%
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%

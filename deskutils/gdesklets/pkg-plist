@@ -430,7 +430,6 @@ lib/gdesklets/libdesklets/system/Swap.pyo
 lib/gdesklets/libdesklets/system/__init__.py
 lib/gdesklets/libdesklets/system/__init__.pyc
 lib/gdesklets/libdesklets/system/__init__.pyo
-lib/gdesklets/libdesklets/system/gtop.la
 lib/gdesklets/libdesklets/system/gtop.so
 lib/gdesklets/macros/python-include.m4
 lib/gdesklets/main/AboutDialog.py
@@ -669,9 +668,7 @@ lib/gdesklets/utils/logger.pyo
 lib/gdesklets/utils/pwstore.py
 lib/gdesklets/utils/pwstore.pyc
 lib/gdesklets/utils/pwstore.pyo
-lib/gdesklets/utils/svg.la
 lib/gdesklets/utils/svg.so
-lib/gdesklets/utils/tiling.la
 lib/gdesklets/utils/tiling.so
 lib/gdesklets/utils/typeconverter.py
 lib/gdesklets/utils/typeconverter.pyc
@@ -682,11 +679,11 @@ lib/gdesklets/utils/vfs.pyo
 lib/gdesklets/utils/wallpaper.py
 lib/gdesklets/utils/wallpaper.pyc
 lib/gdesklets/utils/wallpaper.pyo
-lib/gdesklets/utils/x11.la
 lib/gdesklets/utils/x11.so
 lib/gdesklets/utils/xdr.py
 lib/gdesklets/utils/xdr.pyc
 lib/gdesklets/utils/xdr.pyo
+man/man1/gdesklets.1.gz
 share/applications/gdesklets.desktop
 %%DATADIR%%/Displays/.keep_me
 %%DATADIR%%/Sensors/.keep_me
@@ -736,8 +733,10 @@ share/locale/vi/LC_MESSAGES/gdesklets.mo
 share/locale/zh_CN/LC_MESSAGES/gdesklets.mo
 share/locale/zh_HK/LC_MESSAGES/gdesklets.mo
 share/locale/zh_TW/LC_MESSAGES/gdesklets.mo
+share/mime/application/x-gdesklets-display.xml
 share/mime/packages/gdesklets.xml
 share/pixmaps/gdesklets.png
+@dirrmtry share/mime/application
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -810,3 +809,4 @@ share/pixmaps/gdesklets.png
 @dirrm lib/gdesklets
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/icons/gnome/48x48/mimetypes

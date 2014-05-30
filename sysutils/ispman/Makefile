@@ -32,8 +32,7 @@ RUN_DEPENDS=	p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced\
 		p5-I18N-LangTags>=0:${PORTSDIR}/misc/p5-I18N-LangTags \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake
 
 ALL_TARGET=	ispman
 HAS_CONFIGURE=	yes

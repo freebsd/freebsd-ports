@@ -47,9 +47,9 @@ GTA_DESC=	GTA file format support
 VNC_DESC=	LibVNCServer support
 SDL_DESC=	Use SDL (joystick support in present3d)
 NVTT_DESC=	Use NVidia texture tools
-LUA_DESC=	Lua strict engine support
-V8_DESC=	V8 script  engine support
-PYTHON_DESC=	Python strict engine support
+LUA_DESC=	Lua script engine support
+V8_DESC=	V8 script engine support
+PYTHON_DESC=	Python script engine support
 
 OPTIONS_SUB=	yes
 

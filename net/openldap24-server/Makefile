@@ -64,9 +64,10 @@ PORTREVISION_SERVER=	1
 OPENLDAP_SHLIB_MAJOR=	8
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
-OPTIONS_DEFINE=	FETCH
+OPTIONS_DEFINE=		FETCH GSSAPI
 
-FETCH_DESC=	Enable fetch(3) support
+FETCH_DESC=		Enable fetch(3) support
+GSSAPI_DESC=		With GSSAPI support (implies SASL support)
 
 .if !defined(CLIENT_ONLY)
 OPTIONS_DEFINE+=	DYNACL ACI BDB MDB DNSSRV PASSWD PERL RELAY SHELL
@@ -144,10 +145,17 @@ BROKEN=			You have 'USE_OPENLDAP' variable defined either in environment or in m
 USE_OPENLDAP=		yes
 WANT_OPENLDAP_VER=	24
 
+.if ${PORT_OPTIONS:MGSSAPI} && empty(PORT_OPTIONS:MSASL)
+PORT_OPTIONS+=	SASL
+.endif
+
 .if ${PORT_OPTIONS:MSASL}
 WANT_OPENLDAP_SASL=	yes
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.*
 PKGNAMESUFFIX=		-sasl-server
+.if ${PORT_OPTIONS:MGSSAPI}
+RUN_DEPENDS+=		cyrus-sasl-gssapi>0:${PORTSDIR}/security/cyrus-sasl2-gssapi
+.endif
 .else
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif

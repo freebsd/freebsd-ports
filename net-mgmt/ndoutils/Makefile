@@ -1,76 +1,60 @@
 # $FreeBSD$
 
 PORTNAME=	ndoutils
-PORTVERSION=	1.4b8
-PORTREVISION=	6
+PORTVERSION=	2.0.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/nagios/${PORTNAME}-1.x/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Keep Nagios perfdata in MySQL or Postgresql database
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Keep Nagios perfdata in MySQL database
 
-RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
-
-OPTIONS_MULTI=		BACKEND
-OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
-OPTIONS_DEFAULT=	MYSQL
-MYSQL_DESC=		MySQL backend support
-PGSQL_DESC=		Postgresql backend support
-
-MAKE_JOBS_UNSAFE=	yes
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils \
+			--localstatedir=/var/run --enable-mysql \
+			--with-mysql=${LOCALBASE}
 
-CFG_FILES=	misccommands ndo2db ndomod
+OPTIONS_DEFINE=	DOCS NANOSLEEP
+OPTIONS_SINGLE=		NAGIOS_BACKEND
+OPTIONS_SINGLE_NAGIOS_BACKEND=	NAGIOS3X NAGIOS4X
+OPTIONS_DEFAULT=	NAGIOS3X NANOSLEEP
+NAGIOS3X_DESC=		For Nagios 3.X Series
+NAGIOS4X_DESC=		For Nagios 4.X Series
+NANOSLEEP_DESC=		Use of nanosleep in event timing
+NAGIOS3X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
+NAGIOS4X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios4
+NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
 
+USE_MYSQL=	yes
 USES=		perl5
 USE_RC_SUBR=	ndo2db
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=yes
-CONFIGURE_ARGS+=	--enable-mysql \
-					--with-mysql-lib=${LOCALBASE}/lib/mysql \
-					--with-mysql-inc=${LOCALBASE}/include
-.else
-CONFIGURE_ARGS+=	--disable-mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=yes
-CONFIGURE_ARGS+=	--enable-pgsql \
-					--with-pgsql-lib=${LOCALBASE}/lib/pgsql \
-					--with-pgsql-inc=${LOCALBASE}/include/pgsql
-.else
-CONFIGURE_ARGS+=	--disable-pgsql
-.endif
-
-.if !defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
-.endif
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/ndo2db-3x ${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/ndomod-3x.o ${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/file2sock ${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/log2ndo ${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/sockdebug ${PREFIX}/bin/
-	@(cd ${WRKSRC}/db && ${COPYTREE_SHARE} \* ${DATADIR}/)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/)
+	${INSTALL_PROGRAM} ${WRKSRC}/src/file2sock ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/log2ndo ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/sockdebug ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/db && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/)
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/nagios
+	${INSTALL_DATA} ${WRKSRC}/config/misccommands.cfg ${STAGEDIR}${PREFIX}/etc/nagios/misccommands.cfg-sample
+	${INSTALL_DATA} ${WRKSRC}/config/nagios.cfg ${STAGEDIR}${PREFIX}/etc/nagios/ndoutils.cfg-sample
+	${INSTALL_DATA} ${WRKSRC}/config/ndo2db.cfg-sample ${STAGEDIR}${PREFIX}/etc/nagios/ndo2db.cfg-sample
+	${INSTALL_DATA} ${WRKSRC}/config/ndomod.cfg-sample ${STAGEDIR}${PREFIX}/etc/nagios/ndomod.cfg-sample
+.if ${PORT_OPTIONS:MNAGIOS3X}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ndo2db-3x ${STAGEDIR}${PREFIX}/bin/ndo2db
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ndomod-3x.o ${STAGEDIR}${PREFIX}/bin/ndomod.o
 .endif
-	@for i in ${CFG_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/config/$${i}.cfg ${PREFIX}/etc/nagios/$${i}.cfg-sample; \
-	done
-	@${INSTALL_DATA} ${WRKSRC}/config/nagios.cfg ${PREFIX}/etc/nagios/ndoutils.cfg-sample
-	@${CAT} ${PKGMESSAGE}
+.if ${PORT_OPTIONS:MNAGIOS4X}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ndo2db-4x ${STAGEDIR}${PREFIX}/bin/ndo2db
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ndomod-4x.o ${STAGEDIR}${PREFIX}/bin/ndomod.o
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/)
+.endif
 
 .include <bsd.port.mk>

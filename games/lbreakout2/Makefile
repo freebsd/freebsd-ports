@@ -13,7 +13,7 @@ COMMENT=	The polished successor to LBreakout
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_SDL=	mixer net sdl
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sdl-net \
 		--localstatedir=/var/games \

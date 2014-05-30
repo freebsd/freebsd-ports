@@ -5,7 +5,8 @@ PORTNAME=	cfengine
 PORTVERSION=	3.5.3
 PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cfengine.com/source-code/download?file=
+MASTER_SITES=	http://cfengine.com/source-code/download?file= \
+		https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
@@ -24,6 +25,7 @@ CONFLICTS=	cfengine-[234]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
+USES=		libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

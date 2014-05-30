@@ -11,10 +11,8 @@ DISTNAME=	${PORTVERSION}_freera++_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Westwood red alert game engine
 
+USES=		scons
 USE_SDL=	sdl mixer
-USE_SCONS=	yes
-
-SCONS_BUILDENV=	${SCONS_ENV} SDL_CONFIG=${SDL_CONFIG}
 
 WRKSRC=		${WRKDIR}/freera++
 

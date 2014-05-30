@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-0.4-3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synonym, the email message archiver
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4

@@ -17,7 +17,7 @@ NO_LATEST_LINK=	yes
 CONFLICTS=	hping-[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_DIRS+=	lib/hping
 PLIST_FILES=	sbin/hping lib/hping/hpingstdlib.htcl

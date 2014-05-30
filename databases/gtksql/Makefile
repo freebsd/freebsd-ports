@@ -29,6 +29,9 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS+=	-I${LOCALBASE}/include/scintilla -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lscintilla -lscintilla_lexers
 
+PGSQL_USES=	pgsql
+PGSQL_CONFIGURE_WITH=	postgresql
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAVAHI}
@@ -43,12 +46,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include/mysql
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-.else
-CONFIGURE_ARGS+=	--without-postgresql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}

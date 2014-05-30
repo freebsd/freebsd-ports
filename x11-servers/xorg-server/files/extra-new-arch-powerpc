@@ -1,6 +1,27 @@
---- hw/xfree86/os-support/bsd/ppc_video.c.orig	2012-05-17 19:09:03.000000000 +0200
-+++ hw/xfree86/os-support/bsd/ppc_video.c	2013-06-03 13:46:05.165578200 +0200
-@@ -135,7 +135,11 @@
+--- ./hw/xfree86/os-support/bsd/ppc_video.c.orig	2012-05-17 12:09:03.000000000 -0500
++++ ./hw/xfree86/os-support/bsd/ppc_video.c	2014-01-18 14:36:42.000000000 -0600
+@@ -115,17 +115,19 @@
+ Bool
+ xf86EnableIO()
+ {
+-    int fd = xf86Info.consoleFd;
++    int fd = open(DEV_MEM, O_RDWR);
+ 
+     xf86MsgVerb(X_WARNING, 3, "xf86EnableIO %d\n", fd);
+     if (ioBase == MAP_FAILED) {
+         ioBase = mmap(NULL, 0x10000, PROT_READ | PROT_WRITE, MAP_SHARED, fd,
+                       0xf2000000);
+         xf86MsgVerb(X_INFO, 3, "xf86EnableIO: %08x\n", ioBase);
++#if 0 /* Non-fatal */
+         if (ioBase == MAP_FAILED) {
+             xf86MsgVerb(X_WARNING, 3, "Can't map IO space!\n");
+             return FALSE;
+         }
++#endif
+     }
+     return TRUE;
+ }
+@@ -135,7 +137,11 @@
  {
  
      if (ioBase != MAP_FAILED) {

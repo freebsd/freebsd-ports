@@ -6,7 +6,6 @@ PORTREVISION=	2
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
@@ -52,6 +51,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-bo
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-USES=			zope
+USES=			zope zip
 
 .include <bsd.port.mk>

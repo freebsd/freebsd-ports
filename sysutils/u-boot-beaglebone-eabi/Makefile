@@ -16,8 +16,7 @@ COMMENT=	U-Boot loader for BeagleBone and BeagleBone Black
 BUILD_DEPENDS=	arm-eabi-gcc:${PORTSDIR}/devel/arm-eabi-gcc
 
 WRKSRC=		${WRKDIR}/u-boot-${PORTVERSION}
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 PLIST_FILES=	${U_BOOT_DIR}/bb-uboot.img \
 		${U_BOOT_DIR}/bb-uenv.txt \

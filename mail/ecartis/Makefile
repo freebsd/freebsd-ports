@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s/-snap/}
 MAINTAINER=	jtrigg@spamcop.net
 COMMENT=	The Ecartis Listserver \ Mailing List Manager
 
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_PACKAGE=	Requires ecartis uid
 IS_INTERACTIVE=	"Stops to ask to create ecartis user/group"

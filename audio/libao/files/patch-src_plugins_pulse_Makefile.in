@@ -1,0 +1,11 @@
+--- src/plugins/pulse/Makefile.in.orig	2014-05-28 17:53:30.000000000 +0200
++++ src/plugins/pulse/Makefile.in	2014-05-28 17:58:05.000000000 +0200
+@@ -348,7 +348,7 @@ AUTOMAKE_OPTIONS = foreign
+ @HAVE_PULSE_TRUE@pulseltlibs = libpulse.la
+ @HAVE_PULSE_FALSE@pulsesources = 
+ @HAVE_PULSE_TRUE@pulsesources = ao_pulse.c
+-INCLUDES = -I$(top_builddir)/include/ao -I$(top_srcdir)/include
++INCLUDES = -I$(top_builddir)/include/ao -I$(top_srcdir)/include @PULSE_CFLAGS@
+ lib_LTLIBRARIES = $(pulseltlibs)
+ libpulse_la_LDFLAGS = @PLUGIN_LDFLAGS@
+ libpulse_la_LIBADD = @PULSE_LIBS@

@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt www
 MASTER_SITES=	https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
 DISTFILES=	zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 
-MAINTAINER=	zenoss@experts-exchange.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides nagios ping check for Zenoss monitoring
 
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}

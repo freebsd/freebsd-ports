@@ -46,7 +46,7 @@ info/gnutls3/pkcs11-vision.png
 %%LIBDANE%%lib/gnutls3/libgnutls-dane.la
 %%LIBDANE%%lib/gnutls3/libgnutls-dane.so
 %%LIBDANE%%lib/gnutls3/libgnutls-dane.so.0
-%%LIBDANE%%lib/gnutls3/libgnutls-dane.so.0.0.0
+%%LIBDANE%%lib/gnutls3/libgnutls-dane.so.0.4.1
 lib/gnutls3/libgnutls-openssl.a
 lib/gnutls3/libgnutls-openssl.la
 lib/gnutls3/libgnutls-openssl.so

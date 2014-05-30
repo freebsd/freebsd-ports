@@ -1,4 +1,3 @@
-@unexec [ -s %D/%%PHPBBDIR%%/config.php ] || rm -f %D/%%PHPBBDIR%%/config.php
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.html
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
@@ -14,6 +13,8 @@
 %%DATADIR%%/install.php
 %%DATADIR%%/update_to_latest.php
 %%DATADIR%%/upgrade.php
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%PHPBBDIR%%/admin/admin_board.php
 %%PHPBBDIR%%/admin/admin_db_utilities.php
 %%PHPBBDIR%%/admin/admin_disallow.php
@@ -302,12 +303,9 @@
 %%PHPBBDIR%%/viewforum.php
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
-@exec touch %B/config.php
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/doc
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
+@unexec if cmp -s %D/%%PHPBBDIR%%/config.php %D/%%PHPBBDIR%%/config.php.example; then rm -f %D/%%PHPBBDIR%%/config.php ; fi
+%%PHPBBDIR%%/config.php.example
+@exec if [ ! -f %D/%%PHPBBDIR%%/config.php ]; then cp -p %D/%F %B/config.php; fi
 @dirrm %%PHPBBDIR%%/admin
 @dirrm %%PHPBBDIR%%/cache
 @dirrm %%PHPBBDIR%%/db
@@ -327,4 +325,8 @@
 @dirrmtry %%PHPBBDIR%%/templates/subSilver
 @dirrmtry %%PHPBBDIR%%/templates
 @dirrmtry %%PHPBBDIR%%
-
+@owner root
+@group wheel
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

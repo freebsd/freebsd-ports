@@ -19,7 +19,7 @@ BROKEN_WWW=	http://www.montefiore.ulg.ac.be/cgi-bin-ulg/DICO.html
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOTOOLS=	automake14 autoconf
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
-USE_GMAKE=	true
+USES=		gmake
 AUTOMAKE_ARGS=	--add-missing --foreign --include-deps
 MAKE_ARGS=	prefix=${PREFIX}
 MAN1=		dico.1

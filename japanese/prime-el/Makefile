@@ -9,7 +9,7 @@ MASTER_SITES=	http://prime.sourceforge.jp/src/
 PKGNAMESUFFIX=	-el
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	otsuji@users.sourceforge.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp set for the prime
 
 RUN_DEPENDS+=	${LOCALBASE}/share/emacs/site-lisp/init-mell.el:${PORTSDIR}/japanese/mell \

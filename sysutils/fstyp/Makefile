@@ -10,7 +10,7 @@ MAINTAINER=	sacchi@gmail.com
 COMMENT=	Detect which filesystem type a device/partition contains
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/fstyp
 

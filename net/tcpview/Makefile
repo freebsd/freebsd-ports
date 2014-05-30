@@ -11,17 +11,17 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif-based TCP/IP protocol analyzer
 
+MAKE_JOBS_UNSAFE=	yes
+
 USES=		bison motif
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
-MAN1=		tcpview.1
-
-NO_STAGE=	yes
 post-patch:
 .for f in nametoaddr.c addrtoname.c print-nfs.c detail-tcp.c tv_addrtoname.c
 	@${REINPLACE_CMD} -e 's/NTOHL/ntohl/ ; s/NTOHS/ntohs/' ${WRKSRC}/${f}
 .endfor
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/DOC/Tcpview ${LOCALBASE}/lib/X11/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/DOC/Tcpview ${STAGEDIR}${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.mk>

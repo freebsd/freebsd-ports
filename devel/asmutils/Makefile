@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	i386
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	OS=${OPSYS:tu} KERNEL=${OSREL:S/.//g}
 
 # This will play merry hell with portlint(1)

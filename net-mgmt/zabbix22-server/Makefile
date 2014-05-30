@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PORTVERSION=	2.2.2
-PORTREVISION?=	1
+PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -70,7 +70,8 @@ CONFIGURE_ARGS+=	--with-net-snmp
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 
 OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW LIBXML2
-OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL
+OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL UNIXODBC
+OPTIONS_SUB=	yes
 
 CURL_DESC=	Support for web monitoring
 FPING_DESC=	Build/install fping for ping checks
@@ -83,91 +84,57 @@ ODBC_DESC=	Support for database checks via ODBC
 JAVAGW_DESC=	Support for Java gateway
 LIBXML2_DESC=	Support for libxml2 (required by monitoring VMware)
 
-OPTIONS_SINGLE=	DB
-OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE ODBC
+OPTIONS_SINGLE=	DB ODBC
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE
+OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
-.include <bsd.port.options.mk>
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_USE=	MYSQL=yes
 
-.if ${PORT_OPTIONS:MMYSQL}
-ZABBIX_REQUIRE=	" mysql"
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql
-.endif
+PGSQL_CONFIGURE_WITH=	postgresql
+PGSQL_USES=	pgsql
 
-.if ${PORT_OPTIONS:MPGSQL}
-ZABBIX_REQUIRE=	" postgresql"
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-postgresql
-.endif
+SQLITE_CONFIGURE_WITH=	sqlite3
+SQLITE_USE=	SQLITE=3
+ 
+ORACLE_CONFIGURE_WITH=	oracle
 
-.if ${PORT_OPTIONS:MSQLITE}
-ZABBIX_REQUIRE=	" sqlite"
-USE_SQLITE=	3
-CONFIGURE_ARGS+=	--with-sqlite3
-.endif
+CURL_CONFIGURE_WITH=	libcurl
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-.if ${PORT_OPTIONS:MORACLE}
-ZABBIX_REQUIRE=
-CONFIGURE_ARGS+=	--with-oracle
-.endif
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=	OPENLDAP=yes
 
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-libcurl
-.endif
+IPMI_CONFIGURE_WITH=	openipmi
+IPMI_LIB_DEPENDS=	libOpenIPMI.so:${PORTSDIR}/sysutils/openipmi
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=	--with-ldap
-.endif
+JABBER_CONFIGURE_WITH=	jabber
+JABBER_LIB_DEPENDS=	libiksemel.so:${PORTSDIR}/textproc/iksemel
 
-.if ${PORT_OPTIONS:MIPMI}
-LIB_DEPENDS+=	libOpenIPMI.so:${PORTSDIR}/sysutils/openipmi
-CONFIGURE_ARGS+=	--with-openipmi
-.endif
+FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
 
-.if ${PORT_OPTIONS:MJABBER}
-LIB_DEPENDS+=	libiksemel.so:${PORTSDIR}/textproc/iksemel
-CONFIGURE_ARGS+=	--with-jabber
-.endif
+SSH_CONFIGURE_WITH=	ssh2
+SSH_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 
-.if ${PORT_OPTIONS:MFPING}
-RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
-.endif
+IODBC_CONFIGURE_WITH=	iodbc
+IODBC_LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 
-.if ${PORT_OPTIONS:MSSH}
-LIB_DEPENDS+=	libssh2.so:${PORTSDIR}/security/libssh2
-CONFIGURE_ARGS+=	--with-ssh2
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=	--with-unixodbc
-.endif
+UNIXODBC_CONFIGURE_WITH=	unixodbc
+UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 .endif # if ${ZABBIX_BUILD} != "agent"
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
 
-.if ${PORT_OPTIONS:MNMAP}
-RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap \
+NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap \
 		sudo:${PORTSDIR}/security/sudo
-.endif
 
-.if ${PORT_OPTIONS:MJAVAGW}
-USE_JAVA=	yes
-CONFIGURE_ARGS+=	--enable-java
-PLIST_SUB+=	ZABBIX_JAVA="sbin/zabbix_java"
-PLIST_SUB+=	JAVAGW=""
-.else
-PLIST_SUB+=	JAVAGW="@comment "
-.endif
+JAVAGW_CONFIGURE_ENABLE=	java
+JAVAGW_USE=	JAVA=yes
 
-.if ${PORT_OPTIONS:MLIBXML2}
-LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=	--with-libxml2
-.endif
+LIBXML2_CONFIGURE_WITH=	libxml2
+LIBXML2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \
@@ -175,7 +142,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#g' ${WRKSRC}/conf/zabbix_*.conf
 
 .if ${ZABBIX_BUILD} != "agent"
-.if empty(PORT_OPTIONS:MFPING)
+.if ! ${PORT_OPTIONS:MFPING}
 .endif
 .for d in mysql oracle postgresql sqlite3
 	@${REINPLACE_CMD} -e 's|/bin/ping|/sbin/ping|g; \
@@ -189,15 +156,14 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} -f {} +
 
 post-install:
-
-.if defined(WITH_JAVAGW)
+.if ${PORT_OPTIONS:MJAVAGW}
 	@${MV} ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh.sample
 .endif
 
 .if ${ZABBIX_BUILD} != "agent"
-	@${MKDIR} "${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/database"
-	@cd ${WRKSRC}/upgrades/ && ${COPYTREE_SHARE} dbpatches ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/upgrades/
-	@cd ${WRKSRC}/database/ && ${COPYTREE_SHARE} "ibm_db2 mysql oracle postgresql sqlite3" ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/database/
+	${MKDIR} "${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/database"
+	cd ${WRKSRC}/upgrades/ && ${COPYTREE_SHARE} dbpatches ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/upgrades/
+	cd ${WRKSRC}/database/ && ${COPYTREE_SHARE} "ibm_db2 mysql oracle postgresql sqlite3" ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/database/
 .endif
 .endif # if ${ZABBIX_BUILD} != "frontend"
 

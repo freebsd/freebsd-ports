@@ -1,0 +1,18 @@
+--- ./scripts/periodic/Makefile.orig	2014-03-15 13:15:46.000000000 +0000
++++ ./scripts/periodic/Makefile	2014-05-29 06:02:03.000000000 +0000
+@@ -16,14 +16,11 @@
+ 
+ all: ${SCRIPTS}
+ 
+-# tell bmake we use the old :L :U modifiers
+-.MAKE.FreeBSD_UL= yes
+-
+ install: all
+ .for period in daily weekly security
+ 
+ 	install -d ${DESTDIR}${PREFIX}/etc/periodic/${period}
+-.  for periodic in ${SCRIPTS_${period:U}:R}
++.  for periodic in ${SCRIPTS_${period:tu}:R}
+ 	install -m 555 ${periodic} ${DESTDIR}${PREFIX}/etc/periodic/${period}
+ .  endfor
+ .endfor

@@ -3,26 +3,32 @@
 
 PORTNAME=	enscript
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES+=	print
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTNAME=	enscript-${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	johans@FreeBSD.org
 COMMENT=	ASCII to PostScript filter
 
 USES=		shebangfix perl5
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
+CONFIGURE_ARGS=	--with-media=${PS}
 SHEBANG_FILES=	scripts/diffpp.in scripts/sliceprint.in
 perl_OLD_CMD=	@PERLPROG@
 
-CONFLICTS?=	enscript-a4-* enscript-letterdj-*
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+CONFLICTS?=	enscript-a4-[0-9]* enscript-letterdj-[0-9]*
 
 INFO=		enscript
 
-PAPERSIZE?=	letter
 PS?=		Letter
+PAPERSIZE?=	${PS:tl}
 
 .if (${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj)
 .BEGIN:

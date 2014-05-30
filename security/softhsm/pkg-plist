@@ -4,8 +4,7 @@ bin/softhsm-keyconv
 lib/softhsm/libsofthsm.a
 lib/softhsm/libsofthsm.la
 lib/softhsm/libsofthsm.so
-etc/softhsm.conf.sample
-@exec if [ ! -f %D/etc/softhsm.conf ]; then cp %D/etc/softhsm.conf.sample %D/etc/softhsm.conf; fi
+@sample etc/softhsm.conf.sample
 @dirrm lib/softhsm
 @exec install -d -o root -g wheel -m 700 %D/var/lib/softhsm
 man/man1/softhsm-keyconv.1.gz

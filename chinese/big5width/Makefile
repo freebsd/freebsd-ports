@@ -18,7 +18,6 @@ PLIST_SUB=	BASELOCALEDIR=${BASELOCALEDIR} \
 		LOCALEDIR=${LOCALEDIR} \
 		LANG=${LANG}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SRCDIR=		${SRC_BASE}/share/mklocale
@@ -36,10 +35,10 @@ do-build:
 	/usr/bin/mklocale -o ${WRKSRC}/LC_CTYPE ${WRKSRC}/${LANG}.src
 
 do-install:
-	${MKDIR} ${LOCALEDIR}/${LANG}
-	${INSTALL_DATA} ${WRKSRC}/LC_CTYPE ${LOCALEDIR}/${LANG}
+	${MKDIR} ${STAGEDIR}${LOCALEDIR}/${LANG}
+	${INSTALL_DATA} ${WRKSRC}/LC_CTYPE ${STAGEDIR}${LOCALEDIR}/${LANG}
 	${LN} -fs ${LOCALEDIR}/${LANG}/LC_CTYPE \
-		${BASELOCALEDIR}/${LANG}/LC_CTYPE
+		${STAGEDIR}${BASELOCALEDIR}/${LANG}/LC_CTYPE
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

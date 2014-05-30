@@ -14,7 +14,7 @@ COMMENT=	POSIX threads library for Windows compiled with MinGW32
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
 
-USE_GMAKE=	yes
+USES=		gmake
 
 NO_STAGE=	yes
 do-build:

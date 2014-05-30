@@ -3,6 +3,7 @@
 
 PORTNAME=	postgresql-repmgr
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.repmgr.org/download/
 DISTNAME=	repmgr-${PORTVERSION}
@@ -15,7 +16,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USES=		gmake
-USE_PGSQL=	yes
+USE_PGSQL=	server
 WANT_PGSQL_VER=	90+
 MAKE_ENV=	USE_PGXS=1
 

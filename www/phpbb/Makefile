@@ -10,11 +10,13 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	liukang@cn.freebsd.org
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
 CONFLICTS=	phpbb-tw-[0-9]*
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
@@ -24,7 +26,6 @@ PHPBBURL?=	phpBB2
 #
 # End of user-configurable variables.
 
-NO_STAGE=	yes
 # Set/override/append to variables from bsd.port.mk:
 #
 WRKSRC=		${WRKDIR}/phpBB2
@@ -32,7 +33,7 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPBBURL="${PHPBBURL}" \
 		PHPBBDIR="${PHPBBDIR}" \
-		DELETEFILES="${EXCEPTFILES}"
+		DELETEFILES="${EXCEPTFILES:S,${STAGEDIR},,g}"
 PHPBB_VER=	${PORTVERSION:S/.//g:S/.//g}
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PLIST_SUB+=	PHPBB_VER=${PHPBB_VER}
@@ -41,9 +42,9 @@ PLIST_SUB+=	PHPBB_VER=${PHPBB_VER}
 #
 PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
-EXCEPTFILES=	${PREFIX}/${PHPBBDIR}/install/install.php \
-		${PREFIX}/${PHPBBDIR}/install/upgrade.php \
-		${PREFIX}/${PHPBBDIR}/install/update_to_latest.php
+EXCEPTFILES=	${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/install.php \
+		${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/upgrade.php \
+		${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/update_to_latest.php
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
@@ -60,30 +61,20 @@ pre-everything::
 post-patch:
 	@ ${REINPLACE_CMD} -e "s#\.\./templates#/${PHPBBURL}/templates#" \
 	  ${WRKSRC}/docs/*.html
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
+	@${FIND} ${WRKSRC} -name '*.orig' -or -name '*.bak' -delete
 
 do-install:
-	@ ${MKDIR} -m 0775 ${PREFIX}/${PHPBBDIR}
-	@ cd ${WRKSRC} && ${FIND} * \( -name config.php \
+	@${MKDIR} -m 0775 ${STAGEDIR}${PREFIX}/${PHPBBDIR}
+	@cd ${WRKSRC} && ${FIND} * \( -name config.php \
 	  ${EXCEPTFILES:S/^/-o -name /} \
 	  -o -name docs -a -prune -o -name contrib -a -prune \) -o -print \
-	  | ${TAR} cTf - - | ${TAR} xUCf ${PREFIX}/${PHPBBDIR} -
-	@ ${TOUCH} ${PREFIX}/${PHPBBDIR}/config.php
-	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPBBDIR}
-	@ ${MKDIR} ${DATADIR}/contrib
-	@ cd ${WRKSRC} && ${INSTALL_DATA} ${EXCEPTFILES} ${DATADIR}
-	@ cd ${WRKSRC}/contrib && ${INSTALL_DATA} * ${DATADIR}/contrib
-
-post-install:
-#	@ cd ${DATADIR} && ${INSTALL} -c -o ${WWWOWN} -g ${WWWGRP} \
-#	  ${EXCEPTFILES} ${PREFIX}/${PHPBBDIR}
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC}/docs && ${FIND} * -type f -maxdepth 0 \! -name \*.bak \
-	  \! -name COPYING -exec ${INSTALL_DATA} {} ${DOCSDIR} \;
-.if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
-.endif
-.endif
+	  | ${TAR} cTf - - | ${TAR} xUCf ${STAGEDIR}${PREFIX}/${PHPBBDIR} -
+	@${INSTALL_DATA} ${WRKSRC}/config.php ${STAGEDIR}${PREFIX}/${PHPBBDIR}/config.php.example
+	@${MKDIR} ${STAGEDIR}${DATADIR}/contrib
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${EXCEPTFILES} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}/contrib && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/contrib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${FIND} * -type f -maxdepth 0 \
+	  \! -name COPYING -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR} \;
 
 .include <bsd.port.mk>

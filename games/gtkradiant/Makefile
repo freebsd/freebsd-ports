@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkradiant
 PORTVERSION=	1.5.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games cad
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/:id|} \
 		http://www.bsd-geek.de/FreeBSD/distfiles/:fb
@@ -21,11 +21,10 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 		libpng15.so:${PORTSDIR}/graphics/png
 
 SSP_UNSAFE=	yes
-USES=		pkgconfig zip
+USES=		pkgconfig scons zip
 USE_GNOME=	gtk20 libxml2
 USE_PYTHON_BUILD=	yes
-USE_SCONS=	yes
-SCONS_ARGS=	${MAKE_ENV} BUILD=release
+MAKE_ARGS=	${MAKE_ENV} BUILD=release
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 WRKSRC=		${WRKDIR}/GPL/GtkRadiant

@@ -3,16 +3,19 @@
 
 PORTNAME=	tn5250
 PORTVERSION=	0.17.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	5250 Telnet protocol and Terminal
 
+USES=		libtool
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-os-dir=no --with-ssl=${OPENSSLBASE}
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e \

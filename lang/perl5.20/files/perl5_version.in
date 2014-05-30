@@ -1,0 +1,2 @@
+# Do not modify PERL_VERSION here, instead use DEFAULT_VERSIONS= perl5=%%PERL_VER%%
+PERL_VERSION=%%PERL_VERSION%%

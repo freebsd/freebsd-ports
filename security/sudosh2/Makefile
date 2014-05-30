@@ -11,6 +11,9 @@ MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Second version of the sudo shell
 CONFLICTS=		sudosh-*
 
+DEPRECATED=		Funcition replaced by sudo -s
+EXPIRATION_DATE=	2014-07-01
+
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
 GNU_CONFIGURE=		yes

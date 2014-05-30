@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	11.8.1
-PORTREVISION=	1
+PORTVERSION=	11.10.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -11,11 +10,11 @@ PKGNAMESUFFIX=	11
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
-LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
-		newt.52:${PORTSDIR}/devel/newt \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex \
+		libnewt.so:${PORTSDIR}/devel/newt \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
@@ -38,8 +37,6 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		NOISY_BUILD=YES \
 		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}"
-MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8 astdb2bdb.8 \
-	astdb2sqlite3.8
 
 CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-1.4* asterisk*-1.6* asterisk*-1.8*
@@ -70,7 +67,6 @@ ASTERISK_GROUP?=	asterisk
 USERS=	${ASTERISK_USER}
 GROUPS=	${ASTERISK_GROUP} dahdi
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} == ${LOCALBASE}
@@ -86,8 +82,8 @@ PLIST_SUB+=	VARDIR=${VARDIR}
 
 .if ${PORT_OPTIONS:MOOH323}
 PLIST_SUB+=	WITH_OOH323=""
-LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
-		h323_r.1:${PORTSDIR}/net/openh323
+LIB_DEPENDS+=	libpt_r.so:${PORTSDIR}/devel/pwlib \
+		libh323_r.so:${PORTSDIR}/net/openh323
 .else
 PLIST_SUB+=	WITH_OOH323="@comment "
 .endif
@@ -97,8 +93,8 @@ PLIST_SUB+=	WITH_DAHDI=""
 CONFIGURE_ARGS+=	--with-dahdi --with-openr2
 BUILD_DEPENDS+=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
-LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri\
-		openr2.4:${PORTSDIR}/misc/openr2
+LIB_DEPENDS+=	libpri.so:${PORTSDIR}/misc/libpri\
+		libopenr2.so:${PORTSDIR}/misc/openr2
 .else
 PLIST_SUB+=	WITH_DAHDI="@comment "
 CONFIGURE_ARGS+=	--without-dahdi --without-openr2
@@ -120,7 +116,7 @@ LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 .if ${PORT_OPTIONS:MFREETDS}
 PLIST_SUB+=	WITH_FREETDS=""
 CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
-LIB_DEPENDS+=	tds.5:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	libtds.so:${PORTSDIR}/databases/freetds
 .else
 PLIST_SUB+=	WITH_FREETDS="@comment "
 CONFIGURE_ARGS+=	--without-tds
@@ -147,7 +143,7 @@ CONFIGURE_ARGS+=	--without-mysqlclient
 .if ${PORT_OPTIONS:MVORBIS}
 PLIST_SUB+=	WITH_VORBIS=""
 CONFIGURE_ARGS+=	--with-ogg
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .else
 PLIST_SUB+=	WITH_VORBIS="@comment "
 CONFIGURE_ARGS+=	--without-ogg
@@ -156,7 +152,7 @@ CONFIGURE_ARGS+=	--without-ogg
 .if ${PORT_OPTIONS:MRADIUS}
 PLIST_SUB+=	WITH_RADIUS=""
 CONFIGURE_ARGS+=	--with-radius
-LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
+LIB_DEPENDS+=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
 .else
 PLIST_SUB+=	WITH_RADIUS="@comment "
 CONFIGURE_ARGS+=	--without-radius
@@ -165,7 +161,7 @@ CONFIGURE_ARGS+=	--without-radius
 .if ${PORT_OPTIONS:MSNMP}
 PLIST_SUB+=	WITH_SNMP=""
 CONFIGURE_ARGS+=	--with-netsnmp
-LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 .else
 PLIST_SUB+=	WITH_SNMP="@comment "
 CONFIGURE_ARGS+=	--without-netsnmp
@@ -174,7 +170,7 @@ CONFIGURE_ARGS+=	--without-netsnmp
 .if ${PORT_OPTIONS:MXMPP}
 PLIST_SUB+=	WITH_XMPP=""
 CONFIGURE_ARGS+=	--with-iksemel
-LIB_DEPENDS+=	iksemel.4:${PORTSDIR}/textproc/iksemel
+LIB_DEPENDS+=	libiksemel.so:${PORTSDIR}/textproc/iksemel
 .else
 PLIST_SUB+=	WITH_XMPP="@comment "
 CONFIGURE_ARGS+=	--without-iksemel
@@ -183,7 +179,7 @@ CONFIGURE_ARGS+=	--without-iksemel
 .if ${PORT_OPTIONS:MSQLITE}
 PLIST_SUB+=	WITH_SQLITE=""
 CONFIGURE_ARGS+=	--with-sqlite
-LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=	libsqlite.so:${PORTSDIR}/databases/sqlite2
 .else
 PLIST_SUB+=	WITH_SQLITE="@comment "
 CONFIGURE_ARGS+=	--without-sqlite
@@ -192,7 +188,7 @@ CONFIGURE_ARGS+=	--without-sqlite
 .if ${PORT_OPTIONS:MGSM}
 PLIST_SUB+=	WITH_GSM=""
 CONFIGURE_ARGS+=	--with-gsm
-LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS+=	libgsm.so:${PORTSDIR}/audio/gsm
 .else
 PLIST_SUB+=	WITH_GSM="@comment "
 CONFIGURE_ARGS+=	--without-gsm
@@ -201,7 +197,7 @@ CONFIGURE_ARGS+=	--without-gsm
 .if ${PORT_OPTIONS:MCURL}
 PLIST_SUB+=	WITH_CURL=""
 CONFIGURE_ARGS+=	--with-libcurl
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .else
 PLIST_SUB+=	WITH_CURL="@comment "
 CONFIGURE_ARGS+=	--with-libcurl=no
@@ -210,14 +206,14 @@ CONFIGURE_ARGS+=	--with-libcurl=no
 .if ${PORT_OPTIONS:MSPANDSP}
 PLIST_SUB+=	WITH_SPANDSP=""
 CONFIGURE_ARGS+=	--with-spandsp
-LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
+LIB_DEPENDS+=	libspandsp.so:${PORTSDIR}/comms/spandsp-devel
 .else
 PLIST_SUB+=	WITH_SPANDSP="@comment "
 CONFIGURE_ARGS+=	--without-spandsp
 .endif
 
 .if ${PORT_OPTIONS:MEXCHANGE}
-LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
 PLIST_SUB+=	WITH_EXCHANGE=""
 .else
 CONFIGURE_ARGS+=	--without-neon --without-neon29
@@ -275,7 +271,6 @@ post-configure:
 .endif
 
 post-install:
-	@${MKDIR} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
-	@${CHOWN} -R ${ASTERISK_USER}:${ASTERISK_GROUP} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
+	@${RM} ${STAGEDIR}${ETCDIR}/*.conf ${STAGEDIR}${ETCDIR}/extensions.ael ${STAGEDIR}${ETCDIR}/extensions.lua
 
 .include <bsd.port.post.mk>

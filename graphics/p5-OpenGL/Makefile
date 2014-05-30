@@ -12,8 +12,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to display 3D data using OpenGL, GLU, GLUT, and GLX
 
-USE_DISPLAY=	requires an X server for configure stage
-
 MANUAL_PACKAGE_BUILD=	fails to start X server on pointyhat
 
 CONFIGURE_ARGS=	interface=GLUT

@@ -3,6 +3,7 @@
 
 PORTNAME=	tvmet
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Tar.Gz_Bz2%20Archive/${PORTVERSION}
 
@@ -10,12 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny Vector and Matrix template library
 
 LICENSE=	LGPL21 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	CPPUNIT DEBUG DOCS EXAMPLES
 
-USE_BZIP2=	yes
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake tar:bzip2 libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cxx=${CXX}
 
 .include <bsd.port.options.mk>

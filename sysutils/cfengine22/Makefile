@@ -5,7 +5,8 @@ PORTNAME=	cfengine
 PORTVERSION=	2.2.10
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cfengine.com/source-code/download?file=
+MASTER_SITES=	http://cfengine.com/source-code/download?file= \
+		https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 PKGNAMESUFFIX=	22
 
 MAINTAINER=	cy@FreeBSD.org
@@ -17,6 +18,9 @@ FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 CONFLICTS=	cfengine-3* cfengine-devel-*
 
 USE_RC_SUBR=	cfexecd cfservd
+
+USES=		libtool shebangfix
+SHEBANG_FILES=	contrib/cfdoc
 
 WITH_BDB_VER?=	46
 USE_BDB=	yes

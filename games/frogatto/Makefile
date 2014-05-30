@@ -21,7 +21,7 @@ GH_PROGECT=	frogatto
 GH_TAGNAME=	${PORTVERSION}
 GH_COMMIT=	64c84bf
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	game server
 USE_GL=		glew
 USE_SDL=	image mixer ttf

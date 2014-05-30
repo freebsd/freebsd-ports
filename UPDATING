@@ -5,6 +5,63 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140529
+  AFFECTS: users of databases/postgresql??-(server|client)
+  AUTHOR: mat@FreeBSD.org
+
+  PostgreSQL version 9.2 is now the default. To upgrade from a version
+  lower than 9.2, follow the instructions on the PostgreSQL.org website.
+  http://www.postgresql.org/docs/9.2/interactive/upgrading.html
+
+  When using binary packages, if you only use the client port, you can issue
+  the following command to follow the default version:
+
+  # pkg set -o databases/postgresql90-client:databases/postgresql92-client
+
+20140528:
+  AFFECTS: users of security/calife & security/calife-devel
+  AUTHOR: roberto@FreeBSD.org
+
+  Calife 2.8.x is now officially EoL.  Replace it with 3.0 (formerly
+  calife-devel).
+
+  For port builds system please follow the following instructions:
+  Please delete old version:
+
+  # pkg delete -f security/calife-devel
+  or
+  # pkg_delete security/calife-devel
+
+  and install security/calife.
+
+  Change origin if you had the old one:
+  # pkg set -o security/calife-devel:security/calife
+
+20140527:
+  AFFECTS: users of databases/db6
+  AUTHOR: mandree@FreeBSD.org
+
+  Oracle BerkeleyDB 6.0 was upgraded to version 6.0.30.  Databases that
+  use BLOBs need to be upgraded using db_upgrade-6.0 before they can be
+  accessed again. See the manual for details:
+
+  <http://docs.oracle.com/cd/E17076_03/html/api_reference/C/db_upgrade.html>
+
+  Databases that do not use BLOBs are unaffected.
+
+20140526:
+  AFFECTS: users of lang/lua
+
+  lang/lua has been relaced by lang/lua51
+
+  For port builds system please follow the following instructions:
+
+  # portmaster -o lang/lua51 lang/lua
+  or
+  # portupgrade -fo lang/lua51 lang/lua
+  or
+  # pkg set -o lang/lua:lang/lua51
+
 20140525:
   AFFECTS: users of devel/py-gobject3 and devel/py-dbus
   AUTHOR: gnome@FreeBSD.org
@@ -75,7 +132,7 @@ you update your ports collection, before attempting any port upgrades.
   ports-mgmt/portshaker was updated to avoid creating an aditional 'ports'
   subdirectory when merging to a poudriere_tree without ZFS, so that
   portshaker's default location matches poudriere's default location.
-  
+
   Users of poudriere on non-ZFS systems should not anymore have to pass extra
   options to poudriere for it to find the ports tree.
 
@@ -189,7 +246,7 @@ you update your ports collection, before attempting any port upgrades.
   # portupgrade -a
 
 20140416:
-  AFFECTS: users of print/freetype2 textproc/libxml2 x11/pixman 
+  AFFECTS: users of print/freetype2 textproc/libxml2 x11/pixman
            x11/libxcb and graphics/freeglut
   AUTHOR: x11@FreeBSD.org and gnome@FreeBSD.org
 

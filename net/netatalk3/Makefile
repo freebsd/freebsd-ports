@@ -3,7 +3,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -26,8 +26,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
 
-CONFIGURE_ARGS+=	--enable-tcp-wrappers \
-			--with-pkgconfdir=${PREFIX}/etc \
+CONFIGURE_ARGS+=	--with-pkgconfdir=${PREFIX}/etc \
 			--with-libgcrypt-dir=${LOCALBASE} \
 			--with-uams-path=${PREFIX}/libexec/netatalk-uams \
 			--with-bdb=${LOCALBASE} \
@@ -37,8 +36,8 @@ CONFIGURE_ARGS+=	--enable-tcp-wrappers \
 			--with-libevent-header=${LOCALBASE}/include \
 			--with-libevent-lib=${LOCALBASE}/lib/event2
 
-OPTIONS_DEFINE=PAM KRB5 LDAP SENDFILE KERBEROS DTRACE DBUS MYSQL ACL
-OPTIONS_DEFAULT=KERBEROS DBUS
+OPTIONS_DEFINE=PAM KRB5 LDAP SENDFILE KERBEROS DTRACE DBUS MYSQL ACL TCPWRAP
+OPTIONS_DEFAULT=KERBEROS DBUS TCPWRAP
 OPTIONS_RADIO=ZEROCONF
 OPTIONS_RADIO_ZEROCONF=AVAHI MDNSRESPONDER
 OPTIONS_DEFAULT+=AVAHI
@@ -49,6 +48,7 @@ DTRACE_DESC=	Enable DTrace support
 MYSQL_DESC=	Enable MySQL CNID backend support
 SENDFILE_DESC=	Enable Sendfile support
 ACL_DESC=	Enable ACL support
+TCPWRAP_DESC=	Enable TCP Wrappers support
 
 .include <bsd.port.options.mk>
 
@@ -133,6 +133,12 @@ LIB_DEPENDS+=	libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 CONFIGURE_ARGS+=--with-acls
 .else
 CONFIGURE_ARGS+=--without-acls
+.endif
+
+.if ${PORT_OPTIONS:MTCPWRAP}
+CONFIGURE_ARGS+=--enable-tcp-wrappers
+.else
+CONFIGURE_ARGS+=--disable-tcp-wrappers
 .endif
 
 .if ${OSVERSION} < 800031

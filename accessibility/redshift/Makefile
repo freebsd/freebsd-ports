@@ -10,8 +10,7 @@ MASTER_SITES=	http://launchpad.net/redshift/trunk/${PORTVERSION}/+download/
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Adjusts the color temperature of your screen
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

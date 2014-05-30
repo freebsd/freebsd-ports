@@ -65,10 +65,9 @@ include/libcwd/strerrno.h
 include/libcwd/struct_debug_tsd.h
 include/libcwd/sys.h
 include/libcwd/type_info.h
-lib/libcwd.a
-lib/libcwd.la
 lib/libcwd.so
-lib/libcwd.so.2
+lib/libcwd.so.1
+lib/libcwd.so.1.1.1
 libdata/pkgconfig/libcwd.pc
 libdata/pkgconfig/libcwd_r.pc
 %%DATADIR%%/libcwdrc

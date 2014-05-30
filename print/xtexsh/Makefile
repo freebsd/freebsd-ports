@@ -11,8 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based simple TeX interface
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
@@ -44,11 +43,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xtexsh.png \
 		${STAGEDIR}${PREFIX}/share/icons/locolor/32x32/apps/xtexsh.png
 	${INSTALL_DATA} ${WRKSRC}/xtexsh.png ${STAGEDIR}${PREFIX}/share/pixmaps
-
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

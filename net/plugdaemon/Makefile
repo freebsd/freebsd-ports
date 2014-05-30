@@ -10,11 +10,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Plug proxy daemon, forwards TCP/IP connections
 
-MAN1=		plug.1
-PLIST_FILES=	sbin/plug
+do-install:
 
-NO_STAGE=	yes
-post-install:
-	@${STRIP_CMD} ${PREFIX}/sbin/plug
+	${INSTALL_MAN} ${WRKSRC}/plug.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/plug ${STAGEDIR}${PREFIX}/sbin
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/plug
 
 .include <bsd.port.mk>

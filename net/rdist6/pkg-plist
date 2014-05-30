@@ -1,2 +1,11 @@
+@owner root
+@group bin
+@mode 555
 bin/%%RDIST_NAME%%
 bin/rdistd
+@mode 644
+@owner root
+@group bin
+man/man1/%%RDIST_NAME%%.1.gz
+man/man8/rdistd.8.gz
+

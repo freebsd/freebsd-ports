@@ -17,8 +17,7 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-USE_BZIP2=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gnomehier libgnomeui atspi \
 		libwnck gnomedocutils
 GNU_CONFIGURE=	yes

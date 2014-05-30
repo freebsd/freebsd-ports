@@ -16,21 +16,20 @@ USE_OPENSSL=	YES
 
 ALL_TARGET=	pipsecd
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pipsecd ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/pipsecd.sh ${PREFIX}/etc/rc.d
-	${CHMOD} 755 ${PREFIX}/etc/rc.d/pipsecd.sh;
-	${MKDIR} ${PREFIX}/etc/ipsec
-	${INSTALL_DATA} ${WRKSRC}/pipsecd.conf.sample ${PREFIX}/etc/ipsec
+	${INSTALL_PROGRAM} ${WRKSRC}/pipsecd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/pipsecd.sh ${STAGEDIR}${PREFIX}/etc/rc.d
+	# ${CHMOD} 755 ${STAGEDIR}${PREFIX}/etc/rc.d/pipsecd.sh;
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ipsec
+	${INSTALL_DATA} ${WRKSRC}/pipsecd.conf.sample ${STAGEDIR}${PREFIX}/etc/ipsec
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pipsecd
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/pipsecd
-	${INSTALL_MAN} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/pipsecd
-	${INSTALL_MAN} ${WRKSRC}/README.port ${PREFIX}/share/doc/pipsecd
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/pipsecd
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/pipsecd
+	${INSTALL_MAN} ${WRKSRC}/COPYRIGHT ${STAGEDIR}${PREFIX}/share/doc/pipsecd
+	${INSTALL_MAN} ${WRKSRC}/README.port ${STAGEDIR}${PREFIX}/share/doc/pipsecd
 .endif
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/sbin/pipsecd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/pipsecd
 
 .include <bsd.port.mk>

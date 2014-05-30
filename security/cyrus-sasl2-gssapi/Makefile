@@ -56,11 +56,11 @@ HEIMDAL_CONFIGURE_ON=	--enable-gssapi=${HEIMDAL_HOME} \
 			--with-gss_impl=heimdal
 HEIMDAL_BUILD_DEPENDS=	${HEIMDAL_HOME}/lib/libgssapi.so:${PORTSDIR}/security/heimdal
 HEIMDAL_RUN_DEPENDS=	${HEIMDAL_BUILD_DEPENDS}
-HEIMDAL_LDFLAGS=	"-R${HEIMDAL_HOME}/lib"
+HEIMDAL_LDFLAGS=	"-Wl,-rpath,${HEIMDAL_HOME}/lib"
 MIT_DESC=		Use MIT Kerberos V5
 MIT_CONFIGURE_ON=	--enable-gssapi=${KRB5_HOME} --with-gss_impl=mit
 MIT_LIB_DEPENDS=	libkrb5support.so:${PORTSDIR}/security/krb5
-MIT_LDFLAGS=		"-R${KRB5_HOME}/lib"
+MIT_LDFLAGS=		"-Wl,-rpath,${KRB5_HOME}/lib"
 
 PLIST_FILES=	lib/sasl2/libgssapiv2.a \
 		lib/sasl2/libgssapiv2.so \

@@ -1,6 +1,0 @@
-bin/vlogger
-share/examples/vlogger/vlogger-dbi.conf
-share/vlogger/mysql_create.sql
-man/man1/vlogger.1.gz
-@dirrmtry share/examples/vlogger
-@dirrmtry share/vlogger

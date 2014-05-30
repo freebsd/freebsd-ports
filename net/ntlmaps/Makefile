@@ -15,7 +15,6 @@ USES=		dos2unix
 
 DOCS=		COPYING Install.txt changelog.txt readme.txt research.txt
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	    's,^#! /usr/bin/python,#!${PYTHON_CMD},' ${WRKSRC}/main.py
@@ -27,17 +26,21 @@ do-build:
 
 do-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
-	@${MKDIR} ${PREFIX}/share/examples/ntlmaps
-	${INSTALL_DATA} ${WRKSRC}/*.py* ${PYTHON_SITELIBDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/*.py* ${PYTHON_SITELIBDIR}/${PORTNAME}
-	${CHMOD} +x ${PYTHON_SITELIBDIR}/${PORTNAME}/main.py
-	${LN} -fs ${PYTHON_SITELIBDIR}/${PORTNAME}/main.py ${PREFIX}/bin/ntlmaps
-	${INSTALL_DATA} ${WRKSRC}/server.cfg ${PREFIX}/share/examples/ntlmaps
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/ntlmaps
+	${INSTALL_DATA} ${WRKSRC}/*.py* \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/*.py* \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
+	${CHMOD} +x ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/main.py
+	${LN} -fs ${PYTHON_SITELIBDIR}/${PORTNAME}/main.py \
+		${STAGEDIR}${PREFIX}/bin/ntlmaps
+	${INSTALL_DATA} ${WRKSRC}/server.cfg \
+		${STAGEDIR}${PREFIX}/share/examples/ntlmaps
 
 .include <bsd.port.mk>

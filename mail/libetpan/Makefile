@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libetpan
-PORTVERSION=	1.1
-PORTREVISION=	5
+PORTVERSION=	1.5
 CATEGORIES=	mail ipv6
-MASTER_SITES=	SF
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Mail framework for C language
@@ -16,9 +14,14 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
-USE_AUTOTOOLS=	libtool autoconf
-AUTOTOOLSFILES=	aclocal.m4
-USES=		gmake iconv
+USE_GITHUB=	yes
+GH_ACCOUNT=	dinhviethoa
+GH_COMMIT=	34bab37
+
+USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
+AUTOMAKE_ARGS=	--add-missing --foreign --force --copy
+USES=		gmake iconv libtool
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -35,15 +38,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-OPENSSL_CONFIGURE_ON=	--without-gnutls
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
+OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
+OPENSSL_USE=		OPENSSL=yes
 
 .include <bsd.port.mk>

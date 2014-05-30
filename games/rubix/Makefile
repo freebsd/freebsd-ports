@@ -10,8 +10,7 @@ MASTER_SITES=	http://sed.free.fr/rubix/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bzip2
 USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DENGLISH" \
 		XINC="-I${LOCALBASE}/include" XLIB="-L${LOCALBASE}/lib -lX11"

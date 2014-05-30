@@ -6,7 +6,7 @@ PORTVERSION=	0.4.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://foo42.de/distfiles/
 
-MAINTAINER=	atamaniuk-ports@frobs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supervise scripts for clockspeed to use daemontools
 
 RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools \
