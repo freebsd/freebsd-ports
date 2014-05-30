@@ -1,0 +1,12 @@
+--- ./Makefile.in.orig	2013-12-15 19:48:51.000000000 +0100
++++ ./Makefile.in	2013-12-15 19:49:40.000000000 +0100
+@@ -33,7 +33,8 @@
+ 	@echo
+ 
+ install: $(OBJ)
+-	$(APXS) $(APXS_OPTS) -i -a -n cband src/mod_cband.la
++	/bin/mkdir -p $(DESTDIR)$$($(APXS) -q LIBEXECDIR)
++	$(APXS) $(APXS_OPTS) -i -S LIBEXECDIR=$(DESTDIR)$$($(APXS) -q LIBEXECDIR) -n cband src/mod_cband.la
+ 
+ clean:
+ 	rm -f src/.libs/*
