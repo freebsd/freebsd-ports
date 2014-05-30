@@ -14,10 +14,9 @@ COMMENT=	GNOME 2 users guide
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-USES=		pkgconfig tar:bzip2 gmake
+USES=		gmake pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedocutils
+USE_GNOME=	gnomeprefix gnomehier gnomedocutils
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
