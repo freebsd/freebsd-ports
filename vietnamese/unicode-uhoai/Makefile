@@ -3,9 +3,8 @@
 
 PORTNAME=	unicode-uhoai
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	vietnamese x11-fonts
-#MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	uhoaiw21
@@ -21,14 +20,11 @@ BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
 		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-NO_STAGE=	yes
+EXTRACT_BEFORE_ARGS=	-qoL
+
 do-install:
-	@${MKDIR} ${PREFIX}/lib/X11/fonts/TrueType
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/TrueType
 	${INSTALL_DATA} ${WRKSRC}/uhoaiw21.ttf \
-		${PREFIX}/lib/X11/fonts/TrueType
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		${STAGEDIR}${PREFIX}/lib/X11/fonts/TrueType
 
 .include <bsd.port.mk>
-
-EXTRACT_BEFORE_ARGS+=	-L
