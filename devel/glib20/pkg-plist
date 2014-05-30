@@ -246,6 +246,7 @@ include/glib-2.0/glib/gvarianttype.h
 include/glib-2.0/glib/gversion.h
 include/glib-2.0/glib/gversionmacros.h
 include/glib-2.0/glib/gwin32.h
+include/glib-2.0/glibconfig.h
 include/glib-2.0/gmodule.h
 include/glib-2.0/gobject/gbinding.h
 include/glib-2.0/gobject/gboxed.h
@@ -266,7 +267,6 @@ include/glib-2.0/gobject/gvalue.h
 include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
-lib/glib-2.0/include/glibconfig.h
 lib/libgio-2.0.la
 lib/libgio-2.0.so
 lib/libgio-2.0.so.0
@@ -496,8 +496,6 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @exec mkdir -p %D/share/GConf/gsettings
 @dirrm share/GConf/gsettings
 @dirrm share/GConf
-@dirrm lib/glib-2.0/include
-@dirrm lib/glib-2.0
 @exec mkdir -p %D/lib/gio/modules
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @dirrmtry lib/gio/modules
