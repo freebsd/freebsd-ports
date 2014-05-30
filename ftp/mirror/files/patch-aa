@@ -57,17 +57,17 @@
 ! MANDIR = ${PREFIX}/man/man1
   
   install:
-! 	install -c -m $(PLMODE) -g $(GRP) lchat.pl $(PLDIR)
-! 	install -c -m $(PLMODE) -g $(GRP) dateconv.pl $(PLDIR)
-! 	install -c -m $(PLMODE) -g $(GRP) ftp.pl $(PLDIR)
-! 	install -c -m $(PLMODE) -g $(GRP) lsparse.pl $(PLDIR)
-! 	install -c -m $(EXMODE) -g $(GRP) mirror.pl $(BINDIR)/mirror
-! 	install -c -m $(EXMODE) -g $(GRP) do_unlinks.pl $(BINDIR)/do_unlinks
-! 	install -c -m $(EXMODE) -g $(GRP) pkgs_to_mmin.pl $(BINDIR)/pkgs_to_mmin
-! 	install -c -m $(EXMODE) -g $(GRP) mm.pl $(BINDIR)/mirror-master
-! 	install -c -m $(PLMODE) -g $(GRP) mirror.man $(MANDIR)/mirror.1
-! 	install -c -m $(PLMODE) -g $(GRP) mm.man $(MANDIR)/mirror-master.1
-! 	install -c -m $(PLMODE) -g $(GRP) mirror.defaults $(PLDIR)/mirror.defaults.sample
+! 	install -c lchat.pl $(PLDIR)
+! 	install -c dateconv.pl $(PLDIR)
+! 	install -c ftp.pl $(PLDIR)
+! 	install -c lsparse.pl $(PLDIR)
+! 	install -c mirror.pl $(BINDIR)/mirror
+! 	install -c do_unlinks.pl $(BINDIR)/do_unlinks
+! 	install -c pkgs_to_mmin.pl $(BINDIR)/pkgs_to_mmin
+! 	install -c mm.pl $(BINDIR)/mirror-master
+! 	install -c mirror.man $(MANDIR)/mirror.1
+! 	install -c mm.man $(MANDIR)/mirror-master.1
+! 	install -c mirror.defaults $(PLDIR)/mirror.defaults.sample
   
   # directory to install .pl (perl library) files for rperl
   RPLDIR = /usr/local/rperl5/lib/perl5
