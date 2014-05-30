@@ -24,12 +24,11 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	*
 
 WRKSRC=		${WRKDIR}/WindowMaker-extra-0.1
-WMICONDIR=	${PREFIX}/share/WindowMaker/Pixmaps
+WMICONDIR=	${STAGEDIR}${PREFIX}/share/WindowMaker/Pixmaps
 
-NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKDIR}/isiconpack4
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/isiconpack4.tgz \
+	${TAR} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/isiconpack4.tgz \
 		${EXTRACT_AFTER_ARGS} -C ${WRKDIR}/isiconpack4
 
 post-install:
@@ -54,23 +53,23 @@ post-install:
 	${INSTALL_DATA} *.tif ${WMICONDIR}
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/IconFest-1.2/README \
-		${DOCSDIR}/README.IconFest
+		${STAGEDIR}${DOCSDIR}/README.IconFest
 	${INSTALL_DATA} ${WRKDIR}/NeXT.XEmacs/README.NeXT.XEmacs \
-		${DOCSDIR}
+		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/dwiconpack1/dwiconpack1.README \
-		${DOCSDIR}/README.dwiconpack1
+		${STAGEDIR}${DOCSDIR}/README.dwiconpack1
 	${INSTALL_DATA} ${WRKDIR}/dwiconpack2/dwiconpack2.README \
-		${DOCSDIR}/README.dwiconpack2
+		${STAGEDIR}${DOCSDIR}/README.dwiconpack2
 	${INSTALL_DATA} ${WRKDIR}/isiconpack4/CREDITS \
-		${DOCSDIR}
+		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/japanese-step-icons/README.txt \
-		${DOCSDIR}/README.japanese-step-icons.txt
+		${STAGEDIR}${DOCSDIR}/README.japanese-step-icons.txt
 	${INSTALL_DATA} ${WRKDIR}/vf_png/README \
-		${DOCSDIR}/README.vf_png
+		${STAGEDIR}${DOCSDIR}/README.vf_png
 	${INSTALL_DATA} ${WRKDIR}/vf_tif/README \
-		${DOCSDIR}/README.vf_tif
+		${STAGEDIR}${DOCSDIR}/README.vf_tif
 .endif
 
 .include <bsd.port.mk>
