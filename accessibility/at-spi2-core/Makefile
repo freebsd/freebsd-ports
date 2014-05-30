@@ -17,8 +17,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomehier glib20 intlhack introspection:build
 USE_XORG=	x11 xi xtst xext
 USE_LDCONFIG=	yes
