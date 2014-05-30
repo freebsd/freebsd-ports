@@ -1,5 +1,5 @@
---- main/Makefile.orig	2013-06-13 19:07:52.590762266 +0200
-+++ main/Makefile	2013-06-13 19:07:24.770763707 +0200
+--- main/Makefile.orig	2013-02-26 20:19:51.000000000 +0100
++++ main/Makefile	2014-05-16 11:48:55.545963341 +0200
 @@ -215,9 +215,9 @@
  endif
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"
@@ -13,3 +13,16 @@
  
  $(ASTSSL_LIB): $(ASTSSL_LIB).$(ASTSSL_SO_VERSION)
  	$(LN) -sf $< $@
+@@ -266,9 +266,9 @@
+ else # Darwin
+ 	$(INSTALL) -m 755 $(ASTSSL_LIB) "$(DESTDIR)$(ASTLIBDIR)/"
+ endif
+-ifneq ($(LDCONFIG),)
+-	$(LDCONFIG) $(LDCONFIG_FLAGS) "$(DESTDIR)$(ASTLIBDIR)/"
+-endif
++#ifneq ($(LDCONFIG),)
++#	$(LDCONFIG) $(LDCONFIG_FLAGS) "$(DESTDIR)$(ASTLIBDIR)/"
++#endif
+ endif
+ 	$(LN) -sf asterisk "$(DESTDIR)$(ASTSBINDIR)/rasterisk"
+ 

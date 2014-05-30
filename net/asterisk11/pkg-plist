@@ -1,305 +1,305 @@
-@unexec if cmp -s %D/etc/asterisk/acl.conf %D/etc/asterisk/acl.conf-dist; then rm -f %D/etc/asterisk/acl.conf; fi
-etc/asterisk/acl.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_adaptive_odbc.conf %D/etc/asterisk/cdr_adaptive_odbc.conf-dist; then rm -f %D/etc/asterisk/cdr_adaptive_odbc.conf; fi
-etc/asterisk/cdr_adaptive_odbc.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_sqlite3_custom.conf %D/etc/asterisk/cdr_sqlite3_custom.conf-dist; then rm -f %D/etc/asterisk/cdr_sqlite3_custom.conf; fi
-etc/asterisk/cdr_sqlite3_custom.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_syslog.conf %D/etc/asterisk/cdr_syslog.conf-dist; then rm -f %D/etc/asterisk/cdr_syslog.conf; fi
-etc/asterisk/cdr_syslog.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cli.conf %D/etc/asterisk/cli.conf-dist; then rm -f %D/etc/asterisk/cli.conf; fi
-etc/asterisk/cli.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cli_aliases.conf %D/etc/asterisk/cli_aliases.conf-dist; then rm -f %D/etc/asterisk/cli_aliases.conf; fi
-etc/asterisk/cli_aliases.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cli_permissions.conf %D/etc/asterisk/cli_permissions.conf-dist; then rm -f %D/etc/asterisk/cli_permissions.conf; fi
-etc/asterisk/cli_permissions.conf-dist
-@unexec if cmp -s %D/etc/asterisk/confbridge.conf %D/etc/asterisk/confbridge.conf-dist; then rm -f %D/etc/asterisk/confbridge.conf; fi
-etc/asterisk/confbridge.conf-dist
-@unexec if cmp -s %D/etc/asterisk/config_test.conf %D/etc/asterisk/config_test.conf-dist; then rm -f %D/etc/asterisk/config_test.conf; fi
-etc/asterisk/config_test.conf-dist
-@unexec if cmp -s %D/etc/asterisk/console.conf %D/etc/asterisk/console.conf-dist; then rm -f %D/etc/asterisk/console.conf; fi
-etc/asterisk/console.conf-dist
-@unexec if cmp -s %D/etc/asterisk/dbsep.conf %D/etc/asterisk/dbsep.conf-dist; then rm -f %D/etc/asterisk/dbsep.conf; fi
-etc/asterisk/dbsep.conf-dist
-@unexec if cmp -s %D/etc/asterisk/dsp.conf %D/etc/asterisk/dsp.conf-dist; then rm -f %D/etc/asterisk/dsp.conf; fi
-etc/asterisk/dsp.conf-dist
-@unexec if cmp -s %D/etc/asterisk/extensions.lua %D/etc/asterisk/extensions.lua-dist; then rm -f %D/etc/asterisk/extensions.lua; fi
-etc/asterisk/extensions.lua-dist
-@unexec if cmp -s %D/etc/asterisk/extensions_minivm.conf %D/etc/asterisk/extensions_minivm.conf-dist; then rm -f %D/etc/asterisk/extensions_minivm.conf; fi
-etc/asterisk/extensions_minivm.conf-dist
-@unexec if cmp -s %D/etc/asterisk/jingle.conf %D/etc/asterisk/jingle.conf-dist; then rm -f %D/etc/asterisk/jingle.conf; fi
-etc/asterisk/jingle.conf-dist
-@unexec if cmp -s %D/etc/asterisk/minivm.conf %D/etc/asterisk/minivm.conf-dist; then rm -f %D/etc/asterisk/minivm.conf; fi
-etc/asterisk/minivm.conf-dist
-@unexec if cmp -s %D/etc/asterisk/motif.conf %D/etc/asterisk/motif.conf-dist; then rm -f %D/etc/asterisk/motif.conf; fi
-etc/asterisk/motif.conf-dist
-@unexec if cmp -s %D/etc/asterisk/ooh323.conf %D/etc/asterisk/ooh323.conf-dist; then rm -f %D/etc/asterisk/ooh323.conf; fi
-etc/asterisk/ooh323.conf-dist
-@unexec if cmp -s %D/etc/asterisk/phoneprov.conf %D/etc/asterisk/phoneprov.conf-dist; then rm -f %D/etc/asterisk/phoneprov.conf; fi
-etc/asterisk/phoneprov.conf-dist
-@unexec if cmp -s %D/etc/asterisk/queuerules.conf %D/etc/asterisk/queuerules.conf-dist; then rm -f %D/etc/asterisk/queuerules.conf; fi
-etc/asterisk/queuerules.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_ldap.conf %D/etc/asterisk/res_ldap.conf-dist; then rm -f %D/etc/asterisk/res_ldap.conf; fi
-etc/asterisk/res_ldap.conf-dist
-@unexec if cmp -s %D/etc/asterisk/unistim.conf %D/etc/asterisk/unistim.conf-dist; then rm -f %D/etc/asterisk/unistim.conf; fi
-etc/asterisk/unistim.conf-dist
-@unexec if cmp -s %D/etc/asterisk/adsi.conf %D/etc/asterisk/adsi.conf-dist; then rm -f %D/etc/asterisk/adsi.conf; fi
-etc/asterisk/adsi.conf-dist
-@unexec if cmp -s %D/etc/asterisk/agents.conf %D/etc/asterisk/agents.conf-dist; then rm -f %D/etc/asterisk/agents.conf; fi
-etc/asterisk/agents.conf-dist
-@unexec if cmp -s %D/etc/asterisk/alarmreceiver.conf %D/etc/asterisk/alarmreceiver.conf-dist; then rm -f %D/etc/asterisk/alarmreceiver.conf; fi
-etc/asterisk/alarmreceiver.conf-dist
-@unexec if cmp -s %D/etc/asterisk/alsa.conf %D/etc/asterisk/alsa.conf-dist; then rm -f %D/etc/asterisk/alsa.conf; fi
-etc/asterisk/alsa.conf-dist
-@unexec if cmp -s %D/etc/asterisk/asterisk.adsi %D/etc/asterisk/asterisk.adsi-dist; then rm -f %D/etc/asterisk/asterisk.adsi; fi
-etc/asterisk/asterisk.adsi-dist
-@unexec if cmp -s %D/etc/asterisk/asterisk.conf %D/etc/asterisk/asterisk.conf-dist; then rm -f %D/etc/asterisk/asterisk.conf; fi
-etc/asterisk/asterisk.conf-dist
-@unexec if cmp -s %D/etc/asterisk/calendar.conf %D/etc/asterisk/calendar.conf-dist; then rm -f %D/etc/asterisk/calendar.conf; fi
-etc/asterisk/calendar.conf-dist
-@unexec if cmp -s %D/etc/asterisk/ccss.conf %D/etc/asterisk/ccss.conf-dist; then rm -f %D/etc/asterisk/ccss.conf; fi
-etc/asterisk/ccss.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr.conf %D/etc/asterisk/cdr.conf-dist; then rm -f %D/etc/asterisk/cdr.conf; fi
-etc/asterisk/cdr.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_custom.conf %D/etc/asterisk/cdr_custom.conf-dist; then rm -f %D/etc/asterisk/cdr_custom.conf; fi
-etc/asterisk/cdr_custom.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_manager.conf %D/etc/asterisk/cdr_manager.conf-dist; then rm -f %D/etc/asterisk/cdr_manager.conf; fi
-etc/asterisk/cdr_manager.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_mysql.conf %D/etc/asterisk/cdr_mysql.conf-dist; then rm -f %D/etc/asterisk/cdr_mysql.conf; fi
-etc/asterisk/cdr_mysql.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_odbc.conf %D/etc/asterisk/cdr_odbc.conf-dist; then rm -f %D/etc/asterisk/cdr_odbc.conf; fi
-etc/asterisk/cdr_odbc.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_pgsql.conf %D/etc/asterisk/cdr_pgsql.conf-dist; then rm -f %D/etc/asterisk/cdr_pgsql.conf; fi
-etc/asterisk/cdr_pgsql.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cdr_tds.conf %D/etc/asterisk/cdr_tds.conf-dist; then rm -f %D/etc/asterisk/cdr_tds.conf; fi
-etc/asterisk/cdr_tds.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cel.conf %D/etc/asterisk/cel.conf-dist; then rm -f %D/etc/asterisk/cel.conf; fi
-etc/asterisk/cel.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cel_custom.conf %D/etc/asterisk/cel_custom.conf-dist; then rm -f %D/etc/asterisk/cel_custom.conf; fi
-etc/asterisk/cel_custom.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cel_odbc.conf %D/etc/asterisk/cel_odbc.conf-dist; then rm -f %D/etc/asterisk/cel_odbc.conf; fi
-etc/asterisk/cel_odbc.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cel_pgsql.conf %D/etc/asterisk/cel_pgsql.conf-dist; then rm -f %D/etc/asterisk/cel_pgsql.conf; fi
-etc/asterisk/cel_pgsql.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cel_sqlite3_custom.conf %D/etc/asterisk/cel_sqlite3_custom.conf-dist; then rm -f %D/etc/asterisk/cel_sqlite3_custom.conf; fi
-etc/asterisk/cel_sqlite3_custom.conf-dist
-@unexec if cmp -s %D/etc/asterisk/cel_tds.conf %D/etc/asterisk/cel_tds.conf-dist; then rm -f %D/etc/asterisk/cel_tds.conf; fi
-etc/asterisk/cel_tds.conf-dist
-@unexec if cmp -s %D/etc/asterisk/codecs.conf %D/etc/asterisk/codecs.conf-dist; then rm -f %D/etc/asterisk/codecs.conf; fi
-etc/asterisk/codecs.conf-dist
-@unexec if cmp -s %D/etc/asterisk/dnsmgr.conf %D/etc/asterisk/dnsmgr.conf-dist; then rm -f %D/etc/asterisk/dnsmgr.conf; fi
-etc/asterisk/dnsmgr.conf-dist
-@unexec if cmp -s %D/etc/asterisk/dundi.conf %D/etc/asterisk/dundi.conf-dist; then rm -f %D/etc/asterisk/dundi.conf; fi
-etc/asterisk/dundi.conf-dist
-@unexec if cmp -s %D/etc/asterisk/enum.conf %D/etc/asterisk/enum.conf-dist; then rm -f %D/etc/asterisk/enum.conf; fi
-etc/asterisk/enum.conf-dist
-@unexec if cmp -s %D/etc/asterisk/extconfig.conf %D/etc/asterisk/extconfig.conf-dist; then rm -f %D/etc/asterisk/extconfig.conf; fi
-etc/asterisk/extconfig.conf-dist
-@unexec if cmp -s %D/etc/asterisk/extensions.ael %D/etc/asterisk/extensions.ael-dist; then rm -f %D/etc/asterisk/extensions.ael; fi
-etc/asterisk/extensions.ael-dist
-@unexec if cmp -s %D/etc/asterisk/extensions.conf %D/etc/asterisk/extensions.conf-dist; then rm -f %D/etc/asterisk/extensions.conf; fi
-etc/asterisk/extensions.conf-dist
-@unexec if cmp -s %D/etc/asterisk/features.conf %D/etc/asterisk/features.conf-dist; then rm -f %D/etc/asterisk/features.conf; fi
-etc/asterisk/features.conf-dist
-@unexec if cmp -s %D/etc/asterisk/festival.conf %D/etc/asterisk/festival.conf-dist; then rm -f %D/etc/asterisk/festival.conf; fi
-etc/asterisk/festival.conf-dist
-@unexec if cmp -s %D/etc/asterisk/iax.conf %D/etc/asterisk/iax.conf-dist; then rm -f %D/etc/asterisk/iax.conf; fi
-etc/asterisk/iax.conf-dist
-@unexec if cmp -s %D/etc/asterisk/iaxprov.conf %D/etc/asterisk/iaxprov.conf-dist; then rm -f %D/etc/asterisk/iaxprov.conf; fi
-etc/asterisk/iaxprov.conf-dist
-@unexec if cmp -s %D/etc/asterisk/indications.conf %D/etc/asterisk/indications.conf-dist; then rm -f %D/etc/asterisk/indications.conf; fi
-etc/asterisk/indications.conf-dist
-@unexec if cmp -s %D/etc/asterisk/logger.conf %D/etc/asterisk/logger.conf-dist; then rm -f %D/etc/asterisk/logger.conf; fi
-etc/asterisk/logger.conf-dist
-@unexec if cmp -s %D/etc/asterisk/manager.conf %D/etc/asterisk/manager.conf-dist; then rm -f %D/etc/asterisk/manager.conf; fi
-etc/asterisk/manager.conf-dist
-@unexec if cmp -s %D/etc/asterisk/meetme.conf %D/etc/asterisk/meetme.conf-dist; then rm -f %D/etc/asterisk/meetme.conf; fi
-etc/asterisk/meetme.conf-dist
-@unexec if cmp -s %D/etc/asterisk/mgcp.conf %D/etc/asterisk/mgcp.conf-dist; then rm -f %D/etc/asterisk/mgcp.conf; fi
-etc/asterisk/mgcp.conf-dist
-@unexec if cmp -s %D/etc/asterisk/misdn.conf %D/etc/asterisk/misdn.conf-dist; then rm -f %D/etc/asterisk/misdn.conf; fi
-etc/asterisk/misdn.conf-dist
-@unexec if cmp -s %D/etc/asterisk/modules.conf %D/etc/asterisk/modules.conf-dist; then rm -f %D/etc/asterisk/modules.conf; fi
-etc/asterisk/modules.conf-dist
-@unexec if cmp -s %D/etc/asterisk/musiconhold.conf %D/etc/asterisk/musiconhold.conf-dist; then rm -f %D/etc/asterisk/musiconhold.conf; fi
-etc/asterisk/musiconhold.conf-dist
-@unexec if cmp -s %D/etc/asterisk/osp.conf %D/etc/asterisk/osp.conf-dist; then rm -f %D/etc/asterisk/osp.conf; fi
-etc/asterisk/osp.conf-dist
-@unexec if cmp -s %D/etc/asterisk/oss.conf %D/etc/asterisk/oss.conf-dist; then rm -f %D/etc/asterisk/oss.conf; fi
-etc/asterisk/oss.conf-dist
-@unexec if cmp -s %D/etc/asterisk/phone.conf %D/etc/asterisk/phone.conf-dist; then rm -f %D/etc/asterisk/phone.conf; fi
-etc/asterisk/phone.conf-dist
-@unexec if cmp -s %D/etc/asterisk/queues.conf %D/etc/asterisk/queues.conf-dist; then rm -f %D/etc/asterisk/queues.conf; fi
-etc/asterisk/queues.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_config_mysql.conf %D/etc/asterisk/res_config_mysql.conf-dist; then rm -f %D/etc/asterisk/res_config_mysql.conf; fi
-etc/asterisk/res_config_mysql.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_config_sqlite3.conf %D/etc/asterisk/res_config_sqlite3.conf-dist; then rm -f %D/etc/asterisk/res_config_sqlite3.conf; fi
-etc/asterisk/res_config_sqlite3.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_corosync.conf %D/etc/asterisk/res_corosync.conf-dist; then rm -f %D/etc/asterisk/res_corosync.conf; fi
-etc/asterisk/res_corosync.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_pgsql.conf %D/etc/asterisk/res_pgsql.conf-dist; then rm -f %D/etc/asterisk/res_pgsql.conf; fi
-etc/asterisk/res_pgsql.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_pktccops.conf %D/etc/asterisk/res_pktccops.conf-dist; then rm -f %D/etc/asterisk/res_pktccops.conf; fi
-etc/asterisk/res_pktccops.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_odbc.conf %D/etc/asterisk/res_odbc.conf-dist; then rm -f %D/etc/asterisk/res_odbc.conf; fi
-etc/asterisk/res_odbc.conf-dist
-@unexec if cmp -s %D/etc/asterisk/rtp.conf %D/etc/asterisk/rtp.conf-dist; then rm -f %D/etc/asterisk/rtp.conf; fi
-etc/asterisk/rtp.conf-dist
-@unexec if cmp -s %D/etc/asterisk/sip.conf %D/etc/asterisk/sip.conf-dist; then rm -f %D/etc/asterisk/sip.conf; fi
-etc/asterisk/sip.conf-dist
-@unexec if cmp -s %D/etc/asterisk/sip_notify.conf %D/etc/asterisk/sip_notify.conf-dist; then rm -f %D/etc/asterisk/sip_notify.conf; fi
-etc/asterisk/sip_notify.conf-dist
-@unexec if cmp -s %D/etc/asterisk/skinny.conf %D/etc/asterisk/skinny.conf-dist; then rm -f %D/etc/asterisk/skinny.conf; fi
-etc/asterisk/skinny.conf-dist
-@unexec if cmp -s %D/etc/asterisk/telcordia-1.adsi %D/etc/asterisk/telcordia-1.adsi-dist; then rm -f %D/etc/asterisk/telcordia-1.adsi; fi
-etc/asterisk/telcordia-1.adsi-dist
-@unexec if cmp -s %D/etc/asterisk/voicemail.conf %D/etc/asterisk/voicemail.conf-dist; then rm -f %D/etc/asterisk/voicemail.conf; fi
-etc/asterisk/voicemail.conf-dist
-@unexec if cmp -s %D/etc/asterisk/vpb.conf %D/etc/asterisk/vpb.conf-dist; then rm -f %D/etc/asterisk/vpb.conf; fi
-etc/asterisk/vpb.conf-dist
-@unexec if cmp -s %D/etc/asterisk/chan_dahdi.conf %D/etc/asterisk/chan_dahdi.conf-dist; then rm -f %D/etc/asterisk/chan_dahdi.conf; fi
-etc/asterisk/chan_dahdi.conf-dist
-@unexec if cmp -s %D/etc/asterisk/chan_mobile.conf %D/etc/asterisk/chan_mobile.conf-dist; then rm -f %D/etc/asterisk/chan_mobile.conf; fi
-etc/asterisk/chan_mobile.conf-dist
-@unexec if cmp -s %D/etc/asterisk/udptl.conf %D/etc/asterisk/udptl.conf-dist; then rm -f %D/etc/asterisk/udptl.conf; fi
-etc/asterisk/udptl.conf-dist
-@unexec if cmp -s %D/etc/asterisk/users.conf %D/etc/asterisk/users.conf-dist; then rm -f %D/etc/asterisk/users.conf; fi
-etc/asterisk/users.conf-dist
-@unexec if cmp -s %D/etc/asterisk/smdi.conf %D/etc/asterisk/smdi.conf-dist; then rm -f %D/etc/asterisk/smdi.conf; fi
-etc/asterisk/smdi.conf-dist
-@unexec if cmp -s %D/etc/asterisk/sla.conf %D/etc/asterisk/sla.conf-dist; then rm -f %D/etc/asterisk/sla.conf; fi
-etc/asterisk/sla.conf-dist
-@unexec if cmp -s %D/etc/asterisk/say.conf %D/etc/asterisk/say.conf-dist; then rm -f %D/etc/asterisk/say.conf; fi
-etc/asterisk/say.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_snmp.conf %D/etc/asterisk/res_snmp.conf-dist; then rm -f %D/etc/asterisk/res_snmp.conf; fi
-etc/asterisk/res_snmp.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_stun_monitor.conf %D/etc/asterisk/res_stun_monitor.conf-dist; then rm -f %D/etc/asterisk/res_stun_monitor.conf; fi
-etc/asterisk/res_stun_monitor.conf-dist
-@unexec if cmp -s %D/etc/asterisk/muted.conf %D/etc/asterisk/muted.conf-dist; then rm -f %D/etc/asterisk/muted.conf; fi
-etc/asterisk/muted.conf-dist
-@unexec if cmp -s %D/etc/asterisk/jabber.conf %D/etc/asterisk/jabber.conf-dist; then rm -f %D/etc/asterisk/jabber.conf; fi
-etc/asterisk/jabber.conf-dist
-@unexec if cmp -s %D/etc/asterisk/http.conf %D/etc/asterisk/http.conf-dist; then rm -f %D/etc/asterisk/http.conf; fi
-etc/asterisk/http.conf-dist
-@unexec if cmp -s %D/etc/asterisk/h323.conf %D/etc/asterisk/h323.conf-dist; then rm -f %D/etc/asterisk/h323.conf; fi
-etc/asterisk/h323.conf-dist
-@unexec if cmp -s %D/etc/asterisk/gtalk.conf %D/etc/asterisk/gtalk.conf-dist; then rm -f %D/etc/asterisk/gtalk.conf; fi
-etc/asterisk/gtalk.conf-dist
-@unexec if cmp -s %D/etc/asterisk/func_odbc.conf %D/etc/asterisk/func_odbc.conf-dist; then rm -f %D/etc/asterisk/func_odbc.conf; fi
-etc/asterisk/func_odbc.conf-dist
-@unexec if cmp -s %D/etc/asterisk/followme.conf %D/etc/asterisk/followme.conf-dist; then rm -f %D/etc/asterisk/followme.conf; fi
-etc/asterisk/followme.conf-dist
-@unexec if cmp -s %D/etc/asterisk/amd.conf %D/etc/asterisk/amd.conf-dist; then rm -f %D/etc/asterisk/amd.conf; fi
-etc/asterisk/amd.conf-dist
-@unexec if cmp -s %D/etc/asterisk/app_skel.conf %D/etc/asterisk/app_skel.conf-dist; then rm -f %D/etc/asterisk/app_skel.conf; fi
-etc/asterisk/app_skel.conf-dist
-@unexec if cmp -s %D/etc/asterisk/app_mysql.conf %D/etc/asterisk/app_mysql.conf-dist; then rm -f %D/etc/asterisk/app_mysql.conf; fi
-etc/asterisk/app_mysql.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_config_sqlite.conf %D/etc/asterisk/res_config_sqlite.conf-dist; then rm -f %D/etc/asterisk/res_config_sqlite.conf; fi
-etc/asterisk/res_config_sqlite.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_curl.conf %D/etc/asterisk/res_curl.conf-dist; then rm -f %D/etc/asterisk/res_curl.conf; fi
-etc/asterisk/res_curl.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_fax.conf %D/etc/asterisk/res_fax.conf-dist; then rm -f %D/etc/asterisk/res_fax.conf; fi
-etc/asterisk/res_fax.conf-dist
-@unexec if cmp -s %D/etc/asterisk/xmpp.conf %D/etc/asterisk/xmpp.conf-dist; then rm -f %D/etc/asterisk/xmpp.conf; fi
-etc/asterisk/xmpp.conf-dist
-@exec if test ! -e %D/etc/asterisk/acl.conf; then cp -p %D/etc/asterisk/acl.conf-dist %D/etc/asterisk/acl.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_adaptive_odbc.conf; then cp -p %D/etc/asterisk/cdr_adaptive_odbc.conf-dist %D/etc/asterisk/cdr_adaptive_odbc.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_syslog.conf; then cp -p %D/etc/asterisk/cdr_syslog.conf-dist %D/etc/asterisk/cdr_syslog.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_sqlite3_custom.conf; then cp -p %D/etc/asterisk/cdr_sqlite3_custom.conf-dist %D/etc/asterisk/cdr_sqlite3_custom.conf; fi
-@exec if test ! -e %D/etc/asterisk/cli.conf; then cp -p %D/etc/asterisk/cli.conf-dist %D/etc/asterisk/cli.conf; fi
-@exec if test ! -e %D/etc/asterisk/confbridge.conf; then cp -p %D/etc/asterisk/confbridge.conf-dist %D/etc/asterisk/confbridge.conf; fi
-@exec if test ! -e %D/etc/asterisk/config_test.conf; then cp -p %D/etc/asterisk/config_test.conf-dist %D/etc/asterisk/config_test.conf; fi
-@exec if test ! -e %D/etc/asterisk/console.conf; then cp -p %D/etc/asterisk/console.conf-dist %D/etc/asterisk/console.conf; fi
-@exec if test ! -e %D/etc/asterisk/extensions.lua; then cp -p %D/etc/asterisk/extensions.lua-dist %D/etc/asterisk/extensions.lua; fi
-@exec if test ! -e %D/etc/asterisk/extensions_minivm.conf; then cp -p %D/etc/asterisk/extensions_minivm.conf-dist %D/etc/asterisk/extensions_minivm.conf; fi
-@exec if test ! -e %D/etc/asterisk/jingle.conf; then cp -p %D/etc/asterisk/jingle.conf-dist %D/etc/asterisk/jingle.conf; fi
-@exec if test ! -e %D/etc/asterisk/minivm.conf; then cp -p %D/etc/asterisk/minivm.conf-dist %D/etc/asterisk/minivm.conf; fi
-@exec if test ! -e %D/etc/asterisk/motif.conf; then cp -p %D/etc/asterisk/motif.conf-dist %D/etc/asterisk/motif.conf; fi
-@exec if test ! -e %D/etc/asterisk/ooh323.conf; then cp -p %D/etc/asterisk/ooh323.conf-dist %D/etc/asterisk/motif.conf; fi
-@exec if test ! -e %D/etc/asterisk/phoneprov.conf; then cp -p %D/etc/asterisk/phoneprov.conf-dist %D/etc/asterisk/phoneprov.conf; fi
-@exec if test ! -e %D/etc/asterisk/queuerules.conf; then cp -p %D/etc/asterisk/queuerules.conf-dist %D/etc/asterisk/queuerules.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_ldap.conf; then cp -p %D/etc/asterisk/res_ldap.conf-dist %D/etc/asterisk/res_ldap.conf; fi
-@exec if test ! -e %D/etc/asterisk/unistim.conf; then cp -p %D/etc/asterisk/unistim.conf-dist %D/etc/asterisk/unistim.conf; fi
-@exec if test ! -e %D/etc/asterisk/adsi.conf; then cp -p %D/etc/asterisk/adsi.conf-dist %D/etc/asterisk/adsi.conf; fi
-@exec if test ! -e %D/etc/asterisk/agents.conf; then cp -p %D/etc/asterisk/agents.conf-dist %D/etc/asterisk/agents.conf; fi
-@exec if test ! -e %D/etc/asterisk/alarmreceiver.conf; then cp -p %D/etc/asterisk/alarmreceiver.conf-dist %D/etc/asterisk/alarmreceiver.conf; fi
-@exec if test ! -e %D/etc/asterisk/alsa.conf; then cp -p %D/etc/asterisk/alsa.conf-dist %D/etc/asterisk/alsa.conf; fi
-@exec if test ! -e %D/etc/asterisk/asterisk.adsi; then cp -p %D/etc/asterisk/asterisk.adsi-dist %D/etc/asterisk/asterisk.adsi; fi
-@exec if test ! -e %D/etc/asterisk/ccss.conf; then cp -p %D/etc/asterisk/ccss.conf-dist %D/etc/asterisk/ccss.conf; fi
-@exec if test ! -e %D/etc/asterisk/calendar.conf; then cp -p %D/etc/asterisk/calendar.conf-dist %D/etc/asterisk/calendar.conf; fi
-@exec if test ! -e %D/etc/asterisk/asterisk.conf; then cp -p %D/etc/asterisk/asterisk.conf-dist %D/etc/asterisk/asterisk.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr.conf; then cp -p %D/etc/asterisk/cdr.conf-dist %D/etc/asterisk/cdr.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_custom.conf; then cp -p %D/etc/asterisk/cdr_custom.conf-dist %D/etc/asterisk/cdr_custom.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_mysql.conf; then cp -p %D/etc/asterisk/cdr_mysql.conf-dist %D/etc/asterisk/cdr_mysql.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_manager.conf; then cp -p %D/etc/asterisk/cdr_manager.conf-dist %D/etc/asterisk/cdr_manager.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_odbc.conf; then cp -p %D/etc/asterisk/cdr_odbc.conf-dist %D/etc/asterisk/cdr_odbc.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_pgsql.conf; then cp -p %D/etc/asterisk/cdr_pgsql.conf-dist %D/etc/asterisk/cdr_pgsql.conf; fi
-@exec if test ! -e %D/etc/asterisk/cel_tds.conf; then cp -p %D/etc/asterisk/cel_tds.conf-dist %D/etc/asterisk/cel_tds.conf; fi
-@exec if test ! -e %D/etc/asterisk/cel_sqlite3_custom.conf; then cp -p %D/etc/asterisk/cel_sqlite3_custom.conf-dist %D/etc/asterisk/cel_sqlite3_custom.conf; fi
-@exec if test ! -e %D/etc/asterisk/cel_pgsql.conf; then cp -p %D/etc/asterisk/cel_pgsql.conf-dist %D/etc/asterisk/cel_pgsql.conf; fi
-@exec if test ! -e %D/etc/asterisk/cel_odbc.conf; then cp -p %D/etc/asterisk/cel_odbc.conf-dist %D/etc/asterisk/cel_odbc.conf; fi
-@exec if test ! -e %D/etc/asterisk/cel_custom.conf; then cp -p %D/etc/asterisk/cel_custom.conf-dist %D/etc/asterisk/cel_custom.conf; fi
-@exec if test ! -e %D/etc/asterisk/cel.conf; then cp -p %D/etc/asterisk/cel.conf-dist %D/etc/asterisk/cel.conf; fi
-@exec if test ! -e %D/etc/asterisk/cdr_tds.conf; then cp -p %D/etc/asterisk/cdr_tds.conf-dist %D/etc/asterisk/cdr_tds.conf; fi
-@exec if test ! -e %D/etc/asterisk/codecs.conf; then cp -p %D/etc/asterisk/codecs.conf-dist %D/etc/asterisk/codecs.conf; fi
-@exec if test ! -e %D/etc/asterisk/dnsmgr.conf; then cp -p %D/etc/asterisk/dnsmgr.conf-dist %D/etc/asterisk/dnsmgr.conf; fi
-@exec if test ! -e %D/etc/asterisk/dundi.conf; then cp -p %D/etc/asterisk/dundi.conf-dist %D/etc/asterisk/dundi.conf; fi
-@exec if test ! -e %D/etc/asterisk/enum.conf; then cp -p %D/etc/asterisk/enum.conf-dist %D/etc/asterisk/enum.conf; fi
-@exec if test ! -e %D/etc/asterisk/extconfig.conf; then cp -p %D/etc/asterisk/extconfig.conf-dist %D/etc/asterisk/extconfig.conf; fi
-@exec if test ! -e %D/etc/asterisk/extensions.ael; then cp -p %D/etc/asterisk/extensions.ael-dist %D/etc/asterisk/extensions.ael; fi
-@exec if test ! -e %D/etc/asterisk/extensions.conf; then cp -p %D/etc/asterisk/extensions.conf-dist %D/etc/asterisk/extensions.conf; fi
-@exec if test ! -e %D/etc/asterisk/features.conf; then cp -p %D/etc/asterisk/features.conf-dist %D/etc/asterisk/features.conf; fi
-@exec if test ! -e %D/etc/asterisk/festival.conf; then cp -p %D/etc/asterisk/festival.conf-dist %D/etc/asterisk/festival.conf; fi
-@exec if test ! -e %D/etc/asterisk/iax.conf; then cp -p %D/etc/asterisk/iax.conf-dist %D/etc/asterisk/iax.conf; fi
-@exec if test ! -e %D/etc/asterisk/iaxprov.conf; then cp -p %D/etc/asterisk/iaxprov.conf-dist %D/etc/asterisk/iaxprov.conf; fi
-@exec if test ! -e %D/etc/asterisk/indications.conf; then cp -p %D/etc/asterisk/indications.conf-dist %D/etc/asterisk/indications.conf; fi
-@exec if test ! -e %D/etc/asterisk/logger.conf; then cp -p %D/etc/asterisk/logger.conf-dist %D/etc/asterisk/logger.conf; fi
-@exec if test ! -e %D/etc/asterisk/manager.conf; then cp -p %D/etc/asterisk/manager.conf-dist %D/etc/asterisk/manager.conf; fi
-@exec if test ! -e %D/etc/asterisk/meetme.conf; then cp -p %D/etc/asterisk/meetme.conf-dist %D/etc/asterisk/meetme.conf; fi
-@exec if test ! -e %D/etc/asterisk/mgcp.conf; then cp -p %D/etc/asterisk/mgcp.conf-dist %D/etc/asterisk/mgcp.conf; fi
-@exec if test ! -e %D/etc/asterisk/misdn.conf; then cp -p %D/etc/asterisk/misdn.conf-dist %D/etc/asterisk/misdn.conf; fi
-@exec if test ! -e %D/etc/asterisk/modules.conf; then cp -p %D/etc/asterisk/modules.conf-dist %D/etc/asterisk/modules.conf; fi
-@exec if test ! -e %D/etc/asterisk/musiconhold.conf; then cp -p %D/etc/asterisk/musiconhold.conf-dist %D/etc/asterisk/musiconhold.conf; fi
-@exec if test ! -e %D/etc/asterisk/osp.conf; then cp -p %D/etc/asterisk/osp.conf-dist %D/etc/asterisk/osp.conf; fi
-@exec if test ! -e %D/etc/asterisk/oss.conf; then cp -p %D/etc/asterisk/oss.conf-dist %D/etc/asterisk/oss.conf; fi
-@exec if test ! -e %D/etc/asterisk/phone.conf; then cp -p %D/etc/asterisk/phone.conf-dist %D/etc/asterisk/phone.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_fax.conf; then cp -p %D/etc/asterisk/res_fax.conf-dist %D/etc/asterisk/res_fax.conf; fi
-@exec if test ! -e %D/etc/asterisk/xmpp.conf; then cp -p %D/etc/asterisk/xmpp.conf-dist %D/etc/asterisk/xmpp.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_curl.conf; then cp -p %D/etc/asterisk/res_curl.conf-dist %D/etc/asterisk/res_curl.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_config_mysql.conf; then cp -p %D/etc/asterisk/res_config_mysql.conf-dist %D/etc/asterisk/res_config_mysql.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_config_sqlite.conf; then cp -p %D/etc/asterisk/res_config_sqlite.conf-dist %D/etc/asterisk/res_config_sqlite.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_config_sqlite3.conf; then cp -p %D/etc/asterisk/res_config_sqlite3.conf-dist %D/etc/asterisk/res_config_sqlite3.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_corosync.conf; then cp -p %D/etc/asterisk/res_corosync.conf-dist %D/etc/asterisk/res_corosync.conf; fi
-@exec if test ! -e %D/etc/asterisk/queues.conf; then cp -p %D/etc/asterisk/queues.conf-dist %D/etc/asterisk/queues.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_pktccops.conf; then cp -p %D/etc/asterisk/res_pktccops.conf-dist %D/etc/asterisk/res_pktccops.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_pgsql.conf; then cp -p %D/etc/asterisk/res_pgsql.conf-dist %D/etc/asterisk/res_pgsql.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_odbc.conf; then cp -p %D/etc/asterisk/res_odbc.conf-dist %D/etc/asterisk/res_odbc.conf; fi
-@exec if test ! -e %D/etc/asterisk/rtp.conf; then cp -p %D/etc/asterisk/rtp.conf-dist %D/etc/asterisk/rtp.conf; fi
-@exec if test ! -e %D/etc/asterisk/sip.conf; then cp -p %D/etc/asterisk/sip.conf-dist %D/etc/asterisk/sip.conf; fi
-@exec if test ! -e %D/etc/asterisk/sip_notify.conf; then cp -p %D/etc/asterisk/sip_notify.conf-dist %D/etc/asterisk/sip_notify.conf; fi
-@exec if test ! -e %D/etc/asterisk/skinny.conf; then cp -p %D/etc/asterisk/skinny.conf-dist %D/etc/asterisk/skinny.conf; fi
-@exec if test ! -e %D/etc/asterisk/telcordia-1.adsi; then cp -p %D/etc/asterisk/telcordia-1.adsi-dist %D/etc/asterisk/telcordia-1.adsi; fi
-@exec if test ! -e %D/etc/asterisk/voicemail.conf; then cp -p %D/etc/asterisk/voicemail.conf-dist %D/etc/asterisk/voicemail.conf; fi
-@exec if test ! -e %D/etc/asterisk/vpb.conf; then cp -p %D/etc/asterisk/vpb.conf-dist %D/etc/asterisk/vpb.conf; fi
-@exec if test ! -e %D/etc/asterisk/chan_mobile.conf; then cp -p %D/etc/asterisk/chan_mobile.conf-dist %D/etc/asterisk/chan_mobile.conf; fi
-@exec if test ! -e %D/etc/asterisk/chan_dahdi.conf; then cp -p %D/etc/asterisk/chan_dahdi.conf-dist %D/etc/asterisk/chan_dahdi.conf; fi
-@exec if test ! -e %D/etc/asterisk/udptl.conf; then cp -p %D/etc/asterisk/udptl.conf-dist %D/etc/asterisk/udptl.conf; fi
-@exec if test ! -e %D/etc/asterisk/users.conf; then cp -p %D/etc/asterisk/users.conf-dist %D/etc/asterisk/users.conf; fi
-@exec if test ! -e %D/etc/asterisk/smdi.conf; then cp -p %D/etc/asterisk/smdi.conf-dist %D/etc/asterisk/smdi.conf; fi
-@exec if test ! -e %D/etc/asterisk/sla.conf; then cp -p %D/etc/asterisk/sla.conf-dist %D/etc/asterisk/sla.conf; fi
-@exec if test ! -e %D/etc/asterisk/say.conf; then cp -p %D/etc/asterisk/say.conf-dist %D/etc/asterisk/say.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_stun_monitor.conf; then cp -p %D/etc/asterisk/res_stun_monitor.conf-dist %D/etc/asterisk/res_stun_monitor.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_snmp.conf; then cp -p %D/etc/asterisk/res_snmp.conf-dist %D/etc/asterisk/res_snmp.conf; fi
-@exec if test ! -e %D/etc/asterisk/muted.conf; then cp -p %D/etc/asterisk/muted.conf-dist %D/etc/asterisk/muted.conf; fi
-@exec if test ! -e %D/etc/asterisk/jabber.conf; then cp -p %D/etc/asterisk/jabber.conf-dist %D/etc/asterisk/jabber.conf; fi
-@exec if test ! -e %D/etc/asterisk/http.conf; then cp -p %D/etc/asterisk/http.conf-dist %D/etc/asterisk/http.conf; fi
-@exec if test ! -e %D/etc/asterisk/h323.conf; then cp -p %D/etc/asterisk/h323.conf-dist %D/etc/asterisk/h323.conf; fi
-@exec if test ! -e %D/etc/asterisk/gtalk.conf; then cp -p %D/etc/asterisk/gtalk.conf-dist %D/etc/asterisk/gtalk.conf; fi
-@exec if test ! -e %D/etc/asterisk/func_odbc.conf; then cp -p %D/etc/asterisk/func_odbc.conf-dist %D/etc/asterisk/func_odbc.conf; fi
-@exec if test ! -e %D/etc/asterisk/followme.conf; then cp -p %D/etc/asterisk/followme.conf-dist %D/etc/asterisk/followme.conf; fi
-@exec if test ! -e %D/etc/asterisk/app_mysql.conf; then cp -p %D/etc/asterisk/app_mysql.conf-dist %D/etc/asterisk/app_mysql.conf; fi
-@exec if test ! -e %D/etc/asterisk/app_skel.conf; then cp -p %D/etc/asterisk/app_skel.conf-dist %D/etc/asterisk/app_skel.conf; fi
-@exec if test ! -e %D/etc/asterisk/amd.conf; then cp -p %D/etc/asterisk/amd.conf-dist %D/etc/asterisk/amd.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/acl.conf %D/%%ETCDIR%%/acl.conf-dist; then rm -f %D/%%ETCDIR%%/acl.conf; fi
+%%ETCDIR%%/acl.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_adaptive_odbc.conf %D/%%ETCDIR%%/cdr_adaptive_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_adaptive_odbc.conf; fi
+%%ETCDIR%%/cdr_adaptive_odbc.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_sqlite3_custom.conf %D/%%ETCDIR%%/cdr_sqlite3_custom.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_sqlite3_custom.conf; fi
+%%ETCDIR%%/cdr_sqlite3_custom.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_syslog.conf %D/%%ETCDIR%%/cdr_syslog.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_syslog.conf; fi
+%%ETCDIR%%/cdr_syslog.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cli.conf %D/%%ETCDIR%%/cli.conf-dist; then rm -f %D/%%ETCDIR%%/cli.conf; fi
+%%ETCDIR%%/cli.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cli_aliases.conf %D/%%ETCDIR%%/cli_aliases.conf-dist; then rm -f %D/%%ETCDIR%%/cli_aliases.conf; fi
+%%ETCDIR%%/cli_aliases.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cli_permissions.conf %D/%%ETCDIR%%/cli_permissions.conf-dist; then rm -f %D/%%ETCDIR%%/cli_permissions.conf; fi
+%%ETCDIR%%/cli_permissions.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/confbridge.conf %D/%%ETCDIR%%/confbridge.conf-dist; then rm -f %D/%%ETCDIR%%/confbridge.conf; fi
+%%ETCDIR%%/confbridge.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/config_test.conf %D/%%ETCDIR%%/config_test.conf-dist; then rm -f %D/%%ETCDIR%%/config_test.conf; fi
+%%ETCDIR%%/config_test.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/console.conf %D/%%ETCDIR%%/console.conf-dist; then rm -f %D/%%ETCDIR%%/console.conf; fi
+%%ETCDIR%%/console.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/dbsep.conf %D/%%ETCDIR%%/dbsep.conf-dist; then rm -f %D/%%ETCDIR%%/dbsep.conf; fi
+%%ETCDIR%%/dbsep.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/dsp.conf %D/%%ETCDIR%%/dsp.conf-dist; then rm -f %D/%%ETCDIR%%/dsp.conf; fi
+%%ETCDIR%%/dsp.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/extensions.lua %D/%%ETCDIR%%/extensions.lua-dist; then rm -f %D/%%ETCDIR%%/extensions.lua; fi
+%%ETCDIR%%/extensions.lua-dist
+@unexec if cmp -s %D/%%ETCDIR%%/extensions_minivm.conf %D/%%ETCDIR%%/extensions_minivm.conf-dist; then rm -f %D/%%ETCDIR%%/extensions_minivm.conf; fi
+%%ETCDIR%%/extensions_minivm.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/jingle.conf %D/%%ETCDIR%%/jingle.conf-dist; then rm -f %D/%%ETCDIR%%/jingle.conf; fi
+%%ETCDIR%%/jingle.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/minivm.conf %D/%%ETCDIR%%/minivm.conf-dist; then rm -f %D/%%ETCDIR%%/minivm.conf; fi
+%%ETCDIR%%/minivm.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/motif.conf %D/%%ETCDIR%%/motif.conf-dist; then rm -f %D/%%ETCDIR%%/motif.conf; fi
+%%ETCDIR%%/motif.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/ooh323.conf %D/%%ETCDIR%%/ooh323.conf-dist; then rm -f %D/%%ETCDIR%%/ooh323.conf; fi
+%%ETCDIR%%/ooh323.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/phoneprov.conf %D/%%ETCDIR%%/phoneprov.conf-dist; then rm -f %D/%%ETCDIR%%/phoneprov.conf; fi
+%%ETCDIR%%/phoneprov.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/queuerules.conf %D/%%ETCDIR%%/queuerules.conf-dist; then rm -f %D/%%ETCDIR%%/queuerules.conf; fi
+%%ETCDIR%%/queuerules.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_ldap.conf %D/%%ETCDIR%%/res_ldap.conf-dist; then rm -f %D/%%ETCDIR%%/res_ldap.conf; fi
+%%ETCDIR%%/res_ldap.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/unistim.conf %D/%%ETCDIR%%/unistim.conf-dist; then rm -f %D/%%ETCDIR%%/unistim.conf; fi
+%%ETCDIR%%/unistim.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/adsi.conf %D/%%ETCDIR%%/adsi.conf-dist; then rm -f %D/%%ETCDIR%%/adsi.conf; fi
+%%ETCDIR%%/adsi.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/agents.conf %D/%%ETCDIR%%/agents.conf-dist; then rm -f %D/%%ETCDIR%%/agents.conf; fi
+%%ETCDIR%%/agents.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/alarmreceiver.conf %D/%%ETCDIR%%/alarmreceiver.conf-dist; then rm -f %D/%%ETCDIR%%/alarmreceiver.conf; fi
+%%ETCDIR%%/alarmreceiver.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/alsa.conf %D/%%ETCDIR%%/alsa.conf-dist; then rm -f %D/%%ETCDIR%%/alsa.conf; fi
+%%ETCDIR%%/alsa.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/asterisk.adsi %D/%%ETCDIR%%/asterisk.adsi-dist; then rm -f %D/%%ETCDIR%%/asterisk.adsi; fi
+%%ETCDIR%%/asterisk.adsi-dist
+@unexec if cmp -s %D/%%ETCDIR%%/asterisk.conf %D/%%ETCDIR%%/asterisk.conf-dist; then rm -f %D/%%ETCDIR%%/asterisk.conf; fi
+%%ETCDIR%%/asterisk.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/calendar.conf %D/%%ETCDIR%%/calendar.conf-dist; then rm -f %D/%%ETCDIR%%/calendar.conf; fi
+%%ETCDIR%%/calendar.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/ccss.conf %D/%%ETCDIR%%/ccss.conf-dist; then rm -f %D/%%ETCDIR%%/ccss.conf; fi
+%%ETCDIR%%/ccss.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr.conf %D/%%ETCDIR%%/cdr.conf-dist; then rm -f %D/%%ETCDIR%%/cdr.conf; fi
+%%ETCDIR%%/cdr.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_custom.conf %D/%%ETCDIR%%/cdr_custom.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_custom.conf; fi
+%%ETCDIR%%/cdr_custom.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_manager.conf %D/%%ETCDIR%%/cdr_manager.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_manager.conf; fi
+%%ETCDIR%%/cdr_manager.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_mysql.conf %D/%%ETCDIR%%/cdr_mysql.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_mysql.conf; fi
+%%ETCDIR%%/cdr_mysql.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_odbc.conf %D/%%ETCDIR%%/cdr_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_odbc.conf; fi
+%%ETCDIR%%/cdr_odbc.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_pgsql.conf %D/%%ETCDIR%%/cdr_pgsql.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_pgsql.conf; fi
+%%ETCDIR%%/cdr_pgsql.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cdr_tds.conf %D/%%ETCDIR%%/cdr_tds.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_tds.conf; fi
+%%ETCDIR%%/cdr_tds.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cel.conf %D/%%ETCDIR%%/cel.conf-dist; then rm -f %D/%%ETCDIR%%/cel.conf; fi
+%%ETCDIR%%/cel.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cel_custom.conf %D/%%ETCDIR%%/cel_custom.conf-dist; then rm -f %D/%%ETCDIR%%/cel_custom.conf; fi
+%%ETCDIR%%/cel_custom.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cel_odbc.conf %D/%%ETCDIR%%/cel_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/cel_odbc.conf; fi
+%%ETCDIR%%/cel_odbc.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cel_pgsql.conf %D/%%ETCDIR%%/cel_pgsql.conf-dist; then rm -f %D/%%ETCDIR%%/cel_pgsql.conf; fi
+%%ETCDIR%%/cel_pgsql.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cel_sqlite3_custom.conf %D/%%ETCDIR%%/cel_sqlite3_custom.conf-dist; then rm -f %D/%%ETCDIR%%/cel_sqlite3_custom.conf; fi
+%%ETCDIR%%/cel_sqlite3_custom.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/cel_tds.conf %D/%%ETCDIR%%/cel_tds.conf-dist; then rm -f %D/%%ETCDIR%%/cel_tds.conf; fi
+%%ETCDIR%%/cel_tds.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/codecs.conf %D/%%ETCDIR%%/codecs.conf-dist; then rm -f %D/%%ETCDIR%%/codecs.conf; fi
+%%ETCDIR%%/codecs.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/dnsmgr.conf %D/%%ETCDIR%%/dnsmgr.conf-dist; then rm -f %D/%%ETCDIR%%/dnsmgr.conf; fi
+%%ETCDIR%%/dnsmgr.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/dundi.conf %D/%%ETCDIR%%/dundi.conf-dist; then rm -f %D/%%ETCDIR%%/dundi.conf; fi
+%%ETCDIR%%/dundi.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/enum.conf %D/%%ETCDIR%%/enum.conf-dist; then rm -f %D/%%ETCDIR%%/enum.conf; fi
+%%ETCDIR%%/enum.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/extconfig.conf %D/%%ETCDIR%%/extconfig.conf-dist; then rm -f %D/%%ETCDIR%%/extconfig.conf; fi
+%%ETCDIR%%/extconfig.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/extensions.ael %D/%%ETCDIR%%/extensions.ael-dist; then rm -f %D/%%ETCDIR%%/extensions.ael; fi
+%%ETCDIR%%/extensions.ael-dist
+@unexec if cmp -s %D/%%ETCDIR%%/extensions.conf %D/%%ETCDIR%%/extensions.conf-dist; then rm -f %D/%%ETCDIR%%/extensions.conf; fi
+%%ETCDIR%%/extensions.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/features.conf %D/%%ETCDIR%%/features.conf-dist; then rm -f %D/%%ETCDIR%%/features.conf; fi
+%%ETCDIR%%/features.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/festival.conf %D/%%ETCDIR%%/festival.conf-dist; then rm -f %D/%%ETCDIR%%/festival.conf; fi
+%%ETCDIR%%/festival.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/iax.conf %D/%%ETCDIR%%/iax.conf-dist; then rm -f %D/%%ETCDIR%%/iax.conf; fi
+%%ETCDIR%%/iax.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/iaxprov.conf %D/%%ETCDIR%%/iaxprov.conf-dist; then rm -f %D/%%ETCDIR%%/iaxprov.conf; fi
+%%ETCDIR%%/iaxprov.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/indications.conf %D/%%ETCDIR%%/indications.conf-dist; then rm -f %D/%%ETCDIR%%/indications.conf; fi
+%%ETCDIR%%/indications.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/logger.conf %D/%%ETCDIR%%/logger.conf-dist; then rm -f %D/%%ETCDIR%%/logger.conf; fi
+%%ETCDIR%%/logger.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/manager.conf %D/%%ETCDIR%%/manager.conf-dist; then rm -f %D/%%ETCDIR%%/manager.conf; fi
+%%ETCDIR%%/manager.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/meetme.conf %D/%%ETCDIR%%/meetme.conf-dist; then rm -f %D/%%ETCDIR%%/meetme.conf; fi
+%%ETCDIR%%/meetme.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/mgcp.conf %D/%%ETCDIR%%/mgcp.conf-dist; then rm -f %D/%%ETCDIR%%/mgcp.conf; fi
+%%ETCDIR%%/mgcp.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/misdn.conf %D/%%ETCDIR%%/misdn.conf-dist; then rm -f %D/%%ETCDIR%%/misdn.conf; fi
+%%ETCDIR%%/misdn.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/modules.conf %D/%%ETCDIR%%/modules.conf-dist; then rm -f %D/%%ETCDIR%%/modules.conf; fi
+%%ETCDIR%%/modules.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/musiconhold.conf %D/%%ETCDIR%%/musiconhold.conf-dist; then rm -f %D/%%ETCDIR%%/musiconhold.conf; fi
+%%ETCDIR%%/musiconhold.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/osp.conf %D/%%ETCDIR%%/osp.conf-dist; then rm -f %D/%%ETCDIR%%/osp.conf; fi
+%%ETCDIR%%/osp.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/oss.conf %D/%%ETCDIR%%/oss.conf-dist; then rm -f %D/%%ETCDIR%%/oss.conf; fi
+%%ETCDIR%%/oss.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/phone.conf %D/%%ETCDIR%%/phone.conf-dist; then rm -f %D/%%ETCDIR%%/phone.conf; fi
+%%ETCDIR%%/phone.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/queues.conf %D/%%ETCDIR%%/queues.conf-dist; then rm -f %D/%%ETCDIR%%/queues.conf; fi
+%%ETCDIR%%/queues.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_config_mysql.conf %D/%%ETCDIR%%/res_config_mysql.conf-dist; then rm -f %D/%%ETCDIR%%/res_config_mysql.conf; fi
+%%ETCDIR%%/res_config_mysql.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_config_sqlite3.conf %D/%%ETCDIR%%/res_config_sqlite3.conf-dist; then rm -f %D/%%ETCDIR%%/res_config_sqlite3.conf; fi
+%%ETCDIR%%/res_config_sqlite3.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_corosync.conf %D/%%ETCDIR%%/res_corosync.conf-dist; then rm -f %D/%%ETCDIR%%/res_corosync.conf; fi
+%%ETCDIR%%/res_corosync.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_pgsql.conf %D/%%ETCDIR%%/res_pgsql.conf-dist; then rm -f %D/%%ETCDIR%%/res_pgsql.conf; fi
+%%ETCDIR%%/res_pgsql.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_pktccops.conf %D/%%ETCDIR%%/res_pktccops.conf-dist; then rm -f %D/%%ETCDIR%%/res_pktccops.conf; fi
+%%ETCDIR%%/res_pktccops.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_odbc.conf %D/%%ETCDIR%%/res_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/res_odbc.conf; fi
+%%ETCDIR%%/res_odbc.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/rtp.conf %D/%%ETCDIR%%/rtp.conf-dist; then rm -f %D/%%ETCDIR%%/rtp.conf; fi
+%%ETCDIR%%/rtp.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/sip.conf %D/%%ETCDIR%%/sip.conf-dist; then rm -f %D/%%ETCDIR%%/sip.conf; fi
+%%ETCDIR%%/sip.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/sip_notify.conf %D/%%ETCDIR%%/sip_notify.conf-dist; then rm -f %D/%%ETCDIR%%/sip_notify.conf; fi
+%%ETCDIR%%/sip_notify.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/skinny.conf %D/%%ETCDIR%%/skinny.conf-dist; then rm -f %D/%%ETCDIR%%/skinny.conf; fi
+%%ETCDIR%%/skinny.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/telcordia-1.adsi %D/%%ETCDIR%%/telcordia-1.adsi-dist; then rm -f %D/%%ETCDIR%%/telcordia-1.adsi; fi
+%%ETCDIR%%/telcordia-1.adsi-dist
+@unexec if cmp -s %D/%%ETCDIR%%/voicemail.conf %D/%%ETCDIR%%/voicemail.conf-dist; then rm -f %D/%%ETCDIR%%/voicemail.conf; fi
+%%ETCDIR%%/voicemail.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/vpb.conf %D/%%ETCDIR%%/vpb.conf-dist; then rm -f %D/%%ETCDIR%%/vpb.conf; fi
+%%ETCDIR%%/vpb.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/chan_dahdi.conf %D/%%ETCDIR%%/chan_dahdi.conf-dist; then rm -f %D/%%ETCDIR%%/chan_dahdi.conf; fi
+%%ETCDIR%%/chan_dahdi.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/chan_mobile.conf %D/%%ETCDIR%%/chan_mobile.conf-dist; then rm -f %D/%%ETCDIR%%/chan_mobile.conf; fi
+%%ETCDIR%%/chan_mobile.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/udptl.conf %D/%%ETCDIR%%/udptl.conf-dist; then rm -f %D/%%ETCDIR%%/udptl.conf; fi
+%%ETCDIR%%/udptl.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/users.conf %D/%%ETCDIR%%/users.conf-dist; then rm -f %D/%%ETCDIR%%/users.conf; fi
+%%ETCDIR%%/users.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/smdi.conf %D/%%ETCDIR%%/smdi.conf-dist; then rm -f %D/%%ETCDIR%%/smdi.conf; fi
+%%ETCDIR%%/smdi.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/sla.conf %D/%%ETCDIR%%/sla.conf-dist; then rm -f %D/%%ETCDIR%%/sla.conf; fi
+%%ETCDIR%%/sla.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/say.conf %D/%%ETCDIR%%/say.conf-dist; then rm -f %D/%%ETCDIR%%/say.conf; fi
+%%ETCDIR%%/say.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_snmp.conf %D/%%ETCDIR%%/res_snmp.conf-dist; then rm -f %D/%%ETCDIR%%/res_snmp.conf; fi
+%%ETCDIR%%/res_snmp.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_stun_monitor.conf %D/%%ETCDIR%%/res_stun_monitor.conf-dist; then rm -f %D/%%ETCDIR%%/res_stun_monitor.conf; fi
+%%ETCDIR%%/res_stun_monitor.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/muted.conf %D/%%ETCDIR%%/muted.conf-dist; then rm -f %D/%%ETCDIR%%/muted.conf; fi
+%%ETCDIR%%/muted.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/jabber.conf %D/%%ETCDIR%%/jabber.conf-dist; then rm -f %D/%%ETCDIR%%/jabber.conf; fi
+%%ETCDIR%%/jabber.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/http.conf %D/%%ETCDIR%%/http.conf-dist; then rm -f %D/%%ETCDIR%%/http.conf; fi
+%%ETCDIR%%/http.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/h323.conf %D/%%ETCDIR%%/h323.conf-dist; then rm -f %D/%%ETCDIR%%/h323.conf; fi
+%%ETCDIR%%/h323.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/gtalk.conf %D/%%ETCDIR%%/gtalk.conf-dist; then rm -f %D/%%ETCDIR%%/gtalk.conf; fi
+%%ETCDIR%%/gtalk.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/func_odbc.conf %D/%%ETCDIR%%/func_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/func_odbc.conf; fi
+%%ETCDIR%%/func_odbc.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/followme.conf %D/%%ETCDIR%%/followme.conf-dist; then rm -f %D/%%ETCDIR%%/followme.conf; fi
+%%ETCDIR%%/followme.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/amd.conf %D/%%ETCDIR%%/amd.conf-dist; then rm -f %D/%%ETCDIR%%/amd.conf; fi
+%%ETCDIR%%/amd.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/app_skel.conf %D/%%ETCDIR%%/app_skel.conf-dist; then rm -f %D/%%ETCDIR%%/app_skel.conf; fi
+%%ETCDIR%%/app_skel.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/app_mysql.conf %D/%%ETCDIR%%/app_mysql.conf-dist; then rm -f %D/%%ETCDIR%%/app_mysql.conf; fi
+%%ETCDIR%%/app_mysql.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_config_sqlite.conf %D/%%ETCDIR%%/res_config_sqlite.conf-dist; then rm -f %D/%%ETCDIR%%/res_config_sqlite.conf; fi
+%%ETCDIR%%/res_config_sqlite.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_curl.conf %D/%%ETCDIR%%/res_curl.conf-dist; then rm -f %D/%%ETCDIR%%/res_curl.conf; fi
+%%ETCDIR%%/res_curl.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/res_fax.conf %D/%%ETCDIR%%/res_fax.conf-dist; then rm -f %D/%%ETCDIR%%/res_fax.conf; fi
+%%ETCDIR%%/res_fax.conf-dist
+@unexec if cmp -s %D/%%ETCDIR%%/xmpp.conf %D/%%ETCDIR%%/xmpp.conf-dist; then rm -f %D/%%ETCDIR%%/xmpp.conf; fi
+%%ETCDIR%%/xmpp.conf-dist
+@exec if test ! -e %D/%%ETCDIR%%/acl.conf; then cp -p %D/%%ETCDIR%%/acl.conf-dist %D/%%ETCDIR%%/acl.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_adaptive_odbc.conf; then cp -p %D/%%ETCDIR%%/cdr_adaptive_odbc.conf-dist %D/%%ETCDIR%%/cdr_adaptive_odbc.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_syslog.conf; then cp -p %D/%%ETCDIR%%/cdr_syslog.conf-dist %D/%%ETCDIR%%/cdr_syslog.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_sqlite3_custom.conf; then cp -p %D/%%ETCDIR%%/cdr_sqlite3_custom.conf-dist %D/%%ETCDIR%%/cdr_sqlite3_custom.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cli.conf; then cp -p %D/%%ETCDIR%%/cli.conf-dist %D/%%ETCDIR%%/cli.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/confbridge.conf; then cp -p %D/%%ETCDIR%%/confbridge.conf-dist %D/%%ETCDIR%%/confbridge.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/config_test.conf; then cp -p %D/%%ETCDIR%%/config_test.conf-dist %D/%%ETCDIR%%/config_test.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/console.conf; then cp -p %D/%%ETCDIR%%/console.conf-dist %D/%%ETCDIR%%/console.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/extensions.lua; then cp -p %D/%%ETCDIR%%/extensions.lua-dist %D/%%ETCDIR%%/extensions.lua; fi
+@exec if test ! -e %D/%%ETCDIR%%/extensions_minivm.conf; then cp -p %D/%%ETCDIR%%/extensions_minivm.conf-dist %D/%%ETCDIR%%/extensions_minivm.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/jingle.conf; then cp -p %D/%%ETCDIR%%/jingle.conf-dist %D/%%ETCDIR%%/jingle.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/minivm.conf; then cp -p %D/%%ETCDIR%%/minivm.conf-dist %D/%%ETCDIR%%/minivm.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/motif.conf; then cp -p %D/%%ETCDIR%%/motif.conf-dist %D/%%ETCDIR%%/motif.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/ooh323.conf; then cp -p %D/%%ETCDIR%%/ooh323.conf-dist %D/%%ETCDIR%%/ooh323.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/phoneprov.conf; then cp -p %D/%%ETCDIR%%/phoneprov.conf-dist %D/%%ETCDIR%%/phoneprov.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/queuerules.conf; then cp -p %D/%%ETCDIR%%/queuerules.conf-dist %D/%%ETCDIR%%/queuerules.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_ldap.conf; then cp -p %D/%%ETCDIR%%/res_ldap.conf-dist %D/%%ETCDIR%%/res_ldap.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/unistim.conf; then cp -p %D/%%ETCDIR%%/unistim.conf-dist %D/%%ETCDIR%%/unistim.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/adsi.conf; then cp -p %D/%%ETCDIR%%/adsi.conf-dist %D/%%ETCDIR%%/adsi.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/agents.conf; then cp -p %D/%%ETCDIR%%/agents.conf-dist %D/%%ETCDIR%%/agents.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/alarmreceiver.conf; then cp -p %D/%%ETCDIR%%/alarmreceiver.conf-dist %D/%%ETCDIR%%/alarmreceiver.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/alsa.conf; then cp -p %D/%%ETCDIR%%/alsa.conf-dist %D/%%ETCDIR%%/alsa.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/asterisk.adsi; then cp -p %D/%%ETCDIR%%/asterisk.adsi-dist %D/%%ETCDIR%%/asterisk.adsi; fi
+@exec if test ! -e %D/%%ETCDIR%%/ccss.conf; then cp -p %D/%%ETCDIR%%/ccss.conf-dist %D/%%ETCDIR%%/ccss.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/calendar.conf; then cp -p %D/%%ETCDIR%%/calendar.conf-dist %D/%%ETCDIR%%/calendar.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/asterisk.conf; then cp -p %D/%%ETCDIR%%/asterisk.conf-dist %D/%%ETCDIR%%/asterisk.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr.conf; then cp -p %D/%%ETCDIR%%/cdr.conf-dist %D/%%ETCDIR%%/cdr.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_custom.conf; then cp -p %D/%%ETCDIR%%/cdr_custom.conf-dist %D/%%ETCDIR%%/cdr_custom.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_mysql.conf; then cp -p %D/%%ETCDIR%%/cdr_mysql.conf-dist %D/%%ETCDIR%%/cdr_mysql.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_manager.conf; then cp -p %D/%%ETCDIR%%/cdr_manager.conf-dist %D/%%ETCDIR%%/cdr_manager.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_odbc.conf; then cp -p %D/%%ETCDIR%%/cdr_odbc.conf-dist %D/%%ETCDIR%%/cdr_odbc.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_pgsql.conf; then cp -p %D/%%ETCDIR%%/cdr_pgsql.conf-dist %D/%%ETCDIR%%/cdr_pgsql.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cel_tds.conf; then cp -p %D/%%ETCDIR%%/cel_tds.conf-dist %D/%%ETCDIR%%/cel_tds.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cel_sqlite3_custom.conf; then cp -p %D/%%ETCDIR%%/cel_sqlite3_custom.conf-dist %D/%%ETCDIR%%/cel_sqlite3_custom.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cel_pgsql.conf; then cp -p %D/%%ETCDIR%%/cel_pgsql.conf-dist %D/%%ETCDIR%%/cel_pgsql.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cel_odbc.conf; then cp -p %D/%%ETCDIR%%/cel_odbc.conf-dist %D/%%ETCDIR%%/cel_odbc.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cel_custom.conf; then cp -p %D/%%ETCDIR%%/cel_custom.conf-dist %D/%%ETCDIR%%/cel_custom.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cel.conf; then cp -p %D/%%ETCDIR%%/cel.conf-dist %D/%%ETCDIR%%/cel.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/cdr_tds.conf; then cp -p %D/%%ETCDIR%%/cdr_tds.conf-dist %D/%%ETCDIR%%/cdr_tds.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/codecs.conf; then cp -p %D/%%ETCDIR%%/codecs.conf-dist %D/%%ETCDIR%%/codecs.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/dnsmgr.conf; then cp -p %D/%%ETCDIR%%/dnsmgr.conf-dist %D/%%ETCDIR%%/dnsmgr.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/dundi.conf; then cp -p %D/%%ETCDIR%%/dundi.conf-dist %D/%%ETCDIR%%/dundi.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/enum.conf; then cp -p %D/%%ETCDIR%%/enum.conf-dist %D/%%ETCDIR%%/enum.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/extconfig.conf; then cp -p %D/%%ETCDIR%%/extconfig.conf-dist %D/%%ETCDIR%%/extconfig.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/extensions.ael; then cp -p %D/%%ETCDIR%%/extensions.ael-dist %D/%%ETCDIR%%/extensions.ael; fi
+@exec if test ! -e %D/%%ETCDIR%%/extensions.conf; then cp -p %D/%%ETCDIR%%/extensions.conf-dist %D/%%ETCDIR%%/extensions.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/features.conf; then cp -p %D/%%ETCDIR%%/features.conf-dist %D/%%ETCDIR%%/features.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/festival.conf; then cp -p %D/%%ETCDIR%%/festival.conf-dist %D/%%ETCDIR%%/festival.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/iax.conf; then cp -p %D/%%ETCDIR%%/iax.conf-dist %D/%%ETCDIR%%/iax.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/iaxprov.conf; then cp -p %D/%%ETCDIR%%/iaxprov.conf-dist %D/%%ETCDIR%%/iaxprov.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/indications.conf; then cp -p %D/%%ETCDIR%%/indications.conf-dist %D/%%ETCDIR%%/indications.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/logger.conf; then cp -p %D/%%ETCDIR%%/logger.conf-dist %D/%%ETCDIR%%/logger.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/manager.conf; then cp -p %D/%%ETCDIR%%/manager.conf-dist %D/%%ETCDIR%%/manager.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/meetme.conf; then cp -p %D/%%ETCDIR%%/meetme.conf-dist %D/%%ETCDIR%%/meetme.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/mgcp.conf; then cp -p %D/%%ETCDIR%%/mgcp.conf-dist %D/%%ETCDIR%%/mgcp.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/misdn.conf; then cp -p %D/%%ETCDIR%%/misdn.conf-dist %D/%%ETCDIR%%/misdn.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/modules.conf; then cp -p %D/%%ETCDIR%%/modules.conf-dist %D/%%ETCDIR%%/modules.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/musiconhold.conf; then cp -p %D/%%ETCDIR%%/musiconhold.conf-dist %D/%%ETCDIR%%/musiconhold.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/osp.conf; then cp -p %D/%%ETCDIR%%/osp.conf-dist %D/%%ETCDIR%%/osp.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/oss.conf; then cp -p %D/%%ETCDIR%%/oss.conf-dist %D/%%ETCDIR%%/oss.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/phone.conf; then cp -p %D/%%ETCDIR%%/phone.conf-dist %D/%%ETCDIR%%/phone.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_fax.conf; then cp -p %D/%%ETCDIR%%/res_fax.conf-dist %D/%%ETCDIR%%/res_fax.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/xmpp.conf; then cp -p %D/%%ETCDIR%%/xmpp.conf-dist %D/%%ETCDIR%%/xmpp.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_curl.conf; then cp -p %D/%%ETCDIR%%/res_curl.conf-dist %D/%%ETCDIR%%/res_curl.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_config_mysql.conf; then cp -p %D/%%ETCDIR%%/res_config_mysql.conf-dist %D/%%ETCDIR%%/res_config_mysql.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_config_sqlite.conf; then cp -p %D/%%ETCDIR%%/res_config_sqlite.conf-dist %D/%%ETCDIR%%/res_config_sqlite.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_config_sqlite3.conf; then cp -p %D/%%ETCDIR%%/res_config_sqlite3.conf-dist %D/%%ETCDIR%%/res_config_sqlite3.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_corosync.conf; then cp -p %D/%%ETCDIR%%/res_corosync.conf-dist %D/%%ETCDIR%%/res_corosync.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/queues.conf; then cp -p %D/%%ETCDIR%%/queues.conf-dist %D/%%ETCDIR%%/queues.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_pktccops.conf; then cp -p %D/%%ETCDIR%%/res_pktccops.conf-dist %D/%%ETCDIR%%/res_pktccops.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_pgsql.conf; then cp -p %D/%%ETCDIR%%/res_pgsql.conf-dist %D/%%ETCDIR%%/res_pgsql.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_odbc.conf; then cp -p %D/%%ETCDIR%%/res_odbc.conf-dist %D/%%ETCDIR%%/res_odbc.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/rtp.conf; then cp -p %D/%%ETCDIR%%/rtp.conf-dist %D/%%ETCDIR%%/rtp.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/sip.conf; then cp -p %D/%%ETCDIR%%/sip.conf-dist %D/%%ETCDIR%%/sip.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/sip_notify.conf; then cp -p %D/%%ETCDIR%%/sip_notify.conf-dist %D/%%ETCDIR%%/sip_notify.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/skinny.conf; then cp -p %D/%%ETCDIR%%/skinny.conf-dist %D/%%ETCDIR%%/skinny.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/telcordia-1.adsi; then cp -p %D/%%ETCDIR%%/telcordia-1.adsi-dist %D/%%ETCDIR%%/telcordia-1.adsi; fi
+@exec if test ! -e %D/%%ETCDIR%%/voicemail.conf; then cp -p %D/%%ETCDIR%%/voicemail.conf-dist %D/%%ETCDIR%%/voicemail.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/vpb.conf; then cp -p %D/%%ETCDIR%%/vpb.conf-dist %D/%%ETCDIR%%/vpb.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/chan_mobile.conf; then cp -p %D/%%ETCDIR%%/chan_mobile.conf-dist %D/%%ETCDIR%%/chan_mobile.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/chan_dahdi.conf; then cp -p %D/%%ETCDIR%%/chan_dahdi.conf-dist %D/%%ETCDIR%%/chan_dahdi.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/udptl.conf; then cp -p %D/%%ETCDIR%%/udptl.conf-dist %D/%%ETCDIR%%/udptl.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/users.conf; then cp -p %D/%%ETCDIR%%/users.conf-dist %D/%%ETCDIR%%/users.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/smdi.conf; then cp -p %D/%%ETCDIR%%/smdi.conf-dist %D/%%ETCDIR%%/smdi.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/sla.conf; then cp -p %D/%%ETCDIR%%/sla.conf-dist %D/%%ETCDIR%%/sla.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/say.conf; then cp -p %D/%%ETCDIR%%/say.conf-dist %D/%%ETCDIR%%/say.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_stun_monitor.conf; then cp -p %D/%%ETCDIR%%/res_stun_monitor.conf-dist %D/%%ETCDIR%%/res_stun_monitor.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/res_snmp.conf; then cp -p %D/%%ETCDIR%%/res_snmp.conf-dist %D/%%ETCDIR%%/res_snmp.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/muted.conf; then cp -p %D/%%ETCDIR%%/muted.conf-dist %D/%%ETCDIR%%/muted.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/jabber.conf; then cp -p %D/%%ETCDIR%%/jabber.conf-dist %D/%%ETCDIR%%/jabber.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/http.conf; then cp -p %D/%%ETCDIR%%/http.conf-dist %D/%%ETCDIR%%/http.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/h323.conf; then cp -p %D/%%ETCDIR%%/h323.conf-dist %D/%%ETCDIR%%/h323.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/gtalk.conf; then cp -p %D/%%ETCDIR%%/gtalk.conf-dist %D/%%ETCDIR%%/gtalk.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/func_odbc.conf; then cp -p %D/%%ETCDIR%%/func_odbc.conf-dist %D/%%ETCDIR%%/func_odbc.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/followme.conf; then cp -p %D/%%ETCDIR%%/followme.conf-dist %D/%%ETCDIR%%/followme.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/app_mysql.conf; then cp -p %D/%%ETCDIR%%/app_mysql.conf-dist %D/%%ETCDIR%%/app_mysql.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/app_skel.conf; then cp -p %D/%%ETCDIR%%/app_skel.conf-dist %D/%%ETCDIR%%/app_skel.conf; fi
+@exec if test ! -e %D/%%ETCDIR%%/amd.conf; then cp -p %D/%%ETCDIR%%/amd.conf-dist %D/%%ETCDIR%%/amd.conf; fi
 include/asterisk/doxygen/architecture.h
 include/asterisk/doxygen/asterisk-git-howto.h
 include/asterisk/doxygen/commits.h
@@ -668,6 +668,12 @@ lib/asterisk/modules/res_smdi.so
 lib/asterisk/modules/res_speech.so
 lib/libasteriskssl.so
 lib/libasteriskssl.so.1
+man/man8/astdb2bdb.8.gz
+man/man8/astdb2sqlite3.8.gz
+man/man8/asterisk.8.gz
+man/man8/astgenkey.8.gz
+man/man8/autosupport.8.gz
+man/man8/safe_asterisk.8.gz
 sbin/astcanary
 sbin/astdb2bdb
 sbin/astdb2sqlite3
@@ -1247,7 +1253,7 @@ share/asterisk/static-http/mantest.html
 @dirrm lib/asterisk
 @dirrm include/asterisk/doxygen
 @dirrm include/asterisk
-@dirrmtry etc/asterisk
+@dirrmtry %%ETCDIR%%
 @exec mkdir -p %D/share/asterisk/keys
 @exec mkdir -p %D/share/asterisk/images
 @exec mkdir -p %D/share/asterisk/firmware/iax
@@ -1267,9 +1273,11 @@ spool/asterisk/voicemail/default/1234/en/unavail.gsm
 @exec mkdir -p %D/spool/asterisk/voicemail/default/1234/en
 @exec mkdir -p %D/spool/asterisk/tmp
 @exec mkdir -p %D/db/asterisk
+@exec mkdir -p %D/run/asterisk
 @exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/db/asterisk
 @exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/spool/asterisk
 @exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/log/asterisk
+@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/run/asterisk
 @dirrm spool/asterisk/dictate
 @dirrm spool/asterisk/meetme
 @dirrm spool/asterisk/monitor
@@ -1287,3 +1295,4 @@ spool/asterisk/voicemail/default/1234/en/unavail.gsm
 @dirrmtry log/asterisk/cel-custom
 @dirrmtry log/asterisk
 @dirrmtry db/asterisk
+@dirrmtry run/asterisk
