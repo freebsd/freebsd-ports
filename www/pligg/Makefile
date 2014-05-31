@@ -2,61 +2,55 @@
 # $FreeBSD$
 
 PORTNAME=	pligg
-PORTVERSION=	1.1.5
+PORTVERSION=	2.0.1
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://forums.pligg.com/attachments/current-version/
-DISTNAME=	3076d1308851225-pligg-content-management-system-${PORTVERSION:S/./-/g}-pligg-cms-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
-COMMENT=	An Open Source Web2.0 CMS
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Open Source Web2.0 CMS
 
-PORTSCOUT=	ignore:1
+LICENSE=	CCA30
+LICENSE_NAME=	Creative Commons Attribution 3.0 Unported Copyright
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		zip
+USE_GITHUB=	yes
+GH_ACCOUNT=	Pligg
+GH_PROJECT=	pligg-cms
+GH_COMMIT=	1d72393
+
 USE_PHP=	mysql
-WRKSRC=		${WRKDIR}/pligg
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
-		>> ${TMPPLIST}
+post-install:
+	@if [ ! -f ${STAGEDIR}${WWWDIR}/settings.php ]; then \
+	${CP} -p ${STAGEDIR}${WWWDIR}/settings.php.default ${STAGEDIR}${WWWDIR}/settings.php; fi
 
-	@if [ ! -f ${WWWDIR}/settings.php ]; then \
-	${CP} -p ${WWWDIR}/settings.php.default ${WWWDIR}/settings.php; fi
+	@if [ ! -f ${STAGEDIR}${WWWDIR}/libs/dbconnect.php ]; then \
+	${CP} -p ${STAGEDIR}${WWWDIR}/libs/dbconnect.php.default \
+		${STAGEDIR}${WWWDIR}/libs/dbconnect.php; fi
 
-	@if [ ! -f ${WWWDIR}/libs/dbconnect.php ]; then \
-	${CP} -p ${WWWDIR}/libs/dbconnect.php.default \
-		${WWWDIR}/libs/dbconnect.php; fi
-
-	@${CHMOD} 666 ${WWWDIR}/settings.php
-	@${ECHO_CMD} '@exec ${CHMOD} 666 ${WWWDIR}/settings.php' \
+	@${CHMOD} 666 ${STAGEDIR}${WWWDIR}/settings.php
+	@${ECHO_CMD} '@exec ${CHMOD} 666 ${STAGEDIR}${WWWDIR}/settings.php' \
 		>> ${TMPPLIST}
 
-	@${CHMOD} 666 ${WWWDIR}/libs/dbconnect.php
-	@${ECHO_CMD} '@exec ${CHMOD} 666 ${WWWDIR}/libs/dbconnect.php' \
+	@${CHMOD} 666 ${STAGEDIR}${WWWDIR}/libs/dbconnect.php
+	@${ECHO_CMD} '@exec ${CHMOD} 666 ${STAGEDIR}${WWWDIR}/libs/dbconnect.php' \
 		>> ${TMPPLIST}
 
-	@${CHMOD} 655 ${WWWDIR}/config.php
-	@${ECHO_CMD} '@exec ${CHMOD} 655 ${WWWDIR}/config.php' \
+	@${CHMOD} 655 ${STAGEDIR}${WWWDIR}/config.php
+	@${ECHO_CMD} '@exec ${CHMOD} 655 ${STAGEDIR}${WWWDIR}/config.php' \
 		>> ${TMPPLIST}
 
 .for d in admin/backup cache avatars/groups_uploaded avatars/user_uploaded languages
-	@${CHMOD} -R 777 ${WWWDIR}/${d}
-	@${ECHO_CMD} '@exec ${CHMOD} 777 ${WWWDIR}/${d}' >> ${TMPPLIST}
+	@${CHMOD} -R 777 ${STAGEDIR}${WWWDIR}/${d}
+	@${ECHO_CMD} '@exec ${CHMOD} 777 ${STAGEDIR}${WWWDIR}/${d}' >> ${TMPPLIST}
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
