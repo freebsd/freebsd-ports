@@ -3,11 +3,11 @@
 
 PORTNAME=	rpy
 PORTVERSION=	1.0.3
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	math
 MASTER_SITES=	SF
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to the R Programming Language
 
 LICENSE=	GPLv2 LGPL21 MPL
@@ -20,9 +20,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib/R/modules -L${LOCALBASE}/lib/R/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^statichere ,,' ${WRKSRC}/src/rpymodule.c
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/lib|' ${WRKSRC}/setup.py
