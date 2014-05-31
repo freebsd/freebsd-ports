@@ -5449,7 +5449,7 @@ mail/zmailer||2014-02-13|Broken since at least last August
 lang/gcc34|lang/gcc|2014-02-13|Superseded by GCC 4.6 or later
 devel/adabooch-doc-html||2014-02-15|Obsolete; adabooch now has DOCS option
 x11-toolkits/sakura|x11/sakura|2014-02-16|Moved to a better category
-misc/kde4-shared-mime-info||2014-02-18|Removed, the port not needed anymore
+misc/kde4-shared-mime-info||2014-02-18|Removed: this port is not needed anymore
 deskutils/kdepim44-runtime||2014-02-18|Removed: conflicts with new kdepimlibs
 deskutils/kdepim44||2014-02-18|Removed: depends on deskutils/kdepim44-runtime
 misc/kde-xdg-env||2014-02-18|Removed, remnant of KDE 3
