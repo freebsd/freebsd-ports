@@ -17,8 +17,10 @@ USES=		perl5 gmake
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
-MAN1=		mmake.1
-PLIST_FILES=	bin/mmake
+PLIST_FILES=	bin/mmake man/man1/mmake.1.gz
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -E 's,(BIN|MAN)DIR),DESTDIR)$$(&,' \
+		${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
