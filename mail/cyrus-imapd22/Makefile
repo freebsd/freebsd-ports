@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	22
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
+DEPRECATED=	No further releases of 2.2.X are planned, consider using 2.4.X.
+EXPIRATION_DATE=2014-06-30
+
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].* cyrus-imapd2[^2]-2.[^2].*
