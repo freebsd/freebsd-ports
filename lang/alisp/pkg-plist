@@ -2,6 +2,7 @@ bin/alisp
 lib/libalisp.a
 lib/libalisp.so
 include/alisp.h
+man/man7/alisp.7.gz
 %%DATADIR%%/LICENSE
 %%DATADIR%%/alisp-image
 %%DATADIR%%/amk-tools.l
