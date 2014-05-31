@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java style checker
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
@@ -22,35 +20,27 @@ JAR_FILE=	${PORTNAME}-${PORTVERSION}-all.jar
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
-
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
-.endif
 
 SUB_FILES=	${PORTNAME}.sh
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
-	@-${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${JAR_FILE} ${JAVAJARDIR}/${PORTNAME}.jar
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	@-${MKDIR} ${DOCSDIR}
-.for DOCFILE in LICENSE* README RIGHTS.antlr
-	@${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}/
-.endfor
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} site ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@-${MKDIR} ${EXAMPLESDIR}
+	@-${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/${JAR_FILE} \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE* README RIGHTS.antlr \
+		${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} site ${STAGEDIR}${DOCSDIR})
+	@-${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for EXAMPLEFILE in checkstyle_checks import-control sun_checks suppressions
-	@${INSTALL_DATA} ${WRKSRC}/${EXAMPLEFILE}.xml ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${EXAMPLEFILE}.xml ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${EXAMPLESDIR}
-.endif
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
