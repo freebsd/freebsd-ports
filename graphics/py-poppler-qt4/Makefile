@@ -23,6 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-g
 		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
 
 BROKEN=		Doesn't build with current poppler API
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

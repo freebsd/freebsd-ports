@@ -12,6 +12,8 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Notice original ticket to dupe one
 
 BROKEN=		Fails to patch
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 LICENSE=	BSD
 

@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
 BROKEN=		Fails to install
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 USE_CSTD=	c89
 

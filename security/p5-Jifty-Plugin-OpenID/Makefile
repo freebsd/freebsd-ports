@@ -18,6 +18,8 @@ BUILD_DEPENDS=	p5-Jifty>=0:${PORTSDIR}/www/p5-Jifty \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		does not build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 USES=		perl5
 USE_PERL5=	configure
