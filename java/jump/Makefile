@@ -13,31 +13,26 @@ COMMENT=	Java library for arbitrary precision computations
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
-
-.if defined(NOPORTDOCS)
 ALL_TARGET=	jar
-.else
-ALL_TARGET=	jar apidocs
-.endif
+
 JARFILE=	${PORTNAME}.jar
 
-.if !defined(NOPORTDOCS)
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	apidocs
 .endif
 
-PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
-
-NO_STAGE=	yes
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/${JARFILE}
-	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/build/apidocs/ && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/build/apidocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
