@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sflowtool
-PORTVERSION=	3.30
+PORTVERSION=	3.32
 CATEGORIES=	net
 MASTER_SITES=	http://www.inmon.com/bin/
 
