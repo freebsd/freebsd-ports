@@ -266,7 +266,6 @@ vice-*			emulators/vice		ROMs are copyrighted by Commodore Business Machines
 VMware-vSphere-Perl*	net/vmware-vsphere-cli	May not be redistributed.  Must accept license to download.
 vpnc-*			security/vpnc		Redistribution is not allowed if linked against OpenSSL
 vst_sdk2_3.zip		audio/ardour		Redistribution of the VST PlugIns SDK is not allowed
-vtkmpeg2encode.tar.gz	multimedia/vtkmpeg2encode	The MPEG2 format and all software that uses it is subject to patent restrictions
 vwnc7.3.1/*		lang/visualworks	Do not redistribute
 waeijiro-fpw-*		japanese/waeijiro-fpw	The original dictionary is not free
 webcopy-*		www/webcopy		This program cannot be distributed if modified in any way.  Don't sell for profit without written permission
