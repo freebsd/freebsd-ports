@@ -48,6 +48,8 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 .if ${PORT_OPTIONS:MSWTDEVEL}
 SWT=		swt-devel

@@ -14,6 +14,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding to the EsounD library
 
 BROKEN=	Fails to configure
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 LIB_DEPENDS=	libesd.so:${PORTSDIR}/audio/esound
 

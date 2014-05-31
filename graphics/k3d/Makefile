@@ -14,6 +14,8 @@ COMMENT=	3D modeling, animation, and rendering system
 LICENSE=	GPLv2
 
 BROKEN=		Fails to configure
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gmm/gmm.h:${PORTSDIR}/math/gmm++
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
