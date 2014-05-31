@@ -16,6 +16,9 @@ PATCHFILES=	${PORTNAME}-2.1.16-ipv6-20031121.diff.gz
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
+DEPRECATED=	Cyrus IMAPd 2.1.X have been deprecated, consider using 2.4.X.
+EXPIRATION_DATE=2014-06-30
+
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
