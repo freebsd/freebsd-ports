@@ -13,6 +13,9 @@ COMMENT=	Music score editor for lilypond
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on BROKEN and EXPIRING py-poppler-qt4
+EXPIRATION_DATE=	2014-06-30
+
 RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond \
 		${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:${PORTSDIR}/graphics/py-poppler-qt4
 
