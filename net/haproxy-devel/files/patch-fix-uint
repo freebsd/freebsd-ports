@@ -1,0 +1,66 @@
+From: Willy Tarreau <w@1wt.eu>
+Date: Wed, 28 May 2014 21:05:07 +0000 (+0200)
+Subject: BUILD: don't use type "uint" which is not portable
+X-Git-Url: http://haproxy.1wt.eu:81/git?p=haproxy.git;a=commitdiff_plain;h=c874653bb45b101f50ea710576c7b47766874d1c;hp=2e85840266f056d7a51e885b03b50963209d7111
+
+BUILD: don't use type "uint" which is not portable
+
+Dmitry Sivachenko reported that "uint" doesn't build on FreeBSD 10.
+On Linux it's defined in sys/types.h and indicated as "old". Just
+get rid of the very few occurrences.
+---
+
+diff --git a/contrib/halog/halog.c b/contrib/halog/halog.c
+index c686de1..fc927bd 100644
+--- contrib/halog/halog.c
++++ contrib/halog/halog.c
+@@ -694,7 +694,7 @@ int main(int argc, char **argv)
+ 	struct eb32_node *n;
+ 	struct url_stat *ustat = NULL;
+ 	int val, test;
+-	uint uval;
++	unsigned int uval;
+ 	int filter_acc_delay = 0, filter_acc_count = 0;
+ 	int filter_time_resp = 0;
+ 	int filt_http_status_low = 0, filt_http_status_high = 0;
+diff --git a/include/common/regex.h b/include/common/regex.h
+index 63689af..2e26b67 100644
+--- include/common/regex.h
++++ include/common/regex.h
+@@ -79,7 +79,7 @@ extern regmatch_t pmatch[MAX_MATCH];
+  * The function return 1 is succes case, else return 0 and err is filled.
+  */
+ int regex_comp(const char *str, struct my_regex *regex, int cs, int cap, char **err);
+-int exp_replace(char *dst, uint dst_size, char *src, const char *str, const regmatch_t *matches);
++int exp_replace(char *dst, unsigned int dst_size, char *src, const char *str, const regmatch_t *matches);
+ const char *check_replace_string(const char *str);
+ const char *chain_regex(struct hdr_exp **head, const regex_t *preg,
+ 			int action, const char *replace, void *cond);
+diff --git a/src/regex.c b/src/regex.c
+index b081477..a31bcda 100644
+--- src/regex.c
++++ src/regex.c
+@@ -22,7 +22,7 @@
+ /* regex trash buffer used by various regex tests */
+ regmatch_t pmatch[MAX_MATCH];  /* rm_so, rm_eo for regular expressions */
+ 
+-int exp_replace(char *dst, uint dst_size, char *src, const char *str, const regmatch_t *matches)
++int exp_replace(char *dst, unsigned int dst_size, char *src, const char *str, const regmatch_t *matches)
+ {
+ 	char *old_dst = dst;
+ 	char* dst_end = dst + dst_size;
+diff --git a/src/standard.c b/src/standard.c
+index 9cec295..06176d7 100644
+--- src/standard.c
++++ src/standard.c
+@@ -2416,8 +2416,8 @@ char *env_expand(char *in)
+ const char *strnistr(const char *str1, int len_str1, const char *str2, int len_str2)
+ {
+ 	char *pptr, *sptr, *start;
+-	uint slen, plen;
+-	uint tmp1, tmp2;
++	unsigned int slen, plen;
++	unsigned int tmp1, tmp2;
+ 
+ 	if (str1 == NULL || len_str1 == 0) // search pattern into an empty string => search is not found
+ 		return NULL;
