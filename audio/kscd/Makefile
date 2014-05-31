@@ -25,4 +25,3 @@ ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 ALSA_EXTRA_PATCHES=	${FILESDIR}/extrapatch-no_alsa
 
 .include <bsd.port.mk>
-

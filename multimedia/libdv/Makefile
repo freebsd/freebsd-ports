@@ -58,4 +58,3 @@ post-install:
 # However, lack of -O{1,s,2,3} or -O0 BREAK the build
 # Therefore, make sure we have AT LEAST -O and avoid -O0
 CFLAGS:=	-O ${CFLAGS:N-O0}
-

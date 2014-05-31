@@ -14,7 +14,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig gmake
-USE_AUTORECONF=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing

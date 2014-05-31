@@ -73,4 +73,3 @@ post-patch:
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
-

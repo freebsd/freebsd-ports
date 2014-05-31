@@ -18,4 +18,3 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 SHEBANG_FILES=	perldoc/pod2html.pl
 
 .include <bsd.port.mk>
-
