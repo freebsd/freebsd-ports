@@ -5,11 +5,11 @@ lib/X11/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XKeysymDB
 lib/X11/xmcd/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XMcd.sgi
-lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/README
-lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/cda
-lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/gobrowser
-lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/has_alsa
-lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/xmcd
+lib/X11/xmcd/bin-%%OPSYS%%_%%RELEASE%%-%%ARCH%%/README
+lib/X11/xmcd/bin-%%OPSYS%%_%%RELEASE%%-%%ARCH%%/cda
+lib/X11/xmcd/bin-%%OPSYS%%_%%RELEASE%%-%%ARCH%%/gobrowser
+lib/X11/xmcd/bin-%%OPSYS%%_%%RELEASE%%-%%ARCH%%/has_alsa
+lib/X11/xmcd/bin-%%OPSYS%%_%%RELEASE%%-%%ARCH%%/xmcd
 lib/X11/xmcd/config/.tbl/Acer
 lib/X11/xmcd/config/.tbl/Apple
 lib/X11/xmcd/config/.tbl/Aztech
@@ -290,8 +290,8 @@ lib/X11/xmcd/scripts/genidx
 man/man1/cda.1.gz
 man/man1/xmcd.1.gz
 @dirrm lib/X11/xmcd/app-defaults
-@dirrm lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%
-@dirrmtry lib/X11/xmcd/lib-FreeBSD_%%RELEASE%%-%%ARCH%%
+@dirrm lib/X11/xmcd/bin-%%OPSYS%%_%%RELEASE%%-%%ARCH%%
+@dirrmtry lib/X11/xmcd/lib-%%OPSYS%%_%%RELEASE%%-%%ARCH%%
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config
 @dirrm lib/X11/xmcd/discog/Blues/General_Blues
