@@ -12,7 +12,7 @@ COMMENT=	Nagios plugin to check status of Varnish
 
 BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 
@@ -21,9 +21,8 @@ USES=		pkgconfig
 PLIST_DIRSTRY=	libexec/nagios
 PLIST_FILES=	libexec/nagios/check_varnish
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKSRC}/check_varnish ${PREFIX}/libexec/nagios
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKSRC}/check_varnish ${STAGEDIR}${PREFIX}/libexec/nagios
 
 .include <bsd.port.mk>
