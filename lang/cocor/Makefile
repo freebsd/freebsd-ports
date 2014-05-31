@@ -21,13 +21,7 @@ MAKE_ENV=	CRFRAMES="${WRKSRC}/frames"
 MAKEFILE=	unix.mk
 ALL_TARGET=	all1
 
-MAN1=		${PORTNAME}.1
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 post-patch:
 .for i in sources/unix.mk taste/unix.mk
@@ -38,23 +32,19 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
-.for i in cplus2 taste taste_cp
-	@(cd ${WRKSRC}; ${COPYTREE_SHARE} ${i} ${PREFIX}/lib/${PORTNAME})
-.endfor
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/frames; ${COPYTREE_SHARE} . ${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/coco.use ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/cocol ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.atg ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.inp ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	(cd ${WRKSRC}; ${COPYTREE_SHARE} "cplus2 taste taste_cp" \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/frames; ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/coco.use ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/cocol ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.atg ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.inp ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
