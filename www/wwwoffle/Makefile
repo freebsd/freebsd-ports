@@ -2,7 +2,7 @@
 
 PORTNAME=	wwwoffle
 PORTVERSION=	2.9i
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.gedanken.org.uk/software/wwwoffle/download/
 EXTRACT_SUFX=	.tgz
@@ -12,7 +12,7 @@ COMMENT=	Caching proxy server for HTTP and FTP designed for dial-up hosts
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 USES=		perl5 gmake
 
@@ -35,13 +35,11 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
 SUB_FILES=	pkg-message
 SUB_LIST=	WWWOFFLE_SPOOL="${WWWOFFLE_SPOOL}"
 
-MAN1=		wwwoffle.1
-MAN5=		wwwoffle.conf.5
-MAN8=		wwwoffled.8
-
-NO_STAGE=	yes
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${WWWOFFLE_SPOOL}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${STAGEDIR}${WWWOFFLE_SPOOL}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}* ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}d
+
+post-stage:
+	@${RM} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
 
 .include <bsd.port.mk>
