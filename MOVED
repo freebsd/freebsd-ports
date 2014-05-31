@@ -6118,3 +6118,6 @@ x11/libgnome-java||2014-05-27|Has expired: Unmaintained, outdated not depend on
 security/calife-devel||2014-05-28|Replaced by security/calife
 sysutils/synergy-devel||2014-05-30|Replaced by sysutils/synergy
 net-im/vicq||2014-05-30|Has expired: Unmaintained, outdated not depend on
+net-im/mercury||2014-05-31|Has expired: MSN is dying and the domain mercury.im is down
+german/bsdgroup-firefox-searchplugin||2014-05-31|Has expired: bsdgroup.de no longer seems to exist
+german/bsdforen-firefox-searchplugin||2014-05-31|Has expired: No longer works after forum software update

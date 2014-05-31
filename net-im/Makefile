@@ -75,7 +75,6 @@
     SUBDIR += mbpurple
     SUBDIR += mcabber
     SUBDIR += meanwhile
-    SUBDIR += mercury
     SUBDIR += mikutter
     SUBDIR += mu-conference
     SUBDIR += naim
