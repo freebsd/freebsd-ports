@@ -1,6 +1,6 @@
+%%PERL5_MAN3%%/Apache::Gallery.3.gz
 %%SITE_PERL%%/Apache/Gallery.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery/.packlist
-%%PERL5_MAN3%%/Apache::Gallery.3.gz
 %%DATADIR%%/templates/bright/README
 %%DATADIR%%/templates/bright/dircomment.tpl
 %%DATADIR%%/templates/bright/directory.tpl
@@ -18,11 +18,11 @@
 %%DATADIR%%/templates/bright/nopictureinfo.tpl
 %%DATADIR%%/templates/bright/orig.tpl
 %%DATADIR%%/templates/bright/picture.tpl
-%%DATADIR%%/templates/bright/scale.tpl
 %%DATADIR%%/templates/bright/pictureinfo.tpl
 %%DATADIR%%/templates/bright/refresh.tpl
 %%DATADIR%%/templates/bright/rss.tpl
 %%DATADIR%%/templates/bright/rss_item.tpl
+%%DATADIR%%/templates/bright/scale.tpl
 %%DATADIR%%/templates/bright/scaleactive.tpl
 %%DATADIR%%/templates/bright/showpicture.tpl
 %%DATADIR%%/templates/bright/slideshowisoff.tpl
@@ -43,11 +43,11 @@
 %%DATADIR%%/templates/default/nopictureinfo.tpl
 %%DATADIR%%/templates/default/orig.tpl
 %%DATADIR%%/templates/default/picture.tpl
-%%DATADIR%%/templates/default/scale.tpl
 %%DATADIR%%/templates/default/pictureinfo.tpl
 %%DATADIR%%/templates/default/refresh.tpl
 %%DATADIR%%/templates/default/rss.tpl
 %%DATADIR%%/templates/default/rss_item.tpl
+%%DATADIR%%/templates/default/scale.tpl
 %%DATADIR%%/templates/default/scaleactive.tpl
 %%DATADIR%%/templates/default/showpicture.tpl
 %%DATADIR%%/templates/default/slideshowisoff.tpl
@@ -68,15 +68,20 @@
 %%DATADIR%%/templates/new/nopictureinfo.tpl
 %%DATADIR%%/templates/new/orig.tpl
 %%DATADIR%%/templates/new/picture.tpl
-%%DATADIR%%/templates/new/scale.tpl
 %%DATADIR%%/templates/new/pictureinfo.tpl
 %%DATADIR%%/templates/new/refresh.tpl
 %%DATADIR%%/templates/new/rss.tpl
 %%DATADIR%%/templates/new/rss_item.tpl
+%%DATADIR%%/templates/new/scale.tpl
 %%DATADIR%%/templates/new/scaleactive.tpl
 %%DATADIR%%/templates/new/showpicture.tpl
 %%DATADIR%%/templates/new/slideshowisoff.tpl
 %%DATADIR%%/templates/new/slideshowoff.tpl
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 www/icons/gallery/agfolder.png
 www/icons/gallery/application-doc.png
 www/icons/gallery/application-pdf.png
@@ -91,18 +96,14 @@ www/icons/gallery/video-mov.png
 www/icons/gallery/video-mpeg.png
 www/icons/gallery/video-mpg.png
 www/icons/gallery/video-wmv.png
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+@dirrm www/icons/gallery
+@dirrmtry www/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/templates/new
+@dirrm %%DATADIR%%/templates/default
+@dirrm %%DATADIR%%/templates/bright
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache
-@dirrm %%DATADIR%%/templates/bright
-@dirrm %%DATADIR%%/templates/default
-@dirrm %%DATADIR%%/templates/new
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%
-@dirrm www/icons/gallery
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

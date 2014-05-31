@@ -28,9 +28,6 @@ USES=		perl5
 USE_PERL5=	configure
 USE_APACHE=	22+
 
-PLIST_DIRSTRY+=	www/icons
-
-MAN3=		Apache::Gallery.3
 DOC_FILES=	INSTALL LICENSE README TODO UPGRADE
 
 SUB_FILES+=	pkg-message
@@ -54,15 +51,7 @@ post-install:
 		${STAGEDIR}/${DATADIR}/templates/default/
 	${INSTALL_DATA} ${WRKSRC}/templates/new/* \
 		${STAGEDIR}/${DATADIR}/templates/new/
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}/
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}/${DOCSDIR}/
-.endfor
-.endif
-
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.post.mk>
