@@ -15,8 +15,7 @@ NO_BUILD=	yes
 USES=		zip
 USE_JAVA=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-patch:
 	for file in ${WRKSRC}/bin/NetRexxC.sh ${WRKSRC}/read.me.first; do \
@@ -30,21 +29,13 @@ post-patch:
 	                 ${WRKSRC}/bin/NetRexxC.sh
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.sh ${PREFIX}/bin
-	@${LN} -sf ${PREFIX}/bin/NetRexxC.sh ${PREFIX}/bin/nrc
-
-	@${INSTALL_DATA} ${WRKSRC}/lib/NetRexxC.jar ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/runlib/NetRexxR.jar ${JAVAJARDIR}
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/bin/hello.nrx \
-		${EXAMPLESDIR}
-	@cd ${WRKSRC}/browse && \
-		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	@cd ${WRKSRC}/browse && \
-		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.sh ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ${PREFIX}/bin/NetRexxC.sh ${STAGEDIR}${PREFIX}/bin/nrc
+	${INSTALL_DATA} ${WRKSRC}/lib/NetRexxC.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/runlib/NetRexxR.jar ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/hello.nrx ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/browse && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 post-install:
 	@${ECHO} "====================  IBM LICENSE  ===================="
@@ -53,4 +44,4 @@ post-install:
 	@${ECHO} "====================  IMPORTANT!!  ===================="
 	@${CAT} ${WRKSRC}/read.me.first
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
