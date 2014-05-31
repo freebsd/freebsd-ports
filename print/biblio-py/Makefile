@@ -4,14 +4,15 @@
 PORTNAME=	biblio-py
 PORTVERSION=	0.6.1
 CATEGORIES=	print python
-MASTER_SITES=	CHEESESHOP \
-		http://cabcat2.cnea.gov.ar/staff/fiol/
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A package to manage bibliography written in python
+COMMENT=	Package to manage bibliography written in python
 
-USE_PYTHON=	yes
+LICENSE=	GPLv2
+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
