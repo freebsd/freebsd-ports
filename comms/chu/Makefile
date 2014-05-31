@@ -13,16 +13,9 @@ COMMENT=	Synchronise computer clock to CHU radio station
 
 LICENSE=	GPLv1
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@for f in ${EXTRACT_ONLY}; do  \
-		if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS});\
-		then \
-			exit 1; \
-		fi \
-	done
+NO_WRKSUBDIR=	yes
+
+post-extract:
 	@${GZIP_CMD} -d ${WRKSRC}/testsignal.gz
 
 post-patch:
