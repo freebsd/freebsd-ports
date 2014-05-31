@@ -2,9 +2,9 @@ bin/checkmk
 include/check.h
 include/check_stdint.h
 lib/libcheck.a
-lib/libcheck.la
 lib/libcheck.so
 lib/libcheck.so.0
+lib/libcheck.so.0.0.0
 libdata/pkgconfig/check.pc
 man/man1/checkmk.1.gz
 share/aclocal/check.m4

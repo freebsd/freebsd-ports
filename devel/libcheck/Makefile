@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcheck
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	devel
 MASTER_SITES=	SF/check/check/${PORTVERSION}
 DISTNAME=	check-${PORTVERSION}
@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 CONFIGURE_ENV=	ac_cv_path_AWK_PATH=${AWK}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix
+USES=		gmake libtool pathfix
 
 INFO=		check
 PORTDOCS=	*
