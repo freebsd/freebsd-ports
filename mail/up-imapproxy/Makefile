@@ -3,7 +3,7 @@
 
 PORTNAME=	imapproxy
 PORTVERSION=	1.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/squirrelmail/imap_proxy/${PORTVERSION}
 PKGNAMEPREFIX=	up-
@@ -17,8 +17,7 @@ LICENSE=	GPLv2 # (or later)
 OPTIONS_DEFINE=	DOVECOT DOCS
 DOVECOT_DESC=	Use with dovecot2
 
-USE_BZIP2=	yes
-USES=	pathfix
+USES=		tar:bzip2 pathfix
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoheader
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
@@ -30,28 +29,26 @@ SUB_FILES=	pkg-message
 DOCS=		ChangeLog README README.debian README.known_issues README.ssl
 SBIN=		in.imapproxyd pimpstat
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOVECOT}
 SUB_LIST+=	DOVECOT="dovecot"
-RUN_DEPENDS+=	dovecot>=1.0:${PORTSDIR}/mail/dovecot2
+RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot2
 .else
 SUB_LIST+=	DOVECOT=""
 .endif
 
 do-install:
 .for i in ${SBIN}
-	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${i} ${PREFIX}/sbin)
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}${PREFIX}/sbin)
 .endfor
 	(cd ${WRKSRC}/scripts && ${INSTALL_DATA} imapproxy.conf \
-		${PREFIX}/etc/imapproxyd.conf.sample)
+		${STAGEDIR}${PREFIX}/etc/imapproxyd.conf.sample)
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
