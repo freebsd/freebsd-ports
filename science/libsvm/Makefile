@@ -63,8 +63,9 @@ post-patch:
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/python/svm.py ${PYTHON_SITELIBDIR}/
-	${INSTALL_DATA} ${WRKSRC}/python/svmutil.py ${PYTHON_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/python/svm.py ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/python/svmutil.py ${STAGEDIR}${PYTHON_SITELIBDIR}
 .else
 
 do-install:
@@ -74,7 +75,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/svm.h ${STAGEDIR}${PREFIX}/include/
 	${INSTALL_LIB} ${WRKSRC}/libsvm.so.2 ${STAGEDIR}${PREFIX}/lib/
 	${LN} -sf libsvm.so.2 ${STAGEDIR}${PREFIX}/lib/libsvm.so
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	for f in ${TOOLS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DATADIR}; \
 	done
@@ -83,15 +84,10 @@ do-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
-.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} != "-python"
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
 .endif
 
 .include <bsd.port.post.mk>
