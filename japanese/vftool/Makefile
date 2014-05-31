@@ -33,10 +33,10 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	(cd ${WRKDIR}; \
-		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/plib13-euc.tar.gz \
+		${TAR} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/plib13-euc.tar.gz \
 			${EXTRACT_AFTER_ARGS} \
 			share/texmf/fonts/tfm/ptex; \
-		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/jtex-1.52.tar.gz \
+		${TAR} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/jtex-1.52.tar.gz \
 			${EXTRACT_AFTER_ARGS} \
 			jtex-1.52/JTeXfonts/dnpfonts/mincho/tfm \
 			jtex-1.52/JTeXfonts/dnpfonts/gothic/tfm; \
