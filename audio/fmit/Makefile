@@ -2,25 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	fmit
-PORTVERSION=	0.99.2
-PORTREVISION=	5
+PORTVERSION=	0.99.5
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/fmit/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Free Music Instrument Tuner
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 
-USE_BZIP2=	yes
 USE_XORG=	xmu
 USE_QT4=	corelib gui opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glut
-USES=		cmake
+USES=		cmake tar:bzip2
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	ALSA JACK OSS PORTAUDIO
