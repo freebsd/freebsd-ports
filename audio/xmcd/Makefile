@@ -3,7 +3,7 @@
 
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.2/src/
 
@@ -16,11 +16,11 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
 USES=		imake motif
 USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice
-PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}
+PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH} OPSYS=${OPSYS}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-LIBBINDIR=	${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R:R}-${ARCH}
+LIBBINDIR=	${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH}
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
@@ -70,7 +70,7 @@ post-install:
 		-e 's:${STAGEDIR}::' \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/discog/discog.html \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/config/config.sh \
-		${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-FreeBSD_9-amd64/README
+		${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH}/README
 	@${FIND} ${STAGEDIR} -name \*.bak -delete
 
 .include <bsd.port.mk>
