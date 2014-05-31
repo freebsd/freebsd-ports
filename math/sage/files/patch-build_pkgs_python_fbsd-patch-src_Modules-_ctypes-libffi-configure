@@ -1,8 +1,8 @@
---- /dev/null	2014-01-29 03:00:00.000000000 +0000
-+++ build/pkgs/python/fbsd-patch-src_Modules__ctypes_libffi_configure	2014-01-29 03:01:19.000000000 +0000
-@@ -0,0 +1,21 @@
-+--- src/src/Modules/_ctypes/libffi/configure.orig	2011-06-11 15:46:26.000000000 +0000
-++++ src/Modules/_ctypes/libffi/configure	2012-04-22 00:23:14.000000000 +0000
+--- /dev/null	2014-05-31 00:44:00.000000000 +0000
++++ build/pkgs/python/fbsd-patch-src_Modules-_ctypes-libffi-configure	2014-05-31 00:35:21.000000000 +0000
+@@ -0,0 +1,22 @@
++--- src/Modules/_ctypes/libffi/configure.orig	2010-03-19 19:59:20.000000000 +0100
+++++ src/Modules/_ctypes/libffi/configure	2011-03-06 09:20:16.000000000 +0100
 +@@ -6289,7 +6289,7 @@
 +   rm -rf conftest*
 +   ;;
@@ -22,3 +22,4 @@
 +   powerpc*-*-rtems*)
 + 	TARGET=POWERPC; TARGETDIR=powerpc
 + 	;;
++

@@ -1,8 +1,8 @@
---- /dev/null	2014-01-29 03:00:00.000000000 +0000
-+++ build/pkgs/python/fbsd-patch-src_Modules_fcntlmodule.c	2014-01-29 03:01:19.000000000 +0000
+--- /dev/null	2014-05-31 00:44:00.000000000 +0000
++++ build/pkgs/python/fbsd-patch-src_Modules-fcntlmodule.c	2014-05-31 00:35:21.000000000 +0000
 @@ -0,0 +1,53 @@
-+--- src/src/Modules/fcntlmodule.c.orig	2011-06-11 15:46:27.000000000 +0000
-++++ src/Modules/fcntlmodule.c	2012-04-22 00:23:34.000000000 +0000
++--- src/Modules/fcntlmodule.c.orig	2010-08-14 16:36:54.991363730 +0800
+++++ src/Modules/fcntlmodule.c	2010-08-14 16:41:05.555822031 +0800
 +@@ -97,20 +97,15 @@
 + {
 + #define IOCTL_BUFSZ 1024
