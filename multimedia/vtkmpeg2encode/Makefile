@@ -11,15 +11,15 @@ DISTNAME=	vtkmpeg2encode
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VTK MPEG2 encoding library
 
-NO_CDROM=	the MPEG2 format and all software that uses it is subject to patent restrictions
-NO_PACKAGE=	${NO_CDROM}
+LICENSE=	MPEG-2
+LICENSE_NAME=	MPEG-2 license
+LICENSE_FILE=	${WRKSRC}/mpeg2enc.h
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_ARGS?=	-DBUILD_SHARED_LIBS:BOOL=ON
 VTK_VERSION=	5.10.1
-
-MAN3=		vtkmpeg2encode.3
 
 SUB_FILES=	vtkmpeg2encode.3
 
@@ -34,32 +34,27 @@ PLIST_FILES=	lib/${MPEGLIB}.so.${PORTVERSION} \
 		include/vtk-${VTK_VERSION:R}/mpeg2enc_global.h \
 		include/vtk-${VTK_VERSION:R}/mpeg2enc.h \
 		include/vtk-${VTK_VERSION:R}/mpeg2enc_config.h \
-		include/vtk-${VTK_VERSION:R}/vlc.h
+		include/vtk-${VTK_VERSION:R}/vlc.h \
+		man/man3/vtkmpeg2encode.3.gz
 
-NO_STAGE=	yes
 post-build:
 	${MV} ${WRKSRC}/${MPEGLIB}.so ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION}
 
 do-install:
-	${MKDIR} ${PREFIX}/include/vtk-${VTK_VERSION:R}
-	${INSTALL_DATA} ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION} ${PREFIX}/lib
-	${LN} -s ${PREFIX}/lib/${MPEGLIB}.so.${PORTVERSION} \
-			${PREFIX}/lib/${MPEGLIB}.so.${VTK_VERSION:R}
-	${LN} -s ${PREFIX}/lib/${MPEGLIB}.so.${PORTVERSION} \
-	   ${PREFIX}/lib/${MPEGLIB}.so.${VTK_VERSION:R:R}
-	${LN} -s ${PREFIX}/lib/${MPEGLIB}.so.${PORTVERSION} \
-			${PREFIX}/lib/${MPEGLIB}.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/vtk-${VTK_VERSION:R}
+	${INSTALL_DATA} ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
+	${LN} -s ${MPEGLIB}.so.${PORTVERSION} \
+			${STAGEDIR}${PREFIX}/lib/${MPEGLIB}.so.${VTK_VERSION:R}
+	${LN} -s ${MPEGLIB}.so.${PORTVERSION} \
+			${STAGEDIR}${PREFIX}/lib/${MPEGLIB}.so.${VTK_VERSION:R:R}
+	${LN} -s ${MPEGLIB}.so.${PORTVERSION} \
+			${STAGEDIR}${PREFIX}/lib/${MPEGLIB}.so
 	${INSTALL_DATA} ${WRKSRC}/mpeg2encDllConfig.h \
 			${WRKSRC}/mpeg2enc_global.h \
 			${WRKSRC}/mpeg2enc.h \
 			${WRKSRC}/mpeg2enc_config.h \
 			${WRKSRC}/vlc.h \
-			${PREFIX}/include/vtk-${VTK_VERSION:R}
-	${INSTALL_MAN}	${WRKDIR}/vtkmpeg2encode.3 ${MANPREFIX}/man/man3
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+			${STAGEDIR}${PREFIX}/include/vtk-${VTK_VERSION:R}
+	${INSTALL_MAN}	${WRKDIR}/vtkmpeg2encode.3 ${STAGEDIR}${MANPREFIX}/man/man3
 
 .include <bsd.port.mk>
