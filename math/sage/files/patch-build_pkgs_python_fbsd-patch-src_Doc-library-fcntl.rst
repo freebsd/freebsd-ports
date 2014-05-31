@@ -1,8 +1,8 @@
---- /dev/null	2014-01-29 03:00:00.000000000 +0000
-+++ build/pkgs/python/fbsd-patch-src_Doc_library_fcntl.rst	2014-01-29 03:01:19.000000000 +0000
+--- /dev/null	2014-05-31 00:44:00.000000000 +0000
++++ build/pkgs/python/fbsd-patch-src_Doc-library-fcntl.rst	2014-05-31 00:35:21.000000000 +0000
 @@ -0,0 +1,11 @@
-+--- src/src/Doc/library/fcntl.rst.orig	2011-06-11 15:46:23.000000000 +0000
-++++ src/Doc/library/fcntl.rst	2012-04-22 00:31:48.000000000 +0000
++--- src/Doc/library/fcntl.rst.orig	2010-08-14 16:19:09.194215129 +0800
+++++ src/Doc/library/fcntl.rst	2010-08-14 16:19:36.999453016 +0800
 +@@ -50,8 +50,6 @@
 +    operations are typically defined in the library module :mod:`termios` and the
 +    argument handling is even more complicated.

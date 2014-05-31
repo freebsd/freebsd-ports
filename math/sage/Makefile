@@ -3,13 +3,15 @@
 
 PORTNAME=	sage
 PORTVERSION=	6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
 		http://www-ftp.lip6.fr/pub/math/sagemath/src/ \
 		http://www.sagemath.org/src-old/
 PKGNAMESUFFIX=	-math
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PYTHON_SOURCE}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
@@ -25,6 +27,8 @@ LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas \
 		liblapack.so:${PORTSDIR}/math/lapack \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+PYTHON_SOURCE=	python/Python-2.7.6.tar.xz
 
 # 387 option: this only makes a difference for the amd64 architecture.  Causes
 # the internal floating point calculations to be performed with extended
@@ -71,6 +75,8 @@ LATEST_LINK=	sage-math	# Conflicts with graphics/sage.
 MAKE_ARGS+=	ARCH="${AR}"
 
 post-patch:
+	${CP} ${DISTDIR}/${PYTHON_SOURCE} ${WRKSRC}/upstream/.
+
 	${REINPLACE_CMD} 's/$$MAKE $$gettext/$$MAKE PTHREAD_LIBS=${PTHREAD_LIBS} $$gettext/' ${WRKSRC}/build/pkgs/git/spkg-install
 
 # Create the wrappers for the compiler invocations.
