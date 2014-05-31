@@ -11,6 +11,9 @@ DISTNAME=	volume-${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GKrellM volume plugin
 
+DEPRECATED=	GKrellM 1.X is no longer being developed, consider using 2.X.
+EXPIRATION_DATE=2014-06-30
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 

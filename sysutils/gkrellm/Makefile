@@ -12,6 +12,9 @@ MASTER_SITE_SUBDIR=	ume
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
 
+DEPRECATED=	GKrellM 1.X is no longer being developed, consider using 2.X.
+EXPIRATION_DATE=2014-06-30
+
 CONFLICTS=	gkrellm-[^1].* gkrellm[^1]-[^1].*
 
 USES=		gettext gmake
