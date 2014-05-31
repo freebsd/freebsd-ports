@@ -15,10 +15,9 @@ COMMENT=	BitTorrent peer-to-peer protocol class
 RUN_DEPENDS=	p5-Math-BigInt>=1.78:${PORTSDIR}/math/p5-Math-BigInt
 
 CONFIGURE_ARGS=	</dev/null
-PORTSCOUT=	skipv:0.074000_012	
+PORTSCOUT=	skipv:0.074000_012
 
 USES=		perl5
 USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
-

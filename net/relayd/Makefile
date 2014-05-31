@@ -56,4 +56,3 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/relayd.conf || ${TRUE}
 
 .include <bsd.port.post.mk>
-

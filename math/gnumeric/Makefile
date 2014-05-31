@@ -76,4 +76,3 @@ post-install:
 		${PREFIX}/${dir}/gnumeric -f ${STAGEDIR}${PREFIX}/lib/gnumeric/${PORTVERSION}
 
 .include <bsd.port.mk>
-
