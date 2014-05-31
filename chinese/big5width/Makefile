@@ -37,10 +37,5 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${LOCALEDIR}/${LANG}
 	${INSTALL_DATA} ${WRKSRC}/LC_CTYPE ${STAGEDIR}${LOCALEDIR}/${LANG}
-	${LN} -fs ${LOCALEDIR}/${LANG}/LC_CTYPE \
-		${STAGEDIR}${BASELOCALEDIR}/${LANG}/LC_CTYPE
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
