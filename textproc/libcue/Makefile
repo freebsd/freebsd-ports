@@ -3,20 +3,16 @@
 
 PORTNAME=	libcue
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	CUE Sheet Parser Library
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gettext
-
-post-extract:
-	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/src/libcue/Makefile.in
+USES=		gettext libtool:keepla pathfix tar:bzip2
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
