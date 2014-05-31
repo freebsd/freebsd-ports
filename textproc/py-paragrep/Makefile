@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	paragrep
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1.1
 CATEGORIES=	textproc python
-MASTER_SITES=	http://github.com/bmc/paragrep/zipball/release-3.0.5/
+MASTER_SITES=	http://github.com/bmc/paragrep/zipball/release-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	bmc-${PORTNAME}-48708ef
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Paragraph Grep Utility
 
+LICENSE=	BSD3CLAUSE
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grizzled>=0.8.1:${PORTSDIR}/devel/py-grizzled
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		zip
+WRKSRC=	${WRKDIR}/bmc-${PORTNAME}-e7d5553
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=yes
 
-MAN1=		paragrep.1
-
-NO_STAGE=	yes
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/man/paragrep.1 ${PREFIX}/man/man1/
+post-patch:
+	@${REINPLACE_CMD} -e "s|'man'|'man/man1'|g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
