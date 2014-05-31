@@ -1,4 +1,5 @@
 bin/converseen
+share/appdata/converseen.appdata.xml
 share/applications/converseen.desktop
 %%DATADIR%%/loc/converseen_cs_CZ.qm
 %%DATADIR%%/loc/converseen_de_DE.qm
@@ -16,5 +17,6 @@ share/pixmaps/converseen.png
 @dirrmtry share/kde4/services/ServiceMenus
 @dirrmtry share/kde4/services
 @dirrmtry share/kde4
+@dirrmtry share/appdata
 @dirrm %%DATADIR%%/loc
 @dirrm %%DATADIR%%
