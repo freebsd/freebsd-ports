@@ -7,6 +7,7 @@ lib/libcue.a
 lib/libcue.la
 lib/libcue.so
 lib/libcue.so.1
+lib/libcue.so.1.0.4
 libdata/pkgconfig/libcue.pc
 @dirrm include/libcue-1.4/libcue
 @dirrm include/libcue-1.4
