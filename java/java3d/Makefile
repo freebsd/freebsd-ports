@@ -11,8 +11,7 @@ DISTNAME=	java3d-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides API for creating and manipulation of 3D geometry
 
-USE_BZIP2=	yes
-
+USES=		tar:bzip2
 USE_JAVA=	yes
 USE_GL=		gl
 USE_XORG=	xt
@@ -25,7 +24,6 @@ PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///} ARCH=${ARCH}
 DOCSSRC=	${WRKSRC}/j3d-core/build/freebsd/javadocs/docs-public
 PORTDOCS=	*
 
-NO_STAGE=	yes
 RESTRICTED=	License does not allow distribution
 
 OPTIONS_DEFINE=	DOCS
@@ -51,19 +49,21 @@ do-build:
 .endif
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${JAVA_HOME}/jre/lib/ext
 	${INSTALL_DATA} \
 		${WRKSRC}/vecmath/dist/lib/ext/vecmath.jar \
 		${WRKSRC}/j3d-core/build/default/opt/lib/ext/j3dcore.jar \
 		${WRKSRC}/j3d-core/build/default/opt/lib/ext/j3dutils.jar \
-		${JAVA_HOME}/jre/lib/ext
+		${STAGEDIR}${JAVA_HOME}/jre/lib/ext
+	@${MKDIR} ${STAGEDIR}${JAVA_HOME}/jre/lib/${ARCH}
 	${INSTALL} \
 		${WRKSRC}/j3d-core/build/default/opt/native/libj3dcore-ogl.so \
-		${JAVA_HOME}/jre/lib/${ARCH}
+		${STAGEDIR}${JAVA_HOME}/jre/lib/${ARCH}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${DOCSSRC} && ${COPYTREE_SHARE} \* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${DOCSSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
