@@ -15,6 +15,8 @@ LICENSE=	GPLv1
 
 NO_WRKSUBDIR=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${GZIP_CMD} -d ${WRKSRC}/testsignal.gz
 
@@ -29,11 +31,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/testsignal ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/chu.8 ${STAGEDIR}${PREFIX}/man/man8
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for	d in ${WRKSRC}/COPYING \
-	${WRKSRC}/TESTING \
-	${WRKSRC}/chu.html \
-	${WRKSRC}/chuman.html \
-	${WRKSRC}/ntp.html
+.for d in COPYING TESTING chu.html chuman.html ntp.html
 	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 
