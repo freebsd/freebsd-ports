@@ -5,13 +5,13 @@ To make NeDi work, do the following:
    Use the samples contained in that directory.
    
 2. (Optional) Create a directory where you want NeDi to store its
-   RRD files and link it to %%NEDIDIR%%/rrd:
+   RRD files and link it to %%WWWDIR%%/rrd:
 
-   rm -r %%NEDIDIR%%/rrd
+   rm -r %%WWWDIR%%/rrd
    mkdir -p /var/db/nedi/rrd
-   ln -s /var/db/nedi/rrd %%NEDIDIR%%/rrd
+   ln -s /var/db/nedi/rrd %%WWWDIR%%/rrd
    
-2. Change the directory to %%NEDIDIR%%.
+2. Change the directory to %%WWWDIR%%.
 
 3. Initialize the MySQL database. NeDi will do this for you, just type
    ./nedi.pl -i
@@ -21,9 +21,9 @@ To make NeDi work, do the following:
 
 5. Add a crontab entry like this:
 
-0 * * * *	root	%%NEDIDIR%%/nedi.pl -c > /tmp/nedi.lastrun
+0 * * * *	root	%%WWWDIR%%/nedi.pl -c > /tmp/nedi.lastrun
 
 6. Add an alias to Apache like this:
 
-Alias	/nedi	%%NEDIDIR%%/html
+Alias	/nedi	%%WWWDIR%%/html
 

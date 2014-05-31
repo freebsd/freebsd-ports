@@ -5,6 +5,4 @@ stores information (such as MACs and IPs) in a MySQL database.
 Later, you can use its web interface to easily locate nodes withing your
 network.
 
-WWW: http://nedi.sourceforge.net
-
-Cristian KLEIN <cristi@net.utcluj.ro>
+WWW: http://www.nedi.ch/
