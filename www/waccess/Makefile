@@ -11,20 +11,10 @@ COMMENT=	Quick-N-Dirty Web Access Log Analyzer
 
 USE_PYTHON=	yes
 
-MAN1=	waccess.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's,^#!/usr/local/bin/python,#!${PYTHON_CMD},' \
-		${WRKSRC}/waccess
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/waccess ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/waccess.1.gz ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/waccess-license.txt ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/waccess ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/waccess.1.gz ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/waccess-license.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
