@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rpy2
-PORTVERSION=	2.3.6
-PORTREVISION=	3
+PORTVERSION=	2.4.0
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to the R Programming Language
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		R:${PORTSDIR}/math/R
@@ -17,8 +18,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
