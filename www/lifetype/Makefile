@@ -67,7 +67,6 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
 	   ${SORT} >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
-	   ${SED} -e '/share\/doc$$/d' -e '/share\/examples$$/d' \
-	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	   ${SED} -e 's/^/@dirrm /g' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
