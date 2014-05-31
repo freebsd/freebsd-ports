@@ -12,5 +12,7 @@ COMMENT=	Standalone clamav client
 HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/clamd-stream-client
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>
