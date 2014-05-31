@@ -14,17 +14,11 @@ RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
 
 USES=		zip
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-message
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/${EXTRACT_ONLY}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
