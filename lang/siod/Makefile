@@ -10,7 +10,7 @@ DISTNAME=	siod
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small footprint implementation of the Scheme programming language
+COMMENT=	Small footprint implementation of the Scheme programming language
 
 USE_LDCONFIG=	yes
 
@@ -20,9 +20,7 @@ ALL_TARGET=	freebsd
 MAKE_ENV=	LD_LIBRARY_PATH=.
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=	siod.1 snapshot-dir.1 snapshot-compare.1 http-get.1 \
-	cp-build.1 ftp-cp.1 csiod.1 ftp-put.1 ftp-test.1 ftp-get.1 \
-	http-stress.1 proxy-server.1
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/siod
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
