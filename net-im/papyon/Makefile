@@ -24,11 +24,4 @@ USE_GNOME=	pygobject
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not configure on FreeBSD 7.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
