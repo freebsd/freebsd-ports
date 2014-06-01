@@ -20,8 +20,6 @@ USE_OPENSSL=	yes
 USE_GNOME=	gnomehack glib20
 USE_PYTHON_BUILD=yes
 
-MAN8=		telepathy-idle.8
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -33,7 +31,6 @@ CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" OPENSSL_CFLAGS="-I/usr/
 #  OPENSSL_LIBS
 #              linker flags for OPENSSL, overriding pkg-config
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|strnlen(\([^,]*\), [^)]*)|strlen(\1)|' \
 		${WRKSRC}/src/idle-connection.c \
