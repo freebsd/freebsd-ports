@@ -10,25 +10,26 @@ MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	An "lcd" dockapp for windowmaker, which displays the current cpuload
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
-MAN1=		wmcpuload.1
 PORTDOCS=	ChangeLog README
-PLIST_FILES=	bin/wmcpuload
+PLIST_FILES=	bin/wmcpuload \
+		man/man1/wmcpuload.1.gz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^DEFS/s|-I\.\.$$|-I.. -I../libdockapp/|g ; \
 		 /^CFLAGS/s|-I../libdockapp/||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif # !NOPORTDOCS
 
 .include <bsd.port.mk>
