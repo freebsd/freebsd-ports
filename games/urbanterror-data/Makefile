@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	4.2.014
+PORTVERSION=	4.2.018
 CATEGORIES=	games
 MASTER_SITES=	http://cdn.urbanterror.info/urt/42/zips/ \
 		http://www.f1m.fr/uploads/urt/ \
@@ -28,16 +28,22 @@ PLIST_SUB+=	VER=${URT_VER}
 
 OPTIONS_DEFINE=	DOCS
 
+UTDOCS=		readme${URT_VER}.txt \
+		How_To_Install.txt \
+		QIIIA_Game_Source_License.doc
+
 .include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/q3ut4
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} \
+	${TAR} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} \
 		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${DATADIR} --strip-components 1 \
 		UrbanTerror${URT_VER}/q3ut4
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MV} ${STAGEDIR}${DATADIR}/q3ut4/readme${URT_VER}.txt ${STAGEDIR}${DOCSDIR}
+.for utdoc in ${UTDOCS}
+	${MV} ${STAGEDIR}${DATADIR}/q3ut4/${utdoc} ${STAGEDIR}${DOCSDIR}
+.endfor
 .else
 	${RM} ${STAGEDIR}${DATADIR}/q3ut4/readme${URT_VER}.txt
 .endif

@@ -1,5 +1,5 @@
 --- code/qcommon/vm_x86.c.orig	2008-08-18 01:22:06.000000000 +0200
-+++ code/qcommon/vm_x86.c	2010-11-27 14:01:33.000000000 +0100
++++ code/qcommon/vm_x86.c	2013-11-14 11:44:27.000000000 +0100
 @@ -36,7 +36,25 @@
  
  /* need this on NX enabled systems (i386 with PAE kernel or
@@ -27,3 +27,15 @@
  #define VM_X86_MMAP
  #endif
  
+@@ -90,7 +108,11 @@
+ static void (*const asmCallPtr)(void) = AsmCall;
+ 
+ 
++#ifdef __clang__
++	int		callMask = 0;
++#else
+ static	int		callMask = 0;
++#endif
+ 
+ static	int	instruction, pass;
+ static	int	lastConst = 0;
