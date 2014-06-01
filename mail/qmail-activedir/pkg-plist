@@ -1,0 +1,9 @@
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@mode 700
+bin/checkadpassword
+bin/create_alias_files
+@mode 711
+@group qmail
+bin/qmail-adgetpw
