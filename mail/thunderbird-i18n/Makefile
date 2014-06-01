@@ -48,7 +48,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR} ${WRKSRC}
 	@for lang in ${THUNDERBIRD_I18N_}; do \
-		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
+		if ! (${UNZIP_CMD} -qo ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
 		then \
 			exit 1; \
 		fi; \
