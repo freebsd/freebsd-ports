@@ -12,7 +12,7 @@ COMMENT=	Library that helps you create bindings between C++ and Lua
 
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
-USES=		lua
+USES=		lua:51
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I.. -I${LUA_INCDIR} -I${LOCALBASE}/include
@@ -22,8 +22,6 @@ CXXFLAGS+=	-fPIC
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
@@ -35,7 +33,7 @@ do-build:
 	@cd ${WRKSRC}/src && ${ECHO_CMD} *.cpp | \
 		${XARGS} -n1 -t ${_MAKE_JOBS:C/j/P/} \
 		${CXX} ${CXXFLAGS} ${CPPFLAGS} -c
-	cd ${WRKSRC}/src && ${CXX} -shared ${LDFLAGS} -llua -o libluabind.so *.o
+	cd ${WRKSRC}/src && ${CXX} -shared ${LDFLAGS} -llua-${LUA_VER} -o libluabind.so *.o
 	cd ${WRKSRC}/src && ${AR} -rcs libluabind.a *.o
 
 do-install:
