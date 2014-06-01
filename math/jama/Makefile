@@ -24,10 +24,10 @@ NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tnt
-	${EXTRACT_CMD} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
+	${UNZIP_CMD} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
 		-d ${STAGEDIR}${PREFIX}/include/tnt
 	${MKDIR} ${WRKDIR}/doc ${STAGEDIR}${DOCSDIR}
-	${EXTRACT_CMD} -o ${DISTDIR}/${DIST_SUBDIR}/jama102doc \
+	${UNZIP_CMD} -o ${DISTDIR}/${DIST_SUBDIR}/jama102doc \
 		-d ${WRKDIR}/doc
 	(cd ${WRKDIR}/doc/doxygen && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
