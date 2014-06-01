@@ -2,6 +2,27 @@ bin/vhier
 bin/vpassert
 bin/vppreproc
 bin/vrename
+%%PERL5_MAN3%%/Verilog::EditFiles.3.gz
+%%PERL5_MAN3%%/Verilog::Getopt.3.gz
+%%PERL5_MAN3%%/Verilog::Language.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Cell.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::ContAssign.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Defparam.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::File.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Interface.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Logger.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::ModPort.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Module.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Net.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Pin.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Port.3.gz
+%%PERL5_MAN3%%/Verilog::Netlist::Subclass.3.gz
+%%PERL5_MAN3%%/Verilog::Parser.3.gz
+%%PERL5_MAN3%%/Verilog::Preproc.3.gz
+%%PERL5_MAN3%%/Verilog::SigParser.3.gz
+%%PERL5_MAN3%%/Verilog::Std.3.gz
+%%PERL5_MAN3%%/Verilog::Verilog-Perl.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Verilog/EditFiles.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Getopt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Language.pm
@@ -28,9 +49,13 @@ bin/vrename
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser/Parser.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc/Preproc.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc/Preproc.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Language
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog
+man/man1/vhier.1.gz
+man/man1/vpassert.1.gz
+man/man1/vppreproc.1.gz
+man/man1/vrename.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Netlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Verilog
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Language
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog
