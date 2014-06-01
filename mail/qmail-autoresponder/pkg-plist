@@ -1,5 +1,6 @@
 bin/qmail-autoresponder
 bin/qmail-autoresponder-mysql
+man/man1/qmail-autoresponder.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
