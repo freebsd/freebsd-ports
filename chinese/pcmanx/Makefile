@@ -12,9 +12,8 @@ COMMENT=	BBS client using GTK+ 2.x
 
 LICENSE=	GPLv2
 
-USE_XZ=		yes
 USE_GNOME=	gtk20 intlhack
-USES=		iconv gmake pkgconfig
+USES=		tar:xz iconv gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS DEBUG DOCKLET NOTIFIER LIBNOTIFY NANCY MOUSE EXTERNAL IPLOOKUP PROXY

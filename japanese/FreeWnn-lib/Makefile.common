@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla
+USES=		tar:bzip2 libtool:keepla
 USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize
 LIBTOOLIZE_ARGS=-i -c -f
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}" \
 		LIBRARY_WNNMANDIR="3.libwnn" \

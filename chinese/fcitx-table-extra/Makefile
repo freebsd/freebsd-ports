@@ -12,8 +12,7 @@ COMMENT=	Table-based input methods for Fcitx
 
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
 
-USE_XZ=		yes
-USES=		cmake gettext
+USES=		tar:xz cmake gettext
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 STRIP=
