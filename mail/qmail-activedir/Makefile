@@ -19,17 +19,9 @@ BINARIES=	checkadpassword qmail-adgetpw create_alias_files
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -Wall -lldap
 
-PLIST_FILES=	bin/checkadpassword \
-		bin/create_alias_files \
-		bin/qmail-adgetpw
-
-PORTDOCS=	INSTALL README
-
 .if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -49,19 +41,11 @@ do-build:
 
 do-install:
 .for prog in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${CHMOD} 700 ${PREFIX}/bin/checkadpassword \
-		     ${PREFIX}/bin/create_alias_files
-	${CHMOD} 711 ${PREFIX}/bin/qmail-adgetpw
-	${CHOWN} root:qmail ${PREFIX}/bin/qmail-adgetpw
-	${CHOWN} root:wheel ${PREFIX}/bin/create_alias_files
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
