@@ -11,8 +11,6 @@ MASTER_SITES=	http://www.cs.ox.ac.uk/people/ian.collier/distribution/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Procedural programming language designed by IBM's UK Laboratories
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 CONFLICTS=	rexx-regina-* oorexx-[0-9]*
 
 HAS_CONFIGURE=		yes
