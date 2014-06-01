@@ -12,7 +12,8 @@ COMMENT=	A kit for easily setting up a FreeBSD mirror site using CVSup
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup-without-gui
 
-DEPRECATED=	www, doc, gnats, ports repo gone; src repo deprecated
+DEPRECATED=	all repos gone
+EXPIRATION_DATE=	2014-05-26
 
 NO_WRKSUBDIR=	true
 NO_BUILD=	true
