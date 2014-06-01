@@ -19,16 +19,12 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 LISPFILES=	doctest-mode.el pycomplete.el pycomplete.py python-mode.el
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${EMACSLISPDIR}
-	${MKDIR} ${XEMACSLISPDIR}
-	for i in ${LISPFILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${EMACSLISPDIR}/$${i}; \
-		${LN} -sf ${EMACSLISPDIR}/$${i} ${XEMACSLISPDIR}; \
-	done;
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EMACSLISPDIR}
+	@${MKDIR} ${STAGEDIR}${XEMACSLISPDIR}
+.for i in ${LISPFILES}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${EMACSLISPDIR}
+	${LN} -sf ${EMACSLISPDIR}/${i} ${STAGEDIR}${XEMACSLISPDIR}
+.endfor
 
 .include <bsd.port.mk>
