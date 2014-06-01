@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stem
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	security net python
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		CHEESESHOP
@@ -13,7 +13,7 @@ COMMENT=	Python controller library for Tor
 
 LICENSE=	LGPL3
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 

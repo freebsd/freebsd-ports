@@ -1,3 +1,4 @@
+bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/__init__.py
 %%PYTHON_SITELIBDIR%%/stem/__init__.pyc
 %%PYTHON_SITELIBDIR%%/stem/__init__.pyo
@@ -40,6 +41,22 @@
 %%PYTHON_SITELIBDIR%%/stem/exit_policy.py
 %%PYTHON_SITELIBDIR%%/stem/exit_policy.pyc
 %%PYTHON_SITELIBDIR%%/stem/exit_policy.pyo
+%%PYTHON_SITELIBDIR%%/stem/interpreter/__init__.py
+%%PYTHON_SITELIBDIR%%/stem/interpreter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/stem/interpreter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/stem/interpreter/arguments.py
+%%PYTHON_SITELIBDIR%%/stem/interpreter/arguments.pyc
+%%PYTHON_SITELIBDIR%%/stem/interpreter/arguments.pyo
+%%PYTHON_SITELIBDIR%%/stem/interpreter/autocomplete.py
+%%PYTHON_SITELIBDIR%%/stem/interpreter/autocomplete.pyc
+%%PYTHON_SITELIBDIR%%/stem/interpreter/autocomplete.pyo
+%%PYTHON_SITELIBDIR%%/stem/interpreter/commands.py
+%%PYTHON_SITELIBDIR%%/stem/interpreter/commands.pyc
+%%PYTHON_SITELIBDIR%%/stem/interpreter/commands.pyo
+%%PYTHON_SITELIBDIR%%/stem/interpreter/help.py
+%%PYTHON_SITELIBDIR%%/stem/interpreter/help.pyc
+%%PYTHON_SITELIBDIR%%/stem/interpreter/help.pyo
+%%PYTHON_SITELIBDIR%%/stem/interpreter/settings.cfg
 %%PYTHON_SITELIBDIR%%/stem/prereq.py
 %%PYTHON_SITELIBDIR%%/stem/prereq.pyc
 %%PYTHON_SITELIBDIR%%/stem/prereq.pyo
@@ -103,15 +120,17 @@
 %%PYTHON_SITELIBDIR%%/stem/util/term.py
 %%PYTHON_SITELIBDIR%%/stem/util/term.pyc
 %%PYTHON_SITELIBDIR%%/stem/util/term.pyo
+%%PYTHON_SITELIBDIR%%/stem/util/test_tools.py
+%%PYTHON_SITELIBDIR%%/stem/util/test_tools.pyc
+%%PYTHON_SITELIBDIR%%/stem/util/test_tools.pyo
 %%PYTHON_SITELIBDIR%%/stem/util/tor_tools.py
 %%PYTHON_SITELIBDIR%%/stem/util/tor_tools.pyc
 %%PYTHON_SITELIBDIR%%/stem/util/tor_tools.pyo
 %%PYTHON_SITELIBDIR%%/stem/version.py
 %%PYTHON_SITELIBDIR%%/stem/version.pyc
 %%PYTHON_SITELIBDIR%%/stem/version.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/stem/util
-@dirrm %%PYTHON_SITELIBDIR%%/stem/response
-@dirrm %%PYTHON_SITELIBDIR%%/stem/descriptor
-@dirrm %%PYTHON_SITELIBDIR%%/stem
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%/stem/descriptor
+@dirrmtry %%PYTHON_SITELIBDIR%%/stem/interpreter
+@dirrmtry %%PYTHON_SITELIBDIR%%/stem/response
+@dirrmtry %%PYTHON_SITELIBDIR%%/stem/util
+@dirrmtry %%PYTHON_SITELIBDIR%%/stem
