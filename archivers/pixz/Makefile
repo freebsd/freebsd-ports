@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Parallel, indexing version of XZ
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 SUB_FILES=	Makefile

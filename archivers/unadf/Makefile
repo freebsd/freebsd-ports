@@ -12,7 +12,7 @@ COMMENT=	Extracts files from .adf-files used by Amiga emulators
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 MAKE_JOBS_UNSAFE=	yes
 

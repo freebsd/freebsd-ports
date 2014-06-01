@@ -11,8 +11,7 @@ DISTNAME=	p7zip_${DISTVERSION}_src_all
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	High-ratio PPMD compressor
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		tar:bzip2 gmake
 WRKSRC=		${WRKDIR}/p7zip_${DISTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Compress/PPMD_Alone
 MAKEFILE=	makefile

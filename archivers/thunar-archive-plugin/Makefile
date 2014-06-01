@@ -11,10 +11,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Archive plugin for the Thunar File Manager
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XFCE=	configenv libexo thunar
-USES=		gettext gmake pkgconfig
+USES=		tar:bzip2 gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 USE_GNOME=	intltool
 

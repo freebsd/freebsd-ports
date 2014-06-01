@@ -16,7 +16,7 @@ RUN_DEPENDS=	unace:${PORTSDIR}/archivers/unace \
 		7z:${PORTSDIR}/archivers/p7zip
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:

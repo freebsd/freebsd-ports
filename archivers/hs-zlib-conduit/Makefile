@@ -8,7 +8,7 @@ CATEGORIES=	archivers haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Streaming compression/decompression via conduits
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	conduit>=1.0 transformers>=0.2.2 void zlib-bindings>=0.1
 
