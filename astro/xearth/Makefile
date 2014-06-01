@@ -11,7 +11,7 @@ MAINTAINER=	mexas@bris.ac.uk
 COMMENT=	Set the root window to the image of earth
 
 USE_XORG=	x11 xext sm ice xt
-USE_XZ=		yes
+USES=		tar:xz
 PLIST_FILES=	bin/xearth \
 		man/man1/xearth.1.gz \
 		lib/X11/xearth/freebsd.committers.markers \

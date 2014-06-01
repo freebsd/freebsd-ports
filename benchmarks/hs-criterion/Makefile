@@ -9,7 +9,7 @@ CATEGORIES=	benchmarks haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Robust, reliable performance measurement and analysis
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_CABAL=	aeson>=0.3.2.12 hastache>=0.5.0 mtl>=2 mwc-random>=0.8.0.3 \
 		parsec>=3.1.0 statistics>=0.10.0.0 transformers \
