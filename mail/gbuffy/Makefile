@@ -8,15 +8,19 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/gbuffy-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK+ multiple mailbox "biff" program
+COMMENT=	GTK+ multiple mailbox "biff" program
 
-LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
-		compface.1:${PORTSDIR}/mail/faces
+LIB_DEPENDS=	libPropList.so:${PORTSDIR}/devel/libPropList \
+		libcompface.so:${PORTSDIR}/mail/faces
 
 PLIST_FILES=	bin/gbuffy
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's|bindir)|DESTDIR)$$(&|' \
+		-e 's|INSTALL)|BSD_INSTALL_PROGRAM)|' \
+		${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
