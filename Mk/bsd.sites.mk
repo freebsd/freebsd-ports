@@ -1444,12 +1444,8 @@ MASTER_SITE_XFCE+= \
 	http://xfce.mirror.uber.com.au/%SUBDIR%/ \
 	http://archive.be.xfce.org/%SUBDIR%/ \
 	http://archive.be2.xfce.org/%SUBDIR%/ \
-	http://archive.se.xfce.org/%SUBDIR%/ \
 	http://archive.al-us.xfce.org/%SUBDIR%/ \
 	http://mirrors.tummy.com/pub/archive.xfce.org/%SUBDIR%/ \
-	http://mirror.yongbok.net/X11/xfce-mirror/%SUBDIR%/ \
-	http://xfce.ognisco.com/%SUBDIR%/ \
-	http://mirror.sinn3r.org/xfce/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XORG)
