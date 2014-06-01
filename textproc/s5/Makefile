@@ -22,7 +22,7 @@ S5_DIR=		${PREFIX}/share/${PORTNAME}
 S5_SUBDIRS=	pix primer s5-blank ui
 
 post-extract:
-		cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} s5-blank.zip ${EXTRACT_AFTER_ARGS}
+		cd ${WRKSRC} && ${TAR} -xf s5-blank.zip
 		${SED} -e "s,/usr/local,${PREFIX}," ${FILESDIR}/s5.sh > ${WRKDIR}/s5
 		${SED} -e "s,/usr/local,${PREFIX}," ${FILESDIR}/s5.1 > ${WRKDIR}/s5.1
 		${FIND} ${WRKDIR} -type f -name .DS_Store -delete
