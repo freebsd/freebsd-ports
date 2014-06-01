@@ -14,11 +14,10 @@ LICENSE=	GPLv3 # (or later)
 
 OPTIONS_DEFINE=	GRAPHVIZ DOCS EXAMPLES
 
-USE_BZIP2=	yes
 USE_XORG=	xi
 USE_QT4=	corelib gui qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
-USES=		cmake desktop-file-utils
+USES=		tar:bzip2 cmake desktop-file-utils
 INSTALLS_ICONS=	yes
 
 GRAPHVIZ_BUILD_DEPENDS=	graphviz>=2.22:${PORTSDIR}/graphics/graphviz
@@ -47,8 +46,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/po/*.qm ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc/user && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/user && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
