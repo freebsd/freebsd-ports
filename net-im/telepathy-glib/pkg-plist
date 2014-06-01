@@ -167,6 +167,7 @@ lib/libtelepathy-glib.a
 lib/libtelepathy-glib.la
 lib/libtelepathy-glib.so
 lib/libtelepathy-glib.so.0
+lib/libtelepathy-glib.so.0.78.2
 libdata/pkgconfig/telepathy-glib.pc
 share/gir-1.0/TelepathyGLib-0.12.gir
 share/gtk-doc/html/telepathy-glib/TpBaseCallChannel.html

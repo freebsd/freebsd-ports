@@ -1,12 +1,11 @@
 man/man8/telepathy-salut.8.gz
 lib/telepathy/salut-0/lib/libsalut-plugins-0.8.0.so
-lib/telepathy/salut-0/lib/libsalut-plugins.la
 lib/telepathy/salut-0/lib/libsalut-plugins.so
 lib/telepathy/salut-0/lib/libwocky-telepathy-salut-0.8.0.so
 lib/telepathy/salut-0/lib/libwocky.a
-lib/telepathy/salut-0/lib/libwocky.la
 lib/telepathy/salut-0/lib/libwocky.so
 libexec/telepathy-salut
+man/man8/telepathy-salut.8.gz
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.salut.service
 %%DOCSDIR%%/clique.html
 share/telepathy/managers/salut.manager

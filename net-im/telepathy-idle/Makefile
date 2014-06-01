@@ -9,15 +9,14 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IRC Connection Manager for Telepathy Framework
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
+USES=		gmake libtool pathfix pkgconfig
 USE_OPENSSL=	yes
-USE_GNOME=	gnomehack glib20
+USE_GNOME=	glib20 libxslt:build
 USE_PYTHON_BUILD=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

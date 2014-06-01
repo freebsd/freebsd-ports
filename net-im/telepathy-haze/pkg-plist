@@ -1,3 +1,4 @@
 libexec/telepathy-haze
+man/man8/telepathy-haze.8.gz
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.haze.service
 man/man8/telepathy-haze.8.gz

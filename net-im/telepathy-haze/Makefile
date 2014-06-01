@@ -11,13 +11,13 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-haze/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libpurple connection manager for telepathy
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	purple:${PORTSDIR}/net-im/libpurple \
-		idn:${PORTSDIR}/dns/libidn \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple \
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
+USE_GNOME=	libxslt:build
 
 .include <bsd.port.mk>
