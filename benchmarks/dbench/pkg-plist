@@ -1,5 +1,8 @@
 bin/dbench
 bin/tbench
 bin/tbench_srv
+man/man1/dbench.1.gz
+man/man1/tbench.1.gz
+man/man1/tbench_srv.1.gz
 %%DATADIR%%/client.txt
 @dirrm %%DATADIR%%

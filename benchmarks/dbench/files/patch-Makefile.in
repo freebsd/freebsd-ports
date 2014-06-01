@@ -1,0 +1,21 @@
+--- ./Makefile.in.orig	2014-06-01 10:35:20.000000000 +0200
++++ ./Makefile.in	2014-06-01 10:36:46.000000000 +0200
+@@ -32,12 +32,12 @@
+ 
+ # Careful here: don't install client.txt over itself.
+ install: all
+-	${INSTALLCMD} -d $(bindir) $(datadir) $(mandir)
+-	${INSTALLCMD} dbench tbench tbench_srv $(bindir)
+-	${INSTALLCMD} client.txt $(datadir)
+-	${INSTALLCMD} -m644 dbench.1 $(mandir)
+-	ln -sf dbench.1 $(mandir)/tbench.1
+-	ln -sf dbench.1 $(mandir)/tbench_srv.1
++	${INSTALLCMD} -d $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) $(DESTDIR)$(mandir)/man1
++	${INSTALLCMD} dbench tbench tbench_srv $(DESTDIR)$(bindir)
++	${INSTALLCMD} client.txt $(DESTDIR)$(datadir)
++	${INSTALLCMD} -m644 dbench.1 $(DESTDIR)$(mandir)/man1
++	ln -sf dbench.1 $(DESTDIR)$(mandir)/man1/tbench.1
++	ln -sf dbench.1 $(DESTDIR)$(mandir)/man1/tbench_srv.1
+ 
+ clean:
+ 	rm -f *.o *~ dbench tbench tbench_srv
