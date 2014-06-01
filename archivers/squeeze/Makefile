@@ -18,11 +18,10 @@ LIB_DEPENDS=	libthunar-vfs-1.so:${PORTSDIR}/x11-fm/thunar-vfs
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gmake gettext pathfix desktop-file-utils
+USES=		tar:bzip2 pkgconfig gmake gettext pathfix desktop-file-utils
 USE_XFCE=	configenv libutil thunar
 USE_XORG=	x11
 USE_GNOME=	gtk20 glib20 intltool intlhack
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 MAKE_JOB_SAFE=	yes
 

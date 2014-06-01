@@ -11,7 +11,7 @@ COMMENT=	Tool for decompressing Amiga DMS files
 
 OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	xdms

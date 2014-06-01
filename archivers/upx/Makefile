@@ -16,8 +16,7 @@ LIB_DEPENDS=	libucl.so:${PORTSDIR}/archivers/ucl
 
 LZMA_VER=	4.65
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
-USE_BZIP2=	yes
-USES=		gmake perl5
+USES=		tar:bzip2 gmake perl5
 USE_PERL5=	build
 MAKE_ENV=	UPX_UCLDIR=${LOCALBASE}\
 		UPX_LZMADIR=${WRKDIR}\
