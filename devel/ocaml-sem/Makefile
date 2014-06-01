@@ -28,7 +28,7 @@ ALL_TARGET=	all
 PORTDOCS=	html README
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		gmake tar:bizp2
+USES=		gmake tar:bzip2
 
 PKGDEINSTALL=	${PKGINSTALL}
 
