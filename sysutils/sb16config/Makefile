@@ -11,12 +11,11 @@ EXTRACT_ONLY=
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configuration utility for Granch SBNI16-SHDSL PCI modems
 
+USES=		desthack
 NO_WRKSUBDIR=	yes
-MAN8=		sb16config.8
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/sb16config
+PLIST_FILES=	bin/sb16config \
+		man/man8/sb16config.8.gz
 
-NO_STAGE=	yes
 post-extract:
 .for _i in ${DISTFILES}
 	@${GZCAT} ${DISTDIR}/${_i} >${WRKDIR}/${_i:R}
