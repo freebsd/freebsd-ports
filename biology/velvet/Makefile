@@ -57,8 +57,6 @@ PLIST_FILES+=	%%SITE_PERL%%/${f:H:T}/${f:T}
 
 PORTDOCS=	ChangeLog Manual.pdf Columbus_manual.pdf
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -73,22 +71,18 @@ post-patch:
 
 do-install:
 .for f in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for f in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin/${f:T}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/${f:T}
 .endfor
 .for d in ${PERLMOD_DIRS}
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${d:T}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${d:T}
 .endfor
 .for f in ${PERLMOD_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${SITE_PERL_REL}/${f:H:T}/${f:T}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${f:H:T}/${f:T}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
