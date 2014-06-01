@@ -1,4 +1,13 @@
 bin/dcf77pi
+bin/dcf77pi-analyze
 bin/readpin
-@sample etc/dcf77pi/config.txt.sample
+@sample %%ETCDIR%%/config.txt.sample
+include/dcf77pi/config.h
+include/dcf77pi/decode_alarm.h
+include/dcf77pi/decode_time.h
+include/dcf77pi/input.h
+include/dcf77pi/mainloop.h
+include/dcf77pi/setclock.h
+lib/libdcf77.so
 @dirrmtry %%ETCDIR%%
+@dirrmtry include/dcf77pi
