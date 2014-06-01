@@ -1445,7 +1445,7 @@ MASTER_SITE_XFCE+= \
 	http://archive.be.xfce.org/%SUBDIR%/ \
 	http://archive.be2.xfce.org/%SUBDIR%/ \
 	http://archive.al-us.xfce.org/%SUBDIR%/ \
-	http://mirrors.tummy.com/pub/archive.xfce.org/%SUBDIR%/ \
+	http://mirrors.tummy.com/pub/archive.xfce.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XORG)
