@@ -3,7 +3,7 @@
 
 PORTNAME=	usbutils
 PORTVERSION=	0.86
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/linux-usb/${PORTNAME}
 
@@ -20,7 +20,6 @@ USES=		gmake pkgconfig
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -34,7 +33,9 @@ post-patch:
 		${WRKSRC}/usb-devices
 
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
