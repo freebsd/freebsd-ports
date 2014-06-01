@@ -6125,3 +6125,4 @@ lang/ocaml-doc||2014-06-01|Has expired: Documentation is now included in lang/oc
 lang/ocaml-examples||2014-06-01|Has expired: Outdated and discontinued; new examples are in lang/ocaml
 lang/gnat-aux|lang/gcc-aux|2014-06-01|Has expired: Superceded by gcc4.9-based lang/gcc-aux, use it instead
 lang/python31|lang/python33|2014-06-01|Has expired: Python 3.1 will be end-of-life soon, please migrate to lang/python33
+net/cvsup-mirror||2014-06-01|Removed: www, doc, gnats, ports repo gone; src repo deprecated
