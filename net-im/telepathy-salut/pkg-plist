@@ -1,3 +1,4 @@
+man/man8/telepathy-salut.8.gz
 lib/telepathy/salut-0/lib/libsalut-plugins-0.8.0.so
 lib/telepathy/salut-0/lib/libsalut-plugins.la
 lib/telepathy/salut-0/lib/libsalut-plugins.so
