@@ -6121,3 +6121,6 @@ net-im/vicq||2014-05-30|Has expired: Unmaintained, outdated not depend on
 net-im/mercury||2014-05-31|Has expired: MSN is dying and the domain mercury.im is down
 german/bsdgroup-firefox-searchplugin||2014-05-31|Has expired: bsdgroup.de no longer seems to exist
 german/bsdforen-firefox-searchplugin||2014-05-31|Has expired: No longer works after forum software update
+lang/ocaml-doc||2014-06-01|Has expired: Documentation is now included in lang/ocaml
+lang/ocaml-examples||2014-06-01|Has expired: Outdated and discontinued; new examples are in lang/ocaml
+lang/gnat-aux|lang/gcc-aux|2014-06-01|Has expired: Superceded by gcc4.9-based lang/gcc-aux, use it instead

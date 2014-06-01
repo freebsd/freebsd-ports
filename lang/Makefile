@@ -93,7 +93,6 @@
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += gjs
-    SUBDIR += gnat-aux
     SUBDIR += gnat_util
     SUBDIR += gnatdroid-armv5
     SUBDIR += gnatdroid-armv7
@@ -184,8 +183,6 @@
     SUBDIR += ocaml
     SUBDIR += ocaml-autoconf
     SUBDIR += ocaml-camlidl
-    SUBDIR += ocaml-doc
-    SUBDIR += ocaml-examples
     SUBDIR += ocaml-mode.el
     SUBDIR += ocaml-nox11
     SUBDIR += ocs
