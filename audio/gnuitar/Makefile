@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The real-time guitar processor
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
+USES=		tar:bzip2 gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2 \
 		--enable-clip-everywhere \
@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--with-gtk2 \
 TXT_DOCS=	AUTHORS COPYING FAQ INSTALL NEWS README TODO ChangeLog
 HTML_DOCS=	faq.html index.html install.html readme.html
 PORTDOCS=	${TXT_DOCS} ${HTML_DOCS}
-USES=		gmake pkgconfig
 
 OPTIONS_DEFINE=	SUID DOCS
 OPTIONS_DEFAULT=	SUID

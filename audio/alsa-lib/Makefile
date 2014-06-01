@@ -11,7 +11,7 @@ MASTER_SITES=	ALSA/lib \
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	ALSA compatibility library
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfdir="\$${prefix}/libdata/pkgconfig"

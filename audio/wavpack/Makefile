@@ -11,8 +11,7 @@ COMMENT=	Audio codec for lossless, lossy, and hybrid compression
 
 LICENSE=	BSD
 
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig iconv
+USES=		tar:bzip2 pathfix pkgconfig iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

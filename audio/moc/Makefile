@@ -10,8 +10,7 @@ MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 MAINTAINER=	rzinkov@gmail.com
 COMMENT=	Console audio player designed to be powerful and easy to use
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

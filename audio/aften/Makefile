@@ -9,9 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	Gabor@Zahemszky.HU
 COMMENT=	ATSC A/52 audio encoder
 
-USE_BZIP2=	yes
-
-USES=		cmake:outsource
+USES=		tar:bzip2 cmake:outsource
 
 OPTIONS_DEFINE=		SHARED_LIB CXX_BINDINGS DOUBLE
 OPTIONS_DEFAULT=	

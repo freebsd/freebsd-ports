@@ -17,8 +17,7 @@ LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 OPTIONS_DEFINE=	EXAMPLES DOCS ICONV
 OPTIONS_DEFAULT=	ICONV
 
-USES=		pkgconfig
-USE_XZ=		yes
+USES=		tar:xz pkgconfig
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
@@ -44,15 +43,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mpc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/mpc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/mpc-completion.bash \
 		${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

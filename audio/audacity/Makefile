@@ -20,8 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gmake gettext pkgconfig shared-mime-info
-USE_XZ=		yes
+USES=		tar:xz desktop-file-utils gmake gettext pkgconfig shared-mime-info
 USE_WX=		2.8
 WX_UNICODE=	yes
 WX_COMPS=	wx

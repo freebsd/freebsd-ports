@@ -16,8 +16,7 @@ OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
 
 NO_BUILD=	yes
 
-USES=		shebangfix perl5
-USE_BZIP2=	yes
+USES=		tar:bzip2 shebangfix perl5
 USE_PERL5=	run
 USE_GITHUB=	yes
 GH_ACCOUNT=	Daenyth
@@ -38,8 +37,6 @@ do-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

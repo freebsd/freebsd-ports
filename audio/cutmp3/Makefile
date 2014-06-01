@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.puchalla-online.de/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A small and fast command line MP3 editor
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	bin/cutmp3 man/man1/cutmp3.1.gz
 

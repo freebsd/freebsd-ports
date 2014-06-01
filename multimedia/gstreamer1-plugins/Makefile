@@ -41,9 +41,8 @@ UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		tar:xz gettext gmake libtool:keepla pathfix pkgconfig
 WANT_GSTREAMER=	yes
-USE_XZ=		yes
 USE_GNOME+=	glib20 gnomehier introspection:build libxml2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

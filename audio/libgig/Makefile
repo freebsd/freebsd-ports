@@ -17,8 +17,7 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
+USES=		tar:bzip2 gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
