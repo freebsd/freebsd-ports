@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	rdate
-PORTVERSION=	1.3
+PORTVERSION=	20140220
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cons.org/freebsd-distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	johans
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Sets the clock of the local host to the time of another host
 
-PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/rdate
+CFLAGS+=	-DNO_UTIL -D__dead= -D'SA_LEN(x)=(x)->sa_len'
+WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST_FILES=	sbin/rdate man/man8/${PORTNAME}.8.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,/right,,' ${WRKSRC}/rdate.8
 
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rdate ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/rdate.8 ${STAGEDIR}${PREFIX}/man/man8/
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/rdate ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/rdate.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>

@@ -1,3 +1,6 @@
 rdate(8) sets the clock of the local host to the time of another host.
 
-It is simpler than xntp and friends.
+OpenBSD's rdate is a much improved version of the original rdate(8)
+by Christos Zoulas. This version not only supports RFC 868,
+but also RFC 5905 (NTP, SNTP), which is now used by default.
+Both IPv4 and IPv6 are supported.
