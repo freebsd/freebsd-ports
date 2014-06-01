@@ -1,105 +1,8 @@
 bin/darktable
 bin/darktable-cli
 bin/darktable-cltest
-share/appdata/darktable.appdata.xml
-%%DATADIR%%/darktable.gtkrc
-%%DATADIR%%/darktablerc
-%%DATADIR%%/gdb_commands
-%%DATADIR%%/js/builder.js
-%%DATADIR%%/js/effects.js
-%%DATADIR%%/js/lightbox-web.js
-%%DATADIR%%/js/lightbox.js
-%%DATADIR%%/js/prototype.js
-%%DATADIR%%/js/scriptaculous.js
-%%DATADIR%%/kernels/atrous.cl
-%%DATADIR%%/kernels/basic.cl
-%%DATADIR%%/kernels/bilateral.cl
-%%DATADIR%%/kernels/blendop.cl
-%%DATADIR%%/kernels/colorspace.cl
-%%DATADIR%%/kernels/common.h
-%%DATADIR%%/kernels/demosaic_ppg.cl
-%%DATADIR%%/kernels/denoiseprofile.cl
-%%DATADIR%%/kernels/extended.cl
-%%DATADIR%%/kernels/gaussian.cl
-%%DATADIR%%/kernels/highpass.cl
-%%DATADIR%%/kernels/nlmeans.cl
-%%DATADIR%%/kernels/programs.conf
-%%DATADIR%%/kernels/sharpen.cl
-%%DATADIR%%/kernels/soften.cl
-%%DATADIR%%/latex/photobook.cls
-%%DATADIR%%/pixmaps/dt_logo_128x128.png
-%%DATADIR%%/pixmaps/idbutton.png
-%%DATADIR%%/pixmaps/off.png
-%%DATADIR%%/pixmaps/plugins/darkroom/anlfyeni.png
-%%DATADIR%%/pixmaps/plugins/darkroom/atrous.png
-%%DATADIR%%/pixmaps/plugins/darkroom/basecurve.png
-%%DATADIR%%/pixmaps/plugins/darkroom/bilateral.png
-%%DATADIR%%/pixmaps/plugins/darkroom/bloom.png
-%%DATADIR%%/pixmaps/plugins/darkroom/borders.png
-%%DATADIR%%/pixmaps/plugins/darkroom/cacorrect.png
-%%DATADIR%%/pixmaps/plugins/darkroom/channelmixer.png
-%%DATADIR%%/pixmaps/plugins/darkroom/clahe.png
-%%DATADIR%%/pixmaps/plugins/darkroom/clipping.png
-%%DATADIR%%/pixmaps/plugins/darkroom/colorcorrection.png
-%%DATADIR%%/pixmaps/plugins/darkroom/colorin.png
-%%DATADIR%%/pixmaps/plugins/darkroom/colorout.png
-%%DATADIR%%/pixmaps/plugins/darkroom/colortransfer.png
-%%DATADIR%%/pixmaps/plugins/darkroom/colorzones.png
-%%DATADIR%%/pixmaps/plugins/darkroom/demosaic.png
-%%DATADIR%%/pixmaps/plugins/darkroom/dither.png
-%%DATADIR%%/pixmaps/plugins/darkroom/exposure.png
-%%DATADIR%%/pixmaps/plugins/darkroom/flip.png
-%%DATADIR%%/pixmaps/plugins/darkroom/graduatednd.png
-%%DATADIR%%/pixmaps/plugins/darkroom/grain.png
-%%DATADIR%%/pixmaps/plugins/darkroom/highlights.png
-%%DATADIR%%/pixmaps/plugins/darkroom/highpass.png
-%%DATADIR%%/pixmaps/plugins/darkroom/hotpixels.png
-%%DATADIR%%/pixmaps/plugins/darkroom/invert.png
-%%DATADIR%%/pixmaps/plugins/darkroom/lens.png
-%%DATADIR%%/pixmaps/plugins/darkroom/levels.png
-%%DATADIR%%/pixmaps/plugins/darkroom/lowlight.png
-%%DATADIR%%/pixmaps/plugins/darkroom/lowpass.png
-%%DATADIR%%/pixmaps/plugins/darkroom/monochrome.png
-%%DATADIR%%/pixmaps/plugins/darkroom/nlmeans.png
-%%DATADIR%%/pixmaps/plugins/darkroom/overexposed.png
-%%DATADIR%%/pixmaps/plugins/darkroom/profile_gamma.png
-%%DATADIR%%/pixmaps/plugins/darkroom/rawdenoise.png
-%%DATADIR%%/pixmaps/plugins/darkroom/rawimport.png
-%%DATADIR%%/pixmaps/plugins/darkroom/relight.png
-%%DATADIR%%/pixmaps/plugins/darkroom/shadhi.png
-%%DATADIR%%/pixmaps/plugins/darkroom/sharpen.png
-%%DATADIR%%/pixmaps/plugins/darkroom/soften.png
-%%DATADIR%%/pixmaps/plugins/darkroom/splittoning.png
-%%DATADIR%%/pixmaps/plugins/darkroom/spots.png
-%%DATADIR%%/pixmaps/plugins/darkroom/temperature.png
-%%DATADIR%%/pixmaps/plugins/darkroom/template.png
-%%DATADIR%%/pixmaps/plugins/darkroom/tonecurve.png
-%%DATADIR%%/pixmaps/plugins/darkroom/tonemap.png
-%%DATADIR%%/pixmaps/plugins/darkroom/velvia.png
-%%DATADIR%%/pixmaps/plugins/darkroom/vignette.png
-%%DATADIR%%/pixmaps/plugins/darkroom/watermark.png
-%%DATADIR%%/pixmaps/plugins/darkroom/zonesystem.png
-%%DATADIR%%/rawspeed/cameras.xml
-%%DATADIR%%/rawspeed/showcameras.xsl
-%%DATADIR%%/style/bullet.gif
-%%DATADIR%%/style/close.gif
-%%DATADIR%%/style/closelabel.gif
-%%DATADIR%%/style/donate-button.gif
-%%DATADIR%%/style/download-icon.gif
-%%DATADIR%%/style/favicon.ico
-%%DATADIR%%/style/image-1.jpg
-%%DATADIR%%/style/lightbox.css
-%%DATADIR%%/style/loading.gif
-%%DATADIR%%/style/nextlabel.gif
-%%DATADIR%%/style/prevlabel.gif
-%%DATADIR%%/style/style.css
-%%DATADIR%%/style/thumb-1.jpg
-%%DATADIR%%/watermarks/darktable.svg
-%%DATADIR%%/watermarks/hasselblad.svg
-%%DATADIR%%/watermarks/promo.svg
 lib/darktable/libdarktable.so
 lib/darktable/plugins/imageio/format/libcopy.so
-lib/darktable/plugins/imageio/format/libexr.so
 lib/darktable/plugins/imageio/format/libjpeg.so
 lib/darktable/plugins/imageio/format/libpfm.so
 lib/darktable/plugins/imageio/format/libpng.so
@@ -119,10 +22,13 @@ lib/darktable/plugins/libcacorrect.so
 lib/darktable/plugins/libchannelmixer.so
 lib/darktable/plugins/libclahe.so
 lib/darktable/plugins/libclipping.so
+lib/darktable/plugins/libcolisa.so
+lib/darktable/plugins/libcolorbalance.so
 lib/darktable/plugins/libcolorcontrast.so
 lib/darktable/plugins/libcolorcorrection.so
 lib/darktable/plugins/libcolorin.so
 lib/darktable/plugins/libcolorize.so
+lib/darktable/plugins/libcolormapping.so
 lib/darktable/plugins/libcolorout.so
 lib/darktable/plugins/libcolortransfer.so
 lib/darktable/plugins/libcolorzones.so
@@ -178,8 +84,8 @@ lib/darktable/plugins/lighttable/libhistogram.so
 lib/darktable/plugins/lighttable/libhistory.so
 lib/darktable/plugins/lighttable/libimage.so
 lib/darktable/plugins/lighttable/libimport.so
-lib/darktable/plugins/lighttable/libkeywords.so
 lib/darktable/plugins/lighttable/liblighttable_mode.so
+lib/darktable/plugins/lighttable/libmasks.so
 lib/darktable/plugins/lighttable/libmetadata.so
 lib/darktable/plugins/lighttable/libmetadata_view.so
 lib/darktable/plugins/lighttable/libmodule_toolbox.so
@@ -196,7 +102,110 @@ lib/darktable/plugins/lighttable/libview_toolbox.so
 lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/libdarkroom.so
 lib/darktable/views/liblighttable.so
+man/man1/darktable-cli.1.gz
+man/man1/darktable.1.gz
+share/appdata/darktable.appdata.xml
 share/applications/darktable.desktop
+%%DATADIR%%/darktable.gtkrc
+%%DATADIR%%/darktablerc
+%%DATADIR%%/gdb_commands
+%%DATADIR%%/js/builder.js
+%%DATADIR%%/js/effects.js
+%%DATADIR%%/js/lightbox-web.js
+%%DATADIR%%/js/lightbox.js
+%%DATADIR%%/js/prototype.js
+%%DATADIR%%/js/scriptaculous.js
+%%DATADIR%%/kernels/atrous.cl
+%%DATADIR%%/kernels/basic.cl
+%%DATADIR%%/kernels/bilateral.cl
+%%DATADIR%%/kernels/blendop.cl
+%%DATADIR%%/kernels/bloom.cl
+%%DATADIR%%/kernels/colorspace.cl
+%%DATADIR%%/kernels/common.h
+%%DATADIR%%/kernels/demosaic_ppg.cl
+%%DATADIR%%/kernels/denoiseprofile.cl
+%%DATADIR%%/kernels/extended.cl
+%%DATADIR%%/kernels/gaussian.cl
+%%DATADIR%%/kernels/highpass.cl
+%%DATADIR%%/kernels/nlmeans.cl
+%%DATADIR%%/kernels/programs.conf
+%%DATADIR%%/kernels/sharpen.cl
+%%DATADIR%%/kernels/soften.cl
+%%DATADIR%%/latex/photobook.cls
+%%DATADIR%%/pixmaps/dt_logo_128x128.png
+%%DATADIR%%/pixmaps/idbutton-2.png
+%%DATADIR%%/pixmaps/idbutton.png
+%%DATADIR%%/pixmaps/off.png
+%%DATADIR%%/pixmaps/plugins/darkroom/anlfyeni.png
+%%DATADIR%%/pixmaps/plugins/darkroom/atrous.png
+%%DATADIR%%/pixmaps/plugins/darkroom/basecurve.png
+%%DATADIR%%/pixmaps/plugins/darkroom/bilateral.png
+%%DATADIR%%/pixmaps/plugins/darkroom/bloom.png
+%%DATADIR%%/pixmaps/plugins/darkroom/borders.png
+%%DATADIR%%/pixmaps/plugins/darkroom/cacorrect.png
+%%DATADIR%%/pixmaps/plugins/darkroom/channelmixer.png
+%%DATADIR%%/pixmaps/plugins/darkroom/clahe.png
+%%DATADIR%%/pixmaps/plugins/darkroom/clipping.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colisa.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colorcorrection.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colorin.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colormapping.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colorout.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colortransfer.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colorzones.png
+%%DATADIR%%/pixmaps/plugins/darkroom/demosaic.png
+%%DATADIR%%/pixmaps/plugins/darkroom/dither.png
+%%DATADIR%%/pixmaps/plugins/darkroom/exposure.png
+%%DATADIR%%/pixmaps/plugins/darkroom/flip.png
+%%DATADIR%%/pixmaps/plugins/darkroom/graduatednd.png
+%%DATADIR%%/pixmaps/plugins/darkroom/grain.png
+%%DATADIR%%/pixmaps/plugins/darkroom/highlights.png
+%%DATADIR%%/pixmaps/plugins/darkroom/highpass.png
+%%DATADIR%%/pixmaps/plugins/darkroom/hotpixels.png
+%%DATADIR%%/pixmaps/plugins/darkroom/invert.png
+%%DATADIR%%/pixmaps/plugins/darkroom/lens.png
+%%DATADIR%%/pixmaps/plugins/darkroom/levels.png
+%%DATADIR%%/pixmaps/plugins/darkroom/lowlight.png
+%%DATADIR%%/pixmaps/plugins/darkroom/lowpass.png
+%%DATADIR%%/pixmaps/plugins/darkroom/monochrome.png
+%%DATADIR%%/pixmaps/plugins/darkroom/nlmeans.png
+%%DATADIR%%/pixmaps/plugins/darkroom/overexposed.png
+%%DATADIR%%/pixmaps/plugins/darkroom/profile_gamma.png
+%%DATADIR%%/pixmaps/plugins/darkroom/rawdenoise.png
+%%DATADIR%%/pixmaps/plugins/darkroom/rawimport.png
+%%DATADIR%%/pixmaps/plugins/darkroom/relight.png
+%%DATADIR%%/pixmaps/plugins/darkroom/shadhi.png
+%%DATADIR%%/pixmaps/plugins/darkroom/sharpen.png
+%%DATADIR%%/pixmaps/plugins/darkroom/soften.png
+%%DATADIR%%/pixmaps/plugins/darkroom/splittoning.png
+%%DATADIR%%/pixmaps/plugins/darkroom/spots.png
+%%DATADIR%%/pixmaps/plugins/darkroom/temperature.png
+%%DATADIR%%/pixmaps/plugins/darkroom/template.png
+%%DATADIR%%/pixmaps/plugins/darkroom/tonecurve.png
+%%DATADIR%%/pixmaps/plugins/darkroom/tonemap.png
+%%DATADIR%%/pixmaps/plugins/darkroom/velvia.png
+%%DATADIR%%/pixmaps/plugins/darkroom/vignette.png
+%%DATADIR%%/pixmaps/plugins/darkroom/watermark.png
+%%DATADIR%%/pixmaps/plugins/darkroom/zonesystem.png
+%%DATADIR%%/rawspeed/cameras.xml
+%%DATADIR%%/rawspeed/showcameras.xsl
+%%DATADIR%%/style/bullet.gif
+%%DATADIR%%/style/close.gif
+%%DATADIR%%/style/closelabel.gif
+%%DATADIR%%/style/donate-button.gif
+%%DATADIR%%/style/download-icon.gif
+%%DATADIR%%/style/favicon.ico
+%%DATADIR%%/style/image-1.jpg
+%%DATADIR%%/style/lightbox.css
+%%DATADIR%%/style/loading.gif
+%%DATADIR%%/style/nextlabel.gif
+%%DATADIR%%/style/prevlabel.gif
+%%DATADIR%%/style/style.css
+%%DATADIR%%/style/thumb-1.jpg
+%%DATADIR%%/watermarks/darktable.svg
+%%DATADIR%%/watermarks/hasselblad.svg
+%%DATADIR%%/watermarks/promo.svg
+%%PORTDOCS%%%%DOCSDIR%%/darktablerc.html
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
 share/icons/hicolor/24x24/apps/darktable.png
@@ -204,9 +213,12 @@ share/icons/hicolor/256x256/apps/darktable.png
 share/icons/hicolor/32x32/apps/darktable.png
 share/icons/hicolor/48x48/apps/darktable.png
 share/icons/hicolor/64x64/apps/darktable.png
+share/icons/hicolor/scalable/apps/darktable-2.svg
 share/icons/hicolor/scalable/apps/darktable.svg
+share/locale/cs/LC_MESSAGES/darktable.mo
 share/locale/da/LC_MESSAGES/darktable.mo
 share/locale/de/LC_MESSAGES/darktable.mo
+share/locale/el/LC_MESSAGES/darktable.mo
 share/locale/es/LC_MESSAGES/darktable.mo
 share/locale/fr/LC_MESSAGES/darktable.mo
 share/locale/it/LC_MESSAGES/darktable.mo
@@ -219,21 +231,24 @@ share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
-@dirrm lib/darktable/views
-@dirrm lib/darktable/plugins/lighttable
-@dirrm lib/darktable/plugins/imageio/storage
-@dirrm lib/darktable/plugins/imageio/format
-@dirrm lib/darktable/plugins/imageio
-@dirrm lib/darktable/plugins
-@dirrm lib/darktable
-@dirrm %%DATADIR%%/watermarks
-@dirrm %%DATADIR%%/style
-@dirrm %%DATADIR%%/rawspeed
-@dirrm %%DATADIR%%/pixmaps/plugins/darkroom
-@dirrm %%DATADIR%%/pixmaps/plugins
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/latex
-@dirrm %%DATADIR%%/kernels
-@dirrm %%DATADIR%%/js
-@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/watermarks
+@dirrmtry %%DATADIR%%/style
+@dirrmtry %%DATADIR%%/rawspeed
+@dirrmtry %%DATADIR%%/pixmaps/plugins/darkroom
+@dirrmtry %%DATADIR%%/pixmaps/plugins
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/lua/darktable
+@dirrmtry %%DATADIR%%/lua
+@dirrmtry %%DATADIR%%/latex
+@dirrmtry %%DATADIR%%/kernels
+@dirrmtry %%DATADIR%%/js
+@dirrmtry %%DATADIR%%
 @dirrmtry share/appdata
+@dirrmtry lib/darktable/views
+@dirrmtry lib/darktable/plugins/lighttable
+@dirrmtry lib/darktable/plugins/imageio/storage
+@dirrmtry lib/darktable/plugins/imageio/format
+@dirrmtry lib/darktable/plugins/imageio
+@dirrmtry lib/darktable/plugins
+@dirrmtry lib/darktable
