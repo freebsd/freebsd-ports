@@ -24,7 +24,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tnt
 	${INSTALL_DATA} ${WRKDIR}/*.h ${STAGEDIR}${PREFIX}/include/tnt
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${EXTRACT_CMD} ${DISTDIR}/${DIST_SUBDIR}/tnt120doc \
+	${UNZIP_CMD} ${DISTDIR}/${DIST_SUBDIR}/tnt120doc \
 		-d ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
