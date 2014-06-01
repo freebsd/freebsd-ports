@@ -14,7 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fingerprint the web applications used by a web site
 
 LICENSE=	LGPL3
-USE_BZIP2=	YES
+
+USES=		tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	YES
 
@@ -22,10 +23,9 @@ SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		PATH=${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
-PORTDOCS=	README Blind_Elephant_BlackHat_2010.pdf
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PORTDOCS=	README Blind_Elephant_BlackHat_2010.pdf
 
 post-extract:
 	@${MV} ${WRKSRC}/src/* ${WRKSRC}
@@ -33,12 +33,10 @@ post-extract:
 	${WRKSRC}/Blind_Elephant_BlackHat_2010.pdf
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for I in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${I} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/${I} ${STAGEDIR}${DOCSDIR}
 .	endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
