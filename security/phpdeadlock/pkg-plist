@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/admin/.htaccess
 %%WWWDIR%%/admin/bulkemail.php
@@ -13,7 +15,9 @@
 %%WWWDIR%%/admin/userlist.php
 %%WWWDIR%%/admin/userrequests.php
 %%WWWDIR%%/admin/validateuser.php
+@mode 777
 %%WWWDIR%%/db_config.php
+@mode
 %%WWWDIR%%/fckeditor/_documentation.html
 %%WWWDIR%%/fckeditor/_whatsnew.html
 %%WWWDIR%%/fckeditor/editor/css/behaviors/disablehandles.htc
