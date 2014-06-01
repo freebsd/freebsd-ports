@@ -1,6 +1,8 @@
 sbin/fragroute
 sbin/fragtest
 etc/fragroute.conf
+man/man8/fragroute.8.gz
+man/man8/fragtest.8.gz
 %%DATADIR%%/README.snort
 %%DATADIR%%/base-1
 %%DATADIR%%/frag-1
