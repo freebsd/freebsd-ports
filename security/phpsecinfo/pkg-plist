@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/CHANGELOG
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/PhpSecInfo/PhpSecInfo.php
