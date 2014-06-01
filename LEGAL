@@ -24,7 +24,7 @@
 # Dist			Port			Why
 # ------------------------------------------------------------------------------
 *-for-1.4.tgz	net/dgd-lpmud			May not be used for monetary gain
-*_FreeBSD_MegaCLI.zip	sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
+*_MegaCLI.zip		sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
 ASpath-tree-*.tar.gz	net-mgmt/aspathtree	not redistributable, license agreement required
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 aacplusenc-*		audio/aacplusenc	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
