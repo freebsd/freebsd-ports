@@ -3,7 +3,7 @@
 
 PORTNAME=	spread
 PORTVERSION=	3.17.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net perl5
 MASTER_SITES=	http://bsdforge.com/projects/source/apache2/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -73,5 +73,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}/LICENSE
 	${INSTALL} -m 750 -d ${STAGEDIR}${RUNDIR}
+	${SED} -i '' 's|^${STAGEDIR}||' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Spread/.packlist
 
 .include <bsd.port.post.mk>
