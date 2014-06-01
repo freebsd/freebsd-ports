@@ -4,6 +4,7 @@ lib/libtelepathy-farsight.a
 lib/libtelepathy-farsight.la
 lib/libtelepathy-farsight.so
 lib/libtelepathy-farsight.so.0
+lib/libtelepathy-farsight.so.0.1.6
 %%PYTHON_SITELIBDIR%%/tpfarsight.a
 %%PYTHON_SITELIBDIR%%/tpfarsight.la
 %%PYTHON_SITELIBDIR%%/tpfarsight.so

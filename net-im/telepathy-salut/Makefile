@@ -3,19 +3,20 @@
 
 PORTNAME=	telepathy-salut
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
-LIB_DEPENDS=	avahi-glib.1:${PORTSDIR}/net/avahi-app \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libavahi-glib.so:${PORTSDIR}/net/avahi-app \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
-USE_GNOME=	gnomehack glib20 libxslt:build
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	glib20 libxslt:build
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 USE_SQLITE=	3

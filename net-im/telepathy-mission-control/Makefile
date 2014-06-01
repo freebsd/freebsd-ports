@@ -4,18 +4,19 @@
 
 PORTNAME=	telepathy-mission-control
 PORTVERSION=	5.12.0
+PORTREVISION=	1
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-control/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Telepathy component to apps to abstract details of connection managers
 
-LIB_DEPENDS=	telepathy.2:${PORTSDIR}/net-im/libtelepathy \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libtelepathy.so:${PORTSDIR}/net-im/libtelepathy \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		gmake pkgconfig
-USE_GNOME=	gnomeprefix libxslt gnomehack ltverhack
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool:keepla pathfix pkgconfig
+USE_GNOME=	gnomeprefix libxslt
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes

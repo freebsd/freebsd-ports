@@ -3,25 +3,22 @@
 
 PORTNAME=	libtelepathy
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Flexible Communications Framework
 
-LIB_PC_DEPENDS=	dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
-
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
-
-BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
-RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
+LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USE_PYTHON_BUILD=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool:keepla pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack glib20 ltverhack
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomehack glib20 libxslt:build
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs glib-2.0 telepathy-glib`
 
 .include <bsd.port.mk>

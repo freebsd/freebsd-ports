@@ -48,6 +48,7 @@ lib/libtelepathy.a
 lib/libtelepathy.la
 lib/libtelepathy.so
 lib/libtelepathy.so.2
+lib/libtelepathy.so.2.7.1
 libdata/pkgconfig/libtelepathy.pc
 @dirrm include/telepathy-1.0/libtelepathy
 @dirrm include/telepathy-1.0

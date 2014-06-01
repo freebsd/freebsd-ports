@@ -11,18 +11,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python bindings for the Telepathy framework
 
-LIB_PC_DEPENDS=	dbus-python.pc:${PORTSDIR}/devel/py-dbus
+BUILD_DEPENDS=	py2?-dbus>=0:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS=	py2?-dbus>=0:${PORTSDIR}/devel/py-dbus
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-
-BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
-RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
-
-USE_PYTHON=		yes
+USE_PYTHON=	2
 USES=		gmake
-GNU_CONFIGURE=		yes
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+USE_GNOME=	libxslt:build
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

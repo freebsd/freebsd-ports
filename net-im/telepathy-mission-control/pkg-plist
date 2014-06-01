@@ -15,8 +15,12 @@ lib/libmission-control-plugins.a
 lib/libmission-control-plugins.la
 lib/libmission-control-plugins.so
 lib/libmission-control-plugins.so.0
+lib/libmission-control-plugins.so.0.3.1
 libdata/pkgconfig/mission-control-plugins.pc
 libexec/mission-control-5
+man/man1/mc-tool.1.gz
+man/man1/mc-wait-for-name.1.gz
+man/man8/mission-control-5.8.gz
 share/dbus-1/services/org.freedesktop.Telepathy.AccountManager.service
 share/dbus-1/services/org.freedesktop.Telepathy.MissionControl5.service
 share/doc/mission-control-plugins/McpAccountManager.html
