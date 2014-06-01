@@ -24,5 +24,4 @@ MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vala-bindings
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
