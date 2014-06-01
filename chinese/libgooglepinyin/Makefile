@@ -9,8 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A fork of Google Pinyin IME on Android
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		cmake
+USES=		tar:bzip2 cmake
 
 .include <bsd.port.mk>

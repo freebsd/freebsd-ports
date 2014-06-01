@@ -15,8 +15,7 @@ COMMENT=	SCIM IMEngine module for fcitx
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		tar:bzip2 gmake pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
