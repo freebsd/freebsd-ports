@@ -29,15 +29,12 @@ USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
 
-MAN8=		telepathy-gabble.8
-
 PLIST_SUB=	PVERSION=${PORTVERSION}
 
 .if defined(WITH_OPENSSL_BASE)
 CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/include"
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/lib/ext/wocky/configure

@@ -1,4 +1,5 @@
 bin/telepathy-gabble-xmpp-console
+man/man8/telepathy-gabble.8.gz
 lib/telepathy/gabble-0/lib/libgabble-plugins-%%PVERSION%%.so
 lib/telepathy/gabble-0/lib/libgabble-plugins.a
 lib/telepathy/gabble-0/lib/libgabble-plugins.la
