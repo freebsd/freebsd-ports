@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \
 		--with-guis="${SLAVEPORT}"
 CPPFLAGS+=	-DGCRYPT_NO_DEPRECATED -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
 USE_LDCONFIG=	yes
@@ -49,7 +50,6 @@ INSTALL_WRKSRC=	${WRKSRC}/gui/${SLAVEPORT}
 .if ${SLAVEPORT}=="fox16"
 LIB_DEPENDS+=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if ${SLAVEPORT}=="gtk2"
