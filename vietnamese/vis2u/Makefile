@@ -13,6 +13,7 @@ COMMENT=	VISCII->Unicode conversion
 
 USES=		zip:infozip
 NO_WRKSUBDIR=	yes
+EXTRACT_BEFORE_ARGS=	-qoL
 
 do-build:
 	cd ${WRKSRC} ; make vis2u
@@ -21,5 +22,3 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vis2u ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
-
-EXTRACT_BEFORE_ARGS+=	-L
