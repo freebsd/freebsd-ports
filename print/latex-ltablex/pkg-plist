@@ -1,4 +1,2 @@
 %%CLASSDIR%%/ltablex.sty
 @dirrm %%CLASSDIR%%
-@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
-@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
