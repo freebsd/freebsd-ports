@@ -17,11 +17,9 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DOCSDIR=	${PREFIX}/share/doc/sather/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DOCSDIR}
-	@${TAR} -xzf ${DISTDIR}/${DISTFILES} -C ${DOCSDIR}
-	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${TAR} -xzf ${DISTDIR}/${DISTFILES} -C ${STAGEDIR}${DOCSDIR}
+	@${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 
 .include <bsd.port.mk>
