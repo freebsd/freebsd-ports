@@ -20,7 +20,4 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 
-MAN8=		telepathy-haze.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
