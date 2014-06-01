@@ -15,7 +15,7 @@ COMMENT=	Video DVD backup tool
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	3.1+
+USE_PYTHON=	3
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFO=	python_dvdvideo-0.${PORTVERSION}-py${PYTHON_VER}.egg-info
 

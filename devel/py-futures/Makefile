@@ -12,7 +12,7 @@ COMMENT=	Backport of the concurrent.futures package from Python 3.2
 
 LICENSE=	BSD2CLAUSE
 
-USE_PYTHON=		-3.1
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 

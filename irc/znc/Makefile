@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		3.1-
+USE_PYTHON=		2
 USE_PERL5+=		build
 .endif
 
