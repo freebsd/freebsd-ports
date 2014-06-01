@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex>=2.5.35_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 
 USE_LDCONFIG=	yes
 
@@ -27,6 +27,15 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--with-storage=/var/db/knot
 CONFIGURE_ARGS+=--with-rundir=/var/run/knot
+
+OPTIONS_DEFINE=   FASTPARSER IDNA
+
+FASTPARSER_CONFIGURE_ENABLE= fastparser
+FASTPARSER_DESC=             Fast zone parser (demanding compilation)
+
+IDNA_CONFIGURE_WITH= libidn
+IDNA_DESC=           IDN support in knot utilities
+IDNA_LIB_DEPENDS=    libidn.so:${PORTSDIR}/dns/libidn
 
 SUB_FILES=	pkg-message
 
@@ -41,15 +50,16 @@ GROUPS=		knot
 SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
 post-patch:
-	${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \
+	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \
 		${WRKSRC}/src/Makefile.in
-	${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|' \
+	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|' \
 		${WRKSRC}/src/Makefile.in
+	@${RM} -rf ${WRKSRC}/src/zscanner/scanner.c
 
 post-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/knot.sample.conf ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
