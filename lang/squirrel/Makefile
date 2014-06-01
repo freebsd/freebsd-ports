@@ -16,7 +16,6 @@ USES=		dos2unix
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/SQUIRREL2
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
@@ -37,11 +36,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/cd / s|$$|\&\& cd ..|' ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/sq ${PREFIX}/bin/
-	@cd ${WRKSRC}/lib && ${INSTALL_PROGRAM} libsqstdlib.so libsquirrel.so \
-		${PREFIX}/lib/
-	@${LN} -sf libsqstdlib.so ${PREFIX}/lib/libsqstdlib.so.0
-	@${LN} -sf libsquirrel.so ${PREFIX}/lib/libsquirrel.so.0
-	@cd ${WRKSRC}/include && ${INSTALL_DATA} *.h ${PREFIX}/include/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/sq ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/lib && ${INSTALL_LIB} libsqstdlib.so libsquirrel.so \
+		${STAGEDIR}${PREFIX}/lib)
+	@${LN} -sf libsqstdlib.so ${STAGEDIR}${PREFIX}/lib/libsqstdlib.so.0
+	@${LN} -sf libsquirrel.so ${STAGEDIR}${PREFIX}/lib/libsquirrel.so.0
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.post.mk>
