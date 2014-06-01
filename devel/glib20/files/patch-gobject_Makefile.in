@@ -1,6 +1,14 @@
 --- gobject/Makefile.in.orig	2012-05-03 11:42:11.000000000 +0200
 +++ gobject/Makefile.in	2012-05-03 11:42:51.000000000 +0200
-@@ -1381,7 +1381,7 @@
+@@ -566,6 +566,7 @@
+ @OS_WIN32_AND_DLL_COMPILATION_TRUE@gobject_win32_res_ldflag = -Wl,$(gobject_win32_res)
+ libgobjectincludedir = $(includedir)/glib-2.0/gobject
+ libgobject_2_0_la_LDFLAGS = $(GLIB_LINK_FLAGS) \
++  -Wl,-z,nodelete \
+   $(gobject_win32_res_ldflag) \
+   -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+   -export-dynamic $(no_undefined)
+@@ -1331,7 +1332,7 @@
  
  info-am:
  
@@ -9,7 +17,7 @@
  	install-libgobjectincludeHEADERS install-tapsetDATA
  	@$(NORMAL_INSTALL)
  	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
-@@ -1649,9 +1649,7 @@
+@@ -1586,9 +1587,7 @@
  uninstall-gdb:
  	-rm -r $(DESTDIR)$(datadir)/gdb
  
