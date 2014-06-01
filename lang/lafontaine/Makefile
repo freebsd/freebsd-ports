@@ -19,18 +19,10 @@ GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 LDFLAGS+=	-lm
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 .include <bsd.port.mk>
