@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxic
-PORTVERSION=	0.3.3.140514
+PORTVERSION=	0.3.3.140601
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,12 +11,15 @@ COMMENT=	A console client for Tox
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
+LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
+		libopus.so:${PORTSDIR}/audio/opus		\
+		libopenal.so.1:${PORTSDIR}/audio/openal-soft
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tox
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	2cf5430
+GH_COMMIT=	7206a9e
 
 WRKSRC=		${WRKDIR}/Tox-${PORTNAME}-${GH_COMMIT}
 SUB_FILES=	pkg-message
