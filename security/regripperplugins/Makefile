@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	regripperplugins
-PORTVERSION=	20130429
+PORTVERSION=	20140414
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	regripper
-DISTNAME=	plugins${PORTVERSION}
-EXTRACT_SUFX=	.zip
+# Downloaded from https://www.dropbox.com/s/6a37htpkf3iq7eg/rr_20140414.zip
+MASTER_SITES=	LOCAL/antoine
+DISTNAME=	rr_${PORTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Supplemental plugins for Harlan Carvey's RegRipper
@@ -16,14 +15,14 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	regripper>=0:${PORTSDIR}/security/regripper
 
-NO_WRKSUBDIR=	yes
+USES=		dos2unix zip
 NO_BUILD=	yes
-USES=		dos2unix
+WRKSRC=		${WRKDIR}/regripper
 
-PORTDATA=	*.pl all ntuser sam security software system usrclass
+PORTDATA=	*.pl all amcache.txt ntuser sam security software system usrclass
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${PORTDATA:S,^,${WRKSRC}/,} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${PORTDATA:S,^,${WRKSRC}/plugins/,} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
