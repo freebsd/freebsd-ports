@@ -18,11 +18,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${DATADIR} --enable-zlib
 USES=		gmake pkgconfig
 
-MAN1=		usb-devices.1
-MAN8=		lsusb.8
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,9 +34,7 @@ post-patch:
 		${WRKSRC}/usb-devices
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
