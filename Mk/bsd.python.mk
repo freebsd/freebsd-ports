@@ -14,7 +14,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # language. It's automatically included when USE_PYTHON is defined in
 # the ports' makefile. If your port requires only some set of Python
 # versions, you can define USE_PYTHON as [min]-[max] or min+ or -max
-# or as an explicit version or as a meta port version (eg. 3.1-3.2
+# or as an explicit version or as a meta port version (eg. 3.2-3.3
 # for [min]-[max], 2.7+ or -3.2 for min+ and -max, 2.7 for an
 # explicit version or 3 for a meta port version).
 #
@@ -194,7 +194,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  default: ${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 
 _PYTHON_PORTBRANCH=		2.7
-_PYTHON_ALLBRANCHES=	2.7 3.4 3.3 3.2 3.1	# preferred first
+_PYTHON_ALLBRANCHES=	2.7 3.4 3.3 3.2	# preferred first
 
 # Determine version number of Python to use
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
@@ -366,14 +366,6 @@ PYTHON_VER=		3.2
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
 .endif
 
-# Python-3.1
-.elif ${PYTHON_VERSION} == "python3.1"
-PYTHON_PORTVERSION?=	3.1.5
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python31
-PYTHON_REL=		315
-PYTHON_SUFFIX=		31
-PYTHON_VER=		3.1
-
 # Python-2.7
 .elif ${PYTHON_VERSION} == "python2.7"
 PYTHON_PORTVERSION?=	2.7.6
@@ -397,7 +389,6 @@ check-makevars::
 	@${ECHO} "Makefile error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
 	@${ECHO} "Legal values are:"
 	@${ECHO} "  python2.7 (default)"
-	@${ECHO} "  python3.1"
 	@${ECHO} "  python3.2"
 	@${ECHO} "  python3.3"
 	@${ECHO} "  python3.4"
