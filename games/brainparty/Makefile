@@ -3,7 +3,7 @@
 
 PORTNAME=	brainparty
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.tuxradar.com/files/brainparty/ \
 		http://mirror.amdmi3.ru/distfiles/

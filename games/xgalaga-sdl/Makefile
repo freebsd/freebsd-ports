@@ -3,7 +3,7 @@
 
 PORTNAME=	xgalaga-sdl
 PORTVERSION=	2.1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

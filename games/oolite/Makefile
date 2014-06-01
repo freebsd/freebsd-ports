@@ -3,7 +3,7 @@
 
 PORTNAME=		oolite
 PORTVERSION=		1.76
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		games gnustep
 MASTER_SITES=		${MASTER_SITE_BERLIOS} http://jens.ayton.se/oolite/deps/:js
 MASTER_SITE_SUBDIR=	oolite-linux
