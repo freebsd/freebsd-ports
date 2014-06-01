@@ -11,12 +11,11 @@ COMMENT=	Ah-tty is an automatic helper for command prompts and shells
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/ah-tty bin/ah-tty.static share/ah-tty.conf
+PLIST_FILES=	bin/ah-tty bin/ah-tty.static \
+		share/ah-tty.conf man/man1/ah-tty.1.gz
 
-MAN1=		ah-tty.1
 INFO=		ah-tty
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
 		${WRKSRC}/dillib/vty/vtlabel.c
