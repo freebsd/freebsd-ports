@@ -31,9 +31,6 @@ CONFIGURE_ARGS=	--with-cdrtools-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		${ICONV_CONFIGURE_ARG}
 
-MAN1=		xcdroast.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
