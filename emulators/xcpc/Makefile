@@ -29,7 +29,6 @@ MOTIF_DESC=	With Motif widget set
 ATHENA_DESC=	With Athen widget set
 XSHM_DESC=	With XShm support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -52,7 +51,7 @@ CONFIGURE_ARGS+=--without-motif1
 .endif
 
 .if ${PORT_OPTIONS:MATHENA}
-LIB_DEPENDS+=	Xaw.8:${PORTSDIR}/x11-toolkits/libXaw
+LIB_DEPENDS+=	libXaw.so:${PORTSDIR}/x11-toolkits/libXaw
 CONFIGURE_ARGS+=--with-athena
 .else
 CONFIGURE_ARGS+=--without-athena
