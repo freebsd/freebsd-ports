@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
