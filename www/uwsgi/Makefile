@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_PYTHON=	yes
 USE_RC_SUBR=	uwsgi
 
+LDFLAGS+=	"-L${LOCALBASE}/lib"
+
 PLIST_FILES=	bin/uwsgi \
 		%%PYTHON_SITELIBDIR%%/uwsgidecorators.py
 
