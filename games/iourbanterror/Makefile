@@ -2,25 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	iourbanterror
-PORTVERSION=	${GAMEVERSION}.g${GITREVISION}
+PORTVERSION=	${GAMEVERSION}.${DISTVERSION}
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	games
-DISTNAME=	ioquake3-devel-GIT${GITREVISION}
+DISTNAME=	ioquake3-${DISTVERSION}
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)
 
 RUN_DEPENDS=	${Q3DIR}/q3ut4:${PORTSDIR}/games/urbanterror-data
 
-MASTERDIR=	${.CURDIR}/../ioquake3-devel
-DISTINFO_FILE=	${.CURDIR}/../ioquake3-devel/distinfo
+MASTERDIR=	${.CURDIR}/../ioquake3
 
-IOQ3?=		CLIENT DLRENDERER OPUS OPENGL2
+IOQ3?=		CLIENT
 
 # The docs belong to ioquake3
 OPTIONS_EXCLUDE=	DOCS
-GAMEVERSION=	4.2.014
-Q3ENGINEVER=	GIT${GITREVISION}+${GAMEVERSION}
+GAMEVERSION=	4.2.018
+Q3ENGINEVER=	${DISTVERSION}+${GAMEVERSION}
 Q3TOTALCONV=	yes
 Q3DIR=		${PREFIX}/share/quake3
 Q3ICON=		${PREFIX}/share/quake3/q3ut4/q3ut.ico
@@ -33,8 +33,11 @@ HOMEPATH=	/.ioUrbanTerror
 MAKE_ARGS+=	BUILD_MISSIONPACK=0 \
 		BUILD_STANDALONE=1
 
-NO_STAGE=	yes
 post-patch:
+	@(cd ${WRKSRC} && \
+          for pfile in ${.CURDIR}/../${PORTNAME}/files/patch-*; do \
+		${PATCH} < $${pfile}; \
+	  done) 
 	@${REINPLACE_CMD} \
 		-e 's/ioquake3/${Q3CLIENT}/g' \
 		-e 's/ioq3ded/${Q3SERVER}/g' \

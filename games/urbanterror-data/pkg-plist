@@ -1,6 +1,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/readme%%VER%%.txt
-%%DATADIR%%/q3ut4/How_To_Install.txt
-%%DATADIR%%/q3ut4/QIIIA_Game_Source_License.doc
+%%PORTDOCS%%%%DOCSDIR%%/How_To_Install.txt
+%%PORTDOCS%%%%DOCSDIR%%/QIIIA_Game_Source_License.doc
 %%DATADIR%%/q3ut4/autoexec_example.cfg
 %%DATADIR%%/q3ut4/mapcycle_example.txt
 %%DATADIR%%/q3ut4/server_example.cfg
@@ -28,7 +28,11 @@
 %%DATADIR%%/q3ut4/zUrT42_0020.pk3
 %%DATADIR%%/q3ut4/zUrT42_0021.pk3
 %%DATADIR%%/q3ut4/zUrT42_0022.pk3
+%%DATADIR%%/q3ut4/zUrT42_0023.pk3
+%%DATADIR%%/q3ut4/zUrT42_0024.pk3
+%%DATADIR%%/q3ut4/zUrT42_0025.pk3
+%%DATADIR%%/q3ut4/zUrT42_0026.pk3
 %%DATADIR%%/q3ut4/zUrT42_qvm.pk3
 @dirrm %%DATADIR%%/q3ut4
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%%%PORTDOCS%%
+@dirrm %%DOCSDIR%%
