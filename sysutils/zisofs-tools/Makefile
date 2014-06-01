@@ -14,20 +14,18 @@ COMMENT=	User utilities for zisofs
 PORTDOCS=	CHANGES COPYING INSTALL MRULES README
 
 USE_AUTOTOOLS=	autoconf
-USES=		gmake tar:bzip2
+USES=		gmake tar:bzip2 desthack
 GNU_CONFIGURE=	yes
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
-MAN1=		mkzftree.1
-
-PLIST_FILES=	bin/mkzftree
+PLIST_FILES=	bin/mkzftree \
+		man/man1/mkzftree.1.gz
 
 OPTIONS_DEFINE=	LFS DOCS
 OPTIONS_DEFAULT=	LFS
 LFS_DESC=	Enable Large Files Support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MLFS}
@@ -35,9 +33,7 @@ CONFIGURE_ARGS+=	--disable-largefile
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
