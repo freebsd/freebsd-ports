@@ -8,6 +8,7 @@ DISTNAME=	Vista-Inspirate_${PORTVERSION}-kde
 
 COMMENT=	KDE Vista Inspirate iconset
 
+BROKEN=		Unfetchable
 WRKSRC=		"${WRKDIR}/Vista-Inspirate_${PORTVERSION}"
 
 NO_STAGE=	yes

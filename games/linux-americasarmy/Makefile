@@ -23,6 +23,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	America's Army (Linux version)
 
+BROKEN=		Unfetchable
+
 USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is limited, see license

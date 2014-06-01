@@ -14,6 +14,7 @@ DIST_SUBDIR=	rpm
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	CD/DVD disk burner
 
+BROKEN=		Unfetchable
 RESTRICTED=	Must be downloaded from their website and a serial number must be bought
 
 ONLY_FOR_ARCHS=	i386 amd64

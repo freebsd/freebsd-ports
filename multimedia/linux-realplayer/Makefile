@@ -16,6 +16,8 @@ DISTFILES=	RealPlayer10GOLD.rpm:player \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Linux RealPlayer 10 from RealNetworks
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
