@@ -84,7 +84,6 @@
     SUBDIR += ct
     SUBDIR += ctrace
     SUBDIR += cvsup
-    SUBDIR += cvsup-mirror
     SUBDIR += cvsup-without-gui
     SUBDIR += cvsupchk
     SUBDIR += cvsync
