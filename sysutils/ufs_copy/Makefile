@@ -14,11 +14,14 @@ COMMENT=	Fast copy utility for UFS filesystem
 WRKSRC=		${WRKDIR}/ufs
 MAKE_ARGS=	BINDIR=${PREFIX}/sbin
 
-NO_STAGE=	yes
+PORTDOCS=		README
+
+OPTIONS_DEFINE=		DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA}	${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
