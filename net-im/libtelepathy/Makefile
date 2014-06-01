@@ -24,5 +24,4 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
 USE_AUTOTOOLS=	libtool
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
