@@ -15,9 +15,8 @@ COMMENT=	Tools to configure workstations
 LIB_DEPENDS=	oobs-1:${PORTSDIR}/devel/liboobs \
 		polkit-gtk-1:${PORTSDIR}/sysutils/polkit-gnome
 
-USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix intlhack nautilus2
 USE_AUTOTOOLS=	libtool
@@ -28,7 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.system-tools.gschema.xml
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gmodule-export-2.0|gmodule-export-2.0 gthread-2.0|g' \
 		${WRKSRC}/configure
