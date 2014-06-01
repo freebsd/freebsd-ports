@@ -1,4 +1,5 @@
 bin/qmail-qfilter
+man/man1/qmail-qfilter.1.gz
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/block-long-dates
 %%EXAMPLESDIR%%/deny-filetypes
