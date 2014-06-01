@@ -13,9 +13,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	andrewclarkii@gmail.com
 COMMENT=	TCP/UDP network testing tool
 
-USES=		shebangfix
+USES=		tar:bzip2 shebangfix
 SHEBANG_FILES=	../nuttscp
-USE_BZIP2=	yes
 MAKEFILE=	/dev/null
 ALL_TARGET=	${PORTNAME}
 

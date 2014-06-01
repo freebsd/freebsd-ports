@@ -11,8 +11,7 @@ COMMENT=	Interactivity benchmark for Unix-like systems
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		tar:bzip2 gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 

@@ -16,5 +16,4 @@ GNU_CONFIGURE=	yes
 
 USE_AUTOTOOLS=	automake14 autoconf
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
