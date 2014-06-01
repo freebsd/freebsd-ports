@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libmxml.so:${PORTSDIR}/textproc/mxml
 
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		tar:bzip2 cmake pkgconfig
 
 OPTIONS_DEFINE=	DOCS EXAMPLES GUI LASH LO JACK PORTAUDIO
 OPTIONS_DEFAULT=	GUI PORTAUDIO

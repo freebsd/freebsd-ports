@@ -14,8 +14,7 @@ LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
 PROJECTHOST=	game-music-emu
-USE_BZIP2=	yes
-USES=		cmake dos2unix ninja
+USES=		tar:bzip2 cmake dos2unix ninja
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

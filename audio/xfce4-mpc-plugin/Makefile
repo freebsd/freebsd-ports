@@ -17,8 +17,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
 RUN_DEPENDS=	musicpd:${PORTSDIR}/audio/musicpd
 
-USES=		gmake pkgconfig gettext
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig gettext
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libmenu panel

@@ -20,10 +20,9 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	NLS
 
 USE_GNOME=	gtk20 intltool libglade2
-USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gmake pkgconfig
+USES=		tar:bzip2 desktop-file-utils gmake pkgconfig
 
 CONFIGURE_ENV=	DATADIRNAME=share
 

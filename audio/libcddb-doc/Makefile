@@ -9,12 +9,12 @@ MASTER_SITES=	SF/libcddb/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libcddb documentation
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/output
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

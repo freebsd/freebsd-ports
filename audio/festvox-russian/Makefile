@@ -16,7 +16,7 @@ COMMENT=	Russian male voice for Festival speech synthesis system
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
 
-USE_BZIP2=	YES
+USES=		tar:bzip2
 
 WRKSRC=		${WRKDIR}/msu_ru_nsh_clunits
 
@@ -30,6 +30,6 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FHOME}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FHOME}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FHOME})
 
 .include <bsd.port.mk>

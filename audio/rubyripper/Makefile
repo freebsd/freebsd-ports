@@ -22,8 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cd-discid:${PORTSDIR}/audio/cd-discid
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		tar:bzip2 gettext
 USE_RUBY=	yes
 INSTALLS_ICONS=	yes
 

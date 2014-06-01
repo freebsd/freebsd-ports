@@ -13,9 +13,8 @@ COMMENT=	ALSA compatibility library plugins
 
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		tar:bzip2 pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 

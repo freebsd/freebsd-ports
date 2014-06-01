@@ -13,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library to access to information on mp3 files
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 USE_RUBY_RDOC=	yes

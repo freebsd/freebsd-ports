@@ -22,8 +22,7 @@ LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
 PLIST_FILES=	bin/pianobar \
 		man/man1/pianobar.1.gz
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig
 MAKE_ARGS+=	CC="${CC}" PREFIX="${PREFIX}"
 
 CFLAGS+=	-I${LOCALBASE}/include -std=c99

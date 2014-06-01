@@ -22,8 +22,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 OPTIONS_DEFINE=		DEBUG
 OPTIONS_DEFINE_i386=	SSE
 
-USE_BZIP2=	yes
-USES=		desktop-file-utils gmake gettext pathfix pkgconfig shared-mime-info
+USES=		tar:bzip2 desktop-file-utils gmake gettext pathfix pkgconfig shared-mime-info
 USE_GCC=	yes
 USE_GNOME=	gnomehier libgnomecanvas
 GNU_CONFIGURE=	yes
