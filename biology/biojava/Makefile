@@ -23,8 +23,6 @@ PORTDOCS=	biojava
 PORTEXAMPLES=	demos
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
@@ -37,32 +35,21 @@ regression-test:
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
-	@${MKDIR} ${JAVAJARDIR}
-.for JARFILE in ${JARFILES}
-	@cd ${WRKSRC}/ant-build && ${INSTALL_DATA} ${JARFILE} ${JAVAJARDIR}/${JARFILE}
-	@${ECHO_MSG} -n " ${JARFILE}"
-.endfor
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${INSTALL_DATA} ${JARFILES:S|^|${WRKSRC}/ant-build/|} ${STAGEDIR}${JAVAJARDIR}
 	@${ECHO_MSG} " [ DONE ]"
 
-.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@cd ${WRKSRC}/doc && \
-		${FIND} ${PORTDOCS} -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} ${PORTDOCS} -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} biojava ${STAGEDIR}${DOCSDIR})
 	@${ECHO_MSG} " [ DONE ]"
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} -n ">> Installing examples in ${EXAMPLESDIR}..."
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/doc && \
-		${FIND} ${PORTEXAMPLES} -type d -exec ${MKDIR} "${EXAMPLESDIR}/{}" \; && \
-		${FIND} ${PORTEXAMPLES} -not -type d -exec ${INSTALL_DATA} "{}" "${EXAMPLESDIR}/{}" \;
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} demos ${STAGEDIR}${EXAMPLESDIR})
 	@${ECHO_MSG} " [ DONE ]"
-.endif
 
 post-install:
 .if !defined(BATCH)
