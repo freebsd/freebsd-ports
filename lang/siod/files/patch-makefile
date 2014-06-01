@@ -1,0 +1,79 @@
+--- makefile.orig	2000-03-14 16:26:55.000000000 +0100
++++ makefile	2014-06-01 15:48:40.620294169 +0200
+@@ -19,10 +19,10 @@
+ #
+ # 
+ MANSEC=1
+-MANDIR=$(IROOT)/usr/local/man/man$(MANSEC)
+-BINDIR=$(IROOT)/usr/local/bin
+-INCDIR=$(IROOT)/usr/local/include
+-LIBDIR=$(IROOT)/usr/local/lib
++MANDIR=$(PREFIX)/man/man$(MANSEC)
++BINDIR=$(PREFIX)/bin
++INCDIR=$(PREFIX)/include
++LIBDIR=$(PREFIX)/lib
+ LIBSIODDIR=$(LIBDIR)/siod
+ CP_F=cp -f
+ # -Wmissing-prototypes
+@@ -300,6 +300,19 @@
+ 	LD_EXE_LIBS="-lm -ldl" \
+ 	build_driver
+ 
++## FreeBSD, possibly other BSDs
++freebsd:
++	$(MAKE) \
++	PROGS="siod tar.so parser_pratt.so ss.so \
++	       regex.so" \
++	CFLAGS="$(CDEBUG) $(GCCW) -DHAVE_SYS_PARAM_H $(CFLAGS) -fPIC" \
++	LD_LIB_LIBS="-lcrypt -lm" \
++	LD_LIB_FLAGS="-shared" \
++	LD_EXE_FLAGS="-rdynamic -Xlinker -rpath -Xlinker $(LIBDIR) -Xlinker -rpath -Xlinker $(LIBSIODDIR)" \
++	SO="so" \
++	build_driver
++
++
+ unknown:
+ 	-ln -s ssiod siod
+ 	$(MAKE) \
+@@ -457,30 +470,30 @@
+ install: $(DISTFILES)
+ 	@echo "Note: This does not do a build. Only installs what already"
+ 	@echo "      sits in the directory."
+-	-mkdir -p $(MANDIR)
+-	-mkdir -p $(BINDIR)
+-	-mkdir -p $(LIBDIR)
+-	-mkdir -p $(INCDIR)
+-	-mkdir -p $(LIBSIODDIR)
++	-mkdir -p $(DESTDIR)$(MANDIR)
++	-mkdir -p $(DESTDIR)$(BINDIR)
++	-mkdir -p $(DESTDIR)$(LIBDIR)
++	-mkdir -p $(DESTDIR)$(INCDIR)
++	-mkdir -p $(DESTDIR)$(LIBSIODDIR)
+ 	-for X in $(INTO_BINDIR)  ; do \
+-	 $(CP_F) $$X $(BINDIR) ;\
++	 $(CP_F) $$X $(DESTDIR)$(BINDIR) ;\
+ 	done
+ 	-for X in $(LIBFILES) ; do \
+-	 $(CP_F) $$X $(LIBSIODDIR) ;\
++	 $(CP_F) $$X $(DESTDIR)$(LIBSIODDIR) ;\
+ 	done
+ 	-for X in $(SOLIBFILES) ; do \
+ 	  for E in so sl ; do \
+-	   $(CP_F) $$X.$$E $(LIBSIODDIR) ;\
++	   $(BSD_INSTALL_LIB) $$X.$$E $(DESTDIR)$(LIBSIODDIR) ;\
+ 	  done ;\
+ 	done
+ 	-for X in $(INTO_LIBDIR) ; do \
+-	 $(CP_F) $$X $(LIBDIR) ;\
++	 $(BSD_INSTALL_LIB) $$X $(DESTDIR)$(LIBDIR) ;\
+ 	done
+ 	-for X in $(MANPAGES) ; do \
+-	 $(CP_F) $$X.man $(MANDIR)/$$X.$(MANSEC) ;\
++	 $(CP_F) $$X.man $(DESTDIR)$(MANDIR)/$$X.$(MANSEC) ;\
+ 	done
+ 	-for X in $(PUBINCS) ; do \
+-	 $(CP_F) $$X $(INCDIR) ;\
++	 $(CP_F) $$X $(DESTDIR)$(INCDIR) ;\
+ 	done
+ 	@echo "Install done."
+ 
