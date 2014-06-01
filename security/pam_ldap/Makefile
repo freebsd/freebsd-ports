@@ -26,21 +26,15 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDATA=	*.schema
 
-MAN5=		pam_ldap.5
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
 	    	${WRKSRC}/vers_string
 
-pre-install:
-	${MKDIR} ${DATADIR}
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/*.schema ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.schema ${STAGEDIR}${DATADIR}
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    	-e 's|%%DATADIR%%|${DATADIR}|' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
