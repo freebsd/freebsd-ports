@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ProjectTox-Core
-PORTVERSION=	0.140514
+PORTVERSION=	0.140601
 PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
@@ -13,33 +13,29 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	checkmk:${PORTSDIR}/devel/libcheck
 LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
-		libopus.so:${PORTSDIR}/audio/opus
+		libopus.so:${PORTSDIR}/audio/opus		\
+		libopenal.so.1:${PORTSDIR}/audio/openal-soft	\
+		libv4l2.so:${PORTSDIR}/multimedia/libv4l	\
+		libswscale.so:${PORTSDIR}/multimedia/ffmpeg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	ProjectTox-Core
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	8902232
+GH_COMMIT=	9684339
 
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 AUTOMAKE_ARGS=	-a -c -f
 USES=		pkgconfig pathfix libtool
+USE_SDL=	yes
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=		install-strip
 
 OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	SODIUM NACL
-OPTIONS_DEFINE=		PHONE
-OPTIONS_DEFAULT=	PHONE SODIUM
+OPTIONS_DEFAULT=	SODIUM
 OPTIONS_SUB=		yes
-
-PHONE_DESC=		Enable phone test
-PHONE_CONFIGURE_ENABLE=	phone
-PHONE_LIB_DEPENDS=	libopenal.so.1:${PORTSDIR}/audio/openal-soft	\
-			libv4l2.so:${PORTSDIR}/multimedia/libv4l	\
-			libswscale.so:${PORTSDIR}/multimedia/ffmpeg
-PHONE_USE=		SDL=sdl
 
 SODIUM_DESC=		Prefer libsodium
 SODIUM_LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
