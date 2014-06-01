@@ -23,9 +23,6 @@ CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-MAN8=		telepathy-salut.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \
 		${WRKSRC}/src/Makefile.in \
