@@ -6,6 +6,7 @@ etc/xdg/luakit/rc.lua
 etc/xdg/luakit/theme.lua
 etc/xdg/luakit/webview.lua
 etc/xdg/luakit/window.lua
+man/man1/luakit.1.gz
 share/applications/luakit.desktop
 share/doc/luakit/README.md
 share/doc/luakit/AUTHORS
@@ -59,4 +60,3 @@ share/pixmaps/luakit.png
 @dirrm share/luakit
 @dirrm share/doc/luakit
 @dirrmtry etc/xdg/luakit
-@dirrmtry etc/xdg
