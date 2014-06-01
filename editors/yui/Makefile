@@ -21,7 +21,7 @@ BROKEN_sparc64=	Does not compile on sparc64
 .include <bsd.port.options.mk>
 
 post-install:
-	${LN} -sf ${STAGEDIR}${PREFIX}/lib/yui/help_eng.html ${PREFIX}/lib/yui/yhelp.html
+	${LN} -sf help_eng.html ${STAGEDIR}${PREFIX}/lib/yui/yhelp.html
 .if $(PORT_OPTIONS:MDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in BUGS CHANGES COPYRIGHT TODO COPYRIGHT.ITK THANKS
