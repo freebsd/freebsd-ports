@@ -14,8 +14,7 @@ USE_XORG=	x11 xpm
 
 PLIST_FILES=	bin/wmbsdbatt
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmbsdbatt ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wmbsdbatt ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
