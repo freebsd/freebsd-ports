@@ -22,12 +22,8 @@ USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	im.telepathy.MissionControl.FromEmpathy.gschema.xml
 CONFIGURE_ARGS=	--disable-upower
 
-MAN1=		mc-tool.1 mc-wait-for-name.1
-MAN8=		mission-control-5.8
-
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/gtk-doc/html|/${DOCSDIR}|' \
 		${WRKSRC}/configure
