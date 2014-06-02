@@ -3,6 +3,7 @@
 
 PORTNAME=	serveez
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	GNU
 
@@ -13,10 +14,11 @@ LICENSE=	GPLv3 # (or later)
 
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
-USE_XZ=		yes
-USE_AUTOTOOLS=	libtool
+USES=		tar:xz libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libserveez-install
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 INFO=		serveez
 
