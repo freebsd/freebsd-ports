@@ -645,8 +645,8 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-IGNORE=	PASSENGER: update require
-PASSENGER_VERSION=	4.0.41
+#IGNORE=	PASSENGER: update require
+PASSENGER_VERSION=	4.0.44
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
