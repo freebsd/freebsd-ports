@@ -43,7 +43,6 @@ man/man8/puppet.8.gz
 %%RUBY_SITELIBDIR%%/puppetx/puppetlabs/syntax_checkers/json.rb
 %%RUBY_SITELIBDIR%%/puppetx/puppet/syntax_checker.rb
 %%RUBY_SITELIBDIR%%/puppetx/puppet/bindings_scheme_handler.rb
-%%RUBY_SITELIBDIR%%/puppetx/puppet/hiera2_backend.rb
 %%RUBY_SITELIBDIR%%/puppetx.rb
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
