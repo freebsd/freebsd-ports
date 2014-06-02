@@ -14,9 +14,8 @@ COMMENT=	Light, Unobtrusive, and configurable windowmanager
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		pkgconfig iconv gmake
+USES=		pkgconfig iconv gmake tar:bzip2
 USE_XORG=	xft xpm x11
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-xft --enable-image-xpm --enable-image-jpeg \

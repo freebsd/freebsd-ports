@@ -14,8 +14,7 @@ COMMENT=	Standard library for Window Maker dock apps
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
 
-USES=		libtool:keepla
-USE_BZIP2=	yes
+USES=		libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
 USE_XORG=	xext xpm
 GNU_CONFIGURE=	yes
