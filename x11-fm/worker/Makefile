@@ -17,10 +17,9 @@ RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
-USE_BZIP2=	yes
 USE_GCC=	yes
 
-USES=	shebangfix
+USES=	shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/xeditor
 
