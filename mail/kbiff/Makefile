@@ -12,14 +12,10 @@ COMMENT=	Mail notification utility for KDE with nice features
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 USE_QT4=	corelib dbus gui network svg xml \
 		qmake_build uic_build rcc_build
 USE_PERL5=	build
-USES=		cmake gettext perl5
+USES=		cmake gettext perl5 tar:bzip2
 
-MAN1=		kbiff.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
