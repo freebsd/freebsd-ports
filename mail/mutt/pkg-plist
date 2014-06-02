@@ -9,9 +9,7 @@ bin/mutt_dotlock
 bin/pgpewrap
 bin/pgpring
 bin/smime_keys
-@unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi
-etc/Muttrc.dist
-@exec if [ ! -f %D/etc/Muttrc ]; then install -m 644 %D/etc/Muttrc.dist %D/etc/Muttrc; fi
+@sample etc/Muttrc.sample
 man/man1/flea.1.gz
 man/man1/mutt.1.gz
 man/man1/mutt_dotlock.1.gz
