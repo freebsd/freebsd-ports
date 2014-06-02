@@ -5,9 +5,10 @@ PORTNAME=	xearth
 PORTVERSION=	1.2
 CATEGORIES=	astro geography
 MASTER_SITES=	http://seis.bris.ac.uk/~mexas/ \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/ \
 		LOCAL/madpilot/xearth
 
-MAINTAINER=	mexas@bris.ac.uk
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Set the root window to the image of earth
 
 USE_XORG=	x11 xext sm ice xt
