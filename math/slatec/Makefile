@@ -14,7 +14,7 @@ DISTFILES=	guide:slatec slatec_chk.tgz:slatec slatec_src.tgz:slatec \
 DIST_SUBDIR=	slatec
 EXTRACT_ONLY=	slatec_src.tgz slatec_chk.tgz
 
-MAINTAINER=	mexas@bris.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLATEC Common Mathematical Library
 
 USES=		fortran

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/contrib/ \
 		http://seis.bris.ac.uk/~mexas/
 
-MAINTAINER=	mexas@bris.ac.uk
+MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	URL extractor/launcher
 
 LICENSE=	GPLv2
