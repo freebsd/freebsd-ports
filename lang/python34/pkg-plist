@@ -1546,7 +1546,7 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/ensurepip/_bundled/pip-1.5.4-py2.py3-none-any.whl
+%%PYTHON_LIBDIR%%/ensurepip/_bundled/pip-1.5.6-py2.py3-none-any.whl
 %%PYTHON_LIBDIR%%/ensurepip/_bundled/setuptools-2.1-py2.py3-none-any.whl
 %%PYTHON_LIBDIR%%/ensurepip/_uninstall.py
 %%PYTHON_LIBDIR%%/enum.py
@@ -1794,6 +1794,8 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__init__.py
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/__init__.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/__init__.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/htest.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/htest.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/mock_idle.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/mock_idle.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/mock_tk.cpython-%%XY%%.pyc
@@ -1820,6 +1822,7 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_text.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_warning.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/idlelib/idle_test/__pycache__/test_warning.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/idlelib/idle_test/htest.py
 %%PYTHON_LIBDIR%%/idlelib/idle_test/mock_idle.py
 %%PYTHON_LIBDIR%%/idlelib/idle_test/mock_tk.py
 %%PYTHON_LIBDIR%%/idlelib/idle_test/test_calltips.py
@@ -1939,9 +1942,9 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%NO_DEBUG%%%%PYTHON_LIBDIR%%/lib-dynload/xxlimited.so
 %%PYTHON_LIBDIR%%/lib-dynload/zlib.so
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar%%VER%%.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar%%VER%%.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%VER%%.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%VER%%.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/__main__.py
 %%PYTHON_LIBDIR%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.pyc
@@ -2423,6 +2426,8 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/buffer_tests.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/bytecode_helper.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/bytecode_helper.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/coding20731.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/coding20731.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/curses_tests.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/curses_tests.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/datetimetester.cpython-%%XY%%.pyc
@@ -2911,8 +2916,6 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_multiprocessing_main_handling.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_multiprocessing_spawn.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_multiprocessing_spawn.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/__pycache__/test_namespace_pkgs.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/__pycache__/test_namespace_pkgs.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_netrc.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_netrc.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_nis.cpython-%%XY%%.pyc
@@ -3363,6 +3366,7 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213.txt
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
+%%PYTHON_LIBDIR%%/test/coding20731.py
 %%PYTHON_LIBDIR%%/test/curses_tests.py
 %%PYTHON_LIBDIR%%/test/data/README
 %%PYTHON_LIBDIR%%/test/datetimetester.py
@@ -3563,40 +3567,6 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/mock_socket.py
 %%PYTHON_LIBDIR%%/test/mp_fork_bomb.py
 %%PYTHON_LIBDIR%%/test/multibytecodec_support.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions/foo/__pycache__/one.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions/foo/__pycache__/one.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions/foo/__pycache__/two.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions/foo/__pycache__/two.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions/foo/one.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions/foo/two.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/missing_directory.zip
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/module_and_namespace_package/__pycache__/a_test.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/module_and_namespace_package/__pycache__/a_test.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/module_and_namespace_package/a_test.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/module_and_namespace_package/a_test/empty
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/nested_portion1.zip
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg/foo/__init__.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__/__init__.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__/__init__.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__/one.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__/one.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg/foo/one.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/portion1/foo/__pycache__/one.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/portion1/foo/__pycache__/one.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/portion1/foo/one.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/portion2/foo/__pycache__/two.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/portion2/foo/__pycache__/two.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/portion2/foo/two.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project1/parent/child/__pycache__/one.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project1/parent/child/__pycache__/one.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project1/parent/child/one.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project2/parent/child/__pycache__/two.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project2/parent/child/__pycache__/two.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project2/parent/child/two.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent/child/__pycache__/three.cpython-%%XY%%.pyc
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent/child/__pycache__/three.cpython-%%XY%%.pyo
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent/child/three.py
-%%PYTHON_LIBDIR%%/test/namespace_pkgs/top_level_portion1.zip
 %%PYTHON_LIBDIR%%/test/nokia.pem
 %%PYTHON_LIBDIR%%/test/nullbytecert.pem
 %%PYTHON_LIBDIR%%/test/nullcert.pem
@@ -3732,7 +3702,6 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/test_asyncio/test_unix_events.py
 %%PYTHON_LIBDIR%%/test/test_asyncio/test_windows_events.py
 %%PYTHON_LIBDIR%%/test/test_asyncio/test_windows_utils.py
-%%PYTHON_LIBDIR%%/test/test_asyncio/tests.txt
 %%PYTHON_LIBDIR%%/test/test_asyncore.py
 %%PYTHON_LIBDIR%%/test/test_atexit.py
 %%PYTHON_LIBDIR%%/test/test_audioop.py
@@ -4001,6 +3970,8 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/test_importlib/__pycache__/test_api.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/test_importlib/__pycache__/test_locks.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/test/test_importlib/__pycache__/test_locks.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/__pycache__/test_namespace_pkgs.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/__pycache__/test_namespace_pkgs.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/test_importlib/__pycache__/test_spec.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/test/test_importlib/__pycache__/test_spec.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/test/test_importlib/__pycache__/test_util.cpython-%%XY%%.pyc
@@ -4082,6 +4053,40 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/test_importlib/import_/test_path.py
 %%PYTHON_LIBDIR%%/test/test_importlib/import_/test_relative_imports.py
 %%PYTHON_LIBDIR%%/test/test_importlib/import_/util.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions/foo/__pycache__/one.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions/foo/__pycache__/one.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions/foo/__pycache__/two.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions/foo/__pycache__/two.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions/foo/one.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions/foo/two.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/missing_directory.zip
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/module_and_namespace_package/__pycache__/a_test.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/module_and_namespace_package/__pycache__/a_test.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test/empty
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/nested_portion1.zip
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo/__init__.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__/__init__.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__/__init__.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__/one.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__/one.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo/one.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion1/foo/__pycache__/one.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion1/foo/__pycache__/one.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion1/foo/one.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion2/foo/__pycache__/two.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion2/foo/__pycache__/two.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion2/foo/two.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project1/parent/child/__pycache__/one.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project1/parent/child/__pycache__/one.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project1/parent/child/one.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project2/parent/child/__pycache__/two.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project2/parent/child/__pycache__/two.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project2/parent/child/two.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project3/parent/child/__pycache__/three.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project3/parent/child/__pycache__/three.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project3/parent/child/three.py
+%%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/top_level_portion1.zip
 %%PYTHON_LIBDIR%%/test/test_importlib/regrtest.py
 %%PYTHON_LIBDIR%%/test/test_importlib/source/__init__.py
 %%PYTHON_LIBDIR%%/test/test_importlib/source/__pycache__/__init__.cpython-%%XY%%.pyc
@@ -4107,6 +4112,7 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/test_importlib/test_abc.py
 %%PYTHON_LIBDIR%%/test/test_importlib/test_api.py
 %%PYTHON_LIBDIR%%/test/test_importlib/test_locks.py
+%%PYTHON_LIBDIR%%/test/test_importlib/test_namespace_pkgs.py
 %%PYTHON_LIBDIR%%/test/test_importlib/test_spec.py
 %%PYTHON_LIBDIR%%/test/test_importlib/test_util.py
 %%PYTHON_LIBDIR%%/test/test_importlib/test_windows.py
@@ -4212,7 +4218,6 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/test/test_multiprocessing_forkserver.py
 %%PYTHON_LIBDIR%%/test/test_multiprocessing_main_handling.py
 %%PYTHON_LIBDIR%%/test/test_multiprocessing_spawn.py
-%%PYTHON_LIBDIR%%/test/test_namespace_pkgs.py
 %%PYTHON_LIBDIR%%/test/test_netrc.py
 %%PYTHON_LIBDIR%%/test/test_nis.py
 %%PYTHON_LIBDIR%%/test/test_nntplib.py
@@ -4483,6 +4488,8 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/__init__.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_font.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_font.cpython-%%XY%%.pyo
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-%%XY%%.pyc
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-%%XY%%.pyc
@@ -4494,6 +4501,7 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-%%XY%%.pyc
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-%%XY%%.pyo
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_font.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_geometry_managers.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_loadtk.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_misc.py
 %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_text.py
@@ -4875,6 +4883,34 @@ man/man1/python%%VER%%.1.gz
 @dirrmtry %%PYTHON_LIBDIR%%/test/test_json
 @dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/source/__pycache__
 @dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/source
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project3/parent/child/__pycache__
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project3/parent/child
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project3/parent
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project3
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project2/parent/child/__pycache__
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project2/parent/child
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project2/parent
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project2
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project1/parent/child/__pycache__
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project1/parent/child
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project1/parent
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/project1
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion2/foo/__pycache__
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion2/foo
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion2
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion1/foo/__pycache__
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion1/foo
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/portion1
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/not_a_namespace_pkg
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/module_and_namespace_package/__pycache__
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/module_and_namespace_package
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions/foo/__pycache__
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions/foo
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs/both_portions
+@dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/namespace_pkgs
 @dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/import_/__pycache__
 @dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/import_
 @dirrmtry %%PYTHON_LIBDIR%%/test/test_importlib/frozen/__pycache__
@@ -4895,34 +4931,6 @@ man/man1/python%%VER%%.1.gz
 @dirrmtry %%PYTHON_LIBDIR%%/test/subprocessdata/__pycache__
 @dirrmtry %%PYTHON_LIBDIR%%/test/subprocessdata
 @dirrmtry %%PYTHON_LIBDIR%%/test/sndhdrdata
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent/child/__pycache__
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent/child
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project3/parent
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project3
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project2/parent/child/__pycache__
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project2/parent/child
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project2/parent
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project2
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project1/parent/child/__pycache__
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project1/parent/child
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project1/parent
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/project1
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/portion2/foo/__pycache__
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/portion2/foo
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/portion2
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/portion1/foo/__pycache__
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/portion1/foo
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/portion1
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg/foo
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/not_a_namespace_pkg
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/module_and_namespace_package/a_test
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/module_and_namespace_package/__pycache__
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/module_and_namespace_package
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions/foo/__pycache__
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions/foo
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs/both_portions
-@dirrmtry %%PYTHON_LIBDIR%%/test/namespace_pkgs
 @dirrmtry %%PYTHON_LIBDIR%%/test/imghdrdata
 @dirrmtry %%PYTHON_LIBDIR%%/test/encoded_modules/__pycache__
 @dirrmtry %%PYTHON_LIBDIR%%/test/encoded_modules
