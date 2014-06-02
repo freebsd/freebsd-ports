@@ -1,10 +1,12 @@
 bin/alt-ergo
 %%GUI%%bin/altgr-ergo
-lib/alt-ergo/altErgo.cmi
-lib/alt-ergo/altErgo.cmo
-lib/alt-ergo/altErgo.cmx
-lib/alt-ergo/altErgo.o
+lib/ocaml/alt-ergo/META
+lib/ocaml/alt-ergo/altErgo.cmi
+lib/ocaml/alt-ergo/altErgo.cmo
+lib/ocaml/alt-ergo/altErgo.cmx
+lib/ocaml/alt-ergo/altErgo.o
+man/man1/alt-ergo.1.gz
 share/gtksourceview-2.0/language-specs/alt-ergo.lang
 @dirrmtry share/gtksourceview-2.0/language-specs
 @dirrmtry share/gtksourceview-2.0
-@dirrm lib/alt-ergo
+@dirrm lib/ocaml/alt-ergo
