@@ -23,8 +23,6 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
@@ -41,9 +39,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|-g ||g' ${WRKSRC}/configure.ac
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
