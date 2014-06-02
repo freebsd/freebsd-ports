@@ -26,6 +26,9 @@ MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
 OPTIONS_DEFINE=	FLOWSCAN
 FLOWSCAN_DESC=	FlowScan patch
 
+DEPRECATED=	Unmaintained 10 years, requires dozens of patches, unverifiable
+EXPIRATION_DATE=2014-08-15
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
