@@ -334,17 +334,17 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_ctpp2-${NGINX_CTPP2_VERSION}
 .if ${PORT_OPTIONS:MECHO}
 NGINX_ECHO_VERSION=	0.51
 GIT_ECHO_VERSION=	0-g44c92a5
-MASTER_SITES+=	https://github.com/agentzh/echo-nginx-module/tarball/v${NGINX_ECHO_VERSION}/:echo
-DISTFILES+=	agentzh-echo-nginx-module-v${NGINX_ECHO_VERSION}-${GIT_ECHO_VERSION}.tar.gz:echo
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/echo-nginx-module/tarball/v${NGINX_ECHO_VERSION}/:echo
+DISTFILES+=	openresty-echo-nginx-module-v${NGINX_ECHO_VERSION}-${GIT_ECHO_VERSION}.tar.gz:echo
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-echo-nginx-module-${GIT_ECHO_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
 NGINX_HEADERS_MORE_VERSION=	0.25
 GIT_HEADERS_MORE_VERSION=	0-g0c6e05d
-MASTER_SITES+=	https://github.com/agentzh/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_VERSION}/:headers_more
-DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_VERSION}-${GIT_HEADERS_MORE_VERSION}.tar.gz:headers_more
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-headers-more-nginx-module-${GIT_HEADERS_MORE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_VERSION}/:headers_more
+DISTFILES+=	openresty-headers-more-nginx-module-v${NGINX_HEADERS_MORE_VERSION}-${GIT_HEADERS_MORE_VERSION}.tar.gz:headers_more
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-headers-more-nginx-module-${GIT_HEADERS_MORE_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_DAV} || defined(USE_HTTP_DAV)
@@ -572,9 +572,9 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_VERSI
 .if ${PORT_OPTIONS:MENCRYPTSESSION}
 NGINX_ENCRYPTSESSION_VERSION=	0.03
 GIT_ENCRYPTSESSION_VERSION=	0-g49d741b
-MASTER_SITES+=	https://github.com/agentzh/encrypted-session-nginx-module/tarball/v${NGINX_ENCRYPTSESSION_VERSION}/:encryptsession
-DISTFILES+=	agentzh-encrypted-session-nginx-module-v${NGINX_ENCRYPTSESSION_VERSION}-${GIT_ENCRYPTSESSION_VERSION}.tar.gz:encryptsession
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-encrypted-session-nginx-module-${GIT_ENCRYPTSESSION_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/encrypted-session-nginx-module/tarball/v${NGINX_ENCRYPTSESSION_VERSION}/:encryptsession
+DISTFILES+=	openresty-encrypted-session-nginx-module-v${NGINX_ENCRYPTSESSION_VERSION}-${GIT_ENCRYPTSESSION_VERSION}.tar.gz:encryptsession
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-encrypted-session-nginx-module-${GIT_ENCRYPTSESSION_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MGRIDFS}
@@ -603,17 +603,17 @@ CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 NGINX_LUA_VERSION=	0.9.4
 GIT_LUA_VERSION=	0-g6169a19
-MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
-DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
+DISTFILES+=	openresty-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
 NGINX_MEMC_VERSION=	0.14
 GIT_MEMC_VERSION=	0-gde4cf86
-MASTER_SITES+=	https://github.com/agentzh/memc-nginx-module/tarball/v${NGINX_MEMC_VERSION}/:memc
-DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_VERSION}-${GIT_MEMC_VERSION}.tar.gz:memc
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/memc-nginx-module/tarball/v${NGINX_MEMC_VERSION}/:memc
+DISTFILES+=	openresty-memc-nginx-module-v${NGINX_MEMC_VERSION}-${GIT_MEMC_VERSION}.tar.gz:memc
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-memc-nginx-module-${GIT_MEMC_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
@@ -670,25 +670,25 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
 .if ${PORT_OPTIONS:MRDS_CSV}
 NGINX_RDS_CSV_VERSION=	0.05
 GIT_RDS_CSV_VERSION=	0-g607e26b
-MASTER_SITES+=	https://github.com/agentzh/rds-csv-nginx-module/tarball/v${NGINX_RDS_CSV_VERSION}/:rdscsv
-DISTFILES+=	agentzh-rds-csv-nginx-module-v${NGINX_RDS_CSV_VERSION}-${GIT_RDS_CSV_VERSION}.tar.gz:rdscsv
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-csv-nginx-module-${GIT_RDS_CSV_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/rds-csv-nginx-module/tarball/v${NGINX_RDS_CSV_VERSION}/:rdscsv
+DISTFILES+=	openresty-rds-csv-nginx-module-v${NGINX_RDS_CSV_VERSION}-${GIT_RDS_CSV_VERSION}.tar.gz:rdscsv
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-rds-csv-nginx-module-${GIT_RDS_CSV_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MRDS_JSON}
 NGINX_RDS_JSON_VERSION=	0.13
 GIT_RDS_JSON_VERSION=	0-g8292070
-MASTER_SITES+=	https://github.com/agentzh/rds-json-nginx-module/tarball/v${NGINX_RDS_JSON_VERSION}/:rdsjson
-DISTFILES+=	agentzh-rds-json-nginx-module-v${NGINX_RDS_JSON_VERSION}-${GIT_RDS_JSON_VERSION}.tar.gz:rdsjson
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-json-nginx-module-${GIT_RDS_JSON_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/rds-json-nginx-module/tarball/v${NGINX_RDS_JSON_VERSION}/:rdsjson
+DISTFILES+=	openresty-rds-json-nginx-module-v${NGINX_RDS_JSON_VERSION}-${GIT_RDS_JSON_VERSION}.tar.gz:rdsjson
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-rds-json-nginx-module-${GIT_RDS_JSON_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MREDIS2}
 NGINX_REDIS2_VERSION=	0.10
 GIT_REDIS2_VERSION=	0-g78a7622
-MASTER_SITES+=	https://github.com/agentzh/redis2-nginx-module/tarball/v${NGINX_REDIS2_VERSION}/:redis2
-DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_VERSION}-${GIT_REDIS2_VERSION}.tar.gz:redis2
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/redis2-nginx-module/tarball/v${NGINX_REDIS2_VERSION}/:redis2
+DISTFILES+=	openresty-redis2-nginx-module-v${NGINX_REDIS2_VERSION}-${GIT_REDIS2_VERSION}.tar.gz:redis2
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-redis2-nginx-module-${GIT_REDIS2_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
@@ -701,10 +701,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
 .if ${PORT_OPTIONS:MSET_MISC}
 NGINX_SET_MISC_VERSION=	0.24
 GIT_SET_MISC_VERSION=	0-g36fd035
-MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_VERSION}/:setmisc
-DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-agentzh-set-misc-nginx-module-config
+MASTER_SITES+=	https://github.com/openresty/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_VERSION}/:setmisc
+DISTFILES+=	openresty-set-misc-nginx-module-v${NGINX_SET_MISC_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-set-misc-nginx-module-config
 .endif
 
 .if ${PORT_OPTIONS:MSFLOW}
@@ -726,9 +726,9 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .if ${PORT_OPTIONS:MSRCACHE}
 NGINX_SRCACHE_VERSION=	0.25
 GIT_SRCACHE_VERSION=	0-gf25fe90
-MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
-DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-srcache-nginx-module-${GIT_SRCACHE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
+DISTFILES+=	openresty-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-srcache-nginx-module-${GIT_SRCACHE_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MSUPERVISORD}
@@ -772,9 +772,9 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/gabor-nginx-x-rid-header-${GIT_XRID_VERSI
 .if ${PORT_OPTIONS:MXSS}
 NGINX_XSS_VERSION=	0.04
 GIT_XSS_VERSION=	0-g7e37038
-MASTER_SITES+=	https://github.com/agentzh/xss-nginx-module/tarball/v${NGINX_XSS_VERSION}/:xss
-DISTFILES+=	agentzh-xss-nginx-module-v${NGINX_XSS_VERSION}-${GIT_XSS_VERSION}.tar.gz:xss
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/xss-nginx-module/tarball/v${NGINX_XSS_VERSION}/:xss
+DISTFILES+=	openresty-xss-nginx-module-v${NGINX_XSS_VERSION}-${GIT_XSS_VERSION}.tar.gz:xss
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-xss-nginx-module-${GIT_XSS_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MSPDY}
@@ -819,9 +819,9 @@ CONFIGURE_ARGS+=--with-http_ssl_module
 .if ${PORT_OPTIONS:MARRAYVAR}
 NGINX_ARRAYVAR_VERSION=	0.03
 GIT_ARRAYVAR_VERSION=	0-g4676747
-MASTER_SITES+=	https://github.com/agentzh/array-var-nginx-module/tarball/v${NGINX_ARRAYVAR_VERSION}/:arrayvar
-DISTFILES+=	agentzh-array-var-nginx-module-v${NGINX_ARRAYVAR_VERSION}-${GIT_ARRAYVAR_VERSION}.tar.gz:arrayvar
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-array-var-nginx-module-${GIT_ARRAYVAR_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/openresty/array-var-nginx-module/tarball/v${NGINX_ARRAYVAR_VERSION}/:arrayvar
+DISTFILES+=	openresty-array-var-nginx-module-v${NGINX_ARRAYVAR_VERSION}-${GIT_ARRAYVAR_VERSION}.tar.gz:arrayvar
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-array-var-nginx-module-${GIT_ARRAYVAR_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}
@@ -933,7 +933,7 @@ post-patch:
 .endif
 .if ${PORT_OPTIONS:MLUA}
 	@${REINPLACE_CMD} '464d' \
-		${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}/src/ngx_http_lua_socket_tcp.c
+		${WRKDIR}/openresty-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}/src/ngx_http_lua_socket_tcp.c
 .endif
 .endif
 .if ${PORT_OPTIONS:MSUPERVISORD}
