@@ -3,9 +3,10 @@
 
 PORTNAME=	autoconvert
 PORTVERSION=	0.3.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	libhz
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,18 +17,18 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	DOCS
 
-MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"
-MAKE_ARGS=	CC="${CC}"
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PROJECTHOST=	libhz
-
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|^CFLAGS|#CFLAGS|" ${WRKSRC}/contrib/xchat-plugins/Makefile
+	@${REINPLACE_CMD} -e 's/CFLAG/CFLAGS/' -e 's/make/$$(MAKE)/' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/gcc/${CC}/' -e 's/LIBS=/&${LDFLAGS} /' \
+		-e 's/CFLAGS=/&${CPPFLAGS} ${CFLAGS} /' \
+		${WRKSRC}/Makefile ${WRKSRC}/hzconvert/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
