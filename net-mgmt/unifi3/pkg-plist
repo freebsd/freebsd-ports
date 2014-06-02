@@ -293,4 +293,3 @@
 @dirrmtry %%JAVASHAREDIR%%/unifi/bin
 @dirrmtry %%JAVASHAREDIR%%/unifi
 @exec chown -R unifi:unifi %D/%%JAVASHAREDIR%%/unifi
-@exec ln -sf %D/bin/mongod %D/%%JAVASHAREDIR%%/unifi/bin/mongod
