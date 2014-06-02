@@ -18,7 +18,7 @@ man/man1/spmonitor.1.gz
 man/man1/spread.1.gz
 man/man1/sptuser.1.gz
 man/man1/spuser.1.gz
-man/man3/libsp.3.gz 
+man/man3/libsp.3.gz
 man/man3/SP_connect.3.gz
 man/man3/SP_disconnect.3.gz
 man/man3/SP_equal_group_ids.3.gz
