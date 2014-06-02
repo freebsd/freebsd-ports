@@ -133,6 +133,8 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 .endif
 
+NOT_FOR_ARCH=	ia64
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -141,7 +143,7 @@ BROKEN=		Does not compile on arm
 BROKEN=		does not compile on sparc64
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-pic --with-pic
 .endif
 
