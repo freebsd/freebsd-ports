@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	oracle11g
-PORTVERSION=	11.2.0.3
+PORTVERSION=	11.2.0.4
 CATEGORIES=	databases java
 MASTER_SITES=	# http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html
 PKGNAMEPREFIX=	jdbc-
-DISTNAME=	ojdbc5.jar
+DISTNAME=	ojdbc6.jar
 EXTRACT_SUFX=	# none
 DIST_SUBDIR=	oracle11g
 
@@ -22,7 +22,6 @@ NO_CDROM=	Packaging prohibited by Oracle license
 
 PLIST_FILES=	%%JAVAJARDIR%%/ojdbc-${PORTVERSION}.jar
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
@@ -38,6 +37,6 @@ installation
 .endif
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${JAVAJARDIR}/ojdbc-${PORTVERSION}.jar
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${STAGEDIR}${JAVAJARDIR}/ojdbc-${PORTVERSION}.jar
 
 .include <bsd.port.post.mk>
