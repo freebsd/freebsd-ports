@@ -1,0 +1,15 @@
+%%OCAML_SITELIBDIR%%/zarith/META
+%%OCAML_SITELIBDIR%%/zarith/big_int_Z.cmi
+%%OCAML_SITELIBDIR%%/zarith/big_int_Z.mli
+%%OCAML_SITELIBDIR%%/zarith/dllzarith.so
+%%OCAML_SITELIBDIR%%/zarith/libzarith.a
+%%OCAML_SITELIBDIR%%/zarith/q.cmi
+%%OCAML_SITELIBDIR%%/zarith/q.mli
+%%OCAML_SITELIBDIR%%/zarith/z.cmi
+%%OCAML_SITELIBDIR%%/zarith/z.mli
+%%OCAML_SITELIBDIR%%/zarith/zarith.a
+%%OCAML_SITELIBDIR%%/zarith/zarith.cma
+%%OCAML_SITELIBDIR%%/zarith/zarith.cmxa
+%%OCAML_SITELIBDIR%%/zarith/zarith.cmxs
+%%OCAML_SITELIBDIR%%/zarith/zarith.h
+@dirrm %%OCAML_SITELIBDIR%%/zarith
