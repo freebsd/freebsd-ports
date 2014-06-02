@@ -1,5 +1,6 @@
 bin/kbiff
 lib/libkdeinit4_kbiff.so
+man/man1/kbiff.1.gz
 share/applications/kde4/kbiff.desktop
 share/apps/kbiff/kbiff.notifyrc
 share/apps/kbiff/pics/delete.png
