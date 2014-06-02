@@ -317,7 +317,6 @@
     SUBDIR += rubygem-gstreamer
     SUBDIR += sabbu
     SUBDIR += schroedinger
-    SUBDIR += shell-fm
     SUBDIR += smpeg
     SUBDIR += smpeg2
     SUBDIR += smplayer
