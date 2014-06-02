@@ -15,6 +15,11 @@
 
 . /etc/rc.subr
 
+check_process()
+{
+        /bin/pgrep -f 'ntpd: \[priv\]'
+}
+
 name=openntpd
 rcvar=openntpd_enable
 

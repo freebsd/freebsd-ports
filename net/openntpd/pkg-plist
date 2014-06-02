@@ -1,7 +1,4 @@
+@sample etc/ntpd.conf.sample
 man/man5/ntpd.conf.5.gz
 man/man8/ntpd.8.gz
 sbin/ntpd
-@unexec if cmp -s %D/etc/ntpd.conf %D/%%EXAMPLESDIR%%/ntpd.conf; then rm -f %D/etc/ntpd.conf; fi
-%%EXAMPLESDIR%%/ntpd.conf
-@exec if [ ! -f %D/etc/ntpd.conf ]; then cp %D/%F %D/etc; fi
-@dirrm %%EXAMPLESDIR%%
