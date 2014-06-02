@@ -62,7 +62,7 @@ do-install:
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 .if ${PORT_OPTIONS:MBASH}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_SCRIPT} ${WRKSRC}/gmic_bashcompletion.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/../resources/gmic_bashcompletion.sh \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 .endif
 
