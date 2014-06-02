@@ -20,28 +20,26 @@ MAKEFILE=		Makefile.freebsd
 USES=			gmake zip
 LDFLAGS+=		${PTHREAD_LIBS}
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|h|txt)" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/o2em ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/dis48 ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/${PORTNAME}
-	@${MKDIR} ${PREFIX}/${PORTNAME}/bios
-	${INSTALL_DATA} ${WRKSRC}/O2ROM.BIN ${PREFIX}/${PORTNAME}/bios/o2rom.bin
-	@${MKDIR} ${PREFIX}/${PORTNAME}/voice
-	${INSTALL_DATA} ${WRKDIR}/*.WAV ${PREFIX}/${PORTNAME}/voice/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/o2em ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/dis48 ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/bios
+	${INSTALL_DATA} ${WRKSRC}/O2ROM.BIN ${STAGEDIR}${PREFIX}/${PORTNAME}/bios/o2rom.bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/voice
+	${INSTALL_DATA} ${WRKDIR}/*.WAV ${STAGEDIR}${PREFIX}/${PORTNAME}/voice/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/O2EM.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/changelog.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/license.txt ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/O2EM.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/changelog.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/license.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/o2em/roms
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/o2em/roms
 
 .include <bsd.port.mk>
