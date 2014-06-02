@@ -26,4 +26,10 @@ USE_GNOME=	glib20 gtk30
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 
+OPTIONS_DEFINE=		QRCODE
+OPTIONS_DEFAULT=	QRCODE
+QRCODE_DESC=		"Show QR codes"
+QRCODE_CMAKE_ON=	-DENABLE_QR_ENCODE:BOOL="ON"
+QRCODE_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+
 .include <bsd.port.mk>
