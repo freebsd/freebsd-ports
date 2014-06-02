@@ -3,7 +3,7 @@
 
 PORTNAME=	unifi2
 PORTVERSION=	2.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
@@ -42,5 +42,6 @@ post-extract:
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
+	${LN} -s ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
 
 .include <bsd.port.mk>
