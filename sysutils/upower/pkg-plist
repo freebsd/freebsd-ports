@@ -21,9 +21,9 @@ lib/libupower-glib.so.1.0.1
 libdata/pkgconfig/upower-glib.pc
 libexec/devkit-power-daemon
 libexec/upowerd
-man/man1/upower.1.gz
-man/man7/UPower.7.gz
-man/man8/upowerd.8.gz
+%%MANPAGES%%man/man1/upower.1.gz
+%%MANPAGES%%man/man7/UPower.7.gz
+%%MANPAGES%%man/man8/upowerd.8.gz
 share/dbus-1/interfaces/org.freedesktop.UPower.Device.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.KbdBacklight.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.QoS.xml
@@ -37,9 +37,8 @@ share/locale/pl/LC_MESSAGES/upower.mo
 share/locale/sv/LC_MESSAGES/upower.mo
 share/polkit-1/actions/org.freedesktop.upower.policy
 share/polkit-1/actions/org.freedesktop.upower.qos.policy
-@exec mkdir -p /var/lib/DeviceKit-power
+@exec mkdir -p /var/lib/upower
 @dirrm include/libupower-glib
 @dirrm etc/UPower
-@unexec rmdir /var/lib/DeviceKit-power 2>/dev/null || true
 @unexec rmdir /var/lib/upower 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
