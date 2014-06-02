@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2013-09-20 01:34:26.000000000 +0300
-+++ CMakeLists.txt	2013-09-27 01:30:14.000000000 +0300
-@@ -306,28 +306,8 @@
+--- CMakeLists.txt.orig	2014-04-15 14:02:39.000000000 +0300
++++ CMakeLists.txt	2014-05-16 18:56:55.000000000 +0300
+@@ -395,29 +395,8 @@
  ADD_SUBDIRECTORY(extra)
  ADD_SUBDIRECTORY(libservices)
  ADD_SUBDIRECTORY(scripts)
@@ -24,12 +24,13 @@
 -    ADD_SUBDIRECTORY(internal)
 -  ENDIF()
 -  ADD_SUBDIRECTORY(packaging/rpm-uln)
+-  ADD_SUBDIRECTORY(packaging/rpm-oel)
 -ENDIF()
 -
  IF(UNIX)
    ADD_SUBDIRECTORY(man)
  ENDIF()
-@@ -339,7 +319,6 @@
+@@ -429,7 +408,6 @@
    ADD_SUBDIRECTORY(win/upgrade_wizard)
    ADD_SUBDIRECTORY(win/packaging)
  ENDIF()
@@ -37,7 +38,7 @@
  
  CONFIGURE_FILE(config.h.cmake   ${CMAKE_BINARY_DIR}/include/my_config.h)
  CONFIGURE_FILE(config.h.cmake   ${CMAKE_BINARY_DIR}/include/config.h)
-@@ -366,6 +345,7 @@
+@@ -462,6 +440,7 @@
    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
  )
  
@@ -45,7 +46,7 @@
  INSTALL_DOCUMENTATION(README COPYING COPYING.LESSER
                        COMPONENT Readme)
  INSTALL_DOCUMENTATION(${CMAKE_BINARY_DIR}/Docs/INFO_SRC
-@@ -373,6 +353,7 @@
+@@ -469,6 +448,7 @@
  IF(UNIX)
    INSTALL_DOCUMENTATION(Docs/INSTALL-BINARY COMPONENT Readme)
  ENDIF()

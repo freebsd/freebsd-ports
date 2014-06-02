@@ -1,6 +1,6 @@
---- scripts/CMakeLists.txt.orig	2012-11-28 17:49:47.000000000 +0200
-+++ scripts/CMakeLists.txt	2012-12-22 23:26:51.000000000 +0200
-@@ -71,6 +71,7 @@
+--- scripts/CMakeLists.txt.orig	2014-04-15 14:02:28.000000000 +0300
++++ scripts/CMakeLists.txt	2014-05-16 19:02:48.000000000 +0300
+@@ -72,6 +72,7 @@
  )
  ENDIF()
  
@@ -8,7 +8,7 @@
  INSTALL(FILES 
    ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables.sql 
    ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables_data.sql
-@@ -79,6 +80,7 @@
+@@ -81,6 +82,7 @@
    ${FIX_PRIVILEGES_SQL}
    DESTINATION ${INSTALL_MYSQLSHAREDIR} COMPONENT Server
  )
@@ -16,7 +16,7 @@
  
  # TCMalloc hacks
  IF(MALLOC_LIB)
-@@ -138,6 +140,7 @@
+@@ -140,6 +142,7 @@
  SET(HOSTNAME "hostname")
  SET(MYSQLD_USER "mysql")
  
@@ -24,7 +24,7 @@
  # Required for mysqlbug until autotools are deprecated, once done remove these
  # and expand default cmake variables
  SET(CC ${CMAKE_C_COMPILER})
-@@ -174,6 +177,7 @@
+@@ -180,6 +183,7 @@
    DESTINATION ${INSTALL_BINDIR}
    COMPONENT Server
    )
@@ -32,7 +32,7 @@
  
  ENDIF(UNIX)
  
-@@ -198,6 +202,7 @@
+@@ -204,6 +208,7 @@
    SET(localstatedir ${MYSQL_DATADIR})
  ENDIF()
  
@@ -40,24 +40,24 @@
  IF(UNIX)
  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql_install_db.sh
    ${CMAKE_CURRENT_BINARY_DIR}/mysql_install_db ESCAPE_QUOTES @ONLY)
-@@ -209,6 +214,7 @@
+@@ -219,6 +224,7 @@
    COMPONENT Server
    )
  ENDIF()
 +ENDIF()
  
- 
  SET(prefix "${CMAKE_INSTALL_PREFIX}")
-@@ -260,6 +266,8 @@
-           GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
-           STRING(REGEX REPLACE "^lib" "" lib "${lib}")
-           SET(${var} "${${var}}-l${lib} " ) 
+ SET(sysconfdir ${prefix})
+@@ -276,6 +282,8 @@
+             STRING(REGEX REPLACE "^lib" "" lib "${lib}")
+             SET(${var} "${${var}}-l${lib} " ) 
+           ENDIF()
 +        ELSEIF(lib STREQUAL "-pthread")
 +          SET(${var} "${${var}}-pthread " )
          ELSE()
            SET(${var} "${${var}}-l${lib} " ) 
          ENDIF()
-@@ -315,18 +323,8 @@
+@@ -334,18 +342,8 @@
    SET(BIN_SCRIPTS
      msql2mysql
      mysql_config
