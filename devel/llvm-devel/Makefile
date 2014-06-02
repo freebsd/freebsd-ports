@@ -121,6 +121,8 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 .endif
 
+NOT_FOR_ARCH=	ia64
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
@@ -136,7 +138,7 @@ SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d
 .endif
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-pic --with-pic
 .endif
 
