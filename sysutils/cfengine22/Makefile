@@ -5,8 +5,7 @@ PORTNAME=	cfengine
 PORTVERSION=	2.2.10
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cfengine.com/source-code/download?file= \
-		https://s3.amazonaws.com/cfengine.package-repos/tarballs/
+MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 PKGNAMESUFFIX=	22
 
 MAINTAINER=	cy@FreeBSD.org
