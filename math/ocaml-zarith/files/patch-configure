@@ -1,0 +1,26 @@
+--- configure.orig	2013-06-12 07:13:59.000000000 +0000
++++ configure
+@@ -304,6 +304,14 @@ case $host in
+             arch='i686'
+         fi
+ 	;;
++    i386-*freebsd* | i386-*dragonfly*)
++        ccdef="-DZ_ELF -DZ_DOT_LABEL_PREFIX $ccdef"
++        arch='i686'
++        ;;
++    amd64-*freebsd* | x86_64-*dragonfly*)
++        ccdef="-DZ_ELF -DZ_DOT_LABEL_PREFIX $ccdef"
++        arch='x86_64'
++        ;;
+     i386-*darwin* | x86_64-*darwin*)
+         ccdef="-DZ_UNDERSCORE_PREFIX -DZ_MACOS $ccdef"
+         if test "x$wordsize" = "x64"; then
+@@ -401,7 +409,7 @@ CFLAGS=$ccinc $ccdef $ccopt
+ ASFLAGS=$ccdef $asopt
+ LIBS=$cclib
+ ARCH=$arch
+-INSTALLDIR=$installdir
++INSTALLDIR=${DESTDIR}$installdir
+ AR=$ar
+ INSTALL=install
+ OCAMLFIND=ocamlfind
