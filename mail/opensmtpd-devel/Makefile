@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201404151432
+PORTVERSION=	201405202105
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
