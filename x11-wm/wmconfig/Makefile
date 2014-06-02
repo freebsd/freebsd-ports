@@ -11,7 +11,7 @@ COMMENT=	Menu generation tool for X window managers
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog COPYING README TODO

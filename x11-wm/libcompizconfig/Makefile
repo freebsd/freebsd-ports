@@ -12,7 +12,7 @@ COMMENT=	Alternative configuration system for Compiz
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

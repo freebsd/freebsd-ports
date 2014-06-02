@@ -12,7 +12,7 @@ COMMENT=	System tray dockapp similar to the GNOME notification area applet
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_XORG=	x11 ice sm
 GNU_CONFIGURE=	yes
 

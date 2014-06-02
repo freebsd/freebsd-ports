@@ -19,10 +19,9 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv garcon libmenu libutil libexo xfconf
-USES=	pathfix pkgconfig gmake
+USES=	pathfix pkgconfig gmake tar:bzip2
 USE_XORG=	x11 sm
 
 CONFIGURE_ARGS+=--enable-gio-unix \

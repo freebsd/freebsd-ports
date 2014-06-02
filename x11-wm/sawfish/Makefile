@@ -18,8 +18,7 @@ BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 LIB_DEPENDS=	librep.so:${PORTSDIR}/lang/librep
 RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_XORG=	ice sm x11 xft xinerama xrandr xtst
 USE_GNOME=	cairo gnomehier gtk20
 GNU_CONFIGURE=	yes

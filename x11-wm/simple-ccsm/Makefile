@@ -12,8 +12,7 @@ COMMENT=	A Python/GTK based settings manager for CompizConfig
 
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:${PORTSDIR}/x11-wm/compizconfig-python
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	2
 
