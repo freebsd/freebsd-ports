@@ -17,13 +17,12 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgamin-1.so:${PORTSDIR}/devel/gamin
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 gdkpixbuf2 intltool intlhack
 USE_XFCE=	configenv libutil libexo
 USE_XORG=	x11
-USES=		gmake pathfix perl5 pkgconfig desktop-file-utils
+USES=		gmake pathfix perl5 pkgconfig desktop-file-utils tar:bzip2
 
 CONFIGURE_ARGS=	--disable-debug
 
