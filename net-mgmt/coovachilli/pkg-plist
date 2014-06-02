@@ -19,13 +19,19 @@ www/chilli/openid.gif
 www/chilli/wait.gif
 etc/chilli/wwwsh
 lib/libbstring.a
-lib/libbstring.la
 lib/libbstring.so
+lib/libbstring.so.0.0.0
 lib/libbstring.so.0
 lib/libchilli.a
-lib/libchilli.la
 lib/libchilli.so
+lib/libchilli.so.0.0.0
 lib/libchilli.so.0
+man/man1/chilli_query.1.gz
+man/man1/chilli_radconfig.1.gz
+man/man1/chilli_response.1.gz
+man/man5/chilli-radius.5.gz
+man/man5/chilli.conf.5.gz
+man/man8/chilli.8.gz
 sbin/chilli
 sbin/chilli_query
 sbin/chilli_radconfig
@@ -33,7 +39,7 @@ sbin/chilli_response
 sbin/test_radius
 @dirrm www/chilli
 @dirrm etc/chilli
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pf.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ipfw-config.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.conf.sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pf.conf.sample
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
