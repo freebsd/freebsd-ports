@@ -265,6 +265,11 @@ fix-packlist::
 	-@[ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 .endif
 
+.if ${PERL_LEVEL} >= 502000
+fix-plist-perl:
+	-@${REINPLACE_CMD} '/\.bs$$/d' ${TMPPLIST}
+.endif
+
 .if !target(regression-test)
 TEST_ARGS+=	${MAKE_ARGS}
 TEST_ENV+=	${MAKE_ENV}
