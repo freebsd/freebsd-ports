@@ -1,6 +1,43 @@
 --- configure.orig	2014-02-04 19:02:27.000000000 -0600
 +++ configure	2014-02-04 19:02:39.000000000 -0600
-@@ -26703,7 +26703,7 @@
+@@ -8350,9 +8350,6 @@
+     ;;
+   freebsd*)
+     SYS=freebsd
+-    CFLAGS="${CFLAGS} -pthread"
+-    CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
+-    LDFLAGS="${LDFLAGS} -L/usr/local/lib"
+     ;;
+   openbsd*)
+     SYS=openbsd
+@@ -25431,7 +25428,7 @@
+ if test "${enable_optimizations}" != "no"; then :
+ 
+ 
+-    if test "{enable_debug}" = "no"; then :
++    if test "${enable_debug}" = "no"; then :
+ 
+ 
+   CPPFLAGS_save="${CPPFLAGS}"
+@@ -25461,7 +25458,7 @@
+   return 0;
+ }
+ _ACEOF
+-if ac_fn_c_try_compile "$LINENO"; then :
++if ac_fn_c_try_link "$LINENO"; then :
+ 
+         ac_cv_c_o4=yes
+ 
+@@ -25505,7 +25502,7 @@
+   return 0;
+ }
+ _ACEOF
+-if ac_fn_c_try_compile "$LINENO"; then :
++if ac_fn_c_try_link "$LINENO"; then :
+ 
+           ac_cv_c_o3=yes
+ 
+@@ -26709,7 +26706,7 @@
  if ac_fn_c_try_compile "$LINENO"; then :
    ac_cv_altivec_inline="yes"
  else
@@ -9,7 +46,7 @@
            cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26716,7 +26716,7 @@
+@@ -26722,7 +26719,7 @@
  }
  _ACEOF
  if ac_fn_c_try_compile "$LINENO"; then :
@@ -18,3 +55,12 @@
  else
    ac_cv_altivec_inline=no
  fi
+@@ -29118,7 +29115,7 @@
+     as_fn_error $? "Could not find the LUA byte compiler." "$LINENO" 5
+ 
+ fi
+-  if test -d ${CONTRIB_DIR} -a -f ${CONTRIB_DIR}/lib/liblua.a -a `echo|${LUAC} -o - -|od -j 8 -N 2 -t x2|head -n 1|cut -d' ' -f2` != 0404; then :
++  if test -d "${CONTRIB_DIR}" -a -f "${CONTRIB_DIR}/lib/liblua.a" -a `echo|${LUAC} -o - -|od -j 8 -N 2 -t x2|head -n 1|cut -d' ' -f2` != 0404; then :
+ 
+     as_fn_error $? "You need 32-bits luac when using using lua from contrib." "$LINENO" 5
+ 

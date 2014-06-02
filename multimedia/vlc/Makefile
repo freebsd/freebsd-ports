@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -16,55 +16,76 @@ COMMENT=	Qt4 based multimedia player and streaming server
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libproxy.so:${PORTSDIR}/net/libproxy \
 		libdvbpsi.so:${PORTSDIR}/multimedia/libdvbpsi \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libidn.so:${PORTSDIR}/dns/libidn
 BUILD_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 
-OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
-		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GNOMEVFS GNUTLS GOOM \
-		HTTPD JACK LIBSSH2 LIRC LIVEMEDIA LUA MAD MATROSKA MODPLUG \
-		MPEG2 MTP MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG \
-		OPUS PNG PULSEAUDIO QT4 REALAUDIO RUNROOT \
-		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SVG \
-		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VORBIS \
-		X11 X264 ZVBI SERVER_ONLY DEBUG \
-		GME NO_DVD LIBBLURAY SAMPLERATE SIDPLAY
-OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GNUTLS \
-		HTTPD LUA MAD MATROSKA MPEG2 OGG OPUS PNG QT4 REALAUDIO \
-		SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
-		VCD VORBIS X11 X264 SAMPLERATE
+USES=		compiler:c11 desktop-file-utils gmake iconv libtool pathfix \
+		pkgconfig tar:xz
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
+		--enable-fontconfig --enable-freetype --enable-libgcrypt \
+		--enable-libxml2 --enable-oss --enable-postproc \
+		--enable-swscale --enable-vlc \
+		--disable-alsa --disable-chromaprint --disable-crystalhd \
+		--disable-dc1394 --disable-decklink --disable-directfb \
+		--disable-dv1394 --disable-egl --disable-fdkaac \
+		--disable-gles1 --disable-gles2 --disable-kai --disable-kva \
+		--disable-libvnc --disable-opencv --disable-projectm \
+		--disable-quicksync --disable-silent-rules --disable-telx \
+		--disable-tiger --disable-tremor --disable-udev \
+		--disable-update-check --disable-vcdx --disable-vsxu \
+		--disable-wasapi --disable-x26410b \
+		--with-kde-solid=${PREFIX}/share/apps/solid/actions \
+		ac_cv_search_pthread_rwlock_init=-pthread
+.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+.endif
+CPPFLAGS+=	-I${LOCALBASE}/include/gnutls3 -I${LOCALBASE}/include
+
+OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DIRAC DOCS DVDREAD \
+		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNOMEVFS2 GNUTLS \
+		GOOM HTTPD JACK KATE LIBBLURAY LIBRSVG2 LIBSSH2 LIRC \
+		LIVEMEDIA LUA MAD MATROSKA MODPLUG \
+		MPEG2 MTP MUSEPACK NCURSES NLS NOTIFY OGG OPTIMIZED_CFLAGS \
+		OPUS PNG PULSEAUDIO QT4 REALRTSP RUNROOT SAMPLERATE \
+		SCHROEDINGER SDL SHOUTCAST SIDPLAY SKINS SMB STREAM SPEEX \
+		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VDPAU VORBIS \
+		X11 X264 ZVBI
+OPTIONS_DEFAULT=A52 AVAHI DBUS DCA DVDREAD DVDNAV FAAD FLAC GNUTLS \
+		HTTPD LUA MAD MATROSKA MPEG2 OGG OPTIMIZED_CFLAGS OPUS PNG \
+		QT4 SAMPLERATE STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
+		VCD VORBIS X11
+OPTIONS_SUB=	yes
+
 ASS_DESC=	ASS/SSA subtitle rendering
-DTS_DESC=	DTS DVD audio decoder
 DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
 FLUID_DESC=	Fluidsynth MIDI support
 FREERDP_DESC=	RDP support
-GME_DESC=	Game_Music_Emu (libgme) support
-GNOMEVFS_DESC=	Gnome VFS support
-GOOM_DESC=	the Goom visual effect library
+GME_DESC=	Game Music Emu (libgme) support
+GOOM_DESC=	Goom visualisation plugin
+KATE_DESC=	Kate codec support
 LIBSSH2_DESC=	SCP/SFTP support via libssh2
-NCURSES_DESC=	ncurses (console) interface
 OPUS_DESC=	Opus audio format
-REALAUDIO_DESC=	Real Audio(R) support
+REALRTSP_DESC=	Real RTSP access module
 RUNROOT_DESC=	Enable running as root
-SAMBA_DESC=	SAMBA Access module
-SCHROED_DESC=	Schroedinger decoder
 SIDPLAY_DESC=	C64 sid demux support
-SKINS_DESC=	winamp skins interface
+SKINS_DESC=	Skins interface module
 STREAM_DESC=	stream output
 TAGLIB_DESC=	ID3 tag and Ogg comment support
-V4L_DESC=	Video4Linux video capture compatibility
-VCD_DESC=	Video CD support
+VCD_DESC=	Audio/Video CD support
 ZVBI_DESC=	VBI decoding support
-SERVER_ONLY_DESC=	Only build server parts
-NO_DVD_DESC=	disable DVD specific features
-
-QT4_CONFIGURE_ENABLE=	qt
 
 A52_CONFIGURE_ENABLE=	a52
+A52_CONFIGURE_ON=	--with-a52=${LOCALBASE}
 A52_LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52
 
 AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
@@ -82,23 +103,22 @@ CACA_CONFIGURE_ENABLE=	caca
 DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_CONFIGURE_ENABLE=	dbus
 
-DEBUG_CONFIGURE_ENABLE=	debug
+DCA_LIB_DEPENDS=	libdca.so:${PORTSDIR}/multimedia/libdca
+DCA_CONFIGURE_ENABLE=	dca
 
 DIRAC_LIB_DEPENDS=	libdirac_decoder.so:${PORTSDIR}/multimedia/dirac
 DIRAC_CONFIGURE_ENABLE=	dirac
-DIRAC_CPPFLAGS=		-I${LOCALBASE}/include/dirac
-
-DTS_LIB_DEPENDS=	libdca.so:${PORTSDIR}/multimedia/libdca
-DTS_CONFIGURE_ARGS=	dca
 
 DVDREAD_LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 DVDREAD_CONFIGURE_ENABLE=	dvdread
 
 DVDNAV_LIB_DEPENDS=	libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
-DVDNAV_CONFIGURE_ENABLE=	dvdnav
+DVDNAV_CONFIGURE_ENABLE=dvdnav
 
 FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
 FAAD_CONFIGURE_ENABLE=	faad
+FAAD_CONFIGURE_ENV=	CPPFLAGS_faad="-I/usr/local/include" \
+			LIBS_faad="-L/usr/local/lib"
 
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 FLAC_CONFIGURE_ENABLE=	flac
@@ -115,11 +135,11 @@ FRIBIDI_CONFIGURE_ENABLE=	fribidi
 GME_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
 GME_CONFIGURE_ENABLE=	gme
 
-GNOMEVFS_USE=	GNOME=gnomevfs2
-GNOMEVFS_CONFIGURE_ENABLE=	gnomevfs
+GNOMEVFS2_USE=			GNOME=gnomevfs2
+GNOMEVFS2_CONFIGURE_ENABLE=	gnomevfs
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so.28:${PORTSDIR}/security/gnutls3
-GNUTLS_CONFIGURE_ENABLE=	gnutls
+GNUTLS_CONFIGURE_ENABLE=gnutls
 
 GOOM_LIB_DEPENDS=	libgoom2.so:${PORTSDIR}/graphics/goom
 GOOM_CONFIGURE_ENABLE=	goom
@@ -129,26 +149,38 @@ HTTPD_CONFIGURE_ENABLE=	httpd
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CONFIGURE_ENABLE=	jack
 
+KATE_LIB_DEPENDS=	libkate.so:${PORTSDIR}/multimedia/libkate
+KATE_CONFIGURE_ENABLE=	kate
+
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	bluray
 
+LIBRSVG2_USE=			GNOME=librsvg2
+LIBRSVG2_CONFIGURE_ENABLE=	svg
+
 LIBSSH2_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 LIBSSH2_CONFIGURE_ENABLE=	sftp
-LIBSSH2_CONFIGURE_ENV=	SFTP_CFLAGS=-I${LOCALBASE} SFTP_LIBS=-lssh2\ -L${LOCALBASE}/lib
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
 
 LIVEMEDIA_LIB_DEPENDS=	libliveMedia.so:${PORTSDIR}/net/liveMedia
 LIVEMEDIA_CONFIGURE_ENABLE=	live555
-LIVEMEDIA_CPPFLAGS=	-I${LOCALBASE}/include/liveMedia	\
-			-I${LOCALBASE}/include/UsageEnvironment	\
-			-I${LOCALBASE}/include/groupsock	\
-			-I${LOCALBASE}/include/BasicUsageEnvironment
-LIVEMEDIA_LDFLAGS=	-L${LOCALBASE}/lib
+LIVEMEDIA_CONFIGURE_ENV= \
+	LIVE555_CFLAGS="-I${LOCALBASE}/include/liveMedia \
+			-I${LOCALBASE}/include/UsageEnvironment \
+			-I${LOCALBASE}/include/groupsock \
+			-I${LOCALBASE}/include/BasicUsageEnvironment" \
+	LIVE555_LIBS="-L${LOCALBASE}/lib -lliveMedia \
+			-lgroupsock -lBasicUsageEnvironment \
+			-lUsageEnvironment"
 
-MAD_LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
-			libmad.so:${PORTSDIR}/audio/libmad
+LUA_USES=		lua
+LUA_CONFIGURE_ENABLE=	lua
+LUA_CONFIGURE_ON=	LUAC=${LUAC_CMD} LUA_CFLAGS="-I${LUA_INCDIR}" \
+			LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
+
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 MAD_CONFIGURE_ENABLE=	mad
 MAD_CONFIGURE_ON=	--with-mad=${LOCALBASE}
 
@@ -167,7 +199,9 @@ MTP_CONFIGURE_ENABLE=	mtp
 MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack
 MUSEPACK_CONFIGURE_ENABLE=	mpc
 
-NCURSES_CONFIGURE_ENV=	NCURSES_CFLAGS="-I/usr/include" NCURSES_LIBS="-lncursesw"
+NCURSES_USES=			ncurses
+NCURSES_CONFIGURE_ENV=		NCURSES_CFLAGS="-I${NCURSESINC}" \
+				NCURSES_LIBS="-L${NCURSESLIB} -lncursesw"
 NCURSES_CONFIGURE_ENABLE=	ncurses
 
 NLS_USES=		gettext
@@ -175,9 +209,11 @@ NLS_CONFIGURE_ENABLE=	nls
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 NOTIFY_USE=		GNOME=gtk20
-NOTIFY_CONFIGURE_ENABLE=	notify
+NOTIFY_CONFIGURE_ENABLE=notify
 
-OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math -fomit-frame-pointer
+OGG_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+OGG_CONFIGURE_ENABLE=	ogg
+
 OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimizations
 
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
@@ -189,21 +225,21 @@ PNG_CONFIGURE_ENABLE=	png
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-REALAUDIO_CONFIGURE_ENABLE=	realrtsp
+QT4_CONFIGURE_ENABLE=	qt
+QT4_USE=		QT4=gui,corelib,moc_build,rcc_build,uic_build
+
+REALRTSP_CONFIGURE_ENABLE=	realrtsp
 
 RUNROOT_CONFIGURE_ENABLE=	run-as-root
 
 SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=	samplerate
 
-SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-SAMBA_CONFIGURE_ENABLE=	smbclient
-# There is no libsmbclient.pc
-SAMBA_CONFIGURE_ENV=	SMBCLIENT_CFLAGS="-I${LOCALBASE}/include" \
-			SMBCLIENT_LIBS="-lsmbclient"
+SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
+SCHROEDINGER_CONFIGURE_ENABLE=	schroedinger
 
-SCHROED_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
-SCHROED_CONFIGURE_ENABLE=	schroedinger
+SDL_USE=		SDL=image
+SDL_CONFIGURE_ENABLE=	sdl sdl-image
 
 SIDPLAY_LIB_DEPENDS=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
 SIDPLAY_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
@@ -212,11 +248,13 @@ SIDPLAY_CONFIGURE_ENABLE=	sid
 SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 SHOUTCAST_CONFIGURE_ENABLE=	shout
 
-STREAM_CONFIGURE_ENABLE=	sout
+SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_CONFIGURE_ENABLE=	smbclient
+
+STREAM_CONFIGURE_ENABLE=sout
 
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_CONFIGURE_ENABLE=	speex
-SPEEX_CPPFLAGS=		-I${LOCALBASE}/include/speex
 
 TAGLIB_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 TAGLIB_CONFIGURE_ENABLE=taglib
@@ -230,14 +268,25 @@ TWOLAME_CONFIGURE_ENABLE=	twolame
 UPNP_LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
 UPNP_CONFIGURE_ENABLE=	upnp
 
+V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_CONFIGURE_ENABLE=	v4l2
+
 VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
 VAAPI_CONFIGURE_ENABLE=	libva
 
 VCD_LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
 VCD_CONFIGURE_ENABLE=	vcd libcddb
 
+VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+VDPAU_CONFIGURE_ENABLE=	vdpau
+
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=vorbis
+
+X11_USE=		GL=gl XORG=xcb,xproto
+X11_LIB_DEPENDS=	libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
+X11_CONFIGURE_ENABLE=	glx xcb xvideo
+X11_CONFIGURE_WITH=	x
 
 X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264
 X264_CONFIGURE_ENABLE=	x264
@@ -245,97 +294,16 @@ X264_CONFIGURE_ENABLE=	x264
 ZVBI_LIB_DEPENDS=	libzvbi.so:${PORTSDIR}/devel/libzvbi
 ZVBI_CONFIGURE_ENABLE=	zvbi
 
-USES=		desktop-file-utils iconv libtool perl5 gmake pkgconfig tar:xz
-INSTALL_TARGET=	install-strip
-USE_PERL5=	build
-USE_CSTD=	gnu99
-WANT_GNOME=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S/a$//}
-
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CFLAGS+=	-fPIC
-CPPFLAGS+=	-I${WRKSRC}/include
-CONFIGURE_ENV=	LIBS="-lc"
-LDFLAGS+=	${PTHREAD_LIBS} -lc
-
-CONFIGURE_ARGS+=	--enable-vlc \
-			--enable-avcodec \
-			--enable-avformat \
-			--enable-oss \
-			--enable-postproc \
-			--enable-sftp \
-			--enable-libgcrypt \
-			--disable-alsa \
-			--disable-dc1394 \
-			--disable-directfb \
-			--disable-projectm \
-			--disable-telx \
-			--disable-tremor \
-			--disable-udev \
-			--disable-update-check
+PORTDATA=	*
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-# Macro section
-# Use these for batch control of certain types of builds
-
-# Disable DVD specific features
-.if ${PORT_OPTIONS:MNO_DVD}
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-PORT_OPTIONS:=	${PORT_OPTIONS:NA52}
-PORT_OPTIONS:=	${PORT_OPTIONS:NDVDREAD}
-PORT_OPTIONS:=	${PORT_OPTIONS:NDVDNAV}
-.endif
-
-# Use this to disable all UI and output modules
-.if ${PORT_OPTIONS:MSERVER_ONLY}
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-PORT_OPTIONS:=	${PORT_OPTIONS:NLUA}
-PORT_OPTIONS:=	${PORT_OPTIONS:NQT4}
-PORT_OPTIONS:=	${PORT_OPTIONS:NSKINS}
-.if empty(PORT_OPTIONS:MRUNROOT)
-PORT_OPTIONS+=	RUNROOT
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-.endif
-.endif
-
-# End Macro section
-#
-
-.if ${PORT_OPTIONS:MQT4}
-USE_QT4=	gui corelib moc_build rcc_build uic_build
-.endif
-
-# This may become mandantory in the future
-.if ${PORT_OPTIONS:MLUA}
-USES+=	lua:51
-CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-CONFIGURE_ARGS+=--enable-lua LUAC=${LUAC_CMD}
-.else
-CONFIGURE_ARGS+=--disable-lua
-.endif
-
-.if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
-		libkate.so:${PORTSDIR}/multimedia/libkate
-CONFIGURE_ARGS+=--enable-ogg --enable-kate
-.else
-PORT_OPTIONS:=	${PORT_OPTIONS:NVORBIS}
-CONFIGURE_ARGS+=--disable-ogg --disable-kate
-.endif
-
-.if ${PORT_OPTIONS:MSDL} && ${PORT_OPTIONS:MX11}
-WANT_SDL=	yes
-USE_SDL=	image
-CONFIGURE_ARGS+=--enable-sdl --enable-sdl-image
-.else
-CONFIGURE_ARGS+=--disable-sdl --disable-sdl-image
-.endif
-
 .if ${PORT_OPTIONS:MSKINS}
 .if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libtar.so:${PORTSDIR}/devel/libtar
+LIB_DEPENDS+=	libminizip.so:${PORTSDIR}/archivers/minizip \
+		libtar.so:${PORTSDIR}/devel/libtar
+USE_XORG+=	xext xinerama xpm
 CONFIGURE_ARGS+=--enable-skins2 --enable-libtar
 .else
 IGNORE=	SKINS option requires QT4 option
@@ -343,57 +311,6 @@ IGNORE=	SKINS option requires QT4 option
 .else
 CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
 .endif
-
-.if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:MX11}
-USE_GNOME+=	librsvg2
-CONFIGURE_ARGS+=--enable-svg
-.else
-CONFIGURE_ARGS+=--disable-svg
-.endif
-
-.if ${PORT_OPTIONS:MV4L} || ${PORT_OPTIONS:MDVB}
-LIB_DEPENDS+=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
-CONFIGURE_ARGS+=--enable-v4l2
-.else
-CONFIGURE_ARGS+=--disable-v4l2
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_GL=		yes
-USE_XORG=	xcb xpm
-LIB_DEPENDS+=	libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
-CONFIGURE_ARGS+=--with-x --enable-glx --enable-xcb --enable-xvideo
-.else
-CONFIGURE_ARGS+=--without-x --disable-glx --disable-xcb --disable-xvideo
-.endif
-
-.include <bsd.port.pre.mk>
-
-# base clang in 9.0 builds a corrupted lib/vlc/plugins/gui/libqt4_plugin.so
-.if (${CC:T:Mclang} == "clang") && \
-	(${OSVERSION} >= 900014) && (${OSVERSION} < 900506)
-IGNORE=		base clang version too old, set NO_IGNORE to override
-.endif
-
-.if ${ARCH} == "powerpc64"
-CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
-.endif
-
-# prefer clang on 9.1+
-.if (${OSVERSION} >= 901000) && exists(${DESTDIR}/usr/bin/clang)
-CC=	clang
-CXX=	clang++
-CPP=	clang-cpp
-CFLAGS+=	-fomit-frame-pointer
-.else
-.if ${ARCH} == "i386"
-USE_GCC?=	yes # sse/3dnow detection on i386 needs newer GCC
-.endif
-.endif
-
-# End OS specific hacks
-
-# User tunables
 
 # Define these to override
 # FreeBSD 9.x uses CAM devices
@@ -406,40 +323,19 @@ WITH_DVD_DEVICE?=/dev/acd0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} \
 		-e '\|LIBS|s|-lrt||' \
 		-e 's|gnutls |gnutls3 |g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = \$$\(prefix\)/libdata/pkgconfig|' \
-		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
-		${WRKSRC}/include/vlc_config.h
+		${WRKSRC}/src/libvlc-module.c
 	@${RM} -rf ${WRKSRC}/modules/access/v4l2/linux
-	@${REINPLACE_CMD} -e '/^DEFAULT_INCLUDES/s|$$| $$(GNUTLS_CFLAGS)|g' \
-		${WRKSRC}/modules/misc/Makefile.in
 
-add-plist-data:
-	@if [ -n "${MTREE_FILE}" ]; then \
-	{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
-		awk '{ sub(/^\.$$/, "", $$1); \
-		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' ; \
-	fi > ${WRKDIR}/.mtree
-	@a=${PREFIX}; \
-		while :; do \
-			a=$${a%/*} ; \
-			[ -z "$${a}" ] && break ; \
-			${ECHO_CMD} $${a} >> ${WRKDIR}/.mtree ; \
-		done
-	@${FIND} ${STAGEDIR} -type f -o -type l | ${SORT} | ${SED} -E -e "s,${STAGEDIR},,g" \
-		-e "s,${PREFIX}/,,g" -e "s,(.*man/.*\.[0-9])$$,\1.gz,g"| ${GREP} -v "^share/licenses" >> ${TMPPLIST} || ${TRUE}
-	@${FIND} ${STAGEDIR} -type d | ${SED} -e "s,${STAGEDIR},,g" \
-		| while read line; do \
-		${GREP} -qw "^$${line}$$" ${WRKDIR}/.mtree || { \
-			[ -n "$${line}" ] && ${ECHO_CMD} "@unexec rmdir "%D/$${line}" >/dev/null 2>&1 || :"; \
-		}; \
-		done | ${SORT} -r | ${SED} \
-		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@unexec rmdir %D/share/licenses" >> ${TMPPLIST} || ${TRUE}
+post-install:
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} -s lib/vlc -not -name '*.la' \
+		-type f -o -type l >> ${TMPPLIST})
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} -s -d lib/vlc -type d | \
+		${SED} 's/^/@dirrm /' >> ${TMPPLIST})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
