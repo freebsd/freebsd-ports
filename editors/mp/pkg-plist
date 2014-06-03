@@ -29,12 +29,12 @@ man/man1/mp-5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mp_man.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_man.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_templates.sample
-%%NLS%%share/locale/de/LC_MESSAGES/minimum-profit.mo
-%%NLS%%share/locale/es/LC_MESSAGES/minimum-profit.mo
-%%NLS%%share/locale/it/LC_MESSAGES/minimum-profit.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/minimum-profit.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/minimum-profit.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/minimum-profit.mo
+share/locale/de/LC_MESSAGES/minimum-profit.mo
+share/locale/es/LC_MESSAGES/minimum-profit.mo
+share/locale/it/LC_MESSAGES/minimum-profit.mo
+share/locale/nl/LC_MESSAGES/minimum-profit.mo
+share/locale/ru/LC_MESSAGES/minimum-profit.mo
+share/locale/sv/LC_MESSAGES/minimum-profit.mo
 %%DATADIR%%/lang/de.mpsl
 %%DATADIR%%/lang/es.mpsl
 %%DATADIR%%/lang/it.mpsl
@@ -62,6 +62,6 @@ man/man1/mp-5.1.gz
 %%DATADIR%%/mp_tui.mpsl
 %%DATADIR%%/mp_vcs.mpsl
 %%DATADIR%%/mp_writing.mpsl
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/lang
+@dirrmtry %%DATADIR%%
