@@ -1,8 +1,8 @@
 include/libgringotts.h
-lib/libgringotts.so.2
-lib/libgringotts.so
-lib/libgringotts.la
 lib/libgringotts.a
+lib/libgringotts.so
+lib/libgringotts.so.2
+lib/libgringotts.so.2.0.7
 libdata/pkgconfig/libgringotts.pc
 %%PORTDOCS%%share/doc/libgringotts/AUTHORS
 %%PORTDOCS%%share/doc/libgringotts/COPYING
