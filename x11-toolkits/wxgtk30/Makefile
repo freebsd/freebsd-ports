@@ -17,8 +17,7 @@ LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png\
 		libinotify.so:${PORTSDIR}/devel/libinotify\
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
-USES+=		iconv gmake pkgconfig
-USE_BZIP2=	yes
+USES+=		iconv gmake pkgconfig tar:bzip2
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GNOME=	gtk20
