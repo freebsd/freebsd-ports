@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: zetacoin
+# PROVIDE: %%PORTNAME%%
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 
@@ -11,44 +11,52 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# zetacoin_enable (bool):	Set to NO by default.
-#				Set it to YES to enable zetacoin.
-# zetacoin_config (path):	Set to %%PREFIX%%/etc/zetacoin.conf
+# %%PORTNAME%%_enable (bool):	Set to NO by default.
+#				Set it to YES to enable %%PORTNAME%%.
+# %%PORTNAME%%_config (path):	Set to %%PREFIX%%/etc/%%PORTNAME%%.conf
 #				by default.
-# zetacoin_datadir (str):	Default to "/var/db/zetacoin"
+# %%PORTNAME%%_user:	The user account %%PORTNAME%% daemon runs as
+#				It uses '%%PORTNAME%%' user by default.
+# %%PORTNAME%%_group:	The group account %%PORTNAME%% daemon runs as
+#				It uses '%%PORTNAME%%' group by default.
+# %%PORTNAME%%_datadir (str):	Default to "/var/db/%%PORTNAME%%"
 #				Base data directory.
 
 . /etc/rc.subr
 
-name=zetacoin
-rcvar=zetacoin_enable
+name=%%PORTNAME%%
+rcvar=%%PORTNAME%%_enable
 
-: ${zetacoin_enable:=NO}
-: ${zetacoin_config=%%PREFIX%%/etc/zetacoin.conf}
-: ${zetacoin_datadir=/var/db/zetacoin}
+: ${%%PORTNAME%%_enable:=NO}
+: ${%%PORTNAME%%_config=%%PREFIX%%/etc/%%PORTNAME%%.conf}
+: ${%%PORTNAME%%_datadir=/var/db/%%PORTNAME%%}
+: ${%%PORTNAME%%_user="%%PORTNAME%%"}
+: ${%%PORTNAME%%_group="%%PORTNAME%%"}
 
-required_files=${zetacoin_config}
-command=%%PREFIX%%/bin/zetacoind
-zetacoin_chdir=${zetacoin_datadir}
-pidfile="${zetacoin_datadir}/zetacoind.pid"
-stop_cmd=zetacoin_stop
-command_args="-conf=${zetacoin_config} -datadir=${zetacoin_datadir} -noupnp -daemon -pid=${pidfile}"
+required_files=${%%PORTNAME%%_config}
+command=%%PREFIX%%/bin/%%PORTNAME%%d
+%%PORTNAME%%_chdir=${%%PORTNAME%%_datadir}
+pidfile="${%%PORTNAME%%_datadir}/%%PORTNAME%%d.pid"
+stop_cmd=%%PORTNAME%%_stop
+command_args="-conf=${%%PORTNAME%%_config} -datadir=${%%PORTNAME%%_datadir} -noupnp -daemon -pid=${pidfile}"
 start_precmd="${name}_prestart"
 
-zetacoin_create_datadir()
+%%PORTNAME%%_create_datadir()
 {
 	echo "Creating data directory"
-	eval mkdir -p ${zetacoin_datadir}
+	eval mkdir -p ${%%PORTNAME%%_datadir}
+	[ $? -eq 0 ] && chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${%%PORTNAME%%_datadir}
+	ln -s ${%%PORTNAME%%_datadir} /.%%PORTNAME%%
 }
 
-zetacoin_prestart()
+%%PORTNAME%%_prestart()
 {
-	if [ ! -d "${zetacoin_datadir}/." ]; then
-		zetacoin_create_datadir || return 1
+	if [ ! -d "${%%PORTNAME%%_datadir}/." ]; then
+		%%PORTNAME%%_create_datadir || return 1
 	fi
 }
 
-zetacoin_requirepidfile()
+%%PORTNAME%%_requirepidfile()
 {
 	if [ ! "0`check_pidfile ${pidfile} ${command}`" -gt 1 ]; then
 		echo "${name} not running? (check $pidfile)."
@@ -56,15 +64,13 @@ zetacoin_requirepidfile()
 	fi
 }
 
-zetacoin_stop()
+%%PORTNAME%%_stop()
 {
-    zetacoin_requirepidfile
+    %%PORTNAME%%_requirepidfile
 
-    if checkyesno ${rcvar}; then
-		echo "Stopping ${name}."
-		eval ${command} -conf=${zetacoin_config} -datadir=${zetacoin_datadir} stop
-		wait_for_pids ${pidfile}
-    fi
+	echo "Stopping ${name}."
+	eval ${command} -conf=${%%PORTNAME%%_config} -datadir=${%%PORTNAME%%_datadir} stop
+	wait_for_pids ${rc_pid}
 }
 
 load_rc_config $name

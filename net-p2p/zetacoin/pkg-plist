@@ -1,6 +1,6 @@
 %%EXECUTABLE%%
-%%X11%%share/applications/zetacoin-qt.desktop
-%%X11%%share/pixmaps/zetacoin.png
-%%HEADLESS%%@unexec if cmp -s %D/etc/zetacoin.conf.sample %D/etc/zetacoin.conf; then rm -f %D/etc/zetacoin.conf; fi
-%%HEADLESS%%etc/zetacoin.conf.sample
-%%HEADLESS%%@exec if [ ! -f %D/etc/zetacoin.conf ] ; then cp -p %D/%F %B/zetacoin.conf; fi
+%%X11%%share/applications/%%PORTNAME%%-qt.desktop
+%%X11%%share/pixmaps/%%PORTNAME%%.png
+%%HEADLESS%%@unexec if cmp -s %D/etc/%%PORTNAME%%.conf.sample %D/etc/%%PORTNAME%%.conf; then rm -f %D/etc/%%PORTNAME%%.conf; fi
+%%HEADLESS%%etc/%%PORTNAME%%.conf.sample
+%%HEADLESS%%@exec if [ ! -f %D/etc/%%PORTNAME%%.conf ] ; then cp -p %D/%F %B/%%PORTNAME%%.conf; fi

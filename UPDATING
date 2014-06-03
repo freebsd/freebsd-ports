@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140603
+  AFFECTS: users of net-p2p/zetacoin
+  AUTHOR: daniel@morante.net
+
+  The zetacoind process now runs as the zetacoin user. Please make sure that
+  this user has appropriate permissions to the blockchain database and wallet
+  directory.
+
+  If you are using the default path, run:
+
+  # chown -R zetacoin:zetacoin /var/db/zetacoin
+  # chown -R zetacoin:zetacoin /.zetacoin
+
 20140529
   AFFECTS: users of databases/postgresql??-(server|client)
   AUTHOR: mat@FreeBSD.org
