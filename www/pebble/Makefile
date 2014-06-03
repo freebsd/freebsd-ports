@@ -37,21 +37,20 @@ PORTDOCS=	configuration.html credits.html images index.html \
 PLIST_FILES=	${WEBAPP_SUBDIR}/${PORTNAME}.war
 PEBBLE_CONTEXT=	WEB-INF/applicationContext-pebble.xml
 
-NO_STAGE=	yes
 do-patch:
 	cd ${WRKSRC} && ${UNZIP_CMD} -o pebble.war "${PEBBLE_CONTEXT}"
 	${SED} -i.bak 's,/WEB-INF/pebble\.properties,file:${PEBBLE_PROPERTIES},' "${WRKSRC}/${PEBBLE_CONTEXT}"
 	cd ${WRKSRC} && ${LOCALBASE}/bin/zip -u pebble.war ${PEBBLE_CONTEXT}
 
 do-install:
-	${MKDIR} "${PEBBLE_HOME}"
-	${CHOWN} "www:www" "${PEBBLE_HOME}"
-	${INSTALL_DATA} ${WRKDIR}/pebble.properties ${PEBBLE_PROPERTIES}.sample
-	if [ ! -f ${PEBBLE_PROPERTIES} ]; then ${INSTALL_DATA} ${WRKDIR}/pebble.properties ${PEBBLE_PROPERTIES} ; fi
-	${INSTALL_DATA} ${WRKSRC}/pebble.war ${WEBAPP_DIR}/${PORTNAME}.war
+	${MKDIR} "${STAGEDIR}${PEBBLE_HOME}"
+	${CHOWN} "www:www" "${STAGEDIR}${PEBBLE_HOME}"
+	${INSTALL_DATA} ${WRKDIR}/pebble.properties ${STAGEDIR}${PEBBLE_PROPERTIES}.sample
+	${MKDIR} ${STAGEDIR}${WEBAPP_DIR}
+	${INSTALL_DATA} ${WRKSRC}/pebble.war ${STAGEDIR}${WEBAPP_DIR}/${PORTNAME}.war
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
+	cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 .endif
 
 post-install:
