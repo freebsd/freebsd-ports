@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat
-PORTVERSION=	7.0.53
+PORTVERSION=	7.0.54
 CATEGORIES=	www java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	tomcat/tomcat-7/v${PORTVERSION}/bin
@@ -25,8 +25,7 @@ USE_RC_SUBR=	${PKGBASE}
 TOMCAT_SUBDIR?=	${DISTNAME:R}
 TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
 TOMCAT_CONF_FILES=	catalina.policy catalina.properties context.xml logging.properties server.xml tomcat-users.xml web.xml
-CONF_EXT=	sample
-PLIST_SUB=	T=${TOMCAT_SUBDIR} CONF_EXT=${CONF_EXT} \
+PLIST_SUB=	T=${TOMCAT_SUBDIR} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 SUB_LIST=	TOMCAT_HOME=${TOMCAT_HOME} \
@@ -44,7 +43,7 @@ pre-patch:
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.bat' -delete
 .for f in ${TOMCAT_CONF_FILES}
-	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.${CONF_EXT}
+	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.sample
 .endfor
 
 do-install:
