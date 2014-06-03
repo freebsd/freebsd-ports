@@ -115,6 +115,7 @@
 @unexec if cmp -s %D/%%WWWDIR%%/inc/config_user.php.sample %D/%%WWWDIR%%/inc/config_user.php;  then /bin/rm -f %D/%%WWWDIR%%/inc/config_user.php; fi
 %%WWWDIR%%/inc/config_user.php.sample
 @unexec if [ $(ls %D/%%WWWDIR%%/img/feeds/|wc -w) -eq 0 ]; then /bin/rm -rf %D/%%WWWDIR%%/img/feeds;fi
+@dirrmtry %%WWWDIR%%/img/feeds
 @dirrm %%WWWDIR%%/img
 @dirrm %%WWWDIR%%/inc
 @dirrm %%WWWDIR%%/magpierss/cache
