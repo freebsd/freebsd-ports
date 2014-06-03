@@ -10,8 +10,8 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK application to securely store sensitive data
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		gringotts.2:${PORTSDIR}/security/libgringotts
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
+		libgringotts.so:${PORTSDIR}/security/libgringotts
 
 USES=		pkgconfig
 USE_GNOME=	gtk20
@@ -20,7 +20,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^install-data-am:/s|install-DsktpDATA|| ; \
@@ -30,12 +31,10 @@ post-patch:
 		'/^install-exec-am:/s|install-exec-local||' ${WRKSRC}/src/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS BUGS ChangeLog FAQ NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
