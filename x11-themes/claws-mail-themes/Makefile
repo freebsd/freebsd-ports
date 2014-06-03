@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	claws-mail-themes
-PORTVERSION=	20120129
+PORTVERSION=	20131119
 CATEGORIES=	x11-themes mail
 MASTER_SITES=	http://www.claws-mail.org/themes/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Claws-Mail Themes
+MAINTAINER=	pawel@FreeBSD.org
+COMMENT=	Claws Mail icon themes
 
 NO_BUILD=	yes
 
