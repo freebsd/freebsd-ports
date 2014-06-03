@@ -14,8 +14,7 @@ COMMENT=	A GTK based system monitor
 
 LICENSE=	GPLv3
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_RC_SUBR=	gkrellmd
 WANT_GNOME=	yes
 
