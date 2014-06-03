@@ -173,6 +173,7 @@
     SUBDIR += validns
     SUBDIR += vizone
     SUBDIR += walker
+    SUBDIR += wdns
     SUBDIR += yadifa
     SUBDIR += zkt
     SUBDIR += zonecheck
