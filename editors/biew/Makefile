@@ -13,8 +13,7 @@ COMMENT=	Binary file viewer and editor
 
 LICENSE=	GPLv2
 
-USES=		dos2unix gmake iconv
-USE_BZIP2=	yes
+USES=		dos2unix gmake iconv tar:bzip2
 DOS2UNIX_FILES=	${PORTDOCS:S,^,doc/,}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
