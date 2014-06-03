@@ -19,7 +19,6 @@ PLIST=		${WRKDIR}/pkg-plist
 DIRLIST=	${WRKDIR}/dir-list
 INSTALL_DIR=	share/doc/${PORTNAME}
 
-NO_STAGE=	yes
 pre-install:
 	@${ECHO_MSG} "--> Generating a directories list"; \
 	cd ${WRKSRC}; \
@@ -39,17 +38,17 @@ pre-install:
 
 do-install:
 	@${ECHO_MSG} "--> Installing files:"; \
-	${MKDIR} ${DOCSDIR}; cd ${WRKSRC}; \
+	${MKDIR} ${STAGEDIR}${DOCSDIR}; cd ${WRKSRC}; \
 	for d in `${FIND} . -type d`; do \
 		n=`${ECHO_CMD} $${d}|${SED} -e 's#^./##'`; \
 		if [ "$${n}" != "." ]; then \
-			${MKDIR} ${DOCSDIR}/$${n}; \
+			${MKDIR} ${STAGEDIR}${DOCSDIR}/$${n}; \
 		fi; \
 	done; \
 	for f in `${FIND} -s . -type f`; do \
 		n=`${ECHO_CMD} $${f}|${SED} -e 's#^./##'`; \
 		${ECHO_MSG} $${n}; \
-		${INSTALL_DATA} $${n} ${DOCSDIR}/$${n}; \
+		${INSTALL_DATA} $${n} ${STAGEDIR}${DOCSDIR}/$${n}; \
 	done
 
 .include <bsd.port.mk>
