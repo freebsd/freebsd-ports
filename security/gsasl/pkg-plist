@@ -3,9 +3,9 @@ include/gsasl-compat.h
 include/gsasl-mech.h
 include/gsasl.h
 lib/libgsasl.a
-lib/libgsasl.la
 lib/libgsasl.so
-lib/libgsasl.so.16
+lib/libgsasl.so.7
+lib/libgsasl.so.7.9.6
 libdata/pkgconfig/libgsasl.pc
 man/man1/gsasl.1.gz
 man/man3/gsasl_appinfo_get.3.gz
