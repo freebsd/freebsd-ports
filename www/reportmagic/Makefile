@@ -24,9 +24,8 @@ RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	YES
 
-NO_STAGE=	yes
 do-install:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Install.PL -no_modules
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${PERL5} Install.PL -no_modules
 
 post-install:
 	@${ECHO}
