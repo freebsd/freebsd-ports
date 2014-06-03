@@ -3,6 +3,7 @@
 
 PORTNAME=	mpop
 PORTVERSION=	1.0.28
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -21,8 +22,7 @@ GSASL_DESC=	GSASL GNU SASL authentication support
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libidn
 

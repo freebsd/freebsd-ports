@@ -3,7 +3,7 @@
 
 PORTNAME=	jabberd
 DISTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}
@@ -24,11 +24,10 @@ OPTIONS_SINGLE_SASL=	CYRUS GSASL
 OPTIONS_DEFAULT=MYSQL DEBUG GSASL
 OPTIONS_SUB=	yes
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	run
 USE_OPENSSL=	yes
-USES=		iconv perl5 compiler:c11
+USES=		iconv perl5 compiler:c11 tar:xz
 USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \
