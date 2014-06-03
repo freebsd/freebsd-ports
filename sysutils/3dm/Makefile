@@ -13,6 +13,8 @@ DIST_SUBDIR=	3dm2
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
+DEPRECATED=	yes
+EXPIRATION_DATE=2014-06-30
 USE_RC_SUBR=	3dm2
 
 SUB_FILES=	pkg-message
