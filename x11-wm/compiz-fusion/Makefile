@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	compiz-fusion
-PORTVERSION=	0.8.4
-PORTREVISION=	2
+PORTVERSION=	0.8.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Metaport of compiz-fusion
 
 LIB_DEPENDS=	libcompizconfig.so:${PORTSDIR}/x11-wm/libcompizconfig
