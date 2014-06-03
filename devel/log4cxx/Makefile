@@ -3,10 +3,9 @@
 
 PORTNAME=	log4cxx
 PORTVERSION=	0.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	APACHE/logging/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,12 +13,13 @@ COMMENT=	C++ port of the Log4j project
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
-USES=		pathfix
+USE_AUTOTOOLS=	automake:env autoconf:env
+USES=		pathfix libtool
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	BOOST DOXYGEN
