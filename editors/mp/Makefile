@@ -3,6 +3,7 @@
 
 PORTNAME=	mp
 PORTVERSION=	5.2.8
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/mp/
 
