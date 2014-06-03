@@ -61,7 +61,7 @@ lib/gnutls3/libgnutls.a
 lib/gnutls3/libgnutls.la
 lib/gnutls3/libgnutls.so
 lib/gnutls3/libgnutls.so.28
-lib/gnutls3/libgnutls.so.28.21.3
+lib/gnutls3/libgnutls.so.28.21.5
 %%CXX%%lib/gnutls3/libgnutlsxx.a
 %%CXX%%lib/gnutls3/libgnutlsxx.la
 %%CXX%%lib/gnutls3/libgnutlsxx.so
