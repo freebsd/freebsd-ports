@@ -3,6 +3,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION=	1.10
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/%SUBDIR%/
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 LIB_DEPENDS=	librep.so:${PORTSDIR}/lang/librep
 RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake pathfix pkgconfig tar:xz libtool
 USE_XORG=	ice sm x11 xft xinerama xrandr xtst
 USE_GNOME=	cairo gnomehier gtk20
 GNU_CONFIGURE=	yes
