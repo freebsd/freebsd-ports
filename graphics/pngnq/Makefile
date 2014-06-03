@@ -3,16 +3,16 @@
 
 PORTNAME=	pngnq
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	A tool for quantizing PNG images in RGBA format
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 
@@ -23,15 +23,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		pkgconfig
 
 PORTDOCS=	README COPYING
-PLIST_FILES=	bin/pngcomp bin/pngnq
-MAN1=		pngnq.1
+PLIST_FILES=	bin/pngcomp bin/pngnq man/man1/pngnq.1.gz
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
 
