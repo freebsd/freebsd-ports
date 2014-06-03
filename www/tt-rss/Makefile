@@ -3,6 +3,7 @@
 
 PORTNAME=	tt-rss
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -27,21 +28,26 @@ SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl
 
 USE_RC_SUBR=	ttrssd
 
-OPTIONS_DEFINE=	CURL GD
+OPTIONS_DEFINE=	CURL GD DBLOCAL
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL
-OPTIONS_DEFAULT=	CURL GD MYSQL
+OPTIONS_DEFAULT=	CURL GD MYSQL DBLOCAL
 CURL_DESC=	Use SimplePie instead of Magpie
 GD_DESC=	Use OTP QR code generation
+DBLOCAL_DESC=	Database is local?
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 DB=		pgsql
+MYSQL=		"\#"
+PGSQL=
 .else
 USE_PHP+=	mysql
 DB=		mysql
+MYSQL=
+PGSQL=		"\#"
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
@@ -52,8 +58,14 @@ USE_PHP+=	curl
 USE_PHP+=	gd
 .endif
 
+.if ${PORT_OPTIONS:MDBLOCAL}
+DBLOCAL=
+.else
+DBLOCAL=	"\#"
+.endif
+
 SUB_FILES=	httpd-tt-rss.conf pkg-message
-SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN}
+SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN} MYSQL=${MYSQL} PGSQL=${PGSQL} DBLOCAL=${DBLOCAL}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
