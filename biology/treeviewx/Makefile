@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	treeviewx
-PORTVERSION=	0.5.1
-PORTREVISION=	8
+PORTVERSION=	${DISTVERSION}.1s20100823
+DISTVERSION=	0.5
 CATEGORIES=	biology
-MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/download/${PORTVERSION:S/.1//}/
-DISTNAME=	tv-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	tv-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogenetic tree viewer
 
 USE_WX=		2.8
-WX_COMPS=	wx contrib
+WX_COMP=	wx contrib
+WX_UNICODE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 
