@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	compiz
-PORTVERSION=	0.8.4
-PORTREVISION=	12
+PORTVERSION=	0.8.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Compiz Composite/Window Manager
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2014-06-02 19:14:25.669435783 +0100
++++ src/Makefile.in	2014-06-02 19:14:34.064435780 +0100
+@@ -292,7 +292,7 @@
+ 	-DIMAGEDIR=\"$(imagedir)\"   \
+ 	-DMETADATADIR=\"$(metadatadir)\"
+ 
+-compiz_LDADD = @COMPIZ_LIBS@ @GL_LIBS@ -lm -ldl
++compiz_LDADD = @COMPIZ_LIBS@ @GL_LIBS@ -lm
+ compiz_LDFLAGS = -export-dynamic -pthread
+ compiz_SOURCES = \
+ 	main.c	   \
