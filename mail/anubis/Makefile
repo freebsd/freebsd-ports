@@ -23,13 +23,13 @@ GSASL_DESC=	GSASL support (required for databases)
 GDBM_DESC=	GDBM backend
 SOCKS_DESC=	SOCKS proxy support
 
-USES=		pkgconfig
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	contrib/msg2smtp.pl
 USE_RC_SUBR=	anubis
 USE_AUTOTOOLS=	aclocal autoheader autoconf automake
 ACLOCAL_ARGS=	-I m4 -I am
 AUTOMAKE_ARGS=	--force --add-missing
 
-MAN1=		anubis.1
 INFO=		anubis
 PORTEXAMPLES=	1anubisrc 2anubisrc
 
@@ -37,7 +37,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Default requirement for anubis rc script
@@ -52,7 +51,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
 PORTEXAMPLES+=	anubis.scm anubisrc.guile
 PLIST_SUB+=	GUILE=""
 .else
@@ -61,19 +60,19 @@ PLIST_SUB+=	GUILE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGPGME}
-LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
 .else
 CONFIGURE_ARGS+=--without-gpgme
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=--without-gnutls
 .endif
 
 .if ${PORT_OPTIONS:MGSASL} || ${PORT_OPTIONS:MGDBM} || ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL}
-LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	libgsasl.so:${PORTSDIR}/security/gsasl
 PLIST_SUB+=	GSASL=""
 .else
 CONFIGURE_ARGS+=--without-gsasl
@@ -81,7 +80,7 @@ PLIST_SUB+=	GSASL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=--with-gdbm
 .endif
 
@@ -98,7 +97,7 @@ _REQUIRE+=	postgresql
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 .endif
 
@@ -122,15 +121,15 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*rc ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*rc ${STAGEDIR}${EXAMPLESDIR}
 .   if ${PORT_OPTIONS:MGUILE}
 	cd ${WRKSRC}/examples && \
-		${INSTALL_DATA} anubis.scm anubisrc.guile ${EXAMPLESDIR}
+		${INSTALL_DATA} anubis.scm anubisrc.guile ${STAGEDIR}${EXAMPLESDIR}
 .   endif
 .   if ${PORT_OPTIONS:MPAM}
-	@${MKDIR} ${EXAMPLESDIR}/pam
-	${INSTALL_DATA} ${WRKSRC}/examples/pam/anubis* ${EXAMPLESDIR}/pam
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/pam
+	${INSTALL_DATA} ${WRKSRC}/examples/pam/anubis* ${STAGEDIR}${EXAMPLESDIR}/pam
 .   endif
 .endif
 
