@@ -1,7 +1,11 @@
-include/sixel.h
-lib/libsixel.la
-lib/libsixel.so.0
-lib/libsixel.so
-lib/libsixel.a
 bin/img2sixel
 bin/sixel2png
+include/sixel.h
+lib/libsixel.a
+lib/libsixel.so.0
+lib/libsixel.so.0.0.0
+lib/libsixel.so
+libdata/pkgconfig/libsixel.pc
+man/man1/img2sixel.1.gz
+man/man1/sixel2png.1.gz
+man/man5/sixel.5.gz
