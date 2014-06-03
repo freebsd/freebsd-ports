@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS backend for Canon USB over IP protocol
 
 LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client
