@@ -14,14 +14,13 @@ WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PHPWEBAPP?=	${PREFIX}/www/data/web_app
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} -p ${PREFIX}/www/data
-	${CP} -R ${WRKSRC}/web_app/ ${PHPWEBAPP}
-	@${FIND} ${PHPWEBAPP} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PHPWEBAPP} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	${MKDIR} -p ${STAGEDIR}${PREFIX}/www/data
+	${CP} -R ${WRKSRC}/web_app/ ${STAGEDIR}${PHPWEBAPP}
+	@${FIND} ${STAGEDIR}${PHPWEBAPP} ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${PHPWEBAPP} -type d | ${SORT} -r | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/www/data 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
