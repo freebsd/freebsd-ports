@@ -321,7 +321,7 @@
 %%TEXMFDIR%%/tex/latex/preview/prshowlabels.def
 %%TEXMFDIR%%/tex/latex/preview/prtightpage.def
 %%TEXMFDIR%%/tex/latex/preview/prtracingall.def
+@dirrmtry %%TEXMFDIR%%/tex/latex/preview
 %%TEXMFDIR%%/doc/latex/styles/preview.dvi
-@dirrm %%TEXMFDIR%%/doc/latex/styles
-@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
-@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@dirrmtry %%TEXMFDIR%%/doc/latex/styles
+@dirrmtry %%TEXMFDIR%%/doc/latex
