@@ -22,9 +22,8 @@ LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 		libksba.so:${PORTSDIR}/security/libksba \
 		libpth.so:${PORTSDIR}/devel/pth
 
-USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
-USES=		gmake iconv
+USES=		gmake iconv tar:bzip2
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--enable-symcryptrun
 
@@ -51,7 +50,7 @@ STD_SOCKET_CONFIGURE_ENABLE=	socket
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 SCDAEMON_CONFIGURE_ENABLE=	scdaemon
-CURL_LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
 CURL_CONFIGURE_OFF=	--without-libcurl
 
