@@ -3,18 +3,17 @@
 
 PORTNAME=	libvmime
 PORTVERSION=	0.9.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	SF/vmime/vmime/0.9
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	An all-in-one Internet mail library
 
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
-LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgsasl.so:${PORTSDIR}/security/gsasl
 
-USE_BZIP2=	yes
-USES=		iconv gmake pkgconfig
+USES=		iconv gmake pkgconfig tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
