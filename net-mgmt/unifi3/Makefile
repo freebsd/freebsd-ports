@@ -42,6 +42,6 @@ post-extract:
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
-	${LN} -s ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
+	${LN} -sf ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
 
 .include <bsd.port.mk>
