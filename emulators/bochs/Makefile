@@ -74,8 +74,8 @@ VMX_DESC=	Enable Virtialization extensions
 VOODOO_DESC=	Enable 3dfx Voodoo Graphics emulation
 X86_64_DESC=	Enable x86-64 instructions support
 
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake pkgconfig libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_alsa_asoundlib_h=no
 CONFIGURE_ARGS=	--disable-docbook --disable-instrumentation
 
@@ -288,6 +288,9 @@ post-patch:
 		 ${WRKSRC}/gui/Makefile.in
 
 post-install:
+.for f in bochs bxcommit bximage
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
 .if ${PORT_OPTIONS:MPLUGINS}
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/bochs ! -type d | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
