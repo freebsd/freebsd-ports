@@ -6127,3 +6127,4 @@ lang/gnat-aux|lang/gcc-aux|2014-06-01|Has expired: Superceded by gcc4.9-based la
 lang/python31|lang/python33|2014-06-01|Has expired: Python 3.1 will be end-of-life soon, please migrate to lang/python33
 net/cvsup-mirror||2014-06-01|Removed: www, doc, gnats, ports repo gone; src repo deprecated
 multimedia/shell-fm||2014-06-02|Has expired: Unusable, subscription radio streaming service will come to an end
+security/py-posix1e|security/py-pylibacl|2014-06-03|Duplicate of security/py-pylibacl
