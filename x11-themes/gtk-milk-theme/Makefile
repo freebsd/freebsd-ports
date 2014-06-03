@@ -12,16 +12,15 @@ PKGNAMESUFFIX=	-theme
 DISTNAME=	Milk-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A port of Milk, Mac OS X theme
-
-TYPE?=		gtk
-
-THEME_NAME=	Milk
+COMMENT=	Port of Milk, Mac OS X theme
 
 USES=		tar:bzip2
 NO_BUILD=	yes
 
-.if ${TYPE} == "gtk"
+TYPE?=		gtk
+THEME_NAME=	Milk
+
+.if ${TYPE} == gtk
 THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
 PLIST_SUB+=	GTK20="" METACITY="@comment "
 USE_GNOME=	gtk20
@@ -37,7 +36,7 @@ post-extract:
 do-install:
 	@${MKDIR} ${STAGEDIR}${THEME_DIR}
 	${INSTALL_DATA} ${WRKSRC}/index.theme ${STAGEDIR}${THEME_DIR}
-.if ${TYPE} == "gtk"
+.if ${TYPE} == gtk
 	cd ${WRKSRC} && ${COPYTREE_SHARE} gtk-2.0 ${STAGEDIR}${THEME_DIR}
 .else
 	cd ${WRKSRC} && ${COPYTREE_SHARE} metacity-1 ${STAGEDIR}${THEME_DIR}
