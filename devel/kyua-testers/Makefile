@@ -11,7 +11,7 @@ PROJECTHOST=	kyua
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Kyua (automated testing framework) - Testers
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 
@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=TEST
 
 OPTIONS_SUB=		yes
 TEST_CONFIGURE_WITH=	atf
-TEST_LIB_DEPENDS=	libatf-c.so:${PORTSDIR}/devel/atf
+TEST_BUILD_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
 TEST_RUN_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
 TEST_USES=		pkgconfig
 
