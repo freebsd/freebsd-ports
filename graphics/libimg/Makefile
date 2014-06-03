@@ -11,9 +11,9 @@ DISTNAME=	img${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A library of image format handlers for Tk4.1 and later
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 DIR=		lib/Img1.2
 
@@ -28,7 +28,6 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 USES=		tk
 MAKE_ENV+=	TCL_VER=${TCL_VER}
 
-NO_STAGE=	yes
 # We don't need the bundled libraries:
 EXTRACT_AFTER_ARGS=	--exclude '*/libz/*' \
 		--exclude '*/compat/*' --exclude '*/libtiff/*' \
@@ -41,11 +40,9 @@ MAKE_ARGS=	PORTVERSION="${PORTVERSION}" LOCALBASE="${LOCALBASE}" \
 
 USE_LDCONFIG=	yes
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.pre.mk>
 

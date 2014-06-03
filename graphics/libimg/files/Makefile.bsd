@@ -41,8 +41,8 @@ pkgIndex.tcl: pkgIndex.tcl.in
 		< pkgIndex.tcl.in > pkgIndex.tcl
 
 DIR?		= lib/Img1.2
-INSTDIR		= ${LOCALBASE}/${DIR}
-LIBDIR		= ${LOCALBASE}/lib
+INSTDIR		= ${DESTDIR}${PREFIX}/${DIR}
+LIBDIR		= ${PREFIX}/lib
 
 ${INSTDIR} ${INSTDIR}/msgs:
 	${MKDIR} $@
