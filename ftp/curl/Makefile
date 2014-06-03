@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.36.0
-PORTREVISION=	1
+PORTVERSION=	7.37.0
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -38,7 +37,7 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 USE_PERL5=	build
-USES=		pathfix perl5 tar:lzma
+USES=		libtool:oldver pathfix perl5 tar:lzma
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -82,9 +81,11 @@ HEIMDAL_PORT_CONFIGURE_ON=	--with-gssapi=${HEIMDAL_HOME}
 HEIMDAL_PORT_CPPFLAGS=	-I${HEIMDAL_HOME}/include
 HEIMDAL_PORT_LDFLAGS=	-L${HEIMDAL_HOME}/lib
 HEIMDAL_PORT_LIB_DEPENDS=	libgssapi.so.3:${PORTSDIR}/security/heimdal
+HTTP2_BUILD_DEPENDS=	nghttp2>=0.4.0:${PORTSDIR}/www/nghttp2
 HTTP2_CONFIGURE_OFF=	--without-nghttp2
 HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
 HTTP2_LIB_DEPENDS=	libnghttp2.so:${PORTSDIR}/www/nghttp2
+HTTP2_RUN_DEPENDS=	nghttp2>=0.4.0:${PORTSDIR}/www/nghttp2
 HTTP2_USES=		pkgconfig
 IDN_CONFIGURE_OFF=	--without-libidn
 IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
@@ -159,8 +160,8 @@ CONFIGURE_ARGS+=--without-gssapi
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|; s|lib/pkgconfig|libdata/pkgconfig|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|$$| docs|; /^DIST_SUBDIRS = / s| docs||; /cd docs &&/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|; s|lib/pkgconfig|libdata/pkgconfig|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|include <gssapi.h>|include <gssapi/gssapi.h>|' ${WRKSRC}/lib/curl_gssapi.h ${WRKSRC}/lib/urldata.h
 
 post-install:
