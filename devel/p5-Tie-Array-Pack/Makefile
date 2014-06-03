@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Array implemented as a packed string
 
 USES=		perl5

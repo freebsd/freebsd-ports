@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy mocking of LWP packages
 
 RUN_DEPENDS=	p5-Test-MockObject>=1.08:${PORTSDIR}/devel/p5-Test-MockObject

@@ -7,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightleight form validation library
 
 LICENSE=	ART10 GPLv1

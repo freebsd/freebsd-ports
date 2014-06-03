@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for camelcase, de-camelcase
 
 LICENSE=	ART10 GPLv1
