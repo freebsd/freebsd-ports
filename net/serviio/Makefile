@@ -3,7 +3,7 @@
 
 PORTNAME=	serviio
 PORTVERSION=	1.4.1.2
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz
@@ -29,26 +29,18 @@ EXTRACT_AFTER_ARGS=--exclude junit.jar	\
 USERS=	dlna
 GROUPS=	dlna
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${JAVAJARDIR}/${PORTNAME}/plugins
-	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${JAVAJARDIR}/${PORTNAME}/
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/plugins
+	${INSTALL_DATA} ${WRKSRC}/lib/*.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 .for f in application-profiles profiles log4j
-	${INSTALL_DATA} ${WRKSRC}/config/$f.xml ${ETCDIR}/$f.dist.xml
-	${TEST} -e ${ETCDIR}/$f.xml || \
-		${INSTALL_DATA} ${WRKSRC}/config/$f.xml ${ETCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/config/$f.xml \
+		${STAGEDIR}${ETCDIR}/$f.dist.xml
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/console-log4j.properties	\
-		${ETCDIR}/console-log4j.dist.properties
-	${TEST} -e ${ETCDIR}/console-log4.dist.properties || \
-		${INSTALL_DATA} ${FILESDIR}/console-log4j.properties ${ETCDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/serviiod ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/serviio-console ${PREFIX}/bin
-
-post-install:
-	# =========================================================
-	@${FMT} ${PKGMESSAGE}
-	# =========================================================
+		${STAGEDIR}${ETCDIR}/console-log4j.dist.properties
+	${INSTALL_SCRIPT} ${WRKDIR}/serviiod ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKDIR}/serviio-console ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
