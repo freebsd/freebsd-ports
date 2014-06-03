@@ -1,7 +1,6 @@
 bin/encfs
 bin/encfsctl
 bin/encfssh
-lib/libencfs.la
 lib/libencfs.so
 lib/libencfs.so.6
 lib/libencfs.so.6.0.1
