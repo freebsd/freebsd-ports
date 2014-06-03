@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htmlentities
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
