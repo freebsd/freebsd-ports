@@ -1,26 +1,6 @@
 %%WITH_BOT%%bin/botti
 bin/irssi
-@unexec if cmp -s %D/etc/irssi.conf %D/etc/irssi.conf.sample; then rm -f %D/etc/irssi.conf; fi
 etc/irssi.conf.sample
-%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.a
-%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.la
-%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/Irc.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/TextUI.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/UI.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
 include/irssi/irssi-config.h
 include/irssi/irssi-version.h
 include/irssi/src/common.h
@@ -98,6 +78,7 @@ include/irssi/src/fe-common/irc/module-formats.h
 include/irssi/src/fe-common/irc/module.h
 include/irssi/src/fe-common/irc/notifylist/module-formats.h
 include/irssi/src/fe-common/irc/notifylist/module.h
+include/irssi/src/fe-text/statusbar-item.h
 include/irssi/src/irc/core/bans.h
 include/irssi/src/irc/core/channel-rejoin.h
 include/irssi/src/irc/core/ctcp.h
@@ -132,16 +113,35 @@ include/irssi/src/irc/notifylist/notify-setup.h
 include/irssi/src/irc/notifylist/notifylist.h
 include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
-include/irssi/src/fe-text/statusbar-item.h
-%%DOCSDIR%%/design.txt
-%%DOCSDIR%%/faq.html
-%%DOCSDIR%%/faq.txt
-%%DOCSDIR%%/formats.txt
-%%DOCSDIR%%/manual.txt
-%%DOCSDIR%%/perl.txt
-%%DOCSDIR%%/signals.txt
-%%DOCSDIR%%/special_vars.txt
-%%DOCSDIR%%/startup-HOWTO.html
+%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.a
+%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.la
+%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/Irc.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/TextUI.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/UI.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
+man/man1/irssi.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/design.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/formats.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/perl.txt
+%%PORTDOCS%%%%DOCSDIR%%/signals.txt
+%%PORTDOCS%%%%DOCSDIR%%/special_vars.txt
+%%PORTDOCS%%%%DOCSDIR%%/startup-HOWTO.html
 %%DATADIR%%/help/accept
 %%DATADIR%%/help/action
 %%DATADIR%%/help/admin
@@ -280,17 +280,17 @@ include/irssi/src/fe-text/statusbar-item.h
 %%DATADIR%%/scripts/usercount.pl
 %%DATADIR%%/themes/colorless.theme
 %%DATADIR%%/themes/default.theme
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Irssi
 @exec mkdir -p %D/lib/irssi/modules
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%
-@dirrm %%DOCSDIR%%
 @dirrmtry lib/irssi/modules
 @dirrmtry lib/irssi
 @dirrm include/irssi/src/lib-config
@@ -299,12 +299,12 @@ include/irssi/src/fe-text/statusbar-item.h
 @dirrm include/irssi/src/irc/dcc
 @dirrm include/irssi/src/irc/core
 @dirrm include/irssi/src/irc
+@dirrm include/irssi/src/fe-text
 @dirrm include/irssi/src/fe-common/irc/notifylist
 @dirrm include/irssi/src/fe-common/irc/dcc
 @dirrm include/irssi/src/fe-common/irc
 @dirrm include/irssi/src/fe-common/core
 @dirrm include/irssi/src/fe-common
-@dirrm include/irssi/src/fe-text
 @dirrm include/irssi/src/core
 @dirrm include/irssi/src
 @dirrm include/irssi

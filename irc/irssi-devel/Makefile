@@ -1,37 +1,30 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 # $FreeBSD$
 
 PORTNAME=	irssi
-PORTVERSION=	20130915
+PORTVERSION=	20140530
 CATEGORIES=	irc
-MASTER_SITES=	http://mirror.shatow.net/freebsd/${PORTNAME}/ \
-		http://bsdcrew.de/distfiles/ \
-		http://mirror.irssi.org/snapshots/
+MASTER_SITES=	http://mirror.irssi.org/snapshots/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A modular IRC client with many features
 
-LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-0.8*
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
+USES=		pkgconfig ncurses gmake
+CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 
-MAN1=		irssi.1
-
-OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT SSL
+OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT SSL DOCS
 SOCKS_DESC=	Socks proxy support
 BOT_DESC=	Bot support
 OPTIONS_DEFAULT=	PERL IPV6 SSL
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.16-rc1
+WRKSRC=	${WRKDIR}/${PORTNAME}-0.8.17-svn
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-# Process options.
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
@@ -77,14 +70,19 @@ PLIST_SUB+=	WITH_BOT="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e 's|/etc|${PREFIX}&|' \
 		${WRKSRC}/docs/irssi.1
+.if empty(PORT_OPTIONS:MDOCS)
+	${REINPLACE_CMD} -e \
+		'/^install-data-am:/ s|install-docDATA||' \
+		${WRKSRC}/docs/Makefile.in
+.endif
 
 post-configure:
 	@${MV} ${WRKSRC}/irssi.conf ${WRKSRC}/irssi.conf.sample
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/irssi.conf ]; then \
-		${ECHO} "Installing default configuration file."; \
-		${INSTALL_DATA} ${WRKSRC}/irssi.conf.sample ${PREFIX}/etc/irssi.conf ; \
-	fi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
+.if ${PORT_OPTIONS:MPERL}
+	@${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
+.endif
 
 .include <bsd.port.mk>
