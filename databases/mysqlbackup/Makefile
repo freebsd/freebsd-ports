@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Creates MySQL backups on a periodic basis
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_MYSQL=	yes
