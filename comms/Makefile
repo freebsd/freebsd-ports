@@ -87,6 +87,7 @@
     SUBDIR += lirc
     SUBDIR += locator
     SUBDIR += lrzsz
+    SUBDIR += lysdr
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
     SUBDIR += mlan3
