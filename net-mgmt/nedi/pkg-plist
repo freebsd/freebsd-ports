@@ -1,5 +1,5 @@
-etc/nedi.conf.sample
-etc/nedi.seedlist.sample
+@sample etc/nedi.conf.sample
+@sample etc/nedi.seedlist.sample
 %%WWWDIR%%/README
 %%WWWDIR%%/contrib/1.3.6.1.4.1.3076.1.2.1.1.1.2.def
 %%WWWDIR%%/contrib/1.3.6.1.4.1.3854.1.2.2.1.1.def
