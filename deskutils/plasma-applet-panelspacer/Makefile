@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-plasmoid-${PORTVERSION}
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Panel spacer plasma applet for KDE4
 
+LICENSE=	GPLv2
+
 USES=		cmake
 USE_KDE4=	automoc4 kdeprefix workspace
 USE_QT4=	gui dbus network opengl svg webkit xml \
@@ -21,5 +23,4 @@ WRKSRC=		${WRKDIR}/Panelspacer_from_svn_pour_kdelook-tmp
 PLIST_FILES=	lib/kde4/plasma_applet_panelspacer.so \
 		share/kde4/services/plasma-applet-panelspacer.desktop
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
