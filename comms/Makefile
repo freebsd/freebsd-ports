@@ -22,6 +22,7 @@
     SUBDIR += chu
     SUBDIR += comserv
     SUBDIR += concordance
+    SUBDIR += congruity
     SUBDIR += conserver
     SUBDIR += conserver-com
     SUBDIR += cutecom
