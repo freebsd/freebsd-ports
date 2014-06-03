@@ -18,7 +18,6 @@ OPTIONS_DEFINE=	GD MYSQLSERVER DOCS
 OPTIONS_DEFAULT=	GD
 MYSQLSERVER_DESC=	Use MySQL-Server on localhost
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PHP=	mysql mbstring pcre xml iconv
@@ -41,42 +40,35 @@ PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADE
 CONFIGS=	inc/config.php inc/config_user.php
 
 do-install:
-	@${FIND} -s ${WRKSRC} -type  d | ${SED} -e 's,^${WRKSRC},${WWWDIR},' \
+	@${FIND} -s ${WRKSRC} -type  d | ${SED} -e 's,^${WRKSRC},${STAGEDIR}${WWWDIR},' \
 		| ${XARGS} ${MKDIR}
-	${INSTALL_DATA} -v ${WRKSRC}/*.php ${WWWDIR}
-	${INSTALL_DATA} -v ${WRKSRC}/*.css ${WWWDIR}
-	${INSTALL_DATA} -v ${WRKSRC}/*.js ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/.htaccess ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/tmp/.htaccess ${WWWDIR}/tmp
-	${INSTALL_DATA} ${WRKSRC}/favicon.ico ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/help.html ${WWWDIR}
-	${INSTALL_DATA} -v ${WRKSRC}/img/*.gif ${WWWDIR}/img
-	${INSTALL_DATA} -v ${WRKSRC}/img/*.png ${WWWDIR}/img
-	${INSTALL_DATA} -v ${WRKSRC}/img/*.jpg ${WWWDIR}/img
-	( ${FIND} ${WRKSRC}/inc -type f -not -name config_user.php -a -not -name config.php; ${ECHO} ${WWWDIR}/inc ) \
+	${INSTALL_DATA} -v ${WRKSRC}/*.php ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} -v ${WRKSRC}/*.css ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} -v ${WRKSRC}/*.js ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/.htaccess ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/tmp/.htaccess ${STAGEDIR}${WWWDIR}/tmp
+	${INSTALL_DATA} ${WRKSRC}/favicon.ico ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/help.html ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} -v ${WRKSRC}/img/*.gif ${STAGEDIR}${WWWDIR}/img
+	${INSTALL_DATA} -v ${WRKSRC}/img/*.png ${STAGEDIR}${WWWDIR}/img
+	${INSTALL_DATA} -v ${WRKSRC}/img/*.jpg ${STAGEDIR}${WWWDIR}/img
+	( ${FIND} ${WRKSRC}/inc -type f -not -name config_user.php -a -not -name config.php; ${ECHO} ${STAGEDIR}${WWWDIR}/inc ) \
 		| ${XARGS} ${INSTALL_DATA} -v
-	${INSTALL_DATA} -v ${WRKSRC}/magpierss/*.inc ${WWWDIR}/magpierss
-	${INSTALL_DATA} ${WRKSRC}/magpierss/extlib/Snoopy.class.inc ${WWWDIR}/magpierss/extlib
-	${INSTALL_DATA} -v ${WRKSRC}/opml/*.opml ${WWWDIR}/opml
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/magpierss/cache
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/img/feeds
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/tmp
+	${INSTALL_DATA} -v ${WRKSRC}/magpierss/*.inc ${STAGEDIR}${WWWDIR}/magpierss
+	${INSTALL_DATA} ${WRKSRC}/magpierss/extlib/Snoopy.class.inc ${STAGEDIR}${WWWDIR}/magpierss/extlib
+	${INSTALL_DATA} -v ${WRKSRC}/opml/*.opml ${STAGEDIR}${WWWDIR}/opml
+	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/magpierss/cache
+	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/img/feeds
+	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/tmp
 .for FILE in ${CONFIGS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${WWWDIR}/${FILE}.sample
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${WWWDIR}/${FILE}.sample
 .endfor
 
 post-install:
-.for FILE in ${CONFIGS}
-. if !exists(${WWWDIR}/${FILE})
-	${INSTALL_DATA} ${WWWDIR}/${FILE}.sample ${WWWDIR}/${FILE}
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/${FILE}
-	@${CHMOD} u+w ${WWWDIR}/${FILE}
-. endif
-.endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
