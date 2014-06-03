@@ -1,9 +1,9 @@
 include/uninameslist.h
 lib/libuninameslist.a
-lib/libuninameslist.la
 lib/libuninameslist.so
 lib/libuninameslist.so.0
+lib/libuninameslist.so.0.0.2
 lib/libuninameslist-fr.a
-lib/libuninameslist-fr.la
 lib/libuninameslist-fr.so
 lib/libuninameslist-fr.so.0
+lib/libuninameslist-fr.so.0.0.2
