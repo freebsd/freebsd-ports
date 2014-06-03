@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="027af74d-eb56-11e3-9032-000c2980a9f3">
+    <topic>gnutls -- client-side memory corruption</topic>
+    <affects>
+      <package>
+	<name>gnutls3</name>
+	<range><ge>3.1</ge><lt>3.1.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuTLS project reports:</p>
+	<blockquote cite="www.gnutls.org/security.html#GNUTLS-SA-2014-3">
+	  <p>This vulnerability affects the client side of the gnutls library.
+	    A server that sends a specially crafted ServerHello could corrupt
+	    the memory of a requesting client.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3466</cvename>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-3</url>
+    </references>
+    <dates>
+      <discovery>2014-05-14</discovery>
+      <entry>2014-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="77e2e631-e742-11e3-9a25-5404a6a6412c">
     <topic>mumble -- multiple vulnerabilities</topic>
     <affects>
