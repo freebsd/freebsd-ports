@@ -17,14 +17,19 @@
 
 . /etc/rc.subr
 
-name="openbgpd"
+name=openbgpd
 rcvar=openbgpd_enable
 
-extra_commands="reload"
+extra_commands=reload
 command="%%PREFIX%%/sbin/bgpd"
 required_files="%%PREFIX%%/etc/bgpd.conf"
 
-load_rc_config "$name"
-: ${openbgpd_enable="NO"}
+: ${openbgpd_enable=NO}
 
+check_process()
+{
+	/bin/pgrep -f 'bgpd: parent.*'
+}
+
+load_rc_config $name
 run_rc_command "$1"
