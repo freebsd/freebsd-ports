@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	c++-gtk-utils
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 DISTNAME=	c%2B%2B-gtk-utils-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Lightweight library for programming GTK+ programs
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib pathfix pkgconfig
+USES=		compiler:c++11-lib libtool pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
@@ -34,7 +34,7 @@ post-configure:
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcxx-gtk-utils-2-2.2.so.1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcxx-gtk-utils-2-2.2.so.0.1.3
 .endif
 
 .include <bsd.port.mk>
