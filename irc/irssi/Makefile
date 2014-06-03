@@ -2,18 +2,18 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.16
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	irc
 MASTER_SITES=	http://mirror.irssi.org/
 
 MAINTAINER?=	vanilla@FreeBSD.org
-COMMENT?=	A modular IRC client with many features
+COMMENT?=	Modular IRC client with many features
 
 LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
-USES=		pkgconfig ncurses gmake tar:bzip2
+USES=		pkgconfig ncurses gmake tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 
