@@ -11,14 +11,12 @@ COMMENT=	A GTK2 bitmap font editor
 
 LICENSE=	MIT
 
-USE_BZIP2=	yes
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		gbdfed.1
-PLIST_FILES=	bin/gbdfed
+PLIST_FILES=	bin/gbdfed \
+		man/man1/gbdfed.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
