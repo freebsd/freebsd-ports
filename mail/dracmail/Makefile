@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/dracmail/release/
 DISTNAME=	dracMail-${PORTVERSION}_release
 
-MAINTAINER=	fgheorghe@dracmail.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DracMail is a webmail interface built using PHP
 
 RUN_DEPENDS+=	php:${PORTSDIR}/lang/php5
