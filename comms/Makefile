@@ -21,6 +21,7 @@
     SUBDIR += chirp
     SUBDIR += chu
     SUBDIR += comserv
+    SUBDIR += concordance
     SUBDIR += conserver
     SUBDIR += conserver-com
     SUBDIR += cutecom
