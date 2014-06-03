@@ -3,12 +3,14 @@
 
 PORTNAME=	nedi
 DISTVERSION=	1.0.w
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/w
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network discovery and monitoring tool
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		p5-Net-Telnet-Cisco>=0:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco \
