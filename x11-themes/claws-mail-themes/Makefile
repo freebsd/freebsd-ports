@@ -6,7 +6,7 @@ PORTVERSION=	20120129
 CATEGORIES=	x11-themes mail
 MASTER_SITES=	http://www.claws-mail.org/themes/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Claws-Mail Themes
 
 NO_BUILD=	yes
