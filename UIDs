@@ -208,6 +208,7 @@ riak:*:667:667::0:0:Riak user:/usr/local/lib/riak:/bin/sh
 bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
+zetacoin:*:780:780::0:0:ZetaCoin Daemon:/nonexistent:/usr/sbin/nologin
 foreman_proxy:*:812:812::0:0:Foreman Smart Proxy:/usr/local/share/foreman-proxy:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
 jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins:/bin/sh
