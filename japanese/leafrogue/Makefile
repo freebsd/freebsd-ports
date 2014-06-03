@@ -8,7 +8,7 @@ CATEGORIES=	japanese games
 MASTER_SITES=	http://games.roguelife.org/~roguelike/leaf/dl/
 DISTNAME=	lfrog${PORTVERSION:S/.//}
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LeafRogue for message separated version of Rogue-clone
 
 RUN_DEPENDS=	rogue_s:${PORTSDIR}/japanese/rogue_s

@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.voip-info.jp/asterisk/sounds/${VENDORVERSION:S|.|_|}/ \
 PKGNAMESUFFIX=	-sounds
 DISTNAME=	asterisk-sound-jp_${VENDORVERSION:S|.||}_pre
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese sound files for Asterisk
 
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
