@@ -3,7 +3,7 @@
 
 PORTNAME=	dico
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -12,10 +12,9 @@ PKGNAMEPREFIX=	gnu-
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Flexible modular implementation of DICT server
 
-USE_XZ=		yes
 USE_LDCONFIG=	yes
-USES=		gmake
-USE_AUTOTOOLS=	libltdl libtool
+USES=		tar:xz gmake libtool
+USE_AUTOTOOLS=	libltdl
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-error=return-type
