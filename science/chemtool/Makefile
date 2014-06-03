@@ -19,24 +19,21 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-emf=yes --with-localedir=${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 #isolate libEMF stuff
-LIB_DEPENDS+=	EMF.1:${PORTSDIR}/graphics/libemf
-CFLAGS+=	 -I${LOCALBASE}/include/libEMF
-
-MAN1=	chemtool.1 cht.1
+LIB_DEPENDS+=	libEMF.so:${PORTSDIR}/graphics/libemf
+CFLAGS+=	-I${LOCALBASE}/include/libEMF
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/chemtool ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src-cht/cht ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/chemtool.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cht.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/chemtool ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src-cht/cht ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/chemtool.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cht.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

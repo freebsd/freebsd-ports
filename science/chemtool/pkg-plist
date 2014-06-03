@@ -1,5 +1,7 @@
 bin/chemtool
 bin/cht
+man/man1/chemtool.1.gz
+man/man1/cht.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/14263232.mol
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/AMP.cht
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Adenosine.cht
