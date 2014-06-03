@@ -3,7 +3,7 @@
 
 PORTNAME=		kicad
 DISTVERSION=    r${BZR_SRC_REV}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=		cad
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=     mr
@@ -37,14 +37,14 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-#USE_GCC=	yes
-USES=		tar:bzip2 cmake gettext
+USES=		desktop-file-utils shared-mime-info compiler:c++11-lang tar:bzip2 cmake gettext
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DCMAKE_BUILD_TYPE="Debug" \
 		-DKICAD_TESTING_VERSION=ON \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
-		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
+		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
+		-DKICAD_SKIP_BOOST=YES
 
 .if exists(${LOCALBASE}/bin/konqueror)
 RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kde4-baseapps
