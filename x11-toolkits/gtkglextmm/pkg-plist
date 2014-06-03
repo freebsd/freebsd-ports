@@ -30,13 +30,13 @@ lib/gtkglextmm-1.2/proc/m4/convert.m4
 lib/gtkglextmm-1.2/proc/m4/convert_gdkglext.m4
 lib/gtkglextmm-1.2/proc/m4/convert_gtkglext.m4
 lib/libgdkglextmm-x11-1.2.a
-lib/libgdkglextmm-x11-1.2.la
 lib/libgdkglextmm-x11-1.2.so
 lib/libgdkglextmm-x11-1.2.so.0
+lib/libgdkglextmm-x11-1.2.so.0.0.0
 lib/libgtkglextmm-x11-1.2.a
-lib/libgtkglextmm-x11-1.2.la
 lib/libgtkglextmm-x11-1.2.so
 lib/libgtkglextmm-x11-1.2.so.0
+lib/libgtkglextmm-x11-1.2.so.0.0.0
 libdata/pkgconfig/gdkglextmm-1.2.pc
 libdata/pkgconfig/gdkglextmm-x11-1.2.pc
 libdata/pkgconfig/gtkglextmm-1.2.pc
