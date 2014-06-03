@@ -1,10 +1,8 @@
-Phex is a Java multi platform and spyware free gnutella client.
+Phex is a multi-platform and spyware-free Gnutella client written in Java.
 
-o Automatic search functionality to find new download candidates.
-o Download resuming across different hosts.
-o Advanced configuration options.
-o Passive searching for files.
-
-Visit these following web pages for more information:
+- Automatic search functionality to find new download candidates
+- Download resuming across different hosts
+- Advanced configuration options
+- Passive searching for files
 
 WWW: http://phex.sourceforge.net/
