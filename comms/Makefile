@@ -74,6 +74,7 @@
     SUBDIR += kb
     SUBDIR += kermit
     SUBDIR += kremotecontrol
+    SUBDIR += libconcord
     SUBDIR += libfec
     SUBDIR += libimobiledevice
     SUBDIR += libirman
