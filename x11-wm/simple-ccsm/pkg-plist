@@ -50,6 +50,7 @@ share/locale/sv/LC_MESSAGES/simple-ccsm.mo
 share/locale/tr/LC_MESSAGES/simple-ccsm.mo
 share/locale/zh_CN/LC_MESSAGES/simple-ccsm.mo
 share/locale/zh_TW/LC_MESSAGES/simple-ccsm.mo
+%%PYTHON_SITELIBDIR%%/simple_ccsm-0.8.8-py2.7.egg-info
 @dirrmtry share/simple-ccsm/profiles
 @dirrmtry share/simple-ccsm/images
 @dirrmtry share/simple-ccsm
