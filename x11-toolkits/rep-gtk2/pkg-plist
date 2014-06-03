@@ -1,6 +1,5 @@
 include/rep-gtk/rep-gtk.h
 lib/rep/gui/gtk-2/gtk.a
-lib/rep/gui/gtk-2/gtk.la
 lib/rep/gui/gtk-2/gtk.so
 libdata/pkgconfig/rep-gtk.pc
 @dirrm lib/rep/gui/gtk-2

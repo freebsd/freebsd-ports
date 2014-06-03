@@ -3,6 +3,7 @@
 
 PORTNAME=	rep-gtk2
 PORTVERSION=	0.90.8.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.tuxfamily.org/librep/rep-gtk/%SUBDIR%/
@@ -16,10 +17,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	librep.so:${PORTSDIR}/lang/librep
 
-USE_XZ=		yes
-USES=		gmake pathfix pkgconfig
+USES=		tar:xz gmake pathfix pkgconfig libtool
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
