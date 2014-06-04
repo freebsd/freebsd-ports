@@ -6,7 +6,7 @@ CATEGORIES=	www java
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin-svnkit
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web client for browsing Subversion repositories
 
 LICENSE=	GPLv3
@@ -19,7 +19,6 @@ OPTIONS_SINGLE=	AS
 OPTIONS_SINGLE_AS=	TOMCAT6
 OPTIONS_DEFAULT=	TOMCAT6
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOMCAT6}
@@ -43,8 +42,7 @@ post-extract:
 	@${TAR} xf ${WRKSRC}/svn.war -C ${WRKDIR}/${PORTDIRNAME}
 
 do-install:
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${APPHOME}/webapps/${PORTDIRNAME}
-	cd ${WRKDIR}/${PORTDIRNAME} && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTDIRNAME}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${STAGEDIR}${APPHOME}/webapps/${PORTDIRNAME}
+	cd ${WRKDIR}/${PORTDIRNAME} && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTDIRNAME}
 
 .include <bsd.port.mk>
