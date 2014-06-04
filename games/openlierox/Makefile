@@ -34,6 +34,8 @@ CMAKE_ARGS=	-DHAWKNL_BUILTIN=YES \
 
 WRKSRC=		${WRKDIR}/OpenLieroX
 
+PORTSCOUT=	skipv:0.59_beta10 # unstable
+
 PORTDOCS=	*
 PORTDATA=	*
 
