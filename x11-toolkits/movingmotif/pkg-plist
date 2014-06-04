@@ -2,11 +2,9 @@ bin/Scrollingtest
 bin/Rottest
 bin/ezdrawtest
 bin/histbar
-lib/libmindsrc.a
-lib/libmindsrc.la
 lib/libmindsrc.so
 lib/libmindsrc.so.0
-lib/libmovingmotif.a
-lib/libmovingmotif.la
+lib/libmindsrc.so.0.0.0
 lib/libmovingmotif.so
 lib/libmovingmotif.so.0
+lib/libmovingmotif.so.0.0.0
