@@ -22,6 +22,7 @@
 .Sh SYNOPSIS
 .Nm
 .Op Fl dhmuVv
+.Op Fl a Ar yyyymmdd date
 .Op Fl D Ar portdir
 .Op Fl -help
 .Op Fl -version
@@ -33,6 +34,8 @@ installed are omitted.
 .Pp
 The following options are available:
 .Bl -tag -width indent
+.It Fl a Ar yyyymmdd date
+only display sections later than the date specified in yyyymmdd format
 .It Fl D Ar portsdir
 use portsdir as ports directory instead of /usr/ports
 .It Fl d
@@ -72,6 +75,6 @@ To include details of installed/uninstalled ports for MIXED sections:
 .Sh AUTHORS
 .An "Alex Stangl" Aq alex@stangl.us
 .Sh BUGS
-The concept of machine-interpreting the APPLIES: line in /usr/ports/UPDATING,
+The concept of machine-interpreting the AFFECTS: line in /usr/ports/UPDATING,
 which were intended for human consumption, is dubious. It would be nice to
 evolve some more robust method for communicating this information.

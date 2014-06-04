@@ -17,10 +17,7 @@
 # Check /usr/ports/UPDATING file for all sections matching packages
 # that are installed, and outputting those sections.
 # Intended to be used prior to upgrading ports
-# Usage: portupdatescan [-dDhmuvV] [--help] [--version]
-# Created:      2006/12/21	Alex Stangl
-# Updates:      2008/02/04     Alex Stangl  INDEX computation change from Tom Doherty
-#               2008/07/21     Alex Stangl  Tolerate problems w/ MOVED & UPDATING
+# Usage: portupdatescan [-dhmuvV] [-a yyyymmdd_date] [-D portsdir] [--help] [--version]
 
 use Text::ParseWords;
 use Getopt::Std;
@@ -29,7 +26,8 @@ use strict;
 # Display usage and exit
 sub HELP_MESSAGE() {
 	print <<EOF;
-Usage: portupdate-scan [-dhmuvV] [-D portsdir] [--help] [--version]
+Usage: portupdate-scan [-dhmuvV] [-a yyyymmdd_date] [-D portsdir] [--help] [--version]
+  -a             display sections later than date specified in YYYYMMDD format
   -d             display additional debugging info
   -D portsdir    override default port directory
   -h, --help     display this help and exit
@@ -42,25 +40,34 @@ EOF
 }
 
 sub VERSION_MESSAGE() {
-       print "portupdate-scan 0.3\n";
+	print "portupdate-scan 0.4\n";
 }
 
 # Fetch cmdline args, display usage if appropriate
 $Getopt::Std::STANDARD_HELP_VERSION=1;          # std, not paranoia behavior
 # our($opt_d, $opt_h, $opt_m, $opt_u, $opt_v, $opt_V);
 my %opt;            # map of command-line options
-HELP_MESSAGE() unless getopts("dD:hmuvV", \%opt);
+HELP_MESSAGE() unless getopts("dD:hmuvVa:", \%opt);
 HELP_MESSAGE() if $opt{h};
 VERSION_MESSAGE() && exit if $opt{V};
 
+my $afterDate = $opt{a};            # display sections later than this date
 my $portsdir = $opt{D} || "/usr/ports";     # ports directory
 
 my $portIndexFile = "$portsdir/" . `make -f $portsdir/Makefile -V INDEXFILE`;      # port index file
+print "+ portIndexFile = $portIndexFile\n" if $opt{d};
+
+# Auto-detect whether PKGNG is in use.
+`env TMPDIR=/dev/null ASSUME_ALWAYS_YES=1 PACKAGESITE=file:///nonexistent pkg info -x 'pkg(-devel)?\$' >/dev/null 2>&1`;
+my $pkgngInUse = !$?;
+print "+ PKGNG in use\n" if $opt{d} && $pkgngInUse;
+print "+ Legacy PKG manager in use\n" if $opt{d} && !$pkgngInUse;
+
 my $movedFile = "$portsdir/MOVED";          # file w/ port renames/deletes
 my $updatingFile = "$portsdir/UPDATING";    # file w/ ports update news
 
-my @portlist = `pkg_info -aoq`
-    or die "Error trying to execute pkg_info -aoq: $!";
+my @portlist = $pkgngInUse ? `pkg info -aoq` : `pkg_info -aoq`
+    or die "Error trying to execute pkg info -aoq: $!";
 my %installedPorts =
     map {chomp($_);$_, 1} @portlist;    # map of installed ports -> 1
 
@@ -83,10 +90,10 @@ sub processBlock(@) {
 	my ($affects, $remainder, $line);
 	my $index = 0;
 	foreach $line (@_) {
-               if ($line =~ /^\s*AFFECTS:/i) {
+		if ($line =~ /^\s*AFFECTS:/i) {
 			$affects = $line;
 			$remainder = $index;
-               } elsif ($affects and $line =~ /^\s*AUTHOR/i) {
+		} elsif ($affects and $line =~ /^\s*AUTHOR/i) {
 			last;
 		} elsif ($affects) {
 			$affects .= $line;
@@ -132,8 +139,7 @@ sub parseexpr($);	# forward declaration needed because of recursion
 sub parseexpr($) {
 	my @retval;
 	my $sepExp = "(,\\s+and\\s+|,\\s+or\\s+|,\\s+|\\s+and\\s+|\\s+or\\s+|\\s+)";
-	if ($_[0] =~ /{.*,.*}/)
-	{
+	if ($_[0] =~ /{.*,.*}/) {
 		# Handle expression like textproc/{senna,p5-Senna}
 		# to produce textproc/senna, textproc/p5-Senna
 		my ($prefix, $subexpr, $suffix) = ($_[0] =~ /([^{]*){([^}]*)}(.*)/);
@@ -141,6 +147,18 @@ sub parseexpr($) {
 		# Parse portname fragment contained within braces
 		# Breaks string at "," and discards quotes and single backslashes
 		my @exprs = &quotewords(",", 0, $subexpr);
+		my $line;
+		foreach $line (@exprs) {
+			push @retval, parseexpr($prefix . $line . $suffix);
+		}
+	} elsif ($_[0] =~ /{.*\|.*}/) {
+		# Handle expression like textproc/{senna|p5-Senna}
+		# to produce textproc/senna, textproc/p5-Senna
+		my ($prefix, $subexpr, $suffix) = ($_[0] =~ /([^{]*){([^}]*)}(.*)/);
+
+		# Parse portname fragment contained within braces
+		# Breaks string at "|" and discards quotes and single backslashes
+		my @exprs = &quotewords('\|', 0, $subexpr);
 		my $line;
 		foreach $line (@exprs) {
 			push @retval, parseexpr($prefix . $line . $suffix);
@@ -164,7 +182,7 @@ sub parseexpr($) {
 		# Handle "dir1/port1 and dir2/port2" recursively.
 		my ($prefix, $sep, $suffix) = ($_[0] =~ /(.*?)$sepExp(.*)/);
 		push @retval, parseexpr($prefix) if $prefix ne "";
-		push @retval, parseexpr($suffix) if $suffix ne "";
+		push @retval, parseexpr($suffix) if $suffix ne "" and $suffix ne "any port that depends on it";
 	} elsif ($_[0] =~ /\*/ or $_[0] =~ /\?/) {
 		push @retval, expandwildcard($_[0]);
 	} else {
@@ -177,10 +195,12 @@ sub parseexpr($) {
 
 # Parse a single AFFECTS: line
 sub parseline($) {
-	return ("ALL") if $_[0] =~ /^\s+AFFECTS:\s*everybody\s*$/i
-	    or $_[0] =~ /^\s+AFFECTS:\s*everyone\s*$/i
-	    or $_[0] =~ /^\s+AFFECTS:\s*all\s*$/i;
-	if ($_[0] =~ s/.*([uU]sers|[tT]esters) of[ \t]*(.*)/$2/) {
+	if ($_[0] =~ s/^\s+AFFECTS:\s*(.*)/$1/) {
+		return ("ALL") if $_[0] =~ /^everybody\s*$/i
+	    or $_[0] =~ /^everyone\s*$/i
+	    or $_[0] =~ /^all users\s*$/i
+	    or $_[0] =~ /^all\s*$/i;
+		$_[0] =~ s/.*([uU]sers|[tT]esters) of[ \t]*(.*)/$2/;
 		my @retval = parseexpr($_[0]);
 		print "+ parseline returns @retval for $_[0]\n" if $opt{d};
 		return @retval;
@@ -210,7 +230,7 @@ sub expandwildcard($) {
 	return @retval;
 }
 
-# Convert glob-style pattern to standard regular-expression pattern
+# Convert glob-style pattern to standard regex pattern
 sub glob2pat($) {
 	(my $globstr = $_[0]) =~ s/(.)/$glob2regexp{$1} || "\Q$1"/ge;
 	return '^' . $globstr . '$';
@@ -303,7 +323,7 @@ sub printall(@) {
 
 # Main entry point. First, open INDEX and read all ports into allPorts
 MAIN:{
-	open(IDX, $portIndexFile) or die "Can't open $portIndexFile: $!";
+	open(IDX, $portIndexFile) or die "Can't open $portIndexFile: $!. Maybe you should run make fetchindex or make index from ports directory";
 	while(<IDX>) {
 		chomp;
 		my ($portLine) = ($_ =~ /^[^|]*\|\/usr\/ports\/([^|]*)/)
@@ -318,9 +338,9 @@ MAIN:{
 	open(MOVED, $movedFile) or die "Can't open $movedFile: $!";
 	while(<MOVED>) {
 		chomp;
-               if ($_ =~ /^\s*$/) {
-                       print "+ Ignoring MOVED line containing no non-whitespace chars.\n" if $opt{d};
-               } elsif ($_ !~ /^\s*#/) {
+		if ($_ =~ /^\s*$/) {
+			print "+ Ignoring MOVED line containing no non-whitespace chars.\n" if $opt{d};
+		} elsif ($_ !~ /^\s*#/) {
 			my ($from, $to) = ($_ =~ /^([^|]*)\|([^|]*)/)
 			    or die "$_ is not a correctly formed MOVED line";
 
@@ -340,6 +360,11 @@ MAIN:{
 	open(UPD, $updatingFile) or die "Can't open $updatingFile: $!";
 	while(<UPD>) {
 		chomp;
+		if ($opt{a} && /^\d{8}/) {
+			my $sectionDate = $_;
+			$sectionDate =~ s/\://;
+			last if $sectionDate <= $afterDate;
+		}
 		if (/^\s*AFFECTS:/ && @bufferBlock > 0) {
 			processBlock(@bufferBlock);
 			@bufferBlock = ();
