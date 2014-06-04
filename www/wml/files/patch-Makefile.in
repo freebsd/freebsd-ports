@@ -1,0 +1,16 @@
+--- Makefile.in.orig	2014-03-28 22:46:48.828302019 +0000
++++ Makefile.in	2014-03-28 22:50:35.004285184 +0000
+@@ -25,10 +25,10 @@
+ 
+ prefix          = @prefix@
+ exec_prefix     = $(prefix)
+-bindir          = $(prefix)/bin
++bindir          = $(DESTDIR)$(prefix)/bin
+ libsubdir       = @libsubdir@
+-libdir          = $(prefix)/lib$(libsubdir)
+-mandir          = $(prefix)/man
++libdir          = $(DESTDIR)$(prefix)/lib$(libsubdir)
++mandir          = $(DESTDIR)$(prefix)/man
+ catdir          = @catdir@
+ tmpdir          = @tmpdir@
+ 
