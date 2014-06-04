@@ -4,7 +4,7 @@ PORTNAME=	libotr
 PORTVERSION=	3.2.1
 # Please do not bump PORTREVISION for this port unless you have
 # confirmed via testing that it is necessary
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net-im net
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		https://otr.cypherpunks.ca/
@@ -23,7 +23,9 @@ LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 
 CONFLICTS=	libotr-*
 
-USE_AUTOTOOLS=	autoconf libtool
+USE_AUTOTOOLS=	autoconf
+USES=		libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 verify: checksum

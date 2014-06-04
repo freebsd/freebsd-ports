@@ -3,7 +3,7 @@
 
 PORTNAME=	climm
 PORTVERSION=	0.7.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
@@ -28,7 +28,7 @@ XMPP_DESC=	Enable XMPP Jabber support
 .if ${PORT_OPTIONS:MOTR}
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-otr
-LIB_DEPENDS+=		libotr.so.4:${PORTSDIR}/security/libotr3
+LIB_DEPENDS+=		libotr.so.2:${PORTSDIR}/security/libotr3
 .else
 CONFIGURE_ARGS+=	--disable-otr
 .endif
