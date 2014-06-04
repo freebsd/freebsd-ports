@@ -2,6 +2,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows/${PORTVERSION}
 PKGNAMESUFFIX=	30-gtk2
@@ -14,7 +15,6 @@ LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg\
 		libtiff.so:${PORTSDIR}/graphics/tiff\
 		libexpat.so:${PORTSDIR}/textproc/expat2\
-		libinotify.so:${PORTSDIR}/devel/libinotify\
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
 USES+=		iconv gmake pkgconfig tar:bzip2
@@ -31,12 +31,14 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-opengl\
 		--with-libmspack\
 		--with-gtk\
-		--enable-mediactrl\
 		--disable-backtrace\
 		--enable-webview\
-		--enable-graphics_ctx
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread -linotify"\
-		X11BASE="${LOCALBASE}"
+		--enable-graphics_ctx \
+		--enable-compat26 \
+		--enable-compat28
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
+		X11BASE="${LOCALBASE}" \
+		ac_cv_header_sys_inotify_h=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	GSTREAMER MSPACK NLS
@@ -44,25 +46,10 @@ OPTIONS_DEFAULT=GSTREAMER MSPACK
 MSPACK_DESC=	MS archives support
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-.endif
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-CONFIGURE_ARGS+=--enable-mediactrl
-USE_GNOME+=	gconf2
-USE_GSTREAMER=	yes
-.else
-CONFIGURE_ARGS+=--disable-mediactrl
-.endif
-
-.if ${PORT_OPTIONS:MMSPACK}
-CONFIGURE_ARGS+=--with-libmspack
-LIB_DEPENDS+=	libmspack.so:${PORTSDIR}/archivers/libmspack
-.else
-CONFIGURE_ARGS+=--without-libmspack
-.endif
+NLS_USES=	gettext
+GSTREAMER_ENABLE=	mediactrl
+GSTREAMER_USE=	GNOME=gconf2 GSTREAMER=yes
+MSPACK_CONFIGURE_WITH=	libmspack
+MSPACK_LIB_DEPENDS=	libmspack.so:${PORTSDIR}/archivers/libmspack
 
 .include <bsd.port.mk>
