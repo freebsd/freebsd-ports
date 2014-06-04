@@ -9,9 +9,9 @@ MASTER_SITES=	http://gp2x.org/adtool/
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Active Directory administration tool
 
-USES=		gmake
+USES=		gmake libtool
+GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes
-USE_AUTOTOOLS=	libtool
 
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 
