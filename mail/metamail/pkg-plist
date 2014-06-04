@@ -30,5 +30,25 @@ bin/sun2mime
 %%X11%%lib/metamail/fonts/fonts.dir
 %%X11%%lib/metamail/fonts/fonts.alias
 etc/mailcap
+man/man1/audiocompose.1.gz
+man/man1/audiosend.1.gz
+man/man1/extcompose.1.gz
+man/man1/getfilename.1.gz
+man/man1/mailto-hebrew.1.gz
+man/man1/mailto.1.gz
+man/man1/metamail.1.gz
+man/man1/metasend.1.gz
+man/man1/mime.1.gz
+man/man1/mimencode.1.gz
+man/man1/mmencode.1.gz
+man/man1/patch-metamail.1.gz
+man/man1/richtext.1.gz
+man/man1/showaudio.1.gz
+man/man1/showexternal.1.gz
+man/man1/shownonascii.1.gz
+man/man1/showpartial.1.gz
+man/man1/showpicture.1.gz
+man/man1/splitmail.1.gz
+man/man4/mailcap.4.gz
 @dirrmtry lib/metamail/fonts
 @dirrmtry lib/metamail
