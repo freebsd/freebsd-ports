@@ -3,6 +3,7 @@
 
 PORTNAME=	libEMF
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -11,10 +12,8 @@ COMMENT=	Enhanced Metafile Library
 
 OPTIONS_DEFINE=	DOCS
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.options.mk>
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
