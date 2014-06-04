@@ -3,6 +3,7 @@
 
 PORTNAME=	opensmtpd
 PORTVERSION=	5.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
