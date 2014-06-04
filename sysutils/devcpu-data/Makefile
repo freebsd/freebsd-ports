@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
+MASTER_SITES=	http://downloadmirror.intel.com/22508/eng/:intel \
+		http://pkgs.fedoraproject.org/repo/pkgs/microcode_ctl/amd-ucode-2012-09-10.tar/559bc355d3799538584add80df2996f0/:amd \
+# Defunct:	http://www.amd64.org/index.php?id=50&file=amd-ucode-2012-09-10.tar
 PKGNAMEPREFIX=	devcpu-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+DISTFILES=	microcode-20130222.tgz:intel amd-ucode-2012-09-10.tar:amd
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clarkjc@runbox.com
 COMMENT=	Intel and AMD CPUs microcode updates
 
-USES=		tar:bzip2
-NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -21,9 +21,12 @@ DATADIR=	${PREFIX}/share/cpucontrol
 
 USE_RC_SUBR=	microcode_update
 
+post-extract:
+	${CP} -p ${FILESDIR}/Makefile ${FILESDIR}/ucode-tool.c ${WRKSRC}
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/mcodes/* ${STAGEDIR}${DATADIR}/
-	@${TOUCH} ${STAGEDIR}${DATADIR}/.do_not_delete
+
 
 .include <bsd.port.mk>

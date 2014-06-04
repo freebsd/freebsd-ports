@@ -1,2 +1,4 @@
-SHA256 (devcpu-data-0.6.tar.bz2) = 5153af0de3ce4f30edec7ee95596bfc2ead734d70b6ae0353d51890b527f875f
-SIZE (devcpu-data-0.6.tar.bz2) = 636188
+SHA256 (microcode-20130222.tgz) = fd25bd9777fc3c3b11f01e9090a2d24f7650023c9ec74bbf9f43bffe1d9d01cc
+SIZE (microcode-20130222.tgz) = 602449
+SHA256 (amd-ucode-2012-09-10.tar) = 21845c6cafa99704cdf4862b55e899ca88ed432d57f4d09ad6a5c3d2e186b718
+SIZE (amd-ucode-2012-09-10.tar) = 71680
