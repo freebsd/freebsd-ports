@@ -2,6 +2,7 @@
 
 PORTNAME=	owncloud
 PORTVERSION=	6.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -10,9 +11,9 @@ COMMENT=	Personal cloud which runs on your own server
 
 LICENSE=	AGPLv3
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
-		mbstring pdo session simplexml xml xmlreader \
+		mbstring pdo session simplexml xml xmlreader xmlwriter \
 		xsl wddx zip zlib
 WANT_PHP_WEB=	yes
 
