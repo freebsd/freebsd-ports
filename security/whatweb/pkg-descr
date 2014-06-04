@@ -1,6 +1,6 @@
 WhatWeb can be used to detect the software packages that are used
 for a website. It can detect content management systems (CMS),
 blogging platforms, stats/analytics packages, javascript libraries,
-servers, etc..
+servers, etc.
 
 WWW: http://www.morningstarsecurity.com/research/whatweb
