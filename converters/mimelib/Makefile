@@ -3,7 +3,7 @@
 
 PORTNAME=	mimelib
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	SF/icqmail/libs/${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	C++ class library for manipulating messages in MIME format
 
 CONFLICTS=	kdenetwork-3.1.*
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
