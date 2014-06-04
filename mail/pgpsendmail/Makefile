@@ -18,12 +18,10 @@ BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/pgpdaemon bin/pgppipe bin/sendpgppass libexec/pgpsendmail \
+		man/man1/pgppipe.1.gz man/man1/sendpgppass.1.gz \
+		man/man8/pgpsendmail.8.gz man/man8/pgpdaemon.8.gz
 
-MAN1=		pgppipe.1 sendpgppass.1
-MAN8=		pgpsendmail.8 pgpdaemon.8
-PLIST_FILES=	bin/pgpdaemon bin/pgppipe bin/sendpgppass libexec/pgpsendmail
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC =|CC ?=| ; \
@@ -34,17 +32,12 @@ post-patch:
 		 /pgpsendmail.h/s|^|#|' ${WRKSRC}/Makefile
 
 do-install:
-.for i in pgpdaemon pgppipe sendpgppass
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} ${PREFIX}/bin)
-.endfor
-.for i in pgpsendmail
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} ${PREFIX}/libexec)
-.endfor
-.for i in ${MAN1}
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${i} ${MAN1PREFIX}/man/man1)
-.endfor
-.for i in ${MAN8}
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${i} ${MAN8PREFIX}/man/man8)
-.endfor
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} pgpdaemon pgppipe sendpgppass \
+		${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/pgpsendmail ${STAGEDIR}${PREFIX}/libexec
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} pgppipe.1 sendpgppass.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} pgpsendmail.8  pgpdaemon.8 \
+		${STAGEDIR}${MAN8PREFIX}/man/man8)
 
 .include <bsd.port.mk>
