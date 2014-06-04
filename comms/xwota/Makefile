@@ -14,10 +14,9 @@ COMMENT=	X version of who is on the air
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig libtool
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
