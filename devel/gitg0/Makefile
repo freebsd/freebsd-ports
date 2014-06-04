@@ -3,6 +3,7 @@
 
 PORTNAME=	gitg
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	0
@@ -16,9 +17,10 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
 CONFLICTS=	gitg-[0-9]*
 
-USES=		tar:bzip2 gmake pkgconfig pathfix
+USES=		tar:bzip2 gmake pkgconfig pathfix libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gconf2 gtk20 gtksourceview2
+INSTALL_TARGET=	install-strip
 
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	gitg.schemas
