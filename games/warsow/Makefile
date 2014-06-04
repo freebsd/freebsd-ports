@@ -3,22 +3,21 @@
 
 PORTNAME=	warsow
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/warsow.mirror/Warsow%20${PORTVERSION} \
 		http://www.warsow.net:1337/~warsow/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}_sdk
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Futuristic, fast-paced first person shooter
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${DATADIR}/basewsw/data0_15.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64
-MAKE_JOBS_UNSAFE=yes
 
 USES=		gmake
 
@@ -29,7 +28,7 @@ AS_SDK_DIR=	${WRKSRC}/../libsrcs/angelscript/sdk
 
 PLIST_FILES=	%%DATADIR%%/basewsw/game_${ARCH}.so \
 		%%DATADIR%%/libs/angelwrap_${ARCH}.so
-PLIST_DIRS=	%%DATADIR%%/libs
+PLIST_DIRS=	%%DATADIR%%/basewsw %%DATADIR%%/libs %%DATADIR%%
 
 OPTIONS_DEFINE=	CLIENT SERVER FTLIB REF_GL QF OPENAL IRC CIN TV_SRV
 OPTIONS_DEFAULT=	CLIENT SERVER FTLIB REF_GL QF OPENAL IRC CIN TV_SRV
@@ -44,6 +43,9 @@ IRC_DESC=	Build IRC client module
 CIN_DESC=	Build Cinematics playback module
 TV_SRV_DESC=	Build Warsow TV server
 
+PORTDOCS=	*.rtf *.doc sourcecode_quickstart.txt
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
@@ -56,7 +58,7 @@ PLIST_FILES+=	bin/warsow %%DATADIR%%/basewsw/cgame_${ARCH}.so \
 
 DESKTOP_ENTRIES="Warsow" "${COMMENT}" \
 	"${PREFIX}/share/pixmaps/warsow128x128.xpm" "${PORTNAME}" \
-	"Game;" false
+	"Game;Shooter;" ""
 
 . if ${PORT_OPTIONS:MFTLIB} || ${PORT_OPTIONS:MREF_GL}
 LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
@@ -141,5 +143,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/unix/warsow128x128.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/../../docs/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
