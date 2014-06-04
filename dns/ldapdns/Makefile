@@ -5,9 +5,9 @@ PORTNAME=	ldapdns
 PORTVERSION=	2.06
 PORTREVISION=	2
 CATEGORIES=	dns
-MASTER_SITES=	#http://www.nimh.org/dl/
+MASTER_SITES=	http://bsdforge.com/projects/source/dns/ldapdns/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	LDAP-backed DNS server
 
 LICENSE=	GPLv2
@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-BROKEN=		${MASTER_SITES} is gone - no public distfiles. \
-		port needs upgrade to version 3 (ldapdns.sourceforge.net)
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_OPENLDAP=	yes
 HAS_CONFIGURE=	yes
@@ -31,22 +30,21 @@ PROGRAMS=	ldapdns ldapaxfr
 SCRIPTS=	ldapdns-conf ldapaxfr-conf domainname.sh
 DOCS=		AUTHORS CHANGELOG FAQ INSTALL README README.[a-s]*
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
 .for i in ${PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for i in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}/admin
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/admin/* ${EXAMPLESDIR}/admin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/admin
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/admin/* ${STAGEDIR}${EXAMPLESDIR}/admin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
