@@ -1007,6 +1007,8 @@
 %%DATADIR%%/opensnoop
 bin/procsystime
 bin/hotkernel
+bin/shellsnoop
+bin/opensnoop
 @dirrm %%DATADIR%%/Mem
 @dirrm %%DATADIR%%/Man/man1m
 @dirrm %%DATADIR%%/Man

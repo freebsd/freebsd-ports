@@ -3,6 +3,7 @@
 
 PORTNAME=	DTraceToolkit
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brendangregg.com/DTraceToolkit/
 
@@ -14,7 +15,7 @@ sh_OLD_CMD=	/usr/bin/sh
 sh_CMD=	${SH}
 SHEBANG_LANG+=	sh
 
-SHEBANG_FILES=	hotkernel procsystime
+SHEBANG_FILES=	hotkernel procsystime opensnoop Apps/shellsnoop
 NO_BUILD=	YES
 
 .include <bsd.port.pre.mk>
@@ -25,12 +26,14 @@ IGNORE=	needs to have dtrace enabled kernel
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}; ${TAR} cf - . ) | \
+	(cd ${WRKSRC}; ${TAR} --exclude '*.orig' -cf - . ) | \
 		(cd ${STAGEDIR}${DATADIR}/; ${TAR} xvf -)
 
 post-install:
 	${LN} -fs ${DATADIR}/hotkernel ${STAGEDIR}${PREFIX}/bin/hotkernel
 	${LN} -fs ${DATADIR}/procsystime ${STAGEDIR}${PREFIX}/bin/procsystime
+	${LN} -fs ${DATADIR}/opensnoop ${STAGEDIR}${PREFIX}/bin/opensnoop
+	${LN} -fs ${DATADIR}/Apps/shellsnoop ${STAGEDIR}${PREFIX}/bin/shellsnoop
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
