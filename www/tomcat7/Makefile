@@ -16,6 +16,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	jsvc:${PORTSDIR}/devel/jakarta-commons-daemon
 
+USES=		cpe
+CPE_VENDOR=	apache
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
