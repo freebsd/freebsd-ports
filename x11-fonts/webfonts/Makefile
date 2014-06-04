@@ -44,7 +44,6 @@ SUB_FILES=	pkg-message
 
 FONTS_FILE=	${WRKDIR}/fonts.dir
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MSWINDOWS_LICENSE)
@@ -85,21 +84,11 @@ PLIST_SUB+=	EXTRAFONTS="@comment "
 # Install
 #
 do-install:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${FONTS_FILE} ${FONTSDIR}
-	${INSTALL_DATA} ${FONTS_FILE} ${FONTSDIR}/fonts.scale
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/licen.txt ${DOCSDIR}/LICENSE
-
-#
-# Post-install
-#
-post-install:
-	${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${FONTS_FILE} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${FONTS_FILE} ${STAGEDIR}${FONTSDIR}/fonts.scale
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/licen.txt ${STAGEDIR}${DOCSDIR}/LICENSE
 
 .include <bsd.port.post.mk>
