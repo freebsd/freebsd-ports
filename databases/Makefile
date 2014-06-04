@@ -873,6 +873,7 @@
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += rubygem-tarantool
+    SUBDIR += sfcgal
     SUBDIR += sharedance
     SUBDIR += skytools
     SUBDIR += slony1
