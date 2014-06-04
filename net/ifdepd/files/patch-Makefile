@@ -22,7 +22,7 @@
 -.endif
 -			${INSTALL} -o root -g wheel -m 644 ${MAN8} ${PREFIX}/man/man8
 +			${BSD_INSTALL_PROGRAM} ${PROG} ${PREFIX}/bin
-+			${BSD_INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8
++			${BSD_INSTALL_MAN} ${MAN8} $${PREFIX}/man/man8
  
  deinstall:
  			${RM} ${PREFIX}/bin/${PROG}
