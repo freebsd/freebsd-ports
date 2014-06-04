@@ -71,4 +71,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 901000
+IGNORE=	requires xlocale support for compilation
+.endif
+
+.include <bsd.port.post.mk>
