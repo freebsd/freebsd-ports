@@ -3,7 +3,7 @@
 
 PORTNAME=	quesoglc
 PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/QuesoGLC/${PORTVERSION}
 
@@ -14,9 +14,10 @@ LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		tar:bzip2 pathfix gmake
+USES=		tar:bzip2 pathfix gmake libtool
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu glut
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
