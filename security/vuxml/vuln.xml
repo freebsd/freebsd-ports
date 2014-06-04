@@ -85,7 +85,6 @@ Notes:
     </dates>
   </vuln>
 
-<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="027af74d-eb56-11e3-9032-000c2980a9f3">
     <topic>gnutls -- client-side memory corruption</topic>
     <affects>
