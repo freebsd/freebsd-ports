@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.5.1
+PORTVERSION=	4.5.2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://doua.prabi.fr/software/seaview_data/ \
 		ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
@@ -31,7 +31,7 @@ PLIST_FILES=	bin/seaview man/man1/seaview.1.gz %%DATADIR%%/seaview.html \
 PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="SeaView" "" "${PREFIX}/share/pixmaps/seaview.xpm" "seaview" \
-		"Biology;Science;" "true"
+		"Biology;Science;" true
 
 OPTIONS_DEFINE=		PDFLIB
 OPTIONS_DEFAULT=	PDFLIB
