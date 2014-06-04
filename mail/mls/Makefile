@@ -12,12 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for generating various statistics on emails
 
-MAN1=		mls.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/mls
+PLIST_FILES=	bin/mls man/man1/mls.1.gz
 
-MAKE_ARGS+=	DESTDIR="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	mls
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
