@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.0.2
+PORTVERSION=	1.5
 CATEGORIES=	games
-MASTER_SITES=	SF/warsow.mirror/Warsow%20${PORTVERSION:R}${PORTVERSION:E} \
-		http://www.warsow.net:1337/~warsow/${PORTVERSION:R}${PORTVERSION:E}/ \
+MASTER_SITES=	SF/warsow.mirror/Warsow%20${PORTVERSION} \
+		http://www.warsow.net:1337/~warsow/${PORTVERSION}/ \
 		http://static.warsow.net/release/:mappack \
 		http://rewq.de/scratch/wsw05/:mappack
 PKGNAMEPREFIX=	warsow-
-DISTNAME=	${PKGNAMEPREFIX:S/-//}_${PORTVERSION:R}${PORTVERSION:E}
+DISTNAME=	${PKGNAMEPREFIX:S/-//}_${PORTVERSION:S/.//}_unified
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Warsow data files
 
 LICENSE=	WARSOW GPLv2
@@ -25,6 +25,7 @@ LICENSE_PERMS_WARSOW=	dist-mirror pkg-mirror auto-accept
 # package game data port as well (even it is not being technically built)
 ONLY_FOR_ARCHS=	i386 amd64
 
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-//}_15
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX:S/-//}
@@ -33,12 +34,13 @@ PORTDATA=	basewsw
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	MAPPACK DOCS
-OPTIONS_DEFAULT=	MAPPACK
+#OPTIONS_DEFAULT=	MAPPACK
 MAPPACK_DESC=		Install community map pack
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAPPACK}
+BROKEN=		Unfetchable
 MAPPACK_FILE= warsow_comunity_map_pack_01.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MAPPACK_FILE}:mappack
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
