@@ -8,7 +8,7 @@ MASTERDIR=	${.CURDIR}/../git
 
 DESCR=		${.CURDIR}/pkg-descr
 
-WITH_SVN=	yes
+OPTIONS_SLAVE=	SVN
 
 CONFLICTS?=	git-[0-9]*
 
