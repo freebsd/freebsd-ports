@@ -23,11 +23,8 @@ bin/solarwinds
 bin/spirographx
 bin/sundancer2
 lib/libImplicit.a
-lib/libImplicit.la
 lib/libPixelCity.a
-lib/libPixelCity.la
 lib/librsMath.a
-lib/librsMath.la
 man/man1/biof.1.gz
 man/man1/busyspheres.1.gz
 man/man1/colorfire.1.gz
