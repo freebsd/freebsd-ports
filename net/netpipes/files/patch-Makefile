@@ -1,11 +1,11 @@
---- Makefile.orig	Wed Oct 28 12:30:03 1998
-+++ Makefile	Fri Jun  7 00:23:28 2002
+--- Makefile.orig	1998-10-29 07:00:03.000000000 +1030
++++ Makefile	2014-05-11 13:28:21.742500328 +0930
 @@ -17,7 +17,7 @@
  
  # You probably want to change this:
  #INSTROOT = ${HOME}
 -INSTROOT = /depot/collections0/netpipes4.1
-+INSTROOT = ${PREFIX}
++INSTROOT = ${STAGEDIR}/${PREFIX}
  #INSTROOT = /usr/local
  INSTBIN = ${INSTROOT}/bin
  INSTMAN = ${INSTROOT}/man
@@ -61,7 +61,7 @@
 -	cp ${MANPAGES} ${INSTMAN}/man1/
 +	${BSD_INSTALL_MAN} ${MANPAGES} ${INSTMAN}/man1/
 +	${BSD_INSTALL_PROGRAM} ${PROGRAMS} ${INSTBIN}/
-+	ln -f -s ${INSTBIN}/getpeername ${INSTBIN}/getsockname
++	ln -f -s getpeername ${INSTBIN}/getsockname
  
  #
  
