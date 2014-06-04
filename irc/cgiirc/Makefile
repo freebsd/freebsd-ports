@@ -12,18 +12,19 @@ COMMENT=	IRC web gateway written in Perl
 
 LICENSE=	GPLv2
 
-USES=		perl5
+USES=		perl5  shebangfix
 NO_BUILD=	yes
+SHEBANG_FILES=	docs/identd.pl \
+		irc.cgi \
+		client-perl.cgi \
+		nph-irc.cgi
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-NO_STAGE=	yes
 pre-install:
-	@${MV} ${WRKSRC}/cgiirc.config ${WRKSRC}/cgiirc.config.sample 2>/dev/null || true
+	@${MV} ${WRKSRC}/cgiirc.config ${WRKSRC}/cgiirc.config.sample
 
 do-install:
-	${MKDIR} ${PREFIX}/www/cgiirc
-	${CP} -rp ${WRKSRC}/* ${PREFIX}/www/cgiirc
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/cgiirc
-	@[ -f ${PREFIX}/www/cgiirc/cgiirc.config ] || \
-	${CP} ${WRKSRC}/cgiirc.config.sample ${PREFIX}/www/cgiirc/cgiirc.config
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/cgiirc
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/cgiirc
 
 .include <bsd.port.mk>
