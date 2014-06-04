@@ -2,7 +2,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	0.2.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security python
 MASTER_SITES=	http://python-otr.pentabarf.de/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Python bindings for libotr
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 # This should be updated to the newer version of libotr
-LIB_DEPENDS=	otr.4:${PORTSDIR}/security/libotr3
+LIB_DEPENDS=	libotr.so.2:${PORTSDIR}/security/libotr3
 
 USES=		pkgconfig
 USE_PYTHON=	yes

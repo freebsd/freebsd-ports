@@ -3,7 +3,7 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
@@ -37,7 +37,7 @@ ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 ASPELL_CONFIGURE_ENABLE=aspell
 ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 ENCHANT_CONFIGURE_ENABLE=enchant
-OTR_LIB_DEPENDS=	libotr.so.4:${PORTSDIR}/security/libotr3 \
+OTR_LIB_DEPENDS=	libotr.so.2:${PORTSDIR}/security/libotr3 \
 			libgcrypt.so:${PORTSDIR}/security/libgcrypt
 OTR_CONFIGURE_ENABLE=	otr
 
