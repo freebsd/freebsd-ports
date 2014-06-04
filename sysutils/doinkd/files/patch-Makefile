@@ -1,5 +1,5 @@
 --- Makefile.orig	2006-05-30 00:19:28.000000000 -0700
-+++ Makefile	2010-08-27 12:42:08.661284827 -0700
++++ Makefile	2014-06-03 18:33:50.171999588 -0700
 @@ -2,8 +2,8 @@
  #
  
@@ -20,7 +20,7 @@
  SPECLIBS = 
  INSTTYPE = install4
  
-@@ -193,26 +193,26 @@
+@@ -193,26 +193,27 @@
  # You will need to delete parse.c before compiling!  You can either
  # do so by hand, or do a 'make clean' followed by the normal 'make'.
  #DEFS += -O -m486
@@ -35,9 +35,10 @@
 -#CFDEST  = /etc/doinkd
 -#MDEST   = /usr/local/man
 -#LOGDEST = /var/log
-+DEST    = ${PREFIX}/sbin
-+CFDEST  = ${PREFIX}/etc/doinkd
-+MDEST   = ${PREFIX}/man
++DEST    = ${STAGEDIR}${PREFIX}/sbin
++CFDEST  = ${STAGEDIR}${PREFIX}/etc/doinkd
++CFDEST_REAL  = ${PREFIX}/etc/doinkd
++MDEST   = ${STAGEDIR}${PREFIX}/man
 +LOGDEST = /var/log
  #
  #OWNER   = root
@@ -59,3 +60,28 @@
  
  ######################################################################
  ######################################################################
+@@ -450,7 +451,7 @@
+ PMAN    = doinkd.8
+ 
+ # Names of config and log files
+-CONFIG  = ${CFDEST}/${COMMFILE}
++CONFIG  = ${CFDEST_REAL}/${COMMFILE}
+ LOGFILE = ${LOGDEST}/doinkd.log
+ 
+ # HERE are the big CFLAGS
+@@ -509,11 +510,11 @@
+ # BSD like, but with some enhancements like: install -s -> strip binary
+ #                                            gzip manual pages
+ install1a: all
+-	install -s -c -m ${MODE} -o ${OWNER} -g ${GROUP} ${BINARY} ${DEST}
+-	install -c -m ${CFMODE} -o ${CFOWNER} -g ${CFGROUP} ${COMMFILE}.template ${CFDEST}
+-	install -c -m ${MMODE} -o ${MOWNER} ${CFMAN} ${MDEST}/man5
++	install -s -c -m ${MODE} ${BINARY} ${DEST}
++	install -c -m ${CFMODE} ${COMMFILE}.template ${CFDEST}
++	install -c -m ${MMODE} ${CFMAN} ${MDEST}/man5
+ 	gzip -f ${MDEST}/man5/${CFMAN}
+-	install -c -m ${MMODE} -o ${MOWNER} ${PMAN} ${MDEST}/man8
++	install -c -m ${MMODE} ${PMAN} ${MDEST}/man8
+ 	gzip -f ${MDEST}/man8/${PMAN}
+ 	@echo ""
+ 	@echo "Be sure to edit/create the file ${CONFIG} based on"
