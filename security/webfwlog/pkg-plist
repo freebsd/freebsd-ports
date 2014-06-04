@@ -1,30 +1,46 @@
+@owner root
+@group %%WWWGRP%%
+@mode 4550
 bin/wfwl_syslog
-etc/webfwlog.conf.sample
+@mode 640
+@sample %%ETCDIR%%/webfwlog.conf.sample
+@mode
+@group wheel
+%%PORTDOCS%%%%DOCSDIR%%/examples/basic
+%%PORTDOCS%%%%DOCSDIR%%/examples/current_count
+%%PORTDOCS%%%%DOCSDIR%%/examples/current_dport
+%%PORTDOCS%%%%DOCSDIR%%/examples/last20hosts
+%%PORTDOCS%%%%DOCSDIR%%/examples/latest_logged_packets
+%%PORTDOCS%%%%DOCSDIR%%/examples/recent_active
+%%PORTDOCS%%%%DOCSDIR%%/examples/tcpports
+%%PORTDOCS%%%%DOCSDIR%%/examples/tcpsyn
+%%PORTDOCS%%%%DOCSDIR%%/examples/udpports
 %%PORTDOCS%%%%DOCSDIR%%/mysql/README
-%%PORTDOCS%%%%DOCSDIR%%/mysql/setup
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/temp_grants
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/ulog_copy
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/ulog_local
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/ulogd_grants
+%%PORTDOCS%%%%DOCSDIR%%/mysql/mysql_data_table.sql
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/snort_view
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_function_grants
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_functions
 %%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_grants
 %%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_hostnames_create
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_hostnames_create_bin
 %%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_addcol
 %%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_altercol
 %%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_create
 %%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_services_create
+@mode 555
+%%PORTDOCS%%%%DOCSDIR%%/mysql/setup
+@mode
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/README
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/setup
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/ulog_copy
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/ulog_local
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/ulogd_73_grants
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/ulogd_grants
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_73_grants
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/pgsql_data_table.sql
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/snort_view
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_functions
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_grants
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_hostnames_create
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_addcol
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_create
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_services_create
+@mode 555
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/setup
+@mode
 %%WWWDIR%%/include/config.php
 %%WWWDIR%%/include/criteria.php
 %%WWWDIR%%/include/debug.php
@@ -45,11 +61,13 @@ etc/webfwlog.conf.sample
 %%WWWDIR%%/include/static.php
 %%WWWDIR%%/include/syslog.php
 %%WWWDIR%%/include/update_cache.php
-%%WWWDIR%%/style.css
 %%WWWDIR%%/index.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pgsql/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pgsql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mysql/scripts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mysql
-@dirrm %%WWWDIR%%/include
+%%WWWDIR%%/style.css
+@dirrmtry %%ETCDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/mysql/scripts
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/mysql
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/pgsql/scripts
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/pgsql
+@dirrmtry %%WWWDIR%%/include
 @dirrmtry %%WWWDIR%%
