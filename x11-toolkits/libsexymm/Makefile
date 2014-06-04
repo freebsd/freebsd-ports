@@ -3,7 +3,7 @@
 
 PORTNAME=	libsexymm
 PORTVERSION=	0.1.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexymm/
 
@@ -15,8 +15,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USES=		gmake pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
