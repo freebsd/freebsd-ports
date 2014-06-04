@@ -14,9 +14,9 @@ include/libgitg-1.0/libgitg/gitg-revision.h
 include/libgitg-1.0/libgitg/gitg-runner.h
 include/libgitg-1.0/libgitg/gitg-shell.h
 lib/libgitg-1.0.a
-lib/libgitg-1.0.la
 lib/libgitg-1.0.so
 lib/libgitg-1.0.so.0
+lib/libgitg-1.0.so.0.0.0
 libdata/pkgconfig/libgitg-1.0.pc
 man/man1/gitg.1.gz
 share/applications/gitg.desktop
