@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlmap
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/sqlmapproject/sqlmap/downloads/ \
 		SF
@@ -18,11 +18,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		PATH=${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+PORTDOCS=	AUTHORS ChangeLog README.html README.pdf THANKS
 
 OPTIONS_DEFINE=	MSF
 MSF_DESC=	Enable Metasploit Framework integration
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if  ${PORT_OPTIONS:MMSF}
@@ -46,18 +46,14 @@ do-build:
 .endfor
 
 do-install:
-.if  ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for F in AUTHORS ChangeLog README.html README.pdf THANKS
-	${INSTALL_DATA} ${WRKDIR}/build/doc/${F} ${DOCSDIR}/
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKDIR}/build/doc/|} ${STAGEDIR}${DOCSDIR}
 
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/extra
-	( cd ${WRKDIR}/build/extra/ && ${COPYTREE_SHARE} . ${DATADIR} )
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} )
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/extra
+	( cd ${WRKDIR}/build/extra/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} )
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sqlmap )
 
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf-dist
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/sqlmap.conf ${STAGEDIR}${PREFIX}/etc/sqlmap.conf-dist
+	${INSTALL_SCRIPT} ${WRKDIR}/sqlmap.sh ${STAGEDIR}${PREFIX}/bin/sqlmap
 
 .include <bsd.port.mk>
