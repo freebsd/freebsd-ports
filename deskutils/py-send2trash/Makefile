@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	send2trash
@@ -9,19 +9,16 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Send2Trash-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Small package that sends files to the Trash
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-PYDISTUTILS_PKGNAME=	Send2Trash
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 PORTDOCS=	CHANGES.rst README.rst
-
 OPTIONS_DEFINE=	DOCS
 
 post-install:
