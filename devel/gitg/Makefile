@@ -3,6 +3,7 @@
 
 PORTNAME=	gitg
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -18,12 +19,13 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-sc
 
 CONFLICTS=	gitg0-[0-9]*
 
-USES=		tar:xz gettext gmake pkgconfig pathfix
+USES=		tar:xz gettext gmake pkgconfig pathfix libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-maintainer-mode \
 		--enable-compile-warnings=no
 USE_GNOME=	glib20 gtk30 gtksourceview3
+INSTALL_TARGET=	install-strip
 
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
