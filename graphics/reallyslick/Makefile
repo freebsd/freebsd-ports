@@ -3,7 +3,7 @@
 
 PORTNAME=	reallyslick
 PORTVERSION=	0.9.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/rss-glx/rss-glx/${PORTVERSION}
 DISTNAME=	rss-glx_${PORTVERSION}
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick \
 		libGLC.so:${PORTSDIR}/graphics/quesoglc
 
 USE_GL=		glut
-USES=		gmake pathfix tar:bzip2
+USES=		gmake pathfix tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
