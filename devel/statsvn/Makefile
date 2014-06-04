@@ -33,10 +33,18 @@ OPTIONS_DEFINE=	DOCS
 ALL_TARGET+=	javadoc
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION} == "1.6.0"
+PLIST_SUB=	JDK6=""
+.else
+PLIST_SUB=	JDK6="@comment "
+.endif
+
 do-install:
 	(cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 .if ${PORT_OPTIONS:MDOCS}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
