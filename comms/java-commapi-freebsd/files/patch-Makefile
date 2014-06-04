@@ -1,5 +1,5 @@
---- Makefile.orig	2007-02-23 07:45:16.000000000 +0000
-+++ Makefile	2013-10-30 08:31:39.773863242 +0000
+--- Makefile.old	2014-05-12 09:30:47.000000000 +0300
++++ Makefile	2014-05-12 09:40:31.000000000 +0300
 @@ -24,7 +24,7 @@
  JAVAC_CLASSPATH	=	$(JAVA_HOME)/jre/lib/ext/comm.jar
  JAVAH		=	$(JAVA_HOME)/bin/javah
@@ -9,7 +9,24 @@
  MACHINE_ARCH	?=	i386
  
  .SUFFIXES:	.java .class
-@@ -96,7 +96,7 @@
+@@ -38,10 +38,12 @@
+ # Install stuff
+ #
+ install: all
+-	install -c -o bin -g bin -m 0444 lib/libParallel.so $(JAVA_HOME)/jre/lib/$(MACHINE_ARCH)
+-	install -c -o bin -g bin -m 0444 lib/libSerial.so $(JAVA_HOME)/jre/lib/$(MACHINE_ARCH)
+-	install -c -o bin -g bin -m 0444 javax.comm.properties $(JAVA_HOME)/jre/lib
+-	install -c -o bin -g bin -m 0444 $(JARFILE) $(JAVA_HOME)/jre/lib/ext
++	install -d -c -o bin -g bin -m 0755 $(DESTDIR)$(JAVA_HOME)/jre/lib/$(MACHINE_ARCH)
++	install -d -c -o bin -g bin -m 0755 $(DESTDIR)$(JAVA_HOME)/jre/lib/ext
++	install -c -o bin -g bin -m 0444 lib/libParallel.so $(DESTDIR)$(JAVA_HOME)/jre/lib/$(MACHINE_ARCH)
++	install -c -o bin -g bin -m 0444 lib/libSerial.so $(DESTDIR)$(JAVA_HOME)/jre/lib/$(MACHINE_ARCH)
++	install -c -o bin -g bin -m 0444 javax.comm.properties $(DESTDIR)$(JAVA_HOME)/jre/lib
++	install -c -o bin -g bin -m 0444 $(JARFILE) $(DESTDIR)$(JAVA_HOME)/jre/lib/ext
+ 
+ # 
+ # Clean all files produced by compile
+@@ -96,7 +98,7 @@
  			src/$(JAVA_PKG_DIR)/javax_comm_ParallelPort.h \
  			src/$(JAVA_PKG_DIR)/javax_comm_ParallelPortEvent.h
  	if [ ! -d lib ]; then mkdir lib; fi
@@ -18,7 +35,7 @@
  #
  # Serial driver JNI part
  #
-@@ -105,7 +105,7 @@
+@@ -105,7 +107,7 @@
  			src/$(JAVA_PKG_DIR)/javax_comm_SerialPort.h \
  			src/$(JAVA_PKG_DIR)/javax_comm_SerialPortEvent.h
  	if [ ! -d lib ]; then mkdir lib; fi
