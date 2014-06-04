@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2_mixer
 PORTVERSION=	2.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL2_mixer-${PORTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	A sample multi-channel audio mixer library
 
 LICENSE=	ZLIB
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
