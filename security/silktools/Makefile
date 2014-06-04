@@ -3,6 +3,7 @@
 
 PORTNAME=	silktools
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
@@ -20,7 +21,7 @@ CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --with-python \
 USE_PYTHON=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
-USES=		gmake perl5 pkgconfig
+USES=		gmake perl5 pkgconfig libtool
 USE_PERL5=	build
 
 OPTIONS_DEFINE=	LOCALTIME
