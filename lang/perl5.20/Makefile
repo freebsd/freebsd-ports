@@ -66,7 +66,7 @@ PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
 SITE_PERL?=	${PREFIX}/${SITE_PERL_REL}
 
-USES=	tar:bzip2
+USES=	tar:bzip2 cpe
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
