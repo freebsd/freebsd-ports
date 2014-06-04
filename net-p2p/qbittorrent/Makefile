@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.1.9.1
+PORTVERSION=	3.1.9.2
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
@@ -29,9 +29,6 @@ USE_QT4+=	gui xml
 INSTALLS_ICONS=	yes
 OPTIONS_DEFINE=	DBUS
 .endif
-
-# Wrong versioning upstream
-PORTSCOUT=      skipv:3.1.9.2
 
 SUB_FILES=	pkg-message
 
