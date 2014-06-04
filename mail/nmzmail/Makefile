@@ -18,7 +18,8 @@ USES=		gmake
 PLIST_FILES=	bin/nmzmail
 PORTDOCS=	README	NEWS
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 pre-extract:
 .if !defined(MAX_MAIL_DIRS)
 	@ ${ECHO_MSG} "You can define MAX_MAIL_DIRS=n."
@@ -32,9 +33,7 @@ post-extract:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
