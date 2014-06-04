@@ -6,4 +6,5 @@ ventrilo-server/ventrilo_srv
 ventrilo-server/ventrilo_status
 ventrilo-server/ventrilo_srv.htm
 ventrilo-server/ventrilo_srv.ini
+@exec chown -R ventrilo %D/ventrilo-server
 @dirrm ventrilo-server
