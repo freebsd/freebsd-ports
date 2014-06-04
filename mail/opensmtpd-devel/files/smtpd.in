@@ -18,6 +18,11 @@
 
 . /etc/rc.subr
 
+check_process()
+{
+	/bin/pgrep -f 'smtpd: \[priv\]'
+}
+
 name="smtpd"
 rcvar=smtpd_enable
 
