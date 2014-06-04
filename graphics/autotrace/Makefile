@@ -3,7 +3,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/AutoTrace/${PORTVERSION}
 
@@ -15,16 +15,17 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
+USES=		pathfix pkgconfig libtool
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+CPPFLAGS+=	$$(libpng-config --I_opts) ${PTHREAD_CFLAGS}
+LDFLAGS+=	$$(libpng-config --L_opts) ${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
+
 OPTIONS_DEFINE=	IMAGEMAGICK MING PSTOEDIT
 OPTIONS_DEFAULT=	IMAGEMAGICK PSTOEDIT
 MING_DESC=	Enable swf interface
 PSTOEDIT_DESC=	Convert postscript to other formats
-
-USES=		pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	yes
-CPPFLAGS+=	$$(libpng-config --I_opts) ${PTHREAD_CFLAGS}
-LDFLAGS+=	$$(libpng-config --L_opts) ${PTHREAD_LIBS}
 
 .include <bsd.port.options.mk>
 
