@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mp3guessenc
-PORTVERSION=	0.25.0
+PORTVERSION=	0.25.1
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.0$//}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9]*$//}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
