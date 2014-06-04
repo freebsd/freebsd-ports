@@ -13,7 +13,7 @@ COMMENT=	XML Web Development Framework
 
 USE_RC_SUBR=		${PORTNAME}
 USE_JAVA=		yes
-JAVA_VERSION=		1.6+
+JAVA_VERSION=		1.6
 USE_PYTHON=		yes
 MAKE_ENV=		JAVA_HOME=${JAVA_HOME}
 WRKSRC=			${WRKDIR}/${PDISTNAME}
@@ -61,7 +61,6 @@ SUB_FILES=	\
 		message-advanced
 
 # Load options (before including bsd.port.pre.mk)
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.options"
 
 .include <bsd.port.pre.mk>
@@ -128,19 +127,11 @@ pre-install:
 
 do-install:
 	@${ECHO_MSG} "===> Installing ${COPYDIRS}"
-	@${MKDIR} ${APP_HOME}
-	@cd ${WRKSRC} && ${FIND} -H ${COPYDIRS} | ${CPIO} -pdmuL -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
-	@${INSTALL} ${WRKDIR}/upstreams-cocoon.sh ${APP_HOME}/cocoon.sh
+	@${MKDIR} ${STAGEDIR}${APP_HOME}
+	@cd ${WRKSRC} && ${FIND} -H ${COPYDIRS} | ${CPIO} -pdmuL -R ${LIBOWN}:${LIBGRP} ${STAGEDIR}${APP_HOME}
+	@${INSTALL} ${WRKDIR}/upstreams-cocoon.sh ${STAGEDIR}${APP_HOME}/cocoon.sh
 
 	@${ECHO_MSG} "===> Installing into ${PREFIX}/sbin"
-	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}ctl ${PREFIX}/sbin
-
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO_CMD}
-	@${ECHO_CMD} "********************************************************************************"
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} "********************************************************************************"
-	@${ECHO_CMD}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}ctl ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.post.mk>
