@@ -1,8 +1,0 @@
-bin/syncterm
-man/man1/syncterm.1.gz
-share/applications/syncterm.desktop
-share/icons/hicolor/64x64/apps/syncterm.png
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
