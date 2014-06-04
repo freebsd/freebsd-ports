@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prosody
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 				http://redundancy.redundancy.org/mirror/
@@ -25,13 +25,23 @@ GROUPS=		${USERS}
 USE_RC_SUBR=	prosody
 MANCOMPRESSED=	no
 
-USES=	gmake lua:51 shebangfix
-SHEBANG_LANG=	lua
-SHEBANG_FILES=	prosody prosodyctl
-lua_OLD_CMD=	${SETENV} lua
-lua_CMD=	${LUA_CMD}
+OPTIONS_DEFINE= LUAJIT
+LUAJIT_DESC=    Run prosody using luajit
+LUAJIT_LIB_DEPENDS=     libluajit-5.1.so:${PORTSDIR}/lang/luajit
+
+.include <bsd.port.options.mk>
+
+USES=	gmake lua:51
+LUA_PREMK=	yes
+
+.include <bsd.port.pre.mk>
 
 HAS_CONFIGURE=	yes
+.if ${PORT_OPTIONS:MLUAJIT}
+CONFIGURE_ARGS+= --runwith=`which luajit`
+.else
+CONFIGURE_ARGS+= --runwith=`which ${LUA_CMD}`
+.endif
 CONFIGURE_ARGS+=	--ostype=freebsd --c-compiler="${CC}" --linker="${LD}"
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" PREFIX="${PREFIX}" LUA_SUFFIX="-${LUA_VER}" LUA_LIBDIR="${LUA_LIBDIR}" LUA_INCDIR="${LUA_INCDIR}"
 
@@ -39,4 +49,4 @@ SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 PLIST_SUB=	PROSODY_USER=${USERS} PROSODY_GROUP=${GROUPS}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

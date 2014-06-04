@@ -25,14 +25,25 @@ pidfile=${prosody_pidfile:-"%%PREFIX%%/var/lib/prosody/prosody.pid"}
 
 extra_commands="status"
 
-start_cmd="prosody_cmd start"
+start_cmd="prosody_start"
 stop_cmd="prosody_cmd stop"
 restart_cmd="$stop_cmd; $start_cmd"
 status_cmd="prosody_cmd status"
 
+prosody_start()
+{
+	config="%%PREFIX%%/etc/prosody/prosody.cfg.lua"
+	if grep -q '^daemonize[[:blank:]]*=[[:blank:]]*false' $config; then
+		# Prosody's not going to daemonize on its own, use daemon(8)
+		daemon $command start
+	else
+		$command start
+	fi
+}
+
 prosody_cmd()
 {
-	%%PREFIX%%/bin/prosodyctl $1
+	$command $1
 }
 
 run_rc_command "$1"
