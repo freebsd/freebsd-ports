@@ -4,8 +4,8 @@
 #
 # PROVIDE: dnscrypt-proxy
 # REQUIRE: SERVERS cleanvar
-# KEYWORD: shutdown
 # BEFORE: named
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable dnscrypt-proxy:
 #
@@ -22,18 +22,23 @@
 name=dnscrypt_proxy
 rcvar=dnscrypt_proxy_enable
 
-stop_cmd="dnscrypt_proxy_stop"
+stop_cmd=dnscrypt_proxy_stop
 
-load_rc_config dnscrypt_proxy
+load_rc_config ${name}
 
-: {dnscrypt_proxy_enable:="NO"}
+: ${dnscrypt_proxy_enable:=NO}
+: ${dnscrypt_proxy_uid=_dnscrypt-proxy} # User to run daemon as
+: ${dnscrypt_proxy_pidfile=/var/run/dnscrypt-proxy.pid} # Path to pid file
+: ${dnscrypt_proxy_logfile=/var/log/dnscrypt-proxy.log} # Path to log file
+
+if [ -n "$dnscrypt_proxy_uid" ]; then
+	dnscrypt_proxy_flags="${dnscrypt_proxy_flags} -u ${dnscrypt_proxy_uid}"
+fi
 
 command=%%PREFIX%%/sbin/dnscrypt-proxy
 procname=%%PREFIX%%/sbin/dnscrypt-proxy
-pidfile=/var/run/dnscrypt-proxy.pid
-logdir=/var/log/dnscrypt-proxy.log
 
-command_args="-d -p ${pidfile} -l ${logdir}"
+command_args="-d -p ${dnscrypt_proxy_pidfile} -l ${dnscrypt_proxy_logfile}"
 
 dnscrypt_proxy_stop() {
         kill -KILL `cat ${pidfile}` 2> /dev/null && echo "Killed ${name}."
