@@ -1,18 +1,18 @@
---- ./configure.in.orig	2012-11-04 11:41:16.000000000 +0100
-+++ ./configure.in	2012-11-07 00:13:35.000000000 +0100
+--- ./configure.ac.orig	2014-05-17 12:08:57.000000000 +0200
++++ ./configure.ac	2014-05-17 12:12:55.000000000 +0200
 @@ -4,6 +4,7 @@
- AC_INIT([lcdproc], [0.5.6], [lcdproc@lists.omnipotent.net])
+ AC_INIT([lcdproc], [0.5.7], [lcdproc@lists.omnipotent.net])
  AC_CONFIG_SRCDIR([clients/lcdproc/batt.c])
  AM_INIT_AUTOMAKE
 +PKG_PROG_PKG_CONFIG()
  
  AC_CONFIG_HEADERS(config.h)
  
-@@ -249,26 +250,62 @@
+@@ -255,26 +256,62 @@
  
  dnl ######################################################################
  dnl libusb support
-+dnl Stolen from the gnupg project and modified for LCDproc's need.
++dnl Stolen from the gnupg project and modified for LCDproc''s need.
 +dnl
 +dnl Copyright (C) 2004, 2005 Free Software Foundation, Inc.
  dnl ######################################################################
