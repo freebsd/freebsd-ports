@@ -3,7 +3,7 @@
 
 PORTNAME=	sweep
 PORTVERSION=	0.9.3
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF
@@ -17,10 +17,10 @@ LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libspeex.so:${PORTSDIR}/audio/speex
 
-USE_BZIP2=	yes
-USES=		pathfix gettext pkgconfig gmake
+USES=		pathfix gettext pkgconfig gmake tar:bzip2 libtool \
+		desktop-file-utils
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-vorbis-includes=${LOCALBASE}/include/vorbis \
 		--with-ogg-libraries=${LOCALBASE}/lib \
 		--with-ogg-includes=${LOCALBASE}/include/ogg
+CONFIGURE_ENV=	LIBS="`pkg-config --libs gmodule-2.0`"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^ac_enable_alsa=yes|ac_enable_alsa=no|g ; \
