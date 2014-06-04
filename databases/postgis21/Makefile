@@ -2,12 +2,14 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 
 MAINTAINER=	trevor@bitba.se
 COMMENT=	Geographic objects support for PostgreSQL databases
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 		libgeos.so:${PORTSDIR}/graphics/geos \
@@ -19,12 +21,12 @@ LATEST_LINK=	postgis21
 
 USE_GNOME=	libxml2
 USE_PGSQL=	yes
-USES=		gmake iconv perl5 pkgconfig
+USES=		gmake iconv:wchar_t perl5 pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
 
-OPTIONS_DEFINE=		LOADERGUI RASTER TOPOLOGY
+OPTIONS_DEFINE=		LOADERGUI RASTER TOPOLOGY SFCGAL
 OPTIONS_DEFAULT=	TOPOLOGY
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
@@ -32,8 +34,8 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 LOADERGUI_DESC=	Enable shp2pgsql-gui
 RASTER_DESC=	Raster support
 TOPOLOGY_DESC=	Topology support
+SFCGAL_DESC=	Enable sfcgal
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLOADERGUI}
@@ -65,6 +67,15 @@ CONFIGURE_ARGS+=	--without-topology
 PLIST_SUB+=		TOPOLOGY="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MSFCGAL}
+LIB_DEPENDS+=	libSFCGAL.so:${PORTSDIR}/databases/sfcgal
+CONFIGURE_ARGS+=	--with-sfcgal=${LOCALBASE}/bin/sfcgal-config
+PLIST_SUB+=	SFCGAL=""
+.else
+CONFIGURE_ARGS+=	--without-sfcgal
+PLIST_SUB+=	SFCGAL="@comment "
+.endif
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -75,9 +86,9 @@ pre-configure:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install: .SILENT
-	${MKDIR} ${DATADIR}/tiger_2011
-	(cd ${WRKSRC}/extras/tiger_geocoder/tiger_2011/ && ${COPYTREE_SHARE} \* ${DATADIR}/tiger_2011/ "! ( -name *\.orig -o -name *\.bak )" )
-	${MKDIR} ${DATADIR}/utils
-	(cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} \* ${DATADIR}/utils/ "! ( -name *\.orig -o -name *\.bak )" )
+	${MKDIR} ${STAGEDIR}/${DATADIR}/tiger_2011
+	(cd ${WRKSRC}/extras/tiger_geocoder/tiger_2011/ && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/tiger_2011/ "! ( -name *\.orig -o -name *\.bak )" )
+	${MKDIR} ${STAGEDIR}/${DATADIR}/utils
+	(cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/utils/ "! ( -name *\.orig -o -name *\.bak )" )
 
 .include <bsd.port.mk>

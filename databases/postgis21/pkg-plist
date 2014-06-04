@@ -88,6 +88,7 @@ share/postgresql/contrib/postgis-2.1/spatial_ref_sys.sql
 share/postgresql/contrib/postgis-2.1/uninstall_legacy.sql
 share/postgresql/contrib/postgis-2.1/uninstall_postgis.sql
 share/postgresql/contrib/postgis-2.1/uninstall_sfcgal.sql
+%%SFCGAL%%share/postgresql/contrib/postgis-2.1/sfcgal.sql
 %%RASTER%%share/postgresql/contrib/postgis-2.1/rtpostgis.sql
 %%RASTER%%share/postgresql/contrib/postgis-2.1/rtpostgis_legacy.sql
 %%RASTER%%share/postgresql/contrib/postgis-2.1/rtpostgis_upgrade_20_21.sql
