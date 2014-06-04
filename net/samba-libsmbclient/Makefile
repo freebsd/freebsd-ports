@@ -18,28 +18,20 @@ USE_LDCONFIG=		${PREFIX}/lib
 
 # We WANT shared libs
 CONFIGURE_ARGS+=	--with-libsmbclient
-SAMBA_INSTALL_LIBS=	libsmbclient
 
-MAN7=			libsmbclient.7
+ALL_TARGET=		libsmbclient
 
-ALL_TARGET=		${SAMBA_INSTALL_LIBS}
-
-NO_STAGE=	yes
 do-install:
-			-@${MKDIR} ${MAN7PREFIX}/man/man7
-.for man in ${MAN7}
-			${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/${man} ${MAN7PREFIX}/man/man7
-.endfor
-			-@${MKDIR} ${PREFIX}/include
-			${INSTALL_DATA} ${WRKSRC}/include/libsmbclient.h ${PREFIX}/include
-			${INSTALL_DATA} ${WRKSRC}/pkgconfig/smbclient.pc ${PREFIX}/libdata/pkgconfig/
-			-@${MKDIR} ${PREFIX}/lib
-.for lib in ${SAMBA_INSTALL_LIBS}
-			${INSTALL_SCRIPT} ${WRKSRC}/bin/${lib}.a ${PREFIX}/lib
-			${INSTALL_SCRIPT} ${WRKSRC}/bin/${lib}.so ${PREFIX}/lib/${lib}.so.0
-			${LN} -snf ${lib}.so.0 ${PREFIX}/lib/${lib}.so
-.endfor
-			-@${MKDIR} ${EXAMPLESDIR}
-			@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libsmbclient/ ${EXAMPLESDIR}
+			-@${MKDIR} ${STAGEDIR}${MAN7PREFIX}/man/man7
+			${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/libsmbclient.7 ${STAGEDIR}${MAN7PREFIX}/man/man7
+			-@${MKDIR} ${STAGEDIR}${PREFIX}/include
+			${INSTALL_DATA} ${WRKSRC}/include/libsmbclient.h ${STAGEDIR}${PREFIX}/include
+			${INSTALL_DATA} ${WRKSRC}/pkgconfig/smbclient.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+			-@${MKDIR} ${STAGEDIR}${PREFIX}/lib
+			${INSTALL_SCRIPT} ${WRKSRC}/bin/libsmbclient.a ${STAGEDIR}${PREFIX}/lib
+			${INSTALL_SCRIPT} ${WRKSRC}/bin/libsmbclient.so ${STAGEDIR}${PREFIX}/lib/libsmbclient.so.0
+			${LN} -snf libsmbclient.so.0 ${STAGEDIR}${PREFIX}/lib/libsmbclient.so
+			-@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+			@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libsmbclient/ ${STAGEDIR}${EXAMPLESDIR}
 
 .include "${MASTERDIR}/Makefile"
