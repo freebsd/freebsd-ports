@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jbidwatcher
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	misc java
 MASTER_SITES=	http://www.jbidwatcher.com/download/
 
