@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		dos2unix gmake tar:bzip2
 DOS2UNIX_GLOB=	*.cpp *.h
-USE_WX=		2.8
+USE_WX=		3.0
 WX_UNICODE=	yes
 
 PLIST_FILES=	bin/xorg-edit \
