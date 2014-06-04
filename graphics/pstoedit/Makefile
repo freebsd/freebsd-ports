@@ -3,7 +3,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.62
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -23,9 +23,9 @@ EMF_DESC=	Enable emf interface
 MING_DESC=	Enable swf interface
 PLOTUTILS_DESC=	Enable libplot interface
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
 USE_GHOSTSCRIPT=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 
@@ -50,8 +50,6 @@ MING_CONFIGURE_OFF=	--without-swf
 PLOTUTILS_LIB_DEPENDS=	libplotter.so:${PORTSDIR}/graphics/plotutils
 PLOTUTILS_CONFIGURE_ON=	--with-libplot
 PLOTUTILS_CONFIGURE_OFF=	--without-libplot
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS="-g"|CXXFLAGS="$$CXXFLAGS"|g ; \
