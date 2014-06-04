@@ -14,8 +14,7 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	DOCS NLS
 
-USES=		gmake libtool:keepla pathfix pkgconfig
-USE_BZIP2=	yes
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
