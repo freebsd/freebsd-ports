@@ -3,6 +3,7 @@
 
 PORTNAME=	heyu2
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
 DISTNAME=	heyu-${PORTVERSION}
@@ -12,22 +13,11 @@ COMMENT=	Control a CM11A interface from the command line
 
 CONFLICTS=	heyu-[0-9]*
 
-#IS_INTERACTIVE=	yes
 ALL_TARGET=	all
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	freebsd
-
-MAN1=		heyu.1
-MAN5=		x10aux.5 \
-		x10config.5 \
-		x10cm17a.5 \
-		x10digimax.5 \
-		x10oregon.5 \
-		x10sched.5 \
-		x10scripts.5 \
-		x10rfxmeters.5 \
-		x10rfxsensors.5
 
 OPTIONS_DEFINE=	CM17A EXTENDED RFXSENS RFXMETER DMX OREGON
 CM17A_DESC=	X10 CM17A "Firecracker" Support
@@ -39,7 +29,6 @@ OREGON_DESC=	Oregon Support
 
 OPTIONS_DEFAULT=	CM17A EXTENDED RFXSENS RFXMETER DMX OREGON
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MCM17A}
@@ -77,19 +66,19 @@ post-patch:
 		${WRKSRC}/xwrite.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/heyu ${PREFIX}/bin
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/heyu.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/x10aux.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/x10config.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/x10cm17a.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/x10digimax.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/x10oregon.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/x10sched.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/x10scripts.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/x10rfxmeters.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/x10rfxsensors.5 ${MAN5PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/x10config.sample ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/x10.sched.sample ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/heyu ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/heyu.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/x10aux.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10config.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10cm17a.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10digimax.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10oregon.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10sched.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10scripts.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10rfxmeters.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10rfxsensors.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/x10config.sample ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/x10.sched.sample ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
