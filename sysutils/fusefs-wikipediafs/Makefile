@@ -3,6 +3,7 @@
 
 PORTNAME=	wikipediafs
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
@@ -10,23 +11,29 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Mount mediawikis
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	py*-fusefs>=0.2:${PORTSDIR}/devel/py-fusefs
 
 USES=		fuse
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=yes
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO
-MAN1=		mount.${PORTNAME}.1
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+PLIST_FILES=	man/man1/mount.${PORTNAME}.1.gz
+
+.include <bsd.port.options.mk>
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/doc/*gz
 
 post-install:
-	@cd ${WRKSRC}/doc/&&${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1/
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@cd ${WRKSRC}/doc/&&${INSTALL_MAN} mount.${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
+.if ${PORT_OPTIONS:MDOCS}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
