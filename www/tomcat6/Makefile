@@ -15,6 +15,9 @@ COMMENT=	Open-source Java web server by Apache, 6.x branch
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe
+CPE_VENDOR=	apache
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	YES
