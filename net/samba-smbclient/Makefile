@@ -20,23 +20,17 @@ PKGDIR=			${.CURDIR}
 
 WITHOUT_ADS=		yes
 
-MAN1=			smbclient.1
-
 PLIST_SUB+=		SAMBA_CONFDIR="${SAMBA_CONFDIR:S,^${PREFIX}/,,}" \
 			SAMBA_CONFIG="${SAMBA_CONFIG}"
 
 ALL_TARGET=		bin/smbclient
 
-NO_STAGE=	yes
 do-install:
-	-@${MKDIR} ${SAMBA_CONFDIR}
-	${INSTALL_DATA} ${FILESDIR}/smb-client.conf.sample ${SAMBA_CONFDIR}/${SAMBA_CONFIG}.sample
-	@if [ ! -f "${SAMBA_CONFDIR}/${SAMBA_CONFIG}" ]; then \
-	    ${CP} -p "${SAMBA_CONFDIR}/${SAMBA_CONFIG}.sample" "${SAMBA_CONFDIR}/${SAMBA_CONFIG}"; \
-	fi
-	-@${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/smbclient ${PREFIX}/bin
-	-@${MKDIR} ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/smbclient.1 ${MAN1PREFIX}/man/man1
+	-@${MKDIR} ${STAGEDIR}${SAMBA_CONFDIR}
+	${INSTALL_DATA} ${FILESDIR}/smb-client.conf.sample ${STAGEDIR}${SAMBA_CONFDIR}/${SAMBA_CONFIG}.sample
+	-@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/smbclient ${STAGEDIR}${PREFIX}/bin
+	-@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/smbclient.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include "${MASTERDIR}/Makefile"
