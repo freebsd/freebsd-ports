@@ -33,7 +33,7 @@ include/mimelib/utility.h
 include/mimelib/uuencode.h
 include/mimelib/binhex.h
 lib/libmimelib.a
-lib/libmimelib.la
 lib/libmimelib.so
 lib/libmimelib.so.1
+lib/libmimelib.so.1.0.0
 @dirrm include/mimelib
