@@ -20,8 +20,7 @@ CONFLICTS=	postgis-1.* postgis-2.0.*
 LATEST_LINK=	postgis21
 
 USE_GNOME=	libxml2
-USE_PGSQL=	yes
-USES=		gmake iconv:wchar_t perl5 pkgconfig
+USES=		gmake iconv:wchar_t perl5 pgsql pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
