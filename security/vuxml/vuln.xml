@@ -62,7 +62,7 @@ Notes:
     <affects>
       <package>
 	<name>gnutls</name>
-	<range>><lt>2.12.23_6</lt></range>
+	<range><lt>2.12.23_6</lt></range>
       </package>
     </affects>
     <description>
