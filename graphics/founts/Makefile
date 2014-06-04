@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	founts
@@ -7,7 +7,7 @@ CATEGORIES=	graphics games
 MASTER_SITES=	http://www.linuxmotors.com/founts/downloads/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Demo/program inspired by Erics cascade
 
 LICENSE=	GPLv2
@@ -25,6 +25,8 @@ DESKTOP_ENTRIES="Founts" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;Game;" false
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|#define ELAST 1.7||' \
+		${WRKSRC}/${PORTNAME}.c
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' \
 		${WRKSRC}/Makefile
 

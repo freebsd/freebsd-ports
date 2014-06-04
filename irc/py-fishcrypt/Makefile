@@ -6,7 +6,7 @@ DISTVERSION=	4.21
 CATEGORIES=	irc security
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	FiSH/Mircryption clone for XChat/HexChat
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto

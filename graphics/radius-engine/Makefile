@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	radius-engine
@@ -7,12 +7,12 @@ PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Lua script-based 2D engine built on top of OpenGL and SDL
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	liblua-5.1.so:${PORTSDIR}/lang/lua51 \
+LIB_DEPENDS=	liblua-5.1.so:${PORTSDIR}/lang/lua \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libphysfs.so.1:${PORTSDIR}/devel/physfs
 
