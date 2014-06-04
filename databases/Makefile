@@ -622,6 +622,7 @@
     SUBDIR += php55-pdo_pgsql
     SUBDIR += php55-pdo_sqlite
     SUBDIR += php55-pgsql
+    SUBDIR += php55-redis
     SUBDIR += php55-sqlite3
     SUBDIR += php55-sybase_ct
     SUBDIR += phpminiadmin
