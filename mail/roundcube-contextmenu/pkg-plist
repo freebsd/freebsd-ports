@@ -3,7 +3,6 @@
 %%RCDIR_REL%%/plugins/contextmenu/composer.json
 %%RCDIR_REL%%/plugins/contextmenu/contextmenu.js
 %%RCDIR_REL%%/plugins/contextmenu/contextmenu.php
-%%RCDIR_REL%%/plugins/contextmenu/jquery.contextmenu.min.js
 %%RCDIR_REL%%/plugins/contextmenu/localization/ca_ES.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/cs_CZ.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/da_DK.inc
@@ -28,22 +27,16 @@
 %%RCDIR_REL%%/plugins/contextmenu/localization/uk_UA.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/zh_TW.inc
 %%RCDIR_REL%%/plugins/contextmenu/skins/classic/contextmenu.css
-%%RCDIR_REL%%/plugins/contextmenu/skins/classic/ie6hacks.css
-%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/contexticons.gif
+%%RCDIR_REL%%/plugins/contextmenu/skins/classic/functions.js
 %%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/contexticons.png
-%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/folders.gif
-%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/folders.png
-%%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/messageactions.gif
 %%RCDIR_REL%%/plugins/contextmenu/skins/classic/images/messageactions.png
 %%RCDIR_REL%%/plugins/contextmenu/skins/larry/contextmenu.css
-%%RCDIR_REL%%/plugins/contextmenu/skins/larry/ie6hacks.css
+%%RCDIR_REL%%/plugins/contextmenu/skins/larry/functions.js
 %%RCDIR_REL%%/plugins/contextmenu/skins/larry/images/contexticons.png
-%%RCDIR_REL%%/plugins/contextmenu/skins/larry/images/folders.png
-%%RCDIR_REL%%/plugins/contextmenu/skins/larry/images/messageactions.png
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/larry/images
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/larry
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/localization
 @dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/classic/images
 @dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/classic
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/larry/images
+@dirrm %%RCDIR_REL%%/plugins/contextmenu/skins/larry
 @dirrm %%RCDIR_REL%%/plugins/contextmenu/skins
-@dirrm %%RCDIR_REL%%/plugins/contextmenu/localization
 @dirrm %%RCDIR_REL%%/plugins/contextmenu
