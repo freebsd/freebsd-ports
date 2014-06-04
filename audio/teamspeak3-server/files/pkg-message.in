@@ -12,4 +12,4 @@ To see the admin token after the first start, have a look
 into the logs in %%LOGDIR%%
 
 TeamSpeak DNS server (tsdns) is not handled by this port. If you
-need id, please download and install it manually.
+need it, please download and install it manually.
