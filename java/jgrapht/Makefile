@@ -12,7 +12,7 @@ COMMENT=	Java package for mathematical graph-theory objects and algorithms
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.6 1.7
 
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes
@@ -30,7 +30,6 @@ PORTDOCS=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 JAVA_PORT_API=	${LOCALBASE}/share/doc/jdk${JAVA_PORT_VERSION:C/([0-9]\.[0-9])\.[0-9]/\1/}/api
@@ -47,12 +46,12 @@ pre-fetch:
 
 do-install:
 	@${ECHO_MSG} -n  ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-jdk${JAVA_PORT_VERSION:C/1\.4\.[0-9]/1.4/:C/1\.[56]\.[0-9]/1.5/}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-jdk1.5.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/javadoc && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	@cd ${WRKSRC}/javadoc && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/javadoc && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/javadoc && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [DONE]"
 .endif
 
