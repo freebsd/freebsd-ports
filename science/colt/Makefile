@@ -11,12 +11,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package for scalable scientific and technical computing
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.6 1.7
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes
 ALL_TARGET=	build
+MAKE_ENV=	LANG=en_US.ISO8859-1
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc
 .endif
