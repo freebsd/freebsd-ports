@@ -8,6 +8,8 @@ share/icons/hicolor/32x32/apps/virt-viewer.png
 share/icons/hicolor/48x48/apps/virt-viewer.png
 share/icons/hicolor/256x256/apps/virt-viewer.png
 share/mime/packages/virt-viewer-mime.xml
+man/man1/remote-viewer.1.gz
+man/man1/virt-viewer.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/as/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/virt-viewer.mo
