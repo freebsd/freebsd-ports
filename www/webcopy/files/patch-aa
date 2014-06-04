@@ -1,54 +1,19 @@
-*** Makefile.bak	Sat Jun  8 20:42:14 1996
---- Makefile	Sat Sep 14 04:07:01 1996
-***************
-*** 32,40 ****
-  
-  # Select or change one of the following perl interpreters:
-  
-! PERL=/usr/local/bin/perl
-  #PERL=/usr/local/ucb/perl
-! #PERL=/usr/bin/perl
-  #PERL=/usr/ucb/perl
-  #PERL=/bin/perl
-  #PERL=$(HOME)/bin/perl
---- 32,40 ----
-  
-  # Select or change one of the following perl interpreters:
-  
-! #PERL=/usr/local/bin/perl
-  #PERL=/usr/local/ucb/perl
-! PERL=/usr/bin/perl
-  #PERL=/usr/ucb/perl
-  #PERL=/bin/perl
-  #PERL=$(HOME)/bin/perl
-***************
-*** 43,56 ****
-  
-  # Select or change one of the following WebCopy destination:
-  
-! DESTINATION=webcopy.test
-  #DESTINATION=/usr/local/bin/webcopy
-  #DESTINATION=/usr/local/ucb/webcopy
-  #DESTINATION=/usr/bin/webcopy
-  #DESTINATION=/usr/ucb/webcopy
-  #DESTINATION=/bin/webcopy
-  #DESTINATION=$(HOME)/bin/webcopy
-! #DESTINATION=
-  
-  # Select default perl interpreter version:
-  
---- 43,56 ----
-  
-  # Select or change one of the following WebCopy destination:
-  
-! #DESTINATION=webcopy.test
-  #DESTINATION=/usr/local/bin/webcopy
-  #DESTINATION=/usr/local/ucb/webcopy
-  #DESTINATION=/usr/bin/webcopy
-  #DESTINATION=/usr/ucb/webcopy
-  #DESTINATION=/bin/webcopy
-  #DESTINATION=$(HOME)/bin/webcopy
-! DESTINATION=$(PREFIX)/bin/webcopy
-  
-  # Select default perl interpreter version:
-  
+--- Makefile.orig	1996-06-08 09:42:14.000000000 -0700
++++ Makefile	2014-06-03 17:06:14.896004168 -0700
+@@ -43,14 +43,14 @@
+ 
+ # Select or change one of the following WebCopy destination:
+ 
+-DESTINATION=webcopy.test
++#DESTINATION=webcopy.test
+ #DESTINATION=/usr/local/bin/webcopy
+ #DESTINATION=/usr/local/ucb/webcopy
+ #DESTINATION=/usr/bin/webcopy
+ #DESTINATION=/usr/ucb/webcopy
+ #DESTINATION=/bin/webcopy
+ #DESTINATION=$(HOME)/bin/webcopy
+-#DESTINATION=
++DESTINATION=$(PREFIX)/bin/webcopy
+ 
+ # Select default perl interpreter version:
+ 

@@ -4,3 +4,6 @@ bin/zetaback
 bin/zetaback_agent
 etc/zetaback.conf.sample
 etc/zetaback_agent.conf.sample
+man/man1/zetaback.1.gz
+man/man1/zetaback_agent.1.gz
+
