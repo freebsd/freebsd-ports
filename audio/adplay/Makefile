@@ -3,7 +3,7 @@
 
 PORTNAME=	adplay
 PORTVERSION=	1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/adplug/AdPlay_UNIX/${PORTVERSION}:main \
 		SF/adplug/Database/2006-07-06:db
@@ -15,7 +15,8 @@ COMMENT=	AdLib player using adplug library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libadplug.so:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS=	libadplug.so:${PORTSDIR}/audio/libadplug \
+		libbinio.so:${PORTSDIR}/devel/libbinio
 
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
