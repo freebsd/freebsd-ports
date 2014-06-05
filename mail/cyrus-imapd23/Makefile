@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.3.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 PKGNAMESUFFIX=	23
@@ -138,25 +138,29 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 
+MAN_MAN1=	cyradm.1 imtest.1 installsieve.1 lmtptest.1 mupdatetest.1 \
+		nntptest.1 pop3test.1 sieveshell.1 sivtest.1 smtptest.1
+MAN_MAN3=	imclient.3
+MAN_MAN5=	cyrus.conf.5 imapd.conf.5 krb.equiv.5
 CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
 		Cyrus::IMAP::Shell.3 Cyrus::SIEVE::managesieve.3
-CYRUS_MAN8=	arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
-		cyr_dbtool.8 cyr_df.8 cyr_expire.8 cyr_synclog.8 \
-		ctl_mboxlist.8 cvt_cyrusdb.8 deliver.8 fetchnews.8 fud.8 \
+CYRUS_MAN8=	arbitron.8 chk_cyrus.8 ctl_cyrusdb.8 ctl_deliver.8 \
+		ctl_mboxlist.8 cvt_cyrusdb.8 cyr_dbtool.8 cyr_df.8 \
+		cyr_expire.8 cyr_synclog.8 deliver.8 fetchnews.8 fud.8 \
 		idled.8 imapd.8 ipurge.8 lmtpd.8 make_md5.8 make_sha1.8 \
-		master.8 mbexamine.8 mbpath.8 notifyd.8 pop3d.8 quota.8 \
-		reconstruct.8 rmnews.8 smmapd.8 squatter.8 sync_client.8 \
-		sync_reset.8 sync_server.8 syncnews.8 timsieved.8 \
-		tls_prune.8 unexpunge.8
+		master.8 mbexamine.8 mbpath.8 nntpd.8 notifyd.8 pop3d.8 \
+		quota.8 reconstruct.8 rmnews.8 smmapd.8 squatter.8 \
+		sync_client.8 sync_reset.8 sync_server.8 syncnews.8 \
+		timsieved.8 tls_prune.8 unexpunge.8
 
 DOCS=		altnamespace anoncvs bugs changes faq feedback index \
-		install install-admin-mb install-auth install-compile \
+		install-admin-mb install-auth install-compile \
 		install-configure install-murder install-netnews \
 		install-perf install-prereq install-replication \
 		install-sieve install-snmpmon install-testing \
-		install-upgrade install-virtdomains mailing-list man \
-		notes os overview questions readme sieve sieve-protocol \
-		specs
+		install-upgrade install-virtdomains install mailing-list \
+		man notes os overview questions readme sieve-protocol \
+		sieve specs
 
 CONFS=		cmu-frontend.conf prefork.conf cmu-backend.conf normal.conf \
 		small.conf
@@ -208,7 +212,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${STAGEDIR}${DOCSDIR}
 	@${ECHO_CMD} share/doc/${PORTNAME}/${f}.html >>${TMPPLIST}
 .endfor
-.for f in ${MAN1} ${MAN3} ${MAN5} ${CYRUS_MAN8}
+.for f in ${MAN_MAN1} ${MAN_MAN3} ${MAN_MAN5} ${CYRUS_MAN8}
 	@if [ -f ${WRKSRC}/doc/man/${f}.html ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/man/${f}.html \
 			${STAGEDIR}${DOCSDIR}/man/${f}.html; \
