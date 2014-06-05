@@ -19,7 +19,7 @@ NO_BUILD=	yes
 DALBUM_DIR?=	www/photo
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB+=	DALBUM_DIR=${DALBUM_DIR}
+PLIST_SUB+=	DALBUM_DIR=${DALBUM_DIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 SUB_LIST+=	DALBUM_DIR=${DALBUM_DIR}
 SUB_FILES=	pkg-message
 
@@ -29,8 +29,8 @@ post-patch:
 
 do-install:
 	@${MKDIR} -m 0775 ${STAGEDIR}${PREFIX}/${DALBUM_DIR}
-	@cd ${WRKSRC} && ${FIND} . -print | \
-		${CPIO} --quiet -pdum -R ${WWWOWN}:${WWWGRP} \
+	@cd ${WRKSRC} && ${FIND} .htaccess .private config images include pictures *.css *.js *.php *.txt -print | \
+		${CPIO} --quiet -pdum \
 		${STAGEDIR}${PREFIX}/${DALBUM_DIR}
 
 .include <bsd.port.mk>
