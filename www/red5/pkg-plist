@@ -1,67 +1,67 @@
 @stopdaemon red5
 @unexec cmp -s %D/red5/conf/access.properties %D/red5/conf/access.properties.sample && rm -f %D/red5/conf/access.properties || true 2>/dev/null
 red5/conf/access.properties.sample
-@exec [ -f %D/red5/conf/access.properties ] || cp -p %D/red5/conf/access.properties.sample %D/red5/red5/conf/access.properties
+@exec [ -f %D/red5/conf/access.properties ] || cp -p %D/red5/conf/access.properties.sample %D/red5/conf/access.properties
 @unexec cmp -s %D/red5/conf/build_standalone.properties %D/red5/conf/build_standalone.properties.sample && rm -f %D/red5/conf/build_standalone.properties || true 2>/dev/null
 red5/conf/build_standalone.properties.sample
-@exec [ -f %D/red5/conf/build_standalone.properties ] || cp -p %D/red5/conf/build_standalone.properties.sample %D/red5/red5/conf/build_standalone.properties
+@exec [ -f %D/red5/conf/build_standalone.properties ] || cp -p %D/red5/conf/build_standalone.properties.sample %D/red5/conf/build_standalone.properties
 @unexec cmp -s %D/red5/conf/catalina.policy %D/red5/conf/catalina.policy.sample && rm -f %D/red5/conf/catalina.policy || true 2>/dev/null
 red5/conf/catalina.policy.sample
-@exec [ -f %D/red5/conf/catalina.policy ] || cp -p %D/red5/conf/catalina.policy.sample %D/red5/red5/conf/catalina.policy
+@exec [ -f %D/red5/conf/catalina.policy ] || cp -p %D/red5/conf/catalina.policy.sample %D/red5/conf/catalina.policy
 @unexec cmp -s %D/red5/conf/context.xml %D/red5/conf/context.xml.sample && rm -f %D/red5/conf/context.xml || true 2>/dev/null
 red5/conf/context.xml.sample
-@exec [ -f %D/red5/conf/context.xml ] || cp -p %D/red5/conf/context.xml.sample %D/red5/red5/conf/context.xml
+@exec [ -f %D/red5/conf/context.xml ] || cp -p %D/red5/conf/context.xml.sample %D/red5/conf/context.xml
 @unexec cmp -s %D/red5/conf/ehcache.xml %D/red5/conf/ehcache.xml.sample && rm -f %D/red5/conf/ehcache.xml || true 2>/dev/null
 red5/conf/ehcache.xml.sample
-@exec [ -f %D/red5/conf/ehcache.xml ] || cp -p %D/red5/conf/ehcache.xml.sample %D/red5/red5/conf/ehcache.xml
+@exec [ -f %D/red5/conf/ehcache.xml ] || cp -p %D/red5/conf/ehcache.xml.sample %D/red5/conf/ehcache.xml
 @unexec cmp -s %D/red5/conf/jee-container.xml %D/red5/conf/jee-container.xml.sample && rm -f %D/red5/conf/jee-container.xml || true 2>/dev/null
 red5/conf/jee-container.xml.sample
-@exec [ -f %D/red5/conf/jee-container.xml ] || cp -p %D/red5/conf/jee-container.xml.sample %D/red5/red5/conf/jee-container.xml
+@exec [ -f %D/red5/conf/jee-container.xml ] || cp -p %D/red5/conf/jee-container.xml.sample %D/red5/conf/jee-container.xml
 @unexec cmp -s %D/red5/conf/keystore.jmx %D/red5/conf/keystore.jmx.sample && rm -f %D/red5/conf/keystore.jmx || true 2>/dev/null
 red5/conf/keystore.jmx.sample
-@exec [ -f %D/red5/conf/keystore.jmx ] || cp -p %D/red5/conf/keystore.jmx.sample %D/red5/red5/conf/keystore.jmx
+@exec [ -f %D/red5/conf/keystore.jmx ] || cp -p %D/red5/conf/keystore.jmx.sample %D/red5/conf/keystore.jmx
 @unexec cmp -s %D/red5/conf/logback.xml %D/red5/conf/logback.xml.sample && rm -f %D/red5/conf/logback.xml || true 2>/dev/null
 red5/conf/logback.xml.sample
-@exec [ -f %D/red5/conf/logback.xml ] || cp -p %D/red5/conf/logback.xml.sample %D/red5/red5/conf/logback.xml
+@exec [ -f %D/red5/conf/logback.xml ] || cp -p %D/red5/conf/logback.xml.sample %D/red5/conf/logback.xml
 @unexec cmp -s %D/red5/conf/no-jee-container.xml %D/red5/conf/no-jee-container.xml.sample && rm -f %D/red5/conf/no-jee-container.xml || true 2>/dev/null
 red5/conf/no-jee-container.xml.sample
-@exec [ -f %D/red5/conf/no-jee-container.xml ] || cp -p %D/red5/conf/no-jee-container.xml.sample %D/red5/red5/conf/no-jee-container.xml
+@exec [ -f %D/red5/conf/no-jee-container.xml ] || cp -p %D/red5/conf/no-jee-container.xml.sample %D/red5/conf/no-jee-container.xml
 @unexec cmp -s %D/red5/conf/password.properties %D/red5/conf/password.properties.sample && rm -f %D/red5/conf/password.properties || true 2>/dev/null
 red5/conf/password.properties.sample
-@exec [ -f %D/red5/conf/password.properties ] || cp -p %D/red5/conf/password.properties.sample %D/red5/red5/conf/password.properties
+@exec [ -f %D/red5/conf/password.properties ] || cp -p %D/red5/conf/password.properties.sample %D/red5/conf/password.properties
 @unexec cmp -s %D/red5/conf/quartz.properties %D/red5/conf/quartz.properties.sample && rm -f %D/red5/conf/quartz.properties || true 2>/dev/null
 red5/conf/quartz.properties.sample
-@exec [ -f %D/red5/conf/quartz.properties ] || cp -p %D/red5/conf/quartz.properties.sample %D/red5/red5/conf/quartz.properties
+@exec [ -f %D/red5/conf/quartz.properties ] || cp -p %D/red5/conf/quartz.properties.sample %D/red5/conf/quartz.properties
 @unexec cmp -s %D/red5/conf/realm.properties %D/red5/conf/realm.properties.sample && rm -f %D/red5/conf/realm.properties || true 2>/dev/null
 red5/conf/realm.properties.sample
-@exec [ -f %D/red5/conf/realm.properties ] || cp -p %D/red5/conf/realm.properties.sample %D/red5/red5/conf/realm.properties
+@exec [ -f %D/red5/conf/realm.properties ] || cp -p %D/red5/conf/realm.properties.sample %D/red5/conf/realm.properties
 @unexec cmp -s %D/red5/conf/red5-common.xml %D/red5/conf/red5-common.xml.sample && rm -f %D/red5/conf/red5-common.xml || true 2>/dev/null
 red5/conf/red5-common.xml.sample
-@exec [ -f %D/red5/conf/red5-common.xml ] || cp -p %D/red5/conf/red5-common.xml.sample %D/red5/red5/conf/red5-common.xml
+@exec [ -f %D/red5/conf/red5-common.xml ] || cp -p %D/red5/conf/red5-common.xml.sample %D/red5/conf/red5-common.xml
 @unexec cmp -s %D/red5/conf/red5-core.xml %D/red5/conf/red5-core.xml.sample && rm -f %D/red5/conf/red5-core.xml || true 2>/dev/null
 red5/conf/red5-core.xml.sample
-@exec [ -f %D/red5/conf/red5-core.xml ] || cp -p %D/red5/conf/red5-core.xml.sample %D/red5/red5/conf/red5-core.xml
+@exec [ -f %D/red5/conf/red5-core.xml ] || cp -p %D/red5/conf/red5-core.xml.sample %D/red5/conf/red5-core.xml
 @unexec cmp -s %D/red5/conf/red5.globals %D/red5/conf/red5.globals.sample && rm -f %D/red5/conf/red5.globals || true 2>/dev/null
 red5/conf/red5.globals.sample
-@exec [ -f %D/red5/conf/red5.globals ] || cp -p %D/red5/conf/red5.globals.sample %D/red5/red5/conf/red5.globals
+@exec [ -f %D/red5/conf/red5.globals ] || cp -p %D/red5/conf/red5.globals.sample %D/red5/conf/red5.globals
 @unexec cmp -s %D/red5/conf/red5.policy %D/red5/conf/red5.policy.sample && rm -f %D/red5/conf/red5.policy || true 2>/dev/null
 red5/conf/red5.policy.sample
-@exec [ -f %D/red5/conf/red5.policy ] || cp -p %D/red5/conf/red5.policy.sample %D/red5/red5/conf/red5.policy
+@exec [ -f %D/red5/conf/red5.policy ] || cp -p %D/red5/conf/red5.policy.sample %D/red5/conf/red5.policy
 @unexec cmp -s %D/red5/conf/red5.properties %D/red5/conf/red5.properties.sample && rm -f %D/red5/conf/red5.properties || true 2>/dev/null
 red5/conf/red5.properties.sample
-@exec [ -f %D/red5/conf/red5.properties ] || cp -p %D/red5/conf/red5.properties.sample %D/red5/red5/conf/red5.properties
+@exec [ -f %D/red5/conf/red5.properties ] || cp -p %D/red5/conf/red5.properties.sample %D/red5/conf/red5.properties
 @unexec cmp -s %D/red5/conf/red5.xml %D/red5/conf/red5.xml.sample && rm -f %D/red5/conf/red5.xml || true 2>/dev/null
 red5/conf/red5.xml.sample
-@exec [ -f %D/red5/conf/red5.xml ] || cp -p %D/red5/conf/red5.xml.sample %D/red5/red5/conf/red5.xml
+@exec [ -f %D/red5/conf/red5.xml ] || cp -p %D/red5/conf/red5.xml.sample %D/red5/conf/red5.xml
 @unexec cmp -s %D/red5/conf/tomcat-users.xml %D/red5/conf/tomcat-users.xml.sample && rm -f %D/red5/conf/tomcat-users.xml || true 2>/dev/null
 red5/conf/tomcat-users.xml.sample
-@exec [ -f %D/red5/conf/tomcat-users.xml ] || cp -p %D/red5/conf/tomcat-users.xml.sample %D/red5/red5/conf/tomcat-users.xml
+@exec [ -f %D/red5/conf/tomcat-users.xml ] || cp -p %D/red5/conf/tomcat-users.xml.sample %D/red5/conf/tomcat-users.xml
 @unexec cmp -s %D/red5/conf/truststore.jmx %D/red5/conf/truststore.jmx.sample && rm -f %D/red5/conf/truststore.jmx || true 2>/dev/null
 red5/conf/truststore.jmx.sample
-@exec [ -f %D/red5/conf/truststore.jmx ] || cp -p %D/red5/conf/truststore.jmx.sample %D/red5/red5/conf/truststore.jmx
+@exec [ -f %D/red5/conf/truststore.jmx ] || cp -p %D/red5/conf/truststore.jmx.sample %D/red5/conf/truststore.jmx
 @unexec cmp -s %D/red5/conf/web.xml %D/red5/conf/web.xml.sample && rm -f %D/red5/conf/web.xml || true 2>/dev/null
 red5/conf/web.xml.sample
-@exec [ -f %D/red5/conf/web.xml ] || cp -p %D/red5/conf/web.xml.sample %D/red5/red5/conf/web.xml
+@exec [ -f %D/red5/conf/web.xml ] || cp -p %D/red5/conf/web.xml.sample %D/red5/conf/web.xml
 red5/lib/bcprov-jdk15on-1.47.jar
 red5/lib/com.springsource.javax.xml.stream-1.0.1.jar
 red5/lib/com.springsource.net.sf.cglib-2.2.0.jar
@@ -124,13 +124,13 @@ red5/red5-server-1.0.jar
 red5/webapps/installer/AC_OETags.js
 @unexec cmp -s %D/red5/webapps/installer/WEB-INF/red5-web.properties %D/red5/webapps/installer/WEB-INF/red5-web.properties.sample && rm -f %D/red5/webapps/installer/WEB-INF/red5-web.properties || true 2>/dev/null
 red5/webapps/installer/WEB-INF/red5-web.properties.sample
-@exec [ -f %D/red5/webapps/installer/WEB-INF/red5-web.properties ] || cp -p %D/red5/webapps/installer/WEB-INF/red5-web.properties.sample %D/red5/red5/webapps/installer/WEB-INF/red5-web.properties
+@exec [ -f %D/red5/webapps/installer/WEB-INF/red5-web.properties ] || cp -p %D/red5/webapps/installer/WEB-INF/red5-web.properties.sample %D/red5/webapps/installer/WEB-INF/red5-web.properties
 @unexec cmp -s %D/red5/webapps/installer/WEB-INF/red5-web.xml %D/red5/webapps/installer/WEB-INF/red5-web.xml.sample && rm -f %D/red5/webapps/installer/WEB-INF/red5-web.xml || true 2>/dev/null
 red5/webapps/installer/WEB-INF/red5-web.xml.sample
-@exec [ -f %D/red5/webapps/installer/WEB-INF/red5-web.xml ] || cp -p %D/red5/webapps/installer/WEB-INF/red5-web.xml.sample %D/red5/red5/webapps/installer/WEB-INF/red5-web.xml
+@exec [ -f %D/red5/webapps/installer/WEB-INF/red5-web.xml ] || cp -p %D/red5/webapps/installer/WEB-INF/red5-web.xml.sample %D/red5/webapps/installer/WEB-INF/red5-web.xml
 @unexec cmp -s %D/red5/webapps/installer/WEB-INF/web.xml %D/red5/webapps/installer/WEB-INF/web.xml.sample && rm -f %D/red5/webapps/installer/WEB-INF/web.xml || true 2>/dev/null
 red5/webapps/installer/WEB-INF/web.xml.sample
-@exec [ -f %D/red5/webapps/installer/WEB-INF/web.xml ] || cp -p %D/red5/webapps/installer/WEB-INF/web.xml.sample %D/red5/red5/webapps/installer/WEB-INF/web.xml
+@exec [ -f %D/red5/webapps/installer/WEB-INF/web.xml ] || cp -p %D/red5/webapps/installer/WEB-INF/web.xml.sample %D/red5/webapps/installer/WEB-INF/web.xml
 red5/webapps/installer/history/history.css
 red5/webapps/installer/history/history.js
 red5/webapps/installer/history/historyFrame.html
@@ -139,25 +139,25 @@ red5/webapps/installer/installer.swf
 red5/webapps/installer/playerProductInstall.swf
 @unexec cmp -s %D/red5/webapps/live/WEB-INF/red5-web.properties %D/red5/webapps/live/WEB-INF/red5-web.properties.sample && rm -f %D/red5/webapps/live/WEB-INF/red5-web.properties || true 2>/dev/null
 red5/webapps/live/WEB-INF/red5-web.properties.sample
-@exec [ -f %D/red5/webapps/live/WEB-INF/red5-web.properties ] || cp -p %D/red5/webapps/live/WEB-INF/red5-web.properties.sample %D/red5/red5/webapps/live/WEB-INF/red5-web.properties
+@exec [ -f %D/red5/webapps/live/WEB-INF/red5-web.properties ] || cp -p %D/red5/webapps/live/WEB-INF/red5-web.properties.sample %D/red5/webapps/live/WEB-INF/red5-web.properties
 @unexec cmp -s %D/red5/webapps/live/WEB-INF/red5-web.xml %D/red5/webapps/live/WEB-INF/red5-web.xml.sample && rm -f %D/red5/webapps/live/WEB-INF/red5-web.xml || true 2>/dev/null
 red5/webapps/live/WEB-INF/red5-web.xml.sample
-@exec [ -f %D/red5/webapps/live/WEB-INF/red5-web.xml ] || cp -p %D/red5/webapps/live/WEB-INF/red5-web.xml.sample %D/red5/red5/webapps/live/WEB-INF/red5-web.xml
+@exec [ -f %D/red5/webapps/live/WEB-INF/red5-web.xml ] || cp -p %D/red5/webapps/live/WEB-INF/red5-web.xml.sample %D/red5/webapps/live/WEB-INF/red5-web.xml
 @unexec cmp -s %D/red5/webapps/live/WEB-INF/web.xml %D/red5/webapps/live/WEB-INF/web.xml.sample && rm -f %D/red5/webapps/live/WEB-INF/web.xml || true 2>/dev/null
 red5/webapps/live/WEB-INF/web.xml.sample
-@exec [ -f %D/red5/webapps/live/WEB-INF/web.xml ] || cp -p %D/red5/webapps/live/WEB-INF/web.xml.sample %D/red5/red5/webapps/live/WEB-INF/web.xml
+@exec [ -f %D/red5/webapps/live/WEB-INF/web.xml ] || cp -p %D/red5/webapps/live/WEB-INF/web.xml.sample %D/red5/webapps/live/WEB-INF/web.xml
 @unexec cmp -s %D/red5/webapps/red5-default.xml %D/red5/webapps/red5-default.xml.sample && rm -f %D/red5/webapps/red5-default.xml || true 2>/dev/null
 red5/webapps/red5-default.xml.sample
 @exec [ -f %D/red5/webapps/red5-default.xml ] || cp -p %D/red5/webapps/red5-default.xml.sample %D/red5/webapps/red5-default.xml 
 @unexec cmp -s %D/red5/webapps/root/WEB-INF/red5-web.properties %D/red5/webapps/root/WEB-INF/red5-web.properties.sample && rm -f %D/red5/webapps/root/WEB-INF/red5-web.properties || true 2>/dev/null
 red5/webapps/root/WEB-INF/red5-web.properties.sample
-@exec [ -f %D/red5/webapps/root/WEB-INF/red5-web.properties ] || cp -p %D/red5/webapps/root/WEB-INF/red5-web.properties.sample %D/red5/red5/webapps/root/WEB-INF/red5-web.properties
+@exec [ -f %D/red5/webapps/root/WEB-INF/red5-web.properties ] || cp -p %D/red5/webapps/root/WEB-INF/red5-web.properties.sample %D/red5/webapps/root/WEB-INF/red5-web.properties
 @unexec cmp -s %D/red5/webapps/root/WEB-INF/red5-web.xml %D/red5/webapps/root/WEB-INF/red5-web.xml.sample && rm -f %D/red5/webapps/root/WEB-INF/red5-web.xml || true 2>/dev/null
 red5/webapps/root/WEB-INF/red5-web.xml.sample
-@exec [ -f %D/red5/webapps/root/WEB-INF/red5-web.xml ] || cp -p %D/red5/webapps/root/WEB-INF/red5-web.xml.sample %D/red5/red5/webapps/root/WEB-INF/red5-web.xml
+@exec [ -f %D/red5/webapps/root/WEB-INF/red5-web.xml ] || cp -p %D/red5/webapps/root/WEB-INF/red5-web.xml.sample %D/red5/webapps/root/WEB-INF/red5-web.xml
 @unexec cmp -s %D/red5/webapps/root/WEB-INF/web.xml %D/red5/webapps/root/WEB-INF/web.xml.sample && rm -f %D/red5/webapps/root/WEB-INF/web.xml || true 2>/dev/null
 red5/webapps/root/WEB-INF/web.xml.sample
-@exec [ -f %D/red5/webapps/root/WEB-INF/web.xml ] || cp -p %D/red5/webapps/root/WEB-INF/web.xml.sample %D/red5/red5/webapps/root/WEB-INF/web.xml
+@exec [ -f %D/red5/webapps/root/WEB-INF/web.xml ] || cp -p %D/red5/webapps/root/WEB-INF/web.xml.sample %D/red5/webapps/root/WEB-INF/web.xml
 red5/webapps/root/biglogo.png
 red5/webapps/root/crossdomain.xml
 red5/webapps/root/demos/BallControl.html
@@ -204,13 +204,13 @@ red5/webapps/root/index.html
 red5/webapps/root/logo.png
 @unexec cmp -s %D/red5/webapps/vod/WEB-INF/red5-web.properties %D/red5/webapps/vod/WEB-INF/red5-web.properties.sample && rm -f %D/red5/webapps/vod/WEB-INF/red5-web.properties || true 2>/dev/null
 red5/webapps/vod/WEB-INF/red5-web.properties.sample
-@exec [ -f %D/red5/webapps/vod/WEB-INF/red5-web.properties ] || cp -p %D/red5/webapps/vod/WEB-INF/red5-web.properties.sample %D/red5/red5/webapps/vod/WEB-INF/red5-web.properties
+@exec [ -f %D/red5/webapps/vod/WEB-INF/red5-web.properties ] || cp -p %D/red5/webapps/vod/WEB-INF/red5-web.properties.sample %D/red5/webapps/vod/WEB-INF/red5-web.properties
 @unexec cmp -s %D/red5/webapps/vod/WEB-INF/red5-web.xml %D/red5/webapps/vod/WEB-INF/red5-web.xml.sample && rm -f %D/red5/webapps/vod/WEB-INF/red5-web.xml || true 2>/dev/null
 red5/webapps/vod/WEB-INF/red5-web.xml.sample
-@exec [ -f %D/red5/webapps/vod/WEB-INF/red5-web.xml ] || cp -p %D/red5/webapps/vod/WEB-INF/red5-web.xml.sample %D/red5/red5/webapps/vod/WEB-INF/red5-web.xml
+@exec [ -f %D/red5/webapps/vod/WEB-INF/red5-web.xml ] || cp -p %D/red5/webapps/vod/WEB-INF/red5-web.xml.sample %D/red5/webapps/vod/WEB-INF/red5-web.xml
 @unexec cmp -s %D/red5/webapps/vod/WEB-INF/web.xml %D/red5/webapps/vod/WEB-INF/web.xml.sample && rm -f %D/red5/webapps/vod/WEB-INF/web.xml || true 2>/dev/null
 red5/webapps/vod/WEB-INF/web.xml.sample
-@exec [ -f %D/red5/webapps/vod/WEB-INF/web.xml ] || cp -p %D/red5/webapps/vod/WEB-INF/web.xml.sample %D/red5/red5/webapps/vod/WEB-INF/web.xml
+@exec [ -f %D/red5/webapps/vod/WEB-INF/web.xml ] || cp -p %D/red5/webapps/vod/WEB-INF/web.xml.sample %D/red5/webapps/vod/WEB-INF/web.xml
 red5/webapps/vod/framework_4.5.1.21328.swf
 red5/webapps/vod/index.html
 red5/webapps/vod/miniplayer.swf
