@@ -3,7 +3,7 @@
 
 PORTNAME=	resid
 PORTVERSION=	0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio emulators
 MASTER_SITES=	CRITICAL
 
@@ -12,7 +12,7 @@ COMMENT=	Cycle-based SID emulator engine
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
