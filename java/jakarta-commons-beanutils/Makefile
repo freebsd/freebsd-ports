@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commons-beanutils
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -12,16 +12,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	JavaBeans utility library
 
-BUILD_DEPENDS=	${JAR_DEPENDS}
-RUN_DEPENDS=	${JAR_DEPENDS}
+LICENSE=	APACHE20
 
-JAR_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
+BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
+		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
+RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 
+USES=		dos2unix
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
-
 USE_ANT=	yes
+DOS2UNIX_FILES=	build.xml
+JAVA_VERSION=	1.6+
 ALL_TARGET=	dist
 MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar
@@ -29,15 +31,17 @@ MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 APIDOCS=	api
-OTHERDOCS=	LICENSE.txt NOTICE.txt README.txt RELEASE-NOTES.txt
+OTHERDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
 PORTDOCS=	${APIDOCS} ${OTHERDOCS}
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
-.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVALIBDIR}/${JARFILE}
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/dist/docs \
 	  && ${FIND} ${APIDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 	  && ${FIND} ${APIDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
