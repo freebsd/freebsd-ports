@@ -1,0 +1,11 @@
+--- ant/site.xml.orig	2014-06-05 07:50:18.377016755 +0000
++++ ant/site.xml	2014-06-05 07:49:27.026098152 +0000
+@@ -65,7 +65,7 @@
+         <javadoc
+             destdir="${itext.docs}"
+             author="true" maxmemory="128m"
+-            private="true">
++            private="true" encoding="utf-8">
+ 			<packageset dir="${itext.src}/core" defaultexcludes="yes">
+       			<include name="com/lowagie/**" />
+ 		    </packageset>
