@@ -2,15 +2,23 @@
 #
 # $FreeBSD$
 #
-# PROVIDE: dnscrypt-proxy
+# PROVIDE: dnscrypt_proxy
 # REQUIRE: SERVERS cleanvar
 # BEFORE: named
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable dnscrypt-proxy:
 #
-# dnscrypt_proxy_enable="YES":	Set to NO by default.
-#				Set it to YES to enable dnscrypt-proxy.
+# dnscrypt_proxy_enable (bool):	Set to NO by default.
+#				Set to YES to enable dnscrypt-proxy.
+# dnscrypt_proxy_uid (str):	Set to "_dnscrypt-proxy" by default.
+#                              	User to switch to after starting.
+# dnscrypt_proxy_resolver (str):Set to "opendns" by default.
+#                              	Choose a different upstream resolver.
+# dnscrypt_proxy_pidfile (str):	default: "/var/run/dnscrypt-proxy.pid"
+#                              	Location of pid file.
+# dnscrypt_proxy_logfile (str):	default: "/var/log/dnscrypt-proxy.log"
+#                              	Location of log file.
 #
 # To redirect a local resolver through dnscrypt-proxy, point it at 127.0.0.2
 # and add the following to rc.conf:
@@ -22,26 +30,17 @@
 name=dnscrypt_proxy
 rcvar=dnscrypt_proxy_enable
 
-stop_cmd=dnscrypt_proxy_stop
-
 load_rc_config ${name}
 
 : ${dnscrypt_proxy_enable:=NO}
 : ${dnscrypt_proxy_uid=_dnscrypt-proxy} # User to run daemon as
+: ${dnscrypt_proxy_resolver=opendns} # resolver to use
 : ${dnscrypt_proxy_pidfile=/var/run/dnscrypt-proxy.pid} # Path to pid file
 : ${dnscrypt_proxy_logfile=/var/log/dnscrypt-proxy.log} # Path to log file
 
-if [ -n "$dnscrypt_proxy_uid" ]; then
-	dnscrypt_proxy_flags="${dnscrypt_proxy_flags} -u ${dnscrypt_proxy_uid}"
-fi
-
 command=%%PREFIX%%/sbin/dnscrypt-proxy
+command_args="-d -p ${dnscrypt_proxy_pidfile} -l ${dnscrypt_proxy_logfile} -u ${dnscrypt_proxy_uid} -R ${dnscrypt_proxy_resolver}"
 procname=%%PREFIX%%/sbin/dnscrypt-proxy
-
-command_args="-d -p ${dnscrypt_proxy_pidfile} -l ${dnscrypt_proxy_logfile}"
-
-dnscrypt_proxy_stop() {
-        kill -KILL `cat ${pidfile}` 2> /dev/null && echo "Killed ${name}."
-        }
+pidfile=${dnscrypt_proxy_pidfile}
 
 run_rc_command "$1"
