@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cstream
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cons.org/cracauer/download/
 
