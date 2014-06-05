@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codelite
-DISTVERSION=	5.4
+DISTVERSION=	6.0.1
 CATEGORIES=	editors devel
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -21,8 +21,7 @@ OPTIONS_SUB=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	eranif
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	41e98e5
-GH_TAGNAME=	5.4
+GH_COMMIT=	5bc3080
 
 USE_WX=		3.0
 WX_UNICODE=	yes
@@ -33,6 +32,7 @@ SHEBANG_FILES=	Runtime/clg++ Runtime/clgcc
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DIS_FREEBSD=1 \
+		-DENABLE_LLDB=0 \
 		-DPREFIX=${PREFIX}
 
 .include <bsd.port.options.mk>
@@ -42,8 +42,8 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 .endif
 
 .if ${PORT_OPTIONS:MCLANG}
-BUILD_DEPENDS+=	${LOCALBASE}/llvm-devel/lib/libclang.so:${PORTSDIR}/lang/clang-devel
-RUN_DEPENDS+=	${LOCALBASE}/llvm-devel/lib/libclang.so:${PORTSDIR}/lang/clang-devel
+BUILD_DEPENDS+=	${LOCALBASE}/llvm34/lib/libclang.so:${PORTSDIR}/lang/clang34
+RUN_DEPENDS+=	${LOCALBASE}/llvm34/lib/libclang.so:${PORTSDIR}/lang/clang34
 CMAKE_ARGS+=	-DENABLE_CLANG=1
 .else
 CMAKE_ARGS+=	-DENABLE_CLANG=0
@@ -57,5 +57,8 @@ post-patch:
 	     s|%%PREFIX%%|${PREFIX}|g; \
 	     /IS_FREEBSD/s|0|1|' \
 	    ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/LiteEditor/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|codelitegcc|codelite-cc|' \
+	    ${WRKSRC}/Runtime/clgcc ${WRKSRC}/Runtime/clg++
 
 .include <bsd.port.mk>
