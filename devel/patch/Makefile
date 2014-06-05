@@ -11,8 +11,7 @@ COMMENT=	GNU patch utility
 
 LICENSE=	GPLv3
 
-USE_XZ=		yes
-USES=		charsetfix gmake
+USES=		charsetfix gmake tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-silent-rules
 
