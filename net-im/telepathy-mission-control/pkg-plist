@@ -45,9 +45,6 @@ share/doc/mission-control-plugins/object-tree.html
 share/doc/mission-control-plugins/right.png
 share/doc/mission-control-plugins/style.css
 share/doc/mission-control-plugins/up.png
-man/man1/mc-tool.1.gz
-man/man1/mc-wait-for-name.1.gz
-man/man8/mission-control-5.8.gz
 @dirrm share/doc/mission-control-plugins
 @dirrm include/mission-control-5.5/mission-control-plugins
 @dirrm include/mission-control-5.5

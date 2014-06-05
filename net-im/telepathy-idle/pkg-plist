@@ -2,6 +2,5 @@ libexec/telepathy-idle
 man/man8/telepathy-idle.8.gz
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.idle.service
 share/telepathy/managers/idle.manager
-man/man8/telepathy-idle.8.gz
 @dirrmtry share/telepathy/managers
 @dirrmtry share/telepathy
