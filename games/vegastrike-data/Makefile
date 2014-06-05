@@ -8,8 +8,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.1/
 PKGNAMESUFFIX=	-data
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vega Strike data files
+
+DEPRECATED=	Does not compile with modern compilers
+EXPIRATION_DATE=	2014-07-06
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

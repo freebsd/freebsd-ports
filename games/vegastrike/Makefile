@@ -8,8 +8,11 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.1/
 DISTNAME=	vegastrike-src-${PORTVERSION}
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource 3D space simulator
+
+DEPRECATED=	Does not compile with modern compilers
+EXPIRATION_DATE=	2014-07-06
 
 RUN_DEPENDS=	${DATADIR}/vegastrike.ico:${PORTSDIR}/games/vegastrike-data
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
