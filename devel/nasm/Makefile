@@ -13,9 +13,8 @@ COMMENT=	General-purpose multi-platform x86 and amd64 assembler
 
 LICENSE=	BSD2CLAUSE
 
-USE_XZ=	yes
 GNU_CONFIGURE=	yes
-USES=	gmake	# parallel builds (-jX) are broken with BSD make(1)
+USES=		tar:xz gmake	# parallel builds (-jX) are broken with BSD make(1)
 MAKE_ARGS+=	INSTALLROOT=${STAGEDIR}
 INSTALL_TARGET=	install install_rdf
 
