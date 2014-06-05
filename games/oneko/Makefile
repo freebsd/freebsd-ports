@@ -24,20 +24,18 @@ CONFLICTS=	oneko-1.*
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm xmu
-MAN6=		oneko.6
-MANLANG=	"" ja
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	install install.man
 MAKE_ARGS=	MANSUFFIX=6 \
 		MANDIR=${PREFIX}/man/man6 \
 		JMANDIR=${PREFIX}/man/ja/man6
 
-NO_STAGE=	yes
-do-patch:
+pre-patch:
 	@(cd ${WRKSRC}; \
 	${PATCH} -p1 < ../oneko-2.0b-pop1.1.patch ; \
 	${PATCH} -p1 < oneko-2.0b-tip1.7.patch ; \
 	${PATCH} -p1 < ../oneko-2.0b-sender0.5.patch ; \
-	${PATCH} -p1 < ../oneko-2.0b-bsd0.2.patch )
+	${PATCH} -p1 < ../oneko-2.0b-bsd0.2.patch ; \
+	${PATCH} < ${FILESDIR}/extrapatch-Makefile.in )
 
 .include <bsd.port.mk>

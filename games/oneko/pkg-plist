@@ -1,4 +1,6 @@
 bin/oneko
+man/man6/oneko.6.gz
+man/ja/man6/oneko.6.gz
 lib/X11/app-defaults/Oneko
 lib/X11/ja/app-defaults/Oneko
 @dirrm lib/X11/ja/app-defaults
