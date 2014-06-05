@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140604
+  AFFECTS: users of dns/dnscrypt-proxy
+  AUTHOR: feld@FreeBSD.org
+
+  The 1.4.0 update to dns/dnscrypt-proxy introduced a privilege
+  separation capability utilizing the new _dnscrypt-proxy user.
+  The home directory for this user was misconfigured as /nonexistent.
+  The dnscrypt-proxy server will try to chroot to _dnscrypt-proxy's home
+  directory and fail to start. If you are affected you will need to
+  change _dnscrypt-proxy's home directory to /var/empty:
+
+  # pw usermod _dnscrypt-proxy -d /var/empty
+
 20140603
   AFFECTS: users of net-p2p/zetacoin
   AUTHOR: daniel@morante.net
