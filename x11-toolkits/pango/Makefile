@@ -4,7 +4,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.34.1
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,9 +26,10 @@ RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
 USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	cairo glib20 introspection:build referencehack
+USE_GNOME=	cairo glib20 gnomehier introspection:build referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="1.8.0"
 
@@ -54,11 +55,6 @@ pre-configure:
 	@${ECHO_CMD} "${PKGNAME}: Needs cairo with GLIB (GObject) support enabled."
 	@${FALSE}
 .endif
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/pango/
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpango*-1.0.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pango/*/modules/pango-*.so
 
 .include <bsd.port.mk>
 
