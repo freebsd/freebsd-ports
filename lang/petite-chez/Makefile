@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 NO_PACKAGE=	User must accept license terms before installation
 
 .if defined(PACKAGE_BUILDING)
-IGNORE=		User must accept license terms before installation
+IGNORE=		user must accept license terms before installation
 .endif
 
 OPTIONS_DEFINE=	THREADS
@@ -29,18 +29,16 @@ HAS_CONFIGURE=	yes
 USES=		iconv
 CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 		--installman=${MANPREFIX}/man \
+		--temproot=${STAGEDIR} \
 		--force-relink \
 		--nogzip-man-pages \
 		-m=${CHEZ_MACHTYPE}
 
 ALL_TARGET=	build
 
-MAN1=		petite.1
-
 PLIST_SUB=	CHEZ_VERSION="${PORTVERSION}" \
 		CHEZ_MACHTYPE="${CHEZ_MACHTYPE}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -74,5 +72,9 @@ post-configure:
 		-e 's|C=gcc|C=${CC}|' \
 		-e 's|-L/usr/local/lib|-L/usr/lib -L${LOCALBASE}/lib|' \
 		${WRKSRC}/Mf-${CHEZ_MACHTYPE}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/petite
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/scheme-script
 
 .include <bsd.port.post.mk>
