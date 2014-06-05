@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%WWWDIR%%/images/index.html
 %%WWWDIR%%/index.php
 %%WWWDIR%%/pivotx/ajaxhelper.php
