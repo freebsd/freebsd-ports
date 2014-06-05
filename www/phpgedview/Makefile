@@ -25,7 +25,6 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	SQLITE
 DB_DESC=	Data storage
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -48,19 +47,10 @@ post-extract:
 .endfor
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/index ${WWWDIR}/media
-	@${CHMOD} -R u+w ${WWWDIR}/index ${WWWDIR}/media
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/index ${STAGEDIR}${WWWDIR}/media
+	@${CHMOD} -R u+w ${STAGEDIR}${WWWDIR}/index ${STAGEDIR}${WWWDIR}/media
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/index ${WWWDIR}/media' >>${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} -R u+w ${WWWDIR}/index ${WWWDIR}/media' >>${TMPPLIST}
-
-post-install:
-.for f in ${DISTATE}
-	@if [ ! -f ${WWWDIR}/${f} ]; then \
-		${CP} -p ${WWWDIR}/${f}-dist ${WWWDIR}/${f}; \
-		${CHMOD} a+w ${WWWDIR}/${f}; \
-	fi
-.endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
