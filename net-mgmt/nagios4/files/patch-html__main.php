@@ -1,10 +1,10 @@
---- ./html/main.php.orig	2014-04-29 17:55:49.000000000 +0200
-+++ ./html/main.php	2014-05-06 15:39:05.000000000 +0200
+--- ./html/main.php.orig	2014-06-03 16:41:42.000000000 +0200
++++ ./html/main.php	2014-06-05 12:49:28.000000000 +0200
 @@ -130,31 +130,6 @@
  	<div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
- 	<div class="version">Version 4.0.6</div>
- 	<div class="releasedate">April 29, 2014</div>
--	<div class="checkforupdates"><a href="http://www.nagios.org/checkforupdates/?version=4.0.6&amp;product=nagioscore" target="_blank">Check for updates</a></div>
+ 	<div class="version">Version <?php echo $this_version; ?></div>
+ 	<div class="releasedate">June 03, 2014</div>
+-	<div class="checkforupdates"><a href="http://www.nagios.org/checkforupdates/?version=<?php echo $this_version; ?>&amp;product=nagioscore" target="_blank">Check for updates</a></div>
 -</div>
 -
 -
