@@ -1,11 +1,9 @@
+@owner %%WWWUID%%
+@group %%WWWGID%%
 %%T%%/webapps/xgate/META-INF/MANIFEST.MF
 %%T%%/webapps/xgate/WEB-INF/LICENSE.jakarta-struts
-@unexec if cmp -s %D/%%T%%/webapps/xgate/WEB-INF/account/admin.ndt %D/%%T%%/webapps/xgate/WEB-INF/account/admin.ndt-dist; then rm -f %D/%%T%%/webapps/xgate/WEB-INF/account/admin.ndt; fi
-%%T%%/webapps/xgate/WEB-INF/account/admin.ndt-dist
-@exec [ ! -f %B/admin.ndt ] && cp -p %B/%f %B/admin.ndt
-@unexec if cmp -s %D/%%T%%/webapps/xgate/WEB-INF/account/license.dat %D/%%T%%/webapps/xgate/WEB-INF/account/license.dat-dist; then rm -f %D/%%T%%/webapps/xgate/WEB-INF/account/license.dat; fi
-%%T%%/webapps/xgate/WEB-INF/account/license.dat-dist
-@exec [ ! -f %B/license.dat ] && cp -p %B/%f %B/license.dat
+@sample %%T%%/webapps/xgate/WEB-INF/account/admin.ndt.sample
+@sample %%T%%/webapps/xgate/WEB-INF/account/license.dat.sample
 %%T%%/webapps/xgate/WEB-INF/address/readme.txt
 %%T%%/webapps/xgate/WEB-INF/classes/com/happysize/net/radius/Radiusproto.class
 %%T%%/webapps/xgate/WEB-INF/classes/com/happysize/net/radius/Simple_radius_client.class
@@ -740,39 +738,23 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/web/WebMessageDisplayVisitor.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/web/WebReportMessageDisplayVisitor.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/web/WebWriter.class
-%%T%%/webapps/xgate/WEB-INF/conf/access.dat
-%%T%%/webapps/xgate/WEB-INF/conf/access.dat-dist
-%%T%%/webapps/xgate/WEB-INF/conf/address.data
-%%T%%/webapps/xgate/WEB-INF/conf/address.data-dist
-%%T%%/webapps/xgate/WEB-INF/conf/address.map
-%%T%%/webapps/xgate/WEB-INF/conf/address.map-dist
-%%T%%/webapps/xgate/WEB-INF/conf/admin.ldif
-%%T%%/webapps/xgate/WEB-INF/conf/admin.ldif-dist
-%%T%%/webapps/xgate/WEB-INF/conf/admin_group.ldif
-%%T%%/webapps/xgate/WEB-INF/conf/admin_group.ldif-dist
-%%T%%/webapps/xgate/WEB-INF/conf/createuser.conf
-%%T%%/webapps/xgate/WEB-INF/conf/createuser.conf-dist
-%%T%%/webapps/xgate/WEB-INF/conf/device_match.conf
-%%T%%/webapps/xgate/WEB-INF/conf/device_match.conf-dist
-%%T%%/webapps/xgate/WEB-INF/conf/entry.data
-%%T%%/webapps/xgate/WEB-INF/conf/entry.data-dist
-%%T%%/webapps/xgate/WEB-INF/conf/extra.types
-%%T%%/webapps/xgate/WEB-INF/conf/extra.types-dist
-%%T%%/webapps/xgate/WEB-INF/conf/group.data
-%%T%%/webapps/xgate/WEB-INF/conf/group.data-dist
-%%T%%/webapps/xgate/WEB-INF/conf/group.map
-%%T%%/webapps/xgate/WEB-INF/conf/group.map-dist
+@sample %%T%%/webapps/xgate/WEB-INF/conf/access.dat.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/address.data.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/address.map.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/admin.ldif.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/admin_group.ldif.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/createuser.conf.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/device_match.conf.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/entry.data.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/extra.types.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/group.data.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/group.map.sample
 %%T%%/webapps/xgate/WEB-INF/conf/javacat.properties
-%%T%%/webapps/xgate/WEB-INF/conf/ldap.map
-%%T%%/webapps/xgate/WEB-INF/conf/ldap.map-dist
-%%T%%/webapps/xgate/WEB-INF/conf/log.conf
-%%T%%/webapps/xgate/WEB-INF/conf/log.conf-dist
-%%T%%/webapps/xgate/WEB-INF/conf/terminal.dat
-%%T%%/webapps/xgate/WEB-INF/conf/terminal.dat-dist
-%%T%%/webapps/xgate/WEB-INF/conf/user.data
-%%T%%/webapps/xgate/WEB-INF/conf/user.data-dist
-%%T%%/webapps/xgate/WEB-INF/conf/xgate.conf
-%%T%%/webapps/xgate/WEB-INF/conf/xgate.conf-dist
+@sample %%T%%/webapps/xgate/WEB-INF/conf/ldap.map.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/log.conf.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/terminal.dat.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/user.data.sample
+@sample %%T%%/webapps/xgate/WEB-INF/conf/xgate.conf.sample
 %%T%%/webapps/xgate/WEB-INF/dhklib/CMap/78-EUC-H
 %%T%%/webapps/xgate/WEB-INF/dhklib/CMap/78-EUC-V
 %%T%%/webapps/xgate/WEB-INF/dhklib/CMap/78-H
@@ -2069,7 +2051,9 @@
 %%T%%/webapps/xgate/wml/Xmas.png
 %%T%%/webapps/xgate/wml/index.jsp
 %%T%%/webapps/xgate/wml/index_e.jsp
-@dirrmtry %%DOCSDIR%%
+@exec mkdir -p /var/log/xgate
+@owner
+@group
 @dirrm %%T%%/webapps/xgate/wml
 @dirrm %%T%%/webapps/xgate/pda/img
 @dirrm %%T%%/webapps/xgate/pda
@@ -2178,5 +2162,4 @@
 @dirrm %%T%%/webapps/xgate/WEB-INF
 @dirrm %%T%%/webapps/xgate/META-INF
 @dirrm %%T%%/webapps/xgate
-@unexec rmdir /var/log/xgate 2>/dev/null || true
-@exec install -d -o %%WWWUID%% -g %%WWWGID%% /var/log/xgate
+@unexec rm -rf /var/log/xgate 2>/dev/null || true
