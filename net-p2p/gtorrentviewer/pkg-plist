@@ -1,4 +1,5 @@
 bin/gtorrentviewer
+man/man1/gtorrentviewer.1.gz
 share/GTorrentViewer/README
 share/GTorrentViewer/pixmaps/about.png
 share/GTorrentViewer/pixmaps/dictionary.png
