@@ -2,6 +2,7 @@
 
 PORTNAME=	libcfu
 DISTVERSION=	0.04a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
@@ -15,10 +16,10 @@ GH_ACCOUNT=	crees
 GH_COMMIT=	947dba4
 GH_TAGNAME=	947dba4
 
-USES=		pkgconfig pathfix
+USES=		pkgconfig pathfix libtool
 PATHFIX_MAKEFILEIN=	Makefile.am
 
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool libtoolize
+USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtoolize
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	-I ${LIBTOOL_M4:C,[^/]*$,,}
 INFO=		${PORTNAME}

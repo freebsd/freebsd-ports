@@ -7,8 +7,8 @@ include/cfu/cfustring.h
 include/cfu/cfutimer.h
 include/cfu/cfuthread_queue.h
 lib/libcfu.a
-lib/libcfu.la
 lib/libcfu.so
 lib/libcfu.so.0
+lib/libcfu.so.0.0.0
 libdata/pkgconfig/libcfu.pc
 @dirrm include/cfu
