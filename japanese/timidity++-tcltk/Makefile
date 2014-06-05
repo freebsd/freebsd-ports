@@ -8,9 +8,10 @@ CATEGORIES=	japanese
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk interface for TiMidity++ with Japanese support
 
-JAPANESE=	yes
+OPTIONS_DEFINE=	DOCS
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
-NO_STAGE=	yes
+JAPANESE=	yes
+
 .include "${MASTERDIR}/Makefile"
