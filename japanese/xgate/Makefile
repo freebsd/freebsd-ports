@@ -3,16 +3,17 @@
 
 PORTNAME=	xgate
 PORTVERSION=	3.7pl6
+PORTREVISION=	1
 CATEGORIES=	japanese mail www java
 MASTER_SITES=	http://www.orangesoft.co.jp/index.php/download_file/-/192/
 DISTNAME=	${PORTNAME}pkg${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	xGate webmail system implemented by Servlet over IMAP4/POP3
+COMMENT=	Webmail system xGate implemented by Servlet over IMAP4/POP3
 
 RUN_DEPENDS=	${APP_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 
+USES=		uidfix dos2unix tar:tgz
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -20,7 +21,9 @@ SHAREOWN=	www
 SHAREGRP=	www
 
 PLIST_SUB=	T=${APP_HOME:S|^${LOCALBASE}/||} \
-		WWWUID=${WWWUID} WWWGID=${WWWGID}
+		WWWUID=${WWWOWN} WWWGID=${WWWGRP}
+
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AdminGuide.pdf \
 		BasicPkgInstallGuide.pdf \
@@ -41,8 +44,7 @@ PORTDOCS=	AdminGuide.pdf \
 
 RESTRICTED=	Commercial license
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat6 -VAPP_HOME
 
@@ -67,31 +69,23 @@ CNFLSTS=	account/admin.ndt	\
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/xgate
-.if ${OSVERSION} < 800000
-	@${UNZIP_CMD} ${WRKSRC}/xgate.war -d ${WRKSRC}/xgate
-.else
-	@${TAR} xvf ${WRKSRC}/xgate.war -C ${WRKSRC}/xgate
-.endif
-.for conf in ${CNFLSTS}
-	@cd ${WRKSRC}/xgate/WEB-INF && ${MV} ${conf} ${conf}-dist
-.endfor
+	@${TAR} -xvf ${WRKSRC}/xgate.war -C ${WRKSRC}/xgate
 
 post-patch:
-	${FIND} ${WRKSRC} -name \*.orig -print0 | ${XARGS} -0 ${RM}
+.for conf in ${CNFLSTS}
+	@cd ${WRKSRC}/xgate/WEB-INF && ${MV} ${conf} ${conf}.sample
+.endfor
+	${FIND} ${WRKSRC} -name \*.orig -delete
 
 do-install:
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} /var/log/xgate
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${APP_HOME}/webapps/${PORTNAME}
-	@cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_SHARE} \* ${APP_HOME}/webapps/${PORTNAME}
-.for conf in ${CNFLSTS}
-	@cd ${APP_HOME}/webapps/xgate/WEB-INF && \
-		[ ! -f ${conf} ] && ${CP} -p ${conf}-dist ${conf} || ${TRUE}
-.endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docf in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${docf} ${DOCSDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${APP_HOME}/webapps/${PORTNAME}
+	@cd ${WRKSRC}/${PORTNAME} && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${APP_HOME}/webapps/${PORTNAME}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.  for docf in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${docf} ${STAGEDIR}${DOCSDIR}
+.  endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
