@@ -5012,7 +5012,6 @@ lib-depends:
 			found=1 ; \
 			${ECHO_MSG} -n " - found ($${_LIB_FILE})"; \
 		done ; \
-		${ECHO_MSG}; \
 		if [ $${found} -eq 0 ]; then \
 			${ECHO_MSG} " - not found"; \
 			${ECHO_MSG} "===>    Verifying for $$lib in $$dir"; \
@@ -5021,6 +5020,8 @@ lib-depends:
 			else \
 				${_INSTALL_DEPENDS} \
 			fi ; \
+		else \
+			${ECHO_MSG}; \
 		fi ; \
 	done
 	@set -e ; for i in ${LIB_DEPENDS:N*.so*\:*}; do \
