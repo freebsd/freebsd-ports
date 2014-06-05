@@ -164,7 +164,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/package-list
 %%PORTDOCS%%%%DOCSDIR%%/resources/background.gif
-%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
+%%JDK6%%%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/tab.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/titlebar.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/titlebar_end.gif
@@ -177,11 +177,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lookup.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/update.java
 share/java/classes/dnsjava.jar
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/resources
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org/xbill/DNS/utils
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org/xbill/DNS/spi
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org/xbill/DNS
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org/xbill
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS/utils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS/spi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
