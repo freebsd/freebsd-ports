@@ -11,7 +11,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A lisp macro to read math statements in infix notation
 
 DEPRECATED=	Depends on deprecated lang/clisp
-EXIPIRATION_DATE=	2014-07-28
+EXPIRATION_DATE=	2014-07-28
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:${PORTSDIR}/devel/cl-infix
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:${PORTSDIR}/devel/cl-infix
