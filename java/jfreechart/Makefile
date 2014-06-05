@@ -26,6 +26,7 @@ COMPILE_DESC=	Build from source
 USE_ANT=	yes
 ALL_TARGET=	compile
 BUILD_WRKSRC=	${WRKSRC}/ant
+MAKE_ENV=	LANG=en_US.UTF-8
 .else
 NO_BUILD=	yes
 .endif
