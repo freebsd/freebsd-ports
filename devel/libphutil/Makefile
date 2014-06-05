@@ -15,7 +15,7 @@ PHP_DESTDIR=	lib/php/libphutil
 USE_PHP=	xml
 USE_GITHUB=	yes
 NO_BUILD=	yes
-GH_ACCOUNT=	facebook
+GH_ACCOUNT=	phacility
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	1e703ff
 
