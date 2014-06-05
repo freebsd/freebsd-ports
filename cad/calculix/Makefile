@@ -3,7 +3,7 @@
 
 PORTNAME=	CalculiX
 PORTVERSION=	2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -20,8 +20,6 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Three-Dimensional Structural Finite Element Program
 
 LICENSE=	GPLv2
-
-BROKEN=		Checksum and size mismatch
 
 LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack	\
 		libspooles.so:${PORTSDIR}/math/spooles \
