@@ -3,7 +3,7 @@
 
 PORTNAME=	fcron
 PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/archives/ \
@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	rde@tavi.co.uk
 COMMENT=	A periodic command scheduler
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 GNU_CONFIGURE=	yes
 USES=		perl5 gmake
@@ -24,12 +26,11 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --localstatedir=/var \
 
 WRKSRC=		${WRKDIR}/fcron-${PORTVERSION}
 
+USERS=		fcron
+GROUPS=		fcron
+
 USE_RC_SUBR=	fcron
 SUB_FILES=	pkg-message
-
-MAN1=		fcrontab.1
-MAN5=		fcron.conf.5 fcrontab.5
-MAN8=		fcron.8
 
 PAMDIR?=	/etc/pam.d
 PLIST_SUB+=	PAMDIR=etc/pam.d
@@ -42,37 +43,25 @@ DOCSRC=		${WRKSRC}/doc/${MANLANG}
 DOCSRC=		${WRKSRC}/doc/en
 .endif
 
-LICENSE=	GPLv2
-
-NO_STAGE=	yes
-pre-su-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fcron ${PREFIX}/sbin
-	${INSTALL_PROGRAM} -g fcron -o fcron -m 6111 ${WRKSRC}/fcrontab ${PREFIX}/bin
-	${INSTALL_PROGRAM} -g fcron -o fcron -m 6111 ${WRKSRC}/fcrondyn ${PREFIX}/bin
-	${INSTALL_PROGRAM} -g fcron -m 4110 ${WRKSRC}/fcronsighup ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/fcron ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/fcrontab ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/fcrondyn ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/fcronsighup ${STAGEDIR}${PREFIX}/bin
 .for f in fcron.allow fcron.conf fcron.deny
-	${INSTALL_DATA} -g fcron -m 640 ${WRKSRC}/files/${f} ${PREFIX}/etc/${f}.dist
+	${INSTALL_DATA} -m 640 ${WRKSRC}/files/${f} ${STAGEDIR}${PREFIX}/etc/${f}.sample
 .endfor
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/fcrontab-* ${WRKSRC}/files/*.pam ${EXAMPLESDIR}
-	${MKDIR} ${PAMDIR}
-	[ -f ${PAMDIR}/fcron ] || ${INSTALL_DATA} ${WRKSRC}/files/fcron.pam ${PAMDIR}/fcron
-	[ -f ${PAMDIR}/fcrontab ] || ${INSTALL_DATA} ${WRKSRC}/files/fcrontab.pam ${PAMDIR}/fcrontab
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/fcrontab-* ${WRKSRC}/files/*.pam ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/files/fcron.pam ${STAGEDIR}${PREFIX}${PAMDIR}/fcron
+	${INSTALL_DATA} ${WRKSRC}/files/fcrontab.pam ${STAGEDIR}${PREFIX}${PAMDIR}/fcrontab
+	install -d -m 770 ${STAGEDIR}/var/spool/fcron
 .for n in 1 5 8
-	${INSTALL_MAN} ${MAN${n}:S|^|${DOCSRC}/man/|} ${PREFIX}/man/man${n}
+	${INSTALL_MAN} ${DOCSRC}/man/*.${n} ${STAGEDIR}${PREFIX}/man/man${n}
 .endfor
-.if !defined(NOPORTDOCS)
-.  for d in txt HTML
-	${MKDIR} ${DOCSDIR}/${d}
-	${INSTALL_DATA} ${DOCSRC}/${d}/* ${DOCSDIR}/${d}
-.  endfor
-.endif
-
-post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+.for d in txt HTML
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
+	${INSTALL_DATA} ${DOCSRC}/${d}/* ${STAGEDIR}${DOCSDIR}/${d}
+.endfor
 
 .include <bsd.port.mk>
