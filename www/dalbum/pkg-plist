@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%DALBUM_DIR%%/.htaccess
 %%DALBUM_DIR%%/.private/.htaccess
 %%DALBUM_DIR%%/.private/.htpasswd
@@ -90,3 +92,5 @@
 @dirrm %%DALBUM_DIR%%/config
 @dirrmtry %%DALBUM_DIR%%/.private
 @dirrm %%DALBUM_DIR%%
+@owner root
+@group wheel
