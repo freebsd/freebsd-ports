@@ -40,13 +40,13 @@ include/aubio/types.h
 @dirrm include/aubio/midi
 @dirrm include/aubio
 lib/libaubio.a
-lib/libaubio.la
 lib/libaubio.so
-lib/libaubio.so.3
+lib/libaubio.so.2
+lib/libaubio.so.2.1.1
 lib/libaubioext.a
-lib/libaubioext.la
 lib/libaubioext.so
-lib/libaubioext.so.3
+lib/libaubioext.so.2
+lib/libaubioext.so.2.1.1
 libdata/pkgconfig/aubio.pc
 share/sounds/aubio/woodblock.aiff
 @dirrm share/sounds/aubio
