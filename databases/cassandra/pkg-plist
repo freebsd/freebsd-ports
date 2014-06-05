@@ -36,23 +36,58 @@ bin/cassandra-shuffle
 %%CQL%%%%DATADIR%%/pylib/setup.py
 %%CQL%%%%DATADIR%%/pylib/setup.pyc
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/__init__.py
-%%CQL%%%%DATADIR%%/pylib/cqlshlib/cqlhandling.py
-%%CQL%%%%DATADIR%%/pylib/cqlshlib/pylexotron.py
-%%CQL%%%%DATADIR%%/pylib/cqlshlib/saferscanner.py
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/__init__.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cql3handling.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cql3handling.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cqlhandling.py
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/cqlhandling.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/displaying.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/displaying.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/formatting.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/formatting.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/helptopics.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/helptopics.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/pylexotron.py
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/pylexotron.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/saferscanner.py
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/saferscanner.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/ssl.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/ssl.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/__init__.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/__init__.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/ansi_colors.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/ansi_colors.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/basecase.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/basecase.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/cassconnect.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/cassconnect.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/run_cqlsh.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/run_cqlsh.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/table_arrangements.cql
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cql_parsing.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cql_parsing.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_commands.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_commands.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_completion.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_completion.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_invocation.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_invocation.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_output.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_output.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_keyspace_init2.cql
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_keyspace_init3.cql
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/tfactory.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/tfactory.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/tracing.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/tracing.pyc
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/wcwidth.pyc
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/wcwidth.py
-%%CQL%%%%DATADIR%%/pylib/cqlshlib/cql3handling.py
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/util.py
-%%CQL%%%%DATADIR%%/pylib/cqlshlib/cql3handling.pyc
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/util.pyc
 %%DATADIR%%/lib/antlr-3.2.jar
-%%DATADIR%%/lib/apache-cassandra-1.2.15.jar
-%%DATADIR%%/lib/apache-cassandra-clientutil-1.2.15.jar
-%%DATADIR%%/lib/apache-cassandra-thrift-1.2.15.jar
+%%DATADIR%%/lib/apache-cassandra-1.2.16.jar
+%%DATADIR%%/lib/apache-cassandra-clientutil-1.2.16.jar
+%%DATADIR%%/lib/apache-cassandra-thrift-1.2.16.jar
 %%DATADIR%%/lib/avro-1.4.0-fixes.jar
 %%DATADIR%%/lib/avro-1.4.0-sources-fixes.jar
 %%DATADIR%%/lib/commons-cli-1.1.jar
@@ -80,7 +115,7 @@ bin/cassandra-shuffle
 %%DATADIR%%/lib/metrics-core-2.2.0.jar
 %%DATADIR%%/lib/netty-3.6.6.Final.jar
 %%CQL%%%%DATADIR%%/lib/thrift-python-internal-only-0.7.0.zip
-%%CQL%%%%DATADIR%%/lib/cql-internal-only-1.4.0.zip
+%%CQL%%%%DATADIR%%/lib/cql-internal-only-1.4.1.zip
 %%JNA%%%%DATADIR%%/lib/jna.jar
 %%JNA%%%%DATADIR%%/lib/jna-platform.jar
 %%MX4J%%%%DATADIR%%/lib/mx4j-tools.jar
@@ -124,6 +159,7 @@ bin/cassandra-shuffle
 @dirrm %%DATADIR%%/lib/licenses
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/interface
+%%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib/test
 %%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib
 %%CQL%%@dirrmtry %%DATADIR%%/pylib
 @dirrmtry %%DATADIR%%/conf
