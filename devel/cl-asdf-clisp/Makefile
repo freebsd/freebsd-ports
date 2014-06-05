@@ -12,7 +12,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A system definition facility for Common Lisp
 
 DEPRECATED=	Depends on deprecated lang/clisp
-EXIPIRATION_DATE=	2014-07-28
+EXPIRATION_DATE=	2014-07-28
 
 # Even if this port builds FASL files, it is slightly different from
 # other FASL ports because it uses USE_ASDF rather than USE_ASDF_FASL.

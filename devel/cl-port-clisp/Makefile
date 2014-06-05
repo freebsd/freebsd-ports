@@ -12,7 +12,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Cross-Lisp portability package
 
 DEPRECATED=	Depends on deprecated lang/clisp
-EXIPIRATION_DATE=	2014-07-28
+EXPIRATION_DATE=	2014-07-28
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port

@@ -12,7 +12,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp Markup Language
 
 DEPRECATED=	Depends on deprecated lang/clisp
-EXIPIRATION_DATE=	2014-07-28
+EXPIRATION_DATE=	2014-07-28
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/system-registry/lml.asd:${PORTSDIR}/www/cl-lml
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/system-registry/lml.asd:${PORTSDIR}/www/cl-lml
