@@ -3,7 +3,7 @@
 
 PORTNAME=	squeeze
 PORTVERSION=	0.2.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	archivers xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libthunar-vfs-1.so:${PORTSDIR}/x11-fm/thunar-vfs
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		tar:bzip2 pkgconfig gmake gettext pathfix desktop-file-utils
+USES=		tar:bzip2 pkgconfig gmake gettext pathfix desktop-file-utils libtool
 USE_XFCE=	configenv libutil thunar
 USE_XORG=	x11
 USE_GNOME=	gtk20 glib20 intltool intlhack
