@@ -14,8 +14,7 @@ BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 
 CONFLICTS=	pserv-[0-9]* synce-librapi2-[0-9]*
 
-USES=		perl5 gmake
-USE_AUTOTOOLS=	libtool
+USES=		libtool perl5 gmake
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 PDM_MODULES=	any master
@@ -26,30 +25,25 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_RC_SUBR=	pcheckd pproxy pserv 0ringd
 
-MAN1=		pcheck.1 pcontrol.1 pdeliver.1 pstatus.1 ptestpdm.1
-MAN7=		popular-log.7
-MAN8=		pcheckd.8 pproxy.8 pserv.8 ringd.8
-
 OPTIONS_DEFINE=	DB4
 OPTIONS_DEFAULT=	DB4
-DB4_DESC=	Build db4 pdm module
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+DB4_DESC=	Build db4 pdm module
+DB4_LIB_DEPENDS=	libdb4.so:${PORTSDIR}/databases/db4
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDB4}
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-PLIST_SUB+=	WITH_DB4=""
 PDM_MODULES+=	db4
-.else
-PLIST_SUB+=	WITH_DB4="@comment "
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/popular
-	${INSTALL_DATA} ${WRKSRC}/conf/pproxy.rc ${PREFIX}/etc/popular/pproxy.rc.sample
-	${INSTALL_DATA} ${WRKSRC}/conf/pserv.rc ${PREFIX}/etc/popular/pserv.rc.sample
-	${MKDIR} ${PREFIX}/include/popular
-	${FIND} ${WRKSRC}/src -name *.h | ${XARGS} -n 1 -J % ${INSTALL_DATA} % ${PREFIX}/include/popular
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/pproxy.rc ${STAGEDIR}${ETCDIR}/pproxy.rc.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/pserv.rc ${STAGEDIR}${ETCDIR}/pserv.rc.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/popular
+	${FIND} ${WRKSRC}/src -name *.h | ${XARGS} -n 1 -J % ${INSTALL_DATA} % \
+		${STAGEDIR}${PREFIX}/include/popular
 
 .include <bsd.port.mk>
