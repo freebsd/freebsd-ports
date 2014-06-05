@@ -3,6 +3,7 @@
 
 PORTNAME=	udmsearch
 PORTVERSION=	3.1.7
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 		http://udmsearch.real-time.com/Download/
@@ -10,8 +11,7 @@ MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Full featured SQL-based hypertext search engine
 
-OPTIONS_DEFINE=		MSQL MYSQL PGSQL
-OPTIONS_DEFAULT=	MYSQL
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-charset-guesser \
@@ -19,34 +19,29 @@ CONFIGURE_ARGS=	--enable-charset-guesser \
 		--sysconfdir=${PREFIX}/etc/udmsearch \
 		--localstatedir=/var/udmsearch
 
-MAN1=		indexer.1
-MAN5=		indexer.conf.5
+OPTIONS_DEFINE=		MSQL MYSQL PGSQL DOCS
+OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
+MSQL_BUILD_DEPENDS=	${LOCALBASE}/lib/libmsql.a:${PORTSDIR}/databases/msql
+MSQL_CONFIGURE_ON+=	--with-msql=${LOCALBASE}
+MYSQL_USE=	MYSQL=YES
+MYSQL_CONFIGURE_ON+=	--with-mysql=${LOCALBASE}
+PGSQL_USE=	PGSQL=YES
+PGSQL_CONFIGURE_ON+=	--with-pgsql=${LOCALBASE}/pgsql
+
+PORTDOCS=	*
+
+SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMSQL}
-BUILD_DEPENDS=		${PREFIX}/lib/libmsql.a:${PORTSDIR}/databases/msql
-CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		YES
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		YES
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/pgsql
-.endif
-
 pre-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 
 post-install:
-	@${CP} -R ${WRKSRC}/create ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
+	@${CP} -R ${WRKSRC}/create ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
+	${CP} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}
+	${CP} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
