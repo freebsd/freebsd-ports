@@ -10,11 +10,9 @@ MASTER_SITES=	http://a.aranea.brtsvcs.net/3dm2/ \
 DISTFILES=	tdmCliBSD_${PORTVERSION}.tar.gz
 DIST_SUBDIR=	3dm2
 
-MAINTAINER=	ports.maintainer@evilphi.com
+MAINTAINER=	takefu@airport.fm
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
-DEPRECATED=	yes
-EXPIRATION_DATE=2014-06-30
 USE_RC_SUBR=	3dm2
 
 SUB_FILES=	pkg-message
