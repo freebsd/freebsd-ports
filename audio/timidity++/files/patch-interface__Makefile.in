@@ -1,0 +1,10 @@
+--- interface/Makefile.in.orig	2012-06-28 23:14:25.000000000 +0900
++++ interface/Makefile.in	2012-10-13 00:59:03.000000000 +0900
+@@ -340,7 +340,6 @@
+ 
+ INCLUDES = \
+ 	-I$(top_srcdir)/timidity \
+-	-I$(top_srcdir)/libarc \
+ 	-I$(top_srcdir)/utils
+ 
+ 

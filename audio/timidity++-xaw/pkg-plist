@@ -1,20 +1,10 @@
 bin/xawmidi
 lib/X11/app-defaults/TiMidity
 lib/X11/%%EUCJP_LOCALE%%/app-defaults/TiMidity
-%%TIMID_LIBDIR%%/bitmaps/back.xbm
-%%TIMID_LIBDIR%%/bitmaps/fwrd.xbm
-%%TIMID_LIBDIR%%/bitmaps/next.xbm
-%%TIMID_LIBDIR%%/bitmaps/pause.xbm
-%%TIMID_LIBDIR%%/bitmaps/play.xbm
-%%TIMID_LIBDIR%%/bitmaps/prev.xbm
-%%TIMID_LIBDIR%%/bitmaps/quit.xbm
-%%TIMID_LIBDIR%%/bitmaps/random.xbm
-%%TIMID_LIBDIR%%/bitmaps/repeat.xbm
-%%TIMID_LIBDIR%%/bitmaps/stop.xbm
-%%TIMID_LIBDIR%%/bitmaps/timidity.xbm
-%%TIMID_LIBDIR%%/interface_a.so
+%%TIMID_LIBDIR%%/if_xaw.so
 %%PORTDOCS%%%%DOCSDIR%%/README.xaw
 %%PORTDOCS%%share/doc/ja/timidity++/README.xaw
-@dirrm %%TIMID_LIBDIR%%/bitmaps
+%%PORTDOCS%%@dirrmtry share/doc/ja/timidity++
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry lib/X11/%%EUCJP_LOCALE%%/app-defaults
 @dirrmtry lib/X11/%%EUCJP_LOCALE%%
