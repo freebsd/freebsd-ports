@@ -3,12 +3,12 @@
 
 PORTNAME=	pronto
 PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://muhri.net/pronto/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Mail Client for Gnome/Gtk written in Perl
+COMMENT=	Mail client for Gnome/Gtk written in Perl
 
 BUILD_DEPENDS=\
 		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk \
@@ -28,10 +28,14 @@ BUILD_DEPENDS+=	p5-Mysql>=0:${PORTSDIR}/databases/p5-Mysql
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	cpronto.pl pronto pronto-main prontobrowser prontolock \
+		prontosend prontoget
 
-NO_STAGE=	yes
 post-patch:
+	@${REINPLACE_CMD} -E -e 's,(BIN|LIB)DIR),DESTDIR)$$(&,g' \
+		-e 's,-o root -g mail,,' \
+		${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC} -name "*".bak | ${XARGS} ${RM} -f
