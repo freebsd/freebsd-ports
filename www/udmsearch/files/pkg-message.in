@@ -1,6 +1,6 @@
 Udmsearch is successfully installed.
 Now, to use udmsearch you need to create the appropriate mysql database
-manually: Please read INSTALL file located in ${PREFIX}/share/doc/udmsearch.
+manually: Please read INSTALL file located in %%DOCSDIR%%.
 
 For more information on how to use udmsearch, please refer to their
 web site at http://search.mnoGo.ru/
