@@ -1,5 +1,5 @@
---- ./configure.in.orig	2014-04-29 17:55:49.000000000 +0200
-+++ ./configure.in	2014-05-06 15:38:27.000000000 +0200
+--- ./configure.in.orig	2014-06-03 16:41:42.000000000 +0200
++++ ./configure.in	2014-06-05 12:49:28.000000000 +0200
 @@ -6,7 +6,6 @@
  
  AC_INIT(base/nagios.c)
@@ -7,7 +7,7 @@
 -AC_PREFIX_DEFAULT(/usr/local/nagios)
  
  PKG_NAME=nagios
- PKG_VERSION="4.0.6"
+ PKG_VERSION="4.0.7"
 @@ -134,14 +133,14 @@
  AC_SUBST(nagios_grp)
  AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_USER,"$nagios_user",[user name to run nagios])

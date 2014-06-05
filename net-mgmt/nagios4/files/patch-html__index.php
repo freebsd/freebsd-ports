@@ -1,13 +1,11 @@
---- ./html/index.php.orig	2013-11-25 14:16:25.000000000 +0000
-+++ ./html/index.php	2014-01-24 22:40:43.000000000 +0000
-@@ -8,8 +8,9 @@
- </head>
- 
+--- ./html/index.php.orig	2014-06-03 16:41:42.000000000 +0200
++++ ./html/index.php	2014-06-05 12:49:28.000000000 +0200
+@@ -1,6 +1,7 @@
  <?php
 +include_once(dirname(__FILE__).'/includes/utils.inc.php');
-  // allow specifying main window URL for permalinks, etc.
--$corewindow="main.php";
-+$corewindow=$cfg["cgi_base_url"]."/tac.cgi";
- if(isset($_GET['corewindow'])){
- 	
- 	// default window url may have been overridden with a permalink...
+ // Allow specifying main window URL for permalinks, etc.
+-$url = 'main.php';
++$url = $cfg['cgi_base_url'].'/tac.cgi';
+ if (isset($_GET['corewindow'])) {
+ 
+ 	// The default window url may have been overridden with a permalink...
