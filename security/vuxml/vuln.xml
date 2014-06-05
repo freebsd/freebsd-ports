@@ -57,6 +57,60 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5ac53801-ec2e-11e3-9cf3-3c970e169bc2">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_13</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1h</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>8.0</ge><lt>8.4_12</lt></range>
+	<range><ge>9.1</ge><lt>9.1_15</lt></range>
+	<range><ge>9.2</ge><lt>9.2_8</lt></range>
+	<range><ge>10.0</ge><lt>10.0_5</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL Project reports:</p>
+	<blockquote cite="http://www.openssl.org/news/secadv_20140605.txt">
+	  <p>An attacker using a carefully crafted handshake can force
+	    the use of weak keying material in OpenSSL SSL/TLS clients
+	    and servers. This can be exploited by a Man-in-the-middle
+	    (MITM) attack where the attacker can decrypt and modify
+	    traffic from the attacked client and server. [CVE-2014-0224]</p>
+	  <p>By sending an invalid DTLS handshake to an OpenSSL DTLS
+	    client the code can be made to recurse eventually crashing
+	    in a DoS attack. [CVE-2014-0221]</p>
+	  <p>A buffer overrun attack can be triggered by sending invalid
+	    DTLS fragments to an OpenSSL DTLS client or server. This is
+	    potentially exploitable to run arbitrary code on a vulnerable
+	    client or server. [CVE-2014-0195]</p>
+	  <p>OpenSSL TLS clients enabling anonymous ECDH ciphersuites are
+	    subject to a denial of service attack. [CVE-2014-3470]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0195</cvename>
+      <cvename>CVE-2014-0221</cvename>
+      <cvename>CVE-2014-0224</cvename>
+      <cvename>CVE-2014-3470</cvename>
+      <url>http://www.freebsd.org/security/advisories/FreeBSD-SA-14:14.openssl.asc</url>
+      <url>http://www.openssl.org/news/secadv_20140605.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-06-05</discovery>
+      <entry>2014-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9733c480-ebff-11e3-970b-206a8a720317">
     <topic>gnutls -- client-side memory corruption</topic>
     <affects>
