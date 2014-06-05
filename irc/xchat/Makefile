@@ -4,7 +4,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	2.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	SF/${PORTNAME}/ \
 		http://xchat.org/files/source/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
@@ -17,13 +17,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
-USE_BZIP2=	yes
-USES=		gettext pkgconfig gmake pathfix
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-ipv6
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DBUS NOTIFY PERL PYTHON SOCKS TCL
 OPTIONS_DEFAULT=DBUS GTKSPELL PERL
