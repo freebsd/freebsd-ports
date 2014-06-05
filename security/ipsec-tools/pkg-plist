@@ -19,12 +19,10 @@ include/racoon/sockmisc.h
 include/racoon/var.h
 include/racoon/vmbuf.h
 lib/libipsec.a
-lib/libipsec.la
 lib/libipsec.so
 lib/libipsec.so.0
 lib/libipsec.so.0.0.1
 lib/libracoon.a
-lib/libracoon.la
 lib/libracoon.so
 lib/libracoon.so.0
 lib/libracoon.so.0.0.0
