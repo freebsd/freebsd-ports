@@ -13,30 +13,16 @@ EXTRACT_SUFX=	.ZIP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads VMS BACKUP tapes
 
-EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+USES=		zip:infozip
 ALL_TARGET=	vmsbackup
-
-PLIST_FILES=	bin/vmsbackup
-MAN1=		vmsbackup.1
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
-do-extract:
-	${MKDIR} ${WRKSRC}
-	${UNZIP_CMD} ${DISTDIR}/${DISTNAME} -d ${WRKSRC}
+NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/vmsbackup man/man1/vmsbackup.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#gets(ans);#fgets(ans, 80, stdin);#' ${WRKSRC}/vmsbackup.c
 	@${REINPLACE_CMD} -e 's#"getopt.h"#<unistd.h>#' ${WRKSRC}/getoptmain.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vmsbackup ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/vmsbackup ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/vmsbackup.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
