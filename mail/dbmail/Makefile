@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.1.13
-PORTREVISION=	1
+PORTVERSION=	3.1.15
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dbmail.org/download/3.1/ \
-		http://git.dbmail.eu/paul/dbmail/snapshot/
+MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	SQL database-based mail system (POP3 and IMAP)
@@ -22,7 +20,7 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/sgml/docbook/4.5:${PORTSDIR}/textproc/docbook-sgml
 
-CONFLICTS=	dbmail-2.* dbmail22-[0-9]*
+CONFLICTS=	dbmail22-[0-9]*
 
 OPTIONS_DEFINE=	DOCS LDAP SIEVE THREADS
 OPTIONS_DEFAULT=	THREADS
@@ -35,7 +33,7 @@ USE_AUTOTOOLS=	autoheader autoconf
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_OPENSSL=	yes
-USES=		gmake libtool pkgconfig shebangfix
+USES=		gmake libtool pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	man/fixsp.pl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
