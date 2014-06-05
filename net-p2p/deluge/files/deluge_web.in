@@ -1,0 +1,76 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: deluge_web
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# MANDATORY:
+#
+# deluge_web_enable (bool):	Set to NO by default.
+#				Set it to YES to enable deluge_web.
+#
+# deluge_web_user (str):	The UNPRIVILEGED user to run as
+#
+# OPTIONAL:
+#
+# deluge_web_flags (str):	Set as needed
+#				See deluge-web(1) for more information
+#
+# deluge_web_confdir (path):	Set to /home/$deluge_web_user/.config/deluge
+#				by default
+#
+# deluge_web_loglevel (str):	Set to "error" by default
+#
+# deluge_web_logfile (path):	Set to /var/tmp/deluge_web.log by default
+
+. /etc/rc.subr
+
+name="deluge_web"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+command_interpreter=%%PYTHON_CMD%%
+
+start_precmd=${name}_prestart
+stop_postcmd=${name}_poststop
+
+deluge_web_prestart()
+{
+	if [ "$deluge_web_user" = 'asjklasdfjklasdf' ]; then
+		err 1 "You must set deluge_web_user to a real, unprivileged user"
+	fi
+
+	if [ ! -d "/var/run/${name}" ]; then
+		if [ -e "/var/run/${name}" ]; then
+			unlink /var/run/${name}
+		fi
+		mkdir -p /var/run/${name}
+	fi
+
+	chmod 0755 /var/run/${name}
+	chown -R $deluge_web_user /var/run/${name}
+}
+
+deluge_web_poststop()
+{
+	[ -e "$deluge_web_logfile" -a ! -s "$deluge_web_logfile" ] &&
+		unlink $deluge_web_logfile
+}
+
+load_rc_config $name
+
+: ${deluge_web_enable:="NO"}
+: ${deluge_web_user:="asjklasdfjklasdf"}
+: ${deluge_web_confdir:="/home/${deluge_web_user}/.config/deluge"}
+: ${deluge_web_loglevel:="error"}
+: ${deluge_web_logfile:="/var/tmp/${name}.log"}
+
+required_dirs="$deluge_web_confdir"
+command_args="-f -c $required_dirs -L $deluge_web_loglevel -l $deluge_web_logfile"
+
+run_rc_command "$1"
