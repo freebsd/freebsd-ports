@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- build.xml.orig
++++ build.xml
+@@ -212,8 +212,6 @@
+               todir="${dist.home}"/>
+     <copy      file="RELEASE-NOTES.txt"
+               todir="${dist.home}"/>
+-    <copy      file="README.txt"
+-              todir="${dist.home}"/>
+     <antcall target="jar"/>
+   </target>
+ 
