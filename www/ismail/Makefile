@@ -24,7 +24,6 @@ OPTIONS_SINGLE=	DATASTORE
 OPTIONS_SINGLE_DATASTORE=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -39,7 +38,7 @@ PLIST_FILES+=	${EXAMPLESDIR_REL}/pgsql.schema
 PLIST_DIRS+=	${EXAMPLESDIR_REL}
 .endif
 
-LIB_DEPENDS+=	c-client4:${PORTSDIR}/mail/cclient
+LIB_DEPENDS+=	libc-client4.so:${PORTSDIR}/mail/cclient
 
 pre-install:
 	@${ECHO_MSG} ""
@@ -48,20 +47,20 @@ pre-install:
 	@${ECHO_MSG} ""
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	${TAR} --exclude '*~' -C ${WRKSRC}/${PORTNAME} -cf - . | ${TAR} -C ${WWWDIR} -xf -
-	@${CHOWN} -R www:www ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${TAR} --exclude '*~' -C ${WRKSRC}/${PORTNAME} -cf - . | ${TAR} -C ${STAGEDIR}${WWWDIR} -xf -
+	@${CHOWN} -R www:www ${STAGEDIR}${WWWDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs.html ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs.html ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MMYSQL}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/mysql4.schema ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/mysql4.schema ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/pgsql.schema ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/pgsql.schema ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 post-install:
