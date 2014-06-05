@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.catb.org/esr/deheader/
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Tool to find unnecessary includes in C/C++ files
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
