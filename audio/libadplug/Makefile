@@ -3,6 +3,7 @@
 
 PORTNAME=	libadplug
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/adplug/AdPlug%20core%20library/${PORTVERSION}
 DISTNAME=	adplug-${PORTVERSION}
@@ -14,8 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libbinio.so:${PORTSDIR}/devel/libbinio
 
-USES=		pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
