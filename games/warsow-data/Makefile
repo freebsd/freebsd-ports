@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/warsow.mirror/Warsow%20${PORTVERSION} \
 		http://www.warsow.net:1337/~warsow/${PORTVERSION}/ \
+		http://www.warsow.eu/:mappack \
 		LOCAL/nemysis/games:mappack
 
 PKGNAMEPREFIX=	warsow-
