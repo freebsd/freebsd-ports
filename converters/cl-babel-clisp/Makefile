@@ -10,6 +10,9 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A charset encoding/decoding library written in Common Lisp
 
+DEPRECATED=	Depends on deprecated lang/clisp
+EXIPIRATION_DATE=	2014-07-28
+
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel \
 		${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/clispfasl/arrays.fasl:${PORTSDIR}/devel/cl-alexandria-clisp \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/clispfasl/src/tf-clisp.fasl:${PORTSDIR}/devel/cl-trivial-features-clisp \

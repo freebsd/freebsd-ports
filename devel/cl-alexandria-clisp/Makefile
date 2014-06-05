@@ -10,6 +10,9 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A collection of portable public domain utilities for Common Lisp
 
+DEPRECATED=	Depends on deprecated lang/clisp
+EXIPIRATION_DATE=	2014-07-28
+
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria
 
