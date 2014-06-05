@@ -1,0 +1,30 @@
+--- Makefile.in.orig	2014-05-29 03:27:28.070199330 +0600
++++ Makefile.in	2014-05-29 03:28:00.167196553 +0600
+@@ -756,7 +756,7 @@
+ 
+ install-exec-am:
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
++	$(MAKE) $(AM_MAKEFLAGS)
+ install-html: install-html-recursive
+ 
+ install-html-am:
+@@ -810,7 +810,7 @@
+ 	distclean-libtool distclean-tags distcleancheck distdir \
+ 	distuninstallcheck dvi dvi-am html html-am info info-am \
+ 	install install-am install-data install-data-am install-dvi \
+-	install-dvi-am install-exec install-exec-am install-exec-hook \
++	install-dvi-am install-exec install-exec-am \
+ 	install-html install-html-am install-info install-info-am \
+ 	install-man install-pdf install-pdf-am install-ps \
+ 	install-ps-am install-strip installcheck installcheck-am \
+@@ -832,9 +832,6 @@
+ 	tar cBf - doc | ( cd $(distdir); tar xBf - ; find doc -name CVS | xargs rm -rf; )
+ 	tar cBf - jemboss | ( cd $(distdir); tar xBf - ; find jemboss -name CVS | xargs rm -rf; find jemboss -name Makefile | xargs rm -rf; find jemboss -name .cvsignore | xargs rm -rf )
+ 
+-install-exec-hook:
+-	$(bindir)/embossupdate
+-
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
