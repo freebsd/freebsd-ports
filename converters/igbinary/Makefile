@@ -6,6 +6,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	converters
 MASTER_SITES=	http://opensource.dynamoid.com/	\
 		http://files.gslin.org/~gslin/Software/
+PKGNAMEPREFIX=	pecl-
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Replacement for the standard PHP serializer
