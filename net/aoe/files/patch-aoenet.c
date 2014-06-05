@@ -1,5 +1,5 @@
 --- aoenet.c.orig	2006-05-25 23:10:11.000000000 +0700
-+++ aoenet.c	2014-02-09 12:48:36.000000000 +0700
++++ aoenet.c	2014-06-05 17:19:44.000000000 +0700
 @@ -77,8 +77,11 @@
  #define NECODES (sizeof(aoe_errlist) /  sizeof(char *) - 1)
  #if (__FreeBSD_version < 600000)
@@ -69,3 +69,15 @@
  		if (m == NULL) {
  			IPRINTK("m_copypacket failure\n");
  			continue;
+@@ -384,9 +398,9 @@
+         if (m->m_pkthdr.len >
+             ETHER_MAX_FRAME(ifp, etype, m->m_flags & M_HASFCS)) {
+                 if_printf(ifp, "discard oversize frame "
+-                                "(ether type %x flags %x len %u > max %lu)\n",
++                                "(ether type %x flags %x len %u > max %u)\n",
+                                 etype, m->m_flags, m->m_pkthdr.len,
+-                                ETHER_MAX_FRAME(ifp, etype,
++                                (int) ETHER_MAX_FRAME(ifp, etype,
+                                                 m->m_flags & M_HASFCS));
+                 ifp->if_ierrors++;
+                 m_freem(m);
