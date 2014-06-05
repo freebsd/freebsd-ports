@@ -3,7 +3,7 @@
 
 PORTNAME=	libbs2b
 PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/bs2b/bs2b/${PORTVERSION}
 
@@ -15,7 +15,7 @@ LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		tar:bzip2 gmake pkgconfig
+USES=		tar:bzip2 gmake pkgconfig libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CFLAGS=`pkg-config --cflags sndfile` \
