@@ -1,5 +1,3 @@
 sbin/pop3proxystat
 sbin/pop3proxyd
-@unexec if cmp -s %D/etc/pop3proxyd.conf.sample %D/etc/pop3proxyd.conf; then rm -f %D/etc/pop3proxyd.conf; fi
-etc/pop3proxyd.conf.sample
-@exec if [ ! -f %D/etc/pop3proxyd.conf ] ; then cp -p %D/%F %B/pop3proxyd.conf; fi
+@sample etc/pop3proxyd.conf.sample
