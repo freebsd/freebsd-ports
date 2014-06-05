@@ -19,6 +19,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 USES=		ada gmake
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 PORTDOCS=	html gnatcoll.pdf
 PORTEXAMPLES=	*
 
