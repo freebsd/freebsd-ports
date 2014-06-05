@@ -206,8 +206,8 @@ lib/gegl-%%GEGL_VER%%/over.la
 lib/gegl-%%GEGL_VER%%/over.so
 lib/gegl-%%GEGL_VER%%/overlay.la
 lib/gegl-%%GEGL_VER%%/overlay.so
-lib/gegl-%%GEGL_VER%%/pixbuf.la
-lib/gegl-%%GEGL_VER%%/pixbuf.so
+%%GDK%%lib/gegl-%%GEGL_VER%%/pixbuf.la
+%%GDK%%lib/gegl-%%GEGL_VER%%/pixbuf.so
 lib/gegl-%%GEGL_VER%%/pixelize.la
 lib/gegl-%%GEGL_VER%%/pixelize.so
 lib/gegl-%%GEGL_VER%%/plus.la
@@ -234,8 +234,8 @@ lib/gegl-%%GEGL_VER%%/rgbe-save.la
 lib/gegl-%%GEGL_VER%%/rgbe-save.so
 lib/gegl-%%GEGL_VER%%/ripple.la
 lib/gegl-%%GEGL_VER%%/ripple.so
-lib/gegl-%%GEGL_VER%%/save-pixbuf.la
-lib/gegl-%%GEGL_VER%%/save-pixbuf.so
+%%GDK%%lib/gegl-%%GEGL_VER%%/save-pixbuf.la
+%%GDK%%lib/gegl-%%GEGL_VER%%/save-pixbuf.so
 lib/gegl-%%GEGL_VER%%/save.la
 lib/gegl-%%GEGL_VER%%/save.so
 lib/gegl-%%GEGL_VER%%/screen.la
