@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-NO_STAGE=	yes
 # TODO:
 # o etc/rt38 files permissions
 # o GRANTS
@@ -121,6 +120,7 @@ WEB_USER?=	${WWWOWN}
 WEB_GROUP?=	${WWWGRP}
 LIBS_GROUP?=	wheel
 
+GROUPS=		rt
 LATEST_LINK=	rt38
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
@@ -170,11 +170,8 @@ post-patch:
 
 pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@[ -f ${RT_ETC_PATH}/RT_SiteConfig.pm ] || \
-		${CP} -p ${RT_ETC_PATH}/RT_SiteConfig.pm-dist ${RT_ETC_PATH}/RT_SiteConfig.pm
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
