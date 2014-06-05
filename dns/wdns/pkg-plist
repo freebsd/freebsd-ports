@@ -6,6 +6,6 @@ bin/wdns-test-serialize-rrset
 include/wdns.h
 lib/libwdns.a
 lib/libwdns.so
-lib/libwdns.so.0
-lib/libwdns.so.0.0.0
+lib/libwdns.so.1
+lib/libwdns.so.1.0.0
 libdata/pkgconfig/libwdns.pc
