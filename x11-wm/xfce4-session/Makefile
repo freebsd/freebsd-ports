@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-session
 PORTVERSION=	4.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -20,11 +20,10 @@ LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack
-USES=		pathfix pkgconfig gmake tar:bzip2
+USES=		pathfix pkgconfig gmake tar:bzip2 libtool
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil xfconf
 USE_XORG=	x11 sm ice
