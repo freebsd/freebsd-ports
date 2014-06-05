@@ -1,4 +1,4 @@
-MAN3=\
+MANPAGES=\
 libowfat_array.3 \
 libowfat_array_allocate.3 \
 libowfat_array_bytes.3 \
