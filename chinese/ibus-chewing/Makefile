@@ -30,5 +30,4 @@ PROJECTHOST=	ibus
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
