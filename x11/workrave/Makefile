@@ -16,11 +16,11 @@ OPTIONS_DEFINE=	GNOME NETWORK NLS
 NETWORK_DESC=	Build with network support
 
 INSTALLS_ICONS=	yes
-DESKTOP_ENTRIES=	"Workrave" "RSI prevention tool" \
-					"${DATADIR}/images/workrave-icon-small.png" \
-					"workrave" \
-					"Utility;" \
-					false
+DESKTOP_ENTRIES="Workrave" "RSI prevention tool" \
+		"${DATADIR}/images/workrave-icon-small.png" \
+		"workrave" \
+		"Utility;" \
+		false
 
 USE_XORG=	x11 xmu recordproto xtst xext
 USES=		pathfix pkgconfig  gmake
@@ -32,20 +32,20 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-gconf --disable-pulse
 
 .include <bsd.port.options.mk>
-LIB_DEPENDS+=	gdome.8:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS+=	libgdome.so:${PORTSDIR}/textproc/gdome2
 
 .if ${PORT_OPTIONS:MGNOME}
-LIB_DEPENDS+=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
+LIB_DEPENDS+=	libgnomeuimm-2.6.so:${PORTSDIR}/x11-toolkits/libgnomeuimm26
 USE_GNOME+=	gnomepanel
 PLIST_SUB+=	GNOME=""
 .else
-LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS+=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 CONFIGURE_ARGS+=--disable-gnome
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNETWORK}
-LIB_DEPENDS+=	gnet-2.0.0:${PORTSDIR}/net/gnet2
+LIB_DEPENDS+=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
 .else
 CONFIGURE_ARGS+=--disable-distribution
 .endif
