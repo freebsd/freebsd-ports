@@ -10,6 +10,9 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
 
+DEPRECATED=	Depends on deprecated lang/clisp
+EXIPIRATION_DATE=	2014-07-28
+
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre
 

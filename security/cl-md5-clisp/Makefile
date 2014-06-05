@@ -10,6 +10,9 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Native MD5 implementation in Common Lisp
 
+DEPRECATED=	Depends on deprecated lang/clisp
+EXIPIRATION_DATE=	2014-07-28
+
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/md5/md5.asd:${PORTSDIR}/security/cl-md5
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/md5/md5.asd:${PORTSDIR}/security/cl-md5
 

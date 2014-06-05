@@ -11,6 +11,9 @@ COMMENT=	A more capable version control system than CVS, built around CVS
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on deprecated lang/clisp
+EXIPIRATION_DATE=	2014-07-28
+
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
     		lndir:${PORTSDIR}/devel/lndir
 RUN_DEPENDS=	clisp:${PORTSDIR}/lang/clisp
