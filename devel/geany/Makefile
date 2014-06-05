@@ -48,4 +48,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|po||' ${WRKSRC}/Makefile.in
 .endif
 
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/geany.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+
 .include <bsd.port.mk>
