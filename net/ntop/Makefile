@@ -3,15 +3,15 @@
 
 PORTNAME=	ntop
 PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
-		event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libevent-1.4.so:${PORTSDIR}/devel/libevent
 BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
 		subversion>=1.7.0:${PORTSDIR}/devel/subversion \
 		dot:${PORTSDIR}/graphics/graphviz \
@@ -35,8 +35,6 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-gdbm-root=${LOCALBASE} \
 		--with-zlib-root=/usr
 
-MAN8=		ntop.8
-
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -52,19 +50,18 @@ XMLDUMP_DESC=		Enable XML Dump support
 JUMBO_FRAMES_DESC=	Jumbo Frames. Experimental.
 MAKO_DESC=		Install py-mako for Host Map, Region View
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCAP_PORT}
-LIB_DEPENDS+=		pcap.1:${PORTSDIR}/net/libpcap
+LIB_DEPENDS+=		libpcap.so:${PORTSDIR}/net/libpcap
 CONFIGURE_ARGS+=	--with-pcap-root=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-pcap-root=/usr
 .endif
 
 .if ${PORT_OPTIONS:MXMLDUMP}
-LIB_DEPENDS+=		gdome.8:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS+=		libgdome.so:${PORTSDIR}/textproc/gdome2
 CPPFLAGS+=		-I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libxml2/libxml \
 			-I${LOCALBASE}/include/libgdome \
@@ -90,9 +87,5 @@ pre-configure:
 
 pre-install:
 	@cd ${WRKSRC} && ${GMAKE} dnetter
-
-post-install:
-	@${MKDIR} ${DBDIR}/ntop
-	@${CHOWN} -R nobody:nobody ${DBDIR}/ntop
 
 .include <bsd.port.post.mk>
