@@ -1167,7 +1167,13 @@ share/rt38/html/dhandler
 share/rt38/html/index.html
 share/rt38/html/l
 share/rt38/html/l_unsafe
-@dirrmtry www/rt38
+@dirrmtry %%WWWDIR%%38
+@unexec rmdir "/var/run/%%AP_NAME%%38/mason_data/cache" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/%%AP_NAME%%38/mason_data/etc" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/%%AP_NAME%%38/mason_data/obj" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/%%AP_NAME%%38/mason_data" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/%%AP_NAME%%38/session_data" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/%%AP_NAME%%38" >/dev/null 2>&1 || :
 @dirrm share/rt38/po
 @exec mkdir -p %D/share/rt38/plugins
 @dirrm share/rt38/plugins
