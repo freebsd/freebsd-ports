@@ -5,12 +5,12 @@ PORTNAME=	fpp
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	NL
-MASTER_SITE_SUBDIR=	fortran
+MASTER_SITES=	NL/fortran/ \
+		http://ports.toco-domains.de/
 DISTNAME=	fdfpp
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	Fortran preprocessor for FORTRAN 77 and Fortran 90 programs
 
 ALL_TARGET=	bsd44
