@@ -33,7 +33,7 @@
 name="deluge_web"
 rcvar=${name}_enable
 
-command=%%PREFIX%%/bin/${name}
+command=%%PREFIX%%/bin/deluge-web
 command_interpreter=%%PYTHON_CMD%%
 
 start_precmd=${name}_prestart
