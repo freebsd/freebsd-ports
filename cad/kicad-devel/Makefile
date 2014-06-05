@@ -9,7 +9,6 @@ MASTER_SITES=   ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=     mr
 PKGNAMESUFFIX=  -devel
 DIST_SUBDIR=		${PORTNAME}
-# Additional patches: http://svn.openmoko.org/trunk/gta02-core/kicad-patches/
 
 MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
@@ -64,7 +63,7 @@ BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 .if defined(BOOTSTRAP)
 
 # Updating to new rev:
-# make BOOTSTRAP=YES do-fetch
+# make do-fetch BOOTSTRAP=YES
 # make makesum && make && make makeplist
 # < Check PLIST_FILE_LIST below >
 
@@ -89,17 +88,13 @@ do-fetch:
 	cd ${WRKDIR}; \
 	tar xvf master.zip; \
 	tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		${DISTNAME} kicad-library-master kicad-doc kicad-patches
+		${DISTNAME} kicad-library-master kicad-doc
 	echo "BOOST_RELEASE=  ${BOOST_RELEASE}" > ${MASTERDIR}/Makefile.bzr_rev
 	echo "BOOST_VERS=  ${BOOST_VERS}"   >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_SRC_REV=  ${BZR_SRC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_LIB_REV=  ${BZR_LIB_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_DOC_REV=  ${BZR_DOC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 .endif
-
-ki:
-	svn export \
-		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
 
 tmp:
 	echo "${DATADIR} ${DATADIR:H}"
