@@ -8,7 +8,7 @@ include/resid/spline.h
 include/resid/voice.h
 include/resid/wave.h
 lib/libresid.a
-lib/libresid.la
 lib/libresid.so
 lib/libresid.so.5
+lib/libresid.so.5.0.0
 @dirrm include/resid
