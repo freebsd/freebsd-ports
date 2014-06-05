@@ -12,6 +12,8 @@
         ..
         man.d
         ..
+        newsyslog.conf.d
+        ..
         pam.d
         ..
         rc.d
