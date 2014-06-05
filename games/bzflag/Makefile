@@ -10,13 +10,15 @@ MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Multiplayer 3D tank battle game
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_GL=		glew
 USE_SDL=	sdl
+
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--enable-ares-build
@@ -26,8 +28,4 @@ DESKTOP_ENTRIES=	"BZFlag" "Battle enemy tanks" \
 			"${DATADIR}/bzflag-256x256.png" \
 			"bzflag" "Game;ActionGame;" false
 
-MAN5=	bzw.5
-MAN6=	bzadmin.6 bzflag.6 bzfs.6
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
