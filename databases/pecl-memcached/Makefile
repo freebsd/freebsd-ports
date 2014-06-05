@@ -3,6 +3,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,10 +15,8 @@ COMMENT=	PHP extension for interfacing with memcached via libmemcached library
 
 LICENSE=	PHP30
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear \
-		pkg-config:${PORTSDIR}/devel/pkgconf
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
-RUN_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 
 PHP_MODNAME=	memcached
 USE_PHP=	json session
