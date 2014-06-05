@@ -17,9 +17,7 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
 		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
 		${LOCALBASE}/share/xml/docbook/4.3:${PORTSDIR}/textproc/docbook-xml
 
-USE_XZ=		yes
-MAKE_JOBS_UNSAFE=yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomehier libxslt intlhack
 USE_PYTHON=	2
 INSTALLS_OMF=	yes
