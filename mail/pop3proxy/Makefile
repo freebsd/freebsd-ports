@@ -11,18 +11,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 Proxy Server derived from UP IMAP Proxy
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf213
 USE_RC_SUBR=	pop3proxyd
 
-SAMPLE_EXT=	sample
-
-NO_STAGE=	yes
-post-install:
-	if [ ! -f ${PREFIX}/etc/pop3proxyd.conf ]; then \
-		${INSTALL} -c ${WRKSRC}/pop3proxyd.conf ${PREFIX}/etc/pop3proxyd.conf ; \
-	fi
-	${INSTALL} -c ${WRKSRC}/pop3proxyd.conf ${PREFIX}/etc/pop3proxyd.conf.${SAMPLE_EXT} ;
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} pop3proxystat pop3proxyd \
+		${STAGEDIR}${PREFIX}/sbin)
+	${INSTALL} -c ${WRKSRC}/pop3proxyd.conf \
+		${STAGEDIR}${PREFIX}/etc/pop3proxyd.conf.sample
 
 .include <bsd.port.mk>
