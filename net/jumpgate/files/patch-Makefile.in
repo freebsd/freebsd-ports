@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2014-06-06 09:30:37.782875595 +0800
++++ Makefile.in	2014-06-06 09:31:03.369876627 +0800
+@@ -36,10 +36,10 @@ distclean:
+ 	rm -f Makefile config.cache config.log config.status config.h confdefs.h
+ 
+ install:
+-	$(INSTALL) -d $(install_prefix)$(sbindir)
+-	$(INSTALL_PROGRAM) -m 0755 jumpgate $(install_prefix)$(sbindir)
+-	$(INSTALL) -d $(install_prefix)$(mandir)/man8
+-	$(INSTALL_DATA) jumpgate.8 $(install_prefix)$(mandir)/man8
++	$(INSTALL) -d $(DESTDIR)$(install_prefix)$(sbindir)
++	$(INSTALL_PROGRAM) -m 0755 jumpgate $(DESTDIR)$(install_prefix)$(sbindir)
++	$(INSTALL) -d $(DESTDIR)$(install_prefix)$(mandir)/man8
++	$(INSTALL_DATA) jumpgate.8 $(DESTDIR)$(install_prefix)$(mandir)/man8
+ 
+ uninstall:
+ 	rm -f $(install_prefix)$(sbindir)/jumpgate
