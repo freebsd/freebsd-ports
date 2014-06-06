@@ -9,8 +9,11 @@ MASTER_SITES=	http://main.slony.info/downloads/1.2/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-docs${EXTRACT_SUFX}
 
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
+
+DEPRECATED=	Use databases/slony1v2 instead
+EXPIRATION_DATE=	2014-07-07
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
