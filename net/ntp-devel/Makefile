@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p443
+PORTVERSION=	4.2.7p444
 CATEGORIES=	net ipv6
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -14,9 +14,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake libtool
+USE_AUTOTOOLS=	automake
 AUTOMAKE_ARGS=	--add-missing
-USES=		pathfix perl5 shebangfix
+USES=		pathfix perl5 shebangfix libtool
 LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
 NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace
