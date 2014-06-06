@@ -34,7 +34,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/activation.jar:${PORTSDIR}/java/jaf	\
 		${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail	\
 		${JAVAJARDIR}/serializer.jar:${PORTSDIR}/textproc/xalan-j	\
 		${JAVAJARDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j	\
-		${JAVAJARDIR}/slf4j-nop.jar:${PORTSDIR}/devel/slf4j	\
+		${LOCALBASE}/share/slf4j/slf4j-nop.jar:${PORTSDIR}/devel/slf4j	\
 		${JAVAJARDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j	\
 		${JAVAJARDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j	\
 		${JAVAJARDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j	\
