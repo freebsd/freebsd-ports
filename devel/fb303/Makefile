@@ -50,4 +50,4 @@ post-install:
 .endfor
 
 .include "../thrift/bsd.thrift.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
