@@ -31,4 +31,4 @@ pre-install::
 	cd ${WRKSRC}/${PORTNAME} && ${RM} -rf README docs
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
