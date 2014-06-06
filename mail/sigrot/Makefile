@@ -11,8 +11,9 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Util to rotate your mail/news signature
 
-MAN1=		sigrot.1
-PLIST_FILES=	bin/sigrot
+MAKE_ARGS=	DEST="${STAGEDIR}${PREFIX}/bin" \
+		MANDEST="${STAGEDIR}${PREFIX}/man/man1"
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/sigrot man/man1/sigrot.1.gz
+
 .include <bsd.port.mk>
