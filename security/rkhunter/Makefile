@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -22,50 +21,29 @@ USES=		perl5
 NO_BUILD=	yes
 SUB_FILES=	415.${PORTNAME}
 
-MAN8=		${PORTNAME}.8
-MANCOMPRESSED=	no
-
 PORTDOCS=	ACKNOWLEDGMENTS CHANGELOG FAQ LICENSE README
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MLSOF}
-RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
-.endif
-
-.if ${PORT_OPTIONS:MNMAP}
-RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
-.endif
+LSOF_RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
+NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{SHAREDIR}/man/man8|{PREFIX}/man/man8|g' \
 		${WRKSRC}/installer.sh
 
 do-install:
-	cd ${WRKSRC} && ./installer.sh --layout custom ${PREFIX} --install
+	cd ${WRKSRC} && ./installer.sh --layout custom ${STAGEDIR}${PREFIX} --install
 	${INSTALL_MAN} ${WRKSRC}/files/${PORTNAME}.8 \
-		${MAN8PREFIX}/man/man8
-	@${MKDIR} ${PREFIX}/etc/periodic/security
-	${INSTALL_SCRIPT} ${WRKDIR}/415.${PORTNAME} ${PREFIX}/etc/periodic/security
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${DOCSDIR}
-.endif
+		${STAGEDIR}${MAN8PREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/security
+	${INSTALL_SCRIPT} ${WRKDIR}/415.${PORTNAME} ${STAGEDIR}${PREFIX}/etc/periodic/security
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${STAGEDIR}${DOCSDIR}
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
-		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc; \
-	fi
-	${INSTALL_DATA} -m 640 ${WRKSRC}/files/programs_bad.dat ${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat.sample
-	${INSTALL_DATA} -m 640 ${WRKSRC}/files/mirrors.dat ${PREFIX}/var/lib/${PORTNAME}/db/mirrors.dat.sample
-	@if [ ! -f ${PREFIX}/var/lib/${PORTNAME}/db/mirrors.dat ]; then \
-		${INSTALL_DATA} -m 640 ${WRKSRC}/files/mirrors.dat ${PREFIX}/var/lib/${PORTNAME}/db/mirrors.dat; \
-	fi
-	@if [ ! -f ${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat ]; then \
-		${INSTALL_DATA} -m 640 ${WRKSRC}/files/programs_bad.dat ${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	${REINPLACE_CMD} -i '' -e 's,${STAGEDIR},,' \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
+	${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_DATA} -m 640 ${WRKSRC}/files/programs_bad.dat ${STAGEDIR}${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat.sample
+	${INSTALL_DATA} -m 640 ${WRKSRC}/files/mirrors.dat ${STAGEDIR}${PREFIX}/var/lib/${PORTNAME}/db/mirrors.dat.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
