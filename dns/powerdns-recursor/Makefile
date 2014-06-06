@@ -14,8 +14,7 @@ COMMENT=	Advanced DNS recursor
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 
 OPTIONS_DEFINE=	SETUID LUA STATIC
 OPTIONS_DEFAULT=	SETUID
@@ -27,7 +26,7 @@ LDFLAGS+=	-L${PREFIX}/lib
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
@@ -42,11 +41,10 @@ GROUPS=		pdns
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USES+=	lua:51
-LUA_COMPS=lua
+USES+=		lua:51
 MAKE_ENV+=LUA=1
-MAKE_ENV+=LUA_CPPFLAGS_CONFIG=-I${PREFIX}/include/lua51
-MAKE_ENV+="LUA_LIBS_CONFIG=-L${PREFIX}/lib/lua51/ -llua-${LUA_VER}"
+MAKE_ENV+="LUA_CPPFLAGS_CONFIG=-I${LUA_INCDIR}"
+MAKE_ENV+="LUA_LIBS_CONFIG=-L${LUA_LIBDIR} -llua-${LUA_VER}"
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC}
@@ -72,4 +70,4 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${PREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
