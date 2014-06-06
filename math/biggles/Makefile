@@ -24,7 +24,6 @@ MAKE_ARGS=	CC="${CC}" \
 		LIBPLOT_LDFLAGS="-L${LOCALBASE}/lib -lplot" \
 		PYTHON="${PYTHON_CMD}"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/CC/s,gcc,$$\{CC\},' ${WRKSRC}/make.inc
 	@${REINPLACE_CMD} -e 's|= python|= ${PYTHON_CMD}|' ${WRKSRC}/make.inc
@@ -34,13 +33,10 @@ pre-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/biggles
-.for ext in ini so py pyc pyo
-	${INSTALL_DATA} ${WRKSRC}/src/*.${ext} ${PYTHON_SITELIBDIR}/biggles
-.endfor
-	@${MKDIR} ${PYTHON_SITELIBDIR}/biggles/libplot
-.for ext in so py pyc pyo
-	${INSTALL_DATA} ${WRKSRC}/src/libplot/*.${ext} ${PYTHON_SITELIBDIR}/biggles/libplot
-.endfor
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/biggles/libplot
+	(cd ${WRKSRC}/src && ${INSTALL_DATA} *.ini *.so *.py *.pyc *.pyo \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/biggles)
+	(cd ${WRKSRC}/src/libplot/ && ${INSTALL_DATA} *.so *.py *.pyc *.pyo \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/biggles/libplot)
 
 .include <bsd.port.mk>
