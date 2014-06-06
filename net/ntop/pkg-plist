@@ -10,11 +10,9 @@ lib/libnetflowPlugin-%%PORTVERSION%%.so
 lib/libnetflowPlugin.so
 lib/libntop-%%PORTVERSION%%.so
 lib/libntop.a
-lib/libntop.la
 lib/libntop.so
 lib/libntopreport-%%PORTVERSION%%.so
 lib/libntopreport.a
-lib/libntopreport.la
 lib/libntopreport.so
 lib/librrdPlugin-%%PORTVERSION%%.so
 lib/librrdPlugin.so

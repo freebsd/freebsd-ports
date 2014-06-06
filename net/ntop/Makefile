@@ -3,7 +3,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	5.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
 
@@ -21,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
-USES=		gmake
+USES=		gmake libtool
 USE_AUTOTOOLS=	libtool automake autoconf
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
