@@ -16,11 +16,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		fuse
 
-PLIST_FILES=	bin/chironfs bin/chirctl
+PLIST_FILES=	bin/chironfs bin/chirctl man/man8/chironfs.8.gz
 PORTDOCS=	*
-MAN8=		chironfs.8
 
-NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's, doc , ,' ${WRKSRC}/Makefile.in
