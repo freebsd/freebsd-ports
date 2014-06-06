@@ -13,6 +13,8 @@ COMMENT=	General-purpose Python interface to the HDF5 library
 
 LICENSE=	BSD
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
