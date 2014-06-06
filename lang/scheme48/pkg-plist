@@ -14,6 +14,7 @@ lib/scheme48-%%VER%%/r6rs.so
 lib/scheme48-%%VER%%/scheme48.image
 lib/scheme48-%%VER%%/scheme48vm
 lib/scheme48-%%VER%%/srfi-27.so
+man/man1/scheme48.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual-Z-G-D-1.gif
 %%PORTDOCS%%%%DOCSDIR%%/manual-Z-H-1.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-Z-H-10.html
