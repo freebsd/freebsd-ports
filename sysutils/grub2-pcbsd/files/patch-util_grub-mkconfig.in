@@ -1,0 +1,59 @@
+--- util/grub-mkconfig.in.orig	2014-06-05 12:39:41.711496387 -0400
++++ util/grub-mkconfig.in	2014-06-05 12:43:08.310985691 -0400
+@@ -276,5 +276,56 @@
+   fi
+ fi
+ 
++# If doing a real grub.cfg update, make sure that our config gets
++# copied to the /default/ ZFS BE
++check_grub_zfs_be()
++{
++
++  ROOTFS=`mount | awk '/ \/ / {print $1}'`
++  BEDS="$( echo ${ROOTFS} | awk -F '/' '{print $2}' )"
++  if [ "$BEDS" = "dev" ] ; then BEDS="ROOT"; fi
++
++  if [ "$grub_cfg" = "/boot/grub/grub.cfg" ] ; then
++    for i in `beadm list -a 2>/dev/null | grep "/${BEDS}/" | awk '{print $1}'`
++    do
++      if ! mount | grep -q "$dTank on / ("; then
++         echo -e "Copying grub.cfg to $dTank...\c" >&2
++         fMnt="/mnt.$$"
++         mkdir $fMnt
++         if ! mount -t zfs ${dTank} $fMnt ; then
++            echo "Failed to mount ${dTank}" >&2
++            return
++         else
++           cp ${grub_cfg} ${fMnt}/boot/grub/grub.cfg
++           echo -e "done" >&2
++           umount ${fMnt} >/dev/null
++           rmdir ${fMnt} >/dev/null
++         fi
++      fi
++    done
++
++    # Check if we can re-stamp the boot-loader
++    TANK=`echo $ROOTFS | cut -d '/' -f 1`
++    for i in `zpool status $TANK | grep ONLINE | awk '{print $1}'`
++    do
++       if [ ! -e "/dev/${i}" ] ; then continue; fi
++       disk=`echo $i | sed 's|.eli||g'`
++
++       # Now get the root of the disk
++       disk=`echo $disk | sed 's|p[1-9]$||g' | sed "s|s[1-9][a-z]||g"`
++       if [ ! -e "/dev/${disk}" ] ; then continue; fi
++
++       # Re-install GRUB on this disk
++       echo "Installing GRUB to $disk" >&2
++       grub-install /dev/${disk}
++    done
++  fi
++
++}
++
+ gettext "done" >&2
+ echo >&2
++
++# Check if we need to copy this cfg to the original BE
++check_grub_zfs_be
++

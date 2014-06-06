@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# Copyright 2013 iXsystems (Kris Moore)
+# All rights reserved
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted providing that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+# IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+
+# Script to detect other NON BSD OS's and add to grub.cfg
+
+check_ntfs_part()
+{
+   local disk="$1"
+   fs_label=`grub-probe --device /dev/${disk} --target=fs_label`
+
+   # Check for common windows NTFS labels for bootable partitions
+   if [ "$fs_label" != "System Reserved" -a "$fs_label" != "OS" -a "$fs_label" != "SYSTEM" ] ; then return; fi
+
+   fs_uuid=`grub-probe --device /dev/${disk} --target=fs_uuid`
+   if [ -z "$fs_uuid" ] ; then
+      echo "Warning: Could not get fs_uuid for $disk"
+      return
+   fi
+
+   cat << EOF
+menuentry "Microsoft Windows ($disk)" {
+   search --no-floppy --fs-uuid --set=root $fs_uuid
+   chainloader +1
+}
+EOF
+}
+
+# Start by looking for disks
+for disk in `cd /dev/ && ls ada[0-9]s[0-9] da[0-9]s[0-9] ada[0-9]p[0-9] da[0-9]p[0-9] 2>/dev/null`
+do
+   
+   # Start checking for NTFS
+   fs_type=`grub-probe --device /dev/${disk} --target=fs 2>/dev/null`
+   case $fs_type in
+      ntfs) check_ntfs_part "$disk" ;;
+	*) ;; # Unknown for now, add more!
+   esac 
+done
