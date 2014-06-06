@@ -13,7 +13,7 @@ COMMENT=	Tool for making hackers do excellent presentations
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
 
 USE_GL=		gl
 USE_GNOME=	librsvg2
@@ -23,11 +23,10 @@ USES=	pathfix pkgconfig gmake tar:xz
 OPTIONS_DEFINE=	GST
 GST_DESC=	Live videos as slide backgrounds
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGST}
-LIB_DEPENDS+=	clutter-gst-1.0:${PORTSDIR}/multimedia/clutter-gst
+LIB_DEPENDS+=	libclutter-gst-1.0.so:${PORTSDIR}/multimedia/clutter-gst
 .else
 CONFIGURE_ARGS+=	--enable-cluttergst=no
 .endif
