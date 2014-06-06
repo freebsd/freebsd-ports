@@ -1,6 +1,6 @@
-@unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php.sample; then rm -f %D/%%WWWDIR%%/config.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/config.php has not been removed"; fi
-%%WWWDIR%%/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/config.php ] ; then cp -p %D/%F %B/config.php; fi
+@owner %%OWNER%%
+@group %%GROUP%%
+@sample %%WWWDIR%%/config.php.sample
 %%WWWDIR%%/index.php
 %%WWWDIR%%/lang/ar.php
 %%WWWDIR%%/lang/cs.php
@@ -68,6 +68,8 @@
 %%WWWDIR%%/templates/red.html
 %%WWWDIR%%/templates/terminal.html
 %%WWWDIR%%/templates/wikiss.html
+@owner
+@group
 @dirrm %%WWWDIR%%/var
 @dirrm %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/plugins/Menu
