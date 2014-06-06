@@ -20,7 +20,6 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	MYSQL
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -41,17 +40,15 @@ post-patch:
 .endfor
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.php ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@${INSTALL_DATA} ${WRKSRC}/index.php ${STAGEDIR}${WWWDIR}
 .for f in system user
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${WWWDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${WWWDIR})
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in LICENSE NOTICE README.md doc/MIT.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} manual ${DOCSDIR})
-.endif
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} manual ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
