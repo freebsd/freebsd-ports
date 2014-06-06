@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.7.1
-PORTREVISION?=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	net comms ipv6
 MASTER_SITES=	SF
 
@@ -14,18 +13,21 @@ LICENSE=	GPLv3
 
 USE_XORG=	x11
 USES=		gmake iconv
-CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG} --disable-credssp
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 
-OPTIONS_DEFINE=	DOCS IPV6 RDESKTOP_DEBUG SAMPLERATE AO
-RDESKTOP_DEBUG_DESC=	Enable debugging
+OPTIONS_DEFINE=	AO DEBUG DOCS IPV6 SAMPLERATE SMARTCARD
+SMARTCARD_DESC=	Enable SmartCard login via PCSC-lite 
 
 .include <bsd.port.options.mk>
 
-.if exists(${LOCALBASE}/lib/libao.so) || ${PORT_OPTIONS:MAO}
+.if ${PORT_OPTIONS:MAO}
 LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
+CONFIGURE_ARGS+=	--with-sound=libao
+.else
+CONFIGURE_ARGS+=	--with-sound=oss
 .endif
 
 .if exists(${LOCALBASE}/lib/libsamplerate.so) || ${PORT_OPTIONS:MSAMPLERATE}
@@ -36,7 +38,13 @@ LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--with-ipv6
 .endif
 
-.if ${PORT_OPTIONS:MRDESKTOP_DEBUG}
+.if ${PORT_OPTIONS:MSMARTCARD}
+LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+.else
+CONFIGURE_ARGS+=	--disable-smartcard
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-debug\
 			--with-debug-kbd\
 			--with-debug-rdp5\
@@ -44,6 +52,9 @@ CONFIGURE_ARGS+=	--with-debug\
 			--with-debug-sound\
 			--with-debug-channel\
 			--with-debug-seamless
+.if ${PORT_OPTIONS:MSMARTCARD}
+CONFIGURE_ARGS+=	--with-debug-smartcard
+.endif
 
 post-configure:
 	${ECHO} "#define WITH_DEBUG_SERIAL 1" >> ${WRKSRC}/rdesktop.h

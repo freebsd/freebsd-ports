@@ -45,6 +45,7 @@ man/man1/rdesktop.1.gz
 %%DATADIR%%/keymaps/pt
 %%DATADIR%%/keymaps/pt-br
 %%DATADIR%%/keymaps/ru
+%%DATADIR%%/keymaps/sk
 %%DATADIR%%/keymaps/sl
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
