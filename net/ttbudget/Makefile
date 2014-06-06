@@ -12,6 +12,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Driver for 'TechnoTrend budget DVB S-1401' (SkyStar3)
 
+BROKEN=		does not build, mastersite disapperead, not staged
+DEPRECATED=		${BROKEN}
+EXPIRATION_DATE=        2014-07-06
+
 USE_BZIP2=	yes
 
 NO_STAGE=	yes
@@ -31,11 +35,5 @@ pre-fetch:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerprc, or sparc64
-.else
-BROKEN=		does not build
-.endif
 
 .include <bsd.port.post.mk>
