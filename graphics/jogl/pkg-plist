@@ -3,105 +3,105 @@ lib/libjogl.so
 lib/libjogl_awt.so
 %%JAVAJARDIR%%/gluegen-rt.jar
 %%JAVAJARDIR%%/jogl.jar
-%%PORTDOCS%%%%DATADIR%%/UserGuide.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/Animator.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/BufferUtil.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/FileUtil.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/FPSAnimator.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/Gamma.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/GLUT.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/ImageUtil.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/JOGLAppletLauncher.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/Screenshot.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/StreamUtil.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/TGAWriter.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/TileRenderer.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/Overlay.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/TextRenderer.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/TextRenderer.DefaultRenderDelegate.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/TextRenderer.RenderDelegate.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/TextureRenderer.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/package-frame.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/package-summary.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/package-tree.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/Texture.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/TextureCoords.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/TextureData.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/TextureData.Flusher.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/TextureIO.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/DDSImage.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/DDSImage.ImageInfo.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/SGIImage.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/TextureProvider.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/TextureWriter.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/TGAImage.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/TGAImage.Header.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/package-frame.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/package-summary.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/package-tree.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/package-frame.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/package-summary.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/package-tree.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/package-frame.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/package-summary.html
-%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/package-tree.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/AbstractGraphicsConfiguration.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/AbstractGraphicsDevice.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/AWTGraphicsConfiguration.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/AWTGraphicsDevice.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/ComponentEvents.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/DebugGL.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/DefaultGLCapabilitiesChooser.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GL.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLAutoDrawable.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLCanvas.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLCapabilities.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLCapabilitiesChooser.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLContext.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLDrawable.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLDrawableFactory.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLJPanel.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLEventListener.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLException.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLPbuffer.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/Threading.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/TraceGL.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLU.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUnurbs.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUquadric.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUtessellator.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUtessellatorCallback.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUtessellatorCallbackAdapter.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/package-frame.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/package-summary.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/package-tree.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/package-frame.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/package-summary.html
-%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/package-tree.html
-%%PORTDOCS%%%%DATADIR%%/package-list
-%%PORTDOCS%%%%DATADIR%%/overview-frame.html
-%%PORTDOCS%%%%DATADIR%%/constant-values.html
-%%PORTDOCS%%%%DATADIR%%/serialized-form.html
-%%PORTDOCS%%%%DATADIR%%/resources/inherit.gif
-%%PORTDOCS%%%%DATADIR%%/overview-tree.html
-%%PORTDOCS%%%%DATADIR%%/index-all.html
-%%PORTDOCS%%%%DATADIR%%/deprecated-list.html
-%%PORTDOCS%%%%DATADIR%%/allclasses-frame.html
-%%PORTDOCS%%%%DATADIR%%/allclasses-noframe.html
-%%PORTDOCS%%%%DATADIR%%/index.html
-%%PORTDOCS%%%%DATADIR%%/overview-summary.html
-%%PORTDOCS%%%%DATADIR%%/help-doc.html
-%%PORTDOCS%%%%DATADIR%%/stylesheet.css
-%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl/util/j2d
-%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl/util/texture/spi
-%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl/util/texture
-%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl/util
-%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun/opengl
-%%PORTDOCS%%@dirrm %%DATADIR%%/com/sun
-%%PORTDOCS%%@dirrm %%DATADIR%%/com
-%%PORTDOCS%%@dirrm %%DATADIR%%/javax/media/opengl/glu
-%%PORTDOCS%%@dirrm %%DATADIR%%/javax/media/opengl
-%%PORTDOCS%%@dirrm %%DATADIR%%/javax/media
-%%PORTDOCS%%@dirrm %%DATADIR%%/javax
-%%PORTDOCS%%@dirrm %%DATADIR%%/resources
-%%PORTDOCS%%@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/UserGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/Animator.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/BufferUtil.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/FileUtil.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/FPSAnimator.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/Gamma.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/GLUT.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/ImageUtil.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/JOGLAppletLauncher.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/Screenshot.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/StreamUtil.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/TGAWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/TileRenderer.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/j2d/Overlay.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/j2d/TextRenderer.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/j2d/TextRenderer.DefaultRenderDelegate.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/j2d/TextRenderer.RenderDelegate.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/j2d/TextureRenderer.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/j2d/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/j2d/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/j2d/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/Texture.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/TextureCoords.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/TextureData.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/TextureData.Flusher.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/TextureIO.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/DDSImage.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/DDSImage.ImageInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/SGIImage.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/TextureProvider.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/TextureWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/TGAImage.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/TGAImage.Header.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/spi/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/texture/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/com/sun/opengl/util/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/AbstractGraphicsConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/AbstractGraphicsDevice.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/AWTGraphicsConfiguration.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/AWTGraphicsDevice.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/ComponentEvents.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/DebugGL.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/DefaultGLCapabilitiesChooser.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GL.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLAutoDrawable.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLCanvas.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLCapabilities.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLCapabilitiesChooser.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLContext.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLDrawable.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLDrawableFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLJPanel.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLEventListener.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLException.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/GLPbuffer.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/Threading.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/TraceGL.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/GLU.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/GLUnurbs.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/GLUquadric.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/GLUtessellator.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/GLUtessellatorCallback.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/GLUtessellatorCallbackAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/glu/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/package-list
+%%PORTDOCS%%%%DOCSDIR%%/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
+%%JDK6%%%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl/util/j2d
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl/util/texture/spi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl/util/texture
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl/util
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun/opengl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/com/sun
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/com
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javax/media/opengl/glu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javax/media/opengl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javax/media
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javax
+%%JDK6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
