@@ -12,6 +12,8 @@ COMMENT=	Globulation 2, free and innovative strategy game
 
 LICENSE=	GPLv3
 
+BROKEN=		Fails to build
+
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libspeex.so:${PORTSDIR}/audio/speex \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
