@@ -20,13 +20,13 @@ RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Html2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Html2
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	syndigator
 USE_GNOME=	gnomehier
 NO_BUILD=	yes
 
 GNOMEDIR=	${PREFIX}/share
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|./lib|${PREFIX}/${SITE_PERL_REL}/${PORTNAME}|' \
 		${WRKSRC}/syndigator
@@ -34,15 +34,15 @@ post-patch:
 		${WRKSRC}/lib/RSSReader/Gtk2UI/IconFactory.pm
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/syndigator ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/syndigator ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 	cd ${WRKSRC}/lib && ${FIND} . | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
-	@${MKDIR} ${GNOMEDIR}/applications
-	${INSTALL_DATA} ${WRKSRC}/syndigator.desktop ${GNOMEDIR}/applications
-	@${MKDIR} ${GNOMEDIR}/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/icons/*.* ${GNOMEDIR}/pixmaps
-	@${MKDIR} ${GNOMEDIR}/pixmaps/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/images/*.* ${GNOMEDIR}/pixmaps/${PORTNAME}
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${GNOMEDIR}/applications
+	${INSTALL_DATA} ${WRKSRC}/syndigator.desktop ${STAGEDIR}${GNOMEDIR}/applications
+	@${MKDIR} ${STAGEDIR}${GNOMEDIR}/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/icons/*.* ${STAGEDIR}${GNOMEDIR}/pixmaps
+	@${MKDIR} ${STAGEDIR}${GNOMEDIR}/pixmaps/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/images/*.* ${STAGEDIR}${GNOMEDIR}/pixmaps/${PORTNAME}
 
 .include <bsd.port.mk>

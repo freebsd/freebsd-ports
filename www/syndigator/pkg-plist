@@ -85,6 +85,3 @@ share/pixmaps/syndigator/trayicon.gif
 @dirrm %%SITE_PERL%%/syndigator/RSSReader/Exporter
 @dirrm %%SITE_PERL%%/syndigator/RSSReader
 @dirrm %%SITE_PERL%%/syndigator
-@dirrmtry %%SITE_PERL%%
-@dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5
