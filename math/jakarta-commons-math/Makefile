@@ -33,6 +33,8 @@ PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_ENV=	LANG=en_US.ISO8859-1
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
