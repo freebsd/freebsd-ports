@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USES=		dos2unix zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.6
 USE_ANT=	yes
 MAKE_ARGS+=	-Djunit4.jar=${LOCALBASE}/share/java/classes/junit.jar
 ALL_TARGET=	jar test
