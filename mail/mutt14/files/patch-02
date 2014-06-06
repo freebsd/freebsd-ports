@@ -1,63 +1,21 @@
---- doc/Makefile.in.orig	Tue Nov  6 11:12:31 2001
-+++ doc/Makefile.in	Fri Jun 21 12:00:28 2002
-@@ -60,13 +60,19 @@
- topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
- 	README NEWS TODO README.SECURITY README.SSL 
- 
--all: muttrc.man try-html try-txt
-+all: muttrc.man try-html try-txt try-latin1
- 
- try-html: ../makedoc
--	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-+	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-+	touch $@
- 
- try-txt: ../makedoc
--	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
-+	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
-+	touch $@
-+
-+try-latin1: 
-+	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
-+	touch $@
- 
- install: all instdoc
- 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -86,10 +92,10 @@
- 		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
- 	done
- 	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
--	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
--	for file in manual*.html ; do	\
--		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
--	done
-+	# $(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
-+	# for file in manual*.html ; do	\
-+	# 	$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
-+	# done
- 
- uninstall:
- 	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
-@@ -99,14 +105,18 @@
+--- doc/Makefile.in.orig	2007-05-23 03:17:52.000000000 +0200
++++ doc/Makefile.in	2014-05-13 08:16:43.000000000 +0200
+@@ -98,18 +98,6 @@
+ 	-rm -rf $(DESTDIR)$(docdir)
  
  check:
- manual.txt: manual.sgml
+-manual.txt: manual.sgml
 -	if sgml2txt -c latin manual ; then \
 -		uniq < manual.txt | expand > _manual.txt ; \
 -		rm manual.txt ; \
-+	if sgmlfmt -f ascii manual; then \
-+		uniq < manual.ascii | expand > _manual.txt ; \
-+		rm -f manual.txt manual.ascii; \
- 		mv _manual.txt manual.txt ;\
- 	fi
- 
- manual.html: manual.sgml
+-		mv _manual.txt manual.txt ;\
+-	fi
+-
+-manual.html: manual.sgml
 -	sgml2html manual  || true
-+	@# sgml2html manual  || true
-+	sgmlfmt -f html manual  || true
-+
-+manual.latin1: manual.sgml
-+	sgmlfmt -f latin1 manual  || true
+-
+-manual.ps: manual.sgml
+-	sgml2latex --output=ps manual || true
  
- manual.ps: manual.sgml
- 	sgml2latex --output=ps manual || true
+ clean: 
+ 	rm -f *~ *.html *.orig *.rej  stamp-doc-sgml stamp-doc-man *.ps
