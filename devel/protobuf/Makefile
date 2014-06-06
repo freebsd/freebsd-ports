@@ -3,17 +3,16 @@
 
 PORTNAME=	protobuf
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A data interchange format library
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:bzip2 libtool:keepla
 ONLY_FOR_ARCHS=	i386 amd64
 
 # clang will generate code that just doesn't work with clementine-player
