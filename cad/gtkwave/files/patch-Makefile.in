@@ -1,11 +1,11 @@
---- Makefile.in.orig	2012-04-19 15:57:02.615900602 +0600
-+++ Makefile.in	2012-04-19 15:57:09.500888219 +0600
-@@ -254,7 +254,7 @@
+--- Makefile.in.orig	2014-01-03 05:17:31.000000000 +0100
++++ Makefile.in	2014-06-06 21:51:39.000000000 +0200
+@@ -310,7 +310,7 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = doc examples man src contrib share
 +SUBDIRS = examples man src contrib share
- EXTRA_DIST = ANALOG_README.TXT CHANGELOG.TXT GNU.TXT INSTALL.TXT LICENSE.TXT MIT.TXT SYSTEMVERILOG_README.TXT \
+ EXTRA_DIST = ChangeLog COPYING INSTALL LICENSE.TXT README NEWS AUTHORS \
  	autogen.sh wave_locale.h tcl.m4
  
