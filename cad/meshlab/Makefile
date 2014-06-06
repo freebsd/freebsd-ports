@@ -11,6 +11,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D triangular meshes processing and editing tool
 
+BROKEN=		Fails to configure
+
 EXTRACT_DEPENDS=7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	libQtSolutions_SOAP-head.so:${PORTSDIR}/devel/qt4-qtsolutions-soap
 
