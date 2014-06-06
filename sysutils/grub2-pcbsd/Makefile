@@ -20,13 +20,12 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 WRKSRC=		${WRKDIR}/grub-2.02
 CONFLICTS=	grub-0* grub2-2*
 SSP_UNSAFE=	yes
-USE_XZ=		yes
 USE_GCC=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
-USES=		bison gettext gmake
+USES=		bison gettext gmake tar:xz
 ONLY_FOR_ARCHS=	i386 amd64
 INFO=		grub grub-dev
 MAKE_JOBS_UNSAFE=	yes
@@ -38,6 +37,7 @@ CONFIGURE_ENV=	CPP="${CC} -E" \
 SUB_FILES=	00_header 10_kfreebsd 10_ktrueos 30_os-prober
 
 OPTIONS_DEFINE=	MKFONT FUSE
+OPTIONS_DEFAULT=MKFONT
 MKFONT_DESC=	Build grub-mkfont (require freetype2)
 FUSE_DESC=	Build grub-mount (require FUSE)
 
