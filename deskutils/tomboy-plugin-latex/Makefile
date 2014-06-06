@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomboy-plugin-latex
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.reitwiessner.de/programs/tomboy-latex/v${PORTVERSION}/
@@ -18,5 +18,4 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_TEX=	latex
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
