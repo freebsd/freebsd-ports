@@ -13,6 +13,8 @@ COMMENT=	The audio stream generator of the Savonet project
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to link
+
 BUILD_DEPENDS=	${OCAMLFIND_DEPEND} \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre	\
 		${LOCALBASE}/${OCAML_SITELIBDIR}/camomile/camomile.a:${PORTSDIR}/devel/ocaml-camomile
