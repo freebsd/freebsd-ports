@@ -1,13 +1,16 @@
-etc/cpu.conf
+@sample etc/cpu.conf.sample
 lib/libcpu_ldap.a
-lib/libcpu_ldap.la
 lib/libcpu_ldap.so
 lib/libcpu_ldap.so.0
+lib/libcpu_ldap.so.0.0.0
 lib/libcputil.a
-lib/libcputil.la
 lib/libcputil.so
 lib/libcputil.so.0
+lib/libcputil.so.0.0.0
+man/man5/cpu.conf.5.gz
+man/man8/cpu-ldap.8.gz
+man/man8/cpu.8.gz
 sbin/cpu
 %%DATADIR%%/cpu.conf.doc
 %%DATADIR%%/test.ldif
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
