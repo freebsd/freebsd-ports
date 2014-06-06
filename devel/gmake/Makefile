@@ -17,14 +17,13 @@ COMMENT=	GNU version of 'make' utility
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=g
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext iconv
+NLS_USES=	gettext iconv tar:bzip2
 NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG} \
 			--with-libintl-prefix=${LOCALBASE}
 NLS_CONFIGURE_ENABLE=	nls
