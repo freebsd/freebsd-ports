@@ -3,21 +3,21 @@
 
 PORTNAME=	gdome2
 PORTVERSION=	0.8.1
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome DOM Engine
 
-USES=		pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		pathfix pkgconfig libtool
 USE_GNOME=	glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0"
 CPPFLAGS+=	-I${LOCALBASE}/include
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
