@@ -98,7 +98,6 @@ share/icons/gtkwave_savefiles_256x256x32.png
 %%EXAMPLESDIR%%/des.gtkw
 %%EXAMPLESDIR%%/des.tcl
 %%EXAMPLESDIR%%/des.v
-%%EXAMPLESDIR%%/des.vzt
 %%EXAMPLESDIR%%/transaction.fst
 %%EXAMPLESDIR%%/transaction.gtkw
 %%EXAMPLESDIR%%/transaction.c
