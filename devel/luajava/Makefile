@@ -31,6 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LUA_DIR%%|${PREFIX}|' ${WRKSRC}/config
 	@${REINPLACE_CMD} -e 's|%%LUA_LIBDIR%%|${LUA_LIBDIR}|' ${WRKSRC}/config
 	@${REINPLACE_CMD} -e 's|%%LUA_INCDIR%%|${LUA_INCDIR}|' ${WRKSRC}/config
+	@${REINPLACE_CMD} -e 's|%%LUA_VER%%|${LUA_VER}|' ${WRKSRC}/config
 	@${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/config
 	@${REINPLACE_CMD} -e 's|linux|freebsd|' ${WRKSRC}/config
 
