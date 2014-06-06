@@ -2,13 +2,13 @@ bin/rrdtool
 bin/rrdcgi
 bin/rrdupdate
 lib/librrd.a
-lib/librrd.la
 lib/librrd.so
 lib/librrd.so.2
+lib/librrd.so.2.0.15
 lib/librrd_th.a
-lib/librrd_th.la
 lib/librrd_th.so
 lib/librrd_th.so.2
+lib/librrd_th.so.2.0.13
 include/rrd.h
 man/man1/bin_dec_hex.1.gz
 man/man1/cdeftutorial.1.gz
