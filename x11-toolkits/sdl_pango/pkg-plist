@@ -1,6 +1,6 @@
 include/SDL_Pango.h
 lib/libSDL_Pango.a
-lib/libSDL_Pango.la
 lib/libSDL_Pango.so
-lib/libSDL_Pango.so.2
+lib/libSDL_Pango.so.1
+lib/libSDL_Pango.so.1.1.0
 libdata/pkgconfig/SDL_Pango.pc
