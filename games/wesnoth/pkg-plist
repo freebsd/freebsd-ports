@@ -1463,6 +1463,61 @@ share/applications/wesnoth_editor.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 share/pixmaps/wesnoth-icon.png
 share/pixmaps/wesnoth_editor-icon.png
+man/cs/man6/wesnoth.6.gz
+man/cs/man6/wesnothd.6.gz
+man/de/man6/wesnoth.6.gz
+man/de/man6/wesnothd.6.gz
+man/en_GB/man6/wesnoth.6.gz
+man/en_GB/man6/wesnothd.6.gz
+man/es/man6/wesnoth.6.gz
+man/es/man6/wesnothd.6.gz
+man/et/man6/wesnoth.6.gz
+man/et/man6/wesnothd.6.gz
+man/fi/man6/wesnoth.6.gz
+man/fi/man6/wesnothd.6.gz
+man/fr/man6/wesnoth.6.gz
+man/fr/man6/wesnothd.6.gz
+man/gl/man6/wesnoth.6.gz
+man/gl/man6/wesnothd.6.gz
+man/hu/man6/wesnoth.6.gz
+man/hu/man6/wesnothd.6.gz
+man/id/man6/wesnoth.6.gz
+man/id/man6/wesnothd.6.gz
+man/it/man6/wesnoth.6.gz
+man/it/man6/wesnothd.6.gz
+man/ja/man6/wesnothd.6.gz
+man/lt/man6/wesnoth.6.gz
+man/lt/man6/wesnothd.6.gz
+man/man6/wesnoth.6.gz
+man/man6/wesnothd.6.gz
+man/pl/man6/wesnoth.6.gz
+man/pl/man6/wesnothd.6.gz
+man/pt/man6/wesnoth.6.gz
+man/pt/man6/wesnothd.6.gz
+man/pt_BR/man6/wesnothd.6.gz
+man/ru/man6/wesnoth.6.gz
+man/ru/man6/wesnothd.6.gz
+man/sk/man6/wesnoth.6.gz
+man/sk/man6/wesnothd.6.gz
+man/sr/man6/wesnoth.6.gz
+man/sr/man6/wesnothd.6.gz
+man/sr@ijekavian/man6/wesnoth.6.gz
+man/sr@ijekavian/man6/wesnothd.6.gz
+man/sr@ijekavianlatin/man6/wesnoth.6.gz
+man/sr@ijekavianlatin/man6/wesnothd.6.gz
+man/sr@latin/man6/wesnoth.6.gz
+man/sr@latin/man6/wesnothd.6.gz
+man/tr/man6/wesnothd.6.gz
+man/uk/man6/wesnoth.6.gz
+man/uk/man6/wesnothd.6.gz
+man/vi/man6/wesnoth.6.gz
+man/vi/man6/wesnothd.6.gz
+man/zh_CN/man6/wesnoth.6.gz
+man/zh_CN/man6/wesnothd.6.gz
+man/zh_TW/man6/wesnoth.6.gz
+man/zh_TW/man6/wesnothd.6.gz
+@dirrmtry man/gd/man6
+@dirrmtry man/gd
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/wesnoth
 @dirrmtry man/af/man6
 @dirrmtry man/af
