@@ -22,7 +22,7 @@ post-extract-script:
 
 do-build:
 	cd ${WRKDIR}/src && \
-		${JAVAC} ${PORTNAME}.java
+		${SETENV} LANG=en_US.UTF-8 ${JAVAC} ${PORTNAME}.java
 
 post-build-script:
 	@cd ${WRKDIR}/src && \
