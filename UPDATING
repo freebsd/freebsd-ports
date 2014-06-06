@@ -1335,7 +1335,7 @@ you update your ports collection, before attempting any port upgrades.
 
   NOTE: after r341775 (committed on January 29, 2014) and other
   following commits, a few ports, including devel/glib20, depend
-  on the devel/libiconv again due to missing functionality in the
+  on the converters/libiconv again due to missing functionality in the
   base iconv implementation.
 
   Due to this change some major overhauling of the ports tree has
