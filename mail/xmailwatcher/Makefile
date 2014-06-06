@@ -11,13 +11,11 @@ DISTNAME=	xmailwatcher
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailbox checker which displays sender and subject lines of mails
 
-MAN1=		xmailwatcher.1
-PLIST_FILES=	bin/xmailwatcher
+PLIST_FILES=	bin/xmailwatcher man/man1/xmailwatcher.1.gz
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
-NO_STAGE=	yes
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/xmailwatcher
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xmailwatcher
 
 .include <bsd.port.mk>
