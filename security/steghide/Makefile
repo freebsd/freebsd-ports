@@ -3,7 +3,7 @@
 
 PORTNAME=	steghide
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
@@ -11,14 +11,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Steganography tool to hide data in binary files
 
-LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
-		mhash.2:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
+		libmhash.so:${PORTSDIR}/security/mhash
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext perl5 gmake
-USE_AUTOTOOLS=	libtool
+USES=		gettext perl5 gmake libtool
+USE_AUTOTOOLS=	libtoolize
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fpermissive
 
