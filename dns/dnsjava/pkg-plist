@@ -169,8 +169,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/tab.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/titlebar.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/titlebar_end.gif
-%%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
 %%JDK8%%%%PORTDOCS%%%%DOCSDIR%%/script.js
+%%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/USAGE
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dig.java
