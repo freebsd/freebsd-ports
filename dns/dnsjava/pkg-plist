@@ -35,6 +35,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.IncompatibleKeyException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.KeyMismatchException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.MalformedKeyException.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.NoSignatureException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.SignatureExpiredException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.SignatureNotYetValidException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.SignatureVerificationException.html
@@ -169,6 +170,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/titlebar.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/titlebar_end.gif
 %%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
+%%JDK8%%%%PORTDOCS%%%%DOCSDIR%%/script.js
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/USAGE
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dig.java
