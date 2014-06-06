@@ -1826,6 +1826,7 @@ www/webkit/MyContext/__init__.py
 www/webkit/WebKit.cgi
 www/webkit/error404.html
 www/webkit/webkit
+@exec chown -R webkit:webkit %D/www/webkit/Cache %D/www/webkit/Logs %D/www/webkit/ErrorMsgs %D/www/webkit/Sessions
 @dirrm www/webkit/Cache
 @dirrm www/webkit/Configs
 @dirrm www/webkit/ErrorMsgs
