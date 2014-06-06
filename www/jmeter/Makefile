@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-jmeter
-PORTVERSION=	2.9
+PORTVERSION=	2.11
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	jmeter/binaries
@@ -15,7 +15,6 @@ LICENSE=	APACHE20
 
 # These are JAR-files installed by other ports. The list should keep
 # growing until all Java applications install just their own JARs -- not
-NO_STAGE=	yes
 # the 3rd-party ones:
 RUN_DEPENDS=	${JAVAJARDIR}/activation.jar:${PORTSDIR}/java/jaf	\
 		${JAVAJARDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework	\
@@ -34,6 +33,8 @@ RUN_DEPENDS=	${JAVAJARDIR}/activation.jar:${PORTSDIR}/java/jaf	\
 		${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit	\
 		${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail	\
 		${JAVAJARDIR}/serializer.jar:${PORTSDIR}/textproc/xalan-j	\
+		${JAVAJARDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j	\
+		${JAVAJARDIR}/slf4j-nop.jar:${PORTSDIR}/devel/slf4j	\
 		${JAVAJARDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j	\
 		${JAVAJARDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j	\
 		${JAVAJARDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j	\
@@ -68,21 +69,21 @@ do-configure:
 
 do-install:
 	cd ${WRKSRC} \
-	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \;
+	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}/${DATADIR}/{} \;
 	cd ${WRKSRC} \
-	  && ${FIND} ${DATAFILES} -type f -not -name '*.orig' -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	  && ${FIND} ${DATAFILES} -type f -not -name '*.orig' -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} \
-	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
 	cd ${WRKSRC} \
-	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/jmeter.sh ${PREFIX}/bin/jmeter
+	${INSTALL_SCRIPT} ${WRKDIR}/jmeter.sh ${STAGEDIR}${PREFIX}/bin/jmeter
 
 # For some reason, it is not enough for these three to simply be listed in
 # jmeter.properties file. JMeter refuses to start, unless they are found in lib/
 BOOTSTRAP_JARS=	avalon-framework xstream commons-io
 post-install:
-	@${LN} -s ${BOOTSTRAP_JARS:C|.*|${JAVAJARDIR}/&.jar|} ${DATADIR}/lib/
+	@${LN} -s ${BOOTSTRAP_JARS:C|.*|${JAVAJARDIR}/&.jar|} ${STAGEDIR}${DATADIR}/lib/
 
 .include <bsd.port.post.mk>
