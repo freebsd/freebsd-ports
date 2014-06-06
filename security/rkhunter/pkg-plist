@@ -1,34 +1,47 @@
 bin/rkhunter
 etc/periodic/security/415.rkhunter
-etc/rkhunter.conf
+@sample etc/rkhunter.conf.sample
 lib/rkhunter/scripts/check_modules.pl
 lib/rkhunter/scripts/filehashsha.pl
 lib/rkhunter/scripts/readlink.sh
 lib/rkhunter/scripts/stat.pl
+man/man8/rkhunter.8.gz
 var/lib/rkhunter/db/backdoorports.dat
 var/lib/rkhunter/db/i18n/cn
 var/lib/rkhunter/db/i18n/de
 var/lib/rkhunter/db/i18n/en
+var/lib/rkhunter/db/i18n/tr
+var/lib/rkhunter/db/i18n/tr.utf8
 var/lib/rkhunter/db/i18n/zh
 var/lib/rkhunter/db/i18n/zh.utf8
-var/lib/rkhunter/db/mirrors.dat
-var/lib/rkhunter/db/programs_bad.dat
+@sample var/lib/rkhunter/db/mirrors.dat.sample
+@sample var/lib/rkhunter/db/programs_bad.dat.sample
+var/lib/rkhunter/db/signatures/RKH_Glubteba.ldb
+var/lib/rkhunter/db/signatures/RKH_dso.ldb
+var/lib/rkhunter/db/signatures/RKH_jynx.ldb
+var/lib/rkhunter/db/signatures/RKH_kbeast.ldb
+var/lib/rkhunter/db/signatures/RKH_libkeyutils.ldb
+var/lib/rkhunter/db/signatures/RKH_libkeyutils1.ldb
+var/lib/rkhunter/db/signatures/RKH_libncom.ldb
+var/lib/rkhunter/db/signatures/RKH_pamunixtrojan.ldb
+var/lib/rkhunter/db/signatures/RKH_shv.ldb
+var/lib/rkhunter/db/signatures/RKH_sniffer.ldb
+var/lib/rkhunter/db/signatures/RKH_sshd.ldb
+var/lib/rkhunter/db/signatures/RKH_turtle.ldb
+var/lib/rkhunter/db/signatures/RKH_xsyslog.ldb
 var/lib/rkhunter/db/suspscan.dat
 @unexec rm -f %D/var/lib/rkhunter/db/rkhunter_prop_list.dat 2> /dev/null || true
 @unexec rm -f %D/var/lib/rkhunter/db/rkhunter.dat* 2> /dev/null || true
-@unexec if cmp -s %D/etc/rkhunter.conf.sample %D/etc/rkhunter.conf; then rm -f %D/etc/rkhunter.conf; fi
-etc/rkhunter.conf.sample
-@exec if [ ! -f %D/etc/rkhunter.conf ] ; then cp -p %D/%F %B/rkhunter.conf; fi
 var/lib/rkhunter/tmp/group
 var/lib/rkhunter/tmp/passwd
 @dirrmtry etc/periodic/security
 @dirrmtry etc/periodic
-@dirrmtry share/doc/rkhunter
 @dirrm var/lib/rkhunter/tmp
+@dirrm var/lib/rkhunter/db/signatures
 @dirrm var/lib/rkhunter/db/i18n
 @dirrm var/lib/rkhunter/db
 @dirrm var/lib/rkhunter
-@dirrm var/lib
-@dirrm var
+@dirrmtry var/lib
+@dirrmtry var
 @dirrm lib/rkhunter/scripts
 @dirrm lib/rkhunter
