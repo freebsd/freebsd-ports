@@ -11,8 +11,8 @@ PATH=/bin:/usr/sbin:${LOCALBASE}/bin:
 # set these if not provided by the Makefile
 WEBWARE_USER=${WEBWARE_USER:-webkit}
 WEBWARE_GROUP=${WEBWARE_USER:-webkit}
-WEBWARE_MASTER_DIR=${WEBWARE_MASTER_DIR:-${PKG_PREFIX}/share/webware}
-WEBKIT_HOME_DIR=${WEBKIT_HOME_DIR:-${PKG_PREFIX}/www/webkit}
+WEBWARE_MASTER_DIR=${STAGEDIR}${WEBWARE_MASTER_DIR:-${PKG_PREFIX}/share/webware}
+WEBKIT_HOME_DIR=${STAGEDIR}${WEBKIT_HOME_DIR:-${PKG_PREFIX}/www/webkit}
 
 add_webkit_account()
 {
@@ -56,13 +56,6 @@ make_webkit_home_dir()
         # make application workdir for webkit user
         ${PYTHON} ${WEBWARE_MASTER_DIR}/bin/MakeAppWorkDir.py \
                ${WEBKIT_HOME_DIR}
-        chown -R root:wheel ${WEBKIT_HOME_DIR}
-        echo chown -R ${WEBWARE_USER}:${WEBWARE_GROUP} \
-            ${WEBKIT_HOME_DIR}/Cache ${WEBKIT_HOME_DIR}/ErrorMsgs \
-            ${WEBKIT_HOME_DIR}/Logs ${WEBKIT_HOME_DIR}/Sessions
-        chown -R ${WEBWARE_USER}:${WEBWARE_GROUP} \
-            ${WEBKIT_HOME_DIR}/Cache ${WEBKIT_HOME_DIR}/ErrorMsgs \
-            ${WEBKIT_HOME_DIR}/Logs ${WEBKIT_HOME_DIR}/Sessions
     fi
 }
 
