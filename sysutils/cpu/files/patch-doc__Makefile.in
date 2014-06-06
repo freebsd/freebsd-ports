@@ -1,0 +1,19 @@
+--- doc/Makefile.in.orig	2014-06-06 22:53:04.849107374 +0800
++++ doc/Makefile.in	2014-06-06 22:54:12.397081995 +0800
+@@ -447,13 +447,9 @@ uninstall-info: uninstall-info-recursive
+ 
+ 
+ install-data-local:
+-	@if test -f $(sysconfdir)/cpu.conf ; then \
+-		echo "$@ will not overwrite existing $(sysconfdir)/cpu.conf"; \
+-	else \
+-		$(mkinstalldirs) $(sysconfdir); \
+-		echo "$(INSTALL_DATA) cpu.conf $(sysconfdir)/cpu.conf"; \
+-		$(INSTALL_DATA) cpu.conf $(sysconfdir)/cpu.conf; \
+-	fi
++	$(mkinstalldirs) $(DESTDIR)$(sysconfdir); \
++	echo "$(INSTALL_DATA) cpu.conf $(DESTDIR)$(sysconfdir)/cpu.conf.sample"; \
++	$(INSTALL_DATA) cpu.conf $(DESTDIR)$(sysconfdir)/cpu.conf.sample;
+ 
+ uninstall-local:
+ 	@if test -f $(sysconfdir)/cpu.conf ; then \
