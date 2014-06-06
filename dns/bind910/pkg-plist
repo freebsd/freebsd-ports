@@ -402,7 +402,7 @@ sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
 sbin/tsig-keygen
-@sample %%ETCDIR%%/rndc.conf.sample
+%%ETCDIR%%/rndc.conf.sample
 %%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
 %%NOBASE%%%%ETCDIR%%/named.root
 %%NOBASE%%%%ETCDIR%%/master/empty.db
