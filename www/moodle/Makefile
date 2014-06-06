@@ -20,7 +20,6 @@ OPTIONS_DEFAULT=	ZLIB
 NETWORK_DESC=	Moodle Network functionality
 MIMETEX_DESC=	mimeTeX filter functionality
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MMSSQL}
@@ -80,21 +79,18 @@ pre-install:
 	@${ECHO} @dirrm ${MOODLEDATADIR} >> ${PLIST}
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${MOODLEDIR}
-	@${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${MOODLEDIR}
+	@${FIND} ${STAGEDIR}${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;
 	@${ECHO_CMD} '@exec ${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;' \
 		>> ${TMPPLIST}
-	@${INSTALL} -d ${PREFIX}/${MOODLEDATADIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDATADIR}
+	@${INSTALL} -d ${STAGEDIR}${PREFIX}/${MOODLEDATADIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${MOODLEDATADIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDATADIR}' \
 		>> ${TMPPLIST}
-	${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/${MOODLEDATADIR}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}' >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MMIMETEX}
-	${LN} -sf ${PREFIX}/www/cgi-bin/mimetex.cgi ${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
+	${LN} -sf ../../../cgi-bin/mimetex.cgi ${STAGEDIR}${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
