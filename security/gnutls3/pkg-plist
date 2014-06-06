@@ -36,11 +36,6 @@ info/gnutls3/gnutls-modauth.png
 info/gnutls3/gnutls-pgp.png
 info/gnutls3/gnutls-x509.png
 info/gnutls3/gnutls.info
-info/gnutls3/gnutls.info-1
-info/gnutls3/gnutls.info-2
-info/gnutls3/gnutls.info-3
-info/gnutls3/gnutls.info-4
-info/gnutls3/gnutls.info-5
 info/gnutls3/pkcs11-vision.png
 %%LIBDANE%%lib/gnutls3/libgnutls-dane.a
 %%LIBDANE%%lib/gnutls3/libgnutls-dane.la
