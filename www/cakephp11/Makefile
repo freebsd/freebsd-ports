@@ -22,7 +22,7 @@ NO_BUILD=	yes
 
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
-DEFAULT_PHP_VER=5
+DEFAULT_VERSIONS=	php=5
 
 SUB_FILES=	pkg-message
 
@@ -36,7 +36,6 @@ PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WITH_PHP_CGI?=	/cgi-bin/php
@@ -97,19 +96,20 @@ confighelp:
 	@${ECHO_MSG} ""
 
 do-install:
-	@${MKDIR} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@${CP} -R ${WRKSRC}/.htaccess \
 			${WRKSRC}/app \
 			${WRKSRC}/cake \
 			${WRKSRC}/index.php \
-			${WRKSRC}/vendors ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+			${WRKSRC}/vendors ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 post-install:
-	@if [ -d "${CONFDIR}" ]; then \
-	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/cakephp.conf; \
+	@${MKDIR} ${STAGEDIR}${CONFDIR}
+	@if [ -d "${STAGEDIR}${CONFDIR}" ]; then \
+	  ${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}/cakephp.conf; \
 	else \
 	  ${ECHO_MSG} "" ; \
 	  ${ECHO_MSG} "Please check your Apache 2.x installation -" ; \
@@ -118,11 +118,8 @@ post-install:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${STAGEDIR}${DOCSDIR}
 .if ${CGI_EXT} == "-cgi"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"Your CakePHP installation was configured to use the PHP CGI binary."
