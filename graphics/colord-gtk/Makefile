@@ -4,6 +4,7 @@
 
 PORTNAME=	colord-gtk
 PORTVERSION=	0.1.25
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
 USE_GNOME=	gnomehier gtk30 intlhack introspection:build
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake pathfix pkgconfig tar:xz libtool
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
