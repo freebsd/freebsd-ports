@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt \
 		unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 
 do-install:
@@ -27,7 +27,7 @@ do-install:
 	${UNZIP_CMD} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
 		-d ${STAGEDIR}${PREFIX}/include/tnt
 	${MKDIR} ${WRKDIR}/doc ${STAGEDIR}${DOCSDIR}
-	${UNZIP_CMD} -o ${DISTDIR}/${DIST_SUBDIR}/jama102doc \
+	${UNZIP_CMD} -o ${DISTDIR}/${DIST_SUBDIR}/jama102doc.zip \
 		-d ${WRKDIR}/doc
 	(cd ${WRKDIR}/doc/doxygen && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 

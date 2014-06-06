@@ -11,7 +11,7 @@ DISTNAME=	Fumeikai-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abbreviation (alphabet-->Japanese) dictionary (EPWING V1 format)
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/fumeikai
 EXTRACT_BEFORE_ARGS=	-qL

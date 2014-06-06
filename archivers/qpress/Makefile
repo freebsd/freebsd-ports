@@ -12,7 +12,7 @@ COMMENT=	Portable file archiver using QuickLZ
 
 LICENSE=	GPLv2
 
-USES=		dos2unix zip:infozip
+USES=		dos2unix zip
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 PLIST_FILES=	bin/qpress

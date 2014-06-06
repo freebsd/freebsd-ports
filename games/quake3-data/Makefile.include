@@ -15,8 +15,3 @@ SUB_LIST+=	Q3DIR="${Q3DIR}"
 .if ${PORTNAME} != "data"
 RUN_DEPENDS+=	${Q3DIR}/baseq3/pak1.pk3:${PORTSDIR}/games/quake3-data
 .endif
-
-# When extracting ZIP archives, ask it to convert text files to Unix style
-.if defined(USE_ZIP)
-EXTRACT_BEFORE_ARGS=	-aqo
-.endif

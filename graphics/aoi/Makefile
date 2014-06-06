@@ -18,8 +18,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjogl.so:${PORTSDIR}/graphics/jogl
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USES=		zip:infozip
-EXTRACT_BEFORE_ARGS=	-a -q
+USES=		dos2unix zip
+DOS2UNIX_FILES=	../AoI_Manual/*.html
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

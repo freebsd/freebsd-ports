@@ -16,7 +16,7 @@ COMMENT=	Squeezebox Server plugin to create dynamic playlists
 RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-USES=		zip:infozip
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

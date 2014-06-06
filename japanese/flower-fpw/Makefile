@@ -11,7 +11,7 @@ DISTNAME=	Flower-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionary for flowers (EPWING V1 format)
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/flower
 EXTRACT_BEFORE_ARGS=	-qL

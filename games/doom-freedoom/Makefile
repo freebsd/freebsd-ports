@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-iwad-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Complete Doom-based game IWAD that is Free Software
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 
 DATADIR=	${DMDIR}/${PORTNAME}

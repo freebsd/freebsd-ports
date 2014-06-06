@@ -17,10 +17,9 @@ COMMENT=	Comic book viewer for comic book archives in cbz, cbr, zip, rar
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
-		unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
 
-USES=		dos2unix zip:infozip
+USES=		dos2unix zip
 DOS2UNIX_GLOB=	CREDITS
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
