@@ -2,7 +2,7 @@ PROG=	libstocks_client
 SRCS=	client.c
 NO_MAN=	1
 PREFIX?=/usr/local
-BINDIR=	${PREFIX}/bin
+BINDIR=	${STAGEDIR}${PREFIX}/bin
 
 CFLAGS+=-I${.CURDIR}/../lib
 LDADD+=	-L../lib -lstocks
