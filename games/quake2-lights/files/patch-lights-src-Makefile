@@ -28,7 +28,7 @@
 -	-falign-jumps=2 -falign-functions=2
 +	       -fexpensive-optimizations
 +ifeq ($(ARCH),i386)
-+RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2
++RELEASE_CFLAGS+=-falign-functions=2
 +endif
  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
 -LDFLAGS=-ldl -lm
@@ -36,7 +36,7 @@
  
  SHLIBEXT=so
  
-@@ -31,7 +23,7 @@
+@@ -31,7 +23,7 @@ SHLIBLDFLAGS=-shared
  DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
  DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
  
@@ -45,7 +45,7 @@
  
  all:
  	@echo
-@@ -43,11 +35,11 @@
+@@ -43,11 +35,11 @@ all:
  
  debug:
  	@-mkdir -p $(BUILD_DEBUG_DIR)/lights/nav
@@ -59,7 +59,7 @@
  
  
  targets: $(TARGETS)
-@@ -116,7 +108,7 @@
+@@ -116,7 +108,7 @@ LIGHTS_OBJS = \
  	$(BUILDDIR)/scanner.o \
  	$(BUILDDIR)/q_shared.o
  
@@ -68,7 +68,7 @@
  	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(LIGHTS_OBJS)
  
  $(BUILDDIR)/acebot_ai.o :        ace/acebot_ai.c
-@@ -310,10 +302,10 @@
+@@ -310,10 +302,10 @@ $(BUILDDIR)/q_shared.o :     q_shared.c
  clean: clean-debug clean-release
  
  clean-debug:
