@@ -20,10 +20,9 @@ USE_APACHE_RUN=	22+
 USES=		perl5
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-		${MKDIR} ${WWWDIR}/
+		${MKDIR} ${STAGEDIR}${WWWDIR}/
 		@cd ${WRKSRC}; ${FIND} . \
-			| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+			| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
