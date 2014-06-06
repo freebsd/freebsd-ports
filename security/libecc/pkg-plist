@@ -8,5 +8,5 @@ include/libecc/sha.h
 include/libecc/square.hcc
 lib/libecc.so
 lib/libecc.so.2
-lib/libecc.la
+lib/libecc.so.2.0.1
 @dirrm include/libecc
