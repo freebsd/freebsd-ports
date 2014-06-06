@@ -14,24 +14,14 @@ COMMENT=	Tool to post subversion repository commit information
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>0:${PORTSDIR}/devel/py-subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
-MAN1=		svn-mailer.1
-
 PORTDOCS=	*
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-PYDISTUTILS_INSTALLARGS+=	--no-install-docs
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
