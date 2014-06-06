@@ -3,12 +3,12 @@
 
 PORTNAME=	freefonts
 PORTVERSION=	0.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
+MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
+		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
+		http://mirrors.xmission.com/gimp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	gimp/fonts
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -16,7 +16,14 @@ COMMENT=	Collection of ATM fonts (not all free) from the CICA archives
 
 BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
-RESTRICTED=	see accompanying .license files
+# Some of the fonts are shareware. Some are freeware. Permission must
+# be obtained before distributing at least four (mazama.license,
+# muriel.license, roosthea.license, shf_____.license). Two have
+# inconsistent licenses (tempofon.license and tempoita.license say
+# "placed into the public domain and may [not be] sold")
+
+RESTRICTED=	License prohibits redistribution; see individual .license files
+
 NO_WRKSUBDIR=	yes
 
 FONTDIR?=	${PREFIX}/lib/X11/fonts/freefont
