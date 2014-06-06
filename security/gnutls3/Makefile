@@ -3,7 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	3.1.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v3.1/
 PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
@@ -24,7 +24,7 @@ USE_LDCONFIG=	${PREFIX}/lib/gnutls3
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=		MAKEINFO=/usr/bin/makeinfo
+CONFIGURE_ENV=		MAKEINFO="/usr/bin/makeinfo --no-split"
 CONFIGURE_ARGS=	--program-suffix=${GNUTLS_SUFFIX} \
 			--includedir="${PREFIX}/include/gnutls${GNUTLS_SUFFIX}" \
 			--libdir="${PREFIX}/lib/gnutls${GNUTLS_SUFFIX}" \
@@ -65,6 +65,10 @@ EXAMPLES=	doc/examples/*.c
 post-patch:
 	@${MV} ${WRKSRC}/libdane/gnutls-dane.pc.in \
 		${WRKSRC}/libdane/gnutls${GNUTLS_SUFFIX}-dane.pc.in
+	# Force regenerating as the dist has info-5, but sometimes when
+	# regnerating it will decide to only create up to info-4, thus
+	# causing plist discrepency. So just rebuild and use --no-split
+	@${RM} ${WRKSRC}/doc/gnutls.info*
 
 pre-configure:
 	@${CP} ${WRKSRC}/lib/gnutls.pc.in ${WRKSRC}/lib/gnutls${GNUTLS_SUFFIX}.pc.in
