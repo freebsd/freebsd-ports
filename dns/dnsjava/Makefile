@@ -32,6 +32,11 @@ PLIST_SUB=	JDK6=""
 .else
 PLIST_SUB=	JDK6="@comment "
 .endif
+.if ${JAVA_PORT_VERSION} == "1.8.0"
+PLIST_SUB+=	JDK8=""
+.else
+PLIST_SUB+=	JDK8="@comment "
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
