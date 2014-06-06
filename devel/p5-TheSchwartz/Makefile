@@ -15,8 +15,9 @@ COMMENT=	Reliable job queue
 BUILD_DEPENDS=	p5-Data-ObjectDriver>=0.04:${PORTSDIR}/devel/p5-Data-ObjectDriver
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+SHEBANG_FILES=	extras/check_schwartz extras/thetop
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/extras/check_schwartz ${STAGEDIR}${PREFIX}/bin/
