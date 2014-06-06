@@ -1,5 +1,5 @@
---- Makefile.am.orig2	Thu Jan  6 15:45:58 2005
-+++ Makefile.am	Thu Jan  6 15:47:48 2005
+--- Makefile.am.orig	2014-06-01 17:46:47.000000000 +0200
++++ Makefile.am	2014-06-01 17:48:02.000000000 +0200
 @@ -11,7 +11,7 @@
  
  SUBDIRS = m4 po intl doc contrib $(IMAP_SUBDIR)
@@ -9,6 +9,24 @@
  
  BUILT_SOURCES = keymap_defs.h patchlist.c Muttrc
  
+@@ -135,16 +135,7 @@
+ 
+ install-data-local: Muttrc
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
+-	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
+-		mv $(DESTDIR)$(pkgdatadir)/Muttrc* $(DESTDIR)$(sysconfdir) ; \
+-	elif [ -f $(DESTDIR)$(pkgdatadir)/../Muttrc ] ; then \
+-	 	mv $(DESTDIR)$(pkgdatadir)/../Muttrc* $(DESTDIR)$(sysconfdir) ; \
+-	elif [ ! -f $(DESTDIR)$(sysconfdir)/Muttrc ] ; then \
+-		$(INSTALL) -m 644 $(srcdir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	fi
+-	-if [ ! -f $(DESTDIR)$(sysconfdir)/mime.types ]; then \
+-		$(INSTALL) -m 644 $(srcdir)/mime.types $(DESTDIR)$(sysconfdir); \
+-	fi
++	$(INSTALL) -m 644 $(srcdir)/Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.sample
+ 
+ 
+ # Don't make this one ChangeLog - it's intended to be
 --- doc/Makefile.in.orig2	Thu Jan  6 15:45:57 2005
 +++ doc/Makefile.in	Thu Jan  6 15:53:52 2005
 @@ -78,8 +78,6 @@

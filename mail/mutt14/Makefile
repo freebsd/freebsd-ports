@@ -25,7 +25,7 @@ COMMENT?=	The Mongrel of Mailers (part Elm, Pine, Mush, mh, etc.)
 CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]* mutt-[^1].[^4]*
 PKGNAMESUFFIX=	14
 
-OPTIONS_DEFINE=	NLS SGML_DOCS LOCALES_FIX MUTT_XFACE MUTT_FLOCK MUTT_ICONV GSSAPI
+OPTIONS_DEFINE=	NLS LOCALES_FIX MUTT_XFACE MUTT_FLOCK MUTT_ICONV GSSAPI
 OPTIONS_DEFAULT=	MUTT_FLOCK MUTT_ICONV GSSAPI
 
 OPTIONS_RADIO=		CONS
@@ -38,7 +38,6 @@ OPTIONS_DEFAULT+=	SLANG
 CONS_DESC=	Console driver (if none chosen, uses ncurses from base system)
 SLANG_DESC=	Adds display/screen management via S-Lang
 NCURSES_DESC=	Adds console graphics support with ncurses from ports
-SGML_DOCS_DESC=	Build mutt's SGML documentation
 LOCALES_FIX_DESC=	Enable locales fixes
 MUTT_XFACE_DESC=	Adds mutt X-Face support
 MUTT_FLOCK_DESC=	Use flock() for file locks
@@ -48,10 +47,8 @@ USE_OPENSSL=	yes
 
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	14-lite
-OPTIONS_EXCLUDE=	SGML_DOCS
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
@@ -73,7 +70,7 @@ USES+=	iconv
 .endif
 
 .if ${PORT_OPTIONS:MSLANG}
-LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS+=	libslang.so:${PORTSDIR}/devel/libslang2
 .elif ${PORT_OPTIONS:MNCURSES}
 USES+=	ncurses:port
 .else
@@ -83,12 +80,10 @@ USES+=	ncurses
 .if defined(WITH_MUTT_CYRUS_SASL)
 IGNORE=	the SASL support for mutt has been withdrawn. Please use the mutt-devel port instead
 .endif
-.if ${PORT_OPTIONS:MSGML_DOCS}
-BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
-.endif
 .if ${PORT_OPTIONS:MMUTT_XFACE}
 PATCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/news/slrnface:extract
 RUN_DEPENDS+=	slrnface:${PORTSDIR}/news/slrnface
+PKGMESSAGE=	${PKGDIR}/pkg-message.xface
 .endif
 .endif
 
@@ -134,15 +129,13 @@ CFLAGS+=	-I${NCURSESINC}
 .endif
 .if ${PORT_OPTIONS:MGSSAPI}
 .if exists(${LOCALBASE}/bin/gss-client)
-LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
 .elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss
 WITH_MUTT_KRB5_SYS=YES
 .endif
 .endif
-MAN1=		mutt.1 mutt_dotlock.1
-MAN5=		mbox.5 muttrc.5
 
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
@@ -190,38 +183,14 @@ post-build:
 		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
 		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
 		${WRKSRC}/doc/muttrc.man
-.if ${PORT_OPTIONS:MSGML_DOCS}
-PLIST:=		${WRKDIR}/PLIST
-pre-install:
-	@${CAT} ${PKGDIR}/pkg-plist.htmlfiles > ${PLIST}
-	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
-.endif
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} "===>   Installing Mutt documentation"
-	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} && ${CHMOD} a+rx ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
-		${DOCSDIR}
-.if ${PORT_OPTIONS:MSGML_DOCS}
-	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m 0755 \
-	    -d ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${DOCSDIR}
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MMUTT_XFACE}
-	@${ECHO} ""
-	@${ECHO} "************************************************************"
-	@${ECHO} "  To enable the XFACE support in mutt you also have to add"
-	@${ECHO} "        set xface=yes"
-	@${ECHO} "  to your ~/.muttrc"
-	@${ECHO} "  Additional information is provided by news/slrnface"
-	@${ECHO} "************************************************************"
-	@${ECHO} ""
+		${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
