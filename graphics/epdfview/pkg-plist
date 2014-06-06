@@ -1,4 +1,5 @@
 bin/epdfview
+man/man1/epdfview.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/epdfview.mo
