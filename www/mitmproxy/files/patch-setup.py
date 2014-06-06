@@ -1,5 +1,5 @@
---- setup.py.orig	2014-02-21 08:17:11.000000000 +0800
-+++ setup.py	2014-02-21 08:19:43.000000000 +0800
+--- setup.py.orig	2014-02-26 19:33:21.000000000 +0000
++++ setup.py	2014-06-06 06:28:44.000000000 +0100
 @@ -1,4 +1,5 @@
  from distutils.core import setup
 +from setuptools import setup
@@ -11,7 +11,7 @@
              "Topic :: Software Development :: Testing"
          ],
 -        install_requires=[
--            "netlib>=%s"%version.VERSION,
+-            "netlib>=%s"%version.MINORVERSION,
 -            "urwid>=1.1",
 -            "pyasn1>0.1.2",
 -            "pyopenssl>=0.13",
