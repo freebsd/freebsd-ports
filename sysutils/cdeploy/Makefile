@@ -1,20 +1,16 @@
 # Created by: jfreund
 # $FreeBSD$
 
-PORTNAME=		cdeploy
+PORTNAME=	cdeploy
 PORTVERSION=	0.2.1
-CATEGORIES=		sysutils
+CATEGORIES=	sysutils
 MASTER_SITES=	SF/root-tools/cdeploy/0.2
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Deploy a set of configuration files to a target file system
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Deploy a set of configuration files to a target file system
 
-USE_BZIP2=		yes
+USES=		tar:bzip2
 
-MAN1=			cdeploy.1
-MANCOMPRESSED=	yes
+PLIST_FILES=	man/man1/cdeploy.1.gz sbin/cdeploy
 
-PLIST_FILES=	sbin/cdeploy
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
