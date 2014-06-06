@@ -2,6 +2,7 @@
 
 PORTNAME=	libzmq4
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -11,7 +12,7 @@ COMMENT=	ZeroMQ core library (Version 4)
 
 LICENSE=	LGPL3
 
-USES=		pathfix
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	CURVE DEBUG PGM
