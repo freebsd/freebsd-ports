@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:tu}_${PORTVERSION}_Install
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Anti-Spam SMTP Proxy
 
-USES=		perl5 zip:infozip
+USES=		perl5 zip
 NO_BUILD=	yes
 USE_PERL5=	run
 

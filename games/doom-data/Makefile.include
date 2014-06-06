@@ -14,15 +14,3 @@ SUB_LIST+=	DMDIR="${DMDIR}"
 .if ${PORTNAME} != "data"
 RUN_DEPENDS+=	${DMDIR}:${PORTSDIR}/games/doom-data
 .endif
-
-.if defined(USE_CRLF)
-.   if defined(USE_ZIP)
-EXTRACT_BEFORE_ARGS=	-aqo
-.   else
-pre-patch:
-	@${FIND} ${WRKDIR} -type f -print0 | \
-		${XARGS} -0 ${FILE} | ${GREP} 'CRLF' | \
-		${SED} -e "s/:.*//" | ${SED} -e 's/ /\\ /g' | \
-		${XARGS} ${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
-.   endif
-.endif

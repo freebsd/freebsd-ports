@@ -11,7 +11,7 @@ DISTNAME=	CGdic1.5h-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese dictionary for CG (EPWING V1 format)
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cg
 EXTRACT_BEFORE_ARGS=	-qL

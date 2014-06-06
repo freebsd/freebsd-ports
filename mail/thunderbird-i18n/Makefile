@@ -14,7 +14,7 @@ COMMENT=	Localized interface for Thunderbird
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		zip:infozip gecko:thunderbird
+USES=		gecko:thunderbird zip
 USE_XPI=	thunderbird
 
 NO_BUILD=	yes

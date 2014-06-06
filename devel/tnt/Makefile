@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Template Numerical Toolkit
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -24,7 +24,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tnt
 	${INSTALL_DATA} ${WRKDIR}/*.h ${STAGEDIR}${PREFIX}/include/tnt
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${UNZIP_CMD} ${DISTDIR}/${DIST_SUBDIR}/tnt120doc \
+	${UNZIP_CMD} ${DISTDIR}/${DIST_SUBDIR}/tnt120doc.zip \
 		-d ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

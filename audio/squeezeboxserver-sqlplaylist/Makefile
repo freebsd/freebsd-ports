@@ -17,7 +17,7 @@ RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver \
 		${LOCALBASE}/${SLIMDIR}/Plugins/DynamicPlayList/install.xml:${PORTSDIR}/audio/squeezeboxserver-dynamicplaylist
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-USES=		zip:infozip
+USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

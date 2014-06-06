@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${WEBFPW_VER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webster's Revised Unabridged Dictionary (1913) (EPWING V1 format)
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/web
 EXTRACT_BEFORE_ARGS=	-qL

@@ -13,8 +13,8 @@ COMMENT=	Full screen editor
 NO_CDROM=	Resale allowed for media cost only
 
 NO_WRKSUBDIR=	yes
-USES=		zip:infozip
-EXTRACT_BEFORE_ARGS=	-Laq
+USES=		dos2unix zip
+EXTRACT_BEFORE_ARGS=	-Lq
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
