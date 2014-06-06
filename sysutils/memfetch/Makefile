@@ -13,9 +13,10 @@ COMMENT=	Utility to dump memory of a running process
 
 LICENSE=	GPLv2
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+SHEBANG_FILES=	mffind.pl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
