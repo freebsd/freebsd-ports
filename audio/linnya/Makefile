@@ -5,10 +5,13 @@ PORTVERSION=	2.3.0
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	ghw@7axu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Linnya Audio Player
 
 LICENSE=	GPLv3
+
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=	2014-07-07
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
