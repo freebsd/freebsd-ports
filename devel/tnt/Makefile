@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Template Numerical Toolkit
 
-USES=		zip
+USES=		zip:infozip
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
