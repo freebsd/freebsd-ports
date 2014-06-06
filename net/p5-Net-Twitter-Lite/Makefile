@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Twitter-Lite
-PORTVERSION=	0.12001
-PORTREVISION=	1
+PORTVERSION=	0.12006
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +26,6 @@ RUN_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON \
 		p5-Crypt-SSLeay>=0.5:${PORTSDIR}/security/p5-Crypt-SSLeay
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
