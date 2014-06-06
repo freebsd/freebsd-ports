@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Dancer::Plugin::Auth::Extensible::Provider::Usergroup.3.gz
+%%SITE_PERL%%/Dancer/Plugin/Auth/Extensible/Provider/Usergroup.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Auth/Extensible/Provider/Usergroup/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Auth/Extensible/Provider/Usergroup
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Auth/Extensible/Provider
