@@ -1,13 +1,13 @@
 PREFIX?=/usr/local
-LIBDIR=	${PREFIX}/lib
-INCSDIR=${PREFIX}/include
+LIBDIR=	${STAGEDIR}${PREFIX}/lib
+INCSDIR=${STAGEDIR}${PREFIX}/include
 INCDIR=	${INCSDIR}		# for 4.x bsd.lib.mk
 
 LIB=	stocks
 SHLIB_MAJOR=0
 SHLIB_MINOR=5
 
-NOPROFILE=	True	# to avoid building profiled library
+NO_PROFILE=	True	# to avoid building profiled library
 
 SRCS!=	${MAKE} -f ${.CURDIR}/Makefile.in -V libstocks_a_SOURCES
 INCS!=	${MAKE} -f ${.CURDIR}/Makefile.in -V include_HEADERS
