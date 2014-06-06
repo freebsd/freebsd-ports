@@ -1,6 +1,6 @@
---- config.orig	2014-05-24 01:20:21.775436051 +0800
-+++ config	2014-05-24 01:21:11.668434549 +0800
-@@ -1,9 +1,9 @@
+--- ./config.orig	2014-06-06 21:17:17.000000000 +0000
++++ ./config	2014-06-06 21:17:45.000000000 +0000
+@@ -1,14 +1,14 @@
  #############################################################
  #Linux/BSD/Mac
 -LUA_DIR= /usr/local/share/lua/5.1.1
@@ -14,7 +14,13 @@
  # For Mac OS, comment the above line and uncomment this one
  #JDK=/Library/Java/Home
  
-@@ -23,13 +23,13 @@ LIB_OPTION= -shared
+ # Full path to Lua static library
+-LIB_LUA=$(LUA_LIBDIR)/liblua.a
++LIB_LUA=$(LUA_LIBDIR)/liblua-%%LUA_VER%%.a
+ 
+ #Linux/BSD
+ LIB_EXT= .so
+@@ -23,13 +23,13 @@
  #LIB_OPTION= -dynamiclib -all_load
  
  ## On FreeBSD and Mac OS systems, the following line should be commented
