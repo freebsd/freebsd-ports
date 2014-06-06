@@ -20,10 +20,12 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=g
 
+USES=		tar:bzip2
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext iconv tar:bzip2
+NLS_USES=	gettext iconv
 NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG} \
 			--with-libintl-prefix=${LOCALBASE}
 NLS_CONFIGURE_ENABLE=	nls
