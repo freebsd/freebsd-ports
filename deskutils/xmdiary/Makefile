@@ -20,7 +20,6 @@ MAN1=		xdaclunix.1 xdalarm.1 xdcustom.1 xddump.1 xdiary.1 xdinitdb.1 \
 		xdlight.1 xdnotify.1 xdprformat.1 xdremind.1 xdremove.1 \
 		xdrestore.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib.h/' \
 		${WRKSRC}/tools/LstLinked.c ${WRKSRC}/tools/System.c \
