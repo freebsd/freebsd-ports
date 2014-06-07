@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pike78
-PORTVERSION=	7.8.866
+PORTVERSION=	${PIKEVERSION}
 CATEGORIES=	lang
 MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
@@ -116,4 +116,5 @@ post-install:
 verify:
 	cd ${WRKSRC}; ${GMAKE} verify
 
+.include "Makefile.common"
 .include <bsd.port.mk>
