@@ -16,8 +16,6 @@ RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 NO_BUILD=	yes
 MAKE_ENV=	prefix=${PREFIX}
 
-MAN1=		cgprof.1
-PLIST_FILES=	bin/cgprof
+PLIST_FILES=	bin/cgprof man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
