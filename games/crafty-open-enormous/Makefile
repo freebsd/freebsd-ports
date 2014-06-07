@@ -14,16 +14,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enormous opening book (about 270 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
-RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-DIST_SUBDIR=		crafty
+DIST_SUBDIR=	crafty
 USES=		zip
-NO_WRKSUBDIR=		yes
-NO_PACKAGE=		Package is way too big
-CONFLICTS=		crafty-open-large-* crafty-open-medium-* crafty-open-default-*
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+NO_WRKSUBDIR=	yes
+NO_PACKAGE=	Package is way too big
+CONFLICTS=	crafty-open-large-* crafty-open-medium-* crafty-open-default-*
 
 do-build:
 	@${ECHO_MSG} '================================================================'
@@ -32,9 +29,9 @@ do-build:
 	(cd ${WRKDIR}; ${CHOWN} nobody ${WRKDIR}; crafty bookpath=. <${FILESDIR}/book-building)
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/crafty
-	${INSTALL_DATA} ${WRKDIR}/book.bin ${PREFIX}/lib/crafty/book.bin
-	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty/book.bin
-	${CHMOD} 664 ${PREFIX}/lib/crafty/book.bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/crafty
+	${INSTALL_DATA} ${WRKDIR}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
+	${CHOWN} nobody:nogroup ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
+	${CHMOD} 664 ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
