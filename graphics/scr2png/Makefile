@@ -14,9 +14,10 @@ COMMENT=	Converts the output of "vidcontrol -p" to PNG
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 NO_WRKSUBDIR=	yes
+USES=		uidfix
+MAKE_ARGS=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
 
 PLIST_FILES=	bin/scr2png man/man1/scr2png.1.gz
-MAKE_ARGS=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
