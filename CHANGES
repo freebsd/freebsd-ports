@@ -10,6 +10,33 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140607:
+AUTHOR: mva@FreeBSD.org
+
+  New PYTHON_CONCURRENT_INSTALL knob to support the parallel installation
+  of ports for different python versions.
+
+  If set to yes, the knob indicates that the port can be installed for
+  different python versions at the same time. The port will use a unique
+  prefix for certain directories using USES=uniquefiles:dirs (see the
+  uniquefiles.mk Uses for details about the directories). Binaries
+  receive an additional suffix, based on ${PYTHON_VER}.
+
+  The values for the uniquefiles USES are set as follows:
+
+    UNIQUE_PREFIX=  ${PYTHON_PKGNAMEPREFIX}
+    UNIQUE_SUFFIX=  -${PYTHON_VER}
+
+  If the port is installed for the current default python version, scripts and
+  binaries in
+
+    ${PREFIX}/bin
+    ${PREFIX}/sbin
+    ${PREFIX}/libexec
+
+  are linked from the prefixed version to the prefix-less original name,
+  e.g. bin/foo-2.7 --> bin/foo.
+
 20140529:
 AUTHOR: miwi@FreeBSD.org
 
