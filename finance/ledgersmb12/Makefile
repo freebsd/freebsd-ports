@@ -10,8 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A double entry accounting system
 
 BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
-			p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-			p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	ledgersmb12
@@ -23,7 +23,6 @@ USE_PERL5=	run build patch
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -34,13 +33,10 @@ post-patch:
 		> ${WRKDIR}/ledger-smb-httpd.conf
 
 do-install:
-	@${CP} -R ${WRKSRC} ${PREFIX}
-	@cd ${PREFIX}/${PORTNAME} ; \
+	@${CP} -R ${WRKSRC} ${STAGEDIR}${PREFIX}
+	@cd ${STAGEDIR}${PREFIX}/${PORTNAME} ; \
 		${CHOWN} -hR ${WWWOWN}:${WWWGRP} * ; \
 		${CHMOD} 711 templates css spool
-	@${INSTALL_DATA} ${WRKDIR}/ledger-smb-httpd.conf ${PREFIX}/etc/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKDIR}/ledger-smb-httpd.conf ${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.post.mk>
