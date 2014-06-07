@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	interface
-PORTVERSION=	1.1.1
+PORTVERSION=	1.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
