@@ -8,7 +8,6 @@ bin/cnid2_create
 bin/dbd
 bin/macusers
 bin/netatalk-config
-bin/uniconv
 @unexec if cmp -s %D/etc/afp.conf %D/etc/afp.conf.dist; then rm -f %D/etc/afp.conf; fi
 etc/afp.conf.dist
 @exec [ -f %B/afp.conf ] || cp %B/%f %B/afp.conf
@@ -21,31 +20,22 @@ libexec/netatalk-uams/uams_clrtxt.so
 libexec/netatalk-uams/uams_dhx.so
 libexec/netatalk-uams/uams_dhx2.so
 %%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.a
-%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.la
 %%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.so
 libexec/netatalk-uams/uams_dhx2_passwd.a
-libexec/netatalk-uams/uams_dhx2_passwd.la
 libexec/netatalk-uams/uams_dhx2_passwd.so
 %%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.a
-%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.la
 %%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.so
 libexec/netatalk-uams/uams_dhx_passwd.a
-libexec/netatalk-uams/uams_dhx_passwd.la
 libexec/netatalk-uams/uams_dhx_passwd.so
 %%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.a
-%%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.la
 %%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.so
 libexec/netatalk-uams/uams_guest.a
-libexec/netatalk-uams/uams_guest.la
 libexec/netatalk-uams/uams_guest.so
 %%NETATALKPAM%%libexec/netatalk-uams/uams_pam.a
-%%NETATALKPAM%%libexec/netatalk-uams/uams_pam.la
 %%NETATALKPAM%%libexec/netatalk-uams/uams_pam.so
 libexec/netatalk-uams/uams_passwd.a
-libexec/netatalk-uams/uams_passwd.la
 libexec/netatalk-uams/uams_passwd.so
 libexec/netatalk-uams/uams_randnum.a
-libexec/netatalk-uams/uams_randnum.la
 libexec/netatalk-uams/uams_randnum.so
 include/atalk/acl.h
 include/atalk/adouble.h
@@ -70,9 +60,9 @@ include/atalk/util.h
 include/atalk/vfs.h
 include/atalk/volume.h
 lib/libatalk.a
-lib/libatalk.la
 lib/libatalk.so
-lib/libatalk.so.13
+lib/libatalk.so.14
+lib/libatalk.so.14.0.0
 man/man1/ad.1.gz
 man/man1/afpldaptest.1.gz
 man/man1/afppasswd.1.gz
