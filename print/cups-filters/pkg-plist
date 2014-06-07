@@ -11,13 +11,13 @@ include/fontembed/fontfile.h
 include/fontembed/iofn.h
 include/fontembed/sfnt.h
 lib/libcupsfilters.a
-lib/libcupsfilters.la
 lib/libcupsfilters.so
 lib/libcupsfilters.so.1
+lib/libcupsfilters.so.1.0.0
 lib/libfontembed.a
-lib/libfontembed.la
 lib/libfontembed.so
 lib/libfontembed.so.1
+lib/libfontembed.so.1.0.0
 libdata/pkgconfig/libcupsfilters.pc
 libdata/pkgconfig/libfontembed.pc
 libexec/cups/backend/parallel
@@ -39,6 +39,7 @@ libexec/cups/filter/pdftoraster
 libexec/cups/filter/pstopdf
 libexec/cups/filter/rastertoescpx
 libexec/cups/filter/rastertopclx
+libexec/cups/filter/rastertopdf
 libexec/cups/filter/textonly
 libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
