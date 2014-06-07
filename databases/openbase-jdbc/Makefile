@@ -25,13 +25,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 OBVERSION=	Oct2006
 WORK_SUBDIR=	JDBC_10.09.2006
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/${WORK_SUBDIR}/${JARFILE} ${JAVAJARDIR}/${JARFILE}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKSRC}/${WORK_SUBDIR}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
 
 .include <bsd.port.post.mk>
