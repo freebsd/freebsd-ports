@@ -1632,7 +1632,7 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .endif
 
 # XXX PIE support to be added here
-MAKE_ENV+=	NO_PIE
+MAKE_ENV+=	NO_PIE=yes
 
 .if defined(NOPORTDOCS)
 PLIST_SUB+=		PORTDOCS="@comment "
