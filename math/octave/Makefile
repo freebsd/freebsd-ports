@@ -3,6 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
@@ -32,7 +33,8 @@ LIB_DEPENDS=	libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick13 \
 		libqrupdate.so:${PORTSDIR}/math/qrupdate \
 		libumfpack.so:${PORTSDIR}/math/suitesparse \
 		libglpk.so:${PORTSDIR}/math/glpk \
-		libgl2ps.so:${PORTSDIR}/print/gl2ps
+		libgl2ps.so:${PORTSDIR}/print/gl2ps \
+		qscintilla2:${PORTSDIR}/devel/qscintilla2
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
@@ -40,7 +42,7 @@ USE_TEX=	dvipsk:build
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
-USE_QT4=	gui network
+USE_QT4=	gui network uic_build moc_build rcc_build linguist_build
 
 OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
