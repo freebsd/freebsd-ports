@@ -3,7 +3,7 @@
 
 PORTNAME=	arduino-glcd
 PORTVERSION=	3.20111205
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://glcd-arduino.googlecode.com/files/
 DISTNAME=	glcd-20111205
@@ -19,7 +19,8 @@ WRKSRC=		${WRKDIR}/glcd
 USES=		zip dos2unix
 
 NO_BUILD=	yes
-NO_STAGE=	yes
+
+OPTIONS_DEFINE=	EXAMPLES
 
 FILES=	\
 	Buildinfo.txt \
@@ -38,16 +39,14 @@ FILES=	\
 	include \
 	readme.txt
 
-do-install:
-	${MKDIR} ${PREFIX}/arduino/libraries/glcd
-	(cd ${WRKDIR}/glcd && ${COPYTREE_SHARE} "${FILES}" \
-	    ${PREFIX}/arduino/libraries/glcd "! -name *\.orig")
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKDIR}/glcd/examples && ${COPYTREE_SHARE} . \
-	    ${EXAMPLESDIR} "! -name *\.orig")
-.endif
-
 PLIST_SUB+=	EXAMPLESDIR_REL=${EXAMPLESDIR_REL}
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/arduino/libraries/glcd
+	(cd ${WRKDIR}/glcd && ${COPYTREE_SHARE} "${FILES}" \
+	    ${STAGEDIR}${PREFIX}/arduino/libraries/glcd "! -name *\.orig")
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKDIR}/glcd/examples && ${COPYTREE_SHARE} . \
+	    ${STAGEDIR}${EXAMPLESDIR} "! -name *\.orig")
 
 .include <bsd.port.mk>
