@@ -25,7 +25,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/ojdbc-${PORTVERSION}.jar
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
@@ -41,6 +40,6 @@ installation
 .endif
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${JAVAJARDIR}/ojdbc-${PORTVERSION}.jar
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${STAGEDIR}${JAVAJARDIR}/ojdbc-${PORTVERSION}.jar
 
 .include <bsd.port.post.mk>
