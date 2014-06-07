@@ -8,13 +8,13 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.mctavish.co.uk/tits/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A server which provides telnet(1) access to one or more tty ports
+COMMENT=	Server which provides telnet(1) access to one or more tty ports
 
 LICENSE=	BSD4CLAUSE
 
-MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
-
+USES=		uidfix
 USE_RC_SUBR=	tits
+MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/tits.8
