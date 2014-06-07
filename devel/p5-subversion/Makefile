@@ -16,6 +16,7 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
 USES=		perl5
+USE_PERL5=	build run fixpacklist
 
 SVN_BUILD_BINDINGS=yes
 
