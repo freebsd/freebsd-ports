@@ -17,6 +17,8 @@ WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	sbin/pkg_cutleaves man/man1/pkg_cutleaves.1.gz
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_PKGNG)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-pkg_cutleaves \
 		${FILESDIR}/extra-patch-pkg_cutleaves.1
@@ -51,4 +53,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg_cutleaves ${STAGEDIR}${PREFIX}/sbin/pkg_cutleaves
 	${INSTALL_MAN} ${WRKSRC}/pkg_cutleaves.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
