@@ -9,15 +9,15 @@ MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}p1
 
 MAINTAINER=	wes@FreeBSD.org
-COMMENT=	C++ Portable Components library
+COMMENT=	C++ libraries with a network/internet focus
 
 LICENSE=	BSL
 
 CONFLICTS=	poco-ssl-[0-9]*
 
 USES=		gmake tar:bzip2
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--config=FreeBSD
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --config=FreeBSD
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	TEST SAMPLES

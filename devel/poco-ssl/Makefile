@@ -1,61 +1,41 @@
-# Created by: wes@FreeBSD.org
+# Created by: Wes Peters <wes@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	poco
+# New version 1.4.6p4 is available; please use DISTVERSION upon updating
 PORTVERSION=	1.4.3
 PORTREVISION=	3
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-ssl
-DISTNAME=	poco-${PORTVERSION}p1-all
+DISTNAME=	${PORTNAME}-${PORTVERSION}p1-all
 
 MAINTAINER=	wes@FreeBSD.org
-COMMENT=	C++ Portable Components library with NetSSL and Database libraries
+COMMENT=	C++ libraries with a network/internet focus (full version)
 
-BROKEN=		Fails to build
+LICENSE=	BSL
 
 CONFLICTS=	poco-[0-9]*
 
+USES=		gmake tar:bzip2
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --config=FreeBSD
+USE_LDCONFIG=	yes
+
 OPTIONS_DEFINE=	TEST SAMPLES MYSQL SQLITE ODBC
+OPTIONS_DEFAULT=	MYSQL SQLITE
 SAMPLES_DESC=	Build sample programs
 
-OPTIONS_DEFAULT=	MYSQL SQLITE
+TEST_CONFIGURE_OFF=	--no-tests
+SAMPLES_CONFIGURE_OFF=	--no-samples
 
-CONFIGURE_ARGS= --config=FreeBSD
-
-USES=		gmake tar:bzip2
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MTEST}
-CONFIGURE_ARGS+= --no-tests
-.endif
-
-.if ! ${PORT_OPTIONS:MSAMPLES}
-CONFIGURE_ARGS+= --no-samples
-.endif
-
-#
-# ODBC
-#
-
-ODBC_CONFIGURE_OFF= --omit=Data/ODBC
 ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/libiodbc
+ODBC_CONFIGURE_OFF=	--omit=Data/ODBC
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.else
-CONFIGURE_ARGS+= --omit=Data/MySQL
-.endif
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_OFF=	--omit=Data/MySQL
 
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
-.else
-CONFIGURE_ARGS+= --omit=Data/SQLite
-.endif
-
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+SQLITE_USE=		SQLITE=yes
+SQLITE_CONFIGURE_OFF=	--omit=Data/SQLite
 
 .include <bsd.port.mk>
