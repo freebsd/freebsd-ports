@@ -3,7 +3,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	High performance media player supporting many formats
 
@@ -38,6 +38,8 @@ X11DGA_DESC?=	X11 DGA video driver support
 X11VM_DESC?=	X11 VidMode support
 
 SUB_FILES=	pkg-message
+
+CONFLICTS=	mplayer2-2.*
 
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 USES+=		pkgconfig
@@ -116,10 +118,10 @@ pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "There are some knobs which *can* *not* be selected via the"
-	@${ECHO_MSG} "OPTIONS framework. At the moment, their defaults are:"
-	@${ECHO_MSG} "WITH_KERN_HZ=1024"
-	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=/dev/cd0"
-	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=/dev/cd0"
+	@${ECHO_MSG} "OPTIONS framework. At the moment, these settings are:"
+	@${ECHO_MSG} "WITH_KERN_HZ=${DEFAULT_KERN_HZ}"
+	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=${DEFAULT_DVD_DEVICE}"
+	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=${DEFAULT_CDROM_DEVICE}"
 
 .if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 	@${ECHO_MSG} "If you want to use the GUI, you can use the skins from"
