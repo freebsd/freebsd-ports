@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netatalk
-PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTVERSION=	3.1.2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -18,10 +17,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
     		libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
-USE_AUTOTOOLS=	libtool
 USE_BDB=	5+
-USE_BZIP2=	yes
-USES=		iconv gmake pkgconfig perl5
+USES=		iconv gmake pkgconfig perl5 libtool tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
