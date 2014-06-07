@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Oct 26 15:15:08 1997
-+++ Makefile	Sat Aug 11 00:15:35 2001
-@@ -2,12 +2,13 @@
+--- Makefile.orig	1997-10-27 07:15:08.000000000 +0800
++++ Makefile	2014-06-07 23:36:53.767950530 +0800
+@@ -2,12 +2,13 @@ TARGET	= ladder
  SRCS	= ladder.c lplay.c ltime.c lscore.c lscreens.c
  OBJS	= ladder.o lplay.o ltime.o lscore.o lscreens.o
  
@@ -17,18 +17,18 @@
  
  .SUFFIXES:	.o .c .m4
  
-@@ -21,6 +22,14 @@
- 	$(CC) -o $(TARGET) $(LDFLAGS) $(OBJS) $(LIBS)
+@@ -22,6 +23,14 @@ $(TARGET):	$(OBJS)
  
  $(OBJS):	ladder.h
-+
+ 
 +clean:
 +	-$(RM)	$(OBJS) $(TARGET) *.core
 +
 +all: $(TARGET)
 +
 +install:
-+	install -c -s -o root -g games -m 2555 ladder ${PREFIX}/bin
- 
++	install -c -s -o root -g games -m 2555 ladder $(DESTDIR)${PREFIX}/bin
++
  # ladder.c:	ladder.m4
  
+ # lscreens.c:	lscreens.m4
