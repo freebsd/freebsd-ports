@@ -20,16 +20,12 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl utils/*/*.pl
 SUB_FILES=	${PORTNAME}-httpd.conf pkg-message
 
-NO_STAGE=	yes
 do-install:
 	@cd ${WRKDIR} ; \
-		${TAR} -cf - ${PORTNAME} | ( cd ${PREFIX} ; ${TAR} xf - )
-	@cd ${PREFIX}/${PORTNAME} ; \
+		${TAR} -cf - ${PORTNAME} | ( cd ${STAGEDIR}${PREFIX} ; ${TAR} xf - )
+	@cd ${STAGEDIR}${PREFIX}/${PORTNAME} ; \
 		${CHOWN} -hR ${WWWOWN}:${WWWGRP} * ; \
 		${CHMOD} 711 users templates css spool
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-httpd.conf ${PREFIX}/etc/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-httpd.conf ${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.mk>
