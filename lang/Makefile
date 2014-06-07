@@ -154,6 +154,7 @@
     SUBDIR += mawk
     SUBDIR += mdk
     SUBDIR += metaocaml
+    SUBDIR += micropython
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += mlton
