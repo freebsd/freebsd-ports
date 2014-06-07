@@ -10,18 +10,19 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20I%20hate%20James%2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print information about the contents and structure of a DVD
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		lsdvd.1
-PLIST_FILES=	bin/lsdvd
+PLIST_FILES=	bin/lsdvd \
+		man/man1/lsdvd.1.gz
 
 WITH_DVD_DEVICE?=/dev/acd0
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "===> The default DVD device is ${WITH_DVD_DEVICE}"
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
