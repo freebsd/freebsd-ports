@@ -12,8 +12,6 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
-EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-
 USES=		gecko:thunderbird zip
 USE_XPI=	thunderbird
 
@@ -48,7 +46,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR} ${WRKSRC}
 	@for lang in ${THUNDERBIRD_I18N_}; do \
-		if ! (${UNZIP_CMD} -qo ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
+		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
 		then \
 			exit 1; \
 		fi; \
@@ -63,7 +61,7 @@ do-extract:
 
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${STAGEDIR}${XPI_SLDIRS_ALL}
+	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${XPI_SLDIRS_ALL:S,^,${STAGEDIR},}
 	cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${XPI_LIBDIR}
 	${CHMOD} -R a+rX,go-w ${STAGEDIR}${XPI_LIBDIR}/${WDIR}/
 	@for e in ${STAGEDIR}${XPI_LIBDIR}/${WDIR}; do \
