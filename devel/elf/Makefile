@@ -11,13 +11,10 @@ MASTER_SITE_SUBDIR=	linux/reverse-engineering
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A commandline based ELF header analyzer
 
-MAN1=		elf.1
-MANCOMPRESSED=	no
-PLIST_FILES=	bin/elf
 USES=		gmake
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/elf man/man1/elf.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/gcc/${CC}/g' ${WRKSRC}/src/Makefile.in
 

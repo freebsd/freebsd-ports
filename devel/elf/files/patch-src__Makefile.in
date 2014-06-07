@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2014-06-07 13:35:52.417434266 +0800
++++ src/Makefile.in	2014-06-07 13:36:02.841435177 +0800
+@@ -16,7 +16,7 @@ main.o:		main.c ../include/sehdr.h ../in
+ 		$(CC) $(CFLAGS) $(INC) -c main.c
+ 
+ install:	elf
+-		cp elf $(BINDIR)
++		cp elf $(DESTDIR)$(BINDIR)
+ 
+ uninstall:	install
+ 		rm $(BINDIR)/elf
