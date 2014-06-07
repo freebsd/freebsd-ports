@@ -3,7 +3,7 @@ man/man1/deluge-console.1.gz
 man/man1/deluge-gtk.1.gz
 man/man1/deluge-web.1.gz
 man/man1/deluged.1.gz
-share/applications/deluge.desktop
+%%GTK2%%share/applications/deluge.desktop
 share/icons/hicolor/128x128/apps/deluge.png
 share/icons/hicolor/16x16/apps/deluge.png
 share/icons/hicolor/192x192/apps/deluge.png
