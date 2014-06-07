@@ -3,7 +3,7 @@
 
 PORTNAME=	rtcw
 DISTVERSION=	1.41b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	wolf/linux
@@ -33,6 +33,7 @@ NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
 .if ${PORT_OPTIONS:MNVIDIA_GL}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_EXTVER=	'__GL_ExtensionStringVersion=18999 '
 .else
 USE_LINUX_APPS+=	dri
 .endif
@@ -45,7 +46,7 @@ do-build:
 .for f in ${WRAPPERS}
 	(${ECHO_CMD} "#!${SH}"; ${ECHO_CMD}; \
 	 ${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
-	 ${ECHO_CMD} 'exec ./${f} "$$@"') > ${WRKDIR}/${f}
+	 ${ECHO_CMD} '${NVIDIA_GL_EXTVER}exec ./${f} "$$@"') > ${WRKDIR}/${f}
 .endfor
 
 do-install:
