@@ -12,10 +12,10 @@ NO_WRKSUBDIR=	yes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to text
 
+USES=		uidfix
+MAKE_ENV=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
+
 PLIST_FILES=	bin/scr2txt \
 		man/man1/scr2txt.1.gz
-
-do-install:
-	@cd ${WRKSRC}; ${MAKE} BINDIR=${STAGEDIR}${PREFIX}/bin SHAREDIR=${STAGEDIR}${PREFIX} install
 
 .include <bsd.port.mk>
