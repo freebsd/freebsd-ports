@@ -1,0 +1,15 @@
+--- Makefile.orig	2014-06-07 10:44:39.760142355 +0800
++++ Makefile	2014-06-07 10:45:04.495140272 +0800
+@@ -1,9 +1,9 @@
+ prefix ?= /usr/local
+ 
+ install: cgprof.1 cgprof
+-	mkdir -p $(prefix)/bin $(prefix)/man/man1
+-	cp -p cgprof $(prefix)/bin/
+-	cp -p cgprof.1 $(prefix)/man/man1/cgprof.1
++	mkdir -p $(DESTDIR)$(prefix)/bin $(DESTDIR)$(prefix)/man/man1
++	cp -p cgprof $(DESTDIR)$(prefix)/bin/
++	cp -p cgprof.1 $(DESTDIR)$(prefix)/man/man1/cgprof.1
+ 
+ cgprof.1: cgprof.txt
+ 	txt2man -p cgprof.txt > cgprof.1
