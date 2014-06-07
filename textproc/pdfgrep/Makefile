@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	michael@ranner.eu
-COMMENT=	A tool to search text in PDF files
+COMMENT=	Tool to search text in PDF files
 
 LICENSE=	GPLv2
 
@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 CONFIGURE_ARGS=	poppler_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/poppler"
 
-PLIST_FILES=	bin/pdfgrep
-MAN1=		pdfgrep.1
+PLIST_FILES=	bin/pdfgrep man/man1/pdfgrep.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
