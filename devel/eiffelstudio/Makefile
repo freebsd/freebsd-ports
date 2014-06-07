@@ -3,7 +3,7 @@
 
 PORTNAME=	eiffelstudio
 PORTVERSION=	5.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.rit.edu/pub/mirrors/ise/download/57/ \
 		ftp://ftp.inf.ethz.ch/pub/mirror/eiffel/57/ \
@@ -20,7 +20,7 @@ DISTNAME=	Eiffel${PORTVERSION:S/.//}_gpl_64493-freebsd-${EIFFEL_ARCH}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Complete Integrated Development Environment for Eiffel
 
-LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	c.6:${PORTSDIR}/misc/compat6x
 
 USE_GNOME=	gtk20
 NO_BUILD=	yes
@@ -34,7 +34,6 @@ EIFFEL_HOST=	${OPSYS:tl}-${EIFFEL_ARCH}
 PLIST_SUB+=	EIFFEL_HOST="${EIFFEL_HOST}"
 SUB_LIST+=	EIFFEL_HOST="${EIFFEL_HOST}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Try native version first, then try i386 compatibility framework.
@@ -56,20 +55,15 @@ PLIST_SUB+=	${arch:tu}="@comment "
 .endfor
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-.for f in libgtk-x11-2.0.so.400 libgdk-x11-2.0.so.400 libatk-1.0.so.600 \
-    libgdk_pixbuf-2.0.so.400 libpangoxft-1.0.so.399 libpangox-1.0.so.399 \
-    libpango-1.0.so.399 libgobject-2.0.so.400 libgmodule-2.0.so.400 \
-    libgthread-2.0.so.400 libglib-2.0.so.400
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+.for f in libgtk-x11-2.0.so.600 libgdk-x11-2.0.so.600 libatk-1.0.so.600 \
+    libgdk_pixbuf-2.0.so.600 libpangoxft-1.0.so.800 libpangox-1.0.so.800 \
+    libpango-1.0.so.800 libgobject-2.0.so.600 libgmodule-2.0.so.600 \
+    libgthread-2.0.so.600 libglib-2.0.so.600
 	${LN} -sf ${LOCALBASE}/lib/${f:C/\.[[:digit:]]+$//} \
-		${DATADIR}/studio/spec/${EIFFEL_HOST}/lib/${f}
+		${STAGEDIR}${DATADIR}/studio/spec/${EIFFEL_HOST}/lib/${f}
 .endfor
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
