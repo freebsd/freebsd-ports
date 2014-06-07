@@ -45,14 +45,10 @@ NO_PACKAGE=	Way too big
 WITH_TBDIR=	${PREFIX}/lib/crafty/TB
 .endif
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WITH_TBDIR}
+	${MKDIR} ${STAGEDIR}${WITH_TBDIR}
 	@list='${DISTFILES}'; for i in $$list; do \
-		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$i ${WITH_TBDIR}/$$i; \
+		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$i ${STAGEDIR}${WITH_TBDIR}/$$i; \
 		done
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
