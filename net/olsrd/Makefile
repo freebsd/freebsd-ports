@@ -17,10 +17,8 @@ BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 .endif
 
 USES=		bison gmake tar:bzip2
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	olsrd
-MAN8=		olsrd.8
-MAN5=		olsrd.conf.5
-MANCOMPRESSED=	yes
 
 ALL_TARGET=	build_all
 INSTALL_TARGET=	install_all
@@ -31,8 +29,8 @@ MAKE_ARGS+=	LIBNET=1
 .if defined(PREFIX)
 MAKE_ARGS+=	PREFIX=${PREFIX}
 .endif
+MAKE_ARGS+=     STAGEDIR=${STAGEDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -46,6 +44,9 @@ pre-everything::
 	@${ECHO_MSG}	" WITH_MULTI_IF defined"
 	@${ECHO_MSG}	""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/sbin/ldconfig|:|g' ${WRKSRC}/make/Makefile.fbsd
 
 post-install:
 	@${ECHO_MSG}	""
