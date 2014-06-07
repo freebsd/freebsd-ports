@@ -22,20 +22,17 @@ ERLANGDIR?=	${PREFIX}/lib/erlang/lib
 PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION} \
 		ERLANGDIR=${ERLANGDIR:S/^${PREFIX}\///}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-build:
 	cd ${WRKSRC} && ${ERLC} *.erl
 
 do-install:
-	@${MKDIR} ${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/src
-	@${MKDIR} ${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/ebin
-	@${MKDIR} ${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/include
+	@${MKDIR} ${STAGEDIR}${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/src
+	@${MKDIR} ${STAGEDIR}${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/ebin
+	@${MKDIR} ${STAGEDIR}${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/include
 
 	cd ${WRKSRC}									\
-	  && ${INSTALL_DATA} *.erl ${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/src		\
-	  && ${INSTALL_DATA} *.beam ${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/ebin	\
-	  && ${INSTALL_DATA} *.hrl ${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/include
+	  && ${INSTALL_DATA} *.erl ${STAGEDIR}${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/src		\
+	  && ${INSTALL_DATA} *.beam ${STAGEDIR}${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/ebin	\
+	  && ${INSTALL_DATA} *.hrl ${STAGEDIR}${ERLANGDIR}/${PORTNAME}-${PORTVERSION}/include
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
