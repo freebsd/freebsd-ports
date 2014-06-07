@@ -17,8 +17,9 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MASTER_SITE_BACKUP+=	http://jason.long.name/dkimproxy/
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+SHEBANG_FILES=	scripts/dkimsign.pl scripts/dkimverify.pl
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/dkim*.pl ${STAGEDIR}${PREFIX}/bin
