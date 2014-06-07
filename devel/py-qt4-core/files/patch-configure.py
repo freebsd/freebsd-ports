@@ -1,6 +1,6 @@
---- ./configure.py.orig	2012-06-26 09:09:24.000000000 -0400
-+++ ./configure.py	2012-08-30 22:06:19.000000000 -0400
-@@ -358,7 +358,7 @@
+--- configure.py.orig	2014-06-06 00:15:32.000000000 +0300
++++ configure.py	2014-06-06 00:20:20.000000000 +0300
+@@ -342,7 +342,7 @@
  
          # Note that the order in which we check is important for the
          # consolidated module - a module's dependencies must be checked first.
@@ -8,7 +8,7 @@
 +        check_module("QtCore", "qobject.h", "new QObject()")
  
          check_module("QtGui", "qwidget.h", "new QWidget()")
-         if qt_version < 0x050000: check_module("QtHelp", "qhelpengine.h", "new QHelpEngine(\"foo\")")
+         check_module("QtHelp", "qhelpengine.h", "new QHelpEngine(\"foo\")")
 @@ -371,8 +371,8 @@
          check_module("QtTest", "QtTest", "QTest::qSleep(0)")
          check_module("QtWebKit", "qwebpage.h", "new QWebPage()")
@@ -20,7 +20,7 @@
          check_module("QtAssistant", "qassistantclient.h",
                  "new QAssistantClient(\"foo\")", extra_lib_dirs=ass_lib_dirs,
                  extra_libs=ass_libs)
-@@ -648,21 +648,6 @@
+@@ -636,21 +636,6 @@
          if opts.staticplugins:
              sipconfig.inform("Unable to find the following static plugins: %s" % ", ".join(opts.staticplugins))
  
@@ -42,7 +42,7 @@
      def _qpy_directories(self, mname, lib_name):
          """Return a 3-tuple of the directories containing the header files, the
          directory containing the library, and the name of the support library
-@@ -756,6 +741,9 @@
+@@ -741,6 +726,9 @@
          return libs, libdirs
  
      def module_installs(self):
@@ -52,7 +52,7 @@
          return [os.path.join(src_dir, "__init__.py"), "pyqtconfig.py"]
  
      def qpy_libs(self):
-@@ -888,40 +876,41 @@
+@@ -876,76 +864,78 @@
              makefile.generate()
              tool.append("elementtree")
  
@@ -60,18 +60,19 @@
 -        # previews work properly and normal console use will work anyway), but
 -        # not on Windows (so that normal console use will work).
 -        sipconfig.inform("Creating pyuic4 wrapper...")
-+        if "QtCore" in pyqt_modules:
-+            # Create the pyuic4 wrapper.  Use the GUI version on MacOS (so that
-+            # previews work properly and normal console use will work anyway), but
-+            # not on Windows (so that normal console use will work).
-+            sipconfig.inform("Creating pyuic4 wrapper...")
- 
+-
 -        if sys.platform == 'darwin':
 -            gui = True
 -            use_arch = opts.use_arch
 -        else:
 -            gui = False
 -            use_arch = ''
++        if "QtCore" in pyqt_modules:
++            # Create the pyuic4 wrapper.  Use the GUI version on MacOS (so that
++            # previews work properly and normal console use will work anyway), but
++            # not on Windows (so that normal console use will work).
++            sipconfig.inform("Creating pyuic4 wrapper...")
++
 +            if sys.platform == 'darwin':
 +                gui = True
 +                use_arch = opts.use_arch
@@ -120,9 +121,76 @@
 +            makefile.generate()
 +            tool.append("pyuic")
  
-         if "QtXml" in pyqt_modules:
-             sipconfig.inform("Creating pylupdate4 Makefile...")
-@@ -977,9 +966,6 @@
+-        sipconfig.inform("Creating pylupdate4 Makefile...")
++        if "QtXml" in pyqt_modules:
++            sipconfig.inform("Creating pylupdate4 Makefile...")
+ 
+-        cxxflags_app = sipcfg.build_macros().get("CXXFLAGS_APP", "")
++            cxxflags_app = sipcfg.build_macros().get("CXXFLAGS_APP", "")
+ 
+-        makefile = sipconfig.ProgramMakefile(
+-            configuration=sipcfg,
+-            build_file=os.path.join(src_dir, "pylupdate", "pylupdate.sbf"),
+-            dir="pylupdate",
+-            install_dir=opts.pyqtbindir,
+-            console=1,
+-            qt=["QtCore", "QtXml"],
+-            debug=opts.debug,
+-            warnings=1,
+-            universal=sipcfg.universal,
+-            arch=sipcfg.arch,
+-            deployment_target=sipcfg.deployment_target
+-        )
+-
+-        makefile.extra_include_dirs.append(os.path.join(src_dir, "pylupdate"))
+-
+-        if cxxflags_app != "":
+-            makefile.extra_cxxflags.append(cxxflags_app)
+-
+-        makefile.generate()
+-        tool.append("pylupdate")
+-
+-        sipconfig.inform("Creating pyrcc4 Makefile...")
++            makefile = sipconfig.ProgramMakefile(
++                configuration=sipcfg,
++                build_file=os.path.join(src_dir, "pylupdate", "pylupdate.sbf"),
++                dir="pylupdate",
++                install_dir=opts.pyqtbindir,
++                console=1,
++                qt=["QtCore", "QtXml"],
++                debug=opts.debug,
++                warnings=1,
++                universal=sipcfg.universal,
++                arch=sipcfg.arch,
++                deployment_target=sipcfg.deployment_target
++            )
+ 
+-        makefile = pyrccMakefile()
++            makefile.extra_include_dirs.append(os.path.join(src_dir, "pylupdate"))
+ 
+-        if cxxflags_app != "":
+-            makefile.extra_cxxflags.append(cxxflags_app)
++            if cxxflags_app != "":
++                makefile.extra_cxxflags.append(cxxflags_app)
+ 
+-        makefile.generate()
+-        tool.append("pyrcc")
++            makefile.generate()
++            tool.append("pylupdate")
++
++            sipconfig.inform("Creating pyrcc4 Makefile...")
++
++            makefile = pyrccMakefile()
++
++            if cxxflags_app != "":
++                makefile.extra_cxxflags.append(cxxflags_app)
++
++            makefile.generate()
++            tool.append("pyrcc")
+ 
+         if opts.designer_plugin and "QtDesigner" in pyqt_modules:
+             py_major = sipcfg.py_version >> 16
+@@ -972,9 +962,6 @@
                      # include the ABI information.
                      abi = ""
                  else:
@@ -132,7 +200,7 @@
                      if glob.glob("%s/lib/libpython%d.%d*" % (ducfg["exec_prefix"], py_major, py_minor)):
                          lib_dir_flag = quote("-L%s/lib" % ducfg["exec_prefix"])
                      elif glob.glob("%s/libpython%d.%d*" % (ducfg["LIBDIR"], py_major, py_minor)):
-@@ -990,9 +976,6 @@
+@@ -985,9 +972,6 @@
                          opts.designer_plugin = False
  
                      link = "%s -lpython%d.%d%s" % (lib_dir_flag, py_major, py_minor, abi)
@@ -142,7 +210,7 @@
  
                  pysh_lib = ducfg.get("LDLIBRARY", "")
  
-@@ -1378,6 +1361,7 @@
+@@ -1380,6 +1364,7 @@
  def check_dbus():
      """See if the DBus support module should be built.
      """
@@ -150,7 +218,7 @@
      sipconfig.inform("Checking to see if the dbus support module should be built...")
  
      sout = get_command_stdout("pkg-config --cflags-only-I --libs dbus-1")
-@@ -1954,6 +1938,7 @@
+@@ -1988,6 +1973,7 @@
      sipcfg.qt_framework = qt_framework
      sipcfg.qt_threaded = 1
      sipcfg.qt_dir = qt_dir
@@ -158,7 +226,7 @@
      sipcfg.qt_lib_dir = qt_libdir
  
      return ConfigurePyQt4(generator)
-@@ -2273,6 +2258,9 @@
+@@ -2323,6 +2309,9 @@
          p.print_help()
          sys.exit(2)
  
@@ -168,7 +236,7 @@
      sipcfg.set_build_macros(macros)
  
      # Check Qt is what we need.
-@@ -2302,9 +2290,9 @@
+@@ -2364,9 +2353,9 @@
      installs=[(pyqt.module_installs(), pyqt_modroot)]
  
      if opts.api:
@@ -180,7 +248,7 @@
  
      if opts.bigqt:
          xtra_modules.append("_qt")
-@@ -2317,7 +2305,7 @@
+@@ -2379,7 +2368,7 @@
  
      sipconfig.ParentMakefile(
          configuration=sipcfg,
