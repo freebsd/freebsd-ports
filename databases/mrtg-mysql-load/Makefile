@@ -19,19 +19,17 @@ NO_WRKSUBDIR=	yes
 USE_PERL5=	run
 USE_MYSQL=	yes
 
-MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/mrtg-mysql-load etc/mrtg/mrtg.cfg-mysql-load.example \
-		etc/mrtg/mysql-load-cfg.example
+		etc/mrtg/mysql-load-cfg.example man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|' ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/etc/mrtg
-	@${INSTALL_DATA} ${WRKSRC}/mrtg-cfg.example  ${PREFIX}/etc/mrtg/mrtg.cfg-mysql-load.example
-	@${INSTALL_DATA} ${WRKSRC}/mysql-load-cfg.example  ${PREFIX}/etc/mrtg/mysql-load-cfg.example
-	@${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${PREFIX}/man/man1
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mrtg
+	@${INSTALL_DATA} ${WRKSRC}/mrtg-cfg.example  ${STAGEDIR}${PREFIX}/etc/mrtg/mrtg.cfg-mysql-load.example
+	@${INSTALL_DATA} ${WRKSRC}/mysql-load-cfg.example  ${STAGEDIR}${PREFIX}/etc/mrtg/mysql-load-cfg.example
+	@${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
