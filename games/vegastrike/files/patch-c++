@@ -1,0 +1,33 @@
+--- src/resizable.h	2010-02-25 09:26:53.000000000 -0500
++++ src/resizable.h	2014-06-07 12:38:44.000000000 -0400
+@@ -1,2 +1,4 @@
++#include <string.h>
++
+ #include <cstdlib>
+ template < class ITEM >
+--- src/cmd/unit_jump.h	2012-03-19 04:20:14.000000000 -0400
++++ src/cmd/unit_jump.h	2014-06-07 12:46:15.000000000 -0400
+@@ -109,5 +109,5 @@
+                     if (tester->isUnit() == UNITPTR && tester != this)
+                         if ( ( this->LocalPosition()-tester->LocalPosition() ).Magnitude() < this->rSize()+tester->rSize() )
+-                            SetCurPosition( this->LocalPosition()+this->cumulative_transformation_matrix.getR()
++                            this->SetCurPosition( this->LocalPosition()+this->cumulative_transformation_matrix.getR()
+                                            *( 4*( this->rSize()+tester->rSize() ) ) );
+             DealPossibleJumpDamage( this );
+--- objconv/basemaker/base_maker_texture.cpp	2010-03-09 21:56:23.000000000 -0500
++++ objconv/basemaker/base_maker_texture.cpp	2014-06-07 12:48:22.000000000 -0400
+@@ -2,4 +2,5 @@
+ #include "base_maker_texture.h"
+ #include <stdio.h>
++#include <string.h>
+ #include <png.h>
+ #ifdef _WIN32
+--- src/gldrv/hashtable_3d.h	2014-06-07 13:28:18.000000000 -0400
++++ src/gldrv/hashtable_3d.h	2014-06-07 13:51:23.000000000 -0400
+@@ -38,5 +38,5 @@
+ public:
+ ///Hashes a single value to a value on the collide table truncated to all 3d constraints.  Consider using a swizzle
+-    int hash_int( const double aye )
++    static int hash_int( const double aye )
+     {
+         return ( (int) ( ( (aye < 0) ? (aye
