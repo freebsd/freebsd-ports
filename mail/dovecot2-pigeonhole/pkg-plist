@@ -7,6 +7,8 @@ bin/sieve-test
 bin/sievec
 include/dovecot-2.2-pigeonhole/sieve/edit-mail.h
 include/dovecot-2.2-pigeonhole/sieve/pigeonhole-config.h
+include/dovecot-2.2-pigeonhole/sieve/program-client-private.h
+include/dovecot-2.2-pigeonhole/sieve/program-client.h
 include/dovecot-2.2-pigeonhole/sieve/rfc2822.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-actions.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-address-parts.h
