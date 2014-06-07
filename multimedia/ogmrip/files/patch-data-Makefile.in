@@ -1,0 +1,13 @@
+--- data/Makefile.in.orig	2014-05-30 20:04:27.000000000 +0200
++++ data/Makefile.in	2014-06-07 09:59:01.045874372 +0200
+@@ -719,10 +719,6 @@
+ @HAVE_GTK_SUPPORT_TRUE@@INTLTOOL_DESKTOP_RULE@
+ @HAVE_GTK_SUPPORT_TRUE@@INTLTOOL_SCHEMAS_RULE@
+ 
+-@GCONF_SCHEMAS_INSTALL_TRUE@@HAVE_GTK_SUPPORT_TRUE@install-data-local:
+-@GCONF_SCHEMAS_INSTALL_TRUE@@HAVE_GTK_SUPPORT_TRUE@	-GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+-@GCONF_SCHEMAS_INSTALL_TRUE@@HAVE_GTK_SUPPORT_TRUE@      $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schemas_DATA)
+-
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
