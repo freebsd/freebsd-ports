@@ -32,8 +32,12 @@ CONFIGURE_ARGS=	--enable-libwebpdecoder \
 USE_LDCONFIG=	yes
 USES=		libtool
 
-X11_CONFIGURE_OFF=	--with-glincludedir=/dev/null
+X11_CONFIGURE_OFF=	build_vwebp=no
+X11_CONFIGURE_ON=	build_vwebp=yes
 X11_USE=		GL=glut
+
+post-patch:
+	@${REINPLACE_CMD} '/build_vwebp=yes/d' ${WRKSRC}/configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libwebp*.so
