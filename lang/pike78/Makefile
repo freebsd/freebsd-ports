@@ -91,6 +91,8 @@ do-configure:
 post-patch:
 	@${REINPLACE_CMD} -e 's| -lgmp| -L${LOCALBASE}/lib -lgmp|' \
 		${WRKSRC}/src/modules/Gmp/configure ${WRKSRC}/src/modules/_Image_XFace/configure
+	@${REINPLACE_CMD} -e '/memchr_memcmp.*needle/s/^/static /' \
+		${WRKSRC}/src/pike_search_engine2.c
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
 		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 		-e 's|,-Bshareable|& -shared|' \
