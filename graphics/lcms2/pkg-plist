@@ -6,7 +6,6 @@ bin/transicc
 include/lcms2.h
 include/lcms2_plugin.h
 lib/liblcms2.a
-lib/liblcms2.la
 lib/liblcms2.so
 lib/liblcms2.so.2
 lib/liblcms2.so.2.0.6
