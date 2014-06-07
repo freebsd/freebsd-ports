@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2014-06-07 13:38:33.334423095 +0800
++++ Makefile.in	2014-06-07 13:39:03.004421673 +0800
+@@ -1,9 +1,9 @@
+ all:		./src/Makefile
+-		cd ./src; make; cd ../
++		cd ./src; ${MAKE}
+ 
+ install:	./src/Makefile ./doc/Makefile
+-		cd ./src; make install; cd ../
+-		cd ./doc; make install; cd ../
++		cd ./src; ${MAKE} install
++		cd ./doc; ${MAKE} install
+ 
+ uninstall:	./src/Makefile ./doc/Makefile
+ 		cd ./src;make uninstall; cd ../
