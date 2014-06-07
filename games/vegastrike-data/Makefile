@@ -11,32 +11,29 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vega Strike data files
 
-DEPRECATED=	Does not compile with modern compilers
-EXPIRATION_DATE=	2014-07-06
-
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
-
 MANUAL_PACKAGE_BUILD=huge
 
-NO_STAGE=	yes
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.am" -delete
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC} && \
-		${FIND} . -type f -mindepth 1 | ${SORT} | \
-			${SED} -e 's|^\./||; s|^|%%DATADIR%%/|' >> ${PLIST} && \
-		${FIND} . -type d -mindepth 1 | ${SORT} -r | \
-			${SED} -e 's|^\./||; s|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
+do-extract:
+	${MKDIR} ${WRKDIR}
+	# Will extract directly into ${STAGEDIR}${DATADIR:H}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
+	${RM} -rf ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR:H}
+	${TAR} -C ${STAGEDIR}${DATADIR:H} -xvf ${_DISTDIR}/${DISTFILES} \
+	    --exclude Makefile.am --no-same-owner 2>&1 | \
+		${AWK} ' \
+		    BEGIN { dirn = 0 ; print "@cwd ${DATADIR}" } \
+		    { sub("^x [^/]*/", "") } \
+		    /\/$$/ { sub("/$$", ""); dirs[dirn++] = $$0 ; next } \
+		    !/^$$/ { print $$0 } \
+		    END {while (dirn--) print "@dirrm " dirs[dirn]; \
+			print "@cwd"; print "@dirrm ${DATADIR_REL}" } \
+		' >> ${TMPPLIST}
+	${MV} ${STAGEDIR}${DATADIR:H}/vegastrike-data-${PORTVERSION} \
+		${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

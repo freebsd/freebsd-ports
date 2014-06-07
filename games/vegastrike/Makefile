@@ -3,7 +3,7 @@
 
 PORTNAME=	vegastrike
 PORTVERSION=	0.5.1.r1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.1/
 DISTNAME=	vegastrike-src-${PORTVERSION}
@@ -11,12 +11,10 @@ DISTNAME=	vegastrike-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource 3D space simulator
 
-DEPRECATED=	Does not compile with modern compilers
-EXPIRATION_DATE=	2014-07-06
-
 RUN_DEPENDS=	${DATADIR}/vegastrike.ico:${PORTSDIR}/games/vegastrike-data
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
+		expat:${PORTSDIR}/textproc/expat2 \
+		vorbis:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
 
 USE_BZIP2=	yes
@@ -30,10 +28,13 @@ USE_GL=		gl glu glut
 USE_GNOME=	gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_DOS2UNIX=	*.cpp *.h
+EXTRACT_AFTER_ARGS+=--exclude boost
 
 # cegui and ffmpeg are not used yet
 CONFIGURE_ARGS=	--disable-cegui --disable-ffmpeg \
 		--with-data-dir="${LOCALBASE}/share/${PORTNAME}" \
+		--with-boost=system \
 		--enable-flags="${CXXFLAGS}"
 
 PLIST_FILES=	bin/vegastrike bin/vssetup bin/vegaserver
@@ -43,7 +44,6 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	MESHER
 MESHER_DESC=	Enable mesher modelling tool
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
@@ -63,15 +63,11 @@ post-patch:
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vegaserver ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/vegastrike ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/vssetup ${PREFIX}/bin
-.if ${PORT_OPTIONS:MMESHER}
-	${INSTALL_PROGRAM} ${WRKSRC}/mesher ${PREFIX}/bin
-.endif
+	${INSTALL_PROGRAM} ${PLIST_FILES:S|bin|${WRKSRC}|} \
+		${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
