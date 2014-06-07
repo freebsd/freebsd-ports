@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	jd
-PORTVERSION=	2.8.7
+PORTVERSION=	2.8.8
 CATEGORIES=	japanese www
 MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	jd4linux/60198
-DISTNAME=	${PORTNAME}-${PORTVERSION}-140104
+MASTER_SITE_SUBDIR=	jd4linux/61281
+DISTNAME=	${PORTNAME}-${PORTVERSION}-140601
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	townwear@gmail.com
@@ -18,8 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		iconv
-USE_AUTOTOOLS=	autoconf automake libtool
+USES=		iconv libtool
+USE_AUTOTOOLS=	autoconf automake libtoolize
 USE_GNOME=	gtk20 gtkmm24 libgnomeui
 
 CONFIGURE_ARGS=	--with-sessionlib=gnomeui
