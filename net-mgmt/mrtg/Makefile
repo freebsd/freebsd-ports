@@ -17,7 +17,7 @@ COMMENT=	The multi-router traffic grapher
 # slave ports override with languages specific gd
 GD_PORT?=	graphics/gd
 
-LIB_DEPENDS=	gd:${PORTSDIR}/${GD_PORT}
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/${GD_PORT}
 RUN_DEPENDS=	p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
@@ -26,9 +26,10 @@ CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 USERS=		mrtg
 GROUPS=		mrtg
 
-USES=		perl5
+USES=		perl5 shebangfix
 MAKE_ENV+=	PERL=${PERL}
 MRTG_RUNDIR?=	/var/run/mrtg
+SHEBANG_FILES=	bin/mrtg-traffic-sum
 
 USE_RC_SUBR=	mrtg_daemon
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
