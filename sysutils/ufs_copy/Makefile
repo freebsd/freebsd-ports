@@ -11,14 +11,13 @@ DISTNAME=	ufs-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Fast copy utility for UFS filesystem
 
+USES=		uidfix
 WRKSRC=		${WRKDIR}/ufs
 MAKE_ARGS=	BINDIR=${PREFIX}/sbin
 
 PORTDOCS=		README
 
 OPTIONS_DEFINE=		DOCS
-
-.include <bsd.port.options.mk>
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
