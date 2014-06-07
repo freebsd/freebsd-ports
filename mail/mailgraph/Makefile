@@ -15,7 +15,8 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	mailgraph.pl
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 DATADIR?=	/var/db/mailgraph
