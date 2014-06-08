@@ -21,11 +21,10 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_BUILD=	yes
 SUB_FILES=	starlogo.sh
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/starlogo.sh ${PREFIX}/bin/starlogo
+	${INSTALL_SCRIPT} ${WRKDIR}/starlogo.sh ${STAGEDIR}${PREFIX}/bin/starlogo
 	cd ${WRKSRC} \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
 
 .include <bsd.port.mk>
