@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-gpl
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}-src
 
 MAINTAINER=	marino@FreeBSD.org
-COMMENT=	Deductive program verification platform with SPARK support
+COMMENT=	Component of SPARK 2014
 
 LICENSE=	LGPL21 GPLv3
 LICENSE_COMB=	multi
