@@ -3,7 +3,7 @@
 
 PORTNAME=	gld
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gasmi.net/down/
 EXTRACT_SUFX=	.tgz
@@ -22,7 +22,6 @@ OPTIONS_DEFINE=	LOCAL_DB_SERVER
 OPTIONS_DEFAULT=	MYSQL
 LOCAL_DB_SERVER_DESC=	RUN_DEPEND also on selected DB server
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -58,20 +57,15 @@ post-patch:
 
 pre-build:
 	${REINPLACE_CMD} -e 's,"/etc/gld.conf","${PREFIX}/etc/gld.conf",' ${WRKSRC}/gld.h
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gld ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/gld.conf ${PREFIX}/etc/gld.conf-dist
-.if !exists(${PREFIX}/etc/gld.conf)
-	${INSTALL_DATA} ${WRKSRC}/gld.conf ${PREFIX}/etc/gld.conf
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/gld ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/gld.conf ${STAGEDIR}${PREFIX}/etc/gld.conf.sample
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in HISTORY LICENCE README table-whitelist.sql tables.mysql tables.pgsql
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
