@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Oct 24 13:11:13 2003
-+++ Makefile	Fri Oct 24 13:17:47 2003
+--- Makefile.orig	2003-08-04 17:32:23.000000000 +0800
++++ Makefile	2014-06-08 23:33:51.093015991 +0800
 @@ -3,9 +3,9 @@
  # for details
  
@@ -12,7 +12,7 @@
  # Solaris, some version of
  #OS_CFLAGS=-DNEED_STRINGS_H -DNEED_LOCAL_FORKPTY_H
  # MacOS X needs libpoll from fink
-@@ -23,7 +23,7 @@
+@@ -23,7 +23,7 @@ OS_OBJECTS=
  # no forkpty in Solaris or MacOS X
  # OS_OBJECTS=forkpty.o
  
@@ -21,12 +21,3 @@
  
  # You probably don't need to edit anything below this line
  
-@@ -35,7 +35,7 @@
- 	-rm *.o *~ attachtty detachtty
- 
- install: all
--	install detachtty attachtty $(DESTDIR)$(INSTALL_DIR)
-+	install detachtty attachtty $(INSTALL_DIR)
- 
- deb:
- 	rm -rf /usr/local/src/Packages/detachtty/ 
