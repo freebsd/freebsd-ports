@@ -13,8 +13,6 @@ COMMENT=	Execute a program with a fake name
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		gmake
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
