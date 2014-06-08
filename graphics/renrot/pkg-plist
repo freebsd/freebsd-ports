@@ -1,9 +1,10 @@
 bin/renrot
-etc/renrot/colors.conf.sample
-etc/renrot/copyright.tag.sample
-etc/renrot/renrot.conf.sample
-etc/renrot/tags.conf.sample
+@sample etc/renrot/colors.conf.sample
+@sample etc/renrot/copyright.tag.sample
+@sample etc/renrot/renrot.conf.sample
+@sample etc/renrot/tags.conf.sample
 @dirrm etc/renrot
+man/man1/renrot.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/renrot/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/renrot
 %%SITE_PERL%%/Image/RenRot/Config.pm
