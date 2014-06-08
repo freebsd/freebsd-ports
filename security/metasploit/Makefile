@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-DISTVERSION=	4.9.3
+PORTVERSION=	4.9.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.metasploit.com/data/releases/archive/
 DISTNAME=	framework-${DISTVERSION}
@@ -20,7 +21,9 @@ RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		rubygem-network_interface>=0.0.1:${PORTSDIR}/net/rubygem-network_interface \
 		rubygem-packetfu>=1.1.8:${PORTSDIR}/net/rubygem-packetfu \
 		rubygem-pcaprub>=0:${PORTSDIR}/net/rubygem-pcaprub \
-		rubygem-robots>=0:${PORTSDIR}/www/rubygem-robots
+		rubygem-rkelly-remix>=0:${PORTSDIR}/www/rubygem-rkelly-remix \
+		rubygem-robots>=0:${PORTSDIR}/www/rubygem-robots \
+		rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
 
 WRKSRC=		${WRKDIR}/msf3
 SCRIPTS=	msfbinscan msfcli msfconsole msfd msfelfscan msfencode \
