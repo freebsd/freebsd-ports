@@ -17,20 +17,17 @@ LICENSE=	GPLv2
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
-MANCOMPRESSED=	yes
-MAN1=		freeguide.1
 
-MAKE_ARGS=	-Dinstall_share_dir=${PREFIX}/share \
-		-Dinstall_man1_dir=${MAN1PREFIX} \
+MAKE_ARGS=	-Dinstall_share_dir=${STAGEDIR}${PREFIX}/share \
+		-Dinstall_man1_dir=${STAGEDIR}${MAN1PREFIX} \
 		-Dinstall_java_bin=${JAVA} \
 		-Dinstall_real_doc_dir=${DOCSDIR} \
-		-Dinstall_bin_dir=${PREFIX}/bin \
-		-Dinstall_doc_dir=${DOCSDIR} \
-		-Dinstall_java_share_dir=${JAVASHAREDIR} \
-		-Dinstall_jar_dir=${JAVAJARDIR}/freeguide
+		-Dinstall_bin_dir=${STAGEDIR}${PREFIX}/bin \
+		-Dinstall_doc_dir=${STAGEDIR}${DOCSDIR} \
+		-Dinstall_java_share_dir=${STAGEDIR}${JAVASHAREDIR} \
+		-Dinstall_jar_dir=${STAGEDIR}${JAVAJARDIR}/freeguide
 INSTALL_TARGET=	install
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|__ANT_INSTALL_DIRECTORY__|${JAVAJARDIR}/freeguide|; \
 		s|=java|=${JAVA}|;' \
