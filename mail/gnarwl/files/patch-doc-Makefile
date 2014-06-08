@@ -1,7 +1,6 @@
-diff -u --new-file --recursive ../gnarwl-3.3.orig/doc/Makefile ./doc/Makefile
---- ../gnarwl-3.3.orig/doc/Makefile	Fri Jun 13 11:29:44 2003
-+++ ./doc/Makefile	Mon Mar 29 14:29:29 2004
-@@ -8,8 +8,8 @@
+--- doc/Makefile.orig	2005-03-13 22:30:53.000000000 +0800
++++ doc/Makefile	2014-06-08 20:53:49.623678413 +0800
+@@ -8,24 +8,24 @@ clean: 
  
  manpage:
  	@echo Generating manpage...
@@ -12,3 +11,35 @@ diff -u --new-file --recursive ../gnarwl-3.3.orig/doc/Makefile ./doc/Makefile
  
  
  install:
+-	mkdir -m 755 -p $(DOCDIR) $(MANDIR)/man$(MAN_SEC)
+-	install -m 644 $(BIN).$(MAN_SEC) $(MANDIR)/man$(MAN_SEC)
+-	install -m 644 $(SBIN).$(MAN_SEC) $(MANDIR)/man$(MAN_SEC)
+-	install -m 644 FAQ $(DOCDIR)
+-	install -m 644 LICENSE $(DOCDIR)
+-	install -m 644 AUTHORS $(DOCDIR)
+-	install -m 644 INSTALL $(DOCDIR)
+-	install -m 644 ISPEnv.schema $(DOCDIR)
+-	install -m 644 ISPEnv2.schema $(DOCDIR)
+-	install -m 644 example.ldif $(DOCDIR)
+-	install -m 644 HISTORY $(DOCDIR)
+-	install -m 644 README $(DOCDIR)
+-	gzip -f -9 $(DOCDIR)/FAQ
+-	gzip -f -9 $(DOCDIR)/HISTORY
+-	gzip -f -9 $(MANDIR)/man$(MAN_SEC)/$(BIN).$(MAN_SEC)
+-	gzip -f -9 $(MANDIR)/man$(MAN_SEC)/$(SBIN).$(MAN_SEC)
++	mkdir -m 755 -p $(DESTDIR)$(DOCDIR) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	install -m 644 $(BIN).$(MAN_SEC) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	install -m 644 $(SBIN).$(MAN_SEC) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	install -m 644 FAQ $(DESTDIR)$(DOCDIR)
++	install -m 644 LICENSE $(DESTDIR)$(DOCDIR)
++	install -m 644 AUTHORS $(DESTDIR)$(DOCDIR)
++	install -m 644 INSTALL $(DESTDIR)$(DOCDIR)
++	install -m 644 ISPEnv.schema $(DESTDIR)$(DOCDIR)
++	install -m 644 ISPEnv2.schema $(DESTDIR)$(DOCDIR)
++	install -m 644 example.ldif $(DESTDIR)$(DOCDIR)
++	install -m 644 HISTORY $(DESTDIR)$(DOCDIR)
++	install -m 644 README $(DESTDIR)$(DOCDIR)
++	gzip -f -9 $(DESTDIR)$(DOCDIR)/FAQ
++	gzip -f -9 $(DESTDIR)$(DOCDIR)/HISTORY
++	gzip -f -9 $(DESTDIR)$(MANDIR)/man$(MAN_SEC)/$(BIN).$(MAN_SEC)
++	gzip -f -9 $(DESTDIR)$(MANDIR)/man$(MAN_SEC)/$(SBIN).$(MAN_SEC)
