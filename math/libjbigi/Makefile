@@ -11,9 +11,9 @@ DISTNAME=	i2psource_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	i2p JNI to GNU MP Bignum library (libgmp)
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VERSION=	1.6+
@@ -33,10 +33,9 @@ JBIGI_BUILD_ENV=	\
 JBIGI_LIBS=	\
 		libjbigi-freebsd-none.so
 
-NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/jbigi.jar \
-		${JAVAJARDIR}
+		${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.pre.mk>
 
