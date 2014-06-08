@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install pkg-message
-SUB_LIST=	DB_TYPE=${DB_TYPE:tl}
+SUB_LIST=	DB_TYPE=${DB_TYPE}
 PORTEXAMPLES=	*
 
 USE_RC_SUBR=	sympa
@@ -114,7 +114,7 @@ DB_TYPE=	oracle
 .elif ${PORT_OPTIONS:MPGSQL}
 SUB_LIST+=	REQ_MYSQL="" REQ_PGSQL=postgresql
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-DB_TYPE=	pg
+DB_TYPE=	Pg
 .elif ${PORT_OPTIONS:MSYBASE}
 RUN_DEPENDS+=	p5-DBD-Sybase>=0:${PORTSDIR}/databases/p5-DBD-Sybase
 DB_TYPE=	sybase
