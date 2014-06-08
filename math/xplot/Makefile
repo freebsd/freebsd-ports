@@ -15,21 +15,21 @@ USE_XORG=	x11
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 
-MAN1=		tcpdump2xplot.1 xplot.1
 PORTDOCS=	README README.tcp_plots
-PLIST_FILES=	bin/tcpdump2xplot bin/tcpdump2xplot.pl bin/xplot
+PLIST_FILES=	bin/tcpdump2xplot bin/tcpdump2xplot.pl bin/xplot \
+		man/man1/tcpdump2xplot.1.gz \
+		man/man1/xplot.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/INSTALL/s|2xplot$$|2xplot.pl|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${LN} -sf tcpdump2xplot.pl ${PREFIX}/bin/tcpdump2xplot
+	${LN} -sf tcpdump2xplot.pl ${STAGEDIR}${PREFIX}/bin/tcpdump2xplot
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
