@@ -1,6 +1,6 @@
---- data/Makefile.orig	2005-03-13 15:30:54.000000000 +0100
-+++ data/Makefile	2009-07-27 14:34:20.000000000 +0200
-@@ -4,20 +4,22 @@
+--- data/Makefile.orig	2005-03-13 22:30:54.000000000 +0800
++++ data/Makefile	2014-06-08 20:56:18.860668685 +0800
+@@ -4,20 +4,22 @@ catch:
  all: clean spec config
  
  clean: 
@@ -16,18 +16,20 @@
 +	@gsed "s\\_BIN_\\$(BIN)\\g ; s\\_VER_\\$(VER)\\g; s\\_SBIN_\\$(SBIN)\\g; s\\_SEC_\\$(MAN_SEC)\\g" < spec.tmpl > $(BIN)-$(VER).spec 
  
  install:
- 	mkdir -m 755 -p  $(HOMEDIR)/block $(HOMEDIR)/bin $(CONFDIR)
- 	echo \|$(BINDIR)/$(BIN) > $(HOMEDIR)/.forward
+-	mkdir -m 755 -p  $(HOMEDIR)/block $(HOMEDIR)/bin $(CONFDIR)
+-	echo \|$(BINDIR)/$(BIN) > $(HOMEDIR)/.forward
 -	install -m 644 header.txt $(HOMEDIR)
 -	install -m 644 footer.txt $(HOMEDIR)
 -	install -m 600 gnarwl.cfg $(CONFDIR)
 -	cat badheaders.txt | $(SBINDIR)/$(SBIN) -a $(HOMEDIR)/badheaders.db
 -	cat blacklist.txt | $(SBINDIR)/$(SBIN) -a $(HOMEDIR)/blacklist.db
-+	install -m 644 header.txt $(HOMEDIR)/header.txt.sample
-+	install -m 644 footer.txt $(HOMEDIR)/footer.txt.sample
-+	install -m 644 badheaders.txt $(HOMEDIR)/badheaders.txt.sample
-+	install -m 644 blacklist.txt $(HOMEDIR)/blacklist.txt.sample
-+	install -m 600 gnarwl.cfg.sample $(CONFDIR)
-+	cat badheaders.txt | $(SBINDIR)/$(SBIN) -a $(HOMEDIR)/badheaders.db.sample
-+	cat blacklist.txt | $(SBINDIR)/$(SBIN) -a $(HOMEDIR)/blacklist.db.sample
++	mkdir -m 755 -p  $(DESTDIR)$(HOMEDIR)/block $(DESTDIR)$(HOMEDIR)/bin $(DESTDIR)$(CONFDIR)
++	echo \|$(BINDIR)/$(BIN) > $(DESTDIR)$(HOMEDIR)/.forward
++	install -m 644 header.txt $(DESTDIR)$(HOMEDIR)/header.txt.sample
++	install -m 644 footer.txt $(DESTDIR)$(HOMEDIR)/footer.txt.sample
++	install -m 644 badheaders.txt $(DESTDIR)$(HOMEDIR)/badheaders.txt.sample
++	install -m 644 blacklist.txt $(DESTDIR)$(HOMEDIR)/blacklist.txt.sample
++	install -m 600 gnarwl.cfg.sample $(DESTDIR)$(CONFDIR)
++	cat badheaders.txt | $(DESTDIR)$(SBINDIR)/$(SBIN) -a $(DESTDIR)$(HOMEDIR)/badheaders.db.sample
++	cat blacklist.txt | $(DESTDIR)$(SBINDIR)/$(SBIN) -a $(DESTDIR)$(HOMEDIR)/blacklist.db.sample
  
