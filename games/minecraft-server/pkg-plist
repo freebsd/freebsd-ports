@@ -1,28 +1,16 @@
 @stopdaemon minecraft
-%%DATADIR%%/minecraft_server.jar
 %%X11%%bin/minecraft-server
 bin/minecraft-server-nogui
-@exec mkdir -p %D/etc/minecraft
-@unexec if cmp -s %D/%%DATADIR%%/ops.txt.sample %D/etc/minecraft/ops.txt; then rm -f %D/etc/minecraft/ops.txt; fi
-@unexec if cmp -s %D/%%DATADIR%%/banned-ips.txt.sample %D/etc/minecraft/banned-ips.txt; then rm -f %D/etc/minecraft/banned-ips.txt; fi
-@unexec if cmp -s %D/%%DATADIR%%/banned-players.txt.sample %D/etc/minecraft/banned-players.txt; then rm -f %D/etc/minecraft/banned-players.txt; fi
-@unexec if cmp -s %D/%%DATADIR%%/white-list.txt.sample %D/etc/minecraft/white-list.txt; then rm -f %D/etc/minecraft/white-list.txt; fi
-@unexec if cmp -s %D/%%DATADIR%%/server.properties.sample %D/etc/minecraft/server.properties; then rm -f %D/etc/minecraft/server.properties; fi
-%%DATADIR%%/server.properties
-%%DATADIR%%/ops.txt
-%%DATADIR%%/white-list.txt
-%%DATADIR%%/banned-ips.txt
-%%DATADIR%%/banned-players.txt
-%%DATADIR%%/server.properties.sample
-@exec if [ ! -f %D/etc/minecraft/server.properties ] ; then cp -p %D/%F %B/server.properties; fi
-%%DATADIR%%/ops.txt.sample
-@exec if [ ! -f %D/etc/minecraft/ops.txt ] ; then cp -p %D/%F %B/ops.txt; fi
-%%DATADIR%%/white-list.txt.sample
-@exec if [ ! -f %D/etc/minecraft/white-list.txt ] ; then cp -p %D/%F %B/white-list.txt; fi
-%%DATADIR%%/banned-ips.txt.sample
-@exec if [ ! -f %D/etc/minecraft/banned-ips.txt ] ; then cp -p %D/%F %B/banned-ips.txt; fi
-%%DATADIR%%/banned-players.txt.sample
-@exec if [ ! -f %D/etc/minecraft/banned-players.txt ] ; then cp -p %D/%F %B/banned-players.txt; fi
+@owner mcserver
+@group mcserver
+@sample %%ETCDIR%%/banned-ips.txt.sample
+@sample %%ETCDIR%%/banned-players.txt.sample
+@sample %%ETCDIR%%/ops.txt.sample
+@sample %%ETCDIR%%/server.properties.sample
+@sample %%ETCDIR%%/white-list.txt.sample
+%%DATADIR%%/minecraft_server.jar
+@owner
+@group
 %%X11%%share/pixmaps/minecraft-server.png
 @dirrmtry %%DATADIR%%
-@dirrmtry etc/minecraft
+@dirrmtry %%ETCDIR%%
