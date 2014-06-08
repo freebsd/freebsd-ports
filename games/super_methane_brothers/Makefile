@@ -14,8 +14,8 @@ COMMENT=	Port of the Amiga platform game of the same name
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	clan23Core:${PORTSDIR}/devel/clanlib \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libclan23Core.so:${PORTSDIR}/devel/clanlib \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 USES=		gmake pkgconfig
 USE_GCC=	yes
@@ -28,8 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 PORTDOCS=	*
 PLIST_FILES=	bin/methane
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -44,12 +42,12 @@ post-patch:
 		 s|gcc|$${CXX}|' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKDIR}/${DISTNAME} && ${INSTALL_PROGRAM} methane ${PREFIX}/bin)
-	${CHGRP} games ${PREFIX}/bin/methane
-	${CHMOD} g+s ${PREFIX}/bin/methane
+	(cd ${WRKDIR}/${DISTNAME} && ${INSTALL_PROGRAM} methane ${STAGEDIR}${PREFIX}/bin)
+	${CHGRP} games ${STAGEDIR}${PREFIX}/bin/methane
+	${CHMOD} g+s ${STAGEDIR}${PREFIX}/bin/methane
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKDIR}/${DISTNAME}/docs && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKDIR}/${DISTNAME}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGREQ} ${PKGNAME} POST-INSTALL
