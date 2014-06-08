@@ -12,18 +12,16 @@ COMMENT=	Rename or remove certain attachments or kill entire messages
 
 GNU_CONFIGURE=	yes
 
-MAN1=		renattach.1
 PORTDOCS=	INSTALL
-PLIST_FILES=	bin/renattach etc/renattach.conf.ex
+PLIST_FILES=	bin/renattach etc/renattach.conf.ex man/man1/renattach.1.gz
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/src/getopt*
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===================="
 	@${ECHO_MSG} "Check with ${DOCSDIR}/INSTALL"
 	@${ECHO_MSG} "After that you may need to adjust renattach.conf to your needs"
