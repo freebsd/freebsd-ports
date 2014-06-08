@@ -1,0 +1,50 @@
+--- Makefile.in.orig	2012-01-25 09:30:23.000000000 -0500
++++ Makefile.in	2014-06-08 10:41:32.558914398 -0400
+@@ -8,6 +8,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ CFLAGS	= @CFLAGS@
+ PREFIX	= @PREFIX@
++DESTDIR	= %%DESTDIR%%
+ # ${CFLAGS}# WSPR specific C flags
+ CFLAGS	+= -DBIGSYM=1 -fPIC
+ DEFS = @DEFS@
+@@ -90,11 +91,16 @@
+ 
+ OBJS2F77 = ${SRCS2F77:.f=.o} deep65.o
+ 
+-SRCS2C = padevsub.c start_threads.c sound.c gmtime2.c ptt_unix.c \
++SRCS2C = start_threads.c sound.c gmtime2.c ptt_unix.c \
+ 	nhash.c fthread.c
+ OBJS2C  = ${SRCS2C:.c=.o}
+ 
++padevsub.o:	padevsub.c
++	${CC} ${CPPFLAGS} ${CFLAGS} -c padevsub.c
++
+ WsprMod/w.so:	${OBJS2C} $(SRCS2C) $(SRCS2F90) $(SRCS2F77) acom1.f90
++	echo DESTDIR = ${DESTDIR}
++	echo PREFIX = ${PREFIX}
+ 	${F2PY} -c --quiet --noopt --debug -m w \
+ 	--f77flags="${FFLAGS}" --f90flags="${FFLAGS}" \
+ 	--fcompiler=${FCV} --f77exec=${FC} --f90exec=${FC} \
+@@ -102,8 +108,8 @@
+ 	${CPPFLAGS} ${LDFLAGS} ${LIBS} \
+ 	only: $(F2PYONLY) : \
+ 	$(SRCS2F90) $(SRCS2F77) $(SRCS2C)
+-	${MKDIR} -p build/lib/WsprMod
+ 	${MV} w.so WsprMod/w.so
++#	${PYTHON} setup.py build_py  
+ 
+ fmt: fmt.f90 fil1.f90 four2a.f peakup.f db.f sound.o 
+ 	$(FC) -o fmt fmt.f90 fil1.f90 four2a.f peakup.f db.f \
+@@ -140,9 +146,8 @@
+ 	$(FC) -o wwv $(FFLAGS) $(LDFLAGS) $(OBJS6) -lportaudio -lsamplerate -lfftw3f
+ 
+ install: WsprMod/w.so
+-	${RM} -rf build/
+-	${PYTHON} setup.py install
+-	${INSTALL} wspr ${PREFIX}/bin
++	${PYTHON} setup.py install --prefix=${DESTDIR}${PREFIX}
++	${INSTALL} wspr ${DESTDIR}${PREFIX}/bin
+ 
+ deb: wspr.py WsprMod/w.so WsprMod/g.py WsprMod/__init__.py \
+ 	WsprMod/advanced.py \
