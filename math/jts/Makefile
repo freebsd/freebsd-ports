@@ -21,8 +21,6 @@ NO_WRKSUBDIR=	yes
 VER=		${PORTVERSION:tl}
 JARFILES=	JTS_Test acme jts-${VER}
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -30,11 +28,11 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 .for jar in ${JARFILES}
 	${INSTALL_DATA} ${WRKSRC}/lib/${jar}.jar	\
-		${JAVAJARDIR}/${jar:S|-${VER}||}.jar
+		${STAGEDIR}${JAVAJARDIR}/${jar:S|-${VER}||}.jar
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	@cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
