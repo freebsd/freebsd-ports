@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	olgeni
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A charset encoding/decoding library written in Common Lisp
+COMMENT=	Charset encoding/decoding library written in Common Lisp
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/devel/cl-trivial-features \

@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	cl-
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A parser generator for Common Lisp
+COMMENT=	Parser generator for Common Lisp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

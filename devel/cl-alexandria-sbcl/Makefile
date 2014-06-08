@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A collection of portable public domain utilities for Common Lisp
+COMMENT=	Collection of portable public domain utilities for Common Lisp
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria

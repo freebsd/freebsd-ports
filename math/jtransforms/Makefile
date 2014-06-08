@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=jtransforms/jtransforms/${PORTVERSION}
 DISTNAME=	jtransforms-${PORTVERSION}-src
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A multithreaded FFT library written in pure Java
+COMMENT=	Multithreaded FFT library written in pure Java
 
 LICENSE=	GPLv2 LGPL20 MPL
 LICENSE_COMB=	multi

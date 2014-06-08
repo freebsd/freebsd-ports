@@ -6,7 +6,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://download.cinecert.com/asdcplib/
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	An open source implementation of SMPTE and the MXF Interop format
+COMMENT=	Open source implementation of SMPTE and the MXF Interop format
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 

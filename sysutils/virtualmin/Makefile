@@ -8,7 +8,7 @@ DISTNAME=	virtual-server-${PORTVERSION}.gpl
 EXTRACT_SUFX=	.wbm.gz
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A virtual hosting management system based on webmin
+COMMENT=	Virtual hosting management system based on webmin
 
 RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
 

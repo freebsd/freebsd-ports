@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	olgeni
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A system definition facility for Common Lisp
+COMMENT=	System definition facility for Common Lisp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A charset encoding/decoding library written in Common Lisp
+COMMENT=	Charset encoding/decoding library written in Common Lisp
 
 DEPRECATED=	Depends on deprecated lang/clisp
 EXPIRATION_DATE=	2014-07-28

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A system definition facility for Common Lisp
+COMMENT=	System definition facility for Common Lisp
 
 DEPRECATED=	Depends on deprecated lang/clisp
 EXPIRATION_DATE=	2014-07-28
