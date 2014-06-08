@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2014-06-08 23:17:52.261073676 +0800
++++ Makefile.in	2014-06-08 23:18:17.975100570 +0800
+@@ -70,11 +70,11 @@ version_string.c: version
+ 	echo 'char *version_string = "'`cat version`'";' >version_string.c
+ 
+ install: all
+-	mkdir -p $(bindir)
+-	$(INSTALL_PROGRAM) xplot $(bindir)/xplot
+-	$(INSTALL) tcpdump2xplot.pl $(bindir)/tcpdump2xplot
+-	mkdir -p $(mandir)
+-	$(INSTALL_MAN) $(MANFILES) $(mandir)
++	mkdir -p $(DESTDIR)$(bindir)
++	$(INSTALL_PROGRAM) xplot $(DESTDIR)$(bindir)/xplot
++	$(INSTALL) tcpdump2xplot.pl $(DESTDIR)$(bindir)/tcpdump2xplot
++	mkdir -p $(DESTDIR)$(mandir)
++	$(INSTALL_MAN) $(MANFILES) $(DESTDIR)$(mandir)
+ clean:
+ 	rm -f ${PROG} ${PROG}.old *.o version_string.c
+ 
