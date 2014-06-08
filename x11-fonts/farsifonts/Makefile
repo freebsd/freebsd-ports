@@ -16,13 +16,12 @@ USES=		zip
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
 	@ttmkfdir -c -d ${WRKSRC} -o ${WRKSRC}/fonts.dir
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/X11/fonts/farsifonts
-	@${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/lib/X11/fonts/farsifonts
-	@${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/farsifonts
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/farsifonts
+	@${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${PREFIX}/lib/X11/fonts/farsifonts
+	@${INSTALL_DATA} ${WRKSRC}/fonts.dir ${STAGEDIR}${PREFIX}/lib/X11/fonts/farsifonts
 
 .include <bsd.port.mk>
