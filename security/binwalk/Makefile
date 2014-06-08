@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Search binary images for embedded files and executable code
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Search hidden procs/rootkits from cron with low false positive rate
 
 LICENSE=	GPLv3

@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	HTML to LaTeX to PDF Converter
 
 LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick

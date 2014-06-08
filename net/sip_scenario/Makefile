@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.abptech.com/support/resources/SIP_scen_generator_v1.2.7/index/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	SIP call flow creator (HTML format)
 
 LICENSE=	APACHE20
