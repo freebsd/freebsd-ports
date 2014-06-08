@@ -1,6 +1,5 @@
 bin/xmaid
-@exec ln -sf %D/%F %B/xmulti
-@unexec rm %B/xmulti
+bin/xmulti
 lib/X11/app-defaults/XMaid
 lib/X11/xmaid/defaultstyle
 lib/X11/xmaid/html40dtd
@@ -59,6 +58,7 @@ lib/X11/xmaid/multi/suwari.gif
 lib/X11/xmaid/multi/xmultiback.gif
 lib/X11/xmaid/multi/xmultimark.gif
 lib/X11/xmaid/multi/xmultimark2.gif
+man/man1/xmaid.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/MODULE.jp
 %%PORTDOCS%%%%DOCSDIR%%/README.jp
 %%PORTDOCS%%%%DOCSDIR%%/STYLESHEET.jp
