@@ -11,15 +11,13 @@ DISTNAME=	SNNSv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully featured neural network simulator
 
-LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_XORG=	x11 xext xt
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/snns --enable-global \
 		--build=${CONFIGURE_TARGET}
 MAKE_JOBS_UNSAFE=	yes
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -46,15 +44,14 @@ post-patch:
 	@${ECHO_CMD} '${PREFIX}/lib/snns/bin/xgui' >> ${WRKDIR}/snns
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/snns ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Readme ${PREFIX}/lib/snns
-	${INSTALL_DATA} ${WRKSRC}/Readme.license ${PREFIX}/lib/snns
-	${INSTALL_DATA} ${WRKSRC}/default.cfg ${PREFIX}/lib/snns
-	${INSTALL_DATA} ${WRKSRC}/help.hdoc ${PREFIX}/lib/snns
+	${INSTALL_SCRIPT} ${WRKDIR}/snns ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Readme ${STAGEDIR}${PREFIX}/lib/snns
+	${INSTALL_DATA} ${WRKSRC}/Readme.license ${STAGEDIR}${PREFIX}/lib/snns
+	${INSTALL_DATA} ${WRKSRC}/default.cfg ${STAGEDIR}${PREFIX}/lib/snns
+	${INSTALL_DATA} ${WRKSRC}/help.hdoc ${STAGEDIR}${PREFIX}/lib/snns
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
