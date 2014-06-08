@@ -13,11 +13,11 @@ COMMENT=	Portable fixed precision math library for fast exponentiations
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 USES=		gmake tar:bzip2
+USE_GCC=	any
 ALL_TARGET=	default
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
