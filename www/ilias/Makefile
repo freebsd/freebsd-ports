@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.3
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/1.%20ILIAS%204.3/ILIAS%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/01.%20ILIAS%204.4/ILIAS%20${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		zip:${PORTSDIR}/archivers/zip \
@@ -16,10 +18,8 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${LOCALBASE}/share/pear/Auth/Auth.php:${PORTSDIR}/security/pear-Auth \
 		${LOCALBASE}/share/pear/MDB2.php:${PORTSDIR}/databases/pear-MDB2 \
 		${LOCALBASE}/share/pear/HTML/Template/IT.php:${PORTSDIR}/devel/pear-HTML_Template_IT
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
-
-CONFLICTS=	ilias-3.[0-9].*
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 NO_BUILD=		yes
 PLIST=			${WRKDIR}/plist
@@ -28,14 +28,12 @@ USE_PHP=		mysql session zlib gd pdf dom xsl pcre
 WRKSRC=			${WRKDIR}/ilias
 ILIASDIR=		www/ilias
 ILIASDATADIR=		www/iliasdata
-PORTDOCS=*
 PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
-OPTIONS_DEFINE=	SCORM2004 Checker Mail Docs
+OPTIONS_DEFINE=	SCORM2004 Checker Mail
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSCORM2004}
@@ -55,27 +53,18 @@ pre-install:
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${ILIASDIR}?g" >> ${PLIST}
 	@${ECHO} @dirrm ${ILIASDATADIR} >> ${PLIST}
 
-post-extract:
-	@cd ${WRKSRC} && ${MV} docs ${WRKDIR}
-
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
-	@${INSTALL} -d ${PREFIX}/${ILIASDATADIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${ILIASDATADIR}
-	@${CHMOD} -R 755 ${PREFIX}/${ILIASDATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
+	@${INSTALL} -d ${STAGEDIR}${PREFIX}/${ILIASDATADIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${ILIASDATADIR}
+	@${CHMOD} -R 755 ${STAGEDIR}${PREFIX}/${ILIASDATADIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' >>${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${ILIASDATADIR}' \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${PREFIX}/${ILIASDATADIR}' >>${TMPPLIST}
-
-.if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKDIR}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
-
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
