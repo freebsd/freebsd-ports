@@ -3,6 +3,7 @@
 
 PORTNAME=	minecraft-server
 PORTVERSION=	1.4.7
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://assets.minecraft.net/${PORTVERSION:S|.|_|g}/ \
 		http://media-mcw.cursecdn.com/f/f7/:icon
@@ -40,7 +41,6 @@ CONFIG_FILES=	banned-ips.txt \
 		server.properties \
 		white-list.txt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -59,10 +59,10 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/minecraft_server.jar ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/minecraft_server.jar ${STAGEDIR}${DATADIR}/
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Bookshelf.png ${PREFIX}/share/pixmaps/minecraft-server.png
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Bookshelf.png ${STAGEDIR}${PREFIX}/share/pixmaps/minecraft-server.png
 .endif
 	echo "#!/bin/sh"				>  ${WRKDIR}/${PORTNAME}
 	echo "if ! test -d ~/.minecraft-server ; then"	>> ${WRKDIR}/${PORTNAME}
@@ -73,22 +73,13 @@ do-install:
 	echo "java -Xmx1024M -Xms1024M -jar ${DATADIR}/minecraft_server.jar"		>> ${WRKDIR}/${PORTNAME}
 	echo "java -Xmx1024M -Xms1024M -jar ${DATADIR}/minecraft_server.jar nogui"	>> ${WRKDIR}/${PORTNAME}-nogui
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-nogui ${PREFIX}/bin/
-	${MKDIR} ${ETCDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-nogui ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for file in ${CONFIG_FILES}
-	${INSTALL_DATA} ${FILESDIR}/${file}.sample ${DATADIR}
-	if [ ! -f ${ETCDIR}/${file} ]; then \
-		${CP} -p ${DATADIR}/${file}.sample ${ETCDIR}/${file} ; \
-	fi
-	${CHMOD} 644 ${DATADIR}/${file}* ${ETCDIR}/${file}
-	${LN} -s ${ETCDIR}/${file} ${DATADIR}/${file}
+	${INSTALL_DATA} ${FILESDIR}/${file}.sample ${STAGEDIR}${ETCDIR}
+	${CHMOD} 644 ${STAGEDIR}${ETCDIR}/${file}.sample
 .endfor
-	${CHOWN} -R ${USERS}:${GROUPS} ${DATADIR}
-	${CHOWN} -R ${USERS}:${GROUPS} ${ETCDIR}
-
-post-install:
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
