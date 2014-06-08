@@ -1,3 +1,5 @@
-This module is a minimalistic variant of p5-Class-Accessor (Class::Accessor).
+Class::Accessor::Lite is a variant of Class::Accessor. It is fast and requires
+less typing, has no dependencies to other modules, and does not mess up the
+@ISA.
 
 WWW: http://search.cpan.org/dist/Class-Accessor-Lite/
