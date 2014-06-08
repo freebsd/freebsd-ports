@@ -1,0 +1,24 @@
+--- Makefile.orig	2014-06-09 00:18:35.116823595 +0800
++++ Makefile	2014-06-09 00:19:38.891822142 +0800
+@@ -122,8 +122,8 @@ install:	install-bin install-inc install
+ 		@${ECHO} "Use 'make install-doc' to install documentation."
+ 
+ install-bin:	${TGT}
+-		-${MKDIR} ${BINDIR}
+-		${INSTALL_PROGRAM} ${TGT} ${BINDIR}
++		-${MKDIR} $(DESTDIR)${BINDIR}
++		${INSTALL_PROGRAM} ${TGT} $(DESTDIR)${BINDIR}
+ 
+ install-inc:	${TGTLIB}
+ #		-${MKDIR} ${INCDIR}
+@@ -136,8 +136,8 @@ install-lib:	${TGTLIB}
+ install-share:
+ 
+ install-doc:
+-		-${MKDIR} ${DOCDIR}/html
+-		${INSTALL_DATA} doc/html/*.html doc/html/*.gif ${DOCDIR}/html
++		-${MKDIR} $(DESTDIR)${DOCDIR}/html
++		${INSTALL_DATA} doc/html/*.html doc/html/*.gif $(DESTDIR)${DOCDIR}/html
+ 
+ ${TGT}:		${TGTLIB} ${MAINOBJ}
+ 		${CC} ${LFLAGS} -o ${TGT} ${MAINOBJ} ${TGTLIB} ${LIBS}
