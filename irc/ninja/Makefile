@@ -16,15 +16,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB="${DATADIR}"
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%IRCLIB%%|${DATADIR}|g" \
 		${WRKSRC}/include/config.h.dist
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ninjawserv ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}/translation
-	${INSTALL_DATA} ${WRKSRC}/translation/* ${DATADIR}/translation
+	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ninjawserv ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/translation
+	${INSTALL_DATA} ${WRKSRC}/translation/* ${STAGEDIR}${DATADIR}/translation
 
 .include <bsd.port.mk>
