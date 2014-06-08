@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-domain_name>=0.5.1:${PORTSDIR}/net/rubygem-domain_name \
 		rubygem-http-cookie>=1.0.0:${PORTSDIR}/www/rubygem-http-cookie \
 		rubygem-mime-types117>=0:${PORTSDIR}/misc/rubygem-mime-types117 \
 		rubygem-net-http-digest_auth11>=0:${PORTSDIR}/www/rubygem-net-http-digest_auth11 \
-		rubygem-net-http-persistent26>0:${PORTSDIR}/www/rubygem-net-http-persistent25 \
+		rubygem-net-http-persistent25>0:${PORTSDIR}/www/rubygem-net-http-persistent25 \
 		rubygem-nokogiri14>=1.4:${PORTSDIR}/textproc/rubygem-nokogiri14 \
 		rubygem-ntlm-http>=0.1.1:${PORTSDIR}/www/rubygem-ntlm-http \
 		rubygem-webrobots>=0.0.9:${PORTSDIR}/www/rubygem-webrobots
