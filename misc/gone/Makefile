@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	SETUID
 SETUID_DESC=	Install gone setuid root for password support
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 #
 # If you would like to be able to use system passwords for gone
@@ -33,4 +32,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gone ${STAGEDIR}${PREFIX}/bin/gone
 	${INSTALL_DATA} ${WRKSRC}/gone.1 ${STAGEDIR}${PREFIX}/man/man1/gone.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
