@@ -17,17 +17,20 @@ MAKE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}"
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	confregdecode
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/confregdecode.jar ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/confregdecode ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/confregdecode.jar ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/confregdecode ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in README.txt ConfregDecode.html
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
