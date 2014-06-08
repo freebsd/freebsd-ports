@@ -1,6 +1,6 @@
---- Makefile.orig	2013-02-25 20:26:41.000000000 +0200
-+++ Makefile	2014-06-06 21:12:29.821585175 +0200
-@@ -119,9 +119,9 @@
+--- Makefile.orig	2014-06-02 12:15:27.000000000 +0200
++++ Makefile	2014-06-07 21:42:39.688352979 +0200
+@@ -128,15 +128,15 @@
  uninstall: uninstall_olsrd
  
  install_bin:
@@ -10,10 +10,20 @@
 +		mkdir -p ${STAGEDIR}$(SBINDIR)
 +		install -m 755 $(EXENAME) ${STAGEDIR}$(SBINDIR)
 +		$(STRIP) ${STAGEDIR}$(SBINDIR)/$(EXENAME)
+ ifeq ($(SGW_SUPPORT),1)
+-		$(MAKECMDPREFIX)if [ -e $(SBINDIR)/$(SGW_POLICY_SCRIPT) ]; then \
+-			cp -f files/$(SGW_POLICY_SCRIPT) $(SBINDIR)/$(SGW_POLICY_SCRIPT).new; \
+-			echo "Policy routing script was saved as $(SBINDIR)/$(SGW_POLICY_SCRIPT).new"; \
++		$(MAKECMDPREFIX)if [ -e ${STAGEDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT) ]; then \
++			cp -f files/$(SGW_POLICY_SCRIPT) ${STAGEDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT).new; \
++			echo "Policy routing script was saved as ${STAGEDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT).new"; \
+ 		else \
+-			cp -f files/$(SGW_POLICY_SCRIPT) $(SBINDIR)/$(SGW_POLICY_SCRIPT); \
++			cp -f files/$(SGW_POLICY_SCRIPT) ${STAGEDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT); \
+ 		fi
+ endif
  
- uninstall_bin:
- 		rm -f $(SBINDIR)/$(EXENAME)
-@@ -130,29 +130,26 @@
+@@ -147,29 +147,26 @@
  install_olsrd:	install_bin
  		@echo ========= C O N F I G U R A T I O N - F I L E ============
  		@echo $(EXENAME) uses the configfile $(CFGFILE)
@@ -57,7 +67,7 @@
  endif
  
  uninstall_olsrd:	uninstall_bin
-@@ -200,7 +197,7 @@
+@@ -217,7 +214,7 @@
  		-for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=$(LIBDIR) clean;rm -f lib/$$dir/*.so lib/$$dir/*.dll;done
  
  libs_install install_libs:
