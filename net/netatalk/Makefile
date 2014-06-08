@@ -17,6 +17,7 @@ USE_BDB=	46+
 USE_BZIP2=	yes
 USES=		iconv gmake perl5
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-D_IPP_PRIVATE_STRUCTURES
 USE_RC_SUBR=	netatalk
 
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
