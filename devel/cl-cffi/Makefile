@@ -18,7 +18,7 @@ DIST_SUBDIR=	cffi/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A portable foreign function interface for Common Lisp
+COMMENT=	Portable foreign function interface for Common Lisp
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria \
 ${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/devel/cl-trivial-features \

@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A collection of portable public domain utilities for Common Lisp
+COMMENT=	Collection of portable public domain utilities for Common Lisp
 
 DEPRECATED=	Depends on deprecated lang/clisp
 EXPIRATION_DATE=	2014-07-28

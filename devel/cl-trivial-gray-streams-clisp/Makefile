@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A thin compatibility layer for Gray streams
+COMMENT=	Thin compatibility layer for Gray streams
 
 DEPRECATED=	Depends on deprecated lang/clisp
 EXPIRATION_DATE=	2014-07-28

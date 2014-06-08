@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A library for XMLRPC support in Erlang
+COMMENT=	Library for XMLRPC support in Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang

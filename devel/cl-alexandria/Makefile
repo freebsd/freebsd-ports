@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	olgeni
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A collection of portable public domain utilities for Common Lisp
+COMMENT=	Collection of portable public domain utilities for Common Lisp
 
 NO_BUILD=	yes
 

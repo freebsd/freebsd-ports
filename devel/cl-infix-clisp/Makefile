@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A lisp macro to read math statements in infix notation
+COMMENT=	Lisp macro to read math statements in infix notation
 
 DEPRECATED=	Depends on deprecated lang/clisp
 EXPIRATION_DATE=	2014-07-28

@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	olgeni
 PKGNAMEPREFIX=	cl-
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A thin compatibility layer for Gray streams
+COMMENT=	Thin compatibility layer for Gray streams
 
 NO_BUILD=	yes
 
