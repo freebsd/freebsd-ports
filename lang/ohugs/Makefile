@@ -17,7 +17,7 @@ OPTIONS_DEFINE=		X11
 
 LIB_DEPENDS=	libreadline.so.6:${PORTSDIR}/devel/readline
 .if empty(PORT_OPTIONS:MX11)
-LIB_DEPENDS=	libTix8.4.3.0.so:${PORTSDIR}/x11-toolkits/tix
+LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
