@@ -1,4 +1,5 @@
 bin/node
+include/node/android-ifaddrs.h
 include/node/ares.h
 include/node/ares_version.h
 include/node/common.gypi
@@ -19,22 +20,22 @@ include/node/uv-errno.h
 include/node/uv-linux.h
 include/node/uv-sunos.h
 include/node/uv-unix.h
+include/node/uv-version.h
 include/node/uv-win.h
 include/node/uv.h
 include/node/v8-debug.h
-include/node/v8-defaults.h
+include/node/v8-platform.h
 include/node/v8-profiler.h
 include/node/v8-testing.h
+include/node/v8-util.h
 include/node/v8.h
 include/node/v8config.h
 include/node/v8stdint.h
-lib/dtrace/node.d
 lib/node_modules/.keepme
 man/man1/node.1.gz
 share/systemtap/tapset/node.stp
-@dirrmtry share/systemtap/tapset
-@dirrmtry share/systemtap
-@dirrmtry lib/node_modules
-@dirrmtry lib/dtrace
 @dirrmtry include/node/openssl
 @dirrmtry include/node
+@dirrmtry lib/node_modules
+@dirrmtry share/systemtap/tapset
+@dirrmtry share/systemtap
