@@ -22,7 +22,7 @@ NO_BUILD=	yes
 
 SUB_FILES=	processing
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract:
 	${RM} -rf ${WRKSRC}/java

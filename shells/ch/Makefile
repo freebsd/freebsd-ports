@@ -18,7 +18,7 @@ MANDIRS=	${DATADIR}/docs/man/
 DATADIR=	${PREFIX}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}
-PORTDATA= README  bin config demos dl extern include lib license package sbin toolkit
+PORTDATA=	README  bin config demos dl extern include lib license package sbin toolkit
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/ch

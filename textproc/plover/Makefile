@@ -4,7 +4,7 @@ PORTNAME=	plover
 PORTVERSION=	2.2.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://launchpadlibrarian.net/88624187/
-PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Open source solution for stenography

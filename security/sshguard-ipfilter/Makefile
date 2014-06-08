@@ -4,7 +4,7 @@
 PKGNAMESUFFIX=	-ipfilter
 CONFLICTS=	sshguard-1.* sshguard-ipfw-1.* sshguard-pf-1.*
 
-COMMENT=        Protect hosts from brute force attacks against ssh and other services using ipfilter
+COMMENT=	Protect hosts from brute force attacks against ssh and other services using ipfilter
 
 SSHGUARDFW=	ipfilter
 MASTERDIR=	${.CURDIR}/../sshguard

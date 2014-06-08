@@ -5,7 +5,7 @@ PORTNAME=	luasql
 
 LUASQL_DRIVER=	sqlite3
 
-MASTERDIR=      ${.CURDIR}/../luasql-mysql
+MASTERDIR=	${.CURDIR}/../luasql-mysql
 
 NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

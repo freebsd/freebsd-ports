@@ -31,7 +31,7 @@ NLS_USES=		gettext
 .include <bsd.port.options.mk>
 
 # Restrict to stable (even) versions, indicated by the second component.
-PORTSCOUT=    limit:^0.7\..*
+PORTSCOUT=	limit:^0.7\..*
 
 post-configure:
 	@${REINPLACE_CMD} -e \

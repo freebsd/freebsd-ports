@@ -1,12 +1,12 @@
 # Created by: Jonathan Belson <jon@witchspace.com>
 # $FreeBSD$
 
-PORTNAME=       kix
+PORTNAME=	kix
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=     graphics
-MASTER_SITES=   http://homepage.ntlworld.com/jon.belson/files/ \
-	LOCAL/pgollucci
+CATEGORIES=	graphics
+MASTER_SITES=	http://homepage.ntlworld.com/jon.belson/files/ \
+		LOCAL/pgollucci
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	jon@witchspace.com

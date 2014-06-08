@@ -35,7 +35,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${MSTTF_SIMHEI})
-IGNORE= Because of licensing restrictions, you must copy the three TrueType \
+IGNORE=	Because of licensing restrictions, you must copy the three TrueType \
 	fonts from your copy of Microsoft Windows(TM) 2000/XP manually. End \
 	user can use these fonts freely in his/her own computers. Please \
 	place these fonts in ${DISTDIR}/${DIST_SUBDIR}. \
@@ -53,7 +53,7 @@ IGNORE=	Because of licensing restrictions, you must copy the three \
 .endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${MSTTF_TAHOMA})
-IGNORE= Because of licensing restrictions, you must copy the three \
+IGNORE=	Because of licensing restrictions, you must copy the three \
 	TrueType fonts from your copy of Microsoft Windows(TM) \
 	2000/XP manually. End user can use these fonts freely in \
 	his/her own computers. Please place these fonts in \

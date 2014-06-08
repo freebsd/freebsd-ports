@@ -25,7 +25,7 @@ SSE2_CFLAGS=	-msse2
 
 # safety check to ensure that we don't violate the license
 .if exists(${PATCHDIR})
-RESTRICTED=     license only allows redistribution and use of unmodified source and binaries
+RESTRICTED=	license only allows redistribution and use of unmodified source and binaries
 .endif
 LEGAL_TEXT=	license restricts redistribution of source and binaries
 

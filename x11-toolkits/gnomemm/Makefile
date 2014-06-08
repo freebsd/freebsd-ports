@@ -5,9 +5,9 @@ PORTNAME=	gnomemm
 PORTVERSION=	2.6.2
 PORTREVISION=	8
 CATEGORIES=	x11-toolkits devel gnome
-MASTER_SITES=   # empty
-DISTFILES=      # empty
-EXTRACT_ONLY=   # empty
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	The "meta-port" for the powerful C++ bindings to the GNOME2 libraries

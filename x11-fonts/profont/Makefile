@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.tobiasjung.net/dl/
 DISTNAME=	${PORTNAME}-x11
 
 MAINTAINER=	manuel.giraud@gmail.com
-COMMENT= 	Profont - The ultimate programming font.
+COMMENT=	Profont - The ultimate programming font.
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig

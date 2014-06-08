@@ -19,16 +19,16 @@ GH_PROJECT=	jboss-as
 GH_TAGNAME=	7.1.3.Final
 GH_COMMIT=	f1f5122
 
-USE_RC_SUBR=    jboss71
+USE_RC_SUBR=	jboss71
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USER=		www
 GROUP=		www
-VAR_DIR?=       /var
-LOG_DIR?=       ${VAR_DIR}/log/${PORTNAME}
-DEPLOY_DIR?=    ${VAR_DIR}/${PORTNAME}
-PID_FILE=       /var/run/${PORTNAME}.pid
-JBOSSOUTPUT=    ${WRKSRC}/build/target/${DISTNAME}
+VAR_DIR?=	/var
+LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
+DEPLOY_DIR?=	${VAR_DIR}/${PORTNAME}
+PID_FILE=	/var/run/${PORTNAME}.pid
+JBOSSOUTPUT=	${WRKSRC}/build/target/${DISTNAME}
 
 SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		LOG_DIR=${LOG_DIR} \

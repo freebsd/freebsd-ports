@@ -1,17 +1,17 @@
 # Created by: Matt Harris <mattdharris@users.sourceforge.net>
 # $FreeBSD$
 
-PORTNAME=       libpwstor
-PORTVERSION=    0.1
-CATEGORIES=     security devel
-MASTER_SITES=   SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PORTNAME=	libpwstor
+PORTVERSION=	0.1
+CATEGORIES=	security devel
+MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=     ports@FreeBSD.org
-COMMENT=        Password storage library for C programmers
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Password storage library for C programmers
 
-USE_BZIP2=      yes
-USE_LDCONFIG=   yes
-GNU_CONFIGURE=  yes
+USE_BZIP2=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pwtool \
 		include/pwstor.h \
@@ -43,7 +43,7 @@ CFLAGS+=	-fPIC -DPIC
 .endif
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=        --enable-debug
+CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .include <bsd.port.post.mk>

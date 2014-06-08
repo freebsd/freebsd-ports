@@ -26,15 +26,15 @@ PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .if !defined(SVN_REV)
 .if defined(BOOTSTRAP)
-LANG=           "C"
-SVN_REV!=       svn info http://trac-hacks.org/svn/tagsplugin/trunk/ | ${GREP} Revision | cut -d' ' -f2
+LANG=		"C"
+SVN_REV!=	svn info http://trac-hacks.org/svn/tagsplugin/trunk/ | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"
 .endif
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
 do-fetch:
 	${MKDIR} ${WRKDIR}

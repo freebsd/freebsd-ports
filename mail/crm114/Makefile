@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	A Markov based SpamFilter
 
-LICENSE= GPLv2
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
@@ -26,8 +26,8 @@ CRM114RELEASENAME=BlameMichelson
 USES=		gettext iconv
 USE_CSTD=gnu89
 
-OPTIONS_DEFINE= NORMALIZEMIME
-NORMALIZEMIME_DESC= Normalize MIME encoding
+OPTIONS_DEFINE=	NORMALIZEMIME
+NORMALIZEMIME_DESC=	Normalize MIME encoding
 
 MAKE_ARGS=	CC="${CC}" prefix="${STAGEDIR}${PREFIX}" \
 		LIBS="${LIBS}" \

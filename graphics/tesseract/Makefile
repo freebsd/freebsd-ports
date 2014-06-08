@@ -19,7 +19,7 @@ LIB_DEPENDS=	liblept.so:${PORTSDIR}/graphics/leptonica
 
 DIST_SUBDIR=	${PORTNAME}
 PROJECTHOST=	tesseract-ocr
-WRKSRC= 	${WRKDIR}/tesseract-ocr
+WRKSRC=		${WRKDIR}/tesseract-ocr
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

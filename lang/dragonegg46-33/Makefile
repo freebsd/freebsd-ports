@@ -45,7 +45,7 @@ PORTDOCS=		README
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_FEATURES:Mlibc++}
-IGNORE= "Dragonegg can't work if LLVM was built with libc++"
+IGNORE=	"Dragonegg can't work if LLVM was built with libc++"
 .endif
 
 post-patch:

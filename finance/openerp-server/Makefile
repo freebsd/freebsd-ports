@@ -7,7 +7,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://nightly.openerp.com/7.0/nightly/src/
-DISTNAME=       openerp-${PORTVERSION}-${NIGHTLY}
+DISTNAME=	openerp-${PORTVERSION}-${NIGHTLY}
 
 MAINTAINER=	pakhom706@gmail.com
 COMMENT=	Open source application ERP & CRM in Python using Postgresql
@@ -31,7 +31,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NIGHTLY=	20140115-002435
 NIGHTLY_=	${NIGHTLY:S/-/_/g}
-WRKSRC=         ${WRKDIR}/openerp-${PORTVERSION}-${NIGHTLY}
+WRKSRC=		${WRKDIR}/openerp-${PORTVERSION}-${NIGHTLY}
 
 USE_RC_SUBR=	openerpd
 SUB_FILES=	openerp-server.conf pkg-message

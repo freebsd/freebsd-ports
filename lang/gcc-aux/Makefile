@@ -7,7 +7,7 @@ PORTREVISION=	${MAIN_PR}
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot ${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR= ${MS_SUBDIR}
+MASTER_SITE_SUBDIR=	${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.bz2
 
 MAINTAINER=	marino@FreeBSD.org
@@ -29,7 +29,7 @@ OS_LABEL4VERS=		[${OPSYS}${GARCH:M*64:S/amd_//:S/x86_//}]
 NO_MTREE=		yes
 
 OPTIONS_GROUP=		Standard Bootstrap
-OPTIONS_GROUP_Standard= FORT OBJC NLS TESTSUITE STATIC
+OPTIONS_GROUP_Standard=	FORT OBJC NLS TESTSUITE STATIC
 OPTIONS_GROUP_Bootstrap=BOOTSTRAP
 OPTIONS_DEFAULT=	FORT OBJC
 NO_OPTIONS_SORT=	yes
@@ -108,7 +108,7 @@ DISTFILES+=	${BOOTSTRAP_COMPILER}:boot
 
 # for port maintenance, invoke "make makesum PLUS_BOOTSTRAPS=1"
 .if defined(PLUS_BOOTSTRAPS)
-DISTFILES= \
+DISTFILES=	\
    ${IDENTIFICATION}.tar.bz2 \
    ada-bootstrap.i386.dragonfly.36A.tar.bz2:boot \
    ada-bootstrap.i386.freebsd.84.tar.bz2:boot \
