@@ -17,27 +17,20 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} jpegtran:${PORTSDIR}/graphics/jpeg
 USES=		perl5
 USE_PERL5=	configure
 
+PORTDOCS=	AUTHORS README README.russian ChangeLog NEWS TODO
+
 OPTIONS_DEFINE=	IMAGEMAGICK DOCS
 IMAGEMAGICK_DESC=	Image::Magick Perl module support
 
-MAN1=		${PORTNAME}.1
-PORTDOCS=	AUTHORS README README.russian ChangeLog NEWS TODO
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-.endif
+IMAGEMAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 post-install:
-	@${MKDIR} ${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for conf in colors.conf copyright.tag renrot.conf tags.conf
-	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${ETCDIR}/${conf}.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/${conf} \
+		${STAGEDIR}${ETCDIR}/${conf}.sample
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
