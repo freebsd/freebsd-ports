@@ -15,5 +15,4 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	br
 PLIST_FILES=	bin/br
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
