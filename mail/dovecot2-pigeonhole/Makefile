@@ -35,6 +35,6 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} strip
+	${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>
