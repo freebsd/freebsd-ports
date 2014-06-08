@@ -3,6 +3,7 @@
 
 PORTNAME=	mpg123.el
 PORTVERSION=	1.52
+PORTREVISION=	1
 CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/mpg123el/
 EXTRACT_SUFX=	# empty
@@ -29,6 +30,6 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/mpg123el.cgi?${PORTVERSION} ${STAGEDIR}${ELISPDIR}/${PORTNAME}
 # For XEmacs
 	@${MKDIR} ${STAGEDIR}${XELISPDIR}
-	${LN} -sf ${PORTNAME} ${STAGEDIR}${XELISPDIR}/${PORTNAME}
+	${LN} -sf ${ELISPDIR}${PORTNAME} ${STAGEDIR}${XELISPDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
