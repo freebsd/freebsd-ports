@@ -10,20 +10,19 @@ DISTNAME=	playd.sh-${PORTVERSION}
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Very easy-to-use mplayer sh wrapper script (supports playlists)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-PLIST_FILES=	bin/playd
-MAN1=		playd.1
+PLIST_FILES=	bin/playd \
+		man/man1/playd.1.gz
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/graudeejs-playd-${REV}
 REV=		1e09c80
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/playd.sh ${PREFIX}/bin/playd
-	${INSTALL_MAN} ${WRKSRC}/man/man1/playd.1 ${PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/playd.sh ${STAGEDIR}${PREFIX}/bin/playd
+	${INSTALL_MAN} ${WRKSRC}/man/man1/playd.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
