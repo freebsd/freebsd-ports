@@ -970,12 +970,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # 				- Same as USE_LDCONFIG but the target file is
 # 				  ${PREFIX}/libdata/ldconfig32/${UNIQUENAME} instead.
 # 				  Note: that should only be used on 64-bit architectures.
-# NO_LDCONFIG_MTREE
-#				- Denotes whether the libdata/ldconfig directory is part of
-#				  the mtree on a given OSVERSION system.  If it is not, we
-#				  create the directory, pull in the ldconfig_compat port,
-#				  and clean up on de-installation.  NOTE: this variable is
-#				  internal to bsd.port.mk and must not be set in your Makefile.
 #
 # DOCSDIR		- Name of the directory to install the packages docs in.
 #				  Default: ${PREFIX}/share/doc/${PORTNAME}
@@ -4022,18 +4016,15 @@ install-ldconfig-file:
 	-${LDCONFIG} -m ${USE_LDCONFIG}
 .endif
 .endif
-.if ${USE_LDCONFIG} != "${PREFIX}/lib" && !defined(INSTALL_AS_USER)
+.if ${USE_LDCONFIG} != "${LOCALBASE}/lib" && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
-.if defined(NO_LDCONFIG_MTREE)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${LDCONFIG_DIR}
+.if defined(NO_MTREE)
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
-		> ${STAGEDIR}${PREFIX}/${LDCONFIG_DIR}/${UNIQUENAME}
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
+		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}/${UNIQUENAME}
+	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
 	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
-.if defined(NO_LDCONFIG_MTREE)
-	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG_DIR} >/dev/null 2>&1 || true" >> ${TMPPLIST}
-.endif
 .endif
 .endif
 .endif
@@ -4049,16 +4040,13 @@ install-ldconfig-file:
 .endif
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
-.if defined(NO_LDCONFIG_MTREE)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${LDCONFIG_32DIR}
+.if defined(NO_MTREE)
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG_32DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
-		> ${STAGEDIR}${PREFIX}/${LDCONFIG32_DIR}/${UNIQUENAME}
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
+		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME}
+	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
 	@${ECHO_CMD} ${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
-.if defined(NO_LDCONFIG_MTREE)
-	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG32_DIR} >/dev/null 2>&1" >> ${TMPPLIST}
-.endif
 .endif
 .endif
 .if defined(INSTALLS_SHLIB)
