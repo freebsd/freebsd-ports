@@ -37,7 +37,7 @@ PORT_SCRIPTS=	build clean fetch package \
 MLINKS+=	${RC_SCRIPTS:S,^,rc,:S,$,.1,:S,^,rcstart.1 ,} \
 		${PORT_SCRIPTS:S,^,port,:S,$,.1,:S,^,portconfig.1 ,}
 .else
-EVALDOCS=           -nodoc
+EVALDOCS=	-nodoc
 .endif
 
 plist: patch

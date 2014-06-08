@@ -37,7 +37,7 @@ IGNORE=		you need the file hcwPVRP2.sys from the CD coming with the PVR-150/500 
 .endif
 
 .if !exists(${DISTDIR}/HcwMakoA.ROM)
-IGNORE=         you need the file HcwMakoA.ROM from the CD coming with the PVR-150/500 card. Please place this file in ${DISTDIR} and run make again. Check http://ivtvdriver.org/index.php/Firmware for the recommended version
+IGNORE=		you need the file HcwMakoA.ROM from the CD coming with the PVR-150/500 card. Please place this file in ${DISTDIR} and run make again. Check http://ivtvdriver.org/index.php/Firmware for the recommended version
 .endif
 
 .if !exists(${SRC_BASE}/sys/dev/iicbus/iicbb.c)

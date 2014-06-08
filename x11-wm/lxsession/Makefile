@@ -29,7 +29,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
 # Wrong versioning upstream
-PORTSCOUT=      skipv:0.4.9.2
+PORTSCOUT=	skipv:0.4.9.2
 
 .include <bsd.port.options.mk>
 

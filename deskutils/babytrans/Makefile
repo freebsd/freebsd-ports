@@ -10,7 +10,7 @@ MASTER_SITES=	http://fjolliton.free.fr/babytrans/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+/GNOME front-end for Babylon Translator .dic files
 
-USES=        	gmake gettext pathfix
+USES=		gmake gettext pathfix
 USE_GNOME=	gtk12 gnomeprefix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include

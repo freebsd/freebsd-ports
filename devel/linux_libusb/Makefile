@@ -43,7 +43,7 @@ pre-everything::
 	@${ECHO_MSG} '===> Set SRC_BASE to use an alternate source tree'
 
 .if ${OSVERSION} < 1000000
-IGNORE= doesn't build on < 10.x
+IGNORE=	doesn't build on < 10.x
 .endif
 .if !exists(${SRC_BASE}/sys/i386/linux/syscalls.master)
 IGNORE=	requires kernel source present in ${SRC_BASE}/sys

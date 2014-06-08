@@ -17,67 +17,67 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
 
 CONFLICTS_INSTALL=	openvpn-[0-9]* openvpn-beta-[0-9]*
-GNU_CONFIGURE=          yes
-USES=                   libtool pkgconfig shebangfix tar:xz
-SHEBANG_FILES=          sample/sample-scripts/verify-cn \
-                        sample/sample-scripts/auth-pam.pl \
-                        sample/sample-scripts/ucn.pl
+GNU_CONFIGURE=		yes
+USES=			libtool pkgconfig shebangfix tar:xz
+SHEBANG_FILES=		sample/sample-scripts/verify-cn \
+			sample/sample-scripts/auth-pam.pl \
+			sample/sample-scripts/ucn.pl
 
 # let OpenVPN's configure script pick up the requisite libraries:
-CPPFLAGS+=              -I${LOCALBASE}/include
-LDFLAGS+=               -L${LOCALBASE}/lib
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=         PW_SAVE PKCS11 EASYRSA LZO SNAPPY
-OPTIONS_DEFAULT=        EASYRSA OPENSSL
-OPTIONS_SINGLE=         SSL
-OPTIONS_SINGLE_SSL=     OPENSSL POLARSSL
-PW_SAVE_DESC=           Interactive passwords may be read from a file
-SNAPPY_DESC=            Enable the Snappy compression library
-LZO_DESC=               Enable the LZO compression library
-PKCS11_DESC=            Use security/pkcs11-helper
-EASYRSA_DESC=           Install security/easy-rsa RSA helper package
-POLARSSL_DESC=          SSL/TLS support via PolarSSL
+OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA LZO SNAPPY
+OPTIONS_DEFAULT=	EASYRSA OPENSSL
+OPTIONS_SINGLE=		SSL
+OPTIONS_SINGLE_SSL=	OPENSSL POLARSSL
+PW_SAVE_DESC=		Interactive passwords may be read from a file
+SNAPPY_DESC=		Enable the Snappy compression library
+LZO_DESC=		Enable the LZO compression library
+PKCS11_DESC=		Use security/pkcs11-helper
+EASYRSA_DESC=		Install security/easy-rsa RSA helper package
+POLARSSL_DESC=		SSL/TLS support via PolarSSL
 
-EASYRSA_RUN_DEPENDS=    easy-rsa>=0:${PORTSDIR}/security/easy-rsa
+EASYRSA_RUN_DEPENDS=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 
-PKCS11_LIB_DEPENDS=     libpkcs11-helper.so:${PORTSDIR}/security/pkcs11-helper
-PKCS11_CONFIGURE_ENABLE=        pkcs11
+PKCS11_LIB_DEPENDS=	libpkcs11-helper.so:${PORTSDIR}/security/pkcs11-helper
+PKCS11_CONFIGURE_ENABLE=	pkcs11
 
-PW_SAVE_CONFIGURE_ENABLE=       password-save
+PW_SAVE_CONFIGURE_ENABLE=	password-save
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPOLARSSL}
-LIB_DEPENDS+=           libpolarssl.so:${PORTSDIR}/security/polarssl
-CONFIGURE_ARGS+=        --with-crypto-library=polarssl
+LIB_DEPENDS+=	libpolarssl.so:${PORTSDIR}/security/polarssl
+CONFIGURE_ARGS+=--with-crypto-library=polarssl
 .else
-USE_OPENSSL=            yes
-CONFIGURE_ARGS+=        --with-crypto-library=openssl
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-crypto-library=openssl
 .endif
 
-USE_RC_SUBR=            openvpn
-USE_LDCONFIG=           ${PREFIX}/lib
+USE_RC_SUBR=	openvpn
+USE_LDCONFIG=	${PREFIX}/lib
 
-SUB_FILES=              pkg-message
+SUB_FILES=	pkg-message
 
 .ifdef (LOG_OPENVPN)
-CFLAGS+=                -DLOG_OPENVPN=${LOG_OPENVPN}
+CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
 .if ${PORT_OPTIONS:MLZO}
-LIB_DEPENDS+=           liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 .else
-CONFIGURE_ARGS+=        --disable-lzo
+CONFIGURE_ARGS+=--disable-lzo
 .endif
 
 .if ${PORT_OPTIONS:MSNAPPY}
-LIB_DEPENDS+=           snappy:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
 .else
-CONFIGURE_ARGS+=        --disable-snappy
+CONFIGURE_ARGS+=--disable-snappy
 .endif
 
-PORTDOCS=               *
-PORTEXAMPLES=           *
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 pre-configure:
 .ifdef (LOG_OPENVPN)

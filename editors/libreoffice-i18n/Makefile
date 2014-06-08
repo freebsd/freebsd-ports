@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 .include "${.CURDIR}/../libreoffice/Makefile.common"
-UNIQUENAME=   ${PORTNAME}${PKGNAMESUFFIX}
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PKGNAMESUFFIX=	-i18n
-DISTFILES= 	#none
+DISTFILES=	#none
 MASTER_SITES=	#none
 EXTRACT_ONLY=	#none
 

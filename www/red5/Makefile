@@ -12,7 +12,7 @@ COMMENT=	Red5 is an Open Source Flash Server
 USE_JAVA=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	red5
-WRKSRC=         ${WRKDIR}/red5-server-1.0
+WRKSRC=		${WRKDIR}/red5-server-1.0
 
 RED5_USER?=	${WWWOWN}
 RED5_GRP?=	${WWWGRP}

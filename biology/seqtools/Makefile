@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Tools for visualising sequence alignments
 
-LICENSE=        GPLv3
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \

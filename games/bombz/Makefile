@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/Bombz
 
-USES= 		dos2unix zip
+USES=		dos2unix zip
 DOS2UNIX_FILES=	*.txt
 USE_SDL=	sdl image mixer
 INSTALLS_ICONS=	yes

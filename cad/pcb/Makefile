@@ -27,7 +27,7 @@ CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
-PORTDOCS= \
+PORTDOCS=	\
 	pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\
 	examples tutorial gcode.png gcode_control_img.png		\
 	gcode_tool_path.png

@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 PLIST_FILES=	bin/ucpp man/man1/ucpp.1.gz
 USES=		gmake
 
-WRKSRC= 	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

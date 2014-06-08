@@ -3,8 +3,8 @@
 
 PORTNAME=	postgresql
 PORTREVISION=	0
-PKGNAMESUFFIX?=        ${DISTV:S/.//}-docs
-DISTV= ${DISTVERSION:R}
+PKGNAMESUFFIX?=	${DISTV:S/.//}-docs
+DISTV=		${DISTVERSION:R}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set

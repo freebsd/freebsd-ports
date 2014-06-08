@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 RESTRICTED=	Redistribution prohibited
 NO_BUILD=	yes
 
-WRKSRC=          ${WRKDIR}/adobesvg-${PORTVERSION:S/.x88//}
+WRKSRC=		${WRKDIR}/adobesvg-${PORTVERSION:S/.x88//}
 
 LIBDIR=		${PREFIX}/lib/linux-adobesvg
 SHLIBS=		ACE AGM BIB CoolType NPSVG3 SVGCore

@@ -49,7 +49,7 @@ MAKE_ARGS+=	-D WITH_HAL
 MAKE_ARGS+=	DEFAULT_XML_CONFIG="${EXAMPLESDIR}/cx88.xml.sample"
 
 .if (${OSVERSION} < 802513) || ((${OSVERSION} >= 900000) && (${OSVERSION} < 900041))
-IGNORE= requires kernel support for DRIVER_MODULE_ORDERED macro (FreeBSD 8.3+, FreeBSD 9.0+)
+IGNORE=	requires kernel support for DRIVER_MODULE_ORDERED macro (FreeBSD 8.3+, FreeBSD 9.0+)
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)

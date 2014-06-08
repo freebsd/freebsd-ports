@@ -1,13 +1,13 @@
 # Created by: Michael Reifenberger <mr@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		kicad
-DISTVERSION=    r${BZR_SRC_REV}
+PORTNAME=	kicad
+DISTVERSION=	r${BZR_SRC_REV}
 PORTREVISION=	6
-CATEGORIES=		cad
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=     mr
-PKGNAMESUFFIX=  -devel
+CATEGORIES=	cad
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mr
+PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
 
 MAINTAINER=		mr@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=      kicad-2013*
+CONFLICTS=	kicad-2013*
 
 DOCVERSION=	1.1
 LIBVERSION=	1.0
@@ -28,7 +28,7 @@ USE_GL=		glew glu
 USE_WX=		2.8
 WX_UNICODE=	yes
 USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
-USE_PYTHON=     yes
+USE_PYTHON=	yes
 
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
@@ -52,10 +52,10 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
 .if defined(BOOTSTRAP)
-BOOST_RELEASE=	     1.54.0
-BOOST_VERS=         ${BOOST_RELEASE:S|.|_|g}
-BZR_SRC_REV!=        bzr revno lp:kicad
-BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
+BOOST_RELEASE=	1.54.0
+BOOST_VERS=	${BOOST_RELEASE:S|.|_|g}
+BZR_SRC_REV!=	bzr revno lp:kicad
+BZR_DOC_REV!=	bzr revno lp:~kicad-developers/kicad/doc
 .else
 .include "Makefile.bzr_rev"
 .endif
@@ -67,8 +67,8 @@ BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 # make makesum && make && make makeplist
 # < Check PLIST_FILE_LIST below >
 
-FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
-FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bzr
+FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	bzr:${PORTSDIR}/devel/bzr
 
 showversions:
 	@${ECHO} "BOOST_RELEASE: ${BOOST_RELEASE}"

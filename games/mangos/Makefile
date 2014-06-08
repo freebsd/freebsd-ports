@@ -11,7 +11,7 @@ MASTER_SITES=	CENKES http://mangos-port.by.ru/ \
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 SCRIPTDEV2REV=	245
 
-MAINTAINER=    	neon_cyrex@mail.ru
+MAINTAINER=	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
 
 BROKEN=		Fails with newer autotools
@@ -34,7 +34,7 @@ CFLAGS+=	-O0
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS= --prefix=${PREFIX} --sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share
+CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>

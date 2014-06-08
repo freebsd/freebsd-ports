@@ -25,14 +25,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lcurses"
 CONFIGURE_ARGS=	--enable-x-locale=no
 ALL_TARGET=	${BINSTUFF} getmail
-MAKE_JOBS_UNSAFE=  yes
+MAKE_JOBS_UNSAFE=	yes
 INFO=		jed
 
 JED_ROOT=	${DATADIR}
 BINSTUFF=	jed rgrep
 
 OPTIONS_DEFINE=	DOCS X11 CANNA
-OPTIONS_DEFAULT= CANNA X11
+OPTIONS_DEFAULT=CANNA X11
 OPTIONS_SUB=	yes
 
 CANNA_DESC=		Canna support
@@ -53,7 +53,7 @@ _DOCDIR=	${WRKSRC}/doc
 _INFODIR=	${WRKSRC}/info
 _LIBDIR=	${WRKSRC}/lib
 
-PORTDOCS= abbrev.txt color.txt dfa.txt edt.txt emacs.txt fold.txt	\
+PORTDOCS=	abbrev.txt color.txt dfa.txt edt.txt emacs.txt fold.txt	\
 	hooks.txt ide-mode.txt jed_faq.txt jedfuns.txt libfuns.txt	\
 	menus.txt mouse.txt pc-keys.txt program.txt rgrep.txt		\
 	rmail.txt script.txt slangfun.txt syntax.txt undo.txt wjed.txt	\

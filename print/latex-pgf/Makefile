@@ -17,7 +17,7 @@ USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} \
 		TEXMFDIR=${TEXMFDIR}
-PORTDOCS= AUTHORS ChangeLog FILES INSTALL README TODO images licenses	\
+PORTDOCS=	AUTHORS ChangeLog FILES INSTALL README TODO images licenses	\
 		macros pgfmanual.pdf text-en version-for-dvipdfm	\
 		version-for-dvipdfmx version-for-dvips			\
 		version-for-pdftex version-for-tex4ht version-for-vtex	\

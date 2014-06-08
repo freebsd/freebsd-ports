@@ -10,9 +10,9 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	R package used for string matching, substitution and parsing
 
-LICENSE=        GPLv2
+LICENSE=	GPLv2
 
-RUN_DEPENDS=    R-cran-proto>=0.3.9.2_6:${PORTSDIR}/devel/R-cran-proto
+RUN_DEPENDS=	R-cran-proto>=0.3.9.2_6:${PORTSDIR}/devel/R-cran-proto
 
 USES=	cran:auto-plist
 

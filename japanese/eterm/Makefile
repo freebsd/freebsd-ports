@@ -3,7 +3,7 @@
 
 CATEGORIES=	japanese
 
-MASTERDIR=      ${.CURDIR}/../../x11/eterm
+MASTERDIR=	${.CURDIR}/../../x11/eterm
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports Japanese

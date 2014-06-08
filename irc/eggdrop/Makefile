@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}${PORTVERSION}.tar.bz2
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
-LICENSE=        GPLv2
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 

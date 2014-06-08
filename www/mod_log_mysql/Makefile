@@ -17,7 +17,7 @@ LICENSE_NAME_PUBLIC_DOMAIN=	Public Domain
 LICENSE_TEXT_PUBLIC_DOMAIN=	mod_log_mysql.c is in the Public Domain as of 2003.10.23.
 LICENSE_PERMS_PUBLIC_DOMAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES= tar:xz
+USES=		tar:xz
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_log_config-st.so:${PORTSDIR}/www/mod_log_config-st
 
 USE_APACHE=	22

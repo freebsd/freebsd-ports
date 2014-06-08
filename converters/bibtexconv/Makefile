@@ -12,7 +12,7 @@ COMMENT=	BibTeX Converter
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=   libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -20,8 +20,8 @@ USES=		gmake
 PLIST_FILES=	bin/bibtexconv bin/bibtexconv-odt \
 		man/man1/bibtexconv.1.gz man/man1/bibtexconv-odt.1.gz
 
-PORTEXAMPLES=  ExampleReferences.bib ODT-Template.odt odt-example.export \
-               web-example.export text-example.export
+PORTEXAMPLES=	ExampleReferences.bib ODT-Template.odt odt-example.export \
+		web-example.export text-example.export
 
 OPTIONS_DEFINE=	EXAMPLES
 

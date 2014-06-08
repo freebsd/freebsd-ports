@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostery
 PORTVERSION=	5.0.6
-DISTVERSIONSUFFIX= -an+fx
+DISTVERSIONSUFFIX=	-an+fx
 CATEGORIES=	www
 
 MAINTAINER=	clutton@zoho.com

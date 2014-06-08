@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
 		http://www.magnesium.net/~mdf/distfiles/
-PKGNAMESUFFIX=  -target
+PKGNAMESUFFIX=	-target
 DISTNAME=	netbsd-iscsi-${PORTVERSION}
 
 MAINTAINER=	mark@foster.cc
