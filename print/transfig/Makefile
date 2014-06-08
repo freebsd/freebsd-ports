@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF/mcj/mcj-source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Tools to convert Xfig .fig files
 
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
