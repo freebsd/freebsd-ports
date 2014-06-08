@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/ \
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
-USE_PYTHON=	2
+USE_PYTHON=	yes
 USES=		shebangfix
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -38,8 +38,6 @@ python_CMD=	${PYTHON_CMD}
 TUMGREYSPF_DIR?=	/var/db/${PORTNAME}
 TUMGREYSPF_USER?=	nobody
 TUMGREYSPF_GROUP?=	nobody
-
-.include <bsd.port.options.mk>
 
 pre-everything::
 	@${ECHO_MSG}
