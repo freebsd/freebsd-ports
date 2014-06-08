@@ -1,18 +1,14 @@
+bin/icon
+bin/icont
+bin/iconx
+%%WITHOUT_X11%%bin/vib
 %%WITHOUT_X11%%lib/icon/bin/colrbook
 %%WITHOUT_X11%%lib/icon/bin/colrpick
 %%WITHOUT_X11%%lib/icon/bin/fontpick
 lib/icon/bin/icont
-@exec ln -sf %B/%f %D/bin/%f
-@unexec rm -f %D/bin/%f
-@exec ln -sf %B/%f %D/bin/icon
-@unexec rm -f %D/bin/icon
 lib/icon/bin/iconx
-@exec ln -sf %B/%f %D/bin/%f
-@unexec rm -f %D/bin/%f
 %%WITHOUT_X11%%lib/icon/bin/palette
 %%WITHOUT_X11%%lib/icon/bin/vib
-%%WITHOUT_X11%%@exec ln -sf %B/%f %D/bin/%f
-%%WITHOUT_X11%%@unexec rm -f %D/bin/%f
 %%WITHOUT_X11%%lib/icon/bin/wevents
 %%WITHOUT_X11%%lib/icon/bin/xgamma
 lib/icon/lib/abkform.u1
@@ -163,10 +159,10 @@ lib/icon/lib/drawlab.u1
 lib/icon/lib/drawlab.u2
 lib/icon/lib/dsetup.u1
 lib/icon/lib/dsetup.u2
-lib/icon/lib/echo.u1
-lib/icon/lib/echo.u2
 lib/icon/lib/ebcdic.u1
 lib/icon/lib/ebcdic.u2
+lib/icon/lib/echo.u1
+lib/icon/lib/echo.u2
 lib/icon/lib/empgsup.u1
 lib/icon/lib/empgsup.u2
 lib/icon/lib/emptygen.u1
@@ -366,6 +362,8 @@ lib/icon/lib/lastname.u1
 lib/icon/lib/lastname.u2
 lib/icon/lib/lcseval.u1
 lib/icon/lib/lcseval.u2
+lib/icon/lib/levensht.u1
+lib/icon/lib/levensht.u2
 lib/icon/lib/linddefs.u1
 lib/icon/lib/linddefs.u2
 lib/icon/lib/linddraw.u1
@@ -806,6 +804,8 @@ lib/icon/lib/xutils.u1
 lib/icon/lib/xutils.u2
 lib/icon/lib/zipread.u1
 lib/icon/lib/zipread.u2
+man/man1/icon.1.gz
+man/man1/icont.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/blubordr.gif
 %%PORTDOCS%%%%DOCSDIR%%/build.htm
 %%PORTDOCS%%%%DOCSDIR%%/cfuncs.htm

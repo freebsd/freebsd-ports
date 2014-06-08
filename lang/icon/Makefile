@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icon
-PORTVERSION=	9.5.0
+PORTVERSION=	9.5.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/icon/ftp/packages/unix/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/.//g}src
@@ -11,15 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Icon programming language
 
+USE_GCC=	any
 ALL_TARGET=	All
 MAKE_JOBS_UNSAFE=	yes
-
-.if ${CC} == "clang" || ${CXX} == "clang++"
-BROKEN=		does not pass all tests when compiled with clang
-.endif
-
-MAN1=		icon.1 icont.1
-
 ARCH_NAME=	bsd
 ICONDIR=	${PREFIX}/lib/${PORTNAME}
 
@@ -36,7 +30,6 @@ CONFIG_CMD=	X-Configure
 PLIST_SUB=	WITHOUT_X11=
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC.*|CC=${CC}|g ; \
 		 s|^CFLAGS.*|CFLAGS=${CFLAGS}|g ; \
@@ -53,27 +46,27 @@ do-configure:
 		${MAKEFILE} ${MAKE_ARGS} ${CONFIG_CMD} name=${ARCH_NAME})
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/man/man1/icon.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${ICONDIR}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/man1/icon.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${ICONDIR}/bin
 .for file in ${BINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${ICONDIR}/bin/${file}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${STAGEDIR}${ICONDIR}/bin/${file}
 .endfor
 .for file in icont iconx
-	@${LN} -sf ${ICONDIR}/bin/${file} ${PREFIX}/bin/${file}
+	@${LN} -sf ${ICONDIR}/bin/${file} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
-	@${LN} -sf ${ICONDIR}/bin/icont ${PREFIX}/bin/icon
-	@${MKDIR} ${ICONDIR}/lib
-	cd ${WRKSRC}/lib; ${INSTALL_DATA} *.* ${ICONDIR}/lib
+	@${LN} -sf ${ICONDIR}/bin/icont ${STAGEDIR}${PREFIX}/bin/icon
+	@${MKDIR} ${STAGEDIR}${ICONDIR}/lib
+	cd ${WRKSRC}/lib; ${INSTALL_DATA} *.* ${STAGEDIR}${ICONDIR}/lib
 .if !defined(WITHOUT_X11)
 .for file in ${BINXS}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${ICONDIR}/bin/${file}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${STAGEDIR}${ICONDIR}/bin/${file}
 .endfor
-	@${LN} -sf ${ICONDIR}/bin/vib ${PREFIX}/bin/vib
+	@${LN} -sf ${ICONDIR}/bin/vib ${STAGEDIR}${PREFIX}/bin/vib
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if defined(MAINTAINER_MODE)
