@@ -16,20 +16,23 @@ USE_XORG=	x11
 
 MAKEFILE=	makefile
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xbomber ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/xbomber
+	${INSTALL_PROGRAM} ${WRKSRC}/xbomber ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${TAR} -C ${WRKSRC} -cf - bitmaps jungle levels pixmaps sounds | \
-		${TAR} -C ${PREFIX}/share/xbomber --unlink -xf -
-	@${FIND} ${PREFIX}/share/xbomber | \
+		${TAR} -C ${STAGEDIR}${DATADIR} --unlink -xf -
+	@${FIND} ${STAGEDIR}${PREFIX}/share/xbomber | \
 		${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${PREFIX}/share/xbomber -type f | \
+	@${FIND} ${STAGEDIR}${PREFIX}/share/xbomber -type f | \
 		${XARGS} ${CHMOD} ${SHAREMODE}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xbomber
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in README.txt LEVELS.txt SOUND.txt GRAPHICS.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xbomber
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
