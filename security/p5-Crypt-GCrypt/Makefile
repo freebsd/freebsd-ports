@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-GCrypt
-PORTVERSION=	1.25
-PORTREVISION=	1
+PORTVERSION=	1.26
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +13,11 @@ COMMENT=	Perl interface to the GNU Cryptographic library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		perl5
+CONFIGURE_ARGS=	GCRYPTINCPATH=${LOCALBASE}/include \
+		GCRYPTLIBPATH=${LOCALBASE}/lib
 USE_PERL5=	configure
-CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
-		GCRYPTINCPATH=${LOCALBASE}/include
+USES=		perl5
 
 .include <bsd.port.mk>
