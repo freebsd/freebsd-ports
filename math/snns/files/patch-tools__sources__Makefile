@@ -1,0 +1,19 @@
+--- tools/sources/Makefile.orig	2008-04-21 15:56:06.000000000 +0800
++++ tools/sources/Makefile	2014-06-08 23:09:09.194124344 +0800
+@@ -109,12 +109,12 @@ kerneltools: $(KRTOOLS_PRG)
+ batchtools:  $(BATCH_PRG)
+ tools:       $(TOOLS_PRG) $(KRTOOLS_PRG) $(BATCH_PRG)
+ 
+-$(TOOLSBINDIR):
+-	-mkdir $(TOOLSBINDIR)
++$(DESTDIR)$(TOOLSBINDIR):
++	-mkdir $(DESTDIR)$(TOOLSBINDIR)
+ 
+-install: tools $(TOOLSBINDIR)
++install: tools $(DESTDIR)$(TOOLSBINDIR)
+ 	for tooltarget in $(TOOLS_PRG) $(KRTOOLS_PRG) $(BATCH_PRG) ; do \
+-            $(INSTALL_PROGRAM) $$tooltarget $(TOOLSBINDIR) ; \
++            $(INSTALL_PROGRAM) $$tooltarget $(DESTDIR)$(TOOLSBINDIR) ; \
+         done
+ 
+ install-strip:

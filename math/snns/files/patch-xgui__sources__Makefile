@@ -1,0 +1,15 @@
+--- xgui/sources/Makefile.orig	2014-06-08 23:06:43.903120060 +0800
++++ xgui/sources/Makefile	2014-06-08 23:06:57.485121237 +0800
+@@ -147,10 +147,10 @@ PROGRAM            = xgui
+ all: $(PROGRAM)
+ 
+ $(XGUIBINDIR):
+-	-mkdir $(XGUIBINDIR)
++	-mkdir $(DESTDIR)$(XGUIBINDIR)
+ 
+ install: all $(XGUIBINDIR)
+-	$(INSTALL_PROGRAM) $(PROGRAM) $(XGUIBINDIR)
++	$(INSTALL_PROGRAM) $(PROGRAM) $(DESTDIR)$(XGUIBINDIR)
+ 
+ install-strip:
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install
