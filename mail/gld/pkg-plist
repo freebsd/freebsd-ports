@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/gld.conf %D/etc/gld.conf-dist; then rm -f %D/etc/gld.conf; fi
-etc/gld.conf-dist
-@exec [ -f %B/gld.conf ] || cp %B/%f %B/gld.conf
+@sample etc/gld.conf.sample
 sbin/gld
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE
