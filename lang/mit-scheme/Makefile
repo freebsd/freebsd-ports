@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mit-scheme
-PORTVERSION=	9.1.1
+PORTVERSION=	9.2
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mit-scheme/stable.pkg/${PORTVERSION}
@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${MIT_SCHEME_ARCH}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	MIT Scheme: includes runtime, compiler, and edwin binaries
+
+LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
@@ -22,13 +24,17 @@ MHASH_DESC=	mhash library support
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 900000 && ${ARCH} == "amd64"
+USE_GCC=	yes
+.endif
+
 # TODO implement db4 support
 CONFIGURE_ARGS+=--without-db-4
 
 .if ${PORT_OPTIONS:MGDBM}
 PLIST_SUB+=	GDBM=""
 CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 .else
 PLIST_SUB+=	GDBM="@comment "
 CONFIGURE_ARGS+=--without-gdbm
@@ -37,7 +43,7 @@ CONFIGURE_ARGS+=--without-gdbm
 .if ${PORT_OPTIONS:MMHASH}
 PLIST_SUB+=	MHASH=""
 CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
-LIB_DEPENDS+=	mhash:${PORTSDIR}/security/mhash
+LIB_DEPENDS+=	libmhash.so:${PORTSDIR}/security/mhash
 .else
 PLIST_SUB+=	MHASH="@comment "
 CONFIGURE_ARGS+=--without-mhash
@@ -46,7 +52,7 @@ CONFIGURE_ARGS+=--without-mhash
 .if ${PORT_OPTIONS:MMCRYPT}
 PLIST_SUB+=	MCRYPT=""
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
-LIB_DEPENDS+=	mcrypt:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS+=	libmcrypt.so:${PORTSDIR}/security/libmcrypt
 .else
 PLIST_SUB+=	MCRYPT="@comment "
 CONFIGURE_ARGS+=--without-mcrypt

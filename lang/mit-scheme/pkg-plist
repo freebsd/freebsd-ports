@@ -4,13 +4,222 @@ bin/mit-scheme-%%MIT_SCHEME_ARCH%%
 bin/mit-scheme-native
 bin/scheme
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/all.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/asmmac.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/asmmac.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/asutl.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/asutl.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/bittop.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/bittop.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/bitutl.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/bitutl.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/checks.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/checks.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/insseq.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/insseq.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/lapgn1.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/lapgn1.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/lapgn2.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/lapgn2.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/lapgn3.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/lapgn3.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/linear.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/linear.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/mermap.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/mermap.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/regmap.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/regmap.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/syerly.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/syerly.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/symtab.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/symtab.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/syntax.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back/syntax.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/asstop.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/asstop.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/blocks.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/blocks.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/cfg1.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/cfg1.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/cfg2.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/cfg2.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/cfg3.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/cfg3.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/constr.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/constr.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/contin.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/contin.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/crsend.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/crsend.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/crstop.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/crstop.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/ctypes.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/ctypes.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/debug.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/debug.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/enumer.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/enumer.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/infnew.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/infnew.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/lvalue.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/lvalue.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/macros.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/macros.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/make.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/make.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/mvalue.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/mvalue.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/object.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/object.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/pmerly.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/pmerly.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/pmlook.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/pmlook.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/pmpars.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/pmpars.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/proced.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/proced.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/refctx.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/refctx.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/rvalue.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/rvalue.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/scode.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/scode.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/sets.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/sets.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/subprb.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/subprb.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/switch.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/switch.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/toplev.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/toplev.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/utils.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base/utils.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/compiler-os2.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/compiler-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/compiler-w32.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fggen/canon.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fggen/canon.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fggen/declar.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fggen/declar.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fggen/fggen.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fggen/fggen.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/blktyp.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/blktyp.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/closan.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/closan.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/conect.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/conect.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/contan.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/contan.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/delint.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/delint.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/desenv.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/desenv.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/envopt.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/envopt.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/folcon.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/folcon.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/offset.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/offset.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/operan.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/operan.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/order.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/order.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/outer.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/outer.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/param.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/param.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/reord.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/reord.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/reteqv.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/reteqv.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/reuse.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/reuse.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/sideff.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/sideff.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/simapp.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/simapp.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/simple.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/simple.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/subfre.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/subfre.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/varind.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt/varind.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/regset.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/regset.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rgraph.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rgraph.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlcfg.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlcfg.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlcon.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlcon.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlexp.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlexp.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtline.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtline.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlobj.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlobj.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlreg.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlreg.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlty1.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlty1.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlty2.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/rtlty2.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/valclass.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase/valclass.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/fndblk.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/fndblk.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/fndvar.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/fndvar.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/opncod.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/opncod.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgcomb.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgcomb.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgproc.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgproc.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgretn.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgretn.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgrval.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgrval.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgstmt.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rgstmt.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rtlgen.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen/rtlgen.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/ralloc.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/ralloc.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcompr.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcompr.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcse1.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcse1.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcse2.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcse2.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcseep.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcseep.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcseht.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcseht.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcserq.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcserq.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcsesr.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rcsesr.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rdebug.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rdebug.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rdflow.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rdflow.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rerite.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rerite.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rinvex.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rinvex.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rlife.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rlife.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rtlcsm.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt/rtlcsm.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/anfile.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/anfile.com
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/butils.bci
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/butils.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/conpkg.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/conpkg.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/cref-os2.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/cref-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/cref-w32.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/forpkg.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/forpkg.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref/make.bci
@@ -79,6 +288,9 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/ed-ffi.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/editor.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/edtfrm.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/edtstr.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/edwin-os2.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/edwin-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/edwin-w32.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/evlcom.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/eystep.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/eystep.com
@@ -209,6 +421,8 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/xcom.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/xform.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/xmodef.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin/xterm.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/build.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/build.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/cdecls.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/cdecls.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi/ctypes.bci
@@ -231,6 +445,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-imap.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-imap.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-mime.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-mime.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-os2.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-rmail.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-rmail.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-summary.bci
@@ -242,18 +457,12 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-umail.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-unx.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-util.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-util.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imail-w32.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imap-response.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imap-response.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imap-syntax.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imap-syntax.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/load.scm
-%%OPENSSL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prbfish.so
-%%GDBM%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prgdbm.so
-%%MCRYPT%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmcrypt.so
-%%MHASH%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmhash.so
-%%OPENSSL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmd5.so
-%%POSTGRESQL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
-%%X11%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prx11.so
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/mit-scheme.h
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/optiondb.scm
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime.com
@@ -326,6 +535,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/html-form-codec.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/http-client.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/http-syntax.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/httpio.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/ieee754.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/infstr.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/infutl.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/input.bci
@@ -394,6 +604,9 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/rexp.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/rfc2822-headers.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/rgxcmp.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/rgxcmp.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/runtime-os2.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/runtime-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/runtime-w32.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/savres.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/scan.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/scode.bci
@@ -426,6 +639,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/syntax.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/sysclk.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/sysmac.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/system.bci
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/thread-queue.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/thread.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/tscript.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/ttyio.bci
@@ -482,7 +696,9 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/pthmap.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/pthmap.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/reduct.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/reduct.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/sf-os2.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/sf-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/sf-w32.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/subst.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/subst.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/tables.bci
@@ -495,6 +711,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/usiexp.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/usiexp.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/xform.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf/xform.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/shim-config.scm
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/class.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/class.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/instance.bci
@@ -508,13 +725,17 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/printer.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/printer.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/slot.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/slot.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/sos-os2.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/sos-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos/sos-w32.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/expenv.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/expenv.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/load.scm
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/mod-lisp.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/mod-lisp.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/ssp-os2.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/ssp-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/ssp-w32.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/xhtml-expander.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/xhtml-expander.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/xmlrpc.bci
@@ -522,7 +743,9 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp/xmlrpc.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/load.scm
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/matcher.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/matcher.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/parser-os2.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/parser-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/parser-w32.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/parser.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/parser.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser/shared.bci
@@ -542,6 +765,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-chars.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-chars.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-names.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-names.com
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-os2.pkd
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-output.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-output.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-parser.bci
@@ -551,16 +775,32 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-rpc.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-struct.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-struct.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-unx.pkd
+lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-w32.pkd
+%%OPENSSL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prbfish.so
+%%GDBM%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prgdbm.so
+%%MCRYPT%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmcrypt.so
+%%MHASH%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmhash.so
+%%OPENSSL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmd5.so
+%%POSTGRESQL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
+%%X11%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prx11.so
 man/man1/scheme.1.gz
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi
-@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/back
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/base
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fggen
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/fgopt
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlbase
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlgen
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler/rtlopt
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/compiler
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/cref
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/edwin
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ffi
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sf
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/sos
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser
+@dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%
