@@ -19,6 +19,7 @@ PLIST=		${.CURDIR}/pkg-plist
 PIDGIN_SLAVE=	yes
 WITH_CONSOLEUI=	yes
 
+CPPFLAGS+=	-DNCURSES_WIDECHAR
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtkui \
 		--disable-nm \
