@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Geo/Coder/Many/Googlev3.pm
 %%SITE_PERL%%/Geo/Coder/Many/Mapquest.pm
 %%SITE_PERL%%/Geo/Coder/Many/OSM.pm
+%%SITE_PERL%%/Geo/Coder/Many/OpenCage.pm
 %%SITE_PERL%%/Geo/Coder/Many/Ovi.pm
 %%SITE_PERL%%/Geo/Coder/Many/PlaceFinder.pm
 %%SITE_PERL%%/Geo/Coder/Many/Response.pm
@@ -23,6 +24,7 @@
 %%PERL5_MAN3%%/Geo::Coder::Many::Googlev3.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::Mapquest.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::OSM.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::OpenCage.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::Ovi.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::PlaceFinder.3.gz
 %%PERL5_MAN3%%/Geo::Coder::Many::Response.3.gz
@@ -35,7 +37,9 @@
 %%PERL5_MAN3%%/Geo::Coder::Many::Util.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Many
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
 @dirrm %%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler
 @dirrm %%SITE_PERL%%/Geo/Coder/Many/Scheduler
 @dirrm %%SITE_PERL%%/Geo/Coder/Many
 @dirrmtry %%SITE_PERL%%/Geo/Coder
+@dirrmtry %%SITE_PERL%%/Geo
