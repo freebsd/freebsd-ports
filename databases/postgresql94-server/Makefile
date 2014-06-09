@@ -14,6 +14,6 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/bin/pg_controldata src/bin/pg_resetxlog src/pl \
 		src/bin/pg_basebackup
 
-ICU_PATCHFILE=	pg-940-icu-2014-05-18.diff.gz
+ICU_PATCHFILE=	pg-940-icu-2014-06-09.diff.gz
 
 .include "${.CURDIR}/../postgresql92-server/Makefile"
