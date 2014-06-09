@@ -2,7 +2,7 @@
 
 PORTNAME=	xdm
 PORTVERSION=	1.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,6 +14,7 @@ XORG_CAT=	app
 USE_XORG=	xmu x11 xau xinerama xpm xdmcp xt xext xaw
 CONFIGURE_ARGS+=	--with-xdmconfigdir=${EXAMPLESDIR} \
 			--with-xdmscriptdir=${EXAMPLESDIR}
+USES=		libtool
 
 CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 		Xservers Xsession Xsetup_0 Xstartup Xwilling xdm-config

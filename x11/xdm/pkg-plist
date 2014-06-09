@@ -2,7 +2,6 @@ bin/xdm
 %%XDMSHELL%%bin/xdmshell
 lib/X11/xdm/authdir
 lib/X11/xdm/chooser
-lib/X11/xdm/libXdmGreet.la
 lib/X11/xdm/libXdmGreet.so
 lib/X11/xdm/pixmaps/xorg-bw.xpm
 lib/X11/xdm/pixmaps/xorg.xpm
