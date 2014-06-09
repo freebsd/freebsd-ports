@@ -10,15 +10,12 @@ MASTER_SITES=	SF/linux-igd/linux-igd/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux UPnP Internet Gateway Device
 
-LIB_DEPENDS=	upnp.9:${PORTSDIR}/devel/upnp
+LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
 
 USE_RC_SUBR=	linuxigd
 USES=		gmake
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
-MAN8=		upnpd.8
-
-NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/iptc.?
 
