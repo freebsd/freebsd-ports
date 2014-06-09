@@ -70,6 +70,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/clsync ${STAGEDIR}/${PREFIX}/sbin/clsync
 	${INSTALL_DATA} ${WRKSRC}/man/man1/clsync.1 ${STAGEDIR}/${PREFIX}/man/man1/clsync.1
 	${MKDIR} ${STAGEDIR}/${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/freebsd/usr/local/etc/clsync/${PORTNAME}.conf ${STAGEDIR}/${ETCDIR}/${PORTNAME}.conf
+	${INSTALL_DATA} ${WRKSRC}/freebsd/usr/local/etc/clsync/${PORTNAME}.conf ${STAGEDIR}/${ETCDIR}/${PORTNAME}.conf.sample
 
 .include <bsd.port.post.mk>
