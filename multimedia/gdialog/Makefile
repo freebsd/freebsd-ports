@@ -10,6 +10,8 @@ DISTNAME=	GDialog-090400-25
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Project X addon to read Siemens Gigaset M740AV video recordings
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
 RUN_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
 
@@ -22,12 +24,11 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	gdialog
 DATADIR=	${JAVASHAREDIR}/projectx
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/GDialog.jar ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes.txt ${DATADIR}/GDialog-ReleaseNotes.txt
-	${INSTALL_DATA} ${WRKSRC}/Copying ${DATADIR}/GDialog-Copying
-	${INSTALL_SCRIPT} ${WRKDIR}/gdialog ${PREFIX}/bin/gdialog
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/GDialog.jar ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes.txt ${STAGEDIR}${DATADIR}/GDialog-ReleaseNotes.txt
+	${INSTALL_DATA} ${WRKSRC}/Copying ${STAGEDIR}${DATADIR}/GDialog-Copying
+	${INSTALL_SCRIPT} ${WRKDIR}/gdialog ${STAGEDIR}${PREFIX}/bin/gdialog
 
 .include <bsd.port.mk>
