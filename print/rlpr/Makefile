@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 # rlpr supports gettext/libintl, but does not currently come with ANY
 # translation .po files. When this changes, it would make sense to
-NO_STAGE=	yes
 # enable the use of gettext in this port:
 #USES=	gettext
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
@@ -32,11 +31,12 @@ post-patch:
 
 post-install:
 	# Making the installed binaries suid,\
-		      for the remote lpds to talk to them"
-	${CHMOD} 4555 ${PREFIX}/bin/rlpq ${PREFIX}/bin/rlpr ${PREFIX}/bin/rlprm
+		      for the remote lpds to talk to them
+	${CHMOD} 4555 ${STAGEDIR}${PREFIX}/bin/rlpq	\
+		${STAGEDIR}${PREFIX}/bin/rlpr	\
+		${STAGEDIR}${PREFIX}/bin/rlprm
 
-MAN1=	rlpr.1 rlpq.1 rlprm.1
-MAN5=	rlprrc.5
-MAN8=	rlprd.8
+PLIST_FILES+=	man/man1/rlpq.1.gz man/man1/rlpr.1.gz man/man1/rlprm.1.gz \
+		man/man5/rlprrc.5.gz man/man8/rlprd.8.gz
 
 .include <bsd.port.mk>
