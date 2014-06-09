@@ -32,7 +32,6 @@ CAIRO_DESC=	Use Cairo based Graphics2D
 GTK2_DESC=	Enable Gtk+ AWT peer
 ZIP_DESC=	Compress class library
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
