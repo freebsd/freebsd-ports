@@ -5,7 +5,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms/JICMP6/stable-1.2
 
-MAINTAINER=	ports@FreeBSD.orig
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java native interface (JNI) to ICMPv6
 
 USES=		libtool
