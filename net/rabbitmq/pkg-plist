@@ -187,6 +187,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_mqtt-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_shovel-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_shovel_management-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_stomp-%%VERSION%%.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_test-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_tracing-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_dispatch-%%VERSION%%.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp-%%VERSION%%.ez
