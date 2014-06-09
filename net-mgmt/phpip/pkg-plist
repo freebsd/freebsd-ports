@@ -1,5 +1,5 @@
-@owner ${WWWOWN}
-@group ${WWWGRP}
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%PHPIP%%/COPYING
 %%PHPIP%%/ChangeLog
 %%PHPIP%%/INSTALL
