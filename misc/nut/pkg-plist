@@ -1,0 +1,7 @@
+%%FLTK%%bin/Nut
+bin/nut
+man/man1/nut.1.gz
+%%FLTK%%share/pixmaps/nuticon.xpm
+%%DATADIR%%/WEIGHT.lib
+%%DATADIR%%/sr26.nut
+@dirrmtry %%DATADIR%%

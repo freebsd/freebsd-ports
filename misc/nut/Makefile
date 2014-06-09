@@ -2,47 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	nut
-PORTVERSION=	18.4
-PORTREVISION=	2
+PORTVERSION=	19.1
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
 LICENSE=	GPLv2 # (or later)
 
-OPTIONS_DEFINE=	FLTK DOCS
-FLTK_DESC=	Install FLTK GUI
-
 USES=		gmake
 
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
-
-MAN1=		${PORTNAME}.1
 PORTDOCS=	CREDITS README nut.html
-PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FOOD_DES.txt \
-		%%DATADIR%%/NUT_DATA.txt %%DATADIR%%/WEIGHT.lib \
-		%%DATADIR%%/WEIGHT.txt %%DATADIR%%/sr25.nut
-PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	FLTK DOCS
+OPTIONS_SUB=	yes
+
+FLTK_DESC=		Install FLTK GUI
+FLTK_LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+			libfreetype.so:${PORTSDIR}/print/freetype2 \
+			libexpat.so:${PORTSDIR}/textproc/expat2 \
+			libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+			libfltk_images.so:${PORTSDIR}/x11-toolkits/fltk
+FLTK_USE=		XORG=x11 xau xcb xdmcp xext xft xinerama xpm xrender
+FLTK_MAKE_ENV=		HAVE_FLTK=1 FLTK_NUT="fltk/Nut"
+FLTK_MAKE_ENV_OFF=	HAVE_FLTK=0 FLTK_NUT=""
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLTK}
-LIB_DEPENDS+=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		fltk_images:${PORTSDIR}/x11-toolkits/fltk
-USE_XORG+=	x11 xau xcb xdmcp xext xft xinerama xrender
-MAKE_ENV+=	HAVE_FLTK=1 FLTK_NUT="fltk/Nut"
-PLIST_FILES+=	bin/Nut
-DESKTOP_ENTRIES="Nut" "${COMMENT}" "" "Nut" \
-		"Science;Biology;MedicalSoftware;" "false"
-.else
-MAKE_ENV+=	HAVE_FLTK=0 FLTK_NUT=""
+DESKTOP_ENTRIES="Nut" "" "nuticon" "Nut" \
+		"Science;Biology;MedicalSoftware;" false
 .endif
 
 post-patch:
@@ -53,23 +45,18 @@ post-patch:
 		 s|^CC =|CC ?=| ; \
 		 s|^CXX =|CXX ?=| ; \
 		 s|^CFLAGS :=|CFLAGS +=| ; \
-		 s|-ansi -pedantic|| ; \
-		 s|$$(OPT)|| ; \
-		 s|ldstaticflags|ldflags| '
+		 s|$$(OPT)||'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MFLTK}
-	${INSTALL_PROGRAM} ${WRKSRC}/fltk/Nut ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/fltk/Nut ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/nuticon.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/raw.data && ${COPYTREE_SHARE} . ${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/nut ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nut.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/raw.data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
