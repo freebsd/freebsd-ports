@@ -7,7 +7,7 @@ CATEGORIES=	math lang
 MASTER_SITES=	SF/${PORTNAME}-algebra/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Portable general-purpose computer algebra system (CSL version)
 
 LICENSE=	BSD2CLAUSE
