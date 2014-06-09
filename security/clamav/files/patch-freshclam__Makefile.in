@@ -1,0 +1,11 @@
+--- freshclam/Makefile.in.orig	2014-06-09 10:19:33.000000000 -0300
++++ freshclam/Makefile.in	2014-06-09 10:20:12.000000000 -0300
+@@ -414,7 +414,7 @@
+     mirman.h
+ 
+ AM_CFLAGS = @WERR_CFLAGS@
+-AM_CPPFLAGS = @SSL_CPPFLAGS@ -I$(top_srcdir) -I$(top_srcdir)/shared -I$(top_srcdir)/libclamav @FRESHCLAM_CPPFLAGS@
++AM_CPPFLAGS = -I$(top_srcdir) -I$(top_srcdir)/shared -I$(top_srcdir)/libclamav @SSL_CPPFLAGS@ @FRESHCLAM_CPPFLAGS@
+ AM_INSTALLCHECK_STD_OPTIONS_EXEMPT = freshclam$(EXEEXT)
+ CLEANFILES = *.gcda *.gcno
+ all: all-am
