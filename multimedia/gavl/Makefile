@@ -3,6 +3,7 @@
 
 PORTNAME=	gavl
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -12,7 +13,7 @@ COMMENT=	A library for handling uncompressed video and audio data
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -23,17 +24,10 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS PNG
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS PNG
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_OFF=	--disable-libpng
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-.else
-CONFIGURE_ARGS+=	--disable-libpng
-.endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
@@ -44,8 +38,8 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
