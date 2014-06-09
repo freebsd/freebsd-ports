@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.netswarm.net/misc/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of wmxmms to GTK 2.x and Audacious
 
 LICENSE=	GPLv2
