@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=ye
+USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=yes
 
 post-patch:
