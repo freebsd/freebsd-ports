@@ -1,0 +1,4 @@
+man/man8/tproxy.8.gz
+sbin/tproxy
+sbin/tproxyrun
+sbin/tproxywatch
