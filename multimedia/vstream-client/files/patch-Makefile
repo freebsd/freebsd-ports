@@ -1,0 +1,15 @@
+--- Makefile.orig	2014-06-09 11:10:17.744127904 +0800
++++ Makefile	2014-06-09 11:10:39.050126273 +0800
+@@ -14,9 +14,9 @@ CFLAGS  += $(INCLUDE)
+ all:	$(LIBNAME) vstream-client
+ 
+ install:	$(LIBNAME) vstream-client
+-	$(INSTALL) -m 755 vstream-client $(BINDIR)/vstream-client
+-	$(INSTALL) -m 644 $(LIBNAME) $(LIBDIR)/$(LIBNAME)
+-	$(INSTALL) -m 644 vstream-client.h $(INCDIR)/vstream-client.h
++	$(INSTALL) -m 755 vstream-client $(DESTDIR)$(BINDIR)/vstream-client
++	$(INSTALL) -m 644 $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(LIBNAME)
++	$(INSTALL) -m 644 vstream-client.h $(DESTDIR)$(INCDIR)/vstream-client.h
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) -o $@ $<

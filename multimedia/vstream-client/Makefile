@@ -11,7 +11,7 @@ COMMENT=	Client library for the Tivo vstream server
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
@@ -19,7 +19,6 @@ PLIST_FILES=	bin/vstream-client \
 		include/vstream-client.h \
 		lib/libvstream-client.a
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$(INSTALL) -m 755|$${BSD_INSTALL_PROGRAM}| ; \
