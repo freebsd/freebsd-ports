@@ -12,28 +12,34 @@ PKGNAMESUFFIX=	-131
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
 
-BROKEN=		Does not build
-MAN5=		tw.config.5
-MAN8=		siggen.8 tripwire.8
 NO_CDROM=	Cannot be redistributed for more than the cost of duplication
 NO_PACKAGE=	requires local database to be built
+# XXX should also work on other 32-bit architectures.
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	Unknown BYTEORDER
 WRKSRC=		${WRKDIR}/tw_ASR_1.3.1_src
 MAKE_JOBS_UNSAFE=	yes
 
-TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+TDATADIR=	${STAGEDIR}/var/local/tcheck
+MAKE_ARGS=	BINDIR=${STAGEDIR}${PREFIX}/bin \
+		MANPREFIX=${STAGEDIR}${MANPREFIX}
+NO_DB_BUILD=	yes
+
+TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2
 
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
 	@ ${CP} ${TWCONFIG} ${WRKSRC}/configs/tw.conf.freebsd2
 
 post-install:
-	@ ${MKDIR} /var/adm/tcheck
-	@ ${CP} ${TWCONFIG} /var/adm/tcheck/tw.config
+	@ ${MKDIR} ${TDATADIR}
+	@ ${CP} ${TWCONFIG} ${TDATADIR}/tw.config.dist
 .ifndef NO_DB_BUILD
+	# XXX For reference only
 	@ ${ECHO} Creating tripwire database
+	@ ${CP} -i ${TWCONFIG} ${TDATADIR}/tw.config
 	@ (cd /var/adm/tcheck; tripwire -initialize)
 .endif
 

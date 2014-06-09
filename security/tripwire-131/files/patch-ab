@@ -1,29 +1,50 @@
---- Makefile.orig	Tue May  4 01:31:00 1999
-+++ Makefile	Thu May 11 19:44:50 2000
-@@ -10,11 +10,11 @@
+--- Makefile.orig	1999-05-04 01:31:00.000000000 -0700
++++ Makefile	2014-06-07 22:43:39.000000000 -0700
+@@ -10,11 +10,9 @@
  ###
  
  # destination directory for final executables
 -DESTDIR = /usr/local/bin/tw
 -DATADIR = /var/tripwire
-+DESTDIR = /usr/local/bin
-+DATADIR = /var/adm/tcheck
  
  # destination for man pages
 -MANDIR  = /usr/man		# This needs to change to reflect the path
-+MANDIR  = /usr/local/man	# This needs to change to reflect the path
++MANDIR  = $(MANPREFIX)/man	# This needs to change to reflect the path
                          # on your system
  
  # system utilities
-@@ -109,10 +109,8 @@
- 	$(INSTALL) -d $(DESTDIR)
- 	(cd src; make INSTALL=$(INSTALL) DESTDIR=$(DESTDIR) install)
+@@ -33,7 +31,6 @@
+ 
+ # you can use ANSI C if you like, but K&R is equally fine.
+ #CC     = cc			# common
+-CC     = gcc			# also common
+ #CC	= /usr/ccs/bin/cc	# Pyramid DC/OSx (SVR4)
+ 
+ CFLAGS = -O			# common 
+@@ -60,8 +57,8 @@
+ #CPP	= /lib/cpp		# on older systems
+ 
+ # make sure libraries are not linked dynamically (as a security measure)
+-#LDFLAGS= -static        # Most systems, Linux / RedHat 5.2 and previous
+-LDFLAGS= -ldl          # Solaris 2.x, Redhat 6.0
++LDFLAGS= -static        # Most systems, Linux / RedHat 5.2 and previous
++#LDFLAGS= -ldl          # Solaris 2.x, Redhat 6.0
+ # common
+ #LDFLAGS= -non_shared		# OSF/1
+ #LDFLAGS= -Bstatic		# SunOS 4 (cannot statically link tripwire
+@@ -106,13 +103,9 @@
+ 		YACC="$(YACC)" LEX="$(LEX)" all)
+ 
+ install: all
+-	$(INSTALL) -d $(DESTDIR)
+-	(cd src; make INSTALL=$(INSTALL) DESTDIR=$(DESTDIR) install)
++	$(INSTALL) -d $(BINDIR)
++	(cd src; make INSTALL=$(INSTALL) BINDIR=$(BINDIR) install)
  	(cd man; make INSTALL=$(INSTALL) MANDIR=$(MANDIR) install)
 -	(cd configs; $(INSTALL) -m 444 tw.config $(DESTDIR))
 -	chmod 555 $(DESTDIR)
- 	$(INSTALL) -m 0755 -d $(DATADIR)
+-	$(INSTALL) -m 0755 -d $(DATADIR)
 -	$(INSTALL) -m 444 tests/tw.db_TEST $(DATADIR)
-+	(cd configs; $(INSTALL) -m 444 tw.config $(DATADIR))
  
  test:	all
  	(cd tests; make HOSTNAME=$(HOSTNAME) DIST=$(DIST) SHELL=$(SHELL) \

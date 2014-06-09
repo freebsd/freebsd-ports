@@ -6,8 +6,8 @@
  install:	tripwire
 -	$(INSTALL) -m 555 tripwire $(DESTDIR)
 -	$(INSTALL) -m 555 siggen $(DESTDIR) 
-+	$(INSTALL) -f noschg -s -m 555 tripwire $(DESTDIR)
-+	$(INSTALL) -f noschg -s -m 555 siggen $(DESTDIR)
++	$(INSTALL) -f noschg -s -m 555 tripwire $(BINDIR)
++	$(INSTALL) -f noschg -s -m 555 siggen $(BINDIR)
  
  clean:
  	-rm -f $(OFILES) config.lex.c config.pre.c y.tab.c lex.yy.c help.c \
