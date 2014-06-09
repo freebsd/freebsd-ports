@@ -1,62 +1,46 @@
-*** Makefile	Mon Jul 25 10:59:41 1994
---- Makefile	Thu Jan  2 12:04:35 1997
-***************
-*** 34,36 ****
-  # you can use ANSI C if you like, but K&R is equally fine.
-! CC     = cc			# common
-  #CC     = gcc			# also common
---- 34,36 ----
-  # you can use ANSI C if you like, but K&R is equally fine.
-! #CC     = cc			# common
-  #CC     = gcc			# also common
-***************
-*** 38,40 ****
-  
-! CFLAGS = -O			# common 
-  #CFLAGS = -g 			# common 
---- 38,40 ----
-  
-! #CFLAGS = -O			# common 
-  #CFLAGS = -g 			# common 
-***************
-*** 60,66 ****
-  #CPP	= /lib/cpp		# on older systems
-  
-  # make sure libraries are not linked dynamically (as a security measure)
-! LDFLAGS=			# common
-  #LDFLAGS= -non_shared		# OSF/1
-  #LDFLAGS= -Bstatic		# SunOS 4 (cannot statically link tripwire
-                            	#          on Solaris 2.3)
---- 60,67 ----
-  #CPP	= /lib/cpp		# on older systems
-  
-  # make sure libraries are not linked dynamically (as a security measure)
-! LDFLAGS= -static
-! #LDFLAGS=			# common
-  #LDFLAGS= -non_shared		# OSF/1
-  #LDFLAGS= -Bstatic		# SunOS 4 (cannot statically link tripwire
-                            	#          on Solaris 2.3)
-
-
---- src/Makefile.orig	Mon Jul 25 10:40:54 1994
-+++ src/Makefile	Sun May 28 15:52:25 2000
-@@ -3,7 +3,7 @@
- # 	Tripwire build
- #
+--- Makefile.orig	2014-06-09 12:38:51.784239761 -0700
++++ Makefile	2014-06-09 12:43:05.345562324 -0700
+@@ -12,10 +12,8 @@
+ ###
  
--CFLAGS = -O
-+#CFLAGS = -O
+ # destination directory for final executables
+-DESTDIR = /secureplace/bin
  
- OFILES = 	config.parse.o main.o list.o ignorevec.o dbase.build.o \
- 		utils.o preen.o preen.interp.o preen.report.o \
-@@ -103,8 +103,9 @@
- .c.o:
- 	$(CC) $(CFLAGS) -c $<
+ # destination for man pages
+-MANDIR  = /usr/man
  
--install:	tripwire
-+install:	tripwire siggen
- 	$(INSTALL) tripwire $(DESTDIR)
-+	$(INSTALL) siggen $(DESTDIR)
+ # system utilities
+ LEX	= lex
+@@ -32,11 +30,11 @@
+ #SHELL	= /bin/bash		# For the GNU fanatics
  
- clean:
- 	-rm -f $(OFILES) config.lex.c config.pre.c y.tab.c lex.yy.c help.c \
+ # you can use ANSI C if you like, but K&R is equally fine.
+-CC     = cc			# common
++#CC     = cc			# common
+ #CC     = gcc			# also common
+ #CC	= /usr/ccs/bin/cc	# Pyramid DC/OSx (SVR4)
+ 
+-CFLAGS = -O			# common 
++#CFLAGS = -O			# common 
+ #CFLAGS = -g 			# common 
+ #CFLAGS = -g			# debugging
+ #CFLAGS = -O -cckr		# SGI
+@@ -60,7 +58,8 @@
+ #CPP	= /lib/cpp		# on older systems
+ 
+ # make sure libraries are not linked dynamically (as a security measure)
+-LDFLAGS=			# common
++LDFLAGS= -static
++#LDFLAGS=			# common
+ #LDFLAGS= -non_shared		# OSF/1
+ #LDFLAGS= -Bstatic		# SunOS 4 (cannot statically link tripwire
+                           	#          on Solaris 2.3)
+@@ -103,7 +102,7 @@
+ 		YACC="$(YACC)" LEX="$(LEX)" all)
+ 
+ install: all
+-	(cd src; make INSTALL=$(INSTALL) DESTDIR=$(DESTDIR) install)
++	(cd src; make INSTALL=$(INSTALL) DESTDIR=$(BINDIR) install)
+ 	(cd man; make INSTALL=$(INSTALL) MANDIR=$(MANDIR) install)
+ 
+ test:	all
