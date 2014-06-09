@@ -3,19 +3,17 @@
 
 PORTNAME=	netustad
 PORTVERSION=	0.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.enderunix.org/netustad/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Web based admin tool that manages network services
 
-#MAN8=		netustad.8 netustadpasswd.8
-#MAN5=		netustad.conf.5
-
 USE_RC_SUBR=	${PORTNAME}
 USES=		gettext
 GNU_CONFIGURE=	yes
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	SSL NLS
 OPTIONS_DEFAULT=SSL
@@ -23,7 +21,6 @@ SSL_DESC=	Use netUstad with SSL support
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -42,6 +39,6 @@ post-patch:
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MV} ${STAGEDIR}${ETCDIR}/netustad.conf-dist ${STAGEDIR}${ETCDIR}/netustad.conf.sample
 
 .include <bsd.port.mk>
