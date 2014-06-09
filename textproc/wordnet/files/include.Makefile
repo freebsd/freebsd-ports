@@ -1,4 +1,4 @@
-WN_INSTALLDIR = ${PREFIX}/include/WordNet
+WN_INSTALLDIR = ${STAGEDIR}${PREFIX}/include/WordNet
 
 WN_FILES=	wn.h wngrind.h
 
