@@ -19,5 +19,4 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pdf2svg
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
