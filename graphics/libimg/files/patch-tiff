@@ -28,7 +28,7 @@
 +#include <jpeglib.h>
  
  
-@@ -35,7 +39,4 @@
+@@ -35,7 +39,4 @@ static int SetupTiffLibrary(Tcl_Interp *
  #include "init.c"
  
 -#include "tiffInt.h"
@@ -36,7 +36,7 @@
 -
  extern DLLIMPORT int unlink(const char *);
  
-@@ -88,10 +89,4 @@
+@@ -88,10 +89,4 @@ SetupTiffLibrary (interp)
      Tcl_Interp *interp;
  {
 -    static int initialized = 0;
@@ -47,7 +47,7 @@
 -
      if (errorMessage) {
  	ckfree(errorMessage);
-@@ -105,35 +100,4 @@
+@@ -105,35 +100,4 @@ SetupTiffLibrary (interp)
      }
  
 -    /*
@@ -83,7 +83,7 @@
 -    }
      return TCL_OK;
  }
-@@ -451,8 +415,6 @@
+@@ -451,8 +415,6 @@ ObjRead(interp, data, format, imageHandl
  {
      TIFF *tif;
 -    char *tempFileName = NULL, tempFileNameBuffer[256];
@@ -93,7 +93,7 @@
 -    char buffer[1024];
      char *dataPtr = NULL;
  
-@@ -461,35 +423,13 @@
+@@ -461,35 +423,13 @@ ObjRead(interp, data, format, imageHandl
      }
  
 -    if (TIFFClientOpen) {
@@ -138,7 +138,7 @@
 +	sizeString, mapDummy, unMapDummy);
  
      if (tif != NULL) {
-@@ -499,7 +439,4 @@
+@@ -499,7 +439,4 @@ ObjRead(interp, data, format, imageHandl
  	result = TCL_ERROR;
      }
 -    if (tempFileName) {
@@ -146,7 +146,7 @@
 -    }
      if (result == TCL_ERROR) {
  	Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -526,37 +463,12 @@
+@@ -526,37 +463,12 @@ ChnRead(interp, chan, fileName, format, 
  {
      TIFF *tif;
 -    char *tempFileName = NULL, tempFileNameBuffer[256];
@@ -191,7 +191,7 @@
 +	sizeMFile, mapDummy, unMapDummy);
      if (tif) {
  	result = CommonRead(interp, tif, format, imageHandle,
-@@ -565,7 +477,4 @@
+@@ -565,7 +477,4 @@ ChnRead(interp, chan, fileName, format, 
  	result = TCL_ERROR;
      }
 -    if (tempFileName) {
@@ -199,34 +199,37 @@
 -    }
      if (result == TCL_ERROR) {
  	Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -635,5 +544,5 @@
+@@ -635,5 +544,5 @@ CommonRead(interp, tif, format, imageHan
      npixels = w * h;
  
 -    raster = (uint32*) TkimgTIFFmalloc(npixels * sizeof (uint32));
 +    raster = (uint32*) _TIFFmalloc(npixels * sizeof (uint32));
      block.width = w;
      block.height = h;
-@@ -646,5 +555,5 @@
+@@ -646,5 +555,5 @@ CommonRead(interp, tif, format, imageHan
  
      if (!TIFFReadRGBAImage(tif, w, h, raster, 0) || errorMessage) {
 -        TkimgTIFFfree (raster);
 +        _TIFFfree (raster);
  	if (errorMessage) {
  	    Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -663,5 +572,5 @@
+@@ -663,5 +572,5 @@ CommonRead(interp, tif, format, imageHan
      }
  
 -    TkimgTIFFfree (raster);
 +    _TIFFfree (raster);
      TIFFClose(tif);
      return result;
-@@ -676,5 +585,4 @@
-     int result, comp;
+@@ -674,7 +583,6 @@ static int StringWrite(
+ ) {
+     TIFF *tif;
+-    int result, comp;
++    int result, comp, length;
      tkimg_MFile handle;
 -    char *tempFileName = NULL, tempFileNameBuffer[256];
      Tcl_DString dstring;
      const char *mode;
-@@ -686,14 +594,9 @@
+@@ -686,14 +594,9 @@ static int StringWrite(
      }
  
 -    if (TIFFClientOpen) {
@@ -246,7 +249,7 @@
 +	sizeString, mapDummy, unMapDummy);
  
      result = CommonWrite(interp, tif, comp, blockPtr);
-@@ -701,7 +604,4 @@
+@@ -701,7 +604,4 @@ static int StringWrite(
  
      if (result != TCL_OK) {
 -	if (tempFileName) {
@@ -254,7 +257,7 @@
 -	}
  	Tcl_AppendResult(interp, errorMessage, (char *) NULL);
  	ckfree(errorMessage);
-@@ -710,29 +610,7 @@
+@@ -710,29 +610,8 @@ static int StringWrite(
      }
  
 -    if (tempFileName) {
@@ -282,12 +285,13 @@
 -	tkimg_Write(&handle, Tcl_DStringValue(&dstring), length);
 -	Tcl_DStringFree(&dstring);
 -    }
++    length = handle.length;
 +    tkimg_WriteInit(&data, &handle);
-+    tkimg_Write(&handle, Tcl_DStringValue(&dstring), handle.length);
++    tkimg_Write(&handle, Tcl_DStringValue(&dstring), length);
 +    Tcl_DStringFree(&dstring);
      tkimg_Putc(IMG_DONE, &handle);
      if (result == TCL_OK) {
-@@ -954,36 +832,2 @@
+@@ -954,36 +833,2 @@ CommonWrite(interp, tif, comp, blockPtr)
      return TCL_OK;
  }
 -
