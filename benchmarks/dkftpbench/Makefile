@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks ftp
 MASTER_SITES=	http://www.kegel.com/dkftpbench/
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	A FTP benchmark program
+COMMENT=	FTP benchmark program
 
 PLIST_FILES=	bin/dkftpbench
 

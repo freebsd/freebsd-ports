@@ -8,7 +8,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/0-1-9
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tiny version of Chinput
+COMMENT=	Tiny version of Chinput
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib

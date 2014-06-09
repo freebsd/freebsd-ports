@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	A bunch of common helper classes for mpd
+COMMENT=	Bunch of common helper classes for mpd
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

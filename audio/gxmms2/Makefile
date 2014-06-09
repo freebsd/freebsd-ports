@@ -9,7 +9,7 @@ MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	madpilot@FreeBSD.org
-COMMENT=	A GTK2 based XMMS2 client, written in C
+COMMENT=	GTK2 based XMMS2 client, written in C
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

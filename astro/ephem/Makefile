@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME}_${PORTVERSION}_unix
 
 MAINTAINER=	slaven@rezic.de
-COMMENT=	An interactive terminal-based astronomical ephemeris program
+COMMENT=	Interactive terminal-based astronomical ephemeris program
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=

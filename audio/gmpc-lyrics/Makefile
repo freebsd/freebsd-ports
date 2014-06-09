@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A Lyrics Provider plugin for gmpc
+COMMENT=	Lyrics Provider plugin for gmpc
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc

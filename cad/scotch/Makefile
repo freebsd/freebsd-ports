@@ -9,7 +9,7 @@ MASTER_SITES=	https://gforge.inria.fr/frs/download.php/28978/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A package for graph and mesh partitioning and sparse matrix ordering
+COMMENT=	Package for graph and mesh partitioning and sparse matrix ordering
 
 LICENSE=	CeCILL_C
 LICENSE_NAME=	CeCILL-C

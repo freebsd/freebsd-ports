@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A binding to the OpenAL cross-platform 3D audio API
+COMMENT=	Binding to the OpenAL cross-platform 3D audio API
 
 LICENSE=	BSD
 

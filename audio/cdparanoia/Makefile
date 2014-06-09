@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/^3\./III-alpha/}
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A CDDA extraction tool (also known as ripper)
+COMMENT=	CDDA extraction tool (also known as ripper)
 
 LICENSE=	GPLv2
 

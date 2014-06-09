@@ -9,7 +9,7 @@ MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A ncurses mpd client, clone of ncmpc with some new features
+COMMENT=	ncurses mpd client, clone of ncmpc with some new features
 
 LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
 		libfftw3.so:${PORTSDIR}/math/fftw3

@@ -9,7 +9,7 @@ MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3977/ \
 		http://fossies.org/linux/misc/
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	An MS-DOS Telix serial communication program "workalike"
+COMMENT=	MS-DOS Telix serial communication program "workalike"
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 

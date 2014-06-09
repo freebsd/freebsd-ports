@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.vanheusden.com/listener/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
-COMMENT=	A program to listen for and record sound activity
+COMMENT=	Program to listen for and record sound activity
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 

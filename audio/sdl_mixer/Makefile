@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A sample multi-channel audio mixer library
+COMMENT=	Sample multi-channel audio mixer library
 
 LICENSE=	ZLIB
 

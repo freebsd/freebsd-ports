@@ -8,7 +8,7 @@ MASTER_SITES=	SUNSITE
 MASTER_SITE_SUBDIR=	apps/sound/mixers
 
 MAINTAINER=	jerry@freebsd.se
-COMMENT=	A ncurses-based console mixer
+COMMENT=	ncurses-based console mixer
 
 LICENSE=	GPLv2
 

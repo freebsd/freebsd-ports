@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A libnotify for gmpc
+COMMENT=	Libnotify for gmpc
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 		libnotify.so:${PORTSDIR}/devel/libnotify

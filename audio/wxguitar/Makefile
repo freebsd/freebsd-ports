@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A simple guitar tuning assistant
+COMMENT=	Simple guitar tuning assistant
 
 RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay
 

@@ -13,7 +13,7 @@ PATCHFILES=	${DISTNAME}-to-${PORTVERSION}.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast CJK (Chinese/Japanese/Korean) virtual console
+COMMENT=	Fast CJK (Chinese/Japanese/Korean) virtual console
 
 LICENSE=	GPLv2
 

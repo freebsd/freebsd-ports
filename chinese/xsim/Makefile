@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-data-freebsd-gb2312.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple and fast GBK Chinese XIM server
+COMMENT=	Simple and fast GBK Chinese XIM server
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.49.10-p3
 DISTNAME=	${PORTNAME}-0.49.10-p3
 
 MAINTAINER=	dsh@vlink.ru
-COMMENT=	An FidoNet Technology Network (FTN) compatible mailer for Unix systems
+COMMENT=	FidoNet Technology Network (FTN) compatible mailer for Unix systems
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

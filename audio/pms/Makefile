@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	riggs@FreeBSD.org
-COMMENT=	A ncurses-based client for the Music Player Daemon
+COMMENT=	ncurses-based client for the Music Player Daemon
 
 LICENSE=	GPLv3
 

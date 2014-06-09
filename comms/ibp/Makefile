@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	db
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	A little program for monitoring amateur radio beacons
+COMMENT=	Little program for monitoring amateur radio beacons
 
 USES=		imake
 USE_XORG=	x11

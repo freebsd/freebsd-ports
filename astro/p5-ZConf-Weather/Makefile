@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	A ZConf module to assist with fetching/printing weather information
+COMMENT=	ZConf module to assist with fetching/printing weather information
 
 BUILD_DEPENDS=	p5-ZConf>=6.1.0:${PORTSDIR}/net/p5-ZConf \
 		p5-Text-NeatTemplate>=0.10.01:${PORTSDIR}/textproc/p5-Text-NeatTemplate \

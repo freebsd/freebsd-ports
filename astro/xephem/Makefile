@@ -7,7 +7,7 @@ CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
-COMMENT=	An interactive astronomical ephemeris program
+COMMENT=	Interactive astronomical ephemeris program
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg

@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	xi@borderworlds.dk
-COMMENT=	An advanced music player
+COMMENT=	Advanced music player
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
 		${LOCALBASE}/bin/ogg123:${PORTSDIR}/audio/vorbis-tools \

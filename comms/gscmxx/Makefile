@@ -8,7 +8,7 @@ CATEGORIES=	comms
 MASTER_SITES=	SF
 
 MAINTAINER=	svmohr@rm6.net
-COMMENT=	A graphical frontend for scmxx
+COMMENT=	Graphical frontend for scmxx
 
 RUN_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk

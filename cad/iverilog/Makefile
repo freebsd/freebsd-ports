@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION:C,\.[0-9]$,,}/ \
 DISTNAME=	verilog-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
-COMMENT=	A Verilog simulation and synthesis tool
+COMMENT=	Verilog simulation and synthesis tool
 
 LICENSE=	GPLv2
 

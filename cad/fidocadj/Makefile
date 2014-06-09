@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}.jar:src
 EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	An easy to use graphical editor for electronics
+COMMENT=	Easy to use graphical editor for electronics
 
 LICENSE=	GPLv3
 

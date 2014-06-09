@@ -11,7 +11,7 @@ EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A comprehensive editor for OpenStreetMap.org database
+COMMENT=	Comprehensive editor for OpenStreetMap.org database
 
 NO_WRKSUBDIR=	yes
 

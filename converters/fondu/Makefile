@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	A series of programs to interconvert between mac fonts
+COMMENT=	Series of programs to interconvert between mac fonts
 
 LICENSE=	BSD3CLAUSE
 

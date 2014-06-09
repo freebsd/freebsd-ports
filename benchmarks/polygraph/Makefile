@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A benchmarking tool for Web proxies
+COMMENT=	Benchmarking tool for Web proxies
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.speech.kth.se/snack/dist/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A sound toolkit for scripting languages
+COMMENT=	Sound toolkit for scripting languages
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 

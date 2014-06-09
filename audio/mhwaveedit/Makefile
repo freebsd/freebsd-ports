@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A graphical program for editing sound files
+COMMENT=	Graphical program for editing sound files
 
 LICENSE=	GPLv2
 

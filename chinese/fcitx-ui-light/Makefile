@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	An alternative light weight UI for Fcitx
+COMMENT=	Alternative light weight UI for Fcitx
 
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig

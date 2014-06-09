@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_TUCOWS}
 
 MAINTAINER=	h.skuhra@gmail.com
-COMMENT=	A GTK2 audio mixer
+COMMENT=	GTK2 audio mixer
 
 USES=		pkgconfig
 NO_STAGE=	yes

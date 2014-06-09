@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	chinese
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A zh-tw cursor movement friendly, wrapping clean irssi
+COMMENT=	zh-tw cursor movement friendly, wrapping clean irssi
 
 CONFLICTS?=	irssi-*
 MASTERDIR=	${.CURDIR}/../../irc/irssi

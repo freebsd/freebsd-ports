@@ -11,7 +11,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library to access to information on mp3 files
+COMMENT=	Ruby library to access to information on mp3 files
 
 USES=		tar:bzip2
 USE_RUBY=	yes

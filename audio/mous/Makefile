@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/0x02/mous/
 
 MAINTAINER=	shen.elf@gmail.com
-COMMENT=	A simple yet powerful audio player
+COMMENT=	Simple yet powerful audio player
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -7,7 +7,7 @@ CATEGORIES=	cad devel
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A modeling platform for system-level C++ models
+COMMENT=	Modeling platform for system-level C++ models
 
 RESTRICTED=	You have to register at http://www.systemc.org/kmembership_info/individual_signup first
 

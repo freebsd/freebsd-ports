@@ -11,7 +11,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby binding to the EsounD library
+COMMENT=	Ruby binding to the EsounD library
 
 BROKEN=	Fails to configure
 DEPRECATED=	Broken for more than 5 months
