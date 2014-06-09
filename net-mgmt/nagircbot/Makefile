@@ -15,5 +15,4 @@ USE_RC_SUBR=	nagircbot
 
 PLIST_FILES=	bin/nagircbot
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
