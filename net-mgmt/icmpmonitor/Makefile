@@ -11,8 +11,6 @@ COMMENT=	A multiple host icmp monitoring tool
 
 GNU_CONFIGURE=	YES
 
-MAN1=		icmpmonitor.1
-PLIST_FILES=	sbin/icmpmonitor
+PLIST_FILES=	man/man1/icmpmonitor.1.gz sbin/icmpmonitor
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
