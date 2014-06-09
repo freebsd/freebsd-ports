@@ -3,3 +3,9 @@ lib/libopennet.a
 lib/libopennet.so
 lib/libopennet.so.0
 lib/libopennet.so.%%PORTVERSION%%
+man/man3/fopen_net.3.gz
+man/man3/fseek_net.3.gz
+man/man3/lseek_net.3.gz
+man/man3/open_net.3.gz
+man/man3/opennet.3.gz
+man/man3/read_net.3.gz
