@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/www/gtkhtml4/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	gtkhtml
-PORTVERSION=	4.8.1
+PORTVERSION=	4.8.2
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -29,8 +29,6 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB=	VERSION="4.0"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@INTLTOOL_LIBDIR@|${LOCALBASE}/libdata|' \
-	    	${WRKSRC}/intltool-merge.in
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 
