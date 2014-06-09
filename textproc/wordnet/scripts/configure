@@ -18,7 +18,7 @@ for mf in ${FILESDIR}/*Makefile ; do \
 	dir=${WRKSRC}/$dir
 	test -f ${dir}Makefile.orig && continue
 	test -f ${dir}Makefile && mv ${dir}Makefile ${dir}Makefile.orig
-	cp -p $mf ${dir}Makefile
+	ln -s $mf ${dir}Makefile
 done
 
 patch -d ${WRKSRC}/src -p << EOPATCH
