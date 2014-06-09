@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/opennms/JRRD/stable-1.0
 
-MAINTAINER=	venture37@geeklan.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java native interface (JNI) to RRDtool
 
 LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
