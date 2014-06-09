@@ -3,17 +3,20 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.4.1
-PORTREVISION=	2
-PKGNAMESUFFIX=	5
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
 
-USES=		gmake pkgconfig tar:bzip2
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake pkgconfig tar:bzip2 libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libltdl libtool
+USE_AUTOTOOLS=	aclocal autoconf autoheader automake libltdl libtoolize
 
 # Only autoconf stage and sigrok plugin need GLIB:
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20
@@ -22,7 +25,7 @@ OPTIONS_DEFINE=		CGI DEBUG GCRYPT VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
 OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP RIEMANN
 OPTIONS_GROUP_INPUT=	CURL DBI JSON MEMCACHEC MODBUS MONGODB MYSQL \
-			NUTUPS PGSQL PING PYTHON RABBITMQ REDIS \
+			NUTUPS PERL PGSQL PING PYTHON RABBITMQ REDIS \
 			ROUTEROS SIGROK SNMP STATGRAB TOKYOTYRANT XML XMMS
 
 CGI_DESC=		Install collection.cgi (requires rrdtool)
@@ -38,6 +41,7 @@ MYSQL_DESC=		Enable mysql-based plugins
 NOTIFYEMAIL_DESC=	Enable notifications via email
 NOTIFYDESKTOP_DESC=	Enable desktop notifications
 NUTUPS_DESC=		Enable nut (ups) plugin
+PERL_DESC=		Enable libperl plugin and binding
 PGSQL_DESC=		Enable postgresql-based plugins
 PING_DESC=		Enable ping plugin
 PYTHON_DESC=		Enable python-based plugins
@@ -63,6 +67,8 @@ CONFLICTS=	collectd-4.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+PLIST_SUB+=	RESETPREFIX=${PREFIX}
+
 .include <bsd.port.options.mk>
 
 # NOTE: Plugins without dependencies are defined further down.
@@ -82,13 +88,11 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-libopenipmi \
 		--without-libowcapi \
 		--without-libperfstat \
-		--without-libperl \
 		--without-libsensors \
 		--without-libvarnish \
 		--without-lvm \
 		--without-mic \
-		--without-oracle \
-		--without-perl-bindings
+		--without-oracle
 
 # NOTE: Plugins without external dependencies
 CONFIGURE_ARGS+=	\
@@ -286,6 +290,15 @@ CONFIGURE_ARGS+=--without-libupsclient --disable-nut
 PLIST_SUB+=	NUTUPS="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MPERL}
+USES+=		perl5
+CONFIGURE_ARGS+=--with-perl=${PERL} --with-perl-bindings --enable-perl
+PLIST_SUB+=	PERL=""
+.else
+CONFIGURE_ARGS+=--without-perl --without-perl-bindings --disable-perl
+PLIST_SUB+=	PERL="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-postgresql=${LOCALBASE} --enable-postgresql --with-libpq
@@ -371,7 +384,7 @@ PLIST_SUB+=	RRDTOOL="@comment "
 .if ${PORT_OPTIONS:MSTATGRAB}
 USES+=		pkgconfig
 LIB_DEPENDS+=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
-CONFIGURE_ENV+= LIBS="`pkg-config --libs libstatgrab`"
+CONFIGURE_ENV+=	LIBS="`pkg-config --libs libstatgrab`"
 CONFIGURE_ARGS+=--with-libstatgrab=${LOCALBASE} \
 		--enable-disk \
 		--enable-interface
@@ -383,22 +396,22 @@ PLIST_SUB+=	STATGRAB="@comment "
 
 .if ${OSVERSION} >= 900007
 CONFIGURE_ARGS+=--enable-users
-PLIST_SUB+= USERS=""
+PLIST_SUB+=	USERS=""
 .elif ${PORT_OPTIONS:MSTATGRAB}
 CONFIGURE_ARGS+=--enable-users
-PLIST_SUB+= USERS=""
+PLIST_SUB+=	USERS=""
 .else
-PLIST_SUB+= USERS="@comment "
+PLIST_SUB+=	USERS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSIGROK}
 USE_GNOME+=	glib20
 LIB_DEPENDS+=	libsigrok.so:${PORTSDIR}/devel/libsigrok
 CONFIGURE_ARGS+=--with-libsigrok --enable-sigrok
-PLIST_SUB+=     SIGROK=""
+PLIST_SUB+=	SIGROK=""
 .else
 CONFIGURE_ARGS+=--disable-sigrok
-PLIST_SUB+=     SIGROK="@comment "
+PLIST_SUB+=	SIGROK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
@@ -473,6 +486,11 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/collection.cgi ${STAGEDIR}${WWWDIR}/
 	${INSTALL_DATA} ${WRKSRC}/contrib/collection.conf \
 		${STAGEDIR}${WWWDIR}/collection.conf.sample
+.endif
+
+post-stage:
+.if ${PORT_OPTIONS:MPERL}
+	@${SED} -i '' -e 's,${STAGEDIR},,g' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Collectd/.packlist
 .endif
 
 .include <bsd.port.mk>
