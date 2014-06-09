@@ -336,12 +336,12 @@ sbin/named-journalprint
 sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
-%%BIND_DESTETC%%/rndc.conf.sample
 %%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
 %%NOBASE%%%%ETCDIR%%/named.root
 %%NOBASE%%%%ETCDIR%%/master/empty.db
 %%NOBASE%%%%ETCDIR%%/master/localhost-forward.db
 %%NOBASE%%%%ETCDIR%%/master/localhost-reverse.db
+%%NOBASE%%%%ETCDIR%%/rndc.conf.sample
 %%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/dynamic
 %%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/dynamic
 %%NOBASE%%@dirrmtry %%ETCDIR%%/dynamic
