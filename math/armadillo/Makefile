@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/arma/
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	C++ linear algebra library
 
 LICENSE=	MPL
