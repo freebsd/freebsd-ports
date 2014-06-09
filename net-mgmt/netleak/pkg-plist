@@ -1,0 +1,6 @@
+@sample etc/netleak.conf.sample
+@sample etc/netleakd.conf.sample
+man/man8/netleak.8.gz
+man/man8/netleakd.8.gz
+sbin/netleak
+sbin/netleakd
