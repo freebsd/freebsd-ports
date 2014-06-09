@@ -3,23 +3,26 @@
 
 PORTNAME=	sendip
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	SendIP is a commandline tool to allow sending arbitrary IP packets
 
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
+
 USES=		gmake perl5
+
 USE_LDCONFIG=	yes
 
-MAN1=		sendip.1
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sendip
+.for slib in ipv4.so ipv6.so icmp.so tcp.so udp.so rip.so ripng.so ntp.so \
+bgp.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/sendip/${slib}
+.endfor
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not compile on FreeBSD 9.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
