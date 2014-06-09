@@ -32,7 +32,6 @@ OPTIONS_DEFINE=	JDK
 OPTIONS_DEFAULT=JDK
 JDK_DESC=	Build with native JDK
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJDK}
@@ -58,10 +57,14 @@ post-patch:
 	    ${WRKSRC}/configure ${WRKSRC}/src/mm/boehm-gc/configure
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/cacao/cacao ${PREFIX}/bin
-	${INSTALL_LIB} ${WRKSRC}/src/cacao/.libs/libjvm.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/classes/vm.zip ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/man/cacao.1 ${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/cacao/cacao \
+	    ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/src/cacao/.libs/libjvm.so \
+	    ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/src/classes/vm.zip \
+	    ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/man/cacao.1 \
+	    ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
