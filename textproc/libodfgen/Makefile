@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/libwpd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Library for reading and writing Corel WordPerfect(tm) documents
+COMMENT=	Library for generating documents in Open Document Format (ODF)
 
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
