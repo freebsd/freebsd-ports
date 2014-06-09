@@ -181,13 +181,13 @@ CONFIGURE_ARGS+=--destdir ${STAGEDIR}
 DESTDIRNAME=	--destdir
 .if ${_USE_PERL5:Mmodbuild}
 .if ${PORTNAME} != Module-Build
-BUILD_DEPENDS+=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
+BUILD_DEPENDS+=	p5-Module-Build>=0.4205:${PORTSDIR}/devel/p5-Module-Build
 .endif
 CONFIGURE_ARGS+=--create_packlist 0
 .endif
 .if ${_USE_PERL5:Mmodbuildtiny}
 .if ${PORTNAME} != Module-Build-Tiny
-BUILD_DEPENDS+=	${SITE_PERL}/Module/Build/Tiny.pm:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS+=	p5-Module-Build-Tiny>=0.036:${PORTSDIR}/devel/p5-Module-Build-Tiny
 .endif
 CONFIGURE_ARGS+=--create_packlist 1
 .endif
