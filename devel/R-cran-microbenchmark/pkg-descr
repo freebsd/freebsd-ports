@@ -1,0 +1,4 @@
+Provides infrastructure to accurately measure and compare the execution time of
+R expressions.
+
+WWW: http://cran.r-project.org/web/packages/microbenchmark/index.html
