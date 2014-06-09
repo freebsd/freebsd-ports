@@ -25,8 +25,8 @@ DESKTOP_ENTRIES="Founts" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;Game;" false
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#define ELAST 1.7||' \
-		${WRKSRC}/${PORTNAME}.c
+#	@${REINPLACE_CMD} -e 's|#define ELAST 1.7||' \
+#		${WRKSRC}/${PORTNAME}.c
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' \
 		${WRKSRC}/Makefile
 
