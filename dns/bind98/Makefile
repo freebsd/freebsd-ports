@@ -205,6 +205,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/empty.db ${STAGEDIR}${ETCDIR}/master
 	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${STAGEDIR}${ETCDIR}/master
 	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${ETCDIR}/master
+	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf ${STAGEDIR}${ETCDIR}/rndc.conf.sample
 .endif
 
 .include <bsd.port.mk>
