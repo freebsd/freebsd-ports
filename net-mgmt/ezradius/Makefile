@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}stable${EXTRACT_SUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EzRADIUS is FreeRADIUS and Chillispot web-based management software
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-intl
@@ -19,13 +21,13 @@ USE_MYSQL=	yes
 USE_PHP=	mysql session xml
 WANT_PHP_WEB=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && \
-	${FIND} . -type d -exec ${MKDIR} ${WWWDIR}/{} \; \
-		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
+	${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${WWWDIR}/{} \; \
+		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;
 	@cd ${WRKSRC} && \
-		${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${WWWDIR}/{} \; \
-			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
+	${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${STAGEDIR}${WWWDIR}/{} \; \
+		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;
+
 .include <bsd.port.mk>
