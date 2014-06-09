@@ -5,15 +5,6 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20140609
-  AFFECTS: users of security/clamav
-  AUTHOR: garga@FreeBSD.org
-
-  In some cases, when clamav 0.98.1 is installed, the new version (0.98.3)
-  breaks during build phase. The only workaround for now is to remove the old
-  package before building the new version. I'm trying to reproduce it and find a
-  better solution.
-
 20140604
   AFFECTS: users of dns/dnscrypt-proxy
   AUTHOR: feld@FreeBSD.org
