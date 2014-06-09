@@ -27,19 +27,21 @@ EX_DATA=	flood.dtd relative-averages-time.awk round-robin-dynamic.xml \
 		round-robin-relative-reports.xml round-robin-ssl.xml \
 		round-robin-timed.xml round-robin.xml
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/flood ${STAGEDIR}${PREFIX}/bin/flood
+
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EX_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/$f ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .for f in ${EX_DATA}
-	@${INSTALL_DATA} ${WRKSRC}/examples/$f ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/docbook
-	@${INSTALL_DATA} ${WRKSRC}/docs/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/docbook/[Mf]* ${DOCSDIR}/docbook
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docbook
+	@${INSTALL_DATA} ${WRKSRC}/docs/README ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/docbook/[Mf]* ${STAGEDIR}${DOCSDIR}/docbook
 .endif
 
 ANONCVS=	cvs -d :pserver:anoncvs@cvs.apache.org:/home/cvspublic

@@ -1,4 +1,5 @@
 libexec/apache22/mod_auth_tkt.so
+man/man3/mod_auth_tkt.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/Apache/AuthTkt.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/AuthTktConfig.pm
