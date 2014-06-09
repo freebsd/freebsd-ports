@@ -14,28 +14,25 @@ BUILD_DEPENDS=	${LOCALBASE}/include/pcap.h:${PORTSDIR}/net/libpcap
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 INFO=		ipgrab
-MAN8=		ipgrab.8
 DOCS=		README AUTHORS COPYING ChangeLog \
 		DEVELOPER-HOWTO INSTALL NEWS TODO
 
-PLIST_FILES=	bin/ipgrab
+PLIST_FILES=	bin/ipgrab man/man8/ipgrab.8.gz
 
 PORTDOCS=	README AUTHORS COPYING ChangeLog DEVELOPER-HOWTO \
 		INSTALL NEWS TODO
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_MAN} ${MAN8:S,^,${WRKSRC}/doc/,} ${MANPREFIX}/man/man8/
-	${INSTALL_DATA} ${WRKSRC}/doc/ipgrab.info ${PREFIX}/info/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ipgrab ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/ipgrab.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/doc/ipgrab.info ${STAGEDIR}${PREFIX}/info/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ipgrab ${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
