@@ -1,0 +1,60 @@
+--- base/Makefile.in	2013-11-21 17:03:14.000000000 -0500
++++ base/Makefile.in	2014-06-09 15:29:06.000000000 -0400
+@@ -432,5 +432,5 @@
+ 	    $(INSTALL_DATA) pkgIndex.tcl $(DESTDIR)$(pkglibdir); \
+ 	fi
+-	$(INSTALL_DATA) tkimgConfig.sh $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) tkimgConfig.sh $(DESTDIR)$(libdir)/Img
+ 
+ #========================================================================
+--- Makefile.in	2013-11-21 17:03:12.000000000 -0500
++++ Makefile.in	2014-06-09 15:13:46.000000000 -0400
+@@ -58,5 +58,5 @@
+ 
+ # Directory where libimg.a is at run-time:
+-LIB_RUNTIME_DIR =	$(libdir)/$(PACKAGE_NAME)$(PACKAGE_VERSION)
++LIB_RUNTIME_DIR =	$(libdir)/$(PACKAGE_NAME)
+ 
+ # Directory in which to install the archive libimg.a:
+@@ -145,5 +145,5 @@
+ 	mv pkgIndex.tcl Img/exec_prefix/lib/Img/pkgIndex.tcl
+ 	chmod ugo+w     Img/exec_prefix/lib/Img/pkgIndex.tcl
+-	for p in Img/exec_prefix/lib/*.sh ; do \
++	for p in Img/exec_prefix/lib/Img/*.sh ; do \
+ 		sed -e 's#$(libdir)/[^/ ]*\([/ ]\)#$(LIB_RUNTIME_DIR)\1#' \
+ 			$$p > $$p.1 && mv -f $$p.1 $$p ; \
+@@ -156,5 +156,5 @@
+ 	done
+ 	mkdir -p $(INSTALL_ROOT)$(libdir)
+-	for p in Img/exec_prefix/lib/*.sh ; do \
++	for p in Img/exec_prefix/lib/Img/*.sh ; do \
+ 		$(INSTALL_PROGRAM) $$p $(INSTALL_ROOT)$(libdir)/`basename $$p` ; \
+ 	done
+--- configure.in	2014-06-09 15:13:46.000000000 -0400
++++ configure.in	2013-11-21 17:03:14.000000000 -0500
+@@ -110,16 +110,12 @@
+ 
+ TEA_CONFIG_COLLECT
+-TEA_CONFIG_SUBDIR(zlib,       [--disable-option-checking])
+-TEA_CONFIG_SUBDIR(libpng,     [--with-zlibtcl=`pwd`/zlib --disable-option-checking])
+-TEA_CONFIG_SUBDIR(libtiff,    [--disable-option-checking])
+-TEA_CONFIG_SUBDIR(libjpeg,    [--disable-option-checking])
+ TEA_CONFIG_SUBDIR(base,       [--disable-option-checking])
+ TEA_CONFIG_SUBDIR(bmp,        [--with-tkimg=`pwd`/base --disable-option-checking])
+ TEA_CONFIG_SUBDIR(gif,        [--with-tkimg=`pwd`/base --disable-option-checking])
+ TEA_CONFIG_SUBDIR(ico,        [--with-tkimg=`pwd`/base --disable-option-checking])
+-TEA_CONFIG_SUBDIR(jpeg,       [--with-tkimg=`pwd`/base --with-jpegtcl=`pwd`/libjpeg --disable-option-checking])
++TEA_CONFIG_SUBDIR(jpeg,       [--with-tkimg=`pwd`/base --with-jpegtcl="$WRKDIR" --disable-option-checking])
+ TEA_CONFIG_SUBDIR(pcx,        [--with-tkimg=`pwd`/base --disable-option-checking])
+ TEA_CONFIG_SUBDIR(pixmap,     [--with-tkimg=`pwd`/base --disable-option-checking])
+-TEA_CONFIG_SUBDIR(png,        [--with-tkimg=`pwd`/base --with-pngtcl=`pwd`/libpng --with-zlibtcl=`pwd`/zlib --disable-option-checking])
++TEA_CONFIG_SUBDIR(png,        [--with-tkimg=`pwd`/base --with-pngtcl="$WRKDIR" --with-zlibtcl="$WRKDIR" --disable-option-checking])
+ TEA_CONFIG_SUBDIR(ppm,        [--with-tkimg=`pwd`/base --disable-option-checking])
+ TEA_CONFIG_SUBDIR(ps,         [--with-tkimg=`pwd`/base --disable-option-checking])
+@@ -127,5 +123,5 @@
+ TEA_CONFIG_SUBDIR(sun,        [--with-tkimg=`pwd`/base --disable-option-checking])
+ TEA_CONFIG_SUBDIR(tga,        [--with-tkimg=`pwd`/base --disable-option-checking])
+-TEA_CONFIG_SUBDIR(tiff,       [--with-tkimg=`pwd`/base --with-tifftcl=`pwd`/libtiff --with-zlibtcl=`pwd`/zlib --with-jpegtcl=`pwd`/libjpeg --disable-option-checking])
++TEA_CONFIG_SUBDIR(tiff,       [--with-tkimg=`pwd`/base --with-tifftcl="$WRKDIR" --with-zlibtcl="WRKDIR" --with-jpegtcl="$WRKDIR" --disable-option-checking])
+ TEA_CONFIG_SUBDIR(window,     [--with-tkimg=`pwd`/base --disable-option-checking])
+ TEA_CONFIG_SUBDIR(xbm,        [--with-tkimg=`pwd`/base --disable-option-checking])

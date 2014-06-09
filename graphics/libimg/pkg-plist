@@ -1,21 +1,30 @@
-%%DIR%%/pkgIndex.tcl
-%%DIR%%/demo.tcl
-%%DIR%%/tkv.tcl
-%%DIR%%/imgmsg.tcl
-lib/%%SHLIB_NAME%%
-lib/%%SHLIB_LINK%%
-%%DIR%%/msgs/de.msg
-%%DIR%%/msgs/el.msg
-%%DIR%%/msgs/en.msg
-%%DIR%%/msgs/es.msg
-%%DIR%%/msgs/fr.msg
-%%DIR%%/msgs/ja.msg
-%%DIR%%/msgs/nl.msg
-@dirrm %%DIR%%/msgs
-@dirrm %%DIR%%
-%%PORTDOCS%%%%DOCSDIR%%/default.css
-%%PORTDOCS%%%%DOCSDIR%%/formats.htm
-%%PORTDOCS%%%%DOCSDIR%%/index.htm
-%%PORTDOCS%%%%DOCSDIR%%/install.htm
-%%PORTDOCS%%%%DOCSDIR%%/library.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/demo.tcl
+%%EXAMPLESDIR%%/tkv.tcl
+%%EXAMPLESDIR%%/msgs/de.msg
+%%EXAMPLESDIR%%/msgs/el.msg
+%%EXAMPLESDIR%%/msgs/en.msg
+%%EXAMPLESDIR%%/msgs/es.msg
+%%EXAMPLESDIR%%/msgs/fr.msg
+%%EXAMPLESDIR%%/msgs/ja.msg
+%%EXAMPLESDIR%%/msgs/nl.msg
+@dirrm %%EXAMPLESDIR%%/msgs
+@dirrm %%EXAMPLESDIR%%
+man/mann/img-bmp.n.gz
+man/mann/img-dted.n.gz
+man/mann/img-gif.n.gz
+man/mann/img-ico.n.gz
+man/mann/img-jpeg.n.gz
+man/mann/img-pcx.n.gz
+man/mann/img-pixmap.n.gz
+man/mann/img-png.n.gz
+man/mann/img-ppm.n.gz
+man/mann/img-ps.n.gz
+man/mann/img-raw.n.gz
+man/mann/img-sgi.n.gz
+man/mann/img-sun.n.gz
+man/mann/img-tga.n.gz
+man/mann/img-tiff.n.gz
+man/mann/img-window.n.gz
+man/mann/img-xbm.n.gz
+man/mann/img-xpm.n.gz
+man/mann/img.n.gz
