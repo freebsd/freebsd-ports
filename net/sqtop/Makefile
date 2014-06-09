@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqtop
-DISTVERSION=	2011-11-01
+DISTVERSION=	2013-12-17
 CATEGORIES=	net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -11,7 +11,7 @@ COMMENT=	Console-based display of Squid proxy connections
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	bin/sqtop \
 		man/man1/sqtop.1.gz
@@ -21,12 +21,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=		NCURSES
 OPTIONS_DEFAULT=	NCURSES
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MNCURSES}
-CONFIGURE_ARGS=	--disable-ui
-.else
-USES+=		ncurses
-.endif
+NCURSES_CONFIGURE_ENABLE=	ui
+NCURSES_USES=	ncurses
 
 .include <bsd.port.mk>
