@@ -1,6 +1,6 @@
 --- makefile.orig	Wed Apr 12 13:16:32 2006
 +++ makefile	Wed Apr 12 13:16:48 2006
-@@ -11,7 +11,7 @@
+@@ -11,7 +11,7 @@ endif
  
  ifndef IGNORE_SPEED
  
@@ -9,8 +9,8 @@
  
  #profiling
  #PROF=-pg -g
-@@ -53,11 +53,11 @@
- HEADERS=tfm.h
+@@ -52,11 +52,11 @@ HEADERS=src/headers/tfm.h 
+ #END_INS
  
  ifndef LIBPATH
 -   LIBPATH=/usr/lib
@@ -23,3 +23,18 @@
  endif
  
  ifndef INSTALL_GROUP
+@@ -82,10 +82,10 @@ $(LIBNAME): $(OBJECTS)
+ 	ranlib $@
+ 
+ install: $(LIBNAME)
+-	install -d -g $(GROUP) -o $(USER) $(DESTDIR)$(LIBPATH)
+-	install -d -g $(GROUP) -o $(USER) $(DESTDIR)$(INCPATH)
+-	install -g $(GROUP) -o $(USER) $(LIBNAME) $(DESTDIR)$(LIBPATH)
+-	install -g $(GROUP) -o $(USER) $(HEADERS) $(DESTDIR)$(INCPATH)
++	install -d $(DESTDIR)$(LIBPATH)
++	install -d $(DESTDIR)$(INCPATH)
++	install -m 644 $(LIBNAME) $(DESTDIR)$(LIBPATH)
++	install -m 644 $(HEADERS) $(DESTDIR)$(INCPATH)
+ 
+ mtest/mtest: mtest/mtest.o
+ 	cd mtest ; CFLAGS="$(CFLAGS) -I../" MAKE=${MAKE} ${MAKE} mtest
