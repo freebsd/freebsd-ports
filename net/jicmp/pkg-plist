@@ -1,3 +1,2 @@
 %%JAVAJARDIR%%/jicmp.jar
-lib/libjicmp.la
 lib/libjicmp.so

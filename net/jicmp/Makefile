@@ -6,11 +6,12 @@ PORTVERSION=	1.4.2
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms/JICMP/stable-1.4/
 
-MAINTAINER=	venture37@geeklan.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java native interface (JNI) to ICMP (ping)
 
 WRKSRC=		${WRKDIR}/jicmp-${PORTVERSION}
 
+USES=		libtool
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
 JAVA_VENDOR=	openjdk
