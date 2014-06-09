@@ -24,7 +24,7 @@ fonts.alias: fonts.dir
 		print $$2 " " name; gsub("koi8-u", "koi8-r", $$2); \
 		print $$2 " " name}' < fonts.dir > fonts.alias
 
-DIR=	${LOCALBASE}/lib/X11/fonts/koi8u-monaco
+DIR=	${STAGEDIR}${LOCALBASE}/lib/X11/fonts/koi8u-monaco
 
 install: all
 	${MKDIR} ${DIR}
