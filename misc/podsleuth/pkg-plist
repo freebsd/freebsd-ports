@@ -9,4 +9,3 @@ libdata/pkgconfig/podsleuth.pc
 libexec/hal-podsleuth
 share/hal/fdi/policy/20thirdparty/20-podsleuth.fdi
 @dirrmtry lib/podsleuth
-@dirrmtry lib/hal
