@@ -3,6 +3,7 @@
 
 PORTNAME=	drpython
 PORTVERSION=	3.11.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/DrPython%20%283.x%29/${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -20,10 +21,9 @@ NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	DrPython
 USE_WX=		2.8
 WX_COMPS=	python:lib
 
@@ -36,6 +36,7 @@ DESKTOP_ENTRIES="DrPython" "Python editor and IDE" \
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/postinst.py/d' ${WRKSRC}/setup.py
+	@${RM} ${WRKSRC}/setup.cfg
 	@${REINPLACE_CMD} -e \
 		's|firefox|xdg-open|' ${WRKSRC}/drPreferences.py
 
