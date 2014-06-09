@@ -10,21 +10,18 @@ MASTER_SITES=	SF/winfingerprint/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates packets to match a list of Cisco PIX access lists
 
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/pixilate
 
 USE_AUTOTOOLS=	aclocal autoconf automake libtool
 AUTOMAKE_ARGS=	--add-missing
 
-MAN1=		pixilate.1
-
 PORTDOCS=	README
-PLIST_FILES=	bin/pixilate
+PLIST_FILES=	bin/pixilate man/man1/pixilate.1.gz
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|libnet-config|${LIBNET_CONFIG}|; \
@@ -33,9 +30,9 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
