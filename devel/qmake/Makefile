@@ -19,21 +19,24 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 PLIST_SUB+=	_PREFIX="${PREFIX}"
 MAKE_ENV+=	FILESDIR="${FILESDIR}" STAGEDIR="${STAGEDIR}"
 
-USE_BZIP2=	yes
-USES=	uidfix
+USES=		tar:bzip2 uidfix
 
 EXTRACT_AFTER_ARGS= \
 	'${DISTNAME}/mkspecs' \
 	'${DISTNAME}/src/*/*.h' '${DISTNAME}/qmake' \
 	'${DISTNAME}/src/tools'
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 EXTRACT_AFTER_ARGS+='${DISTNAME}/doc/html/qmake*'
-DOCSDIR=${PREFIX}/share/doc/qt
-PLIST_SUB+=	DOCSDIR='${DOCSDIR}'
+DOCSDIR=	${PREFIX}/share/doc/qt
+PLIST_SUB+=	DOCSDIR="${DOCSDIR}"
 post-install:
-	${MKDIR} '${DOCSDIR}'
-	${CP} -Rp '${WRKSRC:H}/doc/html' '${DOCSDIR}'
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -Rp ${WRKSRC:H}/doc/html ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-patch:
@@ -55,10 +58,4 @@ do-configure:
 	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/qmodules.h
 	${LN} -s . ${WRKDIR}/${DISTNAME}/src/tools/private
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-CXXFLAGS+=	-mieee
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
