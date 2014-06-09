@@ -11,10 +11,6 @@ COMMENT=	A Half-Life game master server daemon
 
 GNU_CONFIGURE=	yes
 
-MAN1=		${PORTNAME}.1 ${PORTNAME}.gameserver.1 \
-		${PORTNAME}.filter.1 ${PORTNAME}.list.1
-
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | \
@@ -22,13 +18,11 @@ pre-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/*.list \
-		${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/examples/woncomm.lst \
-		${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/*.list ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/woncomm.lst ${STAGEDIR}${EXAMPLESDIR}
 .endif #NOPORTDOCS
 
 .include <bsd.port.mk>
