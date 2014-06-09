@@ -6,7 +6,7 @@ PORTVERSION=	2.0.3
 CATEGORIES=	databases
 MASTER_SITES=	SF/opennms/IPLIKE/stable-2.0/
 
-MAINTAINER=	venture37@geeklan.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C implementation of the OpenNMS iplike stored procedure
 
 USES=		libtool pgsql
