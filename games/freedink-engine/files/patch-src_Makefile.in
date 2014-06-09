@@ -1,0 +1,23 @@
+--- src/Makefile.in.orig	2012-12-09 09:12:48.000000000 -0800
++++ src/Makefile.in	2014-05-24 21:29:13.000000000 -0700
+@@ -1541,16 +1541,20 @@
+ @HAVE_UPX_TRUE@	-$(UPX) "$(DESTDIR)$(bindir)/freedinkedit$(EXEEXT)"
+ # Bundle resources
+ @HAVE_ZIP_TRUE@	zip -j res.zip $(resdir)/LiberationSans-Regular.ttf
++@HAVE_ZIP_TRUE@	chmod 0755 "$(DESTDIR)$(bindir)/freedink$(EXEEXT)"
+ @HAVE_ZIP_TRUE@	cat res.zip >> "$(DESTDIR)$(bindir)/freedink$(EXEEXT)"
+ @HAVE_ZIP_TRUE@	rm -f res.zip
+ @HAVE_ZIP_TRUE@	zip -A "$(DESTDIR)$(bindir)/freedink$(EXEEXT)"
++@HAVE_ZIP_TRUE@	chmod 0555 "$(DESTDIR)$(bindir)/freedink$(EXEEXT)"
+ 
+ @HAVE_ZIP_TRUE@	zip -j res.zip $(resdir)/LiberationSans-Regular.ttf
+ #	Not including $(resdir)/stop.wav $(resdir)/jump.wav until we
+ #	replace them with free sounds
++@HAVE_ZIP_TRUE@	chmod 0755 "$(DESTDIR)$(bindir)/freedinkedit$(EXEEXT)"
+ @HAVE_ZIP_TRUE@	cat res.zip >> "$(DESTDIR)$(bindir)/freedinkedit$(EXEEXT)"
+ @HAVE_ZIP_TRUE@	rm -f res.zip
+ @HAVE_ZIP_TRUE@	zip -A "$(DESTDIR)$(bindir)/freedinkedit$(EXEEXT)"
++@HAVE_ZIP_TRUE@	chmod 0555 "$(DESTDIR)$(bindir)/freedinkedit$(EXEEXT)"
+ # Add 'dink' and 'dinkedit' aliases, to please 3rd-party tools
+ 	$(LN_S) -f "freedink$(EXEEXT)" "$(DESTDIR)$(bindir)/dink$(EXEEXT)"
+ 	$(LN_S) -f "freedinkedit$(EXEEXT)" "$(DESTDIR)$(bindir)/dinkedit$(EXEEXT)"
