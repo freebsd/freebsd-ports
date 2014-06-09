@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	h5py
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	science python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	xmj@chaot.net
@@ -13,11 +11,15 @@ COMMENT=	General-purpose Python interface to the HDF5 library
 
 LICENSE=	BSD
 
-BROKEN=		Does not build
-
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		cython:${PORTSDIR}/lang/cython
 RUN_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+
+USE_GITHUB=		yes
+GH_ACCOUNT=		h5py
+GH_COMMIT=		c8c63eb
+GH_TAGNAME=		${GH_COMMIT}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
@@ -29,10 +31,6 @@ PORTEXAMPLES=	multiprocessing_example.py \
 		threading_example.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/setup.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
