@@ -16,27 +16,23 @@ DISTFILES=	junction.zip \
 		goudy-bookletter-1911.zip
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A collection of open source fonts
+COMMENT=	Collection of open source fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 NO_BUILD=	yes
 USES=		zip
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
-NO_STAGE=	yes
+FONTDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
+
 post-extract:
 	@${FIND} ${WRKDIR} -name __MACOSX | ${XARGS} ${RM} -r
 
 do-install:
-	@${MKDIR} ${FONTSDIR}
-	@${FIND} ${WRKDIR} -name \*.ttf -exec ${INSTALL_DATA} {} ${FONTSDIR} \;
-	@${FIND} ${WRKDIR} -name \*.otf -exec ${INSTALL_DATA} {} ${FONTSDIR} \;
-
-post-install:
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTDIR}
+	${FIND} ${WRKDIR} -name \*.ttf -exec ${INSTALL_DATA} {} ${STAGEDIR}${FONTDIR} \;
+	${FIND} ${WRKDIR} -name \*.otf -exec ${INSTALL_DATA} {} ${STAGEDIR}${FONTDIR} \;
 
 .include <bsd.port.mk>
