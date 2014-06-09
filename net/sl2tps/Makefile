@@ -3,23 +3,18 @@
 
 PORTNAME=	sl2tps
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/libpdel/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple L2TP server based on libpdel(3) and netgraph(4)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
+LIB_DEPENDS=	libpdel.so:${PORTSDIR}/devel/libpdel
 
-MANCOMPRESSED=	maybe
-MAN1=		sl2tps.1
-PLIST_FILES=	bin/sl2tps %%ETCDIR%%/config.xml.sample
-PLIST_DIRS=	%%ETCDIR%%
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${PREFIX}/include|$${LOCALBASE}/include|g ; \
