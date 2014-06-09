@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://disenchant.net/files/engine/
 
-MAINTAINER=	rsmith@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very conservative branch of the Quake source code
 
 BROKEN=		Fails to build
