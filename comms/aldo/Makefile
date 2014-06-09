@@ -11,8 +11,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lambert@lambertfam.org
 COMMENT=	Morse code training program
 
-BROKEN=		Does not build with modern compilers
-
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
 GNU_CONFIGURE=	yes
