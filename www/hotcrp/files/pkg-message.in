@@ -5,18 +5,16 @@
 
 Please note that everything has been installed in %%WWWDIR%%.
 
-Read %%WWWDIR%%/README.
+Read %%WWWDIR%%/README.md.
 
 You will probably want to add an alias to your httpd.conf file, something
 like this:
 
     	Alias /hotcrp %%WWWDIR%%
-	AcceptPathInfo On
 	<Directory %%WWWDIR%%>
-	    Options Indexes Includes FollowSymLinks MultiViews
-	    AllowOverride All
-	    Order Allow,Deny
-	    Allow from all
+	    Options Indexes Includes FollowSymLinks
+	    AllowOverride all
+	    Require all granted
 	</Directory>
 
 And restart Apache.
