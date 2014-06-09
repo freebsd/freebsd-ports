@@ -15,6 +15,8 @@ MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 MAKE_ENV+=	STAGEDIR="${STAGEDIR}"
 USES=		uidfix
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
 			-e 's/__UNIX__/__unix__/' \
@@ -27,10 +29,8 @@ do-build do-install:
 		-f ${FILESDIR}/Makefile.$d ${.TARGET:S/do-//}
 .endfor
 
-.ifndef NOPORTDOCS
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
