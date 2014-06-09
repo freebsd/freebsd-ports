@@ -1,5 +1,7 @@
 bin/gnarwl
 etc/gnarwl.cfg.sample
+man/man8/damnit.8.gz
+man/man8/gnarwl.8.gz
 sbin/damnit
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/FAQ.gz
