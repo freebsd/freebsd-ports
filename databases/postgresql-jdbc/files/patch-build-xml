@@ -1,6 +1,6 @@
---- build.xml.orig	2007-10-15 09:49:36.000000000 +0200
-+++ build.xml	2008-01-22 13:52:37.000000000 +0100
-@@ -109,10 +109,7 @@
+--- build.xml.orig	2013-10-31 14:48:34.000000000 +0100
++++ build.xml	2014-06-09 08:19:22.000000000 +0200
+@@ -221,10 +221,7 @@
  
    <target name="compile" depends="prepare,check_versions,driver">
  
@@ -9,6 +9,6 @@
 -
 -    <javac classpath="${srcdir}" srcdir="${srcdir}" destdir="${builddir}" debug="${debug}" source="${java.specification.version}">
 +    <javac includeAntRuntime="no" classpath="${srcdir}" srcdir="${srcdir}" destdir="${builddir}" debug="${debug}">
-       <!-- This is the core of the driver.  It is common for all versions. -->
-        <include name="${package}/*.java" />
-        <include name="${package}/core/**" />
+       <patternset refid="jdbc.version.src.pattern"/>
+     </javac>
+   </target>
