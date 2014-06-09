@@ -1,0 +1,4 @@
+sbin/clsync
+man/man1/clsync.1.gz
+@sample etc/clsync/clsync.conf
+@dirrmtry %%ETCDIR%%
