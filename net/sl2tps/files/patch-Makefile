@@ -1,0 +1,21 @@
+--- Makefile.orig	2014-06-10 00:10:49.502121136 +0800
++++ Makefile	2014-06-10 00:11:31.903120544 +0800
+@@ -38,14 +38,14 @@ CLEANFILES+=	${PROG}.1
+ # Install example config file
+ #
+ beforeinstall:
+-	@if [ ! -d ${PREFIX}/etc/${PROG} ]; then \
++	@if [ ! -d $(DESTDIR)${PREFIX}/etc/${PROG} ]; then \
+ 		${ECHO} ${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0755 \
+-		    ${PREFIX}/etc/${PROG}; \
++		    $(DESTDIR)${PREFIX}/etc/${PROG}; \
+ 		${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0755 \
+-		    ${PREFIX}/etc/${PROG}; \
++		    $(DESTDIR)${PREFIX}/etc/${PROG}; \
+ 	fi
+ 	${INSTALL} -C -o ${SHAREOWN} -g ${SHAREGRP} -m 0644 \
+-	    ${CONFIG_SAMPLE} ${PREFIX}/etc/${PROG}/${CONFIG_SAMPLE}
++	    ${CONFIG_SAMPLE} $(DESTDIR)${PREFIX}/etc/${PROG}/${CONFIG_SAMPLE}
+ 
+ distclean:	cleandir
+ 

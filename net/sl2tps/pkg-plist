@@ -1,0 +1,4 @@
+bin/sl2tps
+@sample %%ETCDIR%%/config.xml.sample
+man/man1/sl2tps.1.gz
+@dirrmtry %%ETCDIR%%
