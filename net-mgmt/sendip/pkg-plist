@@ -1,11 +1,12 @@
 bin/sendip
+lib/sendip/bgp.so
+lib/sendip/icmp.so
 lib/sendip/ipv4.so
 lib/sendip/ipv6.so
-lib/sendip/icmp.so
-lib/sendip/tcp.so
-lib/sendip/udp.so
+lib/sendip/ntp.so
 lib/sendip/rip.so
 lib/sendip/ripng.so
-lib/sendip/bgp.so
-lib/sendip/ntp.so
-@dirrm lib/sendip
+lib/sendip/tcp.so
+lib/sendip/udp.so
+man/man1/sendip.1.gz
+@dirrmtry lib/sendip
