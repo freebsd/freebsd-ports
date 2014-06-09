@@ -20,11 +20,10 @@ WANT_PHP_WEB=	yes
 PHPIP?=		www/phpip
 PLIST_SUB+=	PHPIP=${PHPIP}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${PHPIP}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PHPIP}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPIP}
-	@${CHMOD} -R 755 ${PREFIX}/${PHPIP}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHPIP}
+	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${PHPIP}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PHPIP}
+	@${CHMOD} -R 755 ${STAGEDIR}${PREFIX}/${PHPIP}
 
 .include <bsd.port.mk>
