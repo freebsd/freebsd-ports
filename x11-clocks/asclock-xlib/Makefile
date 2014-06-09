@@ -21,7 +21,6 @@ IS_INTERACTIVE=	YES
 HAS_CONFIGURE=	YES
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -39,9 +38,8 @@ pre-configure:
 post-install:
 .for i in Freeamp Newstone Orb Stone beats classic penguin shaped
 	(cd ${WRKSRC}/themes/${i}; \
-	  ${MKDIR} ${PREFIX}/share/asclock/${i}; \
-	  ${INSTALL_DATA} *.xpm config ${PREFIX}/share/asclock/${i}/ )
+	  ${MKDIR} ${STAGEDIR}${PREFIX}/share/asclock/${i}; \
+	  ${INSTALL_DATA} *.xpm config ${STAGEDIR}${PREFIX}/share/asclock/${i}/ )
 .endfor
-	cd ${WRKSRC} && ${MAKE} install.man
 
 .include <bsd.port.post.mk>
