@@ -1,0 +1,47 @@
+include/librevenge-0.0/librevenge-generators/RVNGCSVSpreadsheetGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGHTMLTextGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGRawDrawingGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGRawPresentationGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGRawSpreadsheetGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGRawTextGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGSVGPresentationGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGTextDrawingGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGTextPresentationGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGTextSpreadsheetGenerator.h
+include/librevenge-0.0/librevenge-generators/RVNGTextTextGenerator.h
+include/librevenge-0.0/librevenge-generators/librevenge-generators-api.h
+include/librevenge-0.0/librevenge-generators/librevenge-generators.h
+include/librevenge-0.0/librevenge-stream/RVNGDirectoryStream.h
+include/librevenge-0.0/librevenge-stream/RVNGStream.h
+include/librevenge-0.0/librevenge-stream/RVNGStreamImplementation.h
+include/librevenge-0.0/librevenge-stream/librevenge-stream-api.h
+include/librevenge-0.0/librevenge-stream/librevenge-stream.h
+include/librevenge-0.0/librevenge/RVNGBinaryData.h
+include/librevenge-0.0/librevenge/RVNGDrawingInterface.h
+include/librevenge-0.0/librevenge/RVNGPresentationInterface.h
+include/librevenge-0.0/librevenge/RVNGProperty.h
+include/librevenge-0.0/librevenge/RVNGPropertyList.h
+include/librevenge-0.0/librevenge/RVNGPropertyListVector.h
+include/librevenge-0.0/librevenge/RVNGSVGDrawingGenerator.h
+include/librevenge-0.0/librevenge/RVNGSpreadsheetInterface.h
+include/librevenge-0.0/librevenge/RVNGString.h
+include/librevenge-0.0/librevenge/RVNGStringVector.h
+include/librevenge-0.0/librevenge/RVNGTextInterface.h
+include/librevenge-0.0/librevenge/librevenge-api.h
+include/librevenge-0.0/librevenge/librevenge.h
+lib/librevenge-0.0.so
+lib/librevenge-0.0.so.0
+lib/librevenge-0.0.so.0.0.1
+lib/librevenge-generators-0.0.so
+lib/librevenge-generators-0.0.so.0
+lib/librevenge-generators-0.0.so.0.0.1
+lib/librevenge-stream-0.0.so
+lib/librevenge-stream-0.0.so.0
+lib/librevenge-stream-0.0.so.0.0.1
+libdata/pkgconfig/librevenge-0.0.pc
+libdata/pkgconfig/librevenge-generators-0.0.pc
+libdata/pkgconfig/librevenge-stream-0.0.pc
+@dirrm include/librevenge-0.0/librevenge
+@dirrm include/librevenge-0.0/librevenge-generators
+@dirrm include/librevenge-0.0/librevenge-stream
+@dirrm include/librevenge-0.0
