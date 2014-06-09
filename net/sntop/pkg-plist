@@ -1,5 +1,6 @@
 bin/sntop
-etc/sntoprc.sample
+@sample etc/sntoprc.sample
+man/man1/sntop.1.gz
 %%EXAMPLESDIR%%/alarm.sh
 %%EXAMPLESDIR%%/sntoprc.EXAMPLE
 @dirrm %%EXAMPLESDIR%%

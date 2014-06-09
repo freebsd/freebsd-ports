@@ -3,6 +3,7 @@
 
 PORTNAME=	sntop
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -16,21 +17,17 @@ PORTDOCS=	COPYING CREDITS ChangeLog INSTALL README TODO
 EXAMPLES=	alarm.sh sntoprc.EXAMPLE
 SUB_FILES=	pkg-message
 
-MAN1=		sntop.1
-
-NO_STAGE=	yes
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/sntop
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sntop
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for example in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${example} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${example} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
