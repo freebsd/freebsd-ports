@@ -365,6 +365,7 @@
     SUBDIR += libnxml
     SUBDIR += libodfgen
     SUBDIR += libparsifal
+    SUBDIR += librevenge
     SUBDIR += libroxml
     SUBDIR += libsass
     SUBDIR += libsoldout
