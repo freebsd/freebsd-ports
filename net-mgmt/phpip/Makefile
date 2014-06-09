@@ -18,12 +18,11 @@ USES=		dos2unix
 WANT_PHP_WEB=	yes
 
 PHPIP?=		www/phpip
-PLIST_SUB+=	PHPIP=${PHPIP}
+PLIST_SUB+=	PHPIP=${PHPIP} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHPIP}
 	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${PHPIP}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PHPIP}
 	@${CHMOD} -R 755 ${STAGEDIR}${PREFIX}/${PHPIP}
 
 .include <bsd.port.mk>
