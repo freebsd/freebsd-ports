@@ -28,3 +28,26 @@ man/mann/img-window.n.gz
 man/mann/img-xbm.n.gz
 man/mann/img-xpm.n.gz
 man/mann/img.n.gz
+lib/Img/libtkimg142.so.1
+lib/Img/libtkimgbmp142.so.1
+lib/Img/libtkimgdted142.so.1
+lib/Img/libtkimggif142.so.1
+lib/Img/libtkimgico142.so.1
+lib/Img/libtkimgjpeg142.so.1
+lib/Img/libtkimgpcx142.so.1
+lib/Img/libtkimgpixmap142.so.1
+lib/Img/libtkimgpng142.so.1
+lib/Img/libtkimgppm142.so.1
+lib/Img/libtkimgps142.so.1
+lib/Img/libtkimgraw142.so.1
+lib/Img/libtkimgsgi142.so.1
+lib/Img/libtkimgstub142.a
+lib/Img/libtkimgsun142.so.1
+lib/Img/libtkimgtga142.so.1
+lib/Img/libtkimgxbm142.so.1
+lib/Img/libtkimgtiff142.so.1
+lib/Img/libtkimgwindow142.so.1
+lib/Img/libtkimgxpm142.so.1
+lib/Img/pkgIndex.tcl
+lib/Img/tkimgConfig.sh
+@dirrm lib/Img
