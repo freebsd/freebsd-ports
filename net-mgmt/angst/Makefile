@@ -8,18 +8,15 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-0.4.tar.gz \
 		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/angst:}
 
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An active sniffer
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
-MAN8=		angst.8
-PLIST_FILES=	sbin/angst
+PLIST_FILES=	man/man8/angst.8.gz sbin/angst
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's,^(CC|CFLAGS).*,#&,; \
@@ -28,7 +25,7 @@ post-patch:
 		 ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
