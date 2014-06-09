@@ -17,7 +17,7 @@ EXTRACT_ONLY+=	${DIST_EXAMPLES}
 .endif
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	A Three-Dimensional Structural Finite Element Program
+COMMENT=	Three-Dimensional Structural Finite Element Program
 
 LICENSE=	GPLv2
 

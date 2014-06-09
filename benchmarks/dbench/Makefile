@@ -9,7 +9,7 @@ MASTER_SITES=	SAMBA
 MASTER_SITE_SUBDIR=	../../ftp/tridge/dbench
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	A simulation of the Ziff-Davis netbench benchmark
+COMMENT=	Simulation of the Ziff-Davis netbench benchmark
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 

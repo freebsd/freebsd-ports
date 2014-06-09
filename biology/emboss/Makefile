@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A collection of open source tools for genetic sequence analysis
+COMMENT=	Collection of open source tools for genetic sequence analysis
 
 LICENSE=	GPLv2
 

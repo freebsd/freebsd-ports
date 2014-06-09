@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joris@vandalon.nl
-COMMENT=	A CD to mp3c converter with a console frontend
+COMMENT=	CD to mp3c converter with a console frontend
 
 RUN_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools

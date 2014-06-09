@@ -11,7 +11,7 @@ MASTER_SITES=	http://vitunes.org/files/ \
 MASTER_SITE_SUBDIR=	dhn
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A curses-based media player with vim-like keybinds
+COMMENT=	Curses-based media player with vim-like keybinds
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib

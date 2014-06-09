@@ -11,7 +11,7 @@ DISTNAME=	ruby-taglib-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	t.hiroaki.209@gmail.com
-COMMENT=	A Ruby library wrapping the Taglib library
+COMMENT=	Ruby library wrapping the Taglib library
 
 LIB_DEPENDS=    libtag.so:${PORTSDIR}/audio/taglib
 

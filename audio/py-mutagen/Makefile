@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	johnson.peter@gmail.com
-COMMENT=	A Python-based audio metadata tag reader and writer
+COMMENT=	Python-based audio metadata tag reader and writer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

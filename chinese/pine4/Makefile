@@ -12,7 +12,7 @@ PATCH_SITES=	http://people.FreeBSD.org/~avatar/ports/patches/pine/ \
 PATCHFILES=	${PORTNAME}${PORTVERSION}.patch.gz
 
 MAINTAINER=	avatar@mmlab.cse.yzu.edu.tw
-COMMENT=	A Program for Internet News & Email with Chinese(BIG-5) support
+COMMENT=	Program for Internet News & Email with Chinese(BIG-5) support
 
 USE_BZIP2=	yes
 

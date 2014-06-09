@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	Version_${PORTVERSION}${DISTVERSIONSUFFIX}
 DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multiple DNA or protein sequence alignment package
+COMMENT=	Multiple DNA or protein sequence alignment package
 
 LICENSE=	GPLv2
 

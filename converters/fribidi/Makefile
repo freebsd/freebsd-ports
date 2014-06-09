@@ -8,7 +8,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://fribidi.org/download/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A Free Implementation of the Unicode Bidirectional Algorithm
+COMMENT=	Free Implementation of the Unicode Bidirectional Algorithm
 
 USES=	pathfix gmake
 USE_LDCONFIG=	yes

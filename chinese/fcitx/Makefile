@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A Flexible Input Method Framework
+COMMENT=	Flexible Input Method Framework
 
 LICENSE=	GPLv2
 

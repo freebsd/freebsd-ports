@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	rfcascade/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A simple tool to analyze noise and distortion of a RF system
+COMMENT=	Simple tool to analyze noise and distortion of a RF system
 
 GNU_CONFIGURE=	yes
 PORTDOCS=	ex1.gif index.html

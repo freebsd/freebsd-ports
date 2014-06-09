@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple Chinese text Wrapper
+COMMENT=	Simple Chinese text Wrapper
 
 USES=		perl5
 USE_PERL5=	configure

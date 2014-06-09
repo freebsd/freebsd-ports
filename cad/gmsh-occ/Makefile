@@ -7,7 +7,7 @@ CATEGORIES=	cad
 PKGNAMESUFFIX=	-occ
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	An automatic 3D finite element mesh generator with OpenCascade support
+COMMENT=	Automatic 3D finite element mesh generator with OpenCascade support
 
 MASTERDIR=	${.CURDIR}/../../cad/gmsh
 

@@ -7,7 +7,7 @@ CATEGORIES=	chinese devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A fork of Google Pinyin IME on Android
+COMMENT=	Fork of Google Pinyin IME on Android
 
 USE_LDCONFIG=	yes
 USES=		tar:bzip2 cmake

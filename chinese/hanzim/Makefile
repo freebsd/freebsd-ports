@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	. Old
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunrychen@gmail.com
-COMMENT=	A Chinese character learning-aid program
+COMMENT=	Chinese character learning-aid program
 
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84

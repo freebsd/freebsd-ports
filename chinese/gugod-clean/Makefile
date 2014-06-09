@@ -8,7 +8,7 @@ CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/gugod/
 
 MAINTAINER=	gugod@gugod.org
-COMMENT=	A pretty font modifyed from X11 schumacher-clean that match kcfonts
+COMMENT=	Pretty font modifyed from X11 schumacher-clean that match kcfonts
 
 RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

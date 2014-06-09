@@ -9,7 +9,7 @@ MASTER_SITES=	GENTOO/distfiles
 DISTVERSION=	0.0.8
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	A 3D positional spatialized sound library
+COMMENT=	3D positional spatialized sound library
 
 LICENSE=	GPLv2
 

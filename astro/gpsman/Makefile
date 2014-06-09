@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/distrib
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@catwhisker.org
-COMMENT=	A Tcl/Tk-based GPS management utility
+COMMENT=	Tcl/Tk-based GPS management utility
 
 OPTIONS_DEFINE=	DOCS
 

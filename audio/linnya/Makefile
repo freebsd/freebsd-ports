@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Linnya Audio Player
+COMMENT=	Linnya Audio Player
 
 LICENSE=	GPLv3
 

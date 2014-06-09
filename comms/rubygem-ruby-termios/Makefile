@@ -6,7 +6,7 @@ CATEGORIES=	comms rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby interface to termios
+COMMENT=	Ruby interface to termios
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

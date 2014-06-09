@@ -8,7 +8,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	syncer@gmail.com
-COMMENT=	A program for recording streams for KDE4
+COMMENT=	Program for recording streams for KDE4
 
 RUN_DEPENDS=	${LOCALBASE}/bin/streamripper:${PORTSDIR}/audio/streamripper
 

@@ -8,7 +8,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	A media library management system for obsessive-compulsive music geeks
+COMMENT=	Media library management system for obsessive-compulsive music geeks
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.22:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0:${PORTSDIR}/converters/py-unidecode \

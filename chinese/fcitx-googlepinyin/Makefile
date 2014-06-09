@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A libgooglepinyin support for Fcitx
+COMMENT=	Libgooglepinyin support for Fcitx
 
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libgooglepinyin.so:${PORTSDIR}/chinese/libgooglepinyin

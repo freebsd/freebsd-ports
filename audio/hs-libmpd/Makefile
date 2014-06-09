@@ -6,7 +6,7 @@ PORTREVISION=	5
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	An MPD client library
+COMMENT=	MPD client library
 
 LICENSE=	LGPL21
 
