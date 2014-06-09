@@ -16,23 +16,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		netspoc.1 print-group.1
-MAN3=		Netspoc.3
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.shtml ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/doc
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}/doc)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.shtml ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/doc)
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
