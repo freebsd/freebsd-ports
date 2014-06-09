@@ -40,8 +40,13 @@ post-patch:
 .endfor
 
 post-configure:
+	# Do not link with X11 -- none of tkimg code uses X directly
+	${REINPLACE_CMD} -E -e 's,-L[^[:space:]]+[[:space:]]+-lX[^[:space:]]*,,g' \
+		${WRKSRC}/*/Makefile
 .for l in jpeg png tiff
-	${REINPLACE_CMD} -E -e 's,^SHLIB_LD_LIBS[[:space:]]*=[[:space:]]*(.*),SHLIB_LD_LIBS=\1 -l$l,' \
+	# Link with -l$l
+	${REINPLACE_CMD} -E \
+		-e 's,^SHLIB_LD_LIBS[[:space:]]*=[[:space:]]*(.*),SHLIB_LD_LIBS=\1 -l$l,' \
 		-e 's,-lpng$$,-lpng15,' ${WRKSRC}/$l/Makefile
 .endfor
 
