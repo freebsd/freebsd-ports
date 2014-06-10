@@ -23,9 +23,8 @@ CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix pkgconfig
+USES=		libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_XZ=		yes
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
