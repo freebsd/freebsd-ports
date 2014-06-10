@@ -12,13 +12,13 @@ MASTER_SITE_SUBDIR=	jwhois
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=An improved WHOIS client capable of selecting server to query
 
+LICENSE=	GPLv3
+
 GNU_CONFIGURE=	yes
 USES=		gettext gmake
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	NLS
 
@@ -33,8 +33,6 @@ PLIST_SUB=	NLS="@comment "
 
 INSTALL_TARGET=	install-strip
 
-MANLANG=	"" sv
-MAN1=	jwhois.1
 INFO=	jwhois
 
 .include <bsd.port.pre.mk>
@@ -46,12 +44,7 @@ JWHOIS_CONF_SRC=${WRKSRC}/example/jwhois.conf
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/var/jwhois
-	${CHOWN} :nogroup ${PREFIX}/var/jwhois
-	${CHMOD} g+w ${PREFIX}/var/jwhois
-	${CHOWN} :nogroup ${PREFIX}/bin/jwhois
-	${CHMOD} g+s ${PREFIX}/bin/jwhois
-	${INSTALL_DATA} ${JWHOIS_CONF_SRC} ${PREFIX}/etc/jwhois.conf.sample
-	if [ ! -f ${PREFIX}/etc/jwhois.conf ]; then ${INSTALL_DATA} ${PREFIX}/etc/jwhois.conf.sample ${PREFIX}/etc/jwhois.conf; fi
+	${MKDIR} ${STAGEDIR}${PREFIX}/var/jwhois
+	${INSTALL_DATA} ${JWHOIS_CONF_SRC} ${STAGEDIR}${PREFIX}/etc/jwhois.conf.sample
 
 .include <bsd.port.post.mk>

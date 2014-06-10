@@ -1,7 +1,7 @@
 bin/jwhois
-@unexec if cmp -s %D/etc/jwhois.conf %D/etc/jwhois.conf.sample; then rm -f %D/etc/jwhois.conf; fi
-etc/jwhois.conf.sample
-@exec if [ ! -f %B/jwhois.conf ]; then cp %B/%f %B/jwhois.conf; fi
+@sample etc/jwhois.conf.sample
+man/man1/jwhois.1.gz
+man/sv/man1/jwhois.1.gz
 %%NLS%%share/locale/es/LC_MESSAGES/jwhois.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/jwhois.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/jwhois.mo
@@ -17,13 +17,17 @@ etc/jwhois.conf.sample
 %%NLS%%share/locale/tr/LC_MESSAGES/jwhois.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/jwhois.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/jwhois.mo
+@exec mkdir -p %D/var 2>/dev/null || true
+@group nogroup
+@mode 775
 @exec mkdir -p %D/var/jwhois 2>/dev/null || true
-@exec chown :nogroup %D/var/jwhois
-@exec chmod g+w %D/var/jwhois
 @unexec rm -f %D/var/jwhois/jwhois.db 2>/dev/null || true
 @dirrmtry var/jwhois
+@group wheel
+@mode 755
 @dirrmtry var
 @dirrmtry man/sv/man1
 @dirrmtry man/sv
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/rw 2>/dev/null || true
+@mode 444
