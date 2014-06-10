@@ -2,7 +2,7 @@
 
 PORTNAME=	libvisio
 PORTVERSION=	0.0.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
@@ -17,13 +17,13 @@ LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
 		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
 		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg
 
-CONFIGURE_ARGS=	--disable-werror
+CONFIGURE_ARGS=	--disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_XZ=		yes
-USES=		gmake pathfix perl5 pkgconfig
+USES=		gmake libtool pathfix perl5 pkgconfig tar:xz
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
