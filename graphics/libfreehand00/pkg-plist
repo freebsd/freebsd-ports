@@ -1,0 +1,9 @@
+include/libfreehand-0.0/libfreehand/FHStringVector.h
+include/libfreehand-0.0/libfreehand/FreeHandDocument.h
+include/libfreehand-0.0/libfreehand/libfreehand.h
+lib/libfreehand-0.0.so
+lib/libfreehand-0.0.so.0
+lib/libfreehand-0.0.so.0.0.0
+libdata/pkgconfig/libfreehand-0.0.pc
+@dirrm include/libfreehand-0.0/libfreehand
+@dirrm include/libfreehand-0.0
