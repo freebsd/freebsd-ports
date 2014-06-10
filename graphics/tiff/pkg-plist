@@ -17,7 +17,6 @@ bin/tiffcp
 bin/tiffcrop
 bin/tiffdither
 bin/tiffdump
-%%X11%%bin/tiffgt
 bin/tiffinfo
 bin/tiffmedian
 bin/tiffset
@@ -56,7 +55,6 @@ man/man1/tiffcp.1.gz
 man/man1/tiffcrop.1.gz
 man/man1/tiffdither.1.gz
 man/man1/tiffdump.1.gz
-man/man1/tiffgt.1.gz
 man/man1/tiffinfo.1.gz
 man/man1/tiffmedian.1.gz
 man/man1/tiffset.1.gz
