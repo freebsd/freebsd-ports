@@ -1,9 +1,8 @@
 include/lingoteach/lingdefs.h
 include/lingoteach/lingoteach.h
 lib/liblingoteach.a
-lib/liblingoteach.la
 lib/liblingoteach.so
-lib/liblingoteach.so.3
+lib/liblingoteach.so.2.1.0
 libdata/pkgconfig/liblingoteach.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/a00010.html
 %%PORTDOCS%%%%DOCSDIR%%/html/a00011.html
