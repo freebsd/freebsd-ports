@@ -2,29 +2,26 @@
 
 PORTNAME=	lfpfonts-fix
 PORTVERSION=	0.82
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/xfonts/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Fixed width fonts from the Linux Font Project
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 WRKSRC=		${WRKDIR}/lfpfonts-fix
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
-NO_STAGE=	yes
+FONTDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
+
 do-install:
-	@${MKDIR} ${PREFIX}/lib/X11/fonts/lfpfonts-fix
-	@${INSTALL_DATA} ${WRKSRC}/lfp-fix/*.pcf.gz ${PREFIX}/lib/X11/fonts/lfpfonts-fix
-	@${INSTALL_DATA} ${WRKSRC}/lfp-fix/fonts.dir ${PREFIX}/lib/X11/fonts/lfpfonts-fix
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/lfp-fix/*.pcf.gz ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
