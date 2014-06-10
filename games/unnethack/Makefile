@@ -19,28 +19,29 @@ MAKE_JOBS_UNSAFE=	yes
 VARDIR_REL=	var/games/${PORTNAME}
 VARDIR=		${PREFIX}/${VARDIR_REL}
 CONFIGURE_ARGS=	--datadir="${DATADIR:H}" --localstatedir="${VARDIR:H}" --docdir="${DOCSDIR:H}" \
-		--with-owner=games --with-group=games \
+		--with-owner=no --with-group=no \
 		--enable-data-librarian
-MAKE_ARGS=	FILEPERM=0664 \
-		VARFILEPERM=0664 \
-		VARDIRPERM=0775
+MAKE_ARGS=	MANPREFIX="${STAGEDIR}${MANPREFIX}"
 INSTALL_TARGET=	install manpages
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	VARDIR="${VARDIR}"
 PLIST_SUB=	VARDIR="${VARDIR_REL}"
-# This port accually conflicts with other nethack variant ports on
-# these commands that are only significant for those who want to
-# "hack" the game in deep.
-MAN6=		dgn_comp.6 dlb.6 lev_comp.6 recover.6 ${PORTNAME}.6
 
-NO_STAGE=	yes
 post-patch:
 	${MV} ${WRKSRC}/doc/nethack.6 ${WRKSRC}/doc/${PORTNAME}.6
 
 post-install:
+	cd ${STAGEDIR}${PREFIX}/man/man6; \
+	for f in ${WRKSRC}/doc/*.6; do \
+		fn=$${f##*/}; \
+		case $$fn in \
+			unnethack.6) ;; \
+			*) ${MV} $$fn unnethack_$$fn ;; \
+		esac; \
+	done
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${FILESDIR}/sample.unnethackrc ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/sample.unnethackrc ${STAGEDIR}${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
