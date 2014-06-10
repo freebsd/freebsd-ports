@@ -1,0 +1,13 @@
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	2007-07-01 17:56:12.000000000 +0900
++++ configure	2014-06-10 20:31:03.977495749 +0900
+@@ -5418,7 +5418,7 @@
+   fi
+   if test "X$ltrpathdirs" != "X"; then
+             for found_dir in $ltrpathdirs; do
+-      LTLIBINTL="${LTLIBINTL}${LTLIBINTL:+ }-R$found_dir"
++      LTLIBINTL="${LTLIBINTL}${LTLIBINTL:+ }-Wl,-rpath,$found_dir"
+     done
+   fi
+ 
