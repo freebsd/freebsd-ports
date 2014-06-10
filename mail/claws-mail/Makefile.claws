@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTVERSION=	3.10.0
+PORTVERSION=	3.10.1
 CATEGORIES?=	mail
 MASTER_SITES=	SF/claws-mail/Claws%20Mail/${PORTVERSION}
 
@@ -25,6 +25,7 @@ CLAWS_PLUGINS=	acpi_notifier \
 		fetchinfo \
 		gdata \
 		geolocation \
+		libravatar \
 		mailmbox \
 		newmail \
 		notification \
