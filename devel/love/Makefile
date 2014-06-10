@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	love
-PORTVERSION=	0.8.0
-PORTREVISION=	5
+PORTVERSION=	0.9.1
 CATEGORIES=	devel games
-MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
+MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libmodplug.so:${PORTSDIR}/audio/libmodplug \
@@ -18,39 +20,46 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libphysfs.so:${PORTSDIR}/devel/physfs \
 		libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		gmake openal dos2unix lua:51
-USE_SDL=	sdl mixer
+USES=           gmake openal libtool pkgconfig compiler:c++11-lib \
+		desktop-file-utils shared-mime-info
+USE_SDL=	sdl2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
-		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
-CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib
 WRKSRC=		${WRKDIR}/love-${PORTVERSION}
-DOS2UNIX_FILES=	src/modules/graphics/opengl/GLee.h
+INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/love
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS LUAJIT
+OPTIONS_DEFAULT_i386=	LUAJIT
+OPTIONS_DEFAULT_amd64=	LUAJIT
+
+LUAJIT_DESC=	Use luajit
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d; \
-		/test/ s|==|=|' \
-		-e "s/lua5.1/lua-${LUA_VER}/g" \
-		${WRKSRC}/configure
+.if ${PORT_OPTIONS:MLUAJIT}
+CONFIGURE_ARGS=	--with-lua=luajit
+LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+.else
+USES+=		lua
+CONFIGURE_ARGS=	--with-lua=lua \
+		--with-luaversion="${LUA_VER}"
+CONFIGURE_ENV=	LUA_EXECUTABLE="${LUA_CMD}"
 
-.if ${PORT_OPTIONS:MDOCS}
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${with_lua}$${with_luaversion}|$${with_lua}-$${with_luaversion}|g' \
+		${WRKSRC}/configure
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in changes.txt readme.md
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
