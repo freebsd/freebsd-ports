@@ -3,7 +3,7 @@
 
 PORTNAME=	spectools
 PORTVERSION=	201108.r1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/ \
 		${MASTER_SITE_LOCAL}
@@ -31,7 +31,7 @@ ALL_TARGET=	spectool_net spectool_raw
 
 .if ${PORT_OPTIONS:MGTK2}
 ALL_TARGET+=	spectool_gtk
-LIB_DEPENDS+=	gtk:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDSOC+=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
 PLIST_SUB+=	GTK=""
 .else
 PLIST_SUB+=	GTK="@comment "
