@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.3.6
+PORTVERSION=	3.3.7
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -63,6 +63,7 @@ USERS=		${PORTNAME}
 GROUPS=		${USERS} www
 
 SUB_FILES=	pkg-message
+SUB_LIST=	OTRS_USER=${USERS} OTRS_GROUP=${USERS} WWWOWN=${WWWOWN}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ROOT_DIRS_LIST=	Kernel bin scripts doc
