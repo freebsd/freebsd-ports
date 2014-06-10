@@ -108,6 +108,8 @@ bin/terminator
 %%PYTHON_SITELIBDIR%%/terminatorlib/window.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/window.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/window.pyo
+man/man1/terminator.1.gz
+man/man5/terminator_config.5.gz
 share/applications/terminator.desktop
 share/icons/hicolor/16x16/actions/terminator_active_broadcast_all.png
 share/icons/hicolor/16x16/actions/terminator_active_broadcast_group.png
@@ -191,32 +193,14 @@ share/icons/hicolor/scalable/apps/terminator.svg
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/terminator.mo
 share/pixmaps/terminator.png
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
 %%NLS%%@dirrmtry share/locale/tyv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tyv
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_RU
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/jv
 %%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fy
-%%NLS%%@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca@valencia
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
 @dirrm %%PYTHON_SITELIBDIR%%/terminatorlib/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/terminatorlib/configobj
 @dirrm %%PYTHON_SITELIBDIR%%/terminatorlib
