@@ -15,7 +15,6 @@ COMMENT=	English PK fonts, for ghostscripts, xdvi, and so on
 DIST_SUBDIR=	pkfonts
 EXTRACT_ONLY=	# extracted directly in install target
 NO_BUILD=	yes
-NO_STAGE=	yes
 PLIST=		${PKGDIR}/pkg-plist.${RESOLUTION}
 
 .if !defined(RESOLUTION)
@@ -32,7 +31,7 @@ RESOLUTION=	300
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/fonts
-	${TAR} -C ${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/fonts
+	${TAR} -C ${STAGEDIR}${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 
 .include <bsd.port.mk>

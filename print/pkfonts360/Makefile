@@ -4,5 +4,4 @@
 RESOLUTION=	360
 MASTERDIR=	${.CURDIR}/../pkfonts300
 
-NO_STAGE=	yes
 .include	"${MASTERDIR}/Makefile"
