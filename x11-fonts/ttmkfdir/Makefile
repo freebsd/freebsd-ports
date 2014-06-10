@@ -5,12 +5,14 @@ PORTNAME=	ttmkfdir
 PORTVERSION=	3.0.9
 PORTREVISION=	3
 PORTEPOCH=	1
-CATEGORIES=	x11-fonts x11
-MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=distfiles
+CATEGORIES=	x11-fonts
+MASTER_SITES=	${MASTER_SITE_GENTOO}/distfiles/ \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Create fonts.scale file for use with TrueType font server
+
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
