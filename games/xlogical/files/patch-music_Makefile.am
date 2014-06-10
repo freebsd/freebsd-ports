@@ -1,0 +1,17 @@
+--- music/Makefile.am.orig	2014-06-10 17:24:39.000000000 +0000
++++ music/Makefile.am
+@@ -3,10 +3,10 @@
+ SHELL=@SHELL@
+ 
+ install-data-am:
+-	$(SHELL) ./../mkinstalldirs $(datadir)/xlogical
+-	$(SHELL) ./../mkinstalldirs $(datadir)/xlogical/music
+-	cp *.mod $(datadir)/xlogical/music
+-	chmod 644 $(datadir)/xlogical/music/*.mod
++	$(SHELL) ./../mkinstalldirs $(DESTDIR)$(datadir)/xlogical
++	$(SHELL) ./../mkinstalldirs $(DESTDIR)$(datadir)/xlogical/music
++	$(BSD_INSTALL_DATA) *.mod $(DESTDIR)$(datadir)/xlogical/music
++	chmod 644 $(DESTDIR)$(datadir)/xlogical/music/*.mod
+ uninstall:
+ 	rm -f $(datadir)/xlogical/music/*.mod
+ 	rmdir $(datadir)/xlogical/music

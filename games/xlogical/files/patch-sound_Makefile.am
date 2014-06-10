@@ -1,0 +1,17 @@
+--- sound/Makefile.am.orig	2014-06-10 17:24:39.000000000 +0000
++++ sound/Makefile.am
+@@ -3,10 +3,10 @@
+ SHELL=@SHELL@
+ 
+ install-data-am:
+-	$(SHELL) ./../mkinstalldirs $(datadir)/xlogical
+-	$(SHELL) ./../mkinstalldirs $(datadir)/xlogical/sound
+-	cp *.wav $(datadir)/xlogical/sound
+-	chmod 644 $(datadir)/xlogical/sound/*.wav
++	$(SHELL) ./../mkinstalldirs $(DESTDIR)$(datadir)/xlogical
++	$(SHELL) ./../mkinstalldirs $(DESTDIR)$(datadir)/xlogical/sound
++	$(BSD_INSTALL_DATA) *.wav $(DESTDIR)$(datadir)/xlogical/sound
++	chmod 644 $(DESTDIR)$(datadir)/xlogical/sound/*.wav
+ uninstall:
+ 	rm -f $(datadir)/xlogical/sound/*.wav
+ 	rmdir $(datadir)/xlogical/sound
