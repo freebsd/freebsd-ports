@@ -46,4 +46,7 @@ post-patch:
 		 s,<parserInternals\.h>,<libxml/parserInternals.h>,; \
 		 s,<entities\.h>,<libxml/entities.h>,'
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdome.so
+
 .include <bsd.port.mk>
