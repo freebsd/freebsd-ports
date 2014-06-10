@@ -1,5 +1,14 @@
 --- Makefile.in.orig	2012-07-08 21:55:38.000000000 -0700
-+++ Makefile.in	2012-10-01 12:36:55.710386405 -0700
++++ Makefile.in	2014-06-09 23:06:38.000000000 -0700
+@@ -28,7 +28,7 @@
+ LEXFLAGS = -t 
+ 
+ INSTALL = @INSTALL@
+-INSTALL_OWNER = -o root -g 0
++INSTALL_OWNER =
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
 @@ -55,7 +55,7 @@
  
  CONFIGURE_FILES = Makefile config.status config.cache config.h config.log 

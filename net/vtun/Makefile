@@ -9,11 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
-LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
-
-MAN5=		vtund.conf.5
-MAN8=		vtund.8
-MLINKS=		vtund.8 vtun.8
+LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -30,7 +26,6 @@ ALL_TARGET=	vtund
 DOCS=		ChangeLog Credits FAQ README README.LZO README.Setup \
 		README.Shaper TODO
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${CC} == "clang" || ${CXX} == "clang++" || ${OSVERSION} >= 1000026
@@ -43,13 +38,14 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-tun_dev.c
 .endif
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/sbin/vtund
-	@${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/etc/vtund.conf.example
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/vtund
+	@${INSTALL_DATA} ${WRKSRC}/vtund.conf ${STAGEDIR}${PREFIX}/etc/vtund.conf.example
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
+	@${LN} -s ${STAGEDIR}${PREFIX}/man/man8/vtund.8 ${STAGEDIR}${PREFIX}/man/man1/vtun.1
 
 .include <bsd.port.post.mk>

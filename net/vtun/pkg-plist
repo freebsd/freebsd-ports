@@ -1,6 +1,12 @@
+@owner root
+@group wheel
 @unexec if cmp -s %D/etc/vtund.conf.example %D/etc/vtund.conf; then rm -f %D/etc/vtund.conf; fi
 etc/vtund.conf.example
 sbin/vtund
+man/man5/vtund.conf.5.gz
+man/man8/vtund.8.gz
+man/man8/vtun.8.gz
+man/man1/vtun.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Credits
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -10,5 +16,8 @@ sbin/vtund
 %%PORTDOCS%%%%DOCSDIR%%/README.Shaper
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec rm -rf /var/log/vtund
-@exec rm -rf /var/lock/vtund
+@unexec rm -rf "/var/log/vtund"
+@unexec rm -rf "/var/lock/vtund"
+@unexec rmdir "/var/lock/vtund" >/dev/null 2>&1 || :
+@unexec rmdir "/var/lock" >/dev/null 2>&1 || :
+@unexec rmdir "/var/log/vtund" >/dev/null 2>&1 || :
