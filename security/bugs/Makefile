@@ -13,7 +13,6 @@ COMMENT=	Great cryptographic library and sample programs
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" BFLAG="${CFLAGS}" \
 		INSTALL_PATH="${PREFIX}/${DISTNAME}"
@@ -47,13 +46,14 @@ post-build:
 	@${LN} -sf ${WRKSRC}/lib/unix/*.a ${WRKSRC}/lib/
 
 post-install:
-	@${MKDIR} ${PREFIX}/${DISTNAME}/include
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/${DISTNAME}/include
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DISTNAME}/include
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/${DISTNAME}/include
 .for file in bchat bcrypt bhide bkey block blogin bmore bpass bpassdel bunlock
-	@${STRIP_CMD} ${PREFIX}/${DISTNAME}/${file}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${DISTNAME}/${file}
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 test: build
