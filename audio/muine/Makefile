@@ -7,10 +7,10 @@ PORTREVISION=	12
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mono based Gnome audio player
 
-IGNORE=		Fails to run
+# IGNORE=		Fails to run
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \
