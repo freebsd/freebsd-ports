@@ -11,7 +11,7 @@ DISTFILES=		o2em117src.zip:1 \
 			o2mainsamp.zip:2
 
 MAINTAINER=		techgunter@yahoo.com
-COMMENT=		An Odyssey2 / Videopac console emulator
+COMMENT=	Odyssey2 / Videopac console emulator
 
 LIB_DEPENDS=		alleg:${PORTSDIR}/devel/allegro
 

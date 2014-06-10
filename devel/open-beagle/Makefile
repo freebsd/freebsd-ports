@@ -8,7 +8,7 @@ MASTER_SITES=	SF/beagle/beagle/${PORTVERSION}
 DISTNAME=	beagle-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Evolutionary Computation Framework
+COMMENT=	Evolutionary Computation Framework
 
 CONFLICTS=	beagle-[0-9]*
 USE_AUTOTOOLS=	libtool

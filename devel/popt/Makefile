@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://rpm5.org/files/popt/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
-COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
+COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
 
 OPTIONS_DEFINE=	NLS
 

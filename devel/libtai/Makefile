@@ -10,7 +10,7 @@ MASTER_SITES=	http://cr.yp.to/libtai/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	A library for storing and manipulating dates and times in second/attosecond
+COMMENT=	Library for storing and manipulating dates and times in second/attosecond
 
 ALL_TARGET=	it
 USE_LDCONFIG=	yes

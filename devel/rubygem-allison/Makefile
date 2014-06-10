@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A modern, pretty RDoc template
+COMMENT=	Modern, pretty RDoc template
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	An R package for flexibly restructuring and aggregating data
+COMMENT=	R package for flexibly restructuring and aggregating data
 
 LICENSE=	MIT
 

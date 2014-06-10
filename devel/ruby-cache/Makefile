@@ -13,7 +13,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library for caching objects based on the LRU algorithm
+COMMENT=	Ruby library for caching objects based on the LRU algorithm
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

@@ -10,7 +10,7 @@ MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/ \
 MASTER_SITE_SUBDIR=	gahr
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C++ wrapper for libevent
+COMMENT=	C++ wrapper for libevent
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent
 

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	A perl 5 module for sorting of revision-like numbers
+COMMENT=	Perl 5 module for sorting of revision-like numbers
 
 USES=		perl5
 USE_PERL5=	configure

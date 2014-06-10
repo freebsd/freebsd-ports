@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A generic and extensible framework for serialization
+COMMENT=	Generic and extensible framework for serialization
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

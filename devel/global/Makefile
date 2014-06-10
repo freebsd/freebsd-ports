@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A source code tag system
+COMMENT=	Source code tag system
 
 GNU_CONFIGURE=	yes
 USES=		perl5 libtool

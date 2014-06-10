@@ -6,7 +6,7 @@ PORTVERSION=	0.9.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A full-featured tabular structured data management package
+COMMENT=	Full-featured tabular structured data management package
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Console/Table.php:${PORTSDIR}/devel/pear-Console_Table

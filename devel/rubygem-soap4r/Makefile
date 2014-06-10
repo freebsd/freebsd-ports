@@ -6,7 +6,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby implementation of SOAP 1.1
+COMMENT=	Ruby implementation of SOAP 1.1
 
 RUN_DEPENDS=	rubygem-httpclient>=2.1.1:${PORTSDIR}/www/rubygem-httpclient
 

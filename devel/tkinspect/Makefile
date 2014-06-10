@@ -8,7 +8,7 @@ CATEGORIES=	devel tcl tk
 MASTER_SITES=   SF/tkcon/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	A Tk program browser
+COMMENT=	Tk program browser
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 

@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	${PORTNAME}-4.0+i18n
 
 MAINTAINER=	sarumaru@jp.FreeBSD.org
-COMMENT=	A calendar with a notebook for X11 (internationalized version)
+COMMENT=	Calendar with a notebook for X11 (internationalized version)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

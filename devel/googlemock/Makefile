@@ -8,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	gmock-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A library for writing and using C++ mock classes
+COMMENT=	Library for writing and using C++ mock classes
 
 BUILD_DEPENDS=	googletest>=1.5.0:${PORTSDIR}/devel/googletest
 

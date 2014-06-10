@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A specialized Ruby testing framework
+COMMENT=	Specialized Ruby testing framework
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

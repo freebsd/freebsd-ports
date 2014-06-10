@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	johnpupu@gmail.com
-COMMENT=	A query cache plugin for mysqlnd
+COMMENT=	Query cache plugin for mysqlnd
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

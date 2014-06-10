@@ -8,7 +8,7 @@ MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSMTdoaVExWWNsRjg/ \
 		LOCAL/antoine
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A library for support of the Expert Witness Compression Format (EWF)
+COMMENT=	Library for support of the Expert Witness Compression Format (EWF)
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

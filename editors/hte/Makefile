@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/ht-source
 DISTNAME=	ht-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A file editor/viewer/analyzer for executables
+COMMENT=	File editor/viewer/analyzer for executables
 
 LICENSE=	GPLv2
 

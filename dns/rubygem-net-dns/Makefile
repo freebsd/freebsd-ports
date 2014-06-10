@@ -7,7 +7,7 @@ CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A pure Ruby DNS library
+COMMENT=	Pure Ruby DNS library
 
 RUN_DEPENDS=	rubygem-rcov>=0:${PORTSDIR}/devel/rubygem-rcov
 

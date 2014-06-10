@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A tiny LRU cache implementation and decorator
+COMMENT=	Tiny LRU cache implementation and decorator
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

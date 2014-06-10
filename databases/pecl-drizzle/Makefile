@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PHP wrapper for the libdrizzle library
+COMMENT=	PHP wrapper for the libdrizzle library
 
 LIB_DEPENDS=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
 

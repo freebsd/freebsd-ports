@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:NEOPHENIX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A Simple wrapper around hiredis C client
+COMMENT=	Simple wrapper around hiredis C client
 
 USES=		perl5
 USE_PERL5=	configure

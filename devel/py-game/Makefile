@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}release
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A module designed to write games in Python
+COMMENT=	Module designed to write games in Python
 
 LICENSE=	LGPL21
 

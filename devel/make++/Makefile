@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
 EXTRACT_SUFX=	.txz
 
 MAINTAINER=	gavin@16degrees.com.au
-COMMENT=	A drop-in replacement for GNU make
+COMMENT=	Drop-in replacement for GNU make
 
 LICENSE=	ART10 GPLv1 GPLv2 GPLv3
 LICENSE_COMB=	dual

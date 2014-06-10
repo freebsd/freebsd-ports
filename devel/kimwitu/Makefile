@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Programming/Compilers/Object-Oriented/
 DISTNAME=	kc-distr.V${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for processing trees (i.e. terms)
+COMMENT=	Tool for processing trees (i.e. terms)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=

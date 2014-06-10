@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Old%20Entity%20Versions
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A really rapid XML-based application development system
+COMMENT=	Really rapid XML-based application development system
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python

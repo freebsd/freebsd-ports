@@ -7,7 +7,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	A pure-Python database engine
+COMMENT=	Pure-Python database engine
 
 USES=		zip
 USE_PYTHON=	yes

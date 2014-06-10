@@ -9,7 +9,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME Applet for monitoring current and upcoming TV programs
+COMMENT=	GNOME Applet for monitoring current and upcoming TV programs
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

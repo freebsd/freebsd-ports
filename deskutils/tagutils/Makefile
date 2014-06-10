@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://releases.chipx86.com/leaftag/tagutils/
 
 MAINTAINER=	kaeru@inigo-tech.com
-COMMENT=	A command line tool for tagging files
+COMMENT=	Command line tool for tagging files
 
 LIB_DEPENDS=	libleaftag.so:${PORTSDIR}/devel/libleaftag
 

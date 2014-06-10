@@ -9,7 +9,7 @@ DISTNAME=	ghmain.c
 EXTRACT_SUFX=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command-line interface to the resolver library
+COMMENT=	Command-line interface to the resolver library
 
 WRKSRC=		${WRKDIR}
 

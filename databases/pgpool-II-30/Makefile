@@ -8,7 +8,7 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/3076/
 PKGNAMESUFFIX=	30
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	A connection pool server for PostgreSQL
+COMMENT=	Connection pool server for PostgreSQL
 
 LICENSE=	BSD
 

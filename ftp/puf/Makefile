@@ -7,7 +7,7 @@ CATEGORIES=	ftp www
 MASTER_SITES=	SF
 
 MAINTAINER=	jharris@widomaker.com
-COMMENT=	A parallel HTTP downloader similar to wget
+COMMENT=	Parallel HTTP downloader similar to wget
 
 GNU_CONFIGURE=	yes
 

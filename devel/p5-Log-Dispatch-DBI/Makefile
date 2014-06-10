@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gebhart@secnetix.de
-COMMENT=	A Log::Dispatch output class for logging to database via DBI interface
+COMMENT=	Log::Dispatch output class for logging to database via DBI interface
 
 BUILD_DEPENDS=	p5-Log-Dispatch>=2.0:${PORTSDIR}/devel/p5-Log-Dispatch \
 		p5-DBI>0:${PORTSDIR}/databases/p5-DBI

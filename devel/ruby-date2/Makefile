@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An alternative date class for Ruby
+COMMENT=	Alternative date class for Ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

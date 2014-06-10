@@ -7,7 +7,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
-COMMENT=	A unified Ruby API for popular databases
+COMMENT=	Unified Ruby API for popular databases
 
 RUN_DEPENDS=	rubygem-addressable>=2.1:${PORTSDIR}/www/rubygem-addressable
 

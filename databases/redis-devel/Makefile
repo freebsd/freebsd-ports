@@ -10,7 +10,7 @@ DISTNAME=	${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT=	A persistent key-value database with built-in net interface
+COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
 

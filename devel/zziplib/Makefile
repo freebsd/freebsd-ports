@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}13/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library to provide transparent read access to zipped files
+COMMENT=	Library to provide transparent read access to zipped files
 
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual

@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-C++
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A MySQL database connector for C++
+COMMENT=	MySQL database connector for C++
 
 LICENSE=	GPLv2
 

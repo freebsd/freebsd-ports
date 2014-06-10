@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A perl module to bind and alias variables
+COMMENT=	Perl module to bind and alias variables
 
 BUILD_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor	\
 		p5-Devel-Caller>0:${PORTSDIR}/devel/p5-Devel-Caller \

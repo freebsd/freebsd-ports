@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pclin@FreeBSD.org
-COMMENT=	A perl module which does alias lexical variables
+COMMENT=	Perl module which does alias lexical variables
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.thaiopensource.com/download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A major mode for editing XML documents for ${EMACS_PORT_NAME}
+COMMENT=	Major mode for editing XML documents for ${EMACS_PORT_NAME}
 
 USE_EMACS=	yes
 

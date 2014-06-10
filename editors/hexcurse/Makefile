@@ -8,7 +8,7 @@ MASTER_SITES=	DEBIAN
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	jadawin@FreeBSD.org
-COMMENT=	A versatile ncurses-based hex editor
+COMMENT=	Versatile ncurses-based hex editor
 
 GNU_CONFIGURE=	yes
 

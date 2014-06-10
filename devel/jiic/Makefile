@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A streaming-based Java implementation of ISO 9660
+COMMENT=	Streaming-based Java implementation of ISO 9660
 
 LICENSE=	LGPL21
 

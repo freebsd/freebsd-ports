@@ -7,7 +7,7 @@ MASTER_SITES=	http://releases.0x539.de/gobby/ \
 		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	A free collaborative editor
+COMMENT=	Free collaborative editor
 
 LICENSE=	GPLv2
 

@@ -7,7 +7,7 @@ CATEGORIES=	databases devel
 MASTER_SITES=	SF/libodbcxx/libodbc%2B%2B/${PORTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	A C++ class library and toolset for ODBC access to data sources
+COMMENT=	C++ class library and toolset for ODBC access to data sources
 
 LICENSE=	GPLv2
 

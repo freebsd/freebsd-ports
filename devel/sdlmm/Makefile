@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/SDLmm/${PORTVERSION}
 DISTNAME=	SDLmm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C++ Wrapper for the SDL (Simple DirectMedia Layer)
+COMMENT=	C++ Wrapper for the SDL (Simple DirectMedia Layer)
 
 USES=		libtool
 USE_SDL=	sdl

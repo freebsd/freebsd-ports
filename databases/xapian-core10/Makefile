@@ -8,7 +8,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A probabilistic text search database engine
+COMMENT=	Probabilistic text search database engine
 
 LICENSE=	GPLv2
 

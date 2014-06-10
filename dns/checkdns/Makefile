@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 		http://www.trunix.org/projeler/checkdns/
 
 MAINTAINER=	m.tsatsenko@gmail.com
-COMMENT=	A domain name server analysis and reporting tool
+COMMENT=	Domain name server analysis and reporting tool
 
 
 SUB_FILES=	pkg-message

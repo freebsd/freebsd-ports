@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:HINRIK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	A base class for creating plugin-enabled objects
+COMMENT=	Base class for creating plugin-enabled objects
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

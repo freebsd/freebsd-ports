@@ -7,7 +7,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An ActiveRecord adapter for MySQL, based on mysql gem
+COMMENT=	ActiveRecord adapter for MySQL, based on mysql gem
 
 RUN_DEPENDS=	rubygem-activerecord>=3.2.9:${PORTSDIR}/databases/rubygem-activerecord \
 		rubygem-activesupport>=3.2.9:${PORTSDIR}/devel/rubygem-activesupport \

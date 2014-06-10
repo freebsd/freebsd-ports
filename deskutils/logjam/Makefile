@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://andy-shev.github.com/LogJam/download/
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	A GTK2 interface to livejournals, ie www.livejournal.com
+COMMENT=	GTK2 interface to livejournals, ie www.livejournal.com
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib

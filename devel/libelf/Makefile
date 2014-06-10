@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mr511.de/software/ \
 MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
+COMMENT=	Public ELF file access library similar to libelf(3) in Solaris
 
 OPTIONS_DEFINE=	EXTENDED NLS SANITY
 OPTIONS_DEFAULT=	EXTENDED SANITY

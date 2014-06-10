@@ -8,7 +8,7 @@ MASTER_SITES=	http://reality.sgiweb.org/davea/
 DISTNAME=	libdwarf-${PORTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
-COMMENT=	A tool to display DWARF debugging information in ELF files
+COMMENT=	Tool to display DWARF debugging information in ELF files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdwarf.a:${PORTSDIR}/devel/libdwarf
 

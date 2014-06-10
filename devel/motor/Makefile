@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://thekonst.net/download/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A powerful text mode based programming IDE
+COMMENT=	Powerful text mode based programming IDE
 
 LICENSE=	GPLv2
 

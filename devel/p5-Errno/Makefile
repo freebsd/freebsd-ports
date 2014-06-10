@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A perl5 module providing access to System errno constants
+COMMENT=	Perl5 module providing access to System errno constants
 
 USES=		perl5
 USE_PERL5=	configure

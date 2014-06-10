@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A data interchange format library
+COMMENT=	Data interchange format library
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A pkg-config implementation for Ruby
+COMMENT=	pkg-config implementation for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

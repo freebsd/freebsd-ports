@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A Unicode/ISO10646 character map and font viewer
+COMMENT=	Unicode/ISO10646 character map and font viewer
 
 LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian
 

@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 DISTNAME=	ParseTreeReloaded-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A reimplementation of ParseTree using RubyInlineAcceleration
+COMMENT=	Reimplementation of ParseTree using RubyInlineAcceleration
 
 RUN_DEPENDS=	rubygem-rubyinlineaccel>=0.0.1:${PORTSDIR}/devel/rubygem-rubyinlineaccel
 

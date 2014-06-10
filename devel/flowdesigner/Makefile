@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/FlowDesigner/${PORTVERSION}
 DISTNAME=	FlowDesigner-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free (GPL) "data flow oriented" development environment
+COMMENT=	Free (GPL) "data flow oriented" development environment
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		fftw.2:${PORTSDIR}/math/fftw

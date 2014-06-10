@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MASAKI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
-COMMENT=	A Path::Class type library for Mouse
+COMMENT=	Path::Class type library for Mouse
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

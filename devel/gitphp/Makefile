@@ -6,7 +6,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	http://www.gitphp.org/attachments/download/47/
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	A web based git repository browser written in PHP
+COMMENT=	Web based git repository browser written in PHP
 
 LICENSE=	GPLv2
 

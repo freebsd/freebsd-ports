@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SUKRIA
 
 MAINTAINER=	jadawin@FreeBSD.org
-COMMENT=	A light program that lets you evaluate Perl code interactively
+COMMENT=	Light program that lets you evaluate Perl code interactively
 
 RUN_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		p5-Module-Refresh>=0:${PORTSDIR}/devel/p5-Module-Refresh \

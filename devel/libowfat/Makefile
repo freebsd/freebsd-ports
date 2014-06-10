@@ -8,7 +8,7 @@ CATEGORIES=	devel ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A general purpose library based on code by D. J. Bernstein
+COMMENT=	General purpose library based on code by D. J. Bernstein
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	dep all

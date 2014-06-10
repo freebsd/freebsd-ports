@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.cs.rit.edu/pub/mirrors/ise/download/57/ \
 DISTNAME=	Eiffel${PORTVERSION:S/.//}_gpl_64493-freebsd-${EIFFEL_ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Complete Integrated Development Environment for Eiffel
+COMMENT=	Complete Integrated Development Environment for Eiffel
 
 LIB_DEPENDS=	c.6:${PORTSDIR}/misc/compat6x
 

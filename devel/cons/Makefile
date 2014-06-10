@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rv@gnu.org
-COMMENT=	A Perl-based Make Replacement
+COMMENT=	Perl-based Make Replacement
 
 USES=		perl5
 NO_BUILD=	yes

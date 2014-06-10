@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A library of C++ classes for flexible logging
+COMMENT=	Library of C++ classes for flexible logging
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		gflags:${PORTSDIR}/devel/gflags

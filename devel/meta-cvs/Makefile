@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://common-lisp.net/project/meta-cvs/downloads/
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A more capable version control system than CVS, built around CVS
+COMMENT=	More capable version control system than CVS, built around CVS
 
 LICENSE=	GPLv2
 

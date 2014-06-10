@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel gnustep
 
 MAINTAINER=	theraven@FreeBSD.org
-COMMENT=	Visualisation tool for CHERI / BERI streamtraces.
+COMMENT=	Visualisation tool for CHERI / BERI streamtraces
 
 LICENSE=	MIT
 

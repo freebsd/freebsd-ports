@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A toolkit to convert your script to a controllable daemon
+COMMENT=	Toolkit to convert your script to a controllable daemon
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

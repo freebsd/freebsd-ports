@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A multi-platform Atari 2600 VCS emulator
+COMMENT=	Multi-platform Atari 2600 VCS emulator
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 

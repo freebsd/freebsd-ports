@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${REALVERSION}${PKGNAMESUFFIX}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pneumann@gmail.com
-COMMENT=	A database engine for storing object into files
+COMMENT=	Database engine for storing object into files
 
 USES=		mono
 

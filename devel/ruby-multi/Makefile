@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A library for multiple dispatch and pattern matching in Ruby
+COMMENT=	Library for multiple dispatch and pattern matching in Ruby
 
 USE_RUBY=	yes
 

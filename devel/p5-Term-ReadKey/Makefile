@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	TermReadKey-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A perl5 module for simple terminal control
+COMMENT=	Perl5 module for simple terminal control
 
 USES=		perl5
 USE_PERL5=	configure

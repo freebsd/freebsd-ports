@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A SLang-based text editor
+COMMENT=	SLang-based text editor
 
 LICENSE=	GPLv2
 

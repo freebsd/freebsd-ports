@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	hs-
 DISTNAME=	DrIFT-${PORTVERSION}
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A type sensitive preprocessor for Haskell
+COMMENT=	Type sensitive preprocessor for Haskell
 
 OPTIONS_SINGLE=			COMPILER
 OPTIONS_SINGLE_COMPILER=	NHC98 GHC

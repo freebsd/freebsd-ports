@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	saurbier@math.uni-bielefeld.de
-COMMENT=	A Ruby interface to ncurses
+COMMENT=	Ruby interface to ncurses
 
 USE_BZIP2=	yes
 

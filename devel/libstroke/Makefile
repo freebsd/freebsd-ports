@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://etla.net/libstroke/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A stroke translation library
+COMMENT=	Stroke translation library
 
 USES=		gmake
 USE_CSTD=	gnu89

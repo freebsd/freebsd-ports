@@ -8,7 +8,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A small website management system
+COMMENT=	Small website management system
 
 RUN_DEPENDS=	rubygem-redcloth>=4.2:${PORTSDIR}/www/rubygem-redcloth \
 		rubygem-launchy>=0.3.2:${PORTSDIR}/devel/rubygem-launchy \

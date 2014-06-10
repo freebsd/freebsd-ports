@@ -9,7 +9,7 @@ MASTER_SITES=	http://yum.baseurl.org/download/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	afb@rpm5.org
-COMMENT=	A fast metadata parser for yum
+COMMENT=	Fast metadata parser for yum
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \

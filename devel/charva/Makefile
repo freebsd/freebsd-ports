@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Java Windowing Toolkit for Text Terminals
+COMMENT=	Java Windowing Toolkit for Text Terminals
 
 BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging

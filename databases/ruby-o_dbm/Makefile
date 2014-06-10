@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An OODB-like DBM module for Ruby
+COMMENT=	OODB-like DBM module for Ruby
 
 USE_RUBY=	yes
 

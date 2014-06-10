@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cduce.org/download/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A lexer generator for Unicode and OCaml
+COMMENT=	Lexer generator for Unicode and OCaml
 
 USES=		gmake
 USE_OCAML=	true

@@ -7,7 +7,7 @@ CATEGORIES=	finance devel
 MASTER_SITES=	SF
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	A C library which can be used to fetch stocks quotes
+COMMENT=	C library which can be used to fetch stocks quotes
 
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	zeising@FreeBSD.org
-COMMENT=	A feature-filled tagfile generator for vi and emacs clones
+COMMENT=	Feature-filled tagfile generator for vi and emacs clones
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-macro-patterns --with-readlib

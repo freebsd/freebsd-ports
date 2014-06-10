@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A fast RDoc documentation browser for ruby
+COMMENT=	Fast RDoc documentation browser for ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

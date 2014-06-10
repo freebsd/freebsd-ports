@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Fatter Attr for Ruby
+COMMENT=	Fatter Attr for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

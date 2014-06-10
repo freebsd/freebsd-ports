@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A collection of miscellaneous Ruby modules
+COMMENT=	Collection of miscellaneous Ruby modules
 
 BROKEN=		not staged
 

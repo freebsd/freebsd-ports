@@ -8,7 +8,7 @@ CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3991/
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	A smartcard development library
+COMMENT=	Smartcard development library
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING

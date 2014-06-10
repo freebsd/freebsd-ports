@@ -20,7 +20,7 @@ MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/pub/users/hedley/
 DISTNAME=	pcemu1.01alpha
 
 MAINTAINER=	joerg@FreeBSD.org
-COMMENT=	An 8086 PC emulator, by David Hedley
+COMMENT=	8086 PC emulator, by David Hedley
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

@@ -10,7 +10,7 @@ MASTER_SITES=	http://breve.twisty-industries.com/downloads/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A Python s-expression style template engine
+COMMENT=	Python s-expression style template engine
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

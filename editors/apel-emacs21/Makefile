@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A Portable Emacs Library for emacs21
+COMMENT=	Portable Emacs Library for emacs21
 
 # This is a slave port.
 PORTCLASS=	slave

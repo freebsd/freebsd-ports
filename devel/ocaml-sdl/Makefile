@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocamlsdl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OCaml interface to the SDL
+COMMENT=	OCaml interface to the SDL
 
 LICENSE=	LGPL21
 

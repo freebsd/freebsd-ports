@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	LOCAL/jlaffaye
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A Redis client library written in Go
+COMMENT=	Redis client library written in Go
 
 GO_PKGNAME=	github.com/simonz05/${PORTNAME}
 

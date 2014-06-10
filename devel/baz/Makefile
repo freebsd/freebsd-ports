@@ -9,7 +9,7 @@ MASTER_SITES=	http://bazaar-vcs.org/releases/src/obsolete/
 DISTNAME=	bazaar_${PORTVERSION}
 
 MAINTAINER=	ulf.lilleengen@gmail.com
-COMMENT=	An implementation of the GNU Arch RCS protocol in C by Canonical
+COMMENT=	Implementation of the GNU Arch RCS protocol in C by Canonical
 
 BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils \

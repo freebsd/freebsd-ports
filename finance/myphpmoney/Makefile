@@ -9,7 +9,7 @@ MASTER_SITES=		SF/${PORTNAME}/MyPhpMoney/1.3RC3
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER=		courou@users.sourceforge.net
-COMMENT=		A PHP script for managing your accounts
+COMMENT=		PHP script for managing your accounts
 
 WEBOWN?=		www
 WEBGRP?=		www

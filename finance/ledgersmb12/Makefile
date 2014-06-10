@@ -7,7 +7,7 @@ CATEGORIES=	finance perl5
 MASTER_SITES=	SF/ledger-smb/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A double entry accounting system
+COMMENT=	Double entry accounting system
 
 BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \

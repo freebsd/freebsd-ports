@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple API for command-line interaction
+COMMENT=	Simple API for command-line interaction
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

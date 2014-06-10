@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
-COMMENT=	A web based GroupWare system
+COMMENT=	Web based GroupWare system
 
 # php extensions
 USE_PHP=	curl \

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	A set of Ruby bindings for libstatgrab
+COMMENT=	Set of Ruby bindings for libstatgrab
 
 LIB_DEPENDS=	libstatgrab0.so:${PORTSDIR}/devel/libstatgrab0
 

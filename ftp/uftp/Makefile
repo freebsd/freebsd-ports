@@ -9,7 +9,7 @@ MASTER_SITES=	http://uftp-multicast.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A multicast capable FTP client and server
+COMMENT=	Multicast capable FTP client and server
 
 LICENSE=	GPLv3
 

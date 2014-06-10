@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A dead-simple Object-XML mapper for Python
+COMMENT=	Dead-simple Object-XML mapper for Python
 
 LICENSE=	MIT
 

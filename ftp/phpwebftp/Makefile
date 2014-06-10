@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A set of PHP-scripts to manage FTP over the web
+COMMENT=	Set of PHP-scripts to manage FTP over the web
 
 USES=		zip
 NO_BUILD=	yes

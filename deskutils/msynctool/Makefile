@@ -7,7 +7,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
 MAINTAINER=	webmaster@kibab.com
-COMMENT=	A command line client for the OpenSync framework
+COMMENT=	Command line client for the OpenSync framework
 
 LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 

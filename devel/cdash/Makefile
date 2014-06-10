@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cdash.org/download/
 DISTNAME=	CDash-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A web-based software testing server
+COMMENT=	Web-based software testing server
 
 LICENSE=	BSD3CLAUSE
 

@@ -9,7 +9,7 @@ DISTFILES=	cpplint.py cpplint_unittest.py README
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	A tool to assist with Google style guide compliance
+COMMENT=	Tool to assist with Google style guide compliance
 
 USE_PYTHON?=	yes
 NO_BUILD=	yes

@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Java solution for real time and embedded systems
+COMMENT=	Java solution for real time and embedded systems
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

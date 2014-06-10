@@ -11,7 +11,7 @@ EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A front-end of Egg V4
+COMMENT=	Front-end of Egg V4
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

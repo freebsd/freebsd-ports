@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A C preprocessor and lexer
+COMMENT=	C preprocessor and lexer
 
 LICENSE=	BSD3CLAUSE
 

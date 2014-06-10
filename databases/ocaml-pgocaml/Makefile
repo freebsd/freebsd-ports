@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	ocaml-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tcrimi@gmail.com
-COMMENT=	An OCaml interface to PostgreSQL
+COMMENT=	OCaml interface to PostgreSQL
 
 BROKEN=		Fails to build
 

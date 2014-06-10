@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/flat-file/RDB/
 DISTNAME=	RDB-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast, portable, relational database management system
+COMMENT=	Fast, portable, relational database management system
 
 WRKSRC=		${WRKDIR}/rdb
 USES=		perl5

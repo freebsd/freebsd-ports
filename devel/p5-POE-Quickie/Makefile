@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	takefu@airport.fm
-COMMENT=	A lazy way to wrap blocking code and programs
+COMMENT=	Lazy way to wrap blocking code and programs
 
 LICENSE=	GPLv1 ART10
 LICENSE_COMB=	dual
