@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.22.3
+PORTVERSION=	0.99.22.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	quagga
@@ -16,15 +16,13 @@ LICENSE=	GPLv2
 
 CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 
-USES=		gmake perl5
-USE_AUTOTOOLS=	libtool autoheader aclocal
+USES=		gmake perl5 libtool
+USE_AUTOTOOLS=	autoheader aclocal
 ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
-MAN1=		vtysh.1
-MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 watchquagga.8
 INFO=		quagga
 
 OPTIONS_DEFINE=	ISISD PAM OSPF_OPAQUE_LSA RTADV SNMP TCPSOCKETS DLMALLOC \
@@ -39,10 +37,8 @@ DLMALLOC_DESC=		Use dlmalloc (makes bgpd much faster)
 NO_BGP_ANNOUNCE_DESC=	Turn off BGP route announcement
 OSPF_NEXTHOP_DESC=	Set ip next-hop in OSPF route maps
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-CFLAGS+=	-I${LOCALBASE}/include
 .if ${OSVERSION} >= 800000
 LDFLAGS+=	-fstack-protector
 .endif
@@ -103,7 +99,7 @@ CONFIGURE_ARGS+=--enable-rtadv
 
 .if ${PORT_OPTIONS:MSNMP}
 CONFIGURE_ARGS+=--enable-snmp
-LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if ${PORT_OPTIONS:MTCPSOCKETS}
@@ -111,7 +107,7 @@ CONFIGURE_ARGS+=--enable-tcp-zebra
 .endif
 
 .if ${PORT_OPTIONS:MDLMALLOC}
-LIB_DEPENDS+=	dlmalloc:${PORTSDIR}/devel/libdlmalloc
+LIB_DEPENDS+=	libdlmalloc.so:${PORTSDIR}/devel/libdlmalloc
 LDFLAGS+=	-ldlmalloc
 SUB_LIST=	RCLDCONFIG=ldconfig
 .else
@@ -148,12 +144,11 @@ pre-everything::
 	@${ECHO} "SYSCONF_DIR       Specify directory for Quagga configuration files"
 	@${ECHO} "LOCALSTATE_DIR    Specify directory for Quagga runtime files"
 
-post-install:
-	@${MKDIR} ${LOCALSTATE_DIR}
-	@${MKDIR} ${SYSCONF_DIR}
-	@${CHOWN} -R ${ENABLE_USER}:${ENABLE_GROUP} ${LOCALSTATE_DIR} \
-		${SYSCONF_DIR}
-	@${CAT} ${PKGMESSAGE}
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libospf.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libzebra.so.0.0.0
+	${MKDIR} ${STAGEDIR}${LOCALSTATE_DIR}
+	${MKDIR} ${STAGEDIR}${SYSCONF_DIR}
 
 .if !defined(BATCH)
 post-clean:

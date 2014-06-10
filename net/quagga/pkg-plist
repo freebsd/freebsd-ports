@@ -10,17 +10,17 @@ sbin/watchquagga
 sbin/zebra
 bin/vtysh
 lib/libospf.a
-lib/libospf.la
 lib/libospf.so
 lib/libospf.so.0
+lib/libospf.so.0.0.0
 %%OSPFAPI%%lib/libospfapiclient.a
 %%OSPFAPI%%lib/libospfapiclient.la
 %%OSPFAPI%%lib/libospfapiclient.so
 %%OSPFAPI%%lib/libospfapiclient.so.0
 lib/libzebra.a
-lib/libzebra.la
 lib/libzebra.so
 lib/libzebra.so.0
+lib/libzebra.so.0.0.0
 include/quagga/buffer.h
 include/quagga/checksum.h
 include/quagga/command.h
@@ -79,11 +79,18 @@ include/quagga/zebra.h
 %%EXAMPLESDIR%%/ripngd.conf.sample
 %%EXAMPLESDIR%%/vtysh.conf.sample
 %%EXAMPLESDIR%%/zebra.conf.sample
+man/man1/vtysh.1.gz
+man/man8/bgpd.8.gz
+man/man8/ospf6d.8.gz
+man/man8/ospfd.8.gz
+man/man8/ripd.8.gz
+man/man8/ripngd.8.gz
+man/man8/watch%%ENABLE_USER%%.8.gz
+man/man8/zebra.8.gz
 @dirrm include/quagga/ospfd
 %%OSPFAPI%%@dirrm include/quagga/ospfapi
 @dirrm include/quagga
 @dirrm share/examples/quagga
 @dirrm etc/quagga
 @dirrmtry %%LOCALSTATE_DIR%%
-@exec mkdir -p %%LOCALSTATE_DIR%%
-@exec chown -R %%ENABLE_USER%%:%%ENABLE_GROUP%% %%LOCALSTATE_DIR%% %%SYSCONF_DIR%%
+@dirrmtry %%ETCDIR%%
