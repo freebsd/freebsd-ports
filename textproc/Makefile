@@ -346,6 +346,7 @@
     SUBDIR += latex2html
     SUBDIR += lemmatizer2
     SUBDIR += libabw
+    SUBDIR += libabw00
     SUBDIR += libcrm114
     SUBDIR += libcroco
     SUBDIR += libcsv
