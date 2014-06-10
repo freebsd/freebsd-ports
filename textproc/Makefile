@@ -352,6 +352,7 @@
     SUBDIR += libcsv
     SUBDIR += libcue
     SUBDIR += libe-book
+    SUBDIR += libe-book00
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libexttextcat
