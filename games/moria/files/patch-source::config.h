@@ -25,7 +25,7 @@ $FreeBSD$
 -#define MORIA_OWIZ_HELP	MORIA_LIB(owizcmds.hlp)
 -#define MORIA_WELCOME	MORIA_LIB(welcome.hlp)
 -#define MORIA_VER	MORIA_LIB(version.hlp)
-+#define MORIA_LIB(xxx)  "%%PREFIX%%/share/moria/" xxx
++#define MORIA_LIB(xxx)  "%%DATADIR%%/" xxx
 +#define MORIA_HOU	MORIA_LIB("hours")
 +#define MORIA_MOR	MORIA_LIB("news")
 +#define MORIA_TOP	MORIA_LIB("scores")
