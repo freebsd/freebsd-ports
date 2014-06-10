@@ -3,6 +3,7 @@
 
 PORTNAME=	modules
 PORTVERSION=	svn20130912
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	bennugd-
@@ -14,7 +15,7 @@ COMMENT=	High level open source game development suite, modules
 LIB_DEPENDS=	libbgdrtm.so:${PORTSDIR}/devel/bennugd-core \
 		libpng.so:${PORTSDIR}/graphics/png
 
-USES=		tar:bzip2 dos2unix pkgconfig
+USES=		tar:bzip2 dos2unix pkgconfig libtool
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
