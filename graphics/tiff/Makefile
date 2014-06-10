@@ -3,7 +3,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	4.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
@@ -22,9 +22,10 @@ USES=		libtool:oldver
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
-			--with-jpeg-lib-dir=${LOCALBASE}/lib
+			--with-jpeg-lib-dir=${LOCALBASE}/lib \
+			--without-x
 
-MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
+MLNKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFFlush.3tiff          TIFFFlushData.3tiff \
 	TIFFGetField.3tiff       TIFFGetFieldDefaulted.3tiff \
 	TIFFGetField.3tiff       TIFFVGetField.3tiff \
@@ -82,16 +83,10 @@ MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFtile.3tiff           TIFFTileRowSize.3tiff \
 	TIFFtile.3tiff           TIFFVTileSize.3tiff
 
-OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
-OPTIONS_SUB=	yes
-X11_CONFIGURE_WITH=	x libgl
-X11_USE=	xorg=sm,ice,xmu,xi,x11 gl=glut,glu,gl
-
 .include <bsd.port.options.mk>
 
 .if !defined(BUILDING_INDEX)
-__pmlinks3!= ${ECHO_CMD} '${MLINKS:S/    / /}' | ${AWK} \
+__pmlinks3!= ${ECHO_CMD} '${MLNKS:S/    / /}' | ${AWK} \
 	'{ if (NF % 2 != 0) { print "broken"; exit; } \
 	for (i=1; i<=NF; i++) { \
 		if ( i % 2 == 0) { print " " $$i " ;"; } \
@@ -103,6 +98,9 @@ pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|^LIBTIFF_VERSION_INFO =.*$$|LIBTIFF_VERSION_INFO = 4:0:0|' \
 		${WRKSRC}/libtiff/Makefile.in
+	${REINPLACE_CMD} \
+		-e 's|tiffgt.1 ||' \
+		${WRKSRC}/man/Makefile.in
 	${REINPLACE_CMD} -e 's|^docfiles|no-docfiles|' \
 		-e 's|man html|man|' ${WRKSRC}/Makefile.in
 
