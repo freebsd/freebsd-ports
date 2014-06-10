@@ -52,8 +52,7 @@ TEST_DESC=	Add support for running regression test
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-USE_XZ=		yes
-USES=		compiler gmake iconv motif
+USES=		compiler gmake iconv motif tar:xz
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR}/../openjdk6/Makefile.icedtea"
