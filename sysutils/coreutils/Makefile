@@ -8,8 +8,8 @@ CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jharris@widomaker.com
-COMMENT=	The Free Software Foundation's core utilities
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Free Software Foundation core utilities
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
