@@ -18,3 +18,4 @@ share/cmake/rime/RimeConfig.cmake
 @dirrmtry %%DATADIR%%/data
 @dirrmtry %%DATADIR%%
 @dirrm share/cmake/rime
+@dirrmtry share/cmake
