@@ -2,6 +2,7 @@
 
 PORTNAME=	libcdr
 PORTVERSION=	0.0.16
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
@@ -19,8 +20,9 @@ LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror --without-docs
-USES=	pathfix pkgconfig tar:xz
+USES=	libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wno-long-long
