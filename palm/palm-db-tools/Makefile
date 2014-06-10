@@ -19,7 +19,6 @@ PLIST_FILES=	lib/libpdbtools.so \
 		bin/csv2pdb \
 		bin/pdb2csv
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-Wno-deprecated|& -fPIC -DPIC|" \
 		${WRKSRC}/libflatfile/Makefile.in ${WRKSRC}/libpalm/Makefile.in \
