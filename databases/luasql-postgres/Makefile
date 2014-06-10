@@ -7,5 +7,4 @@ LUASQL_DRIVER=	postgres
 
 MASTERDIR=	${.CURDIR}/../luasql-mysql
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
