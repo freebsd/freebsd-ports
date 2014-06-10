@@ -1,9 +1,7 @@
-@unexec cmp -s %D/etc/ezjail.conf.sample %D/etc/ezjail.conf && rm -f %D/etc/ezjail.conf || true
-etc/ezjail.conf.sample
-@exec [ -f %B/ezjail.conf ] || cp -p %D/%F %B/ezjail.conf
+@sample etc/ezjail.conf.sample
 etc/rc.d/ezjail
 bin/ezjail-admin
-share/zsh/site-functions/ezjail-admin
+share/zsh/site-functions/_ezjail-admin
 %%EXAMPLESDIR%%/example/etc/make.conf
 %%EXAMPLESDIR%%/example/etc/periodic.conf
 %%EXAMPLESDIR%%/example/etc/rc.conf
@@ -13,6 +11,9 @@ share/zsh/site-functions/ezjail-admin
 %%EXAMPLESDIR%%/nullmailer-example/etc/rc.conf
 %%EXAMPLESDIR%%/nullmailer-example/etc/mail/mailer.conf
 %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer/remotes
+man/man5/ezjail.conf.5.gz
+man/man7/ezjail.7.gz
+man/man8/ezjail-admin.8.gz
 @dirrm etc/ezjail
 @dirrm %%EXAMPLESDIR%%/example/usr/local/etc
 @dirrm %%EXAMPLESDIR%%/example/usr/local
