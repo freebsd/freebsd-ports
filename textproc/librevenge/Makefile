@@ -12,6 +12,7 @@ LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
 USES=		gmake libtool pathfix tar:xz
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
