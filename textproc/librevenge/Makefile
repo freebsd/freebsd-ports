@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel
 OPTIONS_DEFINE=	DOCS
 
 CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	-disable-werror
+CONFIGURE_ARGS=	-disable-werror --disable-tests
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
