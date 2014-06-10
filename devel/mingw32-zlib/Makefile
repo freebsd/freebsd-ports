@@ -15,8 +15,7 @@ COMMENT=	The zlib library cross-compiled for MinGW32
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 		${LOCALBASE}/mingw32/include/sys/types.h:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt
 
-USES=		gmake
-USE_XZ=		yes
+USES=		tar:xz gmake
 MAKEFILE=	win32/Makefile.gcc
 MAKE_ARGS=	PREFIX=${PKGNAMEPREFIX} \
 		BINARY_PATH=${CROSS_BASE}/bin \
@@ -24,5 +23,4 @@ MAKE_ARGS=	PREFIX=${PKGNAMEPREFIX} \
 		LIBRARY_PATH=${CROSS_BASE}/lib
 CROSS_BASE=	${PREFIX}/mingw32
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
