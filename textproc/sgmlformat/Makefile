@@ -13,15 +13,11 @@ COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
 
 USES=		perl5
 USE_PERL5=	run
-
-MAN1=		instant.1 sgmlfmt.1
-MAN5=		transpec.5
-MANCOMPRESSED=	yes
+MAKE_ENV=	STAGEDIR=${STAGEDIR}
 
 # There are two ports that satisfy the nsgmls requirement.
 # Jade is preferred.
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_ARCH} != "i386"
@@ -43,6 +39,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,nsgmls,onsgmls,g' ${WRKSRC}/sgmlfmt/sgmlfmt.pl
 	@${REINPLACE_CMD} -e 's,nsgmls,onsgmls,g' ${WRKSRC}/instant/traninit.c
 .endif
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/sgml/transpec
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

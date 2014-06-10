@@ -1,0 +1,16 @@
+--- transpec/Makefile.orig	2014-06-10 21:01:50.280462342 +0900
++++ transpec/Makefile	2014-06-10 21:42:02.463462646 +0900
+@@ -9,11 +9,9 @@
+ 
+ all clean cleandir depend lint tags:
+ 
+-beforeinstall:
+-	@mkdir -p ${TRANSPEC_DIR}
+-
+ afterinstall:
+ 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 ${FILES} \
+-		${TRANSPEC_DIR}
++		${STAGEDIR}${PREFIX}/share/sgml/transpec/
+ 
+ .include <bsd.prog.mk>
++

@@ -17,29 +17,22 @@ USE_PGSQL=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-MAN3=	Search::OpenFTS.3 Search::OpenFTS::Base.3 \
-	Search::OpenFTS::Dict::PorterEng.3 Search::OpenFTS::Dict::Snowball.3 \
-	Search::OpenFTS::Dict::Synonym.3 Search::OpenFTS::Dict::UnknownDict.3 \
-	Search::OpenFTS::Index.3 Search::OpenFTS::Morph::ISpell.3 \
-	Search::OpenFTS::Parser.3
 
 PORTDOCS=	Changes INSTALL README primer.html
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${STAGEDIR}${EXAMPLESDIR}."
 .endif
 
 .if !defined(NOPORTDOCS)
 	@${CP} -p ${WRKSRC}/doc/primer.html ${WRKSRC}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${STAGEDIR}${DOCSDIR}."
 .endif
 
 # Sample DB initialization.
