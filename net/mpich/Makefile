@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpich
-DISTVERSION=	3.1
-PORTREVISION=	2
+PORTVERSION=	3.1.1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -29,7 +28,7 @@ OPTIONS_RADIO_DEFAULTPM=DGFORKER DHYDRA
 OPTIONS_DEFAULT=	FORTRAN HYDRA DHYDRA
 OPTIONS_SUB=		yes
 
-FORTRAN_CONFIGURE_ENABLE=	f77 fc
+FORTRAN_CONFIGURE_ENABLE=	fortran
 FORTRAN_USES=			fortran
 
 GFORKER_DESC=	Simple local process manager
@@ -37,7 +36,8 @@ HYDRA_DESC=	Parallel process manager
 DGFORKER_DESC=	Make gforker the default process manager
 DHYDRA_DESC=	Make hydra the default process manager
 
-CONFIGURE_ARGS=	--with-hwloc-prefix=${LOCALBASE} ac_cv_path_BASH_SHELL=""
+CONFIGURE_ARGS=	--with-hwloc-prefix=${LOCALBASE} ac_cv_path_BASH_SHELL="" \
+		pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
 .include <bsd.port.options.mk>
 
@@ -65,10 +65,5 @@ PLIST_SUB+=	EXECGFORKER=""
 PLIST_SUB+=	EXECGFORKER="@comment "
 .endif
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e '/pkgconfigdir=/s,=.*,=$$prefix/libdata/pkgconfig,' \
-		${WRKSRC}/configure ${WRKSRC}/src/openpa/configure
 
 .include <bsd.port.mk>
