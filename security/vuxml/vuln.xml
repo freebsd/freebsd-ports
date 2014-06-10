@@ -57,6 +57,77 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="888a0262-f0d9-11e3-ba0c-b4b52fce4ce8">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>30.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>24.6.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>30.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.6.0</lt></range>
+      </package>
+      <package>
+	<name>nspr</name>
+	<range><lt>4.10.6</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>24.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-48 Miscellaneous memory safety hazards
+	    (rv:30.0 / rv:24.6)</p>
+	  <p>MFSA 2014-49 Use-after-free and out of bounds
+	    issues found using Address Sanitizer</p>
+	  <p>MFSA 2014-51 Use-after-free in Event Listener
+	    Manager</p>
+	  <p>MFSA 2014-52 Use-after-free with SMIL Animation
+	    Controller</p>
+	  <p>MFSA 2014-53 Buffer overflow in Web Audio Speex
+	    resampler</p>
+	  <p>MFSA 2014-54 Buffer overflow in Gamepad API</p>
+	  <p>MFSA 2014-55 Out of bounds write in NSPR</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1533</cvename>
+      <cvename>CVE-2014-1534</cvename>
+      <cvename>CVE-2014-1536</cvename>
+      <cvename>CVE-2014-1537</cvename>
+      <cvename>CVE-2014-1540</cvename>
+      <cvename>CVE-2014-1541</cvename>
+      <cvename>CVE-2014-1542</cvename>
+      <cvename>CVE-2014-1543</cvename>
+      <cvename>CVE-2014-1545</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-48.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-49.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-51.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-52.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-53.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-54.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-55.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-10</discovery>
+      <entry>2014-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ac53801-ec2e-11e3-9cf3-3c970e169bc2">
     <topic>OpenSSL -- multiple vulnerabilities</topic>
     <affects>
