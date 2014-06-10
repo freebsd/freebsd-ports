@@ -19,7 +19,6 @@ CXXFLAGS+=	-fPIC
 NOT_FOR_ARCHS=		ia64 powerpc sparc64
 NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|gmake|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
