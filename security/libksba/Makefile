@@ -3,6 +3,7 @@
 
 PORTNAME=	libksba
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -21,7 +22,7 @@ CONFIGURE_ARGS=	--enable-static
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USES=		perl5 tar:bzip2
+USES=		perl5 tar:bzip2 libtool:oldver
 
 INFO=		ksba
 
