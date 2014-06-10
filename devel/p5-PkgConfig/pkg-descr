@@ -1,0 +1,13 @@
+PkgConfig provides a pure-perl, core-only replacement for the pkg-config
+utility.
+
+This is not a description of the uses of pkg-config but rather a description of
+the differences between the C version and the Perl one.
+
+While pkg-config is a compiled binary linked with glib, the pure-perl version
+has no such requirement, and will run wherever Perl ( >= 5.6 ) does.
+
+The main supported options are the common --libs, --cflags, --static, --exists
+and --modversion.
+
+WWW: http://search.cpan.org/dist/PkgConfig/

@@ -1,0 +1,8 @@
+bin/pkg-config.pl
+bin/ppkg-config
+%%SITE_PERL%%/PkgConfig.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PkgConfig/.packlist
+%%PERL5_MAN3%%/PkgConfig.3.gz
+man/man1/pkg-config.pl.1.gz
+man/man1/ppkg-config.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PkgConfig
