@@ -41,7 +41,7 @@ MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib/mysql -lmysqlclient" \
 		DRIVER_INCS="-I ${LOCALBASE}/include/mysql"
 .elif ${LUASQL_DRIVER} == "postgres"
 COMMENT=	Lua interface to PostgreSQL
-USE_PGSQL=	yes
+USES+=		pgsql
 MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib -lpq" \
 		DRIVER_INCS="-I ${LOCALBASE}/include"
 .elif ${LUASQL_DRIVER} == "sqlite3"
@@ -56,9 +56,8 @@ IGNORE=		unknown or unsupported luasql driver
 LATEST_LINK=	${PORTNAME}-${LUASQL_DRIVER}
 PLIST_SUB+=	LUASQL_DRIVER=${LUASQL_DRIVER}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${LUA_MODLIBDIR}/luasql
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${LUASQL_DRIVER}.so ${LUA_MODLIBDIR}/luasql
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}/luasql
+	@${INSTALL_LIB} ${WRKSRC}/src/${LUASQL_DRIVER}.so ${STAGEDIR}${LUA_MODLIBDIR}/luasql
 
 .include <bsd.port.mk>
