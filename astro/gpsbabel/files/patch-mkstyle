@@ -1,0 +1,21 @@
+--- ./mkstyle.sh.orig	2013-09-01 16:29:29.000000000 +0200
++++ ./mkstyle.sh	2014-06-10 13:47:27.000000000 +0200
+@@ -9,17 +9,7 @@
+ LC_COLLATE=C
+ export LC_COLLATE
+ 
+-# require gnu sed even though we aren't using gnu extensions.
+-# this avoids portability issues with other seds.
+-if gsed v /dev/null 1>/dev/null 2>&1; then
+-    SED=gsed
+-elif sed v /dev/null 1>/dev/null 2>&1; then
+-	# sed is gnu sed
+-    SED=sed
+-else
+-	echo "Error: can't find gnu sed" 1>&2
+-	exit 1
+-fi
++SED=sed
+ 
+ echo "#include \"defs.h\""
+ echo "#if CSVFMTS_ENABLED"
