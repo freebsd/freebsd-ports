@@ -23,12 +23,11 @@ USE_FPC=	yes
 
 PLIST_FILES=	bin/checkmol bin/matchmol
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc ${EXTRACT_ONLY} -S2 -O3)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${DISTNAME} ${PREFIX}/bin/${PORTNAME})
-	(cd ${PREFIX}/bin && ${LN} ${PORTNAME} matchmol)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${DISTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME})
+	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} ${PORTNAME} matchmol)
 
 .include <bsd.port.mk>
