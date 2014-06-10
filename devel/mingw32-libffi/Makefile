@@ -20,15 +20,15 @@ CC=		${PKGNAMEPREFIX}gcc
 CFLAGS=		-O2	# Override CFLAGS for a cross-build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,^INFO_DEPS[ \t]*=,#&,' \
 	                 -e '/^SUBDIRS[ \t]*=/s, man$$,,' \
 	                 ${WRKSRC}/Makefile.in
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/mingw32/include
 	${INSTALL_DATA} \
-		${PREFIX}/mingw32/lib/libffi-${PORTVERSION}/include/*.h \
-		${PREFIX}/mingw32/include/
+		${STAGEDIR}${PREFIX}/mingw32/lib/libffi-${PORTVERSION}/include/*.h \
+		${STAGEDIR}${PREFIX}/mingw32/include/
 
 .include <bsd.port.mk>
