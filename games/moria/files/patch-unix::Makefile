@@ -1,19 +1,17 @@
-$FreeBSD$
-
---- unix/Makefile.orig	Thu Jul 21 16:37:08 1994
-+++ unix/Makefile	Tue Aug 12 10:12:16 2003
-@@ -3,15 +3,15 @@
+--- unix/Makefile.orig	1994-07-21 15:37:08.000000000 -0700
++++ unix/Makefile	2014-06-09 19:44:28.000000000 -0700
+@@ -1,17 +1,13 @@
+ # BINDIR is the directory where the moria binary while be put
+ # LIBDIR is where the other files (score, news, hours) will be put
  # LIBDIR must be the same directory defined in config.h
- # OWNER is who you want the game to be chown to.
- # GROUP is who you wnat the game to be chgrp to.
+-# OWNER is who you want the game to be chown to.
+-# GROUP is who you wnat the game to be chgrp to.
 -BINDIR = /home/zariski/grabiner/moria
 -LIBDIR = /home/zariski/grabiner/moria/files
 -OWNER = grabiner
 -GROUP = grad
-+BINDIR = %%PREFIX%%/bin
-+LIBDIR = %%PREFIX%%/share/moria/
-+OWNER = games
-+GROUP = games
++BINDIR = ${STAGEDIR}${PREFIX}/bin
++LIBDIR = ${STAGEDIR}${DATADIR}
  
  # For testing and debugging the program, it is best to use this line.
  # CFLAGS = -g
@@ -23,7 +21,7 @@ $FreeBSD$
  
  # For BSD Systems
  CURSES = -lcurses -ltermcap
-@@ -26,7 +26,7 @@
+@@ -26,7 +22,7 @@
  # Normal systems don't require anything here.
  LFLAGS = 
  
@@ -32,7 +30,7 @@ $FreeBSD$
  
  SRCS = main.c misc1.c misc2.c misc3.c misc4.c store1.c files.c io.c \
  	create.c desc.c generate.c sets.c dungeon.c creature.c death.c \
-@@ -60,17 +60,19 @@
+@@ -60,17 +56,11 @@
  # you must define BINDIR and LIBDIR before installing
  # assumes that BINDIR and LIBDIR exist
  install:
@@ -48,18 +46,10 @@ $FreeBSD$
 -	(cd $(LIBDIR); chown $(OWNER) $(LIBFILES) scores)
 -	(cd $(LIBDIR); chgrp $(GROUP) $(LIBFILES) scores)
 +	-${MKDIR} $(BINDIR)
-+	${CHMOD} 755 $(BINDIR)
 +	${BSD_INSTALL_PROGRAM} moria $(BINDIR)
-+	${CHMOD} 4711 $(BINDIR)/moria
 +	-${MKDIR} $(LIBDIR)
-+	${CHMOD} 711 $(LIBDIR)
 +	(cd files; ${BSD_INSTALL_DATA} $(LIBFILES) $(LIBDIR))
-+	(cd $(LIBDIR); ${CHMOD} 444 $(LIBFILES))
-+	(cd $(LIBDIR); ${TOUCH} scores; ${CHMOD} 644 scores)
-+	${CHOWN} $(OWNER) $(BINDIR)/moria
-+	${CHGRP} $(GROUP) $(BINDIR)/moria
-+	(cd $(LIBDIR); ${CHOWN} $(OWNER) $(LIBFILES) scores)
-+	(cd $(LIBDIR); ${CHGRP} $(GROUP) $(LIBFILES) scores)
++	(cd $(LIBDIR); ${TOUCH} scores)
  # If you are short on disk space, or aren't interested in debugging moria.
  #	strip $(BINDIR)/moria
  
