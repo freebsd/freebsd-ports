@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.3
+DISTVERSION=	2.3.1
 CATEGORIES=	lang python
-MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/ https://bitbucket.org/pypy/pypy/downloads/
+MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/get/ https://bitbucket.org/pypy/pypy/get/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+DISTNAME=	release-${DISTVERSION}
+DIST_SUBDIR=	pypy
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
@@ -43,7 +44,7 @@ USES=		compiler:c11 gettext iconv tar:bzip2
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-394146e9bb67
+WRKSRC=		${WRKDIR}/pypy-pypy-32f35069a16d
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
