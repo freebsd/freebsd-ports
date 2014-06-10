@@ -155,7 +155,7 @@ static void fbsd_thread_find_new_threads (struct target_ops *ops);
 static int fbsd_thread_alive (struct target_ops *ops, ptid_t ptid);
 static void attach_thread (ptid_t ptid, const td_thrhandle_t *th_p,
                const td_thrinfo_t *ti_p, int verbose);
-static void fbsd_thread_detach (struct target_ops *ops, char *args,
+static void fbsd_thread_detach (struct target_ops *ops, const char *args,
 				int from_tty);
 
 CORE_ADDR fbsd_thread_get_local_address(struct target_ops *ops,
@@ -315,7 +315,7 @@ get_current_lwp (int pid)
 }
 
 static void
-get_current_thread ()
+get_current_thread (void)
 {
   td_thrhandle_t th;
   td_thrinfo_t ti;
@@ -523,7 +523,7 @@ fbsd_thread_new_objfile (struct objfile *objfile)
 }
 
 static void
-fbsd_thread_detach (struct target_ops *ops, char *args, int from_tty)
+fbsd_thread_detach (struct target_ops *ops, const char *args, int from_tty)
 {
   struct target_ops *beneath = find_target_beneath (ops);
 
@@ -1289,14 +1289,14 @@ fbsd_thread_get_local_address(struct target_ops *ops,
 static int
 tsd_cb (thread_key_t key, void (*destructor)(void *), void *ignore)
 {
-  struct minimal_symbol *ms;
+  struct bound_minimal_symbol bms;
   const char *name;
 
-  ms = lookup_minimal_symbol_by_pc (extract_func_ptr (&destructor));
-  if (!ms)
+  bms = lookup_minimal_symbol_by_pc (extract_func_ptr (&destructor));
+  if (!bms.minsym)
     name = "???";
   else
-    name = SYMBOL_PRINT_NAME (ms);
+    name = SYMBOL_PRINT_NAME (bms.minsym);
 
   printf_filtered ("Key %d, destructor %p <%s>\n", key, destructor, name);
   return 0;

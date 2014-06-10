@@ -17,11 +17,11 @@
  
 +      memset( &regs, 0, sizeof(struct reg));
 +      memset( &oldregs, 0, sizeof(struct reg));
-       if (ptrace (PT_GETREGS, PIDGET (inferior_ptid),
+       if (ptrace (PT_GETREGS, ptid_get_pid (inferior_ptid),
                    (PTRACE_TYPE_ARG3) &regs, 0) == -1)
          perror_with_name (_("Couldn't get registers"));
  
-+      ptrace (PT_GETREGS, PIDGET (inferior_ptid),
++      ptrace (PT_GETREGS, ptid_get_pid (inferior_ptid),
 +                  (PTRACE_TYPE_ARG3) &oldregs, 0);
        amd64_collect_native_gregset (regcache, &regs, regnum);
  
@@ -31,6 +31,6 @@
 +        regs.r_rflags ^= (regs.r_rflags ^ oldregs.r_rflags ) & ~PSL_USERCHANGE;
 +        //printf("    allowed regs.r_rflags = 0x%8.8X\n", regs.r_rflags );
 +      }
-       if (ptrace (PT_SETREGS, PIDGET (inferior_ptid),
+       if (ptrace (PT_SETREGS, ptid_get_pid (inferior_ptid),
  	          (PTRACE_TYPE_ARG3) &regs, 0) == -1)
          perror_with_name (_("Couldn't write registers"));
