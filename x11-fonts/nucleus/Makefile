@@ -13,11 +13,16 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-NO_WRKSUBDIR=	yes
-USE_XORG=	x11
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${DESCR}
+FONTDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
+
+do-build:
+	@cd ${WRKSRC}/src && ./compile
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/*.gz ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
