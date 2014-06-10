@@ -16,4 +16,5 @@ sbin/testsaslauthd
 %%RUNPATH%%@exec chmod -R ug=rwx,o= /var/run/saslauthd
 %%RUNPATH%%@comment This file gets created by the run/saslauthd program
 %%RUNPATH%%@unexec rm -fr /var/run/saslauthd
+%%RUNPATH%%@mode
 @cwd %%PREFIX%%
