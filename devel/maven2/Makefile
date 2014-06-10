@@ -9,10 +9,13 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	maven/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wombat@marsupial.org
 COMMENT=	Java project management tool, 2.0 branch
 
 RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven-wrapper
+
+DEPRECATED=	No longer supported by the Apache Foundation. Use 3.x instead.
+EXPIRATION_DATE=2014-08-18
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
