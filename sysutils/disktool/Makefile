@@ -11,22 +11,20 @@ DISTNAME=	disktool-2.0c
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	XView sysadmin tool for monitoring diskfull situations
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 ALL_TARGET=	disktool
 
-MAN1=		disktool.1
-PLIST_FILES=	bin/disktool
+PLIST_FILES=	bin/disktool man/man1/disktool.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/disktool ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/disktool ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/disktool.man \
-	${PREFIX}/man/man1/disktool.1
+		${STAGEDIR}${PREFIX}/man/man1/disktool.1
 
 .include <bsd.port.mk>

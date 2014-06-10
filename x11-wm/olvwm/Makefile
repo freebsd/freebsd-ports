@@ -23,7 +23,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	OpenLook Virtual Window manager
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 REINPLACE_ARGS= -i ""
 NO_WRKSUBDIR=	yes
@@ -32,7 +32,8 @@ USE_XORG=	xpm
 MAN1=		olvwm.1 olvwmrc.1
 XFREE86_HTML_MAN=	no
 
-NO_STAGE=	yes
+IMAKECPPFLAGS+=	-DXVDestDir=${STAGEDIR}${PREFIX}
+
 pre-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	's|^#endif.*$$|#endif|;s|^#else.*$$|#else|;\

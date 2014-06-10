@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplemental Libraries to extend Xview
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/sspkg2.1
 USE_LDCONFIG=	yes
@@ -24,13 +24,17 @@ USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	OPENWINHOME=${LOCALBASE}
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
+IMAKECPPFLAGS+=	-DXVDestDir=${STAGEDIR}${PREFIX}
+MAKE_ARGS=	STAGEDIR=${STAGEDIR}
+
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCSDIR}
-	${GZIP_CMD} ${DOCSDIR}/README ${DOCSDIR}/*.ps
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${STAGEDIR}${DOCSDIR}
+	${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/README ${STAGEDIR}${DOCSDIR}/*.ps
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
