@@ -3,13 +3,17 @@ bin/httrack
 bin/proxytrack
 bin/webhttrack
 include/httrack/config.h
+include/httrack/htsarrays.h
 include/httrack/htsbasenet.h
 include/httrack/htsbauth.h
 include/httrack/htsconfig.h
 include/httrack/htsdefines.h
 include/httrack/htsglobal.h
 include/httrack/htsmodules.h
+include/httrack/htsnet.h
 include/httrack/htsopt.h
+include/httrack/htssafe.h
+include/httrack/htsstrings.h
 include/httrack/htswrap.h
 include/httrack/httrack-library.h
 lib/httrack/libbaselinks.a
