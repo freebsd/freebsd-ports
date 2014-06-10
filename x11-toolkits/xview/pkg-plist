@@ -701,6 +701,7 @@ lib/X11/fonts/olmisc/olgl19.pcf.gz
 lib/X11/fonts/olmisc/fonts.scale
 lib/X11/fonts/olmisc/fonts.dir
 lib/X11/fonts/olmisc/fonts.alias
+man/man1/XView.1.gz
 @dirrm lib/X11/fonts/olmisc
 %%PORTDOCS%%%%DOCSDIR%%/bugform
 %%PORTDOCS%%%%DOCSDIR%%/dnd_api.txt

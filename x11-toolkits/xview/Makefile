@@ -30,13 +30,12 @@ ALL_TARGET=	World
 SUB_FILES=	pkg-message
 CFLAGS+=	-Wno-return-type
 
-MAN1=		XView.1
-
 X11BASE2FIX=	clients/olwmslave/help_file.c	lib/libxview/help/help_file.c	\
 		lib/libxview/misc/gettext.h	lib/libxview/textsw/txt_e_menu.c
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+IMAKECPPFLAGS+=	-DXVDestDir=${STAGEDIR}${PREFIX}
 
 .if ${OSVERSION} > 800089
 CFLAGS+=	-DCOMPAT_43TTY
