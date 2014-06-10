@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	jaildaemon
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/jaildaemon/
 
 MAINTAINER=	erdgeist@erdgeist.org
 COMMENT=	Fixed command-line interface for FreeBSD jails to their host system
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	bin/jaildaemon \
-		etc/rc.d/jaildaemon
-MAN1=		jaildaemon.1
+		etc/rc.d/jaildaemon \
+		man/man1/jaildaemon.1.gz
 
-NO_STAGE=	yes
+MAKE_ENV=	DESTDIR=${STAGEDIR}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
