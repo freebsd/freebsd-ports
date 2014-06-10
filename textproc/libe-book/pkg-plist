@@ -1,0 +1,11 @@
+bin/ebook2html
+bin/ebook2raw
+bin/ebook2text
+include/libe-book-0.1/libe-book/EBOOKDocument.h
+include/libe-book-0.1/libe-book/libe-book.h
+lib/libe-book-0.1.so
+lib/libe-book-0.1.so.1
+lib/libe-book-0.1.so.1.0.1
+libdata/pkgconfig/libe-book-0.1.pc
+@dirrm include/libe-book-0.1/libe-book
+@dirrm include/libe-book-0.1
