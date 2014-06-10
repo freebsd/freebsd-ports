@@ -21,5 +21,4 @@ CONFIGURE_ARGS=	--host="mingw32"
 CC=		${PKGNAMEPREFIX}gcc
 CFLAGS=		-O3	# Override CFLAGS for a cross-build
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
