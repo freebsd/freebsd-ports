@@ -1,7 +1,7 @@
 bin/ppmtoTbmp
 bin/Tbmptopnm
-share/ppmtoTbmp/q2.map
-share/ppmtoTbmp/q4.map
-@dirrm share/ppmtoTbmp
-%%PORTDOCS%%share/doc/ppmtoTbmp/README
-%%PORTDOCS%%@dirrm share/doc/ppmtoTbmp
+%%DATADIR%%/q2.map
+%%DATADIR%%/q4.map
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
