@@ -17,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foom
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 			 -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
