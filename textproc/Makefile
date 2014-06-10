@@ -350,6 +350,7 @@
     SUBDIR += libcroco
     SUBDIR += libcsv
     SUBDIR += libcue
+    SUBDIR += libe-book
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libexttextcat
