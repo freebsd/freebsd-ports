@@ -3,17 +3,18 @@
 
 PORTNAME=	glog
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Library of C++ classes for flexible logging
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		gflags:${PORTSDIR}/devel/gflags
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libgflags.so:${PORTSDIR}/devel/gflags
 
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix libtool:keepla
 USE_LDCONFIG=	yes
 PROJECTHOST=	google-glog
 

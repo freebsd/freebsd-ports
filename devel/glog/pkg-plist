@@ -1,12 +1,13 @@
 include/glog/log_severity.h
 include/glog/logging.h
 include/glog/raw_logging.h
-include/glog/vlog_is_on.h
 include/glog/stl_logging.h
-lib/libglog.so.0
-lib/libglog.so
-lib/libglog.la
+include/glog/vlog_is_on.h
 lib/libglog.a
+lib/libglog.la
+lib/libglog.so
+lib/libglog.so.0
+lib/libglog.so.0.0.0
 libdata/pkgconfig/libglog.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
