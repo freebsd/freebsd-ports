@@ -1,16 +1,30 @@
+@owner games
+@group games
+@mode 2755
 bin/unnethack
+@mode
 %%DATADIR%%/nhdat
 %%DATADIR%%/recover
 %%DATADIR%%/unnethack
 @dirrm %%DATADIR%%
+@mode 664
 %%VARDIR%%/logfile
 %%VARDIR%%/perm
 %%VARDIR%%/record
 %%VARDIR%%/xlogfile
+@mode 775
 @dirrmtry %%VARDIR%%/bones
 @dirrmtry %%VARDIR%%/level
 @dirrmtry %%VARDIR%%/saves
 @unexec rmdir -p %D/%%VARDIR%% 2>/dev/null || true
+@owner
+@group
+@mode
+man/man6/unnethack_dgn_comp.6.gz
+man/man6/unnethack_dlb.6.gz
+man/man6/unnethack_lev_comp.6.gz
+man/man6/unnethack_recover.6.gz
+man/man6/unnethack.6.gz
 %%DOCSDIR%%/Guidebook.txt
 %%DOCSDIR%%/license
 %%PORTDOCS%%%%DOCSDIR%%/sample.unnethackrc
