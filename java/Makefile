@@ -95,6 +95,7 @@
     SUBDIR += jdbcpool
     SUBDIR += jdk16-doc
     SUBDIR += jdk7-doc
+    SUBDIR += jdk8-doc
     SUBDIR += jdom
     SUBDIR += jflex
     SUBDIR += jfreechart
