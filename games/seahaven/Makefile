@@ -13,8 +13,7 @@ COMMENT=	The classic, lightweight version of Seahaven Towers
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xft
-MAN6?=		seahaven.6
-PLIST_FILES=	bin/seahaven
+PLIST_FILES=	bin/seahaven man/man6/seahaven.6.gz
+MAKE_ARGS=	bindir=${STAGEDIR}${PREFIX}/bin mandir=${STAGEDIR}${PREFIX}/man
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
