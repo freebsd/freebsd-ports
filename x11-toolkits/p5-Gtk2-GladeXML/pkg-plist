@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GladeXML/Install/gladexmlperl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/GladeXML/Install/gladexmlperl.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/GladeXML/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/GladeXML/GladeXML.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/GladeXML/GladeXML.so
 %%PERL5_MAN3%%/Gtk2::GladeXML.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/GladeXML

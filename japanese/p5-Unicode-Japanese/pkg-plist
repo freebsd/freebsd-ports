@@ -4,7 +4,6 @@ bin/ujguess
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Japanese.mlpod
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Japanese/JA.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Japanese/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Japanese/Japanese.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Japanese/Japanese.so
 %%PERL5_MAN3%%/Unicode::Japanese.3.gz
 %%PERL5_MAN3%%/Unicode::Japanese::JA.3.gz

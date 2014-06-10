@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MurmurHash/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MurmurHash/MurmurHash.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MurmurHash/MurmurHash.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Digest/MurmurHash.pm
 %%PERL5_MAN3%%/Digest::MurmurHash.3.gz

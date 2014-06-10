@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Audio/Ecasound.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Ecasound/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Ecasound/Ecasound.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Ecasound/Ecasound.so
 %%PERL5_MAN3%%/Audio::Ecasound.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Ecasound

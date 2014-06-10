@@ -264,9 +264,11 @@ fix-packlist::
 	-@[ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 .endif
 
-.if ${PERL_LEVEL} >= 502000
-fix-plist-perl:
-	-@${REINPLACE_CMD} '/\.bs$$/d' ${TMPPLIST}
+# Starting with perl 5.20, the empty bootstrap files are not installed any
+# more.  As we don't need them anyway, remove it altogether.
+.if ${PERL_LEVEL} < 502000
+fix-perl-bs:
+	-@${FIND} ${STAGEDIR} -name '*.bs' -size 0 -delete
 .endif
 
 .if !target(regression-test)

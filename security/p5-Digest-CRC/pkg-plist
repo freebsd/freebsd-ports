@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Digest/CRC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/CRC/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/CRC/CRC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/CRC/CRC.so
 %%PERL5_MAN3%%/Digest::CRC.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/CRC

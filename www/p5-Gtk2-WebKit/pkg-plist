@@ -19,7 +19,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install/webkit-autogen.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/WebKit.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/WebKit.bs
 %%PERL5_MAN3%%/Gtk2::WebKit.3.gz
 %%PERL5_MAN3%%/Gtk2::WebKit::Download.3.gz
 %%PERL5_MAN3%%/Gtk2::WebKit::GeolocationPolicyDecision.3.gz

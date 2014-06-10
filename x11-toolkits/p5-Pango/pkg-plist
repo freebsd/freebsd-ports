@@ -59,7 +59,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Pango/index.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Pango/version.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pango/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pango/Pango.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pango/Pango.so
 %%PERL5_MAN3%%/Pango.3.gz
 %%PERL5_MAN3%%/Pango::AttrBackground.3.gz

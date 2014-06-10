@@ -34,7 +34,6 @@
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/URINode.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/XMLLiteralNode.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE/CORE.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE/CORE.so
 %%PHP%%lib/php/%%PHP_EXT_DIR%%/redland.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/RDF.py

@@ -33,7 +33,6 @@ man/man1/iterm.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Point/PointSupp.h
 %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Region.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/IPA.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/IPA.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPA/Point

@@ -1,6 +1,5 @@
 bin/flowdumper
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cflow/Cflow.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cflow/Cflow.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cflow/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/Cflow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cflow/.packlist

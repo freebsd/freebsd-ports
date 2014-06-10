@@ -183,7 +183,6 @@ bin/umap
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8/maps/us-dk.bin
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8/maps/videotex-suppl.bin
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8/Map8.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8/Map8.so
 man/man1/umap.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8

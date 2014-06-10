@@ -1,6 +1,5 @@
 %%PERL5_MAN3%%/String::Strip.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Strip/Strip.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Strip/Strip.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Strip/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Strip/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/String/Strip.pm

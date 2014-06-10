@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/SGML::Parser::OpenSP.3.gz
 %%PERL5_MAN3%%/SGML::Parser::OpenSP::Tools.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/Parser/OpenSP/OpenSP.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/Parser/OpenSP/OpenSP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/Parser/OpenSP/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/SGML/Parser/OpenSP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SGML/Parser/OpenSP/Tools.pm

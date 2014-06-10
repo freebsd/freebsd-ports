@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Digest/Nilsimsa.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Nilsimsa/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Nilsimsa/Nilsimsa.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Nilsimsa/Nilsimsa.so
 %%PERL5_MAN3%%/Digest::Nilsimsa.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Nilsimsa

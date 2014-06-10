@@ -45,9 +45,7 @@ bin/vrename
 %%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Std.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Verilog/Verilog-Perl.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Language/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser/Parser.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Parser/Parser.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc/Preproc.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Verilog/Preproc/Preproc.so
 man/man1/vhier.1.gz
 man/man1/vpassert.1.gz

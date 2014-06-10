@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/RIPEMD160.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/RIPEMD160/MAC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160/RIPEMD160.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160/RIPEMD160.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160/autosplit.ix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RIPEMD160

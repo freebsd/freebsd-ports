@@ -993,8 +993,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
-	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.bs \
-		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/lib/nginx.pm \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/
 .endif
@@ -1008,7 +1006,6 @@ do-install:
 post-install:
 .if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MHTTP_PERL)
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.so >> ${TMPPLIST}
-	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.bs >> ${TMPPLIST}
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/nginx.pm >> ${TMPPLIST}
 	${ECHO_CMD} @dirrm ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx >> ${TMPPLIST}
 .endif

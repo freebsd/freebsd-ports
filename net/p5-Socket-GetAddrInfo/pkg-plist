@@ -6,7 +6,6 @@ bin/getnameinfo
 %%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Socket6api.pm
 %%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Strict.pm
 %%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/XS.pm
-%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.bs
 %%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.so
 %%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo
 %%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket

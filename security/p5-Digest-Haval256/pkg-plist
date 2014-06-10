@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Digest/Haval256.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Haval256/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Haval256/Haval256.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Haval256/Haval256.so
 %%PERL5_MAN3%%/Digest::Haval256.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Haval256

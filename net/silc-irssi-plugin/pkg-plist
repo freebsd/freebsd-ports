@@ -107,7 +107,6 @@ share/irssi/help/silc/window
 share/irssi/scripts/silc.pl
 share/irssi/themes/plugin.theme
 lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/Silc.so
-lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/Silc.bs
 lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/.packlist
 lib/silc/perl/%%PERL_ARCHNAME%%/Irssi/Silc.pm
 lib/silc/perl/%%PERL_ARCHNAME%%/perllocal.pod

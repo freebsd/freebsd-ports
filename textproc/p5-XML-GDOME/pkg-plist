@@ -48,7 +48,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Namespace.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Result.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/GDOME.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/GDOME.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

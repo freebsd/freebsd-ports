@@ -21,7 +21,6 @@ lib/libpreludedb/plugins/formats/classic.la
 %%WITH_SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.la
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeDB.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.so
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_preludedb.so

@@ -8,13 +8,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Morph/ISpell.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Dict/PorterEng/PorterEng.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Dict/PorterEng/PorterEng.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Dict/PorterEng/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Morph/ISpell/ISpell.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Morph/ISpell/ISpell.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Morph/ISpell/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Parser/Parser.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Parser/Parser.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Parser/autosplit.ix
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Dict/DecimalDict.pm

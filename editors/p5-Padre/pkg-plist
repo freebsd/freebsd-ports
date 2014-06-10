@@ -458,7 +458,6 @@ bin/padre
 %%SITE_PERL%%/mach/Wx/Scintilla.pm
 %%SITE_PERL%%/mach/auto/Padre/.packlist
 %%SITE_PERL%%/mach/auto/Wx/Scintilla/.packlist
-%%SITE_PERL%%/mach/auto/Wx/Scintilla/Scintilla.bs
 %%SITE_PERL%%/mach/auto/Wx/Scintilla/Scintilla.so
 %%SITE_PERL%%/mach/auto/Wx/Scintilla/libwx_gtk2u_scintilla-%%WX_VERSION%%.so
 @dirrm %%SITE_PERL%%/mach/auto/Wx/Scintilla

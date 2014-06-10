@@ -10,7 +10,6 @@ include/flowd/store.h
 lib/libflowd.a
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Flowd.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.so
 sbin/flowd

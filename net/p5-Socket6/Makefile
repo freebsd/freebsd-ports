@@ -21,7 +21,6 @@ CONFIGURE_ENV+=	CC="${CC}"
 PLIST_FILES=	%%PERL5_MAN3%%/Socket6.3.gz \
 		%%SITE_PERL%%/%%PERL_ARCH%%/Socket6.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6/.packlist \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6/Socket6.bs \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6/Socket6.so
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6
 

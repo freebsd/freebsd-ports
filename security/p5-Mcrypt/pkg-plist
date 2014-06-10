@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/Mcrypt.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Mcrypt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mcrypt/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mcrypt/Mcrypt.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mcrypt/Mcrypt.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mcrypt/autosplit.ix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mcrypt

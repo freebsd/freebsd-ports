@@ -121,15 +121,11 @@ include/irssi/src/lib-config/module.h
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/UI.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
 man/man1/irssi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/design.txt

@@ -11,7 +11,6 @@ bin/bdf2gdfont.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/GD/Polyline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GD/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/GD.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/GD.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/qd.pl

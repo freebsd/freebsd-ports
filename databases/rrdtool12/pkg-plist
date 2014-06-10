@@ -133,7 +133,6 @@ man/man1/rrdlastupdate.1.gz
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/ntmake.pl
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtoolmodule.so
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so

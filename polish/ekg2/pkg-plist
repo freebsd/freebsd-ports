@@ -29,10 +29,8 @@ lib/ekg2/plugins/sms.so
 lib/ekg2/plugins/xmsg.so
 %%XOSD%%lib/ekg2/plugins/xosd.so
 %%PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Ekg2.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Ekg2.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/Irc.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/Irc.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ekg2/Irc/.packlist
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Ekg2.pm

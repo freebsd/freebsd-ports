@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Namazu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Namazu/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Namazu/Namazu.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Namazu/Namazu.so
 %%PERL5_MAN3%%/Search::Namazu.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Namazu

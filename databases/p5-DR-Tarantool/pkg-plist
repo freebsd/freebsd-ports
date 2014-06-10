@@ -9,7 +9,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DR/Tarantool/SyncClient.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DR/Tarantool/Tuple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR/Tarantool/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DR/Tarantool/Tarantool.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR/Tarantool/Tarantool.so
 %%PERL5_MAN3%%/DR::README.3.gz
 %%PERL5_MAN3%%/DR::Tarantool.3.gz

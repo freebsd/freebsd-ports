@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/DSA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/DSA/Signature.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/DSA/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/DSA/DSA.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/DSA/DSA.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/DSA
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL
