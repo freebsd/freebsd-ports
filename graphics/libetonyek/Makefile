@@ -24,6 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
