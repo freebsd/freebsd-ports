@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-GSL
-PORTVERSION=	0.29
+PORTVERSION=	0.31
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Perl interface to GNU Scientific Library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=1.03:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
+BUILD_DEPENDS=	p5-PkgConfig>=0.07720:${PORTSDIR}/devel/p5-PkgConfig
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 TEST_DEPENDS=	p5-Test-Class>=0.12:${PORTSDIR}/devel/p5-Test-Class \
 		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
