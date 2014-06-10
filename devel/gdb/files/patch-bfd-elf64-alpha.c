@@ -1,10 +1,10 @@
 --- bfd/elf64-alpha.c.orig	2013-03-11 10:52:58.000000000 +0100
 +++ bfd/elf64-alpha.c	2013-03-11 11:50:24.000000000 +0100
 @@ -3585,9 +3585,9 @@
-   use_gottprel = FALSE;
-   new_symndx = is_gd ? ELF64_R_SYM (irel->r_info) : STN_UNDEF;
  
--  switch (!dynamic && !info->link_info->shared)
+   /* Some compilers warn about a Boolean-looking expression being 
+      used in a switch.  The explicit cast silences them.  */
+-  switch ((int) (!dynamic && !info->link_info->shared))
 -    {
 -    case 1:
 +  {
