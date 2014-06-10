@@ -12,6 +12,9 @@ COMMENT=	Spam relay database
 PLIST_FILES=	bin/relaydb \
 		man/man8/relaydb.8.gz
 
+post-patch:
+	${REINPLACE_CMD} 's|-Werror|-Wno-error|' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/relaydb ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/relaydb.8.gz ${STAGEDIR}${MAN8PREFIX}/man/man8
