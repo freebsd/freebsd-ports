@@ -22,6 +22,7 @@
     SUBDIR += gmapcatcher
     SUBDIR += google-earth
     SUBDIR += gpsbabel
+    SUBDIR += gpsbabel14
     SUBDIR += gpscorrelate
     SUBDIR += gpsd
     SUBDIR += gpsdrive
