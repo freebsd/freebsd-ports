@@ -31,7 +31,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/libsvmlight.* ${STAGEDIR}${PREFIX}/lib
 	${MV} ${STAGEDIR}${PREFIX}/lib/libsvmlight.so ${STAGEDIR}${PREFIX}/lib/libsvmlight.so.1
-	${LN} -s ${PREFIX}/lib/libsvmlight.so.1 ${STAGEDIR}${PREFIX}/lib/libsvmlight.so
+	${LN} -s libsvmlight.so.1 ${STAGEDIR}${PREFIX}/lib/libsvmlight.so
 # It's license request, do not remove
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${STAGEDIR}${DOCSDIR}
