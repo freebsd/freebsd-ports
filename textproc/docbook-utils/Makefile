@@ -3,7 +3,7 @@
 
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
@@ -21,11 +21,13 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-d
 
 CONFLICTS=	docbook2X-*
 
-USES=		perl5 gmake
+USES=		perl5 gmake shebangfix
 USE_PERL5=	run
 USE_TEX=	jadetex
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	docdir="${DOCSDIR}" htmldir="${DOCSDIR}/html"
+SHEBANG_FILES=	bin/sgmldiff.in
+perl_OLD_CMD=	@perl_bindir@/perl
 
 PORTDOCS=	*
 
