@@ -6,7 +6,7 @@ PORTVERSION=	1.13.2
 CATEGORIES=	lang elisp
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	Emacs lisp module for the PHP language
+COMMENT=	A PHP mode for GNU Emacs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ejmr
