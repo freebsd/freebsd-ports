@@ -1,0 +1,8 @@
+include/libabw-0.0/libabw/AbiDocument.h
+include/libabw-0.0/libabw/libabw.h
+lib/libabw-0.0.so
+lib/libabw-0.0.so.0
+lib/libabw-0.0.so.0.0.2
+libdata/pkgconfig/libabw-0.0.pc
+@dirrm include/libabw-0.0/libabw
+@dirrm include/libabw-0.0
