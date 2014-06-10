@@ -3,7 +3,7 @@
 
 PORTNAME=	bindgraph
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.linux.it/~md/software/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,8 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bindgraph.pl bindgraph.cgi
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 DATADIR?=	/var/db/bindgraph
