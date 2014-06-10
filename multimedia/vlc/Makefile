@@ -49,6 +49,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 CONFIGURE_ARGS+=--enable-debug
 .endif
 CPPFLAGS+=	-I${LOCALBASE}/include/gnutls3 -I${LOCALBASE}/include
+CFLAGS_i386=	-fomit-frame-pointer
 
 OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DIRAC DOCS DVDREAD \
 		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNOMEVFS2 GNUTLS \
