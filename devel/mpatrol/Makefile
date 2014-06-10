@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mycroft@virgaria.org
-COMMENT=	A dynamic memory debugging and profiling library
+COMMENT=	Dynamic memory debugging and profiling library
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 

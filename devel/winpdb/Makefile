@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MASTER_SITE_SUBDIR=	winpdb
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	An advanced Python debugger
+COMMENT=	Advanced Python debugger
 
 LICENSE=	GPLv2
 

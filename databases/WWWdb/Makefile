@@ -7,7 +7,7 @@ CATEGORIES=	databases perl5 www
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Perl based generic WWW DB interface / frontend
+COMMENT=	Perl based generic WWW DB interface / frontend
 
 USES=		perl5
 USE_PERL5=	configure

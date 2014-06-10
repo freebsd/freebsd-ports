@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	gauche
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	A pure gauche/scheme implementation of the Readline library
+COMMENT=	Pure gauche/scheme implementation of the Readline library
 
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 BUILD_DEPENDS=	gauche-config:${PORTSDIR}/lang/gauche

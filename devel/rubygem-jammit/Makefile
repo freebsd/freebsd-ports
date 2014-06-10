@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An industrial strength asset packaging library for Rails
+COMMENT=	Industrial strength asset packaging library for Rails
 
 RUN_DEPENDS=	rubygem-jsmin>=1.0.1:${PORTSDIR}/textproc/rubygem-jsmin \
 		rubygem-cssmin>=1.0.3:${PORTSDIR}/textproc/rubygem-cssmin

@@ -9,7 +9,7 @@ MASTER_SITES=	http://offload1.icculus.org/${PORTNAME}/downloads/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A library to provide abstract access to various archives
+COMMENT=	Library to provide abstract access to various archives
 
 USES=		cmake
 USE_AUTOTOOLS=	libtool

@@ -6,7 +6,7 @@ DISTVERSION=	6.0.1
 CATEGORIES=	editors devel
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	An Open Source IDE for C/C++
+COMMENT=	Open Source IDE for C/C++
 
 LICENSE=	GPLv2
 

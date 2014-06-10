@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for synced document buffers
+COMMENT=	Library for synced document buffers
 
 LICENSE=	GPLv2
 

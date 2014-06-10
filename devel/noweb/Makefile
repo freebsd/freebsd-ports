@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://www.eecs.harvard.edu/pub/nr/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple, extensible literate-programming tool
+COMMENT=	Simple, extensible literate-programming tool
 
 LICENSE=	noweb
 LICENSE_NAME=	noweb

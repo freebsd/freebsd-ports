@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	A non-blocking getaddrinfo() resolver
+COMMENT=	Non-blocking getaddrinfo() resolver
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A distributed, interactive, smart revision control system
+COMMENT=	Distributed, interactive, smart revision control system
 
 LICENSE=	GPLv2
 

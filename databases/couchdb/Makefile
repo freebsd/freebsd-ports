@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	couchdb/source/${PORTVERSION}
 DISTNAME=	apache-couchdb-${PORTVERSION}
 
 MAINTAINER=	adams-ports@ateamsystems.com
-COMMENT=	A document database server, accessible via a RESTful JSON API
+COMMENT=	Document database server, accessible via a RESTful JSON API
 
 LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu \
 		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \

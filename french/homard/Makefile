@@ -6,7 +6,7 @@ DISTVERSION=	10.6-3
 CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A refinement and de-refinement mesh tool
+COMMENT=	Refinement and de-refinement mesh tool
 
 BUILD_DEPENDS=	${LOCALBASE}/aster/${VER}/bin/aster:${PORTSDIR}/french/aster
 RUN_DEPENDS=	${LOCALBASE}/aster/${VER}/bin/aster:${PORTSDIR}/french/aster

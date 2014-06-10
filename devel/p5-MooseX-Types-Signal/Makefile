@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	A type to represent valid UNIX or Perl signals
+COMMENT=	Type to represent valid UNIX or Perl signals
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

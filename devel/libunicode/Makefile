@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	sources/libunicode/0.4
 DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A library for manipulating Unicode characters and strings
+COMMENT=	Library for manipulating Unicode characters and strings
 
 USE_AUTOTOOLS=	libtool
 USES=		gmake

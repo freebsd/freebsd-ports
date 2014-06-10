@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}bt/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	mantisbt-${PORTVERSION}
 
 MAINTAINER=	dan@langille.org
-COMMENT=	A bug tracking system written in PHP
+COMMENT=	Bug tracking system written in PHP
 
 NO_BUILD=	yes
 USE_PSQL=	yes

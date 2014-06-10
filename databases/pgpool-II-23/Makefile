@@ -8,7 +8,7 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/2664/
 PKGNAMESUFFIX=	23
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	A connection pool server for PostgreSQL
+COMMENT=	Connection pool server for PostgreSQL
 
 USES=		gmake
 GNU_CONFIGURE=	yes

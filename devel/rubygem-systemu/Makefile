@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
-COMMENT=	A portable replacement for popen4
+COMMENT=	Portable replacement for popen4
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

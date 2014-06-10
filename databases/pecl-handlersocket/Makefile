@@ -10,7 +10,7 @@ DISTNAME=	php-${PORTNAME}-${PORTVERSION}
 DISTFILES=	php-handelrsocket-0.3.1${EXTRACT_SUFX}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
-COMMENT=	A PECL extension for HandlerSocket
+COMMENT=	PECL extension for HandlerSocket
 
 BUILD_DEPENDS=	libhsclient>0:${PORTSDIR}/databases/libhsclient
 

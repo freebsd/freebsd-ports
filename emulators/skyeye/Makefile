@@ -10,7 +10,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://download.gro.clinux.org/skyeye/
 
 MAINTAINER=	iamayan@gmail.com
-COMMENT=	An environment simulates typical ARM-base embedded computer systems
+COMMENT=	Environment simulates typical ARM-base embedded computer systems
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
 		${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd

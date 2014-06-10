@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 
 MAINTAINER=	matthew@FreeBSD.org
-COMMENT=	A set of PHP-scripts to manage MySQL over the web
+COMMENT=	Set of PHP-scripts to manage MySQL over the web
 
 NO_ARCH=	yes
 LICENSE=	GPLv2

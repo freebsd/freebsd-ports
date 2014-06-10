@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A collection of tools to make redmine plugin development easier
+COMMENT=	Collection of tools to make redmine plugin development easier
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	Hapy-${PORTVERSION}
 
 MAINTAINER=	rousskov@measurement-factory.com
-COMMENT=	A runtime parser generator
+COMMENT=	Runtime parser generator
 
 GNU_CONFIGURE=	yes
 

@@ -12,7 +12,7 @@ PROJECTHOST=	sparsehash
 DISTNAME=	sparsehash-${PORTVERSION}
 
 MAINTAINER=	vd@FreeBSD.org
-COMMENT=	An extremely memory-efficient hash_map implementation
+COMMENT=	Extremely memory-efficient hash_map implementation
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.8+

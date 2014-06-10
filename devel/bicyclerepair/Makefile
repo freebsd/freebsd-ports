@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	mwm@mired.org
-COMMENT=	A python refactoring tool
+COMMENT=	Python refactoring tool
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.linux.it/~md/software/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A RRDtool frontend for BIND statistics
+COMMENT=	RRDtool frontend for BIND statistics
 
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail

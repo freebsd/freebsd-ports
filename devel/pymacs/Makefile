@@ -7,7 +7,7 @@ CATEGORIES=	devel editors python elisp
 MASTER_SITES=	http://github.com/pinard/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	mwm@mired.org
-COMMENT=	A Python package for scripting emacs
+COMMENT=	Python package for scripting emacs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

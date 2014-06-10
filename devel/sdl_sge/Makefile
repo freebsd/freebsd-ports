@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.digitalfanatics.org/cal/sge/files/ \
 DISTNAME=	sge030809
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
+COMMENT=	Graphic library for the Simple DirectMedia Layer (SDL)
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

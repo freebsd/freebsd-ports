@@ -9,7 +9,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER?=	acm@FreeBSD.org
-COMMENT=	A fork of Mupen64 Nintendo 64 emulator with plugins (meta port)
+COMMENT=	Fork of Mupen64 Nintendo 64 emulator with plugins (meta port)
 
 # Mupen64 Emulator core and ui-console
 RUN_DEPENDS+=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core

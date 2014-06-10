@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	starterbar-desklet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An icon bar for GNOME 2.x where you can put starters into
+COMMENT=	Icon bar for GNOME 2.x where you can put starters into
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg

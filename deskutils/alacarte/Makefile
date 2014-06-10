@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An editor for the freedesktop.org menu specification
+COMMENT=	Editor for the freedesktop.org menu specification
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnomedesktop intlhack

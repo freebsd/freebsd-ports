@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://dl.bintray.com/sbt/native-packages/sbt/${PORTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A build tool for Scala projects
+COMMENT=	Build tool for Scala projects
 
 LICENSE=	APACHE20
 

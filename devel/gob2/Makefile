@@ -8,7 +8,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A preprocessor for making GObjects with inline C
+COMMENT=	Preprocessor for making GObjects with inline C
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

@@ -7,7 +7,7 @@ CATEGORIES=	editors
 MASTER_SITES=	SF
 
 MAINTAINER=	vmagerya@gmail.com
-COMMENT=	A simple Unicode-aware console-based word processor
+COMMENT=	Simple Unicode-aware console-based word processor
 
 LICENSE=	MIT
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://meltin.net/hacks/emacs/src/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A standalone release of gnuserv for GNU Emacs
+COMMENT=	Standalone release of gnuserv for GNU Emacs
 
 
 GNU_CONFIGURE=	yes

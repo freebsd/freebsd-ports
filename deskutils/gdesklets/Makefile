@@ -9,7 +9,7 @@ MASTER_SITES=	GENTOO/distfiles
 DISTNAME=	gDesklets-${PORTVERSION}
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	A framework for Gnome 2.x for desktop applets
+COMMENT=	Framework for Gnome 2.x for desktop applets
 
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 

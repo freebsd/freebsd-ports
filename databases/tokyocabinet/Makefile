@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	kuriyama
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	A modern implementation of DBM
+COMMENT=	Modern implementation of DBM
 
 GNU_CONFIGURE=	yes
 USES=		gmake

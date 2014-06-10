@@ -10,7 +10,7 @@ MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	ashish
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	An interactive shell for PHP
+COMMENT=	Interactive shell for PHP
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

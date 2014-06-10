@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A library intended to aid developers working with deprecated code
+COMMENT=	Library intended to aid developers working with deprecated code
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

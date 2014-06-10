@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A flexible, full-featured, and fast variable expansion library
+COMMENT=	Flexible, full-featured, and fast variable expansion library
 
 USES=		gmake
 GNU_CONFIGURE=	yes

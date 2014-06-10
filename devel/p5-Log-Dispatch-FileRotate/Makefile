@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A Log::Dispatch plug-in for files that archive/rotate themselves
+COMMENT=	Log::Dispatch plug-in for files that archive/rotate themselves
 
 BUILD_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \

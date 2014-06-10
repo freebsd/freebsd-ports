@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	abwang@gmail.com
-COMMENT=	A collection of powerful tools for manipulating EPROM load files
+COMMENT=	Collection of powerful tools for manipulating EPROM load files
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt

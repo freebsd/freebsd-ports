@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	linux/reverse-engineering
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A commandline based ELF header analyzer
+COMMENT=	Commandline based ELF header analyzer
 
 USES=		gmake
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.kid-templating.org/dist/${PORTVERSION}/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A simple template language for XML based written in Python
+COMMENT=	Simple template language for XML based written in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

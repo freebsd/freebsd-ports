@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pgsql@FreeBSD.org
-COMMENT=	A powerful GUI PostgreSQL database administration tool and toolkit
+COMMENT=	Powerful GUI PostgreSQL database administration tool and toolkit
 
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 RUN_DEPENDS=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl:${PORTSDIR}/databases/pgtcl

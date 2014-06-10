@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME} \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eg@fbsd.lt
-COMMENT=	A set of PHP-scripts to manage PowerDNS over the web
+COMMENT=	Set of PHP-scripts to manage PowerDNS over the web
 
 USE_PHP=	gettext session mcrypt
 WANT_PHP_WEB=	yes

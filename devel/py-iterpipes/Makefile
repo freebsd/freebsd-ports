@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	A library for running shell pipelines using shell-like syntax
+COMMENT=	Library for running shell pipelines using shell-like syntax
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

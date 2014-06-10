@@ -8,7 +8,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	http://flyspray.org/
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	A simple, easy-to-use web based bug tracking system
+COMMENT=	Simple, easy-to-use web based bug tracking system
 
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 

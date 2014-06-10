@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 DISTNAME=	${PORTNAME}-1.1p8
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple to-do list manager
+COMMENT=	Simple to-do list manager
 
 USES+=		tk:run
 NO_BUILD=	yes

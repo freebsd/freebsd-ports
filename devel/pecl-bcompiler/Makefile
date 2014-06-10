@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A bytecode compiler extension
+COMMENT=	Bytecode compiler extension
 
 USE_PHP=	bz2
 USE_PHPEXT=	yes

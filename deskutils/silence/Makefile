@@ -9,7 +9,7 @@ MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	124776-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	syncer@gmail.com
-COMMENT=	An information management tool
+COMMENT=	Information management tool
 
 RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
 

@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	vd@FreeBSD.org
-COMMENT=	A vi-like binary file (hex)editor
+COMMENT=	Vi-like binary file (hex)editor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}

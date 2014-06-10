@@ -9,7 +9,7 @@ MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A BSD licenced configuration database system
+COMMENT=	BSD licenced configuration database system
 
 LIB_DEPENDS=	mowgli.2:${PORTSDIR}/devel/libmowgli
 

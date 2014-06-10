@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://www.unixpapa.com/software/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple and unobtrusive line-oriented text editor
+COMMENT=	Simple and unobtrusive line-oriented text editor
 
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell

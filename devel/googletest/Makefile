@@ -8,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	gtest-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A framework for writing C++ tests on a variety of platforms
+COMMENT=	Framework for writing C++ tests on a variety of platforms
 
 USES=		shebangfix
 GNU_CONFIGURE=	yes

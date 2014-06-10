@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1446/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A connection pool server for PostgreSQL
+COMMENT=	Connection pool server for PostgreSQL
 
 USES=		gmake
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An object-oriented ruby library to access git repositories
+COMMENT=	Object-oriented ruby library to access git repositories
 
 RUN_DEPENDS=	rubygem-diff-lcs>=1.1:${PORTSDIR}/textproc/rubygem-diff-lcs \
 		rubygem-mime-types>=1.15:${PORTSDIR}/misc/rubygem-mime-types \

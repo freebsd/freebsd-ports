@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A lightweight IDE for writing Java programs
+COMMENT=	Lightweight IDE for writing Java programs
 
 NO_BUILD=	yes
 USE_JAVA=	yes

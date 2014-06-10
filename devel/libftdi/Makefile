@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library (using libusb) to talk to FTDI chips
+COMMENT=	Library (using libusb) to talk to FTDI chips
 
 OPTIONS_DEFINE+=	BOOST PYTHON
 BOOST_DESC=		Build with boost

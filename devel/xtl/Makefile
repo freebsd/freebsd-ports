@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for R/W structured data to/from an external representation
+COMMENT=	Library for R/W structured data to/from an external representation
 
 NO_BUILD=	yes
 

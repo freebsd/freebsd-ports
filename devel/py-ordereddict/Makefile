@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A drop-in substitute for Py2.7's new collections
+COMMENT=	Drop-in substitute for Py2.7's new collections
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

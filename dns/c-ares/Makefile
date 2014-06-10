@@ -9,7 +9,7 @@ MASTER_SITES=	http://c-ares.haxx.se/download/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	An asynchronous DNS resolver library
+COMMENT=	Asynchronous DNS resolver library
 
 LICENSE=	MIT
 

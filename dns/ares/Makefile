@@ -9,7 +9,7 @@ MASTER_SITES=	http://mirrors.rit.edu/zi/ \
 		ftp://athena-dist.mit.edu/pub/ATHENA/ares/
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	An asynchronous DNS resolver library
+COMMENT=	Asynchronous DNS resolver library
 
 CONFLICTS=	c-ares-1.* c-ares-config-1.*
 

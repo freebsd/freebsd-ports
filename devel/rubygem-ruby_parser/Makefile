@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
-COMMENT=	A ruby parser written in pure ruby
+COMMENT=	Ruby parser written in pure ruby
 
 LICENSE=	MIT
 

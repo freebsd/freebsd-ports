@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	SQLiteManager-${PORTVERSION}
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	A multilingual web based tool to manage SQLite database
+COMMENT=	Multilingual web based tool to manage SQLite database
 
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5

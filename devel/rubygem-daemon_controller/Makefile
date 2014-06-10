@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT=	A library for implementing daemon management capabilities
+COMMENT=	Library for implementing daemon management capabilities
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

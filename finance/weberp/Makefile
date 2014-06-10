@@ -8,7 +8,7 @@ MASTER_SITES=	SF/web-erp/
 DISTNAME=	webERP${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	An Open-Source Web-Based ERP System
+COMMENT=	Open-Source Web-Based ERP System
 
 PORTSCOUT=	skipv:3.12
 

@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A FTP daemon that aims to be "very secure"
+COMMENT=	FTP daemon that aims to be "very secure"
 
 LICENSE=	GPLv2
 

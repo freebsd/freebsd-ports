@@ -6,7 +6,7 @@ CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF/${PORTNAME}/OpenProj%20Binaries/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free, open source Project Manager
+COMMENT=	Free, open source Project Manager
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 

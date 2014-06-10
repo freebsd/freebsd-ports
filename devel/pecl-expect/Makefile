@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PHP extension for expect library
+COMMENT=	PHP extension for expect library
 
 LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
 

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	ocaml-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	An interface for OCaml to the curl lib
+COMMENT=	Interface for OCaml to the curl lib
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib

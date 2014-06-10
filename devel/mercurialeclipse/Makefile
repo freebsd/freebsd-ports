@@ -12,7 +12,7 @@ DIST_SUBDIR=	eclipse
 EXTRACT_ONLY=
 
 MAINTAINER=	eg@fbsd.lt
-COMMENT=	A mercurial plugin for the Eclipse IDE Framework
+COMMENT=	Mercurial plugin for the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
 MAINTAINER=	gecko@FreeBSD.org
-COMMENT=	A platform-neutral API for system level and libc like functions
+COMMENT=	Platform-neutral API for system level and libc like functions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/nspr/build
 

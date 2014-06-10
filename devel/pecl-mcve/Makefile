@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PECL Extension for Interface the MCVE/Monetra API
+COMMENT=	PECL Extension for Interface the MCVE/Monetra API
 
 LIB_DEPENDS=	monetra.7:${PORTSDIR}/devel/libmonetra
 

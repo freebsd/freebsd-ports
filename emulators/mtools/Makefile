@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mtools
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	A collection of tools for manipulating MS-DOS files
+COMMENT=	Collection of tools for manipulating MS-DOS files
 
 LICENSE=	GPLv3
 

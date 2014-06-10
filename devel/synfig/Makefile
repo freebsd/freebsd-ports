@@ -8,7 +8,7 @@ CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A vector based 2D animation package
+COMMENT=	Vector based 2D animation package
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \

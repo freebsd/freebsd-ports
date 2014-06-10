@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	remember-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	dryice@dryice.name
-COMMENT=	A Emacs mode for remembering data
+COMMENT=	Emacs mode for remembering data
 
 USE_EMACS=	yes
 USES=		gmake

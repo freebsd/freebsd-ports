@@ -8,7 +8,7 @@ MASTER_SITES=	https://cloud.github.com/downloads/funglaub/devd-notifier/\
 		http://roladder.net/~flo/dist/
 
 MAINTAINER=	f.unglaub@googlemail.com
-COMMENT=	A daemon notifying the user about devd(8) events \
+COMMENT=	Daemon notifying the user about devd(8) events \
 		with libnotify
 
 LICENSE=	BSD

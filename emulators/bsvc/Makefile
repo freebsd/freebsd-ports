@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	system/emulators
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An extensible hardware simulation framework with MC68K support
+COMMENT=	Extensible hardware simulation framework with MC68K support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ENV=	PROJECT_BASE=${STAGEDIR}${PREFIX} WRKSRC=${WRKSRC} WISH=${WISH}

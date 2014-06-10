@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A library for mocking and stubbing syntax like JMock and SchMock
+COMMENT=	Library for mocking and stubbing syntax like JMock and SchMock
 
 RUN_DEPENDS=	rubygem-metaclass>=0:${PORTSDIR}/devel/rubygem-metaclass
 

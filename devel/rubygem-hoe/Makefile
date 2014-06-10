@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple rake/rubygems helper for project Rakefiles
+COMMENT=	Simple rake/rubygems helper for project Rakefiles
 
 USE_RUBY=	yes
 USE_RAKE=	yes

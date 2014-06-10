@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PECL extension offering a fast map-based autoloader
+COMMENT=	PECL extension offering a fast map-based autoloader
 
 LICENSE=	PHP301
 

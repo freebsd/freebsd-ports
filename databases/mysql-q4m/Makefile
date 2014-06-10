@@ -9,7 +9,7 @@ MASTER_SITES=	http://q4m.kazuhooku.com/dist/
 PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A message queue that works as a pluggable storage engine of MySQL
+COMMENT=	Message queue that works as a pluggable storage engine of MySQL
 
 FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${_MYSQL_SERVER}:build
 

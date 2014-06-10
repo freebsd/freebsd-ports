@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A C\# implementation of D-Bus
+COMMENT=	C\# implementation of D-Bus
 
 OPTIONS_DEFINE=	DOCS
 USES=	gmake mono pathfix pkgconfig

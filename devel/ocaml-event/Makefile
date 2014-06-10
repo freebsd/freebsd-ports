@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	michael.grunewald@laposte.net
-COMMENT=	An ocaml wrapper for the libevent API
+COMMENT=	Ocaml wrapper for the libevent API
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent

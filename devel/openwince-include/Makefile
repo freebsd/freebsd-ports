@@ -8,7 +8,7 @@ MASTER_SITES=	SF/openwince/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	openwince-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of the useful include files for embedded developers
+COMMENT=	Collection of the useful include files for embedded developers
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes

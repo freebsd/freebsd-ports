@@ -8,7 +8,7 @@ MASTER_SITES= http://roy.marples.name/downloads/openresolv/ \
 		ftp://roy.marples.name/pub/openresolv/
 
 MAINTAINER=	roy@marples.name
-COMMENT=	A resolvconf compatible framework for managing resolv.conf
+COMMENT=	Resolvconf compatible framework for managing resolv.conf
 
 USE_BZIP2=	yes
 

@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A flexible name to value mapping library for C variables
+COMMENT=	Flexible name to value mapping library for C variables
 
 LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
 

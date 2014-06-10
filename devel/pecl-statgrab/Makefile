@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	A PECL extension to retrieve information from libstatgrab
+COMMENT=	PECL extension to retrieve information from libstatgrab
 
 LIB_DEPENDS=	libstatgrab0.so:${PORTSDIR}/devel/libstatgrab0
 

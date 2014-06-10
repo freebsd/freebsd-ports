@@ -7,7 +7,7 @@ CATEGORIES=	devel scheme
 MASTER_SITES=	http://lamp.epfl.ch/~schinz/scsh_packages/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An scsh library for installing other scsh packages
+COMMENT=	Scsh library for installing other scsh packages
 
 RUN_DEPENDS=	scsh:${PORTSDIR}/lang/scsh
 

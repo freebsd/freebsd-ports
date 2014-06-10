@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A Perl extension for parsing Mac OS X property lists
+COMMENT=	Perl extension for parsing Mac OS X property lists
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	A Perl library to access Domain Name Registries/Registrars
+COMMENT=	Perl library to access Domain Name Registries/Registrars
 
 RUN_DEPENDS=	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-ISO8601>0.06:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \

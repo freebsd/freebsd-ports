@@ -11,7 +11,7 @@ DISTNAME=	Subversive-${PORTVERSION}.I20131116-1700
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:core ${CONNECTORS}:connectors
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	An Eclipse plug-in that provides Subversion support
+COMMENT=	Eclipse plug-in that provides Subversion support
 
 LICENSE=	EPL
 

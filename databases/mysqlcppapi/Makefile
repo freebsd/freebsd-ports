@@ -8,7 +8,7 @@ CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%202/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fork of mysql++ C++ API for MySQL
+COMMENT=	Fork of mysql++ C++ API for MySQL
 
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes

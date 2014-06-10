@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	An advanced cross-platform text editor
+COMMENT=	Advanced cross-platform text editor
 
 LIB_DEPENDS=	#
 

@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PECL extension to the libsvn library
+COMMENT=	PECL extension to the libsvn library
 
 LICENSE=	PHP301
 

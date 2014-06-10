@@ -8,7 +8,7 @@ MASTER_SITES=	SF/opengoo/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	An open source web-based collaboration software
+COMMENT=	Open source web-based collaboration software
 
 USES=		zip
 NO_BUILD=	yes

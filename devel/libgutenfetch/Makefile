@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	johntabularasa@users.sf.net
-COMMENT=	A library that allows application developers to connect to PG
+COMMENT=	Library that allows application developers to connect to PG
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 

@@ -7,7 +7,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://homepage.boetes.org/software/mg/
 
 MAINTAINER=	darcsis@gmail.com
-COMMENT=	A small, fast Emacs-like editor
+COMMENT=	Small, fast Emacs-like editor
 
 PLIST_FILES=	bin/mg man/man1/mg.1.gz
 PORTDOCS=	README tutorial

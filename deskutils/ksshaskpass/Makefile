@@ -9,7 +9,7 @@ MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	50971-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	A KDE 4 version of ssh-askpass with KWallet support
+COMMENT=	KDE 4 version of ssh-askpass with KWallet support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		cmake

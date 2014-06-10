@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20131118oss_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	A library that provides thread building blocks
+COMMENT=	Library that provides thread building blocks
 
 LICENSE=	GPLv2
 

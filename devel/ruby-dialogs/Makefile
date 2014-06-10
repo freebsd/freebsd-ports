@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple Ruby interface to dialog(1)
+COMMENT=	Simple Ruby interface to dialog(1)
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes

@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A fast profiler for Ruby
+COMMENT=	Fast profiler for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

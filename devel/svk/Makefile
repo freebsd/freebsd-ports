@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:CLKAO
 DISTNAME=	SVK-v${PORTVERSION}
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A Distributed Version Control System
+COMMENT=	Distributed Version Control System
 
 BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
