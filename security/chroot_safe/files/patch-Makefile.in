@@ -1,0 +1,21 @@
+--- Makefile.in.orig	2014-06-10 23:22:42.806836167 +0800
++++ Makefile.in	2014-06-10 23:23:07.477835933 +0800
+@@ -18,12 +18,12 @@ clean:
+ 	rm -f *.o *.so *~
+ 
+ install: all
+-	$(install) -m 0755 -d $(libexec)
+-	$(install) -m 0755 -s chroot_safe.so $(libexec)/chroot_safe.so
+-	$(install) -m 0755 -d $(sbin)
+-	$(install) -m 0750 chroot_safe $(sbin)/chroot_safe
+-	$(install) -m 0755 -d $(man)
+-	$(install) -m 0444 chroot_safe.1 $(man)/chroot_safe.1
++	$(install) -m 0755 -d $(DESTDIR)$(libexec)
++	$(install) -m 0755 -s chroot_safe.so $(DESTDIR)$(libexec)/chroot_safe.so
++	$(install) -m 0755 -d $(DESTDIR)$(sbin)
++	$(install) -m 0750 chroot_safe $(DESTDIR)$(sbin)/chroot_safe
++	$(install) -m 0755 -d $(DESTDIR)$(man)
++	$(install) -m 0444 chroot_safe.1 $(DESTDIR)$(man)/chroot_safe.1
+ 
+ distclean: clean
+ 	rm -f chroot_safe config.log config.status Makefile chroot_safe.1
