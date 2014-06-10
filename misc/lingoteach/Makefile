@@ -2,80 +2,61 @@
 
 PORTNAME=	lingoteach
 PORTVERSION=	0.3.9
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
-DISTFILES=	${PORTNAME}-ui-${PORTVERSION}.tar.gz
-.if defined(WITH_SOUND)
-DISTFILES+=	${PORTNAME}-sound-${SOUNDV}.tar.gz
-.endif
+MASTER_SITES=	SF/${PORTNAME}/OldFiles:src
+DISTFILES=	${PORTNAME}-ui-${PORTVERSION}.tar.gz:src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A language teaching program with sound
+COMMENT=	Language teaching program with sound
 
-LIB_DEPENDS=	lingoteach.3:${PORTSDIR}/textproc/liblingoteach
+LIB_DEPENDS=	liblingoteach.so:${PORTSDIR}/textproc/liblingoteach
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-ui-${PORTVERSION}
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig libtool
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib `pkg-config --libs gmodule-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 # sound version
-SOUNDV=			0.3.9
+SOUNDV=		0.3.9
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
+PORTDATA=	*
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	NLS SOUND DEBUG DOCS
+OPTIONS_SUB=	yes
+
+SOUND_DESC=	Download additional sounds
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+DEBUG_CONFIGURE_ENABLE=	debug
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSOUND}
+MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-sound/${SOUNDV}:sound
+DISTFILES+=	${PORTNAME}-sound-${SOUNDV}.tar.gz:sound
 .endif
-
-.if defined(WITH_SOUND)
-PLIST=		${WRKDIR}/plist
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "	Available options for lingoteach:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} " 		 WITH_SOUND	download additional sounds"
-	@${ECHO_CMD} "				for lingoteach"
-	@${ECHO_CMD} " 		 WITH_DEBUG	enable debugging"
-	@${ECHO_CMD} ""
 
 post-patch::
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^SUBDIRS = intl src po data doc|SUBDIRS = src po data|g' \
-	    ${WRKSRC}/Makefile.in
-.else
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = intl src po data doc|SUBDIRS = src po data doc|g' \
 	    ${WRKSRC}/Makefile.in
+.else
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = intl src po data doc|SUBDIRS = src po data|g' \
+	    ${WRKSRC}/Makefile.in
 .endif
 
-.if defined(WITH_SOUND)
-pre-install::
-	@${CAT} pkg-plist | ${SED} '/@dirrm/d' > ${PLIST}; \
-	cd ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data; \
-	${FIND} . -type f \! -name "Make*" | ${CUT} -c2- | \
-	${SED} 's|^|${DATADIR:S,${PREFIX}/,,}/data|' \
-	| ${SORT} >> ${PLIST}; \
-	${CAT} ${.CURDIR}/pkg-plist | ${SED} '/%%PORTDOCS%%@dirrm/!d' >> ${PLIST}; \
-	cd ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data; \
-	${FIND} . -type d | ${CUT} -c2- | ${SED} \
-	's|^|@dirrm ${DATADIR:S,${PREFIX}/,,}/data|' | ${SORT} -r >> ${PLIST}; \
-	${ECHO_CMD} "@dirrm ${DATADIR:S,${PREFIX}/,,}" >> ${PLIST};
-.endif
-
-.if defined(WITH_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 post-install::
 	cd ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data; \
-	${RM} -f Make*; \
-	${CP} -R ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data \
-	${DATADIR};
+		${RM} -f Make*; \
+		${CP} -R ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data \
+		${STAGEDIR}${DATADIR};
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
