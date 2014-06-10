@@ -3,7 +3,7 @@
 
 PORTNAME=	alsa-lib
 PORTVERSION=	1.0.27.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/lib \
 		GENTOO/distfiles
@@ -11,7 +11,7 @@ MASTER_SITES=	ALSA/lib \
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	ALSA compatibility library
 
-USES=		tar:bzip2
+USES=		tar:bzip2 libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfdir="\$${prefix}/libdata/pkgconfig"
