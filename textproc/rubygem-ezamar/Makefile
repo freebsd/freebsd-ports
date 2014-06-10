@@ -6,7 +6,7 @@ PORTVERSION=	2009.06
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight and simple templating engine for Ruby
 
 USE_RUBY=	yes

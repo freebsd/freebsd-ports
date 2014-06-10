@@ -8,7 +8,7 @@ MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/870/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml bindings to libmysqlclient
 
 USES=			gmake

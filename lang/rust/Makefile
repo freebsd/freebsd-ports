@@ -10,7 +10,7 @@ DISTFILES=	${RUST_SOURCE}:src \
 		${RUST_BOOT}:boot
 EXTRACT_ONLY=	${RUST_SOURCE}
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
 
 LICENSE=	APACHE20 \
