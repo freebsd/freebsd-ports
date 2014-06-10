@@ -20,6 +20,7 @@ LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
 USE_GNOME=	libxml2
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZLIB_CFLAGS="-DWEHAVEZLIBINBASE" ZLIB_LIBS="-DWEDOHAVEIT"
 INSTALL_TARGET=	install-strip

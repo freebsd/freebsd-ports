@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel
 LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 USES=		libtool pathfix pkgconfig tar:xz
+USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
