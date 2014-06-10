@@ -21,11 +21,10 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	DTD_NAME=${PORTNAME} XMLCATMGR=${XMLCATMGR}
 PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
-INSTDIR=	${PREFIX}/share/sgml/html
+INSTDIR=	${STAGEDIR}${PREFIX}/share/sgml/html
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
-NO_STAGE=	yes
 pre-su-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
 
@@ -33,8 +32,5 @@ do-install:
 	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; ${PAX} -r)
 	@${CHMOD} ${SHAREMODE} `${FIND} ${INSTDIR} -type f`
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-
-post-install:
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/catalog
 
 .include <bsd.port.mk>
