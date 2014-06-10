@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parser combinators for ATS language
 
 ATS_CTRB=	parcomb
