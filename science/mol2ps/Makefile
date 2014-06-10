@@ -26,14 +26,13 @@ USE_FPC=	yes
 PLIST_FILES=	bin/${PORTNAME} bin/mol2svg %%DATADIR%%/color.conf
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc ${EXTRACT_ONLY} -S2 -O3)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
-	(cd ${PREFIX}/bin && ${LN} ${PORTNAME} mol2svg)
-	@${MKDIR} ${DATADIR}
-	(cd ${FILESDIR} && ${INSTALL_DATA} color.conf ${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
+	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} ${PORTNAME} mol2svg)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${FILESDIR} && ${INSTALL_DATA} color.conf ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
