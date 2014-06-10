@@ -6562,7 +6562,7 @@ _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				desktop-file-post-install kmod-post-install shared-mime-post-install webplugin-post-install \
 				post-install post-install-script add-plist-buildinfo \
 				add-plist-info add-plist-docs add-plist-examples \
-				add-plist-data add-plist-post fix-plist-sequence fix-perl-bs \
+				add-plist-data add-plist-post fix-plist-sequence \
 				compress-man install-ldconfig-file fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
