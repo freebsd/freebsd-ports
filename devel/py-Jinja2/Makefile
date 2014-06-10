@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Jinja2
-PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTVERSION=	2.7.3
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -60,7 +60,8 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/docs/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		"! -name .buildinfo")
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
