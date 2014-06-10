@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/psdim/download/
 
-MAINTAINER=	emss@free.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that calculates the optimal placement of the pages for n-up printing
 
 USE_GHOSTSCRIPT=yes

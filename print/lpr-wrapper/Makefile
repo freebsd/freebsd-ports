@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 
-MAINTAINER=	emss@free.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user level printer frontend
 
 USE_GHOSTSCRIPT_RUN=	yes
