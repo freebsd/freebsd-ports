@@ -244,7 +244,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/i18n.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/OpenXPKI.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/OpenXPKI.so
 %%PERL5_MAN3%%/OpenXPKI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::API.3.gz

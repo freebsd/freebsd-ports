@@ -102,10 +102,8 @@ lib/libcyrus_min.a
 %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/SIEVE/managesieve.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
 man/man1/cyradm.1.gz
 man/man1/imtest.1.gz

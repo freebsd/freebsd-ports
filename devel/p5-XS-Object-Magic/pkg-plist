@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XS/Object/Magic/Install/typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/XS/Object/Magic/Install/xs_object_magic.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XS/Object/Magic/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XS/Object/Magic/Magic.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XS/Object/Magic/Magic.so
 %%PERL5_MAN3%%/XS::Object::Magic.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XS/Object/Magic

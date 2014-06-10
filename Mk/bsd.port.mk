@@ -6515,7 +6515,7 @@ _STAGE_SUSEQ=	create-users-groups do-install \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-plist-sequence fix-packlist fix-plist-perl
+				move-uniquefiles-plist fix-plist-sequence fix-packlist fix-perl-bs
 .if defined(DEVELOPER)
 _STAGE_SUSEQ+=	stage-qa
 .endif
@@ -6528,7 +6528,7 @@ _STAGE_SEQ+=	create-users-groups do-install \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-plist-sequence fix-packlist fix-plist-perl
+				move-uniquefiles-plist fix-plist-sequence fix-packlist fix-perl-bs
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
 .endif
@@ -6562,7 +6562,7 @@ _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				desktop-file-post-install kmod-post-install shared-mime-post-install webplugin-post-install \
 				post-install post-install-script add-plist-buildinfo \
 				add-plist-info add-plist-docs add-plist-examples \
-				add-plist-data add-plist-post fix-plist-sequence fix-plist-perl \
+				add-plist-data add-plist-post fix-plist-sequence fix-perl-bs \
 				compress-man install-ldconfig-file fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \

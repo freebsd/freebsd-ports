@@ -24,7 +24,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Template.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Cdk/Viewer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/Cdk.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/Cdk.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cdk

@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/RabbitMQ.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RabbitMQ/RabbitMQ.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RabbitMQ/RabbitMQ.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RabbitMQ/.packlist
 %%PERL5_MAN3%%/Net::RabbitMQ.3.gz

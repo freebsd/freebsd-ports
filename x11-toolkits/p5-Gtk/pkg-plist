@@ -35,7 +35,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/io.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/lazy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gtk.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gtk.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/base/.packlist

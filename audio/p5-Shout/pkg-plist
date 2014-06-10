@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Shout.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout/Shout.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout/Shout.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/example.pl

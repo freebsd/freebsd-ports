@@ -4,7 +4,6 @@ bin/ora_explain
 %%MKTA%%%%SITE_PERL%%/%%PERL_ARCH%%/DBD/mkta.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Oraperl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/Oracle.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/Oracle.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/Oracle.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Oracle/dbdimp.h

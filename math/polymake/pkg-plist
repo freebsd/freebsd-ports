@@ -703,7 +703,6 @@ libexec/polymake/lib/tropical.so
 %%DATADIR%%/xml/upgrade-2.9.7.xslt
 %%DATADIR%%/xml/upgrade-2.9.8.xslt
 libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake/Ext/.packlist
-libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake/Ext/Ext.bs
 libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake/Ext/Ext.so
 @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake/Ext
 @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake

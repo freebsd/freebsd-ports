@@ -2,7 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Annotation/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/OP/Annotation/Install/hook_op_annotation.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Annotation/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Annotation/Annotation.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Annotation/Annotation.so
 %%PERL5_MAN3%%/B::Hooks::OP::Annotation.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/OP/Annotation

@@ -136,7 +136,6 @@ lib/purple-2/offlinemsg.so
 %%PERL:%%lib/purple-2/perl.so
 %%PERL:%%lib/purple-2/perl/Purple.pm
 %%PERL:%%lib/purple-2/perl/auto/Purple/.packlist
-%%PERL:%%lib/purple-2/perl/auto/Purple/Purple.bs
 %%PERL:%%lib/purple-2/perl/auto/Purple/Purple.so
 %%PERL:%%lib/purple-2/perl/auto/Purple/autosplit.ix
 lib/purple-2/psychic.a

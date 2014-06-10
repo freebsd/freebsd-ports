@@ -20,9 +20,7 @@ bin/pmat-sizes
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool/Reachability.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/Tool/Sizes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/MAT/UI.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/Dumper/Dumper.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/Dumper/Dumper.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/MAT.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/MAT/MAT.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-internal.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-lexical.svg

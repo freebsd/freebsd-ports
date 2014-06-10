@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/Compress::LZO.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Compress/LZO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZO/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZO/LZO.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZO/LZO.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZO/autosplit.ix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZO

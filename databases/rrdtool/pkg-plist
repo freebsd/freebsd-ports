@@ -48,7 +48,6 @@ man/man1/rrdxport.1.gz
 %%WITH_PERL%%%%PERL5_MAN3%%/RRDs.3.gz
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
 %%WITH_PERL%%%%SITE_PERL%%/RRDp.pm

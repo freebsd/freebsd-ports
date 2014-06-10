@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/Permute.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Permute/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Permute/Permute.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Permute/Permute.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Permute/autosplit.ix
 %%PERL5_MAN3%%/Algorithm::Permute.3.gz

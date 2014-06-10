@@ -13,7 +13,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/MIME/SoftBank.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/Vodafone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/Mobile.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/Mobile.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/convert-map-utf8.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/convert-map-utf8.yaml

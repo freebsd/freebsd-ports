@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/CUPS/IPP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/CUPS/PPD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/CUPS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/CUPS.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/Destination/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/IPP/autosplit.ix

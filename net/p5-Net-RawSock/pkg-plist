@@ -1,7 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/RawSock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawSock/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawSock/RawSock.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawSock/RawSock.bs
 %%PERL5_MAN3%%/Net::RawSock.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawSock/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

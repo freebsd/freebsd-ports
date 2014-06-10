@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Lexical/Alias.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Alias/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Alias/Alias.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Alias/Alias.so
 %%PERL5_MAN3%%/Lexical::Alias.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Alias

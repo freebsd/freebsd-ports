@@ -148,7 +148,6 @@ sbin/rpc.rotd
 share/aclocal/hamlib.m4
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/Hamlib.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/Hamlib.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Hamlib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/perltest.pl
 %%PYTHON_SITELIBDIR%%/_Hamlib.so

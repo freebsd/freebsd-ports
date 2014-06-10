@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/SVMLight.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/SVMLight/SVMLight.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/SVMLight/SVMLight.so
 %%PERL5_MAN3%%/Algorithm::SVMLight.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm

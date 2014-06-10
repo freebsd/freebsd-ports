@@ -2,7 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Test/LeakTrace/JA.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Test/LeakTrace/Script.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/LeakTrace/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/LeakTrace/LeakTrace.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/LeakTrace/LeakTrace.so
 %%PERL5_MAN3%%/Test::LeakTrace.3.gz
 %%PERL5_MAN3%%/Test::LeakTrace::JA.3.gz

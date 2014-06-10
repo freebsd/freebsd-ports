@@ -12,16 +12,12 @@ lib/libsilcclient.so
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi/TextUI.pm
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi/UI.pm
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/.packlist
-%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Irssi.bs
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Irssi.so
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/.packlist
-%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/Silc.bs
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/Silc.so
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/TextUI/.packlist
-%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/TextUI/TextUI.bs
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/TextUI/TextUI.so
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/UI/.packlist
-%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/UI/UI.bs
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/UI/UI.so
 %%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/perllocal.pod
 %%DATADIR%%/help/action

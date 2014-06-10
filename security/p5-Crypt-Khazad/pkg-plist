@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Khazad.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Khazad/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Khazad/Khazad.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Khazad/Khazad.so
 %%PERL5_MAN3%%/Crypt::Khazad.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Khazad/

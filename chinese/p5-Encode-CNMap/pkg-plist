@@ -8,7 +8,6 @@ man/man1/cnmapwx.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap/cnmapwx.wdr
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap/cnmapwx_wdr.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap/CNMap.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap/CNMap.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode

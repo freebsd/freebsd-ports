@@ -34,7 +34,6 @@ man/man5/razor-whitelist.5.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Syslog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Razor2/Syslog/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/razor-agents/.packlist

@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Tie/LevelDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/LevelDB/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/LevelDB/LevelDB.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/LevelDB/LevelDB.so
 %%PERL5_MAN3%%/Tie::LevelDB.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/LevelDB

@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Loki97.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Loki97/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Loki97/Loki97.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Loki97/Loki97.so
 %%PERL5_MAN3%%/Crypt::Loki97.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Loki97/

@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/autobox/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/autobox/autobox.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/autobox/autobox.so
 %%SITE_PERL%%/%%PERL_ARCH%%/autobox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/autobox.pod

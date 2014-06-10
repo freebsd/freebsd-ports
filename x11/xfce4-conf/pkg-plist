@@ -74,7 +74,6 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfconf.mo
 %%PERLBIND%%%%PERL5_MAN3%%/Xfce4::Xfconf.3.gz
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.so
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.bs
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/.packlist
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/Files.pm
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.h

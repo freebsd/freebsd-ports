@@ -98,7 +98,6 @@ bin/mkmapfile
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/NEXT/NEXTSTEP.map
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/REGISTRY
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.so
 man/man1/map.1.gz
 man/man1/mkmapfile.1.gz

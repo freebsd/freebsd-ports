@@ -9,7 +9,6 @@ bin/dnet.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Arp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Libdnet/Entry/Intf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Libdnet/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Libdnet/Libdnet.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Libdnet/Libdnet.so
 %%PERL5_MAN3%%/Net::Libdnet.3.gz
 %%PERL5_MAN3%%/Net::Libdnet::Entry::Intf.3.gz

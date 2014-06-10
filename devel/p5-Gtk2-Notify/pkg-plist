@@ -5,7 +5,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Notify/Install/notify.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Notify/index.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Notify/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Notify/Notify.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Notify/Notify.so
 %%PERL5_MAN3%%/Gtk2::Notify.3.gz
 %%PERL5_MAN3%%/Gtk2::Notify::index.3.gz

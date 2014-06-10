@@ -43,7 +43,6 @@ bin/ace.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Ace/SocketServer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GFF/Filehandle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_asAce.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_asHTML.al
@@ -77,7 +76,6 @@ bin/ace.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/rollback.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/tags.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/timestamp.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/RPC/RPC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/RPC/RPC.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence/Feature/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence/autosplit.ix

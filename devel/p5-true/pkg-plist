@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/true/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/true/true.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/true/true.so
 %%SITE_PERL%%/%%PERL_ARCH%%/true.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/true/VERSION.pm

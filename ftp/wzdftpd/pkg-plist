@@ -98,7 +98,6 @@ lib/libwzd_core.la
 lib/libwzd_core.so
 lib/libwzd_core.so.801
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd/wzdftpd.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/wzdftpd/wzdftpd.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/wzdftpd.pm
 %%MYSQL%%lib/wzdftpd/backends/libwzdmysql.a

@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/CDF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/CDF/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/CDF/CDF.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/CDF/CDF.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/CDF/autosplit.ix
 %%PERL5_MAN3%%/Math::CDF.3.gz

@@ -4,7 +4,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Util/JA.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Util/PurePerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/Util.so
 %%PERL5_MAN3%%/Data::Util.3.gz
 %%PERL5_MAN3%%/Data::Util::Curry.3.gz

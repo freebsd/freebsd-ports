@@ -144,7 +144,6 @@ libdata/pkgconfig/rpm.pc
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RPM/Spec.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RPM/Transaction.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPM/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPM/RPM.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPM/RPM.so
 %%PERL%%%%PERL5_MAN3%%/RPM.3.gz
 %%PERL%%%%PERL5_MAN3%%/RPM::Constant.3.gz

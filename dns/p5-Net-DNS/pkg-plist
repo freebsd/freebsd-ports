@@ -129,7 +129,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Update.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ZoneFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/DNS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/DNS.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

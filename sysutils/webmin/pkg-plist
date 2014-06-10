@@ -50,12 +50,10 @@ lib/webmin/acl/Authen-SolarisRBAC-0.1/MANIFEST
 lib/webmin/acl/Authen-SolarisRBAC-0.1/Makefile
 lib/webmin/acl/Authen-SolarisRBAC-0.1/Makefile.PL
 lib/webmin/acl/Authen-SolarisRBAC-0.1/Makefile.old
-lib/webmin/acl/Authen-SolarisRBAC-0.1/SolarisRBAC.bs
 lib/webmin/acl/Authen-SolarisRBAC-0.1/SolarisRBAC.c
 lib/webmin/acl/Authen-SolarisRBAC-0.1/SolarisRBAC.pm
 lib/webmin/acl/Authen-SolarisRBAC-0.1/SolarisRBAC.xs
 lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/arch/auto/Authen/SolarisRBAC/.exists
-lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/arch/auto/Authen/SolarisRBAC/SolarisRBAC.bs
 lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/arch/auto/Authen/SolarisRBAC/SolarisRBAC.so
 lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/lib/Authen/.exists
 lib/webmin/acl/Authen-SolarisRBAC-0.1/blib/lib/Authen/SolarisRBAC.pm

@@ -5,7 +5,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/ZeroMQ/Poller.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ZeroMQ/Raw.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ZeroMQ/Socket.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZeroMQ/ZeroMQ.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZeroMQ/ZeroMQ.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZeroMQ/.packlist
 %%PERL5_MAN3%%/ZeroMQ.3.gz

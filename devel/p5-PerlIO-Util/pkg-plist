@@ -7,7 +7,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/reverse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/tee.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/Util.so
 %%PERL5_MAN3%%/PerlIO::Util.3.gz
 %%PERL5_MAN3%%/PerlIO::Util::JA.3.gz

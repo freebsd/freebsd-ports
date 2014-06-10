@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/Crypt::RSA::Yandex.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/RSA/Yandex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA/Yandex/Yandex.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA/Yandex/Yandex.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA/Yandex/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA/Yandex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA

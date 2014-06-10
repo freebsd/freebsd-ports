@@ -4,7 +4,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC/FAQ.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC/TO_DO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC/ODBC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC/ODBC.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD

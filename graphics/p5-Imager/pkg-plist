@@ -134,31 +134,18 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/regmach.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor/CountColor.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor/CountColor.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/GIF/GIF.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/GIF/GIF.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/ICO/ICO.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/ICO/ICO.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/JPEG/JPEG.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/JPEG/JPEG.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/PNG/PNG.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/PNG/PNG.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/SGI/SGI.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/SGI/SGI.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/TIFF/TIFF.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/TIFF/TIFF.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest/DynTest.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest/DynTest.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines/Flines.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines/Flines.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Mandelbrot/Mandelbrot.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2/FT2.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2/FT2.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1/T1.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1/T1.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/T1
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Font/FT2
