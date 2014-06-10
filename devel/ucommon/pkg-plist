@@ -66,13 +66,13 @@ include/ucommon/vector.h
 include/ucommon/xml.h
 lib/libcommoncpp.so
 lib/libcommoncpp.so.6
-lib/libcommoncpp.so.6.0.10
+lib/libcommoncpp.so.6.0.11
 lib/libucommon.so
 lib/libucommon.so.6
-lib/libucommon.so.6.0.10
+lib/libucommon.so.6.0.11
 lib/libusecure.so
 lib/libusecure.so.6
-lib/libusecure.so.6.0.10
+lib/libusecure.so.6.0.11
 libdata/pkgconfig/commoncpp.pc
 libdata/pkgconfig/ucommon.pc
 man/man1/args.1.gz
