@@ -18,6 +18,7 @@ USES=		libtool:keepla pathfix perl5 pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/src/conv/svg/wpg2svgbatch.pl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-werror
 
 OPTIONS_DEFINE=	DOCS
