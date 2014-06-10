@@ -332,8 +332,8 @@ include/gal_zp.h
 include/gal_zpv.h
 include/gal_zr.h
 lib/libgal.a
-lib/libgal.la
 lib/libgal.so
 lib/libgal.so.0
+lib/libgal.so.0.0.4
 %%DOCSDIR%%/README
 @dirrm %%DOCSDIR%%
