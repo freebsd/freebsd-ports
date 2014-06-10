@@ -1,4 +1,4 @@
-# Created by: freebsd@spatula.net
+# Created by: Nicklas Johnson <freebsd@spatula.net>
 # $FreeBSD$
 
 PORTNAME=	speak
@@ -11,5 +11,4 @@ COMMENT=	Generates random middle-management synergy speak
 
 CONFLICTS=	espeak-1.[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
