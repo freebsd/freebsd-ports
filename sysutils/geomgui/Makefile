@@ -7,24 +7,21 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://tinkering.hambrew.net/geomgui/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	xride
-USE_BZIP2=	yes
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Viewer for kernel geom layer
 
-LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS=	libgvc.so:${PORTSDIR}/graphics/graphviz
 
-USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 librsvg2
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig libtool tar:bzip2
 GNU_CONFIGURE=	yes
 
-MAN1=	geomgui.1
-PLIST_FILES=	bin/geomgui
+PLIST_FILES=	bin/geomgui \
+		man/man1/geomgui.1.gz
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
-	${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
