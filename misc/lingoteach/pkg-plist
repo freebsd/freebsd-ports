@@ -1,36 +1,9 @@
 bin/lingoteach-gtk
-%%PORTDOCS%%share/doc/lingoteach/img/first-start.png
-%%PORTDOCS%%share/doc/lingoteach/img/pref-general.png
-%%PORTDOCS%%share/doc/lingoteach/img/pref-lesson.png
-%%PORTDOCS%%share/doc/lingoteach/img/pref-module.png
-%%PORTDOCS%%share/doc/lingoteach/img/pref-system.png
-%%PORTDOCS%%share/doc/lingoteach/img/use-filter.png
-%%PORTDOCS%%share/doc/lingoteach/img/use-multichoice.png
-%%PORTDOCS%%share/doc/lingoteach/img/use-onebyone.png
-%%PORTDOCS%%share/doc/lingoteach/img/use-search.png
-%%PORTDOCS%%share/doc/lingoteach/index.html
-%%PORTDOCS%%share/doc/lingoteach/lingoteach-conf.html
-%%PORTDOCS%%share/doc/lingoteach/lingoteach-install.html
-%%PORTDOCS%%share/doc/lingoteach/lingoteach-use.html
-%%PORTDOCS%%share/doc/lingoteach/lingoteach.css
-%%PORTDOCS%%share/doc/lingoteach/ln-legal.html
-share/lingoteach/AUTHORS
-share/lingoteach/COPYING
-share/lingoteach/README
-share/lingoteach/data/basic.xml
-share/lingoteach/data/language.dtd
-share/lingoteach/data/language.xml
-share/lingoteach/data/lingoteach.dtd
-share/lingoteach/data/rules.en.txt
-share/locale/da/LC_MESSAGES/lingoteach.mo
-share/locale/de/LC_MESSAGES/lingoteach.mo
-share/locale/eo/LC_MESSAGES/lingoteach.mo
-share/locale/fr/LC_MESSAGES/lingoteach.mo
-share/locale/hu/LC_MESSAGES/lingoteach.mo
-share/locale/id/LC_MESSAGES/lingoteach.mo
-share/locale/pt_BR/LC_MESSAGES/lingoteach.mo
-share/locale/sv/LC_MESSAGES/lingoteach.mo
-@dirrm share/lingoteach/data
-@dirrm share/lingoteach
-%%PORTDOCS%%@dirrm share/doc/lingoteach/img
-%%PORTDOCS%%@dirrm share/doc/lingoteach
+%%NLS%%share/locale/da/LC_MESSAGES/lingoteach.mo
+%%NLS%%share/locale/de/LC_MESSAGES/lingoteach.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/lingoteach.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/lingoteach.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/lingoteach.mo
+%%NLS%%share/locale/id/LC_MESSAGES/lingoteach.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/lingoteach.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/lingoteach.mo
