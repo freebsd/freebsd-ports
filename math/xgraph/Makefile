@@ -15,11 +15,9 @@ COMMENT=	Program that helps you plot graphs
 USES=		imake
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN1=		xgraph.1
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/xgraph
-	${INSTALL_DATA} ${WRKSRC}/examples/*.xg ${PREFIX}/share/examples/xgraph
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/xgraph
+	${INSTALL_DATA} ${WRKSRC}/examples/*.xg ${STAGEDIR}${PREFIX}/share/examples/xgraph
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
 bin/xgraph
-share/examples/xgraph/bar.xg
-share/examples/xgraph/surface.xg
-share/examples/xgraph/surface2.xg
-share/examples/xgraph/surface3.xg
-share/examples/xgraph/xgtest.xg
-@dirrm share/examples/xgraph
+man/man1/xgraph.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bar.xg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface.xg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface2.xg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface3.xg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xgtest.xg
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
