@@ -1,4 +1,5 @@
 bin/http-analyze
+man/man1/http-analyze.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/http-analyze.pdf
 %%PORTDOCS%%%%DOCSDIR%%/http-analyze.ps.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/README
