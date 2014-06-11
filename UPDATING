@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140610:
+  AFFECTS: users of www/firefox, www/seamonkey, mail/thunderbird, www/libxul
+  AUTHOR: gecko@FreeBSD.org
+
+  Gecko ports were switched to use more system libraries. Some of them
+  must be built with certain options unset (default).
+  - audio/soundtouch has to be installed with INTEGER_SAMPLES option disabled
+
 20140604
   AFFECTS: users of dns/dnscrypt-proxy
   AUTHOR: feld@FreeBSD.org

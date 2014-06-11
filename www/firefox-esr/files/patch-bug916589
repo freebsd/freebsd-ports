@@ -2,17 +2,8 @@ diff --git media/mtransport/third_party/nrappkit/src/port/generic/include/sys/qu
 index 5b50785..7cf47d5 100644
 --- media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
 +++ media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
-@@ -31,11 +31,18 @@
-  */
- 
--#ifndef _SYS_QUEUE_H_
-+#if (defined(BSD) && !defined(__OpenBSD__)) || defined(DARWIN)
-+#include_next <sys/queue.h>
-+# if defined(__DragonFly__)
-+#define STAILQ_FOREACH_SAFE STAILQ_FOREACH_MUTABLE
-+#define TAILQ_FOREACH_SAFE TAILQ_FOREACH_MUTABLE
-+# endif
-+#elif !defined(_SYS_QUEUE_H_)
+@@ -33,9 +33,10 @@
+ #ifndef _SYS_QUEUE_H_
  #define	_SYS_QUEUE_H_
  
 -#if !defined(__FreeBSD__) && !defined(DARWIN)
@@ -24,7 +15,7 @@ index 5b50785..7cf47d5 100644
  #endif
  
  #define STAILQ_FOREACH_SAFE(var, head, field, tvar)                     \
-@@ -43,8 +46,6 @@
+@@ -43,8 +44,6 @@
               (var) && ((tvar) = STAILQ_NEXT((var), field), 1);           \
               (var) = (tvar))
  
@@ -33,7 +24,7 @@ index 5b50785..7cf47d5 100644
  /*
   * This file defines four types of data structures: singly-linked lists,
   * singly-linked tail queues, lists and tail queues.
-@@ -285,7 +286,7 @@ struct {								\
+@@ -285,7 +284,7 @@ struct {								\
  	(STAILQ_EMPTY((head)) ?						\
  		NULL :							\
  	        ((struct type *)					\
