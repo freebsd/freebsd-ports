@@ -11,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mono based Gnome audio player
 
 # IGNORE=		Fails to run
+BROKEN=		Fails to build
+DEPRECATED=	Fails to build/run since August 2013
+EXPIRATION_DATE=	2014-07-11
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \
