@@ -1,5 +1,0 @@
-bin/xsetwacom
-%%XINPUTMODDIR%%/wacom_drv.so
-@dirrmtry %%XINPUTMODDIR%%
-@cwd %%KMODDIR%%
-%%UWACOMKLD%%

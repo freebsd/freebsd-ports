@@ -2,6 +2,7 @@
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.7
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -26,7 +27,8 @@ INPUT_DRIVERS=		mouse \
 			penmount \
 			synaptics \
 			vmmouse \
-			void
+			void \
+			wacom
 
 VIDEO_DRIVERS=		ati \
 			mach64 \
