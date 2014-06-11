@@ -13,7 +13,7 @@ you update your ports collection, before attempting any port upgrades.
   must be built with certain options unset (default).
   - audio/soundtouch has to be installed with INTEGER_SAMPLES option disabled
 
-20140604
+20140604:
   AFFECTS: users of dns/dnscrypt-proxy
   AUTHOR: feld@FreeBSD.org
 
@@ -26,7 +26,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # pw usermod _dnscrypt-proxy -d /var/empty
 
-20140603
+20140603:
   AFFECTS: users of net-p2p/zetacoin
   AUTHOR: daniel@morante.net
 
@@ -39,7 +39,7 @@ you update your ports collection, before attempting any port upgrades.
   # chown -R zetacoin:zetacoin /var/db/zetacoin
   # chown -R zetacoin:zetacoin /.zetacoin
 
-20140529
+20140529:
   AFFECTS: users of databases/postgresql??-(server|client)
   AUTHOR: mat@FreeBSD.org
 
@@ -1265,7 +1265,7 @@ you update your ports collection, before attempting any port upgrades.
     followed by
   # portmaster -a
 
-20130925
+20130925:
   AFFECTS: Users of print/qpdf
   AUTHOR: d.y.kazarov@mail.ru
 
