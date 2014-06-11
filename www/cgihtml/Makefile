@@ -14,18 +14,17 @@ COMMENT=	Library that simplifies the task of writing CGI programs in C
 
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cgihtml/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for file in CHANGES CREDITS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cgihtml
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${PREFIX}/share/doc/cgihtml/html
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}/html
 .endif
 
 .include <bsd.port.mk>
