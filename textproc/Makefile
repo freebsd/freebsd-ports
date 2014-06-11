@@ -30,6 +30,7 @@
     SUBDIR += artha
     SUBDIR += asciidoc
     SUBDIR += asm-xml
+    SUBDIR += asm2html
     SUBDIR += aspell
     SUBDIR += aspell-ispell
     SUBDIR += ast-aspell
