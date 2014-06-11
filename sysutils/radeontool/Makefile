@@ -9,5 +9,7 @@ MASTER_SITES=	http://fdd.com/software/radeon/
 MAINTAINER=	takawata@jp.freebsd.org
 COMMENT=	ATI Radeon video card controlling tool useful for laptops
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} -C -s ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
 .include <bsd.port.mk>
