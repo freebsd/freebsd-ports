@@ -1,3 +1,4 @@
+man/man1/mtxorbd.1.gz
 sbin/mtxorbd
 share/mtxorbd/devices.conf
 @dirrm share/mtxorbd
