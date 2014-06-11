@@ -1,3 +1,8 @@
+%%PORTDOCS%%%%DOCSDIR%%/images/screenshot.png
+%%PORTDOCS%%%%DOCSDIR%%/images/uml_as_a_central_notation.png
+%%PORTDOCS%%%%DOCSDIR%%/skin.css
+%%PORTDOCS%%%%DOCSDIR%%/uml2svg-0.18-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/uml2svg-0.18-manual.pdf
 share/xsl/uml2svg/uml2svg.xsl
 share/xsl/uml2svg/xsl/.project
 share/xsl/uml2svg/xsl/ActivityDiagrams/AcceptEventAction.xsl
@@ -93,22 +98,17 @@ share/xsl/uml2svg/xsl/UseCaseDiagrams/PackageUseCase.xsl
 share/xsl/uml2svg/xsl/UseCaseDiagrams/PackageUseCaseBody.xsl
 share/xsl/uml2svg/xsl/UseCaseDiagrams/UseCase.xsl
 share/xsl/uml2svg/xsl/UseCaseDiagrams/UseCaseDiagram.xsl
-@dirrm share/xsl/uml2svg/xsl/UseCaseDiagrams
-@dirrm share/xsl/uml2svg/xsl/System
-@dirrm share/xsl/uml2svg/xsl/StateDiagrams
-@dirrm share/xsl/uml2svg/xsl/SequenceDiagrams
-@dirrm share/xsl/uml2svg/xsl/DeploymentDiagrams
-@dirrm share/xsl/uml2svg/xsl/Common
-@dirrm share/xsl/uml2svg/xsl/CollaborationDiagrams
-@dirrm share/xsl/uml2svg/xsl/ClassDiagrams
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/xsl/uml2svg/xsl/ActivityDiagrams
+@dirrm share/xsl/uml2svg/xsl/ClassDiagrams
+@dirrm share/xsl/uml2svg/xsl/CollaborationDiagrams
+@dirrm share/xsl/uml2svg/xsl/Common
+@dirrm share/xsl/uml2svg/xsl/DeploymentDiagrams
+@dirrm share/xsl/uml2svg/xsl/SequenceDiagrams
+@dirrm share/xsl/uml2svg/xsl/StateDiagrams
+@dirrm share/xsl/uml2svg/xsl/System
+@dirrm share/xsl/uml2svg/xsl/UseCaseDiagrams
 @dirrm share/xsl/uml2svg/xsl
 @dirrm share/xsl/uml2svg
 @dirrmtry share/xsl
-%%PORTDOCS%%%%DOCSDIR%%/images/screenshot.png
-%%PORTDOCS%%%%DOCSDIR%%/images/uml_as_a_central_notation.png
-%%PORTDOCS%%%%DOCSDIR%%/skin.css
-%%PORTDOCS%%%%DOCSDIR%%/uml2svg-0.18-manual.html
-%%PORTDOCS%%%%DOCSDIR%%/uml2svg-0.18-manual.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
