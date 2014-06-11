@@ -1,3 +1,4 @@
 bin/mrtg-ping-cfg
 bin/mrtg-ping-probe
 etc/mrtg/mrtg.cfg-ping
+man/man1/mrtg-ping-probe.1.gz
