@@ -9,7 +9,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/20391352/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for patching LDAP directories using LDIF files
 
 USES=		iconv

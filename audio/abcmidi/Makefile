@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.ca/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert abc music files to MIDI and PostScript
 
 LICENSE=	GPLv2

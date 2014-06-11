@@ -8,7 +8,7 @@ MASTER_SITES=	SF/tkintertreectrl/TkinterTreectrl-${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TkinterTreectrl-${DISTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TkTreectrl Python bindings
 
 LIB_DEPENDS=	libtreectrl.so.1:${PORTSDIR}/x11-toolkits/tktreectrl

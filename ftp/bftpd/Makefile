@@ -6,7 +6,7 @@ PORTVERSION=	4.0
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Record, repeat, and play key sequence from keyboard
 
 MAKE_ENV=	X11BASE=${LOCALBASE}

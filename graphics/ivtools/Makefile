@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff

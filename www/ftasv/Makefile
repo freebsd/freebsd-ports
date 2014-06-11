@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://fabletech.com/${PORTNAME}-download/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Is a commandline scoreboard viewer for the Apache server
 
 GNU_CONFIGURE=	yes

@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.0-pre6
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based frontend to mpg123
 
 OPTIONS_DEFINE=	DOCS VORBIS

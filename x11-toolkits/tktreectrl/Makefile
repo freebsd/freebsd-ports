@@ -6,7 +6,7 @@ PORTVERSION=	2.4.1
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-column hierarchical listbox widget
 
 USES=		tk:86

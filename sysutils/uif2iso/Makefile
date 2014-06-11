@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://aluigi.altervista.org/mytoolz/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MagicISO UIF files to ISO9660
 
 USES=		zip

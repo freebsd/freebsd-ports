@@ -7,7 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
 LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils \

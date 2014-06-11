@@ -6,7 +6,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://zakalwe.fi/~shd/foss/xdms/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for decompressing Amiga DMS files
 
 OPTIONS_DEFINE=	DOCS

@@ -6,7 +6,7 @@ PORTVERSION=	1.4.22
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical program for editing sound files
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTVERSION=	1.71
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulates GIF images and animations
 
 LICENSE=	GPLv2

@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager for Gnome2
 
 BROKEN=		Fails to configure

@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	SAVANNAH/${PORTNAME}/3.2.x/sources
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web phone that supports SIP protocol
 
 LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm \

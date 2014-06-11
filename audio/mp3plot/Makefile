@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mp3 bitrate plot tool
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs

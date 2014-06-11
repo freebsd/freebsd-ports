@@ -10,7 +10,7 @@ DISTNAME=	redirector-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A squid redirector used for blocking unwanted content
 
 BROKEN=		Fails to checksum

@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://invisible-island.net/${PORTNAME:S|^c||}/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced version of 'dialog' to work with ncurses
 
 OPTIONS_DEFINE=	EXAMPLES

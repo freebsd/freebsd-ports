@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data compression library with low memory usage
 
 LICENSE=	GPLv2

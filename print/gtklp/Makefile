@@ -8,7 +8,7 @@ DISTVERSIONSUFFIX=	.src
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK interface to cups
 
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client

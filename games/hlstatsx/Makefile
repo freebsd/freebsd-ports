@@ -7,7 +7,7 @@ CATEGORIES=	games www
 MASTER_SITES=	http://striker.interhact.net/hlstatsx/
 DISTNAME=	HLstatsX_V${DISTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
 NO_BUILD=	yes

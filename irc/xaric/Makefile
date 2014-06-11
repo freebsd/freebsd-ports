@@ -6,7 +6,7 @@ PORTVERSION=	0.13.6
 CATEGORIES=	irc
 MASTER_SITES=	http://xaric.org/software/xaric/releases/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Client similer to BitchX or ircII
 
 USES=		pathfix gmake

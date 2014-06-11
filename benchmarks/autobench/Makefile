@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/ \
 		http://www.sfr-fresh.com/unix/privat/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automating the process of benchmarking a web server
 
 RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf \

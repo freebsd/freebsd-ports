@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to maintain PEAR packages
 
 LICENSE=	BSD

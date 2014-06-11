@@ -7,7 +7,7 @@ CATEGORIES+=	devel
 MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/cvs2p4/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS to Perforce Converter
 
 LICENSE=	MIT
