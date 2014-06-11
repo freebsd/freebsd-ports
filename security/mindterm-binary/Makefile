@@ -19,18 +19,17 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_CDROM=	Do not sell for profit
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/mindterm-ssh.html ${WRKSRC}
 	@${MV} ${WRKSRC}/mindtermfull.jar ${WRKSRC}/mindterm.jar
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/mindterm
-	@${INSTALL_DATA} ${WRKSRC}/mindterm.jar ${PREFIX}/share/java/mindterm/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/java/mindterm
+	@${INSTALL_DATA} ${WRKSRC}/mindterm.jar ${STAGEDIR}${PREFIX}/share/java/mindterm/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DOC in CHANGES FAQ FEATURES PLATFORMS TODO mindterm-ssh.html
-	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
