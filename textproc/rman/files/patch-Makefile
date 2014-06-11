@@ -1,0 +1,15 @@
+--- Makefile.orig	2014-06-11 17:51:49.106250664 +0800
++++ Makefile	2014-06-11 17:52:29.988257646 +0800
+@@ -113,10 +113,8 @@ prof:
+ 
+ install: rman
+ #	$(INSTALL) -s rman $(BINDIR)
+-	$(RM) -f $(BINDIR)/rman
+-	$(CP) rman $(BINDIR)
+-	$(RM) -f $(MANDIR)/rman.1
+-	$(CP) rman.1 $(MANDIR)
++	$(CP) rman $(DESTDIR)$(BINDIR)
++	$(CP) rman.1 $(DESTDIR)$(MANDIR)
+ 
+ # test version includes assertions
+ #	ginstall rman $(BINDIR)/`arch`
