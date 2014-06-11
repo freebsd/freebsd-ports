@@ -3,6 +3,7 @@
 
 PORTNAME=	gdbm
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
@@ -12,9 +13,8 @@ COMMENT=	GNU database manager
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake libtool:keepla
 
 MAKE_JOBS_UNSAFE=	yes
 
