@@ -17,17 +17,15 @@ SRC=		${.CURDIR}/src
 
 # XXX Anybody that know how to create manlinks from ports easily, please
 # contact me.
-MAN1=		${PORTNAME}.1
 
-NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 
 do-install:
-	@${INSTALL_SCRIPT} ${SRC}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_SCRIPT} ${SRC}/cvs-safesh.sh ${PREFIX}/bin/cvs-safesh
-	@${INSTALL_MAN} ${SRC}/${PORTNAME}.1 ${PREFIX}/man/man1
-	@${LN} ${PREFIX}/bin/${PORTNAME} ${PREFIX}/bin/scpsh
-	@${LN} ${PREFIX}/bin/${PORTNAME} ${PREFIX}/bin/safeshinstall
+	@${INSTALL_SCRIPT} ${SRC}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${SRC}/cvs-safesh.sh ${STAGEDIR}${PREFIX}/bin/cvs-safesh
+	@${INSTALL_MAN} ${SRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/scpsh
+	@${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/safeshinstall
 
 .include <bsd.port.mk>
