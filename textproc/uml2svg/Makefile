@@ -13,34 +13,27 @@ NO_BUILD=	yes
 
 INSTDIR=	share/xsl/uml2svg
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${TAR} -cf - . |\
-		${TAR} -xf - -C${DOCSDIR})
+		${TAR} -xf - -C ${STAGEDIR}${DOCSDIR})
 .endif
-	${MKDIR} ${PREFIX}/${INSTDIR}/xsl
+	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}/xsl
 	dirs=$$(${FIND} ${WRKSRC}/src/xsl -type d | ${SED} 's|^${WRKSRC}/src/xsl||g'); \
 	for d in $${dirs}; do \
 		files=$$(${FIND} ${WRKSRC}/src/xsl/$${d} -type f); \
-		${MKDIR} ${PREFIX}/${INSTDIR}/xsl/$${d}; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}/xsl/$${d}; \
 		for i in $${files}; do \
-			${INSTALL_DATA} $${i} ${PREFIX}/${INSTDIR}/xsl/$${d}; \
+			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/${INSTDIR}/xsl/$${d}; \
 			done; \
 		done; \
 		files=$$(${FIND} ${WRKSRC}/src/xsl -type f -depth 1); \
 		for i in $${files}; do \
-			${INSTALL_DATA} $${i} ${PREFIX}/${INSTDIR}/xsl/; \
+			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/${INSTDIR}/xsl/; \
 	done
-	${INSTALL_DATA} ${WRKSRC}/src/uml2svg.xsl ${PREFIX}/${INSTDIR}/
-
-plist:
-	${FIND} ${PREFIX}/${INSTDIR} -type f | ${SED} 's|${PREFIX}/||g' | ${SORT} >${PLIST}
-	${FIND} ${PREFIX}/${INSTDIR} -type d | ${SORT} -r | ${SED} -e 's|${PREFIX}/||g' -e 's|^|@dirrm |g' >>${PLIST}
-	${FIND} ${DOCSDIR} -type f | ${SED} 's|${DOCSDIR}/|%%PORTDOCS%%%%DOCSDIR%%/|g' | ${SORT} >>${PLIST}
-	${FIND} ${DOCSDIR} -type d | ${SORT} -r | ${SED} 's|${DOCSDIR}/|%%PORTDOCS%%@dirrm %%DOCSDIR%%/|g' >>${PLIST}
+	${INSTALL_DATA} ${WRKSRC}/src/uml2svg.xsl ${STAGEDIR}${PREFIX}/${INSTDIR}/
 
 .include <bsd.port.post.mk>
