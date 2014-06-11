@@ -20,5 +20,4 @@ SAMBA_PORT?=	samba36
 USE_AUTOTOOLS=	autoconf autoheader # for net/${SAMBA_PORT} configure
 MAKE_ARGS=	SAMBA_DATADIR=${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

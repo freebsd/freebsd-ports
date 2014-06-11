@@ -14,9 +14,8 @@ HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-fpic
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pdtp ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libpdtp.* ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/pdtp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libpdtp.* ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

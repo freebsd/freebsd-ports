@@ -13,13 +13,12 @@ HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 STRIP=		# Keep empty for debugging.
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/squall/squall ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/squallhub/squallhub ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/squallproxy/squallproxy ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/squirt/squirt ${PREFIX}/sbin
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/squall/squall ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/squallhub/squallhub ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/squallproxy/squallproxy ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/squirt/squirt ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

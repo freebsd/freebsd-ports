@@ -13,5 +13,4 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 USE_EMACS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
