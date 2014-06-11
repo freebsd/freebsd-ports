@@ -11,4 +11,8 @@ sbin/distccd
 %%PORTDOCS%%%%DOCSDIR%%/protocol-2.txt
 %%PORTDOCS%%%%DOCSDIR%%/status-1.txt
 %%PORTDOCS%%%%DOCSDIR%%/reporting-bugs.txt
+man/man1/distcc.1.gz
+man/man1/distccd.1.gz
+man/man1/distccmon-text.1.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WITH_GNOME%%@dirrm %%DATADIR%%
