@@ -31,7 +31,7 @@ ALL_TARGET=	spectool_net spectool_raw
 
 .if ${PORT_OPTIONS:MGTK2}
 ALL_TARGET+=	spectool_gtk
-LIB_DEPENDSOC+=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
+USE_GNOME=	gtk20
 PLIST_SUB+=	GTK=""
 .else
 PLIST_SUB+=	GTK="@comment "
