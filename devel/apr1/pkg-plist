@@ -116,10 +116,12 @@ lib/aprutil.exp
 lib/libapr-1.a
 lib/libapr-1.la
 lib/libapr-1.so
+lib/libapr-1.so.0
 lib/libapr-1.so.%%SHLIB_APR_MAJOR%%
 lib/libaprutil-1.a
 lib/libaprutil-1.la
 lib/libaprutil-1.so
+lib/libaprutil-1.so.0
 lib/libaprutil-1.so.%%SHLIB_APU_MAJOR%%
 libdata/pkgconfig/apr-1.pc
 libdata/pkgconfig/apr-util-1.pc
@@ -128,7 +130,7 @@ libdata/pkgconfig/apr-util-1.pc
 %%DATADIR%%/build-1/make_exports.awk
 %%DATADIR%%/build-1/make_var_export.awk
 %%DATADIR%%/build-1/mkdir.sh
+@dirrm include/apr-1
+%%APU_EXTRAS%%@dirrm lib/apr-util-1
 @dirrm %%DATADIR%%/build-1
 @dirrm %%DATADIR%%
-%%APU_EXTRAS%%@dirrm lib/apr-util-1
-@dirrm include/apr-1
