@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtoolize
 USE_LDCONFIG=	yes
 USES=		gmake iconv libtool pathfix pkgconfig tar:bzip2
 INSTALL_TARGET=	install-strip
