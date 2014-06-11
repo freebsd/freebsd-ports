@@ -1,0 +1,14 @@
+--- /tmp/myConfig	2014-06-11 22:11:24.000000000 +0200
++++ myConfig	2014-06-11 22:12:16.000000000 +0200
+@@ -147,9 +147,9 @@
+ {
+  foreach (map { "$_/freetype2" } @_)
+   {
+-   if (-d $_ && -d "$_/freetype" && -r "$_/freetype/freetype.h")
++   if (-d $_ && -r "$_/freetype.h")
+     {
+-     print "Using -I$_ to find $_/freetype/freetype.h\n";
++     print "Using -I$_ to find $_/freetype.h\n";
+      return "-I$_";
+     }
+   }

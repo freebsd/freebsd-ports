@@ -147,6 +147,8 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ColorEdit.xpm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ColorEditor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ColorEditor.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/ColorDialog.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/ColorSelect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Compound.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Compound.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Config.pm
