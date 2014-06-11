@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	Tk
-PORTVERSION=	804.031
-PORTREVISION=	1
+PORTVERSION=	804.032
 CATEGORIES=	x11-toolkits tk perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Re-port of a perl5 interface to Tk8.4
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libjpeg.so.11:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 OPTIONS_DEFINE=	XFT
 OPTIONS_DEFAULT=	XFT
@@ -46,5 +46,13 @@ post-configure:
 		-e '/^LD = / s|.*|LD = ${CC} ${CFLAGS} ${LDFLAGS}|' \
 		-e '/^FULL_AR = / s|.*|FULL_AR = ${AR}|' \
 		`${FIND} ${WRKSRC} -name Makefile`
+
+post-stage:
+	${FIND} ${STAGEDIR} -name '*.bs' -size 0c -exec ${RM} {} \;
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/mach/auto/Tk/Tk.so
+.for i in Canvas Compound Entry Event HList IO InputO JPEG Listbox Menubutton Mwm NBFrame PNG Pixmap Scale Scrollbar TList Text TixGrid WinPhoto X Xlib
+		${STRIP_CMD} \
+		    ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/mach/auto/Tk/${i}/${i}.so
+.endfor
 
 .include <bsd.port.mk>
