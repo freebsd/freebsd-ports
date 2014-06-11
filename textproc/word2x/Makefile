@@ -13,8 +13,6 @@ COMMENT=	Converter from MS Word to text, HTML, or LaTeX
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		word2x.1
-PLIST_FILES=	bin/rtest2 bin/word2x
+PLIST_FILES=	bin/rtest2 bin/word2x man/man1/word2x.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
