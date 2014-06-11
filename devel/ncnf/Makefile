@@ -3,19 +3,19 @@
 
 PORTNAME=	ncnf
 PORTVERSION=	3.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic configuration management library
 
-OPTIONS_DEFINE=	DOCS
-
 LIB_DEPENDS=	libstrfunc.so:${PORTSDIR}/devel/libstrfunc
 
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	YES
+USES=		libtool
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
