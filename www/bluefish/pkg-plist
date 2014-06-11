@@ -8,7 +8,6 @@ lib/bluefish/snippets.so
 lib/bluefish/zencoding.so
 man/man1/bluefish.1.gz
 share/applications/bluefish.desktop
-share/applications/mimeinfo.cache
 %%DATADIR%%/bflang/JQuery.bfinc
 %%DATADIR%%/bflang/ada.bflang2
 %%DATADIR%%/bflang/all-html.bfinc
