@@ -41,7 +41,6 @@ PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	LICENSE.txt api index.html jaxup_files xupdate-wd.html xupdate-wd_files
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 UTIL_CLASSPATH_JARS=	jaxen-full saxpath xercesImpl
@@ -72,21 +71,21 @@ post-build:
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/build/lib/${PORTNAME}.jar ${JAVAJARDIR}/
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/build/lib/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} ">> Installing utility scripts and classes..."
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/jaxup-xupdater.jar ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/jaxup-xupdater ${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/jaxup-xupdater.jar ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/jaxup-xupdater ${STAGEDIR}${PREFIX}/bin/
 	@${ECHO_MSG} "  [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/build/docs \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
+	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
