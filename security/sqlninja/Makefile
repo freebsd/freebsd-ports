@@ -19,27 +19,25 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket
 
 USES=		perl5
-
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${ETCDIR}
-	${MKDIR} ${ETCDIR}/scripts
-	${MKDIR} ${ETCDIR}/apps
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}/scripts
+	${MKDIR} ${STAGEDIR}${ETCDIR}/apps
 .	for i in sqlninja
-		${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
+		${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .	endfor
 .	for i in churrasco.scr dnstun.scr nc.scr
-		${INSTALL_SCRIPT} ${WRKSRC}/scripts/${i} ${ETCDIR}/scripts
+		${INSTALL_SCRIPT} ${WRKSRC}/scripts/${i} ${STAGEDIR}${ETCDIR}/scripts
 .	endfor
 .	for i in churrasco.exe dnstun.exe nc.exe
-		${INSTALL_SCRIPT} ${WRKSRC}/apps/${i} ${ETCDIR}/apps
+		${INSTALL_SCRIPT} ${WRKSRC}/apps/${i} ${STAGEDIR}${ETCDIR}/apps
 .	endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for i in sqlninja-howto.html sqlninja.conf.example
-		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .	endfor
 .endif
 
