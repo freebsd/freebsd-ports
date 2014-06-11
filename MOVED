@@ -6125,3 +6125,7 @@ multimedia/shell-fm||2014-06-02|Has expired: Unusable, subscription radio stream
 security/py-posix1e|security/py-pylibacl|2014-06-03|Duplicate of security/py-pylibacl
 www/mediawiki120||2014-06-08|Has expired: Not maintained upstream
 x11-drivers/input-wacom|x11-drivers/xf86-input-wacom|2014-06-11|Following the usual naming of xorg input drivers
+editors/libreoffice-ca_XV||2014-06-11|Not provided anymore since LibreOffice 4.2
+editors/libreoffice-ku||2014-06-11|Not provided anymore since LibreOffice 4.2
+editors/libreoffice-sh||2014-06-11|Not provided anymore since LibreOffice 4.2
+editors/libreoffice-sid||2014-06-11|Not provided anymore since LibreOffice 4.2
