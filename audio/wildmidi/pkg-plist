@@ -1,7 +1,7 @@
 bin/wildmidi
 include/wildmidi_lib.h
-lib/libWildMidi.la
-lib/libWildMidi.so.2
+lib/libWildMidi.so.1
+lib/libWildMidi.so.1.1.0
 lib/libWildMidi.so
 man/man1/wildmidi.1.gz
 man/man3/WildMidi_Close.3.gz

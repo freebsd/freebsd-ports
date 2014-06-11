@@ -2,6 +2,7 @@
 
 PORTNAME=	qmmp-plugin-pack
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/plugins/ \
 		http://qmmp.googlecode.com/files/
