@@ -11,16 +11,16 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D triangular meshes processing and editing tool
 
-BROKEN=		Fails to configure
-
-EXTRACT_DEPENDS=7z:${PORTSDIR}/archivers/p7zip
+LIB_DEPENDS=	libQtSolutions_SOAP-head.so:${PORTSDIR}/devel/qt4-qtsolutions-soap
 LIB_DEPENDS=	libQtSolutions_SOAP-head.so:${PORTSDIR}/devel/qt4-qtsolutions-soap
 
-USES=		dos2unix qmake
+USES=		dos2unix qmake compiler:c++11-lib
+USE_CXXSTD=	c++11
 USE_GL=		glew glu
 USE_QT4=	moc_build rcc_build uic_build corelib gui xml \
 		xmlpatterns opengl network script
 DOS2UNIX_FILES=	external/structuresynth/ssynth/SyntopiaCore/GLEngine/Object3D.h \
+		external/structuresynth/ssynth/SyntopiaCore/GLEngine/Raytracer/VoxelStepper.cpp \
 		meshlabplugins/edit_arc3D/fillImage.cpp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}/src
@@ -38,11 +38,13 @@ post-patch:
 	    ${REINPLACE_CMD} -e '/^CONFIG +=/s|$$| debug|'
 .endif
 
-pre-configure:
+do-configure:
 	cd ${WRKSRC}/external && ${QMAKE} ${QMAKE_ARGS} -recursive external.pro
+	cd ${WRKSRC} && ${QMAKE} -spec ${QMAKESPEC} -recursive meshlab_full.pro
 
-pre-build:
+do-build:
 	cd ${WRKSRC}/external && ${MAKE}
+	cd ${WRKSRC} && ${MAKE}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/meshlab/plugins
