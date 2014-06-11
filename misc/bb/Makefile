@@ -11,30 +11,24 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality audio-visual demonstration for text terminal
 
-LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
+LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib \
 		libmikmod.so:${PORTSDIR}/audio/libmikmod
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/bb-1.3.0
-MAN1=		bb.1
 PORTDOCS=	README
-PLIST_FILES=	bin/bb share/bb/bb.s3m share/bb/bb2.s3m share/bb/bb3.s3m
+PLIST_FILES=	bin/bb man/man1/bb.1.gz share/bb/bb.s3m share/bb/bb2.s3m \
+		share/bb/bb3.s3m
 PLIST_DIRS=	share/bb
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -E -e "s@#include +<malloc.h>@#include <stdlib.h>@g" \
 		-e 's, REGISTERS \(3\),,g'
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
