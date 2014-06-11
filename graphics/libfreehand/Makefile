@@ -16,7 +16,8 @@ LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 GNU_CONFIGURE=	yes
 USES=	libtool pathfix pkgconfig tar:xz
-USE_LDCOFNIG=	yes
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-werror
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
