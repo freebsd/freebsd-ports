@@ -1,38 +1,13 @@
 --- configure.orig	2008-03-09 14:35:57.000000000 +0100
 +++ configure	2008-09-23 11:25:19.000000000 +0200
-@@ -8063,7 +8063,7 @@
-   ;;
+@@ -23988,7 +23988,9 @@
  
- freebsd*)
--  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+  objformat=elf
-   version_type=freebsd-$objformat
-   case $version_type in
-     freebsd-elf*)
-@@ -11733,7 +11733,7 @@
-   ;;
  
- freebsd*)
--  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+  objformat=elf
-   version_type=freebsd-$objformat
-   case $version_type in
-     freebsd-elf*)
-@@ -14867,7 +14867,7 @@
-   ;;
  
- freebsd*)
--  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+  objformat=elf
-   version_type=freebsd-$objformat
-   case $version_type in
-     freebsd-elf*)
-@@ -17197,7 +17197,7 @@
-   ;;
+-LIBS="$LIBS $FWLIBS"
++tmp_LIBS="${LIBS}"
++unset LIBS
++LIBS="${tmp_LIBS} $FWLIBS"
  
- freebsd*)
--  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+  objformat=elf
-   version_type=freebsd-$objformat
-   case $version_type in
-     freebsd-elf*)
+ 
+ 

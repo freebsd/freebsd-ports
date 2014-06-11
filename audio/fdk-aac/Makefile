@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 NOT_FOR_ARCHS=		sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
-CONFIGURE_ENV=	LIBS="-lm"
+LIBS+=		-lm
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pathfix

@@ -17,8 +17,8 @@ GNU_CONFIGURE=	yes
 USES=		gmake gettext iconv pkgconfig
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 INFO=	ccrtp
 
 post-patch:

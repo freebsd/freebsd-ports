@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ENV+=	LIBS="${LDFLAGS}"
-CONFIGURE_ENV+=	LIBS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-ccore --disable-optimisations
 
 PLIST_FILES=	bin/playgsf
@@ -29,7 +27,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 PORTSCOUT=	skipv:0.7.2
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 901000
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-VBA__Util.cpp
@@ -37,19 +35,20 @@ EXTRA_PATCHES=	${FILESDIR}/extrapatch-VBA__Util.cpp
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|\(@LDFLAGS@\)|\1 ${LDFLAGS}|' \
 		-e 's|\([[:space:]]*\).*configure.*|\1@true|' \
 			${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|^\(CFLAGS="\)\(-DLINUX\)|\1${CFLAGS} \2|' \
+	@${REINPLACE_CMD} \
+		-e '/^CFLAGS="-DLINUX/s|"$$| ${CFLAGS}"|' \
+		-e '/^LDFLAGS="-lz/s|"$$| ${LDFLAGS}"|' \
 		${WRKSRC}/configure
 
 post-configure:
-	@(cd ${WRKSRC}/libresample-0.1.3; ./configure ${CONFIGURE_ENV})
+	@(cd ${WRKSRC}/libresample-0.1.3 && ${SETENV} \
+		CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		${CONFIGURE_ENV} ./configure)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

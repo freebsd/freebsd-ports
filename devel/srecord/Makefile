@@ -14,8 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 USE_AUTOTOOLS=	libtool

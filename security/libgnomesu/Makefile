@@ -15,8 +15,8 @@ USES=		pathfix gmake pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix libgnomeui
 CONFIGURE_ARGS+=--disable-install-pam
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 

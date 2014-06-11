@@ -16,7 +16,6 @@ USES=		pathfix shebangfix libtool
 SHEBANG_FILES=	doc/samples/dar_backup doc/samples/*.bash doc/samples/*.sh
 USE_GCC=	any
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lelf"
 CONFIGURE_ARGS=	--datadir=${DATADIR} --disable-build-html \
 		--disable-upx --disable-libgcrypt-linking \
 		--disable-ea-support --disable-nodump-flag \
@@ -25,7 +24,7 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		DOCS LZO NLS
 OPTIONS_SUB=		yes

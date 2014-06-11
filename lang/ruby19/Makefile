@@ -65,8 +65,9 @@ _SUF2=	,${PORTEPOCH}
 _SUF1=	_${PORTREVISION}
 .endif
 
-CFLAGS+=	${PTHREAD_CFLAGS}	# Keep this, else ruby will fail to load
-LDFLAGS+=	${PTHREAD_LIBS}		# libraries dependent op libpthread.
+CPPFLAGS+=	-I${LOCALBASE}/include
+# Keep this, else ruby will fail to load libraries dependent op libpthread.
+LIBS+=		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 #
 # Disable doc generation if requested or docs disabled at all
@@ -77,9 +78,7 @@ CONFIGURE_ARGS+=	--enable-install-doc
 CONFIGURE_ARGS+=	--disable-install-doc
 .endif
 
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${LDFLAGS}" \
-		debugflags=
+CONFIGURE_ENV=	debugflags=
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 MLINKS=		${RUBY_NAME}.1 ruby.1

@@ -19,10 +19,9 @@ CONFLICTS=	tads-2.*
 USES=		gmake
 USE_AUTOTOOLS=	automake autoconf
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lcompat"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lcompat
 
 pre-configure:
 	(cd ${WRKSRC}; ${SH} bootstrap)

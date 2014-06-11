@@ -3,7 +3,7 @@
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.27
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gtkmmviewer/${PORTNAME}/${PORTVERSION}
 
@@ -13,15 +13,13 @@ COMMENT=	Yet another GTK+ based image viewer
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_XORG=	xinerama ice
 CONFIGURE_ARGS=	--with-gtk2
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CFLAGS+=	-DUSE_GTK2
 CPPFLAGS+=	-I${LOCALBASE}/include
-MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	SPLASH NLS LIBMNG LIBWMF LIBRSVG2 LIBEXIF MPLAYER LIBXINE IMLIB
@@ -56,24 +54,12 @@ MPLAYER_CONFIGURE_ENABLE=mplayer
 MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 LIBXINE_CONFIGURE_WITH=	xine
-LIBXINE_LIB_DEPENDS=	xine:${PORTSDIR}/multimedia/libxine
-
-.include <bsd.port.options.mk>
+LIBXINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/DATADIRNAME=lib/DATADIRNAME=share/g' \
-		-e 's|echo aout|echo elf|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/gnome/apps/|/apps/|' \
-		${WRKSRC}/gimageview.spec \
+	@${REINPLACE_CMD} '/^desktopdir =/s|=.*|= ${DESKTOPDIR}|' \
 		${WRKSRC}/etc/Makefile.in
-	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} \
-		's|= $$(DESTDIR)|= |' {} \;
-
-post-configure:
-.if ${PORT_OPTIONS:MIMLIB}
-	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -Ee \
-		's/^(GDK_IMLIB_(CFLAGS|LIBS) =).*$$/$${1}/'
-.endif
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|= $$(DESTDIR)|= |' -e '/^CPPFLAGS =/s/\\/@CPPFLAGS@ \\/'
 
 .include <bsd.port.mk>

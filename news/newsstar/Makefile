@@ -23,14 +23,13 @@ SHEBANG_FILES=	newsstar.in
 OPTIONS_DEFINE=		SSL
 OPTIONS_DEFAULT=	SSL
 
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
-		--disable-chown \
+CONFIGURE_ARGS+=--disable-chown \
 		--with-conf-dir=${PREFIX}/etc/newsstar \
 		--with-rc-dir=/var/spool/newsstar/lib \
 		--with-incoming-dir=/var/spool/newsstar/incoming
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 
 .include <bsd.port.options.mk>
 

@@ -114,7 +114,7 @@ MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
 
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
-				LIBS="${LIBS}" PERL="${PERL}"
+				PERL="${PERL}"
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include

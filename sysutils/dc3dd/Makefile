@@ -12,8 +12,8 @@ COMMENT=	A dd program useful for computer forensics
 USE_BZIP2=	yes
 USES=		gettext iconv gmake
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

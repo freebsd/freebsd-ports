@@ -18,8 +18,6 @@ LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS=-pthread
-CPPFLAGS+=	-I${LOCALBASE}/include
 USES=		compiler:c++11-lang gmake pkgconfig
 
 PLIST_FILES=	bin/pdf2djvu man/man1/pdf2djvu.1.gz

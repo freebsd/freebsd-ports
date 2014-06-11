@@ -31,8 +31,8 @@ ICINGAWWWDIR?=	www/icinga
 ICINGAHTMURL?=	/icinga
 ICINGACGIURL?=	${ICINGAHTMURL}/cgi-bin
 
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
-CFLAGS+=	${CPPFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--with-command-group=${WWWGRP} \
@@ -53,8 +53,7 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--enable-event-broker \
 		--enable-nanosleep
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		PERL=${PERL} \
+CONFIGURE_ENV=	PERL=${PERL} \
 		HOME=${WRKDIR} # prevent creation of .rnd file
 
 INSTALL_TARGET=	install install-config install-eventhandlers install-webconf

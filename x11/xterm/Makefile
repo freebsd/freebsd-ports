@@ -18,10 +18,10 @@ CONFLICTS=	x11iraf-[0-9]*
 USE_XORG=	xaw xft
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 ICONVERSION=	1
 

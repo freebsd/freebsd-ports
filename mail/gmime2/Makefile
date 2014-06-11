@@ -27,8 +27,8 @@ CONFIGURE_ARGS?=	${ICONV_CONFIGURE_BASE} \
 			--with-html-dir=${PREFIX}/share/doc \
 			--enable-mono=no \
 			--program-transform-name="s/uuencode/gmime-uuencode/;s/uudecode/gmime-uudecode/;"
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 

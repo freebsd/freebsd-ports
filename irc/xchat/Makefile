@@ -20,8 +20,8 @@ CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-ipv6
 INSTALL_TARGET=	install-strip
 
@@ -89,10 +89,8 @@ CONFIGURE_ARGS+=--enable-socks
 .if ${PORT_OPTIONS:MTCL}
 USES+=		tcl
 CONFIGURE_ARGS+=--enable-tcl=${TCL_LIBDIR}
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
-		-L${TCL_LIBDIR}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
-		-I${TCL_INCLUDEDIR}
+CPPFLAGS+=	-I${TCL_INCLUDEDIR}
+LIBS+=		-L${TCL_LIBDIR}
 PLIST_SUB+=	TCL=""
 .else
 CONFIGURE_ARGS+=--enable-tcl=no
@@ -100,8 +98,6 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/common/*.[ch]
 

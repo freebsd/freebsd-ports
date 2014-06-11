@@ -25,7 +25,7 @@ WWWOFFLE_SPOOL?=	/var/spool/wwwoffle
 PLIST_SUB+=	WWWOFFLE_SPOOL=${WWWOFFLE_SPOOL}
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS=-lmd
+LIBS+=		-lmd
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
 		--with-gnutls=${LOCALBASE} \
 		--with-spooldir=${WWWOFFLE_SPOOL} \

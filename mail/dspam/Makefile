@@ -76,10 +76,8 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5 libtool shebangfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	${PTHREAD_CFLAGS}
 
 SHEBANG_FILES=	src/tools/dspam_logrotate \
 		src/tools/dspam_notify.pl \

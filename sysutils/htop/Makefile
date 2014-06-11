@@ -18,10 +18,8 @@ OPTIONS_DEFAULT=LSOF
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="-lexecinfo"
+LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
 USES=		ncurses libtool

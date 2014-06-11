@@ -19,8 +19,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig gettext gmake
 USE_GNOME=	libglade2 intlhack gnomeprefix
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	MP3 OGG DVD
 DVD_DESC=	DVD+RW support

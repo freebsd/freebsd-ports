@@ -18,16 +18,14 @@ LIB_DEPENDS=	libopencv_objdetect.so:${PORTSDIR}/graphics/opencv
 
 GITVERSION=	4b1dfe1
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		-lopencv_core
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lopencv_core
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS+=	--with-facedetect
-CONFIGURE_ENV+=		LIBS="${LIBS}"
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

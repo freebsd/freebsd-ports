@@ -36,10 +36,9 @@ CONFIGURE_ARGS=	--disable-vala --with-libbrasero-media \
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LIBS="-lm"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 GCONF_SCHEMAS=	rhythmbox.schemas
 

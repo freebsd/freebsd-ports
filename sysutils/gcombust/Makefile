@@ -21,8 +21,8 @@ USE_PERL5=	build
 USE_GNOME=	gtk12 gnomehier
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 NO_STAGE=	yes
 

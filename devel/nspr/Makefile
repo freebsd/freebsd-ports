@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--srcdir=${WRKSRC:H}
 
 MAKE_ENV=	DIST=${WRKSRC}/dist
 
-LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
+LIBRARIES=	libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
 .include <bsd.port.pre.mk>
 
@@ -44,7 +44,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-.for lib in ${LIBS}
+.for lib in ${LIBRARIES}
 .if defined(STRIP) && ${STRIP} != ""
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${lib}
 .endif

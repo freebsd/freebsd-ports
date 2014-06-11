@@ -46,7 +46,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_MYSQL=	yes
 CFLAGS+=	-DHAVE_MYSQL
 LIBS+=		`${LOCALBASE}/bin/mysql_config --libs`
-MAKE_ENV+=	LIBS="${LIBS}"
 DOCFILES+=	README.sql mu-conference.sql
 .endif
 

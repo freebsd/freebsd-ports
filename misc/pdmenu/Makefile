@@ -21,9 +21,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SLANG_H_LOC="${LOCALBASE}/include/slang.h" \
-		SLANG_LIB_LOC="${LOCALBASE}/lib" \
-		LIBS="-lcurses -lintl"
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+		SLANG_LIB_LOC="${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	${CPPFLAGS}
+LIBS+=		-L${LOCALBASE}/lib -lcurses -lintl
 
 PLIST_FILES=	bin/pdmenu \
 		etc/pdmenurc \

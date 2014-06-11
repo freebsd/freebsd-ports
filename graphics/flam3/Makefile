@@ -18,7 +18,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig
 
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
-CFLAGS+=	-I${LOCALBASE}/include/libpng15 -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include/libpng15 -I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

@@ -15,8 +15,8 @@ LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 USES=		gmake libtool
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-ttf-includes=${LOCALBASE}/include/freetype1 \
 		--with-ttf-libraries=${LOCALBASE}/lib \
 		--with-gl-includes=${LOCALBASE}/include \

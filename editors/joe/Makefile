@@ -22,8 +22,8 @@ CONFLICTS=	joe-2.*
 
 USES=		gmake iconv ncurses
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 
 ALL_TARGET=	${PORTNAME}
 

@@ -22,9 +22,8 @@ USE_GNOME=	glib20 gnomehier gtk20 librsvg2 intlhack libxml2 gtkmm24
 INSTALLS_OMF=	yes
 USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtoolize:env
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lutil"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lutil
 
 GLIB_SCHEMAS=	org.mate.system-monitor.enums.xml \
 		org.mate.system-monitor.gschema.xml

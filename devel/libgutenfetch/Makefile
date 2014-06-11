@@ -14,8 +14,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USES=		gmake
 USE_BZIP2=	yes
 

@@ -20,11 +20,10 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake pathfix pkgconfig libtool:keepla
 
-CONFIGURE_ENV=	LIBS="-pthread"
 CONFIGURE_ARGS=	--enable-portaudio \
 		--with-default-tmpdir=/tmp
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 LATEST_LINK=	jack
 

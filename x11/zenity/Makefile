@@ -20,10 +20,8 @@ USE_GNOME=	gnomeprefix gtk20 gnomedocutils intlhack
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 CONFLICTS=	gtkada-1.2.*
 

@@ -30,11 +30,10 @@ OPTIONS_DEFINE=	NORMALIZEMIME
 NORMALIZEMIME_DESC=	Normalize MIME encoding
 
 MAKE_ARGS=	CC="${CC}" prefix="${STAGEDIR}${PREFIX}" \
-		LIBS="${LIBS}" \
+		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
 
@@ -51,13 +50,10 @@ CRM_FILES=	mailfilter.crm mailfilter.cf mailreaver.crm mailtrainer.crm \
 
 .include <bsd.port.options.mk>
 
-MAKE_ARGS+=	CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
-
 post-patch:
-	@${REINPLACE_CMD} -Ee \
-	  's,^((LD|C)FLAGS),#\1,;;s,^(prefix=),#\1,;;s,^(.*-install),#\1,' \
-	  ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E \
+	  -e 's,^((LD|C)FLAGS),#\1,;;s,^(prefix=),#\1,;;s,^(.*-install),#\1,' \
+	  -e 's,crmregex_tre.c,crmregex_tre.o,' ${WRKSRC}/Makefile
 
 # Peter Jeremy recommended the use of b64decode and md5 20040302
 post-install:

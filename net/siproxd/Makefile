@@ -3,7 +3,7 @@
 
 PORTNAME=	siproxd
 PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -14,9 +14,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libosip2.so:${PORTSDIR}/net/libosip
 
+USES=		libtool:keepla
 USE_RC_SUBR=	siproxd
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-doc --with-libosip-prefix=${PREFIX}
+CONFIGURE_ARGS=	--disable-doc --disable-static --with-libosip-prefix=${PREFIX}
 
 PORTDOCS1=	AUTHORS ChangeLog README RELNOTES
 PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \

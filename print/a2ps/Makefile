@@ -30,7 +30,7 @@ STRIP=
 CONFIGURE_ARGS=	--with-medium=libpaper --sharedstatedir=${PREFIX}/share \
 	--sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share \
 	--localstatedir=${PREFIX}/share
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+LIBS+=		-L${LOCALBASE}/lib
 
 PAPERSIZE?=
 .if ${PAPERSIZE:tl} == a4

@@ -22,8 +22,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS+=--with-libevent=${LOCALBASE} \
 		--sysconfdir=${PREFIX}/etc
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 post-install:

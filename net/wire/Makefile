@@ -14,8 +14,8 @@ COMMENT=	Wire is a screen-oriented command line Wired client
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
+LIBS+=		-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--libdir="${PREFIX}/lib" --includedir="${PREFIX}/include"
 
 USE_OPENSSL=	yes
 USES=		iconv gmake

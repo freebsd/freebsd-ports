@@ -13,6 +13,7 @@ COMMENT=	Low memory usage xterm replacement that supports color
 
 USE_AUTOTOOLS=	libtool
 USES=		perl5
+USE_LDCONFIG=	yes
 USE_PERL5=	build patch
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
@@ -39,7 +40,7 @@ XTERM_DESC=		Build with Xterm scrollbar
 CONFIGURE_ARGS=	--enable-utmp --enable-lastlog \
 		--with-xpm --enable-xpm-background --enable-shared \
 		--enable-mousewheel --disable-languages
-USE_LDCONFIG=	yes
+LIBS+=		-lutil
 
 .include <bsd.port.pre.mk>
 
@@ -130,8 +131,6 @@ CONFIGURE_ARGS+=	--enable-xim
 .if ${PORT_OPTIONS:MXTERM}
 CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif
-
-CONFIGURE_ENV+=		LIBS="-lutil"
 
 post-patch:
 	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \

@@ -25,7 +25,7 @@ NO_STAGE=	yes
 PLIST_DIRSTRY=	www/cgi-bin
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \
 		--with-cgi-install-dir="${PREFIX}/www/cgi-bin/openscep" \
 		--with-openscep-dir="${PREFIX}/etc/openscep" \

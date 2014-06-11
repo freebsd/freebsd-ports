@@ -18,8 +18,6 @@ IGNORE_WITH_PGSQL=	82 83
 
 USES=		gettext gmake pgsql
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
-CPPFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--with-wx-version=${USE_WX} --enable-databasedesigner
 USE_GNOME=	libxml2 libxslt
 USE_WX=		2.8

@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USES=	gmake
 MAKE_ARGS=	CC="${CC}" USE_CSS=0 OBJDIR="obj" \
-		CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}"
+		CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LIBS}"
 
 PORTDOCS=	index.html
 PLIST_FILES=	${BIN_FILES:S|^|bin/|} ${INC_FILES:S|^|include/|} \
@@ -30,8 +30,8 @@ BIN_FILES=	mpeg3cat mpeg3dump mpeg3peek mpeg3toc
 INC_FILES=	libmpeg3.h mpeg3private.h mpeg3protos.h
 LIB_FILES=	libmpeg3.a
 
-CPPFLAGS+=	-I. -I${LOCALBASE}/include/a52dec ${PTHREAD_CFLAGS}
-LDFLAGS+=	-lm -L${LOCALBASE}/lib -la52 ${PTHREAD_LIBS}
+CPPFLAGS+=	-I. -I${LOCALBASE}/include/a52dec
+LIBS+=		-lm -L${LOCALBASE}/lib -la52 -pthread
 
 NASM?=		${LOCALBASE}/bin/nasm
 

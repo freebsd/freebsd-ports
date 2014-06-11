@@ -30,10 +30,9 @@ CONFIGURE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 
 USE_GL=		glew glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	"LIBS=-lboost_system"
 CONFIGURE_ARGS+=	--with-boost-filesystem
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
 .include <bsd.port.pre.mk>
 

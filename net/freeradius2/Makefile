@@ -30,8 +30,9 @@ USES=		gmake tar:bzip2 shebangfix
 SHEBANG_FILES=	scripts/radsqlrelay src/modules/rlm_counter/rad_counter
 USE_AUTOTOOLS=	libltdl libtool autoconf
 USE_OPENSSL=	yes
-MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	${CPPFLAGS}
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	PORTVERSION=${DISTVERSION} LIBVER=0${PORTVERSION:C/\./0/g}
@@ -345,9 +346,6 @@ post-patch:
 		${WRKSRC}/scripts/Makefile
 
 pre-configure:
-# Replace -pthread with ${PTHREAD_LIBS} in configure(.in) files
-	@${FIND} -E ${WRKSRC} -regex '.*/configure(\.in)?$$' -exec \
-		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" {} \;
 # Force the rebuild of some configures from configure.in, as we're patching
 # the configure.in
 # NOTE: ${WRKSRC}/configure is rebuilt automatically once autoconf is

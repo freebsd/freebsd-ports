@@ -35,10 +35,9 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lcrypto -lssl" \
-		LIBS="-lm -lintl" \
 		ac_cv_header_linux_input_h=
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm -lintl
 
 .if ${CC} == clang
 CFLAGS+=	-fheinous-gnu-extensions

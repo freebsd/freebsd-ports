@@ -27,8 +27,7 @@ USES=		pathfix pkgconfig  gmake
 USE_GNOME=	gnomeprefix intlhack gconf2 intltool
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
 CONFIGURE_ARGS=	--enable-gconf --disable-pulse
 
 .include <bsd.port.options.mk>

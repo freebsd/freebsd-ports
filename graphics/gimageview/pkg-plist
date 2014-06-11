@@ -32,7 +32,7 @@ lib/gimageview/thumbnail/libgimv_nautilus_thumb.so
 lib/gimageview/thumbnail/libgimv_thumb.so
 lib/gimageview/thumbnail/libgimv_xvpics_thumb.so
 lib/gimageview/thumbnail_view/libgimv_thumbview_detail.so
-share/apps/Graphics/gimageview.desktop
+share/applications/gimageview.desktop
 share/doc/gimageview/html/ja/01.html
 share/doc/gimageview/html/ja/02.html
 share/doc/gimageview/html/ja/03.html
@@ -136,5 +136,3 @@ share/pixmaps/gimv.png
 @dirrm share/gimageview/pixmaps/default
 @dirrm share/gimageview/pixmaps
 @dirrm share/gimageview
-@dirrmtry share/apps/Graphics
-@dirrmtry share/apps

@@ -11,8 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to send e-mail via a remote smtp server
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/smtpmail
 

@@ -40,7 +40,7 @@ EXTRACT_DESC=	Enable libextractor support
 CONFIGURE_ENV+=	PORTNAME="${PORTNAME}"
 
 THREADS_CONFIGURE_ENABLE=	pthreads
-THREADS_CONFIGURE_ENV=	LIBS="-pthread"
+THREADS_LIBS=	-pthread
 
 ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 #ASPELL_CONFIGURE_WITH=	aspell

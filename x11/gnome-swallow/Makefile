@@ -14,9 +14,8 @@ USE_XORG=	x11
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix gnomepanel libgnomeui
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

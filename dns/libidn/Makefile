@@ -14,8 +14,8 @@ OPTIONS_DEFINE=	DOCS NLS
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USE_PERL5=	build
 USES=		iconv pathfix perl5 pkgconfig
 

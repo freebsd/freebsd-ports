@@ -24,7 +24,7 @@ USES=		gmake perl5 shebangfix
 SHEBANG_FILES=	scripts/*.pl
 USE_PERL5=	run
 USE_OPENLDAP=	yes
-
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -41,9 +41,7 @@ PLIST_DIRS=	%%DATADIR%%
 OPTIONS_DEFINE=		DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^CC=|CC?=| ; \
-		 s|^LD=.*|LD=$$(CC)|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|?=|=|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|"/etc|"${PREFIX}/etc|' ${WRKSRC}/ldap2dns.c
 	@${REINPLACE_CMD} -e \

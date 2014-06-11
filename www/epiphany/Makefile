@@ -35,8 +35,8 @@ INSTALLS_OMF=	yes
 CONFIGURE_ARGS+=--enable-introspection \
 		--enable-compile-warnings=no \
 		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread ${EXTRA_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${EXTRA_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas
 

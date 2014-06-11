@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 DOCSDIR=	${PREFIX}/share/bx/help

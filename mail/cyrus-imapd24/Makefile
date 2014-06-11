@@ -35,8 +35,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		AUTOCREATE AUTOSIEVE BDB DRAC IDLED LDAP \

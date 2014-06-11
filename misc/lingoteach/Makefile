@@ -18,8 +18,8 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig libtool
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib `pkg-config --libs gmodule-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs gmodule-2.0`
 
 # sound version
 SOUNDV=		0.3.9

@@ -26,7 +26,7 @@ O_DEFS=		-DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
 		-DBULLDB -DNONAUTHFILE='\"/etc/ftpusers\"'
 
 .if !defined(WITH_POPPER_APOP_ONLY)
-P_LIBS=		-lopie
+LIBS+=		-lopie
 O_DEFS+=	-DOPIE
 .else
 O_DEFS+=	-DAPOP_ONLY
@@ -36,7 +36,7 @@ O_DEFS+=	-DAPOP_ONLY
 O_DEFS+=	-DYOUBIN -DCALLED_FROM_POPD
 .endif
 
-P_LIBS+=	-lmd -lutil
+LIBS+=		-lmd -lutil
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/popper/pop.auth \
@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/popper/pop.auth \
 .if defined(WITH_POPPER_DEBUG)
 CONFIGURE_ARGS+=	--enable-debugging
 .endif
-CONFIGURE_ENV=	LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
+CONFIGURE_ENV=	O_DEFS="${O_DEFS}"
 
 MAN8=	popauth.8 popper.8
 PLIST_FILES=	bin/popauth libexec/popper

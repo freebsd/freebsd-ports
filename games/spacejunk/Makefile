@@ -15,9 +15,8 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image
 
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 SUB_FILES=	spacejunk
 

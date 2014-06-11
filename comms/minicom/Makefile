@@ -20,13 +20,12 @@ NLS_CONFIGURE_ENABLE=	nls
 
 USES=		iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -lcurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
 			--enable-lock-dir=/var/spool/lock \
 			--enable-dfl-port=/dev/cuau0
-MAKE_ARGS+=	LIBS+="${ICONV_LIB} -lcurses"
 
 .include <bsd.port.pre.mk>
 

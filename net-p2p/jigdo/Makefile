@@ -31,10 +31,10 @@ GUI_LIB_DEPENDS=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20 \
 			libcurl.so:${PORTSDIR}/ftp/curl
 GUI_USES=		pkgconfig
 
-BDB_CONFIGURE_ENV=	LIBS=-L${BDB_LIB_DIR}
 BDB_CONFIGURE_ON=	--with-libdb=-l${BDB_LIB_CXX_NAME}
 BDB_CONFIGURE_OFF=	--without-libdb
 BDB_CPPFLAGS=		-I${BDB_INCLUDE_DIR}
+BDB_LIBS=		-L${BDB_LIB_DIR}
 BDB_USE=		BDB=${WITH_BDB_VER}
 
 NLS_CONFIGURE_ENABLE=	nls

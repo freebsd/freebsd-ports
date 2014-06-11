@@ -16,9 +16,9 @@ LICENSE=	GPLv2
 USE_PERL5=	build
 USES=		bison perl5
 USE_AUTOTOOLS=	autoconf213
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
 
 INFO=		oleo

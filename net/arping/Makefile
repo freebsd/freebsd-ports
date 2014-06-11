@@ -14,10 +14,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="`${LIBNET_CONFIG} --libs` -lpcap"
-CFLAGS+=	`${LIBNET_CONFIG} --defines`
-CPPFLAGS+=	-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include \
+		`${LIBNET_CONFIG} --cflags` `${LIBNET_CONFIG} --defines`
+LIBS+=		-L${LOCALBASE}/lib `${LIBNET_CONFIG} --libs` -lpcap
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 

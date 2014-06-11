@@ -23,8 +23,8 @@ OPTIONS_DEFINE=	DOCS
 
 ALL_TARGET=	libcfitsio.a shared
 CFLAGS+=	-I${INCLUDEDIR}
+LIBS+=		-L${LIBDIR} -lz
 CONFIGURE_ARGS=	ac_cv_prog_FC=f2c
-CONFIGURE_ENV=	LIBS="-L${LIBDIR} -lz"
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ZLIB_SOURCES="zlib/zcompress.c zlib/zuncompress.c"
 USE_LDCONFIG=	yes

@@ -22,7 +22,7 @@ NO_BUILD=	YES
 
 PHPLOT_DIR=	${STAGEDIR}${PREFIX}/include/php/phplot
 
-LIBS=		phplot.php rgb.inc.php
+LIBRARIES=	phplot.php rgb.inc.php
 
 OPTIONS_DEFINE=		DOCS FONTS
 OPTIONS_DEFAULT=	FONTS
@@ -31,7 +31,7 @@ FONTS_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 do-install:
 	@${MKDIR} ${PHPLOT_DIR}
-	${INSTALL_DATA} ${LIBS:S,^,${WRKSRC}/,} ${PHPLOT_DIR}
+	${INSTALL_DATA} ${LIBRARIES:S,^,${WRKSRC}/,} ${PHPLOT_DIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/phplotdocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 

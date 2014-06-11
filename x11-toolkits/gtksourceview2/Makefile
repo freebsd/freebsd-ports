@@ -23,8 +23,8 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gtk20 gconf2 libxml2 intlhack referencehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

@@ -76,13 +76,13 @@ CONFIGURE_ARGS+=	--enable-xinerama
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=			iconv
-CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 CPPFLAGS+=		-I${LOCALBASE}/include
+LIBS+=			-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""
 .else
-CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=		-I${LOCALBASE}/include
+LIBS+=			-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif

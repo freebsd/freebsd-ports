@@ -9,13 +9,3 @@
  am__DEPENDENCIES_1 =
  xgnokii_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(top_builddir)/common/libgnokii.la \
-@@ -360,7 +360,8 @@
- #FIXME install help
- HELP_DIR = docs/help
- pkgconfig_DATA = xgnokii.pc
--pkgconfigdir = $(libdir)/pkgconfig
-+libdatadir = $(libdir)data
-+pkgconfigdir = $(libdatadir)/pkgconfig
- desktop_in_files = xgnokii.desktop.in
- desktopdir = $(datadir)/applications
- desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)

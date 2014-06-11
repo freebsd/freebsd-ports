@@ -33,10 +33,11 @@ USES=		gmake tar:bzip2 shebangfix
 SHEBANG_FILES=	src/modules/rlm_counter/rad_counter scripts/sql/radsqlrelay
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 # Prevent /root/.rnd leftover
 MAKE_ARGS+=	HOME=/dev/null
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	${CPPFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	PORTVERSION=${DISTVERSION} LIBVER=0${PORTVERSION:C/\./0/g}
@@ -369,11 +370,6 @@ post-patch:
 .if empty(PORT_OPTIONS:MRUBY)
 	@${RM} -fr ${WRKSRC}/src/modules/rlm_ruby/
 .endif
-
-pre-configure:
-# Replace -pthread with ${PTHREAD_LIBS} in configure(.in) files
-	@${FIND} -E ${WRKSRC} -regex '.*/configure(\.in)?$$' -exec \
-		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" {} \;
 
 post-build:
 	@${FIND} ${WRKSRC}/build/lib -type f -name '*.so' -exec ${STRIP_CMD} {} \;

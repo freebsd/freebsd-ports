@@ -20,16 +20,13 @@ DBI_CONFIGURE_ON=	--with-dbi=${LOCALBASE}
 DBI_CONFIGURE_OFF=	--without-dbi
 DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
 
-LATEST_LINK=	mod_log_sql2-dtc
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bzip2
 USE_APACHE=	22
 USE_MYSQL=	yes
 
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
-CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
+LIBS+=		-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql
 
 post-patch:
 	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
@@ -38,4 +35,4 @@ post-patch:
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

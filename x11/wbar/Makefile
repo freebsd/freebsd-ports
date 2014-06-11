@@ -27,7 +27,7 @@ OPTIONS_SUB=	yes
 WBARCONFIG_DESC=	Build the GTK+ configuration interface
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CONFIGURE_ENV=	LIBS=-lintl
+NLS_LIBS=	-lintl
 
 WBARCONFIG_CONFIGURE_ENABLE=	wbar-config
 WBARCONFIG_USE=		GNOME=libglade2

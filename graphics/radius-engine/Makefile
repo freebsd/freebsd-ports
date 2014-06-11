@@ -20,8 +20,8 @@ USES=		pathfix pkgconfig
 USE_SDL=	sdl sound
 USE_GL=		glu
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	include/radius.h \
 		lib/libradius-engine.a \

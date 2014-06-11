@@ -102,7 +102,8 @@ USE_OPENLDAP=	yes
 LDAP_SCRIPT=	${WRKSRC}/contrib/ldap/dhcpd-conf-to-ldap
 LDAP_SCHEMA=	${WRKSRC}/contrib/ldap/dhcp.schema
 LDAP_README=	${WRKSRC}/contrib/ldap/README.ldap
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 PORTDOCS+=	README.ldap
 PLIST_SUB+=	SCHEMA_DIR="${SCHEMA_DIR:S,^${PREFIX}/,,}" LDAP=""
 USES+=		shebangfix
@@ -114,7 +115,7 @@ PLIST_SUB+=	LDAP="@comment "
 .if ${PORT_OPTIONS:MLDAP_SSL} && ${PORT_OPTIONS:MLDAP}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-ldapcrypto
-CONFIGURE_ENV+=	LIBS="-lssl"
+LIBS+=		-lssl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 

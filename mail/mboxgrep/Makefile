@@ -16,8 +16,8 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 USES=		uidfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
 
 INFO=		mboxgrep

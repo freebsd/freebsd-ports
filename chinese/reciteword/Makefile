@@ -17,10 +17,10 @@ COMMENT=	Education software to help people to study English
 LIB_DEPENDS=	libespeak.so:${PORTSDIR}/audio/espeak
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 USES=		tar:bzip2 gettext gmake pkgconfig
 USE_GNOME=	gtk20 esound
-CPPFLAGS+=	"-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO readme.txt
 

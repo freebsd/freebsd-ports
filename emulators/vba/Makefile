@@ -19,10 +19,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 USES=		gettext gmake
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
-CONFIGURE_ARGS=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" LIBS="-lintl"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 WRKSRC=		${WRKDIR}/VisualBoyAdvance-${PORTVERSION}
 SUB_FILES=	pkg-message

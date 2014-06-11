@@ -18,7 +18,7 @@ USE_GL=		glut
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"LIBS=-L${LOCALBASE}/lib -lXext ${PTHREAD_LIBS}"
+LIBS+=		-L${LOCALBASE}/lib -lXext
 
 post-patch:
 .for file in ex_angle.c ex_cut_round.c ex_raw.c extrude.c round_cap.c segment.c texgen.c

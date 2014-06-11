@@ -46,9 +46,8 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 BF_LIBS+=		${ICONV_LIB}
 .endif
 CPPFLAGS+=	${BF_CPPFLAGS}
-CONFIGURE_ENV+=	LIBS="${BF_LIBS}" \
-		PERL="${PERL}"
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib ${BF_LIBS}
+CONFIGURE_ENV+=	PERL="${PERL}"
 INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
 post-patch:

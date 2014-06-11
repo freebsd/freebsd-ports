@@ -15,8 +15,8 @@ LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
 
 USES=		tar:bzip2 libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-pkg-config-files=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
