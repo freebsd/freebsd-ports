@@ -3,7 +3,7 @@
 
 PORTNAME=	gri
 PORTVERSION=	2.12.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -12,26 +12,26 @@ COMMENT=	Extensible plotting language for producing scientific graphs
 
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
-USES=		readline gmake
+USES=		gmake readline shebangfix
+SHEBANG_FILES=	src/gri_merge src/gri_unpage
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-FreeBSD
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gri.1 gri_merge.1 gri_unpage.1
 INFO=		gri
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/gri bin/gri_merge bin/gri_unpage \
+		man/man1/gri.1.gz man/man1/gri_merge.1.gz \
+		man/man1/gri_unpage.1.gz \
 		share/emacs/site-lisp/gri-mode.el \
 		%%DATADIR%%/gri.cmd \
 		%%DATADIR%%/logo.dat \
 		%%DATADIR%%/rgb.txt \
 		%%DATADIR%%/startup.msg
 PLIST_DIRS=	%%DATADIR%%
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -51,7 +51,7 @@ post-patch:
 
 post-build:
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
-	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .else
 	(cd ${WRKSRC}/doc && makeinfo gri.texi)
@@ -59,22 +59,23 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .else
-	(cd ${WRKSRC}/doc \
-		&& ${INSTALL_MAN} gri-manpage.1 ${MANPREFIX}/man/man1/gri.1 \
-		&& ${INSTALL_MAN} gri_merge.1-skel ${MANPREFIX}/man/man1/gri_merge.1 \
-		&& ${INSTALL_MAN} gri_unpage.1-skel ${MANPREFIX}/man/man1/gri_unpage.1)
-	(cd ${WRKSRC}/doc \
-		&& ${INSTALL_DATA} gri.info* ${PREFIX}/${INFO_PATH})
+	${INSTALL_MAN} ${WRKSRC}/doc/gri-manpage.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1/gri.1 
+	${INSTALL_MAN} ${WRKSRC}/doc/gri_merge.1-skel \
+		${STAGEDIR}${MANPREFIX}/man/man1/gri_merge.1
+	${INSTALL_MAN} ${WRKSRC}/doc/gri_unpage.1-skel \
+		${STAGEDIR}${MANPREFIX}/man/man1/gri_unpage.1
+	${INSTALL_DATA} ${WRKSRC}/doc/gri.info* ${STAGEDIR}${PREFIX}/${INFO_PATH}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/doc/examples && ${INSTALL_DATA} model* *.dat *.gri e*.ps \
+		${STAGEDIR}${EXAMPLESDIR})
 	(cd ${WRKSRC}/doc/examples \
-		&& ${INSTALL_DATA} model* *.dat *.gri e*.ps ${EXAMPLESDIR})
-	(cd ${WRKSRC}/doc/examples \
-		&& ${INSTALL_SCRIPT} FEM.pl ${EXAMPLESDIR})
+		&& ${INSTALL_SCRIPT} FEM.pl ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
