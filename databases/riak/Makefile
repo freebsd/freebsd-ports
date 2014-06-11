@@ -17,10 +17,11 @@ USES=		gmake
 USE_RC_SUBR=	riak
 
 PLIST=		${WRKDIR}/pkg-plist
-PLIST_SUB+=	RIAK_LOGDIR=${RIAK_LOGDIR} \
+PLIST_SUB+=	RIAK_CONFDIR=${RIAK_CONFDIR} \
 		RIAK_DBDIR=${RIAK_DBDIR} \
-		RIAK_CONFDIR=${RIAK_CONFDIR} \
-		RIAK_HOMEDIR=${RIAK_HOMEDIR}
+		RIAK_HOMEDIR=${RIAK_HOMEDIR} \
+		RIAK_LIBDIR=${RIAK_LIBDIR} \
+		RIAK_LOGDIR=${RIAK_LOGDIR}
 
 USERS=		riak
 GROUPS=		riak
@@ -39,6 +40,9 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang15/bin:${PATH}
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/rel/vars.config
 
 pre-install:
 	${RM} -f ${PLIST}
