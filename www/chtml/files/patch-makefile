@@ -1,6 +1,6 @@
---- makefile.orig	Mon Jun 22 20:43:44 1998
-+++ makefile	Fri Jul 22 09:42:30 2005
-@@ -9,7 +9,7 @@
+--- makefile.orig	1998-06-22 20:43:44.000000000 +0800
++++ makefile	2014-06-11 22:55:36.258776918 +0800
+@@ -9,7 +9,7 @@ INSTALL_LIBDIR=/usr/local/lib
  INSTALL_BINDIR=/usr/local/bin
  INSTALL_INCDIR=/usr/local/include
  INSTALL_SIODDIR=/usr/local/lib/siod
@@ -9,7 +9,7 @@
  INSTALL_DEMODIR=$$HOME/public_html/chtml
  
  #CFLAGS=-g -Wall
-@@ -17,7 +17,7 @@
+@@ -17,7 +17,7 @@ INSTALL_DEMODIR=$$HOME/public_html/chtml
  .SUFFIXES: .html .html-bin .smd .cgi .pl .cgi .scm .cgi
  
  .html.html-bin:
@@ -18,16 +18,48 @@
  
  .pl.cgi:
  	echo "#!`which perl`" > $@
-@@ -106,7 +106,7 @@
- 	-mkdir $(INSTALL_BINDIR)
- 	-mkdir $(INSTALL_INCDIR)
- 	-mkdir $(INSTALL_SIODDIR)
+@@ -101,24 +101,24 @@ test: all
+ 	./chtmlt
+ 
+ install: all 
+-	-mkdir $(INSTALL_MANDIR)
+-	-mkdir $(INSTALL_LIBDIR)
+-	-mkdir $(INSTALL_BINDIR)
+-	-mkdir $(INSTALL_INCDIR)
+-	-mkdir $(INSTALL_SIODDIR)
 -	-mkdir $(INSTALL_PERLDIR)
-+	-mkdir -p $(INSTALL_PERLDIR)
- 	cp -f chtml.1 $(INSTALL_MANDIR)
- 	cp -f libchtml.a $(INSTALL_LIBDIR)
- 	cp -f chtml $(INSTALL_BINDIR)
-@@ -191,7 +191,7 @@
+-	cp -f chtml.1 $(INSTALL_MANDIR)
+-	cp -f libchtml.a $(INSTALL_LIBDIR)
+-	cp -f chtml $(INSTALL_BINDIR)
+-	cp -f chtml.h $(INSTALL_INCDIR)
+-	cp -f chtml.scm $(INSTALL_SIODDIR)
+-	cp -f chtml-cmp.c-bin $(INSTALL_SIODDIR)
+-	cp -f chtml.pl $(INSTALL_PERLDIR)
++	-mkdir $(DESTDIR)$(INSTALL_MANDIR)
++	-mkdir $(DESTDIR)$(INSTALL_LIBDIR)
++	-mkdir $(DESTDIR)$(INSTALL_BINDIR)
++	-mkdir $(DESTDIR)$(INSTALL_INCDIR)
++	-mkdir $(DESTDIR)$(INSTALL_SIODDIR)
++	-mkdir -p $(DESTDIR)$(INSTALL_PERLDIR)
++	cp -f chtml.1 $(DESTDIR)$(INSTALL_MANDIR)
++	cp -f libchtml.a $(DESTDIR)$(INSTALL_LIBDIR)
++	cp -f chtml $(DESTDIR)$(INSTALL_BINDIR)
++	cp -f chtml.h $(DESTDIR)$(INSTALL_INCDIR)
++	cp -f chtml.scm $(DESTDIR)$(INSTALL_SIODDIR)
++	cp -f chtml-cmp.c-bin $(DESTDIR)$(INSTALL_SIODDIR)
++	cp -f chtml.pl $(DESTDIR)$(INSTALL_PERLDIR)
+ 
+ install-demo: all chtml.tgz
+-	-mkdir $(INSTALL_DEMODIR)
+-	cp -f *.cgi *.html *.html-bin $(INSTALL_DEMODIR)
+-	cp -f *.c *.scm *.smd *.pl $(INSTALL_DEMODIR)
++	-mkdir $(DESTDIR)$(INSTALL_DEMODIR)
++	cp -f *.cgi *.html *.html-bin $(DESTDIR)$(INSTALL_DEMODIR)
++	cp -f *.c *.scm *.smd *.pl $(DESTDIR)$(INSTALL_DEMODIR)
+ 
+ 
+ chtml.tgz: $(INPLACE_FILES) $(SOURCE_FILES) test.txt
+@@ -191,7 +191,7 @@ pure_tests: pure_chtmlt.err pure_next.er
  
  
  pure_chtmlt.err: pure_chtmlt
@@ -36,7 +68,7 @@
  
  pure_next.err: pure_next.cgi
  	(PATH_INFO=/homes.html-bin; export PATH_INFO; pure_next.cgi 2> pure_next.err)
-@@ -201,31 +201,31 @@
+@@ -201,31 +201,31 @@ wc.txt:
             chtml.scm chtml-cmp.scm
  
  chtml-cmp.c-bin: chtml-cmp.c
