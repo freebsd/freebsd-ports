@@ -12,12 +12,13 @@ COMMENT=	Library providing ability to interpret and import Adobe/Macromedia draw
 LICENSE=	LGPL21 MPL GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
+LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
+		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg
 
 GNU_CONFIGURE=	yes
 USES=	libtool pathfix pkgconfig tar:xz
-USE_LDCOFNIG=	yes
-CONFIGURE_ARGS=	--without-docs
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--without-docs --disable-werror
 INSTALL_TARGET=	install-strip
 
 post-install:
