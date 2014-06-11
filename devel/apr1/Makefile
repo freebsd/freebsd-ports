@@ -3,6 +3,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -29,7 +30,7 @@ NSS_DESC=	NSS crypto driver
 APR_VERSION=	1.5.1
 APU_VERSION=	1.5.3
 
-USES=		iconv pathfix
+USES=		iconv pathfix libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
@@ -38,8 +39,8 @@ APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
 APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 
 PLIST_SUB+=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
-SHLIB_APR_MAJOR=	5
-SHLIB_APU_MAJOR=	5
+SHLIB_APR_MAJOR=	${APR_VERSION:C/^1/0/}
+SHLIB_APU_MAJOR=	${APU_VERSION:C/^1/0/}
 
 APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1 \
 		--enable-posix-shm
@@ -190,6 +191,9 @@ do-build:
 do-install:
 	@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET} ${MAKE_ARGS})
 	@(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET} ${MAKE_ARGS})
+
+post-install:
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} ${STRIP_CMD} 
 
 test: build
 	-@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} test)
