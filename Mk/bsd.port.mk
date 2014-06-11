@@ -4018,7 +4018,7 @@ install-ldconfig-file:
 .endif
 .if ${USE_LDCONFIG} != "${LOCALBASE}/lib" && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
-.if defined(NO_MTREE)
+.if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
@@ -4040,7 +4040,7 @@ install-ldconfig-file:
 .endif
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
-.if defined(NO_MTREE)
+.if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG_32DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
