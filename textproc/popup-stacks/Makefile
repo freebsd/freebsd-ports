@@ -14,15 +14,13 @@ COMMENT=	Stacks for use with Popup
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
-
 WRKSRC=		${WRKDIR}
 STACKS=		English-German.cstack German-French.cstack
-PLIST_DIRS=	share/examples/popup
+PLIST_DIRS=	${EXAMPLESDIR}
 .for i in ${STACKS}
-PLIST_FILES+=	share/examples/popup/${i}
+PLIST_FILES+=	${EXAMPLESDIR}/${i}
 .endfor
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 .for i in ${DISTFILES}
@@ -31,7 +29,7 @@ do-extract:
 .endfor
 
 do-install:
-	${MKDIR} ${EXAMPLESDIR}
-	(cd  ${WRKDIR} && ${INSTALL_DATA} ${STACKS} ${EXAMPLESDIR}/)
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd  ${WRKDIR} && ${INSTALL_DATA} ${STACKS} ${STAGEDIR}${EXAMPLESDIR}/)
 
 .include <bsd.port.mk>
