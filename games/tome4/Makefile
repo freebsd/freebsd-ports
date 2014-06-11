@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	http://te4.org/dl/t-engine/ \
-		SF/lifanov-ports-icons/${PORTNAME}/:icons
+		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
 DISTFILES=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX}
@@ -27,10 +26,12 @@ MAKE_ARGS+=	config=release verbose=yes ARCH=""
 USES=		gmake openal:al tar:bzip2
 USE_SDL=	image2 sdl2 ttf2
 USE_GL=		gl glu
+USE_CSTD=	gnu89
 SUB_FILES=	tome4
 MAKE_JOBS_UNSAFE=yes
 
 pre-build:
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/premake4.lua
 	(cd ${WRKSRC} && premake4 gmake)
 	@${REINPLACE_CMD} 's|-lpthread|-pthread|' ${WRKSRC}/build/TEngine.make
 
