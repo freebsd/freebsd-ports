@@ -3,9 +3,11 @@
 
 PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.9.809-20070726
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio linux
-MASTER_SITES=	http://client-software.real.com/free/unix/:player \
+MASTER_SITES=	ftp://ftp.tw.freebsd.org/pub/distfiles/:player \
+		http://freeheimdall.spdns.org/files/:player \
+		http://freeheimdall.spdns.org/files/:codecs \
 		http://mirror.therek.net/freebsd/distfiles/mplayer/:codecs \
 		SF/mplayer-tru/mplayer-codecs/20040704:codecs \
 		ftp://fr2.rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/mplayer-codecs/20040704/:codecs \
@@ -16,7 +18,10 @@ DISTFILES=	RealPlayer10GOLD.rpm:player \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Linux RealPlayer 10 from RealNetworks
 
-BROKEN=		Unfetchable
+LICENSE=	RealPlayer
+LICENSE_NAME=	Helix DNA Technology Binary Research Use License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	auto-accept
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386 amd64
@@ -30,13 +35,15 @@ RADIR=		${PREFIX}/lib/RealPlayer
 PLUGINSDIR=	${PREFIX}/lib/linux-mozilla/plugins
 RABINDIR=	${PREFIX}/bin
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	GNOME ICONS NLS
+OPTIONS_DEFAULT=	ICONS
 
-OPTIONS_DEFINE=	NLS
+ICONS_DESC=	Install set of icons
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
 PLIST_SUB+=	NLS="" LINUXBASE="${LINUXBASE}"
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -44,21 +51,21 @@ PLIST_SUB+=	NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/share/icons)
-WITH_ICONS=	yes
+.if ${PORT_OPTIONS:MICONS}
 PLIST_SUB+=	ICONS=""
 .else
 PLIST_SUB+=	ICONS="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mgnomehier}!=""
-WITH_GNOME=	yes
+.if ${PORT_OPTIONS:MGNOME}
+USE_GNOME+=	gnomehier
+USES+=		desktop-file-utils
 PLIST_SUB+=	GNOME=""
 .else
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if defined(WITH_ICONS) || defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MICONS} || ${PORT_OPTIONS:MGNOME}
 PLIST_SUB+=	X11=""
 .else
 PLIST_SUB+=	X11="@comment "
@@ -75,68 +82,68 @@ post-patch:
 		< ${FILESDIR}/realplay > ${WRKSRC}/realplay
 
 do-install:
-	@${MKDIR} ${RADIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/README ${RADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/realplay.bin ${RADIR}
-	${BRANDELF} -t Linux ${RADIR}/realplay.bin
+	@${MKDIR} ${STAGEDIR}${RADIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${RADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/realplay.bin ${STAGEDIR}${RADIR}
+	${BRANDELF} -t Linux ${STAGEDIR}${RADIR}/realplay.bin
 .for dir in codecs common lib plugins share/default share/realplay
-	@${MKDIR} ${RADIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${RADIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${RADIR}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${STAGEDIR}${RADIR}/${dir}
 .endfor
 
 # Extra codecs from the RealPlayer-9 -- no longer shipped by Real,
 # but still in use by major content providers, such as Amazon:
 .for c in dnet ddnt
-	${INSTALL_DATA} ${WRKDIR}/usr/lib/codecs/$c.so.6.0	\
-		${RADIR}/codecs/
-	${LN} -sf $c.so.6.0 ${RADIR}/codecs/$c.so
+	${INSTALL_DATA} ${WRKDIR}/usr/lib/codecs/$c.so.6.0 \
+		${STAGEDIR}${RADIR}/codecs/
+	${LN} -sf $c.so.6.0 ${STAGEDIR}${RADIR}/codecs/$c.so
 .endfor
 
 .if ${PORT_OPTIONS:MNLS}
-	@${MKDIR} ${RADIR}/share/locale
-	${CP} -Rp ${WRKSRC}/share/locale/* ${RADIR}/share/locale
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${RADIR}/share/locale
+	@${MKDIR} ${STAGEDIR}${RADIR}/share/locale
+	${CP} -Rp ${WRKSRC}/share/locale/* ${STAGEDIR}${RADIR}/share/locale
 .for c in de es fr hi it ja ko pl pt_BR zh_CN zh_TW
-	${LN} -sf ${RADIR}/share/locale/${c}/player.mo \
-		${LINUXBASE}/usr/share/locale/${c}/LC_MESSAGES/realplay.mo
+	@${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/share/locale/${c}/LC_MESSAGES
+	${INSTALL_DATA} ${STAGEDIR}${RADIR}/share/locale/${c}/player.mo \
+		${STAGEDIR}${LINUXBASE}/usr/share/locale/${c}/LC_MESSAGES/realplay.mo
 .endfor
 .endif
 
-	@${MKDIR} ${PLUGINSDIR}
-	${INSTALL_DATA} ${WRKSRC}/mozilla/* ${PLUGINSDIR}
+	@${MKDIR} ${STAGEDIR}${PLUGINSDIR}
+	${INSTALL_DATA} ${WRKSRC}/mozilla/* ${STAGEDIR}${PLUGINSDIR}
 
-	@${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/realplay ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/realplay ${STAGEDIR}${PREFIX}/bin
 
-.if defined(WITH_ICONS)
+.if ${PORT_OPTIONS:MICONS}
 . for size in 16x16 32x32 48x48 192x192
-	@${MKDIR} ${LOCALBASE}/share/icons/hicolor/${size}/apps
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/icons/hicolor/${size}/apps
 	${INSTALL_DATA} ${WRKSRC}/share/icons/realplay_${size}.png \
-		${LOCALBASE}/share/icons/hicolor/${size}/apps
+		${STAGEDIR}${LOCALBASE}/share/icons/hicolor/${size}/apps
 . endfor
 . for size in 48x48 192x192
-	@${MKDIR} ${LOCALBASE}/share/icons/hicolor/${size}/mimetypes
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/icons/hicolor/${size}/mimetypes
 	${INSTALL_DATA} ${WRKSRC}/share/icons/mime-*_${size}.png \
-		${LOCALBASE}/share/icons/hicolor/${size}/mimetypes
+		${STAGEDIR}${LOCALBASE}/share/icons/hicolor/${size}/mimetypes
 . endfor
 .endif
 
-.if defined(WITH_GNOME)
-	@${MKDIR} ${LOCALBASE}/share/pixmaps
+.if ${PORT_OPTIONS:MGNOME}
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.png \
-		${LOCALBASE}/share/pixmaps
+		${STAGEDIR}${LOCALBASE}/share/pixmaps
 
-	@${MKDIR} ${LOCALBASE}/share/applications
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.desktop \
-		${LOCALBASE}/share/applications
+		${STAGEDIR}${LOCALBASE}/share/applications
 
-	@${MKDIR} ${LOCALBASE}/share/application-registry
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/application-registry
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.applications \
-		${LOCALBASE}/share/application-registry
+		${STAGEDIR}${LOCALBASE}/share/application-registry
 
-	@${MKDIR} ${LOCALBASE}/share/mime-info
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime-info
 	${INSTALL_DATA} ${WRKSRC}/share/realplay.keys ${WRKSRC}/share/realplay.mime \
-		${LOCALBASE}/share/mime-info
+		${STAGEDIR}${LOCALBASE}/share/mime-info
 .endif
 
 .include <bsd.port.post.mk>
