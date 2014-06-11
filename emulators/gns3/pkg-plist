@@ -3,14 +3,27 @@ libexec/gns3/qemuwrapper.py
 libexec/gns3/tcp_pipe_proxy.py
 libexec/gns3/vboxcontroller_4_1.py
 libexec/gns3/vboxwrapper.py
+man/man1/gns3.1.gz
 %%EXAMPLESDIR%%/baseconfig.txt
 %%EXAMPLESDIR%%/baseconfig_sw.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.py
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Application.py
 %%PYTHON_SITELIBDIR%%/GNS3/Application.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Application.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Awp/AwpImage.py
+%%PYTHON_SITELIBDIR%%/GNS3/Awp/AwpImage.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Awp/AwpImage.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Awp/__init__.py
+%%PYTHON_SITELIBDIR%%/GNS3/Awp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Awp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/CalcIDLEPCDialog.py
+%%PYTHON_SITELIBDIR%%/GNS3/CalcIDLEPCDialog.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/CalcIDLEPCDialog.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Config/Config.py
 %%PYTHON_SITELIBDIR%%/GNS3/Config/Config.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Config/Config.pyo
@@ -59,6 +72,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/__init__.py
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/__init__.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/DragDropMultipleDevicesDialog.py
+%%PYTHON_SITELIBDIR%%/GNS3/DragDropMultipleDevicesDialog.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/DragDropMultipleDevicesDialog.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/__init__.py
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/__init__.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/__init__.pyo
@@ -93,6 +109,18 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/DynagenSub.py
 %%PYTHON_SITELIBDIR%%/GNS3/DynagenSub.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/DynagenSub.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Export/ConfigureNetworkObject.py
+%%PYTHON_SITELIBDIR%%/GNS3/Export/ConfigureNetworkObject.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Export/ConfigureNetworkObject.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Export/DeployementWizard.py
+%%PYTHON_SITELIBDIR%%/GNS3/Export/DeployementWizard.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Export/DeployementWizard.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Export/ExportPDF.py
+%%PYTHON_SITELIBDIR%%/GNS3/Export/ExportPDF.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Export/ExportPDF.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Export/__init__.py
+%%PYTHON_SITELIBDIR%%/GNS3/Export/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Export/__init__.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/External/PyCutExt.py
 %%PYTHON_SITELIBDIR%%/GNS3/External/PyCutExt.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/External/PyCutExt.pyo
@@ -130,6 +158,7 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_it.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_jp.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_kr.qm
+%%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_nl.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_pl.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_pt_br.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_ro.qm
@@ -153,6 +182,7 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_it.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_iw.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_jp.qm
+%%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_nl.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_pl.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_pt.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_pt_br.qm
@@ -212,6 +242,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Node/FRSW.py
 %%PYTHON_SITELIBDIR%%/GNS3/Node/FRSW.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Node/FRSW.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Node/Hub.py
+%%PYTHON_SITELIBDIR%%/GNS3/Node/Hub.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Node/Hub.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Node/IOSRouter.py
 %%PYTHON_SITELIBDIR%%/GNS3/Node/IOSRouter.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Node/IOSRouter.pyo
@@ -272,6 +305,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Telnet.py
 %%PYTHON_SITELIBDIR%%/GNS3/Telnet.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Telnet.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/TipsDialog.py
+%%PYTHON_SITELIBDIR%%/GNS3/TipsDialog.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/TipsDialog.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Topology.py
 %%PYTHON_SITELIBDIR%%/GNS3/Topology.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Topology.pyo
@@ -287,6 +323,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_ATMSWPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_ATMSWPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_ATMSWPage.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_AWPPage.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_AWPPage.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_AWPPage.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_CloudPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_CloudPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_CloudPage.pyo
@@ -299,6 +338,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FRSWPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FRSWPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FRSWPage.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_HubPage.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_HubPage.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_HubPage.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IDSPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IDSPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IDSPage.pyo
@@ -317,6 +359,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesCapture.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesCapture.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesCapture.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesDeployementWizard.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesDeployementWizard.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesDeployementWizard.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesDynamips.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesDynamips.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesDynamips.pyo
@@ -344,6 +389,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_ATMSW.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_ATMSW.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_ATMSW.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_AWP.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_AWP.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_AWP.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Cloud.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Cloud.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Cloud.pyo
@@ -356,6 +404,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FRSW.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FRSW.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FRSW.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Hub.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Hub.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Hub.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_IDS.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_IDS.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_IDS.pyo
@@ -371,6 +422,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesCapture.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesCapture.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesCapture.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesDeployementWizard.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesDeployementWizard.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesDeployementWizard.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesDynamips.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesDynamips.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesDynamips.pyo
@@ -395,9 +449,21 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_About.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_About.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_About.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_CalcIDLEPCDialog.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_CalcIDLEPCDialog.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_CalcIDLEPCDialog.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IDLEPCDialog.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IDLEPCDialog.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IDLEPCDialog.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_ConfigureNetworkObject.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_ConfigureNetworkObject.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_ConfigureNetworkObject.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_DeployementWizard.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_DeployementWizard.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_DeployementWizard.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_DragAndDropMultiDevices.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_DragAndDropMultiDevices.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_DragAndDropMultiDevices.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IOSDialog.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IOSDialog.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IOSDialog.pyo
@@ -431,6 +497,9 @@ libexec/gns3/vboxwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_SymbolManager.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_SymbolManager.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_SymbolManager.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_TipsDialog.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_TipsDialog.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_TipsDialog.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_Wizard.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_Wizard.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_Wizard.pyo
@@ -481,8 +550,11 @@ libexec/gns3/vboxwrapper.py
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Langs
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Globals
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/External
+@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Export
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Dynagen
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Defaults
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Config
+@dirrm %%PYTHON_SITELIBDIR%%/GNS3/Awp
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3
 @dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
