@@ -1,4 +1,4 @@
-bin/fish
+@shell bin/fish
 bin/fish_indent
 bin/fish_pager
 bin/fishd
@@ -572,5 +572,3 @@ man/man1/mimedb.1.gz
 @dirrm %%DATADIR%%/completions
 @dirrm %%DATADIR%%
 @dirrm %%ETCDIR%%
-@exec cp /etc/shells /etc/shells.bak; (grep -v %D/bin/fish /etc/shells.bak; echo %D/bin/fish) > /etc/shells; rm -f /etc/shells.bak
-@unexec cp /etc/shells /etc/shells.bak; (grep -v %D/bin/fish /etc/shells.bak) > /etc/shells; rm -f /etc/shells.bak

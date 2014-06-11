@@ -1,7 +1,7 @@
 bin/fd2
 bin/goto
 bin/if
-bin/osh
+@shell bin/osh
 bin/sh6
 bin/glob6
 man/man1/fd2.1.gz
@@ -10,5 +10,3 @@ man/man1/goto.1.gz
 man/man1/if.1.gz
 man/man1/osh.1.gz
 man/man1/sh6.1.gz
-@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
-@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak

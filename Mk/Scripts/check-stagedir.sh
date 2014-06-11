@@ -64,7 +64,7 @@ parse_plist() {
 			esac
 		;;
 		# Handle [file] Keywords
-		@info\ *)
+		@info\ *|@shell\ *)
 			set -- $line
 			shift
 			echo "${comment}${cwd}/$@"

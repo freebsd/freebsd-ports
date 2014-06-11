@@ -1,10 +1,6 @@
-bin/lshell
+@shell bin/lshell
 man/man1/lshell.1.gz
-@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
-@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
-@unexec if cmp -s %D/etc/lshell.conf %D/etc/lshell.conf.sample; then rm -f %D/etc/lshell.conf; fi
-etc/lshell.conf.sample
-@exec if [ ! -f %D/etc/lshell.conf ]; then cp %B/%f %D/etc/lshell.conf; fi
+@sample etc/lshell.conf.sample
 etc/logrotate.d/lshell
 %%PYTHON_SITELIBDIR%%/lshell.py
 %%PYTHON_SITELIBDIR%%/lshell.pyc

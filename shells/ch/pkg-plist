@@ -1,6 +1,4 @@
-@exec cp /etc/shells /etc/shells.bak; (grep -v %D/bin/ch /etc/shells.bak; echo %D/bin/ch) >/etc/shells; rm -f /etc/shells.bak
-@unexec cp /etc/shells /etc/shells.bak; (grep -v %D/bin/ch /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
-bin/ch
+@shell bin/ch
 %%DATADIR%%/docs/images/softIntegration.gif
 %%DATADIR%%/docs/README
 %%DATADIR%%/docs/index.html
