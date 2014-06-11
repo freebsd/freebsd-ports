@@ -78,6 +78,16 @@ OCAML_EXAMPLESDIR=	${PREFIX}/share/examples/ocaml
 #
 OCAML_LDCONF?=		${OCAML_LIBDIR}/ld.conf
 
+# ocaml-findlib-1.4.1_1 wants to edit our ld.conf file, which does not
+# work well with staging.
+.if defined(USE_OCAML_LDCONFIG)
+. if !target(ocaml-ldconfig)
+.  if !defined(NO_STAGE)
+OCAMLFIND_LDCONF?=	/dev/null
+.  endif
+. endif
+.endif
+
 OCAMLFIND_DESTDIR?=	${PREFIX}/${OCAML_SITELIBDIR}
 OCAMLFIND_LDCONF?=	${PREFIX}/${OCAML_LDCONF}
 
