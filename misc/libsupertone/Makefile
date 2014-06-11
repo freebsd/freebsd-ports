@@ -3,7 +3,7 @@
 
 PORTNAME=	libsupertone
 PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.soft-switch.org/downloads/unicall/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USES=		tar:tgz
+USES=		tar:tgz libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
