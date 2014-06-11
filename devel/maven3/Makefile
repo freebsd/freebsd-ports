@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	maven3
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.5
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	maven/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wombat@marsupial.org
 COMMENT=	Java project management tool, 3.x branch
 
 LICENSE=	APACHE20
@@ -22,10 +22,8 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/apache-maven-${DISTVERSION}
 SUB_FILES=	mvn.sh
 SUB_LIST=	CLASSWORLDS_JAR=plexus-classworlds-2.4.jar
-INSTANCE_FILE=	030004-${PORTNAME}-${PORTVERSION}
+INSTANCE_FILE=	030005-${PORTNAME}-${PORTVERSION}
 INSTANCES_DIR=	etc/maven-wrapper/instances.d/
-PLIST_FILES=	${INSTANCES_DIR}/${INSTANCE_FILE}
-PORTDATA=	*
 
 post-extract:
 	${RM} -f ${WRKSRC}/bin/*.bat

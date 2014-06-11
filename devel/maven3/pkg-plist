@@ -1,0 +1,47 @@
+etc/maven-wrapper/instances.d/030005-maven3-3.0.5
+%%DATADIR%%/030005-maven3-3.0.5
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/NOTICE.txt
+%%DATADIR%%/README.txt
+%%DATADIR%%/bin/m2.conf
+%%DATADIR%%/bin/mvn
+%%DATADIR%%/bin/mvnDebug
+%%DATADIR%%/bin/mvnyjp
+%%DATADIR%%/boot/plexus-classworlds-2.4.jar
+%%DATADIR%%/conf/settings.xml
+%%DATADIR%%/lib/aether-api-1.13.1.jar
+%%DATADIR%%/lib/aether-connector-wagon-1.13.1.jar
+%%DATADIR%%/lib/aether-impl-1.13.1.jar
+%%DATADIR%%/lib/aether-spi-1.13.1.jar
+%%DATADIR%%/lib/aether-util-1.13.1.jar
+%%DATADIR%%/lib/commons-cli-1.2.jar
+%%DATADIR%%/lib/ext/README.txt
+%%DATADIR%%/lib/maven-aether-provider-3.0.5.jar
+%%DATADIR%%/lib/maven-artifact-3.0.5.jar
+%%DATADIR%%/lib/maven-compat-3.0.5.jar
+%%DATADIR%%/lib/maven-core-3.0.5.jar
+%%DATADIR%%/lib/maven-embedder-3.0.5.jar
+%%DATADIR%%/lib/maven-model-3.0.5.jar
+%%DATADIR%%/lib/maven-model-builder-3.0.5.jar
+%%DATADIR%%/lib/maven-plugin-api-3.0.5.jar
+%%DATADIR%%/lib/maven-repository-metadata-3.0.5.jar
+%%DATADIR%%/lib/maven-settings-3.0.5.jar
+%%DATADIR%%/lib/maven-settings-builder-3.0.5.jar
+%%DATADIR%%/lib/plexus-cipher-1.7.jar
+%%DATADIR%%/lib/plexus-component-annotations-1.5.5.jar
+%%DATADIR%%/lib/plexus-interpolation-1.14.jar
+%%DATADIR%%/lib/plexus-sec-dispatcher-1.3.jar
+%%DATADIR%%/lib/plexus-utils-2.0.6.jar
+%%DATADIR%%/lib/sisu-guava-0.9.9.jar
+%%DATADIR%%/lib/sisu-guice-3.1.0-no_aop.jar
+%%DATADIR%%/lib/sisu-inject-bean-2.3.0.jar
+%%DATADIR%%/lib/sisu-inject-plexus-2.3.0.jar
+%%DATADIR%%/lib/wagon-file-2.4.jar
+%%DATADIR%%/lib/wagon-http-2.4-shaded.jar
+%%DATADIR%%/lib/wagon-provider-api-2.4.jar
+@dirrmtry %%DATADIR%%/lib/ext
+@dirrmtry %%DATADIR%%/lib
+@dirrmtry %%DATADIR%%/conf
+@dirrmtry %%DATADIR%%/boot
+@dirrmtry %%DATADIR%%/bin
+@dirrmtry %%DATADIR%%
