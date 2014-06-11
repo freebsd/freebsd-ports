@@ -15,8 +15,8 @@ BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USE_GNOME=	gnomeprefix libgnomeui
 USES=		pathfix gmake pkgconfig
 

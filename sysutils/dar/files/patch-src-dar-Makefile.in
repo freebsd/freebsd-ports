@@ -1,6 +1,6 @@
 --- src/dar_suite/Makefile.in.orig	2007-08-06 15:55:23.000000000 +0200
 +++ src/dar_suite/Makefile.in	2007-08-06 15:55:32.000000000 +0200
-@@ -282,7 +282,7 @@
+@@ -330,7 +330,7 @@
  @USE_UPX_TRUE@UPX = @UPX_PROG@
  @BUILD_DAR_STATIC_FALSE@@USE_UPX_TRUE@ALSO_BUILD_INST = 
  @BUILD_DAR_STATIC_TRUE@@USE_UPX_TRUE@ALSO_BUILD_INST = $(ALSO_BUILD)$(EXEEXT)
@@ -8,4 +8,22 @@
 +LDADD=../libdar/lib$(MYLIB).la
  @DEBUG_STATIC_FALSE@AM_LDFLAGS = @LTLIBINTL@ $(LD_PROF)
  @DEBUG_STATIC_TRUE@AM_LDFLAGS = -all-static @LTLIBINTL@ $(LD_PROF)
- dar_SOURCES = command_line.cpp command_line.hpp config_file.cpp config_file.hpp dar.cpp dar.hpp dar_suite.cpp dar_suite.hpp hide_file.cpp hide_file.hpp no_comment.cpp no_comment.hpp shell_interaction.cpp shell_interaction.hpp dar.usage getopt_decision.h my_getopt_long.h
+ dar_SOURCES = command_line.cpp command_line.hpp config_file.cpp config_file.hpp dar.cpp dar.hpp dar_suite.cpp dar_suite.hpp hide_file.cpp hide_file.hpp no_comment.cpp no_comment.hpp shell_interaction.cpp shell_interaction.hpp dar.usage getopt_decision.h my_getopt_long.h line_tools.hpp line_tools.cpp crit_action_cmd_line.cpp crit_action_cmd_line.hpp
+@@ -349,7 +349,7 @@
+ #
+ dar_static_SOURCES = command_line.cpp command_line.hpp config_file.cpp config_file.hpp dar.cpp dar.hpp dar_suite.cpp dar_suite.hpp hide_file.cpp hide_file.hpp no_comment.cpp no_comment.hpp shell_interaction.cpp shell_interaction.hpp dar.usage line_tools.hpp line_tools.cpp crit_action_cmd_line.cpp
+ dar_static_DEPENDENCIES = ../libdar/lib$(MYLIB).la
+-dar_static_LDFLAGS = -all-static @LTLIBINTL@
++dar_static_LDFLAGS = -all-static @LTLIBINTL@ @LTLIBICONV@
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -456,7 +456,7 @@
+ 	$(CXXLINK) $(dar_slave_OBJECTS) $(dar_slave_LDADD) $(LIBS)
+ dar_static$(EXEEXT): $(dar_static_OBJECTS) $(dar_static_DEPENDENCIES) $(EXTRA_dar_static_DEPENDENCIES) 
+ 	@rm -f dar_static$(EXEEXT)
+-	$(dar_static_LINK) $(dar_static_OBJECTS) $(dar_static_LDADD) $(LIBS)
++	$(dar_static_LINK) $(dar_static_OBJECTS) $(dar_static_LDADD) $(LIBS) -lelf
+ dar_xform$(EXEEXT): $(dar_xform_OBJECTS) $(dar_xform_DEPENDENCIES) $(EXTRA_dar_xform_DEPENDENCIES) 
+ 	@rm -f dar_xform$(EXEEXT)
+ 	$(CXXLINK) $(dar_xform_OBJECTS) $(dar_xform_LDADD) $(LIBS)

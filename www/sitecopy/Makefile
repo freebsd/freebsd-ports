@@ -15,9 +15,8 @@ COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up w/ local copy
 LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
-		LIBS="${LIBS}"
-LIBS=		-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-neon --with-libxml2
 USE_GNOME=	libxml2
 USES=		gmake

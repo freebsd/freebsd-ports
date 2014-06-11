@@ -30,10 +30,9 @@ USE_PYTHON_BUILD=2
 CONFIGURE_ARGS+=${f}="${${f}}"
 .endfor
 CONFIGURE_ARGS+=--enable-xkb
-CONFIGURE_ENV=	LIBS="`pkg-config --libs pthread-stubs`"
 
 NEEDED_CFLAGS=	-I${LOCALBASE}/include
-NEEDED_LIBS=	-L${LOCALBASE}/lib -lXau ${PTHREAD_STUBS_LIBS}
+NEEDED_LIBS=	-L${LOCALBASE}/lib -lXau `pkg-config --libs pthread-stubs`
 
 XDMCP_CFLAGS=	-I${LOCALBASE}/include
 XDMCP_LIBS=	-L${LOCALBASE}/lib -lXdmcp

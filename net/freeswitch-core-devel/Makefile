@@ -49,8 +49,8 @@ SUB_FILES=	pkg-install
 USE_RC_SUBR=	freeswitch
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INCLUDES+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
 		--datadir=${VARBASE}/db/${PORTNAME} \
@@ -70,11 +70,6 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-ogg-libraries=${LOCALBASE}/lib \
 		--with-ogg-includes=${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
-
-CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include
 
 FREESWITCH_USER?=	freeswitch
 FREESWITCH_GROUP?=	${FREESWITCH_USER}

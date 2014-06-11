@@ -16,9 +16,9 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 LICENSE=	GPLv3
 
 CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--datadir=${DATADIR}
 
 post-install:

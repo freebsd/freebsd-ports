@@ -14,8 +14,8 @@ RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 USES=		gettext
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/xtermcontrol man/man1/${PORTNAME}.1.gz
 

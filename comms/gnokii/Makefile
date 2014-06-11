@@ -19,19 +19,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 GROUPS=		${PORTNAME}
-USES=		gettext gmake libtool pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
-WANT_GNOME=	yes
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fPIC
 CONFIGURE_ARGS+=	--enable-security
-CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
-		XGETTEXT="${LOCALBASE}/bin/xgettext" \
-		LIBS="-L${WRKSRC}/common -L${LOCALBASE}/lib" \
-		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 SUB_FILES+=	pkg-message
 PORTDOCS=	*

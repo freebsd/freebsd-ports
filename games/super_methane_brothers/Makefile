@@ -20,11 +20,11 @@ LIB_DEPENDS=	libclan23Core.so:${PORTSDIR}/devel/clanlib \
 USES=		gmake pkgconfig
 USE_GCC=	yes
 USE_GL=		glu
-MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LDFLAGS}"
+MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LIBS}"
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 PORTDOCS=	*
 PLIST_FILES=	bin/methane

@@ -16,7 +16,7 @@ USES=		gettext iconv libtool gmake
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lltdl"
+LIBS+=		-L${LOCALBASE}/lib -lltdl
 USE_GNOME=	glib12 gtk12
 INSTALL_TARGET=	install-strip
 

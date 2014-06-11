@@ -42,9 +42,8 @@ THREADS_CONFIGURE_ENABLE=	threads
 #.if defined(WITH_MYSQL)
 #USE_MYSQL=	yes
 #CONFIGURE_ARGS+=--with-mysql=yes
-#CONFIGURE_ENV+=	LIBS="${LIBS}"
-#CFLAGS+=	-I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
-#LDFLAGS+=	-L${LOCALBASE}/lib/mysql
+#CPPFLAGS+=	-I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
+#LIBS+=		-L${LOCALBASE}/lib/mysql
 #PLIST_SUB+=	MYSQL=""
 #.else
 CONFIGURE_ARGS+=--with-mysql=no

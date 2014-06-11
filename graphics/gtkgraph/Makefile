@@ -15,8 +15,8 @@ USES=		gettext gmake perl5
 USE_GNOME=	imlib
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/gtkgraph \
 		share/locale/fr/LC_MESSAGES/gtkgraph.mo \

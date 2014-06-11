@@ -30,10 +30,10 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${VERSION_BASE}
 DATADIR=	${PREFIX}/share/${PORTNAME}-${VERSION_BASE}
 ETCDIR=		${PREFIX}/etc/${PORTNAME}/${VERSION_BASE}
 
-INCLUDES=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
-CONFIGURE_ARGS=	COMPILED_BY=${MAINTAINER} --prefix=${PREFIX} \
+CONFIGURE_ARGS=	COMPILED_BY=${MAINTAINER} \
 		--program-transform-name='s/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/' \
 		--disable-optimiz
 
@@ -42,7 +42,6 @@ CONFIGURE_ARGS=	COMPILED_BY=${MAINTAINER} --prefix=${PREFIX} \
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=		xpm sm ice x11
 USE_SDL=		sdl
-CONFIGURE_ARGS+=	--x-include=${LOCALBASE}/include --x-libraries=${LOCALBASE}/libs
 .else
 CONFIGURE_ARGS+=	--without-x
 .endif
@@ -60,7 +59,6 @@ CONFIGURE_ARGS+=--disable-io-restrictions
 BUILD_DEPENDS+=	png>=1.4:${PORTSDIR}/graphics/png
 .else
 LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
-LIBS+=		-lpng
 .endif
 .else
 CONFIGURE_ARGS+=--without-libpng
@@ -71,7 +69,6 @@ CONFIGURE_ARGS+=--without-libpng
 BUILD_DEPENDS+=	jpeg>=6b:${PORTSDIR}/graphics/jpeg
 .else
 LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-LIBS+=		-ljpeg
 .endif
 .else
 CONFIGURE_ARGS+=--without-libjpeg
@@ -82,7 +79,6 @@ CONFIGURE_ARGS+=--without-libjpeg
 BUILD_DEPENDS+=	tiff>=4:${PORTSDIR}/graphics/tiff
 .else
 LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
-LIBS+=		-ltiff
 .endif
 .else
 CONFIGURE_ARGS+=--without-libtiff
@@ -93,8 +89,7 @@ CONFIGURE_ARGS+=--without-libtiff
 BUILD_DEPENDS+=	OpenEXR>=1.6:${PORTSDIR}/graphics/OpenEXR
 .else
 LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
-LIBS+=		-lIlmImf
-INCLUDES+=	-I${LOCALBASE}/include/OpenEXR
+CPPFLAGS+=	-I${LOCALBASE}/include/OpenEXR
 .endif
 .else
 CONFIGURE_ARGS+=--without-openexr
@@ -107,8 +102,6 @@ CONFIGURE_ARGS+=NON_REDISTRIBUTABLE_BUILD=yes
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64: thread-local storage not supported
 .endif
-
-CONFIGURE_ARGS+=CXXFLAGS="${CXXFLAGS} ${INCLUDES}"
 
 MAN1=		${PORTNAME}${PKGNAMESUFFIX}.1
 

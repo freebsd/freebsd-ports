@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

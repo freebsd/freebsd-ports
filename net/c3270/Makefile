@@ -18,9 +18,8 @@ CONFLICTS=	x3270-*
 GNU_CONFIGURE=	yes
 USES=		iconv readline gmake
 USE_OPENSSL=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 MAN1=		c3270.1 \
 		x3270if.1 \

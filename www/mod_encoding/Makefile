@@ -25,9 +25,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${APACHEINCLUDEDIR} \
 		--with-apxs=${APXS}
 
-CONFIGURE_ENV=	LIBS='-L${LOCALBASE}/lib' \
-		PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"
+CONFIGURE_ENV=	PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"
 CPPFLAGS+=	-I${APACHEINCLUDEDIR} -I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 EXTRA_PATCHES=	${PATCHDIR}/apache22_patch
 

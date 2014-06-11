@@ -36,8 +36,8 @@ CONFIGURE_ARGS+=	--without-skey
 .endif
 
 .if exists(/usr/include/opie.h) && !defined(WITHOUT_OPIE)
-CFLAGS+=	-DOPIE
-CONFIGURE_ENV+=	LIBS="-lopie -lmd"
+CPPFLAGS+=	-DOPIE
+LIBS+=		-lopie -lmd
 .endif
 
 post-patch:

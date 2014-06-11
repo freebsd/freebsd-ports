@@ -16,7 +16,7 @@ LIB_DEPENDS=	libPropList.so:${PORTSDIR}/devel/libPropList \
 PLIST_FILES=	bin/gbuffy
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bindir)|DESTDIR)$$(&|' \

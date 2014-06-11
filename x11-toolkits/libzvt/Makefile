@@ -16,8 +16,8 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gtk20 libartlgpl2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \

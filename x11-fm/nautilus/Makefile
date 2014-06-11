@@ -26,9 +26,9 @@ USE_GNOME=	gnomeprefix intlhack gnomedesktop \
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib ${ICONV_LIB}" \
-		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
+CONFIGURE_ENV=	LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=	--enable-static --disable-packagekit --disable-update-mimedb
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 

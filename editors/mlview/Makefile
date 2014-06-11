@@ -15,8 +15,8 @@ USE_AUTOTOOLS=	autoconf libtool
 USES=		pathfix gmake iconv pkgconfig tar:bzip2
 USE_GNOME=	eel2 gnomeprefix gtksourceview libgnomeui
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib `pkg-config --libs gnome-vfs-2.0 libgnomeui-2.0` ${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0 libgnomeui-2.0`
+LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs gnome-vfs-2.0 libgnomeui-2.0` ${ICONV_LIB}
 
 GCONF_SCHEMAS=	mlview.schemas
 

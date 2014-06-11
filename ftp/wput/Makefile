@@ -16,8 +16,6 @@ PORTEXAMPLES=	USAGE.examples USAGE.resumehandling USAGE.urlhandling \
 		passwordfile wputrc
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${LDFLAGS}"
-CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	TLS NLS DOCS EXAMPLES

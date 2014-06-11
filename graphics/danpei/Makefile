@@ -22,8 +22,8 @@ IMAGEMAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 USES=		gettext
 USE_GNOME=	gtk12 gdkpixbuf
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-included-gettext
 
 PLIST_FILES=	bin/danpei \

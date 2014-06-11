@@ -52,6 +52,9 @@ post-patch:
 		 s|/usr/include|${LOCALBASE}/include|g ; \
 		 s|/usr/local/include|${LOCALBASE}/include|g ; \
 		 s|/usr/local/lib|${LOCALBASE}/lib|g' ${WRKSRC}/src/options.mk
+	@${ECHO_CMD} 'CFLAGS=${CFLAGS}' > ${WRKSRC}/src/overrides.mk
+	@${ECHO_CMD} 'LDFLAGS=${LDFLAGS}' >> ${WRKSRC}/src/overrides.mk
+	@${ECHO_CMD} 'LIBS=${LIBS}' >> ${WRKSRC}/src/overrides.mk
 
 do-install:
 .for _BIN in ${BINS}

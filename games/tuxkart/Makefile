@@ -21,9 +21,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 USES=		gmake
 USE_GL=		gl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lusbhid"
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lusbhid
 
 PORTDOCS=	*
 

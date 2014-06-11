@@ -114,9 +114,8 @@ APU_CONF_ARGS+=	--without-freetds
 APU_EXTRAS=	yes
 USE_MYSQL=	yes
 APU_CONF_ARGS+=	--with-mysql=${LOCALBASE}
-CONFIGURE_ENV+=	LIBS="${LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
-LDFLAGS+=	-L${LOCALBASE}/lib/mysql
+LIBS+=		-L${LOCALBASE}/lib/mysql
 .else
 APU_CONF_ARGS+=	--without-mysql
 .endif

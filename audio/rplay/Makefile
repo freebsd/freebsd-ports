@@ -14,8 +14,8 @@ LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 INFO=		RPLAY RPTP librplay rplayd
 

@@ -41,11 +41,11 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-httpd-conf=${PREFIX}/etc \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
 		--disable-statuswrl
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		PERL=${PERL}
+CONFIGURE_ENV=	PERL=${PERL}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
+CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}
+LIBS+=		-L${LOCALBASE}/lib
 
 MAKE_JOBS_UNSAFE=	yes
 

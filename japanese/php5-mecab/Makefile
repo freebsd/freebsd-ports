@@ -15,8 +15,6 @@ LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 USE_PHP=	yes
 USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
-CONFIGURE_ENV=	LIBS="${LIBS} ${PTHREAD_LIBS}"
-CFLAGS+=	${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
 

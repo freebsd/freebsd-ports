@@ -43,11 +43,8 @@ PLIST_SUB+=	X11="@comment "
 
 MAN1=		hugs.1
 
-.if ${MACHINE_ARCH:tl} == "amd64"
-CFLAGS+=	"-fPIC"
-.endif
-
 post-patch:
+	@${REINPLACE_CMD} 's/LIBS/LIBRARIES/' ${WRKSRC}/libraries/Makefile.in
 	@${REINPLACE_CMD} -e '/^install		:: install_notes/d ; \
 		/^install		:: install_guide/d' \
 		${WRKSRC}/src/MkInstal.in

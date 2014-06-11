@@ -23,8 +23,8 @@ USES=		gmake iconv motif perl5
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xaw
-CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
-CFLAGS+=	-I${WRKSRC}/common
+CPPFLAGS+=	-I${WRKSRC}/common
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_ENV=	verbose=yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	alpha amd64 i386

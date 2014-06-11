@@ -46,16 +46,13 @@ PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
 		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor.j
 
 CPPFLAGS+=	-DBSD_UNIX -DUSE_LOCALE
-LIBS=		-ltermlib -L${PREFIX}/lib
+LIBS+=		-ltermlib -L${LOCALBASE}/lib
 
 X11_USE=	XORG=x11
-X11_CPPFLAGS+=	-DUSE_X11 -I${LOCALBASE}/include
+X11_CPPFLAGS=	-DUSE_X11 -I${LOCALBASE}/include
+X11_LIBS=	-lX11 -L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-LIBS+=	-lX11 -L${LOCALBASE}/lib
-.endif
 
 .if ${PORT_OPTIONS:MDIRECT_CANNA} || \
     ${PORT_OPTIONS:MFREEWNN_CANNA} || \

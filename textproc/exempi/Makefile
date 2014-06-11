@@ -15,9 +15,8 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-unittest=no
-CONFIGURE_ENV=	LIBS="${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 USES=		pathfix iconv libtool:keepla
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

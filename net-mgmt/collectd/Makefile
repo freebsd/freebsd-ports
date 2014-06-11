@@ -61,7 +61,7 @@ USE_LDCONFIG=	yes
 CONFLICTS=	collectd-5.[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
@@ -249,7 +249,7 @@ USES+=		pkgconfig
 CONFIGURE_ARGS+=--enable-interface
 LIB_DEPENDS+=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 PLIST_SUB+=	INTERFACE=""
-CONFIGURE_ENV+=	LIBS="`pkg-config --libs libstatgrab`"
+LIBS+=		`pkg-config --libs libstatgrab`
 .else
 CONFIGURE_ARGS+=--disable-interface
 PLIST_SUB+=	INTERFACE="@comment "

@@ -34,10 +34,10 @@ BINS=		bonus/asmutils basename cal cat chmod chown chroot cmp cp \
 LINKS=		arch cpuspeed domainname false halt inflate kldstat kldunload \
 		mkfifo more poweroff regs rmdir size sln todos umount usleep
 
-LIBS=		libc.so.0 libcrypto.so.0 libm.so.0
+LIBRARIES=	libc.so.0 libcrypto.so.0 libm.so.0
 
 PLIST_FILES=	${BINS:S/^/bin\/asmutils\//:S/bonus\///} \
-		${LINKS:S/^/bin\/asmutils\//} ${LIBS:S/^/lib\/asmutils\//}
+		${LINKS:S/^/bin\/asmutils\//} ${LIBRARIES:S/^/lib\/asmutils\//}
 PLIST_DIRS=	bin/asmutils lib/asmutils
 PORTDOCS=	*
 
@@ -53,7 +53,7 @@ do-install:
 .for bin in ${BINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${bin} ${PREFIX}/bin/asmutils
 .endfor
-.for lib in ${LIBS}
+.for lib in ${LIBRARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/${lib} ${PREFIX}/lib/asmutils
 .endfor
 	(cd ${PREFIX}/bin/asmutils && \

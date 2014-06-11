@@ -15,9 +15,8 @@ BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
 GNU_CONFIGURE=	yes
 USES=		fam gmake
-CONFIGURE_ENV+=	LIBS="-largp"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -largp
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc --disable-nls
 
 INFO=		fileschanged

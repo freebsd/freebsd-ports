@@ -17,8 +17,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+LIBS+=		-L${LOCALBASE}/lib
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 
 NO_STAGE=	yes

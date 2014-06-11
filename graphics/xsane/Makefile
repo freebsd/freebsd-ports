@@ -39,12 +39,9 @@ GIMP_RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp2 gimp
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
-.endif
 
 .if ${PORT_OPTIONS:MGIMP}
 SUB_FILES+=	pkg-message

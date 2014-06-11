@@ -34,21 +34,10 @@ LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS+=	libcairomm-1.0.so:${PORTSDIR}/graphics/cairomm
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800025
-CFLAGS+=	-Dsqrtl=sqrt
-. if ${OSVERSION} < 800022
-CFLAGS+=	-Dtgammaf=tgamma
-. endif
-.endif
-
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-DBOOST_FILESYSTEM_VERSION=2,,g" ${WRKSRC}/configure
@@ -69,4 +58,4 @@ pre-configure:
 regression-test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

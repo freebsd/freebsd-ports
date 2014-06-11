@@ -28,8 +28,8 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 DOCSDIR=	${PREFIX}/share/doc/TekNap
 PORTDOCS=	*
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

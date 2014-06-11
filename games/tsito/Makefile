@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese chess (Xiangqi) program
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lcompat"
 CONFIGURE_ARGS=	--prefix="${PREFIX}"
+LIBS+=		-lcompat
 
 .include <bsd.port.mk>

@@ -36,11 +36,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" MKDIR_P="${MKDIR}"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS:S/"//g}|g ; \
-		 s|-pthread ||g' ${WRKSRC}/configure
+CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 
 post-build:
 .if ${PORT_OPTIONS:MOPENING_BOOK}

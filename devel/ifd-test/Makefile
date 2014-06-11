@@ -15,7 +15,7 @@ LIB_DEPENDS=    pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 USES=		gmake
 NOMAN=
 PLIST_FILES=	sbin/ifdtest
-MAKE_ENV=	LIBS="-L${PREFIX}/lib -lpcsclite"
+LIBS+=		-L${LOCALBASE}/lib -lpcsclite
 
 post-patch:
 	${REINPLACE_CMD} -e "s,LPSTR,LPTSTR,g; s,LPCSTR,LPCTSTR,g; \

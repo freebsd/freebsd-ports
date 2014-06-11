@@ -16,8 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 
 USES=	pkgconfig gettext iconv tar:bzip2
 USE_PYTHON=	yes
-CXXFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
+LIBS+=		-L${LOCALBASE}/lib -largp -lintl
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S/python//}
 CONFIGURE_ARGS+=--with-python-libdir=${PYTHON_LIBDIR} \

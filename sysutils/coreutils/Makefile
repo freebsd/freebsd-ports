@@ -23,8 +23,9 @@ GNU_CONFIGURE=	yes
 # bugs.freebsd.org/160060
 CONFIGURE_ARGS=	--program-prefix=g	\
 		--program-transform-name=s/stat/nustat/
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" FORCE_UNSAFE_CONFIGURE=1
-CPPFLAGS+=	"-I${LOCALBASE}/include"
+CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 USES=		gmake iconv perl5 charsetfix
 USE_PERL5=	build	# build - required for tests and man page generation

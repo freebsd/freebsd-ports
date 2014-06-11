@@ -22,8 +22,8 @@ ORACLE_HOME=	${LOCALBASE}/oracle8-client
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}" \
-		LIBS="`${CAT} ${ORACLE_HOME}/lib/sysliblist`"\
 		AUTOHEADER=true
+LIBS+=		`${CAT} ${ORACLE_HOME}/lib/sysliblist`
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 

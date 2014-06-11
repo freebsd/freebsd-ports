@@ -14,11 +14,11 @@ COMMENT=	Monsters, explosions, destruction game for X Window System
 
 USE_BZIP2=	yes
 USE_GL=		glu
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LDFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 
 CFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include \
 		-DLINUXVERSION -DLINUXAUDIO
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lm
+LIBS+=		-L${LOCALBASE}/lib -lX11 -lm
 
 OPTIONS_DEFINE=	DOCS
 

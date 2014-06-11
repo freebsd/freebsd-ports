@@ -16,12 +16,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:${PORTSDIR}/net-mgmt/flow-tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LDFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 
 PLIST_FILES=	bin/flow-extract man/man1/${PORTNAME}.1.gz
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	${LOCALBASE}/lib/libft.a -lz
+LIBS+=		${LOCALBASE}/lib/libft.a -lz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flow-extract ${STAGEDIR}${PREFIX}/bin

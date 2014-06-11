@@ -24,19 +24,16 @@ USE_PYTHON_BUILD=yes
 USES=		iconv gettext pkgconfig gmake perl5 tar:bzip2
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
-CONFIGURE_ENV=	LIBS="${WIRESHARK_LIBS}"
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE}
 USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
-LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-funit-at-a-time
+LIBS+=		-L${LOCALBASE}/lib
 
 DESKTOP_ENTRIES=	"Wireshark" "Network Protocol Analyzer" \
 			"${DATADIR}/hi48-app-wireshark.png" \
 			"wireshark" "System;Monitor;GTK;" true
-
-WIRESHARK_LIBS=
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
     reordercap
@@ -70,7 +67,6 @@ USE_XORG=		x11
 .if ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	WIRESHARK=bin/wireshark WIRESHARK_MAN=""
 USE_GNOME+=	gtk20
-WIRESHARK_LIBS+=${PTHREAD_LIBS}
 .else
 PLIST_SUB+=	WIRESHARK="@comment wireshark not built" \
 		WIRESHARK_MAN="@comment wireshark not built "
@@ -114,7 +110,6 @@ PLIST_SUB+=	LUA="@comment "
 .if ${PORT_OPTIONS:MRTP} && !defined(LITE)
 LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
 CONFIGURE_ARGS+=--with-portaudio=${LOCALBASE}
-WIRESHARK_LIBS+=${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=--without-portaudio
 .endif

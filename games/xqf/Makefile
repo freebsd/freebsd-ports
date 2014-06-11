@@ -16,10 +16,9 @@ USE_GNOME=	intlhack
 USES=		gettext gmake pkgconfig
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lX11" # uses XGetWindowAttributes but doesn't link with X11
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 PORTDATA=	*
 PORTDOCS=	*

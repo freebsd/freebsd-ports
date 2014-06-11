@@ -50,8 +50,17 @@
 -fi
 -
 -fi
-+CPPFLAGS="`libnet-config --cflags`"
-+LDFLAGS="`libnet-config --libs`"
++CPPFLAGS="${CPPFLAGS} `libnet-config --cflags`"
++LDFLAGS="${LDFLAGS} `libnet-config --libs`"
  
  if test "$filechk" = "no"; then { { echo "$as_me:$LINENO: error:
+ 
+@@ -3046,7 +3002,7 @@
+ 	CFLAGS="-Wall -O2"
+ 	;;
+ *bsd*)
+-	CFLAGS="-Wall -O2 -pthread"
++	CFLAGS="${CFLAGS} -Wall -pthread"
+ 	;;
+ esac
  

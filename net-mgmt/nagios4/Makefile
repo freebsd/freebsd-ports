@@ -39,11 +39,11 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
 		--disable-statuswrl \
 		--enable-event-broker
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		PERL=${PERL}
+CONFIGURE_ENV=	PERL=${PERL}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
+CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}
+LIBS+=		-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install install-commandmode install-config
 PLIST_SUB=	NAGIOSDIR=${NAGIOSDIR} \

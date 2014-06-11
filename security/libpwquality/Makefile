@@ -18,9 +18,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--disable-pam
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-# configure needs to be fixed
-CONFIGURE_ENV+=	LIBS="-lintl"
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON

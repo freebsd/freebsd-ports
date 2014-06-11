@@ -65,12 +65,8 @@ NLS_DESC=	Enable Gettext support for the locale module
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-LDFLAGS+=	-L${LOCALBASE}/lib
-# We use CPPFLAGS over CFLAGS here due to -I ordering causing things like
-# elementtree and pyexpat to break with python27, or to silence preprocessor
-# complaints with python33
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LIBS="-lintl"
+LIBS+=		-L${LOCALBASE}/lib -lintl
 .else
 CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif

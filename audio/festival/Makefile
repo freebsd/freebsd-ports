@@ -37,11 +37,9 @@ CONFIGURE_WRKSRC=	${WRKDIR}/festival
 USES=		gmake
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
-MAKE_ENV+=	GCC="${CC}" \
-		GXX="${CXX}" \
-		EST_HOME=${SPEECHTOOLS} \
-		EGCS_CC="${CC}" \
-		EGCS_CXX="${CXX}"
+MAKE_ARGS+=	CC="${CC}" GCC="${CC}" \
+		CXX="${CXX}" GXX="${CXX}" \
+		EST_HOME=${SPEECHTOOLS}
 WRKSRC=		${WRKDIR}
 
 SPT_PATCHES=	base__class_EST__TVector.cc	\
@@ -60,14 +58,13 @@ SPT_PATCHES=	base__class_EST__TVector.cc	\
 
 do-build:
 .for d in speech_tools festival
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/$d ${MAKE_FLAGS} Makefile \
-		${MAKE_ARGS}
+	${MAKE_CMD} -C ${WRKDIR}/$d ${MAKE_FLAGS} Makefile ${MAKE_ARGS}
 .endfor
 
 # Can not make test in `festival', because the voices may not be installed
 # XXX: this should fail, if the verdict is not "CORRECT"...
 post-build test:
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/speech_tools test
+	${MAKE_CMD} -C ${WRKDIR}/speech_tools test
 
 # The below is needed, because Debian's patches expect a different
 # directory-name
@@ -96,8 +93,8 @@ CONFIGURE_ARGS+=--disable-$m
 do-configure:
 .for d in speech_tools festival
 	@cd ${WRKDIR}/$d && \
-		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}; then \
 		${ECHO_CMD} "===>  configuration script for $d failed."; \
 		${FALSE}; \
@@ -105,8 +102,9 @@ do-configure:
 	# This step helps non-i386 systems and is harmless on i386
 	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH}_unknown.mak
 .endfor
-	${REINPLACE_CMD} -E -e 's,^(CC|CXX) *=,\1 ?=,' \
-	    -e 's,^(CFLAGS|CXXFLAGS) *=,\1 +=,' \
+	${REINPLACE_CMD} \
+	    -e '/^CFLAGS *=/s|$$| ${CFLAGS}|' \
+	    -e '/^CXXFLAGS *=/s|$$| ${CXXFLAGS}|' \
 	    -e 's,^OPTIMI,#OPTIMI,' \
 	    ${WRKSRC}/speech_tools/config/compilers/gcc*.mak
 	# This step helps to use a compiler, the vendor has not seen before:

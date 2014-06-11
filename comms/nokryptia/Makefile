@@ -14,8 +14,8 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/nokryptia man/man1/${PORTNAME}.1.gz
 

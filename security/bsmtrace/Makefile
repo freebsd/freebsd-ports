@@ -21,8 +21,9 @@ OPTIONS_DEFINE=	PCRE EXAMPLES
 
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-MAKE_ENV+=	PCRE=1 LIBS="-lpcre -L${LOCALBASE}/lib"
+MAKE_ENV+=	PCRE=1 
 CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lpcre
 .endif
 
 pre-build:

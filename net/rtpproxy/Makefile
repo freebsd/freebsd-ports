@@ -13,9 +13,8 @@ COMMENT=	High-performance RTP proxy server for the SIP Express Router (SER)
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS=-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-#CONFIGURE_ARGS=	--mandir=${LOCALBASE}/man
+LIBS+=		-L${LOCALBASE}/lib
 MAN8=		rtpproxy.8
 
 USERS=		${PORTNAME}

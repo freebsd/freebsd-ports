@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USES=		gettext tar:bzip2
-CONFIGURE_ENV=	LIBS='-L${LOCALBASE}/lib'
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lintl
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 DOCS=		NEWS README
 EXAMPLES=	aspell.sl

@@ -1,6 +1,6 @@
 --- configure.orig	Thu Feb 13 11:01:47 2003
 +++ configure	Tue Apr 13 20:58:41 2004
-@@ -5845,9 +5845,9 @@
+@@ -6204,9 +6204,9 @@
      SUBDIR_POPT=""
  else
      SUBDIR_POPT="lib_popt"
@@ -13,3 +13,15 @@
                   LIBS_EXTRA="$LIBS_EXTRA -lpopt"
  fi
  echo "$as_me:$LINENO: result: $with_popt" >&5
+@@ -6904,8 +6904,9 @@
+ echo "$as_me:$LINENO: result: $with_dmalloc" >&5
+ echo "${ECHO_T}$with_dmalloc" >&6
+ 
+-
+-LIBS="$LIBS_EXTRA $LIBS"
++LIBS_EXTRA="$LIBS_EXTRA $LIBS"
++unset LIBS
++LIBS="$LIBS_EXTRA"
+ 
+ enable_shared=no
+ export enable_shared

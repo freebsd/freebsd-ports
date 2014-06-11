@@ -29,9 +29,7 @@ USE_LDCONFIG=	yes
 USES=		compiler
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-lexecinfo
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=LIBS="${LIBS}"
+LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 .include <bsd.port.pre.mk>
 

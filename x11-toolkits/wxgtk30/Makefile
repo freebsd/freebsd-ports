@@ -36,10 +36,10 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--enable-graphics_ctx \
 		--enable-compat26 \
 		--enable-compat28
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		X11BASE="${LOCALBASE}" \
+CONFIGURE_ENV=	X11BASE="${LOCALBASE}" \
 		ac_cv_header_sys_inotify_h=no
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	GSTREAMER MSPACK NLS
 OPTIONS_DEFAULT=GSTREAMER MSPACK

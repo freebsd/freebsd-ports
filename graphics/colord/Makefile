@@ -34,9 +34,8 @@ CONFIGURE_ARGS=	--disable-gudev \
 # takes ages we don't want to wait.
 CONFIGURE_ARGS+=--disable-print-profiles
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
-		USB_LIBS="-L/usr/lib -lusb"
+LIBS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV=	USB_CFLAGS=" " USB_LIBS="-lusb"
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml

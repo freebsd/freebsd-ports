@@ -28,6 +28,9 @@ USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtool
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS+=	-a -c
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
+
 # Really disable building static libraries; the package does not use
 # its own libtool, and we have to tell it to stop.
 # Static libraries are not very useful in this package.
@@ -44,12 +47,6 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 #	PSM_CUPS	"Build psm_cups.so for printing to CUPS" Off
 
 .include <bsd.port.options.mk>
-
-# NOTE: hard dependency on gettext() in distfiles.
-CONFIGURE_ARGS+=\
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-lintl"
 
 # NOTE: This has only been tested with www/apache20, with integrated APR.
 .if defined(WITH_MOD_IPP)

@@ -17,9 +17,8 @@ GNU_CONFIGURE=	yes
 USES=		libtool:keepla
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LIBS="${PTHEAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include 
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--disable-sdltest \
 		--enable-shared \
 		--disable-examples

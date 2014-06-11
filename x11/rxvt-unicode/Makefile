@@ -21,7 +21,8 @@ USES=			pkgconfig shebangfix tar:bzip2
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
-CONFIGURE_ENV=		LIBS="-lstdc++ -lutil" TIC=${LOCALBASE}/bin/tic
+LIBS+=			-lutil
+CONFIGURE_ENV=		TIC=${LOCALBASE}/bin/tic
 CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
 			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
 

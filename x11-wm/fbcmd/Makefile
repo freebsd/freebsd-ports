@@ -14,13 +14,16 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	first
-CFLAGS+=	"-I${LOCALBASE}/include"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" LFLAGS="${LDFLAGS}"
 
 USE_XORG=	x11 xmu
 PLIST_FILES=	bin/fbcmd
 
-post-extract:
-	@${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|g" ${WRKSRC}/Makefile
+post-patch:
+	@${REINPLACE_CMD} 's|?=|=|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fbcmd ${STAGEDIR}${PREFIX}/bin

@@ -17,8 +17,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LIBS=-lpng
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lpng
 
 USES=		pkgconfig
 

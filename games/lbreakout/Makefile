@@ -13,7 +13,7 @@ COMMENT=	Nice clone of classical Breakout game
 USE_SDL=	sdl
 USES=		gmake
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lcompat"
+LIBS+=		-lcompat
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

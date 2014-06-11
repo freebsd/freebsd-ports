@@ -29,9 +29,8 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-configdir=${PREFIX}/share/xscreensaver/config \
 		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
 		--with-xf86gamma-ext --with-randr-ext --enable-locking
-CONFIGURE_ENV=	LIBS="-lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	PAM KEYRING ALL_FORTUNES SETUID_HACKS
 OPTIONS_DEFAULT=	PAM KEYRING

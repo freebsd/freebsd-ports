@@ -23,9 +23,8 @@ ZIP_CONFIGURE_OFF=	--disable-zip
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-avifile
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USE_EFL=	imlib2
 PLIST_FILES+=	bin/wxzphoto
 USES=		perl5 gmake

@@ -1,0 +1,20 @@
+--- configure.orig
++++ configure
+@@ -6453,7 +6453,7 @@
+         char *outptr = buf;
+         size_t outbytesleft = sizeof (buf);
+         size_t res = iconv (cd_utf8_to_88591,
+-                            (char **) &inptr, &inbytesleft,
++                            &inptr, &inbytesleft,
+                             &outptr, &outbytesleft);
+         if (res == 0)
+           return 1;
+@@ -6472,7 +6472,7 @@
+         char *outptr = buf;
+         size_t outbytesleft = sizeof (buf);
+         size_t res = iconv (cd_ascii_to_88591,
+-                            (char **) &inptr, &inbytesleft,
++                            &inptr, &inbytesleft,
+                             &outptr, &outbytesleft);
+         if (res == 0)
+           return 1;

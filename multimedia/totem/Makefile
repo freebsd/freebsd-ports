@@ -35,9 +35,8 @@ USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="-lXrandr" \
-		BROWSER_PLUGIN_DIR="${WEBPLUGIN_DIR}"
+LIBS+=		-L${LOCALBASE}/lib -lXrandr
+CONFIGURE_ENV=	BROWSER_PLUGIN_DIR="${WEBPLUGIN_DIR}"
 CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \

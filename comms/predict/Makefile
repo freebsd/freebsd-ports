@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 INSTALL_TARGET=	install install.man
 
-MAKE_ENV=	LIBS="${PTHREAD_LIBS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/predict.h > ${WRKSRC}/predict.h

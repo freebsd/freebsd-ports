@@ -31,9 +31,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \
 		--with-omfdirs=${PREFIX}/share/omf \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl" \
-		LOCALBASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
 PLIST_SUB=	LOCALBASE=${LOCALBASE}
 
 post-patch:

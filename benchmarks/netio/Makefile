@@ -15,23 +15,26 @@ WRKSRC=		${WRKDIR}
 USES=		gmake zip
 PLIST_FILES=	bin/netio
 
-CFLAGS+=	-DUNIX ${PTHREAD_CFLAGS}
-MAKE_ENV+=	OUT="-o" LIBS=${PTHREAD_LIBS}
-.if defined(WITH_IPV6)
-PLIST_FILES+=	bin/netio6
-.endif
+CFLAGS+=	-DUNIX
+LIBS+=		-pthread
+MAKE_ENV+=	OUT=-o
+
+OPTIONS_DEFINE=	IPV6
+IPV6_PLIST_FILES=	bin/netio6
+
+.include <bsd.port.options.mk>
 
 do-build:
-	cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} O=.o CFLAGS="${CFLAGS}" ${GMAKE} all
-.if defined(WITH_IPV6)
-	cd ${WRKSRC}; \
-	${MAKE_ENV} O=.6o X=6 CFLAGS="${CFLAGS} -DUSE_IPV6" ${GMAKE} all
+	@(cd ${WRKSRC} && \
+	${SETENV} ${MAKE_ENV} O=.o CFLAGS="${CFLAGS}" ${MAKE_CMD} all)
+.if ${PORT_OPTIONS:MIPV6}
+	@(cd ${WRKSRC} && \
+	${MAKE_ENV} O=.6o X=6 CFLAGS="${CFLAGS} -DUSE_IPV6" ${MAKE_CMD} all)
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netio ${STAGEDIR}${PREFIX}/bin
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	${INSTALL_PROGRAM} ${WRKSRC}/netio6 ${STAGEDIR}${PREFIX}/bin
 .endif
 

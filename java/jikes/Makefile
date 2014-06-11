@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 USES=		iconv gmake
 USE_BZIP2=	yes
 
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

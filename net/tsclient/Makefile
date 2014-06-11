@@ -15,10 +15,9 @@ RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 USE_GNOME=	gtk20
 USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CONFIGURE_ARGS=	--disable-gnome
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
 
 PORTDOCS=	COPYING NEWS README
 

@@ -19,9 +19,6 @@ USES=		gmake libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-isqlxx
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
-CXXFLAGS+=	${PTHREAD_CFLAGS}
-CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALL_TARGET=	install-strip
 
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC

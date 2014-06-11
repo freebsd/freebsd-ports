@@ -13,9 +13,8 @@ COMMENT=	Abstract puzzle game
 
 USES=		tar:bzip2 gettext
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 PORTDOCS=	*
 PORTDATA=	*

@@ -24,8 +24,8 @@ RUN_DEPENDS=	${DATADIR}/data1/default.cfg:${PORTSDIR}/games/alienarena-data
 USES=		dos2unix gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKDIR}/${PORTNAME}-7.66/
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-xf86vm \
 		--with-xf86dga
 

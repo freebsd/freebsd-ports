@@ -20,8 +20,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gettext perl5 gmake libtool
 USE_AUTOTOOLS=	libtoolize
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"
-CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fpermissive
+CPPFLAGS+=	-I${LOCALBASE}/include -fpermissive
+LIBS+=		-L${LOCALBASE}/lib -lintl -lmcrypt
 
 post-patch:
 	${REINPLACE_CMD} -e 's,SHELL) libtool,SHELL) ${LIBTOOL} --tag=CXX,' \

@@ -19,9 +19,9 @@ USE_GL=		glut
 USES=		gmake perl5 tcl:84
 USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf213
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${TCL_INCLUDEDIR}
+LIBS+=		-L${LOCALBASE}/lib
 # for plib (sound):
 CONFIGURE_ARGS+=	--with-plib=${LOCALBASE}/plib
 

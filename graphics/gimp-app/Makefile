@@ -51,10 +51,9 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--with-desktop-dir=${PREFIX}/share \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--enable-default-binary
-CONFIGURE_ENV=	GIMP_THREAD_LIBS=${PTHREAD_LIBS} \
-		LIBS=${LIBS}
+CONFIGURE_ENV=	GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .if !defined(GIMP_SLAVE)
 
