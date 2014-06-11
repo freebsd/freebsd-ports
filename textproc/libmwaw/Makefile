@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmwaw
-PORTVERSION=	0.1.11
-PORTREVISION=	2
+PORTVERSION=	0.2.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,12 +11,16 @@ COMMENT=	Import library for some old mac text documents
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
+LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
+		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg
 
 OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
+
+EXTRA_PATCHES+=	${FILESDIR}/0001-std-isfinite-is-C-11.patch:-p1 \
+		${FILESDIR}/0001-use-correct-type.patch:-p1
 
 GNU_CONFIGURE=	yes
 USES=		compiler:features libtool:keepla pathfix pkgconfig tar:xz
