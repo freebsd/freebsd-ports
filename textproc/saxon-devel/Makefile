@@ -36,8 +36,6 @@ PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon bin/saxon-xquery
 PORTDOCS=	*
 .endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJDOM}
@@ -60,28 +58,28 @@ SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}" JAVA_VERSION="${JAVA_VERS
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}/..."
-	@${MKDIR} ${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 .for file in ${JARFILES}
 	@${ECHO_MSG} -n " ${file}"
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${JAVAJARDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${JAVAJARDIR}/
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}/..."
 	@cd ${WRKSRC}/samples/ \
-	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
 	@cd ${WRKSRC}/doc/ \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing scripts in ${PREFIX}/bin..."
 .for scriptfile in saxon saxon-xquery
 	@${ECHO_MSG} -n " ${scriptfile}"
-	@${INSTALL_SCRIPT} ${WRKSRC}/saxon.sh ${PREFIX}/bin/${scriptfile}
+	@${INSTALL_SCRIPT} ${WRKSRC}/saxon.sh ${STAGEDIR}${PREFIX}/bin/${scriptfile}
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 
@@ -93,4 +91,4 @@ post-install:
 		${SED} -ne 's,^${WRKSRC}/samples,@dirrm ${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
