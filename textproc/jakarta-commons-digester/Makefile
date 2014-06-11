@@ -40,7 +40,6 @@ COMMONS_BEANUTILS_API=	${LOCALBASE}/share/doc/commons-beanutils
 COMMONS_COLLECTIONS_API=${LOCALBASE}/share/doc/commons-collections/apidocs
 COMMONS_LOGGING_API=	${LOCALBASE}/share/doc/commons-logging/api
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 JAR_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils \
@@ -66,14 +65,14 @@ do-configure:
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${JAVAJARDIR}/${JARFILE}
+	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${WRKSRC}/dist/docs \
-	  && ${FIND} api -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} api -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/dist/,} ${DOCSDIR}/
+	  && ${FIND} api -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} api -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/dist/,} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
