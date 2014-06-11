@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	29.0
-PORTREVISION=	1
+DISTVERSION=	30.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
+		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source/
 DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	nspr>=4.10.3:${PORTSDIR}/devel/nspr \
 		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
 		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
-		sqlite3>=3.8.2:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.8.3.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		zip:${PORTSDIR}/archivers/zip \
@@ -40,13 +39,12 @@ USE_MOZILLA=	-cairo
 MOZILLA_NAME=	Firefox
 
 WANT_GNOME=	yes
-USE_QT4=	# empty
+USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GL=		gl
-USES=		dos2unix
+USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 NO_MOZPKGINSTALL=yes
 
@@ -56,7 +54,6 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
@@ -102,14 +99,9 @@ pre-configure:
 	(cd ${WRKSRC} && ${AUTOCONF})
 	(cd ${WRKSRC}/js/src/ && ${AUTOCONF})
 
-port-pre-install:
-	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
-	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLISTF}
-
 post-install:
-	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications/
-	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${LN} -sf ${FIREFOX_ICON_SRC} ${STAGEDIR}${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 
 .include <bsd.port.post.mk>

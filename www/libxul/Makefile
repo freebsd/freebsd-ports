@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	24.5.0
-PORTREVISION=	1
+DISTVERSION=	24.6.0
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		https://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/${DISTVERSION}esr-candidates/build1/source/
@@ -39,7 +38,7 @@ WANT_PERL=	yes
 ALL_TARGET=	default
 GNU_CONFIGURE=	yes
 USE_GL=		gl
-USES=		dos2unix tar:bzip2
+USES=		dos2unix pathfix tar:bzip2
 DOS2UNIX_FILES=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 MAKE_ENV=	SKIP_GRE_REGISTRATION=1 mozappdir=${PREFIX}/lib/${MOZILLA}
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
@@ -51,12 +50,11 @@ USE_GECKO=	gecko
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 MOZILLA_EXEC_NAME=xulrunner
 USE_MOZILLA=	# empty
-MOZILLA_PLIST_DIRS=	bin include lib share/idl
+MOZILLA_PLIST_DIRS=	bin include lib share/idl libdata
 PLIST_DIRSTRY=	share/idl
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 			mozilla-plugin
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 

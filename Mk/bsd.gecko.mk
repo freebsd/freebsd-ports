@@ -36,10 +36,6 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # 						dependencies. Experimental deps use '+' like
 # 						'USE_MOZILLA= +speex +theora'.
 #
-# GECKO_PLIST_PRE_FILES	Manual add files in the plist if it needs.
-#
-# GECKO_PLIST_PRE_DIRS  Manual directories in the plist if it needs.
-#
 # MOZILLA_PLIST_DIRS	List of directories to descend into when installing
 # 						and creating the plist
 #
@@ -77,11 +73,6 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # PORT_MOZCONFIG		Defaults to ${FILESDIR}/mozconfig.in, but can be
 # 						set to a generic mozconfig included with the port
 #
-# NOGECKO_INSTALL		Don't install the built gecko (most likely for
-# 						testing)
-#
-# NOGECKO_PLIST			Don't create a dynamically-generated playlist
-#
 # NOMOZCONFIG			Don't drop a customized .mozconfig into the build
 # 						directory. Options will have to be specified in
 # 						CONFIGURE_ARGS instead
@@ -94,18 +85,13 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USE_GNOME+=	desktopfileutils
-USES+=		compiler:c++11-lib gmake iconv perl5 pkgconfig
+USES+=		compiler:c++11-lib gmake iconv perl5 pkgconfig desktop-file-utils
 USE_PERL5=	build
 USE_XORG=	xext xrender xt
-
-NO_STAGE=	yes
 
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 WRKSRC?=	${WRKDIR}/mozilla
-FAKEDIR?=	${WRKDIR}/fake
-PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
@@ -129,7 +115,7 @@ MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
 				LIBS="${LIBS}" PERL="${PERL}"
-MOZ_OPTIONS+=	--prefix="${FAKEDIR}"
+MOZ_OPTIONS+=	--prefix="${PREFIX}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
@@ -299,6 +285,9 @@ USE_QT4+=	qmake_build moc_build rcc_build gui network opengl
 MOZ_EXPORT+=	HOST_QMAKE="${QMAKE}" HOST_MOC="${MOC}" HOST_RCC="${RCC}"
 .elif ${MOZ_TOOLKIT:Mcairo-gtk3}
 USE_GNOME+=	gtk30
+. if ${MOZILLA_VER:R:R} >= 32
+USE_GNOME+= gtk20 # bug 624422
+. endif
 .else # gtk2, cairo-gtk2
 USE_GNOME+=	gtk20
 .endif
@@ -321,7 +310,7 @@ MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
-. if ${MOZILLA_VER:R:R} >= 30 || exists(${FILESDIR}/patch-bug806917)
+. if ${MOZILLA_VER:R:R} >= 30 || ${MOZILLA} == "seamonkey"
 USE_GSTREAMER1?=good libav
 MOZ_OPTIONS+=	--enable-gstreamer=1.0
 . else
@@ -436,7 +425,6 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|@LDFLAGS@|${LDFLAGS}|g'		\
 		-e 's|@LIBS@|${LIBS}|g'			\
 		-e 's|@LOCALBASE@|${LOCALBASE}|g'	\
-		-e 's|@FAKEDIR@|${FAKEDIR}|g'		\
 		-e 's|@PERL@|${PERL5}|g'			\
 		-e 's|@MOZDIR@|${PREFIX}/lib/${MOZILLA}|g'	\
 		-e 's|%%PREFIX%%|${PREFIX}|g'		\
@@ -444,7 +432,6 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|%%LDFLAGS%%|${LDFLAGS}|g'		\
 		-e 's|%%LIBS%%|${LIBS}|g'		\
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g'	\
-		-e 's|%%FAKEDIR%%|${FAKEDIR}|g'		\
 		-e 's|%%PERL%%|${PERL5}|g'		\
 		-e 's|%%MOZILLA%%|${MOZILLA}|g'		\
 		-e 's|%%MOZILLA_BIN%%|${MOZILLA_BIN}|g'	\
@@ -602,102 +589,35 @@ post-configure: gecko-post-configure
 gecko-post-configure:
 	@${ECHO_CMD} "#define JNIIMPORT" >> ${MOZSRC}/mozilla-config.h
 
-pre-install: gecko-moz-pis-pre-install gecko-pre-install port-pre-install gecko-create-plist
+pre-install: gecko-moz-pis-pre-install
+post-install-script: gecko-create-plist
 
-.if !target(port-pre-install)
-port-pre-install:
+gecko-create-plist: port-post-install
+
+.if !target(port-post-install)
+port-post-install:
 		@${DO_NADA}
 .endif
 
-gecko-pre-install:
-.if !defined(NOGECKO_PLIST)
-	@${RM} -rf ${FAKEDIR} ${PLIST} ${PLISTD} ${PLISTF}
-	@${TOUCH} -f ${PLIST} ${PLISTD} ${PLISTF}
-	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} prefix=${FAKEDIR} ${INSTALL_TARGET}
-.if defined(MOZILLA_SUFX) && ${MOZILLA_SUFX}!="none"
-	${MV} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME:S/${MOZILLA_SUFX}//} ${FAKEDIR}/bin/${MOZILLA}
-.if exists(${FAKEDIR}/bin/${MOZILLA_EXEC_NAME:S/${MOZILLA_SUFX}//}-config)
-	${MV} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME:S/${MOZILLA_SUFX}//}-config ${FAKEDIR}/bin/${MOZILLA}-config
-.endif
-.for pc in ${MOZ_PKGCONFIG_FILES:S|${MOZILLA_SUFX}||}
-	${SED} -e 's|Requires: ${MOZILLA:S/${MOZILLA_SUFX}//}|Requires: ${MOZILLA}|' \
-	${FAKEDIR}/lib/pkgconfig/${pc}.pc > ${FAKEDIR}/lib/pkgconfig/${pc:S/${MOZILLA:S,${MOZILLA_SUFX},,}/${MOZILLA}/}.pc
-.endfor
-	@${REINPLACE_CMD} -e 's|${MOZILLA_BIN}|${MOZILLA:S/${MOZILLA_SUFX}//}|; \
-		s|$${progbase}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}-bin|' \
-		-e 's|${FAKEDIR}|${PREFIX}|g' \
-		-i '' $$(${REALPATH} ${FAKEDIR}/bin/${MOZILLA}*)
-.else
-	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
-		-i '' $$(${REALPATH} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*)
-.endif
-.endif
-
 gecko-create-plist:
-.if !defined(NOGECKO_PLIST)
 # Create the plist
-.for f in ${GECKO_PLIST_PRE_FILES}
-	${ECHO_CMD} ${f} >> ${PLISTF}
-.endfor
-.for f in ${GECKO_PLIST_PRE_DIRS}
-	${ECHO_CMD} "@dirrm ${f}" >> ${PLISTD}
-.endfor
-	${MKDIR} ${FAKEDIR}/libdata
-	${MV} -f ${FAKEDIR}/lib/pkgconfig ${FAKEDIR}/libdata/ || ${TRUE}
-	${RM} -f ${FAKEDIR}/lib/pkgconfig
+	${RM} -f ${PLISTF} ${PLISTD}
 .for dir in ${MOZILLA_PLIST_DIRS}
-	@cd ${FAKEDIR}/${dir} && ${FIND} -H -s * ! -type d | \
+	@cd ${STAGEDIR}${PREFIX}/${dir} && ${FIND} -H -s * ! -type d | \
 		${SED} -e 's|^|${dir}/|' >> ${PLISTF} && \
 		${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${dir}/|' >> ${PLISTD}
 .endfor
-.for pcfile in ${MOZ_PKGCONFIG_FILES}
-	${ECHO_CMD} "libdata/pkgconfig/${pcfile}.pc" >> ${PLISTF}
-	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
-		-e 's|${MOZILLA}-nspr = ${PORTVERSION}|nspr|' \
-		${FAKEDIR}/libdata/pkgconfig/${pcfile}.pc
-.endfor
-	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
-	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
-	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
-.endif # !defined(NOGECKO_PLIST)
-
-do-install: gecko-do-install
-
-gecko-do-install:
-.if !defined(NOGECKO_INSTALL)
-.for dir in ${MOZILLA_PLIST_DIRS}
-.if !exists(${PREFIX}/${dir})
-	${MKDIR} ${PREFIX}/${dir}
-.endif
-	${TAR} cf - -C${FAKEDIR}/${dir} -s'|${FAKEDIR}|${PREFIX}|s' . | \
-		${TAR} xof - -C${PREFIX}/${dir}
-.endfor
-.for pcfile in ${MOZ_PKGCONFIG_FILES}
-	${INSTALL_DATA} ${FAKEDIR}/libdata/pkgconfig/${pcfile}.pc \
-		${PREFIX}/libdata/pkgconfig/${pcfile}.pc
-.endfor
-.endif # !defined(NOGECKO_INSTALL)
+	${CAT} ${PLISTF} | ${SORT} >> ${TMPPLIST}
+	${CAT} ${PLISTD} | ${SORT} -r >> ${TMPPLIST}
 
 gecko-moz-pis-pre-install:
 .if defined(MOZ_PIS_SCRIPTS)
-	${MKDIR} ${FAKEDIR}/${MOZ_PIS_DIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${MOZ_PIS_DIR}
 .for moz in ${MOZ_PIS_SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKDIR}/${moz} ${FAKEDIR}/${MOZ_PIS_DIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${moz} ${STAGEDIR}${PREFIX}/${MOZ_PIS_DIR}
 .endfor
 .endif
-
-post-install: gecko-post-install
-
-gecko-post-install:
-.if !defined(PACKAGE_BUILDING) && !defined(NO_MOZPKGINSTALL)
-	@if [ -e ${PKGINSTALL} ] ; then \
-		${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; \
-	fi
-.endif
-	@-update-desktop-database
 
 .endif
 .endif
