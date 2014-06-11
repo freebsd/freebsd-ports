@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPOP is a small and fast POP3 client
 
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn

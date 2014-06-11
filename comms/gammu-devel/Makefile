@@ -8,7 +8,7 @@ MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities - Development version
 
 LICENSE=	GPLv2

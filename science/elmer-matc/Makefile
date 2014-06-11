@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MatC language library used by ELMER FEM package
 
 CXXFLAGS+=	-Wno-deprecated

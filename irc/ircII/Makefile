@@ -6,7 +6,7 @@ PORTVERSION=	20111115
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
 
 LICENSE=	BSD3CLAUSE

@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/qalculate/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (backend library)
 
 LIB_DEPENDS=	cln:${PORTSDIR}/math/cln

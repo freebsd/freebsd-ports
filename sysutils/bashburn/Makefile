@@ -9,7 +9,7 @@ DISTNAME=	'index.php?s=file_download&id=25'
 EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD burning bash script
 
 LICENSE=	GPLv2

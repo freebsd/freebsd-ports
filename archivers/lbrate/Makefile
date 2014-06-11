@@ -8,7 +8,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract/decompress CP/M LBR archives
 
 LICENSE=	GPLv2

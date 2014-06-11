@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/phpBB%203/phpBB%20${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
 CONFLICTS=	phpbb-tw-[0-9]* phpbb-[0-9]* phpbb3-[0-9]

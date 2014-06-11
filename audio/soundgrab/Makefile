@@ -8,7 +8,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MASTER_SITE_SUBDIR=	apps/sound/editors
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively select and save sections of an audio file
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \

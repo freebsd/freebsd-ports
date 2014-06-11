@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-bg-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image files for background of Eterm
 
 NO_WRKSUBDIR=	yes

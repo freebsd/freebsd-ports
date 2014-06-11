@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 DISTNAME=	funktrackergold-1.5-2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses MOD/FNK music tracker
 
 OPTIONS_DEFINE=	DOCS

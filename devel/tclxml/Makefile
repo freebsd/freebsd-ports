@@ -6,7 +6,7 @@ PORTVERSION=	3.3
 CATEGORIES=	devel tcl
 MASTER_SITES=	LOCAL/bf SF/tclxml/TclXML/${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for parsing XML documents using Tcl
 
 LIB_DEPENDS=	xslt:${PORTSDIR}/textproc/libxslt

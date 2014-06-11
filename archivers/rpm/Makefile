@@ -9,7 +9,7 @@ MASTER_SITES=	http://rpm5.org/files/rpm/rpm-3.0/ \
 		http://rpm.org/releases/historical/rpm-3.0.x/ \
 		http://www.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt

@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes

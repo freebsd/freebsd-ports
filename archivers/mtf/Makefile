@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix reader for the Microsoft Tape Format used by NT Backup
 
 LICENSE=	GPLv2

@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/ \
 		SF
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
