@@ -309,7 +309,7 @@ DISTFILES+=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CONFIGURE_ARGS+=	--enable-odk --with-doxygen=${LOCALBASE}/bin/doxygen
 .else
-CONFIGURE_ARGS+=	--disable-odk
+CONFIGURE_ARGS+=	--disable-odk --without-doxygen
 .endif
 
 .if ${PORT_OPTIONS:MSYSTRAY}
