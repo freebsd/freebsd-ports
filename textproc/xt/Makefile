@@ -26,30 +26,29 @@ PORTDOCS=	${OTHERDOCS} api
 SAMPLES=	date.xsl nxml.xsl slides.xml slides.xsl sort-uniq.xml \
 		sort-uniq.xsl split.xml split.xsl textfile.xml textfile.xsl
 
-NO_STAGE=	yes
 do-configure:
 	${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${FILESDIR}/xt.sh > ${WRKSRC}/xt
 
 do-install:
 	@${ECHO_MSG} ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/xt.jar ${JAVAJARDIR}/
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/xt.jar ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} "  [ DONE ]"
 	@${ECHO_MSG} ">> Installing scripts in ${PREFIX}/bin/..."
-	${INSTALL_SCRIPT} ${WRKSRC}/xt ${PREFIX}/bin/
-	cd ${PREFIX}/bin && ${LN} xt xt-xp
-	cd ${PREFIX}/bin && ${LN} xt xt-xml4j
+	${INSTALL_SCRIPT} ${WRKSRC}/xt ${STAGEDIR}${PREFIX}/bin/
+	${LN} -sf xt ${STAGEDIR}${PREFIX}/bin/xt-xp
+	${LN} -sf xt ${STAGEDIR}${PREFIX}/bin/xt-xml4j
 	@${ECHO_MSG} "  [ DONE ]"
 	@${ECHO_MSG} ">> Installing samples in ${EXAMPLESDIR}..."
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/demo && ${INSTALL_DATA} ${SAMPLES} ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/demo && ${INSTALL_DATA} ${SAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 	@${ECHO_MSG} "  [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} ">> Installing documentation in ${DOCSDIR}..."
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${FIND} api \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	cd ${WRKSRC} && ${INSTALL_DATA} ${OTHERDOCS} ${DOCSDIR}/
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
+	cd ${WRKSRC} && ${INSTALL_DATA} ${OTHERDOCS} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} "  [ DONE ]"
 .endif
 
