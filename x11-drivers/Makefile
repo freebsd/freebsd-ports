@@ -3,7 +3,6 @@
 
     COMMENT = X11 drivers
 
-    SUBDIR += input-wacom
     SUBDIR += xf86-input-acecad
     SUBDIR += xf86-input-egalax
     SUBDIR += xf86-input-elographics
@@ -16,6 +15,7 @@
     SUBDIR += xf86-input-penmount
     SUBDIR += xf86-input-synaptics
     SUBDIR += xf86-input-vmmouse
+    SUBDIR += xf86-input-wacom
     SUBDIR += xf86-input-void
     SUBDIR += xf86-video-apm
     SUBDIR += xf86-video-ark

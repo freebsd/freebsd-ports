@@ -1,15 +1,15 @@
---- src/wcmUSB.c.orig
+--- src/wcmUSB.c~
 +++ src/wcmUSB.c
 @@ -23,10 +23,17 @@
  
  #include "xf86Wacom.h"
  
-+#ifndef __FreeBSD__
++#ifdef __linux__
  #include <asm/types.h>
 +#endif
  #include <linux/input.h>
  #include <sys/utsname.h>
-+#ifndef __FreeBSD__
++#ifdef __linux__
  #include <linux/version.h>
 +#else
 +#define LINUX_VERSION_CODE 1
