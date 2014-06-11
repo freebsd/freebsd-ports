@@ -1,0 +1,6 @@
+etc/wackamole.conf.sample
+sbin/wackamole
+sbin/wackatrl
+man/man5/wackamole.conf.5.gz
+man/man8/wackamole.8.gz
+man/man8/wackatrl.8.gz
