@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/t-engine4-src-${PORTVERSION}
 MAKE_ARGS+=	config=release verbose=yes ARCH=""
 USES=		gmake openal:al tar:bzip2
 USE_SDL=	image2 sdl2 ttf2
-USE_GL=		gl
+USE_GL=		gl glu
 SUB_FILES=	tome4
 MAKE_JOBS_UNSAFE=yes
 
