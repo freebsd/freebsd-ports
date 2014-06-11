@@ -15,7 +15,6 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 OPTIONS_DEFINE=	DEMO
 DEMO_DESC=	Install demos and samples
 
-NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
 PKGNAMESUFFIX=	1${JDK_VERSION}
 
