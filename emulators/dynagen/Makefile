@@ -3,21 +3,21 @@
 
 PORTNAME=	dynagen
 PORTVERSION=	0.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	SF/dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	pavelivolkov@googlemail.com
+MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Text-based front end for Dynamips development version
 
 LICENSE=	GPLv2
 
-# Note that it *should* be dynamips-devel but that port installs it as dynamips
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.4.0:${PORTSDIR}/devel/py-configobj \
 		dynamips:${PORTSDIR}/emulators/dynamips-community
 
 PLIST_FILES=	bin/dynagen \
-		etc/dynagen.ini.sample \
+		"@sample etc/dynagen.ini.sample" \
 		%%PYTHON_SITELIBDIR%%/confConsole.py \
 		%%PYTHON_SITELIBDIR%%/confConsole.pyc \
 		%%PYTHON_SITELIBDIR%%/confConsole.pyo \
@@ -43,44 +43,35 @@ PORTDATA=	*
 
 USES=		dos2unix
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 ALL_TARGET=	# empty
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dynagen ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/dynagen.ini ${PREFIX}/etc/dynagen.ini.sample
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_SCRIPT} ${WRKSRC}/dynagen ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/dynagen.ini ${STAGEDIR}${PREFIX}/etc/dynagen.ini.sample
 
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/configspec ${DATADIR}/configspec
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/configspec ${STAGEDIR}${DATADIR}/configspec
 
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/tutorial.htm ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/tutorial_files
-	${INSTALL_DATA} ${WRKSRC}/docs/tutorial_files/* ${DOCSDIR}/tutorial_files
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/tutorial.htm ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tutorial_files
+	${INSTALL_DATA} ${WRKSRC}/docs/tutorial_files/* ${STAGEDIR}${DOCSDIR}/tutorial_files
 
-.ifndef NOPORTEXAMPLES
-	@${MKDIR} ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/sample_labs
-	@${MKDIR} ${EXAMPLESDIR}/sample_labs/ethernet_switch
-	${INSTALL_DATA} ${WRKSRC}/sample_labs/ethernet_switch/ethsw1.net ${EXAMPLESDIR}/sample_labs/ethernet_switch
-	@${MKDIR} ${EXAMPLESDIR}/sample_labs/frame_relay
-	${INSTALL_DATA} ${WRKSRC}/sample_labs/frame_relay/frame_relay1.net ${EXAMPLESDIR}/sample_labs/frame_relay
-	@${MKDIR} ${EXAMPLESDIR}/sample_labs/multiserver
-	${INSTALL_DATA} ${WRKSRC}/sample_labs/multiserver/multiserver.net ${EXAMPLESDIR}/sample_labs/multiserver
-	@${MKDIR} ${EXAMPLESDIR}/sample_labs/pix
-	${INSTALL_DATA} ${WRKSRC}/sample_labs/pix/pixtest.net ${EXAMPLESDIR}/sample_labs/pix
-	@${MKDIR} ${EXAMPLESDIR}/sample_labs/simple1
-	${INSTALL_DATA} ${WRKSRC}/sample_labs/simple1/simple1.net ${EXAMPLESDIR}/sample_labs/simple1
-	@${MKDIR} ${EXAMPLESDIR}/sample_labs/simple2
-	${INSTALL_DATA} ${WRKSRC}/sample_labs/simple2/simple2.net ${EXAMPLESDIR}/sample_labs/simple2
-	${INSTALL_DATA} ${WRKSRC}/sample_labs/all_config_options.txt ${EXAMPLESDIR}/sample_labs
-.endif
-
-pre-deinstall:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} DEINSTALL
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample_labs
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample_labs/ethernet_switch
+	${INSTALL_DATA} ${WRKSRC}/sample_labs/ethernet_switch/ethsw1.net ${STAGEDIR}${EXAMPLESDIR}/sample_labs/ethernet_switch
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample_labs/frame_relay
+	${INSTALL_DATA} ${WRKSRC}/sample_labs/frame_relay/frame_relay1.net ${STAGEDIR}${EXAMPLESDIR}/sample_labs/frame_relay
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample_labs/multiserver
+	${INSTALL_DATA} ${WRKSRC}/sample_labs/multiserver/multiserver.net ${STAGEDIR}${EXAMPLESDIR}/sample_labs/multiserver
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample_labs/pix
+	${INSTALL_DATA} ${WRKSRC}/sample_labs/pix/pixtest.net ${STAGEDIR}${EXAMPLESDIR}/sample_labs/pix
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample_labs/simple1
+	${INSTALL_DATA} ${WRKSRC}/sample_labs/simple1/simple1.net ${STAGEDIR}${EXAMPLESDIR}/sample_labs/simple1
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample_labs/simple2
+	${INSTALL_DATA} ${WRKSRC}/sample_labs/simple2/simple2.net ${STAGEDIR}${EXAMPLESDIR}/sample_labs/simple2
+	${INSTALL_DATA} ${WRKSRC}/sample_labs/all_config_options.txt ${STAGEDIR}${EXAMPLESDIR}/sample_labs
 
 .include <bsd.port.mk>

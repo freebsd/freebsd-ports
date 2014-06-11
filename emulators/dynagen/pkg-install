@@ -1,4 +1,0 @@
-#!/bin/sh
-[ "$2" = "POST-INSTALL" -a ! -e ${PKG_PREFIX}/etc/dynagen.ini ] && \
-	cp -p ${PKG_PREFIX}/etc/dynagen.ini.sample ${PKG_PREFIX}/etc/dynagen.ini
-exit 0
