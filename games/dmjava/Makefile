@@ -20,10 +20,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${PORTNAME}
-	@${CP} -r ${WRKSRC}/* ${PREFIX}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	@${CP} -r ${WRKSRC}/* ${STAGEDIR}${PREFIX}/${PORTNAME}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "To start dmjava, type 'cd ${PREFIX}/${PORTNAME} && javavm dmnew'"
 	@${ECHO_MSG} ""
