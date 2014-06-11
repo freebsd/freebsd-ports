@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	4.1.6
+PORTVERSION=	4.2.4
 RCVER=		2
 #PRERELEASE=	yes
 LOVERSION=	${PORTVERSION}.${RCVER}
@@ -14,26 +14,7 @@ LICENSE_COMB=	dual
 .if defined(PRERELEASE)
 MASTER_SITES?=	http://dev-builds.libreoffice.org/pre-releases/${MASTER_SITE_SUBDIR}
 .else
-MASTER_SITES?=	http://ftp.rediris.es/mirror/TDF/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://mirrors.supportex.net/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://mirror.netcologne.de/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://mirror.informatik.uni-mannheim.de/pub/mirrors/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.uni-muenster.de/pub/software/DocumentFoundation/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.rz.tu-bs.de/pub/mirror/tdf/tdf-pub/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://artfiles.org/documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://mirror.galpon.org/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.tu-chemnitz.de/pub/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://tdf.panu.it/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.wh2.tu-dresden.de/pub/mirrors/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.klid.dk/ftp/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://gd.tuwien.ac.at/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://archive.sunet.se/pub/Office/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.astral.ro/mirrors/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.roedu.net/mirrors/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.unicamp.br/pub/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://mirror.yongbok.net/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR} \
-		http://ftp.osuosl.org/pub/tdf/libreoffice/${MASTER_SITE_SUBDIR}
+MASTER_SITES?=	http://download.documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR}/
 .endif
 
 ONLY_FOR_ARCH=	i386 amd64

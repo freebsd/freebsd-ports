@@ -1,13 +1,12 @@
---- bin/distro-install-desktop-integration.orig	2013-12-11 01:11:21.000000000 +0900
-+++ bin/distro-install-desktop-integration	2014-01-29 16:00:32.000000000 +0900
+--- bin/distro-install-desktop-integration.orig	2014-04-30 21:49:45.000000000 +0200
++++ bin/distro-install-desktop-integration	2014-06-11 00:30:50.431187842 +0200
 @@ -94,13 +94,13 @@
  }
  
  # install desktop integration from plain packages
 -sysui_temp=`mktemp -t -d distro-pack-desktop-integration-XXXXXX`
 +sysui_temp=`mktemp -d /tmp/distro-pack-desktop-integration-XXXXXX`
--cp -a workdir/unxlng*/CustomTarget/sysui/share/libreoffice/* "$sysui_temp"
-+cp -a ../workdir/unx*/CustomTarget/sysui/share/libreoffice/* "$sysui_temp"
+ cp -a workdir/CustomTarget/sysui/share/libreoffice/* "$sysui_temp"
  cp -a sysui/desktop/share/create_tree.sh "$sysui_temp"
  builddir=`pwd`
  cd $sysui_temp
@@ -17,7 +16,11 @@
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
      -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
-@@ -114,8 +114,9 @@
+@@ -111,11 +111,13 @@
+     export PREFIX=$INSTALLDIRNAME
+     export ICON_PREFIX=$INSTALLDIRNAME
+     export ICON_SOURCE_DIR=$builddir/sysui/desktop/icons
++    export APPDATA_SOURCE_DIR=$builddir/sysui/desktop/appstream-appdata
      export PRODUCTVERSION=
      export KDEMAINDIR=$PREFIXDIR
      export GNOMEDIR=$PREFIXDIR
@@ -28,7 +31,7 @@
  )
  cd -
  rm -rf $sysui_temp
-@@ -131,7 +132,7 @@
+@@ -131,7 +133,7 @@
  # we want non-versioned desktop files
  cd $DESTDIR/$INSTALLDIR/share/xdg
  # we want non-versioned stuff in the distro packages

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2014-04-23 00:25:28.000000000 +0200
++++ Makefile.in	2014-06-10 12:41:59.927303302 +0200
+@@ -361,7 +361,7 @@
+ endif
+ 	@rm -f $(BUILDDIR)/install && ln -s $(DEVINSTALLDIR)/opt/ $(BUILDDIR)/install
+ 
+-distro-pack-install: install
++distro-pack-install: install-strip
+ 	$(SRCDIR)/bin/distro-install-clean-up
+ 	$(SRCDIR)/bin/distro-install-desktop-integration
+ 	$(SRCDIR)/bin/distro-install-sdk

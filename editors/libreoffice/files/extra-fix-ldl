@@ -1,0 +1,57 @@
+From a5a17ccdbc870b475e6a2dc076a780b55e16ccab Mon Sep 17 00:00:00 2001
+From: Baptiste Daroussin <bapt@FreeBSD.org>
+Date: Tue, 10 Jun 2014 16:32:51 +0000
+Subject: Filter out OS not needing -ldl
+
+Change-Id: I5863de6d8b1f0fe2419ea7419b1ff90087bb513d
+Reviewed-on: https://gerrit.libreoffice.org/9715
+Tested-by: Michael Stahl <mstahl@redhat.com>
+Reviewed-by: Michael Stahl <mstahl@redhat.com>
+---
+diff --git a/bridges/Library_cpp_uno.mk b/bridges/Library_cpp_uno.mk
+index f56a1d3..c6ab9a0 100644
+--- a/bridges/Library_cpp_uno.mk
++++ b/bridges/Library_cpp_uno.mk
+@@ -199,7 +199,7 @@ $(eval $(call gb_Library_add_cxxflags,gcc3_uno,\
+ 	$(if $(filter TRUE,$(HAVE_GCC_AVX)),-mno-avx) \
+ ))
+ 
+-ifeq ($(filter ANDROID WNT,$(OS)),)
++ifeq ($(filter ANDROID WNT DRAGONFLY FREEBSD NETBSD OPENBSD MACOSX,$(OS)),)
+ $(eval $(call gb_Library_add_libs,gcc3_uno,\
+ 	-ldl \
+ ))
+diff --git a/extensions/Library_npsoplugin.mk b/extensions/Library_npsoplugin.mk
+index 4f385d9..9178a9d 100644
+--- a/extensions/Library_npsoplugin.mk
++++ b/extensions/Library_npsoplugin.mk
+@@ -23,9 +23,11 @@ $(eval $(call gb_Library_use_static_libraries,npsoplugin,\
+ 
+ ifneq ($(OS),WNT)
+ 
++ifeq ($(filter ANDROID DRAGONFLY FREEBSD NETBSD OPENBSD MACOSX,$(OS)),)
+ $(eval $(call gb_Library_add_libs,npsoplugin,\
+ 	-ldl \
+ ))
++endif
+ 
+ $(eval $(call gb_Library_use_external,npsoplugin,gtk))
+ 
+diff --git a/vcl/Executable_xid_fullscreen_on_all_monitors.mk b/vcl/Executable_xid_fullscreen_on_all_monitors.mk
+index 5f9c127..ee17162 100644
+--- a/vcl/Executable_xid_fullscreen_on_all_monitors.mk
++++ b/vcl/Executable_xid_fullscreen_on_all_monitors.mk
+@@ -9,9 +9,11 @@
+ 
+ $(eval $(call gb_Executable_Executable,xid-fullscreen-on-all-monitors))
+ 
++ifeq ($(filter ANDROID WNT DRAGONFLY FREEBSD NETBSD OPENBSD MACOSX,$(OS)),)
+ $(eval $(call gb_Executable_add_libs,xid-fullscreen-on-all-monitors,\
+     -ldl \
+ ))
++endif
+ 
+ $(eval $(call gb_Executable_add_cobjects,xid-fullscreen-on-all-monitors,\
+     vcl/unx/gtk/window/xid_fullscreen_on_all_monitors \
+--
+cgit v0.9.0.2-2-gbebe
