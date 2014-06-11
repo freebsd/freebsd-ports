@@ -25,9 +25,9 @@ include/oggz/oggz_stream.h
 include/oggz/oggz_table.h
 include/oggz/oggz_write.h
 lib/liboggz.a
-lib/liboggz.la
 lib/liboggz.so
-lib/liboggz.so.8
+lib/liboggz.so.2
+lib/liboggz.so.2.6.0
 libdata/pkgconfig/oggz.pc
 man/man1/oggz-chop.1.gz
 man/man1/oggz-codecs.1.gz
