@@ -3,15 +3,15 @@ You need to create a PostgreSQL database for your logs:
 
   # su - postgres
   $ createdb pglogd
-  $ psql pglogd < /usr/local/share/pglogd/pglogd_tables.sql
+  $ psql pglogd < %%PREFIX%%/share/pglogd/pglogd_tables.sql
   $ exit
 
-and copy /usr/local/share/pglogd/pglogd.conf
-to /usr/local/etc/pglogd.conf
+and copy %%PREFIX%%/share/pglogd/pglogd.conf
+to %%PREFIX%%/etc/pglogd.conf
 
 pglogd can then be started with:
 
-  # /usr/local/etc/rc.d/020.pglogd.sh start
+  # %%PREFIX%%/etc/rc.d/020.pglogd.sh start
 
 Read the complete documentation on configuring pglogd
 and apache at http://www.digitalstratum.com/pglogd/
