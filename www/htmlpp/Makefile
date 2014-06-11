@@ -11,26 +11,21 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl script to allow easy creation of HTML from template files
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	htmlpp
 
 NO_WRKSUBDIR=	yes
-
-NO_STAGE=	yes
-do-build:
-	${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
-		${WRKDIR}/htmlpp > ${WRKDIR}/htmlpp.temp
-	${RM} -f ${WRKDIR}/htmlpp
-	${MV} ${WRKDIR}/htmlpp.temp ${WRKDIR}/htmlpp
+NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}
-	${INSTALL_SCRIPT} ${WRKDIR}/htmlpp ${PREFIX}/bin/htmlpp
-	${INSTALL_DATA} ${WRKDIR}/htmlpp.d ${PREFIX}/${SITE_PERL_REL}/htmlpp.d
-	(cd ${WRKDIR}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${PREFIX}/${SITE_PERL_REL}/$${FILE}; done)
-	(cd ${WRKDIR}; for FILE in *.def; do ${INSTALL_DATA} $${FILE} ${PREFIX}/bin/$${FILE}; done)
-	${INSTALL_DATA} ${WRKDIR}/guru_opt.fmt ${PREFIX}/bin/guru.fmt
-	(cd ${WRKDIR}; ${MKDIR} ${PREFIX}/share/doc/htmlpp; for FILE in *.htm; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/doc/htmlpp/$${FILE}; done)
-	(cd ${WRKDIR}; for FILE in *.gif; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/doc/htmlpp/$${FILE}; done)
-	(cd ${WRKDIR}; for FILE in *.txt; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/doc/htmlpp/$${FILE}; done)
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	${INSTALL_SCRIPT} ${WRKDIR}/htmlpp ${STAGEDIR}${PREFIX}/bin/htmlpp
+	${INSTALL_DATA} ${WRKDIR}/htmlpp.d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/htmlpp.d
+	(cd ${WRKDIR}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/$${FILE}; done)
+	(cd ${WRKDIR}; for FILE in *.def; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${PREFIX}/bin/$${FILE}; done)
+	${INSTALL_DATA} ${WRKDIR}/guru_opt.fmt ${STAGEDIR}${PREFIX}/bin/guru.fmt
+	(cd ${WRKDIR}; ${MKDIR} ${STAGEDIR}${DOCSDIR}; for FILE in *.htm; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
+	(cd ${WRKDIR}; for FILE in *.gif; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
+	(cd ${WRKDIR}; for FILE in *.txt; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
 
 .include <bsd.port.mk>
