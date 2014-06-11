@@ -11,7 +11,6 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
 
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_VERSION}
-NO_CDROM=	License does not allow distribution with fee.
 RESTRICTED=	This documentation is under license and export control.
 
 WRKSRC=		${WRKDIR}/docs
