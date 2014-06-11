@@ -127,7 +127,6 @@
     SUBDIR += libreoffice-brx
     SUBDIR += libreoffice-bs
     SUBDIR += libreoffice-ca
-    SUBDIR += libreoffice-ca_XV
     SUBDIR += libreoffice-cs
     SUBDIR += libreoffice-cy
     SUBDIR += libreoffice-da
@@ -158,7 +157,6 @@
     SUBDIR += libreoffice-kn
     SUBDIR += libreoffice-kok
     SUBDIR += libreoffice-ks
-    SUBDIR += libreoffice-ku
     SUBDIR += libreoffice-lb
     SUBDIR += libreoffice-lo
     SUBDIR += libreoffice-lt
@@ -185,9 +183,7 @@
     SUBDIR += libreoffice-sa_IN
     SUBDIR += libreoffice-sat
     SUBDIR += libreoffice-sd
-    SUBDIR += libreoffice-sh
     SUBDIR += libreoffice-si
-    SUBDIR += libreoffice-sid
     SUBDIR += libreoffice-sk
     SUBDIR += libreoffice-sl
     SUBDIR += libreoffice-sq
