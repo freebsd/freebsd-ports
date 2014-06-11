@@ -12,7 +12,7 @@ COMMENT=	Standalone obby server
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libobby-0.4.so:${PORTSDIR}/devel/obby \
+		libobby.so:${PORTSDIR}/devel/obby \
 		libnet6-1.3.so:${PORTSDIR}/net/net6 \
 		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26
 
