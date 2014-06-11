@@ -14,12 +14,10 @@ COMMENT=	Graphical front end to the Unix diff command
 
 USES=		imake motif
 USE_XORG=	ice sm x11 xext xmu xp xt
-MAN1=		mgdiff.1
+SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${PREFIX}/lib/X11/mgdiff
-	@${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${PREFIX}/lib/X11/mgdiff
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/mgdiff
+	@${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${STAGEDIR}${PREFIX}/lib/X11/mgdiff
 
 .include <bsd.port.mk>

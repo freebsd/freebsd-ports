@@ -2,4 +2,5 @@ bin/mgdiff
 lib/X11/app-defaults/Mgdiff
 lib/X11/mgdiff/mgdiff.xbm
 lib/X11/mgdiff/mgdiff.xpm
+man/man1/mgdiff.1.gz
 @dirrm lib/X11/mgdiff
