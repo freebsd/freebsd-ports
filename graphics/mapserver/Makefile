@@ -17,6 +17,7 @@ LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
 			libgif.so:${PORTSDIR}/graphics/giflib
 
 USES=			cmake
+USE_GNOME=		libxml2
 LDFLAGS+=		-L${LOCALBASE} -pthread
 CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
