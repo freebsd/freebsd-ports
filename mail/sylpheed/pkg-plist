@@ -40,12 +40,12 @@ include/sylpheed/sylph/utils.h
 include/sylpheed/sylph/uuencode.h
 include/sylpheed/sylph/virtual.h
 include/sylpheed/sylph/xml.h
-lib/libsylph-0.la
 lib/libsylph-0.so
-lib/libsylph-0.so.3
-lib/libsylpheed-plugin-0.la
+lib/libsylph-0.so.1
+lib/libsylph-0.so.1.2.0
 lib/libsylpheed-plugin-0.so
-lib/libsylpheed-plugin-0.so.3
+lib/libsylpheed-plugin-0.so.1
+lib/libsylpheed-plugin-0.so.1.2.0
 share/applications/sylpheed.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.ja
