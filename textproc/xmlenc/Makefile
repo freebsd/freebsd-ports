@@ -23,7 +23,6 @@ PORTDOCS=	*
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${ECHO_CMD}) | ${TAIL} -n 1
@@ -36,14 +35,14 @@ do-configure:
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
 	@cd ${WRKSRC}/build/javadoc/ \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
