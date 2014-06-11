@@ -1,14 +1,16 @@
---- ./SConstruct.orig	2009-08-30 21:23:30.000000000 +0200
-+++ ./SConstruct	2013-10-28 02:21:28.000000000 +0100
-@@ -14,6 +14,7 @@
+--- SConstruct.orig	2009-08-30 21:23:30.000000000 +0200
++++ SConstruct	2014-06-10 23:51:36.000000000 +0200
+@@ -14,7 +14,9 @@
  
  def establish_options(env):
      opts = Options('options_cache.py')
 +    opts.Add("CCFLAGS", "Manually add to the CCFLAGS", "")
      opts.Add("CXXFLAGS", "Manually add to the CXXFLAGS", "-g")
++    opts.Add("LIBPATH", "Manually add to the LIBPATH", "")
      opts.Add("LINKFLAGS", "Manually add to the LINKFLAGS", "-g")
      if isDarwinPlatform:
-@@ -22,10 +23,10 @@
+         opts.Add(PathOption("INSTALLDIR", "Installation Directory", "./"))
+@@ -22,10 +24,10 @@
  	    opts.Add("INSTALLDIR", "Installation Directory", "/usr/local/share")
      opts.Add("BINDIR", "Binary Installation Directory", "/usr/local/bin")
      opts.Add("DATADIR", "Directory where data will be put, set to the same as INSTALLDIR", "/usr/local/share")
@@ -23,7 +25,7 @@
      opts.Add("font", "Build the game using an alternative font placed in the data/font folder", "sans.ttf")
      Help(opts.GenerateHelpText(env))
      opts.Update(env)
-@@ -111,14 +112,17 @@
+@@ -111,14 +113,17 @@
              missing.append("zlib")
  
      boost_thread = ''
@@ -41,3 +43,24 @@
  
      boost_date_time = ''
      if conf.CheckLib("boost_date_time") and conf.CheckCXXHeader("boost/date_time/posix_time/posix_time.hpp"):
+@@ -186,7 +191,7 @@
+         env.Append(LIBS=['fribidi'])
+ 
+     #Do checks for portaudio
+-    if conf.CheckLib('portaudio') and conf.CheckCXXHeader('portaudio.h'):
++    if conf.CheckLib('portaudio2') and conf.CheckCXXHeader('portaudio.h'):
+         if env['mingw'] or isWindowsPlatform:
+             print "--------"
+             print "NOTE: It appears you are compiling under Windows. At this stage, PortAudio crashes Globulation 2 when voice chat is used."
+@@ -194,9 +199,9 @@
+             print "--------"
+         else:
+             if GetOption('portaudio'):
+-                print "trying to use portaudio"
++                print "trying to use portaudio2"
+                 configfile.add("HAVE_PORTAUDIO ", "Defined when Port Audio support is present and compiled")
+-                env.Append(LIBS=['portaudio'])
++                env.Append(LIBS=['portaudio2'])
+             else:
+                 print "         no portaudio"
+                 print "         no portaudio - although portaudio was found to be installed, you have "
