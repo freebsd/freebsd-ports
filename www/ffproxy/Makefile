@@ -16,13 +16,4 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-MAN5=	${PORTNAME}.conf.5
-MAN7=	${PORTNAME}.quick.7
-MAN8=	${PORTNAME}.8
-
-NO_STAGE=	yes
-post-install:
-	@[ -f ${PREFIX}/etc/ffproxy.conf ] || \
-	${CP} ${PREFIX}/etc/ffproxy.conf.sample ${PREFIX}/etc/ffproxy.conf
-
 .include <bsd.port.mk>

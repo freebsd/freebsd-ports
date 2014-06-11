@@ -1,7 +1,8 @@
 bin/ffproxy
-@unexec if cmp -s %D/etc/ffproxy.conf.sample %D/etc/ffproxy.conf; then rm -f %D/etc/ffproxy.conf; fi
-etc/ffproxy.conf.sample
-@exec [ -f %B/ffproxy.conf ] || cp %B/%f %B/ffproxy.conf
+@sample etc/ffproxy.conf.sample
+man/man5/ffproxy.conf.5.gz
+man/man7/ffproxy.quick.7.gz
+man/man8/ffproxy.8.gz
 %%DATADIR%%/db/access.dyndns
 %%DATADIR%%/db/access.host
 %%DATADIR%%/db/access.ip
