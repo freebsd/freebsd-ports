@@ -35,14 +35,14 @@ lib${LIB}.so.${SHLIB_VER}: ${SOBJS}
 all: depend lib${LIB}.a lib${LIB}.so.${SHLIB_VER}
 
 install:
-	@mkdir -p ${PREFIX}/lib
-	@mkdir -p ${PREFIX}/include
-	${INSTALL} -c -m 644 lib${LIB}.a ${PREFIX}/lib
+	@mkdir -p $(DESTDIR)${PREFIX}/lib
+	@mkdir -p $(DESTDIR)${PREFIX}/include
+	${INSTALL} -c -m 644 lib${LIB}.a $(DESTDIR)${PREFIX}/lib
 #	${RANLIB} -t ${PREFIX}/lib/lib${LIB}.a
-	${INSTALL} -c -m 644 lib${LIB}.so.${SHLIB_VER} ${PREFIX}/lib
-	@ln -s ${PREFIX}/lib/lib${LIB}.so.${SHLIB_VER} ${PREFIX}/lib/lib${LIB}.so
+	${INSTALL} -c -m 644 lib${LIB}.so.${SHLIB_VER} $(DESTDIR)${PREFIX}/lib
+	@ln -s lib${LIB}.so.${SHLIB_VER} $(DESTDIR)${PREFIX}/lib/lib${LIB}.so
 .for file in ${HDRS}
-	${INSTALL} -c -m 644 ${file} ${PREFIX}/include
+	${INSTALL} -c -m 644 ${file} $(DESTDIR)${PREFIX}/include
 .endfor
 
 clean:
