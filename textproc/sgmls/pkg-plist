@@ -1,10 +1,6 @@
 bin/rast
 bin/sgmls
 bin/sgmlsasp
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/rast.1.gz
+man/man1/sgmls.1.gz
+man/man1/sgmlsasp.1.gz
