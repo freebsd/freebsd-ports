@@ -2,7 +2,7 @@
 
 PORTNAME=	wildmidi
 PORTVERSION=	0.2.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		compiler gmake
+USES=		compiler gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
