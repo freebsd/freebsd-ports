@@ -1,8 +1,8 @@
 include/libsupertone.h
 lib/libsupertone.a
-lib/libsupertone.la
 lib/libsupertone.so
 lib/libsupertone.so.0
+lib/libsupertone.so.0.0.1
 share/supertone/global-tones.xml
 share/supertone/tones.dtd
 @dirrm share/supertone
