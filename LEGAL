@@ -142,9 +142,9 @@ jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
 jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
-jdk-6*-apidocs.zip	java/jdk16-doc		Redistribution of repackaged binaries not permitted
-jdk-7*-apidocs.zip	java/jdk7-doc		Redistribution of repackaged binaries not permitted
-jdk-8*-apidocs.zip	java/jdk8-doc		Redistribution of repackaged binaries not permitted
+jdk-6*-apidocs.zip	java/jdk16-doc		This documentation is under license and export control
+jdk-7*-apidocs.zip	java/jdk7-doc		This documentation is under license and export control
+jdk-8*-apidocs.zip	java/jdk8-doc		This documentation is under license and export control
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged binaries not permitted
 jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries not permitted
 jfbuild_src_*		games/jfsw		Must be distributed only through the Internet and free of charge
