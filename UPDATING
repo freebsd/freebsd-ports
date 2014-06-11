@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140611:
+  AFFECTS: users of icu
+  AUTHOR: bapt@FreeBSD.org
+
+  icu has been updated to 53.1. Please rebuild all ports that depend on it
+  if you have the glib20 port built with COLLATION_FIX option activated
+
+  If you use portmaster:
+        portmaster -w -r icu
+  If you use portupgrade:
+        portupgrade -fr devel/icu
+  If you use pkgng with binary packages:
+        pkg install -fR devel/icu
+
 20140610:
   AFFECTS: users of www/firefox, www/seamonkey, mail/thunderbird, www/libxul
   AUTHOR: gecko@FreeBSD.org
