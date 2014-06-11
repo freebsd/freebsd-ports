@@ -15,11 +15,8 @@ CONFLICTS?=	emboss-[0-9]* qmail-ldap2-*
 
 GNU_CONFIGURE=	yes
 
-MAN1?=		${PORTNAME}.1
+PLIST_FILES?=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-PLIST_FILES?=	bin/${PORTNAME}
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 test: build
