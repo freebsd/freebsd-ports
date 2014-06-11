@@ -226,13 +226,13 @@
  @HAVE_LDAP_FALSE@	@:
  
 +@HAVE_LDAP_TRUE@install-ldapschema:
-+@HAVE_LDAP_TRUE@	$(mkinstalldirs) ${sysconfdir}/openldap/schema
++@HAVE_LDAP_TRUE@	$(mkinstalldirs) ${DESTDIR}${sysconfdir}/openldap/schema
 +@HAVE_LDAP_TRUE@	$(INSTALL_DATA) -m 0444 $(srcdir)/authldap.schema \
-+@HAVE_LDAP_TRUE@		${sysconfdir}/openldap/schema/authldap.schema.default
-+@HAVE_LDAP_TRUE@	if test ! -f ${sysconfdir}/openldap/schema/authldap.schema ; then \
-+@HAVE_LDAP_TRUE@		$(INSTALL_DATA) -m 0444 $(srcdir)/authldap.schema \
-+@HAVE_LDAP_TRUE@			${sysconfdir}/openldap/schema/authldap.schema ; \
-+@HAVE_LDAP_TRUE@	fi
++@HAVE_LDAP_TRUE@		${DESTDIR}${sysconfdir}/openldap/schema/authldap.schema.default
++@HAVE_LDAP_TRUE@#	if test ! -f ${sysconfdir}/openldap/schema/authldap.schema ; then \
++@HAVE_LDAP_TRUE@#		$(INSTALL_DATA) -m 0444 $(srcdir)/authldap.schema \
++@HAVE_LDAP_TRUE@#			${sysconfdir}/openldap/schema/authldap.schema ; \
++@HAVE_LDAP_TRUE@#	fi
 +
 +@HAVE_LDAP_FALSE@install-ldapschema:
 +@HAVE_LDAP_FALSE@	@:
@@ -273,7 +273,7 @@
  
  authdaemonrc.h:
  	echo "#define AUTHDAEMONRC \"@authdaemonrc@\"" >authdaemonrc.h
-@@ -2003,24 +2063,26 @@
+@@ -2003,24 +2063,30 @@
  # automake still a bit stupid...
  
  install-data-hook: install-authdaemonrc install-authpgsqlrc \
@@ -299,6 +299,10 @@
 +@HAVE_BASE_TRUE@	chmod 755 $(DESTDIR)$(pkglibexecdir)
 +@HAVE_BASE_TRUE@	-chown @mailuser@ $(DESTDIR)$(pkglibexecdir)
 +@HAVE_BASE_TRUE@	-chgrp @mailgroup@ $(DESTDIR)$(pkglibexecdir)
++@HAVE_USERDB_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pkglibexecdir) || :
++@HAVE_USERDB_TRUE@	chmod 755 $(DESTDIR)$(pkglibexecdir)
++@HAVE_USERDB_TRUE@	-chown @mailuser@ $(DESTDIR)$(pkglibexecdir)
++@HAVE_USERDB_TRUE@	-chgrp @mailgroup@ $(DESTDIR)$(pkglibexecdir)
 +@HAVE_BASE_TRUE@	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) authdaemondprog $(DESTDIR)$(pkglibexecdir)/authdaemond
 +@HAVE_BASE_TRUE@	$(mkinstalldirs) $(DESTDIR)@authdaemonvar@ || :
 +@HAVE_BASE_TRUE@	chmod 750 $(DESTDIR)@authdaemonvar@
