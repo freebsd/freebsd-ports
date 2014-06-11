@@ -18,7 +18,6 @@ USE_OPENSSL=	yes
 USES=		perl5 gmake
 USE_PERL5=	run
 
-NO_STAGE=	yes
 post-patch:
 # PREFIX safeness
 # Use correct PAM 'password change' service name
@@ -36,14 +35,14 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${DISTNAME:S/-${PORTVERSION}$$//} \
-		${PREFIX}/sbin
+		${STAGEDIR}${PREFIX}/sbin
 # share scripts
-	@${MKDIR} ${PREFIX}/share/${DISTNAME:S/-${PORTVERSION}$$//}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${DISTNAME:S/-${PORTVERSION}$$//}
 	@${INSTALL_SCRIPT} ${WRKSRC}/make_cert.pl \
-		${PREFIX}/share/${DISTNAME:S/-${PORTVERSION}$$//}
+		${STAGEDIR}${PREFIX}/share/${DISTNAME:S/-${PORTVERSION}$$//}
 # etc config files
-	@${MKDIR} ${PREFIX}/etc/${DISTNAME:S/-${PORTVERSION}$$//}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${DISTNAME:S/-${PORTVERSION}$$//}
 	@${INSTALL_DATA} ${WRKSRC}/authasst.conf/* \
-		${PREFIX}/etc/${DISTNAME:S/-${PORTVERSION}$$//}
+		${STAGEDIR}${PREFIX}/etc/${DISTNAME:S/-${PORTVERSION}$$//}
 
 .include <bsd.port.mk>
