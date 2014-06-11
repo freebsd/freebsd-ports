@@ -8,5 +8,4 @@ CATEGORIES=	databases mail
 
 MASTERDIR=	${.CURDIR}/../../security/courier-authlib
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

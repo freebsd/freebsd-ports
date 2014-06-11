@@ -29,7 +29,6 @@ SENTRENAME_DESC=	Periodic rename the Sent folder
 CHARSET_DESC=	charsets
 FAM_USES=	fam
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
 
 CGIBINDIR?=	www/cgi-bin-dist
@@ -189,9 +188,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/libs/pcp/configure
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for a in ${EXTRA_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${a} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 	@${ECHO_MSG} ""
