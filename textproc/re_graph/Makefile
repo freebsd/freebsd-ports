@@ -26,13 +26,12 @@ PLIST_FILES=	bin/re_graph
 PORTDOCS=	*
 .endif
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/re_graph.pl ${PREFIX}/bin/re_graph
+	${INSTALL_SCRIPT} ${WRKSRC}/re_graph.pl ${STAGEDIR}${PREFIX}/bin/re_graph
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/re_graph.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tut* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/re_graph.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tut* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
