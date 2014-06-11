@@ -15,5 +15,4 @@ PATCHDIR=	${.CURDIR}/files
 
 MASTERDIR=	${.CURDIR}/../digest
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
