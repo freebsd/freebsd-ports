@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Nov  5 18:41:01 2003
-+++ Makefile	Sun Feb 22 21:15:50 2004
+--- Makefile.orig	2003-11-06 02:41:01.000000000 +0800
++++ Makefile	2014-06-12 00:33:45.474374245 +0800
 @@ -31,16 +31,15 @@
  #
  
@@ -10,8 +10,9 @@
  
  ### NO NEED TO EDIT BELOW THIS LINE ###
  
- CC = gcc
+-CC = gcc
 -COPTS = -O -Wall
++#CC = gcc
  LIBS = -lpq
 -CFLAGS = -I${PGDIR}/include
 -LDFLAGS = -L${PGDIR}/lib
@@ -20,7 +21,7 @@
  
  
  SRCS_LOG = pglogd.c
-@@ -51,7 +50,19 @@
+@@ -51,7 +50,19 @@ SRCS_LOGCTL = pglogctl.c
  all : pglogd pglogctl
  
  pglogd : ${SRCS_LOG} ${HDRS_LOG}
@@ -33,12 +34,12 @@
 +
 +PGLOGD_SHARE=	${PREFIX}/share/pglogd
 +install :
-+	install -m 750 -s -c pglogd ${PREFIX}/bin
-+	install -m 750 -s -c pglogctl ${PREFIX}/bin
-+	install -m 755 -d ${PREFIX}/share/pglogd
-+	install -m 644 -c pglogd_tables.sql ${PGLOGD_SHARE}
-+	install -m 644 -c README ${PGLOGD_SHARE}
-+	install -m 644 -c CHANGELOG ${PGLOGD_SHARE}
-+	install -m 644 -c weblog_daily.sql ${PGLOGD_SHARE}
-+	install -m 644 -c queries.txt ${PGLOGD_SHARE}
-+	install -m 644 -c pglogd.conf ${PGLOGD_SHARE}
++	install -m 750 -s -c pglogd $(DESTDIR)${PREFIX}/bin
++	install -m 750 -s -c pglogctl $(DESTDIR)${PREFIX}/bin
++	install -m 755 -d $(DESTDIR)${PREFIX}/share/pglogd
++	install -m 644 -c pglogd_tables.sql $(DESTDIR)${PGLOGD_SHARE}
++	install -m 644 -c README $(DESTDIR)${PGLOGD_SHARE}
++	install -m 644 -c CHANGELOG $(DESTDIR)${PGLOGD_SHARE}
++	install -m 644 -c weblog_daily.sql $(DESTDIR)${PGLOGD_SHARE}
++	install -m 644 -c queries.txt $(DESTDIR)${PGLOGD_SHARE}
++	install -m 644 -c pglogd.conf $(DESTDIR)${PGLOGD_SHARE}
