@@ -26,21 +26,20 @@ PLIST_FILES+=	%%EXAMPLESDIR%%/xom-samples.jar
 PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
-NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/xom-samples.jar ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/xom-samples.jar ${STAGEDIR}${EXAMPLESDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}/apidocs
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs
 	@cd ${WRKSRC}/ && ${FIND} ${PORTDOCS} \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
