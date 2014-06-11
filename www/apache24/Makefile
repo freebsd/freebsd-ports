@@ -2,7 +2,7 @@
 
 PORTNAME=	apache24
 PORTVERSION=	2.4.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -12,7 +12,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Version 2.4.x of Apache web server
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libapr-1.so.5:${PORTSDIR}/devel/apr1 \
+		libapr-1.so.0.5.1:${PORTSDIR}/devel/apr1 \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS_INSTALL=	caudium14-1.* \
