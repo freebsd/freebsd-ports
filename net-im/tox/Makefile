@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ProjectTox-Core
-PORTVERSION=	0.140601
-PORTREVISION=	1
+PORTVERSION=	0.140611
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -22,10 +21,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	ProjectTox-Core
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	9684339
+GH_COMMIT=	63f25f8
 
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 AUTOMAKE_ARGS=	-a -c -f
+CONFIGURE_ARGS=	--enable-testing
 USES=		pkgconfig pathfix libtool
 USE_SDL=	yes
 USE_LDCONFIG=	yes
