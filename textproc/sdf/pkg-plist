@@ -184,6 +184,7 @@ bin/sdngen
 %%SITE_PERL%%/sdf/tosgml.pl
 %%SITE_PERL%%/sdf/totxt.pl
 %%SITE_PERL%%/sdf/values.pl
+man/man1/pod2sdf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/build
 %%PORTDOCS%%%%DOCSDIR%%/catalog.html
 %%PORTDOCS%%%%DOCSDIR%%/catalog.sdf
