@@ -1,0 +1,18 @@
+--- Makefile.orig	2014-06-11 16:18:20.986640596 +0800
++++ Makefile	2014-06-11 16:18:10.000000000 +0800
+@@ -17,9 +17,9 @@ clean:
+ 	rm -f ${OBJS} ${REALOBJS} ${BIN} ${BIN}.core ${BIN}.test ${BIN}.test.core
+ 
+ install:
+-	install -d ${PREFIX}/sbin/
+-	install -d ${PREFIX}/share/mtxorbd/
+-	install -d ${PREFIX}/man/man1/
+-	install -C -o root -g bin -m 555 mtxorbd ${PREFIX}/sbin/
+-	install -C -o root -g bin -m 444 devices.conf ${PREFIX}/share/mtxorbd/
+-	install -C -o root -g man -m 444 mtxorbd.1 ${PREFIX}/man/man1/
++	install -d $(DESTDIR)${PREFIX}/sbin/
++	install -d $(DESTDIR)${PREFIX}/share/mtxorbd/
++	install -d $(DESTDIR)${PREFIX}/man/man1/
++	install -C -o root -g bin -m 555 mtxorbd $(DESTDIR)${PREFIX}/sbin/
++	install -C -o root -g bin -m 444 devices.conf $(DESTDIR)${PREFIX}/share/mtxorbd/
++	install -C -o root -g man -m 444 mtxorbd.1 $(DESTDIR)${PREFIX}/man/man1/
