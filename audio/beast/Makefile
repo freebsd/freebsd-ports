@@ -3,7 +3,7 @@
 
 PORTNAME=	beast
 PORTVERSION=	0.7.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://dist.testbit.eu/beast/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 OPTIONS_DEFINE=		DEBUG
 OPTIONS_DEFINE_i386=	SSE
 
-USES=		tar:bzip2 desktop-file-utils gmake gettext pathfix pkgconfig shared-mime-info
+USES=		tar:bzip2 desktop-file-utils gmake gettext pathfix pkgconfig shared-mime-info libtool
 USE_GCC=	yes
 USE_GNOME=	gnomehier libgnomecanvas
 GNU_CONFIGURE=	yes
