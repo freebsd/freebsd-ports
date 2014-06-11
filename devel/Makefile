@@ -178,6 +178,7 @@
     SUBDIR += bzr-upload
     SUBDIR += bzrtools
     SUBDIR += c-unit
+    SUBDIR += c2mdoc
     SUBDIR += c4
     SUBDIR += calibrator
     SUBDIR += capstone
