@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	dhcprelya
-PORTVERSION=	4.7
+PORTVERSION=	4.8
 CATEGORIES=	net
-MASTER_SITES=	GH
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Lightweight DHCP relay agent. Yandex edition
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sem-hub
-GH_COMMIT=	6df4e97
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	32d3356
 
 USE_RC_SUBR=	dhcprelya
 
@@ -26,8 +26,6 @@ PLIST_FILES=	sbin/${PORTNAME} lib/${PORTNAME}_log_plugin.so \
 #OPTIONS_DEFINE=	RADIUS_PLUGIN
 RADIUS_PLUGIN_PLUGIN_DESC=	build radius plugin
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -38,12 +36,13 @@ MAKE_ARGS=	-DWITH_RADIUS_PLUGIN
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local#${PREFIX}#' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's#/usr/local#${STAGEDIR}/${PREFIX}#' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
