@@ -40,10 +40,9 @@ include/obby/text.hpp
 include/obby/user.hpp
 include/obby/user_table.hpp
 include/obby/vector_time.hpp
-lib/libobby-0.4.so
 lib/libobby-0.4.so.1
+lib/libobby-0.4.so.1.0.0
 lib/libobby.a
-lib/libobby.la
 lib/libobby.so
 libdata/pkgconfig/obby-0.4.pc
 %%NLS%%share/locale/ast/LC_MESSAGES/obby.mo

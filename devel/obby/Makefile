@@ -3,6 +3,7 @@
 
 PORTNAME=	obby
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/
 
@@ -11,10 +12,10 @@ COMMENT=	Library for synced document buffers
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		net6:${PORTSDIR}/net/net6
+LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libnet6.so:${PORTSDIR}/net/net6
 
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
