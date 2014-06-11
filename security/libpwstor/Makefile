@@ -9,33 +9,10 @@ MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password storage library for C programmers
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/pwtool \
-		include/pwstor.h \
-		lib/libpwstor.a \
-		lib/libpwstor.so \
-		lib/libpwstor.so.0.1
-
-MANCOMPESSED=	no
-MAN1=		pwtool.1
-MAN3=		pwstor.3 \
-		pws_version.3 \
-		pws_version_int.3 \
-		pws_rand_get.3 \
-		pws_memnuke.3 \
-		pws_base64_encode.3 \
-		pws_base64_decode.3 \
-		pws_passwords_encode.3 \
-		pws_passwords_encodemulti.3 \
-		pws_passwords_len.3 \
-		pws_passwords_check.3 \
-		pws_passwords_checkmulti.3 \
-		pws_passwords_converttomulti.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
