@@ -99,7 +99,7 @@ MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
 
 PORT_MOZCONFIG?=	${FILESDIR}/mozconfig.in
 MOZCONFIG?=		${WRKSRC}/.mozconfig
-MOZILLA_PLIST_DIRS?=	bin lib
+MOZILLA_PLIST_DIRS?=	bin lib share/pixmaps share/applications
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
 PKGINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-install.in
