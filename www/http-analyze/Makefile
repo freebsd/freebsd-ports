@@ -15,7 +15,7 @@ PATCHFILES=	patch04.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Log-Analyzer for web servers
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -30,28 +30,25 @@ ALL_TARGET=	${PORTNAME}
 CPPFLAGS+=	$$(gdlib-config --includes)
 LDFLAGS+=	$$(gdlib-config --ldflags) $$(gdlib-config --libs)
 
-MAN1=		http-analyze.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
 	(cd ${WRKSRC}/src && ${INSTALL_DATA} http-analyze \
-		${PREFIX}/bin/http-analyze)
+		${STAGEDIR}${PREFIX}/bin/http-analyze)
 	(cd ${WRKSRC}/man && ${INSTALL_MAN} http-analyze.man \
-		${MANPREFIX}/man/man1/http-analyze.1)
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/files && ${COPYTREE_SHARE} . ${DATADIR})
+		${STAGEDIR}${MANPREFIX}/man/man1/http-analyze.1)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC}/files && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in http-analyze.pdf http-analyze.ps.gz
-	(cd ${WRKSRC}/man && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC}/man && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in contrib tools
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${EXAMPLESDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${EXAMPLESDIR})
 .endfor
 .endif
 
