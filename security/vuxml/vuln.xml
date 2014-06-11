@@ -57,6 +57,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0b0fb9b0-f0fb-11e3-9bcd-000c6e25e3e9">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>35.0.1916.153</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl">
+	  <p>4 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[369525] High CVE-2014-3154: Use-after-free in filesystem api. Credit
+	      to Collin Payne.</li>
+	    <li>[369539] High CVE-2014-3155: Out-if-bounds read in SPDY. Credit
+	      to James March, Daniel Sommermann and Alan Frindell of Facebook.</li>
+	    <li>[369621] Medium CVE-2014-3156: Buffer overflow in clipboard. Credit
+	      to Atte Kettunen of OUSPG.</li>
+	    <li>[368980] CVE-2014-3157: Heap overflow in media.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3154</cvename>
+      <cvename>CVE-2014-3155</cvename>
+      <cvename>CVE-2014-3156</cvename>
+      <cvename>CVE-2014-3157</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2014-06-10</discovery>
+      <entry>2014-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="888a0262-f0d9-11e3-ba0c-b4b52fce4ce8">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
