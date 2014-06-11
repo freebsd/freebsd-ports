@@ -27,7 +27,7 @@ command=%%PREFIX%%/sbin/${name}
 # extract pid file from distccd_flags (if any)
 pidfile="`echo ${distccd_flags} |sed -nE -e 's/^.*-P ([^ ]+).*$/\1/p'`"
 # set default value
-pidfile=${pidfile:-%%DISTCCD_PIDFILE%%}
+pidfile=${pidfile:-/var/run/distccd.pid}
 
 distccd_precmd()
 {
