@@ -15,12 +15,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man
 
-MAN1=		sgmls.1 sgmlsasp.1 rast.1
-
 PROGS=		sgmls sgmlsasp rast
-DOCS=		ChangeLog INSTALL LICENSE NEWS README TODO
+PKGDOCS=	ChangeLog INSTALL LICENSE NEWS README TODO
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
 
@@ -33,9 +30,9 @@ post-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@-${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PKGDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

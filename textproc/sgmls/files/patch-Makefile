@@ -1,5 +1,5 @@
---- Makefile.orig	2011-09-07 09:34:45.000000000 +0800
-+++ Makefile	2011-09-07 09:34:52.000000000 +0800
+--- Makefile.orig	1994-04-26 04:25:12.000000000 +0800
++++ Makefile	2014-06-11 20:24:14.438631971 +0800
 @@ -15,7 +15,7 @@ MANDIR=$(PREFIX)/man/man$(MANEXT)
  # Permissions mode to use for man pages.
  MANMODE=444
@@ -9,3 +9,30 @@
  PROFILE=
  INCLUDE=
  OPTIMIZE=-O
+@@ -143,20 +143,18 @@ lextabe.c: genlex
+ 	./genlex >$@
+ 
+ install: $(PROGS)
+-	-test -d $(BINDIR) || mkdir $(BINDIR)
++	-test -d $(DESTDIR)$(BINDIR) || mkdir $(DESTDIR)$(BINDIR)
+ 	for f in $(PROGS); do \
+-	  rm -f $(BINDIR)/$$f; \
+-	  cp $$f $(BINDIR)/$$f; \
+-	  chmod $(BINMODE) $(BINDIR)/$$f; \
++	  cp $$f $(DESTDIR)$(BINDIR)/$$f; \
++	  chmod $(BINMODE) $(DESTDIR)$(BINDIR)/$$f; \
+ 	done
+ 
+ install.man: $(MANPAGES)
+-	-test -d $(MANDIR) || mkdir $(MANDIR)
++	-test -d $(DESTDIR)$(MANDIR) || mkdir $(DESTDIR)$(MANDIR)
+ 	for f in $(MANPAGES); do \
+ 	  t=$(MANDIR)/`basename $$f .man`.$(MANEXT); \
+-	  rm -f $$t; \
+-	  cp $$f $$t; \
+-	  chmod $(MANMODE) $$t; \
++	  cp $$f $(DESTDIR)$$t; \
++	  chmod $(MANMODE) $(DESTDIR)$$t; \
+ 	done
+ 
+ clean:
