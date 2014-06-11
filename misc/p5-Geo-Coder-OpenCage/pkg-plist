@@ -1,8 +1,6 @@
 %%SITE_PERL%%/Geo/Coder/OpenCage.pm
-%%SITE_PERL%%/Geo/Coder/README.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/OpenCage/.packlist
 %%PERL5_MAN3%%/Geo::Coder::OpenCage.3.gz
-%%PERL5_MAN3%%/Geo::Coder::README.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/OpenCage
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
