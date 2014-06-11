@@ -1,19 +1,14 @@
 bin/bluefish
-lib/bluefish/about.la
 lib/bluefish/about.so
-lib/bluefish/charmap.la
 lib/bluefish/charmap.so
-lib/bluefish/entities.la
 lib/bluefish/entities.so
-lib/bluefish/htmlbar.la
 lib/bluefish/htmlbar.so
-lib/bluefish/infbrowser.la
 lib/bluefish/infbrowser.so
-lib/bluefish/snippets.la
 lib/bluefish/snippets.so
-lib/bluefish/zencoding.la
 lib/bluefish/zencoding.so
+man/man1/bluefish.1.gz
 share/applications/bluefish.desktop
+share/applications/mimeinfo.cache
 %%DATADIR%%/bflang/JQuery.bfinc
 %%DATADIR%%/bflang/ada.bflang2
 %%DATADIR%%/bflang/all-html.bfinc
@@ -84,25 +79,13 @@ share/applications/bluefish.desktop
 %%DATADIR%%/bluefish_splash.png
 %%DATADIR%%/default_accelmap
 %%DATADIR%%/encodings
-%%DATADIR%%/lorem-ipsum-generator
 %%DATADIR%%/lipsum/__init__.py
 %%DATADIR%%/lipsum/data/dictionary.txt
 %%DATADIR%%/lipsum/data/lipsum.xml
 %%DATADIR%%/lipsum/data/sample.txt
+%%DATADIR%%/lorem-ipsum-generator
 %%DATADIR%%/plugins/htmlbar/ui/htmlbar_menu_ui.xml
 %%DATADIR%%/plugins/zencoding/__init__.py
-%%DATADIR%%/plugins/zencoding/html_matcher.py
-%%DATADIR%%/plugins/zencoding/resources.py
-%%DATADIR%%/plugins/zencoding/utils.py
-%%DATADIR%%/plugins/zencoding/zen_settings.py
-%%DATADIR%%/plugins/zencoding/parser/__init__.py
-%%DATADIR%%/plugins/zencoding/parser/abbreviation.py
-%%DATADIR%%/plugins/zencoding/parser/css.py
-%%DATADIR%%/plugins/zencoding/parser/utils.py
-%%DATADIR%%/plugins/zencoding/parser/xml.py
-%%DATADIR%%/plugins/zencoding/interface/__init__.py
-%%DATADIR%%/plugins/zencoding/interface/editor.py
-%%DATADIR%%/plugins/zencoding/interface/file.py
 %%DATADIR%%/plugins/zencoding/actions/__init__.py
 %%DATADIR%%/plugins/zencoding/actions/basic.py
 %%DATADIR%%/plugins/zencoding/actions/token.py
@@ -118,6 +101,18 @@ share/applications/bluefish.desktop
 %%DATADIR%%/plugins/zencoding/filters/single-line.py
 %%DATADIR%%/plugins/zencoding/filters/trim.py
 %%DATADIR%%/plugins/zencoding/filters/xsl.py
+%%DATADIR%%/plugins/zencoding/html_matcher.py
+%%DATADIR%%/plugins/zencoding/interface/__init__.py
+%%DATADIR%%/plugins/zencoding/interface/editor.py
+%%DATADIR%%/plugins/zencoding/interface/file.py
+%%DATADIR%%/plugins/zencoding/parser/__init__.py
+%%DATADIR%%/plugins/zencoding/parser/abbreviation.py
+%%DATADIR%%/plugins/zencoding/parser/css.py
+%%DATADIR%%/plugins/zencoding/parser/utils.py
+%%DATADIR%%/plugins/zencoding/parser/xml.py
+%%DATADIR%%/plugins/zencoding/resources.py
+%%DATADIR%%/plugins/zencoding/utils.py
+%%DATADIR%%/plugins/zencoding/zen_settings.py
 %%DATADIR%%/snippets
 %%DATADIR%%/templates/C_header
 %%DATADIR%%/templates/C_header_GPL
@@ -149,13 +144,13 @@ share/icons/hicolor/96x96/mimetypes/application-x-bluefish-project.png
 share/icons/hicolor/scalable/apps/bluefish-icon.svg
 share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_about.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_charmap.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_entities.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_htmlbar.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_snippets.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish_plugin_about.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bluefish_plugin_charmap.mo
@@ -403,23 +398,24 @@ share/pixmaps/application-x-bluefish-project.png
 share/pixmaps/bluefish.png
 share/xml/bluefish/2.0/bflang2.rng
 share/xml/bluefish/catalog.xml
-@dirrm share/xml/bluefish/2.0
-@dirrm share/xml/bluefish
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/bflang
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/plugins/zencoding/parser
-@dirrm %%DATADIR%%/plugins/zencoding/filters
-@dirrm %%DATADIR%%/plugins/zencoding/interface
-@dirrm %%DATADIR%%/plugins/zencoding/actions
-@dirrm %%DATADIR%%/plugins/zencoding
-@dirrm %%DATADIR%%/plugins/htmlbar/ui
-@dirrm %%DATADIR%%/plugins/htmlbar
-@dirrm %%DATADIR%%/plugins
+@dirrm lib/bluefish
+@dirrm %%DATADIR%%/bflang
+@dirrm %%DATADIR%%/bflib
 @dirrm %%DATADIR%%/lipsum/data
 @dirrm %%DATADIR%%/lipsum
-@dirrm %%DATADIR%%/bflib
-@dirrm %%DATADIR%%/bflang
+@dirrm %%DATADIR%%/plugins/htmlbar/ui
+@dirrm %%DATADIR%%/plugins/htmlbar
+@dirrm %%DATADIR%%/plugins/zencoding/actions
+@dirrm %%DATADIR%%/plugins/zencoding/filters
+@dirrm %%DATADIR%%/plugins/zencoding/interface
+@dirrm %%DATADIR%%/plugins/zencoding/parser
+@dirrm %%DATADIR%%/plugins/zencoding
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrm lib/bluefish
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/bflang
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/mime/application
+@dirrm share/xml/bluefish/2.0
+@dirrm share/xml/bluefish

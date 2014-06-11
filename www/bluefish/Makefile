@@ -3,6 +3,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/ \
@@ -11,16 +12,18 @@ MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		enchant.1:${PORTSDIR}/textproc/enchant \
-		gucharmap.7:${PORTSDIR}/deskutils/gucharmap
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libenchant.so:${PORTSDIR}/textproc/enchant \
+		libgucharmap.so:${PORTSDIR}/deskutils/gucharmap
 
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata desktopfileutils
+USES=		gmake pkgconfig desktop-file-utils shared-mime-info \
+		tar:bzip2 libtool
+USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,9 +33,7 @@ CONFIGURE_ARGS=	--with-gtk2 \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--with-icon-path=${PREFIX}/share/pixmaps
 
-MAN1=		bluefish.1
-
-OPTIONS_DEFINE=	DEBUG TIDY WEBLINT
+OPTIONS_DEFINE=	DEBUG NLS TIDY WEBLINT
 
 DEBUG_DESC=	Enable debugging output
 TIDY_DESC=	Include Tidy HTML cleanup program
@@ -40,7 +41,6 @@ WEBLINT_DESC=	Include Weblint syntax and style checker
 
 OPTIONS_DEFAULT=	WEBLINT
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -70,13 +70,15 @@ USE_GNOME+=	libgnomeui
 .endif
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/mime
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/bflang
-	${INSTALL_DATA} ${WRKSRC}/data/bflang/sample.bflang2 ${DOCSDIR}/bflang
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/bflang
+	${INSTALL_DATA} ${WRKSRC}/data/bflang/sample.bflang2 \
+		${STAGEDIR}${DOCSDIR}/bflang
 .endif
+	(cd ${STAGEDIR}${PREFIX}/lib/bluefish/ && \
+		${STRIP_CMD} *.so)
 
 .include <bsd.port.post.mk>
