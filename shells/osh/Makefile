@@ -3,6 +3,7 @@
 
 PORTNAME=	osh
 DISTVERSION=	20140410
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://v6shell.org/src/
 

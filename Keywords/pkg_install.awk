@@ -14,6 +14,14 @@
 #  @exec if ! [ -f %D/etc/somefile.conf ]; then cp %D/etc/somefile.conf.sample %D/etc/somefile.conf; fi
 #  @comment end @sample somefile.conf.sample
 # 
+##
+#  @shell bin/shell
+# ->
+#  @comment begin @shell bin/shell
+#  @exec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+#  @unexec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+#  @comment end @shell bin/shell
+
 $1 == "@sample" {
   sample_file=$2
   # Take out .sample
@@ -25,6 +33,17 @@ $1 == "@sample" {
   print "@comment end " $0
   next
 }
+
+$1 == "@shell" {
+	shell_file=$2
+	print "@comment begin " $0
+	print shell_file
+	print "@exec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak"
+	print "@unexec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak"
+	print "@comment end " $0
+	next
+}
+
 # Print everything else as-is
 {
   print $0

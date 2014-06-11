@@ -1,6 +1,4 @@
-bin/vshnu
-@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
-@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
+@shell bin/vshnu
 %%SITE_PERL%%/vshnucfg.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/vshnu/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/vshnu

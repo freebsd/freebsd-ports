@@ -3,6 +3,7 @@
 
 PORTNAME=	v7sh
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	ftp://minnie.tuhs.org/UnixArchive/PDP-11/Trees/V7/usr/src/cmd/sh/:s \
 		http://minnie.tuhs.org/UnixTree/V7/usr/src/cmd/sh/:s \
