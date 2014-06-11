@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZLIB_CFLAGS="-DWEHAVEZLIBINBASE" ZLIB_LIBS="-DWEDOHAVEIT"
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--disable-werror --without-docs
+CONFIGURE_ARGS=	--disable-werror --without-docs --disable-tests
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-install:
