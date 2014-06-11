@@ -166,25 +166,16 @@ include/sfi/sfiustore.hh
 include/sfi/sfivalues.hh
 include/sfi/sfivmarshal.hh
 include/sfi/sfiwrapper.hh
-lib/bse/v%%VERSION%%/drivers/bsemididevice-alsa.la
 lib/bse/v%%VERSION%%/drivers/bsemididevice-alsa.so
-lib/bse/v%%VERSION%%/drivers/bsepcmdevice-alsa.la
 lib/bse/v%%VERSION%%/drivers/bsepcmdevice-alsa.so
-%%SSE%%lib/bse/v%%VERSION%%/plugins/bseblockutils.SSE.la
 %%SSE%%lib/bse/v%%VERSION%%/plugins/bseblockutils.SSE.so
-lib/bse/v%%VERSION%%/plugins/bseplugins.FPU.la
 lib/bse/v%%VERSION%%/plugins/bseplugins.FPU.so
-%%SSE%%lib/bse/v%%VERSION%%/plugins/bseplugins.SSE.la
 %%SSE%%lib/bse/v%%VERSION%%/plugins/bseplugins.SSE.so
-lib/bse/v%%VERSION%%/plugins/cxxplugins.FPU.la
 lib/bse/v%%VERSION%%/plugins/cxxplugins.FPU.so
-lib/bse/v%%VERSION%%/plugins/cxxplugins.SSE.la
 lib/bse/v%%VERSION%%/plugins/cxxplugins.SSE.so
-lib/bse/v%%VERSION%%/plugins/freeverb.la
 lib/bse/v%%VERSION%%/plugins/freeverb.so
+lib/libbse-0.7.so.8.0.0
 lib/libbse-0.7.so.8
-lib/libbse-0.7.so
-lib/libbse.la
 lib/libbse.so
 libdata/pkgconfig/bse.pc
 share/application-registry/beast.applications
@@ -283,9 +274,12 @@ share/locale/uk/LC_MESSAGES/beast-v%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/beast-v%%VERSION%%.mo
 share/mime-info/bse.keys
 share/mime-info/bse.mime
+share/mime/audio/x-bse.xml
+share/mime/audio/x-bsewave.xml
 share/mime/packages/beast.xml
 share/pixmaps/beast-audio-x-bse.png
 share/pixmaps/beast.png
+@dirrmtry share/mime/audio
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrm share/bse/v%%VERSION%%/scripts
