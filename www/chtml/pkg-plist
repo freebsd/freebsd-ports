@@ -1,7 +1,8 @@
-man/man1/chtml.1
-lib/libchtml.a
 bin/chtml
 include/chtml.h
+lib/libchtml.a
 lib/siod/chtml.scm
 lib/siod/chtml-cmp.c-bin
+man/man1/chtml.1.gz
 %%SITE_PERL%%/chtml.pl
+@dirrmtry lib/siod
