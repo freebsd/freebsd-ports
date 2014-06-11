@@ -1143,17 +1143,17 @@ HCC:=	${CC}
 HCXX:=	${CXX}
 .endif
 .if !exists(/usr/${X_BUILD_FOR}/usr/bin/cc)
-CC=		${LOCALBASE}/${X_BUILD_FOR}/usr/bin/cc
-CXX=		${LOCALBASE}/${X_BUILD_FOR}/usr/bin/c++
-PKG_ENV+=	ABI_FILE=${LOCALBASE}/${X_BUILD_FOR}/usr/lib/crt1.o
+X_SYSROOT=	${LOCALBASE}/${X_BUILD_FOR}
 .else
-CC=		/usr/${X_BUILD_FOR}/usr/bin/cc
-CXX=	/usr/${X_BUILD_FOR}/usr/bin/c++
-PKG_ENV+=	ABI_FILE=/usr/${X_BUILD_FOR}/usr/lib/crt1.o
+X_SYSROOT=	/usr/${X_BUILD_FOR}
 .endif
+CC=		${X_SYSROOT}/usr/bin/cc
+CXX=	${X_SYSROOT}/usr/bin/c++
+PKG_ENV+=	ABI_FILE=${X_SYSROOT}/usr/lib/crt1.o
 NM=		${X_BUILD_FOR}-nm
 STRIP_CMD=	${X_BUILD_FOR}-strip
-MAKE_ENV+=	NM=${NM} STRIPBIN=${X_BUILD_FOR}-strip
+MAKE_ENV+=	NM=${NM} STRIPBIN=${X_BUILD_FOR}-strip PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
+CONFIGURE_ENV+=	PKG_CONFIG_SYSROOT_DIR="${X_SYSROOT}"
 # only bmake support the below
 STRIPBIN=	${STRIP_CMD}
 .export.env STRIPBIN
