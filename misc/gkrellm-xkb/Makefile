@@ -15,8 +15,14 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USES=		pkgconfig
 PLIST_FILES=	libexec/gkrellm2/plugins/xkb.so
-MAKE_ENV=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
+MAKE_ENV=	PLUGIN_DIR=${PLUGINDIR}
 ALL_TARGET=	xkb.so
+PLUGINDIR=	${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} '/$$(CC)/ s|FLAGS|CFLAGS|' ${WRKSRC}/Makefile
+
+pre-install:
+	@${MKDIR} ${PLUGINDIR}
+
 .include <bsd.port.mk>
