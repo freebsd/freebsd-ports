@@ -15,22 +15,15 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmbgchg.so
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-do-build:
-	cd ${BUILD_WRKSRC} && ${CC} -shared ${CFLAGS} -fPIC \
-		`pkg-config --cflags --libs gkrellm` gkrellmbgchg.c \
-		-o gkrellmbgchg.so
+PLUGINDIR=	${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
-	${INSTALL_DATA} ${WRKSRC}/gkrellmbgchg.so \
-		${PREFIX}/libexec/gkrellm2/plugins
+	@${MKDIR} ${PLUGINDIR}
+	${INSTALL_LIB} ${WRKSRC}/gkrellmbgchg.so ${PLUGINDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
