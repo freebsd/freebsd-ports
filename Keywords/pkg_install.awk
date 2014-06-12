@@ -44,6 +44,45 @@ $1 == "@shell" {
 	next
 }
 
+$1 == "@fc" {
+	font_dir=$2
+	print "@comment begin " $0
+	print "@exec fc-cache -s %D/" font_dir " 2>/dev/null || true"
+	print "@unexec fc-cache -s %D/" font_dir " 2>/dev/null || true"
+	print "@unexec rmdir %D/"font_dir" 2>/dev/null || true"
+	print "@comment end " $0
+	next
+}
+
+$1 == "@fcfontsdir" {
+	font_dir=$2
+	print "@comment begin " $0
+	print "@exec fc-cache -s %D/" font_dir " 2>/dev/null || true"
+	print "@exec mkfontscale %D/" font_dir " 2>/dev/null || true"
+	print "@exec mkfontdir %D/" font_dir " 2>/dev/null || true"
+	print "@unexec fc-cache -s %D/" font_dir " 2>/dev/null || true"
+	print "@unexec mkfontscale %D/" font_dir " 2>/dev/null || true"
+	print "@unexec if [ -e %D/%@/fonts.scale -a \"`stat -f '%%z' %D/" font_dir "/fonts.scale 2>/dev/null`\" = '2' ]; then rm %D/" font_dir "/fonts.scale ; fi"
+	print "@unexec mkfontdir %D/" font_dir " 2>/dev/null || true"
+	print "@unexec if [ -e %D/" font_dir "/fonts.dir -a `\"`stat -f '%%z' %D/" font_dir "/fonts.dir 2>/dev/null`\" = '2' ]; then rm %D/" font_dir "/fonts.dir ; fi"
+	print "@unexec rmdir %D/"font_dir" 2>/dev/null || true"
+	print "@comment end " $0
+	next
+}
+
+$1 == "@fontsdir" {
+	print "@comment begin " $0
+	print "@exec mkfontscale %D/" font_dir " 2>/dev/null || true"
+	print "@exec mkfontdir %D/" font_dir " 2>/dev/null || true"
+	print "@unexec mkfontscale %D/" font_dir " 2>/dev/null || true"
+	print "@unexec if [ -e %D/%@/fonts.scale -a \"`stat -f '%%z' %D/" font_dir "/fonts.scale 2>/dev/null`\" = '2' ]; then rm %D/" font_dir "/fonts.scale ; fi"
+	print "@unexec mkfontdir %D/" font_dir " 2>/dev/null || true"
+	print "@unexec if [ -e %D/" font_dir "/fonts.dir -a `\"`stat -f '%%z' %D/" font_dir "/fonts.dir 2>/dev/null`\" = '2' ]; then rm %D/" font_dir "/fonts.dir ; fi"
+	print "@unexec rmdir %D/"font_dir" 2>/dev/null || true"
+	print "@comment end " $0
+	next
+}
+
 # Print everything else as-is
 {
   print $0
