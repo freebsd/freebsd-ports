@@ -8,7 +8,7 @@ CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=		zi@FreeBSD.org
 COMMENT=		VMware vSphere SDK for Perl with CLI tools
 
 BUILD_DEPENDS=		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
