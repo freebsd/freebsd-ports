@@ -15,8 +15,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
 
-MAN1=		retawq.1
 PLIST_FILES=	bin/retawq \
+		man/man1/retawq.1.gz \
 		share/locale/de/LC_MESSAGES/retawq.mo \
 		share/locale/es/LC_MESSAGES/retawq.mo \
 		share/locale/fr/LC_MESSAGES/retawq.mo \
@@ -27,7 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--set-tls=1
 .elif defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
@@ -35,22 +35,21 @@ CONFIGURE_ARGS+=	--set-tls=2
 LDFLAGS+=	-lssl -lcrypto
 .endif
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's|_IN_H 0|_IN_H 1|g ; \
 		 s|_SOCKET_H 0|_SOCKET_H 1|g' ${WRKSRC}/.config
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/retawq ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${MANPREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/retawq ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .for lang in de es fr pt_BR
-	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	@${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo \
-		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
+		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docu/*.html ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docu/*.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
