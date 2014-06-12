@@ -19,7 +19,6 @@ PYDISTUTILS_PKGVERSION=	0.6
 OPTIONS_DEFINE=	MYSQL PGSQL DOCS
 OPTIONS_DEFAULT=	MYSQL PGSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -32,9 +31,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg>0:${PORTSDIR}/databases/py-psycopg
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@ ${MKDIR} ${DOCSDIR}
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ChangeLog default.css README.html README.txt TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
