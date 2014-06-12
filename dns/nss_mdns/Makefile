@@ -3,7 +3,7 @@
 
 PORTNAME=	nss_mdns
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://0pointer.de/lennart/projects/nss-mdns/
 DISTNAME=	nss-mdns-${PORTVERSION}
@@ -11,12 +11,15 @@ DISTNAME=	nss-mdns-${PORTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	NSS module implementing multicast DNS name resolution
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_AUTOTOOLS=	autoconf automake libtool
 USES=		gmake
 USE_LDCONFIG=	yes
 AUTOTOOLSFILES=	aclocal.m4
 
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 OPTIONS_DEFINE=	SEARCH_DOMAINS DOCS
 SEARCH_DOMAINS_DESC=	Honour search domains in resolv.conf
@@ -32,7 +35,6 @@ CONFIGURE_ARGS+=		\
 
 INSTALLED_MODULES=nss_mdns nss_mdns_minimal
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSEARCH_DOMAINS}
@@ -48,13 +50,13 @@ CONFIGURE_ARGS+=	--enable-search-domains
 do-install:
 	@( cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
 .for INSTALLED_MODULE in ${INSTALLED_MODULES}
-	( cd ${PREFIX}/lib ; ${LN} -s ${INSTALLED_MODULE}.so.1 ${INSTALLED_MODULE}.so )
-	${RM} ${PREFIX}/lib/${INSTALLED_MODULE}.a ${PREFIX}/lib/${INSTALLED_MODULE}.la
+	( cd ${STAGEDIR}${PREFIX}/lib ; ${LN} -s ${INSTALLED_MODULE}.so.1 ${INSTALLED_MODULE}.so )
+	${RM} ${STAGEDIR}${PREFIX}/lib/${INSTALLED_MODULE}.a ${STAGEDIR}${PREFIX}/lib/${INSTALLED_MODULE}.la
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/README ${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/README.html ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/README.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 # TODO: Print a message about the etc directory used for mdns.allow
