@@ -3,7 +3,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
@@ -15,16 +15,11 @@ COMMENT=	Powerful 2D plotting tool (successor of xmgr)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		Xbae:${PORTSDIR}/x11-toolkits/xbae
+LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libXbae.so:${PORTSDIR}/x11-toolkits/xbae
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
-
-OPTIONS_DEFINE=	FFTW NETCDF PDF XMHTML DOCS EXAMPLES
-OPTIONS_DEFAULT=FFTW NETCDF PDF XMHTML
-PDF_DESC=	PDF output
-XMHTML_DESC=	Use XmHTML widget for on-line help
 
 USE_GCC=	any
 USES=		gmake motif
@@ -36,82 +31,43 @@ CONFIGURE_ARGS=	--enable-grace-home=${DATADIR} \
 		--without-bundled-xbae
 ALL_TARGET=	# empty
 
-MAN1=		convcal.1 grace.1 grconvert.1
-MLINKS=		grace.1 gracebat.1 \
-		grace.1 xmgrace.1
+OPTIONS_DEFINE=	FFTW NETCDF PDF XMHTML DOCS EXAMPLES
+OPTIONS_DEFAULT=FFTW NETCDF PDF XMHTML
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+FFTW_CONFIGURE_WITH=	fftw
+FFTW_LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
 
-.if ${PORT_OPTIONS:MFFTW}
-LIB_DEPENDS+=	fftw:${PORTSDIR}/math/fftw
-CONFIGURE_ARGS+=	--with-fftw
-.else
-CONFIGURE_ARGS+=	--without-fftw
-.endif
+NETCDF_CONFIGURE_ENABLE=netcdf
+NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
-.if ${PORT_OPTIONS:MNETCDF}
-LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
-CONFIGURE_ARGS+=	--enable-netcdf
-.else
-CONFIGURE_ARGS+=	--disable-netcdf
-.endif
+PDF_DESC=		PDF output
+PDF_CONFIGURE_ENABLE=	pdfdrv
+PDF_LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
 
-.if ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=	pdf:${PORTSDIR}/print/pdflib
-CONFIGURE_ARGS+=	--enable-pdfdrv
-.else
-CONFIGURE_ARGS+=	--disable-pdfdrv
-.endif
+XMHTML_DESC=		XmHTML based on-line help
+XMHTML_CONFIGURE_ENABLE=xmhtml
+XMHTML_LIB_DEPENDS=	libXmHTML.so:${PORTSDIR}/x11-toolkits/xmhtml
 
-.if ${PORT_OPTIONS:MXMHTML}
-LIB_DEPENDS+=	XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
-CONFIGURE_ARGS+=	--enable-xmhtml
-.else
-CONFIGURE_ARGS+=	--disable-xmhtml
-.endif
+post-configure:
+	@${REINPLACE_CMD} -e '/SCRIPTS/ s|INSTALL_PROGRAM|BSD_INSTALL_SCRIPT|' \
+		${WRKSRC}/auxiliary/Makefile
+	@${REINPLACE_CMD} -e '/cd /! s|$$(GRACE_HOME)/doc|${DOCSDIR}|' \
+		-e '/cd / s|$$(GRACE_HOME)/doc|$$(DESTDIR)$$(PREFIX)/man/man1|' \
+		-e '/^install/ s|$$(MANPAGES)||' \
+		${WRKSRC}/doc/Makefile
+	@${REINPLACE_CMD} -e 's|$$(GRACE_HOME)/examples|${EXAMPLESDIR}|' \
+		-e '/DOTEST/ s|INSTALL_PROGRAM|BSD_INSTALL_SCRIPT|' \
+		${WRKSRC}/examples/Makefile
+	@${REINPLACE_CMD} -e 's|$$(GRACE_HOME)/include|$$(PREFIX)/include|' \
+		-e 's|$$(GRACE_HOME)/lib|$$(PREFIX)/lib|' \
+		${WRKSRC}/grace_np/Makefile
+	@${FIND} ${WRKSRC} -name Makefile -exec ${REINPLACE_CMD} \
+		's|$$(GRACE_HOME)/bin|$$(PREFIX)/bin|' {} \;
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xmgrace ${PREFIX}/bin
-	@${LN} -sf xmgrace ${PREFIX}/bin/grace
-	@${LN} -sf xmgrace ${PREFIX}/bin/gracebat
-	${INSTALL_PROGRAM} ${WRKSRC}/auxiliary/convcal ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/grconvert/grconvert ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/auxiliary/fdf2fit ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/grace_np/grace_np.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/grace_np/libgrace_np.a ${PREFIX}/lib
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gracerc ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gracerc.user ${DATADIR}
-	@${MKDIR} ${DATADIR}/auxiliary
-	${INSTALL_DATA} ${WRKSRC}/auxiliary/README ${DATADIR}/auxiliary
-	${INSTALL_DATA} ${WRKSRC}/auxiliary/convcal.c ${DATADIR}/auxiliary
-	${INSTALL_DATA} ${WRKSRC}/auxiliary/magic.grace ${DATADIR}/auxiliary
-	@${MKDIR} ${DATADIR}/fonts
-	${INSTALL_DATA} ${WRKSRC}/fonts/FontDataBase ${DATADIR}/fonts
-	@${MKDIR} ${DATADIR}/fonts/enc
-	${INSTALL_DATA} ${WRKSRC}/fonts/enc/*.enc ${DATADIR}/fonts/enc
-	@${MKDIR} ${DATADIR}/fonts/type1
-	${INSTALL_DATA} ${WRKSRC}/fonts/type1/*.afm ${DATADIR}/fonts/type1
-	${INSTALL_DATA} ${WRKSRC}/fonts/type1/*.pfb ${DATADIR}/fonts/type1
-	@${MKDIR} ${DATADIR}/templates
-	${INSTALL_DATA} ${WRKSRC}/templates/*.agr ${DATADIR}/templates
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.1" \
-		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -
-	@${FIND} ${DOCSDIR} -exec ${CHOWN} ${SHAREOWN}:${SHAREGRP} {} \;
-	@${FIND} ${DOCSDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	@${LN} -sf ${DOCSDIR} ${DATADIR}/doc
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" \
-		-cf - . | ${TAR} -C ${EXAMPLESDIR} --unlink -xf -
-	@${FIND} ${EXAMPLESDIR} -exec ${CHOWN} ${SHAREOWN}:${SHAREGRP} {} \;
-	@${FIND} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	@${LN} -sf ${EXAMPLESDIR} ${DATADIR}/examples
-.endif
+post-install:
+	@${LN} -sf xmgrace ${STAGEDIR}${PREFIX}/bin/grace
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${LN} -sf ${DOCSDIR} ${STAGEDIR}${DATADIR}/doc
+	@${LN} -sf ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
 
 .include <bsd.port.mk>
