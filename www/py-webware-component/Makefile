@@ -3,6 +3,7 @@
 
 PORTNAME=	Component
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.webwareforpython.org/downloads/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}webware-
@@ -14,7 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webware>0:${PORTSDIR}/www/py-webware
 
 USE_PYTHON=	2
 
-NO_STAGE=	yes
 do-build:
 	@${ECHO_MSG} -n ">> Compiling ..."
 	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${WRKSRC}')"
@@ -23,8 +23,8 @@ do-build:
 do-install:
 	@${ECHO_CMD} -n ">> Installing ..."
 	@cd ${WRKSRC} && \
-		${FIND} . -type d -exec ${MKDIR} "${PREFIX}/share/webware/${PORTNAME}/{}" \; && \
-		${FIND} . -not -type d -exec ${INSTALL_DATA} "{}" "${PREFIX}/share/webware/${PORTNAME}/{}" \;
+		${FIND} . -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/share/webware/${PORTNAME}/{}" \; && \
+		${FIND} . -not -type d -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/share/webware/${PORTNAME}/{}" \;
 	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>
