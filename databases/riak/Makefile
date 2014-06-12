@@ -32,9 +32,6 @@ RIAK_DBDIR?=	/var/db/${PORTNAME}
 RIAK_LIBDIR?=	${PREFIX}/lib/${PORTNAME}/lib
 RIAK_HOMEDIR?=	${PREFIX}/lib/${PORTNAME}
 
-MAN1=		riak.1 riak-admin.1 riak-debug.1 search-cmd.1
-MANCOMPRESSED=	yes
-
 ALL_TARGET=	rel
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang15/bin:${PATH}
@@ -74,7 +71,7 @@ pre-install:
 
 do-install:
 .for d in ${RIAK_CONFDIR} ${RIAK_LOGDIR} ${RIAK_DBDIR} ${RIAK_LIBDIR} ${RIAK_HOMEDIR}
-	[ -d ${STAGEDIR}${d} ] || ${MKDIR} ${STAGEDIR}${d}
+	${MKDIR} ${STAGEDIR}${d}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/vm.args ${STAGEDIR}${RIAK_CONFDIR}/vm.args.sample
 	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/app.config ${STAGEDIR}${RIAK_CONFDIR}/app.config.sample
@@ -89,19 +86,5 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/riak-admin.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/riak-debug.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/search-cmd.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/
-
-post-install:
-	@if [ ! -f ${STAGEDIR}${RIAK_CONFDIR}/vm.args ]; then \
-		${CP} -p ${STAGEDIR}${RIAK_CONFDIR}/vm.args.sample ${STAGEDIR}${RIAK_CONFDIR}/vm.args; \
-	fi
-	@if [ ! -f ${STAGEDIR}${RIAK_CONFDIR}/app.config ]; then \
-		${CP} -p ${STAGEDIR}${RIAK_CONFDIR}/app.config.sample ${STAGEDIR}${RIAK_CONFDIR}/app.config; \
-	fi
-	@if [ ! -f ${STAGEDIR}${RIAK_CONFDIR}/cert.pem ]; then \
-		${CP} -p ${STAGEDIR}${RIAK_CONFDIR}/cert.pem.sample ${STAGEDIR}${RIAK_CONFDIR}/cert.pem; \
-	fi
-	@if [ ! -f ${STAGEDIR}${RIAK_CONFDIR}/key.pem ]; then \
-		${CP} -p ${STAGEDIR}${RIAK_CONFDIR}/key.pem.sample ${STAGEDIR}${RIAK_CONFDIR}/key.pem; \
-	fi
 
 .include <bsd.port.post.mk>
