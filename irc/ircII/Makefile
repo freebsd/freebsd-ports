@@ -19,6 +19,7 @@ USES=			tar:bzip2
 
 OPTIONS_DEFINE=	IRCBUG
 IRCBUG_DESC=	Install ircII bug-reporting script
+OPTIONS_SUB=	yes
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} irc ircflush ${STAGEDIR}${PREFIX}/bin)
