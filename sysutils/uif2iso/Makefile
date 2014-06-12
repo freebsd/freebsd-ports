@@ -3,6 +3,7 @@
 
 PORTNAME=	uif2iso
 PORTVERSION=	0.1.7c
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://aluigi.altervista.org/mytoolz/
 DISTNAME=	${PORTNAME}
@@ -10,22 +11,28 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MagicISO UIF files to ISO9660
 
+LICENSE=	GPLv2
+
 USES=		zip
+
 WRKSRC=		${WRKDIR}/src
 
-PLIST_FILES=	bin/uif2iso
-PORTDOCS=	README uif2iso.txt
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} 's|exit(1)|exit(0)|' ${WRKSRC}/uif2iso.c
-	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|exit(1)|exit(0)|' \
+		${WRKSRC}/uif2iso.c
+	@${REINPLACE_CMD} 's|/usr/local|${STAGEDIR}${PREFIX}|; \
+		s|$$(DESTDIR)||' \
+		${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${docs} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in README uif2iso.txt
+	${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
