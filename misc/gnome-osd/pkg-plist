@@ -37,6 +37,7 @@ etc/xdg/autostart/gnome-osd-event-bridge.desktop
 %%PYTHON_SITELIBDIR%%/gnomeosd/xscreensaver.pyo
 libdata/bonobo/servers/GNOME_OSD.server
 libexec/gnome-osd-server
+man/man1/gnome-osd-client.1.gz
 share/applications/gnome-osd-properties.desktop
 share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.EventBridge.service
 share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.service
@@ -63,6 +64,4 @@ share/locale/zh_CN/LC_MESSAGES/gnome-osd.mo
 share/pixmaps/gnome-osd.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
