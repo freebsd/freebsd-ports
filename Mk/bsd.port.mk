@@ -4202,6 +4202,9 @@ fix-plist-sequence: ${TMPPLIST}
 	@${MV} -f ${TMPGUCMD} ${TMPPLIST}
 .endif
 .if !defined(WITH_PKGNG)
+	@cd ${.CURDIR} && { ${MAKE} pretty-print-config | fold -sw 120 | ${SED} -e 's/^/@comment OPTIONS:/'; } >> ${TMPPLIST}
+	@${AWK} -f ${KEYWORDS}/pkg_install.awk ${TMPPLIST} > ${TMPPLIST}.keyword && \
+	    ${MV} -f ${TMPPLIST}.keyword ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo pkg_install EOL is scheduled for 2014-09-01. Please consider migrating to pkgng" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/" >> ${TMPPLIST}
 .endif
@@ -5626,11 +5629,6 @@ generate-plist:
 	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
 .endif
 .endif
-.endif
-.if !defined(WITH_PKGNG)
-	@cd ${.CURDIR} && { ${MAKE} pretty-print-config | fold -sw 120 | ${SED} -e 's/^/@comment OPTIONS:/'; } >> ${TMPPLIST}
-	@${AWK} -f ${KEYWORDS}/pkg_install.awk ${TMPPLIST} > ${TMPPLIST}.keyword && \
-	    ${MV} -f ${TMPPLIST}.keyword ${TMPPLIST}
 .endif
 .endif
 
