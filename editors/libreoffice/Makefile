@@ -66,6 +66,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/Caladea/Caladea-Bold.ttf:${PORTSDIR}/x11
 _MAKE_JOBS=	#
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:env aclocal:env
 USE_GL=		gl glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
