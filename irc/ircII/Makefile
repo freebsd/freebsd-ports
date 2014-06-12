@@ -3,6 +3,7 @@
 
 PORTNAME=		ircii
 PORTVERSION=	20131230
+PORTREVISION=	1
 CATEGORIES=		irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
@@ -15,6 +16,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
 DATADIR=		${PREFIX}/share/irc
 USES=			tar:bzip2
+
+OPTIONS_DEFINE=	IRCBUG
+IRCBUG_DESC=	Install ircII bug-reporting script
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} irc ircflush ${STAGEDIR}${PREFIX}/bin)
