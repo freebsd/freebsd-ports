@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140611:
-  AFFECTS: users of icu
+  AFFECTS: users of devel/icu
   AUTHOR: bapt@FreeBSD.org
 
   icu has been updated to 53.1. Please rebuild all ports that depend on it
