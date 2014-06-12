@@ -19,8 +19,7 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-EXTRA_PATCHES+=	${FILESDIR}/0001-std-isfinite-is-C-11.patch:-p1 \
-		${FILESDIR}/0001-use-correct-type.patch:-p1
+EXTRA_PATCHES+=	${FILESDIR}/0001-use-correct-type.patch:-p1
 
 GNU_CONFIGURE=	yes
 USES=		compiler:features libtool:keepla pathfix pkgconfig tar:xz
@@ -38,6 +37,7 @@ CONFIGURE_ARGS+=	--with-sharedptr=c++11
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 CONFIGURE_ARGS+=	--with-sharedptr=boost
+EXTRA_PATCHES+=	${FILESDIR}/0001-std-isfinite-is-C-11.patch:-p1
 .endif
 
 .include <bsd.port.post.mk>
