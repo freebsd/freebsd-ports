@@ -3,32 +3,30 @@
 
 PORTNAME=	crosspad
 PORTVERSION=	19991202
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.itojun.org/pub/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crosspad data downloader/converter
 
+USES=		perl5
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_path_perl=${PERL}
 WRKSRC=		${WRKDIR}/crosspad/build
-
-MAN1=	crosspad2ps.1 crosspad2eps.1 crosspad2tgif.1 crosspad2idraw.1 \
-	padload.1
 
 DOCS=	PROTOCOL README.english README.japanese
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -E -e 's,(bin|man)dir),DESTDIR)$$(&,g' \
+		-e 's,-(g|o) (bin|uucp),,g' \
+		${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/crosspad
-	for i in $(DOCS); do \
-		${INSTALL_DATA} ${WRKSRC}/../$$i ${PREFIX}/share/doc/crosspad; \
-	done
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/../|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
