@@ -22,7 +22,6 @@ PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
 _INSTDIR=	www/data/UserManager
 INSTALLDIR?=	${_INSTDIR}
 
-NO_STAGE=	yes
 pre-fetch:
 .if ${INSTALLDIR} == ${_INSTDIR}
 	@${ECHO_MSG} ""
@@ -35,14 +34,10 @@ post-patch:
 	 -e 's|%%INSTALLDIR%%|${INSTALLDIR}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${INSTALLDIR}
-	@${CP} -Rp ${WRKSRC}/* ${PREFIX}/${INSTALLDIR}
-	@${CHMOD} 666 ${PREFIX}/${INSTALLDIR}/config.php
-	@${ECHO_CMD} ""
-
-post-install:
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLDIR}
+	@${CP} -Rp ${WRKSRC}/* ${STAGEDIR}${PREFIX}/${INSTALLDIR}
+	@${CHMOD} 666 ${STAGEDIR}${PREFIX}/${INSTALLDIR}/config.php
+	@${MV} ${STAGEDIR}${PREFIX}/${INSTALLDIR}/config.php \
+		${STAGEDIR}${PREFIX}/${INSTALLDIR}/config.php.sample
 
 .include <bsd.port.mk>
