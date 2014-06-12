@@ -36,6 +36,4 @@
 %%FONTDIR%%/p052024l.ttf
 %%FONTDIR%%/s050000l.ttf
 %%FONTDIR%%/z003034l.ttf
-@unexec fc-cache -s %%PREFIX%%/%%FONTDIR%% || :
-@exec fc-cache -s %%PREFIX%%/%%FONTDIR%% || :
-@dirrmtry %%FONTDIR%%
+@fc %%FONTDIR%%
