@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
 CONFIGURE_ARGS=	CC="${CC}" PATH="${PATH}" \
