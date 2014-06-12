@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suhosin
-PORTVERSION=	0.9.35
+PORTVERSION=	0.9.36
 CATEGORIES=	security
 MASTER_SITES=	http://download.suhosin.org/
 PKGNAMEPREFIX=	php-
