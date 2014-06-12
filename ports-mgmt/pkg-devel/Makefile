@@ -2,7 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.3.0.b3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://files.etoilebsd.net/pkg/ \
