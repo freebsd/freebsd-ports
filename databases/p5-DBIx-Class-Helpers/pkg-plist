@@ -4,6 +4,10 @@
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/AutoRemoveColumns.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/CorrelateRelationship.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/DateMethods1
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/DateMethods1.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/DateMethods1/Announcement.pod
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Explain.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/IgnoreWantarray.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Me.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/NoColumns.pm
@@ -20,9 +24,12 @@
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/HRI.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/HasRows.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Limit.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/LimitedPage.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/OrderBy.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/OrderByMagic.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Page.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Prefetch.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/ResultsExist.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Rows.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Union.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/VirtualView.pm
@@ -52,6 +59,9 @@
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::AutoRemoveColumns.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::CorrelateRelationship.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::DateMethods1.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::DateMethods1::Announcement.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Explain.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::IgnoreWantarray.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Me.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::NoColumns.3.gz
@@ -68,9 +78,12 @@
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::HRI.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::HasRows.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::Limit.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::LimitedPage.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::OrderBy.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::OrderByMagic.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::Page.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::Prefetch.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::ResultsExist.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::Rows.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Union.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::VirtualView.3.gz
@@ -97,6 +110,7 @@
 @dirrm %%SITE_PERL%%/DBIx/Class/Helper/Schema
 @dirrm %%SITE_PERL%%/DBIx/Class/Helper/Row
 @dirrm %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut
+@dirrm %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/DateMethods1
 @dirrm %%SITE_PERL%%/DBIx/Class/Helper/ResultSet
 @dirrm %%SITE_PERL%%/DBIx/Class/Helper
 @dirrmtry %%SITE_PERL%%/DBIx/Class
