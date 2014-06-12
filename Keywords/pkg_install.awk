@@ -23,15 +23,15 @@
 #  @comment end @shell bin/shell
 
 $1 == "@sample" {
-  sample_file=$2
-  # Take out .sample
-  target_file=substr(sample_file, 0, length(sample_file) - 7)
-  print "@comment begin " $0
-  print "@unexec if cmp -s '%D/" target_file "' '%D/" sample_file "'; then rm -f '%D/" target_file "'; fi"
-  print sample_file
-  print "@exec if ! [ -f '%D/" target_file "' ]; then /bin/cp -p '%D/" sample_file "' '%D/" target_file "'; fi"
-  print "@comment end " $0
-  next
+	sample_file=$2
+	# Take out .sample
+	target_file=substr(sample_file, 0, length(sample_file) - 7)
+	print "@comment begin " $0
+	print "@unexec if cmp -s '%D/" target_file "' '%D/" sample_file "'; then rm -f '%D/" target_file "'; fi"
+	print sample_file
+	print "@exec if ! [ -f '%D/" target_file "' ]; then /bin/cp -p '%D/" sample_file "' '%D/" target_file "'; fi"
+	print "@comment end " $0
+	next
 }
 
 $1 == "@shell" {
