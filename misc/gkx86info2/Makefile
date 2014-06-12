@@ -19,12 +19,9 @@ USES=		pkgconfig
 USE_GNOME=	gtk20
 
 WRKSRC=		${WRKDIR}/gkx86info${PORTVERSION}
-
-NO_STAGE=	yes
+PLUGINDIR=	${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-build:
 	@cd ${WRKSRC} && eval ${CC} ${CFLAGS} -fPIC -o MHz.o -c MHz.c
@@ -34,13 +31,9 @@ do-build:
 		 -o ${PORTNAME}.so MHz.o gkx86info.o
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.so \
-		${PREFIX}/libexec/gkrellm2/plugins/
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${PLUGINDIR}
+	${INSTALL_LIB} ${WRKSRC}/${PORTNAME}.so ${PLUGINDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
