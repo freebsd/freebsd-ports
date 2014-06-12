@@ -2,7 +2,7 @@
 
 PORTNAME=	rast
 PORTVERSION=	0.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://projects.netlab.jp/rast/archives/ \
 		http://dist.bsdlab.org/

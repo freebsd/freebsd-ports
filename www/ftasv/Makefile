@@ -3,7 +3,7 @@
 
 PORTNAME=	ftasv
 PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://fabletech.com/${PORTNAME}-download/
 
@@ -20,10 +20,6 @@ PORTDOCS=	AUTHORS COPYING ChangeLog README
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not link on 6.X
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
