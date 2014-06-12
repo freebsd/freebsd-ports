@@ -13,6 +13,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${LOCALBASE}/libdata/pkgconfig/cppunit.pc:${PORTSDIR}/devel/cppunit \
 		dmake:${PORTSDIR}/devel/dmake \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
+		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		mdds>=0.9.0:${PORTSDIR}/devel/mdds \
 		gpatch:${PORTSDIR}/devel/patch \
 		ucpp:${PORTSDIR}/devel/ucpp \
@@ -91,6 +92,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
 			GNUTAR=${TAR} \
 			GPERF=${LOCALBASE}/bin/gperf \
+			FLEX=${LOCALBASE}/bin/flex
 			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 			PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
 			TMPDIR=${WRKDIR} \
