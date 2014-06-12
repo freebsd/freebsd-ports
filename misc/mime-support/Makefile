@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mime-support
-PORTVERSION=	3.54
+PORTVERSION=	3.56
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION:C/([0-9]*\.[0-9]*)\.(.*)/\1-\2/}
@@ -10,11 +10,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:C/([0-9]*\.[0-9]*)\.(.*)/\1-\2/}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	MIME Media Types list
 
+USES=		shebangfix
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.2$//}
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/run-mailcap etc/mime.types \
 		man/man1/run-mailcap.1.gz
+
+SHEBANG_FILES=	run-mailcap
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run-mailcap ${STAGEDIR}${PREFIX}/bin
