@@ -232,6 +232,7 @@ simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Redistribution prohibited
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
+stardict-longman-*	textproc/stardict-longman	Possible copyright infringement
 stat.tar.Z		math/unixstat		License does not allow redistribution of binaries
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed
