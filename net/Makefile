@@ -63,7 +63,6 @@
     SUBDIR += bwping
     SUBDIR += c3270
     SUBDIR += cagibi
-    SUBDIR += callweaver
     SUBDIR += ccxstream
     SUBDIR += chrony
     SUBDIR += citrix_ica
