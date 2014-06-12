@@ -36,24 +36,6 @@ lib/xawtv/write-avi.so
 %%DV%%lib/xawtv/write-dv.so
 %%QT%%lib/xawtv/write-qt.so
 @dirrm lib/xawtv
-man/es/man1/fbtv.1
-man/es/man1/rootv.1
-man/es/man1/scantv.1
-man/es/man1/streamer.1
-man/es/man1/subtitles.1
-man/es/man1/ttv.1
-man/es/man1/v4lctl.1
-man/es/man1/xawtv-remote.1
-man/es/man1/xawtv.1
-man/es/man5/xawtvrc.5
-man/es/man8/v4l-conf.8
-man/fr/man1/xawtv.1
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/es/man8
-@dirrmtry man/es/man5
-@dirrmtry man/es/man1
-@dirrmtry man/es
 share/xawtv/Index.map
 share/xawtv/argentina.list
 share/xawtv/ccir-h.list
