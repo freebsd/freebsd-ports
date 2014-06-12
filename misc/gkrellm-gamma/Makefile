@@ -16,8 +16,11 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 USES=		pkgconfig
 USE_XORG=	x11 xxf86vm
 PLIST_FILES=	libexec/gkrellm2/plugins/gamma.so
-MAKE_ENV=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
+MAKE_ENV=	PLUGIN_DIR=${PLUGINDIR}
 ALL_TARGET=	gamma.so
+PLUGINDIR=	${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
-NO_STAGE=	yes
+pre-install:
+	@${MKDIR} ${PLUGINDIR}
+
 .include <bsd.port.mk>
