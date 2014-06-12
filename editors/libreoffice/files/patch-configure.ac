@@ -1,20 +1,20 @@
---- configure.orig	2014-04-30 22:16:17.000000000 +0200
-+++ configure	2014-06-10 15:40:17.936566195 +0200
-@@ -10511,7 +10511,7 @@
+--- configure.ac.orig	2014-06-12 13:00:46.943316659 +0200
++++ configure.ac	2014-06-12 13:00:39.783317665 +0200
+@@ -4024,7 +4024,7 @@
          PLATFORMID=freebsd_x86
          OUTPATH=unxfbsdi
          ;;
 -    x86_64)
-+    amd64)
++    x86_64|amd64)
          CPUNAME=X86_64
          RTL_ARCH=X86_64
          PLATFORMID=freebsd_x86_64
-@@ -17482,7 +17482,7 @@
+@@ -7051,7 +7051,7 @@
              JAVA_ARCH="i386"
              JAVA_TOOLKIT="client"
              ;;
 -        x86_64)
-+        amd64)
++        x86_64|amd64)
              if test "`echo $JAVA_HOME | sed -e 's,.*/,,'`" = "linux"; then
                  JAVA_ARCH="i386"
                  JAVA_TOOLKIT="client"
