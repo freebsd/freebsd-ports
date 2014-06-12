@@ -10,16 +10,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ WSDL Parser
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
-MAN1=		wsdlpull.1 wsdlpull-schema.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/-O2 -Wall/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} \
@@ -33,8 +31,8 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} README wsdlpull.html ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} README wsdlpull.html ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
