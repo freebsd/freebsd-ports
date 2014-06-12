@@ -116,8 +116,8 @@ include/scribus/docitemattrprefs.h
 include/scribus/docsections.h
 include/scribus/documentchecker.h
 include/scribus/documentinformation.h
-include/scribus/downloadmanager/scdlthread.h
 include/scribus/downloadmanager/scdlmgr.h
+include/scribus/downloadmanager/scdlthread.h
 include/scribus/editor.h
 include/scribus/effectsdialog.h
 include/scribus/exif.h
@@ -705,1618 +705,1638 @@ man/de/man1/scribus.1.gz
 man/man1/scribus.1.gz
 man/pl/man1/scribus.1.gz
 share/applications/scribus.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUILDING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogSVN
+%%PORTDOCS%%%%DOCSDIR%%/LINKS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PACKAGING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATION
+%%PORTDOCS%%%%DOCSDIR%%/de/EditingShapes.html
+%%PORTDOCS%%%%DOCSDIR%%/de/WwFill.html
+%%PORTDOCS%%%%DOCSDIR%%/de/WwFrames.html
+%%PORTDOCS%%%%DOCSDIR%%/de/WwImages.html
+%%PORTDOCS%%%%DOCSDIR%%/de/WwLines.html
+%%PORTDOCS%%%%DOCSDIR%%/de/WwRenderframes.html
+%%PORTDOCS%%%%DOCSDIR%%/de/WwShapes.html
+%%PORTDOCS%%%%DOCSDIR%%/de/WwStyles.html
+%%PORTDOCS%%%%DOCSDIR%%/de/WwText.html
+%%PORTDOCS%%%%DOCSDIR%%/de/about1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/about2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/add_colors.html
+%%PORTDOCS%%%%DOCSDIR%%/de/bugreport.html
+%%PORTDOCS%%%%DOCSDIR%%/de/cli.html
+%%PORTDOCS%%%%DOCSDIR%%/de/cms.html
+%%PORTDOCS%%%%DOCSDIR%%/de/cms2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/cms3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/codingstandards.html
+%%PORTDOCS%%%%DOCSDIR%%/de/collect4output.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color10.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color4.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color5.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color6.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color7.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color7a.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color7b.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color7c.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color8.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color9.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color_editing.html
+%%PORTDOCS%%%%DOCSDIR%%/de/colorwheel.html
+%%PORTDOCS%%%%DOCSDIR%%/de/config.html
+%%PORTDOCS%%%%DOCSDIR%%/de/contributions.html
+%%PORTDOCS%%%%DOCSDIR%%/de/createlinks.html
+%%PORTDOCS%%%%DOCSDIR%%/de/developers.html
+%%PORTDOCS%%%%DOCSDIR%%/de/doccopyright.html
+%%PORTDOCS%%%%DOCSDIR%%/de/docinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/de/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/de/download.html
+%%PORTDOCS%%%%DOCSDIR%%/de/editorial.html
+%%PORTDOCS%%%%DOCSDIR%%/de/faq1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/faq2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/faq3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/fileproblems.html
+%%PORTDOCS%%%%DOCSDIR%%/de/fonts1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/fonts2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/gettexthowto.html
+%%PORTDOCS%%%%DOCSDIR%%/de/gsview.html
+%%PORTDOCS%%%%DOCSDIR%%/de/help.html
+%%PORTDOCS%%%%DOCSDIR%%/de/hyphenator.html
+%%PORTDOCS%%%%DOCSDIR%%/de/images/CH_1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/CH_2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/CH_3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/CH_4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/CH_5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/CH_6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/CH_7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/CH_8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Cover_en1-page1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/DrawLatexFrame.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE10.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE11.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE12.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE13.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE14.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE15.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE16.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE17.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE18.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE19.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE20.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE21.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE22.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE23.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE24.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE25.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE26.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE27.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE28.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE29.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE30.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE31.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE32.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE33.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE9.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_a.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_c.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_colour_select.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/GG_CE_ex9.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Image_Properties.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Mantis_my_view.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Mantis_new_report1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Mantis_new_report2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Mantis_new_report3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Mantis_searching.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Mantis_signup.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/NAA_Colors.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/RYB_color_wheel.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt10.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt11.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt12.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt13.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt14.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt15.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt16.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt17.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt17a.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt17b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt18.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt18b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt19.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt20.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt21.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Rembrandt9.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Scribus_Haiku.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/Scripter.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/SwB.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/XYZ_Prop.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/XYZ_Prop1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/add_colors1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/add_colors2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/add_colors3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/add_colors4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/add_colors5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/add_colors6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/add_colors7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/alert.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/annotation.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/batik1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/boundingbox.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/boundingbox1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cmcanvas.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cms-gamut1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cms-gamut2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cms.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cmsmodify1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cmyk.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/collect_out1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/collect_out2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/collect_out3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/collect_out5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/collect_out6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/colormanager2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/colorwheel.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/colrs-caricature.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/colrs-mgt1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/colrs-mgt2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/combine_polygons.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/combine_polygons1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/combine_polygons2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/combine_polygons3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/combine_polygons4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/combine_polygons5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/context_image.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/context_shape.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/context_text135.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/contourline_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-analogous.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-analogous_20.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-analogous_30.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-compl.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-complementary.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-splitcompl.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-splitcompl_20.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-splitcompl_40.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-tetradic.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-tetradic_20.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-tetradic_40.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-triadic.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/cw-warning.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/docheader1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/docheader2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/docinfo.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/docinfo1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/docinfo2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/dtp-studio.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/duotone-imp.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/duotone-imp2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/edit_shapes.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/editcols1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/editcols1a.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/editcols2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/editcols3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/eps-imp1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/eps-imp2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/eps-imp3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/eps-imp4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/eps-imp5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/externallink.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/externalweblink.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/file-error1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/file-error2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/file-error3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/fileimport.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/font-preview.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/font-subst.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/fontmatrix.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/fontpref1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/fontpref2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/fontpref3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/fonts.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/fonts2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/frame_shape_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/galaxy_gauge.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/galaxy_harmonizer1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/galaxy_harmonizer2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/geometry.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/geometry1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/gimpoptions1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/gimpoptions2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/gimpoptions3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/givelife1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/gradient_adjuster.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/gradient_adjuster1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/gradient_adjuster_vector.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/htmlimport.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/htmlstyle.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/hyphen1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/hyphen2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/hyphen3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/image_compress.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/import-pdfimage.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/ink-cov.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/insert-frame-1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/insert-frame-2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/krita.jpg
+%%PORTDOCS%%%%DOCSDIR%%/de/images/krita.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/layers1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/layers2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/lilyp.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/line_tab.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/line_tab1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/line_tab2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/line_tab3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/line_tab4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/line_tab5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/line_tab6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/line_tab7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/link.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/lprof.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/missing-gs.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/mpage1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/mpage2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/mpage3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/mpage4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/mpage5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/multipledup_copies.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/multipledup_rotation.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/multipledup_rows.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/new1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/new2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/new3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/new4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/new5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/new6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/node_edit_close.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/nodes_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/numb-sections.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/oogettext1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pagenumbering.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathops8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathtools.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathtools1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pathtools2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/patterns1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/patterns2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdf-form-ht1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdf-form-ht2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdf-form-ht3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdf-form-ht4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdf-form-ht5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdf-form-ht6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdftools.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdfx1a-1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdfx1a-lo.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdfx1acolor.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdfx1aintent.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdfx3-1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdfxcolor.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/pdfxintent.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/plot1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/plot2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/polygons.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/polygons1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/povray.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/preflight-v.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs-mac-1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_9parts.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_colormgmt.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_display.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_document.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_document1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_exttools.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_fibonacci.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_general.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_goldenmean.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_guides.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_guides1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_gutenberg.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_keyboard.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_magazine.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_misc.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_pdfexport.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_pdfexport1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_preflight.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_shortwords.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_tools.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_tools1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_tools2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_tools3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_tools4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_tools5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_tools6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prefs_typog.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/print-dialog1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/print-dialog2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/printer2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/printpreview.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/prop_shape.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/qsg-col1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/qsg-col2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/register.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/resene-pal.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/result.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf-error1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf-error2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf-error3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rf8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rgb-cmyk.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/rgb.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/round_rectangle.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/sadie4by2b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/scribus-os2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/scribus-pres1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/scribus-pres2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/shape_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/shapes7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/shapes8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/skewing.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/spot.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/squat_tux.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/style_manager1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/style_manager10.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/style_manager1b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/style_manager3b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/style_manager7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/style_manager8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/style_manager9.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/swdialog.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/table-import-1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/table-import-2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/table-import-3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/tb-bookbinder.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/tb-gsview.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/tb-inkscape.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/tb-jpdf.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/tb-libreoffice.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/tb-pdf-imp.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text-frame-link.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text-frame-unlink.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_filter135.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_filter136.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_filter136b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_linking.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab10.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab11.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab11b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab12.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab13.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab6.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab7.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab7a.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab7b.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab8.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/text_tab9.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/transform_dialogb.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/transform_translaterotation.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/transform_translaterotation1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/transform_translatescaling.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/transform_translateskewing.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/transform_translateskewing1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/vectimp1.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/vectimp2.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/vectimp3.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/vectimp4.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/vectimp5.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/vector-advanced.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/vector-clipart.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/xnview.png
+%%PORTDOCS%%%%DOCSDIR%%/de/importbitmap1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/importhints.html
+%%PORTDOCS%%%%DOCSDIR%%/de/importhints1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/importhints2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/importhints3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/importhints4.html
+%%PORTDOCS%%%%DOCSDIR%%/de/index.html
+%%PORTDOCS%%%%DOCSDIR%%/de/install-dpkg.html
+%%PORTDOCS%%%%DOCSDIR%%/de/install.html
+%%PORTDOCS%%%%DOCSDIR%%/de/install1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/install2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/install3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/install4.html
+%%PORTDOCS%%%%DOCSDIR%%/de/install5.html
+%%PORTDOCS%%%%DOCSDIR%%/de/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/de/irc.html
+%%PORTDOCS%%%%DOCSDIR%%/de/keys.html
+%%PORTDOCS%%%%DOCSDIR%%/de/layers.html
+%%PORTDOCS%%%%DOCSDIR%%/de/lipsum.html
+%%PORTDOCS%%%%DOCSDIR%%/de/mailing_lists.html
+%%PORTDOCS%%%%DOCSDIR%%/de/menu.xml
+%%PORTDOCS%%%%DOCSDIR%%/de/moncal.html
+%%PORTDOCS%%%%DOCSDIR%%/de/mouse.html
+%%PORTDOCS%%%%DOCSDIR%%/de/multiple_transform.html
+%%PORTDOCS%%%%DOCSDIR%%/de/otherinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pagenumber.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pagetemplate1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdf_form.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdfexport1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdfexport2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdfexport3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdfexport4.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdfexport_image.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdflavor.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdfx1a.html
+%%PORTDOCS%%%%DOCSDIR%%/de/pdfx3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/plugin_howto.html
+%%PORTDOCS%%%%DOCSDIR%%/de/print1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/print2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/print3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/print4.html
+%%PORTDOCS%%%%DOCSDIR%%/de/psd.html
+%%PORTDOCS%%%%DOCSDIR%%/de/qsg.html
+%%PORTDOCS%%%%DOCSDIR%%/de/readme-haiku.html
+%%PORTDOCS%%%%DOCSDIR%%/de/readme-macosx.html
+%%PORTDOCS%%%%DOCSDIR%%/de/readme-os2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/readme-win32.html
+%%PORTDOCS%%%%DOCSDIR%%/de/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/de/%%CMAKE_BUILD_TYPE%%s.html
+%%PORTDOCS%%%%DOCSDIR%%/de/renderframes.html
+%%PORTDOCS%%%%DOCSDIR%%/de/resources.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scribus-svg.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scribuscopyright.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scribusfileformat.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripter-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripter-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripter1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-ImageExport.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-PDFfile.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-Printer.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-color.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-constants.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-dialogs.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-font.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-getobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-layer.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-manobj.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-object.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-page.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-pydoc.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-select.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-setobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-textframes.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi.html
+%%PORTDOCS%%%%DOCSDIR%%/de/settings1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/short-words.html
+%%PORTDOCS%%%%DOCSDIR%%/de/specs.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox1.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox12.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox13.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox14.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox15.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox16.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox17.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox18.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox19.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox2.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox3.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox4.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox5.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox6.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox7.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox8.html
+%%PORTDOCS%%%%DOCSDIR%%/de/toolbox9.html
+%%PORTDOCS%%%%DOCSDIR%%/de/topten.html
+%%PORTDOCS%%%%DOCSDIR%%/de/translation_howto.html
+%%PORTDOCS%%%%DOCSDIR%%/de/tutorials.html
+%%PORTDOCS%%%%DOCSDIR%%/de/workspace1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/EditingShapes.html
+%%PORTDOCS%%%%DOCSDIR%%/en/WwFill.html
+%%PORTDOCS%%%%DOCSDIR%%/en/WwFrames.html
+%%PORTDOCS%%%%DOCSDIR%%/en/WwImages.html
+%%PORTDOCS%%%%DOCSDIR%%/en/WwLines.html
+%%PORTDOCS%%%%DOCSDIR%%/en/WwRenderframes.html
+%%PORTDOCS%%%%DOCSDIR%%/en/WwShapes.html
+%%PORTDOCS%%%%DOCSDIR%%/en/WwStyles.html
+%%PORTDOCS%%%%DOCSDIR%%/en/WwText.html
+%%PORTDOCS%%%%DOCSDIR%%/en/about1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/about2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/add_colors.html
+%%PORTDOCS%%%%DOCSDIR%%/en/bugreport.html
+%%PORTDOCS%%%%DOCSDIR%%/en/cli.html
+%%PORTDOCS%%%%DOCSDIR%%/en/cms.html
+%%PORTDOCS%%%%DOCSDIR%%/en/cms2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/cms3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/codingstandards.html
+%%PORTDOCS%%%%DOCSDIR%%/en/collect4output.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color10.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color5.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color6.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color7.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color7a.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color7b.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color7c.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color8.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color9.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color_editing.html
+%%PORTDOCS%%%%DOCSDIR%%/en/colorwheel.html
+%%PORTDOCS%%%%DOCSDIR%%/en/config.html
+%%PORTDOCS%%%%DOCSDIR%%/en/contributions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/createlinks.html
+%%PORTDOCS%%%%DOCSDIR%%/en/developers.html
+%%PORTDOCS%%%%DOCSDIR%%/en/doccopyright.html
+%%PORTDOCS%%%%DOCSDIR%%/en/docinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/en/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/en/download.html
+%%PORTDOCS%%%%DOCSDIR%%/en/editorial.html
+%%PORTDOCS%%%%DOCSDIR%%/en/faq1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/faq3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/fileproblems.html
+%%PORTDOCS%%%%DOCSDIR%%/en/fonts1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/fonts2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/gettexthowto.html
+%%PORTDOCS%%%%DOCSDIR%%/en/gsview.html
+%%PORTDOCS%%%%DOCSDIR%%/en/help.html
+%%PORTDOCS%%%%DOCSDIR%%/en/hyphenator.html
+%%PORTDOCS%%%%DOCSDIR%%/en/images/CH_1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/CH_2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/CH_3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/CH_4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/CH_5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/CH_6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/CH_7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/CH_8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Cover_en1-page1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/DrawLatexFrame.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE10.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE11.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE12.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE13.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE14.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE15.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE16.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE17.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE18.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE19.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE20.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE21.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE22.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE23.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE24.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE25.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE26.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE27.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE28.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE29.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE30.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE31.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE32.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE33.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE9.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_a.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_c.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_colour_select.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/GG_CE_ex9.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Image_Properties.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Mantis_my_view.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Mantis_new_report1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Mantis_new_report2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Mantis_new_report3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Mantis_searching.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Mantis_signup.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/NAA_Colors.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/RYB_color_wheel.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt10.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt11.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt12.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt13.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt14.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt15.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt16.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt17.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt17a.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt17b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt18.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt18b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt19.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt20.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt21.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Rembrandt9.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Scribus_Haiku.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/Scripter.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/SwB.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/XYZ_Prop.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/XYZ_Prop1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/add_colors1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/add_colors2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/add_colors3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/add_colors4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/add_colors5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/add_colors6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/add_colors7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/alert.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/annotation.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/batik1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/boundingbox.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/boundingbox1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cmcanvas.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cms-gamut1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cms-gamut2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cmsmodify1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cmyk.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/collect_out1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/collect_out2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/collect_out3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/collect_out5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/collect_out6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/colormanager2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/colorwheel.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/colrs-caricature.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/colrs-mgt1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/colrs-mgt2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/combine_polygons.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/combine_polygons1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/combine_polygons2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/combine_polygons3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/combine_polygons4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/combine_polygons5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/context_image.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/context_shape.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/context_text135.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/contourline_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-analogous.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-analogous_20.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-analogous_30.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-compl.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-complementary.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-splitcompl.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-splitcompl_20.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-splitcompl_40.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-tetradic.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-tetradic_20.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-tetradic_40.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-triadic.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/cw-warning.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/docheader1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/docheader2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/docinfo.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/docinfo2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/dtp-studio.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/duotone-imp.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/duotone-imp2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/edit_shapes.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/editcols1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/editcols1a.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/editcols2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/editcols3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/eps-imp1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/eps-imp2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/eps-imp3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/eps-imp4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/eps-imp5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/externallink.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/externalweblink.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/file-error1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/file-error2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/file-error3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/fileimport.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/font-preview.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/font-subst.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/fontmatrix.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/fontpref1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/fontpref2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/fontpref3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/fonts.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/fonts2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/frame_shape_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/galaxy_gauge.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/galaxy_harmonizer1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/galaxy_harmonizer2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/geometry.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/geometry1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/gimpoptions1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/gimpoptions2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/gimpoptions3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/givelife1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/gradient_adjuster.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/gradient_adjuster1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/gradient_adjuster_vector.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/htmlimport.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/htmlstyle.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/hyphen1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/hyphen2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/hyphen3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/image_compress.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/import-pdfimage.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/ink-cov.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/insert-frame-1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/insert-frame-2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/krita.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/layers1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/layers2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/lilyp.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/line_tab.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/line_tab1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/line_tab2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/line_tab3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/line_tab4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/line_tab5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/line_tab6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/line_tab7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/link.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/lprof.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/missing-gs.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/mpage1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/mpage2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/mpage3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/mpage4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/mpage5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/multipledup_copies.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/multipledup_rotation.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/multipledup_rows.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/new1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/new2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/new3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/new4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/new5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/new6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/node_edit_close.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/nodes_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/numb-sections.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/oogettext1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathops8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathtools.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathtools1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pathtools2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/patterns1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/patterns2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdf-form-ht1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdf-form-ht2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdf-form-ht3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdf-form-ht4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdf-form-ht5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdf-form-ht6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdftools.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdfx1a-1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdfx1a-lo.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdfx1acolor.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdfx1aintent.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdfx3-1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdfxcolor.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/pdfxintent.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/plot1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/plot2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/polygons.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/polygons1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/povray.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/preflight-v.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs-mac-1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_9parts.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_colormgmt.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_display.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_document.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_document1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_exttools.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_fibonacci.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_general.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_goldenmean.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_guides.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_guides1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_gutenberg.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_keyboard.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_magazine.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_misc.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_pdfexport.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_pdfexport1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_preflight.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_shortwords.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_tools.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_tools1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_tools2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_tools3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_tools4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_tools5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_tools6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prefs_typog.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/print-dialog1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/print-dialog2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/printer2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/printpreview.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/prop_shape.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/qsg-col1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/qsg-col2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/register.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/resene-pal.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/result.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf-error1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf-error2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf-error3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rf8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rgb-cmyk.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/rgb.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/round_rectangle.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/sadie4by2b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/scribus-os2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/scribus-pres1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/scribus-pres2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/shape_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/shapes7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/shapes8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/skewing.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/spot.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/squat_tux.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/style_manager1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/style_manager10.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/style_manager1b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/style_manager3b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/style_manager7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/style_manager8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/style_manager9.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/swdialog.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/table-import-1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/table-import-2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/table-import-3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/tb-bookbinder.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/tb-gsview.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/tb-inkscape.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/tb-jpdf.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/tb-libreoffice.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/tb-pdf-imp.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text-frame-link.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text-frame-unlink.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_filter135.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_filter136.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_filter136b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_linking.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab10.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab11.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab11b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab12.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab13.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab6.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab7.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab7a.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab7b.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab8.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/text_tab9.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/transform_dialogb.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/transform_translaterotation.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/transform_translaterotation1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/transform_translatescaling.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/transform_translateskewing.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/transform_translateskewing1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/vectimp1.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/vectimp2.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/vectimp3.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/vectimp4.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/vectimp5.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/vector-advanced.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/vector-clipart.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/wwframes_fillspace.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/xnview.png
+%%PORTDOCS%%%%DOCSDIR%%/en/importbitmap1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/importhints.html
+%%PORTDOCS%%%%DOCSDIR%%/en/importhints1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/importhints2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/importhints3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/importhints4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/install-dpkg.html
+%%PORTDOCS%%%%DOCSDIR%%/en/install.html
+%%PORTDOCS%%%%DOCSDIR%%/en/install1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/install2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/install3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/install4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/install5.html
+%%PORTDOCS%%%%DOCSDIR%%/en/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/en/irc.html
+%%PORTDOCS%%%%DOCSDIR%%/en/keys.html
+%%PORTDOCS%%%%DOCSDIR%%/en/layers.html
+%%PORTDOCS%%%%DOCSDIR%%/en/lipsum.html
+%%PORTDOCS%%%%DOCSDIR%%/en/mailing_lists.html
+%%PORTDOCS%%%%DOCSDIR%%/en/menu.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/moncal.html
+%%PORTDOCS%%%%DOCSDIR%%/en/mouse.html
+%%PORTDOCS%%%%DOCSDIR%%/en/multiple_transform.html
+%%PORTDOCS%%%%DOCSDIR%%/en/otherinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pagenumber.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pagetemplate1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdf_form.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdfexport1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdfexport2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdfexport3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdfexport4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdfexport_image.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdflavor.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdfx1a.html
+%%PORTDOCS%%%%DOCSDIR%%/en/pdfx3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/plugin_howto.html
+%%PORTDOCS%%%%DOCSDIR%%/en/print1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/print2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/print3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/print4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/psd.html
+%%PORTDOCS%%%%DOCSDIR%%/en/qsg.html
+%%PORTDOCS%%%%DOCSDIR%%/en/readme-haiku.html
+%%PORTDOCS%%%%DOCSDIR%%/en/readme-macosx.html
+%%PORTDOCS%%%%DOCSDIR%%/en/readme-os2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/readme-win32.html
+%%PORTDOCS%%%%DOCSDIR%%/en/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/en/%%CMAKE_BUILD_TYPE%%s.html
+%%PORTDOCS%%%%DOCSDIR%%/en/renderframes.html
+%%PORTDOCS%%%%DOCSDIR%%/en/resources.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scribus-svg.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scribuscopyright.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scribusfileformat.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripter-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripter-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripter1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-ImageExport.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-PDFfile.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-Printer.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-color.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-constants.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-dialogs.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-font.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-getobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-layer.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-manobj.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-object.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-page.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-select.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-setobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-textframes.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi.html
+%%PORTDOCS%%%%DOCSDIR%%/en/settings1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/short-words.html
+%%PORTDOCS%%%%DOCSDIR%%/en/specs.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox12.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox13.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox14.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox15.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox16.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox17.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox18.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox19.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox5.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox6.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox7.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox8.html
+%%PORTDOCS%%%%DOCSDIR%%/en/toolbox9.html
+%%PORTDOCS%%%%DOCSDIR%%/en/topten.html
+%%PORTDOCS%%%%DOCSDIR%%/en/translation_howto.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorials.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorials/scribus-short-words/after_short_words.png
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorials/scribus-short-words/before_short_words.png
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorials/scribus-short-words/dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorials/scribus-short-words/menu.png
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorials/scribus-short-words/menu.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorials/scribus-short-words/short-words-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/en/workspace1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/EditingShapes.html
+%%PORTDOCS%%%%DOCSDIR%%/it/WwFill.html
+%%PORTDOCS%%%%DOCSDIR%%/it/WwFrames.html
+%%PORTDOCS%%%%DOCSDIR%%/it/WwImages.html
+%%PORTDOCS%%%%DOCSDIR%%/it/WwLines.html
+%%PORTDOCS%%%%DOCSDIR%%/it/WwRenderframes.html
+%%PORTDOCS%%%%DOCSDIR%%/it/WwShapes.html
+%%PORTDOCS%%%%DOCSDIR%%/it/WwStyles.html
+%%PORTDOCS%%%%DOCSDIR%%/it/WwText.html
+%%PORTDOCS%%%%DOCSDIR%%/it/about1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/about2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/add_colors.html
+%%PORTDOCS%%%%DOCSDIR%%/it/bugreport.html
+%%PORTDOCS%%%%DOCSDIR%%/it/cli.html
+%%PORTDOCS%%%%DOCSDIR%%/it/cms.html
+%%PORTDOCS%%%%DOCSDIR%%/it/cms2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/cms3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/codingstandards.html
+%%PORTDOCS%%%%DOCSDIR%%/it/collect4output.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color10.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color4.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color5.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color6.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color7.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color7a.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color7b.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color7c.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color8.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color9.html
+%%PORTDOCS%%%%DOCSDIR%%/it/color_editing.html
+%%PORTDOCS%%%%DOCSDIR%%/it/colorwheel.html
+%%PORTDOCS%%%%DOCSDIR%%/it/config.html
+%%PORTDOCS%%%%DOCSDIR%%/it/contributions.html
+%%PORTDOCS%%%%DOCSDIR%%/it/createlinks.html
+%%PORTDOCS%%%%DOCSDIR%%/it/developers.html
+%%PORTDOCS%%%%DOCSDIR%%/it/doccopyright.html
+%%PORTDOCS%%%%DOCSDIR%%/it/docinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/it/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/it/download.html
+%%PORTDOCS%%%%DOCSDIR%%/it/editorial.html
+%%PORTDOCS%%%%DOCSDIR%%/it/faq1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/faq3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/fileproblems.html
+%%PORTDOCS%%%%DOCSDIR%%/it/fonts1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/fonts2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/gettexthowto.html
+%%PORTDOCS%%%%DOCSDIR%%/it/gsview.html
+%%PORTDOCS%%%%DOCSDIR%%/it/help.html
+%%PORTDOCS%%%%DOCSDIR%%/it/hyphenator.html
+%%PORTDOCS%%%%DOCSDIR%%/it/images/CH_1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/CH_2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/CH_3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/CH_4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/CH_5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/CH_6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/CH_7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/CH_8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Cover_en1-page1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/DrawLatexFrame.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE10.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE11.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE12.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE13.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE14.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE15.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE16.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE17.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE18.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE19.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE20.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE21.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE22.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE23.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE24.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE25.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE26.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE27.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE28.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE29.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE30.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE31.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE32.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE33.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE9.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_a.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_c.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_colour_select.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/GG_CE_ex9.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Image_Properties.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Mantis_my_view.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Mantis_new_report1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Mantis_new_report2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Mantis_new_report3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Mantis_searching.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Mantis_signup.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/NAA_Colors.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/RYB_color_wheel.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt10.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt11.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt12.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt13.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt14.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt15.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt16.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt17.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt17a.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt17b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt18.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt18b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt19.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt20.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt21.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Rembrandt9.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Scribus_Haiku.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/Scripter.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/SwB.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/XYZ_Prop.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/XYZ_Prop1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/add_colors1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/add_colors3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/add_colors4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/add_colors5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/add_colors6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/add_colors7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/alert.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/annotation.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/batik1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/boundingbox.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/boundingbox1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cmcanvas.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cms-gamut1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cms-gamut2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cmsmodify1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cmyk.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/collect_out1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/collect_out2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/collect_out3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/collect_out5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/collect_out6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/colormanager2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/colorwheel.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/colrs-caricature.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/colrs-mgt1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/colrs-mgt2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/combine_polygons.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/combine_polygons1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/combine_polygons2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/combine_polygons3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/combine_polygons4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/combine_polygons5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/context_image.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/context_shape.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/context_text135.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/contourline_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-analogous.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-analogous_20.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-analogous_30.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-compl.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-complementary.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-splitcompl.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-splitcompl_20.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-splitcompl_40.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-tetradic.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-tetradic_20.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-tetradic_40.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-triadic.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/cw-warning.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/docheader1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/docheader2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/docinfo.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/docinfo2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/dtp-studio.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/duotone-imp.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/duotone-imp2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/edit_shapes.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/editcols1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/editcols1a.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/editcols2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/editcols3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/eps-imp1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/eps-imp2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/eps-imp3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/eps-imp4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/eps-imp5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/externallink.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/externalweblink.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/file-error1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/file-error2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/file-error3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/fileimport.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/font-preview.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/font-subst.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/fontmatrix.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/fontpref1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/fontpref2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/fontpref3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/fonts.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/fonts2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/frame_shape_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/galaxy_gauge.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/galaxy_harmonizer1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/galaxy_harmonizer2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/geometry.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/geometry1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/gimpoptions1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/gimpoptions2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/gimpoptions3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/givelife1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/gradient_adjuster.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/gradient_adjuster1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/gradient_adjuster_vector.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/gsadv1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/gsadv2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/htmlimport.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/htmlstyle.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/hyphen1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/hyphen2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/hyphen3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/image_compress.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/import-pdfimage.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/ink-cov.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/inkscape.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/insert-frame-1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/insert-frame-2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/krita.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/krita1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/it/images/layers1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/layers2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/lilyp.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/line_tab.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/line_tab1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/line_tab2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/line_tab3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/line_tab4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/line_tab5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/line_tab6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/line_tab7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/link.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/lprof.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/missing-gs.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/mpage1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/mpage2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/mpage3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/mpage4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/mpage5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/multipledup_copies.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/multipledup_rotation.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/multipledup_rows.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/new1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/new2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/new3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/new4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/new5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/new6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/node_edit_close.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/nodes_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/numb-sections.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/oogettext1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathops8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathtools.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathtools1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pathtools2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/patterns1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/patterns2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdf-form-ht1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdf-form-ht2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdf-form-ht3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdf-form-ht4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdf-form-ht5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdf-form-ht6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfeffect1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfeffect2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdftools.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfx1a-1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfx1a-lo.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfx1acolor.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfx1aintent.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfx3-1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfxcolor.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/pdfxintent.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/plot1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/plot2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/polygons.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/polygons1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/povray.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/preflight-v.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs-mac-1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_9parts.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_colormgmt.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_display.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_document.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_document1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_exttools.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_fibonacci.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_general.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_goldenmean.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_guides.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_guides1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_gutenberg.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_keyboard.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_magazine.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_misc.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_pdfexport.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_pdfexport1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_preflight.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_shortwords.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_tools.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_tools1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_tools2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_tools3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_tools4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_tools5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_tools6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prefs_typog.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/print-dialog1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/print-dialog2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/printer2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/printpreview.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/prop_shape.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/qsg-col1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/qsg-col2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/register.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/resene-pal.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/result.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf-error1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf-error2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf-error3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rf8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rgb-cmyk.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/rgb.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/round_rectangle.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/sadie4by2b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/scribus-os2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/scribus-pres1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/scribus-pres2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/shape_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/shapes7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/shapes8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/skewing.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/spot.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/squat_tux.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/style_manager1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/style_manager10.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/style_manager1b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/style_manager3b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/style_manager7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/style_manager8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/style_manager9.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/swdialog.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/table-import-1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/table-import-2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/table-import-3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/tb-bookbinder.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/tb-gsview.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/tb-inkscape.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/tb-jpdf.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/tb-libreoffice.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/tb-pdf-imp.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text-frame-link.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text-frame-unlink.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_filter135.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_filter136.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_filter136b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_flow.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_linking.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab10.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab11.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab11b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab12.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab13.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab6.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab7.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab7a.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab7b.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab8.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/text_tab9.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/transform_dialogb.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/transform_translaterotation.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/transform_translaterotation1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/transform_translatescaling.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/transform_translateskewing.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/transform_translateskewing1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/vectimp1.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/vectimp2.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/vectimp3.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/vectimp4.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/vectimp5.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/vector-advanced.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/vector-clipart.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/wwframes_fillspace.png
+%%PORTDOCS%%%%DOCSDIR%%/it/images/xnview.png
+%%PORTDOCS%%%%DOCSDIR%%/it/importbitmap1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/importhints.html
+%%PORTDOCS%%%%DOCSDIR%%/it/importhints1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/importhints2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/importhints3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/importhints4.html
+%%PORTDOCS%%%%DOCSDIR%%/it/index.html
+%%PORTDOCS%%%%DOCSDIR%%/it/install-dpkg.html
+%%PORTDOCS%%%%DOCSDIR%%/it/install.html
+%%PORTDOCS%%%%DOCSDIR%%/it/install1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/install2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/install3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/install4.html
+%%PORTDOCS%%%%DOCSDIR%%/it/install5.html
+%%PORTDOCS%%%%DOCSDIR%%/it/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/it/irc.html
+%%PORTDOCS%%%%DOCSDIR%%/it/keys.html
+%%PORTDOCS%%%%DOCSDIR%%/it/layers.html
+%%PORTDOCS%%%%DOCSDIR%%/it/lipsum.html
+%%PORTDOCS%%%%DOCSDIR%%/it/mailing_lists.html
+%%PORTDOCS%%%%DOCSDIR%%/it/menu.xml
+%%PORTDOCS%%%%DOCSDIR%%/it/moncal.html
+%%PORTDOCS%%%%DOCSDIR%%/it/mouse.html
+%%PORTDOCS%%%%DOCSDIR%%/it/multiple_transform.html
+%%PORTDOCS%%%%DOCSDIR%%/it/otherinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pagenumber.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pagetemplate1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdf_form.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdfexport1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdfexport2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdfexport3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdfexport4.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdfexport_image.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdflavor.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdfx1a.html
+%%PORTDOCS%%%%DOCSDIR%%/it/pdfx3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/plugin_howto.html
+%%PORTDOCS%%%%DOCSDIR%%/it/print1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/print2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/print3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/print4.html
+%%PORTDOCS%%%%DOCSDIR%%/it/psd.html
+%%PORTDOCS%%%%DOCSDIR%%/it/qsg.html
+%%PORTDOCS%%%%DOCSDIR%%/it/readme-haiku.html
+%%PORTDOCS%%%%DOCSDIR%%/it/readme-macosx.html
+%%PORTDOCS%%%%DOCSDIR%%/it/readme-os2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/readme-win32.html
+%%PORTDOCS%%%%DOCSDIR%%/it/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/it/%%CMAKE_BUILD_TYPE%%s.html
+%%PORTDOCS%%%%DOCSDIR%%/it/renderframes.html
+%%PORTDOCS%%%%DOCSDIR%%/it/resources.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scribus-svg.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scribuscopyright.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scribusfileformat.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripter-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripter-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripter1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-ImageExport.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-PDFfile.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-Printer.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-color.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-constants.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-dialogs.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-font.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-getobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-layer.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-manobj.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-object.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-page.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-select.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-setobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-textframes.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi.html
+%%PORTDOCS%%%%DOCSDIR%%/it/settings1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/short-words.html
+%%PORTDOCS%%%%DOCSDIR%%/it/specs.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox1.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox12.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox13.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox14.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox15.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox16.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox17.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox18.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox19.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox2.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox3.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox4.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox5.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox6.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox7.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox8.html
+%%PORTDOCS%%%%DOCSDIR%%/it/toolbox9.html
+%%PORTDOCS%%%%DOCSDIR%%/it/topten.html
+%%PORTDOCS%%%%DOCSDIR%%/it/translation_howto.html
+%%PORTDOCS%%%%DOCSDIR%%/it/tutorials.html
+%%PORTDOCS%%%%DOCSDIR%%/it/workspace1.html
 share/mime/packages/scribus.xml
 share/mimelnk/application/vnd.scribus.desktop
 share/pixmaps/scribus.png
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/BUILDING
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/ChangeLogSVN
-%%DOCSDIR%%/LINKS
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/PACKAGING
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/TRANSLATION
-%%DOCSDIR%%/de/EditingShapes.html
-%%DOCSDIR%%/de/WwFill.html
-%%DOCSDIR%%/de/WwFrames.html
-%%DOCSDIR%%/de/WwImages.html
-%%DOCSDIR%%/de/WwLines.html
-%%DOCSDIR%%/de/WwRenderframes.html
-%%DOCSDIR%%/de/WwShapes.html
-%%DOCSDIR%%/de/WwStyles.html
-%%DOCSDIR%%/de/WwText.html
-%%DOCSDIR%%/de/about1.html
-%%DOCSDIR%%/de/about2.html
-%%DOCSDIR%%/de/add_colors.html
-%%DOCSDIR%%/de/bugreport.html
-%%DOCSDIR%%/de/cli.html
-%%DOCSDIR%%/de/cms.html
-%%DOCSDIR%%/de/cms2.html
-%%DOCSDIR%%/de/cms3.html
-%%DOCSDIR%%/de/codingstandards.html
-%%DOCSDIR%%/de/collect4output.html
-%%DOCSDIR%%/de/color1.html
-%%DOCSDIR%%/de/color10.html
-%%DOCSDIR%%/de/color2.html
-%%DOCSDIR%%/de/color3.html
-%%DOCSDIR%%/de/color4.html
-%%DOCSDIR%%/de/color5.html
-%%DOCSDIR%%/de/color6.html
-%%DOCSDIR%%/de/color7.html
-%%DOCSDIR%%/de/color7a.html
-%%DOCSDIR%%/de/color7b.html
-%%DOCSDIR%%/de/color7c.html
-%%DOCSDIR%%/de/color8.html
-%%DOCSDIR%%/de/color_editing.html
-%%DOCSDIR%%/de/colorwheel.html
-%%DOCSDIR%%/de/config.html
-%%DOCSDIR%%/de/contributions.html
-%%DOCSDIR%%/de/createlinks.html
-%%DOCSDIR%%/de/developers.html
-%%DOCSDIR%%/de/doccopyright.html
-%%DOCSDIR%%/de/docinfo.html
-%%DOCSDIR%%/de/documentation.html
-%%DOCSDIR%%/de/download.html
-%%DOCSDIR%%/de/editorial.html
-%%DOCSDIR%%/de/faq1.html
-%%DOCSDIR%%/de/faq2.html
-%%DOCSDIR%%/de/faq3.html
-%%DOCSDIR%%/de/fileproblems.html
-%%DOCSDIR%%/de/fonts1.html
-%%DOCSDIR%%/de/fonts2.html
-%%DOCSDIR%%/de/gettexthowto.html
-%%DOCSDIR%%/de/gsview.html
-%%DOCSDIR%%/de/help.html
-%%DOCSDIR%%/de/hyphenator.html
-%%DOCSDIR%%/de/images/CH_1.png
-%%DOCSDIR%%/de/images/CH_2.png
-%%DOCSDIR%%/de/images/CH_3.png
-%%DOCSDIR%%/de/images/CH_4.png
-%%DOCSDIR%%/de/images/CH_5.png
-%%DOCSDIR%%/de/images/CH_6.png
-%%DOCSDIR%%/de/images/CH_7.png
-%%DOCSDIR%%/de/images/CH_8.png
-%%DOCSDIR%%/de/images/Cover_en1-page1.png
-%%DOCSDIR%%/de/images/DrawLatexFrame.png
-%%DOCSDIR%%/de/images/GG_CE1.png
-%%DOCSDIR%%/de/images/GG_CE10.png
-%%DOCSDIR%%/de/images/GG_CE11.png
-%%DOCSDIR%%/de/images/GG_CE12.png
-%%DOCSDIR%%/de/images/GG_CE13.png
-%%DOCSDIR%%/de/images/GG_CE14.png
-%%DOCSDIR%%/de/images/GG_CE15.png
-%%DOCSDIR%%/de/images/GG_CE16.png
-%%DOCSDIR%%/de/images/GG_CE17.png
-%%DOCSDIR%%/de/images/GG_CE18.png
-%%DOCSDIR%%/de/images/GG_CE19.png
-%%DOCSDIR%%/de/images/GG_CE2.png
-%%DOCSDIR%%/de/images/GG_CE20.png
-%%DOCSDIR%%/de/images/GG_CE21.png
-%%DOCSDIR%%/de/images/GG_CE22.png
-%%DOCSDIR%%/de/images/GG_CE23.png
-%%DOCSDIR%%/de/images/GG_CE24.png
-%%DOCSDIR%%/de/images/GG_CE25.png
-%%DOCSDIR%%/de/images/GG_CE26.png
-%%DOCSDIR%%/de/images/GG_CE27.png
-%%DOCSDIR%%/de/images/GG_CE28.png
-%%DOCSDIR%%/de/images/GG_CE29.png
-%%DOCSDIR%%/de/images/GG_CE3.png
-%%DOCSDIR%%/de/images/GG_CE30.png
-%%DOCSDIR%%/de/images/GG_CE31.png
-%%DOCSDIR%%/de/images/GG_CE32.png
-%%DOCSDIR%%/de/images/GG_CE33.png
-%%DOCSDIR%%/de/images/GG_CE4.png
-%%DOCSDIR%%/de/images/GG_CE5.png
-%%DOCSDIR%%/de/images/GG_CE6.png
-%%DOCSDIR%%/de/images/GG_CE7.png
-%%DOCSDIR%%/de/images/GG_CE8.png
-%%DOCSDIR%%/de/images/GG_CE9.png
-%%DOCSDIR%%/de/images/GG_CE_a.png
-%%DOCSDIR%%/de/images/GG_CE_b.png
-%%DOCSDIR%%/de/images/GG_CE_c.png
-%%DOCSDIR%%/de/images/GG_CE_colour_select.png
-%%DOCSDIR%%/de/images/GG_CE_ex1.png
-%%DOCSDIR%%/de/images/GG_CE_ex2.png
-%%DOCSDIR%%/de/images/GG_CE_ex3.png
-%%DOCSDIR%%/de/images/GG_CE_ex4.png
-%%DOCSDIR%%/de/images/GG_CE_ex5.png
-%%DOCSDIR%%/de/images/GG_CE_ex6.png
-%%DOCSDIR%%/de/images/GG_CE_ex7.png
-%%DOCSDIR%%/de/images/GG_CE_ex8.png
-%%DOCSDIR%%/de/images/GG_CE_ex9.png
-%%DOCSDIR%%/de/images/Image_Properties.png
-%%DOCSDIR%%/de/images/Mantis_my_view.png
-%%DOCSDIR%%/de/images/Mantis_new_report1.png
-%%DOCSDIR%%/de/images/Mantis_new_report2.png
-%%DOCSDIR%%/de/images/Mantis_new_report3.png
-%%DOCSDIR%%/de/images/Mantis_searching.png
-%%DOCSDIR%%/de/images/Mantis_signup.png
-%%DOCSDIR%%/de/images/RYB_color_wheel.png
-%%DOCSDIR%%/de/images/Rembrandt1.png
-%%DOCSDIR%%/de/images/Rembrandt10.png
-%%DOCSDIR%%/de/images/Rembrandt11.png
-%%DOCSDIR%%/de/images/Rembrandt12.png
-%%DOCSDIR%%/de/images/Rembrandt13.png
-%%DOCSDIR%%/de/images/Rembrandt14.png
-%%DOCSDIR%%/de/images/Rembrandt15.png
-%%DOCSDIR%%/de/images/Rembrandt16.png
-%%DOCSDIR%%/de/images/Rembrandt17.png
-%%DOCSDIR%%/de/images/Rembrandt17a.png
-%%DOCSDIR%%/de/images/Rembrandt17b.png
-%%DOCSDIR%%/de/images/Rembrandt18.png
-%%DOCSDIR%%/de/images/Rembrandt18b.png
-%%DOCSDIR%%/de/images/Rembrandt19.png
-%%DOCSDIR%%/de/images/Rembrandt2.png
-%%DOCSDIR%%/de/images/Rembrandt20.png
-%%DOCSDIR%%/de/images/Rembrandt21.png
-%%DOCSDIR%%/de/images/Rembrandt3.png
-%%DOCSDIR%%/de/images/Rembrandt4.png
-%%DOCSDIR%%/de/images/Rembrandt5.png
-%%DOCSDIR%%/de/images/Rembrandt6.png
-%%DOCSDIR%%/de/images/Rembrandt7.png
-%%DOCSDIR%%/de/images/Rembrandt8.png
-%%DOCSDIR%%/de/images/Rembrandt9.png
-%%DOCSDIR%%/de/images/Scribus_Haiku.png
-%%DOCSDIR%%/de/images/Scripter.png
-%%DOCSDIR%%/de/images/SwB.png
-%%DOCSDIR%%/de/images/XYZ_Prop.png
-%%DOCSDIR%%/de/images/XYZ_Prop1.png
-%%DOCSDIR%%/de/images/add_colors1.png
-%%DOCSDIR%%/de/images/add_colors2.png
-%%DOCSDIR%%/de/images/add_colors3.png
-%%DOCSDIR%%/de/images/add_colors4.png
-%%DOCSDIR%%/de/images/add_colors5.png
-%%DOCSDIR%%/de/images/add_colors6.png
-%%DOCSDIR%%/de/images/add_colors7.png
-%%DOCSDIR%%/de/images/alert.png
-%%DOCSDIR%%/de/images/annotation.png
-%%DOCSDIR%%/de/images/batik1.png
-%%DOCSDIR%%/de/images/boundingbox.png
-%%DOCSDIR%%/de/images/boundingbox1.png
-%%DOCSDIR%%/de/images/cmcanvas.png
-%%DOCSDIR%%/de/images/cms-gamut1.png
-%%DOCSDIR%%/de/images/cms-gamut2.png
-%%DOCSDIR%%/de/images/cms.png
-%%DOCSDIR%%/de/images/cmsmodify1.png
-%%DOCSDIR%%/de/images/cmyk.png
-%%DOCSDIR%%/de/images/collect_out1.png
-%%DOCSDIR%%/de/images/collect_out2.png
-%%DOCSDIR%%/de/images/collect_out3.png
-%%DOCSDIR%%/de/images/collect_out5.png
-%%DOCSDIR%%/de/images/collect_out6.png
-%%DOCSDIR%%/de/images/colormanager2.png
-%%DOCSDIR%%/de/images/colorwheel.png
-%%DOCSDIR%%/de/images/colrs-caricature.png
-%%DOCSDIR%%/de/images/colrs-mgt1.png
-%%DOCSDIR%%/de/images/colrs-mgt2.png
-%%DOCSDIR%%/de/images/combine_polygons.png
-%%DOCSDIR%%/de/images/combine_polygons1.png
-%%DOCSDIR%%/de/images/combine_polygons2.png
-%%DOCSDIR%%/de/images/combine_polygons3.png
-%%DOCSDIR%%/de/images/combine_polygons4.png
-%%DOCSDIR%%/de/images/combine_polygons5.png
-%%DOCSDIR%%/de/images/context_image.png
-%%DOCSDIR%%/de/images/context_shape.png
-%%DOCSDIR%%/de/images/context_text135.png
-%%DOCSDIR%%/de/images/contourline_flow.png
-%%DOCSDIR%%/de/images/cw-analogous.png
-%%DOCSDIR%%/de/images/cw-analogous_20.png
-%%DOCSDIR%%/de/images/cw-analogous_30.png
-%%DOCSDIR%%/de/images/cw-compl.png
-%%DOCSDIR%%/de/images/cw-complementary.png
-%%DOCSDIR%%/de/images/cw-splitcompl.png
-%%DOCSDIR%%/de/images/cw-splitcompl_20.png
-%%DOCSDIR%%/de/images/cw-splitcompl_40.png
-%%DOCSDIR%%/de/images/cw-tetradic.png
-%%DOCSDIR%%/de/images/cw-tetradic_20.png
-%%DOCSDIR%%/de/images/cw-tetradic_40.png
-%%DOCSDIR%%/de/images/cw-triadic.png
-%%DOCSDIR%%/de/images/cw-warning.png
-%%DOCSDIR%%/de/images/docheader1.png
-%%DOCSDIR%%/de/images/docheader2.png
-%%DOCSDIR%%/de/images/docinfo.png
-%%DOCSDIR%%/de/images/docinfo1.png
-%%DOCSDIR%%/de/images/docinfo2.png
-%%DOCSDIR%%/de/images/dtp-studio.png
-%%DOCSDIR%%/de/images/duotone-imp.png
-%%DOCSDIR%%/de/images/duotone-imp2.png
-%%DOCSDIR%%/de/images/edit_shapes.png
-%%DOCSDIR%%/de/images/editcols1.png
-%%DOCSDIR%%/de/images/editcols1a.png
-%%DOCSDIR%%/de/images/editcols2.png
-%%DOCSDIR%%/de/images/editcols3.png
-%%DOCSDIR%%/de/images/eps-imp1.png
-%%DOCSDIR%%/de/images/eps-imp2.png
-%%DOCSDIR%%/de/images/eps-imp3.png
-%%DOCSDIR%%/de/images/eps-imp4.png
-%%DOCSDIR%%/de/images/eps-imp5.png
-%%DOCSDIR%%/de/images/externallink.png
-%%DOCSDIR%%/de/images/externalweblink.png
-%%DOCSDIR%%/de/images/file-error1.png
-%%DOCSDIR%%/de/images/file-error2.png
-%%DOCSDIR%%/de/images/file-error3.png
-%%DOCSDIR%%/de/images/fileimport.png
-%%DOCSDIR%%/de/images/font-preview.png
-%%DOCSDIR%%/de/images/font-subst.png
-%%DOCSDIR%%/de/images/fontmatrix.png
-%%DOCSDIR%%/de/images/fontpref1.png
-%%DOCSDIR%%/de/images/fontpref2.png
-%%DOCSDIR%%/de/images/fontpref3.png
-%%DOCSDIR%%/de/images/fonts.png
-%%DOCSDIR%%/de/images/fonts2.png
-%%DOCSDIR%%/de/images/frame_shape_flow.png
-%%DOCSDIR%%/de/images/galaxy_gauge.png
-%%DOCSDIR%%/de/images/galaxy_harmonizer1.png
-%%DOCSDIR%%/de/images/galaxy_harmonizer2.png
-%%DOCSDIR%%/de/images/geometry.png
-%%DOCSDIR%%/de/images/geometry1.png
-%%DOCSDIR%%/de/images/gimpoptions1.png
-%%DOCSDIR%%/de/images/gimpoptions2.png
-%%DOCSDIR%%/de/images/gimpoptions3.png
-%%DOCSDIR%%/de/images/givelife1.png
-%%DOCSDIR%%/de/images/gradient_adjuster.png
-%%DOCSDIR%%/de/images/gradient_adjuster1.png
-%%DOCSDIR%%/de/images/gradient_adjuster_vector.png
-%%DOCSDIR%%/de/images/htmlimport.png
-%%DOCSDIR%%/de/images/htmlstyle.png
-%%DOCSDIR%%/de/images/hyphen1.png
-%%DOCSDIR%%/de/images/hyphen2.png
-%%DOCSDIR%%/de/images/hyphen3.png
-%%DOCSDIR%%/de/images/image_compress.png
-%%DOCSDIR%%/de/images/import-pdfimage.png
-%%DOCSDIR%%/de/images/ink-cov.png
-%%DOCSDIR%%/de/images/insert-frame-1.png
-%%DOCSDIR%%/de/images/insert-frame-2.png
-%%DOCSDIR%%/de/images/krita.jpg
-%%DOCSDIR%%/de/images/krita.png
-%%DOCSDIR%%/de/images/layers1.png
-%%DOCSDIR%%/de/images/layers2.png
-%%DOCSDIR%%/de/images/lilyp.png
-%%DOCSDIR%%/de/images/line_tab.png
-%%DOCSDIR%%/de/images/line_tab1.png
-%%DOCSDIR%%/de/images/line_tab2.png
-%%DOCSDIR%%/de/images/line_tab3.png
-%%DOCSDIR%%/de/images/line_tab4.png
-%%DOCSDIR%%/de/images/line_tab5.png
-%%DOCSDIR%%/de/images/line_tab6.png
-%%DOCSDIR%%/de/images/line_tab7.png
-%%DOCSDIR%%/de/images/link.png
-%%DOCSDIR%%/de/images/lprof.png
-%%DOCSDIR%%/de/images/missing-gs.png
-%%DOCSDIR%%/de/images/mpage1.png
-%%DOCSDIR%%/de/images/mpage2.png
-%%DOCSDIR%%/de/images/mpage3.png
-%%DOCSDIR%%/de/images/mpage4.png
-%%DOCSDIR%%/de/images/mpage5.png
-%%DOCSDIR%%/de/images/multipledup_copies.png
-%%DOCSDIR%%/de/images/multipledup_rotation.png
-%%DOCSDIR%%/de/images/multipledup_rows.png
-%%DOCSDIR%%/de/images/new1.png
-%%DOCSDIR%%/de/images/new2.png
-%%DOCSDIR%%/de/images/new3.png
-%%DOCSDIR%%/de/images/new4.png
-%%DOCSDIR%%/de/images/new5.png
-%%DOCSDIR%%/de/images/new6.png
-%%DOCSDIR%%/de/images/node_edit_close.png
-%%DOCSDIR%%/de/images/nodes_edit.png
-%%DOCSDIR%%/de/images/numb-sections.png
-%%DOCSDIR%%/de/images/oogettext1.png
-%%DOCSDIR%%/de/images/pagenumbering.png
-%%DOCSDIR%%/de/images/pathops.png
-%%DOCSDIR%%/de/images/pathops1.png
-%%DOCSDIR%%/de/images/pathops2.png
-%%DOCSDIR%%/de/images/pathops3.png
-%%DOCSDIR%%/de/images/pathops4.png
-%%DOCSDIR%%/de/images/pathops5.png
-%%DOCSDIR%%/de/images/pathops6.png
-%%DOCSDIR%%/de/images/pathops7.png
-%%DOCSDIR%%/de/images/pathops8.png
-%%DOCSDIR%%/de/images/pathtools.png
-%%DOCSDIR%%/de/images/pathtools1.png
-%%DOCSDIR%%/de/images/pathtools2.png
-%%DOCSDIR%%/de/images/patterns1.png
-%%DOCSDIR%%/de/images/patterns2.png
-%%DOCSDIR%%/de/images/pdf-form-ht1.png
-%%DOCSDIR%%/de/images/pdf-form-ht2.png
-%%DOCSDIR%%/de/images/pdf-form-ht3.png
-%%DOCSDIR%%/de/images/pdf-form-ht4.png
-%%DOCSDIR%%/de/images/pdf-form-ht5.png
-%%DOCSDIR%%/de/images/pdf-form-ht6.png
-%%DOCSDIR%%/de/images/pdftools.png
-%%DOCSDIR%%/de/images/pdfx1a-lo.png
-%%DOCSDIR%%/de/images/pdfx3-1.png
-%%DOCSDIR%%/de/images/pdfxcolor.png
-%%DOCSDIR%%/de/images/pdfxintent.png
-%%DOCSDIR%%/de/images/plot1.png
-%%DOCSDIR%%/de/images/plot2.png
-%%DOCSDIR%%/de/images/polygons.png
-%%DOCSDIR%%/de/images/polygons1.png
-%%DOCSDIR%%/de/images/povray.png
-%%DOCSDIR%%/de/images/preflight-v.png
-%%DOCSDIR%%/de/images/prefs-mac-1.png
-%%DOCSDIR%%/de/images/prefs_9parts.png
-%%DOCSDIR%%/de/images/prefs_colormgmt.png
-%%DOCSDIR%%/de/images/prefs_display.png
-%%DOCSDIR%%/de/images/prefs_document.png
-%%DOCSDIR%%/de/images/prefs_document1.png
-%%DOCSDIR%%/de/images/prefs_exttools.png
-%%DOCSDIR%%/de/images/prefs_fibonacci.png
-%%DOCSDIR%%/de/images/prefs_general.png
-%%DOCSDIR%%/de/images/prefs_goldenmean.png
-%%DOCSDIR%%/de/images/prefs_guides.png
-%%DOCSDIR%%/de/images/prefs_guides1.png
-%%DOCSDIR%%/de/images/prefs_gutenberg.png
-%%DOCSDIR%%/de/images/prefs_keyboard.png
-%%DOCSDIR%%/de/images/prefs_magazine.png
-%%DOCSDIR%%/de/images/prefs_misc.png
-%%DOCSDIR%%/de/images/prefs_pdfexport.png
-%%DOCSDIR%%/de/images/prefs_pdfexport1.png
-%%DOCSDIR%%/de/images/prefs_preflight.png
-%%DOCSDIR%%/de/images/prefs_shortwords.png
-%%DOCSDIR%%/de/images/prefs_tools.png
-%%DOCSDIR%%/de/images/prefs_tools1.png
-%%DOCSDIR%%/de/images/prefs_tools2.png
-%%DOCSDIR%%/de/images/prefs_tools3.png
-%%DOCSDIR%%/de/images/prefs_tools4.png
-%%DOCSDIR%%/de/images/prefs_tools5.png
-%%DOCSDIR%%/de/images/prefs_tools6.png
-%%DOCSDIR%%/de/images/prefs_typog.png
-%%DOCSDIR%%/de/images/print-dialog1.png
-%%DOCSDIR%%/de/images/print-dialog2.png
-%%DOCSDIR%%/de/images/printer2.png
-%%DOCSDIR%%/de/images/printpreview.png
-%%DOCSDIR%%/de/images/prop_shape.png
-%%DOCSDIR%%/de/images/qsg-col1.png
-%%DOCSDIR%%/de/images/qsg-col2.png
-%%DOCSDIR%%/de/images/register.png
-%%DOCSDIR%%/de/images/resene-pal.png
-%%DOCSDIR%%/de/images/result.png
-%%DOCSDIR%%/de/images/rf-error1.png
-%%DOCSDIR%%/de/images/rf-error2.png
-%%DOCSDIR%%/de/images/rf-error3.png
-%%DOCSDIR%%/de/images/rf1.png
-%%DOCSDIR%%/de/images/rf2.png
-%%DOCSDIR%%/de/images/rf3.png
-%%DOCSDIR%%/de/images/rf4.png
-%%DOCSDIR%%/de/images/rf5.png
-%%DOCSDIR%%/de/images/rf6.png
-%%DOCSDIR%%/de/images/rf7.png
-%%DOCSDIR%%/de/images/rf8.png
-%%DOCSDIR%%/de/images/rgb-cmyk.png
-%%DOCSDIR%%/de/images/rgb.png
-%%DOCSDIR%%/de/images/round_rectangle.png
-%%DOCSDIR%%/de/images/sadie4by2b.png
-%%DOCSDIR%%/de/images/scribus-os2.png
-%%DOCSDIR%%/de/images/scribus-pres1.png
-%%DOCSDIR%%/de/images/scribus-pres2.png
-%%DOCSDIR%%/de/images/shape_edit.png
-%%DOCSDIR%%/de/images/shapes7.png
-%%DOCSDIR%%/de/images/shapes8.png
-%%DOCSDIR%%/de/images/skewing.png
-%%DOCSDIR%%/de/images/spot.png
-%%DOCSDIR%%/de/images/squat_tux.png
-%%DOCSDIR%%/de/images/style_manager1.png
-%%DOCSDIR%%/de/images/style_manager10.png
-%%DOCSDIR%%/de/images/style_manager1b.png
-%%DOCSDIR%%/de/images/style_manager3b.png
-%%DOCSDIR%%/de/images/style_manager7.png
-%%DOCSDIR%%/de/images/style_manager8.png
-%%DOCSDIR%%/de/images/style_manager9.png
-%%DOCSDIR%%/de/images/swdialog.png
-%%DOCSDIR%%/de/images/table-import-1.png
-%%DOCSDIR%%/de/images/table-import-2.png
-%%DOCSDIR%%/de/images/table-import-3.png
-%%DOCSDIR%%/de/images/tb-bookbinder.png
-%%DOCSDIR%%/de/images/tb-gsview.png
-%%DOCSDIR%%/de/images/tb-inkscape.png
-%%DOCSDIR%%/de/images/tb-jpdf.png
-%%DOCSDIR%%/de/images/tb-libreoffice.png
-%%DOCSDIR%%/de/images/tb-pdf-imp.png
-%%DOCSDIR%%/de/images/text-frame-link.png
-%%DOCSDIR%%/de/images/text-frame-unlink.png
-%%DOCSDIR%%/de/images/text_filter135.png
-%%DOCSDIR%%/de/images/text_filter136.png
-%%DOCSDIR%%/de/images/text_filter136b.png
-%%DOCSDIR%%/de/images/text_flow.png
-%%DOCSDIR%%/de/images/text_linking.png
-%%DOCSDIR%%/de/images/text_tab1.png
-%%DOCSDIR%%/de/images/text_tab10.png
-%%DOCSDIR%%/de/images/text_tab11.png
-%%DOCSDIR%%/de/images/text_tab11b.png
-%%DOCSDIR%%/de/images/text_tab12.png
-%%DOCSDIR%%/de/images/text_tab13.png
-%%DOCSDIR%%/de/images/text_tab2.png
-%%DOCSDIR%%/de/images/text_tab3.png
-%%DOCSDIR%%/de/images/text_tab4.png
-%%DOCSDIR%%/de/images/text_tab5.png
-%%DOCSDIR%%/de/images/text_tab6.png
-%%DOCSDIR%%/de/images/text_tab7.png
-%%DOCSDIR%%/de/images/text_tab7a.png
-%%DOCSDIR%%/de/images/text_tab7b.png
-%%DOCSDIR%%/de/images/text_tab8.png
-%%DOCSDIR%%/de/images/text_tab9.png
-%%DOCSDIR%%/de/images/transform_dialogb.png
-%%DOCSDIR%%/de/images/transform_translaterotation.png
-%%DOCSDIR%%/de/images/transform_translaterotation1.png
-%%DOCSDIR%%/de/images/transform_translatescaling.png
-%%DOCSDIR%%/de/images/transform_translateskewing.png
-%%DOCSDIR%%/de/images/transform_translateskewing1.png
-%%DOCSDIR%%/de/images/vectimp1.png
-%%DOCSDIR%%/de/images/vectimp2.png
-%%DOCSDIR%%/de/images/vectimp3.png
-%%DOCSDIR%%/de/images/vectimp4.png
-%%DOCSDIR%%/de/images/vectimp5.png
-%%DOCSDIR%%/de/images/vector-advanced.png
-%%DOCSDIR%%/de/images/vector-clipart.png
-%%DOCSDIR%%/de/images/xnview.png
-%%DOCSDIR%%/de/importbitmap1.html
-%%DOCSDIR%%/de/importhints.html
-%%DOCSDIR%%/de/importhints1.html
-%%DOCSDIR%%/de/importhints2.html
-%%DOCSDIR%%/de/importhints3.html
-%%DOCSDIR%%/de/importhints4.html
-%%DOCSDIR%%/de/index.html
-%%DOCSDIR%%/de/install-dpkg.html
-%%DOCSDIR%%/de/install.html
-%%DOCSDIR%%/de/install1.html
-%%DOCSDIR%%/de/install2.html
-%%DOCSDIR%%/de/install3.html
-%%DOCSDIR%%/de/install4.html
-%%DOCSDIR%%/de/install5.html
-%%DOCSDIR%%/de/intro.html
-%%DOCSDIR%%/de/irc.html
-%%DOCSDIR%%/de/keys.html
-%%DOCSDIR%%/de/layers.html
-%%DOCSDIR%%/de/lipsum.html
-%%DOCSDIR%%/de/mailing_lists.html
-%%DOCSDIR%%/de/menu.xml
-%%DOCSDIR%%/de/moncal.html
-%%DOCSDIR%%/de/mouse.html
-%%DOCSDIR%%/de/multiple_transform.html
-%%DOCSDIR%%/de/otherinfo.html
-%%DOCSDIR%%/de/pagenumber.html
-%%DOCSDIR%%/de/pagetemplate1.html
-%%DOCSDIR%%/de/pdf_form.html
-%%DOCSDIR%%/de/pdfexport1.html
-%%DOCSDIR%%/de/pdfexport2.html
-%%DOCSDIR%%/de/pdfexport3.html
-%%DOCSDIR%%/de/pdfexport4.html
-%%DOCSDIR%%/de/pdfexport_image.html
-%%DOCSDIR%%/de/pdflavor.html
-%%DOCSDIR%%/de/pdfx3.html
-%%DOCSDIR%%/de/plugin_howto.html
-%%DOCSDIR%%/de/print1.html
-%%DOCSDIR%%/de/print2.html
-%%DOCSDIR%%/de/print3.html
-%%DOCSDIR%%/de/print4.html
-%%DOCSDIR%%/de/psd.html
-%%DOCSDIR%%/de/qsg.html
-%%DOCSDIR%%/de/readme-haiku.html
-%%DOCSDIR%%/de/readme-macosx.html
-%%DOCSDIR%%/de/readme-os2.html
-%%DOCSDIR%%/de/readme-win32.html
-%%DOCSDIR%%/de/readme.html
-%%DOCSDIR%%/de/releases.html
-%%DOCSDIR%%/de/renderframes.html
-%%DOCSDIR%%/de/resources.html
-%%DOCSDIR%%/de/scribus-svg.html
-%%DOCSDIR%%/de/scribuscopyright.html
-%%DOCSDIR%%/de/scribusfileformat.html
-%%DOCSDIR%%/de/scripter-extensions.html
-%%DOCSDIR%%/de/scripter-faq.html
-%%DOCSDIR%%/de/scripter1.html
-%%DOCSDIR%%/de/scripterapi-ImageExport.html
-%%DOCSDIR%%/de/scripterapi-PDFfile.html
-%%DOCSDIR%%/de/scripterapi-Printer.html
-%%DOCSDIR%%/de/scripterapi-color.html
-%%DOCSDIR%%/de/scripterapi-constants.html
-%%DOCSDIR%%/de/scripterapi-dialogs.html
-%%DOCSDIR%%/de/scripterapi-doc.html
-%%DOCSDIR%%/de/scripterapi-extensions.html
-%%DOCSDIR%%/de/scripterapi-font.html
-%%DOCSDIR%%/de/scripterapi-getobjprop.html
-%%DOCSDIR%%/de/scripterapi-layer.html
-%%DOCSDIR%%/de/scripterapi-manobj.html
-%%DOCSDIR%%/de/scripterapi-object.html
-%%DOCSDIR%%/de/scripterapi-page.html
-%%DOCSDIR%%/de/scripterapi-pydoc.html
-%%DOCSDIR%%/de/scripterapi-select.html
-%%DOCSDIR%%/de/scripterapi-setobjprop.html
-%%DOCSDIR%%/de/scripterapi-textframes.html
-%%DOCSDIR%%/de/scripterapi.html
-%%DOCSDIR%%/de/settings1.html
-%%DOCSDIR%%/de/short-words.html
-%%DOCSDIR%%/de/specs.html
-%%DOCSDIR%%/de/toolbox.html
-%%DOCSDIR%%/de/toolbox1.html
-%%DOCSDIR%%/de/toolbox12.html
-%%DOCSDIR%%/de/toolbox13.html
-%%DOCSDIR%%/de/toolbox14.html
-%%DOCSDIR%%/de/toolbox15.html
-%%DOCSDIR%%/de/toolbox16.html
-%%DOCSDIR%%/de/toolbox17.html
-%%DOCSDIR%%/de/toolbox18.html
-%%DOCSDIR%%/de/toolbox19.html
-%%DOCSDIR%%/de/toolbox2.html
-%%DOCSDIR%%/de/toolbox3.html
-%%DOCSDIR%%/de/toolbox4.html
-%%DOCSDIR%%/de/toolbox5.html
-%%DOCSDIR%%/de/toolbox6.html
-%%DOCSDIR%%/de/toolbox7.html
-%%DOCSDIR%%/de/toolbox8.html
-%%DOCSDIR%%/de/toolbox9.html
-%%DOCSDIR%%/de/topten.html
-%%DOCSDIR%%/de/translation_howto.html
-%%DOCSDIR%%/de/tutorials.html
-%%DOCSDIR%%/de/workspace1.html
-%%DOCSDIR%%/en/EditingShapes.html
-%%DOCSDIR%%/en/WwFill.html
-%%DOCSDIR%%/en/WwFrames.html
-%%DOCSDIR%%/en/WwImages.html
-%%DOCSDIR%%/en/WwLines.html
-%%DOCSDIR%%/en/WwRenderframes.html
-%%DOCSDIR%%/en/WwShapes.html
-%%DOCSDIR%%/en/WwStyles.html
-%%DOCSDIR%%/en/WwText.html
-%%DOCSDIR%%/en/about1.html
-%%DOCSDIR%%/en/about2.html
-%%DOCSDIR%%/en/add_colors.html
-%%DOCSDIR%%/en/bugreport.html
-%%DOCSDIR%%/en/cli.html
-%%DOCSDIR%%/en/cms.html
-%%DOCSDIR%%/en/cms2.html
-%%DOCSDIR%%/en/cms3.html
-%%DOCSDIR%%/en/codingstandards.html
-%%DOCSDIR%%/en/collect4output.html
-%%DOCSDIR%%/en/color1.html
-%%DOCSDIR%%/en/color2.html
-%%DOCSDIR%%/en/color3.html
-%%DOCSDIR%%/en/color4.html
-%%DOCSDIR%%/en/color5.html
-%%DOCSDIR%%/en/color6.html
-%%DOCSDIR%%/en/color7.html
-%%DOCSDIR%%/en/color7a.html
-%%DOCSDIR%%/en/color7b.html
-%%DOCSDIR%%/en/color7c.html
-%%DOCSDIR%%/en/color8.html
-%%DOCSDIR%%/en/color10.html
-%%DOCSDIR%%/en/color_editing.html
-%%DOCSDIR%%/en/colorwheel.html
-%%DOCSDIR%%/en/config.html
-%%DOCSDIR%%/en/contributions.html
-%%DOCSDIR%%/en/createlinks.html
-%%DOCSDIR%%/en/developers.html
-%%DOCSDIR%%/en/doccopyright.html
-%%DOCSDIR%%/en/docinfo.html
-%%DOCSDIR%%/en/documentation.html
-%%DOCSDIR%%/en/download.html
-%%DOCSDIR%%/en/editorial.html
-%%DOCSDIR%%/en/faq1.html
-%%DOCSDIR%%/en/faq3.html
-%%DOCSDIR%%/en/fileproblems.html
-%%DOCSDIR%%/en/fonts1.html
-%%DOCSDIR%%/en/fonts2.html
-%%DOCSDIR%%/en/gettexthowto.html
-%%DOCSDIR%%/en/gsview.html
-%%DOCSDIR%%/en/help.html
-%%DOCSDIR%%/en/hyphenator.html
-%%DOCSDIR%%/en/images/CH_1.png
-%%DOCSDIR%%/en/images/CH_2.png
-%%DOCSDIR%%/en/images/CH_3.png
-%%DOCSDIR%%/en/images/CH_4.png
-%%DOCSDIR%%/en/images/CH_5.png
-%%DOCSDIR%%/en/images/CH_6.png
-%%DOCSDIR%%/en/images/CH_7.png
-%%DOCSDIR%%/en/images/CH_8.png
-%%DOCSDIR%%/en/images/Cover_en1-page1.png
-%%DOCSDIR%%/en/images/DrawLatexFrame.png
-%%DOCSDIR%%/en/images/GG_CE1.png
-%%DOCSDIR%%/en/images/GG_CE10.png
-%%DOCSDIR%%/en/images/GG_CE11.png
-%%DOCSDIR%%/en/images/GG_CE12.png
-%%DOCSDIR%%/en/images/GG_CE13.png
-%%DOCSDIR%%/en/images/GG_CE14.png
-%%DOCSDIR%%/en/images/GG_CE15.png
-%%DOCSDIR%%/en/images/GG_CE16.png
-%%DOCSDIR%%/en/images/GG_CE17.png
-%%DOCSDIR%%/en/images/GG_CE18.png
-%%DOCSDIR%%/en/images/GG_CE19.png
-%%DOCSDIR%%/en/images/GG_CE2.png
-%%DOCSDIR%%/en/images/GG_CE20.png
-%%DOCSDIR%%/en/images/GG_CE21.png
-%%DOCSDIR%%/en/images/GG_CE22.png
-%%DOCSDIR%%/en/images/GG_CE23.png
-%%DOCSDIR%%/en/images/GG_CE24.png
-%%DOCSDIR%%/en/images/GG_CE25.png
-%%DOCSDIR%%/en/images/GG_CE26.png
-%%DOCSDIR%%/en/images/GG_CE27.png
-%%DOCSDIR%%/en/images/GG_CE28.png
-%%DOCSDIR%%/en/images/GG_CE29.png
-%%DOCSDIR%%/en/images/GG_CE3.png
-%%DOCSDIR%%/en/images/GG_CE30.png
-%%DOCSDIR%%/en/images/GG_CE31.png
-%%DOCSDIR%%/en/images/GG_CE32.png
-%%DOCSDIR%%/en/images/GG_CE33.png
-%%DOCSDIR%%/en/images/GG_CE4.png
-%%DOCSDIR%%/en/images/GG_CE5.png
-%%DOCSDIR%%/en/images/GG_CE6.png
-%%DOCSDIR%%/en/images/GG_CE7.png
-%%DOCSDIR%%/en/images/GG_CE8.png
-%%DOCSDIR%%/en/images/GG_CE9.png
-%%DOCSDIR%%/en/images/GG_CE_a.png
-%%DOCSDIR%%/en/images/GG_CE_b.png
-%%DOCSDIR%%/en/images/GG_CE_c.png
-%%DOCSDIR%%/en/images/GG_CE_colour_select.png
-%%DOCSDIR%%/en/images/GG_CE_ex1.png
-%%DOCSDIR%%/en/images/GG_CE_ex2.png
-%%DOCSDIR%%/en/images/GG_CE_ex3.png
-%%DOCSDIR%%/en/images/GG_CE_ex4.png
-%%DOCSDIR%%/en/images/GG_CE_ex5.png
-%%DOCSDIR%%/en/images/GG_CE_ex6.png
-%%DOCSDIR%%/en/images/GG_CE_ex7.png
-%%DOCSDIR%%/en/images/GG_CE_ex8.png
-%%DOCSDIR%%/en/images/GG_CE_ex9.png
-%%DOCSDIR%%/en/images/Image_Properties.png
-%%DOCSDIR%%/en/images/Mantis_my_view.png
-%%DOCSDIR%%/en/images/Mantis_new_report1.png
-%%DOCSDIR%%/en/images/Mantis_new_report2.png
-%%DOCSDIR%%/en/images/Mantis_new_report3.png
-%%DOCSDIR%%/en/images/Mantis_searching.png
-%%DOCSDIR%%/en/images/Mantis_signup.png
-%%DOCSDIR%%/en/images/RYB_color_wheel.png
-%%DOCSDIR%%/en/images/Rembrandt1.png
-%%DOCSDIR%%/en/images/Rembrandt10.png
-%%DOCSDIR%%/en/images/Rembrandt11.png
-%%DOCSDIR%%/en/images/Rembrandt12.png
-%%DOCSDIR%%/en/images/Rembrandt13.png
-%%DOCSDIR%%/en/images/Rembrandt14.png
-%%DOCSDIR%%/en/images/Rembrandt15.png
-%%DOCSDIR%%/en/images/Rembrandt16.png
-%%DOCSDIR%%/en/images/Rembrandt17.png
-%%DOCSDIR%%/en/images/Rembrandt17a.png
-%%DOCSDIR%%/en/images/Rembrandt17b.png
-%%DOCSDIR%%/en/images/Rembrandt18.png
-%%DOCSDIR%%/en/images/Rembrandt18b.png
-%%DOCSDIR%%/en/images/Rembrandt19.png
-%%DOCSDIR%%/en/images/Rembrandt2.png
-%%DOCSDIR%%/en/images/Rembrandt20.png
-%%DOCSDIR%%/en/images/Rembrandt21.png
-%%DOCSDIR%%/en/images/Rembrandt3.png
-%%DOCSDIR%%/en/images/Rembrandt4.png
-%%DOCSDIR%%/en/images/Rembrandt5.png
-%%DOCSDIR%%/en/images/Rembrandt6.png
-%%DOCSDIR%%/en/images/Rembrandt7.png
-%%DOCSDIR%%/en/images/Rembrandt8.png
-%%DOCSDIR%%/en/images/Rembrandt9.png
-%%DOCSDIR%%/en/images/Scribus_Haiku.png
-%%DOCSDIR%%/en/images/Scripter.png
-%%DOCSDIR%%/en/images/SwB.png
-%%DOCSDIR%%/en/images/XYZ_Prop.png
-%%DOCSDIR%%/en/images/XYZ_Prop1.png
-%%DOCSDIR%%/en/images/add_colors1.png
-%%DOCSDIR%%/en/images/add_colors2.png
-%%DOCSDIR%%/en/images/add_colors3.png
-%%DOCSDIR%%/en/images/add_colors4.png
-%%DOCSDIR%%/en/images/add_colors5.png
-%%DOCSDIR%%/en/images/add_colors6.png
-%%DOCSDIR%%/en/images/add_colors7.png
-%%DOCSDIR%%/en/images/alert.png
-%%DOCSDIR%%/en/images/annotation.png
-%%DOCSDIR%%/en/images/batik1.png
-%%DOCSDIR%%/en/images/boundingbox.png
-%%DOCSDIR%%/en/images/boundingbox1.png
-%%DOCSDIR%%/en/images/cmcanvas.png
-%%DOCSDIR%%/en/images/cms-gamut1.png
-%%DOCSDIR%%/en/images/cms-gamut2.png
-%%DOCSDIR%%/en/images/cmsmodify1.png
-%%DOCSDIR%%/en/images/cmyk.png
-%%DOCSDIR%%/en/images/collect_out1.png
-%%DOCSDIR%%/en/images/collect_out2.png
-%%DOCSDIR%%/en/images/collect_out3.png
-%%DOCSDIR%%/en/images/collect_out5.png
-%%DOCSDIR%%/en/images/collect_out6.png
-%%DOCSDIR%%/en/images/colormanager2.png
-%%DOCSDIR%%/en/images/colorwheel.png
-%%DOCSDIR%%/en/images/colrs-caricature.png
-%%DOCSDIR%%/en/images/colrs-mgt1.png
-%%DOCSDIR%%/en/images/colrs-mgt2.png
-%%DOCSDIR%%/en/images/combine_polygons.png
-%%DOCSDIR%%/en/images/combine_polygons1.png
-%%DOCSDIR%%/en/images/combine_polygons2.png
-%%DOCSDIR%%/en/images/combine_polygons3.png
-%%DOCSDIR%%/en/images/combine_polygons4.png
-%%DOCSDIR%%/en/images/combine_polygons5.png
-%%DOCSDIR%%/en/images/context_image.png
-%%DOCSDIR%%/en/images/context_shape.png
-%%DOCSDIR%%/en/images/context_text135.png
-%%DOCSDIR%%/en/images/contourline_flow.png
-%%DOCSDIR%%/en/images/cw-analogous.png
-%%DOCSDIR%%/en/images/cw-analogous_20.png
-%%DOCSDIR%%/en/images/cw-analogous_30.png
-%%DOCSDIR%%/en/images/cw-compl.png
-%%DOCSDIR%%/en/images/cw-complementary.png
-%%DOCSDIR%%/en/images/cw-splitcompl.png
-%%DOCSDIR%%/en/images/cw-splitcompl_20.png
-%%DOCSDIR%%/en/images/cw-splitcompl_40.png
-%%DOCSDIR%%/en/images/cw-tetradic.png
-%%DOCSDIR%%/en/images/cw-tetradic_20.png
-%%DOCSDIR%%/en/images/cw-tetradic_40.png
-%%DOCSDIR%%/en/images/cw-triadic.png
-%%DOCSDIR%%/en/images/cw-warning.png
-%%DOCSDIR%%/en/images/docheader1.png
-%%DOCSDIR%%/en/images/docheader2.png
-%%DOCSDIR%%/en/images/docinfo.png
-%%DOCSDIR%%/en/images/docinfo2.png
-%%DOCSDIR%%/en/images/dtp-studio.png
-%%DOCSDIR%%/en/images/duotone-imp.png
-%%DOCSDIR%%/en/images/duotone-imp2.png
-%%DOCSDIR%%/en/images/edit_shapes.png
-%%DOCSDIR%%/en/images/editcols1.png
-%%DOCSDIR%%/en/images/editcols1a.png
-%%DOCSDIR%%/en/images/editcols2.png
-%%DOCSDIR%%/en/images/editcols3.png
-%%DOCSDIR%%/en/images/eps-imp1.png
-%%DOCSDIR%%/en/images/eps-imp2.png
-%%DOCSDIR%%/en/images/eps-imp3.png
-%%DOCSDIR%%/en/images/eps-imp4.png
-%%DOCSDIR%%/en/images/eps-imp5.png
-%%DOCSDIR%%/en/images/externallink.png
-%%DOCSDIR%%/en/images/externalweblink.png
-%%DOCSDIR%%/en/images/file-error1.png
-%%DOCSDIR%%/en/images/file-error2.png
-%%DOCSDIR%%/en/images/file-error3.png
-%%DOCSDIR%%/en/images/fileimport.png
-%%DOCSDIR%%/en/images/font-preview.png
-%%DOCSDIR%%/en/images/font-subst.png
-%%DOCSDIR%%/en/images/fontmatrix.png
-%%DOCSDIR%%/en/images/fontpref1.png
-%%DOCSDIR%%/en/images/fontpref2.png
-%%DOCSDIR%%/en/images/fontpref3.png
-%%DOCSDIR%%/en/images/fonts.png
-%%DOCSDIR%%/en/images/fonts2.png
-%%DOCSDIR%%/en/images/frame_shape_flow.png
-%%DOCSDIR%%/en/images/galaxy_gauge.png
-%%DOCSDIR%%/en/images/galaxy_harmonizer1.png
-%%DOCSDIR%%/en/images/galaxy_harmonizer2.png
-%%DOCSDIR%%/en/images/geometry.png
-%%DOCSDIR%%/en/images/geometry1.png
-%%DOCSDIR%%/en/images/gimpoptions1.png
-%%DOCSDIR%%/en/images/gimpoptions2.png
-%%DOCSDIR%%/en/images/gimpoptions3.png
-%%DOCSDIR%%/en/images/givelife1.png
-%%DOCSDIR%%/en/images/gradient_adjuster.png
-%%DOCSDIR%%/en/images/gradient_adjuster1.png
-%%DOCSDIR%%/en/images/gradient_adjuster_vector.png
-%%DOCSDIR%%/en/images/htmlimport.png
-%%DOCSDIR%%/en/images/htmlstyle.png
-%%DOCSDIR%%/en/images/hyphen1.png
-%%DOCSDIR%%/en/images/hyphen2.png
-%%DOCSDIR%%/en/images/hyphen3.png
-%%DOCSDIR%%/en/images/image_compress.png
-%%DOCSDIR%%/en/images/import-pdfimage.png
-%%DOCSDIR%%/en/images/ink-cov.png
-%%DOCSDIR%%/en/images/insert-frame-1.png
-%%DOCSDIR%%/en/images/insert-frame-2.png
-%%DOCSDIR%%/en/images/krita.png
-%%DOCSDIR%%/en/images/layers1.png
-%%DOCSDIR%%/en/images/layers2.png
-%%DOCSDIR%%/en/images/lilyp.png
-%%DOCSDIR%%/en/images/line_tab.png
-%%DOCSDIR%%/en/images/line_tab1.png
-%%DOCSDIR%%/en/images/line_tab2.png
-%%DOCSDIR%%/en/images/line_tab3.png
-%%DOCSDIR%%/en/images/line_tab4.png
-%%DOCSDIR%%/en/images/line_tab5.png
-%%DOCSDIR%%/en/images/line_tab6.png
-%%DOCSDIR%%/en/images/line_tab7.png
-%%DOCSDIR%%/en/images/link.png
-%%DOCSDIR%%/en/images/lprof.png
-%%DOCSDIR%%/en/images/missing-gs.png
-%%DOCSDIR%%/en/images/mpage1.png
-%%DOCSDIR%%/en/images/mpage2.png
-%%DOCSDIR%%/en/images/mpage3.png
-%%DOCSDIR%%/en/images/mpage4.png
-%%DOCSDIR%%/en/images/mpage5.png
-%%DOCSDIR%%/en/images/multipledup_copies.png
-%%DOCSDIR%%/en/images/multipledup_rotation.png
-%%DOCSDIR%%/en/images/multipledup_rows.png
-%%DOCSDIR%%/en/images/new1.png
-%%DOCSDIR%%/en/images/new2.png
-%%DOCSDIR%%/en/images/new3.png
-%%DOCSDIR%%/en/images/new4.png
-%%DOCSDIR%%/en/images/new5.png
-%%DOCSDIR%%/en/images/new6.png
-%%DOCSDIR%%/en/images/node_edit_close.png
-%%DOCSDIR%%/en/images/nodes_edit.png
-%%DOCSDIR%%/en/images/numb-sections.png
-%%DOCSDIR%%/en/images/oogettext1.png
-%%DOCSDIR%%/en/images/pathops.png
-%%DOCSDIR%%/en/images/pathops1.png
-%%DOCSDIR%%/en/images/pathops2.png
-%%DOCSDIR%%/en/images/pathops3.png
-%%DOCSDIR%%/en/images/pathops4.png
-%%DOCSDIR%%/en/images/pathops5.png
-%%DOCSDIR%%/en/images/pathops6.png
-%%DOCSDIR%%/en/images/pathops7.png
-%%DOCSDIR%%/en/images/pathops8.png
-%%DOCSDIR%%/en/images/pathtools.png
-%%DOCSDIR%%/en/images/pathtools1.png
-%%DOCSDIR%%/en/images/pathtools2.png
-%%DOCSDIR%%/en/images/patterns1.png
-%%DOCSDIR%%/en/images/patterns2.png
-%%DOCSDIR%%/en/images/pdf-form-ht1.png
-%%DOCSDIR%%/en/images/pdf-form-ht2.png
-%%DOCSDIR%%/en/images/pdf-form-ht3.png
-%%DOCSDIR%%/en/images/pdf-form-ht4.png
-%%DOCSDIR%%/en/images/pdf-form-ht5.png
-%%DOCSDIR%%/en/images/pdf-form-ht6.png
-%%DOCSDIR%%/en/images/pdftools.png
-%%DOCSDIR%%/en/images/pdfx1a-lo.png
-%%DOCSDIR%%/en/images/pdfx3-1.png
-%%DOCSDIR%%/en/images/pdfxcolor.png
-%%DOCSDIR%%/en/images/pdfxintent.png
-%%DOCSDIR%%/en/images/plot1.png
-%%DOCSDIR%%/en/images/plot2.png
-%%DOCSDIR%%/en/images/polygons.png
-%%DOCSDIR%%/en/images/polygons1.png
-%%DOCSDIR%%/en/images/povray.png
-%%DOCSDIR%%/en/images/preflight-v.png
-%%DOCSDIR%%/en/images/prefs-mac-1.png
-%%DOCSDIR%%/en/images/prefs_9parts.png
-%%DOCSDIR%%/en/images/prefs_colormgmt.png
-%%DOCSDIR%%/en/images/prefs_display.png
-%%DOCSDIR%%/en/images/prefs_document.png
-%%DOCSDIR%%/en/images/prefs_document1.png
-%%DOCSDIR%%/en/images/prefs_exttools.png
-%%DOCSDIR%%/en/images/prefs_fibonacci.png
-%%DOCSDIR%%/en/images/prefs_general.png
-%%DOCSDIR%%/en/images/prefs_goldenmean.png
-%%DOCSDIR%%/en/images/prefs_guides.png
-%%DOCSDIR%%/en/images/prefs_guides1.png
-%%DOCSDIR%%/en/images/prefs_gutenberg.png
-%%DOCSDIR%%/en/images/prefs_keyboard.png
-%%DOCSDIR%%/en/images/prefs_magazine.png
-%%DOCSDIR%%/en/images/prefs_misc.png
-%%DOCSDIR%%/en/images/prefs_pdfexport.png
-%%DOCSDIR%%/en/images/prefs_pdfexport1.png
-%%DOCSDIR%%/en/images/prefs_preflight.png
-%%DOCSDIR%%/en/images/prefs_shortwords.png
-%%DOCSDIR%%/en/images/prefs_tools.png
-%%DOCSDIR%%/en/images/prefs_tools1.png
-%%DOCSDIR%%/en/images/prefs_tools2.png
-%%DOCSDIR%%/en/images/prefs_tools3.png
-%%DOCSDIR%%/en/images/prefs_tools4.png
-%%DOCSDIR%%/en/images/prefs_tools5.png
-%%DOCSDIR%%/en/images/prefs_tools6.png
-%%DOCSDIR%%/en/images/prefs_typog.png
-%%DOCSDIR%%/en/images/print-dialog1.png
-%%DOCSDIR%%/en/images/print-dialog2.png
-%%DOCSDIR%%/en/images/printer2.png
-%%DOCSDIR%%/en/images/printpreview.png
-%%DOCSDIR%%/en/images/prop_shape.png
-%%DOCSDIR%%/en/images/qsg-col1.png
-%%DOCSDIR%%/en/images/qsg-col2.png
-%%DOCSDIR%%/en/images/register.png
-%%DOCSDIR%%/en/images/resene-pal.png
-%%DOCSDIR%%/en/images/result.png
-%%DOCSDIR%%/en/images/rf-error1.png
-%%DOCSDIR%%/en/images/rf-error2.png
-%%DOCSDIR%%/en/images/rf-error3.png
-%%DOCSDIR%%/en/images/rf1.png
-%%DOCSDIR%%/en/images/rf2.png
-%%DOCSDIR%%/en/images/rf3.png
-%%DOCSDIR%%/en/images/rf4.png
-%%DOCSDIR%%/en/images/rf5.png
-%%DOCSDIR%%/en/images/rf6.png
-%%DOCSDIR%%/en/images/rf7.png
-%%DOCSDIR%%/en/images/rf8.png
-%%DOCSDIR%%/en/images/rgb-cmyk.png
-%%DOCSDIR%%/en/images/rgb.png
-%%DOCSDIR%%/en/images/round_rectangle.png
-%%DOCSDIR%%/en/images/sadie4by2b.png
-%%DOCSDIR%%/en/images/scribus-os2.png
-%%DOCSDIR%%/en/images/scribus-pres1.png
-%%DOCSDIR%%/en/images/scribus-pres2.png
-%%DOCSDIR%%/en/images/shape_edit.png
-%%DOCSDIR%%/en/images/shapes7.png
-%%DOCSDIR%%/en/images/shapes8.png
-%%DOCSDIR%%/en/images/skewing.png
-%%DOCSDIR%%/en/images/spot.png
-%%DOCSDIR%%/en/images/squat_tux.png
-%%DOCSDIR%%/en/images/style_manager1.png
-%%DOCSDIR%%/en/images/style_manager10.png
-%%DOCSDIR%%/en/images/style_manager1b.png
-%%DOCSDIR%%/en/images/style_manager3b.png
-%%DOCSDIR%%/en/images/style_manager7.png
-%%DOCSDIR%%/en/images/style_manager8.png
-%%DOCSDIR%%/en/images/style_manager9.png
-%%DOCSDIR%%/en/images/swdialog.png
-%%DOCSDIR%%/en/images/table-import-1.png
-%%DOCSDIR%%/en/images/table-import-2.png
-%%DOCSDIR%%/en/images/table-import-3.png
-%%DOCSDIR%%/en/images/tb-bookbinder.png
-%%DOCSDIR%%/en/images/tb-gsview.png
-%%DOCSDIR%%/en/images/tb-inkscape.png
-%%DOCSDIR%%/en/images/tb-jpdf.png
-%%DOCSDIR%%/en/images/tb-libreoffice.png
-%%DOCSDIR%%/en/images/tb-pdf-imp.png
-%%DOCSDIR%%/en/images/text-frame-link.png
-%%DOCSDIR%%/en/images/text-frame-unlink.png
-%%DOCSDIR%%/en/images/text_filter135.png
-%%DOCSDIR%%/en/images/text_filter136.png
-%%DOCSDIR%%/en/images/text_filter136b.png
-%%DOCSDIR%%/en/images/text_flow.png
-%%DOCSDIR%%/en/images/text_linking.png
-%%DOCSDIR%%/en/images/text_tab1.png
-%%DOCSDIR%%/en/images/text_tab10.png
-%%DOCSDIR%%/en/images/text_tab11.png
-%%DOCSDIR%%/en/images/text_tab11b.png
-%%DOCSDIR%%/en/images/text_tab12.png
-%%DOCSDIR%%/en/images/text_tab13.png
-%%DOCSDIR%%/en/images/text_tab2.png
-%%DOCSDIR%%/en/images/text_tab3.png
-%%DOCSDIR%%/en/images/text_tab4.png
-%%DOCSDIR%%/en/images/text_tab5.png
-%%DOCSDIR%%/en/images/text_tab6.png
-%%DOCSDIR%%/en/images/text_tab7.png
-%%DOCSDIR%%/en/images/text_tab7a.png
-%%DOCSDIR%%/en/images/text_tab7b.png
-%%DOCSDIR%%/en/images/text_tab8.png
-%%DOCSDIR%%/en/images/text_tab9.png
-%%DOCSDIR%%/en/images/transform_dialogb.png
-%%DOCSDIR%%/en/images/transform_translaterotation.png
-%%DOCSDIR%%/en/images/transform_translaterotation1.png
-%%DOCSDIR%%/en/images/transform_translatescaling.png
-%%DOCSDIR%%/en/images/transform_translateskewing.png
-%%DOCSDIR%%/en/images/transform_translateskewing1.png
-%%DOCSDIR%%/en/images/vectimp1.png
-%%DOCSDIR%%/en/images/vectimp2.png
-%%DOCSDIR%%/en/images/vectimp3.png
-%%DOCSDIR%%/en/images/vectimp4.png
-%%DOCSDIR%%/en/images/vectimp5.png
-%%DOCSDIR%%/en/images/vector-advanced.png
-%%DOCSDIR%%/en/images/vector-clipart.png
-%%DOCSDIR%%/en/images/xnview.png
-%%DOCSDIR%%/en/importbitmap1.html
-%%DOCSDIR%%/en/importhints.html
-%%DOCSDIR%%/en/importhints1.html
-%%DOCSDIR%%/en/importhints2.html
-%%DOCSDIR%%/en/importhints3.html
-%%DOCSDIR%%/en/importhints4.html
-%%DOCSDIR%%/en/index.html
-%%DOCSDIR%%/en/install-dpkg.html
-%%DOCSDIR%%/en/install.html
-%%DOCSDIR%%/en/install1.html
-%%DOCSDIR%%/en/install2.html
-%%DOCSDIR%%/en/install3.html
-%%DOCSDIR%%/en/install4.html
-%%DOCSDIR%%/en/install5.html
-%%DOCSDIR%%/en/intro.html
-%%DOCSDIR%%/en/irc.html
-%%DOCSDIR%%/en/keys.html
-%%DOCSDIR%%/en/layers.html
-%%DOCSDIR%%/en/lipsum.html
-%%DOCSDIR%%/en/mailing_lists.html
-%%DOCSDIR%%/en/menu.xml
-%%DOCSDIR%%/en/moncal.html
-%%DOCSDIR%%/en/mouse.html
-%%DOCSDIR%%/en/multiple_transform.html
-%%DOCSDIR%%/en/otherinfo.html
-%%DOCSDIR%%/en/pagenumber.html
-%%DOCSDIR%%/en/pagetemplate1.html
-%%DOCSDIR%%/en/pdf_form.html
-%%DOCSDIR%%/en/pdfexport1.html
-%%DOCSDIR%%/en/pdfexport2.html
-%%DOCSDIR%%/en/pdfexport3.html
-%%DOCSDIR%%/en/pdfexport4.html
-%%DOCSDIR%%/en/pdfexport_image.html
-%%DOCSDIR%%/en/pdflavor.html
-%%DOCSDIR%%/en/pdfx3.html
-%%DOCSDIR%%/en/plugin_howto.html
-%%DOCSDIR%%/en/print1.html
-%%DOCSDIR%%/en/print2.html
-%%DOCSDIR%%/en/print3.html
-%%DOCSDIR%%/en/print4.html
-%%DOCSDIR%%/en/psd.html
-%%DOCSDIR%%/en/qsg.html
-%%DOCSDIR%%/en/readme-haiku.html
-%%DOCSDIR%%/en/readme-macosx.html
-%%DOCSDIR%%/en/readme-os2.html
-%%DOCSDIR%%/en/readme-win32.html
-%%DOCSDIR%%/en/readme.html
-%%DOCSDIR%%/en/releases.html
-%%DOCSDIR%%/en/renderframes.html
-%%DOCSDIR%%/en/resources.html
-%%DOCSDIR%%/en/scribus-svg.html
-%%DOCSDIR%%/en/scribuscopyright.html
-%%DOCSDIR%%/en/scribusfileformat.html
-%%DOCSDIR%%/en/scripter-extensions.html
-%%DOCSDIR%%/en/scripter-faq.html
-%%DOCSDIR%%/en/scripter1.html
-%%DOCSDIR%%/en/scripterapi-ImageExport.html
-%%DOCSDIR%%/en/scripterapi-PDFfile.html
-%%DOCSDIR%%/en/scripterapi-Printer.html
-%%DOCSDIR%%/en/scripterapi-color.html
-%%DOCSDIR%%/en/scripterapi-constants.html
-%%DOCSDIR%%/en/scripterapi-dialogs.html
-%%DOCSDIR%%/en/scripterapi-doc.html
-%%DOCSDIR%%/en/scripterapi-extensions.html
-%%DOCSDIR%%/en/scripterapi-font.html
-%%DOCSDIR%%/en/scripterapi-getobjprop.html
-%%DOCSDIR%%/en/scripterapi-layer.html
-%%DOCSDIR%%/en/scripterapi-manobj.html
-%%DOCSDIR%%/en/scripterapi-object.html
-%%DOCSDIR%%/en/scripterapi-page.html
-%%DOCSDIR%%/en/scripterapi-select.html
-%%DOCSDIR%%/en/scripterapi-setobjprop.html
-%%DOCSDIR%%/en/scripterapi-textframes.html
-%%DOCSDIR%%/en/scripterapi.html
-%%DOCSDIR%%/en/settings1.html
-%%DOCSDIR%%/en/short-words.html
-%%DOCSDIR%%/en/specs.html
-%%DOCSDIR%%/en/toolbox.html
-%%DOCSDIR%%/en/toolbox1.html
-%%DOCSDIR%%/en/toolbox12.html
-%%DOCSDIR%%/en/toolbox13.html
-%%DOCSDIR%%/en/toolbox14.html
-%%DOCSDIR%%/en/toolbox15.html
-%%DOCSDIR%%/en/toolbox16.html
-%%DOCSDIR%%/en/toolbox17.html
-%%DOCSDIR%%/en/toolbox18.html
-%%DOCSDIR%%/en/toolbox19.html
-%%DOCSDIR%%/en/toolbox2.html
-%%DOCSDIR%%/en/toolbox3.html
-%%DOCSDIR%%/en/toolbox4.html
-%%DOCSDIR%%/en/toolbox5.html
-%%DOCSDIR%%/en/toolbox6.html
-%%DOCSDIR%%/en/toolbox7.html
-%%DOCSDIR%%/en/toolbox8.html
-%%DOCSDIR%%/en/toolbox9.html
-%%DOCSDIR%%/en/topten.html
-%%DOCSDIR%%/en/translation_howto.html
-%%DOCSDIR%%/en/tutorials.html
-%%DOCSDIR%%/en/tutorials/scribus-short-words/after_short_words.png
-%%DOCSDIR%%/en/tutorials/scribus-short-words/before_short_words.png
-%%DOCSDIR%%/en/tutorials/scribus-short-words/dialog.png
-%%DOCSDIR%%/en/tutorials/scribus-short-words/menu.png
-%%DOCSDIR%%/en/tutorials/scribus-short-words/menu.xml
-%%DOCSDIR%%/en/tutorials/scribus-short-words/short-words-manual.html
-%%DOCSDIR%%/en/workspace1.html
-%%DOCSDIR%%/it/EditingShapes.html
-%%DOCSDIR%%/it/WwFill.html
-%%DOCSDIR%%/it/WwFrames.html
-%%DOCSDIR%%/it/WwImages.html
-%%DOCSDIR%%/it/WwLines.html
-%%DOCSDIR%%/it/WwRenderframes.html
-%%DOCSDIR%%/it/WwShapes.html
-%%DOCSDIR%%/it/WwStyles.html
-%%DOCSDIR%%/it/WwText.html
-%%DOCSDIR%%/it/about1.html
-%%DOCSDIR%%/it/about2.html
-%%DOCSDIR%%/it/add_colors.html
-%%DOCSDIR%%/it/bugreport.html
-%%DOCSDIR%%/it/cli.html
-%%DOCSDIR%%/it/cms.html
-%%DOCSDIR%%/it/cms2.html
-%%DOCSDIR%%/it/cms3.html
-%%DOCSDIR%%/it/codingstandards.html
-%%DOCSDIR%%/it/collect4output.html
-%%DOCSDIR%%/it/color1.html
-%%DOCSDIR%%/it/color2.html
-%%DOCSDIR%%/it/color3.html
-%%DOCSDIR%%/it/color4.html
-%%DOCSDIR%%/it/color5.html
-%%DOCSDIR%%/it/color6.html
-%%DOCSDIR%%/it/color7.html
-%%DOCSDIR%%/it/color7a.html
-%%DOCSDIR%%/it/color7b.html
-%%DOCSDIR%%/it/color7c.html
-%%DOCSDIR%%/it/color8.html
-%%DOCSDIR%%/it/color10.html
-%%DOCSDIR%%/it/color_editing.html
-%%DOCSDIR%%/it/colorwheel.html
-%%DOCSDIR%%/it/config.html
-%%DOCSDIR%%/it/contributions.html
-%%DOCSDIR%%/it/createlinks.html
-%%DOCSDIR%%/it/developers.html
-%%DOCSDIR%%/it/doccopyright.html
-%%DOCSDIR%%/it/docinfo.html
-%%DOCSDIR%%/it/documentation.html
-%%DOCSDIR%%/it/download.html
-%%DOCSDIR%%/it/editorial.html
-%%DOCSDIR%%/it/faq1.html
-%%DOCSDIR%%/it/faq3.html
-%%DOCSDIR%%/it/fileproblems.html
-%%DOCSDIR%%/it/fonts1.html
-%%DOCSDIR%%/it/fonts2.html
-%%DOCSDIR%%/it/gettexthowto.html
-%%DOCSDIR%%/it/gsview.html
-%%DOCSDIR%%/it/help.html
-%%DOCSDIR%%/it/hyphenator.html
-%%DOCSDIR%%/it/images/CH_1.png
-%%DOCSDIR%%/it/images/CH_2.png
-%%DOCSDIR%%/it/images/CH_3.png
-%%DOCSDIR%%/it/images/CH_4.png
-%%DOCSDIR%%/it/images/CH_5.png
-%%DOCSDIR%%/it/images/CH_6.png
-%%DOCSDIR%%/it/images/CH_7.png
-%%DOCSDIR%%/it/images/CH_8.png
-%%DOCSDIR%%/it/images/Cover_en1-page1.png
-%%DOCSDIR%%/it/images/DrawLatexFrame.png
-%%DOCSDIR%%/it/images/GG_CE1.png
-%%DOCSDIR%%/it/images/GG_CE10.png
-%%DOCSDIR%%/it/images/GG_CE11.png
-%%DOCSDIR%%/it/images/GG_CE12.png
-%%DOCSDIR%%/it/images/GG_CE13.png
-%%DOCSDIR%%/it/images/GG_CE14.png
-%%DOCSDIR%%/it/images/GG_CE15.png
-%%DOCSDIR%%/it/images/GG_CE16.png
-%%DOCSDIR%%/it/images/GG_CE17.png
-%%DOCSDIR%%/it/images/GG_CE18.png
-%%DOCSDIR%%/it/images/GG_CE19.png
-%%DOCSDIR%%/it/images/GG_CE2.png
-%%DOCSDIR%%/it/images/GG_CE20.png
-%%DOCSDIR%%/it/images/GG_CE21.png
-%%DOCSDIR%%/it/images/GG_CE22.png
-%%DOCSDIR%%/it/images/GG_CE23.png
-%%DOCSDIR%%/it/images/GG_CE24.png
-%%DOCSDIR%%/it/images/GG_CE25.png
-%%DOCSDIR%%/it/images/GG_CE26.png
-%%DOCSDIR%%/it/images/GG_CE27.png
-%%DOCSDIR%%/it/images/GG_CE28.png
-%%DOCSDIR%%/it/images/GG_CE29.png
-%%DOCSDIR%%/it/images/GG_CE3.png
-%%DOCSDIR%%/it/images/GG_CE30.png
-%%DOCSDIR%%/it/images/GG_CE31.png
-%%DOCSDIR%%/it/images/GG_CE32.png
-%%DOCSDIR%%/it/images/GG_CE33.png
-%%DOCSDIR%%/it/images/GG_CE4.png
-%%DOCSDIR%%/it/images/GG_CE5.png
-%%DOCSDIR%%/it/images/GG_CE6.png
-%%DOCSDIR%%/it/images/GG_CE7.png
-%%DOCSDIR%%/it/images/GG_CE8.png
-%%DOCSDIR%%/it/images/GG_CE9.png
-%%DOCSDIR%%/it/images/GG_CE_a.png
-%%DOCSDIR%%/it/images/GG_CE_b.png
-%%DOCSDIR%%/it/images/GG_CE_c.png
-%%DOCSDIR%%/it/images/GG_CE_colour_select.png
-%%DOCSDIR%%/it/images/GG_CE_ex1.png
-%%DOCSDIR%%/it/images/GG_CE_ex2.png
-%%DOCSDIR%%/it/images/GG_CE_ex3.png
-%%DOCSDIR%%/it/images/GG_CE_ex4.png
-%%DOCSDIR%%/it/images/GG_CE_ex5.png
-%%DOCSDIR%%/it/images/GG_CE_ex6.png
-%%DOCSDIR%%/it/images/GG_CE_ex7.png
-%%DOCSDIR%%/it/images/GG_CE_ex8.png
-%%DOCSDIR%%/it/images/GG_CE_ex9.png
-%%DOCSDIR%%/it/images/Image_Properties.png
-%%DOCSDIR%%/it/images/Mantis_my_view.png
-%%DOCSDIR%%/it/images/Mantis_new_report1.png
-%%DOCSDIR%%/it/images/Mantis_new_report2.png
-%%DOCSDIR%%/it/images/Mantis_new_report3.png
-%%DOCSDIR%%/it/images/Mantis_searching.png
-%%DOCSDIR%%/it/images/Mantis_signup.png
-%%DOCSDIR%%/it/images/RYB_color_wheel.png
-%%DOCSDIR%%/it/images/Rembrandt1.png
-%%DOCSDIR%%/it/images/Rembrandt10.png
-%%DOCSDIR%%/it/images/Rembrandt11.png
-%%DOCSDIR%%/it/images/Rembrandt12.png
-%%DOCSDIR%%/it/images/Rembrandt13.png
-%%DOCSDIR%%/it/images/Rembrandt14.png
-%%DOCSDIR%%/it/images/Rembrandt15.png
-%%DOCSDIR%%/it/images/Rembrandt16.png
-%%DOCSDIR%%/it/images/Rembrandt17.png
-%%DOCSDIR%%/it/images/Rembrandt17a.png
-%%DOCSDIR%%/it/images/Rembrandt17b.png
-%%DOCSDIR%%/it/images/Rembrandt18.png
-%%DOCSDIR%%/it/images/Rembrandt18b.png
-%%DOCSDIR%%/it/images/Rembrandt19.png
-%%DOCSDIR%%/it/images/Rembrandt2.png
-%%DOCSDIR%%/it/images/Rembrandt20.png
-%%DOCSDIR%%/it/images/Rembrandt21.png
-%%DOCSDIR%%/it/images/Rembrandt3.png
-%%DOCSDIR%%/it/images/Rembrandt4.png
-%%DOCSDIR%%/it/images/Rembrandt5.png
-%%DOCSDIR%%/it/images/Rembrandt6.png
-%%DOCSDIR%%/it/images/Rembrandt7.png
-%%DOCSDIR%%/it/images/Rembrandt8.png
-%%DOCSDIR%%/it/images/Rembrandt9.png
-%%DOCSDIR%%/it/images/Scribus_Haiku.png
-%%DOCSDIR%%/it/images/Scripter.png
-%%DOCSDIR%%/it/images/SwB.png
-%%DOCSDIR%%/it/images/XYZ_Prop.png
-%%DOCSDIR%%/it/images/XYZ_Prop1.png
-%%DOCSDIR%%/it/images/add_colors1.png
-%%DOCSDIR%%/it/images/add_colors3.png
-%%DOCSDIR%%/it/images/add_colors4.png
-%%DOCSDIR%%/it/images/add_colors5.png
-%%DOCSDIR%%/it/images/add_colors6.png
-%%DOCSDIR%%/it/images/add_colors7.png
-%%DOCSDIR%%/it/images/alert.png
-%%DOCSDIR%%/it/images/annotation.png
-%%DOCSDIR%%/it/images/batik1.png
-%%DOCSDIR%%/it/images/boundingbox.png
-%%DOCSDIR%%/it/images/boundingbox1.png
-%%DOCSDIR%%/it/images/cmcanvas.png
-%%DOCSDIR%%/it/images/cms-gamut1.png
-%%DOCSDIR%%/it/images/cms-gamut2.png
-%%DOCSDIR%%/it/images/cmsmodify1.png
-%%DOCSDIR%%/it/images/cmyk.png
-%%DOCSDIR%%/it/images/collect_out1.png
-%%DOCSDIR%%/it/images/collect_out2.png
-%%DOCSDIR%%/it/images/collect_out3.png
-%%DOCSDIR%%/it/images/collect_out5.png
-%%DOCSDIR%%/it/images/collect_out6.png
-%%DOCSDIR%%/it/images/colormanager2.png
-%%DOCSDIR%%/it/images/colorwheel.png
-%%DOCSDIR%%/it/images/colrs-caricature.png
-%%DOCSDIR%%/it/images/colrs-mgt1.png
-%%DOCSDIR%%/it/images/colrs-mgt2.png
-%%DOCSDIR%%/it/images/combine_polygons.png
-%%DOCSDIR%%/it/images/combine_polygons1.png
-%%DOCSDIR%%/it/images/combine_polygons2.png
-%%DOCSDIR%%/it/images/combine_polygons3.png
-%%DOCSDIR%%/it/images/combine_polygons4.png
-%%DOCSDIR%%/it/images/combine_polygons5.png
-%%DOCSDIR%%/it/images/context_image.png
-%%DOCSDIR%%/it/images/context_shape.png
-%%DOCSDIR%%/it/images/context_text135.png
-%%DOCSDIR%%/it/images/contourline_flow.png
-%%DOCSDIR%%/it/images/cw-analogous.png
-%%DOCSDIR%%/it/images/cw-analogous_20.png
-%%DOCSDIR%%/it/images/cw-analogous_30.png
-%%DOCSDIR%%/it/images/cw-compl.png
-%%DOCSDIR%%/it/images/cw-complementary.png
-%%DOCSDIR%%/it/images/cw-splitcompl.png
-%%DOCSDIR%%/it/images/cw-splitcompl_20.png
-%%DOCSDIR%%/it/images/cw-splitcompl_40.png
-%%DOCSDIR%%/it/images/cw-tetradic.png
-%%DOCSDIR%%/it/images/cw-tetradic_20.png
-%%DOCSDIR%%/it/images/cw-tetradic_40.png
-%%DOCSDIR%%/it/images/cw-triadic.png
-%%DOCSDIR%%/it/images/cw-warning.png
-%%DOCSDIR%%/it/images/docheader1.png
-%%DOCSDIR%%/it/images/docheader2.png
-%%DOCSDIR%%/it/images/docinfo.png
-%%DOCSDIR%%/it/images/docinfo2.png
-%%DOCSDIR%%/it/images/dtp-studio.png
-%%DOCSDIR%%/it/images/duotone-imp.png
-%%DOCSDIR%%/it/images/duotone-imp2.png
-%%DOCSDIR%%/it/images/edit_shapes.png
-%%DOCSDIR%%/it/images/editcols1.png
-%%DOCSDIR%%/it/images/editcols1a.png
-%%DOCSDIR%%/it/images/editcols2.png
-%%DOCSDIR%%/it/images/editcols3.png
-%%DOCSDIR%%/it/images/eps-imp1.png
-%%DOCSDIR%%/it/images/eps-imp2.png
-%%DOCSDIR%%/it/images/eps-imp3.png
-%%DOCSDIR%%/it/images/eps-imp4.png
-%%DOCSDIR%%/it/images/eps-imp5.png
-%%DOCSDIR%%/it/images/externallink.png
-%%DOCSDIR%%/it/images/externalweblink.png
-%%DOCSDIR%%/it/images/file-error1.png
-%%DOCSDIR%%/it/images/file-error2.png
-%%DOCSDIR%%/it/images/file-error3.png
-%%DOCSDIR%%/it/images/fileimport.png
-%%DOCSDIR%%/it/images/font-preview.png
-%%DOCSDIR%%/it/images/font-subst.png
-%%DOCSDIR%%/it/images/fontmatrix.png
-%%DOCSDIR%%/it/images/fontpref1.png
-%%DOCSDIR%%/it/images/fontpref2.png
-%%DOCSDIR%%/it/images/fontpref3.png
-%%DOCSDIR%%/it/images/fonts.png
-%%DOCSDIR%%/it/images/fonts2.png
-%%DOCSDIR%%/it/images/frame_shape_flow.png
-%%DOCSDIR%%/it/images/galaxy_gauge.png
-%%DOCSDIR%%/it/images/galaxy_harmonizer1.png
-%%DOCSDIR%%/it/images/galaxy_harmonizer2.png
-%%DOCSDIR%%/it/images/geometry.png
-%%DOCSDIR%%/it/images/geometry1.png
-%%DOCSDIR%%/it/images/gimpoptions1.png
-%%DOCSDIR%%/it/images/gimpoptions2.png
-%%DOCSDIR%%/it/images/gimpoptions3.png
-%%DOCSDIR%%/it/images/givelife1.png
-%%DOCSDIR%%/it/images/gradient_adjuster.png
-%%DOCSDIR%%/it/images/gradient_adjuster1.png
-%%DOCSDIR%%/it/images/gradient_adjuster_vector.png
-%%DOCSDIR%%/it/images/gsadv1.png
-%%DOCSDIR%%/it/images/gsadv2.png
-%%DOCSDIR%%/it/images/htmlimport.png
-%%DOCSDIR%%/it/images/htmlstyle.png
-%%DOCSDIR%%/it/images/hyphen1.png
-%%DOCSDIR%%/it/images/hyphen2.png
-%%DOCSDIR%%/it/images/hyphen3.png
-%%DOCSDIR%%/it/images/image_compress.png
-%%DOCSDIR%%/it/images/import-pdfimage.png
-%%DOCSDIR%%/it/images/ink-cov.png
-%%DOCSDIR%%/it/images/inkscape.png
-%%DOCSDIR%%/it/images/insert-frame-1.png
-%%DOCSDIR%%/it/images/insert-frame-2.png
-%%DOCSDIR%%/it/images/krita.png
-%%DOCSDIR%%/it/images/krita1.jpg
-%%DOCSDIR%%/it/images/layers1.png
-%%DOCSDIR%%/it/images/layers2.png
-%%DOCSDIR%%/it/images/lilyp.png
-%%DOCSDIR%%/it/images/line_tab.png
-%%DOCSDIR%%/it/images/line_tab1.png
-%%DOCSDIR%%/it/images/line_tab2.png
-%%DOCSDIR%%/it/images/line_tab3.png
-%%DOCSDIR%%/it/images/line_tab4.png
-%%DOCSDIR%%/it/images/line_tab5.png
-%%DOCSDIR%%/it/images/line_tab6.png
-%%DOCSDIR%%/it/images/line_tab7.png
-%%DOCSDIR%%/it/images/link.png
-%%DOCSDIR%%/it/images/lprof.png
-%%DOCSDIR%%/it/images/missing-gs.png
-%%DOCSDIR%%/it/images/mpage1.png
-%%DOCSDIR%%/it/images/mpage2.png
-%%DOCSDIR%%/it/images/mpage3.png
-%%DOCSDIR%%/it/images/mpage4.png
-%%DOCSDIR%%/it/images/mpage5.png
-%%DOCSDIR%%/it/images/multipledup_copies.png
-%%DOCSDIR%%/it/images/multipledup_rotation.png
-%%DOCSDIR%%/it/images/multipledup_rows.png
-%%DOCSDIR%%/it/images/new1.png
-%%DOCSDIR%%/it/images/new2.png
-%%DOCSDIR%%/it/images/new3.png
-%%DOCSDIR%%/it/images/new4.png
-%%DOCSDIR%%/it/images/new5.png
-%%DOCSDIR%%/it/images/new6.png
-%%DOCSDIR%%/it/images/node_edit_close.png
-%%DOCSDIR%%/it/images/nodes_edit.png
-%%DOCSDIR%%/it/images/numb-sections.png
-%%DOCSDIR%%/it/images/oogettext1.png
-%%DOCSDIR%%/it/images/pathops.png
-%%DOCSDIR%%/it/images/pathops1.png
-%%DOCSDIR%%/it/images/pathops2.png
-%%DOCSDIR%%/it/images/pathops3.png
-%%DOCSDIR%%/it/images/pathops4.png
-%%DOCSDIR%%/it/images/pathops5.png
-%%DOCSDIR%%/it/images/pathops6.png
-%%DOCSDIR%%/it/images/pathops7.png
-%%DOCSDIR%%/it/images/pathops8.png
-%%DOCSDIR%%/it/images/pathtools.png
-%%DOCSDIR%%/it/images/pathtools1.png
-%%DOCSDIR%%/it/images/pathtools2.png
-%%DOCSDIR%%/it/images/patterns1.png
-%%DOCSDIR%%/it/images/patterns2.png
-%%DOCSDIR%%/it/images/pdf-form-ht1.png
-%%DOCSDIR%%/it/images/pdf-form-ht2.png
-%%DOCSDIR%%/it/images/pdf-form-ht3.png
-%%DOCSDIR%%/it/images/pdf-form-ht4.png
-%%DOCSDIR%%/it/images/pdf-form-ht5.png
-%%DOCSDIR%%/it/images/pdf-form-ht6.png
-%%DOCSDIR%%/it/images/pdfeffect1.png
-%%DOCSDIR%%/it/images/pdfeffect2.png
-%%DOCSDIR%%/it/images/pdftools.png
-%%DOCSDIR%%/it/images/pdfx1a-lo.png
-%%DOCSDIR%%/it/images/pdfx3-1.png
-%%DOCSDIR%%/it/images/pdfxcolor.png
-%%DOCSDIR%%/it/images/pdfxintent.png
-%%DOCSDIR%%/it/images/plot1.png
-%%DOCSDIR%%/it/images/plot2.png
-%%DOCSDIR%%/it/images/polygons.png
-%%DOCSDIR%%/it/images/polygons1.png
-%%DOCSDIR%%/it/images/povray.png
-%%DOCSDIR%%/it/images/preflight-v.png
-%%DOCSDIR%%/it/images/prefs-mac-1.png
-%%DOCSDIR%%/it/images/prefs_9parts.png
-%%DOCSDIR%%/it/images/prefs_colormgmt.png
-%%DOCSDIR%%/it/images/prefs_display.png
-%%DOCSDIR%%/it/images/prefs_document.png
-%%DOCSDIR%%/it/images/prefs_document1.png
-%%DOCSDIR%%/it/images/prefs_exttools.png
-%%DOCSDIR%%/it/images/prefs_fibonacci.png
-%%DOCSDIR%%/it/images/prefs_general.png
-%%DOCSDIR%%/it/images/prefs_goldenmean.png
-%%DOCSDIR%%/it/images/prefs_guides.png
-%%DOCSDIR%%/it/images/prefs_guides1.png
-%%DOCSDIR%%/it/images/prefs_gutenberg.png
-%%DOCSDIR%%/it/images/prefs_keyboard.png
-%%DOCSDIR%%/it/images/prefs_magazine.png
-%%DOCSDIR%%/it/images/prefs_misc.png
-%%DOCSDIR%%/it/images/prefs_pdfexport.png
-%%DOCSDIR%%/it/images/prefs_pdfexport1.png
-%%DOCSDIR%%/it/images/prefs_preflight.png
-%%DOCSDIR%%/it/images/prefs_shortwords.png
-%%DOCSDIR%%/it/images/prefs_tools.png
-%%DOCSDIR%%/it/images/prefs_tools1.png
-%%DOCSDIR%%/it/images/prefs_tools2.png
-%%DOCSDIR%%/it/images/prefs_tools3.png
-%%DOCSDIR%%/it/images/prefs_tools4.png
-%%DOCSDIR%%/it/images/prefs_tools5.png
-%%DOCSDIR%%/it/images/prefs_tools6.png
-%%DOCSDIR%%/it/images/prefs_typog.png
-%%DOCSDIR%%/it/images/print-dialog1.png
-%%DOCSDIR%%/it/images/print-dialog2.png
-%%DOCSDIR%%/it/images/printer2.png
-%%DOCSDIR%%/it/images/printpreview.png
-%%DOCSDIR%%/it/images/prop_shape.png
-%%DOCSDIR%%/it/images/qsg-col1.png
-%%DOCSDIR%%/it/images/qsg-col2.png
-%%DOCSDIR%%/it/images/register.png
-%%DOCSDIR%%/it/images/resene-pal.png
-%%DOCSDIR%%/it/images/result.png
-%%DOCSDIR%%/it/images/rf-error1.png
-%%DOCSDIR%%/it/images/rf-error2.png
-%%DOCSDIR%%/it/images/rf-error3.png
-%%DOCSDIR%%/it/images/rf1.png
-%%DOCSDIR%%/it/images/rf2.png
-%%DOCSDIR%%/it/images/rf3.png
-%%DOCSDIR%%/it/images/rf4.png
-%%DOCSDIR%%/it/images/rf5.png
-%%DOCSDIR%%/it/images/rf6.png
-%%DOCSDIR%%/it/images/rf7.png
-%%DOCSDIR%%/it/images/rf8.png
-%%DOCSDIR%%/it/images/rgb-cmyk.png
-%%DOCSDIR%%/it/images/rgb.png
-%%DOCSDIR%%/it/images/round_rectangle.png
-%%DOCSDIR%%/it/images/sadie4by2b.png
-%%DOCSDIR%%/it/images/scribus-os2.png
-%%DOCSDIR%%/it/images/scribus-pres1.png
-%%DOCSDIR%%/it/images/scribus-pres2.png
-%%DOCSDIR%%/it/images/shape_edit.png
-%%DOCSDIR%%/it/images/shapes7.png
-%%DOCSDIR%%/it/images/shapes8.png
-%%DOCSDIR%%/it/images/skewing.png
-%%DOCSDIR%%/it/images/spot.png
-%%DOCSDIR%%/it/images/squat_tux.png
-%%DOCSDIR%%/it/images/style_manager1.png
-%%DOCSDIR%%/it/images/style_manager10.png
-%%DOCSDIR%%/it/images/style_manager1b.png
-%%DOCSDIR%%/it/images/style_manager3b.png
-%%DOCSDIR%%/it/images/style_manager7.png
-%%DOCSDIR%%/it/images/style_manager8.png
-%%DOCSDIR%%/it/images/style_manager9.png
-%%DOCSDIR%%/it/images/swdialog.png
-%%DOCSDIR%%/it/images/table-import-1.png
-%%DOCSDIR%%/it/images/table-import-2.png
-%%DOCSDIR%%/it/images/table-import-3.png
-%%DOCSDIR%%/it/images/tb-bookbinder.png
-%%DOCSDIR%%/it/images/tb-gsview.png
-%%DOCSDIR%%/it/images/tb-inkscape.png
-%%DOCSDIR%%/it/images/tb-jpdf.png
-%%DOCSDIR%%/it/images/tb-libreoffice.png
-%%DOCSDIR%%/it/images/tb-pdf-imp.png
-%%DOCSDIR%%/it/images/text-frame-link.png
-%%DOCSDIR%%/it/images/text-frame-unlink.png
-%%DOCSDIR%%/it/images/text_filter135.png
-%%DOCSDIR%%/it/images/text_filter136.png
-%%DOCSDIR%%/it/images/text_filter136b.png
-%%DOCSDIR%%/it/images/text_flow.png
-%%DOCSDIR%%/it/images/text_linking.png
-%%DOCSDIR%%/it/images/text_tab1.png
-%%DOCSDIR%%/it/images/text_tab10.png
-%%DOCSDIR%%/it/images/text_tab11.png
-%%DOCSDIR%%/it/images/text_tab11b.png
-%%DOCSDIR%%/it/images/text_tab12.png
-%%DOCSDIR%%/it/images/text_tab13.png
-%%DOCSDIR%%/it/images/text_tab2.png
-%%DOCSDIR%%/it/images/text_tab3.png
-%%DOCSDIR%%/it/images/text_tab4.png
-%%DOCSDIR%%/it/images/text_tab5.png
-%%DOCSDIR%%/it/images/text_tab6.png
-%%DOCSDIR%%/it/images/text_tab7.png
-%%DOCSDIR%%/it/images/text_tab7a.png
-%%DOCSDIR%%/it/images/text_tab7b.png
-%%DOCSDIR%%/it/images/text_tab8.png
-%%DOCSDIR%%/it/images/text_tab9.png
-%%DOCSDIR%%/it/images/transform_dialogb.png
-%%DOCSDIR%%/it/images/transform_translaterotation.png
-%%DOCSDIR%%/it/images/transform_translaterotation1.png
-%%DOCSDIR%%/it/images/transform_translatescaling.png
-%%DOCSDIR%%/it/images/transform_translateskewing.png
-%%DOCSDIR%%/it/images/transform_translateskewing1.png
-%%DOCSDIR%%/it/images/vectimp1.png
-%%DOCSDIR%%/it/images/vectimp2.png
-%%DOCSDIR%%/it/images/vectimp3.png
-%%DOCSDIR%%/it/images/vectimp4.png
-%%DOCSDIR%%/it/images/vectimp5.png
-%%DOCSDIR%%/it/images/vector-advanced.png
-%%DOCSDIR%%/it/images/vector-clipart.png
-%%DOCSDIR%%/it/images/xnview.png
-%%DOCSDIR%%/it/importbitmap1.html
-%%DOCSDIR%%/it/importhints.html
-%%DOCSDIR%%/it/importhints1.html
-%%DOCSDIR%%/it/importhints2.html
-%%DOCSDIR%%/it/importhints3.html
-%%DOCSDIR%%/it/importhints4.html
-%%DOCSDIR%%/it/index.html
-%%DOCSDIR%%/it/install-dpkg.html
-%%DOCSDIR%%/it/install.html
-%%DOCSDIR%%/it/install1.html
-%%DOCSDIR%%/it/install2.html
-%%DOCSDIR%%/it/install3.html
-%%DOCSDIR%%/it/install4.html
-%%DOCSDIR%%/it/install5.html
-%%DOCSDIR%%/it/intro.html
-%%DOCSDIR%%/it/irc.html
-%%DOCSDIR%%/it/keys.html
-%%DOCSDIR%%/it/layers.html
-%%DOCSDIR%%/it/lipsum.html
-%%DOCSDIR%%/it/mailing_lists.html
-%%DOCSDIR%%/it/menu.xml
-%%DOCSDIR%%/it/moncal.html
-%%DOCSDIR%%/it/mouse.html
-%%DOCSDIR%%/it/multiple_transform.html
-%%DOCSDIR%%/it/otherinfo.html
-%%DOCSDIR%%/it/pagenumber.html
-%%DOCSDIR%%/it/pagetemplate1.html
-%%DOCSDIR%%/it/pdf_form.html
-%%DOCSDIR%%/it/pdfexport1.html
-%%DOCSDIR%%/it/pdfexport2.html
-%%DOCSDIR%%/it/pdfexport3.html
-%%DOCSDIR%%/it/pdfexport4.html
-%%DOCSDIR%%/it/pdfexport_image.html
-%%DOCSDIR%%/it/pdflavor.html
-%%DOCSDIR%%/it/pdfx3.html
-%%DOCSDIR%%/it/plugin_howto.html
-%%DOCSDIR%%/it/print1.html
-%%DOCSDIR%%/it/print2.html
-%%DOCSDIR%%/it/print3.html
-%%DOCSDIR%%/it/print4.html
-%%DOCSDIR%%/it/psd.html
-%%DOCSDIR%%/it/qsg.html
-%%DOCSDIR%%/it/readme-haiku.html
-%%DOCSDIR%%/it/readme-macosx.html
-%%DOCSDIR%%/it/readme-os2.html
-%%DOCSDIR%%/it/readme-win32.html
-%%DOCSDIR%%/it/readme.html
-%%DOCSDIR%%/it/releases.html
-%%DOCSDIR%%/it/renderframes.html
-%%DOCSDIR%%/it/resources.html
-%%DOCSDIR%%/it/scribus-svg.html
-%%DOCSDIR%%/it/scribuscopyright.html
-%%DOCSDIR%%/it/scribusfileformat.html
-%%DOCSDIR%%/it/scripter-extensions.html
-%%DOCSDIR%%/it/scripter-faq.html
-%%DOCSDIR%%/it/scripter1.html
-%%DOCSDIR%%/it/scripterapi-ImageExport.html
-%%DOCSDIR%%/it/scripterapi-PDFfile.html
-%%DOCSDIR%%/it/scripterapi-Printer.html
-%%DOCSDIR%%/it/scripterapi-color.html
-%%DOCSDIR%%/it/scripterapi-constants.html
-%%DOCSDIR%%/it/scripterapi-dialogs.html
-%%DOCSDIR%%/it/scripterapi-doc.html
-%%DOCSDIR%%/it/scripterapi-extensions.html
-%%DOCSDIR%%/it/scripterapi-font.html
-%%DOCSDIR%%/it/scripterapi-getobjprop.html
-%%DOCSDIR%%/it/scripterapi-layer.html
-%%DOCSDIR%%/it/scripterapi-manobj.html
-%%DOCSDIR%%/it/scripterapi-object.html
-%%DOCSDIR%%/it/scripterapi-page.html
-%%DOCSDIR%%/it/scripterapi-select.html
-%%DOCSDIR%%/it/scripterapi-setobjprop.html
-%%DOCSDIR%%/it/scripterapi-textframes.html
-%%DOCSDIR%%/it/scripterapi.html
-%%DOCSDIR%%/it/settings1.html
-%%DOCSDIR%%/it/short-words.html
-%%DOCSDIR%%/it/specs.html
-%%DOCSDIR%%/it/toolbox.html
-%%DOCSDIR%%/it/toolbox1.html
-%%DOCSDIR%%/it/toolbox12.html
-%%DOCSDIR%%/it/toolbox13.html
-%%DOCSDIR%%/it/toolbox14.html
-%%DOCSDIR%%/it/toolbox15.html
-%%DOCSDIR%%/it/toolbox16.html
-%%DOCSDIR%%/it/toolbox17.html
-%%DOCSDIR%%/it/toolbox18.html
-%%DOCSDIR%%/it/toolbox19.html
-%%DOCSDIR%%/it/toolbox2.html
-%%DOCSDIR%%/it/toolbox3.html
-%%DOCSDIR%%/it/toolbox4.html
-%%DOCSDIR%%/it/toolbox5.html
-%%DOCSDIR%%/it/toolbox6.html
-%%DOCSDIR%%/it/toolbox7.html
-%%DOCSDIR%%/it/toolbox8.html
-%%DOCSDIR%%/it/toolbox9.html
-%%DOCSDIR%%/it/topten.html
-%%DOCSDIR%%/it/translation_howto.html
-%%DOCSDIR%%/it/tutorials.html
-%%DOCSDIR%%/it/workspace1.html
 %%DATADIR%%/dicts/README_ca_ES.txt
 %%DATADIR%%/dicts/README_cs_CZ.txt
 %%DATADIR%%/dicts/README_cy_GB.txt
@@ -2655,6 +2675,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/icons/Kern.xpm
 %%DATADIR%%/icons/Kreise.xpm
 %%DATADIR%%/icons/Kreuz.xpm
+%%DATADIR%%/icons/LinkTextFrame.png
 %%DATADIR%%/icons/Lock.xpm
 %%DATADIR%%/icons/Lupe.xpm
 %%DATADIR%%/icons/LupeZ.xpm
@@ -2901,6 +2922,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/samples/sample_db_usage.py
 %%DATADIR%%/samples/trait_de_coupe.py
 %%DATADIR%%/samples/wordcount.py
+%%DATADIR%%/scripts/Align_image_in_frame.py
 %%DATADIR%%/scripts/Autoquote.py
 %%DATADIR%%/scripts/CalendarWizard.py
 %%DATADIR%%/scripts/ChangeLog
@@ -2945,6 +2967,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/Bundesregierung_HKS.xml
 %%DATADIR%%/swatches/COPYING_RESENE.txt
 %%DATADIR%%/swatches/Classic_Kit.xml
+%%DATADIR%%/swatches/ColorBrewer.xml
 %%DATADIR%%/swatches/Colortrend Wood Stains_bs00_3.eps
 %%DATADIR%%/swatches/Colortrend Wood Stains_bs01_3.eps
 %%DATADIR%%/swatches/Colortrend Wood Stains_kd01_4.eps
@@ -3014,6 +3037,8 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/LaTeX_Beamer.xml
 %%DATADIR%%/swatches/LibreOffice.xml
 %%DATADIR%%/swatches/Munsell_Soil_Colors.xml
+%%DATADIR%%/swatches/NAA-Colors_license-.rtf
+%%DATADIR%%/swatches/NAA_Colors_10-2006.xml
 %%DATADIR%%/swatches/NBS-ISCC_Colors.xml
 %%DATADIR%%/swatches/OSMO Einmallasur_bs00_3.eps
 %%DATADIR%%/swatches/OSMO Einmallasur_bs01_3.eps
@@ -3303,251 +3328,251 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.zh_CN.qm
 %%DATADIR%%/translations/scribus.zh_TW.qm
 %%DATADIR%%/unicodenameslist.txt
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/templates/textbased
-@dirrm %%DATADIR%%/templates/pres_backgr_4
-@dirrm %%DATADIR%%/templates/pres_backgr_3
-@dirrm %%DATADIR%%/templates/pres_backgr_2
-@dirrm %%DATADIR%%/templates/pres_backgr_1
-@dirrm %%DATADIR%%/templates/nl1
-@dirrm %%DATADIR%%/templates/mc
-@dirrm %%DATADIR%%/templates/grid_poster_a3
-@dirrm %%DATADIR%%/templates/grid_poster_a2
-@dirrm %%DATADIR%%/templates/grid_poster_a1
-@dirrm %%DATADIR%%/templates/grid_poster_a0
-@dirrm %%DATADIR%%/templates/grid_br_usl_l
-@dirrm %%DATADIR%%/templates/grid_br_dinl_p
-@dirrm %%DATADIR%%/templates/grid_br_dinl_l
-@dirrm %%DATADIR%%/templates/grid_br_a5_p
-@dirrm %%DATADIR%%/templates/grid_br_a5_l
-@dirrm %%DATADIR%%/templates/grid_br_a4_p
-@dirrm %%DATADIR%%/templates/grid_br_a4_l
-@dirrm %%DATADIR%%/templates/grid_br_975x85in_l
-@dirrm %%DATADIR%%/templates/grid_br_975x85_p
-@dirrm %%DATADIR%%/templates/grid_br_55x86in_p
-@dirrm %%DATADIR%%/templates/grid_br_55x85in_l
-@dirrm %%DATADIR%%/templates/grid_br_375x85_p
-@dirrm %%DATADIR%%/templates/grid_br_375x85_l
-@dirrm %%DATADIR%%/templates/grid_br_100x210_p
-@dirrm %%DATADIR%%/templates/grid_br_100x210_l
-@dirrm %%DATADIR%%/templates/cover5
-@dirrm %%DATADIR%%/templates/cover4
-@dirrm %%DATADIR%%/templates/cover3
-@dirrm %%DATADIR%%/templates/cover2
-@dirrm %%DATADIR%%/templates/cover1
-@dirrm %%DATADIR%%/templates/cc
-@dirrm %%DATADIR%%/templates/buscard_coll
-@dirrm %%DATADIR%%/templates/buscard9
-@dirrm %%DATADIR%%/templates/buscard8
-@dirrm %%DATADIR%%/templates/buscard7
-@dirrm %%DATADIR%%/templates/buscard6
-@dirrm %%DATADIR%%/templates/buscard5
-@dirrm %%DATADIR%%/templates/buscard4
-@dirrm %%DATADIR%%/templates/buscard3
-@dirrm %%DATADIR%%/templates/buscard2
-@dirrm %%DATADIR%%/templates/buscard11
-@dirrm %%DATADIR%%/templates/buscard10
-@dirrm %%DATADIR%%/templates/buscard1
-@dirrm %%DATADIR%%/templates/br1
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/swatches
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/samples
-@dirrm %%DATADIR%%/profiles
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/loremipsum
-@dirrm %%DATADIR%%/keysets
-@dirrm %%DATADIR%%/icons/32
-@dirrm %%DATADIR%%/icons/22
-@dirrm %%DATADIR%%/icons/16
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/editorconfig
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%/dicts
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/it/images
-@dirrm %%DOCSDIR%%/it
-@dirrm %%DOCSDIR%%/en/tutorials/scribus-short-words
-@dirrm %%DOCSDIR%%/en/tutorials
-@dirrm %%DOCSDIR%%/en/images
-@dirrm %%DOCSDIR%%/en
-@dirrm %%DOCSDIR%%/de/images
-@dirrm %%DOCSDIR%%/de
-@dirrm %%DOCSDIR%%
-@dirrm lib/scribus/plugins/gettext
-@dirrm lib/scribus/plugins
-@dirrm lib/scribus
-@dirrm include/scribus/unicodemap/CMakeFiles
-@dirrm include/scribus/unicodemap
-@dirrm include/scribus/ui
-@dirrm include/scribus/tt/simpletreemodel
-@dirrm include/scribus/tt
-@dirrm include/scribus/text/CMakeFiles/scribus_text_lib.dir
-@dirrm include/scribus/text/CMakeFiles
-@dirrm include/scribus/text
-@dirrm include/scribus/styles/CMakeFiles/scribus_styles_lib.dir
-@dirrm include/scribus/styles/CMakeFiles
-@dirrm include/scribus/styles
-@dirrm include/scribus/profiles/CMakeFiles
-@dirrm include/scribus/profiles
-@dirrm include/scribus/plugins/tools/transform/CMakeFiles/transformeffect.dir
-@dirrm include/scribus/plugins/tools/transform/CMakeFiles
-@dirrm include/scribus/plugins/tools/transform
-@dirrm include/scribus/plugins/tools/subdivide/CMakeFiles/subdivide.dir
-@dirrm include/scribus/plugins/tools/subdivide/CMakeFiles
-@dirrm include/scribus/plugins/tools/subdivide
-@dirrm include/scribus/plugins/tools/spellcheck
-@dirrm include/scribus/plugins/tools/pathstroker/CMakeFiles/pathstroker.dir
-@dirrm include/scribus/plugins/tools/pathstroker/CMakeFiles
-@dirrm include/scribus/plugins/tools/pathstroker
-@dirrm include/scribus/plugins/tools/pathfinder/CMakeFiles/pathfinder.dir
-@dirrm include/scribus/plugins/tools/pathfinder/CMakeFiles
-@dirrm include/scribus/plugins/tools/pathfinder
-@dirrm include/scribus/plugins/tools/pathcut/CMakeFiles/pathcut.dir
-@dirrm include/scribus/plugins/tools/pathcut/CMakeFiles
-@dirrm include/scribus/plugins/tools/pathcut
-@dirrm include/scribus/plugins/tools/pathconnect/CMakeFiles/pathconnect.dir
-@dirrm include/scribus/plugins/tools/pathconnect/CMakeFiles
-@dirrm include/scribus/plugins/tools/pathconnect
-@dirrm include/scribus/plugins/tools/lenseffects/CMakeFiles/lenseffects.dir
-@dirrm include/scribus/plugins/tools/lenseffects/CMakeFiles
-@dirrm include/scribus/plugins/tools/lenseffects
-@dirrm include/scribus/plugins/tools/hunspellcheck/CMakeFiles/hunspellplugin.dir
-@dirrm include/scribus/plugins/tools/hunspellcheck/CMakeFiles
-@dirrm include/scribus/plugins/tools/hunspellcheck
-@dirrm include/scribus/plugins/tools/CMakeFiles
-@dirrm include/scribus/plugins/tools/2geomtools/pathalongpath/CMakeFiles/pathalongpath.dir
-@dirrm include/scribus/plugins/tools/2geomtools/pathalongpath/CMakeFiles
-@dirrm include/scribus/plugins/tools/2geomtools/pathalongpath
-@dirrm include/scribus/plugins/tools/2geomtools/meshdistortion/CMakeFiles/meshdistortion.dir
-@dirrm include/scribus/plugins/tools/2geomtools/meshdistortion/CMakeFiles
-@dirrm include/scribus/plugins/tools/2geomtools/meshdistortion
-@dirrm include/scribus/plugins/tools/2geomtools/lib2geom/CMakeFiles/2geom.dir
-@dirrm include/scribus/plugins/tools/2geomtools/lib2geom/CMakeFiles
-@dirrm include/scribus/plugins/tools/2geomtools/lib2geom
-@dirrm include/scribus/plugins/tools/2geomtools/CMakeFiles
-@dirrm include/scribus/plugins/tools/2geomtools
-@dirrm include/scribus/plugins/tools
-@dirrm include/scribus/plugins/svgexplugin/CMakeFiles/svgexplugin.dir
-@dirrm include/scribus/plugins/svgexplugin/CMakeFiles
-@dirrm include/scribus/plugins/svgexplugin
-@dirrm include/scribus/plugins/short-words/CMakeFiles/scribusshortwords.dir
-@dirrm include/scribus/plugins/short-words/CMakeFiles
-@dirrm include/scribus/plugins/short-words
-@dirrm include/scribus/plugins/scriptplugin/scripts/CMakeFiles
-@dirrm include/scribus/plugins/scriptplugin/scripts
-@dirrm include/scribus/plugins/scriptplugin/scripter2
-@dirrm include/scribus/plugins/scriptplugin/samples/CMakeFiles
-@dirrm include/scribus/plugins/scriptplugin/samples
-@dirrm include/scribus/plugins/scriptplugin/CMakeFiles/scriptplugin.dir
-@dirrm include/scribus/plugins/scriptplugin/CMakeFiles
-@dirrm include/scribus/plugins/scriptplugin
-@dirrm include/scribus/plugins/saveastemplateplugin/CMakeFiles/saveastemplateplugin.dir
-@dirrm include/scribus/plugins/saveastemplateplugin/CMakeFiles
-@dirrm include/scribus/plugins/saveastemplateplugin
-@dirrm include/scribus/plugins/pixmapexport/CMakeFiles/scribusexportpixmap.dir
-@dirrm include/scribus/plugins/pixmapexport/CMakeFiles
-@dirrm include/scribus/plugins/pixmapexport
-@dirrm include/scribus/plugins/newfromtemplateplugin
-@dirrm include/scribus/plugins/myplugin
-@dirrm include/scribus/plugins/imposition
-@dirrm include/scribus/plugins/import/xfig/CMakeFiles/importxfig.dir
-@dirrm include/scribus/plugins/import/xfig/CMakeFiles
-@dirrm include/scribus/plugins/import/xfig
-@dirrm include/scribus/plugins/import/wmf/CMakeFiles/wmfimplugin.dir
-@dirrm include/scribus/plugins/import/wmf/CMakeFiles
-@dirrm include/scribus/plugins/import/wmf
-@dirrm include/scribus/plugins/import/svg/CMakeFiles/svgimplugin.dir
-@dirrm include/scribus/plugins/import/svg/CMakeFiles
-@dirrm include/scribus/plugins/import/svg
-@dirrm include/scribus/plugins/import/ps/CMakeFiles/importps.dir
-@dirrm include/scribus/plugins/import/ps/CMakeFiles
-@dirrm include/scribus/plugins/import/ps
-@dirrm include/scribus/plugins/import/pct/CMakeFiles/importpct.dir
-@dirrm include/scribus/plugins/import/pct/CMakeFiles
-@dirrm include/scribus/plugins/import/pct
-@dirrm include/scribus/plugins/import/oodraw/CMakeFiles/oodrawimp.dir
-@dirrm include/scribus/plugins/import/oodraw/CMakeFiles
-@dirrm include/scribus/plugins/import/oodraw
-@dirrm include/scribus/plugins/import/cvg/CMakeFiles/importcvg.dir
-@dirrm include/scribus/plugins/import/cvg/CMakeFiles
-@dirrm include/scribus/plugins/import/cvg
-@dirrm include/scribus/plugins/import/ai/CMakeFiles/importai.dir
-@dirrm include/scribus/plugins/import/ai/CMakeFiles
-@dirrm include/scribus/plugins/import/ai
-@dirrm include/scribus/plugins/import/CMakeFiles
-@dirrm include/scribus/plugins/import
-@dirrm include/scribus/plugins/gettext/txtim/CMakeFiles/txtim.dir
-@dirrm include/scribus/plugins/gettext/txtim/CMakeFiles
-@dirrm include/scribus/plugins/gettext/txtim
-@dirrm include/scribus/plugins/gettext/textfilter/CMakeFiles/textfilterplugin.dir
-@dirrm include/scribus/plugins/gettext/textfilter/CMakeFiles
-@dirrm include/scribus/plugins/gettext/textfilter
-@dirrm include/scribus/plugins/gettext/sxwim/CMakeFiles/sxwimplugin.dir
-@dirrm include/scribus/plugins/gettext/sxwim/CMakeFiles
-@dirrm include/scribus/plugins/gettext/sxwim
-@dirrm include/scribus/plugins/gettext/pdbim/CMakeFiles/pdbim.dir
-@dirrm include/scribus/plugins/gettext/pdbim/CMakeFiles
-@dirrm include/scribus/plugins/gettext/pdbim
-@dirrm include/scribus/plugins/gettext/odtim/CMakeFiles/odtimplugin.dir
-@dirrm include/scribus/plugins/gettext/odtim/CMakeFiles
-@dirrm include/scribus/plugins/gettext/odtim
-@dirrm include/scribus/plugins/gettext/htmlim/CMakeFiles/htmlim.dir
-@dirrm include/scribus/plugins/gettext/htmlim/CMakeFiles
-@dirrm include/scribus/plugins/gettext/htmlim
-@dirrm include/scribus/plugins/gettext/docim/CMakeFiles/docim.dir
-@dirrm include/scribus/plugins/gettext/docim/CMakeFiles
-@dirrm include/scribus/plugins/gettext/docim
-@dirrm include/scribus/plugins/gettext/csvim/CMakeFiles/csvim.dir
-@dirrm include/scribus/plugins/gettext/csvim/CMakeFiles
-@dirrm include/scribus/plugins/gettext/csvim
-@dirrm include/scribus/plugins/gettext/CMakeFiles
-@dirrm include/scribus/plugins/gettext
-@dirrm include/scribus/plugins/fontpreview/CMakeFiles/fontpreview.dir
-@dirrm include/scribus/plugins/fontpreview/CMakeFiles
-@dirrm include/scribus/plugins/fontpreview
-@dirrm include/scribus/plugins/fileloader/scribus13format/CMakeFiles/scribus13format.dir
-@dirrm include/scribus/plugins/fileloader/scribus13format/CMakeFiles
-@dirrm include/scribus/plugins/fileloader/scribus13format
-@dirrm include/scribus/plugins/fileloader/scribus134format/CMakeFiles/scribus134format.dir
-@dirrm include/scribus/plugins/fileloader/scribus134format/CMakeFiles
-@dirrm include/scribus/plugins/fileloader/scribus134format
-@dirrm include/scribus/plugins/fileloader/scribus12format/CMakeFiles/scribus12format.dir
-@dirrm include/scribus/plugins/fileloader/scribus12format/CMakeFiles
-@dirrm include/scribus/plugins/fileloader/scribus12format
-@dirrm include/scribus/plugins/fileloader/oldscribusformat
-@dirrm include/scribus/plugins/fileloader/CMakeFiles
-@dirrm include/scribus/plugins/fileloader
-@dirrm include/scribus/plugins/colorwheel/CMakeFiles/colorwheel.dir
-@dirrm include/scribus/plugins/colorwheel/CMakeFiles
-@dirrm include/scribus/plugins/colorwheel
-@dirrm include/scribus/plugins/barcodegenerator/CMakeFiles/barcodegenerator.dir
-@dirrm include/scribus/plugins/barcodegenerator/CMakeFiles
-@dirrm include/scribus/plugins/barcodegenerator
-@dirrm include/scribus/plugins/CMakeFiles
-@dirrm include/scribus/plugins
-@dirrm include/scribus/fonts/CMakeFiles/scribus_fonts_lib.dir
-@dirrm include/scribus/fonts/CMakeFiles
-@dirrm include/scribus/fonts
-@dirrm include/scribus/downloadmanager
-@dirrm include/scribus/designer/smwidgets
-@dirrm include/scribus/designer
-@dirrm include/scribus/desaxe/CMakeFiles/scribus_desaxe_lib.dir
-@dirrm include/scribus/desaxe/CMakeFiles
-@dirrm include/scribus/desaxe
-@dirrm include/scribus/colormgmt/CMakeFiles/scribus_colormgmt_lib.dir
-@dirrm include/scribus/colormgmt/CMakeFiles
-@dirrm include/scribus/colormgmt
-@dirrm include/scribus/CMakeFiles/scribus.dir/ui
-@dirrm include/scribus/CMakeFiles/scribus.dir/tt/simpletreemodel
-@dirrm include/scribus/CMakeFiles/scribus.dir/tt
-@dirrm include/scribus/CMakeFiles/scribus.dir/downloadmanager
-@dirrm include/scribus/CMakeFiles/scribus.dir
-@dirrm include/scribus/CMakeFiles
-@dirrm include/scribus
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
+@dirrmtry include/scribus/CMakeFiles/scribus.dir/downloadmanager
+@dirrmtry include/scribus/CMakeFiles/scribus.dir/tt/simpletreemodel
+@dirrmtry include/scribus/CMakeFiles/scribus.dir/tt
+@dirrmtry include/scribus/CMakeFiles/scribus.dir/ui
+@dirrmtry include/scribus/CMakeFiles/scribus.dir
+@dirrmtry include/scribus/CMakeFiles
+@dirrmtry include/scribus/colormgmt/CMakeFiles/scribus_colormgmt_lib.dir
+@dirrmtry include/scribus/colormgmt/CMakeFiles
+@dirrmtry include/scribus/colormgmt
+@dirrmtry include/scribus/desaxe/CMakeFiles/scribus_desaxe_lib.dir
+@dirrmtry include/scribus/desaxe/CMakeFiles
+@dirrmtry include/scribus/desaxe
+@dirrmtry include/scribus/designer/smwidgets
+@dirrmtry include/scribus/designer
+@dirrmtry include/scribus/downloadmanager
+@dirrmtry include/scribus/fonts/CMakeFiles/scribus_fonts_lib.dir
+@dirrmtry include/scribus/fonts/CMakeFiles
+@dirrmtry include/scribus/fonts
+@dirrmtry include/scribus/plugins/CMakeFiles
+@dirrmtry include/scribus/plugins/barcodegenerator/CMakeFiles/barcodegenerator.dir
+@dirrmtry include/scribus/plugins/barcodegenerator/CMakeFiles
+@dirrmtry include/scribus/plugins/barcodegenerator
+@dirrmtry include/scribus/plugins/colorwheel/CMakeFiles/colorwheel.dir
+@dirrmtry include/scribus/plugins/colorwheel/CMakeFiles
+@dirrmtry include/scribus/plugins/colorwheel
+@dirrmtry include/scribus/plugins/fileloader/CMakeFiles
+@dirrmtry include/scribus/plugins/fileloader/oldscribusformat
+@dirrmtry include/scribus/plugins/fileloader/scribus12format/CMakeFiles/scribus12format.dir
+@dirrmtry include/scribus/plugins/fileloader/scribus12format/CMakeFiles
+@dirrmtry include/scribus/plugins/fileloader/scribus12format
+@dirrmtry include/scribus/plugins/fileloader/scribus134format/CMakeFiles/scribus134format.dir
+@dirrmtry include/scribus/plugins/fileloader/scribus134format/CMakeFiles
+@dirrmtry include/scribus/plugins/fileloader/scribus134format
+@dirrmtry include/scribus/plugins/fileloader/scribus13format/CMakeFiles/scribus13format.dir
+@dirrmtry include/scribus/plugins/fileloader/scribus13format/CMakeFiles
+@dirrmtry include/scribus/plugins/fileloader/scribus13format
+@dirrmtry include/scribus/plugins/fileloader
+@dirrmtry include/scribus/plugins/fontpreview/CMakeFiles/fontpreview.dir
+@dirrmtry include/scribus/plugins/fontpreview/CMakeFiles
+@dirrmtry include/scribus/plugins/fontpreview
+@dirrmtry include/scribus/plugins/gettext/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/csvim/CMakeFiles/csvim.dir
+@dirrmtry include/scribus/plugins/gettext/csvim/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/csvim
+@dirrmtry include/scribus/plugins/gettext/docim/CMakeFiles/docim.dir
+@dirrmtry include/scribus/plugins/gettext/docim/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/docim
+@dirrmtry include/scribus/plugins/gettext/htmlim/CMakeFiles/htmlim.dir
+@dirrmtry include/scribus/plugins/gettext/htmlim/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/htmlim
+@dirrmtry include/scribus/plugins/gettext/odtim/CMakeFiles/odtimplugin.dir
+@dirrmtry include/scribus/plugins/gettext/odtim/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/odtim
+@dirrmtry include/scribus/plugins/gettext/pdbim/CMakeFiles/pdbim.dir
+@dirrmtry include/scribus/plugins/gettext/pdbim/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/pdbim
+@dirrmtry include/scribus/plugins/gettext/sxwim/CMakeFiles/sxwimplugin.dir
+@dirrmtry include/scribus/plugins/gettext/sxwim/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/sxwim
+@dirrmtry include/scribus/plugins/gettext/textfilter/CMakeFiles/textfilterplugin.dir
+@dirrmtry include/scribus/plugins/gettext/textfilter/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/textfilter
+@dirrmtry include/scribus/plugins/gettext/txtim/CMakeFiles/txtim.dir
+@dirrmtry include/scribus/plugins/gettext/txtim/CMakeFiles
+@dirrmtry include/scribus/plugins/gettext/txtim
+@dirrmtry include/scribus/plugins/gettext
+@dirrmtry include/scribus/plugins/import/CMakeFiles
+@dirrmtry include/scribus/plugins/import/ai/CMakeFiles/importai.dir
+@dirrmtry include/scribus/plugins/import/ai/CMakeFiles
+@dirrmtry include/scribus/plugins/import/ai
+@dirrmtry include/scribus/plugins/import/cvg/CMakeFiles/importcvg.dir
+@dirrmtry include/scribus/plugins/import/cvg/CMakeFiles
+@dirrmtry include/scribus/plugins/import/cvg
+@dirrmtry include/scribus/plugins/import/oodraw/CMakeFiles/oodrawimp.dir
+@dirrmtry include/scribus/plugins/import/oodraw/CMakeFiles
+@dirrmtry include/scribus/plugins/import/oodraw
+@dirrmtry include/scribus/plugins/import/pct/CMakeFiles/importpct.dir
+@dirrmtry include/scribus/plugins/import/pct/CMakeFiles
+@dirrmtry include/scribus/plugins/import/pct
+@dirrmtry include/scribus/plugins/import/ps/CMakeFiles/importps.dir
+@dirrmtry include/scribus/plugins/import/ps/CMakeFiles
+@dirrmtry include/scribus/plugins/import/ps
+@dirrmtry include/scribus/plugins/import/svg/CMakeFiles/svgimplugin.dir
+@dirrmtry include/scribus/plugins/import/svg/CMakeFiles
+@dirrmtry include/scribus/plugins/import/svg
+@dirrmtry include/scribus/plugins/import/wmf/CMakeFiles/wmfimplugin.dir
+@dirrmtry include/scribus/plugins/import/wmf/CMakeFiles
+@dirrmtry include/scribus/plugins/import/wmf
+@dirrmtry include/scribus/plugins/import/xfig/CMakeFiles/importxfig.dir
+@dirrmtry include/scribus/plugins/import/xfig/CMakeFiles
+@dirrmtry include/scribus/plugins/import/xfig
+@dirrmtry include/scribus/plugins/import
+@dirrmtry include/scribus/plugins/imposition
+@dirrmtry include/scribus/plugins/myplugin
+@dirrmtry include/scribus/plugins/newfromtemplateplugin
+@dirrmtry include/scribus/plugins/pixmapexport/CMakeFiles/scribusexportpixmap.dir
+@dirrmtry include/scribus/plugins/pixmapexport/CMakeFiles
+@dirrmtry include/scribus/plugins/pixmapexport
+@dirrmtry include/scribus/plugins/saveastemplateplugin/CMakeFiles/saveastemplateplugin.dir
+@dirrmtry include/scribus/plugins/saveastemplateplugin/CMakeFiles
+@dirrmtry include/scribus/plugins/saveastemplateplugin
+@dirrmtry include/scribus/plugins/scriptplugin/CMakeFiles/scriptplugin.dir
+@dirrmtry include/scribus/plugins/scriptplugin/CMakeFiles
+@dirrmtry include/scribus/plugins/scriptplugin/samples/CMakeFiles
+@dirrmtry include/scribus/plugins/scriptplugin/samples
+@dirrmtry include/scribus/plugins/scriptplugin/scripter2
+@dirrmtry include/scribus/plugins/scriptplugin/scripts/CMakeFiles
+@dirrmtry include/scribus/plugins/scriptplugin/scripts
+@dirrmtry include/scribus/plugins/scriptplugin
+@dirrmtry include/scribus/plugins/short-words/CMakeFiles/scribusshortwords.dir
+@dirrmtry include/scribus/plugins/short-words/CMakeFiles
+@dirrmtry include/scribus/plugins/short-words
+@dirrmtry include/scribus/plugins/svgexplugin/CMakeFiles/svgexplugin.dir
+@dirrmtry include/scribus/plugins/svgexplugin/CMakeFiles
+@dirrmtry include/scribus/plugins/svgexplugin
+@dirrmtry include/scribus/plugins/tools/2geomtools/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/2geomtools/lib2geom/CMakeFiles/2geom.dir
+@dirrmtry include/scribus/plugins/tools/2geomtools/lib2geom/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/2geomtools/lib2geom
+@dirrmtry include/scribus/plugins/tools/2geomtools/meshdistortion/CMakeFiles/meshdistortion.dir
+@dirrmtry include/scribus/plugins/tools/2geomtools/meshdistortion/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/2geomtools/meshdistortion
+@dirrmtry include/scribus/plugins/tools/2geomtools/pathalongpath/CMakeFiles/pathalongpath.dir
+@dirrmtry include/scribus/plugins/tools/2geomtools/pathalongpath/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/2geomtools/pathalongpath
+@dirrmtry include/scribus/plugins/tools/2geomtools
+@dirrmtry include/scribus/plugins/tools/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/hunspellcheck/CMakeFiles/hunspellplugin.dir
+@dirrmtry include/scribus/plugins/tools/hunspellcheck/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/hunspellcheck
+@dirrmtry include/scribus/plugins/tools/lenseffects/CMakeFiles/lenseffects.dir
+@dirrmtry include/scribus/plugins/tools/lenseffects/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/lenseffects
+@dirrmtry include/scribus/plugins/tools/pathconnect/CMakeFiles/pathconnect.dir
+@dirrmtry include/scribus/plugins/tools/pathconnect/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/pathconnect
+@dirrmtry include/scribus/plugins/tools/pathcut/CMakeFiles/pathcut.dir
+@dirrmtry include/scribus/plugins/tools/pathcut/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/pathcut
+@dirrmtry include/scribus/plugins/tools/pathfinder/CMakeFiles/pathfinder.dir
+@dirrmtry include/scribus/plugins/tools/pathfinder/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/pathfinder
+@dirrmtry include/scribus/plugins/tools/pathstroker/CMakeFiles/pathstroker.dir
+@dirrmtry include/scribus/plugins/tools/pathstroker/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/pathstroker
+@dirrmtry include/scribus/plugins/tools/spellcheck
+@dirrmtry include/scribus/plugins/tools/subdivide/CMakeFiles/subdivide.dir
+@dirrmtry include/scribus/plugins/tools/subdivide/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/subdivide
+@dirrmtry include/scribus/plugins/tools/transform/CMakeFiles/transformeffect.dir
+@dirrmtry include/scribus/plugins/tools/transform/CMakeFiles
+@dirrmtry include/scribus/plugins/tools/transform
+@dirrmtry include/scribus/plugins/tools
+@dirrmtry include/scribus/plugins
+@dirrmtry include/scribus/profiles/CMakeFiles
+@dirrmtry include/scribus/profiles
+@dirrmtry include/scribus/styles/CMakeFiles/scribus_styles_lib.dir
+@dirrmtry include/scribus/styles/CMakeFiles
+@dirrmtry include/scribus/styles
+@dirrmtry include/scribus/text/CMakeFiles/scribus_text_lib.dir
+@dirrmtry include/scribus/text/CMakeFiles
+@dirrmtry include/scribus/text
+@dirrmtry include/scribus/tt/simpletreemodel
+@dirrmtry include/scribus/tt
+@dirrmtry include/scribus/ui
+@dirrmtry include/scribus/unicodemap/CMakeFiles
+@dirrmtry include/scribus/unicodemap
+@dirrmtry include/scribus
+@dirrmtry lib/scribus/plugins/gettext
+@dirrmtry lib/scribus/plugins
+@dirrmtry lib/scribus
 @dirrmtry man/de/man1
 @dirrmtry man/de
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en/tutorials/scribus-short-words
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en/tutorials
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/it/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/it
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
+@dirrmtry %%DATADIR%%/dicts
+@dirrmtry %%DATADIR%%/dtd
+@dirrmtry %%DATADIR%%/editorconfig
+@dirrmtry %%DATADIR%%/icons/16
+@dirrmtry %%DATADIR%%/icons/22
+@dirrmtry %%DATADIR%%/icons/32
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/keysets
+@dirrmtry %%DATADIR%%/loremipsum
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/profiles
+@dirrmtry %%DATADIR%%/samples
+@dirrmtry %%DATADIR%%/scripts
+@dirrmtry %%DATADIR%%/swatches
+@dirrmtry %%DATADIR%%/templates/br1
+@dirrmtry %%DATADIR%%/templates/buscard1
+@dirrmtry %%DATADIR%%/templates/buscard10
+@dirrmtry %%DATADIR%%/templates/buscard11
+@dirrmtry %%DATADIR%%/templates/buscard2
+@dirrmtry %%DATADIR%%/templates/buscard3
+@dirrmtry %%DATADIR%%/templates/buscard4
+@dirrmtry %%DATADIR%%/templates/buscard5
+@dirrmtry %%DATADIR%%/templates/buscard6
+@dirrmtry %%DATADIR%%/templates/buscard7
+@dirrmtry %%DATADIR%%/templates/buscard8
+@dirrmtry %%DATADIR%%/templates/buscard9
+@dirrmtry %%DATADIR%%/templates/buscard_coll
+@dirrmtry %%DATADIR%%/templates/cc
+@dirrmtry %%DATADIR%%/templates/cover1
+@dirrmtry %%DATADIR%%/templates/cover2
+@dirrmtry %%DATADIR%%/templates/cover3
+@dirrmtry %%DATADIR%%/templates/cover4
+@dirrmtry %%DATADIR%%/templates/cover5
+@dirrmtry %%DATADIR%%/templates/grid_br_100x210_l
+@dirrmtry %%DATADIR%%/templates/grid_br_100x210_p
+@dirrmtry %%DATADIR%%/templates/grid_br_375x85_l
+@dirrmtry %%DATADIR%%/templates/grid_br_375x85_p
+@dirrmtry %%DATADIR%%/templates/grid_br_55x85in_l
+@dirrmtry %%DATADIR%%/templates/grid_br_55x86in_p
+@dirrmtry %%DATADIR%%/templates/grid_br_975x85_p
+@dirrmtry %%DATADIR%%/templates/grid_br_975x85in_l
+@dirrmtry %%DATADIR%%/templates/grid_br_a4_l
+@dirrmtry %%DATADIR%%/templates/grid_br_a4_p
+@dirrmtry %%DATADIR%%/templates/grid_br_a5_l
+@dirrmtry %%DATADIR%%/templates/grid_br_a5_p
+@dirrmtry %%DATADIR%%/templates/grid_br_dinl_l
+@dirrmtry %%DATADIR%%/templates/grid_br_dinl_p
+@dirrmtry %%DATADIR%%/templates/grid_br_usl_l
+@dirrmtry %%DATADIR%%/templates/grid_poster_a0
+@dirrmtry %%DATADIR%%/templates/grid_poster_a1
+@dirrmtry %%DATADIR%%/templates/grid_poster_a2
+@dirrmtry %%DATADIR%%/templates/grid_poster_a3
+@dirrmtry %%DATADIR%%/templates/mc
+@dirrmtry %%DATADIR%%/templates/nl1
+@dirrmtry %%DATADIR%%/templates/pres_backgr_1
+@dirrmtry %%DATADIR%%/templates/pres_backgr_2
+@dirrmtry %%DATADIR%%/templates/pres_backgr_3
+@dirrmtry %%DATADIR%%/templates/pres_backgr_4
+@dirrmtry %%DATADIR%%/templates/textbased
+@dirrmtry %%DATADIR%%/templates
+@dirrmtry %%DATADIR%%/translations
+@dirrmtry %%DATADIR%%

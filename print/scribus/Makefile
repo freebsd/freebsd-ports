@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scribus
-PORTVERSION=	1.4.3
-PORTREVISION=	3
+PORTVERSION=	1.4.4
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
