@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_asn
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://mirrorbrain.org/files/releases/
