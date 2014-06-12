@@ -92,7 +92,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
 			GNUTAR=${TAR} \
 			GPERF=${LOCALBASE}/bin/gperf \
-			FLEX=${LOCALBASE}/bin/flex
+			FLEX=${LOCALBASE}/bin/flex \
 			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 			PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
 			TMPDIR=${WRKDIR} \
