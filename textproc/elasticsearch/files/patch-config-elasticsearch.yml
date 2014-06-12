@@ -1,34 +1,32 @@
---- config/elasticsearch.yml.orig	2012-10-26 11:18:09.000000000 -0400
-+++ config/elasticsearch.yml	2012-10-26 11:25:29.000000000 -0400
-@@ -140,11 +140,11 @@
- 
+--- config/elasticsearch.yml.orig	2014-06-03 10:23:18.000000000 -0400
++++ config/elasticsearch.yml	2014-06-12 11:18:03.477171350 -0400
+@@ -143,10 +143,12 @@
  # Path to directory containing configuration (this file and logging.yml):
  #
--# path.conf: /path/to/conf
+ #path.conf: /path/to/conf
 +path.conf: %%PREFIX%%/etc/elasticsearch
  
  # Path to directory where to store index data allocated for this node.
  #
--# path.data: /path/to/data
+ #path.data: /path/to/data
 +path.data: /var/db/elasticsearch
  #
  # Can optionally include more than one location, causing data to be striped across
- # the locations (à la RAID 0) on a file level, favouring locations with most free
-@@ -154,15 +154,15 @@
- 
+ # the locations (a la RAID 0) on a file level, favouring locations with most free
+@@ -157,14 +159,17 @@
  # Path to temporary files:
  #
--# path.work: /path/to/work
+ #path.work: /path/to/work
 +path.work: /var/tmp/elasticsearch
  
  # Path to log files:
  #
--# path.logs: /path/to/logs
+ #path.logs: /path/to/logs
 +path.logs: /var/log/elasticsearch
  
  # Path to where plugins are installed:
  #
--# path.plugins: /path/to/plugins
+ #path.plugins: /path/to/plugins
 +path.plugins: %%PREFIX%%/lib/elasticsearch/plugins
  
  
