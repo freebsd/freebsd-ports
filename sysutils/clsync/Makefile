@@ -3,6 +3,8 @@
 
 PORTNAME=	clsync
 DISTVERSION=	0.4~rc2
+PORTREVISION=	1
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}-${GH_COMMIT}
 CATEGORIES=	sysutils
 
 MAINTAINER=	dyokunev@ut.mephi.ru
@@ -10,7 +12,8 @@ COMMENT=	Live file sync daemon based on inotify, written in GNU C
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig
@@ -23,7 +26,7 @@ SUB_FILES=	pkg-message
 USE_GITHUB=	yes
 GH_ACCOUNT=	xaionaro
 GH_PROJECT=	clsync
-GH_COMMIT=	15501e4
+GH_COMMIT=	85e5475
 GH_TAGNAME=	${GH_COMMIT}
 
 USE_AUTOTOOLS=	autoconf aclocal automake libtoolize
