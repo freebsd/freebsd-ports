@@ -3,30 +3,26 @@
 
 PORTNAME=	swish-e
 PORTVERSION=	2.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www textproc
 MASTER_SITES=	http://swish-e.org/distribution/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple web indexing for humans - enhanced
 
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
-		pkgdatadir="${DATADIR}"
+                pkgdatadir="${DATADIR}"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
-MAN1=		SWISH-CONFIG.1 SWISH-FAQ.1 SWISH-LIBRARY.1 SWISH-RUN.1 swish-e.1
-
-NO_STAGE=	yes
-.if defined(NOPORTDOCS)
 post-patch:
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -E 's/^(install-data-am:) install-docDATA(.*)/\1\2/' \
 		${WRKSRC}/Makefile.in
 .for p in pod prog-bin conf filter-bin filters html

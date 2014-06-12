@@ -3,16 +3,15 @@ bin/swish-e
 bin/swish-filter-test
 include/swish-e.h
 lib/libswish-e.a
-lib/libswish-e.la
 lib/libswish-e.so
 lib/libswish-e.so.2
+lib/libswish-e.so.2.0.0
 lib/swish-e/perl/SWISH/Filters/Doc2txt.pm
 lib/swish-e/perl/SWISH/Filters/Doc2html.pm
 lib/swish-e/perl/SWISH/Filters/ID3toHTML.pm
 lib/swish-e/perl/SWISH/Filters/Pdf2HTML.pm
 lib/swish-e/perl/SWISH/Filters/XLtoHTML.pm
 lib/swish-e/perl/SWISH/Filters/pp2html.pm
-@dirrm lib/swish-e/perl/SWISH/Filters
 lib/swish-e/perl/SWISH/DateRanges.pm
 lib/swish-e/perl/SWISH/DefaultHighlight.pm
 lib/swish-e/perl/SWISH/Filter.pm
@@ -24,18 +23,20 @@ lib/swish-e/perl/SWISH/TemplateDumper.pm
 lib/swish-e/perl/SWISH/TemplateFrame.pm
 lib/swish-e/perl/SWISH/TemplateHTMLTemplate.pm
 lib/swish-e/perl/SWISH/TemplateToolkit.pm
-@dirrm lib/swish-e/perl/SWISH
 lib/swish-e/perl/doc2txt.pm
 lib/swish-e/perl/pdf2html.pm
 lib/swish-e/perl/pdf2xml.pm
-@dirrm lib/swish-e/perl
 lib/swish-e/DirTree.pl
 lib/swish-e/search.cgi
 lib/swish-e/spider.pl
 lib/swish-e/swish.cgi
 lib/swish-e/swishspider
 libdata/pkgconfig/swish-e.pc
-@dirrm lib/swish-e
+man/man1/SWISH-CONFIG.1.gz
+man/man1/SWISH-FAQ.1.gz
+man/man1/SWISH-LIBRARY.1.gz
+man/man1/SWISH-RUN.1.gz
+man/man1/swish-e.1.gz
 %%DATADIR%%/swish.tmpl
 %%DATADIR%%/swish.tt
 %%DATADIR%%/templates/search.tt
@@ -46,3 +47,7 @@ libdata/pkgconfig/swish-e.pc
 %%DATADIR%%/templates/markup.css
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
+@dirrm lib/swish-e/perl/SWISH/Filters
+@dirrm lib/swish-e/perl/SWISH
+@dirrm lib/swish-e/perl
+@dirrm lib/swish-e
