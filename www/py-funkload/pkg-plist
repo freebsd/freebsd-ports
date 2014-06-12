@@ -1,8 +1,0 @@
-bin/fl-build-report
-bin/fl-credential-ctl
-bin/fl-install-demo
-bin/fl-monitor-ctl
-bin/fl-record
-bin/fl-run-bench
-bin/fl-run-test
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
