@@ -1,27 +1,30 @@
-From 1a7794d0e3c9fa47f7b0256518186ce214e93504 Mon Sep 17 00:00:00 2001
-From: Lukas Slebodnik <lslebodn@redhat.com>
-Date: Sat, 22 Mar 2014 15:09:34 +0100
+From 4f866ccca80bb8ed4013bc8ed48ab9ae2b9587ff Mon Sep 17 00:00:00 2001
+From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
+Date: Tue, 3 Jun 2014 22:10:50 +0200
 Subject: [PATCH 1/2] patch-src__man__pam_sss.8.xml
 
 ---
- src/man/pam_sss.8.xml | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ src/man/pam_sss.8.xml | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
 
 diff --git src/man/pam_sss.8.xml src/man/pam_sss.8.xml
-index 72b497ab34a520d21964824080c7f276b26706f4..5b4e456e2b0b7469a233d7bd98d296bec2d8e739 100644
+index 72b497ab34a520d21964824080c7f276b26706f4..69678dac5874067fc95ec47f72ed894854c5d569 100644
 --- src/man/pam_sss.8.xml
 +++ src/man/pam_sss.8.xml
-@@ -37,6 +37,9 @@
+@@ -37,6 +37,12 @@
              <arg choice='opt'>
                  <replaceable>retry=N</replaceable>
              </arg>
 +            <arg choice='opt'>
 +                <replaceable>ignore_unknown_user</replaceable>
 +            </arg>
++            <arg choice='opt'>
++                <replaceable>ignore_authinfo_unavail</replaceable>
++            </arg>
          </cmdsynopsis>
      </refsynopsisdiv>
  
-@@ -103,6 +106,16 @@
+@@ -103,6 +109,27 @@
                      <option>PasswordAuthentication</option>.</para>
                  </listitem>
              </varlistentry>
@@ -35,9 +38,20 @@ index 72b497ab34a520d21964824080c7f276b26706f4..5b4e456e2b0b7469a233d7bd98d296be
 +                    the PAM framework to ignore this module.</para>
 +                </listitem>
 +            </varlistentry>
++            <varlistentry>
++                <term>
++                    <option>ignore_authinfo_unavail</option>
++                </term>
++                <listitem>
++                    <para>
++                    Specifies  that  the  PAM module should return PAM_IGNORE
++                    if it cannot contact the SSSD daemon. This causes
++                    the PAM framework to ignore this module.</para>
++                </listitem>
++            </varlistentry>
          </variablelist>
      </refsect1>
  
 -- 
-1.8.5.3
+1.9.3
 
