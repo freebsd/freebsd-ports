@@ -1,0 +1,47 @@
+--- Mix/Src/Makefile.in.orig	2014-06-01 22:58:49.000000000 +0200
++++ Mix/Src/Makefile.in	2014-06-01 23:00:44.000000000 +0200
+@@ -8,10 +8,10 @@
+ # $Id: Makefile.in 647 2003-10-25 23:34:13Z weasel $
+ 
+ # Edit according to the libraries you want to use:
+-INC = %INC
+-DEF = %DEF -DUSE_SOCK %MIXDIR
+-LIBS = %LIBS
+-LDFLAGS = %LDFLAGS
++INC = -I/usr/local/include -I/usr/include
++DEF = -DUSE_ZLIB -DUSE_PCRE -DUSE_AES -DUSE_NCURSES -DHAVE_NCURSES_H -DUSE_IDEA -DHAVE_SETENV -DUSE_SOCK -DSPOOL='"/tmp/mixmaster"' -DGLOBALMIXCONF='"%%ETCDIR%%/mix.cfg"' -DHOMEMIXDIR='".Mix"'
++LIBS =
++LDFLAGS = -Wl -lz -lpcre -L/usr/local/lib -lncurses -ltermcap -lcrypto
+ 
+ # Set compiler options
+ # Note: Define NDEBUG to disable "assert" when not using DEBUG
+@@ -21,7 +21,6 @@
+ # OPT = -O2 -Wall -DNDEBUG
+ 
+ CFLAGS = $(INC) $(DEF) $(OPT)
+-CC = gcc
+ AR = ar rc
+ RANLIB = ranlib
+ #MAKE = make
+@@ -32,7 +31,7 @@
+ NOMENUOBJ = rndseed.o dummy.o
+ WINOBJ = winmain.o winutil.o
+ 
+-all:	mixmaster
++all:	mixmaster mpgp remailer
+ 
+ mixmaster: $(OBJ) $(MIXOBJ) main.o $(LIBS)
+ 	$(CC) $(OBJ) $(MIXOBJ) main.o $(LIBS) $(LDFLAGS) -o mixmaster
+@@ -77,10 +76,10 @@
+ 
+ parsedate.tab.c: parsedate.y
+ 	@echo Expect 6 shift/reduce conflicts
+-	bison parsedate.y
++	yacc -o parsedate.tab.c parsedate.y
+ 
+ parsedate: parsedate.tab.c
+-	gcc -DTEST parsedate.tab.c -o parsedate
++	$(CC) -DTEST parsedate.tab.c -o parsedate
+ 
+ 
+ include Makefile.deps

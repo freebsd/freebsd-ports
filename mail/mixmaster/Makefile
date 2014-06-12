@@ -1,54 +1,72 @@
 # Created by: Meyer Wolfsheim
 # $FreeBSD$
+#
 
 PORTNAME=	mixmaster
-PORTVERSION=	2.9.1
-PORTREVISION=	2
+PORTVERSION=	3.0.2d
 CATEGORIES=	mail security
-MASTER_SITES=	SF/${PORTNAME}/Mixmaster/${PORTVERSION} \
-		ftp://ftp.erisiandiscord.de/pub/misc/
+MASTER_SITES=	http://www.c-s.li/ports/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mixmaster-update.pl.gz allpingers.txt.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	A cryptographically secure anonymous remailer
+COMMENT=	Cryptographically secure anonymous remailer
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		ncurses perl5
-USE_OPENSSL=	yes
-.if !exists(/usr/include/openssl/idea.h)
-WITH_OPENSSL_PORT=	yes
-.endif
+USES=		perl5
+USE_NCURSES=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/Src
+BUILD_WRKSRC=	${WRKSRC}/Mix/Src
 
-CFLAGS+=	-DGLOBALMIXCONF="\"${SYSCONFDIR}/mixmaster/client.cfg\"" -DHOMEMIXDIR="\".Mix\""
-MAKE_ARGS=	CC=${CC}
+PORTDOCS=	README HISTORY
+CONFIG_FILES=	abuse.txt.in dest.blk mix.cfg news.hlp pubring.mix type1.hlp \
+		adminkey.txt end.hlp mix.cfg.ex pgp.hlp rab.blk usage.txt.in \
+		blocked.txt.in header.blk mix.hlp pgponly.hlp reply.txt.in \
+		dest.alw intro.hlp mlist.txt pubring.asc rlist.txt \
+		allpingers.txt
 
-MAN1=		mixmaster.1
-WRKDIST=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MIXMASTER_FILES=	${WRKDIST}/conf/* ${WRKDIST}/README ${WRKDIR}/allpingers.txt
-MIXMASTER_SCRIPTS=	${WRKDIR}/mixmaster-update.pl
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 1000000
+BROKEN=		Does not compile
+.endif
+
 post-patch:
-	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
-	@${RM} ${WRKSRC}/../conf/mix.cfg.orig
+	@${RM} ${WRKSRC}/Mix/conf/mix.cfg.orig
+	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/Mix/Src/config.h \
+		${WRKSRC}/Mix/Src/Makefile.in
+	${CP} ${WRKSRC}/Mix/Src/Makefile.in ${WRKSRC}/Mix/Src/Makefile
 
 pre-install:
 	${GZCAT} ${DISTDIR}/mixmaster-update.pl.gz >${WRKDIR}/mixmaster-update.pl
-	${GZCAT} ${DISTDIR}/allpingers.txt.gz >${WRKDIR}/allpingers.txt
-	${REINPLACE_CMD} -e "s,/etc,${SYSCONFDIR},g" ${WRKDIR}/mixmaster-update.pl
-	${MKDIR} ${PREFIX}/share/examples/mixmaster
+	${GZCAT} ${DISTDIR}/allpingers.txt.gz >${WRKSRC}/Mix/conf/allpingers.txt
+	${REINPLACE_CMD} -e "s|/etc/mixmaster|${ETCDIR}|g" ${WRKDIR}/mixmaster-update.pl
+	${REINPLACE_CMD} -e "s|/usr/bin|${PREFIX}/bin|g" ${WRKDIR}/mixmaster-update.pl
+	${MKDIR} ${ETCDIR}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mix ${PREFIX}/bin/mixmaster
-	${INSTALL_SCRIPT} ${MIXMASTER_SCRIPTS} ${PREFIX}/bin/mixmaster-update.pl
-	${INSTALL_DATA} ${MIXMASTER_FILES} ${PREFIX}/share/examples/mixmaster
-	${INSTALL_MAN} ${WRKDIST}/mix.1 ${PREFIX}/man/man1/mixmaster.1
+	${INSTALL_PROGRAM} ${WRKSRC}/Mix/Src/mixmaster ${STAGEDIR}${PREFIX}/bin/mixmaster
+	${INSTALL_PROGRAM} ${WRKSRC}/Mix/Src/mpgp ${STAGEDIR}${PREFIX}/bin/mpgp
+	${INSTALL_PROGRAM} ${WRKSRC}/Mix/Src/remailer ${STAGEDIR}${PREFIX}/bin/remailer
+	${INSTALL_SCRIPT} ${WRKDIR}/mixmaster-update.pl ${STAGEDIR}${PREFIX}/bin/mixmaster-update
+	${INSTALL_MAN} ${WRKSRC}/Mix/mixmaster.1 ${STAGEDIR}${PREFIX}/man/man1/mixmaster.1
+	${INSTALL_MAN} ${WRKSRC}/Mix/mpgp.1 ${STAGEDIR}${PREFIX}/man/man1/mpgp.1
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/Mix/,} ${STAGEDIR}${DOCSDIR}/
+.endif
+.for FILE in ${CONFIG_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/Mix/conf/${FILE} ${ETCDIR}/${FILE}.sample
+	@if [ ! -f ${ETCDIR}/${FILE} ]; then \
+		${CP} -p ${WRKSRC}/Mix/conf/${FILE} ${ETCDIR}/${FILE} ; \
+	fi
+.endfor
 
 .include <bsd.port.post.mk>
