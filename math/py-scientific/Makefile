@@ -18,23 +18,18 @@ RUN_DEPENDS=	${PYNUMPY}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	ScientificPython
+PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${DISTNAME}/Doc; ${TAR} -c --exclude='*~' -f - . | \
-	    (cd ${DOCSDIR}; ${TAR} -xf -)
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	    (cd ${STAGEDIR}${DOCSDIR}; ${TAR} -xf -)
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKDIR}/${DISTNAME}/Examples; ${TAR} -c --exclude='*~' -f - . | \
-	    (cd ${EXAMPLESDIR}; ${TAR} -xf -)
-.endif
+	    (cd ${STAGEDIR}${EXAMPLESDIR}; ${TAR} -xf -)
 
 .include <bsd.port.mk>
