@@ -4,7 +4,6 @@
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/AutoRemoveColumns.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/CorrelateRelationship.pm
-%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/DateMethods1
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/DateMethods1.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/DateMethods1/Announcement.pod
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Explain.pm
