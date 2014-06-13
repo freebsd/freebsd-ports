@@ -313,8 +313,170 @@
 %%DATADIR%%/etc/default/ps
 %%DATADIR%%/etc/default/su
 %%DATADIR%%/etc/default/tar
+%%DATADIR%%/usr/share/man/5man/man1/apropos.1
+%%DATADIR%%/usr/share/man/5man/man1/awk.1
+%%DATADIR%%/usr/share/man/5man/man1/banner.1
+%%DATADIR%%/usr/share/man/5man/man1/basename.1
+%%DATADIR%%/usr/share/man/5man/man1/bc.1
+%%DATADIR%%/usr/share/man/5man/man1/cal.1
+%%DATADIR%%/usr/share/man/5man/man1/calendar.1
+%%DATADIR%%/usr/share/man/5man/man1/cat.1
+%%DATADIR%%/usr/share/man/5man/man1/chgrp.1
+%%DATADIR%%/usr/share/man/5man/man1/chmod.1
+%%DATADIR%%/usr/share/man/5man/man1/chown.1
+%%DATADIR%%/usr/share/man/5man/man1/cksum.1
+%%DATADIR%%/usr/share/man/5man/man1/cmp.1
+%%DATADIR%%/usr/share/man/5man/man1/col.1
+%%DATADIR%%/usr/share/man/5man/man1/comm.1
+%%DATADIR%%/usr/share/man/5man/man1/copy.1
+%%DATADIR%%/usr/share/man/5man/man1/cp.1
+%%DATADIR%%/usr/share/man/5man/man1/cpio.1
+%%DATADIR%%/usr/share/man/5man/man1/csplit.1
+%%DATADIR%%/usr/share/man/5man/man1/cut.1
+%%DATADIR%%/usr/share/man/5man/man1/date.1
+%%DATADIR%%/usr/share/man/5man/man1/dc.1
+%%DATADIR%%/usr/share/man/5man/man1/dd.1
+%%DATADIR%%/usr/share/man/5man/man1/deroff.1
+%%DATADIR%%/usr/share/man/5man/man1/df.1
+%%DATADIR%%/usr/share/man/5man/man1/dfspace.1
+%%DATADIR%%/usr/share/man/5man/man1/diff.1
+%%DATADIR%%/usr/share/man/5man/man1/diff3.1
+%%DATADIR%%/usr/share/man/5man/man1/dirname.1
+%%DATADIR%%/usr/share/man/5man/man1/du.1
+%%DATADIR%%/usr/share/man/5man/man1/ed.1
+%%DATADIR%%/usr/share/man/5man/man1/egrep.1
+%%DATADIR%%/usr/share/man/5man/man1/env.1
+%%DATADIR%%/usr/share/man/5man/man1/expand.1
+%%DATADIR%%/usr/share/man/5man/man1/expr.1
+%%DATADIR%%/usr/share/man/5man/man1/factor.1
+%%DATADIR%%/usr/share/man/5man/man1/fgrep.1
+%%DATADIR%%/usr/share/man/5man/man1/file.1
+%%DATADIR%%/usr/share/man/5man/man1/find.1
+%%DATADIR%%/usr/share/man/5man/man1/fmt.1
+%%DATADIR%%/usr/share/man/5man/man1/fold.1
+%%DATADIR%%/usr/share/man/5man/man1/grep.1
+%%DATADIR%%/usr/share/man/5man/man1/groups.1
+%%DATADIR%%/usr/share/man/5man/man1/hd.1
+%%DATADIR%%/usr/share/man/5man/man1/head.1
+%%DATADIR%%/usr/share/man/5man/man1/hostname.1
+%%DATADIR%%/usr/share/man/5man/man1/id.1
+%%DATADIR%%/usr/share/man/5man/man1/intro.1
+%%DATADIR%%/usr/share/man/5man/man1/join.1
+%%DATADIR%%/usr/share/man/5man/man1/lc.1
+%%DATADIR%%/usr/share/man/5man/man1/line.1
+%%DATADIR%%/usr/share/man/5man/man1/listusers.1
+%%DATADIR%%/usr/share/man/5man/man1/ln.1
+%%DATADIR%%/usr/share/man/5man/man1/logins.1
+%%DATADIR%%/usr/share/man/5man/man1/logname.1
+%%DATADIR%%/usr/share/man/5man/man1/ls.1
+%%DATADIR%%/usr/share/man/5man/man1/mail.1
+%%DATADIR%%/usr/share/man/5man/man1/man.1
+%%DATADIR%%/usr/share/man/5man/man1/mkdir.1
+%%DATADIR%%/usr/share/man/5man/man1/mkfifo.1
+%%DATADIR%%/usr/share/man/5man/man1/more.1
+%%DATADIR%%/usr/share/man/5man/man1/mt.1
+%%DATADIR%%/usr/share/man/5man/man1/mv.1
+%%DATADIR%%/usr/share/man/5man/man1/nawk.1
+%%DATADIR%%/usr/share/man/5man/man1/newform.1
+%%DATADIR%%/usr/share/man/5man/man1/news.1
+%%DATADIR%%/usr/share/man/5man/man1/nice.1
+%%DATADIR%%/usr/share/man/5man/man1/nl.1
+%%DATADIR%%/usr/share/man/5man/man1/nohup.1
+%%DATADIR%%/usr/share/man/5man/man1/oawk.1
+%%DATADIR%%/usr/share/man/5man/man1/od.1
+%%DATADIR%%/usr/share/man/5man/man1/page.1
+%%DATADIR%%/usr/share/man/5man/man1/paste.1
+%%DATADIR%%/usr/share/man/5man/man1/pax.1
+%%DATADIR%%/usr/share/man/5man/man1/pg.1
+%%DATADIR%%/usr/share/man/5man/man1/pgrep.1
+%%DATADIR%%/usr/share/man/5man/man1/pkill.1
+%%DATADIR%%/usr/share/man/5man/man1/pr.1
+%%DATADIR%%/usr/share/man/5man/man1/printenv.1
+%%DATADIR%%/usr/share/man/5man/man1/priocntl.1
+%%DATADIR%%/usr/share/man/5man/man1/ps.1
+%%DATADIR%%/usr/share/man/5man/man1/random.1
+%%DATADIR%%/usr/share/man/5man/man1/renice.1
+%%DATADIR%%/usr/share/man/5man/man1/rm.1
+%%DATADIR%%/usr/share/man/5man/man1/rmdir.1
+%%DATADIR%%/usr/share/man/5man/man1/sdiff.1
+%%DATADIR%%/usr/share/man/5man/man1/sed.1
+%%DATADIR%%/usr/share/man/5man/man1/setpgrp.1
+%%DATADIR%%/usr/share/man/5man/man1/settime.1
+%%DATADIR%%/usr/share/man/5man/man1/sleep.1
+%%DATADIR%%/usr/share/man/5man/man1/sort.1
+%%DATADIR%%/usr/share/man/5man/man1/spell.1
+%%DATADIR%%/usr/share/man/5man/man1/split.1
+%%DATADIR%%/usr/share/man/5man/man1/stty.1
+%%DATADIR%%/usr/share/man/5man/man1/su.1
+%%DATADIR%%/usr/share/man/5man/man1/sum.1
+%%DATADIR%%/usr/share/man/5man/man1/tabs.1
+%%DATADIR%%/usr/share/man/5man/man1/tail.1
+%%DATADIR%%/usr/share/man/5man/man1/tape.1
+%%DATADIR%%/usr/share/man/5man/man1/tapecntl.1
+%%DATADIR%%/usr/share/man/5man/man1/tar.1
+%%DATADIR%%/usr/share/man/5man/man1/tcopy.1
+%%DATADIR%%/usr/share/man/5man/man1/tee.1
+%%DATADIR%%/usr/share/man/5man/man1/time.1
+%%DATADIR%%/usr/share/man/5man/man1/touch.1
+%%DATADIR%%/usr/share/man/5man/man1/tr.1
+%%DATADIR%%/usr/share/man/5man/man1/tsort.1
+%%DATADIR%%/usr/share/man/5man/man1/tty.1
+%%DATADIR%%/usr/share/man/5man/man1/ul.1
+%%DATADIR%%/usr/share/man/5man/man1/uname.1
+%%DATADIR%%/usr/share/man/5man/man1/unexpand.1
+%%DATADIR%%/usr/share/man/5man/man1/uniq.1
+%%DATADIR%%/usr/share/man/5man/man1/units.1
+%%DATADIR%%/usr/share/man/5man/man1/uptime.1
+%%DATADIR%%/usr/share/man/5man/man1/users.1
+%%DATADIR%%/usr/share/man/5man/man1/w.1
+%%DATADIR%%/usr/share/man/5man/man1/wc.1
+%%DATADIR%%/usr/share/man/5man/man1/what.1
+%%DATADIR%%/usr/share/man/5man/man1/whatis.1
+%%DATADIR%%/usr/share/man/5man/man1/who.1
+%%DATADIR%%/usr/share/man/5man/man1/whoami.1
+%%DATADIR%%/usr/share/man/5man/man1/whodo.1
+%%DATADIR%%/usr/share/man/5man/man1/xargs.1
+%%DATADIR%%/usr/share/man/5man/man1/yes.1
+%%DATADIR%%/usr/share/man/5man/man1/bdiff.1
+%%DATADIR%%/usr/share/man/5man/man1/bfs.1
+%%DATADIR%%/usr/share/man/5man/man1/dircmp.1
+%%DATADIR%%/usr/share/man/5man/man1/echo.1
+%%DATADIR%%/usr/share/man/5man/man1/fmtmsg.1
+%%DATADIR%%/usr/share/man/5man/man1/getconf.1
+%%DATADIR%%/usr/share/man/5man/man1/getopt.1
+%%DATADIR%%/usr/share/man/5man/man1/kill.1
+%%DATADIR%%/usr/share/man/5man/man1/mesg.1
+%%DATADIR%%/usr/share/man/5man/man1/mvdir.1
+%%DATADIR%%/usr/share/man/5man/man1/pathchk.1
+%%DATADIR%%/usr/share/man/5man/man1/printf.1
+%%DATADIR%%/usr/share/man/5man/man1/pwd.1
+%%DATADIR%%/usr/share/man/5man/man1/test.1
+%%DATADIR%%/usr/share/man/5man/man1/false.1
+%%DATADIR%%/usr/share/man/5man/man1/true.1
+%%DATADIR%%/usr/share/man/5man/man1b/basename.1b
+%%DATADIR%%/usr/share/man/5man/man1b/chown.1b
+%%DATADIR%%/usr/share/man/5man/man1b/deroff.1b
+%%DATADIR%%/usr/share/man/5man/man1b/df.1b
+%%DATADIR%%/usr/share/man/5man/man1b/du.1b
+%%DATADIR%%/usr/share/man/5man/man1b/groups.1b
+%%DATADIR%%/usr/share/man/5man/man1b/echo.1b
+%%DATADIR%%/usr/share/man/5man/man1b/install.1b
+%%DATADIR%%/usr/share/man/5man/man1b/ln.1b
+%%DATADIR%%/usr/share/man/5man/man1b/ls.1b
+%%DATADIR%%/usr/share/man/5man/man1b/ps.1b
+%%DATADIR%%/usr/share/man/5man/man1b/stty.1b
+%%DATADIR%%/usr/share/man/5man/man1b/sum.1b
+%%DATADIR%%/usr/share/man/5man/man1b/tr.1b
+%%DATADIR%%/usr/share/man/5man/man1b/test.1b
+%%DATADIR%%/usr/share/man/5man/man1m/mknod.1m
+%%DATADIR%%/usr/share/man/5man/man1m/sync.1m
+%%DATADIR%%/usr/share/man/5man/man5/fspec.5
+%%DATADIR%%/usr/share/man/5man/man7/man.7
+%%DATADIR%%/usr/share/man/5man/man8/catman.8
 @exec umask 000; touch /var/db/spellhist
+/var/db/spellhist
 @exec umask 066; touch /var/log/sulog
+/var/log/sulog
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE/COPYING.LGPL
@@ -328,26 +490,26 @@
 @dirrm %%DATADIR%%/usr/ucb
 @dirrm %%DATADIR%%/usr/share/man/5man/man8
 @dirrm %%DATADIR%%/usr/share/man/5man/man7
-@dirrmtry %%DATADIR%%/usr/share/man/5man/man6
+@dirrm %%DATADIR%%/usr/share/man/5man/man6
 @dirrm %%DATADIR%%/usr/share/man/5man/man5
-@dirrmtry %%DATADIR%%/usr/share/man/5man/man4
-@dirrmtry %%DATADIR%%/usr/share/man/5man/man3
-@dirrmtry %%DATADIR%%/usr/share/man/5man/man2
+@dirrm %%DATADIR%%/usr/share/man/5man/man4
+@dirrm %%DATADIR%%/usr/share/man/5man/man3
+@dirrm %%DATADIR%%/usr/share/man/5man/man2
 @dirrm %%DATADIR%%/usr/share/man/5man/man1m
 @dirrm %%DATADIR%%/usr/share/man/5man/man1b
 @dirrm %%DATADIR%%/usr/share/man/5man/man1
 @dirrm %%DATADIR%%/usr/share/man/5man
 @dirrm %%DATADIR%%/usr/share/man
 @dirrm %%DATADIR%%/usr/share
+@dirrm %%DATADIR%%/usr/ccs/bin
+@dirrm %%DATADIR%%/usr/ccs
 @dirrm %%DATADIR%%/usr/5lib/tmac
 @dirrm %%DATADIR%%/usr/5lib/spell
 @dirrm %%DATADIR%%/usr/5lib
 @dirrm %%DATADIR%%/usr/5bin/s42
-@dirrm %%DATADIR%%/usr/5bin/posix
 @dirrm %%DATADIR%%/usr/5bin/posix2001
+@dirrm %%DATADIR%%/usr/5bin/posix
 @dirrm %%DATADIR%%/usr/5bin
-@dirrm %%DATADIR%%/usr/ccs/bin
-@dirrm %%DATADIR%%/usr/ccs
 @dirrm %%DATADIR%%/usr
 @dirrm %%DATADIR%%/etc/default
 @dirrm %%DATADIR%%/etc
