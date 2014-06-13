@@ -3,7 +3,7 @@
 
 PORTNAME=	autobench
 PORTVERSION=	2.1.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/ \
 		http://www.sfr-fresh.com/unix/privat/
@@ -17,14 +17,11 @@ RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf \
 
 LICENSE=	GPLv2
 
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEBUG_FLAGS= \
 		PREFIX=${PREFIX}
+SHEBANG_FILES= 	autobench_admin autobenchd autobench
 
-MAN1=	autobench.1 autobench_admin.1 autobenchd.1 bench2graph.1 \
-	crfile.1 sesslog.1
-
-NO_STAGE=	yes
 post-patch:
 .for file in autobench autobench_admin
 	@${REINPLACE_CMD} -i '' -e 's|/etc/|${PREFIX}/etc/|' ${WRKSRC}/${file}
