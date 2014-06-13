@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	1.2.54
-PORTREVISION=	1
+PORTVERSION=	1.2.137
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -17,7 +16,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paver>=0:${PORTSDIR}/devel/py-paver
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.3:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:${PORTSDIR}/databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7.5:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32 \
 		${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulsoup \
