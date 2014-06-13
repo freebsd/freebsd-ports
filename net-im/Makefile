@@ -79,7 +79,6 @@
     SUBDIR += mu-conference
     SUBDIR += naim
     SUBDIR += openfire
-    SUBDIR += openfire-devel
     SUBDIR += p5-AnyEvent-XMPP
     SUBDIR += p5-DJabberd
     SUBDIR += p5-Jabber-Connection
