@@ -815,6 +815,7 @@
     SUBDIR += pure-gl
     SUBDIR += pvmpov
     SUBDIR += py-PyX
+    SUBDIR += py-PyX12
     SUBDIR += py-aafigure
     SUBDIR += py-actdiag
     SUBDIR += py-blockdiag
