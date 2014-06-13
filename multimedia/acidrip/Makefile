@@ -17,7 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-MAN1=		acidrip.1
 
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
@@ -25,7 +24,6 @@ DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 
-NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_DVD_DEVICE)
 	@${ECHO_MSG} "===> The default DVD device is ${DEFAULT_DVD_DEVICE}"
