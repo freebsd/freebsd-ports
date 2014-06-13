@@ -1,0 +1,5 @@
+bin/quit
+man/ja/man1/quit.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/quit.txt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

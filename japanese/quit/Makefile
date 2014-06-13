@@ -3,11 +3,10 @@
 
 CATEGORIES=	japanese games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	meta+ports@vmeta.jp
 
 MASTERDIR=	${.CURDIR}/../../games/quit
 
 CPPFLAGS+=	-DJAPANESE
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
