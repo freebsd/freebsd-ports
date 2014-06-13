@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	xchat-
 DISTNAME=	FiSH-XChat.v${DISTVERSION}-source
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An encryption plugin for XChat
+COMMENT=	Encryption plugin for XChat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat

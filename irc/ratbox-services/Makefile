@@ -10,7 +10,7 @@ MASTER_SITES=	http://services.ratbox.org/download/		\
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	moggie@elasticmind.net
-COMMENT=	A highly configurable services package for use with ircd-ratbox
+COMMENT=	Highly configurable services package for use with ircd-ratbox
 
 USE_RC_SUBR=	ratbox-services
 

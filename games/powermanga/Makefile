@@ -10,7 +10,7 @@ MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An arcade 2D shoot-em-up
+COMMENT=	Arcade 2D shoot-em-up
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
 DISTNAME=	iroffer-dinoex-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
+COMMENT=	IRC "bot" that makes sharing files via DCC extremely easy
 
 LICENSE=	GPLv2
 

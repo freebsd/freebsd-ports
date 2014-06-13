@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:BINGOS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A fully event-driven IRC client module
+COMMENT=	Fully event-driven IRC client module
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

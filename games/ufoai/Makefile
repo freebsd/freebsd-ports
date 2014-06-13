@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:S/$/-/}${PORTVERSION}-source
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A strategy game featuring tactical combat
+COMMENT=	Strategy game featuring tactical combat
 
 LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \

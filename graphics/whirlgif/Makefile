@@ -8,7 +8,7 @@ MASTER_SITES=	http://archive.debian.org/debian-archive/pool/non-free/w/whirlgif/
 DISTNAME=	whirlgif_3.04.orig
 
 MAINTAINER=	hans@nordhaug.priv.no
-COMMENT=	A tool for making GIF animations
+COMMENT=	Tool for making GIF animations
 
 WRKSRC=		${WRKDIR}/whirlgif-3.04.orig
 

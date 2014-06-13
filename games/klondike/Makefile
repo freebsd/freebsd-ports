@@ -8,7 +8,7 @@ CATEGORIES=	games tk
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
 MAINTAINER=	faber@isi.edu
-COMMENT=	A solitaire game for X11
+COMMENT=	Solitaire game for X11
 
 USES=		tk:run
 GNU_CONFIGURE=	yes

@@ -9,7 +9,7 @@ MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://tron.homeunix.org/ja2/
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	A port of "Jagged Alliance 2" using SDL
+COMMENT=	Port of "Jagged Alliance 2" using SDL
 
 DISTVERSIONSUFFIX=	-source
 

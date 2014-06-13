@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A pixel oriented graphics editor
+COMMENT=	Pixel oriented graphics editor
 
 NO_BUILD=	yes
 USE_JAVA=	yes

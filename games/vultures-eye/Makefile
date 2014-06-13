@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-eye
 DISTFILES=	${DISTNAME}-full${EXTRACT_SUFX}?format=raw
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphical interface for NetHack 3.4.3 forked from Falcon's Eye
+COMMENT=	Graphical interface for NetHack 3.4.3 forked from Falcon's Eye
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 

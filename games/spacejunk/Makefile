@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A video game about traveling in 2D planetary systems
+COMMENT=	Video game about traveling in 2D planetary systems
 
 LICENSE=	GPLv3
 

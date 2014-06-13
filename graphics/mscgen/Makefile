@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mcternan.me.uk/mscgen/software/ \
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	romain@FreeBSD.org
-COMMENT=	A Message Sequence Chart Renderer
+COMMENT=	Message Sequence Chart Renderer
 
 OPTIONS_DEFINE=	FREETYPE PNG
 OPTIONS_DEFAULT=FREETYPE PNG

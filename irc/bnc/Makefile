@@ -10,7 +10,7 @@ MASTER_SITES=	http://home.risingnet.net/download/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	douglas@t2web.com.br
-COMMENT=	A simple IRC relay proxy with support for virtual hosting
+COMMENT=	Simple IRC relay proxy with support for virtual hosting
 
 GNU_CONFIGURE=	yes
 

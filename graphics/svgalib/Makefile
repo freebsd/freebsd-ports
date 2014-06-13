@@ -8,7 +8,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
 MAINTAINER=	zeising@FreeBSD.org
-COMMENT=	A low level console graphics library
+COMMENT=	Low level console graphics library
 
 ONLY_FOR_ARCHS=	i386 amd64
 

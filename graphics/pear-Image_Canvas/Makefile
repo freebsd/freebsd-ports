@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	numisemis@yahoo.com
-COMMENT=	An OO PEAR common interface to image drawing
+COMMENT=	OO PEAR common interface to image drawing
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color

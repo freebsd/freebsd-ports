@@ -8,7 +8,7 @@ MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}
 DISTNAME=	tkimg${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	A library of image format handlers for Tk4.1 and later
+COMMENT=	Library of image format handlers for Tk4.1 and later
 
 BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \

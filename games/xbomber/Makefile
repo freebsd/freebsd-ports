@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/xbomber/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	A game based on "Super Bomberman" for the Super Nintendo
+COMMENT=	Game based on "Super Bomberman" for the Super Nintendo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	x11

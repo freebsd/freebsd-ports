@@ -7,7 +7,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A smart irc-bouncing-tool that remains on IRC all the time
+COMMENT=	Smart irc-bouncing-tool that remains on IRC all the time
 
 GNU_CONFIGURE=	yes
 

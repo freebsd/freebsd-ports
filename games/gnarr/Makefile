@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.volny.cz/nakamura/gnarr/
 
 MAINTAINER=	daniel.ryslink@dialtelecom.cz
-COMMENT=	A program for generating battle cries
+COMMENT=	Program for generating battle cries
 
 MAN6=		gnarr.6
 

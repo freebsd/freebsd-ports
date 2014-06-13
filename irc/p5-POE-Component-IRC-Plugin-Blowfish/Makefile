@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:PLU
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	A POE::Component::IRC plugin tthat provides blowfish encryption
+COMMENT=	POE::Component::IRC plugin tthat provides blowfish encryption
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

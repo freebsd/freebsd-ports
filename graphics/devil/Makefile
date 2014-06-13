@@ -10,7 +10,7 @@ MASTER_SITES=	SF/openil/DevIL/${PORTVERSION}
 DISTNAME=	DevIL-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A full featured cross-platform image library
+COMMENT=	Full featured cross-platform image library
 
 USES=		pkgconfig libtool
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf

@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A sequential image viewer
+COMMENT=	Sequential image viewer
 
 LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar
 

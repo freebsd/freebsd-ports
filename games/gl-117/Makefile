@@ -9,7 +9,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GL-117%20Source
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	An OpenGL & SDL action flight simulator
+COMMENT=	OpenGL & SDL action flight simulator
 
 USE_GL=		glut
 USE_BZIP2=	yes

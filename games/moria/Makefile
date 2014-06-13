@@ -10,7 +10,7 @@ DISTNAME=	um${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	A dungeon exploration game
+COMMENT=	Dungeon exploration game
 
 WRKSRC=		${WRKDIR}/umoria
 ALL_TARGET=	moria

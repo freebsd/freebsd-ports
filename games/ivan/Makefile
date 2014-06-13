@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/IVAN/IVAN%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A graphical roguelike game
+COMMENT=	Graphical roguelike game
 
 USE_SDL=	sdl
 USES=		gmake

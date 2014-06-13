@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/viewers/X
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A flexible X utility for managing many image files
+COMMENT=	Flexible X utility for managing many image files
 
 LICENSE=	GPLv2
 

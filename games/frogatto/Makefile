@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	GH
 
 MAINTAINER=	fiziologus@gmail.com
-COMMENT=	An old-school 2D classic adventure platformer game
+COMMENT=	Old-school 2D classic adventure platformer game
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libpng15.so:${PORTSDIR}/graphics/png

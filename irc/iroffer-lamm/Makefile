@@ -9,7 +9,7 @@ DISTNAME=	iroffer1.4.b03-lamm.b02
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
+COMMENT=	IRC "bot" that makes sharing files via DCC extremely easy
 
 LICENSE=	GPLv2
 

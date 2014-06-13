@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A puzzle game where the player has to arrange balls in triplets
+COMMENT=	Puzzle game where the player has to arrange balls in triplets
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \

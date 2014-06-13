@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	stb@lassitu.de
-COMMENT=	A tool for quantizing PNG images in RGBA format
+COMMENT=	Tool for quantizing PNG images in RGBA format
 
 LICENSE=	BSD3CLAUSE
 

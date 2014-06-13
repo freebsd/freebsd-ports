@@ -8,7 +8,7 @@ CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A simple scientific visualization tool
+COMMENT=	Simple scientific visualization tool
 
 LICENSE=	GPLv2
 

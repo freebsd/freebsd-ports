@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	php-
 DISTNAME=	MagickWandForPHP-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PHP extension to manipulate images
+COMMENT=	PHP extension to manipulate images
 
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 

@@ -8,7 +8,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/colorscheme/releases/
 
 MAINTAINER=	ps.ports@smyrak.com
-COMMENT=	A color scheme builder for the GNOME desktop
+COMMENT=	Color scheme builder for the GNOME desktop
 
 LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs

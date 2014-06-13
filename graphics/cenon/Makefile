@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	theraven@FreeBSD.org
-COMMENT=	A vector graphics tool for GNUstep
+COMMENT=	Vector graphics tool for GNUstep
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

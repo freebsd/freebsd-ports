@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A simple class holding IRC related methods for bingo
+COMMENT=	Simple class holding IRC related methods for bingo
 
 BUILD_DEPENDS=	p5-Games-Bingo>=0:${PORTSDIR}/games/p5-Games-Bingo
 RUN_DEPENDS:=	${BUILD_DEPENDS}

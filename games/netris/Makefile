@@ -11,7 +11,7 @@ PATCHFILES=		netris-0.5-v6-19991206a.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		gavin@FreeBSD.org
-COMMENT=		A network head to head version of T*tris
+COMMENT=		Network head to head version of T*tris
 
 LICENSE=		GPLv2 # (or later)
 

@@ -6,7 +6,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	An OO PEAR graph rendering package
+COMMENT=	OO PEAR graph rendering package
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \

@@ -9,7 +9,7 @@ MASTER_SITES=	http://dusted.dk/download/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A Space-Invaders like 2D space shooter
+COMMENT=	Space-Invaders like 2D space shooter
 
 LICENSE=	GPLv3
 

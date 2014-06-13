@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	Games
 DISTNAME=	Games-LMSolve-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Computerized Solver for Logic Mazes
+COMMENT=	Computerized Solver for Logic Mazes
 
 USES=		perl5
 USE_PERL5=	configure

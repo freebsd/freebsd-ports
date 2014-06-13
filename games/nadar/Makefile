@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/game/action/
 
 MAINTAINER=	hsakai@m8.ffn.ne.jp
-COMMENT=	A network tank battle game
+COMMENT=	Network tank battle game
 
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	xpm

@@ -8,7 +8,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://dircproxy.googlecode.com/files/
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	A detachable irc proxy server with many features
+COMMENT=	Detachable irc proxy server with many features
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

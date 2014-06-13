@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME:tl}/Program/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
-COMMENT=	A flight simulator in which the player rescues people
+COMMENT=	Flight simulator in which the player rescues people
 
 RUN_DEPENDS=	${LOCALBASE}/share/searchandrescue/human.ini:${PORTSDIR}/games/searchandrescue-data
 

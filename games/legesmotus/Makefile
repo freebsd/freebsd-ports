@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A team-based, networked, 2D shooter set in zero-gravity
+COMMENT=	Team-based, networked, 2D shooter set in zero-gravity
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \

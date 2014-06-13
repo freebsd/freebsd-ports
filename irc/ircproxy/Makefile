@@ -8,7 +8,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An IRC proxy/bouncer daemon
+COMMENT=	IRC proxy/bouncer daemon
 
 LICENSE=	GPLv3
 

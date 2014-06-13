@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A polygon mesh modeler written in Erlang
+COMMENT=	Polygon mesh modeler written in Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 		${LOCALBASE}/lib/erlang/lib/esdl/include/sdl.hrl:${PORTSDIR}/devel/esdl

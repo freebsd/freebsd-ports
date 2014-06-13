@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A graphical client for chess servers
+COMMENT=	Graphical client for chess servers
 
 NO_BUILD=	yes
 USE_JAVA=	yes

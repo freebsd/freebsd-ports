@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A GTK chess client written in Python
+COMMENT=	GTK chess client written in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=3-2.5.1_1:${PORTSDIR}/databases/py-sqlite3
 

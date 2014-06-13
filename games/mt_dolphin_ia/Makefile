@@ -9,7 +9,7 @@ MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	maitretarot
 
 MAINTAINER=		thierry@FreeBSD.org
-COMMENT=		A basic AI for MaitreTarot, a Tarot card game
+COMMENT=		Basic AI for MaitreTarot, a Tarot card game
 
 LICENSE=		GPLv2
 

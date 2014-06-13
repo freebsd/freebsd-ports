@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SAVANNAH/construo
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A fun construction toy
+COMMENT=	Fun construction toy
 
 GNU_CONFIGURE=	yes
 USES=		gmake

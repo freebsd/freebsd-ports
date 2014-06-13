@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \
 		ftp://mud.stack.nl/pub/ldmud/
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A modern version of the LPMud game driver
+COMMENT=	Modern version of the LPMud game driver
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre

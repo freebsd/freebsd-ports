@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/scwm/scwm/0.99.6.2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An icon collection for the scwm window manager
+COMMENT=	Icon collection for the scwm window manager
 
 NO_BUILD=	yes
 

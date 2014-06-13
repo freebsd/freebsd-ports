@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		pg-data${EXTRACT_SUFX}:data
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A turn-based strategy engine inspired by Panzer General
+COMMENT=	Turn-based strategy engine inspired by Panzer General
 
 LICENSE=	GPLv2
 

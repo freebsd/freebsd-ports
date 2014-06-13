@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://elfga.com/~erik/files/
 
 MAINTAINER=	erik@elfga.com
-COMMENT=	An image viewer for X
+COMMENT=	Image viewer for X
 
 USE_SDL=	image
 GNU_CONFIGURE=	yes

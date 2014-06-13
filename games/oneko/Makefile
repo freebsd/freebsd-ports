@@ -16,7 +16,7 @@ DISTFILES=	oneko-2.0b.tar.gz \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	candy@kgc.co.jp
-COMMENT=	A cat chasing a mouse all over the screen
+COMMENT=	Cat chasing a mouse all over the screen
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

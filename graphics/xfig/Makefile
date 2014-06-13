@@ -9,7 +9,7 @@ MASTER_SITES=	SF/mcj/mcj-source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	mjl@luckie.org.nz
-COMMENT=	A drawing program for X11
+COMMENT=	Drawing program for X11
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \

@@ -11,7 +11,7 @@ DISTNAME=	weechat-devel-${GITREV}
 DISTFILES=	${DISTNAME}.txz
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	A lightweight and user friendly ncurses based IRC client
+COMMENT=	Lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 
