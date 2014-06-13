@@ -17,8 +17,6 @@ ICU_DESC=		Boost.Regex with ICU unicode support
 
 .include "${.CURDIR}/../boost-all/compiled.mk"
 
-NO_CCACHE=	yes
-
 BJAM_ARGS+=	--without-python
 .if defined(X_BUILD_FOR)
 BJAM_ARGS+=	--without-context --without-coroutine \
@@ -60,6 +58,8 @@ post-install:
 
 	@${CAT} ${PKG_MESSAGE_FILE_THREADS} >> ${PKGMESSAGE}
 	@${ECHO_CMD} >> ${PKGMESSAGE}
+
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 	@${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
