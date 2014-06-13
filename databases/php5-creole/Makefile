@@ -11,17 +11,16 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Database abstraction layer for PHP5
 
 USE_PHP=	yes
-DEFAULT_PHP_VER=5
+DEFAULT_VERSIONS=php=5
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/classes; \
 	for d in `${FIND} creole jargon -type d`; do \
-		${INSTALL} -d ${PREFIX}/lib/php/$$d; \
+		${INSTALL} -d ${STAGEDIR}${PREFIX}/lib/php/$$d; \
 	done; \
 	for i in `${FIND} creole jargon -type f`; do \
-		${INSTALL_DATA} $$i ${PREFIX}/lib/php/$$i; \
+		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/lib/php/$$i; \
 	done
 
 .include <bsd.port.mk>
