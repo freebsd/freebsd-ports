@@ -415,7 +415,7 @@ makeplist=0
 case "$1" in
 	checkplist)	;;
 	makeplist)	makeplist=1 ;;
-	*) echo >&2 "Usage: $0 {checkplist|makelist}" ; exit 1 ;;
+	*) echo >&2 "Usage: $0 {checkplist|makeplist}" ; exit 1 ;;
 esac
 
 # validate environment
