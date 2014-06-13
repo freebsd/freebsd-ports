@@ -4,14 +4,12 @@
 PORTNAME=	nerogame
 PORTVERSION=	2.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://z.cs.utexas.edu/users/nn/nero/downloads/
+MASTER_SITES=	SF/nero.mirror
 PKGNAMEPREFIX=	linux-
 DISTNAME=	nero2_linux_i386
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Neuro evolving robotic operatives the game
-
-BROKEN=		Unfetchable
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	libvorbis sdl12 libtheora
@@ -25,7 +23,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	Nvidia support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
@@ -43,24 +40,21 @@ USE_LINUX_APPS+=dri
 
 do-install:
 	${BRANDELF} -t Linux ${WRKSRC}/nero.bin
-	${INSTALL_PROGRAM} ${WRKSRC}/nero.bin ${PREFIX}/libexec/${PKGNAMEPREFIX}${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PKGNAMEPREFIX}${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/nero.bin ${STAGEDIR}${PREFIX}/libexec/${PKGNAMEPREFIX}${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}${PORTNAME}
 
-	@${MKDIR} ${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/libopenal.so ${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/libopenal.so ${STAGEDIR}${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 
 .for DIRE in common nero
-	@${MKDIR} ${PREFIX}/${DATADIR}/${DIRE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
-		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/${DIRE}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${DATADIR}/${DIRE}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}/{}" \;
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/main.cs ${PREFIX}/${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/main.cs ${STAGEDIR}${PREFIX}/${DATADIR}
 
-	@${MKDIR} ${PREFIX}/${DATADIR}/lib
-	${LN} -s ${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}/libopenal.so ${PREFIX}/${DATADIR}/lib/libopenal.so
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}/lib
+	${LN} -s ${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}/libopenal.so ${STAGEDIR}${PREFIX}/${DATADIR}/lib/libopenal.so
 
 .include <bsd.port.post.mk>
