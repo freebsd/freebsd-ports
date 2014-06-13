@@ -2,46 +2,44 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://www.thundercache.com.br/dist/ \
 		http://www.bmsoftware.org/packs/ \
 		http://www8.freebsdbrasil.com.br/~eksffa/thunder/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
 		${MASTER_SITE_LOCAL}/jmelo
-DISTNAME=	thundercache-6.1.201104260900-64bits-fbsd
+DISTNAME=	thundercache-6.1.201104260900-${BITS}-fbsd
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	High-performance and high-efficiency caching proxy system
 
-OPTIONS_DEFINE=	DEPENDACK APACHE PHP PGSQL DOCS
-OPTIONS_DEFAULT=	DEPENDACK APACHE PHP PGSQK
-DEPENDACK_DESC=		I have read and understood the depends needs
-APACHE_DESC=		Install apache for reporting viewing
-PHP_DESC=		Install PHP for reporting generating
-PGSQL_DESC=		Install PostgreSQL (report data storing)
+LICENSE=	commercial
+LICENSE_NAME=	commercial
+LICENSE_TEXT=	Commercial software with shareware license to 50 threads
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
+RESTRICTED=	Commercial software with shareware license to 50 threads
+
+OPTIONS_DEFINE=	DEPENDACK APACHE PHP PGSQL
+OPTIONS_DEFAULT=DEPENDACK APACHE PHP PGSQL
+DEPENDACK_DESC=	I have read and understood the depends needs
+APACHE_DESC=	Install apache for reporting viewing
+PHP_DESC=	Install PHP for reporting generating
+PGSQL_DESC=	Install PostgreSQL (report data storing)
 
 USE_OPENSSL=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	thundercache
 
 NO_BUILD=	yes
-LICENSE=	commercial
-LICENSE_NAME=	commercial
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
-LICENSE_TEXT=	Commercial software with shareware license to 50 threads
-RESTRICTED=	Commercial software with shareware license to 50 threads
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "i386"
-DISTNAME=	thundercache-6.1.201104260900-32bits-fbsd
-.endif
-
+BITS=		${ARCH:S/amd64/64/:S/x86_64/64/:S/i386/32/}bits
 WRKSRC=		${WRKDIR}/thunder
 
 .if ${PORT_OPTIONS:MAPACHE}
@@ -49,21 +47,20 @@ USE_APACHE_RUN=	22+
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-WANT_PGSQL_VER=	84+
-RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-.endif
-
-.if ${PORT_OPTIONS:MPHP} && ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pgsql.so:${PORTSDIR}/databases/php5-pgsql
+USES+=		pgsql
+WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
 USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session
+.  if ${PORT_OPTIONS:MPGSQL}
+USE_PHP+=	pdo_pgsql pgsql
+.  endif
 .endif
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libstdc++.so:${PORTSDIR}/lang/gcc \
+		libutil.so:${PORTSDIR}/misc/compat8x
 
 SUB_FILES=	pkg-message log.sh test-deps.sh
 SUB_LIST=	"GREP=${GREP}"
@@ -91,12 +88,11 @@ show-info:
 pre-everything::show-info
 
 do-install:
-	@${CP} -r ${WRKSRC} ${PREFIX}/
-	${INSTALL_SCRIPT} ${WRKDIR}/log.sh ${PREFIX}/thunder/sbin/
-	@${MKDIR} -m 755 /var/run/thunder
+	@${CP} -r ${WRKSRC} ${STAGEDIR}${PREFIX}/
+	@${INSTALL_SCRIPT} ${WRKDIR}/log.sh ${STAGEDIR}${PREFIX}/thunder/sbin/
+	@${MKDIR} -m 755 ${STAGEDIR}/var/run/thunder
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
 	@(${CHMOD} +x ${WRKDIR}/test-deps.sh ; \
 	if ! ${WRKDIR}/test-deps.sh > /dev/null 2>&1 ; then \
 		${ECHO_MSG} "**** FATAL **** " ; \

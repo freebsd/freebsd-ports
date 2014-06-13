@@ -7,6 +7,8 @@ thunder/sbin/thunderlog.php
 thunder/sbin/diskinfo
 thunder/sbin/thunder
 thunder/sbin/log.sh
+@exec mkdir -p /var/run/thunder
+@exec chmod 755 /var/run/thunder
 @dirrm thunder/etc
 @dirrm thunder/logs/tmp
 @dirrm thunder/logs
