@@ -9,7 +9,7 @@ MASTER_SITES=	SF/hcsoftware/Passage/v${PORTVERSION}
 DISTNAME=	Passage_v${PORTVERSION}_UnixSource
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An experimental video game by Jason Rohrer
+COMMENT=	Experimental video game by Jason Rohrer
 
 USE_SDL=	sdl
 

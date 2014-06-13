@@ -10,7 +10,7 @@ DISTNAME=	${TRUEPORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	A dungeon explorin', slashin', hackin' game
+COMMENT=	Dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 LATEST_LINK=	${TRUEPORTNAME}33${PKGNAMESUFFIX}

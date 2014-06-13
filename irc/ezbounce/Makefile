@@ -8,7 +8,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.linuxftw.com/ezbounce/files/
 
 MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	A highly configurable IRC Proxy
+COMMENT=	Highly configurable IRC Proxy
 
 OPTIONS_DEFINE=	DOCS SSL COMPRESS
 OPTIONS_DEFAULT=SSL COMPRESS

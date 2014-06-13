@@ -9,7 +9,7 @@ MASTER_SITES=
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	A TCL interface to the Thomas Boutell's Gd library
+COMMENT=	TCL interface to the Thomas Boutell's Gd library
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 

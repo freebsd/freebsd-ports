@@ -12,7 +12,7 @@ DISTNAME=	xzip182
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Infocom game interpreter that runs under X11
+COMMENT=	Infocom game interpreter that runs under X11
 
 USE_XORG=	x11
 WRKSRC=		${WRKDIR}/xzip

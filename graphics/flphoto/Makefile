@@ -9,7 +9,7 @@ MASTER_SITES=	SF/fltk/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A basic image management and display program
+COMMENT=	Basic image management and display program
 
 LIB_DEPENDS=	gphoto2:${PORTSDIR}/graphics/libgphoto2 \
 		fltk:${PORTSDIR}/x11-toolkits/fltk \

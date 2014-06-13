@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.junoplay.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A snake game with 8 levels
+COMMENT=	Snake game with 8 levels
 
 GNU_CONFIGURE=	yes
 USES=		gmake

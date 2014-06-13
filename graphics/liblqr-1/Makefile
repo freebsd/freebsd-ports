@@ -9,7 +9,7 @@ MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An easy to use C/C++ seam carving library
+COMMENT=	Easy to use C/C++ seam carving library
 
 USES=		tar:bzip2 gettext gmake pkgconfig libtool:oldver
 GNU_CONFIGURE=	yes

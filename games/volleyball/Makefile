@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A game similar to GNU Arcade Volleyball
+COMMENT=	Game similar to GNU Arcade Volleyball
 
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes

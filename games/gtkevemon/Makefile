@@ -8,7 +8,7 @@ MASTER_SITES=	https://bitbucket.org/BattleClinic/${PORTNAME}/get/
 DISTNAME=	Version%20${DISTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	A skill monitoring standalone application for EVE Online
+COMMENT=	Skill monitoring standalone application for EVE Online
 
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 

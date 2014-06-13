@@ -13,7 +13,7 @@ PATCH_SITES=	${MASTER_SITE_SOURCEFORGE:C/%SUBDIR%/${TRUEPORTNAME}\/${TRUEPORTNAM
 PATCHFILES=	nh-3.2.2-3.2.3.diff
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	A dungeon explorin', slashin', hackin' game
+COMMENT=	Dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-3.2.2
 

@@ -7,7 +7,7 @@ MASTER_SITES=	http://mirror.irssi.org/snapshots/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A modular IRC client with many features
+COMMENT=	Modular IRC client with many features
 
 LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
 

@@ -6,7 +6,7 @@ PORTVERSION=5.01
 CATEGORIES=	games
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
-COMMENT=	A steam locomotive runs across the screen if you type "sl" instead of "ls"
+COMMENT=	Steam locomotive runs across the screen if you type "sl" instead of "ls"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mtoyoda

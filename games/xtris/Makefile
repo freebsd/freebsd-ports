@@ -13,7 +13,7 @@ PATCHFILES=	xtris-1.15-v6-19991218.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sec@42.org
-COMMENT=	A multi-player version of a popular game for the X Window system
+COMMENT=	Multi-player version of a popular game for the X Window system
 
 RESTRICTED=	Possible trademark infringement
 WRKSRC=		${WRKDIR}/xtris

@@ -9,7 +9,7 @@ MASTER_SITES=	http://fukuchi.org/works/qrencode/
 DISTNAME=	qrencode-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A C library for encoding data in a QR Code symbol
+COMMENT=	C library for encoding data in a QR Code symbol
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 

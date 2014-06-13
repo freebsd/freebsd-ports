@@ -10,7 +10,7 @@ DISTNAME=	H.fonts
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of Hebrew fonts from El-Mar software Ltd
+COMMENT=	Collection of Hebrew fonts from El-Mar software Ltd
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

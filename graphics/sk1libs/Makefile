@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A set of python libraries for sK1 Project
+COMMENT=	Set of python libraries for sK1 Project
 
 LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \

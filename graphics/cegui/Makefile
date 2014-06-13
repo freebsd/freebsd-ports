@@ -8,7 +8,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.8
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A library providing windowing and widgets for graphics APIs
+COMMENT=	Library providing windowing and widgets for graphics APIs
 
 LICENSE=	MIT
 

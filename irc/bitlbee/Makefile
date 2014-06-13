@@ -9,7 +9,7 @@ MASTER_SITES=	http://get.bitlbee.org/src/ \
 MASTER_SITE_SUBDIR=	brix
 
 MAINTAINER=	brix@FreeBSD.org
-COMMENT=	An IRC to other chat networks gateway
+COMMENT=	IRC to other chat networks gateway
 
 LICENSE=	GPLv2
 

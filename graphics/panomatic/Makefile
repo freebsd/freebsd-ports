@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ii@any.com.ru
-COMMENT=	A tool that automates the creation of control points
+COMMENT=	Tool that automates the creation of control points
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs

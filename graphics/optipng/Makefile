@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OptiPNG/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tom@hur.st
-COMMENT=	An optimizer for PNG files
+COMMENT=	Optimizer for PNG files
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

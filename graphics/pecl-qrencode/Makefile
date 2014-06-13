@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A PECL extension for generate qrcode
+COMMENT=	PECL extension for generate qrcode
 
 LIB_DEPENDS=	qrencode.3:${PORTSDIR}/graphics/libqrencode
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
 		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	A clone of the Intellivision(TM) game Astrosmash(TM)
+COMMENT=	Clone of the Intellivision(TM) game Astrosmash(TM)
 
 LICENSE=	GPLv2
 

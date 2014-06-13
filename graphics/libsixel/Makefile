@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	sue@iwmt.org
-COMMENT=	A encoder/decoder library for DEC SIXEL graphics
+COMMENT=	Encoder/decoder library for DEC SIXEL graphics
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

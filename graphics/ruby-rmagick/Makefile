@@ -10,7 +10,7 @@ DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby binding for ImageMagick
+COMMENT=	Ruby binding for ImageMagick
 
 BROKEN=		not staged
 

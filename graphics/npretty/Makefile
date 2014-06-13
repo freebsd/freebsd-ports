@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.pulia.nu/code/projects/npretty/ \
 		${MASTER_SITE_LOCAL:S@%SUBDIR%@gabor@}
 
 MAINTAINER=	peter@pean.org
-COMMENT=	A simple web-gallery generator written in perl
+COMMENT=	Simple web-gallery generator written in perl
 
 RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		convert:${PORTSDIR}/graphics/ImageMagick \

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/glx/gle4%20%28Current%20Active%20Version%29/${PORTVERSION}
 DISTNAME=	GLE-${PORTVERSION}-src
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A graphics language that produces images from script files
+COMMENT=	Graphics language that produces images from script files
 
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv
 

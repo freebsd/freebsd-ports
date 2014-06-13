@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A POE::Component::IRC plugin that runs Acme::POE::Knee races
+COMMENT=	POE::Component::IRC plugin that runs Acme::POE::Knee races
 
 BUILD_DEPENDS=	p5-Math-Random>=0.69:${PORTSDIR}/math/p5-Math-Random \
 		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \

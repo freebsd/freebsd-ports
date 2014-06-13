@@ -8,7 +8,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	ps.ports@smyrak.com
-COMMENT=	A simple GTK+ 2.0 color selector
+COMMENT=	Simple GTK+ 2.0 color selector
 
 USES=		pkgconfig
 USE_GNOME=	gtk20 gnomeprefix

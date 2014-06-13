@@ -10,7 +10,7 @@ MASTER_SITES=	http://pygooglechart.slowchop.com/files/download/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A complete Python wrapper for the Google Chart API
+COMMENT=	Complete Python wrapper for the Google Chart API
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

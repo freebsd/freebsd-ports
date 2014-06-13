@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An OpenGL jigsaw puzzle game
+COMMENT=	OpenGL jigsaw puzzle game
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg

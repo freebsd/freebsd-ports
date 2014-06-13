@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/sdl-${PORTNAME}/sdl_${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	A classic WW1 biplane game
+COMMENT=	Classic WW1 biplane game
 
 USES=		gmake pkgconfig
 USE_SDL=	sdl

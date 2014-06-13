@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	evas-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A hardware accelerated canvas API (SVG loader)
+COMMENT=	Hardware accelerated canvas API (SVG loader)
 
 LICENSE=	BSD
 

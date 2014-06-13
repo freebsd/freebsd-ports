@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An arcade-style, top-scrolling space shooter
+COMMENT=	Arcade-style, top-scrolling space shooter
 
 LIB_DEPENDS=	libglpng.so:${PORTSDIR}/graphics/glpng \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \

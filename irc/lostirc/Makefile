@@ -8,7 +8,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple and minimal IRC client for X
+COMMENT=	Simple and minimal IRC client for X
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

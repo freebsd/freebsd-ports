@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://rink.nu/downloads/projects/
 
 MAINTAINER=	rink@FreeBSD.org
-COMMENT=	A utility to solve Sudoku puzzles
+COMMENT=	Utility to solve Sudoku puzzles
 
 USES=		gmake
 GNU_CONFIGURE=	yes

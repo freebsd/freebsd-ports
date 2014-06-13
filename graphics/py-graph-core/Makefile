@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A library for working with graphs in Python, core module
+COMMENT=	Library for working with graphs in Python, core module
 
 PROJECTHOST=	python-graph
 USE_PYTHON=	yes

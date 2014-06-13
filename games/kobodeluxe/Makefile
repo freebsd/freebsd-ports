@@ -10,7 +10,7 @@ MASTER_SITES=	http://olofson.net/kobodl/download/ \
 DISTNAME=	KoboDeluxe-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An SDL port of the scrolling game XKobo
+COMMENT=	SDL port of the scrolling game XKobo
 
 USES=		tar:bzip2
 USE_SDL=	image sdl

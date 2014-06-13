@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.xnview.com/
 DISTFILES=	XnView-x86-unknown-FreeBSD5.x-static.tgz
 
 MAINTAINER=	petr@petrovich.kiev.ua
-COMMENT=	An easy graphics viewer / converter
+COMMENT=	Easy graphics viewer / converter
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes

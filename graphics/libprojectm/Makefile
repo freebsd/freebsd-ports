@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME:tl:S/lib//}/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/lib//}-${DISTVERSION}-Source
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	An awesome music visualiser
+COMMENT=	Awesome music visualiser
 
 LICENSE=	LGPL21
 

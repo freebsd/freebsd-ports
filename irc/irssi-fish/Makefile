@@ -9,7 +9,7 @@ MASTER_SITES=	http://fish.secure.la/irssi/ \
 DISTNAME=	FiSH-irssi.v${DISTVERSION}-source
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	An encryption plugin for irssi
+COMMENT=	Encryption plugin for irssi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glib-2.0/glib.h:${PORTSDIR}/devel/glib20 \
 		${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl \

@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	A debugging library for OpenGL
+COMMENT=	Debugging library for OpenGL
 
 OPTIONS_DEFINE=	AVCODEC GUI THREADS
 AVCODEC_DESC=	LAVC codec support

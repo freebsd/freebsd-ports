@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}\
 		ftp://tsx-11.mit.edu/pub/linux/sources/libs/
 
 MAINTAINER=	ports@dclg.ca
-COMMENT=	A GL Tubing and Extrusion Library
+COMMENT=	GL Tubing and Extrusion Library
 
 USE_XORG=	ice xt xmu
 USE_GL=		glut

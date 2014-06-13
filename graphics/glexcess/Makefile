@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.glexcess.com/files/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	hernan.di.pietro@gmail.com
-COMMENT=	An impressive OpenGL Demo
+COMMENT=	Impressive OpenGL Demo
 
 
 USE_GL=		glut

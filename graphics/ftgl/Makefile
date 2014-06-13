@@ -9,7 +9,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/FTGL%20Source/2.1.3%7Erc5
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	An OpenGL FreeType fonts rendering library
+COMMENT=	OpenGL FreeType fonts rendering library
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 

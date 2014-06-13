@@ -8,7 +8,7 @@ CATEGORIES?=	games
 MASTER_SITES=	http://megaui.net/fukuchi/archive/shortshort/
 
 MAINTAINER?=	umeno@rr.iij4u.or.jp
-COMMENT=	A bicycle with trailers like "sl"
+COMMENT=	Bicycle with trailers like "sl"
 
 MAN1=		quit.1
 MANLANG=	ja

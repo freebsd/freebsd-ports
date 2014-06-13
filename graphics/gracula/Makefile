@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.whizkidtech.redprince.net/cgi/gcl/ \
 		http://www.whizkidtech.redprince.net/gcl/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Graphic Counter Language compiler/interpreter
+COMMENT=	Graphic Counter Language compiler/interpreter
 
 SUB_FILES=	pkg-message
 

@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	An immensely fast JPEG thumbnailing library
+COMMENT=	Immensely fast JPEG thumbnailing library
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 

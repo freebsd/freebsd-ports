@@ -7,7 +7,7 @@ CATEGORIES=		irc ipv6
 MASTER_SITES=		SF
 
 MAINTAINER=		dhn@FreeBSD.org
-COMMENT=		A fully featured easy to use IRC-bouncer
+COMMENT=	Fully featured easy to use IRC-bouncer
 
 USE_BZIP2=		yes
 USES=			iconv

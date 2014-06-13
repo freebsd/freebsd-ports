@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A barcode library for KDE
+COMMENT=	Barcode library for KDE
 
 
 LIB_DEPENDS=	dmtx.0:${PORTSDIR}/graphics/libdmtx \

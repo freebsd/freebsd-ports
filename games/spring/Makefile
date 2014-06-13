@@ -10,7 +10,7 @@ MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION} \
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A project aiming to create a new and versatile RTS Engine
+COMMENT=	Project aiming to create a new and versatile RTS Engine
 
 LICENSE=	GPLv2
 

@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hiroto.kagotani@gmail.com
-COMMENT=	A library of image understanding-related algorithms
+COMMENT=	Library of image understanding-related algorithms
 
 LICENSE=	APACHE20
 

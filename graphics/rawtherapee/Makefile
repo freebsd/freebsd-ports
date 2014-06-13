@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	A powerful RAW image processing application
+COMMENT=	Powerful RAW image processing application
 
 LICENSE=	GPLv3
 

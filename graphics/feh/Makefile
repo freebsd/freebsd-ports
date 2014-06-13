@@ -9,7 +9,7 @@ MASTER_SITES=	http://feh.finalrewind.org/ \
 MASTER_SITE_SUBDIR=	uqs
 
 MAINTAINER=	zeising@FreeBSD.org
-COMMENT=	An image viewer that utilizes Imlib2
+COMMENT=	Image viewer that utilizes Imlib2
 
 LICENSE=	MIT
 

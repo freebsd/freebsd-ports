@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A computer game visualizing quantum mechanics
+COMMENT=	Computer game visualizing quantum mechanics
 
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libfftw3.so:${PORTSDIR}/math/fftw3

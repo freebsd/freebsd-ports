@@ -1,15 +1,15 @@
 # Created by: Wouter Reckman <gennerate@zonnet.nl>
 # $FreeBSD$
 
-PORTNAME=		enygma
+PORTNAME=	enygma
 PORTVERSION=	1.04
-CATEGORIES=		games
+CATEGORIES=	games
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/enigma/
-DISTNAME=		enigma-${DISTVERSION}
+DISTNAME=	enigma-${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		gennerate@zonnet.nl
-COMMENT=		A text-based puzzle game
+MAINTAINER=	gennerate@zonnet.nl
+COMMENT=	Text-based puzzle game
 
 GNU_CONFIGURE=	yes
 

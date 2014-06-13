@@ -7,7 +7,7 @@ CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple CAPTCHA written in Ruby
+COMMENT=	Simple CAPTCHA written in Ruby
 
 BUILD_DEPENDS=	rubygem-rmagick>=1.0:${PORTSDIR}/graphics/rubygem-rmagick
 RUN_DEPENDS:=	${BUILD_DEPENDS}

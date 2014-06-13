@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:HINRIK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
-COMMENT=	A fully event-driven networkable IRC server daemon module
+COMMENT=	Fully event-driven networkable IRC server daemon module
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

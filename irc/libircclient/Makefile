@@ -7,7 +7,7 @@ CATEGORIES=	irc devel
 MASTER_SITES=	SF
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	An IRC library to create IRC clients
+COMMENT=	IRC library to create IRC clients
 
 LICENSE=	LGPL20
 

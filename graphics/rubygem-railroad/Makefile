@@ -7,7 +7,7 @@ CATEGORIES=	graphics devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A class diagrams generator for Ruby on Rails applications
+COMMENT=	Class diagrams generator for Ruby on Rails applications
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
