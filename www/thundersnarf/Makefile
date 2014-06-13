@@ -2,7 +2,7 @@
 
 PORTNAME=	thundersnarf
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.tracanelli.com.br/l/dev/thunder/ \
@@ -12,17 +12,17 @@ MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Web reporting and trending analysis for Thunder Cache Pro
 
 OPTIONS_DEFINE=	APACHE PHP PGSQL DOCS
-OPTIONS_DEFAULT=	APACHE PHP PGSQL
+OPTIONS_DEFAULT=APACHE PHP PGSQL
 APACHE_DESC=	Install apache for reporting viewing
 PHP_DESC=	Install PHP for reporting generating
 PGSQL_DESC=	Install PostgreSQL (report data storing)
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST_SUB=	OWNER=${WWWOWN} GROUP=${WWWGRP}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
@@ -30,37 +30,34 @@ USE_APACHE_RUN=	22+
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	server
-WANT_PGSQL_VER=	84+
-.endif
-
-.if ${PORT_OPTIONS:MPHP} && ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
+USES+=		pgsql
+WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
 USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session pgsql spl dom xmlrpc ctype openssl simplexml soap json
+.  if ${PORT_OPTIONS:MPGSQL}
+USE_PHP+=	pdo_pgsql pgsql
+.  endif
 .endif
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 
 SUB_FILES=	pkg-message
 
+post-extract:
+	# Present on FreeBSD 8 and 9 after extraction
+	@${RM} -f ${WRKSRC}/protected/data/bin/._thundersnarf
+
 do-install:
-	@${CP} -R ${WRKSRC} ${WWWDIR}
-	@${INSTALL_SCRIPT} -m 555 ${WRKSRC}/protected/data/bin/thundersnarf ${PREFIX}/bin/
-	@${INSTALL_SCRIPT} -m 555 ${WRKSRC}/protected/data/bin/thundersnarf-poll ${PREFIX}/bin/
-	@${CHGRP} -R ${WWWGRP}	${WWWDIR}/protected/runtime \
-		${WWWDIR}/assets
-	@${CHMOD} -R g+rwx ${WWWDIR}/protected/runtime \
-		${WWWDIR}/assets
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/protected/data/bin/thundersnarf* \
+		${STAGEDIR}${PREFIX}/bin/
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -Rv ${WRKSRC}/README ${DOCSDIR}/README.pt_BR
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README.pt_BR
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
