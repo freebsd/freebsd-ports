@@ -12,25 +12,21 @@
 # to ensure that openxpki starts at boot time.
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
 #
-# openxpki_flags	(Set as needed)
+
+. /etc/rc.subr
+
+name=openxpki
+rcvar=openxpki_enable
+load_rc_config $name
+command="%%PREFIX%%/bin/openxpkictl"
 
 openxpki_enable="${openxpki_enable-NO}"
 openxpki_pidfile="%%PREFIX%%/var/openxpki/openxpki.pid"
 
-case "$1" in 
-    *start) command_args="start";;
-esac
+procname=openxpkid
 
-. /etc/rc.subr
-
-name="openxpki"
-rcvar=openxpki_enable
-command="%%PREFIX%%/bin/openxpkictl"
-procname="openxpkid"
-
-load_rc_config $name
-
-pidfile="${openxpki_pidfile}"
+pidfile=${openxpki_pidfile}
 
 run_rc_command "$1"
