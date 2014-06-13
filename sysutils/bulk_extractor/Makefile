@@ -3,7 +3,7 @@
 
 PORTNAME=	bulk_extractor
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.digitalcorpora.org/downloads/bulk_extractor/
 
@@ -34,11 +34,6 @@ BEVIEWER_USE=	JAVA=yes
 BEVIEWER_PLIST_FILES=	bin/BEViewer bin/BEViewer.jar
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
-# Needed for __sync_add_and_fetch_8
-CFLAGS+=	-march=i586
-.endif
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
