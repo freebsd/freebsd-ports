@@ -16,7 +16,7 @@ COMMENT=	Russian version of well known hybrid IRC server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	ircd-[0-9]*
+CONFLICTS=	ircd-[0-9]* irc-[0-9]* charybdis-[0-9]* Nefarious-[0-9]* ircd-hybrid-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-ru
 USE_OPENSSL=	yes
@@ -26,8 +26,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru
 
 USERS=		ircdru
 GROUPS=		ircdru
-
-MAN8=		ircd.8
+PLIST_SUB=     USR=$(USERS) GRP=$(GROUPS)
 
 .if defined(WITH_SMALL_NET)
 CONFIGURE_ARGS+=-enable-small-net
@@ -49,7 +48,6 @@ CONFIGURE_ARGS+=--with-topiclen=${TOPICLENGTH}
 CONFIGURE_ARGS+=--with-maxconn=${MAXCONN}
 .endif
 
-NO_STAGE=	yes
 pre-extract:
 	@${ECHO_MSG} "* * * Build options for ircd-hybrid-ru * * *"
 	@${ECHO_MSG} "Issue make WITH_SMALL_NET=yes to build server optimized for small network"
@@ -72,13 +70,10 @@ pre-install:
 	@${REINPLACE_CMD} -e 's,/ircd/modules,/lib/ircd-hybrid-ru-modules,' ${WRKSRC}/etc/example.conf
 
 post-install:
-	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd-hybrid-ru.sh.sample ${PREFIX}/etc/rc.d
-	@${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/etc/ircd-hybrid-ru
-	@${CHOWN} -R ${USERS}:${GROUPS} /var/log/ircd-hybrid-ru
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/RELNOTE* ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/server-version-info ${DOCSDIR}
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd-hybrid-ru.sh.sample ${STAGEDIR}${PREFIX}/etc/rc.d
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/RELNOTE* ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/server-version-info ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
