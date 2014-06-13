@@ -2,6 +2,10 @@ bin/callpass
 bin/testdbfawk
 bin/xastir
 bin/xastir_udp_client
+man/man1/callpass.1.gz
+man/man1/testdbfawk.1.gz
+man/man1/xastir.1.gz
+man/man1/xastir_udp_client.1.gz
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/COPYING.LIB.LESSTIF

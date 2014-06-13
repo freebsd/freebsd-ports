@@ -19,11 +19,6 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 GNU_CONFIGURE=	yes
 USES=		gettext gmake motif
 
-MAN1=		xastir.1 \
-		callpass.1 \
-		testdbfawk.1 \
-		xastir_udp_client.1
-
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	SHAPELIB DBFAWK MAGICK CURL GEOTIFF GDAL GPSMAN FESTIVAL \
@@ -44,7 +39,6 @@ OPTCFLAGS_DESC=	Use optimized CFLAGS (-O2 -pipe)
 
 OPTIONS_DEFAULT=	SHAPELIB DBFAWK MAGICK CURL RTREE BDB
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSHAPELIB}
@@ -114,8 +108,5 @@ CFLAGS+=	-O2 -pipe
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
