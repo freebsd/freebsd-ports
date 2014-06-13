@@ -119,7 +119,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:${PORTSDIR}/www/p5-Apache-Session				\
 		p5-Regexp-Common>0:${PORTSDIR}/textproc/p5-Regexp-Common				\
 		p5-Regexp-IPv6>0:${PORTSDIR}/textproc/p5-Regexp-IPv6					\
 		p5-Role-Basic>=0.12:${PORTSDIR}/devel/p5-Role-Basic					\
-		p5-Symbol-Global-Name>=0.04:${PORTSDIR}/devel/p5-Symbol-Global-Name			\
+		p5-Symbol-Global-Name>=0.05:${PORTSDIR}/devel/p5-Symbol-Global-Name			\
 		p5-Text-Password-Pronounceable>0:${PORTSDIR}/security/p5-Text-Password-Pronounceable	\
 		p5-Text-Quoted>=2.07:${PORTSDIR}/textproc/p5-Text-Quoted				\
 		p5-Text-Template>=1.44:${PORTSDIR}/textproc/p5-Text-Template				\
@@ -130,6 +130,14 @@ CORE_DEPS=	p5-Apache-Session>=1.53:${PORTSDIR}/www/p5-Apache-Session				\
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require				\
 		p5-XML-RSS>=1.05:${PORTSDIR}/textproc/p5-XML-RSS
 
+### Wants CGI => 4.00 for perl 5.20, meaning effectively www/p5-CGI.pm
+### rather than the version bundled with perl (as CGI is being
+### deprecated as a core perl module).  Except that a) www/p5-CGI.pm
+### is still at version 3.63 and b) ${PERL_LEVEL} doesn't seem to be in
+### scope at this point either.
+#.if ${PERL_LEVEL} >= 502000
+#CORE_DEPS+=	p5-CGI.pm>=4.00:${PORTSDIR}/www/p5-CGI.pm
+#.endif
 
 ### --- MAILGATE ---
 ### Crypt::SSLeay
@@ -164,7 +172,7 @@ CLI_DEPS=	p5-HTTP-Message>0:${PORTSDIR}/www/p5-HTTP-Message \
 ### Locale::PO
 ### Log::Dispatch::Perl
 ### Mojo::DOM
-### Plack::Middleware::Test::StashWarnings 0.06
+### Plack::Middleware::Test::StashWarnings 0.08
 ### Set::Tiny
 ### String::ShellQuote 0 # needed for gnupg-incoming.t
 ### Test::Builder 0.90 # needed for is_passing          perl std
@@ -174,6 +182,7 @@ CLI_DEPS=	p5-HTTP-Message>0:${PORTSDIR}/www/p5-HTTP-Message \
 ### Test::LongString
 ### Test::MockTime
 ### Test::NoWarnings
+### Test::Pod
 ### Test::Warn
 ### Test::WWW::Mechanize 1.30
 ### Test::WWW::Mechanize::PSGI
@@ -185,7 +194,7 @@ DEVELOPER_DEPS=	p5-Email-Abstract>0:${PORTSDIR}/mail/p5-Email-Abstract				\
 		p5-Locale-PO>0:${PORTSDIR}/devel/p5-Locale-PO					\
 		p5-Log-Dispatch-Perl>0:${PORTSDIR}/devel/p5-Log-Dispatch-Perl			\
 		p5-Mojolicious>0:${PORTSDIR}/www/p5-Mojolicious					\
-		p5-Plack-Middleware-Test-StashWarnings>=0.06:${PORTSDIR}/www/p5-Plack-Middleware-Test-StashWarnings	\
+		p5-Plack-Middleware-Test-StashWarnings>=0.08:${PORTSDIR}/www/p5-Plack-Middleware-Test-StashWarnings	\
 		p5-Set-Tiny>0:${PORTSDIR}/devel/p5-Set-Tiny					\
 		p5-String-ShellQuote>0:${PORTSDIR}/textproc/p5-String-ShellQuote		\
 		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep					\
@@ -194,6 +203,7 @@ DEVELOPER_DEPS=	p5-Email-Abstract>0:${PORTSDIR}/mail/p5-Email-Abstract				\
 		p5-Test-LongString>0:${PORTSDIR}/devel/p5-Test-LongString			\
 		p5-Test-MockTime>0:${PORTSDIR}/devel/p5-Test-MockTime				\
 		p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings			\
+		p5-Test-Pod>0:${PORTSDIR}/devel/p5-Test-Pod                                     \
 		p5-Test-WWW-Mechanize-PSGI>0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-PSGI	\
 		p5-Test-WWW-Mechanize>=1.30:${PORTSDIR}/devel/p5-Test-WWW-Mechanize		\
 		p5-Test-Warn>0:${PORTSDIR}devel/p5-Test-Warn					\
