@@ -2,6 +2,7 @@
 
 PORTNAME=	pastebinit
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	https://launchpadlibrarian.net/106457425/
 
@@ -12,8 +13,11 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:${PORTSDIR}/devel/py-configobj
 
-USES=		tar:bzip2
+USES=		shebangfix tar:bzip2
 USE_PYTHON=	yes
+SHEBANG_FILES=	pastebinit
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	${PYTHON_CMD}
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pastebinit
