@@ -23,14 +23,10 @@ PLIST_FILES=	${GSLIBDIR}/gt-jdbc-mysql-2.7.2.jar \
 
 LICENSE=	LGPL21
 
-NO_STAGE=	yes
 do-install:
-		@${MKDIR} ${PREFIX}/${GSLIBDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${GSLIBDIR}
 .for f in ${PLIST_FILES:S,^${GSLIBDIR}/,,}
-		${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/${GSLIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/${GSLIBDIR}
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
