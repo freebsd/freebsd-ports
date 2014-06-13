@@ -2,6 +2,9 @@ bin/mc
 bin/mcedit
 bin/mcmfmt
 bin/mcserv
+man/man1/mc.1.gz
+man/man1/mcedit.1.gz
+man/man8/mcserv.8.gz
 share/mc/FAQ
 share/mc/bin/mcfn_install
 share/mc/codepages/7bit.cp
