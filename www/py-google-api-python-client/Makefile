@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-api-python-client
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 #PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}gflags>=1.4:${PORTSDIR}/devel/py-gflags \
 		${PKGNAMEPREFIX}oauth2>=1.5.167:${PORTSDIR}/net/py-oauth2
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
@@ -28,10 +28,7 @@ DJANGO_DESC=	Use the library with Django
 GAE_DESC=	Use the library with Google App Engine
 WEBTEST_DESC=	Use WebTest helper to test WSGI apps (Python 2.6+)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 FIND_FILES=	${WRKDIR}/samples
@@ -65,12 +62,11 @@ post-patch:
 	@${FIND} ${FIND_FILES_BAK} -delete
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}/FAQ
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${STAGEDIR}${DOCSDIR}/FAQ
+
 .if ${PORT_OPTIONS:MEXAMPLES}
-	cd ${WRKDIR}/samples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	(cd ${WRKDIR}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .if ${PORT_OPTIONS:MWEBTEST}
