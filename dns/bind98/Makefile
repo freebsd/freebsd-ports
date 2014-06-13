@@ -81,7 +81,7 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
 RPZRRL_PATCH_PATCHFILES=	9.8.7-P1-rpz2+rl.14038.05.patch:vix
-RPZRRL_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix ${MASTER_SITE_LOCAL:S/%%SUBDIR%%/mat\/bind/:S/$/:vix/}
+RPZRRL_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix ${MASTER_SITE_LOCAL:S/%SUBDIR%/mat\/bind/:S/$/:vix/}
 
 GOST_CONFIGURE_WITH=	gost
 
