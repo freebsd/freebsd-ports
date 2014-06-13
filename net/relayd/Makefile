@@ -2,19 +2,20 @@
 
 PORTNAME=	relayd
 PORTVERSION=	5.4.20131122
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	GH
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenBSD relay daemon
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 GH_ACCOUNT=	mmatuska
 GH_COMMIT=	a4f6140
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/src/usr.sbin
+USES=		uidfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	relayd
 
@@ -34,12 +35,8 @@ LIBEVENT_STATIC_DESC=	Build with static libevent
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 MAKE_ARGS+=	LIBEVENT=${LOCALBASE}/lib/libevent.a
 .else
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 MAKE_ARGS+=	LIBEVENT=-levent
-.endif
-
-.if ${OSVERSION} < 800041
-BROKEN=		does not build on FreeBSD 7.X
 .endif
 
 post-patch:
@@ -52,7 +49,5 @@ post-patch:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../etc/relayd.conf \
 		${STAGEDIR}${PREFIX}/etc/relayd.conf.sample
-	@${CP} -n ${WRKSRC}/../etc/relayd.conf \
-		${STAGEDIR}${PREFIX}/etc/relayd.conf || ${TRUE}
 
 .include <bsd.port.post.mk>
