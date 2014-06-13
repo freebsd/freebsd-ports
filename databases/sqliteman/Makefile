@@ -20,5 +20,4 @@ USE_QT4=	qmake_build gui moc_build rcc_build uic_build xml sql
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
