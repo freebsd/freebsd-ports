@@ -1,6 +1,12 @@
 bin/bestsms.sh
 bin/email2smssend
 bin/smssend
+man/fr/man1/email2smssend.1.gz
+man/fr/man1/smssend.1.gz
+man/fr/man1/smssend.scripting.1.gz
+man/man1/email2smssend.1.gz
+man/man1/smssend.1.gz
+man/man1/smssend.scripting.1.gz
 %%DATADIR%%/130sms.sms
 %%DATADIR%%/1rstwap.sms
 %%DATADIR%%/6sens.sms
@@ -132,6 +138,6 @@ bin/smssend
 %%DATADIR%%/vizzaviuk.sms
 %%DATADIR%%/vodacom.sms
 %%DATADIR%%/yab.sms
+@dirrm %%DATADIR%%
 @dirrmtry man/fr/man1
 @dirrmtry man/fr
-@dirrm %%DATADIR%%
