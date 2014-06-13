@@ -11,28 +11,27 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Full-service object persistence and query toolkit for PHP
 
 USE_PHP=	yes
-DEFAULT_PHP_VER=5
+DEFAULT_VERSIONS=	php=5
 WRKSRC=		${WRKDIR}
 
-NO_STAGE=	yes
 do-build:
 	${SED} -e "s|@DATA-DIR@/propel_generator|${PREFIX}/share/propel/generator/pear|" ${WRKSRC}/generator/pear/pear-propel-gen > ${WRKSRC}/propel-gen
 
 do-install:
 	cd ${WRKSRC}/runtime/classes; \
 	for d in `${FIND} propel -type d`; do \
-		${INSTALL} -d ${PREFIX}/lib/php/$$d; \
+		${INSTALL} -d ${STAGEDIR}${PREFIX}/lib/php/$$d; \
 	done; \
 	for i in `${FIND} propel -type f`; do \
-		${INSTALL_DATA} $$i ${PREFIX}/lib/php/$$i; \
+		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/lib/php/$$i; \
 	done
 	cd ${WRKSRC}; \
 	for d in `${FIND} generator -type d`; do \
-		${INSTALL} -d ${PREFIX}/share/propel/$$d; \
+		${INSTALL} -d ${STAGEDIR}${PREFIX}/share/propel/$$d; \
 	done; \
 	for i in `${FIND} generator -type f`; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share/propel/$$i; \
+		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/share/propel/$$i; \
 	done
-	${INSTALL_SCRIPT} ${WRKSRC}/propel-gen ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/propel-gen ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
