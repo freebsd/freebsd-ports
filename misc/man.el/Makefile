@@ -18,21 +18,26 @@ ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages
 PKGMODULES=	i18n-man-de i18n-man-en i18n-man-ja
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${ELISPDIR} ${PREFIX}/share/doc/i18n-man
+	@${MKDIR} ${STAGEDIR}${ELISPDIR} ${STAGEDIR}${PREFIX}/share/doc/i18n-man
 	@cd ${WRKSRC}; \
-	${INSTALL_DATA} `${TAR} tzf ${DISTDIR}/${DISTFILES}` ${ELISPDIR}
+	${INSTALL_DATA} `${TAR} tzf ${DISTDIR}/${DISTFILES}` \
+		${STAGEDIR}${ELISPDIR}
 # For xemacs package install configuration
-	${MKDIR}  ${SITEPKGDIR}/pkginfo
+	@${MKDIR} ${STAGEDIR}${SITEPKGDIR}/pkginfo
 .for f in ${PKGMODULES}
-	${MKDIR} ${SITEPKGDIR}/lisp/${f}
-	${LN} -sf ${ELISPDIR}/${f}.el ${SITEPKGDIR}/lisp/${f}/${f}.el
-	${LN} -sf ${ELISPDIR}/i18n-man.el ${SITEPKGDIR}/lisp/${f}/i18n-man.el
-	${ECHO_CMD} "pkginfo/MANIFEST.${f}" > ${SITEPKGDIR}/pkginfo/MANIFEST.${f}
-	${ECHO_CMD} "lisp/${f}/${f}.el" >> ${SITEPKGDIR}/pkginfo/MANIFEST.${f}
-	${ECHO_CMD} "lisp/${f}/i18n-man.el" >> ${SITEPKGDIR}/pkginfo/MANIFEST.${f}
+	@${MKDIR} ${STAGEDIR}${SITEPKGDIR}/lisp/${f}
+	${LN} -sf ${ELISPDIR}/${f}.el ${STAGEDIR}${SITEPKGDIR}/lisp/${f}/${f}.el
+	${LN} -sf ${ELISPDIR}/i18n-man.el \
+		${STAGEDIR}${SITEPKGDIR}/lisp/${f}/i18n-man.el
+	${ECHO_CMD} "pkginfo/MANIFEST.${f}" > \
+		${STAGEDIR}${SITEPKGDIR}/pkginfo/MANIFEST.${f}
+	${ECHO_CMD} "lisp/${f}/${f}.el" >> \
+		${STAGEDIR}${SITEPKGDIR}/pkginfo/MANIFEST.${f}
+	${ECHO_CMD} "lisp/${f}/i18n-man.el" >> \
+		${STAGEDIR}${SITEPKGDIR}/pkginfo/MANIFEST.${f}
 .endfor
-	${INSTALL_SCRIPT} ${FILESDIR}/byte-compile ${PREFIX}/share/doc/i18n-man
+	${INSTALL_SCRIPT} ${FILESDIR}/byte-compile \
+		${STAGEDIR}${PREFIX}/share/doc/i18n-man
 
 .include <bsd.port.mk>
