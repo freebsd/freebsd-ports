@@ -40,7 +40,7 @@ USE_RC_SUBR=	snmpd snmptrapd
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USES=		perl5
-USE_PERL5=	fixpacklist
+USE_PERL5=	build run fixpacklist
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
