@@ -16,5 +16,4 @@ LATEST_LINK=	${PKGNAMEPREFIX}joe
 MASTERDIR=	${.CURDIR}/../../editors/joe
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
