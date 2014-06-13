@@ -285,6 +285,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/customizing/approvals.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/articles_introduction.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/lifecycles.pod
+%%PORTDOCS%%%%DOCSDIR%%/customizing/search_result_columns.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/styling_rt.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/templates.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/timezones_in_charts.pod
