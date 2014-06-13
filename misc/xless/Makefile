@@ -16,8 +16,7 @@ USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAKE_ARGS=	MAKE="${MAKE_CMD}"
 
-MAN1=		xless.1
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/xless lib/X11/xless.help lib/X11/app-defaults/XLess \
+		lib/X11/app-defaults/XLess-color man/man1/xless.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
