@@ -6128,3 +6128,4 @@ editors/libreoffice-ca_XV|editors/libreoffice-ca_valencia|2014-06-11|Port has be
 editors/libreoffice-ku||2014-06-11|Not provided anymore since LibreOffice 4.2
 editors/libreoffice-sh||2014-06-11|Not provided anymore since LibreOffice 4.2
 net/callweaver||2014-06-12|Project is dead
+net-im/openfire-devel||2014-06-13|Removed
