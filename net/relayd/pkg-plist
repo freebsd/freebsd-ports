@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/relayd.conf %D/etc/relayd.conf.sample; then rm -f %D/etc/relayd.conf; fi
-etc/relayd.conf.sample
-@exec cp -n %B/%f %B/relayd.conf
+@sample etc/relayd.conf.sample
 man/man5/relayd.conf.5.gz
 man/man8/relayctl.8.gz
 man/man8/relayd.8.gz
