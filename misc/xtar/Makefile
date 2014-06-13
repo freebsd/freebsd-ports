@@ -21,12 +21,13 @@ MAKE_ARGS=	XINC="-I${LOCALBASE}/include" XMLIB="${MOTIFLIB}" \
 		MANDIR="${MAN1PREFIX}/man/man1" OPTIMISATION="${CFLAGS}" \
 		ANSIFLAG=-ansi CC="${CC}" RANLIB=:
 
-NO_STAGE=	yes
-MAN1=		xtar.1
-PLIST_FILES=	bin/xtar lib/X11/xtar/xtar.doc lib/X11/app-defaults/XTar
+PLIST_FILES=	bin/xtar lib/X11/xtar/xtar.doc lib/X11/app-defaults/XTar \
+		man/man1/xtar.1.gz
 PLIST_DIRS=	lib/X11/xtar
 
 post-patch:
+	@${REINPLACE_CMD} -E 's,(APP|BIN|LIB|MAN)DIR),DESTDIR)$$(&,' \
+		${WRKSRC}/Makefile.noimake
 	@${REINPLACE_CMD} -e 's/pipe\.c/& regexpr.c/' \
 		${WRKSRC}/common/Makefile.noimake
 
