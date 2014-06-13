@@ -17,6 +17,8 @@ ICU_DESC=		Boost.Regex with ICU unicode support
 
 .include "${.CURDIR}/../boost-all/compiled.mk"
 
+NO_CCACHE=	yes
+
 BJAM_ARGS+=	--without-python
 .if defined(X_BUILD_FOR)
 BJAM_ARGS+=	--without-context --without-coroutine \
