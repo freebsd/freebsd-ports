@@ -16,7 +16,7 @@ etc/ircd-hybrid-ru/nresv.conf
 etc/ircd-hybrid-ru/rkline.conf
 etc/ircd-hybrid-ru/rxline.conf
 etc/ircd-hybrid-ru/xline.conf
-etc/rc.d/ircd-hybrid-ru.sh.sample
+@sample etc/rc.d/ircd-hybrid-ru.sh.sample
 help/opers/accept
 help/opers/admin
 help/opers/away
@@ -382,6 +382,7 @@ lib/ircd-hybrid-ru-modules/m_quit.so
 lib/ircd-hybrid-ru-modules/m_server.so
 lib/ircd-hybrid-ru-modules/m_sjoin.so
 lib/ircd-hybrid-ru-modules/m_squit.so
+man/man8/ircd.8.gz
 %%DOCSDIR%%/CIDR.txt
 %%DOCSDIR%%/LazyLinks.txt
 %%DOCSDIR%%/RELNOTES
@@ -398,15 +399,16 @@ lib/ircd-hybrid-ru-modules/m_squit.so
 %%DOCSDIR%%/serverhide.txt
 %%DOCSDIR%%/whats-new.txt
 @dirrm share/doc/ircd
-@dirrm etc/ircd-hybrid-ru/codepages
-@dirrm etc/ircd-hybrid-ru
 @dirrm lib/ircd-hybrid-ru-modules/autoload
 @dirrm lib/ircd-hybrid-ru-modules
 @dirrm help/users
 @dirrm help/opers
 @dirrm help
-@exec mkdir -m 755 /var/log/ircd-hybrid-ru
-@exec chown ircdru:ircdru /var/log/ircd-hybrid-ru
-@unexec rmdir /var/log/ircd-hybrid-ru 2>/dev/null || true
-@unexec rmdir %D/etc/ircd-hybrid-ru/codepages 2>/dev/null || true
-@unexec rmdir %D/etc/ircd-hybrid-ru 2>/dev/null || true
+@dirrm etc/ircd-hybrid-ru/codepages
+@dirrm etc/ircd-hybrid-ru
+@owner %%USR%%
+@group %%GRP%%
+@exec install -d -m 755 -o %%USR%% -g %%GRP%% /var/log/ircd-hybrid-ru
+@dirrmtry /var/log/ircd-hybrid-ru
+@owner root
+@group wheel
