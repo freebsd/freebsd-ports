@@ -10,27 +10,11 @@ MASTER_SITE_SUBDIR=	dd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce random permutations
 
-MANSECTS=	1
-MAN1=		shuffle.1
-MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/shuffle man/man1/shuffle.1.gz
 
-# MAN page COMPression SUFFIX
-.if !defined(NO_MANCOMPRESS)
-MANCOMPSUFFIX=	.gz
-.else
-MANCOMPSUFFIX=
-.endif
-
-PLIST_FILES=	bin/shuffle
-
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/shuffle ${PREFIX}/bin/shuffle
-.for __s in ${MANSECTS}
-.for __m in ${MAN${__s}:S/$/${MANCOMPSUFFIX}/}
-	@${INSTALL_MAN} ${WRKSRC}/${__m} ${PREFIX}/man/man${__s}/${__m}
-.endfor
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/shuffle ${STAGEDIR}${PREFIX}/bin/shuffle
+	${INSTALL_MAN} ${WRKSRC}/shuffle.1.gz ${STAGEDIR}${PREFIX}/man/man1
 
 #
 # Ports build/install stuff stops here.  Tarball creation stuff begins here.
