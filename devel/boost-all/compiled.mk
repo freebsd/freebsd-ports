@@ -45,6 +45,11 @@ BJAM_ARGS+=	optimization=speed
 BJAM_ARGS+=	inlining=full
 .endif
 
+# ccache build fails when using precompiled headers, on a cached build.
+.if defined(WITH_CCACHE_BUILD)
+BJAM_ARGS+=	pch=off
+.endif
+
 post-patch:
 .if defined(USE_BINUTILS)
 	@${ECHO} "using ${BOOST_TOOLSET} : : ${CXX} : <linkflags>-B${LOCALBASE}/bin ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
