@@ -1,7 +1,7 @@
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 BJAM=		bjam
-USES=		compiler:c++11-lang
+USES+=		compiler:c++11-lang
 
 PLIST_SUB+=	BOOST_SHARED_LIB_VER=${PORTVERSION} COMPAT_LIB_VER=5
 
