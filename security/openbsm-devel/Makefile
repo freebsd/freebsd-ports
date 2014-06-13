@@ -3,7 +3,7 @@
 
 PORTNAME=	openbsm
 DISTVERSION=	1.2-alpha3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/ \
     		http://mirrors.rit.edu/zi/
@@ -43,7 +43,5 @@ IGNORE=		is not needed under FreeBSD 10.x or higher
 post-install:
 	@${MKDIR} -m 0770 ${STAGEDIR}${VARAUDIT}/dist
 	@${MKDIR} -m 0700 ${STAGEDIR}${VARAUDIT}/remote
-	@${CHOWN} ${USERS}:${GROUPS} ${STAGEDIR}${VARAUDIT}/dist
-	@${CHOWN} ${USERS}:wheel ${STAGEDIR}${VARAUDIT}/remote
 
 .include <bsd.port.post.mk>
