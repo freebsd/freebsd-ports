@@ -1,5 +1,6 @@
 bin/pgpool
 etc/pgpool.conf.sample
 etc/pool_hba.conf.sample
+man/man8/pgpool.8.gz
 share/pgpool/pgpool.pam
 @dirrm share/pgpool
