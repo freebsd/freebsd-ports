@@ -1,9 +1,9 @@
-# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
+# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	openxpki-deployment
 PORTVERSION=	0.9.1386
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	SF/openxpki/openxpki/0.9.1300
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,8 @@ DIST_SUBDIR=	openxpki
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based enterprise class trustcenter software for PKI
 
-BROKEN=		not staged
+LICENSE=	ART20
+
 BUILD_DEPENDS=	\
 	p5-openxpki-client>=0:${PORTSDIR}/security/p5-openxpki-client \
 	p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std \
@@ -20,16 +21,12 @@ BUILD_DEPENDS=	\
 	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN1=	openxpki-configure.1 \
-	openxpki-metaconf.1 \
-	openxpkiadm.1 \
-	openxpkictl.1
 USES=		perl5 gmake
 USE_RC_SUBR=	openxpki
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
+# Do not prepend PREFIX with STAGEDIR here, it is not a "destination".
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|>/dev/null 2>&1 | |' ${WRKSRC}/configure
 
