@@ -14,9 +14,9 @@ lib/libospf.so
 lib/libospf.so.0
 lib/libospf.so.0.0.0
 %%OSPFAPI%%lib/libospfapiclient.a
-%%OSPFAPI%%lib/libospfapiclient.la
 %%OSPFAPI%%lib/libospfapiclient.so
 %%OSPFAPI%%lib/libospfapiclient.so.0
+%%OSPFAPI%%lib/libospfapiclient.so.0.0.0
 lib/libzebra.a
 lib/libzebra.so
 lib/libzebra.so.0
@@ -83,6 +83,7 @@ man/man1/vtysh.1.gz
 man/man8/bgpd.8.gz
 man/man8/ospf6d.8.gz
 man/man8/ospfd.8.gz
+%%OSPFAPI%%man/man8/ospfclient.8.gz
 man/man8/ripd.8.gz
 man/man8/ripngd.8.gz
 man/man8/watch%%ENABLE_USER%%.8.gz

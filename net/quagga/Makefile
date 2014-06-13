@@ -3,6 +3,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.22.4
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	quagga
@@ -147,6 +148,9 @@ pre-everything::
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libospf.so.0.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libzebra.so.0.0.0
+.if ${PORT_OPTIONS:MOSPF_OPAQUE_LSA}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libospfapiclient.so.0.0.0
+.endif
 	${MKDIR} ${STAGEDIR}${LOCALSTATE_DIR}
 	${MKDIR} ${STAGEDIR}${SYSCONF_DIR}
 
