@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.26
+PORTVERSION=	5.29
 PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
@@ -28,6 +28,7 @@ USE_XORG=	xpm xext xxf86misc
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
+USE_GNOME=	intltool
 CONFIGURE_ENV+=	"CPPFLAGS= -I ${LOCALBASE}/include" "LDFLAGS= -L ${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-jpeg=${LOCALBASE} --with-xshm-ext --with-xdbe-ext \
@@ -36,8 +37,9 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
 		--with-xf86gamma-ext --with-randr-ext --enable-locking
 
-OPTIONS_DEFINE= KERBEROS PAM SETUID_HACKS FIREF XAOS1 XDALI XURTH XMOUN XPLAN \
-		XSNOW
+OPTIONS_DEFINE= KERBEROS PAM PTHREADS SETUID_HACKS FIREF XAOS1 XDALI XURTH \
+		XMOUN XPLAN XSNOW
+PTHREADS_DESC=	Use pthreads for SMP support
 SETUID_HACKS_DESC=	Install sonar hack suid so it can ping
 FIREF_DESC=	Add extra port x11/fireflies
 XAOS1_DESC=	Add extra port graphics/xaos
@@ -63,6 +65,9 @@ PLIST_SUB+=		PAM="@comment not installed: "
 .endif
 .if ${PORT_OPTIONS:MSETUID_HACKS}
 CONFIGURE_ARGS+=	--with-setuid-hacks
+.endif
+.if ${PORT_OPTIONS:MPTHREADS}
+CONFIGURE_ARGS+=	--with-pthreads
 .endif
 
 .if ${PORT_OPTIONS:MFIREF}
