@@ -6,7 +6,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	games python
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Save princess Ericia in this 2D platform game
 
 LICENSE=	GPLv3
