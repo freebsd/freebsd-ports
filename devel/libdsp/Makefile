@@ -3,6 +3,7 @@
 
 PORTNAME=	libdsp
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	devel audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable-src/${PORTVERSION} \
 		http://mirror.mcx2.org/
@@ -14,15 +15,13 @@ COMMENT=	C++ class library of common digital signal processing functions
 
 WRKSRC=		${WRKDIR}/libdsp-src-${PORTVERSION}/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}
 
-USE_AUTOTOOLS=	libtool:env
-USES=		gmake
+USES=		gmake libtool
 MAKE_ENV=	MKDIR="${MKDIR}" INLINE_VER="${INLINE_VER}"
 MAKEFILE=	Makefile.BSD
 USE_LDCONFIG=	yes
 
 INLINE_VER=	1.4.0
 
-NO_STAGE=	yes
 do-configure:
 	@${DO_NADA}
 
