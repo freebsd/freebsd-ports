@@ -12,7 +12,7 @@ DISTFILES=	sdllopan-${DISTVERSION}.tgz \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	sdllopan-${DISTVERSION}.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Mahjong game remake
 
 LICENSE=	GPLv2
@@ -24,7 +24,6 @@ USE_SDL=	sdl image mixer
 ALL_TARGET=
 
 PORTDOCS=	Changelog README
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="SDL Lopan" "" "${PORTNAME}" \

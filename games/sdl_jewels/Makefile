@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME:S/sdl/SDL/}-${DISTVERSION}.tgz \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME:S/sdl/SDL/}-${DISTVERSION}.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Tile-matching 8x8 puzzle game
 
 LICENSE=	GPLv2
@@ -24,7 +24,6 @@ USE_SDL=	sdl image mixer
 ALL_TARGET=
 
 PORTDOCS=	ChangeLog README
-
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="SDL Jewels" "" "${PORTNAME}" \
