@@ -3,7 +3,7 @@
 #   $MCom: ports/devel/dbus/Makefile,v 1.58 2013/02/15 15:06:49 kwm Exp $
 
 PORTNAME=	dbus
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
