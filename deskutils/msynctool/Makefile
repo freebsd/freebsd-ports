@@ -13,15 +13,13 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	osynctool-[0-9]*
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-
-MAN1=		convcard.1 ${PORTNAME}.1
 
 PLIST_FILES=	bin/convtest \
 		bin/convcard \
-		bin/${PORTNAME}
+		bin/${PORTNAME} \
+		man/man1/convcard.1.gz \
+		man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
