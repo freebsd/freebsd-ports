@@ -1,4 +1,3 @@
-%%PYTHON_SITELIBDIR%%/_anthy.la
 %%PYTHON_SITELIBDIR%%/_anthy.so
 %%PYTHON_SITELIBDIR%%/anthy.py
 libexec/ibus-engine-anthy
@@ -47,8 +46,8 @@ share/ibus/component/anthy.xml
 share/locale/fr/LC_MESSAGES/ibus-anthy.mo
 share/locale/ja/LC_MESSAGES/ibus-anthy.mo
 share/locale/zh_CN/LC_MESSAGES/ibus-anthy.mo
-@dirrm %%DATADIR%%/setup
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/engine
-@dirrm %%DATADIR%%/dicts
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/dicts
+@dirrmtry %%DATADIR%%/engine
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/setup
+@dirrmtry %%DATADIR%%
