@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	open-usp-tukubai
-PORTVERSION=	2014030202
+PORTVERSION=	2014061402
 CATEGORIES=	devel
 MASTER_SITES=	https://uec.usp-lab.com/TUKUBAI/DOWNLOAD/
 
@@ -13,6 +13,6 @@ USES=		gmake tar:bzip2
 USE_PYTHON=	yes
 
 NO_BUILD=	yes
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
