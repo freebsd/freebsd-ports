@@ -12,7 +12,6 @@ COMMENT=	Python refactoring tool
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-NO_STAGE=	yes
 
 .if defined(EMACS_PORT_NAME)
 RUN_DEPENDS+=	${LOCALBASE}/bin/pymacs-services:${PORTSDIR}/devel/pymacs
@@ -20,10 +19,10 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/pymacs-services:${PORTSDIR}/devel/pymacs
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ide-integration/bike.vim ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.emacs ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.idle ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ide-integration/bike.vim ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.emacs ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.idle ${STAGEDIR}${DOCSDIR}
 	@${ECHO} "================================================================"
 	@${ECHO} "* See" ${DOCSDIR} "for instructions on configuring IDLE"
 	@${ECHO} "* and vim to use Bicycle Repair Man."
