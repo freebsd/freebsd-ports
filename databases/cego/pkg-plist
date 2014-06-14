@@ -27,13 +27,13 @@ include/cego/CegoTableObject.h
 include/cego/CegoViewObject.h
 include/cego/cgwrap.h
 lib/libcego.a
-lib/libcego.la
 lib/libcego.so
 lib/libcego.so.1
+lib/libcego.so.1.0.0
 lib/libcgwrap.a
-lib/libcgwrap.la
 lib/libcgwrap.so
 lib/libcgwrap.so.1
+lib/libcgwrap.so.1.0.0
 %%DATADIR%%/cgbackup
 %%DATADIR%%/cgmkdb
 %%DATADIR%%/cgrecover
