@@ -1,11 +1,11 @@
---- build.xml.bak	2014-04-19 21:14:45.345201138 +0600
-+++ build.xml	2014-04-19 21:17:15.132174422 +0600
+--- build.xml.orig	2014-05-07 20:40:45.000000000 +0000
++++ build.xml	2014-06-13 18:53:29.152647282 +0000
 @@ -52,7 +52,7 @@
    <property name="component.title"         value="Commons MATH"/>
  
    <!-- The current version number of this component -->
 -  <property name="component.version"       value="3.1-SNAPSHOT"/>
-+  <property name="component.version"       value="3.2-SNAPSHOT"/>
++  <property name="component.version"       value="3.3-SNAPSHOT"/>
  
    <!-- The base directory for component sources -->
    <property name="source.home"             value="src/main/java"/>
@@ -18,8 +18,21 @@
  
        <javac srcdir="${test.home}"
               destdir="${build.home}/test-classes"
-@@ -341,26 +341,5 @@
-   <target name="gump" depends="clean,test,javadoc,jar" description="Gump Target - clean,test,javadoc,jar"/>
+@@ -256,7 +256,7 @@
+ 
+ <!-- ========== Create Jar ================================================ -->
+ 
+-  <target name="jar" depends="test" description="Create jar file">
++  <target name="jar" description="Create jar file">
+ 
+     <copy file="LICENSE.txt" tofile="${build.home}/classes/META-INF/LICENSE.txt"/>
+     <copy file="NOTICE.txt"  tofile="${build.home}/classes/META-INF/NOTICE.txt"/>
+@@ -339,29 +339,8 @@
+ 
+ <!-- ========== Gump Target ===================================================== -->
+ 
+-  <target name="gump" depends="clean,test,javadoc,jar" description="Gump Target - clean,test,javadoc,jar"/>
++  <target name="gump" depends="clean,javadoc,jar" description="Gump Target - clean,javadoc,jar"/>
  
  
 -<!-- ========== Download Dependencies =========================================== -->

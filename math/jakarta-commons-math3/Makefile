@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commons-math3
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	math java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}/:source1 \
 		http://repo1.maven.org/maven2/junit/junit/4.8.2/:source2
@@ -20,7 +20,7 @@ LICENSE=	APACHE20
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	jar
@@ -31,6 +31,8 @@ DESTJARFILE=	${PORTNAME}.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
 OPTIONS_DEFINE=	DOCS
+
+MAKE_ENV=	LANG=en_US.ISO8859-1
 
 .include <bsd.port.options.mk>
 
@@ -50,19 +52,15 @@ post-extract:
 	${CP} ${DISTDIR}/junit-4.8.2.jar ${WRKSRC}/lib/
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
-	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
-	@${ECHO_MSG} " [ DONE ]"
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/target \
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/target \
 	  && ${FIND} -s apidocs -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 	  && ${FIND} -s apidocs -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
