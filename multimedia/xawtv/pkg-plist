@@ -18,7 +18,6 @@ bin/webcam
 bin/xawtv
 bin/xawtv-remote
 lib/xawtv/bilinear.so
-@comment lib/xawtv/conv-audio.so
 lib/xawtv/conv-mjpeg.so
 lib/xawtv/cubic.so
 lib/xawtv/drv0-bsd.so
@@ -35,7 +34,41 @@ lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
 %%DV%%lib/xawtv/write-dv.so
 %%QT%%lib/xawtv/write-qt.so
-@dirrm lib/xawtv
+man/man1/alevtd.1.gz
+man/man1/dump-mixers.1.gz
+man/man1/fbtv.1.gz
+man/man1/motv.1.gz
+man/man1/mtt.1.gz
+man/man1/ntsc-cc.1.gz
+man/man1/pia.1.gz
+man/man1/propwatch.1.gz
+man/man1/radio.1.gz
+man/man1/record.1.gz
+man/man1/rootv.1.gz
+man/man1/scantv.1.gz
+man/man1/showriff.1.gz
+man/man1/streamer.1.gz
+man/man1/subtitles.1.gz
+man/man1/ttv.1.gz
+man/man1/v4l-info.1.gz
+man/man1/v4lctl.1.gz
+man/man1/webcam.1.gz
+man/man1/xawtv-remote.1.gz
+man/man1/xawtv.1.gz
+man/man5/xawtvrc.5.gz
+man/man8/v4l-conf.8.gz
+man/es/man1/fbtv.1.gz
+man/es/man1/rootv.1.gz
+man/es/man1/scantv.1.gz
+man/es/man1/streamer.1.gz
+man/es/man1/subtitles.1.gz
+man/es/man1/ttv.1.gz
+man/es/man1/v4lctl.1.gz
+man/es/man1/xawtv-remote.1.gz
+man/es/man1/xawtv.1.gz
+man/es/man5/xawtvrc.5.gz
+man/es/man8/v4l-conf.8.gz
+man/fr/man1/xawtv.1.gz
 share/xawtv/Index.map
 share/xawtv/argentina.list
 share/xawtv/ccir-h.list
@@ -62,13 +95,20 @@ share/xawtv/pal-newzealand.list
 share/xawtv/secam-france.list
 share/xawtv/secam-russia.list
 share/xawtv/uhf.list
-@dirrm share/xawtv
 lib/X11/app-defaults/MoTV
 lib/X11/app-defaults/Xawtv
 lib/X11/app-defaults/mtt
 lib/X11/de_DE.UTF-8/app-defaults/MoTV
 lib/X11/fr_FR.UTF-8/app-defaults/MoTV
 lib/X11/it_IT.UTF-8/app-defaults/MoTV
+@dirrm lib/xawtv
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man8
+@dirrmtry man/es/man5
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrm share/xawtv
 @dirrm lib/X11/de_DE.UTF-8/app-defaults
 @dirrm lib/X11/de_DE.UTF-8
 @dirrm lib/X11/fr_FR.UTF-8/app-defaults

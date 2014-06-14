@@ -31,18 +31,6 @@ ONLY_FOR_ARCHS=	alpha amd64 i386
 
 FILES_LIBJPEG=	console/Subdir.mk x11/Subdir.mk libng/plugins/Subdir.mk
 
-MAN1=		alevtd.1 dump-mixers.1 fbtv.1 mtt.1 motv.1 ntsc-cc.1 pia.1 \
-		propwatch.1 radio.1 record.1 rootv.1 scantv.1 showriff.1 \
-		streamer.1 subtitles.1 ttv.1 v4l-info.1 v4lctl.1 webcam.1 \
-		xawtv-remote.1 xawtv.1
-MAN5=		xawtvrc.5
-MAN8=		v4l-conf.8
-MAN1_ES=	fbtv.1 rootv.1 scantv.1 streamer.1 subtitles.1 ttv.1 v4lctl.1 \
-		xawtv-remote.1 xawtv.1
-MAN5_ES=	xawtvrc.5
-MAN8_ES=	v4l-conf.8
-MAN1_FR=	xawtv.1
-
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAALIB}
