@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Full integrated office productivity suite
 
@@ -245,6 +245,7 @@ DISTFILES+=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:src \
 		2e482c7567908d334785ce7d69ddfff7-commons-codec-1.6-src.tar.gz:src \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:src \
+		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:src \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:src \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
 		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:src \
@@ -344,6 +345,7 @@ LDFLAGS=	-B${LOCALBASE}/bin
 
 .if ${COMPILER_FEATURES:Mlibc++}
 EXTRA_PATCHES+=	${FILESDIR}/extra-libc++:-p1
+EXTRA_PATCHES+=	${FILESDIR}/extra-libc++.i386:-p0
 .endif
 
 .if ${OSVERSION} < 900506
@@ -368,17 +370,15 @@ post-configure:
 	@${TOUCH} ${WRKSRC}/src.downloaded
 
 post-install:
-	@${RM} -f ${PLISTF} ${PLISTD}
+	@${RM} -f ${PLISTD} ${PLISTF}
 	# It seems that the empty directories are necessary for libreoffice keep them for now
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
 	    -empty -exec ${ECHO_CMD} "@exec ${MKDIR} %D/{}" \; >> ${PLISTD}
 
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s bin lib man \
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s bin etc lib man \
 	    \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
 	    -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
-
-	@${ECHO_CMD} etc/bash_completion.d/libreoffice.sh >> ${PLISTF}
 	@${ECHO_CMD} "@dirrmtry etc/bash_completion.d" >> ${PLISTD}
 
 .for subdir in applications icons mime mimelnk
@@ -392,6 +392,18 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s share/${subdir} \
 	    \( -type f -o -type l \) -print >> ${PLISTF}
 .endfor
+
+# XXX INSTALLS_ICONS does not work here, i.e., it runs *before* post-install.
+.if defined(INSTALLS_ICONS)
+	@for i in `${GREP} "^share/icons/.*/" ${PLISTF} | ${CUT} -d / -f 1-3 | ${SORT} -u`; do \
+		${ECHO_CMD} "@unexec /bin/rm %D/$${i}/icon-theme.cache 2>/dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}.icons1; \
+		${ECHO_CMD} "@exec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}; \
+	done
+.endif
 
 .if ${PORT_OPTIONS:MSDK}
 .for subdir in include share share/doc share/idl
@@ -408,9 +420,5 @@ post-install:
 	@${GREP} '^@dirrm ' ${PLISTD} | ${SORT} -ru >> ${TMPPLIST}
 	@${GREP} '^@dirrmtry ' ${PLISTD} | ${SORT} -ru | \
 	    ${SED} -e '${PLIST_REINPLACE_DIRRMTRY}' >> ${TMPPLIST}
-
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	@${INSTALL_SCRIPT} ${STAGEDIR}/etc/bash_completion.d/libreoffice.sh \
-	    ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 
 .include <bsd.port.post.mk>

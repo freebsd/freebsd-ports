@@ -12,6 +12,8 @@ SHA256 (libreoffice/2e482c7567908d334785ce7d69ddfff7-commons-codec-1.6-src.tar.g
 SIZE (libreoffice/2e482c7567908d334785ce7d69ddfff7-commons-codec-1.6-src.tar.gz) = 262206
 SHA256 (libreoffice/3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip) = 5826d1551bf599b85742545f6e01a0079b93c1b2c8434bf409eddb3a29e4726b
 SIZE (libreoffice/3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip) = 1180582
+SHA256 (libreoffice/35c94d2df8893241173de1d16b6034c0-swingExSrc.zip) = 64585ac36a81291a58269ec5347e7e3e2e8596dbacb9221015c208191333c6e1
+SIZE (libreoffice/35c94d2df8893241173de1d16b6034c0-swingExSrc.zip) = 9796
 SHA256 (libreoffice/39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip) = 085f2112c51fa8c1783fac12fbd452650596415121348393bb51f0f7e85a9045
 SIZE (libreoffice/39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip) = 153157
 SHA256 (libreoffice/3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip) = e0531091787c0f16c83965fdcbc49162c059d7f0c64669e7f119699321549743

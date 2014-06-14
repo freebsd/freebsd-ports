@@ -1,0 +1,123 @@
+--- bridges/source/cpp_uno/gcc3_linux_intel/except.cxx.orig	2014-04-30 15:49:45.000000000 -0400
++++ bridges/source/cpp_uno/gcc3_linux_intel/except.cxx	2014-06-13 18:15:56.000000000 -0400
+@@ -22,11 +22,6 @@
+ #include <dlfcn.h>
+ #include <boost/unordered_map.hpp>
+ 
+-#include <cxxabi.h>
+-#ifndef _GLIBCXX_CDTOR_CALLABI // new in GCC 4.7 cxxabi.h
+-#define _GLIBCXX_CDTOR_CALLABI
+-#endif
+-
+ #include <rtl/strbuf.hxx>
+ #include <rtl/ustrbuf.hxx>
+ #include <osl/diagnose.h>
+@@ -248,7 +243,11 @@
+             Reference< XInterface >() );
+     }
+ 
++#ifdef _LIBCPP_VERSION
++    pCppExc = __cxxabiv1::__cxa_allocate_exception( pTypeDescr->nSize );
++#else
+     pCppExc = __cxa_allocate_exception( pTypeDescr->nSize );
++#endif
+     ::uno_copyAndConvertData( pCppExc, pUnoExc->pData, pTypeDescr, pUno2Cpp );
+ 
+     // destruct uno exception
+@@ -280,7 +279,11 @@
+     }
+     }
+ 
++#ifdef _LIBCPP_VERSION
++    __cxxabiv1::__cxa_throw( pCppExc, rtti, deleteException );
++#else
+     __cxa_throw( pCppExc, rtti, deleteException );
++#endif
+ }
+ 
+ //==================================================================================================
+--- bridges/source/cpp_uno/gcc3_linux_intel/share.hxx.orig	2014-04-30 15:49:45.000000000 -0400
++++ bridges/source/cpp_uno/gcc3_linux_intel/share.hxx	2014-06-13 18:14:07.000000000 -0400
+@@ -25,10 +25,39 @@
+ 
+ #include <uno/any2.h>
+ 
+-namespace CPPU_CURRENT_NAMESPACE
++#include <cxxabi.h>
++#ifndef _GLIBCXX_CDTOR_CALLABI // new in GCC 4.7 cxxabi.h
++#define _GLIBCXX_CDTOR_CALLABI
++#endif
++
++#ifdef _LIBCPP_VERSION
++
++namespace __cxxabiv1
+ {
++    struct __class_type_info : public std::type_info
++    {
++        explicit __class_type_info( const char *__n ) : type_info( __n ) { }
++        virtual ~__class_type_info();
++    };
++
++    struct __si_class_type_info : public __class_type_info
++    {
++        explicit __si_class_type_info( const char *__n, const __class_type_info *__b ) :
++            __class_type_info( __n ), __base_type( __b ) { }
++        virtual ~__si_class_type_info();
++        const __class_type_info *__base_type;
++    };
+ 
+-void dummy_can_throw_anything( char const * );
++extern "C" void *__cxa_allocate_exception( std::size_t thrown_size ) _NOEXCEPT;
++
++extern "C" _LIBCPP_NORETURN void __cxa_throw(
++    void *thrown_exception, std::type_info *tinfo, void (*dest) (void *) );
++}
++
++#else
++
++namespace CPPU_CURRENT_NAMESPACE
++{
+ 
+ // ----- following decl from libstdc++-v3/libsupc++/unwind-cxx.h and unwind.h
+ 
+@@ -85,6 +114,13 @@
+ extern "C" void __cxa_throw (
+     void *thrown_exception, void *tinfo, void (*dest) (void *) ) __attribute__((noreturn));
+ #endif
++}
++#endif
++
++namespace CPPU_CURRENT_NAMESPACE
++{
++
++void dummy_can_throw_anything( char const * );
+ 
+ // -----
+ 
+@@ -93,8 +129,11 @@
+     uno_Any * pUnoExc, uno_Mapping * pUno2Cpp );
+ //==================================================================================================
+ void fillUnoException(
++#ifdef _LIBCPP_VERSION
++    __cxxabiv1::__cxa_exception * header, uno_Any *, uno_Mapping * pCpp2Uno );
++#else
+     __cxa_exception * header, uno_Any *, uno_Mapping * pCpp2Uno );
+-
++#endif
+ }
+ 
+ namespace x86
+--- bridges/source/cpp_uno/gcc3_linux_intel/uno2cpp.cxx.orig	2014-04-30 15:49:45.000000000 -0400
++++ bridges/source/cpp_uno/gcc3_linux_intel/uno2cpp.cxx	2014-06-13 18:18:11.000000000 -0400
+@@ -203,7 +203,11 @@
+      catch (...)
+      {
+           // fill uno exception
++#ifdef _LIBCPP_VERSION
++        CPPU_CURRENT_NAMESPACE::fillUnoException( __cxxabiv1::__cxa_get_globals()->caughtExceptions, *ppUnoExc, pThis->getBridge()->getCpp2Uno() );
++#else
+         fillUnoException( __cxa_get_globals()->caughtExceptions, *ppUnoExc, pThis->getBridge()->getCpp2Uno() );
++#endif
+ 
+         // temporary params
+         for ( ; nTempIndices--; )
