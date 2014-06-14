@@ -1,5 +1,5 @@
---- Makefile.BSD.orig	2008-08-31 16:19:03.000000000 +0800
-+++ Makefile.BSD	2008-08-31 16:22:54.000000000 +0800
+--- Makefile.BSD.orig	2005-05-14 02:56:03.000000000 +0800
++++ Makefile.BSD	2014-06-14 23:51:59.754882438 +0800
 @@ -17,15 +17,8 @@
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  #
@@ -17,7 +17,7 @@
  # BSD system
  DEFS += -DBSDSYS
  # define if your compiler/c-library is ISO C 9x standard compliant
-@@ -35,15 +28,14 @@
+@@ -35,15 +28,14 @@ DEFS += -DUSE_MEMMOVE
  # x86 architecture specific optimizations
  #DEFS += -DDSP_X86
  
@@ -33,9 +33,9 @@
 -PREFIX = /usr/local
 +PREFIX ?= /usr/local
  
- VERSION = 9:0:8
+ VERSION = 10:1:8
  
-@@ -137,34 +129,34 @@
+@@ -137,35 +129,35 @@ libdsp.la: $(OBJS)
  	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -rpath $(PREFIX)/lib -version-info $(VERSION) -o libdsp.la $(LOBJS) $(LIBS)
  
  install: libdsp.la
@@ -67,34 +67,36 @@
 -	install -m 644 dsp/dsptypes.h $(PREFIX)/include/dsp
 -	install -m 644 dsp/dspop.h $(PREFIX)/include/dsp
 -	install -m 644 dsp/X86.h $(PREFIX)/include/dsp
-+	${MKDIR} $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/DSPConfig.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/DSPOp.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/DSPVector.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/FFTDecimator.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/FFTInterpolator.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/FFTMultiRate.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/Filter.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/FIRDecimator.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/FIRInterpolator.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/FIRMultiRate.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/FlipBand.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/Hankel.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/IIRCascade.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/IIRDecimator.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/IIRInterpolator.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/IIRMultiRate.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/ReBuffer.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/ReBufferT.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/RecDecimator.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/RecInterpolator.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/RingBuffer.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/Transform4.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/Transform8.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/TransformS.hh $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/dsptypes.h $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/dspop.h $(PREFIX)/include/dsp
-+	${BSD_INSTALL_DATA} dsp/X86.h $(PREFIX)/include/dsp
- 	$(LIBTOOL) --mode=install install libdsp.la $(PREFIX)/lib
+-	$(LIBTOOL) --mode=install install libdsp.la $(PREFIX)/lib
++	${MKDIR} $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/DSPConfig.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/DSPOp.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/DSPVector.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FFTDecimator.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FFTInterpolator.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FFTMultiRate.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Filter.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FIRDecimator.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FIRInterpolator.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FIRMultiRate.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FlipBand.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Hankel.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/IIRCascade.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/IIRDecimator.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/IIRInterpolator.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/IIRMultiRate.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/ReBuffer.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/ReBufferT.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/RecDecimator.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/RecInterpolator.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/RingBuffer.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Transform4.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Transform8.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/TransformS.hh $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/dsptypes.h $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/dspop.h $(DESTDIR)$(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/X86.h $(DESTDIR)$(PREFIX)/include/dsp
++	$(LIBTOOL) --mode=install install libdsp.la $(DESTDIR)$(PREFIX)/lib
  
  libdsp.dep: $(SRCS)
+ 	$(CXX) $(DEFS) $(INCS) -MM $(SRCS) >libdsp.dep

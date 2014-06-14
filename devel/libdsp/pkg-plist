@@ -26,7 +26,6 @@ include/dsp/X86.h
 include/dsp/dspop.h
 include/dsp/dsptypes.h
 lib/libdsp.a
-lib/libdsp.la
 lib/libdsp.so
 lib/libdsp.so.10
 @dirrm include/dsp
