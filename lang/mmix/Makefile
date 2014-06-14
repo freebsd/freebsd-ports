@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	mmix
-PORTVERSION=	20110831
+PORTVERSION=	20131017
 CATEGORIES=	lang
-MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/ \
-		http://mirror.mcx2.org/
+MASTER_SITES=	http://mmix.cs.hm.edu/src/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	RISC computer designed by Donald E. Knuth
+
+LICENSE=	mmix
+LICENSE_NAME=	mmix license
+LICENSE_FILE=	${FILESDIR}/LICENSE.txt
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
