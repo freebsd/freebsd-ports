@@ -1,0 +1,48 @@
+--- src/util.cpp-orig	2014-06-11 20:24:54.000000000 +0200
++++ src/util.cpp	2014-06-11 20:26:48.000000000 +0200
+@@ -19,6 +19,7 @@
+ #include <errno.h>
+ #include <math.h>
+ 
++#include <sys/types.h>
+ #include "md5.h"
+ 
+ #include <qregexp.h>
+@@ -5283,16 +5284,16 @@
+     if (resultLen>=128) // prevent names that cannot be created!
+     {
+       // third algorithm based on MD5 hash
+-      uchar md5_sig[16];
+       QCString sigStr(33);
+-      MD5Buffer((const unsigned char *)result.data(),resultLen,md5_sig);
+-      MD5SigToString(md5_sig,sigStr.data(),33);
++      MD5Data((const unsigned char *)result.data(),resultLen,sigStr.data());
+       result=result.left(128-32)+sigStr; 
+     }
+   }
+   if (createSubdirs)
+   {
++#if MAP_ALGO==ALGO_COUNT || MAP_ALGO==ALGO_CRC16
+     int l1Dir=0,l2Dir=0;
++#endif
+ 
+ #if MAP_ALGO==ALGO_COUNT 
+     // old algorithm, has the problem that after regeneration the
+@@ -5323,12 +5324,13 @@
+     l2Dir = (dirNum>>4)&0xff;
+ #elif MAP_ALGO==ALGO_MD5
+     // third algorithm based on MD5 hash
+-    uchar md5_sig[16];
+-    MD5Buffer((const unsigned char *)result.data(),result.length(),md5_sig);
+-    l1Dir = md5_sig[14]&0xf;
+-    l2Dir = md5_sig[15];
++    char md5[33];
++    MD5Data((const unsigned char *)result.data(),result.length(),md5);
++    result.prepend(QCString().sprintf("d%c/d%c%c/",md5[29],md5[30],md5[31]));
+ #endif
++#if MAP_ALGO==ALGO_COUNT || MAP_ALGO==ALGO_CRC16
+     result.prepend(QCString().sprintf("d%x/d%02x/",l1Dir,l2Dir));
++#endif
+   }
+   //printf("*** convertNameToFile(%s)->%s\n",name,result.data());
+   return result;
