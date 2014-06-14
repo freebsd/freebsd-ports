@@ -1,24 +1,21 @@
-Scm conforms to Revised^5 Report on the Algorithmic Language Scheme and the IEEE
-P1178 specification.  Scm is written in C and runs under Amiga, Atari-ST, MacOS,
-MS-DOS, OS/2, NOS/VE, Unicos, VMS, Unix and similar systems.  ASCII and EBCDIC
-are supported.
-
-Documentation is included explaining the many Scheme Language extensions in scm,
-the internal representation and how to extend or include scm in other programs.
+Scm conforms to Revised^5 Report on the Algorithmic Language Scheme and
+the IEEE P1178 specification.
 
 SLIB is a portable Scheme library which SCM uses.
 
 SLIB-PSD is a portable debugger for Scheme (requires emacs editor).
 
-The init file is hard-coded as /usr/local/lib/scm/Init.scm.  Alternatively,
-one can set the environment variable SCM_INIT_PATH to the pathname of Init.scm.
+The init file is hard-coded as /usr/local/lib/scm/Init.scm.
+Alternatively, one can set the environment variable SCM_INIT_PATH to the
+pathname of Init.scm.
 
-The library files are in /usr/local/lib/scm/slib.  Alternatively, one can set
-the environment variable SCHEME_LIBRARY_PATH to the slib directory.  Remember to
-use a trailing / on the pathname.
+The library files are in /usr/local/lib/scm/slib. Alternatively, one can
+set the environment variable SCHEME_LIBRARY_PATH to the slib directory.
+Remember to use a trailing / on the pathname.
 
-By default -DSICP is turned on, with the expectation that this is the major
-reason for this port.  This means test.scm will fail on three tests in section
-6.1.  Where strict R4S compliance is important, recompile without the SICP flag.
+By default -DSICP is turned on, with the expectation that this is the
+major reason for this port. This means test.scm will fail on three tests
+in section 6.1. Where strict R4S compliance is important, recompile
+without the SICP flag.
 
 WWW: http://people.csail.mit.edu/jaffer/SCM
