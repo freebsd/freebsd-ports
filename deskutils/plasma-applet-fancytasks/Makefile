@@ -14,12 +14,10 @@ COMMENT=	Plasmoid fancy representation of your tasks and launchers
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_KDE4=	automoc4 kdeprefix kdelibs workspace qimageblitz
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
