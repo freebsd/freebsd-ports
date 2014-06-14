@@ -57,6 +57,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="52bbc7e8-f13c-11e3-bc09-bcaec565249c">
+    <topic>dbus -- local DoS</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><ge>1.8.0</ge><lt>1.8.4</lt></range>
+	<range><lt>1.6.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon MvVittie reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/dbus/2014-June/016220.html">
+	  <p>Alban Crequy at Collabora Ltd. discovered and fixed a
+	    denial-of-service flaw in dbus-daemon, part of the reference
+	    implementation of D-Bus.  Additionally, in highly unusual
+	    environments the same flaw could lead to a side channel between
+	    processes that should not be able to communicate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3477</cvename>
+      <url>http://lists.freedesktop.org/archives/dbus/2014-June/016220.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-10</discovery>
+      <entry>2014-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b0fb9b0-f0fb-11e3-9bcd-000c6e25e3e9">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
