@@ -6,5 +6,5 @@
  #include <string>
 +#include <ctime>
  
- namespace workrave {
+ #include "enum.h"
  
