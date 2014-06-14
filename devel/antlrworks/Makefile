@@ -28,20 +28,19 @@ PLIST_FILES=	bin/antlrworks \
 		${JAVAJARDIR:C,${PREFIX}/?,,}/${PORTNAME}.jar \
 		share/pixmaps/antlrworks.png
 
-NO_STAGE=	yes
 do-install:
 	${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|' \
 	-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	-e 's|%%PORTNAME%%|${PORTNAME}|' \
 	-e 's|%%JAVA_VERSION%%|${JAVA_VERSION}|' ${FILESDIR}/antlrworks.sh > ${WRKDIR}/antlrworks.sh
 
-	@${MKDIR} ${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing antlrworks script as ${PREFIX}/bin/antlrworks..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/antlrworks.sh ${PREFIX}/bin/antlrworks
+	@${INSTALL_SCRIPT} ${WRKDIR}/antlrworks.sh ${STAGEDIR}${PREFIX}/bin/antlrworks
 	@${ECHO_MSG} " [ DONE ]"
-	@${INSTALL_DATA} ${WRKDIR}/icons/app_64x64.png ${PREFIX}/share/pixmaps/antlrworks.png
+	@${INSTALL_DATA} ${WRKDIR}/icons/app_64x64.png ${STAGEDIR}${PREFIX}/share/pixmaps/antlrworks.png
 
 .include <bsd.port.mk>
