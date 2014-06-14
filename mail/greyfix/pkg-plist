@@ -1,4 +1,9 @@
-@exec mkdir -m 700 -p /var/db/greyfix && chown nobody /var/db/greyfix
+man/man8/greyfix.8.gz
 sbin/greyfix
-@cwd /
+@owner nobody
+@group mail
+@mode 770
 @dirrmtry /var/db/greyfix
+@mode
+@group
+@owner

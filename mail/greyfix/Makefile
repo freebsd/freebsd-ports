@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	greyfix
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.kim-minh.com/pub/greyfix/
+MASTER_SITES=	http://www.kim-minh.com/pub/greyfix/ \
+		http://stereochro.me/distfiles/
 
 MAINTAINER=	k@stereochro.me
-COMMENT=	A greylisting policy daemon for Postfix
+COMMENT=	Greylisting policy daemon for Postfix
 
 SUB_FILES=	pkg-message
 
-USE_BDB=	yes
+USE_BDB=	5+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-berkeleydb-libdir=${BDB_LIB_DIR} \
+CONFIGURE_ARGS+=--with-berkeleydb-libdir=${BDB_LIB_DIR} \
 		--with-berkeleydb-includedir=${BDB_INCLUDE_DIR} \
 		--localstatedir=/var
 
@@ -23,7 +24,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 do-install:
+	@${MKDIR} ${STAGEDIR}/var/db/greyfix
 	${INSTALL_PROGRAM} ${WRKSRC}/greyfix ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL} -o nobody -m 700 -d ${STAGEDIR}/var/db/greyfix
+	${INSTALL_MAN} ${FILESDIR}/greyfix.8 ${STAGEDIR}${MAN1PREFIX}/man/man8/
 
 .include <bsd.port.mk>
