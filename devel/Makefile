@@ -389,6 +389,7 @@
     SUBDIR += eblob
     SUBDIR += ebnf2yacc
     SUBDIR += ecb
+    SUBDIR += ecgi
     SUBDIR += eclipse-eclemma
     SUBDIR += ecore
     SUBDIR += ecore-file

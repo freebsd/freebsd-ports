@@ -1,0 +1,9 @@
+bin/html2h
+lib/libecgi.a
+lib/libecgi.so
+include/ecgi/ecgi.h
+include/ecgi/ecgitk.h
+include/ecgi/memfile.h
+%%PORTDOCS%%share/doc/ecgi/ecgitut.txt
+%%PORTDOCS%%@dirrm share/doc/ecgi
+@dirrm include/ecgi
