@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sg3_utils
-PORTVERSION=	1.38
+PORTVERSION=	1.39
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Set of utilities that send SCSI commands to devices
 
-USES=		gmake shebangfix
+USES=		gmake libtool shebangfix
 SHEBANG_FILES=	scripts/scsi_*
 
 post-install:
