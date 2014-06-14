@@ -1,0 +1,19 @@
+--- src/dirdef.cpp-orig	2014-06-11 20:11:16.000000000 +0200
++++ src/dirdef.cpp	2014-06-11 20:11:59.000000000 +0200
+@@ -1,3 +1,4 @@
++#include <sys/types.h>
+ #include "md5.h"
+ 
+ #include "dirdef.h"
+@@ -83,10 +84,8 @@
+   QCString result;
+ 
+   // convert to md5 hash
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)anchor.data(),anchor.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)anchor.data(),anchor.length(),sigStr.data());
+   return sigStr;
+ 
+   // old algorithm

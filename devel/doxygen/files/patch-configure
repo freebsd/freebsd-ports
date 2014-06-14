@@ -1,15 +1,28 @@
---- configure.orig	2012-12-27 06:24:51.000000000 -0500
-+++ configure	2012-12-28 12:12:33.000000000 -0500
-@@ -281,7 +281,7 @@
+--- configure.orig	2014-04-20 17:17:29.000000000 +0200
++++ configure	2014-06-13 23:25:23.000000000 +0200
+@@ -363,25 +363,25 @@
      echo "  QTDIR environment variable not set!"
-     echo -n "  Checking for Qt..."
+     printf "  Checking for Qt..."
      for d in /usr/{lib,share,qt}/{qt-4,qt4,qt,qt*,4} /usr; do
 -      if test -x "$d/bin/qmake"; then
 +      if test -x "$d/bin/qmake-qt4"; then
          QTDIR=$d
+         break 2
        fi
      done
-@@ -292,7 +292,7 @@
+   else
+-    if test -e "$QTDIR/bin/qmake"; then
++    if test -e "$QTDIR/bin/qmake-qt4"; then
+       printf "  Detected Qt via the QTDIR environment variable..."
+     else
+       printf "ERROR Detected Qt via the QTDIR environment variable..."
+-      echo ", but $QTDIR/bin/qmake does not exist."
+-      echo "      Set the QTDIR environment variable such that \$QTDIR/bin/qmake exists."
++      echo ", but $QTDIR/bin/qmake-qt4 does not exist."
++      echo "      Set the QTDIR environment variable such that \$QTDIR/bin/qmake-qt4 exists."
+       exit 2
+     fi
+   fi
    if test -z "$QTDIR"; then
      echo "QTDIR not set and Qt not found at standard locations!"
      echo
@@ -18,7 +31,7 @@
      echo "check the Qt installation instructions!"
      exit 2
    fi
-@@ -604,7 +604,7 @@
+@@ -848,7 +848,7 @@
  fi
  if test "$f_wizard" = YES; then
    cat >> .tmakeconfig <<EOF
@@ -27,7 +40,7 @@
  EOF
  fi
  
-@@ -621,7 +621,7 @@
+@@ -859,7 +859,7 @@
  EOF
  fi
  
@@ -36,17 +49,17 @@
  
  for i in $f_inmakefiles ; do
       SRC=$i
-@@ -645,7 +645,6 @@
-        fi
-        echo "all: src/version.cpp $EXTRADEPS" >> $DST
+@@ -883,7 +883,6 @@
+ #       fi
+        echo "all: generated_src/doxygen/version.cpp $EXTRADEPS" >> $DST
         echo "	\$(MAKE) -C qtools" >> $DST
 -       echo "	\$(MAKE) -C libmd5" >> $DST
         echo "	\$(MAKE) -C src" >> $DST
         if test $f_wizard = YES; then
           echo "	\$(MAKE) MAN1DIR=\$(MAN1DIR) -C addon/doxywizard" >> $DST
-@@ -678,7 +677,7 @@
- cat src/libdoxycfg.t.in | sed -e "s|%%FLEX%%|$f_flex|g" -e "s|%%BISON%%|$f_bison|g" > src/libdoxycfg.t
- cat src/libdoxygen.t.in | sed -e "s|%%FLEX%%|$f_flex|g" -e "s|%%BISON%%|$f_bison|g" > src/libdoxygen.t
+@@ -921,7 +920,7 @@
+ cat src/libdoxycfg.t.in | sed -e "s|%%FLEX%%|$f_flex|g" -e "s|%%BISON%%|$f_bison|g" -e "s|%%PYTHON%%|$f_python|g" > src/libdoxycfg.t
+ cat src/libdoxygen.t.in | sed -e "s|%%FLEX%%|$f_flex|g" -e "s|%%BISON%%|$f_bison|g" -e "s|%%PYTHON%%|$f_python|g" > src/libdoxygen.t
  
 -f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in libmd5/libmd5.pro.in addon/doxyapp/doxyapp.pro.in addon/doxysearch/doxysearch.pro.in addon/doxysearch/doxyindexer.pro.in" 
 +f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in addon/doxyapp/doxyapp.pro.in addon/doxysearch/doxysearch.pro.in addon/doxysearch/doxyindexer.pro.in" 
