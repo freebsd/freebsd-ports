@@ -1,6 +1,6 @@
 --- src/Makefile.in.orig	2012-02-21 04:10:20.000000000 +0900
 +++ src/Makefile.in	2012-05-15 17:11:18.000000000 +0900
-@@ -330,12 +330,12 @@
+@@ -405,12 +405,12 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  GNU_VERBOSITY := $(if $(findstring GNU,$(shell $(MAKE) -v)),0,1)
@@ -16,3 +16,12 @@
  	    -DLOCALEDIR=\"$(localedir)\"
  
  gxine_SOURCES = \
+@@ -452,7 +452,7 @@
+ gxine_LDADD = $(XINE_LIBS) $(GTK2_LIBS) $(GTHREAD2_LIBS) \
+ 	      $(JS_LIBS) $(HAL_LIBS) $(UDEV_LIBS) $(DBUS_LIBS) $(LIRC_LIBS) \
+ 	      $(X_LIBS) $(X_EXTRA_LIBS) $(XEXT_LIBS) $(XTEST_LIBS) \
+-	      $(XINERAMA_LIBS) $(XRANDR_LIBS) $(XCB_LIBS) -ldl -lm
++	      $(XINERAMA_LIBS) $(XRANDR_LIBS) $(XCB_LIBS) -lm
+ 
+ gxine_client_SOURCES = client.c console_output.c
+ gxine_client_CFLAGS = $(AM_CFLAGS) -DGXINE_CLIENT

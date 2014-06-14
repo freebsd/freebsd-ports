@@ -5,9 +5,7 @@ bin/gxine_client
 %%ETCDIR%%/startup
 %%ETCDIR%%/toolbar-fullscreen.xml
 %%ETCDIR%%/toolbar-window.xml
-%%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.a
-%%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.la
-%%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.so
+%%WEBPLUGIN%%lib/gxine/gxineplugin.so
 man/man1/gxine.1.gz
 man/man1/gxine_client.1.gz
 man/de/man1/gxine.1.gz
@@ -62,5 +60,5 @@ share/pixmaps/gxine.png
 @dirrmtry man/es
 @dirrmtry man/de/man1
 @dirrmtry man/de
-@dirrm lib/gxine
+%%WEBPLUGIN%%@dirrm lib/gxine
 @dirrm %%ETCDIR%%
