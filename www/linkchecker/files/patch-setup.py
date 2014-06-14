@@ -1,6 +1,6 @@
 --- setup.py.orig
 +++ setup.py
-@@ -326,15 +326,6 @@
+@@ -328,15 +328,6 @@
  class MyInstallLib (install_lib, object):
      """Custom library installation."""
  
@@ -16,7 +16,7 @@
      def create_conf_file (self):
          """Create configuration file."""
          cmd_obj = self.distribution.get_command_obj("install")
-@@ -385,7 +376,6 @@
+@@ -390,7 +381,6 @@
  
      def run (self):
          """Adjust permissions on POSIX systems."""
@@ -24,7 +24,7 @@
          super(MyInstallData, self).run()
          self.fix_permissions()
  
-@@ -583,7 +573,6 @@
+@@ -588,7 +578,6 @@
      def run (self):
          """Check MANIFEST and build message files before building."""
          check_manifest()
@@ -32,18 +32,18 @@
          build.run(self)
  
  
-@@ -627,8 +616,6 @@
+@@ -632,8 +621,6 @@
  if os.name == 'nt':
      # windows does not have unistd.h
      define_macros.append(('YY_NO_UNISTD_H', None))
 -else:
 -    extra_compile_args.append("-pedantic")
  
- myname = "Bastian Kleineidam"
- myemail = "bastian.kleineidam@web.de"
-@@ -898,9 +885,6 @@
+ if sys.platform == 'darwin':
+     define_macros.extend([('HAVE_STRLCPY', None), ('HAVE_STRLCAT', None)])
+@@ -900,9 +887,6 @@
+         'py2exe': MyPy2exe,
          'py2app': MyPy2app,
-         'register': MyRegister,
      },
 -    package_dir = {
 -        'linkcheck_dns.dns': 'third_party/dnspython/dns',
@@ -51,10 +51,10 @@
      packages = [
          'linkcheck',
          'linkcheck.bookmarks',
-@@ -913,10 +897,6 @@
-         'linkcheck.HtmlParser',
-         'linkcheck.logger',
+@@ -917,10 +901,6 @@
          'linkcheck.network',
+         'linkcheck.parser',
+         'linkcheck.plugins',
 -        'linkcheck_dns.dns',
 -        'linkcheck_dns.dns.rdtypes',
 -        'linkcheck_dns.dns.rdtypes.ANY',
@@ -62,7 +62,7 @@
      ],
      ext_modules = [
          Extension('linkcheck.HtmlParser.htmlsax',
-@@ -941,7 +921,6 @@
+@@ -945,7 +925,6 @@
          ),
      ],
      scripts = scripts,
