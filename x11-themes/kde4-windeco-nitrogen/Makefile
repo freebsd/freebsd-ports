@@ -12,10 +12,14 @@ DISTNAME=	99551-${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-Source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE4 window decoration
 
+LICENSE=	GPLv2
+
+DEPRECATED=	Merged with the Oxygen windeco included with KDE4
+EXPIRATION_DATE=	2014-07-14
+
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USES=		cmake
+USES=		cmake gettext
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-Source
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
