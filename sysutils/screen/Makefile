@@ -3,7 +3,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -69,6 +69,10 @@ EXTRA_PATCHES+=	${FILESDIR}/opt-showencoding
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
 	@${REINPLACE_CMD} -e 's|/dev/ptmx|/nonexistent|' ${WRKSRC}/configure
+
+# Bug 191017
+post-configure:
+	@${ECHO_CMD} '#define NAMEDPIPE 1' >> ${WRKSRC}/config.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
