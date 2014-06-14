@@ -7,7 +7,7 @@ include/lfcxml/XMLInStream.h
 include/lfcxml/XMLOutStream.h
 include/lfcxml/XMLSuite.h
 lib/liblfcxml.a
-lib/liblfcxml.la
 lib/liblfcxml.so
 lib/liblfcxml.so.1
+lib/liblfcxml.so.1.0.0
 @dirrm include/lfcxml
