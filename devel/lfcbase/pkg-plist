@@ -33,7 +33,7 @@ include/lfcbase/Timer.h
 include/lfcbase/Tokenizer.h
 include/lfcbase/TreeT.h
 lib/liblfcbase.a
-lib/liblfcbase.la
 lib/liblfcbase.so
 lib/liblfcbase.so.1
+lib/liblfcbase.so.1.0.0
 @dirrm include/lfcbase
