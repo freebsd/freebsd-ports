@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p4d
-PORTVERSION=	2012.1.549175
+PORTVERSION=	2012.1.876219
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
 		http://filehost.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/
@@ -34,7 +34,6 @@ SUB_LIST=	P4ROOT=${P4ROOT} \
 
 USE_RC_SUBR=	p4d
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${.CURDIR}/../p4/Makefile.inc"
@@ -43,21 +42,14 @@ USERS=	p4admin
 GROUPS=	p4admin
 
 do-install:
-	${INSTALL_PROGRAM} ${_DISTDIR}/p4d ${PREFIX}/sbin/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-	${MKDIR} ${DESTDIR}${P4ROOT}
-	${CHOWN} p4admin:p4admin ${DESTDIR}${P4ROOT}
-	${CHMOD} 750 ${DESTDIR}${P4ROOT}
-	${TOUCH} ${DESTDIR}${P4LOG}
-	${CHOWN} p4admin:p4admin ${DESTDIR}${P4LOG}
-	${CHMOD} 640 ${DESTDIR}${P4LOG}
-	@${ECHO_CMD} "@exec ${MKDIR} ${DESTDIR}${P4ROOT}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${DESTDIR}${P4ROOT}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHMOD} 750 ${DESTDIR}${P4ROOT}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${TOUCH} ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHMOD} 640 ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
+	${INSTALL_PROGRAM} ${_DISTDIR}/p4d ${STAGEDIR}${PREFIX}/sbin/
+	@${MKDIR} ${STAGEDIR}${P4ROOT}
+	@${ECHO_CMD} "@exec ${MKDIR} ${P4ROOT}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${P4ROOT}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 750 ${P4ROOT}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} ${P4ROOT} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${TOUCH} ${P4LOG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${P4LOG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 640 ${P4LOG}" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
