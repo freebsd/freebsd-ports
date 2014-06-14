@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dar
-PORTVERSION=	2.4.12
-PORTREVISION=	1
+PORTVERSION=	2.4.13
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -12,19 +11,19 @@ COMMENT=	Command-line backup tool, aimed for disks
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		pathfix shebangfix libtool
+USES=		libtool pathfix shebangfix
 SHEBANG_FILES=	doc/samples/dar_backup doc/samples/*.bash doc/samples/*.sh
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --disable-build-html \
 		--disable-upx --disable-libgcrypt-linking \
 		--disable-ea-support --disable-nodump-flag \
-		--disable-gnugetopt
+		--disable-gnugetopt --disable-dar-static
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		DOCS LZO NLS
 OPTIONS_SUB=		yes
@@ -43,7 +42,8 @@ LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/LIBS/s|-lpthread|-pthread|' ${WRKSRC}/configure
+		's|(char \*\*) \(\&inptr,\)|\1| ; \
+		 /LIBS/s|-lpthread|-pthread|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC}/doc -name "Makefile.in" | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|$$(pkgdatadir)|$$(docdir)|g'
