@@ -30,7 +30,6 @@ SUB_LIST=	P4LOG=${P4LOG}
 
 USE_RC_SUBR=	p4ftpd
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${.CURDIR}/../p4/Makefile.inc"
@@ -39,14 +38,9 @@ USERS=	p4admin
 GROUPS=	p4admin
 
 do-install:
-	${INSTALL_PROGRAM} ${_DISTDIR}/p4ftpd ${PREFIX}/sbin/
-
-post-install:
-	${TOUCH} ${DESTDIR}${P4LOG}
-	${CHOWN} p4admin:p4admin ${DESTDIR}${P4LOG}
-	${CHMOD} 640 ${DESTDIR}${P4LOG}
-	@${ECHO_CMD} "@exec ${TOUCH} ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHMOD} 640 ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
+	${INSTALL_PROGRAM} ${_DISTDIR}/p4ftpd ${STAGEDIR}${PREFIX}/sbin/
+	@${ECHO_CMD} "@exec ${TOUCH} ${P4LOG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${P4LOG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 640 ${P4LOG}" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

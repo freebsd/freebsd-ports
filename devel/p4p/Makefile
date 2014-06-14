@@ -34,7 +34,6 @@ SUB_LIST=	P4CACHE=${P4CACHE} \
 
 USE_RC_SUBR=	p4p
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${.CURDIR}/../p4/Makefile.inc"
@@ -43,20 +42,14 @@ USERS=	p4admin
 GROUPS=	p4admin
 
 do-install:
-	${INSTALL_PROGRAM} ${_DISTDIR}/p4p ${PREFIX}/sbin/
-
-post-install:
-	${MKDIR} ${DESTDIR}${P4CACHE}
-	${CHOWN} p4admin:p4admin ${DESTDIR}${P4CACHE}
-	${CHMOD} 750 ${DESTDIR}${P4CACHE}
-	${TOUCH} ${DESTDIR}${P4LOG}
-	${CHOWN} p4admin:p4admin ${DESTDIR}${P4LOG}
-	${CHMOD} 640 ${DESTDIR}${P4LOG}
-	@${ECHO_CMD} "@exec ${MKDIR} ${DESTDIR}${P4CACHE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${DESTDIR}${P4CACHE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHMOD} 750 ${DESTDIR}${P4CACHE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${TOUCH} ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHMOD} 640 ${DESTDIR}${P4LOG}" >> ${TMPPLIST}
+	${INSTALL_PROGRAM} ${_DISTDIR}/p4p ${STAGEDIR}${PREFIX}/sbin/
+	@${MKDIR} ${STAGEDIR}${P4CACHE}
+	@${ECHO_CMD} "@exec ${MKDIR} ${P4CACHE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${P4CACHE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 750 ${P4CACHE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} ${P4CACHE} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${TOUCH} ${P4LOG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${P4LOG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 640 ${P4LOG}" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
