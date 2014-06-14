@@ -1,13 +1,13 @@
 # Created by: Martin Kammerhofer <mkamm@gmx.net>
 # $FreeBSD$
 
-PORTNAME=		jline
-PORTVERSION=		0.9.94
-CATEGORIES=		devel java
-MASTER_SITES=		SF
+PORTNAME=	jline
+PORTVERSION=	0.9.94
+CATEGORIES=	devel java
+MASTER_SITES=	SF
 
 MAINTAINER=	mkamm@gmx.net
-COMMENT=	JLine is a Java library for handling console input
+COMMENT=	Java library for handling console input
 
 LICENSE=	BSD
 
@@ -17,8 +17,8 @@ USE_JAVA=	yes
 OPTIONS_DEFINE=	JLINEPATCH
 JLINEPATCH_DESC=	Allow ConsoleRunner customized completion
 JLINEJAR=	${WRKSRC}/jline-${PORTVERSION}.jar
+SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Update jar archive with patched jline.ConsoleRunner class.
@@ -31,20 +31,15 @@ do-build:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${JLINEJAR} ${JAVAJARDIR}
-	${LN} -nfs ${JAVAJARDIR}/jline-${PORTVERSION}.jar \
-		   ${JAVAJARDIR}/jline.jar
+	${INSTALL_DATA} ${JLINEJAR} ${STAGEDIR}${JAVAJARDIR}
+	${LN} -nfs jline-${PORTVERSION}.jar \
+		   ${STAGEDIR}${JAVAJARDIR}/jline.jar
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/apidocs ${WRKSRC}/examples ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/JLineCompleter.py ${DOCSDIR}/examples
-	${INSTALL_DATA} ${FILESDIR}/jython.sh ${DOCSDIR}/examples
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/apidocs ${WRKSRC}/examples ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/JLineCompleter.py ${STAGEDIR}${DOCSDIR}/examples
+	${INSTALL_DATA} ${FILESDIR}/jython.sh ${STAGEDIR}${DOCSDIR}/examples
 .endif
-
-post-install:
-	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' -- \
-		${.CURDIR}/pkg-message >${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 # Next rule is for maintainer use only: Automatically (re)create the pkg-plist.
 plist:
