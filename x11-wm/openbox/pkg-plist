@@ -198,4 +198,3 @@ share/xsessions/openbox.desktop
 @dirrm include/openbox/%%VERSION%%
 @dirrm include/openbox
 @dirrm etc/xdg/openbox
-@dirrmtry etc/xdg
