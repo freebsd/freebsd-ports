@@ -37,7 +37,6 @@ DOCS=		CHANGES \
 DOCS_UTIL=	README \
 		TODO
 
-NO_STAGE=	yes
 post-extract:
 	${SED} -e 's:"\.\./\.\./ming\.h":<ming.h>:g' \
 		${WRKSRC}/ming.h > ${WRKSRC}/mingpp.h
@@ -69,19 +68,19 @@ post-build:
 	${CC} ${CFLAGS} -L${PREFIX}/lib -o swftophp swftophp.o blocktypes.o decompile.o read.o -lm
 
 pre-install:
-	${MKDIR} ${PREFIX}/include/ming/blocks
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/ming/blocks
 
 post-install:
 .for f in ${UTILS}
-	${INSTALL_PROGRAM} ${WRKSRC}/../util/${f} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/../util/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ming/utils
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ming/utils
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/../${f} ${PREFIX}/share/doc/ming/
+	${INSTALL_DATA} ${WRKSRC}/../${f} ${STAGEDIR}${PREFIX}/share/doc/ming/
 .endfor
 .for f in ${DOCS_UTIL}
-	${INSTALL_DATA} ${WRKSRC}/../util/${f} ${PREFIX}/share/doc/ming/utils/
+	${INSTALL_DATA} ${WRKSRC}/../util/${f} ${STAGEDIR}${PREFIX}/share/doc/ming/utils/
 .endfor
 .endif
 

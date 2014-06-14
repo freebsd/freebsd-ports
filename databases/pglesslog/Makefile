@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/pg_lesslog_${PORTVERSION}_pg84
 PGSQL_PORT=	databases/postgresql${PGSQL_VER}
 PGSQL_SRCDIR=	`cd ${PORTSDIR}/${PGSQL_PORT}-server; ${MAKE} -VWRKSRC`
 
-NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} "s|top_builddir = ../..|top_builddir = ${PGSQL_SRCDIR}|" ${WRKSRC}/Makefile.*
 
