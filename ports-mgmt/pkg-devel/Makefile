@@ -11,7 +11,7 @@ MASTER_SITES=	\
 		LOCAL/portmgr
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	portmgr@FreeBSD.org
+MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
