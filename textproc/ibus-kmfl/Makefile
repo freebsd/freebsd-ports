@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus-kmfl
 PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/${PORTNAME}/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
@@ -12,9 +12,9 @@ DIST_SUBDIR=	kmfl
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL IMEngine for IBus framework
 
-LIB_DEPENDS=	ibus-1.0:${PORTSDIR}/textproc/ibus \
-		kmfl.0:${PORTSDIR}/textproc/libkmfl \
-		kmflcomp.0:${PORTSDIR}/textproc/kmflcomp
+LIB_DEPENDS=	libibus-1.0.so:${PORTSDIR}/textproc/ibus \
+		libkmfl.so:${PORTSDIR}/textproc/libkmfl \
+		libkmflcomp.so:${PORTSDIR}/textproc/kmflcomp
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 USES=		pkgconfig gmake
@@ -23,8 +23,6 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	NLS
 
