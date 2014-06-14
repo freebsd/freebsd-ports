@@ -1,0 +1,70 @@
+%%EXAMPLESDIR%%/java/org/scalatestexamples/easymock/ClassTested.java
+%%EXAMPLESDIR%%/java/org/scalatestexamples/easymock/Collaborator.java
+%%EXAMPLESDIR%%/java/org/scalatestexamples/easymock/ThrowableEquals.java
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/FeatureSpecStackBehaviors.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/FlatStackBehaviors.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/ParallelTestExecutionExampleSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/SharedTestExampleSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/StackCanWordSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/StackFeatureSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/StackFixtureCreationMethods.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/StackFlatSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/StackMustWordSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/StackShorthandFlatSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/StackShouldWordSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/StackSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/TVFeatureSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/WordStackBehaviors.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/concurrent/ConductorExamples.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/easymock/EasyMockExampleFixtureFlatSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/easymock/EasyMockExampleFlatSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/easymock/EasyMockExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/featurespec/ArithmeticFeatureSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/featurespec/GivenWhenThenArithmeticFeatureSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/featurespec/InfoArithmeticFeatureSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/featurespec/PendingArithmeticFeatureSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/featurespec/PendingGivenWhenThenArithmeticSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/MultiFixtureFunSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/TVFixtureFeatureSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/funsuite/WithTempFileExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/funsuite/WithTempFileFromConfigMapExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/suite/CaseClassFixtureSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/suite/TupleFixtureSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/funsuite/BeforeAndAfterEachExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/funsuite/CreateFixtureExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/funsuite/ExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/funsuite/ImmutableSharedFixtureExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/funsuite/WithFixtureExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/funsuite/WithTempFileExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/helpers/Stack.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/jmock/JMockExampleFixtureFlatSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/junit/ErrorJUnitSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/junit/JUnit3ExampleSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/junit/JUnitTestCaseSuite.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/matchers/ShouldStackFlatSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/matchers/ShouldStackSpec.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/scalaarchetypesimple/ScalaTestExamples.scala
+%%EXAMPLESDIR%%/scala/org/scalatestexamples/testng/ErrorTestNGSuite.scala
+share/scala/lib/scalatest-tests.jar
+share/scala/lib/scalatest.jar
+@dirrmtry %%EXAMPLESDIR%%/java/org/scalatestexamples/easymock
+@dirrmtry %%EXAMPLESDIR%%/java/org/scalatestexamples
+@dirrmtry %%EXAMPLESDIR%%/java/org
+@dirrmtry %%EXAMPLESDIR%%/java
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/concurrent
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/easymock
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/featurespec
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/funsuite
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture/suite
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/fixture
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/funsuite
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/helpers
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/jmock
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/junit
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/matchers
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/scalaarchetypesimple
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples/testng
+@dirrmtry %%EXAMPLESDIR%%/scala/org/scalatestexamples
+@dirrmtry %%EXAMPLESDIR%%/scala/org
+@dirrmtry %%EXAMPLESDIR%%/scala
+@dirrmtry %%EXAMPLESDIR%%
