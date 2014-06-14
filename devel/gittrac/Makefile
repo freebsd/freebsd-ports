@@ -12,5 +12,4 @@ MASTERDIR=	${.CURDIR}/../cvstrac
 MAKE_ARGS=	APPNAME=gittrac
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
