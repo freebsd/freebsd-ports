@@ -15,12 +15,11 @@ USES=		perl5
 USE_PERL5=	run
 CONFLICTS=	mg-200*
 
-NO_STAGE=	yes
 do-build:
 	${SED} -e "s|/usr/local|${PREFIX}|g" \
 		${DISTDIR}/${DISTFILES} > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -12,7 +12,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	GNU screen like utility on Emacsen
 
 USE_EMACS=	yes
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if (${EMACS_PORT_NAME} == "emacs20")
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
@@ -26,11 +25,11 @@ EMACS_NO_BUILD_DEPENDS=	YES
 NO_BUILD=	YES
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/elscreen.el ${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/elscreen.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .include <bsd.port.post.mk>

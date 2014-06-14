@@ -25,9 +25,6 @@ PORTDOCS+=	TODO
 PORTDOCShtml=	pgpool-en.html pgpool-ja.html pgpool.css
 PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 
-MAN8=		pgpool.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure
@@ -38,20 +35,23 @@ post-build:
 	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE}
 
 post-install:
-	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE} ${INSTALL_TARGET}
-	${INSTALL_DATA} ${WRKSRC}/sample/dist_def_pgbench.sql ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/replicate_def_pgbench.sql ${DATADIR}
-	${MKDIR} ${DATADIR} ${EXAMPLESDIR}
+	echo "--- ==="
+	-cat `pg_config --pgxs`
+	echo "--- ==="
+	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE} DESTDIR=${STAGEDIR} ${INSTALL_TARGET}
+	${INSTALL_DATA} ${WRKSRC}/sample/dist_def_pgbench.sql ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/replicate_def_pgbench.sql ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in pgpool_recovery pgpool_recovery_pitr pgpool_remote_start
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/${f} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/sample/${f}  ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR}  ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/$f ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/$f  ${STAGEDIR}${DOCSDIR}
 .endfor
 .for f in ${PORTDOCShtml}
-	${INSTALL_MAN} ${WRKSRC}/doc/$f ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/$f  ${STAGEDIR}${DOCSDIR}
 .endfor
 PORTDOCS+=	${PORTDOCShtml}
 .endif

@@ -16,7 +16,6 @@ SUB_LIST=	PREFIX=${LOCALBASE}
 PLIST_FILES=	bin/perl-amanda
 WRKSRC=		${WRKDIR}
 
-NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 
@@ -26,7 +25,7 @@ do-build:
 	cd ${WRKSRC} && ${CC} -o perl-amanda perl-amanda.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/perl-amanda ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKDIR}/perl-amanda ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.pre.mk>
 
