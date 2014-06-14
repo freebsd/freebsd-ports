@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fno-reorder-blocks -fno-inline
+CONFIGURE_ENV+=	GFORTHHIST=${WRKSRC}
+MAKE_ENV+=	GFORTHHIST=${WRKSRC}
 USES=		gmake libtool
 USE_GCC=	any
 USE_AUTOTOOLS=	libltdl
