@@ -8,9 +8,9 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	DV Tools for FreeBSD
+COMMENT=	DV tools for FreeBSD
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
@@ -23,5 +23,4 @@ DESKTOP_ENTRIES="Capture Video" \
 
 CONFLICTS=	dvts-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
