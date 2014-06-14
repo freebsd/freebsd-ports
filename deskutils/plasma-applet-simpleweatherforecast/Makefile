@@ -25,5 +25,4 @@ PLIST_FILES=	lib/kde4/plasma_applet_simpleweatherforecast.so \
 		share/apps/desktoptheme/default/widgets/plasma-simpleweatherforecast.svg \
 		share/kde4/services/plasma-applet-simpleweatherforecast.desktop
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
