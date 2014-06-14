@@ -3,7 +3,7 @@
 
 PORTNAME=	ecgi
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://bsdforge.com/projects/source/devel/ecgi/
 
