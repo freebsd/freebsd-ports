@@ -1,4 +1,5 @@
 bin/gl-117
+man/man6/gl-117.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/gl-117.pdf
 %%DATADIR%%/models/aster1.3ds
 %%DATADIR%%/models/barrier.3ds
