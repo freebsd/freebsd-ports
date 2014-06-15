@@ -66,6 +66,10 @@ MULTIBYTE_CONFIGURE_ENABLE=	multibyte
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
 INFO=	zsh
 .endif
@@ -116,7 +120,8 @@ post-install:
 .endif
 	${STAGEDIR}${PREFIX}/bin/zsh -fc ' \
 		setopt extendedglob nomark_dirs; \
-		for i in ${STAGEDIR}${DATADIR}/${ZSH_VER}/functions/**/*(/) ; do \
+		cd ${STAGEDIR}/${DATADIR}/${ZSH_VER} ; \
+		for i in functions/**/*(/) ; do \
 			zcompile -U -M $$i.zwc $$i/*~*.zwc(^/) ; \
 			${CHMOD} 644 $$i.zwc ; \
 		done'
