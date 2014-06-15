@@ -22,8 +22,6 @@ LIB_DEPENDS=	libAtlas-0.6.so:${PORTSDIR}/devel/atlas-devel \
 
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
-BROKEN=		Does not compile with clang
-
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=		gmake pathfix pkgconfig compiler:c++11-lib
@@ -39,6 +37,10 @@ MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=		Does not compile with clang
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-dist_docDATA | |g' ${WRKSRC}/Makefile.in
