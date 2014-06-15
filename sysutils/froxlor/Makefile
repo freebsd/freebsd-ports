@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	froxlor
-PORTVERSION=	0.9.31.2
+PORTVERSION=	0.9.32
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -12,6 +12,8 @@ COMMENT=	PHP-based ISP Server Management Panel
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}
+
+NEED_ROOT=	YES
 
 NO_BUILD=	YES
 
