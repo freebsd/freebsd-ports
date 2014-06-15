@@ -12,7 +12,7 @@ MASTER_SITES=	http://kbrandt.sdf-eu.org/FreeBSD/distfiles/ \
 MAINTAINER=	kbrandt@sdf-eu.org
 COMMENT=	Tetris like game with multiplayer support
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		gmake tar:bzip2
 USE_SDL=	sdl
@@ -32,7 +32,6 @@ DESKTOP_ENTRIES=	"Quadra" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
 			"${PORTNAME}" "BlocksGame;Game;" false
 
-NO_STAGE=	yes
 # maintainer relevant make target:
 SVN_REV=	757
 SVN_SRC=	http://quadra.googlecode.com/svn/trunk/quadra/
