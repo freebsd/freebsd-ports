@@ -11,6 +11,9 @@ MASTER_SITES=	SF
 MAINTAINER=	john@jnielsen.net
 COMMENT=	A Hotmail -> POP3 gateway
 
+DEPRECATED=	yes
+EXPIRATION_DATE=2014-06-30
+
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 USE_BZIP2=	yes
