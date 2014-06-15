@@ -4,6 +4,9 @@ bin/rtf2html.sh
 bin/rtf2pdf.sh
 bin/rtf2ps.sh
 bin/rtf2txt.sh
+man/man1/Ted.1.gz
+man/man1/rtf2pdf.1.gz
+man/man1/rtf2ps.1.gz
 %%DATADIR%%/afm/AvantGarde-Book.afm
 %%DATADIR%%/afm/AvantGarde-BookOblique.afm
 %%DATADIR%%/afm/AvantGarde-Demi.afm
