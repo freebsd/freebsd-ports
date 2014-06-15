@@ -1,3 +1,11 @@
+@owner %%BINOWN%%
+@group %%BINGRP%%
+@mode %%BINMODE%%
 bin/nclient
 bin/nedit
+@mode
+man/man1/nclient.1.gz
+man/man1/nedit.1.gz
+@owner
+@group
 lib/X11/app-defaults/NEdit.ad

@@ -1,17 +1,15 @@
-*** Makefile.orig	Wed Jan  5 23:04:45 2000
---- Makefile	Fri Mar 17 06:57:23 2000
-***************
-*** 22,27 ****
---- 22,33 ----
-  	(cd util;   $(MAKE) -f Makefile.$@ libNUtil.a)
-  	(cd source; $(MAKE) -f Makefile.$@ nedit nc)
-  
-+ install::
-+ 	(cd source; make -f Makefile.freebsd install)
-+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 doc/nedit.man ${PREFIX}/man/man1/nedit.1
-+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 doc/nc.man ${PREFIX}/man/man1/nclient.1
-+ 	${INSTALL} ${COPY} -m 644 NEdit.ad ${LOCALBASE}/lib/X11/app-defaults/NEdit.ad
-+ 
-  clean:
-  	(cd util; $(MAKE) -f Makefile.common clean)
-  	(cd source; $(MAKE) -f Makefile.common clean)
+--- Makefile.orig	2004-10-01 04:51:05.000000000 +0800
++++ Makefile	2014-06-15 11:03:09.564113068 +0800
+@@ -44,6 +44,12 @@ docs:
+ # that doesn't work since we require the user to specify the target.  More
+ # thought is needed
+ 
++install::
++	(cd source; make -f Makefile.freebsd install)
++	${INSTALL} ${COPY} -m 644 doc/nedit.man $(DESTDIR)${PREFIX}/man/man1/nedit.1
++	${INSTALL} ${COPY} -m 644 doc/nc.man $(DESTDIR)${PREFIX}/man/man1/nclient.1
++	${INSTALL} ${COPY} -m 644 NEdit.ad $(DESTDIR)${LOCALBASE}/lib/X11/app-defaults/NEdit.ad
++
+ clean:
+ 	(cd util;   $(MAKE) -f Makefile.common clean)
+ 	(cd Xlt;    $(MAKE) -f Makefile.common clean)

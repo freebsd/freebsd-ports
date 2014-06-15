@@ -1,12 +1,12 @@
---- source/Makefile.common.orig	Thu May 15 19:42:31 2003
-+++ source/Makefile.common	Sat Feb  7 14:47:52 2004
-@@ -21,6 +21,10 @@
+--- source/Makefile.common.orig	2004-03-21 22:25:56.000000000 +0800
++++ source/Makefile.common	2014-06-15 11:03:55.335101520 +0800
+@@ -28,6 +28,10 @@ nedit: $(OBJS) ../util/libNUtil.a $(XMLL
  nc: nc.o server_common.o ../util/libNUtil.a
  	$(CC) $(CFLAGS) nc.o server_common.o ../util/libNUtil.a $(LIBS) -o $@
  
 +install: nedit nc
-+	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} nedit ${PREFIX}/bin
-+	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} nc ${PREFIX}/bin/nclient
++	${INSTALL} ${COPY} ${STRIP} nedit $(DESTDIR)${PREFIX}/bin
++	${INSTALL} ${COPY} ${STRIP} nc $(DESTDIR)${PREFIX}/bin/nclient
 +
  help.o: help.c
  	$(CC) $(CFLAGS) $(BIGGER_STRINGS) -c help.c -o $@
