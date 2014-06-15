@@ -103,10 +103,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/performance-imparct.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/prerequisites.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/trademarks.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/first-setup.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/freebsdspecific.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/comparing-bsd-and-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/trademarks.html
@@ -588,6 +584,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/acknowledgments.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/admin.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/advanced.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/all-about-zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/applications.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/bibliography.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-drives.html
@@ -595,7 +592,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-other.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-processors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/disks.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/funnies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/hardware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/install.html
@@ -709,7 +705,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-final-warning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-hardware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-install-trouble.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-netinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-partitioning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-post.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-pre.html
