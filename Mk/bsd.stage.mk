@@ -83,9 +83,7 @@ compress-man:
 				done ; \
 			done ; \
 		${FIND} $$dir -type l \! -name "*.gz" | while read link ; do \
-				dest=$$(readlink $$link) ; \
-				rm -f $$link ; \
-				(cd $${link%/*} ; ${LN} -sf $${dest##*/}.gz $${link##*/}.gz) ;\
+				${LN} -sf $$(readlink $$link).gz $$link.gz ;\
 		done; \
 	done
 .endif
