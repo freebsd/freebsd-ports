@@ -3,7 +3,6 @@
 
 PORTNAME=	opensurge
 PORTVERSION=	0.1.r${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ime.usp.br/~alemart/opensurge_nightly/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
@@ -35,7 +34,6 @@ DOS2UNIX_GLOB=	*.bg *.brk *.grp  *.inc *.lev *.lng  *.obj *.qst *.spr *.txt
 USE_GCC=	yes
 
 PORTDOCS=	readme.html
-
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME} pkg-deinstall pkg-message
