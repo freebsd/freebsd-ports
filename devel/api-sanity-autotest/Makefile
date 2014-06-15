@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}.pl
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker
@@ -29,8 +30,6 @@ USE_GCC=	any
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -56,7 +55,7 @@ post-patch:
 		${WRKSRC}/modules/Internals/RegTests.pm
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 check regression-test test: build
@@ -64,12 +63,10 @@ check regression-test test: build
 
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changes.html Descriptor.html Options.html Readme.html SpecType.html
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc; ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc; ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
-.endif
 .include <bsd.port.mk>
