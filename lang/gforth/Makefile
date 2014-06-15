@@ -3,6 +3,7 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 		GNU
@@ -19,9 +20,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fno-reorder-blocks -fno-inline
 CONFIGURE_ENV+=	GFORTHHIST=${WRKSRC}
 MAKE_ENV+=	GFORTHHIST=${WRKSRC}
-USES=		gmake libtool
+USES=		gmake
 USE_GCC=	any
-USE_AUTOTOOLS=	libltdl
+USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named
 ALL_TARGET=	kernel/version.fs more info
 MAKE_JOBS_UNSAFE=yes
