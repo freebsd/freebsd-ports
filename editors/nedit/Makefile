@@ -22,14 +22,12 @@ MAINTAINER=	deischen@FreeBSD.org
 COMMENT=	X11/Motif GUI text editor for programs and plain text files
 LICENSE=	GPLv1
 
-USES=		motif
-USE_BZIP2=	yes
+USES=		motif tar:bzip2
 USE_XORG=	xpm
-MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd
 MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
+PLIST_SUB+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
 
