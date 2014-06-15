@@ -55,9 +55,9 @@ sbin/sc_serv
 %%CONFIG_BUILDER%%%%WWWDIR%%/config_builder/config_builder.css
 
 @dirrmtry %%ETCDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/res
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%CONFIG_BUILDER%%@dirrm %%WWWDIR%%/config_builder
 %%CONFIG_BUILDER%%@dirrm %%WWWDIR%%
