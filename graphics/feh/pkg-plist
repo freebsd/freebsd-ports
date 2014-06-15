@@ -1,10 +1,10 @@
 bin/feh
-bin/feh-cam
-bin/gen-cam-menu
+%%CAM%%bin/feh-cam
+%%CAM%%bin/gen-cam-menu
 share/applications/feh.desktop
-man/man1/feh-cam.1.gz
+%%CAM%%man/man1/feh-cam.1.gz
 man/man1/feh.1.gz
-man/man1/gen-cam-menu.1.gz
+%%CAM%%man/man1/gen-cam-menu.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/find-lowres
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/buttons
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keys
