@@ -3,7 +3,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -78,7 +78,7 @@ post-patch:
 # 		Choose sockets if you don't know what the difference is.
 # 		Choose named pipes if your environment is heterogeneous,
 #		using both screen 4.0.3 and 4.2.1.
-.if ! ${PORT_OPTIONS:MNAMED_PIPES}
+.if ${PORT_OPTIONS:MNAMED_PIPES}
 # Bug 191017
 post-configure:
 	@${ECHO_CMD} '#define NAMEDPIPE 1' >> ${WRKSRC}/config.h
