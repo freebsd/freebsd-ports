@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 #RUN_DEPENDS+=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	webinject.pl
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -30,19 +31,15 @@ PLIST_FILES=	bin/webinject.pl \
 		${DATADIR:S,^${PREFIX}/,,}/testcases.xml
 PLIST_DIRS=	${DATADIR:S,^${PREFIX}/,,}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} *.xml ${DATADIR}
-	@cd ${WRKSRC} && ${INSTALL_SCRIPT} webinject.pl ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} *.xml ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${INSTALL_SCRIPT} webinject.pl ${STAGEDIR}${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE README
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
