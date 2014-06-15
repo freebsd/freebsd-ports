@@ -1,5 +1,0 @@
-Python extension for libmemcache, the C API to memcached. cmemcache API is the
-same as python-memcache, so it is easy to replace python-memcache with
-cmemcache, and vice versa.
-
-WWW: http://gijsbert.org/cmemcache/
