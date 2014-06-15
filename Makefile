@@ -162,6 +162,7 @@ print-index:	${INDEXDIR}/${INDEXFILE}
 
 GIT?= git
 SVN?= svn
+RSYNC?= rsync
 PORTSNAP?= portsnap
 PORTSNAP_FLAGS?= -p ${.CURDIR}
 .if !target(update)
@@ -176,6 +177,11 @@ update:
 	@echo ">>> Updating ${.CURDIR} from git+svn repository"
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${GIT} svn rebase
+.elif defined(RSYNC_UPDATE) && defined(PORTS_RSYNC_SOURCE)
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Updating with ${RSYNC} from ${PORTS_RSYNC_SOURCE}"
+	@echo "--------------------------------------------------------------"
+	@${RSYNC} ${RSYNC_FLAGS} ${PORTS_RSYNC_SOURCE}/ ${.CURDIR}/
 .else
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${PORTSNAP}"
