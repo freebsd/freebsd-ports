@@ -1,6 +1,0 @@
---- configure.ac.orig	2008-01-27 20:52:47.000000000 -0800
-+++ configure.ac	2012-05-03 17:02:50.000000000 -0700
-@@ -34,2 +34,3 @@
- AC_PROG_CXX
-+AM_PROG_AR
- AC_PROG_LIBTOOL

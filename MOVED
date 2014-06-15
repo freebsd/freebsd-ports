@@ -6128,3 +6128,7 @@ editors/libreoffice-ku||2014-06-11|Not provided anymore since LibreOffice 4.2
 editors/libreoffice-sh||2014-06-11|Not provided anymore since LibreOffice 4.2
 net/callweaver||2014-06-12|Project is dead
 net-im/openfire-devel||2014-06-13|Removed
+databases/py-cmemcache||2014-06-15|Has expired: Deprecated upstream
+games/mangos||2014-06-15|Has expired: Broken for more than 6 months
+lang/clojure-contrib||2014-06-15|Has expired: monolithic contrib library is obsolete
+devel/bzapi||2014-06-15|Has expired: Bugzilla has a native REST API, see https://wiki.mozilla.org/BMO/REST

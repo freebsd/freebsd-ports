@@ -713,7 +713,6 @@
     SUBDIR += py-bsddb3
     SUBDIR += py-carbon
     SUBDIR += py-cdb
-    SUBDIR += py-cmemcache
     SUBDIR += py-couchdb
     SUBDIR += py-cql
     SUBDIR += py-dbf

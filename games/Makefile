@@ -577,7 +577,6 @@
     SUBDIR += maitretarot
     SUBDIR += manaplus
     SUBDIR += mangband
-    SUBDIR += mangos
     SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += maxr

@@ -160,7 +160,6 @@
     SUBDIR += busybee
     SUBDIR += byacc
     SUBDIR += byaccj
-    SUBDIR += bzapi
     SUBDIR += bzr
     SUBDIR += bzr-builder
     SUBDIR += bzr-colo
