@@ -64,7 +64,7 @@ $1 == "@fcfontsdir" {
 	print "@unexec mkfontscale %D/" font_dir " 2>/dev/null || true"
 	print "@unexec if [ -e %D/%@/fonts.scale -a \"`stat -f '%%z' %D/" font_dir "/fonts.scale 2>/dev/null`\" = '2' ]; then rm %D/" font_dir "/fonts.scale ; fi"
 	print "@unexec mkfontdir %D/" font_dir " 2>/dev/null || true"
-	print "@unexec if [ -e %D/" font_dir "/fonts.dir -a `\"`stat -f '%%z' %D/" font_dir "/fonts.dir 2>/dev/null`\" = '2' ]; then rm %D/" font_dir "/fonts.dir ; fi"
+	print "@unexec if [ -e %D/" font_dir "/fonts.dir -a \"`stat -f '%%z' %D/" font_dir "/fonts.dir 2>/dev/null`\" = '2' ]; then rm %D/" font_dir "/fonts.dir ; fi"
 	print "@unexec rmdir %D/"font_dir" 2>/dev/null || true"
 	print "@comment end " $0
 	next
