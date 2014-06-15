@@ -24,32 +24,21 @@ SUB_FILES=	pkg-message
 USE_MYSQL=	server
 USE_PHP=	mysql pcre session
 USE_PYTHON=	yes
+GNUCHESS_RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess
+PHALANX_RUN_DEPENDS=	phalanx:${PORTSDIR}/games/phalanx
 
 WRKSRC=	${WRKDIR}/MKGIChessClub-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${MKDIR} ${DATADIR}; cd ${WRKSRC}; \
-	${INSTALL_DATA} database/* ${DATADIR}; \
-	${MKDIR} ${WWWDIR}; cd www; ${CP} -R . ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}; cd ${WRKSRC}; \
+	${INSTALL_DATA} database/* ${STAGEDIR}${DATADIR}; \
+	${MKDIR} ${STAGEDIR}${WWWDIR}; cd www; ${CP} -R . ${STAGEDIR}${WWWDIR}
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}; \
-	${INSTALL_DATA} ${WRKSRC}/README.INSTALL ${DOCSDIR}
-.endif
-
-# pkg-message taken from www/b2evolution
-post-install:
-	${CAT} ${PKGMESSAGE}
-
-.if ${PORT_OPTIONS:MGNUCHESS}
-RUN_DEPENDS+=	gnuchess:${PORTSDIR}/games/gnuchess
-.endif
-
-.if ${PORT_OPTIONS:MPHALANX}
-RUN_DEPENDS+=	phalanx:${PORTSDIR}/games/phalanx
+	${MKDIR} ${STAGEDIR}${DOCSDIR}; \
+	${INSTALL_DATA} ${WRKSRC}/README.INSTALL ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
