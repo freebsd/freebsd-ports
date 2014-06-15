@@ -3,7 +3,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.8.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/ \
@@ -21,12 +21,14 @@ LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 
 CONFLICTS=	mc-light-4*
 
-USES=		gmake shebangfix perl5 pkgconfig tar:xz
-SHEBANG_FILES=	misc/mcedit.menu configure configure.ac
+USES=		gmake shebangfix perl5 pkgconfig tar:xz libtool
+SHEBANG_FILES=	misc/mcedit.menu configure configure.ac \
+		${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
+		${WRKSRC}/src/vfs/extfs/helpers/uc1541.in
+python_OLD_CMD=	@PYTHON@
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZIP=${UNZIP_CMD} UNZIP=${UNZIP_CMD}
-USE_AUTOTOOLS=	libtool
 
 OPTIONS_DEFINE=	DOCS EDITOR ICONV NLS SMB SUBSHELL X11
 
