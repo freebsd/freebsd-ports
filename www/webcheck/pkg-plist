@@ -34,6 +34,7 @@ share/webcheck/schemes/file.py
 share/webcheck/schemes/ftp.py
 share/webcheck/schemes/http.py
 share/webcheck/schemes/https.py
+man/man1/webcheck.1.gz
 %%PORTDOCS%%share/doc/webcheck/README
 %%PORTDOCS%%@dirrm share/doc/webcheck
 @unexec rm -f %D/share/webcheck/*.py[co] %D/share/webcheck/*/*.py[co]
