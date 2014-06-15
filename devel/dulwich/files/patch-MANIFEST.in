@@ -1,0 +1,7 @@
+--- ./MANIFEST.in.orig	2014-06-01 23:01:35.000000000 +0200
++++ ./MANIFEST.in	2014-06-14 11:15:41.244692230 +0200
+@@ -7,4 +7,3 @@
+ include dulwich/stdint.h
+ recursive-include docs conf.py *.txt Makefile make.bat
+ recursive-include examples *.py
+-graft dulwich/tests/data
