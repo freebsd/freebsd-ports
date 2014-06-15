@@ -3,7 +3,7 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 		GNU
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast and portable Forth system
 
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so.6:${PORTSDIR}/devel/libffi
 BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
 
 GNU_CONFIGURE=	yes
@@ -20,7 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fno-reorder-blocks -fno-inline
 CONFIGURE_ENV+=	GFORTHHIST=${WRKSRC}
 MAKE_ENV+=	GFORTHHIST=${WRKSRC}
-USES=		gmake
+USES=		gmake libtool
 USE_GCC=	any
 USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named
