@@ -3,6 +3,7 @@
 
 PORTNAME=	oauthlib
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	security net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,12 +18,11 @@ TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
 
 USE_GITHUB=		yes
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 GH_ACCOUNT=	idan
 GH_COMMIT=	58abd88
-
-PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>
 
