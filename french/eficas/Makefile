@@ -3,6 +3,7 @@
 
 PORTNAME=	eficas
 DISTVERSION=	7.3.0-1
+PORTREVISION=	1
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -36,7 +37,7 @@ EF_LANG=	ang
 .endif
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui	\
-		${PYTHON_SITELIBDIR}/PyQt4/QtAssistant.so:${PORTSDIR}/devel/py-qt4-assistant
+		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 FIXUBIN=	Openturns_Study/prefs_OPENTURNS_STUDY.py	\
 		Openturns_Wrapper/prefs_OPENTURNS_WRAPPER.py	\
