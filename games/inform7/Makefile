@@ -22,27 +22,24 @@ ONLY_FOR_ARCHS=	i386 amd64
 USES=		zip
 SUB_FILES=	i7.sh
 
-MAN6=		i7.6
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:
 	@cd ${WRKDIR} && ${CC} ${CFLAGS} -o inform6 *.c
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/i7.sh ${PREFIX}/bin/i7
-	@${INSTALL_PROGRAM} ${WRKDIR}/inform6 ${PREFIX}/bin/inform6
+	@${INSTALL_SCRIPT} ${WRKDIR}/i7.sh ${STAGEDIR}${PREFIX}/bin/i7
+	@${INSTALL_PROGRAM} ${WRKDIR}/inform6 ${STAGEDIR}${PREFIX}/bin/inform6
 
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKDIR}/Extensions ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${CP} -R ${WRKDIR}/Extensions ${STAGEDIR}${DATADIR}
 
-	@${INSTALL_MAN} ${FILESDIR}/i7.6 ${MAN6PREFIX}/man/man6
+	@${INSTALL_MAN} ${FILESDIR}/i7.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
 
 .if ${ARCH} == "i386"
-	@${INSTALL_PROGRAM} ${WRKDIR}/ni.i386 ${PREFIX}/bin/ni
+	@${INSTALL_PROGRAM} ${WRKDIR}/ni.i386 ${STAGEDIR}${PREFIX}/bin/ni
 .else
-	@${INSTALL_PROGRAM} ${WRKDIR}/ni.amd64 ${PREFIX}/bin/ni
+	@${INSTALL_PROGRAM} ${WRKDIR}/ni.amd64 ${STAGEDIR}${PREFIX}/bin/ni
 .endif
 
 .include <bsd.port.post.mk>
