@@ -13,28 +13,22 @@ COMMENT=	View structure of a web site, get a list of problems like broken links
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-MAN1=		webcheck.1
-
 # what about fancytooltips?
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.py ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.css ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/favicon.ico ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.css ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/favicon.ico ${STAGEDIR}${DATADIR}
 .for d in parsers parsers/html plugins schemes
-	@${MKDIR} ${DATADIR}/${d}
-	${INSTALL_DATA} ${WRKSRC}/${d}/*.py ${DATADIR}/${d}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${d}
+	${INSTALL_DATA} ${WRKSRC}/${d}/*.py ${STAGEDIR}${DATADIR}/${d}
 .endfor
-	@${MKDIR} ${DATADIR}/fancytooltips
-	${INSTALL_DATA} ${WRKSRC}/fancytooltips/* ${DATADIR}/fancytooltips
-	${INSTALL_SCRIPT} ${WRKSRC}/webcheck.py ${DATADIR}
-	${LN} -sf ${DATADIR}/webcheck.py ${PREFIX}/bin/webcheck
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${INSTALL_MAN} ${WRKSRC}/webcheck.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}/fancytooltips
+	${INSTALL_DATA} ${WRKSRC}/fancytooltips/* ${STAGEDIR}${DATADIR}/fancytooltips
+	${INSTALL_SCRIPT} ${WRKSRC}/webcheck.py ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/webcheck.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
