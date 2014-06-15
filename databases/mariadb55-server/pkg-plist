@@ -82,7 +82,6 @@ man/man1/mysqld_multi.1.gz
 man/man1/mysqld_safe.1.gz
 man/man1/mysqldumpslow.1.gz
 man/man1/mysqlhotcopy.1.gz
-man/man1/mysqlman.1.gz
 man/man1/mysqltest.1.gz
 man/man1/perror.1.gz
 man/man1/replace.1.gz
@@ -116,9 +115,6 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/charsets/macce.xml
 %%DATADIR%%/charsets/macroman.xml
 %%DATADIR%%/charsets/swe7.xml
-%%DATADIR%%/config.huge.ini
-%%DATADIR%%/config.medium.ini
-%%DATADIR%%/config.small.ini
 %%DATADIR%%/czech/errmsg.sys
 %%DATADIR%%/danish/errmsg.sys
 %%DATADIR%%/dutch/errmsg.sys
@@ -146,7 +142,6 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/mysql_system_tables_data.sql
 %%DATADIR%%/mysql_test_data_timezone.sql
 %%DATADIR%%/mysqld_multi.server
-%%DATADIR%%/ndb-config-2-node.ini
 %%DATADIR%%/norwegian-ny/errmsg.sys
 %%DATADIR%%/norwegian/errmsg.sys
 %%DATADIR%%/polish/errmsg.sys
