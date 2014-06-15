@@ -1,5 +1,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/fsm.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/fsm.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/hexrgb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/hexrgb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-activity.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-activity.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-ahc-presence.el
@@ -28,6 +30,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-compose.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-conn.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-conn.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-console.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-console.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-core.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-core.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-disco.el
@@ -59,6 +63,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-keymap.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-logon.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-logon.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-libnotify.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-libnotify.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-menu.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-menu.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-modeline.el
@@ -67,6 +73,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-muc-nick-completion.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-muc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-muc.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-muc-nick-coloring.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-muc-nick-coloring.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-newdisco.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-newdisco.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-osd.el
@@ -75,6 +83,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-presence.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-private.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-private.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-ping.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-ping.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-ratpoison.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-ratpoison.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-register.el
@@ -101,6 +111,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-time.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-truncate.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-truncate.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-tmux.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-tmux.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-util.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-util.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacs-jabber/jabber-vcard-avatars.el
