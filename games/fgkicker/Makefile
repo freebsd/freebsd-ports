@@ -16,7 +16,6 @@ RUN_DEPENDS=	fgfs:${PORTSDIR}/games/flightgear
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} "s|-fmessage-length=0|| ; s|-O0|${CFLAGS}|" ${WRKSRC}/fgkicker.mak
 
@@ -24,9 +23,9 @@ do-build:
 	(cd ${WRKSRC} && ${GMAKE} -f ${PORTNAME}.mak ${PORTNAME})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/airports.dat ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/airports.dat ${STAGEDIR}${DATADIR}
 
 install-user:
 	${INSTALL_DATA} ${DATADIR}/airports.dat $$HOME
