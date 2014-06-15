@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://downloadmirror.intel.com/22508/eng/:intel \
-		http://pkgs.fedoraproject.org/repo/pkgs/microcode_ctl/amd-ucode-2012-09-10.tar/559bc355d3799538584add80df2996f0/:amd \
-# Defunct:	http://www.amd64.org/index.php?id=50&file=amd-ucode-2012-09-10.tar
+MASTER_SITES=	http://downloadmirror.intel.com/23829/eng/:intel \
+		http://www.amd64.org/microcode/:amd
 PKGNAMEPREFIX=	devcpu-
-DISTFILES=	microcode-20130222.tgz:intel amd-ucode-2012-09-10.tar:amd
+DISTFILES=	microcode-20140430.tgz:intel amd-ucode-latest.tar.bz2:amd
 
 MAINTAINER=	clarkjc@runbox.com
 COMMENT=	Intel and AMD CPUs microcode updates
