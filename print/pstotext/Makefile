@@ -3,7 +3,7 @@
 
 PORTNAME=	pstotext
 PORTVERSION=	1.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://ftp.gwdg.de/pub/%SUBDIR%/ \
 		http://ftp.sunet.se/pub/text-processing/postscript/interpreters/%SUBDIR%/ \
@@ -14,28 +14,26 @@ MASTER_SITE_SUBDIR=	ghostscript/contrib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript to Text converter
 
+LICENSE=	EULA
+LICENSE_NAME=	End User License Agreement
+LICENSE_FILE=	${WRKSRC}/pstotext.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USE_GHOSTSCRIPT_RUN=	yes
 
-MAN1=		pstotext.1
-PLIST_FILES=	bin/pstotext
-PORTDOCS=	copyright
+SUB_LIST=	LICENSE=${LICENSE} \
+		LICENSE_DIR=${_LICENSE_DIR}
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/pstotext \
+		man/man1/pstotext.1.gz
 
 post-patch:
-	${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g' ${WRKSRC}/main.c
-	${REINPLACE_CMD} -e 's;%%PREFIX%%;${PREFIX};g' ${WRKSRC}/pstotext.1
+	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${WRKSRC}/main.c \
+		${WRKSRC}/pstotext.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pstotext ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pstotext.1 ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/pstotext.txt ${DOCSDIR}/copyright
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/pstotext ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pstotext.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
