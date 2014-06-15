@@ -18,7 +18,6 @@ USE_PYDISTUTILS=yes
 OPTIONS_DEFINE=	SQLITE PGSQL MYSQL NLS
 OPTIONS_DEFAULT=SQLITE NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
@@ -39,22 +38,16 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		roundup-admin.1 roundup-demo.1 roundup-mailgw.1 \
-		roundup-server.1
-MANCOMPRESSED=	no
-.endif
-
 SCRIPTS=	roundup-admin roundup-demo roundup-gettext roundup-mailgw \
 		roundup-server roundup-xmlrpc-server
 
 post-install:
-	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/build/scripts-${PYTHON_VER}/,} ${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
-	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/share/man/man1/,} ${MAN1PREFIX}/man/man1
-.endif
+	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/build/scripts-${PYTHON_VER}/,} ${STAGEDIR}${PREFIX}/bin
+.for f in roundup-admin roundup-demo roundup-mailgw roundup-server
+	${INSTALL_MAN} ${WRKSRC}/share/man/man1/${f}.1 ${STAGEDIR}${PREFIX}/man/man1
+.endfor
 .if ${PORT_OPTIONS:MNLS}
-	@(cd ${WRKSRC}/build/share/locale/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/locale/)
+	@(cd ${WRKSRC}/build/share/locale/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/share/locale/)
 .endif
 
 .include <bsd.port.mk>

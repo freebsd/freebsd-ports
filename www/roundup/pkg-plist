@@ -4,6 +4,10 @@ bin/roundup-gettext
 bin/roundup-mailgw
 bin/roundup-server
 bin/roundup-xmlrpc-server
+man/man1/roundup-admin.1.gz
+man/man1/roundup-demo.1.gz
+man/man1/roundup-mailgw.1.gz
+man/man1/roundup-server.1.gz
 %%PYTHON_SITELIBDIR%%/roundup/__init__.py
 %%PYTHON_SITELIBDIR%%/roundup/__init__.pyc
 %%PYTHON_SITELIBDIR%%/roundup/__init__.pyo
@@ -498,17 +502,17 @@ bin/roundup-xmlrpc-server
 @dirrm %%DATADIR%%/templates/responsive/extensions
 @dirrm %%DATADIR%%/templates/responsive/detectors
 @dirrm %%DATADIR%%/templates/responsive
-@dirrm %%DATADIR%%/templates/minimal/static
+@dirrmtry %%DATADIR%%/templates/minimal/static
 @dirrm %%DATADIR%%/templates/minimal/html
 @dirrm %%DATADIR%%/templates/minimal/extensions
 @dirrm %%DATADIR%%/templates/minimal/detectors
 @dirrm %%DATADIR%%/templates/minimal
-@dirrm %%DATADIR%%/templates/devel/static
+@dirrmtry %%DATADIR%%/templates/devel/static
 @dirrm %%DATADIR%%/templates/devel/html
 @dirrm %%DATADIR%%/templates/devel/detectors
 @dirrm %%DATADIR%%/templates/devel/extensions
 @dirrm %%DATADIR%%/templates/devel
-@dirrm %%DATADIR%%/templates/classic/static
+@dirrmtry %%DATADIR%%/templates/classic/static
 @dirrm %%DATADIR%%/templates/classic/html
 @dirrm %%DATADIR%%/templates/classic/extensions
 @dirrm %%DATADIR%%/templates/classic/detectors
