@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dulwich
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,6 +31,7 @@ post-patch:
 		${WRKSRC}/setup.py ${WRKSRC}/examples/*.py
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/*.so
 	${CP} ${WRKSRC}/docs/*.txt ${WRKSRC}/docs/tutorial/*.txt ${WRKSRC}/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/)
