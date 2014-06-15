@@ -4,7 +4,9 @@
 PORTNAME=	atari800
 PORTVERSION=	3.1.0
 CATEGORIES=	emulators
-MASTER_SITES=	SF SF/${PORTNAME}/ROM/Original%20XL%20ROM:x
+MASTER_SITES=	ftp://ftpmirror.uk/freebsd-ports/atari800/ \
+		SF/${PORTNAME}/ROM/Original%20XL%20ROM:x \
+		ftp://ftpmirror.uk/freebsd-ports/atari800/:x
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xf25.zip:x
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
