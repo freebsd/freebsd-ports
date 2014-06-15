@@ -413,7 +413,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-inetd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ipv6.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-isdn.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-natd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nis.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ntp.html
