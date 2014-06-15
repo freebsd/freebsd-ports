@@ -26,7 +26,7 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}numexpr>0:${PORTSDIR}/math/py-numexpr \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}openpyxl<2.0.0:${PORTSDIR}/textproc/py-openpyxl1 \
+		${PYTHON_PKGNAMEPREFIX}openpyxl1<2.0.0:${PORTSDIR}/textproc/py-openpyxl1 \
 		${PYTHON_PKGNAMEPREFIX}xlrd>0:${PORTSDIR}/textproc/py-xlrd \
 		${PYTHON_PKGNAMEPREFIX}xlwt>0:${PORTSDIR}/textproc/py-xlwt \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:${PORTSDIR}/www/py-beautifulsoup \
@@ -65,7 +65,7 @@ BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:${PORTSDIR}/devel/py-boto
 TABLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tables>0:${PORTSDIR}/devel/py-tables
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
 HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
-OPENPYXL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl<2.0.0:${PORTSDIR}/textproc/py-openpyxl1
+OPENPYXL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl1<2.0.0:${PORTSDIR}/textproc/py-openpyxl1
 XLRD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>0:${PORTSDIR}/textproc/py-xlrd
 XLWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlwt>0:${PORTSDIR}/textproc/py-xlwt
 
