@@ -3254,12 +3254,12 @@ man/man1/xsubpp.1.gz
 @dirrmtry lib/perl5/%%PERL_VER%%/man/man3
 @exec install -d %D/lib/perl5/%%PERL_VER%%/man/man3
 @unexec /bin/rm -f %D/lib/perl5/%%PERL_VER%%/man/whatis
-@exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/man
+@exec makewhatis %D/lib/perl5/%%PERL_VER%%/man
 @dirrmtry lib/perl5/%%PERL_VER%%/man
 @dirrm lib/perl5/%%PERL_VER%%/overload
 @dirrm %%MAN3%%
 @unexec /bin/rm -f %D/lib/perl5/%%PERL_VER%%/perl/man/whatis
-@exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/perl/man
+@exec makewhatis %D/lib/perl5/%%PERL_VER%%/perl/man
 @dirrm lib/perl5/%%PERL_VER%%/perl/man
 @dirrm lib/perl5/%%PERL_VER%%/perl
 @dirrm lib/perl5/%%PERL_VER%%/pod
