@@ -96,3 +96,4 @@
 @dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib
 @dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib
 @dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
