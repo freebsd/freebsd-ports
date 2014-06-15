@@ -3,6 +3,7 @@
 
 PORTNAME=	pelican
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	www textproc
 
 MAINTAINER=	jlaffaye@FreeBSD.org
@@ -27,11 +28,10 @@ OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 .include <bsd.port.options.mk>
 
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGVERSION=	3.3
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 USE_PYTHON=		yes
 
-USE_GITHUB=		yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	getpelican
 GH_COMMIT=	b35ce43
 
