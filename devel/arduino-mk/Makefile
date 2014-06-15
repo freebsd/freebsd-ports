@@ -25,21 +25,6 @@ NO_BUILD=	yes
 
 OPTIONS_DEFINE+=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDOCS)
-PLIST_SUB+=	REFDOCS="@comment "
-.else
-PLIST_SUB+=	REFDOCS=""
-.endif
-
-.if empty(PORT_OPTIONS:MEXAMPLES)
-PLIST_SUB+=	EXAMPLES="@comment "
-.else
-PLIST_SUB+=	EXAMPLES=""
-.endif
-
 ARDUINO_CMD=	${SH} ${FILESDIR}/version.sh ${PREFIX}/arduino/lib/version.txt
 OLD_BOARDS_TXT=	/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/boards.txt
 NEW_BOARDS_TXT=	${PREFIX}/arduino/hardware/arduino/boards.txt
@@ -54,17 +39,13 @@ post-patch:
 	    ${WRKSRC}/bin/ard-parse-boards
 
 do-install:
-	${MKDIR} ${PREFIX}/${PORTNAME}/bin
-	${INSTALL_DATA} ${WRKSRC}/arduino-mk/Arduino.mk ${PREFIX}/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/ard-parse-boards ${PREFIX}/${PORTNAME}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/ard-reset-arduino ${PREFIX}/${PORTNAME}/bin
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "${INSLIST}" ${EXAMPLESDIR})
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin
+	${INSTALL_DATA} ${WRKSRC}/arduino-mk/Arduino.mk ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/ard-parse-boards ${STAGEDIR}${PREFIX}/${PORTNAME}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/ard-reset-arduino ${STAGEDIR}${PREFIX}/${PORTNAME}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "${INSLIST}" ${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
