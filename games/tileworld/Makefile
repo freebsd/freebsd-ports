@@ -17,9 +17,6 @@ USES=		gmake
 ALL_TARGET=	tworld
 DATADIR=	share/tworld
 
-MAN6=		tworld.6
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|$${MAKE}|g; s|cp -i|cp|' ${WRKSRC}/Makefile.in
 
