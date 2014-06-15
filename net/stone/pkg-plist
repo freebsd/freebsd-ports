@@ -2,3 +2,5 @@
 etc/stone.cnf.sample
 @exec [ -f %B/stone.cnf ] || cp %B/%f %B/stone.cnf
 bin/stone
+man/ja/man1/stone.1.gz
+man/man1/stone.1.gz
