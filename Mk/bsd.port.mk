@@ -2931,8 +2931,8 @@ INFO_PATH?=	info
 .if defined(INFO)
 .if !exists(/usr/bin/install-info)
 .if ${.CURDIR} != ${PORTSDIR}/print/texinfo
-BUILD_DEPENDS=	makeinfo:${PORTSDIR}/print/texinfo
-RUN_DEPENDS=	install-info:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo
+RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
 .endif
 .endif
 . for D in ${INFO:H}
