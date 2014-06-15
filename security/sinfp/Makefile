@@ -7,6 +7,8 @@ PORTREVISION=	${DBDATE}
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Full operating system stack fingerprinting suite
 
+LICENSE=	ART10
+
 BUILD_DEPENDS=	p5-Net-SinFP>=2.02:${PORTSDIR}/security/p5-Net-SinFP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -18,17 +20,19 @@ NO_BUILD=	yes
 MASTERDIR=	${.CURDIR}/../p5-Net-SinFP
 DBDATE=		20110125
 
-NO_STAGE=	yes
+USES=		shebangfix
+SHEBANG_FILES=	bin/${PORTNAME}.pl
+
 post-patch:
 	@${REINPLACE_CMD} -e 's!$$Bin/../db/!${DATADIR}/!' ${WRKSRC}/bin/${PORTNAME}.pl
 
 do-install:
-	@${INSTALL} -d ${DATADIR}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
+	${INSTALL} -d ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .ifdef DBDATE
-	@${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}-${DBDATE}.db ${DATADIR}/${PORTNAME}.db
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}-${DBDATE}.db ${STAGEDIR}${DATADIR}/${PORTNAME}.db
 .else
-	@${INSTALL_DATA} ${WRKSRC}/bin/${PORTNAME}.db ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/bin/${PORTNAME}.db ${STAGEDIR}${DATADIR}/
 .endif
 
 .include "${MASTERDIR}/Makefile"
