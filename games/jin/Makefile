@@ -28,16 +28,15 @@ FIND_DIRS=	. -type d
 FIND_DATA=	. -type f
 RM_FILES=	${PORTNAME} README changelog.txt gpl.txt
 
-NO_STAGE=	yes
 post-extract:
 .for f in ${RM_FILES}
 	@${RM} ${WRKSRC}/${f}
 .endfor
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${FIND} ${FIND_DIRS} -exec ${MKDIR} ${DATADIR}/{} ";"
-	@cd ${WRKSRC} && ${FIND} ${FIND_DATA} -exec ${INSTALL_DATA} {} ${DATADIR}/{} ";"
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${FIND} ${FIND_DIRS} -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} ";"
+	@cd ${WRKSRC} && ${FIND} ${FIND_DATA} -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} ";"
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
