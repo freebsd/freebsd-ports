@@ -3,6 +3,7 @@
 
 PORTNAME=	shoutcast
 PORTVERSION=	2.2.1.109
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://download.nullsoft.com/shoutcast/tools/
 DISTNAME=	sc_serv2_bsd_8_x_11_29_2013
