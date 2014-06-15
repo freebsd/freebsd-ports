@@ -16,18 +16,15 @@ USE_PHP=	gd mysql
 USES=		perl5 zip
 USE_PERL5=	run
 
+SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HLSTATSX?=	www/${PORTNAME}
 PLIST_SUB+=	HLSTATSX=${HLSTATSX}
+SUB_LIST+=	HLSTATSX=${HLSTATSX}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-NO_STAGE=	yes
 do-install:
-	@ ${MKDIR} ${PREFIX}/${HLSTATSX}
-	@ ${CP} -R ${WRKSRC}/* ${PREFIX}/${HLSTATSX}
-	@ ${ECHO_MSG} "*"
-	@ ${ECHO_MSG} "* Files have been installed in"
-	@ ${ECHO_MSG} "* ${PREFIX}/${HLSTATSX}"
-	@ ${ECHO_MSG} "*"
+	@ ${MKDIR} ${STAGEDIR}${PREFIX}/${HLSTATSX}
+	@ ${CP} -R ${WRKSRC}/* ${STAGEDIR}${PREFIX}/${HLSTATSX}
 
 .include <bsd.port.mk>
