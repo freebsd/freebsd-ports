@@ -19,8 +19,7 @@ PYDISTUTILS_AUTOPLIST=	yes
 MAKE_ENV+= \
 	PYICU_INCLUDES="${PREFIX}/include" \
 	PYICU_CFLAGS="-w:-DPYICU_VER=\"$(PORTVERSION)\"" \
-	PYICU_LFLAGS="-L${PREFIX}/lib" \
-	PYICU_LIBRARIES="icui18n:icuuc:icudata"
+	PYICU_LFLAGS="-L${PREFIX}/lib"
 
 LIB_DEPENDS+=	libicudata.so:${PORTSDIR}/devel/icu
 
