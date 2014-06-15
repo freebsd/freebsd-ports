@@ -3,6 +3,7 @@
 
 PORTNAME=	pysrt
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +13,8 @@ COMMENT=	SubRip (.srt) subtitle parser and writer
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-
-post-patch:
-	@${REINPLACE_CMD} 's/="GPLv3",/="GPLv3", zip_safe=False,/' \
-		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
