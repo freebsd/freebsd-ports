@@ -1,2 +1,4 @@
-bin/nadars
 bin/nadar
+bin/nadars
+man/man1/nadar.1.gz
+man/man1/nadars.1.gz
