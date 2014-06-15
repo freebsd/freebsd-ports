@@ -1,4 +1,5 @@
 bin/residualvm
+man/man6/residualvm.6.gz
 share/pixmaps/residualvm.xpm
 %%DATADIR%%/residualvm-grim-patch.lab
 %%DATADIR%%/modern.zip

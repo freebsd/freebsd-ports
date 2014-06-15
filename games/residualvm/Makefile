@@ -20,10 +20,6 @@ USE_SDL=	sdl
 HAS_CONFIGURE=	yes
 USES=		gmake
 
-MAN6=		residualvm.6
-NO_MANCOMPRESS=	yes
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|{datarootdir}/man|{prefix}/man|' ${WRKSRC}/configure
 
