@@ -1,31 +1,3 @@
 ===
-Note that the following ports are not strict dependencies but are highly
-recommended to get the most out of pandas. Install them as needed.
-
-Library		Port origin		Purpose
--------		-----------		-------
-boto		devel/py-boto		access Amazon S3
-pytables	devel/py-tables		necessary for HDF5-based storage
-bottleneck	math/py-bottleneck	accelerate certain NaN evals
-matplotlib	math/py-matplotlib	plotting
-numexpr		math/py-numexpr		accelerate certain numerical ops
-statsmodels	math/py-statsmodels	enables parts of pandas.stats
-scipy		science/py-scipy	misc. statistical functions
-openpyxl	textproc/py-openpyxl	Excel 2007+ I/O
-xlrd		textproc/py-xlrd	Excel input
-xlwt		textproc/py-xlwt	Excel output
-
-To use the HTML table parsing capabilities that were introduced in
-pandas 0.12.0, you will need to install
-
-beautifulsoup	www/py-beautifulsoup
-
-and one or the other or both of
-
-html5lib	www/py-html5lib
-lxml		devel/py-lxml
-
-Please read the pandas documentation before deciding:
-
-http://pandas.pydata.org/pandas-docs/stable/gotchas.html#html-gotchas
+If you wish, install math/py-statsmodels to enable parts of pandas.stats.
 ===
