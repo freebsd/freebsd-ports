@@ -1,0 +1,10 @@
+--- ./po/POTFILES.in.orig	2013-08-14 23:36:22.000000000 -0500
++++ ./po/POTFILES.in	2014-05-25 19:15:32.000000000 -0500
+@@ -50,7 +50,6 @@
+ alpine/context.c
+ alpine/pine-use.c
+ alpine/imap.c
+-alpine/newuser.c
+ alpine/help.c
+ alpine/print.c
+ alpine/smime.c
