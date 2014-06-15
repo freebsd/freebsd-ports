@@ -3752,6 +3752,7 @@
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
     SUBDIR += py-pip
+    SUBDIR += py-plan
     SUBDIR += py-plex
     SUBDIR += py-ply
     SUBDIR += py-polib
