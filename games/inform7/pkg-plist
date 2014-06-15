@@ -1,6 +1,7 @@
 bin/i7
 bin/inform6
 bin/ni
+man/man6/i7.6.gz
 %%DATADIR%%/Extensions/David Fisher/English.i7x
 %%DATADIR%%/Extensions/Emily Short/Glulx Entry Points.i7x
 %%DATADIR%%/Extensions/Emily Short/Plurality.i7x
