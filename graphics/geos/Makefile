@@ -3,22 +3,20 @@
 
 PORTNAME=	geos
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
 
-MAINTAINER=	konstantin@saurbier.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
 LICENSE=	LGPL21
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
-USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	PHP PYTHON RUBY
-
 OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
@@ -33,7 +31,8 @@ CONFIGURE_ARGS+=	--enable-python
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
+USE_PHP=		yes
+USE_PHP_BUILD=		yes
 CONFIGURE_ARGS+=	--enable-php
 .endif
 
@@ -44,6 +43,7 @@ CONFIGURE_ENV+=		RUBY="${RUBY}"
 .endif
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/libgeos-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libgeos.so.0
+	@${LN} -s ${PREFIX}/lib/libgeos-${PORTVERSION}.so \
+		${STAGEDIR}${PREFIX}/lib/libgeos.so.0
 
 .include <bsd.port.mk>
