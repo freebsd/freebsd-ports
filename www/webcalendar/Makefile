@@ -32,10 +32,8 @@ OPTIONS_DEFAULT=	MYSQL
 DB_DESC=	Database backend
 DBASE_DESC=	DBase database support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 PORTDOCS=	README \
 		WebCalendar-Database.html \
@@ -43,7 +41,6 @@ PORTDOCS=	README \
 		WebCalendar-Styling.html \
 		WebCalendar-SysAdmin.html \
 		newwin.gif
-.endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
@@ -83,17 +80,19 @@ pre-install:
 	@${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${WCDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WCDIR}
-	@${FIND} ${PREFIX}/${WCDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${WCDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${WCDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${WCDIR}
+	@${FIND} ${STAGEDIR}${PREFIX}/${WCDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WCDIR:S|^|%D/|}' >> ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/data \
+		${STAGEDIR}${PREFIX}/www/data-dist
+	@${ECHO_CMD} '@dirrmtry www/data' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrmtry www/data-dist' >> ${TMPPLIST}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
