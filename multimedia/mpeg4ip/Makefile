@@ -3,7 +3,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -15,21 +15,22 @@ COMMENT=	Standards-based system to encode, stream, and play MPEG-4 audio/video
 
 BUILD_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2 \
 		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	faac:${PORTSDIR}/audio/faac \
-		faad:${PORTSDIR}/audio/faad \
-		mp3lame:${PORTSDIR}/audio/lame \
-		id3tag:${PORTSDIR}/audio/libid3tag \
-		a52:${PORTSDIR}/audio/liba52 \
-		mpeg2:${PORTSDIR}/multimedia/libmpeg2	\
+LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac \
+		libfaad.so:${PORTSDIR}/audio/faad \
+		libmp3lame.so:${PORTSDIR}/audio/lame \
+		libid3tag.so:${PORTSDIR}/audio/libid3tag \
+		liba52.so:${PORTSDIR}/audio/liba52 \
+		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
 		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		x264:${PORTSDIR}/multimedia/x264
+		libx264.so:${PORTSDIR}/multimedia/x264
 RUN_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2
 
 USE_GNOME=	gtk20
 USE_SDL=	sdl
-USES=		gmake
+USES=		gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CFLAGS+=	-Wno-return-type
 CPPFLAGS+=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
@@ -45,38 +46,6 @@ PORTDOCS=	MAINREADME.html MP4LIVE_INTERNALS.html MPEG4IP_Guide.pdf \
 		ReadingList.txt encoding.htm m4rm.html \
 		mp4player.jpg mrm.html pi.html prm.html
 
-MAN1=	gmp4player.1 mp4creator.1 mp4encode.1 mp4live.1
-MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
-	MP4AddRtpESConfigurationPacket.3 MP4AddRtpHint.3 MP4AddRtpImmediateData.3 \
-	MP4AddRtpPacket.3 MP4AddRtpSampleData.3 MP4AddRtpVideoHint.3 MP4AddSceneTrack.3 \
-	MP4AddSystemsTrack.3 MP4AddTrack.3 MP4AddTrackEdit.3 MP4AddVideoTrack.3 \
-	MP4AppendHintTrackSdp.3 MP4AppendSessionSdp.3 MP4BinaryToBase16.3 MP4BinaryToBase64.3 \
-	MP4CloneTrack.3 MP4Close.3 MP4ConvertFromMovieDuration.3 MP4ConvertFromTrackDuration.3 \
-	MP4ConvertFromTrackTimestamp.3 MP4ConvertToTrackDuration.3 MP4ConvertToTrackTimestamp.3  \
-	MP4CopySample.3 MP4CopyTrack.3 MP4Create.3 MP4DeleteTrack.3 MP4DeleteTrackEdit.3 \
-	MP4Dump.3 MP4FileInfo.3 MP4FindTrackId.3 MP4FindTrackIndex.3 MP4GetAudioProfileLevel.3 \
-	MP4GetDuration.3 MP4GetGraphicsProfileLevel.3 MP4GetHintTrackReferenceTrackId.3 MP4GetHintTrackRtpPayload.3 \
-	MP4GetHintTrackSdp.3 MP4GetNumberOfTracks.3 MP4GetODProfileLevel.3 MP4GetRtpHintNumberOfPackets.3 \
-	MP4GetRtpPacketBFrame.3 MP4GetRtpPacketTransmitOffset.3 MP4GetRtpTimestampStart.3 \
-	MP4GetSampleDuration.3 MP4GetSampleIdFromEditTime.3 MP4GetSampleIdFromTime.3 \
-	MP4GetSampleRenderingOffset.3 MP4GetSampleSize.3 MP4GetSampleSync.3 MP4GetSampleTime.3 \
-	MP4GetSceneProfileLevel.3 MP4GetSessionSdp.3 MP4GetTimeScale.3 MP4GetTrackAudioMpeg4Type.3 \
-	MP4GetTrackAudioType.3 MP4GetTrackBitRate.3 MP4GetTrackDuration.3 MP4GetTrackESConfiguration.3 \
-	MP4GetTrackEditDuration.3 MP4GetTrackEditDwell.3 MP4GetTrackEditMediaStart.3 MP4GetTrackEditStart.3 \
-	MP4GetTrackEditTotalDuration.3 MP4GetTrackFixedSampleDuration.3 MP4GetTrackMaxSampleSize.3 \
-	MP4GetTrackNumberOfEdits.3 MP4GetTrackNumberOfSamples.3 MP4GetTrackTimeScale.3 MP4GetTrackType.3 \
-	MP4GetTrackVideoFrameRate.3 MP4GetTrackVideoHeight.3 MP4GetTrackVideoType.3 MP4GetTrackVideoWidth.3 \
-	MP4GetVerbosity.3 MP4GetVideoProfileLevel.3 MP4Info.3 MP4MakeIsmaCompliant.3 \
-	MP4Modify.3 MP4Optimize.3 MP4Read.3 MP4ReadRtpHint.3 MP4ReadRtpPacket.3 \
-	MP4ReadSample.3 MP4ReadSampleFromEditTime.3 MP4ReadSampleFromTime.3 MP4SetAudioProfileLevel.3 \
-	MP4SetGraphicsProfileLevel.3 MP4SetHintTrackRtpPayload.3 MP4SetHintTrackSdp.3 \
-	MP4SetODProfileLevel.3 MP4SetRtpTimestampStart.3 MP4SetSampleRenderingOffset.3 \
-	MP4SetSceneProfileLevel.3 MP4SetSessionSdp.3 MP4SetTimeScale.3 MP4SetTrackESConfiguration.3 \
-	MP4SetTrackEditDuration.3 MP4SetTrackEditDwell.3 MP4SetTrackEditMediaStart.3 \
-	MP4SetTrackTimeScale.3 MP4SetVerbosity.3 MP4SetVideoProfileLevel.3 \
-	MP4WriteRtpHint.3 MP4WriteSample.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ###
@@ -104,7 +73,7 @@ USE_GNOME+=	esound
 .endif
 # nas
 .if ${PORT_OPTIONS:MNAS}
-LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=	libaudio.so:${PORTSDIR}/audio/nas
 .endif
 
 # ipv6
@@ -114,7 +83,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 # xvid
 .if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=	xvidcore:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
 
 PLIST_SUB+=	XVID=""
 .else
@@ -175,16 +144,16 @@ post-configure:
 	@echo '#include "mpeg4ip.h"' > ${WRKSRC}/lib/mp4v2/mp4.h
 
 post-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/server/util/mp4encode/mp4encode \
-		 ${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} \
 		${WRKSRC}/server/util/mp4encode/mp4venc_template.par \
-		${DATADIR}
+		${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for files in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${files} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
