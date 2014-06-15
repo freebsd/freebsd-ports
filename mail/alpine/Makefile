@@ -1,21 +1,26 @@
 # $FreeBSD$
 
 PORTNAME?=	alpine
-PORTVERSION=	2.00
-PORTREVISION?=	4
+PORTVERSION=	2.11
+PORTREVISION?=	0
 CATEGORIES?=	mail news ipv6
-MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/
-DIST_SUBDIR=	alpine-${PORTVERSION}
+MASTER_SITES=	http://patches.freeiz.com/alpine/release/src/
+EXTRACT_SUFX=	.tar.xz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT?=	Mail and news client descended from Pine
 
-OPTIONS_DEFINE+=	THREADS MOUSE NLS ISPELL NOSPELL
-OPTIONS_DEFAULT+=	THREADS MOUSE
+LICENSE=	APACHE20
+
+OPTIONS_DEFINE=		DOCS SSL THREADS MOUSE NLS ISPELL NOSPELL
+OPTIONS_DEFAULT+=	DOCS SSL THREADS MOUSE
+SSL_DESC=	Build with SSL (installs: security/openssl if pre 10.x)
 MOUSE_DESC=	Enable mouse support for xterm
 ISPELL_DESC=	Use ispell instead of aspell as default speller
 NOSPELL_DESC=	Use no default speller (overrides both)
+
 .if !defined(PICO_ALPINE_SLAVE)
+
 OPTIONS_DEFINE+=	PICO IPV6 LDAP PASSFILE CONS25 QUOTA MAILDIR SSL
 OPTIONS_DEFAULT+=	PICO SSL
 PICO_DESC=	Build and install pico, the default editor
@@ -25,45 +30,57 @@ QUOTA_DESC=	Add a patch for disk quota checking on IMAP
 MAILDIR_DESC=	Add a patch for maildir support
 .endif
 
-USE_BZIP2=	yes
+USES=		libtool
 
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 
 .if !defined(PICO_ALPINE_SLAVE)
+
+PORTDOCSbase=	LICENSE NOTICE README
+PORTDOCSdoc=	brochure.txt tech-notes.txt
+PORTDOCShtml=	tech-notes/background.html tech-notes/cmd-line.html \
+		tech-notes/config-notes.html tech-notes/config.html \
+		tech-notes/index.html tech-notes/installation.html \
+		tech-notes/introduction.html tech-notes/low-level.html
+PORTDOCS=	${PORTDOCSbase} ${PORTDOCSdoc} ${PORTDOCShtml}
+
 CONFIGURE_ARGS+=--with-system-pinerc=${PREFIX}/etc/alpine.conf \
 		--with-system-fixed-pinerc=${PREFIX}/etc/alpine.conf.fixed \
 		--with-password-prog=/usr/bin/passwd \
 		--with-system-mail-directory=/var/mail \
 		--enable-background-post --without-krb5 --without-tcl
-NO_STAGE=	yes
+
 .endif
 CONFIGURE_ARGS+=--with-debug-level=2
 
 MAKE_ARGS+=	CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
+.if  ${OSVERSION} < 1000000
+# OpenSSL is pre v1.0 in FBSD9.x so the ports version needs to be used
+WITH_OPENSSL_PORT=	yes
+.endif
+
+CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLDIR} \
+			--with-ssl-include-dir=${OPENSSLINC} \
+			--with-ssl-lib-dir=${OPENSSLLIB} \
+			--with-ssl-certs-dir=${OPENSSLDIR}/certs
+.else
+CONFIGURE_ARGS+=	--without-ssl
+USE_OPENSSL=		no
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=	--with-pthread
-.else
-CONFIGURE_ARGS+=	--without-pthread
-.endif
-
-.if ${PORT_OPTIONS:MMOUSE}
-CONFIGURE_ARGS+=	--enable-mouse
-.else
-CONFIGURE_ARGS+=	--disable-mouse
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--enable-nls
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
+THREADS_CONFIGURE_WITH=	pthread
+MOUSE_CONFIGURE_ENABLE=	mouse
+NLS_CONFIGURE_ENABLE=	nls
+IPV6_CONFIGURE_WITH=	ipv6
 
 .if ! ${PORT_OPTIONS:MNOSPELL}
 .if ! ${PORT_OPTIONS:MISPELL}
@@ -84,15 +101,9 @@ CONFIGURE_ARGS+=--without-simple-spellcheck --without-interactive-spellcheck
 RUN_DEPENDS+=	pico:${PORTSDIR}/editors/pico-alpine
 .endif
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--with-ipv6
-.else
-CONFIGURE_ARGS+=	--without-ipv6
-.endif
-
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--with-ldap --with-ldap-dir=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-ldap-dir=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif
@@ -102,34 +113,25 @@ ALPINE_PASSFILE?=	.alpine.pwd
 CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
 .endif
 
-.if ${PORT_OPTIONS:MCONS25}
-EXTRA_PATCHES=	${FILESDIR}/cons25-alpine_keymenu.c
-.endif
-
 .if ${PORT_OPTIONS:MQUOTA} || ${PORT_OPTIONS:MMAILDIR}
-PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITES=		ftp://ftp.cac.washington.edu/alpine/
 PATCH_SITE_SUBDIR=	dougb/alpine-${PORTVERSION}/
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
 .endif
 
 .if ${PORT_OPTIONS:MQUOTA}
+PATCH_SITES=		ftp://ftp.cac.washington.edu/alpine/alpine-2.00/
 PATCHFILES+=	quota.patch.gz
 .endif
 
 .if ${PORT_OPTIONS:MMAILDIR}
+PATCH_SITES=		ftp://ftp.cac.washington.edu/alpine/alpine-2.00/
 PATCHFILES+=	maildir.patch.gz
 .endif
 
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLDIR} \
-			--with-ssl-include-dir=${OPENSSLINC} \
-			--with-ssl-lib-dir=${OPENSSLLIB} \
-			--with-ssl-certs-dir=${OPENSSLDIR}/certs
-.else
-CONFIGURE_ARGS+=	--without-ssl
+.if ${PORT_OPTIONS:MCONS25}
+EXTRA_PATCHES=	${FILESDIR}/cons25-alpine_keymenu.c
 .endif
-
-MAN1=		alpine.1 rpdump.1 rpload.1
 
 pre-patch:
 	@${CHMOD} -R u+w ${WRKSRC}
@@ -163,19 +165,23 @@ post-patch:
 	done
 
 post-install:
+	${STAGEDIR}${PREFIX}/bin/alpine -conf > ${STAGEDIR}${PREFIX}/etc/alpine.conf.sample
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${DOCSDIR} \
-	    ${DOCSDIR}/tech-notes
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NOTICE ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/brochure.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes/*.html ${DOCSDIR}/tech-notes
+	${INSTALL} -d ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/tech-notes
+.for f in ${PORTDOCSbase}
+	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
+.endfor
+.for f in ${PORTDOCSdoc}
+	${INSTALL_MAN} ${WRKSRC}/doc/$f ${STAGEDIR}${DOCSDIR}
+.endfor
+.for f in ${PORTDOCShtml}
+	${INSTALL_MAN} ${WRKSRC}/doc/$f ${STAGEDIR}${DOCSDIR}/tech-notes
+.endfor
 .endif
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-	@${CAT} ${PKGMESSAGE}
+#	PKG_PREFIX=${STAGEDIR}${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+#	@${CAT} ${PKGMESSAGE}
+
 .endif	# !defined(PICO_ALPINE_SLAVE)
 
 .include <bsd.port.post.mk>

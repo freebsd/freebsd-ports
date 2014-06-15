@@ -1,0 +1,28 @@
+--- ./alpine/Makefile.in.orig	2013-08-14 23:36:01.000000000 -0500
++++ ./alpine/Makefile.in	2014-05-25 19:15:31.000000000 -0500
+@@ -78,7 +78,7 @@
+ 	help.$(OBJEXT) imap.$(OBJEXT) init.$(OBJEXT) kblock.$(OBJEXT) \
+ 	keymenu.$(OBJEXT) ldapconf.$(OBJEXT) listsel.$(OBJEXT) \
+ 	mailcmd.$(OBJEXT) mailindx.$(OBJEXT) mailpart.$(OBJEXT) \
+-	mailview.$(OBJEXT) newuser.$(OBJEXT) pattern.$(OBJEXT) \
++	mailview.$(OBJEXT) pattern.$(OBJEXT) \
+ 	pipe.$(OBJEXT) print.$(OBJEXT) radio.$(OBJEXT) \
+ 	remote.$(OBJEXT) reply.$(OBJEXT) roleconf.$(OBJEXT) \
+ 	send.$(OBJEXT) setup.$(OBJEXT) signal.$(OBJEXT) \
+@@ -319,7 +319,7 @@
+ alpine_SOURCES = addrbook.c adrbkcmd.c after.c alpine.c arg.c busy.c colorconf.c \
+ 	confscroll.c context.c dispfilt.c flagmaint.c folder.c help.c imap.c \
+ 	init.c kblock.c keymenu.c ldapconf.c listsel.c mailcmd.c mailindx.c \
+-	mailpart.c mailview.c newuser.c pattern.c pipe.c print.c radio.c remote.c reply.c \
++	mailpart.c mailview.c pattern.c pipe.c print.c radio.c remote.c reply.c \
+ 	roleconf.c send.c setup.c signal.c status.c takeaddr.c titlebar.c smime.c newmail.c
+ 
+ alpine_LDADD = $(LDADD) $(INTLLIBS)
+@@ -453,7 +453,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mailpart.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mailview.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/newmail.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/newuser.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pattern.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pipe.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/print.Po@am__quote@

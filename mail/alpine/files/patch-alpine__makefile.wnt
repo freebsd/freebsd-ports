@@ -1,0 +1,20 @@
+--- ./alpine/makefile.wnt.orig	2013-08-14 23:36:01.000000000 -0500
++++ ./alpine/makefile.wnt	2014-05-25 19:15:31.000000000 -0500
+@@ -44,7 +44,7 @@
+ 	addrbook.h adrbkcmd.h after.h alpine.h arg.h busy.h colorconf.h confscroll.h \
+ 	conftype.h context.h dispfilt.h flagmaint.h folder.h headers.h help.h imap.h \
+ 	init.h kblock.h keymenu.h ldapconf.h listsel.h mailcmd.h mailindx.h mailpart.h \
+-	mailview.h newmail.h newuser.h pattern.h pipe.h print.h radio.h remote.h \
++	mailview.h newmail.h pattern.h pipe.h print.h radio.h remote.h \
+ 	reply.h roleconf.h \
+ 	send.h setup.h signal.h status.h takeaddr.h talk.h titlebar.h
+ 
+@@ -52,7 +52,7 @@
+ 	confscroll.obj context.obj dispfilt.obj flagmaint.obj folder.obj help.obj \
+ 	imap.obj init.obj kblock.obj keymenu.obj ldapconf.obj listsel.obj mailcmd.obj \
+ 	mailindx.obj mailpart.obj mailview.obj newmail.obj \
+-	newuser.obj pattern.obj pipe.obj \
++	pattern.obj pipe.obj \
+ 	print.obj radio.obj remote.obj reply.obj roleconf.obj \
+ 	send.obj setup.obj signal.obj status.obj takeaddr.obj titlebar.obj
+ 
