@@ -1,4 +1,4 @@
-AMD_UCODE_DIR=	amd-ucode-2012-09-10
+AMD_UCODE_DIR=	amd-ucode
 AMD_UCODE=	$(AMD_UCODE_DIR)/microcode_amd.bin \
 		$(AMD_UCODE_DIR)/microcode_amd_fam15h.bin
 INTEL_UCODE=	microcode.dat
