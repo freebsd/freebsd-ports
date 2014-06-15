@@ -3,6 +3,7 @@
 
 PORTNAME=	dtflickr
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
@@ -16,13 +17,7 @@ LICENSE=	APACHE20
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VERSION} == "python2.5"
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=1.7:${PORTSDIR}/devel/py-simplejson
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
