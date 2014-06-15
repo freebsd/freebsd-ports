@@ -14,14 +14,10 @@ MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	xpm
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		nadars.1 nadar.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nadar ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/nadars ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nadar.1.gz ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/nadars.1.gz ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/nadar ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/nadars ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nadar.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nadars.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
