@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
