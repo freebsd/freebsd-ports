@@ -4,7 +4,7 @@
 PORTNAME=	pypy
 DISTVERSION=	2.3.1
 CATEGORIES=	lang python
-MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/get/ https://bitbucket.org/pypy/pypy/get/
+MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 PKGNAMESUFFIX=	-devel
 DISTNAME=	release-${DISTVERSION}
 DIST_SUBDIR=	pypy
