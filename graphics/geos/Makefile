@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
 LICENSE=	LGPL21
