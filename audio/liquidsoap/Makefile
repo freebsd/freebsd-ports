@@ -124,7 +124,8 @@ LIB_DEPENDS_vorbis=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 LIB_DEPENDS_speex=	libspeex.so:${PORTSDIR}/audio/speex
 LIB_DEPENDS_theora=	libtheora.so:${PORTSDIR}/multimedia/libtheora
 LIB_DEPENDS_samplerate=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-LIB_DEPENDS_soundtouch=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch bpm:${PORTSDIR}/audio/libbpm
+LIB_DEPENDS_soundtouch=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch \
+			libbpm.so:${PORTSDIR}/audio/libbpm
 LIB_DEPENDS_portaudio=	libportaudio.so:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS_pulseaudio=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 LIB_DEPENDS_taglib=	libtag.so:${PORTSDIR}/audio/taglib
