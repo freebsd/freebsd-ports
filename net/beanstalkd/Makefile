@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	beanstalkd
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	net
-MASTER_SITES=	http://cloud.github.com/downloads/kr/beanstalkd/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
@@ -11,7 +10,13 @@ COMMENT=	Fast, distributed, in-memory workqueue service
 LICENSE=	MIT
 
 USES=		gmake
+USE_GITHUB=	yes
 USE_RC_SUBR=	beanstalkd
+
+GH_ACCOUNT=	kr
+GH_PROJECT=	beanstalkd
+GH_COMMIT=	f40e005
+GH_TAGNAME=	v${PORTVERSION}
 
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
