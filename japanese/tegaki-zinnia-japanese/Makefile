@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		zip
 
-NO_STAGE=	yes
 do-build:
 
 .include <bsd.port.mk>
