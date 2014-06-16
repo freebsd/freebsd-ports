@@ -3722,6 +3722,7 @@
     SUBDIR += py-mock
     SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
+    SUBDIR += py-more-itertools
     SUBDIR += py-mox
     SUBDIR += py-msgpack
     SUBDIR += py-mwlib
