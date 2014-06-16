@@ -1,8 +1,17 @@
---- configure.orig	2011-07-09 14:35:10.000000000 +0900
-+++ configure	2011-07-09 14:36:32.000000000 +0900
-@@ -20868,6 +20868,7 @@
- 	have_vte=yes
+--- configure.orig	2014-05-25 14:42:27.000000000 +0900
++++ configure	2014-06-16 19:51:51.000000000 +0900
+@@ -21375,7 +21375,7 @@
+ 	if test "$has_utmp" ; then
+ 		INSTALL_OPT="-m 2755 -g utmp"
+ 	else
+-		INSTALL_OPT="-m 4755 -o root"
++		INSTALL_OPT="-m 4755"
+ 	fi
+ else
+ 	INSTALL_OPT="-m 755"
+@@ -21529,6 +21529,7 @@
  fi
+ 	fi
  	if test "$have_vte" = "yes" ; then
 +		MAKE_DIRS="gtk ${MAKE_DIRS}"
  		OUTPUT_FILES="gtk/Makefile ${OUTPUT_FILES}"

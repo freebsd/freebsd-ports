@@ -60,8 +60,6 @@ lib/mlterm/libnext.a
 lib/mlterm/libnext.so
 lib/mlterm/libsample.a
 lib/mlterm/libsample.so
-lib/mlterm/libsample2.a
-lib/mlterm/libsample2.so
 %%CAIRO%%lib/mlterm/libtype_cairo.a
 %%CAIRO%%lib/mlterm/libtype_cairo.so
 lib/mlterm/libtype_xft.a
