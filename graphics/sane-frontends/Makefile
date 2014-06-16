@@ -13,7 +13,7 @@ COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	sane:${PORTSDIR}/graphics/sane-backends
+LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
@@ -21,14 +21,12 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		scanadf.1 xcam.1 xscanimage.1
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	GTK1 GIMP
 GTK1_DESC=	GTK1 support (Default is GTK2)
 GIMP_DESC=	also build xscanimage as a GIMP plug-in
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK1}
@@ -38,14 +36,11 @@ CONFIGURE_ARGS+=	--disable-gimp
 .else
 USE_GNOME+=	gtk20
 .if ${PORT_OPTIONS:MGIMP}
-LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 CONFIGURE_ARGS+=	--enable-gimp
 .else
 CONFIGURE_ARGS+=	--disable-gimp
 .endif
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
