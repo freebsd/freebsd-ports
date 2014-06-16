@@ -4,6 +4,7 @@ lib/libtwolame.a
 lib/libtwolame.la
 lib/libtwolame.so
 lib/libtwolame.so.0
+lib/libtwolame.so.0.0.0
 libdata/pkgconfig/twolame.pc
 %%DOCSDIR%%/api.txt
 %%DOCSDIR%%/html/api.html
