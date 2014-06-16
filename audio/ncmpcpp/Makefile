@@ -3,7 +3,7 @@
 
 PORTNAME=	ncmpcpp
 PORTVERSION=	0.5.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -14,12 +14,11 @@ COMMENT=	ncurses mpd client, clone of ncmpc with some new features
 LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
 		libfftw3.so:${PORTSDIR}/math/fftw3
 
-USES=		iconv ncurses pkgconfig
-USE_BZIP2=	yes
+USES=		iconv libtool ncurses pkgconfig tar:bzip2
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	automake aclocal libtool
+USE_AUTOTOOLS=	automake aclocal
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include
