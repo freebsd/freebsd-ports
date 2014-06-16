@@ -1,5 +1,19 @@
 --- Makefile.in.orig	2004-01-06 16:22:17.000000000 +0900
-+++ Makefile.in	2007-06-28 13:24:06.000000000 +0900
++++ Makefile.in	2014-06-16 21:40:34.440747700 +0900
+@@ -9,11 +9,11 @@
+ srcdir=	@srcdir@
+ VPATH=	@srcdir@
+ 
+-prefix=	@prefix@
++prefix=	${DESTDIR}/@prefix@
+ exec_prefix=	@exec_prefix@
+ bindir=	@bindir@
+ libdir=	@libdir@
+-mandir=	@mandir@
++mandir=	${DESTDIR}/@mandir@
+ 
+ lvlibdir=	$(libdir)/lv
+ distdir = lv$(VERSION)
 @@ -41,7 +41,7 @@
  all:	lv
  
