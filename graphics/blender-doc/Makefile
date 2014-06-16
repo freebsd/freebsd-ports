@@ -17,7 +17,6 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-extract:
 	@${CHMOD} u+rwx ${WRKSRC}/* && ${CHMOD} u+rwx ${WRKSRC}/*/* && \
 		${CHMOD} u+rwx ${WRKSRC}/*/*/* && ${CHMOD} u+rwx ${WRKSRC}/*/*/*/*
@@ -25,7 +24,7 @@ post-extract:
 		${RM} -rf  "Nuova cartella" "Nuova cartella (2)"
 
 do-install:
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "htmlI htmlII" ${DOCSDIR}/
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "htmlI htmlII" ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
