@@ -5,8 +5,8 @@ include/lscp/socket.h
 include/lscp/thread.h
 include/lscp/version.h
 lib/liblscp.a
-lib/liblscp.la
 lib/liblscp.so
 lib/liblscp.so.6
+lib/liblscp.so.6.0.0
 libdata/pkgconfig/lscp.pc
 @dirrm include/lscp
