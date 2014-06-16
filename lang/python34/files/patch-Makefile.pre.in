@@ -6,8 +6,12 @@
 # Submitted by: antoine@ (r350207)
 # TODO: Upstream
 
---- ./Makefile.pre.in.orig	2014-03-17 13:31:30.000000000 +1100
-+++ ./Makefile.pre.in	2014-04-06 18:21:28.147616242 +1000
+# Description: Create symlinks for non-ABI-suffixed python*-config and ABI-suffixed python-*.pc
+# Submitted by: antoine@ (r358029)
+# TODO: Upstream
+
+--- ./Makefile.pre.in.orig	2014-05-19 05:19:39.000000000 +0000
++++ ./Makefile.pre.in	2014-06-15 12:12:17.000000000 +0000
 @@ -70,18 +70,15 @@
  OPT=		@OPT@
  BASECFLAGS=	@BASECFLAGS@
@@ -30,7 +34,20 @@
  NO_AS_NEEDED=	@NO_AS_NEEDED@
  LDLAST=		@LDLAST@
  SGI_ABI=	@SGI_ABI@
-@@ -1314,8 +1311,8 @@
+@@ -1065,12 +1062,6 @@
+ 	else true; \
+ 	fi
+ 	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)$(EXE) python3$(EXE))
+-	-if test "$(VERSION)" != "$(LDVERSION)"; then \
+-		rm -f $(DESTDIR)$(BINDIR)/python$(VERSION)-config; \
+-		(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(LDVERSION)-config python$(VERSION)-config); \
+-		rm -f $(DESTDIR)$(LIBPC)/python-$(LDVERSION).pc; \
+-		(cd $(DESTDIR)$(LIBPC); $(LN) -s python-$(VERSION).pc python-$(LDVERSION).pc); \
+-	fi
+ 	-rm -f $(DESTDIR)$(BINDIR)/python3-config
+ 	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-config python3-config)
+ 	-rm -f $(DESTDIR)$(LIBPC)/python3.pc
+@@ -1314,8 +1305,8 @@
  			if test "$(SHLIB_SUFFIX)" = .dll; then \
  				$(INSTALL_DATA) $(LDLIBRARY) $(DESTDIR)$(LIBPL) ; \
  			else \
@@ -40,3 +57,16 @@
  			fi; \
  		else \
  			echo Skip install of $(LIBRARY) - use make frameworkinstall; \
+@@ -1333,6 +1324,12 @@
+ 	$(INSTALL_SCRIPT) $(srcdir)/install-sh $(DESTDIR)$(LIBPL)/install-sh
+ 	$(INSTALL_SCRIPT) python-config.py $(DESTDIR)$(LIBPL)/python-config.py
+ 	$(INSTALL_SCRIPT) python-config $(DESTDIR)$(BINDIR)/python$(LDVERSION)-config
++	-if test "$(VERSION)" != "$(LDVERSION)"; then \
++		rm -f $(DESTDIR)$(BINDIR)/python$(VERSION)-config; \
++		(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(LDVERSION)-config python$(VERSION)-config); \
++		rm -f $(DESTDIR)$(LIBPC)/python-$(LDVERSION).pc; \
++		(cd $(DESTDIR)$(LIBPC); $(LN) -s python-$(VERSION).pc python-$(LDVERSION).pc); \
++	fi
+ 	@if [ -s Modules/python.exp -a \
+ 		"`echo $(MACHDEP) | sed 's/^\(...\).*/\1/'`" = "aix" ]; then \
+ 		echo; echo "Installing support files for building shared extension modules on AIX:"; \

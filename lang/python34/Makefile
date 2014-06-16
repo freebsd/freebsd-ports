@@ -3,6 +3,7 @@
 
 PORTNAME=		python34
 PORTVERSION=		3.4.1
+PORTREVISION=		1
 CATEGORIES=		lang python ipv6
 MASTER_SITES=		PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -80,6 +81,8 @@ ABIFLAGS:=	d${ABIFLAGS}
 
 .if !empty(ABIFLAGS)
 PLIST_FILES+=	bin/python%%VER%%%%ABI%%
+PLIST_FILES+=	bin/python%%VER%%%%ABI%%-config
+PLIST_FILES+=	libdata/pkgconfig/python-%%VER%%%%ABI%%.pc
 .endif
 
 .if ${ARCH} == sparc64
