@@ -3,10 +3,9 @@
 
 PORTNAME=	x11amp
 PORTVERSION=	0.9.b1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	hrs
+MASTER_SITES=	LOCAL/hrs
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +13,9 @@ COMMENT=	X11-based MP3 player with nice graphical interface
 
 LICENSE=	GPLv2
 
+BROKEN=		hangs at start with gtk and linker errors
+
+USES=		libtool
 USE_GNOME=	gtk12 esound
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
