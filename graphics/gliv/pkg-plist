@@ -1,4 +1,9 @@
 bin/gliv
+man/cs/man1/gliv.1.gz
+man/de/man1/gliv.1.gz
+man/fr/man1/gliv.1.gz
+man/man1/gliv.1.gz
+man/ru/man1/gliv.1.gz
 share/applications/gliv.desktop
 share/pixmaps/gliv.png
 share/locale/bg/LC_MESSAGES/gliv.mo
