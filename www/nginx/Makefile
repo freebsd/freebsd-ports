@@ -535,12 +535,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
-IGNORE=	STICKY: update require
 USE_HTTP_SSL=	yes
-NGINX_UPSTREAM_STICKY_VERSION=	1.1
-MASTER_SITES+=	http://nginx-sticky-module.googlecode.com/files/:upstreamsticky
-DISTFILES+=	nginx-sticky-module-${NGINX_UPSTREAM_STICKY_VERSION}.tar.gz:upstreamsticky
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-sticky-module-${NGINX_UPSTREAM_STICKY_VERSION}
+NGINX_UPSTREAM_STICKY_VERSION=	1.2.4
+MASTER_SITES+=	https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/get/:upstreamsticky
+DISTFILES+=	${NGINX_UPSTREAM_STICKY_VERSION}.tar.gz:upstreamsticky
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-goodies-nginx-sticky-module-ng-c825ea7c5c91/
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_XSLT}
@@ -742,10 +741,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSI
 .endif
 
 .if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
-IGNORE=	SYSLOG: update require
-NGINX_SYSLOG_SUPPORT_FACILITY?=	LOG_DAEMON
-CONFIGURE_ARGS+=--with-syslog --with-syslog-facility=${NGINX_SYSLOG_SUPPORT_FACILITY}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-syslog_support
+#GIT_SYSLOG_PATCH_VERSION=3ca5ba65541637f74467038aa032e2586321d0cb
+GIT_SYSLOG_PATCH_VERSION=3ca5ba6
+MASTER_SITES+=	https://github.com/yaoweibin/nginx_syslog_patch/tarball/${GIT_SYSLOG_PATCH_VERSION}/:syslog_patch
+DISTFILES+=	nginx_syslog_patch-${GIT_SYSLOG_PATCH_VERSION}.tar.gz:syslog_patch
+CONFIGURE_ARGS+=	--add-module=${WRKDIR}/yaoweibin-nginx_syslog_patch-${GIT_SYSLOG_PATCH_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MTCP_PROXY}
@@ -951,6 +951,11 @@ post-patch:
 	( cd ${WRKSRC} && \
 		${PATCH} -p1 < \
 			${WRKDIR}/yaoweibin-nginx_tcp_proxy_module-${GIT_TCP_PROXY_VERSION:S/^0-g//}/tcp.patch )
+.endif
+.if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
+	( cd ${WRKSRC} && \
+		${PATCH} -p1 < \
+			${WRKDIR}/yaoweibin-nginx_syslog_patch-${GIT_SYSLOG_PATCH_VERSION}/syslog-1.5.6.patch )
 .endif
 .if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
