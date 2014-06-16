@@ -1,27 +1,24 @@
 # Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
 
-PORTNAME=	reportlab2
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTNAME=	reportlab
+PORTVERSION=	2.7
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.com/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	reportlab-${PORTVERSION}${EXTRACT_SUFX} pfbfer-${PFBFER_VERSION}.zip
-EXTRACT_ONLY=	reportlab-${PORTVERSION}${EXTRACT_SUFX}
+PKGNAMESUFFIX=	2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		pfbfer-${PFBFER_VERSION}.zip
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	buganini@gmail.com
+MAINTAINER=	kozlov.sergey.404@gmail.com
 COMMENT=	Library to create PDF documents using the Python language
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 
-OPTIONS_DEFINE=	CJK FREETYPE DOCS
-OPTIONS_DEFAULT=	CJK FREETYPE
-CJK_DESC=	Adobe CMaps
-
-WRKSRC=		${WRKDIR}/reportlab-${PORTVERSION}
+OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	py*-reportlab[^2]-[^2].* \
 		py*-reportlab-[^2].*
@@ -30,43 +27,35 @@ PORTSCOUT=	limit:^2\.
 
 PFBFER_VERSION=	20070710
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	reportlab
+PYDISTUTILS_AUTOPLIST=	yes
 
-MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
-
-REPORTLABDIR=	${PYTHONPREFIX_SITELIBDIR}/reportlab
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DOCS=		reportlab-graphics-reference.pdf \
 		reportlab-reference.pdf \
 		reportlab-userguide.pdf
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/ports/distfiles|${DISTDIR}|g' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e 's|pfbfer.zip|pfbfer-${PFBFER_VERSION}.zip|g' ${WRKSRC}/setup.py
+DOCS_PLIST_FILES=	${DOCSDIR}/reportlab-graphics-reference.pdf \
+			${DOCSDIR}/reportlab-reference.pdf \
+			${DOCSDIR}/reportlab-userguide.pdf
+DOCS_PLIST_DIRS=	${DOCSDIR}
 
 .include <bsd.port.options.mk>
+
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64
-
+BROKEN=	Does not install on sparc64
 .endif
 
-.if ${PORT_OPTIONS:MCJK}
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps
-.endif
-
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|http://www.reportlab.com/ftp|file://${DISTDIR}|g' ${WRKSRC}/setup.py
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/docs && ${PYTHON_CMD} genAll.py
-	${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/docs && \
+	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} genAll.py
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	${CP} ${WRKSRC}/docs/${i} ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
