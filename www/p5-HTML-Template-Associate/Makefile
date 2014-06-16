@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ALEXP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Bridges gap between HTML::Template and other modules
 
 RUN_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \

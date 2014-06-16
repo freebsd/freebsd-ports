@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Fetch proxies from free proxy lists
 
 BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
