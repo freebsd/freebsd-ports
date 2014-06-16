@@ -9,9 +9,6 @@ MASTER_SITES=	http://romain.blogreen.org/distfiles/
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Recover lost JPEG images from device dumps
 
-PLIST_FILES=	bin/mmrecover
-MAN1=		mmrecover.1
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/mmrecover man/man1/mmrecover.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
