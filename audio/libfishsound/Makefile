@@ -3,7 +3,7 @@
 
 PORTNAME=	libfishsound
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/libfishsound/ \
 		LOCAL/sunpoet
@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS DOXYGEN
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
 
 .include <bsd.port.options.mk>
 
@@ -36,6 +36,6 @@ post-patch:
 .endif
 
 post-build:
-	@${STRIP_CMD} ${WRKSRC}/src/libfishsound/.libs/libfishsound.so.4
+	@${STRIP_CMD} ${WRKSRC}/src/libfishsound/.libs/libfishsound.so
 
 .include <bsd.port.mk>
