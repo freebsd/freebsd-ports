@@ -8,30 +8,31 @@ you update your ports collection, before attempting any port upgrades.
 20140616:
   AFFECTS: users of devel/subversion
   AUTHOR: lev@FreeBSD.org
-  
-  subversion port has been overhauled. Some optional parts was extracted
-  to separate ports. These ports are:
-  
-  www/mod_dav_svn 
+
+  The subversion port has been overhauled. Some optional parts were extracted
+  into separate ports. These ports are:
+
+  www/mod_dav_svn
     instead of option MOD_DAV_SVN.
   security/subversion-gnome-keyring
     instead of option GNOME_KEYRING.
   security/subversion-kwallet
     instead of option KDE_KWALLET.
-    
+
   If you used devel/subversion with one (or more) of these non-standard
-  options, you should install appropriate port after subversion upgrade.
-  
-  "mod_dontdothat" is installed unconditionally by www/mod_dav_svn
-  port (it has been depended on TOOLS option), but is not activated by
-  default, you may need to edit apache's configuration file.
-  
-  devel/subversion port now installs svndiff, svndiff3 and svndiff4
+  options, you should install the appropriate port(s) after upgrading
+  subversion.
+
+  "mod_dontdothat" is installed unconditionally by www/mod_dav_svn port (it
+  depended on the TOOLS option before), but is not activated by default, you
+  may need to edit apache's configuration file.
+
+  The devel/subversion port now installs svndiff, svndiff3 and svndiff4
   commands if TOOLS option is enabled. They was skipped before.
-  Official names "diff", "diff3" and "diff4" are prefixed with "svn" to
+  The official names "diff", "diff3" and "diff4" are prefixed with "svn" to
   avoid conflicts with base and other diff versions.
-  
-  All libraries and binaries are now stripped if MAINTAINER_DEBUG
+
+  All libraries and binaries are now stripped if the MAINTAINER_DEBUG
   option is not selected (including all sub-ports, like bindings
   and mod_dav_svn).
 
