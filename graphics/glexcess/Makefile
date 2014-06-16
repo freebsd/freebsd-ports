@@ -11,13 +11,11 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	hernan.di.pietro@gmail.com
 COMMENT=	Impressive OpenGL Demo
 
-
 USE_GL=		glut
 
 MAKE_ARGS=	'CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -pipe -s -O2' \
 		'LDFLAGS=-L${LOCALBASE}/lib -lGL -lGLU -lglut'
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/scene*.cpp
 	@${REINPLACE_CMD} -e 's|k_InitGL(GLvoid)|k_InitGL(void)|' ${WRKSRC}/scene12.cpp
@@ -25,12 +23,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|Create(char\*|Create(const char* |g' ${WRKSRC}/Texture.*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/glxs ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/*.raw ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/glxs ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/*.raw ${STAGEDIR}${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
