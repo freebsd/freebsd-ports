@@ -3,9 +3,9 @@ include/snappy-sinksource.h
 include/snappy-stubs-public.h
 include/snappy.h
 lib/libsnappy.a
-lib/libsnappy.la
 lib/libsnappy.so
-lib/libsnappy.so.3
+lib/libsnappy.so.1
+lib/libsnappy.so.1.2.0
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
