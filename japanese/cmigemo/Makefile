@@ -29,7 +29,7 @@ PORTDOCS=	README_j.txt
 USES+=		iconv gmake zip
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-default-src
 
@@ -38,7 +38,6 @@ INSTALL_TARGET+=gcc-install-doc
 .endif
 
 .if !target(post-extract)
-NO_STAGE=	yes
 post-extract:
 	${CHMOD} a+x ${WRKSRC}/configure
 .endif
