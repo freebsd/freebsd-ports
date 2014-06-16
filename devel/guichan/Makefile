@@ -3,7 +3,7 @@
 
 PORTNAME=	guichan
 PORTVERSION=	0.8.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -12,10 +12,9 @@ COMMENT=	Small, efficient C++ GUI library designed for games
 
 LICENSE=	BSD3CLAUSE
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
