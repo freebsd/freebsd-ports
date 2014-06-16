@@ -1,2 +1,5 @@
 %%DATADIR%%/models/zinnia/handwriting-ja.meta
 %%DATADIR%%/models/zinnia/handwriting-ja.model
+@dirrmtry %%DATADIR%%/models/zinnia
+@dirrmtry %%DATADIR%%/models
+@dirrmtry %%DATADIR%%
