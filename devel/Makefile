@@ -4249,6 +4249,7 @@
     SUBDIR += rubygem-ffi
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filemagic
+    SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-core
