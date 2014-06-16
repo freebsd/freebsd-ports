@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://s01.de/~tox/files/smu/ \
 		http://mirror.4bit.ws/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	A simple interpreter for a simplified markdown dialect
 
 LICENSE=	MIT

@@ -8,7 +8,7 @@ PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.4.6/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
 
 LICENSE=	BSD2CLAUSE

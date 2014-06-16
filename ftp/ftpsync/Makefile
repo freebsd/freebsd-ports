@@ -8,7 +8,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://ftpsync.sourceforge.net/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigO@FreeBSD.org
 COMMENT=	Synchronizes a local and a remote FTP directory trees
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww

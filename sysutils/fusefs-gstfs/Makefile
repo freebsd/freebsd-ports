@@ -9,7 +9,7 @@ MASTER_SITES=	http://bobcopeland.com/gstfs/releases/ \
 		http://mirror.mcx2.org/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	On-demand, transcoding filesystem (using GStreamer pipeline)
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
