@@ -49,11 +49,11 @@ PORTDOCS=	${PORTDOCSbase} ${PORTDOCSdoc} ${PORTDOCShtml}
 CONFIGURE_ARGS+=--with-system-pinerc=${PREFIX}/etc/alpine.conf \
 		--with-system-fixed-pinerc=${PREFIX}/etc/alpine.conf.fixed \
 		--with-password-prog=/usr/bin/passwd \
-		--with-system-mail-directory=/var/mail \
-		--enable-background-post --without-krb5 --without-tcl
+		--with-system-mail-directory=/var/mail
 
 .endif
-CONFIGURE_ARGS+=--with-debug-level=2
+CONFIGURE_ARGS+=--with-debug-level=2 \
+		--enable-background-post --without-krb5 --without-tcl
 
 MAKE_ARGS+=	CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 
