@@ -3,12 +3,14 @@
 
 PORTNAME=	ntop
 PORTVERSION=	5.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libevent-1.4.so:${PORTSDIR}/devel/libevent
@@ -17,7 +19,7 @@ BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
 		dot:${PORTSDIR}/graphics/graphviz \
 		geoiplookup:${PORTSDIR}/net/GeoIP
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
+		urwfonts>0:${PORTSDIR}/x11-fonts/urwfonts
 
 DBDIR?=		/var/db
 
