@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 USE_GNOME=	gnomeprefix gtk20
 USE_GL=		yes
-USES=		gettext gmake pkgconfig tar:bzip2 pathfix desktop-file-utils
+USES=		gettext gmake pkgconfig tar:bzip2 pathfix
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
