@@ -3,6 +3,7 @@
 
 PORTNAME=	googletest
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	gtest-${PORTVERSION}
@@ -10,7 +11,7 @@ DISTNAME=	gtest-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Framework for writing C++ tests on a variety of platforms
 
-USES=		shebangfix
+USES=		shebangfix libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	2

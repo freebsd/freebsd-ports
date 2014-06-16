@@ -19,13 +19,13 @@ include/gtest/internal/gtest-string.h
 include/gtest/internal/gtest-tuple.h
 include/gtest/internal/gtest-type-util.h
 lib/libgtest.a
-lib/libgtest.la
 lib/libgtest.so
 lib/libgtest.so.0
+lib/libgtest.so.0.0.0
 lib/libgtest_main.a
-lib/libgtest_main.la
 lib/libgtest_main.so
 lib/libgtest_main.so.0
+lib/libgtest_main.so.0.0.0
 share/aclocal/gtest.m4
 @dirrm include/gtest/internal
 @dirrm include/gtest
