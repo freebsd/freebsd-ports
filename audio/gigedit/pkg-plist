@@ -1,11 +1,10 @@
 bin/gigedit
-lib/gigedit/libgigedit.so.2
-lib/gigedit/libgigedit.so
-lib/gigedit/libgigedit.la
 lib/gigedit/libgigedit.a
-lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.so
-lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.la
+lib/gigedit/libgigedit.so
+lib/gigedit/libgigedit.so.2
+lib/gigedit/libgigedit.so.2.0.0
 lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.a
+lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.so
 %%DOCSDIR%%/gigedit_quickstart.html
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/shot_whole_app.png
