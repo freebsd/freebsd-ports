@@ -3,6 +3,7 @@
 
 PORTNAME=	linkchecker
 PORTVERSION=	9.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	LinkChecker-${PORTVERSION}
@@ -12,15 +13,14 @@ COMMENT=	Check HTML documents for broken links
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython \
+		${PYTHON_PKGNAMEPREFIX}requests>=2:${PORTSDIR}/www/py-requests
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	LinkChecker
-PYEASYINSTALL_ARCHDEP=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		CLAMAV EXAMPLES GEOIP GTK2 LOGIN NLS QT4 \
@@ -35,6 +35,7 @@ GTK2_USE=		gnome=pygtk2
 LOGIN_DESC=		Login form submission
 LOGIN_RUN_DEPENDS=	twill:${PORTSDIR}/www/twill
 NLS_USES=		gettext
+QT4_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-noqt-setup.py
 QT4_RUN_DEPENDS=\
 		${PYTHON_PKGNAMEPREFIX}qt4-sql>=${PYQT_VERSION}:${PORTSDIR}/databases/py-qt4-sql \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT_VERSION}:${PORTSDIR}/devel/py-qt4-core \
@@ -55,28 +56,9 @@ WSGI_USE=		apache_run=22
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^Icon/s|=.*|=linkchecker|' ${WRKSRC}/doc/*.desktop
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
 
 post-build:
-	@${MKDIR} ${WRKDIR}/site-packages
-	@${CAT} ${WRKSRC}/_LinkChecker_configdata.py | ${GREP} ^# \
-		> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
-	@${ECHO_MSG} "install_purelib = '${PYTHONPREFIX_SITELIBDIR}'" \
-		>> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
-	@${ECHO_MSG} "install_platlib = '${PYTHONPREFIX_SITELIBDIR}'" \
-		>> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
-	@${ECHO_MSG} "install_lib = '${PYTHONPREFIX_SITELIBDIR}'" \
-		>> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
-	@${ECHO_MSG} "install_headers = '${PYTHONPREFIX_INCLUDEDIR}/LinkChecker'" \
-		>> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
-	@${ECHO_MSG} "install_scripts = '${PREFIX}/bin'" \
-		>> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
-	@${ECHO_MSG} "config_dir = '${DATADIR}'" \
-		>> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
-	@${ECHO_MSG} "install_data = '${PREFIX}'" \
-		>> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
-	@${CAT} ${WRKSRC}/_LinkChecker_configdata.py | \
-		${GREP} -v ^# | ${GREP} -v ^install | ${GREP} -v ^config \
-		>> ${WRKDIR}/site-packages/_LinkChecker_configdata.py
 .if ${PORT_OPTIONS:MNLS}
 .for lang in de es fr
 	(cd ${WRKSRC}/po && msgfmt -c -o ${lang}.mo ${lang}.po)
@@ -84,52 +66,11 @@ post-build:
 .endif
 
 post-install:
-	(cd ${WRKDIR}/site-packages && ${INSTALL_DATA} \
-		_LinkChecker_configdata.py \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR})
-	(cd ${WRKDIR}/site-packages && ${INSTALL_DATA} \
-		_LinkChecker_configdata.py \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PYEASYINSTALL_EGG})
-	(cd ${WRKSRC}/doc/en && ${INSTALL_MAN} linkchecker.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1)
-	(cd ${WRKSRC}/doc/en && ${INSTALL_MAN} linkcheckerrc.5 \
-		${STAGEDIR}${MAN5PREFIX}/man/man5)
-	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/de/man1
-	(cd ${WRKSRC}/doc/de && ${INSTALL_MAN} linkchecker.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/de/man1)
-	@${MKDIR} ${STAGEDIR}${MAN5PREFIX}/man/de/man5
-	(cd ${WRKSRC}/doc/de && ${INSTALL_MAN} linkcheckerrc.5 \
-		${STAGEDIR}${MAN5PREFIX}/man/de/man5)
 .for i in 16 32 48 64 128
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
 	(cd ${WRKSRC}/doc/html && ${INSTALL_DATA} logo${i}x${i}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps/linkchecker.png)
 .endfor
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/config && ${INSTALL_DATA} linkcheckerrc \
-		${STAGEDIR}${DATADIR})
-.for i in lccollection.qhc lcdoc.qch
-	(cd ${WRKSRC}/doc/html && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DATADIR})
-.endfor
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} linkchecker.desktop \
-		${STAGEDIR}${DESKTOPDIR})
-.if ${PORT_OPTIONS:MQT4}
-	(cd ${WRKSRC}/doc/en && ${INSTALL_MAN} linkchecker-gui.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1)
-	(cd ${WRKSRC}/doc/de && ${INSTALL_MAN} linkchecker-gui.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/de/man1)
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} linkchecker-gui.desktop \
-		${STAGEDIR}${DESKTOPDIR})
-.endif
-.if ${PORT_OPTIONS:MNLS}
-.for lang in de es fr
-	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
-	(cd ${WRKSRC}/po && ${INSTALL_DATA} ${lang}.mo \
-		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/linkchecker.mo)
-.endfor
-.endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/cgi-bin/lconline && ${INSTALL_DATA} * \
 		${STAGEDIR}${EXAMPLESDIR})
@@ -141,11 +82,5 @@ post-install:
 	(cd ${WRKSRC}/doc/examples && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${EXAMPLESDIR})
 .endfor
-	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
-		-d ${PYTHONPREFIX_SITELIBDIR} \
-		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O -m compileall \
-		-d ${PYTHONPREFIX_SITELIBDIR} \
-		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
 .include <bsd.port.mk>
