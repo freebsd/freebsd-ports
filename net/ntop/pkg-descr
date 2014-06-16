@@ -3,4 +3,4 @@ local area networks.  It provides command line and web interfaces, the latter
 via an embedded web server.  ntop is based on libpcap.
 
 Author:	Luca Deri <deri@ntop.org>
-WWW:	http://www.ntop.org/
+WWW: http://www.ntop.org/
