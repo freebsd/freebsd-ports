@@ -14,10 +14,9 @@ COMMENT=	Extremely addictive realtime worms shoot-em-up
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libboost_signals.so:${PORTSDIR}/devel/boost-libs \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libalut.so:${PORTSDIR}/audio/freealut
+		libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		tar:bzip2 cmake openal pkgconfig
+USES=		tar:bzip2 cmake openal:al,alut pkgconfig
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
 USE_GCC=	any # too many gcc'isms
