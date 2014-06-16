@@ -3,13 +3,14 @@
 
 PORTNAME=	libmodplug
 PORTVERSION=	0.8.8.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/modplug-xmms/${PORTNAME}/${PORTVERSION} CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
