@@ -15,9 +15,9 @@ MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Panorama Tools to make panorama pictures
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	gtk20 glib20 pango atk
 
@@ -44,7 +44,6 @@ CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
 CONFIGURE_ARGS+=	--without-java
 .endif
 
-NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
 
