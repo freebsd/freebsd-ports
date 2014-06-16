@@ -3,6 +3,7 @@
 
 PORTNAME=	libbpm
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.hep.ucl.ac.uk/~bino/libbpm/dist/ http://levsha.me/ports/distfiles/
 
@@ -12,7 +13,7 @@ COMMENT=	C-library contains low level beam position monitor signal processing
 GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
 
 post-patch:
 	${SED} -i '' 's/\(-release .*\)/\1 -version-info 0/' ${WRKSRC}/Makefile.in ${WRKSRC}/*/Makefile.in
