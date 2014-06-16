@@ -6,9 +6,9 @@ include/DLS.h
 include/RIFF.h
 include/gig.h
 lib/libgig.a
-lib/libgig.la
 lib/libgig.so
-lib/libgig.so.10
+lib/libgig.so.6
+lib/libgig.so.6.4.0
 libdata/pkgconfig/gig.pc
 man/man1/dlsdump.1.gz
 man/man1/gigdump.1.gz
