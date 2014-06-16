@@ -14,8 +14,7 @@ LICENSE=	LGPL20
 
 USE_QT4=	corelib dbus gui \
 		moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:bzip2
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	GENDOCS
