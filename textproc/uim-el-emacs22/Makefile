@@ -16,5 +16,4 @@ DESCR=	${MASTERDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../uim-el
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

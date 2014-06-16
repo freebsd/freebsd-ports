@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-kde4
 COMMENT=	KDE4 panel applet of uim input method
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	libuim.so:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-qt4:${PORTSDIR}/textproc/uim-qt4
 
 USE_GCC=	any
@@ -30,11 +30,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt4_toolbar_CMakeLists.txt
 IGNORE=		requires X11
 .endif
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/qt4/toolbar/build && ${SETENV} ${MAKE_ENV} ${GMAKE})
 
 do-install:
-	(cd ${WRKSRC}/qt4/toolbar/build && ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	(cd ${WRKSRC}/qt4/toolbar/build && ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${STAGEDIR} install)
 
 .include "${MASTERDIR}/Makefile"
