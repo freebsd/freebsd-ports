@@ -473,6 +473,7 @@
     SUBDIR += mod_cloudflare
     SUBDIR += mod_cplusplus
     SUBDIR += mod_cvs2
+    SUBDIR += mod_dav_svn
     SUBDIR += mod_dnssd
     SUBDIR += mod_domaintree
     SUBDIR += mod_encoding

@@ -1,0 +1,10 @@
+@comment enable / disable modules in this order: dav_svn, authz_svn, dontdothat
+@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dav_svn_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%APACHEMODDIR%%/mod_dav_svn.so
+@exec %D/sbin/apxs -e -a -n dav_svn %D/%F
+@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+authz_svn_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%APACHEMODDIR%%/mod_authz_svn.so
+@exec %D/sbin/apxs -e -a -n authz_svn %D/%F
+@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dontdothat_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%APACHEMODDIR%%/mod_dontdothat.so
+@exec %D/sbin/apxs -e -A -n dontdothat %D/%F

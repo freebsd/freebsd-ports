@@ -18,20 +18,17 @@ PKGDIR=		${.CURDIR}
 USES=		perl5
 USE_PERL5=	build run fixpacklist
 
-SVN_BUILD_BINDINGS=yes
+SVN_BUILD_BINDINGS=	yes
+SVN_BUILD_ADDONS=	yes
 
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	perl5
 
-do-build:
-	${MAKE} -C ${WRKSRC} swig-pl-lib ${MAKE_ARGS}
-	${MAKE} -C ${WRKSRC} swig-pl ${MAKE_ARGS}
+ALL_TARGET=	swig-pl-lib swig-pl
+INSTALL_TARGET=	install-swig-pl
 
 pre-install:
 	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile
-
-do-install:
-	${MAKE} -C ${WRKSRC} install-swig-pl ${MAKE_ARGS}
 
 .include <bsd.port.post.mk>

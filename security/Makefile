@@ -962,6 +962,8 @@
     SUBDIR += strobe
     SUBDIR += strongswan
     SUBDIR += stunnel
+    SUBDIR += subversion-gnome-keyring
+    SUBDIR += subversion-kwallet
     SUBDIR += subweb
     SUBDIR += sud
     SUBDIR += sudo
