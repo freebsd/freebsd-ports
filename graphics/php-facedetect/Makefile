@@ -27,7 +27,6 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS+=	--with-facedetect
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
