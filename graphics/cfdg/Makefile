@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anatoly.borodin@gmail.com
 COMMENT=	Context Free Design Grammar compiler
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -21,21 +21,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 WRKSRC=		${WRKDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 USES=		gmake
-
 NO_INSTALL_MANPAGES=	yes
-
 PLIST_FILES=	bin/cfdg
 
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 .endif
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cfdg ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cfdg ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/input/* ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/input/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
