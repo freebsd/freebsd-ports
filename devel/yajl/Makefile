@@ -1,21 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	yajl
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Portable JSON parsing and serialization library in ANSI C
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	lloyd
-GH_COMMIT=	fee1ebe
 
 LICENSE=	ISCL
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	lloyd
+GH_COMMIT=	66cb08c
+
 USE_LDCONFIG=	yes
-USES=		cmake
+USES=		cmake:outsource
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
