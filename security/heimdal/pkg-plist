@@ -109,10 +109,6 @@ lib/libheimbase.a
 lib/libheimbase.la
 lib/libheimbase.so
 lib/libheimbase.so.1
-%%SQLITE%%lib/libheimsqlite.a
-%%SQLITE%%lib/libheimsqlite.la
-%%SQLITE%%lib/libheimsqlite.so
-%%SQLITE%%lib/libheimsqlite.so.0
 lib/libhdb.a
 lib/libhdb.la
 lib/libhdb.so
