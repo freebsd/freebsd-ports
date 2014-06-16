@@ -13,7 +13,7 @@ COMMENT=	Collection of useful classes and functions for Django
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.4.3:${PORTSDIR}/www/py-django14 \
-		${PYTHON_PKGNAMEPREFIX}django-pipeline>=1.2.24:${PORTSDIR}/www/py-django-pipeline
+		${PYTHON_PKGNAMEPREFIX}django-pipeline12>=1.2.24:${PORTSDIR}/www/py-django-pipeline12
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.4.3:${PORTSDIR}/www/py-django14 \
 		${PYTHON_PKGNAMEPREFIX}django-pipeline12>=1.2.24:${PORTSDIR}/www/py-django-pipeline12 \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.2:${PORTSDIR}/textproc/py-feedparser \
