@@ -35,11 +35,8 @@ LDFLAGS+=	`${SDL_CONFIG} --libs`
 ALL_TARGET=	dune
 REINPLACE_ARGS=	-i ''
 
-MAN1=		dune.1 illegal2vrml.1
-
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Try to fix parallel builds (-jX) by calling submakes correctly
@@ -48,12 +45,12 @@ post-patch:
 		's,cd (.+) *(;|&&) *(make|\$$\(MAKE\)),$$(MAKE) -C \1,'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/dune ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/dune ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} dune4kids illegal2vrml \
-		${PREFIX}/bin
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/man && ${INSTALL_MAN} dune.1 illegal2vrml.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
