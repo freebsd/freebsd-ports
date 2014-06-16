@@ -2,7 +2,7 @@ bin/2to3-%%VER%%
 bin/idle%%VER%%
 bin/pydoc%%VER%%
 bin/python%%VER%%
-bin/python%%VER%%%%ABI%%-config
+bin/python%%VER%%-config
 bin/pyvenv-%%VER%%
 %%PYTHON_INCLUDEDIR%%%%ABI%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%%%ABI%%/Python.h

@@ -42,6 +42,16 @@
  # Check for use of the system expat library
  AC_MSG_CHECKING(for --with-system-expat)
  AC_ARG_WITH(system_expat,
+--- ./configure.orig	2014-05-19 05:19:40.000000000 +0000
++++ ./configure	2014-06-15 12:27:03.000000000 +0000
+@@ -650,6 +650,7 @@
+ TCLTK_LIBS
+ TCLTK_INCLUDES
+ LIBFFI_INCLUDEDIR
++DISABLED_EXTENSIONS
+ PKG_CONFIG
+ SHLIBS
+ CFLAGSFORSHARED
 --- ./setup.py.orig	2014-03-24 22:48:48.495472513 +1100
 +++ ./setup.py	2014-03-24 22:49:20.076122201 +1100
 @@ -33,7 +33,10 @@
