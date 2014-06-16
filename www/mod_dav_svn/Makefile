@@ -4,6 +4,8 @@
 PORTNAME=	mod_dav_svn
 DISTNAME=	subversion-${PORTVERSION}
 
+CATEGORIES=	www
+
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Apache module for subversion serving.
 
@@ -13,8 +15,6 @@ PKGDIR=		${.CURDIR}
 SVN_BUILD_ADDONS=	yes
 
 .include "${MASTERDIR}/Makefile.common"
-
-CATEGORIES+=	www
 
 USE_APACHE=	22+
 

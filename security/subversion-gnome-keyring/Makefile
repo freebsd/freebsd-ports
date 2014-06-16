@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-gnome-keyring
+CATEGORIES=	security gnome
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Gnome KWyring integration for Version control system
@@ -16,8 +17,6 @@ SVN_BUILD_ADDONS=	yes
 LIB_DEPENDS+=		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
 CONFIGURE_ARGS+=	--with-gnome-keyring
-
-CATEGORIES+=	gnome security
 
 ALL_TARGET=	gnome-keyring-lib
 INSTALL_TARGET=	install-gnome-keyring-lib

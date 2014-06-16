@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-kwallet
+CATEGORIES=	security kde
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	KDE KWallet integration for Version control system
@@ -16,8 +17,6 @@ USE_KDE4=		kdelibs runtime
 .include "${MASTERDIR}/Makefile.common"
 
 CONFIGURE_ARGS+=	--with-kwallet=${KDE4_PREFIX}
-
-CATEGORIES+=	kde security
 
 ALL_TARGET=	kwallet-lib
 INSTALL_TARGET=	install-kwallet-lib
