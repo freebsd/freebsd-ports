@@ -1,0 +1,21 @@
+--- doc/doxygen_manual.tex.orig	2012-02-11 18:34:00.000000000 -0500
++++ doc/doxygen_manual.tex	2012-03-04 13:56:33.000000000 -0500
+@@ -13,7 +13,7 @@
+ % input used in their production; they are not affected by this license.
+ 
+ \documentclass{book}
+-\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
++\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+ \usepackage{makeidx}
+ \usepackage{natbib}
+ \usepackage{graphicx}
+@@ -28,8 +28,7 @@
+ \usepackage{alltt}
+ \usepackage{ifpdf}
+ \ifpdf
+-\usepackage[pdftex,
+-            pagebackref=true,
++\usepackage[pagebackref=true,
+             colorlinks=true,
+             linkcolor=blue,
+             unicode
