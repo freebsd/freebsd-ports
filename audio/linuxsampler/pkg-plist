@@ -27,15 +27,13 @@ include/linuxsampler/engines/InstrumentManager.h
 include/linuxsampler/plugins/InstrumentEditor.h
 include/linuxsampler/plugins/InstrumentEditorFactory.h
 %%DSSI%%lib/dssi/linuxsampler.a
-%%DSSI%%lib/dssi/linuxsampler.la
 %%DSSI%%lib/dssi/linuxsampler.so
 lib/linuxsampler/liblinuxsampler.a
-lib/linuxsampler/liblinuxsampler.la
 lib/linuxsampler/liblinuxsampler.so
 lib/linuxsampler/liblinuxsampler.so.3
+lib/linuxsampler/liblinuxsampler.so.3.0.0
 lib/linuxsampler/plugins/.keep_me
 %%LV2CORE%%lib/lv2/linuxsampler.lv2/linuxsampler.a
-%%LV2CORE%%lib/lv2/linuxsampler.lv2/linuxsampler.la
 %%LV2CORE%%lib/lv2/linuxsampler.lv2/linuxsampler.so
 %%LV2CORE%%lib/lv2/linuxsampler.lv2/linuxsampler.ttl
 %%LV2CORE%%lib/lv2/linuxsampler.lv2/manifest.ttl

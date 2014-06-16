@@ -3,7 +3,7 @@
 
 PORTNAME=	linuxsampler
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
@@ -22,10 +22,9 @@ OPTIONS_DEFAULT=	JACK
 DSSI_DESC=	Enable DSSI support
 LV2CORE_DESC=	Enable LV2 support
 
-USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
+USES=		tar:bzip2 libtool gmake pathfix pkgconfig
+GNU_CONFIGURE=	yes
 USE_SQLITE=	3
-USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	HAVE_UNIX98=1
 USE_LDCONFIG=	yes
 
@@ -52,6 +51,7 @@ CONFIGURE_ARGS+=--disable-alsa-driver
 BUILD_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 RUN_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 PLIST_SUB+=	DSSI=""
+CPPFLAGS:=	-I${LOCALBASE}/include/dssi ${CPPFLAGS}
 .else
 CONFIGURE_ENV+=	ac_cv_header_dssi_h=no
 PLIST_SUB+=	DSSI="@comment "
