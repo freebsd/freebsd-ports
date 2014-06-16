@@ -11,10 +11,8 @@ COMMENT=	Image viewer for X
 
 USE_SDL=	image
 GNU_CONFIGURE=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
-MAN1=		vp.1
-PLIST_FILES=	bin/vp
+PLIST_FILES=	bin/vp man/man1/vp.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
