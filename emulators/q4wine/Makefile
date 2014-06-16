@@ -7,9 +7,8 @@ PORTREVISION=	1
 CATEGORIES=	emulators deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION:S/.r/-r/}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
-# http://sourceforge.net/projects/q4wine/files/q4wine/q4wine%201.1-r2/q4wine-1.1-r2.tar.gz/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	QT4 front-end for WINE
 
 LICENSE=	GPLv3

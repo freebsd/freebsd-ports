@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.danielnaber.de/loook/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Simple Python tool that search in LibreOffice/OpenOffice files
 
 LICENSE=	GPLv2

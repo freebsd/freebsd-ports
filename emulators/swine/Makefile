@@ -1,11 +1,11 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	swine
 PORTVERSION=	1.0.4
 CATEGORIES=	emulators deskutils python
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Qt4 graphical Wine frontend
 
 LICENSE=	GPLv2
@@ -31,7 +31,6 @@ USE_QT4=	linguist_build
 ONLY_FOR_ARCHS=	i386 amd64
 
 PORTDOCS=	README
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>

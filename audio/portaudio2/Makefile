@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	2
 DISTNAME=	pa_stable_v${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Portable cross-platform Audio API
 
 LICENSE=	MIT
