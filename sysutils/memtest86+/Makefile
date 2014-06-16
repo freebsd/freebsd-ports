@@ -92,11 +92,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
-post-install:
-.if ${PORT_OPTIONS:MBOOT}
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-.endif
-
 .include <bsd.port.mk>
+
+RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
