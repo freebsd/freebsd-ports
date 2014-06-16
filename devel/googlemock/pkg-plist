@@ -15,12 +15,12 @@ include/gmock/internal/gmock-generated-internal-utils.h
 include/gmock/internal/gmock-internal-utils.h
 include/gmock/internal/gmock-port.h
 lib/libgmock.a
-lib/libgmock.la
 lib/libgmock.so
 lib/libgmock.so.0
+lib/libgmock.so.0.0.0
 lib/libgmock_main.a
-lib/libgmock_main.la
 lib/libgmock_main.so
 lib/libgmock_main.so.0
+lib/libgmock_main.so.0.0.0
 @dirrm include/gmock/internal
 @dirrm include/gmock
