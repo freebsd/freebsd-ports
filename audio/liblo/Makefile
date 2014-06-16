@@ -3,6 +3,7 @@
 
 PORTNAME=	liblo
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -13,7 +14,7 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
-USES=		gmake pathfix
+USES=		gmake pathfix libtool:oldver
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
