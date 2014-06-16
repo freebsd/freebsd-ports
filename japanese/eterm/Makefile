@@ -23,7 +23,6 @@ PLIST=		${MASTERDIR}/pkg-plist
 
 THEMES=		Escreen Eterm auto trans
 
-NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e "s,echo aout,echo elf,g" ${WRKSRC}/configure
 
