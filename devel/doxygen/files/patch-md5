@@ -1,0 +1,221 @@
+--- src/definition.cpp.orig	2011-08-19 15:34:17.000000000 +0800
++++ src/definition.cpp	2011-10-31 17:32:47.870380518 +0800
+@@ -18,6 +18,7 @@
+ #include "qtbc.h"
+ #include <ctype.h>
+ #include <qregexp.h>
++#include <sys/types.h>
+ #include "md5.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -361,13 +362,11 @@
+ 
+ bool Definition::_docsAlreadyAdded(const QCString &doc)
+ {
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+   // to avoid mismatches due to differences in indenting, we first remove
+   // double whitespaces...
+   QCString docStr = doc.simplifyWhiteSpace();
+-  MD5Buffer((const unsigned char *)docStr.data(),docStr.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)docStr.data(),docStr.length(),sigStr.data());
+   if (m_impl->docSignatures.find(sigStr)==-1) // new docs, add signature to prevent re-adding it
+   {
+     m_impl->docSignatures+=":"+sigStr;
+--- src/dirdef.cpp.orig	2011-07-26 19:54:31.000000000 +0800
++++ src/dirdef.cpp	2011-10-31 17:32:47.872380214 +0800
+@@ -1,3 +1,4 @@
++#include <sys/types.h>
+ #include "md5.h"
+ 
+ #include "dirdef.h"
+@@ -75,10 +76,8 @@
+   QCString result;
+ 
+   // convert to md5 hash
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)anchor.data(),anchor.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)anchor.data(),anchor.length(),sigStr.data());
+   return sigStr;
+ 
+   // old algorithm
+--- src/dot.cpp.orig	2011-08-09 02:06:19.000000000 +0800
++++ src/dot.cpp	2011-10-31 17:32:47.877389789 +0800
+@@ -39,6 +39,7 @@
+ #include <qdir.h>
+ #include <qfile.h>
+ #include "ftextstream.h"
++#include <sys/types.h>
+ #include "md5.h"
+ #include <qqueue.h>
+ 
+@@ -2063,10 +2064,8 @@
+     }
+     writeGraphFooter(md5stream);
+     resetReNumbering();
+-    uchar md5_sig[16];
+     QCString sigStr(33);
+-    MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
+-    MD5SigToString(md5_sig,sigStr.data(),33);
++    MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+     bool regenerate=FALSE;
+     if (checkAndUpdateMd5Signature(absBaseName,sigStr) || 
+         !checkDeliverables(absImgName,absMapName))
+@@ -2758,10 +2757,8 @@
+     }
+   }
+   writeGraphFooter(md5stream);
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)buf.data(),buf.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)buf.data(),buf.length(),sigStr.data());
+   if (reNumber)
+   {
+     resetReNumbering();
+@@ -3609,10 +3606,8 @@
+   QGString theGraph;
+   FTextStream md5stream(&theGraph);
+   m_dir->writeDepGraph(md5stream);
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+   bool regenerate=FALSE;
+   if (checkAndUpdateMd5Signature(absBaseName,sigStr) ||
+       !checkDeliverables(format==BITMAP ? absImgName :
+@@ -3739,10 +3734,8 @@
+   md5stream << "  Node18 -> Node9 [dir=\"back\",color=\"darkorchid3\",fontsize=\"" << FONTSIZE << "\",style=\"dashed\",label=\"m_usedClass\",fontname=\"" << FONTNAME << "\"];\n";
+   md5stream << "  Node18 [shape=\"box\",label=\"Used\",fontsize=\"" << FONTSIZE << "\",height=0.2,width=0.4,fontname=\"" << FONTNAME << "\",color=\"black\",URL=\"$classUsed" << Doxygen::htmlFileExtension << "\"];\n";
+   writeGraphFooter(md5stream);
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+   QCString absBaseName = (QCString)path+"/graph_legend";
+   QCString absDotName  = absBaseName+".dot";
+   QCString imgExt      = Config_getEnum("DOT_IMAGE_FORMAT");
+@@ -4139,10 +4132,8 @@
+ 
+   writeGraphFooter(md5stream);
+   resetReNumbering();
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)theGraph.data(),theGraph.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)theGraph.data(),theGraph.length(),sigStr.data());
+   QCString imgExt      = Config_getEnum("DOT_IMAGE_FORMAT");
+   QCString baseName    = m_diskName;
+   QCString imgName     = baseName+"."+imgExt;
+--- src/doxygen.pro.in.orig	2011-01-04 04:14:46.000000000 +0800
++++ src/doxygen.pro.in	2011-10-31 17:32:47.879381383 +0800
+@@ -18,7 +18,7 @@
+ CONFIG       =	console warn_on $extraopts
+ HEADERS      =	doxygen.h 
+ SOURCES      =	main.cpp 
+-unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -lpthread
++unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd -lpthread
+ win32:INCLUDEPATH          += .
+ win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -lpthread
+ win32-msvc:LIBS            += qtools.lib md5.lib doxygen.lib doxycfg.lib shell32.lib iconv.lib
+@@ -28,7 +28,7 @@
+ win32:TMAKE_CXXFLAGS       += -DQT_NODLL
+ win32-g++:LIBS             = -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -liconv -lpthread
+ win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti
+-INCLUDEPATH                += ../qtools ../libmd5 .
++INCLUDEPATH                += ../qtools .
+ DESTDIR                    =  ../bin
+ TARGET                     =  doxygen
+ unix:TARGETDEPS            =  ../lib/libdoxygen.a ../lib/libdoxycfg.a
+--- src/memberdef.cpp.orig	2011-08-18 22:46:40.000000000 +0800
++++ src/memberdef.cpp	2011-10-31 17:35:14.027187598 +0800
+@@ -19,6 +19,7 @@
+ #include <qglobal.h>
+ #include <qregexp.h>
+ #include <assert.h>
++#include <sys/types.h>
+ #include "md5.h"
+ #include "memberdef.h"
+ #include "membername.h"
+@@ -2771,11 +2772,9 @@
+   }
+   
+   // convert to md5 hash
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)memAnchor.data(),memAnchor.length(),md5_sig);
++  MD5Data((const unsigned char *)memAnchor.data(),memAnchor.length(),sigStr.data());
+   //printf("memAnchor=%s\n",memAnchor.data());
+-  MD5SigToString(md5_sig,sigStr.data(),33);
+   m_impl->anc = "a"+sigStr;
+ }
+ 
+--- src/membergroup.cpp.orig	2011-04-22 18:08:07.000000000 +0800
++++ src/membergroup.cpp	2011-10-31 17:32:47.886381993 +0800
+@@ -265,12 +265,10 @@
+ 
+ QCString MemberGroup::anchor() const
+ {
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+   QCString locHeader = grpHeader;
+   if (locHeader.isEmpty()) locHeader="[NOHEADER]";
+-  MD5Buffer((const unsigned char *)locHeader.data(),locHeader.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)locHeader.data(),locHeader.length(),sigStr.data());
+   return "amgrp"+sigStr;
+ }
+ 
+--- src/util.cpp.orig	2011-08-19 23:11:12.000000000 +0800
++++ src/util.cpp	2011-10-31 17:32:47.892382197 +0800
+@@ -20,6 +20,7 @@
+ #include <errno.h>
+ #include <math.h>
+ 
++#include <sys/types.h>
+ #include "md5.h"
+ 
+ #include "qtbc.h"
+@@ -4901,16 +4902,16 @@
+     if (resultLen>=128) // prevent names that cannot be created!
+     {
+       // third algorithm based on MD5 hash
+-      uchar md5_sig[16];
+       QCString sigStr(33);
+-      MD5Buffer((const unsigned char *)result.data(),resultLen,md5_sig);
+-      MD5SigToString(md5_sig,sigStr.data(),33);
++      MD5Data((const unsigned char *)result.data(),resultLen,sigStr.data());
+       result=result.left(128-32)+sigStr; 
+     }
+   }
+   if (createSubdirs)
+   {
++#if MAP_ALGO==ALGO_COUNT || MAP_ALGO==ALGO_CRC16
+     int l1Dir=0,l2Dir=0;
++#endif
+ 
+ #if MAP_ALGO==ALGO_COUNT 
+     // old algorithm, has the problem that after regeneration the
+@@ -4941,12 +4942,13 @@
+     l2Dir = (dirNum>>4)&0xff;
+ #elif MAP_ALGO==ALGO_MD5
+     // third algorithm based on MD5 hash
+-    uchar md5_sig[16];
+-    MD5Buffer((const unsigned char *)result.data(),result.length(),md5_sig);
+-    l1Dir = md5_sig[14]&0xf;
+-    l2Dir = md5_sig[15];
++    char md5[33];
++    MD5Data((const unsigned char *)result.data(),result.length(),md5);
++    result.prepend(QCString().sprintf("d%c/d%c%c/",md5[29],md5[30],md5[31]));
+ #endif
++#if MAP_ALGO==ALGO_COUNT || MAP_ALGO==ALGO_CRC16
+     result.prepend(QCString().sprintf("d%x/d%02x/",l1Dir,l2Dir));
++#endif
+   }
+   //printf("*** convertNameToFile(%s)->%s\n",name,result.data());
+   return result;
