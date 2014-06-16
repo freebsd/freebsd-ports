@@ -3,7 +3,7 @@
 
 PORTNAME=	twolame
 PORTVERSION=	0.3.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://www.ecs.soton.ac.uk/~njh/twolame/
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
