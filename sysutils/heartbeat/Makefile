@@ -3,7 +3,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -14,25 +14,30 @@ DIST_SUBDIR=	heartbeat
 MAINTAINER=	ports@encarnate.com
 COMMENT=	Subsystem for High-Availability Clustering
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libnet.so:${PORTSDIR}/net/libnet \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 PATCH_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool libltdl
+USE_AUTOTOOLS=	autoconf autoheader automake aclocal libltdl libtoolize
 AUTOMAKE_ARGS+=	--add-missing --include-deps --copy
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pkgconfig tar:bzip2 shebangfix
+SHEBANG_FILES=	ldirectord/ldirectord.in
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
+
+USERS=		hacluster
+GROUPS=		haclient
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libnet11
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet11
@@ -49,27 +54,21 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-fatal-warnings
 
 SUB_FILES=	pkg-install pkg-message
-SUB_LIST=	BATCH=${BATCH}
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+PLIST_SUB=	USER=${USERS} GROUP=${GROUPS}
 
-MAN1=		cl_status.1 ha_logger.1 hb_addnode.1 hb_delnode.1 hb_standby.1 hb_takeover.1
-MAN8=		apphbd.8 cibadmin.8 crm_resource.8 ha_logd.8 heartbeat.8 \
-		meatclient.8 stonith.8
-
-OPTIONS_DEFINE=MGMT LDIRECTORD APCSNMP DRAC3
+OPTIONS_DEFINE=		MGMT LDIRECTORD APCSNMP DRAC3
 MGMT_DESC=		Enable X11 Management Utilities
 LDIRECTORD_DESC=	Enable Linux Director Daemon
 APCSNMP_DESC=		Enable APC SNMP Stonith Device
 DRAC3_DESC=		Enable Dell DRACIII Stonith Device
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+APCSNMP_LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+DRAC3_LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-.if !defined(BATCH)
-BATCH=NO
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMGMT}
 BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
@@ -86,54 +85,45 @@ RUN_DEPENDS+=		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 USES+=			perl5
 USE_PERL5=		run
 PLIST_SUB+=		LDIRECTORD=""
-MAN8+=			ldirectord.8
 .else
 CONFIGURE_ARGS+=	--disable-ldirectord
 PLIST_SUB+=		LDIRECTORD="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MAPCSNMP} || exists (${PREFIX}/lib/libnetsnmp.so)
-LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+.if ${PORT_OPTIONS:MAPCSNMP}
 PLIST_SUB+=	APCSNMP=""
 .else
 PLIST_SUB+=	APCSNMP="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDRAC3} || exists (${PREFIX}/lib/libcurl.so)
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+.if ${PORT_OPTIONS:MDRAC3}
 PLIST_SUB+=	DRAC3=""
 .else
 PLIST_SUB+=	DRAC3="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+=		NOPORTDOCS=""
-.else
-PLIST_SUB+=		NOPORTDOCS="@comment "
-.endif
-
 # BladeHPI Stonith Automagic Building
-.if exists (${PREFIX}/include/openhpi/SaHpi.h)
+.if exists (${STAGEDIR}${PREFIX}/include/openhpi/SaHpi.h)
 PLIST_SUB+=	HPI=""
 .else
 PLIST_SUB+=	HPI="@comment "
 .endif
 
-# IPMI Lan Stonight Automagic Building
-.if exists (${PREFIX}/include/ipmilan.h)
+# IPMI Lan Stonith Automagic Building
+.if exists (${STAGEDIR}${PREFIX}/include/ipmilan.h)
 PLIST_SUB+=	IPMI=""
 .else
 PLIST_SUB+=	IPMI="@comment "
 .endif
 
 # VACM Stonith Automagic Building
-.if exists (${PREFIX}/include/vacmclient_api.h)
+.if exists (${STAGEDIR}${PREFIX}/include/vacmclient_api.h)
 PLIST_SUB+=	VACM=""
 .else
 PLIST_SUB+=	VACM="@comment "
 .endif
 
-pre-patch:
+post-extract:
 	@${MV} ${WRKDIR}/Heartbeat-STABLE-2-1-${DISTNAME} ${WRKSRC}
 	@${CP} -f ${FILESDIR}/heartbeat.in ${WRKSRC}/heartbeat/init.d/
 
@@ -163,47 +153,26 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/heartbeat/plugins/*/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pils/plugins/InterfaceMgr/generic.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/stonith/plugins/stonith2/*.so
+	${MKDIR} -m 0750 ${STAGEDIR}/var/run/heartbeat/pengine
+	${TOUCH} ${STAGEDIR}/var/run/heartbeat.pid
+
+.if ${PORT_OPTIONS:MMGMT}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/heartbeat-gui/_pymgmt.so.0.0.0
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
 	# Install sample configuration
-	@if [ ! -f ${PREFIX}/etc/ha.d/authkeys ]; then \
-		${CP} -p ${DOCSDIR}/authkeys ${PREFIX}/etc/ha.d/authkeys ; \
-	fi
-	${CP} -p ${DOCSDIR}/authkeys ${PREFIX}/etc/ha.d/authkeys.sample
-	${CHMOD} 600 ${PREFIX}/etc/ha.d/authkeys*
-
-	@if [ ! -f ${PREFIX}/etc/ha.d/ha.cf ]; then \
-		${CP} -p ${DOCSDIR}/ha.cf ${PREFIX}/etc/ha.d/ha.cf ; \
-	fi
-	${CP} -p ${DOCSDIR}/ha.cf ${PREFIX}/etc/ha.d/ha.cf.sample
-
-	@if [ ! -f ${PREFIX}/etc/ha.d/logd.cf ]; then \
-		${CP} -p ${DOCSDIR}/logd.cf ${PREFIX}/etc/ha.d/logd.cf ; \
-	fi
-	${CP} -p ${DOCSDIR}/logd.cf ${PREFIX}/etc/ha.d/logd.cf.sample
+	${CP} -p ${STAGEDIR}${DOCSDIR}/authkeys ${STAGEDIR}${PREFIX}/etc/ha.d/authkeys.sample
+	${CP} -p ${STAGEDIR}${DOCSDIR}/ha.cf ${STAGEDIR}${PREFIX}/etc/ha.d/ha.cf.sample
+	${CP} -p ${STAGEDIR}${DOCSDIR}/logd.cf ${STAGEDIR}${PREFIX}/etc/ha.d/logd.cf.sample
 .endif
 
 .if ${PORT_OPTIONS:MLDIRECTORD}
-	@if [ ! -f ${PREFIX}/etc/ha.d/ldirectord.cf ]; then \
-		${CP} -p ${WRKSRC}/ldirectord/ldirectord.cf ${PREFIX}/etc/ha.d/ldirectord.cf ; \
-		${CP} -p ${WRKSRC}/ldirectord/ldirectord.cf ${PREFIX}/etc/ha.d/ldirectord.cf.sample ; \
-	fi
+	${CP} -p ${WRKSRC}/ldirectord/ldirectord.cf ${STAGEDIR}${PREFIX}/etc/ha.d/ldirectord.cf.sample
 .endif
-
-	# Some subdirs treat man as documentation, therefor we have to install
-	# those man pages manually if NOPORTDOCS is defined.
-
-.if ${PORT_OPTIONS:MDOCS}
-	# Some subdirs treat man as documentation, therefor we have to install
-	# those man pages manually if NOPORTDOCS is defined.
-
-.for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/${f} ${MANPREFIX}/man/man1
-.endfor
-.for f in apphbd.8 cibadmin.8 crm_resource.8 ha_logd.8 heartbeat.8
-	${INSTALL_MAN} ${WRKSRC}/doc/${f} ${MANPREFIX}/man/man8
-.endfor
-.endif
-
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
