@@ -909,7 +909,7 @@ subversion/tests/libsvn_delta/window-test$(EXEEXT): $(window_test_DEPS)
 # Section 6: Install-Group build targets
 ########################################
 
-apache-mod: subversion/mod_authz_svn/mod_authz_svn.la subversion/mod_dav_svn/mod_dav_svn.la
+apache-mod: subversion/mod_authz_svn/mod_authz_svn.la subversion/mod_dav_svn/mod_dav_svn.la tools/server-side/mod_dontdothat/mod_dontdothat.la
 
 bdb-lib: subversion/libsvn_fs_base/libsvn_fs_base-1.la
 
@@ -965,16 +965,17 @@ test: subversion/tests/cmdline/atomic-ra-revprop-change$(EXEEXT) subversion/test
 
 tests: subversion/bindings/cxxhl/cxxhl-tests$(EXEEXT)
 
-tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/diff4$(EXEEXT) tools/dev/fsfs-access-map$(EXEEXT) tools/dev/fsfs-reorg$(EXEEXT) tools/server-side/fsfs-stats$(EXEEXT) tools/server-side/mod_dontdothat/mod_dontdothat.la tools/client-side/svn-bench/svn-bench$(EXEEXT) tools/server-side/svn-populate-node-origins-index$(EXEEXT) tools/server-side/svn-rep-sharing-stats$(EXEEXT) tools/server-side/svnauthz$(EXEEXT) tools/server-side/svnauthz-validate$(EXEEXT) tools/dev/svnraisetreeconflict/svnraisetreeconflict$(EXEEXT)
+tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/diff4$(EXEEXT) tools/dev/fsfs-access-map$(EXEEXT) tools/dev/fsfs-reorg$(EXEEXT) tools/server-side/fsfs-stats$(EXEEXT) tools/client-side/svn-bench/svn-bench$(EXEEXT) tools/server-side/svn-populate-node-origins-index$(EXEEXT) tools/server-side/svn-rep-sharing-stats$(EXEEXT) tools/server-side/svnauthz$(EXEEXT) tools/server-side/svnauthz-validate$(EXEEXT) tools/dev/svnraisetreeconflict/svnraisetreeconflict$(EXEEXT)
 
 
 ########################################
 # Section 7: Install-Group install targets
 ########################################
 
-install-mods-shared: subversion/mod_dav_svn/mod_dav_svn.la subversion/mod_authz_svn/mod_authz_svn.la
+install-mods-shared: subversion/mod_dav_svn/mod_dav_svn.la subversion/mod_authz_svn/mod_authz_svn.la tools/server-side/mod_dontdothat/mod_dontdothat.la
 	if $(INSTALL_APACHE_MODS) ; then cd subversion/mod_dav_svn ; $(MKDIR) "$(APACHE_LIBEXECDIR)" ; $(INSTALL_MOD_SHARED) -n dav_svn mod_dav_svn.la ; fi
 	if $(INSTALL_APACHE_MODS) ; then cd subversion/mod_authz_svn ; $(MKDIR) "$(APACHE_LIBEXECDIR)" ; $(INSTALL_MOD_SHARED) -n authz_svn mod_authz_svn.la ; fi
+	if $(INSTALL_APACHE_MODS) ; then cd tools/server-side/mod_dontdothat ; $(MKDIR) "$(APACHE_LIBEXECDIR)" ; $(INSTALL_MOD_SHARED) -n dontdothat mod_dontdothat.la ; fi
 
 install-bdb-lib: subversion/libsvn_fs_base/libsvn_fs_base-1.la
 	$(MKDIR) $(DESTDIR)$(bdb_libdir)
@@ -1134,7 +1135,7 @@ install-tests: subversion/bindings/cxxhl/cxxhl-tests$(EXEEXT)
 	$(MKDIR) $(DESTDIR)$(testsdir)
 	cd subversion/bindings/cxxhl ; $(INSTALL_TESTS) cxxhl-tests$(EXEEXT) $(DESTDIR)$(testsdir)/cxxhl-tests$(EXEEXT)
 
-install-tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/diff4$(EXEEXT) tools/dev/fsfs-access-map$(EXEEXT) tools/dev/fsfs-reorg$(EXEEXT) tools/server-side/fsfs-stats$(EXEEXT) tools/server-side/mod_dontdothat/mod_dontdothat.la tools/client-side/svn-bench/svn-bench$(EXEEXT) tools/server-side/svn-populate-node-origins-index$(EXEEXT) tools/server-side/svn-rep-sharing-stats$(EXEEXT) tools/server-side/svnauthz$(EXEEXT) tools/server-side/svnauthz-validate$(EXEEXT) tools/dev/svnraisetreeconflict/svnraisetreeconflict$(EXEEXT)
+install-tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/diff4$(EXEEXT) tools/dev/fsfs-access-map$(EXEEXT) tools/dev/fsfs-reorg$(EXEEXT) tools/server-side/fsfs-stats$(EXEEXT) tools/client-side/svn-bench/svn-bench$(EXEEXT) tools/server-side/svn-populate-node-origins-index$(EXEEXT) tools/server-side/svn-rep-sharing-stats$(EXEEXT) tools/server-side/svnauthz$(EXEEXT) tools/server-side/svnauthz-validate$(EXEEXT) tools/dev/svnraisetreeconflict/svnraisetreeconflict$(EXEEXT)
 	$(MKDIR) $(DESTDIR)$(toolsdir)
 	cd tools/diff ; $(INSTALL_TOOLS) diff$(EXEEXT) $(DESTDIR)$(toolsdir)/diff$(EXEEXT)
 	cd tools/diff ; $(INSTALL_TOOLS) diff3$(EXEEXT) $(DESTDIR)$(toolsdir)/diff3$(EXEEXT)
@@ -1142,7 +1143,6 @@ install-tools: tools/diff/diff$(EXEEXT) tools/diff/diff3$(EXEEXT) tools/diff/dif
 	cd tools/dev ; $(INSTALL_TOOLS) fsfs-access-map$(EXEEXT) $(DESTDIR)$(toolsdir)/fsfs-access-map$(EXEEXT)
 	cd tools/dev ; $(INSTALL_TOOLS) fsfs-reorg$(EXEEXT) $(DESTDIR)$(toolsdir)/fsfs-reorg$(EXEEXT)
 	cd tools/server-side ; $(INSTALL_TOOLS) fsfs-stats$(EXEEXT) $(DESTDIR)$(toolsdir)/fsfs-stats$(EXEEXT)
-	if $(INSTALL_APACHE_MODS) ; then cd tools/server-side/mod_dontdothat ; $(MKDIR) "$(APACHE_LIBEXECDIR)" ; $(INSTALL_MOD_SHARED) -n dontdothat mod_dontdothat.la ; fi
 	cd tools/client-side/svn-bench ; $(INSTALL_TOOLS) svn-bench$(EXEEXT) $(DESTDIR)$(toolsdir)/svn-bench$(EXEEXT)
 	cd tools/server-side ; $(INSTALL_TOOLS) svn-populate-node-origins-index$(EXEEXT) $(DESTDIR)$(toolsdir)/svn-populate-node-origins-index$(EXEEXT)
 	cd tools/server-side ; $(INSTALL_TOOLS) svn-rep-sharing-stats$(EXEEXT) $(DESTDIR)$(toolsdir)/svn-rep-sharing-stats$(EXEEXT)

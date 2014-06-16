@@ -18,17 +18,14 @@ PKGDIR=		${.CURDIR}
 
 USE_RUBY=	yes
 
-SVN_BUILD_BINDINGS=yes
+SVN_BUILD_BINDINGS=	yes
+SVN_BUILD_ADDONS=	yes
 
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	ruby
 
-do-build:
-	${MAKE} -C ${WRKSRC} swig-rb-lib ${MAKE_ARGS}
-	${MAKE} -C ${WRKSRC} swig-rb ${MAKE_ARGS}
-
-do-install:
-	${MAKE} -C ${WRKSRC} install-swig-rb ${MAKE_ARGS}
+ALL_TARGET=	swig-rb-lib swig-rb
+INSTALL_TARGET=	install-swig-rb
 
 .include <bsd.port.post.mk>
