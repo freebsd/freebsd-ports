@@ -3,6 +3,7 @@
 
 PORTNAME=	calf
 PORTVERSION=	0.0.19
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig libtool
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
