@@ -1,17 +1,3 @@
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/_LinkChecker_configdata.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/_LinkChecker_configdata.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/_LinkChecker_configdata.pyo
-%%PYTHON_SITELIBDIR%%/_LinkChecker_configdata.py
-%%PYTHON_SITELIBDIR%%/_LinkChecker_configdata.pyc
-%%PYTHON_SITELIBDIR%%/_LinkChecker_configdata.pyo
-man/de/man1/linkchecker.1.gz
-%%QT4%%man/de/man1/linkchecker-gui.1.gz
-man/de/man5/linkcheckerrc.5.gz
-man/man1/linkchecker.1.gz
-%%QT4%%man/man1/linkchecker-gui.1.gz
-man/man5/linkcheckerrc.5.gz
-share/applications/linkchecker.desktop
-%%QT4%%share/applications/linkchecker-gui.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/check.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/check_blacklist.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/check_for_x_errors.sh
@@ -30,14 +16,4 @@ share/icons/hicolor/16x16/apps/linkchecker.png
 share/icons/hicolor/32x32/apps/linkchecker.png
 share/icons/hicolor/48x48/apps/linkchecker.png
 share/icons/hicolor/64x64/apps/linkchecker.png
-%%DATADIR%%/lccollection.qhc
-%%DATADIR%%/lcdoc.qch
-%%DATADIR%%/linkcheckerrc
-%%NLS%%share/locale/de/LC_MESSAGES/linkchecker.mo
-%%NLS%%share/locale/es/LC_MESSAGES/linkchecker.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/linkchecker.mo
-@dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry man/de/man5
-@dirrmtry man/de/man1
-@dirrmtry man/de
