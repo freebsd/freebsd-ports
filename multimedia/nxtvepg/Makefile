@@ -9,33 +9,23 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-
 NOT_FOR_ARCHS=	sparc64
-USES=	gmake
+USES=		gmake tk:84
 USE_XORG=	x11 xmu
+MAKE_ARGS=	ROOT=${STAGEDIR}
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WRKSRC=${WRKSRC} X11BASE=${LOCALBASE}
 
-MAN1=		nxtvepg.1 nxtvepgd.1
-MYPORTDOCS=	README TODO CHANGES manual.html
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
-	${REINPLACE_CMD} -e "s,machine/ioctl_bt848.h,dev/bktr/ioctl_bt848.h,; \
+	@${REINPLACE_CMD} -e "s,machine/ioctl_bt848.h,dev/bktr/ioctl_bt848.h,; \
 		s,machine/ioctl_meteor.h,dev/bktr/ioctl_meteor.h," \
 		${WRKSRC}/epgvbi/btdrv4linux.c ${WRKSRC}/tvsim/tvsim_main.c
+	@${REINPLACE_CMD} 's|wait.h|sys/&|' ${WRKSRC}/epgdb/ttxgrab.c
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${LOCALBASE}/bin
-	${INSTALL_DATA}    ${WRKSRC}/Nxtvepg.ad ${LOCALBASE}/lib/X11/app-defaults/Nxtvepg
-	${INSTALL_MAN}     ${WRKSRC}/nxtvepg.1 ${LOCALBASE}/man/man1
-	${INSTALL_MAN}     ${WRKSRC}/nxtvepgd.1 ${LOCALBASE}/man/man1
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README TODO CHANGES manual.html \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
