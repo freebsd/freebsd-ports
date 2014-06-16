@@ -15,15 +15,9 @@ USES=		shebangfix gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
-SHEBANG_FILES=	pmerge
+SHEBANG_FILES=	pmerge multispell
 
-MAN1=		hspell.1
-MAN3=		hspell.3
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
