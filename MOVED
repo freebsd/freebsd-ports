@@ -6074,13 +6074,13 @@ lang/pnet-base||2014-05-04|Has expired: Alpha-quality abandonware - Decommission
 benchmarks/pnetmark||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
 lang/pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
 x11-wm/stumpwm||2014-05-04|Has expired: Broken for more than 4 months
-sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore and only supports ancient AMD K8.
+sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore and only supports ancient AMD K8
 net/pchar||2014-05-04|Has expired: Obsolete, abandoned
 x11-fonts/texcm-ttf||2014-05-04|Has expired: Should be replaced by x11-fonts/stix-fonts
 devel/buildapp||2014-05-05|Has expired: Broken for more than 6 months
 converters/konwert||2014-05-05|Broken with modern compilers, not staged, no upstream
-graphics/gimp-gap||2014-05-05|Broken with gimp 2.8, no release in 5 years.
-games/gnome-games-extra-data||2014-05-05|Not used in GNOME 3.
+graphics/gimp-gap||2014-05-05|Broken with gimp 2.8, no release in 5 years
+games/gnome-games-extra-data||2014-05-05|Not used in GNOME 3
 audio/libshout2|audio/libshout|2014-05-05|Use audio/libshout instead
 devel/bsdlibdwarf||2014-05-06|Has expired: Outdated, included in all supported versions of FreeBSD
 security/yassl|security/cyassl|2014-05-06|Moved to match upstream name
