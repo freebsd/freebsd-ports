@@ -26,7 +26,7 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST_SUB+=	DISTNAME=${DISTNAME}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
