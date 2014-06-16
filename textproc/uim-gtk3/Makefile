@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-gtk3
 COMMENT=	GTK+ 3.x modules of uim input method
 
 USE_GNOME=	gtk30
-LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	libuim.so:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
@@ -26,12 +26,11 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gtk3_candwin_Makefile.in \
 IGNORE=		requires X11
 .endif
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-x-util.la libuim-counted-init.la)
 	(cd ${WRKSRC}/gtk3 && ${GMAKE})
 
 do-install:
-	(cd ${WRKSRC}/gtk3 && ${GMAKE} install)
+	(cd ${WRKSRC}/gtk3 && ${GMAKE} DESTDIR=${STAGEDIR} install)
 
 .include "${MASTERDIR}/Makefile"

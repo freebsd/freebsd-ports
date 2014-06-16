@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uim
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -22,7 +22,7 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
 .if !defined(WITHOUT_X11)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS+=	libXft.so:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--with-x --with-xft
 .endif
 
@@ -39,9 +39,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
 .if !defined(UIM_SLAVE)
-.if !defined(WITHOUT_X11)
-MAN1=		uim-xim.1
-.endif
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
 DOCSDIR_SIGSCHEME=	${PREFIX}/share/doc/uim/sigscheme
 PLIST_SUB=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}" \
@@ -54,7 +51,6 @@ PLIST_SUB+=	X11="@comment "
 PLIST_SUB+=	X11=""
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
@@ -91,26 +87,26 @@ do-build:
 
 do-install:
 .if !defined(UIM_SLAVE)
-	cd ${WRKSRC} && ${GMAKE} install-data-am
+	cd ${WRKSRC} && ${GMAKE} DESTDIR=${STAGEDIR} install-data-am
 .for d in sigscheme uim scm xim po fep emacs pixmaps tables
-	cd ${WRKSRC}/${d} && ${GMAKE} install
+	cd ${WRKSRC}/${d} && ${GMAKE} DESTDIR=${STAGEDIR} install
 .endfor
 .if !defined(WITHOUT_X11)
-	cd ${WRKSRC}/gtk2/candwin && ${GMAKE} install
+	cd ${WRKSRC}/gtk2/candwin && ${GMAKE} DESTDIR=${STAGEDIR} install
 .endif
 .endif
 
 .if !defined(UIM_SLAVE)
 post-install:
-	${MKDIR} ${DATADIR}/helperdata
+	${MKDIR} ${STAGEDIR}${DATADIR}/helperdata
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR_JA}
-	${INSTALL_DATA} ${WRKSRC}/doc/KEY ${DOCSDIR}/KEY
-	${INSTALL_DATA} ${WRKSRC}/fep/README ${DOCSDIR}/README.fep
-	${INSTALL_DATA} ${WRKSRC}/fep/README ${DOCSDIR}/README.key
-	${INSTALL_DATA} ${WRKSRC}/fep/README.ja ${DOCSDIR_JA}/README.fep
-	${INSTALL_DATA} ${WRKSRC}/xim/README ${DOCSDIR}/README.xim
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
+	${INSTALL_DATA} ${WRKSRC}/doc/KEY ${STAGEDIR}${DOCSDIR}/KEY
+	${INSTALL_DATA} ${WRKSRC}/fep/README ${STAGEDIR}${DOCSDIR}/README.fep
+	${INSTALL_DATA} ${WRKSRC}/fep/README ${STAGEDIR}${DOCSDIR}/README.key
+	${INSTALL_DATA} ${WRKSRC}/fep/README.ja ${STAGEDIR}${DOCSDIR_JA}/README.fep
+	${INSTALL_DATA} ${WRKSRC}/xim/README ${STAGEDIR}${DOCSDIR}/README.xim
 .endif
 .endif
 

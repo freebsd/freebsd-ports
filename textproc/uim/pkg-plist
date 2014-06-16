@@ -64,6 +64,7 @@ libdata/pkgconfig/uim.pc
 %%X11%%libexec/uim-candwin-horizontal-gtk
 %%X11%%libexec/uim-candwin-tbl-gtk
 libexec/uim-helper-server
+%%X11%%man/man1/uim-xim.1.gz
 share/applications/uim.desktop
 share/locale/fr/LC_MESSAGES/uim.mo
 share/locale/ja/LC_MESSAGES/uim.mo

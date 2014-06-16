@@ -10,8 +10,8 @@ PKGNAMESUFFIX=	-m17nlib
 COMMENT=	Uim plugin using m17n library input method
 
 BUILD_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
-LIB_DEPENDS=	m17n:${PORTSDIR}/devel/m17n-lib \
-		uim:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib \
+		libuim.so:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 
 .if !defined(WITHOUT_M17NCONTRIB)
@@ -26,18 +26,16 @@ UIM_SLAVE=	yes
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-m17nlib.la)
 
 do-install:
 	(cd ${WRKSRC}/uim && \
-	${GMAKE} uim_plugin_LTLIBRARIES=libuim-m17nlib.la install-uim_pluginLTLIBRARIES && \
-	${MKDIR} ${PREFIX}/share/uim/pixmaps && \
-	DESTDIR="" ${SH} ../pixmaps/uim-m17nlib-relink-icons)
+	${GMAKE} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-m17nlib.la install-uim_pluginLTLIBRARIES && \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/uim/pixmaps && \
+	DESTDIR="${STAGEDIR}" ${SH} ../pixmaps/uim-m17nlib-relink-icons)
 
 post-install:
-	${LOCALBASE}/bin/uim-module-manager --register m17nlib
 	@${FIND} ${LOCALBASE}/share/m17n/icons/ -name '*.png' -execdir ${ECHO} share/uim/pixmaps/m17n-{} \; >>${TMPPLIST}
 
 .include "${MASTERDIR}/Makefile"
