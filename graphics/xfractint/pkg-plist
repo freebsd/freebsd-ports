@@ -1,4 +1,5 @@
 bin/xfractint
+man/man1/xfractint.man.gz
 %%DATADIR%%/fractint.hlp
 %%DATADIR%%/sstools.ini
 %%DATADIR%%/formulas/fract001.frm
