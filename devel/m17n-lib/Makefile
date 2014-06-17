@@ -3,8 +3,8 @@
 
 PORTNAME=	m17n-lib
 PORTVERSION=	1.6.4
-PORTREVISION=	2
-CATEGORIES=	devel
+PORTREVISION=	3
+CATEGORIES=	devel textproc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	m17n
 
@@ -22,11 +22,12 @@ RUN_DEPENDS=	m17n-db>=1.6.4:${PORTSDIR}/devel/m17n-db
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		pkgconfig
+USES=		pkgconfig libtool:oldver
 USE_XORG=	ice sm x11 xaw xft xt
 USE_GNOME=	libxml2
-USE_AUTOTOOLS=	autoconf libtool
+USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-nls
 
