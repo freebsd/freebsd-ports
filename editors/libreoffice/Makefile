@@ -381,7 +381,9 @@ post-install:
 	    -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
 	@${ECHO_CMD} "@dirrmtry etc/bash_completion.d" >> ${PLISTD}
 
-.for subdir in applications icons mime mimelnk
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s share/applications \
+	    \( -type f -o -type l \) -print >> ${PLISTF}
+.for subdir in icons mime mimelnk
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s share/${subdir} \
 	    \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -d share/${subdir} -type d \

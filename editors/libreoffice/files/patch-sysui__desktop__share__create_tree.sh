@@ -1,5 +1,5 @@
---- sysui/desktop/share/create_tree.sh.orig	2014-04-30 21:49:45.000000000 +0200
-+++ sysui/desktop/share/create_tree.sh	2014-06-11 00:20:55.539133736 +0200
+--- sysui/desktop/share/create_tree.sh.orig	2014-04-30 15:49:45.000000000 -0400
++++ sysui/desktop/share/create_tree.sh	2014-06-16 19:55:56.000000000 -0400
 @@ -57,37 +57,37 @@
    chmod 0644 "${DESTDIR}/${GNOMEDIR}/share/application-registry/${PREFIX}".*
  fi
@@ -45,9 +45,11 @@
  done
  
 -mkdir -p "${DESTDIR}/usr/share/appdata"
-+mkdir -p "${DESTDIR}/${PREFIXDIR}/share/appdata"
- for i in base calc draw impress writer; do
+-for i in base calc draw impress writer; do
 -    cp "${APPDATA_SOURCE_DIR}/libreoffice-${i}.appdata.xml" "${DESTDIR}/usr/share/appdata/${PREFIX}-${i}.appdata.xml"
-+    cp "${APPDATA_SOURCE_DIR}/libreoffice-${i}.appdata.xml" "${DESTDIR}/${PREFIXDIR}/share/appdata/${PREFIX}-${i}.appdata.xml"
- done
+-done
++#mkdir -p "${DESTDIR}/${PREFIXDIR}/share/appdata"
++#for i in base calc draw impress writer; do
++#    cp "${APPDATA_SOURCE_DIR}/libreoffice-${i}.appdata.xml" "${DESTDIR}/${PREFIXDIR}/share/appdata/${PREFIX}-${i}.appdata.xml"
++#done
  
