@@ -13,7 +13,7 @@ COMMENT=	Java NIO client server framework
 LICENSE=	APACHE20
 
 USE_JAVA=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
@@ -28,17 +28,17 @@ PORTDATA=	*
 PORTDOCS=	*
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/jar/netty-${PORTVERSION}.Final.jar ${JAVAJARDIR}/netty-${PORTVERSION}.jar
-	cd ${WRKSRC} && ${COPYTREE_SHARE} src ${DATADIR}
-	${LN} -nfs ${JAVAJARDIR}/netty-${PORTVERSION}.jar ${JAVAJARDIR}/netty.jar
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/jar/netty-${PORTVERSION}.Final.jar ${STAGEDIR}${JAVAJARDIR}/netty-${PORTVERSION}.jar
+	cd ${WRKSRC} && ${COPYTREE_SHARE} src ${STAGEDIR}${DATADIR}
+	cd ${STAGEDIR}${JAVAJARDIR}
+	${LN} -nfs netty-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/netty.jar
 
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
