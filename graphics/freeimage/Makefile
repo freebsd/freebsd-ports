@@ -30,6 +30,12 @@ PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimageplus.so.3 \
 		lib/libfreeimageplus.so
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64
+USES+=		compiler:c++0x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}| ; s|-o root -g root ||' \
 		${WRKSRC}/Makefile.gnu ${WRKSRC}/Makefile.fip
