@@ -2,53 +2,54 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.2.8.15
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2
+MASTER_SITES=	GNOME/sources/gnome-commander/1.4
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager for Gnome2
 
-BROKEN=		Fails to configure
-
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		exif.12:${PORTSDIR}/graphics/libexif \
-		iptcdata.3:${PORTSDIR}/graphics/libiptcdata
+LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+RUN_DEPENDS=	meld:${PORTSDIR}/textproc/meld \
+		yelp:${PORTSDIR}/x11/yelp
+
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomedocutils gnomeprefix gnomevfs2 libgnomeui
+USE_PYTHON=	yes
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+INSTALLS_OMF=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS=	gnome-commander-[0-9]*
 
-USES=		tar:xz gmake
-USE_GNOME=	gnomedocutils gnomehack gnomeprefix intlhack libgnomeui
-USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool autoconf:env aclocal:env automake:env
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALLS_OMF=	yes
+OPTIONS_DEFINE=		CHM EXIV2 GSF POPPLER TAGLIB
+OPTIONS_DEFAULT=	CHM EXIV2 GSF POPPLER TAGLIB
 
-MAN1=		gnome-commander.1
+CHM_DESC=		CHM support via chmlib
+CHM_LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
+CHM_CONFIGURE_WITH=	libchm
+EXIV2_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+EXIV2_CONFIGURE_WITH=	exiv2
+GSF_DESC=		OLE and ODF support via libgsf
+GSF_LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
+GSF_CONFIGURE_WITH=	libgsf
+POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+POPPLER_CONFIGURE_WITH=	poppler
+TAGLIB_DESC=		Audio metadata support via taglib
+TAGLIB_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+TAGLIB_CONFIGURE_WITH=	taglib
 
-NO_STAGE=	yes
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -W none
-
-OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|="-lpython|="-L$$PY_EXEC_PREFIX/lib -lpython|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
