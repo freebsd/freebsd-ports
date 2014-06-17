@@ -1,8 +1,0 @@
-MAN1+=	batch_crop.1
-MAN1+=	batch_image_convert.1
-MAN1+=	batch_rubber_sheet.1
-MAN1+=	edvips.1
-MAN1+=	header.1
-MAN1+=	light_correct.1
-MAN1+=	vips.1
-MAN1+=	vipsthumbnail.1
