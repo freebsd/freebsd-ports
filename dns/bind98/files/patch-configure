@@ -1,19 +1,28 @@
---- ./configure.orig	2014-01-27 19:59:48.000000000 +0100
-+++ ./configure	2014-03-04 17:46:51.000000000 +0100
-@@ -13936,6 +13936,7 @@
+--- ./configure.orig	2014-05-24 02:06:09.000000000 +0200
++++ ./configure	2014-06-16 13:02:09.000000000 +0200
+@@ -13935,6 +13935,8 @@
+ 		    "-lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err -lresolv" \
  		    "-lgssapi" \
  		    "-lgssapi -lkrb5 -ldes -lcrypt -lasn1 -lroken -lcom_err" \
- 		    "-lgssapi -lkrb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
++		    "-lkrb5 -lgssapi_krb5 -lkrb5support -lk5crypto -lcom_err" \
 +		    "-lgssapi -lkrb5 -lgssapi_krb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
+ 		    "-lgssapi -lkrb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
  		    "-lgssapi -lkrb5 -lhx509 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
  		    "-lgss -lkrb5"
- 		do
-@@ -13958,7 +13959,7 @@
+@@ -13954,12 +13956,14 @@
+ $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
+ 		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
++#include <gssapi/gssapi.h>
++#include <gssapi/gssapi_krb5.h>
++#include <krb5.h>
+ 
  int
  main ()
  {
 -gss_acquire_cred();krb5_init_context()
-+gss_acquire_cred();krb5_init_context();gsskrb5_register_acceptor_identity();
-   ;
+-  ;
++gss_acquire_cred(0,0,0,0,0,0,0,0);krb5_init_context(0);gsskrb5_register_acceptor_identity(0);
    return 0;
  }
+ _ACEOF
