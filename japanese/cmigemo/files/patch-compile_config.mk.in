@@ -1,5 +1,5 @@
 --- compile/config.mk.in.orig	2011-02-27 19:45:40.000000000 +0900
-+++ compile/config.mk.in	2011-08-17 00:07:28.000000000 +0900
++++ compile/config.mk.in	2014-06-17 21:59:03.000000000 +0900
 @@ -18,8 +18,8 @@
  incdir		= $(prefix)/include
  # WARNING: Directories $(dictdir) and $(docdir) will be deleted whole the
@@ -11,14 +11,16 @@
  
  ##############################################################################
  # Commands
-@@ -33,8 +33,8 @@
+@@ -33,9 +33,9 @@
  PERL		= perl
  BUNZIP2		= bzip2 -d
  GUNZIP		= gzip -d
 -FILTER_CP932	= ${PROGRAM_ENCODEFILTER} -s
 -FILTER_EUCJP	= ${PROGRAM_ENCODEFILTER} -e
-+FILTER_CP932	= iconv -t cp932 -f euc-jp
-+FILTER_EUCJP	= iconv -t euc-jp -f cp932
- FILTER_UTF8	= iconv -t utf-8 -f cp932
+-FILTER_UTF8	= iconv -t utf-8 -f cp932
++FILTER_CP932	= %%LOCALBASE%%/bin/iconv -t cp932 -f euc-jp
++FILTER_EUCJP	= %%LOCALBASE%%/bin/iconv -t euc-jp -f cp932
++FILTER_UTF8	= %%LOCALBASE%%/bin/iconv -t utf-8 -f cp932
  INSTALL		= ${PROGRAM_INSTALL} -c
  INSTALL_PROGRAM	= $(INSTALL) -m 755
+ INSTALL_DATA	= $(INSTALL) -m 644
