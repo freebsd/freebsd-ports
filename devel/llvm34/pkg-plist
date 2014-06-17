@@ -628,8 +628,8 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/ValueMapper.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Vectorize.h
 llvm%%LLVM_SUFFIX%%/lib/BugpointPasses.so
 llvm%%LLVM_SUFFIX%%/lib/LLVMHello.so
-llvm%%LLVM_SUFFIX%%/lib/libLLVM-3.4.so
-llvm%%LLVM_SUFFIX%%/lib/libLLVM-3.4.so.0
+llvm%%LLVM_SUFFIX%%/lib/libLLVM-%%PORTVERSION%%.so
+llvm%%LLVM_SUFFIX%%/lib/libLLVM-%%PORTVERSION%%.so.0
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64AsmParser.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64AsmPrinter.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64CodeGen.a
@@ -738,6 +738,10 @@ llvm%%LLVM_SUFFIX%%/lib/libLTO.so
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/TestingConfig.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/__init__.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/discovery.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats/base.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats/googletest.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats/shtest.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/main.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/run.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/util.py
@@ -1003,5 +1007,6 @@ llvm%%LLVM_SUFFIX%%/lib/libLTO.so
 @dirrm llvm%%LLVM_SUFFIX%%/bin
 @dirrm llvm%%LLVM_SUFFIX%%
 %%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%
+%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -155,7 +156,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
 	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
-	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
+	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py \
+	    ${WRKSRC}/utils/lit/lit/formats/*.py
 
 .if ${PORT_OPTIONS:MCMAKE}
 post-configure:
@@ -209,6 +211,9 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX}
 	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/*.py \
 	    ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX}
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX}/formats
+	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/formats/*.py \
+	    ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX}/formats
 	${INSTALL_PROGRAM} ${WRKSRC}/${RELEASE_TYPE}/bin/FileCheck \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
@@ -258,6 +263,8 @@ build-plist:
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' \
 	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' >> ${PLIST}
 	echo "%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%" >> \
+	    ${PLIST}
+	echo "%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats" >> \
 	    ${PLIST}
 	${FIND} ${STAGEDIR}${DOCSDIR} -type d | \
 	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
