@@ -57,6 +57,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f109b02f-f5a4-11e3-82e9-00a098b18457">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.10.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>1.8.28.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Asterisk Manager User Unauthorized Shell Access. Manager users can
+	    execute arbitrary shell commands with the MixMonitor manager action.
+	    Asterisk does not require system class authorization for a manager
+	    user to use the MixMonitor action, so any manager user who is
+	    permitted to use manager commands can potentially execute shell
+	    commands as the user executing the Asterisk process.</p>
+	  <p>Exhaustion of Allowed Concurrent HTTP Connections. Establishing a
+	    TCP or TLS connection to the configured HTTP or HTTPS port
+	    respectively in http.conf and then not sending or completing a HTTP
+	    request will tie up a HTTP session. By doing this repeatedly until the
+	    maximum number of open HTTP sessions is reached, legitimate requests
+	    are blocked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4046</cvename>
+      <cvename>CVE-2014-4047</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-006.pdf</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-007.pdf</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2014-06-12</discovery>
+      <entry>2014-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="52bbc7e8-f13c-11e3-bc09-bcaec565249c">
     <topic>dbus -- local DoS</topic>
     <affects>
