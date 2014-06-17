@@ -3,7 +3,7 @@
 
 PORTNAME=	wikigoodies
 PORTVERSION=	0.3.3522
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	trac-
@@ -16,15 +16,9 @@ RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PYDISTUTILS_PKGNAME=	TracWikiGoodies
-PYDISTUTILS_PKGVERSION=	0.11.${PORTVERSION:R}dev
-PYDISTUTILS_NOEGGINFO=	yes
-
-PLIST_SUB+=	PORTVERSION=${PORTVERSION:R} \
-		PYTHONVERSION=${PYTHON_VER}
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
