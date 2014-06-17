@@ -33,10 +33,10 @@ PLIST_FILES=	lib/squeak/Pharo-${DISTVERSION}.image \
 		lib/squeak/Pharo-${DISTVERSION}.changes \
 		lib/squeak/PharoV10.sources
 
-NO_STAGE=	yes
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/squeak
 .for f in ${FILES_TO_INSTALL}
-	(cd ${FILES_DIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)
+	(cd ${FILES_DIR} && ${INSTALL_DATA} ${f} ${STAGEDIR}${PREFIX}/lib/squeak/)
 .endfor
 
 .include <bsd.port.mk>
