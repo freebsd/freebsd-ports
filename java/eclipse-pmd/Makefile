@@ -31,7 +31,6 @@ PLUGIN_PMD_DIR=	"net.sourceforge.pmd.eclipse_${PORTVERSION}"
 PLIST_SUB+=	PLUGIN_PMD_DIR="${PLUGIN_PMD_DIR}" \
 		PLUGIN_CORE_DIR="${PLUGIN_CORE_DIR}"
 
-NO_STAGE=	yes
 post-extract:
 		cd ${WRKDIR}/features && ${MKDIR} ${PLUGIN_PMD_DIR} \
 		&& ${CP} ${PLUGIN_PMD_DIR}.jar ${PLUGIN_PMD_DIR} \
@@ -52,19 +51,19 @@ post-extract:
 		&& ${RM} ${PLUGIN_CORE_DIR}.jar
 
 do-install:
-		@${MKDIR} ${PREFIX}/lib/eclipse
-		@${MKDIR} ${PREFIX}/lib/eclipse/plugins
-		@${MKDIR} ${PREFIX}/lib/eclipse/plugins/${PLUGIN_PMD_DIR}
-		@${MKDIR} ${PREFIX}/lib/eclipse/plugins/${PLUGIN_CORE_DIR}
-		@${MKDIR} ${PREFIX}/lib/eclipse/features/${PLUGIN_PMD_DIR}
+		@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eclipse
+		@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eclipse/plugins
+		@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eclipse/plugins/${PLUGIN_PMD_DIR}
+		@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eclipse/plugins/${PLUGIN_CORE_DIR}
+		@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eclipse/features/${PLUGIN_PMD_DIR}
 		cd ${WRKDIR}/features/${PLUGIN_PMD_DIR} && ${FIND} . \
 		  | ${CPIO} ${SHAREOWN}:${SHAREGRP} \
-		  ${PREFIX}/lib/eclipse/features/${PLUGIN_PMD_DIR}
+		  ${STAGEDIR}${PREFIX}/lib/eclipse/features/${PLUGIN_PMD_DIR}
 		cd ${WRKDIR}/plugins/${PLUGIN_PMD_DIR} && ${FIND} . \
 		  | ${CPIO} ${SHAREOWN}:${SHAREGRP} \
-		  ${PREFIX}/lib/eclipse/plugins/${PLUGIN_PMD_DIR}
+		  ${STAGEDIR}${PREFIX}/lib/eclipse/plugins/${PLUGIN_PMD_DIR}
 		cd ${WRKDIR}/plugins/${PLUGIN_CORE_DIR} && ${FIND} . \
 		  | ${CPIO} ${SHAREOWN}:${SHAREGRP} \
-		  ${PREFIX}/lib/eclipse/plugins/${PLUGIN_CORE_DIR}
+		  ${STAGEDIR}${PREFIX}/lib/eclipse/plugins/${PLUGIN_CORE_DIR}
 
 .include <bsd.port.mk>
