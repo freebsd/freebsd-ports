@@ -39,6 +39,10 @@ CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE} --without-krb4
 post-patch:
 	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
 		${WRKSRC}/Makefile.in
+.if !defined(HEIMDAL_HOME)
+	${REINPLACE_CMD} -e 's|@KRB5_LDFLAGS@|@KRB5_LDFLAGS@ -lgssapi_krb5|' \
+		${WRKSRC}/Makefile.in
+.endif
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
