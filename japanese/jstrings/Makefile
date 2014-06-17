@@ -13,16 +13,13 @@ COMMENT=	Japanese enhancement of strings(1) command
 
 EXTRACT_DEPENDS=nkf:${PORTSDIR}/japanese/nkf
 
-MAN1=		jstrings.1
-MANLANG=	ja
-PLIST_FILES=	bin/jstrings
+PLIST_FILES=	bin/jstrings man/ja/man1/jstrings.1.gz
 
 USES=		gmake lha
 MAKEFILE=	makefile.gcc
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" BINDIR="${PREFIX}/bin"
 ALL_TARGET=	jstrings
 
-NO_STAGE=	yes
 post-extract:
 	@${ECHO_MSG} "===>  Converting Kanji code and deleting CR for ${DISTNAME}"
 	@(cd ${WRKSRC}; \
@@ -32,6 +29,6 @@ post-extract:
 	done)
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/jstrings.1 ${PREFIX}/man/${MANLANG}/man1
+	${INSTALL_MAN} ${FILESDIR}/jstrings.1 ${STAGEDIR}${PREFIX}/man/ja/man1
 
 .include <bsd.port.mk>
