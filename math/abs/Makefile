@@ -16,12 +16,11 @@ PLIST_FILES=	bin/abs
 USE_XORG=	x11 xpm xaw
 WRKSRC=		${WRKDIR}/abs-src-0.908
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/trcasestr/strcasestr_/g' ${WRKSRC}/Database/cell.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/abs ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/abs ${STAGEDIR}${PREFIX}/bin
 
 post-install:
 	@${ECHO_MSG} "For the changes from previous version"
