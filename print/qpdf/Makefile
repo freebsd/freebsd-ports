@@ -3,9 +3,9 @@
 
 PORTNAME=	qpdf
 PORTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	d.y.kazarov@mail.ru
 COMMENT=	Command-line tools for transforming and inspecting PDF files
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake libtool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
