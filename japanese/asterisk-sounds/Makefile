@@ -22,22 +22,18 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
-NO_STAGE=	yes
 do-install:
-	@-${MKDIR} ${ASTERISKDIR}/ja
+	@-${MKDIR} ${STAGEDIR}${ASTERISKDIR}/ja
 	for gsm in ${WRKDIR}/ja/*.gsm; do \
-		${INSTALL_DATA} "$$gsm" ${ASTERISKDIR}/ja ; \
+		${INSTALL_DATA} "$$gsm" ${STAGEDIR}${ASTERISKDIR}/ja ; \
 	done
-	@${MKDIR} ${ASTERISKDIR}/ja/digits
+	@${MKDIR} ${STAGEDIR}${ASTERISKDIR}/ja/digits
 	for digitgsm in ${WRKDIR}/ja/digits/*.gsm; do \
-		${INSTALL_DATA} "$$digitgsm" ${ASTERISKDIR}/ja/digits ; \
+		${INSTALL_DATA} "$$digitgsm" ${STAGEDIR}${ASTERISKDIR}/ja/digits ; \
 	done
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/ja
-	@cd ${WRKDIR}/ja && ${INSTALL_DATA} README.txt ${DOCSDIR}/ja
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
+	@cd ${WRKDIR}/ja && ${INSTALL_DATA} README.txt ${STAGEDIR}${DOCSDIR}/ja
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
