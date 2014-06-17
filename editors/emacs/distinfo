@@ -1,4 +1,4 @@
 SHA256 (emacs-24.3.tar.xz) = 70aa2942e9ae689ed17eddedfca5027c364ffbcc8b59968b1645e935f4c7058d
 SIZE (emacs-24.3.tar.xz) = 35565352
-SHA256 (emacs24.3canna-20130321.diff.gz) = 9031dcda23f0a289a3318f3437fecb132b4e755f79cd832bf45cee5258b11e71
-SIZE (emacs24.3canna-20130321.diff.gz) = 31492
+SHA256 (emacs24.3canna-20140616.diff.gz) = a9e6a55896aa5ab733446ca86183e65c91404c29fb30e8e288302597ca578439
+SIZE (emacs24.3canna-20140616.diff.gz) = 31698
