@@ -83,14 +83,15 @@ _HEADERS=	sys/types.h sys/stat.h stdint.h
 
 gssapi_ARGS?=	base
 .for _A in ${gssapi_ARGS:S/,/ /g}
-.if ${_A} == "base"
+_local:=	${_A}
+.if ${_local} == "base"
 HEIMDAL_HOME=	/usr
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
 _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 GSSAPICPPFLAGS=	-I${GSSAPIINCDIR}
 GSSAPILIBS=	-lkrb5 -lgssapi -lgssapi_krb5
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
-.elif ${_A} == "heimdal"
+.elif ${_local} == "heimdal"
 HEIMDAL_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
 .if !defined(_KRB_BOOTSTRAP)
@@ -104,7 +105,7 @@ GSSAPICPPFLAGS=	-I${GSSAPIINCDIR}
 GSSAPILIBS=	-lkrb5 -lgssapi
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
-.elif ${_A} == "mit"
+.elif ${_local} == "mit"
 KRB5_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${KRB5_HOME}
 .if !defined(_KRB_BOOTSTRAP)
@@ -118,12 +119,12 @@ GSSAPILIBS=	-lkrb5 -lgssapi_krb5
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
-.elif ${_A} == "bootstrap"
+.elif ${_local} == "bootstrap"
 _KRB_BOOTSTRAP=	1
-.elif ${_A} == "flags"
+.elif ${_local} == "flags"
 _KRB_USEFLAGS=	1
 .else
-IGNORE=	USES=gssapi - invalid args: [${_A}] specified
+IGNORE=	USES=gssapi - invalid args: [${_local}] specified
 .endif
 .endfor
 
