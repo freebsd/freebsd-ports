@@ -31,7 +31,6 @@ PORTDOCS=	README.txt\
 		history.txt
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:
@@ -49,17 +48,17 @@ do-build:
 
 do-install:
 	@${ECHO_CMD} -n  ">> Installing avisd..."
-	@${MKDIR} ${PREFIX}/libexec/avis/
-	@${INSTALL_SCRIPT} ${WRKSRC}/server/bin/avisd ${PREFIX}/sbin/avisd
-	@${INSTALL_DATA} ${WRKSRC}/server/lib/avis-router.jar ${PREFIX}/libexec/avis/avis-router.jar
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/avis/
+	@${INSTALL_SCRIPT} ${WRKSRC}/server/bin/avisd ${STAGEDIR}${PREFIX}/sbin/avisd
+	@${INSTALL_DATA} ${WRKSRC}/server/lib/avis-router.jar ${STAGEDIR}${PREFIX}/libexec/avis/avis-router.jar
 	@${ECHO_CMD} " [DONE]"
-	@${INSTALL_DATA} ${WRKSRC}/server/etc/avisd.config ${PREFIX}/etc/avisd.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/server/etc/avisd.config ${STAGEDIR}${PREFIX}/etc/avisd.conf.sample
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/server/doc && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
