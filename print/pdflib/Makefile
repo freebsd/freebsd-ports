@@ -3,7 +3,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	7.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print perl5 java
 MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}p3
@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	PERL JAVA
 PERL_DESC=	Build perl bindings
 JAVA_DESC=	Build Java bindings
 
-USES=		gmake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-py=no --with-ruby=no --with-tcl=no
