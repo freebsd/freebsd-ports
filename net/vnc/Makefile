@@ -31,16 +31,10 @@ OPTIONS_DEFINE=	SERVER
 OPTIONS_DEFAULT=	SERVER
 SERVER_DESC=	Install VNC server components
 
-MAN1=		vncviewer.1 \
-		vncpasswd.1 \
-		vncconfig.1 \
-		x0vncserver.1
-
 .ifdef(REALVNC_BASE)
 PREFIX=${REALVNC_BASE}
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -70,9 +64,6 @@ EXTRA_PATCHES+=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/extra-patch-xfree86 \
 		${PATCHDIR}/extra-patch-fix_Xvnc_no_valid_address \
 		${PATCHDIR}/extra-patch-xc-config-util-printver.c
-
-MAN1+=		Xvnc.1 \
-		vncserver.1
 
 PLIST_SUB+=	SERVER=""
 .else
@@ -118,26 +109,26 @@ pre-install:
 
 do-install:
 .for f in vncviewer vncpasswd vncconfig x0vncserver
-	${INSTALL_PROGRAM} ${WRKSRC}/${f}/${f} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${f}/${f}.man ${PREFIX}/man/man1/${f}.1
+	${INSTALL_PROGRAM} ${WRKSRC}/${f}/${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${f}/${f}.man ${STAGEDIR}${PREFIX}/man/man1/${f}.1
 .endfor
 .if ${PORT_OPTIONS:MSERVER}
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/vnc/classes|${DATADIR}/classes|g' \
 		${WRKSRC}/vncserver
-	${INSTALL_PROGRAM} ${WRKSRC}/xc/programs/Xserver/Xvnc ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xc/programs/Xserver/Xvnc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${STAGEDIR}${PREFIX}/bin
 	@if [ -f ${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so ]; then \
-		${MKDIR} ${PREFIX}/lib/modules/extensions ; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/lib/modules/extensions ; \
 		${INSTALL_PROGRAM} \
 			${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so \
-			${PREFIX}/lib/modules/extensions ; \
+			${STAGEDIR}${PREFIX}/lib/modules/extensions ; \
 	fi
 	${INSTALL_MAN} ${WRKSRC}/xc/programs/Xserver/Xvnc.man \
-		${PREFIX}/man/man1/Xvnc.1
-	${INSTALL_MAN} ${WRKSRC}/vncserver.man ${PREFIX}/man/man1/vncserver.1
-	${MKDIR} ${DATADIR}/classes
-	${INSTALL_DATA} ${WRKSRC}/../common/javabin/* ${DATADIR}/classes
+		${STAGEDIR}${PREFIX}/man/man1/Xvnc.1
+	${INSTALL_MAN} ${WRKSRC}/vncserver.man ${STAGEDIR}${PREFIX}/man/man1/vncserver.1
+	${MKDIR} ${STAGEDIR}${DATADIR}/classes
+	${INSTALL_DATA} ${WRKSRC}/../common/javabin/* ${STAGEDIR}${DATADIR}/classes
 .endif
 
 .include <bsd.port.post.mk>
