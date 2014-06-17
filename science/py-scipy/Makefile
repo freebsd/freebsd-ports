@@ -35,6 +35,8 @@ OPTIONS_DEFAULT=SUITESPARSE
 ATLAS_DESC=	Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
+PORTDOCS=	scipy-ref.pdf
+
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s@malloc\.h@stdlib.h@"
@@ -66,8 +68,6 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/scipy-ref.pdf ${STAGEDIR}${DOCSDIR}
-	${ECHO_CMD} "${DOCSDIR}/scipy-ref.pdf" >> ${TMPPLIST}
-	${ECHO_CMD} "@dirrm ${DOCSDIR}" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>
