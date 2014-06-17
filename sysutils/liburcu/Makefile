@@ -3,6 +3,7 @@
 
 PORTNAME=	liburcu
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
@@ -14,8 +15,7 @@ LICENSE=	LGPL21
 
 PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
 
-USES=		pathfix
-USE_BZIP2=	yes
+USES=		pathfix libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
