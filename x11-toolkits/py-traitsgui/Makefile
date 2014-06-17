@@ -3,7 +3,7 @@
 
 PORTNAME=	traitsgui
 PORTVERSION=	3.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,24 +16,17 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitsbackendwx>=3.1.0:${PORTSDIR}/x11-too
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TraitsGUI
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples \
-		&& ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; \
-		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
-.endif
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+		&& ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/\{} \; \
+		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${EXAMPLESDIR}/\{} \;
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs \
-		&& ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
-		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
-.endif
+		&& ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
+		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
