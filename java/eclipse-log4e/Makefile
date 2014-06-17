@@ -19,15 +19,14 @@ USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 do-install:
-		@${MKDIR} -p ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/features ${PREFIX}/lib/eclipse
-		@(cd ${WRKSRC}; ${FIND} -s features plugins -not -type d) \
-			| ${SED} -ne 's,^,lib/eclipse/,p' >> ${TMPPLIST}
-		@(cd ${WRKSRC}; ${FIND} -s -d features plugins -type d) \
-			| ${GREP} -vE 'plugins$$|features$$' \
-			| ${SED} -ne 's,^,@dirrm lib/eclipse/,p' >> ${TMPPLIST}
+	@${MKDIR} -p ${STAGEDIR}${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/plugins ${STAGEDIR}${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/features ${STAGEDIR}${PREFIX}/lib/eclipse
+	@(cd ${WRKSRC}; ${FIND} -s features plugins -not -type d) \
+		| ${SED} -ne 's,^,lib/eclipse/,p' >> ${TMPPLIST}
+	@(cd ${WRKSRC}; ${FIND} -s -d features plugins -type d) \
+		| ${GREP} -vE 'plugins$$|features$$' \
+		| ${SED} -ne 's,^,@dirrm lib/eclipse/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
