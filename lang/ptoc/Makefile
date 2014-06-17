@@ -22,32 +22,31 @@ EXAMPLES=	arr.pas bgidemo.pas ccall.pas coord.txt dos.h dos.pas \
 		vibrkinp.pas vibrkinp.txt vibrtabl.pas war2.pas war2.txt \
 		xy2.txt xy2orig.txt
 
-NO_STAGE=	yes
 pre-build:
 	@${LN} -sf makefile.bsd ${WRKSRC}/Makefile
 	@${LN} -sf makefile.bsd ${WRKSRC}/Xbgi/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cganal ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ptoc ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/ptoc.cfg ${PREFIX}/etc
-	${INSTALL_DATA} ${WRKSRC}/libptoc.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libXbgi.a ${PREFIX}/lib
-	@${MKDIR} ${PREFIX}/include/ptoc
+	${INSTALL_PROGRAM} ${WRKSRC}/cganal ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ptoc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/ptoc.cfg ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/libptoc.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libXbgi.a ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ptoc
 .for f in array.h graph.h io.h paslib.h ptoc.h set.h
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/include/ptoc
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/include/ptoc
 .endfor
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in graph.pas ptoc.pas tptoc.pas
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Readme.htm ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme.htm ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
