@@ -23,10 +23,9 @@ JAVA_VERSION=	1.6+
 JAVA_OS=	native
 PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/lib/eclipse
-	@${CP} -r ${WRKSRC}/plugins  ${PREFIX}/lib/eclipse
-	@${CP} -r ${WRKSRC}/features ${PREFIX}/lib/eclipse
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/plugins  ${STAGEDIR}${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/features ${STAGEDIR}${PREFIX}/lib/eclipse
 
 .include <bsd.port.mk>
