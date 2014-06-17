@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	file
-PORTVERSION=	5.18
+PORTVERSION=	5.19
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
@@ -12,9 +12,10 @@ COMMENT=	Utility to determine file type
 
 LICENSE=	BSD2CLAUSE
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-fsect-man5
 MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
 
