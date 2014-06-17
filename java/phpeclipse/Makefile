@@ -28,7 +28,6 @@ PLIST_VER=	${PORTVERSION}.200910091456PRD
 PLIST_SUB=	VER=${PLIST_VER} \
 		ECLIPSE=${ECLIPSE}
 
-NO_STAGE=	yes
 post-patch:
 .for _task in ${PATCH_TASKS}
 	@${FIND} ${WRKDIR} -name build.xml -exec ${REINPLACE_CMD} -E \
@@ -49,8 +48,8 @@ do-build:
 
 do-install:
 .for _path in ${PLUGIN_PATHS}
-	@${MKDIR} ${PREFIX}/${ECLIPSE}/${_path}
-	@${CP} -r ${WRKSRC}/${_path}/* ${PREFIX}/${ECLIPSE}/${_path}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ECLIPSE}/${_path}
+	@${CP} -r ${WRKSRC}/${_path}/* ${STAGEDIR}${PREFIX}/${ECLIPSE}/${_path}/
 .endfor
 
 plist: build
@@ -69,8 +68,5 @@ plist: build
 	@${ECHO} "@dirrmtry ${ECLIPSE}/${_path}" >> ${PLIST}
 .endfor
 	@${ECHO} "@dirrmtry ${ECLIPSE}" >> ${PLIST}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
