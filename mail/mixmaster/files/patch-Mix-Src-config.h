@@ -1,5 +1,5 @@
---- Mix/Src/config.h.orig	2014-06-01 23:03:49.000000000 +0200
-+++ Mix/Src/config.h	2014-06-01 23:04:46.000000000 +0200
+--- Mix/Src/config.h.orig	2014-05-01 10:06:28.000000000 +0200
++++ Mix/Src/config.h	2014-06-16 17:41:37.000000000 +0200
 @@ -179,11 +179,11 @@
  #define BUFSIZE 4096
  
@@ -14,3 +14,12 @@
  #endif
  
  /** file names ********************************************************/
+@@ -241,7 +241,7 @@
+ #define DEFAULT_STAREX "starex.txt"
+ #define DEFAULT_ALLPINGERSURL "http://www.noreply.org/allpingers/allpingers.txt"
+ #define DEFAULT_ALLPINGERSFILE "allpingers.txt"
+-#define DEFAULT_WGET "wget"
++#define DEFAULT_WGET "/usr/bin/fetch"
+ 
+ DLLIMPORT extern char MIXCONF[];
+ extern char DISCLAIMFILE[];
