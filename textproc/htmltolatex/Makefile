@@ -3,7 +3,7 @@
 
 PORTNAME=	htmltolatex
 PORTVERSION=	1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	textproc
 MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	${PORTNAME}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	HTML to LaTeX to PDF Converter
 
-LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
+LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick
 
 USES=		bison gmake
 MAKEFILE=	GNUmakefile
