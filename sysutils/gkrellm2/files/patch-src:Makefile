@@ -1,7 +1,7 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
 --- src/Makefile.orig	2010-10-03 01:21:01.000000000 +0900
-+++ src/Makefile	2010-10-06 17:59:25.769707368 +0900
++++ src/Makefile	2014-06-18 01:12:52.297511351 +0900
 @@ -53,7 +53,8 @@
  	CONFIGURE_ARGS += --without-ntlm
  endif
@@ -43,3 +43,26 @@ diff -u src/Makefile.orig src/Makefile
  # Darwin target for systems that still have libkvm
  darwin: 
  ifeq ($(HAVE_SSL),1)
+@@ -201,16 +209,16 @@
+ install: install_bin install_inc install_man
+ 
+ install_bin:
+-	$(INSTALL) -d -m $(INSTALLDIRMODE) $(INSTALLDIR)
+-	$(INSTALL) -c $(STRIP) -m $(BINMODE) $(PACKAGE)$(BINEXT) $(INSTALLDIR)/$(PACKAGE)$(BINEXT)
++	$(INSTALL) -d -m $(INSTALLDIRMODE) $(DESTDIR)$(INSTALLDIR)
++	$(INSTALL) -c $(STRIP) -m $(BINMODE) $(PACKAGE)$(BINEXT) $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)$(BINEXT)
+ 
+ install_inc:
+-	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(INCLUDEDIR)/gkrellm2
+-	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLM_INCLUDES) $(INCLUDEDIR)/gkrellm2
++	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(DESTDIR)$(INCLUDEDIR)/gkrellm2
++	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLM_INCLUDES) $(DESTDIR)$(INCLUDEDIR)/gkrellm2
+ 
+ install_man:
+-	$(INSTALL) -d -m $(MANDIRMODE) $(MANDIR)
+-	$(INSTALL) -c -m $(MANMODE) ../gkrellm.1 $(MANDIR)/$(PACKAGE).1
++	$(INSTALL) -d -m $(MANDIRMODE) $(DESTDIR)$(MANDIR)
++	$(INSTALL) -c -m $(MANMODE) ../gkrellm.1 $(DESTDIR)$(MANDIR)/$(PACKAGE).1
+ 
+ uninstall:
+ 	$(RM) $(INSTALLDIR)/$(PACKAGE)

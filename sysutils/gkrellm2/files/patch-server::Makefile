@@ -1,7 +1,7 @@
 Index: server/Makefile
 diff -u server/Makefile.orig server/Makefile
 --- server/Makefile.orig	2010-10-03 01:21:01.000000000 +0900
-+++ server/Makefile	2010-10-06 17:37:18.470213785 +0900
++++ server/Makefile	2014-06-18 01:15:19.903510437 +0900
 @@ -26,6 +26,7 @@
  MANMODE ?= 644
  MANDIRMODE ?= 755
@@ -70,7 +70,7 @@ diff -u server/Makefile.orig server/Makefile
  # Darwin target for systems that still have libkvm
  darwin: 
  	$(MAKE) STRIP= HAVE_GETADDRINFO=1 \
-@@ -176,7 +188,7 @@
+@@ -176,27 +188,32 @@
  		SYS_LIBS="-lws2_32 -lwtsapi32 -lpdh -lnetapi32 -liphlpapi -lintl" \
  		gkrellmd
  
@@ -78,22 +78,33 @@ diff -u server/Makefile.orig server/Makefile
 +install: install_bin install_inc install_man install_gkrellmd.pc
  
  install_bin:
- 	$(INSTALL) -d -m $(INSTALLDIRMODE) $(SINSTALLDIR)
-@@ -188,15 +200,20 @@
+-	$(INSTALL) -d -m $(INSTALLDIRMODE) $(SINSTALLDIR)
+-	$(INSTALL) -c $(STRIP) -m $(BINMODE) $(PACKAGE_D)$(BINEXT) $(SINSTALLDIR)/$(PACKAGE_D)$(BINEXT)
++	$(INSTALL) -d -m $(INSTALLDIRMODE) $(DESTDIR)$(SINSTALLDIR)
++	$(INSTALL) -c $(STRIP) -m $(BINMODE) $(PACKAGE_D)$(BINEXT) $(DESTDIR)$(SINSTALLDIR)/$(PACKAGE_D)$(BINEXT)
+ 
+ install_inc:
+-	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(INCLUDEDIR)/gkrellm2
+-	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLMD_INCLUDES) $(INCLUDEDIR)/gkrellm2
++	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(DESTDIR)$(INCLUDEDIR)/gkrellm2
++	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLMD_INCLUDES) $(DESTDIR)$(INCLUDEDIR)/gkrellm2
  
  install_man:
- 	$(INSTALL) -d -m $(MANDIRMODE) $(SMANDIR)
+-	$(INSTALL) -d -m $(MANDIRMODE) $(SMANDIR)
 -	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).1
-+	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).8
++	$(INSTALL) -d -m $(MANDIRMODE) $(DESTDIR)$(SMANDIR)
++	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(DESTDIR)$(SMANDIR)/$(PACKAGE_D).8
  
  install_cfg:
- 	$(INSTALL) -d -m $(CFGDIRMODE) $(CFGDIR)
- 	$(INSTALL) -c -m $(CFGMODE) gkrellmd.conf $(CFGDIR)/gkrellmd.conf
- 
-+install_gkrellmd.pc:
-+	$(INSTALL) -d $(PKGCONFIGDIR)
-+	$(INSTALL) -c -m $(INCLUDEMODE) gkrellmd.pc $(PKGCONFIGDIR)
+-	$(INSTALL) -d -m $(CFGDIRMODE) $(CFGDIR)
+-	$(INSTALL) -c -m $(CFGMODE) gkrellmd.conf $(CFGDIR)/gkrellmd.conf
++	$(INSTALL) -d -m $(CFGDIRMODE) $(DESTDIR)$(CFGDIR)
++	$(INSTALL) -c -m $(CFGMODE) gkrellmd.conf $(DESTDIR)$(CFGDIR)/gkrellmd.conf
 +
++install_gkrellmd.pc:
++	$(INSTALL) -d $(DESTDIR)$(PKGCONFIGDIR)
++	$(INSTALL) -c -m $(INCLUDEMODE) gkrellmd.pc $(DESTDIR)$(PKGCONFIGDIR)
+ 
  uninstall:
  	rm -f $(SINSTALLDIR)/$(PACKAGE_D)
  	rm -f $(SMANDIR)/$(PACKAGE_D).1

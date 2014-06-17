@@ -1,7 +1,7 @@
 Index: Makefile
 diff -u Makefile.orig Makefile
---- Makefile.orig	2007-07-20 06:21:50.000000000 +0900
-+++ Makefile	2008-02-19 18:42:44.000000000 +0900
+--- Makefile.orig	2010-10-03 01:21:01.000000000 +0900
++++ Makefile	2014-06-18 01:31:33.764515607 +0900
 @@ -3,7 +3,9 @@
  #	make
  # For FreeBSD 2.X:
@@ -13,7 +13,7 @@ diff -u Makefile.orig Makefile
  #	make freebsd
  # For NetBSD 1.5 - 1.6.X
  #	make netbsd1
-@@ -116,7 +118,7 @@
+@@ -120,7 +122,7 @@
  export MANDIR SMANDIR MANDIRMODE MANMODE
  export OS_NAME OS_RELEASE
  
@@ -22,3 +22,14 @@ diff -u Makefile.orig Makefile
  debug=0
  export enable_nls
  export debug
+@@ -162,8 +164,8 @@
+ 	rm -f $(PKGCONFIGDIR)/gkrellm.pc
+ 
+ install_gkrellm.pc:
+-	$(INSTALL) -d $(PKGCONFIGDIR)
+-	$(INSTALL) -m $(INCLUDEMODE) -c gkrellm.pc $(PKGCONFIGDIR)
++	$(INSTALL) -d $(DESTDIR)$(PKGCONFIGDIR)
++	$(INSTALL) -m $(INCLUDEMODE) -c gkrellm.pc $(DESTDIR)$(PKGCONFIGDIR)
+ 
+ install_darwin install_darwin9 install_macosx: install_gkrellm.pc
+ 	(cd po && ${MAKE} install)
