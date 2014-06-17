@@ -1,6 +1,12 @@
+man/man6/xtet42.6.gz
+@group games
+@mode 2755
 bin/xtet42
+@mode 664
 %%DATADIR%%/.xtet42.hiscore.single
 %%DATADIR%%/.xtet42.hiscore
 %%DATADIR%%/.xtet42.unlock
 %%DATADIR%%/.xtet42.log
+@mode 775
+@exec install -d -o root -g games -m 755 %D/%%DATADIR%%
 @dirrm %%DATADIR%%
