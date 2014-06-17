@@ -11,31 +11,31 @@ MASTER_SITES=	http://launchpadlibrarian.net/50016234/ \
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Flexible IRC proxy
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gmake
 
-MAN1=		ctrlproxy.1
-MAN5=		ctrlproxy_config.5
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy_config.5 ${MANPREFIX}/man/man5
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/help.txt ${DATADIR}/help.txt
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ctrlproxy
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ctrlproxy-admin
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/linestack-cmd
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ctrlproxyd
+	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy_config.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/help.txt ${STAGEDIR}${DATADIR}/help.txt
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS HACKING NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/user-guide.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/user-guide.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
