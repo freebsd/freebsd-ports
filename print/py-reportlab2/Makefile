@@ -31,14 +31,9 @@ USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-DOCS=		reportlab-graphics-reference.pdf \
+PORTDOCS=	reportlab-graphics-reference.pdf \
 		reportlab-reference.pdf \
 		reportlab-userguide.pdf
-
-DOCS_PLIST_FILES=	${DOCSDIR}/reportlab-graphics-reference.pdf \
-			${DOCSDIR}/reportlab-reference.pdf \
-			${DOCSDIR}/reportlab-userguide.pdf
-DOCS_PLIST_DIRS=	${DOCSDIR}
 
 .include <bsd.port.options.mk>
 
@@ -54,7 +49,7 @@ post-install:
 	@cd ${WRKSRC}/docs && \
 	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} genAll.py
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${DOCS}
+.for i in ${PORTDOCS}
 	${CP} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
