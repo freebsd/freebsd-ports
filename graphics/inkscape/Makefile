@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_BZIP2=	yes
 USE_GNOME=	gtkmm24 intlhack libxslt
-USES=		desktop-file-utils gettext gmake pathfix pkgconfigperl5 \
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig perl5 \
 		shebangfix
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
