@@ -71,6 +71,7 @@ $1 == "@fcfontsdir" {
 }
 
 $1 == "@fontsdir" {
+	font_dir=$2
 	print "@comment begin " $0
 	print "@exec mkfontscale %D/" font_dir " 2>/dev/null || true"
 	print "@exec mkfontdir %D/" font_dir " 2>/dev/null || true"
