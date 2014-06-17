@@ -3,7 +3,7 @@
 
 PORTNAME=	m17n-docs
 PORTVERSION=	1.5.5
-CATEGORIES=	devel
+CATEGORIES=	devel textproc
 MASTER_SITES=	http://anthesphoria.net/FreeBSD/ports/distfiles/
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
