@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION?=	4
+PORTREVISION?=	5
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -144,7 +144,7 @@ M17N_CONFIGURE_WITH=	m17n-flt
 OTF_LIB_DEPENDS=	libotf.so:${PORTSDIR}/print/libotf
 OTF_CONFIGURE_WITH=	libotf
 
-MAGICK_LIB_DEPENDS=	libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
+MAGICK_LIB_DEPENDS=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
 
 GSETTINGS_USE=			gnome=glib20

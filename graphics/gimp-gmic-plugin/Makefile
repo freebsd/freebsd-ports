@@ -2,7 +2,7 @@
 
 PORTNAME=	gmic
 PORTVERSION=	1.5.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/older_versions/ \
 		SF/${PORTNAME}/
@@ -15,7 +15,7 @@ COMMENT=	GREYC's Magic Image Converter
 
 LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libMagick++.so:${PORTSDIR}/graphics/ImageMagick \
+		libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app

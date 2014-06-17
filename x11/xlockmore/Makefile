@@ -3,7 +3,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.43
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
 		ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=	--enable-customization
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=	--without-magick
 .endif
