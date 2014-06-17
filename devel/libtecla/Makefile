@@ -3,10 +3,11 @@
 
 PORTNAME=	libtecla
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	k@stereochro.me
 COMMENT=	Interactive command line editing facilities
 
 LICENSE=	MIT
@@ -16,27 +17,36 @@ GNU_CONFIGURE=	yes
 USE_SUBMAKE=	yes
 ALL_TARGET=	default
 USE_LDCONFIG=	yes
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		REALCURDIR="${.CURDIR}" \
-		PORTNAME="${PORTNAME}"
 MAKE_JOBS_UNSAFE=	yes
 SSP_UNSAFE=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-extract:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genmanlist.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^OPT = -O,OPT =,' \
 		${WRKSRC}/Makefile.in
 
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/enhance ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libtecla.h ${STAGEDIR}${PREFIX}/include
+.for l in libtecla libtecla_r
+	${INSTALL_LIB} ${WRKSRC}/${l}.so.1 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/${l}.a ${STAGEDIR}${PREFIX}/lib
+	(cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf ${l}.so.1 ${l}.so)
+.endfor
+	for n in ${WRKSRC}/man/prog/*.in; do \
+		d=$${n##*/}; \
+		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man1/$${d%.in}.1; \
+	done
+	for n in ${WRKSRC}/man/libr/*.in ${WRKSRC}/man/func/*.in; do \
+		d=$${n##*/}; \
+		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man3/$${d%.in}.3; \
+	done
+	for n in ${WRKSRC}/man/file/*.in; do \
+		d=$${n##*/}; \
+		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man5/$${d%.in}.5; \
+	done
+	for n in ${WRKSRC}/man/misc/*.in; do \
+		d=$${n##*/}; \
+		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man7/$${d%.in}.7; \
+	done
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
