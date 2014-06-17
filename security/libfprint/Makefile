@@ -3,14 +3,14 @@
 
 PORTNAME=	libfprint
 PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Library for fingerprint reader devices
 
-LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS+=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
 		nss3:${PORTSDIR}/security/nss
 
 GNU_CONFIGURE=	yes

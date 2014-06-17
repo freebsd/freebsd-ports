@@ -100,7 +100,7 @@ PLIST_SUB+=	GTS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IMAGEMAGICK=""
 .else
 CMAKE_ARGS+=	-DK3D_BUILD_IMAGEMAGICK_IO_MODULE:BOOL=OFF

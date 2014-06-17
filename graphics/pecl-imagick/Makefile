@@ -3,6 +3,7 @@
 
 PORTNAME=	imagick
 DISTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,11 +16,12 @@ COMMENT=	Provides a wrapper to the ImageMagick/GraphicsMagick library
 LICENSE=	PHP301
 
 .if !defined(WITHOUT_X11)
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 .else
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick-nox11
+LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
+USES=		pkgconfig
 USE_PHP=	yes
 USE_PHPEXT=	yes
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	pfstools
 PORTVERSION=	1.6.4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -71,7 +71,7 @@ PLIST_SUB+=	QT="@comment "
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--enable-imagemagick
-LIB_DEPENDS+=	libMagick++.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IM=""
 .else
 CONFIGURE_ARGS+=--disable-imagemagick

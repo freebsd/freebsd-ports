@@ -10,19 +10,21 @@ MASTER_SITES=	SF
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Vector based 2D animation package
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
-LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
-		MagickWand:${PORTSDIR}/graphics/ImageMagick \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		mng:${PORTSDIR}/graphics/libmng \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		dv:${PORTSDIR}/multimedia/libdv \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26
+# update to 0.64.1 does pick up ImageMagick correctly but there are a 
+# multitude of c++ build failures which are beyond my skill to fix ..
+BROKEN=		Doesn't pickup ImageMagick anymore.
 
-USE_GNOME=	gnomehack glib20
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
+LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libmng.so:${PORTSDIR}/graphics/libmng \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libdv.so:${PORTSDIR}/multimedia/libdv \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+
+USE_GNOME=	gnomehack glib20 glibmm libxml++26
 USES=		gettext
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

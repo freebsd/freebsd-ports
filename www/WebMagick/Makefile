@@ -4,7 +4,7 @@
 PORTNAME=	WebMagick
 PORTVERSION=	2.03p24
 DISTVERSION=	2.03pre24
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}-beta/${DISTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=    libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 
 USES=		shebangfix perl5
