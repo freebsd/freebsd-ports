@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dar
-PORTVERSION=	2.4.13
+PORTVERSION=	2.4.14
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -11,14 +11,15 @@ COMMENT=	Command-line backup tool, aimed for disks
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		libtool pathfix shebangfix
+USES=		libtool shebangfix
 SHEBANG_FILES=	doc/samples/dar_backup doc/samples/*.bash doc/samples/*.sh
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --disable-build-html \
 		--disable-upx --disable-libgcrypt-linking \
 		--disable-ea-support --disable-nodump-flag \
-		--disable-gnugetopt --disable-dar-static
+		--disable-gnugetopt --disable-dar-static \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
