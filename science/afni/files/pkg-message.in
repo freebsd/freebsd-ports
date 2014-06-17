@@ -12,8 +12,15 @@ or DRI (graphics/dri).
 
 ---
 
-For large 3dDeconvolve analyses, you may need to increase the shared
-memory limit on your system.
+For large 3dDeconvolve analyses, you may need to increase one or
+more of the following shared memory limits using sysctl (and
+/etc/sysctl.conf to make the changes permanent):
+
+    kern.ipc.shmall
+    kern.ipc.shmmax
+    kern.ipc.shmmin
+    kern.ipc.shmmni
+    kern.ipc.shmseg
 
 ---
 

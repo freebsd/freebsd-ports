@@ -11,7 +11,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2012.04.17.2129
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://www.acadix.biz/Ports/distfiles/AFNI/${PORTVERSION}/
@@ -23,26 +23,31 @@ EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.5-July3107.tgz
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Advanced Functional Neuro Imaging
 
-LIB_DEPENDS=	R:${PORTSDIR}/math/R \
-		gsl:${PORTSDIR}/math/gsl
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
+		libR.so:${PORTSDIR}/math/R \
+		libgsl.so:${PORTSDIR}/math/gsl \
+		libnetcdf.so:${PORTSDIR}/science/netcdf-fortran
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
-		endian:${PORTSDIR}/sysutils/endian
+		endian:${PORTSDIR}/sysutils/endian \
+		qhull:${PORTSDIR}/math/qhull5
 
-USES=		gettext iconv gmake motif
+CONFLICTS=	im-[0-9]* \
+		nifticlib-[0-9]* \
+		open-usp-tukubai-[0-9]*
 
-NO_STAGE=	yes
-BROKEN=	R_io.so fails to build with R-3.0.2
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2014-06-13
+USES=		gettext iconv gmake motif perl5
 
-.include <bsd.port.pre.mk>
+# Some prereqs use gcc anyway
+USE_GCC=	yes
 
-.if ${ARCH} == "sparc64"
-BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
-.endif
+.include <bsd.port.options.mk>
+
+BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
 USE_GL=		glw glu
 USE_XORG=	xi
@@ -55,12 +60,10 @@ ALL_TARGET=	vastness suma
 ###########################################################################
 # Install parameters
 
-MAN1=		afni.1
-
 SUB_FILES=	pkg-message afni.cshrc afni.profile
 
 INSTALL_WRKSRC=	${WRKSRC}/BSD
-STAGE=		${WRKSRC}/stage
+PRESTAGE=	${WRKSRC}/prestage
 
 X11R6_FILES=	coxplot/Makefile \
 		coxplot/Makefile.f2c \
@@ -85,52 +88,50 @@ post-extract:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKDIR}/afni.1
 
 post-build:
-	${MKDIR} ${STAGE}/bin \
-		${STAGE}/scripts \
-		${STAGE}/lib \
-		${STAGE}/include \
-		${STAGE}/trash \
-		${STAGE}/doc \
-		${STAGE}/share
+	${MKDIR} ${PRESTAGE}/bin \
+		${PRESTAGE}/scripts \
+		${PRESTAGE}/lib \
+		${PRESTAGE}/include \
+		${PRESTAGE}/trash \
+		${PRESTAGE}/doc \
+		${PRESTAGE}/share
 	${MV}	${INSTALL_WRKSRC}/libf2c.a \
-		${STAGE}/trash
+		${PRESTAGE}/trash
 	${MV}	${INSTALL_WRKSRC}/*.a \
 		${INSTALL_WRKSRC}/*.so \
-		${STAGE}/lib
+		${PRESTAGE}/lib
 	${MV}	${INSTALL_WRKSRC}/funstuff \
 		${INSTALL_WRKSRC}/AFNI.*rc \
 		${INSTALL_WRKSRC}/afnigui* \
-		${STAGE}/share
+		${PRESTAGE}/share
 	${MV}	${INSTALL_WRKSRC}/*.h \
-		${STAGE}/include
+		${PRESTAGE}/include
 	${MV}	${INSTALL_WRKSRC}/README* \
-		${STAGE}/doc
+		${PRESTAGE}/doc
 	${MV}	${INSTALL_WRKSRC}/abut ${INSTALL_WRKSRC}/afni_abut
-	${MV}	${INSTALL_WRKSRC}/qhull ${INSTALL_WRKSRC}/afni_qhull
 	for binary in `${FILE} ${INSTALL_WRKSRC}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
-		${MV} $${binary} ${STAGE}/bin ; \
+		${MV} $${binary} ${PRESTAGE}/bin ; \
 	done
 	${MV}	${INSTALL_WRKSRC}/* \
-		${STAGE}/scripts
+		${PRESTAGE}/scripts
 
 do-install:
-	${MKDIR} ${DATADIR} ${PREFIX}/lib/afni ${PREFIX}/include/afni
-	${INSTALL_DATA} ${STAGE}/lib/* ${PREFIX}/lib/afni
-	${INSTALL_DATA} ${STAGE}/include/* ${PREFIX}/include/afni
-	${CP} -R ${STAGE}/share/* ${DATADIR}
-	${INSTALL_PROGRAM} ${STAGE}/bin/* ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${STAGE}/scripts/* ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.5-July3107/* ${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/afni.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${PREFIX}/etc/mri
-	${INSTALL_DATA} ${STAGE}/doc/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${PREFIX}/lib/afni \
+		${STAGEDIR}${PREFIX}/include/afni
+	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
+	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
+	${CP} -R ${PRESTAGE}/share/* ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.5-July3107/* ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKDIR}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
+	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/afni.cshrc ${WRKDIR}/afni.profile \
-		${PREFIX}/etc/mri
+		${STAGEDIR}${PREFIX}/etc/mri
 .endif
 
-post-install:
-	@${CAT} ${WRKDIR}/pkg-message
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

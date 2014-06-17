@@ -53,7 +53,7 @@ ifeq (${ARCH}, ia64)
 CEXTRA += -DPIC -fPIC
 endif
 
-CFLAGS += ${CEXTRA}
+CFLAGS += -Wno-return-type -Wno-switch ${CEXTRA}
 CC     += ${CFLAGS}
 
 CCVOL  = ${CC}
@@ -67,6 +67,9 @@ IFLAGS = -I. -I${LOCALBASE}/include
 LFLAGS = -s -L. -L${LOCALBASE}/lib
 
 MAKE   = gmake
+# Some build scripts pick up the wrong make, so Makefile.INCLUDE is edited
+# to use GMAKE
+GMAKE  = gmake
 
 PLUGIN_SUFFIX = so
 PLUGIN_LFLAGS = -shared
