@@ -2,6 +2,7 @@
 
 PORTNAME=	gmic
 PORTVERSION=	1.5.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/older_versions/ \
 		SF/${PORTNAME}/
@@ -12,7 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
 
-LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick13 \
+LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libMagick++.so:${PORTSDIR}/graphics/ImageMagick \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \

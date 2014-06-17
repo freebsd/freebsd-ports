@@ -3,7 +3,7 @@
 
 PORTNAME=	xastir
 PORTVERSION=	2.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--without-shapelib
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	libGraphicsMagickWand.so:${PORTSDIR}/graphics/GraphicsMagick13
+LIB_DEPENDS+=	libGraphicsMagickWand.so:${PORTSDIR}/graphics/GraphicsMagick
 .else
 CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
 .endif
