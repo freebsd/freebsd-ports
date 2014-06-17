@@ -12,7 +12,7 @@ COMMENT=	Simple IRC client written using the FOX toolkit
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
+LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
 
 USE_XORG=	xft
 USES=		gmake pkgconfig
@@ -29,7 +29,6 @@ NOTIFY_DESC=	Libnotify support
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -63,19 +62,19 @@ CONFIGURE_ARGS+=	--disable-lua
 .endif
 
 .if ${PORT_OPTIONS:MENCHANT}
-LIB_DEPENDS+=	enchant:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=	libenchant.so:${PORTSDIR}/textproc/enchant
 CONFIGURE_ARGS+=	--enable-enchant
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=	--enable-libnotify
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
