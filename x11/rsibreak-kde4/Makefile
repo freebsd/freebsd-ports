@@ -13,11 +13,9 @@ COMMENT=	KDE RSI prevention tool
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-USE_BZIP2=	yes
-USES=		cmake gettext
+USES=		cmake gettext tar:bzip2
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
