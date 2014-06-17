@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	velvet
-PORTVERSION=	1.1.04
+PORTVERSION=	1.2.10
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ebi.ac.uk/~zerbino/velvet/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -21,8 +21,9 @@ USES=		perl5 gmake
 USE_PERL5=	run
 
 BINARIES=	velvetg velveth
-SCRIPTS=	shuffleSequences_fasta.pl shuffleSequences_fastq.pl \
-		contrib/VelvetOptimiser-2.1.7/VelvetOptimiser.pl \
+SCRIPTS=	contrib/shuffleSequences_fasta/shuffleSequences_fasta.pl \
+		contrib/shuffleSequences_fasta/shuffleSequences_fastq.pl \
+		contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl \
 		contrib/afg_handling/asmbly_splitter.pl \
 		contrib/afg_handling/snp_view.pl \
 		contrib/columbus_scripts/enlarge_exons.pl \
@@ -32,13 +33,14 @@ SCRIPTS=	shuffleSequences_fasta.pl shuffleSequences_fastq.pl \
 		contrib/extractContigReads/extractContigReads.pl \
 		contrib/fasta2agp/fasta2agp.pl \
 		contrib/observed-insert-length.pl/observed-insert-length.pl \
+		contrib/read_prepare/pe_read_prepare.0.1.pl \
 		contrib/select_paired/select_paired.pl \
 		contrib/show_repeats/show_repeats.pl
-PERLMOD_DIRS=	contrib/VelvetOptimiser-2.1.7/VelvetOpt
-PERLMOD_FILES=	contrib/VelvetOptimiser-2.1.7/VelvetOpt/Assembly.pm \
-		contrib/VelvetOptimiser-2.1.7/VelvetOpt/Utils.pm \
-		contrib/VelvetOptimiser-2.1.7/VelvetOpt/gwrap.pm \
-		contrib/VelvetOptimiser-2.1.7/VelvetOpt/hwrap.pm
+PERLMOD_DIRS=	contrib/VelvetOptimiser-2.2.4/VelvetOpt
+PERLMOD_FILES=	contrib/VelvetOptimiser-2.2.4/VelvetOpt/Assembly.pm \
+		contrib/VelvetOptimiser-2.2.4/VelvetOpt/Utils.pm \
+		contrib/VelvetOptimiser-2.2.4/VelvetOpt/gwrap.pm \
+		contrib/VelvetOptimiser-2.2.4/VelvetOpt/hwrap.pm
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
