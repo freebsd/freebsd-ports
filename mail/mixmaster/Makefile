@@ -4,6 +4,7 @@
 
 PORTNAME=	mixmaster
 PORTVERSION=	3.0.2d
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.c-s.li/ports/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -20,7 +21,7 @@ USE_NCURSES=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/Mix/Src
 
-PORTDOCS=	README HISTORY
+PORTDOCS=	README HISTORY THANKS TODO
 CONFIG_FILES=	abuse.txt.in dest.blk mix.cfg news.hlp pubring.mix type1.hlp \
 		adminkey.txt end.hlp mix.cfg.ex pgp.hlp rab.blk usage.txt.in \
 		blocked.txt.in header.blk mix.hlp pgponly.hlp reply.txt.in \
@@ -63,10 +64,8 @@ do-install:
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/Mix/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 .for FILE in ${CONFIG_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/Mix/conf/${FILE} ${ETCDIR}/${FILE}.sample
-	@if [ ! -f ${ETCDIR}/${FILE} ]; then \
-		${CP} -p ${WRKSRC}/Mix/conf/${FILE} ${ETCDIR}/${FILE} ; \
-	fi
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Mix/conf/${FILE} ${STAGEDIR}${ETCDIR}/${FILE}.sample
 .endfor
 
 .include <bsd.port.post.mk>
