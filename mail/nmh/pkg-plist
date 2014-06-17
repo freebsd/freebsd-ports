@@ -5,6 +5,7 @@ bin/comp
 bin/dist
 bin/flist
 bin/flists
+bin/fmttest
 bin/fnext
 bin/folder
 bin/folders
@@ -18,6 +19,7 @@ bin/inc
 bin/install-mh
 bin/mark
 bin/mhbuild
+bin/mhfixmsg
 bin/mhlist
 bin/mhmail
 bin/mhn
@@ -27,8 +29,8 @@ bin/mhshow
 bin/mhstore
 bin/msgchk
 bin/msh
-bin/next
 bin/new
+bin/next
 bin/packf
 bin/pick
 bin/prev
@@ -81,6 +83,9 @@ etc/nmh/mhl.reply-dist
 @unexec if cmp -s %D/etc/nmh/mhn.defaults %D/etc/nmh/mhn.defaults-dist; then rm -f %D/etc/nmh/mhn.defaults; else echo 'Local changes: %D/etc/nmh/mhn.defaults (not removed)' >&2; fi
 etc/nmh/mhn.defaults-dist
 @exec [ -f %D/etc/nmh/mhn.defaults ] || cp %D/etc/nmh/mhn.defaults-dist %D/etc/nmh/mhn.defaults
+@unexec if cmp -s %D/etc/nmh/mhshow.marker %D/etc/nmh/mhshow.marker-dist; then rm -f %D/etc/nmh/mhshow.marker; else echo 'Local changes: %D/etc/nmh/mhshow.marker (not removed)' >&2; fi
+etc/nmh/mhshow.marker-dist
+@exec [ -f %D/etc/nmh/mhshow.marker ] || cp %D/etc/nmh/mhshow.marker-dist %D/etc/nmh/mhshow.marker
 @unexec if cmp -s %D/etc/nmh/mts.conf %D/etc/nmh/mts.conf-dist; then rm -f %D/etc/nmh/mts.conf; else echo 'Local changes: %D/etc/nmh/mts.conf (not removed)' >&2; fi
 etc/nmh/mts.conf-dist
 @exec [ -f %D/etc/nmh/mts.conf ] || cp %D/etc/nmh/mts.conf-dist %D/etc/nmh/mts.conf
@@ -102,9 +107,15 @@ etc/nmh/scan.MMDDYY-dist
 @unexec if cmp -s %D/etc/nmh/scan.YYYYMMDD %D/etc/nmh/scan.YYYYMMDD-dist; then rm -f %D/etc/nmh/scan.YYYYMMDD; else echo 'Local changes: %D/etc/nmh/scan.YYYYMMDD (not removed)' >&2; fi
 etc/nmh/scan.YYYYMMDD-dist
 @exec [ -f %D/etc/nmh/scan.YYYYMMDD ] || cp %D/etc/nmh/scan.YYYYMMDD-dist %D/etc/nmh/scan.YYYYMMDD
+@unexec if cmp -s %D/etc/nmh/scan.curses %D/etc/nmh/scan.curses-dist; then rm -f %D/etc/nmh/scan.curses; else echo 'Local changes: %D/etc/nmh/scan.curses (not removed)' >&2; fi
+etc/nmh/scan.curses-dist
+@exec [ -f %D/etc/nmh/scan.curses ] || cp %D/etc/nmh/scan.curses-dist %D/etc/nmh/scan.curses
 @unexec if cmp -s %D/etc/nmh/scan.default %D/etc/nmh/scan.default-dist; then rm -f %D/etc/nmh/scan.default; else echo 'Local changes: %D/etc/nmh/scan.default (not removed)' >&2; fi
 etc/nmh/scan.default-dist
 @exec [ -f %D/etc/nmh/scan.default ] || cp %D/etc/nmh/scan.default-dist %D/etc/nmh/scan.default
+@unexec if cmp -s %D/etc/nmh/scan.highlighted %D/etc/nmh/scan.highlighted-dist; then rm -f %D/etc/nmh/scan.highlighted; else echo 'Local changes: %D/etc/nmh/scan.highlighted (not removed)' >&2; fi
+etc/nmh/scan.highlighted-dist
+@exec [ -f %D/etc/nmh/scan.highlighted ] || cp %D/etc/nmh/scan.highlighted-dist %D/etc/nmh/scan.highlighted
 @unexec if cmp -s %D/etc/nmh/scan.mailx %D/etc/nmh/scan.mailx-dist; then rm -f %D/etc/nmh/scan.mailx; else echo 'Local changes: %D/etc/nmh/scan.mailx (not removed)' >&2; fi
 etc/nmh/scan.mailx-dist
 @exec [ -f %D/etc/nmh/scan.mailx ] || cp %D/etc/nmh/scan.mailx-dist %D/etc/nmh/scan.mailx
@@ -129,6 +140,7 @@ libexec/nmh/dp
 libexec/nmh/fmtdump
 libexec/nmh/mhl
 libexec/nmh/mhtest
+libexec/nmh/mkstemp
 libexec/nmh/post
 libexec/nmh/rcvdist
 libexec/nmh/rcvpack
@@ -144,6 +156,7 @@ man/man1/comp.1.gz
 man/man1/dist.1.gz
 man/man1/flist.1.gz
 man/man1/flists.1.gz
+man/man1/fmttest.1.gz
 man/man1/fnext.1.gz
 man/man1/folder.1.gz
 man/man1/folders.1.gz
@@ -152,8 +165,9 @@ man/man1/fprev.1.gz
 man/man1/inc.1.gz
 man/man1/install-mh.1.gz
 man/man1/mark.1.gz
-man/man1/mh-chart.1.gz
+man/man1/mh-mkstemp.1.gz
 man/man1/mhbuild.1.gz
+man/man1/mhfixmsg.1.gz
 man/man1/mhl.1.gz
 man/man1/mhlist.1.gz
 man/man1/mhmail.1.gz
@@ -166,7 +180,6 @@ man/man1/msgchk.1.gz
 man/man1/msh.1.gz
 man/man1/new.1.gz
 man/man1/next.1.gz
-man/man1/nmh.1.gz
 man/man1/packf.1.gz
 man/man1/pick.1.gz
 man/man1/prev.1.gz
@@ -190,6 +203,7 @@ man/man1/whatnow.1.gz
 man/man1/whom.1.gz
 man/man5/mh-alias.5.gz
 man/man5/mh-draft.5.gz
+man/man5/mh-folders.5.gz
 man/man5/mh-format.5.gz
 man/man5/mh-mail.5.gz
 man/man5/mh-profile.5.gz
@@ -197,34 +211,39 @@ man/man5/mh-sequence.5.gz
 man/man5/mh-tailor.5.gz
 man/man5/mh_profile.5.gz
 man/man5/mts.conf.5.gz
+man/man7/mh-chart.7.gz
+man/man7/mh-mime.7.gz
+man/man7/nmh.7.gz
 man/man8/ap.8.gz
 man/man8/conflict.8.gz
 man/man8/dp.8.gz
 man/man8/fmtdump.8.gz
 man/man8/post.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/README.about
-%%PORTDOCS%%%%DOCSDIR%%/MAILING-LISTS
-%%PORTDOCS%%%%DOCSDIR%%/README.SASL
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/README.manpages
-%%PORTDOCS%%%%DOCSDIR%%/MAIL.FILTERING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README-components
-%%PORTDOCS%%%%DOCSDIR%%/README-ATTACHMENTS
-%%PORTDOCS%%%%DOCSDIR%%/COMPLETION-ZSH
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README-HOOKS
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/contrib/build_nmh
-%%PORTDOCS%%%%DOCSDIR%%/contrib/nmh.spec
-%%PORTDOCS%%%%DOCSDIR%%/contrib/replyfilter
-%%PORTDOCS%%%%DOCSDIR%%/DIFFERENCES
 %%PORTDOCS%%%%DOCSDIR%%/COMPLETION-BASH
-%%PORTDOCS%%%%DOCSDIR%%/README.developers
 %%PORTDOCS%%%%DOCSDIR%%/COMPLETION-TCSH
+%%PORTDOCS%%%%DOCSDIR%%/COMPLETION-ZSH
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/DIFFERENCES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/MAIL.FILTERING
+%%PORTDOCS%%%%DOCSDIR%%/MAILING-LISTS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-ATTACHMENTS
+%%PORTDOCS%%%%DOCSDIR%%/README-HOOKS
+%%PORTDOCS%%%%DOCSDIR%%/README-components
+%%PORTDOCS%%%%DOCSDIR%%/README-iCalendar
+%%PORTDOCS%%%%DOCSDIR%%/README.SASL
+%%PORTDOCS%%%%DOCSDIR%%/README.about
+%%PORTDOCS%%%%DOCSDIR%%/README.developers
+%%PORTDOCS%%%%DOCSDIR%%/README.manpages
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/VERSION
+%%PORTDOCS%%%%DOCSDIR%%/contrib/build_nmh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/ml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/replyfilter
+%%PORTDOCS%%%%DOCSDIR%%/contrib/vpick
 @dirrmtry etc/nmh
 @dirrm libexec/nmh
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
