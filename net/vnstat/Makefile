@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	A console-based network traffic monitor
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="-I${LOCALBASE}/include" \
@@ -20,9 +20,6 @@ USE_RC_SUBR=	vnstat
 USERS=	vnstat
 GROUPS=	vnstat
 
-MAN1=	vnstat.1 vnstatd.1
-MAN5=	vnstat.conf.5
-MANCOMPRESSED=	yes
 PORTDOCS=	README INSTALL_BSD UPGRADE vnstat-cron
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS=${USERS} \
@@ -33,18 +30,11 @@ OPTIONS_DEFINE=	GUI DOCS
 OPTIONS_DEFAULT=	GUI
 GUI_DESC=	Build with graphics/gd dependency
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-PLIST_FILES=	bin/vnstat \
-		sbin/vnstatd \
-		%%GUI%%bin/vnstati \
-		etc/vnstat.conf.sample
-
 .if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 PLIST_SUB+=	GUI=""
-MAN1+=	vnstati.1
 .else
 ALL_TARGET="vnstat"
 PLIST_SUB+=	GUI="@comment "
@@ -52,23 +42,30 @@ PLIST_SUB+=	GUI="@comment "
 
 post-extract:
 	@cd ${WRKSRC} && ${CP} examples/vnstat.cron vnstat-cron
-	@cd ${WRKSRC} && ${CP} cfg/vnstat.conf cfg/vnstat.conf.sample
 	@${REINPLACE_CMD} -e 's|/usr/bin|/usr/local/bin|g' \
 		-e 's|ls /var/lib|ls -l /var/db|g' ${WRKSRC}/vnstat-cron
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(DESTDIR)|${PREFIX}|g' \
-		-e 's|cfg/vnstat.conf|cfg/vnstat.conf.sample|g' \
-		-e 's|etc/vnstat.conf|etc/vnstat.conf.sample|g' \
-		-e 's|install -D|install|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/cfg.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/vnstat ${STAGEDIR}/${PREFIX}/bin/vnstat
+	${INSTALL_PROGRAM} ${WRKSRC}/src/vnstatd ${STAGEDIR}/${PREFIX}/sbin/vnstatd
+	${INSTALL_DATA} ${WRKSRC}/cfg/vnstat.conf ${STAGEDIR}/${PREFIX}/etc/vnstat.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/man/vnstat.1 ${STAGEDIR}/${MANPREFIX}/man/man1/vnstat.1
+	${INSTALL_MAN} ${WRKSRC}/man/vnstatd.1 ${STAGEDIR}/${MANPREFIX}/man/man1/vnstatd.1
+	${INSTALL_MAN} ${WRKSRC}/man/vnstat.conf.5 ${STAGEDIR}/${MANPREFIX}/man/man5/vnstat.conf.5
+.if ${PORT_OPTIONS:MGUI}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/vnstati ${STAGEDIR}/${PREFIX}/bin/vnstati
+	${INSTALL_MAN} ${WRKSRC}/man/vnstati.1 ${STAGEDIR}/${MANPREFIX}/man/man1/vnstati.1
+.endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}/${DOCSDIR}
 .endif
 
 	@${ECHO_MSG} ""
