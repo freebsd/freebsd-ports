@@ -10,27 +10,24 @@ DISTNAME=	${PORTNAME}-1.7
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Compiler for the Elan Programming Environment
 
-LIB_DEPENDS=	dcg:${PORTSDIR}/devel/mimir
+LIB_DEPENDS=	libdcg.so:${PORTSDIR}/devel/mimir
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-MAN1=		elancc.1
-
-USE_AUTOTOOLS=	libtool
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liberts.so.1.0.7
 .if !defined (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manuals/compiler/comp.ps \
-		${DOCSDIR}/elan-compiler.ps
+		${STAGEDIR}${DOCSDIR}/elan-compiler.ps
 	${INSTALL_DATA} ${WRKSRC}/manuals/language/elan.ps \
-		${DOCSDIR}/elan-language.ps
+		${STAGEDIR}${DOCSDIR}/elan-language.ps
 .endif
 
 .include <bsd.port.post.mk>
