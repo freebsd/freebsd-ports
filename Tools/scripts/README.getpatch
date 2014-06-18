@@ -37,15 +37,15 @@ EXAMPLES
 
 	   getpatch --mode gnats ports/166692
 
+     Retrieve all patches attached to PR ports/166692 from Bugzilla BTS:
+
+	   getpatch --mode bz ports/166692
+
 	   or
 
 	   getpatch 166692
 
-     Gnats is the default BTS and category isn't mandatory.
-
-     Retrieve all patches attached to PR ports/166692 from Bugzilla BTS:
-
-	   getpatch --mode bz ports/166692
+     Bugzilla is the default BTS and category isn't mandatory.
 
      Retrieve only the latest iteration of the patch:
 
@@ -82,4 +82,4 @@ BUGS
      If you're using getpatch and you encounter a bug or want an improvement
      don't hesitate to mail me.
 
-FreeBSD 			 14 August 2012	                         FreeBSD
+FreeBSD 			 18 June 2014	                         FreeBSD
