@@ -1,61 +1,76 @@
 bin/gscan2pdf
 bin/scanadf-perl
 bin/scanimage-perl
-%%SITE_PERL%%/Gscan2pdf.pm
-%%SITE_PERL%%/Gscan2pdf/Frontend/Sane.pm
-%%SITE_PERL%%/Gscan2pdf/Scanner/Options.pm
 %%SITE_PERL%%/Gscan2pdf/Cuneiform.pm
+%%SITE_PERL%%/Gscan2pdf/Dialog.pm
+%%SITE_PERL%%/Gscan2pdf/Dialog/Renumber.pm
+%%SITE_PERL%%/Gscan2pdf/Dialog/Scan.pm
+%%SITE_PERL%%/Gscan2pdf/Dialog/Scan/CLI.pm
+%%SITE_PERL%%/Gscan2pdf/Dialog/Scan/Sane.pm
 %%SITE_PERL%%/Gscan2pdf/Document.pm
+%%SITE_PERL%%/Gscan2pdf/Frontend/CLI.pm
+%%SITE_PERL%%/Gscan2pdf/Frontend/Sane.pm
+%%SITE_PERL%%/Gscan2pdf/NetPBM.pm
 %%SITE_PERL%%/Gscan2pdf/Ocropus.pm
 %%SITE_PERL%%/Gscan2pdf/Page.pm
+%%SITE_PERL%%/Gscan2pdf/PageRange.pm
+%%SITE_PERL%%/Gscan2pdf/Scanner/Options.pm
 %%SITE_PERL%%/Gscan2pdf/Tesseract.pm
 %%SITE_PERL%%/Gscan2pdf/Unpaper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf/.packlist
+man/man1/gscan2pdf.1.gz
+man/man1/scanadf-perl.1.gz
+man/man1/scanimage-perl.1.gz
+share/appdata/gscan2pdf.appdata.xml
 share/applications/gscan2pdf.desktop
-share/pixmaps/gscan2pdf.svg
 %%DATADIR%%/gscan2pdf.svg
 %%DATADIR%%/pdf.svg
 %%DATADIR%%/scanner.svg
-%%DATADIR%%/stock-selection-all-16.png
 %%DATADIR%%/stock-rotate-180.svg
 %%DATADIR%%/stock-rotate-270.svg
 %%DATADIR%%/stock-rotate-90.svg
-%%NLS%%share/locale/ab/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/be/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/da/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/el/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/fa/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/he/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/oc/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/gscan2pdf.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/gscan2pdf.mo
+%%DATADIR%%/stock-selection-all-16.png
+share/locale/ab/LC_MESSAGES/gscan2pdf.mo
+share/locale/be/LC_MESSAGES/gscan2pdf.mo
+share/locale/bg/LC_MESSAGES/gscan2pdf.mo
+share/locale/ca/LC_MESSAGES/gscan2pdf.mo
+share/locale/cs/LC_MESSAGES/gscan2pdf.mo
+share/locale/da/LC_MESSAGES/gscan2pdf.mo
+share/locale/de/LC_MESSAGES/gscan2pdf.mo
+share/locale/el/LC_MESSAGES/gscan2pdf.mo
+share/locale/en_GB/LC_MESSAGES/gscan2pdf.mo
+share/locale/es/LC_MESSAGES/gscan2pdf.mo
+share/locale/fa/LC_MESSAGES/gscan2pdf.mo
+share/locale/fr/LC_MESSAGES/gscan2pdf.mo
+share/locale/gu/LC_MESSAGES/gscan2pdf.mo
+share/locale/he/LC_MESSAGES/gscan2pdf.mo
+share/locale/hr/LC_MESSAGES/gscan2pdf.mo
+share/locale/hu/LC_MESSAGES/gscan2pdf.mo
+share/locale/it/LC_MESSAGES/gscan2pdf.mo
+share/locale/ja/LC_MESSAGES/gscan2pdf.mo
+share/locale/ko/LC_MESSAGES/gscan2pdf.mo
+share/locale/nb/LC_MESSAGES/gscan2pdf.mo
+share/locale/nl/LC_MESSAGES/gscan2pdf.mo
+share/locale/oc/LC_MESSAGES/gscan2pdf.mo
+share/locale/pl/LC_MESSAGES/gscan2pdf.mo
+share/locale/pt/LC_MESSAGES/gscan2pdf.mo
+share/locale/pt_BR/LC_MESSAGES/gscan2pdf.mo
+share/locale/ru/LC_MESSAGES/gscan2pdf.mo
+share/locale/sk/LC_MESSAGES/gscan2pdf.mo
+share/locale/sl/LC_MESSAGES/gscan2pdf.mo
+share/locale/sv/LC_MESSAGES/gscan2pdf.mo
+share/locale/tr/LC_MESSAGES/gscan2pdf.mo
+share/locale/uk/LC_MESSAGES/gscan2pdf.mo
+share/locale/zh_CN/LC_MESSAGES/gscan2pdf.mo
+share/locale/zh_TW/LC_MESSAGES/gscan2pdf.mo
+share/pixmaps/gscan2pdf.svg
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/ab/LC_MESSAGES
+@dirrmtry share/locale/ab
+@dirrmtry share/appdata
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf
 @dirrm %%SITE_PERL%%/Gscan2pdf/Scanner
 @dirrm %%SITE_PERL%%/Gscan2pdf/Frontend
+@dirrm %%SITE_PERL%%/Gscan2pdf/Dialog/Scan
+@dirrm %%SITE_PERL%%/Gscan2pdf/Dialog
 @dirrm %%SITE_PERL%%/Gscan2pdf
-@dirrmtry share/locale/ab/LC_MESSAGES
-@dirrmtry share/locale/ab
-@dirrmtry %%DATADIR%%
