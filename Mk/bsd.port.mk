@@ -1469,10 +1469,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.tex.mk"
 .endif
 
-.if defined(USE_DRUPAL)
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.endif
-
 .if defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
