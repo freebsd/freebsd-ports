@@ -13,8 +13,7 @@ COMMENT=	Library for inspecting program's backtrace
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		uidfix
-USE_BZIP2=	yes
+USES=		tar:bzip2 uidfix
 USE_LDCONFIG=	yes
 MAKE_FLAGS=	LIBDIR=${PREFIX}/lib \
 		INCLUDEDIR=${PREFIX}/include
