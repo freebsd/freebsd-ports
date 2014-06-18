@@ -125,5 +125,3 @@ share/locale/tr/LC_MESSAGES/libdcpp.mo
 share/locale/uk/LC_MESSAGES/libdcpp.mo
 share/locale/zh_CN/LC_MESSAGES/libdcpp.mo
 share/locale/zh_TW/LC_MESSAGES/libdcpp.mo
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km

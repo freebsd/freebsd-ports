@@ -17,6 +17,18 @@
  	BoolVariable('profile', 'Compile the program with profiling information', 0),
  	PathVariable('PREFIX', 'Compile the program with PREFIX as the root for installation', '/usr/local', PathVariable.PathIsDir),
  	('FAKE_ROOT', 'Make scons install the program under a fake root', '')
+@@ -131,7 +131,10 @@
+ 	env['CC'] = os.environ['CC']
+ 
+ if os.environ.has_key('CXXFLAGS'):
+-	env['CPPFLAGS'] = env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
++	env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
++
++if os.environ.has_key('CPPFLAGS'):
++	env['CPPFLAGS'] = os.environ['CPPFLAGS'].split()
+ 
+ if os.environ.has_key('LDFLAGS'):
+ 	env['LINKFLAGS'] = os.environ['LDFLAGS'].split()
 @@ -139,6 +140,12 @@
  if os.environ.has_key('CFLAGS'):
  	env['CFLAGS'] = os.environ['CFLAGS'].split()
