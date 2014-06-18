@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=dwcjr
 DISTNAME=	DevVNC_unix
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
 LICENSE=	GPLv2
@@ -26,21 +26,22 @@ MAKE_JOBS_UNSAFE=yes
 
 CONFLICTS=	tightvnc-[0-9]* vnc-[0-9]*
 
-.ifdef(TRIDIAVNC_BASE)
-PREFIX=${TRIDIAVNC_BASE}
-MAKE_ENV+=	DESTDIR=${TRIDIAVNC_BASE}
-.endif
+# .ifdef(TRIDIAVNC_BASE)
+# PREFIX=${TRIDIAVNC_BASE}
+# MAKE_ENV+=	DESTDIR=${TRIDIAVNC_BASE}
+# .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386
 BROKEN=		Does not compile on ${MACHINE_ARCH}
-NO_XVNC=	yes
 PLIST_SUB+=	XVNC="@comment "
 .else
 PLIST_SUB+=	XVNC=""
 .endif
+
+# XXX Broken under clang
+NO_XVNC=	yes
 
 post-patch:
 .for file in vncviewer/Imakefile Xvnc/config/cf/vnclibs.def Xvnc/config/cf/Imake.tmpl
@@ -53,14 +54,19 @@ post-patch:
 # to do the install ourselves.
 post-install:
 .if !defined(NO_XVNC)
-	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
+	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc \
+		${STAGEDIR}${PREFIX}/bin/Xvnc
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/vncviewer/vncviewer ${PREFIX}/bin/vncviewer
-	${INSTALL_PROGRAM} ${WRKSRC}/vncpasswd/vncpasswd ${PREFIX}/bin/vncpasswd
-	${INSTALL_PROGRAM} ${WRKSRC}/vncconnect/vncconnect ${PREFIX}/bin/vncconnect
-	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${PREFIX}/bin/vncserver
+	${INSTALL_PROGRAM} ${WRKSRC}/vncviewer/vncviewer \
+		${STAGEDIR}${PREFIX}/bin/vncviewer
+	${INSTALL_PROGRAM} ${WRKSRC}/vncpasswd/vncpasswd \
+		${STAGEDIR}${PREFIX}/bin/vncpasswd
+	${INSTALL_PROGRAM} ${WRKSRC}/vncconnect/vncconnect \
+		${STAGEDIR}${PREFIX}/bin/vncconnect
+	${INSTALL_SCRIPT} ${WRKSRC}/vncserver \
+		${STAGEDIR}${PREFIX}/bin/vncserver
 # Go install Java classes
-	${MKDIR} ${PREFIX}/share/vnc
-	${CP} -R ${WRKSRC}/classes ${PREFIX}/share/vnc
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/vnc
+	${CP} -R ${WRKSRC}/classes ${STAGEDIR}${PREFIX}/share/vnc
 
 .include <bsd.port.post.mk>
