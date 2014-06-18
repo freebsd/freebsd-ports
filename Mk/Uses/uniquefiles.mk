@@ -1,6 +1,3 @@
-# -*- tab-width: 4; -*-
-# ex: ts=4
-#
 # $FreeBSD$
 #
 # Make files or directories 'unique', by adding a prefix or suffix.
@@ -10,54 +7,54 @@
 # Valid ARGS:	dirs
 #
 # dirs:			The port needs a prefix (and only a prefix) based on
-#				UNIQUE_PREFIX for the standard directories
-#					DOCSDIR, EXAMPLESDIR, DATADIR, WWWDIR, ETCDIR
+#			UNIQUE_PREFIX for the standard directories
+#			DOCSDIR, EXAMPLESDIR, DATADIR, WWWDIR, ETCDIR
 #
 # Variables for ports:
 #
-# UNIQUE_PREFIX			- The prefix to be used for directories and files.
-#						  Default: ${PKGNAMEPREFIX}.
+# UNIQUE_PREFIX		- The prefix to be used for directories and files.
+#			  Default: ${PKGNAMEPREFIX}.
 # UNIQUE_PREFIX_FILES	- A list of files that need to be prefixed.
-#						  Default: empty
-# UNIQUE_SUFFIX			- The suffix to be used for files.
-#						  Default: ${PKGNAMESUFFIX}.
+#			  Default: empty
+# UNIQUE_SUFFIX		- The suffix to be used for files.
+#			  Default: ${PKGNAMESUFFIX}.
 # UNIQUE_SUFFIX_FILES	- A list of files that need to be suffixed.
-#						  Default: empty
+#			  Default: empty
 #
 # Variables for the ports framework, but NOT individual ports:
 #
 # UNIQUE_DEFAULT_LINKS	- When set to "yes", symlinks of the original
-#						  filenames are also created pointing to their
-#						  UNIQUE_* counterparts.
-#						  This is useful for supporting multiple logical
-#						  instances from a single physical port, but where
-#						  you want to mark only *one* of those instances to
-#						  provide original filenames.
+#			  filenames are also created pointing to their
+#			  UNIQUE_* counterparts.
+#			  This is useful for supporting multiple logical
+#			  instances from a single physical port, but where
+#			  you want to mark only *one* of those instances to
+#			  provide original filenames.
 #
-#						  category/py-foo, installed as:
+#			  category/py-foo, installed as:
 #
-#							py27-foo for Python 2.7 (DEFAULT_VERSION)
-#							py33-foo for Python 3.3
+#			py27-foo for Python 2.7 (DEFAULT_VERSION)
+#			py33-foo for Python 3.3
 #
-#						  Results in:
+#			  Results in:
 #
-#							py27-foo
-#								bin/foo-2.7             (UNIQUE_SUFFIX)
-#								bin/foo -> bin/foo-2.7  (symlinked original filename)
-#							py33-foo creates:
-#								bin/foo-3.3             (UNIQUE_SUFFIX)
+#			py27-foo
+#			bin/foo-2.7             (UNIQUE_SUFFIX)
+#			bin/foo -> bin/foo-2.7  (symlinked original filename)
+#			py33-foo creates:
+#			bin/foo-3.3             (UNIQUE_SUFFIX)
 #
-#						  Default: no
+#			  Default: no
 #
 # UNIQUE_FIND_PREFIX_FILES	- A shell command to be executed to find files for
-#						  	  the specific port. This has to return a
-#							  list of files to be iterated over.
-#							  Default: empty
+#				  the specific port. This has to return a
+#				  list of files to be iterated over.
+#				  Default: empty
 #
 # UNIQUE_FIND_SUFFIX_FILES	- A shell command to be executed to find files for
-#						  	  the specific port. This has to return a
-#							  list of files to be iterated over.
-#							  Default: empty
+#				  the specific port. This has to return a
+#				  list of files to be iterated over.
+#				  Default: empty
 #
 # NOTE:	multiple logical instances are not supported by pkg and the original
 # pkg_tools at the moment.
@@ -77,12 +74,12 @@ uniquefiles_ARGS=	#empty
 
 UNIQUE_PREFIX?=		${PKGNAMEPREFIX}
 UNIQUE_SUFFIX?=		${PKGNAMESUFFIX}
-UNIQUE_PREFIX_FILES?=		# empty
-UNIQUE_SUFFIX_FILES?=		# empty
+UNIQUE_PREFIX_FILES?=	# empty
+UNIQUE_SUFFIX_FILES?=	# empty
 
 .if ${uniquefiles_ARGS:Mdirs}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUE_PREFIX}${PORTNAME}
-EXAMPLESDIR=${PREFIX}/share/examples/${UNIQUE_PREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUE_PREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${UNIQUE_PREFIX}${PORTNAME}
 WWWDIR=		${PREFIX}/www/${UNIQUE_PREFIX}${PORTNAME}
 ETCDIR=		${PREFIX}/etc/${UNIQUE_PREFIX}${PORTNAME}
