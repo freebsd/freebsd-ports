@@ -3,7 +3,6 @@ bin/dig
 bin/host
 bin/nslookup
 bin/nsupdate
-etc/rc.d/named
 man/man1/delv.1.gz
 man/man1/dig.1.gz
 man/man1/host.1.gz
