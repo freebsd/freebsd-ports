@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	udunits
-PORTVERSION=	2.2.13
+PORTVERSION=	2.2.14
 CATEGORIES=	science math
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
 		LOCAL/sunpoet
