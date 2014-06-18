@@ -3,7 +3,7 @@
 
 PORTNAME=	privatetickets
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	trac-
@@ -14,10 +14,9 @@ COMMENT=	Modified ticket security for Trac
 
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracPrivateTickets
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
