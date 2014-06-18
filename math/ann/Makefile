@@ -14,14 +14,13 @@ WRKSRC=		${WRKDIR}/ann_1.1.2
 USE_LDCONFIG=	yes
 USES=		gmake
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libann.so.0 ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libann.a ${PREFIX}/lib
-	${LN} -fs libann.so.0 ${PREFIX}/lib/libann.so
-	${MKDIR} ${PREFIX}/include/ANN
-	${INSTALL_DATA} ${WRKSRC}/include/ANN/* ${PREFIX}/include/ANN
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ANNmanual.pdf ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libann.so.0 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libann.a ${STAGEDIR}${PREFIX}/lib
+	${LN} -fs libann.so.0 ${STAGEDIR}${PREFIX}/lib/libann.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/ANN
+	${INSTALL_DATA} ${WRKSRC}/include/ANN/* ${STAGEDIR}${PREFIX}/include/ANN
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ANNmanual.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
