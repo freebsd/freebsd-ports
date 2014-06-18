@@ -1,0 +1,46 @@
+#!/usr/local/bin/bash
+
+LWJGL_JLP_OVRD="/usr/local/lib/lwjgl2.9.1"
+LWJGL_OVRD="/usr/local/share/java/classes/lwjgl/lwjgl.jar"
+LWJGL_UTIL_OVRD="/usr/local/share/java/classes/lwjgl/lwjgl_util.jar"
+
+export JAVA_HOME=/usr/local/openjdk8
+
+build_classpath() {
+    j=0
+    ocp=`echo ${1} | sed 's/:/ /g'`
+    for p in ${ocp}
+    do
+        if [[ $p == *lwjgl-* ]]
+        then
+            ncp[$j]=${LWJGL_OVRD}
+        elif [[ $p == *lwjgl_util* ]]
+        then
+            ncp[$j]=${LWJGL_UTIL_OVRD}
+        else
+            ncp[$j]=${p}
+        fi
+        j=$(( j + 1 ))
+    done
+
+    cp=`echo ${ncp[@]} | sed 's/ /:/g'`
+}
+
+
+i=0
+for var in "${@}"
+do
+    if [[ "$var" == -Djava.library* ]]
+    then
+        args[$i]="-Djava.library.path=${LWJGL_JLP_OVRD}"
+    elif [[ "$var" == *lwjgl_util* ]]
+    then
+        build_classpath "${var}"
+        args[$i]="$cp"
+    else
+        args[$i]=$var
+    fi
+        i=$(( i + 1 ))
+done
+
+${JAVA_HOME}/jre/bin/java ${args[@]}
