@@ -1,9 +1,9 @@
---- ./src/CMakeLists.txt.orig	2014-03-10 12:22:06.000000000 +0100
-+++ ./src/CMakeLists.txt	2014-03-18 17:12:29.000000000 +0100
-@@ -136,6 +136,7 @@
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -131,6 +131,7 @@
+ 
  IF( NOT WIN32 AND NOT APPLE )
      set(libsync_SRCS ${libsync_SRCS} mirall/folderwatcher_linux.cpp)
-     set(libsync_HEADERS ${libsync_HEADERS} mirall/folderwatcher_linux.h)
 +    link_directories($ENV{INOTIFY_LIB})
  ENDIF()
  IF( WIN32 )
