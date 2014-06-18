@@ -57,6 +57,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0981958a-f733-11e3-8276-071f1604ef8a">
+    <topic>iodined -- authentication bypass</topic>
+    <affects>
+      <package>
+	<name>iodine</name>
+	<range><lt>0.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Erik Ekman of the iodine project reports:</p>
+    <blockquote cite="https://github.com/yarrick/iodine/commit/b715be5cf3978fbe589b03b09c9398d0d791f850">
+	<p>The client could bypass the password check by continuing after
+	    getting error from the server and guessing the network parameters.
+	    The server would still accept the rest of the setup and also network
+	    traffic.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<url>https://github.com/yarrick/iodine/commit/b715be5cf3978fbe589b03b09c9398d0d791f850</url>
+    </references>
+    <dates>
+      <discovery>2014-06-16</discovery>
+      <entry>2014-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f109b02f-f5a4-11e3-82e9-00a098b18457">
     <topic>asterisk -- multiple vulnerabilities</topic>
     <affects>
