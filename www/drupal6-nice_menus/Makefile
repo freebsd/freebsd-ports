@@ -8,8 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	CSS / JavaScript pull-down menus for Drupal
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 
 MODULE_DIRS=	superfish/js superfish translations
 MODULE_FILES=	arrow-right.png nice_menus.install nice_menus_default-rtl.css \

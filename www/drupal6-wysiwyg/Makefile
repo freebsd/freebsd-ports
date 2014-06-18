@@ -16,8 +16,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${TINYMCEDIR}:${PORTSDIR}/www/tinymce3
 
 PLIST_FILES+=	${DRUPAL_MODDIR}/tinymce
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_FILES=	editors/css/openwysiwyg.css \
 		editors/css/tinymce-2.css \
 		editors/css/tinymce-3.css \

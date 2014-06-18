@@ -9,8 +9,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Drupal module to allow easy creation of forms
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 
 MODULE_FILES=	components/date.inc \
 		components/email.inc \

@@ -9,8 +9,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Token module for Drupal
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_FILES=	translations/token.pot translations/da.po translations/de.po \
 		translations/es.po translations/hu.po translations/ja.po \
 		translations/pl.po translations/sk.po translations/uk-ua.po \

@@ -11,8 +11,7 @@ DIST_SUBDIR=	drupal
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A database driven web content management system (CMS)
 
-USE_DRUPAL=	yes
-DRUPAL6_PORT=	yes
+USES=		drupal:6
 
 USE_PHP=	gd pcre session xml mbstring
 WANT_PHP_WEB=	yes
@@ -57,10 +56,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/all
 	${CP} ${WRKSRC}/sites/all/README.txt ${STAGEDIR}${DRUPAL_DIR}/sites/all/
 	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/default
-	${CP} ${WRKSRC}/sites/default/default.settings.php ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php-dist
-	@if [ ! -f ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php ]; then \
-		${CP} -p ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php-dist ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php ; \
-	fi
+	${CP} ${WRKSRC}/sites/default/default.settings.php ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php.sample
 	${CP} -R ${WRKSRC}/themes ${STAGEDIR}${DRUPAL_DIR}
 	${CP} ${WRKSRC}/update.php ${STAGEDIR}${DRUPAL_DIR}
 	${CP} ${WRKSRC}/xmlrpc.php ${STAGEDIR}${DRUPAL_DIR}
@@ -68,6 +64,5 @@ do-install:
 	${TOUCH} ${STAGEDIR}${DRUPAL_DIR}/sites/all/modules/.keepme ${STAGEDIR}${DRUPAL_DIR}/sites/all/themes/.keepme
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${DRUPAL_DIR}
 
 .include <bsd.port.mk>

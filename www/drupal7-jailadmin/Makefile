@@ -5,19 +5,15 @@ PORTNAME=	jailadmin
 DISTVERSION=	7.x-0.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://0xfeedface.org/~shawn/projects/jailadmin/ \
-    		http://mirrors.rit.edu/zi/
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	lattera@gmail.com
 COMMENT=	Drupal 7 module for administering FreeBSD vnet jails
 
 LICENSE=	BSD
 
-USE_DRUPAL=	yes
+USES=		drupal:7,module
 
-.include <bsd.port.options.mk>
-
-DRUPAL_MODULE=	yes
-DRUPAL_VERSION=	7
 MODULE_FILES=	README \
 		jailadmin.admin.inc \
 		jailadmin.drush.inc \

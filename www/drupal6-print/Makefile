@@ -10,8 +10,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Drupal 6 module that add printer-friendly pages
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_DIRS=	icons translations
 MODULE_FILES=	icons/mail_icon.gif icons/pdf_icon.gif icons/print_icon.gif \
 		print-rtl.css print.admin.inc print.css print.info \

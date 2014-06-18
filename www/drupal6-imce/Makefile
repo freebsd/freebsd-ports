@@ -10,8 +10,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal 6.x image/file uploader module
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 
 MODULE_DIRS=	translations tpl js inc css
 

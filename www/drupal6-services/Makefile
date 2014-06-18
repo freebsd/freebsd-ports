@@ -8,8 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Provide an API for creating drupal web services.
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_DIRS=	auth/services_keyauth auth servers/xmlrpc_server servers \
 		services/comment_service services/file_service \
 		services/menu_service services/node_service \

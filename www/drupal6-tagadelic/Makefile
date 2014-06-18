@@ -10,8 +10,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Tagadelic module for Drupal 6
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_DIRS=	translations
 MODULE_FILES=	tagadelic.css tagadelic.info tagadelic.install \
 		tagadelic.module \

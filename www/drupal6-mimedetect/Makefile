@@ -9,8 +9,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An API for Consistent Server Side Mime Detection
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 
 MODULE_FILES=	magic magic.mgc magic.mime \
 		mimedetect.info mimedetect.install mimedetect.module

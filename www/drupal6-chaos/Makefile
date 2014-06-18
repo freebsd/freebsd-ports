@@ -10,8 +10,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal 6.x Chaos tool suite module
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 
 MODULE_DIRS=	views_content/translations views_content/plugins/views/translations \
 		views_content/plugins/views views_content/plugins/content_types/translations \
