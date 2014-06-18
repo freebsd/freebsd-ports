@@ -14,23 +14,22 @@ COMMENT=	The GNU bc/dc calculator
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libedit
-MAN1=		bc.1 \
-		dc.1
 INFO=		bc \
 		dc
 PLIST_FILES=	bin/bc \
-		bin/dc
+		bin/dc \
+		man/man1/bc.1.gz \
+		man/man1/dc.1.gz
 PORTEXAMPLES=	ckbook.b \
 		pi.b \
 		primes.b \
 		twins.b
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/Examples/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
