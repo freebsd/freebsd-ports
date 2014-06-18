@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140618:
+  AFFECTS: users of devel/m17n-* textproc/*m17n*
+  AUTHOR: Nikola Lecic <nikola.lecic@anthesphoria.net>
+
+  devel/m17n-db now incorporates a set of user-contributed input methods and
+  a conversion script, formerly available through textproc/m17n-contrib.
+  Delete textproc/m17n-contrib first and then update/install devel/m17n-db.
+
 20140616:
   AFFECTS: users of devel/subversion
   AUTHOR: lev@FreeBSD.org
