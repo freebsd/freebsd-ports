@@ -1,17 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	trustedqsl
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.0.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v${PORTVERSION}/
 DISTNAME=	tqsl-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
-LICENSE=	BSD
+LICENSE=	ARRL
+LICENSE_NAME=	American Radio Relay League, Inc. All rights reserved.
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libdb-5.so:${PORTSDIR}/databases/db5 \
 		libcurl.so:${PORTSDIR}/ftp/curl
@@ -19,6 +20,7 @@ LIB_DEPENDS=	libdb-5.so:${PORTSDIR}/databases/db5 \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		cmake compiler:features pkgconfig
+CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE}
 USE_WX=		2.8+
 WX_UNICODE=	yes
 USE_LDCONFIG=	yes

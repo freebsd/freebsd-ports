@@ -1,14 +1,14 @@
---- apps/CMakeLists.txt.orig	2013-12-06 17:42:11.000000000 -0800
-+++ apps/CMakeLists.txt	2013-12-06 17:43:12.000000000 -0800
-@@ -121,6 +121,10 @@
- add_definitions("-DCONFDIR=\"${CMAKE_INSTALL_PREFIX}/share/TrustedQSL/\"")
- install(TARGETS tqsl DESTINATION bin)
- install(DIRECTORY help DESTINATION share/TrustedQSL)
--install(FILES tqsl.5 DESTINATION share/man/man5)
-+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+  install(FILES tqsl.5 DESTINATION man/man5)
-+else()
-+  install(FILES tqsl.5 DESTINATION share/man/man5)
-+endif()
- install(FILES icons/key48.png DESTINATION share/pixmaps RENAME TrustedQSL.png)
+--- apps/CMakeLists.txt	2014-05-08 17:59:25.000000000 -0700
++++ ../../work.fixed/tqsl-2.0.2/apps/CMakeLists.txt	2014-05-24 00:46:38.000000000 -0700
+@@ -149,6 +149,10 @@
+ 	install(TARGETS tqsl DESTINATION bin)
+ 	install(DIRECTORY help DESTINATION share/TrustedQSL)
+ 	install(FILES ca-bundle.crt DESTINATION share/TrustedQSL)
+-	install(FILES tqsl.5 DESTINATION share/man/man5)
++	if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++		install(FILES tqsl.5 DESTINATION man/man5)
++	else()
++		install(FILES tqsl.5 DESTINATION share/man/man5)
++	endif()
+ 	install(FILES icons/key48.png DESTINATION share/pixmaps RENAME TrustedQSL.png)
  endif()
