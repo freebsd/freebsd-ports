@@ -28,7 +28,6 @@ USE_LDCONFIG=	yes
 WRKSRC =	${WRKDIR}/ARPACK
 
 # The following lapack symbols in arpack are renamed to avoid conflicts with other
-NO_STAGE=	yes
 # lapack libraries:
 RENAMED_SYMBOLS=	cgbtf2 cgbtrf cgbtrs cgeqr2 cgttrf cgttrs clacgv \
 			clacon clacpy cladiv clahqr clange clanhs clarf \
@@ -147,14 +146,14 @@ do-build:
 
 do-install:
 	@${INSTALL_DATA} ${FILESDIR}/arpack.h ${WRKDIR}/arpack_compat_c.h \
-		${WRKDIR}/arpack_compat_f.h ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/libarpack.a ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}_SHARED/libarpack.so.1 ${PREFIX}/lib
-	@${LN} -sf libarpack.so.1 ${PREFIX}/lib/libarpack.so
+		${WRKDIR}/arpack_compat_f.h ${STAGEDIR}${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/libarpack.a ${STAGEDIR}${PREFIX}/lib
+	@${INSTALL_DATA} -s ${WRKSRC}_SHARED/libarpack.so.1 ${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf libarpack.so.1 ${STAGEDIR}${PREFIX}/lib/libarpack.so
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/DOCUMENTS/ex-*.doc.gz ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ug.ps.gz ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/DOCUMENTS/ex-*.doc.gz ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ug.ps.gz ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if defined(MAINTAINER_MODE)
