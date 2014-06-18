@@ -5,7 +5,7 @@ PORTVERSION=	0.0.6
 CATEGORIES=	comms hamradio
 MASTER_SITES=	GH
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Lysdr SDR program for Unix
 
 LICENSE=	GPLv2

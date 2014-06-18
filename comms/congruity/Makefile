@@ -1,4 +1,4 @@
-# Created by: Stephen Hurd <shurd@sasktel.net>
+# Created by: Stephen Hurd <shurd@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	congruity
@@ -6,7 +6,7 @@ PORTVERSION=	18
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	GUI Logitech Harmony configuration tool
 
 LICENSE=	GPLv2
