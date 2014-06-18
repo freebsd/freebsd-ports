@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal 6.x image upload module
 
-USES=		drupal:6:module
+USES=		drupal:6,module
 
 MODULE_DIRS=	views/theme views translations tests \
 		contrib/image_import/translations \
