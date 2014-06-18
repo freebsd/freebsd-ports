@@ -18,19 +18,19 @@ MAINTAINER=	bf@FreeBSD.org
 COMMENT=	ARPACK++ is an object-oriented version of the ARPACK package
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
-LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack \
-		umfpack.1:${PORTSDIR}/math/suitesparse
+LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack \
+		libumfpack.so:${PORTSDIR}/math/suitesparse
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
@@ -41,7 +41,6 @@ USES=		gmake
 
 DOCS=		README doc/arpackpp.ps.gz doc/bugs.txt doc/structure.txt
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/include -name "*.orig" -delete
 	@${FIND} ${WRKSRC}/examples -name "*.orig" -delete
@@ -54,20 +53,20 @@ post-patch:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/include/ARPACK++
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ARPACK++
 	@for inc in `${LS} ${WRKSRC}/include` ; do \
-		${INSTALL_DATA} ${WRKSRC}/include/$$inc ${PREFIX}/include/ARPACK++; \
+		${INSTALL_DATA} ${WRKSRC}/include/$$inc ${STAGEDIR}${PREFIX}/include/ARPACK++; \
 	done
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${GUNZIP_CMD} ${DOCSDIR}/arpackpp.ps.gz
+	@${GUNZIP_CMD} ${STAGEDIR}${DOCSDIR}/arpackpp.ps.gz
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Makefile.inc ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Makefile.inc ${STAGEDIR}${EXAMPLESDIR}
+	@${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
