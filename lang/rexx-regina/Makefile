@@ -2,34 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	regina
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-rexx/${PORTNAME}-rexx/${PORTVERSION}
 PKGNAMEPREFIX=	rexx-
 DISTNAME=	Regina-REXX-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Rexx interpreter
+COMMENT=	Rexx interpreter
 
-CONFLICTS=	rexx-imc-* oorexx-[0-9]*
+LICENSE=	LGPL21 # (or later)
 
-USE_OPENSSL=	yes
+USES=		gmake iconv
+USE_RC_SUBR=	rxstack
 GNU_CONFIGURE=	yes
-USES=		gmake
+CONFIGURE_ENV=	ac_cv_c_char_unsigned=yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
-USE_RC_SUBR=	rxstack
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+DATADIR=	${PREFIX}/share/Regina-REXX
 
-post-configure:
-	@${REINPLACE_CMD} -e "s|-xchar=unsigned||g" ${WRKSRC}/Makefile
+CONFLICTS=	rexx-imc-[0-0]* oorexx-[0-9]*
 
-.include <bsd.port.pre.mk>
+BROKEN_powerpc=	Does not link on powerpc
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not link on powerpc
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+CONFIGURE_ARGS+=	--enable-32bit
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/$${CFLAGS}/s|^|#| ; \
+		 s|"-lpthread"|"-pthread"|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/$$(sysconfdir)/s|^|#|' ${WRKSRC}/Makefile.in
+
+.include <bsd.port.mk>
