@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	comms net hamradio
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur radio callsign lookup command
 
 RUN_DEPENDS=	rubygem-callsign>=0:${PORTSDIR}/comms/rubygem-callsign
