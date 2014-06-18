@@ -1,6 +1,3 @@
-#-*- mode: makefile; tab-width: 4; -*-
-# ex:ts=4
-#
 # $FreeBSD$
 #
 # bsd.drupal.mk - Support for Drupal ports and modules.
@@ -9,7 +6,7 @@
 # Please send all suggested changes to the maintainer instead of committing
 # them to SVN yourself.
 
-bsd_drupal_mk_MAINTAINER=       miwi@FreeBSD.org
+bsd_drupal_mk_MAINTAINER=	miwi@FreeBSD.org
 
 # Make sure we cannot define any combination of DRUPAL{5,6}
 .if (defined(DRUPAL5_MODULE) && defined(DRUPAL6_MODULE))
@@ -49,17 +46,17 @@ DRUPAL_MODTYPE=	themes
 .endif
 
 .if ${DRUPAL_VERSION} == "7"
-DRUPAL_BASE?=   www/drupal7
+DRUPAL_BASE?=	www/drupal7
 .elif ${DRUPAL_VERSION} == "6"
-DRUPAL_BASE?=   www/drupal6
+DRUPAL_BASE?=	www/drupal6
 .else
 BROKEN=		Unknown DRUPAL_VERSION (${DRUPAL_VERSION})
 .endif
 
-DRUPAL_DIR=	${PREFIX}/${DRUPAL_BASE}
+DRUPAL_DIR=		${PREFIX}/${DRUPAL_BASE}
 DRUPAL_DOCSDIR?=	${PREFIX}/${DRUPAL_BASE}/doc
-PLIST_SUB+=	DRUPAL_BASE=${DRUPAL_BASE}
-SUB_LIST+=	DRUPAL_BASE=${DRUPAL_BASE} DRUPAL_DIR=${DRUPAL_DIR}
+PLIST_SUB+=		DRUPAL_BASE=${DRUPAL_BASE}
+SUB_LIST+=		DRUPAL_BASE=${DRUPAL_BASE} DRUPAL_DIR=${DRUPAL_DIR}
 
 .if defined(DRUPAL_PORT)
 DOCSDIR?=	${DRUPAL_DOCSDIR}
@@ -76,9 +73,9 @@ LICENSE_COMB=	dual
 .endif
 
 .if defined(DRUPAL_MODSUBDIR)
-DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${DRUPAL_MODSUBDIR}
+DRUPAL_MODDIR?=	${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${DRUPAL_MODSUBDIR}
 .else
-DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${PORTNAME}
+DRUPAL_MODDIR?=	${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${PORTNAME}
 .endif
 
 DRUPAL_MODLIB?=	${DRUPAL_BASE}/sites/all/libraries
@@ -96,7 +93,7 @@ MASTER_SITE_DRUPAL+= \
 MASTER_SITE_DRUPAL_SUBDIR=
 .endif
 
-MASTER_SITES?=	${MASTER_SITE_DRUPAL}
+MASTER_SITES?=		${MASTER_SITE_DRUPAL}
 MASTER_SITE_SUBDIR?=	${MASTER_SITE_DRUPAL_SUBDIR}
 
 DIST_SUBDIR=	drupal
