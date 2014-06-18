@@ -2164,7 +2164,6 @@
     SUBDIR += xpi-cookiesafe
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-cutemenus-crystalsvg
-    SUBDIR += xpi-deepestsender
     SUBDIR += xpi-default_full_zoom_level
     SUBDIR += xpi-delicious
     SUBDIR += xpi-downthemall
