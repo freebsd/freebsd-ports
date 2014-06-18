@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/groundstation/Grig/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio control front-end
 
 LICENSE=	GPLv2
