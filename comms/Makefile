@@ -173,6 +173,7 @@
     SUBDIR += xdx
     SUBDIR += xlog
     SUBDIR += xmorse
+    SUBDIR += xnec2c
     SUBDIR += xnecview
     SUBDIR += xwota
     SUBDIR += yagiuda
