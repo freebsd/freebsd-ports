@@ -102,21 +102,21 @@ include/coin/Coin_C_defines.h
 include/coin/Idiot.hpp
 include/coin/config_clp.h
 include/coin/config_coinutils.h
-@dirrm include/coin
+lib/libClp.so
+lib/libClp.so.0
+lib/libClp.so.0.0.0
+lib/libCoinUtils.so
+lib/libCoinUtils.so.0
+lib/libCoinUtils.so.0.0.0
 share/doc/coin/Clp/AUTHORS
 share/doc/coin/Clp/LICENSE
 share/doc/coin/Clp/README
 share/doc/coin/Clp/clp_addlibs.txt
-@dirrm share/doc/coin/Clp
 share/doc/coin/CoinUtils/AUTHORS
 share/doc/coin/CoinUtils/LICENSE
 share/doc/coin/CoinUtils/README
 share/doc/coin/CoinUtils/coinutils_addlibs.txt
 @dirrm share/doc/coin/CoinUtils
+@dirrm share/doc/coin/Clp
 @dirrm share/doc/coin
-lib/libClp.la
-lib/libClp.so
-lib/libClp.so.0
-lib/libCoinUtils.la
-lib/libCoinUtils.so
-lib/libCoinUtils.so.0
+@dirrm include/coin

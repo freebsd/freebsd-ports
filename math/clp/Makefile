@@ -3,7 +3,7 @@
 
 PORTNAME=	Clp
 PORTVERSION=	1.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Clp/ \
 		http://www.mavetju.org/download/adopted/
@@ -12,9 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	co9co9@gmail.com
 COMMENT=	Linear Programming Solver
 
-LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack
 
-USES=		fortran
+USES=		fortran libtool
 CXXFLAGS+=	-ffast-math -fomit-frame-pointer
 
 GNU_CONFIGURE=	yes
@@ -27,5 +27,4 @@ CONFIGURE_ARGS=	--with-blas="-L${LOCALBASE}/lib -lblas"		\
 regression-test: build
 	(cd ${WRKSRC}/Clp && ${MAKE} unitTest )
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
