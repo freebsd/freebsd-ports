@@ -3,6 +3,7 @@
 
 PORTNAME=	subtickets
 PORTVERSION=	0.2.0.${GITDATE}
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://distfiles.cse.tw/ \
 		https://github.com/itota/trac-subtickets-plugin/tarball/${GITVERSION}/
@@ -19,14 +20,10 @@ RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 GITVERSION=	a0fc153
 GITDATE=	20130328
 
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
 WRKSRC=		${WRKDIR}/itota-trac-${PORTNAME}-plugin-${GITVERSION}
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PYDISTUTILS_PKGNAME=	TracSubTicketsPlugin
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/${GITDATE}//g}dev
-PLIST_FILES=		bin/check-trac-subtickets \
-			%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
