@@ -1,4 +1,4 @@
-# Created by: Stephen Hurd <shurd@sasktel.net>
+# Created by: Stephen Hurd <shurd@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	freedink
@@ -8,7 +8,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Metaport for FreeDink engine and data
 
 RUN_DEPENDS=	freedink:${PORTSDIR}/games/freedink-engine \

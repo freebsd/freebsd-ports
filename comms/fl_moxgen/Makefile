@@ -1,4 +1,4 @@
-# Created by: Stephen Hurd <shurd@sasktel.net>
+# Created by: Stephen Hurd <shurd@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fl_moxgen
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	flmoxgen
 DISTNAME=	Fl_MoxGen-${PORTVERSION}
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Compute the dimensions of a Moxon Rectangle antenna
 
 LICENSE=	GPLv3

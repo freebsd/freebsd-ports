@@ -6,7 +6,7 @@ PORTVERSION=	13.12
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/svxlink/svxlink/${PORTVERSION}
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	General purpose ham radio voice services and Qtel Echolink client
 
 LICENSE=	GPLv2

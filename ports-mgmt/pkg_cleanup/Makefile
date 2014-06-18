@@ -1,4 +1,4 @@
-# Created by: Stephen Hurd <shurd@sasktel.net>
+# Created by: Stephen Hurd <shurd@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pkg_cleanup
@@ -6,7 +6,7 @@ PORTVERSION=	2.0
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Interactive program for deinstalling 'leaf' packages
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -9,7 +9,7 @@ MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
 MASTER_SITE_SUBDIR=	db
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Amateur Radio SSTV/FAX reception program for unix
 
 LICENSE=	GPLv3

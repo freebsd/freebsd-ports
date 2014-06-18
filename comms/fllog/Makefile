@@ -1,4 +1,4 @@
-# Created by: Stephen Hurd <shurd@sasktel.net>
+# Created by: Stephen Hurd <shurd@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fllog
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.w1hkj.com/downloads/fllog/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Ham Radio logging program
 
 LICENSE=	GPLv2
