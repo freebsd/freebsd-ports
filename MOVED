@@ -6134,3 +6134,4 @@ lang/clojure-contrib||2014-06-15|Has expired: monolithic contrib library is obso
 devel/bzapi||2014-06-15|Has expired: Bugzilla has a native REST API, see https://wiki.mozilla.org/BMO/REST
 graphics/GraphicsMagick13|graphics/GraphicsMagick|2014-06-17|Removed, duplicate of unversioned GraphicsMagick port
 textproc/m17n-contrib|devel/m17n-db|2014-06-18|m17n-contrib was incorporated into m17n-db
+www/xpi-deepestsender||2014-06-18|Upstream disappeared, not working with modern mozilla applications
