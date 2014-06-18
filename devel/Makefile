@@ -3671,6 +3671,7 @@
     SUBDIR += py-hghooks
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
+    SUBDIR += py-humanize
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
