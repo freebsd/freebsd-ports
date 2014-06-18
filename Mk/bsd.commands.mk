@@ -75,7 +75,7 @@ REALPATH?=		/bin/realpath
 RM?=			/bin/rm
 RMDIR?=			/bin/rmdir
 SED?=			/usr/bin/sed
-SETENV?=		/usr/bin/env -i PATH="${PATH}"
+SETENV?=		/usr/bin/env
 SH?=			/bin/sh
 SORT?=			/usr/bin/sort
 STRIP_CMD?=		/usr/bin/strip
