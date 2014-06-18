@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	4.8.20140314
+PORTVERSION=	4.8.20140609
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.8/4.8-2014-q1-update/+download/
+MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.8/4.8-2014-q2-update/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -27,13 +27,12 @@ PDF_USE=		TEX=base:build,tex:build
 PDF_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 OPTIONS_SUB=		yes
 
-USE_BZIP2=	yes
-USES=		gmake bison iconv compiler
+USES=		tar:bzip2 gmake bison iconv compiler
 GNU_CONFIGURE=	yes
 
 BUILD_WRKSRC=	${WRKDIR}
 
-FULL_VERSION=		4_8-2014q1-20140314
+FULL_VERSION=		4_8-2014q2-20140609
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
