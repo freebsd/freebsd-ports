@@ -3,7 +3,7 @@
 
 PORTNAME=	memcacheq
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Simple queue service over Memcache
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
@@ -30,15 +30,8 @@ PORTDOCS=	README
 MCQDIR?=	/var/db/memcacheq
 PLIST_SUB=	MCQDIR=${MCQDIR}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	${MKDIR} ${MCQDIR} || ${TRUE}
-	${CHOWN} nobody:nobody ${MCQDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
