@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Syntax-Highlight-Engine-Kate
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Port of the syntax highlight engine of the Kate texteditor
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
 
