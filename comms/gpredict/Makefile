@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/Gpredict/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio satellite tracking and prediction
 
 LICENSE=	GPLv2 # (or later)
