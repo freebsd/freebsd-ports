@@ -70,3 +70,4 @@ lib/rivet/rivet-tcl/xml.tcl
 @dirrm lib/rivet/packages/calendar
 @dirrm lib/rivet/packages
 @dirrm lib/rivet
+@dirrmtry %%APACHEMODDIR%%
