@@ -9,6 +9,10 @@ lib/libregina.so
 lib/libregutil.so
 lib/librxtest1.so
 lib/librxtest2.so
+man/man1/regina.1.gz
+man/man1/regina-config.1.gz
+man/man1/rxqueue.1.gz
+man/man1/rxstack.1.gz
 %%DATADIR%%/animal.rexx
 %%DATADIR%%/block.rexx
 %%DATADIR%%/dateconv.rexx
@@ -25,8 +29,4 @@ lib/librxtest2.so
 %%DATADIR%%/sv.mtb
 %%DATADIR%%/timeconv.rexx
 %%DATADIR%%/tr.mtb
-man/man1/regina-config.1.gz
-man/man1/regina.1.gz
-man/man1/rxqueue.1.gz
-man/man1/rxstack.1.gz
 @dirrm %%DATADIR%%
