@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ODF-lpOD
-PORTVERSION=	1.121
+PORTVERSION=	1.126
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OpenDocument management interface
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-XML-Twig>=3.37:${PORTSDIR}/textproc/p5-XML-Twig \
