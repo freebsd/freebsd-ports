@@ -15,7 +15,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for the block building game
 
-RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:${PORTSDIR}/games/lwjgl
+RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:${PORTSDIR}/games/lwjgl \
+		bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
