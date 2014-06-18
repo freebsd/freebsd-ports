@@ -8,8 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A drupal module which allows the end-user to set meta tags for nodes
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_DIRS=	nodewords_basic nodewords_extra includes nodewords_og
 MODULE_FILES=	includes/forum.inc includes/image.inc includes/node.inc \
 		includes/taxonomy.inc includes/taxonomy_menu.inc includes/uc_catalog.inc \

@@ -9,8 +9,7 @@ CATEGORIES=	www
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Controls how content lists are generated
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_DIRS=	css \
 		docs \
 		handlers \

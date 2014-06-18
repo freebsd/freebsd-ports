@@ -8,8 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Adds the Google Analytics web stats tracking system to your website
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 
 MODULE_FILES=	googleanalytics.admin.inc googleanalytics.install googleanalytics.module \
 		googleanalytics.info googleanalytics.js googleanalytics.test

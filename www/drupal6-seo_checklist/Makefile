@@ -8,8 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Drupal module to provide checklist of actions for SEO
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_FILES=	seochecklist.info seochecklist.install seochecklist.module
 DOC_FILES=	LICENSE.txt README.txt
 

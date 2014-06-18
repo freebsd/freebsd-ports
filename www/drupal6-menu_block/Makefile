@@ -8,8 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Drupal module to provide configurable menu tree blocks
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_FILES=	menu-block-wrapper.tpl.php menu_block.admin.inc menu_block.book.inc menu_block.info \
 		menu_block.module menu_block.sort.inc menu-block-admin.css menu-block.js menu_block.api.php \
 		menu_block.follow.inc menu_block.install menu_block.pages.inc \

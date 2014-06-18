@@ -9,9 +9,8 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The zeropoint drupal theme
 
+USES=		drupal:6,theme
 USE_PHP=	ctype
-USE_DRUPAL=	yes
-DRUPAL6_THEME=	yes
 MODULE_DIRS=	_custom/headerimg _custom css images/all images/ink \
 		images/icons/blocks images/icons images/ivy images/lime \
 		images/nature images/sangue images/sky images js

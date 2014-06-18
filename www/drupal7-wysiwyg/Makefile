@@ -10,7 +10,7 @@ COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
 #LICENSE from bsd.drupal.mk
 
-USE_DRUPAL=	yes
+USES=		drupal:7,module
 
 OPTIONS_DEFINE=	TINYMCE3 CKEDITOR YUI
 
@@ -35,8 +35,6 @@ RUN_DEPENDS+=	${LOCALBASE}/www/yui:${PORTSDIR}/www/yahoo-ui
 PLIST_FILES+=	${DRUPAL_MODLIB}/yui
 .endif
 
-DRUPAL_MODULE=	yes
-DRUPAL_VERSION=	7
 MODULE_FILES=	editors/css/openwysiwyg.css \
 		editors/css/tinymce-2.css \
 		editors/css/tinymce-3.css \

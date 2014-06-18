@@ -11,12 +11,8 @@ COMMENT=	Drupal 7 module frontend for Skipfish
 
 LICENSE=	BSD
 
-USE_DRUPAL=	yes
+USES=		drupal:7,module
 
-.include <bsd.port.options.mk>
-
-DRUPAL_MODULE=	yes
-DRUPAL_VERSION=	7
 MODULE_FILES=	vulnscan.info \
 		vulnscan.module \
 		scan.inc \
