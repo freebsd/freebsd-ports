@@ -583,11 +583,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  depending on the value of MANCOMPRESSED (see below).
 # COPYTREE_BIN
 # COPYTREE_SHARE
-#				- Similiar to INSTALL commands but working on whole
-#				  trees of directories, takes 3 arguments, last one is
-#				  find(1) arguments and optional.
+#				- Similiar to INSTALL_PROGRAM and INSTALL_DATA commands but
+#				  working on whole trees of directories, takes 3 arguments,
+#				  last one is find(1) arguments and optional.
 #				  Example use: 
-#				  cd ${WRKSRC}/doc && ${COPYTREE} . ${DOCSDIR} "! -name *.bak"
+#				  cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR} "! -name *.bak"
 #
 #				  Installs all directories and files from ${WRKSRC}/doc
 #				  to ${DOCSDIR} except sed backup files.
