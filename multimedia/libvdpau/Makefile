@@ -12,8 +12,7 @@ COMMENT=	VDPAU wrapper and tracing library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool:keepla pkgconfig
-USE_XZ=		yes
+USES=		libtool:keepla pkgconfig tar:xz
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
