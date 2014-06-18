@@ -171,7 +171,7 @@ def main():
     parser.add_argument('pr', metavar='pr', type=str, nargs=1,
             help='Pr id number')
     parser.add_argument('--mode', type=str, choices=['gnats','bz'],
-            default='gnats', help='available modes to retrieve patch')
+            default='bz', help='available modes to retrieve patch')
     parser.add_argument('--last', action='store_true',
             help='only retrieve the latest iteration of a patch')
     parser.add_argument('--stdout', action='store_true',
