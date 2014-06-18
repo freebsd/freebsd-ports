@@ -15,7 +15,7 @@ LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib \
 RUN_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 
 .if !defined(WITHOUT_M17NCONTRIB)
-RUN_DEPENDS+=	${LOCALBASE}/share/m17n/icons/as-phonetic.png:${PORTSDIR}/textproc/m17n-contrib
+RUN_DEPENDS+=	${LOCALBASE}/share/m17n/icons/as-phonetic.png:${PORTSDIR}/devel/m17n-db
 .endif
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
