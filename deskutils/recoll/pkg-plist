@@ -1,8 +1,11 @@
 %%QT4%%bin/recoll
 bin/recollindex
 bin/recollq
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclconfig.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclconfig.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclextract.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/recoll.so
 lib/recoll/librecoll.so.%%VERSION%%
@@ -10,6 +13,7 @@ lib/recoll/librecoll.so.%%VERSION%%
 man/man1/recollindex.1.gz
 man/man1/recollq.1.gz
 man/man5/recoll.conf.5.gz
+%%QT4%%share/appdata/recoll.appdata.xml
 %%QT4%%share/applications/recoll-searchgui.desktop
 %%QT4%%share/icons/hicolor/48x48/apps/recoll.png
 %%QT4%%share/pixmaps/recoll.png
@@ -115,11 +119,12 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/translations/recoll_xx.qm
 %%DATADIR%%/translations/recoll_zh.qm
 %%DATADIR%%/translations/recoll_zh_CN.qm
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/recoll
-@dirrm lib/recoll
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/filters
-@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/filters
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
+%%QT4%%@dirrmtry share/appdata
+@dirrm lib/recoll
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/recoll

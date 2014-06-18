@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.19.13
-PORTREVISION=	1
+PORTVERSION=	1.19.14
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
@@ -14,12 +13,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
 		antiword:${PORTSDIR}/textproc/antiword \
 		catdoc:${PORTSDIR}/textproc/catdoc \
 		wpd2html:${PORTSDIR}/textproc/libwpd \
-		unrtf:${PORTSDIR}/textproc/unrtf \
-		unrar:${PORTSDIR}/archivers/unrar
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		unrar:${PORTSDIR}/archivers/unrar \
+		unrtf:${PORTSDIR}/textproc/unrtf
 
 USES=		gmake iconv shebangfix
 SHEBANG_FILES=	filters/rclimg desktop/hotrecoll.py
@@ -29,92 +28,81 @@ CONFIGURE_ARGS=	--enable-pic
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	ASPELL CHM DJVU KONQUEROR LATEX IMAGE PDF PS PYTHON SOUND \
-		QT4 X11MON
-CHM_DESC=	CHM via CHMLIB
-IMAGE_DESC=	Store personal tags or textual descriptions in images
-X11MON_DESC=	X11 session monitoring support
-KONQUEROR_DESC=	Konqueror webarchive format with Python
-OPTIONS_DEFAULT=ASPELL IMAGE PDF PS PYTHON SOUND QT4 X11MON
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		ASPELL CHM DJVU KONQUEROR LATEX IMAGE PDF PS PYTHON \
+			SOUND QT4 X11MON
+OPTIONS_DEFAULT=	ASPELL IMAGE PDF PS PYTHON SOUND QT4 X11MON
+OPTIONS_SUB=		yes
 
-ASPELL_LIB_DEPENDS=		libaspell.so:${PORTSDIR}/textproc/aspell
-ASPELL_CONFIGURE_WITH=		aspell
-
-CHM_RUN_DEPENDS=		pychm:${PORTSDIR}/textproc/pychm
-
-DJVU_RUN_DEPENDS=		djvutxt:${PORTSDIR}/graphics/djvulibre
-
-KONQUEROR_RUN_DEPENDS=		kwebkitpart:${PORTSDIR}/www/kwebkitpart
-
-LATEX_RUN_DEPENDS=		detex:${PORTSDIR}/print/detex \
-				dvips:${PORTSDIR}/print/dvips
-
-IMAGE_RUN_DEPENDS=		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool-devel
-
-PDF_RUN_DEPENDS=		xpdf:${PORTSDIR}/graphics/xpdf
-
-PS_RUN_DEPENDS=			pstotext:${PORTSDIR}/print/pstotext
-
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_CONFIGURE_WITH=	aspell
+CHM_DESC=		CHM via CHMLIB
+CHM_RUN_DEPENDS=	pychm:${PORTSDIR}/textproc/pychm
+DJVU_RUN_DEPENDS=	djvutxt:${PORTSDIR}/graphics/djvulibre
+IMAGE_DESC=		Store personal tags or textual descriptions in images
+IMAGE_RUN_DEPENDS=	exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool-devel
+KONQUEROR_DESC=		Konqueror webarchive format with Python
+KONQUEROR_RUN_DEPENDS=	kwebkitpart:${PORTSDIR}/www/kwebkitpart
+LATEX_RUN_DEPENDS=	detex:${PORTSDIR}/print/detex \
+			dvips:${PORTSDIR}/print/dvips
+PDF_RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
+PS_RUN_DEPENDS=		pstotext:${PORTSDIR}/print/pstotext
+PYTHON_USE=		python=yes
 PYTHON_CONFIGURE_ENABLE=	python-module
-
-SOUND_RUN_DEPENDS=		mutagen-pony:${PORTSDIR}/audio/py-mutagen \
-				pykaraoke:${PORTSDIR}/audio/py-karaoke
-
-QT4_CONFIGURE_ENABLE=		qtgui
-
+QT4_USE=		qt4=moc_build,qmake_build,rcc_build,uic_build \
+			qt4=iconengines_run,imageformats_run \
+			qt4=corelib,gui,xml,webkit
+QT4_CONFIGURE_ENABLE=	qtgui
+SOUND_RUN_DEPENDS=	mutagen-pony:${PORTSDIR}/audio/py-mutagen \
+			pykaraoke:${PORTSDIR}/audio/py-karaoke
+X11MON_DESC=		X11 session monitoring support
+X11MON_USES=		fam
+X11MON_USE=		xorg=ice,sm,x11
 X11MON_CONFIGURE_ENABLE=	x11mon
+X11MON_CONFIGURE_WITH=	fam
 
 .include <bsd.port.options.mk>
 
-VERSION=	${PORTVERSION}
-PLIST_SUB+=	VERSION=${VERSION}
-
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
-INSTALLS_EGGINFO=	yes
-PYDISTUTILS_EGGINFO=	Recoll-1.0-py${PYTHON_VER}.egg-info
+PYDISTUTILS_PKGNAME=	Recoll
+PYDISTUTILS_PKGVERSION=	1.0
+PLIST_SUB+=	PYDISTUTILS_EGGINFO="${PYDISTUTILS_EGGINFO}"
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines_run \
-		imageformats_run corelib gui xml webkit
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}"
 INSTALLS_ICONS=	yes
 .endif
 
-.if ${PORT_OPTIONS:MX11MON}
-USE_XORG+=	ice sm x11
-USES+=		fam
-CONFIGURE_ARGS+=--with-fam
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|/usr/local/lib|${LOCALBASE}/lib|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} \
-		-e 's|= -g -O2|=|' ${WRKSRC}/mk/localdefs.in
-	@${REINPLACE_CMD} \
-		-e 's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/mk/${OPSYS}
-	@${REINPLACE_CMD} -e 's|@NOCMDLINE@||g ; \
-		s|@prefix@|${PREFIX}| ; \
-		s|REALPREFIX=$$PREFIX|REALPREFIX=${STAGEDIR}$$PREFIX| ; \
-		s|$${ROOTFORPYTHON}||' \
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/lib|${LOCALBASE}/lib|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|= -g -O2|=|' \
+		${WRKSRC}/mk/localdefs.in
+	@${REINPLACE_CMD} -e \
+		's|@NOCMDLINE@||g ; \
+	 	 s|@prefix@|${PREFIX}| ; \
+		 s|REALPREFIX=$$PREFIX|REALPREFIX=$$DESTDIR$$PREFIX| ; \
+		 s|python setup.py|${PYTHON_CMD} setup.py| ; \
+		 s|$${ROOTFORPYTHON}||' \
 		${WRKSRC}/recollinstall.in
-	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
-		${WRKSRC}/python/recoll/Makefile \
-		${WRKSRC}/recollinstall.in
+	@${REINPLACE_CMD} -e \
+		's|python setup.py|${PYTHON_CMD} setup.py|' \
+		${WRKSRC}/python/recoll/Makefile
 
 post-install:
-	@(cd ${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR}/recoll && ${RM} *.pyc)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/recoll/librecoll.so.${VERSION}
-
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/recoll/librecoll.so.[0-9].*
 .if ${PORT_OPTIONS:MPYTHON}
-. for l in recoll rclextract
-	${STRIP_CMD} ${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR}/recoll/${l}.so
-. endfor
+.for l in recoll rclextract
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/recoll/${l}.so
+.endfor
+	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 .endif
 
 .include <bsd.port.mk>
