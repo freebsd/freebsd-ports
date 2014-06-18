@@ -3,12 +3,13 @@
 
 PORTNAME=	dhcprelya
 PORTVERSION=	4.8
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Lightweight DHCP relay agent. Yandex edition
 
-LICENSE=	BSD4CLAUSE
+LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sem-hub
