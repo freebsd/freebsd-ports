@@ -1,5 +1,5 @@
-@owner www
-@group www
+@group %%WWWGRP%%
+@owner %%WWWOWN%%
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
 %%WWWDIR%%/actions/admin/settings/000.version.php
@@ -1727,5 +1727,3 @@
 @dirrmtry %%WWWDIR%%/templates
 @dirrmtry %%WWWDIR%%/templates_c
 @dirrmtry %%WWWDIR%%
-@group
-@owner
