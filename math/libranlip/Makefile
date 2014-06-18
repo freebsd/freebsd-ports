@@ -3,6 +3,7 @@
 
 PORTNAME=	libranlip
 DISTVERSION=	1.0
+PORTREVISION= 	1
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/bf \
 		http://www.deakin.edu.au/~gleb/
@@ -10,29 +11,28 @@ MASTER_SITES=	LOCAL/bf \
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A random variate generator for Lipschitz-continuous densities
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 INFO=	ranlip
-PLIST_FILES=	include/ranlip.h include/ranlipdist.h include/ranlipproc.h lib/libranlip.so.${PORTVERSION} \
-		lib/libranlip.so.${PORTVERSION:R} lib/libranlip.la lib/libranlip.a
+PLIST_FILES=	include/ranlip.h include/ranlipdist.h include/ranlipproc.h lib/libranlip.so.1.0.0 \
+		lib/libranlip.so.1 lib/libranlip.so lib/libranlip.a
 PORTDOCS=	ranlip.ps
 PORTEXAMPLES=	makefile ranliptest.cpp ranliptestproc.cpp
 TESTPROGS=	static_example static_example2 static_example3 shared_example
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:
-	${LN} -s ${PREFIX}/lib/libranlip.so.${PORTVERSION} ${PREFIX}/lib/libranlip.so.${PORTVERSION:R}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/ranlip.ps ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/ranlip.ps ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for _file in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${_file} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${_file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
