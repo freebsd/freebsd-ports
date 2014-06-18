@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.2.5
+PORTVERSION=	6.2.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -11,12 +11,9 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive Communication Environment for C++
 
-CONFLICTS=	ace+tao-5*
-
 WRKSRC=		${WRKDIR}/ACE_wrappers
 
-USE_BZIP2=	yes
-USES=		gmake perl5 pkgconfig
+USES=		gmake perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
 		CROSS-COMPILE=1
@@ -27,6 +24,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
+
+CONFLICTS=	ace+tao-5*
 
 OPTIONS_DEFINE=		FLTK QT4 SSL TK TRIO X11
 OPTIONS_DEFAULT=	SSL
@@ -89,8 +88,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libJAWS.so.${PORTVERSION} \
 		${STAGEDIR}${PREFIX}/lib/libKokyu.so.${PORTVERSION} \
 		| ${XARGS} ${BASENAME}`; do \
-		n=`echo $${f}|sed -e 's/.so.${PORTVERSION}/.so/'`; \
+		n=`${ECHO_CMD} $${f}|${SED} -e 's/.so.${PORTVERSION}/.so/'`; \
 		${LN} -sf $${n}.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/$${n}.6; \
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/$${n}.${PORTVERSION}; \
 	done
 
 .include <bsd.port.mk>
