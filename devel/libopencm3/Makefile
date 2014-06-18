@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libopencm3
-PORTVERSION=	0.0.20140331
+PORTVERSION=	0.0.20140611
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/gcc-arm-embedded-${TOOLCHAIN_FULL_VERSION}/bin/arm-n
 USE_GITHUB=	yes
 GH_ACCOUNT=	libopencm3
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	cb33acc
+GH_COMMIT=	c01f9ee
 
 USES=			gmake
 USE_PYTHON_BUILD=	2
@@ -31,8 +31,5 @@ PLIST_SUB+=	TARGET=${TOOLCHAIN_TARGET} FULL_VERSION=${TOOLCHAIN_FULL_VERSION}
 
 do-configure:
 	${FIND} ${WRKSRC} -name Makefile -o -name \*.mk -type f | ${XARGS} ${REINPLACE_CMD} -e 's|PREFIX|TARGET|g'
-
-pre-stage:
-	@${ECHO_MSG} PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
