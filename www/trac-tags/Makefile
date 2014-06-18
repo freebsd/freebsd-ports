@@ -3,7 +3,7 @@
 
 PORTNAME=	tags
 DISTVERSION=	0.7.r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -16,12 +16,11 @@ COMMENT=	Generic tags frontend for trac
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 USES=		tar:bzip2
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracTags
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/\.r.*/dev/}
-PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.pre.mk>
 
 .if !defined(SVN_REV)
