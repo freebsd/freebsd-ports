@@ -9,9 +9,6 @@ MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Calculate data entropy to benchmark compression algorithms
 
-MAN1=		entropy.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/entropy
+PLIST_FILES=	bin/entropy man/man1/entropy.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
