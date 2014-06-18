@@ -1,7 +1,7 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-lcl-qt
 
 COMMENT=	Lazarus components library - QT backend
@@ -14,5 +14,4 @@ LCL_INTERFACE=	qt
 
 MASTERDIR=	${.CURDIR}/../../editors/lazarus
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
