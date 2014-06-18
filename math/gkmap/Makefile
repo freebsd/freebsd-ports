@@ -17,5 +17,4 @@ GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GNOME=	gtk20 libglade2 libxml2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
