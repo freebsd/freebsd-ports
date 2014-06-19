@@ -3,7 +3,7 @@
 
 PORTNAME=	bzr
 PORTVERSION=	20110228
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://schema.filez.com/distfiles/
 PKGNAMEPREFIX=	trac-
@@ -18,11 +18,9 @@ RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac \
 		bzr:${PORTSDIR}/devel/bzr
 
 USE_BZIP2=	yes
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
-PYDISTUTILS_PKGNAME=	TracBzr
-PYDISTUTILS_PKGVERSION=	0.4.2
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|tag_date = 1||' ${WRKSRC}/setup.cfg
@@ -30,4 +28,5 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
