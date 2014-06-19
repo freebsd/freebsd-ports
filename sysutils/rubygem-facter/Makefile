@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	facter
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG \
 		http://downloads.puppetlabs.com/facter/
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@freebsd.org
 COMMENT=	Cross-platform Ruby library for retrieving facts from OS
 
 USE_RUBY=	yes
