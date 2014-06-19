@@ -17,7 +17,6 @@ PORTDOCS=	README anldp.pdf mace2.pdf otter33.pdf
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -31,15 +30,15 @@ post-patch:
 		${WRKSRC}/mace2/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${PROGRAMS:S,^,${WRKSRC}/bin/,} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PROGRAMS:S,^,${WRKSRC}/bin/,} ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/documents/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/documents/,} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR} ${PREFIX}/share/examples/mace2
-	(cd ${WRKSRC}/examples; ${PAX} -rw . ${EXAMPLESDIR})
-	(cd ${WRKSRC}/examples-mace2; ${PAX} -rw . ${PREFIX}/share/examples/mace2)
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${PREFIX}/share/examples/mace2
+	(cd ${WRKSRC}/examples; ${PAX} -rw . ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/examples-mace2; ${PAX} -rw . ${STAGEDIR}${PREFIX}/share/examples/mace2)
 .endif
 
 .include <bsd.port.mk>
