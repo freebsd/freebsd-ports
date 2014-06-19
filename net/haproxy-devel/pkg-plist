@@ -16,10 +16,13 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends-v0.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/be-fe-changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/binding-possibilities.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/buffer-redesign.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/buffers.fig
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/config-language.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/connection-reuse.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/cttproxy-changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/entities-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/how-it-works.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/http_load_time.url
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/rate-shaping.txt
@@ -46,6 +49,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/repartition-be-fe-fi.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/sequence.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stream-sock-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/todo.cttproxy
