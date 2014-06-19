@@ -14,9 +14,6 @@ USES=		gmake
 USE_LDCONFIG=	yes
 MAKEFILE=	makefile
 
-MAN3=		rs.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/makefile.in
 
