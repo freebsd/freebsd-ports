@@ -1148,6 +1148,7 @@
     SUBDIR += tac_plus4
     SUBDIR += tapidbus
     SUBDIR += tayga
+    SUBDIR += tclsoap
     SUBDIR += tcludp
     SUBDIR += tcpcat
     SUBDIR += tcpdstat
