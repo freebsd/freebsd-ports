@@ -3,13 +3,14 @@
 
 PORTNAME=	libchewing
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	The Chewing intelligent phonetic input method library
 
-USES=		tar:bzip2 gmake pkgconfig pathfix
+USES=		tar:bzip2 gmake pkgconfig pathfix libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
