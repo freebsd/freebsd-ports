@@ -17,12 +17,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	(cd ${WRKSRC}/examples/ && ${INSTALL_SCRIPT} \
 		fileman-example synopsis synopsis-big tui-sample ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>
