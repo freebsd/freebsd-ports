@@ -14,9 +14,9 @@ LICENSE=	GPLv2
 USES=		gmake
 MAKE_ARGS+=	CC="${CC}"
 
-MAN1=		digitemp.1
 PLIST_FILES=	bin/digitemp_DS9097 bin/digitemp_DS9097U \
-		etc/digitemp.conf.sample
+		etc/digitemp.conf.sample \
+		man/man1/digitemp.1.gz
 
 DOCFILES=	ChangeLog COPYRIGHT CREDITS FAQ README TODO \
 		dthowto.txt DS9097_Schematic.gif
@@ -27,29 +27,26 @@ ALL_TARGET=	ds9097 ds9097u
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 pre-install:
-	${CP} ${WRKSRC}/${MAN1} ${WRKSRC}/digitemp.1.M
-	${CAT} ${WRKSRC}/digitemp.1.M | ${SED} -e "s/dev\/ttyS/dev\/cuau/g" > ${WRKSRC}/${MAN1}
+	${REINPLACE_CMD} -e "s/dev\/ttyS/dev\/cuau/g" ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/digitemp_DS9097 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/digitemp_DS9097U ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/digitemp_DS9097 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/digitemp_DS9097U ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .for dir in perl python/gui python/mysql rrdb
-	@${MKDIR} ${DOCSDIR}/${dir}
-	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_DATA} \{\} ${DOCSDIR}/${dir} \;
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${dir}
+	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_DATA} \{\} ${STAGEDIR}${DOCSDIR}/${dir} \;
 .endfor
 .endif
-	${CAT} ${PKGMESSAGE}
-	${INSTALL_DATA} ${FILESDIR}/digitemp.conf.sample ${PREFIX}/etc/
+	${INSTALL_DATA} ${FILESDIR}/digitemp.conf.sample ${STAGEDIR}${PREFIX}/etc/
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Sample config installed at ${PREFIX}/etc/digitemp.conf.sample"
 	@${ECHO_MSG} ""
