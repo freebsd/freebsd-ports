@@ -1145,6 +1145,7 @@
     SUBDIR += py-creole
     SUBDIR += py-docutils
     SUBDIR += py-dsv
+    SUBDIR += py-elasticsearch-py
     SUBDIR += py-elib.intl
     SUBDIR += py-empy
     SUBDIR += py-enchant
