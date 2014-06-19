@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.1
 CATEGORIES=	net
 MASTER_SITES=	GH
 
@@ -21,7 +21,7 @@ PUPPET_DESC=	Depend on Puppet
 USE_GITHUB=	yes
 GH_ACCOUNT=	theforeman
 GH_PROJECT=	smart-proxy
-GH_COMMIT= 	b3e190d
+GH_COMMIT= 	2924287
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RC_SUBR=	foreman-proxy
@@ -76,10 +76,10 @@ do-install:
 .for file in Rakefile config.ru lib public views
 	@${CP} -r ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
+	${INSTALL} ${COPY} -m 644 ${WRKSRC}/config/settings.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
 .if !exists(${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml)
-	@${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
+	@${INSTALL} ${COPY} -m 644 ${WRKSRC}/config/settings.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml
 .endif
 
