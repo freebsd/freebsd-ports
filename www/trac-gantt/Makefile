@@ -3,7 +3,7 @@
 
 PORTNAME=	TracGantt
 PORTVERSION=	0.3.2a
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www devel python
 MASTER_SITES=	http://willbarton.com/files/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -14,10 +14,9 @@ COMMENT=	Plugin to creates Gantt charts for trac
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracGantt
-PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,4 +33,5 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
