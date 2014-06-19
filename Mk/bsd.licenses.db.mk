@@ -15,10 +15,11 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 # Please view me with 4 column tabs!
 #
 
-# Possible sources for information:
+# The canonical source of license names and short-name identifiers:
 # - SPDX License List
 #   https://spdx.org/licenses/
 #
+# See also:
 # - Wikipedia (article "Comparison of Free Software Licenses")
 #   http://en.wikipedia.org/wiki/Comparison_of_free_software_licences
 #
@@ -39,7 +40,7 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 #
 
 _LICENSE_LIST= 	AGPLv3 APACHE10 APACHE11 APACHE20 ART10 ARTPERL10 ART20 \
-				BSD BSD2CLAUSE BSD3CLAUSE BSD4CLAUSE BSL CDDL CLART EPL GFDL \
+				BSD BSD2CLAUSE BSD3CLAUSE BSD4CLAUSE BSL CDDL ClArtistic EPL GFDL \
 				GMGPL GPLv1 GPLv2 GPLv3 GPLv3RLE ISCL LGPL20 LGPL21 LGPL3 \
 				LPPL10 LPPL11 LPPL12 LPPL13 LPPL13a LPPL13b LPPL13c MIT \
 				MPL OPENSSL OFL10 OFL11 OWL PostgreSQL PHP202 PHP30 PHP301 PSFL RUBY \
@@ -112,8 +113,8 @@ _LICENSE_GROUPS_BSL=	FSF OSI COPYFREE
 _LICENSE_NAME_CDDL=	Common Development and Distribution License
 _LICENSE_GROUPS_CDDL=	FSF OSI
 
-_LICENSE_NAME_CLART=	Clarified Artistic License
-_LICENSE_GROUPS_CLART=	FSF OSI
+_LICENSE_NAME_ClArtistic=	Clarified Artistic License
+_LICENSE_GROUPS_ClArtistic=	FSF OSI
 
 _LICENSE_NAME_EPL=	Eclipse Public License
 _LICENSE_GROUPS_EPL=	FSF OSI
