@@ -14,8 +14,6 @@ COMMENT=	Vega Strike data files
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-MANUAL_PACKAGE_BUILD=huge
-
 do-extract:
 	${MKDIR} ${WRKDIR}
 	# Will extract directly into ${STAGEDIR}${DATADIR:H}

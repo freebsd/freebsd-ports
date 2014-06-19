@@ -15,8 +15,6 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-MANUAL_PACKAGE_BUILD=	huge
-
 USES=		zip
 WRKSRC=		${WRKDIR}/Xonotic/source/darkplaces
 MAKEFILE=	BSDmakefile

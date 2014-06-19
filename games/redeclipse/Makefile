@@ -13,8 +13,6 @@ COMMENT=	Single-player and multi-player first-person ego-shooter
 LICENSE_COMB=	multi
 LICENSE=	MIT ZLIB
 
-MANUAL_PACKAGE_BUILD=	huge
-
 USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
