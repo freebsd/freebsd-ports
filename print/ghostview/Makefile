@@ -13,6 +13,9 @@ COMMENT=	X11 front-end for ghostscript, the GNU postscript previewer
 
 LICENSE=	GPLv2 # (or later)
 
+DEPRECATED=	project dead nearly a decade ago; use print/gv instead
+EXPIRATION_DATE=2014-07-31
+
 USES=		imake
 USE_XORG=	xbitmaps xaw
 USE_GHOSTSCRIPT_RUN=	yes
