@@ -16,7 +16,8 @@ WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 DOCS=		package/CHANGES package/README package/THANKS package/TODO \
 		doc/*.html
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-configure:
 	${ECHO_CMD} "FreeBSD"	> ${WRKSRC}/src/sys/systype
 	${ECHO_CMD} "${LOCALBASE}/include/skalibs" \
@@ -25,20 +26,22 @@ do-configure:
 		>> ${WRKSRC}/conf-compile/import
 	${REINPLACE_CMD} -e 's|superstrip1|#superstrip1|g' \
 		${WRKSRC}/conf-compile/conf-stripbins
+	@${REINPLACE_CMD} 's|gcc|${CC}|; s|-O2.*|${CFLAGS}|' \
+		${WRKSRC}/conf-compile/conf-cc \
+		${WRKSRC}/conf-compile/conf-ld
 
 do-build:
 	cd ${WRKSRC} && package/compile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/library/* ${PREFIX}/lib
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/include/* \
+		${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/library/* ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

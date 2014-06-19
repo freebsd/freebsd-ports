@@ -23,7 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/FLAC
 
 USE_AUTOTOOLS=	libltdl
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-flac=${LOCALBASE}/lib/libFLAC.so \
 	--with-ogg=${LOCALBASE}/lib/libogg.so \

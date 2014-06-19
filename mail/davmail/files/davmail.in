@@ -25,7 +25,7 @@ load_rc_config $name
 
 start_cmd="${name}_start"
 
-procname="java"
+procname="*/java"
 pidfile="/var/run/davmail.pid"
 required_files=${davmail_config}
 
@@ -36,9 +36,8 @@ davmail_start()
 		return 1
 	fi
 	echo "Starting ${name}."
-	for i in %%DATADIR%%/lib/*; do export CLASSPATH=$CLASSPATH:$i; done
-	java -cp %%DATADIR%%/davmail.jar:$CLASSPATH:%%JAVAJARDIR%%/swt.jar davmail.DavGateway ${davmail_config} >> /var/log/davmail-error.log 2>&1 &
-	echo -n $! > ${pidfile}
+	CLASSPATH="$BASE/lib/*"
+	((java -cp "%%DATADIR%%/davmail.jar:$CLASSPATH" davmail.DavGateway ${davmail_config} & echo -n $! > ${pidfile}) 2>&1 | logger -p daemon.info -t davmail) &
 }
 
 run_rc_command "$1"

@@ -12,7 +12,7 @@
  #
 +# Ported to sh to avoid a dependency on bash by crees@FreeBSD.org
 +#
- VERSION="0.10.1"
+ VERSION="0.10.2"
  
  trap clean_exit EXIT
 -function clean_exit() {

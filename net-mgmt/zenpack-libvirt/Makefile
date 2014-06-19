@@ -5,8 +5,8 @@ PORTNAME=	libvirt
 PORTVERSION=	1.96
 PORTREVISION=	4
 CATEGORIES=	net-mgmt
-MASTER_SITES=   https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
-DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
+MASTER_SITES=	https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
+DISTNAME=	zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides monitoring of virtualization servers through Zenoss
@@ -21,8 +21,8 @@ USES=		zenoss
 
 ZPACKPREFIX=	ZenPacks.community.
 ZPACKGROUP=	community
-WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
-TAG=	4113cfe
+WRKSRC=		${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
+TAG=		4113cfe
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

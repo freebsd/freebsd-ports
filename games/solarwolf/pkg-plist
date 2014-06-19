@@ -1,4 +1,8 @@
+@mode 555
 bin/solarwolf
+@mode
+man/man6/solarwolf.6.gz
+share/pixmaps/solarwolf.png
 %%DATADIR%%/code/allmodules.py
 %%DATADIR%%/code/allmodules.pyc
 %%DATADIR%%/code/game.py
@@ -162,22 +166,13 @@ bin/solarwolf
 %%DATADIR%%/data/solarwolf.pal
 %%DATADIR%%/data/spikeball.png
 %%DATADIR%%/data/star.gif
-%%DATADIR%%/dist/SolarWolf Website.url
-%%DATADIR%%/dist/box.ico
-%%DATADIR%%/dist/solarwolf.6.gz
-%%DATADIR%%/dist/solarwolf.desktop
-%%DATADIR%%/dist/solarwolf.iss
-%%DATADIR%%/dist/solarwolf.png
-%%DATADIR%%/dist/solarwolf.xpm
-%%DATADIR%%/dist/wolf2exe.py
-%%DATADIR%%/dist/wolf2exe.pyc
 %%DATADIR%%/lgpl.txt
 %%DATADIR%%/readme.txt
 %%DATADIR%%/solarwolf.py
 %%DATADIR%%/solarwolf.pyc
-@dirrm %%DATADIR%%/dist
-@dirrm %%DATADIR%%/data/music
-@dirrm %%DATADIR%%/data/audio
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/code
-@dirrm %%DATADIR%%
+@mode 755
+@dirrmtry %%DATADIR%%/code
+@dirrmtry %%DATADIR%%/data/audio
+@dirrmtry %%DATADIR%%/data/music
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%

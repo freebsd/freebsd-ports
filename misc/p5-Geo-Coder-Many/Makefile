@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Coder-Many
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-5
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module to tie together multiple Geo::Coder::* modules
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	p5-Geo-Coder-Bing>=0.10:${PORTSDIR}/misc/p5-Geo-Coder-Bing \
 		p5-Geo-Coder-Mapquest>=0.05:${PORTSDIR}/misc/p5-Geo-Coder-Mapquest \
 		p5-Geo-Coder-Multimap>=0.01:${PORTSDIR}/misc/p5-Geo-Coder-Multimap \
 		p5-Geo-Coder-OSM>=0.01:${PORTSDIR}/misc/p5-Geo-Coder-OSM \
+		p5-Geo-Coder-OpenCage>=0:${PORTSDIR}/misc/p5-Geo-Coder-OpenCage \
 		p5-Geo-Coder-Ovi>=0.01:${PORTSDIR}/misc/p5-Geo-Coder-Ovi \
 		p5-Geo-Coder-PlaceFinder>=0.02:${PORTSDIR}/misc/p5-Geo-Coder-PlaceFinder \
 		p5-Geo-Distance-XS>=0.08:${PORTSDIR}/math/p5-Geo-Distance-XS \
@@ -33,5 +35,6 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 
 USE_PERL5=	configure
 USES=		perl5
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

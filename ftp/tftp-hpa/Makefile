@@ -11,9 +11,8 @@ COMMENT=	Advanced tftp server
 
 OPTIONS_DEFINE=	DOCS
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake tar:xz
 USE_RC_SUBR=	tftpd
 
 DESTDIRNAME=	INSTALLROOT

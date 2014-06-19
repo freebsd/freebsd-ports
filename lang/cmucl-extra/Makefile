@@ -17,13 +17,11 @@ COMMENT=	Optional extras for the CMU implementation of Common Lisp
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 RUN_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	cd ${WRKDIR} && ${FIND} lib | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX})
 
 .include <bsd.port.mk>

@@ -8,7 +8,10 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A charset encoding/decoding library written in Common Lisp
+COMMENT=	Charset encoding/decoding library written in Common Lisp
+
+DEPRECATED=	Depends on deprecated lang/clisp
+EXPIRATION_DATE=	2014-07-28
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel \
 		${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/clispfasl/arrays.fasl:${PORTSDIR}/devel/cl-alexandria-clisp \

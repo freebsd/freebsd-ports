@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK+ based MUD client
+COMMENT=	GTK+ based MUD client
 
 LICENSE=	GPLv2
 

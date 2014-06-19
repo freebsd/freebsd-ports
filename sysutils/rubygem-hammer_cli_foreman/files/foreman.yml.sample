@@ -1,10 +1,15 @@
 :foreman:
+  # Enable/disable foreman commands
   :enable_module: true
-  :host: 'https://localhost/'
-  :username: 'admin'
-  :password: 'changeme'
 
-  # Check cache status on each request
+  # Your foreman server address
+  :host: 'https://localhost/'
+
+  # Credentials. You'll be asked for the interactively if you leave them blank here
+  :username: 'admin'
+  #:password: 'example'
+
+  # Check API documentation cache status on each request
   #:refresh_cache: false
 
   # API request timeout, set -1 for infinity

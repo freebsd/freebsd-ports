@@ -3,7 +3,7 @@
 
 PORTNAME=	normalize
 PORTVERSION=	0.7.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -12,7 +12,7 @@ COMMENT=	Tool for adjusting the volume of wave/MP3 files to a standard level
 
 LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 
-USES=		shebangfix perl5 tar:bzip2
+USES=		shebangfix perl5 tar:bzip2 libtool
 USE_PERL5=	run
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-helper-search

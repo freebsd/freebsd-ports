@@ -21,9 +21,8 @@ USES=		iconv imake:env
 USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-fontdir=${PREFIX}/lib/X11/fonts/local --disable-dbcs
-CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib"
-CPPFLAGS+=	-I${PREFIX}/include
-LDFLAGS+=	-L${PREFIX}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-ssl
 .else

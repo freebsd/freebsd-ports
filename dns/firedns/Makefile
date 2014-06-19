@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.firestuff.org/projects/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
 MAINTAINER=	dean@odyssey.apana.org.au
-COMMENT=	A C library for handling asynchronous DNS queries
+COMMENT=	C library for handling asynchronous DNS queries
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring
 

@@ -1,2 +1,6 @@
 bin/xconv
 sbin/xinetd
+man/man5/xinetd.conf.5.gz
+man/man8/xconv.8.gz
+man/man8/xinetd.8.gz
+man/man8/xinetd.log.8.gz

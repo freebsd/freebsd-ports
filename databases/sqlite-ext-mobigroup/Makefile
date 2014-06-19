@@ -9,7 +9,7 @@ MASTER_SITES=	http://mobigroup.ru/debian/pool-squeeze/main/s/sqlite3/
 DISTNAME=	sqlite3_${PORTVERSION:R}-mobigroup.${PORTVERSION:E}
 
 MAINTAINER=	pavelivolkov@googlemail.com
-COMMENT=	A mobigroup functions library for SQLite
+COMMENT=	Mobigroup functions library for SQLite
 
 USE_SQLITE=	yes
 

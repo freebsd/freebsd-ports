@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	bind
-PORTVERSION=	9.8.7
-PORTREVISION=	14
+PORTVERSION=	${ISCVERSION:S/-P/P/}
+PORTREVISION=	2
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	${MASTER_SITE_ISC}
-MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
+MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	98
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
@@ -15,7 +14,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.8.7
+ISCVERSION=	9.8.7-P1
 
 PORTSCOUT=	limit:^9.8.
 
@@ -32,13 +31,15 @@ ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind9*-9.[45679].* bind9*-sdb-9.[45679].* bind-tools-9.*
 
-OPTIONS_DEFAULT=	IPV6 SSL THREADS
+OPTIONS_DEFAULT=	IPV6 SSL THREADS GSSAPI_NONE
 OPTIONS_DEFINE=		SSL LINKS IDN REPLACE_BASE LARGE_FILE \
 			FIXED_RRSET RPZ_NSIP RPZ_NSDNAME RPZRRL_PATCH \
-			SIGCHASE IPV6 THREADS GSSAPI FILTER_AAAA DOCS GOST
+			SIGCHASE IPV6 THREADS FILTER_AAAA DOCS GOST
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
+OPTIONS_SINGLE=		GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
 SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
@@ -58,6 +59,10 @@ DLZ_BDB_DESC=		DLZ BDB driver
 DLZ_LDAP_DESC=		DLZ LDAP driver
 DLZ_FILESYSTEM_DESC=	DLZ filesystem driver
 DLZ_STUB_DESC=		DLZ stub driver
+GSSAPI_BASE_DESC=	${GSSAPI_DESC} (Heimdal in base)
+GSSAPI_HEIMDAL_DESC=	${GSSAPI_DESC} (security/heimdal)
+GSSAPI_MIT_DESC=	${GSSAPI_DESC} (security/krb5)
+GSSAPI_NONE_DESC=	No ${GSSAPI_DESC}
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_USE=	openssl=yes
@@ -82,8 +87,8 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RPZRRL_PATCH_PATCHFILES=	9.8.7-rpz2+rl.14038.05.patch:vix
-RPZRRL_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix
+RPZRRL_PATCH_PATCHFILES=	9.8.7-P1-rpz2+rl.14038.05.patch:vix
+RPZRRL_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix ${MASTER_SITE_LOCAL:S/%SUBDIR%/mat\/bind/:S/$/:vix/}
 
 GOST_CONFIGURE_WITH=	gost
 
@@ -103,12 +108,16 @@ DLZ_FILESYSTEM_CONFIGURE_ON=	--with-dlz-filesystem=yes
 
 DLZ_STUB_CONFIGURE_ON=	--with-dlz-stub=yes
 
-.if defined(HEIMDAL_HOME)
-GSSAPI_CONFIGURE_ON=	--with-gssapi=${HEIMDAL_HOME}
-GSSAPI_CONFIGURE_OFF=	--without-gssapi
-.else
-GSSAPI_CONFIGURE_WITH=	gssapi
-.endif
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_BASE_CONFIGURE_ON= \
+	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_HEIMDAL_CONFIGURE_ON= \
+	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_MIT_USES=	gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON= \
+	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
 .include <bsd.port.options.mk>
 
@@ -129,27 +138,26 @@ CONFIGURE_ARGS+=	--disable-threads
 .if ${PORT_OPTIONS:MREPLACE_BASE}
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 IGNORE=		REPLACE_BASE option is not supported on this release
-.endif
+.endif # >= 10.0
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 PLIST_SUB+=	SHARE_MAN="share/"
 NO_MTREE=	yes
 BIND_DESTETC=	/etc/namedb
-.else
+.else # REPLACE_BASE
 PLIST_SUB+=	SHARE_MAN=""
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 BIND_DESTETC=	${PREFIX}/etc/namedb
 PKGINSTALL=	${NONEXISTENT}
-.else
+.else # >= 10.0
 BIND_DESTETC=	${PREFIX}/etc
-.endif
-.endif
+.endif # >= 10.0
+.endif # REPLACE_BASE
 
 PKGDEINSTALL=	${PKGINSTALL}
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
-PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 SUB_LIST+=	BIND_DESTETC="${BIND_DESTETC}"
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
@@ -197,17 +205,16 @@ post-install:
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
-	${MKDIR} ${STAGEDIR}${BIND_DESTETC}
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for i in dynamic master slave working
-	@${MKDIR} ${STAGEDIR}${BIND_DESTETC}/$i
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/$i
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/named.conf ${STAGEDIR}${BIND_DESTETC}/named.conf.sample
-	${INSTALL_DATA} ${FILESDIR}/named.root ${STAGEDIR}${BIND_DESTETC}
-	${INSTALL_DATA} ${FILESDIR}/empty.db ${STAGEDIR}${BIND_DESTETC}/master
-	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${STAGEDIR}${BIND_DESTETC}/master
-	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${BIND_DESTETC}/master
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${STAGEDIR}${ETCDIR}/named.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/named.root ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/empty.db ${STAGEDIR}${ETCDIR}/master
+	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${STAGEDIR}${ETCDIR}/master
+	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${ETCDIR}/master
+	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf ${STAGEDIR}${ETCDIR}/rndc.conf.sample
 .endif
-	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
-		${STAGEDIR}${BIND_DESTETC}/rndc.conf.sample
 
 .include <bsd.port.mk>

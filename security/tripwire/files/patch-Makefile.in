@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Dec  1 19:24:47 2005
-+++ Makefile.in	Fri Jan  6 15:06:24 2006
-@@ -536,7 +536,6 @@
+--- Makefile.in.orig	2011-11-21 08:06:56.000000000 -0800
++++ Makefile.in	2014-05-30 22:28:35.966716249 -0700
+@@ -540,7 +540,6 @@
  
  install-data-am:
  	@$(NORMAL_INSTALL)
@@ -8,3 +8,12 @@
  
  install-exec-am:
  
+@@ -589,7 +588,7 @@
+ 
+ 
+ install-data-hook:
+-	prefix="$(prefix)" sysconfdir="$(sysconfdir)" \
++	STGDIR="$$STAGEDIR" prefix="$(prefix)" sysconfdir="$(sysconfdir)" \
+         path_to_vi="$(path_to_vi)" path_to_sendmail="$(path_to_sendmail)" \
+         ./install/install.sh
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

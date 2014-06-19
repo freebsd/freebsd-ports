@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Digest/Hashcash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash/Hashcash.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash/Hashcash.so
 %%PERL5_MAN3%%/Digest::Hashcash.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash/

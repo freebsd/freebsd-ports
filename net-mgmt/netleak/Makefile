@@ -3,7 +3,7 @@
 
 PORTNAME=	netleak
 PORTVERSION=	0.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -21,18 +21,16 @@ RUN_DEPENDS=	p5-Net-PcapUtils>=0:${PORTSDIR}/net/p5-Net-PcapUtils \
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
-MAN8=		netleak.8 netleakd.8
+SHEBANG_FILES= 	netleak netleakd
 
-PLIST_FILES=	etc/netleak.conf etc/netleakd.conf sbin/netleak sbin/netleakd
 PORTDOCS=	BUGS README TODO
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

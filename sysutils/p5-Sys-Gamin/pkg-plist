@@ -2,7 +2,6 @@ bin/gamin-monitor
 %%PERL5_MAN3%%/Sys::Gamin.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Gamin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/Gamin.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/Gamin.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/cancel.al

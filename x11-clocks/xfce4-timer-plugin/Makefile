@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-timer-plugin
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -13,11 +13,10 @@ COMMENT=	Timer plugin for Xfce
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
-USES=		pkgconfig gettext gmake
+USES=		pkgconfig gettext gmake tar:bzip2
 
 .include <bsd.port.mk>

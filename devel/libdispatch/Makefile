@@ -10,17 +10,15 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
 
+LICENSE=	APACHE20
+
+USES=		tar:bzip2
 USE_AUTOTOOLS=	aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 # This is needed because PIC support check in autoconf could fail for clang otherwise.
 CONFIGURE_ENV=	lt_cv_prog_compiler_pic_works=yes
-
-OPTIONS_DEFINE=	CLANG
-OPTIONS_DEFAULT=	CLANG
-CLANG_DESC=	Build with LLVM/Clang (required for blocks support)
 
 _MAN3=	dispatch.3 \
 	dispatch_after.3 \
@@ -80,11 +78,17 @@ PLIST_FILES+=	${_MAN3:S|^|man/man3/|:S|$|.gz|}
 
 .include <bsd.port.pre.mk>
 
+.if (${OSVERSION} < 1000024)
+OPTIONS_DEFINE=	CLANG
+OPTIONS_DEFAULT=	CLANG
+CLANG_DESC=	Build with LLVM/Clang (required for blocks support)
+.endif
+
 .if ${OSVERSION} <= 800107 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900002)
 IGNORE=	is not supported on this OS version
 .endif
 
-.if ${OSVERSION} > 900000
+.if ((${OSVERSION} > 900000) && (${OSVERSION} < 1000706))
 .if ${ARCH} == "powerpc
 BROKEN=		Does not configure on powerpc-9
 .elif ${ARCH} == "sparc64

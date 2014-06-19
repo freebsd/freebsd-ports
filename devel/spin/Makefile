@@ -8,7 +8,7 @@ MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
 
 MAINTAINER=	jhanna@shaw.ca
-COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
+COMMENT=	On-the-fly verification system for asynchronous concurrent systems
 
 OPTIONS_DEFINE=	XSPIN DOCS
 OPTIONS_DEFAULT=	XSPIN

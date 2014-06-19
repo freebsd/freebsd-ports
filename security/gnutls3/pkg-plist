@@ -36,11 +36,6 @@ info/gnutls3/gnutls-modauth.png
 info/gnutls3/gnutls-pgp.png
 info/gnutls3/gnutls-x509.png
 info/gnutls3/gnutls.info
-info/gnutls3/gnutls.info-1
-info/gnutls3/gnutls.info-2
-info/gnutls3/gnutls.info-3
-info/gnutls3/gnutls.info-4
-info/gnutls3/gnutls.info-5
 info/gnutls3/pkcs11-vision.png
 %%LIBDANE%%lib/gnutls3/libgnutls-dane.a
 %%LIBDANE%%lib/gnutls3/libgnutls-dane.la
@@ -61,7 +56,7 @@ lib/gnutls3/libgnutls.a
 lib/gnutls3/libgnutls.la
 lib/gnutls3/libgnutls.so
 lib/gnutls3/libgnutls.so.28
-lib/gnutls3/libgnutls.so.28.21.3
+lib/gnutls3/libgnutls.so.28.21.5
 %%CXX%%lib/gnutls3/libgnutlsxx.a
 %%CXX%%lib/gnutls3/libgnutlsxx.la
 %%CXX%%lib/gnutls3/libgnutlsxx.so

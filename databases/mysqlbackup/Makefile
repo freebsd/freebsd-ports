@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlbackup
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Creates MySQL backups on a periodic basis
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_MYSQL=	yes

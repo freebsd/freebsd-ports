@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A fork of pymsn to support the telepathy MSN connection manager
+COMMENT=	Fork of pymsn to support the telepathy MSN connection manager
 
 BUILD_DEPENDS=	py*-openssl>0:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:${PORTSDIR}/security/py-pycrypto \
@@ -24,11 +24,4 @@ USE_GNOME=	pygobject
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not configure on FreeBSD 7.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

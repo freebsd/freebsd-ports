@@ -3,6 +3,7 @@
 
 PORTNAME=	orthrus
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE  \
 		http://16degrees.com.au/${PORTNAME}/

@@ -3,6 +3,7 @@
 
 PORTNAME=	sa-stats
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rulesemporium.com/programs/ \
 		ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/

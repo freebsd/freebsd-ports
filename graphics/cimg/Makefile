@@ -3,7 +3,7 @@
 
 PORTNAME=	cimg
 PORTVERSION=	1.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -47,7 +47,7 @@ LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png		\
 		libfftw3.so:${PORTSDIR}/math/fftw3		\
 		libopencv_legacy.so:${PORTSDIR}/graphics/opencv	\
 		libopencv_core.so:${PORTSDIR}/graphics/opencv-core\
-		libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick13
+		libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick
 ALL_TARGET=	Mlinux
 . else
 ALL_TARGET=	dlinux

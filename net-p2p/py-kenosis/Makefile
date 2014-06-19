@@ -3,6 +3,7 @@
 
 PORTNAME=	kenosis
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,15 +11,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A fully-distributed p2p RPC system built on top of XMLRPC
 
-PORTSCOUT=	skipv:0.941 # Older version than the current one
+LICENSE=	MIT
 
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYSETUP=	${PORTNAME}_setup.py
 
-NO_STAGE=	yes
+PORTSCOUT=	skipv:0.941 # Older version than the current one
+
 post-extract:
 # Avoid name collision and move ds inside kenosis package
 # it is only used by kenosis anyway
@@ -49,11 +52,5 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|(socket.setdefaulttimeout)\([[:digit:]]+\)|\1(20)|' \
 		${WRKSRC}/${PORTNAME}/node.py
-
-post-install:
-# fix post-install permissions
-	@${FIND} ${PYTHON_SITELIBDIR} -type f -print0 \
-		| ${XARGS} -0 -n 5 -x \
-		${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>

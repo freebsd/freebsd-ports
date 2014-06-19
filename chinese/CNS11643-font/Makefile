@@ -11,7 +11,7 @@ DISTFILES=	TW-Kai-98_1.ttf:kai TW-Sung-98_1.ttf:sung
 EXTRACT_ONLY=
 
 MAINTAINER=	lhd@cs.nctu.edu.tw
-COMMENT=	A combine of Kai and Sung with CNS11643 TrueType Fonts
+COMMENT=	Combine of Kai and Sung with CNS11643 TrueType Fonts
 
 LICENSE=	CC_BY-ND_3.0_TW
 LICENSE_NAME=	Creative Commons Attribution-NoDerivs 3.0 Taiwan License

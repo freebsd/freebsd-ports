@@ -25,6 +25,7 @@ lib/libpcp.a
 lib/libpcp.la
 lib/libpcp.so
 lib/libpcp.so.0
+man/man8/pgpool.8.gz
 %%DATADIR%%/dist_def_pgbench.sql
 %%DATADIR%%/insert_lock.sql
 %%DATADIR%%/pgpool.pam

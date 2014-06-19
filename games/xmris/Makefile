@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A version of the Mr Do video arcade game for X11
+COMMENT=	Version of the Mr Do video arcade game for X11
 
 USES=		imake
 USE_XORG=	x11 xext xaw xmu xt sm ice

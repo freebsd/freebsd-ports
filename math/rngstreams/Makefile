@@ -3,35 +3,36 @@
 
 PORTNAME=	rngstreams
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/software/RngStreams/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A C implementation of a high-quality uniform random number generator
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
 USE_LDCONFIG=	yes
 PLIST_FILES=	lib/librngstreams.a \
-		lib/librngstreams.la \
+		lib/librngstreams.so.0.0.0 \
 		lib/librngstreams.so.0 \
 		lib/librngstreams.so \
 		include/RngStream.h
 PORTDOCS=	rngstreams.txt
 PORTEXAMPLES=	example1.c
 
-NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DD in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${DD} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${DD} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .ifndef(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for EE in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${EE} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/${EE} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 

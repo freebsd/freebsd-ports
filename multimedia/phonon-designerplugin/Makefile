@@ -15,8 +15,7 @@ LICENSE=	LGPL21
 
 USE_QT4=	phonon designer \
 		qmake_build moc_build rcc_build uic_build
-USE_XZ=		yes
-USES=		cmake
+USES=		cmake tar:xz
 CMAKE_ARGS=	-DPHONON_QT_PLUGIN_INSTALL_DIR=${PREFIX}/${QT_PLUGINDIR_REL}/designer
 
 BUILD_WRKSRC=	${WRKSRC}/designer

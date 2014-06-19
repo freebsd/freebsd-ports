@@ -21,8 +21,7 @@ CONFIGURE_ARGS=	--enable-xsync \
 		--disable-kde-systray
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig gmake
+USES=		pathfix pkgconfig gmake tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil xfconf

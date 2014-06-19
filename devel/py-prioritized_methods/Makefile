@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	An extension to PEAK-Rules to prioritize methods
+COMMENT=	Extension to PEAK-Rules to prioritize methods
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PEAK-Rules>=0.5:${PORTSDIR}/devel/py-PEAK-Rules
 RUN_DEPENDS:=	${BUILD_DEPENDS}

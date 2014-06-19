@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A curses-based logic game similar to Sokoban and Boulder Dash
+COMMENT=	Curses-based logic game similar to Sokoban and Boulder Dash
 
 PORTDOCS=	*
 PORTDATA=	*

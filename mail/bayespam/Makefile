@@ -21,11 +21,7 @@ FILES_DOCS=	AUTHORS COPYING Changelog INSTALL README TODO \
 		qmail.sample
 FILES_SCRIPTS=	bayes_process_email.pl bayes_spam_check.pl bayestest.pl
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 # fix location of Bayesian filter
@@ -37,17 +33,11 @@ post-patch:
 		${WRKSRC}/bayestest.pl
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in ${FILES_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
-	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/Bayespam
-	@${INSTALL_DATA} ${WRKSRC}/Bayespam/Process.pm \
-		${PREFIX}/${SITE_PERL_REL}/Bayespam
-.for file in ${FILES_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILES_DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Bayespam
+	${INSTALL_DATA} ${WRKSRC}/Bayespam/Process.pm \
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Bayespam
+	${INSTALL_SCRIPT} ${FILES_SCRIPTS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

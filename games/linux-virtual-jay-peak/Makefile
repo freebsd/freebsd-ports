@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	virtual_jay_peak_linux_1_1a
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simulation of snowboarding at the Jay Peak resort in Vermont
+COMMENT=	Simulation of snowboarding at the Jay Peak resort in Vermont
 
 OPTIONS_DEFINE=	DOCS NVIDIA
 

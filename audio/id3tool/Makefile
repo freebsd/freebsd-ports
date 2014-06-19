@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://nekohako.xware.cx/id3tool/
 
 MAINTAINER=	gavin@FreeBSD.org
-COMMENT=	A utility for manipulating mp3 ID3 Tags
+COMMENT=	Utility for manipulating mp3 ID3 Tags
 
 GNU_CONFIGURE=	yes
 

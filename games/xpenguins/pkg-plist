@@ -1,87 +1,88 @@
 bin/xpenguins
-share/xpenguins/themes/Big_Penguins/about
-share/xpenguins/themes/Big_Penguins/angel.xpm
-share/xpenguins/themes/Big_Penguins/ballooner.xpm
-share/xpenguins/themes/Big_Penguins/bigpenguin.png
-share/xpenguins/themes/Big_Penguins/bomber.xpm
-share/xpenguins/themes/Big_Penguins/climber.xpm
-share/xpenguins/themes/Big_Penguins/climber_skateboarder.xpm
-share/xpenguins/themes/Big_Penguins/config
-share/xpenguins/themes/Big_Penguins/digger.xpm
-share/xpenguins/themes/Big_Penguins/exit.xpm
-share/xpenguins/themes/Big_Penguins/explosion.xpm
-share/xpenguins/themes/Big_Penguins/faller.xpm
-share/xpenguins/themes/Big_Penguins/floater.xpm
-share/xpenguins/themes/Big_Penguins/reader.xpm
-share/xpenguins/themes/Big_Penguins/skateboarder.xpm
-share/xpenguins/themes/Big_Penguins/splat.xpm
-share/xpenguins/themes/Big_Penguins/superpenguin.xpm
-share/xpenguins/themes/Big_Penguins/tumbler.xpm
-share/xpenguins/themes/Big_Penguins/walker.xpm
-share/xpenguins/themes/Big_Penguins/zapped.xpm
-share/xpenguins/themes/Bill/about
-share/xpenguins/themes/Bill/bill.png
-share/xpenguins/themes/Bill/carrier.xpm
-share/xpenguins/themes/Bill/climber.xpm
-share/xpenguins/themes/Bill/config
-share/xpenguins/themes/Bill/explosion.xpm
-share/xpenguins/themes/Bill/faller.xpm
-share/xpenguins/themes/Bill/hacker.xpm
-share/xpenguins/themes/Bill/splat.xpm
-share/xpenguins/themes/Bill/walker.xpm
-share/xpenguins/themes/Classic_Penguins/about
-share/xpenguins/themes/Classic_Penguins/bomber.xpm
-share/xpenguins/themes/Classic_Penguins/climber.xpm
-share/xpenguins/themes/Classic_Penguins/config
-share/xpenguins/themes/Classic_Penguins/explosion.xpm
-share/xpenguins/themes/Classic_Penguins/faller.xpm
-share/xpenguins/themes/Classic_Penguins/floater.xpm
-share/xpenguins/themes/Classic_Penguins/sitter.png
-share/xpenguins/themes/Classic_Penguins/tumbler.xpm
-share/xpenguins/themes/Classic_Penguins/walker.xpm
-share/xpenguins/themes/Penguins/about
-share/xpenguins/themes/Penguins/angel.xpm
-share/xpenguins/themes/Penguins/ballooner.xpm
-share/xpenguins/themes/Penguins/bomber.xpm
-share/xpenguins/themes/Penguins/climber.xpm
-share/xpenguins/themes/Penguins/climber_skateboarder.xpm
-share/xpenguins/themes/Penguins/config
-share/xpenguins/themes/Penguins/digger.xpm
-share/xpenguins/themes/Penguins/exit.xpm
-share/xpenguins/themes/Penguins/explosion.xpm
-share/xpenguins/themes/Penguins/faller.xpm
-share/xpenguins/themes/Penguins/floater.xpm
-share/xpenguins/themes/Penguins/penguin.png
-share/xpenguins/themes/Penguins/reader.xpm
-share/xpenguins/themes/Penguins/skateboarder.xpm
-share/xpenguins/themes/Penguins/splat.xpm
-share/xpenguins/themes/Penguins/superpenguin.xpm
-share/xpenguins/themes/Penguins/tumbler.xpm
-share/xpenguins/themes/Penguins/walker.xpm
-share/xpenguins/themes/Penguins/zapped.xpm
-share/xpenguins/themes/Turtles/about
-share/xpenguins/themes/Turtles/bomber.xpm
-share/xpenguins/themes/Turtles/climber.xpm
-share/xpenguins/themes/Turtles/config
-share/xpenguins/themes/Turtles/explosion.xpm
-share/xpenguins/themes/Turtles/faller.xpm
-share/xpenguins/themes/Turtles/floater.xpm
-share/xpenguins/themes/Turtles/tumbler.xpm
-share/xpenguins/themes/Turtles/turtle.png
-share/xpenguins/themes/Turtles/walker.xpm
-share/xpenguins/themes/Daemon/about
-share/xpenguins/themes/Daemon/climber.xpm
-share/xpenguins/themes/Daemon/config
-share/xpenguins/themes/Daemon/daemon.png
-share/xpenguins/themes/Daemon/walker.xpm
-share/xpenguins/themes/Daemon/faller.xpm
-share/xpenguins/themes/Daemon/explosion.xpm
-share/xpenguins/themes/Daemon/exit.xpm
-@dirrm share/xpenguins/themes/Turtles
-@dirrm share/xpenguins/themes/Penguins
-@dirrm share/xpenguins/themes/Classic_Penguins
-@dirrm share/xpenguins/themes/Bill
-@dirrm share/xpenguins/themes/Big_Penguins
-@dirrm share/xpenguins/themes/Daemon
-@dirrm share/xpenguins/themes
-@dirrm share/xpenguins
+man/man1/xpenguins.1.gz
+%%DATADIR%%/themes/Big_Penguins/about
+%%DATADIR%%/themes/Big_Penguins/angel.xpm
+%%DATADIR%%/themes/Big_Penguins/ballooner.xpm
+%%DATADIR%%/themes/Big_Penguins/bigpenguin.png
+%%DATADIR%%/themes/Big_Penguins/bomber.xpm
+%%DATADIR%%/themes/Big_Penguins/climber.xpm
+%%DATADIR%%/themes/Big_Penguins/climber_skateboarder.xpm
+%%DATADIR%%/themes/Big_Penguins/config
+%%DATADIR%%/themes/Big_Penguins/digger.xpm
+%%DATADIR%%/themes/Big_Penguins/exit.xpm
+%%DATADIR%%/themes/Big_Penguins/explosion.xpm
+%%DATADIR%%/themes/Big_Penguins/faller.xpm
+%%DATADIR%%/themes/Big_Penguins/floater.xpm
+%%DATADIR%%/themes/Big_Penguins/reader.xpm
+%%DATADIR%%/themes/Big_Penguins/skateboarder.xpm
+%%DATADIR%%/themes/Big_Penguins/splat.xpm
+%%DATADIR%%/themes/Big_Penguins/superpenguin.xpm
+%%DATADIR%%/themes/Big_Penguins/tumbler.xpm
+%%DATADIR%%/themes/Big_Penguins/walker.xpm
+%%DATADIR%%/themes/Big_Penguins/zapped.xpm
+%%DATADIR%%/themes/Bill/about
+%%DATADIR%%/themes/Bill/bill.png
+%%DATADIR%%/themes/Bill/carrier.xpm
+%%DATADIR%%/themes/Bill/climber.xpm
+%%DATADIR%%/themes/Bill/config
+%%DATADIR%%/themes/Bill/explosion.xpm
+%%DATADIR%%/themes/Bill/faller.xpm
+%%DATADIR%%/themes/Bill/hacker.xpm
+%%DATADIR%%/themes/Bill/splat.xpm
+%%DATADIR%%/themes/Bill/walker.xpm
+%%DATADIR%%/themes/Classic_Penguins/about
+%%DATADIR%%/themes/Classic_Penguins/bomber.xpm
+%%DATADIR%%/themes/Classic_Penguins/climber.xpm
+%%DATADIR%%/themes/Classic_Penguins/config
+%%DATADIR%%/themes/Classic_Penguins/explosion.xpm
+%%DATADIR%%/themes/Classic_Penguins/faller.xpm
+%%DATADIR%%/themes/Classic_Penguins/floater.xpm
+%%DATADIR%%/themes/Classic_Penguins/sitter.png
+%%DATADIR%%/themes/Classic_Penguins/tumbler.xpm
+%%DATADIR%%/themes/Classic_Penguins/walker.xpm
+%%DATADIR%%/themes/Penguins/about
+%%DATADIR%%/themes/Penguins/angel.xpm
+%%DATADIR%%/themes/Penguins/ballooner.xpm
+%%DATADIR%%/themes/Penguins/bomber.xpm
+%%DATADIR%%/themes/Penguins/climber.xpm
+%%DATADIR%%/themes/Penguins/climber_skateboarder.xpm
+%%DATADIR%%/themes/Penguins/config
+%%DATADIR%%/themes/Penguins/digger.xpm
+%%DATADIR%%/themes/Penguins/exit.xpm
+%%DATADIR%%/themes/Penguins/explosion.xpm
+%%DATADIR%%/themes/Penguins/faller.xpm
+%%DATADIR%%/themes/Penguins/floater.xpm
+%%DATADIR%%/themes/Penguins/penguin.png
+%%DATADIR%%/themes/Penguins/reader.xpm
+%%DATADIR%%/themes/Penguins/skateboarder.xpm
+%%DATADIR%%/themes/Penguins/splat.xpm
+%%DATADIR%%/themes/Penguins/superpenguin.xpm
+%%DATADIR%%/themes/Penguins/tumbler.xpm
+%%DATADIR%%/themes/Penguins/walker.xpm
+%%DATADIR%%/themes/Penguins/zapped.xpm
+%%DATADIR%%/themes/Turtles/about
+%%DATADIR%%/themes/Turtles/bomber.xpm
+%%DATADIR%%/themes/Turtles/climber.xpm
+%%DATADIR%%/themes/Turtles/config
+%%DATADIR%%/themes/Turtles/explosion.xpm
+%%DATADIR%%/themes/Turtles/faller.xpm
+%%DATADIR%%/themes/Turtles/floater.xpm
+%%DATADIR%%/themes/Turtles/tumbler.xpm
+%%DATADIR%%/themes/Turtles/turtle.png
+%%DATADIR%%/themes/Turtles/walker.xpm
+%%DATADIR%%/themes/Daemon/about
+%%DATADIR%%/themes/Daemon/climber.xpm
+%%DATADIR%%/themes/Daemon/config
+%%DATADIR%%/themes/Daemon/daemon.png
+%%DATADIR%%/themes/Daemon/walker.xpm
+%%DATADIR%%/themes/Daemon/faller.xpm
+%%DATADIR%%/themes/Daemon/explosion.xpm
+%%DATADIR%%/themes/Daemon/exit.xpm
+@dirrm %%DATADIR%%/themes/Turtles
+@dirrm %%DATADIR%%/themes/Penguins
+@dirrm %%DATADIR%%/themes/Classic_Penguins
+@dirrm %%DATADIR%%/themes/Bill
+@dirrm %%DATADIR%%/themes/Big_Penguins
+@dirrm %%DATADIR%%/themes/Daemon
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%

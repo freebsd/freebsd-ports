@@ -26,15 +26,14 @@ NO_BUILD=	yes
 
 REINPLACE_ARGS=	-i ''
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|\$$root/completions|${DATADIR}/completions|g" ${WRKSRC}/libexec/rbenv-init
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-local-exec ${PREFIX}/bin
-	( ${INSTALL_SCRIPT} ${WRKSRC}/libexec/* ${PREFIX}/libexec/ )
-	@${LN} -sf ${PREFIX}/libexec/rbenv ${PREFIX}/bin/rbenv
-	@${MKDIR} ${DATADIR}/completions
-	( cd ${WRKSRC}/completions && ${COPYTREE_BIN} \* ${DATADIR}/completions )
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-local-exec ${STAGEDIR}${PREFIX}/bin
+	( ${INSTALL_SCRIPT} ${WRKSRC}/libexec/* ${STAGEDIR}${PREFIX}/libexec/ )
+	@${LN} -sf ${PREFIX}/libexec/rbenv ${STAGEDIR}${PREFIX}/bin/rbenv
+	@${MKDIR} ${STAGEDIR}${DATADIR}/completions
+	( cd ${WRKSRC}/completions && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/completions )
 
 .include <bsd.port.mk>

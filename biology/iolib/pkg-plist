@@ -20,6 +20,7 @@ bin/scf_update
 bin/scram_flagstat
 bin/scram_merge
 bin/scram_pileup
+bin/scram_test
 bin/scramble
 bin/srf2fasta
 bin/srf2fastq
@@ -82,9 +83,9 @@ include/io_lib/xalloc.h
 include/io_lib/zfio.h
 include/io_lib/ztr.h
 lib/libstaden-read.a
-lib/libstaden-read.la
 lib/libstaden-read.so
-lib/libstaden-read.so.5
+lib/libstaden-read.so.1
+lib/libstaden-read.so.1.5.1
 man/man1/scramble.1.gz
 man/man1/srf2fasta.1.gz
 man/man1/srf2fastq.1.gz
@@ -109,4 +110,4 @@ man/man3/write_reading.3.gz
 man/man3/write_scf.3.gz
 man/man3/write_scf_header.3.gz
 man/man4/Read.4.gz
-@dirrm include/io_lib
+@dirrmtry include/io_lib

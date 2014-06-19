@@ -23,14 +23,14 @@ pkgIndex.tcl:
 			> pkgIndex.tcl
 
 LIBDIR=		${PREFIX}/lib
-RESDIR=		${PREFIX}/share/WordNet/
+RESDIR=		${STAGEDIR}${PREFIX}/share/WordNet/
 
-${LIBDIR} ${RESDIR} ${LIBDIR}/tcl${TCL_DVER}/Wordnet:
+${LIBDIR} ${RESDIR} ${STAGEDIR}${LIBDIR}/tcl${TCL_DVER}/Wordnet:
 	mkdir -p ${.TARGET}
 
-beforeinstall: ${LIBDIR} ${RESDIR} ${LIBDIR}/tcl${TCL_DVER}/Wordnet
-	${BSD_INSTALL_DATA} pkgIndex.tcl ${LIBDIR}/tcl${TCL_DVER}/Wordnet
+beforeinstall: ${RESDIR} ${STAGEDIR}${LIBDIR}/tcl${TCL_DVER}/Wordnet
+	${BSD_INSTALL_DATA} pkgIndex.tcl ${STAGEDIR}${LIBDIR}/tcl${TCL_DVER}/Wordnet
 	${BSD_INSTALL_DATA} ${.CURDIR}/*.xbm ${RESDIR}
-	${BSD_INSTALL_SCRIPT} ${.CURDIR:H:H}/src/wnb ${PREFIX}/bin
+	${BSD_INSTALL_SCRIPT} ${.CURDIR:H:H}/src/wnb ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.lib.mk>

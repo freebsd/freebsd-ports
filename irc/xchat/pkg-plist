@@ -1,9 +1,6 @@
 bin/xchat
-%%PERL%%lib/xchat/plugins/perl.la
 %%PERL%%lib/xchat/plugins/perl.so
-%%PYTHON%%lib/xchat/plugins/python.la
 %%PYTHON%%lib/xchat/plugins/python.so
-%%TCL%%lib/xchat/plugins/tcl.la
 %%TCL%%lib/xchat/plugins/tcl.so
 share/applications/xchat.desktop
 %%DBUS%%share/dbus-1/services/org.xchat.service.service

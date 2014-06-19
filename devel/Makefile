@@ -25,6 +25,7 @@
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
     SUBDIR += R-cran-memoise
+    SUBDIR += R-cran-microbenchmark
     SUBDIR += R-cran-plyr
     SUBDIR += R-cran-proto
     SUBDIR += R-cran-randomForest
@@ -160,7 +161,6 @@
     SUBDIR += busybee
     SUBDIR += byacc
     SUBDIR += byaccj
-    SUBDIR += bzapi
     SUBDIR += bzr
     SUBDIR += bzr-builder
     SUBDIR += bzr-colo
@@ -178,6 +178,7 @@
     SUBDIR += bzr-upload
     SUBDIR += bzrtools
     SUBDIR += c-unit
+    SUBDIR += c2mdoc
     SUBDIR += c4
     SUBDIR += calibrator
     SUBDIR += capstone
@@ -389,6 +390,7 @@
     SUBDIR += eblob
     SUBDIR += ebnf2yacc
     SUBDIR += ecb
+    SUBDIR += ecgi
     SUBDIR += eclipse-eclemma
     SUBDIR += ecore
     SUBDIR += ecore-file
@@ -1200,6 +1202,7 @@
     SUBDIR += looks
     SUBDIR += love
     SUBDIR += love07
+    SUBDIR += love08
     SUBDIR += love5
     SUBDIR += lpc21isp
     SUBDIR += lrmi
@@ -2600,6 +2603,7 @@
     SUBDIR += p5-Pid-File-Flock
     SUBDIR += p5-Pipeline
     SUBDIR += p5-Pithub
+    SUBDIR += p5-PkgConfig
     SUBDIR += p5-Pod-Coverage
     SUBDIR += p5-Pod-Coverage-Moose
     SUBDIR += p5-Pod-Coverage-TrustPod
@@ -3582,6 +3586,7 @@
     SUBDIR += py-circuits
     SUBDIR += py-cjson
     SUBDIR += py-cld
+    SUBDIR += py-click
     SUBDIR += py-clonedigger
     SUBDIR += py-cmdln
     SUBDIR += py-cog
@@ -3672,6 +3677,7 @@
     SUBDIR += py-hghooks
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
+    SUBDIR += py-humanize
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
@@ -3684,6 +3690,7 @@
     SUBDIR += py-isodate
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
+    SUBDIR += py-jaraco.util
     SUBDIR += py-jcc
     SUBDIR += py-jdcal
     SUBDIR += py-jellyfish
@@ -3723,6 +3730,7 @@
     SUBDIR += py-mock
     SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
+    SUBDIR += py-more-itertools
     SUBDIR += py-mox
     SUBDIR += py-msgpack
     SUBDIR += py-mwlib
@@ -3752,6 +3760,7 @@
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
     SUBDIR += py-pip
+    SUBDIR += py-plan
     SUBDIR += py-plex
     SUBDIR += py-ply
     SUBDIR += py-polib
@@ -4203,6 +4212,7 @@
     SUBDIR += rubygem-coffee-rails
     SUBDIR += rubygem-coffee-script
     SUBDIR += rubygem-coffee-script-source
+    SUBDIR += rubygem-colorize
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-commander
     SUBDIR += rubygem-configatron
@@ -4249,6 +4259,7 @@
     SUBDIR += rubygem-ffi
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filemagic
+    SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-core

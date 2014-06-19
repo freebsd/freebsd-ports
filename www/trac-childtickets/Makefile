@@ -3,6 +3,7 @@
 
 PORTNAME=	childtickets
 PORTVERSION=	2.5.2
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://schema.filez.com/distfiles/
 PKGNAMEPREFIX=	trac-
@@ -18,14 +19,14 @@ USES=		zip
 
 WRKSRC=		${WRKDIR}/childticketsplugin/0.12
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	Tracchildtickets
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

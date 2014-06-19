@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	compiz-plugins-unsupported
-PORTVERSION=	0.8.4
-PORTREVISION=	6
+PORTVERSION=	0.8.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Plugins for Compiz Composite Window Manager
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo

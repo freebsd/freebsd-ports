@@ -345,6 +345,7 @@
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
+    SUBDIR += httpie
     SUBDIR += httpsqs
     SUBDIR += httptunnel
     SUBDIR += httrack
@@ -423,7 +424,6 @@
     SUBDIR += mathjax
     SUBDIR += mathopd
     SUBDIR += mediawiki119
-    SUBDIR += mediawiki120
     SUBDIR += mediawiki121
     SUBDIR += mediawiki122
     SUBDIR += mergelog
@@ -473,6 +473,7 @@
     SUBDIR += mod_cloudflare
     SUBDIR += mod_cplusplus
     SUBDIR += mod_cvs2
+    SUBDIR += mod_dav_svn
     SUBDIR += mod_dnssd
     SUBDIR += mod_domaintree
     SUBDIR += mod_encoding
@@ -548,6 +549,7 @@
     SUBDIR += moodle24
     SUBDIR += moodle25
     SUBDIR += moodle26
+    SUBDIR += moodle27
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
@@ -1864,6 +1866,7 @@
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
+    SUBDIR += rubygem-rkelly-remix
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
@@ -2161,7 +2164,6 @@
     SUBDIR += xpi-cookiesafe
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-cutemenus-crystalsvg
-    SUBDIR += xpi-deepestsender
     SUBDIR += xpi-default_full_zoom_level
     SUBDIR += xpi-delicious
     SUBDIR += xpi-downthemall

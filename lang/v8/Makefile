@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-CONFLICTS=	v8-3.24.*
+CONFLICTS=	v8-3.27.*
 
 USES=		gmake compiler tar:xz
 USE_PYTHON=	2

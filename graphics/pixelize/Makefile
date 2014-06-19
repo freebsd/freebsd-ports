@@ -3,7 +3,7 @@
 
 PORTNAME=	pixelize
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lashwhip.com/pub/ \
 		http://www.c-s.li/ports/ \
@@ -19,14 +19,13 @@ USES=		pkgconfig
 USE_GNOME=	gtk20 imlib
 PLIST_FILES=	bin/make_db bin/pixelize
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|" -e "s|CFLAGS = -g|CFLAGS+= |" \
 		-e "s|gtk-config|${GTK_CONFIG}|g" \
 		-e "s|imlib-config|${IMLIB_CONFIG}|g" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/make_db ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/pixelize ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/make_db ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pixelize ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

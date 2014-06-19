@@ -1,0 +1,20 @@
+--- configure.orig	2014-06-16 23:25:01.000000000 +0900
++++ configure	2014-06-16 23:25:34.000000000 +0900
+@@ -7365,7 +7365,7 @@
+   fi
+   if test "X$ltrpathdirs" != "X"; then
+             for found_dir in $ltrpathdirs; do
+-      LTLIBICONV="${LTLIBICONV}${LTLIBICONV:+ }-R$found_dir"
++      LTLIBICONV="${LTLIBICONV}${LTLIBICONV:+ }"
+     done
+   fi
+ 
+@@ -8587,7 +8587,7 @@
+   fi
+   if test "X$ltrpathdirs" != "X"; then
+             for found_dir in $ltrpathdirs; do
+-      LTLIBINTL="${LTLIBINTL}${LTLIBINTL:+ }-R$found_dir"
++      LTLIBINTL="${LTLIBINTL}${LTLIBINTL:+ }"
+     done
+   fi
+ 

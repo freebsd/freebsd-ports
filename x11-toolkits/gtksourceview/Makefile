@@ -21,8 +21,8 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix libgnome libgnomeprintui intlhack referencehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgnuregex"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lgnuregex
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

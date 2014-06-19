@@ -12,8 +12,7 @@ COMMENT=	Efficient file compressor
 
 LICENSE=	LGPL21
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		tar:bzip2 gettext
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
@@ -28,13 +27,13 @@ post-patch:
 		-e '/^PREFIX=/d;/^LDFLAGS/s|=|+=|' ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/grunzip
 	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/grzcat
-	${INSTALL_SCRIPT} ${WRAPPERS:S|^|${WRKSRC}/scripts/|} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_SCRIPT} ${WRAPPERS:S|^|${WRKSRC}/scripts/|} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include/
-	cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} PREFIX="${STAGEDIR}${PREFIX}" install
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include
+	(cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} PREFIX="${STAGEDIR}${PREFIX}" install)
 
 .include <bsd.port.mk>

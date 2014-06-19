@@ -14,8 +14,8 @@ COMMENT=	NetBIOS name network scanner
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}a
 ALL_TARGET=	nbtscan

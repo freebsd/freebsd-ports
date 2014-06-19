@@ -15,8 +15,7 @@ LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		librime.so:${PORTSDIR}/chinese/librime
 
 USE_LDCONFIG=	${PREFIX}/lib/fcitx/
-USE_XZ=		yes
-USES=		cmake gettext
+USES=		tar:xz cmake gettext
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 

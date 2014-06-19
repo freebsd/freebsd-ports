@@ -2,6 +2,7 @@ bin/ibus-table-createdb
 libdata/pkgconfig/ibus-table.pc
 libexec/ibus-engine-table
 share/ibus/component/table.xml
+%%NLS%%share/locale/de/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus-table.mo
@@ -27,14 +28,12 @@ share/ibus/component/table.xml
 %%DATADIR%%/icons/acommit.svg
 %%DATADIR%%/icons/cb-mode.svg
 %%DATADIR%%/icons/chinese.svg
-%%DATADIR%%/icons/compose.svg
 %%DATADIR%%/icons/english.svg
 %%DATADIR%%/icons/full-letter.svg
 %%DATADIR%%/icons/full-punct.svg
 %%DATADIR%%/icons/half-letter.svg
 %%DATADIR%%/icons/half-punct.svg
 %%DATADIR%%/icons/ibus-table.svg
-%%DATADIR%%/icons/latex.png
 %%DATADIR%%/icons/ncommit.svg
 %%DATADIR%%/icons/onechar.svg
 %%DATADIR%%/icons/phrase.svg
@@ -44,8 +43,6 @@ share/ibus/component/table.xml
 %%DATADIR%%/icons/tab-mode.svg
 %%DATADIR%%/icons/tc-mode.svg
 %%DATADIR%%/icons/tcb-mode.svg
-%%DATADIR%%/tables/compose.db
-%%DATADIR%%/tables/latex.db
 %%DATADIR%%/tables/template.txt
 @dirrmtry share/ibus/component
 @dirrm %%DATADIR%%/data

@@ -15,6 +15,10 @@ USE_PHP=	pcre session
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 SQSTATDIR?=	share/${PORTNAME}
 
 SUB_FILES=	pkg-message
@@ -28,20 +32,14 @@ PLIST_FILES=	${SQSTATDIR}/arrow.gif ${SQSTATDIR}/sqstat.class.php \
 		${SQSTATDIR}/config.inc.php.defaults
 PORTDOCS=	CHANGES FAQ LICENSE README TODO
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${SQSTATDIR}; \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SQSTATDIR}; \
 	for f in ${PLIST_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${f##*/} ${PREFIX}/${SQSTATDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$${f##*/} ${STAGEDIR}${PREFIX}/${SQSTATDIR}; \
 	done
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}; \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}; \
 	for f in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/docs/$$f ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/docs/$$f ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

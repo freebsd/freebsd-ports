@@ -8,7 +8,7 @@ MASTER_SITES=http://pablotron.org/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A set of enhancements of irb
+COMMENT=	Set of enhancements of irb
 
 DOCS_EN=	README
 

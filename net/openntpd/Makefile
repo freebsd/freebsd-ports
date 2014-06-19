@@ -2,7 +2,7 @@
 
 PORTNAME=	openntpd
 PORTVERSION=	4.6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ntpd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/ntpd.conf.5 ${STAGEDIR}${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/ntpd.8 ${STAGEDIR}${PREFIX}/man/man8
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/ntpd.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/ntpd.conf \
+	    ${STAGEDIR}${PREFIX}/etc/ntpd.conf.sample
 
 .include <bsd.port.mk>

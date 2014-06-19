@@ -15,9 +15,8 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	ascii2binary:${PORTSDIR}/converters/ascii2binary
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lintl"
-CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
 USES=		gettext
 
 TESTFILES=	Test1.ann Test1.u Test2.ann Test2.u Test3.ann Test3.u	\

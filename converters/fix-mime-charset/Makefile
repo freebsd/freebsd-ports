@@ -20,8 +20,8 @@ GNU_CONFIGURE=	yes
 USES=		perl5
 USE_PERL5=	build
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/fix-mime-charset \
 		man/man1/fix-mime-charset.1.gz

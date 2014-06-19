@@ -36,4 +36,4 @@ do-install:
 	@(cd ${WRKSRC}; ${INSTALL_MAN} ${MANPAGES} \
 		${STAGEDIR}${PREFIX}/man/man3/)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

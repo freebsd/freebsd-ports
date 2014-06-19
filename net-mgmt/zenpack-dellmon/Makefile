@@ -17,7 +17,7 @@ USES=		zenoss
 
 ZPACKGROUP=	community
 WRKSRC=		${WRKDIR}/epuzanov-${ZPACKPREFIX}${PORTNAME}-a4ae347
-ZPACKPREFIX=    ZenPacks.community.
+ZPACKPREFIX=	ZenPacks.community.
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

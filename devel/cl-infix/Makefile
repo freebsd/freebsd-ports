@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	cl-
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A lisp macro for reading math expressions in infix form
+COMMENT=	Lisp macro for reading math expressions in infix form
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes

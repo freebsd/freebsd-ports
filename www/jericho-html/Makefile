@@ -10,7 +10,7 @@ MAINTAINER=	saper@saper.info
 COMMENT=	Java library to analyse and manipulate HTML
 
 USES=		zip
-USE_JAVA=	1.6+
+USE_JAVA=	yes
 
 INTERFACES:=	"compile-time-dependencies/slf4j-api-1.6.1.jar:\
 		compile-time-dependencies/commons-logging-api-1.1.1.jar:\
@@ -20,7 +20,8 @@ PORTDOCS=	*
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 do-build:
-	(cd ${WRKSRC} &&  ${RM} -rf classes/* && ${JAVAC}         \
+	(cd ${WRKSRC} && ${RM} -rf classes/* && ${SETENV}         \
+		LANG=en_US.ISO8859-1 ${JAVAC}                     \
 		-classpath ${INTERFACES:S, ,,g}                   \
 		-d classes src/java/net/htmlparser/jericho/*.java \
 		src/java/net/htmlparser/jericho/nodoc/*.java)

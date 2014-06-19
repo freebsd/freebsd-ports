@@ -1,4 +1,5 @@
 bin/tworld
+man/man6/tworld.6.gz
 %%DATADIR%%/data/intro.dat
 %%DATADIR%%/res/atiles.bmp
 %%DATADIR%%/res/block.wav

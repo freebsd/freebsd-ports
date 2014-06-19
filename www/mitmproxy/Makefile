@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mitmproxy
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	www python
 MASTER_SITES=	http://mitmproxy.org/download/
 
@@ -22,8 +22,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>0:${PORTSDIR}/devel/py-asn1 \
 PYDISTUTILS_AUTOPLIST=	yes
 USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
-
-PLIST_FILES=	bin/mitmdump \
-		bin/mitmproxy
 
 .include <bsd.port.mk>

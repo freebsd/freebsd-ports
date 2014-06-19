@@ -3,7 +3,7 @@
 
 PORTNAME=	aubio
 PORTVERSION=	0.3.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 GNU_CONFIGURE=	yes
 # --disable-complex: does not compile due to missing carg(3) et al.
 CONFIGURE_ARGS=	--disable-complex
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

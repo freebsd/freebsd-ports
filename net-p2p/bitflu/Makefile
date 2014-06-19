@@ -29,7 +29,6 @@ PORTDOCS=	ChangeLog.txt README.txt README_IPv6.txt
 OPTIONS_DEFINE=	IPV6 EXAMPLES DOCS
 OPTIONS_DEFAULT=	IPV6
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -39,24 +38,24 @@ RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 post-patch:
 	@${REINPLACE_CMD} -e 's|'\''.bitflu.config'\''|"$$ENV{HOME}/.bitflu.config"|; \
 		s|\./plugins|${PREFIX}/${PLUGINSDIR_BASE}|; \
+		s|/usr/bin/perl|${PERL}|; \
 		s|\./workdir|$$ENV{HOME}/.bitflu.workdir|; \
 		s|--config=\.bitflu.config|--config=~/.bitflu.config|' \
 		${WRKSRC}/bitflu.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
-		${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${PREFIX}/${PLUGINSDIR}
-	${INSTALL_DATA} ${WRKSRC}/plugins/Bitflu/*.pm ${PREFIX}/${PLUGINSDIR}/
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PLUGINSDIR}
+	${INSTALL_DATA} ${WRKSRC}/plugins/Bitflu/*.pm ${STAGEDIR}${PREFIX}/${PLUGINSDIR}/
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${INSTALL} -d ${EXAMPLESDIR}/
+	${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.config.example \
-		${EXAMPLESDIR}/${PORTNAME}.config
+		${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}.config
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

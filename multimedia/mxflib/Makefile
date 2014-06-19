@@ -6,7 +6,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A C++ library for MXF file I/O
+COMMENT=	C++ library for MXF file I/O
 
 GNU_CONFIGURE=	yes
 

@@ -11,18 +11,23 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screen locking and screen capture plugin for GKrellM 2
 
-USES=		pkgconfig
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2 \
 		import:${PORTSDIR}/graphics/ImageMagick
+
+USES=		pkgconfig
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellshoot.so
 WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}
 
 ALL_TARGET=	${PORTNAME}.so
+PLUGINDIR=	${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} '/^CFLAGS/ s|= |= ${CFLAGS} |' ${WRKSRC}/Makefile
+
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so ${PREFIX}/libexec/gkrellm2/plugins
+	@${MKDIR} ${PLUGINDIR}
+	${INSTALL_LIB} ${WRKSRC}/${PORTNAME}.so ${PLUGINDIR}
 
 .include <bsd.port.mk>

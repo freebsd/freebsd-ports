@@ -10,7 +10,7 @@ DISTNAME=	${TRUEPORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	A dungeon explorin', slashin', hackin' game
+COMMENT=	Dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 LATEST_LINK=	${TRUEPORTNAME}33${PKGNAMESUFFIX}
@@ -25,14 +25,14 @@ TRUEPORTNAME=	nethack
 MAN6=		dgn_comp${HACKEXT}.6 dlb${HACKEXT}.6 lev_comp${HACKEXT}.6 \
 		${HACKNAME}.6 recover${HACKEXT}.6
 
-HACKEXT?=       33
-HACKNAME?=      ${TRUEPORTNAME}${HACKEXT}
-HACKDIR?=       share/${HACKNAME}
-HACKLINK=       ${TRUEPORTNAME}
+HACKEXT?=	33
+HACKNAME?=	${TRUEPORTNAME}${HACKEXT}
+HACKDIR?=	share/${HACKNAME}
+HACKLINK=	${TRUEPORTNAME}
 
-DATADIR=        ${PREFIX}/${HACKDIR}
-DOCSDIR=        ${PREFIX}/share/doc/${HACKNAME}
-PKGDEINSTALL=   ${WRKDIR}/pkg-deinstall
+DATADIR=	${PREFIX}/${HACKDIR}
+DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .if !defined(PKGNAMESUFFIX)
 USE_XORG=	xaw xpm

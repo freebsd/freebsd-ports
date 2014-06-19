@@ -3,7 +3,7 @@
 
 PORTNAME=	libbinio
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,8 +12,7 @@ COMMENT=	Binary I/O stream class library
 
 LICENSE=	LGPL21
 
-USES=		pathfix
-USE_AUTOTOOLS=	libtool
+USES=		pathfix libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

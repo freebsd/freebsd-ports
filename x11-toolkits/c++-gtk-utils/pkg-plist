@@ -38,9 +38,8 @@ include/c++-gtk-utils-2-2.2/c++-gtk-utils/timeout.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/widget.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/window.h
 lib/libcxx-gtk-utils-2-2.2.a
-lib/libcxx-gtk-utils-2-2.2.la
 lib/libcxx-gtk-utils-2-2.2.so
-lib/libcxx-gtk-utils-2-2.2.so.1
+lib/libcxx-gtk-utils-2-2.2.so.0.1.3
 libdata/pkgconfig/c++-gtk-utils-2-2.2.pc
 @dirrm include/c++-gtk-utils-2-2.2/c++-gtk-utils
 @dirrm include/c++-gtk-utils-2-2.2

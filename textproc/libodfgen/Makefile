@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/libwpd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Library for reading and writing Corel WordPerfect(tm) documents
+COMMENT=	Library for generating documents in Open Document Format (ODF)
 
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
@@ -23,9 +23,8 @@ CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix pkgconfig
+USES=		libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_XZ=		yes
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen

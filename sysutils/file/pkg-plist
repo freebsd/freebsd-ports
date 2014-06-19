@@ -1,9 +1,8 @@
 bin/file
 include/magic.h
-lib/libmagic.a
-lib/libmagic.la
 lib/libmagic.so
 lib/libmagic.so.1
+lib/libmagic.so.1.0.0
 man/man1/file.1.gz
 man/man3/libmagic.3.gz
 man/man5/magic.5.gz

@@ -16,7 +16,7 @@ The Lazarus RAD was installed
 
    It could be extracted to your home directory.
 
-4) You can use %%LOCALBASE%%/bin/gdb762 debugger instead of gdb installed deugger
+4) You can use %%LOCALBASE%%/bin/gdb771 debugger instead of gdb installed deugger
    installed from base system. Lazarus works better with this version.
 
 5) The lazbuild.cfg file has been removed, it is not necessary anymore. Now 

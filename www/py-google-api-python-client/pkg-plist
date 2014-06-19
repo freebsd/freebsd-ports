@@ -1,12 +1,87 @@
-bin/enable-app-engine-project
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PYTHON_SITELIBDIR%%/apiclient/__init__.py
+%%PYTHON_SITELIBDIR%%/apiclient/__init__.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/__init__.pyo
+%%PYTHON_SITELIBDIR%%/apiclient/channel.py
+%%PYTHON_SITELIBDIR%%/apiclient/channel.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/channel.pyo
+%%PYTHON_SITELIBDIR%%/apiclient/discovery.py
+%%PYTHON_SITELIBDIR%%/apiclient/discovery.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/discovery.pyo
+%%PYTHON_SITELIBDIR%%/apiclient/errors.py
+%%PYTHON_SITELIBDIR%%/apiclient/errors.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/errors.pyo
+%%PYTHON_SITELIBDIR%%/apiclient/http.py
+%%PYTHON_SITELIBDIR%%/apiclient/http.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/http.pyo
+%%PYTHON_SITELIBDIR%%/apiclient/mimeparse.py
+%%PYTHON_SITELIBDIR%%/apiclient/mimeparse.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/mimeparse.pyo
+%%PYTHON_SITELIBDIR%%/apiclient/model.py
+%%PYTHON_SITELIBDIR%%/apiclient/model.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/model.pyo
+%%PYTHON_SITELIBDIR%%/apiclient/sample_tools.py
+%%PYTHON_SITELIBDIR%%/apiclient/sample_tools.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/sample_tools.pyo
+%%PYTHON_SITELIBDIR%%/apiclient/schema.py
+%%PYTHON_SITELIBDIR%%/apiclient/schema.pyc
+%%PYTHON_SITELIBDIR%%/apiclient/schema.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/__init__.py
+%%PYTHON_SITELIBDIR%%/oauth2client/__init__.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/__init__.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/anyjson.py
+%%PYTHON_SITELIBDIR%%/oauth2client/anyjson.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/anyjson.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/appengine.py
+%%PYTHON_SITELIBDIR%%/oauth2client/appengine.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/appengine.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/client.py
+%%PYTHON_SITELIBDIR%%/oauth2client/client.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/client.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/clientsecrets.py
+%%PYTHON_SITELIBDIR%%/oauth2client/clientsecrets.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/clientsecrets.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/crypt.py
+%%PYTHON_SITELIBDIR%%/oauth2client/crypt.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/crypt.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/django_orm.py
+%%PYTHON_SITELIBDIR%%/oauth2client/django_orm.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/django_orm.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/file.py
+%%PYTHON_SITELIBDIR%%/oauth2client/file.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/file.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/gce.py
+%%PYTHON_SITELIBDIR%%/oauth2client/gce.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/gce.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/keyring_storage.py
+%%PYTHON_SITELIBDIR%%/oauth2client/keyring_storage.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/keyring_storage.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/locked_file.py
+%%PYTHON_SITELIBDIR%%/oauth2client/locked_file.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/locked_file.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/multistore_file.py
+%%PYTHON_SITELIBDIR%%/oauth2client/multistore_file.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/multistore_file.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/old_run.py
+%%PYTHON_SITELIBDIR%%/oauth2client/old_run.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/old_run.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/tools.py
+%%PYTHON_SITELIBDIR%%/oauth2client/tools.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/tools.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/util.py
+%%PYTHON_SITELIBDIR%%/oauth2client/util.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/util.pyo
+%%PYTHON_SITELIBDIR%%/oauth2client/xsrfutil.py
+%%PYTHON_SITELIBDIR%%/oauth2client/xsrfutil.pyc
+%%PYTHON_SITELIBDIR%%/oauth2client/xsrfutil.pyo
+%%PYTHON_SITELIBDIR%%/uritemplate/__init__.py
+%%PYTHON_SITELIBDIR%%/uritemplate/__init__.pyc
+%%PYTHON_SITELIBDIR%%/uritemplate/__init__.pyo
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/get_all_accounts.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/get_creative.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/get_direct_deals.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/sample_utils.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/submit_creative.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adexchangebuyer/update_account.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/README
@@ -19,18 +94,19 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_ad_clients_for_account.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_ad_units.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_ad_units_for_custom_channel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_alerts.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_custom_channels.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_custom_channels_for_ad_unit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_dimensions.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_metrics.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_saved_ad_styles.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_saved_reports.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_url_channels.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/sample_utils.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/core_reporting_v3_reference.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/hello_analytics_api_v3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/management_v3_reference.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/sample_utils.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/app.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/embed.html
@@ -41,14 +117,12 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/app.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/client_secrets.json.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/grant.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/index.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/main.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/welcome.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine_with_robots/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine_with_robots/app.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine_with_robots/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine_with_robots/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/audit/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/audit/audit.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/audit/client_secrets.json
@@ -72,27 +146,16 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/templates/plus/login.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/templates/plus/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/urls.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/advertisers/advertisers.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/advertisers/advertisers_template.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/ccoffers/offers.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/ccoffers/offers_template.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/client_secrets.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/events/events.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/events/events_template.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/publishers/publishers.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/publishers/publishers_template.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupssettings/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupssettings/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupssettings/groupsettings.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyring/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyring/client_secrets.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyring/plus.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latitude/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latitude/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latitude/latitude.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/client_secrets.json.orig
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/plus.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/plus.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/client_secrets.json
@@ -110,10 +173,6 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/restricting.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/service_account/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/service_account/tasks.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/moderator.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/prediction.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/template.tmpl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/urlshortener.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/storage/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/storage_serviceaccount_appengine/app.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/storage_serviceaccount_appengine/listing.xsl
@@ -124,49 +183,41 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks_appengine/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks_appengine/settings.py.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks_appengine/templates/index.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threadqueue/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threadqueue/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translate/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translate/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/urlshortener.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/youtube/README
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/youtube
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/urlshortener
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/translate
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/threadqueue
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks_appengine/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks_appengine/css
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks_appengine
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/storage_serviceaccount_appengine
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/storage
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/service_account
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/searchforshopping
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/prediction
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/plus
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/latitude
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/keyring
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/groupssettings
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/publishers
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/events
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/ccoffers
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/advertisers
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/templates/plus
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/plus
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/customsearch
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/coordinate
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/audit
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine_with_robots
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/analytics
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adsense
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adexchangebuyer
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%/apiclient
+@dirrmtry %%PYTHON_SITELIBDIR%%/oauth2client
+@dirrmtry %%PYTHON_SITELIBDIR%%/uritemplate
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/adexchangebuyer
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/adsense
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/analytics
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api-python-client-doc
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/appengine
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/audit
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/blogger
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/coordinate
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/customsearch
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/django_sample/plus
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/django_sample/templates/plus
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/django_sample/templates
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/django_sample
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/groupssettings
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/latitude
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/plus
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/prediction
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/searchforshopping
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/service_account
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/storage
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/storage_serviceaccount_appengine
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/tasks_appengine/css
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/tasks_appengine/templates
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/tasks_appengine
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/translate
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/urlshortener
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/youtube
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

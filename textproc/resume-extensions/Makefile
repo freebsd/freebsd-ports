@@ -17,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/xsl/resume:${PORTSDIR}/textproc/resume \
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/share|${LOCALBASE}/share|' \
 		${WRKSRC}/lib/extrefs.xsl
@@ -27,7 +26,7 @@ post-patch:
 
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/share/xsl/${PORTNAME}"
-	@${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/share/xsl/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
+	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
 
 .include <bsd.port.mk>

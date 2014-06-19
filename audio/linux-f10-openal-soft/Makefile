@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.fc10
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A 3D positional spatialized sound library (Linux Fedora 10)
+COMMENT=	3D positional spatialized sound library (Linux Fedora 10)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

@@ -7,14 +7,14 @@ CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A C preprocessor and lexer
+COMMENT=	C preprocessor and lexer
 
 LICENSE=	BSD3CLAUSE
 
 PLIST_FILES=	bin/ucpp man/man1/ucpp.1.gz
 USES=		gmake
 
-WRKSRC= 	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.17.5
+PORTVERSION=	3.17.6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
   		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_COMMIT=	47e7997
+GH_COMMIT=	b4f02a4
 
 OPTIONS_DEFINE=	BASH ZSH
 
@@ -36,7 +36,7 @@ PLIST_DIRSTRY+=	share/zsh/site-functions share/zsh
 verify: checksum
 
 do-build:
-.for file in portmaster files/portmaster.rc.sample
+.for file in portmaster files/portmaster.rc.sample files/portmaster.8
 	${SED} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/${file} \
 	  > ${WRKDIR}/${file:T}
 .endfor

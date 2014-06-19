@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A software simulator for Microchip PIC microcontrollers
+COMMENT=	Software simulator for Microchip PIC microcontrollers
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkextra-x11-2.0.1:${PORTSDIR}/x11-toolkits/gtkextra2

@@ -3,7 +3,7 @@
 
 PORTNAME=	fontforge
 DISTVERSION=	20120731-b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source \
 		SF/freetype/${PORTNAME}/${PORTVERSION}:freetype \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libuninameslist.so:${PORTSDIR}/textproc/libuninameslist \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libspiro.so:${PORTSDIR}/graphics/libspiro
 
-USES=		gettext gmake iconv tar:bzip2
+USES=		gettext gmake iconv tar:bzip2 libtool
 USE_XORG=	x11 xi ice xkbui
 PATCH_STRIP=	-l
 
@@ -35,7 +35,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 
 OPTIONS_DEFINE=	DOCS MULTILAYER FREETYPE PLUGINS PYTHON CAIRO PANGO
 OPTIONS_SUB=	yes

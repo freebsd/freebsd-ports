@@ -1,4 +1,14 @@
 bin/heyu
-%%EXAMPLESDIR%%/x10config.sample
-%%EXAMPLESDIR%%/x10.sched.sample
-@dirrm share/examples/heyu2
+man/man1/heyu.1.gz
+man/man5/x10aux.5.gz
+man/man5/x10cm17a.5.gz
+man/man5/x10config.5.gz
+man/man5/x10digimax.5.gz
+man/man5/x10oregon.5.gz
+man/man5/x10rfxmeters.5.gz
+man/man5/x10rfxsensors.5.gz
+man/man5/x10sched.5.gz
+man/man5/x10scripts.5.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/x10.sched.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/x10config.sample
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

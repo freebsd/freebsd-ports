@@ -12,9 +12,8 @@ COMMENT=	Set of utilities to configure and monitor wireless access points
 
 GNU_CONFIGURE=	yes
 USES=		iconv tar:bzip2
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lintl -L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

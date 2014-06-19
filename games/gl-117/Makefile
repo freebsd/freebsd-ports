@@ -9,10 +9,10 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GL-117%20Source
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	An OpenGL & SDL action flight simulator
+COMMENT=	OpenGL & SDL action flight simulator
 
 USE_GL=		glut
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl-dir=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -25,19 +25,15 @@ DESKTOP_ENTRIES=	"GL-117" \
 			"Game;ArcadeGame;" \
 			false
 
-MAN6=		gl-117.6
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-install:
-	${INSTALL_MAN}	${WRKSRC}/doc/gl-117.6 ${MANPREFIX}/man/man6
+	${INSTALL_MAN}	${WRKSRC}/doc/gl-117.6 ${STAGEDIR}${MANPREFIX}/man/man6
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/gl-117.pdf ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/gl-117.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

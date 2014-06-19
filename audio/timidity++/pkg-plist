@@ -3,17 +3,19 @@ man/ja/man1/timidity.1.gz
 man/ja/man5/timidity.cfg.5.gz
 man/man1/timidity.1.gz
 man/man5/timidity.cfg.5.gz
-%%PORTDOCS%%%%DOCSDIR%%/README.alsaseq
-%%PORTDOCS%%%%DOCSDIR%%/README.dl
-%%PORTDOCS%%%%DOCSDIR%%/README.m2m
-%%PORTDOCS%%%%DOCSDIR%%/README.mts
-%%PORTDOCS%%%%DOCSDIR%%/README.sf
 %%PORTDOCS%%share/doc/ja/timidity++/README.alsaseq
 %%PORTDOCS%%share/doc/ja/timidity++/README.dl
 %%PORTDOCS%%share/doc/ja/timidity++/README.m2m
 %%PORTDOCS%%share/doc/ja/timidity++/README.mts
 %%PORTDOCS%%share/doc/ja/timidity++/README.sf
-%%PORTDOCS%%@dirrm share/doc/ja/timidity++/
+%%PORTDOCS%%%%DOCSDIR%%/README.alsaseq
+%%PORTDOCS%%%%DOCSDIR%%/README.dl
+%%PORTDOCS%%%%DOCSDIR%%/README.m2m
+%%PORTDOCS%%%%DOCSDIR%%/README.mts
+%%PORTDOCS%%%%DOCSDIR%%/README.sf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/doc/ja/timidity++
+@exec mkdir -p %D/%%TIMID_LIBDIR%%
+@exec mkdir -p %D/share/timidity
 @dirrmtry %%TIMID_LIBDIR%%
 @dirrmtry share/timidity

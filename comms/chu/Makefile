@@ -13,16 +13,11 @@ COMMENT=	Synchronise computer clock to CHU radio station
 
 LICENSE=	GPLv1
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@for f in ${EXTRACT_ONLY}; do  \
-		if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS});\
-		then \
-			exit 1; \
-		fi \
-	done
+NO_WRKSUBDIR=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+post-extract:
 	@${GZIP_CMD} -d ${WRKSRC}/testsignal.gz
 
 post-patch:
@@ -36,11 +31,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/testsignal ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/chu.8 ${STAGEDIR}${PREFIX}/man/man8
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for	d in ${WRKSRC}/COPYING \
-	${WRKSRC}/TESTING \
-	${WRKSRC}/chu.html \
-	${WRKSRC}/chuman.html \
-	${WRKSRC}/ntp.html
+.for d in COPYING TESTING chu.html chuman.html ntp.html
 	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 

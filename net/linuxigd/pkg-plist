@@ -1,9 +1,8 @@
-sbin/upnpd
 etc/linuxigd/dummy.xml
 etc/linuxigd/gateconnSCPD.xml
 etc/linuxigd/gatedesc.xml
 etc/linuxigd/gateicfgSCPD.xml
-@unexec if cmp -s %D/etc/upnpd.conf.sample %D/etc/upnpd.conf; then rm -f %D/etc/upnpd.conf; fi
-etc/upnpd.conf.sample
-@exec if [ ! -f %D/etc/upnpd.conf ]; then cp %D/etc/upnpd.conf.sample %D/etc/upnpd.conf; fi
+@sample etc/upnpd.conf.sample
+man/man8/upnpd.8.gz
+sbin/upnpd
 @dirrm etc/linuxigd

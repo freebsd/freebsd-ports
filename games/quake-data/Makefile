@@ -69,7 +69,7 @@ pre-fetch:
 post-extract:
 .if ${PORT_OPTIONS:MQW_SKINS}
 .  for f in ${SKINFILES}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${f} \
+	${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${f} \
 		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}/qw/skins
 .  endfor
 	(cd ${WRKSRC}/qw/skins && LANG=C ${SH} fixskins.sh)

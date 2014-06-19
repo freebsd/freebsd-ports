@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	A PECL extension if imlib2
+COMMENT=	PECL extension if imlib2
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

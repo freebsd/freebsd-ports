@@ -1,0 +1,16 @@
+--- configure.orig	2014-03-28 20:27:39.000000000 -0700
++++ configure	2014-05-31 01:13:47.000000000 -0700
+@@ -15457,6 +15457,13 @@
+     fi
+     LIBCONCORD_LDFLAGS="-l$USBLIB"
+     ;;
++  freebsd*)
++    USBLIB="hidapi"
++
++$as_echo "#define WANT_HIDAPI 1" >>confdefs.h
++
++    LIBCONCORD_LDFLAGS="-l$USBLIB"
++    ;;
+   darwin*)
+     USBLIB="hidapi"
+ 

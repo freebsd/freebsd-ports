@@ -8,7 +8,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.8
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A library providing windowing and widgets for graphics APIs
+COMMENT=	Library providing windowing and widgets for graphics APIs
 
 LICENSE=	MIT
 
@@ -43,7 +43,7 @@ PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PCRE_CMAKE_ON=		-DCEGUI_HAS_PCRE_REGEX=ON
 PCRE_CMAKE_OFF=		-DCEGUI_HAS_PCRE_REGEX=OFF
 LUA_USES=		lua:51
-LUA_LIB_DEPENDS=	libtoluaxx-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
+LUA_LIB_DEPENDS=	libtolua++-${LUA_VER}.so:${PORTSDIR}/lang/tolua++
 LUA_CMAKE_ON=		-DCEGUI_BUILD_LUA_MODULE=ON -DCEGUI_BUILD_LUA_GENERATOR=ON
 LUA_CMAKE_OFF=		-DCEGUI_BUILD_LUA_MODULE=OFF -DCEGUI_BUILD_LUA_GENERATOR=OFF
 # this option is not currently used as it doesn't compile (see also CMAKE_ARGS below)

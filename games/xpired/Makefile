@@ -3,13 +3,13 @@
 
 PORTNAME=	xpired
 PORTVERSION=	1.22
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-linux/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux_source
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	An action-puzzle maze escape game (SDL)
+COMMENT=	Action-puzzle maze escape game (SDL)
 
 USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/src

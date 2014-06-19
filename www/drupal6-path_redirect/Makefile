@@ -8,8 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Drupal module to allow redirects
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 
 MODULE_FILES=	generate/path_redirect_generate.drush.inc \
 		generate/path_redirect_generate.info \

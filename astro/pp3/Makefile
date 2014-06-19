@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/PP3/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates celestial charts
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_TEX=	latex
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -18,21 +18,17 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 do-build:
-	cd ${WRKSRC} \
-		&& ${CXX} ${CXXFLAGS} -DPP3DATA=\"${DATADIR}\" pp3.cc -o pp3
+	(cd ${WRKSRC} \
+		&& ${CXX} ${CXXFLAGS} -DPP3DATA=\"${DATADIR}\" pp3.cc -o pp3)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pp3 ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.dat ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

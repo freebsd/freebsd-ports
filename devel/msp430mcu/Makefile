@@ -3,7 +3,7 @@
 
 PORTNAME=	${MCUTARGET}mcu
 PORTVERSION=	1.0.${MCUVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/mspgcc/${PORTNAME}
 DISTNAME=	${PORTNAME}-${MCUVERSION}
@@ -24,7 +24,8 @@ MCUTARGET=	msp430
 BUGS_FIXED=	3522088
 LTS_PATCHES!=	for bugid in ${BUGS_FIXED} ; do echo ${PORTNAME}-${MCUVERSION}-sf$${bugid}.patch ; done
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${MCUVERSION}
@@ -46,6 +47,6 @@ pre-install:
 	@${ECHO} "@dirrmtry ${MCUTARGET}" >> ${PLIST}
 
 do-install:
-	@cd ${WRKSRC} && MSP430MCU_ROOT=${WRKSRC} ${SH} scripts/install.sh ${STAGEDIR}${PREFIX}
+	@cd ${WRKSRC} && MSP430MCU_ROOT=${WRKSRC} ${SH} scripts/install.sh ${PREFIX} ${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

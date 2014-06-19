@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}:data
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A wonderful puzzle game
+COMMENT=	Wonderful puzzle game
 
 USE_SDL=	sdl mixer image ttf
 USES=		gmake lua:51

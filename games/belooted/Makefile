@@ -9,7 +9,7 @@ MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/ \
 		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	A popular 32-card trick-taking game played in France
+COMMENT=	Popular 32-card trick-taking game played in France
 
 LICENSE=	GPLv2
 

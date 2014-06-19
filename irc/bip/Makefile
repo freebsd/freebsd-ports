@@ -7,7 +7,7 @@ CATEGORIES=	irc
 MASTER_SITES=	https://projects.duckcorp.org/attachments/download/61/
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	A simple IRC proxy with SSL support
+COMMENT=	Simple IRC proxy with SSL support
 
 LICENSE=	GPLv2
 

@@ -2,30 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	libdvbpsi
-PORTVERSION=	0.2.2
+PORTVERSION=	1.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/libdvbpsi/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	A library for MPEG TS and DVB PSI tables decoding and generation
+COMMENT=	Library for MPEG TS and DVB PSI tables decoding and generation
 
 LICENSE=	LGPL21
 
-USE_BZIP2=	yes
-USES=	pathfix
-USE_AUTOTOOLS=	libtool
+OPTIONS_DEFINE=	DEBUG
+INSTALL_TARGET=	install-strip
+
+USES=	libtool pathfix tar:bzip2
+#CFLAGS=	-Wno-tautological-constant-out-of-range-compare
+
 GNU_CONFIGURE=	yes
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS=		--enable-debug
-.else
-CONFIGURE_ARGS=		--enable-release
-.endif
+DEBUG_CONFIGURE_ON=		--enable-debug
+DEBUG_CONFIGURE_OFF=		--enable-release
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Wall|$${CFLAGS}|g ; \
-		 s|-O6||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/-Werror //' ${WRKSRC}/configure
 
 regression-test:
 	@(cd ${WRKSRC}/misc && ./test_dr)

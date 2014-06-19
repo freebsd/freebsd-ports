@@ -1,20 +1,20 @@
 # Created by: Teruaki Ata <PFA03027@nifty.ne.jp>
 # $FreeBSD$
 
-PORTNAME=       coco
-PORTVERSION=    ${MULE_VERSION}
+PORTNAME=	coco
+PORTVERSION=	${MULE_VERSION}
 PORTREVISION=	1
-CATEGORIES=     textproc
+CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
 		http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/mule/
 DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
 
-MAINTAINER=     PFA03027@nifty.ne.jp
+MAINTAINER=	PFA03027@nifty.ne.jp
 COMMENT=	Code converter for any of Mule's code
 
-MAN1=           coco.1 m2ps.1
-MANCOMPRESSED=  no
+MAN1=		coco.1 m2ps.1
+MANCOMPRESSED=	no
 
 WRKSRC=		${WRKDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}
 GNU_CONFIGURE=	yes

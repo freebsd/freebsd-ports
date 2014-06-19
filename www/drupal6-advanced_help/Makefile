@@ -10,8 +10,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Allows to store module help pages outside the module system
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_DIRS=	help \
 		help_example/help help_example/translations help_example \
 		translations/help/de translations/help translations

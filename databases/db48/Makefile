@@ -3,17 +3,20 @@
 
 PORTNAME=	db48
 PORTVERSION=	4.8.30.0
+PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
+MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	The Berkeley DB package, revision 4.8
-
 # I allow all freebsd committer to do changes to this package without
 # my permission.
+COMMENT=	The Berkeley DB package, revision 4.8
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
@@ -21,11 +24,15 @@ CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
 		--bindir=${PREFIX}/bin/${PORTNAME}
 CONFIGURE_SCRIPT=	../dist/configure
+USES=		libtool:keepla
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install_include install_lib install_utilities
 LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_LDCONFIG=	yes
+
+post-patch:
+	${REINPLACE_CMD} -Ee 's|--mode=install cp -p|--mode=install ${INSTALL} -s|;' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 .for i in libdb libdb_cxx

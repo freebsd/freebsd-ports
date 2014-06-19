@@ -30,7 +30,6 @@ CONFIGURE_ARGS+=	--with-japanese-manual
 INFO+=		tramp
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} == emacs20

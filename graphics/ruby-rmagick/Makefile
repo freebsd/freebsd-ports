@@ -10,8 +10,9 @@ DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby binding for ImageMagick
+COMMENT=	Ruby binding for ImageMagick
 
+USES=		pkgconfig
 BROKEN=		not staged
 
 OPTIONS_DEFINE=		X11
@@ -23,9 +24,9 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 .else
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick-nox11
+LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
 USE_BZIP2=	yes

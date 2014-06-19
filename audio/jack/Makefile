@@ -3,7 +3,7 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.121.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
@@ -18,13 +18,12 @@ LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool:keepla
 
-CONFIGURE_ENV=	LIBS="-pthread"
 CONFIGURE_ARGS=	--enable-portaudio \
 		--with-default-tmpdir=/tmp
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 LATEST_LINK=	jack
 

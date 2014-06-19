@@ -19,7 +19,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -33,9 +32,9 @@ pre-install:
 		&& ${ECHO_CMD} @dirrm ${LILURL_DIR} >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/${LILURL_DIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${LILURL_DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${LILURL_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${LILURL_DIR}
+	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${LILURL_DIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${LILURL_DIR}
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},; s,%%LILURL_DIR%%,${LILURL_DIR},g' \

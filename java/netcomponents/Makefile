@@ -21,7 +21,6 @@ NO_BUILD=	yes
 
 JARFILE=	NetComponents.jar
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -30,8 +29,6 @@ IGNORE=		must be manually fetched from ${MASTER_SITES}.  Download\
 .endif
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.post.mk>

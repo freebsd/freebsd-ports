@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.mcstas.org/download/ \
 		http://www.c-s.li/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A neutron ray-trace simulation package
 
 LICENSE=	GPLv2

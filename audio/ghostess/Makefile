@@ -23,9 +23,8 @@ LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 		liblo.so:${PORTSDIR}/audio/liblo \
 		libjack.so:${PORTSDIR}/audio/jack
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig
+USES=		tar:bzip2 gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jackmidi
 

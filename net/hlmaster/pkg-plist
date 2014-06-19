@@ -1,4 +1,8 @@
 bin/hlmaster
+man/man1/hlmaster.1.gz
+man/man1/hlmaster.filter.1.gz
+man/man1/hlmaster.gameserver.1.gz
+man/man1/hlmaster.list.1.gz
 %%PORTDOCS%%share/doc/hlmaster/README
 %%PORTDOCS%%share/examples/hlmaster/filter.list
 %%PORTDOCS%%share/examples/hlmaster/server.list

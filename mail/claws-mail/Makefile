@@ -13,7 +13,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_GNOME=	gtk20
-USES=		pathfix
+USES=		desktop-file-utils pathfix
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	COMPFACE DEBUG DOCS ENCHANT IPV6 JPILOT LDAP \

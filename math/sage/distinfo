@@ -1,2 +1,4 @@
 SHA256 (sage-6.2.tar.gz) = ca9759fd1d38f51f5187907782c73682cba7dec04d1f6aba6e502084ab4035bb
 SIZE (sage-6.2.tar.gz) = 424950536
+SHA256 (python/Python-2.7.6.tar.xz) = 1fd68e81f8bf7386ff239b7faee9ba387129d2cf34eab13350bd8503a0bff6a1
+SIZE (python/Python-2.7.6.tar.xz) = 10431288

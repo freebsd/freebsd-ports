@@ -2,6 +2,7 @@
 
 PORTNAME=		rmagick
 PORTVERSION=		2.13.2
+PORTREVISION=		1
 CATEGORIES=		graphics rubygems
 MASTER_SITES=		RG
 
@@ -17,10 +18,11 @@ OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
 
+USES=		pkgconfig
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 .else
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick-nox11
+LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
 .include <bsd.port.mk>

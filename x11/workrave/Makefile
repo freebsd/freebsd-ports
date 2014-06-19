@@ -2,60 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	workrave
-PORTVERSION=	1.9.4
-PORTREVISION=	2
+PORTVERSION=	1.10.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSI prevention tool
 
-BUILD_DEPENDS=	gdome-config:${PORTSDIR}/textproc/gdome2
+LICENSE=	GPLv3 # (or later)
 
-OPTIONS_DEFINE=	GNOME NETWORK NLS
-NETWORK_DESC=	Build with network support
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:${PORTSDIR}/devel/py-cheetah
+LIB_DEPENDS=	libgdome.so:${PORTSDIR}/textproc/gdome2
 
-INSTALLS_ICONS=	yes
-DESKTOP_ENTRIES=	"Workrave" "RSI prevention tool" \
-					"${DATADIR}/images/workrave-icon-small.png" \
-					"workrave" \
-					"Utility;" \
-					false
-
-USE_XORG=	x11 xmu recordproto xtst xext
-USES=		pathfix pkgconfig  gmake
-USE_GNOME=	gnomeprefix intlhack gconf2 intltool
-USE_GSTREAMER=	good
+USES=		gettext gmake pathfix pkgconfig
+USE_XORG=	recordproto x11 xext xmu xscrnsaver xtst
+USE_GNOME=	intlhack gconf2 gnomehier gtkmm24
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
+CONFIGURE_ARGS=	--disable-silent-rules --enable-gconf --disable-gnome3 \
+		--disable-indicator
+INSTALLS_ICONS=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--enable-gconf --disable-pulse
 
-.include <bsd.port.options.mk>
-LIB_DEPENDS+=	gdome.8:${PORTSDIR}/textproc/gdome2
+OPTIONS_DEFINE=		GNOME GSTREAMER PULSEAUDIO
+OPTIONS_DEFAULT=	GSTREAMER
+OPTIONS_SUB=		yes
 
-.if ${PORT_OPTIONS:MGNOME}
-LIB_DEPENDS+=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
-USE_GNOME+=	gnomepanel
-PLIST_SUB+=	GNOME=""
-.else
-LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
-CONFIGURE_ARGS+=--disable-gnome
-PLIST_SUB+=	GNOME="@comment "
-.endif
+GNOME_USE=		gnome=gnomepanel
+GNOME_LIB_DEPENDS=	libgnomeuimm-2.6.so:${PORTSDIR}/x11-toolkits/libgnomeuimm26
+GNOME_CONFIGURE_ENABLE=	gnome2
+GSTREAMER_USE=		gstreamer=good
+GSTREAMER_CONFIGURE_ENABLE=	gstreamer
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-.if ${PORT_OPTIONS:MNETWORK}
-LIB_DEPENDS+=	gnet-2.0.0:${PORTSDIR}/net/gnet2
-.else
-CONFIGURE_ARGS+=--disable-distribution
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/if test/s|==|=|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's| gnome-shell$$||' ${WRKSRC}/frontend/applets/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,20 +1,23 @@
 --- build.scm.orig	2009-08-04 03:35:57.000000000 +0900
 +++ build.scm	2009-08-07 01:59:30.000000000 +0900
-@@ -667,12 +667,13 @@
+@@ -665,14 +665,15 @@
+      (dump darwin "" "" #f ("unexmacosx.c" "lastfile.c") ())
+      (dlll darwin "-DSUN_DL" "-ldl" "" () ())
  
-      (c freebsd "" "-export-dynamic" #f () ())
+-     (c freebsd "" "-export-dynamic" #f () ())
++     (c freebsd "" "-Wl,-export-dynamic" #f () ())
       (m freebsd "" "-lm" #f () ())
 -     (curses freebsd "" "-lncurses" "/usr/lib/libncurses.a" () ())
 +     (curses freebsd "" "-lcurses" "/usr/lib/libcurses.a" () ())
       (regex freebsd "-I/usr/include/gnu" "-lgnuregex" "" () ())
--     (editline freebsd "" "-lreadline" "" () ())
-+     (editline freebsd "-I%%READLINE_DIR%%/include" "-lreadline" "-L%%READLINE_DIR%%/lib" () ())
-+     (graphics freebsd "-I%%LOCALBASE%%/include -DX11" "-lX11" "-L%%LOCALBASE%%/lib" () ())
-      (dlll freebsd "-DSUN_DL" "-export-dynamic" "" () ())
+      (editline freebsd "" "-lreadline" "" () ())
+-     (dlll freebsd "-DSUN_DL" "-export-dynamic" "" () ())
 -     (nostart freebsd "" "-e start -dc -dp -Bstatic -lgnumalloc" #f ("pre-crt0.c") ())
 -     (dump freebsd "" "/usr/lib/crt0.o" "" ("unexsunos4.c") ())
++     (graphics freebsd "-I%%LOCALBASE%%/include -DX11" "-lX11" "-L%%LOCALBASE%%/lib" () ())
++     (dlll freebsd "-DSUN_DL" "" "" () ())
 +     (nostart freebsd "" "" #f () ())
-+     (dump freebsd "" "" #f ("unexeclf.c" "gmalloc.c") ())
++     (dump freebsd "" "" #f ("unexelf.c" "gmalloc.c") ())
       (curses netbsd "-I/usr/pkg/include" "-lncurses" "-Wl,-rpath -Wl,/usr/pkg/lib -L/usr/pkg/lib" () ())
       (editline netbsd "-I/usr/pkg/include" "-lreadline" "-Wl,-rpath -Wl,/usr/pkg/lib -L/usr/pkg/lib" () ())
       (graphics netbsd "-I/usr/X11R6/include -DX11" "-lX11" "-Wl,-rpath -Wl,/usr/X11R6/lib -L/usr/X11R6/lib" () ())
@@ -51,9 +54,8 @@
 -		 parms "cc" "-shared"
 +		 parms "%%CC%%" "-shared"
  		 (cond
--		  ((equal? (car fnames) "edline") "-lreadline")
+ 		  ((equal? (car fnames) "edline") "-lreadline")
 -		  ((equal? (car fnames) "x") "-L/usr/X11R6/lib -lSM -lICE -lXext -lX11 -lxpg4")
-+		  ((equal? (car fnames) "edline") "-L%%READLINE_DIR%%/lib -lreadline")
 +		  ((equal? (car fnames) "rgx") "-lgnuregex")
 +		  ((equal? (car fnames) "x") "-L%%LOCALBASE%%/lib -lSM -lICE -lXext -lX11")
  		  (else ""))

@@ -12,8 +12,7 @@ COMMENT=	Small run-time speech synthesis engine
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake desthack
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake desthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes
 USE_LDCONFIG=	yes
@@ -26,7 +25,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-pd|-p|g' ${WRKSRC}/main/Makefile
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

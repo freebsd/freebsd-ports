@@ -19,4 +19,4 @@ USE_GENERIC_PKGMESSAGE=	yes
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

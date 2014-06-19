@@ -9,7 +9,7 @@ MASTER_SITES=	http://cvsbook.red-bean.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tutorial and reference for CVS
+COMMENT=	Tutorial and reference for CVS
 
 OPTIONS_MULTI=		CVSBOOK
 OPTIONS_MULTI_CVSBOOK=	INFO SINGLE_HTML SPLIT_HTML POSTSCRIPT PDF

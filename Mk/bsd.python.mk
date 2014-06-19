@@ -14,7 +14,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # language. It's automatically included when USE_PYTHON is defined in
 # the ports' makefile. If your port requires only some set of Python
 # versions, you can define USE_PYTHON as [min]-[max] or min+ or -max
-# or as an explicit version or as a meta port version (eg. 3.1-3.2
+# or as an explicit version or as a meta port version (eg. 3.2-3.3
 # for [min]-[max], 2.7+ or -3.2 for min+ and -max, 2.7 for an
 # explicit version or 3 for a meta port version).
 #
@@ -122,6 +122,29 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYXML				- Dependency line for the XML extension. As of Python-2.0,
 #					  this extension is in the base distribution.
 #
+# PYTHON_CONCURRENT_INSTALL
+#					- Indicates that the port can be installed for different
+#					  python versions at the same time. The port is supposed
+#					  to use a unique prefix for certain directories using
+#					  USES=uniquefiles:dirs (see the uniquefiles.mk Uses for
+#					  details about the directories), if set to yes. Binaries
+#					  receive an additional suffix, based on PYTHON_VER.
+#
+#					  The values for the uniquefiles USES are set as follows:
+#
+#						UNIQUE_PREFIX=  ${PYTHON_PKGNAMEPREFIX}
+#						UNIQUE_SUFFIX=  -${PYTHON_VER}
+#
+#					  If the port is installed for the current default
+#					  python version, scripts and binaries in
+#
+#						${PREFIX}/bin
+#						${PREFIX}/sbin
+#						${PREFIX}/libexec
+#
+#					  are linked from the prefixed version to the prefix-less
+#					  original name, e.g. bin/foo-2.7 --> bin/foo.
+#
 # USE_PYTHON_PREFIX	- Says that the port installs in ${PYTHONBASE}.
 #
 # USE_PYDISTUTILS	- Use distutils as do-configure, do-build and do-install
@@ -194,7 +217,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  default: ${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 
 _PYTHON_PORTBRANCH=		2.7
-_PYTHON_ALLBRANCHES=	2.7 3.4 3.3 3.2 3.1	# preferred first
+_PYTHON_ALLBRANCHES=	2.7 3.4 3.3 3.2	# preferred first
 
 # Determine version number of Python to use
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
@@ -335,9 +358,9 @@ PYTHON_PORTVERSION=	${PYTHON_DEFAULT_PORTVERSION}
 
 # Python-3.4
 .if ${PYTHON_VERSION} == "python3.4"
-PYTHON_PORTVERSION?=	3.4.0
+PYTHON_PORTVERSION?=	3.4.1
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python34
-PYTHON_REL=		340
+PYTHON_REL=		341
 PYTHON_SUFFIX=		34
 PYTHON_VER=		3.4
 .if exists(${PYTHON_CMD}-config) && ${PORTNAME} != python34
@@ -366,14 +389,6 @@ PYTHON_VER=		3.2
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
 .endif
 
-# Python-3.1
-.elif ${PYTHON_VERSION} == "python3.1"
-PYTHON_PORTVERSION?=	3.1.5
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python31
-PYTHON_REL=		315
-PYTHON_SUFFIX=		31
-PYTHON_VER=		3.1
-
 # Python-2.7
 .elif ${PYTHON_VERSION} == "python2.7"
 PYTHON_PORTVERSION?=	2.7.6
@@ -397,7 +412,6 @@ check-makevars::
 	@${ECHO} "Makefile error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
 	@${ECHO} "Legal values are:"
 	@${ECHO} "  python2.7 (default)"
-	@${ECHO} "  python3.1"
 	@${ECHO} "  python3.2"
 	@${ECHO} "  python3.3"
 	@${ECHO} "  python3.4"
@@ -422,6 +436,46 @@ PYTHON_SITELIBDIR=		${PYTHON_LIBDIR}/site-packages
 PYTHONPREFIX_INCLUDEDIR=	${PYTHON_INCLUDEDIR:S;${PYTHONBASE};${PREFIX};}
 PYTHONPREFIX_LIBDIR=		${PYTHON_LIBDIR:S;${PYTHONBASE};${PREFIX};}
 PYTHONPREFIX_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${PREFIX};}
+
+# Used for recording the installed files.
+_PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
+
+# Ports bound to a certain python version SHOULD
+# - use the PYTHON_PKGNAMEPREFIX
+# - use directories using the PYTHON_PKGNAMEPREFIX
+# - install binaries using the required PYTHON_VER, with
+#   the default python version creating a symlink to the original binary
+#   name (for staging-aware ports).
+#
+# What makes a port 'bound' to a certain python version?
+# - it installs data into PYTHON_SITELIBDIR, PYTHON_INCLUDEDIR, ...
+# - it links against libpython*.so
+# - it uses USE_PYDISTUTILS
+#
+PYTHON_CONCURRENT_INSTALL?=	no
+.if defined(NO_STAGE) && ${PYTHON_CONCURRENT_INSTALL} == "yes"
+BROKEN=		PYTHON_CONCURRENT_INSTALL uses USES=uniquefiles, which is not stage-safe
+.endif
+
+.if ${PYTHON_CONCURRENT_INSTALL} == "yes"
+_USES_POST+=			uniquefiles:dirs
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+UNIQUE_DEFAULT_LINKS=	yes
+.else
+UNIQUE_DEFAULT_LINKS=	no
+.endif
+UNIQUE_PREFIX=			${PYTHON_PKGNAMEPREFIX}
+UNIQUE_SUFFIX=			-${PYTHON_VER}
+
+.if defined(PYDISTUTILS_AUTOPLIST)
+UNIQUE_FIND_SUFFIX_FILES=	\
+	${SED} -e 's|^${PREFIX}/||' ${_PYTHONPKGLIST} ${TMPPLIST} | \
+	${GREP} -e '^bin/.*$$\|^sbin/.*$$\|^libexec/.*$$'
+.else
+UNIQUE_FIND_SUFFIX_FILES=	\
+	${GREP} -he '^bin/.*$$\|^sbin/.*$$\|^libexec/.*$$' ${TMPPLIST} 2>/dev/null
+.endif
+.endif # ${PYTHON_CONCURRENT_INSTALL} == "yes"
 
 _CURRENTPORT:=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 .if defined(USE_PYDISTUTILS) && ${_CURRENTPORT:S/${PYTHON_SUFFIX}$//} != ${PYTHON_PKGNAMEPREFIX}setuptools
@@ -494,7 +548,7 @@ post-install: stage-python-compileall
 
 # distutils support
 PYSETUP?=				setup.py
-PYDISTUTILS_SETUP?=	-c "import setuptools; __file__='${PYSETUP}'; exec(compile(open(__file__).read().replace('\\r\\n', '\\n'), __file__, 'exec'))"
+PYDISTUTILS_SETUP?=	-c "import setuptools; __file__='${PYSETUP}'; exec(compile(open(__file__, 'rb').read().replace(b'\\r\\n', b'\\n'), __file__, 'exec'))"
 PYDISTUTILS_CONFIGUREARGS?=
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
@@ -506,7 +560,6 @@ PYDISTUTILS_INSTALLARGS+=	--single-version-externally-managed
 PYDISTUTILS_INSTALLARGS+=	--root=${STAGEDIR}
 . endif
 .endif
-_PYTHONPKGLIST=				${WRKDIR}/.PLIST.pymodtmp
 PYDISTUTILS_INSTALLARGS:=	--record ${_PYTHONPKGLIST} \
 		${PYDISTUTILS_INSTALLARGS}
 
@@ -546,7 +599,7 @@ add-plist-pymod:
 	@${ECHO_CMD} "${_RELLIBDIR}" >> ${WRKDIR}/.localmtree
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/||' \
 		-e 's|^${PREFIX}/||' \
-		-e 's|^\(man/man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2${MANEXT}|' \
+		-e 's|^\(man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2${MANEXT}|' \
 		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/\(.*\)/\(.*\)|\1|' \
 		-e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
@@ -576,6 +629,7 @@ add-plist-post:
 	@${AWK} '\
 		/\.py[co]$$/ && !($$0 ~ "/" pc "/") {id = match($$0, /\/[^\/]+\.py[co]$$/); if (id != 0) {d = substr($$0, 1, RSTART - 1); dirs[d] = 1}; sub(/\.py[co]$$/,  "." mt "&"); sub(/[^\/]+\.py[co]$$/, pc "/&"); print; next} \
 		/^@dirrm / {d = substr($$0, 8); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
+		/^@dirrmtry / {d = substr($$0, 11); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
 		{print} \
 		END {if (sp in dirs) {print "@dirrm " sp "/" pc}} \
 		' \

@@ -25,10 +25,10 @@ pre-build:
 	@${MKDIR} ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}
 	@${MKDIR} ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}
 	@${MKDIR} ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/lcl/units/${BUILDNAME}/* ${WRKDIR}/${LCLDIR}/units/${BUILDNAME}/
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/components/ideintf/units/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}/
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/components/synedit/units/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units/${BUILDNAME}/* ${WRKDIR}/${LCLDIR}/units/${BUILDNAME}/
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/lazcontrols/lib/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/ideintf/units/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}/
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/synedit/units/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/
 .endif
 
 do-build:
@@ -79,16 +79,16 @@ pre-install:
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}
-	@${MKDIR} ${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}
-	@${MKDIR} ${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}
-	@${MKDIR} ${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}
 
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
 	@cd ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
 	@cd ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
 	@cd ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}/{}" \;

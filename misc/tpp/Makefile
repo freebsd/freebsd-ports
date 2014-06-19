@@ -16,7 +16,9 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 
-MAN1=	tpp.1
+post-patch:
+	@${REINPLACE_CMD} -E -e 's,share/man,man,' \
+		-e 's,(DOC|INS|MAN)PATH),DESTDIR)$$(&,' \
+		${WRKSRC}/Makefile
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

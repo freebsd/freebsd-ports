@@ -21,6 +21,8 @@ lib/libpcp.a
 lib/libpcp.la
 lib/libpcp.so
 lib/libpcp.so.0
+lib/postgresql/pgpool-recovery.so
+man/man8/pgpool.8.gz
 %%DATADIR%%/dist_def_pgbench.sql
 %%DATADIR%%/pgpool.pam
 %%DATADIR%%/replicate_def_pgbench.sql

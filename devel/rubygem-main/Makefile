@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Class Factory and Dsl for Generating Command Line Programs
+COMMENT=	Class Factory and Dsl for Generating Command Line Programs
 
 RUN_DEPENDS=	rubygem-fattr>=2.2.0:${PORTSDIR}/devel/rubygem-fattr \
 		rubygem-arrayfields>=4.7.4:${PORTSDIR}/devel/rubygem-arrayfields \

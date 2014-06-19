@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/String::Compare::ConstantTime.3.gz
 %%PERL5_MAN3%%/String::Compare::README.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Compare/ConstantTime/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Compare/ConstantTime/ConstantTime.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Compare/ConstantTime/ConstantTime.so
 %%SITE_PERL%%/%%PERL_ARCH%%/String/Compare/README.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/String/Compare/ConstantTime.pm

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-unstable-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development release of port bluefish
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \

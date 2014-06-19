@@ -8,10 +8,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}${PORTVERSION:E}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}.src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Verilog HDL simulator
+COMMENT=	Verilog HDL simulator
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	makefile.freebsd

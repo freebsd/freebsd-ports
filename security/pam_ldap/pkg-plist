@@ -1,2 +1,3 @@
+man/man5/pam_ldap.5.gz
 etc/ldap.conf.dist
 lib/pam_ldap.so

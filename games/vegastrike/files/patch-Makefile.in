@@ -1,0 +1,20 @@
+This patch filters-out the libraries not needed for the vegaserver,
+which is a daemon (non-GUI) process. It also removes the useless
+patching of the Boost code.
+
+--- Makefile.in	2012-03-31 21:53:59.000000000 -0400
++++ Makefile.in	2014-06-07 17:30:56.000000000 -0400
+@@ -3064,5 +3064,5 @@
+ vegaserver$(EXEEXT): $(vegaserver_OBJECTS) $(vegaserver_DEPENDENCIES) 
+ 	@rm -f vegaserver$(EXEEXT)
+-	$(CXXLINK) $(vegaserver_LDFLAGS) $(vegaserver_OBJECTS) $(vegaserver_LDADD) $(LIBS)
++	$(CXXLINK) $(vegaserver_LDFLAGS) $(vegaserver_OBJECTS) $(vegaserver_LDADD) $(filter-out -lX% -lGL% -lSDL% -lglut,$(LIBS))
+ src/gui/$(am__dirstamp):
+ 	@$(mkdir_p) src/gui
+@@ -5451,5 +5451,5 @@
+ @BOOSTSYSTEM_FALSE@done
+ 
+-all: boost_patched_gcc44
++all:
+ 
+ boost_patched_gcc44: boost_gcc44.patch

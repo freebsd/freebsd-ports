@@ -10,7 +10,7 @@ DISTFILES=	edith1.55.common.tar.gz \
 		edith1.58.linux-glibc.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A X11 GUI editor for binary and plain text files
+COMMENT=	X11 GUI editor for binary and plain text files
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes

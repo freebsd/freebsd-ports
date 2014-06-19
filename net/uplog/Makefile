@@ -10,8 +10,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	UDP-based ping program
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	README
 PLIST_FILES=	bin/uplog

@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	2014-06-07 13:36:10.752433006 +0800
++++ doc/Makefile.in	2014-06-07 13:36:26.417432242 +0800
+@@ -5,8 +5,8 @@ INSDIR=@prefix@/man/man1
+ 
+ 
+ install:	
+-		cp elf.1 $(INSDIR)/
+-		chmod 644 $(INSDIR)/elf.1
++		cp elf.1 $(DESTDIR)$(INSDIR)/
++		chmod 644 $(DESTDIR)$(INSDIR)/elf.1
+ 
+ uninstall:	install
+ 		rm $(INSDIR)/elf.1

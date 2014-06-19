@@ -9,7 +9,7 @@ MASTER_SITES=	http://gottcode.org/${PORTNAME}/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A color matching game
+COMMENT=	Color matching game
 
 USES=		tar:bzip2 qmake
 USE_QT4=	corelib gui moc_build rcc_build

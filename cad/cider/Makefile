@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	mita
 DISTNAME=	cider1b1
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
-COMMENT=	A mixed-level circuit and device simulator (includes SPICE3)
+COMMENT=	Mixed-level circuit and device simulator (includes SPICE3)
 
 CONFLICTS=	spice-[0-9]*
 WRKSRC=		${WRKDIR}/sim

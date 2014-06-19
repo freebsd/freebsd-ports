@@ -1,6 +1,6 @@
---- makefile.in.orig	Mon Feb  4 18:57:37 2002
-+++ makefile.in	Tue Nov  7 16:45:09 2006
-@@ -5,9 +5,9 @@
+--- makefile.in.orig	2002-02-05 02:57:37.000000000 +0800
++++ makefile.in	2014-06-19 17:46:01.560649652 +0800
+@@ -5,9 +5,9 @@ exec_prefix=@exec_prefix@
  VPATH = @srcdir@
  CC=@CC@
  
@@ -12,21 +12,23 @@
  STATIC_LIB=@STATIC_LIB@
  
  CLIB=viterbi27port.o viterbi29port.o parity.o
-@@ -22,19 +22,18 @@
+@@ -22,19 +22,18 @@ test: vtest27 vtest29
  	./vtest29
  
  install: all
 -	install -m 644 -p $(SHARED_LIB) $(STATIC_LIB) @libdir@
-+	$(BSD_INSTALL_DATA) $(STATIC_LIB) @libdir@
-+	$(BSD_INSTALL_PROGRAM) $(SHARED_LIB) @libdir@
- 	(cd @libdir@;ln -f -s $(SHARED_LIB) libviterbi.so)
- 	(cd @libdir@;ln -f -s $(STATIC_LIB) libviterbi.a)
+-	(cd @libdir@;ln -f -s $(SHARED_LIB) libviterbi.so)
+-	(cd @libdir@;ln -f -s $(STATIC_LIB) libviterbi.a)
 -	ldconfig
 -	install -m 644 -p parity.h viterbi27.h viterbi29.h @includedir@
 -	mkdir -m 0755 -p @mandir@/man3
 -	install -m 644 -p simd-viterbi.3 @mandir@/man3
-+	$(BSD_INSTALL_DATA) parity.h viterbi27.h viterbi29.h @includedir@
-+	$(BSD_INSTALL_MAN) simd-viterbi.3 @mandir@/man3
++	$(BSD_INSTALL_DATA) $(STATIC_LIB) $(DESTDIR)@libdir@
++	$(BSD_INSTALL_PROGRAM) $(SHARED_LIB) $(DESTDIR)@libdir@
++	ln -sf $(SHARED_LIB) $(DESTDIR)@libdir@/libviterbi.so
++	ln -sf $(STATIC_LIB) $(DESTDIR)@libdir@/libviterbi.a
++	$(BSD_INSTALL_DATA) parity.h viterbi27.h viterbi29.h $(DESTDIR)@includedir@
++	$(BSD_INSTALL_MAN) simd-viterbi.3 $(DESTDIR)@mandir@/man3
  
  vtest27: vtest27.o $(STATIC_LIB)
 -	gcc -g -o $@ $^
@@ -38,7 +40,7 @@
  
  vtest27.o: vtest27.c viterbi27.h parity.h
  
-@@ -53,31 +52,31 @@
+@@ -53,31 +52,31 @@ libviterbi_sse2.a: $(SSE2LIB)
  	ar rv $@ $^
  
  $(SHARED_LIB): $(STATIC_LIB)

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scala
-PORTVERSION=	2.10.4
+PORTVERSION=	2.11.1
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/files/archive/
 EXTRACT_SUFX=	.tgz
@@ -11,18 +11,18 @@ MAINTAINER=	mitsururike@gmail.com
 COMMENT=	Scala Programming Language
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE.md
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
 SCALA_HOME=	${DATADIR}
-SCALA_SHRDIRS=	lib misc src
+SCALA_SHRDIRS=	lib
 SCALA_DOCDIRS=	tools
 SCALA_BINS=	fsc \
 		scala \
@@ -40,7 +40,6 @@ PLIST_FILES=	${SCALA_BINS:S,^,bin/,} \
 
 PORTDATA=	*
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
@@ -62,7 +61,5 @@ do-install:
 .for d in ${SCALA_DOCDIRS}
 	@cd ${WRKSRC}/doc/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${d}
 .endfor
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

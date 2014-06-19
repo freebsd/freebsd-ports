@@ -13,16 +13,12 @@ COMMENT=	A dictionary management tool for anthy
 
 USES=		gmake pkgconfig
 USE_GNOME=	gnomehier gtk20
-LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy
 
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		kasumi.1
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	NLS
 

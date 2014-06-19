@@ -9,7 +9,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	tj@FreeBSD.org
-COMMENT=	A Python script to managing merges in a Subversion repository
+COMMENT=	Python script to managing merges in a Subversion repository
 
 BROKEN=		Tries to fetch during extract phase
 

@@ -51,6 +51,7 @@ lib/xcdroast-0.98/sound/test.wav
 @dirrm lib/xcdroast-0.98/icons
 @dirrm lib/xcdroast-0.98/sound
 @dirrm lib/xcdroast-0.98
+man/man1/xcdroast.1.gz
 @unexec if pw groupshow -n xcdwrite 2>/dev/null 1>&2; then pw groupdel -n xcdwrite; fi
 %%NLS%%@dirrmtry share/locale/el_GR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/el_GR

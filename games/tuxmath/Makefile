@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxmath
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3571/ \

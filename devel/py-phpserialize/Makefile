@@ -11,7 +11,7 @@ DISTNAME=	PHPSerialize_v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
-COMMENT=	A python implementation of PHP\'s native serialize() and unserialize()
+COMMENT=	Python implementation of PHP\'s native serialize() and unserialize()
 
 WRKSRC=		${WRKDIR}/v${PORTVERSION}
 

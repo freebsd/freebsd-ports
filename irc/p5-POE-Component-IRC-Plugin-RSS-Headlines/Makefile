@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A POE::Component::IRC plugin that provides RSS headline retrieval
+COMMENT=	POE::Component::IRC plugin that provides RSS headline retrieval
 
 BUILD_DEPENDS=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Component-IRC>=5.07:${PORTSDIR}/irc/p5-POE-Component-IRC \

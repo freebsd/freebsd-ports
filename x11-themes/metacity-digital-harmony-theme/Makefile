@@ -4,5 +4,4 @@
 TYPE=		metacity
 MASTERDIR=	${.CURDIR}/../gtk-digital-harmony-theme
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

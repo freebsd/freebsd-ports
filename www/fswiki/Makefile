@@ -17,22 +17,21 @@ RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
 USES=		perl5 zip
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-extract:
 	${SED} -e 's|__DATADIR__|${DATADIR}|' ${FILESDIR}/setup.sh \
 		>${WRKSRC}/setup.sh
 
 do-install:
-	-${MKDIR} ${DATADIR}
+	-${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}; \
 	for d in `${FIND} * -type d`; do \
-		${MKDIR} ${DATADIR}/$${d}; \
+		${MKDIR} ${STAGEDIR}${DATADIR}/$${d}; \
 	done
 	cd ${WRKSRC}; \
 	for i in `${FIND} . -type f | ${GREP} -v .orig`; do \
-		${INSTALL_DATA} $${i} ${DATADIR}/$${i}; \
+		${INSTALL_DATA} $${i} ${STAGEDIR}${DATADIR}/$${i}; \
 	done
-	${INSTALL_SCRIPT} ${WRKSRC}/wiki.cgi ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/wiki.cgi ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

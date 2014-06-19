@@ -2,6 +2,7 @@
 
 PORTNAME=	ftwin
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.etoilebsd.net/ftwin/ \
 		http://download.meroware.org/ftwin/

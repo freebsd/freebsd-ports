@@ -15,6 +15,9 @@ COMMENT=	WU BLAST, a software package for sequence similarity searches
 # the author, this is not a problem.
 IGNOREFILES=	${DISTFILES}
 
+DEPRECATED=    Rights to BLAST 2.0 (WU-BLAST) have been acquired by Advanced Biocomputing, LLC
+EXPIRATION_DATE=2014-09-04
+
 RESTRICTED=	License does not allow redistribution of binaries. You should first register for the software, which is free for academic use.
 ONLY_FOR_ARCHS=	i386 amd64
 

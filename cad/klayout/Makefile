@@ -7,7 +7,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://178.77.72.242/downloads/
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A Qt-based GDS2 Viewer
+COMMENT=	Qt-based GDS2 Viewer
 
 LICENSE=	GPLv2
 

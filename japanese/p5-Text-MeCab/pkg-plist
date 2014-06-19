@@ -5,7 +5,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/MeCab/Dict.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/MeCab/Node.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MeCab/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MeCab/MeCab.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MeCab/MeCab.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MeCab
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

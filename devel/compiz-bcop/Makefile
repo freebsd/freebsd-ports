@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	compiz-bcop
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.8
 CATEGORIES=	devel x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Code generator for Compiz Fusion Plugins
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \

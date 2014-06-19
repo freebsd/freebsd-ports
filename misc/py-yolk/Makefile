@@ -12,34 +12,27 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Command-line tool for querying PyPI and Python packages installed
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
-OPTIONS_DEFINE=	EXAMPLES MANPAGES
-OPTIONS_DEFAULT=	MANPAGES
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMANPAGES}
-MAN1=	${PORTNAME}.1
-.endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 .endif
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-
 post-install:
-.if ${PORT_OPTIONS:MMANPAGES}
-	${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1/${PORTNAME}.1
-.endif
+	${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} ";"
-	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} ";"
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} ";"
+	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} ";"
 .endif
 
 .include <bsd.port.pre.mk>

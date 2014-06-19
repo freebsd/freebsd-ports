@@ -3,26 +3,25 @@
 
 PORTNAME=	openal
 PORTVERSION=	20060211
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	GENTOO/distfiles
 DISTVERSION=	0.0.8
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	A 3D positional spatialized sound library
+COMMENT=	3D positional spatialized sound library
 
 LICENSE=	GPLv2
 
 CONFLICTS=	openal-soft-[0-9]*
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-Wno-return-type
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-capture \
 		--disable-arts
-USES=		pathfix pkgconfig gmake
+USES=		pathfix pkgconfig gmake libtool:keepla
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ESOUND SDL VORBIS SMPEG ALSA

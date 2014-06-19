@@ -17,7 +17,7 @@ PLIST_FILES=	bin/usbrh
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 800097
-BROKEN=         does not build
+BROKEN=		does not build
 .endif
 
 do-install:

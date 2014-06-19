@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.sippysoft.com/bamby/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bamby@sippysoft.com
-COMMENT=	A database abstraction layer for Python
+COMMENT=	Database abstraction layer for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

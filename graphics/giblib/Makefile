@@ -8,7 +8,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A utility library that includes a wrapper for imlib2
+COMMENT=	Utility library that includes a wrapper for imlib2
 
 USES=		pathfix pkgconfig libtool
 USE_EFL=	imlib2

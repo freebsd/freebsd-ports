@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Venom
-PORTVERSION=	0.2.0.140514
+PORTVERSION=	0.2.0.140611
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,11 +19,17 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 USE_GITHUB=	yes
 GH_ACCOUNT=	naxuroqa
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	6782a3b
+GH_COMMIT=	91b1f35
 
 USES=		cmake desktop-file-utils pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
+
+OPTIONS_DEFINE=		QRCODE
+OPTIONS_DEFAULT=	QRCODE
+QRCODE_DESC=		"Show QR codes"
+QRCODE_CMAKE_ON=	-DENABLE_QR_ENCODE:BOOL="ON"
+QRCODE_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
 
 .include <bsd.port.mk>

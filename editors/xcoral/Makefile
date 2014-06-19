@@ -7,12 +7,12 @@ CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multiwindow mouse-based text editor for X
+COMMENT=	Multiwindow mouse-based text editor for X
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lgnuregex"
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
+LIBS+=		-lgnuregex
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"

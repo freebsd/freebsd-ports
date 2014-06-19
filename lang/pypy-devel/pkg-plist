@@ -1578,6 +1578,7 @@
 %%PYPY_LIBDIR%%/lib_pypy/_tkinter/__init__.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_tkinter/app.py
 %%PYPY_LIBDIR%%/lib_pypy/_tkinter/app.pyc
+%%PYPY_LIBDIR%%/lib_pypy/_tkinter/license.terms
 %%PYPY_LIBDIR%%/lib_pypy/_tkinter/tclobj.py
 %%PYPY_LIBDIR%%/lib_pypy/_tkinter/tclobj.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_tkinter/tklib.py
@@ -1673,6 +1674,8 @@
 %%PYPY_LIBDIR%%/lib_pypy/dbm.pyc
 %%PYPY_LIBDIR%%/lib_pypy/future_builtins.py
 %%PYPY_LIBDIR%%/lib_pypy/future_builtins.pyc
+%%PYPY_LIBDIR%%/lib_pypy/gdbm.py
+%%PYPY_LIBDIR%%/lib_pypy/gdbm.pyc
 %%PYPY_LIBDIR%%/lib_pypy/greenlet.egg-info
 %%PYPY_LIBDIR%%/lib_pypy/greenlet.py
 %%PYPY_LIBDIR%%/lib_pypy/greenlet.pyc

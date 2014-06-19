@@ -7,7 +7,7 @@ CATEGORIES=	chinese x11
 MASTER_SITES=	SF
 
 MAINTAINER=	gugod@gugod.org
-COMMENT=	A color vt102 terminal emulator with transparency support
+COMMENT=	Color vt102 terminal emulator with transparency support
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

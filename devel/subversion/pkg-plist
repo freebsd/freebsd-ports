@@ -8,6 +8,9 @@ bin/svn
 bin/svnadmin
 %%TOOLS%%bin/svnauthz
 %%TOOLS%%bin/svnauthz-validate
+%%TOOLS%%bin/svndiff
+%%TOOLS%%bin/svndiff3
+%%TOOLS%%bin/svndiff4
 bin/svndumpfilter
 bin/svnlook
 bin/svnmucc
@@ -64,14 +67,6 @@ include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
-%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.a
-%%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so
-%%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so.0
-%%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so.0.0.0
-%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.a
-%%DYNAMIC_ENABLED%%%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.so
-%%DYNAMIC_ENABLED%%%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.so.0
-%%DYNAMIC_ENABLED%%%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.so.0.0.0
 lib/libsvn_client-1.a
 %%DYNAMIC_ENABLED%%lib/libsvn_client-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_client-1.so.0
@@ -128,16 +123,6 @@ lib/libsvn_wc-1.a
 %%DYNAMIC_ENABLED%%lib/libsvn_wc-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_wc-1.so.0
 %%DYNAMIC_ENABLED%%lib/libsvn_wc-1.so.0.0.0
-@comment enable / disable modules in this order: dav_svn, authz_svn, dontdothat
-%%MOD_DAV_SVN%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dav_svn_module/d' %D/%%APACHEETCDIR%%/httpd.conf
-%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dav_svn.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -a -n dav_svn %D/%F
-%%MOD_DAV_SVN%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+authz_svn_module/d' %D/%%APACHEETCDIR%%/httpd.conf
-%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -a -n authz_svn %D/%F
-%%MOD_DAV_SVN%%%%TOOLS%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dontdothat_module/d' %D/%%APACHEETCDIR%%/httpd.conf
-%%MOD_DAV_SVN%%%%TOOLS%%%%APACHEMODDIR%%/mod_dontdothat.so
-%%MOD_DAV_SVN%%%%TOOLS%%@exec %D/sbin/apxs -e -a -n dontdothat %D/%F
 man/man1/svn.1.gz
 man/man1/svnadmin.1.gz
 man/man1/svndumpfilter.1.gz

@@ -2,7 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Parse/ePerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ePerl/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ePerl/ePerl.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ePerl/ePerl.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/ePerl/.packlist
 %%PERL5_MAN3%%/Parse::ePerl.3.gz
 %%PERL5_MAN3%%/Apache::ePerl.3.gz

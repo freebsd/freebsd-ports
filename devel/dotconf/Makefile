@@ -3,6 +3,7 @@
 
 PORTNAME=	dotconf
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GENTOO/distfiles
 
@@ -13,8 +14,9 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=	pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		pathfix pkgconfig libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 post-patch:

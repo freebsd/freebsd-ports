@@ -1,0 +1,3 @@
+# $FreeBSD$
+
+OPTIONS_EXCLUDE= JAVA

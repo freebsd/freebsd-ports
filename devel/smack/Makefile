@@ -3,7 +3,7 @@
 
 PORTNAME=	smack
 PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	vg@FreeBSD.org
@@ -24,7 +24,6 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

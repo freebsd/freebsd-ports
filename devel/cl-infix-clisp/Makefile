@@ -8,7 +8,10 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A lisp macro to read math statements in infix notation
+COMMENT=	Lisp macro to read math statements in infix notation
+
+DEPRECATED=	Depends on deprecated lang/clisp
+EXPIRATION_DATE=	2014-07-28
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:${PORTSDIR}/devel/cl-infix
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:${PORTSDIR}/devel/cl-infix

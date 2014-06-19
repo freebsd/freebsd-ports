@@ -31,7 +31,6 @@ RLTTYTTER_DESC=	Use T::R::TTYtter readline driver (beta!)
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
@@ -51,6 +50,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\#!/usr/bin/perl|\#!${PERL}|' ${WRKSRC}/${PORTVERSION}.txt
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTVERSION}.txt ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTVERSION}.txt ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

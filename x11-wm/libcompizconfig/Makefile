@@ -2,21 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libcompizconfig
-PORTVERSION=	0.8.4
-PORTREVISION=	8
+PORTVERSION=	0.8.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Alternative configuration system for Compiz
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	intltool libxml2
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -42,5 +40,10 @@ post-patch:
 		${WRKSRC}/src/filewatch.c		\
 		${WRKSRC}/src/ini.c			\
 		${WRKSRC}/backend/ini.c
+
+post-install:
+.for l in compizconfig/backends/libini.so compiz/libccp.so libcompizconfig.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${l}
+.endfor
 
 .include <bsd.port.post.mk>

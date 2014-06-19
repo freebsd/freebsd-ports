@@ -8,7 +8,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	A validating, recursive, and caching DNS resolver
+COMMENT=	Validating, recursive, and caching DNS resolver
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

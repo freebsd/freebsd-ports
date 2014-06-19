@@ -13,12 +13,12 @@ COMMENT=	New flavor of asclock (GTK version)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	asclock
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 USE_XORG=	x11 xt
 USE_GNOME=	gtk12
 HAS_CONFIGURE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 
@@ -30,6 +30,6 @@ do-configure:
 .endif
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/asclock
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/asclock
 
 .include <bsd.port.mk>

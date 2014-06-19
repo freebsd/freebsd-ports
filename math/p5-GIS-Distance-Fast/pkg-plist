@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/GIS/Distance/Formula/Haversine/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GIS/Distance/Formula/Vincenty/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/Fast/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/Fast/Fast.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/Fast/Fast.so
 %%PERL5_MAN3%%/GIS::Distance::Fast.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Formula::Cosine::Fast.3.gz

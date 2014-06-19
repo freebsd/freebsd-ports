@@ -15,8 +15,7 @@ RUN_DEPENDS=	autob5:${PORTSDIR}/chinese/autoconvert
 
 PROJECTHOST=	chinese-fortune
 NO_BUILD=	yes
-USES=		gmake
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake
 SUB_FILES=	pkg-message
 
 .if !exists(/usr/games/fortune) || !exists(/usr/games/strfile)

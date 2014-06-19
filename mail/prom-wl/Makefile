@@ -19,29 +19,27 @@ NO_BUILD=	yes
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} ChangeLog \
-					prom-wl-usage.jis \
-					${DOCSDIR}/)
-	@(cd ${FILESDIR}; ${INSTALL_SCRIPT} byte-compile ${DOCSDIR}/)
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${FILESDIR} ; ${INSTALL_DATA} dot.emacs dot.procmailrc \
-					${EXAMPLESDIR}/)
-.endif
-
-	@${MKDIR} ${ELISPDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} prom-wl.el ${ELISPDIR}/)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}; ${INSTALL_DATA} ChangeLog prom-wl-usage.jis \
+		${STAGEDIR}${DOCSDIR})
+	(cd ${FILESDIR}; ${INSTALL_SCRIPT} byte-compile ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${FILESDIR} ; ${INSTALL_DATA} dot.emacs dot.procmailrc \
+		${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${ELISPDIR}
+	(cd ${WRKSRC}; ${INSTALL_DATA} prom-wl.el ${STAGEDIR}${ELISPDIR})
 
 # For xemacs package install configuration
-	@${MKDIR} ${SITEPKGDIR}/lisp/prom-wl ${SITEPKGDIR}/pkginfo
-	@${LN} -sf ${ELISPDIR}/prom-wl.el ${SITEPKGDIR}/lisp/prom-wl/prom-wl.el
-	@${ECHO_CMD} 'pkginfo/MANIFEST.prom-wl' > ${SITEPKGDIR}/pkginfo/MANIFEST.prom-wl
-	@${ECHO_CMD} 'lisp/prom-wl/prom-wl.el' >> ${SITEPKGDIR}/pkginfo/MANIFEST.prom-wl
+	@${MKDIR} ${STAGEDIR}${SITEPKGDIR}/lisp/prom-wl
+	@${MKDIR} ${STAGEDIR}${SITEPKGDIR}/pkginfo
+	@${LN} -sf ${ELISPDIR}/prom-wl.el \
+		${STAGEDIR}${SITEPKGDIR}/lisp/prom-wl/prom-wl.el
+	@${ECHO_CMD} 'pkginfo/MANIFEST.prom-wl' > \
+		${STAGEDIR}${SITEPKGDIR}/pkginfo/MANIFEST.prom-wl
+	@${ECHO_CMD} 'lisp/prom-wl/prom-wl.el' >> \
+		${STAGEDIR}${SITEPKGDIR}/pkginfo/MANIFEST.prom-wl
 
 .include <bsd.port.mk>

@@ -28,6 +28,8 @@ include/ck_sequence.h
 include/ck_spinlock.h
 include/ck_stack.h
 include/ck_stdint.h
+include/ck_swlock.h
+include/ck_tflock.h
 include/gcc/arm/ck_f_pr.h
 include/gcc/arm/ck_pr.h
 include/gcc/ck_cc.h
@@ -52,10 +54,10 @@ include/spinlock/fas.h
 include/spinlock/hclh.h
 include/spinlock/mcs.h
 include/spinlock/ticket.h
-lib/libck.so.%%VERSION%%
+lib/libck.a
 lib/libck.so
 lib/libck.so.0
-lib/libck.a
+lib/libck.so.%%VERSION%%
 libdata/pkgconfig/ck.pc
 man/man3/CK_ARRAY_FOREACH.3.gz
 man/man3/CK_COHORT_INIT.3.gz
@@ -111,8 +113,8 @@ man/man3/ck_epoch_unregister.3.gz
 man/man3/ck_hs_count.3.gz
 man/man3/ck_hs_destroy.3.gz
 man/man3/ck_hs_fas.3.gz
-man/man3/ck_hs_get.3.gz
 man/man3/ck_hs_gc.3.gz
+man/man3/ck_hs_get.3.gz
 man/man3/ck_hs_grow.3.gz
 man/man3/ck_hs_init.3.gz
 man/man3/ck_hs_iterator_init.3.gz
@@ -151,6 +153,7 @@ man/man3/ck_ht_reset_size_spmc.3.gz
 man/man3/ck_ht_reset_spmc.3.gz
 man/man3/ck_ht_set_spmc.3.gz
 man/man3/ck_ht_stat.3.gz
+man/man3/ck_pflock.3.gz
 man/man3/ck_pr.3.gz
 man/man3/ck_pr_add.3.gz
 man/man3/ck_pr_and.3.gz
@@ -200,11 +203,13 @@ man/man3/ck_rwcohort.3.gz
 man/man3/ck_rwlock.3.gz
 man/man3/ck_sequence.3.gz
 man/man3/ck_spinlock.3.gz
-@dirrmtry include/spinlock
-@dirrmtry include/gcc/x86_64
-@dirrmtry include/gcc/x86
-@dirrmtry include/gcc/sparcv9
-@dirrmtry include/gcc/ppc64
-@dirrmtry include/gcc/ppc
+man/man3/ck_swlock.3.gz
+man/man3/ck_tflock.3.gz
 @dirrmtry include/gcc/arm
+@dirrmtry include/gcc/ppc
+@dirrmtry include/gcc/ppc64
+@dirrmtry include/gcc/sparcv9
+@dirrmtry include/gcc/x86
+@dirrmtry include/gcc/x86_64
 @dirrmtry include/gcc
+@dirrmtry include/spinlock

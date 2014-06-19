@@ -1,5 +1,4 @@
-@unexec if cmp -s %D/etc/imapproxyd.conf.default %D/etc/imapproxyd.conf; then rm -f %D/etc/imapproxyd.conf; fi
-etc/imapproxyd.conf.sample
+@sample etc/imapproxyd.conf.sample
 sbin/pimpstat
 sbin/in.imapproxyd
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

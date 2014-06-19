@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-tty
 DISTNAME=	se${PORTVERSION:S/.//g:tl}
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	A dungeon explorin', slashin', hackin' game
+COMMENT=	Dungeon explorin', slashin', hackin' game
 
 USES=		gmake
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

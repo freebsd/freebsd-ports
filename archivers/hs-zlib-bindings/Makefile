@@ -8,7 +8,7 @@ CATEGORIES=	archivers haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Low-level bindings to the zlib package
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_CABAL=	zlib>=0.5.2.0
 

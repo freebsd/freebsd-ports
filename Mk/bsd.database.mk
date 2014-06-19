@@ -1,12 +1,9 @@
-# -*- tab-width: 4; -*-
-# ex: ts=4
-#
 # $FreeBSD$
 #
 
 .if defined(_POSTMKINCLUDED) && !defined(Database_Post_Include)
 
-Database_Post_Include=			bsd.database.mk
+Database_Post_Include=		bsd.database.mk
 Database_Include_MAINTAINER=	ports@FreeBSD.org
 
 # This file contains some routines to interact with different databases, such
@@ -16,91 +13,91 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #
 ##
 # USE_MYSQL		- Add MySQL (client/server/embedded) dependency (default:
-#				  client).
-#				  If no version is given (by the maintainer via the port or
-#				  by the user via defined variable), try to find the
-#				  currently installed version.  Fall back to default if
-#				  necessary (MySQL-5.5 = 55).
+#			  client).
+#			  If no version is given (by the maintainer via the port or
+#			  by the user via defined variable), try to find the
+#			  currently installed version.  Fall back to default if
+#			  necessary (MySQL-5.5 = 55).
 # DEFAULT_MYSQL_VER
-#				- MySQL default version.  Can be overridden within a port.
-#				  Default: 55.
+#			- MySQL default version.  Can be overridden within a port.
+#			  Default: 55.
 # WANT_MYSQL_VER
-#				- Maintainer can set an arbitrary version of MySQL to always
-#				  build this port with (overrides WITH_MYSQL_VER).
+#			- Maintainer can set an arbitrary version of MySQL to always
+#			  build this port with (overrides WITH_MYSQL_VER).
 # IGNORE_WITH_MYSQL
-#				- This variable can be defined if the ports does not support
-#				  one or more versions of MySQL.
+#			- This variable can be defined if the ports does not support
+#			  one or more versions of MySQL.
 # WITH_MYSQL_VER
-#				- User defined variable to set MySQL version.
+#			- User defined variable to set MySQL version.
 # MYSQL_VER
-#				- Detected MySQL version.
+#			- Detected MySQL version.
 ##
 # USE_PGSQL		- Add PostgreSQL client dependency.  Components can be depended
-#				  on using USE_PGSQL=	component[:target].  For the full list
-#				  use make -V _USE_PGSQL_DEP
-#				  If no version is given (by the maintainer via the port or
-#				  by the user via defined variable), try to find the
-#				  currently installed version.  Fall back to default if
-#				  necessary (PostgreSQL-9.0 = 90).
+#			  on using USE_PGSQL=	component[:target].  For the full list
+#			  use make -V _USE_PGSQL_DEP
+#			  If no version is given (by the maintainer via the port or
+#			  by the user via defined variable), try to find the
+#			  currently installed version.  Fall back to default if
+#			  necessary (PostgreSQL-9.0 = 90).
 # DEFAULT_PGSQL_VER
-#				- PostgreSQL default version, currently 90.
+#			- PostgreSQL default version, currently 90.
 # WANT_PGSQL_VER
-#				- Maintainer can set an arbitrary version of PostgreSQL to
-#				  always build this port with (overrides WITH_PGSQL_VER).
-#				  Minimum and maximum versions can be set (e.g. 90+)
+#			- Maintainer can set an arbitrary version of PostgreSQL to
+#			  always build this port with (overrides WITH_PGSQL_VER).
+#			  Minimum and maximum versions can be set (e.g. 90+)
 # WITH_PGSQL_VER
-#				- User defined variable to set PostgreSQL version.
+#			- User defined variable to set PostgreSQL version.
 # PGSQL_VER
-#				- Detected PostgreSQL version.
+#			- Detected PostgreSQL version.
 ##
 # USE_BDB		- Add Berkeley DB library dependency.
-#				  If no version is given (by the maintainer via the port or
-#				  by the user via defined variable), try to find the
-#				  currently installed version.  Fall back to default if
-#				  necessary (db41+).
+#			  If no version is given (by the maintainer via the port or
+#			  by the user via defined variable), try to find the
+#			  currently installed version.  Fall back to default if
+#			  necessary (db41+).
 # INVALID_BDB_VER
-#				- This variable can be defined when the port does not
-#				  support one or more versions of Berkeley DB.
+#			- This variable can be defined when the port does not
+#			  support one or more versions of Berkeley DB.
 # WANT_BDB_VER
-#				- Maintainer can set a version of Berkeley DB to always
-#				  build this port with (overrides WITH_BDB_VER).
+#			- Maintainer can set a version of Berkeley DB to always
+#			  build this port with (overrides WITH_BDB_VER).
 # WITH_BDB_VER
-#				- User defined global variable to set Berkeley DB version.
+#			- User defined global variable to set Berkeley DB version.
 # <UNIQUENAME>_WITH_BDB_VER
-#				- User defined port specific variable to set Berkeley DB
-#				  version.
+#			- User defined port specific variable to set Berkeley DB
+#			  version.
 # WITH_BDB_HIGHEST
-#				- Use the highest installed version of Berkeley DB.
+#			- Use the highest installed version of Berkeley DB.
 # BDB_LIB_NAME
-#				- This variable is automatically set to the name of the
-#				  Berkeley DB library (default: db41).
+#			- This variable is automatically set to the name of the
+#			  Berkeley DB library (default: db41).
 # BDB_LIB_CXX_NAME
-#				- This variable is automatically set to the name of the
-#				  Berkeley DB C++ library (default: db41_cxx).
+#			- This variable is automatically set to the name of the
+#			  Berkeley DB C++ library (default: db41_cxx).
 # BDB_INCLUDE_DIR
-#				- This variable is automatically set to the location of
-#				  the Berkeley DB include directory (default:
-#				  ${LOCALBASE}/include/db41).
+#			- This variable is automatically set to the location of
+#			  the Berkeley DB include directory (default:
+#			  ${LOCALBASE}/include/db41).
 # BDB_LIB_DIR
-#				- This variable is automatically set to the location of
-#				  the Berkeley DB library directory.
+#			- This variable is automatically set to the location of
+#			  the Berkeley DB library directory.
 # BDB_VER
-#				- Detected Berkeley DB version.
+#			- Detected Berkeley DB version.
 ##
-# USE_SQLITE	- Add dependency on SQLite library.  Valid values are:
-#				  3 and 2.  If version is not specified directly then
-#				  SQLite-3 is used (if USE_SQLITE= yes).
+# USE_SQLITE		- Add dependency on SQLite library.  Valid values are:
+#			  3 and 2.  If version is not specified directly then
+#			  SQLite-3 is used (if USE_SQLITE= yes).
 # SQLITE_VER
-#				- Detected SQLite version.
+#			- Detected SQLite version.
 ##
-# USE_FIREBIRD	- Add dependency on Firebird library.  Valid values are:
-#				  2 and 1.  If no version is given by the maintainer (if
-#				  USE_FIREBIRD= yes) and the user did not define
-#				  WITH_FIREBIRD_VER variable, fall back to default "2".
+# USE_FIREBIRD		- Add dependency on Firebird library.  Valid values are:
+#			  2 and 1.  If no version is given by the maintainer (if
+#			  USE_FIREBIRD= yes) and the user did not define
+#			  WITH_FIREBIRD_VER variable, fall back to default "2".
 # WITH_FIREBIRD_VER
-#				- User defined variable to set Firebird version.
+#			- User defined variable to set Firebird version.
 # FIREBIRD_VER
-#				- Detected Firebird version.
+#			- Detected Firebird version.
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 

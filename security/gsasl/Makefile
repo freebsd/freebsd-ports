@@ -3,7 +3,7 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libntlm.so:${PORTSDIR}/security/libntlm
 
-USES=		charsetfix pathfix perl5 pkgconfig
+USES=		charsetfix pathfix perl5 pkgconfig libtool
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -64,7 +64,11 @@ STATIC_CONFIGURE_OFF=	--enable-dynamic
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
 MULTIBYTE_CONFIGURE_ENABLE=	multibyte
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 INFO=	zsh
@@ -116,7 +120,8 @@ post-install:
 .endif
 	${STAGEDIR}${PREFIX}/bin/zsh -fc ' \
 		setopt extendedglob nomark_dirs; \
-		for i in ${STAGEDIR}${DATADIR}/${ZSH_VER}/functions/**/*(/) ; do \
+		cd ${STAGEDIR}/${DATADIR}/${ZSH_VER} ; \
+		for i in functions/**/*(/) ; do \
 			zcompile -U -M $$i.zwc $$i/*~*.zwc(^/) ; \
 			${CHMOD} 644 $$i.zwc ; \
 		done'
@@ -124,6 +129,4 @@ post-install:
 regression-test:
 	@cd ${WRKSRC}; ${SETENV} -i ${MAKE} check
 
-
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

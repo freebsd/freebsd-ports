@@ -7,7 +7,7 @@ CATEGORIES=	graphics enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/extra/
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A simple viewer for .edj files
+COMMENT=	Simple viewer for .edj files
 
 USES=		pkgconfig
 DIST_SUBDIR=	e17

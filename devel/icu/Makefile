@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-PORTVERSION=	52.1
+PORTVERSION=	53.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
 		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
@@ -33,9 +33,12 @@ CONFIGURE_ARGS+=	--with-data-packaging=library \
 			--enable-shared \
 			--enable-static
 
+.if defined(X_BUILD_FOR)
+CONFIGURE_ARGS+=	--with-cross-build
+.endif
+
 
 USES=			gmake pathfix
-INSTALL_TARGET=		install install-manx
 
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION}
@@ -59,6 +62,15 @@ iotest cintltst intltest:
 	cd ${WRKSRC}/test/${.TARGET} && ${SETENV} \
 	    LD_LIBRARY_PATH=${WRKSRC}/lib:${WRKSRC}/tools/ctestfw \
 	    ./${.TARGET}
+
+post-stage:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/g* \
+		${STAGEDIR}${PREFIX}/bin/*conv \
+		${STAGEDIR}${PREFIX}/bin/icuinfo \
+		${STAGEDIR}${PREFIX}/bin/derb \
+		${STAGEDIR}${PREFIX}/bin/pkgdata
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libicuda*.so.*
 
 test regression-test: iotest cintltst intltest
 

@@ -8,5 +8,7 @@ DISTNAME=	crystal_project
 
 COMMENT=	KDE Crystal Project iconset
 
+BROKEN=		Unfetchable
+
 NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

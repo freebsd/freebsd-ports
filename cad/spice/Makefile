@@ -13,7 +13,7 @@ DIST_SUBDIR=	spice
 EXTRACT_ONLY=	spice3f5${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A general-purpose circuit simulation program
+COMMENT=	General-purpose circuit simulation program
 
 LICENSE=	BSD
 

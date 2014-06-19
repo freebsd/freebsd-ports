@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.4.2
-PORTREVISION=	3
+PORTVERSION=	0.4.3
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -36,6 +35,6 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} strip
+	${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>

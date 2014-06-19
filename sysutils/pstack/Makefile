@@ -2,22 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	pstack
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/bsd-${PORTNAME}/bsd-${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Retrieve process/core file stack traces
 
-ONLY_FOR_ARCHS=	i386
+LICENSE=	BSD2CLAUSE
 
-MANCOMPRESSED=	yes
-MAN1=		pstack.1
-PLIST_FILES=	bin/pstack
+USE_GITHUB=	yes
+GH_ACCOUNT=	z0nt
+GH_PROJECT=	${PORTNAME}
+GH_COMMIT=	874a052
+GH_TAGNAME=	874a052
+USES=		uidfix
+ONLY_FOR_ARCHS=	amd64 i386
+CONFLICTS=	pstacku-[0-9]*
+MAKE_ARGS+=	BINDIR=${PREFIX}/bin
+MAKE_ARGS+=	MANDIR=${PREFIX}/man/man
+MAKE_ARGS+=	LIBDIR=${PREFIX}/lib
 
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e 's/DT_COUNT/DT_BIND_NOW/' ${WRKSRC}/elf.c
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

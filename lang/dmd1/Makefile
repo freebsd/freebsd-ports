@@ -3,6 +3,7 @@
 
 PORTNAME=	dmd
 PORTVERSION=	1.076
+PORTREVISION=	1
 PKGNAMESUFFIX=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
@@ -52,7 +53,7 @@ post-patch:
 		${WRKDIR}/dmd/man/man1/dmd.1		\
 		${WRKDIR}/dmd/man/man1/dmd.conf.5
 	@${REINPLACE_CMD} -e 's|"/etc/"|"${PREFIX}/etc/"|' ${WRKSRC}/inifile.c
-	@${REINPLACE_CMD} -e 's|dmd.conf|dmd2.conf|' ${WRKSRC}/mars.c
+	@${REINPLACE_CMD} -e 's|dmd.conf|dmd1.conf|' ${WRKSRC}/mars.c
 .endif
 	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${MODULEDIR}|" ${WRKDIR}/dmd/freebsd/bin32/dmd.conf
 	@${CP} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango

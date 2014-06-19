@@ -8,6 +8,7 @@ bin/octave-config
 bin/octave-config-%%OCTAVE_VERSION%%
 man/man1/mkoctfile.1.gz
 man/man1/octave-config.1.gz
+man/man1/octave-cli.1.gz
 man/man1/octave.1.gz
 share/applications/www.octave.org-octave.desktop
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps

@@ -14,8 +14,7 @@ EXTRACT_ONLY=	ckeditor-6.x-1.1.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal 6.x Ckeditor WYSIWYG HTML editor
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 
 MODULE_DIRS=	translations plugins/mediaembed/images \
 		plugins/mediaembed plugins/linktonode/jscripts \
@@ -314,9 +313,7 @@ DOC_FILES=	ckeditor/LICENSE.html ckeditor/INSTALL.html \
 		TROUBLESHOOTING.txt README.txt \
 		LICENSE.txt CHANGELOG.txt
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	@cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/ckeditor_3.3.tar.gz
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

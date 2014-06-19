@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hevea
-PORTVERSION=	2.14
+PORTVERSION=	2.16
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/

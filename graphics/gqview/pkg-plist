@@ -1,4 +1,5 @@
 bin/gqview
+man/man1/gqview.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/html/10_1_general.html
 %%PORTDOCS%%%%DOCSDIR%%/html/10_2_image.html

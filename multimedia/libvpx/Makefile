@@ -10,14 +10,13 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	VP8/VP9 Codec SDK
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm
 
-USES=		gmake perl5
-USE_BZIP2=	yes
+USES=		gmake perl5 tar:bzip2
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	yes

@@ -1,15 +1,14 @@
 # Created by: Michael Reifenberger <mr@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		kicad
-DISTVERSION=    r${BZR_SRC_REV}
-PORTREVISION=	5
-CATEGORIES=		cad
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=     mr
-PKGNAMESUFFIX=  -devel
+PORTNAME=	kicad
+DISTVERSION=	r${BZR_SRC_REV}
+PORTREVISION=	6
+CATEGORIES=	cad
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mr
+PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
-# Additional patches: http://svn.openmoko.org/trunk/gta02-core/kicad-patches/
 
 MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=      kicad-2013*
+CONFLICTS=	kicad-2013*
 
 DOCVERSION=	1.1
 LIBVERSION=	1.0
@@ -29,7 +28,7 @@ USE_GL=		glew glu
 USE_WX=		2.8
 WX_UNICODE=	yes
 USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
-USE_PYTHON=     yes
+USE_PYTHON=	yes
 
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
@@ -37,14 +36,14 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-#USE_GCC=	yes
-USES=		tar:bzip2 cmake gettext
+USES=		desktop-file-utils shared-mime-info compiler:c++11-lang tar:bzip2 cmake gettext
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DCMAKE_BUILD_TYPE="Debug" \
 		-DKICAD_TESTING_VERSION=ON \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
-		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
+		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
+		-DKICAD_SKIP_BOOST=YES
 
 .if exists(${LOCALBASE}/bin/konqueror)
 RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kde4-baseapps
@@ -53,10 +52,10 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
 .if defined(BOOTSTRAP)
-BOOST_RELEASE=	     1.54.0
-BOOST_VERS=         ${BOOST_RELEASE:S|.|_|g}
-BZR_SRC_REV!=        bzr revno lp:kicad
-BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
+BOOST_RELEASE=	1.54.0
+BOOST_VERS=	${BOOST_RELEASE:S|.|_|g}
+BZR_SRC_REV!=	bzr revno lp:kicad
+BZR_DOC_REV!=	bzr revno lp:~kicad-developers/kicad/doc
 .else
 .include "Makefile.bzr_rev"
 .endif
@@ -64,12 +63,12 @@ BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 .if defined(BOOTSTRAP)
 
 # Updating to new rev:
-# make BOOTSTRAP=YES do-fetch
+# make do-fetch BOOTSTRAP=YES
 # make makesum && make && make makeplist
 # < Check PLIST_FILE_LIST below >
 
-FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
-FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bzr
+FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	bzr:${PORTSDIR}/devel/bzr
 
 showversions:
 	@${ECHO} "BOOST_RELEASE: ${BOOST_RELEASE}"
@@ -89,17 +88,13 @@ do-fetch:
 	cd ${WRKDIR}; \
 	tar xvf master.zip; \
 	tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		${DISTNAME} kicad-library-master kicad-doc kicad-patches
+		${DISTNAME} kicad-library-master kicad-doc
 	echo "BOOST_RELEASE=  ${BOOST_RELEASE}" > ${MASTERDIR}/Makefile.bzr_rev
 	echo "BOOST_VERS=  ${BOOST_VERS}"   >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_SRC_REV=  ${BZR_SRC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_LIB_REV=  ${BZR_LIB_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_DOC_REV=  ${BZR_DOC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 .endif
-
-ki:
-	svn export \
-		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
 
 tmp:
 	echo "${DATADIR} ${DATADIR:H}"

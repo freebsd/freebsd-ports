@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:ELMEX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	A class that provides an event callback interface
+COMMENT=	Class that provides an event callback interface
 
 USES=		perl5
 USE_PERL5=	configure

@@ -6,7 +6,7 @@ PORTVERSION=	3.14.1
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ library with common data structures and functions
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -4,6 +4,7 @@
 PORTNAME=		frama-c
 DISTVERSIONPREFIX=	Neon-
 DISTVERSION=		20140301
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		http://frama-c.com/download/ LOCAL/bf
 
@@ -18,8 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-oc
 USES=		gmake
 USE_OCAML=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-cpp="${FRAMAC_DEFAULT_CPP}"
-MAKE_ENV+=	FRAMAC_LIBDIR="${STAGEDIR}${PREFIX}/lib/frama-c"
+CONFIGURE_ARGS+=--with-cpp="${FRAMAC_DEFAULT_CPP}"
+MAKE_ENV+=	FRAMAC_LIBDIR="${PREFIX}/lib/frama-c"
 
 OPTIONS_DEFINE=	ALTERGO COQ GUI PLUGINS
 OPTIONS_DEFAULT=ALTERGO GUI PLUGINS
@@ -86,6 +87,8 @@ post-patch:
 		-e '\|$$(CP) frama-c|s|$$(CP)|${INSTALL_SCRIPT}|' \
 			${WRKSRC}/share/Makefile.dynamic
 	@${REINPLACE_CMD} -e '\|^# Installation|,\|^# File headers|{ \
+		\|_LIBDIR|s|(FRAMAC_LIBDIR)|(DESTDIR)$$(FRAMAC_LIBDIR)|; \
+		\|_PLUGINDIR|s|(FRAMAC_PLUGINDIR)|(DESTDIR)$$(FRAMAC_PLUGINDIR)|; \
 		\|$$(CP).*bin|s|$$(CP)|${INSTALL_SCRIPT}|; \
 		\|$$(CP).*man/|s|$$(CP)|${INSTALL_MAN}|; \
 		s|$$(CP)|${INSTALL_DATA}|; }' \

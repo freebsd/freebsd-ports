@@ -1,11 +1,18 @@
---- Makefile.orig	Thu May 27 18:59:27 2004
-+++ Makefile	Sun Jan 16 19:44:14 2005
-@@ -55,7 +55,7 @@
+--- Makefile.orig	2004-05-28 00:59:27.000000000 +0800
++++ Makefile	2014-06-13 22:45:30.432113271 +0800
+@@ -51,11 +51,11 @@ debug: crfile.c
+ 	$(CC) $(DEBUG_FLAGS) -o crfile crfile.c
+ 
+ install: crfile sesslog
+-	mkdir -p $(BINDIR) $(ETCDIR) $(MANDIR)
++	mkdir -p $(DESTDIR)$(BINDIR) $(DESTDIR)$(ETCDIR) $(DESTDIR)$(MANDIR)
  	perl -pi -e 's/my \$$MASTER_CONFIG =.*$$/my \$$MASTER_CONFIG = "$$ENV{AB_CFG}";/' autobench
- 	cp crfile autobench autobenchd autobench_admin sesslog bench2graph $(BINDIR)
- 	cp autobenchd.1 autobench_admin.1 crfile.1 autobench.1 sesslog.1 bench2graph.1 $(MANDIR)
+-	cp crfile autobench autobenchd autobench_admin sesslog bench2graph $(BINDIR)
+-	cp autobenchd.1 autobench_admin.1 crfile.1 autobench.1 sesslog.1 bench2graph.1 $(MANDIR)
 -	cp autobench.conf $(ETCDIR)
-+	cp autobench.conf $(ETCDIR)/autobench.conf-dist
++	cp crfile autobench autobenchd autobench_admin sesslog bench2graph $(DESTDIR)$(BINDIR)
++	cp autobenchd.1 autobench_admin.1 crfile.1 autobench.1 sesslog.1 bench2graph.1 $(DESTDIR)$(MANDIR)
++	cp autobench.conf $(DESTDIR)$(ETCDIR)/autobench.conf.sample
  
  clean: 
  	rm -f crfile sesslog

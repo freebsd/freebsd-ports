@@ -8,7 +8,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 
 INSTALL_TARGET=	install-strip
 
-USES=		libtool:keepla
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \

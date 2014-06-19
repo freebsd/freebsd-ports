@@ -43,7 +43,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Weight.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/WritableDatabase.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search

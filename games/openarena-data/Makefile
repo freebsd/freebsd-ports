@@ -20,15 +20,14 @@ NO_BUILD=	yes
 OA_DATA=	${PKGNAMEPREFIX}${OA_DATA_VER}.zip
 OA_DATA_VER=	0.8.8
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../openarena/Makefile.include"
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for _file in ${DISTFILES:C/:[^:]*//}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${_file} \
-		${EXTRACT_AFTER_ARGS} -C ${DATADIR} --strip-components 2 \
-		${PKGNAMEPREFIX}\?.\?.\?/baseoa/
+	${TAR} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${_file} \
+		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${DATADIR} \
+		--strip-components 2 ${PKGNAMEPREFIX}\?.\?.\?/baseoa/
 .endfor
 
 .include <bsd.port.post.mk>

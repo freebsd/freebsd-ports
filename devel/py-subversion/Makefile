@@ -18,16 +18,13 @@ PKGDIR=		${.CURDIR}
 USE_PYTHON=	yes
 
 SVN_BUILD_BINDINGS=	yes
+SVN_BUILD_ADDONS=	yes
 
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	python
 
-do-build:
-	${MAKE} -C ${WRKSRC} swig-py-lib ${MAKE_ARGS}
-	${MAKE} -C ${WRKSRC} swig-py ${MAKE_ARGS}
-
-do-install:
-	${MAKE} -C ${WRKSRC} install-swig-py ${MAKE_ARGS}
+ALL_TARGET=	swig-py-lib swig-py
+INSTALL_TARGET=	install-swig-py
 
 .include <bsd.port.post.mk>

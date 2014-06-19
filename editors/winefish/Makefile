@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.berlios.de/winefish/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A LaTeX editor based on BlueFish
+COMMENT=	LaTeX editor based on BlueFish
 
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 		pcre.3:${PORTSDIR}/devel/pcre

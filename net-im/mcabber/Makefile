@@ -3,6 +3,7 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	0.10.2
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
@@ -13,12 +14,11 @@ LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sigwinch --libdir=${PREFIX}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		pkgconfig gettext iconv ncurses
+USES=		pkgconfig gettext iconv ncurses tar:bzip2 libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 
@@ -37,7 +37,7 @@ ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 ASPELL_CONFIGURE_ENABLE=aspell
 ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 ENCHANT_CONFIGURE_ENABLE=enchant
-OTR_LIB_DEPENDS=	libotr.so.4:${PORTSDIR}/security/libotr3 \
+OTR_LIB_DEPENDS=	libotr.so.2:${PORTSDIR}/security/libotr3 \
 			libgcrypt.so:${PORTSDIR}/security/libgcrypt
 OTR_CONFIGURE_ENABLE=	otr
 

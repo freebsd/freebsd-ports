@@ -10,11 +10,9 @@ lib/libnetflowPlugin-%%PORTVERSION%%.so
 lib/libnetflowPlugin.so
 lib/libntop-%%PORTVERSION%%.so
 lib/libntop.a
-lib/libntop.la
 lib/libntop.so
 lib/libntopreport-%%PORTVERSION%%.so
 lib/libntopreport.a
-lib/libntopreport.la
 lib/libntopreport.so
 lib/librrdPlugin-%%PORTVERSION%%.so
 lib/librrdPlugin.so
@@ -23,6 +21,7 @@ lib/libsflowPlugin.so
 lib/ntop/plugins/netflowPlugin.so
 lib/ntop/plugins/rrdPlugin.so
 lib/ntop/plugins/sflowPlugin.so
+man/man8/ntop.8.gz
 %%DATADIR%%/html/Google_Maps_Marker.png
 %%DATADIR%%/html/JSCookMenu.js
 %%DATADIR%%/html/Risk_high.gif
@@ -508,7 +507,6 @@ lib/ntop/plugins/sflowPlugin.so
 @dirrm %%DATADIR%%/html/img_inquisitor
 @dirrm %%DATADIR%%/html
 @dirrm %%DATADIR%%
-@exec chown -R nobody:nobody %%DBDIR%%/ntop
 @exec mkdir -p %%DBDIR%%/ntop
-@unexec rmdir %%DBDIR%% 2>/dev/null || true
+@exec chown -R nobody:nobody %%DBDIR%%/ntop
 @unexec rmdir %%DBDIR%%/ntop 2>/dev/null || true

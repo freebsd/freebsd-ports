@@ -1,0 +1,11 @@
+GPSBabel converts waypoints, tracks, and routes from one format to another,
+whether that format is a common mapping format like Delorme, Streets and Trips,
+or even a serial upload or download to a GPS unit such as those from Garmin and
+Magellan. By flattening the Tower of Babel that the authors of various programs
+for manipulating GPS data have imposed upon us, it returns to us the ability
+to freely move our own waypoint data between the programs and hardware we
+choose to use.
+It contains extensive data manipulation abilities making it a convenient for
+server-side processing or as the backend for other tools.
+
+WWW: http://www.gpsbabel.org/

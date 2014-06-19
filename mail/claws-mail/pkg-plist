@@ -242,7 +242,6 @@ include/claws-mail/uri_opener.h
 include/claws-mail/vcard.h
 include/claws-mail/viewtypes.h
 include/claws-mail/wizard.h
-lib/claws-mail/plugins/libravatar.so
 lib/claws-mail/plugins/pgpinline.deps
 lib/claws-mail/plugins/pgpmime.deps
 lib/claws-mail/plugins/smime.deps

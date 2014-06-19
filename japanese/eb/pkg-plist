@@ -19,9 +19,9 @@ include/eb/text.h
 include/eb/zio.h
 @dirrm include/eb
 lib/libeb.a
-lib/libeb.la
 lib/libeb.so
 lib/libeb.so.16
+lib/libeb.so.16.0.0
 share/aclocal/eb4.m4
 %%DATADIR%%/appendix/cencro-1.0/catalog
 %%DATADIR%%/appendix/cencro-1.0/catalog.app

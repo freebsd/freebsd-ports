@@ -21,7 +21,6 @@ GD_DESC=		Install PHP gd extension
 LDAP_DESC=		Install PHP LDAP extension
 ZIP_DESC=		Install PHP zip extension
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # http://docs.limesurvey.org/Installation&structure=English+Instructions+for+LimeSurvey#Make_sure_you_can_use_LimeSurvey_on_your_website
@@ -59,7 +58,7 @@ SUB_LIST=	PHPSURVEYORURL="${PHPSURVEYORURL}" \
 PHPSURVEYORDIR=	${WWWDOCROOT}/${PHPSURVEYORURL}
 
 do-install:
-	${MKDIR} "${WWWDIR}"
+	${MKDIR} "${STAGEDIR}${WWWDIR}"
 .if ${PORT_OPTIONS:MPGSQL}
 	${SED} -E \
 	  -e 's/^(\$$databasetype[[:space:]]*=[[:space:]]*'"')mysql('"'.*)$$/\1postgres\2/'	\
@@ -69,21 +68,22 @@ do-install:
 .else
 	${MV} "${WRKSRC}"/config.php "${WRKSRC}"/config.php-dist
 .endif
-	${TEST} -e "${WWWDIR}"/config.php || ${CP} -p "${WRKSRC}"/config.php-dist "${WRKSRC}"/config.php
-	@cd "${WRKSRC}" && ${COPYTREE_SHARE} . "${WWWDIR}"
-	${MKDIR} "${WWWDIR}"/tmp
-	${CHOWN} -R "${WWWOWN}:${WWWGRP}" "${WWWDIR}"
-	${CHMOD} 755 "${WWWDIR}"/tmp
-	${CHMOD} 755 "${WWWDIR}"/templates
-	${CHMOD} 755 "${WWWDIR}"/upload
-	${CHOWN} -R 0 "${WWWDIR}"/admin
-	${CHMOD} -R go-w "${WWWDIR}"/admin
+	@cd "${WRKSRC}" && ${COPYTREE_SHARE} . "${STAGEDIR}${WWWDIR}"
+	${MKDIR} "${STAGEDIR}${WWWDIR}"/tmp
+	${CHOWN} -R "${WWWOWN}:${WWWGRP}" "${STAGEDIR}${WWWDIR}"
+	${CHMOD} 755 "${STAGEDIR}${WWWDIR}"/tmp
+	${CHMOD} 755 "${STAGEDIR}${WWWDIR}"/templates
+	${CHMOD} 755 "${STAGEDIR}${WWWDIR}"/upload
+	${CHOWN} -R 0 "${STAGEDIR}${WWWDIR}"/admin
+	${CHMOD} -R go-w "${STAGEDIR}${WWWDIR}"/admin
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${FIND} -s -d ${WWWDIR} -type f -print | \
-		${SED} -e "s#${PREFIX}/##g" >> ${TMPPLIST}
-	@${FIND} -s -d ${WWWDIR} -type d  -print | \
-		${SED} -E -e "s#${PREFIX}/#@dirrm #g" >> ${TMPPLIST}
+	@${ECHO_CMD} "@owner www" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group www" >> ${TMPPLIST}
+	@${FIND} -s -d ${STAGEDIR}${WWWDIR} -type f -print | \
+		${SED} -e "s#${STAGEDIR}${PREFIX}/##g" >> ${TMPPLIST}
+	@${FIND} -s -d ${STAGEDIR}${WWWDIR} -type d  -print | \
+		${SED} -E -e "s#${STAGEDIR}${PREFIX}/#@dirrm #g" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

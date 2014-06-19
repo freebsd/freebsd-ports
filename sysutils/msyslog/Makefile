@@ -12,38 +12,31 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Flexible and easy to integrate syslog daemon
 
+LICENSE=	BSD4CLAUSE MIT
+LICENSE_COMB=	dual
+
 OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_SUB=	yes
+MYSQL_USE=	MYSQL=yes
+MYSQL_CONFIGURE_OFF=	--without-mysql
+PGSQL_USE=	PGSQL=yes
+PGSQL_CONFIGURE_OFF=	--without-pgsql
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_RC_SUBR=	msyslogd
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
 
 PORTSCOUT=	skipv:1.09d
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 900006
 EXTRA_PATCHES=	${PATCHDIR}/utmpx-src-modules-om_classic.c
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-MAN8+=	om_mysql.8
-.else
-CONFIGURE_ARGS+=	--without-mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-MAN8+=	om_pgsql.8
-.else
-CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
 post-patch:
@@ -55,12 +48,15 @@ post-patch:
 	    ${XARGS} ${REINPLACE_CMD} -e 's|/dev/log|/var/run/log|g' \
 	    -e "s|/etc/syslog.conf|${PREFIX}/etc/syslog.conf|g"
 	@${FIND} ${WRKSRC}/src/ -name "*.bak" -delete
+	@${REINPLACE_CMD} -e 's|@prefix@|${STAGEDIR}${PREFIX}|g' \
+		${WRKSRC}/src/modules/Makefile.in \
+		${WRKSRC}/src/peo/Makefile.in \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|@mandir@|${STAGEDIR}${PREFIX}/man|g' \
+		${WRKSRC}/src/man/GNUmakefile.in
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/examples/* ${EXAMPLESDIR}
-	@${CAT} ${PKGDIR}/pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

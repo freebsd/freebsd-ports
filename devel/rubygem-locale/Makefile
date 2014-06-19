@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A pure ruby library to support locales
+COMMENT=	Pure ruby library to support locales
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

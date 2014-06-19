@@ -137,6 +137,7 @@
     SUBDIR += php55-mbstring
     SUBDIR += php55-recode
     SUBDIR += psiconv
+    SUBDIR += py-bencode
     SUBDIR += py-bsdconv
     SUBDIR += py-iconv
     SUBDIR += py-pisa

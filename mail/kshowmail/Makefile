@@ -18,5 +18,4 @@ USE_QT4=	corelib dbus gui network svg xml \
 USE_PERL5=	build
 USES=		cmake gettext perl5
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

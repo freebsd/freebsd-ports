@@ -3,29 +3,31 @@
 
 PORTNAME=	glgraph
 PORTVERSION=	0.2.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	http://glgraph.kaosu.ch/downl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OpenGL based function grapher
+COMMENT=	OpenGL based function grapher
 
 RUN_DEPENDS=	p5-OpenGL>=0:${PORTSDIR}/graphics/p5-OpenGL \
 		import:${PORTSDIR}/graphics/ImageMagick
 
-USES=		perl5
-USE_BZIP2=	yes
+USES=		perl5 shebangfix tar:bzip2
 USE_PERL5=	run
+SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/glgraph
+PORTDOCS=	documentation.html
+
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/glgraph ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/documentation.html ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/glgraph ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/documentation.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

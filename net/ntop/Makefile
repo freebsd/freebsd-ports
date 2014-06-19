@@ -3,25 +3,26 @@
 
 PORTNAME=	ntop
 PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
-		event-1.4:${PORTSDIR}/devel/libevent
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libevent-1.4.so:${PORTSDIR}/devel/libevent
 BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
-		subversion>=1.7.0:${PORTSDIR}/devel/subversion \
 		dot:${PORTSDIR}/graphics/graphviz \
 		geoiplookup:${PORTSDIR}/net/GeoIP
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
+		urwfonts>0:${PORTSDIR}/x11-fonts/urwfonts
 
 DBDIR?=		/var/db
 
-USES=		gmake
+USES=		gmake libtool
 USE_AUTOTOOLS=	libtool automake autoconf
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
@@ -34,8 +35,7 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-ossl-root=${OPENSSLBASE} \
 		--with-gdbm-root=${LOCALBASE} \
 		--with-zlib-root=/usr
-
-MAN8=		ntop.8
+INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -49,22 +49,20 @@ OPTIONS_DEFINE=	PCAP_PORT XMLDUMP JUMBO_FRAMES MAKO
 
 PCAP_PORT_DESC=		Use libpcap from ports
 XMLDUMP_DESC=		Enable XML Dump support
-JUMBO_FRAMES_DESC=	Jumbo Frames. Experimental.
+JUMBO_FRAMES_DESC=	Jumbo Frames (experimental)
 MAKO_DESC=		Install py-mako for Host Map, Region View
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCAP_PORT}
-LIB_DEPENDS+=		pcap.1:${PORTSDIR}/net/libpcap
+LIB_DEPENDS+=		libpcap.so:${PORTSDIR}/net/libpcap
 CONFIGURE_ARGS+=	--with-pcap-root=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-pcap-root=/usr
 .endif
 
 .if ${PORT_OPTIONS:MXMLDUMP}
-LIB_DEPENDS+=		gdome.8:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS+=		libgdome.so:${PORTSDIR}/textproc/gdome2
 CPPFLAGS+=		-I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libxml2/libxml \
 			-I${LOCALBASE}/include/libgdome \
@@ -81,18 +79,10 @@ CONFIGURE_ARGS+=	--enable-jumbo-frames
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:${PORTSDIR}/textproc/py-mako
 .endif
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
-
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ${SH} autogen.sh --noconfig
 
 pre-install:
 	@cd ${WRKSRC} && ${GMAKE} dnetter
 
-post-install:
-	@${MKDIR} ${DBDIR}/ntop
-	@${CHOWN} -R nobody:nobody ${DBDIR}/ntop
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

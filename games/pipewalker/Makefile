@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A clone of the NetWalk game
+COMMENT=	Clone of the NetWalk game
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl

@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11 sm ice xext
 USES=		gmake tar:bzip2
@@ -38,7 +38,6 @@ MMX_DESC=	Enable MMX
 JMA_DESC=	Enable JMA archive decompression support
 NETPLAY_DESC=	Enable network support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -77,7 +76,6 @@ SNES9X_BIN=	snes9x
 .endif
 
 .if ${PORT_OPTIONS:MSCREENSHOT}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-screenshot
 .else
 CONFIGURE_ARGS+=	--without-screenshot
@@ -106,16 +104,13 @@ post-patch:
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in control* changes.txt hardware.txt porting.html faqs.txt \
 		snapshots.txt snes9x.conf.default
-	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/unix/docs/readme_unix.txt ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/unix/docs/readme_unix.txt ${STAGEDIR}${DOCSDIR}/README
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/${SNES9X_BIN} ${PREFIX}/bin/${PORTNAME}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/${SNES9X_BIN} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>

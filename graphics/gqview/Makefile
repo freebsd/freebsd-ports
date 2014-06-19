@@ -1,4 +1,4 @@
-# Created by: Vanilla Pooh Shu <vanilla@FreeBSD.org>
+# Created by: vanilla@
 # $FreeBSD$
 
 PORTNAME=	gqview
@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Another gtk2-based graphic file viewer
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		pkgconfig
 USE_GNOME=	gnomehier gtk20
@@ -18,15 +18,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-
-MAN1=		gqview.1
-
-CONFLICTS=	gqview-devel-[0-9]*
-
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -53,10 +46,10 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/gqview.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

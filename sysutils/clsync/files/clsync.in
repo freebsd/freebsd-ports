@@ -1,0 +1,56 @@
+#!/bin/sh
+# $FreeBSD:
+
+# PROVIDE: clsync
+# REQUIRE: FILESYSTEMS
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=clsync
+
+rcvar=clsync_enable
+
+load_rc_config $name
+
+start_cmd=clsync_start
+start_precmd=clsync_prestart
+stop_cmd=clsync_stop
+restart_cmd=clsync_restart
+clsync_program="%%PREFIX%%/sbin/clsync"
+
+clsync_prestart()
+{
+	if [ "$clsync_config" = "" ]; then
+		clsync_config=/usr/local/etc/clsync/clsync.conf
+	fi
+
+	if [ "$clsync_config_groups" = "" ]; then
+		clsync_config_groups=default
+	fi
+}
+
+clsync_start()
+{
+	for config_group in $clsync_config_groups; do
+		echo "Running clsync (group ${config_group})."
+		"${clsync_program}" -f "$clsync_config" -K "$config_block" -b \
+			--pid-file=/var/run/clsync-"${config_group}".pid
+	done
+}
+
+clsync_stop()
+{
+	for config_group in $clsync_config_groups; do
+		echo "Stopping clsync (group ${config_group})."
+		pkill -F /var/run/clsync-"${config_group}".pid
+	done
+}
+
+clsync_restart()
+{
+	clsync_stop
+	clsync_start
+}
+
+run_rc_command "$1"

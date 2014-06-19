@@ -16,18 +16,15 @@ NO_BUILD=	yes
 
 LICENSE=	GPLv3
 
-PLIST_FILES=	bin/hatop
+PLIST_FILES=	bin/hatop man/man1/hatop.1.gz
 PORTDOCS=	HACKING KEYBINDS README
 
-MAN1=		hatop.1
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/hatop ${PREFIX}/bin/hatop
-	${INSTALL_MAN} ${WRKSRC}/man/hatop.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/hatop ${STAGEDIR}${PREFIX}/bin/hatop
+	${INSTALL_MAN} ${WRKSRC}/man/hatop.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

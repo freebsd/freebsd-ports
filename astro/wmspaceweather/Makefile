@@ -10,7 +10,7 @@ MASTER_SITES=	https://api.opensuse.org/public/source/openSUSE:Factory/WindowMake
 DISTNAME=	wmSpaceWeather-${PORTVERSION}
 
 MAINTAINER=	xride@FreeBSD.org
-COMMENT=	A DockApp that shows the weather at geosynchronous orbit
+COMMENT=	DockApp that shows the weather at geosynchronous orbit
 
 LICENSE=	GPLv2
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	libdynamite
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Dynamite/${PORTVERSION}
 
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

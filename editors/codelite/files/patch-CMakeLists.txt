@@ -29,9 +29,9 @@
 -  set( CLANG_INCLUDE "${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/include" )
 -  set( CLANG_LIBRARY "-L${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/lib -lclang" )
 -  set( CLANG_BINARY "${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/lib/libclang.so")
-+  set( CLANG_INCLUDE "%%LOCALBASE%%/llvm-devel/include" )
-+  set( CLANG_LIBRARY "-L%%LOCALBASE%%/llvm-devel/lib/ -lclang" )
-+  set( CLANG_BINARY "%%LOCALBASE%%/llvm-devel/lib/libclang.so")
++  set( CLANG_INCLUDE "%%LOCALBASE%%/llvm34/include" )
++  set( CLANG_LIBRARY "-L%%LOCALBASE%%/llvm34/lib/ -lclang" )
++  set( CLANG_BINARY "%%LOCALBASE%%/llvm34/lib/libclang.so")
  endif()
  
  message( "-- clang link line ${CLANG_LIBRARY} ")

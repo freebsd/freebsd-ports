@@ -2,11 +2,13 @@ libexec/xfce4/panel-plugins/xfce4-timer
 share/icons/hicolor/48x48/apps/xfce4-timer.png
 share/locale/ar/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-timer-plugin.mo
+share/locale/bg/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-timer-plugin.mo
+share/locale/en_AU/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-timer-plugin.mo
@@ -19,7 +21,10 @@ share/locale/it/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-timer-plugin.mo
+share/locale/ms/LC_MESSAGES/xfce4-timer-plugin.mo
+share/locale/nb/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-timer-plugin.mo
+share/locale/oc/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-timer-plugin.mo
@@ -28,6 +33,7 @@ share/locale/sk/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/sr/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-timer-plugin.mo
+share/locale/th/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/ug/LC_MESSAGES/xfce4-timer-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-timer-plugin.mo
@@ -44,6 +50,8 @@ share/xfce4/panel-plugins/xfce4-timer.desktop
 @dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 @dirrmtry libexec/xfce4/panel-plugins

@@ -18,7 +18,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen/FETCH.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen/FILENO.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen/GETC.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen/Gen.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen/Gen.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen/PRINTF.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen/READ.al

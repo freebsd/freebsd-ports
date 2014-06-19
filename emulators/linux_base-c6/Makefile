@@ -100,7 +100,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
-CONFLICTS=              linux_base-gentoo* linux_base-f* linux-glib2-*
+CONFLICTS=		linux_base-gentoo* linux_base-f* linux-glib2-*
 
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i686

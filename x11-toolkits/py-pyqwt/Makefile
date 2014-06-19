@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Bindings for the Qwt Class Library
 
 BROKEN=		do not build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		${PYNUMPY} \

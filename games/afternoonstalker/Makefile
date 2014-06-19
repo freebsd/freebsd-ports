@@ -8,7 +8,7 @@ MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
 		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	A clone of the 1981 Night Stalker video game
+COMMENT=	Clone of the 1981 Night Stalker video game
 
 LICENSE=	GPLv2
 

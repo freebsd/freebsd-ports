@@ -1,146 +1,232 @@
-bin/electrum
 %%PYTHON_SITELIBDIR%%/electrum/__init__.py
+%%PYTHON_SITELIBDIR%%/electrum/account.py
+%%PYTHON_SITELIBDIR%%/electrum/bitcoin.py
+%%PYTHON_SITELIBDIR%%/electrum/blockchain.py
+%%PYTHON_SITELIBDIR%%/electrum/bmp.py
+%%PYTHON_SITELIBDIR%%/electrum/commands.py
+%%PYTHON_SITELIBDIR%%/electrum/daemon.py
+%%PYTHON_SITELIBDIR%%/electrum/i18n.py
+%%PYTHON_SITELIBDIR%%/electrum/interface.py
+%%PYTHON_SITELIBDIR%%/electrum/mnemonic.py
+%%PYTHON_SITELIBDIR%%/electrum/msqr.py
+%%PYTHON_SITELIBDIR%%/electrum/network.py
+%%PYTHON_SITELIBDIR%%/electrum/plugins.py
+%%PYTHON_SITELIBDIR%%/electrum/pyqrnative.py
+%%PYTHON_SITELIBDIR%%/electrum/simple_config.py
+%%PYTHON_SITELIBDIR%%/electrum/socks.py
+%%PYTHON_SITELIBDIR%%/electrum/transaction.py
+%%PYTHON_SITELIBDIR%%/electrum/util.py
+%%PYTHON_SITELIBDIR%%/electrum/verifier.py
+%%PYTHON_SITELIBDIR%%/electrum/version.py
+%%PYTHON_SITELIBDIR%%/electrum/wallet.py
+%%PYTHON_SITELIBDIR%%/electrum/wallet_bitkey.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/__init__.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/gtk.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/amountedit.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/console.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/icons_rc.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/installwizard.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/lite_window.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/main_window.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/network_dialog.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/password_dialog.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/qrcodewidget.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/receiving_widget.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/seed_dialog.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/transaction_dialog.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/util.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/version_getter.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/stdio.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/text.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/aliases.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/coinbase_buyback.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/exchange_rate.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/labels.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/pointofsale.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/qrscanner.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/virtualkeyboard.py
 %%PYTHON_SITELIBDIR%%/electrum/__init__.pyc
 %%PYTHON_SITELIBDIR%%/electrum/__init__.pyo
-%%PYTHON_SITELIBDIR%%/electrum/bitcoin.py
+%%PYTHON_SITELIBDIR%%/electrum/account.pyc
+%%PYTHON_SITELIBDIR%%/electrum/account.pyo
 %%PYTHON_SITELIBDIR%%/electrum/bitcoin.pyc
 %%PYTHON_SITELIBDIR%%/electrum/bitcoin.pyo
-%%PYTHON_SITELIBDIR%%/electrum/commands.py
+%%PYTHON_SITELIBDIR%%/electrum/blockchain.pyc
+%%PYTHON_SITELIBDIR%%/electrum/blockchain.pyo
+%%PYTHON_SITELIBDIR%%/electrum/bmp.pyc
+%%PYTHON_SITELIBDIR%%/electrum/bmp.pyo
 %%PYTHON_SITELIBDIR%%/electrum/commands.pyc
 %%PYTHON_SITELIBDIR%%/electrum/commands.pyo
-%%PYTHON_SITELIBDIR%%/electrum/deserialize.py
-%%PYTHON_SITELIBDIR%%/electrum/deserialize.pyc
-%%PYTHON_SITELIBDIR%%/electrum/deserialize.pyo
-%%PYTHON_SITELIBDIR%%/electrum/interface.py
+%%PYTHON_SITELIBDIR%%/electrum/daemon.pyc
+%%PYTHON_SITELIBDIR%%/electrum/daemon.pyo
+%%PYTHON_SITELIBDIR%%/electrum/i18n.pyc
+%%PYTHON_SITELIBDIR%%/electrum/i18n.pyo
 %%PYTHON_SITELIBDIR%%/electrum/interface.pyc
 %%PYTHON_SITELIBDIR%%/electrum/interface.pyo
-%%PYTHON_SITELIBDIR%%/electrum/mnemonic.py
 %%PYTHON_SITELIBDIR%%/electrum/mnemonic.pyc
 %%PYTHON_SITELIBDIR%%/electrum/mnemonic.pyo
-%%PYTHON_SITELIBDIR%%/electrum/msqr.py
 %%PYTHON_SITELIBDIR%%/electrum/msqr.pyc
 %%PYTHON_SITELIBDIR%%/electrum/msqr.pyo
-%%PYTHON_SITELIBDIR%%/electrum/simple_config.py
+%%PYTHON_SITELIBDIR%%/electrum/network.pyc
+%%PYTHON_SITELIBDIR%%/electrum/network.pyo
+%%PYTHON_SITELIBDIR%%/electrum/plugins.pyc
+%%PYTHON_SITELIBDIR%%/electrum/plugins.pyo
+%%PYTHON_SITELIBDIR%%/electrum/pyqrnative.pyc
+%%PYTHON_SITELIBDIR%%/electrum/pyqrnative.pyo
 %%PYTHON_SITELIBDIR%%/electrum/simple_config.pyc
 %%PYTHON_SITELIBDIR%%/electrum/simple_config.pyo
-%%PYTHON_SITELIBDIR%%/electrum/socks.py
 %%PYTHON_SITELIBDIR%%/electrum/socks.pyc
 %%PYTHON_SITELIBDIR%%/electrum/socks.pyo
-%%PYTHON_SITELIBDIR%%/electrum/util.py
+%%PYTHON_SITELIBDIR%%/electrum/transaction.pyc
+%%PYTHON_SITELIBDIR%%/electrum/transaction.pyo
 %%PYTHON_SITELIBDIR%%/electrum/util.pyc
 %%PYTHON_SITELIBDIR%%/electrum/util.pyo
-%%PYTHON_SITELIBDIR%%/electrum/verifier.py
 %%PYTHON_SITELIBDIR%%/electrum/verifier.pyc
 %%PYTHON_SITELIBDIR%%/electrum/verifier.pyo
-%%PYTHON_SITELIBDIR%%/electrum/version.py
 %%PYTHON_SITELIBDIR%%/electrum/version.pyc
 %%PYTHON_SITELIBDIR%%/electrum/version.pyo
-%%PYTHON_SITELIBDIR%%/electrum/wallet.py
 %%PYTHON_SITELIBDIR%%/electrum/wallet.pyc
 %%PYTHON_SITELIBDIR%%/electrum/wallet.pyo
-%%PYTHON_SITELIBDIR%%/electrum/wallet_bitkey.py
 %%PYTHON_SITELIBDIR%%/electrum/wallet_bitkey.pyc
 %%PYTHON_SITELIBDIR%%/electrum/wallet_bitkey.pyo
-%%PYTHON_SITELIBDIR%%/electrum/wallet_factory.py
-%%PYTHON_SITELIBDIR%%/electrum/wallet_factory.pyc
-%%PYTHON_SITELIBDIR%%/electrum/wallet_factory.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/__init__.py
 %%PYTHON_SITELIBDIR%%/electrum_gui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/electrum_gui/__init__.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/amountedit.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/amountedit.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/amountedit.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/bmp.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/bmp.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/bmp.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/exchange_rate.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/exchange_rate.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/exchange_rate.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_classic.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_classic.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_classic.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_gtk.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_gtk.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_gtk.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_lite.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_lite.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_lite.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_text.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_text.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/gui_text.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/history_widget.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/history_widget.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/history_widget.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/i18n.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/i18n.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/i18n.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/icons_rc.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/icons_rc.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/icons_rc.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/plugins.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/plugins.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/plugins.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/pyqrnative.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/pyqrnative.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/pyqrnative.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/qrcodewidget.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/qrcodewidget.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/qrcodewidget.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/qt_console.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/qt_console.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/qt_console.pyo
-%%PYTHON_SITELIBDIR%%/electrum_gui/receiving_widget.py
-%%PYTHON_SITELIBDIR%%/electrum_gui/receiving_widget.pyc
-%%PYTHON_SITELIBDIR%%/electrum_gui/receiving_widget.pyo
-%%PYTHON_SITELIBDIR%%/electrum_plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/gtk.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/gtk.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/amountedit.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/amountedit.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/console.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/console.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/history_widget.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/icons_rc.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/icons_rc.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/installwizard.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/installwizard.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/lite_window.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/lite_window.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/main_window.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/main_window.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/network_dialog.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/network_dialog.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/password_dialog.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/password_dialog.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/qrcodewidget.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/qrcodewidget.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/receiving_widget.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/receiving_widget.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/seed_dialog.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/seed_dialog.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/transaction_dialog.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/transaction_dialog.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/util.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/util.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/version_getter.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/qt/version_getter.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/stdio.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/stdio.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/text.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/text.pyo
 %%PYTHON_SITELIBDIR%%/electrum_plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/__init__.pyo
-%%PYTHON_SITELIBDIR%%/electrum_plugins/aliases.py
 %%PYTHON_SITELIBDIR%%/electrum_plugins/aliases.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/aliases.pyo
-%%PYTHON_SITELIBDIR%%/electrum_plugins/labels.py
+%%PYTHON_SITELIBDIR%%/electrum_plugins/coinbase_buyback.pyc
+%%PYTHON_SITELIBDIR%%/electrum_plugins/coinbase_buyback.pyo
+%%PYTHON_SITELIBDIR%%/electrum_plugins/exchange_rate.pyc
+%%PYTHON_SITELIBDIR%%/electrum_plugins/exchange_rate.pyo
 %%PYTHON_SITELIBDIR%%/electrum_plugins/labels.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/labels.pyo
-%%PYTHON_SITELIBDIR%%/electrum_plugins/pointofsale.py
 %%PYTHON_SITELIBDIR%%/electrum_plugins/pointofsale.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/pointofsale.pyo
-%%PYTHON_SITELIBDIR%%/electrum_plugins/qrscanner.py
 %%PYTHON_SITELIBDIR%%/electrum_plugins/qrscanner.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/qrscanner.pyo
-%%PYTHON_SITELIBDIR%%/electrum_plugins/virtualkeyboard.py
 %%PYTHON_SITELIBDIR%%/electrum_plugins/virtualkeyboard.pyc
 %%PYTHON_SITELIBDIR%%/electrum_plugins/virtualkeyboard.pyo
-share/app-install/icons/electrum.png
 share/applications/electrum.desktop
+share/app-install/icons/electrum.png
+share/locale/ja_JP/LC_MESSAGES/electrum.mo
+share/locale/eo_UY/LC_MESSAGES/electrum.mo
+share/locale/ta_IN/LC_MESSAGES/electrum.mo
+share/locale/ky_KG/LC_MESSAGES/electrum.mo
+share/locale/pl_PL/LC_MESSAGES/electrum.mo
+share/locale/it_IT/LC_MESSAGES/electrum.mo
+share/locale/hu_HU/LC_MESSAGES/electrum.mo
+share/locale/fr_FR/LC_MESSAGES/electrum.mo
+share/locale/pt_BR/LC_MESSAGES/electrum.mo
+share/locale/vi_VN/LC_MESSAGES/electrum.mo
+share/locale/nl_NL/LC_MESSAGES/electrum.mo
+share/locale/ru_RU/LC_MESSAGES/electrum.mo
+share/locale/es_ES/LC_MESSAGES/electrum.mo
+share/locale/pt_PT/LC_MESSAGES/electrum.mo
+share/locale/de_DE/LC_MESSAGES/electrum.mo
+share/locale/id_ID/LC_MESSAGES/electrum.mo
+share/locale/lv_LV/LC_MESSAGES/electrum.mo
+share/locale/ar_SA/LC_MESSAGES/electrum.mo
+share/locale/cs_CZ/LC_MESSAGES/electrum.mo
+share/locale/sl_SI/LC_MESSAGES/electrum.mo
+share/locale/zh_CN/LC_MESSAGES/electrum.mo
+share/locale/ro_RO/LC_MESSAGES/electrum.mo
+share/locale/sk_SK/LC_MESSAGES/electrum.mo
+share/locale/th_TH/LC_MESSAGES/electrum.mo
 share/electrum/README
 share/electrum/cleanlook/name.cfg
 share/electrum/cleanlook/style.css
-share/electrum/dark/background.png
-share/electrum/dark/name.cfg
-share/electrum/dark/style.css
 share/electrum/sahara/name.cfg
 share/electrum/sahara/style.css
-share/locale/br/LC_MESSAGES/electrum.mo
-share/locale/cs/LC_MESSAGES/electrum.mo
-share/locale/de/LC_MESSAGES/electrum.mo
-share/locale/eo/LC_MESSAGES/electrum.mo
-share/locale/es/LC_MESSAGES/electrum.mo
-share/locale/fr/LC_MESSAGES/electrum.mo
-share/locale/it/LC_MESSAGES/electrum.mo
-share/locale/ja/LC_MESSAGES/electrum.mo
-share/locale/lv/LC_MESSAGES/electrum.mo
-share/locale/nl/LC_MESSAGES/electrum.mo
-share/locale/ru/LC_MESSAGES/electrum.mo
-share/locale/sl/LC_MESSAGES/electrum.mo
-share/locale/ta/LC_MESSAGES/electrum.mo
-share/locale/vi/LC_MESSAGES/electrum.mo
-share/locale/zh/LC_MESSAGES/electrum.mo
+share/electrum/dark/name.cfg
+share/electrum/dark/style.css
+bin/electrum
 @dirrm share/electrum/sahara
 @dirrm share/electrum/dark
 @dirrm share/electrum/cleanlook
 @dirrm share/electrum
-@dirrmtry share/app-install/icons
-@dirrmtry share/app-install
 @dirrm %%PYTHON_SITELIBDIR%%/electrum_plugins
+@dirrm %%PYTHON_SITELIBDIR%%/electrum_gui/qt
 @dirrm %%PYTHON_SITELIBDIR%%/electrum_gui
 @dirrm %%PYTHON_SITELIBDIR%%/electrum
+@dirrmtry share/app-install/icons
+@dirrmtry share/app-install
+@dirrmtry share/locale/ar_SA/LC_MESSAGES
+@dirrmtry share/locale/ar_SA
+@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+@dirrmtry share/locale/cs_CZ
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/eo_UY/LC_MESSAGES
+@dirrmtry share/locale/eo_UY
+@dirrmtry share/locale/hu_HU/LC_MESSAGES
+@dirrmtry share/locale/hu_HU
+@dirrmtry share/locale/id_ID/LC_MESSAGES
+@dirrmtry share/locale/id_ID
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT
+@dirrmtry share/locale/ja_JP/LC_MESSAGES
+@dirrmtry share/locale/ja_JP
+@dirrmtry share/locale/ky_KG/LC_MESSAGES
+@dirrmtry share/locale/ky_KG
+@dirrmtry share/locale/lv_LV/LC_MESSAGES
+@dirrmtry share/locale/lv_LV
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/ro_RO/LC_MESSAGES
+@dirrmtry share/locale/ro_RO
+@dirrmtry share/locale/ru_RU/LC_MESSAGES
+@dirrmtry share/locale/ru_RU
+@dirrmtry share/locale/sk_SK/LC_MESSAGES
+@dirrmtry share/locale/sk_SK
+@dirrmtry share/locale/sl_SI/LC_MESSAGES
+@dirrmtry share/locale/sl_SI
+@dirrmtry share/locale/ta_IN/LC_MESSAGES
+@dirrmtry share/locale/ta_IN
+@dirrmtry share/locale/th_TH/LC_MESSAGES
+@dirrmtry share/locale/th_TH
+@dirrmtry share/locale/vi_VN/LC_MESSAGES
+@dirrmtry share/locale/vi_VN

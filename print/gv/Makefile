@@ -17,8 +17,7 @@ USES=		iconv gmake perl5 shebangfix
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}" LIBS="${ICONV_LIB}"
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/X11 \
 			--enable-setenv-code \
 			--enable-SIGCHLD-fallback

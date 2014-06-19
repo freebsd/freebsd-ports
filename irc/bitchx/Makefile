@@ -3,6 +3,7 @@
 
 PORTNAME=	BitchX
 DISTVERSION=	1.2-final
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	http://bitchx.ca/
@@ -14,12 +15,13 @@ COMMENT?=	Feature-rich scriptable IRC client
 WRKSRC=		${WRKDIR}/${DISTNAME:C,-final$,,}
 
 USES=		gmake perl5
+USE_GCC=	yes # PR: 186425
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 DOCSDIR=	${PREFIX}/share/bx/help

@@ -369,7 +369,7 @@ bin/hdfview.sh
 %%PORTDOCS%%%%DOCSDIR%%/javadocs/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadocs/package-list
 %%PORTDOCS%%%%DOCSDIR%%/javadocs/resources/background.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadocs/resources/inherit.gif
+%%JDK6%%%%PORTDOCS%%%%DOCSDIR%%/javadocs/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/javadocs/resources/tab.gif
 %%PORTDOCS%%%%DOCSDIR%%/javadocs/resources/titlebar.gif
 %%PORTDOCS%%%%DOCSDIR%%/javadocs/resources/titlebar_end.gif

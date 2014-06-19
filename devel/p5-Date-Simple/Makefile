@@ -8,7 +8,7 @@ MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		dhn@FreeBSD.org
-COMMENT=		A simple date object
+COMMENT=		Simple date object
 
 USES=		perl5
 USE_PERL5=	configure

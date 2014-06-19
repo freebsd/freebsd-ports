@@ -30,9 +30,6 @@ OPTIONS_DEFAULT=	GENERIC TALKFILTERS
 GENERIC_DESC=	generic module
 TALKFILTERS_DESC=	talkfilters module
 
-MAN1=			translate.1
-
-NO_STAGE=	yes
 post-patch::
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|'	\
 		-e 's|libsoup-2.2|libsoup-2.4|g' ${WRKSRC}/configure
@@ -42,8 +39,7 @@ post-patch::
 .if ${PORT_OPTIONS:MGENERIC}
 PLIST_SUB+=		GENERIC=""
 USE_GNOME+=		libxml2
-LIB_DEPENDS+=		soup-2.4:${PORTSDIR}/devel/libsoup
-MAN5+=			services.xml.5
+LIB_DEPENDS+=		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 CPPFLAGS+=		-DHAVE_LIBSOUP24
 DISTFILES+=		libtranslate-0.99-libsoup24.diff
 EXTRACT_ONLY=		${DISTFILES:M*tar.*}
@@ -59,7 +55,7 @@ PLIST_SUB+=		GENERIC="@comment "
 
 .if ${PORT_OPTIONS:MTALKFILTERS}
 PLIST_SUB+=		TALKFILTERS=""
-LIB_DEPENDS+=		talkfilters:${PORTSDIR}/misc/talkfilters
+LIB_DEPENDS+=		libtalkfilters.so:${PORTSDIR}/misc/talkfilters
 .else
 CONFIGURE_ARGS+=	--disable-talkfilters
 PLIST_SUB+=		TALKFILTERS="@comment "

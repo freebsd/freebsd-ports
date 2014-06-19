@@ -3,7 +3,7 @@
 
 PORTNAME=	regexx
 PORTVERSION=	0.98.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -14,8 +14,8 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake pkgconfig libtool
+GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 USE_LDCONFIG=	yes
@@ -28,6 +28,6 @@ post-patch:
 		's|"pcre"||' ${WRKSRC}/configure
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libregexx.so.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libregexx.so
 
 .include <bsd.port.mk>

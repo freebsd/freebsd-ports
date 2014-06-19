@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical regular expression explorer
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui
@@ -19,5 +19,4 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

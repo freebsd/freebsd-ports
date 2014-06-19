@@ -4,7 +4,7 @@
 PORTNAME=	luasql
 
 LUASQL_DRIVER=	postgres
-MASTERDIR=      ${.CURDIR}/../luasql-mysql
 
-NO_STAGE=	yes
+MASTERDIR=	${.CURDIR}/../luasql-mysql
+
 .include "${MASTERDIR}/Makefile"

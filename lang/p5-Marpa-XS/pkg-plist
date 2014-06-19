@@ -20,7 +20,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Vocabulary.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/XS.so
 %%PERL5_MAN3%%/Marpa::XS.3.gz
 %%PERL5_MAN3%%/Marpa::XS::Advanced::Bibliography.3.gz

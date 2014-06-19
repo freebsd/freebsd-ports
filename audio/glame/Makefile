@@ -3,7 +3,7 @@
 
 PORTNAME=	glame
 PORTVERSION=	2.0.1
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF
 
@@ -16,11 +16,13 @@ LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libguile.so:${PORTSDIR}/lang/guile
 
-USE_AUTOTOOLS=	libltdl libtool
+USE_AUTOTOOLS=	libltdl
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig libtool
 USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	xbitmaps x11
+INSTALL_TARGET=	install-strip
 
 INFO=		glame glame-dev
 

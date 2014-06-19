@@ -2,96 +2,90 @@
 # $FreeBSD$
 
 PORTNAME=	webfwlog
-PORTVERSION=	0.94
-PORTREVISION=	2
+PORTVERSION=	1.00
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-
-PATCHFILES=	webfwlog-0.94-tcpflags.patch
-PATCH_SITES=	http://devel.webfwlog.net/download/patches/
 
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	A web-based firewall log analyzer
 
-OPTIONS_DEFINE=		MYSQL PGSQL EXAMPLES
-OPTIONS_DEFAULTS=	MYSQL
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=		MYSQL MYSQLIPV6 PGSQL
+OPTIONS_DEFAULTS=	MYSQL MYSQLIPV6
+
+MYSQLIPV6_DESC=		Shared library plugin for Mysql IPv6 support
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-html-doc-root=${PREFIX}
-CONFIGURE_ARGS+=	--enable-syslog
+CONFIGURE_ARGS+=	--with-html-doc-root=${WWWDIR} \
+			--enable-syslog \
+			--sysconfdir=${ETCDIR} \
+			--disable-dependency-tracking
 
-USE_PHP=	session pcre
+MYSQL_CONFIGURE_WITH=	mysql
+PGSQL_CONFIGURE_WITH=	pgsql
+MYSQLIPV6_CONFIGURE_ENABLE=	mysql-ipv6
+
+USE_PHP=	session
 WANT_PHP_WEB=	yes
-
-SUB_FILES=	pkg-message
-SUB_LIST+=	VERSION=${PORTVERSION}
 
 PORTDOCS=	AUTHORS COPYING CREDITS ChangeLog INSTALL \
 		README ReleaseNotes
-PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql
+USE_PHP+=	mysqli
+USE_MYSQL=	server
+MYSQL_PLUGIN_DIR_REL=	lib/mysql/plugin
+MYSQL_PLUGIN_DIR=	${LOCALBASE}/${MYSQL_PLUGIN_DIR_REL}
+.if ${PORT_OPTIONS:MMYSQLIPV6} && exists (${MYSQL_PLUGIN_DIR})
+USES+=	libtool
+CONFIGURE_ARGS+=	--libdir=${MYSQL_PLUGIN_DIR}
+USE_LDCONFIG=	${MYSQL_PLUGIN_DIR}
+PLIST_FILES+=	${MYSQL_PLUGIN_DIR_REL}/libwebfwlog_udf.so
+PLIST_FILES+=	${MYSQL_PLUGIN_DIR_REL}/libwebfwlog_udf.so.0
+PLIST_FILES+=	${MYSQL_PLUGIN_DIR_REL}/libwebfwlog_udf.so.0.0.0
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-pgsql
+USES+=	pgsql
+WANT_PGSQL=	server client
 .endif
 
-BINMODE=	4550
-BINGRP=	${WWWGRP}
+SUB_FILES=	pkg-message
+SUB_LIST+=	VERSION=${PORTVERSION}
+
+PLIST_SUB+=	WWWGRP=${WWWGRP}
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@${MKDIR} ${WWWDIR}/include/
-	@(cd ${WRKSRC}/webfwlog/include/ && ${COPYTREE_SHARE} \*.php ${WWWDIR}/include/)
-	${CHMOD} 555 ${WWWDIR}/include
-	${INSTALL_PROGRAM} ${WRKSRC}/syslog/wfwl_syslog ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/webfwlog/style.css ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/webfwlog/index.php ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/include/
+	@${INSTALL_DATA} ${WRKSRC}/webfwlog/style.css ${STAGEDIR}${WWWDIR}
+	@${INSTALL_DATA} ${WRKSRC}/webfwlog/index.php ${STAGEDIR}${WWWDIR}
+	@(cd ${WRKSRC}/webfwlog/include/ && ${COPYTREE_SHARE} \*.php ${STAGEDIR}${WWWDIR}/include/)
+	@${ECHO} "Installed web files in ${WWWDIR}"
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/webfwlog.conf ${STAGEDIR}${ETCDIR}/webfwlog.conf.sample
+	@${ECHO} "Installed ${ETCDIR}/webfwlog.conf"
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/wfwl_syslog ${STAGEDIR}${PREFIX}/bin/
+	@${ECHO} "Installed ${PREFIX}/bin/wfwl_syslog"
+.if ${PORT_OPTIONS:MMYSQLIPV6} && exists (${MYSQL_PLUGIN_DIR})
+	@${MKDIR} ${STAGEDIR}${MYSQL_PLUGIN_DIR}
+	@(cd ${WRKSRC}/src/mysql && ${MAKE} DESTDIR=${STAGEDIR} install-strip)
+	@${ECHO} "Installed mysql shared library in ${MYSQL_PLUGIN_DIR}"
+.endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/mysql
-	@${MKDIR} ${DOCSDIR}/pgsql
-	@(cd ${WRKSRC}/mysql/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/mysql/)
-	@(cd ${WRKSRC}/pgsql/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/pgsql/)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/mysql
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pgsql
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/examples
+	@(cd ${WRKSRC}/mysql/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/mysql/)
+	@(cd ${WRKSRC}/pgsql/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/pgsql/)
+	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/examples/)
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
-
-	@if test -f ${PREFIX}/etc/webfwlog.conf; \
-	then \
-		${CHOWN} :${WWWGRP} ${PREFIX}/etc/webfwlog.conf; \
-		${CHMOD} 0640 ${PREFIX}/etc/webfwlog.conf; \
-	fi
-	@${INSTALL_DATA} ${WRKSRC}/webfwlog.conf ${PREFIX}/etc/webfwlog.conf.sample
-	@${CHOWN} :${WWWGRP} ${PREFIX}/etc/webfwlog.conf.sample
-	@${CHMOD} 0640 ${PREFIX}/etc/webfwlog.conf.sample
-	@if test -f ${PREFIX}/etc/webfwlog.conf && \
-		test -f ${PREFIX}/etc/webfwlog.conf.sample && \
-		test "`diff ${PREFIX}/etc/webfwlog.conf ${PREFIX}/etc/webfwlog.conf.sample`" ; \
-	then :; \
-	else \
-		${RM} -f ${PREFIX}/etc/webfwlog.conf; \
-	fi
-	@${RM} -f ${PREFIX}/etc/webfwlog.conf.new
-
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
 
 .include <bsd.port.mk>

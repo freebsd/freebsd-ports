@@ -28,7 +28,6 @@ SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		JAMES_HOME=${APP_HOME} \
 		JAMES_VERSION=${PORTVERSION:S/.//g}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:
@@ -44,17 +43,17 @@ post-patch:
 
 do-install:
 	@${ECHO_MSG} -n ">> Creating destination directory..."
-	@${MKDIR} ${APP_HOME}
+	@${MKDIR} ${STAGEDIR}${APP_HOME}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} ">> Copying files to destination directory..."
-	@${CP} -R ${WRKSRC}/* ${APP_HOME}
-	@${MKDIR} ${APP_HOME}/logs
-	@${MKDIR} ${APP_HOME}/apps
+	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${APP_HOME}
+	@${MKDIR} ${STAGEDIR}${APP_HOME}/logs
+	@${MKDIR} ${STAGEDIR}${APP_HOME}/apps
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Creating symlink to tools.jar..."
-	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/lib/tools.jar
+	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${STAGEDIR}${APP_HOME}/lib/tools.jar
 	@${ECHO_MSG} " [ DONE ]"
 
 post-install:

@@ -1,0 +1,8 @@
+--- ./libabw.pc.in.orig	2014-04-16 19:04:09.000000000 +0200
++++ ./libabw.pc.in	2014-06-10 15:56:35.070672055 +0200
+@@ -10,4 +10,4 @@
+ Libs: -L${libdir} -labw-@ABW_MAJOR_VERSION@.@ABW_MINOR_VERSION@
+ Cflags: -I${includedir}/libabw-@ABW_MAJOR_VERSION@.@ABW_MINOR_VERSION@
+ 
+-Requires.private: libxml-2.0 zlib
++Requires.private: libxml-2.0

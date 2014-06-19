@@ -69,7 +69,7 @@
  #
 -exec "$fb_javacmd" \
 -	-classpath "$fb_appjar$fb_pathsep$CLASSPATH" \
-+JAVA_VERSION="1.5+" exec "$fb_javacmd" \
++JAVA_VERSION="1.6+" exec "$fb_javacmd" \
  	-Dfindbugs.home="$findbugs_home" \
  	$jvm_debug $jvm_maxheap $jvm_ea $jvm_conservespace $jvm_user_props \
  	-Dfindbugs.launchUI=$fb_launchui \

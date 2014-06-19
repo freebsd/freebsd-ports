@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A fast RDoc documentation browser for ruby
+COMMENT=	Fast RDoc documentation browser for ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

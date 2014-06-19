@@ -27,7 +27,9 @@ bin/sg_read_long
 bin/sg_readcap
 bin/sg_reassign
 bin/sg_referrals
+bin/sg_rep_zones
 bin/sg_requests
+bin/sg_reset_wp
 bin/sg_rmsn
 bin/sg_rtpg
 bin/sg_safte
@@ -56,9 +58,9 @@ include/scsi/sg_lib.h
 include/scsi/sg_lib_data.h
 include/scsi/sg_pt.h
 lib/libsgutils2.a
-lib/libsgutils2.la
 lib/libsgutils2.so
 lib/libsgutils2.so.2
+lib/libsgutils2.so.2.0.0
 man/man8/scsi_mandat.8.gz
 man/man8/scsi_readcap.8.gz
 man/man8/scsi_ready.8.gz
@@ -88,7 +90,9 @@ man/man8/sg_read_long.8.gz
 man/man8/sg_readcap.8.gz
 man/man8/sg_reassign.8.gz
 man/man8/sg_referrals.8.gz
+man/man8/sg_rep_zones.8.gz
 man/man8/sg_requests.8.gz
+man/man8/sg_reset_wp.8.gz
 man/man8/sg_rmsn.8.gz
 man/man8/sg_rtpg.8.gz
 man/man8/sg_safte.8.gz

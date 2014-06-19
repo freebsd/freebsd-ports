@@ -12,9 +12,8 @@ COMMENT=	Version of JDK's `jar' command written entirely in C
 
 LICENSE=	GPLv2
 
-USES=		gmake perl5
+USES=		tar:bzip2 gmake perl5
 USES_PERL5=	build
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -29,6 +28,6 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

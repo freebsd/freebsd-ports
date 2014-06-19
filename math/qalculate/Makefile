@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-gtk/${PORTNAME}-gtk-${PORTVERSION}
 DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-purpose desktop calculator (Gnome frontend)
 
 LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate

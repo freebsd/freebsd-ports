@@ -55,6 +55,7 @@
     SUBDIR += claws-mail-fancy
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gdata
+    SUBDIR += claws-mail-libravatar
     SUBDIR += claws-mail-mailmbox
     SUBDIR += claws-mail-newmail
     SUBDIR += claws-mail-notification
@@ -595,6 +596,7 @@
     SUBDIR += roundcube-automatic_addressbook
     SUBDIR += roundcube-contextmenu
     SUBDIR += roundcube-groupvice
+    SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-login_info
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2

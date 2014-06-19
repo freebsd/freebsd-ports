@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
@@ -53,7 +53,7 @@ EXAMPLES_FILES2=	accuracy defaults dynamic events fsaa fsinput iconify \
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 # Restrict to stable (even) versions, indicated by the second component.
-PORTSCOUT=    limit:^2\..*
+PORTSCOUT=	limit:^2\..*
 
 post-extract:
 	@${CHMOD} ${BINMODE} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

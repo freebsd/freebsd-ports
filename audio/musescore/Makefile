@@ -17,8 +17,7 @@ BUILD_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 RUN_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
 
-USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		tar:bzip2 cmake:outsource
 USE_QT4=	corelib designer gui network script scripttools svg webkit xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
 CMAKE_SOURCE_PATH=	${WRKSRC}/mscore

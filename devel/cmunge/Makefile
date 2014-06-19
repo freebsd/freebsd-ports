@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.vcpc.univie.ac.at/vcpc/jhm/code/ \
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	A tool for encrypting and compacting C source code
+COMMENT=	Tool for encrypting and compacting C source code
 
 WRKSRC=		${WRKDIR}/cmunger
 MAKE_ARGS=	CC="${CC} ${CFLAGS}"

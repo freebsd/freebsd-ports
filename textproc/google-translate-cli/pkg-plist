@@ -1,0 +1,7 @@
+bin/translate
+bin/trs
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%DATADIR%%/translate
+%%DATADIR%%/translate.awk
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

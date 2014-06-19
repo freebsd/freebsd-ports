@@ -70,6 +70,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s#%%INSTALL_SCRIPT%%#${INSTALL_SCRIPT}#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s#%%INSTALL_DATA%%#${INSTALL_DATA}#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s#%%G++%%#${CXX}#" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s#LIBS#LIBRARIES#" ${WRKSRC}/Makefile.in
 
 pre-build:
 	cd ${WRKSRC}/third-party/json-c && ${MAKE} clean && ./configure && ${MAKE}

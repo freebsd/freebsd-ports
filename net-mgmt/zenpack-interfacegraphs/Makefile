@@ -4,8 +4,8 @@
 PORTNAME=	InterfaceGraphs
 PORTVERSION=	1.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=   https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
-DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
+MASTER_SITES=	https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
+DISTNAME=	zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides a link that graphs all network interfaces for a device
@@ -16,8 +16,8 @@ USES=		zenoss
 
 ZPACKGROUP=	community
 ZPACKPREFIX=	ZenPacks.community.
-WRKSRC=  ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
-TAG= 7ed2d7d
+WRKSRC=		${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
+TAG=		7ed2d7d
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

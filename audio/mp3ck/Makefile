@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A consistency check utility for MPEG Layer 2 or 3 files or streams
+COMMENT=	Consistency check utility for MPEG Layer 2 or 3 files or streams
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

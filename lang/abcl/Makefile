@@ -8,7 +8,7 @@ MASTER_SITES=	http://abcl.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	An implementation of ANSI Common Lisp in Java
+COMMENT=	Implementation of ANSI Common Lisp in Java
 
 PLIST_FILES=	share/java/classes/abcl.jar \
 		bin/abcl

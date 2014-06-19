@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An implementation of the Porter word stemming algorithm
+COMMENT=	Implementation of the Porter word stemming algorithm
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -7,8 +7,8 @@ CATEGORIES=	biology
 MASTER_SITES=	SF
 DISTNAME=	MUMmer${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A modular system for rapid whole genome alignment
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Modular system for rapid whole genome alignment
 
 USES=		gmake
 
@@ -19,26 +19,14 @@ SCRIPTS=	dnadiff exact-tandems mapview mummerplot nucmer \
 		nucmer2xfig promer run-mummer1 run-mummer3
 DOCUMENTS=	COPYRIGHT INSTALL LICENSE README
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-install:
-.for program in ${PROGRAMS}
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${program} ${PREFIX}/bin)
-.endfor
-
-.for script in ${SCRIPTS}
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${script} ${PREFIX}/bin)
-.endfor
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCUMENTS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${DOCSDIR})
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCUMENTS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

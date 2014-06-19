@@ -10,7 +10,7 @@ MASTER_SITES=	SF/justjournal/JustJournal%20UNIX%20Client/${PORTVERSION} \
 
 
 MAINTAINER=	luke@justjournal.com
-COMMENT=	A command line client for posting JustJournal entries
+COMMENT=	Command line client for posting JustJournal entries
 
 LIB_DEPENDS+=	libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c
 

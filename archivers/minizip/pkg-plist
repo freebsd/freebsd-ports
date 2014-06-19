@@ -1,0 +1,15 @@
+bin/miniunzip
+bin/minizip
+include/minizip/crypt.h
+include/minizip/ioapi.h
+include/minizip/mztools.h
+include/minizip/unzip.h
+include/minizip/zip.h
+lib/libminizip.a
+lib/libminizip.so
+lib/libminizip.so.1
+lib/libminizip.so.1.0.0
+libdata/pkgconfig/minizip.pc
+man/man1/miniunzip.1.gz
+man/man1/minizip.1.gz
+@dirrm include/minizip

@@ -14,8 +14,8 @@ COMMENT=	Uim plugin using Anthy input method
 USE_GNOME=	gtk20
 .endif
 
-LIB_DEPENDS=	anthy:${PORTSDIR}/japanese/anthy \
-		uim:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy \
+		libuim.so:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
@@ -30,7 +30,6 @@ UIM_SLAVE=	yes
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in \
 		${PATCHDIR}/extra-patch-gtk2_dict_Makefile.in
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy.la)
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy-utf8.la)
@@ -40,14 +39,10 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC}/uim && \
-	${GMAKE} uim_plugin_LTLIBRARIES=libuim-anthy.la install-uim_pluginLTLIBRARIES && \
-	${GMAKE} uim_plugin_LTLIBRARIES=libuim-anthy-utf8.la install-uim_pluginLTLIBRARIES)
+	${GMAKE} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy.la install-uim_pluginLTLIBRARIES && \
+	${GMAKE} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy-utf8.la install-uim_pluginLTLIBRARIES)
 .if !defined(WITHOUT_X11)
-	(cd ${WRKSRC}/gtk2/dict && ${GMAKE} bin_PROGRAMS=uim-dict-gtk install-binPROGRAMS install-uim_dict_uiDATA)
+	(cd ${WRKSRC}/gtk2/dict && ${GMAKE} DESTDIR=${STAGEDIR} bin_PROGRAMS=uim-dict-gtk install-binPROGRAMS install-uim_dict_uiDATA)
 .endif
-
-post-install:
-	${LOCALBASE}/bin/uim-module-manager --register anthy
-	${LOCALBASE}/bin/uim-module-manager --register anthy-utf8
 
 .include "${MASTERDIR}/Makefile"

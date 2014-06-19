@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
 MAINTAINER=	aweits@rit.edu
-COMMENT=	A collection of useful libraries for developers
+COMMENT=	Collection of useful libraries for developers
 
 LICENSE=	GPLv3
 

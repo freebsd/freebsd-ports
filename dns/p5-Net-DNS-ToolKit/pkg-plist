@@ -60,7 +60,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Debug/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Debug/print_buf.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Debug/print_head.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/ToolKit.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/ToolKit.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/dns_ans.al

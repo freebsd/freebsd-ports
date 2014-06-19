@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	A GUI backend chooser
+COMMENT=	GUI backend chooser
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/mcj/mcj-source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	mjl@luckie.org.nz
-COMMENT=	A drawing program for X11
+COMMENT=	Drawing program for X11
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
@@ -24,6 +24,7 @@ USES=		imake
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 USE_CSTD=	gnu89
 CFLAGS+=	-Wno-return-type
+INSTALL_TARGET=	install install.libs
 
 MAKE_ENV+=	DOCSDIR=${DOCSDIR} CHMOD=${CHMOD} TAR=${TAR}
 MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
@@ -38,7 +39,7 @@ I18N_DESC=	I18N support and Japanese docs
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET=	install install.libs install.html
+INSTALL_TARGET+=	install.html
 .endif
 
 .if ! ${PORT_OPTIONS:MI18N} || ! ${PORT_OPTIONS:MDOCS}

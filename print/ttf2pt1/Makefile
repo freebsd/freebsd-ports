@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
 
 USES=		pkgconfig shebangfix perl5 uidfix
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}" \
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LIBS}" \
 		INSTDIR="${STAGEDIR}${PREFIX}" LIBXDIR="${STAGEDIR}${PREFIX}/bin" \
 		OWNER=${BINOWN} GROUP=${BINGRP}
 SHEBANG_FILES=	app/TeX/sfd2map \
@@ -33,7 +33,7 @@ SHEBANG_FILES=	app/TeX/sfd2map \
 
 CPPFLAGS+=	`pkg-config --cflags freetype2` \
 		-I${LOCALBASE}/include -DUSE_FREETYPE
-LDFLAGS+=	`pkg-config --libs freetype2` \
+LIBS+=		`pkg-config --libs freetype2` \
 		-L${LOCALBASE}/lib -lm
 
 post-install:

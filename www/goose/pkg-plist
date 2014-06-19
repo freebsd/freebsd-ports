@@ -1,5 +1,6 @@
 bin/goose
+man/man1/goose.1.gz
 %%DATADIR%%/GoogleSearch.wsdl
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/goose.conf.example
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%

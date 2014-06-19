@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Dec 29 06:17:43 1998
-+++ Makefile.in	Wed Mar 31 21:10:43 2004
+--- Makefile.in.orig	1998-12-29 05:17:43.000000000 +0800
++++ Makefile.in	2014-06-11 20:35:12.384582119 +0800
 @@ -2,14 +2,15 @@
  #
  # My test system is Linux 2.1.30, gcc 2.7.2, libc 5.4.27
@@ -20,7 +20,7 @@
  LIBOBJS=wordwrap.o nullproc.o tblock.o scan_num.o map_chars.o col-align.o \
  	compat.o num_unit_probe.o part_num_probe.o
  AR=ar
-@@ -86,7 +87,7 @@
+@@ -86,7 +87,7 @@ liboutfmt.a: $(LIBOBJS)
  	$(RANLIB) $@
  
  rtest2:	rtest2.o $(READER) tblock.o
@@ -29,7 +29,7 @@
  
  fmt-text.o: text-fmt.o text-table.o
  	$(LD) -r -o $@ text-fmt.o text-table.o
-@@ -107,10 +108,10 @@
+@@ -107,10 +108,10 @@ gopt.o: getopt.o getopt1.o
  	$(LD) -r -o gopt.o getopt.o getopt1.o
  
  word2x: $(PROGOBJS)
@@ -38,8 +38,8 @@
  
  install: $(TARGETS) $(MANP)
 -	@INSTALL@ $(MANP) -m 644 @mandir@/man1
-+	@INSTALL_DATA@ $(MANP) @mandir@/man1
++	@INSTALL_DATA@ $(MANP) $(DESTDIR)@mandir@/man1
  	for I in $(TARGETS); do \
 -		@INSTALL@ $${I} -m 755 @bindir@; \
-+		@INSTALL_PROGRAM@ $${I} @bindir@; \
++		@INSTALL_PROGRAM@ $${I} $(DESTDIR)@bindir@; \
  	done

@@ -15,10 +15,7 @@ OPTIONS_DEFINE=	\
 		BDB		\
 		DOCS		\
 		FREEBSD_TEMPLATE\
-		GNOME_KEYRING	\
-		KDE_KWALLET	\
 		MAINTAINER_DEBUG\
-		MOD_DAV_SVN	\
 		NLS		\
 		P4_STYLE_MARKERS\
 		SASL		\
@@ -30,19 +27,16 @@ OPTIONS_DEFINE=	\
 
 OPTIONS_DEFAULT=P4_STYLE_MARKERS \
 		FREEBSD_TEMPLATE \
-		SERF
+		SERF TOOLS
 
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
-GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
-KDE_KWALLET_DESC=	Build with KDE KWallet auth support
 MAINTAINER_DEBUG_DESC=	Build debug version
-MOD_DAV_SVN_DESC=	mod_dav_svn module for Apache 2.X
 P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 STATIC_DESC=		Build static version (no shared libs)
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
-TOOLS_DESC=		Install several tools (svnauthz-validate and mod_dontdothat are among them)
+TOOLS_DESC=		Install several tools
 
 # Patches required for use with the FreeBSD Project repository only
 P4_STYLE_MARKERS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-3way-conflict-markers
@@ -53,12 +47,12 @@ SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
 
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
+SVNGROUP?=	svn
+SVNUSER?=	svn
 
-SUB_FILES=	pkg-install
-
-.if !${PORT_OPTIONS:MMAINTAINER_DEBUG}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
-.endif
+CONFIGURE_ARGS+=	--without-gnome-keyring \
+			--without-kwallet \
+			--with-apxs=no
 
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
 SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
@@ -66,17 +60,6 @@ PLIST_SUB+=	NO_SVNSERVE_WRAPPER="@comment "
 .else
 SUB_LIST+=	SVNSERVE_BIN_EXT=""
 PLIST_SUB+=	NO_SVNSERVE_WRAPPER=""
-.endif
-
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
-PLIST_SUB+=	SED=${SED}
-SVNGROUP?=	www
-SVNUSER?=	www
-.else
-SUB_LIST+=	MOD_DAV_SVN_INSTALL="NO"
-SVNGROUP?=	svn
-SVNUSER?=	svn
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
@@ -89,7 +72,6 @@ USES+=			gettext:build
 .  endif
 .  if ${PORT_OPTIONS:MBDB}
 BDB_BUILD_DEPENDS=	yes
-.else
 .  endif
 OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/!:C!(\.so|\.[0-9]+)?:!.a:!}
 BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
@@ -135,24 +117,6 @@ pre-everything::
 
 	@${ECHO_MSG} ""
 .if ${PORT_OPTIONS:MSTATIC}
-.  if ${PORT_OPTIONS:MMOD_DAV_SVN}
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.  endif
-.  if ${PORT_OPTIONS:MGNOME_KEYRING}
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! Gnome Keyring and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.  endif
-.  if ${PORT_OPTIONS:MKDE_WALLET}
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! KDE Wallet and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.  endif
 	@${ECHO_MSG} "Static binaries will be built."
 .endif # STATIC
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
@@ -212,9 +176,6 @@ post-install:	${MKREPOS_TARGET}
 repository:	_mkrepos
 
 _SVNGRPFILES=	db locks locks/db.lock locks/db-logs.lock
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-_SVNGRPFILES+=	dav
-.endif
 SVNGRPFILES=	${_SVNGRPFILES:S,^,${SVNREPOS}/,}
 
 _mkrepos:	.USE
@@ -248,9 +209,6 @@ _mkrepos:	.USE
 	@${MKDIR} ${SVNREPOS}
 	@${PREFIX}/bin/svnadmin create --fs-type ${SVNFSTYPE} ${SVNREPOS}
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-	@${MKDIR} ${SVNREPOS}/dav
-.endif
 	@${CHOWN} ${SVNUSER}:${SVNGROUP} ${SVNGRPFILES}
 	@${CHMOD} g+w ${SVNGRPFILES}
 	@for i in ${SVNREPOS}/db/* ; do \
@@ -266,7 +224,8 @@ _mkrepos:	.USE
 .endif
 
 svn-build-outputs-hack:
+	cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} -p0 < ${PATCHDIR}/extra-patch-build.conf
 	cd ${WRKSRC} && python2 gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc
-	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk
+	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk.addons
 
 .include <bsd.port.post.mk>

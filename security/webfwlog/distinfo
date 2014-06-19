@@ -1,4 +1,2 @@
-SHA256 (webfwlog-0.94.tar.gz) = c1b84dd4036aa9f81fc4fbd527eda202e51c3767659b8f1eef12bfb3381c5b36
-SIZE (webfwlog-0.94.tar.gz) = 288138
-SHA256 (webfwlog-0.94-tcpflags.patch) = b29df0df2b62ec99f121e50033b852e1a5177f0db1b31ecf12a8c535a16812dd
-SIZE (webfwlog-0.94-tcpflags.patch) = 455
+SHA256 (webfwlog-1.00.tar.gz) = 205775a4ff0cdf3dffe257228bdcbdc5752b7e5fed122f67d2330fb12a901957
+SIZE (webfwlog-1.00.tar.gz) = 732212

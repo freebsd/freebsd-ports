@@ -57,6 +57,328 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0981958a-f733-11e3-8276-071f1604ef8a">
+    <topic>iodined -- authentication bypass</topic>
+    <affects>
+      <package>
+	<name>iodine</name>
+	<range><lt>0.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Erik Ekman of the iodine project reports:</p>
+    <blockquote cite="https://github.com/yarrick/iodine/commit/b715be5cf3978fbe589b03b09c9398d0d791f850">
+	<p>The client could bypass the password check by continuing after
+	    getting error from the server and guessing the network parameters.
+	    The server would still accept the rest of the setup and also network
+	    traffic.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<url>https://github.com/yarrick/iodine/commit/b715be5cf3978fbe589b03b09c9398d0d791f850</url>
+    </references>
+    <dates>
+      <discovery>2014-06-16</discovery>
+      <entry>2014-06-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f109b02f-f5a4-11e3-82e9-00a098b18457">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.10.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>1.8.28.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Asterisk Manager User Unauthorized Shell Access. Manager users can
+	    execute arbitrary shell commands with the MixMonitor manager action.
+	    Asterisk does not require system class authorization for a manager
+	    user to use the MixMonitor action, so any manager user who is
+	    permitted to use manager commands can potentially execute shell
+	    commands as the user executing the Asterisk process.</p>
+	  <p>Exhaustion of Allowed Concurrent HTTP Connections. Establishing a
+	    TCP or TLS connection to the configured HTTP or HTTPS port
+	    respectively in http.conf and then not sending or completing a HTTP
+	    request will tie up a HTTP session. By doing this repeatedly until the
+	    maximum number of open HTTP sessions is reached, legitimate requests
+	    are blocked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4046</cvename>
+      <cvename>CVE-2014-4047</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-006.pdf</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-007.pdf</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2014-06-12</discovery>
+      <entry>2014-06-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="52bbc7e8-f13c-11e3-bc09-bcaec565249c">
+    <topic>dbus -- local DoS</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><ge>1.8.0</ge><lt>1.8.4</lt></range>
+	<range><lt>1.6.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon MvVittie reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/dbus/2014-June/016220.html">
+	  <p>Alban Crequy at Collabora Ltd. discovered and fixed a
+	    denial-of-service flaw in dbus-daemon, part of the reference
+	    implementation of D-Bus.  Additionally, in highly unusual
+	    environments the same flaw could lead to a side channel between
+	    processes that should not be able to communicate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3477</cvename>
+      <url>http://lists.freedesktop.org/archives/dbus/2014-June/016220.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-10</discovery>
+      <entry>2014-06-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0b0fb9b0-f0fb-11e3-9bcd-000c6e25e3e9">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>35.0.1916.153</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl">
+	  <p>4 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[369525] High CVE-2014-3154: Use-after-free in filesystem api. Credit
+	      to Collin Payne.</li>
+	    <li>[369539] High CVE-2014-3155: Out-if-bounds read in SPDY. Credit
+	      to James March, Daniel Sommermann and Alan Frindell of Facebook.</li>
+	    <li>[369621] Medium CVE-2014-3156: Buffer overflow in clipboard. Credit
+	      to Atte Kettunen of OUSPG.</li>
+	    <li>[368980] CVE-2014-3157: Heap overflow in media.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3154</cvename>
+      <cvename>CVE-2014-3155</cvename>
+      <cvename>CVE-2014-3156</cvename>
+      <cvename>CVE-2014-3157</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2014-06-10</discovery>
+      <entry>2014-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="888a0262-f0d9-11e3-ba0c-b4b52fce4ce8">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>30.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>24.6.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>30.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.6.0</lt></range>
+      </package>
+      <package>
+	<name>nspr</name>
+	<range><lt>4.10.6</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>24.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-48 Miscellaneous memory safety hazards
+	    (rv:30.0 / rv:24.6)</p>
+	  <p>MFSA 2014-49 Use-after-free and out of bounds
+	    issues found using Address Sanitizer</p>
+	  <p>MFSA 2014-51 Use-after-free in Event Listener
+	    Manager</p>
+	  <p>MFSA 2014-52 Use-after-free with SMIL Animation
+	    Controller</p>
+	  <p>MFSA 2014-53 Buffer overflow in Web Audio Speex
+	    resampler</p>
+	  <p>MFSA 2014-54 Buffer overflow in Gamepad API</p>
+	  <p>MFSA 2014-55 Out of bounds write in NSPR</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1533</cvename>
+      <cvename>CVE-2014-1534</cvename>
+      <cvename>CVE-2014-1536</cvename>
+      <cvename>CVE-2014-1537</cvename>
+      <cvename>CVE-2014-1540</cvename>
+      <cvename>CVE-2014-1541</cvename>
+      <cvename>CVE-2014-1542</cvename>
+      <cvename>CVE-2014-1543</cvename>
+      <cvename>CVE-2014-1545</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-48.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-49.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-51.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-52.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-53.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-54.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-55.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-10</discovery>
+      <entry>2014-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5ac53801-ec2e-11e3-9cf3-3c970e169bc2">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_13</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1h</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>8.0</ge><lt>8.4_12</lt></range>
+	<range><ge>9.1</ge><lt>9.1_15</lt></range>
+	<range><ge>9.2</ge><lt>9.2_8</lt></range>
+	<range><ge>10.0</ge><lt>10.0_5</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL Project reports:</p>
+	<blockquote cite="http://www.openssl.org/news/secadv_20140605.txt">
+	  <p>An attacker using a carefully crafted handshake can force
+	    the use of weak keying material in OpenSSL SSL/TLS clients
+	    and servers. This can be exploited by a Man-in-the-middle
+	    (MITM) attack where the attacker can decrypt and modify
+	    traffic from the attacked client and server. [CVE-2014-0224]</p>
+	  <p>By sending an invalid DTLS handshake to an OpenSSL DTLS
+	    client the code can be made to recurse eventually crashing
+	    in a DoS attack. [CVE-2014-0221]</p>
+	  <p>A buffer overrun attack can be triggered by sending invalid
+	    DTLS fragments to an OpenSSL DTLS client or server. This is
+	    potentially exploitable to run arbitrary code on a vulnerable
+	    client or server. [CVE-2014-0195]</p>
+	  <p>OpenSSL TLS clients enabling anonymous ECDH ciphersuites are
+	    subject to a denial of service attack. [CVE-2014-3470]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0195</cvename>
+      <cvename>CVE-2014-0221</cvename>
+      <cvename>CVE-2014-0224</cvename>
+      <cvename>CVE-2014-3470</cvename>
+      <url>http://www.freebsd.org/security/advisories/FreeBSD-SA-14:14.openssl.asc</url>
+      <url>http://www.openssl.org/news/secadv_20140605.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-06-05</discovery>
+      <entry>2014-06-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9733c480-ebff-11e3-970b-206a8a720317">
+    <topic>gnutls -- client-side memory corruption</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>2.12.23_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuTLS project reports:</p>
+	<blockquote cite="www.gnutls.org/security.html#GNUTLS-SA-2014-3">
+	  <p>This vulnerability affects the client side of the gnutls library.
+	    A server that sends a specially crafted ServerHello could corrupt
+	    the memory of a requesting client.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3466</cvename>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-3</url>
+    </references>
+    <dates>
+      <discovery>2014-05-14</discovery>
+      <entry>2014-06-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="027af74d-eb56-11e3-9032-000c2980a9f3">
+    <topic>gnutls -- client-side memory corruption</topic>
+    <affects>
+      <package>
+	<name>gnutls3</name>
+	<range><ge>3.1</ge><lt>3.1.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuTLS project reports:</p>
+	<blockquote cite="www.gnutls.org/security.html#GNUTLS-SA-2014-3">
+	  <p>This vulnerability affects the client side of the gnutls library.
+	    A server that sends a specially crafted ServerHello could corrupt
+	    the memory of a requesting client.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3466</cvename>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2014-3</url>
+    </references>
+    <dates>
+      <discovery>2014-05-14</discovery>
+      <entry>2014-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="77e2e631-e742-11e3-9a25-5404a6a6412c">
     <topic>mumble -- multiple vulnerabilities</topic>
     <affects>

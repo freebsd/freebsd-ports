@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A fetch lyrics gmpc plugin
+COMMENT=	Fetch lyrics gmpc plugin
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc

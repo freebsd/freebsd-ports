@@ -11,30 +11,21 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-Screen-Display infrastructure using Pango text rendering
 
-USES=        pathfix gmake pkgconfig
+USES=		pathfix gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack pygnome2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
 GCONF_SCHEMAS=	gnome-osd.schemas
 
-MAN1=		gnome-osd-client.1
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS NEWS README \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

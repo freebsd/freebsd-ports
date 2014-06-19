@@ -1,6 +1,3 @@
-#-*- tab-width: 4; -*-
-# ex:ts=4
-#
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
 # $FreeBSD$
 #
@@ -10,16 +7,16 @@
 #
 # +++ variables +++
 #
-# STRIP			- The flag passed to the install program to cause the binary
-#				  to be stripped.  This is to be used when building your
-#				  own install script so that the entire system can be made
-#				  stripped/not-stripped using a single knob. [-s]
+# STRIP		- The flag passed to the install program to cause the binary
+#		  to be stripped.  This is to be used when building your
+#		  own install script so that the entire system can be made
+#		  stripped/not-stripped using a single knob. [-s]
 #
-# OPSYS			- Get the operating system type [`uname -s`]
+# OPSYS		- Get the operating system type [`uname -s`]
 #
-# SUBDIR		- A list of subdirectories that should be built as well.
-#				  Each of the targets will execute the same target in the
-#				  subdirectories.
+# SUBDIR	- A list of subdirectories that should be built as well.
+#		  Each of the targets will execute the same target in the
+#		  subdirectories.
 #
 #
 # +++ targets +++

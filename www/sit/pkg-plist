@@ -34,7 +34,9 @@
 %%WWWDIR%%/calendar/week_planner.js.php
 %%WWWDIR%%/calendar/year.inc.php
 %%WWWDIR%%/chart.php
+@unexec if cmp -s %D/%%WWWDIR%%/config.inc.php %D/%%WWWDIR%%/config.inc-dist.php; then rm -f %D/%%WWWDIR%%/config.inc.php; fi
 %%WWWDIR%%/config.inc-dist.php
+@exec cp -n %D/%F %B/config.inc.php
 %%WWWDIR%%/config.php
 %%WWWDIR%%/contact_add.php
 %%WWWDIR%%/contact_delete.php

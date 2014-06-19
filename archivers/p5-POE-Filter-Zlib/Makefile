@@ -19,4 +19,3 @@ USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
-

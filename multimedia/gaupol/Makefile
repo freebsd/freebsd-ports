@@ -8,7 +8,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.gna.org/gaupol/0.19/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor
 
 LICENSE=	GPLv3

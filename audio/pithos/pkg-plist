@@ -19,7 +19,5 @@
 %%DATADIR%%/ui/StationsDialog.ui
 @dirrm %%DATADIR%%/icons/scalable/apps
 @dirrm %%DATADIR%%/icons/scalable
-@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/media
 @dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%

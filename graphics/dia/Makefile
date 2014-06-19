@@ -4,7 +4,7 @@
 
 PORTNAME=	dia
 DISTVERSION=	0.97.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	DOCS
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	gtk20 gnomeprefix libxslt libartlgpl2 intlhack
 INSTALLS_ICONS=	yes

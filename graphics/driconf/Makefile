@@ -3,7 +3,7 @@
 
 PORTNAME=	driconf
 PORTVERSION=	0.9.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/${PORTNAME}
@@ -18,15 +18,10 @@ USE_GL=		glut
 USE_PYTHON=	yes
 NO_BUILD=	yes
 USES=		gettext
-INSTALLS_EGGINFO=	yes
-PYDISTUTILS_EGGINFODIR=	lib/driconf
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_EGGINFODIR=	${STAGEDIR}${PREFIX}/lib/driconf
 
-NO_STAGE=	yes
 pre-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|/usr/local|${PREFIX}|'
-
-do-install:
-	@(cd ${WRKSRC} && ${PYTHON_CMD} setup.py install)
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/driconf* ${WRKSRC}/setup.*
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/${MASTER_SITES_VER_PATH}&,}/
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -79,10 +79,6 @@ USE_KDE4+=	kdelibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPERA_ARCH=	${ARCH:S,i386,intel,}
-
-.if ${OSVERSION} < 700000
-IGNORE=		only for FreeBSD 7.x and higher
-.endif
 
 .if ${OSVERSION} >= 1000054
 .if ${PORT_OPTIONS:MCOMPAT9}

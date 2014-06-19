@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	unifi3
-PORTVERSION=	3.1.13
+PORTVERSION=	3.2.1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
@@ -41,5 +42,6 @@ post-extract:
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
+	${LN} -sf ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
 
 .include <bsd.port.mk>

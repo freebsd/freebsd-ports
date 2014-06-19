@@ -14,11 +14,11 @@ COMMENT=	A network monitoring daemon
 USE_RC_SUBR=	nefu
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
-CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib" \
-			YACC=${YACC} \
+CONFIGURE_ENV=		YACC=${YACC} \
 			OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 CPPFLAGS+=		-I${LOCALBASE}/include
+LIBS+=			-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} \
 			--without-sasl \
 			--without-zlib \

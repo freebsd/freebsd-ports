@@ -26,8 +26,7 @@ USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 CC=clang
 CXX=clang++
 CPP=clang-cpp
-# i386 triggers clang bug 19778. This happens with clang 3.4.1 and older.
-. elif ${OSVERSION} < 901500 || ${ARCH} == i386
+. elif ${OSVERSION} < 901500
 USE_GCC=yes
 . endif
 .endif

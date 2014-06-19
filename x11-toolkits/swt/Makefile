@@ -10,7 +10,7 @@ MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops/${MASTER_SITE_S
 MASTER_SITE_SUBDIR=	R-${DISTVERSION}-201002111343
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Standard Widget Toolkit for Java
 
 LICENSE=	EPL

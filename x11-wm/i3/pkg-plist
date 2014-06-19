@@ -6,6 +6,7 @@ bin/i3-input
 bin/i3-migrate-config-to-v4
 bin/i3-msg
 bin/i3-nagbar
+bin/i3-save-tree
 bin/i3-sensible-editor
 bin/i3-sensible-pager
 bin/i3-sensible-terminal
@@ -21,6 +22,7 @@ man/man1/i3-input.1.gz
 man/man1/i3-migrate-config-to-v4.1.gz
 man/man1/i3-msg.1.gz
 man/man1/i3-nagbar.1.gz
+man/man1/i3-save-tree.1.gz
 man/man1/i3-sensible-editor.1.gz
 man/man1/i3-sensible-pager.1.gz
 man/man1/i3-sensible-terminal.1.gz

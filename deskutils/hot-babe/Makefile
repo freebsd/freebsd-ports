@@ -12,16 +12,12 @@ MASTER_SITE_SUBDIR=	novel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small utility which displays the system activity in a special way
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 MAKE_ARGS+=	PREFIX="${PREFIX}" CC="${CC}"
 USE_GNOME=	gtk20
 
-MAN1=	hot-babe.1
-
 PORTDOCS=	ChangeLog NEWS TODO LICENSE CONTRIBUTORS copyright config.example
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning! This port contains some adults only content."
@@ -29,11 +25,11 @@ pre-everything::
 	@${ECHO_MSG}
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/hot-babe.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/hot-babe.1 ${STAGEDIR}${PREFIX}/man/man1
 .ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

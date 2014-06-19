@@ -11,8 +11,8 @@ DISTNAME=	wcalc-${PORTVERSION}
 MAINTAINER=	amarendra.godbole@gmail.com
 COMMENT=	A natural-expression command-line calculator
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libmpfr.so:${PORTSDIR}/math/mpfr
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

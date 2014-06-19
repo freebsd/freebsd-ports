@@ -8,24 +8,24 @@ MASTER_SITES=	SF/${PORTNAME}/Template%20Lite/Template%20Lite%20version%20${PORTV
 DISTNAME=	template_lite_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A smaller, faster alternative to the Smarty template engine
+COMMENT=	Smaller, faster alternative to the Smarty template engine
 
 NO_BUILD=	yes
 USE_PHP=	pcre
 WANT_PHP_WEB=	yes
-WRKSRC=	${WRKDIR}/template_lite
+WRKSRC=		${WRKDIR}/template_lite
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}/src && ${FIND} * | ${TAR} cTf - - | ${TAR} xUCf ${DATADIR} -
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${FIND} * | ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
-.endif
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+.include <bsd.port.options.mk>
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

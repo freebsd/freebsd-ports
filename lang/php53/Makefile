@@ -14,11 +14,13 @@ COMMENT=	PHP Scripting Language
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-USES=tar:bzip2
+USES=		tar:bzip2 cpe
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+
+CPE_PRODUCT=	php
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \
@@ -137,7 +139,7 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		lt_cv_path_SED="sed"
 
 .if ${PORT_OPTIONS:MLINKTHR}
-CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}"
+LIBS+=		${PTHREAD_LIBS}
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}

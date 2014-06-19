@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	7.6.2
+PORTVERSION=	7.7.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -11,17 +11,16 @@ COMMENT=	GNU GDB of newer version than comes with the system
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
-USES=		iconv gmake
+USES=		iconv gmake libtool tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
+		--enable-targets=all \
 		--with-gdb-datadir=${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
-		--without-libunwind-ia64 \
-		--enable-targets=all
+		--without-libunwind-ia64
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 EXCLUDE=	dejagnu expect sim texinfo intl
@@ -56,8 +55,8 @@ EXPAT_CONFIGURE_OFF=	--without-expat
 EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
-PORT_READLINE_USES=	readline:port
 PORT_READLINE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-gdb-tui-tui-io.c
+PORT_READLINE_USES=	readline:port
 TUI_CONFIGURE_ENABLE=	tui
 
 .include <bsd.port.options.mk>
@@ -90,7 +89,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
 		${STAGEDIR}${PREFIX}/bin/gdb${VER}
-	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 \
+	${INSTALL_MAN} ${WRKSRC}/gdb/doc/gdb.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/gdb${VER}.1
 
 .if ${PORT_OPTIONS:MTUI}

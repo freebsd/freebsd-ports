@@ -19,8 +19,7 @@ LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libao.so:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		tar:bzip2 gmake
 USE_RUBY=	yes
 MAKE_ARGS=	CC="${CC}"
 
@@ -28,9 +27,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|--std=gnu99|--std=gnu99 ${CFLAGS} ${PTHREAD_CFLAGS}|; \
@@ -50,11 +47,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/musicdb_lib.rb ${STAGEDIR}${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/squash.conf ${STAGEDIR}${PREFIX}/etc/squash.conf.dist
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README doc/FEATURES doc/LOCKS doc/INSTALL doc/USERS_GUIDE
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

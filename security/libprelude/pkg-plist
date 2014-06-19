@@ -81,7 +81,6 @@ lib/libpreludecpp.so
 lib/libpreludecpp.so.3
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/.packlist
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/PreludeEasy-%%VERSION%%-py%%PYTHON_VER%%.egg-info

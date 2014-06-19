@@ -10,13 +10,16 @@
 # $FreeBSD$
 #
 
-if [ "%%MOD_DAV_SVN_INSTALL%%" != "YES" ] ; then
-	exit 0
-fi
-
 if [ "$2" != "PRE-INSTALL" ]; then
 	exit 0
 fi
+
+echo ""
+echo " Please check that your repository contains 'dav' subdirectory and"
+echo " that all files in repositroy is accessible by apache user (typically www)"
+echo ""
+
+exit 0
 
 APXSCMD=${PKG_PREFIX}/sbin/apxs
 
@@ -53,5 +56,11 @@ if [ ! -n "`egrep -e '^LoadModule[[:blank:]]+dav_module' ${SYSCONFDIR}/${CONFFIL
 else
 	echo  "dav_module already active in ${SYSCONFDIR}/${CONFFILE}"
 fi
+
+echo ""
+echo " Please check that your repository contains 'dav' subdirectory and"
+echo " that all files in repositroy is accessible by apache user (typically www)"
+echo ""
+
 
 exit 0

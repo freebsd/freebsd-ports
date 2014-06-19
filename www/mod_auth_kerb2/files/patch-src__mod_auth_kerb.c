@@ -1,9 +1,9 @@
 # Latest revision in mod_auth_kerb repo is r157 from from 2009-08-11
 # Rev in latest src archive is r150.
 # http://modauthkerb.cvs.sourceforge.net/viewvc/modauthkerb/mod_auth_kerb/src/mod_auth_kerb.c?revision=1.157
-============================================================================================================
---- ./src/mod_auth_kerb.c.orig	2008-12-04 11:14:03.000000000 +0100
-+++ ./src/mod_auth_kerb.c	2013-06-18 17:06:05.000000000 +0200
+# Further patched to work with Apache 2.4.
+--- src/mod_auth_kerb.c.orig	2008-12-04 11:14:03.000000000 +0100
++++ src/mod_auth_kerb.c	2014-06-01 14:51:14.681087749 +0200
 @@ -11,6 +11,12 @@
   */
  
@@ -26,28 +26,41 @@
  
  #include "config.h"
  
-@@ -80,6 +86,11 @@
+@@ -80,6 +86,12 @@
  #define apr_pool_cleanup_register	ap_register_cleanup
  #endif /* STANDARD20_MODULE_STUFF */
  
-+#if AP_SERVER_MAJORVERSION_NUMBER == 2 && AP_SERVER_MINORVERSION_NUMBER== 2
-+#define APACHE22
-+#include "mod_auth.h"
++#include <ap_provider.h>
++#include <mod_auth.h>
++#if AP_SERVER_MINORVERSION_NUMBER < 4
++#  define useragent_ip connection->remote_ip
 +#endif
 +
  #ifdef _WIN32
  #define vsnprintf _vsnprintf
  #define snprintf _snprintf
-@@ -88,7 +99,7 @@
+@@ -88,7 +100,8 @@
  #ifdef KRB5
  #include <krb5.h>
  #ifdef HEIMDAL
 -#  include <gssapi.h>
 +#  include <gssapi/gssapi.h>
++#  include <gssapi/gssapi_krb5.h>
  #else
  #  include <gssapi/gssapi.h>
  #  include <gssapi/gssapi_generic.h>
-@@ -298,7 +309,7 @@
+@@ -125,7 +138,9 @@
+ #  endif
+ #endif
+ 
+-#ifdef STANDARD20_MODULE_STUFF
++#if defined(APLOG_USE_MODULE)
++APLOG_USE_MODULE(auth_kerb);
++#elif defined(STANDARD20_MODULE_STUFF)
+ module AP_MODULE_DECLARE_DATA auth_kerb_module;
+ #else
+ module auth_kerb_module;
+@@ -298,7 +313,7 @@
  }
  
  /* And this is the operations vector for our replay cache */
@@ -56,7 +69,7 @@
    0,
    "dfl",
    krb5_rc_dfl_init,
-@@ -329,7 +340,7 @@
+@@ -329,7 +344,7 @@
  	((kerb_auth_config *)rec)->krb_ssl_preauthentication = 0;
  #endif
  #ifdef KRB5
@@ -65,7 +78,34 @@
  	((kerb_auth_config *)rec)->krb_method_k5pass = 1;
  	((kerb_auth_config *)rec)->krb_method_gssapi = 1;
  #endif
-@@ -527,7 +538,7 @@
+@@ -347,9 +362,15 @@
+    return NULL;
+ }
+ 
++#ifdef APLOG_USE_MODULE
++static void
++log_rerror(const char *file, int line, int module_index, int level, int status,
++           const request_rec *r, const char *fmt, ...)
++#else
+ static void
+ log_rerror(const char *file, int line, int level, int status,
+            const request_rec *r, const char *fmt, ...)
++#endif
+ {
+    char errstr[1024];
+    va_list ap;
+@@ -359,7 +380,9 @@
+    va_end(ap);
+ 
+    
+-#ifdef STANDARD20_MODULE_STUFF
++#ifdef APLOG_USE_MODULE
++   ap_log_rerror(file, line, module_index, level, status, r, "%s", errstr);
++#elif defined(STANDARD20_MODULE_STUFF)
+    ap_log_rerror(file, line, level | APLOG_NOERRNO, status, r, "%s", errstr);
+ #else
+    ap_log_rerror(file, line, level | APLOG_NOERRNO, r, "%s", errstr);
+@@ -527,7 +550,7 @@
     user = apr_pstrcat(r->pool, user, "@", realm, NULL);
  
     MK_USER = user;
@@ -74,7 +114,7 @@
     apr_table_setn(r->subprocess_env, "KRBTKFILE", tkt_file_p);
  
     if (!conf->krb_save_credentials)
-@@ -677,7 +688,8 @@
+@@ -677,7 +700,8 @@
  static krb5_error_code
  verify_krb5_user(request_rec *r, krb5_context context, krb5_principal principal,
        		 const char *password, krb5_principal server,
@@ -84,7 +124,7 @@
  {
     krb5_creds creds;
     krb5_get_init_creds_opt options;
-@@ -926,7 +938,6 @@
+@@ -926,7 +950,6 @@
     return OK;
  }
  
@@ -92,7 +132,7 @@
  static int
  authenticate_user_krb5pwd(request_rec *r,
                            kerb_auth_config *conf,
-@@ -1061,7 +1072,7 @@
+@@ -1061,7 +1084,7 @@
        goto end;
     }
     MK_USER = apr_pstrdup (r->pool, name);
@@ -101,7 +141,7 @@
     free(name);
  
     if (conf->krb_save_credentials)
-@@ -1280,6 +1291,7 @@
+@@ -1280,6 +1303,7 @@
     return 0;
  }
  
@@ -109,7 +149,7 @@
  static int
  cmp_gss_type(gss_buffer_t token, gss_OID oid)
  {
-@@ -1306,6 +1318,7 @@
+@@ -1306,6 +1330,7 @@
  
     return memcmp(p, oid->elements, oid->length);
  }
@@ -117,7 +157,7 @@
  
  static int
  authenticate_user_gss(request_rec *r, kerb_auth_config *conf,
-@@ -1438,15 +1451,15 @@
+@@ -1438,15 +1463,15 @@
       goto end;
    }
  
@@ -138,7 +178,7 @@
  
    major_status = gss_display_name(&minor_status, client_name, &output_token, NULL);
    gss_release_name(&minor_status, &client_name); 
-@@ -1549,11 +1562,11 @@
+@@ -1549,13 +1574,13 @@
  #endif /* KRB5 */
  
  static krb5_conn_data *
@@ -150,9 +190,12 @@
 -
 +   
     snprintf(keyname, sizeof(keyname) - 1,
- 	"mod_auth_kerb::connection::%s::%ld", r->connection->remote_ip, 
+-	"mod_auth_kerb::connection::%s::%ld", r->connection->remote_ip, 
++	"mod_auth_kerb::connection::%s::%ld", r->useragent_ip, 
  	r->connection->id);
-@@ -1571,6 +1584,24 @@
+ 
+    if (apr_pool_userdata_get((void**)&conn_data, keyname, r->connection->pool) != 0)
+@@ -1571,6 +1596,24 @@
  }
  
  static void
@@ -169,7 +212,7 @@
 +    
 +    snprintf(keyname, sizeof(keyname) - 1,
 +             "mod_auth_kerb::connection::%s::%ld",
-+             r->connection->remote_ip, r->connection->id);
++             r->useragent_ip, r->connection->id);
 +    apr_pool_userdata_set(prevauth, keyname, NULL, r->connection->pool);
 +}
 +
@@ -177,7 +220,7 @@
  set_kerb_auth_headers(request_rec *r, const kerb_auth_config *conf,
        		      int use_krb4, int use_krb5pwd, char *negotiate_ret_value)
  {
-@@ -1607,51 +1638,16 @@
+@@ -1607,51 +1650,16 @@
  }
  
  static int
@@ -236,7 +279,7 @@
     if (!auth_line) {
        set_kerb_auth_headers(r, conf, use_krb4, use_krb5, 
  	                    (use_krb5) ? "\0" : NULL);
-@@ -1669,60 +1665,108 @@
+@@ -1669,60 +1677,108 @@
  #endif
         (strcasecmp(auth_type, "Basic") == 0))
         return DECLINED;
@@ -293,30 +336,30 @@
 -       apr_pool_userdata_set(prevauth, keyname, NULL, r->connection->pool);
 +   if(!prevauth) {
 +      save_authorized(r, auth_line, auth_type, ret);
++   }
++
++   if (ret == OK && conf->krb5_do_auth_to_local) {
++      ret = do_krb5_an_to_ln(r);
     }
++   return ret;
++}
  
 -     if (ret == OK && conf->krb5_do_auth_to_local)
 -       ret = do_krb5_an_to_ln(r);
-+   if (ret == OK && conf->krb5_do_auth_to_local) {
-+      ret = do_krb5_an_to_ln(r);
-+   }
-+   return ret;
-+}
-+
 +static authn_status authn_krb_password(request_rec *r, const char *user,
 +                                       const char *password)
 +{
 +   char *auth_line = NULL;
 +   int ret;
 +   const char *type = NULL;
-    
--   /* XXX log_debug: if ret==OK, log(user XY authenticated) */
++   
 +   type = ap_auth_type(r);
 +   auth_line = ap_pbase64encode (r->pool, apr_psprintf(r->pool, "%s:%s", user, password));
 +   auth_line = apr_psprintf(r->pool, "Basic %s", auth_line);
 +
 +   ret = authenticate_user(r, auth_line, type, 1, 1);
-+   
+    
+-   /* XXX log_debug: if ret==OK, log(user XY authenticated) */
 +   if (ret == OK) return AUTH_GRANTED;
 +   else return AUTH_USER_NOT_FOUND;
 +}
@@ -372,18 +415,16 @@
  have_rcache_type(const char *type)
  {
     krb5_error_code ret;
-@@ -1805,6 +1849,14 @@
+@@ -1805,6 +1861,12 @@
  static void
  kerb_register_hooks(apr_pool_t *p)
  {
-+#ifdef APACHE22
 +   static const authn_provider authn_krb_provider = {
 +      &authn_krb_password,
 +      NULL
 +   };
 +
 +   ap_register_provider(p, AUTHN_PROVIDER_GROUP, "kerberos", "0", &authn_krb_provider);
-+#endif
     ap_hook_post_config(kerb_init_handler, NULL, NULL, APR_HOOK_MIDDLE);
     ap_hook_check_user_id(kerb_authenticate_user, NULL, NULL, APR_HOOK_MIDDLE);
  }

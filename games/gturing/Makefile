@@ -7,14 +7,14 @@ PORTREVISION=	18
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Turing machine simulator for GNOME 2
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_OMF=	yes
 
 PORTDOCS=	AUTHORS COPYING NEWS ChangeLog TODO README INSTALL

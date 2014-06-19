@@ -18,8 +18,8 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/lush
 
-CONFIGURE_ENV=	LIBS="${LIBS} ${PTHREAD_LIBS} -lintl -lfontconfig -L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl -lfontconfig
 
 CONFIGURE_ARGS=	--without-bfd
 

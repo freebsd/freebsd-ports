@@ -1,15 +1,10 @@
 bin/hexchat
 %%TEXTFE%%bin/hexchat-text
 include/hexchat-plugin.h
-lib/hexchat/plugins/checksum.la
 lib/hexchat/plugins/checksum.so
-%%DOAT%%lib/hexchat/plugins/doat.la
 %%DOAT%%lib/hexchat/plugins/doat.so
-%%FISHLIM%%lib/hexchat/plugins/fishlim.la
 %%FISHLIM%%lib/hexchat/plugins/fishlim.so
-%%PERL%%lib/hexchat/plugins/perl.la
 %%PERL%%lib/hexchat/plugins/perl.so
-%%PYTHON%%lib/hexchat/plugins/python.la
 %%PYTHON%%lib/hexchat/plugins/python.so
 libdata/pkgconfig/hexchat-plugin.pc
 man/man1/hexchat.1.gz

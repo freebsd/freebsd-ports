@@ -3,7 +3,7 @@
 
 PORTNAME=	lcms2
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lcms/lcms/${PORTVERSION} \
 		http://www.littlecms.com/

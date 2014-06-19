@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C library for a flexible and sophisticated Unix logging facility
+COMMENT=	C library for a flexible and sophisticated Unix logging facility
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -16,7 +16,7 @@ CFLAGS	=	-O2
 default:	all
 all:		predict vocalizer/vocalizer
 
-LIBS += -lm -lncurses
+LIBS = ${LDFLAGS} -pthread -lm -lncurses
 predict:	predict.c predict.h
 		${CC} ${CFLAGS} -o predict predict.c ${LIBS}
 

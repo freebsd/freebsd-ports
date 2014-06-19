@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	electrum
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	1.9.8
 CATEGORIES=	finance python
-MASTER_SITES=	http://download.electrum.org/download/
+MASTER_SITES=	http://download.electrum.org/
 DISTNAME=	Electrum-${PORTVERSION}
 
 MAINTAINER=	kyuupichan@gmail.com
@@ -15,13 +14,13 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}slowaes>0:${PORTSDIR}/security/py-slowaes \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>0:${PORTSDIR}/security/py-ecdsa \
-		${PYTHON_PKGNAMEPREFIX}qt4>=4.9:${PORTSDIR}/devel/py-qt4
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.10.3:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
-USE_PYTHON=	2
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+USES=		desktop-file-utils gettext
 PYDISTUTILS_PKGNAME=	Electrum
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 		${WRKSRC}/setup.py ${WRKSRC}/lib/util.py

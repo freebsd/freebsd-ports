@@ -4,4 +4,5 @@ include/libgamepad/gamepad_analog.h
 include/libgamepad/gamepad_libhid.h
 include/libgamepad/gamepad_usbhid.h
 lib/libgamepad.a
+man/man3/libgamepad.3.gz
 @dirrm include/libgamepad

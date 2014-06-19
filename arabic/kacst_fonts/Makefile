@@ -15,14 +15,14 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/KacstArabicFonts-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME="${PORTNAME}"
 
 do-build:
-	cd ${WRKDIR} && ttmkfdir -c -d ${WRKSRC} > ${WRKSRC}/fonts.dir
+	(cd ${WRKDIR} && ttmkfdir -c -d ${WRKSRC} > ${WRKSRC}/fonts.dir)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/lib/X11/fonts/kacst_fonts

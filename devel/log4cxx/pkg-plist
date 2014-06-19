@@ -176,9 +176,9 @@ include/log4cxx/writerappender.h
 include/log4cxx/xml/domconfigurator.h
 include/log4cxx/xml/xmllayout.h
 lib/liblog4cxx.a
-lib/liblog4cxx.la
 lib/liblog4cxx.so
 lib/liblog4cxx.so.10
+lib/liblog4cxx.so.10.0.0
 libdata/pkgconfig/liblog4cxx.pc
 @dirrm include/log4cxx/xml
 @dirrm include/log4cxx/varia

@@ -11,6 +11,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD Wireless Scanning Tools
 
+BROKEN=		broken by removal of wicontrol ioctls from if_wavelan_ieee.h; domain disappeared
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2014-08-04
+
 CONF_AIRTOOLS=	dstumbler
 MAKE_AIRTOOLS=	dweputils/dwepcrack dweputils/dwepdump \
 		dweputils/dwepkeygen prism2ctl prism2dump
@@ -35,5 +39,4 @@ do-install:
 		${DOCSDIR}/README.`${BASENAME} ${TOOL}`
 .endfor
 
-IGNORE=		broken by removal of wicontrol ioctls from if_wavelan_ieee.h
 .include <bsd.port.mk>

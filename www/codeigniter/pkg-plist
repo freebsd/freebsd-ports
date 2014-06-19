@@ -59,7 +59,6 @@
 %%WWWDIR%%/application/third_party/index.html
 %%WWWDIR%%/application/views/index.html
 %%WWWDIR%%/application/views/welcome_message.php
-%%WWWDIR%%/index.php
 %%WWWDIR%%/index.php.sample
 %%WWWDIR%%/system/core/Benchmark.php
 %%WWWDIR%%/system/core/CodeIgniter.php

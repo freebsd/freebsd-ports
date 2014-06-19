@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dosage
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 CATEGORIES=	deskutils python
-MASTER_SITES=	http://wummel.github.io/dosage/dist/
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Application to keep a local mirror of web comics

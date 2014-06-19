@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A JavaScript code obfuscator
+COMMENT=	JavaScript code obfuscator
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 

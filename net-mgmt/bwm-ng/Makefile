@@ -14,10 +14,11 @@ LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
+USE_CSTD=	gnu89
 PLIST_FILES=	bin/bwm-ng man/man1/bwm-ng.1.gz
 
-CONFIGURE_ENV=	CPPFLAGS="-std=gnu89 `pkg-config --cflags libstatgrab`" \
-		LIBS="`pkg-config --libs libstatgrab`"
 CONFIGURE_ARGS=	--with-libstatgrab
+CPPFLAGS+=	`pkg-config --cflags libstatgrab`
+LIBS+=		`pkg-config --libs libstatgrab`
 
 .include <bsd.port.mk>

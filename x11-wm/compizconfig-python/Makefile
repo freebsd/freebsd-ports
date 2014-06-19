@@ -3,11 +3,11 @@
 
 PORTNAME=	compizconfig-python
 PORTVERSION=	0.8.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Python bindings for the compizconfig library
 
 BUILD_DEPENDS=	\
@@ -18,8 +18,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	2
-USES=		pathfix pkgconfig gmake tar:bzip2
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	libtool
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/compizconfig.so
 
 .include <bsd.port.mk>

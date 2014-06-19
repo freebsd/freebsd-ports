@@ -14,7 +14,7 @@ COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 
 # This must be >= 0.98!
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	non-portable, for a portable emulator see emulators/snes9x
@@ -32,47 +32,21 @@ USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-cpucheck
 
-MAN1=		zsnes.1
-PLIST_FILES=	bin/zsnes
+PLIST_FILES=	bin/zsnes man/man1/zsnes.1.gz
+
+DEBUGGER_CONFIGURE_ENABLE=	debugger
+JMA_CONFIGURE_ENABLE=	jma
+X11_CONFIGURE_WITH=	x
+OPENGL_CONFIGURE_ENABLE=	opengl
+
+AO_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+AO_CONFIGURE_ENABLE=	libao
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUGGER}
-CONFIGURE_ARGS+=	--enable-debugger
-.else
-CONFIGURE_ARGS+=	--disable-debugger
-.endif
-
-.if ${PORT_OPTIONS:MJMA}
-CONFIGURE_ARGS+=	--enable-jma
-.else
-CONFIGURE_ARGS+=	--disable-jma
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=	--with-x
-.else
-CONFIGURE_ARGS+=	--without-x
-.endif
-
-.if ${PORT_OPTIONS:MOPENGL}
-USE_GL=		yes
-CONFIGURE_ARGS+=	--enable-opengl
-.else
-CONFIGURE_ARGS+=	--disable-opengl
-.endif
-
-.if ${PORT_OPTIONS:MAO}
-LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
-CONFIGURE_ARGS+=	--enable-libao
-.else
-CONFIGURE_ARGS+=	--disable-libao
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -81,9 +55,14 @@ post-patch:
 			${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -i "" -e \
 		's|-O3||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|size_t argc|int argc|g' \
+		${WRKSRC}/parsegen.cpp ${WRKSRC}/tools/depbuild.cpp \
+		${WRKSRC}/tools/extraext.cpp ${WRKSRC}/tools/macroll.cpp \
+		${WRKSRC}/tools/minwhite.cpp ${WRKSRC}/tools/nreplace.cpp \
+		${WRKSRC}/tools/varrep.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/zsnes ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/linux/zsnes.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/zsnes ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/linux/zsnes.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

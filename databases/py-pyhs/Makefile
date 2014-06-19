@@ -3,6 +3,7 @@
 
 PORTNAME=	pyhs
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +13,7 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	HandlerSocket client for Python
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	python_handler_socket
-PYEASYINSTALL_ARCHDEP=	yes
 
 .include <bsd.port.mk>

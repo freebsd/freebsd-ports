@@ -14,7 +14,7 @@ COMMENT?=	File archiver with high compression ratio
 LICENSE?=	LGPL21
 
 ALL_TARGET?=	all3
-USE_BZIP2=	yes
+USES=		tar:bzip2
 MAKEFILE=	makefile
 MAKE_ARGS=	OPTFLAGS="${CXXFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
@@ -44,14 +44,14 @@ do-install:
 .endfor
 	${INSTALL_LIB} ${WRKSRC}/bin/7z.so ${STAGEDIR}${PREFIX}/libexec/p7zip
 
-	${INSTALL_SCRIPT} ${FILESDIR}/7z ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${FILESDIR}/7z ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf 7z ${STAGEDIR}${PREFIX}/bin/7za
 	${LN} -sf 7z ${STAGEDIR}${PREFIX}/bin/7zr
 
-	cd ${WRKSRC}/DOCS && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/man1 && \
-		${INSTALL_MAN} 7z*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	(cd ${WRKSRC}/DOCS && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/man1 && \
+		${INSTALL_MAN} 7z*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1)
 .endif
 
 .include <bsd.port.mk>

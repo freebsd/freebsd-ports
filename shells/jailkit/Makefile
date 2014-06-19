@@ -3,11 +3,12 @@
 
 PORTNAME=	jailkit
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities to limit user account
 
 GNU_CONFIGURE=	yes

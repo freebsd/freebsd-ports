@@ -1,0 +1,181 @@
+--- ./pith/pine.hlp.orig	2013-08-14 23:36:22.000000000 -0500
++++ ./pith/pine.hlp	2014-05-25 19:15:32.000000000 -0500
+@@ -881,13 +881,13 @@
+       config file from command line or provided
+       by "PINECONF" environment variable
+ <!--chtml else-->
+-      pine.conf file
++      alpine.conf file
+ <!--chtml endif-->
+  <LI> personal configuration file
+  <LI> personal exceptions configuration file
+  <LI> command-line options
+  <!--chtml if pinemode="os_windows"--><!--chtml else-->
+- <LI> system-wide pine.conf.fixed file<!--chtml endif-->
++ <LI> system-wide alpine.conf.fixed file<!--chtml endif-->
+ </UL>
+ <P>
+ The values in both the personal configuration file and the
+@@ -976,8 +976,8 @@
+  postponed#     ~/mail/postponed-msgs
+  sentmail#      ~/mail/sent-mail
+  mailcap#       ~/.mailcap + /etc/mailcap
+-                           + /usr/etc/mailcap + /usr/local/etc/mailcap
+- mimetypes#     ~/.mime.types + /etc/mime.types + /usr/local/lib/mime.types
++                           + /usr/etc/mailcap + /usr/ports/mail/alpine/work/stage/usr/local/etc/mailcap
++ mimetypes#     ~/.mime.types + /etc/mime.types + /usr/ports/mail/alpine/work/stage/usr/ports/mail/alpine/work/stage/usr/local/etc/mime.types
+ 
+  news-spool	varies across Unix flavors, e.g. /var/spool/news or /usr/spool/news
+  active-news	varies across Unix flavors, e.g. /usr/lib/news/active
+@@ -1367,20 +1367,7 @@
+ We hope you will explore Alpine's many capabilities. From the MAIN MENU,
+ select Setup/Config to see many of the options available to you. Also note
+ that all screens have context-sensitive help text available.<P>
+-<!--chtml if pinemode="phone_home"-->
+-SPECIAL REQUEST:
+-This software is made available as a public service of the
+-University of Washington in Seattle. We are no longer actively developing
+-the software, but it is still helpful to us to have an idea of how many
+-people are using Alpine. Are you willing to be counted as an Alpine user? Pressing 
+-<A HREF="X-Alpine-Phone-Home:">Return</A>
+-will send an anonymous (meaning, your real email address will not be revealed) 
+-message to the Alpine team at the University of Washington for purposes of tallying.
+-<P>
+-<!--To Exit this screen and continue your Alpine session press "E".-->
+-<!--chtml else-->
+ To Exit this screen and continue your Alpine session press "Return".
+-<!--chtml endif-->
+ </BODY>
+ </HTML>
+ ===== new_alpine_user_greeting ======
+@@ -1400,20 +1387,7 @@
+ The Release Notes may be viewed by pressing 
+ &quot;R&quot; now or while in the MAIN MENU.
+ <P>
+-<!--chtml if pinemode="phone_home"-->
+-SPECIAL REQUEST:
+-This software is made available as a public service of the
+-University of Washington in Seattle. We are no longer actively developing
+-the software, but it is still helpful to us to have an idea of how many
+-people are using Alpine. Are you willing to be counted as an Alpine user? Pressing 
+-<A HREF="X-Alpine-Phone-Home:">Return</A>
+-will send an anonymous (meaning, your real email address will not be revealed) 
+-message to the Alpine team at the University of Washington for purposes of tallying.
+-<P>
+-<!--To Exit this screen and continue your Alpine session press "E".-->
+-<!--chtml else-->
+ To Exit this screen and continue your Alpine session press "Return".
+-<!--chtml endif-->
+ </BODY>
+ </HTML>
+ ===== new_version_greeting ======
+@@ -1430,20 +1404,7 @@
+ documented in the Release Notes, which may be viewed by pressing 
+ &quot;R&quot; now or while in the MAIN MENU.
+ <P>
+-<!--chtml if pinemode="phone_home"-->
+-SPECIAL REQUEST:
+-This software is made available as a public service of the
+-University of Washington in Seattle. We are no longer actively developing
+-the software, but it is still helpful to us to have an idea of how many
+-people are using Alpine. Are you willing to be counted as an Alpine user? Pressing 
+-<A HREF="X-Alpine-Phone-Home:">Return</A>
+-will send an anonymous (meaning, your real email address will not be revealed) 
+-message to the Alpine team at the University of Washington for purposes of tallying.
+-
+-<!--To Exit this screen and continue your Alpine session press "E".-->
+-<!--chtml else-->
+ To Exit this screen and continue your Alpine session press "Return".
+-<!--chtml endif-->
+ </BODY>
+ </HTML>
+ 
+@@ -2709,7 +2670,7 @@
+ system configuration file, execute
+ 
+ <PRE><CODE>
+-		pine -P old-pine.conf -conf > <!--#echo var="PINE_CONF_PATH"-->
++		pine -P old-alpine.conf -conf > <!--#echo var="PINE_CONF_PATH"-->
+ </CODE></PRE>
+ <P>
+ A system configuration file is not required.
+@@ -16075,7 +16036,7 @@
+ the pathname of the bogofilter program.
+ For example,
+ <P>
+-<CENTER><SAMP>Command = /usr/local/bin/bogofilter</SAMP></CENTER>
++<CENTER><SAMP>Command = /usr/ports/mail/alpine/work/stage/usr/local/bin/bogofilter</SAMP></CENTER>
+ <P>
+ Exit status of zero is what you are interested in, so you'd set the
+ Exit Status Interval to
+@@ -16136,7 +16097,7 @@
+ Instead of using just plain &quot;bogofilter&quot; as the Categorizer Command,
+ the &quot;-u&quot; argument will cause bogofilter to update the database.
+ <P>
+-<CENTER><SAMP>Command = /usr/local/bin/bogofilter -u</SAMP></CENTER>
++<CENTER><SAMP>Command = /usr/ports/mail/alpine/work/stage/usr/local/bin/bogofilter -u</SAMP></CENTER>
+ <P>
+ You'd want a couple more aliases or shell scripts called something like
+ <EM>change_to_spam</EM>
+@@ -16164,7 +16125,7 @@
+ This is usually ok.
+ However, in this case it is a problem because the command
+ <P>
+-<CENTER><SAMP>Command = /usr/local/bin/bogofilter -u</SAMP></CENTER>
++<CENTER><SAMP>Command = /usr/ports/mail/alpine/work/stage/usr/local/bin/bogofilter -u</SAMP></CENTER>
+ <P>
+ has the side effect of updating the database.
+ So you run the risk of updating the database multiple times for a single
+@@ -16210,7 +16171,7 @@
+   ! Keyword pattern = Bogo
+ 
+   External Categorizer Commands =
+-       Command              = /usr/local/bin/bogofilter -u
++       Command              = /usr/ports/mail/alpine/work/stage/usr/local/bin/bogofilter -u
+        Exit Status Interval = (0,0)
+        Character Limit      = <No Value Set: using "-1">  (optionally set this)
+ 
+@@ -20763,7 +20724,7 @@
+ </PRE>
+ <!--chtml else-->
+ a colon (:) under UNIX; for example:<PRE>
+-        ~/.mailcap:/etc/mailcap:/usr/etc/mailcap:/usr/local/etc/mailcap
++        ~/.mailcap:/etc/mailcap:/usr/etc/mailcap:/usr/ports/mail/alpine/work/stage/usr/local/etc/mailcap
+ </PRE>
+ <!--chtml endif-->
+ <P><UL>
+@@ -26486,16 +26447,16 @@
+ <P>
+ So, here are some example entries:
+ <PRE>
+-url-viewers = _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_  /usr/local/bin/netscape
+-              &quot;/usr/local/bin/lynx _URL_&quot;
++url-viewers = _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_  /usr/ports/mail/alpine/work/stage/usr/local/bin/netscape
++              &quot;/usr/ports/mail/alpine/work/stage/usr/local/bin/lynx _URL_&quot;
+               C:&#92;BIN&#92;NETSCAPE.BAT
+ </PRE>
+ <P>
+ This example shows that for the first viewer in the list to be used
+ the environment variable &quot;DISPLAY&quot; must be defined.  If it
+-is, then the path and file &quot;/usr/local/bin/netscape&quot; must exist.  
++is, then the path and file &quot;/usr/ports/mail/alpine/work/stage/usr/local/bin/netscape&quot; must exist.  
+ If neither condition is met,
+-then the path and file &quot;/usr/local/bin/lynx&quot; must exist.  
++then the path and file &quot;/usr/ports/mail/alpine/work/stage/usr/local/bin/lynx&quot; must exist.  
+ If it does, then the &quot;_URL_&quot; token is replaced by the selected URL. 
+ If the path to &quot;lynx&quot; is invalid,
+ then the final path and file C:&#92;BIN&#92;NETSCAPE.BAT must exist.  
+@@ -26588,10 +26549,10 @@
+ An example using the Korn shell and the Netscape browser (first entry wrapped 
+ because of its length, but should all appear on one line):
+ <P>
+-url-viewers = _TEST("test -L /myhomedir/.netscape/lock")_ &quot;/usr/local/bin/netscape -remote 'openURL(_URL_,  new-window)' &amp;&quot;<BR>
++url-viewers = _TEST("test -L /myhomedir/.netscape/lock")_ &quot;/usr/ports/mail/alpine/work/stage/usr/local/bin/netscape -remote 'openURL(_URL_,  new-window)' &amp;&quot;<BR>
+ 
+-_TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_ &quot;/usr/local/bin/netscape &amp;&quot;<BR>
+-              &quot;/usr/local/bin/lynx '_URL_'&quot;
++_TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_ &quot;/usr/ports/mail/alpine/work/stage/usr/local/bin/netscape &amp;&quot;<BR>
++              &quot;/usr/ports/mail/alpine/work/stage/usr/local/bin/lynx '_URL_'&quot;
+ <P>
+ <!--chtml endif-->
+ <P>

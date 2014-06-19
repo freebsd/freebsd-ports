@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A commandline option parser for Ruby that gets out of your way
+COMMENT=	Commandline option parser for Ruby that gets out of your way
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

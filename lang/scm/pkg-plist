@@ -20,7 +20,7 @@ lib/scm/differ.so
 lib/scm/edline.so
 lib/scm/gsubr.so
 lib/scm/hobbit.scm
-lib/scm/implcat
+@comment lib/scm/implcat
 lib/scm/ioext.so
 %%X11%%lib/scm/keysymdef.scm
 lib/scm/mkimpcat.scm
@@ -200,7 +200,7 @@ lib/scm/slib/wttree-test.scm
 lib/scm/slib/wttree.scm
 lib/scm/slib/xml-parse.scm
 lib/scm/slib/yasyn.scm
-lib/scm/slibcat
+@comment lib/scm/slibcat
 lib/scm/socket.so
 lib/scm/unix.so
 lib/scm/wbtab.scm
@@ -208,6 +208,7 @@ lib/scm/wbtab.scm
 %%X11%%lib/scm/x11.scm
 %%X11%%lib/scm/xatoms.scm
 %%X11%%lib/scm/xevent.scm
+man/man1/scm.1.gz
 @dirrm lib/scm/slib/psd
 @dirrm lib/scm/slib
 @dirrm lib/scm

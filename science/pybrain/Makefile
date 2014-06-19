@@ -2,20 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	pybrain
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
 DISTNAME=	PyBrain-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	PyBrain is the swiss army knife for neural networking
 
+LICENSE=	BSD3CLAUSE
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.1:${PORTSDIR}/science/py-scipy
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	PyBrain
+GH_ACCOUNT=	${PORTNAME}
+GH_COMMIT=	a56fafc
 
-NO_STAGE=	yes
+USE_GITHUB=	yes
+
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
 .include <bsd.port.mk>

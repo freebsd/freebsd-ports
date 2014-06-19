@@ -1092,17 +1092,11 @@ BBBike/lib/%%LOCAL_PERL_ARCH%%/StrassenNetz/CNetFilePerl.pm
 BBBike/lib/%%LOCAL_PERL_ARCH%%/VectorUtil/Inline.pm
 BBBike/lib/%%LOCAL_PERL_ARCH%%/VectorUtil/InlineDist.pm
 BBBike/lib/%%LOCAL_PERL_ARCH%%/VirtArray.pm
-BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.bs
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.so
-BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/Strassen/Inline/Inline.bs
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/Strassen/Inline/Inline.so
-BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/Strassen/Inline2/Inline2.bs
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/Strassen/Inline2/Inline2.so
-BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/StrassenNetz/CNetFile/CNetFile.bs
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/StrassenNetz/CNetFile/CNetFile.so
-BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VectorUtil/Inline/Inline.bs
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VectorUtil/Inline/Inline.so
-BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VirtArray/VirtArray.bs
 BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VirtArray/VirtArray.so
 @dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/StrassenNetz/CNetFile
 @dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VectorUtil/Inline

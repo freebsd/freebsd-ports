@@ -19,3 +19,4 @@ etc/compizconfig/config
 @dirrmtry lib/compizconfig/backends
 @dirrmtry lib/compizconfig
 @dirrmtry include/compizconfig
+@dirrmtry lib/compiz

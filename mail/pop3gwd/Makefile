@@ -11,5 +11,4 @@ COMMENT=	App-level proxy for Mail retrieval behind Firewalls
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

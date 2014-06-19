@@ -17,8 +17,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix libgnomeui
 USES=		gmake pathfix pkgconfig
 USE_AUTOTOOLS=	automake:env libtool
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 pre-configure:

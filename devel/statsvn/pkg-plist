@@ -156,12 +156,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/package-list
-%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
+%%JDK6%%%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
 %%DATADIR%%/statsvn.jar
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
+%%JDK6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/svnkit
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/class-use

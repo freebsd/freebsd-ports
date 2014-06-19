@@ -27,8 +27,6 @@ USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

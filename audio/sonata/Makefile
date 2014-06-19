@@ -8,7 +8,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	http://codingteam.net/project/sonata/upload/releases/
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	An elegant music player for MPD
+COMMENT=	Elegant music player for MPD
 
 LICENSE=	GPLv3
 

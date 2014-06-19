@@ -6,7 +6,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/IP/Record.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/Mirror.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/IP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/IP.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo

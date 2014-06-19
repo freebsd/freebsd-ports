@@ -3,6 +3,7 @@
 
 PORTNAME=	libgal
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	astro hamradio
 MASTER_SITES=	http://homepage.mac.com/pclwillmott/GAL/ \
 		${MASTER_SITE_LOCAL}
@@ -11,6 +12,7 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	General Astrodynamics Library
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX} --enable-shared=yes
 USE_LDCONFIG=	yes

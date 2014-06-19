@@ -1,7 +1,6 @@
 %%PERL5_MAN3%%/HTTP::MHTTP.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/HTTP/MHTTP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MHTTP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MHTTP/MHTTP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MHTTP/MHTTP.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MHTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP

@@ -17,15 +17,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		perl5
 USE_PERL5=	build
-MAKE_ENV=	LIBS="-lcurses -pthread"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LDFLAGS} -lcurses -pthread"
 ALL_TARGET=	it
 
 PLIST_FILES=	bin/vlog man/man1/vlog.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^CC/s|\([[:space:]]\)=|\1?=| ; \
-		 /strip/s|^|#|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/strip/d' ${WRKSRC}/Makefile
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} vlog \

@@ -10,7 +10,7 @@ DISTNAME=	site-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A subversion plugin for the Eclipse IDE Framework
+COMMENT=	Subversion plugin for the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 

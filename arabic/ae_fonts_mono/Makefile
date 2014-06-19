@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_XORG=	x11
-USE_BZIP2=	yes
+USES=		tar:bzip2
 SUB_FILES=	pkg-message
 
 do-build:

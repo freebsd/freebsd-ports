@@ -39,4 +39,16 @@ lib/siod/regex.so
 lib/siod/parser_pratt.so
 lib/libsiod.so
 include/siod.h
+man/man1/cp-build.1.gz
+man/man1/csiod.1.gz
+man/man1/ftp-cp.1.gz
+man/man1/ftp-get.1.gz
+man/man1/ftp-put.1.gz
+man/man1/ftp-test.1.gz
+man/man1/http-get.1.gz
+man/man1/http-stress.1.gz
+man/man1/proxy-server.1.gz
+man/man1/siod.1.gz
+man/man1/snapshot-compare.1.gz
+man/man1/snapshot-dir.1.gz
 @dirrm lib/siod

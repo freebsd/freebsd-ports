@@ -14,13 +14,12 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP=	curl zlib xml
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/lib/* ${DATADIR}
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/samples/* ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

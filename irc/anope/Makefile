@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	anope
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.9
 CATEGORIES=	irc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/Anope%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-legacy/Anope%20${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A set of IRC services for IRC networks
+MAINTAINER=	mat@FreeBSD.org
+COMMENT=	Set of IRC services for IRC networks
 
-USES=		perl5 gmake
+USES=		perl5 gmake desthack
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" \
 		--includedir="${LOCALBASE}/include" \
-		--with-bindir=${PREFIX}/libexec/anope \
-		--with-datadir=${DATADIR} \
-		--with-rungroup=ircdru
+		--with-bindir=\$${${DESTDIRNAME}}${PREFIX}/libexec/anope \
+		--with-datadir=\$${${DESTDIRNAME}}${DATADIR}
 
 PORTDOCS=	BUGS COPYING DEFCON EVENTS \
 		FAQ INSTALL IRCD MODULES MYSQL \
@@ -27,7 +26,9 @@ USE_RC_SUBR=	anope
 OPTIONS_DEFINE=	MYSQL
 OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
+MYSQL_USE= mysql=yes
+MYSQL_CONFIGURE_WITH=	mysql
+
 .include <bsd.port.pre.mk>
 
 # XXX Add here other arch which needs -fPIC :-)
@@ -35,24 +36,16 @@ NO_STAGE=	yes
 CFLAGS+=	-fPIC
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.else
-CONFIGURE_ARGS+=	--without-mysql
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|ja_utf8|ja|g' ${WRKSRC}/lang/Makefile
 	${MV} ${WRKSRC}/lang/ja_utf8.l ${WRKSRC}/lang/ja.l
 
 pre-install:
-	@${MKDIR} ${PREFIX}/libexec/anope
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/anope
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

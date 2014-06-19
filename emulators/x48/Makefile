@@ -23,7 +23,7 @@ USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--add-missing --copy -Wno-portability
 ACLOCAL_ARGS=	# default args (--acdir=...) produce broken configure script
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LIBS=-lutil
+LIBS+=		-lutil
 USES=		gmake pkgconfig
 USE_XORG=	x11 xext xt
 NO_WRKSUBDIR=	yes

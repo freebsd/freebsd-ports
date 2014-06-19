@@ -22,7 +22,6 @@ MAKE_ENV=	CLIBS="${CLIBS}" MEXDETECTED=no
 PLIST_FILES=	bin/linclassif bin/msvmocas bin/svmocas lib/libocas.so \
 		lib/libocas.so.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == sparc64
@@ -42,10 +41,10 @@ post-patch:
 
 do-install:
 .for p in linclassif msvmocas svmocas
-	@${INSTALL_PROGRAM} ${WRKSRC}/${p} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${p} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${INSTALL_LIB} ${WRKSRC}/libocas.so.1 ${PREFIX}/lib
-	@${LN} -sf libocas.so.1 ${PREFIX}/lib/libocas.so
+	@${INSTALL_LIB} ${WRKSRC}/libocas.so.1 ${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf libocas.so.1 ${STAGEDIR}${PREFIX}/lib/libocas.so
 
 check regression-test test: build
 	${WRKSRC}/msvmocas -c 10 -v 1 ${WRKSRC}/data/example4_train.light \

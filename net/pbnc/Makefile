@@ -18,7 +18,7 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	etc/pbnc.cfg bin/pbnc.pl
-PORTDOCS= 	pbnc.readme
+PORTDOCS=	pbnc.readme
 
 OPTIONS_DEFINE=	DOCS
 

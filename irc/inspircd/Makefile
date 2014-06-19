@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	irc
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	A modular C++ IRC daemon
+COMMENT=	Modular C++ IRC daemon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

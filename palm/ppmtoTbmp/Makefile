@@ -10,23 +10,24 @@ MASTER_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPM to Pilot bitmap converter
 
-LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDLIBS=-lnetpbm
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^#include "ppmcmap.h"/d' ${WRKSRC}/ppmtoTbmp.c
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ppmtoTbmp ${WRKSRC}/Tbmptopnm \
-		${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ppmtoTbmp
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ppmtoTbmp
+		${STAGEDIR}${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
-	${MKDIR} ${PREFIX}/share/ppmtoTbmp
-	${INSTALL_DATA} ${WRKSRC}/q?.map ${PREFIX}/share/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/q?.map ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

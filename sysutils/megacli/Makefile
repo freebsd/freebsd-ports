@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	megacli
-PORTVERSION=	8.07.07
+PORTVERSION=	8.07.14
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/${DISTNAME}${EXTRACT_SUFX}?source=1&
+MASTER_SITES=	http://www.lsi.com/downloads/Public/RAID%20Controllers/RAID%20Controllers%20Common%20Files/${DISTNAME}${EXTRACT_SUFX}?source=1&
 DISTNAME=	${PORTVERSION}_MegaCLI
 EXTRACT_SUFX=	.zip
 
@@ -25,10 +25,10 @@ PLIST_FILES=	sbin/MegaCli
 MEGACLI_ARCH=	MegaCli${ARCH:S/i386//:S/amd64/64/}
 
 post-extract:
-	@${MV} ${WRKSRC}/freebsd/MegaCLI.zip ${WRKSRC}/freebsd/MegaCli.zip
-	@${TAR} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/freebsd/${MEGACLI_ARCH}.zip -C${WRKSRC}/freebsd
+	@${MV} ${WRKSRC}/FreeBSD/MegaCLI.zip ${WRKSRC}/FreeBSD/MegaCli.zip
+	@${TAR} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/FreeBSD/${MEGACLI_ARCH}.zip -C${WRKSRC}/FreeBSD
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/freebsd/${MEGACLI_ARCH} ${STAGEDIR}${PREFIX}/sbin/MegaCli
+	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${MEGACLI_ARCH} ${STAGEDIR}${PREFIX}/sbin/MegaCli
 
 .include <bsd.port.mk>

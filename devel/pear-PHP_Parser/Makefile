@@ -6,7 +6,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PHP Grammar Parser
+COMMENT=	PHP Grammar Parser
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

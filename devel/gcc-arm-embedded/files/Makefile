@@ -397,14 +397,14 @@ strip-binaries:
 	   if ! ${FILE} $$bin | ${GREP} -qs ': ELF' ; then continue ; fi ; \
 	   ${STRIP_CMD} $${bin} ; \
 	 done
-	@for bin in $$(${FIND} ${INTERIM_PREFIX}/lib/gcc/${TARGET}/4.8.3 -maxdepth 1 -perm +111 -and ! -type d) ; do \
+	@for bin in $$(${FIND} ${INTERIM_PREFIX}/lib/gcc/${TARGET}/4.8.4 -perm +111 -and ! -type d) ; do \
 	   if ! ${FILE} $$bin | ${GREP} -qs ': ELF' ; then continue ; fi ; \
 	   ${STRIP_CMD} $${bin} ; \
 	 done
 
 strip-target-libraries:
 	@${ECHO_MSG} "====>  Strip target libraries"
-	@for target in $$(${FIND} ${INTERIM_PREFIX}/${TARGET}/lib ${INTERIM_PREFIX}/lib/gcc/${TARGET}/4.8.3 -type f -name \*.a -o -name \*.o) ; do \
+	@for target in $$(${FIND} ${INTERIM_PREFIX}/${TARGET}/lib ${INTERIM_PREFIX}/lib/gcc/${TARGET}/4.8.4 -type f -name \*.a -o -name \*.o) ; do \
 	   ${INTERIM_PREFIX}/bin/${TARGET}-objcopy -R .comment -R .note -R .debug_info -R .debug_aranges -R .debug_pubnames -R .debug_pubtypes -R .debug_abbrev -R .debug_line -R .debug_str -R .debug_ranges -R .debug_loc $${target} ; \
 	done
 	@${ECHO_MSG} "====>  Remove *.la files and other leftovers"

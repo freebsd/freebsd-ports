@@ -3,7 +3,7 @@
 
 PORTNAME=	gdkxft
 PORTVERSION=	1.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -12,9 +12,8 @@ COMMENT=	Anti-aliased font support for gtk+
 
 LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
 
-USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk12
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig libtool
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${ICONV_LIB}
 CFLAGS+=	`pkg-config xft --cflags`
@@ -42,9 +41,8 @@ post-patch:
 .endfor
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdkxft.so
 
 .include <bsd.port.mk>

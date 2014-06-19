@@ -39,7 +39,6 @@
     SUBDIR += clay
     SUBDIR += clisp
     SUBDIR += clojure
-    SUBDIR += clojure-contrib
     SUBDIR += clojure-mode.el
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
@@ -94,7 +93,6 @@
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += gjs
-    SUBDIR += gnat-aux
     SUBDIR += gnat_util
     SUBDIR += gnatdroid-armv5
     SUBDIR += gnatdroid-armv7
@@ -156,6 +154,7 @@
     SUBDIR += mawk
     SUBDIR += mdk
     SUBDIR += metaocaml
+    SUBDIR += micropython
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += mlton
@@ -185,8 +184,6 @@
     SUBDIR += ocaml
     SUBDIR += ocaml-autoconf
     SUBDIR += ocaml-camlidl
-    SUBDIR += ocaml-doc
-    SUBDIR += ocaml-examples
     SUBDIR += ocaml-mode.el
     SUBDIR += ocaml-nox11
     SUBDIR += ocs
@@ -267,7 +264,6 @@
     SUBDIR += python2
     SUBDIR += python27
     SUBDIR += python3
-    SUBDIR += python31
     SUBDIR += python32
     SUBDIR += python33
     SUBDIR += python34

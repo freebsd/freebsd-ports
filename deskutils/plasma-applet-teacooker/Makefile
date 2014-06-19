@@ -9,7 +9,9 @@ PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	85564-TeaCooker
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Tea cooker plasma applet for KDE4
+COMMENT=	KDE4 tea cooker plasma applet
+
+LICENSE=	GPLv3
 
 USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs
@@ -18,5 +20,4 @@ USE_QT4=	gui dbus network opengl svg webkit xml \
 
 WRKSRC=		${WRKDIR}/TeaCooker
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

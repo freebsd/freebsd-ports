@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-USE_BZIP2=	yes
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
 OPTIONS_DEFINE=	IPV6 TCL PERL TERMCAP DOCS RUBY
@@ -24,7 +23,7 @@ OPTIONS_DEFAULT=	TCL PERL RUBY
 TERMCAP_DESC=	Refuse to use terminfo/ncurses
 
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
-USES=		iconv
+USES=		iconv tar:bzip2
 
 .include <bsd.port.options.mk>
 
@@ -71,4 +70,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 901000
+IGNORE=	requires xlocale support for compilation
+.endif
+
+.include <bsd.port.post.mk>

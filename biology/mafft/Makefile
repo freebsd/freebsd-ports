@@ -13,6 +13,8 @@ COMMENT=	Multiple alignment program for amino acid or nucleotide sequences
 
 LICENSE=	BSD2CLAUSE
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-without-extensions
 BUILD_WRKSRC=	${WRKSRC}/core
 

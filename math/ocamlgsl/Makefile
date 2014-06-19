@@ -1,31 +1,32 @@
 # Created by: Klaus T. Aehlig <aehlig@linta.de>
 # $FreeBSD$
 
-PORTNAME=	ocamlgsl
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTNAME=	ocaml-gsl
+PORTVERSION=	1.15.1
 CATEGORIES=	math
-MASTER_SITES=	http://oandrieu.nerim.net/ocaml/gsl/
+MASTER_SITES=	http://bitbucket.org/mmottl/gsl-ocaml/downloads/
+DISTNAME=	gsl-ocaml-${PORTVERSION}
 
-MAINTAINER=	aehlig@linta.de
-COMMENT=	An interface to GSL for the Objective Caml language
+MAINTAINER=	michipili@gmail.com
+COMMENT=	Interface to GSL for the Objective Caml language
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		${OCAMLC_DEPEND}
 RUN_DEPENDS=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-INSTALL_TARGET=	install-findlib
-
-USES=		gmake
-USE_OCAML=	YES
-MAKE_ENV+=	OCAMLDIR=${OCAML_LIBDIR}
+USES=			gmake
+USE_OCAML=		YES
+USE_OCAML_FINDLIB=	YES
+USE_OCAML_LDCONFIG=	YES
+HAS_CONFIGURE=		YES
 MAKE_JOBS_UNSAFE=	yes
-NO_OCAML_BUILDDEPENDS=	yes
-USE_OCAML_LDCONFIG=	yes
+WRKSRC=			${WRKDIR}/gsl-ocaml-${PORTVERSION}
 
-NO_STAGE=	yes
+post-configure:
+	@${ECHO_CMD} 'stagedir="${STAGEDIR}"' >> ${WRKSRC}/setup.data
+	@${ECHO_CMD} 'docdir="$$datarootdir/doc/ocaml/$$pkg_name"' >> ${WRKSRC}/setup.data
+
 .include <bsd.port.mk>

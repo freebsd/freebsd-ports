@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	sources/libunicode/0.4
 DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A library for manipulating Unicode characters and strings
+COMMENT=	Library for manipulating Unicode characters and strings
 
 USE_AUTOTOOLS=	libtool
 USES=		gmake
@@ -19,8 +19,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

@@ -15,13 +15,10 @@ COMMENT=	Simple Document Format - "author-friendly" mark-up system
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		pod2sdf.1
-
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2013-11-25 14:16:25.000000000 +0000
-+++ ./Makefile.in	2014-01-24 22:43:01.000000000 +0000
-@@ -245,7 +245,7 @@
+--- ./Makefile.in.orig	2014-06-03 16:41:42.000000000 +0200
++++ ./Makefile.in	2014-06-05 16:54:17.000000000 +0200
+@@ -245,11 +245,10 @@
  	$(MAKE) install-basic
  
  install-basic:
@@ -8,8 +8,12 @@
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBEXECDIR)
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/archives
- 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CHECKRESULTDIR)
-@@ -269,19 +269,18 @@
+ 	$(INSTALL) -m 775 $(COMMAND_OPTS) -d $(DESTDIR)$(CHECKRESULTDIR)
+-	chmod g+s $(DESTDIR)$(CHECKRESULTDIR)
+ 
+ 	@echo ""
+ 	@echo "*** Main program, CGIs and HTML files installed ***"
+@@ -270,19 +269,18 @@
  
  
  install-config:
@@ -41,7 +45,7 @@
  
  	@echo ""
  	@echo "*** Config files installed ***"
-@@ -329,7 +328,6 @@
+@@ -330,7 +328,6 @@
  
  install-commandmode:
  	$(INSTALL) -m 775 $(COMMAND_OPTS) -d $(DESTDIR)$(LOGDIR)/rw

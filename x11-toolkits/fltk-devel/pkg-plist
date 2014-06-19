@@ -17,6 +17,7 @@ include/fltk-devel/FL/Fl_Check_Button.H
 include/fltk-devel/FL/Fl_Choice.H
 include/fltk-devel/FL/Fl_Clock.H
 include/fltk-devel/FL/Fl_Color_Chooser.H
+include/fltk-devel/FL/Fl_Copy_Surface.H
 include/fltk-devel/FL/Fl_Counter.H
 include/fltk-devel/FL/Fl_Device.H
 include/fltk-devel/FL/Fl_Dial.H
@@ -43,6 +44,7 @@ include/fltk-devel/FL/Fl_Hor_Nice_Slider.H
 include/fltk-devel/FL/Fl_Hor_Slider.H
 include/fltk-devel/FL/Fl_Hor_Value_Slider.H
 include/fltk-devel/FL/Fl_Image.H
+include/fltk-devel/FL/Fl_Image_Surface.H
 include/fltk-devel/FL/Fl_Input.H
 include/fltk-devel/FL/Fl_Input_.H
 include/fltk-devel/FL/Fl_Input_Choice.H

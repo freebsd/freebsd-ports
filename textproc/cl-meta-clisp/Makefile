@@ -10,7 +10,10 @@ PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A parser generator for Common Lisp
+COMMENT=	Parser generator for Common Lisp
+
+DEPRECATED=	Depends on deprecated lang/clisp
+EXPIRATION_DATE=	2014-07-28
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/meta/meta.asd:${PORTSDIR}/textproc/cl-meta
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/meta/meta.asd:${PORTSDIR}/textproc/cl-meta

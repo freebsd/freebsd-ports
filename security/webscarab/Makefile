@@ -20,7 +20,6 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PORTDOCS=	README LICENSE ChangeLog
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -33,15 +32,15 @@ pre-install:
 		< ${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${MKDIR} ${DATADIR}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}/lib
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}_lite
+	${MKDIR} ${STAGEDIR}${DATADIR}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}/lib
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}_lite
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .       for i in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .       endfor
 .endif
 

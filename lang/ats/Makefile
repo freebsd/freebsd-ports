@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-lang/${PORTNAME}-lang/${ATS_IMPL}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-lang-${ATS_IMPL}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language with a type system rooted in the Applied Type System
 
 ONLY_FOR_ARCHS=	i386 amd64

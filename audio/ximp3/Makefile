@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SUNSITE/apps/sound/players/mp3
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A simple console MP3 player
+COMMENT=	Simple console MP3 player
 
 GNU_CONFIGURE=	yes
 PORTDOCS=	*

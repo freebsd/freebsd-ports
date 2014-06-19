@@ -3,7 +3,7 @@
 
 PORTNAME=	diacanvas2
 PORTVERSION=	0.15.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/diacanvas/DiaCanvas2/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,11 +13,11 @@ COMMENT=	General drawing canvas from dia dialog editor
 
 LICENSE=	GPLv2
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

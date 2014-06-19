@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
 MAINTAINER=	lapo@lapo.it
-COMMENT=	A distributed version control system with digital signatures
+COMMENT=	Distributed version control system with digital signatures
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

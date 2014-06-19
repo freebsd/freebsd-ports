@@ -14,14 +14,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	Cute little penguins that walk along the tops of your windows
 
+LICENSE=	GPLv2
+
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
-MAN1=		xpenguins.1
-
-NO_STAGE=	yes
 post-install:
 	/usr/bin/umask 0222 && \
-	${TAR} zx --no-same-owner -f ${DISTDIR}/xpenguins-daemon-1.2.tar.gz -C ${DATADIR}/themes
+	${TAR} zx --no-same-owner -f ${DISTDIR}/xpenguins-daemon-1.2.tar.gz -C ${STAGEDIR}${DATADIR}/themes
 
 .include <bsd.port.mk>

@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	utils/compress
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mscompress bin/msexpand \

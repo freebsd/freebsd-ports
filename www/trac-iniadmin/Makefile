@@ -3,7 +3,7 @@
 
 PORTNAME=	iniadmin
 PORTVERSION=	0.2.3915
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
@@ -15,11 +15,9 @@ COMMENT=	Edit all trac.ini option via the WebAdminPlugin
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	IniAdmin
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
-PLIST_SUB+=	PORTVERSION=${PORTVERSION:R} PYTHONVERSION=${PYTHON_VER}
-PYDISTUTILS_NOEGGINFO=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

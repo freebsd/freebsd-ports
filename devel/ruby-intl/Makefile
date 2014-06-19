@@ -11,7 +11,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple wrapper of GNU gettext for Ruby
+COMMENT=	Simple wrapper of GNU gettext for Ruby
 
 USES=		gettext
 USE_RUBY=	yes

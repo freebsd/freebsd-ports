@@ -11,17 +11,14 @@ COMMENT=	Simple and secure ident (RFC1413) server
 
 GNU_CONFIGURE=	yes
 
-MAN8=		hidentd.8
-
 PORTDOCS=	README
-PLIST_FILES=	sbin/hidentd
+PLIST_FILES=	man/man8/hidentd.8.gz sbin/hidentd
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

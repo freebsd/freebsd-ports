@@ -10,8 +10,7 @@ MASTER_SITES=	SF/qterm/qterm/${PORTVERSION}
 MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	BBS client for BSD/Linux
 
-USE_BZIP2=	yes
-USES=		cmake perl5
+USES=		tar:bzip2 cmake perl5
 USE_PERL5=	build
 USE_QT4=	codecs-cn_run codecs-tw_run gui help-tools_build \
 		linguist_build moc_build network qt3support_build \

@@ -15,19 +15,16 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${LOCALBASE}/lib/X11/fonts/culmus
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/culmus
 .	for filename in AharoniCLM-Bold AharoniCLM-BoldOblique AharoniCLM-Book AharoniCLM-BookOblique CaladingsCLM DavidCLM-Bold DavidCLM-Medium DavidCLM-MediumItalic DrugulinCLM-Bold DrugulinCLM-BoldItalic ElliniaCLM-Bold ElliniaCLM-BoldItalic ElliniaCLM-Light ElliniaCLM-LightItalic FrankRuehlCLM-Bold FrankRuehlCLM-BoldOblique FrankRuehlCLM-Medium FrankRuehlCLM-MediumOblique MiriamCLM-Bold MiriamCLM-Book MiriamMonoCLM-Bold MiriamMonoCLM-BoldOblique MiriamMonoCLM-Book MiriamMonoCLM-BookOblique NachlieliCLM-Bold NachlieliCLM-BoldOblique NachlieliCLM-Light NachlieliCLM-LightOblique YehudaCLM-Bold YehudaCLM-Light
-		${INSTALL_DATA} ${WRKSRC}/${filename}.afm ${PREFIX}/lib/X11/fonts/culmus
-		${INSTALL_DATA} ${WRKSRC}/${filename}.pfa ${PREFIX}/lib/X11/fonts/culmus
+		${INSTALL_DATA} ${WRKSRC}/${filename}.afm ${STAGEDIR}${PREFIX}/lib/X11/fonts/culmus
+		${INSTALL_DATA} ${WRKSRC}/${filename}.pfa ${STAGEDIR}${PREFIX}/lib/X11/fonts/culmus
 .	endfor
 	@cd ${WRKSRC}; ${PREFIX}/bin/mkfontscale; ${PREFIX}/bin/mkfontdir
-	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/culmus
-	${INSTALL_DATA} ${WRKSRC}/fonts.scale ${PREFIX}/lib/X11/fonts/culmus
-
-post-install:
-	@${SED} "s|PREFIX|${PREFIX}|" ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${STAGEDIR}${PREFIX}/lib/X11/fonts/culmus
+	${INSTALL_DATA} ${WRKSRC}/fonts.scale ${STAGEDIR}${PREFIX}/lib/X11/fonts/culmus
 
 .include <bsd.port.mk>

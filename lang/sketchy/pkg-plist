@@ -5,6 +5,9 @@ include/sketchy.h
 lib/libsketchy.a
 lib/libsketchy.so
 lib/libsketchy.so.31
+man/man1/sk.1.gz
+man/man1/sketchy.1.gz
+man/man1/skpp.1.gz
 %%DATADIR%%/LICENSE
 %%DATADIR%%/ext/assp.scm
 %%DATADIR%%/ext/count.scm

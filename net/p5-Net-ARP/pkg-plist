@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/ARP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ARP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ARP/ARP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ARP/ARP.so
 %%PERL5_MAN3%%/Net::ARP.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

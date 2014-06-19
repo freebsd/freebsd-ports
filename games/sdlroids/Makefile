@@ -12,21 +12,19 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Enhanced shoot-the-asteroids game
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	 --datadir=${STAGEDIR}${PREFIX}/share
+CONFIGURE_ARGS=	--datadir=${STAGEDIR}${PREFIX}/share
 USE_GCC=	yes
 USE_CSTD=	gnu89
 USE_SDL=	mixer sdl
 
-PORTDOCS=	ChangeLog README README.orig README.petopt README.xhyperoid TODO
-
+PORTDOCS=	ChangeLog README README.orig README.petopt README.xhyperoid
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="SDLRoids" "" "${PORTNAME}" \

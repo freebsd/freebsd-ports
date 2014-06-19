@@ -11,6 +11,8 @@ DISTFILES=	ofb06trial.tgz
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Microsoft Word/Excel OpenDocument and OpenOffice.org editor
 
+BROKEN=		Checksum and size mismatch
+
 RUN_DEPENDS=	${LOCALBASE}/bin/xfs:${PORTSDIR}/x11-fonts/xfs
 
 USE_XORG=	x11

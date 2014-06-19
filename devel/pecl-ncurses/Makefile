@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	tj@FreeBSD.org
-COMMENT=	A PECL extension for ncurses
+COMMENT=	PECL extension for ncurses
 
 LICENSE=	PHP301
 

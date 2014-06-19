@@ -3,6 +3,7 @@
 
 PORTNAME=	libpar2
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
@@ -19,7 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		pkgconfig libtool
 
 OPTIONS_DEFINE=	DOCS
 

@@ -15,7 +15,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		gmake
 MAKEFILE=	makefile
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -28,12 +27,12 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/00*.txt ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/00*.txt ${STAGEDIR}${DOCSDIR}/
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
 .endif
 
 plist:

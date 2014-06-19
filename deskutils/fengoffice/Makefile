@@ -8,9 +8,9 @@ MASTER_SITES=	SF/opengoo/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	An open source web-based collaboration software
+COMMENT=	Open source web-based collaboration software
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 USE_PHP=	mysql gd simplexml
 DEFAULT_PHP_VER=5

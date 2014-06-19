@@ -12,6 +12,6 @@ COMMENT=	SSLScan is a fast SSL port scanner
 
 LICENSE=	GPLv3
 
-MAKE_ARGS=	STAGEDIR=${STAGEDIR} CC="${CC}" CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	CC="${CC}" CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

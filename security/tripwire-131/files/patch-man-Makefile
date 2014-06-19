@@ -1,0 +1,10 @@
+--- man/Makefile.orig	1999-05-04 01:31:00.000000000 -0700
++++ man/Makefile	2014-06-01 22:12:53.000000000 -0700
+@@ -5,6 +5,7 @@
+ all:	install
+ 
+ install:
++	mkdir -p $(MANDIR)/man5 $(MANDIR)/man8
+ 	cp siggen.8 $(MANDIR)/man8
+ 	cp tripwire.8 $(MANDIR)/man8
+ 	cp tw.config.5 $(MANDIR)/man5

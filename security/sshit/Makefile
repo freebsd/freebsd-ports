@@ -30,12 +30,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf-dist
 
-post-install:
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
-		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf-dist ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf ; \
-	fi
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
-
 .include <bsd.port.mk>

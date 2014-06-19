@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graffer
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://chaosophia.net/downloads/graffer/ \
 		http://ns1.chaosophia.net/downloads/graffer/
@@ -10,11 +10,9 @@ MASTER_SITES=	http://chaosophia.net/downloads/graffer/ \
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Utility to render graphical statistics
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
-
-USES=		iconv
-MAKE_ARGS=	"LD_GD=gd"
-MAKE_END+=	__MAKE_CONF=/dev/null
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 PLIST_FILES=	bin/graffer \
 		etc/graffer/graffer.conf.example \
@@ -22,11 +20,9 @@ PLIST_FILES=	bin/graffer \
 PLIST_DIRS=	etc/graffer
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lgd|-l$${LD_GD}|; s| -lttf||' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s|/etc/|${STAGEDIR}${PREFIX}/etc/|" \
+	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 		${WRKSRC}/graffer.[c8]
-	@${REINPLACE_CMD} -e "s|/etc/|${STAGEDIR}${PREFIX}/etc/|" \
+	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 		${WRKSRC}/graffer.conf.example
 
 do-install:

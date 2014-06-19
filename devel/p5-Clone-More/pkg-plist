@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More/More.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More/More.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Clone/More.pm
 %%PERL5_MAN3%%/Clone::More.3.gz

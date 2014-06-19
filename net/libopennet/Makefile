@@ -15,12 +15,4 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake
 USE_LDCONFIG=	yes
 
-MAN3=		fopen_net.3 \
-		fseek_net.3 \
-		lseek_net.3 \
-		open_net.3 \
-		opennet.3 \
-		read_net.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,24 +10,21 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that collects network traffic data
 
-GNU_CONFIGURE=	yes
-PLIST_FILES=	sbin/fprobe
-PORTDOCS=	ChangeLog README
-SUB_LIST=	NAME=${PORTNAME}
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_RC_SUBR=	fprobe
+GNU_CONFIGURE=	yes
+SUB_LIST=	NAME=${PORTNAME}
+PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/fprobe
+PORTDOCS=	ChangeLog README
 
-MAN8=		fprobe.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

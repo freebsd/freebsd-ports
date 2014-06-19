@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevt
-DISTVERSION=	alpha-20140411
-PORTREVISION=	1
+DISTVERSION=	alpha-20140531
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSYm01VnUtLXNUZ2M/ \
 		LOCAL/antoine
@@ -15,7 +14,7 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
-USES=		gettext iconv libtool:keepla pathfix
+USES=		gettext iconv libtool pathfix
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

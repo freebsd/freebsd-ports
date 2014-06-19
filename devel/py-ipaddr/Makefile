@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mopsfelder@gmail.com
-COMMENT=	A Google open source IPv4/IPv6 manipulation library in Python
+COMMENT=	Google open source IPv4/IPv6 manipulation library in Python
 
 PROJECTHOST=	ipaddr-py
 USE_PYTHON=		yes

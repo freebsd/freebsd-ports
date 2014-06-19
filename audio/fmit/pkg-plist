@@ -1,11 +1,10 @@
 bin/fmit
+share/appdata/fmit.appdata.xml
 share/applications/fmit.desktop
 %%DATADIR%%/tr/fmit_de.qm
 %%DATADIR%%/tr/fmit_fr.qm
+%%DATADIR%%/tr/fmit_pt.qm
 share/icons/hicolor/scalable/apps/fmit.svg
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/tr
-@dirrm %%DATADIR%%
+@dirrmtry share/appdata
+@dirrmtry %%DATADIR%%/tr
+@dirrmtry %%DATADIR%%

@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Feb 15 05:16:21 2003
-+++ Makefile	Mon Apr 21 23:18:27 2003
+--- Makefile.orig	2003-06-10 22:26:51.000000000 +0200
++++ Makefile	2014-06-04 13:39:49.442936071 +0200
 @@ -5,13 +5,13 @@
  
  # -m386 (486,pentium,pentiumpro)
@@ -16,14 +16,16 @@
  CFLAGS=-Wall $(OPTIMIZE) $(DEBUG)
  LIBS=-lm
  CC=gcc
-@@ -31,8 +31,8 @@
+@@ -37,9 +37,9 @@
  	$(CC) $(CFLAGS) -c mls_text.c -o mls_text.o
  
  install: mls
 -	install -m 755 -g root -o root -s mls $(DESTDIR)/bin
 -	install -m 644 -g root -o root mls.1 $(DESTDIR)/man/man1
-+	install -m 755 -g wheel -o root -s mls $(DESTDIR)/bin
-+	install -m 644 -g wheel -o root mls.1 $(DESTDIR)/man/man1
- 	gzip -9f $(DESTDIR)/man/man1/mls.1
+-	gzip -9f $(DESTDIR)/man/man1/mls.1
++	$(BSD_INSTALL_PROGRAM) mls $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_MAN) mls.1 $(DESTDIR)$(PREFIX)/man/man1
++	gzip -9f $(DESTDIR)$(PREFIX)/man/man1/mls.1
  	@echo "**************************************************************"
  	@echo "*** To use HTML feature or PHP wrapper, copy contents of   ***"
+ 	@echo "*** 'html' subdirectory to location accessible by your     ***"

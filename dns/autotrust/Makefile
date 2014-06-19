@@ -8,7 +8,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/autotrust/
 
 MAINTAINER=	jaap@NLnetLabs.nl
-COMMENT=	A tool to automatically update DNSSEC trust anchors
+COMMENT=	Tool to automatically update DNSSEC trust anchors
 
 LIB_DEPENDS+=	libldns.so:${PORTSDIR}/dns/ldns \
 		libunbound.so:${PORTSDIR}/dns/unbound

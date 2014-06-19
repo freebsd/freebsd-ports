@@ -10,9 +10,8 @@ MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Library for parsing/generating FITS headers
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		tar:bzip2 gmake
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes

@@ -17,15 +17,13 @@ USE_GHOSTSCRIPT_RUN=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDLIBS="${LDFLAGS}"
 ALL_TARGET=	pspresent
 
-MAN1=		pspresent.1
-PLIST_FILES=	bin/pspresent
+PLIST_FILES=	bin/pspresent man/man1/pspresent.1.gz
 
 CFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBXINERAMA
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lXext -lXinerama
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pspresent ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pspresent.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/pspresent ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pspresent.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

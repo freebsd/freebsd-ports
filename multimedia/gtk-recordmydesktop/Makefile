@@ -2,7 +2,7 @@
 
 PORTNAME=	gtk-recordmydesktop
 PORTVERSION=	0.3.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia deskutils
 MASTER_SITES=	SF/recordmydesktop/gtk-recordMyDesktop/${PORTVERSION}
 
@@ -14,19 +14,15 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	2
-USE_GNOME=	gtk20 pygtk2 desktopfileutils
+USE_GNOME=	gtk20 pygtk2
 INSTALL_ICONS=	yes
 
-NO_STAGE=	yes
 post-build:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
 		${WRKSRC}/src/gtk-recordMyDesktop
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

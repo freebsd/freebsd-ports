@@ -13,7 +13,7 @@
   #	@(#) Makefile 1.21 93/10/25 
   
   SSPKGHOME = 	.
-! INSTALL_DIR =	$(PREFIX)
+! INSTALL_DIR =	${STAGEDIR}$(PREFIX)
   TARFILE =	/home2/tmp/sspkgs-tar
   
   SRCDIR =	$(SSPKGHOME)/src

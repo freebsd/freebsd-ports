@@ -12,7 +12,7 @@ MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Create/update ZIP files compatible with PKZIP
 
 # License is BSD-based, but not identical, so intall with documentation
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS

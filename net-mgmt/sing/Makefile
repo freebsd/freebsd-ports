@@ -18,9 +18,9 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-libpcap-prefix=/usr
-CONFIGURE_ENV=	LIBS="`${LIBNET_CONFIG} --libs`"
 CPPFLAGS+=	`${LIBNET_CONFIG} --defines` \
 		`${LIBNET_CONFIG} --cflags`
+LIBS+=		`${LIBNET_CONFIG} --libs`
 PLIST_FILES=	sbin/sing \
 		man/man8/sing.8.gz
 

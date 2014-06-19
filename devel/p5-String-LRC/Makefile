@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A perl interface for longitudinal redundancy check generation
+COMMENT=	Perl interface for longitudinal redundancy check generation
 
 USES=		perl5
 USE_PERL5=	configure

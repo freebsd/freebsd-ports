@@ -237,3 +237,4 @@
 @dirrm %%WWWDIR%%/Assistant
 @dirrm %%WWWDIR%%/All
 @dirrm %%WWWDIR%%
+@dirrmtry /var/spool/conference

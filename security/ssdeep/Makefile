@@ -3,6 +3,7 @@
 
 PORTNAME=	ssdeep
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,8 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
-USES=		gmake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

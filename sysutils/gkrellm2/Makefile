@@ -2,7 +2,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -14,8 +14,7 @@ COMMENT=	A GTK based system monitor
 
 LICENSE=	GPLv3
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_RC_SUBR=	gkrellmd
 WANT_GNOME=	yes
 
@@ -76,11 +75,10 @@ PORTDOCS=	COPYRIGHT CREDITS README Themes.html
 
 ALL_TARGET=	freebsd
 
-MAKE_ENV+=	INSTALLROOT=${STAGEDIR}${PREFIX} \
-		PKGCONFIGDIR=${STAGEDIR}${PREFIX}/libdata/pkgconfig \
-		SINSTALLDIR=${STAGEDIR}${PREFIX}/sbin \
-		MANDIR=${STAGEDIR}${MAN1PREFIX}/man/man1 \
-		SMANDIR=${STAGEDIR}${MANPREFIX}/man/man8 \
+MAKE_ENV+=	INSTALLROOT=${PREFIX} INSTALL_PREFIX=$(STAGEDIR) \
+		PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
+		SINSTALLDIR=${PREFIX}/sbin \
+		MANDIR=${MAN1PREFIX}/man/man1 SMANDIR=${MANPREFIX}/man/man8 \
 		VERSION=${PORTVERSION}
 
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${LOCALBASE}/share/gkrellm2/themes\"' \

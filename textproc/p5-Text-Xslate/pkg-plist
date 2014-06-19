@@ -52,7 +52,6 @@ bin/xslate
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Type/Raw.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/Xslate.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/Xslate.so
 man/man1/xslate.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate

@@ -3,15 +3,17 @@
 
 PORTNAME=	googlemock
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	gmock-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A library for writing and using C++ mock classes
+COMMENT=	Library for writing and using C++ mock classes
 
 BUILD_DEPENDS=	googletest>=1.5.0:${PORTSDIR}/devel/googletest
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

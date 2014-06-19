@@ -3,11 +3,12 @@
 
 PORTNAME=	innotop
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	A MySQL and InnoDB monitoring program
+COMMENT=	MySQL and InnoDB monitoring program
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

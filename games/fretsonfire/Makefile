@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:S/f/F/g:S/o/O/}-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A game of musical skill and fast fingers
+COMMENT=	Game of musical skill and fast fingers
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}game>=0:${PORTSDIR}/devel/py-game \

@@ -1,7 +1,8 @@
-%%APACHE%%%%CONFDIR%%/dojo.conf
+%%APACHE%%@sample %%CONFDIR%%/dojo.conf.sample
 %%WWWDIR%%/build-report.txt
 %%WWWDIR%%/dijit/BackgroundIframe.js
 %%WWWDIR%%/dijit/BackgroundIframe.js.uncompressed.js
+%%WWWDIR%%/dijit/CONTRIBUTING.md
 %%WWWDIR%%/dijit/Calendar.js
 %%WWWDIR%%/dijit/Calendar.js.uncompressed.js
 %%WWWDIR%%/dijit/CalendarLite.js
@@ -10,6 +11,10 @@
 %%WWWDIR%%/dijit/CheckedMenuItem.js.uncompressed.js
 %%WWWDIR%%/dijit/ColorPalette.js
 %%WWWDIR%%/dijit/ColorPalette.js.uncompressed.js
+%%WWWDIR%%/dijit/ConfirmDialog.js
+%%WWWDIR%%/dijit/ConfirmDialog.js.uncompressed.js
+%%WWWDIR%%/dijit/ConfirmTooltipDialog.js
+%%WWWDIR%%/dijit/ConfirmTooltipDialog.js.uncompressed.js
 %%WWWDIR%%/dijit/Declaration.js
 %%WWWDIR%%/dijit/Declaration.js.uncompressed.js
 %%WWWDIR%%/dijit/Destroyable.js
@@ -43,6 +48,7 @@
 %%WWWDIR%%/dijit/PopupMenuItem.js.uncompressed.js
 %%WWWDIR%%/dijit/ProgressBar.js
 %%WWWDIR%%/dijit/ProgressBar.js.uncompressed.js
+%%WWWDIR%%/dijit/README.md
 %%WWWDIR%%/dijit/RadioMenuItem.js
 %%WWWDIR%%/dijit/RadioMenuItem.js.uncompressed.js
 %%WWWDIR%%/dijit/TitlePane.js
@@ -69,6 +75,8 @@
 %%WWWDIR%%/dijit/_BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dijit/_Calendar.js
 %%WWWDIR%%/dijit/_Calendar.js.uncompressed.js
+%%WWWDIR%%/dijit/_ConfirmDialogMixin.js
+%%WWWDIR%%/dijit/_ConfirmDialogMixin.js.uncompressed.js
 %%WWWDIR%%/dijit/_Contained.js
 %%WWWDIR%%/dijit/_Contained.js.uncompressed.js
 %%WWWDIR%%/dijit/_Container.js
@@ -219,6 +227,12 @@
 %%WWWDIR%%/dijit/_editor/nls/hu/LinkDialog.js.uncompressed.js
 %%WWWDIR%%/dijit/_editor/nls/hu/commands.js
 %%WWWDIR%%/dijit/_editor/nls/hu/commands.js.uncompressed.js
+%%WWWDIR%%/dijit/_editor/nls/id/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/id/FontChoice.js.uncompressed.js
+%%WWWDIR%%/dijit/_editor/nls/id/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/id/LinkDialog.js.uncompressed.js
+%%WWWDIR%%/dijit/_editor/nls/id/commands.js
+%%WWWDIR%%/dijit/_editor/nls/id/commands.js.uncompressed.js
 %%WWWDIR%%/dijit/_editor/nls/it/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/it/FontChoice.js.uncompressed.js
 %%WWWDIR%%/dijit/_editor/nls/it/LinkDialog.js
@@ -562,6 +576,12 @@
 %%WWWDIR%%/dijit/form/nls/hu/Textarea.js.uncompressed.js
 %%WWWDIR%%/dijit/form/nls/hu/validate.js
 %%WWWDIR%%/dijit/form/nls/hu/validate.js.uncompressed.js
+%%WWWDIR%%/dijit/form/nls/id/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/id/ComboBox.js.uncompressed.js
+%%WWWDIR%%/dijit/form/nls/id/Textarea.js
+%%WWWDIR%%/dijit/form/nls/id/Textarea.js.uncompressed.js
+%%WWWDIR%%/dijit/form/nls/id/validate.js
+%%WWWDIR%%/dijit/form/nls/id/validate.js.uncompressed.js
 %%WWWDIR%%/dijit/form/nls/it/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/it/ComboBox.js.uncompressed.js
 %%WWWDIR%%/dijit/form/nls/it/Textarea.js
@@ -863,6 +883,10 @@
 %%WWWDIR%%/dijit/nls/hu/common.js.uncompressed.js
 %%WWWDIR%%/dijit/nls/hu/loading.js
 %%WWWDIR%%/dijit/nls/hu/loading.js.uncompressed.js
+%%WWWDIR%%/dijit/nls/id/common.js
+%%WWWDIR%%/dijit/nls/id/common.js.uncompressed.js
+%%WWWDIR%%/dijit/nls/id/loading.js
+%%WWWDIR%%/dijit/nls/id/loading.js.uncompressed.js
 %%WWWDIR%%/dijit/nls/it/common.js
 %%WWWDIR%%/dijit/nls/it/common.js.uncompressed.js
 %%WWWDIR%%/dijit/nls/it/loading.js
@@ -967,6 +991,7 @@
 %%WWWDIR%%/dijit/templates/TooltipDialog.html
 %%WWWDIR%%/dijit/templates/Tree.html
 %%WWWDIR%%/dijit/templates/TreeNode.html
+%%WWWDIR%%/dijit/templates/actionBar.html
 %%WWWDIR%%/dijit/themes/a11y/README.txt
 %%WWWDIR%%/dijit/themes/a11y/colors3x4.png
 %%WWWDIR%%/dijit/themes/a11y/colors7x10.png
@@ -1476,6 +1501,7 @@
 %%WWWDIR%%/dijit/typematic.js.uncompressed.js
 %%WWWDIR%%/dojo/AdapterRegistry.js
 %%WWWDIR%%/dojo/AdapterRegistry.js.uncompressed.js
+%%WWWDIR%%/dojo/CONTRIBUTING.md
 %%WWWDIR%%/dojo/Deferred.js
 %%WWWDIR%%/dojo/Deferred.js.uncompressed.js
 %%WWWDIR%%/dojo/DeferredList.js
@@ -1498,6 +1524,7 @@
 %%WWWDIR%%/dojo/NodeList.js
 %%WWWDIR%%/dojo/NodeList.js.uncompressed.js
 %%WWWDIR%%/dojo/OpenAjax.js
+%%WWWDIR%%/dojo/README.md
 %%WWWDIR%%/dojo/Stateful.js
 %%WWWDIR%%/dojo/Stateful.js.uncompressed.js
 %%WWWDIR%%/dojo/_base/Color.js
@@ -1699,10 +1726,18 @@
 %%WWWDIR%%/dojo/cldr/nls/en-au/generic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-au/gregorian.js
 %%WWWDIR%%/dojo/cldr/nls/en-au/gregorian.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/en-au/islamic.js
+%%WWWDIR%%/dojo/cldr/nls/en-au/islamic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-au/japanese.js
 %%WWWDIR%%/dojo/cldr/nls/en-au/japanese.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/en-au/number.js
+%%WWWDIR%%/dojo/cldr/nls/en-au/number.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-ca/currency.js
 %%WWWDIR%%/dojo/cldr/nls/en-ca/currency.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/en-ca/generic.js
+%%WWWDIR%%/dojo/cldr/nls/en-ca/generic.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/en-ca/gregorian.js
+%%WWWDIR%%/dojo/cldr/nls/en-ca/gregorian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/chinese.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/chinese.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/currency.js
@@ -1713,10 +1748,10 @@
 %%WWWDIR%%/dojo/cldr/nls/en-gb/gregorian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/indian.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/indian.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/en-gb/islamic.js
+%%WWWDIR%%/dojo/cldr/nls/en-gb/islamic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/japanese.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/japanese.js.uncompressed.js
-%%WWWDIR%%/dojo/cldr/nls/en-gb/number.js
-%%WWWDIR%%/dojo/cldr/nls/en-gb/number.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en/buddhist.js
 %%WWWDIR%%/dojo/cldr/nls/en/buddhist.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/en/chinese.js
@@ -1797,6 +1832,8 @@
 %%WWWDIR%%/dojo/cldr/nls/fr/coptic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/fr/currency.js
 %%WWWDIR%%/dojo/cldr/nls/fr/currency.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/fr/dangi.js
+%%WWWDIR%%/dojo/cldr/nls/fr/dangi.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/fr/ethiopic.js
 %%WWWDIR%%/dojo/cldr/nls/fr/ethiopic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/fr/generic.js
@@ -1813,6 +1850,8 @@
 %%WWWDIR%%/dojo/cldr/nls/fr/japanese.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/fr/number.js
 %%WWWDIR%%/dojo/cldr/nls/fr/number.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/fr/persian.js
+%%WWWDIR%%/dojo/cldr/nls/fr/persian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/fr/roc.js
 %%WWWDIR%%/dojo/cldr/nls/fr/roc.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/generic.js
@@ -1867,6 +1906,12 @@
 %%WWWDIR%%/dojo/cldr/nls/indian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/islamic-civil.js
 %%WWWDIR%%/dojo/cldr/nls/islamic-civil.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/islamic-rgsa.js
+%%WWWDIR%%/dojo/cldr/nls/islamic-rgsa.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/islamic-tbla.js
+%%WWWDIR%%/dojo/cldr/nls/islamic-tbla.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/islamic-umalqura.js
+%%WWWDIR%%/dojo/cldr/nls/islamic-umalqura.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/islamic.js
 %%WWWDIR%%/dojo/cldr/nls/islamic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/it/buddhist.js
@@ -1897,6 +1942,8 @@
 %%WWWDIR%%/dojo/cldr/nls/ja/coptic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ja/currency.js
 %%WWWDIR%%/dojo/cldr/nls/ja/currency.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/ja/dangi.js
+%%WWWDIR%%/dojo/cldr/nls/ja/dangi.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ja/ethiopic.js
 %%WWWDIR%%/dojo/cldr/nls/ja/ethiopic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ja/generic.js
@@ -1923,8 +1970,14 @@
 %%WWWDIR%%/dojo/cldr/nls/ko/buddhist.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ko/chinese.js
 %%WWWDIR%%/dojo/cldr/nls/ko/chinese.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/ko/coptic.js
+%%WWWDIR%%/dojo/cldr/nls/ko/coptic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ko/currency.js
 %%WWWDIR%%/dojo/cldr/nls/ko/currency.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/ko/dangi.js
+%%WWWDIR%%/dojo/cldr/nls/ko/dangi.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/ko/ethiopic.js
+%%WWWDIR%%/dojo/cldr/nls/ko/ethiopic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ko/generic.js
 %%WWWDIR%%/dojo/cldr/nls/ko/generic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/ko/gregorian.js
@@ -1961,20 +2014,30 @@
 %%WWWDIR%%/dojo/cldr/nls/nl/buddhist.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/chinese.js
 %%WWWDIR%%/dojo/cldr/nls/nl/chinese.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/nl/coptic.js
+%%WWWDIR%%/dojo/cldr/nls/nl/coptic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/currency.js
 %%WWWDIR%%/dojo/cldr/nls/nl/currency.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/nl/dangi.js
+%%WWWDIR%%/dojo/cldr/nls/nl/dangi.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/nl/ethiopic.js
+%%WWWDIR%%/dojo/cldr/nls/nl/ethiopic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/generic.js
 %%WWWDIR%%/dojo/cldr/nls/nl/generic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/gregorian.js
 %%WWWDIR%%/dojo/cldr/nls/nl/gregorian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/hebrew.js
 %%WWWDIR%%/dojo/cldr/nls/nl/hebrew.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/nl/indian.js
+%%WWWDIR%%/dojo/cldr/nls/nl/indian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/islamic.js
 %%WWWDIR%%/dojo/cldr/nls/nl/islamic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/japanese.js
 %%WWWDIR%%/dojo/cldr/nls/nl/japanese.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/number.js
 %%WWWDIR%%/dojo/cldr/nls/nl/number.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/nl/persian.js
+%%WWWDIR%%/dojo/cldr/nls/nl/persian.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/nl/roc.js
 %%WWWDIR%%/dojo/cldr/nls/nl/roc.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/number.js
@@ -2011,6 +2074,8 @@
 %%WWWDIR%%/dojo/cldr/nls/pl/roc.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/pt-pt/buddhist.js
 %%WWWDIR%%/dojo/cldr/nls/pt-pt/buddhist.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/pt-pt/chinese.js
+%%WWWDIR%%/dojo/cldr/nls/pt-pt/chinese.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/pt-pt/currency.js
 %%WWWDIR%%/dojo/cldr/nls/pt-pt/currency.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/pt-pt/generic.js
@@ -2127,6 +2192,8 @@
 %%WWWDIR%%/dojo/cldr/nls/sv/coptic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/sv/currency.js
 %%WWWDIR%%/dojo/cldr/nls/sv/currency.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/sv/dangi.js
+%%WWWDIR%%/dojo/cldr/nls/sv/dangi.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/sv/ethiopic.js
 %%WWWDIR%%/dojo/cldr/nls/sv/ethiopic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/sv/generic.js
@@ -2155,6 +2222,8 @@
 %%WWWDIR%%/dojo/cldr/nls/th/coptic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/th/currency.js
 %%WWWDIR%%/dojo/cldr/nls/th/currency.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/th/dangi.js
+%%WWWDIR%%/dojo/cldr/nls/th/dangi.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/th/ethiopic.js
 %%WWWDIR%%/dojo/cldr/nls/th/ethiopic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/th/generic.js
@@ -2207,6 +2276,8 @@
 %%WWWDIR%%/dojo/cldr/nls/zh-hant/coptic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/zh-hant/currency.js
 %%WWWDIR%%/dojo/cldr/nls/zh-hant/currency.js.uncompressed.js
+%%WWWDIR%%/dojo/cldr/nls/zh-hant/dangi.js
+%%WWWDIR%%/dojo/cldr/nls/zh-hant/dangi.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/zh-hant/ethiopic.js
 %%WWWDIR%%/dojo/cldr/nls/zh-hant/ethiopic.js.uncompressed.js
 %%WWWDIR%%/dojo/cldr/nls/zh-hant/generic.js
@@ -2305,6 +2376,8 @@
 %%WWWDIR%%/dojo/date/locale.js.uncompressed.js
 %%WWWDIR%%/dojo/date/stamp.js
 %%WWWDIR%%/dojo/date/stamp.js.uncompressed.js
+%%WWWDIR%%/dojo/debounce.js
+%%WWWDIR%%/dojo/debounce.js.uncompressed.js
 %%WWWDIR%%/dojo/dnd/AutoSource.js
 %%WWWDIR%%/dojo/dnd/AutoSource.js.uncompressed.js
 %%WWWDIR%%/dojo/dnd/Avatar.js
@@ -2424,6 +2497,8 @@
 %%WWWDIR%%/dojo/nls/hr/colors.js.uncompressed.js
 %%WWWDIR%%/dojo/nls/hu/colors.js
 %%WWWDIR%%/dojo/nls/hu/colors.js.uncompressed.js
+%%WWWDIR%%/dojo/nls/id/colors.js
+%%WWWDIR%%/dojo/nls/id/colors.js.uncompressed.js
 %%WWWDIR%%/dojo/nls/it/colors.js
 %%WWWDIR%%/dojo/nls/it/colors.js.uncompressed.js
 %%WWWDIR%%/dojo/nls/ja/colors.js
@@ -2468,6 +2543,12 @@
 %%WWWDIR%%/dojo/number.js.uncompressed.js
 %%WWWDIR%%/dojo/on.js
 %%WWWDIR%%/dojo/on.js.uncompressed.js
+%%WWWDIR%%/dojo/on/asyncEventListener.js
+%%WWWDIR%%/dojo/on/asyncEventListener.js.uncompressed.js
+%%WWWDIR%%/dojo/on/debounce.js
+%%WWWDIR%%/dojo/on/debounce.js.uncompressed.js
+%%WWWDIR%%/dojo/on/throttle.js
+%%WWWDIR%%/dojo/on/throttle.js.uncompressed.js
 %%WWWDIR%%/dojo/package.json
 %%WWWDIR%%/dojo/parser.js
 %%WWWDIR%%/dojo/parser.js.uncompressed.js
@@ -2560,6 +2641,8 @@
 %%WWWDIR%%/dojo/string.js.uncompressed.js
 %%WWWDIR%%/dojo/text.js
 %%WWWDIR%%/dojo/text.js.uncompressed.js
+%%WWWDIR%%/dojo/throttle.js
+%%WWWDIR%%/dojo/throttle.js.uncompressed.js
 %%WWWDIR%%/dojo/topic.js
 %%WWWDIR%%/dojo/topic.js.uncompressed.js
 %%WWWDIR%%/dojo/touch.js
@@ -2570,10 +2653,12 @@
 %%WWWDIR%%/dojo/when.js.uncompressed.js
 %%WWWDIR%%/dojo/window.js
 %%WWWDIR%%/dojo/window.js.uncompressed.js
+%%WWWDIR%%/dojox/CONTRIBUTING.md
 %%WWWDIR%%/dojox/LICENSE
 %%WWWDIR%%/dojox/NodeList/README
 %%WWWDIR%%/dojox/NodeList/delegate.js
 %%WWWDIR%%/dojox/NodeList/delegate.js.uncompressed.js
+%%WWWDIR%%/dojox/README.md
 %%WWWDIR%%/dojox/analytics.js
 %%WWWDIR%%/dojox/analytics.js.uncompressed.js
 %%WWWDIR%%/dojox/analytics/README
@@ -2793,6 +2878,14 @@
 %%WWWDIR%%/dojox/atom/widget/nls/hu/FeedViewerEntry.js.uncompressed.js
 %%WWWDIR%%/dojox/atom/widget/nls/hu/PeopleEditor.js
 %%WWWDIR%%/dojox/atom/widget/nls/hu/PeopleEditor.js.uncompressed.js
+%%WWWDIR%%/dojox/atom/widget/nls/id/FeedEntryEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/id/FeedEntryEditor.js.uncompressed.js
+%%WWWDIR%%/dojox/atom/widget/nls/id/FeedEntryViewer.js
+%%WWWDIR%%/dojox/atom/widget/nls/id/FeedEntryViewer.js.uncompressed.js
+%%WWWDIR%%/dojox/atom/widget/nls/id/FeedViewerEntry.js
+%%WWWDIR%%/dojox/atom/widget/nls/id/FeedViewerEntry.js.uncompressed.js
+%%WWWDIR%%/dojox/atom/widget/nls/id/PeopleEditor.js
+%%WWWDIR%%/dojox/atom/widget/nls/id/PeopleEditor.js.uncompressed.js
 %%WWWDIR%%/dojox/atom/widget/nls/it/FeedEntryEditor.js
 %%WWWDIR%%/dojox/atom/widget/nls/it/FeedEntryEditor.js.uncompressed.js
 %%WWWDIR%%/dojox/atom/widget/nls/it/FeedEntryViewer.js
@@ -3022,6 +3115,8 @@
 %%WWWDIR%%/dojox/calendar/ColumnView.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/ColumnViewSecondarySheet.js
 %%WWWDIR%%/dojox/calendar/ColumnViewSecondarySheet.js.uncompressed.js
+%%WWWDIR%%/dojox/calendar/DecorationRenderer.js
+%%WWWDIR%%/dojox/calendar/DecorationRenderer.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/ExpandRenderer.js
 %%WWWDIR%%/dojox/calendar/ExpandRenderer.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/HorizontalRenderer.js
@@ -3044,8 +3139,12 @@
 %%WWWDIR%%/dojox/calendar/Mouse.js
 %%WWWDIR%%/dojox/calendar/Mouse.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/README
+%%WWWDIR%%/dojox/calendar/RendererManager.js
+%%WWWDIR%%/dojox/calendar/RendererManager.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/SimpleColumnView.js
 %%WWWDIR%%/dojox/calendar/SimpleColumnView.js.uncompressed.js
+%%WWWDIR%%/dojox/calendar/StoreManager.js
+%%WWWDIR%%/dojox/calendar/StoreManager.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/StoreMixin.js
 %%WWWDIR%%/dojox/calendar/StoreMixin.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/Touch.js
@@ -3056,8 +3155,8 @@
 %%WWWDIR%%/dojox/calendar/ViewBase.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/_RendererMixin.js
 %%WWWDIR%%/dojox/calendar/_RendererMixin.js.uncompressed.js
-%%WWWDIR%%/dojox/calendar/_VerticalScrollBarBase.js
-%%WWWDIR%%/dojox/calendar/_VerticalScrollBarBase.js.uncompressed.js
+%%WWWDIR%%/dojox/calendar/_ScrollBarBase.js
+%%WWWDIR%%/dojox/calendar/_ScrollBarBase.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/ar/buttons.js
 %%WWWDIR%%/dojox/calendar/nls/ar/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/bg/buttons.js
@@ -3086,6 +3185,8 @@
 %%WWWDIR%%/dojox/calendar/nls/hr/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/hu/buttons.js
 %%WWWDIR%%/dojox/calendar/nls/hu/buttons.js.uncompressed.js
+%%WWWDIR%%/dojox/calendar/nls/id/buttons.js
+%%WWWDIR%%/dojox/calendar/nls/id/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/it/buttons.js
 %%WWWDIR%%/dojox/calendar/nls/it/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/ja/buttons.js
@@ -3094,6 +3195,8 @@
 %%WWWDIR%%/dojox/calendar/nls/kk/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/ko/buttons.js
 %%WWWDIR%%/dojox/calendar/nls/ko/buttons.js.uncompressed.js
+%%WWWDIR%%/dojox/calendar/nls/lt/buttons.js
+%%WWWDIR%%/dojox/calendar/nls/lt/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/nb/buttons.js
 %%WWWDIR%%/dojox/calendar/nls/nb/buttons.js.uncompressed.js
 %%WWWDIR%%/dojox/calendar/nls/nl/buttons.js
@@ -3135,9 +3238,9 @@
 %%WWWDIR%%/dojox/calendar/templates/MobileHorizontalRenderer.html
 %%WWWDIR%%/dojox/calendar/templates/MobileVerticalRenderer.html
 %%WWWDIR%%/dojox/calendar/templates/MonthColumnView.html
-%%WWWDIR%%/dojox/calendar/templates/SimpleColumnView.html
 %%WWWDIR%%/dojox/calendar/templates/SimpleMatrixView.html
 %%WWWDIR%%/dojox/calendar/templates/VerticalRenderer.html
+%%WWWDIR%%/dojox/calendar/themes/Base.less
 %%WWWDIR%%/dojox/calendar/themes/claro/Calendar.css
 %%WWWDIR%%/dojox/calendar/themes/claro/Calendar.less
 %%WWWDIR%%/dojox/calendar/themes/claro/Calendar_rtl.css
@@ -3158,8 +3261,6 @@
 %%WWWDIR%%/dojox/calendar/themes/claro/MonthColumnViewCommon.less
 %%WWWDIR%%/dojox/calendar/themes/claro/MonthColumnView_rtl.css
 %%WWWDIR%%/dojox/calendar/themes/claro/MonthColumnView_rtl.less
-%%WWWDIR%%/dojox/calendar/themes/claro/SimpleColumnView.css
-%%WWWDIR%%/dojox/calendar/themes/claro/SimpleColumnView.less
 %%WWWDIR%%/dojox/calendar/themes/claro/images/titlebar.png
 %%WWWDIR%%/dojox/calendar/themes/iphone/Calendar.css
 %%WWWDIR%%/dojox/calendar/themes/iphone/Calendar.less
@@ -3202,8 +3303,6 @@
 %%WWWDIR%%/dojox/calendar/themes/nihilo/MonthColumnViewCommon.less
 %%WWWDIR%%/dojox/calendar/themes/nihilo/MonthColumnView_rtl.css
 %%WWWDIR%%/dojox/calendar/themes/nihilo/MonthColumnView_rtl.less
-%%WWWDIR%%/dojox/calendar/themes/nihilo/SimpleColumnView.css
-%%WWWDIR%%/dojox/calendar/themes/nihilo/SimpleColumnView.less
 %%WWWDIR%%/dojox/calendar/themes/nihilo/images/accordionItemActive.png
 %%WWWDIR%%/dojox/calendar/themes/nihilo/images/titleBar.png
 %%WWWDIR%%/dojox/calendar/themes/soria/Calendar.css
@@ -3226,8 +3325,6 @@
 %%WWWDIR%%/dojox/calendar/themes/soria/MonthColumnViewCommon.less
 %%WWWDIR%%/dojox/calendar/themes/soria/MonthColumnView_rtl.css
 %%WWWDIR%%/dojox/calendar/themes/soria/MonthColumnView_rtl.less
-%%WWWDIR%%/dojox/calendar/themes/soria/SimpleColumnView.css
-%%WWWDIR%%/dojox/calendar/themes/soria/SimpleColumnView.less
 %%WWWDIR%%/dojox/calendar/themes/soria/images/accordionItemActive.png
 %%WWWDIR%%/dojox/calendar/themes/soria/images/titleBar.png
 %%WWWDIR%%/dojox/calendar/themes/tundra/Calendar.css
@@ -3250,8 +3347,6 @@
 %%WWWDIR%%/dojox/calendar/themes/tundra/MonthColumnViewCommon.less
 %%WWWDIR%%/dojox/calendar/themes/tundra/MonthColumnView_rtl.css
 %%WWWDIR%%/dojox/calendar/themes/tundra/MonthColumnView_rtl.less
-%%WWWDIR%%/dojox/calendar/themes/tundra/SimpleColumnView.css
-%%WWWDIR%%/dojox/calendar/themes/tundra/SimpleColumnView.less
 %%WWWDIR%%/dojox/calendar/themes/tundra/images/accordionItemHover.gif
 %%WWWDIR%%/dojox/calendar/themes/tundra/images/titleBar.png
 %%WWWDIR%%/dojox/calendar/time.js
@@ -3613,77 +3708,6 @@
 %%WWWDIR%%/dojox/data/XmlStore.js.uncompressed.js
 %%WWWDIR%%/dojox/data/css.js
 %%WWWDIR%%/dojox/data/css.js.uncompressed.js
-%%WWWDIR%%/dojox/data/demos/GoogleFeedTemplate.html
-%%WWWDIR%%/dojox/data/demos/GoogleTemplate.html
-%%WWWDIR%%/dojox/data/demos/GoogleTemplateBlog.html
-%%WWWDIR%%/dojox/data/demos/GoogleTemplateImage.html
-%%WWWDIR%%/dojox/data/demos/GoogleTemplateLocal.html
-%%WWWDIR%%/dojox/data/demos/GoogleTemplateVideo.html
-%%WWWDIR%%/dojox/data/demos/demo_CssStores_combo_tree_grid.html
-%%WWWDIR%%/dojox/data/demos/demo_DataDemoTable.html
-%%WWWDIR%%/dojox/data/demos/demo_FileStore_dojotree.html
-%%WWWDIR%%/dojox/data/demos/demo_FileStore_dojoxdata_combo_grid.html
-%%WWWDIR%%/dojox/data/demos/demo_FlickrRestStore.html
-%%WWWDIR%%/dojox/data/demos/demo_FlickrStore.html
-%%WWWDIR%%/dojox/data/demos/demo_GoogleFeedStore.html
-%%WWWDIR%%/dojox/data/demos/demo_GoogleImageSearchStore_Grid.html
-%%WWWDIR%%/dojox/data/demos/demo_GoogleSearchStore.html
-%%WWWDIR%%/dojox/data/demos/demo_GoogleSearchStore_Grid.html
-%%WWWDIR%%/dojox/data/demos/demo_LazyLoad.html
-%%WWWDIR%%/dojox/data/demos/demo_MultiStores.html
-%%WWWDIR%%/dojox/data/demos/demo_OpenSearchStore.html
-%%WWWDIR%%/dojox/data/demos/demo_PicasaStore.html
-%%WWWDIR%%/dojox/data/demos/demo_QueryReadStore_ComboBox.html
-%%WWWDIR%%/dojox/data/demos/demo_QueryReadStore_FilteringSelect.html
-%%WWWDIR%%/dojox/data/demos/demo_QueryReadStore_grid.html
-%%WWWDIR%%/dojox/data/demos/demo_WikipediaStore.html
-%%WWWDIR%%/dojox/data/demos/geography.json
-%%WWWDIR%%/dojox/data/demos/geography.xml
-%%WWWDIR%%/dojox/data/demos/geography/Argentina/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Brazil/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Canada/Ottawa/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Canada/Toronto/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Canada/data.json
-%%WWWDIR%%/dojox/data/demos/geography/China/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Commonwealth of Australia/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Egypt/data.json
-%%WWWDIR%%/dojox/data/demos/geography/France/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Germany/data.json
-%%WWWDIR%%/dojox/data/demos/geography/India/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Italy/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Kenya/Mombasa/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Kenya/Nairobi/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Kenya/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Mexico/Guadalajara/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Mexico/Mexico City/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Mexico/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Mongolia/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Russia/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Spain/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Sudan/Khartoum/data.json
-%%WWWDIR%%/dojox/data/demos/geography/Sudan/data.json
-%%WWWDIR%%/dojox/data/demos/geography/United States of America/data.json
-%%WWWDIR%%/dojox/data/demos/geography/root.json
-%%WWWDIR%%/dojox/data/demos/geography2.xml
-%%WWWDIR%%/dojox/data/demos/openSearchProxy.php
-%%WWWDIR%%/dojox/data/demos/picasaDemo.css
-%%WWWDIR%%/dojox/data/demos/stores/LazyLoadJSIStore.js
-%%WWWDIR%%/dojox/data/demos/stores/LazyLoadJSIStore.js.uncompressed.js
-%%WWWDIR%%/dojox/data/demos/stores/filestore_dojotree.php
-%%WWWDIR%%/dojox/data/demos/stores/filestore_dojoxdata.php
-%%WWWDIR%%/dojox/data/demos/stores/filestore_funcs.php
-%%WWWDIR%%/dojox/data/demos/widgets/FileView.js
-%%WWWDIR%%/dojox/data/demos/widgets/FileView.js.uncompressed.js
-%%WWWDIR%%/dojox/data/demos/widgets/FlickrViewList.js
-%%WWWDIR%%/dojox/data/demos/widgets/FlickrViewList.js.uncompressed.js
-%%WWWDIR%%/dojox/data/demos/widgets/PicasaView.js
-%%WWWDIR%%/dojox/data/demos/widgets/PicasaView.js.uncompressed.js
-%%WWWDIR%%/dojox/data/demos/widgets/PicasaViewList.js
-%%WWWDIR%%/dojox/data/demos/widgets/PicasaViewList.js.uncompressed.js
-%%WWWDIR%%/dojox/data/demos/widgets/templates/FileView.html
-%%WWWDIR%%/dojox/data/demos/widgets/templates/FlickrViewList.html
-%%WWWDIR%%/dojox/data/demos/widgets/templates/PicasaView.html
-%%WWWDIR%%/dojox/data/demos/widgets/templates/PicasaViewList.html
 %%WWWDIR%%/dojox/data/dom.js
 %%WWWDIR%%/dojox/data/dom.js.uncompressed.js
 %%WWWDIR%%/dojox/data/restListener.js
@@ -3967,34 +3991,6 @@
 %%WWWDIR%%/dojox/dtl/contrib/dom.js.uncompressed.js
 %%WWWDIR%%/dojox/dtl/contrib/objects.js
 %%WWWDIR%%/dojox/dtl/contrib/objects.js.uncompressed.js
-%%WWWDIR%%/dojox/dtl/demos/demo_Animation.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Animation_amd.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Blog.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Data.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Dijitless.html
-%%WWWDIR%%/dojox/dtl/demos/demo_DomTemplated.html
-%%WWWDIR%%/dojox/dtl/demos/demo_DomTemplated_amd.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Events.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Inline.html
-%%WWWDIR%%/dojox/dtl/demos/demo_NodeList.html
-%%WWWDIR%%/dojox/dtl/demos/demo_NodeList_amd.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Table.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Templated.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Templated_amd.html
-%%WWWDIR%%/dojox/dtl/demos/demo_Tree.html
-%%WWWDIR%%/dojox/dtl/demos/json/blog/get_blog_1.json
-%%WWWDIR%%/dojox/dtl/demos/json/blog/get_blog_3.json
-%%WWWDIR%%/dojox/dtl/demos/json/blog/get_blog_list.json
-%%WWWDIR%%/dojox/dtl/demos/json/blog/get_page_about.json
-%%WWWDIR%%/dojox/dtl/demos/json/fruit.json
-%%WWWDIR%%/dojox/dtl/demos/json/morefruit.json
-%%WWWDIR%%/dojox/dtl/demos/templates/animation.html
-%%WWWDIR%%/dojox/dtl/demos/templates/blog_base.html
-%%WWWDIR%%/dojox/dtl/demos/templates/blog_detail.html
-%%WWWDIR%%/dojox/dtl/demos/templates/blog_list.html
-%%WWWDIR%%/dojox/dtl/demos/templates/blog_page.html
-%%WWWDIR%%/dojox/dtl/demos/templates/gallery.html
-%%WWWDIR%%/dojox/dtl/demos/templates/nodelist.html
 %%WWWDIR%%/dojox/dtl/dom.js
 %%WWWDIR%%/dojox/dtl/dom.js.uncompressed.js
 %%WWWDIR%%/dojox/dtl/ext-dojo/NodeList.js
@@ -4034,6 +4030,8 @@
 %%WWWDIR%%/dojox/editor/plugins/AutoSave.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/AutoUrlLink.js
 %%WWWDIR%%/dojox/editor/plugins/AutoUrlLink.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/Breadcrumb.js
@@ -4090,6 +4088,8 @@
 %%WWWDIR%%/dojox/editor/plugins/_SpellCheckParser.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/Breadcrumb.js
@@ -4126,6 +4126,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/TextColor.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ar/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ar/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ar/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ar/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ar/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ar/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ar/Breadcrumb.js
@@ -4166,6 +4168,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/az/TableDialog.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/bg/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/bg/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/bg/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/bg/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/bg/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/bg/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/bg/Breadcrumb.js
@@ -4204,6 +4208,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/bg/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ca/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ca/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ca/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ca/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ca/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ca/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ca/Breadcrumb.js
@@ -4242,6 +4248,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/ca/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/cs/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/cs/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/cs/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/cs/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/cs/Breadcrumb.js
@@ -4280,6 +4288,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/cs/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/da/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/da/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/da/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/da/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/da/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/da/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/da/Breadcrumb.js
@@ -4318,6 +4328,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/da/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/de/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/de/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/de/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/de/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/de/Breadcrumb.js
@@ -4356,6 +4368,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/de/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/el/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/el/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/el/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/el/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/el/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/el/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/el/Breadcrumb.js
@@ -4394,6 +4408,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/el/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/es/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/es/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/es/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/es/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/es/Breadcrumb.js
@@ -4432,6 +4448,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/es/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fi/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fi/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fi/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fi/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fi/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fi/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fi/Breadcrumb.js
@@ -4470,6 +4488,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/fi/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fr/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fr/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fr/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fr/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fr/Breadcrumb.js
@@ -4508,6 +4528,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/fr/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/he/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/he/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/Breadcrumb.js
@@ -4546,6 +4568,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/he/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hr/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hr/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hr/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hr/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hr/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hr/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hr/Breadcrumb.js
@@ -4584,6 +4608,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/hr/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/Breadcrumb.js
@@ -4620,8 +4646,50 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/TextColor.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/latinEntities.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/AutoSave.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/BidiSupport.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Blockquote.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Blockquote.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Breadcrumb.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/CollapsibleToolbar.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/CollapsibleToolbar.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/FindReplace.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/InsertAnchor.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/InsertAnchor.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/InsertEntity.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/LocalImage.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/LocalImage.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/PageBreak.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/PasteFromWord.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/PasteFromWord.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Preview.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/SafePaste.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/SafePaste.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Save.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/ShowBlockNodes.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Smiley.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/Smiley.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/SpellCheck.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/SpellCheck.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/TableDialog.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/TextColor.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/TextColor.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/latinEntities.js
+%%WWWDIR%%/dojox/editor/plugins/nls/id/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/it/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/it/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/it/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/it/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/it/Breadcrumb.js
@@ -4660,6 +4728,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/it/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ja/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ja/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ja/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ja/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ja/Breadcrumb.js
@@ -4698,6 +4768,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/ja/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/kk/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/kk/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/kk/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/kk/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/kk/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/kk/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/kk/Breadcrumb.js
@@ -4736,6 +4808,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/kk/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/Breadcrumb.js
@@ -4776,6 +4850,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nb/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nb/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/nb/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/nb/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nb/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nb/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nb/Breadcrumb.js
@@ -4814,6 +4890,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/nb/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nl/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nl/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/nl/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/nl/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nl/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nl/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nl/Breadcrumb.js
@@ -4852,6 +4930,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/nl/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pl/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pl/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pl/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pl/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pl/Breadcrumb.js
@@ -4890,6 +4970,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/pl/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/Breadcrumb.js
@@ -4928,6 +5010,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt/Breadcrumb.js
@@ -4966,6 +5050,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/pt/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ro/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ro/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ro/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ro/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ro/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ro/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ro/Breadcrumb.js
@@ -5004,6 +5090,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/ro/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ru/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ru/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ru/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ru/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ru/Breadcrumb.js
@@ -5042,6 +5130,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/ru/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sk/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sk/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/sk/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/sk/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sk/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sk/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sk/Breadcrumb.js
@@ -5080,6 +5170,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/sk/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sl/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sl/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/sl/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/sl/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sl/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sl/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sl/Breadcrumb.js
@@ -5118,6 +5210,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/sl/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sv/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sv/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/sv/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/sv/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sv/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sv/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sv/Breadcrumb.js
@@ -5156,6 +5250,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/sv/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/th/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/th/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/th/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/th/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/th/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/th/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/th/Breadcrumb.js
@@ -5194,6 +5290,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/th/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/tr/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/tr/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/tr/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/tr/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/tr/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/tr/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/tr/Breadcrumb.js
@@ -5232,6 +5330,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/tr/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/uk/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/uk/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/uk/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/uk/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/uk/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/uk/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/uk/Breadcrumb.js
@@ -5270,6 +5370,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/uk/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/Breadcrumb.js
@@ -5308,6 +5410,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/AutoSave.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/AutoSave.js.uncompressed.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/BidiSupport.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/BidiSupport.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/Blockquote.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/Blockquote.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/Breadcrumb.js
@@ -5345,6 +5449,8 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/latinEntities.js.uncompressed.js
 %%WWWDIR%%/dojox/editor/plugins/resources/css/AutoSave.css
+%%WWWDIR%%/dojox/editor/plugins/resources/css/BidiSupport.css
+%%WWWDIR%%/dojox/editor/plugins/resources/css/BidiSupport_rtl.css
 %%WWWDIR%%/dojox/editor/plugins/resources/css/Blockquote.css
 %%WWWDIR%%/dojox/editor/plugins/resources/css/Breadcrumb.css
 %%WWWDIR%%/dojox/editor/plugins/resources/css/CollapsibleToolbar.css
@@ -5410,6 +5516,10 @@
 %%WWWDIR%%/dojox/editor/plugins/resources/icons/spellcheck.gif
 %%WWWDIR%%/dojox/editor/plugins/resources/icons/tundra/close.gif
 %%WWWDIR%%/dojox/editor/plugins/resources/images/anchor.gif
+%%WWWDIR%%/dojox/editor/plugins/resources/images/bidiIconsDisabled.png
+%%WWWDIR%%/dojox/editor/plugins/resources/images/bidiIconsDisabled_rtl.png
+%%WWWDIR%%/dojox/editor/plugins/resources/images/bidiIconsEnabled.png
+%%WWWDIR%%/dojox/editor/plugins/resources/images/bidiIconsEnabled_rtl.png
 %%WWWDIR%%/dojox/editor/plugins/resources/images/blockelems/address.gif
 %%WWWDIR%%/dojox/editor/plugins/resources/images/blockelems/blockquote.gif
 %%WWWDIR%%/dojox/editor/plugins/resources/images/blockelems/button.gif
@@ -5542,6 +5652,8 @@
 %%WWWDIR%%/dojox/form/FilePickerTextBox.js.uncompressed.js
 %%WWWDIR%%/dojox/form/FileUploader.js
 %%WWWDIR%%/dojox/form/FileUploader.js.uncompressed.js
+%%WWWDIR%%/dojox/form/HorizontalRangeSlider.js
+%%WWWDIR%%/dojox/form/HorizontalRangeSlider.js.uncompressed.js
 %%WWWDIR%%/dojox/form/ListInput.js
 %%WWWDIR%%/dojox/form/ListInput.js.uncompressed.js
 %%WWWDIR%%/dojox/form/Manager.js
@@ -5565,12 +5677,16 @@
 %%WWWDIR%%/dojox/form/TriStateCheckBox.js.uncompressed.js
 %%WWWDIR%%/dojox/form/Uploader.js
 %%WWWDIR%%/dojox/form/Uploader.js.uncompressed.js
+%%WWWDIR%%/dojox/form/VerticalRangeSlider.js
+%%WWWDIR%%/dojox/form/VerticalRangeSlider.js.uncompressed.js
 %%WWWDIR%%/dojox/form/YearTextBox.js
 %%WWWDIR%%/dojox/form/YearTextBox.js.uncompressed.js
 %%WWWDIR%%/dojox/form/_FormSelectWidget.js
 %%WWWDIR%%/dojox/form/_FormSelectWidget.js.uncompressed.js
 %%WWWDIR%%/dojox/form/_HasDropDown.js
 %%WWWDIR%%/dojox/form/_HasDropDown.js.uncompressed.js
+%%WWWDIR%%/dojox/form/_RangeSliderMixin.js
+%%WWWDIR%%/dojox/form/_RangeSliderMixin.js.uncompressed.js
 %%WWWDIR%%/dojox/form/_SelectStackMixin.js
 %%WWWDIR%%/dojox/form/_SelectStackMixin.js.uncompressed.js
 %%WWWDIR%%/dojox/form/manager/_ClassMixin.js
@@ -5673,6 +5789,12 @@
 %%WWWDIR%%/dojox/form/nls/hu/PasswordValidator.js.uncompressed.js
 %%WWWDIR%%/dojox/form/nls/hu/Uploader.js
 %%WWWDIR%%/dojox/form/nls/hu/Uploader.js.uncompressed.js
+%%WWWDIR%%/dojox/form/nls/id/CheckedMultiSelect.js
+%%WWWDIR%%/dojox/form/nls/id/CheckedMultiSelect.js.uncompressed.js
+%%WWWDIR%%/dojox/form/nls/id/PasswordValidator.js
+%%WWWDIR%%/dojox/form/nls/id/PasswordValidator.js.uncompressed.js
+%%WWWDIR%%/dojox/form/nls/id/Uploader.js
+%%WWWDIR%%/dojox/form/nls/id/Uploader.js.uncompressed.js
 %%WWWDIR%%/dojox/form/nls/it/CheckedMultiSelect.js
 %%WWWDIR%%/dojox/form/nls/it/CheckedMultiSelect.js.uncompressed.js
 %%WWWDIR%%/dojox/form/nls/it/PasswordValidator.js
@@ -6070,44 +6192,6 @@
 %%WWWDIR%%/dojox/gfx/canvasext.js.uncompressed.js
 %%WWWDIR%%/dojox/gfx/decompose.js
 %%WWWDIR%%/dojox/gfx/decompose.js.uncompressed.js
-%%WWWDIR%%/dojox/gfx/demos/PI.html
-%%WWWDIR%%/dojox/gfx/demos/beautify.html
-%%WWWDIR%%/dojox/gfx/demos/butterfly.html
-%%WWWDIR%%/dojox/gfx/demos/career_test.html
-%%WWWDIR%%/dojox/gfx/demos/circles.html
-%%WWWDIR%%/dojox/gfx/demos/circles2.html
-%%WWWDIR%%/dojox/gfx/demos/clipping.html
-%%WWWDIR%%/dojox/gfx/demos/clock.html
-%%WWWDIR%%/dojox/gfx/demos/clockWidget.html
-%%WWWDIR%%/dojox/gfx/demos/clock_black.html
-%%WWWDIR%%/dojox/gfx/demos/creator.html
-%%WWWDIR%%/dojox/gfx/demos/data/Lars.json
-%%WWWDIR%%/dojox/gfx/demos/data/Lars.svg
-%%WWWDIR%%/dojox/gfx/demos/data/LarsDreaming.json
-%%WWWDIR%%/dojox/gfx/demos/data/LarsDreaming.svg
-%%WWWDIR%%/dojox/gfx/demos/data/Nils.json
-%%WWWDIR%%/dojox/gfx/demos/data/Nils.svg
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-bg.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-head.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-left-arm.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-left-leg.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-lollipop.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-nose-large.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-nose-medium.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-right-arm.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-right-leg.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino-torso.png
-%%WWWDIR%%/dojox/gfx/demos/data/buratino.jpg
-%%WWWDIR%%/dojox/gfx/demos/data/buratino.json
-%%WWWDIR%%/dojox/gfx/demos/data/transform.json
-%%WWWDIR%%/dojox/gfx/demos/filters.html
-%%WWWDIR%%/dojox/gfx/demos/images/clock_face.jpg
-%%WWWDIR%%/dojox/gfx/demos/images/clock_face_black.jpg
-%%WWWDIR%%/dojox/gfx/demos/inspector.html
-%%WWWDIR%%/dojox/gfx/demos/lion.html
-%%WWWDIR%%/dojox/gfx/demos/roundedPane.html
-%%WWWDIR%%/dojox/gfx/demos/tiger.html
-%%WWWDIR%%/dojox/gfx/demos/tooltip.html
 %%WWWDIR%%/dojox/gfx/filters.js
 %%WWWDIR%%/dojox/gfx/filters.js.uncompressed.js
 %%WWWDIR%%/dojox/gfx/fx.js
@@ -6141,6 +6225,8 @@
 %%WWWDIR%%/dojox/gfx/svg.js.uncompressed.js
 %%WWWDIR%%/dojox/gfx/svg_attach.js
 %%WWWDIR%%/dojox/gfx/svg_attach.js.uncompressed.js
+%%WWWDIR%%/dojox/gfx/svg_mask.js
+%%WWWDIR%%/dojox/gfx/svg_mask.js.uncompressed.js
 %%WWWDIR%%/dojox/gfx/svgext.js
 %%WWWDIR%%/dojox/gfx/svgext.js.uncompressed.js
 %%WWWDIR%%/dojox/gfx/utils.js
@@ -6320,6 +6406,12 @@
 %%WWWDIR%%/dojox/grid/enhanced/nls/hu/Filter.js.uncompressed.js
 %%WWWDIR%%/dojox/grid/enhanced/nls/hu/Pagination.js
 %%WWWDIR%%/dojox/grid/enhanced/nls/hu/Pagination.js.uncompressed.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/id/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/id/EnhancedGrid.js.uncompressed.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/id/Filter.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/id/Filter.js.uncompressed.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/id/Pagination.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/id/Pagination.js.uncompressed.js
 %%WWWDIR%%/dojox/grid/enhanced/nls/it/EnhancedGrid.js
 %%WWWDIR%%/dojox/grid/enhanced/nls/it/EnhancedGrid.js.uncompressed.js
 %%WWWDIR%%/dojox/grid/enhanced/nls/it/Filter.js
@@ -6610,7 +6702,6 @@
 %%WWWDIR%%/dojox/help/_base.js.uncompressed.js
 %%WWWDIR%%/dojox/help/console.js
 %%WWWDIR%%/dojox/help/console.js.uncompressed.js
-%%WWWDIR%%/dojox/help/demos/demo_Console.html
 %%WWWDIR%%/dojox/highlight.js
 %%WWWDIR%%/dojox/highlight.js.uncompressed.js
 %%WWWDIR%%/dojox/highlight/README
@@ -6722,6 +6813,7 @@
 %%WWWDIR%%/dojox/image/resources/Gallery.html
 %%WWWDIR%%/dojox/image/resources/Lightbox.css
 %%WWWDIR%%/dojox/image/resources/Lightbox.html
+%%WWWDIR%%/dojox/image/resources/LightboxNano.css
 %%WWWDIR%%/dojox/image/resources/Magnifier.css
 %%WWWDIR%%/dojox/image/resources/SlideShow.css
 %%WWWDIR%%/dojox/image/resources/SlideShow.html
@@ -7192,16 +7284,28 @@
 %%WWWDIR%%/dojox/mobile/bidi/Carousel.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/CarouselItem.js
 %%WWWDIR%%/dojox/mobile/bidi/CarouselItem.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/bidi/FormLayout.js
+%%WWWDIR%%/dojox/mobile/bidi/FormLayout.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/Heading.js
 %%WWWDIR%%/dojox/mobile/bidi/Heading.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/bidi/Icon.js
+%%WWWDIR%%/dojox/mobile/bidi/Icon.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/IconItem.js
 %%WWWDIR%%/dojox/mobile/bidi/IconItem.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/IconMenu.js
 %%WWWDIR%%/dojox/mobile/bidi/IconMenu.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/ListItem.js
 %%WWWDIR%%/dojox/mobile/bidi/ListItem.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/bidi/ProgressIndicator.js
+%%WWWDIR%%/dojox/mobile/bidi/ProgressIndicator.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/bidi/Rating.js
+%%WWWDIR%%/dojox/mobile/bidi/Rating.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/RoundRectCategory.js
 %%WWWDIR%%/dojox/mobile/bidi/RoundRectCategory.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/bidi/Scrollable.js
+%%WWWDIR%%/dojox/mobile/bidi/Scrollable.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/bidi/SimpleDialog.js
+%%WWWDIR%%/dojox/mobile/bidi/SimpleDialog.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/SpinWheelSlot.js
 %%WWWDIR%%/dojox/mobile/bidi/SpinWheelSlot.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/SwapView.js
@@ -7226,6 +7330,8 @@
 %%WWWDIR%%/dojox/mobile/bidi/_ComboBoxMenu.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/_ItemBase.js
 %%WWWDIR%%/dojox/mobile/bidi/_ItemBase.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/bidi/_PickerBase.js
+%%WWWDIR%%/dojox/mobile/bidi/_PickerBase.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/_StoreListMixin.js
 %%WWWDIR%%/dojox/mobile/bidi/_StoreListMixin.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/bidi/common.js
@@ -7268,6 +7374,74 @@
 %%WWWDIR%%/dojox/mobile/migrationAssist.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/mobile-all.js
 %%WWWDIR%%/dojox/mobile/mobile-all.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/ar/messages.js
+%%WWWDIR%%/dojox/mobile/nls/ar/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/bg/messages.js
+%%WWWDIR%%/dojox/mobile/nls/bg/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/ca/messages.js
+%%WWWDIR%%/dojox/mobile/nls/ca/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/cs/messages.js
+%%WWWDIR%%/dojox/mobile/nls/cs/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/da/messages.js
+%%WWWDIR%%/dojox/mobile/nls/da/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/de/messages.js
+%%WWWDIR%%/dojox/mobile/nls/de/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/el/messages.js
+%%WWWDIR%%/dojox/mobile/nls/el/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/es/messages.js
+%%WWWDIR%%/dojox/mobile/nls/es/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/fi/messages.js
+%%WWWDIR%%/dojox/mobile/nls/fi/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/fr/messages.js
+%%WWWDIR%%/dojox/mobile/nls/fr/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/he/messages.js
+%%WWWDIR%%/dojox/mobile/nls/he/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/hr/messages.js
+%%WWWDIR%%/dojox/mobile/nls/hr/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/hu/messages.js
+%%WWWDIR%%/dojox/mobile/nls/hu/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/id/messages.js
+%%WWWDIR%%/dojox/mobile/nls/id/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/it/messages.js
+%%WWWDIR%%/dojox/mobile/nls/it/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/ja/messages.js
+%%WWWDIR%%/dojox/mobile/nls/ja/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/kk/messages.js
+%%WWWDIR%%/dojox/mobile/nls/kk/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/ko/messages.js
+%%WWWDIR%%/dojox/mobile/nls/ko/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/messages.js
+%%WWWDIR%%/dojox/mobile/nls/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/nb/messages.js
+%%WWWDIR%%/dojox/mobile/nls/nb/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/nl/messages.js
+%%WWWDIR%%/dojox/mobile/nls/nl/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/pl/messages.js
+%%WWWDIR%%/dojox/mobile/nls/pl/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/pt-pt/messages.js
+%%WWWDIR%%/dojox/mobile/nls/pt-pt/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/pt/messages.js
+%%WWWDIR%%/dojox/mobile/nls/pt/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/ro/messages.js
+%%WWWDIR%%/dojox/mobile/nls/ro/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/ru/messages.js
+%%WWWDIR%%/dojox/mobile/nls/ru/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/sk/messages.js
+%%WWWDIR%%/dojox/mobile/nls/sk/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/sl/messages.js
+%%WWWDIR%%/dojox/mobile/nls/sl/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/sv/messages.js
+%%WWWDIR%%/dojox/mobile/nls/sv/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/th/messages.js
+%%WWWDIR%%/dojox/mobile/nls/th/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/tr/messages.js
+%%WWWDIR%%/dojox/mobile/nls/tr/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/uk/messages.js
+%%WWWDIR%%/dojox/mobile/nls/uk/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/zh-tw/messages.js
+%%WWWDIR%%/dojox/mobile/nls/zh-tw/messages.js.uncompressed.js
+%%WWWDIR%%/dojox/mobile/nls/zh/messages.js
+%%WWWDIR%%/dojox/mobile/nls/zh/messages.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/pageTurningUtils.js
 %%WWWDIR%%/dojox/mobile/pageTurningUtils.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/parser.js
@@ -7278,6 +7452,7 @@
 %%WWWDIR%%/dojox/mobile/sniff.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/themes/android/Accordion-compat.css
 %%WWWDIR%%/dojox/mobile/themes/android/Accordion.css
+%%WWWDIR%%/dojox/mobile/themes/android/Accordion_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/android/Button-compat.css
 %%WWWDIR%%/dojox/mobile/themes/android/Button.css
 %%WWWDIR%%/dojox/mobile/themes/android/Carousel.css
@@ -7292,7 +7467,9 @@
 %%WWWDIR%%/dojox/mobile/themes/android/EdgeToEdgeList.css
 %%WWWDIR%%/dojox/mobile/themes/android/FixedSplitter.css
 %%WWWDIR%%/dojox/mobile/themes/android/FormLayout.css
+%%WWWDIR%%/dojox/mobile/themes/android/FormLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/android/GridLayout.css
+%%WWWDIR%%/dojox/mobile/themes/android/GridLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/android/Heading-compat.css
 %%WWWDIR%%/dojox/mobile/themes/android/Heading.css
 %%WWWDIR%%/dojox/mobile/themes/android/IconContainer-compat.css
@@ -7322,6 +7499,7 @@
 %%WWWDIR%%/dojox/mobile/themes/android/ProgressBar.css
 %%WWWDIR%%/dojox/mobile/themes/android/ProgressIndicator-compat.css
 %%WWWDIR%%/dojox/mobile/themes/android/ProgressIndicator.css
+%%WWWDIR%%/dojox/mobile/themes/android/ProgressIndicator_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/android/RadioButton-compat.css
 %%WWWDIR%%/dojox/mobile/themes/android/RadioButton.css
 %%WWWDIR%%/dojox/mobile/themes/android/RoundRect-compat.css
@@ -7444,6 +7622,7 @@
 %%WWWDIR%%/dojox/mobile/themes/android/variables_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/blackberry/Accordion-compat.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/Accordion.css
+%%WWWDIR%%/dojox/mobile/themes/blackberry/Accordion_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/Button-compat.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/Button.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/Carousel.css
@@ -7459,7 +7638,9 @@
 %%WWWDIR%%/dojox/mobile/themes/blackberry/EdgeToEdgeList.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/FixedSplitter.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/FormLayout.css
+%%WWWDIR%%/dojox/mobile/themes/blackberry/FormLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/GridLayout.css
+%%WWWDIR%%/dojox/mobile/themes/blackberry/GridLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/Heading-compat.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/Heading.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/IconContainer-compat.css
@@ -7489,6 +7670,7 @@
 %%WWWDIR%%/dojox/mobile/themes/blackberry/ProgressBar.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/ProgressIndicator-compat.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/ProgressIndicator.css
+%%WWWDIR%%/dojox/mobile/themes/blackberry/ProgressIndicator_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/RadioButton-compat.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/RadioButton.css
 %%WWWDIR%%/dojox/mobile/themes/blackberry/RoundRect-compat.css
@@ -7609,6 +7791,7 @@
 %%WWWDIR%%/dojox/mobile/themes/blackberry/variables_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/common/Accordion-compat.less
 %%WWWDIR%%/dojox/mobile/themes/common/Accordion.less
+%%WWWDIR%%/dojox/mobile/themes/common/Accordion_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/common/Button-compat.less
 %%WWWDIR%%/dojox/mobile/themes/common/Button.less
 %%WWWDIR%%/dojox/mobile/themes/common/Carousel.less
@@ -7622,7 +7805,9 @@
 %%WWWDIR%%/dojox/mobile/themes/common/EdgeToEdgeList.less
 %%WWWDIR%%/dojox/mobile/themes/common/FixedSplitter.less
 %%WWWDIR%%/dojox/mobile/themes/common/FormLayout.less
+%%WWWDIR%%/dojox/mobile/themes/common/FormLayout_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/common/GridLayout.less
+%%WWWDIR%%/dojox/mobile/themes/common/GridLayout_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/common/Heading-compat.less
 %%WWWDIR%%/dojox/mobile/themes/common/Heading.less
 %%WWWDIR%%/dojox/mobile/themes/common/IconContainer-compat.less
@@ -7644,6 +7829,7 @@
 %%WWWDIR%%/dojox/mobile/themes/common/ProgressBar.less
 %%WWWDIR%%/dojox/mobile/themes/common/ProgressIndicator-compat.less
 %%WWWDIR%%/dojox/mobile/themes/common/ProgressIndicator.less
+%%WWWDIR%%/dojox/mobile/themes/common/ProgressIndicator_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/common/RadioButton-compat.less
 %%WWWDIR%%/dojox/mobile/themes/common/RadioButton.less
 %%WWWDIR%%/dojox/mobile/themes/common/RoundRect-compat.less
@@ -7959,6 +8145,7 @@
 %%WWWDIR%%/dojox/mobile/themes/common/transitions/zoomOut.less
 %%WWWDIR%%/dojox/mobile/themes/custom/Accordion-compat.css
 %%WWWDIR%%/dojox/mobile/themes/custom/Accordion.css
+%%WWWDIR%%/dojox/mobile/themes/custom/Accordion_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/custom/Button-compat.css
 %%WWWDIR%%/dojox/mobile/themes/custom/Button.css
 %%WWWDIR%%/dojox/mobile/themes/custom/Carousel.css
@@ -7973,7 +8160,9 @@
 %%WWWDIR%%/dojox/mobile/themes/custom/EdgeToEdgeList.css
 %%WWWDIR%%/dojox/mobile/themes/custom/FixedSplitter.css
 %%WWWDIR%%/dojox/mobile/themes/custom/FormLayout.css
+%%WWWDIR%%/dojox/mobile/themes/custom/FormLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/custom/GridLayout.css
+%%WWWDIR%%/dojox/mobile/themes/custom/GridLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/custom/Heading-compat.css
 %%WWWDIR%%/dojox/mobile/themes/custom/Heading.css
 %%WWWDIR%%/dojox/mobile/themes/custom/IconContainer-compat.css
@@ -8003,6 +8192,7 @@
 %%WWWDIR%%/dojox/mobile/themes/custom/ProgressBar.css
 %%WWWDIR%%/dojox/mobile/themes/custom/ProgressIndicator-compat.css
 %%WWWDIR%%/dojox/mobile/themes/custom/ProgressIndicator.css
+%%WWWDIR%%/dojox/mobile/themes/custom/ProgressIndicator_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/custom/RadioButton-compat.css
 %%WWWDIR%%/dojox/mobile/themes/custom/RadioButton.css
 %%WWWDIR%%/dojox/mobile/themes/custom/RoundRect-compat.css
@@ -8119,6 +8309,7 @@
 %%WWWDIR%%/dojox/mobile/themes/custom/variables_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/holodark/Accordion-compat.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/Accordion.css
+%%WWWDIR%%/dojox/mobile/themes/holodark/Accordion_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/Button-compat.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/Button-compat.less
 %%WWWDIR%%/dojox/mobile/themes/holodark/Button.css
@@ -8136,7 +8327,9 @@
 %%WWWDIR%%/dojox/mobile/themes/holodark/EdgeToEdgeList.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/FixedSplitter.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/FormLayout.css
+%%WWWDIR%%/dojox/mobile/themes/holodark/FormLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/GridLayout.css
+%%WWWDIR%%/dojox/mobile/themes/holodark/GridLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/Heading-compat.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/Heading-compat.less
 %%WWWDIR%%/dojox/mobile/themes/holodark/Heading.css
@@ -8168,6 +8361,7 @@
 %%WWWDIR%%/dojox/mobile/themes/holodark/ProgressBar.less
 %%WWWDIR%%/dojox/mobile/themes/holodark/ProgressIndicator-compat.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/ProgressIndicator.css
+%%WWWDIR%%/dojox/mobile/themes/holodark/ProgressIndicator_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/RadioButton-compat.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/RadioButton.css
 %%WWWDIR%%/dojox/mobile/themes/holodark/RadioButton.less
@@ -8291,8 +8485,191 @@
 %%WWWDIR%%/dojox/mobile/themes/holodark/images/vseparator.png
 %%WWWDIR%%/dojox/mobile/themes/holodark/variables.less
 %%WWWDIR%%/dojox/mobile/themes/holodark/variables_rtl.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/Accordion-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Accordion.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Accordion_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Button-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Button-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/Button.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Button.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/Carousel.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Carousel_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/CheckBox-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/CheckBox.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/CheckBox.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/ComboBox-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ComboBox.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ComboBox_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/DatePicker.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/EdgeToEdgeCategory.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/EdgeToEdgeList.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/FixedSplitter.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/FormLayout.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/FormLayout_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/GridLayout.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/GridLayout_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Heading-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Heading-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/Heading.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconContainer-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconContainer-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconContainer.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconContainer.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconContainer_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconMenu-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconMenu.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconMenu_rtl-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/IconMenu_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ListItem-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ListItem-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/ListItem.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ListItem.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/ListItem_rtl-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ListItem_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ListItem_rtl.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/Opener-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Opener.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Overlay-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Overlay.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Overlay.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/PageIndicator-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/PageIndicator.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/PageIndicator.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/ProgressBar-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ProgressBar.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ProgressIndicator-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ProgressIndicator.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ProgressIndicator_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/RadioButton-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/RadioButton.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/RadioButton.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/RoundRect-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/RoundRect.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/RoundRectCategory.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/RoundRectCategory_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/RoundRectList-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/RoundRectList.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ScrollablePane.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/SearchBox-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/SearchBox.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/SimpleDialog-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/SimpleDialog.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Slider-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Slider.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Slider.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/SpinWheel-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/SpinWheel-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/SpinWheel.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/SpinWheel.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/SpinWheel_rtl-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/SpinWheel_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Switch-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Switch-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/Switch.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Switch.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/Switch_rtl-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Switch_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TabBar-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TabBar-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/TabBar.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TabBar.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/TabBar_rtl-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TabBar_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TextArea-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TextArea.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TextBox-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TextBox.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/TextBox.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/TimePicker.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ToggleButton-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ToggleButton.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ToggleButton.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/ToggleButton_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ToolBarButton-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ToolBarButton.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ToolBarButton.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/ToolBarButton_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Tooltip-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/Tooltip.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ValuePicker-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ValuePicker-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/ValuePicker.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ValuePicker.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/View.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/View.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/android-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/android_rtl-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/base-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/base.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/base_rtl-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/base_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/common-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/common.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/arrow-button-bg-sel.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/arrow-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/arrow-button-head-sel.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/arrow-button-head.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/arrow-button-right-head-sel.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/arrow-button-right-head.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/blue-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/blue-button-sel-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/button-arrow-head-bg.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/button-chk-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/button-sel-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/button-unsel-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/gray-arrow.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/heading-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/icon-content-heading-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/red-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/red-button-sel-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/slider-h-bar-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/slider-h-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/slider-handle-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-arc1-k.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-arc1-l.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-arc1-r.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-arc2-k.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-arc2-l.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-arc2-r.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-round1-k.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-round1-l.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-round1-r.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-round2-k.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-round2-l.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-round2-r.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-square-k.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-square-l.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/switch-square-r.gif
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/tab-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/tab-orange-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/tab-seg-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/tab-seg-sel-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/tab-sel-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/tab-slim-bar-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/tab-tall-bar-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/togglebutton-chk-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/togglebutton-chk-mark-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/compat/valuepicker-button-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/dijit/Calendar-compat.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/dijit/Calendar-compat.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/dijit/Calendar.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/dijit/Calendar.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/dijit/compat/calendar-datelabel-act-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/dijit/compat/calendar-datelabel-sel-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/dijit/compat/calendar-month-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/dijit/compat/calendar-year-bg.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/images/thumb-overlay-large.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/images/thumb-overlay-small.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/images/thumb-overlay.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/images/vseparator.png
+%%WWWDIR%%/dojox/mobile/themes/ios7/ios7.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/ios7_rtl.css
+%%WWWDIR%%/dojox/mobile/themes/ios7/variables.less
+%%WWWDIR%%/dojox/mobile/themes/ios7/variables_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/iphone/Accordion-compat.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/Accordion.css
+%%WWWDIR%%/dojox/mobile/themes/iphone/Accordion_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/Button-compat.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/Button.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/Carousel.css
@@ -8308,7 +8685,9 @@
 %%WWWDIR%%/dojox/mobile/themes/iphone/EdgeToEdgeList.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/FixedSplitter.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/FormLayout.css
+%%WWWDIR%%/dojox/mobile/themes/iphone/FormLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/GridLayout.css
+%%WWWDIR%%/dojox/mobile/themes/iphone/GridLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/Heading-compat.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/Heading.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/Heading.less
@@ -8339,6 +8718,7 @@
 %%WWWDIR%%/dojox/mobile/themes/iphone/ProgressBar.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/ProgressIndicator-compat.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/ProgressIndicator.css
+%%WWWDIR%%/dojox/mobile/themes/iphone/ProgressIndicator_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/RadioButton-compat.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/RadioButton.css
 %%WWWDIR%%/dojox/mobile/themes/iphone/RoundRect-compat.css
@@ -8490,6 +8870,7 @@
 %%WWWDIR%%/dojox/mobile/themes/windows/Accordion-compat.css
 %%WWWDIR%%/dojox/mobile/themes/windows/Accordion.css
 %%WWWDIR%%/dojox/mobile/themes/windows/Accordion.less
+%%WWWDIR%%/dojox/mobile/themes/windows/Accordion_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/windows/Button-compat.css
 %%WWWDIR%%/dojox/mobile/themes/windows/Button.css
 %%WWWDIR%%/dojox/mobile/themes/windows/Button.less
@@ -8509,7 +8890,9 @@
 %%WWWDIR%%/dojox/mobile/themes/windows/EdgeToEdgeList.less
 %%WWWDIR%%/dojox/mobile/themes/windows/FixedSplitter.css
 %%WWWDIR%%/dojox/mobile/themes/windows/FormLayout.css
+%%WWWDIR%%/dojox/mobile/themes/windows/FormLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/windows/GridLayout.css
+%%WWWDIR%%/dojox/mobile/themes/windows/GridLayout_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/windows/Heading-compat.css
 %%WWWDIR%%/dojox/mobile/themes/windows/Heading.css
 %%WWWDIR%%/dojox/mobile/themes/windows/Heading.less
@@ -8540,6 +8923,7 @@
 %%WWWDIR%%/dojox/mobile/themes/windows/ProgressIndicator-compat.css
 %%WWWDIR%%/dojox/mobile/themes/windows/ProgressIndicator.css
 %%WWWDIR%%/dojox/mobile/themes/windows/ProgressIndicator.less
+%%WWWDIR%%/dojox/mobile/themes/windows/ProgressIndicator_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/windows/RadioButton-compat.css
 %%WWWDIR%%/dojox/mobile/themes/windows/RadioButton.css
 %%WWWDIR%%/dojox/mobile/themes/windows/RadioButton.less
@@ -8603,6 +8987,7 @@
 %%WWWDIR%%/dojox/mobile/themes/windows/View.less
 %%WWWDIR%%/dojox/mobile/themes/windows/base-compat.css
 %%WWWDIR%%/dojox/mobile/themes/windows/base.css
+%%WWWDIR%%/dojox/mobile/themes/windows/base_rtl.css
 %%WWWDIR%%/dojox/mobile/themes/windows/common-compat.css
 %%WWWDIR%%/dojox/mobile/themes/windows/common.css
 %%WWWDIR%%/dojox/mobile/themes/windows/common.less
@@ -8668,6 +9053,7 @@
 %%WWWDIR%%/dojox/mobile/themes/windows/variables_rtl.less
 %%WWWDIR%%/dojox/mobile/themes/windows/windows-compat.css
 %%WWWDIR%%/dojox/mobile/themes/windows/windows.css
+%%WWWDIR%%/dojox/mobile/themes/windows/windows_rtl.css
 %%WWWDIR%%/dojox/mobile/transition.js
 %%WWWDIR%%/dojox/mobile/transition.js.uncompressed.js
 %%WWWDIR%%/dojox/mobile/uacss.js
@@ -8778,16 +9164,6 @@
 %%WWWDIR%%/dojox/rpc/SMDLibrary/yahoo.smd
 %%WWWDIR%%/dojox/rpc/Service.js
 %%WWWDIR%%/dojox/rpc/Service.js.uncompressed.js
-%%WWWDIR%%/dojox/rpc/demos/demo_GoogleAjax.html
-%%WWWDIR%%/dojox/rpc/demos/demo_GoogleAjaxTranslate.html
-%%WWWDIR%%/dojox/rpc/demos/demo_GoogleFeed.html
-%%WWWDIR%%/dojox/rpc/demos/demo_jabsorb.html
-%%WWWDIR%%/dojox/rpc/demos/documentation.html
-%%WWWDIR%%/dojox/rpc/demos/templates/documentation.html
-%%WWWDIR%%/dojox/rpc/demos/templates/wikipedia.html
-%%WWWDIR%%/dojox/rpc/demos/templates/yahoo.html
-%%WWWDIR%%/dojox/rpc/demos/wikipedia.html
-%%WWWDIR%%/dojox/rpc/demos/yahoo.html
 %%WWWDIR%%/dojox/secure/DOM.js
 %%WWWDIR%%/dojox/secure/DOM.js.uncompressed.js
 %%WWWDIR%%/dojox/secure/README
@@ -8839,7 +9215,6 @@
 %%WWWDIR%%/dojox/sql/_base.js.uncompressed.js
 %%WWWDIR%%/dojox/sql/_crypto.js
 %%WWWDIR%%/dojox/sql/_crypto.js.uncompressed.js
-%%WWWDIR%%/dojox/sql/demos/customers/customers.html
 %%WWWDIR%%/dojox/storage.js
 %%WWWDIR%%/dojox/storage.js.uncompressed.js
 %%WWWDIR%%/dojox/storage/AirDBStorageProvider.js
@@ -8868,12 +9243,23 @@
 %%WWWDIR%%/dojox/storage/_common.js
 %%WWWDIR%%/dojox/storage/_common.js.uncompressed.js
 %%WWWDIR%%/dojox/storage/buildFlashStorage.sh
-%%WWWDIR%%/dojox/storage/demos/helloworld.html
 %%WWWDIR%%/dojox/storage/manager.js
 %%WWWDIR%%/dojox/storage/manager.js.uncompressed.js
 %%WWWDIR%%/dojox/storage/storage_dialog.fla
 %%WWWDIR%%/dojox/storage/storage_dialog.swf
+%%WWWDIR%%/dojox/store/LocalDB.js
+%%WWWDIR%%/dojox/store/LocalDB.js.uncompressed.js
 %%WWWDIR%%/dojox/store/README
+%%WWWDIR%%/dojox/store/db/IndexedDB.js
+%%WWWDIR%%/dojox/store/db/IndexedDB.js.uncompressed.js
+%%WWWDIR%%/dojox/store/db/SQL.js
+%%WWWDIR%%/dojox/store/db/SQL.js.uncompressed.js
+%%WWWDIR%%/dojox/store/db/has.js
+%%WWWDIR%%/dojox/store/db/has.js.uncompressed.js
+%%WWWDIR%%/dojox/store/priority.js
+%%WWWDIR%%/dojox/store/priority.js.uncompressed.js
+%%WWWDIR%%/dojox/store/transaction.js
+%%WWWDIR%%/dojox/store/transaction.js.uncompressed.js
 %%WWWDIR%%/dojox/string/BidiComplex.js
 %%WWWDIR%%/dojox/string/BidiComplex.js.uncompressed.js
 %%WWWDIR%%/dojox/string/BidiEngine.js
@@ -9213,6 +9599,12 @@
 %%WWWDIR%%/dojox/widget/nls/hu/FilePicker.js.uncompressed.js
 %%WWWDIR%%/dojox/widget/nls/hu/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/hu/Wizard.js.uncompressed.js
+%%WWWDIR%%/dojox/widget/nls/id/ColorPicker.js
+%%WWWDIR%%/dojox/widget/nls/id/ColorPicker.js.uncompressed.js
+%%WWWDIR%%/dojox/widget/nls/id/FilePicker.js
+%%WWWDIR%%/dojox/widget/nls/id/FilePicker.js.uncompressed.js
+%%WWWDIR%%/dojox/widget/nls/id/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/id/Wizard.js.uncompressed.js
 %%WWWDIR%%/dojox/widget/nls/it/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/it/ColorPicker.js.uncompressed.js
 %%WWWDIR%%/dojox/widget/nls/it/FilePicker.js
@@ -9360,21 +9752,6 @@
 %%WWWDIR%%/dojox/wire/XmlWire.js.uncompressed.js
 %%WWWDIR%%/dojox/wire/_base.js
 %%WWWDIR%%/dojox/wire/_base.js.uncompressed.js
-%%WWWDIR%%/dojox/wire/demos/TableContainer.css
-%%WWWDIR%%/dojox/wire/demos/TableContainer.js
-%%WWWDIR%%/dojox/wire/demos/TableContainer.js.uncompressed.js
-%%WWWDIR%%/dojox/wire/demos/WidgetRepeater.js
-%%WWWDIR%%/dojox/wire/demos/WidgetRepeater.js.uncompressed.js
-%%WWWDIR%%/dojox/wire/demos/markup/countries.json
-%%WWWDIR%%/dojox/wire/demos/markup/demo_ActionChaining.html
-%%WWWDIR%%/dojox/wire/demos/markup/demo_ActionWiring.html
-%%WWWDIR%%/dojox/wire/demos/markup/demo_BasicChildWire.html
-%%WWWDIR%%/dojox/wire/demos/markup/demo_BasicColumnWiring.html
-%%WWWDIR%%/dojox/wire/demos/markup/demo_ConditionalActions.html
-%%WWWDIR%%/dojox/wire/demos/markup/demo_FlickrStoreWire.html
-%%WWWDIR%%/dojox/wire/demos/markup/demo_TopicWiring.html
-%%WWWDIR%%/dojox/wire/demos/markup/flickrDemo.css
-%%WWWDIR%%/dojox/wire/demos/markup/states.json
 %%WWWDIR%%/dojox/wire/ml/Action.js
 %%WWWDIR%%/dojox/wire/ml/Action.js.uncompressed.js
 %%WWWDIR%%/dojox/wire/ml/Data.js
@@ -9426,771 +9803,779 @@
 %%WWWDIR%%/dojox/xmpp/widget/templates/ChatSession.html
 %%WWWDIR%%/dojox/xmpp/xmppSession.js
 %%WWWDIR%%/dojox/xmpp/xmppSession.js.uncompressed.js
-@dirrm %%WWWDIR%%/dojox/xmpp/widget/templates
-@dirrm %%WWWDIR%%/dojox/xmpp/widget
-@dirrm %%WWWDIR%%/dojox/xmpp
-@dirrm %%WWWDIR%%/dojox/xml
-@dirrm %%WWWDIR%%/dojox/wire/ml
-@dirrm %%WWWDIR%%/dojox/wire/demos/markup
-@dirrm %%WWWDIR%%/dojox/wire/demos
-@dirrm %%WWWDIR%%/dojox/wire
-@dirrm %%WWWDIR%%/dojox/widget/rotator
-@dirrm %%WWWDIR%%/dojox/widget/nls/zh-tw
-@dirrm %%WWWDIR%%/dojox/widget/nls/zh
-@dirrm %%WWWDIR%%/dojox/widget/nls/uk
-@dirrm %%WWWDIR%%/dojox/widget/nls/tr
-@dirrm %%WWWDIR%%/dojox/widget/nls/th
-@dirrm %%WWWDIR%%/dojox/widget/nls/sv
-@dirrm %%WWWDIR%%/dojox/widget/nls/sl
-@dirrm %%WWWDIR%%/dojox/widget/nls/sk
-@dirrm %%WWWDIR%%/dojox/widget/nls/ru
-@dirrm %%WWWDIR%%/dojox/widget/nls/ro
-@dirrm %%WWWDIR%%/dojox/widget/nls/pt-pt
-@dirrm %%WWWDIR%%/dojox/widget/nls/pt
-@dirrm %%WWWDIR%%/dojox/widget/nls/pl
-@dirrm %%WWWDIR%%/dojox/widget/nls/nl
-@dirrm %%WWWDIR%%/dojox/widget/nls/nb
-@dirrm %%WWWDIR%%/dojox/widget/nls/ko
-@dirrm %%WWWDIR%%/dojox/widget/nls/kk
-@dirrm %%WWWDIR%%/dojox/widget/nls/ja
-@dirrm %%WWWDIR%%/dojox/widget/nls/it
-@dirrm %%WWWDIR%%/dojox/widget/nls/hu
-@dirrm %%WWWDIR%%/dojox/widget/nls/hr
-@dirrm %%WWWDIR%%/dojox/widget/nls/he
-@dirrm %%WWWDIR%%/dojox/widget/nls/fr
-@dirrm %%WWWDIR%%/dojox/widget/nls/fi
-@dirrm %%WWWDIR%%/dojox/widget/nls/es
-@dirrm %%WWWDIR%%/dojox/widget/nls/el
-@dirrm %%WWWDIR%%/dojox/widget/nls/de
-@dirrm %%WWWDIR%%/dojox/widget/nls/da
-@dirrm %%WWWDIR%%/dojox/widget/nls/cs
-@dirrm %%WWWDIR%%/dojox/widget/nls/ca
-@dirrm %%WWWDIR%%/dojox/widget/nls/bg
-@dirrm %%WWWDIR%%/dojox/widget/nls/az
-@dirrm %%WWWDIR%%/dojox/widget/nls/ar
-@dirrm %%WWWDIR%%/dojox/widget/nls
-@dirrm %%WWWDIR%%/dojox/widget/gauge
-@dirrm %%WWWDIR%%/dojox/widget/Wizard
-@dirrm %%WWWDIR%%/dojox/widget/UpgradeBar
-@dirrm %%WWWDIR%%/dojox/widget/Toaster
-@dirrm %%WWWDIR%%/dojox/widget/TitleGroup
-@dirrm %%WWWDIR%%/dojox/widget/Standby/images
-@dirrm %%WWWDIR%%/dojox/widget/Standby
-@dirrm %%WWWDIR%%/dojox/widget/SortList
-@dirrm %%WWWDIR%%/dojox/widget/RollingList
-@dirrm %%WWWDIR%%/dojox/widget/Portlet/images
-@dirrm %%WWWDIR%%/dojox/widget/Portlet
-@dirrm %%WWWDIR%%/dojox/widget/Pager/images
-@dirrm %%WWWDIR%%/dojox/widget/Pager
-@dirrm %%WWWDIR%%/dojox/widget/MultiSelectCalendar
-@dirrm %%WWWDIR%%/dojox/widget/Loader/icons
-@dirrm %%WWWDIR%%/dojox/widget/Loader
-@dirrm %%WWWDIR%%/dojox/widget/FisheyeList
-@dirrm %%WWWDIR%%/dojox/widget/FilePicker/images
-@dirrm %%WWWDIR%%/dojox/widget/FilePicker
-@dirrm %%WWWDIR%%/dojox/widget/DocTester
-@dirrm %%WWWDIR%%/dojox/widget/Dialog/images
-@dirrm %%WWWDIR%%/dojox/widget/Dialog
-@dirrm %%WWWDIR%%/dojox/widget/ColorPicker/images
-@dirrm %%WWWDIR%%/dojox/widget/ColorPicker
-@dirrm %%WWWDIR%%/dojox/widget/Calendar
-@dirrm %%WWWDIR%%/dojox/widget
-@dirrm %%WWWDIR%%/dojox/validate
-@dirrm %%WWWDIR%%/dojox/uuid
-@dirrm %%WWWDIR%%/dojox/treemap/themes
-@dirrm %%WWWDIR%%/dojox/treemap
-@dirrm %%WWWDIR%%/dojox/timing
-@dirrm %%WWWDIR%%/dojox/testing
-@dirrm %%WWWDIR%%/dojox/string
-@dirrm %%WWWDIR%%/dojox/store
-@dirrm %%WWWDIR%%/dojox/storage/demos
-@dirrm %%WWWDIR%%/dojox/storage
-@dirrm %%WWWDIR%%/dojox/sql/demos/customers
-@dirrm %%WWWDIR%%/dojox/sql/demos
-@dirrm %%WWWDIR%%/dojox/sql
-@dirrm %%WWWDIR%%/dojox/socket
-@dirrm %%WWWDIR%%/dojox/sketch/resources/images
-@dirrm %%WWWDIR%%/dojox/sketch/resources
-@dirrm %%WWWDIR%%/dojox/sketch
-@dirrm %%WWWDIR%%/dojox/secure
-@dirrm %%WWWDIR%%/dojox/rpc/demos/templates
-@dirrm %%WWWDIR%%/dojox/rpc/demos
-@dirrm %%WWWDIR%%/dojox/rpc/SMDLibrary
-@dirrm %%WWWDIR%%/dojox/rpc
-@dirrm %%WWWDIR%%/dojox/robot
-@dirrm %%WWWDIR%%/dojox/resources
-@dirrm %%WWWDIR%%/dojox/rails
-@dirrm %%WWWDIR%%/dojox/mvc
-@dirrm %%WWWDIR%%/dojox/mobile/themes/windows/images/light
-@dirrm %%WWWDIR%%/dojox/mobile/themes/windows/images/dark
-@dirrm %%WWWDIR%%/dojox/mobile/themes/windows/images
-@dirrm %%WWWDIR%%/dojox/mobile/themes/windows/dijit
-@dirrm %%WWWDIR%%/dojox/mobile/themes/windows/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/windows
-@dirrm %%WWWDIR%%/dojox/mobile/themes/utils
-@dirrm %%WWWDIR%%/dojox/mobile/themes/iphone/images
-@dirrm %%WWWDIR%%/dojox/mobile/themes/iphone/dijit/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/iphone/dijit
-@dirrm %%WWWDIR%%/dojox/mobile/themes/iphone/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/iphone
-@dirrm %%WWWDIR%%/dojox/mobile/themes/holodark/images
-@dirrm %%WWWDIR%%/dojox/mobile/themes/holodark/dijit/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/holodark/dijit
-@dirrm %%WWWDIR%%/dojox/mobile/themes/holodark/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/holodark
-@dirrm %%WWWDIR%%/dojox/mobile/themes/custom/images
-@dirrm %%WWWDIR%%/dojox/mobile/themes/custom/dijit/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/custom/dijit
-@dirrm %%WWWDIR%%/dojox/mobile/themes/custom/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/custom
-@dirrm %%WWWDIR%%/dojox/mobile/themes/common/transitions
-@dirrm %%WWWDIR%%/dojox/mobile/themes/common/domButtons/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/common/domButtons
-@dirrm %%WWWDIR%%/dojox/mobile/themes/common/dijit
-@dirrm %%WWWDIR%%/dojox/mobile/themes/common/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/common
-@dirrm %%WWWDIR%%/dojox/mobile/themes/blackberry/images
-@dirrm %%WWWDIR%%/dojox/mobile/themes/blackberry/dijit/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/blackberry/dijit
-@dirrm %%WWWDIR%%/dojox/mobile/themes/blackberry/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/blackberry
-@dirrm %%WWWDIR%%/dojox/mobile/themes/android/images
-@dirrm %%WWWDIR%%/dojox/mobile/themes/android/dijit/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/android/dijit
-@dirrm %%WWWDIR%%/dojox/mobile/themes/android/compat
-@dirrm %%WWWDIR%%/dojox/mobile/themes/android
-@dirrm %%WWWDIR%%/dojox/mobile/themes
-@dirrm %%WWWDIR%%/dojox/mobile/dh
-@dirrm %%WWWDIR%%/dojox/mobile/build
-@dirrm %%WWWDIR%%/dojox/mobile/bidi
-@dirrm %%WWWDIR%%/dojox/mobile/app
-@dirrm %%WWWDIR%%/dojox/mobile
-@dirrm %%WWWDIR%%/dojox/mdnd/resources
-@dirrm %%WWWDIR%%/dojox/mdnd/dropMode
-@dirrm %%WWWDIR%%/dojox/mdnd/adapter
-@dirrm %%WWWDIR%%/dojox/mdnd
-@dirrm %%WWWDIR%%/dojox/math/random
-@dirrm %%WWWDIR%%/dojox/math
-@dirrm %%WWWDIR%%/dojox/layout/resources/icons
-@dirrm %%WWWDIR%%/dojox/layout/resources
-@dirrm %%WWWDIR%%/dojox/layout/ext-dijit/layout
-@dirrm %%WWWDIR%%/dojox/layout/ext-dijit
-@dirrm %%WWWDIR%%/dojox/layout/dnd
-@dirrm %%WWWDIR%%/dojox/layout
-@dirrm %%WWWDIR%%/dojox/lang/oo
-@dirrm %%WWWDIR%%/dojox/lang/functional
-@dirrm %%WWWDIR%%/dojox/lang/async
-@dirrm %%WWWDIR%%/dojox/lang/aspect
-@dirrm %%WWWDIR%%/dojox/lang
-@dirrm %%WWWDIR%%/dojox/jsonPath
-@dirrm %%WWWDIR%%/dojox/json
-@dirrm %%WWWDIR%%/dojox/jq
-@dirrm %%WWWDIR%%/dojox/io/proxy
-@dirrm %%WWWDIR%%/dojox/io
-@dirrm %%WWWDIR%%/dojox/image/resources/images
-@dirrm %%WWWDIR%%/dojox/image/resources
-@dirrm %%WWWDIR%%/dojox/image
-@dirrm %%WWWDIR%%/dojox/html/resources
-@dirrm %%WWWDIR%%/dojox/html/ext-dojo
-@dirrm %%WWWDIR%%/dojox/html
-@dirrm %%WWWDIR%%/dojox/highlight/widget
-@dirrm %%WWWDIR%%/dojox/highlight/resources/pygments
-@dirrm %%WWWDIR%%/dojox/highlight/resources
-@dirrm %%WWWDIR%%/dojox/highlight/languages/pygments
-@dirrm %%WWWDIR%%/dojox/highlight/languages
-@dirrm %%WWWDIR%%/dojox/highlight
-@dirrm %%WWWDIR%%/dojox/help/demos
-@dirrm %%WWWDIR%%/dojox/help
-@dirrm %%WWWDIR%%/dojox/grid/resources/images
-@dirrm %%WWWDIR%%/dojox/grid/resources
-@dirrm %%WWWDIR%%/dojox/grid/nls
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/templates
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/resources/tundra
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/resources/images
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/resources/claro
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/resources
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/plugins/filter
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/plugins/exporter
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/plugins
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/zh-tw
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/zh
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/uk
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/tr
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/th
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/sv
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/sl
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/sk
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ru
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ro
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/pt-pt
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/pt
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/pl
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/nl
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/nb
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ko
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/kk
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ja
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/it
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/hu
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/hr
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/he
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/fr
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/fi
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/es
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/el
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/de
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/da
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/cs
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ca
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/bg
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ar
-@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls
-@dirrm %%WWWDIR%%/dojox/grid/enhanced
-@dirrm %%WWWDIR%%/dojox/grid/cells
-@dirrm %%WWWDIR%%/dojox/grid/bidi
-@dirrm %%WWWDIR%%/dojox/grid
-@dirrm %%WWWDIR%%/dojox/gfx3d
-@dirrm %%WWWDIR%%/dojox/gfx/resources
-@dirrm %%WWWDIR%%/dojox/gfx/demos/images
-@dirrm %%WWWDIR%%/dojox/gfx/demos/data
-@dirrm %%WWWDIR%%/dojox/gfx/demos
-@dirrm %%WWWDIR%%/dojox/gfx
-@dirrm %%WWWDIR%%/dojox/gesture
-@dirrm %%WWWDIR%%/dojox/geo/openlayers/widget
-@dirrm %%WWWDIR%%/dojox/geo/openlayers
-@dirrm %%WWWDIR%%/dojox/geo/charting/widget
-@dirrm %%WWWDIR%%/dojox/geo/charting/resources/markers
-@dirrm %%WWWDIR%%/dojox/geo/charting/resources/img
-@dirrm %%WWWDIR%%/dojox/geo/charting/resources/data
-@dirrm %%WWWDIR%%/dojox/geo/charting/resources
-@dirrm %%WWWDIR%%/dojox/geo/charting
-@dirrm %%WWWDIR%%/dojox/geo
-@dirrm %%WWWDIR%%/dojox/gauges
-@dirrm %%WWWDIR%%/dojox/gantt/resources/images
-@dirrm %%WWWDIR%%/dojox/gantt/resources
-@dirrm %%WWWDIR%%/dojox/gantt
-@dirrm %%WWWDIR%%/dojox/fx/resources
-@dirrm %%WWWDIR%%/dojox/fx/ext-dojo
-@dirrm %%WWWDIR%%/dojox/fx
-@dirrm %%WWWDIR%%/dojox/form/uploader/plugins
-@dirrm %%WWWDIR%%/dojox/form/uploader
-@dirrm %%WWWDIR%%/dojox/form/resources/images
-@dirrm %%WWWDIR%%/dojox/form/resources
-@dirrm %%WWWDIR%%/dojox/form/nls/zh-tw
-@dirrm %%WWWDIR%%/dojox/form/nls/zh
-@dirrm %%WWWDIR%%/dojox/form/nls/uk
-@dirrm %%WWWDIR%%/dojox/form/nls/tr
-@dirrm %%WWWDIR%%/dojox/form/nls/th
-@dirrm %%WWWDIR%%/dojox/form/nls/sv
-@dirrm %%WWWDIR%%/dojox/form/nls/sl
-@dirrm %%WWWDIR%%/dojox/form/nls/sk
-@dirrm %%WWWDIR%%/dojox/form/nls/ru
-@dirrm %%WWWDIR%%/dojox/form/nls/ro
-@dirrm %%WWWDIR%%/dojox/form/nls/pt-pt
-@dirrm %%WWWDIR%%/dojox/form/nls/pt
-@dirrm %%WWWDIR%%/dojox/form/nls/pl
-@dirrm %%WWWDIR%%/dojox/form/nls/nl
-@dirrm %%WWWDIR%%/dojox/form/nls/nb
-@dirrm %%WWWDIR%%/dojox/form/nls/ko
-@dirrm %%WWWDIR%%/dojox/form/nls/kk
-@dirrm %%WWWDIR%%/dojox/form/nls/ja
-@dirrm %%WWWDIR%%/dojox/form/nls/it
-@dirrm %%WWWDIR%%/dojox/form/nls/hu
-@dirrm %%WWWDIR%%/dojox/form/nls/hr
-@dirrm %%WWWDIR%%/dojox/form/nls/he
-@dirrm %%WWWDIR%%/dojox/form/nls/fr
-@dirrm %%WWWDIR%%/dojox/form/nls/fi
-@dirrm %%WWWDIR%%/dojox/form/nls/es
-@dirrm %%WWWDIR%%/dojox/form/nls/el
-@dirrm %%WWWDIR%%/dojox/form/nls/de
-@dirrm %%WWWDIR%%/dojox/form/nls/da
-@dirrm %%WWWDIR%%/dojox/form/nls/cs
-@dirrm %%WWWDIR%%/dojox/form/nls/ca
-@dirrm %%WWWDIR%%/dojox/form/nls/bg
-@dirrm %%WWWDIR%%/dojox/form/nls/az
-@dirrm %%WWWDIR%%/dojox/form/nls/ar
-@dirrm %%WWWDIR%%/dojox/form/nls
-@dirrm %%WWWDIR%%/dojox/form/manager
-@dirrm %%WWWDIR%%/dojox/form
-@dirrm %%WWWDIR%%/dojox/flash
-@dirrm %%WWWDIR%%/dojox/encoding/digests
-@dirrm %%WWWDIR%%/dojox/encoding/crypto
-@dirrm %%WWWDIR%%/dojox/encoding/compression
-@dirrm %%WWWDIR%%/dojox/encoding
-@dirrm %%WWWDIR%%/dojox/embed/resources
-@dirrm %%WWWDIR%%/dojox/embed
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/images/tundra
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/images/soria
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/images/nihilo
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/images/claro
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/images/blockelems
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/images
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/icons/tundra
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/icons/soria
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/icons/nihilo
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/icons/claro
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/icons
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/emoticons
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources/css
-@dirrm %%WWWDIR%%/dojox/editor/plugins/resources
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/zh
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/uk
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/tr
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/th
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/sv
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/sl
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/sk
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ru
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ro
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/pt
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/pl
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/nl
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/nb
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ko
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/kk
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ja
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/it
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/hu
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/hr
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/he
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/fr
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/fi
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/es
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/el
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/de
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/da
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/cs
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ca
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/bg
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/az
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls/ar
-@dirrm %%WWWDIR%%/dojox/editor/plugins/nls
-@dirrm %%WWWDIR%%/dojox/editor/plugins
-@dirrm %%WWWDIR%%/dojox/editor
-@dirrm %%WWWDIR%%/dojox/dtl/utils
-@dirrm %%WWWDIR%%/dojox/dtl/tag
-@dirrm %%WWWDIR%%/dojox/dtl/render
-@dirrm %%WWWDIR%%/dojox/dtl/filter
-@dirrm %%WWWDIR%%/dojox/dtl/ext-dojo
-@dirrm %%WWWDIR%%/dojox/dtl/demos/templates
-@dirrm %%WWWDIR%%/dojox/dtl/demos/json/blog
-@dirrm %%WWWDIR%%/dojox/dtl/demos/json
-@dirrm %%WWWDIR%%/dojox/dtl/demos
-@dirrm %%WWWDIR%%/dojox/dtl/contrib
-@dirrm %%WWWDIR%%/dojox/dtl
-@dirrm %%WWWDIR%%/dojox/drawing/util
-@dirrm %%WWWDIR%%/dojox/drawing/ui/dom
-@dirrm %%WWWDIR%%/dojox/drawing/ui
-@dirrm %%WWWDIR%%/dojox/drawing/tools/custom
-@dirrm %%WWWDIR%%/dojox/drawing/tools
-@dirrm %%WWWDIR%%/dojox/drawing/stencil
-@dirrm %%WWWDIR%%/dojox/drawing/resources/images
-@dirrm %%WWWDIR%%/dojox/drawing/resources
-@dirrm %%WWWDIR%%/dojox/drawing/plugins/tools
-@dirrm %%WWWDIR%%/dojox/drawing/plugins/drawing
-@dirrm %%WWWDIR%%/dojox/drawing/plugins
-@dirrm %%WWWDIR%%/dojox/drawing/manager
-@dirrm %%WWWDIR%%/dojox/drawing/library
-@dirrm %%WWWDIR%%/dojox/drawing/annotations
-@dirrm %%WWWDIR%%/dojox/drawing
-@dirrm %%WWWDIR%%/dojox/dnd
-@dirrm %%WWWDIR%%/dojox/dgauges/components/grey
-@dirrm %%WWWDIR%%/dojox/dgauges/components/green
-@dirrm %%WWWDIR%%/dojox/dgauges/components/default
-@dirrm %%WWWDIR%%/dojox/dgauges/components/classic
-@dirrm %%WWWDIR%%/dojox/dgauges/components/black
-@dirrm %%WWWDIR%%/dojox/dgauges/components
-@dirrm %%WWWDIR%%/dojox/dgauges
-@dirrm %%WWWDIR%%/dojox/date/zoneinfo
-@dirrm %%WWWDIR%%/dojox/date/umalqura
-@dirrm %%WWWDIR%%/dojox/date/persian
-@dirrm %%WWWDIR%%/dojox/date/islamic
-@dirrm %%WWWDIR%%/dojox/date/hebrew
-@dirrm %%WWWDIR%%/dojox/date/buddhist
-@dirrm %%WWWDIR%%/dojox/date
-@dirrm %%WWWDIR%%/dojox/data/util
-@dirrm %%WWWDIR%%/dojox/data/s3
-@dirrm %%WWWDIR%%/dojox/data/demos/widgets/templates
-@dirrm %%WWWDIR%%/dojox/data/demos/widgets
-@dirrm %%WWWDIR%%/dojox/data/demos/stores
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/United States of America
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Sudan/Khartoum
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Sudan
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Spain
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Russia
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Mongolia
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Mexico/Mexico City
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Mexico/Guadalajara
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Mexico
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Kenya/Nairobi
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Kenya/Mombasa
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Kenya
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Italy
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/India
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Germany
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/France
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Egypt
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Commonwealth of Australia
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/China
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Canada/Toronto
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Canada/Ottawa
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Canada
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Brazil
-@dirrm %%WWWDIR%%/dojox/data/demos/geography/Argentina
-@dirrm %%WWWDIR%%/dojox/data/demos/geography
-@dirrm %%WWWDIR%%/dojox/data/demos
-@dirrm %%WWWDIR%%/dojox/data
-@dirrm %%WWWDIR%%/dojox/css3
-@dirrm %%WWWDIR%%/dojox/cometd
-@dirrm %%WWWDIR%%/dojox/color/api
-@dirrm %%WWWDIR%%/dojox/color
-@dirrm %%WWWDIR%%/dojox/collections
-@dirrm %%WWWDIR%%/dojox/charting/widget
-@dirrm %%WWWDIR%%/dojox/charting/themes/PlotKit
-@dirrm %%WWWDIR%%/dojox/charting/themes
-@dirrm %%WWWDIR%%/dojox/charting/scaler
-@dirrm %%WWWDIR%%/dojox/charting/resources
-@dirrm %%WWWDIR%%/dojox/charting/plot3d
-@dirrm %%WWWDIR%%/dojox/charting/plot2d
-@dirrm %%WWWDIR%%/dojox/charting/bidi/widget
-@dirrm %%WWWDIR%%/dojox/charting/bidi/axis2d
-@dirrm %%WWWDIR%%/dojox/charting/bidi/action2d
-@dirrm %%WWWDIR%%/dojox/charting/bidi
-@dirrm %%WWWDIR%%/dojox/charting/axis2d
-@dirrm %%WWWDIR%%/dojox/charting/action2d
-@dirrm %%WWWDIR%%/dojox/charting
-@dirrm %%WWWDIR%%/dojox/calendar/themes/tundra/images
-@dirrm %%WWWDIR%%/dojox/calendar/themes/tundra
-@dirrm %%WWWDIR%%/dojox/calendar/themes/soria/images
-@dirrm %%WWWDIR%%/dojox/calendar/themes/soria
-@dirrm %%WWWDIR%%/dojox/calendar/themes/nihilo/images
-@dirrm %%WWWDIR%%/dojox/calendar/themes/nihilo
-@dirrm %%WWWDIR%%/dojox/calendar/themes/iphone
-@dirrm %%WWWDIR%%/dojox/calendar/themes/claro/images
-@dirrm %%WWWDIR%%/dojox/calendar/themes/claro
-@dirrm %%WWWDIR%%/dojox/calendar/themes
-@dirrm %%WWWDIR%%/dojox/calendar/templates
-@dirrm %%WWWDIR%%/dojox/calendar/nls/zh-tw
-@dirrm %%WWWDIR%%/dojox/calendar/nls/zh
-@dirrm %%WWWDIR%%/dojox/calendar/nls/uk
-@dirrm %%WWWDIR%%/dojox/calendar/nls/tr
-@dirrm %%WWWDIR%%/dojox/calendar/nls/th
-@dirrm %%WWWDIR%%/dojox/calendar/nls/sv
-@dirrm %%WWWDIR%%/dojox/calendar/nls/sl
-@dirrm %%WWWDIR%%/dojox/calendar/nls/sk
-@dirrm %%WWWDIR%%/dojox/calendar/nls/ru
-@dirrm %%WWWDIR%%/dojox/calendar/nls/ro
-@dirrm %%WWWDIR%%/dojox/calendar/nls/pt-pt
-@dirrm %%WWWDIR%%/dojox/calendar/nls/pt
-@dirrm %%WWWDIR%%/dojox/calendar/nls/pl
-@dirrm %%WWWDIR%%/dojox/calendar/nls/nl
-@dirrm %%WWWDIR%%/dojox/calendar/nls/nb
-@dirrm %%WWWDIR%%/dojox/calendar/nls/ko
-@dirrm %%WWWDIR%%/dojox/calendar/nls/kk
-@dirrm %%WWWDIR%%/dojox/calendar/nls/ja
-@dirrm %%WWWDIR%%/dojox/calendar/nls/it
-@dirrm %%WWWDIR%%/dojox/calendar/nls/hu
-@dirrm %%WWWDIR%%/dojox/calendar/nls/hr
-@dirrm %%WWWDIR%%/dojox/calendar/nls/he
-@dirrm %%WWWDIR%%/dojox/calendar/nls/fr
-@dirrm %%WWWDIR%%/dojox/calendar/nls/fi
-@dirrm %%WWWDIR%%/dojox/calendar/nls/es
-@dirrm %%WWWDIR%%/dojox/calendar/nls/el
-@dirrm %%WWWDIR%%/dojox/calendar/nls/de
-@dirrm %%WWWDIR%%/dojox/calendar/nls/da
-@dirrm %%WWWDIR%%/dojox/calendar/nls/cs
-@dirrm %%WWWDIR%%/dojox/calendar/nls/ca
-@dirrm %%WWWDIR%%/dojox/calendar/nls/bg
-@dirrm %%WWWDIR%%/dojox/calendar/nls/ar
-@dirrm %%WWWDIR%%/dojox/calendar/nls
-@dirrm %%WWWDIR%%/dojox/calendar
-@dirrm %%WWWDIR%%/dojox/calc/templates
-@dirrm %%WWWDIR%%/dojox/calc/resources
-@dirrm %%WWWDIR%%/dojox/calc
-@dirrm %%WWWDIR%%/dojox/av/widget/resources/images
-@dirrm %%WWWDIR%%/dojox/av/widget/resources
-@dirrm %%WWWDIR%%/dojox/av/widget
-@dirrm %%WWWDIR%%/dojox/av/resources
-@dirrm %%WWWDIR%%/dojox/av
-@dirrm %%WWWDIR%%/dojox/atom/widget/templates/css
-@dirrm %%WWWDIR%%/dojox/atom/widget/templates
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/zh-tw
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/zh
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/uk
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/tr
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/th
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/sv
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/sl
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/sk
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/ru
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/ro
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/pt-pt
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/pt
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/pl
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/nl
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/nb
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/ko
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/kk
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/ja
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/it
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/hu
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/hr
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/he
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/fr
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/fi
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/es
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/el
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/de
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/da
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/cs
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/ca
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/bg
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/az
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls/ar
-@dirrm %%WWWDIR%%/dojox/atom/widget/nls
-@dirrm %%WWWDIR%%/dojox/atom/widget
-@dirrm %%WWWDIR%%/dojox/atom/io
-@dirrm %%WWWDIR%%/dojox/atom
-@dirrm %%WWWDIR%%/dojox/app/widgets
-@dirrm %%WWWDIR%%/dojox/app/utils
-@dirrm %%WWWDIR%%/dojox/app/schema
-@dirrm %%WWWDIR%%/dojox/app/module
-@dirrm %%WWWDIR%%/dojox/app/controllers
-@dirrm %%WWWDIR%%/dojox/app/build
-@dirrm %%WWWDIR%%/dojox/app
-@dirrm %%WWWDIR%%/dojox/analytics/profiles
-@dirrm %%WWWDIR%%/dojox/analytics/plugins
-@dirrm %%WWWDIR%%/dojox/analytics/logger
-@dirrm %%WWWDIR%%/dojox/analytics
-@dirrm %%WWWDIR%%/dojox/NodeList
-@dirrm %%WWWDIR%%/dojox
-@dirrm %%WWWDIR%%/dojo/store/util
-@dirrm %%WWWDIR%%/dojo/store/api
-@dirrm %%WWWDIR%%/dojo/store
-@dirrm %%WWWDIR%%/dojo/selector
-@dirrm %%WWWDIR%%/dojo/rpc
-@dirrm %%WWWDIR%%/dojo/router
-@dirrm %%WWWDIR%%/dojo/resources/images
-@dirrm %%WWWDIR%%/dojo/resources
-@dirrm %%WWWDIR%%/dojo/request
-@dirrm %%WWWDIR%%/dojo/promise
-@dirrm %%WWWDIR%%/dojo/nls/zh-tw
-@dirrm %%WWWDIR%%/dojo/nls/zh
-@dirrm %%WWWDIR%%/dojo/nls/uk
-@dirrm %%WWWDIR%%/dojo/nls/tr
-@dirrm %%WWWDIR%%/dojo/nls/th
-@dirrm %%WWWDIR%%/dojo/nls/sv
-@dirrm %%WWWDIR%%/dojo/nls/sl
-@dirrm %%WWWDIR%%/dojo/nls/sk
-@dirrm %%WWWDIR%%/dojo/nls/ru
-@dirrm %%WWWDIR%%/dojo/nls/ro
-@dirrm %%WWWDIR%%/dojo/nls/pt-pt
-@dirrm %%WWWDIR%%/dojo/nls/pt
-@dirrm %%WWWDIR%%/dojo/nls/pl
-@dirrm %%WWWDIR%%/dojo/nls/nl
-@dirrm %%WWWDIR%%/dojo/nls/nb
-@dirrm %%WWWDIR%%/dojo/nls/ko
-@dirrm %%WWWDIR%%/dojo/nls/kk
-@dirrm %%WWWDIR%%/dojo/nls/ja
-@dirrm %%WWWDIR%%/dojo/nls/it
-@dirrm %%WWWDIR%%/dojo/nls/hu
-@dirrm %%WWWDIR%%/dojo/nls/hr
-@dirrm %%WWWDIR%%/dojo/nls/he
-@dirrm %%WWWDIR%%/dojo/nls/fr
-@dirrm %%WWWDIR%%/dojo/nls/fi
-@dirrm %%WWWDIR%%/dojo/nls/es
-@dirrm %%WWWDIR%%/dojo/nls/el
-@dirrm %%WWWDIR%%/dojo/nls/de
-@dirrm %%WWWDIR%%/dojo/nls/da
-@dirrm %%WWWDIR%%/dojo/nls/cs
-@dirrm %%WWWDIR%%/dojo/nls/ca
-@dirrm %%WWWDIR%%/dojo/nls/bg
-@dirrm %%WWWDIR%%/dojo/nls/az
-@dirrm %%WWWDIR%%/dojo/nls/ar
-@dirrm %%WWWDIR%%/dojo/nls
-@dirrm %%WWWDIR%%/dojo/io
-@dirrm %%WWWDIR%%/dojo/fx
-@dirrm %%WWWDIR%%/dojo/errors
-@dirrm %%WWWDIR%%/dojo/dnd
-@dirrm %%WWWDIR%%/dojo/date
-@dirrm %%WWWDIR%%/dojo/data/util
-@dirrm %%WWWDIR%%/dojo/data/api
-@dirrm %%WWWDIR%%/dojo/data
-@dirrm %%WWWDIR%%/dojo/cldr/nls/zh-tw
-@dirrm %%WWWDIR%%/dojo/cldr/nls/zh-hk
-@dirrm %%WWWDIR%%/dojo/cldr/nls/zh-hant
-@dirrm %%WWWDIR%%/dojo/cldr/nls/zh
-@dirrm %%WWWDIR%%/dojo/cldr/nls/tr
-@dirrm %%WWWDIR%%/dojo/cldr/nls/th
-@dirrm %%WWWDIR%%/dojo/cldr/nls/sv
-@dirrm %%WWWDIR%%/dojo/cldr/nls/sl
-@dirrm %%WWWDIR%%/dojo/cldr/nls/sk
-@dirrm %%WWWDIR%%/dojo/cldr/nls/ru
-@dirrm %%WWWDIR%%/dojo/cldr/nls/ro
-@dirrm %%WWWDIR%%/dojo/cldr/nls/pt-pt
-@dirrm %%WWWDIR%%/dojo/cldr/nls/pt
-@dirrm %%WWWDIR%%/dojo/cldr/nls/pl
-@dirrm %%WWWDIR%%/dojo/cldr/nls/nl
-@dirrm %%WWWDIR%%/dojo/cldr/nls/nb
-@dirrm %%WWWDIR%%/dojo/cldr/nls/ko
-@dirrm %%WWWDIR%%/dojo/cldr/nls/ja
-@dirrm %%WWWDIR%%/dojo/cldr/nls/it
-@dirrm %%WWWDIR%%/dojo/cldr/nls/hu
-@dirrm %%WWWDIR%%/dojo/cldr/nls/he
-@dirrm %%WWWDIR%%/dojo/cldr/nls/fr-ch
-@dirrm %%WWWDIR%%/dojo/cldr/nls/fr
-@dirrm %%WWWDIR%%/dojo/cldr/nls/fi
-@dirrm %%WWWDIR%%/dojo/cldr/nls/es
-@dirrm %%WWWDIR%%/dojo/cldr/nls/en-gb
-@dirrm %%WWWDIR%%/dojo/cldr/nls/en-ca
-@dirrm %%WWWDIR%%/dojo/cldr/nls/en-au
-@dirrm %%WWWDIR%%/dojo/cldr/nls/en
-@dirrm %%WWWDIR%%/dojo/cldr/nls/el
-@dirrm %%WWWDIR%%/dojo/cldr/nls/de
-@dirrm %%WWWDIR%%/dojo/cldr/nls/da
-@dirrm %%WWWDIR%%/dojo/cldr/nls/cs
-@dirrm %%WWWDIR%%/dojo/cldr/nls/ca
-@dirrm %%WWWDIR%%/dojo/cldr/nls/ar
-@dirrm %%WWWDIR%%/dojo/cldr/nls
-@dirrm %%WWWDIR%%/dojo/cldr
-@dirrm %%WWWDIR%%/dojo/_firebug
-@dirrm %%WWWDIR%%/dojo/_base
-@dirrm %%WWWDIR%%/dojo
-@dirrm %%WWWDIR%%/dijit/tree
-@dirrm %%WWWDIR%%/dijit/themes/tundra/layout
-@dirrm %%WWWDIR%%/dijit/themes/tundra/images
-@dirrm %%WWWDIR%%/dijit/themes/tundra/form
-@dirrm %%WWWDIR%%/dijit/themes/tundra
-@dirrm %%WWWDIR%%/dijit/themes/soria/layout
-@dirrm %%WWWDIR%%/dijit/themes/soria/images
-@dirrm %%WWWDIR%%/dijit/themes/soria/form
-@dirrm %%WWWDIR%%/dijit/themes/soria
-@dirrm %%WWWDIR%%/dijit/themes/nihilo/layout
-@dirrm %%WWWDIR%%/dijit/themes/nihilo/images
-@dirrm %%WWWDIR%%/dijit/themes/nihilo/form
-@dirrm %%WWWDIR%%/dijit/themes/nihilo
-@dirrm %%WWWDIR%%/dijit/themes/claro/layout/images
-@dirrm %%WWWDIR%%/dijit/themes/claro/layout
-@dirrm %%WWWDIR%%/dijit/themes/claro/images
-@dirrm %%WWWDIR%%/dijit/themes/claro/form/images
-@dirrm %%WWWDIR%%/dijit/themes/claro/form
-@dirrm %%WWWDIR%%/dijit/themes/claro
-@dirrm %%WWWDIR%%/dijit/themes/a11y
-@dirrm %%WWWDIR%%/dijit/themes
-@dirrm %%WWWDIR%%/dijit/templates
-@dirrm %%WWWDIR%%/dijit/nls/zh-tw
-@dirrm %%WWWDIR%%/dijit/nls/zh
-@dirrm %%WWWDIR%%/dijit/nls/uk
-@dirrm %%WWWDIR%%/dijit/nls/tr
-@dirrm %%WWWDIR%%/dijit/nls/th
-@dirrm %%WWWDIR%%/dijit/nls/sv
-@dirrm %%WWWDIR%%/dijit/nls/sl
-@dirrm %%WWWDIR%%/dijit/nls/sk
-@dirrm %%WWWDIR%%/dijit/nls/ru
-@dirrm %%WWWDIR%%/dijit/nls/ro
-@dirrm %%WWWDIR%%/dijit/nls/pt-pt
-@dirrm %%WWWDIR%%/dijit/nls/pt
-@dirrm %%WWWDIR%%/dijit/nls/pl
-@dirrm %%WWWDIR%%/dijit/nls/nl
-@dirrm %%WWWDIR%%/dijit/nls/nb
-@dirrm %%WWWDIR%%/dijit/nls/ko
-@dirrm %%WWWDIR%%/dijit/nls/kk
-@dirrm %%WWWDIR%%/dijit/nls/ja
-@dirrm %%WWWDIR%%/dijit/nls/it
-@dirrm %%WWWDIR%%/dijit/nls/hu
-@dirrm %%WWWDIR%%/dijit/nls/hr
-@dirrm %%WWWDIR%%/dijit/nls/he
-@dirrm %%WWWDIR%%/dijit/nls/fr
-@dirrm %%WWWDIR%%/dijit/nls/fi
-@dirrm %%WWWDIR%%/dijit/nls/es
-@dirrm %%WWWDIR%%/dijit/nls/el
-@dirrm %%WWWDIR%%/dijit/nls/de
-@dirrm %%WWWDIR%%/dijit/nls/da
-@dirrm %%WWWDIR%%/dijit/nls/cs
-@dirrm %%WWWDIR%%/dijit/nls/ca
-@dirrm %%WWWDIR%%/dijit/nls/bg
-@dirrm %%WWWDIR%%/dijit/nls/az
-@dirrm %%WWWDIR%%/dijit/nls/ar
-@dirrm %%WWWDIR%%/dijit/nls
-@dirrm %%WWWDIR%%/dijit/layout/templates
-@dirrm %%WWWDIR%%/dijit/layout
-@dirrm %%WWWDIR%%/dijit/icons/images
-@dirrm %%WWWDIR%%/dijit/icons
-@dirrm %%WWWDIR%%/dijit/form/templates
-@dirrm %%WWWDIR%%/dijit/form/nls/zh-tw
-@dirrm %%WWWDIR%%/dijit/form/nls/zh
-@dirrm %%WWWDIR%%/dijit/form/nls/uk
-@dirrm %%WWWDIR%%/dijit/form/nls/tr
-@dirrm %%WWWDIR%%/dijit/form/nls/th
-@dirrm %%WWWDIR%%/dijit/form/nls/sv
-@dirrm %%WWWDIR%%/dijit/form/nls/sl
-@dirrm %%WWWDIR%%/dijit/form/nls/sk
-@dirrm %%WWWDIR%%/dijit/form/nls/ru
-@dirrm %%WWWDIR%%/dijit/form/nls/ro
-@dirrm %%WWWDIR%%/dijit/form/nls/pt-pt
-@dirrm %%WWWDIR%%/dijit/form/nls/pt
-@dirrm %%WWWDIR%%/dijit/form/nls/pl
-@dirrm %%WWWDIR%%/dijit/form/nls/nl
-@dirrm %%WWWDIR%%/dijit/form/nls/nb
-@dirrm %%WWWDIR%%/dijit/form/nls/ko
-@dirrm %%WWWDIR%%/dijit/form/nls/kk
-@dirrm %%WWWDIR%%/dijit/form/nls/ja
-@dirrm %%WWWDIR%%/dijit/form/nls/it
-@dirrm %%WWWDIR%%/dijit/form/nls/hu
-@dirrm %%WWWDIR%%/dijit/form/nls/hr
-@dirrm %%WWWDIR%%/dijit/form/nls/he
-@dirrm %%WWWDIR%%/dijit/form/nls/fr
-@dirrm %%WWWDIR%%/dijit/form/nls/fi
-@dirrm %%WWWDIR%%/dijit/form/nls/es
-@dirrm %%WWWDIR%%/dijit/form/nls/el
-@dirrm %%WWWDIR%%/dijit/form/nls/de
-@dirrm %%WWWDIR%%/dijit/form/nls/da
-@dirrm %%WWWDIR%%/dijit/form/nls/cs
-@dirrm %%WWWDIR%%/dijit/form/nls/ca
-@dirrm %%WWWDIR%%/dijit/form/nls/bg
-@dirrm %%WWWDIR%%/dijit/form/nls/az
-@dirrm %%WWWDIR%%/dijit/form/nls/ar
-@dirrm %%WWWDIR%%/dijit/form/nls
-@dirrm %%WWWDIR%%/dijit/form
-@dirrm %%WWWDIR%%/dijit/_tree
-@dirrm %%WWWDIR%%/dijit/_editor/plugins
-@dirrm %%WWWDIR%%/dijit/_editor/nls/zh-tw
-@dirrm %%WWWDIR%%/dijit/_editor/nls/zh
-@dirrm %%WWWDIR%%/dijit/_editor/nls/uk
-@dirrm %%WWWDIR%%/dijit/_editor/nls/tr
-@dirrm %%WWWDIR%%/dijit/_editor/nls/th
-@dirrm %%WWWDIR%%/dijit/_editor/nls/sv
-@dirrm %%WWWDIR%%/dijit/_editor/nls/sl
-@dirrm %%WWWDIR%%/dijit/_editor/nls/sk
-@dirrm %%WWWDIR%%/dijit/_editor/nls/ru
-@dirrm %%WWWDIR%%/dijit/_editor/nls/ro
-@dirrm %%WWWDIR%%/dijit/_editor/nls/pt-pt
-@dirrm %%WWWDIR%%/dijit/_editor/nls/pt
-@dirrm %%WWWDIR%%/dijit/_editor/nls/pl
-@dirrm %%WWWDIR%%/dijit/_editor/nls/nl
-@dirrm %%WWWDIR%%/dijit/_editor/nls/nb
-@dirrm %%WWWDIR%%/dijit/_editor/nls/ko
-@dirrm %%WWWDIR%%/dijit/_editor/nls/kk
-@dirrm %%WWWDIR%%/dijit/_editor/nls/ja
-@dirrm %%WWWDIR%%/dijit/_editor/nls/it
-@dirrm %%WWWDIR%%/dijit/_editor/nls/hu
-@dirrm %%WWWDIR%%/dijit/_editor/nls/hr
-@dirrm %%WWWDIR%%/dijit/_editor/nls/he
-@dirrm %%WWWDIR%%/dijit/_editor/nls/fr
-@dirrm %%WWWDIR%%/dijit/_editor/nls/fi
-@dirrm %%WWWDIR%%/dijit/_editor/nls/es
-@dirrm %%WWWDIR%%/dijit/_editor/nls/el
-@dirrm %%WWWDIR%%/dijit/_editor/nls/de
-@dirrm %%WWWDIR%%/dijit/_editor/nls/da
-@dirrm %%WWWDIR%%/dijit/_editor/nls/cs
-@dirrm %%WWWDIR%%/dijit/_editor/nls/ca
-@dirrm %%WWWDIR%%/dijit/_editor/nls/bg
-@dirrm %%WWWDIR%%/dijit/_editor/nls/az
-@dirrm %%WWWDIR%%/dijit/_editor/nls/ar
-@dirrm %%WWWDIR%%/dijit/_editor/nls
-@dirrm %%WWWDIR%%/dijit/_editor
-@dirrm %%WWWDIR%%/dijit/_base
-@dirrm %%WWWDIR%%/dijit
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/dijit/_base
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/ar
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/az
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/bg
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/ca
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/cs
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/da
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/de
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/el
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/es
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/fi
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/fr
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/he
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/hr
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/hu
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/id
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/it
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/ja
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/kk
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/ko
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/nb
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/nl
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/pl
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/pt
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/ro
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/ru
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/sk
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/sl
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/sv
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/th
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/tr
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/uk
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/zh
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dijit/_editor/nls
+@dirrmtry %%WWWDIR%%/dijit/_editor/plugins
+@dirrmtry %%WWWDIR%%/dijit/_editor
+@dirrmtry %%WWWDIR%%/dijit/_tree
+@dirrmtry %%WWWDIR%%/dijit/form/nls/ar
+@dirrmtry %%WWWDIR%%/dijit/form/nls/az
+@dirrmtry %%WWWDIR%%/dijit/form/nls/bg
+@dirrmtry %%WWWDIR%%/dijit/form/nls/ca
+@dirrmtry %%WWWDIR%%/dijit/form/nls/cs
+@dirrmtry %%WWWDIR%%/dijit/form/nls/da
+@dirrmtry %%WWWDIR%%/dijit/form/nls/de
+@dirrmtry %%WWWDIR%%/dijit/form/nls/el
+@dirrmtry %%WWWDIR%%/dijit/form/nls/es
+@dirrmtry %%WWWDIR%%/dijit/form/nls/fi
+@dirrmtry %%WWWDIR%%/dijit/form/nls/fr
+@dirrmtry %%WWWDIR%%/dijit/form/nls/he
+@dirrmtry %%WWWDIR%%/dijit/form/nls/hr
+@dirrmtry %%WWWDIR%%/dijit/form/nls/hu
+@dirrmtry %%WWWDIR%%/dijit/form/nls/id
+@dirrmtry %%WWWDIR%%/dijit/form/nls/it
+@dirrmtry %%WWWDIR%%/dijit/form/nls/ja
+@dirrmtry %%WWWDIR%%/dijit/form/nls/kk
+@dirrmtry %%WWWDIR%%/dijit/form/nls/ko
+@dirrmtry %%WWWDIR%%/dijit/form/nls/nb
+@dirrmtry %%WWWDIR%%/dijit/form/nls/nl
+@dirrmtry %%WWWDIR%%/dijit/form/nls/pl
+@dirrmtry %%WWWDIR%%/dijit/form/nls/pt
+@dirrmtry %%WWWDIR%%/dijit/form/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dijit/form/nls/ro
+@dirrmtry %%WWWDIR%%/dijit/form/nls/ru
+@dirrmtry %%WWWDIR%%/dijit/form/nls/sk
+@dirrmtry %%WWWDIR%%/dijit/form/nls/sl
+@dirrmtry %%WWWDIR%%/dijit/form/nls/sv
+@dirrmtry %%WWWDIR%%/dijit/form/nls/th
+@dirrmtry %%WWWDIR%%/dijit/form/nls/tr
+@dirrmtry %%WWWDIR%%/dijit/form/nls/uk
+@dirrmtry %%WWWDIR%%/dijit/form/nls/zh
+@dirrmtry %%WWWDIR%%/dijit/form/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dijit/form/nls
+@dirrmtry %%WWWDIR%%/dijit/form/templates
+@dirrmtry %%WWWDIR%%/dijit/form
+@dirrmtry %%WWWDIR%%/dijit/icons/images
+@dirrmtry %%WWWDIR%%/dijit/icons
+@dirrmtry %%WWWDIR%%/dijit/layout/templates
+@dirrmtry %%WWWDIR%%/dijit/layout
+@dirrmtry %%WWWDIR%%/dijit/nls/ar
+@dirrmtry %%WWWDIR%%/dijit/nls/az
+@dirrmtry %%WWWDIR%%/dijit/nls/bg
+@dirrmtry %%WWWDIR%%/dijit/nls/ca
+@dirrmtry %%WWWDIR%%/dijit/nls/cs
+@dirrmtry %%WWWDIR%%/dijit/nls/da
+@dirrmtry %%WWWDIR%%/dijit/nls/de
+@dirrmtry %%WWWDIR%%/dijit/nls/el
+@dirrmtry %%WWWDIR%%/dijit/nls/es
+@dirrmtry %%WWWDIR%%/dijit/nls/fi
+@dirrmtry %%WWWDIR%%/dijit/nls/fr
+@dirrmtry %%WWWDIR%%/dijit/nls/he
+@dirrmtry %%WWWDIR%%/dijit/nls/hr
+@dirrmtry %%WWWDIR%%/dijit/nls/hu
+@dirrmtry %%WWWDIR%%/dijit/nls/id
+@dirrmtry %%WWWDIR%%/dijit/nls/it
+@dirrmtry %%WWWDIR%%/dijit/nls/ja
+@dirrmtry %%WWWDIR%%/dijit/nls/kk
+@dirrmtry %%WWWDIR%%/dijit/nls/ko
+@dirrmtry %%WWWDIR%%/dijit/nls/nb
+@dirrmtry %%WWWDIR%%/dijit/nls/nl
+@dirrmtry %%WWWDIR%%/dijit/nls/pl
+@dirrmtry %%WWWDIR%%/dijit/nls/pt
+@dirrmtry %%WWWDIR%%/dijit/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dijit/nls/ro
+@dirrmtry %%WWWDIR%%/dijit/nls/ru
+@dirrmtry %%WWWDIR%%/dijit/nls/sk
+@dirrmtry %%WWWDIR%%/dijit/nls/sl
+@dirrmtry %%WWWDIR%%/dijit/nls/sv
+@dirrmtry %%WWWDIR%%/dijit/nls/th
+@dirrmtry %%WWWDIR%%/dijit/nls/tr
+@dirrmtry %%WWWDIR%%/dijit/nls/uk
+@dirrmtry %%WWWDIR%%/dijit/nls/zh
+@dirrmtry %%WWWDIR%%/dijit/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dijit/nls
+@dirrmtry %%WWWDIR%%/dijit/templates
+@dirrmtry %%WWWDIR%%/dijit/themes/a11y
+@dirrmtry %%WWWDIR%%/dijit/themes/claro/form/images
+@dirrmtry %%WWWDIR%%/dijit/themes/claro/form
+@dirrmtry %%WWWDIR%%/dijit/themes/claro/images
+@dirrmtry %%WWWDIR%%/dijit/themes/claro/layout/images
+@dirrmtry %%WWWDIR%%/dijit/themes/claro/layout
+@dirrmtry %%WWWDIR%%/dijit/themes/claro
+@dirrmtry %%WWWDIR%%/dijit/themes/nihilo/form
+@dirrmtry %%WWWDIR%%/dijit/themes/nihilo/images
+@dirrmtry %%WWWDIR%%/dijit/themes/nihilo/layout
+@dirrmtry %%WWWDIR%%/dijit/themes/nihilo
+@dirrmtry %%WWWDIR%%/dijit/themes/soria/form
+@dirrmtry %%WWWDIR%%/dijit/themes/soria/images
+@dirrmtry %%WWWDIR%%/dijit/themes/soria/layout
+@dirrmtry %%WWWDIR%%/dijit/themes/soria
+@dirrmtry %%WWWDIR%%/dijit/themes/tundra/form
+@dirrmtry %%WWWDIR%%/dijit/themes/tundra/images
+@dirrmtry %%WWWDIR%%/dijit/themes/tundra/layout
+@dirrmtry %%WWWDIR%%/dijit/themes/tundra
+@dirrmtry %%WWWDIR%%/dijit/themes
+@dirrmtry %%WWWDIR%%/dijit/tree
+@dirrmtry %%WWWDIR%%/dijit
+@dirrmtry %%WWWDIR%%/dojo/_base
+@dirrmtry %%WWWDIR%%/dojo/_firebug
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/ar
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/ca
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/cs
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/da
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/de
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/el
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/en
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/en-au
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/en-ca
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/en-gb
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/es
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/fi
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/fr
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/fr-ch
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/he
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/hu
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/it
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/ja
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/ko
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/nb
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/nl
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/pl
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/pt
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/ro
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/ru
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/sk
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/sl
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/sv
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/th
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/tr
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/zh
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/zh-hant
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/zh-hk
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojo/cldr/nls
+@dirrmtry %%WWWDIR%%/dojo/cldr
+@dirrmtry %%WWWDIR%%/dojo/data/api
+@dirrmtry %%WWWDIR%%/dojo/data/util
+@dirrmtry %%WWWDIR%%/dojo/data
+@dirrmtry %%WWWDIR%%/dojo/date
+@dirrmtry %%WWWDIR%%/dojo/dnd
+@dirrmtry %%WWWDIR%%/dojo/errors
+@dirrmtry %%WWWDIR%%/dojo/fx
+@dirrmtry %%WWWDIR%%/dojo/io
+@dirrmtry %%WWWDIR%%/dojo/nls/ar
+@dirrmtry %%WWWDIR%%/dojo/nls/az
+@dirrmtry %%WWWDIR%%/dojo/nls/bg
+@dirrmtry %%WWWDIR%%/dojo/nls/ca
+@dirrmtry %%WWWDIR%%/dojo/nls/cs
+@dirrmtry %%WWWDIR%%/dojo/nls/da
+@dirrmtry %%WWWDIR%%/dojo/nls/de
+@dirrmtry %%WWWDIR%%/dojo/nls/el
+@dirrmtry %%WWWDIR%%/dojo/nls/es
+@dirrmtry %%WWWDIR%%/dojo/nls/fi
+@dirrmtry %%WWWDIR%%/dojo/nls/fr
+@dirrmtry %%WWWDIR%%/dojo/nls/he
+@dirrmtry %%WWWDIR%%/dojo/nls/hr
+@dirrmtry %%WWWDIR%%/dojo/nls/hu
+@dirrmtry %%WWWDIR%%/dojo/nls/id
+@dirrmtry %%WWWDIR%%/dojo/nls/it
+@dirrmtry %%WWWDIR%%/dojo/nls/ja
+@dirrmtry %%WWWDIR%%/dojo/nls/kk
+@dirrmtry %%WWWDIR%%/dojo/nls/ko
+@dirrmtry %%WWWDIR%%/dojo/nls/nb
+@dirrmtry %%WWWDIR%%/dojo/nls/nl
+@dirrmtry %%WWWDIR%%/dojo/nls/pl
+@dirrmtry %%WWWDIR%%/dojo/nls/pt
+@dirrmtry %%WWWDIR%%/dojo/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojo/nls/ro
+@dirrmtry %%WWWDIR%%/dojo/nls/ru
+@dirrmtry %%WWWDIR%%/dojo/nls/sk
+@dirrmtry %%WWWDIR%%/dojo/nls/sl
+@dirrmtry %%WWWDIR%%/dojo/nls/sv
+@dirrmtry %%WWWDIR%%/dojo/nls/th
+@dirrmtry %%WWWDIR%%/dojo/nls/tr
+@dirrmtry %%WWWDIR%%/dojo/nls/uk
+@dirrmtry %%WWWDIR%%/dojo/nls/zh
+@dirrmtry %%WWWDIR%%/dojo/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojo/nls
+@dirrmtry %%WWWDIR%%/dojo/on
+@dirrmtry %%WWWDIR%%/dojo/promise
+@dirrmtry %%WWWDIR%%/dojo/request
+@dirrmtry %%WWWDIR%%/dojo/resources/images
+@dirrmtry %%WWWDIR%%/dojo/resources
+@dirrmtry %%WWWDIR%%/dojo/router
+@dirrmtry %%WWWDIR%%/dojo/rpc
+@dirrmtry %%WWWDIR%%/dojo/selector
+@dirrmtry %%WWWDIR%%/dojo/store/api
+@dirrmtry %%WWWDIR%%/dojo/store/util
+@dirrmtry %%WWWDIR%%/dojo/store
+@dirrmtry %%WWWDIR%%/dojo
+@dirrmtry %%WWWDIR%%/dojox/NodeList
+@dirrmtry %%WWWDIR%%/dojox/analytics/logger
+@dirrmtry %%WWWDIR%%/dojox/analytics/plugins
+@dirrmtry %%WWWDIR%%/dojox/analytics/profiles
+@dirrmtry %%WWWDIR%%/dojox/analytics
+@dirrmtry %%WWWDIR%%/dojox/app/build
+@dirrmtry %%WWWDIR%%/dojox/app/controllers
+@dirrmtry %%WWWDIR%%/dojox/app/module
+@dirrmtry %%WWWDIR%%/dojox/app/schema
+@dirrmtry %%WWWDIR%%/dojox/app/utils
+@dirrmtry %%WWWDIR%%/dojox/app/widgets
+@dirrmtry %%WWWDIR%%/dojox/app
+@dirrmtry %%WWWDIR%%/dojox/atom/io
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/ar
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/az
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/bg
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/ca
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/cs
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/da
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/de
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/el
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/es
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/fi
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/fr
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/he
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/hr
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/hu
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/id
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/it
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/ja
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/kk
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/ko
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/nb
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/nl
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/pl
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/pt
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/ro
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/ru
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/sk
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/sl
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/sv
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/th
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/tr
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/uk
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/zh
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/nls
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/templates/css
+@dirrmtry %%WWWDIR%%/dojox/atom/widget/templates
+@dirrmtry %%WWWDIR%%/dojox/atom/widget
+@dirrmtry %%WWWDIR%%/dojox/atom
+@dirrmtry %%WWWDIR%%/dojox/av/resources
+@dirrmtry %%WWWDIR%%/dojox/av/widget/resources/images
+@dirrmtry %%WWWDIR%%/dojox/av/widget/resources
+@dirrmtry %%WWWDIR%%/dojox/av/widget
+@dirrmtry %%WWWDIR%%/dojox/av
+@dirrmtry %%WWWDIR%%/dojox/calc/resources
+@dirrmtry %%WWWDIR%%/dojox/calc/templates
+@dirrmtry %%WWWDIR%%/dojox/calc
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/ar
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/bg
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/ca
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/cs
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/da
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/de
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/el
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/es
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/fi
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/fr
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/he
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/hr
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/hu
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/id
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/it
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/ja
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/kk
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/ko
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/lt
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/nb
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/nl
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/pl
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/pt
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/ro
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/ru
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/sk
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/sl
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/sv
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/th
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/tr
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/uk
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/zh
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojox/calendar/nls
+@dirrmtry %%WWWDIR%%/dojox/calendar/templates
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/claro/images
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/claro
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/iphone
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/nihilo/images
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/nihilo
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/soria/images
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/soria
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/tundra/images
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes/tundra
+@dirrmtry %%WWWDIR%%/dojox/calendar/themes
+@dirrmtry %%WWWDIR%%/dojox/calendar
+@dirrmtry %%WWWDIR%%/dojox/charting/action2d
+@dirrmtry %%WWWDIR%%/dojox/charting/axis2d
+@dirrmtry %%WWWDIR%%/dojox/charting/bidi/action2d
+@dirrmtry %%WWWDIR%%/dojox/charting/bidi/axis2d
+@dirrmtry %%WWWDIR%%/dojox/charting/bidi/widget
+@dirrmtry %%WWWDIR%%/dojox/charting/bidi
+@dirrmtry %%WWWDIR%%/dojox/charting/plot2d
+@dirrmtry %%WWWDIR%%/dojox/charting/plot3d
+@dirrmtry %%WWWDIR%%/dojox/charting/resources
+@dirrmtry %%WWWDIR%%/dojox/charting/scaler
+@dirrmtry %%WWWDIR%%/dojox/charting/themes/PlotKit
+@dirrmtry %%WWWDIR%%/dojox/charting/themes
+@dirrmtry %%WWWDIR%%/dojox/charting/widget
+@dirrmtry %%WWWDIR%%/dojox/charting
+@dirrmtry %%WWWDIR%%/dojox/collections
+@dirrmtry %%WWWDIR%%/dojox/color/api
+@dirrmtry %%WWWDIR%%/dojox/color
+@dirrmtry %%WWWDIR%%/dojox/cometd
+@dirrmtry %%WWWDIR%%/dojox/css3
+@dirrmtry %%WWWDIR%%/dojox/data/s3
+@dirrmtry %%WWWDIR%%/dojox/data/util
+@dirrmtry %%WWWDIR%%/dojox/data
+@dirrmtry %%WWWDIR%%/dojox/date/buddhist
+@dirrmtry %%WWWDIR%%/dojox/date/hebrew
+@dirrmtry %%WWWDIR%%/dojox/date/islamic
+@dirrmtry %%WWWDIR%%/dojox/date/persian
+@dirrmtry %%WWWDIR%%/dojox/date/umalqura
+@dirrmtry %%WWWDIR%%/dojox/date/zoneinfo
+@dirrmtry %%WWWDIR%%/dojox/date
+@dirrmtry %%WWWDIR%%/dojox/dgauges/components/black
+@dirrmtry %%WWWDIR%%/dojox/dgauges/components/classic
+@dirrmtry %%WWWDIR%%/dojox/dgauges/components/default
+@dirrmtry %%WWWDIR%%/dojox/dgauges/components/green
+@dirrmtry %%WWWDIR%%/dojox/dgauges/components/grey
+@dirrmtry %%WWWDIR%%/dojox/dgauges/components
+@dirrmtry %%WWWDIR%%/dojox/dgauges
+@dirrmtry %%WWWDIR%%/dojox/dnd
+@dirrmtry %%WWWDIR%%/dojox/drawing/annotations
+@dirrmtry %%WWWDIR%%/dojox/drawing/library
+@dirrmtry %%WWWDIR%%/dojox/drawing/manager
+@dirrmtry %%WWWDIR%%/dojox/drawing/plugins/drawing
+@dirrmtry %%WWWDIR%%/dojox/drawing/plugins/tools
+@dirrmtry %%WWWDIR%%/dojox/drawing/plugins
+@dirrmtry %%WWWDIR%%/dojox/drawing/resources/images
+@dirrmtry %%WWWDIR%%/dojox/drawing/resources
+@dirrmtry %%WWWDIR%%/dojox/drawing/stencil
+@dirrmtry %%WWWDIR%%/dojox/drawing/tools/custom
+@dirrmtry %%WWWDIR%%/dojox/drawing/tools
+@dirrmtry %%WWWDIR%%/dojox/drawing/ui/dom
+@dirrmtry %%WWWDIR%%/dojox/drawing/ui
+@dirrmtry %%WWWDIR%%/dojox/drawing/util
+@dirrmtry %%WWWDIR%%/dojox/drawing
+@dirrmtry %%WWWDIR%%/dojox/dtl/contrib
+@dirrmtry %%WWWDIR%%/dojox/dtl/ext-dojo
+@dirrmtry %%WWWDIR%%/dojox/dtl/filter
+@dirrmtry %%WWWDIR%%/dojox/dtl/render
+@dirrmtry %%WWWDIR%%/dojox/dtl/tag
+@dirrmtry %%WWWDIR%%/dojox/dtl/utils
+@dirrmtry %%WWWDIR%%/dojox/dtl
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/ar
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/az
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/bg
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/ca
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/cs
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/da
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/de
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/el
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/es
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/fi
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/fr
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/he
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/hr
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/hu
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/id
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/it
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/ja
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/kk
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/ko
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/nb
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/nl
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/pl
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/pt
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/ro
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/ru
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/sk
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/sl
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/sv
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/th
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/tr
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/uk
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/zh
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/nls
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/css
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/emoticons
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/icons/claro
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/icons/nihilo
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/icons/soria
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/icons/tundra
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/icons
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/images/blockelems
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/images/claro
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/images/nihilo
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/images/soria
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/images/tundra
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources/images
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins/resources
+@dirrmtry %%WWWDIR%%/dojox/editor/plugins
+@dirrmtry %%WWWDIR%%/dojox/editor
+@dirrmtry %%WWWDIR%%/dojox/embed/resources
+@dirrmtry %%WWWDIR%%/dojox/embed
+@dirrmtry %%WWWDIR%%/dojox/encoding/compression
+@dirrmtry %%WWWDIR%%/dojox/encoding/crypto
+@dirrmtry %%WWWDIR%%/dojox/encoding/digests
+@dirrmtry %%WWWDIR%%/dojox/encoding
+@dirrmtry %%WWWDIR%%/dojox/flash
+@dirrmtry %%WWWDIR%%/dojox/form/manager
+@dirrmtry %%WWWDIR%%/dojox/form/nls/ar
+@dirrmtry %%WWWDIR%%/dojox/form/nls/az
+@dirrmtry %%WWWDIR%%/dojox/form/nls/bg
+@dirrmtry %%WWWDIR%%/dojox/form/nls/ca
+@dirrmtry %%WWWDIR%%/dojox/form/nls/cs
+@dirrmtry %%WWWDIR%%/dojox/form/nls/da
+@dirrmtry %%WWWDIR%%/dojox/form/nls/de
+@dirrmtry %%WWWDIR%%/dojox/form/nls/el
+@dirrmtry %%WWWDIR%%/dojox/form/nls/es
+@dirrmtry %%WWWDIR%%/dojox/form/nls/fi
+@dirrmtry %%WWWDIR%%/dojox/form/nls/fr
+@dirrmtry %%WWWDIR%%/dojox/form/nls/he
+@dirrmtry %%WWWDIR%%/dojox/form/nls/hr
+@dirrmtry %%WWWDIR%%/dojox/form/nls/hu
+@dirrmtry %%WWWDIR%%/dojox/form/nls/id
+@dirrmtry %%WWWDIR%%/dojox/form/nls/it
+@dirrmtry %%WWWDIR%%/dojox/form/nls/ja
+@dirrmtry %%WWWDIR%%/dojox/form/nls/kk
+@dirrmtry %%WWWDIR%%/dojox/form/nls/ko
+@dirrmtry %%WWWDIR%%/dojox/form/nls/nb
+@dirrmtry %%WWWDIR%%/dojox/form/nls/nl
+@dirrmtry %%WWWDIR%%/dojox/form/nls/pl
+@dirrmtry %%WWWDIR%%/dojox/form/nls/pt
+@dirrmtry %%WWWDIR%%/dojox/form/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojox/form/nls/ro
+@dirrmtry %%WWWDIR%%/dojox/form/nls/ru
+@dirrmtry %%WWWDIR%%/dojox/form/nls/sk
+@dirrmtry %%WWWDIR%%/dojox/form/nls/sl
+@dirrmtry %%WWWDIR%%/dojox/form/nls/sv
+@dirrmtry %%WWWDIR%%/dojox/form/nls/th
+@dirrmtry %%WWWDIR%%/dojox/form/nls/tr
+@dirrmtry %%WWWDIR%%/dojox/form/nls/uk
+@dirrmtry %%WWWDIR%%/dojox/form/nls/zh
+@dirrmtry %%WWWDIR%%/dojox/form/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojox/form/nls
+@dirrmtry %%WWWDIR%%/dojox/form/resources/images
+@dirrmtry %%WWWDIR%%/dojox/form/resources
+@dirrmtry %%WWWDIR%%/dojox/form/uploader/plugins
+@dirrmtry %%WWWDIR%%/dojox/form/uploader
+@dirrmtry %%WWWDIR%%/dojox/form
+@dirrmtry %%WWWDIR%%/dojox/fx/ext-dojo
+@dirrmtry %%WWWDIR%%/dojox/fx/resources
+@dirrmtry %%WWWDIR%%/dojox/fx
+@dirrmtry %%WWWDIR%%/dojox/gantt/resources/images
+@dirrmtry %%WWWDIR%%/dojox/gantt/resources
+@dirrmtry %%WWWDIR%%/dojox/gantt
+@dirrmtry %%WWWDIR%%/dojox/gauges
+@dirrmtry %%WWWDIR%%/dojox/geo/charting/resources/data
+@dirrmtry %%WWWDIR%%/dojox/geo/charting/resources/img
+@dirrmtry %%WWWDIR%%/dojox/geo/charting/resources/markers
+@dirrmtry %%WWWDIR%%/dojox/geo/charting/resources
+@dirrmtry %%WWWDIR%%/dojox/geo/charting/widget
+@dirrmtry %%WWWDIR%%/dojox/geo/charting
+@dirrmtry %%WWWDIR%%/dojox/geo/openlayers/widget
+@dirrmtry %%WWWDIR%%/dojox/geo/openlayers
+@dirrmtry %%WWWDIR%%/dojox/geo
+@dirrmtry %%WWWDIR%%/dojox/gesture
+@dirrmtry %%WWWDIR%%/dojox/gfx/resources
+@dirrmtry %%WWWDIR%%/dojox/gfx
+@dirrmtry %%WWWDIR%%/dojox/gfx3d
+@dirrmtry %%WWWDIR%%/dojox/grid/bidi
+@dirrmtry %%WWWDIR%%/dojox/grid/cells
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/ar
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/bg
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/ca
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/cs
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/da
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/de
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/el
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/es
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/fi
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/fr
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/he
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/hr
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/hu
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/id
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/it
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/ja
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/kk
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/ko
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/nb
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/nl
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/pl
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/pt
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/ro
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/ru
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/sk
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/sl
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/sv
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/th
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/tr
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/uk
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/zh
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/nls
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/plugins/exporter
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/plugins/filter
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/plugins
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/resources/claro
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/resources/images
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/resources/tundra
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/resources
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced/templates
+@dirrmtry %%WWWDIR%%/dojox/grid/enhanced
+@dirrmtry %%WWWDIR%%/dojox/grid/nls
+@dirrmtry %%WWWDIR%%/dojox/grid/resources/images
+@dirrmtry %%WWWDIR%%/dojox/grid/resources
+@dirrmtry %%WWWDIR%%/dojox/grid
+@dirrmtry %%WWWDIR%%/dojox/help
+@dirrmtry %%WWWDIR%%/dojox/highlight/languages/pygments
+@dirrmtry %%WWWDIR%%/dojox/highlight/languages
+@dirrmtry %%WWWDIR%%/dojox/highlight/resources/pygments
+@dirrmtry %%WWWDIR%%/dojox/highlight/resources
+@dirrmtry %%WWWDIR%%/dojox/highlight/widget
+@dirrmtry %%WWWDIR%%/dojox/highlight
+@dirrmtry %%WWWDIR%%/dojox/html/ext-dojo
+@dirrmtry %%WWWDIR%%/dojox/html/resources
+@dirrmtry %%WWWDIR%%/dojox/html
+@dirrmtry %%WWWDIR%%/dojox/image/resources/images
+@dirrmtry %%WWWDIR%%/dojox/image/resources
+@dirrmtry %%WWWDIR%%/dojox/image
+@dirrmtry %%WWWDIR%%/dojox/io/proxy
+@dirrmtry %%WWWDIR%%/dojox/io
+@dirrmtry %%WWWDIR%%/dojox/jq
+@dirrmtry %%WWWDIR%%/dojox/json
+@dirrmtry %%WWWDIR%%/dojox/jsonPath
+@dirrmtry %%WWWDIR%%/dojox/lang/aspect
+@dirrmtry %%WWWDIR%%/dojox/lang/async
+@dirrmtry %%WWWDIR%%/dojox/lang/functional
+@dirrmtry %%WWWDIR%%/dojox/lang/oo
+@dirrmtry %%WWWDIR%%/dojox/lang
+@dirrmtry %%WWWDIR%%/dojox/layout/dnd
+@dirrmtry %%WWWDIR%%/dojox/layout/ext-dijit/layout
+@dirrmtry %%WWWDIR%%/dojox/layout/ext-dijit
+@dirrmtry %%WWWDIR%%/dojox/layout/resources/icons
+@dirrmtry %%WWWDIR%%/dojox/layout/resources
+@dirrmtry %%WWWDIR%%/dojox/layout
+@dirrmtry %%WWWDIR%%/dojox/math/random
+@dirrmtry %%WWWDIR%%/dojox/math
+@dirrmtry %%WWWDIR%%/dojox/mdnd/adapter
+@dirrmtry %%WWWDIR%%/dojox/mdnd/dropMode
+@dirrmtry %%WWWDIR%%/dojox/mdnd/resources
+@dirrmtry %%WWWDIR%%/dojox/mdnd
+@dirrmtry %%WWWDIR%%/dojox/mobile/app
+@dirrmtry %%WWWDIR%%/dojox/mobile/bidi
+@dirrmtry %%WWWDIR%%/dojox/mobile/build
+@dirrmtry %%WWWDIR%%/dojox/mobile/dh
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/ar
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/bg
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/ca
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/cs
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/da
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/de
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/el
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/es
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/fi
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/fr
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/he
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/hr
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/hu
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/id
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/it
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/ja
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/kk
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/ko
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/nb
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/nl
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/pl
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/pt
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/ro
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/ru
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/sk
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/sl
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/sv
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/th
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/tr
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/uk
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/zh
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojox/mobile/nls
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/android/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/android/dijit/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/android/dijit
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/android/images
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/android
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/blackberry/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/blackberry/dijit/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/blackberry/dijit
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/blackberry/images
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/blackberry
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/common/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/common/dijit
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/common/domButtons/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/common/domButtons
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/common/transitions
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/common
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/custom/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/custom/dijit/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/custom/dijit
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/custom/images
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/custom
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/holodark/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/holodark/dijit/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/holodark/dijit
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/holodark/images
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/holodark
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/ios7/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/ios7/dijit/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/ios7/dijit
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/ios7/images
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/ios7
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/iphone/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/iphone/dijit/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/iphone/dijit
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/iphone/images
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/iphone
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/utils
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/windows/compat
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/windows/dijit
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/windows/images/dark
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/windows/images/light
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/windows/images
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes/windows
+@dirrmtry %%WWWDIR%%/dojox/mobile/themes
+@dirrmtry %%WWWDIR%%/dojox/mobile
+@dirrmtry %%WWWDIR%%/dojox/mvc
+@dirrmtry %%WWWDIR%%/dojox/rails
+@dirrmtry %%WWWDIR%%/dojox/resources
+@dirrmtry %%WWWDIR%%/dojox/robot
+@dirrmtry %%WWWDIR%%/dojox/rpc/SMDLibrary
+@dirrmtry %%WWWDIR%%/dojox/rpc
+@dirrmtry %%WWWDIR%%/dojox/secure
+@dirrmtry %%WWWDIR%%/dojox/sketch/resources/images
+@dirrmtry %%WWWDIR%%/dojox/sketch/resources
+@dirrmtry %%WWWDIR%%/dojox/sketch
+@dirrmtry %%WWWDIR%%/dojox/socket
+@dirrmtry %%WWWDIR%%/dojox/sql
+@dirrmtry %%WWWDIR%%/dojox/storage
+@dirrmtry %%WWWDIR%%/dojox/store/db
+@dirrmtry %%WWWDIR%%/dojox/store
+@dirrmtry %%WWWDIR%%/dojox/string
+@dirrmtry %%WWWDIR%%/dojox/testing
+@dirrmtry %%WWWDIR%%/dojox/timing
+@dirrmtry %%WWWDIR%%/dojox/treemap/themes
+@dirrmtry %%WWWDIR%%/dojox/treemap
+@dirrmtry %%WWWDIR%%/dojox/uuid
+@dirrmtry %%WWWDIR%%/dojox/validate
+@dirrmtry %%WWWDIR%%/dojox/widget/Calendar
+@dirrmtry %%WWWDIR%%/dojox/widget/ColorPicker/images
+@dirrmtry %%WWWDIR%%/dojox/widget/ColorPicker
+@dirrmtry %%WWWDIR%%/dojox/widget/Dialog/images
+@dirrmtry %%WWWDIR%%/dojox/widget/Dialog
+@dirrmtry %%WWWDIR%%/dojox/widget/DocTester
+@dirrmtry %%WWWDIR%%/dojox/widget/FilePicker/images
+@dirrmtry %%WWWDIR%%/dojox/widget/FilePicker
+@dirrmtry %%WWWDIR%%/dojox/widget/FisheyeList
+@dirrmtry %%WWWDIR%%/dojox/widget/Loader/icons
+@dirrmtry %%WWWDIR%%/dojox/widget/Loader
+@dirrmtry %%WWWDIR%%/dojox/widget/MultiSelectCalendar
+@dirrmtry %%WWWDIR%%/dojox/widget/Pager/images
+@dirrmtry %%WWWDIR%%/dojox/widget/Pager
+@dirrmtry %%WWWDIR%%/dojox/widget/Portlet/images
+@dirrmtry %%WWWDIR%%/dojox/widget/Portlet
+@dirrmtry %%WWWDIR%%/dojox/widget/RollingList
+@dirrmtry %%WWWDIR%%/dojox/widget/SortList
+@dirrmtry %%WWWDIR%%/dojox/widget/Standby/images
+@dirrmtry %%WWWDIR%%/dojox/widget/Standby
+@dirrmtry %%WWWDIR%%/dojox/widget/TitleGroup
+@dirrmtry %%WWWDIR%%/dojox/widget/Toaster
+@dirrmtry %%WWWDIR%%/dojox/widget/UpgradeBar
+@dirrmtry %%WWWDIR%%/dojox/widget/Wizard
+@dirrmtry %%WWWDIR%%/dojox/widget/gauge
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/ar
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/az
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/bg
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/ca
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/cs
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/da
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/de
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/el
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/es
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/fi
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/fr
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/he
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/hr
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/hu
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/id
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/it
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/ja
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/kk
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/ko
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/nb
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/nl
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/pl
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/pt
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/pt-pt
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/ro
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/ru
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/sk
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/sl
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/sv
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/th
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/tr
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/uk
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/zh
+@dirrmtry %%WWWDIR%%/dojox/widget/nls/zh-tw
+@dirrmtry %%WWWDIR%%/dojox/widget/nls
+@dirrmtry %%WWWDIR%%/dojox/widget/rotator
+@dirrmtry %%WWWDIR%%/dojox/widget
+@dirrmtry %%WWWDIR%%/dojox/wire/ml
+@dirrmtry %%WWWDIR%%/dojox/wire
+@dirrmtry %%WWWDIR%%/dojox/xml
+@dirrmtry %%WWWDIR%%/dojox/xmpp/widget/templates
+@dirrmtry %%WWWDIR%%/dojox/xmpp/widget
+@dirrmtry %%WWWDIR%%/dojox/xmpp
+@dirrmtry %%WWWDIR%%/dojox
+@dirrmtry %%WWWDIR%%

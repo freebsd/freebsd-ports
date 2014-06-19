@@ -29,9 +29,9 @@ include/qpdf/RandomDataProvider.hh
 include/qpdf/Types.h
 include/qpdf/qpdf-c.h
 lib/libqpdf.a
-lib/libqpdf.la
 lib/libqpdf.so
-lib/libqpdf.so.14
+lib/libqpdf.so.13
+lib/libqpdf.so.13.1.1
 libdata/pkgconfig/libqpdf.pc
 man/man1/fix-qdf.1.gz
 man/man1/qpdf.1.gz

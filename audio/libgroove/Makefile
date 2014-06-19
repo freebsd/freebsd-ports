@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgroove
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.4
 CATEGORIES=	audio
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -20,7 +20,7 @@ USES=		cmake:outsource
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	andrewrk
-GH_COMMIT=	ee115e5
+GH_COMMIT=	b0d7419
 
 PLIST_SUB+=	VER1=${PORTVERSION:R:R} \
     		VER3=${PORTVERSION}

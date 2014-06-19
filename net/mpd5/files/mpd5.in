@@ -2,7 +2,7 @@
 
 # $FreeBSD$
 #
-# PROVIDE: mpd
+# PROVIDE: mpd5
 # REQUIRE: SERVERS
 # BEFORE: DAEMON
 # KEYWORD: shutdown

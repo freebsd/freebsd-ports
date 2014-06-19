@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	gauche
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	A pure gauche/scheme implementation of the Readline library
+COMMENT=	Pure gauche/scheme implementation of the Readline library
 
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 BUILD_DEPENDS=	gauche-config:${PORTSDIR}/lang/gauche
@@ -21,14 +21,13 @@ GAUCHE_FILES=	readline/history.scm readline/keymap.scm readline/term-util.scm
 
 PLIST_SUB+=	GAUCHE_LIBDIR=${GAUCHE_LIBDIR}
 
-NO_STAGE=	yes
 do-install:
-.if !exists(${PREFIX}/${GAUCHE_LIBDIR}/readline)
-	${MKDIR} ${PREFIX}/${GAUCHE_LIBDIR}/readline
+.if !exists(${STAGEDIR}${PREFIX}/${GAUCHE_LIBDIR}/readline)
+	${MKDIR} ${STAGEDIR}${PREFIX}/${GAUCHE_LIBDIR}/readline
 .endif
-	${INSTALL_DATA} ${WRKSRC}/readline.scm ${PREFIX}/${GAUCHE_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/readline.scm ${STAGEDIR}${PREFIX}/${GAUCHE_LIBDIR}
 .	for f in ${GAUCHE_FILES}
-		${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${GAUCHE_LIBDIR}/readline
+		${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${GAUCHE_LIBDIR}/readline
 .	endfor
 
 .include <bsd.port.mk>

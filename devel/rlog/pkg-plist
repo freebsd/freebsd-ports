@@ -14,10 +14,9 @@ include/rlog/rlog-prec99.h
 include/rlog/rlog.h
 include/rlog/rloginit.h
 include/rlog/rloglocation.h
-lib/librlog.a
-lib/librlog.la
 lib/librlog.so
 lib/librlog.so.5
+lib/librlog.so.5.0.0
 libdata/pkgconfig/librlog.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/Error_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Lock_8h-source.html

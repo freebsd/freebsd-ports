@@ -10,21 +10,18 @@ MAINTAINER=	dereckson@gmail.com
 COMMENT=	An esoteric language
 
 PLIST_FILES=	bin/malbolge
-
-PORTDOCS=	*
-
-NO_STAGE=	yes
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/malbolge ${PREFIX}/bin
-
 OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/malbolge ${STAGEDIR}${PREFIX}/bin
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/malbolge.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/malbolge.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -22,7 +22,4 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--without-docs
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| docs||' ${WRKSRC}/Makefile.in
-
 .include <bsd.port.mk>

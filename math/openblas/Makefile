@@ -3,7 +3,7 @@
 
 PORTNAME=	openblas
 PORTVERSION=	0.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
 		NL:lapack_tmg
@@ -48,7 +48,6 @@ AVX_DESC=		Support Advanced Vector Extensions (AVX)
 OPTIONS_DEFAULT=	DYNAMIC_ARCH
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(TARGET_CPU_ARCH)
@@ -160,8 +159,8 @@ benchmark: build
 do-install:
 	cd ${WRKDIR}/lib ; \
 	${INSTALL_DATA} ${OPENBLAS_LIBS:S|$|.a|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVER}|} \
-	${PREFIX}/lib/
-	cd ${PREFIX}/lib ; \
+	${STAGEDIR}${PREFIX}/lib/
+	cd ${STAGEDIR}${PREFIX}/lib ; \
 	for i in ${OPENBLAS_LIBS:S|$|.so|}; do \
 		${LN} -sf $$i.${OPENBLAS_SVER} $$i ; \
 	done

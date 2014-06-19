@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for handling 3DS (3D Studio) files
+COMMENT=	Library for handling 3DS (3D Studio) files
 
 LICENSE=	LGPL21 # (or later)
 

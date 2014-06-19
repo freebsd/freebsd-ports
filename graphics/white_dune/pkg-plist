@@ -1,6 +1,8 @@
 bin/dune
 bin/dune4kids
 bin/illegal2vrml
+man/man1/dune.1.gz
+man/man1/illegal2vrml.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/VRML97protos_examples/ParticleSourcePROTO/bubbles.wrl
 %%PORTDOCS%%%%DOCSDIR%%/VRML97protos_examples/ParticleSourcePROTO/flame.png
 %%PORTDOCS%%%%DOCSDIR%%/VRML97protos_examples/ParticleSourcePROTO/flame.wrl

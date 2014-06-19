@@ -9,7 +9,7 @@ MASTER_SITES=	http://offload2.icculus.org:9090/~jcspray/GNUDoku/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A free program for creating and solving Su Doku puzzles
+COMMENT=	Free program for creating and solving Su Doku puzzles
 
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 

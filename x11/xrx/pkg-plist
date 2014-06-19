@@ -1,9 +1,7 @@
 bin/xrx
 lib/libxrx.a
-lib/libxrx.la
 lib/libxrx.so
 lib/libxrxnest.a
-lib/libxrxnest.la
 lib/libxrxnest.so
 man/man1/xrx.1.gz
 man/man1/libxrx.1.gz

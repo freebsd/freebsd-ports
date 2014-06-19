@@ -181,13 +181,13 @@ CONFIGURE_ARGS+=--destdir ${STAGEDIR}
 DESTDIRNAME=	--destdir
 .if ${_USE_PERL5:Mmodbuild}
 .if ${PORTNAME} != Module-Build
-BUILD_DEPENDS+=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
+BUILD_DEPENDS+=	p5-Module-Build>=0.4205:${PORTSDIR}/devel/p5-Module-Build
 .endif
 CONFIGURE_ARGS+=--create_packlist 0
 .endif
 .if ${_USE_PERL5:Mmodbuildtiny}
 .if ${PORTNAME} != Module-Build-Tiny
-BUILD_DEPENDS+=	${SITE_PERL}/Module/Build/Tiny.pm:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS+=	p5-Module-Build-Tiny>=0.036:${PORTSDIR}/devel/p5-Module-Build-Tiny
 .endif
 CONFIGURE_ARGS+=--create_packlist 1
 .endif
@@ -259,10 +259,16 @@ do-install:
 .endif # ! USES=gmake
 .endif # modbuild
 
-# TODO: change to ${_USE_PERL5:Mconfigure} when M::B creates .packlist
 .if ${USE_PERL5:Mconfigure} || ${USE_PERL5:Mmodbuildtiny} || ${USE_PERL5:Mfixpacklist}
 fix-packlist::
 	-@[ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
+.endif
+
+# Starting with perl 5.20, the empty bootstrap files are not installed any
+# more.  As we don't need them anyway, remove it altogether.
+.if ${PERL_LEVEL} < 502000
+fix-perl-bs:
+	-@${FIND} ${STAGEDIR} -name '*.bs' -size 0 -delete
 .endif
 
 .if !target(regression-test)

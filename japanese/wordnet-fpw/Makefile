@@ -11,7 +11,7 @@ DISTNAME=	wordnet-${WN_VER}-fpw${WNFPW_VER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English - English Dictionary (EPWING V1 format)
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/wordnet
 EXTRACT_BEFORE_ARGS=	-qL

@@ -1,0 +1,11 @@
+--- vtysh/extract.pl.in-orig	2014-06-14 21:41:20.000000000 +0200
++++ vtysh/extract.pl.in	2014-06-14 21:41:44.000000000 +0200
+@@ -63,7 +63,7 @@
+ foreach (@ARGV) {
+     $file = $_;
+ 
+-    open (FH, "@CPP@ -DHAVE_CONFIG_H -DVTYSH_EXTRACT_PL -DHAVE_IPV6 -I@top_builddir@ -I@srcdir@/ -I@srcdir@/.. -I@top_srcdir@/lib -I@top_builddir@/lib -I@top_srcdir@/isisd/topology @CPPFLAGS@ $file |");
++    open (FH, "@CPP@ -DHAVE_CONFIG_H -DVTYSH_EXTRACT_PL -DHAVE_IPV6 -I@top_builddir@ -I@srcdir@/ -I@srcdir@/.. -I@top_srcdir@/lib -I@top_builddir@/lib -I/usr/local/include -I@top_srcdir@/isisd/topology @CPPFLAGS@ $file |");
+     local $/; undef $/;
+     $line = <FH>;
+     close (FH);

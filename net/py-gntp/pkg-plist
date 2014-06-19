@@ -1,5 +1,3 @@
-bin/gntp
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/_sources/core.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt

@@ -8,16 +8,15 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Java solution for real time and embedded systems
+COMMENT=	Java solution for real time and embedded systems
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
-JDKMVERSION=	${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
+JAVA_VERSION=	1.6
 USE_ANT=	yes
-ALL_TARGET=	${JDKMVERSION}
+ALL_TARGET=	1.6
 
 PORTDOCS=	*
 

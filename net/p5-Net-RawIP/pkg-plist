@@ -1,7 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawIP/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawIP/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawIP/RawIP.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawIP/RawIP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/RawIP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/RawIP/libpcap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/RawIP/iphdr.pm

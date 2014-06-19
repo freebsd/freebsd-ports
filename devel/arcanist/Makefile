@@ -19,7 +19,7 @@ RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil \
 USE_PHP=	curl json simplexml
 USE_GITHUB=	yes
 NO_BUILD=	yes
-GH_ACCOUNT=	facebook
+GH_ACCOUNT=	phacility
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	1591b21
 

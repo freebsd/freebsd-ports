@@ -14,7 +14,6 @@ COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
 USES=		pkgconfig gmake
 
-NO_STAGE=	yes
 # Port configuration flags:
 # 	CLIENT SERVER TOOLS DLRENDERER GAMELIBS OPUS OPENGL2
 IOQ3?=		CLIENT TOOLS GAMELIBS
@@ -131,7 +130,7 @@ MAKE_ARGS+=	BUILD_SERVER=0
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 MAKE_ARGS+=	USE_CURL=1 USE_CURL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_CURL=0
@@ -145,16 +144,25 @@ MAKE_ARGS+=	USE_OPENAL=0
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+NEED_OGG=	yes
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 MAKE_ARGS+=	USE_CODEC_VORBIS=1
 .else
 MAKE_ARGS+=	USE_CODEC_VORBIS=0
 .endif
 
 .if ${PORT_OPTIONS:MOPUS}
-MAKE_ARGS+=	USE_CODEC_OPUS=1 USE_INTERNAL_OPUS=1
+NEED_OGG=	yes
+LIB_DEPENDS+=	libopusfile.so:${PORTSDIR}/audio/opusfile \
+		libopus.so:${PORTSDIR}/audio/opus
+MAKE_ARGS+=	USE_CODEC_OPUS=1 USE_INTERNAL_OPUS=0
 .else
 MAKE_ARGS+=	USE_CODEC_OPUS=0
+.endif
+
+.if defined(NEED_OGG)
+LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg
+MAKE_ARGS+=	USE_INTERNAL_OGG=0
 .endif
 
 .if ${PORT_OPTIONS:MMUMBLE}
@@ -226,11 +234,11 @@ PLIST_FILES+=	${inst:C/.*;//}
 # Generate install target
 do-install: ${Q3INSTALL}
 .for dir in ${PLIST_DIRS}
-	${MKDIR} ${PREFIX}/${dir}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${dir}
 .endfor
 .for inst in ${IOQ3_INST}
 	${INSTALL_${inst:C/;.*//}} ${BUILDDIR}/${inst:C/[^;]*;//:C/;.*//} \
-		${PREFIX}/${inst:C/.*;//}
+		${STAGEDIR}${PREFIX}/${inst:C/.*;//}
 .endfor
 
 post-install:

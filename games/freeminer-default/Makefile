@@ -3,6 +3,7 @@
 
 PORTNAME=	default
 PORTVERSION=	0.4.9.3
+PORTREVISION=	1
 CATEGORIES=	games
 PKGNAMEPREFIX=	freeminer-
 DIST_SUBDIR=	freeminer

@@ -258,7 +258,7 @@ lib/%%DISTNAME%%/doc/packages/examples/chr/leq.chr
 lib/%%DISTNAME%%/doc/packages/examples/chr/listdom.chr
 lib/%%DISTNAME%%/doc/packages/examples/chr/primes.chr
 lib/%%DISTNAME%%/doc/packages/examples/http/calc.pl
-lib/%%DISTNAME%%/doc/packages/examples/http/debian-init-script
+lib/%%DISTNAME%%/doc/packages/examples/http/linux-init-script
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_body.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_client.pl
 lib/%%DISTNAME%%/doc/packages/examples/http/demo_daemon.pl

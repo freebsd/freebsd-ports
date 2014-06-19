@@ -21,10 +21,9 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	RELEASEVERSION=1.1.0.1
 
-NO_STAGE=	yes
 do-install:
-		@${MKDIR} ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/lib/eclipse
+		@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/eclipse/plugins ${STAGEDIR}${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/eclipse/features ${STAGEDIR}${PREFIX}/lib/eclipse
 
 .include <bsd.port.mk>

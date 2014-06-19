@@ -1,0 +1,12 @@
+A class of units of physical quantities for Ruby.
+
+This class covers most functionality of UNIDATA's UDUNITS Library, however,
+with a more sophisticated handling of string expressions.
+
+UDUNITS always decomposes units into the four base units and discards the
+original string expressions. Therefore, 'hPa' always becomes '100
+kg.m-1.sec-1', and 'day' always becomes '86400 sec'. On the other hand, this
+library tries to keep the original expressions as much as possible by default,
+while allowing partial to complete decompositions if needed.
+
+WWW: http://www.gfd-dennou.org/arch/ruby/products/numru-units/

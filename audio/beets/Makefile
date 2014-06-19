@@ -3,11 +3,12 @@
 
 PORTNAME=	beets
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	A media library management system for obsessive-compulsive music geeks
+COMMENT=	Media library management system for obsessive-compulsive music geeks
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.22:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0:${PORTSDIR}/converters/py-unidecode \
@@ -16,8 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.22:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
+PLIST_FILES=	man/man1/beet.1.gz man/man5/beetsconfig.5.gz
 
 OPTIONS_DEFINE=	BEATPORT BPD CHROMA DISCOGS ECHONEST LASTFM FFMPEG REPLAYGAIN WEB
 OPTIONS_DEFAULT=

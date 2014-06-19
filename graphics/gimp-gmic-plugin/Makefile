@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gmic
-PORTVERSION=	1.5.8.3
-PORTREVISION=	1
+PORTVERSION=	1.5.9.0
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/older_versions/ \
 		SF/${PORTNAME}/
@@ -13,9 +13,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
 
-LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick13 \
+LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libMagick++.so:${PORTSDIR}/graphics/ImageMagick \
+		libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
@@ -63,7 +63,7 @@ do-install:
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 .if ${PORT_OPTIONS:MBASH}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_SCRIPT} ${WRKSRC}/gmic_bashcompletion.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/../resources/gmic_bashcompletion.sh \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 .endif
 

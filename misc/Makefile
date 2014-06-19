@@ -327,6 +327,7 @@
     SUBDIR += p5-Geo-Coder-Multiple
     SUBDIR += p5-Geo-Coder-Navteq
     SUBDIR += p5-Geo-Coder-OSM
+    SUBDIR += p5-Geo-Coder-OpenCage
     SUBDIR += p5-Geo-Coder-Ovi
     SUBDIR += p5-Geo-Coder-PlaceFinder
     SUBDIR += p5-Geo-Coder-TomTom
@@ -453,6 +454,7 @@
     SUBDIR += usbids
     SUBDIR += usbrh-libusb
     SUBDIR += utftools
+    SUBDIR += valspeak
     SUBDIR += vera
     SUBDIR += vifm
     SUBDIR += viz

@@ -27,16 +27,15 @@ DESKTOP_ENTRIES="Belote" \
 		"" \
 		false
 
-NO_STAGE=	yes
 post-extract:
 	@${UNZIP_CMD} -qo ${WRKSRC}/data.bin rsc/vp.gif -d ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/belote ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/belote ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in belote.jar data.bin
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/rsc/vp.gif ${PREFIX}/share/pixmaps/belote.gif
+	${INSTALL_DATA} ${WRKSRC}/rsc/vp.gif ${STAGEDIR}${PREFIX}/share/pixmaps/belote.gif
 
 .include <bsd.port.mk>

@@ -8,12 +8,10 @@ include/libevtx/extern.h
 include/libevtx/features.h
 include/libevtx/types.h
 lib/libevtx.a
-lib/libevtx.la
 lib/libevtx.so
 lib/libevtx.so.1
 lib/libevtx.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyevtx.a
-%%PYTHON_SITELIBDIR%%/pyevtx.la
 %%PYTHON_SITELIBDIR%%/pyevtx.so
 libdata/pkgconfig/libevtx.pc
 man/man1/evtxexport.1.gz

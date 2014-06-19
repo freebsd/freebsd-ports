@@ -15,11 +15,8 @@ USE_PERL5=	run
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 
-MAN1=		zetaback.1 zetaback_agent.1
-
-NO_STAGE=	yes
 post-install:
-	@${TEST} ! -f ${PREFIX}/etc/zetaback.conf && ${CP} ${PREFIX}/etc/zetaback.conf.sample ${PREFIX}/etc/zetaback.conf; ${TRUE}
-	@${TEST} ! -f ${PREFIX}/etc/zetaback_agent.conf && ${CP} ${PREFIX}/etc/zetaback_agent.conf.sample ${PREFIX}/etc/zetaback_agent.conf; ${TRUE}
+	@${TEST} ! -f ${PREFIX}/etc/zetaback.conf && ${CP} ${STAGEDIR}${PREFIX}/etc/zetaback.conf.sample ${STAGEDIR}${PREFIX}/etc/zetaback.conf; ${TRUE}
+	@${TEST} ! -f ${PREFIX}/etc/zetaback_agent.conf && ${CP} ${STAGEDIR}${PREFIX}/etc/zetaback_agent.conf.sample ${STAGEDIR}${PREFIX}/etc/zetaback_agent.conf; ${TRUE}
 
 .include <bsd.port.mk>

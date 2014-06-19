@@ -3204,6 +3204,11 @@
 %%WWWDIR%%/tools/rebuildSearchIndex.php
 %%WWWDIR%%/tools/runScheduledTasks.php
 %%WWWDIR%%/tools/upgrade.php
+%%WWWDIR%%/cache/fc-locale-list.php
+@dirrmtry %%WWWDIR%%/cache/_db
+@dirrmtry %%WWWDIR%%/cache/t_cache
+@dirrmtry %%WWWDIR%%/cache/t_compile
+@dirrmtry %%WWWDIR%%/cache/t_config
 @dirrm %%WWWDIR%%/tools/includes
 @dirrm %%WWWDIR%%/tools
 @dirrm %%WWWDIR%%/templates/user

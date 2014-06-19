@@ -74,6 +74,14 @@ lib/libvipsCC.la
 lib/libvipsCC.a
 libdata/pkgconfig/vips-%%VERSION%%.pc
 libdata/pkgconfig/vipsCC-%%VERSION%%.pc
+man/man1/batch_crop.1.gz
+man/man1/batch_image_convert.1.gz
+man/man1/batch_rubber_sheet.1.gz
+man/man1/edvips.1.gz
+man/man1/header.1.gz
+man/man1/light_correct.1.gz
+man/man1/vips.1.gz
+man/man1/vipsthumbnail.1.gz
 share/locale/de/LC_MESSAGES/vips7.mo
 share/locale/en_GB/LC_MESSAGES/vips7.mo
 %%PORTDOCS%%share/doc/vips/pdf/vipsmanual.pdf

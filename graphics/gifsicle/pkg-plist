@@ -1,3 +1,6 @@
 bin/gifdiff
 bin/gifsicle
+man/man1/gifdiff.1.gz
+man/man1/gifsicle.1.gz
 %%X11%%bin/gifview
+%%X11%%man/man1/gifview.1.gz

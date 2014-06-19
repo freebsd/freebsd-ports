@@ -8,7 +8,7 @@ CATEGORIES=	audio graphics
 MASTER_SITES=	http://www.coppercloudmusic.com/enscribe/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create digital audio watermark images from photographic images
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \

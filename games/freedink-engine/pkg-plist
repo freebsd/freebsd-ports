@@ -69,10 +69,6 @@ share/locale/vi/LC_MESSAGES/freedink-gnulib.mo
 share/locale/vi/LC_MESSAGES/freedink.mo
 share/locale/zh_CN/LC_MESSAGES/freedink-gnulib.mo
 share/locale/zh_TW/LC_MESSAGES/freedink-gnulib.mo
-@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry share/locale/en@boldquot
-@dirrmtry share/locale/en@quot/LC_MESSAGES
-@dirrmtry share/locale/en@quot
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry %%DATADIR%%

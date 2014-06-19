@@ -17,7 +17,7 @@ DIST_SUBDIR=	m2000
 EXTRACT_ONLY=	${PORTNAME:tu}${EXTRACT_SUFX}
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	A portable emulator for the Philips P2000 home computer
+COMMENT=	Portable emulator for the Philips P2000 home computer
 
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 

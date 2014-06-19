@@ -1,3 +1,16 @@
+%%DATADIR%%/bin/templates/BeanShellSampler.jmx
+%%DATADIR%%/bin/templates/build-adv-web-test-plan.jmx
+%%DATADIR%%/bin/templates/build-ftp-test-plan.jmx
+%%DATADIR%%/bin/templates/build-ldap-ext-test-plan.jmx
+%%DATADIR%%/bin/templates/build-ldap-test-plan.jmx
+%%DATADIR%%/bin/templates/build-web-test-plan.jmx
+%%DATADIR%%/bin/templates/build-webservice-test-plan.jmx
+%%DATADIR%%/bin/templates/jdbc.jmx
+%%DATADIR%%/bin/templates/mongodb.jmx
+%%DATADIR%%/bin/templates/recording.jmx
+%%DATADIR%%/bin/templates/templates.dtd
+%%DATADIR%%/bin/templates/templates.xml
+@dirrm %%DATADIR%%/bin/templates
 %%DATADIR%%/bin/ApacheJMeter.jar
 %%DATADIR%%/bin/BeanShellAssertion.bshrc
 %%DATADIR%%/bin/BeanShellFunction.bshrc
@@ -14,10 +27,11 @@
 %%DATADIR%%/bin/jmeter-server
 %%DATADIR%%/bin/jmeter.properties
 %%DATADIR%%/bin/jmeter.sh
+%%DATADIR%%/bin/jaas.conf
+%%DATADIR%%/bin/krb5.conf
 %%DATADIR%%/bin/log4j.conf
 %%DATADIR%%/bin/logkit.xml
 %%DATADIR%%/bin/mirror-server.sh
-%%DATADIR%%/bin/proxyserver.jks
 %%DATADIR%%/bin/saveservice.properties
 %%DATADIR%%/bin/shutdown.sh
 %%DATADIR%%/bin/stoptest.sh
@@ -47,13 +61,14 @@
 %%DATADIR%%/extras/startup.bsh
 %%DATADIR%%/lib/avalon-framework.jar
 %%DATADIR%%/lib/bsf-2.4.0.jar
-%%DATADIR%%/lib/bsf-api-3.1.jar
 %%DATADIR%%/lib/bsh-2.0b5.jar
 %%DATADIR%%/lib/bshclient.jar
 %%DATADIR%%/lib/commons-io.jar
 %%DATADIR%%/lib/commons-lang3-3.1.jar
 %%DATADIR%%/lib/commons-jexl-1.1.jar
 %%DATADIR%%/lib/commons-jexl-2.1.1.jar
+%%DATADIR%%/lib/mongo-java-driver-2.11.3.jar
+%%DATADIR%%/lib/rsyntaxtextarea-2.5.1.jar
 @comment %%DATADIR%%/lib/commons-net-3.0.1.jar
 %%DATADIR%%/lib/excalibur-datasource-1.1.1.jar
 %%DATADIR%%/lib/excalibur-instrument-1.0.jar
@@ -70,6 +85,7 @@
 %%DATADIR%%/lib/ext/ApacheJMeter_junit.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_ldap.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_mail.jar
+%%DATADIR%%/lib/ext/ApacheJMeter_mongodb.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_monitors.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_native.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_report.jar
@@ -87,6 +103,14 @@
 %%DATADIR%%/lib/xpp3_min-1.1.4c.jar
 %%DATADIR%%/lib/xstream.jar
 bin/jmeter
+%%DATADIR%%/bin/examples/PerformanceTestPlanMemoryThread.jmx
+%%DATADIR%%/bin/examples/jsp/memory.jsp
+%%DATADIR%%/lib/jodd-core-3.4.10.jar
+%%DATADIR%%/lib/jodd-lagarto-3.4.10.jar
+%%DATADIR%%/lib/jsoup-1.7.3.jar
+%%DATADIR%%/lib/tika-core-1.4.jar
+%%DATADIR%%/lib/tika-parsers-1.4.jar
+@dirrmtry %%DATADIR%%/bin/examples/jsp
 @dirrm %%DATADIR%%/bin/examples
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/extras

@@ -2,27 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.22
+PORTVERSION=	1.4.23
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
-MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A graphical program for editing sound files
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphical program for editing sound files
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2 pkgconfig pathfix
+USES=		pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
-WANT_GNOME=	yes
-WANT_SDL=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-alsalib --without-arts
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-optimization --without-alsalib \
-		--without-arts
 
 PLIST_FILES=	bin/mhwaveedit \
 		man/man1/mhwaveedit.1.gz \
+		share/applications/mhwaveedit.desktop \
 		share/locale/de/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/es/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
@@ -31,94 +30,38 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/sv/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo \
-		share/applications/mhwaveedit.desktop \
 		share/pixmaps/mhwaveedit.xpm
 
-OPTIONS_DEFINE=	DOUBLE_SAMPLES SNDFILE SAMPLERATE OSS \
-		PORTAUDIO SDL JACK \
-		ESD PULSEAUDIO LADSPA
+BROKEN_sparc64=	Does not compile on sparc64
 
-DOUBLE_SAMPLES_DESC=	increase quality for 24/32-bit samplerates
-SNDFILE_DESC=		libsndfile support
-SAMPLERATE_DESC=	libsamplerate support
-OSS_DESC=		OSS sound driver
-PORTAUDIO_DESC=		PortAudio sound driver
-SDL_DESC=		SDL sound driver
-JACK_DESC=		JACK sound driver
-ESD_DESC=		EsounD sound driver
-PULSEAUDIO_DESC=	PULSEAUDIO support
-LADSPA_DESC=		LADSPA support
+OPTIONS_DEFINE=		DOUBLE_SAMPLES ESOUND JACK LADSPA OSS PORTAUDIO \
+			PULSEAUDIO SAMPLERATE SDL SNDFILE
+OPTIONS_DEFAULT=	OSS SAMPLERATE SNDFILE
 
-OPTIONS_DEFAULT=SNDFILE SAMPLERATE OSS
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.if ${PORT_OPTIONS:MDOUBLE_SAMPLES}
-CONFIGURE_ARGS+=	--with-double-samples
-.endif
-
-.if empty(PORT_OPTIONS:MSNDFILE)
-CONFIGURE_ARGS+=	--without-libsndfile
-.else
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-.endif
-
-.if empty(PORT_OPTIONS:MSAMPLERATE)
-CONFIGURE_ARGS+=	--without-libsamplerate
-.else
-LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-.endif
-
-.if empty(PORT_OPTIONS:MOSS)
-CONFIGURE_ARGS+=	--without-oss
-.endif
-
-.if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
-.else
-CONFIGURE_ARGS+=	--without-portaudio
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL+=	sdl
-.else
-CONFIGURE_ARGS+=	--without-sdl
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-.else
-CONFIGURE_ARGS+=	--without-jack
-.endif
-
-.if ${PORT_OPTIONS:MESD}
-USE_GNOME+=	esound
-.else
-CONFIGURE_ARGS+=	--without-esound
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIBS_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=	--with-pulse
-.else
-CONFIGURE_ARGS+=	--without-pulse
-.endif
-
-.if ${PORT_OPTIONS:MLADSPA}
-BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-.else
-CONFIGURE_ENV+=	ac_cv_header_ladspa_h=no
-.endif
-
-post-extract:
-	@${CHMOD} +x ${WRKSRC}/install-sh
+DOUBLE_SAMPLES_DESC=	Increase quality for 24/32-bit samplerates
+DOUBLE_SAMPLES_CONFIGURE_WITH=	double-samples
+ESOUND_USE=		gnome=esound
+ESOUND_CONFIGURE_WITH=	esound
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_WITH=	jack
+LADSPA_BUILD_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
+LADSPA_CONFIGURE_ENV_OFF=	ac_cv_header_ladspa_h=no
+OSS_CONFIGURE_WITH=	oss
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_CONFIGURE_WITH=	portaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_WITH=	pulse
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_CONFIGURE_WITH=	libsamplerate
+SDL_USE=		sdl=sdl
+SDL_CONFIGURE_WITH=	sdl
+SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_CONFIGURE_WITH=	libsndfile
 
 post-patch:
-	@${REINPLACE_CMD} -e '/AM_CFLAGS=/s|-g||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/^Icon/s|=.*|=${PREFIX}/share/pixmaps/mhwaveedit.xpm|' \
+		${WRKSRC}/share/applications/mhwaveedit.desktop
 
 .include <bsd.port.mk>

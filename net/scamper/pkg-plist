@@ -12,8 +12,8 @@ bin/sc_wartscat
 bin/sc_wartsdump
 bin/sc_wartsfix
 lib/libscamperfile.a
-lib/libscamperfile.la
 lib/libscamperfile.so.0
+lib/libscamperfile.so.0.0.0
 lib/libscamperfile.so
 man/man1/sc_ally.1.gz
 man/man1/sc_analysis_dump.1.gz

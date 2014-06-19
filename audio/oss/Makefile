@@ -14,8 +14,7 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
-USES=		kmod pkgconfig
-USE_BZIP2=	yes
+USES=		tar:bzip2 kmod pkgconfig
 ALL_TARGET=	all install
 USE_GNOME=	gtk20
 USE_RC_SUBR=	oss

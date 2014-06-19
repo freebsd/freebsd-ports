@@ -20,7 +20,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/Engine/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/Engine/copy.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/Engine/new.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/MethodMaker.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/MethodMaker.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/array/arra0000.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/array/arra0001.al

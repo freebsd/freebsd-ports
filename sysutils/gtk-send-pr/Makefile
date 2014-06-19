@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 send-pr tool
 
+DEPRECATED=	Obsolete after migration to Bugzilla
+EXPIRATION_DATE=	2014-07-17
+
 LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
 
 USES=		pkgconfig

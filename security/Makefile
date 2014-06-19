@@ -510,6 +510,7 @@
     SUBDIR += p5-Crypt-xDBM_File
     SUBDIR += p5-CryptX
     SUBDIR += p5-Dancer-Plugin-Auth-Extensible
+    SUBDIR += p5-Dancer-Plugin-Auth-Extensible-Provider-Usergroup
     SUBDIR += p5-Dancer-Plugin-Passphrase
     SUBDIR += p5-Data-Entropy
     SUBDIR += p5-Data-Password
@@ -779,7 +780,6 @@
     SUBDIR += py-plone.openid
     SUBDIR += py-plone.protect
     SUBDIR += py-plone.session
-    SUBDIR += py-posix1e
     SUBDIR += py-potr
     SUBDIR += py-pow
     SUBDIR += py-pyclamd
@@ -962,6 +962,8 @@
     SUBDIR += strobe
     SUBDIR += strongswan
     SUBDIR += stunnel
+    SUBDIR += subversion-gnome-keyring
+    SUBDIR += subversion-kwallet
     SUBDIR += subweb
     SUBDIR += sud
     SUBDIR += sudo

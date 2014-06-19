@@ -3,7 +3,7 @@
 
 PORTNAME=	movingmotif
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_2_1/movingmotiv-2.3.1
 
@@ -12,8 +12,8 @@ COMMENT=	Display scientific data as dynamic plot
 
 LICENSE=	GPLv2
 
-USES=		motif
-USE_AUTOTOOLS=	libtool
+USES=		motif libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

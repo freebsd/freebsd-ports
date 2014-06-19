@@ -8,7 +8,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://transcalc.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A analysis and synthesis tool for RF and microwave transmission lines
+COMMENT=	Analysis and synthesis tool for RF and microwave transmission lines
 
 USES=		pkgconfig
 USE_GNOME=	gtk20

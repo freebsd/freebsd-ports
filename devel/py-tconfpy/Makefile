@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tconfpy@tundraware.com
-COMMENT=	A Python Configuration File Parser
+COMMENT=	Python Configuration File Parser
 
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=	yes

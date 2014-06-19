@@ -34,6 +34,7 @@ shebangonefile() {
 	/usr/bin/nawk) ;;
 	/bin/csh) ;;
 	/bin/sh) ;;
+	/bin/tcsh) ;;
 	*)
 		err "'${interp}' is an invalid shebang you need USES=shebangfix for '${f#${STAGEDIR}${PREFIX}/}'"
 		rc=1

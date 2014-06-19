@@ -24,7 +24,7 @@
 # Dist			Port			Why
 # ------------------------------------------------------------------------------
 *-for-1.4.tgz	net/dgd-lpmud			May not be used for monetary gain
-*_FreeBSD_MegaCLI.zip	sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
+*_MegaCLI.zip		sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
 ASpath-tree-*.tar.gz	net-mgmt/aspathtree	not redistributable, license agreement required
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 aacplusenc-*		audio/aacplusenc	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
@@ -142,6 +142,9 @@ jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
 jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
+jdk-6*-apidocs.zip	java/jdk16-doc		This documentation is under license and export control
+jdk-7*-apidocs.zip	java/jdk7-doc		This documentation is under license and export control
+jdk-8*-apidocs.zip	java/jdk8-doc		This documentation is under license and export control
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged binaries not permitted
 jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries not permitted
 jfbuild_src_*		games/jfsw		Must be distributed only through the Internet and free of charge
@@ -200,6 +203,11 @@ oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and e
 palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
 pcsv*fb.tar.gz		lang/petite-chez	User must accept license terms before installation
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
+perforce/*/p4		devel/p4		Restricted distribution
+perforce/*/p4d		devel/p4d		Restricted distribution
+perforce/*/p4ftpd	devel/p4ftpd		Restricted distribution
+perforce/*/p4p		devel/p4p		Restricted distribution
+perforce/*/p4web	devel/p4web		Restricted distribution
 platon*			biology/platon		$5000 USD for commercial users, free for academic
 poseidonCE-*		java/poseidon		Redistribution is not permitted
 ppsmall-*		archivers/ppunpack	No commercial redistribution
@@ -229,6 +237,7 @@ simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Redistribution prohibited
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
+stardict-longman-*	textproc/stardict-longman	Possible copyright infringement
 stat.tar.Z		math/unixstat		License does not allow redistribution of binaries
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed
@@ -266,7 +275,6 @@ vice-*			emulators/vice		ROMs are copyrighted by Commodore Business Machines
 VMware-vSphere-Perl*	net/vmware-vsphere-cli	May not be redistributed.  Must accept license to download.
 vpnc-*			security/vpnc		Redistribution is not allowed if linked against OpenSSL
 vst_sdk2_3.zip		audio/ardour		Redistribution of the VST PlugIns SDK is not allowed
-vtkmpeg2encode.tar.gz	multimedia/vtkmpeg2encode	The MPEG2 format and all software that uses it is subject to patent restrictions
 vwnc7.3.1/*		lang/visualworks	Do not redistribute
 waeijiro-fpw-*		japanese/waeijiro-fpw	The original dictionary is not free
 webcopy-*		www/webcopy		This program cannot be distributed if modified in any way.  Don't sell for profit without written permission

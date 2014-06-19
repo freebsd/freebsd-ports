@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_BZIP2=	yes
-USES=		gmake imake:env
+USES=		gmake imake:env tar:bzip2
 USE_XORG=	x11 ice sm xext xmu xpm xt xxf86vm
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL PROBLEMS README README.tiling TODO

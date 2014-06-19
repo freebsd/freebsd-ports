@@ -15,8 +15,7 @@ COMMENT=	Phil Cockroft's Basic Interpreter (previously Rabbit Basic)
 
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
-MAN1=		pbasic.1
-PLIST_FILES=	bin/pbasic
+PLIST_FILES=	bin/pbasic man/man1/pbasic.1.gz
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/^CC/s/=/?=/' \
@@ -24,13 +23,12 @@ post-patch:	.SILENT
 		${WRKSRC}/freebsd/makefile
 	${ECHO_CMD} '.PHONY: $$(SYSTEMS)' >>${WRKSRC}/makefile
 
-NO_STAGE=	yes
 do-configure:
 	-cd ${WRKSRC} ; ${RM} -rf termio m68000 msdos vax pyramid ns32000 \
 			pdp11 cursor/cursor.dos cursor/cursor.ukc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/basic ${PREFIX}/bin/pbasic
-	${INSTALL_MAN} ${WRKSRC}/docs/basic.1 ${PREFIX}/man/man1/pbasic.1
+	${INSTALL_PROGRAM} ${WRKSRC}/basic ${STAGEDIR}${PREFIX}/bin/pbasic
+	${INSTALL_MAN} ${WRKSRC}/docs/basic.1 ${STAGEDIR}${PREFIX}/man/man1/pbasic.1
 
 .include <bsd.port.mk>

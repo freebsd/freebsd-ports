@@ -2,7 +2,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.10.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -47,7 +47,6 @@ SERVER_DESC=	Server
 TESTS_DESC=	Unit tests
 TOOLS_DESC=	Extra tools for artists and translators
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # XXX: breaks compilation because of -Werror
@@ -167,6 +166,6 @@ pre-build:
 		${WRKSRC}/fonts/Junicode-Regular.ttf
 
 post-install:
-	-@update-desktop-database ${PREFIX}/share/applications
+	-@update-desktop-database ${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>

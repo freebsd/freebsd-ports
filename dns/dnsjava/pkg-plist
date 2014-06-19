@@ -35,6 +35,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.IncompatibleKeyException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.KeyMismatchException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.MalformedKeyException.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.NoSignatureException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.SignatureExpiredException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.SignatureNotYetValidException.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/DNSSEC.SignatureVerificationException.html
@@ -164,10 +165,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/package-list
 %%PORTDOCS%%%%DOCSDIR%%/resources/background.gif
-%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
+%%JDK6%%%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/tab.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/titlebar.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/titlebar_end.gif
+%%JDK8%%%%PORTDOCS%%%%DOCSDIR%%/script.js
 %%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/USAGE
@@ -177,11 +179,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lookup.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/update.java
 share/java/classes/dnsjava.jar
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/resources
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org/xbill/DNS/utils
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org/xbill/DNS/spi
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org/xbill/DNS
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org/xbill
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/org
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS/utils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS/spi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill/DNS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/xbill
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

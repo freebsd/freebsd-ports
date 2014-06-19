@@ -8,16 +8,15 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A video game about traveling in 2D planetary systems
+COMMENT=	Video game about traveling in 2D planetary systems
 
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image
 
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 SUB_FILES=	spacejunk
 

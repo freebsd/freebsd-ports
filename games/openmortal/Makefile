@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A parody of the once popular coin-up fighting game, Mortal Kombat
+COMMENT=	Parody of the once popular coin-up fighting game, Mortal Kombat
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 

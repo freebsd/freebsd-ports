@@ -3,7 +3,7 @@
 
 PORTNAME=	tkhonyaku
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.yk.rim.or.jp/~kawagisi/
 
@@ -18,20 +18,15 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/local/tkhonyaku|${PREFIX}/tkhonyaku|g' \
 		${WRKSRC}/tkhonyaku ${WRKSRC}/tkhonyaku-readme
 
 do-install:
-	${MKDIR} ${PREFIX}/share/tkhonyaku
-	${INSTALL_DATA} ${WRKSRC}/tkhonyaku.gif ${PREFIX}/share/tkhonyaku/
-	${INSTALL_DATA} ${WRKSRC}/tkhonyaku.xpm ${PREFIX}/share/tkhonyaku/
-	${INSTALL_DATA} ${WRKSRC}/colors.gif ${PREFIX}/share/tkhonyaku/
-	${INSTALL_SCRIPT} ${WRKSRC}/tkhonyaku ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tkhonyaku-readme ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/tkhonyaku.gif ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tkhonyaku.xpm ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/colors.gif ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/tkhonyaku ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/tkhonyaku-readme ${STAGEDIR}${PORTDOCS}${DOCSDIR}
 
 .include <bsd.port.mk>

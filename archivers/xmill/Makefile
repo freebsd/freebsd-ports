@@ -6,7 +6,7 @@ DISTVERSION=	0.8
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient compressor for XML
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

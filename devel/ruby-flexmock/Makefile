@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple mock object for Ruby
+COMMENT=	Simple mock object for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

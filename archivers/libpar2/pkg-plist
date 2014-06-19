@@ -27,9 +27,9 @@ include/libpar2/reedsolomon.h
 include/libpar2/verificationhashtable.h
 include/libpar2/verificationpacket.h
 lib/libpar2.a
-lib/libpar2.la
 lib/libpar2.so
 lib/libpar2.so.1
+lib/libpar2.so.1.0.0
 lib/libpar2/include/config.h
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%

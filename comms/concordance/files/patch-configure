@@ -1,0 +1,12 @@
+--- configure.orig	2014-03-28 20:27:47.000000000 -0700
++++ configure	2014-05-31 02:59:26.000000000 -0700
+@@ -15080,6 +15080,9 @@
+ 
+ LIBCONCORD_VERSION="3"
+ case $host_os in
++  freebsd*)
++    LIBCONCORD_LDFLAGS="-lconcord"
++    ;;
+   darwin*)
+     LIBCONCORD_LDFLAGS="-lconcord.$LIBCONCORD_VERSION"
+     ;;

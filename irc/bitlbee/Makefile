@@ -2,14 +2,14 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brix
 
 MAINTAINER=	brix@FreeBSD.org
-COMMENT=	An IRC to other chat networks gateway
+COMMENT=	IRC to other chat networks gateway
 
 LICENSE=	GPLv2
 
@@ -73,7 +73,7 @@ LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls \
 
 .if ${PORT_OPTIONS:MOTR}
 CONFIGURE_ARGS+=--otr=1
-LIB_DEPENDS+=	libotr.so.4:${PORTSDIR}/security/libotr3
+LIB_DEPENDS+=	libotr.so.2:${PORTSDIR}/security/libotr3
 .else
 CONFIGURE_ARGS+=--otr=0
 .endif

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:tl}
+PORTNAME=	fullblog
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -16,9 +16,9 @@ COMMENT=	Plugin that provides a project Blog
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 		tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracFullBlogPlugin
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .if defined(BOOTSTRAP)
 do-fetch:
@@ -29,13 +29,5 @@ do-fetch:
 	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-build-plist:
-	@${CAT} /dev/null > ${PLIST}
-	${FIND} ${EGG_PATH} -type f | \
-	    ${SED} -e 's|${EGG_PATH}|%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-%%PORTVERSION%%-py%%PYTHON_VER%%.egg|' | \
-	    ${SORT} >> ${PLIST}
-	${FIND} ${EGG_PATH} -type d | \
-	    ${SED} -e 's|${EGG_PATH}|@dirrm %%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-%%PORTVERSION%%-py%%PYTHON_VER%%.egg|' | \
-	    ${SORT} -r >> ${PLIST}
-
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

@@ -8,12 +8,9 @@
  SVN_DATE
  GMAKE
  SQLITE_LIB
-@@ -2953,15 +2952,15 @@
- NTOPNG_VERS=`cat ./configure.in | head -1 | grep '_INIT' | cut -d " " -f 2|cut -d ')' -f 1`
- CFLAGS="${CFLAGS} -I/usr/local/include -I/opt/local/include"
+@@ -2955,13 +2954,13 @@
  CPPFLAGS="${CPPFLAGS} -I/usr/local/include -I/opt/local/include"
--LDFLAGS="${LDFLAGS} -L/usr/local/lib -L/opt/local/lib"
-+LDFLAGS="${LDFLAGS}-L/usr/local/lib -L/opt/local/lib"
+ LDFLAGS="${LDFLAGS} -L/usr/local/lib -L/opt/local/lib"
  
 -SVN_RELEASE=`svn info . | grep "^Revision"|cut -d " " -f 2`
 +SVN_RELEASE="6939"

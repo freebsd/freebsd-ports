@@ -3,17 +3,17 @@
 
 PORTNAME=	rioutil
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to interface with the Rio600, Rio800, and psa[play devices
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

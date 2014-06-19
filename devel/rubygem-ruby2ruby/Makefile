@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A pure ruby code generator easily from ParseTree's Sexps # '
+COMMENT=	Pure ruby code generator easily from ParseTree's Sexps # '
 
 LICENSE=	MIT
 

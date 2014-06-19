@@ -11,8 +11,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Console-based music player with really cool features
 
-USES=		gmake pkgconfig iconv ncurses
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig iconv ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	HOSTCC=${CC}
 CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man \

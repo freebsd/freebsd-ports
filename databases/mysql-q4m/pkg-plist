@@ -1,5 +1,5 @@
 bin/q4m-forward
 lib/mysql/plugin/libqueue_engine.a
-lib/mysql/plugin/libqueue_engine.la
 lib/mysql/plugin/libqueue_engine.so
 lib/mysql/plugin/libqueue_engine.so.0
+lib/mysql/plugin/libqueue_engine.so.0.0.0

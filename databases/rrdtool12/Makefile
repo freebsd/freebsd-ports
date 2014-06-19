@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.30
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 PKGNAMESUFFIX=	12
@@ -17,10 +17,9 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 
 CONFLICTS=	rrdtool10-* rrdtool-1.*
 
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake libtool
 
 CONFIGURE_ARGS=	--disable-tcl
 
@@ -53,6 +52,7 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
+USE_PERL5=	run build fixpacklist
 CONFIGURE_ARGS+=	--enable-perl --enable-perl-site-install
 PLIST_SUB+=	WITH_PERL=""
 .else

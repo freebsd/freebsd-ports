@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionary for HITCHCOCK'S BIBLE NAMES (EPWING V1 format)
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/biblenam
 EXTRACT_BEFORE_ARGS=	-qL

@@ -11,9 +11,6 @@ DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}/from_sourceforge
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Pure Tcl library to generate PDF files
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/licence.terms
-
 OPTIONS_DEFINE=	DOCS
 
 BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib

@@ -19,8 +19,9 @@ COMMENT=	Huge compilation of Win32 binary video codecs
 
 RESTRICTED=	Unsure of codec's license
 
+USES=		tar:bzip2
+
 ONLY_FOR_ARCHS=	i386
-USE_BZIP2=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/w32codec-${DISTVERSION}
 
@@ -43,7 +44,6 @@ OPTIONS_DEFINE=	REALPLAYER
 OPTIONS_DEFAULT=	REALPLAYER
 REALPLAYER_DESC=	Install realplayer codec
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREALPLAYER}
@@ -67,15 +67,13 @@ post-extract:
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/win32
-	@${CHMOD} 0755 ${PREFIX}/lib/win32
-.if !defined(WITHOUT_REALPLAYER)
-	@${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/lib/win32
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/win32
+.if ${PORT_OPTIONS:MREALPLAYER}
+	@${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/lib/win32
 .else
-	@${INSTALL_DATA} ${WRKSRC}/*[^0] ${PREFIX}/lib/win32
+	@${INSTALL_DATA} ${WRKSRC}/*[^0] ${STAGEDIR}${PREFIX}/lib/win32
 .endif
 # marker file
-	@${CP} /dev/null ${PREFIX}/lib/win32/${PKGNAME}
-	@${CHMOD} 0444 ${PREFIX}/lib/win32/${PKGNAME}
+	@${CP} /dev/null ${STAGEDIR}${PREFIX}/lib/win32/${PKGNAME}
 
 .include <bsd.port.mk>

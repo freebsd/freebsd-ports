@@ -1,0 +1,11 @@
+bin/abw2html
+bin/abw2raw
+bin/abw2text
+include/libabw-0.1/libabw/AbiDocument.h
+include/libabw-0.1/libabw/libabw.h
+lib/libabw-0.1.so
+lib/libabw-0.1.so.1
+lib/libabw-0.1.so.1.0.0
+libdata/pkgconfig/libabw-0.1.pc
+@dirrm include/libabw-0.1/libabw
+@dirrm include/libabw-0.1

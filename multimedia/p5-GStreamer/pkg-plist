@@ -150,7 +150,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/TypeFindFactory.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/index.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/GStreamer.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/GStreamer.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Query

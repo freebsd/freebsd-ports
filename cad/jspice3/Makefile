@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.wrcad.com/ftp/pub/	\
 DISTNAME=	${PORTNAME}-2.5-011109
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An adaptation of the Berkeley Spice3f4 with superconductivity
+COMMENT=	Adaptation of the Berkeley Spice3f4 with superconductivity
 
 CONFLICTS=	spice-[0-9]*
 

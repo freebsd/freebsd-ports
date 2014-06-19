@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal/EWP/EWP.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal/EWP/EWP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal/EWP/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Business/PayPal/EWP.pm
 %%PERL5_MAN3%%/Business::PayPal::EWP.3.gz

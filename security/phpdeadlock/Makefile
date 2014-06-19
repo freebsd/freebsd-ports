@@ -11,8 +11,10 @@ DISTNAME=	Deadlock-${PORTVERSION}-Stable
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based user authentication/password protection system
 
-WRKSRC=	${WRKDIR}/Deadlock-1.01
-DLURL?=	${PORTNAME}
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/Deadlock-1.01
+DLURL?=		${PORTNAME}
 DLDIR=		www/${DLURL}
 PORTDOCS=	CHANGES.txt COPYING.txt UPGRADE.txt
 
@@ -23,8 +25,8 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DLURL=${DLURL} DLDIR=${DLDIR}
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${MV} "Deadlock v1.01" Deadlock-1.01
 
@@ -32,19 +34,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
 
 do-install:
-	@cd ${WRKSRC}/deadlock && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${CHMOD} 777 ${WWWDIR}/db_config.php
-	@${ECHO_CMD} '@exec ${CHMOD} 777 \
-		${WWWDIR:S|^${PREFIX}/|%D/|}/db_config.php' >> ${TMPPLIST}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@cd ${WRKSRC}/deadlock && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

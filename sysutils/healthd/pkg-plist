@@ -1,8 +1,8 @@
 bin/healthdc
+@sample etc/healthd.conf.sample
+man/man8/healthd.8.gz
+man/man8/healthdc.8.gz
 sbin/healthd
-@unexec if cmp -s %D/etc/healthd.conf %D/etc/healthd.conf.sample; then rm -f %D/etc/healthd.conf; fi
-etc/healthd.conf.sample
-@exec if [ ! -f %D/etc/healthd.conf ]; then cp -p %D/%F %B/healthd.conf; fi
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/PROTOCOL
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

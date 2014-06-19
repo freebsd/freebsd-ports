@@ -3,14 +3,19 @@
 
 PORTNAME=	njplot
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/njplot/archive/
 
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Phylogenetic tree drawing program capable of interactive manipulation
 
-.ifndef (WITHOUT_X11)
+OPTIONS_DEFINE=		DOCS X11
+OPTIONS_DEFAULT=	DOCS X11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS=	${LOCALBASE}/lib/ncbi/libvibrant.a:${PORTSDIR}/biology/ncbi-toolkit
 USE_XORG=	x11 xt xmu xp
 USES=		motif
@@ -19,7 +24,7 @@ USES=		motif
 MAKEFILE=	makefile
 
 BINARIES=	newicktops newicktotxt
-.ifndef (WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 BINARIES+=	njplot unrooted
 .endif
 .for file in ${BINARIES}
@@ -28,30 +33,19 @@ PLIST_FILES+=	bin/${file}
 
 PORTDOCS=	njplot.help njplot.html njplot.gif
 
-MAN1=		njplot.1 unrooted.1
-NO_STAGE=	yes
+MAN_1=		njplot.1 unrooted.1
+PLIST_FILES+=	man/man1/njplot.1.gz \
+		man/man1/unrooted.1.gz
 
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.ifdef (WITHOUT_X11)
+.if !${PORT_OPTIONS:MX11}
 post-patch:
 	${REINPLACE_CMD} -e 's|njplot.*unrooted||' ${WRKSRC}/makefile
 .endif
 
 do-install:
-.for file in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/man/man1
-.endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${BINARIES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${MAN_1:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

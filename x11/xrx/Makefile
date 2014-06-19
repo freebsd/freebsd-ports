@@ -2,7 +2,7 @@
 
 PORTNAME=	xrx
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	RX helper program
 
 XORG_CAT=	app
 USE_XORG=	x11 xt xext xtrans xproxymngproto xau xaw ice
-USES=		libtool:keepla
+USES=		libtool
 USE_LDCONFIG=	yes
 
 post-patch:

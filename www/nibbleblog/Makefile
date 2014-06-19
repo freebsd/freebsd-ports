@@ -22,7 +22,6 @@ USE_PHP=	session filter xml simplexml gd
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
@@ -33,9 +32,9 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@${CP} -r ${WRKDIR}/${PORTNAME}/ ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@${CP} -r ${WRKDIR}/${PORTNAME}/ ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 post-install:
 	${CAT} ${PKGMESSAGE}

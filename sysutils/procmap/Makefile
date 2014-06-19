@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print the contents of a procfs map file
 
 NO_WRKSUBDIR=	yes
+USES=		uidfix
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
 MAKE_ENV+=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man \
 		PROG=procmap MAN8=procmap.8

@@ -2,7 +2,7 @@ diff -urN ../o2em117src.old/Makefile.freebsd ./Makefile.freebsd
 --- ../o2em117src.old/Makefile.freebsd	Wed Dec 31 18:00:00 1969
 +++ ./Makefile.freebsd	Fri Jun 24 16:05:40 2005
 @@ -0,0 +1,65 @@
-+CC = gcc
++
 +
 +CFLAGS = -O3 -Wall -fomit-frame-pointer -I${PREFIX}/include -DFREEBSD -DPREFIX=\"${PREFIX}\"
 +LFLAGS = -s ${LDFLAGS}

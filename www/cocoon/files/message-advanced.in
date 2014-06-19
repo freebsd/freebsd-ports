@@ -19,5 +19,5 @@ If you need to pass special options to Java, please set the
 
 To specify the java version to use, please use %%APP_NAME%%_java_version:
 
-  %%APP_NAME%%_java_version="1.4"
+  %%APP_NAME%%_java_version="1.6"
 

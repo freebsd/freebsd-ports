@@ -5,6 +5,7 @@ include/zhstatis.h
 lib/libhz.a
 lib/libhz.so
 lib/libhz.so.0
+lib/libhz.so.0.0
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Readme
 %%PORTDOCS%%%%DOCSDIR%%/TODO

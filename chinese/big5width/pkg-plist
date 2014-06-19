@@ -1,5 +1,4 @@
 share/locale/%%LANG%%/LC_CTYPE
 @unexec ln -fs ../UTF-8/LC_CTYPE %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE
 @dirrm share/locale/%%LANG%%
-@dirrmtry share/locale
 @exec ln -fs %D/share/locale/%%LANG%%/LC_CTYPE %%BASELOCALEDIR%%/%%LANG%%/LC_CTYPE

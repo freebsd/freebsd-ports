@@ -37,7 +37,7 @@ DOCS=		NEWS README TODO *.html
 
 .if ${PORT_OPTIONS:MLUA}
 ALL_TARGET+=	lua
-USES+=		lua
+USES+=		lua:51
 CFLAGS+=	-I${LUA_INCDIR}
 CFLAGS_SO+=	-L${LUA_LIBDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
@@ -55,6 +55,9 @@ do-configure:
 	${ECHO_CMD} "${BGLIBS_INC}"	> ${WRKSRC}/conf-bgincs
 	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-bglibs
 	${ECHO_CMD} "${QMAIL_PREFIX}"	> ${WRKSRC}/conf-qmail
+
+post-patch:
+	@${REINPLACE_CMD} 's,-llua,-llua-${LUA_VER},' ${WRKSRC}/Makefile
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:

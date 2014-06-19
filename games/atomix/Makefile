@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A yet another little mind game
+COMMENT=	Yet another little mind game
 
 USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig

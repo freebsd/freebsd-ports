@@ -5,10 +5,10 @@ PORTNAME=	magicmaze
 PORTVERSION=	1.4.3.6
 PORTREVISION=	2
 CATEGORIES=	games ruby
-MASTER_SITES=	RUBYFORGE
+MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/./_/g}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Simple and low-tech monster-bashing maze game
 
 LICENSE=	GPLv2

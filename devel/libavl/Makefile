@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	avl
 DISTNAME=	avl-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	A library for balanced binary trees
+COMMENT=	Library for balanced binary trees
 
 GNU_CONFIGURE=	yes
 

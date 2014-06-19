@@ -27,7 +27,6 @@ OPTIONS_DEFAULT=	MYSQL LDAP
 MEMCACHE_DESC=	memcached cache system
 DB_DESC=	DB backend
 
-NO_STAGE=	yes
 pre-install::
 	@${ECHO_MSG} "======================================================================"
 	@${ECHO_MSG} "If you are upgrading please refer to docs/UPGRADE or browse to"
@@ -71,27 +70,24 @@ PLIST_SUB+=	ECHO_MSG=${ECHO_MSG}
 SUB_FILES=	pkg-deinstall
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${NONDOCS}" ${WWWDIR}
-	@cd ${WRKSRC} && ${CP} config.inc.php ${WWWDIR}/config.inc.php.sample
-	@${INSTALL} -d ${WWWDIR}/cache/_db
-	@${INSTALL} -d ${WWWDIR}/cache/t_cache
-	@${INSTALL} -d ${WWWDIR}/cache/t_compile
-	@${INSTALL} -d ${WWWDIR}/cache/t_config
-	@${INSTALL} -d ${WWWDIR}/locale/en_US/images
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${NONDOCS}" ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${CP} config.inc.php ${STAGEDIR}${WWWDIR}/config.inc.php.sample
+	${RM} ${STAGEDIR}${WWWDIR}/config.inc.php
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/_db
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_cache
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_compile
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_config
+	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/locale/en_US/images
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/${DOCS} && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/${DOCS} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

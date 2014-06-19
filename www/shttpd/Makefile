@@ -10,7 +10,7 @@ MAINTAINER=	valenok@gmail.com
 COMMENT=	Small, fast, embeddable web server with CGI, SSL, Authorization
 
 ALL_TARGET=	unix
-MAKE_ENV=	LIBS=-lpthread
+LIBS+=		-lpthread
 BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/shttpd man/man1/shttpd.1.gz

@@ -3,6 +3,7 @@
 
 PORTNAME=	yabb
 PORTVERSION=	2.5.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/YaBB%202/${PORTVERSION}
 DISTNAME=	YaBB_${PORTVERSION}
@@ -37,7 +38,6 @@ ISOFILES=	Admin/ManageTemplates.pl Admin/ModuleChecker.pl Languages/English/Admi
 		Templates/blue_1/AdminCentre.template Templates/default/AdminCentre.template \
 		Templates/yabb21/AdminCentre.template Templates/yabb25/AdminCentre.template
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -57,13 +57,15 @@ do-patch:
 .endfor
 
 do-install:
-	@${INSTALL} -d ${DIR}
-	@${CP} -npR ${WCGI}/ ${DIR}/ || ${TRUE}
-	@${CP} -npR ${WDIR}/ ${DIR}/ || ${TRUE}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DIR}
-	@${CHMOD} a=rx ${DIR}
-	@${CP} -fpR ${FILESDIR}/checksum.sha256 ${DIR}/
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL} -d ${STAGEDIR}${DIR}
+	@cd ${WCGI} && ${COPYTREE_SHARE} . ${STAGEDIR}${DIR}/
+	@cd ${WDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${DIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${DIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DIR}' \
+		>>${TMPPLIST}
+	@${CHMOD} a=rx ${STAGEDIR}${DIR}
+	@${ECHO_CMD} '@exec ${CHMOD} a=rx ${DIR}' >>${TMPPLIST}
+	@${CP} -fpR ${FILESDIR}/checksum.sha256 ${STAGEDIR}${DIR}/
 
 pre-clean:
 	@${CHMOD} -Rf +rwX ${WRKDIR}/* 2>/dev/null || true

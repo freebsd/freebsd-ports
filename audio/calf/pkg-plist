@@ -1,6 +1,5 @@
 bin/calfjackhost
 lib/calf/calf.a
-lib/calf/calf.la
 lib/calf/calf.so
 %%LV2%%lib/lv2/calf.lv2/Analyzer.ttl
 %%LV2%%lib/lv2/calf.lv2/BassEnhancer.ttl

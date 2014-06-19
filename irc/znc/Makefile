@@ -7,7 +7,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	An advanced IRC bouncer
+COMMENT=	Advanced IRC bouncer
 
 LICENSE=	APACHE20
 
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		3.1-
+USE_PYTHON=		3
 USE_PERL5+=		build
 .endif
 

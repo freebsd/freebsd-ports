@@ -3,6 +3,7 @@
 
 PORTNAME=	htop
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -17,14 +18,12 @@ OPTIONS_DEFAULT=LSOF
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="-lexecinfo"
+LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
-USES=		ncurses
-USE_AUTOTOOLS=	autoconf aclocal automake libtool
+USES=		ncurses libtool
+USE_AUTOTOOLS=	autoconf aclocal automake
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
 
 USE_PYTHON_BUILD=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	linux-crashplan
 DISTVERSION=	3.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://download.crashplan.com/installs/linux/install/CrashPlan/
 DISTNAME=	CrashPlan_3.6.3_Linux
@@ -11,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Backs up data to remote servers or hard drives
 
-RUN_DEPENDS=	linux-sun-jre>=0:${PORTSDIR}/java/linux-sun-jre17 \
+RUN_DEPENDS=	linux-sun-jre17>=0:${PORTSDIR}/java/linux-sun-jre17 \
 		bash>=0:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/CrashPlan-install
@@ -42,7 +43,7 @@ do-install:
 	${ECHO_CMD} > ${STAGEDIR}${CRASHDIR}/install.vars
 	${ECHO_CMD} "TARGETDIR=${CRASHDIR}" >> ${STAGEDIR}${CRASHDIR}/install.vars
 	${ECHO_CMD} "BINSDIR=${CRASHDIR}/bin" >> ${STAGEDIR}${CRASHDIR}/install.vars
-	${ECHO_CMD} "JAVACOMMON=${LOCALBASE}/linux-sun-jre1.6.0/bin/java" >> ${STAGEDIR}${CRASHDIR}/install.vars
+	${ECHO_CMD} "JAVACOMMON=${LOCALBASE}/linux-sun-jre1.7.0/bin/java" >> ${STAGEDIR}${CRASHDIR}/install.vars
 	${CAT} ${WRKSRC}/install.defaults >> ${STAGEDIR}${CRASHDIR}/install.vars
 
 .include <bsd.port.mk>

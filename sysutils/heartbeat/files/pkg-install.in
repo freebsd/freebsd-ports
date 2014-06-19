@@ -1,79 +1,8 @@
 #!/bin/sh
 
-USER=hacluster
-GROUP=haclient
-UID=275
-GID=${UID}
-
-BATCH=${BATCH:-%%BATCH%%}
 PREFIX=${PREFIX:-%%PREFIX%%}
 
 case $2 in
-
-PRE-INSTALL)
-
-	echo -e "\n\n"
-
-	# Create account
-	echo -n "Creating heartbeat user group... "
-	if pw group show "${GROUP}" >/dev/null 2>&1; then
-		echo "Group \"${GROUP}\" already exists."
-	else
-		if pw groupadd ${GROUP} -g ${GID}; then
-			echo "Added group \"${GROUP}\"."
-		else
-			echo "Adding group \"${GROUP}\" failed..."
-			exit 1
-		fi
-	fi
-
-	echo -n "Creating heartbeat user id... "
-	if pw user show "${USER}" >/dev/null 2>&1; then
-		echo "User \"${USER}\" already exists."
-	else
-		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d /nonexistent -s /sbin/nologin -c "Heartbeat Daemon"
-		then
-			echo "Added user \"${USER}\"."
-		else
-			echo "Adding user \"${USER}\" failed..."
-			exit 1
-		fi
-	fi
-
-
-	# Create /var environment
-	echo -n "Creating /var environment... "
-	test -d /var/run/heartbeat/ccm || \
-		install -d -m 750 -o ${USER} -g ${GROUP} /var/run/heartbeat/ccm
-	test -d /var/run/heartbeat/crm || \
-		install -d -m 750 -o ${USER} -g ${GROUP} /var/run/heartbeat/crm
-	test -d /var/lib/heartbeat/cores || \
-		install -d -m 755 /var/lib/heartbeat/cores
-	test -d /var/lib/heartbeat/cores/hacluster || \
-		install -d -m 700 -o ${USER} /var/lib/heartbeat/cores/hacluster
-	test -d /var/lib/heartbeat/cores/nobody || \
-		install -d -m 700 -o nobody /var/lib/heartbeat/cores/nobody
-	test -d /var/lib/heartbeat/cores/root || \
-		install -d -m 700 /var/lib/heartbeat/cores/root
-	test -d /var/lib/heartbeat/crm || \
-		install -d -m 750 -o ${USER} -g ${GROUP} /var/lib/heartbeat/crm
-	test -d /var/lib/heartbeat/fencing || \
-		install -d -m 770 -g ${GROUP} /var/lib/heartbeat/fencing
-	test -d /var/lib/heartbeat/lrm || \
-		install -d -m 770 -g ${GROUP} /var/lib/heartbeat/lrm
-	test -d /var/lib/heartbeat/mgmt || \
-		install -d -m 770 -g ${GROUP} /var/lib/heartbeat/mgmt
-	test -d /var/lib/heartbeat/pengine || \
-		install -d -m 750 -o ${USER} -g ${GROUP} /var/run/heartbeat/pengine
-	test -f /var/run/heartbeat.pid || \
-		install -m 644 -o ${USER} -g ${GROUP} /dev/null \
-			/var/run/heartbeat.pid
-	echo "DONE"
-
-	echo -e "\n\n"
-
-	;;
 
 DEINSTALL)
 
@@ -88,46 +17,4 @@ DEINSTALL)
 	else
 		echo "NO"
 	fi
-
-	# Remove Heartbeat account
-	echo -n "Removing heartbeat account... "
-	pw groupdel -n ${GROUP}
-	pw userdel -n ${USER}
-	echo "DONE"
-
-	# Cleanup /var environment
-	echo -n "Cleaning up /var environment... "
-
-	if [ "$BATCH" = "NO" ]; then
-		echo ""
-		default="n"
-		read -p "    Remove runtime files (cluster config)? [yn]: " answer
-
-		case "$answer" in
-			[Yy]*)	answer=y ;;
-			[Nn]*)	answer=n ;;
-			*)		answer=n ;;
-		esac
-
-		if [ "$answer" = "y" ]; then
-			echo -n "    Removing runtime files... "
-			test -d /var/run/heartbeat && \
-				rm -r /var/run/heartbeat
-			test -d /var/lib/heartbeat && \
-				rm -r /var/lib/heartbeat
-			test -f /var/lock/subsys/heartbeat && \
-				rm /var/lock/subsys/heartbeat
-			test -f /var/run/heartbeat.pid && \
-				rm /var/run/heartbeat.pid
-			echo "DONE"
-		else
-			echo "Preserving runtime files... DONE"
-		fi
-	else
-		echo "NA"
-	fi
-
-	echo -e "\n\n"
-
-	;;
 esac

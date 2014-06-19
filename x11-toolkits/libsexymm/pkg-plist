@@ -11,9 +11,9 @@ include/libsexymm/libsexymm/tree-view.h
 include/libsexymm/libsexymm/url-label.h
 include/libsexymm/libsexymm/wrap_init.h
 lib/libsexymm.a
-lib/libsexymm.la
 lib/libsexymm.so
 lib/libsexymm.so.2
+lib/libsexymm.so.2.0.1
 lib/libsexymm/include/libsexymmconfig.h
 lib/libsexymm/proc/m4/convert.m4
 lib/libsexymm/proc/m4/convert_libsexymm.m4

@@ -7,7 +7,7 @@ CATEGORIES=	devel java www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	SoapUI-${PORTVERSION}-linux-bin
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Web service, SOA, and SOAP testing tool
 
 LICENSE=	GPLv2

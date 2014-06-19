@@ -1,7 +1,7 @@
-@unexec cmp %D/etc/podcastamatic.conf.sample %D/etc/podcastamatic.conf && rm %D/etc/podcastamatic.conf || true
 bin/podcastamatic
+@unexec if cmp -s %D/etc/podcastamatic.conf %D/etc/podcastamatic.conf.sample; then rm -f %D/etc/podcastamatic.conf; fi
 etc/podcastamatic.conf.sample
-@exec [ -f %B/podcastamatic.conf ] || cp %F %B/podcastamatic.conf
+@exec cp -n %D/%F %B/podcastamatic.conf
 %%PORTDOCS%%%%DOCSDIR%%/readme.html
 %%DATADIR%%/style.css
 @dirrm %%DATADIR%%

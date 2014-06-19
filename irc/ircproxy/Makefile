@@ -7,8 +7,8 @@ PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	An IRC proxy/bouncer daemon
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	IRC proxy/bouncer daemon
 
 LICENSE=	GPLv3
 

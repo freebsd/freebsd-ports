@@ -15,9 +15,9 @@ include/libEMF/emf.h
 @dirrm include/libEMF/wine
 @dirrm include/libEMF
 lib/libEMF.a
-lib/libEMF.la
 lib/libEMF.so
 lib/libEMF.so.1
+lib/libEMF.so.1.0.0
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/classEMF_1_1BRUSH-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classEMF_1_1BRUSH.gif

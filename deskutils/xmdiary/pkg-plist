@@ -50,4 +50,16 @@ lib/X11/xdiary/holidays1999
 lib/X11/xdiary/mediumChirp.tune
 lib/X11/xdiary/ohNo.tune
 lib/X11/xdiary/swedish.tune
+man/man1/xdaclunix.1.gz
+man/man1/xdalarm.1.gz
+man/man1/xdcustom.1.gz
+man/man1/xddump.1.gz
+man/man1/xdiary.1.gz
+man/man1/xdinitdb.1.gz
+man/man1/xdlight.1.gz
+man/man1/xdnotify.1.gz
+man/man1/xdprformat.1.gz
+man/man1/xdremind.1.gz
+man/man1/xdremove.1.gz
+man/man1/xdrestore.1.gz
 @dirrm lib/X11/xdiary

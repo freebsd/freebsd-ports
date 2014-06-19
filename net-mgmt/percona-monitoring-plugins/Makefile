@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	percona-monitoring-plugins
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.percona.com/downloads/percona-monitoring-plugins/ \
+MASTER_SITES=	http://www.percona.com/downloads/percona-monitoring-plugins/${PORTVERSION}/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
@@ -28,34 +28,32 @@ PORTDOCS=	Changelog
 
 CACTIDIR?=	share/cacti
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/${doc}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}/${doc}
 .endfor
 .endif
 
-	${MKDIR} ${PREFIX}/share/cacti/scripts
-	${MKDIR} ${PREFIX}/share/percona-monitoring-plugins
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/cacti/scripts
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/percona-monitoring-plugins
 
 .for dir in definitions misc templates
 	cd ${WRKSRC} && ${PAX} -r -w cacti/${dir} \
-		${PREFIX}/share/percona-monitoring-plugins
+		${STAGEDIR}${PREFIX}/share/percona-monitoring-plugins
 .endfor
 
 .for script in ss_get_by_ssh.php ss_get_mysql_stats.php
 	${INSTALL_DATA} ${WRKSRC}/cacti/scripts/${script} \
-		${PREFIX}/share/cacti/scripts/${script}
+		${STAGEDIR}${PREFIX}/share/cacti/scripts/${script}
 .endfor
 
-	${INSTALL_SCRIPT} ${WRKSRC}/cacti/bin/* ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/nagios/bin/* ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cacti/bin/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/nagios/bin/* ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

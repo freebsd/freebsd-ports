@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Tool to recompress JPEG/PNG/GIF
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 CFLAGS+=	-I${LOCALBASE}/include

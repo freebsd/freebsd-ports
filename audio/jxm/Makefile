@@ -15,7 +15,6 @@ COMMENT=	XMPCR (USB XM radio) control software
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/CommDriver.jar:${PORTSDIR}/comms/java-commapi-freebsd
 
 USE_JAVA=	yes
-NO_STAGE=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
@@ -26,7 +25,7 @@ SUB_FILES=	jxm.sh
 PLIST_FILES=	%%JAVAJARDIR%%/jxm.jar bin/jxm
 
 do-install:
-	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${JAVAJARDIR}/jxm.jar
-	@${INSTALL_SCRIPT} ${WRKDIR}/jxm.sh ${PREFIX}/bin/jxm
+	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${JAVAJARDIR}/jxm.jar
+	@${INSTALL_SCRIPT} ${WRKDIR}/jxm.sh ${STAGEDIR}${PREFIX}/bin/jxm
 
 .include <bsd.port.mk>

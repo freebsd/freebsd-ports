@@ -21,10 +21,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensive German HTML reference
 
-WRKSRC=		${WRKDIR}
 
 NO_BUILD=	yes
 USES=		dos2unix zip
+EXTRACT_AFTER_ARGS= -d ${WRKSRC}
 DOS2UNIX_REGEX=	.*\.(css|dhtml|diverses|editorial|grafik|helferlein|htm|inter|intro|javascript|layouts|navigation|perl|php|projekt|quellen|servercgi|src|xml|xls|dtd)$$
 
 PORTDOCS=	\
@@ -49,13 +49,8 @@ PORTDOCS=	\
 		src \
 		xml
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DOCSDIR}
-# line taken from textproc/xerces-j maintained by hq@FreeBSD.org
-# recursively create dirs and install docs
-	@cd ${WRKSRC} && \
-		${FIND} ${PORTDOCS} -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} ${PORTDOCS} -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

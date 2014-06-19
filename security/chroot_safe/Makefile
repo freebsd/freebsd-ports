@@ -13,11 +13,9 @@ COMMENT=	Tool to chroot softwares easily
 
 GNU_CONFIGURE=	YES
 
-MAN1=		chroot_safe.1
-PLIST_FILES=	sbin/chroot_safe libexec/chroot_safe/chroot_safe.so
+PLIST_FILES=	man/man1/chroot_safe.1.gz sbin/chroot_safe libexec/chroot_safe/chroot_safe.so
 PLIST_DIRS=	libexec/chroot_safe
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e  's|CXX=g++|CXX?=c++|' \
 		-e 's|-o chroot_safe.so|chroot_safe.cpp -o chroot_safe.so|' \

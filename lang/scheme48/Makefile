@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scheme48
-PORTVERSION=	1.9
+PORTVERSION=	1.9.2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.s48.org/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -17,10 +17,6 @@ CONFLICTS=	scsh-[0-9]*
 ALL_TARGET=	enough
 USES=		gmake
 GNU_CONFIGURE=	yes
-
-MAN1=		scheme48.1
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -38,8 +34,8 @@ post-patch:
 		-e '/INSTALL.*COPYING/d' \
 		${WRKSRC}/Makefile.in
 .if ${PORT_OPTIONS:MDOCS}
-USE_TEX=        yes
-CONFIGURE_ARGS+=--docdir=${DOCSDIR}
+USE_TEX=	yes
+CONFIGURE_ARGS+=--docdir="${DOCSDIR}"
 .else
 	@${REINPLACE_CMD} \
 		-e 's/install-doc$$//' \
@@ -48,6 +44,6 @@ CONFIGURE_ARGS+=--docdir=${DOCSDIR}
 .endif
 
 test:
-	cd ${WRKSRC}; ${MAKE} check
+	${MAKE} -C ${WRKSRC} check
 
 .include <bsd.port.mk>

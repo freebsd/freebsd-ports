@@ -8,4 +8,4 @@ selection. Methods are available for feature weighting and ranking, data
 resampling, error evaluation and experiment landscaping.The package
 includes tools to measure stability in sets of ranked feature lists.
 
-WWW:	http://mlpy.fbk.eu/
+WWW: http://mlpy.sourceforge.net/

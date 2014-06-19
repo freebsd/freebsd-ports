@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 DISTNAME=	clive-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A command line client for posting LiveJournal entries
+COMMENT=	Command line client for posting LiveJournal entries
 
 USES=		iconv
 GNU_CONFIGURE=	yes

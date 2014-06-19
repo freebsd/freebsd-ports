@@ -18,16 +18,12 @@ SUB_FILES+=	pkg-message
 
 CLAMAV_PID_DIR?=	/var/run/clamav
 
-MAN5=		clamsmtpd.conf.5
-MAN8=		clamsmtpd.8
-
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS LOCAL_CLAMAV
 OPTIONS_DEFAULT=	LOCAL_CLAMAV
 LOCAL_CLAMAV_DESC=		RUN_DEPEND on security/clamav
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLOCAL_CLAMAV}
@@ -45,13 +41,12 @@ post-patch:
 		${WRKSRC}/src/clamsmtpd.c
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/doc/clamsmtpd.conf ${PREFIX}/etc/clamsmtpd.conf-sample
+	@${INSTALL_DATA} ${WRKSRC}/doc/clamsmtpd.conf ${STAGEDIR}${PREFIX}/etc/clamsmtpd.conf-sample
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/virus_action.sh ${EXAMPLESDIR}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/virus_action.sh ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

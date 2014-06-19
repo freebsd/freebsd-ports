@@ -9,7 +9,7 @@ MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OCaml-Java library interface
+COMMENT=	OCaml-Java library interface
 
 USE_OCAML=	yes
 USE_JAVA=	yes

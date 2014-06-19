@@ -3,7 +3,7 @@
 
 PORTNAME=	TestU01
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.iro.umontreal.ca/~simardr/testu01/:0 \
 		http://www.iro.umontreal.ca/~lecuyer/myftp/papers/:1
@@ -13,9 +13,9 @@ EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Utilities for statistical testing of uniform random number generators
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
-USES=		gmake zip
+USES=		gmake zip libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${PREFIX}/include/${PORTNAME}"
 MAKE_ARGS=	docdir="${DOCSDIR}" exdir="${EXAMPLESDIR}"
@@ -26,7 +26,6 @@ CFLAGS+=	-fPIC
 PLIST_SUB=	PORTNAME="${PORTNAME}"
 CONFLICTS=	emboss-[0-9]*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|return|& (0)|' ${WRKSRC}/testu01/fftc.c
@@ -41,7 +40,8 @@ post-patch:
 
 .ifndef(NOPORTDOCS)
 post-install:
-	@${INSTALL_DATA} ${DISTDIR}/testu01.pdf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/testu01.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 check regression-test test: build

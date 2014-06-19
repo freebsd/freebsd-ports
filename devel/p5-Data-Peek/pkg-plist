@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Peek.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Peek/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Peek/Peek.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Peek/Peek.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Peek
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes
 ALL_TARGET=	build
+MAKE_ENV=	LANG=en_US.ISO8859-1
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc
 .endif

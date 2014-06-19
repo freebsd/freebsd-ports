@@ -9,18 +9,16 @@ MASTER_SITES=	SF/kawari/kawari/${PORTVERSION}
 DISTNAME=	kawari-${PORTVERSION:S/.//g}
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
-COMMENT=	A real kawari8 module for ninix-aya
+COMMENT=	Real kawari8 module for ninix-aya
 
-EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	ninix:${PORTSDIR}/games/ninix-aya
 
-EXTRACT_CMD=	${UNZIP_CMD}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
 PLIST_SUB=	LOCALBASE=${LOCALBASE}
 
-USES=		gmake zip:infozip
+USES=		gmake zip
 USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/kawari-${PORTVERSION:S/.//g}

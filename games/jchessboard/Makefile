@@ -30,6 +30,8 @@ PORTDOCS=	*
 
 JARFILE=	JChessBoard.jar
 
+MAKE_ENV=	LANG=en_US.ISO8859-1
+
 .include <bsd.port.options.mk>
 
 do-install:

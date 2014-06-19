@@ -14,7 +14,7 @@ DIST_SUBDIR=	gmsh
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	An automatic 3D finite element mesh generator
+COMMENT=	Automatic 3D finite element mesh generator
 
 LICENSE=	GPLv2
 

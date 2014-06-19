@@ -1,6 +1,6 @@
---- camlp4/man/Makefile.orig	2010-11-04 21:04:51.000000000 +0800
-+++ camlp4/man/Makefile	2010-11-04 21:05:14.000000000 +0800
-@@ -3,7 +3,6 @@
+--- camlp4/man/Makefile.orig	2012-07-17 11:31:12.000000000 -0400
++++ camlp4/man/Makefile	2013-11-21 03:16:26.000000000 -0500
+@@ -14,7 +14,6 @@
  include ../config/Makefile.cnf
  
  TARGET=camlp4.1
@@ -8,7 +8,7 @@
  
  include ../config/Makefile.base
  
-@@ -11,10 +10,6 @@
+@@ -22,10 +21,6 @@
  	if test -n '$(MANDIR)'; then \
  	  $(MKDIR) $(MANDIR)/man1 ; \
  	  cp $(TARGET) $(MANDIR)/man1/. ; \

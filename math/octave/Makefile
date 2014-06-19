@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	octave
-PORTVERSION=	3.8.0
-PORTREVISION=	6
+PORTVERSION=	3.8.1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick13 \
+LIB_DEPENDS=	libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick \
 		libarpack.so:${PORTSDIR}/math/arpack \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
@@ -33,7 +33,8 @@ LIB_DEPENDS=	libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick13 \
 		libqrupdate.so:${PORTSDIR}/math/qrupdate \
 		libumfpack.so:${PORTSDIR}/math/suitesparse \
 		libglpk.so:${PORTSDIR}/math/glpk \
-		libgl2ps.so:${PORTSDIR}/print/gl2ps
+		libgl2ps.so:${PORTSDIR}/print/gl2ps \
+		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
@@ -41,7 +42,7 @@ USE_TEX=	dvipsk:build
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
-USE_QT4=	gui network
+USE_QT4=	gui network uic_build moc_build rcc_build linguist_build
 
 OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}

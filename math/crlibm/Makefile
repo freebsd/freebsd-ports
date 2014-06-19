@@ -25,7 +25,6 @@ OPTIONS_DEFINE=	TEST
 OPTIONS_DEFAULT=	TEST
 TEST_DESC=	Include all test capabilities (requires MPFR)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if make(makesum) || ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	crlibm-1.0beta3.pdf:2,4 tripledoubleprocedures-1.0beta3.pdf:3,4
@@ -49,7 +48,7 @@ CONFIGURE_ARGS+=	--enable-sse2
 
 .if ${PORT_OPTIONS:MTEST}
 CONFIGURE_ARGS+=	--enable-mpfr
-LIB_DEPENDS+=		mpfr.4:${PORTSDIR}/math/mpfr
+LIB_DEPENDS+=		libmpfr.so:${PORTSDIR}/math/mpfr
 .else
 CONFIGURE_ARGS+=	--disable-mpfr
 .endif
@@ -62,8 +61,8 @@ check regression-test test: build
 PORTDOCS=	${DISTFILES:C|\:.*||:M*.pdf}
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .endif
 

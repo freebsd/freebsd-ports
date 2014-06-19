@@ -13,7 +13,7 @@ DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} ${GADISTFILES}
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	vbox@FreeBSD.org
-COMMENT=	A general-purpose full virtualizer for x86 hardware
+COMMENT=	General-purpose full virtualizer for x86 hardware
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

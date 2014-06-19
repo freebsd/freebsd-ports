@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	An immensely fast JPEG thumbnailing library
+COMMENT=	Immensely fast JPEG thumbnailing library
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

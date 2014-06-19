@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	mons@cpan.org
-COMMENT=	A class that provides an event callback interface
+COMMENT=	Class that provides an event callback interface
 
 RUN_DEPENDS=	p5-AnyEvent>=3.5:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense

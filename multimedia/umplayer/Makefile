@@ -12,8 +12,7 @@ COMMENT=	Modern front-end for MPlayer (fork of SMPlayer)
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-USES=		gmake qmake
-USE_XZ=		yes
+USES=		gmake qmake tar:xz
 USE_QT4=	gui network xml moc_build rcc_build uic_build \
 		linguist_build
 INSTALLS_ICONS=	yes

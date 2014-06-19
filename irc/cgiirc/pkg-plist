@@ -1,7 +1,9 @@
-@unexec if cmp -s %D/www/cgiirc/cgiirc.config %D/www/cgiirc/cgiirc.config.sample; then rm -f %D/www/cgiirc/cgiirc.config; fi
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@sample www/cgiirc/cgiirc.config.sample
+www/cgiirc/.htaccess
 www/cgiirc/README
 www/cgiirc/cgiirc.config.full
-www/cgiirc/cgiirc.config.sample
 www/cgiirc/client-perl.cgi
 www/cgiirc/client.c
 www/cgiirc/docs/CHANGES
@@ -129,3 +131,5 @@ www/cgiirc/nph-irc.cgi
 @dirrm www/cgiirc/formats
 @dirrm www/cgiirc/docs
 @dirrmtry www/cgiirc
+@owner root
+@group wheel

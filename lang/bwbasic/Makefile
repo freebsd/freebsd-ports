@@ -20,18 +20,16 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} 's|bindir)|DESTDIR)$$(&|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.doc ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/bwbtest; ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.doc ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/bwbtest; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ INFO=		cvs cvsclient
 
 # bsd.stage.makes sets the wrong value for DESTDIR
 DESTDIRNAME=	NADA
-MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX} MK_KERBEROS_SUPPORT=yes
+MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.pre.mk>
 

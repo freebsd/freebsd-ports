@@ -92,7 +92,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/allkeys.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/keys.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Collate/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Collate/Collate.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Collate/Collate.so
 %%PERL5_MAN3%%/Unicode::Collate.3.gz
 %%PERL5_MAN3%%/Unicode::Collate::CJK::Big5.3.gz

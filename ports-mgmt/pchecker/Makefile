@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	pchecker
-PORTVERSION=	1.15
-PORTREVISION=	1
+PORTVERSION=	1.16
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	ak-various-projects
+MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Tool that checks the ports tree for various errors

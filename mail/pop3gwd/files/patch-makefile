@@ -1,12 +1,12 @@
-# $OpenBSD: patch-makefile,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
---- Makefile.orig	Thu Jun 19 19:06:28 1997
-+++ Makefile	Wed Dec 29 12:25:33 1999
-@@ -3,22 +3,23 @@
+--- Makefile.orig	1997-06-19 11:06:28.000000000 +0200
++++ Makefile	2014-06-05 12:12:33.861436472 +0200
+@@ -2,25 +2,26 @@
+ # -------------------
  
  
 -CC=gcc
-+#CC=gcc
 -CFLAGS= -O2
++#CC=gcc
 +CFLAGS+= -Wall
  MODULES=main.o parse_cmd_line.o get_remote_data.o connect_login.o io.o relay_data.o
  DOCS=README COPYING HISTORY
@@ -27,7 +27,11 @@
  install:
 -	make
 -	cp -f in.pop3gwd $(INSTALL_DIR)/
-+	cp -f in.pop3gwd $(INSTALL_DIR)/pop3gwd
- 	[ -d $(DOC_DIR) ] || mkdir $(DOC_DIR)
- 	cp -f $(DOCS) $(DOC_DIR)
+-	[ -d $(DOC_DIR) ] || mkdir $(DOC_DIR)
+-	cp -f $(DOCS) $(DOC_DIR)
++	$(BSD_INSTALL_PROGRAM) in.pop3gwd $(DESTDIR)$(INSTALL_DIR)/pop3gwd
++	[ -d $(DOC_DIR) ] || mkdir $(DESTDIR)$(DOC_DIR)
++	$(BSD_INSTALL_DATA) $(DOCS) $(DESTDIR)$(DOC_DIR)
  
+ main.o:	pop3-gw.h main.c
+ 	$(CC) $(CFLAGS) -c -o main.o main.c

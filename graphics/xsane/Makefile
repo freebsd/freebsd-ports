@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
 LICENSE=	GPLv2
@@ -39,12 +39,9 @@ GIMP_RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp2 gimp
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
-.endif
 
 .if ${PORT_OPTIONS:MGIMP}
 SUB_FILES+=	pkg-message

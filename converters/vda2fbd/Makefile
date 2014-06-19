@@ -7,7 +7,7 @@ CATEGORIES=	converters cad
 MASTER_SITES=	http://www.dhondt.de/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An add-on converter for CalculiX
+COMMENT=	Add-on converter for CalculiX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

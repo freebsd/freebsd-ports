@@ -22,22 +22,22 @@ PORTDOCS=	README history todo
 
 DOS2UNIX_REGEX=	.+\.[^j][^a][^r]$
 
-NO_STAGE=	yes
 do-configure:
 		${SED} -e "s|%%JAVA%%|${LOCALBASE}/bin/java|" \
 		-e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|" \
 		${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}
 
 do-install:
-		${INSTALL} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-		${INSTALL_DATA} ${WRKSRC}/scloader.jar ${JAVAJARDIR}
+		${INSTALL} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+		${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+		${INSTALL_DATA} ${WRKSRC}/scloader.jar ${STAGEDIR}${JAVAJARDIR}
 .ifndef	NOPORTDOCS
-		${MKDIR} ${DOCSDIR}
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-		${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/samples/loader.cnf ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${STAGEDIR}${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/samples/loader.cnf ${STAGEDIR}${DOCSDIR}
 PORTDOCS+=	manual.html loader.cnf
 .endif
 

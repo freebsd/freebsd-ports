@@ -1,6 +1,6 @@
---- Makefile.in.old	Tue Dec 28 15:12:47 1999
-+++ Makefile.in	Tue Dec 28 15:12:59 1999
-@@ -23,7 +23,7 @@
+--- Makefile.in.orig	1999-07-18 03:03:14.000000000 +0800
++++ Makefile.in	2014-06-08 23:21:27.239061744 +0800
+@@ -23,7 +23,7 @@ includedir = @includedir@
  
  CFLAGS = @CFLAGS@
  
@@ -9,3 +9,14 @@
  DEFS=@DEFS@
  LIBS=@LIBS@
  INSTALL= @INSTALL@
+@@ -49,8 +49,8 @@ br_cmd.o: ${srcdir}/br_cmd.c ${srcdir}/b
+ 	${CC} ${CFLAGS} ${DEFS} -c ${srcdir}/br_cmd.c
+ 
+ install: br
+-	${INSTALL} -d -m 755 ${bindir}
+-	${INSTALL} -m 555 br ${bindir}
++	${INSTALL} -d -m 755 $(DESTDIR)${bindir}
++	${INSTALL} -m 555 br $(DESTDIR)${bindir}
+ 
+ clean:
+ 	-rm -f *.o br

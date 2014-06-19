@@ -3,7 +3,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	14.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 CONFLICTS=	play-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig libtool:keepla
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal autoconf automake libltdl
 

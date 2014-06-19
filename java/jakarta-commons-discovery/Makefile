@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A Java library for locating resources (including classes)
+COMMENT=	Java library for locating resources (including classes)
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+

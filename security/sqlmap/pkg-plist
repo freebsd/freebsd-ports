@@ -668,74 +668,68 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/phpids_rules.xml
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/queries.xml
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/sqlmap.xsd
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/README.pdf
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%DATADIR%%/msfauxmod/README.txt
-%%DATADIR%%/msfauxmod/sqlmap.rb
-%%DATADIR%%/runcmd/README.txt
-%%DATADIR%%/runcmd/windows/README.txt
-%%DATADIR%%/runcmd/windows/runcmd.sln
-%%DATADIR%%/runcmd/windows/runcmd/runcmd.cpp
-%%DATADIR%%/runcmd/windows/runcmd/runcmd.vcproj
-%%DATADIR%%/runcmd/windows/runcmd/stdafx.cpp
-%%DATADIR%%/runcmd/windows/runcmd/stdafx.h
-%%DATADIR%%/udfhack/README.txt
-%%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys/Makefile
-%%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys/install.sh
-%%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys/lib_mysqludf_sys.c
-%%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys/lib_mysqludf_sys.sql
-%%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys/Makefile
-%%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys/install.sh
-%%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys/lib_postgresqludf_sys.c
-%%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys/lib_postgresqludf_sys.sql
-%%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys/Makefile
-%%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys/install.sh
-%%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys/lib_mysqludf_sys.c
-%%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys/lib_mysqludf_sys.sql
-%%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys/Makefile
-%%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys/install.sh
-%%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys/lib_postgresqludf_sys.c
-%%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys/lib_postgresqludf_sys.sql
-%%DATADIR%%/udfhack/linux/README.txt
-%%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys.sln
-%%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.c
-%%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.vcproj
-%%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys.sln
-%%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys/lib_postgresqludf_sys.c
-%%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys/lib_postgresqludf_sys.vcproj
-%%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys.sln
-%%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/__exec_payload.asm
-%%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.c
-%%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.vcproj
-%%DATADIR%%/udfhack/windows/64/lib_postgresqludf_sys/README.txt
-%%DATADIR%%/udfhack/windows/README.txt
-@dirrm %%DATADIR%%/udfhack/windows/64/lib_postgresqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/64
-@dirrm %%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/32
-@dirrm %%DATADIR%%/udfhack/windows
-@dirrm %%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys
-@dirrm %%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys
-@dirrm %%DATADIR%%/udfhack/linux/64
-@dirrm %%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys
-@dirrm %%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys
-@dirrm %%DATADIR%%/udfhack/linux/32
-@dirrm %%DATADIR%%/udfhack/linux
-@dirrm %%DATADIR%%/udfhack
-@dirrm %%DATADIR%%/runcmd/windows/runcmd
-@dirrm %%DATADIR%%/runcmd/windows
-@dirrm %%DATADIR%%/runcmd
-@dirrm %%DATADIR%%/msfauxmod
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/sqlmap/msfauxmod/README.txt
+share/sqlmap/msfauxmod/sqlmap.rb
+share/sqlmap/runcmd/README.txt
+share/sqlmap/runcmd/windows/README.txt
+share/sqlmap/runcmd/windows/runcmd.sln
+share/sqlmap/runcmd/windows/runcmd/runcmd.cpp
+share/sqlmap/runcmd/windows/runcmd/runcmd.vcproj
+share/sqlmap/runcmd/windows/runcmd/stdafx.cpp
+share/sqlmap/runcmd/windows/runcmd/stdafx.h
+share/sqlmap/udfhack/README.txt
+share/sqlmap/udfhack/linux/32/lib_mysqludf_sys/Makefile
+share/sqlmap/udfhack/linux/32/lib_mysqludf_sys/install.sh
+share/sqlmap/udfhack/linux/32/lib_mysqludf_sys/lib_mysqludf_sys.c
+share/sqlmap/udfhack/linux/32/lib_mysqludf_sys/lib_mysqludf_sys.sql
+share/sqlmap/udfhack/linux/32/lib_postgresqludf_sys/Makefile
+share/sqlmap/udfhack/linux/32/lib_postgresqludf_sys/install.sh
+share/sqlmap/udfhack/linux/32/lib_postgresqludf_sys/lib_postgresqludf_sys.c
+share/sqlmap/udfhack/linux/32/lib_postgresqludf_sys/lib_postgresqludf_sys.sql
+share/sqlmap/udfhack/linux/64/lib_mysqludf_sys/Makefile
+share/sqlmap/udfhack/linux/64/lib_mysqludf_sys/install.sh
+share/sqlmap/udfhack/linux/64/lib_mysqludf_sys/lib_mysqludf_sys.c
+share/sqlmap/udfhack/linux/64/lib_mysqludf_sys/lib_mysqludf_sys.sql
+share/sqlmap/udfhack/linux/64/lib_postgresqludf_sys/Makefile
+share/sqlmap/udfhack/linux/64/lib_postgresqludf_sys/install.sh
+share/sqlmap/udfhack/linux/64/lib_postgresqludf_sys/lib_postgresqludf_sys.c
+share/sqlmap/udfhack/linux/64/lib_postgresqludf_sys/lib_postgresqludf_sys.sql
+share/sqlmap/udfhack/linux/README.txt
+share/sqlmap/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys.sln
+share/sqlmap/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.c
+share/sqlmap/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.vcproj
+share/sqlmap/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys.sln
+share/sqlmap/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys/lib_postgresqludf_sys.c
+share/sqlmap/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys/lib_postgresqludf_sys.vcproj
+share/sqlmap/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys.sln
+share/sqlmap/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/__exec_payload.asm
+share/sqlmap/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.c
+share/sqlmap/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.vcproj
+share/sqlmap/udfhack/windows/64/lib_postgresqludf_sys/README.txt
+share/sqlmap/udfhack/windows/README.txt
+@dirrm share/sqlmap/udfhack/windows/64/lib_postgresqludf_sys
+@dirrm share/sqlmap/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys
+@dirrm share/sqlmap/udfhack/windows/64/lib_mysqludf_sys
+@dirrm share/sqlmap/udfhack/windows/64
+@dirrm share/sqlmap/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys
+@dirrm share/sqlmap/udfhack/windows/32/lib_postgresqludf_sys
+@dirrm share/sqlmap/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys
+@dirrm share/sqlmap/udfhack/windows/32/lib_mysqludf_sys
+@dirrm share/sqlmap/udfhack/windows/32
+@dirrm share/sqlmap/udfhack/windows
+@dirrm share/sqlmap/udfhack/linux/64/lib_postgresqludf_sys
+@dirrm share/sqlmap/udfhack/linux/64/lib_mysqludf_sys
+@dirrm share/sqlmap/udfhack/linux/64
+@dirrm share/sqlmap/udfhack/linux/32/lib_postgresqludf_sys
+@dirrm share/sqlmap/udfhack/linux/32/lib_mysqludf_sys
+@dirrm share/sqlmap/udfhack/linux/32
+@dirrm share/sqlmap/udfhack/linux
+@dirrm share/sqlmap/udfhack
+@dirrm share/sqlmap/runcmd/windows/runcmd
+@dirrm share/sqlmap/runcmd/windows
+@dirrm share/sqlmap/runcmd
+@dirrm share/sqlmap/msfauxmod
+@dirrm share/sqlmap
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/xml/banner
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/xml
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/64/8.4

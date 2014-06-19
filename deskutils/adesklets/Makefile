@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28core%29/${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	An interactive Imlib2 console for the X Window system
+COMMENT=	Interactive Imlib2 console for the X Window system
 
 RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 

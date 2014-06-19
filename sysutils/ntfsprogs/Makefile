@@ -2,7 +2,7 @@
 
 PORTNAME=	ntfsprogs
 PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/linux-ntfs/NTFS%20Tools%20and%20Library/${PORTVERSION}
 
@@ -13,14 +13,15 @@ LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=	fusefs-ntfs-*
 
-USE_BZIP2=	yes
-USES=		fuse pkgconfig
+USES=		fuse pkgconfig libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	GNOMEVFS2 LOCK UBLIO UUID
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	GNOMEVFS2 LOCK UBLIO UUID DOCS
 OPTIONS_DEFAULT=LOCK UBLIO
 
 GNOMEVFS2_DESC=	Install GnomeVFS 2.0 libntfs interface
@@ -28,15 +29,8 @@ LOCK_DESC=	Lock the device when mounting (avoids access)
 UBLIO_DESC=	Enable user space cache for improved speed
 UUID_DESC=	Generate DCE compliant UUIDs
 
-MAN8=	libntfs.8 libntfs-gnomevfs.8 mkntfs.8 \
-	ntfscat.8 ntfsclone.8 ntfscluster.8 ntfscmp.8 \
-	ntfscp.8 ntfsfix.8 ntfsinfo.8 ntfslabel.8 ntfsls.8 ntfsmount.8 \
-	ntfsprogs.8 ntfsresize.8 ntfsundelete.8
-MLINKS=	ntfsmount.8 mount_ntfs-fuse.8
-
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOMEVFS2}
@@ -63,14 +57,14 @@ CFLAGS+=	-DUSE_LOCK
 .endif
 
 .if ${PORT_OPTIONS:MUUID}
-LIB_DEPENDS+=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS+=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 CONFIGURE_ARGS+=--enable-uuid
 .else
 CONFIGURE_ARGS+=--disable-uuid
 .endif
 
 .if ${PORT_OPTIONS:MUBLIO}
-LIB_DEPENDS+=	ublio:${PORTSDIR}/devel/libublio
+LIB_DEPENDS+=	libublio.so:${PORTSDIR}/devel/libublio
 CFLAGS+=	-DUSE_UBLIO
 .else
 pre-everything::
@@ -86,11 +80,8 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
-.endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

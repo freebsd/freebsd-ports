@@ -3,8 +3,7 @@
 
 PORTNAME=	ibus-anthy
 PORTVERSION=	1.2.7
-PORTREVISION=	3
-PORTEPOCH=	1
+PORTREVISION=	4
 CATEGORIES=	japanese
 PROJECTHOST=	ibus
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
+USES=		libtool gettext gmake pkgconfig
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 
@@ -32,7 +31,6 @@ INCLUDEDIR_REPLACE_FILES= \
 		engine/Makefile.am \
 		engine/Makefile.in
 
-NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && \
                 ${REINPLACE_CMD} "s,@@LOCALBASE@@,${LOCALBASE},g" \
@@ -41,7 +39,6 @@ post-patch:
                 ${INCLUDEDIR_REPLACE_FILES}
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} To display this message again, type ${PKG_INFO} -D ${PKGNAME}
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_anthy.so
 
 .include <bsd.port.mk>

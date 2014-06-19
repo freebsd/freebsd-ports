@@ -22,10 +22,9 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 USES+=		gmake pkgconfig tar:bzip2
 DESTDIRNAME=	DSTROOT
 GNU_CONFIGURE=	yes
-CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-DSOFLAGS=	-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib ${LDFLAGS}
+DSOFLAGS=	-Wl,-rpath,${PREFIX}/lib ${LDFLAGS} ${LIBS}
 CONFIGURE_ENV=	DSOFLAGS="${DSOFLAGS}"
 CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--disable-gssapi			\
@@ -80,7 +79,7 @@ COMMENT2=	Library cups
 INSTALL_WRKSRC=	${WRKSRC}/cups
 PLIST=		${MASTERDIR}/pkg-plist.client
 USES+=		iconv
-LDFLAGS+=	${ICONV_LIB}
+LIBS+=		${ICONV_LIB}
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.client
@@ -189,8 +188,6 @@ RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBUSB}
-CPPFLAGS+=		-I/usr/include
-LDFLAGS+=		-L/usr/lib
 CONFIGURE_ARGS+=	--enable-libusb
 .else
 CONFIGURE_ARGS+=	--disable-libusb
@@ -204,7 +201,9 @@ PLIST_SUB+=		WITH_ICONS=""
 PLIST_SUB+=		WITH_ICONS="@comment "
 .endif
 
-CONFIGURE_ARGS+=	LIBS="-lssp_nonshared"
+.if ${OSVERSION} < 1000036 && ${ARCH} == i386
+LIBS+=		-lssp_nonshared
+.endif
 
 .if ! defined(CUPS_CLIENT) && ! defined(CUPS_IMAGE)
 SUB_FILES+=	ulpt-cupsd.conf ulpt-cupsd.sh

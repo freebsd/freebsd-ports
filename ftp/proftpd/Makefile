@@ -100,8 +100,8 @@ PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 .include <bsd.port.options.mk>
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
-CFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
-PROFTPD_LIBS+=	-lssl -lcrypto -L${OPENSSLLIB}
+CPPFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
+LIBS+=		-lssl -lcrypto -L${OPENSSLLIB}
 .endif
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
@@ -180,7 +180,7 @@ MODULES+=		mod_memcache \
 			mod_tls_memcache
 LIB_DEPENDS+=		libmemcached.so:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=	--enable-memcache
-PROFTPD_LIBS+=		-L${LOCALBASE}/lib -lmemcached -lmemcachedutil
+LIBS+=			-L${LOCALBASE}/lib -lmemcached -lmemcachedutil
 PLIST_SUB+=	MEMCACHE=""
 .else
 CONFIGURE_ARGS+=	--disable-memcache
@@ -193,7 +193,6 @@ _MODULES:=${_MODULES}:${m}
 .endfor
 
 # Keep this here below, in case similar constructs need to be made
-CONFIGURE_ENV+=		LIBS="${PROFTPD_LIBS}"
 CONFIGURE_ARGS+=	--with-shared=${_MODULES:C/^://g}
 
 .endif #!defined(_BUILDING_PROFTPD_MODULE)

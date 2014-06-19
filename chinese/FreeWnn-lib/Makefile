@@ -4,7 +4,7 @@
 CATEGORIES=	chinese
 PKGNAMESUFFIX=	-lib
 
-COMMENT=	A Japanese/Chinese/Korean input method (Chinese client libraries)
+COMMENT=	Japanese/Chinese/Korean input method (Chinese client libraries)
 
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
 PKGDIR=		${.CURDIR}

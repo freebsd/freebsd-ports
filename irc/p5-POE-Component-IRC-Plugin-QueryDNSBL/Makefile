@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A POE::Component::IRC plugin for IRC based DNSBL queries
+COMMENT=	POE::Component::IRC plugin for IRC based DNSBL queries
 
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Component-IRC>=6.68:${PORTSDIR}/irc/p5-POE-Component-IRC \

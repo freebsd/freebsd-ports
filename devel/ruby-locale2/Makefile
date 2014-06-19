@@ -11,7 +11,7 @@ DISTNAME=	ruby-locale-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A pure ruby library which provides basic APIs for localization
+COMMENT=	Pure ruby library which provides basic APIs for localization
 
 CONFLICTS=	${PKGNAMEPREFIX}locale-[0-9]*
 

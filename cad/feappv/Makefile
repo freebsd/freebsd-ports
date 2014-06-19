@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX} ${PORTDOCS}
 DIST_SUBDIR=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 
-MAINTAINER=	mexas@bris.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite element analysis program (personal version)
 
 USES=		fortran gmake zip

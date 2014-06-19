@@ -14,9 +14,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/php/geshi/geshi.php:${PORTSDIR}/devel/php5-geshi
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+USES=		drupal:6,module
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
 MODULE_DIRS=	geshi-extra tests translations
 MODULE_FILES=	geshi-extra/drupal5.php geshi-extra/drupal6.php \
 		geshifilter.admin.inc geshifilter.conflicts.inc \

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	caudium14
-PORTVERSION=	1.4.18
-PORTREVISION=	1
+PORTVERSION=	${DISTVERSION}.${PIKEVERSION}
+DISTVERSION=	1.4.18
 CATEGORIES=	www
 MASTER_SITES=	http://caudium.googlecode.com/files/
-DISTNAME=	Caudium-${PORTVERSION}
+DISTNAME=	Caudium-${DISTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Free webserver based on the Roxen Challenger 1.3 code base
@@ -17,7 +17,7 @@ RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
 USES=		tar:bzip2 gmake
 
-PIKEVERSION=	7.8.852
+# Pike version included from lang/pike78
 SUB_LIST+=	PIKEVERSION=${PIKEVERSION}
 PLIST_SUB+=	PIKEVERSION=${PIKEVERSION}
 
@@ -54,4 +54,5 @@ post-configure:
 . endfor
 .endif
 
+.include "../../lang/pike78/Makefile.common"
 .include <bsd.port.post.mk>

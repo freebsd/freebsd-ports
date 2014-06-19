@@ -1,13 +1,11 @@
 --- ipc/chromium/Makefile.in~
 +++ ipc/chromium/Makefile.in
-@@ -55,9 +60,7 @@ vpath %.c \
-   $(srcdir)/src/third_party/libevent \
-   $(NULL)
- else # } else {
--# message_pump_libevent.cc includes third_party/libevent/event.h,
--# which we put in $(DIST), see export rule below
--LOCAL_INCLUDES += -I$(DIST)
-+LOCAL_INCLUDES += $(filter %/compat, $(MOZ_LIBEVENT_CFLAGS))
- endif # }
+@@ -28,6 +28,8 @@ include $(topsrcdir)/config/rules.mk
  
- vpath %.cc \
+ ifdef MOZ_NATIVE_LIBEVENT # {
+ 
++OS_CPPFLAGS += $(filter %/compat, $(MOZ_LIBEVENT_CFLAGS))
++
+ export-preqs = \
+   $(call mkdir_deps,$(CURDIR)/third_party/libevent) \
+   $(NULL)

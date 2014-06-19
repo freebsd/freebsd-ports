@@ -8,17 +8,16 @@ MASTER_SITES=	SF/rox/rox/${PORTVERSION}
 DISTNAME=	rox-filer-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A simple and easy to use graphical file manager
+COMMENT=	Simple and easy to use graphical file manager
 
 RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 USE_AUTOTOOLS=	autoconf213
-USE_BZIP2=	yes
 USE_XORG=	x11 sm xaw xproto
 USE_GNOME=	atk gconf2 glib20 gnomevfs2 gtk20 libglade2 libidl libxml2 orbit2 pango
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

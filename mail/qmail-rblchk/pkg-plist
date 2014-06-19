@@ -1,0 +1,8 @@
+bin/getsenderip
+bin/qmail-rblchk
+man/man1/getsenderip.1.gz
+man/man1/qmail-rblchk.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-qmail-storeip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rbllist.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spam-report.sh
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

@@ -29,6 +29,13 @@ share/help/de/hitori/index.page
 share/help/de/hitori/license.page
 share/help/de/hitori/playing.page
 share/help/de/hitori/strategy.page
+share/help/el/hitori/customization.page
+share/help/el/hitori/figures/hitori_main_window.png
+share/help/el/hitori/game.page
+share/help/el/hitori/index.page
+share/help/el/hitori/license.page
+share/help/el/hitori/playing.page
+share/help/el/hitori/strategy.page
 share/help/en_GB/hitori/customization.page
 share/help/en_GB/hitori/figures/hitori_main_window.png
 share/help/en_GB/hitori/game.page
@@ -129,6 +136,9 @@ share/pixmaps/hitori.png
 @dirrm share/help/de/hitori/figures
 @dirrm share/help/de/hitori
 @dirrmtry share/help/de
+@dirrm share/help/el/hitori/figures
+@dirrm share/help/el/hitori
+@dirrmtry share/help/el
 @dirrm share/help/en_GB/hitori/figures
 @dirrm share/help/en_GB/hitori
 @dirrmtry share/help/en_GB
@@ -149,9 +159,9 @@ share/pixmaps/hitori.png
 @dirrmtry share/help/sl
 @dirrm share/help/sv/hitori/figures
 @dirrm share/help/sv/hitori
-@dirrm share/help/sv
-@dirrmtry share/help/zh_CN/hitori/figures
-@dirrmtry share/help/zh_CN/hitori
-@dirrm share/help/zh_CN
+@dirrmtry share/help/sv
+@dirrm share/help/zh_CN/hitori/figures
+@dirrm share/help/zh_CN/hitori
+@dirrmtry share/help/zh_CN
 @dirrmtry share/help
 @dirrm %%DATADIR%%

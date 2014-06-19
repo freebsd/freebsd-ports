@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.java
 EXTRACT_ONLY=	#
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lexical analyzer generator, written for Java, in Java
+COMMENT=	Lexical analyzer generator, written for Java, in Java
 
 PLIST_FILES=	%%JAVAJARDIR%%/jlex.jar bin/jlex
 USE_JAVA=	yes
@@ -20,7 +20,6 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	jlex.sh pkg-message
 SUB_LIST=	JAVAJARDIR=${JAVAJARDIR}
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -32,12 +31,7 @@ do-build:
 		${JAR} cf ${PORTNAME}.jar JLex/*.class
 
 do-install:
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/jlex.sh ${PREFIX}/bin/jlex
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/jlex.sh ${STAGEDIR}${PREFIX}/bin/jlex
 
 .include <bsd.port.mk>

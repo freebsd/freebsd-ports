@@ -100,9 +100,9 @@ USES+=			perl5
 USE_PERL5=		run
 USE_OPENLDAP=		yes
 USE_AUTOTOOLS=		aclocal libtoolize autoconf autoheader automake
-LIBTOOLIZE_ARG=		--copy --force
 AUTOMAKE_ARGS=		--foreign --add-missing --copy
-CFLAGS+=		-I${PREFIX}/include -L${PREFIX}/lib
+CPPFLAGS+=		-I${LOCALBASE}/include
+LIBS+=			-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-ldap
 .else
 PLIST_SUB+=	LDAP="@comment "
@@ -112,7 +112,7 @@ PLIST_SUB+=	LDAP="@comment "
 .if ${PORT_OPTIONS:MLDAP_SSL} && ${PORT_OPTIONS:MLDAP}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ldapcrypto
-CONFIGURE_ENV+=	LIBS="-lssl"
+LIBS+=		-lssl
 # hack to get bsd.openssl.mk included at this late state
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif

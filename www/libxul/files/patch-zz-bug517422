@@ -178,7 +178,7 @@ index 87db361..7947626 100644
  dnl = Disable Opus audio codec support
  dnl ========================================================
  MOZ_ARG_DISABLE_BOOL(opus,
-@@ -5219,6 +5274,76 @@ MOZ_ARG_DISABLE_BOOL(opus,
+@@ -5219,6 +5274,97 @@ MOZ_ARG_DISABLE_BOOL(opus,
      MOZ_OPUS=1)
  
  dnl ========================================================
@@ -245,6 +245,27 @@ index 87db361..7947626 100644
 +
 +if test -n "$MOZ_NATIVE_SOUNDTOUCH"; then
 +    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.7.0)
++
++    AC_LANG_SAVE
++    AC_LANG_CPLUSPLUS
++    _SAVE_CXXFLAGS=$CXXFLAGS
++    CXXFLAGS="$CXXFLAGS $MOZ_SOUNDTOUCH_CFLAGS"
++    AC_CACHE_CHECK(for soundtouch sample type,
++                   ac_cv_soundtouch_sample_type,
++                   [AC_TRY_COMPILE([#include <SoundTouch.h>
++                                    #ifndef SOUNDTOUCH_INTEGER_SAMPLES
++                                    #error soundtouch expects float samples
++                                    #endif],
++                                   [],
++                                   [ac_cv_soundtouch_sample_type=short],
++                                   [ac_cv_soundtouch_sample_type=float])])
++    CXXFLAGS=$_SAVE_CXXFLAGS
++    AC_LANG_RESTORE
++
++    if test \( -n "$MOZ_SAMPLE_TYPE_S16" -a "$ac_cv_soundtouch_sample_type" != short \) \
++         -o \( -n "$MOZ_SAMPLE_TYPE_FLOAT32" -a "$ac_cv_soundtouch_sample_type" != float \) ; then
++        AC_MSG_ERROR([SoundTouch library is built with incompatible sample type. Either rebuild the library with/without --enable-integer-samples, chase default Mozilla sample type or remove --with-system-soundtouch.])
++    fi
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_SOUNDTOUCH)

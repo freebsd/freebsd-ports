@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	frescobaldi
-PORTVERSION=	2.0.8
-PORTREVISION=	4
+PORTVERSION=	2.0.15
 CATEGORIES=	print kde
-MASTER_SITES=	http://cloud.github.com/downloads/wbsoft/frescobaldi/
+MASTER_SITES=	https://github.com/wbsoft/frescobaldi/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Music score editor for lilypond
@@ -21,6 +20,9 @@ INSTALLS_ICONS=	yes
 USE_KDE4=	kdeprefix kdelibs pykde4_build pykde4_run
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=yes
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} '/install-script=frescobaldi-wininst.py/d' ${WRKSRC}/setup.cfg
+
 .include <bsd.port.mk>

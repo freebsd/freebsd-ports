@@ -13,5 +13,5 @@ $FreeBSD$
 +	cat moria1.txt moria2.txt > moria.txt
 +
 +install: moria.ms moria.txt
-+	${MKDIR} ${DOCSDIR}
-+	${BSD_INSTALL_DATA} ${FILES} ${DOCSDIR}
++	${MKDIR} ${STAGEDIR}${DOCSDIR}
++	${BSD_INSTALL_DATA} ${FILES} ${STAGEDIR}${DOCSDIR}

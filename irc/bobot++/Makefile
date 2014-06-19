@@ -7,7 +7,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An IRC bot written in C++
+COMMENT=	IRC bot written in C++
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

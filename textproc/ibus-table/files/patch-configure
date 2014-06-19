@@ -1,0 +1,12 @@
+--- configure~	2013-01-15 22:54:43.000000000 +0100
++++ configure	2014-06-10 03:27:20.000000000 +0400
+@@ -5594,8 +5594,7 @@
+       fi
+     fi
+ 
+-    if test "$gt_use_preinstalled_gnugettext" = "yes" \
+-       || test "$nls_cv_use_gnu_gettext" = "yes"; then
++    if test "$USE_NLS" = "yes"; then
+ 
+ $as_echo "#define ENABLE_NLS 1" >>confdefs.h
+ 

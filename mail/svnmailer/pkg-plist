@@ -104,6 +104,7 @@ bin/svn-mailer
 %%PYTHON_SITELIBDIR%%/svnmailer/util.py
 %%PYTHON_SITELIBDIR%%/svnmailer/util.pyc
 %%PYTHON_SITELIBDIR%%/svnmailer/util.pyo
+man/man1/svn-mailer.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/svnmailer/browser
 @dirrm %%PYTHON_SITELIBDIR%%/svnmailer/notifier
 @dirrm %%PYTHON_SITELIBDIR%%/svnmailer/settings

@@ -47,9 +47,7 @@ QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
 USES=		gmake libtool
-USE_AUTOTOOLS=	autoconf aclocal
-CONFIGURE_SCRIPT=	autogen.sh
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtoolize aclocal autoconf
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		INSTALL_ROOT=${STAGEDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include

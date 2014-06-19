@@ -7,22 +7,21 @@ CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://t3x.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An interpreter for purely symbolic LISP
+COMMENT=	Interpreter for purely symbolic LISP
 
-MAN7=		alisp.7
-MANCOMPRESSED=	no
-
+USES=		uidfix
 USE_LDCONFIG=	yes
-MAKE_ENV+=	BINOWN=${BINOWN} \
-		BINGRP=${BINGRP}
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's/cc/$$(CC)/' \
+	${REINPLACE_CMD} -E -e 's/cc/$$(CC)/' \
 		-e '/^CFLAGS/{s/=/+=/;s/-g//;s/-O//;}' \
 		-e '/strip alisp/d' \
 		-e '/install.*alisp /s/install/& ${STRIP}/' \
+		-e 's,(BIN|DOC|INC|LIB|MAN|SHR)DIR),DESTDIR)$$(&,' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/alisp.h
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libalisp.so
+
 .include <bsd.port.mk>

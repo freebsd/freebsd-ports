@@ -1,11 +1,10 @@
---- src/notification/notification.c.orig	2011-08-15 19:54:26.000000000 +0200
-+++ src/notification/notification.c	2011-08-15 19:54:44.000000000 +0200
-@@ -103,7 +103,7 @@ notifyLogMessage (const char   *componen
+--- src/notification/notification.c.orig	2014-06-02 19:46:42.417311366 +0100
++++ src/notification/notification.c	2014-06-02 19:46:50.130301442 +0100
+@@ -25,6 +25,7 @@
+ #include <stdarg.h>
+ #include <string.h>
+ #include <unistd.h>
++#include "config.h"
+ #include <compiz-core.h>
  
-     n = notify_notification_new (logLevel,
-                                  message,
--                                 iconUri, NULL);
-+                                 iconUri);
- 
-     notify_notification_set_timeout (n, nd->timeout);
- 
+ #define NOTIFY_DISPLAY_OPTION_TIMEOUT   0

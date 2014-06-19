@@ -20,10 +20,9 @@ WEBGRP?=	www
 APACHEDIR=	${LOCALBASE}/www/
 INSTALLDIR=	${APACHEDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${INSTALLDIR}
+	${MKDIR} ${STAGEDIR}${INSTALLDIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
+		| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${STAGEDIR}${INSTALLDIR}
 
 .include <bsd.port.mk>

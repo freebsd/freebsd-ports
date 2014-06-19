@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	adns-python-${PORTVERSION}
 
 MAINTAINER=	m.tsatsenko@gmail.com
-COMMENT=	A Python Interface to adns, the asynchronous DNS library
+COMMENT=	Python Interface to adns, the asynchronous DNS library
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns
 

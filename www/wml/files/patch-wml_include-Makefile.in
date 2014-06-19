@@ -1,0 +1,16 @@
+--- wml_include/Makefile.in	2014-03-29 08:59:23.882767625 +0000
++++ wml_include/Makefile.in	2014-03-29 08:58:02.630774437 +0000
+@@ -21,10 +21,10 @@
+ 
+ prefix          = @prefix@
+ exec_prefix     = $(prefix)
+-bindir          = $(prefix)/bin
++bindir          = $(DESTDIR)$(prefix)/bin
+ libsubdir       = @libsubdir@
+-libdir          = $(prefix)/lib$(libsubdir)
+-mandir          = $(prefix)/man
++libdir          = $(DESTDIR)$(prefix)/lib$(libsubdir)
++mandir          = $(DESTDIR)$(prefix)/man
+ 
+ INSTALLPRIVLIB  = @INSTALLPRIVLIB@
+ INSTALLARCHLIB  = @INSTALLARCHLIB@

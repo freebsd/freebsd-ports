@@ -9,7 +9,7 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A screen capture utility that utilizes Imlib2
+COMMENT=	Screen capture utility that utilizes Imlib2
 
 LIB_DEPENDS=	libgiblib.so:${PORTSDIR}/graphics/giblib
 

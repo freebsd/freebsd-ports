@@ -1,0 +1,13 @@
+--- ./src/Makefile.orig	2005-03-13 14:30:54.000000000 +0000
++++ ./src/Makefile	2014-06-09 20:56:55.000000000 +0000
+@@ -14,7 +14,7 @@
+ 	rm -f DEADJOE *.o *~ $(BIN) $(SBIN)
+ 
+ install:
+-	mkdir -m 755 -p $(BINDIR) $(SBINDIR)
+-	install -m 755 -s $(BIN) $(BINDIR)
+-	install -m 755 -s $(SBIN) $(SBINDIR)
++	mkdir -m 755 -p $(DESTDIR)$(BINDIR) $(DESTDIR)$(SBINDIR)
++	install -m 755 -s $(BIN) $(DESTDIR)$(BINDIR)
++	install -m 755 -s $(SBIN) $(DESTDIR)$(SBINDIR)
+ 

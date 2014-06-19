@@ -13,8 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 
 ALL_TARGET=	cppcheck
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	nosuzuki@postcard.st
-COMMENT=	An image viewer with thumbnail-based file selector for X
+COMMENT=	Image viewer with thumbnail-based file selector for X
 
 BUILD_DEPENDS=  gawk:${PORTSDIR}/lang/gawk
 

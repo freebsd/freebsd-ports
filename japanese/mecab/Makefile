@@ -3,6 +3,7 @@
 
 PORTNAME=	mecab
 PORTVERSION=	0.996
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	GOOGLE_CODE
 
@@ -12,8 +13,9 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool
-USES=		iconv gettext:build perl5
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/libtool.m4:${PORTSDIR}/devel/libtool
+USE_AUTOTOOLS=	autoconf autoheader automake aclocal
+USES=		iconv gettext:build libtool perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -22,7 +24,6 @@ CONFIGURE_ENV+=	ac_cv_lib_stdcpp_main=no
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-ACLOCAL_ARGS=	--system-acdir=${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 
 PORTDOCS=	AUTHORS README *.html

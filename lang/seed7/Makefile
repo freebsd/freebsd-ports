@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20140518
+DISTVERSION=	05_20140601
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -11,7 +11,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High-level, extensible programming language
 
-LICENSE=	LGPL21
+# The language libraries are licensed under the LGPL21 license. Starting from
+# version 05_20140601, the compiler libraries are also distributed. These are
+# licensed under the GPLv2 and can be found in ${PREFIX}/lib/seed7/lib/comp.
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -38,20 +42,21 @@ PORTDOCS=	*
 MAKEFILE=	mk_freebsd.mk
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/${MAKEFILE}
-#	${REINPLACE_CMD} -e '/FLOATTYPE_DOUBLE/s|undef|define|' ${WRKSRC}/config.h
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' \
+	    -e '/\.\/chkccomp/s|>>||' ${WRKSRC}/${MAKEFILE}
 
 do-build:
-	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} depend
-	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} s7 s7c
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} depend
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} s7 s7c
 
 do-install:
 #	install interpreter and compiler
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/s7 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/../prg/s7c ${STAGEDIR}${PREFIX}/bin
 #	install seed7 library
-	${INSTALL} -d ${STAGEDIR}${SEED7_LIBRARY}
+	${INSTALL} -d ${STAGEDIR}${SEED7_LIBRARY}/comp
 	cd ${WRKSRC}/../lib && ${COPYTREE_SHARE} '*.s7i' ${STAGEDIR}${SEED7_LIBRARY}
+	cd ${WRKSRC}/../lib/comp && ${COPYTREE_SHARE} '*.s7i' ${STAGEDIR}${SEED7_LIBRARY}/comp
 #	install static libraries
 	${INSTALL} -d ${STAGEDIR}${S7_LIB_DIR}
 .for s7_lib in ${S7_LIBS}

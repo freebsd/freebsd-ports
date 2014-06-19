@@ -2,43 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	whatweb
-PORTVERSION=	0.4.7
-PORTREVISION=	1
+DISTVERSION=	0.4.8-${GH_COMMIT}
 CATEGORIES=	security www
-MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	A tool to fingerprint web site components
+COMMENT=	Tool to fingerprint web site components
 
 LICENSE=	GPLv2
 
-USE_RUBY=	yes
-NO_BUILD=	yes
-PORTDOCS=	README INSTALL CHANGELOG TODO
-MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	no
-USE_RUBY_FEATURES=	iconv
+USE_GITHUB=	yes
+GH_ACCOUNT=	urbanadventurer
+GH_PROJECT=	WhatWeb
+GH_COMMIT=	126e729
+GH_TAGNAME=	${GH_COMMIT}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USE_RUBY=		yes
+USE_RUBY_FEATURES=	iconv
+RUBY_NO_BUILD_DEPENDS=	yes
+NO_BUILD=		yes
+PORTDOCS=		CHANGELOG INSTALL README whatweb.xsl
 
 post-patch:
 	${REINPLACE_CMD} -e \
-	's!/usr/share/whatweb/!${RUBY_SITELIBDIR}/${PORTNAME}!' \
-	${WRKSRC}/${PORTNAME}
+	's!/usr/share/whatweb/!${RUBY_SITELIBDIR}/whatweb!' \
+	${WRKSRC}/whatweb
 
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.	for i in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.	endfor
-.endif
-.for DIR in plugins lib plugin-development
-	( cd ${WRKSRC}/${DIR} && \
-	${COPYTREE_SHARE} . ${RUBY_SITELIBDIR}/${PORTNAME}/${DIR} )
-.endfor
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.for dir in addons lib my-plugins plugin-development plugins plugins-disabled
+	( cd ${WRKSRC}/${dir} && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${RUBY_SITELIBDIR}/whatweb/${dir} )
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/whatweb.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/whatweb ${STAGEDIR}${PREFIX}/bin/whatweb
+
+.include <bsd.port.mk>

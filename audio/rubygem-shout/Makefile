@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby binding to the libshout library
+COMMENT=	Ruby binding to the libshout library
 
 LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 

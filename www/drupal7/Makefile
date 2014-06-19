@@ -3,6 +3,7 @@
 
 PORTNAME=	drupal7
 PORTVERSION=	7.28
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -14,9 +15,7 @@ COMMENT=	Database driven web content management system (CMS)
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USE_DRUPAL=	yes
-DRUPAL_PORT=	yes
-DRUPAL_VERSION=	7
+USES=		drupal:7
 
 USE_PHP=	dom filter gd hash json mbstring pcre pdo session simplexml xml
 WANT_PHP_WEB=	yes
@@ -65,16 +64,12 @@ do-install:
 	${CP} -R ${WRKSRC}/sites/all ${STAGEDIR}${DRUPAL_DIR}/sites/
 	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/default
 	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/default/files
-	${CP} ${WRKSRC}/sites/default/default.settings.php ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php-dist
-	@if [ ! -f ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php ]; then \
-		${CP} -p ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php-dist ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php ; \
-	fi
+	${CP} ${WRKSRC}/sites/default/default.settings.php ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php.sample
 	${CP} -R ${WRKSRC}/themes ${STAGEDIR}${DRUPAL_DIR}
 	${CP} ${WRKSRC}/update.php ${STAGEDIR}${DRUPAL_DIR}
 	${CP} ${WRKSRC}/web.config ${STAGEDIR}${DRUPAL_DIR}
 	${CP} ${WRKSRC}/xmlrpc.php ${STAGEDIR}${DRUPAL_DIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${DRUPAL_DIR}
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A pure-ruby EXIF reader
+COMMENT=	Pure-ruby EXIF reader
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

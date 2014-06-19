@@ -251,9 +251,11 @@ share/teamspeak/server/sql/update_permissions_12.sql
 @dirrm share/teamspeak/server
 @dirrmtry share/teamspeak
 @dirrmtry %%ETCDIR%%
+@owner teamspeak
+@group teamspeak
 @dirrmtry %%DBDIR%%
+@group %%BINGRP%%
 @dirrmtry %%LOGDIR%%
-@comment installation with correct permissions
-@exec install -d -o %%USERS%% -g %%GROUPS%% %%DBDIR%%
-@exec install -d -o %%USERS%% -g %%BINGRP%% %%LOGDIR%%
-@exec mkdir -p %D/%%ETCDIR%%
+@comment pkg_tools compatibility
+@exec install -d -o teamspeak -g teamspeak %D/%%DBDIR%%
+@exec install -d -o teamspeak -g %%BINGRP%% %D/%%LOGDIR%%

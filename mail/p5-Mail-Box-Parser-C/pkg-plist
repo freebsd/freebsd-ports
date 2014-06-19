@@ -2,7 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Mail/Box/Parser/C.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mail/Box/Parser/C.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C/C.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C/C.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser/C
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/Parser

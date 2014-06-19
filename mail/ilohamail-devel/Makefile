@@ -13,6 +13,8 @@ COMMENT=	IlohaMail is a lightweight webmail program (devel version)
 NO_BUILD=	yes
 USE_PHP=	pcre
 WANT_PHP_WEB=	yes
+DEPRECATED=	yes
+EXPIRATION_DATE=2014-06-30
 
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql

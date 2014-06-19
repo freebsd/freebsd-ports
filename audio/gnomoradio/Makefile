@@ -3,7 +3,7 @@
 
 PORTNAME=		gnomoradio
 PORTVERSION=		0.15.1
-PORTREVISION=		16
+PORTREVISION=		17
 CATEGORIES=		audio net
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,13 +18,14 @@ LIB_DEPENDS=		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 			libvorbis.so:${PORTSDIR}/audio/libvorbis \
 			libao.so:${PORTSDIR}/audio/libao
 
-USES=			pathfix pkgconfig
+USES=			pathfix pkgconfig libtool
+GNU_CONFIGURE=		yes
 USE_GNOME=		gnomeprefix
-USE_AUTOTOOLS=		libtool
 USE_LDCONFIG=		yes
 LIBTOOLFLAGS=		--tag=CXX
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LIBS="`pkg-config --libs glibmm-2.4`"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|' \

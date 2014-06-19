@@ -11,7 +11,7 @@ DISTFILES=		${PORTNAME}-${PORTVERSION:S/./b/}-src.zip \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		acm@FreeBSD.org
-COMMENT=		A full-featured text editor for X11
+COMMENT=	Full-featured text editor for X11
 
 WRKSRC=			${WRKDIR}/fte
 

@@ -17,9 +17,10 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hell Revealed is a megawad, a 32-level replacement for DooM II
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+EXTRACT_BEFORE_ARGS=	-Lqo
 
 OPTIONS_DEFINE=	DEMO_NM DEMO_UV DOCS
 OPTIONS_DEFAULT=	DEMO_NM DEMO_UV
@@ -32,9 +33,6 @@ DATADIR=	${DMDIR}/${PORTNAME}
 
 DEMO_NM_DISTFILES=	hrhelp${EXTRACT_SUFX}
 DEMO_UV_DISTFILES=	hruvlmp2${EXTRACT_SUFX}
-
-post-extract:
-	@(cd ${WRKDIR} && ${SH} ${SCRIPTDIR}/lowercase.sh)
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 

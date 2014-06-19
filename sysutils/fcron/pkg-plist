@@ -1,16 +1,33 @@
-bin/fcronsighup
-bin/fcrontab
-bin/fcrondyn
-etc/fcron.allow.dist
-etc/fcron.conf.dist
-etc/fcron.deny.dist
-sbin/fcron
-%%EXAMPLESDIR%%/fcrontab-operator
-%%EXAMPLESDIR%%/fcrontab-root
-%%EXAMPLESDIR%%/fcron.pam
-%%EXAMPLESDIR%%/fcrontab.pam
-@dirrm %%EXAMPLESDIR%%
-@cwd /
 %%PAMDIR%%/fcron
 %%PAMDIR%%/fcrontab
-@dirrmtry %%PAMDIR%%
+@mode 6111
+@owner fcron
+@group fcron
+bin/fcrondyn
+bin/fcrontab
+@mode 4110
+bin/fcronsighup
+@mode
+@sample etc/fcron.allow.sample
+@sample etc/fcron.conf.sample
+@sample etc/fcron.deny.sample
+@owner root
+@group wheel
+man/man1/fcrondyn.1.gz
+man/man1/fcrontab.1.gz
+man/man5/fcron.conf.5.gz
+man/man5/fcrontab.5.gz
+man/man8/fcron.8.gz
+sbin/fcron
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcron.pam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcrontab-operator
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcrontab-root
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcrontab.pam
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@cwd /
+@exec install -d -o fcron -g fcron -m 770 /var/spool/fcron
+@owner fcron
+@group fcron
+@dirrmtry /var/spool/fcron
+@owner root
+@group wheel

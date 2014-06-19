@@ -558,7 +558,6 @@ bin/moose-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Util/TypeConstraints/Builtins.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Test/Moose.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Moose.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Moose.so
 %%SITE_PERL%%/%%PERL_ARCH%%/metaclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/oose.pm

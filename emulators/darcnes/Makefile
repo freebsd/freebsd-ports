@@ -5,7 +5,9 @@ PORTNAME=	darcnes
 PORTVERSION=	9b0401
 PORTREVISION=	6
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.dridus.com/~nyef/darcnes/download/
+MASTER_SITES=	http://www.dridus.com/~nyef/darcnes/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= grembo
 DISTNAME=	dn${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -21,7 +23,6 @@ USES=		gmake
 MAKE_ARGS=	CC="${CC}" TARGET_CC="${CC}" CXX="${CXX}" TARGET_CXX="${CXX}" \
 		AS="${AS}" TARGET_AS="${CC}" LD="${LD}" TARGET_LD="${CC}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
@@ -48,10 +49,10 @@ post-patch:
 	@${CP} ${FILESDIR}/endian.h ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/darcnes ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/darcnes ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MASTER_SITE_SUBDIR=	apps/sound/editors
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively select and save sections of an audio file
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
@@ -20,16 +20,15 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 
 LICENSE=	GPLv2
 
-USES=		perl5
-NO_STAGE=	yes
+USES=		perl5 shebangfix
+SHEBANG_FILES=	src/soundgrab
 NO_BUILD=	yes
 
-MAN1=	soundgrab.1
-PLIST_FILES=	bin/soundgrab
+PLIST_FILES=	bin/soundgrab man/man1/soundgrab.1.gz
 
 do-install:
 	@pod2man ${WRKSRC}/src/soundgrab ${WRKSRC}/src/soundgrab.1
-	${INSTALL_SCRIPT} ${WRKSRC}/src/soundgrab ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/src/soundgrab.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/src/soundgrab ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/src/soundgrab.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

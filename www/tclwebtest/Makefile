@@ -19,7 +19,6 @@ NO_BUILD=	YES
 LIBDIR=		lib/tclwebtest${PORTVERSION}
 PLIST_SUB+=	LIBDIR="${LIBDIR}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -27,21 +26,21 @@ post-extract:
 	@${SED}	-i "" -e "s| tclsh | ${LOCALBASE}/bin/tclsh |g" ${WRKSRC}/tclwebtest
 
 do-install:
-	@${MKDIR} ${PREFIX}/${LIBDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${LIBDIR}
 .for FILE in entities.tcl from_openacs.tcl pkgIndex.tcl tclwebtest.tcl
-	${INSTALL_DATA} ${WRKSRC}/lib/${FILE} ${PREFIX}/${LIBDIR}/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/lib/${FILE} ${STAGEDIR}${PREFIX}/${LIBDIR}/${FILE}
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/selftest ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/openacs4tests ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/tclwebtest ${PREFIX}/bin/tclwebtest
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/selftest ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/openacs4tests ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/tclwebtest ${STAGEDIR}${PREFIX}/bin/tclwebtest
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} "Installing docs"
-	@${MKDIR} ${DOCSDIR}/doc
-	@${TAR} -C ${WRKSRC} -c -f - ChangeLog README TODO index.html generate_docs.test | ${TAR} -C ${DOCSDIR} -x -f -
-	@${TAR} -C ${WRKSRC}/doc -c -f - . | ${TAR} -C ${DOCSDIR}/doc -x -f -
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
+	@${TAR} -C ${WRKSRC} -c -f - ChangeLog README TODO index.html generate_docs.test | ${TAR} -C ${STAGEDIR}${DOCSDIR} -x -f -
+	@${TAR} -C ${WRKSRC}/doc -c -f - . | ${TAR} -C ${STAGEDIR}${DOCSDIR}/doc -x -f -
 .endif
 
 .include <bsd.port.post.mk>

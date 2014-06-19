@@ -52,28 +52,27 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 .endif
 
-NO_STAGE=	yes
 do-install:
-	@-${MKDIR} ${DATADIR}/lib
+	@-${MKDIR} ${STAGEDIR}${DATADIR}/lib
 .for f in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${f} ${DATADIR}/lib/
+	@${INSTALL_DATA} ${WRKSRC}/lib/${f} ${STAGEDIR}${DATADIR}/lib/
 .endfor
-	@-${MKDIR} ${DATADIR}/bin
+	@-${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 		-e "s:%%JAVAJARDIR%%:${JAVAJARDIR}:" ${WRKSRC}/bin/${PORTNAME}2
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}2 ${DATADIR}/bin/${PORTNAME}
-	${LN} -sf ${DATADIR}/bin/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}2 ${STAGEDIR}${DATADIR}/bin/${PORTNAME}
+	${LN} -sf ${DATADIR}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
-	@-${MKDIR} ${DOCSDIR}
+	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in LICENSE* README*
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}/
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@-${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
-	@cd ${WRKSRC}/bin && ${COPYTREE_BIN} . ${EXAMPLESDIR}/
+	@-${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
+	@cd ${WRKSRC}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

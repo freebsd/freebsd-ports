@@ -1,21 +1,21 @@
+@sample etc/argus.conf.sample
 bin/argus-lsof
 bin/argus-snmp
 bin/argus-vmstat
 bin/argusbug
 sbin/argus
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%EXAMPLESDIR%%/Archive/argusarchive
-%%EXAMPLESDIR%%/Config/argus.conf
-%%EXAMPLESDIR%%/Deployment/sample
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/Startup/README
-%%EXAMPLESDIR%%/Startup/argus
-%%EXAMPLESDIR%%/System/crontab
-%%EXAMPLESDIR%%/System/magic
-@dirrm %%EXAMPLESDIR%%/System
-@dirrm %%EXAMPLESDIR%%/Startup
-@dirrm %%EXAMPLESDIR%%/Deployment
-@dirrm %%EXAMPLESDIR%%/Config
-@dirrm %%EXAMPLESDIR%%/Archive
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man5/argus.conf.5.gz
+man/man8/argus.8.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Archive/argusarchive
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Config/argus.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Deployment/sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Startup/argus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Startup/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/System/crontab
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/System/magic
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Archive
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Config
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Deployment
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Startup
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/System
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

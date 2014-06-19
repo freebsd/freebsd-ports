@@ -163,9 +163,9 @@ include/vmime/vmime.hpp
 include/vmime/word.hpp
 include/vmime/wordEncoder.hpp
 lib/libvmime.a
-lib/libvmime.la
 lib/libvmime.so
 lib/libvmime.so.0
+lib/libvmime.so.0.0.0
 libdata/pkgconfig/vmime.pc
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING

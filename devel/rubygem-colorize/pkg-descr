@@ -1,0 +1,6 @@
+colorize is a Ruby String class extension which adds methods to set text color,
+background color and, text effects on ruby console and command line output,
+using ANSI escape sequences.
+
+WWW: https://github.com/fazibear/colorize
+RG:  https://rubygems.org/gems/colorize

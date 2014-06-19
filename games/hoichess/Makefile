@@ -26,4 +26,3 @@ post-patch:
 		-e '/bindir/s/games/bin/; /mandir/s/share//' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
-

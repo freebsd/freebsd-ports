@@ -7,7 +7,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An efficient hex editor
+COMMENT=	Efficient hex editor
 
 PLIST_FILES=	bin/tweak \
 		man/man1/tweak.1.gz

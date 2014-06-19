@@ -26,10 +26,10 @@ DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PORTDOCS=	README_j.txt
 .endif
 
-USES+=		iconv gmake zip
+USES+=		iconv:build,wchar_t gmake zip
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-default-src
 
@@ -38,9 +38,11 @@ INSTALL_TARGET+=gcc-install-doc
 .endif
 
 .if !target(post-extract)
-NO_STAGE=	yes
 post-extract:
 	${CHMOD} a+x ${WRKSRC}/configure
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/compile/config.mk.in
 
 .include <bsd.port.mk>

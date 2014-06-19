@@ -1,0 +1,13 @@
+--- ./makechar/Makefile.in.orig	2013-05-04 00:52:33.306113000 +0900
++++ ./makechar/Makefile.in	2014-05-07 20:53:43.000000000 +0900
+@@ -178,8 +178,8 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ makechar_SOURCES = makechar.cpp
+-AM_CXXFLAGS = -I/usr/include/freetype2 -I/usr/sfw/include/freetype2 -I../libnhocr
+-makechar_LDADD = -L/usr/sfw/lib -L../libnhocr -lm -lfreetype -lnhocr -lufp -lsip
++AM_CXXFLAGS = -I$(LOCALBASE)/include/freetype2 -I../libnhocr
++makechar_LDADD = -L$(LOCALBASE)/lib -L../libnhocr -lm -lfreetype -lnhocr -lufp -lsip
+ all: all-am
+ 
+ .SUFFIXES:

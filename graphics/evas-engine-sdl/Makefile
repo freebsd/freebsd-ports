@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	evas-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A hardware accelerated canvas API (SDL engine)
+COMMENT=	Hardware accelerated canvas API (SDL engine)
 
 LICENSE=	BSD
 

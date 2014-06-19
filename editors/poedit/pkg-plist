@@ -1,4 +1,5 @@
 bin/poedit
+man/man1/poedit.1.gz
 share/applications/poedit.desktop
 share/icons/hicolor/16x16/apps/poedit.png
 share/icons/hicolor/32x32/apps/poedit.png
@@ -146,29 +147,11 @@ share/pixmaps/poedit.png
 @dirrm %%DATADIR%%/help/common
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/uz/LC_MESSAGES
-@dirrmtry share/locale/uz
-@dirrmtry share/locale/vi/LC_MESSAGES
-@dirrmtry share/locale/vi
-@dirrmtry share/locale/tt/LC_MESSAGES
-@dirrmtry share/locale/tt
-@dirrmtry share/locale/sq_AL/LC_MESSAGES
-@dirrmtry share/locale/sq_AL
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur
-@dirrmtry share/locale/es_PR/LC_MESSAGES
-@dirrmtry share/locale/es_PR
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
 @dirrmtry share/locale/af_ZA/LC_MESSAGES
 @dirrmtry share/locale/af_ZA
+@dirrmtry share/locale/es_PR/LC_MESSAGES
+@dirrmtry share/locale/es_PR
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
+@dirrmtry share/locale/sq_AL/LC_MESSAGES
+@dirrmtry share/locale/sq_AL

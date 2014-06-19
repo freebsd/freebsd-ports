@@ -10,7 +10,7 @@ MASTER_SITES=	GH \
 DISTNAME=	g-${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
 MAINTAINER=	milki@FreeBSD.org
-COMMENT=	An access control layer on top of git
+COMMENT=	Access control layer on top of git
 
 LICENSE=	GPLv2
 

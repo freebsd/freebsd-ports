@@ -19,14 +19,13 @@ post-patch:	.SILENT
 		-e '/^CFLAGS/{s/=/+=/;s/-O2//;}' \
 		${WRKSRC}/Makefile.unix
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nesasm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/nesasm ${STAGEDIR}${PREFIX}/bin
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}../documentation/*.txt ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}../documentation/*.txt ${STAGEDIR}${DOCSDIR}
 	# The next install will overwrite readme.txt with a newer readme.txt
-	${INSTALL_DATA} ${WRKSRC}../readme.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}../readme.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

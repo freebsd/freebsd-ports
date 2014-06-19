@@ -3,6 +3,7 @@
 
 PORTNAME=	network
 PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -50,7 +51,7 @@ ARGS+=		--qsci-api --qsci-api-destdir=${QSCIDIR}
 PLIST_SUB+=	API=""
 .endif
 
-.if ${PORT_OPTIONS:MAPI}
+.if defined(WITH_DEBUG)
 ARGS+=		--debug --trace
 .endif
 

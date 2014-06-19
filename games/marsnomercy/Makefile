@@ -9,7 +9,7 @@ MASTER_SITES=	SF/mars/mars/${PORTVERSION}
 DISTNAME=	mars-${PORTVERSION}-src
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A turn-based strategy game setting on Mars
+COMMENT=	Turn-based strategy game setting on Mars
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 

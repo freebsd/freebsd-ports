@@ -12,9 +12,8 @@ COMMENT=	The Puto Amo Window Manager
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 USE_XORG=	x11 xft xrandr xrender xpm
-USES=		cmake pkgconfig ninja
+USES=		cmake pkgconfig ninja tar:bzip2
 CMAKE_ARGS=	-DCMAKE_CONFIG_PREFIX:STRING="${PREFIX}/etc" \
 		-DX11_LIBRARY_DIRS:STRING="${LOCALBASE}/lib"
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lXrender

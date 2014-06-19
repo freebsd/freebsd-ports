@@ -17,8 +17,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 		--mandir=${PREFIX}/man \
 		--exec-prefix=${PREFIX} \
 		--infodir=${PREFIX}/${INFO_PATH} \
-		LIBS=-lm \
 		--disable-nls
+LIBS+=		-lm
 USES=		gmake
 
 INFO=	numdiff

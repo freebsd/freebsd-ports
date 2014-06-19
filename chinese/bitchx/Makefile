@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	BitchX
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A zh-tw cursor movement friendly, wrapping clean BitchX
+COMMENT=	Zh-tw cursor movement friendly, wrapping clean BitchX
 
 MASTERDIR=	${.CURDIR}/../../irc/bitchx
 EXTRA_PATCHES=	${.CURDIR}/files/patch-source::input.c \
@@ -19,5 +19,4 @@ WITHOUT_GNOME=	YES
 # If without gnome, esound support isn't needed.
 WITHOUT_ESOUND=	YES
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

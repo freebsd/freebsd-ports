@@ -2,24 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	libgamepad
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	devel games
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Generic gamepad API
 
-NO_STAGE=	yes
+LICENSE=	BSD2CLAUSE
+
+USES=		tar:xz
+
 pre-build:
 	(cd ${WRKSRC} && make depend)
 
-MAN3=		libgamepad.3
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800069
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-gamepad_usbhid.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

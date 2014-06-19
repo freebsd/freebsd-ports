@@ -176,11 +176,11 @@ libexec/anope/tools/epona2anope
 %%DATADIR%%/modules/viagra.so
 %%DATADIR%%/mydbgen
 %%DATADIR%%/tables.sql
-@dirrm %%DATADIR%%/modules/runtime
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/logs
-@dirrm %%DATADIR%%/languages
-@dirrm %%DATADIR%%/backups
-@dirrm %%DATADIR%%
-@dirrm libexec/anope/tools
-@dirrm libexec/anope
+@dirrmtry libexec/anope/tools
+@dirrmtry libexec/anope
+@dirrmtry %%DATADIR%%/backups
+@dirrmtry %%DATADIR%%/languages
+@dirrmtry %%DATADIR%%/logs
+@dirrmtry %%DATADIR%%/modules/runtime
+@dirrmtry %%DATADIR%%/modules
+@dirrmtry %%DATADIR%%

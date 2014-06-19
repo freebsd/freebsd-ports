@@ -40,16 +40,16 @@
 +	$(MAKE) info
 +
 +install: ${installfiles}
-+	install-info ${infodir}/calc.info ${infodir}/dir
++	install-info ${DESTDIR}${infodir}/calc.info ${DESTDIR}${infodir}/dir
 +
 +.for file in ${infofiles}
 +${infodir}/${file}: ${file}
-+	install -o root -g wheel -m 0444 $? $@
++	${BSD_INSTALL_DATA} $? ${DESTDIR}$@
 +.endfor
 +
 +.for file in ${sitefiles}
 +${calcsitedir}/${file}: ${file}
-+	@install -d -o root -g wheel -m 0755 ${@D}
-+	install -o root -g wheel -m 0444 $? $@
++	@install -d -m 0755 ${DESTDIR}${@D}
++	${BSD_INSTALL_DATA} $? ${DESTDIR}$@
 +.endfor
  

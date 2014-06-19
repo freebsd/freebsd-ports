@@ -17,13 +17,9 @@ USE_GL=		yes
 USE_PERL5=	build
 USE_XORG=	xi
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
 # avoid renaming of soxt-config and soxt-config.1
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	${REINPLACE_CMD} -e "s,echo aout, echo elf," ${WRKSRC}/configure
 
 .include <bsd.port.mk>

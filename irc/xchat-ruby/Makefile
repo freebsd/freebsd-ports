@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	xchat-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An ruby-scripting plugin for XChat
+COMMENT=	Ruby-scripting plugin for XChat
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 

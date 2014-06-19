@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://download.gna.org/bless/
 
 MAINTAINER=	mono@FreeBSD.org
-COMMENT=	A high quality, full featured hex editor
+COMMENT=	High quality, full featured hex editor
 
 USES=		gmake mono pathfix pkgconfig
 USE_GNOME=	gnomeprefix gnomedocutils gtksharp20

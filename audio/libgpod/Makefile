@@ -17,8 +17,7 @@ LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
 
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_SQLITE=	3
-USES=		gettext gmake pathfix pkgconfig
-USE_BZIP2=	yes
+USES=		tar:bzip2 gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-udev --without-hal \
 		--with-html-dir="${DOCSDIR:H}"

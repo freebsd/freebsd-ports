@@ -14,11 +14,11 @@ NO_BUILD=	yes
 
 ASKLIBDIR=	${PREFIX}/lib/${PORTNAME}
 BINS=		askfilter asksetup utils/asksenders
-MAN1=		askfilter.1 asksenders.1 asksetup.1
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${REINPLACE_CMD} -E \
 		-e "s,/usr/share/ask/templates,${EXAMPLESDIR},g" \
@@ -27,21 +27,14 @@ post-extract:
 		${BINS:S,^,${WRKSRC}/,} ${WRKSRC}/*.py
 
 do-install:
-	${MKDIR} ${ASKLIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.py ${ASKLIBDIR}
-	${INSTALL_SCRIPT} ${BINS:S,^,${WRKSRC}/,} ${PREFIX}/bin
-
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/templates/* ${EXAMPLESDIR}
-
-	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/docs/,} ${PREFIX}/man/man1
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.[!1]* ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${ASKLIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${ASKLIBDIR}
+	${INSTALL_SCRIPT} ${BINS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/templates/* ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/docs && ${INSTALL_MAN} askfilter.1 asksetup.1 \
+		asksenders.1 ${STAGEDIR}${PREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.[!1]* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

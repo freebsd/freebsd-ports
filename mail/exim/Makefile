@@ -519,10 +519,10 @@ pre-everything::
 
 post-extract:
 .if ${PORT_OPTIONS:MSA_EXIM}
-	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/sa-exim-${SA_EXIM_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
+	@cd ${WRKDIR} && ${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/sa-exim-${SA_EXIM_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
 .endif
 .if ${PORT_OPTIONS:MSO_1024}
-	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/spamooborona1024-src-${SO_1024_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
+	@cd ${WRKDIR} && ${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/spamooborona1024-src-${SO_1024_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
 	@cd ${WRKDIR} && ${PATCH} --quiet < ${FILESDIR}/extra-patch-so_1024-delimiter
 .endif
 

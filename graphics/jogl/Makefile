@@ -18,7 +18,7 @@ CONFLICTS=	jogamp-jogl-*
 
 NO_WRKSUBDIR=	yes
 
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+DOCSDIR=	${JAVASHAREDIR}/${PORTNAME}
 
 ALL_TARGET=	all
 
@@ -41,6 +41,7 @@ JAVA_VERSION=	1.6+
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
 BUILD_BINPATH=	${WRKSRC}/bin
+MAKE_ENV+=	LANG=en_US.UTF-8
 MAKE_ENV+=	PATH="${BUILD_BINPATH}:${PATH}"
 
 OPTIONS_DEFINE=	DOCS
@@ -49,6 +50,14 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	javadoc
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION} == "1.6.0"
+PLIST_SUB+=	JDK6=""
+.else
+PLIST_SUB+=	JDK6="@comment "
 .endif
 
 post-patch:
@@ -60,15 +69,17 @@ post-patch:
 
 pre-build:
 	${MKDIR} ${BUILD_BINPATH}
-	${LN} -sf /usr/bin/cc ${BUILD_BINPATH}/gcc
+	${SED} -e 's|%%CC%%|${CC}|' < ${FILESDIR}/gcc.in > \
+		${BUILD_BINPATH}/gcc
+	${CHMOD} 755 ${BUILD_BINPATH}/gcc
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/jogl/doc/userguide/index.html \
-		${STAGEDIR}${DATADIR}/UserGuide.html
+		${STAGEDIR}${DOCSDIR}/UserGuide.html
 	cd ${BUILD_WRKSRC}/../javadoc_public && \
-		${FIND} . -print | ${CPIO} -pdm ${STAGEDIR}${DATADIR}
+		${FIND} . -print | ${CPIO} -pdm ${STAGEDIR}${DOCSDIR}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/gluegen/build/obj/libgluegen-rt.so \
 		${WRKSRC}/jogl/build/obj/libjogl.so \
@@ -76,4 +87,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gluegen/build/gluegen-rt.jar \
 		${WRKSRC}/jogl/build/jogl.jar ${STAGEDIR}${JAVAJARDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

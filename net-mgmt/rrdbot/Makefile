@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://thewalter.net/stef/software/rrdbot/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Threaded SNMP polling daemon which stores data in RRDs
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool

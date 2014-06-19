@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 
 MAINTAINER=	ps.ports@smyrak.com
-COMMENT=	A simple customizable GTK screen ruler
+COMMENT=	Simple customizable GTK screen ruler
 
 USES=		pkgconfig
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2

@@ -1,7 +1,7 @@
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 BJAM=		bjam
-USES=		compiler:c++11-lang
+USES+=		compiler:c++11-lang
 
 PLIST_SUB+=	BOOST_SHARED_LIB_VER=${PORTVERSION} COMPAT_LIB_VER=5
 
@@ -43,6 +43,11 @@ BJAM_ARGS+=	threading=multi \
 BJAM_ARGS+=	optimization=speed
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 BJAM_ARGS+=	inlining=full
+.endif
+
+# ccache build fails when using precompiled headers, on a cached build.
+.if defined(WITH_CCACHE_BUILD)
+BJAM_ARGS+=	pch=off
 .endif
 
 post-patch:

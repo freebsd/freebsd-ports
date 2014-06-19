@@ -327,7 +327,7 @@ do-build-mozc_el:
 				-f batch-byte-compile mozc.el
 
 do-install-mozc_el:
-	@${MKDIR} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc
 	${INSTALL_DATA} \
 		${WRKSRC}/unix/emacs/mozc.el \
 		${WRKSRC}/unix/emacs/mozc.elc \

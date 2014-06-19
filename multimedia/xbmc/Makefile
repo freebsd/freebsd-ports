@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	xbmc
-DISTVERSION=	13.1.rc1
+DISTVERSION=	13.1
 CATEGORIES=	multimedia
+MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	Award winning media center application
@@ -51,11 +52,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	xbmc
-GH_COMMIT=	6ac3af1
-GH_TAGNAME=	13.1rc1-Gotham
-
 USES=		gmake iconv:wchar_t libtool pkgconfig
 USE_AUTOTOOLS=	autoconf automake libltdl
 GNU_CONFIGURE=	yes
@@ -75,6 +71,8 @@ DESKTOP_ENTRIES="XBMC" \
 		"xbmc" \
 		"AudioVideo;Video;" \
 		true
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}-Gotham
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC LAME \

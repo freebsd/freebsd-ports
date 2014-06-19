@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby binding to libmagic(3)
+COMMENT=	Ruby binding to libmagic(3)
 
 GEM_NAME=	${DISTNAME}
 

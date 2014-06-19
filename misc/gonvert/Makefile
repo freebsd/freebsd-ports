@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gonvert
-PORTVERSION=	0.2.35
+PORTVERSION=	0.2.37
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 

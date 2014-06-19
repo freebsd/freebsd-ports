@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	froxlor
-PORTVERSION=	0.9.31.2
+PORTVERSION=	0.9.32
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -16,20 +17,25 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	YES
 
 SUB_FILES+=	pkg-message pkg-deinstall
+SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB+=	${SUB_LIST}
 
 USE_PHP=	xml bcmath posix filter session ftp mysql mysqli
+
+WANT_PHP_CLI=	YES
 
 USES=		shebangfix
 
 SHEBANG_FILES=	froxlor/install/tsmarty2c.php
 
-OPTIONS_DEFINE=	POWERDNS LIBNSS LOGROTATE MYSQLS DKIM PCNTL NLS
+OPTIONS_DEFINE=	LIBNSS LOGROTATE MYSQLS DKIM PCNTL NLS
 
-OPTIONS_RADIO=	WEB SMTP IMAPPOP3 FTP
+OPTIONS_RADIO=	WEB SMTP IMAPPOP3 FTP DNS
 OPTIONS_RADIO_WEB=	APACHE LIGHTTPD NGINX
 OPTIONS_RADIO_SMTP=	POSTFIX EXIM
 OPTIONS_RADIO_IMAPPOP3=	DOVECOT COURIER
 OPTIONS_RADIO_FTP=	PROFTPD PUREFTPD
+OPTIONS_RADIO_DNS=	POWERDNS ISCDNS
 OPTIONS_MULTI=	WWWST
 OPTIONS_MULTI_WWWST=	WEBALIZER AWSTATS
 
@@ -37,6 +43,7 @@ WWWST_DESC=	Web access and traffic statistics dependency
 WEB_DESC=	Web server dependency
 SMTP_DESC=	SMTP server dependency
 IMAPPOP3_DESC=	IMAP/POP3 server dependency
+DNS_DESC=	DNS server dependency
 FTP_DESC=	FTP server dependency
 APACHE_DESC=	Apache (2.2) as HTTP/HTTPS server
 LIGHTTPD_DESC=	Lighttpd as HTTP/HTTPS server
@@ -51,6 +58,7 @@ COURIER_DESC=	Courier as IMAP/POP3 server
 PROFTPD_DESC=	ProFTPd as FTP server
 PUREFTPD_DESC=	Pure-FTPd as FTP server
 POWERDNS_DESC=	Powerdns as DNS server
+ISCDNS_DESC=	ISC BIND 9.9 from ports as DNS server
 PCNTL_DESC=	Use php-pcntl (speeds up statistics creation)
 LIBNSS_DESC=	Libnss-mysql for authentication
 WEBALIZER_DESC=	Webalizer (small, fast, static result pages)
@@ -77,6 +85,8 @@ PUREFTPD_RUN_DEPENDS=	pure-ftpd:${PORTSDIR}/ftp/pure-ftpd
 
 POWERDNS_RUN_DEPENDS=	powerdns:${PORTSDIR}/dns/powerdns
 
+ISCDNS_RUN_DEPENDS=	bind>=9.9.0.0:${PORTSDIR}/dns/bind99
+
 LIBNSS_RUN_DEPENDS=	${LOCALBASE}/lib/nss_mysql.so:${PORTSDIR}/net/libnss-mysql
 
 WEBALIZER_RUN_DEPENDS=	webalizer:${PORTSDIR}/www/webalizer
@@ -97,6 +107,12 @@ PCNTL_USE=	PHP=pcntl
 
 NLS_USES=	gettext:run
 NLS_USE=	PHP=gettext
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAPACHE}
+WANT_PHP_MOD=	YES
+.endif
 
 do-install:
 	cd ${WRKDIR}/${PORTNAME} && \

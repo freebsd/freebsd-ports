@@ -1,8 +1,7 @@
-# Created by: schweikh
 # $FreeBSD$
 
 PORTNAME=	samefile
-PORTVERSION=	2.12
+PORTVERSION=	2.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schweikhardt.net/
 
@@ -11,13 +10,10 @@ COMMENT=	Find files with identical contents
 
 CONFLICTS=	samesame-[0-9]*
 
-MAN1=		samefile.1
-PLIST_FILES=	bin/samefile
 GNU_CONFIGURE=	yes
 
-CFLAGS+=	-ansi -pedantic -Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wconversion -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-noreturn -Wredundant-decls -Wnested-externs -Winline -Wno-long-long
+CFLAGS+=	-ansi -pedantic -Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -Wno-long-long
 
-NO_STAGE=	yes
 post-build:
 	@${ECHO_MSG} "   >>>>                        <<<<"
 	@${ECHO_MSG} "   >>>> Running the test suite <<<<"
@@ -25,6 +21,6 @@ post-build:
 	cd ${WRKSRC}; ${MAKE} test
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/samefile
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/samefile
 
 .include <bsd.port.mk>

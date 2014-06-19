@@ -28,10 +28,8 @@ LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS} \
 			gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
 RUN_DEPENDS+=		${LOCALBASE}/bin/cdrdao:${PORTSDIR}/sysutils/cdrdao \
 			${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
-MAN1=			gcdmaster.1
 CONFIGURE_ARGS+=	--with-lame=no
 .else
-MAN1=			cdrdao.1 cue2toc.1 toc2cddb.1 toc2cue.1
 CONFIGURE_ARGS+=	--with-xdao=no
 .if defined(WITH_TOC2MP3)
 LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
@@ -61,7 +59,6 @@ CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 MAKE_ENV=		CCOM=cc LANG=C
 SCSILIBTARGET=		${ARCH:S/powerpc64/powerpc/}-freebsd-cc
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -121,46 +118,46 @@ post-patch:
 
 do-install:
 .if ${PORTNAME} == "gcdmaster"
-	@${INSTALL_PROGRAM} ${WRKSRC}/xdao/gcdmaster ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/xdao/gcdmaster ${STAGEDIR}${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/xdao/gcdmaster.man \
-		${PREFIX}/man/man1/gcdmaster.1
+		${STAGEDIR}${PREFIX}/man/man1/gcdmaster.1
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster-doc.png \
-		${LOCALBASE}/share/pixmaps/document-icons
+		${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.applications \
-		${LOCALBASE}/share/application-registry
+		${STAGEDIR}${LOCALBASE}/share/application-registry
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.desktop \
-		${LOCALBASE}/share/applications
+		${STAGEDIR}${LOCALBASE}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.keys \
-		${LOCALBASE}/share/mime-info
+		${STAGEDIR}${LOCALBASE}/share/mime-info
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.mime \
-		${LOCALBASE}/share/mime-info
+		${STAGEDIR}${LOCALBASE}/share/mime-info
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
-		${LOCALBASE}/share/pixmaps
+		${STAGEDIR}${LOCALBASE}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
-		${LOCALBASE}/etc/gconf/schemas
+		${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
-		${LOCALBASE}/share/mime/packages
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/Preferences.glade ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade ${DATADIR}
+		${STAGEDIR}${LOCALBASE}/share/mime/packages
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/Preferences.glade ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade ${STAGEDIR}${DATADIR}
 .else
-	@${INSTALL_PROGRAM} ${WRKSRC}/dao/cdrdao ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/dao/cdrdao.man ${PREFIX}/man/man1/cdrdao.1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/cue2toc ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/cue2toc.1 ${PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cddb ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cddb.1 ${PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cue ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cue.1 ${PREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/dao/cdrdao.drivers ${DATADIR}/drivers
+	@${INSTALL_PROGRAM} ${WRKSRC}/dao/cdrdao ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/dao/cdrdao.man ${STAGEDIR}${PREFIX}/man/man1/cdrdao.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/utils/cue2toc ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/utils/cue2toc.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cddb ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cddb.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cue ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cue.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/dao/cdrdao.drivers ${STAGEDIR}${DATADIR}/drivers
 .if defined(WITH_TOC2MP3)
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2mp3 ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2mp3 ${STAGEDIR}{PREFIX}/bin
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in CREDITS ChangeLog README README.PlexDAE
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .endif

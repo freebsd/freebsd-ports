@@ -13,10 +13,10 @@ COMMENT=	H-Inventory Client for FreeBSD
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/hinventoryFreeBSD
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/hinventory_FreeBSD.sh \
-		${PREFIX}/bin/hinventory_FreeBSD.sh
-	${INSTALL_DATA} ${WRKSRC}/hinventory.conf ${PREFIX}/etc/hinventory.conf
+	@${INSTALL_SCRIPT} ${WRKSRC}/hinventory_FreeBSD.sh \
+		${STAGEDIR}${PREFIX}/bin/hinventory_FreeBSD.sh
+	@${INSTALL_DATA} ${WRKSRC}/hinventory.conf ${STAGEDIR}${PREFIX}/etc/hinventory.conf.sample
+	@${MKDIR} ${STAGEDIR}/var/spool/hinventory
 
 .include <bsd.port.mk>

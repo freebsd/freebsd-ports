@@ -34,11 +34,10 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--enable-mediactrl\
 		--disable-backtrace\
 		--enable-graphics_ctx
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
-		WXCONFIG_CPPFLAGS="${PTHREAD_CFLAGS}"\
-		PTHREAD_LIBS="${PTHREAD_LIBS}"\
+CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"\
 		X11BASE="${LOCALBASE}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 PLIST=		${.CURDIR}/pkg-plist
 
 WXGTK_FLAVOR?=	gtk2

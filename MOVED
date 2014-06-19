@@ -329,7 +329,6 @@ japanese/jvim3-wnn7|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
 security/libfwbuilder2|security/libfwbuilder|2008-11-05|Replaced by libfwbuilder 3.0
 security/fwbuilder2|security/fwbuilder|2008-11-05|Replaced by fwbuilder 3.0
 japanese/magicpoint|misc/magicpoint|2008-11-07|Integrated into misc/magicpoint
-x11-drivers/xf86-input-wacom|x11-drivers/input-wacom|2008-11-18|Port was renamed
 databases/firebird2-client|databases/firebird20-client|2008-11-24|Renamed
 databases/firebird2-server|databases/firebird20-server|2008-11-24|Renamed
 emulators/linux_base-gentoo-stage2||2008-11-24|Removed
@@ -2056,11 +2055,9 @@ editors/xenon||2011-05-02|Has expired: Upstream disappeared and distfile is no l
 devel/a2dev||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/c2lib||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/c2man||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
-devel/c2mdoc||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/c_parser||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/cdoc||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/diffconvert||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
-devel/ecgi||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/error||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/excalibur-configuration||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 devel/freelibiberty||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
@@ -2383,7 +2380,6 @@ sysutils/Tee||2011-08-01|Has expired: No more public distfile
 sysutils/i855vidctl10||2011-08-01|Has expired: No more public distfiles
 sysutils/rsyslog3-snmp||2011-08-01|Has expired: unsupported upstream
 sysutils/xapply||2011-08-01|Has expired: No more public distfiles
-textproc/asm2html||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 textproc/diff-mode.el||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 vietnamese/gtk-im-vi||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 www/campsite||2011-08-01|Has expired: Does not work
@@ -5512,7 +5508,7 @@ mail/zmailer||2014-02-13|Broken since at least last August
 lang/gcc34|lang/gcc|2014-02-13|Superseded by GCC 4.6 or later
 devel/adabooch-doc-html||2014-02-15|Obsolete; adabooch now has DOCS option
 x11-toolkits/sakura|x11/sakura|2014-02-16|Moved to a better category
-misc/kde4-shared-mime-info||2014-02-18|Removed, the port not needed anymore
+misc/kde4-shared-mime-info||2014-02-18|Removed: this port is not needed anymore
 deskutils/kdepim44-runtime||2014-02-18|Removed: conflicts with new kdepimlibs
 deskutils/kdepim44||2014-02-18|Removed: depends on deskutils/kdepim44-runtime
 misc/kde-xdg-env||2014-02-18|Removed, remnant of KDE 3
@@ -5670,7 +5666,6 @@ deskutils/libopensync-plugin-synce-legacy||2014-03-08|Has expired: No more publi
 dns/skadns||2014-03-08|Has expired: No more public distfiles
 sysutils/gkrellmwho2||2014-03-08|Has expired: No more public distfiles
 audio/xmms-musepack||2014-03-08|Has expired: No more public distfiles
-archivers/bzip||2014-03-08|Has expired: No more public distfiles
 devel/cvsstat||2014-03-08|Has expired: No more public distfiles
 graphics/enfle||2014-03-08|Has expired: No more public distfiles
 audio/oggsplit||2014-03-08|Has expired: No more public distfiles
@@ -5727,7 +5722,6 @@ japanese/libjcode||2014-03-10|Has expired: No more public distfiles
 sysutils/jailutils||2014-03-10|Has expired: No more public distfiles
 net/freeswitch-vanilla-devel||2014-03-10|Has expired: No more public distfiles
 sysutils/hdup||2014-03-10|Has expired: No more public distfiles
-print/cups-smb-backend||2014-03-10|Has expired: No more public distfiles
 x11/settitle||2014-03-10|Has expired: No more public distfiles
 sysutils/anteater||2014-03-10|Has expired: No more public distfiles
 www/trac-pendingticket||2014-03-10|Has expired: No more public distfiles
@@ -5760,7 +5754,6 @@ graphics/gsnapshot||2014-03-10|Has expired: No more public distfiles
 japanese/zangband||2014-03-10|Has expired: No more public distfiles
 audio/xmms-wma||2014-03-10|Has expired: No more public distfiles
 misc/projectionlib||2014-03-10|Has expired: No more public distfiles
-net-mgmt/nagios-pf-plugin||2014-03-10|Has expired: No more public distfiles
 multimedia/smile||2014-03-10|Has expired: No more public distfiles
 x11-fm/dfm||2014-03-10|Has expired: No more public distfiles
 security/xyssl|security/polarssl|2014-03-10|Has expired: No more public distfiles
@@ -5993,7 +5986,6 @@ sysutils/dtc||2014-04-11|Has expired: Depends on expired www/sbox-dtc
 textproc/glimpse||2014-04-11|Has expired: No more public distfiles
 ftp/ftplocate||2014-04-11|Has expired: Depends on expired textproc/glimpse
 misc/tkman||2014-04-11|Has expired: Depends on expired textproc/glimpse
-devel/asl||2014-04-11|Has expired: Unmaintained since 1997
 net/pcnfsd||2014-04-11|Has expired: Unmaintained since 1997
 cad/chipmunk||2014-04-11|Has expired: Unmaintained since 1999
 graphics/comix||2014-04-11|Has expired: Insists on installing in /usr/local, and uses nautilus2 which is deprecated
@@ -6125,7 +6117,6 @@ science/hdf5-18|science/hdf5|2014-05-03|Use science/hdf5 instead
 science/netcdf-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf3-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf4|science/netcdf|2014-05-03|Use science/netcdf instead
-net/wackamole||2014-05-04|Has expired: Depends on expired www/spread
 x11-toolkits/gigi||2014-05-04|Has expired: Does not compile on 10 or higher
 net/asterisk-oh323||2014-05-04|Has expired: Depends on broken and unsupported asterisk14
 net/asterisk14||2014-05-04|Has expired: Broken and unsupported
@@ -6146,13 +6137,13 @@ lang/pnet-base||2014-05-04|Has expired: Alpha-quality abandonware - Decommission
 benchmarks/pnetmark||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
 lang/pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
 x11-wm/stumpwm||2014-05-04|Has expired: Broken for more than 4 months
-sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore and only supports ancient AMD K8.
+sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore and only supports ancient AMD K8
 net/pchar||2014-05-04|Has expired: Obsolete, abandoned
 x11-fonts/texcm-ttf||2014-05-04|Has expired: Should be replaced by x11-fonts/stix-fonts
 devel/buildapp||2014-05-05|Has expired: Broken for more than 6 months
 converters/konwert||2014-05-05|Broken with modern compilers, not staged, no upstream
-graphics/gimp-gap||2014-05-05|Broken with gimp 2.8, no release in 5 years.
-games/gnome-games-extra-data||2014-05-05|Not used in GNOME 3.
+graphics/gimp-gap||2014-05-05|Broken with gimp 2.8, no release in 5 years
+games/gnome-games-extra-data||2014-05-05|Not used in GNOME 3
 audio/libshout2|audio/libshout|2014-05-05|Use audio/libshout instead
 devel/bsdlibdwarf||2014-05-06|Has expired: Outdated, included in all supported versions of FreeBSD
 security/yassl|security/cyassl|2014-05-06|Moved to match upstream name
@@ -6183,3 +6174,27 @@ x11/libgnome-java||2014-05-27|Has expired: Unmaintained, outdated not depend on
 security/calife-devel||2014-05-28|Replaced by security/calife
 sysutils/synergy-devel||2014-05-30|Replaced by sysutils/synergy
 net-im/vicq||2014-05-30|Has expired: Unmaintained, outdated not depend on
+net-im/mercury||2014-05-31|Has expired: MSN is dying and the domain mercury.im is down
+german/bsdgroup-firefox-searchplugin||2014-05-31|Has expired: bsdgroup.de no longer seems to exist
+german/bsdforen-firefox-searchplugin||2014-05-31|Has expired: No longer works after forum software update
+lang/ocaml-doc||2014-06-01|Has expired: Documentation is now included in lang/ocaml
+lang/ocaml-examples||2014-06-01|Has expired: Outdated and discontinued; new examples are in lang/ocaml
+lang/gnat-aux|lang/gcc-aux|2014-06-01|Has expired: Superceded by gcc4.9-based lang/gcc-aux, use it instead
+lang/python31|lang/python33|2014-06-01|Has expired: Python 3.1 will be end-of-life soon, please migrate to lang/python33
+net/cvsup-mirror||2014-06-01|Removed: www, doc, gnats, ports repo gone; src repo deprecated
+multimedia/shell-fm||2014-06-02|Has expired: Unusable, subscription radio streaming service will come to an end
+security/py-posix1e|security/py-pylibacl|2014-06-03|Duplicate of security/py-pylibacl
+www/mediawiki120||2014-06-08|Has expired: Not maintained upstream
+x11-drivers/input-wacom|x11-drivers/xf86-input-wacom|2014-06-11|Following the usual naming of xorg input drivers
+editors/libreoffice-ca_XV|editors/libreoffice-ca_valencia|2014-06-11|Port has been renamed
+editors/libreoffice-ku||2014-06-11|Not provided anymore since LibreOffice 4.2
+editors/libreoffice-sh||2014-06-11|Not provided anymore since LibreOffice 4.2
+net/callweaver||2014-06-12|Project is dead
+net-im/openfire-devel||2014-06-13|Removed
+databases/py-cmemcache||2014-06-15|Has expired: Deprecated upstream
+games/mangos||2014-06-15|Has expired: Broken for more than 6 months
+lang/clojure-contrib||2014-06-15|Has expired: monolithic contrib library is obsolete
+devel/bzapi||2014-06-15|Has expired: Bugzilla has a native REST API, see https://wiki.mozilla.org/BMO/REST
+graphics/GraphicsMagick13|graphics/GraphicsMagick|2014-06-17|Removed, duplicate of unversioned GraphicsMagick port
+textproc/m17n-contrib|devel/m17n-db|2014-06-18|m17n-contrib was incorporated into m17n-db
+www/xpi-deepestsender||2014-06-18|Upstream disappeared, not working with modern mozilla applications

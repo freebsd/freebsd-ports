@@ -7,8 +7,8 @@ include/gavl/gavltime.h
 include/gavl/metatags.h
 include/gavl/metadata.h
 include/gavl/timecode.h
-lib/libgavl.la
 lib/libgavl.so
 lib/libgavl.so.1
+lib/libgavl.so.1.0.0
 libdata/pkgconfig/gavl.pc
 @dirrm include/gavl

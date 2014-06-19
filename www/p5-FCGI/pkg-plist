@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/FCGI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/.packlist
 %%PURE_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/FCGI.so
-%%PURE_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/FCGI.bs
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI

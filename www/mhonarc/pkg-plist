@@ -2,6 +2,10 @@ bin/mha-dbedit
 bin/mha-dbrecover
 bin/mha-decode
 bin/mhonarc
+man/man1/mha-dbedit.1.gz
+man/man1/mha-dbrecover.1.gz
+man/man1/mha-decode.1.gz
+man/man1/mhonarc.1.gz
 %%SITE_PERL%%/MHonArc/Char.pm
 %%SITE_PERL%%/MHonArc/Char/JP.pm
 %%SITE_PERL%%/MHonArc/Char/KR.pm

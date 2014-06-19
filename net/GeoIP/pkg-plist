@@ -2,9 +2,7 @@ bin/geoiplookup
 bin/geoiplookup6
 bin/geoipupdate
 bin/geoipupdate.sh
-@unexec if cmp -s %D/etc/GeoIP.conf %D/etc/GeoIP.conf.default; then rm -f %D/etc/GeoIP.conf; fi
-etc/GeoIP.conf.default
-@exec if [ ! -f %D/etc/GeoIP.conf ]; then cp -p %D/%F %B/GeoIP.conf; fi
+@sample etc/GeoIP.conf.sample
 include/GeoIP.h
 include/GeoIPCity.h
 include/GeoIPUpdate.h
@@ -16,7 +14,7 @@ lib/libGeoIPUpdate.a
 lib/libGeoIPUpdate.la
 lib/libGeoIPUpdate.so
 lib/libGeoIPUpdate.so.0
-%%DATADIR%%/GeoIP.dat
+@sample %%DATADIR%%/GeoIP.dat.sample
 man/man1/geoiplookup.1.gz
 man/man1/geoiplookup6.1.gz
 man/man1/geoipupdate.1.gz

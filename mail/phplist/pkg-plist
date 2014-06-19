@@ -136,6 +136,11 @@ bin/phplist
 %%WWWDIR%%/lists/admin/data/it-regioni.txt
 %%WWWDIR%%/lists/admin/data/mexico-state.txt
 %%WWWDIR%%/lists/admin/data/provinces-nl.txt
+%%WWWDIR%%/lists/admin/data/ru-countries.txt
+%%WWWDIR%%/lists/admin/data/ru-provinces-by.txt
+%%WWWDIR%%/lists/admin/data/ru-provinces-kz.txt
+%%WWWDIR%%/lists/admin/data/ru-provinces-ua.txt
+%%WWWDIR%%/lists/admin/data/ru-provinces.txt
 %%WWWDIR%%/lists/admin/data/tlds-alpha-by-domain.txt
 %%WWWDIR%%/lists/admin/data/uk-counties.txt
 %%WWWDIR%%/lists/admin/data/usa-states.txt
@@ -235,13 +240,23 @@ bin/phplist
 %%WWWDIR%%/lists/admin/help/index.php
 %%WWWDIR%%/lists/admin/help/it/attachments.php
 %%WWWDIR%%/lists/admin/help/it/embargo.php
+%%WWWDIR%%/lists/admin/help/it/finishsending.php
+%%WWWDIR%%/lists/admin/help/it/footer.php
 %%WWWDIR%%/lists/admin/help/it/format.php
 %%WWWDIR%%/lists/admin/help/it/from.php
+%%WWWDIR%%/lists/admin/help/it/generatetext.php
+%%WWWDIR%%/lists/admin/help/it/googletrack.php
 %%WWWDIR%%/lists/admin/help/it/mergeattributes.php
 %%WWWDIR%%/lists/admin/help/it/message.php
+%%WWWDIR%%/lists/admin/help/it/plaintextversion.php
 %%WWWDIR%%/lists/admin/help/it/preparemessage.php
 %%WWWDIR%%/lists/admin/help/it/repetition.php
+%%WWWDIR%%/lists/admin/help/it/requeueing.php
+%%WWWDIR%%/lists/admin/help/it/resetstats.php
 %%WWWDIR%%/lists/admin/help/it/sendformat.php
+%%WWWDIR%%/lists/admin/help/it/sendmethod.php
+%%WWWDIR%%/lists/admin/help/it/sendtest.php
+%%WWWDIR%%/lists/admin/help/it/sendurl.php
 %%WWWDIR%%/lists/admin/help/it/subject.php
 %%WWWDIR%%/lists/admin/help/it/usetemplate.php
 %%WWWDIR%%/lists/admin/help/ja/attachments.php
@@ -308,6 +323,27 @@ bin/phplist
 %%WWWDIR%%/lists/admin/help/pt_BR/sendformat.php
 %%WWWDIR%%/lists/admin/help/pt_BR/subject.php
 %%WWWDIR%%/lists/admin/help/pt_BR/usetemplate.php
+%%WWWDIR%%/lists/admin/help/ru/attachments.php
+%%WWWDIR%%/lists/admin/help/ru/embargo.php
+%%WWWDIR%%/lists/admin/help/ru/finishsending.php
+%%WWWDIR%%/lists/admin/help/ru/footer.php
+%%WWWDIR%%/lists/admin/help/ru/format.php
+%%WWWDIR%%/lists/admin/help/ru/from.php
+%%WWWDIR%%/lists/admin/help/ru/generatetext.php
+%%WWWDIR%%/lists/admin/help/ru/googletrack.php
+%%WWWDIR%%/lists/admin/help/ru/mergeattributes.php
+%%WWWDIR%%/lists/admin/help/ru/message.php
+%%WWWDIR%%/lists/admin/help/ru/plaintextversion.php
+%%WWWDIR%%/lists/admin/help/ru/preparemessage.php
+%%WWWDIR%%/lists/admin/help/ru/repetition.php
+%%WWWDIR%%/lists/admin/help/ru/requeueing.php
+%%WWWDIR%%/lists/admin/help/ru/resetstats.php
+%%WWWDIR%%/lists/admin/help/ru/sendformat.php
+%%WWWDIR%%/lists/admin/help/ru/sendmethod.php
+%%WWWDIR%%/lists/admin/help/ru/sendtest.php
+%%WWWDIR%%/lists/admin/help/ru/sendurl.php
+%%WWWDIR%%/lists/admin/help/ru/subject.php
+%%WWWDIR%%/lists/admin/help/ru/usetemplate.php
 %%WWWDIR%%/lists/admin/help/vi/attachments.php
 %%WWWDIR%%/lists/admin/help/vi/embargo.php
 %%WWWDIR%%/lists/admin/help/vi/format.php
@@ -548,6 +584,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/info/it/adminattributes.php
 %%WWWDIR%%/lists/admin/info/it/attributes.php
 %%WWWDIR%%/lists/admin/info/it/bounces.php
+%%WWWDIR%%/lists/admin/info/it/catlists.php
 %%WWWDIR%%/lists/admin/info/it/community.php
 %%WWWDIR%%/lists/admin/info/it/configure.php
 %%WWWDIR%%/lists/admin/info/it/defaults.php
@@ -564,12 +601,14 @@ bin/phplist
 %%WWWDIR%%/lists/admin/info/it/message.php
 %%WWWDIR%%/lists/admin/info/it/messages.php
 %%WWWDIR%%/lists/admin/info/it/reconcileusers.php
+%%WWWDIR%%/lists/admin/info/it/reindex.php
 %%WWWDIR%%/lists/admin/info/it/send.php
 %%WWWDIR%%/lists/admin/info/it/setup.php
 %%WWWDIR%%/lists/admin/info/it/spage.php
 %%WWWDIR%%/lists/admin/info/it/spageedit.php
 %%WWWDIR%%/lists/admin/info/it/statsmgt.php
 %%WWWDIR%%/lists/admin/info/it/templates.php
+%%WWWDIR%%/lists/admin/info/it/updatetranslation.php
 %%WWWDIR%%/lists/admin/info/it/usermgt.php
 %%WWWDIR%%/lists/admin/info/it/vote.php
 %%WWWDIR%%/lists/admin/info/ja/adminattributes.php
@@ -707,6 +746,36 @@ bin/phplist
 %%WWWDIR%%/lists/admin/info/pt_BR/templates.php
 %%WWWDIR%%/lists/admin/info/pt_BR/usermgt.php
 %%WWWDIR%%/lists/admin/info/pt_BR/vote.php
+%%WWWDIR%%/lists/admin/info/ru/adminattributes.php
+%%WWWDIR%%/lists/admin/info/ru/attributes.php
+%%WWWDIR%%/lists/admin/info/ru/bounces.php
+%%WWWDIR%%/lists/admin/info/ru/catlists.php
+%%WWWDIR%%/lists/admin/info/ru/community.php
+%%WWWDIR%%/lists/admin/info/ru/configure.php
+%%WWWDIR%%/lists/admin/info/ru/defaults.php
+%%WWWDIR%%/lists/admin/info/ru/eventlog.php
+%%WWWDIR%%/lists/admin/info/ru/export.php
+%%WWWDIR%%/lists/admin/info/ru/getrss.php
+%%WWWDIR%%/lists/admin/info/ru/import.php
+%%WWWDIR%%/lists/admin/info/ru/import1.php
+%%WWWDIR%%/lists/admin/info/ru/import2.php
+%%WWWDIR%%/lists/admin/info/ru/importadmin.php
+%%WWWDIR%%/lists/admin/info/ru/login.php
+%%WWWDIR%%/lists/admin/info/ru/logout.php
+%%WWWDIR%%/lists/admin/info/ru/members.php
+%%WWWDIR%%/lists/admin/info/ru/message.php
+%%WWWDIR%%/lists/admin/info/ru/messages.php
+%%WWWDIR%%/lists/admin/info/ru/reconcileusers.php
+%%WWWDIR%%/lists/admin/info/ru/reindex.php
+%%WWWDIR%%/lists/admin/info/ru/send.php
+%%WWWDIR%%/lists/admin/info/ru/setup.php
+%%WWWDIR%%/lists/admin/info/ru/spage.php
+%%WWWDIR%%/lists/admin/info/ru/spageedit.php
+%%WWWDIR%%/lists/admin/info/ru/statsmgt.php
+%%WWWDIR%%/lists/admin/info/ru/templates.php
+%%WWWDIR%%/lists/admin/info/ru/updatetranslation.php
+%%WWWDIR%%/lists/admin/info/ru/usermgt.php
+%%WWWDIR%%/lists/admin/info/ru/vote.php
 %%WWWDIR%%/lists/admin/info/sv/adminattributes.php
 %%WWWDIR%%/lists/admin/info/sv/attributes.php
 %%WWWDIR%%/lists/admin/info/sv/bounces.php
@@ -1949,6 +2018,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/locale/ar/phplist.po.pending
 %%WWWDIR%%/lists/admin/locale/ca/language_info
 %%WWWDIR%%/lists/admin/locale/ca/phplist.po
+%%WWWDIR%%/lists/admin/locale/cs/phplist.po
 %%WWWDIR%%/lists/admin/locale/da/language_info
 %%WWWDIR%%/lists/admin/locale/da/pagetitles.php
 %%WWWDIR%%/lists/admin/locale/da/phplist.po
@@ -1982,6 +2052,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/locale/fr/phplist.po.pending
 %%WWWDIR%%/lists/admin/locale/gl/phplist.po
 %%WWWDIR%%/lists/admin/locale/he/language_info
+%%WWWDIR%%/lists/admin/locale/he/phplist.po
 %%WWWDIR%%/lists/admin/locale/hu/language_info
 %%WWWDIR%%/lists/admin/locale/hu/pagetitles.php
 %%WWWDIR%%/lists/admin/locale/hu/phplist.po
@@ -1993,6 +2064,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/locale/ja/language_info
 %%WWWDIR%%/lists/admin/locale/ja/pagetitles.php
 %%WWWDIR%%/lists/admin/locale/ja/phplist.po
+%%WWWDIR%%/lists/admin/locale/nb/phplist.po
 %%WWWDIR%%/lists/admin/locale/nl/gettext_code
 %%WWWDIR%%/lists/admin/locale/nl/language_info
 %%WWWDIR%%/lists/admin/locale/nl/pagetitles.php
@@ -2006,10 +2078,12 @@ bin/phplist
 %%WWWDIR%%/lists/admin/locale/pl/pagetitles.php
 %%WWWDIR%%/lists/admin/locale/pl/phplist.po
 %%WWWDIR%%/lists/admin/locale/pl/phplist.po.pending
+%%WWWDIR%%/lists/admin/locale/pt/phplist.po
 %%WWWDIR%%/lists/admin/locale/pt_BR/language_info
 %%WWWDIR%%/lists/admin/locale/pt_BR/pagetitles.php
 %%WWWDIR%%/lists/admin/locale/pt_BR/phplist.po
 %%WWWDIR%%/lists/admin/locale/pt_BR/phplist.po.pending
+%%WWWDIR%%/lists/admin/locale/ro/phplist.po
 %%WWWDIR%%/lists/admin/locale/ru/language_info
 %%WWWDIR%%/lists/admin/locale/ru/pagetitles.php
 %%WWWDIR%%/lists/admin/locale/ru/phplist.po
@@ -2024,6 +2098,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/locale/sv/phplist.po.pending
 %%WWWDIR%%/lists/admin/locale/templates/pagetitles.pot
 %%WWWDIR%%/lists/admin/locale/templates/phplist.pot
+%%WWWDIR%%/lists/admin/locale/tr/phplist.po
 %%WWWDIR%%/lists/admin/locale/vi/language_info
 %%WWWDIR%%/lists/admin/locale/vi/pagetitles.php
 %%WWWDIR%%/lists/admin/locale/vi/phplist.po
@@ -3046,135 +3121,70 @@ bin/phplist
 %%WWWDIR%%/lists/texts/vietnamese.inc
 %%WWWDIR%%/lists/ut.php
 @dirrm %%WWWDIR%%/lists/styles
+@dirrm %%WWWDIR%%/lists/texts
 @dirrm %%WWWDIR%%/lists/js
+@dirrm %%WWWDIR%%/lists/config
+@dirrm %%WWWDIR%%/lists/images/busy
+@dirrm %%WWWDIR%%/lists/images/smiley
+@dirrm %%WWWDIR%%/lists/images
+@dirrm %%WWWDIR%%/lists/admin/actions
+@dirrm %%WWWDIR%%/lists/admin/help/nl
+@dirrm %%WWWDIR%%/lists/admin/help/fr
+@dirrm %%WWWDIR%%/lists/admin/help/en
+@dirrm %%WWWDIR%%/lists/admin/help/fa
+@dirrm %%WWWDIR%%/lists/admin/help/hu
+@dirrm %%WWWDIR%%/lists/admin/help/pl
+@dirrm %%WWWDIR%%/lists/admin/help/es
+@dirrm %%WWWDIR%%/lists/admin/help/nl_BE
+@dirrm %%WWWDIR%%/lists/admin/help/it
+@dirrm %%WWWDIR%%/lists/admin/help/ru
+@dirrm %%WWWDIR%%/lists/admin/help/pt_BR
+@dirrm %%WWWDIR%%/lists/admin/help/de
+@dirrm %%WWWDIR%%/lists/admin/help/ja
+@dirrm %%WWWDIR%%/lists/admin/help/vi
+@dirrm %%WWWDIR%%/lists/admin/help
+@dirrm %%WWWDIR%%/lists/admin/info/de
+@dirrm %%WWWDIR%%/lists/admin/info/ja
+@dirrm %%WWWDIR%%/lists/admin/info/vi
+@dirrm %%WWWDIR%%/lists/admin/info/ru
+@dirrm %%WWWDIR%%/lists/admin/info/sv
+@dirrm %%WWWDIR%%/lists/admin/info/it
+@dirrm %%WWWDIR%%/lists/admin/info/zh_TW
+@dirrm %%WWWDIR%%/lists/admin/info/nl_BE
+@dirrm %%WWWDIR%%/lists/admin/info/pl
+@dirrm %%WWWDIR%%/lists/admin/info/es
+@dirrm %%WWWDIR%%/lists/admin/info/hu
+@dirrm %%WWWDIR%%/lists/admin/info/fa
+@dirrm %%WWWDIR%%/lists/admin/info/pt_BR
+@dirrm %%WWWDIR%%/lists/admin/info/nl
+@dirrm %%WWWDIR%%/lists/admin/info/en
+@dirrm %%WWWDIR%%/lists/admin/info/fr
+@dirrm %%WWWDIR%%/lists/admin/info
 @dirrm %%WWWDIR%%/lists/admin/commonlib/lib/FirePHPCore
 @dirrm %%WWWDIR%%/lists/admin/commonlib/lib
 @dirrm %%WWWDIR%%/lists/admin/commonlib/pages
 @dirrm %%WWWDIR%%/lists/admin/commonlib
-@dirrm %%WWWDIR%%/lists/admin/info/de
-@dirrm %%WWWDIR%%/lists/admin/info/nl_BE
-@dirrm %%WWWDIR%%/lists/admin/info/pl
-@dirrm %%WWWDIR%%/lists/admin/info/nl
-@dirrm %%WWWDIR%%/lists/admin/info/it
-@dirrm %%WWWDIR%%/lists/admin/info/zh_TW
-@dirrm %%WWWDIR%%/lists/admin/info/ja
-@dirrm %%WWWDIR%%/lists/admin/info/fa
-@dirrm %%WWWDIR%%/lists/admin/info/en
-@dirrm %%WWWDIR%%/lists/admin/info/es
-@dirrm %%WWWDIR%%/lists/admin/info/hu
-@dirrm %%WWWDIR%%/lists/admin/info/fr
-@dirrm %%WWWDIR%%/lists/admin/info/pt_BR
-@dirrm %%WWWDIR%%/lists/admin/info/vi
-@dirrm %%WWWDIR%%/lists/admin/info/sv
-@dirrm %%WWWDIR%%/lists/admin/info
-@dirrm %%WWWDIR%%/lists/admin/auth
-@dirrm %%WWWDIR%%/lists/admin/js
-@dirrm %%WWWDIR%%/lists/admin/actions
-@dirrm %%WWWDIR%%/lists/admin/help/de
-@dirrm %%WWWDIR%%/lists/admin/help/nl_BE
-@dirrm %%WWWDIR%%/lists/admin/help/pl
-@dirrm %%WWWDIR%%/lists/admin/help/nl
-@dirrm %%WWWDIR%%/lists/admin/help/it
-@dirrm %%WWWDIR%%/lists/admin/help/ja
-@dirrm %%WWWDIR%%/lists/admin/help/fa
-@dirrm %%WWWDIR%%/lists/admin/help/en
-@dirrm %%WWWDIR%%/lists/admin/help/es
-@dirrm %%WWWDIR%%/lists/admin/help/hu
-@dirrm %%WWWDIR%%/lists/admin/help/fr
-@dirrm %%WWWDIR%%/lists/admin/help/pt_BR
-@dirrm %%WWWDIR%%/lists/admin/help/vi
-@dirrm %%WWWDIR%%/lists/admin/help
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/styles
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/js
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/css
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/16x16
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/32x32
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow/standart/png
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow/standart
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow/grey/png
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow/grey
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow/standart/png
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow/standart
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow/transparent/png
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow/transparent
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images
-@dirrm %%WWWDIR%%/lists/admin/ui/dressprow
-@dirrm %%WWWDIR%%/lists/admin/ui
-@dirrm %%WWWDIR%%/lists/admin/css
 @dirrm %%WWWDIR%%/lists/admin/images/tabs
 @dirrm %%WWWDIR%%/lists/admin/images
-@dirrm %%WWWDIR%%/lists/admin/tests
-@dirrm %%WWWDIR%%/lists/admin/locale/sl
-@dirrm %%WWWDIR%%/lists/admin/locale/da
-@dirrm %%WWWDIR%%/lists/admin/locale/de
-@dirrm %%WWWDIR%%/lists/admin/locale/zh_CN
-@dirrm %%WWWDIR%%/lists/admin/locale/templates
-@dirrm %%WWWDIR%%/lists/admin/locale/nl_BE
-@dirrm %%WWWDIR%%/lists/admin/locale/pl
-@dirrm %%WWWDIR%%/lists/admin/locale/nl
-@dirrm %%WWWDIR%%/lists/admin/locale/it
-@dirrm %%WWWDIR%%/lists/admin/locale/zh_TW
-@dirrm %%WWWDIR%%/lists/admin/locale/ja
-@dirrm %%WWWDIR%%/lists/admin/locale/gl
-@dirrm %%WWWDIR%%/lists/admin/locale/fi
-@dirrm %%WWWDIR%%/lists/admin/locale/fa
-@dirrm %%WWWDIR%%/lists/admin/locale/en
-@dirrm %%WWWDIR%%/lists/admin/locale/el
-@dirrm %%WWWDIR%%/lists/admin/locale/es
-@dirrm %%WWWDIR%%/lists/admin/locale/hu
-@dirrm %%WWWDIR%%/lists/admin/locale/fr
-@dirrm %%WWWDIR%%/lists/admin/locale/ca
-@dirrm %%WWWDIR%%/lists/admin/locale/pt_BR
-@dirrm %%WWWDIR%%/lists/admin/locale/he
-@dirrm %%WWWDIR%%/lists/admin/locale/es_AR
-@dirrm %%WWWDIR%%/lists/admin/locale/ru
-@dirrm %%WWWDIR%%/lists/admin/locale/vi
-@dirrm %%WWWDIR%%/lists/admin/locale/ar
-@dirrm %%WWWDIR%%/lists/admin/locale/sv
-@dirrm %%WWWDIR%%/lists/admin/locale
-@dirrm %%WWWDIR%%/lists/admin/installer/lib
-@dirrm %%WWWDIR%%/lists/admin/installer
-@dirrm %%WWWDIR%%/lists/admin/data
-@dirrm %%WWWDIR%%/lists/admin/lan/sl
-@dirrm %%WWWDIR%%/lists/admin/lan/da
-@dirrm %%WWWDIR%%/lists/admin/lan/de
-@dirrm %%WWWDIR%%/lists/admin/lan/zh_CN
-@dirrm %%WWWDIR%%/lists/admin/lan/nl_BE
-@dirrm %%WWWDIR%%/lists/admin/lan/pl
-@dirrm %%WWWDIR%%/lists/admin/lan/nl
-@dirrm %%WWWDIR%%/lists/admin/lan/it
-@dirrm %%WWWDIR%%/lists/admin/lan/zh_TW
-@dirrm %%WWWDIR%%/lists/admin/lan/ja
-@dirrm %%WWWDIR%%/lists/admin/lan/fa
-@dirrm %%WWWDIR%%/lists/admin/lan/en
-@dirrm %%WWWDIR%%/lists/admin/lan/es
-@dirrm %%WWWDIR%%/lists/admin/lan/hu
-@dirrm %%WWWDIR%%/lists/admin/lan/fr
-@dirrm %%WWWDIR%%/lists/admin/lan/pt_BR
-@dirrm %%WWWDIR%%/lists/admin/lan/ru
-@dirrm %%WWWDIR%%/lists/admin/lan/vi
-@dirrm %%WWWDIR%%/lists/admin/lan/sv
-@dirrm %%WWWDIR%%/lists/admin/lan
-@dirrm %%WWWDIR%%/lists/admin/PHPMailer-5.2.5/docs
-@dirrm %%WWWDIR%%/lists/admin/PHPMailer-5.2.5/language
-@dirrm %%WWWDIR%%/lists/admin/PHPMailer-5.2.5
-@dirrm %%WWWDIR%%/lists/admin/onyxrss
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/js
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/lang
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/css/behaviors
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/css/images
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/css/behaviors
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/css
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/images/smiley/msn
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/images/smiley
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/images
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/wsc
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/_source/commandclasses
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/_source/internals
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/_source/commandclasses
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/_source/classes
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/_source
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/lang
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default/images/icons/32
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default/images/icons
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default/images
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default/js
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/connectors/phplist
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/connectors
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/js
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/skins/default/images
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/skins/default
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/skins/silver/images
@@ -3182,50 +3192,122 @@ bin/phplist
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/skins/office2003/images
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/skins/office2003
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/skins
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_flash
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_docprops
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_select
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_image
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_about/sponsors
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_about
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_template/images
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_template
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_scayt
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dtd
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_spellerpages/spellerpages
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_spellerpages
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_template/images
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_template
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/common/images
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/common
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_select
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_flash
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_scayt
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_about/sponsors
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_about
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_link
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_image
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog/fck_docprops
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dialog
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/simplecommands
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/autogrow
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/placeholder/lang
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/placeholder
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/autogrow
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/dragresizetable
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/tablecommands
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/bbcode/_sample
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/bbcode
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/dragresizetable
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/tablecommands
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins/simplecommands
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/plugins
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/dtd
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/connectors/phplist
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/connectors
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default/js
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default/images/icons/32
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default/images/icons
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default/images
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser/default
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager/browser
-@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/filemanager
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/images/smiley/msn
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/images/smiley
+@dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor/images
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor/editor
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist/fckeditor
 @dirrm %%WWWDIR%%/lists/admin/plugins/fckphplist
 @dirrm %%WWWDIR%%/lists/admin/plugins
+@dirrm %%WWWDIR%%/lists/admin/tests
+@dirrm %%WWWDIR%%/lists/admin/onyxrss
+@dirrm %%WWWDIR%%/lists/admin/installer/lib
+@dirrm %%WWWDIR%%/lists/admin/installer
+@dirrm %%WWWDIR%%/lists/admin/data
+@dirrm %%WWWDIR%%/lists/admin/auth
+@dirrm %%WWWDIR%%/lists/admin/js
+@dirrm %%WWWDIR%%/lists/admin/PHPMailer-5.2.5/language
+@dirrm %%WWWDIR%%/lists/admin/PHPMailer-5.2.5/docs
+@dirrm %%WWWDIR%%/lists/admin/PHPMailer-5.2.5
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/styles
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/32x32
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/16x16
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow/transparent/png
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow/transparent
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow/standart/png
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow/standart
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/noshadow
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow/standart/png
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow/standart
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow/grey/png
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow/grey
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons/shadow
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images/icons
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/images
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/css
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow/js
+@dirrm %%WWWDIR%%/lists/admin/ui/dressprow
+@dirrm %%WWWDIR%%/lists/admin/ui
+@dirrm %%WWWDIR%%/lists/admin/lan/zh_CN
+@dirrm %%WWWDIR%%/lists/admin/lan/nl
+@dirrm %%WWWDIR%%/lists/admin/lan/en
+@dirrm %%WWWDIR%%/lists/admin/lan/fr
+@dirrm %%WWWDIR%%/lists/admin/lan/fa
+@dirrm %%WWWDIR%%/lists/admin/lan/zh_TW
+@dirrm %%WWWDIR%%/lists/admin/lan/pl
+@dirrm %%WWWDIR%%/lists/admin/lan/es
+@dirrm %%WWWDIR%%/lists/admin/lan/hu
+@dirrm %%WWWDIR%%/lists/admin/lan/da
+@dirrm %%WWWDIR%%/lists/admin/lan/pt_BR
+@dirrm %%WWWDIR%%/lists/admin/lan/sl
+@dirrm %%WWWDIR%%/lists/admin/lan/it
+@dirrm %%WWWDIR%%/lists/admin/lan/ru
+@dirrm %%WWWDIR%%/lists/admin/lan/nl_BE
+@dirrm %%WWWDIR%%/lists/admin/lan/sv
+@dirrm %%WWWDIR%%/lists/admin/lan/de
+@dirrm %%WWWDIR%%/lists/admin/lan/ja
+@dirrm %%WWWDIR%%/lists/admin/lan/vi
+@dirrm %%WWWDIR%%/lists/admin/lan
+@dirrm %%WWWDIR%%/lists/admin/css
+@dirrm %%WWWDIR%%/lists/admin/locale/pl
+@dirrm %%WWWDIR%%/lists/admin/locale/es
+@dirrm %%WWWDIR%%/lists/admin/locale/hu
+@dirrm %%WWWDIR%%/lists/admin/locale/gl
+@dirrm %%WWWDIR%%/lists/admin/locale/nb
+@dirrm %%WWWDIR%%/lists/admin/locale/nl_BE
+@dirrm %%WWWDIR%%/lists/admin/locale/templates
+@dirrm %%WWWDIR%%/lists/admin/locale/en
+@dirrm %%WWWDIR%%/lists/admin/locale/fr
+@dirrm %%WWWDIR%%/lists/admin/locale/nl
+@dirrm %%WWWDIR%%/lists/admin/locale/pt_BR
+@dirrm %%WWWDIR%%/lists/admin/locale/cs
+@dirrm %%WWWDIR%%/lists/admin/locale/he
+@dirrm %%WWWDIR%%/lists/admin/locale/fa
+@dirrm %%WWWDIR%%/lists/admin/locale/ar
+@dirrm %%WWWDIR%%/lists/admin/locale/fi
+@dirrm %%WWWDIR%%/lists/admin/locale/sv
+@dirrm %%WWWDIR%%/lists/admin/locale/pt
+@dirrm %%WWWDIR%%/lists/admin/locale/ru
+@dirrm %%WWWDIR%%/lists/admin/locale/de
+@dirrm %%WWWDIR%%/lists/admin/locale/ja
+@dirrm %%WWWDIR%%/lists/admin/locale/vi
+@dirrm %%WWWDIR%%/lists/admin/locale/el
+@dirrm %%WWWDIR%%/lists/admin/locale/tr
+@dirrm %%WWWDIR%%/lists/admin/locale/es_AR
+@dirrm %%WWWDIR%%/lists/admin/locale/da
+@dirrm %%WWWDIR%%/lists/admin/locale/zh_TW
+@dirrm %%WWWDIR%%/lists/admin/locale/ca
+@dirrm %%WWWDIR%%/lists/admin/locale/ro
+@dirrm %%WWWDIR%%/lists/admin/locale/it
+@dirrm %%WWWDIR%%/lists/admin/locale/sl
+@dirrm %%WWWDIR%%/lists/admin/locale/zh_CN
+@dirrm %%WWWDIR%%/lists/admin/locale
 @dirrm %%WWWDIR%%/lists/admin
-@dirrm %%WWWDIR%%/lists/texts
-@dirrm %%WWWDIR%%/lists/images/busy
-@dirrm %%WWWDIR%%/lists/images/smiley
-@dirrm %%WWWDIR%%/lists/images
-@dirrm %%WWWDIR%%/lists/config
 @dirrmtry %%WWWDIR%%/lists
 @dirrmtry %%WWWDIR%%

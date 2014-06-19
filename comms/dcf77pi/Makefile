@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	dcf77pi
-PORTVERSION=	2.1.0
+PORTVERSION=	3.0.0.1
 CATEGORIES=	comms
 
 MAINTAINER=	rene@FreeBSD.org
-COMMENT=	DCF77 receiver/logger/analyzer for the Raspberry Pi
+COMMENT=	DCF77 receiver/logger/analyzer and library for the Raspberry Pi
 
 LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rene0
-GH_COMMIT=	bb0dc81
+GH_COMMIT=	92c359d
 
 USES=		ncurses
 

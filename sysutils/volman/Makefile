@@ -10,7 +10,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/jmptbl/volman/
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	FreeBSD specific volume manager
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_RC_SUBR=	volmand
 VM_SUB_FILES=	vmount volmand
 
@@ -18,7 +18,6 @@ OPTIONS_DEFINE=	 OPENBOX NTFS3G
 OPENBOX_DESC=	Openbox pipemenu script
 NTFS3G_DESC=	Use fusefs-ntfs extensions
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENBOX}
@@ -42,11 +41,11 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/volmand ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/vmount ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/volmand ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/vmount ${STAGEDIR}${PREFIX}/bin
 .if defined(WITH_OPENBOX)
-	${INSTALL_SCRIPT} ${WRKSRC}/obvolman ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/obvolman ${STAGEDIR}${PREFIX}/bin
 .endif
-	${INSTALL_DATA} ${WRKSRC}/volman.conf ${PREFIX}/etc/volman.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/volman.conf ${STAGEDIR}${PREFIX}/etc/volman.conf.sample
 
 .include <bsd.port.mk>

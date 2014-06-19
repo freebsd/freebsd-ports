@@ -15,9 +15,7 @@ USE_RC_SUBR=	traff
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-CFLAGS+=	${PTHREAD_CFLAGS} -L${LOCALBASE}/lib
-LFLAGS=		${PTHREAD_LIBS}
-CONFIGURE_ENV+=	"LIBS=-largp"
+LIBS+=		-L${LOCALBASE}/lib -largp
 
 OPTIONS_DEFINE=		MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
@@ -27,19 +25,17 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-CFLAGS+=	-DwithMYSQL -I${LOCALBASE}/include -L${LOCALBASE}/lib/mysql
-LFLAGS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient_r
+CPPFLAGS+=	-DwithMYSQL -I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib/mysql -lmysqlclient_r
 CONFIGURE_ARGS+=--enable-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-CFLAGS+=	-DwithPGSQL -I${LOCALBASE}/include
-LFLAGS+=	-L${LOCALBASE}/lib -lpq
+CPPFLAGS+=	-DwithPGSQL -I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lpq
 CONFIGURE_ARGS+=--enable-postgresql
 .endif
-
-MAKE_ARGS+=	EXTRA_LIBS="${LFLAGS}"
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \

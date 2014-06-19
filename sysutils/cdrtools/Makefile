@@ -49,8 +49,7 @@ SICONVTABLES=	cp10000 cp10006 cp10007 cp10029 cp10079 cp10081 cp1250 \
 		iso8859-16 iso8859-2 iso8859-3 iso8859-4 iso8859-5 \
 		iso8859-6 iso8859-7 iso8859-8 iso8859-9 koi8-r koi8-u
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 #CFLAGS+=	-DSOURCE_MODIFIED
 SUB_FILES=	pkg-message
 MAKE_JOBS_UNSAFE=	yes

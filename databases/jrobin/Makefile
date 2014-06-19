@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A pure Java alternative to RRDTool
+COMMENT=	Pure Java alternative to RRDTool
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

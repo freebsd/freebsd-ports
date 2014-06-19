@@ -17,24 +17,24 @@ bin/domainname.sh
 %%PORTDOCS%%%%DOCSDIR%%/README.how-can-i-help
 %%PORTDOCS%%%%DOCSDIR%%/README.quotes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/admin/add_basic_zone
-%%EXAMPLESDIR%%/admin/add_generic_record
-%%EXAMPLESDIR%%/admin/add_sub_alias
-%%EXAMPLESDIR%%/admin/add_sub_host
-%%EXAMPLESDIR%%/admin/add_sub_mx
-%%EXAMPLESDIR%%/admin/config.pl
-%%EXAMPLESDIR%%/admin/dhcp_names
-%%EXAMPLESDIR%%/admin/samba_names
-%%EXAMPLESDIR%%/admin/secondary_zone
-%%EXAMPLESDIR%%/admin/set_generic_record
-%%EXAMPLESDIR%%/admin/set_ip_pointer
-%%EXAMPLESDIR%%/admin/set_sub_alias
-%%EXAMPLESDIR%%/admin/set_sub_host
-%%EXAMPLESDIR%%/admin/set_sub_mx
-%%EXAMPLESDIR%%/admin/set_txt
-%%EXAMPLESDIR%%/admin/transfer_zone
-%%EXAMPLESDIR%%/admin/unset_ip_pointer
-%%EXAMPLESDIR%%/axfr
-%%EXAMPLESDIR%%/ldapdns.conf
-@dirrm %%EXAMPLESDIR%%/admin
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/add_basic_zone
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/add_generic_record
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/add_sub_alias
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/add_sub_host
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/add_sub_mx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/config.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/dhcp_names
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/samba_names
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/secondary_zone
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/set_generic_record
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/set_ip_pointer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/set_sub_alias
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/set_sub_host
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/set_sub_mx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/set_txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/transfer_zone
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/unset_ip_pointer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axfr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ldapdns.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/admin
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

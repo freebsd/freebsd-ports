@@ -8,21 +8,19 @@ CATEGORIES=	misc
 MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	mono@FreeBSD.org
-COMMENT=	A tool to discover detailed model information about an iPod
+COMMENT=	Tool to discover detailed model information about an iPod
 
-LIB_DEPENDS=	sgutils2.2:${PORTSDIR}/sysutils/sg3_utils \
-		hal.1:${PORTSDIR}/sysutils/hal
-BUILD_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono \
-		${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
-RUN_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono \
-		${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
+LIB_DEPENDS=	libsgutils2.so:${PORTSDIR}/sysutils/sg3_utils \
+		libhal.so:${PORTSDIR}/sysutils/hal
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
 
 CONFIGURE_ARGS+=--with-hal-callouts-dir=${PREFIX}/libexec
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig pathfix
+USES=		gmake mono pkgconfig pathfix
+MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!/bin/sh|' \
 	    ${WRKSRC}/src/PodSleuth.Hal/hal-podsleuth.in \

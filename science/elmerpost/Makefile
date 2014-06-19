@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualization of Numerical Results in the ELMER FEM package
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\

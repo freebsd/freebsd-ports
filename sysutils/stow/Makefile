@@ -21,7 +21,7 @@ CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 INSTALL_TARGET=	install-exec-am install-dist_pmstowDATA install-info-am \
 		install-man install-pmDATA
 
-OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 INFO=		stow
 PORTDOCS=	*

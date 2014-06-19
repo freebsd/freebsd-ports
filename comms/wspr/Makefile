@@ -3,7 +3,7 @@
 
 PORTNAME=	wspr
 DISTVERSION=	${VERSION}.r${SVN_REV}
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
@@ -25,37 +25,30 @@ USES=		fortran gmake
 USE_BZIP2=	yes
 ALL_TARGET=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	--enable-gfortran --prefix=${STAGEDIR}${LOCALBASE} \
 		--with-portaudio-include-dir=${LOCALBASE}/include/portaudio2 \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
+MAKE_ENV+=	PYTHONUSERBASE=${STAGEDIR}${PYTHONBASE}
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}
 VERSION=	3.00
 
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 post-configure:
-	cp ${FILESDIR}/wspr ${WRKSRC}
+	@${REINPLACE_CMD} -e 's|%%DESTDIR%%|${STAGEDIR}|' ${WRKSRC}/Makefile
+	@cp ${FILESDIR}/wspr ${WRKSRC}
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+post-build:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${WRKSRC}/LICENSE.TXT ${WRKSRC}/WSPR_Announcement.TXT \
 	${WRKSRC}/WSPR0_Instructions.TXT ${WRKSRC}/WSPR_Quick_Start.TXT \
 	${WRKSRC}/supported_rigs.txt
-	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO}
-	@${ECHO} "docs installed in ${DOCSDIR}"
-	@${ECHO}
-.endif
-	@${CAT} ${PKGMESSAGE}
-
 .if defined(BOOTSTRAP)
 SVN_REV!=	svn info http://svn.code.sf.net/p/wsjt/code/branches/wspr | ${GREP} Revision | cut -d' ' -f2
 .else

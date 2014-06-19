@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic localization for Traditional Chinese locale
 
 NO_BUILD=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
 SUB_FILES=	pkg-message
 

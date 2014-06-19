@@ -14,7 +14,7 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	*

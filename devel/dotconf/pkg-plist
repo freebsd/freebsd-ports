@@ -1,8 +1,8 @@
 include/dotconf.h
 lib/libdotconf.a
-lib/libdotconf.la
 lib/libdotconf.so
 lib/libdotconf.so.0
+lib/libdotconf.so.0.0.1
 libdata/pkgconfig/dotconf.pc
 %%PORTDOCS%%%%DOCSDIR%%/dotconf-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/dotconf-features.txt

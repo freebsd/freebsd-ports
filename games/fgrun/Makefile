@@ -8,7 +8,7 @@ MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAG
 		LOCAL/martymac
 
 MAINTAINER=	buganini@gmail.com
-COMMENT=	A graphical frontend to run FlightGear Flight Simulator
+COMMENT=	Graphical frontend to run FlightGear Flight Simulator
 
 LICENSE=	GPLv2
 

@@ -1,0 +1,44 @@
+commit d4fca9ffb31a2383459c89b27f81b10b7ddece1a
+Author: Luigi Toscano <luigi.toscano@tiscali.it>
+Date:   Wed Jun 4 22:40:12 2014 +0200
+
+    Explicitly load external entities (after CVE-2014-0191)
+    
+    Use the more modern API function for XML loading and enable the
+    flags which load the external entities, so that meinproc4 can work
+    again after the security changes implemented for CVE-2014-0191.
+    Network loading is disabled too now.
+    
+    REVIEW: 118270
+    BUG: 335001
+    FIXED-IN: 4.13.2
+
+diff --git a/kdoctools/meinproc.cpp b/kdoctools/meinproc.cpp
+index e0f8faf..0467f22 100644
+--- kdoctools/meinproc.cpp
++++ kdoctools/meinproc.cpp
+@@ -207,8 +207,8 @@ int main(int argc, char **argv) {
+ 
+         if (style_sheet != NULL) {
+ 
+-            xmlDocPtr doc = xmlParseFile( QFile::encodeName( checkFilename ).constData() );
+-
++            xmlDocPtr doc = xmlReadFile( QFile::encodeName( checkFilename ).constData(),
++                                         NULL, XML_PARSE_NOENT|XML_PARSE_DTDLOAD|XML_PARSE_NONET );
+             xmlDocPtr res = xsltApplyStylesheet(style_sheet, doc, &params[0]);
+ 
+             xmlFreeDoc(doc);
+diff --git a/kdoctools/xslt.cpp b/kdoctools/xslt.cpp
+index a7265ca..4d64de4 100644
+--- kdoctools/xslt.cpp
++++ kdoctools/xslt.cpp
+@@ -157,7 +157,8 @@ QString transform( const QString &pat, const QString& tss,
+ 
+     INFO(i18n("Parsing document"));
+ 
+-    xmlDocPtr doc = xmlParseFile(QFile::encodeName(pat));
++    xmlDocPtr doc = xmlReadFile(QFile::encodeName(pat), NULL,
++                                XML_PARSE_NOENT|XML_PARSE_DTDLOAD|XML_PARSE_NONET);
+     xsltTransformContextPtr ctxt;
+ 
+     ctxt = xsltNewTransformContext(style_sheet, doc);

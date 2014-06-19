@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/BSD/Jail/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Jail/Object/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Jail/Object/Object.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Jail/Object/Object.so
 %%PERL5_MAN3%%/BSD::Jail::Object.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Jail/Object

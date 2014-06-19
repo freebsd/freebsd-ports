@@ -6,7 +6,7 @@ PORTVERSION=	1.3.12
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	An extremely powerful Tokenizer driven Template engine
+COMMENT=	Extremely powerful Tokenizer driven Template engine
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -239,9 +239,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/openssh.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/openssl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/permissions.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-core.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-developers.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-other.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pkgng-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-broken.html

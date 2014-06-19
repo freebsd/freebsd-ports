@@ -19,7 +19,6 @@ EMACS_PORT_NAME=emacs21
 
 INFO=		calc
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile
 

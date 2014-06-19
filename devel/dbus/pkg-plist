@@ -29,7 +29,7 @@ lib/libdbus-1.a
 lib/libdbus-1.la
 lib/libdbus-1.so
 lib/libdbus-1.so.3
-lib/libdbus-1.so.3.8.3
+lib/libdbus-1.so.3.8.5
 libdata/pkgconfig/dbus-1.pc
 @group %%GROUPS%%
 @mode 4750

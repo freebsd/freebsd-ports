@@ -129,10 +129,10 @@ bin/nrc
 %%PORTDOCS%%%%DOCSDIR%%/ArchText.nrx
 %%PORTDOCS%%%%DOCSDIR%%/wordclock.html
 %%PORTDOCS%%%%DOCSDIR%%/ArchText.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/hello.nrx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello.nrx
 %%JAVAJARDIR%%/NetRexxC.jar
 %%JAVAJARDIR%%/NetRexxR.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/netrexx/lang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/netrexx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -1,5 +1,5 @@
 --- Makefile.orig	1994-01-26 18:32:33.000000000 +0100
-+++ Makefile	2013-05-27 11:38:13.565381504 +0200
++++ Makefile	2014-06-04 12:42:07.532697759 +0200
 @@ -26,7 +26,7 @@
  CP = cp
  
@@ -64,16 +64,37 @@
  	-${RM} bin/shownonascii
  	(cd bin; ${LN} ../fonts/shownonascii shownonascii)
  	-${RM} bin/mailto-hebrew
-@@ -145,10 +145,11 @@
+@@ -127,28 +127,27 @@
+ 	@(cd bin; 				\
+ 	for file in *; 				\
+ 	do 					\
+-	    target=$(LOCALBINDIR)/$$file; 	\
++	    target=$(DESTDIR)$(LOCALBINDIR)/$$file; 	\
+ 	    echo "installing binary $$target";	\
+ 	    ${INSTALL} $$file $$target; 	\
+ 	done)
+ 	@(cd man;				\
+ 	for file in *.1;			\
+ 	do 					\
+-	    target=$(MAN1DIR)/`basename $$file .1`.$(MAN1EXT); \
++	    target=$(DESTDIR)$(MAN1DIR)/`basename $$file .1`.$(MAN1EXT); \
+ 	    echo "installing man page $$target";\
+ 	    ${CP} $$file $$target; 		\
+ 	done)
+ 	@(cd man;				\
+ 	for file in *.4;			\
+ 	do 					\
+-	    target=$(MAN4DIR)/`basename $$file .4`.$(MAN4EXT); \
++	    target=$(DESTDIR)$(MAN4DIR)/`basename $$file .4`.$(MAN4EXT); \
  	    echo "installing man page $$target";\
  	    ${CP} $$file $$target; 		\
  	done)
 -	@echo "Renaming old mailcap file to $(MAILCAPDIR)/mailcap.old
-+	@echo "Renaming old mailcap file to $(MAILCAPDIR)/mailcap.old"
- 	-mv $(MAILCAPDIR)/mailcap $(MAILCAPDIR)/mailcap.old
+-	-mv $(MAILCAPDIR)/mailcap $(MAILCAPDIR)/mailcap.old
  	@echo "installing file $(MAILCAPDIR)/mailcap"
- 	${CP} mailcap $(MAILCAPDIR)
-+	(cd fonts ; $(MAKE) PREFIX=${PREFIX} CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"   LDLIBS="${LDLIBS}" FONTSUFFIX="${FONTSUFFIX}" install)
+-	${CP} mailcap $(MAILCAPDIR)
++	${CP} mailcap $(DESTDIR)$(MAILCAPDIR)
++	(cd fonts ; $(MAKE) PREFIX=${DESTDIR}${PREFIX} CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"   LDLIBS="${LDLIBS}" FONTSUFFIX="${FONTSUFFIX}" install)
  
  uninstall-all:
  	@(cd bin; 				\

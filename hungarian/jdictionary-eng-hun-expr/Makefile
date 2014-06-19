@@ -12,5 +12,4 @@ COMMENT=	JDictionary plugin: English-Hungarian expression dictionary
 
 MASTERDIR=	${.CURDIR}/../../textproc/jdictionary
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.plugin"

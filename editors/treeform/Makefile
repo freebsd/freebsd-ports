@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/TreeForm%20Unified/TreeForm%20${PORTVERSION}
 DISTNAME=	TreeForm_1_0_3
 
 MAINTAINER=	buganini@gmail.com
-COMMENT=	A Linguistic Syntax/Semantics tree drawing editor
+COMMENT=	Linguistic Syntax/Semantics tree drawing editor
 
 USES=		zip
 NO_BUILD=	yes

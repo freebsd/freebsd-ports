@@ -15,10 +15,8 @@ COMMENT=	The Gnome MFSK terminal program
 LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
 
 GNU_CONFIGURE=	yes
-# This is pure evil but it looks like autoconf 2.53 has a bug in linking the
-# preprocessor include tests.  The following line is a work around.
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USES_CSTD=	gnu89
 USES=		gmake pkgconfig
 USE_GNOME=	libgnomeui gnomehack gnomeprefix

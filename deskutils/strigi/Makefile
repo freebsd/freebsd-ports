@@ -5,7 +5,7 @@ PORTNAME=	strigi
 PORTVERSION=	${STRIGI_VERSION}
 PORTREVISION=	2
 CATEGORIES=	deskutils
-DISTFILES=      #
+DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Strigi desktop search (meta port)

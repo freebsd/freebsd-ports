@@ -3,7 +3,7 @@
 
 PORTNAME=	mcmc-jags
 PORTVERSION=	3.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF:1,2,3,4
 MASTER_SITE_SUBDIR=	mcmc-jags/JAGS/${S}.x/Source/:1 \
@@ -19,7 +19,7 @@ COMMENT=	Just Another Gibbs Sampler
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		bison fortran gmake
+USES=		bison fortran gmake libtool
 USE_LDCONFIG=	yes
 
 DIST_SUBDIR=	${PORTNAME}
@@ -27,11 +27,8 @@ WRKSRC=		${WRKDIR}/JAGS-${PORTVERSION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAN1=		jags.1
 PLIST_SUB=	MODULEVERSION=${S}
 S=		${PORTVERSION:C|\..*||}
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -81,16 +78,13 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKDIR}/classic-bugs; ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKDIR}/classic-bugs; ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
 
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:${PORTSDIR}/math/R-cran-coda

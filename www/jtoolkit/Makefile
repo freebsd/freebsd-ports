@@ -18,5 +18,4 @@ USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYSETUP=	${PORTNAME}Setup.py
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

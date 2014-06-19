@@ -1,12 +1,16 @@
-bin/padload
+bin/crosspad2eps
+bin/crosspad2idraw
 bin/crosspad2ps
-@exec cd %D/bin; ln -s crosspad2ps crosspad2eps
-@exec cd %D/bin; ln -s crosspad2ps crosspad2tgif
-@exec cd %D/bin; ln -s crosspad2ps crosspad2idraw
-@unexec rm %D/bin/crosspad2eps 2>&1 >/dev/null || true
-@unexec rm %D/bin/crosspad2tgif 2>&1 >/dev/null || true
-@unexec rm %D/bin/crosspad2idraw 2>&1 >/dev/null || true
-%%PORTDOCS%%share/doc/crosspad/PROTOCOL
-%%PORTDOCS%%share/doc/crosspad/README.english
-%%PORTDOCS%%share/doc/crosspad/README.japanese
-%%PORTDOCS%%@dirrm share/doc/crosspad
+bin/crosspad2tgif
+@owner uucp
+bin/padload
+@owner
+man/man1/crosspad2eps.1.gz
+man/man1/crosspad2idraw.1.gz
+man/man1/crosspad2ps.1.gz
+man/man1/crosspad2tgif.1.gz
+man/man1/padload.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/PROTOCOL
+%%PORTDOCS%%%%DOCSDIR%%/README.english
+%%PORTDOCS%%%%DOCSDIR%%/README.japanese
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

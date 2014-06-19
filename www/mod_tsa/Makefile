@@ -33,7 +33,6 @@ AP_LIB=	${LOCALBASE}/lib
 
 PORTEXAMPLES=	*.sql tsa.conf
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -66,11 +65,12 @@ CONFIGURE_ARGS+=	--with-debug=yes
 CONFIGURE_ARGS+=	--with-debug-memory=yes
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|-i -a|-i -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
+		${WRKSRC}/Makefile.in
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/*.sql ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/tsa.conf ${EXAMPLESDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.sql ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tsa.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

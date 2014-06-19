@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PECL extension for a userspace equivalent of zend_parse_parameters()
+COMMENT=	PECL extension for a userspace equivalent of zend_parse_parameters()
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes

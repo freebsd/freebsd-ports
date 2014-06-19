@@ -50,23 +50,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/_T.e2x
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/encode.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CN/CN.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CN/CN.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Encode.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Encode.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/JP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/JP.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/KR/KR.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/KR/KR.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/TW/TW.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/TW/TW.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.so
 %%SITE_PERL%%/%%PERL_ARCH%%/encoding.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Unicode

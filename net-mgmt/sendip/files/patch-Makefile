@@ -7,21 +7,24 @@
 -MANDIR ?= $(PREFIX)/share/man/man1
 -LIBDIR ?= $(PREFIX)/lib/sendip
 +#PREFIX ?= /usr/local
-+BINDIR=${PREFIX}/bin
-+MANDIR=${PREFIX}/man/man1
-+LIBDIR=${PREFIX}/lib/sendip
++BINDIR=${DESTDIR}${PREFIX}/bin
++MANDIR=${DESTDIR}${PREFIX}/man/man1
++LIBDIR=${DESTDIR}${PREFIX}/lib/sendip
  #For most systems, this works
 -INSTALL ?= install
 +INSTALL?=install
  #For Solaris, you may need
  #INSTALL=/usr/ucb/install
  
- CFLAGS=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings \
- 			-Wstrict-prototypes -Wnested-externs -Winline -Werror -g -Wcast-align \
+-CFLAGS=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings \
+-			-Wstrict-prototypes -Wnested-externs -Winline -Werror -g -Wcast-align \
 -			-DSENDIP_LIBS=\"$(LIBDIR)\"
++CFLAGS+=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings -Wno-empty-body -Wno-constant-conversion \
++			-Wstrict-prototypes -Wnested-externs -Winline -Werror -Wcast-align \
 +			-DSENDIP_LIBS=\"${LIBDIR}\"
  #-Wcast-align causes problems on solaris, but not serious ones
- LDFLAGS=	-g -rdynamic -lm
+-LDFLAGS=	-g -rdynamic -lm
++LDFLAGS+=	-rdynamic -lm
  #LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm
  LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm -ldl
  LDFLAGS_LINUX= -g  -rdynamic -ldl -lm

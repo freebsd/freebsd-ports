@@ -3,9 +3,9 @@ bin/unieject
 etc/unieject.conf.sample
 include/unieject/unieject.h
 lib/libunieject.a
-lib/libunieject.la
 lib/libunieject.so
 lib/libunieject.so.5
+lib/libunieject.so.5.0.0
 libdata/pkgconfig/libunieject.pc
 man/man1/unieject.1.gz
 man/man5/unieject.conf.5.gz

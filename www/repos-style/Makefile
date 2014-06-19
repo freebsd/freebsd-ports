@@ -24,20 +24,13 @@ WRKSRC=		${WRKDIR}/repos-web
 SUB_LIST+=	PORTNAME=${PORTNAME}
 SUB_FILES+=	pkg-message
 
-NO_STAGE=	yes
 pre-install:
 # Prevent installation of .orig files by deleting them.
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	${MV} ${WRKSRC}/open/log/index.php ${WRKSRC}/open/log/index.dist.php
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@(cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR})
-	if [ ! -f ${WWWDIR}/open/log/index.php ]; then \
-		${CP} -p ${WWWDIR}/open/log/index.dist.php ${WWWDIR}/open/log/index.php; \
-	fi
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@(cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

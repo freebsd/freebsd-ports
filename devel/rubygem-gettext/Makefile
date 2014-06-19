@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A Ruby implementation of the gettext library
+COMMENT=	Ruby implementation of the gettext library
 
 RUN_DEPENDS=	rubygem-locale>=2.0.5:${PORTSDIR}/devel/rubygem-locale
 

@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
-LIB_DEPENDS=	metis.1:${PORTSDIR}/math/metis4
+LIB_DEPENDS=	libmetis.so:${PORTSDIR}/math/metis4
 
 HAS_CONFIGURE=	yes
 USES=		fortran
@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -38,12 +37,12 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .elif ${WITH_BLAS} == reference
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
@@ -98,15 +97,15 @@ bins: lib
 do-build: bins
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libtaucs.a ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}_SHARED/lib/FreeBSD/libtaucs.so.1 ${PREFIX}/lib
-	@${LN} -sf libtaucs.so.1 ${PREFIX}/lib/libtaucs.so
-	@${INSTALL_DATA} ${WRKSRC}/build/FreeBSD/*.h ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/src/*.h ${PREFIX}/include
-	@cd ${WRKSRC}_SHARED/bin/FreeBSD; ${INSTALL_PROGRAM} ${BINS} ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libtaucs.a ${STAGEDIR}${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}_SHARED/lib/FreeBSD/libtaucs.so.1 ${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf libtaucs.so.1 ${STAGEDIR}${PREFIX}/lib/libtaucs.so
+	@${INSTALL_DATA} ${WRKSRC}/build/FreeBSD/*.h ${STAGEDIR}${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/src/*.h ${STAGEDIR}${PREFIX}/include
+	@cd ${WRKSRC}_SHARED/bin/FreeBSD; ${INSTALL_PROGRAM} ${BINS} ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 check test: build

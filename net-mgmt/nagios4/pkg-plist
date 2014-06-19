@@ -1,5 +1,6 @@
 @exec install -d %D/%%NAGIOSWWWDIR%%/ssi
-@exec install -d -m 775 -o %%NAGIOSUSER%% -g %%NAGIOSGROUP%% %%NAGIOSDIR%% %%NAGIOSDIR%%/archives %%NAGIOSDIR%%/checkresults
+@exec install -d -m 775 -o %%NAGIOSUSER%% -g %%NAGIOSGROUP%% %%NAGIOSDIR%% %%NAGIOSDIR%%/archives
+@exec install -d -m 2775 -o %%NAGIOSUSER%% -g %%NAGIOSGROUP%% %%NAGIOSDIR%%/checkresults
 @exec install -d -m 775 -o %%NAGIOSUSER%% -g %%WWWGRP%% %%NAGIOSDIR%%/rw
 bin/nagios
 bin/nagiostats

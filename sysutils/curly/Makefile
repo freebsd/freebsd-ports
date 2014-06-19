@@ -19,10 +19,7 @@ BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 
 MAKE_FLAGS=
 MAKEFILE=
-MAN1=		${PORTNAME}.1
-MLINKS=		${PORTNAME}.1 un${PORTNAME}.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS=,CFLAGS+=,' -e 's,^DEBUG,#DEBUG,'\
 		-e 's,gcc,${CC},' ${WRKSRC}/bin/curly/Make.host
@@ -35,6 +32,7 @@ do-install:
 	( cd ${WRKSRC}/bin/curly && ${SETENV} ${MAKENV} makeme \
 	    ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
 	${INSTALL_MAN} ${WRKSRC}/bin/${PORTNAME}/${PORTNAME}.man \
-	    ${PREFIX}/man/man1/${PORTNAME}.1
+	    ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
+	${LN} -s ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/un${PORTNAME}.1
 
 .include <bsd.port.mk>

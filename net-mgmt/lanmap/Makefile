@@ -15,8 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USES=		zip
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 post-extract:
 	${CHMOD} 755 ${WRKSRC}/configure
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

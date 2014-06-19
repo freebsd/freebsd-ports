@@ -4,7 +4,7 @@ many ports installed that it is difficult to know which sections are relevant.
 It reads /usr/ports/UPDATING, attempting for each block to determine whether
 the affected ports are installed. It omits blocks that do not apply.
 It handles wildcards and other special cases, however it cannot handle
-all variants of phrases used on the APPLIES: line.
+all variants of phrases used on the AFFECTS: line.
 In uncertain cases, it errs on the side of reporting.
 
 Alex Stangl <alex@stangl.us>

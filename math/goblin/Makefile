@@ -19,7 +19,7 @@ USES=		gmake tk
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		LD="${CXX}" LIBS="-lm ${LDFLAGS}" \
+		LD="${CXX}" LIBS="${LIBS}" \
 		libtcl=${TCL_SHLIB_VER} libtk=${TK_SHLIB_VER} \
 		prefix=${PREFIX}
 ALL_TARGET=	all shared
@@ -28,8 +28,8 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/ \
-		-I${LOCALBASE}/include/tk${TK_VER} ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER} -ltk${TK_SHLIB_VER} ${PTHREAD_LIBS}
+		-I${LOCALBASE}/include/tk${TK_VER}
+LIBS+=		-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER} -ltk${TK_SHLIB_VER} -lm
 
 .include <bsd.port.options.mk>
 

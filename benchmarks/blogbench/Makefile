@@ -11,7 +11,7 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Performance Test of Filesystem I/O
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	bin/blogbench man/man8/blogbench.8.gz
 PORTDOCS=	README

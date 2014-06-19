@@ -5,7 +5,7 @@ PORTNAME=	libglapi
 PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
 
-COMMENT=	Common GL api libary used by Mesa based ports.
+COMMENT=	Common GL api libary used by Mesa based ports
 
 BUILD_DEPENDS=	expat>=0:${PORTSDIR}/textproc/expat2 \
 		libdrm>=0:${PORTSDIR}/graphics/libdrm \

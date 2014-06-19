@@ -215,6 +215,7 @@ include/dovecot/istream-rawlog.h
 include/dovecot/istream-seekable.h
 include/dovecot/istream-sized.h
 include/dovecot/istream-tee.h
+include/dovecot/istream-timeout.h
 include/dovecot/istream-zlib.h
 include/dovecot/istream.h
 include/dovecot/json-parser.h
@@ -325,6 +326,7 @@ include/dovecot/message-header-encode.h
 include/dovecot/message-header-parser.h
 include/dovecot/message-id.h
 include/dovecot/message-parser.h
+include/dovecot/message-part.h
 include/dovecot/message-part-serialize.h
 include/dovecot/message-search.h
 include/dovecot/message-size.h

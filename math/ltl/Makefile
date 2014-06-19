@@ -10,12 +10,11 @@ MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 MAINTAINER=	rossiya@gmail.com
 COMMENT=	A C++ class SSE library for scientific computing
 
-LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack \
-		blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack \
+		libblas.so:${PORTSDIR}/math/blas
 
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen --prefix=${PREFIX} --includedir=${PREFIX}/include/LTL
 MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
@@ -24,14 +23,12 @@ INSTALL_TARGET=	install install-data distdir
 
 PORTDOCS=	*.html
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/html/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>

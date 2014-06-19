@@ -15,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}${DISTVERSION}.zip
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	An implementation of JavaScript written in Java
+COMMENT=	Implementation of JavaScript written in Java
 
 LICENSE=	MPL
 
@@ -25,44 +25,39 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 JAVA_VERSION=	1.6+
 
+LINEDIT_DESC=	Enable line editing in the Rhino shell
+LINEDIT_RUN_DEPENDS=	${JLINEJAR}:${PORTSDIR}/devel/jline
+LINEDIT_USE=	java=yes ant=yes
+
 MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.5.0.zip \
 		-Dswing-ex-url=file://${DISTDIR}/${DIST_SUBDIR}/src.zip
 
-OPTIONS_DEFINE=	LINEDIT
-LINEDIT_DESC=	Enable line editing in the Rhino shell
-
 OPTIONS_DEFAULT=	LINEDIT
+OPTIONS_DEFINE=	LINEDIT
 
 USES=		zip
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLINEDIT}
+JLINEJAR=	${JAVAJARDIR}/jline.jar
+.else
+JLINEJAR=""
+.endif
 
 RHINOJAR=	${DATADIR}/${PORTNAME}.jar
 
 SUB_FILES=	rhinoc rhinodbg rhinosh
 SUB_LIST=	RHINOJAR=${RHINOJAR} JLINEJAR="${JLINEJAR}"
 
-USE_ANT=	yes
-USE_JAVA=	yes
-
 WRKSRC=	${WRKDIR}/${PORTNAME}${DISTVERSION}
 
 do-install:
-	@${MKDIR} ${DATADIR}; \
-	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}${DISTVERSION}/js.jar  ${RHINOJAR}; \
+	@${MKDIR} ${STAGEDIR}${DATADIR}; \
+	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}${DISTVERSION}/js.jar  ${STAGEDIR}${RHINOJAR}; \
 	RHINOSCRIPTS="${SUB_FILES}"; \
 	for RHINOSCRIPT in $${RHINOSCRIPTS}; do \
-	${INSTALL_SCRIPT} ${WRKDIR}/$${RHINOSCRIPT} ${PREFIX}/bin/; \
+	${INSTALL_SCRIPT} ${WRKDIR}/$${RHINOSCRIPT} ${STAGEDIR}${PREFIX}/bin/; \
 	done
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MLINEDIT}
-JLINEJAR=	${JAVAJARDIR}/jline.jar
-RUN_DEPENDS+=	${JLINEJAR}:${PORTSDIR}/devel/jline
-.else
-JLINEJAR=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

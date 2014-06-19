@@ -5,3 +5,11 @@ bin/getsockname
 bin/hose
 bin/sockdown
 bin/timelimit
+man/man1/encapsulate.1.gz
+man/man1/faucet.1.gz
+man/man1/getpeername.1.gz
+man/man1/hose.1.gz
+man/man1/netpipes.1.gz
+man/man1/sockdown.1.gz
+man/man1/timelimit.1.gz
+

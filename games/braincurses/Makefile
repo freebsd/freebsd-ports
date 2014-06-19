@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A clone of the Mastermind game
+COMMENT=	Clone of the Mastermind game
 
 LDFLAGS+=	-lncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}

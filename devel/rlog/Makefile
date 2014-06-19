@@ -3,7 +3,7 @@
 
 PORTNAME=	rlog
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,8 +15,9 @@ OPTIONS_DEFINE=	DOCS
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-USES=	gmake pathfix
-USE_AUTOTOOLS=	libtool
+USES=		gmake pathfix libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

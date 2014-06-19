@@ -15,7 +15,8 @@ COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	*.pl
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS?=	exctags:${PORTSDIR}/devel/ctags

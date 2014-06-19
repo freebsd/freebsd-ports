@@ -3,6 +3,7 @@
 
 PORTNAME=	josm
 PORTVERSION=	7182
+PORTREVISION=	1
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -11,12 +12,12 @@ EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A comprehensive editor for OpenStreetMap.org database
+COMMENT=	Comprehensive editor for OpenStreetMap.org database
 
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 
 JOSM_MEMORY_LIMIT?=1024
 

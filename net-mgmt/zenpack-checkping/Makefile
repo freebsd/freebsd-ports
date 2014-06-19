@@ -17,7 +17,7 @@ USES=		zenoss
 ZPACKPREFIX=	ZenPacks.Nagios.
 ZPACKGROUP=	community
 WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
-TAG=            0088e17
+TAG=		0088e17
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

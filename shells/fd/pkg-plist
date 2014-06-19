@@ -1,15 +1,11 @@
 bin/fd
 bin/fd-cat.C
 bin/fd-cat.ja
-bin/fdsh
-@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
-@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+@shell bin/fdsh
 bin/fd-dict.tbl
 bin/fd-unicd.tbl
 etc/fd2rc.dist
-@unexec if cmp -s %D/etc/fd2rc %D/etc/fd2rc.sample; then rm -f %D/etc/fd2rc; fi
-etc/fd2rc.sample
-@exec [ ! -f %B/fd2rc ] && cp %B/%f %B/fd2rc
+@sample etc/fd2rc.sample
 man/ja/man1/fd.1.gz
 man/ja/man1/fdsh.1.gz
 man/man1/fd.1.gz

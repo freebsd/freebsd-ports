@@ -10,8 +10,7 @@ COMMENT=	The gtk2+ port of emelfm, a fast graphical filemanager
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install
 

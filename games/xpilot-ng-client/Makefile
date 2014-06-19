@@ -3,7 +3,7 @@
 
 PKGNAMESUFFIX=	-client
 
-COMMENT=	An enhanced version of XPilot (client program)
+COMMENT=	Enhanced version of XPilot (client program)
 
 MASTERDIR=	${.CURDIR}/../xpilot-ng-server
 

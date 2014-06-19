@@ -1,12 +1,14 @@
---- ../passenger-4.0.41/build/nginx.rb.orig	2013-10-12 11:05:08.000000000 +0400
-+++ ../passenger-4.0.41/build/nginx.rb	2013-10-12 11:06:18.000000000 +0400
-@@ -32,16 +32,12 @@
+--- ../passenger-4.0.44/build/nginx.rb.orig	2013-10-27 02:00:00.000000000 +0400
++++ ../passenger-4.0.44/build/nginx.rb	2014-06-02 05:55:12.000000000 +0400
+@@ -32,6 +32,7 @@
  desc "Build Nginx support files"
  task :nginx => [
  	:nginx_without_native_support,
-+        LIBBOOST_OXT,
++	LIBBOOST_OXT,
  	NATIVE_SUPPORT_TARGET
  ].compact
+ 
+@@ -40,11 +41,6 @@
  
  task :nginx_without_native_support => [
  	auto_generated_sources,

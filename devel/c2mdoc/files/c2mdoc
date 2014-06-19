@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# c2mdoc -- Front-end which abuses the cproto parser to spit out
+#           mdoc(7) format prototypes for use in FreeBSD documentation.
+#
+# $FreeBSD$
+#
+
+AWKSCRIPT="%%LIBEXECDIR%%/c2mdoc.awk"
+CPROTO='-P"int\tf\t(\ta\t,\tb\t)" -pq -f3'
+CPROTO_BIN=cproto
+export CPROTO
+
+${CPROTO_BIN} $1 | \
+	grep -v '/\*.*\*/' | \
+	sed -e 's/[,();]//g' | \
+	${AWKSCRIPT}

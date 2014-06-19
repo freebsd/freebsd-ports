@@ -8,26 +8,31 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 PKGNAMESUFFIX=	12
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
 
-MAN5=		tw.config.5
-MAN8=		siggen.8 tripwire.8
 NO_CDROM=	cannot be redistributed for more than the cost of duplication
 NO_PACKAGE=	requires local database to be built
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	Unknown BYTEORDER
 USES=		perl5
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes
 
+.include <bsd.port.pre.mk>
+
+TDATADIR=	${STAGEDIR}/var/local/tcheck
+MAKE_ARGS=	BINDIR=${STAGEDIR}${PREFIX}/bin \
+		MANDIR=${STAGEDIR}${PREFIX}/man \
+		DATADIR=${DATADIR}
+NO_DB_BUILD=	yes
+
 TWCONFIG?=	${FILESDIR}/tw.conf.freebsd8
 
-NO_STAGE=	yes
 post-extract:
 	@ (cd ${WRKDIR}; tar xpf T1.2.tar)
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|/secureplace/bin|${PREFIX}/bin|' \
-		-e 's|/usr/man|${PREFIX}/man|' ${WRKSRC}/Makefile
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	    's|bs_ntohl|ntohl|g;s|bs_htonl|htonl|g'
 
@@ -36,8 +41,8 @@ pre-configure:
 	@ ${CP} ${TWCONFIG} ${WRKSRC}/configs/tw.conf.freebsd8
 
 post-install:
-	@ ${MKDIR} /var/adm/tcheck
-	@ ${CP} ${TWCONFIG} /var/adm/tcheck/tw.config
+	@ ${MKDIR} ${TDATADIR}
+	@ ${CP} ${TWCONFIG} /${TDATADIR}/tw.config.dist
 	# Creating tripwire database
 .ifndef NO_DB_BUILD
 	@ (cd /var/adm/tcheck; tripwire -initialize)
@@ -59,4 +64,4 @@ post-install:
 .endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagios
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	4
@@ -39,11 +39,11 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
 		--disable-statuswrl \
 		--enable-event-broker
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		PERL=${PERL}
+CONFIGURE_ENV=	PERL=${PERL}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
+CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}
+LIBS+=		-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install install-commandmode install-config
 PLIST_SUB=	NAGIOSDIR=${NAGIOSDIR} \

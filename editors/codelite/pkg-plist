@@ -1,16 +1,21 @@
-bin/codelite
-bin/codelite-make
-bin/codelite-terminal
 %%CLANG%%bin/codelite-clang
 bin/clg++
 bin/clgcc
+bin/codelite
+bin/codelite-cc
+bin/codelite-echo
+bin/codelite-make
+bin/codelite-terminal
 bin/codelite_cppcheck
 bin/codelite_exec
 bin/codelite_fix_files
 bin/codelite_indexer
 bin/codelite_kill_children
 bin/codelite_xterm
-bin/codelitegcc
+lib/codelite/CodeLiteDiff.so
+man/man1/codelite-make.1.gz
+man/man1/codelite.1.gz
+man/man1/codelite_fix_files.1.gz
 lib/codelite/CMakePlugin.so
 lib/codelite/CallGraph.so
 lib/codelite/CodeFormatter.so
@@ -62,6 +67,11 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/codelite-icons.zip
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
+%%DATADIR%%/config/cfg/gtk.cfg
+%%DATADIR%%/config/cfg/posix.cfg
+%%DATADIR%%/config/cfg/qt.cfg
+%%DATADIR%%/config/cfg/std.cfg
+%%DATADIR%%/config/cfg/windows.cfg
 %%DATADIR%%/config/codelite.xml.default
 %%DATADIR%%/config/debuggers.xml.default
 %%DATADIR%%/gdb_printers/libstdcxx/__init__.py
@@ -129,6 +139,10 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/gizmos/wxmain.project.wizard
 %%DATADIR%%/templates/gizmos/wxproject-fb.project.wizard
 %%DATADIR%%/templates/gizmos/wxproject.project.wizard
+%%DATADIR%%/templates/projects/CMake_Executable/CMakeLists.txt
+%%DATADIR%%/templates/projects/CMake_Executable/CMake_Executable.project
+%%DATADIR%%/templates/projects/CMake_Executable/icon.png
+%%DATADIR%%/templates/projects/CMake_Executable/main.cpp
 %%DATADIR%%/templates/projects/ConsoleClang++/ConsoleClang++.project
 %%DATADIR%%/templates/projects/ConsoleClang++/main.cpp
 %%DATADIR%%/templates/projects/ConsoleClang/ConsoleClang.project
@@ -199,6 +213,12 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/projects/executable-wx-frame/main.cpp
 %%DATADIR%%/templates/projects/executable-wx-frame/main.h
 %%DATADIR%%/templates/projects/executable-wx-frame/win_resources.rc
+%%DATADIR%%/templates/projects/executable-wx-xrc/executable-wx-xrc.project
+%%DATADIR%%/templates/projects/executable-wx-xrc/gui.wxcp
+%%DATADIR%%/templates/projects/executable-wx-xrc/gui.xrc
+%%DATADIR%%/templates/projects/executable-wx-xrc/icon.png
+%%DATADIR%%/templates/projects/executable-wx-xrc/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-xrc/main.h
 %%DATADIR%%/templates/projects/executable-wxcrafter-dialog/MainDialog.cpp
 %%DATADIR%%/templates/projects/executable-wxcrafter-dialog/MainDialog.h
 %%DATADIR%%/templates/projects/executable-wxcrafter-dialog/icon.png
@@ -242,7 +262,7 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/qmake/qmake.project
 %%DATADIR%%/unittest++1.3.tar.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/codelite.mo
-%%NLS%%share/locale/cz/LC_MESSAGES/codelite.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/codelite.mo
 share/applications/codelite.desktop
 @dirrm lib/codelite/resources
 @dirrm lib/codelite/debuggers
@@ -257,6 +277,7 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects/non-code-project
 @dirrm %%DATADIR%%/templates/projects/executable-wxcrafter-frame
 @dirrm %%DATADIR%%/templates/projects/executable-wxcrafter-dialog
+@dirrm %%DATADIR%%/templates/projects/executable-wx-xrc
 @dirrm %%DATADIR%%/templates/projects/executable-wx-frame
 @dirrm %%DATADIR%%/templates/projects/executable-wx-enabled
 @dirrm %%DATADIR%%/templates/projects/executable-wx-dialog
@@ -274,11 +295,12 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects/cobra-staticU
 @dirrm %%DATADIR%%/templates/projects/cobra-libraryU
 @dirrm %%DATADIR%%/templates/projects/cobra-executableU
-@dirrm %%DATADIR%%/templates/projects/ConsoleClang++
-@dirrm %%DATADIR%%/templates/projects/ConsoleClang
 @dirrm %%DATADIR%%/templates/projects/c_gtk3_template
 @dirrm %%DATADIR%%/templates/projects/c_gtk24_template
 @dirrm %%DATADIR%%/templates/projects/UnitTest++
+@dirrm %%DATADIR%%/templates/projects/ConsoleClang++
+@dirrm %%DATADIR%%/templates/projects/ConsoleClang
+@dirrm %%DATADIR%%/templates/projects/CMake_Executable
 @dirrm %%DATADIR%%/templates/projects
 @dirrm %%DATADIR%%/templates/gizmos
 @dirrm %%DATADIR%%/templates/formbuilder
@@ -291,7 +313,6 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/gdb_printers/libstdcxx/v6
 @dirrm %%DATADIR%%/gdb_printers/libstdcxx
 @dirrm %%DATADIR%%/gdb_printers
+@dirrm %%DATADIR%%/config/cfg
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/cz/LC_MESSAGES
-@dirrmtry share/locale/cz

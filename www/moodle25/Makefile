@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
-CONFLICTS=	moodle-1.*.* moodle24-2.4.* moodle26-2.6.[0-9]*
+CONFLICTS=	moodle-1.*.* moodle24-2.4.* moodle26-2.6.[0-9]* moodle27-2.7
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
 
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \

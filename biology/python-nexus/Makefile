@@ -8,7 +8,7 @@ CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A generic nexus file format reader for python
+COMMENT=	Generic nexus file format reader for python
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

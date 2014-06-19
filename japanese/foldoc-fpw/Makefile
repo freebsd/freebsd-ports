@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free On-line Dictionary of Computing (EPWING V1 format)
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/foldoc
 EXTRACT_BEFORE_ARGS=	-qL

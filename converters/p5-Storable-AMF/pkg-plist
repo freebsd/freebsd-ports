@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Storable/AMF3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Storable/AMF/Mapper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/AMF/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/AMF/AMF.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/AMF/AMF.so
 %%PERL5_MAN3%%/Storable::AMF.3.gz
 %%PERL5_MAN3%%/Storable::AMF0.3.gz

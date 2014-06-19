@@ -15,20 +15,19 @@ EXTRACT_ONLY=
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Java-like Matrix C++ Templates
 
-BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt \
-		unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
 RUN_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tnt
-	${EXTRACT_CMD} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		-d ${STAGEDIR}${PREFIX}/include/tnt
 	${MKDIR} ${WRKDIR}/doc ${STAGEDIR}${DOCSDIR}
-	${EXTRACT_CMD} -o ${DISTDIR}/${DIST_SUBDIR}/jama102doc \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/jama102doc.zip \
 		-d ${WRKDIR}/doc
-	(cd ${WRKDIR}/doc/doxygen && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKDIR}/doc/doxygen && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

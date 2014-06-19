@@ -45,14 +45,14 @@ PORTVERSION=	2.11.0
 PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://lx1.avasys.jp/iscan/${PORTVERSION}/
-DISTNAME= iscan_${PORTVERSION}-1
+DISTNAME=	iscan_${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The sane-epkowa driver for FreeBSD
 
 # use the following two lines for 2.15.0
 # MASTER_SITES=http://linux.avasys.jp/drivers/iscan/${PORTVERSION}/
-# DISTNAME= iscan_${PORTVERSION}-3
+# DISTNAME=	iscan_${PORTVERSION}-3
 
 WRKSRC=${WRKDIR}/iscan-${PORTVERSION}
 
@@ -74,7 +74,7 @@ USE_GNOME=	gtk20
 # Also pass appropriate flags to configure to use FreeBSD locations.
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=  --prefix=${PREFIX} LDFLAGS="-L${PREFIX}/lib -lgetline" CPPFLAGS=-I${PREFIX}/include
+CONFIGURE_ARGS+=--prefix=${PREFIX} LDFLAGS="-L${PREFIX}/lib -lgetline" CPPFLAGS=-I${PREFIX}/include
 
 .include <bsd.port.pre.mk>
 

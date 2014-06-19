@@ -2,7 +2,7 @@
 
 PORTNAME=	liboggz
 DISTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
 		http://wickedmachine.net/mirror/
@@ -14,8 +14,7 @@ OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
-USE_AUTOTOOLS=	libtool
-USES=		pkgconfig pathfix
+USES=		pkgconfig pathfix libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} --program-transform-name=""

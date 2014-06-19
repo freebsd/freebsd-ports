@@ -16,9 +16,8 @@ BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	libtool_hack modarch_hack
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 
 .include <bsd.port.mk>

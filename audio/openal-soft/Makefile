@@ -7,14 +7,13 @@ CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A software implementation of the OpenAL specification
+COMMENT=	Software implementation of the OpenAL specification
 
 LICENSE=	LGPL20
 
 CONFLICTS=	openal-200[0-9]*
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		tar:bzip2 cmake
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DALSA:BOOL=OFF -DPORTAUDIO:BOOL=OFF -DSOLARIS:BOOL=OFF \
 		-DDSOUND:BOOL=OFF -DSNDIO:BOOL=OFF -DEXAMPLES:BOOL=OFF \

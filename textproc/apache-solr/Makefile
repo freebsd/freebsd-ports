@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-solr
-PORTVERSION=	4.6.0
+PORTVERSION=	4.8.1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	lucene/solr/${PORTVERSION}
@@ -18,7 +18,7 @@ CONFLICT=	apache-solr-3.6.*
 
 USES=	shebangfix
 SHEBANG_FILES=	example/etc/create-solrtest.keystore.sh
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_JAVA=	yes

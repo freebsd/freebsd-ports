@@ -18,7 +18,7 @@ USE_AUTOTOOLS=	libtool autoconf
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-USES=	gmake zip:infozip
+USES=	gmake zip
 
 post-extract:
 	cd ${WRKDIR} && \

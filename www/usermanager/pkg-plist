@@ -1,5 +1,5 @@
 %%INSTALLDIR%%/CHANGELOG
-%%INSTALLDIR%%/config.php
+@sample %%INSTALLDIR%%/config.php.sample
 %%INSTALLDIR%%/index.php
 %%INSTALLDIR%%/install.php
 %%INSTALLDIR%%/readme.txt

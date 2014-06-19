@@ -31,10 +31,11 @@ CONFIGURE_ENV+=	LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}" \
 		LUA_CFLAGS="-I${LUA_INCDIR}" \
 		TOLUAXX="${TOLUAXX_CMD}"
 
+TOLUAXX_CMD=	${LOCALBASE}/bin/tolua++${LUA_VER}
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		openal:al,alut pathfix pkgconfig compiler:c++11-lib tar:bzip2
+USES=		openal:al,alut pathfix pkgconfig compiler:c++11-lib tar:bzip2 lua:51
 
 OPTIONS_DEFINE=	DOCS
 

@@ -15,7 +15,6 @@ include/genius/plug_api.h
 include/genius/structs.h
 include/genius/utype.h
 lib/genius/libtestplugin.a
-lib/genius/libtestplugin.la
 lib/genius/libtestplugin.so
 libexec/genius-readline-helper-fifo
 share/application-registry/genius.applications
@@ -30,6 +29,8 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/gel/combinatorics/loader.gel
 %%DATADIR%%/gel/combinatorics/misc.gel
 %%DATADIR%%/gel/combinatorics/recursive_sequences.gel
+%%DATADIR%%/gel/commutative_algebra/loader.gel
+%%DATADIR%%/gel/commutative_algebra/macaulay.gel
 %%DATADIR%%/gel/equation_solving/diffeqs.gel
 %%DATADIR%%/gel/equation_solving/find_root.gel
 %%DATADIR%%/gel/equation_solving/formulas.gel
@@ -73,9 +74,43 @@ share/gnome/help/genius/C/figures/line_plot_graph.png
 share/gnome/help/genius/C/figures/parametric.png
 share/gnome/help/genius/C/figures/parametric_graph.png
 share/gnome/help/genius/C/figures/surface_graph.png
-share/gnome/help/genius/C/gel-function-list.xml
 share/gnome/help/genius/C/genius.xml
 share/gnome/help/genius/C/legal.xml
+share/gnome/help/genius/cs/figures/genius_window.png
+share/gnome/help/genius/cs/figures/line_plot.png
+share/gnome/help/genius/cs/figures/line_plot_graph.png
+share/gnome/help/genius/cs/figures/parametric.png
+share/gnome/help/genius/cs/figures/parametric_graph.png
+share/gnome/help/genius/cs/figures/surface_graph.png
+share/gnome/help/genius/cs/genius.xml
+share/gnome/help/genius/de/figures/genius_window.png
+share/gnome/help/genius/de/figures/line_plot.png
+share/gnome/help/genius/de/figures/line_plot_graph.png
+share/gnome/help/genius/de/figures/parametric.png
+share/gnome/help/genius/de/figures/parametric_graph.png
+share/gnome/help/genius/de/figures/surface_graph.png
+share/gnome/help/genius/de/genius.xml
+share/gnome/help/genius/es/figures/genius_window.png
+share/gnome/help/genius/es/figures/line_plot.png
+share/gnome/help/genius/es/figures/line_plot_graph.png
+share/gnome/help/genius/es/figures/parametric.png
+share/gnome/help/genius/es/figures/parametric_graph.png
+share/gnome/help/genius/es/figures/surface_graph.png
+share/gnome/help/genius/es/genius.xml
+share/gnome/help/genius/fr/figures/genius_window.png
+share/gnome/help/genius/fr/figures/line_plot.png
+share/gnome/help/genius/fr/figures/line_plot_graph.png
+share/gnome/help/genius/fr/figures/parametric.png
+share/gnome/help/genius/fr/figures/parametric_graph.png
+share/gnome/help/genius/fr/figures/surface_graph.png
+share/gnome/help/genius/fr/genius.xml
+share/gnome/help/genius/ru/figures/genius_window.png
+share/gnome/help/genius/ru/figures/line_plot.png
+share/gnome/help/genius/ru/figures/line_plot_graph.png
+share/gnome/help/genius/ru/figures/parametric.png
+share/gnome/help/genius/ru/figures/parametric_graph.png
+share/gnome/help/genius/ru/figures/surface_graph.png
+share/gnome/help/genius/ru/genius.xml
 share/icons/hicolor/32x32/apps/genius-stock-plot.png
 share/icons/hicolor/32x32/apps/gnome-genius.png
 share/icons/hicolor/48x48/apps/genius-stock-plot.png
@@ -84,17 +119,20 @@ share/locale/ar/LC_MESSAGES/genius.mo
 share/locale/az/LC_MESSAGES/genius.mo
 share/locale/ca/LC_MESSAGES/genius.mo
 share/locale/cs/LC_MESSAGES/genius.mo
+share/locale/da/LC_MESSAGES/genius.mo
 share/locale/de/LC_MESSAGES/genius.mo
 share/locale/dz/LC_MESSAGES/genius.mo
 share/locale/el/LC_MESSAGES/genius.mo
 share/locale/en_CA/LC_MESSAGES/genius.mo
 share/locale/en_GB/LC_MESSAGES/genius.mo
 share/locale/es/LC_MESSAGES/genius.mo
+share/locale/eu/LC_MESSAGES/genius.mo
 share/locale/fr/LC_MESSAGES/genius.mo
 share/locale/ga/LC_MESSAGES/genius.mo
 share/locale/gl/LC_MESSAGES/genius.mo
 share/locale/hi/LC_MESSAGES/genius.mo
 share/locale/hr/LC_MESSAGES/genius.mo
+share/locale/id/LC_MESSAGES/genius.mo
 share/locale/it/LC_MESSAGES/genius.mo
 share/locale/ja/LC_MESSAGES/genius.mo
 share/locale/ko/LC_MESSAGES/genius.mo
@@ -109,6 +147,8 @@ share/locale/pa/LC_MESSAGES/genius.mo
 share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
 share/locale/pt_BR/LC_MESSAGES/genius.mo
+share/locale/ro/LC_MESSAGES/genius.mo
+share/locale/ru/LC_MESSAGES/genius.mo
 share/locale/rw/LC_MESSAGES/genius.mo
 share/locale/sl/LC_MESSAGES/genius.mo
 share/locale/sq/LC_MESSAGES/genius.mo
@@ -121,12 +161,27 @@ share/mime/packages/genius.xml
 share/mime-info/genius.keys
 share/mime-info/genius.mime
 share/omf/genius/genius-C.omf
+share/omf/genius/genius-cs.omf
+share/omf/genius/genius-de.omf
+share/omf/genius/genius-es.omf
+share/omf/genius/genius-fr.omf
+share/omf/genius/genius-ru.omf
 @dirrm share/omf/genius
+@dirrm share/gnome/help/genius/ru/figures
+@dirrm share/gnome/help/genius/ru
+@dirrm share/gnome/help/genius/fr/figures
+@dirrm share/gnome/help/genius/fr
+@dirrm share/gnome/help/genius/es/figures
+@dirrm share/gnome/help/genius/es
+@dirrm share/gnome/help/genius/de/figures
+@dirrm share/gnome/help/genius/de
+@dirrm share/gnome/help/genius/cs/figures
+@dirrm share/gnome/help/genius/cs
 @dirrm share/gnome/help/genius/C/figures
 @dirrm share/gnome/help/genius/C
 @dirrm share/gnome/help/genius
-@dirrm %%DATADIR%%/gtksourceview
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/gtksourceview
 @dirrm %%DATADIR%%/gel/symbolic
 @dirrm %%DATADIR%%/gel/statistics
 @dirrm %%DATADIR%%/gel/sets
@@ -135,15 +190,10 @@ share/omf/genius/genius-C.omf
 @dirrm %%DATADIR%%/gel/linear_algebra
 @dirrm %%DATADIR%%/gel/functions
 @dirrm %%DATADIR%%/gel/equation_solving
+@dirrm %%DATADIR%%/gel/commutative_algebra
 @dirrm %%DATADIR%%/gel/combinatorics
 @dirrm %%DATADIR%%/gel/calculus
 @dirrm %%DATADIR%%/gel
 @dirrm %%DATADIR%%
 @dirrm lib/genius
 @dirrm include/genius
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

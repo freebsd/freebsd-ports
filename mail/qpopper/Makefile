@@ -14,11 +14,11 @@ COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 USE_GCC=	any # -freg-struct-return only in GCC and clang-head
 USE_AUTOTOOLS=	autoconf
-CONFIGURE_ENV=	LIBS="-lcrypt -lmd -lutil -L${LOCALBASE}/lib" \
-		OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
+CONFIGURE_ENV=	OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
 CONFIGURE_ARGS=	--enable-nonauth-file=${POPUSERS_FILE} \
 		--without-gdbm \
 		--enable-keep-temp-drop
+LIBS+=		-L${LOCALBASE}/lib -lcrypt -lmd -lutil
 
 PLIST_SUB=	EPOPPASSD=${EPOPPASSD} \
 		USERS=${USERS} \

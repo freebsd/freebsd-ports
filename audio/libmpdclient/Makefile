@@ -9,9 +9,8 @@ MASTER_SITES=	http://www.musicpd.org/download/libmpdclient/2/
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	API library for interfacing MPD
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix
+USES=		tar:xz gmake pathfix
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

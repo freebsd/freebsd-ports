@@ -93,8 +93,7 @@ EXTRA_PATCHES+=		${FILESDIR}/cracklib.patch
 BUILD_DEPENDS+=		${LOCALBASE}/include/crack.h:${PORTSDIR}/security/cracklib
 CONFIGURE_ARGS+=	--enable-cracklib=${LOCALBASE}/libdata/cracklib/pw_dict
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=       -L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LIBS="-lcrack"
+LIBS+=		-L${LOCALBASE}/lib -lcrack
 .endif
 
 # vpopmail installation directory

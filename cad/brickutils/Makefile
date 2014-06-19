@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/BrickUtils-${PORTVERSION}
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 
-PORTDOCS=       *
+PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
 DOC_FILES1=	ChangeLog
@@ -43,7 +43,7 @@ ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-DISTFILES+= 	${PORTNAME}-manual-it.pdf:docs \
+DISTFILES+=	${PORTNAME}-manual-it.pdf:docs \
 		${PORTNAME}-manual.pdf:docs
 .endif
 

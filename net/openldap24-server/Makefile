@@ -486,12 +486,8 @@ CONFIGURE_ARGS+=	--enable-wrappers
 CPPFLAGS+=		-DLDAP_CONNECTIONLESS
 .endif
 
-CPPFLAGS+=		${PTHREAD_CFLAGS} \
-			-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-#LIBS+=			${PTHREAD_LIBS}
-
-CONFIGURE_ENV+=		LIBS="${LIBS}"
+CPPFLAGS+=		-I${LOCALBASE}/include
+LIBS+=			-L${LOCALBASE}/lib
 
 .if defined(CLIENT_ONLY)
 .else

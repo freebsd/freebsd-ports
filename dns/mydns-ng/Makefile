@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/mydns/${PORTVERSION}
 DISTNAME=	mydns-${PORTVERSION}
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	A Next Generation DNS Server for sql based DNS services
+COMMENT=	Next Generation DNS Server for sql based DNS services
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc

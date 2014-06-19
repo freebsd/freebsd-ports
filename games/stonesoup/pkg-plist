@@ -141,7 +141,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/traps/grate.des
 %%DATADIR%%/dat/des/traps/rats_trap.des
 %%DATADIR%%/dat/des/traps/spider_basket.des
-%%DATADIR%%/dat/des/tutorial/lesson%%LUA_VER_SH%%.des
+%%DATADIR%%/dat/des/tutorial/lesson1.des
 %%DATADIR%%/dat/des/tutorial/lesson2.des
 %%DATADIR%%/dat/des/tutorial/lesson3.des
 %%DATADIR%%/dat/des/tutorial/lesson4.des
@@ -443,7 +443,7 @@ bin/stonesoup
 %%DATADIR%%/dat/dlua/layout/theme.lua
 %%DATADIR%%/dat/dlua/layout/vector.lua
 %%DATADIR%%/dat/dlua/layout/zonify.lua
-%%DATADIR%%/dat/dlua/lm_%%LUA_VER_SH%%way.lua
+%%DATADIR%%/dat/dlua/lm_1way.lua
 %%DATADIR%%/dat/dlua/lm_door.lua
 %%DATADIR%%/dat/dlua/lm_fog.lua
 %%DATADIR%%/dat/dlua/lm_items.lua
@@ -486,7 +486,7 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/main.png
 %%SDL%%%%DATADIR%%/dat/tiles/player.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-32x32.png
-%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-%%LUA_VER_STR%%2x%%LUA_VER_STR%%2.png
+%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-512x512.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-win32.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_gastronok.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_mnoleg.png
@@ -541,14 +541,14 @@ bin/stonesoup
 %%DATADIR%%/docs/quickstart.txt
 %%DATADIR%%/docs/ssh_guide.txt
 %%DATADIR%%/docs/tiles_help.txt
-%%DATADIR%%/settings/0.%%LUA_VER_SH%%2_monster_glyphs.txt
-%%DATADIR%%/settings/0.%%LUA_VER_SH%%3_monster_glyphs.txt
+%%DATADIR%%/settings/0.12_monster_glyphs.txt
+%%DATADIR%%/settings/0.13_monster_glyphs.txt
 %%DATADIR%%/settings/0.9_monster_glyphs.txt
 %%DATADIR%%/settings/034_command_keys.txt
 %%DATADIR%%/settings/034_monster_glyphs.txt
 %%DATADIR%%/settings/052_monster_glyphs.txt
 %%DATADIR%%/settings/060_monster_glyphs.txt
-%%DATADIR%%/settings/07%%LUA_VER_SH%%_monster_glyphs.txt
+%%DATADIR%%/settings/071_monster_glyphs.txt
 %%DATADIR%%/settings/080_monster_glyphs.txt
 %%DATADIR%%/settings/advanced_optioneering.txt
 %%DATADIR%%/settings/colemak_command_keys.txt

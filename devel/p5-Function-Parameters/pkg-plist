@@ -1,7 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Function/Parameters.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Function/Parameters/Info.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Function/Parameters/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Function/Parameters/Parameters.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Function/Parameters/Parameters.so
 %%PERL5_MAN3%%/Function::Parameters.3.gz
 %%PERL5_MAN3%%/Function::Parameters::Info.3.gz

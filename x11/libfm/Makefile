@@ -3,7 +3,7 @@
 
 PORTNAME=	libfm
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/libfm%20%28required%20by%20PCManFM%29/
 
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
-USES=		desktop-file-utils fam gmake pkgconfig shared-mime-info tar:xz
+USES=		desktop-file-utils fam gmake pkgconfig shared-mime-info tar:xz libtool
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	aclocal automake libtool
+USE_AUTOTOOLS=	aclocal automake
 CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_LDCONFIG=	yes

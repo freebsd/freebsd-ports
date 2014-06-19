@@ -16,11 +16,10 @@ MASTER_SITES=	\
 		ftp://ftp.monash.edu.au/pub/nihongo/
 EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
+EXTRACT_ONLY=	${SRCFILES}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese-English dictionaries with access and maintenance utilities
-
-BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=	edict
 
@@ -53,7 +52,7 @@ DOCSDIR=	${PREFIX}/share/doc/xjdic
 
 NO_WRKSUBDIR=	yes
 
-sparc64_BROKEN=	Fails to install on sparc64 with error 2
+sparc64_BROKEN=	Fails on sparc64 during installation with error 2
 
 OPTIONS_DEFINE=	DOCS
 
@@ -61,25 +60,17 @@ post-patch:
 	@${GREP} -l '^main' ${WRKSRC}/*.c | ${XARGS} ${REINPLACE_CMD} \
 		-e '/argv/s/unsigned//'
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-.for file in ${SRCFILES}
-	(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/${file} ${EXTRACT_AFTER_ARGS})
-.endfor
-
 do-install:
 	(cd ${WRKDIR} && ${INSTALL_PROGRAM} ${BINFILES} ${STAGEDIR}${PREFIX}/bin)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} ${_DISTDIR}/edicth ${STAGEDIR}${DATADIR}
-.for file in edict enamdict compdic j_places kanjidic kanjd212 geodic
-	${GZIP_CMD} -cd ${_DISTDIR}/${file}.gz > ${STAGEDIR}${DATADIR}/${file}
+.for f in edict enamdict compdic j_places kanjidic kanjd212 geodic
+	${GZIP_CMD} -cd ${_DISTDIR}/${f}.gz > ${STAGEDIR}${DATADIR}/${f}
 .endfor
-.for file in ediclsd3 lawgledt lingdic pandpdic aviation findic mktdic \
+.for f in ediclsd3 lawgledt lingdic pandpdic aviation findic mktdic \
 	4jword3_edict concrete
-	${UNZIP_CMD} -o ${_DISTDIR}/${file}.zip ${file:S|edict|edict.euc|} \
-		-d ${STAGEDIR}${DATADIR}
+	cd ${STAGEDIR}${DATADIR} && \
+		${TAR} -xf ${_DISTDIR}/${f}.zip ${f:S|edict|edict.euc|}
 .endfor
 .for dict in ${DICTFILES:S|_edict|_edict.euc|}
 	(cd ${STAGEDIR}${DATADIR} && ${STAGEDIR}${PREFIX}/bin/xjdxgen ${dict:R})

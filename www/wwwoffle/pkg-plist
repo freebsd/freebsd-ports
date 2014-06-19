@@ -11,6 +11,9 @@ bin/wwwoffle-tools
 bin/wwwoffle-write
 @unexec if cmp -s %D/etc/wwwoffle.conf.install %D/etc/wwwoffle.conf; then rm -f %D/etc/wwwoffle.conf; fi
 etc/wwwoffle.conf.install
+man/man1/wwwoffle.1.gz
+man/man5/wwwoffle.conf.5.gz
+man/man8/wwwoffled.8.gz
 sbin/wwwoffled
 share/doc/wwwoffle/CHANGES.CONF
 share/doc/wwwoffle/COPYING
@@ -58,9 +61,12 @@ share/doc/wwwoffle/pl/README.lang
 @dirrm share/doc/wwwoffle/de
 @dirrm share/doc/wwwoffle/es
 @dirrm share/doc/wwwoffle/fr
+@exec mkdir -p %D/share/doc/wwwoffle/it
 @dirrm share/doc/wwwoffle/it
+@exec mkdir -p %D/share/doc/wwwoffle/nl
 @dirrm share/doc/wwwoffle/nl
 @dirrm share/doc/wwwoffle/pl
+@exec mkdir -p %D/share/doc/wwwoffle/ru
 @dirrm share/doc/wwwoffle/ru
 @dirrm share/doc/wwwoffle
 @cwd %%WWWOFFLE_SPOOL%%
@@ -844,26 +850,39 @@ upgrade-config.pl
 @dirrm search/namazu/conf
 @dirrm search/namazu
 @dirrm search/mnogosearch/scripts
+@exec mkdir -p %D/search/mnogosearch/db
 @dirrm search/mnogosearch/db
 @dirrm search/mnogosearch/conf
 @dirrm search/mnogosearch
 @dirrm search/hyperestraier/scripts
+@exec mkdir -p %D/search/hyperestraier/db
 @dirrm search/hyperestraier/db
 @dirrm search/hyperestraier/conf
 @dirrm search/hyperestraier
+@exec mkdir -p %D/search/htdig/tmp
 @dirrm search/htdig/tmp
 @dirrm search/htdig/scripts
+@exec mkdir -p %D/search/htdig/db-lasttime
 @dirrm search/htdig/db-lasttime
+@exec mkdir -p %D/search/htdig/db
 @dirrm search/htdig/db
 @dirrm search/htdig/conf
 @dirrm search/htdig
+@exec mkdir -p %D/search
 @dirrm search
+@exec mkdir -p %D/prevtime1
 @dirrm prevtime1
+@exec mkdir -p %D/outgoing
 @dirrm outgoing
+@exec mkdir -p %D/monitor
 @dirrm monitor
+@exec mkdir -p %D/local
 @dirrm local
+@exec mkdir -p %D/lasttime
 @dirrm lasttime
+@exec mkdir -p %D/lastout
 @dirrm lastout
+@exec mkdir -p %D/http
 @dirrm http
 @dirrm html/ru/messages
 @dirrm html/ru/local

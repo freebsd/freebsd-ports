@@ -15,130 +15,130 @@ bin/ccsm
 %%PYTHON_SITELIBDIR%%/ccm/Window.pyc
 %%PYTHON_SITELIBDIR%%/ccm/__init__.py
 %%PYTHON_SITELIBDIR%%/ccm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ccsm-0.8.4-py2.7.egg-info
 share/applications/ccsm.desktop
-share/icons/hicolor/32x32/apps/ccsm.png
-share/icons/hicolor/32x32/apps/ccsm.svg
-share/icons/hicolor/24x24/apps/ccsm.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-accessibility.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-desktop.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-effects.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-extras.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-general.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-image_loading.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-uncategorized.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-utility.png
+%%DATADIR%%/icons/hicolor/22x22/categories/plugins-window_management.png
+%%DATADIR%%/icons/hicolor/22x22/devices/input-keyboard.png
+%%DATADIR%%/icons/hicolor/22x22/devices/input-mouse.png
+%%DATADIR%%/icons/hicolor/22x22/devices/video-display.png
+%%DATADIR%%/icons/hicolor/22x22/mimetypes/audio-x-generic.png
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-3d.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-addhelper.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-animation.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-animationaddon.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-annotate.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-atlantis.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-bench.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-bicubic.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-blur.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-clone.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-colorfilter.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-commands.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-core.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-crashhandler.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-cube.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-cubeaddon.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-dbus.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-debug.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-decoration.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-expo.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-extrawm.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-ezoom.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-fade.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-fadedesktop.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-fakeargb.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-firepaint.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-fs.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-gears.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-glib.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-gnomecompat.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-group.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-imgjpeg.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-inotify.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-loginout.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-mag.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-maximumize.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-mblur.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-minimize.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-mousepoll.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-move.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-mswitch.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-neg.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-notification.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-obs.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-opacify.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-place.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-png.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-put.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-reflex.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-regex.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-resize.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-resizeinfo.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-ring.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-rotate.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-scale.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-scaleaddon.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-scalefilter.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-schemep.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-screensaver.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-screenshot.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-session.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-shelf.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-shift.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-showdesktop.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-showmouse.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-snap.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-snow.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-splash.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-stackswitch.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-staticswitcher.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-svg.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-switcher.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-text.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-thumbnail.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-tile.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-trailfocus.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-unknown.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-video.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-vpswitch.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-wall.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-wallpaper.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-water.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-widget.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-winrules.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-wobbly.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-workarounds.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/plugin-zoom.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-accessibility.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-all.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-desktop.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-effects.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-extras.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-general.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-image_loading.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-profiles.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-search.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-uncategorized.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-utility.svg
+%%DATADIR%%/icons/hicolor/scalable/categories/plugins-window_management.svg
+%%DATADIR%%/images/display.png
+%%DATADIR%%/images/modifier.png
 share/icons/hicolor/16x16/apps/ccsm.png
 share/icons/hicolor/22x22/apps/ccsm.png
 share/icons/hicolor/22x22/apps/ccsm.svg
+share/icons/hicolor/24x24/apps/ccsm.png
+share/icons/hicolor/32x32/apps/ccsm.png
+share/icons/hicolor/32x32/apps/ccsm.svg
 share/icons/hicolor/48x48/apps/ccsm.png
 share/icons/hicolor/scalable/apps/ccsm.svg
-share/ccsm/icons/hicolor/22x22/devices/input-mouse.png
-share/ccsm/icons/hicolor/22x22/devices/video-display.png
-share/ccsm/icons/hicolor/22x22/devices/input-keyboard.png
-share/ccsm/icons/hicolor/22x22/mimetypes/audio-x-generic.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-uncategorized.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-accessibility.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-effects.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-image_loading.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-general.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-utility.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-window_management.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-desktop.png
-share/ccsm/icons/hicolor/22x22/categories/plugins-extras.png
-share/ccsm/icons/hicolor/scalable/categories/plugins-window_management.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-accessibility.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-extras.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-profiles.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-image_loading.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-all.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-desktop.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-uncategorized.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-effects.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-utility.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-general.svg
-share/ccsm/icons/hicolor/scalable/categories/plugins-search.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-animation.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-put.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-snow.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-reflex.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-gears.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-workarounds.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-opacify.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-resize.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-schemep.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-crashhandler.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-mblur.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-maximumize.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-ezoom.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-scale.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-glib.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-notification.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-expo.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-tile.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-wobbly.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-fakeargb.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-winrules.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-shift.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-svg.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-annotate.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-fadedesktop.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-showdesktop.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-water.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-zoom.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-mag.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-showmouse.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-wall.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-fs.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-firepaint.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-wallpaper.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-png.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-video.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-extrawm.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-place.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-move.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-trailfocus.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-scalefilter.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-debug.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-mousepoll.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-resizeinfo.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-dbus.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-splash.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-3d.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-atlantis.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-screenshot.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-scaleaddon.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-shelf.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-loginout.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-switcher.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-minimize.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-text.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-bench.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-screensaver.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-decoration.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-rotate.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-unknown.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-mswitch.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-inotify.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-thumbnail.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-snap.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-blur.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-vpswitch.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-addhelper.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-imgjpeg.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-session.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-colorfilter.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-commands.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-cube.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-core.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-fade.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-widget.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-clone.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-neg.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-ring.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-regex.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-group.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-gnomecompat.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-animationaddon.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-cubeaddon.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-stackswitch.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-obs.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-bicubic.svg
-share/ccsm/icons/hicolor/scalable/apps/plugin-staticswitcher.svg
-share/ccsm/icons/hicolor/icon-theme.cache
-share/ccsm/images/modifier.png
-share/ccsm/images/display.png
 share/locale/ar/LC_MESSAGES/ccsm.mo
 share/locale/as/LC_MESSAGES/ccsm.mo
 share/locale/be/LC_MESSAGES/ccsm.mo
@@ -182,21 +182,19 @@ share/locale/tr/LC_MESSAGES/ccsm.mo
 share/locale/wo/LC_MESSAGES/ccsm.mo
 share/locale/zh_CN/LC_MESSAGES/ccsm.mo
 share/locale/zh_HK/LC_MESSAGES/ccsm.mo
-@dirrm share/ccsm/icons/hicolor/scalable/categories
-@dirrm share/ccsm/icons/hicolor/scalable/apps
-@dirrm share/ccsm/icons/hicolor/scalable
-@dirrm share/ccsm/icons/hicolor/22x22/mimetypes
-@dirrm share/ccsm/icons/hicolor/22x22/devices
-@dirrm share/ccsm/icons/hicolor/22x22/categories
-@dirrm share/ccsm/icons/hicolor/22x22
-@dirrm share/ccsm/icons/hicolor
-@dirrm share/ccsm/icons
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%/ccm
 @dirrmtry share/locale/md/LC_MESSAGES
 @dirrmtry share/locale/md
 @dirrmtry share/locale/ml_IN/LC_MESSAGES
 @dirrmtry share/locale/ml_IN
-@dirrmtry share/locale/wo/LC_MESSAGES
-@dirrmtry share/locale/wo
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/icons/hicolor/scalable/categories
+@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/22x22/mimetypes
+@dirrm %%DATADIR%%/icons/hicolor/22x22/devices
+@dirrm %%DATADIR%%/icons/hicolor/22x22/categories
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/ccm

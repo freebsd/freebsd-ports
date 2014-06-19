@@ -14,16 +14,15 @@ COMMENT=	Free software for solving timetabling problems
 BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm
 RUN_DEPENDS=	pvm:${PORTSDIR}/net/pvm
 
-PVM_ROOT=	${PREFIX}/lib/pvm
+PVM_ROOT=	${LOCALBASE}/lib/pvm
 
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USES=		gettext gmake
 
-CONFIGURE_ENV=	LIBS=-L${PREFIX}/lib \
-		PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib
-CPPFLAGS+=	-I${PREFIX}/include
-LDFLAGS+=	-L${PREFIX}/lib
+CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} PVM_LIB=${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 MAN1=	tablix2.1 tablix2_benchmark.1 tablix2_kernel.1 tablix2_output.1 \
 	tablix2_plot.1 tablix2_test.1

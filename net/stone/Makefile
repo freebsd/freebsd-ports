@@ -9,15 +9,13 @@ MASTER_SITES=	http://www.gcd.org/sengoku/stone/
 MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Stone is a TCP/IP packet repeater in the application layer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.3d-2.3.2.7
+LICENSE=	GPLv2
 
-MAN1=		stone.1
-MANLANG=	"" ja
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.3d-2.3.2.7
 
 USE_RC_SUBR=	stone
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_SSL)
@@ -36,12 +34,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/stone ${PREFIX}/bin/stone
-	${INSTALL_MAN} ${FILESDIR}/stone.1 ${PREFIX}/man/man1/stone.1
-	${INSTALL_MAN} ${FILESDIR}/stone.1.ja ${PREFIX}/man/ja/man1/stone.1
-	${INSTALL_DATA} ${FILESDIR}/stone.cnf ${PREFIX}/etc/stone.cnf.sample
-.if !exists(${PREFIX}/etc/stone.cnf)
-	${INSTALL_DATA} ${FILESDIR}/stone.cnf ${PREFIX}/etc
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/stone ${STAGEDIR}${PREFIX}/bin/stone
+	${INSTALL_MAN} ${FILESDIR}/stone.1 ${STAGEDIR}${PREFIX}/man/man1/stone.1
+	${INSTALL_MAN} ${FILESDIR}/stone.1.ja ${STAGEDIR}${PREFIX}/man/ja/man1/stone.1
+	${INSTALL_DATA} ${FILESDIR}/stone.cnf ${STAGEDIR}${PREFIX}/etc/stone.cnf.sample
 
 .include <bsd.port.post.mk>

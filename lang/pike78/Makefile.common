@@ -1,0 +1,6 @@
+# $FreeBSD$
+
+# Also used by www/caudium14
+
+PIKEVERSION=	7.8.866
+

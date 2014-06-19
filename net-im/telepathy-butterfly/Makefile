@@ -21,5 +21,4 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 USES=		gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ man/man8/jk_socketd.8.gz
 man/man8/jk_uchroot.8.gz
 man/man8/jk_update.8.gz
 sbin/jk_chrootlaunch
-sbin/jk_chrootsh
+@shell sbin/jk_chrootsh
 sbin/jk_cp
 sbin/jk_init
 sbin/jk_check
@@ -30,8 +30,6 @@ sbin/jk_list
 sbin/jk_update
 sbin/jk_lsh
 sbin/jk_socketd
-@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v jk_chrootsh /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
-@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v jk_chrootsh /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 %%DATADIR%%/jk_lib.py
 %%DATADIR%%/jk_lib.pyc
 @dirrm %%DATADIR%%

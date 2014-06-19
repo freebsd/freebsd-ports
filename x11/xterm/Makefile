@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	304
+PORTVERSION=	307
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/:src1 \
 		CRITICAL:src1 CRITICAL:src2
@@ -18,10 +18,10 @@ CONFLICTS=	x11iraf-[0-9]*
 USE_XORG=	xaw xft
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 ICONVERSION=	1
 

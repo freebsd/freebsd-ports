@@ -10,7 +10,7 @@ PKGNAMEPREFIX=		samba-
 DISTNAME=		bind-${ISCVERSION}
 
 MAINTAINER=		timur@FreeBSD.org
-COMMENT=		An nsupdate utility with GSS-TSIG support
+COMMENT=		nsupdate utility with GSS-TSIG support
 
 LICENSE=		ISCL
 

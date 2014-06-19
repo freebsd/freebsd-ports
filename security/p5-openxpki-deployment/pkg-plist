@@ -2,6 +2,10 @@ bin/openxpki-configure
 bin/openxpki-metaconf
 bin/openxpkiadm
 bin/openxpkictl
+man/man1/openxpki-configure.1.gz
+man/man1/openxpki-metaconf.1.gz
+man/man1/openxpkiadm.1.gz
+man/man1/openxpkictl.1.gz
 share/openxpki/templates/default/acl.xml
 share/openxpki/templates/default/auth.xml
 share/openxpki/templates/default/config.xml
@@ -65,10 +69,10 @@ share/openxpki/templates/quickstart/workflow_def_certificate_signing_request.xml
 share/openxpki/templates/quickstart/workflow_def_crl_issuance.xml
 share/openxpki/templates/quickstart/workflow_validator_certificate_revocation_request.xml
 share/openxpki/templates/quickstart/workflow_validator_certificate_signing_request.xml
-@dirrmtry share/openxpki/templates/quickstart/notification
-@dirrmtry share/openxpki/templates/quickstart
 @dirrmtry share/openxpki/templates/default/notification/en
 @dirrmtry share/openxpki/templates/default/notification
 @dirrmtry share/openxpki/templates/default
+@dirrmtry share/openxpki/templates/quickstart/notification
+@dirrmtry share/openxpki/templates/quickstart
 @dirrmtry share/openxpki/templates
 @dirrmtry share/openxpki

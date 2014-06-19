@@ -77,9 +77,9 @@ pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "There are some knobs which *can* *not* be selected via the"
-	@${ECHO_MSG} "OPTIONS framework. At the moment, their defaults are:"
-	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=/dev/cd0"
-	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=/dev/cd0"
+	@${ECHO_MSG} "OPTIONS framework. At the moment, these settings are:"
+	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=${DEFAULT_DVD_DEVICE}"
+	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=${DEFAULT_CDROM_DEVICE}"
 
 post-patch:
 .if ${OSVERSION} >= 900010

@@ -9,7 +9,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple console-based chat that uses ICMP protocol
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -Wall -pedantic|${CFLAGS}|;\
 		s|= gcc|?= gcc|;s|default|all|' ${WRKSRC}/Makefile
@@ -19,14 +18,14 @@ pre-patch:
 			${WRKSRC}/sha256.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/icmpchat ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/icmpchat ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Changes ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/License ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Problems ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Readme ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Todo ${DOCSDIR}
+	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/License ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Problems ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Todo ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

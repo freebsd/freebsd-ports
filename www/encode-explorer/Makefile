@@ -13,18 +13,16 @@ COMMENT=	A PHP script to browse, create folders, upload files etc
 
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
-
 USES=		zip
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	EXPERIMENTAL
+OPTIONS_DEFINE=	EXPERIMENTAL DOCS
 EXPERIMENTAL_DESC=	Experimental features
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXPERIMENTAL}
@@ -32,13 +30,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-index-php-experimental
 .endif
 
 do-install:
-	${MKDIR} ${WWWDIR}
-	${INSTALL} ${WRKSRC}/index.php ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${INSTALL} ${WRKSRC}/index.php ${STAGEDIR}${WWWDIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/README.txt ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

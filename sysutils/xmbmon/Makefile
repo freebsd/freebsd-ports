@@ -3,7 +3,7 @@
 
 PORTNAME=	xmbmon
 PORTVERSION=	205
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	MB monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 PORTSCOUT=	limit:^[0-9]+$
 PATCH_SITES+=	${MASTER_SITES}
@@ -26,9 +26,9 @@ OPTIONS_DEFINE=	ASUS SMB DOCS
 OPTIONS_MULTI=	INTERFACE
 OPTIONS_MULTI_INTERFACE=	CLI X11
 OPTIONS_DEFAULT=SMB CLI
-ASUS_DESC=	"Enable A7N8X-VM support"
-SMB_DESC=	"Enable smb(4) support"
-CLI_DESC=	"CLI support only"
+ASUS_DESC=	Enable A7N8X-VM support
+SMB_DESC=	Enable smb(4) support
+CLI_DESC=	CLI support only
 
 ASUS_PATCHFILES=	${PORTNAME}${PORTVERSION}_A7N8X-VM.patch
 X11_PLIST_FILES=	lib/X11/app-defaults/${PORTNAME} \
@@ -49,18 +49,22 @@ USE_RC_SUBR=	mbmon
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${STAGEIR}${DOCSDIR}+' ${WRKSRC}/mbmon.1
-	@${REINPLACE_CMD} -e 's+%%STAGEDIR%%%%PREFIX%%+${STAGEDIR}${PREFIX}+' ${WRKSRC}/Makefile.in
-.if !${PORT_OPTIONS:MX11}
-	@${REINPLACE_CMD} -e '/p xmbmon/d' ${WRKSRC}/Makefile.in
-.endif
-.if !${PORT_OPTIONS:MCLI}
-	@${REINPLACE_CMD} -e '/p mbmon/d' ${WRKSRC}/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${DOCSDIR}+' \
+		${WRKSRC}/mbmon.1
 .if ${PORT_OPTIONS:MSMB}
 	@${REINPLACE_CMD} -e 's/^DEFS=/&-DSMBUS_IOCTL /' ${WRKSRC}/Makefile.in
 .endif
 
+do-install:
+.if ${PORT_OPTIONS:MX11}
+	${INSTALL_PROGRAM} ${WRKSRC}/xmbmon \
+		${STAGEDIR}${PREFIX}/lib/X11/app-defaults
+	${INSTALL_MAN} ${WRKSRC}/xmbmon.1x ${STAGEDIR}${MANPREFIX}/man/man1
+.endif
+.if ${PORT_OPTIONS:MCLI}
+	${INSTALL_PROGRAM} ${WRKSRC}/mbmon ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mbmon.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

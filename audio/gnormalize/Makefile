@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	darcsis@gmail.com
-COMMENT=	An alternative for replaygain
+COMMENT=	Alternative for replaygain
 
 RUN_DEPENDS+=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		wavegain:${PORTSDIR}/audio/wavegain

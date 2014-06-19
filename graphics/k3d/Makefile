@@ -14,6 +14,8 @@ COMMENT=	3D modeling, animation, and rendering system
 LICENSE=	GPLv2
 
 BROKEN=		Fails to configure
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gmm/gmm.h:${PORTSDIR}/math/gmm++
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
@@ -98,7 +100,7 @@ PLIST_SUB+=	GTS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IMAGEMAGICK=""
 .else
 CMAKE_ARGS+=	-DK3D_BUILD_IMAGEMAGICK_IO_MODULE:BOOL=OFF

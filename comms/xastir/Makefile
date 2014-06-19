@@ -3,7 +3,7 @@
 
 PORTNAME=	xastir
 PORTVERSION=	2.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -18,11 +18,6 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake motif
-
-MAN1=		xastir.1 \
-		callpass.1 \
-		testdbfawk.1 \
-		xastir_udp_client.1
 
 SUB_FILES=	pkg-message
 
@@ -44,7 +39,6 @@ OPTCFLAGS_DESC=	Use optimized CFLAGS (-O2 -pipe)
 
 OPTIONS_DEFAULT=	SHAPELIB DBFAWK MAGICK CURL RTREE BDB
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSHAPELIB}
@@ -54,7 +48,7 @@ CONFIGURE_ARGS+=	--without-shapelib
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	libGraphicsMagickWand.so:${PORTSDIR}/graphics/GraphicsMagick13
+LIB_DEPENDS+=	libGraphicsMagickWand.so:${PORTSDIR}/graphics/GraphicsMagick
 .else
 CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
 .endif
@@ -114,8 +108,5 @@ CFLAGS+=	-O2 -pipe
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

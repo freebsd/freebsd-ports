@@ -3,9 +3,9 @@ bin/tac_pwd
 etc/tac_plus.conf.example
 include/tacacs.h
 lib/libtacacs.a
-lib/libtacacs.la
 lib/libtacacs.so
 lib/libtacacs.so.1
+lib/libtacacs.so.1.0.0
 man/man5/tac_plus.conf.5.gz
 man/man8/tac_plus.8.gz
 man/man8/tac_pwd.8.gz

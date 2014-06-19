@@ -24,5 +24,6 @@ lib/libftgl.a
 lib/libftgl.la
 lib/libftgl.so
 lib/libftgl.so.2
+lib/libftgl.so.2.1.3
 libdata/pkgconfig/ftgl.pc
 @dirrm include/FTGL

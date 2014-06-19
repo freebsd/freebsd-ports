@@ -1,0 +1,122 @@
+bin/sfcgal-config
+include/SFCGAL/Coordinate.h
+include/SFCGAL/Envelope.h
+include/SFCGAL/Exception.h
+include/SFCGAL/Geometry.h
+include/SFCGAL/GeometryCollection.h
+include/SFCGAL/GeometryVisitor.h
+include/SFCGAL/Grid.h
+include/SFCGAL/Kernel.h
+include/SFCGAL/LineString.h
+include/SFCGAL/MultiLineString.h
+include/SFCGAL/MultiPoint.h
+include/SFCGAL/MultiPolygon.h
+include/SFCGAL/MultiSolid.h
+include/SFCGAL/Point.h
+include/SFCGAL/Polygon.h
+include/SFCGAL/PolyhedralSurface.h
+include/SFCGAL/PreparedGeometry.h
+include/SFCGAL/Solid.h
+include/SFCGAL/Surface.h
+include/SFCGAL/Transform.h
+include/SFCGAL/Triangle.h
+include/SFCGAL/TriangulatedSurface.h
+include/SFCGAL/Validity.h
+include/SFCGAL/algorithm/BoundaryVisitor.h
+include/SFCGAL/algorithm/ConsistentOrientationBuilder.h
+include/SFCGAL/algorithm/area.h
+include/SFCGAL/algorithm/collect.h
+include/SFCGAL/algorithm/collectionExtract.h
+include/SFCGAL/algorithm/collectionHomogenize.h
+include/SFCGAL/algorithm/collectionToMulti.h
+include/SFCGAL/algorithm/connection.h
+include/SFCGAL/algorithm/convexHull.h
+include/SFCGAL/algorithm/covers.h
+include/SFCGAL/algorithm/difference.h
+include/SFCGAL/algorithm/distance.h
+include/SFCGAL/algorithm/distance3d.h
+include/SFCGAL/algorithm/extrude.h
+include/SFCGAL/algorithm/force2D.h
+include/SFCGAL/algorithm/force3D.h
+include/SFCGAL/algorithm/intersection.h
+include/SFCGAL/algorithm/intersects.h
+include/SFCGAL/algorithm/isValid.h
+include/SFCGAL/algorithm/length.h
+include/SFCGAL/algorithm/minkowskiSum.h
+include/SFCGAL/algorithm/normal.h
+include/SFCGAL/algorithm/offset.h
+include/SFCGAL/algorithm/orientation.h
+include/SFCGAL/algorithm/plane.h
+include/SFCGAL/algorithm/straightSkeleton.h
+include/SFCGAL/algorithm/tesselate.h
+include/SFCGAL/algorithm/translate.h
+include/SFCGAL/algorithm/volume.h
+include/SFCGAL/capi/sfcgal_c.h
+include/SFCGAL/config.h
+include/SFCGAL/config.h.cmake
+include/SFCGAL/detail/ComplexComparator.h
+include/SFCGAL/detail/EnvelopeVisitor.h
+include/SFCGAL/detail/GeometrySet.h
+include/SFCGAL/detail/GetPointsVisitor.h
+include/SFCGAL/detail/Interval.h
+include/SFCGAL/detail/TestGeometry.h
+include/SFCGAL/detail/TypeForDimension.h
+include/SFCGAL/detail/algorithm/coversPoints.h
+include/SFCGAL/detail/generator/building.h
+include/SFCGAL/detail/generator/disc.h
+include/SFCGAL/detail/generator/hoch.h
+include/SFCGAL/detail/generator/sierpinski.h
+include/SFCGAL/detail/graph/Edge.h
+include/SFCGAL/detail/graph/GeometryGraph.h
+include/SFCGAL/detail/graph/GeometryGraphBuilder.h
+include/SFCGAL/detail/graph/Vertex.h
+include/SFCGAL/detail/graph/algorithm/isHalfEdge.h
+include/SFCGAL/detail/graph/algorithm/orientation.h
+include/SFCGAL/detail/io/OsgFactory.h
+include/SFCGAL/detail/io/Serialization.h
+include/SFCGAL/detail/io/WktReader.h
+include/SFCGAL/detail/io/WktWriter.h
+include/SFCGAL/detail/polygonSetToMultiPolygon.h
+include/SFCGAL/detail/tools/CharArrayBuffer.h
+include/SFCGAL/detail/tools/InputStreamReader.h
+include/SFCGAL/detail/tools/Log.h
+include/SFCGAL/detail/tools/Registry.h
+include/SFCGAL/detail/transform/AffineTransform2.h
+include/SFCGAL/detail/transform/AffineTransform3.h
+include/SFCGAL/detail/transform/Force2D.h
+include/SFCGAL/detail/transform/ForceOrderPoints.h
+include/SFCGAL/detail/transform/ForceZ.h
+include/SFCGAL/detail/transform/ForceZOrderPoints.h
+include/SFCGAL/detail/transform/RoundTransform.h
+include/SFCGAL/detail/triangulate/ConstraintDelaunayTriangulation.h
+include/SFCGAL/detail/triangulate/markDomains.h
+include/SFCGAL/detail/triangulate/triangulateInGeometrySet.h
+include/SFCGAL/detail/ublas.h
+include/SFCGAL/export.h
+include/SFCGAL/io/GeometryStreams.h
+include/SFCGAL/io/asc.h
+include/SFCGAL/io/ewkt.h
+include/SFCGAL/io/osg.h
+include/SFCGAL/io/vtk.h
+include/SFCGAL/io/wkt.h
+include/SFCGAL/numeric.h
+include/SFCGAL/triangulate/triangulate2DZ.h
+include/SFCGAL/triangulate/triangulatePolygon.h
+include/SFCGAL/version.h
+include/SFCGAL/version.h.cmake
+lib/libSFCGAL.la
+lib/libSFCGAL.so
+@dirrmtry include/SFCGAL/triangulate
+@dirrmtry include/SFCGAL/io
+@dirrmtry include/SFCGAL/detail/triangulate
+@dirrmtry include/SFCGAL/detail/transform
+@dirrmtry include/SFCGAL/detail/tools
+@dirrmtry include/SFCGAL/detail/io
+@dirrmtry include/SFCGAL/detail/graph/algorithm
+@dirrmtry include/SFCGAL/detail/graph
+@dirrmtry include/SFCGAL/detail/generator
+@dirrmtry include/SFCGAL/detail/algorithm
+@dirrmtry include/SFCGAL/detail
+@dirrmtry include/SFCGAL/capi
+@dirrmtry include/SFCGAL/algorithm
+@dirrmtry include/SFCGAL

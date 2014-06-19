@@ -18,7 +18,6 @@ RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 NO_BUILD=	yes
 USES=		perl5
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' \
 	   ${WRKSRC}/configfiles/serverwide/webstats.ini \
@@ -28,45 +27,42 @@ post-patch:
 	   ${WRKSRC}/scripts/php/webstats.php
 
 do-install:
-	@${MKDIR} ${PREFIX}/webstats
-	@${MKDIR} ${PREFIX}/webstats/stuff
-	@${MKDIR} ${PREFIX}/webstats/web
-	@${MKDIR} ${PREFIX}/etc/webstats
-	@${MKDIR} ${PREFIX}/etc/webstats/vhosts
+	@${MKDIR} ${STAGEDIR}${PREFIX}/webstats
+	@${MKDIR} ${STAGEDIR}${PREFIX}/webstats/stuff
+	@${MKDIR} ${STAGEDIR}${PREFIX}/webstats/web
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/webstats
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/webstats/vhosts
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/perl/webstats \
-	   ${PREFIX}/webstats/webstats
+	   ${STAGEDIR}${PREFIX}/webstats/webstats
 	@${INSTALL_DATA} ${WRKSRC}/configfiles/serverwide/webstats.ini \
-	   ${PREFIX}/etc/webstats/webstats.ini-dist
+	   ${STAGEDIR}${PREFIX}/etc/webstats/webstats.ini-dist
 	@${INSTALL_DATA} ${WRKSRC}/configfiles/serverwide/default.cfg \
-	   ${PREFIX}/etc/webstats/default.cfg-dist
+	   ${STAGEDIR}${PREFIX}/etc/webstats/default.cfg-dist
 	@${INSTALL_DATA} ${WRKSRC}/configfiles/serverwide/default.ini \
-	   ${PREFIX}/etc/webstats/default.ini-dist
+	   ${STAGEDIR}${PREFIX}/etc/webstats/default.ini-dist
 	@${INSTALL_DATA} ${WRKSRC}/configfiles/vhosts/analog.cfg \
-	   ${PREFIX}/etc/webstats/vhosts/analog.cfg-dist
+	   ${STAGEDIR}${PREFIX}/etc/webstats/vhosts/analog.cfg-dist
 	@${INSTALL_DATA} ${WRKSRC}/configfiles/vhosts/rmagic.ini \
-	   ${PREFIX}/etc/webstats/vhosts/rmagic.ini-dist
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/webstats/README
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/webstats/INSTALL
-	@${INSTALL_DATA} ${WRKSRC}/VERSION ${PREFIX}/webstats/VERSION
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/webstats/CHANGES
+	   ${STAGEDIR}${PREFIX}/etc/webstats/vhosts/rmagic.ini-dist
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/webstats/README
+	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${PREFIX}/webstats/INSTALL
+	@${INSTALL_DATA} ${WRKSRC}/VERSION ${STAGEDIR}${PREFIX}/webstats/VERSION
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${PREFIX}/webstats/CHANGES
 	@${INSTALL_DATA} ${WRKSRC}/docs/index.html \
-	   ${PREFIX}/share/doc/webstats.html
+	   ${STAGEDIR}${PREFIX}/share/doc/webstats.html
 	@${INSTALL_DATA} ${WRKSRC}/scripts/php/bullet.gif \
-	   ${PREFIX}/webstats/web/bullet.gif
+	   ${STAGEDIR}${PREFIX}/webstats/web/bullet.gif
 	@${INSTALL_DATA} ${WRKSRC}/scripts/php/class.inifile.php \
-	   ${PREFIX}/webstats/web/class.inifile.php
+	   ${STAGEDIR}${PREFIX}/webstats/web/class.inifile.php
 	@${INSTALL_DATA} ${WRKSRC}/scripts/php/menu.css \
-	   ${PREFIX}/webstats/web/menu.css
+	   ${STAGEDIR}${PREFIX}/webstats/web/menu.css
 	@${INSTALL_DATA} ${WRKSRC}/scripts/php/webstats.php \
-	   ${PREFIX}/webstats/web/webstats.php
+	   ${STAGEDIR}${PREFIX}/webstats/web/webstats.php
 	@${INSTALL_DATA} ${WRKSRC}/stuff/README \
-	   ${PREFIX}/webstats/stuff/README
+	   ${STAGEDIR}${PREFIX}/webstats/stuff/README
 	@${INSTALL_DATA} ${WRKSRC}/stuff/advxsplitlogfile \
-	   ${PREFIX}/webstats/stuff/advxsplitlogfile
+	   ${STAGEDIR}${PREFIX}/webstats/stuff/advxsplitlogfile
 	@${INSTALL_DATA} ${WRKSRC}/stuff/DynamicVhosts.conf \
-	   ${PREFIX}/webstats/stuff/DynamicVhosts.conf
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	   ${STAGEDIR}${PREFIX}/webstats/stuff/DynamicVhosts.conf
 
 .include <bsd.port.mk>

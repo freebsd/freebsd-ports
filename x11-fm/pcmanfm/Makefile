@@ -14,9 +14,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfm-gtk.so:${PORTSDIR}/x11/libfm
 
-USES=		desktop-file-utils fam gmake pathfix pkgconfig tar:xz
+USES=		desktop-file-utils fam gmake pathfix pkgconfig tar:xz libtool
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	aclocal automake libtool
+USE_AUTOTOOLS=	aclocal automake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

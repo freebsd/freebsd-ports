@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_auth_kerb
 PORTVERSION=	5.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	SF/modauthkerb/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for authenticating users with Kerberos v5
 
-USE_APACHE=	22
+USE_APACHE=	22+
 USES=		gmake
 GNU_CONFIGURE=	yes
 
@@ -39,6 +39,10 @@ CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE} --without-krb4
 post-patch:
 	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
 		${WRKSRC}/Makefile.in
+.if !defined(HEIMDAL_HOME)
+	${REINPLACE_CMD} -e 's|@KRB5_LDFLAGS@|@KRB5_LDFLAGS@ -lgssapi_krb5|' \
+		${WRKSRC}/Makefile.in
+.endif
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}

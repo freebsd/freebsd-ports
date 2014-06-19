@@ -20,7 +20,7 @@ DESCR=		${PORTSDIR}/lang/sdcc/pkg-descr
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bzip2
 
-OPTIONS_DEFINE= 	DEVLIB DOCS UCSIM
+OPTIONS_DEFINE=		DEVLIB DOCS UCSIM
 OPTIONS_MULTI=		TARGETS
 OPTIONS_MULTI_TARGETS=	HC08 MCS51 PIC STM8 Z80
 OPTIONS_DEFAULT=	DEVLIB UCSIM HC08 MCS51 PIC STM8 Z80
@@ -33,12 +33,12 @@ STM8_DESC=	STMicroelectronics STM8
 Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000, Toshiba TLCS-90
 
 CPPFLAGS+=	-idirafter ${LOCALBASE}/include
-CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --disable-werror \
+CONFIGURE_ARGS=	--disable-avr --disable-install-libbfd --disable-werror \
 		--disable-st7 docdir=${DOCSDIR} sdcc_cv_c_fms_extensions=no
 CONFIGURE_ENV=	ARCH=""
 PORTDATA=	*
 PORTDOCS=	*
-WRKSRC= 	${WRKDIR}/sdcc
+WRKSRC=		${WRKDIR}/sdcc
 
 OPTIONS_SUB=		yes
 DEVLIB_CONFIGURE_OFF=	--disable-device-lib

@@ -8,7 +8,7 @@ CATEGORIES=	irc tk
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
 MAINTAINER=	tcltk@FreeBSD.org
-COMMENT=	A tcl/tk irc client
+COMMENT=	Tcl/tk irc client
 
 USES+=		tk:run
 NO_BUILD=	yes

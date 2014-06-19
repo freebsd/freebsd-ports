@@ -13,6 +13,8 @@ MAINTAINER=	devel@stasyan.com
 COMMENT=	Role-playing game, featuring both a single and a multiplayer mode
 
 BROKEN=		Fails to build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2014-06-30
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS-1.2.0.so:${PORTSDIR}/devel/ois \

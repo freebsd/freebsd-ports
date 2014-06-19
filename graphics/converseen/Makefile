@@ -2,18 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	converseen
-PORTVERSION=	0.7.1.1
+PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%200.7/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Easy to use graphics conversion utility
 
-LIB_DEPENDS=	libMagick++.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 
 USES=		cmake gettext iconv tar:bzip2
 USE_QT4=	corelib gui linguist_build moc_build qmake_build \
 		rcc_build uic_build
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^ appdata.path =/s|/usr/share|$$$${SHARE_DIR}|' \
+		${WRKSRC}/converseen.pro
+	@${REINPLACE_CMD} -e '/^install(FILES converseen.appdata.xml/s|/usr|$${CMAKE_INSTALL_PREFIX}|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/converseen

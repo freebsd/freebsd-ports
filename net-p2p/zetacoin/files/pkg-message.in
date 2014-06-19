@@ -1,12 +1,12 @@
 *******************************************************************
 To configure the Zetacoin server please edit: 
-%%PREFIX%%/etc/zetacoin.conf
+%%PREFIX%%/etc/%%PORTNAME%%.conf
 
 You must at least set a "rpcpassword" in the configuration file above.
 
-To run the zetacoind server at startup, add the following
+To run the %%PORTNAME%%d server at startup, add the following
 settings to your /etc/rc.conf
 
-zetacoin_enable="YES"
+%%PORTNAME%%_enable="YES"
 
 *******************************************************************

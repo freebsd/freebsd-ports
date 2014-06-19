@@ -11,7 +11,7 @@ DISTNAME=	eagle-lin-${EAGLEVERSION}
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	riggs@FreeBSD.org
-COMMENT=	An easy to use, yet powerful tool for designing printed circuit boards
+COMMENT=	Easy to use, yet powerful tool for designing printed circuit boards
 
 LICENSE=	Eagle
 LICENSE_NAME=	Eagle End User License Agreement

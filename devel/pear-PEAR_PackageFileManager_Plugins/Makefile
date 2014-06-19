@@ -5,7 +5,7 @@ PORTNAME=	PEAR_PackageFileManager_Plugins
 PORTVERSION=	1.0.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The plugins for PEAR_PackageFileManager
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

@@ -3,6 +3,7 @@
 
 PORTNAME=	sauserprefs
 PORTVERSION=	1.10 # PLEASE MIRROR DISTFILE WITH VERSIONED DIR
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/ \
   		LOCAL/bdrewery/${PORTNAME}/${PORTVERSION}/
@@ -29,9 +30,8 @@ x-generate-plist: build
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
+	${MKDIR} ${STAGEDIR}/${WWWDIR}
+	cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}/${WWWDIR}
 
 .include <bsd.port.mk>

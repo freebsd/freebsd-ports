@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION?=	3
+PORTREVISION?=	5
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -83,7 +83,7 @@ CANNA_CONFIGURE_ON=	--with-canna \
 			--with-canna-includes=${LOCALBASE}/include \
 			--with-canna-libraries=${LOCALBASE}/lib
 CANNA_PATCH_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ ${MASTER_SITE_LOCAL}
-CANNA_PATCHFILES=	emacs24.3canna-20130321.diff.gz
+CANNA_PATCHFILES=	emacs24.3canna-20140616.diff.gz
 CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 
 SOUND_CONFIGURE_WITH=		sound
@@ -144,7 +144,7 @@ M17N_CONFIGURE_WITH=	m17n-flt
 OTF_LIB_DEPENDS=	libotf.so:${PORTSDIR}/print/libotf
 OTF_CONFIGURE_WITH=	libotf
 
-MAGICK_LIB_DEPENDS=	libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
+MAGICK_LIB_DEPENDS=	libMagickCore-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 MAGICK_CONFIGURE_WITH=	imagemagick
 
 GSETTINGS_USE=			gnome=glib20

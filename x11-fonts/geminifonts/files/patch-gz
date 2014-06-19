@@ -8,12 +8,13 @@
  src:    $(SRC)
 @@ -63,6 +62,7 @@
  install:
- 	-mkdir $(DESTDIR)
+-	-mkdir $(DESTDIR)
++	-mkdir $(MDESTDIR)
 -	for i in $(ROMAN) $(SLANT) $(BOLD) $(BSLANT) $(FIXED) fonts.dir fonts.alias;\
 -	do install -c -m 444 $$i $(DESTDIR)/$$i; done
 +	${BSD_INSTALL_DATA} $(ROMAN) $(SLANT) $(BOLD) $(BSLANT) $(FIXED) \
-+	    fonts.alias $(DESTDIR)/
-+	mkfontdir  $(DESTDIR)
++	    fonts.alias $(MDESTDIR)/
++	mkfontdir  $(MDESTDIR)
  
  package:
 @@ -75 +75 @@

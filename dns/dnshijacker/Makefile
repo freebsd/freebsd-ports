@@ -8,7 +8,7 @@ CATEGORIES=	dns security
 MASTER_SITES=	http://pedram.redhive.com/downloads/
 
 MAINTAINER=	lx@redundancy.redundancy.org
-COMMENT=	A tool to hijack DNS requests
+COMMENT=	Tool to hijack DNS requests
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 

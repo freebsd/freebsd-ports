@@ -7,7 +7,7 @@ MASTER_SITES=	http://cdn.bitbucket.org/marcusva/cflow/downloads/
 DISTNAME=	cflow-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A call graph generator for C and assembler code
+COMMENT=	Call graph generator for C and assembler code
 
 CONFLICTS=	gnucflow-[0-9]* cflow-[0-9]*
 

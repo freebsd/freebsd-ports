@@ -20,7 +20,6 @@ PLIST=		${WRKDIR}/pkg-plist
 
 PORTDOCS=	README INSTALL COPYING AUTHORS HACKING THANKS
 
-NO_STAGE=	yes
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
 		${SED} -e 's|^|${ENTRANS}/|' > ${PLIST} \
@@ -31,14 +30,14 @@ pre-install:
 		${WRKSRC}/conf/database.conf.php.sample ${WRKSRC}/conf/database.conf.php; fi
 
 do-install:
-	-@${MKDIR} ${PREFIX}/${ENTRANS}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${ENTRANS}
-	@${CHMOD} 755 ${PREFIX}/${ENTRANS}
-	${CP} -R ${WRKSRC}/ ${PREFIX}/${ENTRANS}
+	-@${MKDIR} ${STAGEDIR}${PREFIX}/${ENTRANS}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${ENTRANS}
+	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/${ENTRANS}
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${ENTRANS}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 .endif
 

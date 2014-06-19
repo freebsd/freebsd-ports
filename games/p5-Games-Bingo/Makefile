@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A bingo game Perl implementation
+COMMENT=	Bingo game Perl implementation
 
 USES=		perl5
 USE_PERL5=	modbuild

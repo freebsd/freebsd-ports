@@ -2,23 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	gpsbabel
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.1
 CATEGORIES=	astro geography
 MASTER_SITES=	https://secure.ohos.nl/downloads/ \
-		LOCAL/beech
+		LOCAL/glebius
 
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	GPS file translating tool
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-expathdr=${LOCALBASE}/include \
-		--with-libexpat=${LOCALBASE}/lib
+
+USES=		gettext
+USE_QT4=	corelib linguist_build qmake_build
+USE_GNOME=	glib20
 
 PLIST_FILES=	bin/gpsbabel
 
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-libusb
+CONFLICTS=	gpsbabel14-[0-9]*
 
 .include <bsd.port.mk>

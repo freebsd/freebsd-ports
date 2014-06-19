@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
-COMMENT=	A tool to scan your Perl code for its prerequisites
+COMMENT=	Tool to scan your Perl code for its prerequisites
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -8,8 +8,7 @@ CATEGORIES=	archivers haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Reading, writing, and manipulating ".tar" archive files
 
-LICENSE=	BSD
-
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

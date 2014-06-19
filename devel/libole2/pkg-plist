@@ -5,9 +5,9 @@ include/libole2/ms-ole-summary.h
 include/libole2/ms-ole-vba.h
 include/libole2/ms-ole.h
 lib/libgnomeole2.a
-lib/libgnomeole2.la
 lib/libgnomeole2.so
 lib/libgnomeole2.so.0
+lib/libgnomeole2.so.0.0.0
 share/aclocal/gnome-libole2.m4
 share/aclocal/libole2.m4
 %%DATADIR%%/html/libole2-decl.txt

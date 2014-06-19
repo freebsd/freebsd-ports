@@ -16,8 +16,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 	7zr:${PORTSDIR}/archivers/p7zip \
 	zip:${PORTSDIR}/archivers/zip
 
-USES=		gmake pkgconfig desktop-file-utils
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig desktop-file-utils
 USE_GNOME=	glib20 gtk20 intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

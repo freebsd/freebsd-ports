@@ -21,14 +21,13 @@ PLIST_FILES=	%%JAVAJARDIR%%/bcel.jar
 PORTDOCS=	*
 .endif
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar \
-	    ${JAVAJARDIR}/${PORTNAME}.jar
+	    ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs && ${FIND} . -print | \
-	    ${CPIO} -pdmu -R${DOCOWN}:${DOCGRP} ${DOCSDIR})
+	    ${CPIO} -pdmu -R${DOCOWN}:${DOCGRP} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

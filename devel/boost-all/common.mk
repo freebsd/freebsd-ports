@@ -9,4 +9,4 @@ MAINTAINER=	office@FreeBSD.org
 CONFLICTS+=	boost-python-1* boost-1*
 MASTER_SITES=	SF/boost/boost/${PORTVERSION}
 
-USE_BZIP2=	yes
+USES+=		tar:bzip2

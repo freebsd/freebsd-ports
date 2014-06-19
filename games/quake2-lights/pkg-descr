@@ -1,1 +1,11 @@
-Lights modification for Quake II.
+This is a modification for Quake II which adds lights and lots of effects
+for the weapons shots.
+
+This mod is intended to play it with Quake2Max supported binaries because
+the lights and effects are better saw compared to original Quake2 binaries.
+
+There are already a lot of new commands, scanner, flashlight, decoys,
+defense laser, chasecam, hook, etc.  Some keys in the autoexec.cfg are set
+by default.
+
+Single player game is also playable with this mod.

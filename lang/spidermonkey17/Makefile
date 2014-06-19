@@ -12,7 +12,7 @@ DISTNAME=	js-${DISTVERSION}
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	A standalone JavaScript interpreter from the Mozilla project
 
-LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
 
 CONFLICTS=	njs-[0-9]*
 
@@ -43,7 +43,6 @@ EXTRACT_AFTER_ARGS=	--exclude js/jsd
 
 OPTIONS_DEFINE=	UTF8
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTF8}
@@ -56,12 +55,12 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/js \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/libjs.so \
-		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libjs.so ${PREFIX}/lib/libjs.so.1
+		${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libjs.so ${STAGEDIR}${PREFIX}/lib/libjs.so.1
 	${CP} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/jsautocfg.h ${WRKSRC}
-	@${INSTALL_DATA} ${JSH:S,^,${WRKSRC}/,} ${PREFIX}/include/
+	@${INSTALL_DATA} ${JSH:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/include/
 
 .include <bsd.port.pre.mk>
 

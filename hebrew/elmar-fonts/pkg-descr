@@ -1,10 +1,6 @@
-A collection of Hebrew fonts from El-Mar software Ltd.
+The fonts used by the Hebrew Support of X-Windows & Motif since 1991.
+35 pcf files, 8 Type1 files (1 is similar to the proportional Webfont).
+Already adopted by 8 workstation vendors, dozens of software houses, 
+and most of the X users in Israel.
 
-You'll have to add /usr/X11R6/lib/X11/fonts/hebrew
-to you're X font path by either:
-
-$ xset fp+ /usr/X11R6/lib/X11/fonts/hebrew
-$ xset fp rehash
-
-or by adding it to you're X-server configuration file (usually
-/etc/XF86Config or /etc/Xaccel.ini) and restarting the X-server.
+WWW: http://elmar.co.il/wwh/wwh/xfiles/H.fonts/index.en.html 

@@ -22,9 +22,6 @@ USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}
 POD2MAN?=	pod2man
 
-MAN1=	goose.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		-e "s|%%DATADIR%%|${DATADIR}|g" \
@@ -36,13 +33,13 @@ do-build:
 	@cd ${WRKSRC} && ${POD2MAN} goose > goose.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/goose ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/GoogleSearch.wsdl ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/goose.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/goose ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/GoogleSearch.wsdl ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/goose.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/goose.conf.example ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/goose.conf.example ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

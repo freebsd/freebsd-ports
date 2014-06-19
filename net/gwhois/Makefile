@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gwhois.de/gwhois/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible whois client and proxy
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \

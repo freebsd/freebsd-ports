@@ -18,5 +18,4 @@ GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-lm
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

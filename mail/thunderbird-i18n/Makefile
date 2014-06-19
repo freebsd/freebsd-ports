@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	24.5.0
+PORTVERSION=	24.6.0
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -12,9 +12,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
-EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-
-USES=		zip:infozip gecko:thunderbird
+USES=		gecko:thunderbird zip
 USE_XPI=	thunderbird
 
 NO_BUILD=	yes
@@ -63,7 +61,7 @@ do-extract:
 
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${STAGEDIR}${XPI_SLDIRS_ALL}
+	@${MKDIR} ${STAGEDIR}${XPI_LIBDIR} ${XPI_SLDIRS_ALL:S,^,${STAGEDIR},}
 	cd ${WRKSRC}; ${PAX} -rw . ${STAGEDIR}${XPI_LIBDIR}
 	${CHMOD} -R a+rX,go-w ${STAGEDIR}${XPI_LIBDIR}/${WDIR}/
 	@for e in ${STAGEDIR}${XPI_LIBDIR}/${WDIR}; do \

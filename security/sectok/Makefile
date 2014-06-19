@@ -15,17 +15,18 @@ LIB_DEPENDS=	libsectok.so:${PORTSDIR}/security/libsectok
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^INCLUDES=/s|$$| $${CPPFLAGS}| ; \
-		 /^LIBS=/s|$$| $${LDFLAGS}| ; \
-		 s|^CC=|CC?=| ; \
-		 s|^CFLAGS=|CFLAGS?=|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e '/^INCLUDES=/s|$$| ${CPPFLAGS}|' \
+		-e '/^LIBS=/s|=|=${LDFLAGS} |' \
+		-e '/^LIBS=/s|$$| ${LIBS}|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \

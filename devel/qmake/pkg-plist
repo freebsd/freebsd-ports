@@ -193,15 +193,15 @@ win32-watcom/qmake.conf
 @dirrm win32-watcom
 @unexec rmdir %%_PREFIX%%/share/qt/mkspecs
 @unexec rmdir %%_PREFIX%%/share/qt || echo %%_PREFIX%%/share/qt is still in use -- probably by the rest of Qt
-%%PORTDOCS%%@cwd %%DOCSDIR%%
-%%PORTDOCS%%html/qmake.dcf
-%%PORTDOCS%%html/qmake-manual.html
-%%PORTDOCS%%html/qmake-manual-1.html
-%%PORTDOCS%%html/qmake-manual-2.html
-%%PORTDOCS%%html/qmake-manual-3.html
-%%PORTDOCS%%html/qmake-manual-4.html
-%%PORTDOCS%%html/qmake-manual-5.html
-%%PORTDOCS%%html/qmake-manual-6.html
-%%PORTDOCS%%html/qmake-manual-7.html
-%%PORTDOCS%%html/qmake-manual-8.html
-%%PORTDOCS%%@unexec (rmdir %%DOCSDIR%%/html && rmdir %%DOCSDIR%%) || echo %%DOCSDIR%% is still in use -- by other Qt docs?
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake.dcf
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual-1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual-2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual-3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual-4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual-5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual-6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual-7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qmake-manual-8.html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	5.5.35
-PORTREVISION?=	1
+PORTVERSION=	5.5.38
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
-MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirror.aarnet.edu.au/pub/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirror2.hs-esslingen.de/pub/Mirrors/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://gd.tuwien.ac.at/db/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirrors.fe.up.pt/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirror.de.gsnw.de:56431/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirror.layerjet.com/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
+MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
+		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
+		http://mirror.aarnet.edu.au/pub/MariaDB/${PORTNAME}-${PORTVERSION}/source/ \
+		http://mirror2.hs-esslingen.de/pub/Mirrors/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
+		http://gd.tuwien.ac.at/db/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
+		http://mirrors.fe.up.pt/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
+		http://mirror.de.gsnw.de:56431/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
+		http://mirror.layerjet.com/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
+		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/source/
 PKGNAMESUFFIX?=	55-server
 
 MAINTAINER=	never@nevermind.kiev.ua
@@ -83,9 +83,14 @@ CMAKE_ARGS+=	-DWITH_JEMALLOC="system"
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
+.if exists(${LOCALBASE}/include/openssl/opensslv.h)
+.  if !${PORT_OPTIONS:MOPENSSL} || !${PORT_OPTIONS:MPORTSSL}
+IGNORE=	security/openssl package is installed. To build this either select the OPENSSL and PORTSSL options or deinstall openssl
+.  endif
+.endif
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
-.if empty(PORT_OPTIONS:MPORTSSL)
+.if !${PORT_OPTIONS:MPORTSSL}
 WITH_OPENSSL_BASE=	yes
 .else
 WITH_OPENSSL_PORT=	yes

@@ -17,7 +17,7 @@ BROKEN=		Does not compile
 
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 
-USES=		perl5 gmake zip:infozip
+USES=		perl5 gmake zip
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}

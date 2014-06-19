@@ -122,6 +122,7 @@
     SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
+    SUBDIR += clsync
     SUBDIR += cmdwatch
     SUBDIR += cmogstored
     SUBDIR += cmospwd
@@ -715,6 +716,7 @@
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack
+    SUBDIR += pstacku
     SUBDIR += pstree
     SUBDIR += ptools
     SUBDIR += puppet

@@ -8,24 +8,26 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.vergenet.net/~conrad/software/tractorgen/dl/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	elfrink@introweb.nl
+MAINTAINER=	robin@15augustus.nl
 COMMENT=	Generates ASCII tractors
 
 GNU_CONFIGURE=	yes
 
-MAN6=		tractorgen.6
-PLIST_FILES=	bin/tractorgen
+PLIST_FILES=	bin/tractorgen \
+		man/man6/tractorgen.6.gz
+
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=		DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/tractorgen.6 ${PREFIX}/man/man6/tractorgen.6
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${FILESDIR}/tractorgen.6 ${STAGEDIR}${PREFIX}/man/man6/tractorgen.6
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

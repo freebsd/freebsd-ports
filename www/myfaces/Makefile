@@ -24,19 +24,18 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		${JAR_FILES:S|^|%%DATADIR%%/|}
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/myfaces-all.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/myfaces-all.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for jarfile in ${JAR_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${jarfile} ${DATADIR}/${jarfile}
+	${INSTALL_DATA} ${WRKSRC}/${jarfile} ${STAGEDIR}${DATADIR}/${jarfile}
 .endfor
 
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	cd ${WRKSRC} && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	cd ${WRKSRC} && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
+	cd ${WRKSRC} && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 .endif
 
 .include <bsd.port.post.mk>

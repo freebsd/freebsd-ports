@@ -59,11 +59,13 @@ post-patch:
 			  -e "s|\\\BR|.BR|"		\
 		${WRKDIR}/dmd2/man/man1/dmd.1		\
 		${WRKDIR}/dmd2/man/man5/dmd.conf.5
-	@${REINPLACE_CMD} -e 's|"/etc/"|"${PREFIX}/etc/"|' ${WRKSRC}/inifile.c
+	@${REINPLACE_CMD} -e '/^SYSCONFDIR=/s|/etc/|${PREFIX}/etc/|' ${WRKSRC}/posix.mak
 	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${MODULEDIR}|"	\
 			  -e "s|%@P%/../lib|${PREFIX}/lib|"		\
 			  -e "s|%@P%/../../src/druntime|${PREFIX}/include/d/druntime|"	\
 			  ${WRKDIR}/dmd2/linux/bin32/dmd.conf
+	@${ECHO_CMD} >> ${WRKDIR}/dmd2/linux/bin32/dmd.conf
+	@${SED} -e "s|Environment32|Environment64|" ${WRKDIR}/dmd2/linux/bin32/dmd.conf >>${WRKDIR}/dmd2/linux/bin32/dmd.conf
 
 post-build:
 	cd ${WRKSRC}/../druntime && \

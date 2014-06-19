@@ -7,7 +7,7 @@ CATEGORIES=	dns
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/mj/net/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for checking DNS zones
+COMMENT=	Tool for checking DNS zones
 
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 

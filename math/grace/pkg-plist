@@ -6,6 +6,11 @@ bin/grconvert
 bin/xmgrace
 include/grace_np.h
 lib/libgrace_np.a
+man/man1/convcal.1.gz
+man/man1/grace.1.gz
+man/man1/gracebat.1.gz
+man/man1/grconvert.1.gz
+man/man1/xmgrace.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/10.1.dat
 %%PORTDOCS%%%%DOCSDIR%%/10a.dat
 %%PORTDOCS%%%%DOCSDIR%%/10b.dat
@@ -18,14 +23,11 @@ lib/libgrace_np.a
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.html
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.dvi
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.sgml
 %%PORTDOCS%%%%DOCSDIR%%/GPL.html
 %%PORTDOCS%%%%DOCSDIR%%/Tutorial.dvi
 %%PORTDOCS%%%%DOCSDIR%%/Tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/Tutorial.sgml
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.dvi
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.html
-%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.sgml
 %%PORTDOCS%%%%DOCSDIR%%/mygraph.png
 %%PORTDOCS%%%%DOCSDIR%%/nohelp.html
 %%PORTDOCS%%%%DOCSDIR%%/philosophical-gnu-sm.jpg

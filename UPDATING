@@ -5,7 +5,93 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20140529
+20140618:
+  AFFECTS: users of devel/m17n-* textproc/*m17n*
+  AUTHOR: Nikola Lecic <nikola.lecic@anthesphoria.net>
+
+  devel/m17n-db now incorporates a set of user-contributed input methods and
+  a conversion script, formerly available through textproc/m17n-contrib.
+  Delete textproc/m17n-contrib first and then update/install devel/m17n-db.
+
+20140616:
+  AFFECTS: users of devel/subversion
+  AUTHOR: lev@FreeBSD.org
+
+  The subversion port has been overhauled. Some optional parts were extracted
+  into separate ports. These ports are:
+
+  www/mod_dav_svn
+    instead of option MOD_DAV_SVN.
+  security/subversion-gnome-keyring
+    instead of option GNOME_KEYRING.
+  security/subversion-kwallet
+    instead of option KDE_KWALLET.
+
+  If you used devel/subversion with one (or more) of these non-standard
+  options, you should install the appropriate port(s) after upgrading
+  subversion.
+
+  "mod_dontdothat" is installed unconditionally by www/mod_dav_svn port (it
+  depended on the TOOLS option before), but is not activated by default, you
+  may need to edit apache's configuration file.
+
+  The devel/subversion port now installs svndiff, svndiff3 and svndiff4
+  commands if TOOLS option is enabled. They was skipped before.
+  The official names "diff", "diff3" and "diff4" are prefixed with "svn" to
+  avoid conflicts with base and other diff versions.
+
+  All libraries and binaries are now stripped if the MAINTAINER_DEBUG
+  option is not selected (including all sub-ports, like bindings
+  and mod_dav_svn).
+
+20140611:
+  AFFECTS: users of devel/icu
+  AUTHOR: bapt@FreeBSD.org
+
+  icu has been updated to 53.1. Please rebuild all ports that depend on it
+
+  If you use portmaster:
+        portmaster -w -r icu
+  If you use portupgrade:
+        portupgrade -fr devel/icu
+  If you use pkgng with binary packages:
+        pkg install -fR devel/icu
+
+20140610:
+  AFFECTS: users of www/firefox, www/seamonkey, mail/thunderbird, www/libxul
+  AUTHOR: gecko@FreeBSD.org
+
+  Gecko ports were switched to use more system libraries. Some of them
+  must be built with certain options unset (default).
+  - audio/soundtouch has to be installed with INTEGER_SAMPLES option disabled
+
+20140604:
+  AFFECTS: users of dns/dnscrypt-proxy
+  AUTHOR: feld@FreeBSD.org
+
+  The 1.4.0 update to dns/dnscrypt-proxy introduced a privilege
+  separation capability utilizing the new _dnscrypt-proxy user.
+  The home directory for this user was misconfigured as /nonexistent.
+  The dnscrypt-proxy server will try to chroot to _dnscrypt-proxy's home
+  directory and fail to start. If you are affected you will need to
+  change _dnscrypt-proxy's home directory to /var/empty:
+
+  # pw usermod _dnscrypt-proxy -d /var/empty
+
+20140603:
+  AFFECTS: users of net-p2p/zetacoin
+  AUTHOR: daniel@morante.net
+
+  The zetacoind process now runs as the zetacoin user. Please make sure that
+  this user has appropriate permissions to the blockchain database and wallet
+  directory.
+
+  If you are using the default path, run:
+
+  # chown -R zetacoin:zetacoin /var/db/zetacoin
+  # chown -R zetacoin:zetacoin /.zetacoin
+
+20140529:
   AFFECTS: users of databases/postgresql??-(server|client)
   AUTHOR: mat@FreeBSD.org
 
@@ -1231,7 +1317,7 @@ you update your ports collection, before attempting any port upgrades.
     followed by
   # portmaster -a
 
-20130925
+20130925:
   AFFECTS: Users of print/qpdf
   AUTHOR: d.y.kazarov@mail.ru
 
@@ -1309,7 +1395,7 @@ you update your ports collection, before attempting any port upgrades.
 
   NOTE: after r341775 (committed on January 29, 2014) and other
   following commits, a few ports, including devel/glib20, depend
-  on the devel/libiconv again due to missing functionality in the
+  on the converters/libiconv again due to missing functionality in the
   base iconv implementation.
 
   Due to this change some major overhauling of the ports tree has

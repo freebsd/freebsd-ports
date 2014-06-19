@@ -1,0 +1,13 @@
+To configure the driver with HAL just reattach the tablet for Xserver
+to pick it up. Otherwise, use/edit the sample configuration file:
+
+  $ cd %%PREFIX%%/etc/X11/xorg.conf.d/
+  $ cp wacom.conf.sample wacom.conf
+
+On xorg-server-1.7 and earlier you may need to also merge wacom.conf
+into xorg.conf and add the following lines to ServerLayout section
+
+	InputDevice	"wacom stylus"
+	InputDevice	"wacom eraser"
+	InputDevice	"wacom touch"
+	InputDevice	"wacom pad"

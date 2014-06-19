@@ -17,7 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
 LIB_DEPENDS=	libsyslog-ng-3.5.4.1.so:${PORTSDIR}/sysutils/syslog-ng-devel
 
-USES=           gmake pkgconfig pathfix bison lua tar:xz
+USES=		gmake pkgconfig pathfix bison lua tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

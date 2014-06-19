@@ -9,7 +9,7 @@ CATEGORIES=	archivers haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Compression and decompression in the gzip and zlib formats
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

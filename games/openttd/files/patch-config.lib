@@ -1,0 +1,83 @@
+--- config.lib.orig	2014-06-03 02:26:54 +0800
++++ config.lib
+@@ -804,15 +804,15 @@ check_params() {
+ 	pre_detect_with_lzma=$with_lzma
+ 	detect_lzma
+ 
+-	if [ "$with_lzma" = "0" ] || [ -z "$lzma_config" ]; then
++	if [ "$with_lzma" = "0" ] || [ -z "$lzma" ]; then
+ 		log 1 "WARNING: lzma was not detected or disabled"
+ 		log 1 "WARNING: OpenTTD doesn't require lzma, but it does mean that many features"
+ 		log 1 "WARNING: (like loading most savegames/scenarios and joining most servers)"
+ 		log 1 "WARNING: will be disabled."
+ 		if [ "$pre_detect_with_lzma" = "0" ]; then
+ 			log 1 "WARNING: We strongly suggest you to install liblzma."
+-			log 1 "configure: error: no liblzma detected"
+ 		else
++			log 1 "configure: error: no liblzma detected"
+ 			log 1 " If you want to compile without lzma use --without-lzma as parameter"
+ 			exit
+ 		fi
+@@ -1449,8 +1449,6 @@ make_cflags_and_ldflags() {
+ 			CFLAGS="-I/gg/os-include -noixemul -fstrict-aliasing -fexpensive-optimizations -mcpu=604 -fno-inline -mstring -mmultiple $CFLAGS"
+ 			LDFLAGS="$LDFLAGS -noixemul"
+ 		fi
+-
+-		CFLAGS="-O2 -fomit-frame-pointer $CFLAGS"
+ 	else
+ 		OBJS_SUBDIR="debug"
+ 
+@@ -1660,16 +1658,14 @@ make_cflags_and_ldflags() {
+ 		CFLAGS="$CFLAGS -DWITH_ZLIB"
+ 	fi
+ 
+-	if [ -n "$lzma_config" ]; then
+-		CFLAGS="$CFLAGS -DWITH_LZMA"
+-		CFLAGS="$CFLAGS `$lzma_config --cflags | tr '\n\r' '  '`"
+-
+-		if [ "$enable_static" != "0" ]; then
++	if [ "$with_lzma" != "0" ]; then
++		if [ "$enable_static" != "0" ] && [ "$os" != "OSX" ]; then
+ 			CFLAGS="$CFLAGS -DLZMA_API_STATIC"
+-			LIBS="$LIBS `$lzma_config --libs --static | tr '\n\r' '  '`"
++			LIBS="$LIBS $lzma"
+ 		else
+-			LIBS="$LIBS `$lzma_config --libs | tr '\n\r' '  '`"
++			LIBS="$LIBS -llzma"
+ 		fi
++		CFLAGS="$CFLAGS -DWITH_LZMA"
+ 	fi
+ 
+ 	if [ "$with_lzo2" != "0" ]; then
+@@ -2712,6 +2708,10 @@ detect_lzo2() {
+ 	detect_library "$with_lzo2" "lzo2" "liblzo2.a" "lzo/" "lzo1x.h"
+ }
+ 
++detect_lzma() {
++	detect_library "$with_lzma" "lzma" "liblzma.a" "" "lzma.h"
++}
++
+ detect_libtimidity() {
+ 	detect_library "$with_libtimidity" "libtimidity" "libtimidity.a" "" "timidity.h"
+ }
+@@ -2768,10 +2768,6 @@ detect_pkg_config() {
+ 	log 1 "checking $2... found"
+ }
+ 
+-detect_lzma() {
+-	detect_pkg_config "$with_lzma" "liblzma" "lzma_config" "5.0"
+-}
+-
+ detect_xdg_basedir() {
+ 	detect_pkg_config "$with_xdg_basedir" "libxdg-basedir" "xdg_basedir_config" "1.2"
+ }
+@@ -3665,8 +3661,7 @@ showhelp() {
+ 	echo "  --with-cocoa                   enables COCOA video driver (OSX ONLY)"
+ 	echo "  --with-sdl[=sdl-config]        enables SDL video driver support"
+ 	echo "  --with-zlib[=zlib.a]           enables zlib support"
+-	echo "  --with-liblzma[=\"pkg-config liblzma\"]"
+-	echo "                                 enables liblzma support"
++	echo "  --with-liblzma[=liblzma.a]     enables liblzma support"
+ 	echo "  --with-liblzo2[=liblzo2.a]     enables liblzo2 support"
+ 	echo "  --with-png[=libpng-config]     enables libpng support"
+ 	echo "  --with-freetype[=freetype-config]"

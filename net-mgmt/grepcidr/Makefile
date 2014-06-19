@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grepcidr
-PORTVERSION=	1.4
+PORTVERSION=	2.0
 CATEGORIES=	net-mgmt textproc
 MASTER_SITES=	http://www.pc-tools.net/files/unix/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/

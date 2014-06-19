@@ -1,4 +1,5 @@
 bin/tpp
+man/man1/tpp.1.gz
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/DESIGN

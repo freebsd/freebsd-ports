@@ -10,8 +10,7 @@ COMMENT=	Drupal module to provide fine-grained control of page titles
 
 RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_FILES=	page_title-admin-settings-form.tpl.php page_title.install page_title.views.inc \
 		views_handler_field_node_page_title.inc page_title.admin.css page_title.js \
 		page_title.views_default.inc page_title.admin.inc page_title.legacy.inc \

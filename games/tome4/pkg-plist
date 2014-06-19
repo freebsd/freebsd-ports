@@ -4,10 +4,10 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/addons/tome-addon-dev.teaa
 %%DATADIR%%/game/addons/tome-items-vault.teaa
 %%DATADIR%%/game/addons/tome-stone-wardens.teaa
-%%DATADIR%%/game/engines/te4-1.1.5.teae
+%%DATADIR%%/game/engines/te4-1.2.2.teae
 %%DATADIR%%/game/loader/init.lua
 %%DATADIR%%/game/loader/pre-init.lua
-%%DATADIR%%/game/modules/boot-te4-1.1.5.team
+%%DATADIR%%/game/modules/boot-te4-1.2.2.team
 %%DATADIR%%/game/modules/example/class/Actor.lua
 %%DATADIR%%/game/modules/example/class/Game.lua
 %%DATADIR%%/game/modules/example/class/Grid.lua
@@ -56,13 +56,67 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/modules/example_realtime/dialogs/Quit.lua
 %%DATADIR%%/game/modules/example_realtime/init.lua
 %%DATADIR%%/game/modules/example_realtime/load.lua
-%%DATADIR%%/game/modules/tome-1.1.5-gfx.team
-%%DATADIR%%/game/modules/tome-1.1.5-music.team
-%%DATADIR%%/game/modules/tome-1.1.5.team
+%%DATADIR%%/game/modules/tome-1.2.2-gfx.team
+%%DATADIR%%/game/modules/tome-1.2.2-music.team
+%%DATADIR%%/game/modules/tome-1.2.2.team
 %%DATADIR%%/game/profile-thread/Client.lua
 %%DATADIR%%/game/profile-thread/UserChat.lua
 %%DATADIR%%/game/profile-thread/init.lua
 %%DATADIR%%/game/thirdparty/Json2.lua
+%%DATADIR%%/game/thirdparty/cef3/cef.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/am.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ar.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/bg.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/bn.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ca.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/cs.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/da.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/de.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/el.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/en-GB.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/en-US.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/es-419.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/es.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/et.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/fa.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/fi.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/fil.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/fr.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/gu.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/he.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/hi.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/hr.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/hu.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/id.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/it.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ja.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/kn.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ko.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/lt.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/lv.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ml.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/mr.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ms.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/nb.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/nl.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/pl.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/pt-BR.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/pt-PT.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ro.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ru.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/sk.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/sl.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/sr.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/sv.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/sw.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/ta.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/te.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/th.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/tr.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/uk.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/vi.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/zh-CN.pak
+%%DATADIR%%/game/thirdparty/cef3/locales/zh-TW.pak
 %%DATADIR%%/game/thirdparty/config.lua
 %%DATADIR%%/game/thirdparty/jit/bc.lua
 %%DATADIR%%/game/thirdparty/jit/bcsave.lua
@@ -74,6 +128,27 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/thirdparty/jit/dis_x86.lua
 %%DATADIR%%/game/thirdparty/jit/dump.lua
 %%DATADIR%%/game/thirdparty/jit/v.lua
+%%DATADIR%%/game/thirdparty/licenses/CEF3.txt
+%%DATADIR%%/game/thirdparty/licenses/LuaJIT.txt
+%%DATADIR%%/game/thirdparty/licenses/SDL.txt
+%%DATADIR%%/game/thirdparty/licenses/SDL_image.txt
+%%DATADIR%%/game/thirdparty/licenses/SDL_ttf.txt
+%%DATADIR%%/game/thirdparty/licenses/expat.txt
+%%DATADIR%%/game/thirdparty/licenses/freetype.txt
+%%DATADIR%%/game/thirdparty/licenses/libogg.txt
+%%DATADIR%%/game/thirdparty/licenses/libpng.txt
+%%DATADIR%%/game/thirdparty/licenses/libvorbis.txt
+%%DATADIR%%/game/thirdparty/licenses/lpeg.txt
+%%DATADIR%%/game/thirdparty/licenses/luabitop.txt
+%%DATADIR%%/game/thirdparty/licenses/luamd5.txt
+%%DATADIR%%/game/thirdparty/licenses/luaprofiler.txt
+%%DATADIR%%/game/thirdparty/licenses/luasocket.txt
+%%DATADIR%%/game/thirdparty/licenses/luazlib.txt
+%%DATADIR%%/game/thirdparty/licenses/lxp.txt
+%%DATADIR%%/game/thirdparty/licenses/physfs.txt
+%%DATADIR%%/game/thirdparty/licenses/tcod.txt
+%%DATADIR%%/game/thirdparty/licenses/tween.txt
+%%DATADIR%%/game/thirdparty/licenses/zlib.txt
 %%DATADIR%%/game/thirdparty/lpeg/re.lua
 %%DATADIR%%/game/thirdparty/ltn12.lua
 %%DATADIR%%/game/thirdparty/lxp/lom.lua
@@ -93,55 +168,59 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/thirdparty/moonscript/util.lua
 %%DATADIR%%/game/thirdparty/moonscript/version.lua
 %%DATADIR%%/game/thirdparty/remdebug/engine.lua
+%%DATADIR%%/game/thirdparty/slt2.lua
 %%DATADIR%%/game/thirdparty/socket.lua
 %%DATADIR%%/game/thirdparty/socket/ftp.lua
 %%DATADIR%%/game/thirdparty/socket/http.lua
 %%DATADIR%%/game/thirdparty/socket/smtp.lua
 %%DATADIR%%/game/thirdparty/socket/tp.lua
 %%DATADIR%%/game/thirdparty/socket/url.lua
+%%DATADIR%%/game/thirdparty/tween.lua
 %%DATADIR%%/t-engine
-@dirrm %%DATADIR%%/game/thirdparty/socket
-@dirrm %%DATADIR%%/game/thirdparty/remdebug
-@dirrm %%DATADIR%%/game/thirdparty/moonscript/compile
-@dirrm %%DATADIR%%/game/thirdparty/moonscript
-@dirrm %%DATADIR%%/game/thirdparty/lxp
-@dirrm %%DATADIR%%/game/thirdparty/lpeg
-@dirrm %%DATADIR%%/game/thirdparty/jit
-@dirrm %%DATADIR%%/game/thirdparty
-@dirrm %%DATADIR%%/game/profile-thread
-@dirrm %%DATADIR%%/game/modules/example_realtime/dialogs
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/zones/dungeon
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/zones
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/rooms
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/gfx/particles
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/gfx
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/general/npcs
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/general/grids
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/general
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/birth
-@dirrm %%DATADIR%%/game/modules/example_realtime/data
-@dirrm %%DATADIR%%/game/modules/example_realtime/class/interface
-@dirrm %%DATADIR%%/game/modules/example_realtime/class
-@dirrm %%DATADIR%%/game/modules/example_realtime
-@dirrm %%DATADIR%%/game/modules/example/dialogs
-@dirrm %%DATADIR%%/game/modules/example/data/zones/dungeon
-@dirrm %%DATADIR%%/game/modules/example/data/zones
-@dirrm %%DATADIR%%/game/modules/example/data/rooms
-@dirrm %%DATADIR%%/game/modules/example/data/gfx/particles
-@dirrm %%DATADIR%%/game/modules/example/data/gfx
-@dirrm %%DATADIR%%/game/modules/example/data/general/npcs
-@dirrm %%DATADIR%%/game/modules/example/data/general/grids
-@dirrm %%DATADIR%%/game/modules/example/data/general
-@dirrm %%DATADIR%%/game/modules/example/data/birth
-@dirrm %%DATADIR%%/game/modules/example/data
+@dirrm %%DATADIR%%/bootstrap
+@dirrm %%DATADIR%%/game/addons
+@dirrm %%DATADIR%%/game/engines
+@dirrm %%DATADIR%%/game/loader
 @dirrm %%DATADIR%%/game/modules/example/class/interface
 @dirrm %%DATADIR%%/game/modules/example/class
+@dirrm %%DATADIR%%/game/modules/example/data/birth
+@dirrm %%DATADIR%%/game/modules/example/data/general/grids
+@dirrm %%DATADIR%%/game/modules/example/data/general/npcs
+@dirrm %%DATADIR%%/game/modules/example/data/general
+@dirrm %%DATADIR%%/game/modules/example/data/gfx/particles
+@dirrm %%DATADIR%%/game/modules/example/data/gfx
+@dirrm %%DATADIR%%/game/modules/example/data/rooms
+@dirrm %%DATADIR%%/game/modules/example/data/zones/dungeon
+@dirrm %%DATADIR%%/game/modules/example/data/zones
+@dirrm %%DATADIR%%/game/modules/example/data
+@dirrm %%DATADIR%%/game/modules/example/dialogs
 @dirrm %%DATADIR%%/game/modules/example
+@dirrm %%DATADIR%%/game/modules/example_realtime/class/interface
+@dirrm %%DATADIR%%/game/modules/example_realtime/class
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/birth
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/general/grids
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/general/npcs
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/general
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/gfx/particles
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/gfx
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/rooms
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/zones/dungeon
+@dirrm %%DATADIR%%/game/modules/example_realtime/data/zones
+@dirrm %%DATADIR%%/game/modules/example_realtime/data
+@dirrm %%DATADIR%%/game/modules/example_realtime/dialogs
+@dirrm %%DATADIR%%/game/modules/example_realtime
 @dirrm %%DATADIR%%/game/modules
-@dirrm %%DATADIR%%/game/loader
-@dirrm %%DATADIR%%/game/engines/cores
-@dirrm %%DATADIR%%/game/engines
-@dirrm %%DATADIR%%/game/addons
+@dirrm %%DATADIR%%/game/profile-thread
+@dirrm %%DATADIR%%/game/thirdparty/cef3/locales
+@dirrm %%DATADIR%%/game/thirdparty/cef3
+@dirrm %%DATADIR%%/game/thirdparty/jit
+@dirrm %%DATADIR%%/game/thirdparty/licenses
+@dirrm %%DATADIR%%/game/thirdparty/lpeg
+@dirrm %%DATADIR%%/game/thirdparty/lxp
+@dirrm %%DATADIR%%/game/thirdparty/moonscript/compile
+@dirrm %%DATADIR%%/game/thirdparty/moonscript
+@dirrm %%DATADIR%%/game/thirdparty/remdebug
+@dirrm %%DATADIR%%/game/thirdparty/socket
+@dirrm %%DATADIR%%/game/thirdparty
 @dirrm %%DATADIR%%/game
-@dirrm %%DATADIR%%/bootstrap
 @dirrm %%DATADIR%%

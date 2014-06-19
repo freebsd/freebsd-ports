@@ -1,18 +1,18 @@
---- Install.PL.orig	Wed Apr  2 09:21:00 2003
-+++ Install.PL	Fri Apr  4 19:59:41 2003
+--- Install.PL.orig	2003-04-02 02:21:00.000000000 -0700
++++ Install.PL	2014-05-29 11:23:05.000000000 -0700
 @@ -59,13 +59,13 @@
  # example to use the version number in your path. 
  # Make sure this remains in single quotes.
  #
 -$DEST = '/usr/local/bin/rmagic-$(VERSION)/';
-+$DEST = "$ENV{'PREFIX'}/reportmagic/";
++$DEST = "$ENV{'DESTDIR'}$ENV{'PREFIX'}/reportmagic/";
   
  #
  # Where do you want documentation to be installed?
  # You can use string concatenation, as in this example, 
  # to install the docs below the program.
 -$DOC = $DEST . 'docs/';
-+$DOC = "$ENV{'PREFIX'}/share/doc/reportmagic/";
++$DOC = "$ENV{'DESTDIR'}$ENV{'PREFIX'}/share/doc/reportmagic/";
  
  
  #

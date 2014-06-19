@@ -19,21 +19,14 @@ DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 
 SUB_FILES=	jasmin.sh
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/jasmin.jar ${JAVAJARDIR}
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples ; \
-	  ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; ;\
-	  ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
-.endif
-	${INSTALL_SCRIPT} ${WRKDIR}/jasmin.sh ${PREFIX}/bin/jasmin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	cd ${WRKSRC}/docs ; \
-	  ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; ;\
-	  ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
-.endif
+	${INSTALL_DATA} ${WRKSRC}/jasmin.jar ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/jasmin.sh ${STAGEDIR}${PREFIX}/bin/jasmin
+	@${MKDIR} ${STAGEDIR}${DOCDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

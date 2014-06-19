@@ -12,15 +12,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A Xbiff like mail tool with animated 3D graphics
 
+PLIST_FILES=	bin/coolmail \
+		man/man1/coolmail.1.gz
+
 USE_XORG=	x11 xext xmu xi
 PATCH_STRIP=	-p1
 
-MAN1=		coolmail.1
-PLIST_FILES=	bin/coolmail
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/coolmail ${PREFIX}/bin/coolmail
-	${INSTALL_MAN} ${WRKSRC}/coolmail.man ${PREFIX}/man/man1/coolmail.1
+	${INSTALL_PROGRAM} ${WRKSRC}/coolmail ${STAGEDIR}${PREFIX}/bin/coolmail
+	${INSTALL_MAN} ${WRKSRC}/coolmail.man ${STAGEDIR}${PREFIX}/man/man1/coolmail.1
 
 .include <bsd.port.mk>

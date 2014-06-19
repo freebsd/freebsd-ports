@@ -1,7 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Prefix/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Prefix/trie.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Prefix/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Prefix/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Prefix/XS/XS.so
 %%PERL5_MAN3%%/Text::Prefix::XS.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Prefix/XS

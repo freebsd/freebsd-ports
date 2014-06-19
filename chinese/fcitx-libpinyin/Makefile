@@ -17,8 +17,7 @@ LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libpinyin.so:${PORTSDIR}/chinese/libpinyin
 
 USE_LDCONFIG=	${PREFIX}/lib/fcitx/
-USE_XZ=		yes
-USES=		cmake gettext pkgconfig
+USES=		tar:xz cmake gettext pkgconfig
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 

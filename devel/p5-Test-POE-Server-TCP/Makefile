@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A POE Component providing TCP server services for test cases
+COMMENT=	POE Component providing TCP server services for test cases
 
 BUILD_DEPENDS=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}

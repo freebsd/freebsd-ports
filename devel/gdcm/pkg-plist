@@ -11,7 +11,7 @@ bin/gdcmscanner
 bin/gdcmscu
 bin/gdcmtar
 bin/gdcmxml
-%%PORTDOCS%%man/man1/gdcm2pnm.1.gz 
+%%PORTDOCS%%man/man1/gdcm2pnm.1.gz
 %%PORTDOCS%%man/man1/gdcm2vtk.1.gz
 %%PORTDOCS%%man/man1/gdcmanon.1.gz
 %%PORTDOCS%%man/man1/gdcmconv.1.gz

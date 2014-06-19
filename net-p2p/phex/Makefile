@@ -4,11 +4,13 @@
 PORTNAME=	phex
 PORTVERSION=	3.4.2.116
 CATEGORIES=	net-p2p java
-MASTER_SITES=	SF/${PORTNAME}/Phex%20Final%20Releases/Phex%203.4.2
+MASTER_SITES=	SF/${PORTNAME}/Phex%20Final%20Releases/Phex%20${PORTVERSION:R}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	A Java multi platform and spyware free gnutella client
+COMMENT=	Multi-platform and spyware-free Gnutella client
+
+LICENSE=	GPLv2
 
 USES=		zip
 USE_JAVA=	yes
@@ -22,14 +24,13 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PORTDOCS=	Phex_other.htm \
 		Undocumented.htm
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/readme/|} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/readme/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

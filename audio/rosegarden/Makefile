@@ -21,8 +21,7 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		lilypond:${PORTSDIR}/print/lilypond
 
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
-USE_BZIP2=	yes
+USES=		tar:bzip2 desktop-file-utils gmake pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR}
 USE_QT4=	gui network xml rcc_build moc_build uic_build linguist_build

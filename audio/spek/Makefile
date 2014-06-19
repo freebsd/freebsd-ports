@@ -14,10 +14,9 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
-USE_XZ=		yes
-USES=		gmake pkgconfig desktop-file-utils compiler:c++11-lib desktop-file-utils
+USES=		tar:xz gmake pkgconfig desktop-file-utils compiler:c++11-lib desktop-file-utils
 USE_GNOME=	intltool
-USE_WX=	2.8+
+USE_WX=	3.0
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes

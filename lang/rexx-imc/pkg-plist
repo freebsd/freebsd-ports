@@ -6,6 +6,9 @@ lib/librexx.so
 lib/librexx.so.2
 lib/rxmathfn.rxfn
 lib/rxmathfn.rxlib
+man/man1/rexx.1.gz
+man/man1/rxque.1.gz
+man/man1/rxstack.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.Y2K
 %%PORTDOCS%%%%DOCSDIR%%/README.bugreport

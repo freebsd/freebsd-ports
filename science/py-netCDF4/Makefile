@@ -7,7 +7,7 @@ CATEGORIES=	science python
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Python Interface to the NetCDF Library (versions 3 and 4)
 
 LICENSE=	MIT

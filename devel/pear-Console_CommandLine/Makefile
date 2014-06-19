@@ -6,7 +6,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A full featured command line options and arguments parser
+COMMENT=	Full featured command line options and arguments parser
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

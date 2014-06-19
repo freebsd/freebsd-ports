@@ -19,8 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES+=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
@@ -38,6 +37,11 @@ post-patch:
 		s|python |${PYTHON_CMD} |' ${WRKSRC}/configure.sh
 	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/tests/GNUmakefile
 	@${REINPLACE_CMD} -e 's|tolower|::tolower|' ${WRKSRC}/src/cc/utils_string.hh
+
+post-configure:
+	@(cd ${WRKSRC}/src/ctags-5.5.4 && ${SETENV} CC="${CC}" CPP="${CPP}" \
+		CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		${CONFIGURE_ENV} ./configure)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/pypersrc ${STAGEDIR}${PREFIX}/bin

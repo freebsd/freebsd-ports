@@ -11,6 +11,7 @@ DISTNAME=	Komodo-Edit-${PORTVERSION}-8334-linux-libcpp6-x86
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
+BROKEN=		Unfetchable
 CONFLICTS=	komodo-ide-*
 
 RESTRICTED=	Distribution not permitted

@@ -3,7 +3,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/ \
 		http://perturb.me.uk/distfiles/weechat/:mandocs \
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	jase/weechat/:mandocs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	A lightweight and user friendly ncurses based IRC client
+COMMENT=	Lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 

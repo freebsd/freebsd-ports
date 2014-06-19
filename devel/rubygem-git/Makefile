@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A ruby wrapper library around git(1)
+COMMENT=	Ruby wrapper library around git(1)
 
 RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
 

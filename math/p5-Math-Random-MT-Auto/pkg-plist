@@ -3,7 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Random/MT/Auto.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Random/MT/Auto/Range.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT/Auto/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT/Auto/Auto.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT/Auto/Auto.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT/Auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT

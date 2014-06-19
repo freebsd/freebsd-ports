@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	portupdate-scan
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	alex@stangl.us
 COMMENT=	Display pertinent parts of {PORTSDIR}/UPDATING
+
+LICENSE=	ISCL
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

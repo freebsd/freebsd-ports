@@ -20,13 +20,9 @@ MAKE_ARGS=	AUTOMAKE="${TRUE}"
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}
-.endif
 	${MKDIR} ${STAGEDIR}/${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/addons/usermgmt.cgi ${STAGEDIR}/${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/addons/README ${STAGEDIR}/${DATADIR}

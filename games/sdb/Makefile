@@ -22,8 +22,8 @@ USE_GL=		gl glu
 BUILD_WRKSRC=	${WRKSRC}/src
 
 CXXFLAGS+=	`${SDL_CONFIG} --cflags`
-LDFLAGS+=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
-MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
+LIBS+=		`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
+MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LIBS}"
 
 PLIST_FILES=	bin/sdb
 PORTDOCS=	*

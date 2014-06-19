@@ -12,7 +12,7 @@ DIST_SUBDIR=	eclipse
 EXTRACT_ONLY=
 
 MAINTAINER=	eg@fbsd.lt
-COMMENT=	A mercurial plugin for the Eclipse IDE Framework
+COMMENT=	Mercurial plugin for the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
@@ -24,9 +24,8 @@ NO_WRKSUBDIR=	yes
 ECLIPSE=	${PREFIX}/lib/eclipse
 PLUGINS=	plugins
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${ECLIPSE}/${PLUGINS}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${ECLIPSE}/${PLUGINS}/
+	@${MKDIR} ${STAGEDIR}${ECLIPSE}/${PLUGINS}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${STAGEDIR}${ECLIPSE}/${PLUGINS}/
 
 .include <bsd.port.mk>

@@ -1,0 +1,20 @@
+--- Makefile.bsd.orig	2014-06-10 23:16:23.285874501 +0800
++++ Makefile.bsd	2014-06-10 23:16:59.938863115 +0800
+@@ -77,13 +77,13 @@ lib:	testfpost libchoice
+ 
+ install: instchoice all
+ 	@echo "Creating directory $(INSTALL_PATH) ..."
+-	@mkdir $(INSTALL_PATH) 
++	@mkdir $(DESTDIR)$(INSTALL_PATH) 
+ 	@echo "Copying binaries in $(INSTALL_PATH) ..."
+-	@cp -f ./bin/* $(INSTALL_PATH)/
++	@cp -f ./bin/* $(DESTDIR)$(INSTALL_PATH)/
+ 	@echo "Copying bugscrypt.a in $(INSTALL_PATH) ..."
+-	@cp -f ./lib/bugscrypt.a $(INSTALL_PATH)/
++	@cp -f ./lib/bugscrypt.a $(DESTDIR)$(INSTALL_PATH)/
+ 	@echo "Copying docs in $(INSTALL_PATH) ..."
+-	@cp -rf ./doc/* $(INSTALL_PATH)/
++	@cp -rf ./doc/* $(DESTDIR)$(INSTALL_PATH)/
+ 	@echo
+ 	@echo ------------------------------------------------------------
+ 	@echo

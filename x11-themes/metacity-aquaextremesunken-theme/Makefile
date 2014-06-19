@@ -4,5 +4,4 @@
 TYPE=		metacity
 MASTERDIR=	${.CURDIR}/../gtk-aquaextremesunken-theme
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

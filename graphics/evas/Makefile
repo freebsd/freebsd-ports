@@ -10,7 +10,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A hardware accelerated canvas API (meta-port)
+COMMENT=	Hardware accelerated canvas API (meta-port)
 
 NO_BUILD=	yes
 USE_EFL=	evas

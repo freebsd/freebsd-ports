@@ -1,7 +1,0 @@
-If you are interfacing with bugzilla.mozilla.org, then this REST API,
-generally referred to as "BzAPI", is DEPRECATED.
-
-For new projects, use the native REST API instead.
-
-WWW: https://wiki.mozilla.org/BMO/REST
-WWW: https://wiki.mozilla.org/Bugzilla:REST_API

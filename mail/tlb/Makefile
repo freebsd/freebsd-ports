@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tlb
-PORTVERSION= 	0.11a
+PORTVERSION=	0.11a
 CATEGORIES=	mail perl5
 MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/tlb/ \
 		http://www.freenix.no/~anders/ \

@@ -15,8 +15,8 @@ COMMENT=	Visualise multiple 2D-functions of one variable
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	automake autoconf
 AUTOMAKE_ARGS=	-a -i
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/geg \
 		man/man1/geg.1.gz

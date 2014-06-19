@@ -1,37 +1,10 @@
-http://timidity-docs.sourceforge.jp/cgi-bin/kagemai-en/guest.cgi?project=timidity-bugs-en&action=view_report&id=56
-
-Plus another patch...
-
---- timidity/Makefile.in	Sun Oct  3 08:39:54 2004
-+++ timidity/Makefile.in	Thu Sep 22 03:11:09 2005
-@@ -478,5 +477,5 @@
- @BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(SYSEXTRAS:.c=.$(OBJEXT)) \
- @BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/interface/libinterface.a \
--@BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/libarc/libarc.a \
-+@BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	-larc \
- @BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/libunimod/libunimod.a \
- @BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/utils/libutils.a \
-@@ -509,5 +507,4 @@
- @BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@timidity_dep = $(SYSEXTRAS:.c=.$(OBJEXT)) \
- @BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/interface/libinterface.a \
--@BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/libarc/libarc.a \
- @BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/libunimod/libunimod.a \
- @BORLANDC_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/utils/libutils.a \
-@@ -585,5 +583,4 @@
- @BORLANDC_FALSE@@ENABLE_W32GUI_FALSE@@ENABLE_W32G_SYN_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(SYSEXTRAS:.c=.$(OBJEXT)) \
- @BORLANDC_FALSE@@ENABLE_W32GUI_FALSE@@ENABLE_W32G_SYN_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/interface/libinterface.a \
--@BORLANDC_FALSE@@ENABLE_W32GUI_FALSE@@ENABLE_W32G_SYN_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/libarc/libarc.a \
- @BORLANDC_FALSE@@ENABLE_W32GUI_FALSE@@ENABLE_W32G_SYN_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/libunimod/libunimod.a \
- @BORLANDC_FALSE@@ENABLE_W32GUI_FALSE@@ENABLE_W32G_SYN_FALSE@@VCPP_FALSE@@WATCOM_C_FALSE@	$(top_builddir)/utils/libutils.a
-@@ -576,9 +576,8 @@
- 	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
- 	  if test -f $$p \
- 	  ; then \
--	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
--	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f"; \
--	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f || exit 1; \
-+	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$p"; \
-+	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$p || exit 1; \
- 	  else :; fi; \
- 	done
- 
+--- Makefile.in.orig	2012-06-28 23:14:25.000000000 +0900
++++ Makefile.in	2012-10-01 02:41:14.000000000 +0900
+@@ -284,7 +284,6 @@
+ SUBDIRS = \
+ 	autoconf \
+ 	utils \
+-	libarc \
+ 	libunimod \
+ 	interface \
+ 	timidity \

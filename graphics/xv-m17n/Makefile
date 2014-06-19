@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An X11 program that displays images of various formats with multilingualization
+COMMENT=	X11 program that displays images of various formats with multilingualization
 
 MASTERDIR=	${.CURDIR}/../xv
 

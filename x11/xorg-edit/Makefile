@@ -10,13 +10,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI to edit xorg.conf
 
+DEPRECATED=	Depends on older version of wxGTK
+EXPIRATION_DATE=	2014-07-04
+
 LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		dos2unix gmake tar:bzip2
 DOS2UNIX_GLOB=	*.cpp *.h
-USE_WX=		2.8
+USE_WX=		3.0
 WX_UNICODE=	yes
 
 PLIST_FILES=	bin/xorg-edit \

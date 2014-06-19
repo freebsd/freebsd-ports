@@ -4,7 +4,7 @@
 PORTNAME=	boost-libs
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 BUILD_DEPENDS+=	bjam:${PORTSDIR}/devel/boost-jam
 
@@ -58,6 +58,8 @@ post-install:
 
 	@${CAT} ${PKG_MESSAGE_FILE_THREADS} >> ${PKGMESSAGE}
 	@${ECHO_CMD} >> ${PKGMESSAGE}
+
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 	@${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \

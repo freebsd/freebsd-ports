@@ -29,14 +29,11 @@ GRADIENTBG_DESC=	Gradient background image support
 REMINDERS_DESC=		Email reminder support
 PALM_DESC=		Palm export support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 PORTDOCS=	WebCalendar-SysAdmin.html \
 		newwin.gif
-.endif
 
 .if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
@@ -115,21 +112,23 @@ CONF=		webcalendar${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
 .if ${PORT_OPTIONS:MAPACHE}
-	@if [ -d "${CONFDIR}" ]; then \
-	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/webcalendar.conf; \
+	@${MKDIR} ${STAGEDIR}${CONFDIR}
+	@if [ -d "${STAGEDIR}${CONFDIR}" ]; then \
+	  ${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}/webcalendar.conf; \
 	else \
 	  ${ECHO_MSG} "" ; \
 	  ${ECHO_MSG} "Please check your Apache 2.x installation -" ; \
@@ -138,12 +137,9 @@ post-install:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
-	@${CAT} ${PKGMESSAGE}
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .if ${CGI_EXT} == "-cgi"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"Your WebCalendar installation was configured to use the PHP CGI binary."

@@ -2,7 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime/Linux.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime/BSD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime/BSD/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime/BSD/XS/XS.so
 %%PERL5_MAN3%%/Unix::Uptime.3.gz
 %%PERL5_MAN3%%/Unix::Uptime::BSD.3.gz

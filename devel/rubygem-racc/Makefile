@@ -7,7 +7,7 @@ CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
 MAINTAINER=	murashin@gfd-dennou.org
-COMMENT=	An LALR(1) parser generator for Ruby
+COMMENT=	LALR(1) parser generator for Ruby
 
 LICENSE=	LGPL21
 

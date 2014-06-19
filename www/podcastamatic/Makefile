@@ -17,10 +17,16 @@ RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
 
 USES=		perl5 zip
 USE_PERL5=	run
-
+USES+=		shebangfix
+SHEBANG_FILES=	podcastamatic.pl
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+SUB_LIST=	PORTNAME="${PORTNAME}"
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-patch:
 	@${REINPLACE_CMD} -e "s|${PORTNAME}.conf|${PREFIX}/etc/${PORTNAME}.conf|"\
 		 ${WRKSRC}/${PORTNAME}.pl
@@ -35,18 +41,11 @@ do-patch:
 	@${REINPLACE_CMD} -e "s|[wW]:|${PREFIX}/www|" ${WRKSRC}/example_${PORTNAME}.conf
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/example_${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
-	test \! -f ${PREFIX}/etc/${PORTNAME}.conf && ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf || true
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/style.css ${PREFIX}/share/${PORTNAME}/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme.html ${DOCSDIR}
-.endif
-	@${ECHO}
-	@${ECHO} "Edit ${PREFIX}/etc/${PORTNAME}.conf"
-	@${ECHO} "CSS in ${PREFIX}/share/${PORTNAME}/style.css"
-	@${ECHO}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/example_${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/style.css ${STAGEDIR}${PREFIX}/share/${PORTNAME}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/readme.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

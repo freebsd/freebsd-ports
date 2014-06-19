@@ -1,8 +1,16 @@
 bin/gapcmon
 share/applications/gapcmon.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+@comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+@comment %%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+@comment %%PORTDOCS%%%%DOCSDIR%%/gapcmon.desktop
 share/pixmaps/apcupsd.png
 share/pixmaps/charging.png
 share/pixmaps/gapc_prefs.png
 share/pixmaps/onbatt.png
 share/pixmaps/online.png
 share/pixmaps/unplugged.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

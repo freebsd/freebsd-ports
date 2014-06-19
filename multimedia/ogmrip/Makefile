@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ogmrip
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
@@ -16,9 +15,9 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
-		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca \
+		libpng.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
@@ -26,32 +25,30 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools
 
-OPTIONS_DEFINE=	GTK2 ENCHANT MATROSKA MP4BOX THEORA FAAC SRT DEBUG
-OPTIONS_DEFAULT=GTK2
+OPTIONS_DEFINE=	GTK2 ENCHANT MATROSKA MP4BOX NLS THEORA FAAC SRT DEBUG
+OPTIONS_DEFAULT=GTK2 NLS
 ENCHANT_DESC=	Enable spell checking for text subtitles
 MATROSKA_DESC=	Enable Matroska container support
 MP4BOX_DESC=	Enable Mpeg-4 container support
 THEORA_DESC=	Enable Ogg Theora video codec support
 SRT_DESC=	Enable SRT text subtitles support
 
-USES=        pathfix gettext gmake pkgconfig
+USES=		desktop-file-utils gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	glib20 intlhack libxml2
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		dvdcpy.1 avibox.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--enable-gtk-support --enable-dbus-support \
 			--enable-libnotify-support
-LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-			notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+			libnotify.so:${PORTSDIR}/devel/libnotify
 USE_GNOME+=		gconf2 libglade2
 GCONF_SCHEMAS=		ogmrip.schemas
 PLIST_SUB+=		GTK2_SUPPORT=""
@@ -63,7 +60,7 @@ PLIST_SUB+=		GTK2_SUPPORT="@comment "
 
 .if ${PORT_OPTIONS:MENCHANT}
 CONFIGURE_ARGS+=	--enable-enchant-support
-LIB_DEPENDS+=		enchant:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=		libenchant.so:${PORTSDIR}/textproc/enchant
 PLIST_SUB+=		ENCHANT_SUPPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-enchant-support
@@ -88,9 +85,17 @@ CONFIGURE_ARGS+=	--disable-mp4-support
 PLIST_SUB+=		MP4BOX_SUPPORT="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MNLS}
+USES+=			gettext
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MTHEORA}
 CONFIGURE_ARGS+=	--enable-theora-support
-LIB_DEPENDS+=		theora:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=		libtheora.so:${PORTSDIR}/multimedia/libtheora
 PLIST_SUB+=		THEORA_SUPPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-theora-support
@@ -134,10 +139,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^SUBDIRS|#SUBDIRS|g' ${WRKSRC}/docs/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/PROGRAM/s|MP4Box|mp4box|g' ${WRKSRC}/libogmrip/ogmrip-mp4.c
-
-post-install:
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

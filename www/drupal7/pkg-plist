@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.mysql.txt
@@ -959,8 +961,7 @@
 %%DRUPAL_BASE%%/scripts/test.script
 %%DRUPAL_BASE%%/sites/all/modules/README.txt
 %%DRUPAL_BASE%%/sites/all/themes/README.txt
-%%DRUPAL_BASE%%/sites/default/default.settings.php
-%%DRUPAL_BASE%%/sites/default/default.settings.php-dist
+@sample %%DRUPAL_BASE%%/sites/default/default.settings.php.sample
 %%DRUPAL_BASE%%/sites/example.sites.php
 %%DRUPAL_BASE%%/themes/README.txt
 %%DRUPAL_BASE%%/themes/bartik/bartik.info
@@ -1210,4 +1211,5 @@
 @dirrm %%DRUPAL_BASE%%/includes
 @dirrmtry %%DRUPAL_BASE%%/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec (test -d %D/%%DRUPAL_BASE%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%DRUPAL_BASE%% and its contents manually.")) || true
+@owner root
+@group wheel

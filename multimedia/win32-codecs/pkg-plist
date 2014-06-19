@@ -234,5 +234,7 @@ lib/win32/zmbv.dll
 %%REALPLAYER%%lib/win32/pncrt.dll
 %%REALPLAYER%%lib/win32/sipr3260.dll
 %%REALPLAYER%%lib/win32/tokr3260.dll
+@mode 0444
 lib/win32/%%PKGNAME%%
+@mode
 @dirrm lib/win32

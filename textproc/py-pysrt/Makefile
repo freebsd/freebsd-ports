@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysrt
-PORTVERSION=	0.5.1
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +12,10 @@ COMMENT=	SubRip (.srt) subtitle parser and writer
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_AUTOPLIST=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet
 
-post-patch:
-	@${REINPLACE_CMD} 's/="GPLv3",/="GPLv3", zip_safe=False,/' \
-		${WRKSRC}/setup.py
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Rabbit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rabbit/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rabbit/Rabbit.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rabbit/Rabbit.so
 %%PERL5_MAN3%%/Crypt::Rabbit.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rabbit/

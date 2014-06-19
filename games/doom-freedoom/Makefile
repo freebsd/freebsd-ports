@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-iwad-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Complete Doom-based game IWAD that is Free Software
 
-USES=		zip:infozip
+USES=		zip
 NO_BUILD=	yes
 
 DATADIR=	${DMDIR}/${PORTNAME}
@@ -22,14 +22,13 @@ PLIST_FILES=	%%DATADIR%%/doom2.wad
 PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	ChangeLog NEWS README
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doom2.wad ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doom2.wad ${STAGEDIR}${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

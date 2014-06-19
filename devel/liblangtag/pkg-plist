@@ -23,10 +23,11 @@ include/liblangtag/lt-string.h
 include/liblangtag/lt-tag.h
 include/liblangtag/lt-variant-db.h
 include/liblangtag/lt-variant.h
-lib/liblangtag.a
-lib/liblangtag.la
 lib/liblangtag.so
-lib/liblangtag.so.3
+lib/liblangtag.so.1
+lib/liblangtag.so.1.3.0
+lib/liblangtag/liblangtag-ext-ldml-t.so
+lib/liblangtag/liblangtag-ext-ldml-u.so
 libdata/pkgconfig/liblangtag.pc
 %%DATADIR%%/language-subtag-registry.xml
 %%DATADIR%%/common/bcp47/calendar.xml
@@ -88,4 +89,5 @@ share/gtk-doc/html/liblangtag/up.png
 @dirrm %%DATADIR%%/common/bcp47
 @dirrm %%DATADIR%%/common
 @dirrm %%DATADIR%%
+@dirrm lib/liblangtag
 @dirrm include/liblangtag

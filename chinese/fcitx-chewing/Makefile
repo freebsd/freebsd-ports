@@ -15,8 +15,7 @@ COMMENT=	Chewing support for Fcitx
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libchewing.so:${PORTSDIR}/chinese/libchewing
 
-USE_XZ=		yes
-USES=		cmake gettext pkgconfig
+USES=		tar:xz cmake gettext pkgconfig
 USE_GNOME=	intltool
 
 .include <bsd.port.mk>

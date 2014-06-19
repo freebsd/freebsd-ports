@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Biloba/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A strategy board game for 2 to 4 players
+COMMENT=	Strategy board game for 2 to 4 players
 
 GNU_CONFIGURE=	yes
 USES=		gmake

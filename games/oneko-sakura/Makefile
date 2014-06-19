@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.sakura.5
 PKGNAMESUFFIX=	-sakura
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A cat, Sakura or Tomoyo chasing a mouse all over the screen
+COMMENT=	Cat, Sakura or Tomoyo chasing a mouse all over the screen
 
 CONFLICTS=	oneko-2.*
 

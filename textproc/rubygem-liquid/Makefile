@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liquid
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

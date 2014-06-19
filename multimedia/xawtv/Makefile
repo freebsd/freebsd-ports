@@ -23,22 +23,14 @@ USES=		gmake iconv motif perl5
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xaw
-CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
-CFLAGS+=	-I${WRKSRC}/common
+CPPFLAGS+=	-I${WRKSRC}/common
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_ENV=	verbose=yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	alpha amd64 i386
 
 FILES_LIBJPEG=	console/Subdir.mk x11/Subdir.mk libng/plugins/Subdir.mk
 
-MAN1=		alevtd.1 dump-mixers.1 fbtv.1 mtt.1 motv.1 ntsc-cc.1 pia.1 \
-		propwatch.1 radio.1 record.1 rootv.1 scantv.1 showriff.1 \
-		streamer.1 subtitles.1 ttv.1 v4l-info.1 v4lctl.1 webcam.1 \
-		xawtv-remote.1 xawtv.1
-MAN5=		xawtvrc.5
-MAN8=		v4l-conf.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAALIB}

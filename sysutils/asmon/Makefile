@@ -3,13 +3,15 @@
 
 PORTNAME=	asmon
 PORTVERSION=	0.61
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/asmon
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Swallowable applet monitors the CPU usage, memory, and swap, etc
+
+LICENSE=	GPLv2
 
 USE_XORG=	xpm x11
 
@@ -23,11 +25,11 @@ MAKE_ARGS+=	LIBDIR="-L${LOCALBASE}/lib" \
 
 PLIST_FILES=	bin/asmon
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's:gcc:${CC} ${CFLAGS}:' ${BUILD_WRKSRC}/Makefile
 
 do-install:
-	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g kmem -m 2755 ${WRKSRC}/asmon/asmon ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/asmon/asmon ${STAGEDIR}${PREFIX}/bin
+	${CHGRP} kmem ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

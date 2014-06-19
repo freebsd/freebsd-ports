@@ -25,7 +25,6 @@ OPTIONS_DEFAULT=	IMAP MBSTRING
 IMAP_DESC=	Email Support
 MBSTRING_DESC=	Inbound email feature
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAP}
@@ -41,17 +40,11 @@ USE_PHP+=	ldap
 .endif
 
 do-install:
-	${MKDIR} ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	${CHMOD} -R ${BINMODE} ${WWWDIR}
-	${FIND} ${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
-
+		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	${CHMOD} -R ${BINMODE} ${STAGEDIR}${WWWDIR}
+	${FIND} ${STAGEDIR}${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 	@${CAT} ${PKGMESSAGE}
-
-post-install:
-	@if [ -f ${WWWDIR}/config.inc.php ]; then \
-		${CP} -p ${WWWDIR}/config.inc.php ${WWWDIR}/config.inc.php.bak ; \
-	fi
 
 .include <bsd.port.mk>

@@ -10,7 +10,7 @@ DISTNAME=	v1-9-0
 WRKSRC=		${WRKDIR}/sinbad-ogre-dd30349ea667
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A scene-oriented, flexible 3D engine written in C++
+COMMENT=	Scene-oriented, flexible 3D engine written in C++
 
 LIB_DEPENDS=	libzzip.so:${PORTSDIR}/devel/zziplib \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \

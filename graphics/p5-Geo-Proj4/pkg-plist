@@ -1,7 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/Proj4.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/Proj4.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Proj4/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Proj4/Proj4.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Proj4/Proj4.so
 %%PERL5_MAN3%%/Geo::Proj4.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Proj4

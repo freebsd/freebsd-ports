@@ -6,7 +6,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	milki@FreeBSD.org
-COMMENT=	A ruby gem for storing application configuration
+COMMENT=	Ruby gem for storing application configuration
 
 LICENSE=	MIT
 

@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	phpgroupware/phpgroupware/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A web based GroupWare system
+COMMENT=	Web based GroupWare system
 
 USES=		tar:bzip2
 USE_PHP=	yes

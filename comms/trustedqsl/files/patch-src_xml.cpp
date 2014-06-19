@@ -1,36 +1,45 @@
---- src/xml.cpp.orig	2013-10-20 20:33:20.000000000 -0400
-+++ src/xml.cpp	2014-02-01 20:30:26.874285772 -0500
-@@ -17,6 +17,33 @@
- using namespace std;
+--- src/xml.cpp.orig	2014-05-08 17:59:25.000000000 -0700
++++ src/xml.cpp	2014-05-24 04:26:40.000000000 -0700
+@@ -20,9 +20,20 @@
+ using std::string;
+ using std::ostream;
+ using std::map;
++#ifdef USE_TR1
++using std::tr1::shared_ptr;
++#else
++using std::make_shared;
++#endif
  
  namespace tqsllib {
-+static	XMLElementList::iterator _iter;
-+
-+bool
-+XMLElement::getFirstElement(XMLElement& element) {
-+	_iterByName = false;
-+	_iter = _elements.begin();
-+	return getNextElement(element);
-+}
-+
-+bool
-+XMLElement::getFirstElement(const std::string& name, XMLElement& element) {
-+	_iterName = name;
-+	_iterByName = true;
-+	_iter = _elements.find(_iterName);
-+	return getNextElement(element);
-+}
-+
-+bool
-+XMLElement::getNextElement(XMLElement& element) {
-+	if (_iter == _elements.end())
-+		return false;
-+	if (_iterByName && _iter->second.getElementName() != _iterName)
-+		return false;
-+	element = _iter->second;
-+	++_iter;
-+	return true;
-+}
  
- pair<string,bool>
++shared_ptr<XMLElement> make_shared_XMLElement(XMLElement *e)
++{
++	shared_ptr<XMLElement> p(e);
++	return p;
++}
++
+ pair<string, bool>
  XMLElement::getAttribute(const string& key) {
+ 	string s;
+@@ -49,9 +60,9 @@
+ 	if (el->_parsingStack.empty()) {
+ 		el->_parsingStack.push_back(el->addElement(new_el));
+ 	} else {
+-		new_el.setPretext(el->_parsingStack.back()->second.getText());
+-		el->_parsingStack.back()->second.setText("");
+-		el->_parsingStack.push_back(el->_parsingStack.back()->second.addElement(new_el));
++		new_el.setPretext(el->_parsingStack.back()->second.elem->getText());
++		el->_parsingStack.back()->second.elem->setText("");
++		el->_parsingStack.push_back(el->_parsingStack.back()->second.elem->addElement(new_el));
+ 	}
+ }
+ 
+@@ -65,7 +76,7 @@
+ void
+ XMLElement::xml_text(void *data, const XML_Char *text, int len) {
+ 	XMLElement *el = reinterpret_cast<XMLElement *>(data);
+-	el->_parsingStack.back()->second._text.append(text, len);
++	el->_parsingStack.back()->second.elem->_text.append(text, len);
+ }
+ 
+ /*

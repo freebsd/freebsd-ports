@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=   http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ELMER FEM Package Data base Interface
 
 USES=		fortran

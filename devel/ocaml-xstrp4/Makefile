@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OCaml extension to expands brace expansions
+COMMENT=	OCaml extension to expands brace expansions
 
 LICENSE=	MIT
 

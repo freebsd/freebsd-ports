@@ -7,8 +7,11 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kaoru@kaisei.org
-COMMENT=	Perl module of download FLV/MP4/SWF files from nicovideo.jp
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Download FLV/MP4/SWF files from nicovideo.jp
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \

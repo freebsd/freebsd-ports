@@ -30,12 +30,8 @@ include/mcabber/xmpp_iq.h
 include/mcabber/xmpp_iqrequest.h
 include/mcabber/xmpp_muc.h
 include/mcabber/xmpp_s10n.h
-lib/mcabber/libbeep.la
 lib/mcabber/libbeep.so
-lib/mcabber/libxttitle.la
 lib/mcabber/libxttitle.so
-lib/mcabber/liburlregex.la
-lib/mcabber/libfifo.la
 lib/mcabber/liburlregex.so
 lib/mcabber/libfifo.so
 libdata/pkgconfig/mcabber.pc

@@ -3,13 +3,14 @@
 
 PORTNAME=	calibre
 PORTVERSION=	1.35.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Ebook management application
 
-LIB_DEPENDS=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
 		libwmflite.so:${PORTSDIR}/graphics/libwmf \
@@ -50,7 +51,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
-USES=		desktop-file-utils shared-mime-info shebangfix tar:xz
+USES=		desktop-file-utils pkgconfig shared-mime-info shebangfix tar:xz
 SHEBANG_FILES=	src/calibre/ebooks/metadata/odt.py \
 		src/calibre/utils/*.py \
 		src/odf/*.py

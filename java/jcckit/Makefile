@@ -15,20 +15,17 @@ USES=		zip
 USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/JCCKit
 NO_BUILD=	yes
+
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${JAVAJARDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in LICENSE.txt README.html docs
-	${CP} -R ${WRKSRC}/${file} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

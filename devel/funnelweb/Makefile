@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.ross.net/funnelweb/download/funnelweb_v320/
 DISTNAME=	funnelweb_v320_source
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A powerful literate-programming macro pre-processor
+COMMENT=	Powerful literate-programming macro pre-processor
 
 PLIST_FILES=	bin/fw
 WRKSRC=		fw_src/source

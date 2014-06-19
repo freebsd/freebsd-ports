@@ -4,8 +4,8 @@
  SRCS = sslscan.c
 -BINPATH = /usr/bin/
 -MANPATH = /usr/share/man/
-+BINPATH = ${STAGEDIR}${PREFIX}/bin/
-+MANPATH = ${STAGEDIR}${PREFIX}/man
++BINPATH = ${PREFIX}/bin/
++MANPATH = ${PREFIX}/man
 +CC =	${CC}
  
  all:
@@ -15,8 +15,8 @@
  install:
 -	cp sslscan $(BINPATH)
 -	cp sslscan.1 $(MANPATH)man1
-+	install -s -m 755 sslscan $(BINPATH)
-+	install -m 644 sslscan.1 $(MANPATH)/man1
++	install -s -m 755 sslscan $(DESTDIR)$(BINPATH)
++	install -m 644 sslscan.1 $(DESTDIR)$(MANPATH)/man1
  
  uninstall:
  	rm -f $(BINPATH)sslscan

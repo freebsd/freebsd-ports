@@ -3,18 +3,18 @@
 
 PORTNAME=	wxguitar
 PORTVERSION=	1.01
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A simple guitar tuning assistant
+COMMENT=	Simple guitar tuning assistant
 
 RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay
 
 GNU_CONFIGURE=	yes
-USE_WX=		2.8+
+USE_WX=		3.0
 WX_UNICODE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 CPPFLAGS+=	-I${LOCALBASE}/include

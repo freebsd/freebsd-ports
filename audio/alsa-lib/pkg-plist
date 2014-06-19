@@ -47,6 +47,7 @@ lib/alsa-lib/smixer/smixer-sbase.so
 lib/libasound.la
 lib/libasound.so
 lib/libasound.so.2
+lib/libasound.so.2.0.0
 libdata/pkgconfig/alsa.pc
 share/aclocal/alsa.m4
 share/alsa/alsa.conf

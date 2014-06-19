@@ -26,9 +26,9 @@ include/zsys.h
 include/zthread.h
 include/ztree.h
 lib/libczmq.a
-lib/libczmq.la
 lib/libczmq.so
-lib/libczmq.so.2
+lib/libczmq.so.1
+lib/libczmq.so.1.1.0
 libdata/pkgconfig/libczmq.pc
 man/man3/zauth.3.gz
 man/man3/zbeacon.3.gz

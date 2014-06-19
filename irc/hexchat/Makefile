@@ -3,20 +3,20 @@
 
 PORTNAME=	hexchat
 PORTVERSION=	2.9.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://dl.hexchat.org/${PORTNAME}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	IRC chat program with GTK and Text Frontend
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
-USES=		gmake desktop-file-utils pkgconfig tar:xz
+USES=		gmake desktop-file-utils libtool pkgconfig tar:xz
 USE_GNOME=	gtk20 libxml2
-USE_AUTOTOOLS=	automake autoconf libtool
+USE_AUTOTOOLS=	automake autoconf libtoolize
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
@@ -68,6 +68,9 @@ TEXTFE_CONFIGURE_ENABLE=	textfe
 XFT_CONFIGURE_ENABLE=	xft
 GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 LIBSEXY_LIB_DEPENDS=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy
+
+# Wrong versioning upstream
+PORTSCOUT=	skipv:2.10.0
 
 .include <bsd.port.options.mk>
 

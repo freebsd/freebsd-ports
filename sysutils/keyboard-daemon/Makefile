@@ -12,7 +12,7 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcfu.a:${PORTSDIR}/devel/libcfu
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 USE_RC_SUBR=	${PORTNAME:S/-/_/}
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz

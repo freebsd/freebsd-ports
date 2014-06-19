@@ -3,7 +3,7 @@
 
 PORTNAME=	geany
 PORTVERSION=	1.23.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
@@ -47,5 +47,8 @@ post-patch:
 .if !${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|po||' ${WRKSRC}/Makefile.in
 .endif
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/geany.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>

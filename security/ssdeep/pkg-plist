@@ -1,7 +1,7 @@
 bin/ssdeep
 include/fuzzy.h
 lib/libfuzzy.a
-lib/libfuzzy.la
 lib/libfuzzy.so
 lib/libfuzzy.so.2
+lib/libfuzzy.so.2.0.0
 man/man1/ssdeep.1.gz

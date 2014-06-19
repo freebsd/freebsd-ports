@@ -1,0 +1,22 @@
+--- makefile.orig	2014-06-18 20:52:27.430827185 +0800
++++ makefile	2014-06-18 20:53:06.009833368 +0800
+@@ -127,13 +127,13 @@ install: lib
+ 	: '[$@]'
+ 	@echo 'PREFIX=$(PREFIX)  LIBDIR=$(LIBDIR)  INCDIR=$(INCDIR)'
+ 	@:
+-	@test -d $(INCDIR)  ||  mkdir $(INCDIR)
+-	@$(FXT_INSTALL) $(FXTIDIR)/*.h $(INCDIR)/
+-	@cd src && for f in $(SHFXTSRCDIRS); do mkdir -p $(INCDIR)/$$f; done
+-	@cd src && for f in $(SHFXTSRCDIRS); do $(FXT_INSTALL) $$f/*.h $(INCDIR)/$$f; done
++	@test -d $(DESTDIR)$(INCDIR)  ||  mkdir $(DESTDIR)$(INCDIR)
++	@$(FXT_INSTALL) $(FXTIDIR)/*.h $(DESTDIR)$(INCDIR)/
++	@cd src && for f in $(SHFXTSRCDIRS); do mkdir -p $(DESTDIR)$(INCDIR)/$$f; done
++	@cd src && for f in $(SHFXTSRCDIRS); do $(FXT_INSTALL) $$f/*.h $(DESTDIR)$(INCDIR)/$$f; done
+ 	@:
+-	@test -d $(LIBDIR)  ||  mkdir $(LIBDIR)
+-	@$(FXT_INSTALL) $(FXTLIB) $(LIBDIR)/
++	@test -d $(DESTDIR)$(LIBDIR)  ||  mkdir $(DESTDIR)$(LIBDIR)
++	@$(FXT_INSTALL) $(FXTLIB) $(DESTDIR)$(LIBDIR)/
+ 	:  OK.
+ 
+ .PHONY: chk-install ##x print whether installed header files are up to date

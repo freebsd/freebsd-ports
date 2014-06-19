@@ -3,6 +3,7 @@
 
 PORTNAME=	tomcat-native
 PORTVERSION=	1.1.30
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/native/${PORTVERSION}/source
@@ -20,6 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/jni/native
 OPTIONS_DEFINE=	OCSP
 OCSP_DESC=	Enable OCSP verification support
 
+USES=		libtool
 USE_OPENSSL=	yes
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
@@ -30,9 +32,9 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-ssl=${SSLBASE}
 
 PLIST_FILES=	lib/libtcnative-1.a \
-		lib/libtcnative-1.la \
 		lib/libtcnative-1.so \
-		lib/libtcnative-1.so.1
+		lib/libtcnative-1.so.0 \
+		lib/libtcnative-1.so.0.1.30
 
 .include <bsd.port.options.mk>
 

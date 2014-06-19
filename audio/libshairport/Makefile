@@ -8,7 +8,7 @@ MASTER_SITES=	http://mirrors.xbmc.org/build-deps/darwin-libs/
 DISTNAME=	libshairport-${PORTVERSION}_lib
 
 MAINTAINER=	manuel.creach@icloud.com
-COMMENT=	An Airport Extreme Emulator
+COMMENT=	Airport Extreme Emulator
 
 USES=		gmake
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize

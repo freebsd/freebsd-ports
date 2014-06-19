@@ -26,7 +26,6 @@ PATCHDIR=	/dev/null
 
 OPTIONS_DEFINE+=	GDBM
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.opt"
 
 .else	# !defined(PKGNAMESUFFIX)
@@ -208,9 +207,9 @@ pre-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} ${_SHROWNGRP} -d ${DOCSDIR}
+	@${INSTALL} ${_SHROWNGRP} -d ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .endif	# !defined(PKGNAMESUFFIX)

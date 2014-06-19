@@ -3,7 +3,7 @@
 
 PORTNAME=	mediainfo
 PORTVERSION=	0.7.52
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/binary/${PORTNAME}/${PORTVERSION}
 DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
@@ -15,29 +15,31 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/MediaInfo/License.html
 
-USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env libtool:env
-USE_BZIP2=	yes
+USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_SCRIPT=	CLI_Compile.sh
+NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource
 
 PLIST_FILES=	bin/mediainfo \
+		lib/libmediainfo.a \
 		lib/libmediainfo.so \
 		lib/libmediainfo.so.0 \
+		lib/libmediainfo.so.0.0.0 \
+		lib/libzen.a \
 		lib/libzen.so \
-		lib/libzen.so.0
+		lib/libzen.so.0 \
+		lib/libzen.so.0.0.0
 
-NO_STAGE=	yes
-do-build:
-	@(cd ${WRKSRC}/ZenLib/Project/GNU/Library/ && ${SH} ./autogen)
-	@(cd ${WRKSRC}/MediaInfoLib/Project/GNU/Library/ && ${SH} ./autogen)
-	@(cd ${WRKSRC}/MediaInfo/Project/GNU/CLI/ && ${SH} ./autogen)
-	@(cd ${WRKSRC}/ && ${SH} ./CLI_Compile.sh --prefix=${PREFIX} --enable-shared)
+SUBDIRS=	ZenLib/Project/GNU/Library \
+		MediaInfoLib/Project/GNU/Library \
+		MediaInfo/Project/GNU/CLI
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/MediaInfo/Project/GNU/CLI/.libs/mediainfo ${PREFIX}/bin/
-.for library in MediaInfo Zen
-	${INSTALL_LIB} ${WRKSRC}/${library}Lib/Project/GNU/Library/.libs/lib${library:tl}.so.0 ${PREFIX}/lib/
-	${LN} -fs lib${library:tl}.so.0 ${PREFIX}/lib/lib${library:tl}.so
+.for d in ${SUBDIRS}
+	@(cd ${WRKSRC}/$d && ${MAKE_CMD} ${MAKE_ARGS} install)
 .endfor
 
 .include <bsd.port.mk>

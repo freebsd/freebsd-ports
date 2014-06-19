@@ -20,7 +20,7 @@ GH_ACCOUNT=	stricaud
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	777ab06
 
-OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	crypto-folks.png gvgen-legend.png gvgen-propertyforeachlinks.2.png \
 	      	gvgen-smartmode-2.png gvgen-cluster-node-link.png gvgen-legendin.png \

@@ -3,7 +3,7 @@
 
 PORTNAME=	ninja-ide
 PORTVERSION=	2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/
 
@@ -18,17 +18,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-declarative>=4.10.2:${PORTSDIR}/devel/py
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5,1:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.8.5:${PORTSDIR}/www/py-qt4-webkit
 
-#PYDISTUTILS_PKGNAME=	${PORTNAME:tu:S,-,_,}
-PYDISTUTILS_PKGNAME=	${PORTNAME:tu:S,-,_,}
-#PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}_dev
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 USE_GITHUB=	yes
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-
 GH_ACCOUNT=	ninja-ide
 GH_COMMIT=	85027df
 GH_TAGNAME=	v${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

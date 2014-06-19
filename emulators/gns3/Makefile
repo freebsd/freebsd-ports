@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gns3
-PORTVERSION=	0.8.3.1
-PORTREVISION=	2
+PORTVERSION=	0.8.6
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gns-3/GNS3/${PORTVERSION}
 DISTNAME=	GNS3-${PORTVERSION}-src
@@ -13,7 +12,6 @@ COMMENT=	Graphical Cisco network simulator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	qemu:${PORTSDIR}/emulators/qemu
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
 		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network \
@@ -21,26 +19,19 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 		dynagen:${PORTSDIR}/emulators/dynagen \
 		xdotool:${PORTSDIR}/x11/xdotool
 
+WRKSRC=	${WRKDIR}/${PORTNAME}-legacy-GNS3-${PORTVERSION}
+
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	GNS3
 
-DESKTOP_ENTRIES=	"GNS3" "${COMMENT}" "" "${PORTNAME}" "System;Emulator;" "true"
+DESKTOP_ENTRIES=	"GNS3" "${COMMENT}" "" "${PORTNAME}" "System;Emulator;" true
 
-OPTIONS_DEFINE=		MANPAGES
-OPTIONS_DEFAULT=	MANPAGES
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMANPAGES}
-MAN1=	${PORTNAME}.1
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' -e 's|/share/man|/man|g' ${WRKSRC}/setup.py
 
 post-install:
-.if ${PORT_OPTIONS:MMANPAGES}
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${MAN1} ${MAN1PREFIX}/man/man1
-.endif
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -12,17 +12,17 @@ DISTNAME=	sic-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Extremely simple IRC client
 
-MAN1=		simpleirc.1
-PLIST_FILES=	bin/simpleirc
+LICENSE=	MIT
+
+PLIST_FILES=	bin/simpleirc man/man1/simpleirc.1.gz
 PORTDOCS=	README LICENSE
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

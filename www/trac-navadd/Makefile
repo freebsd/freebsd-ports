@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;:tl}
+PORTNAME=	navadd
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -14,10 +14,10 @@ COMMENT=	Plugin for adding navigation items into Trac navigation bars
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	NavAdd
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=			${WRKDIR}/${PORTNAME}plugin
-PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

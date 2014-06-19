@@ -3,7 +3,7 @@
 
 PORTNAME=	unieject
 PORTVERSION=	6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -16,8 +16,7 @@ LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libcdio.so:${PORTSDIR}/sysutils/libcdio
 
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig gettext iconv
+USES=		tar:bzip2 pathfix pkgconfig gettext iconv libtool
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \

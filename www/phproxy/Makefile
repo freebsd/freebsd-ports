@@ -19,20 +19,15 @@ EXTRACT_AFTER_ARGS+=	-d ${WRKSRC}
 
 DOCFILES=	ChangeLog.txt LICENSE.txt README.txt TODO.txt
 
-NO_STAGE=	yes
 do-install:
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.endif
 
 	@${RM} ${WRKSRC}/*.txt
-	${MKDIR} ${WWWDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}/)
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/)
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

@@ -14,8 +14,7 @@ COMMENT=	GNOME MP3/Ogg file tagger
 LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USE_BZIP2=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		tar:bzip2 gettext gmake pathfix pkgconfig
 USE_GNOME=	intlhack libglade2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

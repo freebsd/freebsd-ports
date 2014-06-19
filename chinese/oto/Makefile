@@ -12,7 +12,7 @@ COMMENT=	Show you font info and add new 'name' and 'cmap' tables
 USES=		gmake iconv
 GNU_CONFIGURE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 
 post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f -print0 | \

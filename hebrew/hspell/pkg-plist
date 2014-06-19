@@ -4,6 +4,8 @@ bin/multispell
 include/hspell.h
 include/linginfo.h
 lib/libhspell.a
+man/man1/hspell.1.gz
+man/man3/hspell.3.gz
 %%DATADIR%%/hebrew.wgz
 %%DATADIR%%/hebrew.wgz.hints
 %%DATADIR%%/hebrew.wgz.prefixes

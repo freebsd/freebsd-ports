@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	A metronome application
+COMMENT=	Metronome application
 
 LICENSE=	GPLv3
 

@@ -1,0 +1,137 @@
+.Dd April 26, 2014
+.Dt GREYFIX 8
+.Os
+.Sh NAME
+.Nm greyfix
+.Nd "A greylisting policy daemon for Postfix"
+.Sh SYNOPSIS
+.Nm
+.Op Fl Vvd
+.Op Fl h Ar home_directory
+.Op Fl g Ar delay_period
+.Op Fl b Ar bloc_idle_period
+.Op Fl p Ar pass_period
+.Op Fl r Ar reject_action
+.Op Fl G Ar greylist_action
+.Op Fl / Ar prefix_size
+.Op Fl 6 Ar prefix_size
+.Op Fl -dump-triplets
+.Op Fl -help
+.Sh DESCRIPTION
+.Nm
+is a efficient greylisting policy daemon for Postfix.
+.Pp
+The options are:
+.Bl -tag -width indent
+.It Fl V , Fl -version
+Show version information.
+.It Fl v , Fl -verbose
+Verbose logging.
+.It Fl d , Fl -debug
+Debug logging.
+.It Fl -help
+Show usage information.
+.It Fl -dump-triplets
+Dump the triplets database to stdout. Mostly for debugging purposes.
+.It Fl b Ar seconds , Fl -bloc-max-idle Ar seconds
+How many seconds of life are given to a record that is created from a new mail
+.Em ( ip , from , to )
+triplet. Note that the window created by this setting for passing mails is
+reduced by the amount set for
+.Fl -greylist-delay .
+Also see
+.Fl -pass-max-idle .
+Defaults to 18000.
+.It Fl g Ar seconds , Fl -greylist-delay Ar seconds
+How many seconds we will block inbound mail that is from a previously unknown
+.Em ( ip , from , to )
+triplet. If it is set to zero, incoming mail association will be learned, but
+no deliveries will be tempfailed. Use a setting of zero with caution, as it
+will learn spammers as well as legitimate senders. Defaults to 3480.
+.It Fl h Ar home_directory , Fl -home Ar home_directory
+Location of the Berkeley DB environment home location. Defaults to
+.Pa /var/db/greyfix .
+.It Fl p Ar seconds , Fl -pass-max-idle Ar seconds
+How long to give to a record we are updating from an allowed (passed) email.
+.Pp
+The default is 3110400, which should be enough to handle messages that may only
+be sent once a month, or on things like the first monday of the month (which
+sometimes means 5 weeks). Plus, we add a day for a delivery buffer.
+.It Fl r Ar action , Fl -reject-action Ar action
+The reject action directive that will be used.  See
+.Xr access 5
+for valid actions. The placeholder
+.Em %d
+expand to the number of seconds,
+.Em %p
+to the empty string if
+.Em %d
+expands to 1 or
+.Dq s
+otherwise,
+.Em %s
+to a single space, and
+.Em %%
+to
+.Dq % .
+.Pp
+The default is
+.Dq DEFER_IF_PERMIT Greylisted by greyfix 0.4.0, try again in %d second%p. See http://www.kim-minh.com/pub/greyfix/ for more information.
+.It Fl G Ar action , Fl -greylisted-action Ar action
+The action that will be used the first time a triplet passes greylisting. Same
+expansion as for
+.Fl -reject-action .
+.Pp
+The default is
+.Dq PREPEND X-Greyfix: Greylisted by greyfix 0.4.0 for %d second%p. See http://www.kim-minh.com/pub/greyfix/ for more information.
+.It Fl / Ar prefix_size , Fl -network-prefix Ar prefix_size
+Only consider the first
+.Ar prefix_size
+bits of an IPv4 address. Defaults to 32, i.e., the whole address is
+significant.
+.It Fl 6 Ar prefix_size , Fl -network6-prefix Ar prefix_size
+Only consider the first
+.Ar prefix_size
+bits of an IPv6 address. Defaults to 128, i.e., the whole address is
+significant.
+.El
+.Sh USAGE
+Edit Postfix's master configuration file,
+.Pa /usr/local/etc/postfix/master.cf ,
+and add the following:
+.Bd -literal
+greyfix    unix  -       n       n       -       -       spawn
+  user=nobody argv=/usr/local/sbin/greyfix -/ 24 -6 56
+.Ed
+.Pp
+Edit Postfix's main configuration file,
+.Pa /etc/postfix/main.cf ,
+and add the following:
+.Bd -literal
+smtpd_recipient_restrictions =
+  permit_mynetworks,
+  reject_unauth_destination,
+  check_policy_service unix:private/greyfix
+.Ed
+.Pp
+If there is already an
+.Em smtpd_recipient_restrictions
+configuration line, you should edit it rather than add a new one. The
+important part for Greyfix is that you should add
+.Em check_policy_service unix:private/greyfix
+to it. Finally, have Postfix reload its configuration with
+.Ic "postfix reload" .
+.Sh NOTES
+.Ss Logs
+Greyfix logs to
+.Xr syslog 3
+with the
+.Li LOG_MAIL
+facility. As such, the log messages should appear along Postfix's.
+.Sh ALSO SEE
+.Xr access 5
+.Sh AUTHORS
+.Nm
+was written by
+.An Kim Minh Kaplan
+.Aq http://www.kim-minh.com/ .

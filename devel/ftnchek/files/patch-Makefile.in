@@ -1,0 +1,76 @@
+--- Makefile.in.orig	2014-06-14 22:09:43.102302676 +0800
++++ Makefile.in	2014-06-14 22:11:35.750296619 +0800
+@@ -491,31 +491,31 @@ average.out: ftnchek.h
+ install:	install-exe @INSTALL_MAN@ install-lisp
+ 
+ install-exe:	ftnchek$(EXE) dcl2inc$(CMD)
+-	-$(RM) $(bindir)/ftnchek$(EXE)
+-	-$(MKDIR) -p $(bindir)
+-	$(CP) ftnchek$(EXE) $(bindir)
+-	-$(STRIP) $(bindir)/ftnchek$(EXE)
+-	$(CHMOD) 755 $(bindir)/ftnchek$(EXE)
+-	-$(MKDIR) -p $(libdir)
+-	$(CP) dcl2inc.awk $(libdir)/dcl2inc.awk
+-	$(CHMOD) 644 $(libdir)/dcl2inc.awk
+-	$(CP) dcl2inc$(CMD) $(bindir)/dcl2inc$(CMD)
+-	$(CHMOD) 755 $(bindir)/dcl2inc$(CMD)
+-	-$(RM) $(bindir)/fcl2vcg
++	-$(RM) $(DESTDIR)$(bindir)/ftnchek$(EXE)
++	-$(MKDIR) -p $(DESTDIR)$(bindir)
++	$(CP) ftnchek$(EXE) $(DESTDIR)$(bindir)
++	-$(STRIP) $(DESTDIR)$(bindir)/ftnchek$(EXE)
++	$(CHMOD) 755 $(DESTDIR)$(bindir)/ftnchek$(EXE)
++	-$(MKDIR) -p $(DESTDIR)$(libdir)
++	$(CP) dcl2inc.awk $(DESTDIR)$(libdir)/dcl2inc.awk
++	$(CHMOD) 644 $(DESTDIR)$(libdir)/dcl2inc.awk
++	$(CP) dcl2inc$(CMD) $(DESTDIR)$(bindir)/dcl2inc$(CMD)
++	$(CHMOD) 755 $(DESTDIR)$(bindir)/dcl2inc$(CMD)
++	-$(RM) $(DESTDIR)$(bindir)/fcl2vcg
+ 
+ # Install man pages, taking care to remove old formatted ones, because
+ # many man implentations fail to compare time stamps of raw and
+ # formatted files, and will show out-of-date formatted files.
+ install-man: ftnchek$(manext)
+-	-$(MKDIR) -p $(mandir)/man1
+-	$(CP) dcl2inc.man $(mandir)/man1/dcl2inc$(manext)
+-	-$(RM) $(mandir)/cat1/dcl2inc$(manext)
+-	$(CHMOD) 644 $(mandir)/man1/dcl2inc$(manext)
+-	$(CP) ftnchek$(manext) $(mandir)/man1/ftnchek$(manext)
+-	-$(RM) $(mandir)/cat1/ftnchek$(manext)
+-	$(CHMOD) 644 $(mandir)/man1/ftnchek$(manext)
+-	-$(RM) $(mandir)/man1/fcl2vcg$(manext)
+-	-$(RM) $(mandir)/cat1/fcl2vcg$(manext)
++	-$(MKDIR) -p $(DESTDIR)$(mandir)/man1
++	$(CP) dcl2inc.man $(DESTDIR)$(mandir)/man1/dcl2inc$(manext)
++	-$(RM) $(DESTDIR)$(mandir)/cat1/dcl2inc$(manext)
++	$(CHMOD) 644 $(DESTDIR)$(mandir)/man1/dcl2inc$(manext)
++	$(CP) ftnchek$(manext) $(DESTDIR)$(mandir)/man1/ftnchek$(manext)
++	-$(RM) $(DESTDIR)$(mandir)/cat1/ftnchek$(manext)
++	$(CHMOD) 644 $(DESTDIR)$(mandir)/man1/ftnchek$(manext)
++	-$(RM) $(DESTDIR)$(mandir)/man1/fcl2vcg$(manext)
++	-$(RM) $(DESTDIR)$(mandir)/cat1/fcl2vcg$(manext)
+ 
+ # IRIX uses pre-formatted, packed man pages and nroff is not bundled with it.
+ install-man-sgi: catman
+@@ -558,16 +558,16 @@ catman: dcl2inc.cat ftnchek.cat
+ #  The emacs lisp file will be installed only if lispdir exists.  It will
+ #  be byte-compiled if emacs is present.
+ install-lisp:
+-	@if test -d "$(lispdir)" ; \
++	@if test -d "$(DESTDIR)$(lispdir)" ; \
+ 	then \
+-	  echo $(CP) ftnchek.el $(lispdir)/ftnchek.el ; \
+-	  if $(CP) ftnchek.el $(lispdir)/ftnchek.el ; \
++	  echo $(CP) ftnchek.el $(DESTDIR)$(lispdir)/ftnchek.el ; \
++	  if $(CP) ftnchek.el $(DESTDIR)$(lispdir)/ftnchek.el ; \
+ 	  then \
+ 	     if test -x "$(EMACS)" ; \
+ 	     then \
+-	       $(EMACS) -batch -f batch-byte-compile $(lispdir)/ftnchek.el ; \
++	       $(EMACS) -batch -f batch-byte-compile $(DESTDIR)$(lispdir)/ftnchek.el ; \
+ 	     else \
+-	       echo "If desired, use emacs to byte-compile $(lispdir)/ftnchek.el"; \
++	       echo "If desired, use emacs to byte-compile $(DESTDIR)$(lispdir)/ftnchek.el"; \
+ 	     fi \
+ 	  fi \
+ 	else \

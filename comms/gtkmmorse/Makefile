@@ -1,4 +1,4 @@
-# Created by: Stephen Hurd <shurd@sasktel.net>
+# Created by: Stephen Hurd <shurd@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gtkmmorse
@@ -7,7 +7,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Graphical Morse Code Trainer
 
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \

@@ -18,8 +18,8 @@ EXTRACT_AFTER_ARGS=	--exclude '*md5*'	\
 		--exclude udt${PORTVERSION:R}/win
 USE_LDCONFIG=	yes
 UDT_APPS=	appclient appserver recvfile sendfile test
+USES=		uidfix
 
-NO_STAGE=	yes
 post-build:
 	# Building sample applications:
 .for a in ${UDT_APPS}
@@ -27,13 +27,15 @@ post-build:
 	    -I${WRKSRC} -L${WRKSRC} -ludt
 .endfor
 
+.include <bsd.port.options.mk>
+
 post-install:
 	# Installing sample applications:
-	${INSTALL_PROGRAM} ${UDT_APPS:S|^|${WRKSRC:H}/app/udt-|} ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${UDT_APPS:S|^|${WRKSRC:H}/app/udt-|} ${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
 	# Installing documentation tree into ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC:H}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
+	cd ${WRKSRC:H}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .else
 EXTRACT_AFTER_ARGS+=	--exclude udt${PORTVERSION:R}/doc
 .endif

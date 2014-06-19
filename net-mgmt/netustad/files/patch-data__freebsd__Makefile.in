@@ -1,0 +1,13 @@
+--- data/freebsd/Makefile.in.orig	2014-06-09 16:27:43.643840330 +0800
++++ data/freebsd/Makefile.in	2014-06-09 16:28:29.258834214 +0800
+@@ -453,8 +453,8 @@ uninstall-am: uninstall-info-am uninstal
+ 
+ 
+ install-data-hook:
+-	/bin/sh ../chperm.sh 700 ${netustad_freebsddir} ${netustad_freebsd_SCRIPTS}; \
+-	/bin/sh ../chperm.sh 600 ${netustad_freebsddir} ${netustad_freebsd_DATA}
++	/bin/sh ../chperm.sh 700 $(DESTDIR)${netustad_freebsddir} ${netustad_freebsd_SCRIPTS}; \
++	/bin/sh ../chperm.sh 600 $(DESTDIR)${netustad_freebsddir} ${netustad_freebsd_DATA}
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

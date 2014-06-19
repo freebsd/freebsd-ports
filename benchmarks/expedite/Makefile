@@ -10,12 +10,11 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Expedite is a benchmark suite for Evas
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		tar:bzip2 pkgconfig
 USE_EFL=	evas
 USE_EFL_EVAS_ENGINES=	buffer
 USE_LDCONFIG=	yes

@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	emerald
-PORTVERSION=	0.8.4
-PORTREVISION=	9
+PORTVERSION=	0.8.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Emerald Window Decorator
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz

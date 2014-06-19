@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A clone of the classic game Missile Command
+COMMENT=	Clone of the classic game Missile Command
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg

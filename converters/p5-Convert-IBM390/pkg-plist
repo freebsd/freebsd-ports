@@ -50,7 +50,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Convert/IBM390/CP01148.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Convert/IBM390/CP01149.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/IBM390.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/IBM390.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert

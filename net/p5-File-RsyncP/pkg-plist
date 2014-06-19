@@ -3,10 +3,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP/FileIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP/FileList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/Digest.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/Digest.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/FileList.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/FileList.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/.packlist
 %%PERL5_MAN3%%/File::RsyncP.3.gz

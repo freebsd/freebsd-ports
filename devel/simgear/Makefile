@@ -10,7 +10,7 @@ MASTER_SITES=	http://mirrors.ibiblio.org/simgear/ftp/Source/ \
 		ftp://flightgear.wo0t.de/simgear-ftp/ftp/Source/
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	A toolkit for 3D games and simulations
+COMMENT=	Toolkit for 3D games and simulations
 
 LICENSE=	GPLv2
 

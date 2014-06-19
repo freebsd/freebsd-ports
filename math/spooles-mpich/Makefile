@@ -4,5 +4,4 @@
 MASTERDIR=	${.CURDIR}/../spooles
 WITH_MPI=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

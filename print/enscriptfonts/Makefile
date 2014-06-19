@@ -3,6 +3,7 @@
 
 PORTNAME=	enscriptfonts
 PORTVERSION=	0.81
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://muuz.deadbbs.com/FreeBSD/xenscript/
 DISTNAME=	enscript_fonts-0.81
@@ -19,12 +20,11 @@ SUB_FILES+=	pkg-message
 # user should choose their own version
 #RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/enscript/xenscript
-	@${CP} -p ${WRKDIR}/* ${PREFIX}/share/enscript/xenscript
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} -p ${STAGEDIR}${PREFIX}/share/enscript/xenscript
+	@${CP} -p ${WRKDIR}/README ${STAGEDIR}${PREFIX}/share/enscript/xenscript
+	@${CP} -p ${WRKDIR}/font.map ${STAGEDIR}${PREFIX}/share/enscript/xenscript
+	@${CP} -p ${WRKDIR}/*.afm ${STAGEDIR}${PREFIX}/share/enscript/xenscript
+	@${CP} -p ${WRKDIR}/*.readme ${STAGEDIR}${PREFIX}/share/enscript/xenscript
 
 .include <bsd.port.mk>

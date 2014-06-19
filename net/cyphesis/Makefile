@@ -10,6 +10,8 @@ MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Server for WorldForge games
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libAtlas-0.6.so:${PORTSDIR}/devel/atlas-devel \
 		libvarconf-1.0.so:${PORTSDIR}/devel/varconf \
 		libwfmath-1.0.so:${PORTSDIR}/math/wfmath \
@@ -36,6 +38,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=		Does not compile with clang
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-dist_docDATA | |g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's| install-confbackupDATA | |g' \
@@ -61,8 +67,8 @@ post-install:
 .for file in README COPYING AUTHORS THANKS NEWS ChangeLog TODO FIXME
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.for file in acorn.xml basic.xml cyphesis.vconf mason.xml werewolf.xml
-	@${INSTALL_DATA} ${WRKSRC}/data/${file} ${STAGEDIR}${DOCSDIR}/conf
+.for xmlfile in acorn.xml basic.xml cyphesis.vconf mason.xml werewolf.xml
+	@${INSTALL_DATA} ${WRKSRC}/data/${xmlfile} ${STAGEDIR}${DOCSDIR}/conf
 .endfor
 .endif
 

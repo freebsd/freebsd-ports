@@ -64,9 +64,11 @@ lib/jack/jack_portaudio.so
 lib/libjack.la
 lib/libjack.so
 lib/libjack.so.0
+lib/libjack.so.0.0.28
 lib/libjackserver.la
 lib/libjackserver.so
 lib/libjackserver.so.0
+lib/libjackserver.so.0.0.28
 libdata/pkgconfig/jack.pc
 man/man1/jackd.1.gz
 man/man1/jackstart.1.gz

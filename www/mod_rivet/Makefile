@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_rivet
-PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	www tcl
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tcl/rivet
@@ -17,10 +16,9 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libitcl.so:${PORTSDIR}/lang/itcl
 
 USE_APACHE=	22+
-USE_AUTOTOOLS=	aclocal automake libtool libtoolize
-USE_AUTOTOOLS=	aclocal libtool libtoolize autoheader automake autoconf
+USE_AUTOTOOLS=	aclocal libtoolize autoheader automake autoconf
 USE_LDCONFIG=	${PREFIX}/lib/rivet
-USES+=		gmake tcl:85+
+USES+=		gmake libtool tcl:85+
 
 INSTALL_TARGET=	install
 

@@ -5,10 +5,10 @@ include/libsqueeze-0.2/libsqueeze/libsqueeze-module.h
 include/libsqueeze-0.2/libsqueeze/libsqueeze-vfs-mime.h
 include/libsqueeze-0.2/libsqueeze/libsqueeze-view.h
 include/libsqueeze-0.2/libsqueeze/libsqueeze.h
-lib/libsqueeze-0.2.so.0
-lib/libsqueeze-0.2.so
-lib/libsqueeze-0.2.la
 lib/libsqueeze-0.2.a
+lib/libsqueeze-0.2.so
+lib/libsqueeze-0.2.so.0
+lib/libsqueeze-0.2.so.0.0.2
 libdata/pkgconfig/libsqueeze-0.2.pc
 libexec/thunar-archive-plugin/squeeze.tap
 share/locale/ar/LC_MESSAGES/squeeze.mo

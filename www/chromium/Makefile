@@ -4,7 +4,7 @@
 #TODO eadler: s/python/python2/g on a number of files, chromium does not build with python3
 
 PORTNAME=	chromium
-PORTVERSION=	35.0.1916.114
+PORTVERSION=	35.0.1916.153
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -33,7 +33,8 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libcups.so:${PORTSDIR}/print/cups-client \
 		libevent-1.4.so:${PORTSDIR}/devel/libevent \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libpci.so:${PORTSDIR}/devel/libpci
+		libpci.so:${PORTSDIR}/devel/libpci \
+		libdrm.so:${PORTSDIR}/graphics/libdrm
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf
@@ -140,7 +141,6 @@ GYP_DEFINES+=	buildtype=Official
 
 CONFIGURE_ENV+=	CC="${CC}" \
 		CXX="${CXX}" \
-		GYP_GENERATORS=ninja \
 		GYP_DEFINES="${GYP_DEFINES}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF="${LOCALBASE}/bin/gperf"

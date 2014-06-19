@@ -10,8 +10,7 @@ COMMENT=	Automatically generates URLs for Drupal content
 
 RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token
 
-USE_DRUPAL=	yes
-DRUPAL6_MODULE=	yes
+USES=		drupal:6,module
 MODULE_FILES=	pathauto.admin.inc pathauto.inc pathauto.install pathauto.module \
 		pathauto.test pathauto.api.php pathauto.info pathauto.js \
 		pathauto.pathauto.inc pathauto.tokens.inc

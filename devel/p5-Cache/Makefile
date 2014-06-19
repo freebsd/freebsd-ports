@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A Perl Cache interface
+COMMENT=	Perl Cache interface
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

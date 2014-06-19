@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.nic.funet.fi/index/files/index/elmer/src/old/ \
 		http://www.bezopasnik.org/unix/ports/distfiles/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HUTIter library for use in the ELMER FEM package
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack

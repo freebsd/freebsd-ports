@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Python script for managing tarsnap backups
+COMMENT=	Python script for managing tarsnap backups
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		tarsnap>=0:${PORTSDIR}/sysutils/tarsnap
@@ -20,17 +20,13 @@ STRIP=
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/feather ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/feather.yaml.dist ${PREFIX}/etc
+	@${INSTALL_PROGRAM} ${WRKSRC}/feather ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/feather.yaml.dist ${STAGEDIR}${PREFIX}/etc
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 x-generate-tarball:
 	${SETENV} ${FETCH_ENV} ${FETCH_BINARY} -m -o ${PORTNAME}.tar.gz \

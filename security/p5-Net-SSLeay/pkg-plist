@@ -4,7 +4,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay/Handle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/debug_read.al

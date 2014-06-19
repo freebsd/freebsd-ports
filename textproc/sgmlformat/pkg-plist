@@ -12,6 +12,9 @@ bin/roff.cmap
 bin/roff.sdata
 bin/sgmlfmt
 bin/transpec.dtd
+man/man1/instant.1.gz
+man/man1/sgmlfmt.1.gz
+man/man5/transpec.5.gz
 share/sgml/transpec/catalog
 share/sgml/transpec/docbook-html.ts
 share/sgml/transpec/docbook-roff.ts

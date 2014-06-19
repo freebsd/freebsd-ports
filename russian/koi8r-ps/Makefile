@@ -16,7 +16,6 @@ EXTRACT_ONLY=
 
 DIST_SUBDIR=	koi8r-ps
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(FONTMAP)
@@ -26,7 +25,7 @@ FONTMAP!=	${SH} ${FILESDIR}/find-fontmap.sh 2>/dev/null || ${ECHO_CMD}
 NO_PACKAGE=	Nothing to build, configurations only
 NO_WRKSUBDIR=	Yes
 
-CPS_DIR=	${PREFIX}/share/koi8r-ps
+CPS_DIR=	${STAGEDIR}${PREFIX}/share/koi8r-ps
 
 do-extract:
 	${MKDIR} ${WRKSRC}

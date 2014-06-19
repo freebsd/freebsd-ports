@@ -1,22 +1,27 @@
 bin/owncloud
 bin/owncloudcmd
 @sample etc/ownCloud/sync-exclude.lst.sample
+include/httpbf.h
 include/owncloudsync/creds/abstractcredentials.h
 include/owncloudsync/creds/httpcredentials.h
 include/owncloudsync/mirall/account.h
-include/owncloudsync/mirall/csyncthread.h
 include/owncloudsync/mirall/folder.h
 include/owncloudsync/mirall/folderman.h
 include/owncloudsync/mirall/folderwatcher.h
 include/owncloudsync/mirall/mirallconfigfile.h
 include/owncloudsync/mirall/networkjobs.h
 include/owncloudsync/mirall/progressdispatcher.h
+include/owncloudsync/mirall/syncengine.h
 include/owncloudsync/mirall/syncfileitem.h
 include/owncloudsync/mirall/syncjournaldb.h
 include/owncloudsync/mirall/syncresult.h
+lib/libhttpbf.a
 lib/libowncloudsync.so
 lib/libowncloudsync.so.0
-lib/libowncloudsync.so.%%VERSION%%
+lib/libowncloudsync.so.1.6.0
+lib/owncloud/libocsync.so
+lib/owncloud/libocsync.so.0
+lib/owncloud/libocsync.so.0.2.1
 share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/folderwizard_local.png
@@ -38,12 +43,14 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/autoupdate.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/building.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/conffile.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/glossary.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/introduction.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/options.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/owncloud.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/owncloudcmd.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/owncloudcmd.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/troubleshooting.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/visualtour.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/ajax-loader.gif
@@ -72,6 +79,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/autoupdate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/building.html
 %%PORTDOCS%%%%DOCSDIR%%/html/conffile.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
@@ -80,10 +88,112 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/options.html
 %%PORTDOCS%%%%DOCSDIR%%/html/owncloud.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/owncloudcmd.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/owncloudcmd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/troubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/folderwizard_local.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/folderwizard_remote.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/ignored_files_editor.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/menu.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/settings_account.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/settings_activity.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/settings_general.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/settings_network.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/wizard_overview.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/wizard_targetfolder.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/wizard_url.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/wizard_user.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/accountsetup.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/advancedusage.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/architecture.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/autoupdate.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/building.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/conffile.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/glossary.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/introduction.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/options.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/owncloud.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/owncloudcmd.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/owncloudcmd.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/troubleshooting.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/visualtour.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/accountsetup.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/advancedusage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/architecture.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/autoupdate.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/building.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/conffile.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/owncloud.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/owncloudcmd.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/owncloudcmd.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/search.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/troubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/visualtour.html
 %%PORTDOCS%%%%DOCSDIR%%/html/visualtour.html
+%%PORTDOCS%%%%DOCSDIR%%/latex/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/latex/fncychap.sty
+%%PORTDOCS%%%%DOCSDIR%%/latex/folderwizard_local.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/folderwizard_remote.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/ignored_files_editor.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/logo-blue.pdf
+%%PORTDOCS%%%%DOCSDIR%%/latex/menu.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.aux
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.idx
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.ilg
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.ind
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.log
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.out
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.tex
+%%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.toc
+%%PORTDOCS%%%%DOCSDIR%%/latex/python.ist
+%%PORTDOCS%%%%DOCSDIR%%/latex/settings_account.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/settings_activity.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/settings_general.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/settings_network.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/sphinx.sty
+%%PORTDOCS%%%%DOCSDIR%%/latex/sphinxhowto.cls
+%%PORTDOCS%%%%DOCSDIR%%/latex/sphinxmanual.cls
+%%PORTDOCS%%%%DOCSDIR%%/latex/tabulary.sty
+%%PORTDOCS%%%%DOCSDIR%%/latex/wizard_overview.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/wizard_targetfolder.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/wizard_url.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/wizard_user.png
+%%PORTDOCS%%%%DOCSDIR%%/logo-blue.pdf
 %%PORTDOCS%%%%DOCSDIR%%/ownCloudClientManual.pdf
 share/icons/hicolor/128x128/apps/owncloud.png
 share/icons/hicolor/22x22/apps/owncloud.png
@@ -116,28 +226,23 @@ share/owncloud/i18n/mirall_sk.qm
 share/owncloud/i18n/mirall_sl.qm
 share/owncloud/i18n/mirall_sv.qm
 share/owncloud/i18n/mirall_th.qm
+share/owncloud/i18n/mirall_tr.qm
 share/owncloud/i18n/mirall_uk.qm
 share/owncloud/i18n/mirall_zh_CN.qm
 share/owncloud/i18n/mirall_zh_TW.qm
 @dirrm share/owncloud/i18n
 @dirrm share/owncloud
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/latex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/unthemed/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/unthemed/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/unthemed/_images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/unthemed
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/owncloud
 @dirrmtry include/owncloudsync/mirall
 @dirrmtry include/owncloudsync/creds
 @dirrmtry include/owncloudsync

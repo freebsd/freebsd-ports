@@ -33,7 +33,6 @@ HASTYMAIL_REV=	2011.08.22
 OPTIONS_DEFINE=	PGSQL MYSQL DB
 DB_DESC=	Use older pear DB (instead of MDB2)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -69,15 +68,12 @@ pre-install:
 	@${ECHO_CMD} @dirrmtry %%ETCDIR%% >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${INSTALL_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
 	@cd ${WRKSRC} && ${FIND} . ${FIND_SKIP_OPTS} \
-		| ${PAX} -rwd ${PREFIX}/${INSTALL_DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${INSTALL_DIR}
-	@${MKDIR} ${ETCDIR}
+		| ${PAX} -rwd ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/hastymail2.conf.example \
-		${ETCDIR}/hastymail2.conf.sample
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${ETCDIR}/hastymail2.conf.sample
 
 .include <bsd.port.mk>

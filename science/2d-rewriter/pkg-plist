@@ -1,4 +1,5 @@
 bin/2d-rewriter
+man/man1/2d-rewriter.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/life.rules
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/life1.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/life2.txt

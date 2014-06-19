@@ -1,0 +1,4 @@
+wdns is a low-level DNS library. It contains a fast DNS message parser
+and various utility functions for manipulating wire-format DNS data.
+
+WWW: https://github.com/farsightsec/wdns

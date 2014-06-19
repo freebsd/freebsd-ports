@@ -16,7 +16,7 @@ COMMENT=	MIME and Application database for GNOME
 USES=		gettext gmake pathfix tar:bzip2
 USE_GNOME=	gnomeprefix intlhack
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 .include <bsd.port.mk>

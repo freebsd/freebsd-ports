@@ -1,7 +1,4 @@
 man/man1/mksh.1.gz
-@comment Please mind the order. bin/mksh needs to come right before the exec/unexec magic.
-bin/mksh
-@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
-@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+@shell bin/mksh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.mkshrc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

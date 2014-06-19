@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	luaexpat
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://matthewwild.co.uk/projects/luaexpat/ \
 				http://redundancy.redundancy.org/mirror/
@@ -14,9 +14,11 @@ COMMENT=	LuaExpat is a SAX XML parser based on the Expat library
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USES=		gmake lua:51
-MAKEFILE=	makefile
+USE_LUA=	5.1-5.2
 ALL_TARGET=	lib
 
 CFLAGS+=	-fPIC
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	LUA_CDIR=${LUA_MODLIBDIR} LUA_LDIR=${LUA_MODSHAREDIR} LUA_INC="-I${LUA_INCDIR}" EXPAT_INC="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

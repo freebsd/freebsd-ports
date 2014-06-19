@@ -8,5 +8,3 @@ man/man1/clawsker.1.gz
 %%NLS%%share/locale/sr/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/clawsker.mo
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin

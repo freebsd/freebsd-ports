@@ -13,9 +13,7 @@ COMMENT=	Automatically restart SSH sessions and tunnels
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	CHANGES README
-MAN1=		autossh.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,cp autossh.1 ,$$\{BSD_INSTALL_MAN\} autossh.1 ,g' ${WRKSRC}/${MAKEFILE}.in
 	@${REINPLACE_CMD} -e 's,cp autossh ,$$\{BSD_INSTALL_PROGRAM\} autossh ,g' ${WRKSRC}/${MAKEFILE}.in

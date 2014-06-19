@@ -1,4 +1,4 @@
-# Created by: Lev Serebryako <lev@FreeBSD.org>
+# Created by: Lev Serebryakov <lev@FreeBSD.org>
 # $FreeBSD$
 
 PKGNAMEPREFIX=	java-
@@ -24,11 +24,19 @@ JAVA_OS=	native
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 
-SVN_BUILD_BINDINGS=yes
+SVN_BUILD_BINDINGS=	yes
+SVN_BUILD_ADDONS=	yes
 
 .include "${MASTERDIR}/Makefile.common"
 
-CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} --with-jikes=no
+CONFIGURE_ARGS+=	--enable-javahl \
+			--with-jdk=${JAVA_HOME} \
+			--with-jikes=no
+			
+MAKE_JOBS_UNSAFE=	yes
+
+ALL_TARGET=	javahl
+INSTALL_TARGET=	install-javahl
 
 post-configure:
 .if ${COMPILER_TYPE} == clang
@@ -37,13 +45,7 @@ post-configure:
 	@${DO_NADA}
 .endif
 
-do-build:
+pre-build:
 	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
-	cd ${WRKSRC} ; \
-	  ${MAKE} javahl ${MAKE_ARGS}
-
-do-install:
-	cd ${WRKSRC} ; \
-	  ${MAKE} install-javahl ${MAKE_ARGS}
 
 .include <bsd.port.post.mk>

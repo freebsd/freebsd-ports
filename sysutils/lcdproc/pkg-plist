@@ -28,6 +28,7 @@ lib/lcdproc/ms6931.so
 lib/lcdproc/mtc_s16209x.so
 %%USB%%lib/lcdproc/picolcd.so
 lib/lcdproc/pyramid.so
+lib/lcdproc/rawserial.so
 lib/lcdproc/SureElec.so
 lib/lcdproc/sdeclcd.so
 lib/lcdproc/sed1330.so
@@ -42,5 +43,9 @@ lib/lcdproc/text.so
 lib/lcdproc/tyan.so
 %%FTDI%%lib/lcdproc/ula200.so
 lib/lcdproc/vlsys_m428.so
+man/man1/lcdexec.1.gz
+man/man1/lcdproc.1.gz
+man/man5/lcdproc-config.5.gz
+man/man8/LCDd.8.gz
 sbin/LCDd
 @dirrm lib/lcdproc

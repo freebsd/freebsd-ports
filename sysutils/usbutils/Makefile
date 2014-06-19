@@ -3,7 +3,7 @@
 
 PORTNAME=	usbutils
 PORTVERSION=	0.86
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/linux-usb/${PORTNAME}
 
@@ -18,11 +18,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${DATADIR} --enable-zlib
 USES=		gmake pkgconfig
 
-MAN1=		usb-devices.1
-MAN8=		lsusb.8
 PORTDOCS=	AUTHORS ChangeLog NEWS README
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -38,8 +34,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

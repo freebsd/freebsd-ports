@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A small library for doing (command) lines
+COMMENT=	Small library for doing (command) lines
 
 RUN_DEPENDS=	rubygem-climate_control>=0.0.3:${PORTSDIR}/devel/rubygem-climate_control
 

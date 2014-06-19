@@ -3,6 +3,7 @@
 
 PORTNAME=	libmaa
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -19,14 +20,13 @@ ALL_TARGET=	lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtoolize
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake libtool
 
 DOCS=		README doc/libmaa.600dpi.ps
 PLIST_FILES=	include/maa.h \
 		lib/libmaa.a \
-		lib/libmaa.la \
 		lib/libmaa.so \
 		lib/libmaa.so.3
 PORTDOCS=	${DOCS:T}

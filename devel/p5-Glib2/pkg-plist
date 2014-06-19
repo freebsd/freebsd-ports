@@ -37,7 +37,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/version.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/xsapi.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.so
 %%PERL5_MAN3%%/Glib.3.gz
 %%PERL5_MAN3%%/Glib::BookmarkFile.3.gz

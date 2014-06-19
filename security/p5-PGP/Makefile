@@ -3,6 +3,7 @@
 
 PORTNAME=	PGP
 PORTVERSION=	0.3a
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,12 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Perl5 module to work with PGP messages
 
-BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
+RUN_DEPENDS=	pgpin:${PORTSDIR}/security/pgpin
 
 PORTSCOUT=	skipv:1.0
 
 ONLY_FOR_ARCHS=	i386 alpha amd64 sparc64
-BROKEN_amd64=	dependency broken on amd64 architechture
 
 USES=		perl5
 USE_PERL5=	configure

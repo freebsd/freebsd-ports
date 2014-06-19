@@ -8,12 +8,10 @@ include/libevt/extern.h
 include/libevt/features.h
 include/libevt/types.h
 lib/libevt.a
-lib/libevt.la
 lib/libevt.so
 lib/libevt.so.1
 lib/libevt.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyevt.a
-%%PYTHON_SITELIBDIR%%/pyevt.la
 %%PYTHON_SITELIBDIR%%/pyevt.so
 libdata/pkgconfig/libevt.pc
 man/man1/evtexport.1.gz

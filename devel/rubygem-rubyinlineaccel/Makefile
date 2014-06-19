@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 DISTNAME=	RubyInlineAcceleration-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	An extension to RubyInline
+COMMENT=	Extension to RubyInline
 
 RUN_DEPENDS=	rubygem-inline>=3.6.3:${PORTSDIR}/devel/rubygem-inline
 

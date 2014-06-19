@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}.tbz2 ${DOCSDIST}
 EXTRACT_ONLY=	${DISTFILES:M*tbz2}
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A powerful IRC daemon, based on ircd-ratbox
+COMMENT=	Powerful IRC daemon, based on ircd-ratbox
 
 LICENSE=	GPLv2
 

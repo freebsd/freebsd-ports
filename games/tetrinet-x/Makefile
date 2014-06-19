@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@gufi.org
-COMMENT=	An addictive 6 player tetr*s game
+COMMENT=	Addictive 6 player tetr*s game
 
 WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 

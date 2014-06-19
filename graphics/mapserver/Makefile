@@ -17,6 +17,7 @@ LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
 			libgif.so:${PORTSDIR}/graphics/giflib
 
 USES=			cmake
+USE_GNOME=		libxml2
 LDFLAGS+=		-L${LOCALBASE} -pthread
 CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
@@ -24,8 +25,8 @@ CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		FRIBIDI CURL GDAL GEOS KML POSTGIS PHP PERL PYTHON \
-			WMS WFS WCS MAPSERV FASTCGI DEBUG CAIRO CAIRO_SVG
-OPTIONS_DEFAULT=	FRIBIDI GDAL GEOS MAPSERV
+			WMS WFS WCS FASTCGI DEBUG CAIRO CAIRO_SVG
+OPTIONS_DEFAULT=	FRIBIDI GDAL GEOS
 CAIRO_SVG_DESC=		Cairo SVG parser support
 GDAL_DESC=		GDAL library support
 FRIBIDI_DESC=		Fribidi library support
@@ -33,18 +34,8 @@ KML_DESC=		KML support
 WMS_DESC=		WMS Server support
 WFS_DESC=		WFS Server support
 WCS_DESC=               WCS Server support
-MAPSERV_DESC=		Mapserv cgi interface support
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMAPSERV}
-USE_APACHE_RUN=		22+
-PLIST_SUB+=		MAPSERV=""
-PLIST_SUB+=		APA_VER=${APACHE_VERSION}
-PLIST_DIRSTRY=		www/apache${APACHE_VERSION}/cgi-bin
-.else
-PLIST_SUB+=		MAPSERV="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=		2
@@ -108,6 +99,7 @@ CMAKE_ARGS+=		-DWITH_WCS=0
 .endif
 
 .if ${PORT_OPTIONS:MGDAL}
+USES+=			iconv
 LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
 CMAKE_ARGS+=		-DWITH_GDAL=1
 .else
@@ -171,18 +163,13 @@ CMAKE_ARGS+=		-DCMAKE_BUILD_TYPE=Release
 .endif
 
 PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
-			sortshp msencrypt tile4ms
+			sortshp msencrypt tile4ms mapserv
 
 do-install:
 .for f in ${PROG_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
-
-.if ${PORT_OPTIONS:MMAPSERV}
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/apache${APACHE_VERSION}/cgi-bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/mapserv ${STAGEDIR}${PREFIX}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
-.endif
 
 .if ${PORT_OPTIONS:MPHP}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}

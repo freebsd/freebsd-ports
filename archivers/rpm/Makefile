@@ -9,7 +9,7 @@ MASTER_SITES=	http://rpm5.org/files/rpm/rpm-3.0/ \
 		http://rpm.org/releases/historical/rpm-3.0.x/ \
 		http://www.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
@@ -28,7 +28,7 @@ MAKE_ENV=	OLD_PO_FILE_INPUT=1
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CPPFLAGS=	-I${LOCALBASE}/include
-NLS_CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl ${ICONV_LIB}"
+NLS_LIBS=	-L${LOCALBASE}/lib -lintl ${ICONV_LIB}
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:

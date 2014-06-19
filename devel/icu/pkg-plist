@@ -91,6 +91,7 @@ include/unicode/dtrule.h
 include/unicode/enumset.h
 include/unicode/errorcode.h
 include/unicode/fieldpos.h
+include/unicode/filteredbrk.h
 include/unicode/fmtable.h
 include/unicode/format.h
 include/unicode/fpositer.h
@@ -124,6 +125,7 @@ include/unicode/rbnf.h
 include/unicode/rbtz.h
 include/unicode/regex.h
 include/unicode/region.h
+include/unicode/reldatefmt.h
 include/unicode/rep.h
 include/unicode/resbund.h
 include/unicode/schriter.h

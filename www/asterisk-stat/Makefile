@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	ASTERISK call detail records analyzer
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 NO_BUILD=	yes
 USE_PHP=	session gd pcre
@@ -25,7 +25,6 @@ SUB_LIST+=	ASTERISKDIR=${ASTERISKDIR}
 OPTIONS_DEFINE=	PGSQL
 PGSQL_DESC=	Use PostgreSQL instead of MySQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSQL}
@@ -51,11 +50,11 @@ post-patch:
 		${WRKSRC}/export_pdf.php.orig
 
 do-install:
-	@${MKDIR} ${ASTERISKDIR}
+	@${MKDIR} ${STAGEDIR}${ASTERISKDIR}
 	@${MV} ${WRKSRC}/lib/defines.php ${WRKSRC}/lib/defines.php-dist
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${ASTERISKDIR})
-	${MKDIR} ${PREFIX}/etc/asterisk
-	${INSTALL_DATA} ${FILESDIR}/cdr_${ASTERISKSTATDB}.tbl ${PREFIX}/etc/asterisk
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${ASTERISKDIR}
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${ASTERISKDIR})
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/asterisk
+	${INSTALL_DATA} ${FILESDIR}/cdr_${ASTERISKSTATDB}.tbl ${STAGEDIR}${PREFIX}/etc/asterisk
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${ASTERISKDIR}
 
 .include <bsd.port.mk>

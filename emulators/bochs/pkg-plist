@@ -1,13 +1,16 @@
 bin/bochs
 bin/bxcommit
 bin/bximage
-man/man1/bochs-dlx.1.gz
+bin/bximage_old
 man/man1/bochs.1.gz
+man/man1/bochs-dlx.1.gz
 man/man1/bxcommit.1.gz
 man/man1/bximage.1.gz
+man/man1/bximage_old.1.gz
 man/man5/bochsrc.5.gz
 %%DATADIR%%/BIOS-bochs-latest
 %%DATADIR%%/BIOS-bochs-legacy
+%%DATADIR%%/SeaBIOS-README
 %%DATADIR%%/VGABIOS-elpin-2.40
 %%DATADIR%%/VGABIOS-elpin-LICENSE
 %%DATADIR%%/VGABIOS-lgpl-README
@@ -15,6 +18,7 @@ man/man5/bochsrc.5.gz
 %%DATADIR%%/VGABIOS-lgpl-latest-cirrus
 %%DATADIR%%/VGABIOS-lgpl-latest-cirrus-debug
 %%DATADIR%%/VGABIOS-lgpl-latest-debug
+%%DATADIR%%/bios.bin-1.7.5
 %%DATADIR%%/keymaps/sdl-pc-de.map
 %%DATADIR%%/keymaps/sdl-pc-us.map
 %%DATADIR%%/keymaps/x11-pc-be.map

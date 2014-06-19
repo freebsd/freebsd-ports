@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader
-PORTVERSION=	0.32
+PORTVERSION=	0.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load config files of various types
+
+LICENSE= ART10 GPLv1
+LICENSE_COMB= dual
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7008:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Data-Visitor>=0.24:${PORTSDIR}/devel/p5-Data-Visitor \

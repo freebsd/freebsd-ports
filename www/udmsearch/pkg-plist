@@ -49,33 +49,6 @@
 %%DATADIR%%/create/virtuoso/crc.txt
 %%DATADIR%%/create/virtuoso/create.txt
 %%DATADIR%%/create/virtuoso/multi.txt
-%%DOCSDIR%%/HTDB.txt
-%%DOCSDIR%%/HTTP-codes.txt
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS.html
-%%DOCSDIR%%/UdmSearch-Oracle8.html
-%%DOCSDIR%%/bugs.txt
-%%DOCSDIR%%/cache.txt
-%%DOCSDIR%%/cachemode.txt
-%%DOCSDIR%%/categories.txt
-%%DOCSDIR%%/charset.txt
-%%DOCSDIR%%/follow.txt
-%%DOCSDIR%%/hrefonly.txt
-%%DOCSDIR%%/html.txt
-%%DOCSDIR%%/ispell.txt
-%%DOCSDIR%%/lib.txt
-%%DOCSDIR%%/mp3.txt
-%%DOCSDIR%%/negotiation.txt
-%%DOCSDIR%%/parsers.txt
-%%DOCSDIR%%/performance.txt
-%%DOCSDIR%%/search.txt
-%%DOCSDIR%%/srv_table.txt
-%%DOCSDIR%%/storage.txt
-%%DOCSDIR%%/syslog.txt
-%%DOCSDIR%%/tags.txt
-%%DOCSDIR%%/templates.txt
-%%DOCSDIR%%/tracking.txt
-%%DOCSDIR%%/usage.txt
 bin/search.cgi
 bin/udm-config
 etc/udmsearch/indexer.conf-dist
@@ -112,6 +85,8 @@ lib/libudmsearch.a
 lib/libudmsearch.la
 sbin/indexer
 sbin/splitter
+man/man1/indexer.1.gz
+man/man5/indexer.conf.5.gz
 @dirrmtry %%DATADIR%%/create/ibase
 @dirrmtry %%DATADIR%%/create/msql
 @dirrmtry %%DATADIR%%/create/mssql
@@ -124,5 +99,5 @@ sbin/splitter
 @dirrmtry %%DATADIR%%/create/virtuoso
 @dirrmtry %%DATADIR%%/create
 @dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry etc/udmsearch

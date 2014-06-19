@@ -17,7 +17,7 @@ USES=		perl5 shebangfix
 
 PLIST_FILES=	bin/rbllookup bin/getmoensted etc/rbllookup.conf-sample
 PORTDOCS=	CHANGELOG INSTALL NOTES README TODO gpg.asc
-SHEBANG_FILES=	rbllookup.pl
+SHEBANG_FILES=	rbllookup.pl getmoensted.pl
 
 CONFLICTS=	rbllookup-0.*
 

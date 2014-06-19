@@ -12,26 +12,29 @@ DISTNAME=	MHonArc-${PORTVERSION}
 MAINTAINER=	kerndtr@kerndt.com
 COMMENT=	WWW front end for mail archives
 
-USE_BZIP2=	Yes
-USES=		perl5
+USES=		tar:bzip2 perl5
 NO_BUILD=	Yes
 
-MAN1=	mhonarc.1 mha-dbedit.1 mha-dbrecover.1 mha-decode.1
-
-INSTALL_ARGS=	-binpath ${PREFIX}/bin \
-		-libpath ${SITE_PERL} \
-		-manpath ${PREFIX}/man \
+INSTALL_ARGS=	-prefix ${STAGEDIR} -binpath ${STAGEDIR}${PREFIX}/bin \
+		-libpath ${STAGEDIR}${SITE_PERL} \
+		-manpath ${STAGEDIR}${PREFIX}/man \
 		-batch
 
 .if !defined(NOPORTDOCS)
-DOCSDIR=	${PREFIX}/share/doc/MHonArc
-INSTALL_ARGS+=	-docpath ${DOCSDIR}
+THEDOCSDIR=	${STAGEDIR}${PREFIX}/share/doc/MHonArc
+DOCSDIR=${PREFIX}/share/doc/MHonArc
+INSTALL_ARGS+=	-docpath ${THEDOCSDIR}
 .else
 INSTALL_ARGS+=	-nodoc
 .endif
 
-NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ${PERL5} install.me ${INSTALL_ARGS}
+
+post-install:
+.for file in mha-dbedit mha-dbrecover mha-decode mhonarc
+	${REINPLACE_CMD} -E -e 's,${STAGEDIR},,g' ${STAGEDIR}/${PREFIX}/bin/${file}
+	${RM} ${STAGEDIR}/${PREFIX}/bin/${file}.bak
+.endfor
 
 .include <bsd.port.mk>

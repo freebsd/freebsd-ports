@@ -21,9 +21,9 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig gettext iconv shebangfix tar:bzip2 desktop-file-utils \
 		libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-nullout \
-		CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo -lintl"
+CONFIGURE_ARGS=	--disable-alsa --disable-nullout
+CPPFLAGS+=	-I../dumb/dumb-kode54/include -I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lintl
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	CONFIG_SHELL="${LOCALBASE}/bin/bash"

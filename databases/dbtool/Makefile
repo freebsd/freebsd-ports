@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Store and retrieve data in a key/value format in a hash database
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
@@ -24,8 +24,8 @@ EXAMPLES_RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 USES=		gmake
 REINPLACE_ARGS=	-i ""

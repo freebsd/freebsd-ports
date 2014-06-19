@@ -18,9 +18,8 @@ USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack eel2 gnomedesktop \
 		libgnomeui
 USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
 
 GCONF_SCHEMAS=	application-browser.schemas slab.schemas
 

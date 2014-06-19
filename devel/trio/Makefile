@@ -6,8 +6,8 @@ PORTVERSION=	1.14
 CATEGORIES=	devel
 MASTER_SITES=	SF/c${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A fully matured and stable set of printf and string functions
+MAINTAINER=	rodrigo@FreeBSD.org
+COMMENT=	Fully matured and stable set of printf and string functions
 
 GNU_CONFIGURE=	yes
 

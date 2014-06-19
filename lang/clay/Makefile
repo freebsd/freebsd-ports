@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	https://github.com/jckarter/${PORTNAME}/tarball/v${PORTVERSION}/
 DISTNAME=	jckarter-${PORTNAME}-v${PORTVERSION}-0-g${GITVERSION}
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language designed for generic programming
 
 LICENSE=	BSD2CLAUSE

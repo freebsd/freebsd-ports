@@ -1,0 +1,6 @@
+tclsoap provides support for building clients and servers
+for the SOAP remote procedure call protocol from Tcl. SOAP
+is an XML based RPC mechanism which provides cross-platform
+cross language compatability.
+
+WWW: http://tclsoap.sourceforge.net/

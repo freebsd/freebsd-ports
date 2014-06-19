@@ -7,12 +7,9 @@ CATEGORIES=	lang gnome
 MASTER_SITES=	GNU/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of utilities for developing programs using MIX and MIXAL
+COMMENT=	Set of utilities for developing programs using MIX and MIXAL
 
 LICENSE=	GPLv3
-
-OPTIONS_DEFINE=	GLADE GUILE
-OPTIONS_DEFAULT=GLADE GUILE
 
 USE_GNOME=	glib20 intltool
 USES=		gettext ncurses readline gmake pkgconfig
@@ -29,26 +26,20 @@ PLIST_FILES=	bin/mixasm \
 		%%DATADIR%%/mixvm.el
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	GLADE GUILE
+OPTIONS_DEFAULT=GLADE GUILE
 
-.if ${PORT_OPTIONS:MGLADE}
-USE_GNOME+=	libglade2
-PLIST_FILES+=	bin/gmixvm \
-		%%DATADIR%%/mixgtk.glade
-.else
-CONFIGURE_ARGS+=--disable-gui
-.endif
+GLADE_CONFIGURE_ENABLE=	gui
+GLADE_USE=		GNOME=libglade2
+GLADE_PLIST_FILES=	bin/gmixvm \
+			%%DATADIR%%/mixgtk.glade
 
-.if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
-PLIST_FILES+=	bin/mixguile \
-		%%DATADIR%%/mixguile.scm \
-		%%DATADIR%%/mixguile-commands.scm \
-		%%DATADIR%%/mixguile-vm-stat.scm
-.else
-CONFIGURE_ARGS+=--without-guile
-.endif
+GUILE_CONFIGURE_WITH=	guile
+GUILE_LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+GUILE_PLIST_FILES=	bin/mixguile \
+			%%DATADIR%%/mixguile.scm \
+			%%DATADIR%%/mixguile-commands.scm \
+			%%DATADIR%%/mixguile-vm-stat.scm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \

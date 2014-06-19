@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:DSCHWEI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dikshie@sfc.wide.ad.jp
-COMMENT=	A grammar-based, user-friendly config parser
+COMMENT=	Grammar-based, user-friendly config parser
 
 USES=		perl5
 USE_PERL5=	configure

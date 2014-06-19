@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	mined
-PORTVERSION=	2012.23
+PORTVERSION=	2014.24
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Text mode editor with Unicode support
 
-OPTIONS_DEFINE=	DOCS
-
 LICENSE=	GPLv3
+
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
-USES=		gmake
+USES=		gmake desktop-file-utils
 MAKEFILE=	makefile
 REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE="${MAKE_CMD}" CC="${CC}" OPT="${CFLAGS}"
@@ -41,10 +41,12 @@ pre-build:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/usrshare/setup_install/mined.desktop	\
 		${STAGEDIR}${DESKTOPDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mined
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/usrshare/package_doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}
-	@${RM} ${STAGEDIR}${DOCSDIR}/CHANGES ${STAGEDIR}${DOCSDIR}/LICENCE.GPL
+	${RM} -rf ${STAGEDIR}${DATADIR}/setup_install/cyg
+	@${RM} -rf ${STAGEDIR}${DOCSDIR}/CHANGES ${STAGEDIR}${DOCSDIR}/LICENCE.GPL
 	@${RM} -rf ${STAGEDIR}${DATADIR}/doc_user ${STAGEDIR}${DATADIR}/package_doc
 
 .include <bsd.port.mk>

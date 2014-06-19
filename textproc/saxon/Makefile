@@ -35,28 +35,27 @@ PORTDOCS=	api api-guide.html changes.html conditions.html \
 SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}"
 SUB_FILES=	saxon.sh
 
-NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}..."
 .for JARFILE in ${JARFILES}
 	@${ECHO_MSG} -n " ${JARFILE}"
-	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
 	@cd ${WRKSRC}/samples/ && \
-	  ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; && \
-	  ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+	  ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} \; && \
+	  ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${WRKSRC}/doc/ && \
-	  ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; && \
-	  ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	  ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; && \
+	  ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing script in ${PREFIX}/bin..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/saxon.sh ${PREFIX}/bin/saxon
+	@${INSTALL_SCRIPT} ${WRKDIR}/saxon.sh ${STAGEDIR}${PREFIX}/bin/saxon
 	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>

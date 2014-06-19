@@ -18,7 +18,6 @@ COMMENT=	Japanese translation of FreeBSD manual pages
 RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
 
 NO_MTREE=	yes
-NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 MAKE_ENV=	MANDIR=${MANDIR}
@@ -64,7 +63,7 @@ pre-su-install:
 		SECNUM=$${SEC%%/*}; \
 		cd ${WRKSRC}/$${SEC} && \
 		SUBDIR=`${MAKE} -VMANSUBDIR` && \
-		${MKDIR} ${PREFIX}/man/ja/$${SECNUM}$${SUBDIR}; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/man/ja/$${SECNUM}$${SUBDIR}; \
 	done
 
 post-install:

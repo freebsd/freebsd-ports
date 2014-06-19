@@ -2,51 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	mpop
-PORTVERSION=	1.0.28
+PORTVERSION=	1.0.29
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	MPOP is a small and fast POP3 client
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Small and fast POP3 client
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+LICENSE=	GPLv3 # (or later)
 
-OPTIONS_DEFINE=	GSASL NLS
-OPTIONS_RADIO=	SSL
-OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
-OPTIONS_SUB=	yes
-
-GSASL_DESC=	GSASL GNU SASL authentication support
-
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
-
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-libidn
+CONFIGURE_ARGS=	--disable-silent-rules
 
-INFO=	mpop
+INFO=		mpop
+
+OPTIONS_DEFINE=		GNOMEKEYRING GSASL IDN NLS
+OPTIONS_RADIO=		SSL
+OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	IDN OPENSSL
+OPTIONS_SUB=		yes
+
+GNOMEKEYRING_LIB_DEPENDS=	libgnome-keyring:${PORTSDIR}/security/libgnome-keyring
+GNOMEKEYRING_CONFIGURE_WITH=	gnome-keyring
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ON=	--with-ssl=gnutls
+GSASL_DESC=		SASL authentication support via GNU SASL
+GSASL_LIB_DEPENDS=	libgsasl.so:${PORTSDIR}/security/gsasl
+GSASL_CONFIGURE_OFF=	--without-libgsasl
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_CONFIGURE_WITH=	libidn
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+OPENSSL_USE=		openssl=yes
+OPENSSL_CONFIGURE_ON=	--with-ssl=openssl \
+			libssl_CFLAGS=-I${OPENSSLINC} \
+			libssl_LIBS="-lssl -lcrypto"
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-ssl=gnutls
-.elif ${PORT_OPTIONS:MOPENSSL}
-USE_GCC=		yes
-USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--with-ssl=openssl \
-			libssl_CFLAGS=-I${OPENSSLINC} \
-			libssl_LIBS=-lssl
-.else
+.if empty(PORT_OPTIONS:MGNUTLS) && empty(PORT_OPTIONS:MOPENSSL)
 CONFIGURE_ARGS+=	--with-ssl=no
-.endif
-
-.if ${PORT_OPTIONS:MGSASL}
-LIB_DEPENDS+=		libgsasl.so:${PORTSDIR}/security/gsasl
-.else
-CONFIGURE_ARGS+=	--without-libgsasl
 .endif
 
 .include <bsd.port.mk>

@@ -12,21 +12,14 @@ COMMENT=	Converts Intel assembly language (nasm) to AT&T syntax (gas)
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CXX="${CXX}"
 
-DATAPREFIX=	${PREFIX}/share/intel2gas
-DATADIRS=	i2g g2i m2g
-DOCS=		BUGS DATAFILES README
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/intel2gas ${PREFIX}/bin
-	${MKDIR} ${DATAPREFIX}
-.for dir in ${DATADIRS}
-	${MKDIR} ${DATAPREFIX}/${dir}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${dir}/* ${DATAPREFIX}/${dir}
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/intel2gas
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/intel2gas
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/intel2gas ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "i2g g2i m2g" ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}; ${INSTALL_DATA} BUGS DATAFILES README \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

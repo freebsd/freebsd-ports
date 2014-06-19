@@ -10,5 +10,7 @@ COMMENT=	Longman Dictionary of Contemporary English
 
 USES=		tar:bzip2
 
+RESTRICTED=	Possible copyright infringement
+
 .include "${.CURDIR}/../../russian/stardict-mueller7/files/Makefile.common"
 .include <bsd.port.mk>

@@ -19,17 +19,15 @@ SPOOLDIR?=	/var/spool/conference
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|%%WWWDIR%%|${WWWDIR}|g; s|%%DISTNAME%%|${DISTNAME}|g' \
 		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} -m 755 ${WWWDIR} ${SPOOLDIR}
-	@${CP} -R ${WRKSRC}/ ${WWWDIR}/
+	@${MKDIR} -m 755 ${STAGEDIR}${WWWDIR} ${STAGEDIR}${SPOOLDIR}
+	@${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
 	@${SED} -e 's#/var/www/html#${WWWDIR}#' \
-	  ${WRKSRC}/Code/confHeader.inc > ${WWWDIR}/Code/confHeader.inc
-	@${CHOWN} -R ${WWWOWN}:${WWWGROUP} ${WWWDIR} ${SPOOLDIR}
-	@${CAT} ${PKGMESSAGE}
+	  ${WRKSRC}/Code/confHeader.inc > ${STAGEDIR}${WWWDIR}/Code/confHeader.inc
+	@${CHOWN} -R ${WWWOWN}:${WWWGROUP} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${SPOOLDIR}
 
 .include <bsd.port.mk>

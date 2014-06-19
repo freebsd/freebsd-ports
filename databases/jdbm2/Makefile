@@ -7,7 +7,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A fast, simple, and transactional Java persistence engine
+COMMENT=	Fast, simple, and transactional Java persistence engine
 
 LICENSE=	APACHE20
 

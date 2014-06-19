@@ -7,7 +7,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SF
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A Perl IRC Statistics Generator
+COMMENT=	Perl IRC Statistics Generator
 
 USES=		perl5
 NO_BUILD=	YES

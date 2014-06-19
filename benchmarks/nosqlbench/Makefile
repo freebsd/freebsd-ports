@@ -12,8 +12,7 @@ COMMENT=	Micro-benchmarking NoSQL storage
 LIB_DEPENDS=	libtarantool.so:${PORTSDIR}/databases/tarantool
 
 DATE=		20120802
-USE_BZIP2=	yes
-USES=		cmake
+USES=		tar:bzip2 cmake
 CMAKE_ARGS=	-DLIBTNT_INCLUDE=${LOCALBASE}/include \
 		-DLIBTNT_LIB=${LOCALBASE}/lib
 

@@ -8,11 +8,10 @@ CATEGORIES=	japanese
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++ with Japanese support
 
-
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
-JAPANESE=	yes
+PLIST_FILES=	${TIMID_LIBDIR}/if_slang.so
 
-PLIST_FILES=	${TIMID_LIBDIR}/interface_s.so
+JAPANESE=	yes
 
 .include "${MASTERDIR}/Makefile"

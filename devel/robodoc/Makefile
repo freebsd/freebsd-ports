@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://rfsber.home.xs4all.nl/Robo/ \
 		http://seis.bris.ac.uk/~mexas/distfiles/
 
-MAINTAINER=	mexas@bris.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code reference program similar to cxref that produces HTML
 
 LICENSE=	GPLv3

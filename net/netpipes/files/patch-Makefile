@@ -1,0 +1,67 @@
+--- Makefile.orig	1998-10-29 07:00:03.000000000 +1030
++++ Makefile	2014-05-11 13:28:21.742500328 +0930
+@@ -17,7 +17,7 @@
+ 
+ # You probably want to change this:
+ #INSTROOT = ${HOME}
+-INSTROOT = /depot/collections0/netpipes4.1
++INSTROOT = ${STAGEDIR}/${PREFIX}
+ #INSTROOT = /usr/local
+ INSTBIN = ${INSTROOT}/bin
+ INSTMAN = ${INSTROOT}/man
+@@ -59,7 +59,7 @@
+ #CFLAGS = -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
+ 
+ # Linux (developed with RedHat 4.2, libc5)
+-CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
++#CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
+ 
+ # SGI
+ #CFLAGS = -DSYSV $(CDEBUGFLAGS)
+@@ -71,7 +71,7 @@
+ #CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
+ 
+ # FreeBSD
+-#CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
++CFLAGS += -DPOSIX_SIG $(CDEBUGFLAGS)
+ 
+ # AIX 4.1.4 and 3.2.5
+ #CFLAGS = -DPOSIX_SIG -DAIX $(CDEBUGFLAGS)
+@@ -86,7 +86,7 @@
+ 
+ # gcc can handle both -O and -g at once
+ #CDEBUGFLAGS = -g # -Wall -DDEBUG
+-CDEBUGFLAGS = -O
++#CDEBUGFLAGS = -O
+ 
+ ######################################################################
+ 
+@@ -104,8 +104,7 @@
+ SSLLIB = -L../SSLeay-0.8.1 -lssl -lcrypto
+ 
+ MANPAGES = netpipes.1 faucet.1 hose.1 \
+-	sockdown.1 getpeername.1 timelimit.1 encapsulate.1 \
+-	ssl-auth.1
++	sockdown.1 getpeername.1 timelimit.1 encapsulate.1
+ PROGRAMS = faucet hose sockdown getpeername timelimit encapsulate
+ 
+ all	: ${PROGRAMS}
+@@ -138,15 +137,9 @@
+ 	${CC} ${CFLAGS} ${SSLINC} -c $<
+ 
+ install : all
+-	test -d ${INSTROOT}  || mkdir ${INSTROOT}
+-	test -d ${INSTBIN}  || mkdir ${INSTBIN}
+-	cp ${PROGRAMS} ${INSTBIN}/
+-	- rm -f ${INSTBIN}/getsockname
+-	ln -s getpeername ${INSTBIN}/getsockname
+-	- [ -x ssl-auth ] && cp ssl-auth ${INSTBIN}/
+-	test -d ${INSTMAN}  || mkdir ${INSTMAN}
+-	test -d ${INSTMAN}/man1  || mkdir ${INSTMAN}/man1
+-	cp ${MANPAGES} ${INSTMAN}/man1/
++	${BSD_INSTALL_MAN} ${MANPAGES} ${INSTMAN}/man1/
++	${BSD_INSTALL_PROGRAM} ${PROGRAMS} ${INSTBIN}/
++	ln -f -s getpeername ${INSTBIN}/getsockname
+ 
+ #
+ 

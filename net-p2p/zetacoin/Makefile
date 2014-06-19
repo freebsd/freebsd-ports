@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zetacoin
-PORTVERSION=	0.8.99.6
-PORTREVISION=	1
+PORTVERSION=	0.8.99.16
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	GH
 
@@ -22,8 +21,8 @@ QRCODES_DESC=	Build with QR code display
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	e804194
-GH_TAGNAME=	e804194
+GH_COMMIT=	9a52761
+GH_TAGNAME=	9a52761
 
 USES=		gmake
 USE_OPENSSL=	yes
@@ -39,9 +38,12 @@ CXXFLAGS+=	-Wno-invalid-offsetof
 .if ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	X11=""
 .else
+SUB_LIST+=	PORTNAME=${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 PLIST_SUB+=	X11="@comment "
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
 .endif
 
 .if ${PORT_OPTIONS:MX11}
@@ -61,7 +63,8 @@ QMAKE_USE_QRCODE=1
 QMAKE_USE_QRCODE=0
 .endif
 
-PLIST_SUB+=	EXECUTABLE="bin/${BINARY}"
+PLIST_SUB+=	EXECUTABLE="bin/${BINARY}" \
+			PORTNAME=${PORTNAME}
 
 .if ${PORT_OPTIONS:MUPNP}
 LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
@@ -98,8 +101,8 @@ do-install:
 		-e 's,bitcoin,zetacoin,g' \
 		-e 's,Bitcoin,Zetacoin,g' \
 		-e 's,128,,g' ${WRKSRC}/contrib/debian/bitcoin-qt.desktop
-	${INSTALL} ${WRKSRC}/contrib/debian/bitcoin-qt.desktop ${STAGEDIR}${PREFIX}/share/applications/zetacoin-qt.desktop
-	${INSTALL} ${WRKSRC}/src/qt/res/icons/bitcoin.png ${STAGEDIR}${PREFIX}/share/pixmaps/zetacoin.png
+	${INSTALL} ${WRKSRC}/contrib/debian/bitcoin-qt.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}-qt.desktop
+	${INSTALL} ${WRKSRC}/src/qt/res/icons/bitcoin.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .else
 	${INSTALL_PROGRAM} -s ${WRKSRC}/src/${BINARY} ${STAGEDIR}${PREFIX}/bin/${BINARY}

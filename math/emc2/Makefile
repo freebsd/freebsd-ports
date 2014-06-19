@@ -7,10 +7,7 @@ DISTVERSION=	2.16c
 CATEGORIES=	math science
 MASTER_SITES=	http://www.ann.jussieu.fr/~hecht/ftp/emc2/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-.if !defined(NOPORTDOCS)
-DISTFILES+=	RTemc2_fr.pdf RTemc2_gb.pdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical editor of two-dimensional mesh geometries
@@ -34,21 +31,19 @@ PORTEXAMPLES=	*
 
 PLIST_FILES=	bin/emc2 bin/prf_f3d
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
+
+DOCS_DISTFILES=	RTemc2_fr.pdf RTemc2_gb.pdf
 
 .include <bsd.port.options.mk>
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/emc2 ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/prf_f3d ${PREFIX}/bin
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/emc2 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/prf_f3d ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${DISTDIR} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${DISTDIR} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

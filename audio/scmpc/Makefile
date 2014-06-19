@@ -15,8 +15,7 @@ LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 

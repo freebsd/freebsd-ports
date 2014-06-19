@@ -1,0 +1,21 @@
+COPYRIGHT
+=========
+
+BZIP is distributed under the GNU General Public License version
+2; for details, see the file LICENSE. Pointers to the algorithms
+used are in ALGORITHMS.
+
+COMMERCIAL USE
+==============
+
+This program may or may not infringe certain US patents pertaining
+to arithmetic coding and to the block-sorting transformation itself.
+Opinions differ as to the precise legal status of some of the
+algorithms used. Nevertheless, you should be aware that commercial
+use of this program could render you liable to unfriendly legal
+action.
+
+	Julian Seward <sewardj@cs.man.ac.uk>
+	Manchester, UK
+	18 July 1996 (version 0.15)
+	25 August 1996 (version 0.21)

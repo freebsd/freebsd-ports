@@ -18,24 +18,16 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
-PLIST_FILES=	bin/qmail-auditor
-
-PORTDOCS=	README
-
-INSTALL_TARGET=	perm
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|@prefix@|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|g' \
 	${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -15,37 +15,20 @@ MASTER_SITE_SUBDIR=	crypt/stego
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steganographic tool
 
-DOCDIR=		share/doc/outguess
-DOCS=		ChangeLog README STIRMARK-README TODO
-
 CONFLICTS_INSTALL=	csound-*
 GNU_CONFIGURE=	yes
-MAN1=		outguess.1
-PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/outguess
-
-NO_STAGE=	yes
-pre-install:
-	${ECHO_CMD} bin/extract > ${PLIST}
-	${ECHO_CMD} bin/outguess >> ${PLIST}
-#	${ECHO_CMD} bin/histogram >> ${PLIST}
-.if !defined(NOPORTDOCS)
-.for i in ${DOCS}
-	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
-.endfor
-	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
-.endif
+PORTDOCS=	ChangeLog README STIRMARK-README TODO
 
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/outguess ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf outguess ${STAGEDIR}${PREFIX}/bin/extract
+	${INSTALL_MAN} ${WRKSRC}/outguess.1 ${STAGEDIR}${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/outguess ${PREFIX}/bin
-#	${INSTALL_PROGRAM} ${WRKSRC}/histogram ${PREFIX}/bin
-	${LN} -sf ${PREFIX}/bin/outguess ${PREFIX}/bin/extract
-	${INSTALL_MAN} ${WRKSRC}/outguess.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

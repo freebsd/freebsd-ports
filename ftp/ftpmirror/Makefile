@@ -8,7 +8,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.sai.msu.su/pub/unix/FTP/mirror/
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	An utility to mirror directory hierarchy with FTP
+COMMENT=	Utility to mirror directory hierarchy with FTP
 
 LICENSE=	BSD2CLAUSE
 

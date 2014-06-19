@@ -3,6 +3,7 @@
 
 PORTNAME=	msmtp
 PORTVERSION=	1.4.32
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -11,9 +12,8 @@ COMMENT=	SMTP plugin for MUAs
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=	msmtp

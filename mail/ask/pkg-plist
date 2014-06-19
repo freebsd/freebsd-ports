@@ -10,6 +10,9 @@ lib/ask/askmessage.py
 lib/ask/askremote.py
 lib/ask/askversion.py
 lib/ask/test.py
+man/man1/askfilter.1.gz
+man/man1/asksenders.1.gz
+man/man1/asksetup.1.gz
 %%EXAMPLESDIR%%/ask.rc
 %%EXAMPLESDIR%%/confirm_da.txt
 %%EXAMPLESDIR%%/confirm_de.txt

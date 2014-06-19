@@ -10,6 +10,7 @@ bin/dxf2idf
 bin/eeschema
 bin/freeroute.jnlp
 bin/gerbview
+bin/idf2vrml
 bin/idfcyl
 bin/idfrect
 bin/kicad

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:tu}-V${DISTVERSION}${DISTVERSIONSUFFIX}
 DIST_SUBDIR=	python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	koalative@gmail.com
 COMMENT=	Python Graphical Game Engine and Libraries
 
 LICENSE=	LGPL3 Public_Domain

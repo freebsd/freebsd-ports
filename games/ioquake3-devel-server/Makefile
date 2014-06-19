@@ -12,5 +12,4 @@ MASTERDIR=	${.CURDIR}/../${PORTNAME}
 
 IOQ3=		SERVER GAMELIBS
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

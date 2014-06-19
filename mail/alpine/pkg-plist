@@ -1,21 +1,8 @@
-@unexec /usr/bin/cmp -s %D/etc/alpine.conf %D/etc/alpine.conf.sample && /bin/unlink %D/etc/alpine.conf || true
 bin/alpine
 bin/rpdump
 bin/rpload
-etc/alpine.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NOTICE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/brochure.txt
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/background.html
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/cmd-line.html
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/config-notes.html
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/config.html
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/index.html
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/installation.html
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/low-level.html
-%%PORTDOCS%%%%DOCSDIR%%/tech-notes/porting.html
+man/man1/alpine.1.gz
+man/man1/rpdump.1.gz
+man/man1/rpload.1.gz
+@sample etc/alpine.conf.sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tech-notes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

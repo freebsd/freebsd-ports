@@ -2,4 +2,5 @@ lib/libpthread-stubs.a
 lib/libpthread-stubs.la
 lib/libpthread-stubs.so
 lib/libpthread-stubs.so.0
+lib/libpthread-stubs.so.0.0.0
 libdata/pkgconfig/pthread-stubs.pc

@@ -8,7 +8,7 @@ CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	An open source version of Colonization
+COMMENT=	Open source version of Colonization
 
 LICENSE=	GPLv2
 

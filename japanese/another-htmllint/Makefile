@@ -11,11 +11,11 @@ COMMENT=	Another HTML-lint (all messages are written in Japanese)
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
-USES=		perl5 zip:infozip
+USES=		dos2unix perl5 zip
 WRKSRC=		${WRKDIR}
-EXTRACT_BEFORE_ARGS=	-a -q
+DOS2UNIX_FILES=	readme.txt
 
-DIR=		${PREFIX}/share/htmllint
+DIR=		${STAGEDIR}${PREFIX}/share/htmllint
 PM=		htmllint.pm RFC2396.pm htmllint.env
 RULE=		*.rul
 HTML=		*.cgi *.html *.gif *.css
@@ -24,7 +24,6 @@ SEDSUB=		${SED} -e 's@%PREFIX%@${PREFIX}@'
 # Please set this!
 HTMLLINT_ADMIN?=	kuriyama@FreeBSD.org
 
-NO_STAGE=	yes
 do-build:
 	@${SEDSUB} ${FILESDIR}/htmllint > ${WRKSRC}/htmllint
 	@${SEDSUB} ${WRKSRC}/htmllintenv > ${WRKSRC}/htmllint.env
@@ -38,7 +37,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${DIR}/rule ${DIR}/html
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} htmllint ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} htmllint ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${HTML} ${DIR}/html
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PM} ${DIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${RULE} ${DIR}/rule

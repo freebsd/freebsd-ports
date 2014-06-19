@@ -10,7 +10,7 @@ MASTER_SITES=	http://apenwarr.ca/netselect/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultrafast implementation of ping
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	SUID
 SUID_DESC=	Install with the sticky bit (mode 4110)
@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSUID}
@@ -32,6 +31,6 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -27,10 +27,9 @@ CLASSLIB=	${JAVA_CLASSES}:${GETOPT_JAR}
 CONFIGURE_ENV+=	CLASSLIB=${CLASSLIB} JAR="${JAR}" \
 		JAVA="${JAVA}" JAVAC="${JAVAC}"
 CONFIGURE_ARGS+=--datadir="${JAVALIBDIR}"
-NO_STAGE=	yes
 # Don't create the dependencies:
 MAKE_ARGS+=	JAVADEP=:
-PLIST_SUB+=	VERSION=${VENDOR_VERSION}
+PLIST_FILES=	bin/jode %%JAVAJARDIR%%/jode-${VENDOR_VERSION}.jar
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.java*' |	\
@@ -44,11 +43,6 @@ post-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${VENDOR_VERSION}.jar \
-		${JAVAJARDIR}/
-# Documentation HTML seems broken and out of date. Don't bother
-#.ifndef (NOPORTDOCS)
-#	${MKDIR} ${DOCSDIR}
-#	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.gif ${DOCSDIR}/
-#.endif
+		${STAGEDIR}/${JAVAJARDIR}/
 
 .include <bsd.port.mk>

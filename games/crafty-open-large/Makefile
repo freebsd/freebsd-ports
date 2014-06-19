@@ -13,14 +13,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The large opening book for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
-RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 DIST_SUBDIR=	crafty
 USES=		zip
 NO_WRKSUBDIR=	yes
 CONFLICTS=	crafty-open-enormous-* crafty-open-medium-* crafty-open-default-*
 
-NO_STAGE=	yes
 post-extract:
 	@${ECHO_MSG} '================================================================'
 	@${ECHO_MSG} 'Ignore warnings about illegal moves.  These warnings are normal.'
@@ -32,9 +31,9 @@ do-build:
 	(${CHOWN} nobody ${WRKDIR}; cd ${WRKDIR}; crafty <${FILESDIR}/book-building)
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/crafty
-	${INSTALL_DATA} ${WRKDIR}/book.bin ${PREFIX}/lib/crafty/book.bin
-	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty/book.bin
-	${CHMOD} 664 ${PREFIX}/lib/crafty/book.bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/crafty
+	${INSTALL_DATA} ${WRKDIR}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
+	${CHOWN} nobody:nogroup ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
+	${CHMOD} 664 ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
 
 .include <bsd.port.mk>

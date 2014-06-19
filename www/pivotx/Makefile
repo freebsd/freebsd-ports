@@ -18,7 +18,6 @@ LICENSE=	GPLv2
 PORTDOCS=	LICENSE.txt README.txt
 PORTEXAMPLES=	example.htaccess example.web.config
 
-NO_STAGE=	yes
 # Requirements:
 # http://book.pivotx.net/index.php?page=app-e#anchor-determining-if-your-server-meets-pivotxs-requirements
 
@@ -79,44 +78,20 @@ post-patch:
 	@cd '${WRKSRC}' && ${FIND} . -type f -name '*.orig' -delete
 
 do-install:
-	@if ${TEST} -e '${TEMP_DIFF}'; then ${RM} -f '${TEMP_DIFF}'; fi
-	@${TOUCH} '${TEMP_DIFF}'
-.for DIR in ${USEREDITABLEDIRS}
-	@if ${TEST} -d '${WWWDIR}/${DIR}'; then	\
-	   cd '${WRKSRC}/${DIR}' && { ${DIFF} -auwr . '${WWWDIR}/${DIR}' | ${EGREP} -v -e '^Only[[:space:]]+in[[:space:]]' >>'${TEMP_DIFF}' || ${TRUE}; }	\
-	 fi
-.endfor
-	@if ${TEST} -s '${TEMP_DIFF}'; then	\
-	   ${ECHO} '*******************************************************';	\
-	   ${ECHO} 'CAUTION CAUTION CAUTION CAUTION CAUTION CAUTION CAUTION';	\
-	   ${ECHO} '*******************************************************';	\
-	   ${ECHO} 'Output of diff: ${TEMP_DIFF}';	\
-	   ${ECHO};	\
-	   ${ECHO} 'Installer will *OVERWRITE* files on ${WWWDIR}';	\
-	   ${ECHO} 'Press ctrl-C *now* to backup them manually.';	\
-	   sleep 7;	\
-	 fi
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} '${DOCSDIR}'
+	@${MKDIR} '${STAGEDIR}${DOCSDIR}'
 .for FILES in ${PORTDOCS}
-	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${DOCSDIR}'
+	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${STAGEDIR}${DOCSDIR}'
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} '${EXAMPLESDIR}'
+	@${MKDIR} '${STAGEDIR}${EXAMPLESDIR}'
 .for FILES in ${PORTEXAMPLES}
-	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${EXAMPLESDIR}'
+	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${STAGEDIR}${EXAMPLESDIR}'
 .endfor
-.endif
-	@${MKDIR} '${WWWDIR}'
-	@cd '${WRKSRC}' && ${COPYTREE_SHARE} . '${WWWDIR}'
+	@${MKDIR} '${STAGEDIR}${WWWDIR}'
+	@cd '${WRKSRC}' && ${COPYTREE_SHARE} . '${STAGEDIR}${WWWDIR}'
 .for DIR in ${WRITABLEDIRS}
-	@${CHOWN} -R '${WWWOWN}:${WWWGRP}' '${WWWDIR}/${DIR}'
-	@${FIND} '${WWWDIR}/${DIR}' -type d -print0 | ${XARGS} -0 ${CHMOD} u=rwx,go=rx
-	@${FIND} '${WWWDIR}/${DIR}' -type f -print0 | ${XARGS} -0 ${CHMOD} u=rw,go=r
+	@${CHOWN} -R '${WWWOWN}:${WWWGRP}' '${STAGEDIR}${WWWDIR}/${DIR}'
+	@${FIND} '${STAGEDIR}${WWWDIR}/${DIR}' -type d -print0 | ${XARGS} -0 ${CHMOD} u=rwx,go=rx
+	@${FIND} '${STAGEDIR}${WWWDIR}/${DIR}' -type f -print0 | ${XARGS} -0 ${CHMOD} u=rw,go=r
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

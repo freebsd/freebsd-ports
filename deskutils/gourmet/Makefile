@@ -2,48 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	gourmet
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.17.3
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	https://launchpadlibrarian.net/133161899/
+MASTER_SITES=	https://github.com/thinkle/gourmet/archive/
+DISTNAME=	${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GNOME recipe manager
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distutils-extra>0:${PORTSDIR}/devel/py-distutils-extra
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distutils-extra>0:${PORTSDIR}/devel/py-distutils-extra \
+		${PYTHON_PKGNAMEPREFIX}elib.intl>0:${PORTSDIR}/textproc/py-elib.intl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy \
-		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}poppler>=0:${PORTSDIR}/graphics/py-poppler \
 		${PYTHON_PKGNAMEPREFIX}rtf>=0:${PORTSDIR}/print/py-rtf \
-		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:${PORTSDIR}/print/py-reportlab1 \
+		${PYTHON_PKGNAMEPREFIX}reportlab>0:${PORTSDIR}/print/py-reportlab \
 		${PYTHON_PKGNAMEPREFIX}elib.intl>0:${PORTSDIR}/textproc/py-elib.intl
 
-MAN1=		gourmet.1
-PORTDOCS=	FAQ LICENSE
-PORTSCOUT=	ignore:1
-
-USE_BZIP2=	yes
 USES=		gettext
 USE_GNOME=	pygnome2 pygnomeextras pygtk2
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
-		${WRKSRC}/gourmet/backends/db.py \
-		${WRKSRC}/gourmet/gtk_extras/chooserNotebook.py \
-		${WRKSRC}/gourmet/gtk_extras/mnemonic_manager.py \
-		${WRKSRC}/gourmet/plugins/import_export/pdf_plugin/print_plugin.py \
-		${WRKSRC}/gourmet/plugins/nutritional_information/nutritionDisplay.py \
-		${WRKSRC}/gourmet/plugins/nutritional_information/nutrition.py \
-		${WRKSRC}/gourmet/plugins/web_plugin/gourmetweb/manage.py \
-		${WRKSRC}/tools/backup_gourmet_to_xml.py
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+PLIST_FILES+=	man/man1/gourmet.1.gz
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/gourmet.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

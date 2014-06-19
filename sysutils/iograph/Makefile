@@ -9,10 +9,11 @@ MASTER_SITES=	SF/iograph
 MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	Creates HTML statistics of network transfer
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/iograph \
+		man/man8/iograph.8.gz \
 		%%DATADIR%%/in.gif \
 		%%DATADIR%%/out.gif \
 		%%DATADIR%%/iograph.gif
@@ -20,7 +21,4 @@ PLIST_DIRS=	%%DATADIR%%
 
 GNU_CONFIGURE=	yes
 
-MAN8=		iograph.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

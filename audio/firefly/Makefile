@@ -24,10 +24,8 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 
 GNU_CONFIGURE=	yes
 NO_STAGE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-id3tag=${PREFIX} \
 			--enable-sqlite3 --enable-oggvorbis --enable-flac

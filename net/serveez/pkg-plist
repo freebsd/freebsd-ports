@@ -2,9 +2,9 @@ bin/serveez
 bin/serveez-config
 include/libserveez.h
 lib/libserveez.a
-lib/libserveez.la
 lib/libserveez.so
-lib/libserveez.so.2
+lib/libserveez.so.1
+lib/libserveez.so.1.1.0
 man/man1/serveez.1.gz
 man/man1/serveez-config.1.gz
 share/aclocal/serveez.m4

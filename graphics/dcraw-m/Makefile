@@ -3,6 +3,7 @@
 
 PORTNAME=	dcraw-m
 PORTVERSION=	9.17
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://dx.burplex.com/dcraw-m/ \
 		http://www.waitman.net/dcraw-m/
@@ -15,7 +16,7 @@ BROKEN=		Unfetchable
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
-		libMagickWand.so:${PORTSDIR}/graphics/ImageMagick
+		libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 
 PLIST_FILES=	bin/dcraw-m
 
@@ -33,8 +34,8 @@ CFLAGS+=	-O4
 .endif
 .endif
 
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick
-LDFLAGS+=	-L${LOCALBASE}/lib -lm -ljasper -ljpeg -llcms -lMagickWand
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick-6
+LDFLAGS+=	-L${LOCALBASE}/lib -lm -ljasper -ljpeg -llcms -lMagickWand-6.Q16
 
 do-build:
 	cd ${WRKSRC}/ && ${CC} -o ${PORTNAME} ${CFLAGS} ${PORTNAME}.c ${LDFLAGS}

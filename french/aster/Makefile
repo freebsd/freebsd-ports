@@ -34,6 +34,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch		\
+		python:${PORTSDIR}/lang/python					\
 		${PYNUMPY}
 LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5				\
 		libmed.so:${PORTSDIR}/french/med				\

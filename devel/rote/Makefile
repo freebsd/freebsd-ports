@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple library for VT102 terminal emulation
+COMMENT=	Simple library for VT102 terminal emulation
 
 GNU_CONFIGURE=	yes
 USES=		gmake

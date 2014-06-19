@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Facilitating construction of testing code for ATS language
 
 NO_BUILD=	yes

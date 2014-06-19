@@ -1,6 +1,3 @@
-#-*- tab-width: 4; -*-
-# ex:ts=4
-#
 # bsd.port.options.mk - Allow OPTIONS to determine dependencies
 #
 # usage:

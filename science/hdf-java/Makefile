@@ -15,7 +15,7 @@ LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.6 1.7
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 
@@ -48,6 +48,14 @@ CONFIGURE_ARGS+=	--without-libsz
 ALL_TARGET=	all javadocs
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION} == "1.6.0"
+PLIST_SUB+=	JDK6=""
+.else
+PLIST_SUB+=	JDK6="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/libhdf.$$LLEXT"|"${LOCALBASE}/lib"|' \
 		-e 's|$$z_lib"/libz."$$LLEXT|"/lib/libz.so.*"|' \
@@ -77,4 +85,4 @@ post-install:
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

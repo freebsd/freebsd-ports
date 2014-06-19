@@ -54,4 +54,3 @@ do-install:
 	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
 
 .include <bsd.port.mk>
-

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.informatik.uni-bremen.de/uDrawGraph/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PKGNUM}-${OPSYS:tl}-${ARCH}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A graph drawing/visualization system
+COMMENT=	Graph drawing/visualization system
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 

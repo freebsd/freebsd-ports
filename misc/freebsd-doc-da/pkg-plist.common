@@ -1,6 +1,6 @@
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/pxe
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles
-%%DOCSDIR%%/%%DOCLANG_PREFIX%%
-@dirrm %%DOCSDIR%%/%%DOCLANG%%
+%%DOCSDIR%%/da
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/pxe
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%
 @dirrmtry %%DOCSDIR%%

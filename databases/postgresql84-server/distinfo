@@ -1,4 +1,4 @@
 SHA256 (postgresql/postgresql-8.4.21.tar.bz2) = 388f67e59f2a16c27e84f50656f5d755adf3d0a883138366d091aa0c727c1e2c
 SIZE (postgresql/postgresql-8.4.21.tar.bz2) = 14645050
-SHA256 (postgresql/pg-8419-icu-2014-03-23.diff.gz) = 818b0dbf6fb9a786768ce1ea6024faa6b8705692cfbf3b4c4c973b159936c5ec
-SIZE (postgresql/pg-8419-icu-2014-03-23.diff.gz) = 4374
+SHA256 (postgresql/pg-8421-icu-2014-06-09.diff.gz) = 39b88088adbe4cbfa207db0dd0ed0411a34af762ac9fa967e84eef6bcf8821ad
+SIZE (postgresql/pg-8421-icu-2014-06-09.diff.gz) = 4380

@@ -1,6 +1,6 @@
 include/ntlm.h
 lib/libntlm.a
-lib/libntlm.la
 lib/libntlm.so
 lib/libntlm.so.0
+lib/libntlm.so.0.0.18
 libdata/pkgconfig/libntlm.pc

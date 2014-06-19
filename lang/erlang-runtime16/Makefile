@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=	http://www.erlang.org/download
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A functional programming language from Ericsson
+COMMENT=	Functional programming language from Ericsson
 
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
