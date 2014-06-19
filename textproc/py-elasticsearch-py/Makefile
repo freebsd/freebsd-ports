@@ -3,8 +3,10 @@
 
 PORTNAME=	elasticsearch-py
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	#
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Official Python low-level client for Elasticsearch
