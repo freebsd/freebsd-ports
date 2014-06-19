@@ -3,7 +3,7 @@
 
 PORTNAME=	datefield
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www python
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 PKGNAMEPREFIX=	trac-
@@ -15,11 +15,11 @@ COMMENT=	Plugin for creating date fields
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
 USES=		zip
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracDateField
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=		${WRKDIR}/datefieldplugin/0.11
 REL=		7267
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
