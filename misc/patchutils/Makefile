@@ -9,8 +9,7 @@ MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Small collection of programs that operate on patch files
 
-USE_XZ=		yes
-USES=		perl5
+USES=		perl5 tar:xz
 USE_PERL5=	run build patch
 GNU_CONFIGURE=	yes
 
