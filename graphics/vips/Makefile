@@ -31,10 +31,12 @@ PYPRESENT!=	which python > /dev/null && echo on || echo off
 .if ${PYPRESENT} == on
 OPTIONS_DEFAULT+=	PYTHON
 .endif
-USES=		gettext gmake libtool pathfix perl5 pkgconfig
+USES=		gettext gmake libtool pathfix perl5 pkgconfig shebangfix
 USE_PERL5=	build
+SHEBANG_FILES=	tools/vips-${PORTVERSION:R}
 USE_GNOME=	glib20 pango libxml2
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 post-configure:
