@@ -12,9 +12,9 @@ DISTNAME=	${PORTNAME}-${PKGNAMESUFFIX:C/.*-//}-${PORTVERSION}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Set of plugins for the libvisual framework
 
-LIB_DEPENDS=	visual-${MAJORMINOR}:${PORTSDIR}/graphics/libvisual04
+LIB_DEPENDS=	libvisual-${MAJORMINOR}.so:${PORTSDIR}/graphics/libvisual04
 
-USES=		pkgconfig
+USES=		libtool:keepla pkgconfig
 USE_GL=		yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -34,7 +34,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-${PKGNAMESUFFIX:C/.*-//}-${MAJORMINOR}
 PLIST_SUB=	PLUGINS_BASE_DIR=${LOCALBASE}/lib/${PORTNAME}-${MAJORMINOR} \
 		DATADIR_REL=${DATADIR_REL}
 
-NO_STAGE=	yes
 pre-configure:
 # /usr/bin/objformat is obsolete, hardcode the object format
 	@${REINPLACE_CMD} -e 's,objformat=.*,objformat=elf,' \
