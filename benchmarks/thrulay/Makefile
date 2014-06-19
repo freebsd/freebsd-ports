@@ -3,6 +3,7 @@
 
 PORTNAME=	thrulay
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	benchmarks net ipv6
 MASTER_SITES=	SF \
 		http://www.internet2.edu/~shalunov/thrulay/
@@ -10,8 +11,8 @@ MASTER_SITES=	SF \
 MAINTAINER=	shalunov@shlang.com
 COMMENT=	Network capacity tester
 
-HAS_CONFIGURE=	yes
-USES=		gmake
+GNU_CONFIGURE=	yes
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	thrulayd
 SUB_FILES=	thrulayd
