@@ -18,11 +18,13 @@ USES=		ncurses gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/clex bin/cfg-clex bin/kbd-test
-PORTDOCS=	AUTHORS ChangeLog README
-MAN1=		clex.1 cfg-clex.1 kbd-test.1
+PLIST_FILES=	bin/clex bin/cfg-clex bin/kbd-test \
+		man/man1/cfg-clex.1.gz \
+		man/man1/clex.1.gz \
+		man/man1/kbd-test.1.gz
 
-NO_STAGE=	yes
+PORTDOCS=	AUTHORS ChangeLog README
+
 post-patch:
 	@${REINPLACE_CMD} -e '18s,^,#include <stdio.h>,' \
 		${WRKSRC}/src/preview.c
@@ -33,8 +35,8 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
