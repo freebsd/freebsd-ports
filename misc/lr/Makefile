@@ -10,7 +10,6 @@ DISTNAME=	lazyread-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Lazyread can auto-scroll files on your screen in movie credit fashion
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(/usr/bin/lesspipe.sh)
@@ -37,15 +36,15 @@ do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -o lr lazyread.c ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lr ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lr ${STAGEDIR}${PREFIX}/bin
 
 .if defined(INSTALL_LESSPIPE)
-	${INSTALL_SCRIPT} ${FILESDIR}/lesspipe.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/lesspipe.sh ${STAGEDIR}${PREFIX}/bin
 .endif
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
