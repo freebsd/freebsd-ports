@@ -28,12 +28,12 @@ do-build:
 		cd ${WRKSRC} && ${_STRFILE} ${_STRFILE_ARGS} ${PORTNAME}-o; \
 	fi
 do-install:
-	@${MKDIR} ${FORTUNE_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${FORTUNE_DIR}/${FORTUNE_FILE}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.dat ${FORTUNE_DIR}/${FORTUNE_FILE}.dat
+	@${MKDIR} ${STAGEDIR}${FORTUNE_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.dat ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE}.dat
 	@if [ -f ${WRKSRC}/${PORTNAME}-o ]; then \
-		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-o ${FORTUNE_DIR}/${FORTUNE_FILE_O}; \
-		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-o.dat ${FORTUNE_DIR}/${FORTUNE_FILE_O}.dat; \
+		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-o ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE_O}; \
+		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-o.dat ${STAGEDIR}${FORTUNE_DIR}/${FORTUNE_FILE_O}.dat; \
 	fi
 post-install:
 	@if [ -f ${WRKSRC}/${PORTNAME}-o ]; then \
@@ -42,4 +42,3 @@ post-install:
 	fi
 	@${ECHO_CMD} "@unexec rmdir %D/${_FORTUNE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/games 2>/dev/null || true" >> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
