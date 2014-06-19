@@ -10,6 +10,6 @@ SRCS=		linpack.c com.c randlib.c
 
 beforeinstall:
 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 ${.CURDIR}/randlib.h \
-		${PREFIX}/include
+           $(DESTDIR)${PREFIX}/include
 
 .include <bsd.lib.mk>
