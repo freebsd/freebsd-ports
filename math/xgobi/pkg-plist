@@ -1,6 +1,8 @@
 bin/xgobi
 bin/xgvis
 lib/X11/app-defaults/XGobi.ex
+man/man1/xgobi.1.gz
+man/man1/xgvis.1.gz
 %%PORTDOCS%%share/examples/xgobi/data_xgobi/c60
 %%PORTDOCS%%share/examples/xgobi/data_xgobi/c60.linecolors
 %%PORTDOCS%%share/examples/xgobi/data_xgobi/c60.lines
