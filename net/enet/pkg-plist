@@ -8,8 +8,8 @@ include/enet/unix.h
 include/enet/utility.h
 include/enet/win32.h
 lib/libenet.a
-lib/libenet.la
 lib/libenet.so
 lib/libenet.so.7
+lib/libenet.so.7.0.0
 libdata/pkgconfig/libenet.pc
 @dirrm include/enet
