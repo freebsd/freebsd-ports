@@ -18,10 +18,12 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDLIBS=-lnetpbm
 post-patch:
 	@${REINPLACE_CMD} -e '/^#include "ppmcmap.h"/d' ${WRKSRC}/ppmtoTbmp.c
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ppmtoTbmp ${WRKSRC}/Tbmptopnm \
 		${STAGEDIR}${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
