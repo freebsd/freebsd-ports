@@ -10,8 +10,11 @@ MASTER_SITES=	http://launchpad.net/ikarus/0.0/${PORTVERSION}/+download/ \
 		http://tx97.net/pub/distfiles/ \
 		LOCAL/glarkin
 
-MAINTAINER=	vmagerya@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimizing incremental native-code compiler for R6RS Scheme
+
+DEPRECATED=	Upstream project died in 2009
+EXPIRATION_DATE=2014-07-20
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 

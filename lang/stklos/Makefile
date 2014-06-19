@@ -8,8 +8,11 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.stklos.net/download/ \
 		ftp://kaolin.essi.fr/pub/STklos/
 
-MAINTAINER=	vmagerya@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The successor of the STk Scheme interpreter
+
+DEPRECATED=	Fails testsuite on all platforms, unmaintained upstream
+EXPIRATION_DATE=2014-07-20
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		pcre.3:${PORTSDIR}/devel/pcre \
