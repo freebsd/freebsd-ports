@@ -9,7 +9,9 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
 		http://www.purplehat.org/downloads/gtkfind/
 
 MAINTAINER=	perryh@pluto.rain.com
-COMMENT=	The program to use to have to remember all the options to find(1)
+COMMENT=	GTK front-end to find(1)
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	appres:${PORTSDIR}/x11/appres \
 		xterm:${PORTSDIR}/x11/xterm
@@ -18,15 +20,14 @@ USES=		gmake
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
-MAN1=		gtkfind.1
-PLIST_FILES=	bin/gtkfind
+PLIST_FILES=	bin/gtkfind \
+		man/man1/gtkfind.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure ${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gtkfind ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gtkfind.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/gtkfind ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gtkfind.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
