@@ -1,9 +1,9 @@
 # Created by: Garrett Rooney <rooneg@electricjellyfish.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-wm/metacity/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/x11-wm/metacity/Makefile 19739 2014-06-16 08:57:50Z gusi $
 
 PORTNAME=	metacity
-PORTVERSION=	2.34.13
+PORTVERSION=	3.12.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,14 +16,14 @@ BUILD_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gsettings-desktop-schemas>=3.3.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
-		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gsettings-desktop-schemas>=3.3.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_XORG=	x11 xcomposite xdamage xrender xcursor xinerama xext xrandr
-USES=		libtool:keepla gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gtk20 intlhack libxml2:build
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2:build
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

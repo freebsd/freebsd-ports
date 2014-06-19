@@ -1,5 +1,4 @@
 bin/gnome-sound-recorder
-lib/gnome-sound-recorder/libgd.la
 lib/gnome-sound-recorder/libgd.so
 lib/gnome-sound-recorder/girepository-1.0/Gd-1.0.typelib
 share/applications/org.gnome.SoundRecorder.desktop

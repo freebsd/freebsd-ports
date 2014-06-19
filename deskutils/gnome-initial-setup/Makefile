@@ -1,9 +1,10 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-initial-setup/Makefile 19663 2014-05-14 08:04:08Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-initial-setup/Makefile 19744 2014-06-17 08:06:24Z gusi $
 
 PORTNAME=	gnome-initial-setup
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
 		libgweather-3.so:${PORTSDIR}/net/libgweather
 RUN_DEPENDS=	gdm>=3.0.0:${PORTSDIR}/x11/gdm
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -1,9 +1,10 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-weather/Makefile 19638 2014-05-13 05:20:24Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-weather/Makefile 19744 2014-06-17 08:06:24Z gusi $
 
 PORTNAME=	gnome-weather
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather \
 		libgjs.so:${PORTSDIR}/lang/gjs
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

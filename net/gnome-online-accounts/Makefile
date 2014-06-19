@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net/gnome-online-accounts/Makefile 19654 2014-05-13 18:08:20Z gusi $
+#    $MCom: ports/trunk/net/gnome-online-accounts/Makefile 19724 2014-06-06 06:27:48Z gusi $
 
 PORTNAME=	gnome-online-accounts
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -27,5 +27,6 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

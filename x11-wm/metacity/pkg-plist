@@ -2,18 +2,18 @@ bin/metacity
 bin/metacity-message
 bin/metacity-theme-viewer
 bin/metacity-window-demo
-include/metacity-1/metacity-private/boxes.h
-include/metacity-1/metacity-private/common.h
-include/metacity-1/metacity-private/gradient.h
-include/metacity-1/metacity-private/preview-widget.h
-include/metacity-1/metacity-private/theme-parser.h
-include/metacity-1/metacity-private/theme.h
-include/metacity-1/metacity-private/util.h
+include/metacity/metacity-private/boxes.h
+include/metacity/metacity-private/common.h
+include/metacity/metacity-private/gradient.h
+include/metacity/metacity-private/preview-widget.h
+include/metacity/metacity-private/theme-parser.h
+include/metacity/metacity-private/theme.h
+include/metacity/metacity-private/util.h
 lib/libmetacity-private.a
 lib/libmetacity-private.la
 lib/libmetacity-private.so
-lib/libmetacity-private.so.0
-lib/libmetacity-private.so.0.0.0
+lib/libmetacity-private.so.1
+lib/libmetacity-private.so.1.0.0
 libdata/pkgconfig/libmetacity-private.pc
 man/man1/metacity-message.1.gz
 man/man1/metacity-theme-viewer.1.gz
@@ -244,8 +244,6 @@ share/themes/Simple/metacity-1/minimize.png
 @dirrmtry share/help
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrm include/metacity-1/metacity-private
-@dirrm include/metacity-1
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yo/LC_MESSAGES
@@ -298,3 +296,5 @@ share/themes/Simple/metacity-1/minimize.png
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm include/metacity/metacity-private
+@dirrm include/metacity

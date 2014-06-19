@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/empathy/Makefile 19664 2014-05-14 10:21:15Z gusi $
+#   $MCom: ports/trunk/net-im/empathy/Makefile 19737 2014-06-12 07:59:38Z gusi $
 
 PORTNAME=	empathy
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.3
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -51,6 +51,7 @@ CONFIGURE_ARGS=	--disable-Werror \
 		--enable-goa \
 		--enable-gst-1.0=yes \
 		--enable-location=yes
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Empathy.gschema.xml \
 		org.gnome.telepathy-account-widgets.gschema.xml

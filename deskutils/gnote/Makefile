@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnote/Makefile 19593 2014-04-28 11:41:58Z gusi $
+#   $MCom: ports/trunk/deskutils/gnote/Makefile 19744 2014-06-17 08:06:24Z gusi $
 
 PORTNAME=	gnote
 PORTVERSION=	3.12.0
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 
 USE_GNOME=	gnomeprefix gtk30 gtkmm30 intltool \
 		libxml2 libxslt
-USES=		desktop-file-utils gettext gmake libtool:keepla \
+USES=		desktop-file-utils gettext gmake libtool \
 		pathfix pkgconfig tar:xz
 GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 INSTALLS_ICONS=	yes

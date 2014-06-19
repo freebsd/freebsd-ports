@@ -1,9 +1,10 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-maps/Makefile 19644 2014-05-13 06:35:33Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-maps/Makefile 19744 2014-06-17 08:06:24Z gusi $
 
 PORTNAME=	gnome-maps
 PORTVERSION=	3.12.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libgjs.so:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

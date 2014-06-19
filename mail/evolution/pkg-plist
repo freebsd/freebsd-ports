@@ -643,6 +643,11 @@ share/applications/evolution.desktop
 %%PORTDOCS%%%%DOCSDIR%%-mail-engine/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%-mail-engine/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%-mail-engine/ch02.html
+%%PORTDOCS%%%%DOCSDIR%%-mail-engine/evolution-mail-engine-Legacy-Utilities.html
+%%PORTDOCS%%%%DOCSDIR%%-mail-engine/evolution-mail-engine-Mail-Folder-Utilities.html
+%%PORTDOCS%%%%DOCSDIR%%-mail-engine/evolution-mail-engine-Mail-Session-Utilities.html
+%%PORTDOCS%%%%DOCSDIR%%-mail-engine/evolution-mail-engine-Mail-Store-Utilities.html
+%%PORTDOCS%%%%DOCSDIR%%-mail-engine/evolution-mail-engine-Miscellaneous-Utilities.html
 %%PORTDOCS%%%%DOCSDIR%%-mail-engine/evolution-mail-engine.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%-mail-engine/home.png
 %%PORTDOCS%%%%DOCSDIR%%-mail-engine/index.html

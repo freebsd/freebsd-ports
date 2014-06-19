@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/json-glib/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/devel/json-glib/Makefile 19713 2014-05-31 05:34:32Z gusi $
 
 PORTNAME=	json-glib
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjson-glib-1.0.so.0
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

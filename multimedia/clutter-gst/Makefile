@@ -3,7 +3,7 @@
 #   $MCom: ports-experimental/trunk/multimedia/clutter-gst/Makefile 19553 2014-04-20 07:23:27Z gusi $
 
 PORTNAME=	clutter-gst
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.12
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
@@ -12,7 +12,7 @@ COMMENT=	Clutter GStreamer integration
 
 LIB_DEPENDS=	libclutter-1.0.so:${PORTSDIR}/graphics/clutter
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	introspection gnomehier gnomeprefix
 GNU_CONFIGURE=	yes
 USE_GL=		gl
