@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	click
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@freebsd.org
 COMMENT=	Python package for creating command line interfaces
 
 LICENSE=	BSD3CLAUSE
