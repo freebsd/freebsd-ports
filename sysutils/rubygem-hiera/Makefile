@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hiera
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@freebsd.org
 COMMENT=	Pluggable data store for hierarchical data
 
 LICENSE=	APACHE20
