@@ -845,6 +845,17 @@ bin/vagrant
 %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/provisioners/chef/command_builder_test.rb
 @dirrm %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/plugins/providers/docker
 %%GEMS_DIR%%gems/vagrant-%%PORTVERSION%%/test/unit/vagrant/machine_index_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/nixos/cap/change_host_name.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/nixos/cap/configure_networks.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/nixos/guest.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/nixos/plugin.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/linux/cap/rdp.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/salt/bootstrap-salt.ps1
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/nixos/hostname.erb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/nixos/network.erb
+@dirrmtry %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/nixos/cap
+@dirrmtry %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/nixos
+@dirrmtry %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/nixos
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/util
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v2
 @dirrm %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/plugin/v1
