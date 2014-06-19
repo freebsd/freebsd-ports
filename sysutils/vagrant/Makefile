@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
@@ -44,7 +44,7 @@ RUN_DEPENDS=	rubygem-main>=1.0:${PORTSDIR}/devel/rubygem-main \
 		rubygem-winrm>=1.1.3:${PORTSDIR}/sysutils/rubygem-winrm \
 		rubygem-wdm>=0.1.0:${PORTSDIR}/devel/rubygem-wdm
 
-WRKSRC=		${WRKDIR}/mitchellh-vagrant-970ed50
+WRKSRC=		${WRKDIR}/mitchellh-vagrant-85d63a9
 USE_RUBY=	yes
 GEMFILES=	vagrant-${PORTVERSION}.gem
 RUBYGEMBIN=	gem${RUBY_SUFFIX}
