@@ -3,7 +3,7 @@
 
 PORTNAME=	xmbmon
 PORTVERSION=	205
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -49,7 +49,7 @@ USE_RC_SUBR=	mbmon
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${STAGEDIR}${DOCSDIR}+' \
+	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${DOCSDIR}+' \
 		${WRKSRC}/mbmon.1
 .if ${PORT_OPTIONS:MSMB}
 	@${REINPLACE_CMD} -e 's/^DEFS=/&-DSMBUS_IOCTL /' ${WRKSRC}/Makefile.in
