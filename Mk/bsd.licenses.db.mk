@@ -3,6 +3,8 @@
 #
 # $FreeBSD$
 
+# ** Please run changes to this file by eadler@ first **
+
 Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 
 #
