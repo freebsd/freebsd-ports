@@ -4,21 +4,18 @@
 PORTNAME=	jive
 PORTVERSION=	1.1
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://nuxi.ucdavis.edu/pub/misc/
-MASTER_SITE_SUBDIR=	obrien
+MASTER_SITES=	LOCAL/obrien ftp://nuxi.ucdavis.edu/pub/misc/
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Filter that converts English text to Jive
 
-CONFLICTS=	filters-* talkfilters-*
+CONFLICTS=	filters-2* talkfilters-2*
 
 WRKSRC=		${WRKDIR}/jive
-MAN1=		jive.1
+MAKE_ARGS+=	CC=${CC:Q} CFLAGS=${CFLAGS:Q}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/jive ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/jive ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/jive.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
