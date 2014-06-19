@@ -40,9 +40,26 @@ include/ntfs/unistr.h
 include/ntfs/version.h
 include/ntfs/volume.h
 lib/libntfs.a
-lib/libntfs.la
 lib/libntfs.so
 lib/libntfs.so.10
+lib/libntfs.so.10.0.0
+man/man8/libntfs-gnomevfs.8.gz
+man/man8/libntfs.8.gz
+man/man8/mkntfs.8.gz
+man/man8/mount_ntfs-fuse.8.gz
+man/man8/ntfscat.8.gz
+man/man8/ntfsclone.8.gz
+man/man8/ntfscluster.8.gz
+man/man8/ntfscmp.8.gz
+man/man8/ntfscp.8.gz
+man/man8/ntfsfix.8.gz
+man/man8/ntfsinfo.8.gz
+man/man8/ntfslabel.8.gz
+man/man8/ntfsls.8.gz
+man/man8/ntfsmount.8.gz
+man/man8/ntfsprogs.8.gz
+man/man8/ntfsresize.8.gz
+man/man8/ntfsundelete.8.gz
 sbin/mkntfs
 sbin/ntfsclone
 sbin/ntfscp
@@ -51,10 +68,7 @@ sbin/ntfsresize
 sbin/ntfsundelete
 %%GNOMEVFS2%%etc/gnome-vfs-2.0/modules/libntfs.conf
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.a
-%%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.la
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so.1
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so.1.0.0
 @dirrm include/ntfs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
