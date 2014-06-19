@@ -20,14 +20,13 @@ PLIST_FILES=	include/randlib.h \
 		lib/librandlib.so \
 		lib/librandlib.so.1
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/randlib
-	@${INSTALL_DATA} ${WRKDIR}/source/randlib.c/doc/* ${PREFIX}/share/doc/randlib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/source/randlib.c/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
