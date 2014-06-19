@@ -1,6 +1,6 @@
-libexec/cfengine/libpromises.la
 libexec/cfengine/libpromises.so
 libexec/cfengine/libpromises.so.3
+libexec/cfengine/libpromises.so.3.0.6
 sbin/cf-agent
 sbin/cf-execd
 sbin/cf-key
@@ -44,6 +44,8 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/classvar_convergence.cf
 %%DOCSDIR%%/examples/commands.cf
 %%DOCSDIR%%/examples/compare.cf
+%%DOCSDIR%%/examples/container_iteration.cf
+%%DOCSDIR%%/examples/container_key_iteration.cf
 %%DOCSDIR%%/examples/control_expand.cf
 %%DOCSDIR%%/examples/controlclasses.cf
 %%DOCSDIR%%/examples/copy.cf
@@ -85,6 +87,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/edit_setvar.cf
 %%DOCSDIR%%/examples/edit_template.cf
 %%DOCSDIR%%/examples/edit_triggerclass.cf
+%%DOCSDIR%%/examples/edit_xml.cf
 %%DOCSDIR%%/examples/env.cf
 %%DOCSDIR%%/examples/epimenides.cf
 %%DOCSDIR%%/examples/escape.cf
@@ -210,6 +213,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/orchestration_hostlist.cf
 %%DOCSDIR%%/examples/ordering.cf
 %%DOCSDIR%%/examples/package_apt.cf
+%%DOCSDIR%%/examples/package_bundles.cf
 %%DOCSDIR%%/examples/package_freebsd.cf
 %%DOCSDIR%%/examples/package_latest.cf
 %%DOCSDIR%%/examples/package_msi_file.cf
@@ -254,6 +258,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/registryvalue.cf
 %%DOCSDIR%%/examples/regline.cf
 %%DOCSDIR%%/examples/reglist.cf
+%%DOCSDIR%%/examples/remake_outputs.pl
 %%DOCSDIR%%/examples/remoteclasses.cf
 %%DOCSDIR%%/examples/remoteclasses2.cf
 %%DOCSDIR%%/examples/remotescalar.cf
@@ -301,6 +306,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/string_head.cf
 %%DOCSDIR%%/examples/string_length.cf
 %%DOCSDIR%%/examples/string_reverse.cf
+%%DOCSDIR%%/examples/string_split.cf
 %%DOCSDIR%%/examples/string_tail.cf
 %%DOCSDIR%%/examples/string_upcase.cf
 %%DOCSDIR%%/examples/stringarray.cf
@@ -320,6 +326,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/user_edit.cf
 %%DOCSDIR%%/examples/user_edit_method.cf
 %%DOCSDIR%%/examples/userexists.cf
+%%DOCSDIR%%/examples/users_type.cf
 %%DOCSDIR%%/examples/varclass.cf
 %%DOCSDIR%%/examples/varexpansion.cf
 %%DOCSDIR%%/examples/variablesmatching.cf
