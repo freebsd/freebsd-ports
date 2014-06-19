@@ -2,7 +2,7 @@
 
 PORTNAME=	Wand
 PORTVERSION=	0.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,4 +18,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_INSTALLARGS+=	--install-data ${DATADIR}
+
+.include <bsd.port.post.mk>
