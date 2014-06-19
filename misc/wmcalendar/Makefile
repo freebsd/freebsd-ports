@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A dockable calendar with interface to iCalendar based calendars
 
-LIB_DEPENDS=	ical:${PORTSDIR}/devel/libical
+LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
@@ -26,16 +26,14 @@ MAKE_ARGS=	CC="${CC}" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		wmCalendar.1
-PLIST_FILES=	bin/wmCalendar
+PLIST_FILES=	bin/wmCalendar man/man1/wmCalendar.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
 			-e 's#/usr/X11R6#${LOCALBASE}#g' \
 			${WRKSRC}/Makefile
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmCalendar ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmCalendar.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/wmCalendar ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmCalendar.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
