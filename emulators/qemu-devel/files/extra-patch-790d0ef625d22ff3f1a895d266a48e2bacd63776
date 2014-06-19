@@ -13333,7 +13333,7 @@ index 36336ab..d849024 100644
  /*
   * System call numbers.
   *
-- * $FreeBSD$
+- * $FreeBSD: src/sys/sys/syscall.h,v 1.224 2008/08/24 21:23:08 rwatson Exp $
 - * created from FreeBSD: head/sys/kern/syscalls.master 182123 2008-08-24 21:20:35Z rwatson
 + * created from FreeBSD: releng/9.1/sys/kern/syscalls.master 229723
 + * 2012-01-06 19:29:16Z jhb
