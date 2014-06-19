@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -72,7 +72,6 @@ OPTIONS_DEFINE=	\
 	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
 	HTTP_UPSTREAM_FAIR \
-	HTTP_UPSTREAM_HASH \
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
 	ARRAYVAR \
@@ -162,7 +161,6 @@ HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
 HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
-HTTP_UPSTREAM_HASH_DESC=	3rd party upstream hash module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
@@ -521,14 +519,6 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
 MASTER_SITE_SUBDIR+=	osa/:upstreamfair
 DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
-.endif
-
-.if ${PORT_OPTIONS:MHTTP_UPSTREAM_HASH}
-NGINX_UPSTREAM_HASH_VERSION=	0.3.1
-MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
-DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
