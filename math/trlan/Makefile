@@ -21,7 +21,6 @@ ALL_TARGET=	lib
 
 PLIST_FILES=	lib/libtrlan.a lib/libtrlan.so lib/libtrlan.so.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .ifndef(NOPORTDOCS)
@@ -65,16 +64,16 @@ do-build:
 		${WRKSRC}/libtrlan.a -Wl,--no-whole-archive -Wl,--as-needed
 
 do-install:
-	@${INSTALL_DATA} ${WRKDIR}/libtrlan.* ${PREFIX}/lib
-	@${LN} -sf libtrlan.so.1 ${PREFIX}/lib/libtrlan.so
+	@${INSTALL_DATA} ${WRKDIR}/libtrlan.* ${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf libtrlan.so.1 ${STAGEDIR}${PREFIX}/lib/libtrlan.so
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 .ifndef(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/SUN && ${INSTALL_DATA} ${PORTEXAMPLES} \
-	${EXAMPLESDIR}
+	${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .if defined(MAINTAINER_MODE)
