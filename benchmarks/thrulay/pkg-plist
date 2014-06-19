@@ -3,9 +3,9 @@ sbin/thrulayd
 include/thrulay/client.h
 include/thrulay/server.h
 lib/libthrulay.a
-lib/libthrulay.la
 lib/libthrulay.so
 lib/libthrulay.so.0
+lib/libthrulay.so.0.0.0
 man/man1/thrulay.1.gz
 man/man8/thrulayd.8.gz
 @dirrm include/thrulay
