@@ -453,6 +453,7 @@
     SUBDIR += us-zipcodes
     SUBDIR += usbrh-libusb
     SUBDIR += utftools
+    SUBDIR += valspeak
     SUBDIR += vera
     SUBDIR += vifm
     SUBDIR += viz
