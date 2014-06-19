@@ -1,29 +1,31 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 
 # PROVIDE: anope
 # REQUIRE: LOGIN mysql
+# KEYWORD: shutdown
 
 #
 # Add the following line to /etc/rc.conf to enable anope:
-#anope_enable="YES"
+# anope_enable=YES
 #
 # Also, to prevent running anope as root You may use
 # anope_user="nobody"
 # and
-# anope_chroot="%%PREFIX%%/share/anope"
+# anope_chdir="%%PREFIX%%/share/anope"
 #
 
 . /etc/rc.subr
 
-name="anope"
+name=anope
 rcvar=anope_enable
-command=%%PREFIX%%/libexec/anope/services
-
-# set defaults
 
 load_rc_config $name
 
-: ${anope_enable="NO"}
+command=%%PREFIX%%/libexec/anope/services
+
+anope_enable=${anope_enable:-"NO"}
 
 run_rc_command "$1"
