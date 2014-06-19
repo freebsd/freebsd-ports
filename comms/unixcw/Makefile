@@ -2,6 +2,7 @@
 
 PORTNAME=	unixcw
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	unixcw_3.3.0.orig
@@ -26,7 +27,7 @@ PLIST_SUB+=	XCWCP="@comment "
 CONFIGURE_ARGS+=	--disable-xcwcp
 .endif
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake libtool
 USE_CSTD=	gnu99
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
