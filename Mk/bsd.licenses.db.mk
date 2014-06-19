@@ -114,7 +114,7 @@ _LICENSE_NAME_CDDL=	Common Development and Distribution License
 _LICENSE_GROUPS_CDDL=	FSF OSI
 
 _LICENSE_NAME_ClArtistic=	Clarified Artistic License
-_LICENSE_GROUPS_ClArtistic=	FSF OSI
+_LICENSE_GROUPS_ClArtistic=	FSF GPL OSI
 
 _LICENSE_NAME_EPL=	Eclipse Public License
 _LICENSE_GROUPS_EPL=	FSF OSI
