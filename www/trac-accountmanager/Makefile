@@ -3,6 +3,7 @@
 PORTNAME=	accountmanager
 PORTVERSION=	0.5.${REV}
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://trac-hacks.org/changeset/${REV}/accountmanagerplugin/trunk?old_path=/&format=zip&filename=
@@ -19,10 +20,8 @@ FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 REV=			12583
 USES=			zip
 USE_PYTHON=		2
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracAccountManager
-PYDISTUTILS_PKGVERSION=	0.5dev
-PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 
 # --- trac.ini
@@ -36,4 +35,5 @@ WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 # --- httpd.conf
 # SetEnv PYTHON_EGG_CACHE "/tmp/cache"
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
