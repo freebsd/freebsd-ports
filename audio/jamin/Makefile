@@ -3,7 +3,7 @@
 
 PORTNAME=	jamin
 PORTVERSION=	0.95.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
+USES=		desktop-file-utils gmake libtool pkgconfig shared-mime-info
 USE_GNOME=	gtk20 libxml2
 
 .include <bsd.port.mk>
