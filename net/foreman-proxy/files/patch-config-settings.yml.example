@@ -1,5 +1,5 @@
---- config/settings.yml.example.orig	2014-01-28 19:55:58.769179974 +0100
-+++ config/settings.yml.example	2014-01-28 20:06:51.840135157 +0100
+--- config/settings.yml.example.orig	2014-06-18 10:54:21.000000000 +0200
++++ config/settings.yml.example	2014-06-19 15:42:56.264085917 +0200
 @@ -23,7 +23,7 @@
  
  # Enable TFTP management
@@ -14,7 +14,7 @@
  #   virsh (simple implementation for libvirt)
  :dns_provider: nsupdate
 -#:dns_key: /etc/rndc.key
-+#:dns_key: /usr/local/etc/namedb/rndc.key
++#:dns_key: %%LOCALBASE%%/etc/namedb/rndc.key
  # use this setting if you are managing a dns server which is not localhost though this proxy
  #:dns_server: dns.domain.com
  # use this setting if you want to override default TTL setting (86400)
@@ -22,12 +22,12 @@
  # use dns_tsig_* for GSS-TSIG updates using Kerberos.  Required for Windows MS DNS with
  # Secure Dynamic Updates, or BIND as used in FreeIPA.  Set dns_provider to nsupdate_gss.
 -#:dns_tsig_keytab: /usr/share/foreman-proxy/dns.keytab
-+#:dns_tsig_keytab: /usr/local/share/foreman-proxy/dns.keytab
++#:dns_tsig_keytab: %%PREFIX%%/share/foreman-proxy/dns.keytab
  #:dns_tsig_principal: DNS/host.example.com@EXAMPLE.COM
  
  # Enable DHCP management
 @@ -55,15 +55,8 @@
- # dhcp_subnets is a Native MS implementation setting. It restricts the subnets queried to a
+ # dhcp_subnets is an ISC &  Native MS implementation setting. It restricts the subnets queried to a
  # subset, so as to reduce the query time.
  #:dhcp_subnets: [192.168.205.0/255.255.255.128, 192.168.205.128/255.255.255.128]
 -# Settings for Ubuntu ISC
@@ -44,7 +44,7 @@
  #:dhcp_key_name: secret_key_name
  #:dhcp_key_secret: secret_key
  
-@@ -72,8 +65,8 @@
+@@ -72,10 +65,10 @@
  
  # enable PuppetCA management
  :puppetca: false
@@ -52,10 +52,13 @@
 -#:puppetdir: /etc/puppet
 +#:ssldir: /var/puppet/ssl
 +#:puppetdir: %%LOCALBASE%%/etc/puppet
+ #:puppetca_use_sudo: true
+-#:sudo_command: /usr/bin/sudo
++#:sudo_command: %%LOCALBASE%%/bin/sudo
  
  # enable Puppet management
  :puppet: false
-@@ -87,19 +80,19 @@
+@@ -89,19 +82,19 @@
  
  # customrun command details
  # Set :customrun_cmd to the full path of the script you want to run, instead of /bin/false
@@ -79,7 +82,7 @@
  
  # Which user to invoke sudo as to run puppet commands
  #:puppet_user: root
-@@ -111,7 +104,7 @@
+@@ -113,7 +106,7 @@
  # smart-proxy client node needs to have some admin right on chef-server
  # in order to retrive all nodes public keys
  # :chef_smartproxy_clientname: 'host.example.net'
@@ -88,3 +91,12 @@
  
  # enable BMC management  (Bare metal power and bios controls)
  # Available providers:
+@@ -130,7 +123,7 @@
+ :realm_provider: freeipa
+ 
+ # Authentication for Kerberos-based Realms
+-:realm_keytab: /etc/foreman-proxy/freeipa.keytab
++:realm_keytab: %%PREFIX%%/etc/foreman-proxy/freeipa.keytab
+ :realm_principal: realm-proxy@EXAMPLE.COM
+ 
+ # FreeIPA specific settings
