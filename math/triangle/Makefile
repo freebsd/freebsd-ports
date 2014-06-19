@@ -22,9 +22,8 @@ MAKEFILE=	makefile
 
 PLIST_FILES=	bin/triangle bin/showme
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${PLIST_FILES:S|^bin|${WRKSRC}|} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PLIST_FILES:S|^bin|${WRKSRC}|} ${STAGEDIR}${PREFIX}/bin
 
 .if defined(MAINTAINER_MODE)
 test:	build
