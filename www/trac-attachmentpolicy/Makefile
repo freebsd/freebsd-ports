@@ -3,6 +3,7 @@
 
 PORTNAME=	attachmentpolicy
 PORTVERSION=	0.1.0.${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://distfiles.cse.tw/ \
 		http://trac-hacks.org/changeset/${SVN_REV}/attachmentpolicyplugin?old_path=/&format=zip&filename=/
@@ -20,12 +21,11 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
 USES=		zip
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-PYDISTUTILS_PKGNAME=	Attachment_Policy_Plugin
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/.${SVN_REV}//g}
-PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+.include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>
