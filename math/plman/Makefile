@@ -27,19 +27,18 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 FIND_DATA=	lib
 FIND_DOCS=	docs
 
-NO_STAGE=	yes
 post-patch:
 	for FILE in ${REPLACE_FILES}; do \
 	    ${REINPLACE_CMD} -e "/%%DATADIR%%/s//${DATADIR:S/\//\\\//g}/g" $${FILE} ;\
 	done;
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${DATADIR}/${FIND_DATA}
-	cd ${WRKSRC} && ${FIND} ${FIND_DATA} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}/${FIND_DATA}
+	cd ${WRKSRC} && ${FIND} ${FIND_DATA} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/${FIND_DOCS} && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/${FIND_DOCS} && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 .endif
 
 .include <bsd.port.mk>
