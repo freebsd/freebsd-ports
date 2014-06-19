@@ -4,6 +4,6 @@ include/fixbuf/public.h
 lib/libfixbuf.a
 lib/libfixbuf.la
 lib/libfixbuf.so
-lib/libfixbuf.so.2
+lib/libfixbuf.so.3
 libdata/pkgconfig/libfixbuf.pc
 @dirrmtry include/fixbuf
