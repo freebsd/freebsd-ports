@@ -1,29 +1,28 @@
 # $FreeBSD$
 
 PORTNAME=	tcc
-PORTVERSION=	0.9.25
-PORTREVISION=	2
+PORTVERSION=	0.9.26
 CATEGORIES=	lang
 MASTER_SITES=	SAVANNAH/tinycc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cjpugmed@gmail.com
 COMMENT=	Tiny C Compiler
 
 LICENSE=	LGPL21
 
 ONLY_FOR_ARCHS=	i386
-#ONLY_FOR_ARCHS=	i386 amd64 arm mips powerpc
 
-CONFLICTS=	TenDRA-*
+CONFLICTS=	TenDRA-[0-9]*
 
-USES=		gmake perl5
-USE_BZIP2=	yes
+USES=		tar:bzip2 gmake perl5
 USE_PERL5=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}"
 MAKE_ARGS=	CONFIG_NOLDL=1
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+PORTDOCS=	COPYING	Changelog README TODO VERSION
 
 .include <bsd.port.options.mk>
 
@@ -37,8 +36,19 @@ PLIST_SUB+=	I386="@comment "
 CFLAGS+=	-fheinous-gnu-extensions
 .endif
 
-.if ! ${PORT_OPTIONS:MDOCS}
-MAKE_ARGS+=	NOPORTDOCS=1
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tcc
+	${INSTALL_MAN} ${WRKSRC}/tcc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/lib/i386/bcheck.o ${STAGEDIR}${PREFIX}/lib/tcc/
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
