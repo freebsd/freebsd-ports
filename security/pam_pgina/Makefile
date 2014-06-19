@@ -13,6 +13,9 @@ COMMENT=	Daemon for allowing a pGina plugin to authenticate against Unix PAM
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
+DEPRECATED=	main site disappeared, no more public distfiles
+EXPIRATION_DATE=2014-07-20
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USES=		perl5 gmake
