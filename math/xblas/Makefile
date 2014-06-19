@@ -29,7 +29,6 @@ PLIST_FILES=	${HEADERS:S|^|${HDIR}/|}
 SHLIB_MAJOR=	0
 WRKSRC =	${WRKDIR}/xblas-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 M4?=	m4
@@ -88,19 +87,19 @@ build-static: patch
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/${HDIR}
-	@cd ${WRKSRC}/src; ${INSTALL_DATA} ${HEADERS} ${PREFIX}/${HDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${HDIR}
+	@cd ${WRKSRC}/src; ${INSTALL_DATA} ${HEADERS} ${STAGEDIR}${PREFIX}/${HDIR}
 .if ${PORT_OPTIONS:MSHARED}
 	@cd ${WRKSRC}; ${INSTALL_DATA} libxblas_pic.a \
-	libxblas.so.${SHLIB_MAJOR} ${PREFIX}/lib
-	@${LN} -sf libxblas.so.${SHLIB_MAJOR} ${PREFIX}/lib/libxblas.so
+	libxblas.so.${SHLIB_MAJOR} ${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf libxblas.so.${SHLIB_MAJOR} ${STAGEDIR}${PREFIX}/lib/libxblas.so
 .endif
 .if ${PORT_OPTIONS:MSTATIC}
-	@${INSTALL_DATA} ${WRKSRC}_STATIC/libxblas.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}_STATIC/libxblas.a ${STAGEDIR}${PREFIX}/lib
 .endif
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/report.ps ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/report.ps ${STAGEDIR}${DOCSDIR}
 .endif
 
 check regression-test test: test-shared test-static
