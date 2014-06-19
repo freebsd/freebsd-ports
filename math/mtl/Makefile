@@ -22,7 +22,6 @@ USES=		perl5
 USE_PERL5=	build
 WRKSRC =	${WRKDIR}/${DISTNAME:R}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/gnu\*)/,/;;/{/CXX=/d; /CXX_OPTIMIZE_FLAGS=/d; \
 	s/CXXFLAGS="/&$$ac_cv_env_CXXFLAGS_value /; }' \
@@ -49,9 +48,9 @@ CXXFLAGS+=	-fpermissive
 PORTEXAMPLES=	*
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}/doubledouble
-	@${INSTALL_DATA} ${WRKSRC}/contrib/examples/*  ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/doubledouble/*  ${EXAMPLESDIR}/doubledouble
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/doubledouble
+	@${INSTALL_DATA} ${WRKSRC}/contrib/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/doubledouble/* ${STAGEDIR}${EXAMPLESDIR}/doubledouble
 
 .endif
 .include <bsd.port.post.mk>
