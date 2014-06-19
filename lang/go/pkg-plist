@@ -10,14 +10,14 @@ go/api/README
 go/api/except.txt
 go/api/go1.1.txt
 go/api/go1.2.txt
+go/api/go1.3.txt
 go/api/go1.txt
 go/api/next.txt
 go/bin/go
 go/bin/gofmt
-go/doc/Makefile
 go/doc/articles/go_command.html
 go/doc/articles/index.html
-go/doc/articles/wiki/Makefile
+go/doc/articles/race_detector.html
 go/doc/articles/wiki/edit.html
 go/doc/articles/wiki/final-noclosure.go
 go/doc/articles/wiki/final-noerror.go
@@ -66,11 +66,13 @@ go/doc/go-logo-blue.png
 go/doc/go-logo-white.png
 go/doc/go1.1.html
 go/doc/go1.2.html
+go/doc/go1.3.html
 go/doc/go1.html
 go/doc/go1compat.html
 go/doc/go_faq.html
 go/doc/go_mem.html
 go/doc/go_spec.html
+go/doc/gopher/README
 go/doc/gopher/appenginegopher.jpg
 go/doc/gopher/appenginegophercolor.jpg
 go/doc/gopher/appenginelogo.gif
@@ -166,22 +168,21 @@ go/favicon.ico
 go/include/README
 go/include/ar.h
 go/include/bio.h
-go/include/bootexec.h
 go/include/fmt.h
 go/include/libc.h
-go/include/mach.h
+go/include/link.h
 go/include/plan9/386/u.h
 go/include/plan9/amd64/u.h
 go/include/plan9/arm/u.h
+go/include/plan9/bio.h
+go/include/plan9/errno.h
+go/include/plan9/fmt.h
 go/include/plan9/libc.h
-go/include/plan9/mach.h
-go/include/plan9/ureg_amd64.h
-go/include/plan9/ureg_arm.h
-go/include/plan9/ureg_x86.h
+go/include/plan9/link.h
+go/include/plan9/mklibc.rc
+go/include/plan9/stdarg.h
+go/include/plan9/utf.h
 go/include/u.h
-go/include/ureg_amd64.h
-go/include/ureg_arm.h
-go/include/ureg_x86.h
 go/include/utf.h
 go/lib/time/README
 go/lib/time/update.bash
@@ -193,6 +194,7 @@ go/misc/bbedit/Go.plist
 go/misc/benchcmp
 go/misc/cgo/errors/err1.go
 go/misc/cgo/errors/err2.go
+go/misc/cgo/errors/err3.go
 go/misc/cgo/errors/test.bash
 go/misc/cgo/gmp/fib.go
 go/misc/cgo/gmp/gmp.go
@@ -202,6 +204,8 @@ go/misc/cgo/life/life.go
 go/misc/cgo/life/life.h
 go/misc/cgo/life/main.go
 go/misc/cgo/life/main.out
+go/misc/cgo/nocgo/nocgo.go
+go/misc/cgo/nocgo/nocgo_test.go
 go/misc/cgo/stdio/chain.go
 go/misc/cgo/stdio/chain.out
 go/misc/cgo/stdio/fib.go
@@ -214,6 +218,7 @@ go/misc/cgo/stdio/stdio.go
 go/misc/cgo/test/align.go
 go/misc/cgo/test/api.go
 go/misc/cgo/test/backdoor/backdoor.go
+go/misc/cgo/test/backdoor/backdoor_gccgo.go
 go/misc/cgo/test/backdoor/runtime.c
 go/misc/cgo/test/backdoor/runtime_gccgo.c
 go/misc/cgo/test/basic.go
@@ -271,6 +276,19 @@ go/misc/cgo/test/issue6390.go
 go/misc/cgo/test/issue6472.go
 go/misc/cgo/test/issue6506.go
 go/misc/cgo/test/issue6612.go
+go/misc/cgo/test/issue6833.go
+go/misc/cgo/test/issue6833_c.c
+go/misc/cgo/test/issue6997_linux.c
+go/misc/cgo/test/issue6997_linux.go
+go/misc/cgo/test/issue7234_test.go
+go/misc/cgo/test/issue7560.go
+go/misc/cgo/test/issue7665.go
+go/misc/cgo/test/issue7695_test.go
+go/misc/cgo/test/issue7786.go
+go/misc/cgo/test/issue8148.go
+go/misc/cgo/test/issue8331.h
+go/misc/cgo/test/issue8331a.go
+go/misc/cgo/test/issue8331b.go
 go/misc/cgo/test/setgid_linux.go
 go/misc/cgo/test/sleep_windows_386.go
 go/misc/cgo/testasan/main.go
@@ -282,6 +300,7 @@ go/misc/cgo/testcdefs/test.bash
 go/misc/cgo/testso/cgoso.c
 go/misc/cgo/testso/cgoso.go
 go/misc/cgo/testso/cgoso_c.c
+go/misc/cgo/testso/cgoso_unix.go
 go/misc/cgo/testso/main.go
 go/misc/cgo/testso/test.bash
 go/misc/cgo/testso/test.bat
@@ -307,30 +326,36 @@ go/misc/dashboard/codereview/index.yaml
 go/misc/dashboard/codereview/queue.yaml
 go/misc/dashboard/codereview/static/gopherstamp.jpg
 go/misc/dashboard/codereview/static/icon.png
-go/misc/dist/bindist.go
-go/misc/dist/darwin/Distribution
-go/misc/dist/darwin/Resources/bg.png
-go/misc/dist/darwin/etc/paths.d/go
-go/misc/dist/darwin/scripts/postinstall
-go/misc/dist/darwin/scripts/preinstall
-go/misc/dist/windows/LICENSE.rtf
-go/misc/dist/windows/README.txt
-go/misc/dist/windows/images/Banner.jpg
-go/misc/dist/windows/images/Dialog.jpg
-go/misc/dist/windows/images/DialogLeft.jpg
-go/misc/dist/windows/images/gopher.ico
-go/misc/dist/windows/installer.wxs
 go/misc/emacs/go-mode-load.el
 go/misc/emacs/go-mode.el
 go/misc/fraise/go.plist
 go/misc/fraise/readme.txt
 go/misc/git/pre-commit
-go/misc/goplay/Makefile
-go/misc/goplay/README
-go/misc/goplay/doc.go
-go/misc/goplay/goplay.go
 go/misc/kate/go.xml
 go/misc/linkcheck/linkcheck.go
+go/misc/makerelease/darwin/Distribution
+go/misc/makerelease/darwin/Resources/bg.png
+go/misc/makerelease/darwin/etc/paths.d/go
+go/misc/makerelease/darwin/scripts/postinstall
+go/misc/makerelease/darwin/scripts/preinstall
+go/misc/makerelease/makerelease.go
+go/misc/makerelease/windows/LICENSE.rtf
+go/misc/makerelease/windows/README.txt
+go/misc/makerelease/windows/images/Banner.jpg
+go/misc/makerelease/windows/images/Dialog.jpg
+go/misc/makerelease/windows/images/DialogLeft.jpg
+go/misc/makerelease/windows/images/gopher.ico
+go/misc/makerelease/windows/installer.wxs
+go/misc/nacl/README
+go/misc/nacl/go_nacl_386_exec
+go/misc/nacl/go_nacl_amd64p32_exec
+go/misc/nacl/mkzip.go
+go/misc/nacl/testdata/bin/placeholder
+go/misc/nacl/testdata/empty
+go/misc/nacl/testdata/group
+go/misc/nacl/testdata/hosts
+go/misc/nacl/testdata/mime.types
+go/misc/nacl/testzip.proto
 go/misc/notepadplus/README
 go/misc/notepadplus/functionList.xml
 go/misc/notepadplus/go.xml
@@ -401,6 +426,7 @@ go/pkg/freebsd_%%ARCH%%/debug/elf.a
 go/pkg/freebsd_%%ARCH%%/debug/gosym.a
 go/pkg/freebsd_%%ARCH%%/debug/macho.a
 go/pkg/freebsd_%%ARCH%%/debug/pe.a
+go/pkg/freebsd_%%ARCH%%/debug/plan9obj.a
 go/pkg/freebsd_%%ARCH%%/encoding.a
 go/pkg/freebsd_%%ARCH%%/encoding/ascii85.a
 go/pkg/freebsd_%%ARCH%%/encoding/asn1.a
@@ -500,7 +526,7 @@ go/pkg/obj/freebsd_%%ARCH%%/lib9.a
 go/pkg/obj/freebsd_%%ARCH%%/libbio.a
 go/pkg/obj/freebsd_%%ARCH%%/libcc.a
 go/pkg/obj/freebsd_%%ARCH%%/libgc.a
-go/pkg/obj/freebsd_%%ARCH%%/libmach.a
+go/pkg/obj/freebsd_%%ARCH%%/liblink.a
 go/pkg/tool/freebsd_%%ARCH%%/%%GOOBJ%%a
 go/pkg/tool/freebsd_%%ARCH%%/%%GOOBJ%%c
 go/pkg/tool/freebsd_%%ARCH%%/%%GOOBJ%%g
@@ -549,7 +575,6 @@ go/src/cmd/5g/gg.h
 go/src/cmd/5g/ggen.c
 go/src/cmd/5g/gobj.c
 go/src/cmd/5g/gsubr.c
-go/src/cmd/5g/list.c
 go/src/cmd/5g/opt.h
 go/src/cmd/5g/peep.c
 go/src/cmd/5g/prog.c
@@ -563,11 +588,6 @@ go/src/cmd/5l/list.c
 go/src/cmd/5l/mkenam
 go/src/cmd/5l/noop.c
 go/src/cmd/5l/obj.c
-go/src/cmd/5l/optab.c
-go/src/cmd/5l/pass.c
-go/src/cmd/5l/prof.c
-go/src/cmd/5l/softfloat.c
-go/src/cmd/5l/span.c
 go/src/cmd/6a/Makefile
 go/src/cmd/6a/a.h
 go/src/cmd/6a/a.y
@@ -596,7 +616,6 @@ go/src/cmd/6g/gg.h
 go/src/cmd/6g/ggen.c
 go/src/cmd/6g/gobj.c
 go/src/cmd/6g/gsubr.c
-go/src/cmd/6g/list.c
 go/src/cmd/6g/opt.h
 go/src/cmd/6g/peep.c
 go/src/cmd/6g/prog.c
@@ -605,15 +624,10 @@ go/src/cmd/6l/6.out.h
 go/src/cmd/6l/Makefile
 go/src/cmd/6l/asm.c
 go/src/cmd/6l/doc.go
-%%AMD64_ONLY%%go/src/cmd/6l/enam.c
 go/src/cmd/6l/l.h
 go/src/cmd/6l/list.c
 go/src/cmd/6l/mkenam
 go/src/cmd/6l/obj.c
-go/src/cmd/6l/optab.c
-go/src/cmd/6l/pass.c
-go/src/cmd/6l/prof.c
-go/src/cmd/6l/span.c
 go/src/cmd/8a/Makefile
 go/src/cmd/8a/a.h
 go/src/cmd/8a/a.y
@@ -644,7 +658,6 @@ go/src/cmd/8g/gg.h
 go/src/cmd/8g/ggen.c
 go/src/cmd/8g/gobj.c
 go/src/cmd/8g/gsubr.c
-go/src/cmd/8g/list.c
 go/src/cmd/8g/opt.h
 go/src/cmd/8g/peep.c
 go/src/cmd/8g/prog.c
@@ -653,16 +666,12 @@ go/src/cmd/8l/8.out.h
 go/src/cmd/8l/Makefile
 go/src/cmd/8l/asm.c
 go/src/cmd/8l/doc.go
-%%I386_ONLY%%go/src/cmd/8l/enam.c
 go/src/cmd/8l/l.h
 go/src/cmd/8l/list.c
 go/src/cmd/8l/mkenam
 go/src/cmd/8l/obj.c
-go/src/cmd/8l/optab.c
-go/src/cmd/8l/pass.c
-go/src/cmd/8l/prof.c
-go/src/cmd/8l/span.c
-go/src/cmd/addr2line/main.c
+go/src/cmd/addr2line/addr2line_test.go
+go/src/cmd/addr2line/main.go
 go/src/cmd/api/goapi.go
 go/src/cmd/api/goapi_test.go
 go/src/cmd/api/run.go
@@ -730,6 +739,7 @@ go/src/cmd/fix/printerconfig_test.go
 go/src/cmd/fix/typecheck.go
 go/src/cmd/gc/Makefile
 go/src/cmd/gc/align.c
+go/src/cmd/gc/array.c
 go/src/cmd/gc/bisonerrors
 go/src/cmd/gc/bits.c
 go/src/cmd/gc/builtin.c
@@ -761,6 +771,7 @@ go/src/cmd/gc/obj.c
 go/src/cmd/gc/opnames.h
 go/src/cmd/gc/order.c
 go/src/cmd/gc/pgen.c
+go/src/cmd/gc/plive.c
 go/src/cmd/gc/popt.c
 go/src/cmd/gc/popt.h
 go/src/cmd/gc/racewalk.c
@@ -781,6 +792,7 @@ go/src/cmd/gc/yerr.h
 go/src/cmd/go/bootstrap.go
 go/src/cmd/go/build.go
 go/src/cmd/go/clean.go
+go/src/cmd/go/context.go
 go/src/cmd/go/discovery.go
 go/src/cmd/go/doc.go
 go/src/cmd/go/env.go
@@ -795,6 +807,7 @@ go/src/cmd/go/main.go
 go/src/cmd/go/match_test.go
 go/src/cmd/go/mkdoc.sh
 go/src/cmd/go/pkg.go
+go/src/cmd/go/pkg_test.go
 go/src/cmd/go/run.go
 go/src/cmd/go/script
 go/src/cmd/go/script.txt
@@ -804,6 +817,9 @@ go/src/cmd/go/signal_unix.go
 go/src/cmd/go/tag_test.go
 go/src/cmd/go/test.bash
 go/src/cmd/go/test.go
+go/src/cmd/go/testdata/cgocover/p.go
+go/src/cmd/go/testdata/cgocover/p_test.go
+go/src/cmd/go/testdata/dep_test.go
 go/src/cmd/go/testdata/example1_test.go
 go/src/cmd/go/testdata/example2_test.go
 go/src/cmd/go/testdata/local/easy.go
@@ -820,13 +836,23 @@ go/src/cmd/go/testdata/src/cgotest/m.go
 go/src/cmd/go/testdata/src/go-cmd-test/helloworld.go
 go/src/cmd/go/testdata/src/main_test/m.go
 go/src/cmd/go/testdata/src/main_test/m_test.go
+go/src/cmd/go/testdata/src/notest/hello.go
 go/src/cmd/go/testdata/src/syntaxerror/x.go
 go/src/cmd/go/testdata/src/syntaxerror/x_test.go
+go/src/cmd/go/testdata/src/testcycle/p1/p1.go
+go/src/cmd/go/testdata/src/testcycle/p1/p1_test.go
+go/src/cmd/go/testdata/src/testcycle/p2/p2.go
+go/src/cmd/go/testdata/src/testcycle/p3/p3.go
+go/src/cmd/go/testdata/src/testcycle/p3/p3_test.go
+go/src/cmd/go/testdata/src/xtestonly/f.go
+go/src/cmd/go/testdata/src/xtestonly/f_test.go
+go/src/cmd/go/testdata/standalone_test.go
 go/src/cmd/go/testdata/testimport/p.go
 go/src/cmd/go/testdata/testimport/p1/p1.go
 go/src/cmd/go/testdata/testimport/p2/p2.go
 go/src/cmd/go/testdata/testimport/p_test.go
 go/src/cmd/go/testdata/testimport/x_test.go
+go/src/cmd/go/testdata/testonly/p_test.go
 go/src/cmd/go/testflag.go
 go/src/cmd/go/tool.go
 go/src/cmd/go/vcs.go
@@ -903,17 +929,35 @@ go/src/cmd/ld/lib.c
 go/src/cmd/ld/lib.h
 go/src/cmd/ld/macho.c
 go/src/cmd/ld/macho.h
+go/src/cmd/ld/pass.c
+go/src/cmd/ld/pcln.c
 go/src/cmd/ld/pe.c
 go/src/cmd/ld/pe.h
+go/src/cmd/ld/pobj.c
 go/src/cmd/ld/symtab.c
 go/src/cmd/ld/textflag.h
-go/src/cmd/nm/Makefile
+go/src/cmd/nm/debug_goobj.go
 go/src/cmd/nm/doc.go
-go/src/cmd/nm/nm.c
-go/src/cmd/objdump/main.c
-go/src/cmd/pack/Makefile
-go/src/cmd/pack/ar.c
+go/src/cmd/nm/elf.go
+go/src/cmd/nm/goobj.go
+go/src/cmd/nm/macho.go
+go/src/cmd/nm/nm.go
+go/src/cmd/nm/nm_test.go
+go/src/cmd/nm/pe.go
+go/src/cmd/nm/plan9obj.go
+go/src/cmd/objdump/Makefile
+go/src/cmd/objdump/armasm.go
+go/src/cmd/objdump/elf.go
+go/src/cmd/objdump/macho.go
+go/src/cmd/objdump/main.go
+go/src/cmd/objdump/objdump_test.go
+go/src/cmd/objdump/pe.go
+go/src/cmd/objdump/plan9obj.go
+go/src/cmd/objdump/testdata/fmthello.go
+go/src/cmd/objdump/x86.go
 go/src/cmd/pack/doc.go
+go/src/cmd/pack/pack.go
+go/src/cmd/pack/pack_test.go
 go/src/cmd/yacc/Makefile
 go/src/cmd/yacc/doc.go
 go/src/cmd/yacc/expr.y
@@ -940,6 +984,7 @@ go/src/lib9/flag.c
 go/src/lib9/fmt/charstod.c
 go/src/lib9/fmt/dofmt.c
 go/src/lib9/fmt/dorfmt.c
+go/src/lib9/fmt/errfmt.c
 go/src/lib9/fmt/fltfmt.c
 go/src/lib9/fmt/fmt.c
 go/src/lib9/fmt/fmtdef.h
@@ -995,7 +1040,7 @@ go/src/lib9/utf/Makefile
 go/src/lib9/utf/mkrunetype.c
 go/src/lib9/utf/rune.c
 go/src/lib9/utf/runetype.c
-go/src/lib9/utf/runetypebody-6.2.0.h
+go/src/lib9/utf/runetypebody-6.3.0.h
 go/src/lib9/utf/utf.h
 go/src/lib9/utf/utfdef.h
 go/src/lib9/utf/utfecpy.c
@@ -1023,38 +1068,31 @@ go/src/libbio/brdstr.c
 go/src/libbio/bread.c
 go/src/libbio/bseek.c
 go/src/libbio/bwrite.c
-go/src/libmach/5.c
-go/src/libmach/5db.c
-go/src/libmach/5obj.c
-go/src/libmach/6.c
-go/src/libmach/6obj.c
-go/src/libmach/8.c
-go/src/libmach/8db.c
-go/src/libmach/8obj.c
-go/src/libmach/Makefile
-go/src/libmach/access.c
-go/src/libmach/darwin.c
-go/src/libmach/dragonfly.c
-go/src/libmach/elf.h
-go/src/libmach/executable.c
-go/src/libmach/fakeobj.c
-go/src/libmach/freebsd.c
-go/src/libmach/linux.c
-go/src/libmach/machdata.c
-go/src/libmach/macho.h
-go/src/libmach/map.c
-go/src/libmach/netbsd.c
-go/src/libmach/obj.c
-go/src/libmach/obj.h
-go/src/libmach/openbsd.c
-go/src/libmach/plan9.c
-go/src/libmach/setmach.c
-go/src/libmach/swap.c
-go/src/libmach/sym.c
-go/src/libmach/windows.c
+go/src/liblink/Makefile
+go/src/liblink/anames5.c
+go/src/liblink/anames6.c
+go/src/liblink/anames8.c
+go/src/liblink/asm5.c
+go/src/liblink/asm6.c
+go/src/liblink/asm8.c
+go/src/liblink/data.c
+go/src/liblink/go.c
+go/src/liblink/ld.c
+go/src/liblink/list5.c
+go/src/liblink/list6.c
+go/src/liblink/list8.c
+go/src/liblink/obj.c
+go/src/liblink/obj5.c
+go/src/liblink/obj6.c
+go/src/liblink/obj8.c
+go/src/liblink/objfile.c
+go/src/liblink/pass.c
+go/src/liblink/pcln.c
+go/src/liblink/sym.c
 go/src/make.bash
 go/src/make.bat
 go/src/make.rc
+go/src/nacltest.bash
 go/src/pkg/archive/tar/common.go
 go/src/pkg/archive/tar/example_test.go
 go/src/pkg/archive/tar/reader.go
@@ -1068,11 +1106,14 @@ go/src/pkg/archive/tar/testdata/nil-uid.tar
 go/src/pkg/archive/tar/testdata/pax.tar
 go/src/pkg/archive/tar/testdata/small.txt
 go/src/pkg/archive/tar/testdata/small2.txt
+go/src/pkg/archive/tar/testdata/sparse-formats.tar
 go/src/pkg/archive/tar/testdata/star.tar
 go/src/pkg/archive/tar/testdata/ustar.tar
 go/src/pkg/archive/tar/testdata/v7.tar
+go/src/pkg/archive/tar/testdata/writer-big-long.tar
 go/src/pkg/archive/tar/testdata/writer-big.tar
 go/src/pkg/archive/tar/testdata/writer.tar
+go/src/pkg/archive/tar/testdata/xattrs.tar
 go/src/pkg/archive/tar/writer.go
 go/src/pkg/archive/tar/writer_test.go
 go/src/pkg/archive/zip/example_test.go
@@ -1092,6 +1133,7 @@ go/src/pkg/archive/zip/testdata/test-trailing-junk.zip
 go/src/pkg/archive/zip/testdata/test.zip
 go/src/pkg/archive/zip/testdata/unix.zip
 go/src/pkg/archive/zip/testdata/winxp.zip
+go/src/pkg/archive/zip/testdata/zip64-2.zip
 go/src/pkg/archive/zip/testdata/zip64.zip
 go/src/pkg/archive/zip/writer.go
 go/src/pkg/archive/zip/writer_test.go
@@ -1169,6 +1211,7 @@ go/src/pkg/crypto/aes/cipher.go
 go/src/pkg/crypto/aes/cipher_asm.go
 go/src/pkg/crypto/aes/cipher_generic.go
 go/src/pkg/crypto/aes/const.go
+go/src/pkg/crypto/cipher/benchmark_test.go
 go/src/pkg/crypto/cipher/cbc.go
 go/src/pkg/crypto/cipher/cbc_aes_test.go
 go/src/pkg/crypto/cipher/cfb.go
@@ -1184,6 +1227,8 @@ go/src/pkg/crypto/cipher/gcm_test.go
 go/src/pkg/crypto/cipher/io.go
 go/src/pkg/crypto/cipher/ofb.go
 go/src/pkg/crypto/cipher/ofb_test.go
+go/src/pkg/crypto/cipher/xor.go
+go/src/pkg/crypto/cipher/xor_test.go
 go/src/pkg/crypto/crypto.go
 go/src/pkg/crypto/des/block.go
 go/src/pkg/crypto/des/cipher.go
@@ -1209,17 +1254,21 @@ go/src/pkg/crypto/md5/md5_test.go
 go/src/pkg/crypto/md5/md5block.go
 go/src/pkg/crypto/md5/md5block_386.s
 go/src/pkg/crypto/md5/md5block_amd64.s
+go/src/pkg/crypto/md5/md5block_amd64p32.s
 go/src/pkg/crypto/md5/md5block_arm.s
 go/src/pkg/crypto/md5/md5block_decl.go
+go/src/pkg/crypto/md5/md5block_generic.go
 go/src/pkg/crypto/rand/example_test.go
 go/src/pkg/crypto/rand/rand.go
 go/src/pkg/crypto/rand/rand_test.go
 go/src/pkg/crypto/rand/rand_unix.go
 go/src/pkg/crypto/rand/rand_windows.go
 go/src/pkg/crypto/rand/util.go
+go/src/pkg/crypto/rand/util_test.go
 go/src/pkg/crypto/rc4/rc4.go
 go/src/pkg/crypto/rc4/rc4_386.s
 go/src/pkg/crypto/rc4/rc4_amd64.s
+go/src/pkg/crypto/rc4/rc4_amd64p32.s
 go/src/pkg/crypto/rc4/rc4_arm.s
 go/src/pkg/crypto/rc4/rc4_asm.go
 go/src/pkg/crypto/rc4/rc4_ref.go
@@ -1237,13 +1286,21 @@ go/src/pkg/crypto/sha1/sha1_test.go
 go/src/pkg/crypto/sha1/sha1block.go
 go/src/pkg/crypto/sha1/sha1block_386.s
 go/src/pkg/crypto/sha1/sha1block_amd64.s
+go/src/pkg/crypto/sha1/sha1block_amd64p32.s
+go/src/pkg/crypto/sha1/sha1block_arm.s
 go/src/pkg/crypto/sha1/sha1block_decl.go
+go/src/pkg/crypto/sha1/sha1block_generic.go
 go/src/pkg/crypto/sha256/sha256.go
 go/src/pkg/crypto/sha256/sha256_test.go
 go/src/pkg/crypto/sha256/sha256block.go
+go/src/pkg/crypto/sha256/sha256block_386.s
+go/src/pkg/crypto/sha256/sha256block_amd64.s
+go/src/pkg/crypto/sha256/sha256block_decl.go
 go/src/pkg/crypto/sha512/sha512.go
 go/src/pkg/crypto/sha512/sha512_test.go
 go/src/pkg/crypto/sha512/sha512block.go
+go/src/pkg/crypto/sha512/sha512block_amd64.s
+go/src/pkg/crypto/sha512/sha512block_decl.go
 go/src/pkg/crypto/subtle/constant_time.go
 go/src/pkg/crypto/subtle/constant_time_test.go
 go/src/pkg/crypto/tls/alert.go
@@ -1251,6 +1308,7 @@ go/src/pkg/crypto/tls/cipher_suites.go
 go/src/pkg/crypto/tls/common.go
 go/src/pkg/crypto/tls/conn.go
 go/src/pkg/crypto/tls/conn_test.go
+go/src/pkg/crypto/tls/example_test.go
 go/src/pkg/crypto/tls/generate_cert.go
 go/src/pkg/crypto/tls/handshake_client.go
 go/src/pkg/crypto/tls/handshake_client_test.go
@@ -1258,13 +1316,54 @@ go/src/pkg/crypto/tls/handshake_messages.go
 go/src/pkg/crypto/tls/handshake_messages_test.go
 go/src/pkg/crypto/tls/handshake_server.go
 go/src/pkg/crypto/tls/handshake_server_test.go
+go/src/pkg/crypto/tls/handshake_test.go
 go/src/pkg/crypto/tls/key_agreement.go
 go/src/pkg/crypto/tls/prf.go
 go/src/pkg/crypto/tls/prf_test.go
+go/src/pkg/crypto/tls/testdata/Client-TLSv10-ClientCert-ECDSA-ECDSA
+go/src/pkg/crypto/tls/testdata/Client-TLSv10-ClientCert-ECDSA-RSA
+go/src/pkg/crypto/tls/testdata/Client-TLSv10-ClientCert-RSA-ECDSA
+go/src/pkg/crypto/tls/testdata/Client-TLSv10-ClientCert-RSA-RSA
+go/src/pkg/crypto/tls/testdata/Client-TLSv10-ECDHE-ECDSA-AES
+go/src/pkg/crypto/tls/testdata/Client-TLSv10-ECDHE-RSA-AES
+go/src/pkg/crypto/tls/testdata/Client-TLSv10-RSA-RC4
+go/src/pkg/crypto/tls/testdata/Client-TLSv11-ECDHE-ECDSA-AES
+go/src/pkg/crypto/tls/testdata/Client-TLSv11-ECDHE-RSA-AES
+go/src/pkg/crypto/tls/testdata/Client-TLSv11-RSA-RC4
+go/src/pkg/crypto/tls/testdata/Client-TLSv12-ClientCert-ECDSA-ECDSA
+go/src/pkg/crypto/tls/testdata/Client-TLSv12-ClientCert-ECDSA-RSA
+go/src/pkg/crypto/tls/testdata/Client-TLSv12-ClientCert-RSA-ECDSA
+go/src/pkg/crypto/tls/testdata/Client-TLSv12-ClientCert-RSA-RSA
+go/src/pkg/crypto/tls/testdata/Client-TLSv12-ECDHE-ECDSA-AES
+go/src/pkg/crypto/tls/testdata/Client-TLSv12-ECDHE-ECDSA-AES-GCM
+go/src/pkg/crypto/tls/testdata/Client-TLSv12-ECDHE-RSA-AES
+go/src/pkg/crypto/tls/testdata/Client-TLSv12-RSA-RC4
+go/src/pkg/crypto/tls/testdata/Server-SSLv3-RSA-3DES
+go/src/pkg/crypto/tls/testdata/Server-SSLv3-RSA-AES
+go/src/pkg/crypto/tls/testdata/Server-SSLv3-RSA-RC4
+go/src/pkg/crypto/tls/testdata/Server-TLSv10-ECDHE-ECDSA-AES
+go/src/pkg/crypto/tls/testdata/Server-TLSv10-RSA-3DES
+go/src/pkg/crypto/tls/testdata/Server-TLSv10-RSA-AES
+go/src/pkg/crypto/tls/testdata/Server-TLSv10-RSA-RC4
+go/src/pkg/crypto/tls/testdata/Server-TLSv11-RSA-RC4
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-CipherSuiteCertPreferenceECDSA
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-CipherSuiteCertPreferenceRSA
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-ClientAuthRequestedAndECDSAGiven
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-ClientAuthRequestedAndGiven
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-ClientAuthRequestedNotGiven
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-ECDHE-ECDSA-AES
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-IssueTicket
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-RSA-3DES
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-RSA-AES
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-RSA-AES-GCM
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-RSA-RC4
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-Resume
+go/src/pkg/crypto/tls/testdata/Server-TLSv12-SNI
 go/src/pkg/crypto/tls/ticket.go
 go/src/pkg/crypto/tls/tls.go
 go/src/pkg/crypto/tls/tls_test.go
 go/src/pkg/crypto/x509/cert_pool.go
+go/src/pkg/crypto/x509/example_test.go
 go/src/pkg/crypto/x509/pem_decrypt.go
 go/src/pkg/crypto/x509/pem_decrypt_test.go
 go/src/pkg/crypto/x509/pkcs1.go
@@ -1272,9 +1371,11 @@ go/src/pkg/crypto/x509/pkcs8.go
 go/src/pkg/crypto/x509/pkcs8_test.go
 go/src/pkg/crypto/x509/pkix/pkix.go
 go/src/pkg/crypto/x509/root.go
+go/src/pkg/crypto/x509/root_cgo_darwin.go
 go/src/pkg/crypto/x509/root_darwin.go
+go/src/pkg/crypto/x509/root_darwin_test.go
+go/src/pkg/crypto/x509/root_nocgo_darwin.go
 go/src/pkg/crypto/x509/root_plan9.go
-go/src/pkg/crypto/x509/root_stub.go
 go/src/pkg/crypto/x509/root_unix.go
 go/src/pkg/crypto/x509/root_windows.go
 go/src/pkg/crypto/x509/sec1.go
@@ -1283,6 +1384,7 @@ go/src/pkg/crypto/x509/verify.go
 go/src/pkg/crypto/x509/verify_test.go
 go/src/pkg/crypto/x509/x509.go
 go/src/pkg/crypto/x509/x509_test.go
+go/src/pkg/crypto/x509/x509_test_import.go
 go/src/pkg/database/sql/convert.go
 go/src/pkg/database/sql/convert_test.go
 go/src/pkg/database/sql/doc.txt
@@ -1299,9 +1401,11 @@ go/src/pkg/debug/dwarf/entry.go
 go/src/pkg/debug/dwarf/open.go
 go/src/pkg/debug/dwarf/testdata/typedef.c
 go/src/pkg/debug/dwarf/testdata/typedef.elf
+go/src/pkg/debug/dwarf/testdata/typedef.elf4
 go/src/pkg/debug/dwarf/testdata/typedef.macho
 go/src/pkg/debug/dwarf/type.go
 go/src/pkg/debug/dwarf/type_test.go
+go/src/pkg/debug/dwarf/typeunit.go
 go/src/pkg/debug/dwarf/unit.go
 go/src/pkg/debug/elf/elf.go
 go/src/pkg/debug/elf/elf_test.go
@@ -1310,18 +1414,22 @@ go/src/pkg/debug/elf/file_test.go
 go/src/pkg/debug/elf/testdata/gcc-386-freebsd-exec
 go/src/pkg/debug/elf/testdata/gcc-amd64-linux-exec
 go/src/pkg/debug/elf/testdata/gcc-amd64-openbsd-debug-with-rela.obj
+go/src/pkg/debug/elf/testdata/go-relocation-test-clang-x86.obj
 go/src/pkg/debug/elf/testdata/go-relocation-test-gcc424-x86-64.obj
 go/src/pkg/debug/elf/testdata/go-relocation-test-gcc441-x86-64.obj
 go/src/pkg/debug/elf/testdata/go-relocation-test-gcc441-x86.obj
 go/src/pkg/debug/elf/testdata/hello-world-core.gz
+go/src/pkg/debug/elf/testdata/hello.c
 go/src/pkg/debug/gosym/pclinetest.asm
 go/src/pkg/debug/gosym/pclinetest.h
 go/src/pkg/debug/gosym/pclntab.go
 go/src/pkg/debug/gosym/pclntab_test.go
 go/src/pkg/debug/gosym/symtab.go
+go/src/pkg/debug/macho/fat.go
 go/src/pkg/debug/macho/file.go
 go/src/pkg/debug/macho/file_test.go
 go/src/pkg/debug/macho/macho.go
+go/src/pkg/debug/macho/testdata/fat-gcc-386-amd64-darwin-exec
 go/src/pkg/debug/macho/testdata/gcc-386-darwin-exec
 go/src/pkg/debug/macho/testdata/gcc-amd64-darwin-exec
 go/src/pkg/debug/macho/testdata/gcc-amd64-darwin-exec-debug
@@ -1331,7 +1439,15 @@ go/src/pkg/debug/pe/file_test.go
 go/src/pkg/debug/pe/pe.go
 go/src/pkg/debug/pe/testdata/gcc-386-mingw-exec
 go/src/pkg/debug/pe/testdata/gcc-386-mingw-obj
+go/src/pkg/debug/pe/testdata/gcc-amd64-mingw-exec
+go/src/pkg/debug/pe/testdata/gcc-amd64-mingw-obj
 go/src/pkg/debug/pe/testdata/hello.c
+go/src/pkg/debug/plan9obj/file.go
+go/src/pkg/debug/plan9obj/file_test.go
+go/src/pkg/debug/plan9obj/plan9obj.go
+go/src/pkg/debug/plan9obj/testdata/386-plan9-exec
+go/src/pkg/debug/plan9obj/testdata/amd64-plan9-exec
+go/src/pkg/debug/plan9obj/testdata/hello.c
 go/src/pkg/encoding/ascii85/ascii85.go
 go/src/pkg/encoding/ascii85/ascii85_test.go
 go/src/pkg/encoding/asn1/asn1.go
@@ -1380,6 +1496,8 @@ go/src/pkg/encoding/json/decode_test.go
 go/src/pkg/encoding/json/encode.go
 go/src/pkg/encoding/json/encode_test.go
 go/src/pkg/encoding/json/example_test.go
+go/src/pkg/encoding/json/fold.go
+go/src/pkg/encoding/json/fold_test.go
 go/src/pkg/encoding/json/indent.go
 go/src/pkg/encoding/json/scanner.go
 go/src/pkg/encoding/json/scanner_test.go
@@ -1545,8 +1663,9 @@ go/src/pkg/go/token/token.go
 go/src/pkg/hash/adler32/adler32.go
 go/src/pkg/hash/adler32/adler32_test.go
 go/src/pkg/hash/crc32/crc32.go
-go/src/pkg/hash/crc32/crc32_amd64.go
 go/src/pkg/hash/crc32/crc32_amd64.s
+go/src/pkg/hash/crc32/crc32_amd64p32.s
+go/src/pkg/hash/crc32/crc32_amd64x.go
 go/src/pkg/hash/crc32/crc32_generic.go
 go/src/pkg/hash/crc32/crc32_test.go
 go/src/pkg/hash/crc64/crc64.go
@@ -1677,6 +1796,8 @@ go/src/pkg/image/testdata/video-001.q50.440.jpeg
 go/src/pkg/image/testdata/video-001.q50.440.progressive.jpeg
 go/src/pkg/image/testdata/video-001.q50.444.jpeg
 go/src/pkg/image/testdata/video-001.q50.444.progressive.jpeg
+go/src/pkg/image/testdata/video-001.separate.dc.progression.jpeg
+go/src/pkg/image/testdata/video-001.separate.dc.progression.progressive.jpeg
 go/src/pkg/image/testdata/video-005.gray.gif
 go/src/pkg/image/testdata/video-005.gray.jpeg
 go/src/pkg/image/testdata/video-005.gray.png
@@ -1691,7 +1812,6 @@ go/src/pkg/index/suffixarray/suffixarray.go
 go/src/pkg/index/suffixarray/suffixarray_test.go
 go/src/pkg/io/io.go
 go/src/pkg/io/io_test.go
-go/src/pkg/io/ioutil/blackhole.go
 go/src/pkg/io/ioutil/ioutil.go
 go/src/pkg/io/ioutil/ioutil_test.go
 go/src/pkg/io/ioutil/tempfile.go
@@ -1700,6 +1820,7 @@ go/src/pkg/io/multi.go
 go/src/pkg/io/multi_test.go
 go/src/pkg/io/pipe.go
 go/src/pkg/io/pipe_test.go
+go/src/pkg/log/example_test.go
 go/src/pkg/log/log.go
 go/src/pkg/log/log_test.go
 go/src/pkg/log/syslog/syslog.go
@@ -1710,26 +1831,31 @@ go/src/pkg/log/syslog/syslog_windows.go
 go/src/pkg/math/abs.go
 go/src/pkg/math/abs_386.s
 go/src/pkg/math/abs_amd64.s
+go/src/pkg/math/abs_amd64p32.s
 go/src/pkg/math/abs_arm.s
 go/src/pkg/math/acosh.go
 go/src/pkg/math/all_test.go
 go/src/pkg/math/asin.go
 go/src/pkg/math/asin_386.s
 go/src/pkg/math/asin_amd64.s
+go/src/pkg/math/asin_amd64p32.s
 go/src/pkg/math/asin_arm.s
 go/src/pkg/math/asinh.go
 go/src/pkg/math/atan.go
 go/src/pkg/math/atan2.go
 go/src/pkg/math/atan2_386.s
 go/src/pkg/math/atan2_amd64.s
+go/src/pkg/math/atan2_amd64p32.s
 go/src/pkg/math/atan2_arm.s
 go/src/pkg/math/atan_386.s
 go/src/pkg/math/atan_amd64.s
+go/src/pkg/math/atan_amd64p32.s
 go/src/pkg/math/atan_arm.s
 go/src/pkg/math/atanh.go
 go/src/pkg/math/big/arith.go
 go/src/pkg/math/big/arith_386.s
 go/src/pkg/math/big/arith_amd64.s
+go/src/pkg/math/big/arith_amd64p32.s
 go/src/pkg/math/big/arith_arm.s
 go/src/pkg/math/big/arith_decl.go
 go/src/pkg/math/big/arith_test.go
@@ -1765,32 +1891,39 @@ go/src/pkg/math/copysign.go
 go/src/pkg/math/dim.go
 go/src/pkg/math/dim_386.s
 go/src/pkg/math/dim_amd64.s
+go/src/pkg/math/dim_amd64p32.s
 go/src/pkg/math/dim_arm.s
 go/src/pkg/math/erf.go
 go/src/pkg/math/exp.go
 go/src/pkg/math/exp2_386.s
 go/src/pkg/math/exp2_amd64.s
+go/src/pkg/math/exp2_amd64p32.s
 go/src/pkg/math/exp2_arm.s
 go/src/pkg/math/exp_386.s
 go/src/pkg/math/exp_amd64.s
+go/src/pkg/math/exp_amd64p32.s
 go/src/pkg/math/exp_arm.s
 go/src/pkg/math/expm1.go
 go/src/pkg/math/expm1_386.s
 go/src/pkg/math/expm1_amd64.s
+go/src/pkg/math/expm1_amd64p32.s
 go/src/pkg/math/expm1_arm.s
 go/src/pkg/math/export_test.go
 go/src/pkg/math/floor.go
 go/src/pkg/math/floor_386.s
 go/src/pkg/math/floor_amd64.s
+go/src/pkg/math/floor_amd64p32.s
 go/src/pkg/math/floor_arm.s
 go/src/pkg/math/frexp.go
 go/src/pkg/math/frexp_386.s
 go/src/pkg/math/frexp_amd64.s
+go/src/pkg/math/frexp_amd64p32.s
 go/src/pkg/math/frexp_arm.s
 go/src/pkg/math/gamma.go
 go/src/pkg/math/hypot.go
 go/src/pkg/math/hypot_386.s
 go/src/pkg/math/hypot_amd64.s
+go/src/pkg/math/hypot_amd64p32.s
 go/src/pkg/math/hypot_arm.s
 go/src/pkg/math/j0.go
 go/src/pkg/math/j1.go
@@ -1798,28 +1931,34 @@ go/src/pkg/math/jn.go
 go/src/pkg/math/ldexp.go
 go/src/pkg/math/ldexp_386.s
 go/src/pkg/math/ldexp_amd64.s
+go/src/pkg/math/ldexp_amd64p32.s
 go/src/pkg/math/ldexp_arm.s
 go/src/pkg/math/lgamma.go
 go/src/pkg/math/log.go
 go/src/pkg/math/log10.go
 go/src/pkg/math/log10_386.s
 go/src/pkg/math/log10_amd64.s
+go/src/pkg/math/log10_amd64p32.s
 go/src/pkg/math/log10_arm.s
 go/src/pkg/math/log1p.go
 go/src/pkg/math/log1p_386.s
 go/src/pkg/math/log1p_amd64.s
+go/src/pkg/math/log1p_amd64p32.s
 go/src/pkg/math/log1p_arm.s
 go/src/pkg/math/log_386.s
 go/src/pkg/math/log_amd64.s
+go/src/pkg/math/log_amd64p32.s
 go/src/pkg/math/log_arm.s
 go/src/pkg/math/logb.go
 go/src/pkg/math/mod.go
 go/src/pkg/math/mod_386.s
 go/src/pkg/math/mod_amd64.s
+go/src/pkg/math/mod_amd64p32.s
 go/src/pkg/math/mod_arm.s
 go/src/pkg/math/modf.go
 go/src/pkg/math/modf_386.s
 go/src/pkg/math/modf_amd64.s
+go/src/pkg/math/modf_amd64p32.s
 go/src/pkg/math/modf_arm.s
 go/src/pkg/math/nextafter.go
 go/src/pkg/math/pow.go
@@ -1829,35 +1968,42 @@ go/src/pkg/math/rand/exp.go
 go/src/pkg/math/rand/normal.go
 go/src/pkg/math/rand/rand.go
 go/src/pkg/math/rand/rand_test.go
+go/src/pkg/math/rand/regress_test.go
 go/src/pkg/math/rand/rng.go
 go/src/pkg/math/rand/zipf.go
 go/src/pkg/math/remainder.go
 go/src/pkg/math/remainder_386.s
 go/src/pkg/math/remainder_amd64.s
+go/src/pkg/math/remainder_amd64p32.s
 go/src/pkg/math/remainder_arm.s
 go/src/pkg/math/signbit.go
 go/src/pkg/math/sin.go
 go/src/pkg/math/sin_386.s
 go/src/pkg/math/sin_amd64.s
+go/src/pkg/math/sin_amd64p32.s
 go/src/pkg/math/sin_arm.s
 go/src/pkg/math/sincos.go
 go/src/pkg/math/sincos_386.s
 go/src/pkg/math/sincos_amd64.s
+go/src/pkg/math/sincos_amd64p32.s
 go/src/pkg/math/sincos_arm.s
 go/src/pkg/math/sinh.go
 go/src/pkg/math/sqrt.go
 go/src/pkg/math/sqrt_386.s
 go/src/pkg/math/sqrt_amd64.s
+go/src/pkg/math/sqrt_amd64p32.s
 go/src/pkg/math/sqrt_arm.s
 go/src/pkg/math/tan.go
 go/src/pkg/math/tan_386.s
 go/src/pkg/math/tan_amd64.s
+go/src/pkg/math/tan_amd64p32.s
 go/src/pkg/math/tan_arm.s
 go/src/pkg/math/tanh.go
 go/src/pkg/math/unsafe.go
 go/src/pkg/mime/grammar.go
 go/src/pkg/mime/mediatype.go
 go/src/pkg/mime/mediatype_test.go
+go/src/pkg/mime/multipart/example_test.go
 go/src/pkg/mime/multipart/formdata.go
 go/src/pkg/mime/multipart/formdata_test.go
 go/src/pkg/mime/multipart/multipart.go
@@ -1880,6 +2026,7 @@ go/src/pkg/net/cgo_netbsd.go
 go/src/pkg/net/cgo_openbsd.go
 go/src/pkg/net/cgo_stub.go
 go/src/pkg/net/cgo_unix.go
+go/src/pkg/net/cgo_unix_test.go
 go/src/pkg/net/conn_test.go
 go/src/pkg/net/dial.go
 go/src/pkg/net/dial_gen.go
@@ -1887,9 +2034,11 @@ go/src/pkg/net/dial_gen_test.go
 go/src/pkg/net/dial_test.go
 go/src/pkg/net/dialgoogle_test.go
 go/src/pkg/net/dnsclient.go
+go/src/pkg/net/dnsclient_test.go
 go/src/pkg/net/dnsclient_unix.go
 go/src/pkg/net/dnsclient_unix_test.go
 go/src/pkg/net/dnsconfig_unix.go
+go/src/pkg/net/dnsconfig_unix_test.go
 go/src/pkg/net/dnsmsg.go
 go/src/pkg/net/dnsmsg_test.go
 go/src/pkg/net/dnsname_test.go
@@ -1898,6 +2047,7 @@ go/src/pkg/net/example_test.go
 go/src/pkg/net/fd_mutex.go
 go/src/pkg/net/fd_mutex_test.go
 go/src/pkg/net/fd_plan9.go
+go/src/pkg/net/fd_poll_nacl.go
 go/src/pkg/net/fd_poll_runtime.go
 go/src/pkg/net/fd_unix.go
 go/src/pkg/net/fd_unix_test.go
@@ -1947,6 +2097,7 @@ go/src/pkg/net/http/httputil/chunked.go
 go/src/pkg/net/http/httputil/chunked_test.go
 go/src/pkg/net/http/httputil/dump.go
 go/src/pkg/net/http/httputil/dump_test.go
+go/src/pkg/net/http/httputil/httputil.go
 go/src/pkg/net/http/httputil/persist.go
 go/src/pkg/net/http/httputil/reverseproxy.go
 go/src/pkg/net/http/httputil/reverseproxy_test.go
@@ -1956,6 +2107,7 @@ go/src/pkg/net/http/lex_test.go
 go/src/pkg/net/http/npn_test.go
 go/src/pkg/net/http/pprof/pprof.go
 go/src/pkg/net/http/proxy_test.go
+go/src/pkg/net/http/race.go
 go/src/pkg/net/http/range_test.go
 go/src/pkg/net/http/readrequest_test.go
 go/src/pkg/net/http/request.go
@@ -2016,6 +2168,8 @@ go/src/pkg/net/mockserver_test.go
 go/src/pkg/net/multicast_test.go
 go/src/pkg/net/net.go
 go/src/pkg/net/net_test.go
+go/src/pkg/net/net_windows_test.go
+go/src/pkg/net/netgo_unix_test.go
 go/src/pkg/net/packetconn_test.go
 go/src/pkg/net/parse.go
 go/src/pkg/net/parse_test.go
@@ -2028,6 +2182,7 @@ go/src/pkg/net/protoconn_test.go
 go/src/pkg/net/race.go
 go/src/pkg/net/race0.go
 go/src/pkg/net/rpc/client.go
+go/src/pkg/net/rpc/client_test.go
 go/src/pkg/net/rpc/debug.go
 go/src/pkg/net/rpc/jsonrpc/all_test.go
 go/src/pkg/net/rpc/jsonrpc/client.go
@@ -2042,6 +2197,7 @@ go/src/pkg/net/sendfile_windows.go
 go/src/pkg/net/server_test.go
 go/src/pkg/net/singleflight.go
 go/src/pkg/net/smtp/auth.go
+go/src/pkg/net/smtp/example_test.go
 go/src/pkg/net/smtp/smtp.go
 go/src/pkg/net/smtp/smtp_test.go
 go/src/pkg/net/sock_bsd.go
@@ -2049,14 +2205,18 @@ go/src/pkg/net/sock_cloexec.go
 go/src/pkg/net/sock_linux.go
 go/src/pkg/net/sock_plan9.go
 go/src/pkg/net/sock_posix.go
+go/src/pkg/net/sock_solaris.go
 go/src/pkg/net/sock_windows.go
 go/src/pkg/net/sockopt_bsd.go
 go/src/pkg/net/sockopt_linux.go
+go/src/pkg/net/sockopt_plan9.go
 go/src/pkg/net/sockopt_posix.go
+go/src/pkg/net/sockopt_solaris.go
 go/src/pkg/net/sockopt_windows.go
 go/src/pkg/net/sockoptip_bsd.go
 go/src/pkg/net/sockoptip_linux.go
 go/src/pkg/net/sockoptip_posix.go
+go/src/pkg/net/sockoptip_stub.go
 go/src/pkg/net/sockoptip_windows.go
 go/src/pkg/net/sys_cloexec.go
 go/src/pkg/net/tcp_test.go
@@ -2064,14 +2224,18 @@ go/src/pkg/net/tcpsock.go
 go/src/pkg/net/tcpsock_plan9.go
 go/src/pkg/net/tcpsock_posix.go
 go/src/pkg/net/tcpsockopt_darwin.go
+go/src/pkg/net/tcpsockopt_dragonfly.go
 go/src/pkg/net/tcpsockopt_openbsd.go
+go/src/pkg/net/tcpsockopt_plan9.go
 go/src/pkg/net/tcpsockopt_posix.go
+go/src/pkg/net/tcpsockopt_solaris.go
 go/src/pkg/net/tcpsockopt_unix.go
 go/src/pkg/net/tcpsockopt_windows.go
 go/src/pkg/net/testdata/hosts
 go/src/pkg/net/testdata/hosts_singleline
 go/src/pkg/net/testdata/igmp
 go/src/pkg/net/testdata/igmp6
+go/src/pkg/net/testdata/resolv.conf
 go/src/pkg/net/textproto/header.go
 go/src/pkg/net/textproto/pipeline.go
 go/src/pkg/net/textproto/reader.go
@@ -2092,6 +2256,7 @@ go/src/pkg/net/unixsock_posix.go
 go/src/pkg/net/url/example_test.go
 go/src/pkg/net/url/url.go
 go/src/pkg/net/url/url_test.go
+go/src/pkg/net/z_last_test.go
 go/src/pkg/os/dir_plan9.go
 go/src/pkg/os/dir_unix.go
 go/src/pkg/os/dir_windows.go
@@ -2148,14 +2313,21 @@ go/src/pkg/os/stat_darwin.go
 go/src/pkg/os/stat_dragonfly.go
 go/src/pkg/os/stat_freebsd.go
 go/src/pkg/os/stat_linux.go
+go/src/pkg/os/stat_nacl.go
 go/src/pkg/os/stat_netbsd.go
 go/src/pkg/os/stat_openbsd.go
 go/src/pkg/os/stat_plan9.go
+go/src/pkg/os/stat_solaris.go
 go/src/pkg/os/stat_windows.go
 go/src/pkg/os/str.go
 go/src/pkg/os/sys_bsd.go
+go/src/pkg/os/sys_darwin.go
+go/src/pkg/os/sys_freebsd.go
 go/src/pkg/os/sys_linux.go
+go/src/pkg/os/sys_nacl.go
 go/src/pkg/os/sys_plan9.go
+go/src/pkg/os/sys_solaris.go
+go/src/pkg/os/sys_unix.go
 go/src/pkg/os/sys_windows.go
 go/src/pkg/os/types.go
 go/src/pkg/os/types_notwin.go
@@ -2169,6 +2341,7 @@ go/src/pkg/os/user/user.go
 go/src/pkg/os/user/user_test.go
 go/src/pkg/path/example_test.go
 go/src/pkg/path/filepath/example_unix_test.go
+go/src/pkg/path/filepath/export_test.go
 go/src/pkg/path/filepath/match.go
 go/src/pkg/path/filepath/match_test.go
 go/src/pkg/path/filepath/path.go
@@ -2186,6 +2359,7 @@ go/src/pkg/path/path_test.go
 go/src/pkg/reflect/all_test.go
 go/src/pkg/reflect/asm_386.s
 go/src/pkg/reflect/asm_amd64.s
+go/src/pkg/reflect/asm_amd64p32.s
 go/src/pkg/reflect/asm_arm.s
 go/src/pkg/reflect/deepequal.go
 go/src/pkg/reflect/example_test.go
@@ -2201,6 +2375,8 @@ go/src/pkg/regexp/exec.go
 go/src/pkg/regexp/exec2_test.go
 go/src/pkg/regexp/exec_test.go
 go/src/pkg/regexp/find_test.go
+go/src/pkg/regexp/onepass.go
+go/src/pkg/regexp/onepass_test.go
 go/src/pkg/regexp/regexp.go
 go/src/pkg/regexp/syntax/compile.go
 go/src/pkg/regexp/syntax/doc.go
@@ -2221,21 +2397,24 @@ go/src/pkg/regexp/testdata/re2-search.txt
 go/src/pkg/regexp/testdata/repetition.dat
 go/src/pkg/regexp/testdata/testregex.c
 go/src/pkg/runtime/Makefile
-go/src/pkg/runtime/alg.c
+go/src/pkg/runtime/alg.goc
 go/src/pkg/runtime/append_test.go
 go/src/pkg/runtime/arch_386.h
 go/src/pkg/runtime/arch_amd64.h
+go/src/pkg/runtime/arch_amd64p32.h
 go/src/pkg/runtime/arch_arm.h
 go/src/pkg/runtime/asm_386.s
 go/src/pkg/runtime/asm_amd64.s
+go/src/pkg/runtime/asm_amd64p32.s
 go/src/pkg/runtime/asm_arm.s
 go/src/pkg/runtime/atomic_386.c
-go/src/pkg/runtime/atomic_amd64.c
+go/src/pkg/runtime/atomic_amd64x.c
 go/src/pkg/runtime/atomic_arm.c
 go/src/pkg/runtime/callback_windows.c
 go/src/pkg/runtime/cgo/asm_386.s
 go/src/pkg/runtime/cgo/asm_amd64.s
 go/src/pkg/runtime/cgo/asm_arm.s
+go/src/pkg/runtime/cgo/asm_nacl_amd64p32.s
 go/src/pkg/runtime/cgo/callbacks.c
 go/src/pkg/runtime/cgo/cgo.go
 go/src/pkg/runtime/cgo/dragonfly.c
@@ -2269,21 +2448,24 @@ go/src/pkg/runtime/cgo/openbsd.c
 go/src/pkg/runtime/cgo/setenv.c
 go/src/pkg/runtime/cgocall.c
 go/src/pkg/runtime/cgocall.h
-go/src/pkg/runtime/chan.c
+go/src/pkg/runtime/chan.goc
+go/src/pkg/runtime/chan.h
 go/src/pkg/runtime/chan_test.go
 go/src/pkg/runtime/closure_test.go
 go/src/pkg/runtime/compiler.go
-go/src/pkg/runtime/complex.c
+go/src/pkg/runtime/complex.goc
 go/src/pkg/runtime/complex_test.go
-go/src/pkg/runtime/cpuprof.c
+go/src/pkg/runtime/cpuprof.goc
 go/src/pkg/runtime/crash_cgo_test.go
 go/src/pkg/runtime/crash_test.go
 go/src/pkg/runtime/debug.go
 go/src/pkg/runtime/debug/debug.c
 go/src/pkg/runtime/debug/garbage.go
 go/src/pkg/runtime/debug/garbage_test.go
+go/src/pkg/runtime/debug/heapdump_test.go
 go/src/pkg/runtime/debug/stack.go
 go/src/pkg/runtime/debug/stack_test.go
+go/src/pkg/runtime/defs.c
 go/src/pkg/runtime/defs1_linux.go
 go/src/pkg/runtime/defs2_linux.go
 go/src/pkg/runtime/defs_arm_linux.go
@@ -2301,6 +2483,8 @@ go/src/pkg/runtime/defs_linux.go
 go/src/pkg/runtime/defs_linux_386.h
 go/src/pkg/runtime/defs_linux_amd64.h
 go/src/pkg/runtime/defs_linux_arm.h
+go/src/pkg/runtime/defs_nacl_386.h
+go/src/pkg/runtime/defs_nacl_amd64p32.h
 go/src/pkg/runtime/defs_netbsd.go
 go/src/pkg/runtime/defs_netbsd_386.go
 go/src/pkg/runtime/defs_netbsd_386.h
@@ -2313,6 +2497,9 @@ go/src/pkg/runtime/defs_openbsd_386.h
 go/src/pkg/runtime/defs_openbsd_amd64.h
 go/src/pkg/runtime/defs_plan9_386.h
 go/src/pkg/runtime/defs_plan9_amd64.h
+go/src/pkg/runtime/defs_solaris.go
+go/src/pkg/runtime/defs_solaris_amd64.go
+go/src/pkg/runtime/defs_solaris_amd64.h
 go/src/pkg/runtime/defs_windows.go
 go/src/pkg/runtime/defs_windows_386.h
 go/src/pkg/runtime/defs_windows_amd64.h
@@ -2320,7 +2507,6 @@ go/src/pkg/runtime/env_plan9.c
 go/src/pkg/runtime/env_posix.c
 go/src/pkg/runtime/error.go
 go/src/pkg/runtime/export_futex_test.go
-go/src/pkg/runtime/export_test.c
 go/src/pkg/runtime/export_test.go
 go/src/pkg/runtime/extern.go
 go/src/pkg/runtime/float.c
@@ -2328,11 +2514,13 @@ go/src/pkg/runtime/funcdata.h
 go/src/pkg/runtime/futex_test.go
 go/src/pkg/runtime/gc_test.go
 go/src/pkg/runtime/hash_test.go
-go/src/pkg/runtime/hashmap.c
+go/src/pkg/runtime/hashmap.goc
+go/src/pkg/runtime/hashmap.h
 go/src/pkg/runtime/hashmap_fast.c
-go/src/pkg/runtime/iface.c
+go/src/pkg/runtime/heapdump.c
+go/src/pkg/runtime/iface.goc
 go/src/pkg/runtime/iface_test.go
-go/src/pkg/runtime/lfstack.c
+go/src/pkg/runtime/lfstack.goc
 go/src/pkg/runtime/lfstack_test.go
 go/src/pkg/runtime/lock_futex.c
 go/src/pkg/runtime/lock_sema.c
@@ -2352,28 +2540,39 @@ go/src/pkg/runtime/mem_darwin.c
 go/src/pkg/runtime/mem_dragonfly.c
 go/src/pkg/runtime/mem_freebsd.c
 go/src/pkg/runtime/mem_linux.c
+go/src/pkg/runtime/mem_nacl.c
 go/src/pkg/runtime/mem_netbsd.c
 go/src/pkg/runtime/mem_openbsd.c
 go/src/pkg/runtime/mem_plan9.c
+go/src/pkg/runtime/mem_solaris.c
 go/src/pkg/runtime/mem_windows.c
+go/src/pkg/runtime/memclr_386.s
+go/src/pkg/runtime/memclr_amd64.s
 go/src/pkg/runtime/memclr_arm.s
+go/src/pkg/runtime/memclr_plan9_386.s
+go/src/pkg/runtime/memclr_plan9_amd64.s
 go/src/pkg/runtime/memmove_386.s
 go/src/pkg/runtime/memmove_amd64.s
 go/src/pkg/runtime/memmove_arm.s
 go/src/pkg/runtime/memmove_linux_amd64_test.go
+go/src/pkg/runtime/memmove_nacl_amd64p32.s
+go/src/pkg/runtime/memmove_plan9_386.s
+go/src/pkg/runtime/memmove_plan9_amd64.s
 go/src/pkg/runtime/memmove_test.go
-go/src/pkg/runtime/mfinal.c
 go/src/pkg/runtime/mfinal_test.go
 go/src/pkg/runtime/mfixalloc.c
 go/src/pkg/runtime/mgc0.c
 go/src/pkg/runtime/mgc0.go
 go/src/pkg/runtime/mgc0.h
 go/src/pkg/runtime/mheap.c
+go/src/pkg/runtime/mknacl.sh
 go/src/pkg/runtime/mprof.goc
 go/src/pkg/runtime/msize.c
 go/src/pkg/runtime/netpoll.goc
 go/src/pkg/runtime/netpoll_epoll.c
 go/src/pkg/runtime/netpoll_kqueue.c
+go/src/pkg/runtime/netpoll_nacl.c
+go/src/pkg/runtime/netpoll_solaris.c
 go/src/pkg/runtime/netpoll_stub.c
 go/src/pkg/runtime/netpoll_windows.c
 go/src/pkg/runtime/noasm_arm.goc
@@ -2389,6 +2588,8 @@ go/src/pkg/runtime/os_linux.c
 go/src/pkg/runtime/os_linux.h
 go/src/pkg/runtime/os_linux_386.c
 go/src/pkg/runtime/os_linux_arm.c
+go/src/pkg/runtime/os_nacl.c
+go/src/pkg/runtime/os_nacl.h
 go/src/pkg/runtime/os_netbsd.c
 go/src/pkg/runtime/os_netbsd.h
 go/src/pkg/runtime/os_netbsd_386.c
@@ -2400,6 +2601,8 @@ go/src/pkg/runtime/os_plan9.c
 go/src/pkg/runtime/os_plan9.h
 go/src/pkg/runtime/os_plan9_386.c
 go/src/pkg/runtime/os_plan9_amd64.c
+go/src/pkg/runtime/os_solaris.c
+go/src/pkg/runtime/os_solaris.h
 go/src/pkg/runtime/os_windows.c
 go/src/pkg/runtime/os_windows.h
 go/src/pkg/runtime/os_windows_386.c
@@ -2411,7 +2614,6 @@ go/src/pkg/runtime/pprof/pprof.go
 go/src/pkg/runtime/pprof/pprof_test.go
 go/src/pkg/runtime/print.c
 go/src/pkg/runtime/proc.c
-go/src/pkg/runtime/proc.p
 go/src/pkg/runtime/proc_test.go
 go/src/pkg/runtime/race.c
 go/src/pkg/runtime/race.go
@@ -2442,6 +2644,7 @@ go/src/pkg/runtime/race/testdata/sync_test.go
 go/src/pkg/runtime/race/testdata/waitgroup_test.go
 go/src/pkg/runtime/race0.c
 go/src/pkg/runtime/race_amd64.s
+go/src/pkg/runtime/rdebug.goc
 go/src/pkg/runtime/rt0_darwin_386.s
 go/src/pkg/runtime/rt0_darwin_amd64.s
 go/src/pkg/runtime/rt0_dragonfly_386.s
@@ -2452,6 +2655,8 @@ go/src/pkg/runtime/rt0_freebsd_arm.s
 go/src/pkg/runtime/rt0_linux_386.s
 go/src/pkg/runtime/rt0_linux_amd64.s
 go/src/pkg/runtime/rt0_linux_arm.s
+go/src/pkg/runtime/rt0_nacl_386.s
+go/src/pkg/runtime/rt0_nacl_amd64p32.s
 go/src/pkg/runtime/rt0_netbsd_386.s
 go/src/pkg/runtime/rt0_netbsd_amd64.s
 go/src/pkg/runtime/rt0_netbsd_arm.s
@@ -2459,6 +2664,7 @@ go/src/pkg/runtime/rt0_openbsd_386.s
 go/src/pkg/runtime/rt0_openbsd_amd64.s
 go/src/pkg/runtime/rt0_plan9_386.s
 go/src/pkg/runtime/rt0_plan9_amd64.s
+go/src/pkg/runtime/rt0_solaris_amd64.s
 go/src/pkg/runtime/rt0_windows_386.s
 go/src/pkg/runtime/rt0_windows_amd64.s
 go/src/pkg/runtime/rune.c
@@ -2468,9 +2674,10 @@ go/src/pkg/runtime/runtime.h
 go/src/pkg/runtime/runtime1.goc
 go/src/pkg/runtime/runtime_linux_test.go
 go/src/pkg/runtime/runtime_test.go
+go/src/pkg/runtime/runtime_unix_test.go
 go/src/pkg/runtime/sema.goc
 go/src/pkg/runtime/signal_386.c
-go/src/pkg/runtime/signal_amd64.c
+go/src/pkg/runtime/signal_amd64x.c
 go/src/pkg/runtime/signal_arm.c
 go/src/pkg/runtime/signal_darwin_386.h
 go/src/pkg/runtime/signal_darwin_amd64.h
@@ -2482,32 +2689,39 @@ go/src/pkg/runtime/signal_freebsd_arm.h
 go/src/pkg/runtime/signal_linux_386.h
 go/src/pkg/runtime/signal_linux_amd64.h
 go/src/pkg/runtime/signal_linux_arm.h
+go/src/pkg/runtime/signal_nacl_386.h
+go/src/pkg/runtime/signal_nacl_amd64p32.h
 go/src/pkg/runtime/signal_netbsd_386.h
 go/src/pkg/runtime/signal_netbsd_amd64.h
 go/src/pkg/runtime/signal_netbsd_arm.h
 go/src/pkg/runtime/signal_openbsd_386.h
 go/src/pkg/runtime/signal_openbsd_amd64.h
+go/src/pkg/runtime/signal_solaris_amd64.h
 go/src/pkg/runtime/signal_unix.c
 go/src/pkg/runtime/signal_unix.h
 go/src/pkg/runtime/signals_darwin.h
 go/src/pkg/runtime/signals_dragonfly.h
 go/src/pkg/runtime/signals_freebsd.h
 go/src/pkg/runtime/signals_linux.h
+go/src/pkg/runtime/signals_nacl.h
 go/src/pkg/runtime/signals_netbsd.h
 go/src/pkg/runtime/signals_openbsd.h
 go/src/pkg/runtime/signals_plan9.h
+go/src/pkg/runtime/signals_solaris.h
 go/src/pkg/runtime/signals_windows.h
 go/src/pkg/runtime/sigqueue.goc
-go/src/pkg/runtime/slice.c
+go/src/pkg/runtime/slice.goc
 go/src/pkg/runtime/softfloat64.go
 go/src/pkg/runtime/softfloat64_test.go
 go/src/pkg/runtime/softfloat_arm.c
+go/src/pkg/runtime/sqrt.go
 go/src/pkg/runtime/stack.c
 go/src/pkg/runtime/stack.h
+go/src/pkg/runtime/stack_gen_test.go
 go/src/pkg/runtime/stack_test.go
 go/src/pkg/runtime/string.goc
 go/src/pkg/runtime/string_test.go
-go/src/pkg/runtime/symtab.c
+go/src/pkg/runtime/symtab.goc
 go/src/pkg/runtime/symtab_test.go
 go/src/pkg/runtime/sys_arm.c
 go/src/pkg/runtime/sys_darwin_386.s
@@ -2520,6 +2734,8 @@ go/src/pkg/runtime/sys_freebsd_arm.s
 go/src/pkg/runtime/sys_linux_386.s
 go/src/pkg/runtime/sys_linux_amd64.s
 go/src/pkg/runtime/sys_linux_arm.s
+go/src/pkg/runtime/sys_nacl_386.s
+go/src/pkg/runtime/sys_nacl_amd64p32.s
 go/src/pkg/runtime/sys_netbsd_386.s
 go/src/pkg/runtime/sys_netbsd_amd64.s
 go/src/pkg/runtime/sys_netbsd_arm.s
@@ -2527,9 +2743,12 @@ go/src/pkg/runtime/sys_openbsd_386.s
 go/src/pkg/runtime/sys_openbsd_amd64.s
 go/src/pkg/runtime/sys_plan9_386.s
 go/src/pkg/runtime/sys_plan9_amd64.s
+go/src/pkg/runtime/sys_solaris_amd64.s
 go/src/pkg/runtime/sys_windows_386.s
 go/src/pkg/runtime/sys_windows_amd64.s
 go/src/pkg/runtime/sys_x86.c
+go/src/pkg/runtime/syscall_nacl.h
+go/src/pkg/runtime/syscall_solaris.goc
 go/src/pkg/runtime/syscall_windows.goc
 go/src/pkg/runtime/syscall_windows_test.go
 go/src/pkg/runtime/time.goc
@@ -2546,17 +2765,27 @@ go/src/pkg/runtime/vlop_arm_test.go
 go/src/pkg/runtime/vlrt_386.c
 go/src/pkg/runtime/vlrt_arm.c
 go/src/pkg/runtime/zaexperiment.h
+go/src/pkg/runtime/zalg_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zasm_freebsd_%%ARCH%%.h
+go/src/pkg/runtime/zchan_freebsd_%%ARCH%%.c
+go/src/pkg/runtime/zcomplex_freebsd_%%ARCH%%.c
+go/src/pkg/runtime/zcpuprof_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zgoarch_%%ARCH%%.go
 go/src/pkg/runtime/zgoos_freebsd.go
+go/src/pkg/runtime/zhashmap_freebsd_%%ARCH%%.c
+go/src/pkg/runtime/ziface_freebsd_%%ARCH%%.c
+go/src/pkg/runtime/zlfstack_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zmalloc_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zmprof_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/znetpoll_freebsd_%%ARCH%%.c
+go/src/pkg/runtime/zrdebug_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zruntime1_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zruntime_defs_freebsd_%%ARCH%%.go
 go/src/pkg/runtime/zsema_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zsigqueue_freebsd_%%ARCH%%.c
+go/src/pkg/runtime/zslice_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zstring_freebsd_%%ARCH%%.c
+go/src/pkg/runtime/zsymtab_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zsys_freebsd_%%ARCH%%.s
 go/src/pkg/runtime/ztime_freebsd_%%ARCH%%.c
 go/src/pkg/runtime/zversion.go
@@ -2588,6 +2817,7 @@ go/src/pkg/strconv/itoa.go
 go/src/pkg/strconv/itoa_test.go
 go/src/pkg/strconv/makeisprint.go
 go/src/pkg/strconv/quote.go
+go/src/pkg/strconv/quote_example_test.go
 go/src/pkg/strconv/quote_test.go
 go/src/pkg/strconv/strconv_test.go
 go/src/pkg/strconv/testdata/testfp.txt
@@ -2606,6 +2836,7 @@ go/src/pkg/strings/strings_test.go
 go/src/pkg/sync/atomic/64bit_arm.go
 go/src/pkg/sync/atomic/asm_386.s
 go/src/pkg/sync/atomic/asm_amd64.s
+go/src/pkg/sync/atomic/asm_amd64p32.s
 go/src/pkg/sync/atomic/asm_arm.s
 go/src/pkg/sync/atomic/asm_freebsd_arm.s
 go/src/pkg/sync/atomic/asm_linux_arm.s
@@ -2623,6 +2854,8 @@ go/src/pkg/sync/mutex.go
 go/src/pkg/sync/mutex_test.go
 go/src/pkg/sync/once.go
 go/src/pkg/sync/once_test.go
+go/src/pkg/sync/pool.go
+go/src/pkg/sync/pool_test.go
 go/src/pkg/sync/race.go
 go/src/pkg/sync/race0.go
 go/src/pkg/sync/runtime.go
@@ -2641,6 +2874,8 @@ go/src/pkg/syscall/asm_freebsd_arm.s
 go/src/pkg/syscall/asm_linux_386.s
 go/src/pkg/syscall/asm_linux_amd64.s
 go/src/pkg/syscall/asm_linux_arm.s
+go/src/pkg/syscall/asm_nacl_386.s
+go/src/pkg/syscall/asm_nacl_amd64p32.s
 go/src/pkg/syscall/asm_netbsd_386.s
 go/src/pkg/syscall/asm_netbsd_amd64.s
 go/src/pkg/syscall/asm_netbsd_arm.s
@@ -2648,10 +2883,10 @@ go/src/pkg/syscall/asm_openbsd_386.s
 go/src/pkg/syscall/asm_openbsd_amd64.s
 go/src/pkg/syscall/asm_plan9_386.s
 go/src/pkg/syscall/asm_plan9_amd64.s
+go/src/pkg/syscall/asm_solaris_amd64.s
 go/src/pkg/syscall/asm_windows_386.s
 go/src/pkg/syscall/asm_windows_amd64.s
 go/src/pkg/syscall/bpf_bsd.go
-go/src/pkg/syscall/consistency_unix_test.go
 go/src/pkg/syscall/creds_test.go
 go/src/pkg/syscall/dir_plan9.go
 go/src/pkg/syscall/dll_windows.go
@@ -2661,14 +2896,20 @@ go/src/pkg/syscall/env_windows.go
 go/src/pkg/syscall/exec_bsd.go
 go/src/pkg/syscall/exec_linux.go
 go/src/pkg/syscall/exec_plan9.go
+go/src/pkg/syscall/exec_solaris.go
 go/src/pkg/syscall/exec_unix.go
 go/src/pkg/syscall/exec_windows.go
+go/src/pkg/syscall/fd_nacl.go
+go/src/pkg/syscall/flock.go
+go/src/pkg/syscall/flock_linux_32bit.go
+go/src/pkg/syscall/fs_nacl.go
 go/src/pkg/syscall/lsf_linux.go
 go/src/pkg/syscall/mkall.sh
+go/src/pkg/syscall/mkall_windows.bat
 go/src/pkg/syscall/mkerrors.sh
-go/src/pkg/syscall/mkerrors_windows.sh
 go/src/pkg/syscall/mksyscall.pl
-go/src/pkg/syscall/mksyscall_windows.pl
+go/src/pkg/syscall/mksyscall_solaris.pl
+go/src/pkg/syscall/mksyscall_windows.go
 go/src/pkg/syscall/mksysctl_openbsd.pl
 go/src/pkg/syscall/mksysnum_darwin.pl
 go/src/pkg/syscall/mksysnum_dragonfly.pl
@@ -2677,23 +2918,28 @@ go/src/pkg/syscall/mksysnum_linux.pl
 go/src/pkg/syscall/mksysnum_netbsd.pl
 go/src/pkg/syscall/mksysnum_openbsd.pl
 go/src/pkg/syscall/mksysnum_plan9.sh
+go/src/pkg/syscall/mmap_unix_test.go
+go/src/pkg/syscall/net_nacl.go
 go/src/pkg/syscall/netlink_linux.go
-go/src/pkg/syscall/passfd_test.go
 go/src/pkg/syscall/race.go
 go/src/pkg/syscall/race0.go
-go/src/pkg/syscall/rlimit_linux_test.go
 go/src/pkg/syscall/route_bsd.go
 go/src/pkg/syscall/route_darwin.go
 go/src/pkg/syscall/route_dragonfly.go
 go/src/pkg/syscall/route_freebsd.go
+go/src/pkg/syscall/route_freebsd_32bit.go
+go/src/pkg/syscall/route_freebsd_64bit.go
 go/src/pkg/syscall/route_netbsd.go
 go/src/pkg/syscall/route_openbsd.go
 go/src/pkg/syscall/security_windows.go
+go/src/pkg/syscall/so_solaris.go
 go/src/pkg/syscall/sockcmsg_linux.go
 go/src/pkg/syscall/sockcmsg_unix.go
+go/src/pkg/syscall/srpc_nacl.go
 go/src/pkg/syscall/str.go
 go/src/pkg/syscall/syscall.go
 go/src/pkg/syscall/syscall_bsd.go
+go/src/pkg/syscall/syscall_bsd_test.go
 go/src/pkg/syscall/syscall_darwin.go
 go/src/pkg/syscall/syscall_darwin_386.go
 go/src/pkg/syscall/syscall_darwin_amd64.go
@@ -2708,6 +2954,9 @@ go/src/pkg/syscall/syscall_linux.go
 go/src/pkg/syscall/syscall_linux_386.go
 go/src/pkg/syscall/syscall_linux_amd64.go
 go/src/pkg/syscall/syscall_linux_arm.go
+go/src/pkg/syscall/syscall_nacl.go
+go/src/pkg/syscall/syscall_nacl_386.go
+go/src/pkg/syscall/syscall_nacl_amd64p32.go
 go/src/pkg/syscall/syscall_netbsd.go
 go/src/pkg/syscall/syscall_netbsd_386.go
 go/src/pkg/syscall/syscall_netbsd_amd64.go
@@ -2719,12 +2968,18 @@ go/src/pkg/syscall/syscall_openbsd_amd64.go
 go/src/pkg/syscall/syscall_plan9.go
 go/src/pkg/syscall/syscall_plan9_386.go
 go/src/pkg/syscall/syscall_plan9_amd64.go
+go/src/pkg/syscall/syscall_solaris.go
+go/src/pkg/syscall/syscall_solaris_amd64.go
 go/src/pkg/syscall/syscall_test.go
 go/src/pkg/syscall/syscall_unix.go
+go/src/pkg/syscall/syscall_unix_test.go
 go/src/pkg/syscall/syscall_windows.go
 go/src/pkg/syscall/syscall_windows_386.go
 go/src/pkg/syscall/syscall_windows_amd64.go
 go/src/pkg/syscall/syscall_windows_test.go
+go/src/pkg/syscall/tables_nacl.go
+go/src/pkg/syscall/time_nacl_386.s
+go/src/pkg/syscall/time_nacl_amd64p32.s
 go/src/pkg/syscall/types_darwin.go
 go/src/pkg/syscall/types_dragonfly.go
 go/src/pkg/syscall/types_freebsd.go
@@ -2732,6 +2987,8 @@ go/src/pkg/syscall/types_linux.go
 go/src/pkg/syscall/types_netbsd.go
 go/src/pkg/syscall/types_openbsd.go
 go/src/pkg/syscall/types_plan9.c
+go/src/pkg/syscall/types_solaris.go
+go/src/pkg/syscall/unzip_nacl.go
 go/src/pkg/syscall/zerrors_darwin_386.go
 go/src/pkg/syscall/zerrors_darwin_amd64.go
 go/src/pkg/syscall/zerrors_dragonfly_386.go
@@ -2749,6 +3006,7 @@ go/src/pkg/syscall/zerrors_openbsd_386.go
 go/src/pkg/syscall/zerrors_openbsd_amd64.go
 go/src/pkg/syscall/zerrors_plan9_386.go
 go/src/pkg/syscall/zerrors_plan9_amd64.go
+go/src/pkg/syscall/zerrors_solaris_amd64.go
 go/src/pkg/syscall/zerrors_windows.go
 go/src/pkg/syscall/zerrors_windows_386.go
 go/src/pkg/syscall/zerrors_windows_amd64.go
@@ -2762,6 +3020,8 @@ go/src/pkg/syscall/zsyscall_freebsd_arm.go
 go/src/pkg/syscall/zsyscall_linux_386.go
 go/src/pkg/syscall/zsyscall_linux_amd64.go
 go/src/pkg/syscall/zsyscall_linux_arm.go
+go/src/pkg/syscall/zsyscall_nacl_386.go
+go/src/pkg/syscall/zsyscall_nacl_amd64p32.go
 go/src/pkg/syscall/zsyscall_netbsd_386.go
 go/src/pkg/syscall/zsyscall_netbsd_amd64.go
 go/src/pkg/syscall/zsyscall_netbsd_arm.go
@@ -2769,6 +3029,7 @@ go/src/pkg/syscall/zsyscall_openbsd_386.go
 go/src/pkg/syscall/zsyscall_openbsd_amd64.go
 go/src/pkg/syscall/zsyscall_plan9_386.go
 go/src/pkg/syscall/zsyscall_plan9_amd64.go
+go/src/pkg/syscall/zsyscall_solaris_amd64.go
 go/src/pkg/syscall/zsyscall_windows_386.go
 go/src/pkg/syscall/zsyscall_windows_amd64.go
 go/src/pkg/syscall/zsysctl_openbsd.go
@@ -2789,6 +3050,7 @@ go/src/pkg/syscall/zsysnum_openbsd_386.go
 go/src/pkg/syscall/zsysnum_openbsd_amd64.go
 go/src/pkg/syscall/zsysnum_plan9_386.go
 go/src/pkg/syscall/zsysnum_plan9_amd64.go
+go/src/pkg/syscall/zsysnum_solaris_amd64.go
 go/src/pkg/syscall/zsysnum_windows_386.go
 go/src/pkg/syscall/zsysnum_windows_amd64.go
 go/src/pkg/syscall/ztypes_darwin_386.go
@@ -2808,6 +3070,7 @@ go/src/pkg/syscall/ztypes_openbsd_386.go
 go/src/pkg/syscall/ztypes_openbsd_amd64.go
 go/src/pkg/syscall/ztypes_plan9_386.go
 go/src/pkg/syscall/ztypes_plan9_amd64.go
+go/src/pkg/syscall/ztypes_solaris_amd64.go
 go/src/pkg/syscall/ztypes_windows.go
 go/src/pkg/syscall/ztypes_windows_386.go
 go/src/pkg/syscall/ztypes_windows_amd64.go
@@ -2852,6 +3115,7 @@ go/src/pkg/time/example_test.go
 go/src/pkg/time/export_test.go
 go/src/pkg/time/export_windows_test.go
 go/src/pkg/time/format.go
+go/src/pkg/time/format_test.go
 go/src/pkg/time/genzabbrs.go
 go/src/pkg/time/internal_test.go
 go/src/pkg/time/sleep.go
@@ -2867,6 +3131,7 @@ go/src/pkg/time/zoneinfo.go
 go/src/pkg/time/zoneinfo_abbrs_windows.go
 go/src/pkg/time/zoneinfo_plan9.go
 go/src/pkg/time/zoneinfo_read.go
+go/src/pkg/time/zoneinfo_test.go
 go/src/pkg/time/zoneinfo_unix.go
 go/src/pkg/time/zoneinfo_windows.go
 go/src/pkg/time/zoneinfo_windows_test.go
@@ -3259,7 +3524,6 @@ go/test/fixedbugs/bug191.dir/a.go
 go/test/fixedbugs/bug191.dir/b.go
 go/test/fixedbugs/bug191.dir/main.go
 go/test/fixedbugs/bug191.go
-go/test/fixedbugs/bug191.out
 go/test/fixedbugs/bug192.go
 go/test/fixedbugs/bug193.go
 go/test/fixedbugs/bug194.go
@@ -3608,6 +3872,15 @@ go/test/fixedbugs/bug478.go
 go/test/fixedbugs/bug479.dir/a.go
 go/test/fixedbugs/bug479.dir/b.go
 go/test/fixedbugs/bug479.go
+go/test/fixedbugs/bug480.dir/a.go
+go/test/fixedbugs/bug480.dir/b.go
+go/test/fixedbugs/bug480.go
+go/test/fixedbugs/bug481.go
+go/test/fixedbugs/bug482.go
+go/test/fixedbugs/bug483.go
+go/test/fixedbugs/bug484.go
+go/test/fixedbugs/bug485.go
+go/test/fixedbugs/issue1304.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
@@ -3646,6 +3919,7 @@ go/test/fixedbugs/issue4370.dir/p1.go
 go/test/fixedbugs/issue4370.dir/p2.go
 go/test/fixedbugs/issue4370.dir/p3.go
 go/test/fixedbugs/issue4370.go
+go/test/fixedbugs/issue4388.go
 go/test/fixedbugs/issue4396a.go
 go/test/fixedbugs/issue4396b.go
 go/test/fixedbugs/issue4399.go
@@ -3741,6 +4015,7 @@ go/test/fixedbugs/issue5753.go
 go/test/fixedbugs/issue5755.dir/a.go
 go/test/fixedbugs/issue5755.dir/main.go
 go/test/fixedbugs/issue5755.go
+go/test/fixedbugs/issue5793.go
 go/test/fixedbugs/issue5809.go
 go/test/fixedbugs/issue5820.go
 go/test/fixedbugs/issue5841.go
@@ -3760,14 +4035,90 @@ go/test/fixedbugs/issue6131.go
 go/test/fixedbugs/issue6140.go
 go/test/fixedbugs/issue6247.go
 go/test/fixedbugs/issue6269.go
+go/test/fixedbugs/issue6295.dir/p0.go
+go/test/fixedbugs/issue6295.dir/p1.go
+go/test/fixedbugs/issue6295.dir/p2.go
+go/test/fixedbugs/issue6295.go
 go/test/fixedbugs/issue6298.go
 go/test/fixedbugs/issue6399.go
+go/test/fixedbugs/issue6402.go
+go/test/fixedbugs/issue6403.go
+go/test/fixedbugs/issue6405.go
+go/test/fixedbugs/issue6406.go
+go/test/fixedbugs/issue6500.go
 go/test/fixedbugs/issue6513.dir/a.go
 go/test/fixedbugs/issue6513.dir/b.go
 go/test/fixedbugs/issue6513.dir/main.go
 go/test/fixedbugs/issue6513.go
+go/test/fixedbugs/issue6572.go
+go/test/fixedbugs/issue6789.dir/a.go
+go/test/fixedbugs/issue6789.dir/b.go
+go/test/fixedbugs/issue6789.go
+go/test/fixedbugs/issue6847.go
+go/test/fixedbugs/issue6889.go
+go/test/fixedbugs/issue6899.go
+go/test/fixedbugs/issue6899.out
+go/test/fixedbugs/issue6902.go
+go/test/fixedbugs/issue6964.go
+go/test/fixedbugs/issue7023.dir/a.go
+go/test/fixedbugs/issue7023.dir/b.go
+go/test/fixedbugs/issue7023.go
+go/test/fixedbugs/issue7044.go
+go/test/fixedbugs/issue7050.go
+go/test/fixedbugs/issue7083.go
+go/test/fixedbugs/issue7129.go
+go/test/fixedbugs/issue7150.go
+go/test/fixedbugs/issue7153.go
+go/test/fixedbugs/issue7214.go
+go/test/fixedbugs/issue7223.go
+go/test/fixedbugs/issue7272.go
+go/test/fixedbugs/issue7310.go
+go/test/fixedbugs/issue7316.go
+go/test/fixedbugs/issue7346.go
+go/test/fixedbugs/issue7366.go
+go/test/fixedbugs/issue7405.go
+go/test/fixedbugs/issue7419.go
+go/test/fixedbugs/issue7525.go
+go/test/fixedbugs/issue7538a.go
+go/test/fixedbugs/issue7538b.go
+go/test/fixedbugs/issue7547.go
+go/test/fixedbugs/issue7550.go
+go/test/fixedbugs/issue7590.go
+go/test/fixedbugs/issue7648.dir/a.go
+go/test/fixedbugs/issue7648.dir/b.go
+go/test/fixedbugs/issue7648.go
+go/test/fixedbugs/issue7675.go
+go/test/fixedbugs/issue7742.go
+go/test/fixedbugs/issue7794.go
+go/test/fixedbugs/issue7863.go
+go/test/fixedbugs/issue7867.go
+go/test/fixedbugs/issue7884.go
+go/test/fixedbugs/issue7944.go
+go/test/fixedbugs/issue7995.go
+go/test/fixedbugs/issue7995b.dir/x1.go
+go/test/fixedbugs/issue7995b.dir/x2.go
+go/test/fixedbugs/issue7995b.go
+go/test/fixedbugs/issue7996.go
+go/test/fixedbugs/issue7997.go
+go/test/fixedbugs/issue7998.go
+go/test/fixedbugs/issue8004.go
+go/test/fixedbugs/issue8011.go
+go/test/fixedbugs/issue8028.go
+go/test/fixedbugs/issue8036.go
+go/test/fixedbugs/issue8039.go
+go/test/fixedbugs/issue8047.go
+go/test/fixedbugs/issue8047b.go
+go/test/fixedbugs/issue8048.go
+go/test/fixedbugs/issue8073.go
+go/test/fixedbugs/issue8076.go
+go/test/fixedbugs/issue8132.go
+go/test/fixedbugs/issue8139.go
+go/test/fixedbugs/issue8155.go
+go/test/fixedbugs/issue8158.go
 go/test/fixedbugs/issue887.go
 go/test/float_lit.go
+go/test/float_lit2.go
+go/test/float_lit3.go
 go/test/floatcmp.go
 go/test/for.go
 go/test/func.go
@@ -3784,6 +4135,7 @@ go/test/funcdup2.go
 go/test/gc.go
 go/test/gc1.go
 go/test/gc2.go
+go/test/gcstring.go
 go/test/golden.out
 go/test/goprint.go
 go/test/goprint.out
@@ -3885,6 +4237,9 @@ go/test/label.go
 go/test/label1.go
 go/test/linkx.go
 go/test/literal.go
+go/test/live.go
+go/test/live1.go
+go/test/live2.go
 go/test/mallocfin.go
 go/test/map.go
 go/test/map1.go
@@ -3904,6 +4259,8 @@ go/test/nilcheck.go
 go/test/nilptr.go
 go/test/nilptr2.go
 go/test/nilptr3.go
+go/test/nilptr4.go
+go/test/nosplit.go
 go/test/nul1.go
 go/test/parentype.go
 go/test/peano.go
@@ -3973,6 +4330,7 @@ go/test/syntax/typesw.go
 go/test/syntax/vareq.go
 go/test/syntax/vareq1.go
 go/test/testlib
+go/test/tinyfin.go
 go/test/torture.go
 go/test/turing.go
 go/test/typecheck.go
@@ -3985,427 +4343,448 @@ go/test/utf.go
 go/test/varerr.go
 go/test/varinit.go
 go/test/zerodivide.go
-@dirrm go/test/syntax
-@dirrm go/test/stress
-@dirrm go/test/safe
-@dirrm go/test/method4.dir
-@dirrm go/test/ken
-@dirrm go/test/interface/recursive1.dir
-@dirrm go/test/interface/private.dir
-@dirrm go/test/interface/embed1.dir
-@dirrm go/test/interface
-@dirrm go/test/import4.dir
-@dirrm go/test/import2.dir
-@dirrm go/test/fixedbugs/issue6513.dir
-@dirrm go/test/fixedbugs/issue5957.dir
-@dirrm go/test/fixedbugs/issue5910.dir
-@dirrm go/test/fixedbugs/issue5755.dir
-@dirrm go/test/fixedbugs/issue5614.dir
-@dirrm go/test/fixedbugs/issue5470.dir
-@dirrm go/test/fixedbugs/issue5291.dir
-@dirrm go/test/fixedbugs/issue5260.dir
-@dirrm go/test/fixedbugs/issue5259.dir
-@dirrm go/test/fixedbugs/issue5125.dir
-@dirrm go/test/fixedbugs/issue5105.dir
-@dirrm go/test/fixedbugs/issue4964.dir
-@dirrm go/test/fixedbugs/issue4932.dir
-@dirrm go/test/fixedbugs/issue4879.dir
-@dirrm go/test/fixedbugs/issue4590.dir
-@dirrm go/test/fixedbugs/issue4510.dir
-@dirrm go/test/fixedbugs/issue4370.dir
-@dirrm go/test/fixedbugs/issue4326.dir
-@dirrm go/test/fixedbugs/issue4252.dir
-@dirrm go/test/fixedbugs/issue3552.dir
-@dirrm go/test/fixedbugs/bug479.dir
-@dirrm go/test/fixedbugs/bug478.dir
-@dirrm go/test/fixedbugs/bug472.dir
-@dirrm go/test/fixedbugs/bug468.dir
-@dirrm go/test/fixedbugs/bug467.dir
-@dirrm go/test/fixedbugs/bug466.dir
-@dirrm go/test/fixedbugs/bug465.dir
-@dirrm go/test/fixedbugs/bug460.dir
-@dirrm go/test/fixedbugs/bug448.dir
-@dirrm go/test/fixedbugs/bug437.dir
-@dirrm go/test/fixedbugs/bug424.dir
-@dirrm go/test/fixedbugs/bug415.dir
-@dirrm go/test/fixedbugs/bug414.dir
-@dirrm go/test/fixedbugs/bug407.dir
-@dirrm go/test/fixedbugs/bug404.dir
-@dirrm go/test/fixedbugs/bug396.dir
-@dirrm go/test/fixedbugs/bug392.dir
-@dirrm go/test/fixedbugs/bug382.dir
-@dirrm go/test/fixedbugs/bug377.dir
-@dirrm go/test/fixedbugs/bug369.dir
-@dirrm go/test/fixedbugs/bug367.dir
-@dirrm go/test/fixedbugs/bug345.dir
-@dirrm go/test/fixedbugs/bug335.dir
-@dirrm go/test/fixedbugs/bug324.dir
-@dirrm go/test/fixedbugs/bug322.dir
-@dirrm go/test/fixedbugs/bug313.dir
-@dirrm go/test/fixedbugs/bug306.dir
-@dirrm go/test/fixedbugs/bug302.dir
-@dirrm go/test/fixedbugs/bug282.dir
-@dirrm go/test/fixedbugs/bug248.dir
-@dirrm go/test/fixedbugs/bug222.dir
-@dirrm go/test/fixedbugs/bug191.dir
-@dirrm go/test/fixedbugs/bug160.dir
-@dirrm go/test/fixedbugs/bug133.dir
-@dirrm go/test/fixedbugs/bug106.dir
-@dirrm go/test/fixedbugs/bug088.dir
-@dirrm go/test/fixedbugs/bug083.dir
-@dirrm go/test/fixedbugs
-@dirrm go/test/dwarf/dwarf.dir
-@dirrm go/test/dwarf
-@dirrm go/test/ddd2.dir
-@dirrm go/test/chan
-@dirrm go/test/bugs
-@dirrm go/test/bench/shootout
-@dirrm go/test/bench/go1
-@dirrm go/test/bench/garbage
-@dirrm go/test/bench
-@dirrm go/test
-@dirrm go/src/pkg/unsafe
-@dirrm go/src/pkg/unicode/utf8
-@dirrm go/src/pkg/unicode/utf16
-@dirrm go/src/pkg/unicode
-@dirrm go/src/pkg/time
-@dirrm go/src/pkg/text/template/testdata
-@dirrm go/src/pkg/text/template/parse
-@dirrm go/src/pkg/text/template
-@dirrm go/src/pkg/text/tabwriter
-@dirrm go/src/pkg/text/scanner
-@dirrm go/src/pkg/text
-@dirrm go/src/pkg/testing/quick
-@dirrm go/src/pkg/testing/iotest
-@dirrm go/src/pkg/testing
-@dirrm go/src/pkg/syscall
-@dirrm go/src/pkg/sync/atomic
-@dirrm go/src/pkg/sync
-@dirrm go/src/pkg/strings
-@dirrm go/src/pkg/strconv/testdata
-@dirrm go/src/pkg/strconv
-@dirrm go/src/pkg/sort
-@dirrm go/src/pkg/runtime/race/testdata
-@dirrm go/src/pkg/runtime/race
-@dirrm go/src/pkg/runtime/pprof
-@dirrm go/src/pkg/runtime/debug
-@dirrm go/src/pkg/runtime/cgo
-@dirrm go/src/pkg/runtime
-@dirrm go/src/pkg/regexp/testdata
-@dirrm go/src/pkg/regexp/syntax
-@dirrm go/src/pkg/regexp
-@dirrm go/src/pkg/reflect
-@dirrm go/src/pkg/path/filepath
-@dirrm go/src/pkg/path
-@dirrm go/src/pkg/os/user
-@dirrm go/src/pkg/os/signal
-@dirrm go/src/pkg/os/exec
-@dirrm go/src/pkg/os
-@dirrm go/src/pkg/net/url
-@dirrm go/src/pkg/net/textproto
-@dirrm go/src/pkg/net/testdata
-@dirrm go/src/pkg/net/smtp
-@dirrm go/src/pkg/net/rpc/jsonrpc
-@dirrm go/src/pkg/net/rpc
-@dirrm go/src/pkg/net/mail
-@dirrm go/src/pkg/net/http/testdata
-@dirrm go/src/pkg/net/http/pprof
-@dirrm go/src/pkg/net/http/httputil
-@dirrm go/src/pkg/net/http/httptest
-@dirrm go/src/pkg/net/http/fcgi
-@dirrm go/src/pkg/net/http/cookiejar
-@dirrm go/src/pkg/net/http/cgi/testdata
-@dirrm go/src/pkg/net/http/cgi
-@dirrm go/src/pkg/net/http
-@dirrm go/src/pkg/net
-@dirrm go/src/pkg/mime/testdata
-@dirrm go/src/pkg/mime/multipart/testdata
-@dirrm go/src/pkg/mime/multipart
-@dirrm go/src/pkg/mime
-@dirrm go/src/pkg/math/rand
-@dirrm go/src/pkg/math/cmplx
-@dirrm go/src/pkg/math/big
-@dirrm go/src/pkg/math
-@dirrm go/src/pkg/log/syslog
-@dirrm go/src/pkg/log
-@dirrm go/src/pkg/io/ioutil
-@dirrm go/src/pkg/io
-@dirrm go/src/pkg/index/suffixarray
-@dirrm go/src/pkg/index
-@dirrm go/src/pkg/image/testdata
-@dirrm go/src/pkg/image/png/testdata/pngsuite
-@dirrm go/src/pkg/image/png/testdata
-@dirrm go/src/pkg/image/png
-@dirrm go/src/pkg/image/jpeg
-@dirrm go/src/pkg/image/gif
-@dirrm go/src/pkg/image/draw
-@dirrm go/src/pkg/image/color/palette
-@dirrm go/src/pkg/image/color
-@dirrm go/src/pkg/image
-@dirrm go/src/pkg/html/template
-@dirrm go/src/pkg/html
-@dirrm go/src/pkg/hash/fnv
-@dirrm go/src/pkg/hash/crc64
-@dirrm go/src/pkg/hash/crc32
-@dirrm go/src/pkg/hash/adler32
-@dirrm go/src/pkg/hash
-@dirrm go/src/pkg/go/token
-@dirrm go/src/pkg/go/scanner
-@dirrm go/src/pkg/go/printer/testdata
-@dirrm go/src/pkg/go/printer
-@dirrm go/src/pkg/go/parser/testdata
-@dirrm go/src/pkg/go/parser
-@dirrm go/src/pkg/go/format
-@dirrm go/src/pkg/go/doc/testdata
-@dirrm go/src/pkg/go/doc
-@dirrm go/src/pkg/go/build/testdata/other/file
-@dirrm go/src/pkg/go/build/testdata/other
-@dirrm go/src/pkg/go/build/testdata
-@dirrm go/src/pkg/go/build
-@dirrm go/src/pkg/go/ast
-@dirrm go/src/pkg/go
-@dirrm go/src/pkg/fmt
-@dirrm go/src/pkg/flag
-@dirrm go/src/pkg/expvar
-@dirrm go/src/pkg/errors
-@dirrm go/src/pkg/encoding/xml
-@dirrm go/src/pkg/encoding/pem
-@dirrm go/src/pkg/encoding/json/testdata
-@dirrm go/src/pkg/encoding/json
-@dirrm go/src/pkg/encoding/hex
-@dirrm go/src/pkg/encoding/gob
-@dirrm go/src/pkg/encoding/csv
-@dirrm go/src/pkg/encoding/binary
-@dirrm go/src/pkg/encoding/base64
-@dirrm go/src/pkg/encoding/base32
-@dirrm go/src/pkg/encoding/asn1
-@dirrm go/src/pkg/encoding/ascii85
-@dirrm go/src/pkg/encoding
-@dirrm go/src/pkg/debug/pe/testdata
-@dirrm go/src/pkg/debug/pe
-@dirrm go/src/pkg/debug/macho/testdata
-@dirrm go/src/pkg/debug/macho
-@dirrm go/src/pkg/debug/gosym
-@dirrm go/src/pkg/debug/elf/testdata
-@dirrm go/src/pkg/debug/elf
-@dirrm go/src/pkg/debug/dwarf/testdata
-@dirrm go/src/pkg/debug/dwarf
-@dirrm go/src/pkg/debug
-@dirrm go/src/pkg/database/sql/driver
-@dirrm go/src/pkg/database/sql
-@dirrm go/src/pkg/database
-@dirrm go/src/pkg/crypto/x509/pkix
-@dirrm go/src/pkg/crypto/x509
-@dirrm go/src/pkg/crypto/tls
-@dirrm go/src/pkg/crypto/subtle
-@dirrm go/src/pkg/crypto/sha512
-@dirrm go/src/pkg/crypto/sha256
-@dirrm go/src/pkg/crypto/sha1
-@dirrm go/src/pkg/crypto/rsa/testdata
-@dirrm go/src/pkg/crypto/rsa
-@dirrm go/src/pkg/crypto/rc4
-@dirrm go/src/pkg/crypto/rand
-@dirrm go/src/pkg/crypto/md5
-@dirrm go/src/pkg/crypto/hmac
-@dirrm go/src/pkg/crypto/elliptic
-@dirrm go/src/pkg/crypto/ecdsa/testdata
-@dirrm go/src/pkg/crypto/ecdsa
-@dirrm go/src/pkg/crypto/dsa
-@dirrm go/src/pkg/crypto/des
-@dirrm go/src/pkg/crypto/cipher
-@dirrm go/src/pkg/crypto/aes
-@dirrm go/src/pkg/crypto
-@dirrm go/src/pkg/container/ring
-@dirrm go/src/pkg/container/list
-@dirrm go/src/pkg/container/heap
-@dirrm go/src/pkg/container
-@dirrm go/src/pkg/compress/zlib
-@dirrm go/src/pkg/compress/testdata
-@dirrm go/src/pkg/compress/lzw
-@dirrm go/src/pkg/compress/gzip/testdata
-@dirrm go/src/pkg/compress/gzip
-@dirrm go/src/pkg/compress/flate
-@dirrm go/src/pkg/compress/bzip2/testdata
-@dirrm go/src/pkg/compress/bzip2
-@dirrm go/src/pkg/compress
-@dirrm go/src/pkg/bytes
-@dirrm go/src/pkg/builtin
-@dirrm go/src/pkg/bufio
-@dirrm go/src/pkg/archive/zip/testdata
-@dirrm go/src/pkg/archive/zip
-@dirrm go/src/pkg/archive/tar/testdata
-@dirrm go/src/pkg/archive/tar
-@dirrm go/src/pkg/archive
-@dirrm go/src/pkg
-@dirrm go/src/libmach
-@dirrm go/src/libbio
-@dirrm go/src/lib9/utf
-@dirrm go/src/lib9/fmt
-@dirrm go/src/lib9
-@dirrm go/src/cmd/yacc
-@dirrm go/src/cmd/pack
-@dirrm go/src/cmd/objdump
-@dirrm go/src/cmd/nm
-@dirrm go/src/cmd/ld
-@dirrm go/src/cmd/gofmt/testdata
-@dirrm go/src/cmd/gofmt
-@dirrm go/src/cmd/go/testdata/testimport/p2
-@dirrm go/src/cmd/go/testdata/testimport/p1
-@dirrm go/src/cmd/go/testdata/testimport
-@dirrm go/src/cmd/go/testdata/src/syntaxerror
-@dirrm go/src/cmd/go/testdata/src/main_test
-@dirrm go/src/cmd/go/testdata/src/go-cmd-test
-@dirrm go/src/cmd/go/testdata/src/cgotest
-@dirrm go/src/cmd/go/testdata/src/badpkg
-@dirrm go/src/cmd/go/testdata/src
-@dirrm go/src/cmd/go/testdata/shadow/root2/src/foo
-@dirrm go/src/cmd/go/testdata/shadow/root2/src
-@dirrm go/src/cmd/go/testdata/shadow/root2
-@dirrm go/src/cmd/go/testdata/shadow/root1/src/math
-@dirrm go/src/cmd/go/testdata/shadow/root1/src/foo
-@dirrm go/src/cmd/go/testdata/shadow/root1/src
-@dirrm go/src/cmd/go/testdata/shadow/root1
-@dirrm go/src/cmd/go/testdata/shadow
-@dirrm go/src/cmd/go/testdata/local/sub/sub
-@dirrm go/src/cmd/go/testdata/local/sub
-@dirrm go/src/cmd/go/testdata/local/easysub
-@dirrm go/src/cmd/go/testdata/local
-@dirrm go/src/cmd/go/testdata
-@dirrm go/src/cmd/go
-@dirrm go/src/cmd/gc
-@dirrm go/src/cmd/fix
-@dirrm go/src/cmd/dist
-@dirrm go/src/cmd/cgo
-@dirrm go/src/cmd/cc
-@dirrm go/src/cmd/api/testdata/src/pkg/p3
-@dirrm go/src/cmd/api/testdata/src/pkg/p2
+@dirrm go/api
+@dirrm go/bin
+@dirrm go/doc/articles/wiki
+@dirrm go/doc/articles
+@dirrm go/doc/codewalk
+@dirrm go/doc/devel
+@dirrm go/doc/gopher/pencil
+@dirrm go/doc/gopher
+@dirrm go/doc/play
+@dirrm go/doc/progs
+@dirrm go/doc
+@dirrm go/include/plan9/386
+@dirrm go/include/plan9/%%ARCH%%
+@dirrm go/include/plan9/arm
+@dirrm go/include/plan9
+@dirrm go/include
+@dirrm go/lib/time
+@dirrm go/lib
+@dirrm go/misc/IntelliJIDEA
+@dirrm go/misc/arm
+@dirrm go/misc/bash
+@dirrm go/misc/bbedit
+@dirrm go/misc/cgo/errors
+@dirrm go/misc/cgo/gmp
+@dirrm go/misc/cgo/life
+@dirrm go/misc/cgo/nocgo
+@dirrm go/misc/cgo/stdio
+@dirrm go/misc/cgo/test/backdoor
+@dirrm go/misc/cgo/test
+@dirrm go/misc/cgo/testasan
+@dirrm go/misc/cgo/testcdefs
+@dirrm go/misc/cgo/testso
+@dirrm go/misc/cgo/testtls
+@dirrm go/misc/cgo
+@dirrm go/misc/chrome/gophertool
+@dirrm go/misc/chrome
+@dirrm go/misc/dashboard/codereview/dashboard
+@dirrm go/misc/dashboard/codereview/static
+@dirrm go/misc/dashboard/codereview
+@dirrm go/misc/dashboard
+@dirrm go/misc/emacs
+@dirrm go/misc/fraise
+@dirrm go/misc/git
+@dirrm go/misc/kate
+@dirrm go/misc/linkcheck
+@dirrm go/misc/makerelease/darwin/Resources
+@dirrm go/misc/makerelease/darwin/etc/paths.d
+@dirrm go/misc/makerelease/darwin/etc
+@dirrm go/misc/makerelease/darwin/scripts
+@dirrm go/misc/makerelease/darwin
+@dirrm go/misc/makerelease/windows/images
+@dirrm go/misc/makerelease/windows
+@dirrm go/misc/makerelease
+@dirrm go/misc/nacl/testdata/bin
+@dirrm go/misc/nacl/testdata
+@dirrm go/misc/nacl
+@dirrm go/misc/notepadplus
+@dirrm go/misc/swig/callback
+@dirrm go/misc/swig/stdio
+@dirrm go/misc/swig
+@dirrm go/misc/vim/autoload/go
+@dirrm go/misc/vim/autoload
+@dirrm go/misc/vim/compiler
+@dirrm go/misc/vim/ftdetect
+@dirrm go/misc/vim/ftplugin/go
+@dirrm go/misc/vim/ftplugin
+@dirrm go/misc/vim/indent
+@dirrm go/misc/vim/plugin
+@dirrm go/misc/vim/syntax
+@dirrm go/misc/vim
+@dirrm go/misc/xcode/3
+@dirrm go/misc/xcode/4
+@dirrm go/misc/xcode
+@dirrm go/misc/zsh
+@dirrm go/misc
+@dirrm go/pkg/freebsd_%%ARCH%%/archive
+@dirrm go/pkg/freebsd_%%ARCH%%/compress
+@dirrm go/pkg/freebsd_%%ARCH%%/container
+@dirrm go/pkg/freebsd_%%ARCH%%/crypto/x509
+@dirrm go/pkg/freebsd_%%ARCH%%/crypto
+@dirrm go/pkg/freebsd_%%ARCH%%/database/sql
+@dirrm go/pkg/freebsd_%%ARCH%%/database
+@dirrm go/pkg/freebsd_%%ARCH%%/debug
+@dirrm go/pkg/freebsd_%%ARCH%%/encoding
+@dirrm go/pkg/freebsd_%%ARCH%%/go
+@dirrm go/pkg/freebsd_%%ARCH%%/hash
+@dirrm go/pkg/freebsd_%%ARCH%%/html
+@dirrm go/pkg/freebsd_%%ARCH%%/image/color
+@dirrm go/pkg/freebsd_%%ARCH%%/image
+@dirrm go/pkg/freebsd_%%ARCH%%/index
+@dirrm go/pkg/freebsd_%%ARCH%%/io
+@dirrm go/pkg/freebsd_%%ARCH%%/log
+@dirrm go/pkg/freebsd_%%ARCH%%/math
+@dirrm go/pkg/freebsd_%%ARCH%%/mime
+@dirrm go/pkg/freebsd_%%ARCH%%/net/http
+@dirrm go/pkg/freebsd_%%ARCH%%/net/rpc
+@dirrm go/pkg/freebsd_%%ARCH%%/net
+@dirrm go/pkg/freebsd_%%ARCH%%/os
+@dirrm go/pkg/freebsd_%%ARCH%%/path
+@dirrm go/pkg/freebsd_%%ARCH%%/regexp
+@dirrm go/pkg/freebsd_%%ARCH%%/runtime
+@dirrm go/pkg/freebsd_%%ARCH%%/sync
+@dirrm go/pkg/freebsd_%%ARCH%%/testing
+@dirrm go/pkg/freebsd_%%ARCH%%/text/template
+@dirrm go/pkg/freebsd_%%ARCH%%/text
+@dirrm go/pkg/freebsd_%%ARCH%%/unicode
+@dirrm go/pkg/freebsd_%%ARCH%%
+@dirrm go/pkg/obj/freebsd_%%ARCH%%
+@dirrm go/pkg/obj
+@dirrm go/pkg/tool/freebsd_%%ARCH%%
+@dirrm go/pkg/tool
+@dirrm go/pkg
+@dirrm go/src/cmd/5a
+@dirrm go/src/cmd/5c
+@dirrm go/src/cmd/5g
+@dirrm go/src/cmd/5l
+@dirrm go/src/cmd/6a
+@dirrm go/src/cmd/6c
+@dirrm go/src/cmd/6g
+@dirrm go/src/cmd/6l
+@dirrm go/src/cmd/8a
+@dirrm go/src/cmd/8c
+@dirrm go/src/cmd/8g
+@dirrm go/src/cmd/8l
+@dirrm go/src/cmd/addr2line
 @dirrm go/src/cmd/api/testdata/src/pkg/p1
+@dirrm go/src/cmd/api/testdata/src/pkg/p2
+@dirrm go/src/cmd/api/testdata/src/pkg/p3
 @dirrm go/src/cmd/api/testdata/src/pkg
 @dirrm go/src/cmd/api/testdata/src
 @dirrm go/src/cmd/api/testdata
 @dirrm go/src/cmd/api
-@dirrm go/src/cmd/addr2line
-@dirrm go/src/cmd/8l
-@dirrm go/src/cmd/8g
-@dirrm go/src/cmd/8c
-@dirrm go/src/cmd/8a
-@dirrm go/src/cmd/6l
-@dirrm go/src/cmd/6g
-@dirrm go/src/cmd/6c
-@dirrm go/src/cmd/6a
-@dirrm go/src/cmd/5l
-@dirrm go/src/cmd/5g
-@dirrm go/src/cmd/5c
-@dirrm go/src/cmd/5a
+@dirrm go/src/cmd/cc
+@dirrm go/src/cmd/cgo
+@dirrm go/src/cmd/dist
+@dirrm go/src/cmd/fix
+@dirrm go/src/cmd/gc
+@dirrm go/src/cmd/go/testdata/cgocover
+@dirrm go/src/cmd/go/testdata/local/easysub
+@dirrm go/src/cmd/go/testdata/local/sub/sub
+@dirrm go/src/cmd/go/testdata/local/sub
+@dirrm go/src/cmd/go/testdata/local
+@dirrm go/src/cmd/go/testdata/shadow/root1/src/foo
+@dirrm go/src/cmd/go/testdata/shadow/root1/src/math
+@dirrm go/src/cmd/go/testdata/shadow/root1/src
+@dirrm go/src/cmd/go/testdata/shadow/root1
+@dirrm go/src/cmd/go/testdata/shadow/root2/src/foo
+@dirrm go/src/cmd/go/testdata/shadow/root2/src
+@dirrm go/src/cmd/go/testdata/shadow/root2
+@dirrm go/src/cmd/go/testdata/shadow
+@dirrm go/src/cmd/go/testdata/src/badpkg
+@dirrm go/src/cmd/go/testdata/src/cgotest
+@dirrm go/src/cmd/go/testdata/src/go-cmd-test
+@dirrm go/src/cmd/go/testdata/src/main_test
+@dirrm go/src/cmd/go/testdata/src/notest
+@dirrm go/src/cmd/go/testdata/src/syntaxerror
+@dirrm go/src/cmd/go/testdata/src/testcycle/p1
+@dirrm go/src/cmd/go/testdata/src/testcycle/p2
+@dirrm go/src/cmd/go/testdata/src/testcycle/p3
+@dirrm go/src/cmd/go/testdata/src/testcycle
+@dirrm go/src/cmd/go/testdata/src/xtestonly
+@dirrm go/src/cmd/go/testdata/src
+@dirrm go/src/cmd/go/testdata/testimport/p1
+@dirrm go/src/cmd/go/testdata/testimport/p2
+@dirrm go/src/cmd/go/testdata/testimport
+@dirrm go/src/cmd/go/testdata/testonly
+@dirrm go/src/cmd/go/testdata
+@dirrm go/src/cmd/go
+@dirrm go/src/cmd/gofmt/testdata
+@dirrm go/src/cmd/gofmt
+@dirrm go/src/cmd/ld
+@dirrm go/src/cmd/nm
+@dirrm go/src/cmd/objdump/testdata
+@dirrm go/src/cmd/objdump
+@dirrm go/src/cmd/pack
+@dirrm go/src/cmd/yacc
 @dirrm go/src/cmd
+@dirrm go/src/lib9/fmt
+@dirrm go/src/lib9/utf
+@dirrm go/src/lib9
+@dirrm go/src/libbio
+@dirrm go/src/liblink
+@dirrm go/src/pkg/archive/tar/testdata
+@dirrm go/src/pkg/archive/tar
+@dirrm go/src/pkg/archive/zip/testdata
+@dirrm go/src/pkg/archive/zip
+@dirrm go/src/pkg/archive
+@dirrm go/src/pkg/bufio
+@dirrm go/src/pkg/builtin
+@dirrm go/src/pkg/bytes
+@dirrm go/src/pkg/compress/bzip2/testdata
+@dirrm go/src/pkg/compress/bzip2
+@dirrm go/src/pkg/compress/flate
+@dirrm go/src/pkg/compress/gzip/testdata
+@dirrm go/src/pkg/compress/gzip
+@dirrm go/src/pkg/compress/lzw
+@dirrm go/src/pkg/compress/testdata
+@dirrm go/src/pkg/compress/zlib
+@dirrm go/src/pkg/compress
+@dirrm go/src/pkg/container/heap
+@dirrm go/src/pkg/container/list
+@dirrm go/src/pkg/container/ring
+@dirrm go/src/pkg/container
+@dirrm go/src/pkg/crypto/aes
+@dirrm go/src/pkg/crypto/cipher
+@dirrm go/src/pkg/crypto/des
+@dirrm go/src/pkg/crypto/dsa
+@dirrm go/src/pkg/crypto/ecdsa/testdata
+@dirrm go/src/pkg/crypto/ecdsa
+@dirrm go/src/pkg/crypto/elliptic
+@dirrm go/src/pkg/crypto/hmac
+@dirrm go/src/pkg/crypto/md5
+@dirrm go/src/pkg/crypto/rand
+@dirrm go/src/pkg/crypto/rc4
+@dirrm go/src/pkg/crypto/rsa/testdata
+@dirrm go/src/pkg/crypto/rsa
+@dirrm go/src/pkg/crypto/sha1
+@dirrm go/src/pkg/crypto/sha256
+@dirrm go/src/pkg/crypto/sha512
+@dirrm go/src/pkg/crypto/subtle
+@dirrm go/src/pkg/crypto/tls/testdata
+@dirrm go/src/pkg/crypto/tls
+@dirrm go/src/pkg/crypto/x509/pkix
+@dirrm go/src/pkg/crypto/x509
+@dirrm go/src/pkg/crypto
+@dirrm go/src/pkg/database/sql/driver
+@dirrm go/src/pkg/database/sql
+@dirrm go/src/pkg/database
+@dirrm go/src/pkg/debug/dwarf/testdata
+@dirrm go/src/pkg/debug/dwarf
+@dirrm go/src/pkg/debug/elf/testdata
+@dirrm go/src/pkg/debug/elf
+@dirrm go/src/pkg/debug/gosym
+@dirrm go/src/pkg/debug/macho/testdata
+@dirrm go/src/pkg/debug/macho
+@dirrm go/src/pkg/debug/pe/testdata
+@dirrm go/src/pkg/debug/pe
+@dirrm go/src/pkg/debug/plan9obj/testdata
+@dirrm go/src/pkg/debug/plan9obj
+@dirrm go/src/pkg/debug
+@dirrm go/src/pkg/encoding/ascii85
+@dirrm go/src/pkg/encoding/asn1
+@dirrm go/src/pkg/encoding/base32
+@dirrm go/src/pkg/encoding/base64
+@dirrm go/src/pkg/encoding/binary
+@dirrm go/src/pkg/encoding/csv
+@dirrm go/src/pkg/encoding/gob
+@dirrm go/src/pkg/encoding/hex
+@dirrm go/src/pkg/encoding/json/testdata
+@dirrm go/src/pkg/encoding/json
+@dirrm go/src/pkg/encoding/pem
+@dirrm go/src/pkg/encoding/xml
+@dirrm go/src/pkg/encoding
+@dirrm go/src/pkg/errors
+@dirrm go/src/pkg/expvar
+@dirrm go/src/pkg/flag
+@dirrm go/src/pkg/fmt
+@dirrm go/src/pkg/go/ast
+@dirrm go/src/pkg/go/build/testdata/other/file
+@dirrm go/src/pkg/go/build/testdata/other
+@dirrm go/src/pkg/go/build/testdata
+@dirrm go/src/pkg/go/build
+@dirrm go/src/pkg/go/doc/testdata
+@dirrm go/src/pkg/go/doc
+@dirrm go/src/pkg/go/format
+@dirrm go/src/pkg/go/parser/testdata
+@dirrm go/src/pkg/go/parser
+@dirrm go/src/pkg/go/printer/testdata
+@dirrm go/src/pkg/go/printer
+@dirrm go/src/pkg/go/scanner
+@dirrm go/src/pkg/go/token
+@dirrm go/src/pkg/go
+@dirrm go/src/pkg/hash/adler32
+@dirrm go/src/pkg/hash/crc32
+@dirrm go/src/pkg/hash/crc64
+@dirrm go/src/pkg/hash/fnv
+@dirrm go/src/pkg/hash
+@dirrm go/src/pkg/html/template
+@dirrm go/src/pkg/html
+@dirrm go/src/pkg/image/color/palette
+@dirrm go/src/pkg/image/color
+@dirrm go/src/pkg/image/draw
+@dirrm go/src/pkg/image/gif
+@dirrm go/src/pkg/image/jpeg
+@dirrm go/src/pkg/image/png/testdata/pngsuite
+@dirrm go/src/pkg/image/png/testdata
+@dirrm go/src/pkg/image/png
+@dirrm go/src/pkg/image/testdata
+@dirrm go/src/pkg/image
+@dirrm go/src/pkg/index/suffixarray
+@dirrm go/src/pkg/index
+@dirrm go/src/pkg/io/ioutil
+@dirrm go/src/pkg/io
+@dirrm go/src/pkg/log/syslog
+@dirrm go/src/pkg/log
+@dirrm go/src/pkg/math/big
+@dirrm go/src/pkg/math/cmplx
+@dirrm go/src/pkg/math/rand
+@dirrm go/src/pkg/math
+@dirrm go/src/pkg/mime/multipart/testdata
+@dirrm go/src/pkg/mime/multipart
+@dirrm go/src/pkg/mime/testdata
+@dirrm go/src/pkg/mime
+@dirrm go/src/pkg/net/http/cgi/testdata
+@dirrm go/src/pkg/net/http/cgi
+@dirrm go/src/pkg/net/http/cookiejar
+@dirrm go/src/pkg/net/http/fcgi
+@dirrm go/src/pkg/net/http/httptest
+@dirrm go/src/pkg/net/http/httputil
+@dirrm go/src/pkg/net/http/pprof
+@dirrm go/src/pkg/net/http/testdata
+@dirrm go/src/pkg/net/http
+@dirrm go/src/pkg/net/mail
+@dirrm go/src/pkg/net/rpc/jsonrpc
+@dirrm go/src/pkg/net/rpc
+@dirrm go/src/pkg/net/smtp
+@dirrm go/src/pkg/net/testdata
+@dirrm go/src/pkg/net/textproto
+@dirrm go/src/pkg/net/url
+@dirrm go/src/pkg/net
+@dirrm go/src/pkg/os/exec
+@dirrm go/src/pkg/os/signal
+@dirrm go/src/pkg/os/user
+@dirrm go/src/pkg/os
+@dirrm go/src/pkg/path/filepath
+@dirrm go/src/pkg/path
+@dirrm go/src/pkg/reflect
+@dirrm go/src/pkg/regexp/syntax
+@dirrm go/src/pkg/regexp/testdata
+@dirrm go/src/pkg/regexp
+@dirrm go/src/pkg/runtime/cgo
+@dirrm go/src/pkg/runtime/debug
+@dirrm go/src/pkg/runtime/pprof
+@dirrm go/src/pkg/runtime/race/testdata
+@dirrm go/src/pkg/runtime/race
+@dirrm go/src/pkg/runtime
+@dirrm go/src/pkg/sort
+@dirrm go/src/pkg/strconv/testdata
+@dirrm go/src/pkg/strconv
+@dirrm go/src/pkg/strings
+@dirrm go/src/pkg/sync/atomic
+@dirrm go/src/pkg/sync
+@dirrm go/src/pkg/syscall
+@dirrm go/src/pkg/testing/iotest
+@dirrm go/src/pkg/testing/quick
+@dirrm go/src/pkg/testing
+@dirrm go/src/pkg/text/scanner
+@dirrm go/src/pkg/text/tabwriter
+@dirrm go/src/pkg/text/template/parse
+@dirrm go/src/pkg/text/template/testdata
+@dirrm go/src/pkg/text/template
+@dirrm go/src/pkg/text
+@dirrm go/src/pkg/time
+@dirrm go/src/pkg/unicode/utf16
+@dirrm go/src/pkg/unicode/utf8
+@dirrm go/src/pkg/unicode
+@dirrm go/src/pkg/unsafe
+@dirrm go/src/pkg
 @dirrm go/src
-@dirrm go/pkg/tool/freebsd_%%ARCH%%
-@dirrm go/pkg/tool
-@dirrm go/pkg/obj/freebsd_%%ARCH%%
-@dirrm go/pkg/obj
-@dirrm go/pkg/freebsd_%%ARCH%%/unicode
-@dirrm go/pkg/freebsd_%%ARCH%%/text/template
-@dirrm go/pkg/freebsd_%%ARCH%%/text
-@dirrm go/pkg/freebsd_%%ARCH%%/testing
-@dirrm go/pkg/freebsd_%%ARCH%%/sync
-@dirrm go/pkg/freebsd_%%ARCH%%/runtime
-@dirrm go/pkg/freebsd_%%ARCH%%/regexp
-@dirrm go/pkg/freebsd_%%ARCH%%/path
-@dirrm go/pkg/freebsd_%%ARCH%%/os
-@dirrm go/pkg/freebsd_%%ARCH%%/net/rpc
-@dirrm go/pkg/freebsd_%%ARCH%%/net/http
-@dirrm go/pkg/freebsd_%%ARCH%%/net
-@dirrm go/pkg/freebsd_%%ARCH%%/mime
-@dirrm go/pkg/freebsd_%%ARCH%%/math
-@dirrm go/pkg/freebsd_%%ARCH%%/log
-@dirrm go/pkg/freebsd_%%ARCH%%/io
-@dirrm go/pkg/freebsd_%%ARCH%%/index
-@dirrm go/pkg/freebsd_%%ARCH%%/image/color
-@dirrm go/pkg/freebsd_%%ARCH%%/image
-@dirrm go/pkg/freebsd_%%ARCH%%/html
-@dirrm go/pkg/freebsd_%%ARCH%%/hash
-@dirrm go/pkg/freebsd_%%ARCH%%/go
-@dirrm go/pkg/freebsd_%%ARCH%%/encoding
-@dirrm go/pkg/freebsd_%%ARCH%%/debug
-@dirrm go/pkg/freebsd_%%ARCH%%/database/sql
-@dirrm go/pkg/freebsd_%%ARCH%%/database
-@dirrm go/pkg/freebsd_%%ARCH%%/crypto/x509
-@dirrm go/pkg/freebsd_%%ARCH%%/crypto
-@dirrm go/pkg/freebsd_%%ARCH%%/container
-@dirrm go/pkg/freebsd_%%ARCH%%/compress
-@dirrm go/pkg/freebsd_%%ARCH%%/archive
-@dirrm go/pkg/freebsd_%%ARCH%%
-@dirrm go/pkg
-@dirrm go/misc/zsh
-@dirrm go/misc/xcode/4
-@dirrm go/misc/xcode/3
-@dirrm go/misc/xcode
-@dirrm go/misc/vim/syntax
-@dirrm go/misc/vim/plugin
-@dirrm go/misc/vim/indent
-@dirrm go/misc/vim/ftplugin/go
-@dirrm go/misc/vim/ftplugin
-@dirrm go/misc/vim/ftdetect
-@dirrm go/misc/vim/compiler
-@dirrm go/misc/vim/autoload/go
-@dirrm go/misc/vim/autoload
-@dirrm go/misc/vim
-@dirrm go/misc/swig/stdio
-@dirrm go/misc/swig/callback
-@dirrm go/misc/swig
-@dirrm go/misc/notepadplus
-@dirrm go/misc/linkcheck
-@dirrm go/misc/kate
-@dirrm go/misc/goplay
-@dirrm go/misc/git
-@dirrm go/misc/fraise
-@dirrm go/misc/emacs
-@dirrm go/misc/dist/windows/images
-@dirrm go/misc/dist/windows
-@dirrm go/misc/dist/darwin/scripts
-@dirrm go/misc/dist/darwin/etc/paths.d
-@dirrm go/misc/dist/darwin/etc
-@dirrm go/misc/dist/darwin/Resources
-@dirrm go/misc/dist/darwin
-@dirrm go/misc/dist
-@dirrm go/misc/dashboard/codereview/static
-@dirrm go/misc/dashboard/codereview/dashboard
-@dirrm go/misc/dashboard/codereview
-@dirrm go/misc/dashboard
-@dirrm go/misc/chrome/gophertool
-@dirrm go/misc/chrome
-@dirrm go/misc/cgo/testtls
-@dirrm go/misc/cgo/testso
-@dirrm go/misc/cgo/testcdefs
-@dirrm go/misc/cgo/testasan
-@dirrm go/misc/cgo/test/backdoor
-@dirrm go/misc/cgo/test
-@dirrm go/misc/cgo/stdio
-@dirrm go/misc/cgo/life
-@dirrm go/misc/cgo/gmp
-@dirrm go/misc/cgo/errors
-@dirrm go/misc/cgo
-@dirrm go/misc/bbedit
-@dirrm go/misc/bash
-@dirrm go/misc/arm
-@dirrm go/misc/IntelliJIDEA
-@dirrm go/misc
-@dirrm go/lib/time
-@dirrm go/lib
-@dirrm go/include/plan9/arm
-@dirrm go/include/plan9/amd64
-@dirrm go/include/plan9/386
-@dirrm go/include/plan9
-@dirrm go/include
-@dirrm go/doc/progs
-@dirrm go/doc/play
-@dirrm go/doc/gopher/pencil
-@dirrm go/doc/gopher
-@dirrm go/doc/devel
-@dirrm go/doc/codewalk
-@dirrm go/doc/articles/wiki
-@dirrm go/doc/articles
-@dirrm go/doc
-@dirrm go/bin
-@dirrm go/api
+@dirrm go/test/bench/garbage
+@dirrm go/test/bench/go1
+@dirrm go/test/bench/shootout
+@dirrm go/test/bench
+@dirrm go/test/bugs
+@dirrm go/test/chan
+@dirrm go/test/ddd2.dir
+@dirrm go/test/dwarf/dwarf.dir
+@dirrm go/test/dwarf
+@dirrm go/test/fixedbugs/bug083.dir
+@dirrm go/test/fixedbugs/bug088.dir
+@dirrm go/test/fixedbugs/bug106.dir
+@dirrm go/test/fixedbugs/bug133.dir
+@dirrm go/test/fixedbugs/bug160.dir
+@dirrm go/test/fixedbugs/bug191.dir
+@dirrm go/test/fixedbugs/bug222.dir
+@dirrm go/test/fixedbugs/bug248.dir
+@dirrm go/test/fixedbugs/bug282.dir
+@dirrm go/test/fixedbugs/bug302.dir
+@dirrm go/test/fixedbugs/bug306.dir
+@dirrm go/test/fixedbugs/bug313.dir
+@dirrm go/test/fixedbugs/bug322.dir
+@dirrm go/test/fixedbugs/bug324.dir
+@dirrm go/test/fixedbugs/bug335.dir
+@dirrm go/test/fixedbugs/bug345.dir
+@dirrm go/test/fixedbugs/bug367.dir
+@dirrm go/test/fixedbugs/bug369.dir
+@dirrm go/test/fixedbugs/bug377.dir
+@dirrm go/test/fixedbugs/bug382.dir
+@dirrm go/test/fixedbugs/bug392.dir
+@dirrm go/test/fixedbugs/bug396.dir
+@dirrm go/test/fixedbugs/bug404.dir
+@dirrm go/test/fixedbugs/bug407.dir
+@dirrm go/test/fixedbugs/bug414.dir
+@dirrm go/test/fixedbugs/bug415.dir
+@dirrm go/test/fixedbugs/bug424.dir
+@dirrm go/test/fixedbugs/bug437.dir
+@dirrm go/test/fixedbugs/bug448.dir
+@dirrm go/test/fixedbugs/bug460.dir
+@dirrm go/test/fixedbugs/bug465.dir
+@dirrm go/test/fixedbugs/bug466.dir
+@dirrm go/test/fixedbugs/bug467.dir
+@dirrm go/test/fixedbugs/bug468.dir
+@dirrm go/test/fixedbugs/bug472.dir
+@dirrm go/test/fixedbugs/bug478.dir
+@dirrm go/test/fixedbugs/bug479.dir
+@dirrm go/test/fixedbugs/bug480.dir
+@dirrm go/test/fixedbugs/issue3552.dir
+@dirrm go/test/fixedbugs/issue4252.dir
+@dirrm go/test/fixedbugs/issue4326.dir
+@dirrm go/test/fixedbugs/issue4370.dir
+@dirrm go/test/fixedbugs/issue4510.dir
+@dirrm go/test/fixedbugs/issue4590.dir
+@dirrm go/test/fixedbugs/issue4879.dir
+@dirrm go/test/fixedbugs/issue4932.dir
+@dirrm go/test/fixedbugs/issue4964.dir
+@dirrm go/test/fixedbugs/issue5105.dir
+@dirrm go/test/fixedbugs/issue5125.dir
+@dirrm go/test/fixedbugs/issue5259.dir
+@dirrm go/test/fixedbugs/issue5260.dir
+@dirrm go/test/fixedbugs/issue5291.dir
+@dirrm go/test/fixedbugs/issue5470.dir
+@dirrm go/test/fixedbugs/issue5614.dir
+@dirrm go/test/fixedbugs/issue5755.dir
+@dirrm go/test/fixedbugs/issue5910.dir
+@dirrm go/test/fixedbugs/issue5957.dir
+@dirrm go/test/fixedbugs/issue6295.dir
+@dirrm go/test/fixedbugs/issue6513.dir
+@dirrm go/test/fixedbugs/issue6789.dir
+@dirrm go/test/fixedbugs/issue7023.dir
+@dirrm go/test/fixedbugs/issue7648.dir
+@dirrm go/test/fixedbugs/issue7995b.dir
+@dirrm go/test/fixedbugs
+@dirrm go/test/import2.dir
+@dirrm go/test/import4.dir
+@dirrm go/test/interface/embed1.dir
+@dirrm go/test/interface/private.dir
+@dirrm go/test/interface/recursive1.dir
+@dirrm go/test/interface
+@dirrm go/test/ken
+@dirrm go/test/method4.dir
+@dirrm go/test/safe
+@dirrm go/test/stress
+@dirrm go/test/syntax
+@dirrm go/test
 @dirrm go
