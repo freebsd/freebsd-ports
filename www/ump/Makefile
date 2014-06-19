@@ -18,6 +18,8 @@ PATCHFILES=	ump-patch-1.gz ump-patch-2.gz ump-patch-3.gz ump-patch-4.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix MIDI Plugin based on TiMidity++
 
+BROKEN=		Fails to patch
+
 LIB_DEPENDS=	libarc.so:${PORTSDIR}/archivers/libarc
 RUN_DEPENDS=	${LOCALBASE}/share/timidity/timidity.cfg:${PORTSDIR}/audio/eawpats
 
