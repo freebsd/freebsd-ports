@@ -13,6 +13,8 @@ DISTNAME=	BioPerl-run-${PORTVERSION}
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Wrapper modules for common bioinformatics tools
 
+BROKEN=		Fails to configure
+
 BUILD_DEPENDS=	p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff
