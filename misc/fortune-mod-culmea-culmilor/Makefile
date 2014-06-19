@@ -9,6 +9,5 @@ MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Romanian "Culmea culmilor" jokes (in Romanian)
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../misc/fortune-mod-culmea-culmilor/Makefile.fortune"
 .include <bsd.port.mk>
