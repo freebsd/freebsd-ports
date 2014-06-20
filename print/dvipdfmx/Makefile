@@ -3,6 +3,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20110311
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		http://project.ktug.or.kr/dvipdfmx/snapshot/latest/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	psutils
 PORTVERSION=	1.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/ \
 		ftp://ftp.knackered.org/pub/psutils/ \

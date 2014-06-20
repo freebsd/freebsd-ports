@@ -3,7 +3,7 @@
 
 PORTNAME=	c2ps
 PORTVERSION=	4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
 
