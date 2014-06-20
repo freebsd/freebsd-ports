@@ -747,6 +747,7 @@
     SUBDIR += py-pylibmc
     SUBDIR += py-pymysql
     SUBDIR += py-pytc
+    SUBDIR += py-python-rrdtool
     SUBDIR += py-qt4-sql
     SUBDIR += py-redis
     SUBDIR += py-riak
