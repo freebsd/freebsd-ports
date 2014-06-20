@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	utilities
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X based alarm clock
 
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
+
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 IS_INTERACTIVE=	yes

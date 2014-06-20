@@ -14,6 +14,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVI previewer for the X Window System
 
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
+
 CONFLICTS=	teTeX-*
 
 USES=		gmake imake:notall

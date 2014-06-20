@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary plugin for some HP Printers and All-in-One devices
 
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
+
 RUN_DEPENDS=	hp-plugin:${PORTSDIR}/print/hplip
 
 USE_PYTHON=	yes
