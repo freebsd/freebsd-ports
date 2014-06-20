@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.11.1
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
+MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
+#MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
 MAINTAINER=	6yearold@gmail.com
 COMMENT=	THg script from TortoiseHG
@@ -14,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.10.2:${PORTSDIR}/devel/py-qt4-
 		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.7.2:${PORTSDIR}/devel/py-qt4-qscintilla2 \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.10.2:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.10.2:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.20.2:${PORTSDIR}/textproc/py-qt4-xml
+		${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.10.2:${PORTSDIR}/textproc/py-qt4-xml
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.10.2:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.7.2:${PORTSDIR}/devel/py-qt4-qscintilla2 \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.10.2:${PORTSDIR}/net/py-qt4-network \
