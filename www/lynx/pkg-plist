@@ -1,10 +1,6 @@
 bin/lynx
-@unexec if cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.sample; then rm -f %D/etc/lynx.cfg; fi
-etc/lynx.cfg.sample
-@exec if [ ! -f %B/lynx.cfg ]; then cp -p %D/%F %B/lynx.cfg; fi
-@unexec if cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.sample; then rm -f %D/etc/lynx.lss; fi
-etc/lynx.lss.sample
-@exec if [ ! -f %B/lynx.lss ]; then cp -p %D/%F %B/lynx.lss; fi
+@sample etc/lynx.cfg.sample
+@sample etc/lynx.lss.sample
 man/man1/lynx.1.gz
 @exec mkdir -p %D/%%PORTDOCS%%/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
