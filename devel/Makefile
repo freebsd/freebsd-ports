@@ -4619,7 +4619,7 @@
     SUBDIR += tnt
     SUBDIR += toh
     SUBDIR += tokamak
-    SUBDIR += tortoisehg2
+    SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += trac-bitten
     SUBDIR += tradcpp
