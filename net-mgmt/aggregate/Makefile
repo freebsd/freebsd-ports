@@ -12,9 +12,10 @@ MAINTAINER=	jabley@automagic.org
 COMMENT=	Optimise a list of route prefixes to help make nice short filters
 
 GNU_CONFIGURE=	yes
+USES=		shebangfix
+SHEBANG_FILES=	aggregate-ios
 
-PLIST_FILES=	bin/aggregate bin/aggregate-ios
-MAN1=		aggregate.1 aggregate-ios.1
+PLIST_FILES=	bin/aggregate bin/aggregate-ios \
+		man/man1/aggregate.1.gz man/man1/aggregate-ios.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

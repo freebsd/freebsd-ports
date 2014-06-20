@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Nov  2 10:49:52 2001
-+++ Makefile.in	Fri Nov  2 12:04:11 2001
-@@ -25,7 +25,6 @@
+--- Makefile.in.orig	2002-03-07 00:59:37.000000000 +0800
++++ Makefile.in	2014-06-20 16:42:05.475964834 +0800
+@@ -25,7 +25,6 @@ CC = @CC@
  INSTALL = @INSTALL@
  DEFS = @DEFS@
  LIBS = @LIBS@
@@ -8,3 +8,18 @@
  LDFLAGS = -s
  prefix = @prefix@
  
+@@ -41,10 +40,10 @@ clean:
+ 	rm -f *.o
+ 
+ install: $(PROGS)
+-	$(INSTALL) -m 0755 aggregate $(prefix)/bin/
+-	$(INSTALL) -m 0644 aggregate.1 $(prefix)/man/man1/
+-	$(INSTALL) -m 0755 aggregate-ios $(prefix)/bin/
+-	$(INSTALL) -m 0644 aggregate-ios.1 $(prefix)/man/man1/
++	$(INSTALL) -m 0755 aggregate $(DESTDIR)$(prefix)/bin/
++	$(INSTALL) -m 0644 aggregate.1 $(DESTDIR)$(prefix)/man/man1/
++	$(INSTALL) -m 0755 aggregate-ios $(DESTDIR)$(prefix)/bin/
++	$(INSTALL) -m 0644 aggregate-ios.1 $(DESTDIR)$(prefix)/man/man1/
+ 
+ .c.o:
+ 	$(CC) -c $(CPPFLAGS) $(DEFS) $(CFLAGS) $<
