@@ -20,7 +20,6 @@ USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd \
 		DESTDIR=${STAGEDIR}
-IS_INTERACTIVE=	yes
 M4=		/usr/bin/m4
 
 # Tripwire database files are stored in TWDB.
