@@ -19,37 +19,44 @@ bin/pfscut
 bin/pfspad
 bin/pfscat
 bin/pfsabsolute
-%%PPM%%bin/pfsinppm
-%%PPM%%bin/pfsoutppm
-%%EXR%%bin/pfsinexr
-%%EXR%%bin/pfsoutexr
+bin/pfsdisplayfunction
+bin/pfswb
+%%IMAGEMAGICK%%bin/pfsouthdrhtml
+%%NETPBM%%bin/pfsinppm
+%%NETPBM%%bin/pfsoutppm
+%%OPENEXR%%bin/pfsinexr
+%%OPENEXR%%bin/pfsoutexr
 %%TIFF%%bin/pfsintiff
 %%TIFF%%bin/pfsouttiff
-%%IM%%bin/pfsinimgmagick
-%%IM%%bin/pfsoutimgmagick
+%%IMAGEMAGICK%%bin/pfsinimgmagick
+%%IMAGEMAGICK%%bin/pfsoutimgmagick
 %%QT%%bin/pfsview
 %%QT%%bin/pfsv
 %%OCTAVE%%bin/pfsoctavelum
 %%OCTAVE%%bin/pfsoctavergb
 %%OCTAVE%%bin/pfsstat
-%%GL%%bin/pfsglview
+%%OPENGL%%bin/pfsglview
+%%GDAL%%bin/pfsingdal
 include/pfs-1.2/pfs.h
 include/pfs-1.2/array2d.h
-lib/libpfs-1.2.a
-lib/libpfs-1.2.la
-lib/libpfs-1.2.so
+lib/libpfs-1.2.so.0.0.0
 lib/libpfs-1.2.so.0
+lib/libpfs-1.2.so
+lib/libpfs-1.2.a
 libdata/pkgconfig/pfs.pc
 man/man1/pfsabsolute.1.gz
 man/man1/pfscat.1.gz
 man/man1/pfsclamp.1.gz
 man/man1/pfscut.1.gz
+man/man1/pfsdisplayfunction.1.gz
 man/man1/pfsextractchannels.1.gz
 man/man1/pfsflip.1.gz
 man/man1/pfsgamma.1.gz
+%%OPENGL%%man/man1/pfsglview.1.gz
 man/man1/pfsin.1.gz
 man/man1/pfsindcraw.1.gz
 man/man1/pfsinexr.1.gz
+man/man1/pfsingdal.1.gz
 man/man1/pfsinimgmagick.1.gz
 man/man1/pfsinjpeghdr.1.gz
 man/man1/pfsinmulti.1.gz
@@ -57,9 +64,12 @@ man/man1/pfsinpfm.1.gz
 man/man1/pfsinppm.1.gz
 man/man1/pfsinrgbe.1.gz
 man/man1/pfsintiff.1.gz
+%%OCTAVE%%man/man1/pfsoctavelum.1.gz
+%%OCTAVE%%man/man1/pfsoctavergb.1.gz
 man/man1/pfsout.1.gz
 man/man1/pfsoutexr.1.gz
 man/man1/pfsoutffmpeg.1.gz
+%%IMAGEMAGICK%%man/man1/pfsouthdrhtml.1.gz
 man/man1/pfsoutimgmagick.1.gz
 man/man1/pfsoutjpeghdr.1.gz
 man/man1/pfsoutpfm.1.gz
@@ -70,37 +80,56 @@ man/man1/pfspad.1.gz
 man/man1/pfspanoramic.1.gz
 man/man1/pfsrotate.1.gz
 man/man1/pfssize.1.gz
+%%OCTAVE%%man/man1/pfsstat.1.gz
 man/man1/pfstag.1.gz
-%%OCTAVE%%@cwd %%OCTAVE_BASE%%
-%%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfsclose.oct
-%%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfsget.oct
-%%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfsopen.oct
-%%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfsput.oct
-%%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfsread.oct
-%%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfstransform_colorspace.oct
-%%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfswrite.oct
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfs_close_frames.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfs_open_frames.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfs_read_luminance.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfs_read_rgb.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfs_read_xyz.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfs_write_rgb.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfssize.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfsview.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfsview_list.m
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfsview_rgb.m
-%%OCTAVE%%@cwd %%PFS_BASE%%
+%%QT%%man/man1/pfsv.1.gz
+%%QT%%man/man1/pfsview.1.gz
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_c_b2.csv
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_t_b2.csv
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_c_b3.csv
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_t_b3.csv
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_c_b4.csv
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_t_b4.csv
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_c_b5.csv
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_t_b5.csv
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_default_templ/hdrhtml_page_templ.html
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_default_templ/hdrhtml_image_templ.html
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/loading-spinner.gif
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/information-red.png
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/slider-red.png
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/hdr_viewer.js
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/slider-black.png
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/information.png
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/mouse2touch.js
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/mootools-1.2.4.js
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/hdr_viewer.css
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets/slider-white.png
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_page_templ.html
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_image_templ_slider-above.html
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_image_templ.html
+%%IMAGEMAGICK%%%%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_page_templ_short.html
 @dirrm include/pfs-1.2
+%%IMAGEMAGICK%%@dirrm %%DATADIR%%/hdrhtml_hdrlabs_templ/hdrhtml_assets
+%%IMAGEMAGICK%%@dirrm %%DATADIR%%/hdrhtml_hdrlabs_templ
+%%IMAGEMAGICK%%@dirrm %%DATADIR%%/hdrhtml_default_templ
+%%IMAGEMAGICK%%@dirrm %%DATADIR%%
 %%OCTAVE%%@cwd %%OCTAVE_BASE%%
-%%OCTAVE%%@dirrm share/octave/%%OCTAVE_VERSION%%/site/m/pfstools
-%%OCTAVE%%@dirrmtry share/octave/%%OCTAVE_VERSION%%/site/m
-%%OCTAVE%%@dirrmtry share/octave/%%OCTAVE_VERSION%%/site
-%%OCTAVE%%@dirrmtry share/octave/%%OCTAVE_VERSION%%
-%%OCTAVE%%@dirrmtry share/octave
-%%OCTAVE%%@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools
-%%OCTAVE%%@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%
-%%OCTAVE%%@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/oct
-%%OCTAVE%%@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site
-%%OCTAVE%%@dirrmtry libexec/octave/%%OCTAVE_VERSION%%
-%%OCTAVE%%@dirrmtry libexec/octave
-%%OCTAVE%%@cwd %%PFS_BASE%%
+%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsclose.oct
+%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsget.oct
+%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsopen.oct
+%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsput.oct
+%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfsread.oct
+%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfstransform_colorspace.oct
+%%OCTAVE%%%%OCTAVE_SITE_OCT%%/pfstools/pfswrite.oct
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_close_frames.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_open_frames.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_read_luminance.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_read_rgb.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_read_xyz.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfs_write_rgb.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfssize.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfsview.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfsview_list.m
+%%OCTAVE%%%%OCTAVE_SITE_M%%/pfstools/pfsview_rgb.m
+%%OCTAVE%%@dirrm %%OCTAVE_SITE_OCT%%/pfstools
+%%OCTAVE%%@dirrm %%OCTAVE_SITE_M%%/pfstools
