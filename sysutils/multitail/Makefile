@@ -6,7 +6,6 @@ PORTVERSION=	6.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/ \
 		http://fossies.org/unix/privat/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Tail multiple files on console with ncurses
@@ -14,7 +13,7 @@ COMMENT=	Tail multiple files on console with ncurses
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/multitail etc/multitail.conf.sample \
 		man/man1/multitail.1.gz
