@@ -40,10 +40,9 @@ JAPANESE_CONFIGURE_ON=	--enable-japanese=E --with-migemo=yes gt_cv_func_gnugette
 JAPANESE_CONFIGURE_ENABLE=	nls
 
 INLINE_IMAGE_USE=	gnome=gtk20
-INLINE_IMAGE_CONFIGURE_WITH=	imagelib=gtk2
-INLINE_IMAGE_CONFIGURE_ENABLE=	image=fb,x11
+INLINE_IMAGE_CONFIGURE_ON=	--with-imagelib=gtk2 --enable-image=fb,x11
 
-KEY_LYNX_CONFIGURE_ENABLE=	keymap=lynx
+KEY_LYNX_CONFIGURE_ON=	--with-keymap=lynx
 
 .include <bsd.port.options.mk>
 
