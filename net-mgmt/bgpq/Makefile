@@ -10,13 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Bgpq - lightweight access-list generator for Cisco routers
 
-MAN8=		bgpq.8
-PLIST_FILES=	bin/bgpq
+PLIST_FILES=	bin/bgpq man/man8/bgpq.8.gz
 
 GNU_CONFIGURE=	yes
-
-NO_STAGE=	yes
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/bgpq
 
 .include <bsd.port.mk>

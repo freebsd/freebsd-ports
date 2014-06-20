@@ -1,11 +1,13 @@
---- Makefile.in.orig	2011-01-11 14:58:00.000000000 +0300
-+++ Makefile.in	2011-01-11 14:58:10.000000000 +0300
-@@ -26,7 +26,7 @@
+--- Makefile.in.orig	2005-04-05 20:44:00.000000000 +0800
++++ Makefile.in	2014-06-20 16:47:42.798934507 +0800
+@@ -25,8 +25,8 @@ clean:
+ 	@rm -f config.cache 
  
  install: bgpq
- 	$(INSTALL) -s -m 755 bgpq @prefix@@bindir@
+-	$(INSTALL) -s -m 755 bgpq @prefix@@bindir@
 -	$(INSTALL) -m 644 bgpq.8 @prefix@@mandir@/man8
-+	$(INSTALL) -m 644 bgpq.8 @mandir@/man8
++	$(INSTALL) -s -m 755 bgpq $(DESTDIR)@prefix@@bindir@
++	$(INSTALL) -m 644 bgpq.8 $(DESTDIR)@mandir@/man8
  
  test: bgpq
  	@rm -f test.out ]
