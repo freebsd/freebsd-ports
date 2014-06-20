@@ -74,6 +74,7 @@ lib/libgiac.a
 lib/libgiac.la
 lib/libgiac.so
 lib/libgiac.so.0
+lib/libgiac.so.0.0.0
 share/application-registry/xcas.applications
 share/applications/xcas.desktop
 share/icons/hicolor/256x256/apps/xcas.png
