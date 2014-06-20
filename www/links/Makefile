@@ -50,53 +50,31 @@ CONFIGURE_ARGS+=	--enable-graphics
 CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 .endif
 
-.if ${PORT_OPTIONS:MDIRECTFB}
-LIB_DEPENDS+=	libdirectfb.so:${PORTSDIR}/devel/directfb
-CONFIGURE_ARGS+=	--with-directfb
-.else
-CONFIGURE_ARGS+=	--without-directfb
-.endif
+DIRECTFB_LIB_DEPENDS=	libdirectfb.so:${PORTSDIR}/devel/directfb
+DIRECTFB_CONFIGURE_WITH=directfb
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--with-ipv6
-.else
-CONFIGURE_ARGS+=	--without-ipv6
-.endif
+IPV6_CONFIGURE_WITH=	ipv6
 
-.if ${PORT_OPTIONS:MSVGALIB}
-LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
-CONFIGURE_ARGS+=	--with-svgalib
-.else
-CONFIGURE_ARGS+=	--without-svgalib
-.endif
+SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_CONFIGURE_WITH=	svgalib
 
-.if ${PORT_OPTIONS:MTHREADS}
-CFLAGS+=	-DHAVE_PTHREADS
-LDFLAGS+=	-pthread
-.endif
+THREADS_CFLAGS=	-DHAVE_PTHREADS
+THREADS_LDFLAGS=-pthread
 
-.if ${PORT_OPTIONS:MTRANS}
-EXTRA_PATCHES+=		${FILESDIR}/extra-terminal.c.diff
-.endif
+TRANS_EXTRA_PATCHES=	${FILESDIR}/extra-terminal.c.diff
 
-.if ${PORT_OPTIONS:MUTF8}
-CONFIGURE_ARGS+=	--enable-utf8
-.else
-CONFIGURE_ARGS+=	--disable-utf8
-.endif
+UTF8_CONFIGURE_WITH=	utf8
 
+X11_USE=	xorg=x11,proto
+X11_CONFIGURE_WITH=	x
+X11_PLIST_FILES=	share/pixmaps/links.xpm
 .if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xproto
-CONFIGURE_ARGS+=	--with-x
 DESKTOP_ENTRIES="links" \
 		"Lynx-like text WWW browser" \
 		"${PREFIX}/share/pixmaps/links.xpm" \
 		"links -g" \
 		"Network;WebBrowser;" \
 		false
-PLIST_FILES+=	share/pixmaps/links.xpm
-.else
-CONFIGURE_ARGS+=	--without-x
 .endif
 
 post-patch:
