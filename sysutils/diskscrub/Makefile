@@ -7,15 +7,14 @@ CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	scrub-${PORTVERSION}
 
-MAINTAINER=	erik@bz.bzflag.bz
+MAINTAINER=	erik@elfga.com
 COMMENT=	Writes patterns on files to make retrieving the data more difficult
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
-MAN1=	scrub.1
+PLIST_FILES=	bin/scrub man/man1/scrub.1.gz
 
-PLIST_FILES=	bin/scrub
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
