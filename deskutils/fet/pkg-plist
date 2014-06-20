@@ -1,4 +1,4 @@
-bin/fet
+%%NO_ONLYCL%%bin/fet
 bin/fet-cl
 man/man1/fet.1.gz
 %%NLS%%%%DATADIR%%/translations/fet_ar.qm
@@ -25,6 +25,7 @@ man/man1/fet.1.gz
 %%NLS%%%%DATADIR%%/translations/fet_si.qm
 %%NLS%%%%DATADIR%%/translations/fet_sk.qm
 %%NLS%%%%DATADIR%%/translations/fet_sr.qm
+%%NLS%%%%DATADIR%%/translations/fet_sq.qm
 %%NLS%%%%DATADIR%%/translations/fet_tr.qm
 %%NLS%%%%DATADIR%%/translations/fet_uk.qm
 %%NLS%%%%DATADIR%%/translations/fet_untranslated.qm
