@@ -3,20 +3,6 @@ bin/ldapaxfr
 bin/ldapdns-conf
 bin/ldapaxfr-conf
 bin/domainname.sh
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.axfr
-%%PORTDOCS%%%%DOCSDIR%%/README.comparison
-%%PORTDOCS%%%%DOCSDIR%%/README.generic-rr
-%%PORTDOCS%%%%DOCSDIR%%/README.search
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README.admin
-%%PORTDOCS%%%%DOCSDIR%%/README.configure
-%%PORTDOCS%%%%DOCSDIR%%/README.how-can-i-help
-%%PORTDOCS%%%%DOCSDIR%%/README.quotes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/add_basic_zone
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/add_generic_record
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/admin/add_sub_alias
