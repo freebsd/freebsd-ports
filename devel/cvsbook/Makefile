@@ -22,7 +22,6 @@ OPTIONS_DEFAULT=	INFO SINGLE_HTML POSTSCRIPT PDF
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSPLIT_HTML}
@@ -39,27 +38,21 @@ INSTALL_INFO?=	install-info
 
 .if ${PORT_OPTIONS:MSINGLE_HTML}
 PLIST_FILES+=	%%DOCSDIR%%/cvsbook.html
-WANT_DOCSDIR=	yes
 .endif
 
 .if ${PORT_OPTIONS:MPOSTSCRIPT}
 PLIST_FILES+=	%%DOCSDIR%%/cvsbook.ps
-WANT_DOCSDIR=	yes
 .endif
 
 .if ${PORT_OPTIONS:MPDF}
 PLIST_FILES+=	%%DOCSDIR%%/cvsbook.pdf
-WANT_DOCSDIR=	yes
 .endif
 
 .if ${PORT_OPTIONS:MSPLIT_HTML}
 PLIST_DIRS+=	%%DOCSDIR%%/cvsbook-shtml
-WANT_DOCSDIR=	yes
 .endif
 
-.if defined(WANT_DOCSDIR)
 PLIST_DIRS+=	%%DOCSDIR%%
-.endif
 
 .if ${PORT_OPTIONS:MSPLIT_HTML}
 post-patch:
@@ -76,25 +69,24 @@ PLIST_FILES+=	`cd ${WRKSRC}/cvsbook && ${FIND} . -type f| ${CUT} -c2- \
 .endif
 
 do-install:
-.if defined(WANT_DOCSDIR)
-	@${MKDIR} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MSPLIT_HTML}
 	@${MKDIR} ${DOCSDIR}/cvsbook-shtml
-	@cd ${WRKSRC}/cvsbook && ${INSTALL_DATA} -- *.html ${DOCSDIR}/cvsbook-shtml
+	@cd ${WRKSRC}/cvsbook && ${INSTALL_DATA} -- *.html ${STAGEDIR}${DOCSDIR}/cvsbook-shtml
 .endif
 .if ${PORT_OPTIONS:MSINGLE_HTML}
-	@${INSTALL_DATA} ${WRKSRC}/cvsbook.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/cvsbook.html ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MPDF}
-	@${INSTALL_DATA} ${WRKSRC}/cvsbook.pdf ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/cvsbook.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MPOSTSCRIPT}
-	@${INSTALL_DATA} ${WRKSRC}/cvsbook.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/cvsbook.ps ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MINFO}
-	@${INSTALL_DATA} ${WRKSRC}/cvsbook.info* ${INFODIR}
-	@${INSTALL_INFO} ${INFODIR}/cvsbook.info ${INFODIR}/dir
+	@${MKDIR} ${STAGEDIR}${INFODIR}
+	@${INSTALL_DATA} ${WRKSRC}/cvsbook.info* ${STAGEDIR}${INFODIR}
+	@${INSTALL_INFO} ${STAGEDIR}${INFODIR}/cvsbook.info ${STAGEDIR}${INFODIR}/dir
 .endif
 
 .include <bsd.port.mk>
