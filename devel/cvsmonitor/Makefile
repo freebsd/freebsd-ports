@@ -67,23 +67,21 @@ FILES_DATA=	README setup.conf
 
 CVSMONITOR_ROOT=	${PREFIX}/${CGIDIR}/cvsmonitor
 
-NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e '$$_=q{	my $$solaris=1;} if $$.==270' \
 		${WRKSRC}/modules/CVSMonitor/MetaData/Module.pm
 
 do-install:
-	${MKDIR} ${PREFIX}/${CGIDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${CGIDIR}
 .for d in ${DIRS_DATA}
-	${MKDIR} ${CVSMONITOR_ROOT}/${d}
-	${INSTALL_DATA} ${WRKSRC}/${d}/*.* ${CVSMONITOR_ROOT}/${d}
+	@${MKDIR} ${STAGEDIR}${CVSMONITOR_ROOT}/${d}
+	${INSTALL_DATA} ${WRKSRC}/${d}/*.* ${STAGEDIR}${CVSMONITOR_ROOT}/${d}
 .endfor
 .for f in ${FILES_SCRIPT}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${CVSMONITOR_ROOT}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${CVSMONITOR_ROOT}
 .endfor
 .for f in ${FILES_DATA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${CVSMONITOR_ROOT}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${CVSMONITOR_ROOT}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
