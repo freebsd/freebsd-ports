@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	Radiator
-PORTVERSION=	4.7
+PORTVERSION=	4.13
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	Radiator Radius Server by Open System Consultants
 
 OPTIONS_DEFINE=	MYSQL
@@ -20,7 +20,6 @@ USE_PERL5=	configure
 
 RESTRICTED=	Commercial software
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
