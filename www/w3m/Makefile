@@ -3,7 +3,7 @@
 
 PORTNAME=	w3m
 PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	www ipv6
 MASTER_SITES=	SF/w3m/w3m/w3m-${PORTVERSION}
 
@@ -20,52 +20,39 @@ CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gc=${LOCALBASE} \
 		ac_cv_path_PERL=${PERL}
+CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include"
+
 
 DOCS=		FAQ.html HISTORY MANUAL.html README \
-		README.dict README.func README.m17n STORY.html keymap.default \
-		keymap.lynx menu.default menu.submenu
+		README.dict README.func README.img README.m17n STORY.html \
+		keymap.default keymap.lynx menu.default menu.submenu
+DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.img \
+		README.mailcap README.menu README.migemo
 
 OPTIONS_DEFINE=	JAPANESE INLINE_IMAGE KEY_LYNX DOCS
 JAPANESE_DESC=		Japanese messages and migemo support
 INLINE_IMAGE_DESC=	Inline image support
 KEY_LYNX_DESC=		Keymap like lynx browser
+OPTIONS_SUB=	yes
+
+JAPANESE_USES=	gettext
+JAPANESE_CONFIGURE_ON=	--enable-japanese=E --with-migemo=yes gt_cv_func_gnugettext1_libintl=yes
+JAPANESE_CONFIGURE_ENABLE=	nls
+
+INLINE_IMAGE_USE=	gnome=gtk20
+INLINE_IMAGE_CONFIGURE_WITH=	imagelib=gtk2
+INLINE_IMAGE_CONFIGURE_ENABLE=	image=fb,x11
+
+KEY_LYNX_CONFIGURE_ENABLE=	keymap=lynx
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MJAPANESE}
-USES+=		gettext
-CONFIGURE_ARGS+=	--enable-japanese=E --with-migemo=yes gt_cv_func_gnugettext1_libintl=yes
-DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
-		README.menu README.migemo
-
-PLIST_SUB+=	JAPANESE=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	JAPANESE="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MINLINE_IMAGE}
-USE_GNOME=	gtk20
-CONFIGURE_ARGS+=	--with-imagelib=gtk2 --enable-image=fb,x11
-
-DOCS+=		README.img
-DOCS_JP+=	README.img
-PLIST_SUB+=	INLINE_IMAGE=""
-
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 .else
-CONFIGURE_ARGS+=	--enable-image=no
-PLIST_SUB+=	INLINE_IMAGE="@comment "
-
 # Don't use pkg-message
 PKGMESSAGE=	${NONEXISTENT}
 .endif
-
-.if ${PORT_OPTIONS:MKEY_LYNX}
-CONFIGURE_ARGS+=	--enable-keymap=lynx
-.endif
-
-CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -76,20 +63,16 @@ post-patch:
 		-exec ${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' {} +
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-.if ${PORT_OPTIONS:MJAPANESE}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/w3m
 	@cd ${WRKSRC}/doc-jp; \
 	for i in ${DOCS_JP} ; do \
 		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/share/doc/ja/w3m/ ; \
 	done
-.endif
 	@cd ${WRKSRC}/doc; \
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/w3m/; \
 	for i in ${DOCS} ; do \
 		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/share/doc/w3m/ ; \
 	done
-.endif
 	@${INSTALL_MAN} ${WRKSRC}/scripts/w3mman/w3mman.1 ${STAGEDIR}${PREFIX}/man/ja/man1
 
 .include <bsd.port.mk>
