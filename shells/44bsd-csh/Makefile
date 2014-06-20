@@ -10,10 +10,9 @@ MASTER_SITE_SUBDIR=	cy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The traditional 4.4BSD /bin/csh C-shell
 
-USE_BZIP2=	yes
-
 BUILD_DEPENDS=	rcs:${PORTSDIR}/devel/rcs57
 
+USES=		tar:bz2
 NO_WRKSUBDIR=	yes
 PORTDOCS=	paper.ascii.gz
 

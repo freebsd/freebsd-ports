@@ -6,7 +6,6 @@ PORTVERSION=	2.0.39
 CATEGORIES=	shells
 MASTER_SITES=	http://m.a.tt/er/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sklauder@trimind.de
 COMMENT=	Extended bash brace expansion to expand hostnames or commands
@@ -15,6 +14,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USES=		tar:tgz
 AMBITDIR?=	/var/spool/${PORTNAME}
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
