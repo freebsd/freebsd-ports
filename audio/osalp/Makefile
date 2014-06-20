@@ -3,7 +3,7 @@
 
 PORTNAME=	osalp
 PORTVERSION=	0.7.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-beta
 
@@ -14,6 +14,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
     		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC -DPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
