@@ -3,16 +3,16 @@
 
 PORTNAME=	libpaper
 PORTVERSION=	1.1.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/libp/libpaper
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A library providing routines for paper size management
+COMMENT=	Library providing routines for paper size management
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

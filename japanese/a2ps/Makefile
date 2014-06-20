@@ -3,7 +3,7 @@
 
 PORTNAME=	a2ps
 PORTVERSION=	1.45
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/a2ps|}
