@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pdftohtml
-PORTVERSION=	0.39
-PORTREVISION=	7
+PORTVERSION=	0.40a
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://fossies.org/linux/www/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool for converting pdf-files into html
