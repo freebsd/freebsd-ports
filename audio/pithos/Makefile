@@ -3,7 +3,7 @@
 
 PORTNAME=	pithos
 PORTVERSION=	0.3.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 DISTNAME=	${PORTVERSION}
 
@@ -20,7 +20,8 @@ GH_COMMIT=	0770210
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:${PORTSDIR}/devel/py-gobject \
 		${LOCALBASE}/libdata/pkgconfig/notify-python.pc:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}pylast>0:${PORTSDIR}/audio/py-pylast
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
