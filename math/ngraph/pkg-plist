@@ -10,8 +10,6 @@ lib/Ngraph/Ngraph.xpm
 lib/Ngraph/append.nsc
 lib/Ngraph/calc.nsc
 lib/Ngraph/calc.tcl
-lib/Ngraph/gpl.txt
-lib/Ngraph/gpl.ja.txt
 lib/Ngraph/demo/demo.ngp
 lib/Ngraph/demo/demo1.dat
 lib/Ngraph/demo/demo1.ngp
@@ -32,6 +30,8 @@ lib/Ngraph/fft.nsc
 lib/Ngraph/fft.tcl
 lib/Ngraph/fitrslt.nsc
 lib/Ngraph/fitrslt.tcl
+lib/Ngraph/gpl.txt
+lib/Ngraph/gpl.ja.txt
 lib/Ngraph/gra2ps
 lib/Ngraph/gra2ps.ini
 lib/Ngraph/gra2wmf
@@ -44,7 +44,7 @@ lib/Ngraph/ngraph
 lib/Ngraph/ngraph.sh
 lib/Ngraph/terminal
 lib/Ngraph/text-in.nsc
-@dirrm lib/Ngraph/demo
-@dirrm lib/Ngraph/doc
-@dirrm lib/Ngraph/ja
-@dirrm lib/Ngraph
+@dirrmtry lib/Ngraph/demo
+@dirrmtry lib/Ngraph/doc
+@dirrmtry lib/Ngraph/ja
+@dirrmtry lib/Ngraph
