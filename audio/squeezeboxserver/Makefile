@@ -2,7 +2,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -42,7 +42,6 @@ RUN_DEPENDS+=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
 RUN_DEPENDS+=	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager
 
 USERS=		${SLIMUSER}
-NO_STAGE=	yes
 GROUPS=		${SLIMGROUP}
 USES=		perl5
 
@@ -198,59 +197,21 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
-	@${RM} -f ${PREFIX}/${SLIMDIR}/Cache
-	@${LN} -s ${SLIMDBDIR}/cache ${PREFIX}/${SLIMDIR}/Cache
-	@cd ${TMP_SLIMDIR} && ${COPYTREE_SHARE} . ${PREFIX}/${SLIMDIR}
+	@${MKDIR} -m 0755 ${STAGEDIR}${PREFIX}/${SLIMDIR}
+	@${RM} -f ${STAGEDIR}${PREFIX}/${SLIMDIR}/Cache
+	@${LN} -s ${SLIMDBDIR}/cache ${STAGEDIR}${PREFIX}/${SLIMDIR}/Cache
+	@cd ${TMP_SLIMDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SLIMDIR}
 	@${INSTALL_DATA} ${WRKDIR}/Custom.pm \
-	    ${PREFIX}/${SLIMDIR}/Slim/Utils/OS/Custom.pm
+	    ${STAGEDIR}${PREFIX}/${SLIMDIR}/Slim/Utils/OS/Custom.pm
 	@${INSTALL_DATA} ${WRKDIR}/custom-convert.conf \
-	    ${PREFIX}/${SLIMDIR}/custom-convert.conf
-	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/slimserver.pl
-	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/scanner.pl
+	    ${STAGEDIR}${PREFIX}/${SLIMDIR}/custom-convert.conf
 	@${LN} -sf ${LOCALBASE}/share/mysql/errmsg.txt \
 	    ${LOCALBASE}/share/mysql/english/errmsg.sys \
-	    ${PREFIX}/${SLIMDIR}/MySQL/
-	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
+	    ${STAGEDIR}${PREFIX}/${SLIMDIR}/MySQL/
+	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${STAGEDIR}${PREFIX}/bin/softsqueeze
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${TMP_DOCSDIR} && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${TMP_DOCSDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-
-build-plist:
-	@${CAT} /dev/null > ${PLIST}
-	@${ECHO} bin/softsqueeze >> ${PLIST}
-.for _CONF in ${CONFFILES}
-	@${ECHO} '@unexec if cmp -s %D/%%SLIMDIR%%/${_CONF} %D/%%SLIMDIR%%/${_CONF}.sample; then rm -f %D/%%SLIMDIR%%/${_CONF}; fi' >> ${PLIST}
-.endfor
-	@${FIND} ${TMP_DOCSDIR} -type f | \
-	    ${SED} -e 's|${TMP_DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
-	    ${SORT} >> ${PLIST}
-	@${FIND} ${TMP_SLIMDIR}/* -type f | \
-	    ${SED} -e 's|${TMP_SLIMDIR}|%%SLIMDIR%%|' | \
-	    ${SORT} >> ${PLIST}
-	@${ECHO} "%%SLIMDIR%%/custom-convert.conf" >> ${PLIST}
-	@${ECHO} "%%SLIMDIR%%/Cache" >> ${PLIST}
-	@${ECHO} "%%SLIMDIR%%/MySQL/errmsg.txt" >> ${PLIST}
-	@${ECHO} "%%SLIMDIR%%/MySQL/errmsg.sys" >> ${PLIST}
-	@${ECHO} "%%SLIMDIR%%/Slim/Utils/OS/Custom.pm" >> ${PLIST}
-	@${FIND} ${TMP_SLIMDIR} -type d | \
-	    ${EGREP} -v "${TMP_SLIMDIR}(|/Plugins)$$" | \
-	    ${SED} -e 's|${TMP_SLIMDIR}|@dirrm %%SLIMDIR%%|' | \
-	    ${SORT} -r >> ${PLIST}
-	@echo "@dirrmtry %%SLIMDIR%%/Plugins" >> ${PLIST}
-	@echo "@dirrmtry %%SLIMDIR%%" >> ${PLIST}
-	@${FIND} ${TMP_DOCSDIR} -type d | \
-	    ${SED} -e 's|${TMP_DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
-	    ${SORT} -r >> ${PLIST}
-	@${ECHO} '@unexec rm -rf ${SLIMDBDIR}/cache > /dev/null 2>&1 || true' >> ${PLIST}
-	@${ECHO} '@dirrmtry ${SLIMDBDIR}/playlists' >> ${PLIST}
-	@${ECHO} '@dirrmtry ${SLIMDBDIR}' >> ${PLIST}
-	@${ECHO} '@unexec test -d ${SLIMDBDIR} && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove ${SLIMDBDIR} and its contents manually.")' >> ${PLIST}
 
 .include <bsd.port.post.mk>
