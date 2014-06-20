@@ -3,7 +3,7 @@
 
 PORTNAME=	ggz-client-libs
 PORTVERSION=	${GGZ_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	The GGZ Gaming Zone - Core Client Libraries
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		libtool:oldver
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --with-libggz-dir="${LOCALBASE}"
 USE_LDCONFIG=	yes
