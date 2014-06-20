@@ -3554,6 +3554,7 @@
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
     SUBDIR += py-async
+    SUBDIR += py-asyncio
     SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-babelfish
