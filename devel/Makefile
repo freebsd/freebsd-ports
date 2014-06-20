@@ -646,6 +646,7 @@
     SUBDIR += hcs12mem
     SUBDIR += hexcompare
     SUBDIR += hg-git
+    SUBDIR += hgreviewboard
     SUBDIR += hgsvn
     SUBDIR += hgview
     SUBDIR += highlighterkit
