@@ -12,6 +12,8 @@ COMMENT=	Display Control Panel for X NVidia driver
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig tar:bzip2
 USE_GL=		gl
