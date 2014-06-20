@@ -3,6 +3,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.22.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
@@ -15,10 +16,14 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GHOSTSCRIPT= yes
-USES=		gmake perl5
+USE_GHOSTSCRIPT=yes
+USES=		gmake perl5 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
+CONFIGURE_ENV+=	PERLPATH=${perl_CMD} # shebangfix
+
+SHEBANG_FILES=	src/utils/afmtodit/afmtodit.pl \
+		contrib/mm/mmroff.pl \
 
 # Canonicalize to A4 if set.
 .if defined(A4) || (defined(PAPERSIZE) && ${PAPERSIZE:tu} == "A4")
