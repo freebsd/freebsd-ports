@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
+
 IS_INTERACTIVE=	YES
 PORTDOCS=	HowToDG.html Manual.htm jpconv.htm tutor-jp.htm tutor-en.htm COPYRIGHT
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist

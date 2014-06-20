@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based (graphical) interface to The Sleuth Kit
 
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ifind:${PORTSDIR}/sysutils/sleuthkit

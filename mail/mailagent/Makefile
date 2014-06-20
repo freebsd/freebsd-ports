@@ -9,6 +9,9 @@ MASTER_SITES=		http://eron.info/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated automatic mail-processing tool
 
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
+
 USES=		perl5 tar:bzip2
 
 NO_PACKAGE=	Correct FQDN needs to be hardcoded
