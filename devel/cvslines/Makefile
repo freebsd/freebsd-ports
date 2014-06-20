@@ -16,14 +16,12 @@ SHEBANG_FILES=		cvslines
 .for ii in s s_check s-check s-commit s-config s-status
 PLIST_FILES+=	bin/cvsline${ii}
 .endfor
+PLIST_FILES+=	man/man1/cvslines.1.gz
 
-MAN1=	cvslines.1
-
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|the the|the|' ${WRKSRC}/cvslines.1
 
 do-install:
-	PREFIX=${PREFIX} ${PERL5} ${WRKSRC}/INSTALL ${WRKSRC}/CONFIG
+	PREFIX=${STAGEDIR}${PREFIX} ${PERL5} ${WRKSRC}/INSTALL ${WRKSRC}/CONFIG
 
 .include <bsd.port.mk>
