@@ -3,10 +3,10 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
-MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/ \
-		http://www.math.jussieu.fr/~han/xcas/sources/
+MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/ \
+		http://www.math.jussieu.fr/~han/xcas/sources/v2/
 DISTFILES=	fltk-giac.tar.gz CoCoALib-0.9950.tgz giac-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libpng.so:${PORTSDIR}/graphics/png \
-                libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpari.so:${PORTSDIR}/math/pari \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libgsl.so:${PORTSDIR}/math/gsl \
@@ -33,6 +33,7 @@ USE_GL=		gl
 USE_XORG=	x11 xcursor xft xi
 USE_TEX=	latex:build dvipsk:build
 USE_LDCONFIG=	yes
+# Warning:  don't remove the USE_GCC without a runtime test *after* make install
 USE_GCC=	yes
 DOCSDIR=	${PREFIX}/share/doc/giac
 PORTDOCS=	*
@@ -53,6 +54,8 @@ INFO=		giac_es giac_us
 
 .include <bsd.port.options.mk>
 
+#NB: built of giacxcas with USE_GCC and nlt is successfull if the ntl port is also
+#    installed  with USE_GCC
 .if ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=	--disable-ntl
 .endif
@@ -73,6 +76,6 @@ pre-configure:
 	${GMAKE} library && \
 	cd ${FLTKDEV-GIAC} && \
 	./configure --prefix=${FLTKDEV-GIAC} \
-	&& ${MAKE}
+	&& cd src && ${MAKE}
 
 .include <bsd.port.mk>
