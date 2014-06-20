@@ -10,16 +10,14 @@ MASTER_SITES=	SF/${PORTNAME}/Latest%20versions/${PORTVERSION}/
 MAINTAINER=	syncer@gmail.com
 COMMENT=	MSN Messenger client for KDE
 
-LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-USE_BZIP2=	yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdeprefix kdelibs libkonq automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
-USES=		cmake gettext
+USES=		cmake gettext tar:bzip2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
