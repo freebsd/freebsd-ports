@@ -3,7 +3,7 @@
 
 PORTNAME=	lash
 PORTVERSION=	0.5.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -20,11 +20,12 @@ LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 OPTIONS_DEFINE=	READLINE DOCS
 OPTIONS_DEFAULT=READLINE
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi
 USE_LDCONFIG=	yes
+LIBS=		-luuid
 
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
