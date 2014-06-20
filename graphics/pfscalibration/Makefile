@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pfscalibration
-PORTVERSION=	1.3
-PORTREVISION=	4
+PORTVERSION=	1.4
 CATEGORIES=	graphics
-MASTER_SITES=	SF/pfstools/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	pfstools/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Photometric calibration of cameras and recovery HDR images from the set of LDR exposures
@@ -15,18 +15,16 @@ PFS_LDFLAGS=	-L${LOCALBASE}/lib
 
 USES=		gmake pkgconfig shebangfix perl5
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	${PFS_CPPFLAGS}
-LDFLAGS+=	${PFS_LDFLAGS}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${PFS_CPPFLAGS}" \
+		LDFLAGS="${PFS_LDFLAGS}"
 
-LIB_DEPENDS=	pfs-1.2:${PORTSDIR}/graphics/pfstools
+USE_PERL5=	run
 
-MAN1=		jpeg2hdrgen.1 \
-		dcraw2hdrgen.1 \
-		pfsinhdrgen.1 \
-		pfshdrcalibrate.1
-
-SHEBANG_FILES=	src/dcraw2hdrgen src/jpeg2hdrgen
+SHEBANG_FILES=	src/dcraw2hdrgen src/jpeg2hdrgen src/pfsinhdrgen
 bash_CMD=	${SH}
 
-NO_STAGE=	yes
+LIB_DEPENDS=	libpfs-1.2.so:${PORTSDIR}/graphics/pfstools
+
 .include <bsd.port.mk>
+
