@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	splinter
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,8 @@ COMMENT=	Browser abstraction for web acceptance testing
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}selenium>=2.33:${PORTSDIR}/www/py-selenium \
-		${PYTHON_PKGNAMEPREFIX}zope.testbrowser>=4.0.2:${PORTSDIR}/devel/py-zope.testbrowser \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}selenium>=2.39:${PORTSDIR}/www/py-selenium \
+		${PYTHON_PKGNAMEPREFIX}zope.testbrowser>=4.0.4:${PORTSDIR}/devel/py-zope.testbrowser \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}cssselect>0:${PORTSDIR}/www/py-cssselect
 
