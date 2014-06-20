@@ -19,6 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Inline-Files>=0:${PORTSDIR}/devel/p5-Inline-Files \
 		p5-Test-Warn>=0.23:${PORTSDIR}/devel/p5-Test-Warn
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		perl5
 USE_PERL5=	configure
 
