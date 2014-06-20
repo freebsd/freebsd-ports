@@ -57,6 +57,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c4892644-f8c6-11e3-9f45-6805ca0b3d42">
+    <topic>phpMyAdmin -- two XSS vulnerabilities due to unescaped table names</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>4.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-2.php">
+	  <p>XSS injection due to unescaped db/table name in
+	    navigation hiding.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-3.php">
+	  <p>XSS injection due to unescaped db/table name in
+	    recent/favorite tables.</p>
+	</blockquote>
+    </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-2.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-3.php</url>
+    </references>
+    <dates>
+      <discovery>2014-06-20</discovery>
+      <entry>2014-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0981958a-f733-11e3-8276-071f1604ef8a">
     <topic>iodined -- authentication bypass</topic>
     <affects>
