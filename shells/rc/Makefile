@@ -10,14 +10,14 @@ MASTER_SITES=	ftp://rc.quanstro.net/pub/ \
 MAINTAINER=	quanstro@quanstro.net
 COMMENT=	Unix incarnation of the plan9 shell
 
-USE_BZIP2=	YES
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-history
 
 OPTIONS_DEFINE=	READLINE
 
-READLINE_USES+=		readline
-READLINE_CONFIGURE_WITH+=	--with-readline
-READLINE_MAKE_ARGS_OFF+=	CFLAGS="$(CFLAGS) -static"
+READLINE_USES=		readline
+READLINE_CONFIGURE_WITH=--with-readline
+READLINE_MAKE_ARGS_OFF=	CFLAGS="$(CFLAGS) -static"
 
 .include <bsd.port.mk>

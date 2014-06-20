@@ -6,13 +6,13 @@ bin/freeciv-server
 %%SDL%%bin/freeciv-sdl
 etc/freeciv/database.lua
 lib/libfreeciv-srv.a
-lib/libfreeciv-srv.la
 lib/libfreeciv-srv.so
 lib/libfreeciv-srv.so.0
+lib/libfreeciv-srv.so.0.0.0
 lib/libfreeciv.a
-lib/libfreeciv.la
 lib/libfreeciv.so
 lib/libfreeciv.so.0
+lib/libfreeciv.so.0.0.0
 man/man6/freeciv-client.6.gz
 man/man6/freeciv-gtk2.6.gz
 man/man6/freeciv-gtk3.6.gz

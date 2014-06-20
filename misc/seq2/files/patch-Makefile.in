@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2014-06-20 00:16:24.923034549 +0800
++++ Makefile.in	2014-06-20 00:16:43.200031888 +0800
+@@ -77,8 +77,8 @@ all:
+ 	@echo "Do as root 'make install'"
+ 	
+ install:
+-	$(INSTALL) -m 755 $(FULL_BIN) $(bindir)
+-	$(INSTALL) -m 644 $(FULL_MAN) $(mandir)/man1/
++	$(INSTALL) -m 755 $(FULL_BIN) $(DESTDIR)$(bindir)
++	$(INSTALL) -m 644 $(FULL_MAN) $(DESTDIR)$(mandir)/man1/
+ 
+ install-strip: install
+ 	@if test $(OBJCOPY) = "yes" ; then $(OBJ_COPY_STRIP) $(bindir)/$(BIN); fi 

@@ -10,26 +10,25 @@ PKGNAMESUFFIX=	2-devel
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Release candidate for the precision time protocol IEEE 1588-2008
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
 
 CONFLICTS=	ptpd2-2.[0-9].*
 
-PLIST_FILES=	sbin/ptpd2
+PLIST_FILES=	sbin/ptpd2 man/man8/ptpd2.8.gz
 PORTDOCS=	*
 
 USE_RC_SUBR=	ptpd2
 
-MAN8=		ptpd2.8
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 do-install::
-	${INSTALL_PROGRAM} ${WRKSRC}/ptpd2 ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8/${MAN8}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/ptpd-${DISTVERSION}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/ptpd2 ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/ptpd2.8 ${STAGEDIR}${MANPREFIX}/man/man8
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/ptpd-${DISTVERSION}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

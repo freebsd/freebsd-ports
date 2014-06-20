@@ -29,4 +29,7 @@ SAMPLES_CONFIGURE_OFF=	--no-samples
 post-patch:
 	@${REINPLACE_CMD} -e 's/ =/ ?=/' ${WRKSRC}/build/config/FreeBSD
 
+post-install:
+	@${RM} -f ${STAGEDIR}${PREFIX}/include/Poco/._Version.h
+
 .include <bsd.port.mk>

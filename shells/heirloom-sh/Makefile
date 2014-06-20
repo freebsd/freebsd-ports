@@ -9,8 +9,8 @@ MASTER_SITES=	SF/heirloom/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	danielt@pilgerer.org
 COMMENT=	Portable version of OpenSolaris' Bourne Shell
 
+USES=		tar:bzip2
 MAKEFILE=	makefile
-USE_BZIP2=	yes
 PLIST_FILES=	bin/jsh \
 		man/man1/jsh.1.gz
 PORTDOCS=	CALDERA.LICENSE OPENSOLARIS.LICENSE CHANGES README

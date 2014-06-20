@@ -11,9 +11,9 @@ MASTER_SITES=	http://jggtrans.jajcus.net/downloads/ \
 MAINTAINER=	mg@fork.pl
 COMMENT=	Jabberd XMPP to GG instant messaging service gateway
 
-LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		gadu.3:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libgadu.so:${PORTSDIR}/polish/libgadu
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
@@ -26,13 +26,9 @@ USE_RC_SUBR=	jggtrans
 
 OPTIONS_DEFINE=	DEBUG EJABBERD
 EJABBERD_DESC=	transport with ejabberd
+DEBUG_CONFIGURE_ENABLE=debug
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--disable-debug
-.endif
 
 .if ${PORT_OPTIONS:MEJABBERD}
 JABBER_USER?=	ejabberd
@@ -45,8 +41,6 @@ SUB_LIST+=	JABBER_REQUIRE=jabberd
 SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml.sample
-	@${CP} -n ${WRKSRC}/jggtrans.xml ${PREFIX}/etc/jggtrans.xml || ${TRUE}
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKSRC}/jggtrans.xml ${STAGEDIR}${PREFIX}/etc/jggtrans.xml.sample
 
 .include <bsd.port.mk>

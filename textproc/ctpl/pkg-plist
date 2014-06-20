@@ -12,9 +12,9 @@ include/ctpl/ctpl-value.h
 include/ctpl/ctpl-version.h
 include/ctpl/ctpl.h
 lib/libctpl.a
-lib/libctpl.la
 lib/libctpl.so
-lib/libctpl.so.4
+lib/libctpl.so.2
+lib/libctpl.so.2.2.1
 libdata/pkgconfig/ctpl.pc
 man/man1/ctpl.1.gz
 share/gtk-doc/html/ctpl/annotation-glossary.html

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/files/
 

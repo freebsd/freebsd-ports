@@ -1,11 +1,11 @@
 # Created by: kirk@strauser.com
 # $FreeBSD$
 
-PORTNAME=		bash-completion
+PORTNAME=	bash-completion
 PORTVERSION=	2.1
 PORTREVISION=	3
-PORTEPOCH=		1
-CATEGORIES=		shells
+PORTEPOCH=	1
+CATEGORIES=	shells
 MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -13,10 +13,9 @@ COMMENT=	Programmable completion library for Bash
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_BZIP2=		yes
 USE_AUTOTOOLS=	aclocal automake
 GNU_CONFIGURE=	yes
-USES=			gmake
+USES=		gmake tar:bzip2
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh

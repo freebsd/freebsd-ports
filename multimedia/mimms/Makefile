@@ -10,27 +10,23 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	Download streams using the MMS protocol
 
-LIB_DEPENDS=	mms.0:${PORTSDIR}/net/libmms
+LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
 
-USE_BZIP2=	yes
-
-USE_PYTHON=		yes
+USES=		tar:bzip2
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
 PYDISTUTILS_PKGVERSION=	3.2
 
-MAN1=		mimms.1
 PORTDOCS=	AUTHORS COPYING NEWS README
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

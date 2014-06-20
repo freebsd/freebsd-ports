@@ -648,6 +648,7 @@
     SUBDIR += hcs12mem
     SUBDIR += hexcompare
     SUBDIR += hg-git
+    SUBDIR += hgreviewboard
     SUBDIR += hgsvn
     SUBDIR += hgview
     SUBDIR += highlighterkit
@@ -3560,6 +3561,7 @@
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
     SUBDIR += py-async
+    SUBDIR += py-asyncio
     SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-babelfish
@@ -4627,7 +4629,7 @@
     SUBDIR += tnt
     SUBDIR += toh
     SUBDIR += tokamak
-    SUBDIR += tortoisehg2
+    SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += trac-bitten
     SUBDIR += tradcpp

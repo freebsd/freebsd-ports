@@ -1,6 +1,7 @@
 bin/gcdmaster
 %%DATADIR%%/Preferences.glade
 %%DATADIR%%/ProjectChooser.glade
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 share/application-registry/gcdmaster.applications
 share/applications/gcdmaster.desktop
 share/mime-info/gcdmaster.keys
@@ -8,6 +9,6 @@ share/mime-info/gcdmaster.mime
 share/pixmaps/document-icons/gcdmaster-doc.png
 share/pixmaps/gcdmaster.png
 share/mime/packages/gcdmaster.xml
-@dirrm %%DATADIR%%
+man/man1/gcdmaster.1.gz
+@dirrmtry %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

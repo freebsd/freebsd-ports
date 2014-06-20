@@ -9,5 +9,4 @@ MASTERDIR=	${.CURDIR}/../cdrdao
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

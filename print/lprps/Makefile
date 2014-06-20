@@ -3,6 +3,7 @@
 
 PORTNAME=	lprps
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.jclark.com/pub/lprps/
 EXTRACT_SUFX=	.tar.Z

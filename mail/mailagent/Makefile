@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=		mailagent
-PORTVERSION=		3.1.77
+PORTVERSION=		3.1.78
 CATEGORIES=		mail
 MASTER_SITES=		http://eron.info/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A sophisticated automatic mail-processing tool
+COMMENT=	Sophisticated automatic mail-processing tool
 
-USES=		perl5
-USE_BZIP2=	yes
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
+
+USES=		perl5 tar:bzip2
 
 NO_PACKAGE=	Correct FQDN needs to be hardcoded
 IS_INTERACTIVE=		yes
@@ -21,16 +23,12 @@ CONFIGURE_ARGS=		-dres \
 			-Dccflags='${CFLAGS}' \
 			-Dd_flockonly='define' \
 			-Dutmp='/var/run/utmp' \
-			-Dprefix='${PREFIX}' -Dmansrc='${PREFIX}/man/man1'
+			-Dprefix='${PREFIX}' \
+			-Dmansrc='${STAGEDIR}${PREFIX}/man/man1'
 MAKE_JOBS_UNSAFE=	yes
-MAKE_ENV=	PATH=`dirname ${PERL5}`:${PATH}
+MAKE_ENV=	PATH=`dirname ${PERL5}`:${PATH} INSTALL_PREFIX=${STAGEDIR}
 INSTALL_TARGET=	install install.man
 
-MAN1=		edusers.1 mailagent.1 package.1 mailhelp.1
-MLINKS=		mailhelp.1 maildist.1  mailhelp.1 mailpatch.1 \
-		mailhelp.1 maillist.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 900006
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-utmpx-agent_pl_utmp_utmp.pl \
@@ -56,8 +54,8 @@ post-patch:
 	    misc/news/newsgate)
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}/misc
-	${CP} -pR ${WRKSRC}/misc/* ${EXAMPLESDIR}/misc
-	@${LN} -fs ${PREFIX}/lib/mailagent/examples ${EXAMPLESDIR}/agent
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/misc
+	${CP} -pR ${WRKSRC}/misc/* ${STAGEDIR}${EXAMPLESDIR}/misc
+	@${LN} -fs ${PREFIX}/lib/mailagent/examples ${STAGEDIR}${EXAMPLESDIR}/agent
 
 .include <bsd.port.post.mk>

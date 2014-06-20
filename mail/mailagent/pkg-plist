@@ -39,6 +39,10 @@ lib/mailagent/examples/nocmds
 lib/mailagent/examples/profile
 lib/mailagent/examples/rules
 lib/mailagent/examples/vacation
+man/man1/edusers.1.gz
+man/man1/mailagent.1.gz
+man/man1/mailhelp.1.gz
+man/man1/package.1.gz
 %%EXAMPLESDIR%%/misc/README
 %%EXAMPLESDIR%%/misc/fakesend/README
 %%EXAMPLESDIR%%/misc/fakesend/fakesend.pl

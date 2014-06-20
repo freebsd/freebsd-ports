@@ -3,7 +3,7 @@
 
 PORTNAME=	jpeg2ps
 PORTVERSION=	1.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics converters
 MASTER_SITES=	http://www.pdflib.com/fileadmin/pdflib/products/more/jpeg2ps/
 

@@ -74,8 +74,8 @@ SHA256 (modsecurity-apache_2.7.5.tar.gz) = 9e907536278d8da80d3dbb29aeffe9c4ec37c
 SIZE (modsecurity-apache_2.7.5.tar.gz) = 1045387
 SHA256 (naxsi-core-0.50.tgz) = 7cece5f9d9c5df9e09af1e1023bc8e04bbbbe953e67461b893b8240e82ca52ef
 SIZE (naxsi-core-0.50.tgz) = 49809
-SHA256 (passenger-4.0.44.tar.gz) = 201308c9d95ccbd7aa5167a22bdc4e403f90ba7a185d5cc51a840caa0c3cd30e
-SIZE (passenger-4.0.44.tar.gz) = 3928963
+SHA256 (passenger-4.0.45.tar.gz) = 5363611ebe5086b1ba699057ead3af1c06d0a70f368d1a41bdc399a45f934579
+SIZE (passenger-4.0.45.tar.gz) = 4363360
 SHA256 (ngx_postgres-0.9.tar.gz) = aac0141e73b5c440927b7e040072f120b36e49deb2ff36ad00ff96a80622fbec
 SIZE (ngx_postgres-0.9.tar.gz) = 41022
 SHA256 (openresty-rds-csv-nginx-module-v0.05-0-g607e26b.tar.gz) = d5f14e45c6dc0d039ad52ae889775b5af1ff80a1c8edb69361c1581aca5d0b8f
@@ -116,4 +116,3 @@ SHA256 (1.2.4.tar.gz) = f79521a25322cb4f504547a0b0f76fd9d024c14440e5d790e26dda70
 SIZE (1.2.4.tar.gz) = 120448
 SHA256 (nginx_syslog_patch-3ca5ba6.tar.gz) = 817a207f2cb18f3035f5535bd03942390010dbade03c4a5d3d0d97b55e1f3deb
 SIZE (nginx_syslog_patch-3ca5ba6.tar.gz) = 94400
-

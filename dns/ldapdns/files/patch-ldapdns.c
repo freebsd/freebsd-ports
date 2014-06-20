@@ -1,9 +1,8 @@
---- ldapdns.c.orig	Mon Jun 23 15:56:44 2003
-+++ ldapdns.c	Sun Oct  2 15:13:11 2005
+--- ldapdns.c.orig	2014-05-03 14:11:48.555553477 -0700
++++ ldapdns.c	2014-05-03 14:13:35.212669115 -0700
 @@ -21,6 +21,7 @@
  		list_push(&x, lp->str);
- 		list_push(&seen, lp->str);
- HIT:
+ 		list_push(&seen, lp->str); HIT:
 +		continue;
  	}
  

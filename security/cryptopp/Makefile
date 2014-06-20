@@ -13,7 +13,7 @@ MAINTAINER=		delphij@FreeBSD.org
 COMMENT=		Free C++ class library of Cryptographic Primitives
 
 OPTIONS_DEFINE=		DEBUG DOCS GCC STATIC THREADS
-OPTIONS_DEFAULT=	STATIC THREADS
+OPTIONS_DEFAULT=	THREADS
 STATIC_DESC=		Build static version only (no shared libs)
 GCC_DESC=		Build with current GCC
 

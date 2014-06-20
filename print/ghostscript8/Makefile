@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	8.71
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -37,8 +37,8 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USE_XZ=		yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:xz shebangfix
+SHEBANG_FILES=	${WRKSRC}/lib/fixmswrd.pl
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf

@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlalchemy
 PORTVERSION=	0.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,21 +19,10 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 
 # Python3 ready
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PY2TO3_CMD=		${LOCALBASE}/bin/2to3-${PYTHON_VER}
 PY2TO3_ARGS=		--no-diffs --nobackups --verbose --write
-PYDISTUTILS_INSTALLARGS=	--always-unzip \
-				--install-dir ${PYEASYINSTALL_SITELIBDIR} \
-				--no-deps \
-				--optimize 2 \
-				--quiet \
-				--script-dir ${PYEASYINSTALL_BINDIR} \
-				--site-dir ${PYEASYINSTALL_SITELIBDIR} \
-				${WRKSRC}/dist/${PYEASYINSTALL_EGG}
-PYDISTUTILS_PKGNAME=	SQLAlchemy
-PYDISTUTILS_PKGVERSION=	${DISTVERSION}
-PYDISTUTILS_NOEGGINFO=	yes
-PYEASYINSTALL_ARCHDEP=	yes
 
 OPTIONS_DEFINE=		DOCS EXAMPLES TESTS
 OPTIONS_MULTI=		BACKEND
@@ -126,7 +115,6 @@ PLIST_SUB+=	SPEEDUPS=""
 .else
 # C extensions are not supported in py3k
 PLIST_SUB+=	SPEEDUPS="@comment "
-PYEASYINSTALL_OSARCH=
 .endif
 
 regression-test: build

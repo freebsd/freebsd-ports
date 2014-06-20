@@ -9,6 +9,8 @@ MASTER_SITES=	SF/verlihub/VH_Lua/${DISTVERSION}
 
 MAINTAINER=	me@skylord.ru
 
+BROKEN=		Fails to build
+
 PLUGIN_NAME=	lua
 PLUGIN_DESC=	LuaScript
 

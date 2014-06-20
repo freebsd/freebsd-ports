@@ -7,8 +7,11 @@ CATEGORIES=	net www
 MASTER_SITES=	http://www.chifeng.name/dist/delegate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
+
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
 
 IS_INTERACTIVE=	YES
 PORTDOCS=	HowToDG.html Manual.htm jpconv.htm tutor-jp.htm tutor-en.htm COPYRIGHT
@@ -18,6 +21,8 @@ SUB_LIST=	DOCSDIR=${DOCSDIR}
 
 # Strip breaks binary checksumming
 STRIP=
+
+MAKE_JOBS_UNSAFE=	yes
 
 NO_STAGE=	yes
 post-extract:

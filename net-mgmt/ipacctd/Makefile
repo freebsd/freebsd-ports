@@ -14,12 +14,6 @@ USE_RC_SUBR=	ipacctd
 
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin"
 
-MAN8=		ipacctd.8
-MANLANG=	"" ru.KOI8-R
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -29,8 +23,8 @@ post-extract:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/ru
-	@${INSTALL_DATA} ${WRKSRC}/README.ipacctd ${DOCSDIR}/ru
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ru
+	@${INSTALL_DATA} ${WRKSRC}/README.ipacctd ${STAGEDIR}${DOCSDIR}/ru
 .endif
 
 .include <bsd.port.mk>

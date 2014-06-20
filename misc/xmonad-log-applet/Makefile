@@ -11,10 +11,9 @@ MAINTAINER=	alexander@kojevnikov.com
 COMMENT=	An applet that will display Xmonad log information
 
 INSTALLS_ICONS=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomeprefix gnomehack gnomepanel
+USES=		gmake pkgconfig pathfix
+USE_GNOME=	gnomeprefix gnomepanel
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-panel=gnome2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

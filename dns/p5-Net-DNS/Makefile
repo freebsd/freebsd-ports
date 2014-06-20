@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.76
+PORTVERSION=	0.77
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,5 +28,8 @@ IDN_BUILD_DEPENDS=	p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
 IDN_RUN_DEPENDS=	p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
 IPV6_BUILD_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/mach/auto/Net/DNS/DNS.so
 
 .include <bsd.port.mk>

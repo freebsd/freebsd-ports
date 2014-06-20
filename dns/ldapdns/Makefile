@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldapdns
-PORTVERSION=	2.06
-PORTREVISION=	2
+PORTVERSION=	2.07
 CATEGORIES=	dns
 MASTER_SITES=	http://bsdforge.com/projects/source/dns/ldapdns/
 
@@ -23,28 +22,21 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_CSTD=	gnu89
+USES=		tar:xz
 
 ALL_TARGET=	default
 
 PROGRAMS=	ldapdns ldapaxfr
 SCRIPTS=	ldapdns-conf ldapaxfr-conf domainname.sh
-DOCS=		AUTHORS CHANGELOG FAQ INSTALL README README.[a-s]*
-
-.include <bsd.port.options.mk>
+PORTDOCS=	AUTHORS CHANGELOG FAQ INSTALL README README.[a-s]*
 
 do-install:
-.for i in ${PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
-.endfor
-.for i in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	${INSTALL_PROGRAM} ${PROGRAMS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/admin
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/admin/* ${STAGEDIR}${EXAMPLESDIR}/admin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

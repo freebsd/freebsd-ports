@@ -1,49 +1,71 @@
-sbin/monkeysphere-host
-sbin/monkeysphere-authentication
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/MonkeySpec
-%%DOCSDIR%%/getting-started-user.mdwn
-%%DOCSDIR%%/getting-started-admin.mdwn
+@sample %%ETCDIR%%/monkeysphere-authentication.conf.sample
+@sample %%ETCDIR%%/monkeysphere-host.conf.sample
+@sample %%ETCDIR%%/monkeysphere.conf.sample
+bin/monkeysphere
+bin/monkeysphere-e
+bin/openpgp2pem
+bin/openpgp2spki
 bin/openpgp2ssh
 bin/pem2openpgp
-bin/monkeysphere
-%%DATADIR%%/mh/publish_key
-%%DATADIR%%/mh/import_key
-%%DATADIR%%/mh/set_expire
-%%DATADIR%%/mh/diagnostics
-%%DATADIR%%/mh/add_hostname
-%%DATADIR%%/mh/add_revoker
-%%DATADIR%%/mh/revoke_hostname
-%%DATADIR%%/mh/revoke_key
-%%DATADIR%%/keytrans
-%%DATADIR%%/defaultenv
+man/man1/monkeysphere.1-e.gz
+man/man1/monkeysphere.1.gz
+man/man1/openpgp2pem.1.gz
+man/man1/openpgp2spki.1.gz
+man/man1/openpgp2ssh.1.gz
+man/man1/pem2openpgp.1.gz
+man/man7/monkeysphere.7.gz
+man/man8/monkeysphere-authentication.8-e.gz
+man/man8/monkeysphere-authentication.8.gz
+man/man8/monkeysphere-host.8-e.gz
+man/man8/monkeysphere-host.8.gz
+sbin/monkeysphere-authentication
+sbin/monkeysphere-authentication-e
+sbin/monkeysphere-host
+sbin/monkeysphere-host-e
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/examples/make-x509-certreqs
+%%PORTDOCS%%%%DOCSDIR%%/examples/monkeysphere-monitor-keys
+%%PORTDOCS%%%%DOCSDIR%%/examples/crontab
+%%PORTDOCS%%%%DOCSDIR%%/examples/ssh_config
+%%PORTDOCS%%%%DOCSDIR%%/examples/sshd_config
 %%DATADIR%%/VERSION
-%%DATADIR%%/transitions/0.23
-%%DATADIR%%/transitions/README.txt
-%%DATADIR%%/ma/list_certifiers
-%%DATADIR%%/ma/add_certifier
-%%DATADIR%%/ma/update_users
-%%DATADIR%%/ma/setup
-%%DATADIR%%/ma/remove_certifier
-%%DATADIR%%/ma/diagnostics
+%%DATADIR%%/checkperms
 %%DATADIR%%/common
+%%DATADIR%%/defaultenv
+%%DATADIR%%/defaultenv-e
+%%DATADIR%%/keytrans
 %%DATADIR%%/m/gen_subkey
+%%DATADIR%%/m/import_subkey
+%%DATADIR%%/m/keys_for_userid
 %%DATADIR%%/m/ssh_proxycommand
 %%DATADIR%%/m/subkey_to_ssh_agent
-%%DATADIR%%/m/import_subkey
-@unexec if cmp -s %D/etc/monkeysphere/monkeysphere.conf.sample %D/etc/monkeysphere/monkeysphere.conf; then rm -f %D/etc/monkeysphere/monkeysphere.conf; fi
-etc/monkeysphere/monkeysphere.conf.sample
-@exec if [ ! -f %D/etc/monkeysphere/monkeysphere.conf ] ; then cp -p %D/%F %B/monkeysphere.conf; fi
-@unexec if cmp -s %D/etc/monkeysphere/monkeysphere-host.conf.sample %D/etc/monkeysphere/monkeysphere-host.conf; then rm -f %D/etc/monkeysphere/monkeysphere-host.conf; fi
-etc/monkeysphere/monkeysphere-host.conf.sample
-@exec if [ ! -f %D/etc/monkeysphere/monkeysphere-host.conf ] ; then cp -p %D/%F %B/monkeysphere-host.conf; fi
-@unexec if cmp -s %D/etc/monkeysphere/monkeysphere-authentication.conf.sample %D/etc/monkeysphere/monkeysphere-authentication.conf; then rm -f %D/etc/monkeysphere/monkeysphere-authentication.conf; fi
-etc/monkeysphere/monkeysphere-authentication.conf.sample
-@exec if [ ! -f %D/etc/monkeysphere/monkeysphere-authentication.conf ] ; then cp -p %D/%F %B/monkeysphere-authentication.conf; fi
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/transitions
-@dirrm %%DATADIR%%/mh
-@dirrm %%DATADIR%%/ma
-@dirrm %%DATADIR%%/m
-@dirrm %%DATADIR%%
-@dirrm etc/monkeysphere
+%%DATADIR%%/m/update_authorized_keys
+%%DATADIR%%/m/update_known_hosts
+%%DATADIR%%/ma/add_certifier
+%%DATADIR%%/ma/diagnostics
+%%DATADIR%%/ma/list_certifiers
+%%DATADIR%%/ma/remove_certifier
+%%DATADIR%%/ma/setup
+%%DATADIR%%/ma/update_users
+%%DATADIR%%/mh/add_name
+%%DATADIR%%/mh/add_revoker
+%%DATADIR%%/mh/diagnostics
+%%DATADIR%%/mh/import_key
+%%DATADIR%%/mh/publish_key
+%%DATADIR%%/mh/revoke_key
+%%DATADIR%%/mh/revoke_name
+%%DATADIR%%/mh/set_expire
+%%DATADIR%%/monkeysphere-authentication-keys-for-user
+%%DATADIR%%/transitions/0.23
+%%DATADIR%%/transitions/0.23-e
+%%DATADIR%%/transitions/0.28
+%%DATADIR%%/transitions/0.28-e
+%%DATADIR%%/transitions/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/transitions
+@dirrmtry %%DATADIR%%/mh
+@dirrmtry %%DATADIR%%/ma
+@dirrmtry %%DATADIR%%/m
+@dirrmtry %%DATADIR%%
+@dirrmtry %%ETCDIR%%

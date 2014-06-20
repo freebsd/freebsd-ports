@@ -1,9 +1,9 @@
 # Created by: Mario S F Ferreira <lioux@linf.unb.br>
 # $FreeBSD$
 
-PORTNAME=	qmail
+PORTNAME=	${QMAIL_PORTNAME}
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	11
+PORTREVISION?=	1
 CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -32,9 +32,9 @@ NEED_ROOT=	yes
 
 USERS=		alias
 .for usersuffix in d l p q r s
-USERS+=		${PORTNAME}${usersuffix}
+USERS+=		qmail${usersuffix}
 .endfor
-GROUPS=		${PORTNAME} qnofiles
+GROUPS=		qmail qnofiles
 
 # Options description for qmail and all slave ports
 ALTQUEUE_DESC=			Run a QMAILQUEUE external queue
@@ -50,6 +50,7 @@ CLEARTEXTPASSWD_DESC=		Use cleartext passwords (Dangerous!)
 DASH_EXT_DESC=			Dash_ext extended mail addresses add
 DATA_COMPRESS_DESC=		Smtp on the fly DATA compression
 DISCBOUNCES_PATCH_DESC=		Discard double-bounces
+DNS_CNAME_DESC=			Request CNAME (vs ANY for BIND 4 bug)
 ENHACELOGS_DESC=		Enhace qmail-smtpd logs (spamcontrol-like)
 EXTERNAL_TODO_DESC=		External high-performance todo processing
 EXTTODO_PATCH_DESC=		Extern high-perform. todo processing
@@ -81,6 +82,25 @@ TLS_DESC=			SMTP TLS support
 TLSREMOTE_DESC=			TLS support
 TLS_DEBUG_DESC=			Enable additional debug information
 XF_QUITASAP_DESC=		Close SMTP session ASAP (SMTPEXTFORK)
+
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_SPAMCONTROL) || \
+    defined(SLAVE_TLS)
+_USE_NETQMAIL=			no
+.else
+_USE_NETQMAIL=			yes
+.endif
+
+.if ${_USE_NETQMAIL} == yes
+PORTNAME=			netqmail
+QMAIL_VERSION=			1.06
+BARRIER_SENDMAIL_F_PATCH=	yes
+BARRIER_QMAILQUEUE_PATCH=	yes
+.else
+# This is only used for slave ports.
+PORTNAME=			qmail
+QMAIL_VERSION=			1.03
+.endif
 
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_MYSQL)
@@ -118,6 +138,10 @@ BARRIER_RFC2821_PATCH=		yes
 BARRIER_TARPIT_PATCH=		yes
 .endif
 
+.if defined(SLAVE_SPAMCONTROL)
+BARRIER_DNS_CNAME=		yes
+.endif
+
 PATCH_DIST_STRIP+=	-p1
 
 .if !defined(BARRIER_DNS_PATCH)
@@ -149,21 +173,19 @@ PATCH_SITES+=	http://www.nrg4u.com/qmail/:ldap
 PATCHFILES+=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz:ldap
 .elif defined(SLAVE_MYSQL)
 PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
-PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
+PATCHFILES+=	netqmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 .elif defined(SLAVE_TLS)
 PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
 PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato_v2.patch:tls
 .endif
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
 PATCH_SITE_SUBDIR+=	bdrewery/qmail/:tls
-
-QMAIL_VERSION?=		1.03
 
 .if !defined(BARRIER_SMTP_AUTH_PATCH)
 SMTP_AUTH_VERSION=	0.31
-SMTP_AUTH_DIR=		${WRKDIR}/${PORTNAME}-smtpd-auth-${SMTP_AUTH_VERSION}
+SMTP_AUTH_DIR=		${WRKDIR}/qmail-smtpd-auth-${SMTP_AUTH_VERSION}
 
 OPTIONS_DEFINE+=SMTP_AUTH_PATCH
 .endif
@@ -229,6 +251,11 @@ OPTIONS_DEFAULT+=	TLSREMOTE PAM111421
 .endif
 
 OPTIONS_DEFINE+=QEXTRA
+
+.if !defined(BARRIER_DNS_CNAME)
+OPTIONS_DEFINE+=	DNS_CNAME
+OPTIONS_DEFAULT+=	DNS_CNAME
+.endif
 
 .if !defined(SLAVE_LDAP)
 OPTIONS_DEFINE+=RCDLINK
@@ -360,6 +387,11 @@ NO_PREFIX_RMDIR=yes
 
 .include <bsd.port.options.mk>
 
+# XXX Not needed with spamcontrol-2730
+.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && !defined(SLAVE_LDAP)
+EXTRA_PATCHES+=			${FILESDIR}/extra-patch-amd64
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} != ${LOCALBASE}
@@ -422,7 +454,7 @@ DISTFILES+=	${AUTH_PATCH}:smtp_auth
 
 .if ${PORT_OPTIONS:MMAILDIRQUOTA_PATCH}
 PATCH_SITES+=	http://www.alexdupre.com/qmail/:quota
-PATCHFILES+=	qmail-maildir++.patch:quota
+PATCHFILES+=	${PORTNAME}-maildir++.patch:quota
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-maildir++
 .endif
 
@@ -490,6 +522,10 @@ PATCHFILES+=	ext_todo-20030105.patch:exttodo
 . endif
 .else
 PLIST_SUB+=	EXTTODO="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDNS_CNAME}
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-dns-cname
 .endif
 
 .if !defined(BARRIER_DNS_PATCH) \
@@ -795,9 +831,6 @@ post-patch:
 	@${REINPLACE_CMD} 's!QUEUE_EXTRA ""!QUEUE_EXTRA "Tlog\\0"!g; \
 			   s!QUEUE_EXTRALEN 0!QUEUE_EXTRALEN 5!g' \
 			   ${WRKSRC}/extra.h
-.endif
-.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && !defined(SLAVE_LDAP)
-	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-amd64
 .endif
 	@${REINPLACE_CMD} -e "s/void *main/int main/g" ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e "/int main/ s/argc, *argv/int argc, char **argv/" ${WRKSRC}/install.c

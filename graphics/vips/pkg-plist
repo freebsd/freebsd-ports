@@ -64,14 +64,14 @@ include/vips/vipscpp.h
 include/vips/vips
 include/vips/vipsc++.h
 @dirrm include/vips
-lib/libvips.so.30
-lib/libvips.so
-lib/libvips.la
 lib/libvips.a
-lib/libvipsCC.so.30
-lib/libvipsCC.so
-lib/libvipsCC.la
+lib/libvips.so.15
+lib/libvips.so.15.15.2
+lib/libvips.so
 lib/libvipsCC.a
+lib/libvipsCC.so
+lib/libvipsCC.so.15
+lib/libvipsCC.so.15.15.2
 libdata/pkgconfig/vips-%%VERSION%%.pc
 libdata/pkgconfig/vipsCC-%%VERSION%%.pc
 man/man1/batch_crop.1.gz

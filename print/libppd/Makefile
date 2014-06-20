@@ -3,14 +3,14 @@
 
 PORTNAME=	libppd
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	SF/lpr/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	emss@free.fr
-COMMENT=	A library providing routines for ppd files
+COMMENT=	Library providing routines for ppd files
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	Yes
 USE_GNOME=	glib12

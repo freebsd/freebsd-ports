@@ -19,16 +19,11 @@ USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/cowpatty bin/genpmk
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "Installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

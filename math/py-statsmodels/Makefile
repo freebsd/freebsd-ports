@@ -13,6 +13,8 @@ COMMENT=	Complement to SciPy for statistical computations
 
 LICENSE=	BSD
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:${PORTSDIR}/math/py-pandas \

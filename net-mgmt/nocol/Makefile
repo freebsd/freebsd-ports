@@ -6,6 +6,9 @@ PORTVERSION=	4.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netplex-tech.com/software/downloads/nocol/
 
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network/Service monitoring software
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.3.0.b5
+DISTVERSION=	1.3.0.b6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://highsecure.ru/distfiles/ \
@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 USE_SUBMAKE=	yes
 
 .if !exists(/usr/include/jail.h)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-pkg_pkg.8
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
 
 .include <bsd.port.pre.mk>

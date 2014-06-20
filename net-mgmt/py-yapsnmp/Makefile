@@ -3,7 +3,7 @@
 
 PORTNAME=	yapsnmp
 PORTVERSION=	0.7.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,20 +11,18 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Python SNMP module based on net-snmp
 
-LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake
+USES=		gmake libtool
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-site-packages-prefix=${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} >= 800000) && (${ARCH} == "i386")

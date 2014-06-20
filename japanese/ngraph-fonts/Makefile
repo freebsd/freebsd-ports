@@ -20,8 +20,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
 do-install:	# empty
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,5 @@
 sbin/smart-proxy
-@unexec if cmp -s %D/etc/foreman-proxy/settings.yml %D/etc/foreman-proxy/settings.yml.sample; then rm -f %D/etc/foreman-proxy/settings.yml; fi
-etc/foreman-proxy/settings.yml.sample
-@exec [ -f %B/settings.yml ] || cp %B/%f %B/settings.yml
+@sample etc/foreman-proxy/settings.yml.sample
 %%DATADIR%%/Rakefile
 %%DATADIR%%/config.ru
 %%DATADIR%%/config
@@ -40,10 +38,12 @@ etc/foreman-proxy/settings.yml.sample
 %%DATADIR%%/lib/proxy/dns/nsupdate_gss.rb
 %%DATADIR%%/lib/proxy/dns/virsh.rb
 %%DATADIR%%/lib/proxy/error.rb
+%%DATADIR%%/lib/proxy/kerberos.rb
 %%DATADIR%%/lib/proxy/log.rb
 %%DATADIR%%/lib/proxy/puppet.rb
 %%DATADIR%%/lib/proxy/puppet/class_scanner.rb
 %%DATADIR%%/lib/proxy/puppet/class_scanner_eparser.rb
+%%DATADIR%%/lib/proxy/puppet/config_reader.rb
 %%DATADIR%%/lib/proxy/puppet/customrun.rb
 %%DATADIR%%/lib/proxy/puppet/default_puppet_settings.rb
 %%DATADIR%%/lib/proxy/puppet/environment.rb
@@ -54,6 +54,8 @@ etc/foreman-proxy/settings.yml.sample
 %%DATADIR%%/lib/proxy/puppet/puppetrun.rb
 %%DATADIR%%/lib/proxy/puppet/salt.rb
 %%DATADIR%%/lib/proxy/puppetca.rb
+%%DATADIR%%/lib/proxy/realm.rb
+%%DATADIR%%/lib/proxy/realm/freeipa.rb
 %%DATADIR%%/lib/proxy/settings.rb
 %%DATADIR%%/lib/proxy/tftp.rb
 %%DATADIR%%/lib/proxy/util.rb
@@ -61,6 +63,7 @@ etc/foreman-proxy/settings.yml.sample
 %%DATADIR%%/lib/proxy/virsh.rb
 %%DATADIR%%/lib/puppet_api.rb
 %%DATADIR%%/lib/puppetca_api.rb
+%%DATADIR%%/lib/realm_api.rb
 %%DATADIR%%/lib/sinatra-patch.rb
 %%DATADIR%%/lib/smart_proxy.rb
 %%DATADIR%%/lib/tftp_api.rb
@@ -80,6 +83,7 @@ etc/foreman-proxy/settings.yml.sample
 @dirrm %%DATADIR%%/lib/proxy/dhcp
 @dirrm %%DATADIR%%/lib/proxy/dns
 @dirrm %%DATADIR%%/lib/proxy/puppet
+@dirrm %%DATADIR%%/lib/proxy/realm
 @dirrm %%DATADIR%%/lib/proxy
 @dirrm %%DATADIR%%/lib
 @dirrmtry %%DATADIR%%

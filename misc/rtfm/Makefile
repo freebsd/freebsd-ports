@@ -10,8 +10,6 @@ MASTER_SITE_SUBDIR=	chris
 MAINTAINER=	chris@FreeBSD.org
 COMMENT=	A FreeBSD documentation search mechanism
 
-MAN1=		rtfm.1
-PLIST_FILES=	bin/rtfm
+PLIST_FILES=	bin/rtfm man/man1/rtfm.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,18 +17,13 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/bofh-fortune-mod2.0
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 STRFILE=	/usr/games/strfile
 
-NO_STAGE=	yes
-post-patch:
-	@${CAT} pkg-message | ${SED} 's|PREFIX|${PREFIX}|' > ${PKGMESSAGE}
-
 do-install:
-	@${MKDIR} ${PREFIX}/share/games
-	@${MKDIR} ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/bofh ${PREFIX}/share/games/fortune
-	@${STRFILE} ${PREFIX}/share/games/fortune/bofh
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/bofh ${STAGEDIR}${PREFIX}/share/games/fortune
+	@${STRFILE} ${STAGEDIR}${PREFIX}/share/games/fortune/bofh
 
 .include <bsd.port.mk>

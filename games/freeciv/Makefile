@@ -3,6 +3,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.4.2
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -12,9 +13,8 @@ COMMENT=	Free turn-based multiplayer strategy
 RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		gettext gmake iconv pkgconfig
+USES=		gettext gmake iconv libtool pkgconfig tar:bzip2
 USE_SQLITE=	yes
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
