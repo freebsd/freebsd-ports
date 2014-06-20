@@ -37,8 +37,8 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USE_XZ=		yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:xz shebangfix
+SHEBANG_FILES=	${WRKSRC}/lib/fixmswrd.pl
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
