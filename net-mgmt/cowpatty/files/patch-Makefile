@@ -1,5 +1,5 @@
---- Makefile.orig	2009-06-05 20:07:08.000000000 +0200
-+++ Makefile	2009-09-13 23:43:07.000000000 +0200
+--- Makefile.orig	2009-06-06 02:07:08.000000000 +0800
++++ Makefile	2014-06-20 16:53:32.501910734 +0800
 @@ -1,21 +1,11 @@
 -##################################
 -# <jwright> Well, I may be doing stupid things with make
@@ -23,11 +23,11 @@
  
  all: $(PROGOBJ) $(PROG)
  
-@@ -44,5 +34,5 @@
+@@ -44,5 +34,5 @@ strip:
  	@ls -l $(PROG)
  
  install: all
 -	install -d $(DESTDIR)$(BINDIR)
 -	install -m 755 $(PROG) $(DESTDIR)$(BINDIR)
 +	install -d $(DESTDIR)$(PREFIX)/bin
-+	install -m 755 $(PROG) $(PREFIX)/bin
++	install -m 755 $(PROG) $(DESTDIR)$(PREFIX)/bin
