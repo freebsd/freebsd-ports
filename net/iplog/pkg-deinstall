@@ -1,2 +1,18 @@
 #!/bin/sh
-rm -rf /var/run/iplog
+#
+#	$FreeBSD: $
+#
+
+#set -vx
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+case $2 in
+	DEINSTALL)
+		:
+		;;
+	POST-DEINSTALL)
+		/bin/rm -rf /var/run/iplog
+		;;
+
+esac
