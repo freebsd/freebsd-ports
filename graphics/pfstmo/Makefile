@@ -2,37 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	pfstmo
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.5
 CATEGORIES=	graphics
-MASTER_SITES=	SF/pfstools/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	pfstools/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Tone mapping operators
 
-LIB_DEPENDS=	pfs-1.2:${PORTSDIR}/graphics/pfstools
+LIB_DEPENDS=	libpfs-1.2.so:${PORTSDIR}/graphics/pfstools \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libgsl.so:${PORTSDIR}/math/gsl
 
 PFS_CPPFLAGS=	-I${LOCALBASE}/include
 PFS_LDFLAGS=	-L${LOCALBASE}/lib
 
-USES=		pkgconfig gmake
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	${PFS_CPPFLAGS}
-LDFLAGS+=	${PFS_LDFLAGS}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV+=	CPPFLAGS="${PFS_CPPFLAGS} ${DEBUG_FLAGS}" \
+		LDFLAGS="${PFS_LDFLAGS}"
 
-MAN1=		pfstmo_pattanaik00.1 \
-		pfstmo_reinhard05.1 \
-		pfstmo_reinhard02.1 \
-		pfstmo_durand02.1 \
-		pfstmo_drago03.1 \
-		pfstmo_mantiuk06.1 \
-		pfstmo_fattal02.1
+USES=		gmake pkgconfig compiler:openmp
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_FFTW3F)
-LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
