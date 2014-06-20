@@ -1,3 +1,5 @@
+man/man8/ipacctd.8.gz
+man/ru.KOI8-R/man8/ipacctd.8.gz
 sbin/ipacctd
 %%PORTDOCS%%%%DOCSDIR%%/ru/README.ipacctd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
