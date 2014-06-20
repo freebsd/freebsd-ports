@@ -1,8 +1,6 @@
-Template::Plugin::encoding is a Template plugin to declare the encoding of
-template files. This plugin doesn't actually do anything but
-Template::Provider::Encoding scans the usage of this module to find
-the encoding of templates.  As a bonus, you can use encoding variable in
-the template to specify file encoding, which might be useful for
-XML or HTML meta tag.
+Template::Provider::Encoding is a Template Provider subclass to decode template
+using its declaration. You have to declare encoding of the template in the head
+(1st line) of template using (fake) encoding TT plugin. Otherwise the template
+is handled as utf-8.
 
-WWW:	http://search.cpan.org/dist/Template-Provider-Encoding/
+WWW: http://search.cpan.org/dist/Template-Provider-Encoding/
