@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -14,14 +14,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
-USE_BZIP2=	yes
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2 libtool:keepla
 WANT_SDL=	yes
 WANT_GNOME=	yes
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtoolize
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 LDFLAGS+=	-L${LOCALBASE}/lib
