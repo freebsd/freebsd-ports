@@ -60,7 +60,6 @@ DESKTOP_ENTRIES=	"Frost" "Freenet Client" \
 			"frost" "P2P;Network;Java;" \
 			false
 
-NO_STAGE=	yes
 pre-everything::
 
 post-patch:
@@ -75,22 +74,22 @@ post-patch:
 do-install:
 # docs
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 # jars
-	@${MKDIR} ${PREFIX}/${JAR_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${JAR_DIR}
 .for jar in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKDIR}/${jar} ${PREFIX}/${JAR_DIR}
+	@${INSTALL_DATA} ${WRKDIR}/${jar} ${STAGEDIR}${PREFIX}/${JAR_DIR}
 .endfor
 # default boards
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for file in ${DATA_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
 .endfor
 # wrapper
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:tl}
+	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl}
 
 .include <bsd.port.mk>
