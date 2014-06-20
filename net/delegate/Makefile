@@ -7,7 +7,7 @@ CATEGORIES=	net www
 MASTER_SITES=	http://www.chifeng.name/dist/delegate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
 IS_INTERACTIVE=	YES
@@ -18,6 +18,8 @@ SUB_LIST=	DOCSDIR=${DOCSDIR}
 
 # Strip breaks binary checksumming
 STRIP=
+
+MAKE_JOBS_UNSAFE=	yes
 
 NO_STAGE=	yes
 post-extract:
