@@ -26,7 +26,6 @@ PLIST_FILES=	\
 		bin/${PORTNAME:tl} \
 		%%JAVAJARDIR%%/${PORTNAME:tl}.jar
 
-NO_STAGE=	yes
 post-patch:
 	@${SED} -e "s|%%JAVAJARDIR%%|${JAVAJARDIR:S,^${PREFIX}/,,}|; \
 		s|%%JAVAVM%%|${JAVAVM}|; \
@@ -36,12 +35,12 @@ post-patch:
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/xnap.jar \
-		${JAVAJARDIR}/${PORTNAME:tl}.jar
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:tl}
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME:tl}.jar
+	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl}
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
