@@ -3,7 +3,6 @@
 
 PORTNAME=	html2ps
 DISTVERSION=	1.0b7
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/ \
@@ -26,15 +25,14 @@ USE_GHOSTSCRIPT_RUN=	yes
 
 SUB_FILES=	html2psrc
 
-MAN1=		html2ps.1
-MAN5=		html2psrc.5
 PLIST_FILES=	bin/html2ps \
 		etc/html2psrc \
+		man/man1/html2ps.1.gz \
+		man/man5/html2psrc.5.gz \
 		%%DATADIR%%/html2ps.html \
 		%%DATADIR%%/hyphen.tex
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|exec perl|exec ${PERL}| ; \
@@ -44,12 +42,12 @@ post-patch:
 		${WRKSRC}/html2ps
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/html2ps ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/html2psrc ${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/html2ps.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/html2psrc.5 ${MAN5PREFIX}/man/man5
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/html2ps.html ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/hyphen.tex ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/html2ps ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKDIR}/html2psrc ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/html2ps.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/html2psrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/html2ps.html ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/hyphen.tex ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
