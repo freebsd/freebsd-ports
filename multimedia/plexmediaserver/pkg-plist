@@ -2,7 +2,6 @@
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
 %%DATADIR%%/Resources/DejaVuUniversal.ttf
-%%DATADIR%%/Resources/DigiCertCA.crt
 %%DATADIR%%/Resources/Graphics/DefaultAlbumCover.png
 %%DATADIR%%/Resources/Graphics/actor-icon.png
 %%DATADIR%%/Resources/Graphics/album-fanart.jpg
@@ -402,6 +401,7 @@
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Libraries/Shared/mutagen/wavpack.py
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/LocalMedia.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Aspect Ratio/1.33.png
 %%DATADIR%%/Resources/Plug-ins/Media-Flags.bundle/Contents/Resources/Aspect Ratio/1.66.png
@@ -1330,9 +1330,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.college_humor/URL/CollegeHumor/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/URL/Comedy Central/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV News/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/URL/Dailymotion/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.discovery/ServiceInfo.plist
@@ -1415,7 +1412,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.internetarchive/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.internetarchive/URL/Internet Archive/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC News/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC iPlayer/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.jamieoliver/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.jamieoliver/URL/JamieOliver/ServiceCode.pys
@@ -1581,7 +1577,9 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv3playdk/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv3playdk/URL/tv3playdk/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/Shared Code/tv4play.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/URL/TV4 Play/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/URL/TV4 Play/ServicePrefs.json
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvigle/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvigle/URL/Tvigle/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvkultura/ServiceInfo.plist
@@ -1592,6 +1590,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvone/URL/TV One/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL/TVTropolis/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/URL/Tweakers/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL/Twitch.tv/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitlive/ServiceInfo.plist
@@ -1602,6 +1602,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ukfilmtrailer/URL/UK Filmtrailer/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.universalsports/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.universalsports/URL/Universal Sports/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.urplay/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.urplay/URL/URPlay/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/URL/Ustream/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.uzgv2/ServiceInfo.plist
@@ -1629,6 +1631,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/URL/Vimeo/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/URL/Vimeo/ServicePrefs.json
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vine/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vine/URL/Vine/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vk/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vk/URL/VK/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vrt/ServiceInfo.plist
@@ -1701,139 +1705,141 @@
 %%DATADIR%%/Resources/Plug-ins/TheTVDB.bundle/Contents/Resources/attribution.png
 %%DATADIR%%/Resources/Plug-ins/TheTVDB.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/TheTVDB.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/Frameworks/EKSpinner/Resources/small_black_7.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/css/plex.css
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/css/main-desktop.css
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/favicon.ico
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensed.eot
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensed.svg
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensed.ttf
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensed.woff
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensedBold.eot
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensedBold.svg
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensedBold.ttf
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensedBold.woff
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.eot
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.svg
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.ttf
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.woff
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-social-regular.eot
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-social-regular.svg
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-social-regular.ttf
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-social-regular.woff
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/unmatch.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/unmatch@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/unwatch.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/unwatch@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/watch.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/watch@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/background.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.eot
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.ttf
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.woff
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-social-regular.eot
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-social-regular.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-social-regular.ttf
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/glyphicons-social-regular.woff
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.eot
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.ttf
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.woff
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.eot
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.ttf
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.woff
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex.eot
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex.ttf
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex.woff
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/blank.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/chevron-dark.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/chevron-dark@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/chevron.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/chevron@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/chosen-sprite.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/connection_test.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/myplex.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/myplex@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/navbar/divider.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plugins/flash.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plugins/silverlight.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plugins/soundflower.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/album.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/banner.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/android.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/android@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/atv.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/atv@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/chrome.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/chrome@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/cloudsync.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/cloudsync@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/dlna.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/dlna@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/firefox.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/firefox@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/gtv.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/gtv@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/ie.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/ie@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/ios.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/ios@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/opera.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/opera@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/osx.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/osx@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/pht.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/pht@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/pms.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/pms@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/roku.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/roku@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/safari.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/safari@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/samsung.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/samsung@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/wiiu.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/wiiu@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/win8.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/win8@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/wp.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/wp@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/icon-ipad.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/icon-ipad@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/icon-iphone.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/icon-iphone@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-ipad-landscape.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-ipad-landscape@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-ipad-portrait.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-ipad-portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-iphone-portrait.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-iphone-portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-iphone5-portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-logo.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-pass.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-pass@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-server.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-server@2x.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/folder.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/folder_square.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/friend.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/photo.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/poster.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/poster_square.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/poster_wide.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sad.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sad@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/artist.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/artist@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/artist_large.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/artist_large@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/movie.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/movie@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/movie_large.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/movie_large@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/photo.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/photo@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/photo_large.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/photo_large@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/sections_mini.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/show.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/show@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/show_large.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/show_large@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/video.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/video@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/video_large.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/video_large@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/server.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/server@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/icon_ipad.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/icon_ipad@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/icon_iphone.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/icon_iphone@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_ipad_landscape.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_ipad_landscape@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_ipad_portrait.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_ipad_portrait@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_iphone5_portrait@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_iphone_portrait.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_iphone_portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/square.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/standard.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/widescreen.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/queue/bookmarklet-steps-ie.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/queue/bookmarklet-steps.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/queue/email-links.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/js/analytics.js
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/js/plex.js
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/af.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/ar.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/bg.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/ca.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/cs.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/da.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/de.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/el.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/en-GB.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/en.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/es-419.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/es.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/et.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/fa.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/fi.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/fr.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/he.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/hr.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/hu.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/is.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/it.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/ja.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/ko.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/lt.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/nl.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/no.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/pl.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/pt-BR.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/pt.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/ro.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/ru.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/sk.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/sl.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/sr.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/sv.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/th.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/tr.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/uk.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/zh-TW.json
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/zh.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/jwplayer/plex.xml
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/soundmanager/soundmanager2.swf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/soundmanager/soundmanager2_flash9.swf
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/af.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/ar.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/bg.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/ca.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/cs.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/da.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/de.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/el.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/en-GB.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/en.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/es-419.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/es.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/et.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/fa.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/fi.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/fr.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/he.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/hr.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/hu.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/is.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/it.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/ja.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/ko.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/lt.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/nl.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/no.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/pl.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/pt-BR.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/pt.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/ro.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/ru.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/sk.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/sl.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/sr.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/sv.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/th.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/tr.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/uk.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/zh-TW.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations/zh.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/WebManager.bundle/Contents/Info.plist
@@ -2020,6 +2026,8 @@
 %%DATADIR%%/Resources/Profiles/Firefox.xml
 %%DATADIR%%/Resources/Profiles/Generic.xml
 %%DATADIR%%/Resources/Profiles/Internet Explorer.xml
+%%DATADIR%%/Resources/Profiles/Mystery 3.xml
+%%DATADIR%%/Resources/Profiles/Mystery 4.xml
 %%DATADIR%%/Resources/Profiles/Mystery.xml
 %%DATADIR%%/Resources/Profiles/Opera.xml
 %%DATADIR%%/Resources/Profiles/Panasonic Viera 3D TV.xml
@@ -2915,9 +2923,10 @@
 %%DATADIR%%/Resources/none-combiner-movies.xml
 %%DATADIR%%/Resources/none-combiner-shows.xml
 %%DATADIR%%/Resources/rickroll.ts
+%%DATADIR%%/Resources/rootCA.pem
 %%DATADIR%%/Resources/rsync
-%%DATADIR%%/Resources/star_hub_plex_tv.crt
-%%DATADIR%%/Resources/star_hub_plex_tv.key
+%%DATADIR%%/Resources/server.crt
+%%DATADIR%%/Resources/server.key
 %%DATADIR%%/Resources/themoviedb-combiner-movies.xml
 %%DATADIR%%/Resources/thetvdb-combiner-shows.xml
 %%DATADIR%%/libass.so.5
@@ -3157,10 +3166,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/URL/Comedy Central
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV News
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/URL/Dailymotion
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion
@@ -3281,7 +3286,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.internetarchive/URL/Internet Archive
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.internetarchive/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.internetarchive
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC News
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC iPlayer
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer
@@ -3522,6 +3526,7 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv3playdk/URL/tv3playdk
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv3playdk/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv3playdk
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/Shared Code
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/URL/TV4 Play
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tv4play
@@ -3540,6 +3545,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL/TVTropolis
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/URL/Tweakers
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL/Twitch.tv
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv
@@ -3555,6 +3563,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.universalsports/URL/Universal Sports
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.universalsports/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.universalsports
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.urplay/URL/URPlay
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.urplay/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.urplay
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/URL/Ustream
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream
@@ -3594,6 +3605,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/URL/Vimeo
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vine/URL/Vine
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vine/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vine
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vk/URL/VK
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vk/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vk
@@ -3655,19 +3669,17 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/Frameworks/EKSpinner
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/Frameworks
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/css
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/navbar
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plugins
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/queue
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/js
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/jwplayer
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/soundmanager
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/translations
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/WebClient.bundle
