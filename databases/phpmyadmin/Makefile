@@ -47,7 +47,7 @@ CFG_FILE=	config.inc.php
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PMA_GRP=${GROUPS}
 
-SUB_LIST+=	PKGNAME=${PKGNAME}	       \
+SUB_LIST+=	PKGNAME=${PKGNAME}	        \
 		CFG_FILE=${WWWDIR}/${CFG_FILE}
 SUB_FILES+=	pkg-message
 
