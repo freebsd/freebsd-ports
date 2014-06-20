@@ -1586,8 +1586,7 @@ SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 PLIST_SUB_SED_MIN?=	2
 PLIST_SUB_SED?= ${PLIST_SUB:C/.*=.{1,${PLIST_SUB_SED_MIN}}$//g:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NPREFIX=*:NLOCALBASE=*:N*="":N*="@comment*:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
 
-PLIST_REINPLACE+=	dirrmtry stopdaemon rmtry
-PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir "%D/\1" 2>/dev/null || true!
+PLIST_REINPLACE+=	stopdaemon rmtry
 PLIST_REINPLACE_RMTRY=s!^@rmtry \(.*\)!@unexec rm -f %D/\1 2>/dev/null || true!
 PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1 forcestop 2>/dev/null || true!
 
@@ -5742,7 +5741,7 @@ add-plist-info:
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE})
-	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${INFO_PATH}" >> ${TMPPLIST}
 .endif
 .endif
 .endif
