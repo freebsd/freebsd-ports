@@ -39,27 +39,16 @@ HTMLDOCS_DESC=	Install the HTML documentation (requires Sphinx)
 PLIST_FILES=	man/man1/django-admin.1.gz \
 		man/man1/gather_profile_stats.1.gz
 
+PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+FASTCGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MFASTCGI}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
-.endif
 
 .if ${PORT_OPTIONS:MHTMLDOCS}
 .	if ! ${PORT_OPTIONS:MDOCS}
-IGNORE=	you cannot build documentation while setting NOPORTDOCS
+IGNORE=	you cannot build documentation with DOCS option disabled
 .	endif
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
 PORTDOCS=	*

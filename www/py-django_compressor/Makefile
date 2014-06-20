@@ -25,18 +25,8 @@ BEAUTIFULSOUP_DESC=	Enable BeautifulSoupParser
 LXML_DESC=		Enable LxmlParser
 HTML5LIB_DESC=		Enable Html5LibParser
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBEAUTIFULSOUP}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32
-.endif
-
-.if ${PORT_OPTIONS:MLXML}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
-.endif
-
-.if ${PORT_OPTIONS:MHTML5LIB}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
-.endif
+BEAUTIFULSOUP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
+HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
 
 .include <bsd.port.mk>
