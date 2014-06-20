@@ -1,0 +1,13 @@
+--- Makefile.orig	2014-06-20 23:09:15.019376097 +0800
++++ Makefile	2014-06-20 23:09:26.777375032 +0800
+@@ -15,8 +15,8 @@ subcalc:	$(OBJS)
+ 	$(CC) -o $@ $(OBJS) $(LIBS)
+ 
+ install:
+-	cp subcalc $(PREFIX)/bin
+-	cp subcalc.1.gz $(PREFIX)/man/man1/
++	cp subcalc $(DESTDIR)$(PREFIX)/bin
++	cp subcalc.1.gz $(DESTDIR)$(PREFIX)/man/man1/
+ 
+ deinstall:
+ 	rm -f $(PREFIX)/man/man1/subcalc.1.gz
