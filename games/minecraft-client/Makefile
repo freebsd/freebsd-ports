@@ -3,6 +3,7 @@
 
 PORTNAME=	minecraft-client
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://s3.amazonaws.com/Minecraft.Download/launcher/:minecraft \
 		http://media-mcw.cursecdn.com/c/c5/:icon
@@ -14,12 +15,15 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for the block building game
 
+RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:${PORTSDIR}/games/lwjgl \
+		bash:${PORTSDIR}/shells/bash
+
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.8+
 DESKTOP_ENTRIES="Minecraft" \
 		"Block building game" \
 		"${PREFIX}/share/pixmaps/minecraft-client.png" \
@@ -38,5 +42,7 @@ do-install:
 		-e 's|JAVA_CMD|${JAVA}|' ${FILESDIR}/minecraft-client \
 		> ${WRKDIR}/minecraft-client
 	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-client ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/minecraft-runtime ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/Notifer.java ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

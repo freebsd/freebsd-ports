@@ -1,50 +1,44 @@
 #!/bin/sh
 export JAVA_HOME=JAVA_HOME
-/bin/cat << EOF
-When starting a version for the first time, select the version you want in your
-profile, start Minecraft, close Minecraft and launcher, run minecraft-client
-again, then select version "x-freebsd" in your profile.
 
-If you run versions older than 1.6.1 in the Launcher, add
--Djava.net.preferIPv4Stack=true to JVM Arguments in the profile.
+# Look for launcher_profiles to fix
+if [ -e "${HOME}/.minecraft/launcher_profiles.json" ] ; then
+   rm ${HOME}/.minecraft/launcher_profiles.json.new 2>/dev/null
 
-EOF
-LIBDIR="${HOME}/.minecraft/libraries/"
+   # Lets make sure we set the fixed java executable script
+   while IFS='' read -r line
+   do
+     # Skip old javaDir lines
+     echo $line | grep -q '"javaDir": "'
+     if [ $? -eq 0 ] ; then continue ; fi
 
-for i in ${LIBDIR}/org/lwjgl/lwjgl/lwjgl-platform/*/lwjgl-platform-*-natives-linux.jar; do
-  if [ -f "${i}" ]; then
-    cmp -s "PREFIX/share/minecraft-client/lwjgl-native-libs.jar" "${i%linux.jar}freebsd.jar"
-    if [ $? -ne 0 ]; then
-      cp -v "PREFIX/share/minecraft-client/lwjgl-native-libs.jar" "${i%linux.jar}freebsd.jar"
-    fi
-  fi
-done
+     # If not a name line, add and continue
+     echo $line | grep -q '"name": "'
+     if [ $? -ne 0 ] ; then 
+       printf "%s\n" "$line" >> ${HOME}/.minecraft/launcher_profiles.json.new
+       continue
+     fi
 
-versions_base="${HOME}/.minecraft/versions"
+     # Found a profile entry, lets add the correct runtime
+     printf "%s\n" "$line" >> ${HOME}/.minecraft/launcher_profiles.json.new
+     echo '      "javaDir": "/usr/local/share/minecraft-client/minecraft-runtime",' >> ${HOME}/.minecraft/launcher_profiles.json.new
+     
+   done < ${HOME}/.minecraft/launcher_profiles.json
 
-for i in ${HOME}/.minecraft/versions/*; do
-  if [ "${i}" != "${i%-freebsd}" -o "${i}" == "${HOME}"'/.minecraft/versions/*' ]; then continue; fi
-  OLDIFS=$IFS
-  IFS=/
-  for x in ${i}; do
-    version="${x}"
-  done
-  IFS=${OLDIFS}
+   # See if we have dangling }
+   tail -1 ${HOME}/.minecraft/launcher_profiles.json.new | grep -q "^}"
+   if [ $? -ne 0 ] ; then
+     printf "}" >> ${HOME}/.minecraft/launcher_profiles.json.new
+   fi
 
-  native_path="${versions_base}/${version}-freebsd/"
-  mkdir -p "${native_path}"
+   mv ${HOME}/.minecraft/launcher_profiles.json.new ${HOME}/.minecraft/launcher_profiles.json
+else
+   # No .minecraft dir, lets display the first time notification
+   javac -d /tmp /usr/local/share/minecraft-client/Notifer.java
+   cd /tmp
+   java Notifer
+   rm Notifer*.class
+fi
 
-  vendor_file="${versions_base}/${version}/${version}"
-  native_file="${native_path}/${version}-freebsd"
-
-  if [ -f "${vendor_file}.jar" -a ! -f "${native_file}.jar" ]; then
-    cp -v "${vendor_file}.jar" "${native_file}.jar"
-  fi
-  if [  -f "${vendor_file}.json" -a ! -f "${native_file}.json" ]; then
-    sed -e '/"id"/s/",/-freebsd",/' -e '/lwjgl/,/extract/s/natives-linux/natives-freebsd/' \
-    < "${vendor_file}.json" > "${native_file}.json"
-  fi
-done
-
-exec JAVA_CMD -Djava.nio.file.spi.DefaultFileSystemProvider=sun.nio.fs.BsdFileSystemProvider \
- -Dos.name=Linux -jar PREFIX/share/minecraft-client/Minecraft.jar
+exec ${JAVA_HOME}/bin/java -Djava.nio.file.spi.DefaultFileSystemProvider=sun.nio.fs.BsdFileSystemProvider \
+ -Dos.name=Linux -jar /usr/local/share/minecraft-client/Minecraft.jar

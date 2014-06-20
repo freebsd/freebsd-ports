@@ -1,4 +1,6 @@
 bin/minecraft-client
 %%DATADIR%%/Minecraft.jar
+%%DATADIR%%/minecraft-runtime
+%%DATADIR%%/Notifer.java
 share/pixmaps/minecraft-client.png
 @dirrm %%DATADIR%%
