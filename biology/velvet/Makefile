@@ -3,6 +3,7 @@
 
 PORTNAME=	velvet
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ebi.ac.uk/~zerbino/velvet/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,11 +18,11 @@ MAXKMERLENGTH?=	31
 VELVET_CATEGORIES?=	2
 MAKE_ENV+=	MAXKMERLENGTH=${MAXKMERLENGTH} CATEGORIES=${VELVET_CATEGORIES}
 
-USES=		perl5 gmake
+USES=		perl5 gmake shebangfix
 USE_PERL5=	run
 
 BINARIES=	velvetg velveth
-SCRIPTS=	contrib/shuffleSequences_fasta/shuffleSequences_fasta.pl \
+SHEBANG_FILES=	contrib/shuffleSequences_fasta/shuffleSequences_fasta.pl \
 		contrib/shuffleSequences_fasta/shuffleSequences_fastq.pl \
 		contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl \
 		contrib/afg_handling/asmbly_splitter.pl \
@@ -44,10 +45,10 @@ PERLMOD_FILES=	contrib/VelvetOptimiser-2.2.4/VelvetOpt/Assembly.pm \
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
-SCRIPTS+=	contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py
+SHEBANG_FILES+=	contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py
 .endif
 
-.for f in ${BINARIES} ${SCRIPTS}
+.for f in ${BINARIES} ${SHEBANG_FILES}
 PLIST_FILES+=	bin/${f:T}
 .endfor
 .for d in ${PERLMOD_DIRS}
@@ -63,19 +64,11 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-post-patch:
-.for f in ${SCRIPTS}
-	${REINPLACE_CMD} -e s,#!/usr/bin/perl,${PERL}, ${WRKSRC}/${f}
-.endfor
-.if !defined(WITHOUT_PYTHON)
-	${REINPLACE_CMD} -e s,#!/usr/bin/python,${PYTHON_CMD}, ${WRKSRC}/contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py
-.endif
-
 do-install:
 .for f in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.for f in ${SCRIPTS}
+.for f in ${SHEBANG_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/${f:T}
 .endfor
 .for d in ${PERLMOD_DIRS}
