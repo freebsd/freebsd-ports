@@ -40,6 +40,6 @@ load_rc_config $name
 pidfile=${spamd_pidfile:-"/var/run/${name}/${name}.pid"}
 command=%%PREFIX%%/bin/${name}
 command_args="-d -r ${pidfile}"
-required_dirs=%%PREFIX%%/share/spamassassin
+required_dirs="%%PREFIX%%/share/spamassassin /var/run/${name}"
 
 run_rc_command "$1"
