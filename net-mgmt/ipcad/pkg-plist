@@ -1,4 +1,5 @@
 bin/ipcad
-@unexec if cmp -s %D/etc/ipcad.conf %D/etc/ipcad.conf.default; then rm -f %D/etc/ipcad.conf; fi
-etc/ipcad.conf.default
+@sample etc/ipcad.conf.sample
 etc/ipcad.conf.simple
+man/man5/ipcad.conf.5.gz
+man/man8/ipcad.8.gz
