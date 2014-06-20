@@ -227,7 +227,7 @@ man/man1/gtk-config.1.gz
 @dirrm lib/gtk/themes
 @dirrm lib/gtk
 @dirrm share/themes/Default/gtk
-@dirrm share/themes/Default
+@dirrmtry share/themes/Default
 @dirrm include/gtk12/gtk
 @dirrm include/gtk12/gdk
 @dirrm include/gtk12
