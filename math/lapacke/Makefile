@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	lapacke
-PORTVERSION=	3.4.0
-PORTREVISION=	2
+PORTVERSION=	3.4.2
 CATEGORIES=	math
 MASTER_SITES=	NL
 MASTER_SITE_SUBDIR=	lapack
 DISTNAME=	lapack-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tgz lapacke.tgz
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	lapack
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
@@ -24,8 +23,7 @@ OPTIONS_DEFINE=	PROFILE XLAPACKE
 PROFILE_DESC=	Build a profiling library
 XLAPACKE_DESC=	Install interfaces to XLAPACK
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 LAPACKE_SVERSION=	1
 LAPACKE_LIBNAME=	lapacke
@@ -50,25 +48,25 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == "reference"
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
-		lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
+		liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == "gotoblas"
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
-LIB_DEPENDS+=	goto2p.1:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
 BLAS=		-lgoto2p
 LAPACK=		-lgoto2p
 .elif ${WITH_BLAS} == "atlas"
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif
 .if ${PORT_OPTIONS:MXLAPACKE}
-LIB_DEPENDS+=		xlapack.4:${PORTSDIR}/math/xlapack
+LIB_DEPENDS+=		libxlapack.so:${PORTSDIR}/math/xlapack
 .endif
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -107,23 +105,12 @@ PLIST_FILES+=	lib/lib${XLAPACKE_LIBNAME}_p.a
 MAKE_ENV+=	NO_PROFILE=
 .endif
 
-post-extract:
-	@${CP} -r ${WRKSRC_LEGACY}/testing ${WRKSRC}/.
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" -type f |\
 		${XARGS} ${REINPLACE_CMD} -e 's;$$(ARCH);$$(ARCH_);g'
-	@${REINPLACE_CMD} -e 's;%%CC%%;${CC};g' \
-			  -e 's;%%CFLAGS%%;${CFLAGS};g' \
-			  -e 's;%%LDFLAGS%%;${LDFLAGS};g' \
-			  -e 's;%%AR%%;${AR};g' \
-			  -e 's;%%RANLIB%%;${RANLIB};g' \
-			  -e 's;%%BLAS%%;${BLAS};g' \
-			  -e 's;%%LAPACK%%;${LAPACK};g' \
-			  -e 's;%%LAPACKE_LIBNAME%%;${LAPACKE_LIBNAME};g' \
-				${WRKSRC}/make.inc
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
+	@${CP} ${WRKSRC}/include//lapacke_mangling_with_flags.h ${WRKSRC}/include//lapacke_mangling.h
 	@${MKDIR} ${WRKSRC}/lib
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/lib/Makefile
 	@${MKDIR} ${WRKSRC}/libtmg
@@ -146,15 +133,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
-check regression-test test: build
-	@${CP} ${WRKSRC}/lib/lib${LAPACKE_LIBNAME}.a ${WRKSRC}/.
-	@${ECHO_CMD} "Testing static lapacke library"
-	@(cd ${WRKSRC}/testing; ${SETENV} ${MAKE_ENV} \
-	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS})
-	@${CAT} ${WRKSRC}/testing/interface/*.out
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

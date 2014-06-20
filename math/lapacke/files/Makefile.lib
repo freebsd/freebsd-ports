@@ -1119,7 +1119,7 @@ UTILS_SRCS=\
 		lapacke_ztr_nancheck.c lapacke_ztr_trans.c
 
 %%XLAPACKE%%beforeinstall:
-%%XLAPACKE%%	${BSD_INSTALL_DATA} ${.CURDIR}/../include/lapacke.h ${PREFIX}/include
-%%XLAPACKE%%	${BSD_INSTALL_DATA} ${.CURDIR}/../include/lapacke_utils.h ${PREFIX}/include
+%%XLAPACKE%%	${BSD_INSTALL_DATA} ${.CURDIR}/../include/lapacke.h ${DESTDIR}${PREFIX}/include
+%%XLAPACKE%%	${BSD_INSTALL_DATA} ${.CURDIR}/../include/lapacke_utils.h ${DESTDIR}${PREFIX}/include
 
 .include <bsd.lib.mk>
