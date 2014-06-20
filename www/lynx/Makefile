@@ -3,6 +3,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.7.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
@@ -13,7 +14,7 @@ COMMENT=	Non-graphical, text-based World-Wide Web client
 
 CONFLICTS=	lynx-2.8.[8-9]*
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-7
 GNU_CONFIGURE=	yes
@@ -24,44 +25,28 @@ CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	DEFAULT_COLORS IPV6 NLS SSL
+OPTIONS_DEFINE=	DEFAULT_COLORS IPV6 NLS SSL DOCS
 OPTIONS_DEFAULT=	SSL
 DEFAULT_COLORS_DESC=	Colors support
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext iconv
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+DEFAULT_COLORS_CONFIGURE_ENABLE=	default-colors
+
+DOCS_CONFIGURE_ENABLE=	local-docs
+DOCS_INSTALL_TARGET=	install-full
+DOCS_MAKE_ARGS=		helpdir=${L_HELP} docdir=${DOCSDIR}
+L_HELP=			${PREFIX}/share/lynx_help
 
 .include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MNLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS='@comment '
-.else
-USES+=		gettext iconv
-CONFIGURE_ARGS+=--enable-nls ${ICONV_CONFIGURE_ARG}
-PLIST_SUB+=	NLS=''
-.endif
-
-.if ${PORT_OPTIONS:MIPV6} && !defined(NO_INET6)
-CONFIGURE_ARGS+=--enable-ipv6
-.else
-CONFIGURE_ARGS+=--disable-ipv6
-.endif
-
 .if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.endif
-
-.if ${PORT_OPTIONS:MDEFAULT_COLORS}
-CONFIGURE_ARGS+=--enable-default-colors
-.endif
-
-.if empty(PORT_OPTIONS:MDOCS)
-CONFIGURE_ARGS+=--disable-local-docs
-INSTALL_TARGET=	install
-DOCSDIR=
-L_HELP=
-.else
-INSTALL_TARGET=	install-full
-L_HELP=		${PREFIX}/share/lynx_help
-MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
 .endif
 
 MAKEFILE=	makefile
@@ -71,10 +56,8 @@ L_LIB=		${PREFIX}/etc
 SUB_FILES=	pkg-message
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 # Fix some stage symlinks
 	${LN} -sf ${DOCSDIR}/COPYHEADER ${STAGEDIR}${L_HELP}
 	${LN} -sf ${DOCSDIR}/COPYING ${STAGEDIR}${L_HELP}
-.endif
 
 .include <bsd.port.mk>
