@@ -16,5 +16,4 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
