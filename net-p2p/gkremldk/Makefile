@@ -18,13 +18,11 @@ BUILD_DEPENDS=	\
 		${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(LFLAGS).*|\1 = ${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib|' \
@@ -33,8 +31,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 	@${INSTALL_DATA} ${WRKSRC}/gkremldk.so \
-		${PREFIX}/libexec/gkrellm2/plugins
+		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>
