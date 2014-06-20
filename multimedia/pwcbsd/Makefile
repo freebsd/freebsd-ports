@@ -3,7 +3,7 @@
 
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
@@ -13,21 +13,21 @@ MASTER_SITE_SUBDIR=	miwi
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD
 
+LICENSE=	GPLv2
+
 CONFLICTS=	pwcview-[0-9]*
 
 SSP_UNSAFE=	kernel module does not support ssp
 
-MAN4=		pwc.4
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
+
+PLIST_SUB=	KMODDIR=${KMODDIR}
 
 OPTIONS_DEFINE=	PROGRAMS MMAP
 OPTIONS_DEFAULT=	PROGRAMS
 PROGRAMS_DESC=	Build the programs
 MMAP_DESC=	Enable mmap support (MAY CRASH YOUR SYSTEM)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.kld \
@@ -48,8 +48,7 @@ ALL_TARGET=	all
 .if ${PORT_OPTIONS:MPROGRAMS}
 ALL_TARGET+=	pwcview
 PROGRAMS=	pwcview
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
-MAN1=		pwcview.1
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 USE_SDL=	sdl
 PLIST_SUB+=	PROGRAMS=""
 .else
@@ -61,12 +60,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile
 .endif
 
-post-install:
-	${INSTALL_MAN} ${MAN4:S|^|${WRKSRC}/|} ${PREFIX}/man/man4
+do-install:
+	${MKDIR} ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/pwc.ko ${STAGEDIR}${KMODDIR}
+	${INSTALL_MAN} ${WRKSRC}/pwc.4 ${STAGEDIR}${PREFIX}/man/man4
 .if ${PORT_OPTIONS:MPROGRAMS}
-	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${PREFIX}/bin
-	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${PROGRAMS:S|^|${WRKSRC}/|}.1 ${STAGEDIR}${PREFIX}/man/man1
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

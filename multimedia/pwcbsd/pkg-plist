@@ -1,5 +1,7 @@
 %%PROGRAMS%%bin/pwcview
-@cwd /boot/modules
-pwc.ko
+%%PROGRAMS%%man/man1/pwcview.1.gz
+man/man4/pwc.4.gz
+@cwd /
+%%KMODDIR%%/pwc.ko
 @exec kldxref %D
 @unexec kldxref %D
