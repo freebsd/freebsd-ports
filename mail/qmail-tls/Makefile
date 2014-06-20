@@ -22,4 +22,6 @@ MASTERDIR=	${.CURDIR}/../qmail
 DESCR=		${.CURDIR}/pkg-descr
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-qmail-local.c
+
 .include "${MASTERDIR}/Makefile"
