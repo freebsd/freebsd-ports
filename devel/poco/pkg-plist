@@ -360,7 +360,6 @@ include/Poco/SAX/XMLFilter.h
 include/Poco/SAX/XMLFilterImpl.h
 include/Poco/SAX/Attributes.h
 include/Poco/ValidArgs.h
-include/Poco/._Version.h
 include/Poco/Version.h
 include/Poco/Void.h
 include/Poco/Windows1252Encoding.h
