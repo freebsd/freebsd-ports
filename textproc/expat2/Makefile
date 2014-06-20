@@ -3,6 +3,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -11,7 +12,7 @@ COMMENT=	XML 1.0 parser written in C
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	default
-USES=		pathfix
+USES=		pathfix libtool:keepla
 USE_LDCONFIG=	yes
 
 # Increment only when there are incompatible API changes.
