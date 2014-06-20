@@ -18,6 +18,7 @@
 name="iplog"
 rcvar=iplog_enable
 
+start_precmd="install -d /var/run/${name}"
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}/${name}.pid
 
