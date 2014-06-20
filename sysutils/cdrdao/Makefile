@@ -135,6 +135,7 @@ do-install:
 		${STAGEDIR}${LOCALBASE}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
 		${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime/packages
 	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
 		${STAGEDIR}${LOCALBASE}/share/mime/packages
 	@${MKDIR} ${STAGEDIR}${DATADIR}
