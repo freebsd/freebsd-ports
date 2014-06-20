@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Access counter, clock and date for WWW pages
 
+DEPRECATED=	Ancient interactive port
+EXPIRATION_DATE=2014-08-20
+
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
 USES=		gmake
