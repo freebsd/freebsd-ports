@@ -3,7 +3,7 @@
 
 PORTNAME=	wv2
 PORTVERSION=	0.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	SF/wvware/
 
@@ -11,8 +11,8 @@ MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A library providing routines to access Microsoft Word files
 
 USE_GNOME=	libgsf
-USE_BZIP2=	yes
-USES=		cmake iconv pkgconfig
+GNU_CONFIGURE=	yes
+USES=		cmake iconv pkgconfig libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 post-patch:
