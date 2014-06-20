@@ -9,8 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Arbitrary precision calculator
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bz2
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
