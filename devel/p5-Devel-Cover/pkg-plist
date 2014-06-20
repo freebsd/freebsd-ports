@@ -6,6 +6,7 @@ bin/gcov2perl
 %%PERL5_MAN3%%/Devel::Cover::Annotation::Random.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Annotation::Svk.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Branch.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Collection.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Condition.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Condition_and_2.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Condition_and_3.3.gz
@@ -30,6 +31,7 @@ bin/gcov2perl
 %%PERL5_MAN3%%/Devel::Cover::Report::Html_basic.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Html_minimal.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Html_subtle.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Json.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Sort.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Text.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Report::Text2.3.gz
@@ -47,6 +49,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Random.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Svk.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Branch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Collection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_and_2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_and_3.pm
@@ -72,6 +75,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_basic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_minimal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_subtle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Json.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Sort.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text2.pm
