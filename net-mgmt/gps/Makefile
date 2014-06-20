@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-FRC
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Ghost Port Scan
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 GNU_CONFIGURE=	yes
@@ -28,10 +30,8 @@ post-patch:
 		 s|--defines|& --cflags|' \
 		${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
