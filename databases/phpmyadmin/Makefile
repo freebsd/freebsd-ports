@@ -25,7 +25,7 @@ USE_PHP=	ctype session filter mbstring json spl mysqli
 # FONTCONFIG in the graphics/gd port options.
 
 OPTIONS_DEFINE=		APC BZ2 GD MCRYPT OPENSSL PDF XML ZIP ZLIB
-OPTIONS_DEFAULT=	BZ2 GD MCRYPT OPENSSL PDF XML ZIP ZLIB
+OPTIONS_DEFAULT=	BZ2 GD MCRYPT OPENSSL XML ZIP ZLIB
 
 APC_DESC=	PHP APC (animated progress bar) support
 BZ2_DESC=	PHP bzip2 library support
