@@ -580,7 +580,7 @@ add-plist-egginfo:
 		${LS} ${PYDISTUTILS_EGGINFODIR}/${egginfo} | while read f; do \
 			${ECHO_CMD} ${PYDISTUTILS_EGGINFODIR:S;^${STAGEDIR}${PYTHONBASE}/;;}/${egginfo}/$${f} >> ${TMPPLIST}; \
 		done; \
-		${ECHO_CMD} "@unexec rmdir \"%D/${PYDISTUTILS_EGGINFODIR:S;${STAGEDIR}${PYTHONBASE}/;;}/${egginfo}\" 2>/dev/null || true" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@dirrmtry ${PYDISTUTILS_EGGINFODIR:S;${STAGEDIR}${PYTHONBASE}/;;}/${egginfo}" >> ${TMPPLIST}; \
 	fi;
 . endfor
 .else
@@ -613,11 +613,13 @@ add-plist-pymod:
 		while read line; do \
 			${GREP} -qw "^$${line}$$" ${WRKDIR}/.localmtree || { \
 				[ -n "$${line}" ] && \
-				${ECHO_CMD} "@unexec rmdir \"%D/$${line}\" 2>/dev/null || true"; \
+				${ECHO_CMD} "@dirrmtry $${line}"; \
 			}; \
 		done | ${SORT} | uniq | ${SORT} -r >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir \"%D/${PYTHON_SITELIBDIR:S;${PYTHONBASE}/;;}\" 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir \"%D/${PYTHON_LIBDIR:S;${PYTHONBASE}/;;}\" 2>/dev/null || true" >> ${TMPPLIST}
+.if ${PREFIX} != ${LOCALBASE}
+	@${ECHO_CMD} "@dirrmtry ${PYTHON_SITELIBDIR:S;${PYTHONBASE}/;;}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${PYTHON_LIBDIR:S;${PYTHONBASE}/;;}" >> ${TMPPLIST}
+.endif
 
 .else
 .if ${PYTHON_REL} >= 320 && defined(PYTHON_PY3K_PLIST_HACK)
