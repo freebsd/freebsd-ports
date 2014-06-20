@@ -3,7 +3,7 @@
 
 PORTNAME=	${QMAIL_PORTNAME}
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -50,6 +50,7 @@ CLEARTEXTPASSWD_DESC=		Use cleartext passwords (Dangerous!)
 DASH_EXT_DESC=			Dash_ext extended mail addresses add
 DATA_COMPRESS_DESC=		Smtp on the fly DATA compression
 DISCBOUNCES_PATCH_DESC=		Discard double-bounces
+DNS_CNAME_DESC=			Request CNAME (vs ANY for BIND 4 bug)
 ENHACELOGS_DESC=		Enhace qmail-smtpd logs (spamcontrol-like)
 EXTERNAL_TODO_DESC=		External high-performance todo processing
 EXTTODO_PATCH_DESC=		Extern high-perform. todo processing
@@ -96,6 +97,7 @@ QMAIL_VERSION=			1.06
 BARRIER_SENDMAIL_F_PATCH=	yes
 BARRIER_QMAILQUEUE_PATCH=	yes
 .else
+# This is only used for slave ports.
 PORTNAME=			qmail
 QMAIL_VERSION=			1.03
 .endif
@@ -134,6 +136,10 @@ BARRIER_OUTGOINGIP_PATCH=	yes
     defined(SLAVE_TLS)
 BARRIER_RFC2821_PATCH=		yes
 BARRIER_TARPIT_PATCH=		yes
+.endif
+
+.if defined(SLAVE_SPAMCONTROL)
+BARRIER_DNS_CNAME=		yes
 .endif
 
 PATCH_DIST_STRIP+=	-p1
@@ -245,6 +251,11 @@ OPTIONS_DEFAULT+=	TLSREMOTE PAM111421
 .endif
 
 OPTIONS_DEFINE+=QEXTRA
+
+.if !defined(BARRIER_DNS_CNAME)
+OPTIONS_DEFINE+=	DNS_CNAME
+OPTIONS_DEFAULT+=	DNS_CNAME
+.endif
 
 .if !defined(SLAVE_LDAP)
 OPTIONS_DEFINE+=RCDLINK
@@ -511,6 +522,10 @@ PATCHFILES+=	ext_todo-20030105.patch:exttodo
 . endif
 .else
 PLIST_SUB+=	EXTTODO="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDNS_CNAME}
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-dns-cname
 .endif
 
 .if !defined(BARRIER_DNS_PATCH) \
