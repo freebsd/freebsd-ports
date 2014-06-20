@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libserver
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -11,8 +11,7 @@ COMMENT=	Generic TCP server in a library
 
 USE_LDCONFIG=	yes
 
-INSTALL_TARGET=STAGEDIR=../stage/ install
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
