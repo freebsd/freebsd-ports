@@ -3,20 +3,21 @@
 
 PORTNAME=	Test-URI
 PORTVERSION=	1.08
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Perl module for check URI
+COMMENT=	Check Uniform Resource Identifiers
 
-RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI	\
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
-BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI	\
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
