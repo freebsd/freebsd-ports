@@ -36,7 +36,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 
 HAS_CONFIGURE=	yes
 
-USES=		shebangfix tar:bz2
+USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	scripts/sort_res.perl5
 
 .include <bsd.port.pre.mk>

@@ -15,7 +15,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_AUTOTOOLS=	aclocal automake
 GNU_CONFIGURE=	yes
-USES=		gmake tar:bz2
+USES=		gmake tar:bzip2
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh

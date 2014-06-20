@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 CONFLICTS_INSTALL=	lynx-2.8.[0-7].* ja-lynx-[0-9]*
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/./-/g:C/p.*//}
-USES=		iconv shebangfix tar:bz2
+USES=		iconv shebangfix tar:bzip2
 USE_OPENSSL=	yes
 SHEBANG_FILES=	samples/mailto-form.pl
 GNU_CONFIGURE=	yes

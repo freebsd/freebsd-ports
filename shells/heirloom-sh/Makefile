@@ -9,7 +9,7 @@ MASTER_SITES=	SF/heirloom/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	danielt@pilgerer.org
 COMMENT=	Portable version of OpenSolaris' Bourne Shell
 
-USES=		tar:bz2
+USES=		tar:bzip2
 MAKEFILE=	makefile
 PLIST_FILES=	bin/jsh \
 		man/man1/jsh.1.gz

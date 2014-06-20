@@ -12,7 +12,7 @@ COMMENT=	The traditional 4.4BSD /bin/csh C-shell
 
 BUILD_DEPENDS=	rcs:${PORTSDIR}/devel/rcs57
 
-USES=		tar:bz2
+USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 PORTDOCS=	paper.ascii.gz
 

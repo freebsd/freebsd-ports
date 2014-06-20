@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://rc.quanstro.net/pub/ \
 MAINTAINER=	quanstro@quanstro.net
 COMMENT=	Unix incarnation of the plan9 shell
 
-USES=		tar:bz2
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-history
 
