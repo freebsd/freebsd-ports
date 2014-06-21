@@ -226,6 +226,7 @@ do-install-ibus_mozc:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/ibus_mozc \
 		${STAGEDIR}${PREFIX}/libexec/ibus-engine-mozc
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/ibus/component
 	${INSTALL_DATA} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/obj/gen/unix/ibus/mozc.xml \
 		${STAGEDIR}${PREFIX}/share/ibus/component/mozc.xml
