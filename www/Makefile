@@ -523,7 +523,6 @@
     SUBDIR += mod_reproxy
     SUBDIR += mod_rivet
     SUBDIR += mod_rpaf2
-    SUBDIR += mod_ruby
     SUBDIR += mod_scgi
     SUBDIR += mod_security
     SUBDIR += mod_setenvifplus
