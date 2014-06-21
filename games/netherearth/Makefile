@@ -3,7 +3,7 @@
 
 PORTNAME=	netherearth
 PORTVERSION=	0.51
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://move.kirishi.ru/soft/netherearth/
 
@@ -15,14 +15,13 @@ GNU_CONFIGURE=	yes
 USE_GL=		glut
 USE_SDL=	sdl mixer
 
-NO_STAGE=	yes
 pre-install:
-	if [ ! -d ${PREFIX}/share/netherearth ] ; then \
-		${MKDIR} ${PREFIX}/share/netherearth ;\
+	if [ ! -d ${STAGEDIR}${PREFIX}/share/netherearth ] ; then \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/netherearth ;\
 	fi
-	${CP} -R ${WRKSRC}/maps ${PREFIX}/share/netherearth/
-	${CP} -R ${WRKSRC}/models ${PREFIX}/share/netherearth/
-	${CP} -R ${WRKSRC}/sound ${PREFIX}/share/netherearth/
-	${CP} -R ${WRKSRC}/textures ${PREFIX}/share/netherearth/
+	${CP} -R ${WRKSRC}/maps ${STAGEDIR}${PREFIX}/share/netherearth/
+	${CP} -R ${WRKSRC}/models ${STAGEDIR}${PREFIX}/share/netherearth/
+	${CP} -R ${WRKSRC}/sound ${STAGEDIR}${PREFIX}/share/netherearth/
+	${CP} -R ${WRKSRC}/textures ${STAGEDIR}${PREFIX}/share/netherearth/
 
 .include <bsd.port.mk>
