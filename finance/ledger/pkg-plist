@@ -30,12 +30,11 @@ include/ledger/value.h
 include/ledger/walk.h
 include/ledger/xml.h
 lib/libamounts.a
-lib/libamounts.la
 lib/libamounts.so
 lib/libamounts.so.0
+lib/libamounts.so.0.0.0
 lib/libledger-2.6.3.so
 lib/libledger.a
-lib/libledger.la
 lib/libledger.so
 %%EXAMPLESDIR%%/ledger.vim
 %%EXAMPLESDIR%%/sample.dat
