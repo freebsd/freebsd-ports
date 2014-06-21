@@ -11,6 +11,12 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/zphoto.mo
 %%DATADIR%%/templates/default/all/.photo.html
 %%DATADIR%%/templates/default/all/css-colors.txt
 %%DATADIR%%/templates/default/all/flash-colors.txt
+%%DATADIR%%/templates/default/all/index.html.en
+%%DATADIR%%/templates/default/all/index.html.ja
+%%DATADIR%%/templates/default/all/noflash.html.en
+%%DATADIR%%/templates/default/all/noflash.html.ja
+%%DATADIR%%/templates/default/all/zoom.js.en
+%%DATADIR%%/templates/default/all/zoom.js.ja
 %%DATADIR%%/templates/default/all/zphoto.css
 %%DATADIR%%/templates/default/en/.photo.html
 %%DATADIR%%/templates/default/en/css-colors.txt
