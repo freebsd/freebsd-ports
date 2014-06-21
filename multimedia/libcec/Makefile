@@ -23,11 +23,9 @@ USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	${REINPLACE_CMD} 's;-Wno-psabi;;' ${WRKSRC}/configure.ac
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcec.so.2
 
 .include <bsd.port.mk>
