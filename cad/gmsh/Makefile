@@ -57,7 +57,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCS=OFF
 .endif
 
 .if defined(WITHOUT_TETGEN)
-NO_CDROM+=	Do not use for commercial purposes if including Tetgen or Metis
+NO_CDROM+=	Contact appropriate authors for commercial purposes if including Tetgen or Metis
 CMAKE_ARGS+=	-DENABLE_TETGEN=OFF
 .else
 CMAKE_ARGS+=	-DENABLE_TETGEN=ON
@@ -71,7 +71,7 @@ IGNORE=		requires that WITHOUT_METIS is not set if WITH_TAUCS is set
 .endif
 
 .if !defined(WITHOUT_METIS)
-NO_CDROM+=	Do not use for commercial purposes if including Tetgen or Metis
+NO_CDROM+=	Contact appropriate authors for commercial purposes if including Tetgen or Metis
 CMAKE_ARGS+=	-DENABLE_METIS=ON
 .if defined(PORT_OPTIONS:MDOCS)
 IGNORE=		the license for Metis requires that its documentation is included
