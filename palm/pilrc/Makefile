@@ -17,6 +17,8 @@ CONFIGURE_ARGS+=	--enable-pilrcui
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-install:

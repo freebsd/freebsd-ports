@@ -1,11 +1,11 @@
 bin/pilrc
 bin/pilrcui
-%%DOCS%%%%DOCSDIR%%/archive.html
-%%DOCS%%%%DOCSDIR%%/contrib.html
-%%DOCS%%%%DOCSDIR%%/download.html
-%%DOCS%%%%DOCSDIR%%/history.html
-%%DOCS%%%%DOCSDIR%%/images/download.gif
-%%DOCS%%%%DOCSDIR%%/index.html
-%%DOCS%%%%DOCSDIR%%/manual.html
-%%DOCS%%@dirrm %%DOCSDIR%%/images
-%%DOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/archive.html
+%%PORTDOCS%%%%DOCSDIR%%/contrib.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/images/download.gif
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
