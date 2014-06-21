@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://serf.googlecode.com/svn/src_releases/
 
-MAINTAINER=	apache@FreeBSD.org
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Serf HTTP client library
 
 LICENSE=	APACHE20
