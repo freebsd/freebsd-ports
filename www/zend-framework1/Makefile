@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.12.3
+PORTVERSION=	1.12.7
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 PKGNAMESUFFIX=	1
@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	1
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 NO_BUILD=	yes
 USE_PHP=	spl
@@ -104,7 +104,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/manual
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "INSTALL.txt README.txt" ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "INSTALL.md README.md" ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/documentation/manual/core/en && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/manual
 .endif
