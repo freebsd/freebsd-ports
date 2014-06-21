@@ -14,7 +14,7 @@ PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCHFILES=	${PORTNAME}_${PORTVERSION}-5.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user-friendly graphical front end for the man system
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
