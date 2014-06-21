@@ -28,9 +28,9 @@ include/cgicc/XHTMLDoctype.h
 include/cgicc/XMLDeclaration.h
 include/cgicc/XMLPI.h
 lib/libcgicc.a
-lib/libcgicc.la
 lib/libcgicc.so
-lib/libcgicc.so.5
+lib/libcgicc.so.3
+lib/libcgicc.so.3.2.10
 libdata/pkgconfig/cgicc.pc
 share/aclocal/cgicc.m4
 @dirrm include/cgicc
