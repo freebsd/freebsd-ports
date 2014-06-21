@@ -50,5 +50,5 @@ man/man1/showpartial.1.gz
 man/man1/showpicture.1.gz
 man/man1/splitmail.1.gz
 man/man4/mailcap.4.gz
-@dirrmtry lib/metamail/fonts
-@dirrmtry lib/metamail
+%%X11%%@dirrmtry lib/metamail/fonts
+%%X11%%@dirrmtry lib/metamail
