@@ -6136,3 +6136,9 @@ graphics/GraphicsMagick13|graphics/GraphicsMagick|2014-06-17|Removed, duplicate 
 textproc/m17n-contrib|devel/m17n-db|2014-06-18|m17n-contrib was incorporated into m17n-db
 www/xpi-deepestsender||2014-06-18|Upstream disappeared, not working with modern mozilla applications
 devel/tortoisehg2|devel/tortoisehg|2014-06-20|Port has been renamed
+german/bugzilla40|german/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla40
+german/bugzilla42|german/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla42
+japanese/bugzilla40|japanese/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla40
+japanese/bugzilla42|japanese/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla42
+russian/bugzilla40|russian/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla40
+russian/bugzilla42|russian/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla42

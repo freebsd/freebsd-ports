@@ -9,8 +9,6 @@
     SUBDIR += alt-aspell
     SUBDIR += aspell
     SUBDIR += bsdpaste
-    SUBDIR += bugzilla40
-    SUBDIR += bugzilla42
     SUBDIR += bugzilla44
     SUBDIR += calligra-l10n
     SUBDIR += dict
