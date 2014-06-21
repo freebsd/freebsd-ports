@@ -9,6 +9,10 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	saper@saper.info
 COMMENT=	A minimalist implementation of python in 64k of code
 
+LICENSE=	MIT PSFL
+LICENSE_COMB=	multi
+LICENSE_FILE=	LICENSE.txt
+
 USE_PYTHON_BUILD=	yes
 USE_PYDISTUTILS=	yes
 
@@ -20,7 +24,6 @@ PLIST_FILES=	bin/tinypy
 OPTIONS_DEFINE=	PYGAME
 PYGAME_DESC=	PyGame support (requires SDL)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYGAME}
@@ -40,10 +43,10 @@ do-configure:
 	@${DO_NADA}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/build/tinypy ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/tinypy ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MEXAMPLES} && ${PORT_OPTIONS:MPYGAME}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/julia.py ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/julia.py ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
