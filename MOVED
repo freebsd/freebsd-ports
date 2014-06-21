@@ -6142,3 +6142,9 @@ japanese/bugzilla40|japanese/bugzilla44|2014-06-21|Removed, localized version of
 japanese/bugzilla42|japanese/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla42
 russian/bugzilla40|russian/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla40
 russian/bugzilla42|russian/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla42
+mail/sastatd|sysutils/p5-Tail-Stat|2014-06-21|Has expired: Superseded by sysutils/p5-Tail-Stat
+www/mod_ruby||2014-06-21|Has expired: Only for threadless ruby
+textproc/eruby|www/rubygem-erubis|2014-06-21|Has expired: Only for threadless ruby, use ruby-gem erubis instead
+mail/p5-FuzzyOcr|mail/p5-FuzzyOcr-devel|2014-06-21|Has expired: Unmaintained upstream, no ports depending on it. Use mail/p5-FuzzyOcr-devel instead
+devel/bugzilla40|devel/bugzilla44|2014-06-21|Has expired
+devel/bugzilla42|devel/bugzilla44|2014-06-21|Has expired
