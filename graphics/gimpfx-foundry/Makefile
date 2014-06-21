@@ -20,14 +20,14 @@ NO_WRKSUBDIR=	yes
 
 PORTDOCS=	release-notes.txt
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/gimp/scripts/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/gimp/scripts/
+	${INSTALL_DATA} ${WRKSRC}/*.scm ${STAGEDIR}${PREFIX}/share/gimp/scripts/
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/release-notes.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/release-notes.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
