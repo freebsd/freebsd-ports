@@ -7,6 +7,8 @@
 #  - OPTION_DESC?= must be 19 characters or less
 #  - OPTION description text must be 43 characters or less
 #
+# - This file's MAINTAINER is ports@FreeBSD.org so that entries can be added to
+#   it easily.  Any sweeping changes should be approved by portmgr.
 
 Options_Desc_MAINTAINER=	ports@FreeBSD.org
 
