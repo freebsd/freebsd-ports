@@ -13,7 +13,7 @@ COMMENT=	Software for reading and writing Data Matrix barcodes
 
 LIB_DEPENDS=	libdmtx.so:${PORTSDIR}/graphics/libdmtx
 
-USE_BZIP2=	yes
+USES=		tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
