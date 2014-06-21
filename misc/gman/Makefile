@@ -23,12 +23,14 @@ RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview	\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gettext gmake
+USES=		gettext gmake shebangfix
 USE_GNOME=	gtk12
+USE_GCC=	any
 
 CXXFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
+
 SHEBANG_LANG+=	perlw
 perlw_OLD_CMD=  /usr/bin/perl -w
 perlw_CMD=	${LOCALBASE}/bin/perl -w
@@ -41,6 +43,8 @@ post-patch:
 		-e 's,= /usr,= ${PREFIX},g' \
 		-e 's,\-O2,,g' \
 		-e 's,\-lgtk \-lgdk \-lpthread ,`${GTK_CONFIG} \-\-libs gthread` ,g' ${WRKSRC}/Makefile
+	# XXX - workaround for shebangfix not working
+	@${REINPLACE_CMD} -e "s|/usr/bin/perl|${LOCALBASE}/bin/perl|" ${WRKSRC}/gman.pl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gman ${STAGEDIR}${PREFIX}/bin
