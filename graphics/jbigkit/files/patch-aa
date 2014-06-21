@@ -1,61 +1,17 @@
---- Makefile.orig	Tue Apr  9 19:37:13 2002
-+++ Makefile	Tue Apr  9 22:45:53 2002
-@@ -2,13 +2,13 @@
- # $Id: Makefile,v 1.12 2002-04-09 11:37:13+01 mgk25 Exp $
+--- Makefile	2014-03-27 14:47:15.000000000 -0400
++++ Makefile	2014-04-08 08:37:59.000000000 -0400
+@@ -2,12 +2,10 @@
  
  # Select an ANSI/ISO C compiler here, GNU gcc is recommended
 -CC = gcc
 +#CC = gcc
  
  # Options for the compiler: A high optimization level is suggested
--CCFLAGS = -O2 -W
-+#CCFLAGS = -O2 -W
- #CCFLAGS = -O -g -W -Wall -ansi -pedantic #-DDEBUG  # developer only
+-CFLAGS = -O2 -W -Wno-unused-result
++CFLAGS += -W # -Wno-unused-result -- older compilers don't have this
+ # CFLAGS = -O -g -W -Wall -Wno-unused-result -ansi -pedantic # -DDEBUG
  
--CFLAGS = $(CCFLAGS) -I../libjbig
-+CFLAGS += -I../libjbig
+-export CC CFLAGS
+-
+ VERSION=2.1
  
- VERSION=1.4
- 
-@@ -16,14 +16,14 @@
- 	@echo "Enter 'make test' in order to start some automatic tests."
- 
- lib:
--	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
-+	(cd libjbig;  $(MAKE) "CC=$(CC)" "CFLAGS=$(CFLAGS)")
- 
- pbm: lib
--	(cd pbmtools; make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
-+	(cd pbmtools; $(MAKE) "CC=$(CC)" "CFLAGS=$(CFLAGS)")
- 
- test: lib pbm
--	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)" test)
--	(cd pbmtools; make "CC=$(CC)" "CFLAGS=$(CFLAGS)" test)
-+	(cd libjbig;  $(MAKE) "CC=$(CC)" "CFLAGS=$(CFLAGS)" test)
-+	(cd pbmtools; $(MAKE) "CC=$(CC)" "CFLAGS=$(CFLAGS)" test)
- 
- clean:
- 	rm -f *~ core
-@@ -36,3 +36,22 @@
- 	  gzip -9f jbigkit-$(VERSION).tar )
- 	mv ../jbigkit-$(VERSION).tar.gz $(HOME)/public_html/download/
- 	cp CHANGES $(HOME)/public_html/jbigkit/
-+
-+install:
-+	mkdir -p $(DESTDIR)${PREFIX}/bin
-+	${BSD_INSTALL_PROGRAM} pbmtools/jbgtopbm pbmtools/pbmtojbg \
-+		$(DESTDIR)${PREFIX}/bin
-+	mkdir -p $(DESTDIR)${PREFIX}/man/man1
-+	${BSD_INSTALL_MAN} pbmtools/pbmtojbg.1 pbmtools/jbgtopbm.1 \
-+		$(DESTDIR)${PREFIX}/man/man1
-+	# mkdir -p $(DESTDIR)${PREFIX}/man/man5
-+	# Not installing the pbm(5) man page, because BSD has its own
-+	# install -c -m 644 -o bin -g bin pbmtools/pbm.5 ${PREFIX}/man/man5
-+	# Not installing the pgm(5) man page for it comes with netpbm port
-+	# install -c -m 644 -o bin -g bin pbmtools/pgm.5 ${PREFIX}/man/man5
-+	mkdir -p $(DESTDIR)${PREFIX}/include
-+	${BSD_INSTALL_DATA} libjbig/jbig.h $(DESTDIR)${PREFIX}/include
-+	mkdir -p $(DESTDIR)${PREFIX}/lib
-+	${BSD_INSTALL_DATA} libjbig/libjbig.a $(DESTDIR)${PREFIX}/lib
-+	${BSD_INSTALL_DATA} libjbig/libjbig.so.1 $(DESTDIR)${PREFIX}/lib
-+	ln -sf libjbig.so.1 $(DESTDIR)${PREFIX}/lib/libjbig.so
