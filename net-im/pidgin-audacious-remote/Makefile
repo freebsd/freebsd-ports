@@ -17,6 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		libtool pkgconfig tar:bzip2
 
+BROKEN=		Does not work with audacious 3.5 or later
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 

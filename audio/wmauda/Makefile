@@ -17,6 +17,8 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
 
+BROKEN=		Does not work with audacious 3.5 or later
+
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20
 
