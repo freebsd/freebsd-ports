@@ -6148,3 +6148,4 @@ textproc/eruby|www/rubygem-erubis|2014-06-21|Has expired: Only for threadless ru
 mail/p5-FuzzyOcr|mail/p5-FuzzyOcr-devel|2014-06-21|Has expired: Unmaintained upstream, no ports depending on it. Use mail/p5-FuzzyOcr-devel instead
 devel/bugzilla40|devel/bugzilla44|2014-06-21|Has expired
 devel/bugzilla42|devel/bugzilla44|2014-06-21|Has expired
+sysutils/sysupdate||2014-06-21|Removed, no longer needed/relevent with FreeBSD in SVN.
