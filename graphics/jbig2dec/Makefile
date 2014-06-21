@@ -50,6 +50,8 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -E 's|SHA1_Final\( *([^,]+), *([^\)]+)\)|SHA1_Final(\2, \1)|' \
 		${WRKSRC}/jbig2dec.c ${WRKSRC}/sha1.c
+	@${REINPLACE_CMD} -e '1 s|${SETENV} python|${PYTHON_CMD}|' \
+		${WRKSRC}/test_jbig2dec.py
 
 test check regression-test:
 	${MAKE} -C ${WRKSRC} check-TESTS
