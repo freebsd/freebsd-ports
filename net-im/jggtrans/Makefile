@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	jggtrans
-PORTVERSION=	2.2.4
-PORTREVISION=	2
-CATEGORIES=	net-im polish
-MASTER_SITES=	http://jggtrans.jajcus.net/downloads/ \
-		http://freebsd.e.pl/distfiles/
+PORTVERSION=	2.2.6
+CATEGORIES=	polish net-im
+MASTER_SITES=	https://github.com/Jajcus/jggtrans/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	mg@fork.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabberd XMPP to GG instant messaging service gateway
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
