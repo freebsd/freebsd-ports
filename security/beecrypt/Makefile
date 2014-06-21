@@ -16,15 +16,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-java
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	OPENMP
+OPENMP_CONFIGURE_ENABLE=	openmp
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 	@${ECHO_MSG} "Configuring for OpenMP support"
 	@${ECHO_MSG} "Any ports depending on beecrypt must be configured for OpenMP too."
-
-CONFIGURE_ARGS+=	--enable-openmp
-.else
-CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
 # Configure tries to guess our CPU-features using Linux-centric logic.
