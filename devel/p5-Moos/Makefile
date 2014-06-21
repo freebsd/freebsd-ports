@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moos
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INGY
@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Class-XSAccessor>=1.07:${PORTSDIR}/devel/p5-Class-XSAccessor \
 		p5-Role-Tiny>=1.002.000:${PORTSDIR}/devel/p5-Role-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+TEST_DEPENDS=	p5-Sub-Identify>=0.04:${PORTSDIR}/devel/p5-Sub-Identify \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
 USE_PERL5=	configure
 USES=		perl5
