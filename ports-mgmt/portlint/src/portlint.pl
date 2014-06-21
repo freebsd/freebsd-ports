@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.314 2014/04/19 18:36:43 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.319 2014/06/21 19:21:54 marcus Exp $
 #
 
 use strict;
@@ -45,12 +45,12 @@ $contblank = 1;
 $portdir = '.';
 
 @ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/ /dev/null /etc/inetd.conf);
-@MASTERSITES_WHITELIST = qw(googlecode.com nodeload.github.com);
+@MASTERSITES_WHITELIST = qw(googlecode.com nodeload.github.com s3.amazonaws.com);
 
 # version variables
 my $major = 2;
 my $minor = 15;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -700,6 +700,13 @@ sub checkplist {
 			} elsif ($_ eq "\@cwd") {
 				; # @cwd by itself means change directory back to the original
 				  # PREFIX.
+		  	} elsif ($_ =~ /^\@sample\s+(\S*)/) {
+				my $sl = $.;
+				if ($1 !~ /\.sample$/) {
+					&perror("WARN", $file, $sl, "\@sample directive references".
+						" file that does not end in ``.sample''.  Sample".
+						" files must end in ``.sample''.");
+				}
 			} else {
 				&perror("WARN", $file, $.,
 					"unknown pkg-plist directive \"$_\"");
@@ -1578,8 +1585,8 @@ sub checkmakefile {
 		if (!grep(/^$i$/, @opt, @aopt)) {
 			# skip global options
 			next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11');
-			&perror("WARN", $file, -1, "$i is appears in PORT_OPTIONS:M, ".
-				"but not listed in OPTIONS_DEFINE.");
+			&perror("WARN", $file, -1, "$i appears in PORT_OPTIONS:M, ".
+				"but is not listed in OPTIONS_DEFINE.");
 		}
 	}
 
@@ -1857,8 +1864,8 @@ ruby sed sdl-config sh sort sysctl touch tr which xargs xmkmf
 	$cmdnames{'strip'} = '${STRIP_CMD}';
 	$cmdnames{'unzip'} = '${UNZIP_CMD}';
 	$cmdnames{'pkg_create'} = '${PKG_CMD}';
-	foreach my $i (qw(aclocal autoconf autoheader automake autoreconf autoupdate autoscan ifnames libtool libtoolize)) {
-		$autocmdnames{$i} = "\$\{" . ( ( $i !~ /auto|aclocal|libtool/ ) ? "AUTO" : "" ) . "\U$i\E\}";
+	foreach my $i (qw(aclocal autoconf autoheader automake autoreconf autoupdate autoscan ifnames libtoolize)) {
+		$autocmdnames{$i} = "\$\{" . ( ( $i !~ /auto|aclocal/ ) ? "AUTO" : "" ) . "\U$i\E\}";
 	}
 	#
 	# ignore parameter string to echo command.
@@ -1928,6 +1935,11 @@ ruby sed sdl-config sh sort sysctl touch tr which xargs xmkmf
 						"instead and set according USE_AUTOTOOLS=<tool> macro");
 			}
 		}
+	}
+
+	if ($makevar{'USE_AUTOTOOLS'} =~ /\blibtool\b/) {
+		&perror("WARN", $file, -1, "USE_AUTOTOOLS=libtool is deprecated.  ".
+			"Use USES=libtool instead.");
 	}
 
 	#
