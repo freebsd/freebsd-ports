@@ -1,9 +1,8 @@
---- src/audtool/Makefile.orig        2012-05-07 10:04:29.639672532 +0300
-+++ src/audtool/Makefile        2012-05-07 10:04:45.691668909 +0300
-@@ -20,4 +20,5 @@ CPPFLAGS := -I.. -I../.. \
- LIBS := -L../libaudclient -laudclient \
-         ${LIBS} \
-         ${DBUS_LIBS} \
--        ${GTK_LIBS}
-+        ${GTK_LIBS} \
-+        ${LIBINTL}
+--- src/audtool/Makefile.orig	2014-06-19 16:33:05.570367015 +0200
++++ src/audtool/Makefile	2014-06-19 16:33:24.317364894 +0200
+@@ -15,4 +15,4 @@
+ include ../../extra.mk
+ 
+ CPPFLAGS := -I../.. -I../dbus ${CPPFLAGS} ${GLIB_CFLAGS} ${GIO_CFLAGS}
+-LIBS := ../dbus/aud-dbus.a ${LIBS} ${GLIB_LIBS} ${GIO_LIBS}
++LIBS := ../dbus/aud-dbus.a ${LIBS} ${GLIB_LIBS} ${GIO_LIBS} ${LIBINTL}

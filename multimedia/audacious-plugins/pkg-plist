@@ -1,4 +1,5 @@
 lib/audacious/Container/asx.so
+lib/audacious/Container/asx3.so
 lib/audacious/Container/audpl.so
 %%CUEPLUGIN%%lib/audacious/Container/cue.so
 lib/audacious/Container/m3u.so
@@ -19,6 +20,7 @@ lib/audacious/General/alarm.so
 lib/audacious/General/albumart.so
 %%AOSDPLUGIN%%lib/audacious/General/aosd.so
 %%CDAUDIOPLUGIN%%lib/audacious/General/cd-menu-items.so
+lib/audacious/General/delete-files.so
 %%DBUS%%lib/audacious/General/gnomeshortcuts.so
 lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
@@ -29,11 +31,10 @@ lib/audacious/General/search-tool.so
 lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 %%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
+%%AACPLUGIN%%lib/audacious/Input/aac-raw.so
 %%AACPLUGIN%%lib/audacious/Input/aac.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
 %%AMIDIPLUGIN%%lib/audacious/Input/amidi-plug.so
-%%AMIDIAPLUGIN%%lib/audacious/Input/amidi-plug/ap-alsa.so
-%%AMIDIFPLUGIN%%lib/audacious/Input/amidi-plug/ap-fluidsynth.so
 %%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
 %%FFAUDIOPLUGIN%%lib/audacious/Input/ffaudio.so
@@ -55,10 +56,9 @@ lib/audacious/Output/filewriter.so
 %%OSS4PLUGIN%%lib/audacious/Output/oss4.so
 %%PULSE%%lib/audacious/Output/pulse_audio.so
 %%SDL%%lib/audacious/Output/sdlout.so
-%%GIOPLUGIN%%lib/audacious/Transport/gio.so
+lib/audacious/Transport/gio.so
 %%MMSPLUGIN%%lib/audacious/Transport/mms.so
 %%NEONPLUGIN%%lib/audacious/Transport/neon.so
-lib/audacious/Transport/unix-io.so
 lib/audacious/Visualization/blur_scope.so
 lib/audacious/Visualization/cairo-spectrum.so
 %%GLSPECTRUM%%lib/audacious/Visualization/gl-spectrum.so
@@ -181,10 +181,6 @@ share/audacious/Skins/TinyPlayer/text.png
 share/audacious/Skins/TinyPlayer/titlebar.png
 share/audacious/Skins/TinyPlayer/viscolor.txt
 share/audacious/Skins/TinyPlayer/volume.png
-share/audacious/ui/equalizer.ui
-share/audacious/ui/mainwin.ui
-share/audacious/ui/playlist.ui
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%NLS%%share/locale/be/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
@@ -199,6 +195,7 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/es_MX/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/et/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/audacious-plugins.mo
@@ -217,6 +214,7 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/si/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sr_RS/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/audacious-plugins.mo
@@ -237,8 +235,6 @@ share/audacious/ui/playlist.ui
 %%NLS%%@dirrmtry share/locale/es_AR
 %%NLS%%@dirrmtry share/locale/cmn/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/cmn
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm share/audacious/ui
 @dirrm share/audacious/Skins/TinyPlayer
 @dirrm share/audacious/Skins/Refugee
 @dirrm share/audacious/Skins/Osmosis
@@ -251,7 +247,6 @@ share/audacious/ui/playlist.ui
 @dirrm lib/audacious/Visualization
 @dirrm lib/audacious/Transport
 @dirrm lib/audacious/Output
-%%AMIDIPLUGIN%%@dirrm lib/audacious/Input/amidi-plug
 @dirrm lib/audacious/Input
 @dirrm lib/audacious/General
 @dirrm lib/audacious/Effect

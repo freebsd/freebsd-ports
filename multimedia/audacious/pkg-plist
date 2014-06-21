@@ -5,14 +5,13 @@ include/audacious/api-alias-end.h
 include/audacious/api-define-begin.h
 include/audacious/api-define-end.h
 include/audacious/api.h
-%%WITH_DBUS%%include/audacious/audctrl.h
 include/audacious/audtag.h
-include/audacious/dbus-service.h
-include/audacious/dbus.h
 include/audacious/debug.h
 include/audacious/drct-api.h
 include/audacious/drct.h
 include/audacious/i18n.h
+include/audacious/input-api.h
+include/audacious/input.h
 include/audacious/misc-api.h
 include/audacious/misc.h
 include/audacious/playlist-api.h
@@ -27,26 +26,26 @@ include/libaudcore/audstrings.h
 include/libaudcore/core.h
 include/libaudcore/hook.h
 include/libaudcore/index.h
+include/libaudcore/inifile.h
+include/libaudcore/multihash.h
+include/libaudcore/tinylock.h
 include/libaudcore/tuple.h
 include/libaudcore/vfs.h
 include/libaudcore/vfs_async.h
 include/libaudgui/libaudgui-gtk.h
 include/libaudgui/libaudgui.h
 include/libaudgui/list.h
-%%WITH_DBUS%%lib/libaudclient.so
-%%WITH_DBUS%%lib/libaudclient.so.2
-%%WITH_DBUS%%lib/libaudclient.so.2.0.0
+include/libaudgui/menu.h
 lib/libaudcore.so
-lib/libaudcore.so.1
-lib/libaudcore.so.1.0.0
+lib/libaudcore.so.2
+lib/libaudcore.so.2.0.0
 lib/libaudgui.so
-lib/libaudgui.so.1
-lib/libaudgui.so.1.0.0
+lib/libaudgui.so.2
+lib/libaudgui.so.2.0.0
 lib/libaudtag.so
 lib/libaudtag.so.1
 lib/libaudtag.so.1.0.0
 libdata/pkgconfig/audacious.pc
-libdata/pkgconfig/audclient.pc
 man/man1/audacious.1.gz
 man/man1/audtool.1.gz
 share/applications/audacious.desktop
@@ -54,13 +53,10 @@ share/applications/audacious.desktop
 %%DATADIR%%/COPYING
 %%DATADIR%%/images/about-logo.png
 %%DATADIR%%/images/album.png
-%%DATADIR%%/images/audacious.png
+%%DATADIR%%/images/appearance.png
 %%DATADIR%%/images/audio.png
 %%DATADIR%%/images/connectivity.png
 %%DATADIR%%/images/info.png
-%%DATADIR%%/images/menu_playlist.png
-%%DATADIR%%/images/menu_plugin.png
-%%DATADIR%%/images/menu_queue_toggle.png
 %%DATADIR%%/images/playlist.png
 %%DATADIR%%/images/plugins.png
 share/icons/hicolor/48x48/apps/audacious.png
@@ -85,6 +81,7 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/he/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/it/LC_MESSAGES/audacious.mo
@@ -106,12 +103,16 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/sq/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sr_RS/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
+%%NLS%%@dirrmtry share/locale/sr_RS/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr_RS
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
