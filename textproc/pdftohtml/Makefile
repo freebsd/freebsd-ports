@@ -4,7 +4,8 @@
 PORTNAME=	pdftohtml
 PORTVERSION=	0.40a
 CATEGORIES=	textproc
-MASTER_SITES=	http://fossies.org/linux/www/
+MASTER_SITES=	http://sourceforge.net/projects/${PORTNAME}/files/Experimental%20Versions/${PORTNAME}%200.40/ \
+		http://fossies.org/linux/www/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool for converting pdf-files into html
