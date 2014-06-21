@@ -3,7 +3,7 @@
 
 PORTNAME=	pwytter
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im www python
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,31 +19,33 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkin
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext zip
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USES=		gettext zip dos2unix
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-post-patch: .SILENT
-	${RM} -r ${WRKSRC}/twclient/simplejson
-# Prefer system-wide `simplejson' module; fix for broken `setup.py': include
-# `pwCache.py' in sources list, adjust locale data path
-	${REINPLACE_CMD} -e "s|'simplejson|}, #&|" \
-		-e "s|pwParam|pwCache','&|" ${WRKSRC}/setup.py
-	${REINPLACE_CMD} -e 's|locale_path =|& "${PYEASYINSTALL_SITELIBDIR}/${PYEASYINSTALL_EGG}/locale" #|' \
-		${WRKSRC}/pwytter.py
-# Adjust paths for themes and media (don't assume they are relative to .)
-	${REINPLACE_CMD} -e 's|media"|${DATADIR}/&|' ${WRKSRC}/pwytter.py \
-		${WRKSRC}/twclient/__init__.py
-	${REINPLACE_CMD} -e "s|theme'|${DATADIR}/&|" ${WRKSRC}/pwTheme.py
-# Remove gettext `.po' files: not needed when we have them precompiled
-	${FIND} ${WRKSRC}/locale -name pwytter.po -delete
+DOS2UNIX_GLOB = *.py
 
-NO_STAGE=	yes
-post-install:
-# Install themes and media files where they belong
-	@${MKDIR} ${DATADIR}/media ${DATADIR}/theme
-	${INSTALL_DATA} ${WRKSRC}/media/* ${DATADIR}/media
-	${INSTALL_DATA} ${WRKSRC}/theme/* ${DATADIR}/theme
+post-patch:
+	@${RM} -rf ${WRKSRC}/twclient/simplejson
+	@${REINPLACE_CMD} -e "s|'simplejson|}, #&|" \
+		-e "s|pwParam|pwCache','&|" \
+		-e "s|d\[p\]|d\['share/'+p\]|g" \
+		-e 's|text",|${DATADIR_REL}/text",|' \
+		-e 's|media",|${DATADIR_REL}/media",|' \
+		-e 's|theme",|${DATADIR_REL}/theme",|' \
+		-e 's|\\\\|/|' \
+		-e "/import ez_setup/d" \
+		-e "/ez_setup.use_setuptools()/d" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} \
+		-e 's|locale_path = .*|locale_path = "${PREFIX}/share/locale"|' \
+		-e '1,3d' \
+		-e 's|/usr/bin/python|${PYTHON_CMD}|' \
+		${WRKSRC}/pwytter.py
+	@${REINPLACE_CMD} -e 's|media"|${DATADIR}/&|' ${WRKSRC}/pwytter.py \
+		${WRKSRC}/twclient/__init__.py
+	@${REINPLACE_CMD} -e "s|theme'|${DATADIR}/&|" ${WRKSRC}/pwTheme.py
+	@${FIND} ${WRKSRC}/locale -name pwytter.po -delete
 
 .include <bsd.port.mk>
