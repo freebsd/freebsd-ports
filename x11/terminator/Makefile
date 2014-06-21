@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	terminator
-PORTVERSION=	0.96
-PORTREVISION=	4
+PORTVERSION=	0.97
 CATEGORIES=	x11 python
-MASTER_SITES=	http://launchpadlibrarian.net/80778747/ \
-		http://hur.st/mirror/terminator/
+MASTER_SITES=	http://launchpad.net/terminator/trunk/0.97/+download/
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Multiple GNOME terminals in one window
