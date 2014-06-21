@@ -3,7 +3,7 @@
 
 PORTNAME=	kdevelop
 DISTVERSION=	${KDEVELOP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${DISTVERSION}/src
@@ -16,7 +16,8 @@ LIB_DEPENDS=	libkdevplatforminterfaces.so:${PORTSDIR}/devel/kdevplatform
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
 USE_KDE4=	kdehier kdelibs kdeprefix workspace automoc4
-USE_QT4=	qmake_build moc_build uic_build rcc_build
+USE_QT4=	qmake_build moc_build uic_build rcc_build \
+		corelib declarative gui help script webkit xml
 USE_XZ=		yes
 USES=		cmake gmake shared-mime-info
 
