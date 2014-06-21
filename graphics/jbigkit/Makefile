@@ -3,6 +3,7 @@
 
 PORTNAME=	jbigkit
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
 
@@ -31,7 +32,7 @@ do-install:
 		${LIBA:S|^|${WRKSRC}/libjbig/|} ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB}	\
 		${LIBS:S|^|${WRKSRC}/libjbig/|} ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf libjbig.so.1 ${STAGEDIR}${PREFIX}/lib/libjbig.so
+	${LN} -sf libjbig.so.2 ${STAGEDIR}${PREFIX}/lib/libjbig.so
 	${LN} -sf libjbig85.so.1 ${STAGEDIR}${PREFIX}/lib/libjbig85.so
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
