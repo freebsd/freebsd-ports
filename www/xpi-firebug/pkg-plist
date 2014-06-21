@@ -767,6 +767,7 @@
 %%XPI_XPIDIR%%/locale/ru/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/ru/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/ru/firebug.properties
+%%XPI_XPIDIR%%/locale/ru/keys.properties
 %%XPI_XPIDIR%%/locale/ru/selectors.properties
 %%XPI_XPIDIR%%/locale/sk-SK/cookies.properties
 %%XPI_XPIDIR%%/locale/sk-SK/firebug-amo.properties
@@ -802,11 +803,13 @@
 %%XPI_XPIDIR%%/locale/zh-CN/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/zh-CN/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/zh-CN/firebug.properties
+%%XPI_XPIDIR%%/locale/zh-CN/keys.properties
 %%XPI_XPIDIR%%/locale/zh-CN/selectors.properties
 %%XPI_XPIDIR%%/locale/zh-TW/cookies.properties
 %%XPI_XPIDIR%%/locale/zh-TW/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/zh-TW/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/zh-TW/firebug.properties
+%%XPI_XPIDIR%%/locale/zh-TW/keys.properties
 %%XPI_XPIDIR%%/locale/zh-TW/selectors.properties
 %%XPI_XPIDIR%%/modules/fbtrace.js
 %%XPI_XPIDIR%%/modules/firebug-http-observer.js
