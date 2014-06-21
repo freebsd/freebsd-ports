@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ZendFramework
-PORTVERSION=	2.2.5
+PORTVERSION=	2.3.1
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	ZendFramework-1.*
 
