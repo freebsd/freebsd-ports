@@ -6,7 +6,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v${PORTVERSION}/
 DISTNAME=	tqsl-${PORTVERSION}
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
 LICENSE=	ARRL
