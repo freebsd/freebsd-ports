@@ -36,7 +36,7 @@ NO_STAGE=	yes
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README manuf
 DISTFILES+=	manuf:2
-IGNOREFILES=	manuf
+BROKEN=		no distinfo provided for some of the distfiles
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
