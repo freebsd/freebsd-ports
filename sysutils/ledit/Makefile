@@ -4,43 +4,39 @@
 PORTNAME=	ledit
 PORTVERSION=	2.03
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cristal.inria.fr/~ddr/ledit/distrib/src/ \
-		http://pauillac.inria.fr/~ddr/ledit/distrib/src/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://cristal.inria.fr/%SUBDIR%/ \
+		http://pauillac.inria.fr/%SUBDIR%/
+MASTER_SITE_SUBDIR=	~ddr/${PORTNAME}/distrib/src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	k@stereochro.me
 COMMENT=	Line editor to be used with interactive commands
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	camlp5r:${PORTSDIR}/devel/ocaml-camlp5
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_OCAML=	yes
 
 ALL_TARGET=	all ledit.opt
-
-PLIST_FILES=	bin/ledit
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		ledit.1
-PORTDOCS=	CHANGES LICENSE README
+PLIST_FILES=	bin/ledit \
+		man/man1/ledit.1.gz
+PORTDOCS=	CHANGES README
+
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-configure:
-	${REINPLACE_CMD} -e '/^BINDIR=/s;/usr/local;${PREFIX};' \
-			-e '/^LIBDIR=/s;/usr/local;${PREFIX};' \
-			-e '/^MANDIR=/s;/usr/local;${PREFIX};' \
+	${REINPLACE_CMD} -e '/^BINDIR=/s|/usr/local|${STAGEDIR}${PREFIX}|' \
+			-e '/^LIBDIR=/s|/usr/local|${STAGEDIR}${PREFIX}|' \
+			-e '/^MANDIR=/s|/usr/local|${STAGEDIR}${PREFIX}|' \
 			${WRKSRC}/Makefile
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ledit
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
