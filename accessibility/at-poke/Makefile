@@ -8,6 +8,9 @@ CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
+DEPRECATED=	Depends on expired libgailgnome
+EXPIRATION_DATE=2014-07-21
+
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Accessibility testing and poking tool
 
