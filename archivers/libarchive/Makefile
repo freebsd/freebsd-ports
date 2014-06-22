@@ -2,7 +2,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
@@ -17,7 +17,7 @@ LIBXML2_DESC=	Support writing xar via libxml2
 LZO_DESC=	Support lzo compression via liblzo2
 NETTLE_DESC=	Use Nettle instead of OpenSSL
 
-USES=		pathfix
+USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PATCH_STRIP=	-p1
@@ -29,9 +29,9 @@ PLIST_FILES=	bin/bsdcpio \
 		include/archive.h \
 		include/archive_entry.h \
 		lib/libarchive.a \
-		lib/libarchive.la \
 		lib/libarchive.so \
-		lib/libarchive.so.14 \
+		lib/libarchive.so.13 \
+		lib/libarchive.so.13.1.2 \
 		libdata/pkgconfig/libarchive.pc \
 		man/man1/bsdcpio.1.gz \
 		man/man1/bsdtar.1.gz \
