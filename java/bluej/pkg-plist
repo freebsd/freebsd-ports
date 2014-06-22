@@ -2,7 +2,6 @@ bin/bluej
 bluej/LICENSE.txt
 bluej/README.TXT
 bluej/THIRDPARTYLICENSE.txt
-bluej/bluej
 bluej/examples/appletdemo/CaseConverter.java
 bluej/examples/appletdemo/README.TXT
 bluej/examples/appletdemo/package.bluej
@@ -110,6 +109,7 @@ bluej/lib/chinese/templates/newclass/interface.tmpl
 bluej/lib/chinese/templates/newclass/stdclass.tmpl
 bluej/lib/chinese/templates/newclass/unittest.tmpl
 bluej/lib/chinese/templates/readme.tmpl
+bluej/lib/commons-logging-api-1.1.2.jar
 bluej/lib/czech/bluejparser.help
 bluej/lib/czech/dialogues
 bluej/lib/czech/exception.help
@@ -147,6 +147,7 @@ bluej/lib/danish/templates/newclass/interface.tmpl
 bluej/lib/danish/templates/newclass/stdclass.tmpl
 bluej/lib/danish/templates/newclass/unittest.tmpl
 bluej/lib/danish/templates/readme.tmpl
+bluej/lib/diffutils-1.2.1.jar
 bluej/lib/dutch/dialogues
 bluej/lib/dutch/exception.help
 bluej/lib/dutch/javac.help
@@ -197,6 +198,7 @@ bluej/lib/french/templates/newclass/abstract.tmpl
 bluej/lib/french/templates/newclass/appletj.tmpl
 bluej/lib/french/templates/newclass/enum.tmpl
 bluej/lib/french/templates/newclass/interface.tmpl
+bluej/lib/french/templates/newclass/midlet.tmpl
 bluej/lib/french/templates/newclass/stdclass.tmpl
 bluej/lib/french/templates/newclass/unittest.tmpl
 bluej/lib/french/templates/readme.tmpl
@@ -233,6 +235,10 @@ bluej/lib/greek/templates/newclass/interface.tmpl
 bluej/lib/greek/templates/newclass/stdclass.tmpl
 bluej/lib/greek/templates/newclass/unittest.tmpl
 bluej/lib/greek/templates/readme.tmpl
+bluej/lib/httpclient-4.1.1.jar
+bluej/lib/httpcore-4.1.jar
+bluej/lib/httpmime-4.1.1.jar
+bluej/lib/images/Weather.png
 bluej/lib/images/about-logo.jpg
 bluej/lib/images/arrow_black_uml.gif
 bluej/lib/images/bluej-icon-256.png
