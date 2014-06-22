@@ -50,20 +50,21 @@ my $VERSION = "1.0";
 my $file = "/usr/ports/INDEX" . ($osrel <= 4 ? "" : "-$osrel");
 my $match = 1;
 my $count = 0;
+my $fulldesc = 0;
 
 # We only need 7 of the 10 fields in a record; define which ones in a
 # hash slice to ignore the un-needed ones. This also makes it easy to
 # add or remove fields in the future.
 
-@fields{qw(n p i m x b r)} = (0, 1, 3, 5, 6, 7, 8);
+@fields{qw(n p i e m x b r)} = (0, 1, 3, 4, 5, 6, 7, 8);
 
 #
 # Print a basic help message
 #
 
 sub usage() {
-    print(STDERR "
-Usage: portsearch [-h] [-n name] [-p path] [-i info] [-m maint] [-x index]
+	print(STDERR "
+Usage: portsearch [-h] [-e] [-n name] [-p path] [-i info] [-m maint] [-x index]
 		[-b b_deps] [-r r_deps] [-d deps] [-f file]
 
 ");
@@ -74,7 +75,7 @@ Usage: portsearch [-h] [-n name] [-p path] [-i info] [-m maint] [-x index]
 #
 
 sub help() {
-    print(STDERR "portsearch $VERSION - A utility for searching the ports tree.
+	print(STDERR "portsearch $VERSION - A utility for searching the ports tree.
 
 Options:
 
@@ -87,6 +88,7 @@ Options:
   -r r_deps	Search for \"r_deps\" in run depends of ports
   -d deps	Search for \"deps\" in both build & run depends of ports
   -f file	Use \"file\" instead of /usr/ports/INDEX
+  -e	 	Show long description for all matching ports
   -h		Print this message and exit
 
 Report bugs to <marko\@freebsd.org>.
@@ -100,69 +102,86 @@ Report bugs to <marko\@freebsd.org>.
 
 MAIN: {
 				# No command-line args
-    if ($#ARGV == -1) {
-	usage();
-	exit(1);
-    }
-
-    getopt('fnpimxbrd', \%opts);
-				# Command-line args, but without options
-    if (keys(%opts) == 0 ) {
-	usage();
-	exit(1);
-    }
-				# If ``-h'', ignore any other options
-    if (defined($opts{"h"})) {
-	help();
-	exit(1);
-    }
-				# A different INDEX file
-    if (defined($opts{"f"})) {
-	$file = $opts{"f"};
-    }
-				# If ``-d'' used we don't want ``-b'' & ``-r''
-    if (defined($opts{"d"})) {
-	delete $opts{"b"};
-	delete $opts{"r"};
-    }
-				# Finished with it now so remove it from hash
-    delete $opts{"f"};
-	
-    open(INDEX, "$file") || die "Unable to open $file";
-
-    while (<INDEX>) {
-	chomp;
-	@list = split(/\|/);
-
-        $match = 1;
-				# All searches are case-insensitive!
-				# For ``-d'' search both build & run depends.
-				# Only fail to match if not found in either.
-	foreach $key (keys (%opts)) {
-	    if ($key eq "d") {
-		if ($list[$fields{"b"}] !~ m#$opts{$key}#i &&
-				  $list[$fields{"r"}] !~ m#$opts{$key}#i) {
-		    $match = 0;
-		    last;
-		    }
-	    } else {
-		if ($list[$fields{$key}] !~ m#$opts{$key}#i) {
-		    $match = 0;
-		    last;
-		}
-	    }
-	} # foreach
-
-	if ($match == 1) {
-	    $count++;
-	    write;
+	if ($#ARGV == -1) {
+		usage();
+		exit(1);
 	}
 
-    } # while
+	getopts('ehf:n:p:i:m:x:b:r:d:', \%opts);
+				# Process -e first, as it doesn't take
+				# arguments
+	if (defined($opts{"e"})) {
+		$fulldesc = 1;
+		delete $opts{"e"};
+	}
+				# Command-line args, but without options
+	if (keys(%opts) == 0 ) {
+				# Default to name search if no constraints
+				# specified
+		if ($#ARGV == 0) {
+	   		$opts{"n"} = $ARGV[0];
+		} else {
+			usage();
+			exit(1);
+		}
+	}
+				# If ``-h'', ignore any other options
+	if (defined($opts{"h"})) {
+		help();
+		exit(1);
+	}
+				# A different INDEX file
+	if (defined($opts{"f"})) {
+		$file = $opts{"f"};
+	}
+				# If ``-d'' used we don't want ``-b'' & ``-r''
+	if (defined($opts{"d"})) {
+		delete $opts{"b"};
+		delete $opts{"r"};
+	}
+				# Finished with it now so remove it from hash
+	delete $opts{"f"};
+	
+	open(INDEX, "$file") || die "Unable to open $file";
 
-    close(INDEX);
+	while (<INDEX>) {
+		chomp;
+		@list = split(/\|/);
 
-    print ("Number of matching ports = $count\n\n");
+			$match = 1;
+					# All searches are case-insensitive!
+					# For ``-d'' search both build & run depends.
+					# Only fail to match if not found in either.
+		foreach $key (keys (%opts)) {
+			if ($key eq "d") {
+				if ($list[$fields{"b"}] !~ m#$opts{$key}#i &&
+				  $list[$fields{"r"}] !~ m#$opts{$key}#i) {
+					$match = 0;
+					last;
+				}
+			} else {
+				if ($list[$fields{$key}] !~ m#$opts{$key}#i) {
+					$match = 0;
+					last;
+				}
+			}
+		} # foreach
+
+		if ($match == 1) {
+			$count++;
+			write;
+			if ($fulldesc) {
+				open my $pkgdescr, $list[$fields{"e"}] || next;
+				print while <$pkgdescr>; print "\n";
+				close $pkgdescr;
+			}
+		}
+
+	} # while
+
+	close(INDEX);
+
+	print ("Number of matching ports = $count\n\n");
 
 } # MAIN
 
@@ -170,24 +189,24 @@ MAIN: {
 format STDOUT =
 
 Port:	@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[0]
+$list[$fields{"n"}]
 Path:	@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[1]
+$list[$fields{"p"}]
 Info:	^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[3]
-~~      ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[3]
+$list[$fields{"i"}]
+~~	^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+$list[$fields{"i"}]
 Maint:	@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[5]
+$list[$fields{"m"}]
 Index:	@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[6]
+$list[$fields{"x"}]
 B-deps:	^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[7]
-~~      ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[7]
+$list[$fields{"b"}]
+~~	^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+$list[$fields{"b"}]
 R-deps:	^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[8]
-~~      ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$list[8]
+$list[$fields{"r"}]
+~~	^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+$list[$fields{"r"}]
 
 .
