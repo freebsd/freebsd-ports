@@ -16,13 +16,13 @@ include/xmlwrapp/xmlwrapp.h
 %%XSLT%%include/xsltwrapp/stylesheet.h
 %%XSLT%%include/xsltwrapp/xsltwrapp.h
 lib/libxmlwrapp.a
-lib/libxmlwrapp.la
 lib/libxmlwrapp.so
 lib/libxmlwrapp.so.6
+lib/libxmlwrapp.so.6.0.0
 %%XSLT%%lib/libxsltwrapp.a
 %%XSLT%%lib/libxsltwrapp.so
-%%XSLT%%lib/libxsltwrapp.la
 %%XSLT%%lib/libxsltwrapp.so.4
+%%XSLT%%lib/libxsltwrapp.so.4.0.0
 libdata/pkgconfig/xmlwrapp.pc
 %%XSLT%%libdata/pkgconfig/xsltwrapp.pc
 %%XSLT%%@dirrm include/xsltwrapp
