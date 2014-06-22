@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Tiny/turbo/throttling HTTP server
 
-IGNOREFILES=	notes.html
+BROKEN=		no distinfo provided for some of the distfiles
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
