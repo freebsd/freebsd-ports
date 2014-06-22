@@ -13,9 +13,9 @@ include/gucharmap-2.0/gucharmap/gucharmap-script-codepoint-list.h
 include/gucharmap-2.0/gucharmap/gucharmap-type-builtins.h
 include/gucharmap-2.0/gucharmap/gucharmap-unicode-info.h
 include/gucharmap-2.0/gucharmap/gucharmap.h
-lib/libgucharmap.la
 lib/libgucharmap.so
 lib/libgucharmap.so.7
+lib/libgucharmap.so.7.0.0
 libdata/pkgconfig/gucharmap-2.pc
 share/applications/gucharmap.desktop
 share/gnome/help/gucharmap/C/figures/gucharmap_start_window.png
