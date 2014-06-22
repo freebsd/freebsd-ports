@@ -40,6 +40,12 @@ GNUPG2_RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 UISERVER_DESC=			GnuPG UI server support
 UISERVER_CONFIGURE_ENABLE=	fd-passing
 
+.include <bsd.port.options.mk>
+
+.if !exists(${LOCALBASE}/bin/gpgsm)
+CONFIGURE_ARGS+=	--disable-gpgsm-test
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 					${WRKSRC}/${CONFIGURE_SCRIPT} \
