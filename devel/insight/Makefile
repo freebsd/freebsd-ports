@@ -9,7 +9,7 @@ COMMENT=	Gnu debugger with the Insight GUI front-end
 LATEST_LINK=	insight
 
 MASTERDIR=	${.CURDIR:H}/gdb66
-OPTIONS_SET+=	INSIGHT
+OPTIONS_SLAVE=	INSIGHT
 CONFLICTS=	gdb-[6-9]*
 
 MAKE_JOBS_UNSAFE=	yes
