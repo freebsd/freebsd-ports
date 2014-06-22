@@ -19,6 +19,7 @@ USES=		gmake libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gpgme
+INSTALL_TARGET=	install-strip
 
 INFO=		gpgme
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README THANKS TODO
@@ -51,6 +52,5 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgpgme*.so.*
 
 .include <bsd.port.mk>
