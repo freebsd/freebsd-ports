@@ -15,8 +15,7 @@ COMMENT=	PHP and MySQL based blogging platform
 
 LICENSE=	GPLv2
 
-IGNOREFILES=	${CONTRIBE_VERSION}__all_plugins.zip \
-		${CONTRIBE_VERSION}__all_templates.zip
+BROKEN=		no distinfo provided for some of the distfiles
 
 CONTRIBE_VERSION=1.2
 NO_BUILD=	YES
