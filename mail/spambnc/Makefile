@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-IGNOREFILES=	quickstart.shtml
+BROKEN=		No distinfo provided for some distfiles
 EXTRACT_DIR=	${WRKDIRPREFIX}${.CURDIR}/worktmp/${DISTNAME}
 EXTRACT_BEFORE_ARGS=	-C ${EXTRACT_DIR} -xf
 NO_BUILD=	yes
@@ -29,7 +29,6 @@ SUB_FILES=	pkg-message
 .if !defined(NOPORTDOCS)
 MASTER_SITES+=	http://www.spambouncer.org/configure/:upg
 DISTFILES+=	upgrading.shtml:upg
-IGNOREFILES+=	upgrading.shtml
 PORTDOCS=	documentation.html upgrading.html loglevels.txt
 .endif
 
