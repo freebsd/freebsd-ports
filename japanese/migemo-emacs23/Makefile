@@ -23,8 +23,7 @@ ALL_TARGET=	migemo.elc
 PLIST_SUB=	MIGEMO="@comment " ELISP=""
 SLAVE_PORT=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/migemo.el ${PREFIX}/${EMACS_LIBDIR}/site-lisp
-	${INSTALL_DATA} ${WRKSRC}/migemo.elc ${PREFIX}/${EMACS_LIBDIR}/site-lisp
+	${INSTALL_DATA} ${WRKSRC}/migemo.el ${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/site-lisp
+	${INSTALL_DATA} ${WRKSRC}/migemo.elc ${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/site-lisp
 .include "${MASTERDIR}/Makefile"
