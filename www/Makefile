@@ -1432,7 +1432,6 @@
     SUBDIR += php55-session
     SUBDIR += php55-tidy
     SUBDIR += phpbb
-    SUBDIR += phpbb-devel
     SUBDIR += phpbb3
     SUBDIR += phpgedview
     SUBDIR += phpgroupware
@@ -1442,7 +1441,6 @@
     SUBDIR += phprecipebook
     SUBDIR += phproxy
     SUBDIR += phpsysinfo
-    SUBDIR += phpsysinfo-dev
     SUBDIR += phpvirtualbox
     SUBDIR += phpwebapp
     SUBDIR += pivotx
