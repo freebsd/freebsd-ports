@@ -1,4 +1,4 @@
-%%FONTSDIR%%/fonts.alias
+@mode 444
 %%FONTSDIR%%/mona6x12a.pcf.gz
 %%FONTSDIR%%/mona6x12aB.pcf.gz
 %%FONTSDIR%%/mona6x12aBI.pcf.gz
@@ -47,7 +47,7 @@
 %%FONTSDIR%%/monau16B.pcf.gz
 %%FONTSDIR%%/monau16BI.pcf.gz
 %%FONTSDIR%%/monau16I.pcf.gz
-@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@mode
+@exec cd %D/%%FONTSDIR%% ; mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
-@unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
