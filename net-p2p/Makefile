@@ -97,6 +97,7 @@
     SUBDIR += transmission-qt4
     SUBDIR += transmission-remote-gui
     SUBDIR += tribler
+    SUBDIR += twister
     SUBDIR += uhub
     SUBDIR += unworkable
     SUBDIR += valknut
