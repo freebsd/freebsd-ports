@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 #-
 # Copyright (c) 2000 Mark Ovens
 # All rights reserved.
