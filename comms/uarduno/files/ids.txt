@@ -33,6 +33,7 @@
     { 0x2341, 0x0042 },  // Arduino MEGA (rev 3), vendor 2341H, product 0042H
     { 0x2341, 0x0043 },  // Arduino UNO (rev 3), vendor 2341H, product 0043H
     { 0x2341, 0x0010 },  // Arduino MEGA 2560 R3, vendor 2341H, product 0010H 
+    { 0x2341, 0x8037 },  // Arduino Micro
  
 // place your entries below this line
 
