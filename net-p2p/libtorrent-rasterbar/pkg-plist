@@ -133,11 +133,11 @@ include/libtorrent/version.hpp
 include/libtorrent/web_connection_base.hpp
 include/libtorrent/web_peer_connection.hpp
 include/libtorrent/xml_parse.hpp
-lib/libtorrent-rasterbar.la
 lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.%%SHLIB_VER%%
+lib/libtorrent-rasterbar.so.%%SHLIB_VER%%.0.0
 libdata/pkgconfig/libtorrent-rasterbar.pc
-@dirrm include/libtorrent/kademlia
-@dirrm include/libtorrent/extensions
 @dirrm include/libtorrent/aux_
+@dirrm include/libtorrent/extensions
+@dirrm include/libtorrent/kademlia
 @dirrm include/libtorrent
