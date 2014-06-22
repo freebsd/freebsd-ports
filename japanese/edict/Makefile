@@ -39,10 +39,7 @@ DOCFILES=	edict_doc.html edicth.doc \
 		findic.doc mktdic.doc 4jword3_inf.txt \
 		concrete.doc
 
-#
-# These change too often and are not made into executables.
-#
-IGNOREFILES=	${DICTFILES} ${DOCFILES}
+BROKEN=		No distinfo
 
 BINFILES=	exjdxgen xjdic_cl xjdic_sa xjdserver xjdxgen
 
