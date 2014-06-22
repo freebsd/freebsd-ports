@@ -29,7 +29,7 @@ IS_INTERACTIVE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#=help/#=${PSYBASE}/help/#' ${WRKSRC}/lang/*
-.if ( ${OSVERSION} >= 1000024 )
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
 	@${REINPLACE_CMD} -e 's,gcc,clang -Wno-return-type,g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,gcc,clang -Wno-return-type,g' ${WRKSRC}/tools/autoconf.c
 .endif
