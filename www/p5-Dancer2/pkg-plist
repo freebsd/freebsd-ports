@@ -74,6 +74,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Plugins.pod
 %%SITE_PERL%%/Dancer2/Serializer/Dumper.pm
 %%SITE_PERL%%/Dancer2/Serializer/JSON.pm
+%%SITE_PERL%%/Dancer2/Serializer/Mutable.pm
 %%SITE_PERL%%/Dancer2/Serializer/YAML.pm
 %%SITE_PERL%%/Dancer2/Session/Simple.pm
 %%SITE_PERL%%/Dancer2/Session/YAML.pm
@@ -136,6 +137,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Plugins.3.gz
 %%PERL5_MAN3%%/Dancer2::Serializer::Dumper.3.gz
 %%PERL5_MAN3%%/Dancer2::Serializer::JSON.3.gz
+%%PERL5_MAN3%%/Dancer2::Serializer::Mutable.3.gz
 %%PERL5_MAN3%%/Dancer2::Serializer::YAML.3.gz
 %%PERL5_MAN3%%/Dancer2::Session::Simple.3.gz
 %%PERL5_MAN3%%/Dancer2::Session::YAML.3.gz
