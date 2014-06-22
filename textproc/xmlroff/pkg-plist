@@ -40,9 +40,9 @@ include/libfo-0.6/libfo/libfo-features.h
 include/libfo-0.6/libfo/libfo-version.h
 include/libfo-0.6/libfo/libfo-compat.h
 lib/libfo-0.6.a
-lib/libfo-0.6.la
 lib/libfo-0.6.so
-lib/libfo-0.6.so.602
+lib/libfo-0.6.so.0
+lib/libfo-0.6.so.0.602.0
 libdata/pkgconfig/libfo-0.6.pc
 %%DOCSDIR%%/FoArea.html
 %%DOCSDIR%%/FoAreaArea.html
