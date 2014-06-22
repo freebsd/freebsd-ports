@@ -26,7 +26,7 @@ USES=		gmake
 
 CONFIGURE_ARGS	=	--enable-dynamic-build --enable-static-build
 
-IGNOREFILES=	libflame.pdf
+BROKEN=		no distinfo provided for some of the distfiles
 
 OPTIONS_DEFINE=	BLAS3_CNTL BUILTIN_BLAS CBLAS EXTERNAL_LAPACK GOTOBLAS \
 		LAPACK2FLAME LAPACK_SUBPROBLEMS OPENMP SHARED STATIC \
