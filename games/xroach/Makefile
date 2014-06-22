@@ -11,10 +11,11 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cockroaches hide under your windows
 
+BROKEN=		no distinfo
+
 USE_XORG=	x11
 PLIST_FILES=	bin/xroach man/man6/xroach.6.gz
 
-IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/pub/bsd-sources/4.4BSD-Lite/usr/src/games/xroach
 
 do-install:
