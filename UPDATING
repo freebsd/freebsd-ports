@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140622:
+  AFFECTS: users of security/gpgme
+  AUTHOR: jhale@FreeBSD.org
+
+  If you have both security/gnupg AND security/gnupg1 installed, gpgme will
+  now automatically detect and use security/gnupg.  Specifically, it will
+  search for gpgconf(1) first and use the paths for the binaries provided
+  by it.  Failing that, it will search for a binary named "gpg".
+
+  It is no longer possible to specify the location of the gpg binary at
+  buildtime to differentiate between version 1.x and version 2.x.  The port
+  options GNUPG1 and GNUPG2 now merely add their respective versions of gnupg
+  as build and runtime dependencies.
+
 20140618:
   AFFECTS: users of devel/m17n-* textproc/*m17n*
   AUTHOR: Nikola Lecic <nikola.lecic@anthesphoria.net>
