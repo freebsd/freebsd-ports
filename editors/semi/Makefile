@@ -36,14 +36,13 @@ DESCR=		${PKGDIR}/pkg-descr
 ALL_TARGET?=	elc
 # environments
 PLIST_SUB+=	SEMIDOCDIR=${SEMIDOCDIR} SEMI_COOKIE=${SEMI_COOKIE}
-MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
-		LISPDIR="${SEMI_LISPDIR}" \
-		VERSION_SPECIFIC_LISPDIR="${SEMI_VERSION_SPECIFIC_LISPDIR}"
+MAKE_ARGS+=	PREFIX="${STAGEDIR}${LOCALBASE}" \
+		LISPDIR="${STAGEDIR}${SEMI_LISPDIR}" \
+		VERSION_SPECIFIC_LISPDIR="${STAGEDIR}${SEMI_VERSION_SPECIFIC_LISPDIR}"
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
@@ -96,8 +95,8 @@ pre-install:
 .endif
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/share/semi
-	@${TOUCH} ${LOCALBASE}/share/semi/${SEMI_COOKIE}
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/semi
+	@${TOUCH} ${STAGEDIR}${LOCALBASE}/share/semi/${SEMI_COOKIE}
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
 	@${MAKE} -C ${.CURDIR} info-package-install
 	@${MAKE} -C ${.CURDIR} manifest-install
@@ -147,34 +146,34 @@ pkg-el-copy:
 
 pkg-el-install:
 	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
-	${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
 	${INSTALL_DATA} ${FILESDIR}/_pkg.el \
-		${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
+		${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
 	fi)
 
 mkdir-site-packages:
 	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \
-		${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/$${i} ; \
+		${MKDIR} ${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/$${i} ; \
 	done)
 
 doc-install:
-	@${MKDIR} ${LOCALBASE}/${SEMIDOCDIR}
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${SEMIDOCDIR}
 	@(cd ${WRKSRC} ; \
 	for i in ChangeLog NEWS README.* TODO VERSION ; do \
-		${INSTALL_DATA} $${i} ${LOCALBASE}/${SEMIDOCDIR}/ ; \
+		${INSTALL_DATA} $${i} ${STAGEDIR}${LOCALBASE}/${SEMIDOCDIR}/ ; \
 	done)
 
 info-install:
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-en.info; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${LOCALBASE}/info ; \
-		install-info ${LOCALBASE}/info/$${i} ${LOCALBASE}/info/dir ; \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${LOCALBASE}/info ; \
+		install-info ${STAGEDIR}${LOCALBASE}/info/$${i} ${STAGEDIR}${LOCALBASE}/info/dir ; \
 	done)
 .if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-ja.info; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${LOCALBASE}/info ; \
-		install-info ${LOCALBASE}/info/$${i} ${LOCALBASE}/info/dir ; \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${LOCALBASE}/info ; \
+		install-info ${STAGEDIR}${LOCALBASE}/info/$${i} ${STAGEDIR}${LOCALBASE}/info/dir ; \
 	done)
 .endif
 
@@ -182,12 +181,12 @@ info-package-install:
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-en.info mime-ui-ja.info; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
-			${LOCALBASE}/${EMACS_PACKAGESDIR}/info ; \
+			${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/info ; \
 	done ; \
-	${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/man/semi ; \
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/man/semi ; \
 	for i in mime-ui-en.texi mime-ui-ja.texi; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
-			${LOCALBASE}/${EMACS_PACKAGESDIR}/man/semi ; \
+			${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/man/semi ; \
 	done)
 
 manifest-install:
@@ -195,6 +194,6 @@ manifest-install:
 	@${CAT} ${PLIST} | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
 		${SED} -e "s;^%%EMACS_PACKAGESDIR%%/;;" > ${WRKDIR}/${MANIFEST}
 	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
-		${LOCALBASE}/${EMACS_PACKAGESDIR}/pkginfo/
+		${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/pkginfo/
 
 .include <bsd.port.post.mk>
