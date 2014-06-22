@@ -38,11 +38,13 @@ CONFIGURE_ARGS+=	--with-audio=oss
 .endif
 
 post-extract:
-	${CP} ${FILESDIR}/swfdec_playback_oss.c \
-	    	${WRKSRC}/swfdec-gtk
+	@${CP} ${FILESDIR}/swfdec_playback_oss.c \
+		${WRKSRC}/swfdec-gtk
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^swfdec_test_LDADD =/s/$$/ -lgmodule-2.0/' \
+		${WRKSRC}/test/Makefile.in
 
 .include <bsd.port.mk>

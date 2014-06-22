@@ -20,6 +20,7 @@ USE_PYTHON_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XMLTO=":"
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 PORTSCOUT=	limit:^0\.
 
@@ -29,19 +30,8 @@ OPTIONS_SUB=	yes
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_ENABLE=	sdl
 
-.include <bsd.port.pre.mk>
-
-test check:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+regression-test:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} check)
 
-.if !defined(WITHOUT_TESTS)
-post-build::	test
-.endif
-
-post-install:
-.for lib in zzip zzipmmapped zzipfseeko zzipwrap
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${lib}.so
-.endfor
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

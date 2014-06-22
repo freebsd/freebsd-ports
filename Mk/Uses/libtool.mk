@@ -35,6 +35,12 @@ patch-libtool:
 
 	@${FIND} ${WRKDIR} -type f -name ltmain.sh |			\
 		${XARGS} ${REINPLACE_CMD}				\
+		-e '/link) libs=/s/ $$dependency_libs//'		\
+		-e '/elif.*linkmode.*prog.*linkmode.*lib/,/continue/ {	\
+		    /elif/,/fi/ { /elif/ { h; d; }; H; d; };		\
+		    /continue/ { H; g; }; }'				\
+		-e '/if.*linkmode.*prog.*mode.*!= relink/s/if.*;/if :;/'\
+		-e '/if.*linkmode.*prog.*mode.* = relink/s/||.*;/;/'	\
 		-e 's/|-p|-pg|/|-B*|-p|-pg|/'
 
 .if ! ${libtool_ARGS:Moldver}
