@@ -1,0 +1,128 @@
+bin/icinga2-build-ca
+bin/icinga2-build-key
+bin/icinga2-sign-key
+%%ETCDIR%%/conf.d/commands.conf
+%%ETCDIR%%/conf.d/downtimes.conf
+%%ETCDIR%%/conf.d/groups.conf
+%%ETCDIR%%/conf.d/hosts/localhost.conf
+%%ETCDIR%%/conf.d/hosts/localhost/disk.conf
+%%ETCDIR%%/conf.d/hosts/localhost/http.conf
+%%ETCDIR%%/conf.d/hosts/localhost/icinga.conf
+%%ETCDIR%%/conf.d/hosts/localhost/load.conf
+%%ETCDIR%%/conf.d/hosts/localhost/procs.conf
+%%ETCDIR%%/conf.d/hosts/localhost/ssh.conf
+%%ETCDIR%%/conf.d/hosts/localhost/swap.conf
+%%ETCDIR%%/conf.d/hosts/localhost/users.conf
+%%ETCDIR%%/conf.d/notifications.conf
+%%ETCDIR%%/conf.d/services.conf
+%%ETCDIR%%/conf.d/templates.conf
+%%ETCDIR%%/conf.d/timeperiods.conf
+%%ETCDIR%%/conf.d/users.conf
+%%ETCDIR%%/constants.conf
+%%ETCDIR%%/features-available/api.conf
+%%ETCDIR%%/features-available/checker.conf
+%%ETCDIR%%/features-available/command.conf
+%%ETCDIR%%/features-available/compatlog.conf
+%%ETCDIR%%/features-available/debuglog.conf
+%%ETCDIR%%/features-available/graphite.conf
+%%ETCDIR%%/features-available/icingastatus.conf
+%%ETCDIR%%/features-available/ido-mysql.conf
+%%ETCDIR%%/features-available/ido-pgsql.conf
+%%ETCDIR%%/features-available/livestatus.conf
+%%ETCDIR%%/features-available/mainlog.conf
+%%ETCDIR%%/features-available/notification.conf
+%%ETCDIR%%/features-available/perfdata.conf
+%%ETCDIR%%/features-available/statusdata.conf
+%%ETCDIR%%/features-available/syslog.conf
+%%ETCDIR%%/features-enabled/checker.conf
+%%ETCDIR%%/features-enabled/mainlog.conf
+%%ETCDIR%%/features-enabled/notification.conf
+%%ETCDIR%%/icinga2.conf
+%%ETCDIR%%/scripts/mail-host-notification.sh
+%%ETCDIR%%/scripts/mail-service-notification.sh
+%%ETCDIR%%/zones.conf
+%%ETCDIR%%/zones.d/README
+lib/icinga2/libbase.so
+lib/icinga2/libcJSON.so
+lib/icinga2/libchecker.so
+lib/icinga2/libcompat.so
+lib/icinga2/libconfig.so
+lib/icinga2/libdb_ido.so
+%%MYSQL%%lib/icinga2/libdb_ido_mysql.so
+%%PGSQL%%lib/icinga2/libdb_ido_pgsql.so
+lib/icinga2/libdemo.so
+lib/icinga2/libexecvpe.so
+lib/icinga2/libhello.so
+lib/icinga2/libicinga.so
+lib/icinga2/liblivestatus.so
+lib/icinga2/libmethods.so
+lib/icinga2/libmmatch.so
+lib/icinga2/libnotification.so
+lib/icinga2/libperfdata.so
+lib/icinga2/libremote.so
+man/man8/icinga2-build-ca.8.gz
+man/man8/icinga2-build-key.8.gz
+man/man8/icinga2-disable-feature.8.gz
+man/man8/icinga2-enable-feature.8.gz
+man/man8/icinga2-prepare-dirs.8.gz
+man/man8/icinga2-sign-key.8.gz
+man/man8/icinga2.8.gz
+sbin/icinga2
+sbin/icinga2-disable-feature
+sbin/icinga2-enable-feature
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.Exceptions
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/markdown/1-about.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/2-getting-started.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/3-monitoring-basics.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/4-monitoring-remote-systems.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/5-addons-plugins.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/6-configuring-icinga-2.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/7-troubleshooting.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/8-migration.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/9-appendix.md
+%%DATADIR%%/include/command-icinga.conf
+%%DATADIR%%/include/command-plugins.conf
+%%DATADIR%%/include/command.conf
+%%DATADIR%%/include/itl
+%%DATADIR%%/include/plugins
+%%DATADIR%%/include/timeperiod.conf
+%%DATADIR%%/pki/openssl-quiet.cnf
+%%DATADIR%%/pki/openssl.cnf
+%%DATADIR%%/pki/pkifuncs
+%%DATADIR%%/pki/vars
+@dirrmtry %%ETCDIR%%/conf.d/hosts/localhost
+@dirrmtry %%ETCDIR%%/conf.d/hosts
+@dirrmtry %%ETCDIR%%/conf.d
+@dirrmtry %%ETCDIR%%/features-available
+@dirrmtry %%ETCDIR%%/features-enabled
+@dirrmtry %%ETCDIR%%/pki
+@dirrmtry %%ETCDIR%%/scripts
+@dirrmtry %%ETCDIR%%/zones.d
+@dirrmtry %%ETCDIR%%
+@dirrmtry lib/icinga2
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/markdown
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/include
+@dirrmtry %%DATADIR%%/pki
+@dirrmtry %%DATADIR%%
+@unexec rmdir "/var/cache/icinga2" >/dev/null 2>&1 || :
+@unexec rmdir "/var/lib/icinga2/api/log" >/dev/null 2>&1 || :
+@unexec rmdir "/var/lib/icinga2/api/repository" >/dev/null 2>&1 || :
+@unexec rmdir "/var/lib/icinga2/api/zones" >/dev/null 2>&1 || :
+@unexec rmdir "/var/lib/icinga2/api" >/dev/null 2>&1 || :
+@unexec rmdir "/var/lib/icinga2" >/dev/null 2>&1 || :
+@unexec rmdir "/var/lib" >/dev/null 2>&1 || :
+@unexec rmdir "/var/log/icinga2/compat/archives" >/dev/null 2>&1 || :
+@unexec rmdir "/var/log/icinga2/compat" >/dev/null 2>&1 || :
+@unexec rmdir "/var/log/icinga2" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/icinga2/cmd" >/dev/null 2>&1 || :
+@unexec rmdir "/var/run/icinga2" >/dev/null 2>&1 || :
+@unexec rmdir "/var/spool/icinga2/perfdata" >/dev/null 2>&1 || :
+@unexec rmdir "/var/spool/icinga2/tmp" >/dev/null 2>&1 || :
+@unexec rmdir "/var/spool/icinga2" >/dev/null 2>&1 || :

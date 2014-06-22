@@ -1,0 +1,19 @@
+--- components/CMakeLists.txt.orig	2014-06-16 23:20:12.000000000 +0000
++++ components/CMakeLists.txt	2014-06-16 23:20:18.000000000 +0000
+@@ -1,7 +1,14 @@
+ add_subdirectory(checker)
+ add_subdirectory(compat)
+-add_subdirectory(db_ido_mysql)
+-add_subdirectory(db_ido_pgsql)
++
++if(WITH_MYSQL)
++	add_subdirectory(db_ido_mysql)
++endif()
++
++if(WITH_PGSQL)
++	add_subdirectory(db_ido_pgsql)
++endif()
++
+ add_subdirectory(demo)
+ add_subdirectory(livestatus)
+ add_subdirectory(notification)
