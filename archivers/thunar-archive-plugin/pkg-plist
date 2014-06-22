@@ -1,5 +1,4 @@
 lib/thunarx-2/thunar-archive-plugin.so
-lib/thunarx-2/thunar-archive-plugin.la
 libexec/thunar-archive-plugin/ark.tap
 libexec/thunar-archive-plugin/file-roller.tap
 libexec/thunar-archive-plugin/gnome-file-roller.tap
