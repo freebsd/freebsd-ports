@@ -910,6 +910,7 @@
     SUBDIR += sysvbanner
     SUBDIR += tai64nfrac
     SUBDIR += tarsnap
+    SUBDIR += tartarus
     SUBDIR += tbku
     SUBDIR += tclsyslog
     SUBDIR += tcplist
