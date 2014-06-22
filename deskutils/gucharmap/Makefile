@@ -4,7 +4,7 @@
 
 PORTNAME=	gucharmap
 PORTVERSION=	2.32.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,8 +14,8 @@ COMMENT=	Unicode/ISO10646 character map and font viewer
 
 LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian
 
-USES=		gettext pkgconfig gmake tar:bzip2
-USE_GNOME=	gnomeprefix intlhack gnomehack gtk20 gnomedocutils gconf2
+USES=		gettext pkgconfig gmake libtool pathfix tar:bzip2
+USE_GNOME=	gnomeprefix intlhack gtk20 gnomedocutils gconf2
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
