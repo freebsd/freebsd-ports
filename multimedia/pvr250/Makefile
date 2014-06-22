@@ -7,7 +7,8 @@ PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
-IGNOREFILES=	hcwPVRP2.sys	# Varies from month to month
+
+BROKEN=		no distinfo provided for some of the distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hauppauge PVR-250/350 TV cards driver for the cxm device
