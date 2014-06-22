@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvex
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
@@ -18,20 +18,14 @@ RUN_DEPENDS=	vexctl:${PORTSDIR}/devel/roboctl \
 		sdcc:${PORTSDIR}/lang/sdcc \
 		gpasm:${PORTSDIR}/devel/gputils
 
-REINPLACE_ARGS=	-i ""
+USES+=		tar:xz
 
-MAN1=		openvex.1 openvex-new-project.1
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
 
-NO_STAGE=	yes
 post-patch:
-# Use make's -C option to descent into directories and fix parallel builds
-	@${REINPLACE_CMD} -e 's/^all:/& depend/ ; s/ make depend &&//' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E 's/cd (.+)(;| &&) make/$$(MAKE) -C \1/' \
-		${WRKSRC}/Advanced/Makefile ${WRKSRC}/Beginner/Makefile \
-		${WRKSRC}/HiBob/Makefile ${WRKSRC}/Makefile
-
-post-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} clean)
+	@${REINPLACE_CMD} \
+		-e 's|--denable-peeps|--denable-peeps --use-non-free|g' \
+		${WRKSRC}/Include/Makefile.sdcc_defs
 
 .include <bsd.port.mk>
