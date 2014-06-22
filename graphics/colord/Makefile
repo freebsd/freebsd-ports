@@ -37,8 +37,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
 		USB_LIBS="-L/usr/lib -lusb"
 
-GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
-
 OPTIONS_DEFINE=	MANPAGES
 
 .include <bsd.port.options.mk>
