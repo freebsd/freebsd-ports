@@ -13,5 +13,4 @@ MASTERDIR=	${.CURDIR}/../../editors/apel
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs22
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
