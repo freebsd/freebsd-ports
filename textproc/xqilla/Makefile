@@ -3,7 +3,7 @@
 
 PORTNAME=	xqilla
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
@@ -18,7 +18,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3
 
-USES=		gmake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

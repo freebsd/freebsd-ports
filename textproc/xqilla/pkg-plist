@@ -393,9 +393,9 @@ include/xqilla/xqts/TestSuiteParser.hpp
 include/xqilla/xqts/TestSuiteResultListener.hpp
 include/xqilla/xqts/TestSuiteRunner.hpp
 lib/libxqilla.a
-lib/libxqilla.la
 lib/libxqilla.so
 lib/libxqilla.so.6
+lib/libxqilla.so.6.0.0
 @dirrm include/xqilla/xqts
 @dirrm include/xqilla/xerces
 @dirrm include/xqilla/utils
