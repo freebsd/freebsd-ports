@@ -15,15 +15,14 @@ USE_PYDISTUTILS=	yes
 PORTDOCS=	*
 .endif
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	$(INSTALL_MAN) ${WRKSRC}/INSTALL.txt ${DOCSDIR}/
-	$(INSTALL_MAN) ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs ${DOCSDIR}/)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	$(INSTALL_MAN) ${WRKSRC}/INSTALL.txt ${STAGEDIR}/${DOCSDIR}/
+	$(INSTALL_MAN) ${WRKSRC}/LICENSE.txt ${STAGEDIR}/${DOCSDIR}/
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
 .endif
 	@if [ ! -f ${PREFIX}/etc/stdiff.conf ]; then \
-		${CP} -p ${PREFIX}/etc/stdiff.conf.sample \
+		${CP} -p ${STAGEDIR}${PREFIX}/etc/stdiff.conf.sample \
 		${PREFIX}/etc/stdiff.conf; fi
 .include <bsd.port.mk>
