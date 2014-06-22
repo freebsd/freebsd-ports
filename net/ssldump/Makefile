@@ -19,14 +19,16 @@ CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 OPTIONS_DEFINE=	AES
 AES_DESC=	Enable AES support from CVS (EXPERIMENTAL)
 
-MAN1=		ssldump.1
-PLIST_FILES=	bin/ssldump
+PLIST_FILES=	bin/ssldump man/man1/ssldump.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAES}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aes
 .endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ssldump ${STAGEDIR}${PREFIX}/bin/ssldump
+	${INSTALL_MAN} ${WRKSRC}/ssldump.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
