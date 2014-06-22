@@ -2,11 +2,10 @@
 FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
 if [ "$2" = "PRE-INSTALL" ]; then
   if [ ! -d ${FONTDIR} ]; then
-    echo "*********************************************************"
+    echo "**************************************************************"
     echo "Please add ${FONTDIR} to your font path"
-    echo "and load 'xtt' module in /etc/XF86Config."
-    echo "*********************************************************"
-    mkdir $FONTDIR
+    echo "in /etc/X11/xorg.conf."
+    echo "**************************************************************"
   fi
   exit 0
 fi
