@@ -3,7 +3,7 @@
 
 PORTNAME=	msyslog
 PORTVERSION=	1.08g
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.X/${PORTVERSION} \
 		http://www1.corest.com/download/msyslog/
@@ -15,7 +15,7 @@ COMMENT=	Flexible and easy to integrate syslog daemon
 LICENSE=	BSD4CLAUSE MIT
 LICENSE_COMB=	dual
 
-OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_DEFINE=	MYSQL PGSQL EXAMPLES
 OPTIONS_SUB=	yes
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_OFF=	--without-mysql
@@ -29,7 +29,6 @@ USES=		gmake
 USE_RC_SUBR=	msyslogd
 SUB_FILES=	pkg-message
 USE_LDCONFIG=	yes
-MANCOMPRESSED=	yes
 
 PORTSCOUT=	skipv:1.09d
 
