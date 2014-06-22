@@ -48,9 +48,8 @@ FLIMDOCDIR=	${EMACS_PACKAGESDIR}/lisp/flim
 
 xemacs-package: install
 	@${RM} -f ${.CURDIR}/${XEMACS_PKG_TARBALL}
-	@(cd ${LOCALBASE}/${EMACS_PACKAGESDIR} ;\
+	@(cd ${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR} ;\
 	  ${TAR} -zcf ${.CURDIR}/${XEMACS_PKG_TARBALL} ${XEMACS_PKG_CONTENTS} ;\
 	)
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
