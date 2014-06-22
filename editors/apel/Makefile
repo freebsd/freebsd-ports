@@ -27,14 +27,13 @@ DESCR=		${PKGDIR}/pkg-descr
 # target name for make build
 ALL_TARGET?=	elc
 # environments
-MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
-		LISPDIR="${APEL_LISPDIR}" \
-		VERSION_SPECIFIC_LISPDIR="${APEL_VERSION_SPECIFIC_LISPDIR}"
+MAKE_ARGS+=	PREFIX="${STAGEDIR}${LOCALBASE}" \
+		LISPDIR="${STAGEDIR}${APEL_LISPDIR}" \
+		VERSION_SPECIFIC_LISPDIR="${STAGEDIR}${APEL_VERSION_SPECIFIC_LISPDIR}"
 
 OPTIONS_DEFINE=	DOCS
 OPTINOS_DEFAULT=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
@@ -46,10 +45,10 @@ PLIST_SUB+=	EMACS23="@comment " NOEMACS23=""
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC} ; \
 	for i in ChangeLog README.* ; do \
-	    ${INSTALL_DATA} $${i} ${DOCSDIR} ; \
+	    ${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR} ; \
 	done)
 .endif
 
