@@ -27,4 +27,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gtkglext=yes
 INSTALL_TARGET=	install-strip
 
+post-patch:
+	@${REINPLACE_CMD} '/LDADD/s/GTK_CFLAGS/GTK_LIBS/' \
+		${WRKSRC}/examples/Makefile.in
+
 .include <bsd.port.mk>

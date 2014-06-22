@@ -13,6 +13,7 @@ COMMENT=	GNU database manager
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		gmake libtool:keepla
 
@@ -32,8 +33,7 @@ post-patch:
 		-e "s|BINOWN = bin|BINOWN = root|" -e "s|BINGRP = bin|BINGRP = wheel|" \
 		-e "s|libgdbm.la libgdbm_compat.la|libgdbm.la libgdbm_compat.la gdbm.info|" \
 			${WRKSRC}/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdbm*.so
+	@${REINPLACE_CMD} '/_LDADD =/s/$$/ @LTLIBINTL@/' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
