@@ -4,7 +4,7 @@
 PORTNAME=	pdftohtml
 PORTVERSION=	0.40a
 CATEGORIES=	textproc
-MASTER_SITES=	http://sourceforge.net/projects/${PORTNAME}/files/Experimental%20Versions/${PORTNAME}%200.40/ \
+MASTER_SITES=	SF/${PORTNAME}/Experimental%20Versions/${PORTNAME}%20${PORTVERSION:S|a||} \
 		http://fossies.org/linux/www/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,8 +14,6 @@ USES=		gmake
 USE_GHOSTSCRIPT_RUN=	yes
 
 PLIST_FILES=	bin/pdf-to-html
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
