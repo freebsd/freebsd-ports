@@ -27,8 +27,6 @@ CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--enable-lock-dir=/var/spool/lock \
 			--enable-dfl-port=/dev/cuau0
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e "s@/usr/local/bin/@${LOCALBASE}/bin/@; \
 		s@/sz@/lsz@;s@/sb@/lsb@;s@/sx@/lsx@;s@/rz@/lrz@; \
@@ -37,11 +35,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${CHOWN} uucp:dialer ${STAGEDIR}${PREFIX}/bin/minicom
-	${CHMOD} 4511 ${STAGEDIR}${PREFIX}/bin/minicom
-	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${PREFIX}/etc/minicom
-	${CHOWN} uucp ${STAGEDIR}${PREFIX}/etc/minicom
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL} -d -m 0755 ${STAGEDIR}${PREFIX}/etc/minicom
 	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}/
@@ -49,6 +43,5 @@ post-install:
 	(umask 022 && cd ${WRKSRC} && ${TAR} --exclude '*/Makefile*' \
 		 --exclude '*.orig' -chf - extras doc | ${TAR}  -xf - -C \
 		${STAGEDIR}${DOCSDIR})
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
