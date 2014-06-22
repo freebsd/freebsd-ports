@@ -27,8 +27,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libzmq.so:${PORTSDIR}/devel/ntopng-zmq
 
-IGNOREFILES=	GeoLiteCity.dat.gz GeoLiteCityv6.dat.gz \
-		GeoIPASNum.dat.gz GeoIPASNumv6.dat.gz
+BROKEN=		no distinfo provided for some of the distfiles
 
 CPPFLAGS+=	-I${LOCALBASE}/include/luajit-2.0
 GNU_CONFIGURE=	yes
