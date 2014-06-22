@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- sys/unix/Makefile.top.orig	Tue Dec 10 13:20:10 1996
 +++ sys/unix/Makefile.top	Sun Apr 11 23:25:22 2004
 @@ -14,16 +14,16 @@

@@ -1,6 +1,5 @@
-diff -ruN ./include/unixconf.h ../nethack-3.2.2/include/unixconf.h
 --- ./include/unixconf.h	Wed Dec 11 05:20:08 1996
-+++ ../nethack-3.2.2/include/unixconf.h	Sun Mar 21 17:25:02 1999
++++ ./include/unixconf.h	Sun Mar 21 17:25:02 1999
 @@ -31,7 +31,7 @@
  
  /* define any of the following that are appropriate */
