@@ -19,8 +19,7 @@ RESTRICTED=	free for academic, US$ 5000 for commercial users
 USES=		fortran
 USE_XORG=	x11
 
-# This port only has snapshot archive
-IGNOREFILES=	platon.tar.gz
+BROKEN=		No distinfo provided
 
 SAMPLES=	azt.dat bucky.spf c476.spf c540.cart3d check.def cubane.spf \
 		cyto.spf ml.pdb s810c.cif s913a.res sucrose.spf
