@@ -1,5 +1,11 @@
+@mode 2755
+@group games
 bin/trojka
-%%DATADIR%%/COPYRIGHT
+@group
+@mode
+man/man6/trojka.6.gz
 %%DATADIR%%/README
+@group games
 %%DATADIR%%/trojka.scores
+@group
 @dirrm %%DATADIR%%

@@ -10,11 +10,11 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	e@ik.nu
 COMMENT=	Game of skill
 
-MAN6=		trojka.6
-SUB_FILES=	pkg-message
+LICENSE=	TROJKA
+LICENSE_NAME=	Trojka Copyright
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
+SUB_FILES=	pkg-message
 
 .include <bsd.port.mk>

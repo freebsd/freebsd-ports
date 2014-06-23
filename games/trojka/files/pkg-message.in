@@ -3,5 +3,5 @@ You now have suid binary (2755):
 
    %%PREFIX%%/bin/trojka
 
-Scores will not be writed if you don't set suid.
+Scores will not be saved if you don't set suid.
 ============================================================
