@@ -32,17 +32,15 @@ USE_PERL5=	configure
 # and override do-install to only copy the useful parts, i.e., not the
 # empty library.
 
-MAN1=	dropbox-api.1
-PLIST_FILES=	bin/dropbox-api bin/upload-to-dropbox
+PLIST_FILES=	bin/dropbox-api bin/upload-to-dropbox man/man1/dropbox-api.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/upload-to-dropbox
 	${TAIL} +3 ${WRKSRC}/lib/App/dropboxapi.pm >> ${WRKSRC}/dropbox-api
 
 do-install:
-	${INSTALL_MAN}    ${WRKSRC}/blib/man1/dropbox-api.1 ${PREFIX}/man/man1/
-	${INSTALL_SCRIPT} ${WRKSRC}/blib/script/dropbox-api ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/upload-to-dropbox       ${PREFIX}/bin/
+	${INSTALL_MAN}    ${WRKSRC}/blib/man1/dropbox-api.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/blib/script/dropbox-api ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/upload-to-dropbox       ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
