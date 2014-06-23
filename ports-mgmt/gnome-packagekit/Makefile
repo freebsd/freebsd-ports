@@ -11,8 +11,6 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	PackageKit client programs for the GNOME desktop
 
-BROKEN=		fails to package
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		packagekit-glib2:${PORTSDIR}/ports-mgmt/packagekit \
