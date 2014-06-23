@@ -6,7 +6,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/logtool/download/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 
 USES=		gmake
@@ -16,25 +16,22 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/${PORTNAME}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAN1=		logtool.1
 DOCS=		CHANGES CREDITS README TODO doc/logtool.txt
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/src && ${GMAKE} INCLUDES="${CPPFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/logtool ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/logtool.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/scripts
-	${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
-	@${RM} ${EXAMPLESDIR}/logtool.conf.in
-	${INSTALL_DATA} ${WRKSRC}/scripts/* ${EXAMPLESDIR}/scripts
+	${INSTALL_PROGRAM} ${WRKSRC}/src/logtool ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/logtool.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts
+	${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
+	@${RM} ${STAGEDIR}${EXAMPLESDIR}/logtool.conf.in
+	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}/scripts
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 	@${SED} -e 's!PREFIX!${PREFIX}!' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
