@@ -4,6 +4,7 @@
 
 PORTNAME=	libnotify
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -11,13 +12,14 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for desktop notifications
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_XZ=		yes
-USE_GNOME=	intlhack glib20 gdkpixbuf2 ltverhack introspection:build
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USE_GNOME=	intlhack glib20 gdkpixbuf2 introspection:build
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
