@@ -17,7 +17,7 @@ USE_PHPIZE=	yes
 
 CONFIGURE_ARGS=	--enable-xcache=shared
 
-OPTIONS_DEFINE=	CONSTANT COVERAGER
+OPTIONS_DEFINE=	CONSTANT COVERAGER EXAMPLES
 CONSTANT_DESC=	Enable handling of compile time constants
 COVERAGER_DESC=	Enable code coverage dumper
 
