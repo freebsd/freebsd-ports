@@ -8,6 +8,7 @@ lib/libnotify.a
 lib/libnotify.la
 lib/libnotify.so
 lib/libnotify.so.4
+lib/libnotify.so.4.0.0
 libdata/pkgconfig/libnotify.pc
 share/gir-1.0/Notify-0.7.gir
 share/gtk-doc/html/libnotify/NotifyNotification.html
