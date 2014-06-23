@@ -35,6 +35,8 @@ SMUX_DESC=		Build with SNMP multiplexing (SMUX) support
 
 MAKE_JOBS_UNSAFE=	yes
 
+PORTSCOUT=	skipv:5.7.2.1
+
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd snmptrapd
 USE_OPENSSL=	yes
@@ -199,7 +201,6 @@ DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 		README.agentx README.krb5 README.snmpv3 README.thread \
 		agent/mibgroup/README.smux
 
-PS_CMD?=	/bin/ps
 CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 
 pre-everything::
