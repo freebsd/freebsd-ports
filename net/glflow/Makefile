@@ -19,12 +19,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-debug --with-hash=md4
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/glflow ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/glflow ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
