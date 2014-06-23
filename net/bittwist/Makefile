@@ -12,8 +12,9 @@ COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake
 
-MAN1=		bittwist.1 bittwistb.1 bittwiste.1
-PLIST_FILES=	bin/bittwist bin/bittwistb bin/bittwiste
+PLIST_FILES=	bin/bittwist bin/bittwistb bin/bittwiste \
+		man/man1/bittwist.1.gz \
+		man/man1/bittwistb.1.gz \
+		man/man1/bittwiste.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
