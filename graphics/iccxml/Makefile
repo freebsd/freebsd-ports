@@ -2,7 +2,7 @@
 
 PORTNAME=	iccxml
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/IccXML-Src/${DISTNAME}
 DISTNAME=	IccXML-${PORTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	Tools for reading and writing the ICC profile contents as XML files
 
 LIB_DEPENDS=	libSampleICC.so:${PORTSDIR}/graphics/sampleicc
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
