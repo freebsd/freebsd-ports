@@ -31,3 +31,14 @@
 +    static int hash_int( const double aye )
      {
          return ( (int) ( ( (aye < 0) ? (aye
+--- src/networking/lowlevel/packetmem.cpp.orig	2014-06-23 21:30:46 +0800
++++ src/networking/lowlevel/packetmem.cpp	2014-06-23 21:31:01 +0800
+@@ -102,7 +102,7 @@ void PacketMem::inner_set( void* buffer,
+     }
+     else
+     {
+-        _buffer.reset( 0 );
++        _buffer.reset();
+         _len = 0;
+     }
+ }
