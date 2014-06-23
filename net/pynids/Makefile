@@ -13,7 +13,7 @@ MAINTAINER=	corsmith@gmail.com
 COMMENT=	Python interface to libnids
 
 PATCH_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 USES=		pkgconfig
 USE_GNOME=	glib20
@@ -25,7 +25,6 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/nidsmodule.so
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LIBNET_CONFIG})
