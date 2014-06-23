@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgpkg
-PORTVERSION=	0.9.17
+PORTVERSION=	0.9.18
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/luciad/libgpkg/get/ \
 		LOCAL/sunpoet/${PORTNAME}
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USES=		cmake tar:bzip2
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-WRKSRC=		${WRKDIR}/luciad-libgpkg-2f2ff2a6601f
+WRKSRC=		${WRKDIR}/luciad-libgpkg-c56e3708453e
 
 GEOS_CMAKE_OFF=		-DGPKG_GEOS=OFF
 GEOS_CMAKE_ON=		-DGPKG_GEOS=ON
