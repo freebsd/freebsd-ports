@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shelldap
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	net perl5
 MASTER_SITES=	http://dl.dropbox.com/u/7234177/Releases/ \
 		http://www.martini.nu/misc/
