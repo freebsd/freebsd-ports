@@ -16,6 +16,7 @@ lib/gnome-commander/plugins/sha1sum.py
 lib/gnome-commander/plugins/sha1sum.pyc
 lib/gnome-commander/plugins/sha1sum.pyo
 man/man1/gnome-commander.1.gz
+share/appdata/gnome-commander.appdata.xml
 share/applications/gnome-commander.desktop
 share/gnome/help/gnome-commander/C/figures/create_archive.png
 share/gnome/help/gnome-commander/C/figures/dev_cd.png
