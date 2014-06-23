@@ -899,7 +899,6 @@
     SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
-    SUBDIR += syslog-ng-devel
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng2
     SUBDIR += syslog-ng33
