@@ -4,7 +4,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.8.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -16,7 +16,7 @@ COMMENT=	Open-source, cross-platform WYSIWYG word processor
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libwv-1.2.so:${PORTSDIR}/textproc/wv \
+		libwv.so:${PORTSDIR}/textproc/wv \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libpsiconv.so:${PORTSDIR}/converters/psiconv \
