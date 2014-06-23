@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpd-pools
-PORTVERSION=	2.24
+PORTVERSION=	2.25
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Tool to analyze isc-dhcp pool usage based on leases
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:${PORTSDIR}/devel/uthash
 
-USES=		charsetfix
-USE_XZ=		yes
+USES=		charsetfix tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dhcpd-conf=${LOCALBASE}/etc/dhcpd.conf \
 		--with-dhcpd-leases=/var/db/dhcpd/dhcpd.leases \
