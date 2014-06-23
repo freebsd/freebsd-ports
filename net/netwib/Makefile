@@ -17,20 +17,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
-MAN3=		netwib.3 netwib_dat.3 netwib_err.3 netwib_net.3 \
-		netwib_pkt.3 netwib_shw.3 netwib_sys.3
-MAN3+=		netwib${SHORTPORTVERSION}.3 netwib${SHORTPORTVERSION}_dat.3 \
-		netwib${SHORTPORTVERSION}_err.3 \
-		netwib${SHORTPORTVERSION}_net.3 \
-		netwib${SHORTPORTVERSION}_pkt.3 \
-		netwib${SHORTPORTVERSION}_shw.3 \
-		netwib${SHORTPORTVERSION}_sys.3
 
 PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|libnet-config|${LIBNET_CONFIG}|; \
