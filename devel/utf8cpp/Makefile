@@ -3,7 +3,7 @@
 
 PORTNAME=	utf8cpp
 PORTVERSION=	2.3.4
-CATEGORIES=	textproc
+CATEGORIES=	devel
 MASTER_SITES=	SF/utfcpp/${PORTNAME:tl}_2x/Release%20${PORTVERSION}/
 DISTNAME=	utf8_v${PORTVERSION:S/./_/g}
 
