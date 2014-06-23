@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.15
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -38,21 +38,21 @@ post-install:
 # require: bash, git, gmake, perl, node
 
 MS_DISTNAME=	${PORTNAME}-${MS_VERSION}
-MS_TAGS=	${MS_WRKSRC}/tags
+MS_RELEASES=	${MS_WRKSRC}/releases
 MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
 MS_VERSIONFILE=	${MS_WRKSRC}/.version
 MS_WRKSRC=	${WRKSRC}/tmp
 
 GITHUB_PROJECT=	${PORTNAME}
-GITHUB_TAGSURL=	https://github.com/npm/npm/tags
+GITHUB_RELEASES=https://github.com/npm/npm/releases/latest
 GITHUB_TARBALL=	https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/archive/${GITHUB_VERSION}.tar.gz
 GITHUB_USER=	npm
 GITHUB_VERSION=	v${MS_VERSION}
 
 maketar: do-clean
 	@${MKDIR} ${MS_WRKSRC}/
-	@${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/tags ${GITHUB_TAGSURL}
-	@${GREP} -o '/${GITHUB_USER}/${GITHUB_PROJECT}/archive/[^"]*\.tar\.gz' ${MS_WRKSRC}/tags | ${HEAD} -1 | ${CUT} -d/ -f5 | ${SED} 's|^v||; s|\.tar\.gz$$||' > ${MS_VERSIONFILE}
+	@${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_RELEASES} ${GITHUB_RELEASES}
+	@${GREP} -o '/${GITHUB_USER}/${GITHUB_PROJECT}/archive/[^"]*\.tar\.gz' ${MS_RELEASES} | ${HEAD} -1 | ${CUT} -d/ -f5 | ${SED} 's|^v||; s|\.tar\.gz$$||' > ${MS_VERSIONFILE}
 	@${ECHO_MSG} "*** Updating from ${PORTVERSION} to ${MS_VERSION} ..."
 	@${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz ${GITHUB_TARBALL}
 	@${MKDIR} ${MS_WRKSRC}/${MS_DISTNAME}/
