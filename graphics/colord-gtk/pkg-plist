@@ -8,7 +8,6 @@ lib/girepository-1.0/ColordGtk-1.0.typelib
 lib/libcolord-gtk.a
 lib/libcolord-gtk.so
 lib/libcolord-gtk.so.1
-lib/libcolord-gtk.so.1.0.2
 libdata/pkgconfig/colord-gtk.pc
 share/gir-1.0/ColordGtk-1.0.gir
 share/locale/en_GB/LC_MESSAGES/colord-gtk.mo
