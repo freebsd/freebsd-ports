@@ -5,13 +5,13 @@ PORTNAME=	vegastrike
 PORTVERSION=	0.5.1.r1
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.1/
-DISTNAME=	vegastrike-src-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Opensource 3D space simulator
+MAINTAINER=	games@FreeBSD.org
+COMMENT=	Open source 3D space simulator
 
-BROKEN=		Does not build with any modern compiler
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${DATADIR}/vegastrike.ico:${PORTSDIR}/games/vegastrike-data
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
@@ -19,18 +19,19 @@ LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg
 
+USES=		dos2unix gmake openal:al pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-USES=		dos2unix gmake openal:al tar:bzip2
 USE_PYTHON=	yes
 USE_SDL=	sdl
+USE_GL=		glut
 USE_XORG=	sm ice xi x11 xext xrender xinerama xi xrandr xcursor \
 		xcomposite xdamage xfixes
-USE_GL=		gl glu glut
 USE_GNOME=	gtk20
+DOS2UNIX_GLOB=	*.cpp *.h
+EXTRACT_AFTER_ARGS=	--exclude boost
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-DOS2UNIX_GLOB=	*.cpp *.h
-EXTRACT_AFTER_ARGS+=--exclude boost
 
 # cegui and ffmpeg are not used yet
 CONFIGURE_ARGS=	--disable-cegui --disable-ffmpeg \
@@ -39,7 +40,6 @@ CONFIGURE_ARGS=	--disable-cegui --disable-ffmpeg \
 		--enable-flags="${CXXFLAGS}"
 
 PLIST_FILES=	bin/vegastrike bin/vssetup bin/vegaserver
-
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	MESHER
@@ -50,13 +50,13 @@ MESHER_LIB_DEPENDS=	libOgreMain.so:${PORTSDIR}/graphics/ogre3d
 MESHER_CONFIGURE_ENABLE=	ogre
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
-		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E 's,/usr/(local|X11R6),${LOCALBASE},' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${PLIST_FILES:S|bin|${WRKSRC}|} \
 		${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
