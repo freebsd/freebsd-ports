@@ -15,10 +15,9 @@ bin/wvVersion
 bin/wvWare
 bin/wvWml
 include/wv/wv.h
-lib/libwv-1.2.so
 lib/libwv-1.2.so.4
+lib/libwv-1.2.so.4.0.5
 lib/libwv.a
-lib/libwv.la
 lib/libwv.so
 libdata/pkgconfig/wv-1.0.pc
 man/man1/wvAbw.1.gz
