@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgroove
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 CATEGORIES=	audio
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -16,11 +16,12 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/libav \
 		libspeexdsp.so:${PORTSDIR}/audio/speex \
 		libSDL2.so:${PORTSDIR}/devel/sdl20
 
-USES=		cmake:outsource 
+USES=		cmake:outsource
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	andrewrk
-GH_COMMIT=	c0b3813
+GH_COMMIT=	1b90d6c
 
 PLIST_SUB+=	VER1=${PORTVERSION:R:R} \
     		VER3=${PORTVERSION}
