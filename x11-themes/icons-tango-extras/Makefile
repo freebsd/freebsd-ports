@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	tango-icon-theme-extras-${PORTVERSION}
 
 MAINTAINER=	flz@FreeBSD.org
-COMMENT=	A extra set of icons from the Tango project
+COMMENT=	Extra set of icons from the Tango project
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/icon-naming-utils \
 		${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:${PORTSDIR}/x11-themes/icons-tango \
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/ico
 RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:${PORTSDIR}/x11-themes/icons-tango
 
 GNU_CONFIGURE=	yes
-USES=	gmake
+USES=		gmake pkgconfig
 USE_GNOME=	intlhack
 INSTALLS_ICONS=	yes
 
