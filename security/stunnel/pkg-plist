@@ -2,7 +2,6 @@ bin/stunnel
 bin/stunnel3
 %%ETCDIR%%/stunnel.conf-sample
 lib/stunnel/libstunnel.a
-lib/stunnel/libstunnel.la
 lib/stunnel/libstunnel.so
 man/man8/stunnel.8.gz
 man/man8/stunnel.fr.8.gz
