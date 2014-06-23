@@ -3,6 +3,7 @@
 
 PORTNAME=	libspiro
 DISTVERSION=	20071029
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
@@ -10,8 +11,7 @@ DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library to convert clothoid splines into Bezier splines
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake libtool:keepla tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

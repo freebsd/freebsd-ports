@@ -5,3 +5,4 @@ include/spiroentrypoints.h
 lib/libspiro.la
 lib/libspiro.so
 lib/libspiro.so.0
+lib/libspiro.so.0.0.1
