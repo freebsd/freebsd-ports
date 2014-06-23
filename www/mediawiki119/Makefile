@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.19.14
+PORTVERSION=	1.19.16
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	119
@@ -12,7 +12,7 @@ COMMENT=	The wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki-1.2[0-9].* mediawiki12[0-9]-*
+CONFLICTS=	mediawiki12[0-9]-*
 
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 WANT_PHP_WEB=	yes
@@ -21,7 +21,7 @@ MEDIAWIKIDIR?=	www/mediawiki
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
-OPTIONS_DEFAULT=MYSQL APC
+OPTIONS_DEFAULT=MYSQL
 
 MEMCACHED_DESC=	use memcached
 APC_DESC=	use pecl-APC(Mediawiki recommended)
