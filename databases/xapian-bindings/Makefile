@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.2.17
-PORTREVISION=	1
+PORTVERSION=	1.2.18
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -25,7 +24,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		--without-csharp --without-java --without-tcl
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
-USES=		tar:xz
+USES=		libtool tar:xz
 
 PORTDOCS=	*
 
