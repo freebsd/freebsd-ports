@@ -3,7 +3,7 @@
 
 PORTNAME=	Coin
 PORTVERSION=	3.1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/ \
 		ftp://ftp.coin3d.org/pub/coin/src/all/
@@ -16,7 +16,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	libsimage.so:${PORTSDIR}/graphics/simage
 
 USE_GCC=	any
-USES=		openal:al
+USES=		openal:al libtool
 USE_GL=		yes
 USE_XORG=	xt x11
 GNU_CONFIGURE=	yes
