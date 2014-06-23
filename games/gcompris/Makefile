@@ -3,7 +3,7 @@
 
 PORTNAME=	gcompris
 PORTVERSION=	13.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -21,8 +21,7 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		gnucap:${PORTSDIR}/cad/gnucap
 
-USE_BZIP2=	yes
-USES=		display:configure gettext gmake pathfix pkgconfig
+USES=		display:configure gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 USE_PYTHON=	2
