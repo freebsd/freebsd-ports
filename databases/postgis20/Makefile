@@ -2,7 +2,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	20
@@ -20,7 +20,7 @@ RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-serve
 CONFLICTS=	postgis-1.* postgis-2.1.*
 
 USE_GNOME=	libxml2
-USES=		gmake iconv perl5 pgsql
+USES=		gmake iconv perl5 pgsql libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
