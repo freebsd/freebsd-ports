@@ -1,8 +1,7 @@
 include/gltext.h
-lib/libgltext.so.0
-lib/libgltext.so
-lib/libgltext.la
 lib/libgltext.a
+lib/libgltext.so
+lib/libgltext.so.0
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
 %%EXAMPLES%%%%EXAMPLESDIR%%/alpha/alpha
 %%EXAMPLES%%%%EXAMPLESDIR%%/alpha/alpha.cpp
