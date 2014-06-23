@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/gnome-commander/1.4
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	File manager for Gnome2
 
 LICENSE=	GPLv2
