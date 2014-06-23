@@ -9,7 +9,6 @@ libexec/gnupg/gpgkeys_hkp
 @dirrm libexec/gnupg
 man/man1/gpg-zip.1.gz
 man/man1/gpg.1.gz
-man/man1/gpg.ru.1.gz
 man/man1/gpgv.1.gz
 man/man7/gnupg.7.gz
 %%NLS%%share/locale/be/LC_MESSAGES/gnupg.mo
