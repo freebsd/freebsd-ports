@@ -3,6 +3,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.21.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	121
@@ -14,6 +15,9 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki119-* mediawiki12[02-9]-*
 
+DEPRECATED=	Not maintained upstream
+EXPIRATION_DATE=2014-09-23
+
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
@@ -21,7 +25,7 @@ MEDIAWIKIDIR?=	www/mediawiki
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
-OPTIONS_DEFAULT=MYSQL APC
+OPTIONS_DEFAULT=MYSQL
 
 MEMCACHED_DESC=	use memcached
 APC_DESC=	use pecl-APC(Mediawiki recommended)
