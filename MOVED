@@ -6152,3 +6152,4 @@ sysutils/sysupdate||2014-06-21|Removed, no longer needed/relevent with FreeBSD i
 www/phpbb-devel|www/phpbb3|2014-06-22|Has expired: Use www/phpbb3 instead
 math/polymake||2014-06-22|Has expired: Does not build with any supported version of Perl
 www/phpsysinfo-dev|www/phpsysinfo|2014-06-22|Has expired: Use www/phpsysinfo instead
+graphics/luxrender||2014-06-23|Does not build with newer boost
