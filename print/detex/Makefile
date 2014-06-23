@@ -3,7 +3,7 @@
 
 PORTNAME=	detex
 PORTVERSION=	2.8
-PORTREVISIO=	1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.purdue.edu/homes/trinkle/detex/
 EXTRACT_SUFX=	.tar
@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
