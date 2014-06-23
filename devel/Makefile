@@ -4643,6 +4643,7 @@
     SUBDIR += upslug
     SUBDIR += urjtag
     SUBDIR += ustl
+    SUBDIR += utf8cpp
     SUBDIR += uthash
     SUBDIR += valgrind
     SUBDIR += valgrind-devel
