@@ -15,8 +15,8 @@ DIST_SUBDIR=	rabbitmq
 MAINTAINER=	rabbitmq@geoffgarside.co.uk
 COMMENT=	RabbitMQ C AMQP client library
 
-LICENSE=		GPLv2 MPL
-LICENSE_COMB=		dual
+LICENSE=	GPLv2 MPL
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
@@ -35,7 +35,6 @@ OPTIONS_DEFINE=	64BIT POPT
 64BIT_DESC=	Produce 64-bit library
 POPT_DESC=	Popt support in tools
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M64BIT}
@@ -45,14 +44,14 @@ CONFIGURE_ARGS+=	--enable-64-bit
 .endif
 
 .if ${PORT_OPTIONS:MPOPT}
-LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS+=	libpopt.so:${PORTSDIR}/devel/popt
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB+=		POPT=''
+PLIST_SUB+=	POPT=''
 CONFIGURE_ARGS+=	--with-popt
 .else
-PLIST_SUB+=		POPT='@comment '
+PLIST_SUB+=	POPT='@comment '
 CONFIGURE_ARGS+=	--without-popt
 .endif
 
@@ -63,6 +62,6 @@ pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE})
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/lib/librabbitmq.so.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librabbitmq.so.0
 
 .include <bsd.port.mk>
