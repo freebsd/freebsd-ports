@@ -23,7 +23,6 @@ USE_PYDISTUTILS=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/code/reposadolib/reposadocommon.py
@@ -32,10 +31,9 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR} &&\
-			${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR} && \
+		${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
