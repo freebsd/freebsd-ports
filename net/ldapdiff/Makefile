@@ -19,13 +19,11 @@ CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
 		--with-ldap-dir=${LOCALBASE}
 SAMPLES=	addentry.sh webtomware_without_jpeg.user.ldif \
 		webtomware.init.ldif webtomware.user.ldif
-MAN1=		ldapdiff.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	CHANGES ChangeLog README TODO
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! empty(ICONV_LIB)
@@ -33,19 +31,18 @@ CONFIGURE_ARGS+=--with-iconv-dir=${LOCALBASE}
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/ldapdiff.conf.sample ${PREFIX}/etc/
-	@${MKDIR} ${DATADIR}/samples
+	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ldapdiff.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/ldapdiff.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/samples
 .for sample in ${SAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/samples/${sample} ${DATADIR}/samples
+	${INSTALL_DATA} ${WRKSRC}/samples/${sample} ${STAGEDIR}${DATADIR}/samples
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
