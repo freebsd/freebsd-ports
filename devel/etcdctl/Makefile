@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	etcdctl
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Simple commandline client for etcd
 
 LICENSE=	APACHE20
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	7a36ec6
+GH_COMMIT=	a75e574
 
 PLIST_FILES=	bin/${PORTNAME}
 
