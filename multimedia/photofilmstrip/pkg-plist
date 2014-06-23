@@ -54,21 +54,21 @@ bin/photofilmstrip-cli
 %%PYTHON_SITELIBDIR%%/photofilmstrip/core/util.py
 %%PYTHON_SITELIBDIR%%/photofilmstrip/core/util.pyc
 %%PYTHON_SITELIBDIR%%/photofilmstrip/core/util.pyo
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/back.gif
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/contents.gif
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/copyright.html
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/createpfs.html
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/forward.gif
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/index.html
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/introduction.html
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/more.html
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.chm
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.css
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.hhc
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.hhk
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.hhp
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/renderpfs.html
-%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/up.gif
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/back.gif
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/contents.gif
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/copyright.html
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/createpfs.html
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/forward.gif
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/index.html
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/introduction.html
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/more.html
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.chm
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.css
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.hhc
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.hhk
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/photofilmstrip.hhp
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/renderpfs.html
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/photofilmstrip/doc/up.gif
 %%PYTHON_SITELIBDIR%%/photofilmstrip/gui/ActionManager.py
 %%PYTHON_SITELIBDIR%%/photofilmstrip/gui/ActionManager.pyc
 %%PYTHON_SITELIBDIR%%/photofilmstrip/gui/ActionManager.pyo
@@ -186,15 +186,15 @@ bin/photofilmstrip-cli
 %%PYTHON_SITELIBDIR%%/photofilmstrip/res/license.pyc
 %%PYTHON_SITELIBDIR%%/photofilmstrip/res/license.pyo
 share/applications/photofilmstrip.desktop
-share/locale/cs/LC_MESSAGES/PhotoFilmStrip.mo
-share/locale/de/LC_MESSAGES/PhotoFilmStrip.mo
-share/locale/en/LC_MESSAGES/PhotoFilmStrip.mo
-share/locale/fr/LC_MESSAGES/PhotoFilmStrip.mo
-share/locale/it/LC_MESSAGES/PhotoFilmStrip.mo
-share/locale/ko/LC_MESSAGES/PhotoFilmStrip.mo
-share/locale/nl/LC_MESSAGES/PhotoFilmStrip.mo
-share/locale/pt/LC_MESSAGES/PhotoFilmStrip.mo
-share/locale/tr/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/de/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/en/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/it/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/PhotoFilmStrip.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/PhotoFilmStrip.mo
 share/pixmaps/photofilmstrip.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/res
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/lib/common
@@ -202,7 +202,7 @@ share/pixmaps/photofilmstrip.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/gui/util
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/gui/ctrls
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/gui
-@dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/doc
+%%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/doc
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/core/renderer
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/core
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/cli
