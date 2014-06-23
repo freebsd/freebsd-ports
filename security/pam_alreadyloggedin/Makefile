@@ -12,6 +12,9 @@ MASTER_SITE_SUBDIR=	green
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PAM module based on whether a user is already logged in
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 MANCOMPRESSED=	yes
 
 NO_STAGE=	yes

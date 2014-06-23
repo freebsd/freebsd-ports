@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-20010216
 MAINTAINER=	sec@42.org
 COMMENT=	Simple Asynchronous File Transfer Reference Implementation
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	makeconfig
 CONFIGURE_ENV=	PREFIX="${PREFIX}"

@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Big5 Chinese console
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
 ONLY_FOR_ARCHS=	i386
 
 NO_STAGE=	yes
