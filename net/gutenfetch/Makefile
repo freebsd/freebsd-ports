@@ -9,20 +9,17 @@ MASTER_SITES=	SF
 MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	Fetch listings and books from Project Gutenberg
 
-LIB_DEPENDS=	gutenfetch:${PORTSDIR}/devel/libgutenfetch
+LIB_DEPENDS=	libgutenfetch.so:${PORTSDIR}/devel/libgutenfetch
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		gmake tar:bzip2
 
-MAN1=		gutenfetch.1
-PLIST_FILES=	bin/gutenfetch
+PLIST_FILES=	bin/gutenfetch man/man1/gutenfetch.1.gz
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/gutenfetch
-	@${CAT} ${PKGMESSAGE}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gutenfetch
 
 .include <bsd.port.mk>
