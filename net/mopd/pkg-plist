@@ -1,3 +1,8 @@
+man/man1/mopa.out.1.gz
+man/man1/mopchk.1.gz
+man/man1/mopprobe.1.gz
+man/man1/moptrace.1.gz
+man/man8/mopd.8.gz
 sbin/mopd
 sbin/mopprobe
 sbin/moptrace
