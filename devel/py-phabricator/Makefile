@@ -16,4 +16,12 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
+OPTIONS_DEFINE=	PYTEST
+PYTEST_DESC=	Install Python test dependency
+
+PYTEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+
+regression-test: extract
+	${PYTHON_CMD} ${WRKSRC}/${PORTNAME}/tests.py
+
 .include <bsd.port.mk>
