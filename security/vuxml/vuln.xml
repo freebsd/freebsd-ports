@@ -57,6 +57,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6ad309d9-fb03-11e3-bebd-000c2980a9f3">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba36</name>
+	<range><lt>3.6.24</lt></range>
+      </package>
+      <package>
+	<name>samba4</name>
+	<range><lt>4.0.19</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><lt>4.1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The samba project reports:</p>
+	<blockquote cite="https://www.samba.org/samba/history/">
+	  <p>A malformed packet can cause the nmbd server to loop the CPU and
+	    prevent any further NetBIOS name service.</p>
+	  <p>Valid unicode path names stored on disk can cause smbd to
+	    crash if an authenticated client attempts to read them
+	    using a non-unicode request.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0244</cvename>
+      <cvename>CVE-2014-3493</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2014-0244</url>
+      <url>https://www.samba.org/samba/security/CVE-2014-3493</url>
+    </references>
+    <dates>
+      <discovery>2014-06-23</discovery>
+      <entry>2014-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4892644-f8c6-11e3-9f45-6805ca0b3d42">
     <topic>phpMyAdmin -- two XSS vulnerabilities due to unescaped table names</topic>
     <affects>
