@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Better mail notification server
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 RUN_DEPENDS=	xmsg:${PORTSDIR}/x11/xmsg
 
 MAKE_JOBS_UNSAFE=	yes

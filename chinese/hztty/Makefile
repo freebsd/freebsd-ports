@@ -9,6 +9,9 @@ MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator between GuoBiao / Big5 and HZ
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 ALL_TARGET=	bsd
 PLIST_FILES=	bin/hztty man/man1/${PORTNAME}.1.gz
 

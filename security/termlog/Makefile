@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	termlog
 MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Monitor or log multiple system terminals synchronously
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_RC_SUBR=	${PORTNAME}
 
