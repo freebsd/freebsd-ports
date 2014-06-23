@@ -23,7 +23,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/600.fbsdmon \
 		${STAGEDIR}${PREFIX}/etc/periodic/weekly
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
