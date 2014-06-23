@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-BROKEN=		No distinfo provided for some distfiles
 EXTRACT_DIR=	${WRKDIRPREFIX}${.CURDIR}/worktmp/${DISTNAME}
 EXTRACT_BEFORE_ARGS=	-C ${EXTRACT_DIR} -xf
 NO_BUILD=	yes
