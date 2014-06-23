@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/four-in-a-row/Makefile 19620 2014-05-12 08:22:17Z gusi $
+#   $MCom: ports/trunk/games/four-in-a-row/Makefile 19747 2014-06-23 06:25:45Z gusi $
 
 PORTNAME=	four-in-a-row
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.3
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

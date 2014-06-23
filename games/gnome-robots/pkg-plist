@@ -629,6 +629,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-robots.mo
 @dirrm share/gnome-robots/themes
 @dirrm share/gnome-robots/sounds
 @dirrm share/gnome-robots/pixmaps
-@dirrm share/gnome-robots//games
+@dirrm share/gnome-robots/games
 @dirrm share/gnome-robots
 @dirrmtry share/appdata

@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/net-im/folks/Makefile 19178 2014-03-18 09:11:52Z gusi $
+#   $MCom: ports/trunk/net-im/folks/Makefile 19746 2014-06-22 22:51:46Z gusi $
 
 PORTNAME=	folks
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
 
-PLIST_SUB=	LIBVER=25 VERSION=41 LIBVERLONG=25.16.1
+PLIST_SUB=	LIBVER=25 VERSION=42 LIBVERLONG=25.17.0
 
 OPTIONS_DEFINE=	SOCIALWEB TRACKER
 OPTIONS_DEFAULT=SOCIALWEB TRACKER

@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-robots/Makefile 19634 2014-05-12 20:23:40Z gusi $
+#   $MCom: ports/trunk/games/gnome-robots/Makefile 19745 2014-06-22 21:02:19Z gusi $
 
 PORTNAME=	gnome-robots
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.3
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
