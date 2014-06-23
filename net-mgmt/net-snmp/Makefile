@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -39,10 +39,11 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd snmptrapd
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		perl5
+USES=		perl5 libtool
 USE_PERL5=	build run fixpacklist
 
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
 CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
@@ -68,7 +69,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/de
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX}
 CONFIGURE_ARGS+=--with-python-modules
 CONFIGURE_ENV+=	PYTHONPROG="${PYTHON_CMD}"
-MAKE_ENV+= 	PYDISTUTILS_INSTALLARGS="${PYDISTUTILS_INSTALLARGS}" STAGEDIR="${STAGEDIR}"
+MAKE_ENV+=	PYDISTUTILS_INSTALLARGS="${PYDISTUTILS_INSTALLARGS}" STAGEDIR="${STAGEDIR}"
 PLIST_SUB+=	WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
 PLIST_SUB+=	PYDISTUTILS_PKGVERSION=${PYDISTUTILS_PKGVERSION}
 .else
@@ -134,7 +135,8 @@ CONFIGURE_ARGS+=--without-root-access
 .endif
 
 SHLIB_VERSION=	30
-PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
+SHLIB_VERSION2=	.0.2
+PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION} SHLIB_VERSION2=${SHLIB_VERSION2}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 
 DEFAULT_SNMP_VERSION?=	3
@@ -178,7 +180,14 @@ CONFIGURE_ARGS+=--with-out-mib-modules="${NET_SNMP_WITHOUT_MIB_MODULE_LIST}"
 .endif
 
 BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpset \
-		snmpstatus snmptest snmptranslate snmptrap snmpwalk
+		snmpstatus snmptest snmptranslate snmptrap snmpwalk \
+		snmptable snmpbulkget snmpdelta snmpdf agentxtrap \
+		snmpvacm snmpusm encode_keychange snmpnetstat
+LIB_FILES=	libnetsnmp.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
+		libnetsnmpagent.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
+		libnetsnmpmibs.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
+		libnetsnmphelpers.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
+		libnetsnmptrapd.so.${SHLIB_VERSION}${SHLIB_VERSION2}
 SBIN_FILES=	snmpd snmptrapd
 STARTUP_DIR=	${PREFIX}/etc/rc.d
 SCRIPT_FILES=	snmpcheck.def mib2c fixproc ipf-mod.pl snmpconf \
@@ -252,9 +261,15 @@ post-build:
 
 post-install: strip-files install-config-files install-doc-files display-message
 	@${MKDIR} ${STAGEDIR}/var/agentx
+	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmp.so.${SHLIB_VERSION} libnetsnmp.so)
+	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmpagent.so.${SHLIB_VERSION} libnetsnmpagent.so)
+	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmphelpers.so.${SHLIB_VERSION} libnetsnmphelpers.so)
+	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmpmibs.so.${SHLIB_VERSION} libnetsnmpmibs.so)
+	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmptrapd.so.${SHLIB_VERSION} libnetsnmptrapd.so)
 
 strip-files:
 	(cd ${STAGEDIR}${PREFIX}/bin; ${STRIP_CMD} ${BIN_FILES})
+	(cd ${STAGEDIR}${PREFIX}/lib; ${STRIP_CMD} ${LIB_FILES})
 	(cd ${STAGEDIR}${PREFIX}/sbin; ${STRIP_CMD} ${SBIN_FILES})
 
 install-config-files:
