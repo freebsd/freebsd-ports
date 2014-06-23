@@ -1,5 +1,5 @@
---- ofxconnect/ofxpartner.cpp.orig	2011-03-30 22:30:50.000000000 +0000
-+++ ofxconnect/ofxpartner.cpp
+--- ./ofxconnect/ofxpartner.cpp.orig	2013-04-16 15:50:51.000000000 -0400
++++ ./ofxconnect/ofxpartner.cpp	2014-06-22 19:44:48.000000000 -0400
 @@ -37,6 +37,7 @@
  #include <vector>
  #include <algorithm>

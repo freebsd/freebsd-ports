@@ -3,6 +3,7 @@
 
 PORTNAME=	libofx
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
@@ -15,34 +16,28 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
 		libosp.so:${PORTSDIR}/textproc/opensp
 
-USES=		gmake iconv pkgconfig
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing
+USES=		gmake iconv pkgconfig pathfix libtool
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP \
 		--with-opensp-libs=${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	*
-
-OPTIONS_DEFINE=	APIDOC
-APIDOC_DESC=	Install full API documentation
+OPTIONS_DEFINE=	DOCS DOXYGEN
 
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS ChangeLog INSTALL NEWS README totest.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
-.if ${PORT_OPTIONS:MAPIDOC}
-	@(cd ${WRKSRC}/doc; ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-.endif
+	${RM} -f ${STAGEDIR}${DOCSDIR}/COPYING
+.if ${PORT_OPTIONS:MDOXYGEN}
+	@${FIND} -P ${STAGEDIR}${DOCSDIR}/html -type f 2>/dev/null | \
+		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
+	@${FIND} -P -d ${STAGEDIR}${DOCSDIR}/ -type d 2>/dev/null | \
+		${SED} -ne 's|^${STAGEDIR}${PREFIX}/|@dirrmtry |p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
