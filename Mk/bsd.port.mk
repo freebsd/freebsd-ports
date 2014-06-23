@@ -122,7 +122,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${DISTDIR} (see below).  Also they will be fetched in this
 #				  subdirectory from FreeBSD mirror sites.
 # ALLFILES		- All of ${DISTFILES} and ${PATCHFILES}.
-# IGNOREFILES	- If set, don't perform checksum checks on these files.
 # NOFETCHFILES	- If set, don't download these files from the ${MASTER_SITES}
 #				  or ${MASTER_SITE_BACKUP} (but do from
 #				  ${MASTER_SITE_OVERRIDE})
@@ -2683,30 +2682,15 @@ patch-sites-default: patch-sites-DEFAULT
 master-sites: master-sites-DEFAULT
 patch-sites: patch-sites-DEFAULT
 
-.if defined(IGNOREFILES)
-.if !defined(CKSUMFILES)
-.  for _f in ${ALLFILES}
-.    if ! ${IGNOREFILES:M${_f}}
-CKSUMFILES+=	${_f}
-.   endif
-.  endfor
-.  undef _f
-.endif
-.else
 CKSUMFILES=		${ALLFILES}
-.endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if defined(DIST_SUBDIR)
 .if defined(CKSUMFILES) && ${CKSUMFILES}!=""
 _CKSUMFILES?=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 .endif
-.if defined(IGNOREFILES) && ${IGNOREFILES}!=""
-_IGNOREFILES?=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
-.endif
 .else
 _CKSUMFILES?=	${CKSUMFILES}
-_IGNOREFILES?=	${IGNOREFILES}
 .endif
 
 # This is what is actually going to be extracted, and is overridable
@@ -4678,11 +4662,6 @@ makesum: check-checksum-algorithms
 			${ECHO_CMD} "SIZE ($$file) = `${STAT} -f \"%z\" $$file`" >> ${DISTINFO_FILE}; \
 		done \
 	)
-	@for file in ${_IGNOREFILES}; do \
-		for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-			${ECHO_CMD} "$$alg ($$file) = IGNORE" >> ${DISTINFO_FILE}; \
-		done; \
-	done
 .endif
 
 .if !target(checksum)
@@ -4710,13 +4689,6 @@ checksum: fetch check-checksum-algorithms
 					ignore="true"; \
 				fi; \
 				\
-				if [ "$$CKSUM" = "IGNORE" ]; then \
-					${ECHO_MSG} "=> $$alg Checksum for $$file is set to IGNORE in distinfo file even though"; \
-					${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
-					ignore="true"; \
-					OK=${FALSE}; \
-				fi; \
-				\
 				if [ $$ignore = "false" ]; then \
 					match="false"; \
 					for chksum in $$CKSUM; do \
@@ -4741,42 +4713,6 @@ checksum: fetch check-checksum-algorithms
 			if [ $$ignored = "true" ]; then \
 				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
 				OK="${FALSE}"; \
-			fi; \
-			\
-		done; \
-		\
-		for file in ${_IGNOREFILES}; do \
-			_file=$${file#${DIST_SUBDIR}/*};	\
-			ignored="true"; \
-			alreadymatched="false"; \
-			for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-				ignore="false"; \
-				eval alg_executable=\$$$$alg; \
-				\
-				if [ $$alg_executable != "NO" ]; then \
-					CKSUM=`file=$$_file; ${DISTINFO_DATA}`; \
-				else \
-					ignore="true"; \
-				fi; \
-				\
-				if [ $$ignore = "false" ]; then \
-					if [ -z "$$CKSUM" ]; then \
-						${ECHO_MSG} "=> No $$alg checksum for $$file recorded (expected IGNORE)"; \
-						OK="$$alreadymatched"; \
-					elif [ $$CKSUM != "IGNORE" ]; then \
-						${ECHO_MSG} "=> $$alg Checksum for $$file is not set to IGNORE in distinfo file even though"; \
-						${ECHO_MSG} "   the file is in the "'$$'"{IGNOREFILES} list."; \
-						OK="false"; \
-					else \
-						ignored="false"; \
-						alreadymatched="true"; \
-					fi; \
-				fi; \
-			done; \
-			\
-			if ( [ $$ignored = "true" ]) ; then \
-				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
-				OK="false"; \
 			fi; \
 			\
 		done; \
