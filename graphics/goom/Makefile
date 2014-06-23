@@ -3,7 +3,7 @@
 
 PORTNAME=	goom
 PORTVERSION=	2k4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2k4/0
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|}-src
@@ -11,13 +11,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual effects library
 
-USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S|.|-|}
-USES=	pathfix
+USES=		pathfix libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-sdltest --enable-static
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 .if exists(${X11R6}/bin/xmms) || defined(WITH_XMMS)
