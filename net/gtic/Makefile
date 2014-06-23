@@ -3,6 +3,7 @@
 
 PORTNAME=	gtic
 PORTVERSION=	1.3.b
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.kspu.kr.ua/pub/unix/FIDO/gtic/ \
 		ftp://ftp.braz.ru/pub/fido/gtic/
@@ -17,14 +18,13 @@ MAKE_ENV+=	DEFINES="${DEFINES}"
 DEFINES+=	-DAMIGA4D
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/gtic
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for i in areagroups areas config domains help users
-	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/etc/gtic/${i}.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gtic ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/gtic ${STAGEDIR}${PREFIX}/sbin/
 
 .include <bsd.port.post.mk>
