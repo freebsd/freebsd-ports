@@ -1,5 +1,5 @@
---- ./Makefile.orig	2012-01-16 13:46:05.147743123 -0500
-+++ ./Makefile	2012-01-16 13:46:25.029731197 -0500
+--- Makefile.orig	2011-02-24 23:23:42.000000000 +0800
++++ Makefile	2014-06-23 10:40:19.186220280 +0800
 @@ -1,6 +1,6 @@
  SHELL = /bin/sh
  
@@ -8,3 +8,22 @@
  exec_prefix = ${prefix}
  bindir = ${exec_prefix}/bin
  mandir = ${prefix}/man/man1
+@@ -31,12 +31,12 @@ clean:
+ 	rm -f $(SRC)/bittwist $(SRC)/bittwistb $(SRC)/bittwiste
+ 
+ install:
+-	mkdir -p $(bindir)
+-	chmod 755 $(bindir)
+-	$(INSTALL_PROGRAM) $(SRC)/bittwist $(SRC)/bittwistb $(SRC)/bittwiste $(bindir)
+-	mkdir -p $(mandir)
+-	chmod 755 $(mandir)
+-	$(INSTALL_DATA) $(DOC)/bittwist.1 $(DOC)/bittwistb.1 $(DOC)/bittwiste.1 $(mandir)
++	mkdir -p $(DESTDIR)$(bindir)
++	chmod 755 $(DESTDIR)$(bindir)
++	$(INSTALL_PROGRAM) $(SRC)/bittwist $(SRC)/bittwistb $(SRC)/bittwiste $(DESTDIR)$(bindir)
++	mkdir -p $(DESTDIR)$(mandir)
++	chmod 755 $(DESTDIR)$(mandir)
++	$(INSTALL_DATA) $(DOC)/bittwist.1 $(DOC)/bittwistb.1 $(DOC)/bittwiste.1 $(DESTDIR)$(mandir)
+ 
+ uninstall:
+ 	rm -f $(bindir)/bittwist $(bindir)/bittwistb $(bindir)/bittwiste
