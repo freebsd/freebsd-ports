@@ -3,7 +3,7 @@
 
 PORTNAME=	tetrinet-x
 PORTVERSION=	1.13.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ \
 	     	ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
@@ -14,10 +14,9 @@ MAINTAINER=	gmarco@gufi.org
 COMMENT=	Addictive 6 player tetr*s game
 
 WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	tetrinetx
 
-INSTALLDIR=	${PREFIX}/tetrinet-x
-
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/src && \
 		${CC} ${CFLAGS} main.c -o ../bin/tetrix.freebsd)
@@ -25,21 +24,13 @@ do-build:
 		${CC} ${CFLAGS} query.c -o ../../../bin/server-query)
 
 do-install:
-	${MKDIR} ${INSTALLDIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/tetrinetx-1.13.16/bin/tetrix.freebsd ${INSTALLDIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/tetrinetx-1.13.16/bin/server-query ${INSTALLDIR}
-	${INSTALL_DATA} -m 644  ${WRKDIR}/tetrinetx-1.13.16/bin/game.conf ${INSTALLDIR}
-	${INSTALL_DATA} -m 644  ${WRKDIR}/tetrinetx-1.13.16/bin/game.log ${INSTALLDIR}
-	${INSTALL_DATA} -m 644  ${WRKDIR}/tetrinetx-1.13.16/bin/game.secure ${INSTALLDIR}
-	${INSTALL_DATA} -m 644  ${WRKDIR}/tetrinetx-1.13.16/bin/game.winlist ${INSTALLDIR}
-
-post-install:
-	@${ECHO} ""
-	@${ECHO} "Installing ${PREFIX}/etc/rc.d/tetrinet-x.sh startup file."
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/tetrinet-x.sh ${PREFIX}/etc/rc.d
-	@${ECHO} ""
-	@${ECHO} "Please modify configuration files located in ${INSTALLDIR}"
-	@${ECHO} "before attempting to run Tetrinet server"
-	@${ECHO} ""
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/tetrix.freebsd ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/server-query ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} -m 644 ${WRKSRC}/bin/game.conf ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} -m 644 ${WRKSRC}/bin/game.log ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} -m 644 ${WRKSRC}/bin/game.secure ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} -m 644 ${WRKSRC}/bin/game.winlist ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/tetrinetx ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
