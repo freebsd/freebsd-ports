@@ -544,6 +544,7 @@
     SUBDIR += munin-node
     SUBDIR += muse
     SUBDIR += mybashburn
+    SUBDIR += n98-magerun
     SUBDIR += nagios-statd
     SUBDIR += namefix
     SUBDIR += nbosd
