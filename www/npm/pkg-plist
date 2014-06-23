@@ -18,6 +18,7 @@ lib/node_modules/npm/cli.js
 lib/node_modules/npm/configure
 lib/node_modules/npm/doc/api/npm-bin.md
 lib/node_modules/npm/doc/api/npm-bugs.md
+lib/node_modules/npm/doc/api/npm-cache.md
 lib/node_modules/npm/doc/api/npm-commands.md
 lib/node_modules/npm/doc/api/npm-config.md
 lib/node_modules/npm/doc/api/npm-deprecate.md
@@ -118,6 +119,7 @@ lib/node_modules/npm/doc/misc/semver.md
 lib/node_modules/npm/html/doc/README.html
 lib/node_modules/npm/html/doc/api/npm-bin.html
 lib/node_modules/npm/html/doc/api/npm-bugs.html
+lib/node_modules/npm/html/doc/api/npm-cache.html
 lib/node_modules/npm/html/doc/api/npm-commands.html
 lib/node_modules/npm/html/doc/api/npm-config.html
 lib/node_modules/npm/html/doc/api/npm-deprecate.html
@@ -346,6 +348,7 @@ lib/node_modules/npm/man/man1/npm-whoami.1.gz
 lib/node_modules/npm/man/man1/npm.1.gz
 lib/node_modules/npm/man/man3/npm-bin.3.gz
 lib/node_modules/npm/man/man3/npm-bugs.3.gz
+lib/node_modules/npm/man/man3/npm-cache.3.gz
 lib/node_modules/npm/man/man3/npm-commands.3.gz
 lib/node_modules/npm/man/man3/npm-config.3.gz
 lib/node_modules/npm/man/man3/npm-deprecate.3.gz
@@ -398,14 +401,11 @@ lib/node_modules/npm/man/man7/npm-registry.7.gz
 lib/node_modules/npm/man/man7/npm-scripts.7.gz
 lib/node_modules/npm/man/man7/removing-npm.7.gz
 lib/node_modules/npm/man/man7/semver.7.gz
-lib/node_modules/npm/node_modules/.bin/beep
-lib/node_modules/npm/node_modules/.bin/clear
 lib/node_modules/npm/node_modules/.bin/node-gyp
 lib/node_modules/npm/node_modules/.bin/nopt
 lib/node_modules/npm/node_modules/.bin/opener
 lib/node_modules/npm/node_modules/.bin/rimraf
 lib/node_modules/npm/node_modules/.bin/semver
-lib/node_modules/npm/node_modules/.bin/starwars
 lib/node_modules/npm/node_modules/.bin/which
 lib/node_modules/npm/node_modules/abbrev/CONTRIBUTING.md
 lib/node_modules/npm/node_modules/abbrev/LICENSE
@@ -413,14 +413,14 @@ lib/node_modules/npm/node_modules/abbrev/README.md
 lib/node_modules/npm/node_modules/abbrev/abbrev.js
 lib/node_modules/npm/node_modules/abbrev/package.json
 lib/node_modules/npm/node_modules/abbrev/test.js
+lib/node_modules/npm/node_modules/ansi/.jshintrc
 lib/node_modules/npm/node_modules/ansi/.npmignore
+lib/node_modules/npm/node_modules/ansi/History.md
 lib/node_modules/npm/node_modules/ansi/README.md
-lib/node_modules/npm/node_modules/ansi/color-spaces.pl
 lib/node_modules/npm/node_modules/ansi/examples/beep/index.js
 lib/node_modules/npm/node_modules/ansi/examples/clear/index.js
 lib/node_modules/npm/node_modules/ansi/examples/cursorPosition.js
 lib/node_modules/npm/node_modules/ansi/examples/progress/index.js
-lib/node_modules/npm/node_modules/ansi/examples/starwars.js
 lib/node_modules/npm/node_modules/ansi/lib/ansi.js
 lib/node_modules/npm/node_modules/ansi/lib/newlines.js
 lib/node_modules/npm/node_modules/ansi/package.json
@@ -484,10 +484,30 @@ lib/node_modules/npm/node_modules/cmd-shim/package.json
 lib/node_modules/npm/node_modules/cmd-shim/test/00-setup.js
 lib/node_modules/npm/node_modules/cmd-shim/test/basic.js
 lib/node_modules/npm/node_modules/cmd-shim/test/zz-cleanup.js
+lib/node_modules/npm/node_modules/columnify/LICENSE
 lib/node_modules/npm/node_modules/columnify/Readme.md
 lib/node_modules/npm/node_modules/columnify/index.js
+lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/cli.js
+lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/index.js
+lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules/ansi-regex/index.js
+lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules/ansi-regex/package.json
+lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules/ansi-regex/readme.md
+lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/package.json
+lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/readme.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/INSTALL.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/LICENSE.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/NEWS
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/README.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/LICENSE
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/README.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/package.json
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/underscore-min.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/underscore.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/package.json
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/wcwidth.js
 lib/node_modules/npm/node_modules/columnify/package.json
 lib/node_modules/npm/node_modules/columnify/utils.js
+lib/node_modules/npm/node_modules/columnify/width.js
 lib/node_modules/npm/node_modules/editor/LICENSE
 lib/node_modules/npm/node_modules/editor/README.markdown
 lib/node_modules/npm/node_modules/editor/example/beep.json
@@ -570,6 +590,8 @@ lib/node_modules/npm/node_modules/glob/test/00-setup.js
 lib/node_modules/npm/node_modules/glob/test/bash-comparison.js
 lib/node_modules/npm/node_modules/glob/test/bash-results.json
 lib/node_modules/npm/node_modules/glob/test/cwd-test.js
+lib/node_modules/npm/node_modules/glob/test/empty-set.js
+lib/node_modules/npm/node_modules/glob/test/error-callback.js
 lib/node_modules/npm/node_modules/glob/test/globstar-match.js
 lib/node_modules/npm/node_modules/glob/test/mark.js
 lib/node_modules/npm/node_modules/glob/test/new-glob-optional-options.js
@@ -583,6 +605,7 @@ lib/node_modules/npm/node_modules/glob/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/graceful-fs/.npmignore
 lib/node_modules/npm/node_modules/graceful-fs/LICENSE
 lib/node_modules/npm/node_modules/graceful-fs/README.md
+lib/node_modules/npm/node_modules/graceful-fs/fs.js
 lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js
 lib/node_modules/npm/node_modules/graceful-fs/package.json
 lib/node_modules/npm/node_modules/graceful-fs/polyfills.js
@@ -1450,6 +1473,7 @@ lib/node_modules/npm/test/packages/npm-test-url-dep/README
 lib/node_modules/npm/test/packages/npm-test-url-dep/package.json
 lib/node_modules/npm/test/run.js
 lib/node_modules/npm/test/tap/00-check-mock-dep.js
+lib/node_modules/npm/test/tap/00-verify-bundle-deps.js
 lib/node_modules/npm/test/tap/404-parent.js
 lib/node_modules/npm/test/tap/cache-add-unpublished.js
 lib/node_modules/npm/test/tap/cache-shasum.js
@@ -1860,6 +1884,13 @@ lib/node_modules/npm/wercker.yml
 @dirrm lib/node_modules/npm/node_modules/fstream
 @dirrm lib/node_modules/npm/node_modules/editor/example
 @dirrm lib/node_modules/npm/node_modules/editor
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules/ansi-regex
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules
 @dirrm lib/node_modules/npm/node_modules/columnify
 @dirrm lib/node_modules/npm/node_modules/cmd-shim/test
 @dirrm lib/node_modules/npm/node_modules/cmd-shim
