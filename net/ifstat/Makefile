@@ -15,17 +15,9 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	SNMP
+SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_CONFIGURE_WITH=	snmp
 
-MAN1=		ifstat.1
-PLIST_FILES=	bin/ifstat
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSNMP}
-LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
-.else
-CONFIGURE_ARGS+=	--without-snmp
-.endif
+PLIST_FILES=	bin/ifstat man/man1/ifstat.1.gz
 
 .include <bsd.port.mk>
