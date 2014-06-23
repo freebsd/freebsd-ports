@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shelldap
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	net perl5
 MASTER_SITES=	http://dl.dropbox.com/u/7234177/Releases/ \
 		http://www.martini.nu/misc/
@@ -19,18 +19,16 @@ RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
 
 USES=		perl5
 USE_PERL5=	extract build run
-MAN1=		shelldap.1
 
-PLIST_FILES=	bin/shelldap
+PLIST_FILES=	bin/shelldap man/man1/shelldap.1.gz
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-extract:
 	${LOCALBASE}/bin/pod2man < ${WRKSRC}/shelldap > ${WRKSRC}/shelldap.1
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/shelldap.1 ${MANPREFIX}/man/man1
-	${INSTALL_SCRIPT} ${WRKSRC}/shelldap ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/shelldap.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/shelldap ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
