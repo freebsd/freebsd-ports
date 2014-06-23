@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Dec  6 23:01:13 2002
-+++ Makefile	Sun Mar 16 15:12:51 2003
+--- Makefile.orig	2002-12-06 23:01:13.000000000 +0800
++++ Makefile	2014-06-23 16:05:37.848876850 +0800
 @@ -1,33 +1,23 @@
  # Depends on gmake..
  #
@@ -39,4 +39,12 @@
 +INSTALL_PROGRAM = $(INSTALL)
  
  all:	wireless.so
+ 
+@@ -38,6 +28,6 @@ clean:
+ 	rm -f *.o core *.so* *.bak *~
+ 
+ install :
+-	$(INSTALL) $(INSTALL_PERMS) wireless.so $(PLUGIN_DIR)
++	$(INSTALL) $(INSTALL_PERMS) wireless.so $(DESTDIR)$(PLUGIN_DIR)
+ wireless.o: wireless.c
  
