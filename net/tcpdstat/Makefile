@@ -13,5 +13,4 @@ COMMENT=	A tool for generating statistics from tcpdump (libpcap) files
 PLIST_FILES=	bin/tcpdstat
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
