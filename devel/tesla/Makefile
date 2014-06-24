@@ -28,4 +28,10 @@ CMAKE_ARGS+=	-DCMAKE_LLVM_CONFIG=llvm-config33
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=		${WRKSRC}/build
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000
+BROKEN=	does not build on 8 and 9
+.endif
+
+.include <bsd.port.post.mk>
