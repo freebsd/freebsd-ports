@@ -3,38 +3,33 @@
 
 PORTNAME=	colorize
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.lissyara.su/distfiles/ \
-		ftp://p3-800.lissyara.su/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	admin@lissyara.su
-COMMENT=	A robust log colorizer
+COMMENT=	Robust log colorizer
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+USE_GITHUB=	yes
+GH_ACCOUNT=	raszi
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	e84a7b0
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 USES=		shebangfix perl5
 SHEBANG_FILES=	colorize
 
-MAN1=		colorize.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/colorizerc|${PREFIX}/etc/colorizerc|' \
 		${WRKSRC}/colorize
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/colorize ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/colorizerc ${PREFIX}/etc/colorizerc.dist
-.if !exists(${PREFIX}/etc/colorizerc)
-	@${INSTALL_DATA} ${WRKSRC}/colorizerc ${PREFIX}/etc/colorizerc
-.endif
-	@${INSTALL_MAN} ${WRKSRC}/colorize.1.gz ${PREFIX}/man/man1
-	@${SED} -e "s!/usr/local/!${PREFIX}/!" < ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} ${WRKSRC}/colorize ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/colorizerc ${STAGEDIR}${PREFIX}/etc/colorizerc.sample
+	@${INSTALL_MAN} ${WRKSRC}/colorize.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
