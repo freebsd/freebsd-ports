@@ -1,3 +1,2 @@
-@unexec if cmp -s %D/etc/traff.conf %D/etc/traff.conf.default; then rm -f %D/etc/traff.conf; fi
-etc/traff.conf.default
+@sample etc/traff.conf.sample
 sbin/traff
