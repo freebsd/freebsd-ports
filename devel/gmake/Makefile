@@ -15,6 +15,8 @@ DISTNAME=	make-${PORTVERSION}
 MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	GNU version of 'make' utility
 
+CONFLICTS=	gmake-minimal-*
+
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
