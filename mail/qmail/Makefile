@@ -92,13 +92,13 @@ _USE_NETQMAIL=			yes
 .endif
 
 .if ${_USE_NETQMAIL} == yes
-PORTNAME=			netqmail
+QMAIL_PORTNAME=			netqmail
 QMAIL_VERSION=			1.06
 BARRIER_SENDMAIL_F_PATCH=	yes
 BARRIER_QMAILQUEUE_PATCH=	yes
 .else
 # This is only used for slave ports.
-PORTNAME=			qmail
+QMAIL_PORTNAME=			qmail
 QMAIL_VERSION=			1.03
 .endif
 
