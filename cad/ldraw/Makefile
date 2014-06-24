@@ -28,6 +28,9 @@ OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message
 
+BUILD_WRKSRC=	${WRKSRC}/mklist
+MAKEFILE=	makefile
+
 post-extract-script:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo -d \
 		${WRKSRC}/mklist ${WRKSRC}/mklist1_6.zip)
@@ -39,9 +42,6 @@ post-patch:
 		${WRKSRC}/mklist/makefile
 	@${REINPLACE_CMD} -e 's|PARTS|parts|' \
 		${WRKSRC}/mklist/mklist.c
-
-do-build:
-	@(cd ${WRKSRC}/mklist && ${GMAKE} ${MAKE_ENV})
 
 do-install:
 .for f in models p parts LDCfgalt.ldr LDConfig.ldr LDConfig_TLG.ldr
