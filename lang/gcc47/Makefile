@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gcc47
-PORTVERSION=	4.7.4.20140419
+PORTVERSION=	4.7.4
+PORTEPOCH=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
+MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
 DISTNAME=	gcc-${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -27,10 +28,8 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 CONFLICTS=	gcc-4.7.*
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.  A PORTVERSION of
-# 4.Y.2.s20130808 results in values of 4.Y-20130808, 4.Y.2, and 4Y
-# for these three.
-DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
+# of executables and directories once installed.
+DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
@@ -45,7 +44,6 @@ CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
-OPTIONS_DEFAULT=	BOOTSTRAP
 OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
@@ -97,10 +95,11 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+# Release tarballs (as opposed to snapshots) always carry this.
+#.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 INFO+=		gcc${SUFFIX}/libquadmath \
 		gcc${SUFFIX}/libitm
-.endif
+#.endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
 
