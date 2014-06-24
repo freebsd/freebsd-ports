@@ -13,14 +13,11 @@ COMMENT=	Bandwidth shaping and QoS solution
 LICENSE=	GPLv3
 
 USES=		gmake
-
 USE_RC_SUBR=	${PORTNAME}
-
 PLIST_FILES=	sbin/throttled sbin/throttled-startup
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
+	@${REINPLACE_CMD} -e "s|/usr/local|${STAGEDIR}${PREFIX}|g" \
 	${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|c++|${CXX}|;s|-O3|${CXXFLAGS}| \
 	;s|-pthread|${PTHREAD_LIBS}|" ${WRKSRC}/src/Makefile
