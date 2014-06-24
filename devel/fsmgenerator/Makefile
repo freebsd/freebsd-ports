@@ -19,7 +19,7 @@ PLIST_FILES=	bin/fsmgenerator
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} \
-		${REINPLACE_CMD} -e "s|make$$|${GMAKE}|" \
+		${REINPLACE_CMD} -e "s|make$$|${MAKE_CMD}|" \
 			-e "/^RCFLAGS/ s|=|= ${CFLAGS}|" \
 			-e "s|/usr/local|${STAGEDIR}${PREFIX}|" \
 			-e "s|gcc|${CC}|g"
