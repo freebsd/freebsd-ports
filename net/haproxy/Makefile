@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-PORTVERSION=	1.4.25
+DISTVERSION=	1.5.1
 CATEGORIES=	net www
-MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
+MASTER_SITES=	http://haproxy.1wt.eu/download/1.5/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
@@ -18,16 +18,17 @@ USES=		gmake
 USE_RC_SUBR=	haproxy
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	PCRE
+OPTIONS_DEFINE=		PCRE OPENSSL
 OPTIONS_SINGLE=		PCRE
 OPTIONS_SINGLE_PCRE=	DPCRE SPCRE
-DPCRE_DESC=	Link dynamically
-SPCRE_DESC=	Link statically
-OPTIONS_DEFAULT=PCRE DPCRE
+DPCRE_DESC=		Link dynamically
+SPCRE_DESC=		Link statically
+OPTIONS_DEFAULT=	PCRE DPCRE OPENSSL
 
 .include <bsd.port.options.mk>
 
-MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS CC="${CC}"
+MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
+		USE_ZLIB=1 CC="${CC}" CFLAGS="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MDPCRE}
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
@@ -36,6 +37,11 @@ MAKE_ARGS+=	"USE_PCRE=1"
 .if ${PORT_OPTIONS:MSPCRE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	"USE_STATIC_PCRE=1"
+.endif
+
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=	yes
+MAKE_ARGS+=	USE_OPENSSL=1
 .endif
 
 do-install:
