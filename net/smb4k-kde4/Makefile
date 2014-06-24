@@ -1,32 +1,29 @@
 # Created by: Josh Paetzel <jpaetzel@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		smb4k-kde4
-PORTVERSION=		0.10.9
+PORTNAME=	smb4k-kde4
+PORTVERSION=	0.10.9
 PORTREVISION=	9
-CATEGORIES=		net kde
-MASTER_SITES=		${MASTER_SITE_BERLIOS}
+CATEGORIES=	net kde
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	smb4k
-DISTNAME=		smb4k-${PORTVERSION}
+DISTNAME=	smb4k-${PORTVERSION}
 
-MAINTAINER=		jpaetzel@FreeBSD.org
-COMMENT=		KDE 4.x SMB Network browser and SMB shares mounting center
+MAINTAINER=	jpaetzel@FreeBSD.org
+COMMENT=	KDE 4.x SMB Network browser and SMB shares mounting center
 
-RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
-			smbstatus:${PORTSDIR}/${SAMBA_PORT}
+RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
+		smbstatus:${PORTSDIR}/${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba36
 
-USES=		cmake gettext
-USE_BZIP2=	yes
+USES=		cmake gettext tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4 runtime
 USE_QT4=	corelib gui network opengl script svg webkit \
 		qmake_build moc_build rcc_build uic_build phonon
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k
 SUB_FILES=	pkg-message
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -51,9 +48,9 @@ pre-configure:
 
 post-install:
 .for i in smb2awk smb2nsmbrc
-	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
