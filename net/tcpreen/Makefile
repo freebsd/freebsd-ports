@@ -10,13 +10,10 @@ MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	A simple TCP session re-engineering tool
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
-MAN1=		tcpreen.1
 
 DOC_FILES=	AUTHORS NEWS README THANKS TODO
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -32,9 +29,9 @@ PLIST_SUB+=	NLS="@comment "
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
