@@ -4,9 +4,8 @@ PORTNAME=	openospfd
 PORTVERSION=	4.3
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_OPENBSD:S/$/:openbsd/g} \
-		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
-MASTER_SITE_SUBDIR=	flz/openospfd/:freebsd OpenBGPD/:openbsd
+MASTER_SITES=	OPENBSD/OpenBGPD:openbsd \
+		LOCAL/flz/openospfd/:freebsd
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:openbsd \
 		if_media.h:freebsd
 DIST_SUBDIR=	${PORTNAME}
@@ -15,34 +14,33 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LICENSE=	ISCL
 
 CONFLICTS=	zebra-0* quagga-0*
 
-WRKSRC=		${WRKDIR}
-MANCOMPRESSED=	yes
-USE_RC_SUBR=	openospfd
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"
 COPTS=		-I${LOCALBASE}/include -DMD5_DIGEST_LENGTH=16
 LDADD=		-L${LOCALBASE}/lib -levent -lmd
+NO_WRKSUBDIR=	yes
+USE_RC_SUBR=	${PORTNAME}
+USERS=		_ospfd
+GROUPS=		_ospfd
 
-PLIST_FILES=	sbin/ospfctl	\
-		sbin/ospfd
+PLIST_FILES=	sbin/ospfctl \
+		sbin/ospfd \
+		man/man5/ospfd.conf.5.gz \
+		man/man8/ospfctl.8.gz \
+		man/man8/ospfd.8.gz
 
-MAN5=		ospfd.conf.5
-MAN8=		ospfctl.8	\
-		ospfd.8
-
-SUBDIRS=	ospfd \
-		ospfctl
-
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/if_media.h ${WRKSRC}/ospfctl/
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|<net/if_media.h>|\"if_media.h\"|" ${WRKSRC}/ospfctl/ospfctl.c
+	@${REINPLACE_CMD} -e "s|<net/if_media\.h>|\"if_media.h\"|" \
+		${WRKSRC}/ospfctl/ospfctl.c
 	@${REINPLACE_CMD} -e "/rc.conf.local/d" ${WRKSRC}/ospfd/ospfd.conf.5
 	@${REINPLACE_CMD} -e "s|SIMPLEQ|STAILQ|" ${WRKSRC}/ospfd/*.[chy]
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" \
@@ -54,23 +52,24 @@ post-patch:
 		${WRKSRC}/ospfd/ospfd.c \
 		${WRKSRC}/ospfctl/ospfctl.c
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000003
+BROKEN=		requires old CARP implementation (interface layer)
+.endif
+
 do-build:
-.for i in ${SUBDIRS}
-	cd ${WRKSRC}/$i; make COPTS="${COPTS}" LDADD="${LDADD}"
+.for subdir in ospfd ospfctl
+	${MAKE_CMD} -C ${WRKSRC}/${subdir} COPTS="${COPTS}" LDADD="${LDADD}"
 .endfor
 
 do-install:
-.for i in ${SUBDIRS}
-	cd ${WRKSRC}/$i; make install ${MAKE_ENV} LOCALBASE=${LOCALBASE}
-.endfor
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		Does not build on FreeBSD 10+
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/ospfctl/ospfctl ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/ospfctl/ospfctl.8 \
+		${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/ospfd/ospfd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/ospfd/ospfd.conf.5 \
+		${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/ospfd/ospfd.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
