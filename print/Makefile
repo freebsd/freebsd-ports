@@ -201,7 +201,6 @@
     SUBDIR += p5-PostScript-Simple
     SUBDIR += p5-Text-PDF
     SUBDIR += p5-XML-ApacheFOP
-    SUBDIR += pkg-texinfo
     SUBDIR += panda
     SUBDIR += papersize-default-a4
     SUBDIR += papersize-default-letter
@@ -303,6 +302,7 @@
     SUBDIR += tex-xetex
     SUBDIR += tex-xmltex
     SUBDIR += texinfo
+    SUBDIR += texinfo-minimal
     SUBDIR += texlive-base
     SUBDIR += texlive-docs
     SUBDIR += texlive-full
