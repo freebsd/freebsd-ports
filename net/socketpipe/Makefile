@@ -10,9 +10,6 @@ MASTER_SITES=	http://www.spinellis.gr/sw/unix/socketpipe/ \
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Zero overhead remote process plumbing
 
-MAN1=		socketpipe.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/socketpipe
+PLIST_FILES=	bin/socketpipe man/man1/socketpipe.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
