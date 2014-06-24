@@ -19,9 +19,9 @@ include/libleaftag/object.h
 include/libleaftag/source.h
 include/libleaftag/tag.h
 lib/libleaftag.a
-lib/libleaftag.la
 lib/libleaftag.so
 lib/libleaftag.so.0
+lib/libleaftag.so.0.0.1
 libdata/pkgconfig/libleaftag.pc
 @dirrm include/libleaftag
 @dirrm %%DOCSDIR%%
