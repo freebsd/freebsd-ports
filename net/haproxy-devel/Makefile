@@ -13,6 +13,8 @@ COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+IGNORE=		No devel version available at this time
+
 USES=		gmake
 CONFLICTS=	haproxy-[1234567890]\*
 USE_RC_SUBR=	haproxy
