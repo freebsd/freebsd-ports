@@ -12,7 +12,7 @@ COMMENT=	Secure, reliable, and fast MTA for UNIX systems with LDAP support
 RUN_DEPENDS=	${LOCALBASE}/bin/svscan:${PORTSDIR}/sysutils/daemontools \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
-CONFLICTS=	emboss-[0-9]* digest-[0-9]* qmail-[0-9]* qmail-mysql-[0-9]* \
+CONFLICTS=	emboss-[0-9]* digest-[0-9]* *qmail-[0-9]* *qmail-mysql-[0-9]* \
 		qmail-spamcontrol-[0-9]* qmail-tls-[0-9]*
 
 EXTRA_PATCHES+=	${MASTERDIR}/files/patch-Makefile \
