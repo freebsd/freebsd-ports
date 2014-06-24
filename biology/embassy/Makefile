@@ -116,13 +116,13 @@ do-configure:
 do-build:
 .for app in ${APPLIST}
 	@ cd ${${app}_WRKSRC} && \
-	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
+	  ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 .endfor
 
 do-install:
 .for app in ${APPLIST}
 	@ cd ${${app}_WRKSRC} && \
-	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+	  ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 	  ${MAKE_ARGS} ${INSTALL_TARGET}
 .endfor
 
