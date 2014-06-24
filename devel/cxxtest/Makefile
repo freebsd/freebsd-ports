@@ -36,7 +36,7 @@ do-install:
 	@${ECHO_MSG} "* The CxxTest scripts have been installed into ${PREFIX}/bin/."
 	@${ECHO_MSG} "* The include files are in ${PREFIX}/include/cxxtest/"
 	@${ECHO_MSG} "* Beware that the sample makefiles aren't compatible with FreeBSD's make,"
-	@${ECHO_MSG} "* use ${GMAKE} instead."
+	@${ECHO_MSG} "* use gmake instead."
 	@${ECHO_MSG} "* The obvious reminder: don't forget to add ${PREFIX}/include to your include path."
 
 .include <bsd.port.mk>
