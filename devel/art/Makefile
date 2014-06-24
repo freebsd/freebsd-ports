@@ -27,7 +27,7 @@ do-install:
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${GMAKE} test
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test
 .endif
 
 .include <bsd.port.mk>
