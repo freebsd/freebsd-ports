@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140624:
+  AFFECTS: users of databases/p5-Bucardo
+  AUTHOR: mat@FreeBSD.org
+
+  The bucardo_ctl script has been renamed to bucardo, so, to follow the naming,
+  the bucardo_ctl_enable rc variable has been renamed to bucardo_enable.
+
 20140622:
   AFFECTS: users of security/gpgme
   AUTHOR: jhale@FreeBSD.org
