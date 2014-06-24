@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext iconv
-NLS_CONFIGURE_ENABLE=	yes
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} 's,^\* sed:,* GNU sed:,' \
