@@ -19,6 +19,7 @@ ALL_TARGET=	all data
 INSTALL_TARGET=	install data-install
 MAKE_JOBS_UNSAFE=	yes
 
+BROKEN=		Hard code make, gcc, g++ and more everywhere
 MAN1=		chinput.1
 
 NO_STAGE=	yes
@@ -29,7 +30,7 @@ BROKEN=		Build fails on sparc64
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,make,${GMAKE},g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's,make,${MAKE_CMD},g' ${WRKSRC}/src/Makefile.in
 	@echo "install:" >> ${WRKSRC}/src/IMdkit/Makefile
 	@${REINPLACE_CMD} 's,^CFLAGS =,CFLAGS +=,' ${WRKSRC}/ImmModules/cce/Makefile.in \
 		${WRKSRC}/ImmModules/turbo/Makefile.in \
