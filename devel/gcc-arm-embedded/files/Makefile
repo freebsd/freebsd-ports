@@ -52,23 +52,23 @@ build-binutils:
 	 --with-sysroot=${INTERIM_PREFIX}/${TARGET} \
 	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/binutils.log 2>&1
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/binutils all >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/binutils all >> ${WRKDIR}/binutils.log 2>&1
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/binutils install >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install >> ${WRKDIR}/binutils.log 2>&1
 	@${ECHO_MSG} "=====>  Prepare working area for library builds"
 	@${MKDIR} ${BUILD_PREFIX}/target-libs >> ${WRKDIR}/binutils.log 2>&1
 	@${TAR} -cf - -C ${INTERIM_PREFIX} . | ${TAR} -xf - -C ${BUILD_PREFIX}/target-libs >> ${WRKDIR}/binutils.log 2>&1
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/binutils html >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils html >> ${WRKDIR}/binutils.log 2>&1
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/binutils install-html >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install-html >> ${WRKDIR}/binutils.log 2>&1
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/binutils pdf >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils pdf >> ${WRKDIR}/binutils.log 2>&1
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/binutils install-pdf >> ${WRKDIR}/binutils.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/binutils install-pdf >> ${WRKDIR}/binutils.log 2>&1
 .endif
 	@${ECHO_MSG} "=====>  Cleanup installation"
 	@${RM} -rf ${INTERIM_PREFIX}/lib >> ${WRKDIR}/binutils.log 2>&1
@@ -115,9 +115,9 @@ build-gcc-first:
 	 --with-multilib-list=${MULTILIB_LIST} \
 	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/gcc-first.log 2>&1
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-first all >> ${WRKDIR}/gcc-first.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-first all >> ${WRKDIR}/gcc-first.log 2>&1
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gcc-first install-gcc >> ${WRKDIR}/gcc-first.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-first install-gcc >> ${WRKDIR}/gcc-first.log 2>&1
 	@${RM} -f ${INTERIM_PREFIX}/bin/${TARGET}-gccbug >> ${WRKDIR}/gcc-first.log 2>&1
 	@${RM} -f ${INTERIM_PREFIX}/lib/libiberty.a >> ${WRKDIR}/gcc-first.log 2>&1
 	@${RM} -rf ${INTERIM_PREFIX}/include >> ${WRKDIR}/gcc-first.log 2>&1
@@ -141,12 +141,12 @@ build-newlib:
 	 --disable-newlib-supplied-syscalls \
 	 --disable-nls >> ${WRKDIR}/newlib.log 2>&1
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${GMAKE} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/newlib all >> ${WRKDIR}/newlib.log 2>&1
+	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/newlib all >> ${WRKDIR}/newlib.log 2>&1
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${GMAKE} -C ${BUILD_PREFIX}/newlib install >> ${WRKDIR}/newlib.log 2>&1
+	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib install >> ${WRKDIR}/newlib.log 2>&1
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/newlib html >> ${WRKDIR}/newlib.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib html >> ${WRKDIR}/newlib.log 2>&1
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
 	@${MKDIR} ${DOC_PREFIX}/html/libc >> ${WRKDIR}/newlib.log 2>&1
 	@${TAR} -cf - -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc/libc.html . | ${TAR} -xf - -C ${DOC_PREFIX}/html/libc >> ${WRKDIR}/newlib.log 2>&1
@@ -155,8 +155,8 @@ build-newlib:
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation (ignore errors)"
-	@-${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc pdf >> ${WRKDIR}/newlib.log 2>&1
-	@-${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm pdf >> ${WRKDIR}/newlib.log 2>&1
+	@-${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc pdf >> ${WRKDIR}/newlib.log 2>&1
+	@-${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm pdf >> ${WRKDIR}/newlib.log 2>&1
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
 	@${CP} -f ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libc/libc.pdf ${DOC_PREFIX}/pdf/libc.pdf >> ${WRKDIR}/newlib.log 2>&1
 	@${CP} -f ${BUILD_PREFIX}/newlib/${TARGET}/newlib/libm/libm.pdf ${DOC_PREFIX}/pdf/libm.pdf >> ${WRKDIR}/newlib.log 2>&1
@@ -187,9 +187,9 @@ build-newlib-nano:
 	 --enable-newlib-global-atexit         \
 	 --disable-nls >> ${WRKDIR}/newlib-nano.log 2>&1
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${GMAKE} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/newlib-nano all >> ${WRKDIR}/newlib-nano.log 2>&1
+	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/newlib-nano all >> ${WRKDIR}/newlib-nano.log 2>&1
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${GMAKE} -C ${BUILD_PREFIX}/newlib-nano install  >> ${WRKDIR}/newlib-nano.log 2>&1
+	@${MAKE_ENV} PATH="${INTERIM_PREFIX}/bin:${PATH}" ${MAKE_CMD} -C ${BUILD_PREFIX}/newlib-nano install  >> ${WRKDIR}/newlib-nano.log 2>&1
 
 build-gcc-final:
 	@${ECHO_MSG} "====>  Build final gcc and g++ (log file: ${WRKDIR}/gcc-final.log)"
@@ -236,20 +236,20 @@ build-gcc-final:
 	 --with-multilib-list=${MULTILIB_LIST} \
 	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/gcc-final.log 2>&1
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-final INHIBIT_LIBC_CFLAGS="-DUSE_TM_CLONE_REGISTRY=0" all >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-final INHIBIT_LIBC_CFLAGS="-DUSE_TM_CLONE_REGISTRY=0" all >> ${WRKDIR}/gcc-final.log 2>&1
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gcc-final install >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install >> ${WRKDIR}/gcc-final.log 2>&1
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gcc-final html >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final html >> ${WRKDIR}/gcc-final.log 2>&1
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gcc-final install-html >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install-html >> ${WRKDIR}/gcc-final.log 2>&1
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gcc-final pdf >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final pdf >> ${WRKDIR}/gcc-final.log 2>&1
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gcc-final install-pdf >> ${WRKDIR}/gcc-final.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-final install-pdf >> ${WRKDIR}/gcc-final.log 2>&1
 .endif
 	@${ECHO_MSG} "=====>  Cleanup installation"
 	@${RM} -f ${INTERIM_PREFIX}/bin/${TARGET}-gccbug >> ${WRKDIR}/gcc-final.log 2>&1
@@ -315,10 +315,10 @@ build-libstdcxx:
 	 --with-multilib-list=${MULTILIB_LIST} \
 	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-size-libstdcxx \
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-size-libstdcxx \
 	 CXXFLAGS_FOR_TARGET="-g -Os -ffunction-sections -fdata-sections -fno-exceptions" all >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gcc-size-libstdcxx install >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gcc-size-libstdcxx install >> ${WRKDIR}/gcc-size-libstdcxx.log 2>&1
 	@${ECHO_MSG} "=====>  Copy all target libraries into stage directory"
 	@for multilib in $$(${BUILD_PREFIX}/target-libs/bin/${TARGET}-gcc -print-multi-lib) ; do \
 	  multilib_dir=$${multilib%%;*} ; \
@@ -352,21 +352,21 @@ build-gdb:
 	 --with-gdb-datadir='$${prefix}/${TARGET}/share/gdb' \
 	 --with-pkgversion="${PKGVERSION}" >> ${WRKDIR}/gdb.log 2>&1
 	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gdb all >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gdb all >> ${WRKDIR}/gdb.log 2>&1
 	@${ECHO_MSG} "=====>  Install into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gdb install >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install >> ${WRKDIR}/gdb.log 2>&1
 	@${RM} -rf ${INTERIM_PREFIX}/include
 .if ${PORT_OPTIONS:MHTML} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build HTML documentation"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gdb html >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb html >> ${WRKDIR}/gdb.log 2>&1
 	@${ECHO_MSG} "=====>  Install HTML documentation into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gdb install-html >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-html >> ${WRKDIR}/gdb.log 2>&1
 .endif
 .if ${PORT_OPTIONS:MPDF} && ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "=====>  Build PDF documentation"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gdb pdf >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb pdf >> ${WRKDIR}/gdb.log 2>&1
 	@${ECHO_MSG} "=====>  Install PDF documentation into stage directory"
-	@${MAKE_ENV} ${GMAKE} -C ${BUILD_PREFIX}/gdb install-pdf >> ${WRKDIR}/gdb.log 2>&1
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gdb install-pdf >> ${WRKDIR}/gdb.log 2>&1
 .endif
 
 install-samples:
