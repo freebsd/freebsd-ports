@@ -569,7 +569,7 @@ x11-themes/camaelon-nesedah||2009-04-04|Has expired: now included in camaelon
 x11-wm/compiz-fusion-plugins-main|x11-wm/compiz-plugins-main|2009-04-08|Dropping the fusion name
 x11-wm/compiz-fusion-plugins-extra|x11-wm/compiz-plugins-extra|2009-04-08|Dropping the fusion name
 x11-wm/compiz-fusion-plugins-unsupported|x11-wm/compiz-plugins-unsupported|2009-04-08|Dropping the fusion name
-devel/gnome-build||2009-04-10|This port has been merged into anjuta and is now obsolete
+devel/gnome-build||2009-04-10|This port has been merged into Anjuta and is now obsolete
 sysutils/gnome-volume-manager||2009-04-10|This port has been obsoleted by Nautilus
 science/oof||2009-04-11|Has expired: Broken with GCC 4.2 and beyond
 www/raqdevil||2009-04-11|Has expired: Master site gone, distfiles not fetchable
@@ -3232,7 +3232,7 @@ audio/p5-MusicBrainz-Queries||2012-04-09|Has expired: MusicBrainz RDF webservice
 audio/ruby-musicbrainz||2012-04-09|Has expired: MusicBrainz RDF webservice no longer functions
 converters/ruby-lv||2012-04-09|Has expired: upstream no longer has this
 devel/p5-Getopt-Popt||2012-04-09|Has expired: "Gone from CPAN"
-net/p5-Net-Rendezvous||2012-04-09|Has expired: Superceeded by dns/p5-Net-Bonjour
+net/p5-Net-Rendezvous||2012-04-09|Has expired: superseded by dns/p5-Net-Bonjour
 audio/gstreamer-plugins-musicbrainz||2012-04-09|Has expired: MusicBrainz RDF webservice no longer functions
 x11/wrapper||2012-04-10|Has expired: not needed anymore
 www/resin2||2012-04-10|Has expired: unsupported upstream, consider www/resin3
@@ -4921,7 +4921,7 @@ misc/kde4-l10n-mai||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-mk||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-ml||2013-09-10|No longer part of KDE4
 devel/deputy||2013-09-13|Obsolete
-textproc/liblinebreak|textproc/libunibreak|2013-09-14|Project was superceded by libunibreak
+textproc/liblinebreak|textproc/libunibreak|2013-09-14|Project was superseded by libunibreak
 sysutils/daemontools53|sysutils/daemontools|2013-09-16|sysutils/daemontools is more recent
 audio/ices0|audio/ices|2013-09-16|Unsupported version, consider using audio/ices
 irc/xchat1|irc/xchat|2013-09-16|Unsupported upstream, consider using irc/xchat
@@ -4957,7 +4957,7 @@ ftp/ncftp2|ftp/ncftp3|2013-10-02|Outdated, consider using a newer version
 irc/keitairc|irc/keitairc2|2013-10-02|Outdated, consider using a newer version
 java/netbeans55|java/netbeans|2013-10-02|Outdated, consider using a newer version
 java/netbeans61|java/netbeans|2013-10-02|Outdated, consider using a newer version
-devel/py-importlib||2013-10-02|expired: Python 2.6 port will reach it's EoL upstream soon
+devel/py-importlib||2013-10-02|Expired: Python 2.6 port will reach it's EoL upstream soon
 graphics/gkrellkam|graphics/gkrellkam2|2013-10-02|Outdated, consider using a newer version
 mail/gkrellmmailwatch|mail/gkrellmmailwatch2|2013-10-02|Outdated, consider using a newer version
 databases/memcached12|databases/memcached|2013-10-02|Unsupported upstream, consider using a newer version
@@ -5176,13 +5176,13 @@ audio/gmpeg-devel||2013-11-17|Removed, no active development since more than 8 y
 graphics/gqview-devel||2013-11-17|Removed, no active development since more than 8 years
 textproc/stardict2-dictd_mova|textproc/stardict-dictd_mova|2013-11-17|Renamed
 textproc/stardict2-quick|textproc/stardict-quick|2013-11-17|Renamed
-x11-toolkits/libgnomeuimm|x11-toolkits/libgnomeuimm26|2013-11-18|older version not in used in the ports tree
-devel/libglademm|devel/libglademm24|2013-11-18|older version not in used in the ports tree
-graphics/libgnomecanvasmm|graphics/libgnomecanvasmm26|2013-11-18|older version not in used in the ports tree
-x11/libgnomemm|x11/libgnomemm26|2013-11-18|older version not in used in the ports tree
-devel/gconfmm|devel/gconfmm26|2013-11-18|older version not in used in the ports tree
-sysutils/dircomp||2013-11-18|Removed, unmaintained and depends on expired devel/libXGP
-sysutils/iextract||2013-11-18|Removed, unmaintained and depends on expired devel/libYGP
+x11-toolkits/libgnomeuimm|x11-toolkits/libgnomeuimm26|2013-11-18|Older version; has no consumers in the ports tree
+devel/libglademm|devel/libglademm24|2013-11-18|Older version; has no consumers in the ports tree
+graphics/libgnomecanvasmm|graphics/libgnomecanvasmm26|2013-11-18|Older version; has no consumers in the ports tree
+x11/libgnomemm|x11/libgnomemm26|2013-11-18|Older version; has no consumers in the ports tree
+devel/gconfmm|devel/gconfmm26|2013-11-18|Older version; has no consumers in the ports tree
+sysutils/dircomp||2013-11-18|Removed: unmaintained and depends on expired devel/libXGP
+sysutils/iextract||2013-11-18|Removed: unmaintained and depends on expired devel/libYGP
 devel/libXGP||2013-11-18|Has expired: Broken for more than 6 month
 deskutils/google-gadgets||2013-11-18|Has expired: Broken for more than 6 month
 palm/synce-trayicon||2013-11-18|Has expired: Broken for more than 6 month
@@ -5327,14 +5327,14 @@ net-im/libmsn||2013-12-22|Has expired: Primary MSN Messenger service terminated 
 lang/clang||2013-12-22|Has expired: Migrate to lang/clang32 or newer
 math/freemat-mpi||2013-12-23|Obsolete since FreeMat 3.0
 devel/py-pmock||2013-12-27|Does not work with python 2.6 and beyond
-devel/ncurses-devel|devel/ncurses|2013-12-28|regular ncurses ports is more recent
+devel/ncurses-devel|devel/ncurses|2013-12-28|Regular ncurses ports is more recent
 databases/mird||2013-12-28|Has expired: No longer maintained upstream
 security/dazuko||2013-12-31|Has expired: Currently, the project has not an active development and maintainer
 mail/p5-Mail-SPF-Query||2013-12-31|Has expired: Use mail/p5-Mail-SPF instead
 x11-fonts/etlfonts||2013-12-31|Has expired: master site gone
 net/gateway6||2013-12-31|Has expired: Unsupported upstream, consider using net/gogoc
 misc/bibletime-devel|misc/bibletime|2013-12-31|Has expired: use misc/bibletime
-multimedia/linux-ov511-kmod||2013-12-31|Removed, broken and only for 6.X / 7.X
+multimedia/linux-ov511-kmod||2013-12-31|Removed: broken and only for FreeBSD 6.X and 7.X
 net-mgmt/unifi|net-mgmt/unifi3|2014-01-01|Rename to unifi3; unifi2 is coming to ports tree as well
 net/pypvm||2014-01-01|Has expired: Dead upstream and suspected that there are no users of port
 www/mawstats||2014-01-01|Has expired: Upstream development dead, use www/[j]awstats instead
@@ -5439,7 +5439,7 @@ www/runsomebrowser|www/webbrowser|2014-02-09|Name changed
 irc/trickyirc||2014-02-10|Abandonware, segfaults, no releases in 15 years
 databases/p5-DBD-mysql55|databases/p5-DBD-mysql|2014-02-12|If you need a different default MYSQL version, use DEFAULT_VERSIONS
 databases/p5-DBD-mysql56|databases/p5-DBD-mysql|2014-02-12|If you need a different default MYSQL version, use DEFAULT_VERSIONS
-textproc/p5-ElasticSearch|textproc/p5-ElasticSearch-legacy|2014-02-12|This version is depricated in favour of the offical client
+textproc/p5-ElasticSearch|textproc/p5-ElasticSearch-legacy|2014-02-12|This version is deprecate in favour of the offical client
 x11-fonts/cosmic-sans-neue-mono|x11-fonts/fantasque-sans-mono|2014-02-13|Renamed upstream
 mail/zmailer||2014-02-13|Broken since at least last August
 lang/gcc34|lang/gcc|2014-02-13|Superseded by GCC 4.6 or later
@@ -5470,9 +5470,9 @@ sysutils/liblogging|devel/liblogging|2014-02-20|Already exists as devel/libloggi
 devel/bzr-grep||2014-02-24|Has expired: Broken for more than 4 months
 multimedia/youtube-viewer||2014-02-24|Has expired: Development ceased for 2.5 branch, conflict with gtk-youtube-viewer
 x11-toolkits/flvw||2014-02-24|Abandonware
-textproc/p5-XML-Xerces||2014-02-24|Depend on a non supported version of xerces-c
-x11-toolkits/fl_editor||2014-02-24|Abandonware, buggy rendering and not stage friendly
-x11-toolkits/gtkunique|x11-toolkits/unique|2014-02-24|Superseeded by x11-toolkits/unique
+textproc/p5-XML-Xerces||2014-02-24|Depends on a non supported version of xerces-c
+x11-toolkits/fl_editor||2014-02-24|Abandonware, buggy rendering, and not stage friendly
+x11-toolkits/gtkunique|x11-toolkits/unique|2014-02-24|Superseded by x11-toolkits/unique
 japanese/ruby-man||2014-02-25|Has expired: Documents EOLd version of Ruby and unmaintained
 lang/ruby-programmingruby||2014-02-25|Has expired: Documents EOLd version of Ruby and unmaintained
 lang/ruby-man||2014-02-25|Has expired: Documents EOLd version of Ruby and unmaintained
@@ -5768,7 +5768,7 @@ x11-toolkits/wxgtk26-contrib-common|x11-toolkits/wxgtk28-contrib-common|2014-03-
 x11-toolkits/wxgtk26-docs||2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk26-unicode|x11-toolkits/wxgtk28-unicode|2014-03-24|wxGTK 2.6 is EOLed
 x11-toolkits/wxgtk26-unicode-contrib|x11-toolkits/wxgtk28-unicode-contrib|2014-03-24|wxGTK 2.6 is EOLed
-x11-toolkits/wxgtk29|x11-toolkits/wxgtk30|2014-03-24|wxGTK 2.9 was a developement version superseeded by the 3.0 release
+x11-toolkits/wxgtk29|x11-toolkits/wxgtk30|2014-03-24|wxGTK 2.9 was a development version superseded by the 3.0 release
 accessibility/ruby-atk||2014-03-24|Has expired: Use rubygem-atk instead
 devel/ruby-gio2||2014-03-24|Has expired: Use rubygem-gio2 instead
 devel/ruby-glib2||2014-03-24|Has expired: Use rubygem-glib2 instead
@@ -5890,9 +5890,9 @@ databases/libgda3-mysql||2014-04-11|Ancient version, consider using newer versio
 databases/libgda3-odbc||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-odbc||2014-04-11|Ancient version, consider using newer versions
 databases/libgda3-postgresql||2014-04-11|Ancient version, consider using newer versions
-databases/libgnomedb||2014-04-11|Superseeded by libgda starting from version 4
-databases/libgnomedb-reference||2014-04-11|Superseeded by libgda starting from version 4
-databases/mergeant||2014-04-11|Superseeded by libgda starting from version 4
+databases/libgnomedb||2014-04-11|Superseded by libgda starting from version 4
+databases/libgnomedb-reference||2014-04-11|Superseded by libgda starting from version 4
+databases/mergeant||2014-04-11|Superseded by libgda starting from version 4
 deskutils/evolution-jescs||2014-04-11|Doesn't work with newer version of evolution
 deskutils/nautilus-locked-folder||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
 www/screem||2014-04-11|Has expired: gnome-menus 2.x will be updated in the GNOME 3 import
@@ -6116,7 +6116,7 @@ german/bsdgroup-firefox-searchplugin||2014-05-31|Has expired: bsdgroup.de no lon
 german/bsdforen-firefox-searchplugin||2014-05-31|Has expired: No longer works after forum software update
 lang/ocaml-doc||2014-06-01|Has expired: Documentation is now included in lang/ocaml
 lang/ocaml-examples||2014-06-01|Has expired: Outdated and discontinued; new examples are in lang/ocaml
-lang/gnat-aux|lang/gcc-aux|2014-06-01|Has expired: Superceded by gcc4.9-based lang/gcc-aux, use it instead
+lang/gnat-aux|lang/gcc-aux|2014-06-01|Has expired: superseded by gcc4.9-based lang/gcc-aux, use it instead
 lang/python31|lang/python33|2014-06-01|Has expired: Python 3.1 will be end-of-life soon, please migrate to lang/python33
 net/cvsup-mirror||2014-06-01|Removed: www, doc, gnats, ports repo gone; src repo deprecated
 multimedia/shell-fm||2014-06-02|Has expired: Unusable, subscription radio streaming service will come to an end
@@ -6134,7 +6134,7 @@ lang/clojure-contrib||2014-06-15|Has expired: monolithic contrib library is obso
 devel/bzapi||2014-06-15|Has expired: Bugzilla has a native REST API, see https://wiki.mozilla.org/BMO/REST
 graphics/GraphicsMagick13|graphics/GraphicsMagick|2014-06-17|Removed, duplicate of unversioned GraphicsMagick port
 textproc/m17n-contrib|devel/m17n-db|2014-06-18|m17n-contrib was incorporated into m17n-db
-www/xpi-deepestsender||2014-06-18|Upstream disappeared, not working with modern mozilla applications
+www/xpi-deepestsender||2014-06-18|Upstream disappeared, not working with modern Mozilla applications
 devel/tortoisehg2|devel/tortoisehg|2014-06-20|Port has been renamed
 german/bugzilla40|german/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla40
 german/bugzilla42|german/bugzilla44|2014-06-21|Removed, localized version of expired devel/bugzilla42
@@ -6148,9 +6148,8 @@ textproc/eruby|www/rubygem-erubis|2014-06-21|Has expired: Only for threadless ru
 mail/p5-FuzzyOcr|mail/p5-FuzzyOcr-devel|2014-06-21|Has expired: Unmaintained upstream, no ports depending on it. Use mail/p5-FuzzyOcr-devel instead
 devel/bugzilla40|devel/bugzilla44|2014-06-21|Has expired
 devel/bugzilla42|devel/bugzilla44|2014-06-21|Has expired
-sysutils/sysupdate||2014-06-21|Removed, no longer needed/relevent with FreeBSD in SVN.
+sysutils/sysupdate||2014-06-21|Removed, no longer needed/relevent with FreeBSD in SVN
 www/phpbb-devel|www/phpbb3|2014-06-22|Has expired: Use www/phpbb3 instead
 math/polymake||2014-06-22|Has expired: Does not build with any supported version of Perl
 www/phpsysinfo-dev|www/phpsysinfo|2014-06-22|Has expired: Use www/phpsysinfo instead
-graphics/luxrender||2014-06-23|Does not build with newer boost
 sysutils/syslog-ng-devel|sysutils/syslog-ng|2014-06-23|Has expired: Use sysutils/syslog-ng instead
