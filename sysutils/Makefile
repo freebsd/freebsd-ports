@@ -650,7 +650,6 @@
     SUBDIR += patchelf
     SUBDIR += pax-utils
     SUBDIR += pbimaker
-    SUBDIR += pc-sysinstall
     SUBDIR += pcbsd-utils
     SUBDIR += pcbsd-utils-qt4
     SUBDIR += pcfclock
