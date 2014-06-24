@@ -1,4 +1,6 @@
-etc/splat.conf.sample
+@sample etc/splat.conf.sample
+man/man5/splat.conf.5.gz
+man/man8/splatd.8.gz
 sbin/splatd
 %%PYTHON_SITELIBDIR%%/splat/__init__.py
 %%PYTHON_SITELIBDIR%%/splat/__init__.pyc
