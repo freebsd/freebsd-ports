@@ -12,10 +12,8 @@ COMMENT=	DockApp showing the state of a wireless network device
 
 USE_XORG=	x11 xpm
 
-MAN1=		wmwlmon.1
-PLIST_FILES=	bin/wmwlmon
+PLIST_FILES=	bin/wmwlmon man/man1/wmwlmon.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700052
@@ -31,7 +29,7 @@ post-patch:
 		-e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmwlmon ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmwlmon.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/wmwlmon ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmwlmon.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
