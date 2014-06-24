@@ -3,7 +3,7 @@
 
 PORTNAME=	libchipcard
 PORTVERSION=	5.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=02&release=26&file=01&dummy=/
 
