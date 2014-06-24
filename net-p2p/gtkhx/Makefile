@@ -10,27 +10,19 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ version of Hx, a UNIX Hotline Client
 
+LICENSE=	GPLv2
+
 USES=		pathfix gmake
 USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gtkhx.1
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-USES+=		gettext
-.else
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=--disable-nls
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
