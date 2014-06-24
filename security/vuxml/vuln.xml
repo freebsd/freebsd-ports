@@ -57,6 +57,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1c840eb9-fb32-11e3-866e-b499baab0cbe">
+    <topic>gnupg -- possible DoS using garbled compressed data packets</topic>
+    <affects>
+      <package>
+	<name>gnupg</name>
+	<range><lt>1.4.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Werner Koch reports:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000344.html">
+	  <p>This release includes a *security fix* to stop
+	    a possible DoS using garbled compressed data packets which can be used
+	    to put gpg into an infinite loop.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000344.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-23</discovery>
+      <entry>2014-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ad309d9-fb03-11e3-bebd-000c2980a9f3">
     <topic>samba -- multiple vulnerabilities</topic>
     <affects>
