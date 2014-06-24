@@ -59,7 +59,7 @@ post-patch:
 .if !defined(GAMIN_SLAVE)
 regression-test: build
 	@${ECHO_MSG} "===> Running gamin regression tests"
-	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} tests)
 
 post-install:
