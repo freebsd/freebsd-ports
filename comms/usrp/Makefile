@@ -64,17 +64,17 @@ PLIST_SUB+=	PUSRP2="@comment "
 
 do-build:
 # build host component
-	(export PATH=${LOCALBASE}/zpu/bin:${PATH};cd ${CONFIGURE_WRKSRC}&&${GMAKE})
+	(export PATH=${LOCALBASE}/zpu/bin:${PATH};cd ${CONFIGURE_WRKSRC}&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
 # build usrp firmware
 #	(export PATH=${LOCALBASE}/zpu/bin:${PATH};\
-#	cd ${WRKSRC}/images && ${GMAKE} -f Makefile images)
+#	cd ${WRKSRC}/images && ${MAKE_CMD} -f Makefile images)
 
 .if	USRP1
-	(cd ${WRKSRC}/images && ${GMAKE} -f Makefile images_usrp1)
+	(cd ${WRKSRC}/images && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile images_usrp1)
 .endif
 .if	USRP2
 	(export PATH=${LOCALBASE}/zpu/bin:${PATH};\
-	cd ${WRKSRC}/images && ${GMAKE} -f Makefile images_usrp2)
+	cd ${WRKSRC}/images && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile images_usrp2)
 .endif
 
 do-install:
