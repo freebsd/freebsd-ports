@@ -1,4 +1,3 @@
 bin/colorize
-@unexec if cmp -s %D/etc/colorizerc %D/etc/colorizerc.dist; then rm -f %D/etc/colorizerc; fi
-etc/colorizerc.dist
-@exec if [ ! -f %D/etc/colorizerc ]; then cp -f %D/etc/%f %D/etc/colorizerc; fi
+@sample etc/colorizerc.sample
+man/man1/colorize.1.gz
