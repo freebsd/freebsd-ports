@@ -2,7 +2,7 @@
 
 PORTNAME=	gwenhywfar
 PORTVERSION=	4.3.3
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=67&file=01&dummy=/
 
@@ -14,9 +14,8 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 
-USES=		pathfix pkgconfig gettext gmake
+USES=		pathfix pkgconfig gettext gmake libtool
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \
