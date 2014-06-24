@@ -95,33 +95,9 @@ lib/kde4/libsmb4kconfigdialog.so
 lib/kde4/libsmb4knetworkbrowser.so
 lib/kde4/libsmb4ksharesview.so
 lib/kde4/libsmb4ksearchdialog.so
-lib/libsmb4kcore.so.3.2.0
-lib/libsmb4kcore.so.3
 lib/libsmb4kcore.so
+lib/libsmb4kcore.so.3
+lib/libsmb4kcore.so.3.2.0
 lib/libsmb4kdialogs.so
-@dirrmtry share/apps/kconf_update
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrm share/apps/smb4k
-@dirrmtry share/apps
-@dirrmtry share/doc/HTML/en/smb4k
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
-@dirrmtry share/doc
-@dirrmtry share/icons/oxygen/128x128/apps
-@dirrmtry share/icons/oxygen/128x128
-@dirrmtry share/icons/oxygen/16x16/apps
-@dirrmtry share/icons/oxygen/16x16
-@dirrmtry share/icons/oxygen/22x22/apps
-@dirrmtry share/icons/oxygen/22x22
-@dirrmtry share/icons/oxygen/32x32/apps
-@dirrmtry share/icons/oxygen/32x32
-@dirrmtry share/icons/oxygen/48x48/apps
-@dirrmtry share/icons/oxygen/48x48
-@dirrmtry share/icons/oxygen/64x64/apps
-@dirrmtry share/icons/oxygen/64x64
-@dirrmtry share/icons/oxygen
-@dirrmtry share/icons
-@dirrmtry share/locale
-@dirrmtry lib/kde4
-@dirrmtry lib
-@dirrmtry share
-@dirrmtry bin
