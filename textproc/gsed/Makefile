@@ -23,16 +23,10 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 INFO=		sed
 
 OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
+NLS_USES=	gettext iconv
+NLS_CONFIGURE_ENABLE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's,^\* sed:,* GNU sed:,' \
@@ -51,15 +45,13 @@ post-install:
 .for f in ${SAMP_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/testsuite/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 # Maintainer only
 test:
 	@cd ${WRKSRC}/testsuite; ${MAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
