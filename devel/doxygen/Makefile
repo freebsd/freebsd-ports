@@ -86,7 +86,7 @@ post-configure:
 
 post-build:
 	cd ${BUILD_WRKSRC}/examples; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} all
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} all
 
 pre-install:
 	${RM} -rf ${TMPDOCDEST} ${PLIST}
