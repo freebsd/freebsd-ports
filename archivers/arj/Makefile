@@ -22,7 +22,8 @@ CFLAGS+=	-fPIC
 MAKEFILE=	GNUmakefile
 STRIP=
 LANGUAGE?=	en
-MAKE_ENV+=	"LOCALE=${LANGUAGE}"
+MAKE_ARGS+=	"LOCALE=${LANGUAGE}"
+ALL_TARGET=	prepare all
 
 PORTDOCS=	*
 
@@ -39,11 +40,7 @@ PLIST_DIRS=	lib/arj
 
 PORTSCOUT=	skipv:3.10g
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not install on powerpc
-.endif
+BROKEN_powerpc=		Does not install on powerpc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!/etc!${LOCALBASE}/etc!' \
@@ -52,13 +49,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!^static !!' ${WRKSRC}/integr.c
 	@${REINPLACE_CMD} -e 's!strnlen!_strnlen!g' ${WRKSRC}/fardata.c
 
-pre-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} prepare)
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING debug.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/resource/en && \
 		${INSTALL_DATA} arjl.txt arjs.txt history.txt readme.txt unix.txt ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
