@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	basic256
-PORTVERSION=	1.1.0.0
+PORTVERSION=	1.1.2.6
 CATEGORIES=	lang
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	kidbasic/${PORTNAME}
@@ -19,7 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		bison dos2unix qmake
 USE_SDL=	sdl mixer
-USE_QT4=	corelib gui network xml webkit moc_build rcc_build uic_build
+USE_QT5=	buildtools core gui multimedia network printsupport sql widgets
+QMAKE_ARGS+=	LOCALBASE="${LOCALBASE}"
 QMAKE_SOURCE_PATH=	BASIC256.pro
 
 MAKE_JOBS_UNSAFE=	yes
