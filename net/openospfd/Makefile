@@ -67,4 +67,10 @@ do-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=		Does not build on FreeBSD 10+
+.endif
+
 .include <bsd.port.mk>
