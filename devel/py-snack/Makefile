@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snack
-PORTVERSION=	0.52.16
+PORTVERSION=	0.52.17
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/n/e/newt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,6 +9,8 @@ DISTNAME=	newt-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Not Eriks Windowing Toolkit Python bindings
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2 \
 		libpopt.so:${PORTSDIR}/devel/popt \

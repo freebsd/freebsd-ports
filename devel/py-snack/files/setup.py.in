@@ -7,7 +7,7 @@ setup(
 	py_modules=['snack'],
 	ext_modules=[ Extension(
 		name='_snack',
-		sources=['snackmodule.c'],
+		sources=['snack.c'],
 		include_dirs=['.', '%%LOCALBASE%%'+'/include', '%%PREFIX%%'+'/include'],
 		library_dirs=['.', '%%LOCALBASE%%'+'/lib', '%%PREFIX%%'+'/lib'],
 		libraries=['newt', 'popt', 'slang', 'ncurses']
