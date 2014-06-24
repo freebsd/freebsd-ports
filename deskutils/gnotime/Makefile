@@ -63,11 +63,11 @@ pre-configure:
 		--disable-sqlite --disable-gdasql)
 
 pre-build:
-	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 pre-install:
-	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 .include <bsd.port.mk>
