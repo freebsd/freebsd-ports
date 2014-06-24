@@ -125,33 +125,55 @@ Notes:
   </vuln>
 
   <vuln vid="c4892644-f8c6-11e3-9f45-6805ca0b3d42">
-    <topic>phpMyAdmin -- two XSS vulnerabilities due to unescaped table names</topic>
+    <topic>phpMyAdmin -- two XSS vulnerabilities due to unescaped db/table names</topic>
     <affects>
       <package>
 	<name>phpMyAdmin</name>
-	<range><lt>4.2.4</lt></range>
+	<range><ge>4.1.0</ge><lt>4.2.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The phpMyAdmin development team reports:</p>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-2.php">
-	  <p>XSS injection due to unescaped db/table name in
-	    navigation hiding.</p>
+	  <p>Self-XSS due to unescaped HTML output in recent/favorite
+	    tables navigation.</p>
+
+	  <p>When marking a crafted database or table name as
+	    favorite or having it in recent tables, it is possible to
+	    trigger an XSS.</p>
+
+
+	  <p>This vulnerability can be triggered only by someone who
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    form.</p>
+
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-3.php">
-	  <p>XSS injection due to unescaped db/table name in
-	    recent/favorite tables.</p>
+	  <p>Self-XSS due to unescaped HTML output in navigation items
+	    hiding feature.</p>
+
+	  <p>When hiding or unhiding a crafted table name in the
+	    navigation, it is possible to trigger an XSS.</p>
+
+	  <p>This vulnerability can be triggered only by someone who
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    form.</p>
 	</blockquote>
     </body>
     </description>
     <references>
+      <cvename>CVE-2014-4348</cvename>
+      <cvename>CVE-2014-4349</cvename>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-2.php</url>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-3.php</url>
     </references>
     <dates>
       <discovery>2014-06-20</discovery>
       <entry>2014-06-20</entry>
+      <modified>2014-06-24</modified>
     </dates>
   </vuln>
 
