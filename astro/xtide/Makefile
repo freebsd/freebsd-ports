@@ -67,7 +67,7 @@ pre-configure:
 			${SH} ./configure --disable-shared \
 			${CONFIGURE_ARGS} \
 		&& ${MKDIR} ${WRKDIR}/${TCD_DISTNAME}/.libs \
-		&& ${SETENV} ${MAKE_ENV} ${GMAKE}
+		&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
 post-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
