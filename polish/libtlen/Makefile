@@ -11,13 +11,16 @@ COMMENT=	Backend for interoperability with Tlen.pl, Polish IM network
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in libtlen.html libtlen.css AUTHORS TODO
-	@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
