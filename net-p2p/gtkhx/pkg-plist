@@ -1,4 +1,5 @@
 bin/gtkhx
+man/man1/gtkhx.1.gz
 %%DATADIR%%/sounds/chatinvite.aiff
 %%DATADIR%%/sounds/chatpost.aiff
 %%DATADIR%%/sounds/error.aiff
