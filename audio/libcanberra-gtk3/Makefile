@@ -13,10 +13,13 @@ MASTERDIR=	${.CURDIR}/../../audio/libcanberra
 SLAVEPORT=	gtk3
 PLIST=		${.CURDIR}/pkg-plist
 
-do-build:
-	cd ${WRKSRC} && ${GMAKE} libcanberra-gtk3.pc
-	cd ${WRKSRC}/src && ${GMAKE} libcanberra-gtk3.la
-	cd ${WRKSRC}/src && ${GMAKE} libcanberra-gtk3-module.la
+BUILD_WRKSRC=	${WRKSRC}/src
+ALL_TARGET=	libcanberra-gtk3.la libcanberra-gtk3-module.la
+
+pre-build:
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} libcanberra-gtk3.pc
+
+post-build:
 # fix the .la file so it doesn't point to the build dir anymore.
 	@${REINPLACE_CMD} -e '/^relink_command/ d' \
 		-e 's|${WRKSRC}/src/libcanberra.la|${LOCALBASE}/lib/libcanberra.la|g' \
