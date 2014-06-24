@@ -2,7 +2,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	5.2
-CATEGORIES=	ports-mgmt
+CATEGORIES=	print ports-mgmt
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	pkg-
 
