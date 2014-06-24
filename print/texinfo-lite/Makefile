@@ -4,7 +4,7 @@ PORTNAME=	texinfo
 PORTVERSION=	5.2
 CATEGORIES=	print ports-mgmt
 MASTER_SITES=	GNU
-PKGNAMESUFFIX=	-minimal
+PKGNAMESUFFIX=	-lite
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Minimal version of texinfo

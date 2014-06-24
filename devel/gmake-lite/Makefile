@@ -5,7 +5,7 @@ PORTVERSION=	3.82
 CATEGORIES=	devel ports-mgmt
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
-PKGNAMESUFFIX=	-minimal
+PKGNAMESUFFIX=	-lite
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Minimalist version of gnu make
