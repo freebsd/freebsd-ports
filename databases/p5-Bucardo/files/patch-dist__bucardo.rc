@@ -1,0 +1,15 @@
+--- ./dist/bucardo.rc.orig	2014-03-16 16:30:40.000000000 +0100
++++ ./dist/bucardo.rc	2014-06-24 17:39:05.000000000 +0200
+@@ -11,10 +11,11 @@
+ . /etc/rc.subr
+ 
+ name="bucardo"
+-rcvar=`set_rcvar`
++rcvar="bucardo_enable"
+ command="/usr/local/bin/${name}"
+ 
+ load_rc_config $name
++bucardo_enable=${bucardo_enable:-"NO"}
+ bucardo_flags=${bucardo_flags:-"--dbuser bucardo --dbname bucardo"}
+ 
+ rc_usage="start|stop|reload|restart|status|kick [sync_name]"
