@@ -241,9 +241,9 @@ pre-build:
 .if !defined(NO_BUILD) && !target(do-build)
 
 do-build:
-	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks
+	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
 	@ for dir in ${BUILD_DIRS}; do \
-		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE}; \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}; \
 	done
 
 .  if exists(${FILESDIR}/pkg-message${COMPONENT}.in)
@@ -265,7 +265,7 @@ post-patch:
 do-install:
 	@for dir in ${INSTALL_DIRS}; do \
 	    cd ${WRKSRC}/$${dir} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${INSTALL_TARGET}; \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${INSTALL_TARGET}; \
 	done
 .  if defined(SERVER_ONLY)
 	@ ${MKDIR} ${STAGEDIR}${PREFIX}/share/postgresql ;\
@@ -275,7 +275,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PG_USER}
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
-	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-local
+	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-local
 .  endif
 	@ if [ -r ${PKGMESSAGE} ]; then \
 		${MKDIR} ${STAGEDIR}${DOCSDIR} ;\
@@ -287,7 +287,7 @@ do-install:
 check:
 	@if [ `id -u` != 0 ] ; then \
 	  ${ECHO} "Running postgresql regressions tests" ;\
-	  cd ${WRKSRC}; ${GMAKE} check ;\
+	  cd ${WRKSRC}; ${MAKE_CMD} check ;\
 	 else \
 	  ${ECHO} "You cannot run regression tests when postgresql is built as user root." ; \
 	  ${ECHO} "Clean and rebuild the port as a regular user to run the tests." ;\
