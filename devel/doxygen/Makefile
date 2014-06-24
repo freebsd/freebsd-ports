@@ -23,7 +23,7 @@ USES=		bison iconv perl5 gmake
 ALL_TARGET=	all
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
-CONFIGURE_ARGS=	--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
+CONFIGURE_ARGS=	--prefix ${PREFIX} --perl ${PERL} --make ${MAKE_CMD} \
 		--install "${INSTALL}"
 REINPLACE_ARGS=	-i ''
 
