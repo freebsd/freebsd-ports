@@ -1,0 +1,11 @@
+bin/xnec2c
+%%DOCS%%%%DOCSDIR%%/xnec2c.html
+%%DOCS%%%%DOCSDIR%%/images/charges.png
+%%DOCS%%%%DOCSDIR%%/images/currents.png
+%%DOCS%%%%DOCSDIR%%/images/excitation.png
+%%DOCS%%%%DOCSDIR%%/images/freq_plots.png
+%%DOCS%%%%DOCSDIR%%/images/nec2_edit.png
+%%DOCS%%%%DOCSDIR%%/images/radiation.png
+%%DOCS%%%%DOCSDIR%%/images/wire.png
+%%DOCS%%@dirrm %%DOCSDIR%%/images
+%%DOCS%%@dirrm %%DOCSDIR%%
