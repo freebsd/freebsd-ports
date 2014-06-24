@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 INFO=		tar
 
-USES=		iconv:${STATIC_ARGS} tar:xz
+USES=		iconv:${STATIC_ARGS} tar:xz charsetfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules
