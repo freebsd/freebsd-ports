@@ -10,20 +10,18 @@ MASTER_SITES=	SF
 MAINTAINER=	oz@cyprio.net
 COMMENT=	GNOME client for Twitter
 
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
-		notify.4:${PORTSDIR}/devel/libnotify \
-		canberra:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libsexy.so:${PORTSDIR}/x11-toolkits/libsexy \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libcanberra.so:${PORTSDIR}/audio/libcanberra
 
 USE_XORG=	x11
 USE_GNOME=	glib20 gtk20 gconf2 libxml2 gnomedocutils
 INSTALLS_OMF=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 CONFIGURE_ENV+=	GMSGFMT="${LOCALBASE}/bin/msgfmt"
 GCONF_SCHEMAS=	twitux.schemas
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
