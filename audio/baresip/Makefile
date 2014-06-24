@@ -119,7 +119,7 @@ do-install:
 # Install modules and add to plist
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules
-	for m in $$(${GMAKE} -sC ${WRKSRC} ${MAKE_ARGS} showmodules); \
+	for m in $$(${SETENV} ${MAKE_ENV} ${MAKE_CMD} -sC ${WRKSRC} ${MAKE_ARGS} showmodules); \
 	do ${INSTALL_LIB} ${WRKSRC}/$$m.so \
 		${STAGEDIR}${PREFIX}/lib/baresip/modules; \
 	   ${ECHO_CMD} lib/${PORTNAME}/modules/$$m.so >> ${TMPPLIST}; \
