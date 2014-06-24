@@ -50,7 +50,7 @@ post-patch:
 		's|^#!.*|#!${WISH}|' ${WRKSRC}/tcltk/tkshell.tcl
 
 pre-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} database/database.h)
 
 .include <bsd.port.post.mk>
