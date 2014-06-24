@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		--with-gnu-ld --with-libwrap \
-		--with-ldflags="-lm -lkvm -ldevstat -lpkg -L${LOCALBASE}/lib"
+		--with-ldflags="-lm -lkvm -ldevstat -lpkg ${LDFLAGS}"
 SUB_FILES=	pkg-message
 
 .if defined(BATCH)
@@ -203,6 +203,12 @@ DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 
 CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 
+.include <bsd.port.pre.mk>
+
+.if defined(OPENSSL_PORT)
+LDFLAGS+=	-lcrypto
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
@@ -292,4 +298,4 @@ display-message:
 #   Don't forget to bump library version in these ports.
 #   french/plgrenouille,graphics/hpoj,lang/php4,lang/php5,mail/cyrus-imapd22,mail/cyrus-imapd23,misc/kdeutils3,net-mgmt/braa,net-mgmt/docsis,net-mgmt/mbrowse,net-mgmt/nagios-snmp-plugins,net-mgmt/p5-SNMP-Info,net-mgmt/py-yapsnmp,net-mgmt/sdig,net-mgmt/zabbix,net/cactid,net/wireshark,net/ifstat,net/quagga,net/rtg,print/hplip,security/libfwbuilder,sysutils/apcupsd,sysutils/jailadmin,sysutils/nut
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
