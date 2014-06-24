@@ -4,7 +4,7 @@
 PORTNAME=	l2a
 PORTVERSION=	1.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://heim.ifi.uio.no/~gisle/enjoy/
+MASTER_SITES=	http://hannemyr.com/enjoy/
 DISTNAME=	l2a
 
 MAINTAINER=	jflemer@alum.rpi.edu
@@ -13,10 +13,8 @@ COMMENT=	L2a - LaTeX to ASCII converter
 USES=		zip
 
 WRKSRC=		${WRKDIR}
-MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}"
 
-MAN1=		l2a.1
-PLIST_FILES=	bin/l2a
+PLIST_FILES=	bin/l2a \
+		man/man1/l2a.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
