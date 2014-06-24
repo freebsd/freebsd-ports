@@ -2,7 +2,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	5.0.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=95&file=01&dummy=/
 
@@ -15,13 +15,13 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libgwenhywfar.so:${PORTSDIR}/devel/gwenhywfar \
 		libgmp.so:${PORTSDIR}/math/gmp
 
-USE_AUTOTOOLS=	libtool
-USES=		pathfix pkgconfig gettext gmake
+USES=		pathfix pkgconfig gettext gmake libtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lintl
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	AQB_SHLIB_VER="${AQB_SHLIB_VER}" \
@@ -30,6 +30,8 @@ USE_LDCONFIG=	yes
 
 AQB_SHLIB_VER=	34
 GWEN_SHLIB_VER=	60
+
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOXYGEN KTOBLZCHECK PAYPAL
 OPTIONS_DEFAULT=	KTOBLZCHECK
@@ -60,10 +62,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/apidoc
-	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
-		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
-	@${FIND} -P -d ${STAGEDIR}${DOCSDIR} -type d 2>/dev/null | \
-		${SED} -ne 's|^${STAGEDIR}${PREFIX}/|@dirrm |p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
