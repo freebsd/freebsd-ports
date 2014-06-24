@@ -2,7 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	99
@@ -24,21 +24,22 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
-		--with-libxml2=${LOCALBASE} \
-		--without-python
+		--with-libxml2=${LOCALBASE}
 ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
 OPTIONS_DEFAULT=	IPV6 SSL THREADS GSSAPI_NONE
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE FIXED_RRSET SIGCHASE \
-			IPV6 THREADS FILTER_AAAA GOST \
+			IPV6 THREADS FILTER_AAAA GOST PYTHON \
 			LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
+
+OPTIONS_SUB=	yes
 
 SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
 REPLACE_BASE_DESC=	Replace base BIND (FreeBSD 9.x and earlier)
@@ -47,6 +48,7 @@ FIXED_RRSET_DESC=	Enable fixed rrset ordering
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 FILTER_AAAA_DESC=	Enable filtering of AAAA records
 GOST_DESC=		Enable GOST ciphers, needs SSL (see help)
+PYTHON_DESC=		Build with Python utilities
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -86,6 +88,10 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 FILTER_AAAA_CONFIGURE_ENABLE=	filter-aaaa
 
 GOST_CONFIGURE_WITH=	gost
+
+PYTHON_CONFIGURE_WITH=	python
+PYTHON_USE=	PYTHON=yes
+PYTHON_USES=	gmake
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
 DLZ_POSTGRESQL_USE=		pgsql=yes

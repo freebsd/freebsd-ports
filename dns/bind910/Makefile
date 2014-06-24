@@ -2,7 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX?=	910
@@ -24,8 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
-		--with-libxml2=${LOCALBASE} \
-		--without-python
+		--with-libxml2=${LOCALBASE}
 ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind9*-9.[456789].* bind9*-sdb-9.[456789].*
@@ -34,7 +33,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=	IPV6 SSL THREADS SIGCHASE IDN GSSAPI_NONE
-OPTIONS_DEFINE=		IDN LARGE_FILE GOST \
+OPTIONS_DEFINE=		IDN LARGE_FILE GOST PYTHON \
 			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA
 OPTIONS_RADIO=	CRYPTO
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
@@ -49,6 +48,8 @@ OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
 .endif	# BIND_TOOLS_SLAVE
 
+OPTIONS_SUB=	yes
+
 SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
 LARGE_FILE_DESC=	64-bit file support
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
@@ -58,6 +59,7 @@ CRYPTO_DESC=		Choose which crypto engine to use
 NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 GEOIP_DESC=		Allow geographically based ACL.
 GOST_DESC=		Enable GOST ciphers, needs SSL (see help)
+PYTHON_DESC=		Build with Python utilities
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -105,6 +107,10 @@ GEOIP_CONFIGURE_WITH=	geoip
 GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 GOST_CONFIGURE_WITH=	gost
+
+PYTHON_CONFIGURE_WITH=	python
+PYTHON_USE=	PYTHON=yes
+PYTHON_USES=	gmake
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
 DLZ_POSTGRESQL_USE=		pgsql=yes
