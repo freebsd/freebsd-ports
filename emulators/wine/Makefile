@@ -132,7 +132,7 @@ IGNORE=		lacks required sound support on FreeBSD before 8.0
 .endif
 
 pre-build:
-	cd ${WRKSRC} && ${GMAKE} depend
+	cd ${WRKSRC} && ${MAKE_CMD} depend
 
 post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \

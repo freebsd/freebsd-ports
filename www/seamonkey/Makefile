@@ -193,7 +193,7 @@ post-configure:
 
 .if ${PORT_OPTIONS:MMAILNEWS} && ${PORT_OPTIONS:MENIGMAIL}
 post-build:
-	${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} all xpi \
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} all xpi \
 		-C ${WRKSRC}/mailnews/extensions/enigmail
 .endif
 

@@ -77,8 +77,8 @@ post-patch:
 			${WRKSRC}/conf/kismet.conf.in \
 			${WRKSRC}/conf/kismet_drone.conf
 	@${REINPLACE_CMD} -e "s/plugin-/plugin-[aps]/" \
-		-e "s/make/${GMAKE}/" \
-		-e "s/\$$(MAKE)/${GMAKE}/" \
+		-e "s/make/${MAKE_CMD}/" \
+		-e "s/\$$(MAKE)/${MAKE_CMD}/" \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s/CXXFLAGS/CPPFLAGS/" \
 		${WRKSRC}/plugin-alertsyslog/Makefile

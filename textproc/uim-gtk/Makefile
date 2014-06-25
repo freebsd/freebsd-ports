@@ -25,18 +25,18 @@ IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/uim && ${GMAKE} libuim-x-util.la libuim-counted-init.la)
-	(cd ${WRKSRC}/gtk2/immodule && ${GMAKE})
-	(cd ${WRKSRC}/gtk2/pad && ${GMAKE})
-	(cd ${WRKSRC}/gtk2/pref && ${GMAKE})
-	(cd ${WRKSRC}/gtk2/switcher && ${GMAKE})
-	(cd ${WRKSRC}/gtk2/toolbar && ${GMAKE})
+	(cd ${WRKSRC}/uim && ${MAKE_CMD} libuim-x-util.la libuim-counted-init.la)
+	(cd ${WRKSRC}/gtk2/immodule && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk2/pad && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk2/pref && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk2/switcher && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk2/toolbar && ${MAKE_CMD})
 
 do-install:
-	(cd ${WRKSRC}/gtk2/immodule && ${GMAKE} DESTDIR=${STAGEDIR} install)
-	(cd ${WRKSRC}/gtk2/pad && ${GMAKE} DESTDIR=${STAGEDIR} install)
-	(cd ${WRKSRC}/gtk2/pref && ${GMAKE} DESTDIR=${STAGEDIR} install)
-	(cd ${WRKSRC}/gtk2/switcher && ${GMAKE} DESTDIR=${STAGEDIR} install)
-	(cd ${WRKSRC}/gtk2/toolbar && ${GMAKE} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk2/immodule && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk2/pad && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk2/pref && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk2/switcher && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk2/toolbar && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
 
 .include "${MASTERDIR}/Makefile"

@@ -33,7 +33,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/
 .endfor
 	cd ${WRKSRC}/src && ${SETENV} DESTDIR=${STAGEDIR} \
-		${GMAKE} install-gtk3moduleLTLIBRARIES
+		${MAKE_CMD} install-gtk3moduleLTLIBRARIES
 	cd ${STAGEDIR}${PREFIX}/lib/gtk-3.0/modules && \
 		${LN} -sf libcanberra-gtk3-module.so libcanberra-gtk-module.so
 

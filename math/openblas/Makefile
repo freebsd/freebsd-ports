@@ -131,12 +131,12 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=1 USE_THREAD=0 \
-	${GMAKE} ${MAKE_ARGS}
+	${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libopenblas-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblas.a
 	${CP} ${WRKSRC}/libopenblas-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblas.so.${OPENBLAS_SVER}
-	cd ${WRKSRC} ; ${GMAKE} ${MAKE_ARGS} clean
+	cd ${WRKSRC} ; ${MAKE_CMD} ${MAKE_ARGS} clean
 	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
-	USE_THREAD=1 ${GMAKE} ${MAKE_ARGS}
+	USE_THREAD=1 ${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblasp.a
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblasp.so.${OPENBLAS_SVER}
 .if !${PORT_OPTIONS:MDEBUG}
@@ -152,9 +152,9 @@ BENCHMARK_THREADS_FLAG =	OPENBLAS_NUM_THREADS=${BENCHMARK_MAXTHREADS}
 
 benchmark: build
 	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
-	USE_THREAD=1 ${GMAKE} ${MAKE_ARGS} hpl
+	USE_THREAD=1 ${MAKE_CMD} ${MAKE_ARGS} hpl
 	cd ${WRKSRC}/benchmark ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
-	USE_THREAD=1 ${BENCHMARK_THREADS_FLAG} ${GMAKE} ${MAKE_ARGS}
+	USE_THREAD=1 ${BENCHMARK_THREADS_FLAG} ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
 	cd ${WRKDIR}/lib ; \

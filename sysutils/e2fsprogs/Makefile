@@ -89,7 +89,7 @@ post-build:
 # else we're in trouble if e2fsck is needed for boot:
 # (we don't use e2fsck.static, since we can link libc.so dynamically)
 	cd ${WRKSRC}/e2fsck && ${RM} -f e2fsck \
-		&& ${GMAKE} e2fsck \
+		&& ${MAKE_CMD} e2fsck \
 		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
 		../lib/libblkid.a  ../lib/libuuid.a" \
 		LIBINTL=${libintl}
@@ -106,7 +106,7 @@ post-build:
 	    echo 'FAIL' ; echo '===>  e2fsck depends on:' ; echo "$$a" ; exit 1 ; fi
 # Update translation binary files
 .if ${PORT_OPTIONS:MNLS}
-	cd ${WRKSRC}/po && ${GMAKE} update-gmo
+	cd ${WRKSRC}/po && ${MAKE_CMD} update-gmo
 .endif
 # Build fsck(8) wrapper
 	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -s ${LIBS} \
@@ -119,7 +119,7 @@ post-build:
 # There have been subtle failures induced by Linux-isms in the past.
 # -- Matthias Andree, package maintainer, 2007-09-18
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
-	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${GMAKE} -j${MAKE_JOBS_NUMBER} check TMPDIR=${WRKDIR}/tmp \
+	cd ${WRKSRC}/tests && ${MKDIR} ${WRKDIR}/tmp && ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} check TMPDIR=${WRKDIR}/tmp \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 
 post-install:

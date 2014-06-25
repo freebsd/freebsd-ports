@@ -39,32 +39,32 @@ do-build:
 	@${MKDIR} ${WRKSRC}/gnu/binutils_build
 	@cd ${WRKSRC}/gnu/binutils_build; \
 	 ${WRKSRC}/gnu/binutils-2.16.1/configure --disable-serial-configure --target=m68k-coff --disable-shared --enable-static --disable-multilib --disable-nls --disable-win32-registry
-	@cd ${WRKSRC}/gnu/binutils_build; ${GMAKE}
+	@cd ${WRKSRC}/gnu/binutils_build; ${MAKE_CMD}
 
 	@${ECHO} Building the GNU C COMPILER
 	@${MKDIR} ${WRKSRC}/gnu/gcc_build
 	@cd ${WRKSRC}/gnu/gcc_build; \
 	 ${WRKSRC}/gnu/gcc-4.1-20060728/configure --target=m68k-coff --with-gnu-as --disable-nls --disable-multilib --disable-shared --enable-static --disable-threads --disable-win32-registry --disable-checking --disable-werror --disable-pch --disable-mudflap --disable-libssp
-	@cd ${WRKSRC}/gnu/gcc_build; ${GMAKE}
+	@cd ${WRKSRC}/gnu/gcc_build; ${MAKE_CMD}
 
 	@${ECHO} Building A68K
-	@cd ${WRKSRC}/tigcc/sources/a68k; ${GMAKE}
+	@cd ${WRKSRC}/tigcc/sources/a68k; ${MAKE_CMD}
 
 	@${ECHO} Building LD-TIGCC
-	@cd ${WRKSRC}/tigcc/sources/ld-tigcc; ${GMAKE}
+	@cd ${WRKSRC}/tigcc/sources/ld-tigcc; ${MAKE_CMD}
 
 	@${ECHO} Building PATCHER
-	@cd ${WRKSRC}/tigcc/sources/patcher/src; ${GMAKE}
+	@cd ${WRKSRC}/tigcc/sources/patcher/src; ${MAKE_CMD}
 
 	@${ECHO} Building the ExePack support from the TIGCC Tools Suite
 	@cd ${WRKSRC}/tigcc/sources/ttpack; ${CC} ${CFLAGS} -o ttpack ttpack.c
 	@cd ${WRKSRC}/tigcc/sources/ttpack; ${CC} ${CFLAGS} -o ttbin2oth ttbin2oth.c
 
 	@${ECHO} Building TIGCC
-	@cd ${WRKSRC}/tigcc/sources/tigcc/src; ${GMAKE}
+	@cd ${WRKSRC}/tigcc/sources/tigcc/src; ${MAKE_CMD}
 
 	@${ECHO} Building TPRBUILDER
-	@cd ${WRKSRC}/tigcc/sources/tprbuilder/src; ${GMAKE}
+	@cd ${WRKSRC}/tigcc/sources/tprbuilder/src; ${MAKE_CMD}
 
 do-install:
 	@${MKDIR} ${PREFIX}/tigcc

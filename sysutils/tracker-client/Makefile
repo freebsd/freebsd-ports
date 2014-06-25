@@ -91,7 +91,7 @@ post-build:
 	@(cd ${WRKSRC}/src/tracker-extract && ${MAKE} libextract-msoffice.la)
 .elif defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="gnome"
 . for dir in ${EXTRA_WRKSRC}
-	@(cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 . endfor
 .endif
 
@@ -102,7 +102,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/tracker/extract-modules
 .elif defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="gnome"
 . for dir in ${EXTRA_WRKSRC}
-	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 . endfor
 . for man in ${MAN}
 	@(cd ${WRKSRC} && ${INSTALL_DATA} docs/manpages/${man} ${STAGEDIR}${MAN1PREFIX}/man/man1/${man})

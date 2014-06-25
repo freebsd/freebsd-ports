@@ -90,6 +90,6 @@ post-install:
 	@${LN} -fs ${DATADIR}/${PORTVERSION} ${STAGEDIR}${DATADIR}/current
 
 regression-test: build
-	cd ${WRKSRC} && ${GMAKE} -f ${MAKEFILE} test
+	cd ${WRKSRC} && ${MAKE_CMD} -f ${MAKEFILE} test
 
 .include <bsd.port.mk>

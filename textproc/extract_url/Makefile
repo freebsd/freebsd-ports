@@ -44,7 +44,7 @@ URI_FIND_RUN_DEPENDS=		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find
 PORTDOCS=	AUTHORS NEWS README
 
 post-patch:
-	@${REINPLACE_CMD} '/pod2man.mk/s|make|${GMAKE}|' \
+	@${REINPLACE_CMD} '/pod2man.mk/s|make|${MAKE_CMD}|' \
 		${WRKSRC}/${MAKEFILE}
 
 post-install:

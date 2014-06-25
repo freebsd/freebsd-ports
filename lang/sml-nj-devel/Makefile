@@ -280,7 +280,7 @@ do-install:
 	@${CHOWN} -R ${BINOWN}:${BINGRP} "${MLBIN}" "${MLLIB}"
 .if ${PORT_OPTIONS:MEVERYTHING}
 	@${ECHO} '(* Cleaning base/runtime: *)'
-	cd ${WRKDIR}/base/runtime/objs && ${GMAKE} clean
+	cd ${WRKDIR}/base/runtime/objs && ${MAKE_CMD} clean
 	@${ECHO} -n '(* Installing sources into ${MLROOT} ...'
 	@cd ${WRKDIR} && ${TAR} -cf - ${MLSRCEXCLUDES} ${MLSRCDIRS} | \
 	${TAR} -xf - -C "${MLROOT}"

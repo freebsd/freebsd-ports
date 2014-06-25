@@ -195,7 +195,7 @@ pre-configure:
 .if ${PORT_OPTIONS:MTESTS}
 post-build:
 	@if [ ! -f "${PY_NO_THREAD}" ]; then \
-		${GMAKE} -C ${WRKSRC} check; \
+		${MAKE_CMD} -C ${WRKSRC} check; \
 	fi
 .endif
 

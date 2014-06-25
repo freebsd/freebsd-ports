@@ -79,9 +79,9 @@ do-build:
 	@${CP} ${DISTDIR}/pkcs11t.h ${WRKDIR}/rsa
 	@${CP} ${DISTDIR}/pkcs11f.h ${WRKDIR}/rsa
 	@${ECHO_MSG} "===>  Building for wxWidgets dependency"
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${NOGUI} PKCS11_INC=${WRKDIR}/rsa WX_ROOT=${WRKDIR}/wxWidgets-${WX_VER} wxbuild)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${NOGUI} PKCS11_INC=${WRKDIR}/rsa WX_ROOT=${WRKDIR}/wxWidgets-${WX_VER} wxbuild)
 	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${NOGUI} WXSTATIC=1 PKCS11_INC=${WRKDIR}/rsa)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${NOGUI} WXSTATIC=1 PKCS11_INC=${WRKDIR}/rsa)
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Main/truecrypt ${STAGEDIR}${PREFIX}/bin

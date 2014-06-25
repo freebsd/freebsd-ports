@@ -65,6 +65,6 @@ post-install:
 .endif
 
 regression-test: build
-	cd ${WRKSRC} && ${GMAKE} check
+	cd ${WRKSRC} && ${MAKE_CMD} check
 
 .include <bsd.port.post.mk>

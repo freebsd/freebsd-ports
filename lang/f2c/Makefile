@@ -59,7 +59,7 @@ pre-configure:
 do-build:
 	@${ECHO_MSG} "===> Building f2c..."
 	@(cd ${WRKSRC}/src;	\
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 	@${ECHO_MSG} "===> Building libf2c..."
 	@(cd ${WRKSRC}/libf2c;	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET} libf2c.so)

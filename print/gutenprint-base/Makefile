@@ -108,7 +108,7 @@ pre-build:
 
 post-install:
 .if ${SLAVE_PORT}=="yes"
-	@(cd ${WRKSRC}/man && ${GMAKE} ${INSTALL_TARGET})
+	@(cd ${WRKSRC}/man && ${MAKE_CMD} ${INSTALL_TARGET})
 .endif
 
 .include <bsd.port.post.mk>

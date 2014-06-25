@@ -25,7 +25,7 @@ SUB_FILES=	pkg-message
 
 NO_STAGE=	yes
 pre-build:
-		cd ${WRKSRC}/ImageLib/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
+		cd ${WRKSRC}/ImageLib/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/BlockOut/blockout ${PREFIX}/bin

@@ -86,7 +86,7 @@ do-install:
 	        @for file in ${PLIST_FILES}; do \
 			${ECHO_CMD} $${file} >> ${TMPPLIST}; \
 	        done
-		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install)
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} \
 			${WRKDIR}/${DISTNAME}/AUTHORS \

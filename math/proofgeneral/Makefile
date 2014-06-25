@@ -30,7 +30,7 @@ NO_STAGE=	yes
 IGNORE=	the ProofGeneral developers no longer support XEmacs
 .endif
 
-MAKE_ARGS+=	PREFIX="${LOCALBASE}" DEST_PREFIX="${PREFIX}" MAKE="${GMAKE}" \
+MAKE_ARGS+=	PREFIX="${LOCALBASE}" DEST_PREFIX="${PREFIX}" MAKE="${MAKE_CMD}" \
 	DOCDIR="${DOCSDIR}" MANDIR="${PREFIX}/man/man1" INFODIR="${PREFIX}/info" \
 	BINDIR="${PREFIX}/bin" DESKTOP="${PREFIX}/share" \
 	ELISPP="${EMACS_SITE_LISPDIR}/ProofGeneral" \

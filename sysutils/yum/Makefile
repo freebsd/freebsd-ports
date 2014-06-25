@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/rpm:${PORTSDIR}/archivers/rpm4 \
 USE_PYTHON=	yes
 USES=		gettext gmake
 
-MAKE_ARGS=	MAKE=${GMAKE} PYTHON=${PYTHON_CMD} \
+MAKE_ARGS=	MAKE=${MAKE_CMD} PYTHON=${PYTHON_CMD} \
 		prefix=${PREFIX} mandir=${MANPREFIX}/man sysconfdir=${PREFIX}/etc
 
 RPMDIR?=	/var/lib/rpm

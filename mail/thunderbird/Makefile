@@ -140,7 +140,7 @@ pre-configure:
 post-build:
 	cd ${WRKSRC}/mailnews/extensions/enigmail && \
 		./makemake -r -o ${MOZ_OBJDIR}
-	${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} all xpi \
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} all xpi \
 		-C ${MOZ_OBJDIR}/mailnews/extensions/enigmail
 .endif
 

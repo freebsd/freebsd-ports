@@ -115,12 +115,12 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=1 USE_THREAD=0 \
-	${GMAKE} ${MAKE_ARGS}
+	${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2.a
 	${CP} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2.so.1
-	cd ${WRKSRC} ; ${GMAKE} ${MAKE_ARGS} clean
+	cd ${WRKSRC} ; ${MAKE_CMD} ${MAKE_ARGS} clean
 	cd ${WRKSRC} ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=${MAXTHREADS} \
-	USE_THREAD=1 ${GMAKE} ${MAKE_ARGS}
+	USE_THREAD=1 ${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2p.a
 	${CP} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2p.so.1
 .if ! ${PORT_OPTIONS:MDEBUG}
@@ -136,9 +136,9 @@ BENCHMARK_THREADS_FLAG =	GOTO_NUM_THREADS=${BENCHMARK_MAXTHREADS}
 
 benchmark: build
 	cd ${WRKSRC} ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=${MAXTHREADS} \
-	USE_THREAD=1 ${GMAKE} ${MAKE_ARGS} hpl
+	USE_THREAD=1 ${MAKE_CMD} ${MAKE_ARGS} hpl
 	cd ${WRKSRC}/benchmark ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=${MAXTHREADS} \
-	USE_THREAD=1 ${BENCHMARK_THREADS_FLAG} ${GMAKE} ${MAKE_ARGS}
+	USE_THREAD=1 ${BENCHMARK_THREADS_FLAG} ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
 	cd ${WRKDIR}/lib ; \

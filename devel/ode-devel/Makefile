@@ -47,7 +47,7 @@ post-patch:
 .endif
 
 do-configure:
-	cd ${WRKSRC} ; ${GMAKE} configure
+	cd ${WRKSRC} ; ${MAKE_CMD} configure
 	@${REINPLACE_CMD} -e '/include.*values.h/d' ${WRKSRC}/include/ode/config.h
 
 do-install:

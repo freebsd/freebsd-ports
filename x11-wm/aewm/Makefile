@@ -43,10 +43,10 @@ post-patch:
 
 post-build:
 .if ${HAVE_GNOME:Mgtk20} != ""
-	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
+	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
 		${GTKCLIENTS} ${XAWCLIENTS}
 .else
-	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
+	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
 		${XAWCLIENTS}
 .endif
 

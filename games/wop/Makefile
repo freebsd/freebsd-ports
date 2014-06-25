@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__va_copy|va_copy|g' ${WRKSRC}/src/string.cpp
-	@${REINPLACE_CMD} -e 's|; make|; ${GMAKE}|g' ${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's|; make|; ${MAKE_CMD}|g' ${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/sdlwidgets/Makefile ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|= g++|?= g++|g' ${WRKSRC}/sdlwidgets/Makefile ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/woprc|${PREFIX}/etc/woprc|' ${WRKSRC}/src/wopsettings.cpp

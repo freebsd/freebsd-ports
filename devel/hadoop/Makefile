@@ -66,7 +66,7 @@ CONF=		capacity-scheduler.xml configuration.xsl core-site.xml hadoop-env.sh hado
 		hadoop-policy.xml hdfs-site.xml log4j.properties mapred-queue-acls.xml mapred-site.xml taskcontroller.cfg
 
 MAKE_ARGS=	-Dbuild.classes=${WRKSRC}/hadoop-core-${PORTVERSION}.jar -Dversion=${PORTVERSION} -Dcompile.native=true \
-		-Dcompile.c++=true -Dmake.cmd=${GMAKE} -Dlibhdfs=1 -Dlibrecordio=true  -Dskip.record-parser=true
+		-Dcompile.c++=true -Dmake.cmd=${MAKE_CMD} -Dlibhdfs=1 -Dlibrecordio=true  -Dskip.record-parser=true
 ALL_TARGET=	compile-core-native compile-c++ compile-c++-libhdfs compile-c++-pipes compile-c++-utils
 
 .include <bsd.port.options.mk>

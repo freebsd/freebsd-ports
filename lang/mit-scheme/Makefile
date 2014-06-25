@@ -96,10 +96,10 @@ post-build:
 	@${FIND} ${WRKDIR} -type d -empty -delete
 
 do-build:
-	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src/microcode && ${GMAKE}
+	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src/microcode && ${MAKE_CMD}
 
 do-install:
-	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src && ${GMAKE} install DESTDIR=${STAGEDIR}
+	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src && ${MAKE_CMD} install DESTDIR=${STAGEDIR}
 	${INSTALL_MAN} ${WRKDIR}/mit-scheme-${PORTVERSION}/doc/scheme.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>

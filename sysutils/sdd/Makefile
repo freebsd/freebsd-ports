@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Faster and improved version of dd
 
 USES=		gmake
-MAKE_ENV=	MAKEPROG="${GMAKE}" CCOM="${CC}" COPTX="${CFLAGS}"
+MAKE_ENV=	MAKEPROG="${MAKE_CMD}" CCOM="${CC}" COPTX="${CFLAGS}"
 PLIST_FILES=	bin/sdd man/man1/sdd.1.gz
 
 .include <bsd.port.pre.mk>

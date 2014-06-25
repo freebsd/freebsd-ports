@@ -41,7 +41,7 @@ post-patch:
 regression-test: build
 #	This requires bash. I don't add it as a dependency to the port, as it's
 #	not needed for the general use.
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 	    ${MAKEFILE} check ${MAKE_ARGS})
 
 .include <bsd.port.mk>

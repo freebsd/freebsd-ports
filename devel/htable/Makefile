@@ -23,6 +23,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/htable.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
 
 regression-test:
-	cd ${WRKSRC}/tst && ${GMAKE} test
+	cd ${WRKSRC}/tst && ${MAKE_CMD} test
 
 .include <bsd.port.mk>

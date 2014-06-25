@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
     		dot:${PORTSDIR}/graphics/graphviz
 
 post-build:
-	cd ${WRKSRC} && ${GMAKE} docs
+	cd ${WRKSRC} && ${MAKE_CMD} docs
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

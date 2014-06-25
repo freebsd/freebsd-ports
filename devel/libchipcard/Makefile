@@ -50,7 +50,7 @@ post-patch:
 
 post-build:
 .if ${PORT_OPTIONS:MDOXYGEN}
-	@cd ${WRKSRC} && ${GMAKE} srcdoc
+	@cd ${WRKSRC} && ${MAKE_CMD} srcdoc
 .endif
 
 post-install:

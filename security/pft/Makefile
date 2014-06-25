@@ -23,7 +23,7 @@ post-patch:
 		${WRKSRC}/pft/Makefile
 
 post-build:
-	@(cd ${WRKSRC}/pft; ${SETENV} ${MAKE_ENV} ${GMAKE} pft)
+	@(cd ${WRKSRC}/pft; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} pft)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pft/pft ${PREFIX}/bin

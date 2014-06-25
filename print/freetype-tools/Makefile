@@ -42,16 +42,16 @@ post-patch:
 		${WRKSRC}/contrib/ttf2pfb/Makefile.in
 
 post-build:
-	@cd ${WRKSRC}/contrib/ttf2bdf && ./configure --prefix=${PREFIX} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttf2pfb && ./configure --prefix=${PREFIX} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttf2pk && ./configure --prefix=${PREFIX} --with-kpathsea-dir=${LOCALBASE} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttfbanner && ./configure --prefix=${PREFIX} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttf2bdf && ./configure --prefix=${PREFIX} && ${MAKE_CMD}
+	@cd ${WRKSRC}/contrib/ttf2pfb && ./configure --prefix=${PREFIX} && ${MAKE_CMD}
+	@cd ${WRKSRC}/contrib/ttf2pk && ./configure --prefix=${PREFIX} --with-kpathsea-dir=${LOCALBASE} && ${MAKE_CMD}
+	@cd ${WRKSRC}/contrib/ttfbanner && ./configure --prefix=${PREFIX} && ${MAKE_CMD}
 
 do-install:
-	@cd ${WRKSRC}/contrib/ttf2bdf && ${GMAKE} install
-	@cd ${WRKSRC}/contrib/ttf2pfb && ${GMAKE} install
-	@cd ${WRKSRC}/contrib/ttf2pk && ${GMAKE} install
-	@cd ${WRKSRC}/contrib/ttfbanner && ${GMAKE} install
+	@cd ${WRKSRC}/contrib/ttf2bdf && ${MAKE_CMD} install
+	@cd ${WRKSRC}/contrib/ttf2pfb && ${MAKE_CMD} install
+	@cd ${WRKSRC}/contrib/ttf2pk && ${MAKE_CMD} install
+	@cd ${WRKSRC}/contrib/ttfbanner && ${MAKE_CMD} install
 	@${MKDIR} ${TEXMFMAIN}/ttf2pk
 	@for f in ${WRKSRC}/contrib/ttf2pk/data/*; do \
 	  ${INSTALL_DATA} $$f ${TEXMFMAIN}/ttf2pk; \

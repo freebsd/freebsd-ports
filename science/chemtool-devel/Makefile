@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
-MAKE_ARGS+=	MAKE=${GMAKE}
+MAKE_ARGS+=	MAKE=${MAKE_CMD}
 MAKE_JOBS_UNSAFE=	yes
 #to include emf
 CFLAGS+=	-I${LOCALBASE}/include/libEMF

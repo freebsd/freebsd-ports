@@ -68,7 +68,7 @@ PLIST_SUB+=	TIFF="@comment "
 .endif
 
 post-install:
-	@cd ${WRKSRC}/docs/reference/gdk-pixbuf && env DESTDIR=${STAGEDIR} ${GMAKE} install-man1
+	@cd ${WRKSRC}/docs/reference/gdk-pixbuf && env DESTDIR=${STAGEDIR} ${MAKE_CMD} install-man1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdk_pixbuf*-2.0.so.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gdk-pixbuf-2.0/${GTK2_VERSION}/loaders/lib*.so
 

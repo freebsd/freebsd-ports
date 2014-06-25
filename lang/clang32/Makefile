@@ -113,12 +113,12 @@ pre-build:
 	    ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMTableGen.a ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
-	cd ${WRKSRC}/utils/unittest && ${GMAKE}
+	cd ${WRKSRC}/utils/unittest && ${MAKE_CMD}
 
 post-build:
-	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} man
+	@cd ${WRKSRC}/tools/clang/docs/tools && ${MAKE_CMD} man
 .if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} html ps
+	@cd ${WRKSRC}/tools/clang/docs/tools && ${MAKE_CMD} html ps
 .endif
 
 post-install:
@@ -134,7 +134,7 @@ post-install:
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/tools/clang/docs/tools && \
-	    ${GMAKE} DESTDIR=${STAGEDIR}/ install-html install-ps
+	    ${MAKE_CMD} DESTDIR=${STAGEDIR}/ install-html install-ps
 .endif
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${STAGEDIR}${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1

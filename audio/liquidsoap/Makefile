@@ -189,6 +189,6 @@ post-patch:
 	${SED} ${_DISABLE_SED_ARGS} ${WRKSRC}/PACKAGES.default > ${WRKSRC}/PACKAGES
 
 pre-configure:
-	(cd ${WRKSRC} && ${GMAKE} bootstrap && ${SED} -i '' -e 's/^RUNNING_USER="$$USER"/RUNNING_USER=liquidsoap/' */configure)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} bootstrap && ${SED} -i '' -e 's/^RUNNING_USER="$$USER"/RUNNING_USER=liquidsoap/' */configure)
 
 .include <bsd.port.mk>

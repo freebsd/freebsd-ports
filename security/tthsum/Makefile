@@ -22,6 +22,6 @@ MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test runtest
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test runtest
 
 .include <bsd.port.mk>

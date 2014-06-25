@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		${ICONV_CONFIGURE_ARG} \
 		--with-mime-default-charset=US-ASCII \
 		--enable-ipv6
-MAKE_ARGS+=	MAKE=${GMAKE}
+MAKE_ARGS+=	MAKE=${MAKE_CMD}
 CFLAGS+=	-DNNTP_SERVER_FILE=\\\"${PREFIX}/etc/nntpserver\\\"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -88,7 +88,7 @@ post-patch:
 		${WRKSRC}/tools/tinurl_handler.pl
 
 post-build:
-	${GMAKE} -C ${WRKSRC}/po
+	${MAKE_CMD} -C ${WRKSRC}/po
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tin.defaults \

@@ -152,13 +152,13 @@ do-configure:
 	@${CP} ${LOCALBASE}/lib/templates_parser.relocatable/*.ali \
 		${TEMPARSE}/relocatable/lib/temparse
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${GMAKE} setup ${CONF_ARGS}
+		${MAKE_CMD} setup ${CONF_ARGS}
 
 do-build:
 #	We cannot use a redefined ALL_TARGET because MAKE_JOBS_SAFE is set
 #	for PROCESSORS, but that also sets -j for gmake which breaks build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${GMAKE} ${MAKE_ARGS} build
+		${MAKE_CMD} ${MAKE_ARGS} build
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} html

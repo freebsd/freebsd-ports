@@ -51,10 +51,10 @@ post-patch:
 # avoid using standard MAKE_ENV
 do-build:
 	@cd ${BUILD_WRKSRC}; \
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 
 do-install:
 	@cd ${INSTALL_WRKSRC}; \
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 
 .include <bsd.port.post.mk>

@@ -27,7 +27,7 @@ post-patch:
 		-e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
 		-e 's|$$(PREFIX)/share/smtube|${DATADIR}|g' \
 		-e 's|$$(PREFIX)/share/doc/smtube|${DOCSDIR}|' \
-		-e 's| make| ${GMAKE}|' \
+		-e 's| make| ${MAKE_CMD}|' \
 		${WRKSRC}/Makefile
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}	

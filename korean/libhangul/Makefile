@@ -30,8 +30,8 @@ CONFIGURE_ARGS=	--disable-nls
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/check.pc)
 test:	build
-	@( cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} )
-	@( cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} test && ./test )
+	@( cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} )
+	@( cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test && ./test )
 .endif
 
 .include <bsd.port.mk>

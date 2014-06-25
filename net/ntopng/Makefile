@@ -78,8 +78,8 @@ pre-build:
 	--disable-libdbi --disable-libwrap --disable-rrdcgi --disable-libtool-lock \
 	--disable-nls --disable-rpath --disable-perl --disable-ruby --disable-lua \
 	--disable-tcl --disable-python --disable-dependency-tracking && \
-	cd src && ${GMAKE} librrd_th.la
-	cd ${WRKSRC}/third-party/credis-0.2.3 && ${GMAKE} clean && ${GMAKE}
+	cd src && ${MAKE_CMD} librrd_th.la
+	cd ${WRKSRC}/third-party/credis-0.2.3 && ${MAKE_CMD} clean && ${MAKE_CMD}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

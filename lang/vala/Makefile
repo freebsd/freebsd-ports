@@ -47,13 +47,13 @@ post-patch:
 
 .if defined(VALA_SLAVE)
 pre-build:
-	@cd ${WRKSRC} && ${GMAKE} version.h
+	@cd ${WRKSRC} && ${MAKE_CMD} version.h
 	@cd ${WRKSRC}/gobject-introspection && ${MAKE_CMD} libgidl.la && \
 		${MAKE_CMD} gen-introspect
 	@cd ${WRKSRC}/vapigen && ${MAKE_CMD} all
 
 post-install:
-	@cd ${WRKSRC}/gobject-introspection && DESTDIR=${STAGEDIR} ${GMAKE} install
+	@cd ${WRKSRC}/gobject-introspection && DESTDIR=${STAGEDIR} ${MAKE_CMD} install
 	${INSTALL_MAN} ${WRKSRC}/doc/vapigen.1 ${WRKSRC}/doc/vala-gen-introspect.1 \
 		 ${STAGEDIR}${PREFIX}/man/man1/
 .else

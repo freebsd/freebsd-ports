@@ -21,7 +21,7 @@ USES=		gmake
 BUILD_DEPENDS+=	ginstall:${PORTSDIR}/sysutils/coreutils
 GINSTALL=	ginstall
 
-MAKE_ARGS=	MAKE=${GMAKE} INSTALL="${GINSTALL} -p -v" PYTHON=${PYTHON_CMD} \
+MAKE_ARGS=	MAKE=${MAKE_CMD} INSTALL="${GINSTALL} -p -v" PYTHON=${PYTHON_CMD} \
 		prefix=${PREFIX} mandir=${MANPREFIX}/man sysconfdir=${PREFIX}/etc
 
 MAN1=		mergerepo.1 modifyrepo.1

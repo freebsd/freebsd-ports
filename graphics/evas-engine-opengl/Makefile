@@ -40,7 +40,7 @@ post-patch:
 
 pre-build:
 	@(cd ${WRKSRC}/src/modules/engines/gl_common; ${SETENV} ${MAKE_ENV} \
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/evas-opengl-x11.pc \

@@ -25,7 +25,7 @@ CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \
+	@${REINPLACE_CMD} -e 's|make -C|${MAKE_CMD} -C|g' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/tests/Makefile.in
 

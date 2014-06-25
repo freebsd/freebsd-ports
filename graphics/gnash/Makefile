@@ -237,11 +237,11 @@ post-install:
 .if ${PORT_OPTIONS:MPLUGIN}
 .if ${PORT_OPTIONS:MGTK2}
 	cd ${INSTALL_WRKSRC}/plugin && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-plugin
 .endif
 .if ${PORT_OPTIONS:MKDE4}
 	cd ${INSTALL_WRKSRC}/plugin/klash4 && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-plugin
 .endif
 .endif
 

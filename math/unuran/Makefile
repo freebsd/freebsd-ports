@@ -20,14 +20,14 @@ CONFIGURE_ARGS=	--enable-shared --with-urng-rngstream --with-urng-default=rngstr
 		--enable-info
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	MAKE="${GMAKE}"
+MAKE_ENV=	MAKE="${MAKE_CMD}"
 
 USE_LDCONFIG=	yes
 INFO=		unuran
 PORTDOCS=	unuran.pdf unuran.txt
 
 post-patch:
-	${REINPLACE_CMD} -e '/UNURANFULLCHECK=true make check/s/make/${GMAKE}/' \
+	${REINPLACE_CMD} -e '/UNURANFULLCHECK=true make check/s/make/${MAKE_CMD}/' \
 		${WRKSRC}/Makefile.in
 
 .ifndef(NOPORTDOCS)
@@ -42,10 +42,10 @@ post-install:
 CONFIGURE_ARGS+=	--enable-check-struct --enable-logging
 
 check regression-test test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check)
 
 fullcheck: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} fullcheck)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} fullcheck)
 
 .endif
 

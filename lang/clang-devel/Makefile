@@ -137,10 +137,10 @@ pre-build:
 	    ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMTableGen.a ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
-	cd ${WRKSRC}/utils/unittest && ${GMAKE}
+	cd ${WRKSRC}/utils/unittest && ${MAKE_CMD}
 
 post-build:
-	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} man html ps
+	@cd ${WRKSRC}/tools/clang/docs/tools && ${MAKE_CMD} man html ps
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${LLVM_PREFIX}/lib/libclang.so
@@ -169,7 +169,7 @@ post-install:
 	    ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
 	    ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/tools/clang/docs/tools && \
-	    ${GMAKE} DESTDIR=${STAGEDIR}/ install-html install-ps
+	    ${MAKE_CMD} DESTDIR=${STAGEDIR}/ install-html install-ps
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${STAGEDIR}${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1
 

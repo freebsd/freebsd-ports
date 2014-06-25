@@ -76,7 +76,7 @@ post-patch:
 		-e 's,(CC_OPTIONS:[[:space:]]*).*,\1"${SAT_CFLAGS}";,' \
 		-e 's,(GC_LINK:[[:space:]]*).*,\1"${SAT_LIBS}";,' \
 		-e 's,(CC_OPTIMIZE_FLAG:[[:space:]]*).*,\1""\,"${CFLAGS}";,' \
-		-e 's,(MAKE_COMMAND:[[:space:]]*).*,\1"${GMAKE}";,' \
+		-e 's,(MAKE_COMMAND:[[:space:]]*).*,\1"${MAKE_CMD}";,' \
 		-e 's,(FORTRAN_APPEND_UNDERSCORE:[[:space:]]*).*,\1"true";,' \
 		-e 's,CONFIG_PLATFORMS,unix,' \
 		-e 's,CONFIG_DEFAULT_PLATFORM,freebsd,' \

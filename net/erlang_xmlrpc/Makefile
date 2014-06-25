@@ -29,7 +29,7 @@ post-patch:
 	@${RM} ${WRKSRC}/src/Makefile.bak ${WRKSRC}/src/*.orig
 
 do-build:
-	@cd ${WRKSRC}/src && ${GMAKE}
+	@cd ${WRKSRC}/src && ${MAKE_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

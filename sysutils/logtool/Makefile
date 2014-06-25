@@ -19,7 +19,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DOCS=		CHANGES CREDITS README TODO doc/logtool.txt
 
 do-build:
-	cd ${WRKSRC}/src && ${GMAKE} INCLUDES="${CPPFLAGS}"
+	cd ${WRKSRC}/src && ${MAKE_CMD} INCLUDES="${CPPFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/logtool ${STAGEDIR}${PREFIX}/bin

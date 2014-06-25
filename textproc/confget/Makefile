@@ -30,6 +30,6 @@ post-build:
 	@${STRIP_CMD} ${WRKSRC}/confget
 
 regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>

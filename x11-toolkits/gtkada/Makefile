@@ -54,7 +54,7 @@ do-build:
 #	This target is recreated because -j cannot be set, but
 #	MAKE_JOBS_SAFE=yes is needed for PROCESSORS value
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${ALL_TARGET}
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata

@@ -122,6 +122,6 @@ post-install:
 .endfor
 
 regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

@@ -38,6 +38,6 @@ CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"
 
 NO_STAGE=	yes
 post-install:
-	cd ${WRKSRC} && ${GMAKE} install-man
+	cd ${WRKSRC} && ${MAKE_CMD} install-man
 
 .include <bsd.port.mk>

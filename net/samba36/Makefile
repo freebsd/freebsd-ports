@@ -539,7 +539,7 @@ post-install:
 
 .if ${PORT_OPTIONS:MMAX_DEBUG}
 test:
-	(cd ${WRKSRC} && ${GMAKE} test_nss_modules test_pam_modules && ${GMAKE} test)
+	(cd ${WRKSRC} && ${MAKE_CMD} test_nss_modules test_pam_modules && ${MAKE_CMD} test)
 .endif
 # !SAMBA_SUBPORT
 .endif
