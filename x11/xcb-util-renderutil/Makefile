@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcb-util-renderutil
-PORTVERSION=	0.3.8
-PORTREVISION=	2
+PORTVERSION=	0.3.9
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -14,6 +13,7 @@ LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
 XORG_CAT=	lib
 USES=		gmake
 USE_XORG=	xcb
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e \
