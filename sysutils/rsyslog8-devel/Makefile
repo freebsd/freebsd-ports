@@ -2,6 +2,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	8.3.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -33,7 +34,7 @@ RELP_DESC=	RELP input/output module for rsyslog
 RFC3195_DESC=	RFC3195 input support for rsyslog
 SNMP_DESC=	SNMP trap sender for rsyslog
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 
 .include <bsd.port.options.mk>
 
