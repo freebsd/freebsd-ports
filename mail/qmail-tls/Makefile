@@ -3,7 +3,7 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}
-PORTREVISION=	8
+PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
@@ -13,7 +13,7 @@ CONFLICTS=	*qmail-[0-9]* qmail-ldap-[0-9]* *qmail-mysql-[0-9]* qmail-spamcontrol
 
 SLAVE_TLS=	yes
 
-TLS_PATCH_DATE=	20021228
+TLS_PATCH_DATE=	20110119
 
 USE_OPENSSL=	yes
 
@@ -21,7 +21,5 @@ USE_OPENSSL=	yes
 MASTERDIR=	${.CURDIR}/../qmail
 DESCR=		${.CURDIR}/pkg-descr
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
-
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-qmail-local.c
 
 .include "${MASTERDIR}/Makefile"
