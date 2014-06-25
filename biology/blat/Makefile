@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}Src
 USES=		gmake zip
 USE_OPENSSL=	yes
 MAKEFILE=	makefile
-MAKE_ENV=	MACHTYPE="${ARCH}" HOME="${WRKSRC}/${BINDIR}" STRIP="${TRUE}"
+MAKE_ENV=	MACHTYPE="${ARCH}" STRIP="${TRUE}"
+MAKE_ARGS=	HOME="${WRKSRC}/${BINDIR}"
 
 CPPFLAGS+=	$$(libpng-config --cflags)
 LDFLAGS+=	$$(libpng-config --ldflags)
