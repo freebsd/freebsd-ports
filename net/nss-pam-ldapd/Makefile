@@ -3,6 +3,7 @@
 
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.8.14
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
     			http://mirrors.rit.edu/zi/
@@ -111,10 +112,7 @@ post-configure:
 show-pkgmessage::
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE} | ${FMT} 75 79; ${ECHO_CMD}
 
-# We take care of the sample file, upstream install target installs the actual
-# file if it does not exist yet.
 post-install: show-pkgmessage
-	@${INSTALL_DATA} ${WRKSRC}/nslcd.conf ${STAGEDIR}${PREFIX}/etc/nslcd.conf.sample
 .if ${PORT_OPTIONS:MNSS}
 	@${LN} -fs nss_ldap.so.${NSS_LDAP_SHMAJOR} ${STAGEDIR}${PREFIX}/lib/nss_ldap.so
 .endif
