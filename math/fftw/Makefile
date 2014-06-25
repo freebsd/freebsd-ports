@@ -22,7 +22,7 @@ FFTW_FLAVOR?=	default
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
-USES=		fortran gmake libtool:keepla
+USES=		fortran gmake libtool:keepla makeinfo
 USE_LDCONFIG=	yes
 
 BROKEN_sparc64=	does not build
