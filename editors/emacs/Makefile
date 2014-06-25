@@ -28,7 +28,7 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 
 EMACS_VER=	24.3
 GNU_CONFIGURE=	yes
-USES=		ncurses gmake pkgconfig shebangfix tar:xz
+USES=		ncurses gmake makeinfo pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO_PATH=	${DATADIR_REL}/info
