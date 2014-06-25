@@ -1024,22 +1024,13 @@ MASTER_SITE_PYTHON+= \
 
 .if !defined(IGNORE_MASTER_SITE_QMAIL)
 MASTER_SITE_QMAIL+= \
-	http://qmail.geto.net/%SUBDIR%/ \
-	http://qmail.palomine.net/%SUBDIR%/ \
-	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
-	http://qmail.cdsinet.net/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
 	http://www.agria.hu/qmail/%SUBDIR%/ \
-	http://qmail.rhnet.is/%SUBDIR%/ \
-	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
-	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
 	http://qmail.netvisao.pt/%SUBDIR%/ \
 	http://qmail.ipg.sk/%SUBDIR%/ \
 	http://qmail.omnis.ch/%SUBDIR%/ \
-	http://qmail.asylog.net/%SUBDIR%/ \
-	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
 	http://www.qmail.org/%SUBDIR%/
 .endif
 
