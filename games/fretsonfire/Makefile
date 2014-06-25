@@ -3,7 +3,7 @@
 
 PORTNAME=	fretsonfire
 PORTVERSION=	1.3.110
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games python
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:S/f/F/g:S/o/O/}-${PORTVERSION}
@@ -31,26 +31,20 @@ WRKSRC=		"${WRKDIR}/Frets on Fire-${PORTVERSION}"
 
 FOF_DIR=	${PREFIX}/lib/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}
+	@${MKDIR} ${STAGEDIR}${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}
 	@cd ${WRKSRC}/src && \
-		${FIND} * -type d -exec ${MKDIR} "${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}/{}" \; && \
-			${FIND} -E * -type f -iregex ".*\.(py)" -exec ${INSTALL_DATA} "{}" "${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}/{}" \; && \
+			${FIND} -E * -type f -iregex ".*\.(py)" -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}/{}" \;
 
-	${MKDIR} ${FOF_DIR}/data
-	${LN} -s ${LOCALBASE}/${DATADIR}/* ${FOF_DIR}/data
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME:S/f/F/g:S/o/O/} ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${FOF_DIR}/data
+	${LN} -s ${LOCALBASE}/${DATADIR}/* ${STAGEDIR}${FOF_DIR}/data
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME:S/f/F/g:S/o/O/} ${STAGEDIR}${PREFIX}/bin
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/install.txt ${DOCSDIR}/INSTALL
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/install.txt ${STAGEDIR}${DOCSDIR}/INSTALL
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
