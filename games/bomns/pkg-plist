@@ -1,6 +1,6 @@
 bin/bomns
 bin/bomnsedit
-bin/bomnslauncher2
+bin/bomnslauncher
 share/applications/bomns.desktop
 %%DATADIR%%/graphics/bomn32.bmp
 %%DATADIR%%/graphics/editor_cursor.bmp
@@ -34,7 +34,8 @@ share/icons/hicolor/256x256/apps/bomns.png
 share/icons/hicolor/32x32/apps/bomns.png
 share/icons/hicolor/48x48/apps/bomns.png
 share/icons/hicolor/64x64/apps/bomns.png
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/levels
+share/pixmaps/bomns.png
 @dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
