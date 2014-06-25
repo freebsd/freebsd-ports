@@ -24,6 +24,6 @@
 -	if [ -e /etc/apache2/mods-enabled/dav_svn.load ]; then mv /etc/apache2/mods-enabled/dav_svn.load /etc/apache2/mods-enabled/1dav_svn.load; fi
 -	@APACHECTL@ configtest || mv /tmp/httpd.conf.bak @HTTPD_CONF@
 -	@APACHECTL@ graceful
-+	@APXS@ -i mod_authnz_crowd.la
-+	@APXS@ -e -n dav_svn modules/mod_dav_svn.so
-+	@APXS@ -i svn/mod_authz_svn_crowd.la
++	@APXS@ @APXS_STAGE@ -i mod_authnz_crowd.la
++	@APXS@ @APXS_STAGE@ -e -n dav_svn modules/mod_dav_svn.so
++	@APXS@ @APXS_STAGE@ -i svn/mod_authz_svn_crowd.la
