@@ -3,7 +3,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.25.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION:R}
 
@@ -12,8 +12,8 @@ COMMENT=	DjVu base libraries and utilities
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USES=		pathfix iconv
 GNU_CONFIGURE=	yes
@@ -29,29 +29,17 @@ USE_LDCONFIG=	yes
 CONFLICTS=	djvulibre-nox11-3*
 WRKSRC =	${WRKDIR}/${DISTNAME:R}
 
-OPTIONS_DEFINE =	ANY2DJVU
+PORTDOCS=	djvu2spec.djvu djvu3spec.djvu djvuchanges.txt lizard2002.djvu lizard2007.djvu
+
+OPTIONS_DEFINE=		DOCS ANY2DJVU
+OPTIONS_SUB=		yes
+
 ANY2DJVU_DESC=		Install any2djvu script (requires curl)
+ANY2DJVU_RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-MAN1=		bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 \
-		djvmcvt.1 djvu.1 djvudump.1 djvuextract.1 djvumake.1 djvups.1 \
-		djvused.1 djvuserve.1 djvutxt.1
-MAN1_EN=	djvutoxml.1 djvuxml.1 djvuxmlparser.1 djvudigital.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MANY2DJVU}
-MAN1_EN+=	any2djvu.1
-RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-PLIST_SUB+=	ANY2DJVU=""
-.else
-PLIST_SUB+=	ANY2DJVU="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/libdjvu/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/-[Og]\*)/d ; \
 		s|$$OPTS -O[[:digit:]]*|$$OPTS|g ; \
@@ -68,12 +56,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,any2djvu,,' ${WRKSRC}/tools/Makefile.in
 .endif
 
-.if ${PORT_OPTIONS:MDOC}
-PORTDOCS=	djvu2spec.djvu djvu3spec.djvu djvuchanges.txt lizard2002.djvu lizard2007.djvu
-
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
