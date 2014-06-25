@@ -1,11 +1,32 @@
---- doc/autoconf.texi.orig	2012-04-24 19:14:19.000000000 -0700
-+++ doc/autoconf.texi	2012-04-26 10:52:26.000000000 -0700
-@@ -219,3 +219,3 @@
+--- doc/autoconf.texi.orig	2012-04-25 04:14:19.000000000 +0200
++++ doc/autoconf.texi	2014-06-25 14:47:17.208468153 +0200
+@@ -15,7 +15,7 @@
+ @c The ARG is an optional argument.  To be used for macro arguments in
+ @c their documentation (@defmac).
+ @macro ovar{varname}
+-@r{[}@var{\varname\}@r{]}@c
++@r{[}@var{\varname\}@r{]}
+ @end macro
+ 
+ @c @dvar(ARG, DEFAULT)
+@@ -23,7 +23,7 @@
+ @c The ARG is an optional argument, defaulting to DEFAULT.  To be used
+ @c for macro arguments in their documentation (@defmac).
+ @macro dvar{varname, default}
+-@r{[}@var{\varname\} = @samp{\default\}@r{]}@c
++@r{[}@var{\varname\} = @samp{\default\}@r{]}
+ @end macro
+ 
+ @c Handling the indexes with Texinfo yields several different problems.
+@@ -217,31 +217,11 @@
+ 
+ 
  
 -@dircategory Software development
 +@dircategory Programming & development tools
  @direntry
-@@ -224,22 +224,2 @@
+ * Autoconf: (autoconf).         Create source code configuration scripts.
+ @end direntry
  
 -@dircategory Individual utilities
 -@direntry
@@ -28,3 +49,5 @@
 -@end direntry
 -
  @titlepage
+ @title Autoconf
+ @subtitle Creating Automatic Configuration Scripts
