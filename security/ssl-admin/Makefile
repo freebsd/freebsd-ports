@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ssl-admin
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/ssl-admin/
@@ -10,21 +10,20 @@ MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ssl-admin/ \
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	OpenSSL certificate manager with OpenVPN support
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		perl5
+USES=		perl5 shebangfix tar:xz
+SHEBANG_FILES=	ssl-admin
 USE_PERL5=	run
-MAN1=		ssl-admin.1
-MAN5=		ssl-admin.conf.5
+GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
-MANCOMPRESSED=	no
 MAKE_ENV=	ETCDIR=${PREFIX}/etc BINDIR=${PREFIX}/bin \
 		MANDIR=${MANPREFIX}/man
 
-NO_STAGE=	yes
-post-install:
-	${CAT} ${PKGMESSAGE}
+post-patch:
+	${REINPLACE_CMD} -e 's|`which sed`|${SED}|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|{DESTDIR}/|{DESTDIR}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
