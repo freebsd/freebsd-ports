@@ -7,6 +7,7 @@
     SUBDIR += 0verkill
     SUBDIR += 3dc
     SUBDIR += 3dpong
+    SUBDIR += 3omns
     SUBDIR += 4stattack
     SUBDIR += 54321
     SUBDIR += CaribbeanStud
