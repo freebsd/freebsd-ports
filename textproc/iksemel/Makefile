@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		makeinfo pkgconfig
 
 INFO=	iksemel
 
