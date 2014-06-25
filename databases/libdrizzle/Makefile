@@ -3,7 +3,7 @@
 
 PORTNAME=	libdrizzle
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake libtool
 CONFIGURE_ARGS+=--enable-libsqlite3
 USE_LDCONFIG=	yes
 
