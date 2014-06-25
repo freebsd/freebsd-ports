@@ -1118,6 +1118,12 @@ SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 NOTPHONY?=
 PKG_ENV+=		PORTSDIR=${PORTSDIR}
+CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
+				XDG_CONFIG_HOME=${WRKDIR} \
+				HOME=${WRKDIR}
+MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
+				XDG_CONFIG_HOME=${WRKDIR} \
+				HOME=${WRKDIR}
 
 .if defined(FORCE_STAGE)
 .undef NO_STAGE
@@ -2908,12 +2914,9 @@ INFO_PATH?=	info
 .endif
 
 .if defined(INFO)
-#.if !exists(/usr/bin/install-info)
-#.if ${.CURDIR} != ${PORTSDIR}/print/texinfo
-#BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo
-#RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
-#.endif
-#.endif
+BUILD_DEPENDS+=	ginstall-info:${PORTSDIR}/print/texinfo-lite
+RUN_DEPENDS+=	ginstall-info:${PORTSDIR}/print/texinfo-lite
+
 . for D in ${INFO:H}
 RD:=	${D}
 .  if ${RD} != "."
@@ -5653,15 +5656,15 @@ add-plist-info:
 # Process GNU INFO files at package install/deinstall time
 .for i in ${INFO}
 .if defined(NO_STAGE)
-	install-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
+	ginstall-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
 .endif
 .if !defined(WITH_PKGNG)
-	@${ECHO_CMD} "@unexec install-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
+	@${ECHO_CMD} "@unexec ginstall-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec [ \`info -d %D/${INFO_PATH}  --output - 2>/dev/null | grep -c '^*'\` -eq 1 ] && rm -f %D/${INFO_PATH}/dir || :"\
+	@${ECHO_CMD} "@unexec [ \`ginfo -d %D/${INFO_PATH}  --output - 2>/dev/null | grep -c '^*'\` -eq 1 ] && rm -f %D/${INFO_PATH}/dir || :"\
 		>> ${TMPPLIST}
 	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/::g >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
+	@${ECHO_CMD} "@exec ginstall-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 .else
 	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* 2>/dev/null | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
