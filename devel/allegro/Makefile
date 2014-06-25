@@ -16,11 +16,12 @@ COMMENT=	Cross-platform library for games and multimedia programming
 LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		gmake cmake pkgconfig
+USES=		cmake gmake makeinfo pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_GL=		glu
 USE_LDCONFIG=	yes
 
+INFO=		allegro
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
