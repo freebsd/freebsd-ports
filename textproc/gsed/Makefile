@@ -13,7 +13,7 @@ COMMENT=	The GNU stream editor
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 
-USES=		charsetfix gmake
+USES=		charsetfix makeinfo gmake
 PATCH_SUBDIRS=	. doc lib sed
 DATADIR=	${PREFIX}/share/${PKGBASE}
 SAMP_FILES=	binary*.sed dc.sed

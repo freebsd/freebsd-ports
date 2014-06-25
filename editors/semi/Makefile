@@ -13,6 +13,8 @@ COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs
 
 LICENSE=	GPLv2
 
+USES=		makeinfo
+
 PORTCLASS?=	master
 
 # distfile version

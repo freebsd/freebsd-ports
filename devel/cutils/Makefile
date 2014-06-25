@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.sigala.it/sandro/files/
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Miscellaneous C programmer's utilities
 
+USES=		makeinfo
 GNU_CONFIGURE=	yes
 MAKE_ENV=	MAKEINFO=makeinfo
 INFO=		cutils

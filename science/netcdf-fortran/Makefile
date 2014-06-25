@@ -15,6 +15,7 @@ LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
 CONFLICTS=	netcdf-ftn-[0-9]* netcdf3-ftn-[0-9]*
 
+USES=		makeinfo
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC -DgFortran
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
