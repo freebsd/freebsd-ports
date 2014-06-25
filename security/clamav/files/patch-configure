@@ -1,15 +1,6 @@
---- configure.orig	2014-05-06 15:59:41.000000000 -0300
-+++ configure	2014-05-15 13:28:43.000000000 -0300
-@@ -3450,6 +3450,8 @@
- LIBCLAMAV_VERSION="$LC_CURRENT":"$LC_REVISION":"$LC_AGE"
- 
- 
-+major=`expr $LC_CURRENT - $LC_AGE`
-+
- 
- cat >>confdefs.h <<_ACEOF
- #define LIBCLAMAV_FULLVER "$major.$LC_AGE.$LC_REVISION"
-@@ -18564,7 +18566,7 @@
+--- configure.orig	2014-06-25 04:04:20.000000000 -0300
++++ configure	2014-06-25 04:04:05.000000000 -0300
+@@ -18682,7 +18682,7 @@
      ;;
  freebsd*)
      if test "$have_pthreads" = "yes"; then
@@ -18,7 +9,7 @@
  	TH_SAFE="-thread-safe"
      fi
  
-@@ -18740,7 +18742,7 @@
+@@ -18858,7 +18858,7 @@
  if test "$have_milter" = "yes"; then
  
          save_LIBS="$LIBS"
