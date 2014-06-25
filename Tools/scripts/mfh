@@ -27,15 +27,19 @@
 #
 # MAINTAINER=	portmgr@FreeBSD.org
 
-set -e
+set -eu
+
+LF=$(printf '\nX')
+LF=${LF%X}
+IFS="${LF}"
 
 err() {
-	echo $@ >&2
+	echo "$@" >&2
 	exit 1
 }
 
 clean() {
-	rm -rf ${dir}
+	rm -rf "${dir}"
 	exit 1
 }
 
@@ -44,56 +48,63 @@ ask() {
 
 	answer=x
 	while [ "${answer}" != "y" -a "${answer}" != "n" ] ; do
-		read -p "${question} [yn] " answer
+		read -p "${question} [y/n] " answer
 	done
 
 	[ "${answer}" = "y" ] && return 0
 	return 1
 }
 
-[ $# -ne 2 ] && err "Takes 2 arguments: <branch> <revnumber>"
+[ $# -ne 2 ] && err "$(basename $0) requires 2 arguments: <branch> <revnumber>"
 branch=$1
 rev=${2##r} # remove a leading "r"
 case ${rev} in
 ''|*[!0-9]*) err "revision should be a number" ;;
 esac
 
-svnserver="svn.FreeBSD.org"
+: ${svnserver:="svn.FreeBSD.org"}
 
 if [ -n "$(type svn 2>/dev/null)" ]; then
 	svn=svn
 elif [ -n "$(type svnlite 2>/dev/null)" ]; then
 	svn=svnlite
 else
-	err "svn(1) and svnlite(1) not found. please install devel/subversion"
+	err "Neither svn(1) nor svnlite(1) found. Please install devel/subversion."
 fi
 
-
-dir=$(mktemp -d /tmp/merge.XXX)
-cd ${dir}
-${svn} co --depth=empty svn+ssh://${svnserver}/ports/branches/${branch}
+trap "rc=\$? ; rm -rf \"\${dir}\" ; exit \$rc" EXIT
+dir=$(mktemp -d /tmp/merge.XXXXXX)
+cd "${dir}"
+"${svn}" co --depth=empty svn+ssh://${svnserver}/ports/branches/"${branch}"
 filelist=""
 # svn:// is faster than svn+ssh://. Use it wherever it's possible.
-for f in $(${svn} diff --summarize -c ${rev} svn://${svnserver}/ports/head); do
+for f in $("${svn}" diff --summarize -c ${rev} svn://${svnserver}/ports/head); do
 	case ${f} in
 	*/*) ;;
 	*)continue;;
 	esac
 	f=${f#*/ports/head/}
 	f=${f%/*}
-	filelist="${filelist}\n${f}"
+	filelist="${filelist}${LF}${f}"
 done
-filelist=$(echo -e ${filelist} | sort -u)
+filelist=$(printf '%s\n' "${filelist}" | sort -u)
 echo "MFH: r${rev}" > commit.txt
-${svn} log -r${rev} svn://${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' >> commit.txt
-for f in ${filelist}; do
-	${svn} up --parents ${branch}/${f}
-done
-${svn} up --quiet ${branch}
-${svn} merge -c r${rev} ^/head/ ${branch}
-${svn} up --quiet ${branch}
-${svn} diff ${branch}
-ask "Do you want to commit?" || clean
+"${svn}" log -r${rev} svn://${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' >> commit.txt
+"${svn}" up --parents $(printf '%s\n' $filelist \
+    | sed "s}^}${branch}/}")
+"${svn}" up --quiet "${branch}"
+"${svn}" merge -c r${rev} ^/head/ "${branch}"
+"${svn}" up --quiet "${branch}"
+"${svn}" status "${branch}"
+"${svn}" diff "${branch}"
+ask "Do you want to commit? (no = start a shell)" || (
+    echo "Dropping you to a shell so you can investigate. Exit the shell to resume this script."
+    cd "${branch}"
+    pwd
+    su -m $(id -un) || :
+    ask "Do you want to commit now? (no = clean up and abort)" || clean
+)
 ${EDITOR:-vi} commit.txt
-${svn} ci -F commit.txt ${branch}
-rm -rf ${dir}
+"${svn}" ci -F commit.txt "${branch}"
+rm -rf "${dir}"
+trap - 0
