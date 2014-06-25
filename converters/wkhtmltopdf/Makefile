@@ -87,6 +87,7 @@ post-patch:
 post-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} ${INSTALL_TARGET} INSTALL_ROOT=
 
 	@cd ${INSTALL_WRKSRC} && ${WRKDIR}/qt-wk/bin/qmake && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
