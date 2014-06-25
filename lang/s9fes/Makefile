@@ -6,7 +6,7 @@ PORTVERSION=	20121005
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.t3x.org/s9fes/
 
-MAINTAINER=	nmh@t3x.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Scheme interpreter with a Unix interface
 
 LICENSE=	public
