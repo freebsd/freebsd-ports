@@ -12,7 +12,7 @@ DISTNAME=	org-${PORTVERSION}
 MAINTAINER=	jhein@symmetricom.com
 COMMENT=	Emacs mode for notes and project planning
 
-USES=		gmake
+USES=		gmake makeinfo
 DOCSDIR=	${PREFIX}/share/doc/org-mode
 USE_EMACS=	yes
 
