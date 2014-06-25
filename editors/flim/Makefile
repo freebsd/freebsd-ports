@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 
 PORTCLASS?=	master
 
+USES=		makeinfo
+
 # distfile version
 FLIM_VER=	${FLIM_TRUNK}.9
 FLIM_TRUNK=	1.14

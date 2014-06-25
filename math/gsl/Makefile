@@ -11,6 +11,7 @@ COMMENT=	The GNU Scientific Library - mathematical libs
 
 LICENSE=	GPLv3
 
+USES=		makeinfo
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'

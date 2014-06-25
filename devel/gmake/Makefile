@@ -20,7 +20,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=g
 
-USES=		tar:bzip2
+USES=		makeinfo tar:bzip2
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

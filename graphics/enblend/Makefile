@@ -23,7 +23,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
 USE_AUTOTOOLS=	automake:env autoconf:env
-USES=		gmake compiler:features 
+USES=		gmake compiler:features makeinfo
 # We need a newer version of makeinfo for this.
 # Remove this line when we remove texinfo from the base system.
 CONFIGURE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
