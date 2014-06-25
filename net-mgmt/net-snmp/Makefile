@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		--with-gnu-ld --with-libwrap \
-		--with-ldflags="-lm -lkvm -ldevstat -lpkg"
+		--with-ldflags="-lm -lkvm -ldevstat -lpkg -L${LOCALBASE}/lib"
 SUB_FILES=	pkg-message
 
 .if defined(BATCH)
