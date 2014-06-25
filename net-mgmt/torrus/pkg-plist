@@ -1,23 +1,11 @@
 bin/torrus
 etc/torrus/discovery/README
-@unexec if cmp -s %D/etc/torrus/conf/devdiscover-siteconfig.pl.sample %D/etc/torrus/conf/devdiscover-siteconfig.pl; then rm -f %D/etc/torrus/conf/devdiscover-siteconfig.pl; fi
-etc/torrus/conf/devdiscover-siteconfig.pl.sample
-@exec if [ ! -f %D/etc/torrus/conf/devdiscover-siteconfig.pl ] ; then cp -p %D/%F %B/devdiscover-siteconfig.pl; fi
-@unexec if cmp -s %D/etc/torrus/conf/email-siteconfig.pl.sample %D/etc/torrus/conf/email-siteconfig.pl; then rm -f %D/etc/torrus/conf/email-siteconfig.pl; fi
-etc/torrus/conf/email-siteconfig.pl.sample
-@exec if [ ! -f %D/etc/torrus/conf/email-siteconfig.pl ] ; then cp -p %D/%F %B/email-siteconfig.pl; fi
-@unexec if cmp -s %D/etc/torrus/conf/notify-siteconfig.pl.sample %D/etc/torrus/conf/notify-siteconfig.pl; then rm -f %D/etc/torrus/conf/notify-siteconfig.pl; fi
-etc/torrus/conf/notify-siteconfig.pl.sample
-@exec if [ ! -f %D/etc/torrus/conf/notify-siteconfig.pl ] ; then cp -p %D/%F %B/notify-siteconfig.pl; fi
-@unexec if cmp -s %D/etc/torrus/conf/snmptrap-siteconfig.pl.sample %D/etc/torrus/conf/snmptrap-siteconfig.pl; then rm -f %D/etc/torrus/conf/snmptrap-siteconfig.pl; fi
-etc/torrus/conf/snmptrap-siteconfig.pl.sample
-@exec if [ ! -f %D/etc/torrus/conf/snmptrap-siteconfig.pl ] ; then cp -p %D/%F %B/snmptrap-siteconfig.pl; fi
-@unexec if cmp -s %D/etc/torrus/conf/torrus-siteconfig.pl.sample %D/etc/torrus/conf/torrus-siteconfig.pl; then rm -f %D/etc/torrus/conf/torrus-siteconfig.pl; fi
-etc/torrus/conf/torrus-siteconfig.pl.sample
-@exec if [ ! -f %D/etc/torrus/conf/torrus-siteconfig.pl ] ; then cp -p %D/%F %B/torrus-siteconfig.pl; fi
-@unexec if cmp -s %D/etc/torrus/xmlconfig/site-global.xml.sample %D/etc/torrus/xmlconfig/site-global.xml; then rm -f %D/etc/torrus/xmlconfig/site-global.xml; fi
-etc/torrus/xmlconfig/site-global.xml.sample
-@exec if [ ! -f %D/etc/torrus/xmlconfig/site-global.xml ] ; then cp -p %D/%F %B/site-global.xml; fi
+@sample etc/torrus/conf/devdiscover-siteconfig.pl.sample
+@sample etc/torrus/conf/email-siteconfig.pl.sample
+@sample etc/torrus/conf/notify-siteconfig.pl.sample
+@sample etc/torrus/conf/snmptrap-siteconfig.pl.sample
+@sample etc/torrus/conf/torrus-siteconfig.pl.sample
+@sample etc/torrus/xmlconfig/site-global.xml.sample
 libexec/torrus/acledit
 libexec/torrus/action_notify
 libexec/torrus/action_printemail
@@ -47,6 +35,31 @@ libexec/torrus/snmpfailures
 libexec/torrus/srvderive
 libexec/torrus/torrus.fcgi
 libexec/torrus/ttproclist
+man/man1/torrus.1.gz
+man/man1/torrus_acledit.1.gz
+man/man1/torrus_buildsearchdb.1.gz
+man/man1/torrus_cleanup.1.gz
+man/man1/torrus_clearcache.1.gz
+man/man1/torrus_collector.1.gz
+man/man1/torrus_compilexml.1.gz
+man/man1/torrus_configinfo.1.gz
+man/man1/torrus_configsnapshot.1.gz
+man/man1/torrus_devdiscover.1.gz
+man/man1/torrus_flushmonitors.1.gz
+man/man1/torrus_genddx.1.gz
+man/man1/torrus_genlist.1.gz
+man/man1/torrus_genreport.1.gz
+man/man1/torrus_monitor.1.gz
+man/man1/torrus_nodeid.1.gz
+man/man1/torrus_rrddir2xml.1.gz
+man/man1/torrus_schedulerinfo.1.gz
+man/man1/torrus_snmpfailures.1.gz
+man/man1/torrus_srvderive.1.gz
+man/man1/torrus_ttproclist.1.gz
+man/man7/torrus_action_notify.7.gz
+man/man7/torrus_action_printemail.7.gz
+man/man7/torrus_action_snmptrap.7.gz
+man/man7/torrus_install_plugin.7.gz
 %%DOCSDIR%%/devdoc/architecture.pod
 %%DOCSDIR%%/devdoc/devdiscover.pod
 %%DOCSDIR%%/devdoc/progstyle.pod
@@ -161,6 +174,7 @@ libexec/torrus/ttproclist
 %%DATADIR%%/xmlconfig/vendor/comtechefdata.xml
 %%DATADIR%%/xmlconfig/vendor/empire.systemedge.ntregperf.xml
 %%DATADIR%%/xmlconfig/vendor/empire.systemedge.xml
+%%DATADIR%%/xmlconfig/vendor/f5.bigip.xml
 %%DATADIR%%/xmlconfig/vendor/foundry.xml
 %%DATADIR%%/xmlconfig/vendor/ftos.xml
 %%DATADIR%%/xmlconfig/vendor/jacarta.xml
@@ -229,6 +243,7 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/DevDiscover/ComtechEFData.pm
 %%SITE_PERL%%/Torrus/DevDiscover/DevDetails.pm
 %%SITE_PERL%%/Torrus/DevDiscover/EmpireSystemedge.pm
+%%SITE_PERL%%/Torrus/DevDiscover/F5BigIp.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Foundry.pm
 %%SITE_PERL%%/Torrus/DevDiscover/FTOS.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Jacarta.pm
@@ -283,16 +298,16 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/SQL/SrvExport.pm
 %%SITE_PERL%%/Torrus/SQL.pm
 %%SITE_PERL%%/Torrus/TimeStamp.pm
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/log/torrus 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/run/torrus 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 755 /var/torrus 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/cache 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/collector_rrd 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/db 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 755 /var/torrus/reports 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 755 /var/torrus/session_data 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/session_data/lock 2>/dev/null || true
-@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/session_data/store 2>/dev/null || true
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/log/torrus 2>/dev/null || true
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/run/torrus 2>/dev/null || true
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/cache
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/collector_rrd
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/db
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/reports
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/session_data 2>/dev/null || true
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/session_data/store 2>/dev/null || true
+@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/session_data/lock 2>/dev/null || true
 @exec mkdir %D/etc/torrus/templates 2>/dev/null || true
 @exec mkdir %D/%%DATADIR%%/plugins 2>/dev/null || true
 @exec mkdir %D/%%DATADIR%%/plugins/devdiscover-config 2>/dev/null || true
@@ -323,6 +338,15 @@ libexec/torrus/ttproclist
 @dirrm libexec/torrus/scripts/xml
 @dirrm libexec/torrus/scripts
 @dirrm libexec/torrus
+@dirrmtry /var/torrus/session_data/store
+@dirrmtry /var/torrus/session_data/lock
+@dirrmtry /var/torrus/session_data
+@dirrmtry /var/torrus/reports
+@dirrmtry /var/torrus/db
+@dirrmtry /var/torrus/collector_rrd
+@dirrmtry /var/torrus/cache
+@dirrmtry /var/torrus/
+@dirrmtry /var/log/torrus
 @dirrmtry etc/torrus/xmlconfig
 @dirrmtry etc/torrus/templates
 @dirrmtry etc/torrus/discovery
