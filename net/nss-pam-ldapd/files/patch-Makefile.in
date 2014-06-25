@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2014-06-09 14:12:14.000000000 +0200
++++ ./Makefile.in	2014-06-09 14:12:30.000000000 +0200
+@@ -849,7 +849,7 @@
+ 	  echo "$(DESTDIR)$(NSLCD_CONF_PATH) already exists, install will not overwrite"; \
+ 	else \
+ 	  $(mkinstalldirs) `dirname $(DESTDIR)$(NSLCD_CONF_PATH)`; \
+-	  $(INSTALL) -m 600 $(srcdir)/nslcd.conf $(DESTDIR)$(NSLCD_CONF_PATH); \
++	  $(INSTALL) -m 600 $(srcdir)/nslcd.conf $(DESTDIR)$(NSLCD_CONF_PATH).sample; \
+ 	fi
+ uninstall-nslcd_conf:
+ 	-rm -f $(DESTDIR)$(NSLCD_CONF_PATH)
