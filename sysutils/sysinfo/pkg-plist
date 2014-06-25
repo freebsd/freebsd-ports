@@ -1,5 +1,7 @@
+@sample etc/sysinfo.conf.sample
+man/man5/sysinfo.conf.5.gz
+man/man8/sysinfo.8.gz
 sbin/sysinfo
-share/sysinfo/LICENCE
 share/sysinfo/common.subr
 share/sysinfo/modules/bios
 share/sysinfo/modules/cpu
@@ -14,6 +16,3 @@ share/sysinfo/modules/system
 share/sysinfo/modules/user
 @dirrm share/sysinfo/modules
 @dirrm share/sysinfo
-@unexec if cmp -s %D/etc/sysinfo.conf.sample %D/etc/sysinfo.conf; then rm -f %D/etc/sysinfo.conf; fi
-etc/sysinfo.conf.sample
-@exec if [ ! -f %D/etc/sysinfo.conf ] ; then cp -p %D/%F %B/sysinfo.conf; fi
