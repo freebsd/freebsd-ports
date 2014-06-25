@@ -12,7 +12,7 @@ COMMENT=	The GNU Gregorian calendar program
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-USES=		shebangfix makeinfo tar:xz
+USES=		charsetfix shebangfix makeinfo tar:xz
 SHEBANG_FILES=	misc/gcalltx/gcalltxp.in misc/gcalltx/gcalltx.pl
 
 INFO=		gcal
