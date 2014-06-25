@@ -19,5 +19,7 @@ KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
-NO_STAGE=	yes
+PREFIX=		/
+MTREE_FILE=	/etc/mtree/BSD.root.dist
+
 .include <bsd.port.mk>
