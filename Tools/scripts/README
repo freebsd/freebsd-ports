@@ -16,7 +16,6 @@ checknewvers - checks for availability for a newest version of distfiles on
                MASTER_SITES (ftp only).
 chkorigin.sh - checks all ports in the tree for a wrong PKGORIGIN.
                Run this tool after every repocopy.
-close-pr  - a slightly hacked version of edit-pr(1) to quickly close PR.
 de-pkg-comment - converts pkg-comment to COMMENT (will be obsoleted when
                  the mass conversion is finished)
 distclean - compare md5 sums of distfiles in ports/distfiles with currently
