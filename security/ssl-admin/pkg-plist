@@ -1,5 +1,6 @@
 bin/ssl-admin
-etc/ssl-admin/ssl-admin.conf.default
-@unexec if cmp -s %D/etc/ssl-admin/openssl.conf.default %D/etc/ssl-admin/openssl.conf; then rm -f %D/etc/ssl-admin/openssl.conf; fi
-etc/ssl-admin/openssl.conf.default
-@dirrmtry etc/ssl-admin
+%%ETCDIR%%/openssl.conf.sample
+%%ETCDIR%%/ssl-admin.conf.sample
+man/man1/ssl-admin.1.gz
+man/man5/ssl-admin.conf.5.gz
+@dirrmtry %%ETCDIR%%
