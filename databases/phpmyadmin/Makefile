@@ -4,11 +4,11 @@
 PORTNAME=	phpMyAdmin
 DISTVERSION=	4.2.4
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 
 MAINTAINER=	matthew@FreeBSD.org
-COMMENT=	A set of PHP-scripts to manage MySQL over the web
+COMMENT=	Set of PHP-scripts to manage MySQL over the web
 
 NO_ARCH=	yes
 LICENSE=	GPLv2
@@ -17,7 +17,7 @@ USES=		shebangfix tar:xz
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
 IGNORE_WITH_PHP=52
-USE_PHP=	ctype session filter mbstring json spl
+USE_PHP=	ctype session filter mbstring json spl mysqli
 .endif
 
 # Note: default settings will pull in X11 client support.  If you don't
@@ -27,15 +27,10 @@ USE_PHP=	ctype session filter mbstring json spl
 OPTIONS_DEFINE=		APC BZ2 GD MCRYPT OPENSSL PDF XML ZIP ZLIB
 OPTIONS_DEFAULT=	BZ2 GD MCRYPT OPENSSL XML ZIP ZLIB
 
-OPTIONS_MULTI=		DB_connect
-OPTIONS_MULTI_DB_connect=	MYSQL MYSQLI
-
 APC_DESC=	PHP APC (animated progress bar) support
 BZ2_DESC=	PHP bzip2 library support
 GD_DESC=	PHP GD library support (requires X11)
 MCRYPT_DESC=	PHP MCrypt library support
-MYSQLI_DESC=	PHP Improved MySQL client support
-MYSQL_DESC=	PHP MySQL support via mysql client
 OPENSSL_DESC=	PHP OpenSSL support
 PDF_DESC=	PHP PDFlib support
 XML_DESC=	PHP XML support (Export to OpenDoc)
@@ -52,7 +47,7 @@ CFG_FILE=	config.inc.php
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PMA_GRP=${GROUPS}
 
-SUB_LIST+=	PKGNAME=${PKGNAME}	       \
+SUB_LIST+=	PKGNAME=${PKGNAME}	        \
 		CFG_FILE=${WWWDIR}/${CFG_FILE}
 SUB_FILES+=	pkg-message
 
@@ -63,7 +58,7 @@ SHEBANG_FILES=	libraries/plugins/transformations/generator_main_class.sh \
 
 .for opt in ${OPTIONS_DEFINE} ${OPTIONS_MULTI_DB_connect}
 .    if ${PORT_OPTIONS:M${opt}}
-USE_PHP+=	${opt:L}
+USE_PHP+=	${opt:tl}
 .    endif
 .endfor
 
