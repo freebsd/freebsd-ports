@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_authnz_crowd
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.atlassian.com/software/crowd/downloads/cwdapache/
 DIST_SUBDIR=	apache2
@@ -16,14 +16,14 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
+RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dav_svn.so:${PORTSDIR}/www/mod_dav_svn
+
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_GCC=	any
 USE_APACHE=	22
 MAKE_JOBS_SAFE= yes
-
-MANUAL_PACKAGE_BUILD=	requires subversion build with MOD_DAV_SVN.
 
 SUB_FILES=	pkg-message zzz_authnz_crowd.conf
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} \
@@ -35,12 +35,17 @@ PLIST_FILES=	${APACHEMODDIR}/mod_authnz_crowd.so \
 
 LDFLAGS+=	-L${PREFIX}/lib
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
+		${WRKSRC}/src/Makefile.am
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
+
+
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/zzz_authnz_crowd.conf \
-		${PREFIX}/${APACHEETCDIR}/Includes/
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+		${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes/
 
 .include <bsd.port.mk>
