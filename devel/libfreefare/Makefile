@@ -3,6 +3,7 @@
 
 PORTNAME=	libfreefare
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
 		http://romain.blogreen.org/distfiles/
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libnfc.so:${PORTSDIR}/devel/libnfc
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix gmake pkgconfig tar:bzip2
+USES=		pathfix gmake pkgconfig tar:bzip2 libtool
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 
 # Restrict to stable (even) versions, indicated by the second component.
