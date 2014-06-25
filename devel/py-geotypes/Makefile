@@ -9,7 +9,7 @@ MASTER_SITES=	https://github.com/hippysurfer/geotypes/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Python Interface to Support PostGIS
 
 LICENSE=	LGPL21

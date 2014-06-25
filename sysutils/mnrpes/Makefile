@@ -4,7 +4,7 @@ PORTNAME=	mnrpes
 PORTVERSION=	2014041501
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	MCollective and Rufus scheduler wrapper
 
 LICENSE=	APACHE20

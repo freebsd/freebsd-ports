@@ -5,7 +5,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Ruby framework for writing bundlers
 
 LICENSE=	MIT
