@@ -18,7 +18,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 
 BUILD_VERSION=	2.69
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-USES=		gmake perl5 tar:xz
+USES=		gmake makeinfo perl5 tar:xz
 INFO=		autoconf
 
 GNU_CONFIGURE=	yes
