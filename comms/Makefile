@@ -140,6 +140,7 @@
     SUBDIR += ser2net
     SUBDIR += serialoverip
     SUBDIR += seyon
+    SUBDIR += sms_client
     SUBDIR += smstools3
     SUBDIR += soundmodem
     SUBDIR += spandsp
