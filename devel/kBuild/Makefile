@@ -16,7 +16,7 @@ COMMENT=	Makefile framework
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 USE_AUTOTOOLS=	automake autoconf
-USES=		gmake
+USES=		gmake makeinfo
 
 CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 
