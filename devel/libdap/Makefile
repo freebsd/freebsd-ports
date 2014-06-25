@@ -3,6 +3,7 @@
 
 PORTNAME=	libdap
 PORTVERSION=	3.13.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
@@ -21,6 +22,6 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_LDCONFIG=	yes
-USES=		charsetfix gmake pathfix
+USES=		charsetfix gmake pathfix libtool
 
 .include <bsd.port.mk>
