@@ -22,7 +22,7 @@ FFTW_FLAVOR?=	default
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
-USES=		fortran gmake libtool:keepla makeinfo
+USES=		fortran gmake libtool:keepla
 USE_LDCONFIG=	yes
 
 BROKEN_sparc64=	does not build
@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=	--enable-float --enable-type-prefix
 FFTW_SUFX=		s
 PKGNAMESUFFIX=		-float
 .else
+USES+=			makeinfo
 FFTW_SUFIX=
 INFO=			fftw
 .endif
