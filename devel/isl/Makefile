@@ -3,6 +3,7 @@
 
 PORTNAME=	isl
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://isl.gforge.inria.fr/
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 CONFIGURE_ARGS+=	--with-gmp-prefix=${LOCALBASE}
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 post-patch:
