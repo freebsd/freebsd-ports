@@ -1,0 +1,11 @@
+--- sms/services/att_web.orig	2014-04-24 11:36:45.038436392 -0700
++++ sms/services/att_web	2014-04-24 11:37:30.333143680 -0700
+@@ -3,7 +3,7 @@
+ # --------------------------------------------------------------------
+ 
+ {
+-	SMS_url      = "http://www.mobile.att.net/mc/mc_pagersend.cgi"
++	SMS_url      = "http://www.mymmode.com/messagecenter/pagersend.cgi"
+ }
+ 
+ # --------------------------------------------------------------------
