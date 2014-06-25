@@ -31,15 +31,12 @@ post-patch::
 	@${REINPLACE_CMD} -e 's,echo aout,echo elf,' ${WRKSRC}/configure
 
 post-build::
-	@${SED} -e 's,%%PLUGIN_DESC%%,${PLUGIN_DESC},' < ${PKGMESSAGE_TEMPLATE} \
-		> ${PKGMESSAGE}
+	@${SED} -e 's,%%PLUGIN_DESC%%,${PLUGIN_DESC},' < \
+		${PKGMESSAGE_TEMPLATE} > ${PKGMESSAGE}
 
 post-install::
-	@${MKDIR} ${PREFIX}/etc/verlihub/plugins
-	@${LN} -sf ${PREFIX}/lib/lib${PLUGIN_NAME}_pi.so \
-		${PREFIX}/etc/verlihub/plugins/lib${PLUGIN_NAME}_pi.so
-	@if [ -f ${PKGMESSAGE} ]; then \
-	   ${CAT} ${PKGMESSAGE}; \
-	 fi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/verlihub/plugins
+	${LN} -sf ../../../lib/lib${PLUGIN_NAME}_pi.so \
+		${STAGEDIR}${PREFIX}/etc/verlihub/plugins
 	@${ECHO_CMD} '@unexec rmdir %D/etc/verlihub/plugins 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/etc/verlihub 2>/dev/null || true' >> ${TMPPLIST}

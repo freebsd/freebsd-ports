@@ -1,4 +1,4 @@
-# Created by: Skylord
+# Created by: Mikle Davidkin <skylord@vt.net.ru>
 # $FreeBSD$
 
 PORTNAME=	messanger
@@ -11,7 +11,6 @@ MAINTAINER=	me@skylord.ru
 
 PLUGIN_DESC=	Messanger
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/net-p2p/verlihub-plugins/Makefile.plugins"
 .include <bsd.port.post.mk>
