@@ -22,7 +22,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 
 BUILD_VERSION=	2.13
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-USES=		perl5 desthack tar:bzip2
+USES=		perl5 desthack makeinfo tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4 AWK=${AWK}
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
