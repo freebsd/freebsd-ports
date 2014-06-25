@@ -14,8 +14,7 @@ COMMENT=	C++ library for symbolic mathematical calculations
 
 LIB_DEPENDS=	libcln.so:${PORTSDIR}/math/cln
 
-USE_BZIP2=	yes
-USES=		pkgconfig pathfix gmake libtool
+USES=		gmake libtool makeinfo pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
