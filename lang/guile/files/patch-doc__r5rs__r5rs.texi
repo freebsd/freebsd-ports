@@ -1,0 +1,12 @@
+--- ./doc/r5rs/r5rs.texi.orig	2010-12-08 10:06:50.000000000 +0100
++++ ./doc/r5rs/r5rs.texi	2014-06-25 22:52:36.456460772 +0200
+@@ -116,9 +116,6 @@
+ 
+ 
+ 
+-@unnumbered Summary
+-
+-
+ The report gives a defining description of the programming language
+ Scheme.  Scheme is a statically scoped and properly tail-recursive
+ dialect of the Lisp programming language invented by Guy Lewis
