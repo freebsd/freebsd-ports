@@ -84,8 +84,7 @@ TLS_DEBUG_DESC=			Enable additional debug information
 XF_QUITASAP_DESC=		Close SMTP session ASAP (SMTPEXTFORK)
 
 .if defined(SLAVE_LDAP) || \
-    defined(SLAVE_SPAMCONTROL) || \
-    defined(SLAVE_TLS)
+    defined(SLAVE_SPAMCONTROL)
 _USE_NETQMAIL=			no
 .else
 _USE_NETQMAIL=			yes
@@ -176,11 +175,12 @@ PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	netqmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 .elif defined(SLAVE_TLS)
 PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
-PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato_v2.patch:tls
+TLS_PATCH_NAME=	${QMAIL_PORTNAME}-${QMAIL_VERSION}-tls-${TLS_PATCH_DATE}.patch
+PATCHFILES+=	${TLS_PATCH_NAME}:tls
 .endif
 
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
-PATCH_SITE_SUBDIR+=	bdrewery/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,spf_tls,localtime,qmtpc_outgoingip/}
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,quota,blockexec,doublebounce,spf,spf_tls,localtime,qmtpc_outgoingip
 PATCH_SITE_SUBDIR+=	bdrewery/qmail/:tls
 
 .if !defined(BARRIER_SMTP_AUTH_PATCH)
@@ -310,6 +310,9 @@ PLIST_SUB+=	SPAMCONTROL="@comment "
 
 .if defined(SLAVE_TLS)
 PKGMESSAGE_SUFFIX=	tls
+PLIST_SUB+=	TLS="" NO_TLS="@comment "
+.else
+PLIST_SUB+=	TLS="@comment " NO_TLS=""
 .endif
 
 .if defined(PKGMESSAGE_SUFFIX)
@@ -410,7 +413,7 @@ SUB_LIST+=	MANPATH=""
 .endif
 
 .if defined(SLAVE_TLS)
-CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
+CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS=${TLS_PATCH_DATE}
 . if ${PORT_OPTIONS:MTLS_DEBUG}
 CFLAGS+=	-DDEBUG
 . endif
@@ -442,7 +445,7 @@ EXTRACT_ONLY+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz
 MASTER_SITES+=	http://tomclegg.net/qmail/:close3
 DISTFILES+=	qmail-smtpd-auth-close3.patch:close3
 . if defined(SLAVE_TLS)
-AUTH_PATCH=	auth.patch.diff-tls
+AUTH_PATCH=	auth.patch.diff-tls-20110119
 . elif ${PORT_OPTIONS:MSPF_PATCH}
 AUTH_PATCH=	auth.patch.diff
 . endif
@@ -475,13 +478,16 @@ SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol-26
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S/$/:spf_spamcontrol/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:spf_spamcontrol
 DISTFILES+=		${SPF_SPAMCONTROL_PATCH}:spf_spamcontrol
-.  elif ${PORT_OPTIONS:MSMTP_AUTH_PATCH}
-SPF_TLS_PATCH=	qmail-spf-rc5.patch-auth-tls
-MASTER_SITES+=	http://manuel.mausz.at/programming/patches/qmail/:spf_tls
-DISTFILES+=	${SPF_TLS_PATCH}:spf_tls
 .  else
-SPF_TLS_PATCH=	qmail-spf-rc5.patch-tls
-MASTER_SITES+=	http://manuel.mausz.at/programming/patches/qmail/:spf_tls
+# XXX - Move change out of conflicting Makefile hunk
+.    if ${PORT_OPTIONS:MSMTP_AUTH_PATCH}
+SPF_TLS_PATCH=	qmail-spf-rc5.patch-auth-tls-20110119
+.    else
+SPF_TLS_PATCH=	qmail-spf-rc5.patch-tls-20110119
+.    endif
+#MASTER_SITES+=	http://manuel.mausz.at/programming/patches/qmail/:spf_tls
+MASTER_SITES+=		${MASTER_SITE_LOCAL:S/$/:spf_tls/}
+MASTER_SITE_SUBDIR+=	bdrewery/qmail/:spf_tls
 DISTFILES+=	${SPF_TLS_PATCH}:spf_tls
 .  endif
 . else
@@ -503,19 +509,28 @@ DISTFILES+=	${EXT_BIG_TODO_PATCH}:ext_big_todo
 
 . if ${PORT_OPTIONS:MSPF_PATCH}
 .  if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
+.    if defined(SLAVE_SPAMCONTROL)
+EXTTODO_PATCH=	ext_todo-20030105_spf.patch
+.    else
+# XXX - Move qmail-todo out of conflicting Makefile hunk
+EXTTODO_PATCH=	ext_todo-20030105_spf_tls.patch
+.    endif
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:exttodo
-EXTTODO_PATCH=	ext_todo-20030105_spf.patch
 DISTFILES+=	${EXTTODO_PATCH}:exttodo
 .  else
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
-PATCHFILES+=	ext_todo-20030105_spf.patch:exttodo
 PATCH_SITE_SUBDIR+=	garga/qmail/:exttodo
+PATCHFILES+=	ext_todo-20030105_spf.patch:exttodo
 .  endif
 . elif defined(SLAVE_MYSQL)
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
 PATCHFILES+=	ext_todo-20030105_mysql.patch:exttodo
 PATCH_SITE_SUBDIR+=	garga/qmail/:exttodo
+. elif defined(SLAVE_TLS)
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
+PATCHFILES+=	ext_todo-20030105_tls.patch:exttodo
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:exttodo
 . else
 PATCH_SITES+=	http://www.nrg4u.com/qmail/:exttodo
 PATCHFILES+=	ext_todo-20030105.patch:exttodo
@@ -706,6 +721,7 @@ post-extract:
 	@cd ${WRKDIR} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70.tar.gz
 .endif
 
+# XXX - Move all the major patch applications to post-extract
 post-patch:
 .if ${PORT_OPTIONS:MSMTP_AUTH_PATCH}
 	@${CP} ${SMTP_AUTH_DIR}/base64.[ch] ${WRKSRC}
@@ -769,12 +785,10 @@ post-patch:
 	@${REINPLACE_CMD} -E "/qhpsi *= *\"unknown\"/d; s/(\*qqx *== *'D')/qhpsi \&\& \1/g" \
 		${WRKSRC}/qmail-smtpd.c
 .elif defined(SLAVE_TLS)
-	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato_v2.patch > \
+	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/${TLS_PATCH_NAME} > \
 		${WRKDIR}/TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E 's!("control/tlsserverciphers")!\1, 0!' \
-		${WRKSRC}/qmail-smtpd.c
 .elif defined(SLAVE_LDAP)
 	@${REINPLACE_CMD} "s|^LDAPLIBS=-L/usr/local/lib|LDAPLIBS=-L${LOCALBASE}/lib|; \
 			   s|^LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" \
