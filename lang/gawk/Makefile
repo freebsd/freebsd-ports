@@ -22,7 +22,7 @@ MPFR_CONFIGURE_OFF=	--without-gmp --without-mpfr
 INFO=		gawk gawkinet
 
 GNU_CONFIGURE=	yes
-USES=		iconv tar:xz
+USES=		iconv makeinfo tar:xz
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE} \
 		AWK=${AWK}
