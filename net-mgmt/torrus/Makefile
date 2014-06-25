@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	torrus
-PORTVERSION=	2.05
-PORTREVISION=	1
+PORTVERSION=	2.07
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/torrus/torrus/
 
 MAINTAINER=	corsmith@gmail.com
-COMMENT=	The Data Series Processing Framework - think mrtg with xml configs
+COMMENT=	Data Series Processing Framework - think mrtg with xml configs
 
 LICENSE=	GPLv2
 
@@ -43,25 +42,19 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		pkgbindir=${PREFIX}/libexec/torrus \
 		pkgdocdir=${DOCSDIR} \
 		exmpdir=${EXAMPLESDIR} \
-		perllibdir=${SITE_PERL} \
+		perllibdir=${PREFIX}/${SITE_PERL_REL} \
 		scriptsdir=${PREFIX}/libexec/torrus/scripts \
 		--enable-pkgonly
 
-MAN1=		torrus.1 torrus_acledit.1 torrus_buildsearchdb.1 \
-		torrus_cleanup.1 torrus_clearcache.1 torrus_collector.1 \
-		torrus_compilexml.1 torrus_configinfo.1 \
-		torrus_configsnapshot.1 torrus_devdiscover.1 \
-		torrus_flushmonitors.1 torrus_genddx.1 \
-		torrus_genlist.1 torrus_genreport.1 torrus_monitor.1 \
-		torrus_nodeid.1 torrus_rrddir2xml.1 torrus_schedulerinfo.1 \
-		torrus_snmpfailures.1 torrus_srvderive.1 \
-		torrus_ttproclist.1
-
-MAN7=		torrus_action_printemail.7 torrus_action_snmptrap.7 \
-		torrus_action_notify.7 torrus_install_plugin.7
-
-NO_STAGE=	yes
 post-install:
-	@${CAT} pkg-message
+	${INSTALL} -d -m 2775 ${STAGEDIR}/var/log/torrus
+	${INSTALL} -d -m 775 ${STAGEDIR}/var/torrus
+	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/cache
+	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/collector_rrd
+	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/db
+	${INSTALL} -d -m 775 ${STAGEDIR}/var/torrus/reports
+	${INSTALL} -d -m 775 ${STAGEDIR}/var/torrus/session_data
+	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/session_data/lock
+	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/session_data/store
 
 .include <bsd.port.mk>
