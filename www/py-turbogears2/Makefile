@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	TurboGears2
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	www python
 MASTER_SITES=	http://www.turbogears.org/2.1/downloads/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
