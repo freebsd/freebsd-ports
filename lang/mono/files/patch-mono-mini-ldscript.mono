@@ -1,0 +1,31 @@
+Address this build error when using binutils 2.24's ld(1):
+
+====================
+ .
+ .
+  CCLD   mono-sgen
+/usr/local/bin/ld: mono-boehm: local symbol `__progname' in /usr/lib/crt1.o is referenced by DSO
+/usr/local/bin/ld: final link failed: Bad value
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[4]: *** [mono-boehm] Error 1
+gmake[4]: *** Waiting for unfinished jobs....
+/usr/local/bin/ld: mono-sgen: local symbol `__progname' in /usr/lib/crt1.o is referenced by DSO
+/usr/local/bin/ld: final link failed: Bad value
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[4]: *** [mono-sgen] Error 1
+ .
+ .
+====================
+
+See also:
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=190851
+
+--- mono/mini/ldscript.mono.orig	2014-03-31 14:25:50.000000000 -0600
++++ mono/mini/ldscript.mono	2014-06-18 14:27:28.000000000 -0600
+@@ -7,6 +7,4 @@
+               gc_thread_vtable;
+               mini_type_is_vtype;
+               mini_is_gsharedvt_klass;
+-      local:
+-              *;
+ };
