@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ede
-PORTVERSION=	2.0
-PORTREVISION=	3
+PORTVERSION=	2.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}lib/${PORTVERSION}:edelib
@@ -23,16 +22,18 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-USES=		fam iconv:translit gettext pathfix pkgconfig \
+USES=		fam gettext iconv:translit pathfix pkgconfig \
 		shared-mime-info shebangfix
 SHEBANG_FILES=	doc/asciidoc/asciidoc.py
 python_OLD_CMD=	${SETENV} python
 python_CMD=	${PYTHON_CMD}
 USE_XORG=	xcomposite xft xinerama xpm xrandr
 USE_PYTHON=	2
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PEKWM_CXXFLAGS="${CXXFLAGS}"
-CONFIGURE_ARGS=	--with-edelib_path=${EDELIB_WRKSRC} \
+CONFIGURE_ENV=	PEKWM_CXXFLAGS="${CXXFLAGS}" \
+		PKG_CONFIG_PATH="${EDELIB_WRKSRC}/pc"
+CONFIGURE_ARGS=	--with-edelib-path=${EDELIB_WRKSRC} \
 		--with-fltk-path=${LOCALBASE}
 INSTALL_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -55,16 +56,27 @@ EDELIB_WRKSRC=	${WRKDIR}/${EDELIB_DISTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/usr/local/share|${LOCALBASE}/share| ; \
+		'/DEVELOPER_FLAGS=/s|-pedantic|| ; \
 		 /OPTIM_FLAGS=/s|-O2|-fPIC| ; \
-		 s|_daylight=yes|_daylight=no|' ${EDELIB_WRKSRC}/configure
+		 s|_daylight=yes|_daylight=no| ; \
+		 s|/usr/local/share|${LOCALBASE}/share|' \
+		${EDELIB_WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|$$(CC)|@CXX@| ; \
+		 /-lstdc++/s|^|#|' ${EDELIB_WRKSRC}/Jamconfig.in
 	@${REINPLACE_CMD} -e \
 		's| -liconv| ${ICONV_LIB}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|$$(CC)|@CXX@| ; \
-		 s|-lstdc++||' ${WRKSRC}/Jamconfig.in
+		 /panel-applets/s|EDE_DATA_DIR|libdir| ; \
+		 /-lstdc++/s|^|#|' ${WRKSRC}/Jamconfig.in
 	@${REINPLACE_CMD} -e \
-		 '/desktop-links/s|^|#|' ${WRKSRC}/data/Jamfile
+		'/desktop-links/s|^|#|' ${WRKSRC}/data/Jamfile
+	@${REINPLACE_CMD} -e \
+		'/-ldl/s|^|#|' ${WRKSRC}/ede-panel/Jamfile
+	@${REINPLACE_CMD} -e \
+		's|"\(panel-applets\)"|"../../lib/ede/\1"|' \
+		${WRKSRC}/ede-panel/Panel.cpp
 
 pre-configure:
 	@(cd ${EDELIB_WRKSRC} \
@@ -87,16 +99,20 @@ do-build:
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} DESTDIR="${STAGEDIR}" \
 		${LOCALBASE}/bin/jam ${INSTALL_TARGET})
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ede-2.0.0/manual/images
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ede-2.1.0/manual/images
 	@(cd ${WRKSRC}/doc/manual/images && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${PREFIX}/share/doc/ede-2.0.0/manual/images)
+		${STAGEDIR}${PREFIX}/share/doc/ede-2.1.0/manual/images)
 .for i in ede-about ede-autostart ede-bell-conf ede-bug-report ede-crasher \
 	ede-calc ede-conf ede-desktop ede-desktop-conf ede-dialog \
 	ede-keyboard-conf ede-notify-daemon ede-screensaver-conf \
-	ede-image-view ede-launch emountd ede-timedate ede-tip \
-	ede-tip-compiler ede-preferred-applications evoke ede-shutdown \
-	ede-panel ede-menu-spec-test pekwm
+	ede-image-view ede-launch ede-timedate ede-tip ede-tip-compiler \
+	ede-preferred-applications evoke ede-shutdown ede-panel pekwm
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
+.endfor
+.for i in battery_monitor.so clock.so cpu_monitor.so keyboard_layout.so \
+	mem_monitor.so pager.so quick_launch.so start_menu.so \
+	system_tray.so taskbar.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ede/panel-applets/${i}
 .endfor
 
 .include <bsd.port.mk>

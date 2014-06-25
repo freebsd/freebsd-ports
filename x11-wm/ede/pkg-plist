@@ -12,7 +12,6 @@ bin/ede-help
 bin/ede-image-view
 bin/ede-keyboard-conf
 bin/ede-launch
-bin/ede-menu-spec-test
 bin/ede-notify-daemon
 bin/ede-panel
 bin/ede-preferred-applications
@@ -23,7 +22,6 @@ bin/ede-shutdown
 bin/ede-timedate
 bin/ede-tip
 bin/ede-tip-compiler
-bin/emountd
 bin/evoke
 bin/pekwm
 bin/startede
@@ -39,6 +37,16 @@ etc/xdg/ede/ede-conf.conf
 etc/xdg/ede/ede-settings.conf
 etc/xdg/ede/ede-startup.conf
 etc/xdg/menus/ede-applications.menu
+lib/ede/panel-applets/battery_monitor.so
+lib/ede/panel-applets/clock.so
+lib/ede/panel-applets/cpu_monitor.so
+lib/ede/panel-applets/keyboard_layout.so
+lib/ede/panel-applets/mem_monitor.so
+lib/ede/panel-applets/pager.so
+lib/ede/panel-applets/quick_launch.so
+lib/ede/panel-applets/start_menu.so
+lib/ede/panel-applets/system_tray.so
+lib/ede/panel-applets/taskbar.so
 share/applications/ede-about.desktop
 share/applications/ede-calc.desktop
 share/applications/ede-conf.desktop
@@ -61,56 +69,45 @@ share/desktop-directories/ede-office.directory
 share/desktop-directories/ede-other.directory
 share/desktop-directories/ede-settings.directory
 share/desktop-directories/ede-system.directory
-share/doc/ede-2.0.0/manual/README.html
-share/doc/ede-2.0.0/manual/dbus-usage.html
-share/doc/ede-2.0.0/manual/ede-calc.html
-share/doc/ede-2.0.0/manual/ede-dialog.html
-share/doc/ede-2.0.0/manual/ede-help.html
-share/doc/ede-2.0.0/manual/ede-notify-daemon.html
-share/doc/ede-2.0.0/manual/ede-tip.html
-share/doc/ede-2.0.0/manual/emountd.html
-share/doc/ede-2.0.0/manual/evoke.html
-share/doc/ede-2.0.0/manual/hacking.html
-share/doc/ede-2.0.0/manual/images/README
-share/doc/ede-2.0.0/manual/images/callouts/1.png
-share/doc/ede-2.0.0/manual/images/callouts/10.png
-share/doc/ede-2.0.0/manual/images/callouts/11.png
-share/doc/ede-2.0.0/manual/images/callouts/12.png
-share/doc/ede-2.0.0/manual/images/callouts/13.png
-share/doc/ede-2.0.0/manual/images/callouts/14.png
-share/doc/ede-2.0.0/manual/images/callouts/15.png
-share/doc/ede-2.0.0/manual/images/callouts/2.png
-share/doc/ede-2.0.0/manual/images/callouts/3.png
-share/doc/ede-2.0.0/manual/images/callouts/4.png
-share/doc/ede-2.0.0/manual/images/callouts/5.png
-share/doc/ede-2.0.0/manual/images/callouts/6.png
-share/doc/ede-2.0.0/manual/images/callouts/7.png
-share/doc/ede-2.0.0/manual/images/callouts/8.png
-share/doc/ede-2.0.0/manual/images/callouts/9.png
-share/doc/ede-2.0.0/manual/images/caution.png
-share/doc/ede-2.0.0/manual/images/ede-calc.jpg
-share/doc/ede-2.0.0/manual/images/ede-tip.jpg
-share/doc/ede-2.0.0/manual/images/example.png
-share/doc/ede-2.0.0/manual/images/home.png
-share/doc/ede-2.0.0/manual/images/important.png
-share/doc/ede-2.0.0/manual/images/next.png
-share/doc/ede-2.0.0/manual/images/note.png
-share/doc/ede-2.0.0/manual/images/prev.png
-share/doc/ede-2.0.0/manual/images/tip.png
-share/doc/ede-2.0.0/manual/images/up.png
-share/doc/ede-2.0.0/manual/images/warning.png
-share/doc/ede-2.0.0/manual/index.html
-share/doc/ede-2.0.0/manual/introduction.html
-%%DATADIR%%/panel-applets/clock.so
-%%DATADIR%%/panel-applets/cpu_monitor.so
-%%DATADIR%%/panel-applets/hider.so
-%%DATADIR%%/panel-applets/keyboard_layout.so
-%%DATADIR%%/panel-applets/mem_monitor.so
-%%DATADIR%%/panel-applets/pager.so
-%%DATADIR%%/panel-applets/quick_launch.so
-%%DATADIR%%/panel-applets/start_menu.so
-%%DATADIR%%/panel-applets/system_tray.so
-%%DATADIR%%/panel-applets/taskbar.so
+share/doc/ede-2.1.0/manual/README.html
+share/doc/ede-2.1.0/manual/dbus-usage.html
+share/doc/ede-2.1.0/manual/ede-calc.html
+share/doc/ede-2.1.0/manual/ede-dialog.html
+share/doc/ede-2.1.0/manual/ede-help.html
+share/doc/ede-2.1.0/manual/ede-notify-daemon.html
+share/doc/ede-2.1.0/manual/ede-tip.html
+share/doc/ede-2.1.0/manual/evoke.html
+share/doc/ede-2.1.0/manual/hacking.html
+share/doc/ede-2.1.0/manual/images/README
+share/doc/ede-2.1.0/manual/images/callouts/1.png
+share/doc/ede-2.1.0/manual/images/callouts/10.png
+share/doc/ede-2.1.0/manual/images/callouts/11.png
+share/doc/ede-2.1.0/manual/images/callouts/12.png
+share/doc/ede-2.1.0/manual/images/callouts/13.png
+share/doc/ede-2.1.0/manual/images/callouts/14.png
+share/doc/ede-2.1.0/manual/images/callouts/15.png
+share/doc/ede-2.1.0/manual/images/callouts/2.png
+share/doc/ede-2.1.0/manual/images/callouts/3.png
+share/doc/ede-2.1.0/manual/images/callouts/4.png
+share/doc/ede-2.1.0/manual/images/callouts/5.png
+share/doc/ede-2.1.0/manual/images/callouts/6.png
+share/doc/ede-2.1.0/manual/images/callouts/7.png
+share/doc/ede-2.1.0/manual/images/callouts/8.png
+share/doc/ede-2.1.0/manual/images/callouts/9.png
+share/doc/ede-2.1.0/manual/images/caution.png
+share/doc/ede-2.1.0/manual/images/ede-calc.jpg
+share/doc/ede-2.1.0/manual/images/ede-tip.jpg
+share/doc/ede-2.1.0/manual/images/example.png
+share/doc/ede-2.1.0/manual/images/home.png
+share/doc/ede-2.1.0/manual/images/important.png
+share/doc/ede-2.1.0/manual/images/next.png
+share/doc/ede-2.1.0/manual/images/note.png
+share/doc/ede-2.1.0/manual/images/prev.png
+share/doc/ede-2.1.0/manual/images/tip.png
+share/doc/ede-2.1.0/manual/images/up.png
+share/doc/ede-2.1.0/manual/images/warning.png
+share/doc/ede-2.1.0/manual/index.html
+share/doc/ede-2.1.0/manual/introduction.html
 %%DATADIR%%/themes/splash-themes/scape/autostart.png
 %%DATADIR%%/themes/splash-themes/scape/background.png
 %%DATADIR%%/themes/splash-themes/scape/ede-desktop.png
@@ -1544,13 +1541,14 @@ share/xsessions/ede.desktop
 @dirrm %%DATADIR%%/themes/splash-themes/scape
 @dirrm %%DATADIR%%/themes/splash-themes
 @dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/panel-applets
+@dirrm lib/ede/panel-applets
 @dirrm %%DATADIR%%
-@dirrm share/doc/ede-2.0.0/manual/images/callouts
-@dirrm share/doc/ede-2.0.0/manual/images
-@dirrm share/doc/ede-2.0.0/manual
-@dirrm share/doc/ede-2.0.0
+@dirrm share/doc/ede-2.1.0/manual/images/callouts
+@dirrm share/doc/ede-2.1.0/manual/images
+@dirrm share/doc/ede-2.1.0/manual
+@dirrm share/doc/ede-2.1.0
 @dirrmtry share/desktop-directories
+@dirrm lib/ede
 @dirrmtry etc/xdg/menus
 @dirrm etc/xdg/ede
 @dirrmtry etc/xdg
