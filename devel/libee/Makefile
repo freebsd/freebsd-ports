@@ -3,6 +3,7 @@
 
 PORTNAME=	libee
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libee.org/files/download/
 
@@ -15,6 +16,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_LDCONFIG=	yes
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBESTR_CFLAGS="-I${LOCALBASE}/include" LIBESTR_LIBS="-L${LOCALBASE}/lib -lestr"
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-testbench

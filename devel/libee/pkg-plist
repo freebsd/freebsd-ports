@@ -20,9 +20,9 @@ include/libee/valnode.h
 include/libee/value.h
 include/libee/valuetype.h
 lib/libee.a
-lib/libee.la
 lib/libee.so
 lib/libee.so.0
+lib/libee.so.0.0.0
 libdata/pkgconfig/libee.pc
 sbin/libee-convert
 @dirrm include/libee
