@@ -3,6 +3,7 @@
 
 PORTNAME=	jep
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel java python
 MASTER_SITES=	SF/${PORTNAME}p/${PORTNAME}/${PORTVERSION}
 
@@ -18,6 +19,7 @@ JAVA_VERSION=	1.6+
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USES=		libtool
 # Necessary, since the configure script does the LIBS and
 # LDFLAGS detection wrong
 LDFLAGS=	-L${LOCALBASE}/lib
