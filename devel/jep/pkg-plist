@@ -1,6 +1,6 @@
 lib/libjep.a
-lib/libjep.la
 lib/libjep.so.2
+lib/libjep.so.2.0.1
 lib/libjep.so
 man/man1/jep.1.gz
 %%JAVAJARDIR%%/jep.jar
