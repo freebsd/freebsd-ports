@@ -10,6 +10,6 @@ EXTRACT_ONLY=
 USES=		gmake
 
 do-install:
-	@cd ${PARENT_WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} install-data-local
+	@cd ${PARENT_WRKSRC}/doc && ${MAKE_CMD} ${MAKE_ARGS} install-data-local
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"

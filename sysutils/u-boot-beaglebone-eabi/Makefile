@@ -28,10 +28,10 @@ CROSS_PREFIX=	arm-eabi-
 ARCH=		arm
 
 do-configure:
-	(cd ${WRKSRC}; ${GMAKE} CROSS_COMPILE=${CROSS_PREFIX} am335x_evm_config)
+	(cd ${WRKSRC}; ${MAKE_CMD} CROSS_COMPILE=${CROSS_PREFIX} am335x_evm_config)
 
 do-build:
-	(cd ${WRKSRC};${GMAKE} CROSS_COMPILE=${CROSS_PREFIX} )
+	(cd ${WRKSRC};${MAKE_CMD} CROSS_COMPILE=${CROSS_PREFIX} )
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${U_BOOT_DIR}

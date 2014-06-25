@@ -47,7 +47,7 @@ pre-patch:
 
 post-configure:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} setup)
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} setup)
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreetype.so.*

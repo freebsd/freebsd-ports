@@ -19,7 +19,7 @@ USES=		gmake
 
 tests: build
 	@${ECHO_MSG} "===> Running ${PORTNAME} regression tests"
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} test)
 
 .include <bsd.port.mk>

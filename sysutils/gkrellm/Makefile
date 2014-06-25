@@ -55,7 +55,7 @@ CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm/themes\"' \
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gkrellm ${PREFIX}/bin/gkrellm
 	@cd ${WRKSRC}/po && \
-		${GMAKE} install enable_nls=1 LOCALEDIR=${PREFIX}/share/locale
+		${MAKE_CMD} install enable_nls=1 LOCALEDIR=${PREFIX}/share/locale
 
 	@${MKDIR} ${PREFIX}/include/gkrellm
 .for f in ${INCLUDES}

@@ -130,7 +130,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${a} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-	cd ${WRKSRC} && ( ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
+	cd ${WRKSRC} && ( ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
 		install-configure ; cd - )
 
 	@${ECHO_MSG} "In case you use authpam, you should put the following lines"

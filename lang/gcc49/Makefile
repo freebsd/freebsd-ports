@@ -129,7 +129,7 @@ pre-configure:
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
-	cd ${WRKSRC}; ${GMAKE} -sk check \
+	cd ${WRKSRC}; ${MAKE_CMD} -sk check \
 	; ${SRCDIR}/contrib/test_summary
 .endif
 

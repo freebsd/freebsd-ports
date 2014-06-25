@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--enable-search-domains
 # problems if we are later packaged.
 #
 do-install:
-	@( cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
+	@( cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
 .for INSTALLED_MODULE in ${INSTALLED_MODULES}
 	( cd ${STAGEDIR}${PREFIX}/lib ; ${LN} -s ${INSTALLED_MODULE}.so.1 ${INSTALLED_MODULE}.so )
 	${RM} ${STAGEDIR}${PREFIX}/lib/${INSTALLED_MODULE}.a ${STAGEDIR}${PREFIX}/lib/${INSTALLED_MODULE}.la

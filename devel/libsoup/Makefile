@@ -51,14 +51,14 @@ post-patch:
 
 .if defined(SOUP_SLAVE)
 do-build:
-	cd ${WRKSRC}/libsoup && ${GMAKE} libsoup-gnome-2.4.la
+	cd ${WRKSRC}/libsoup && ${MAKE_CMD} libsoup-gnome-2.4.la
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.1 ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.${LIBVERSION} ${STAGEDIR}${PREFIX}/lib/
-	cd ${WRKSRC}/libsoup && DESTDIR=${STAGEDIR} ${GMAKE} install-libsoupgnomeincludeHEADERS
+	cd ${WRKSRC}/libsoup && DESTDIR=${STAGEDIR} ${MAKE_CMD} install-libsoupgnomeincludeHEADERS
 .endif
 
 post-install:

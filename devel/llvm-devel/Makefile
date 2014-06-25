@@ -185,10 +185,10 @@ post-configure:
 
 post-build:
 .if ${PORT_OPTIONS:MMANPAGES}
-	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man
+	@cd ${WRKSRC}/docs && ${MAKE_CMD} -f Makefile.sphinx man
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx html
+	@cd ${WRKSRC}/docs && ${MAKE_CMD} -f Makefile.sphinx html
 .endif
 
 post-install:
@@ -243,7 +243,7 @@ post-install:
 	done
 .endif
 
-TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${GMAKE} check-local-lit)'
+TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${MAKE_CMD} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
 	if [ `${ID} -u` = 0 ]; then \
 		${CHOWN} -R nobody ${WRKSRC}/test; \

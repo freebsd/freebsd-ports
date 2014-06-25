@@ -29,6 +29,6 @@ PLIST_FILES=	bin/roxml \
 		man/man1/roxml.1.gz
 
 pre-build:
-	@cd ${WRKSRC} && ${GMAKE} clean
+	@cd ${WRKSRC} && ${MAKE_CMD} clean
 
 .include <bsd.port.mk>

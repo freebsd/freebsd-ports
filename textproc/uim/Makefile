@@ -78,21 +78,21 @@ post-patch:
 do-build:
 .if !defined(UIM_SLAVE)
 .for d in replace sigscheme uim scm xim po fep emacs pixmaps tables
-	cd ${WRKSRC}/${d} && ${GMAKE}
+	cd ${WRKSRC}/${d} && ${MAKE_CMD}
 .endfor
 .if !defined(WITHOUT_X11)
-	cd ${WRKSRC}/gtk2/candwin && ${GMAKE}
+	cd ${WRKSRC}/gtk2/candwin && ${MAKE_CMD}
 .endif
 .endif
 
 do-install:
 .if !defined(UIM_SLAVE)
-	cd ${WRKSRC} && ${GMAKE} DESTDIR=${STAGEDIR} install-data-am
+	cd ${WRKSRC} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-data-am
 .for d in sigscheme uim scm xim po fep emacs pixmaps tables
-	cd ${WRKSRC}/${d} && ${GMAKE} DESTDIR=${STAGEDIR} install
+	cd ${WRKSRC}/${d} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install
 .endfor
 .if !defined(WITHOUT_X11)
-	cd ${WRKSRC}/gtk2/candwin && ${GMAKE} DESTDIR=${STAGEDIR} install
+	cd ${WRKSRC}/gtk2/candwin && ${MAKE_CMD} DESTDIR=${STAGEDIR} install
 .endif
 .endif
 

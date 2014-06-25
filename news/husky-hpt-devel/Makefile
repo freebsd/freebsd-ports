@@ -38,12 +38,12 @@ post-patch:
 
 post-build:
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} all
+	@cd ${WRKSRC}/doc && ${MAKE_CMD} ${MAKE_ARGS} all
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} install
+	@cd ${WRKSRC}/doc && ${MAKE_CMD} ${MAKE_ARGS} install
 .endif
 
 .include "${.CURDIR}/../husky-base-devel/Makefile.inc"

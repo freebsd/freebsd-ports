@@ -76,7 +76,7 @@ test:	install
 		(cd `dirname $$sample` ; \
 		${ECHO_MSG} "============" ; \
 		${ECHO_MSG} "*** Entering `pwd`" ; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
 		|| ${TRUE}) ; \
 	done
 	@${ECHO_MSG} "============"

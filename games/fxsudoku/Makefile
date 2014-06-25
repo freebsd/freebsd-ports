@@ -19,9 +19,9 @@ post-extract:
 	${CP} ${FILESDIR}/config.freebsd ${WRKSRC}/build
 
 do-build:
-	cd ${WRKSRC} && MAKE=${GMAKE} ./gb
+	cd ${WRKSRC} && MAKE=${MAKE_CMD} ./gb
 
 do-install:
-	cd ${WRKSRC} && MAKE=${GMAKE} ./gb install --prefix=${STAGEDIR}${PREFIX}
+	cd ${WRKSRC} && MAKE=${MAKE_CMD} ./gb install --prefix=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

@@ -25,7 +25,7 @@ DESKTOP_ENTRIES="The Butterfly Effect" "Inspired by The Incredible Machine" \
 		"${PREFIX}/bin/tbe" "LogicGame;Game;" false
 
 post-patch:
-		@${REINPLACE_CMD} 's/ make/ ${GMAKE}/' \
+		@${REINPLACE_CMD} 's/ make/ ${MAKE_CMD}/' \
 			${WRKSRC}/3rdParty/Makefile
 		@${REINPLACE_CMD} 's/debug/release link_prl/' ${WRKSRC}/tbe.pro
 		@${SED} 's:%%DATADIR:QString("${DATADIR}"):'  \
@@ -35,7 +35,7 @@ post-patch:
 
 pre-configure:
 		# This is supposedly done by the ./configure script
-		@cd ${WRKSRC}/3rdParty && ${GMAKE}
+		@cd ${WRKSRC}/3rdParty && ${MAKE_CMD}
 
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${DATADIR}

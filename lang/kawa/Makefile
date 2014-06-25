@@ -39,6 +39,6 @@ pre-patch:
 		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
 
 regression-test: build
-	cd ${WRKSRC} && ${GMAKE} check
+	cd ${WRKSRC} && ${MAKE_CMD} check
 
 .include <bsd.port.mk>

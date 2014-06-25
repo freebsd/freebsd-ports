@@ -26,8 +26,8 @@ PORTDOCS=	README.md lmicdiusb \
 PLIST_FILES=	bin/lm4flash bin/lmicdi
 
 do-build:
-	@${GMAKE} -C ${WRKSRC}/lm4flash all
-	@${GMAKE} -C ${WRKSRC}/lmicdiusb all
+	@${MAKE_CMD} -C ${WRKSRC}/lm4flash all
+	@${MAKE_CMD} -C ${WRKSRC}/lmicdiusb all
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lm4flash/lm4flash ${STAGEDIR}${PREFIX}/bin/

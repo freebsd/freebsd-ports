@@ -81,10 +81,10 @@ post-patch:
 
 post-build:
 	(cd ${WRKSRC}/lisp ; \
-	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
+	 ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
 	 ${RM} ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${PORTVERSION}.1 ; \
 	 cd ${WRKSRC}/src ; \
-	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	 ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

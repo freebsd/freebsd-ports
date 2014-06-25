@@ -33,6 +33,6 @@ BASH_CONFIGURE_WITH=	--with-bash-completion
 OPTIONS_SUB=	yes
 
 test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>

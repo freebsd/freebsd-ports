@@ -40,7 +40,7 @@ BUILD_DEPENDS+=	cppunit-config:${PORTSDIR}/devel/cppunit
 CONFIGURE_ARGS=	--with-cppunit-prefix=${LOCALBASE}
 
 regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check || \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check || \
 		(${CAT} ${WRKSRC}/tests/test-suite.log; false)
 .endif
 

@@ -46,8 +46,8 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC}/SWIG && swig -c++ -python -globals kiki -o KikiPy_wrap.cpp KikiPy.i
-	cd ${WRKSRC}/kodilib/linux && ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS}
-	cd ${WRKSRC}/linux && ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS}
+	cd ${WRKSRC}/kodilib/linux && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS}
+	cd ${WRKSRC}/linux && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/linux/kiki ${STAGEDIR}${PREFIX}/bin/

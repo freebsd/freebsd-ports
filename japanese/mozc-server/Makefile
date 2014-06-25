@@ -64,7 +64,7 @@ GYP_DEFINES=	use_libprotobuf=1 \
 		enable_unittest=0 \
 		zinnia_model_file="${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model"
 BUILD_MODE=	Release
-BUILD_CMD=	${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} ${GMAKE}
+BUILD_CMD=	${SETENV} ${MAKE_ENV} PATH=/bin:/usr/bin:${PATH} ${MAKE_CMD}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		${SETENV} BUILD_COMMAND="${WRKSRC}/mozcmake" \
 		PYTHONPATH=${WRKSRC}/third_party/gyp/local/lib/python${PYTHON_VER}/site-packages \

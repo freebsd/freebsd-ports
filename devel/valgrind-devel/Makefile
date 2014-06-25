@@ -79,9 +79,9 @@ post-patch:
 do-build: do-man-pages
 
 do-man-pages:
-	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${GMAKE} man-pages
+	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} man-pages
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${GMAKE} html-docs
+	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} html-docs
 .endif
 
 .include <bsd.port.mk>

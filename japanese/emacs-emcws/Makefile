@@ -164,8 +164,8 @@ pre-build:
 	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -rf ${WRKSRC}/info/*
 	@(cd ${WRKSRC}/src/../lisp; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${EMACS_CMD})
-	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${EMACS_CMD})
+	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
 	@(cd ${WRKSRC}/src/../lisp; \
 	${WRKSRC}/src/emacs -batch -q -f batch-byte-compile \
 	egg.el wnn-egg.el \

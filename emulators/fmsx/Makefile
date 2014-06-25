@@ -52,7 +52,7 @@ post-patch:
 .endif
 
 do-build:
-	cd ${WRKSRC}/fMSX/Unix && ${GMAKE} DEBUG_FLAGS=${DEBUG_FLAGS}
+	cd ${WRKSRC}/fMSX/Unix && ${MAKE_CMD} DEBUG_FLAGS=${DEBUG_FLAGS}
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/fmsx ${STAGEDIR}${PREFIX}/bin

@@ -70,7 +70,7 @@ do-configure:
 	cd ${WRKSRC}/qemu/qemu-git && ./configure-small --extra-cflags=-DX49GP --cc="${CC}"
 
 do-build:
-	cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS}
+	cd ${WRKSRC} && ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

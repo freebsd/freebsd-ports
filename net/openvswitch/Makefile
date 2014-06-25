@@ -51,6 +51,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/vswitchd/vswitch.ovsschema ${PREFIX}/share/openvswitch/
 
 #regression-test: build
-#	@cd ${WRKSRC} && ${GMAKE} check
+#	@cd ${WRKSRC} && ${MAKE_CMD} check
 
 .include <bsd.port.post.mk>

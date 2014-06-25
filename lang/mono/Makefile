@@ -51,7 +51,7 @@ post-patch:
 
 tests: build
 	@${ECHO_MSG} "===> Running mono regression tests"
-	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} test)
 
 post-configure:

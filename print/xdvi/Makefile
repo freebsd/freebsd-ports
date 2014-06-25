@@ -42,10 +42,10 @@ post-configure:
 .endfor
 
 do-install:
-	@(cd ${WRKSRC}; ${GMAKE} install.man \
+	@(cd ${WRKSRC}; ${MAKE_CMD} install.man \
 		MANDIR=${PREFIX}/man/man1 MANSUFFIX=1)
-	@(cd ${WRKSRC}; ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} xdvi.man)
-	@(cd ${WRKSRC}; ${GMAKE} -f Makefile install BINDIR=${PREFIX}/bin)
+	@(cd ${WRKSRC}; ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} xdvi.man)
+	@(cd ${WRKSRC}; ${MAKE_CMD} -f Makefile install BINDIR=${PREFIX}/bin)
 	@(cd ${WRKSRC}; ${INSTALL_SCRIPT} MakeTeXPK ${PREFIX}/bin)
 
 post-install:

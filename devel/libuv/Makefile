@@ -33,7 +33,7 @@ pre-configure:
 .if defined(MAINTAINER_MODE)
 regression-test:
 	(cd ${WRKSRC} && ./gyp_uv.py -f make &&	\
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C out && \
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C out && \
 	./out/Debug/run-tests)
 .endif
 

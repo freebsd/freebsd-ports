@@ -220,8 +220,8 @@ pre-configure:
 
 post-build:
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/docs && ${GMAKE} index.html
-	cd ${WRKSRC}/docs/gallery && ${GMAKE} index.html
+	cd ${WRKSRC}/docs && ${MAKE_CMD} index.html
+	cd ${WRKSRC}/docs/gallery && ${MAKE_CMD} index.html
 .endif
 
 post-install:

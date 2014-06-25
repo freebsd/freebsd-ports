@@ -91,10 +91,10 @@ post-configure:
 
 do-build:
 	cd ${WRKDIR}/${TETEX_SRC}/texk/dvipsk &&\
-		${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
 	cd ${WRKDIR}/${TETEX_SRC}/texk/udvipsk &&\
-		${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} \
 		program=udvips XDEFS=-DUDVIPS \
 		${ALL_TARGET}
@@ -102,7 +102,7 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/${DVIPSCONFIGDIR}/config
 	cd ${WRKDIR}/${TETEX_SRC}/texk/dvipsk &&\
-		${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET}
 	${INSTALL_PROGRAM} \
 		${PATCH_WRKSRC}/udvipsk/udvips \

@@ -78,7 +78,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "/strip/d" ${WRKSRC}/Makefile
 
 do-build:
-	cd ${WRKSRC}; ${GMAKE} DIET=""
+	cd ${WRKSRC}; ${MAKE_CMD} DIET=""
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fnord ${PREFIX}/bin/

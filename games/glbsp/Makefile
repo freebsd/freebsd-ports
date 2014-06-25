@@ -31,10 +31,10 @@ post-patch:
 
 post-build:
 .if ${PORT_OPTIONS:MGUI}
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} -f GUI_unx.mak all
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} -f GUI_unx.mak all
 .endif
 .if ${PORT_OPTIONS:MPLUGIN}
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} -f Plugin_unx.mak all
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} -f Plugin_unx.mak all
 .endif
 
 do-install:

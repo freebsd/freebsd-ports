@@ -46,8 +46,8 @@ pre-build:
 	@${REINPLACE_CMD} -e 's|-Wall -Winline -O -g|-Wall -Winline -O2 ${CFLAGS}|' \
 		-e 's|CC=gcc|CC?=gcc|' \
 	${WRKSRC_BZIP2_103}/Makefile
-	@cd ${WRKSRC_BZIP2_102}; ${GMAKE} bzip2; \
-	cd ${WRKSRC_BZIP2_103}; ${GMAKE} bzip2;
+	@cd ${WRKSRC_BZIP2_102}; ${MAKE_CMD} bzip2; \
+	cd ${WRKSRC_BZIP2_103}; ${MAKE_CMD} bzip2;
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deltup ${STAGEDIR}${PREFIX}/bin

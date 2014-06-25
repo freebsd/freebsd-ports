@@ -105,7 +105,7 @@ post-patch:
 
 .if ${PORT_OPTIONS:MPLUGINS}
 post-build:
-	cd ${WRKSRC}/plugins; ${GMAKE}
+	cd ${WRKSRC}/plugins; ${MAKE_CMD}
 .endif
 
 post-install:

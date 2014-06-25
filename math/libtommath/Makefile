@@ -48,7 +48,7 @@ post-install:
 
 regression-test:
 	(cd ${WRKSRC}; \
-	 ${SETENV} ${MAKE_ENV} ${GMAKE} -f ${MAKEFILE} mtest test; \
+	 ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f ${MAKEFILE} mtest test; \
 	 ./mtest/mtest | ./test)
 
 .include <bsd.port.mk>

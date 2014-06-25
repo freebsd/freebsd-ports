@@ -32,7 +32,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,g' ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e 's,#endif.*,#endif,g' ${WRKSRC}/*.h
-	@${REINPLACE_CMD} -e 's,make,${GMAKE},g' ${WRKSRC}/ripmime/build_tnef
+	@${REINPLACE_CMD} -e 's,make,${MAKE_CMD},g' ${WRKSRC}/ripmime/build_tnef
 	@${REINPLACE_CMD} -e 's,=4321,=_BYTE_ORDER -include /usr/include/machine/endian.h,g' \
 		${WRKSRC}/ripmime/tnef/Makefile
 

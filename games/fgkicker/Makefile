@@ -20,7 +20,7 @@ post-patch:
 	@${REINPLACE_CMD} "s|-fmessage-length=0|| ; s|-O0|${CFLAGS}|" ${WRKSRC}/fgkicker.mak
 
 do-build:
-	(cd ${WRKSRC} && ${GMAKE} -f ${PORTNAME}.mak ${PORTNAME})
+	(cd ${WRKSRC} && ${MAKE_CMD} -f ${PORTNAME}.mak ${PORTNAME})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

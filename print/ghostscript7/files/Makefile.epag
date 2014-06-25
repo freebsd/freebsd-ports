@@ -17,7 +17,7 @@ post-extract-epag:
 
 pre-build-epag:
 	cd ${WRKSRC}/epag-3.09 && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile
 	${LN} -s -f ${WRKSRC}/epag-3.09/gdevepag.c ${WRKSRC}/src
 
 post-install-epag:

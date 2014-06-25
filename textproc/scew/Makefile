@@ -29,7 +29,7 @@ post-install:
 .ifdef MAINTAINER_MODE
 LIB_DEPENDS+=	libcheck.so:${PORTSDIR}/devel/libcheck
 regression-test: build
-	cd ${WRKSRC}/tests && ${GMAKE} check
+	cd ${WRKSRC}/tests && ${MAKE_CMD} check
 .endif
 
 .include <bsd.port.pre.mk>

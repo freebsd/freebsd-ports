@@ -102,9 +102,9 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} PICFLAG= \
-		${GMAKE} ${_MAKE_JOBS} ${MAKE_ARGS}
+		${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
 	@cd ${WRKSRC_SHARED} ; ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
-		${GMAKE} ${_MAKE_JOBS} ${MAKE_ARGS}
+		${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
 
 post-build:
 	@for i in `find ${WRKSRC_SHARED} -type f -name '*.a'` ; do \

@@ -83,6 +83,6 @@ pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ${SH} autogen.sh --noconfig
 
 pre-install:
-	@cd ${WRKSRC} && ${GMAKE} dnetter
+	@cd ${WRKSRC} && ${MAKE_CMD} dnetter
 
 .include <bsd.port.mk>

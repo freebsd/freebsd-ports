@@ -57,7 +57,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/share/sword/mods.d
 .if !exists(${PREFIX}/etc/sword.conf)
-	@(cd ${WRKSRC} && ${GMAKE} install_config)
+	@(cd ${WRKSRC} && ${MAKE_CMD} install_config)
 .else
 	@${ECHO_CMD} "Config file not installed since ${PREFIX}/etc/sword.conf already exists."
 	@${ECHO_CMD} "Please check that DataPath points to your modules (default ${DATADIR}).";

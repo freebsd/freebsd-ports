@@ -50,7 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/../scn/shaders/Makefile
 
 post-build:
-	cd ${WRKSRC}/../scn/shaders && ${GMAKE} slx
+	cd ${WRKSRC}/../scn/shaders && ${MAKE_CMD} slx
 
 do-install:
 # binary and wrapper

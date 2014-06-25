@@ -60,6 +60,6 @@ post-patch:
 
 regression-test: build
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 
 .include <bsd.port.post.mk>

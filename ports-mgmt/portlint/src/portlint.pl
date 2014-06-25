@@ -1152,7 +1152,7 @@ sub check_depends_syntax {
 			}
 
 			# check USES=gmake
-			if ($m{'dep'} =~ /^(gmake|\${GMAKE})$/) {
+			if ($m{'dep'} =~ /^(gmake|\${MAKE_CMD})$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j. consider using ".
 					"USES[+]=gmake.");
@@ -2125,11 +2125,11 @@ ruby sed sdl-config sh sort sysctl touch tr which xargs xmkmf
 	}
 
 	#
-	# whole file: check for USE_ANT and USE_GMAKE both defined
+	# whole file: check for USE_ANT and USE_MAKE_CMD both defined
 	#
-	if ($use_ant && $whole =~ /^USE_GMAKE[?:]?=\s*(.*)$/m) {
+	if ($use_ant && $whole =~ /^USE_MAKE_CMD[?:]?=\s*(.*)$/m) {
 		&perror("WARN", $file, -1, "a port shall not define both USE_ANT ".
-			"and USE_GMAKE");
+			"and USE_MAKE_CMD");
 	}
 
 	#

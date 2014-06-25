@@ -37,7 +37,7 @@ do-install:
 .endfor
 
 test: configure
-	@cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} check
+	@cd ${WRKSRC} && ${MAKE_CMD} ${MAKE_ARGS} check
 
 regression-test: test
 

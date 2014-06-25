@@ -41,8 +41,8 @@ post-patch:
 		${WRKSRC}/cnf/bin/afnix-guess
 
 post-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} doc
-	@cd ${WRKSRC}/prj && ${SETENV} ${MAKE_ENV} ${GMAKE} doc
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} doc
+	@cd ${WRKSRC}/prj && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} doc
 
 post-install:
 .if ! ${PORT_OPTIONS:MDOCS}
@@ -51,7 +51,7 @@ post-install:
 		${STAGEDIR}${MANPREFIX}/man/man${i:E}/
 . endfor
 .else
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${GMAKE} publish
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} publish
 .endif
 
 .include <bsd.port.post.mk>

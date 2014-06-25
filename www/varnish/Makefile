@@ -41,7 +41,7 @@ post-patch:
 .endif
 
 regression-test check test: build
-	${GMAKE} TESTS_PARALLELISM=1 -C ${WRKSRC} check
+	${MAKE_CMD} TESTS_PARALLELISM=1 -C ${WRKSRC} check
 
 post-build:
 	#

@@ -83,6 +83,6 @@ post-install:
 .endfor
 
 regression-test:
-	cd ${WRKSRC}/tests ; ${GMAKE} tests_min
+	cd ${WRKSRC}/tests ; ${MAKE_CMD} tests_min
 
 .include <bsd.port.mk>

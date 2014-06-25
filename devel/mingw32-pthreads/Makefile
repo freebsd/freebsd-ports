@@ -18,7 +18,7 @@ USES=		gmake
 
 NO_STAGE=	yes
 do-build:
-	@${GMAKE} -C ${WRKSRC} CROSS=${PKGNAMEPREFIX} GC
+	@${MAKE_CMD} -C ${WRKSRC} CROSS=${PKGNAMEPREFIX} GC
 
 do-install:
 .for f in pthread.h sched.h semaphore.h
