@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
-USES=		gmake
+USES=		gmake makeinfo
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	M4="/usr/bin/m4 -g"
