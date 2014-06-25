@@ -22,7 +22,7 @@ DIST_SUBDIR=	tex
 
 CONFLICTS=	teTeX*
 
-USES=		gmake desthack
+USES=		desthack gmake makeinfo
 GNU_CONFIGURE=	yes
 
 INFO=		kpathsea web2c
