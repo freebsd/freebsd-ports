@@ -65,6 +65,7 @@ STATIC_CONFIGURE_ON=	--disable-dynamic
 STATIC_CONFIGURE_OFF=	--enable-dynamic
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
 MULTIBYTE_CONFIGURE_ENABLE=	multibyte
+DOCS_USES=		makeinfo
 
 .include <bsd.port.pre.mk>
 
