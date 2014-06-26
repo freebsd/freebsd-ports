@@ -1,0 +1,17 @@
+--- Makefile.orig	2014-06-26 23:11:34.738471328 +0800
++++ Makefile	2014-06-26 23:11:57.588499251 +0800
+@@ -14,10 +14,10 @@ battmond: battmond.c
+ 	${CC} ${CFLAGS} battmond.c -o battmond -lutil
+ 
+ install: battmond
+-	$(INSTALL) -s battmond ${PREFIX}/sbin/battmond
+-	$(INSTALL) battmond.sh ${PREFIX}/etc/rc.d/battmond
+-	$(INSTALL) -c battmond.1 ${PREFIX}/man/man1/battmond.1
+-	gzip -9f ${PREFIX}/man/man1/battmond.1
++	$(INSTALL) -s battmond $(DESTDIR)${PREFIX}/sbin/battmond
++	$(INSTALL) battmond.sh $(DESTDIR)${PREFIX}/etc/rc.d/battmond
++	$(INSTALL) -c battmond.1 $(DESTDIR)${PREFIX}/man/man1/battmond.1
++	gzip -9f $(DESTDIR)${PREFIX}/man/man1/battmond.1
+ 
+ clean:
+ 	rm -f battmond
