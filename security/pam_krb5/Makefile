@@ -13,8 +13,6 @@ COMMENT=		A Pluggable Authentication Module for Kerberos 5
 
 CONFLICTS=		pam_krb5-rh-2.*
 
-MAN5=			pam_krb5.5
-
 USES=		perl5 gmake
 GNU_CONFIGURE=		yes
 
@@ -23,7 +21,7 @@ GNU_CONFIGURE=		yes
 KRB5_DIR?=		${HEIMDAL_HOME}
 .endif
 .elif defined(KRB5_IMPL) && ${KRB5_IMPL} == mit
-LIB_DEPENDS=		krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS=		libkrb5.so:${PORTSDIR}/security/krb5
 .if defined(KRB5_HOME)
 KRB5_DIR?=		${KRB5_HOME}
 .endif
@@ -31,13 +29,12 @@ KRB5_DIR?=		${KRB5_HOME}
 IGNORE=			you must define KRB5_IMPL to be "mit" or "heimdal"
 .endif
 
-MANDIR=			${MANPREFIX}/man
-MANDIR=			${PREFIX}/share/man
+MANDIR=			${STAGEDIR}${MANPREFIX}/man
+MANDIR=			${STAGEDIR}${PREFIX}/share/man
 KRB5_DIR?=		${LOCALBASE}
 CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"
 
-NO_STAGE=	yes
 post-install:
-	cd ${WRKSRC} && ${MAKE_CMD} install-man
+	cd ${WRKSRC} && ${MAKE_CMD} install-man DESTDIR=${STAGEDIR}
 
 .include <bsd.port.mk>
