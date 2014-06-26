@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 
-USES=		gmake perl5 libtool
+USES=		gmake libtool makeinfo perl5
 USE_AUTOTOOLS=	autoheader aclocal
 ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk

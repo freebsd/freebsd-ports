@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 
 INFO=		plwm
 
+USES=		makeinfo
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
