@@ -1,4 +1,10 @@
+@owner uucp
+@group dialer
+@mode 4511
 bin/minicom
+@owner
+@group
+@mode
 bin/xminicom
 bin/runscript
 bin/ascii-xfr
@@ -24,9 +30,9 @@ man/man1/xminicom.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/minicom.mo
-@exec if [ ! -d %D/etc/minicom ] ; then /bin/mkdir -p %D/etc/minicom ; fi
-@exec /usr/sbin/chown uucp %D/etc/minicom
+@owner uucp
 @dirrmtry etc/minicom
+@owner
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

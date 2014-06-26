@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Feb  5 14:56:06 2003
-+++ Makefile	Wed Feb  5 14:58:18 2003
+--- ./Makefile.orig	2002-10-25 19:55:50.000000000 -0400
++++ ./Makefile	2014-06-23 22:15:04.000000000 -0400
 @@ -18,7 +18,7 @@
  #CC	= cl
  
@@ -26,8 +26,8 @@
  install:
 -	cp $(EXE) $(BINDIR)/$(EXE)
 -	cp l2a.1 $(MANDIR)/man1/l2a.1
-+	${INSTALL_PROGRAM} $(EXE) $(BINDIR)/$(EXE)
-+	${INSTALL_MAN} l2a.1 $(MANDIR)/man1/l2a.1
++	${BSD_INSTALL_PROGRAM} $(EXE) $(DESTDIR)$(BINDIR)/$(EXE)
++	${BSD_INSTALL_MAN} l2a.1 $(DESTDIR)$(MANDIR)/man1/l2a.1
  
  tidy:
  	rm -f $(OBJ) $(EXE) l2a.zip l2a.txt lex.yy.c l2a.aux l2a.log fn.tmp

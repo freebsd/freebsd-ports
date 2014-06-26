@@ -36,6 +36,6 @@ post-install:
 # This only works *after* chicken is installed.
 regression-test: build
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>

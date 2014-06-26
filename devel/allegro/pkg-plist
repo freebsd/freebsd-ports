@@ -118,7 +118,6 @@ include/jpgalleg.h
 include/loadpng.h
 include/logg.h
 include/xalleg.h
-info/allegro.info
 %%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-alsadigi.so
 %%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-alsamidi.so
 %%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-dga2.so

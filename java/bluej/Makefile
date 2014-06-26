@@ -2,32 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	bluej
-PORTVERSION=	3.0.9
+PORTVERSION=	3.1.1
 CATEGORIES=	java editors
 MASTER_SITES=	http://www.bluej.org/download/files/ \
 		ftp://ftp.bluej.org/pub/bluej/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
-EXTRACT_ONLY=
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Integrated Java environment designed for introductory teaching
 
-IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
+SUB_FILES=	bluej
+
+post-extract:
+	@${MKDIR} ${WRKSRC}
+	@${TAR} -xf ${WRKDIR}/bluej-dist.jar -C ${WRKSRC}
 
 do-install:
-	@${ECHO} Starting BlueJ graphical installer...  
-	@${ECHO} Please install to default path of
-	@${ECHO} ${STAGEDIR}${PREFIX}/bluej.
-	@${ECHO} Close the installer when done.
-	@cd ${STAGEDIR}${PREFIX}; ${JAVA_HOME}/bin/java \
-		-jar ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	-@${MKDIR} ${STAGEDIR}${PREFIX}/bin
-	@${LN} -sf ${STAGEDIR}${PREFIX}/bluej/bluej \
-		${STAGEDIR}${PREFIX}/bin/bluej
+	${MKDIR} ${STAGEDIR}${PREFIX}/bluej
+	cd ${WRKSRC}; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/bluej
+	${INSTALL_SCRIPT} ${WRKDIR}/bluej ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

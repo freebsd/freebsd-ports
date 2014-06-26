@@ -3,6 +3,7 @@
 
 PORTNAME=	libnfc
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.bintray.com/nfc-tools/sources/ \
 		http://romain.blogreen.org/distfiles/
@@ -25,7 +26,7 @@ PN53X_USB_DESC=	PN53X USB driver
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig tar:bzip2
+USES=		gmake pathfix pkgconfig tar:bzip2 libtool
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 
 # Restrict to stable (even) versions, indicated by the second component.

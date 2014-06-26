@@ -1,4 +1,4 @@
-# Created by: Skylord
+# Created by: Mikle Davidkin <skylord@vt.net.ru>
 # $FreeBSD$
 
 PORTNAME=	verlihub
@@ -24,9 +24,6 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/lib/libstats_pi.so:${PORTSDIR}/net-p2p/verlihub-plugins-stats
 
 NO_BUILD=	yes
-
-NO_STAGE=	yes
-do-install:
-	@${DO_NADA}
+NO_INSTALL=	yes
 
 .include <bsd.port.mk>

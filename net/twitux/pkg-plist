@@ -24,15 +24,6 @@ share/twitux/spell_dlg.xml
 @dirrm share/gnome/help/twitux/C/figures
 @dirrm share/gnome/help/twitux/C
 @dirrm share/gnome/help/twitux
-@dirrmtry share/omf
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/gnome/help
-@dirrmtry share/gnome
 @dirrmtry lib/locale/sv/LC_MESSAGES
 @dirrmtry lib/locale/pt/LC_MESSAGES
 @dirrmtry lib/locale/ja/LC_MESSAGES
@@ -46,6 +37,3 @@ share/twitux/spell_dlg.xml
 @dirrmtry lib/locale/es
 @dirrmtry lib/locale/de
 @dirrmtry lib/locale
-@dirrmtry etc/gconf/schemas
-@dirrmtry etc/gconf/gconf.xml.defaults
-@dirrmtry etc/gconf

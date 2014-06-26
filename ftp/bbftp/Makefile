@@ -24,8 +24,8 @@ do-configure:
 	cd ${WRKSRC}/bbftpd && ./configure --prefix=${PREFIX} ${CONFIGURE_ARGS}
 
 do-build:
-	cd ${WRKSRC}/bbftpc && ${GMAKE}
-	cd ${WRKSRC}/bbftpd && ${GMAKE}
+	cd ${WRKSRC}/bbftpc && ${MAKE_CMD}
+	cd ${WRKSRC}/bbftpd && ${MAKE_CMD}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bbftpc/bbftp ${STAGEDIR}${PREFIX}/bin

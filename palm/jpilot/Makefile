@@ -49,7 +49,7 @@ PORTDOCS=	*
 .endif
 
 post-build:
-	cd ${WRKSRC}/docs && ${GMAKE}
+	cd ${WRKSRC}/docs && ${MAKE_CMD}
 post-install:
 	@${FIND} ${PREFIX}/lib/jpilot ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}

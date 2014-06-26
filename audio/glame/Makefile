@@ -19,7 +19,7 @@ LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-USES=		gettext gmake pathfix pkgconfig libtool
+USES=		gettext gmake pathfix pkgconfig libtool makeinfo
 USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	xbitmaps x11
 INSTALL_TARGET=	install-strip

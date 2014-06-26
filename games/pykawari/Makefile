@@ -36,7 +36,7 @@ post-patch:
 		${WRKSRC}/build/src/gcc.mak
 
 do-build:
-	(cd ${WRKSRC}/build/src; CFLAGS="${CFLAGS}" ${GMAKE} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION} PTHREAD_LIBS=${PTHREAD_LIBS} CXX=${CXX})
+	(cd ${WRKSRC}/build/src; CFLAGS="${CFLAGS}" ${MAKE_CMD} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION} PTHREAD_LIBS=${PTHREAD_LIBS} CXX=${CXX})
 
 do-install:
 	${MKDIR} ${PREFIX}/share/kawari

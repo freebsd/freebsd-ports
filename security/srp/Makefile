@@ -9,6 +9,9 @@ MASTER_SITES=	http://srp.stanford.edu/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* heimdal-[0-9]*
 
 GNU_CONFIGURE=	yes

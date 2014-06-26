@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 
 GNUTLS_SUFFIX=	3
 
-USES=		gmake iconv libtool:keepla pkgconfig tar:xz
+USES=		gmake iconv libtool:keepla makeinfo pkgconfig tar:xz
 USE_LDCONFIG=	${PREFIX}/lib/gnutls3
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib

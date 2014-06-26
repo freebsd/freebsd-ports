@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	solr
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,7 +12,7 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	The Apache Solr PHP extension
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-    		xml2:${PORTSDIR}/textproc/libxml2
+		xml2:${PORTSDIR}/textproc/libxml2
 
 USE_PHP=	json
 USE_PHPEXT=	yes

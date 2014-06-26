@@ -3,6 +3,7 @@
 
 PORTNAME=	simpleproxy
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -11,11 +12,6 @@ COMMENT=	Simple TCP proxy
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		simpleproxy.1
-.endif
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

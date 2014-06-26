@@ -16,6 +16,9 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 MAINTAINER=	cordeiro@nic.br
 COMMENT=	Tool to locally check for signs of a rootkit
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 OPTIONS_DEFINE=	DOCS
 
 SCRIPT_FILES=	chkrootkit

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://getdnsapi.net/dist/ \
     		http://mirrors.rit.edu/zi/
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libldns.so:${PORTSDIR}/dns/ldns \
 		libunbound.so:${PORTSDIR}/dns/unbound
 
+USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
@@ -54,5 +55,6 @@ post-install:
 	@(cd ${WRKDIR}/examples && ${TAR} --strip-components=1 -xf ${PORTNAME}.tgz)
 	@(cd ${WRKDIR}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns.so.0.0.0
 
 .include <bsd.port.mk>

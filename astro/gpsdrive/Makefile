@@ -3,7 +3,7 @@
 
 PORTNAME=	gpsdrive
 PORTVERSION=	2.09
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.gpsdrive.de/packages/ \
 		LOCAL/beech
@@ -13,19 +13,17 @@ COMMENT=	GPS navigation system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake perl5 pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool perl5 pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-garmin
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lgmodule-2.0
 MAKE_JOBS_UNSAFE=	yes
-
-MANLANG=	"" de es
 
 OPTIONS_DEFINE=	NLS
 
@@ -39,6 +37,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} 's/test "$$CC" = "gcc"/false/' ${WRKSRC}/configure
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} 's|SUBDIRS = src po man|SUBDIRS = src man|' \
 		${WRKSRC}/Makefile.in

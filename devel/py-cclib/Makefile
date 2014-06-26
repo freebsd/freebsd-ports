@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Parsers And Algorithms For Computational Chemistry
 
 LICENSE=	APACHE20

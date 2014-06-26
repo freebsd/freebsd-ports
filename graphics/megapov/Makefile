@@ -48,7 +48,7 @@ pre-build:
 .endif
 
 do-install:
-	@(cd ${WRKSRC}/unix    ; ${GMAKE} install)
+	@(cd ${WRKSRC}/unix    ; ${MAKE_CMD} install)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc -cf - . | \

@@ -3,6 +3,7 @@
 
 PORTNAME=	fdb
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	lapack++
 PORTVERSION=	2.5.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=   SF/lapackpp/lapackpp/${PORTVERSION} \
 		http://math.nist.gov/lapack++/:doc
@@ -19,19 +19,18 @@ EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
-USES=		fortran gmake pathfix
+USES=		fortran gmake pathfix libtool
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 .endif
 
 GNU_CONFIGURE=	yes
@@ -49,14 +48,13 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 #lapack++ forces to use atlas when detected, so we should disable here.
 CONFIGURE_ARGS+=	--with-blas="${BLAS_LIB}" --with-lapack="${LAPACK_LIB}" --disable-atlas --enable-static
 
-do-install:
-	@(cd ${WRKSRC} ; ${GMAKE} install)
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapack++.ps.gz ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapack++_install.ps.gz ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapackpp1_1.ps.gz ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapackppman1_1.ps.gz ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapack++.ps.gz ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapack++_install.ps.gz ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapackpp1_1.ps.gz ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/lapackppman1_1.ps.gz ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

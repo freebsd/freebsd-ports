@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 # Fix make command
-	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|make|${MAKE_CMD}|g' ${WRKSRC}/${MAKEFILE}
 
 # Fix Makefile
 	@${REINPLACE_CMD} -e 's|alienBlaster|${PORTNAME}|g ; \

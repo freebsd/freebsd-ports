@@ -26,46 +26,36 @@ SUB_LIST=	WWWDIR="${WWWDIR}" PORTNAME="${PORTNAME}"
 PLIST_SUB+=	WWWDIR=${WWWDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} EXAMPLESDIR_REL=${EXAMPLESDIR_REL} \
 			PORTNAME=${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@if [ ! -d ${WWWDIR} ]; then mkdir ${WWWDIR} ; fi
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${EXAMPLESDIR} && rm -rf ${WRKSRC}/docs
-	@cd ${WRKSRC} && mv vbv_learn_more.html ${EXAMPLESDIR}/
-	@cd ${WRKSRC} && mv mcs_learn_more.html ${EXAMPLESDIR}/
-	@cd ${WRKSRC} && mv robots_example.txt ${EXAMPLESDIR}/
-	@cd ${WRKSRC} && mv install.txt ${EXAMPLESDIR}/
-	@cd ${WRKSRC} && mv nddbc.html ${EXAMPLESDIR}/
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 0755 ${WWWDIR}
-	@${CHMOD} 0777 ${WWWDIR}/cache
-	@cd ${WWWDIR}/images && find . -type d -exec chmod 0777 {} \;
-	@cd ${WWWDIR}/includes/languages/english && find html_includes -type d -exec chmod 0777 {} \;
-	@${CHMOD} 0777 ${WWWDIR}/media
-	@${CHMOD} 0777 ${WWWDIR}/pub
-	@${CHMOD} 0777 ${WWWDIR}/admin/backups
-	@${CHMOD} 0777 ${WWWDIR}/admin/images/graphs
+	@if [ ! -d ${STAGEDIR}${WWWDIR} ]; then ${MKDIR} ${STAGEDIR}${WWWDIR} ; fi
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${EXAMPLESDIR} && ${RM} -rf ${WRKSRC}/docs
+	@cd ${WRKSRC} && ${MV} vbv_learn_more.html ${STAGEDIR}${EXAMPLESDIR}/
+	@cd ${WRKSRC} && ${MV} mcs_learn_more.html ${STAGEDIR}${EXAMPLESDIR}/
+	@cd ${WRKSRC} && ${MV} robots_example.txt ${STAGEDIR}${EXAMPLESDIR}/
+	@cd ${WRKSRC} && ${MV} install.txt ${STAGEDIR}${EXAMPLESDIR}/
+	@cd ${WRKSRC} && ${MV} nddbc.html ${STAGEDIR}${EXAMPLESDIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}
+	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/cache
+	@cd ${STAGEDIR}${WWWDIR}/images && ${FIND} . -type d -exec ${CHMOD} 0777 {} \;
+	@cd ${STAGEDIR}${WWWDIR}/includes/languages/english && ${FIND} html_includes -type d -exec ${CHMOD} 0777 {} \;
+	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/media
+	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/pub
+	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/admin/backups
+	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/admin/images/graphs
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} 0777 ${WWWDIR}/cache' >> ${TMPPLIST}
-	@${ECHO_CMD} '@exec cd ${WWWDIR}/images && find . -type d -exec chmod 0777 {} \;' >> ${TMPPLIST}
-	@${ECHO_CMD} '@exec cd ${WWWDIR}/includes/languages/english && find html_includes -type d -exec chmod 0777 {} \;' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec cd ${WWWDIR}/images && ${FIND} . -type d -exec ${CHMOD} 0777 {} \;' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec cd ${WWWDIR}/includes/languages/english && ${FIND} html_includes -type d -exec ${CHMOD} 0777 {} \;' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} 0777 ${WWWDIR}/media' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} 0777 ${WWWDIR}/pub' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} 0777 ${WWWDIR}/admin/backups' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} 0777 ${WWWDIR}/admin/images/graphs' >> ${TMPPLIST}
-
-post-install:
-	@if [ ! -f ${WWWDIR}/includes/configure.php ]; then \
-		${CP} -p ${WWWDIR}/includes/dist-configure.php ${WWWDIR}/includes/configure.php ; \
-	fi
-
-	@if [ ! -f ${WWWDIR}/admin/includes/configure.php ]; then \
-		${CP} -p ${WWWDIR}/admin/includes/dist-configure.php ${WWWDIR}/admin/includes/configure.php ; \
-	fi
-
-.if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
-.endif
+	@${ECHO_CMD} '@unexec if cmp -s ${WWWDIR}/includes/configure.php ${WWWDIR}/includes/dist-configure.php; then rm -f ${WWWDIR}/includes/configure.php; fi' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec cp -n ${WWWDIR}/includes/dist-configure.php ${WWWDIR}/includes/configure.php' >> ${TMPPLIST}
+	@${ECHO_CMD} '@unexec if cmp -s ${WWWDIR}/admin/includes/configure.php ${WWWDIR}/admin/includes/dist-configure.php; then rm -f ${WWWDIR}/admin/includes/configure.php; fi' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec cp -n ${WWWDIR}/admin/includes/dist-configure.php ${WWWDIR}/admin/includes/configure.php' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

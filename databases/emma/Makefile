@@ -16,7 +16,6 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|python2.4|env python|' ${WRKSRC}/emma
 

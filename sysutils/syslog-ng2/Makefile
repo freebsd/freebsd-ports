@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	ivan.lago@ifom.eu
 COMMENT=	A powerful syslogd replacement
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet \
 		evtlog.0:${PORTSDIR}/sysutils/eventlog
 

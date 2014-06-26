@@ -20,24 +20,26 @@
 %%WWWDIR%%/WebToLeadCapture.php
 %%WWWDIR%%/XTemplate/LICENSE
 %%WWWDIR%%/XTemplate/xtpl.php
-%%WWWDIR%%/Zend/Crypt/DiffieHellman/Exception.php
+%%WWWDIR%%/Zend/Crypt.php
 %%WWWDIR%%/Zend/Crypt/DiffieHellman.php
+%%WWWDIR%%/Zend/Crypt/DiffieHellman/Exception.php
 %%WWWDIR%%/Zend/Crypt/Exception.php
-%%WWWDIR%%/Zend/Crypt/Hmac/Exception.php
 %%WWWDIR%%/Zend/Crypt/Hmac.php
+%%WWWDIR%%/Zend/Crypt/Hmac/Exception.php
+%%WWWDIR%%/Zend/Crypt/Math.php
+%%WWWDIR%%/Zend/Crypt/Math/BigInteger.php
 %%WWWDIR%%/Zend/Crypt/Math/BigInteger/Bcmath.php
 %%WWWDIR%%/Zend/Crypt/Math/BigInteger/Exception.php
 %%WWWDIR%%/Zend/Crypt/Math/BigInteger/Gmp.php
 %%WWWDIR%%/Zend/Crypt/Math/BigInteger/Interface.php
-%%WWWDIR%%/Zend/Crypt/Math/BigInteger.php
 %%WWWDIR%%/Zend/Crypt/Math/Exception.php
-%%WWWDIR%%/Zend/Crypt/Math.php
+%%WWWDIR%%/Zend/Crypt/Rsa.php
+%%WWWDIR%%/Zend/Crypt/Rsa/Key.php
 %%WWWDIR%%/Zend/Crypt/Rsa/Key/Private.php
 %%WWWDIR%%/Zend/Crypt/Rsa/Key/Public.php
-%%WWWDIR%%/Zend/Crypt/Rsa/Key.php
-%%WWWDIR%%/Zend/Crypt/Rsa.php
-%%WWWDIR%%/Zend/Crypt.php
 %%WWWDIR%%/Zend/Exception.php
+%%WWWDIR%%/Zend/Gdata.php
+%%WWWDIR%%/Zend/Gdata/App.php
 %%WWWDIR%%/Zend/Gdata/App/AuthException.php
 %%WWWDIR%%/Zend/Gdata/App/BadMethodCallException.php
 %%WWWDIR%%/Zend/Gdata/App/Base.php
@@ -45,6 +47,7 @@
 %%WWWDIR%%/Zend/Gdata/App/CaptchaRequiredException.php
 %%WWWDIR%%/Zend/Gdata/App/Entry.php
 %%WWWDIR%%/Zend/Gdata/App/Exception.php
+%%WWWDIR%%/Zend/Gdata/App/Extension.php
 %%WWWDIR%%/Zend/Gdata/App/Extension/Author.php
 %%WWWDIR%%/Zend/Gdata/App/Extension/Category.php
 %%WWWDIR%%/Zend/Gdata/App/Extension/Content.php
@@ -70,7 +73,6 @@
 %%WWWDIR%%/Zend/Gdata/App/Extension/Title.php
 %%WWWDIR%%/Zend/Gdata/App/Extension/Updated.php
 %%WWWDIR%%/Zend/Gdata/App/Extension/Uri.php
-%%WWWDIR%%/Zend/Gdata/App/Extension.php
 %%WWWDIR%%/Zend/Gdata/App/Feed.php
 %%WWWDIR%%/Zend/Gdata/App/FeedEntryParent.php
 %%WWWDIR%%/Zend/Gdata/App/FeedSourceParent.php
@@ -83,8 +85,8 @@
 %%WWWDIR%%/Zend/Gdata/App/MediaSource.php
 %%WWWDIR%%/Zend/Gdata/App/Util.php
 %%WWWDIR%%/Zend/Gdata/App/VersionException.php
-%%WWWDIR%%/Zend/Gdata/App.php
 %%WWWDIR%%/Zend/Gdata/AuthSub.php
+%%WWWDIR%%/Zend/Gdata/Books.php
 %%WWWDIR%%/Zend/Gdata/Books/CollectionEntry.php
 %%WWWDIR%%/Zend/Gdata/Books/CollectionFeed.php
 %%WWWDIR%%/Zend/Gdata/Books/Extension/AnnotationLink.php
@@ -99,7 +101,7 @@
 %%WWWDIR%%/Zend/Gdata/Books/VolumeEntry.php
 %%WWWDIR%%/Zend/Gdata/Books/VolumeFeed.php
 %%WWWDIR%%/Zend/Gdata/Books/VolumeQuery.php
-%%WWWDIR%%/Zend/Gdata/Books.php
+%%WWWDIR%%/Zend/Gdata/Calendar.php
 %%WWWDIR%%/Zend/Gdata/Calendar/EventEntry.php
 %%WWWDIR%%/Zend/Gdata/Calendar/EventFeed.php
 %%WWWDIR%%/Zend/Gdata/Calendar/EventQuery.php
@@ -114,8 +116,8 @@
 %%WWWDIR%%/Zend/Gdata/Calendar/Extension/WebContent.php
 %%WWWDIR%%/Zend/Gdata/Calendar/ListEntry.php
 %%WWWDIR%%/Zend/Gdata/Calendar/ListFeed.php
-%%WWWDIR%%/Zend/Gdata/Calendar.php
 %%WWWDIR%%/Zend/Gdata/ClientLogin.php
+%%WWWDIR%%/Zend/Gdata/Contacts.php
 %%WWWDIR%%/Zend/Gdata/Contacts/Extension/Address.php
 %%WWWDIR%%/Zend/Gdata/Contacts/Extension/Birthday.php
 %%WWWDIR%%/Zend/Gdata/Contacts/Extension/Email.php
@@ -124,11 +126,11 @@
 %%WWWDIR%%/Zend/Gdata/Contacts/Extension/PhoneNumber.php
 %%WWWDIR%%/Zend/Gdata/Contacts/ListEntry.php
 %%WWWDIR%%/Zend/Gdata/Contacts/ListFeed.php
-%%WWWDIR%%/Zend/Gdata/Contacts.php
+%%WWWDIR%%/Zend/Gdata/Docs.php
 %%WWWDIR%%/Zend/Gdata/Docs/DocumentListEntry.php
 %%WWWDIR%%/Zend/Gdata/Docs/DocumentListFeed.php
 %%WWWDIR%%/Zend/Gdata/Docs/Query.php
-%%WWWDIR%%/Zend/Gdata/Docs.php
+%%WWWDIR%%/Zend/Gdata/DublinCore.php
 %%WWWDIR%%/Zend/Gdata/DublinCore/Extension/Creator.php
 %%WWWDIR%%/Zend/Gdata/DublinCore/Extension/Date.php
 %%WWWDIR%%/Zend/Gdata/DublinCore/Extension/Description.php
@@ -139,8 +141,8 @@
 %%WWWDIR%%/Zend/Gdata/DublinCore/Extension/Rights.php
 %%WWWDIR%%/Zend/Gdata/DublinCore/Extension/Subject.php
 %%WWWDIR%%/Zend/Gdata/DublinCore/Extension/Title.php
-%%WWWDIR%%/Zend/Gdata/DublinCore.php
 %%WWWDIR%%/Zend/Gdata/Entry.php
+%%WWWDIR%%/Zend/Gdata/Exif.php
 %%WWWDIR%%/Zend/Gdata/Exif/Entry.php
 %%WWWDIR%%/Zend/Gdata/Exif/Extension/Distance.php
 %%WWWDIR%%/Zend/Gdata/Exif/Extension/Exposure.php
@@ -154,7 +156,7 @@
 %%WWWDIR%%/Zend/Gdata/Exif/Extension/Tags.php
 %%WWWDIR%%/Zend/Gdata/Exif/Extension/Time.php
 %%WWWDIR%%/Zend/Gdata/Exif/Feed.php
-%%WWWDIR%%/Zend/Gdata/Exif.php
+%%WWWDIR%%/Zend/Gdata/Extension.php
 %%WWWDIR%%/Zend/Gdata/Extension/AttendeeStatus.php
 %%WWWDIR%%/Zend/Gdata/Extension/AttendeeType.php
 %%WWWDIR%%/Zend/Gdata/Extension/Comments.php
@@ -175,8 +177,8 @@
 %%WWWDIR%%/Zend/Gdata/Extension/When.php
 %%WWWDIR%%/Zend/Gdata/Extension/Where.php
 %%WWWDIR%%/Zend/Gdata/Extension/Who.php
-%%WWWDIR%%/Zend/Gdata/Extension.php
 %%WWWDIR%%/Zend/Gdata/Feed.php
+%%WWWDIR%%/Zend/Gdata/Gapps.php
 %%WWWDIR%%/Zend/Gdata/Gapps/EmailListEntry.php
 %%WWWDIR%%/Zend/Gdata/Gapps/EmailListFeed.php
 %%WWWDIR%%/Zend/Gdata/Gapps/EmailListQuery.php
@@ -207,7 +209,7 @@
 %%WWWDIR%%/Zend/Gdata/Gapps/UserEntry.php
 %%WWWDIR%%/Zend/Gdata/Gapps/UserFeed.php
 %%WWWDIR%%/Zend/Gdata/Gapps/UserQuery.php
-%%WWWDIR%%/Zend/Gdata/Gapps.php
+%%WWWDIR%%/Zend/Gdata/Gbase.php
 %%WWWDIR%%/Zend/Gdata/Gbase/Entry.php
 %%WWWDIR%%/Zend/Gdata/Gbase/Extension/BaseAttribute.php
 %%WWWDIR%%/Zend/Gdata/Gbase/Feed.php
@@ -218,24 +220,24 @@
 %%WWWDIR%%/Zend/Gdata/Gbase/SnippetEntry.php
 %%WWWDIR%%/Zend/Gdata/Gbase/SnippetFeed.php
 %%WWWDIR%%/Zend/Gdata/Gbase/SnippetQuery.php
-%%WWWDIR%%/Zend/Gdata/Gbase.php
+%%WWWDIR%%/Zend/Gdata/Geo.php
 %%WWWDIR%%/Zend/Gdata/Geo/Entry.php
 %%WWWDIR%%/Zend/Gdata/Geo/Extension/GeoRssWhere.php
 %%WWWDIR%%/Zend/Gdata/Geo/Extension/GmlPoint.php
 %%WWWDIR%%/Zend/Gdata/Geo/Extension/GmlPos.php
 %%WWWDIR%%/Zend/Gdata/Geo/Feed.php
-%%WWWDIR%%/Zend/Gdata/Geo.php
+%%WWWDIR%%/Zend/Gdata/Health.php
 %%WWWDIR%%/Zend/Gdata/Health/Extension/Ccr.php
 %%WWWDIR%%/Zend/Gdata/Health/ProfileEntry.php
 %%WWWDIR%%/Zend/Gdata/Health/ProfileFeed.php
 %%WWWDIR%%/Zend/Gdata/Health/ProfileListEntry.php
 %%WWWDIR%%/Zend/Gdata/Health/ProfileListFeed.php
 %%WWWDIR%%/Zend/Gdata/Health/Query.php
-%%WWWDIR%%/Zend/Gdata/Health.php
 %%WWWDIR%%/Zend/Gdata/HttpAdapterStreamingProxy.php
 %%WWWDIR%%/Zend/Gdata/HttpAdapterStreamingSocket.php
 %%WWWDIR%%/Zend/Gdata/HttpClient.php
 %%WWWDIR%%/Zend/Gdata/Kind/EventEntry.php
+%%WWWDIR%%/Zend/Gdata/Media.php
 %%WWWDIR%%/Zend/Gdata/Media/Entry.php
 %%WWWDIR%%/Zend/Gdata/Media/Extension/MediaCategory.php
 %%WWWDIR%%/Zend/Gdata/Media/Extension/MediaContent.php
@@ -252,10 +254,10 @@
 %%WWWDIR%%/Zend/Gdata/Media/Extension/MediaThumbnail.php
 %%WWWDIR%%/Zend/Gdata/Media/Extension/MediaTitle.php
 %%WWWDIR%%/Zend/Gdata/Media/Feed.php
-%%WWWDIR%%/Zend/Gdata/Media.php
 %%WWWDIR%%/Zend/Gdata/MediaMimeStream.php
 %%WWWDIR%%/Zend/Gdata/MimeBodyString.php
 %%WWWDIR%%/Zend/Gdata/MimeFile.php
+%%WWWDIR%%/Zend/Gdata/Photos.php
 %%WWWDIR%%/Zend/Gdata/Photos/AlbumEntry.php
 %%WWWDIR%%/Zend/Gdata/Photos/AlbumFeed.php
 %%WWWDIR%%/Zend/Gdata/Photos/AlbumQuery.php
@@ -294,8 +296,8 @@
 %%WWWDIR%%/Zend/Gdata/Photos/UserEntry.php
 %%WWWDIR%%/Zend/Gdata/Photos/UserFeed.php
 %%WWWDIR%%/Zend/Gdata/Photos/UserQuery.php
-%%WWWDIR%%/Zend/Gdata/Photos.php
 %%WWWDIR%%/Zend/Gdata/Query.php
+%%WWWDIR%%/Zend/Gdata/Spreadsheets.php
 %%WWWDIR%%/Zend/Gdata/Spreadsheets/CellEntry.php
 %%WWWDIR%%/Zend/Gdata/Spreadsheets/CellFeed.php
 %%WWWDIR%%/Zend/Gdata/Spreadsheets/CellQuery.php
@@ -311,7 +313,7 @@
 %%WWWDIR%%/Zend/Gdata/Spreadsheets/SpreadsheetFeed.php
 %%WWWDIR%%/Zend/Gdata/Spreadsheets/WorksheetEntry.php
 %%WWWDIR%%/Zend/Gdata/Spreadsheets/WorksheetFeed.php
-%%WWWDIR%%/Zend/Gdata/Spreadsheets.php
+%%WWWDIR%%/Zend/Gdata/YouTube.php
 %%WWWDIR%%/Zend/Gdata/YouTube/ActivityEntry.php
 %%WWWDIR%%/Zend/Gdata/YouTube/ActivityFeed.php
 %%WWWDIR%%/Zend/Gdata/YouTube/CommentEntry.php
@@ -371,8 +373,7 @@
 %%WWWDIR%%/Zend/Gdata/YouTube/VideoEntry.php
 %%WWWDIR%%/Zend/Gdata/YouTube/VideoFeed.php
 %%WWWDIR%%/Zend/Gdata/YouTube/VideoQuery.php
-%%WWWDIR%%/Zend/Gdata/YouTube.php
-%%WWWDIR%%/Zend/Gdata.php
+%%WWWDIR%%/Zend/Http/Client.php
 %%WWWDIR%%/Zend/Http/Client/Adapter/Curl.php
 %%WWWDIR%%/Zend/Http/Client/Adapter/Exception.php
 %%WWWDIR%%/Zend/Http/Client/Adapter/Interface.php
@@ -381,41 +382,40 @@
 %%WWWDIR%%/Zend/Http/Client/Adapter/Stream.php
 %%WWWDIR%%/Zend/Http/Client/Adapter/Test.php
 %%WWWDIR%%/Zend/Http/Client/Exception.php
-%%WWWDIR%%/Zend/Http/Client.php
 %%WWWDIR%%/Zend/Http/Exception.php
-%%WWWDIR%%/Zend/Http/Response/Stream.php
 %%WWWDIR%%/Zend/Http/Response.php
+%%WWWDIR%%/Zend/Http/Response/Stream.php
 %%WWWDIR%%/Zend/Loader.php
+%%WWWDIR%%/Zend/Oauth.php
 %%WWWDIR%%/Zend/Oauth/Client.php
-%%WWWDIR%%/Zend/Oauth/Config/ConfigInterface.php
 %%WWWDIR%%/Zend/Oauth/Config.php
+%%WWWDIR%%/Zend/Oauth/Config/ConfigInterface.php
 %%WWWDIR%%/Zend/Oauth/Consumer.php
 %%WWWDIR%%/Zend/Oauth/Exception.php
+%%WWWDIR%%/Zend/Oauth/Http.php
 %%WWWDIR%%/Zend/Oauth/Http/AccessToken.php
 %%WWWDIR%%/Zend/Oauth/Http/RequestToken.php
 %%WWWDIR%%/Zend/Oauth/Http/UserAuthorization.php
 %%WWWDIR%%/Zend/Oauth/Http/Utility.php
-%%WWWDIR%%/Zend/Oauth/Http.php
 %%WWWDIR%%/Zend/Oauth/Provider.php
 %%WWWDIR%%/Zend/Oauth/Signature/Hmac.php
 %%WWWDIR%%/Zend/Oauth/Signature/Plaintext.php
 %%WWWDIR%%/Zend/Oauth/Signature/Rsa.php
 %%WWWDIR%%/Zend/Oauth/Signature/SignatureAbstract.php
+%%WWWDIR%%/Zend/Oauth/Token.php
 %%WWWDIR%%/Zend/Oauth/Token/Access.php
 %%WWWDIR%%/Zend/Oauth/Token/AuthorizedRequest.php
 %%WWWDIR%%/Zend/Oauth/Token/Request.php
-%%WWWDIR%%/Zend/Oauth/Token.php
-%%WWWDIR%%/Zend/Oauth.php
 %%WWWDIR%%/Zend/Registry.php
+%%WWWDIR%%/Zend/Uri.php
 %%WWWDIR%%/Zend/Uri/Exception.php
 %%WWWDIR%%/Zend/Uri/Http.php
-%%WWWDIR%%/Zend/Uri.php
 %%WWWDIR%%/Zend/Validate/Abstract.php
+%%WWWDIR%%/Zend/Validate/Hostname.php
 %%WWWDIR%%/Zend/Validate/Hostname/Biz.php
 %%WWWDIR%%/Zend/Validate/Hostname/Cn.php
 %%WWWDIR%%/Zend/Validate/Hostname/Com.php
 %%WWWDIR%%/Zend/Validate/Hostname/Jp.php
-%%WWWDIR%%/Zend/Validate/Hostname.php
 %%WWWDIR%%/Zend/Validate/Interface.php
 %%WWWDIR%%/Zend/Validate/Ip.php
 %%WWWDIR%%/Zend/Version.php
@@ -470,7 +470,6 @@
 %%WWWDIR%%/examples/SoapTestPortal2.php
 %%WWWDIR%%/export.php
 %%WWWDIR%%/files.md5
-%%WWWDIR%%/get_url.php
 %%WWWDIR%%/ical_server.php
 %%WWWDIR%%/image.php
 %%WWWDIR%%/include/Dashlets/Dashlet.php
@@ -506,16 +505,18 @@
 %%WWWDIR%%/include/HTMLPurifier/HTMLPurifier.autoload.php
 %%WWWDIR%%/include/HTMLPurifier/HTMLPurifier.standalone.php
 %%WWWDIR%%/include/HTMLPurifier/LICENSE
+%%WWWDIR%%/include/HTMLPurifier/README.UPGRADE
 %%WWWDIR%%/include/HTMLPurifier/VERSION
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Builder/Xml.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Exception.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php
-%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
@@ -626,7 +627,6 @@
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/info.ini
-%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/EntityLookup/entities.ser
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Filter/YouTube.php
@@ -636,12 +636,12 @@
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/messages/en.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Lexer/PEARSax3.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Lexer/PH5P.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/CSSDefinition.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/ConfigForm.css
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/ConfigForm.js
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/ConfigForm.php
 %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/HTMLDefinition.php
-%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer.php
 %%WWWDIR%%/include/HTTP_WebDAV_Server/README
 %%WWWDIR%%/include/HTTP_WebDAV_Server/Server.php
 %%WWWDIR%%/include/HTTP_WebDAV_Server/Tools/_parse_lockinfo.php
@@ -714,12 +714,12 @@
 %%WWWDIR%%/include/MySugar/tpls/retrievePage.tpl
 %%WWWDIR%%/include/MySugar/tpls/retrieveReportCharts.tpl
 %%WWWDIR%%/include/OutboundEmail/OutboundEmail.php
-%%WWWDIR%%/include/Pear/Crypt_Blowfish/Blowfish/DefaultKey.php
 %%WWWDIR%%/include/Pear/Crypt_Blowfish/Blowfish.php
+%%WWWDIR%%/include/Pear/Crypt_Blowfish/Blowfish/DefaultKey.php
 %%WWWDIR%%/include/Pear/Crypt_Blowfish/license.txt
+%%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3.php
 %%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3/Decorators.php
 %%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3/States.php
-%%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3.php
 %%WWWDIR%%/include/Pear/XML_HTMLSax3/LICENSE
 %%WWWDIR%%/include/Popups/PopupSmarty.php
 %%WWWDIR%%/include/Popups/Popup_picker.php
@@ -911,8 +911,6 @@
 %%WWWDIR%%/include/SugarFields/Fields/Address/EditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Address/SugarFieldAddress.js
 %%WWWDIR%%/include/SugarFields/Fields/Address/SugarFieldAddress.php
-%%WWWDIR%%/include/SugarFields/Fields/Address/en_us.DetailView.tpl
-%%WWWDIR%%/include/SugarFields/Fields/Address/en_us.EditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Assigned_user_name/EditViewFunction.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Assigned_user_name/SearchView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Assigned_user_name/SugarFieldAssigned_user_name.php
@@ -1191,10 +1189,10 @@
 %%WWWDIR%%/include/SugarTheme/getImage.php
 %%WWWDIR%%/include/SugarTinyMCE.php
 %%WWWDIR%%/include/SugarXHprof/SugarXHprof.php
-%%WWWDIR%%/include/SugarXHprof/xhprof_lib/display/xhprof.php
 %%WWWDIR%%/include/SugarXHprof/xhprof_lib/display/typeahead_common.php
-%%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils/xhprof_lib.php
+%%WWWDIR%%/include/SugarXHprof/xhprof_lib/display/xhprof.php
 %%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils/callgraph_utils.php
+%%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils/xhprof_lib.php
 %%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils/xhprof_runs.php
 %%WWWDIR%%/include/Sugar_Smarty.php
 %%WWWDIR%%/include/Sugarpdf/FontManager.php
@@ -1301,6 +1299,7 @@
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldparent_type.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldphone.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldradioenum.php
+%%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldreadonly.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldrelate.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldsingleenum.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldtext.php
@@ -1395,6 +1394,7 @@
 %%WWWDIR%%/include/javascript/include.js
 %%WWWDIR%%/include/javascript/iscroll.js
 %%WWWDIR%%/include/javascript/javascript.php
+%%WWWDIR%%/include/javascript/jquery.js
 %%WWWDIR%%/include/javascript/jquery/bootstrap.min.js
 %%WWWDIR%%/include/javascript/jquery/jquery-min.js
 %%WWWDIR%%/include/javascript/jquery/jquery-ui-min.js
@@ -1457,7 +1457,6 @@
 %%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.slider.css
 %%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.tabs.css
 %%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.theme.css
-%%WWWDIR%%/include/javascript/jquery.js
 %%WWWDIR%%/include/javascript/jsAlerts.php
 %%WWWDIR%%/include/javascript/jsclass_async.js
 %%WWWDIR%%/include/javascript/jsclass_base.js
@@ -1966,18 +1965,18 @@
 %%WWWDIR%%/include/javascript/yui/build/editor/editor.js
 %%WWWDIR%%/include/javascript/yui/build/editor/simpleeditor-min.js
 %%WWWDIR%%/include/javascript/yui/build/editor/simpleeditor.js
-%%WWWDIR%%/include/javascript/yui/build/element/element-min.js
-%%WWWDIR%%/include/javascript/yui/build/element/element.js
 %%WWWDIR%%/include/javascript/yui/build/element-delegate/element-delegate-min.js
 %%WWWDIR%%/include/javascript/yui/build/element-delegate/element-delegate.js
-%%WWWDIR%%/include/javascript/yui/build/event/event-min.js
-%%WWWDIR%%/include/javascript/yui/build/event/event.js
+%%WWWDIR%%/include/javascript/yui/build/element/element-min.js
+%%WWWDIR%%/include/javascript/yui/build/element/element.js
 %%WWWDIR%%/include/javascript/yui/build/event-delegate/event-delegate-min.js
 %%WWWDIR%%/include/javascript/yui/build/event-delegate/event-delegate.js
 %%WWWDIR%%/include/javascript/yui/build/event-mouseenter/event-mouseenter-min.js
 %%WWWDIR%%/include/javascript/yui/build/event-mouseenter/event-mouseenter.js
 %%WWWDIR%%/include/javascript/yui/build/event-simulate/event-simulate-min.js
 %%WWWDIR%%/include/javascript/yui/build/event-simulate/event-simulate.js
+%%WWWDIR%%/include/javascript/yui/build/event/event-min.js
+%%WWWDIR%%/include/javascript/yui/build/event/event.js
 %%WWWDIR%%/include/javascript/yui/build/fonts/fonts-min.css
 %%WWWDIR%%/include/javascript/yui/build/fonts/fonts.css
 %%WWWDIR%%/include/javascript/yui/build/get/get-min.js
@@ -2061,10 +2060,10 @@
 %%WWWDIR%%/include/javascript/yui/build/progressbar/assets/skins/sam/progressbar.css
 %%WWWDIR%%/include/javascript/yui/build/progressbar/progressbar-min.js
 %%WWWDIR%%/include/javascript/yui/build/progressbar/progressbar.js
+%%WWWDIR%%/include/javascript/yui/build/reset-fonts-grids/reset-fonts-grids.css
+%%WWWDIR%%/include/javascript/yui/build/reset-fonts/reset-fonts.css
 %%WWWDIR%%/include/javascript/yui/build/reset/reset-min.css
 %%WWWDIR%%/include/javascript/yui/build/reset/reset.css
-%%WWWDIR%%/include/javascript/yui/build/reset-fonts/reset-fonts.css
-%%WWWDIR%%/include/javascript/yui/build/reset-fonts-grids/reset-fonts-grids.css
 %%WWWDIR%%/include/javascript/yui/build/resize/assets/resize-core.css
 %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins/sam/layout_sprite.png
 %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins/sam/resize-skin.css
@@ -2131,12 +2130,12 @@
 %%WWWDIR%%/include/javascript/yui/build/uploader/uploader-min.js
 %%WWWDIR%%/include/javascript/yui/build/uploader/uploader.js
 %%WWWDIR%%/include/javascript/yui/build/utilities/utilities.js
+%%WWWDIR%%/include/javascript/yui/build/yahoo-dom-event/yahoo-dom-event.js
 %%WWWDIR%%/include/javascript/yui/build/yahoo/yahoo-min.js
 %%WWWDIR%%/include/javascript/yui/build/yahoo/yahoo.js
-%%WWWDIR%%/include/javascript/yui/build/yahoo-dom-event/yahoo-dom-event.js
+%%WWWDIR%%/include/javascript/yui/build/yuiloader-dom-event/yuiloader-dom-event.js
 %%WWWDIR%%/include/javascript/yui/build/yuiloader/yuiloader-min.js
 %%WWWDIR%%/include/javascript/yui/build/yuiloader/yuiloader.js
-%%WWWDIR%%/include/javascript/yui/build/yuiloader-dom-event/yuiloader-dom-event.js
 %%WWWDIR%%/include/javascript/yui/build/yuitest/assets/skins/sam/yuitest-skin.css
 %%WWWDIR%%/include/javascript/yui/build/yuitest/assets/skins/sam/yuitest.css
 %%WWWDIR%%/include/javascript/yui/build/yuitest/assets/testlogger.css
@@ -2325,12 +2324,12 @@
 %%WWWDIR%%/include/javascript/yui3/build/cssfonts/fonts-context.css
 %%WWWDIR%%/include/javascript/yui3/build/cssfonts/fonts-min.css
 %%WWWDIR%%/include/javascript/yui3/build/cssfonts/fonts.css
-%%WWWDIR%%/include/javascript/yui3/build/cssgrids/grids-min.css
-%%WWWDIR%%/include/javascript/yui3/build/cssgrids/grids.css
 %%WWWDIR%%/include/javascript/yui3/build/cssgrids-deprecated/grids-context-min.css
 %%WWWDIR%%/include/javascript/yui3/build/cssgrids-deprecated/grids-context.css
 %%WWWDIR%%/include/javascript/yui3/build/cssgrids-deprecated/grids-min.css
 %%WWWDIR%%/include/javascript/yui3/build/cssgrids-deprecated/grids.css
+%%WWWDIR%%/include/javascript/yui3/build/cssgrids/grids-min.css
+%%WWWDIR%%/include/javascript/yui3/build/cssgrids/grids.css
 %%WWWDIR%%/include/javascript/yui3/build/cssreset/reset-context-min.css
 %%WWWDIR%%/include/javascript/yui3/build/cssreset/reset-context.css
 %%WWWDIR%%/include/javascript/yui3/build/cssreset/reset-min.css
@@ -2736,6 +2735,22 @@
 %%WWWDIR%%/include/javascript/yui3/build/editor/selection.js
 %%WWWDIR%%/include/javascript/yui3/build/escape/escape-min.js
 %%WWWDIR%%/include/javascript/yui3/build/escape/escape.js
+%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-base-min.js
+%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-base.js
+%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-complex-min.js
+%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-complex.js
+%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-min.js
+%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom.js
+%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-flick-min.js
+%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-flick.js
+%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-gestures-min.js
+%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-gestures.js
+%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-move-min.js
+%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-move.js
+%%WWWDIR%%/include/javascript/yui3/build/event-simulate/event-simulate-min.js
+%%WWWDIR%%/include/javascript/yui3/build/event-simulate/event-simulate.js
+%%WWWDIR%%/include/javascript/yui3/build/event-valuechange/event-valuechange-min.js
+%%WWWDIR%%/include/javascript/yui3/build/event-valuechange/event-valuechange.js
 %%WWWDIR%%/include/javascript/yui3/build/event/event-base-ie-min.js
 %%WWWDIR%%/include/javascript/yui3/build/event/event-base-ie.js
 %%WWWDIR%%/include/javascript/yui3/build/event/event-base-min.js
@@ -2760,28 +2775,14 @@
 %%WWWDIR%%/include/javascript/yui3/build/event/event-touch-min.js
 %%WWWDIR%%/include/javascript/yui3/build/event/event-touch.js
 %%WWWDIR%%/include/javascript/yui3/build/event/event.js
-%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-base-min.js
-%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-base.js
-%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-complex-min.js
-%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-complex.js
-%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom-min.js
-%%WWWDIR%%/include/javascript/yui3/build/event-custom/event-custom.js
-%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-flick-min.js
-%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-flick.js
-%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-gestures-min.js
-%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-gestures.js
-%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-move-min.js
-%%WWWDIR%%/include/javascript/yui3/build/event-gestures/event-move.js
-%%WWWDIR%%/include/javascript/yui3/build/event-simulate/event-simulate-min.js
-%%WWWDIR%%/include/javascript/yui3/build/event-simulate/event-simulate.js
-%%WWWDIR%%/include/javascript/yui3/build/event-valuechange/event-valuechange-min.js
-%%WWWDIR%%/include/javascript/yui3/build/event-valuechange/event-valuechange.js
 %%WWWDIR%%/include/javascript/yui3/build/highlight/highlight-accentfold-min.js
 %%WWWDIR%%/include/javascript/yui3/build/highlight/highlight-accentfold.js
 %%WWWDIR%%/include/javascript/yui3/build/highlight/highlight-base-min.js
 %%WWWDIR%%/include/javascript/yui3/build/highlight/highlight-base.js
 %%WWWDIR%%/include/javascript/yui3/build/highlight/highlight-min.js
 %%WWWDIR%%/include/javascript/yui3/build/highlight/highlight.js
+%%WWWDIR%%/include/javascript/yui3/build/history-deprecated/history-deprecated-min.js
+%%WWWDIR%%/include/javascript/yui3/build/history-deprecated/history-deprecated.js
 %%WWWDIR%%/include/javascript/yui3/build/history/history-base-min.js
 %%WWWDIR%%/include/javascript/yui3/build/history/history-base.js
 %%WWWDIR%%/include/javascript/yui3/build/history/history-hash-ie-min.js
@@ -2792,8 +2793,6 @@
 %%WWWDIR%%/include/javascript/yui3/build/history/history-html5.js
 %%WWWDIR%%/include/javascript/yui3/build/history/history-min.js
 %%WWWDIR%%/include/javascript/yui3/build/history/history.js
-%%WWWDIR%%/include/javascript/yui3/build/history-deprecated/history-deprecated-min.js
-%%WWWDIR%%/include/javascript/yui3/build/history-deprecated/history-deprecated.js
 %%WWWDIR%%/include/javascript/yui3/build/imageloader/imageloader-min.js
 %%WWWDIR%%/include/javascript/yui3/build/imageloader/imageloader.js
 %%WWWDIR%%/include/javascript/yui3/build/intl/intl-min.js
@@ -2829,6 +2828,21 @@
 %%WWWDIR%%/include/javascript/yui3/build/loader/loader-yui3-min.js
 %%WWWDIR%%/include/javascript/yui3/build/loader/loader-yui3.js
 %%WWWDIR%%/include/javascript/yui3/build/loader/loader.js
+%%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/node-flick-core.css
+%%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/skins/sam/node-flick-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/skins/sam/node-flick.css
+%%WWWDIR%%/include/javascript/yui3/build/node-flick/node-flick-min.js
+%%WWWDIR%%/include/javascript/yui3/build/node-flick/node-flick.js
+%%WWWDIR%%/include/javascript/yui3/build/node-focusmanager/node-focusmanager-min.js
+%%WWWDIR%%/include/javascript/yui3/build/node-focusmanager/node-focusmanager.js
+%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/node-menunav-core.css
+%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/horizontal-menu-submenu-indicator.png
+%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/horizontal-menu-submenu-toggle.png
+%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/node-menunav-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/node-menunav.css
+%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/vertical-menu-submenu-indicator.png
+%%WWWDIR%%/include/javascript/yui3/build/node-menunav/node-menunav-min.js
+%%WWWDIR%%/include/javascript/yui3/build/node-menunav/node-menunav.js
 %%WWWDIR%%/include/javascript/yui3/build/node/align-plugin-min.js
 %%WWWDIR%%/include/javascript/yui3/build/node/align-plugin.js
 %%WWWDIR%%/include/javascript/yui3/build/node/node-base-min.js
@@ -2853,21 +2867,6 @@
 %%WWWDIR%%/include/javascript/yui3/build/node/node.js
 %%WWWDIR%%/include/javascript/yui3/build/node/shim-plugin-min.js
 %%WWWDIR%%/include/javascript/yui3/build/node/shim-plugin.js
-%%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/node-flick-core.css
-%%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/skins/sam/node-flick-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/skins/sam/node-flick.css
-%%WWWDIR%%/include/javascript/yui3/build/node-flick/node-flick-min.js
-%%WWWDIR%%/include/javascript/yui3/build/node-flick/node-flick.js
-%%WWWDIR%%/include/javascript/yui3/build/node-focusmanager/node-focusmanager-min.js
-%%WWWDIR%%/include/javascript/yui3/build/node-focusmanager/node-focusmanager.js
-%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/node-menunav-core.css
-%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/horizontal-menu-submenu-indicator.png
-%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/horizontal-menu-submenu-toggle.png
-%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/node-menunav-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/node-menunav.css
-%%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam/vertical-menu-submenu-indicator.png
-%%WWWDIR%%/include/javascript/yui3/build/node-menunav/node-menunav-min.js
-%%WWWDIR%%/include/javascript/yui3/build/node-menunav/node-menunav.js
 %%WWWDIR%%/include/javascript/yui3/build/oop/oop-min.js
 %%WWWDIR%%/include/javascript/yui3/build/oop/oop.js
 %%WWWDIR%%/include/javascript/yui3/build/overlay/assets/overlay-core.css
@@ -2941,14 +2940,6 @@
 %%WWWDIR%%/include/javascript/yui3/build/scrollview/scrollview.js
 %%WWWDIR%%/include/javascript/yui3/build/simpleyui/simpleyui-min.js
 %%WWWDIR%%/include/javascript/yui3/build/simpleyui/simpleyui.js
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/rail-x.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/rail-y.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/slider-base-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/slider-base.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/slider-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/slider.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/thumb-x.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/thumb-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio-light/rail-x.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio-light/rail-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio-light/slider-base-skin.css
@@ -2957,6 +2948,28 @@
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio-light/slider.css
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio-light/thumb-x.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio-light/thumb-y.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/rail-x.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/rail-y.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/slider-base-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/slider-base.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/slider-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/slider.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/thumb-x.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio/thumb-y.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-x-dots.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-x-lines.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-x.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-y-dots.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-y-lines.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-y.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/slider-base-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/slider-base.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/slider-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/slider.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/thumb-x-line.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/thumb-x.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/thumb-y-line.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/thumb-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule/rail-x-dots.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule/rail-x-lines.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule/rail-x.png
@@ -2972,30 +2985,6 @@
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule/thumb-y-line.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule/thumb-y-lines.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule/thumb-y.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-x-dots.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-x-lines.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-x.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-y-dots.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-y-lines.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/rail-y.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/slider-base-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/slider-base.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/slider-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/slider.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/thumb-x-line.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/thumb-x.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/thumb-y-line.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark/thumb-y.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/rail-x.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/rail-y.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/slider-base-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/slider-base.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/slider-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/slider.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/thumb-x-grip.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/thumb-x.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/thumb-y-grip.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/thumb-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round-dark/rail-x.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round-dark/rail-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round-dark/slider-base-skin.css
@@ -3006,6 +2995,26 @@
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round-dark/thumb-x.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round-dark/thumb-y-grip.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round-dark/thumb-y.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/rail-x.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/rail-y.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/slider-base-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/slider-base.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/slider-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/slider.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/thumb-x-grip.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/thumb-x.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/thumb-y-grip.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round/thumb-y.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/rail-x-lines.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/rail-x.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/rail-y-lines.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/rail-y.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/slider-base-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/slider-base.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/slider-skin.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/slider.css
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/thumb-x.png
+%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/thumb-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam/rail-classic-x.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam/rail-classic-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam/rail-x-lines.png
@@ -3020,16 +3029,6 @@
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam/thumb-classic-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam/thumb-x.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam/thumb-y.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/rail-x-lines.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/rail-x.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/rail-y-lines.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/rail-y.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/slider-base-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/slider-base.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/slider-skin.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/slider.css
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/thumb-x.png
-%%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark/thumb-y.png
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/slider-base-core.css
 %%WWWDIR%%/include/javascript/yui3/build/slider/assets/slider-core.css
 %%WWWDIR%%/include/javascript/yui3/build/slider/clickable-rail-min.js
@@ -3088,6 +3087,8 @@
 %%WWWDIR%%/include/javascript/yui3/build/uploader/assets/uploader.swf
 %%WWWDIR%%/include/javascript/yui3/build/uploader/uploader-min.js
 %%WWWDIR%%/include/javascript/yui3/build/uploader/uploader.js
+%%WWWDIR%%/include/javascript/yui3/build/widget-anim/widget-anim-min.js
+%%WWWDIR%%/include/javascript/yui3/build/widget-anim/widget-anim.js
 %%WWWDIR%%/include/javascript/yui3/build/widget/assets/skins/sam/widget-base-skin.css
 %%WWWDIR%%/include/javascript/yui3/build/widget/assets/skins/sam/widget-base.css
 %%WWWDIR%%/include/javascript/yui3/build/widget/assets/skins/sam/widget-stack-skin.css
@@ -3123,8 +3124,6 @@
 %%WWWDIR%%/include/javascript/yui3/build/widget/widget-uievents-min.js
 %%WWWDIR%%/include/javascript/yui3/build/widget/widget-uievents.js
 %%WWWDIR%%/include/javascript/yui3/build/widget/widget.js
-%%WWWDIR%%/include/javascript/yui3/build/widget-anim/widget-anim-min.js
-%%WWWDIR%%/include/javascript/yui3/build/widget-anim/widget-anim.js
 %%WWWDIR%%/include/javascript/yui3/build/yql/yql-min.js
 %%WWWDIR%%/include/javascript/yui3/build/yql/yql.js
 %%WWWDIR%%/include/javascript/yui3/build/yui/features-min.js
@@ -3251,6 +3250,7 @@
 %%WWWDIR%%/include/templates/TemplateGroupChooser.php
 %%WWWDIR%%/include/timezone/timezones.php
 %%WWWDIR%%/include/upload_file.php
+%%WWWDIR%%/include/utils.php
 %%WWWDIR%%/include/utils/LogicHook.php
 %%WWWDIR%%/include/utils/activity_utils.php
 %%WWWDIR%%/include/utils/array_utils.php
@@ -3267,7 +3267,6 @@
 %%WWWDIR%%/include/utils/security_utils.php
 %%WWWDIR%%/include/utils/sugar_file_utils.php
 %%WWWDIR%%/include/utils/zip_utils.php
-%%WWWDIR%%/include/utils.php
 %%WWWDIR%%/include/vCard.php
 %%WWWDIR%%/include/ytree/ExtNode.php
 %%WWWDIR%%/include/ytree/Node.php
@@ -3339,6 +3338,7 @@
 %%WWWDIR%%/include/ytree/TreeView/license.txt
 %%WWWDIR%%/include/ytree/treeutil.js
 %%WWWDIR%%/index.php
+%%WWWDIR%%/install.php
 %%WWWDIR%%/install/TeamDemoData.php
 %%WWWDIR%%/install/UploadLangFileCheck.php
 %%WWWDIR%%/install/UserDemoData.php
@@ -3377,7 +3377,6 @@
 %%WWWDIR%%/install/siteConfig_b.php
 %%WWWDIR%%/install/systemOptions.php
 %%WWWDIR%%/install/welcome.php
-%%WWWDIR%%/install.php
 %%WWWDIR%%/json_server.php
 %%WWWDIR%%/jssource/JSGroupings.php
 %%WWWDIR%%/jssource/Minifier.php
@@ -3912,6 +3911,22 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/editor/selection.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/escape/escape-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/escape/escape.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-base-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-base.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-complex-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-complex.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-flick-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-flick.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-gestures-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-gestures.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-move-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-move.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-simulate/event-simulate-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-simulate/event-simulate.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-valuechange/event-valuechange-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-valuechange/event-valuechange.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event/event-base-ie-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event/event-base-ie.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event/event-base-min.js
@@ -3936,28 +3951,14 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event/event-touch-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event/event-touch.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event/event.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-base-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-base.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-complex-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-complex.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom/event-custom.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-flick-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-flick.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-gestures-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-gestures.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-move-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures/event-move.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-simulate/event-simulate-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-simulate/event-simulate.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-valuechange/event-valuechange-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-valuechange/event-valuechange.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/highlight/highlight-accentfold-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/highlight/highlight-accentfold.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/highlight/highlight-base-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/highlight/highlight-base.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/highlight/highlight-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/highlight/highlight.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history-deprecated/history-deprecated-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history-deprecated/history-deprecated.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history/history-base-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history/history-base.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history/history-hash-ie-min.js
@@ -3968,8 +3969,6 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history/history-html5.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history/history-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history/history.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history-deprecated/history-deprecated-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history-deprecated/history-deprecated.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/imageloader/imageloader-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/imageloader/imageloader.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/intl/intl-min.js
@@ -4004,6 +4003,12 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/loader/loader-yui3-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/loader/loader-yui3.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/loader/loader.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-flick/node-flick-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-flick/node-flick.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-focusmanager/node-focusmanager-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-focusmanager/node-focusmanager.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-menunav/node-menunav-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-menunav/node-menunav.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node/align-plugin-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node/align-plugin.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node/node-base-min.js
@@ -4028,12 +4033,6 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node/node.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node/shim-plugin-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node/shim-plugin.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-flick/node-flick-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-flick/node-flick.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-focusmanager/node-focusmanager-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-focusmanager/node-focusmanager.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-menunav/node-menunav-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-menunav/node-menunav.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/oop/oop-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/oop/oop.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/overlay/overlay-min.js
@@ -4138,6 +4137,8 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/transition/transition.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/uploader/uploader-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/uploader/uploader.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget-anim/widget-anim-min.js
+%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget-anim/widget-anim.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget/widget-base-ie-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget/widget-base-ie.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget/widget-base-min.js
@@ -4166,8 +4167,6 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget/widget-uievents-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget/widget-uievents.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget/widget.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget-anim/widget-anim-min.js
-%%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget-anim/widget-anim.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/yql/yql-min.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/yql/yql.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/yui/features-min.js
@@ -4800,9 +4799,6 @@
 %%WWWDIR%%/modules/Connectors/InstallDefaultConnectors.php
 %%WWWDIR%%/modules/Connectors/Menu.php
 %%WWWDIR%%/modules/Connectors/action_view_map.php
-%%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/linkedin.php
-%%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/tpls/default.tpl
-%%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/tpls/linkedin.gif
 %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/twitter/tpls/twitter.gif
 %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/InsideViewLogicHook.php
 %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/config.php
@@ -4815,11 +4811,6 @@
 %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/language/en_us.lang.php
 %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/mapping.php
 %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/tpls/InsideView.tpl
-%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/config.php
-%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/language/en_us.lang.php
-%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/linkedin.php
-%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/mapping.php
-%%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/vardefs.php
 %%WWWDIR%%/modules/Connectors/controller.php
 %%WWWDIR%%/modules/Connectors/language/en_us.lang.php
 %%WWWDIR%%/modules/Connectors/metadata/searchdefs.php
@@ -5017,6 +5008,7 @@
 %%WWWDIR%%/modules/DynamicFields/templates/Fields/TemplateId.php
 %%WWWDIR%%/modules/DynamicFields/templates/Fields/TemplateImage.php
 %%WWWDIR%%/modules/DynamicFields/templates/Fields/TemplateInt.php
+%%WWWDIR%%/modules/DynamicFields/templates/Fields/TemplateLink.php
 %%WWWDIR%%/modules/DynamicFields/templates/Fields/TemplateMultiEnum.php
 %%WWWDIR%%/modules/DynamicFields/templates/Fields/TemplateParent.php
 %%WWWDIR%%/modules/DynamicFields/templates/Fields/TemplateParentType.php
@@ -5971,10 +5963,10 @@
 %%WWWDIR%%/modules/Studio/Forms.php
 %%WWWDIR%%/modules/Studio/JSTransaction.js
 %%WWWDIR%%/modules/Studio/SaveTabs.php
+%%WWWDIR%%/modules/Studio/TabGroups.php
 %%WWWDIR%%/modules/Studio/TabGroups/EditViewTabs.php
 %%WWWDIR%%/modules/Studio/TabGroups/EditViewTabs.tpl
 %%WWWDIR%%/modules/Studio/TabGroups/TabGroupHelper.php
-%%WWWDIR%%/modules/Studio/TabGroups.php
 %%WWWDIR%%/modules/Studio/config.php
 %%WWWDIR%%/modules/Studio/language/en_us.Portal.html
 %%WWWDIR%%/modules/Studio/language/en_us.lang.php
@@ -6149,11 +6141,11 @@
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/SAMLAuthenticate.php
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/SAMLAuthenticateUser.php
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/index.php
+%%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin/saml.php
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin/saml/authrequest.php
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin/saml/response.php
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin/saml/settings.php
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin/saml/xmlsec.php
-%%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin/saml.php
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/xmlseclibs/CHANGELOG.txt
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/xmlseclibs/xmlseclibs.php
 %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/settings.php
@@ -6267,6 +6259,7 @@
 %%WWWDIR%%/service/v4_1/registry.php
 %%WWWDIR%%/service/v4_1/rest.php
 %%WWWDIR%%/service/v4_1/soap.php
+%%WWWDIR%%/soap.php
 %%WWWDIR%%/soap/SoapData.php
 %%WWWDIR%%/soap/SoapDeprecated.php
 %%WWWDIR%%/soap/SoapError.php
@@ -6278,7 +6271,6 @@
 %%WWWDIR%%/soap/SoapStudio.php
 %%WWWDIR%%/soap/SoapSugarUsers.php
 %%WWWDIR%%/soap/SoapTypes.php
-%%WWWDIR%%/soap.php
 %%WWWDIR%%/sugar_version.json
 %%WWWDIR%%/sugar_version.php
 %%WWWDIR%%/sugarcrm.log
@@ -7530,1228 +7522,1224 @@
 %%WWWDIR%%/upload/index.html
 %%WWWDIR%%/vCard.php
 %%WWWDIR%%/vcal_server.php
-@dirrm %%WWWDIR%%/ModuleInstall/PackageManager/metadata
-@dirrm %%WWWDIR%%/ModuleInstall/PackageManager/tpls
-@dirrm %%WWWDIR%%/ModuleInstall/PackageManager
-@dirrm %%WWWDIR%%/ModuleInstall
-@dirrm %%WWWDIR%%/XTemplate
-@dirrm %%WWWDIR%%/Zend/Crypt/DiffieHellman
-@dirrm %%WWWDIR%%/Zend/Crypt/Hmac
-@dirrm %%WWWDIR%%/Zend/Crypt/Math/BigInteger
-@dirrm %%WWWDIR%%/Zend/Crypt/Math
-@dirrm %%WWWDIR%%/Zend/Crypt/Rsa/Key
-@dirrm %%WWWDIR%%/Zend/Crypt/Rsa
-@dirrm %%WWWDIR%%/Zend/Crypt
-@dirrm %%WWWDIR%%/Zend/Gdata/App/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/App
-@dirrm %%WWWDIR%%/Zend/Gdata/Books/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Books
-@dirrm %%WWWDIR%%/Zend/Gdata/Calendar/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Calendar
-@dirrm %%WWWDIR%%/Zend/Gdata/Contacts/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Contacts
-@dirrm %%WWWDIR%%/Zend/Gdata/Docs
-@dirrm %%WWWDIR%%/Zend/Gdata/DublinCore/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/DublinCore
-@dirrm %%WWWDIR%%/Zend/Gdata/Exif/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Exif
-@dirrm %%WWWDIR%%/Zend/Gdata/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Gapps/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Gapps
-@dirrm %%WWWDIR%%/Zend/Gdata/Gbase/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Gbase
-@dirrm %%WWWDIR%%/Zend/Gdata/Geo/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Geo
-@dirrm %%WWWDIR%%/Zend/Gdata/Health/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Health
-@dirrm %%WWWDIR%%/Zend/Gdata/Kind
-@dirrm %%WWWDIR%%/Zend/Gdata/Media/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Media
-@dirrm %%WWWDIR%%/Zend/Gdata/Photos/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Photos
-@dirrm %%WWWDIR%%/Zend/Gdata/Spreadsheets/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/Spreadsheets
-@dirrm %%WWWDIR%%/Zend/Gdata/YouTube/Extension
-@dirrm %%WWWDIR%%/Zend/Gdata/YouTube
-@dirrm %%WWWDIR%%/Zend/Gdata
-@dirrm %%WWWDIR%%/Zend/Http/Client/Adapter
-@dirrm %%WWWDIR%%/Zend/Http/Client
-@dirrm %%WWWDIR%%/Zend/Http/Response
-@dirrm %%WWWDIR%%/Zend/Http
-@dirrm %%WWWDIR%%/Zend/Oauth/Config
-@dirrm %%WWWDIR%%/Zend/Oauth/Http
-@dirrm %%WWWDIR%%/Zend/Oauth/Signature
-@dirrm %%WWWDIR%%/Zend/Oauth/Token
-@dirrm %%WWWDIR%%/Zend/Oauth
-@dirrm %%WWWDIR%%/Zend/Uri
-@dirrm %%WWWDIR%%/Zend/Validate/Hostname
-@dirrm %%WWWDIR%%/Zend/Validate
-@dirrm %%WWWDIR%%/Zend
-@dirrm %%WWWDIR%%/cache/csv
-@dirrm %%WWWDIR%%/cache/feeds
-@dirrm %%WWWDIR%%/cache/images
-@dirrm %%WWWDIR%%/cache/import
-@dirrm %%WWWDIR%%/cache/include/javascript
-@dirrm %%WWWDIR%%/cache/include
-@dirrm %%WWWDIR%%/cache/layout
-@dirrm %%WWWDIR%%/cache/pdf
-@dirrm %%WWWDIR%%/cache/xml
-@dirrm %%WWWDIR%%/cache
-@dirrm %%WWWDIR%%/custom
-@dirrm %%WWWDIR%%/data/Relationships
-@dirrm %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/examples
-@dirrm %%WWWDIR%%/include/Dashlets
-@dirrm %%WWWDIR%%/include/DetailView
-@dirrm %%WWWDIR%%/include/EditView
-@dirrm %%WWWDIR%%/include/GroupedTabs
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Builder
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/EntityLookup
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Filter
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/classes
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/messages
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Lexer
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier
-@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone
-@dirrm %%WWWDIR%%/include/HTMLPurifier
-@dirrm %%WWWDIR%%/include/HTTP_WebDAV_Server/Tools
-@dirrm %%WWWDIR%%/include/HTTP_WebDAV_Server
-@dirrm %%WWWDIR%%/include/ListView
-@dirrm %%WWWDIR%%/include/Localization
-@dirrm %%WWWDIR%%/include/MVC/Controller
-@dirrm %%WWWDIR%%/include/MVC/View/tpls
-@dirrm %%WWWDIR%%/include/MVC/View/views
-@dirrm %%WWWDIR%%/include/MVC/View
-@dirrm %%WWWDIR%%/include/MVC
-@dirrm %%WWWDIR%%/include/MySugar/DashletsDialog
-@dirrm %%WWWDIR%%/include/MySugar/javascript
-@dirrm %%WWWDIR%%/include/MySugar/tpls
-@dirrm %%WWWDIR%%/include/MySugar
-@dirrm %%WWWDIR%%/include/OutboundEmail
-@dirrm %%WWWDIR%%/include/Pear/Crypt_Blowfish/Blowfish
-@dirrm %%WWWDIR%%/include/Pear/Crypt_Blowfish
-@dirrm %%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3
-@dirrm %%WWWDIR%%/include/Pear/XML_HTMLSax3
-@dirrm %%WWWDIR%%/include/Pear
-@dirrm %%WWWDIR%%/include/Popups/tpls
-@dirrm %%WWWDIR%%/include/Popups
-@dirrm %%WWWDIR%%/include/SearchForm/tpls
-@dirrm %%WWWDIR%%/include/SearchForm
-@dirrm %%WWWDIR%%/include/Smarty/internals
-@dirrm %%WWWDIR%%/include/Smarty/plugins
-@dirrm %%WWWDIR%%/include/Smarty
-@dirrm %%WWWDIR%%/include/SubPanel/tpls
-@dirrm %%WWWDIR%%/include/SubPanel
-@dirrm %%WWWDIR%%/include/SugarCache
-@dirrm %%WWWDIR%%/include/SugarCharts/Jit/FlashCanvas
-@dirrm %%WWWDIR%%/include/SugarCharts/Jit/css
-@dirrm %%WWWDIR%%/include/SugarCharts/Jit/js/Jit
-@dirrm %%WWWDIR%%/include/SugarCharts/Jit/js
-@dirrm %%WWWDIR%%/include/SugarCharts/Jit/tpls
-@dirrm %%WWWDIR%%/include/SugarCharts/Jit
-@dirrm %%WWWDIR%%/include/SugarCharts/swf
-@dirrm %%WWWDIR%%/include/SugarCharts
-@dirrm %%WWWDIR%%/include/SugarDependentDropdown/javascript
-@dirrm %%WWWDIR%%/include/SugarDependentDropdown/metadata
-@dirrm %%WWWDIR%%/include/SugarDependentDropdown
-@dirrm %%WWWDIR%%/include/SugarEmailAddress/templates
-@dirrm %%WWWDIR%%/include/SugarEmailAddress
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Address
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Assigned_user_name
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Base
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Bool
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Collection
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Currency
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Datetime
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Datetimecombo
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Download
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Enum
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/File
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Float
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Fullname
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Html
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Id
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Iframe
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Int
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Link
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Multienum
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Parent
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Password
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Phone
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Radioenum
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Readonly
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Relate
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Text
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Time
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/URL
-@dirrm %%WWWDIR%%/include/SugarFields/Fields/Username
-@dirrm %%WWWDIR%%/include/SugarFields/Fields
-@dirrm %%WWWDIR%%/include/SugarFields/Parsers/Rules
-@dirrm %%WWWDIR%%/include/SugarFields/Parsers
-@dirrm %%WWWDIR%%/include/SugarFields
-@dirrm %%WWWDIR%%/include/SugarFolders
-@dirrm %%WWWDIR%%/include/SugarHtml
-@dirrm %%WWWDIR%%/include/SugarLogger
-@dirrm %%WWWDIR%%/include/SugarObjects/forms
-@dirrm %%WWWDIR%%/include/SugarObjects/implements/assignable/language
-@dirrm %%WWWDIR%%/include/SugarObjects/implements/assignable
-@dirrm %%WWWDIR%%/include/SugarObjects/implements/team_security/language
-@dirrm %%WWWDIR%%/include/SugarObjects/implements/team_security
-@dirrm %%WWWDIR%%/include/SugarObjects/implements
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/basic/Dashlets/Dashlet
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/basic/Dashlets
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/basic/icons
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/basic/language
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/basic/metadata/subpanels
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/basic/metadata
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/basic
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/company/icons
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/company/language/application
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/company/language
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/company/metadata/subpanels
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/company/metadata
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/company
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/file/icons
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/file/language/application
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/file/language
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/file/metadata/subpanels
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/file/metadata
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/file/views
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/file
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/issue/icons
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/issue/language/application
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/issue/language
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/issue/metadata/subpanels
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/issue/metadata
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/issue
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/person/icons
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/person/language
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/person/metadata/subpanels
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/person/metadata
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/person
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/sale/icons
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/sale/language/application
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/sale/language
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/sale/metadata/subpanels
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/sale/metadata
-@dirrm %%WWWDIR%%/include/SugarObjects/templates/sale
-@dirrm %%WWWDIR%%/include/SugarObjects/templates
-@dirrm %%WWWDIR%%/include/SugarObjects
-@dirrm %%WWWDIR%%/include/SugarQueue
-@dirrm %%WWWDIR%%/include/SugarTheme
-@dirrm %%WWWDIR%%/include/SugarXHprof/xhprof_lib/display
-@dirrm %%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils
-@dirrm %%WWWDIR%%/include/SugarXHprof/xhprof_lib
-@dirrm %%WWWDIR%%/include/SugarXHprof
-@dirrm %%WWWDIR%%/include/Sugarpdf/sugarpdf
-@dirrm %%WWWDIR%%/include/Sugarpdf
-@dirrm %%WWWDIR%%/include/TemplateHandler
-@dirrm %%WWWDIR%%/include/VarDefHandler
-@dirrm %%WWWDIR%%/include/connectors/filters/default
-@dirrm %%WWWDIR%%/include/connectors/filters
-@dirrm %%WWWDIR%%/include/connectors/formatters/default
-@dirrm %%WWWDIR%%/include/connectors/formatters/ext/rest/tpls
-@dirrm %%WWWDIR%%/include/connectors/formatters/ext/rest
-@dirrm %%WWWDIR%%/include/connectors/formatters/ext/soap/tpls
-@dirrm %%WWWDIR%%/include/connectors/formatters/ext/soap
-@dirrm %%WWWDIR%%/include/connectors/formatters/ext
-@dirrm %%WWWDIR%%/include/connectors/formatters
-@dirrm %%WWWDIR%%/include/connectors/sources/default
-@dirrm %%WWWDIR%%/include/connectors/sources/ext/eapm
-@dirrm %%WWWDIR%%/include/connectors/sources/ext/rest
-@dirrm %%WWWDIR%%/include/connectors/sources/ext/soap
-@dirrm %%WWWDIR%%/include/connectors/sources/ext
-@dirrm %%WWWDIR%%/include/connectors/sources/loc
-@dirrm %%WWWDIR%%/include/connectors/sources
-@dirrm %%WWWDIR%%/include/connectors/utils
-@dirrm %%WWWDIR%%/include/connectors
-@dirrm %%WWWDIR%%/include/contextMenus/menuDefs
-@dirrm %%WWWDIR%%/include/contextMenus
-@dirrm %%WWWDIR%%/include/controller
-@dirrm %%WWWDIR%%/include/database
-@dirrm %%WWWDIR%%/include/externalAPI/Base
-@dirrm %%WWWDIR%%/include/externalAPI
-@dirrm %%WWWDIR%%/include/fonts
-@dirrm %%WWWDIR%%/include/generic/SugarWidgets
-@dirrm %%WWWDIR%%/include/generic
-@dirrm %%WWWDIR%%/include/images/tour
-@dirrm %%WWWDIR%%/include/images
-@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images
-@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/sets/default
-@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/sets
-@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/skins/simple/images
-@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/skins/simple
-@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/skins
-@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/templates
-@dirrm %%WWWDIR%%/include/javascript/jquery/markitup
-@dirrm %%WWWDIR%%/include/javascript/jquery/themes/base/images
-@dirrm %%WWWDIR%%/include/javascript/jquery/themes/base
-@dirrm %%WWWDIR%%/include/javascript/jquery/themes
-@dirrm %%WWWDIR%%/include/javascript/jquery
-@dirrm %%WWWDIR%%/include/javascript/phpjs
-@dirrm %%WWWDIR%%/include/javascript/sugarwidgets
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/adapter/jquery
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/adapter/prototype
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/adapter
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/dom
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/firebug
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/html
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/ui
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/util
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlist
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/autolink
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/autoresize
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/autosave/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/autosave
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/bbcode
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/contextmenu
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/directionality
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/example_dependency
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullscreen
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/iespell
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins/clearlooks2
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/insertdatetime
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/layer
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/legacyoutput
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/lists
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/media
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/nonbreaking
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/noneditable
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/pagebreak
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/preview/jscripts
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/preview
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/print
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/save
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/style
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/tabfocus
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/table
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/template
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/visualchars
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/wordcount
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/css
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/plugins
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/js
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/default/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/default
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/highcontrast
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/o2k7/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/o2k7
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/langs
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/default
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/o2k7/img
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/o2k7
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes/simple
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/themes
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce/utils
-@dirrm %%WWWDIR%%/include/javascript/tiny_mce
-@dirrm %%WWWDIR%%/include/javascript/yui/build/animation
-@dirrm %%WWWDIR%%/include/javascript/yui/build/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/autocomplete/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/autocomplete/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/autocomplete/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/autocomplete
-@dirrm %%WWWDIR%%/include/javascript/yui/build/base
-@dirrm %%WWWDIR%%/include/javascript/yui/build/button/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/button/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/button/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/button
-@dirrm %%WWWDIR%%/include/javascript/yui/build/calendar/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/calendar/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/calendar/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/calendar/blank
-@dirrm %%WWWDIR%%/include/javascript/yui/build/calendar
-@dirrm %%WWWDIR%%/include/javascript/yui/build/carousel/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/carousel/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/carousel/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/carousel
-@dirrm %%WWWDIR%%/include/javascript/yui/build/charts/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/charts
-@dirrm %%WWWDIR%%/include/javascript/yui/build/colorpicker/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/colorpicker/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/colorpicker/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/colorpicker
-@dirrm %%WWWDIR%%/include/javascript/yui/build/connection
-@dirrm %%WWWDIR%%/include/javascript/yui/build/container/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/container/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/container/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/container
-@dirrm %%WWWDIR%%/include/javascript/yui/build/cookie
-@dirrm %%WWWDIR%%/include/javascript/yui/build/datasource
-@dirrm %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/datatable/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/datatable/blank
-@dirrm %%WWWDIR%%/include/javascript/yui/build/datatable
-@dirrm %%WWWDIR%%/include/javascript/yui/build/datemath
-@dirrm %%WWWDIR%%/include/javascript/yui/build/dom
-@dirrm %%WWWDIR%%/include/javascript/yui/build/dragdrop
-@dirrm %%WWWDIR%%/include/javascript/yui/build/editor/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/editor/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/editor/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/editor
-@dirrm %%WWWDIR%%/include/javascript/yui/build/element
-@dirrm %%WWWDIR%%/include/javascript/yui/build/element-delegate
-@dirrm %%WWWDIR%%/include/javascript/yui/build/event
-@dirrm %%WWWDIR%%/include/javascript/yui/build/event-delegate
-@dirrm %%WWWDIR%%/include/javascript/yui/build/event-mouseenter
-@dirrm %%WWWDIR%%/include/javascript/yui/build/event-simulate
-@dirrm %%WWWDIR%%/include/javascript/yui/build/fonts
-@dirrm %%WWWDIR%%/include/javascript/yui/build/get
-@dirrm %%WWWDIR%%/include/javascript/yui/build/grids
-@dirrm %%WWWDIR%%/include/javascript/yui/build/history/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/history
-@dirrm %%WWWDIR%%/include/javascript/yui/build/imagecropper/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/imagecropper/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/imagecropper/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/imagecropper
-@dirrm %%WWWDIR%%/include/javascript/yui/build/imageloader
-@dirrm %%WWWDIR%%/include/javascript/yui/build/json
-@dirrm %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/layout/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/layout/blank
-@dirrm %%WWWDIR%%/include/javascript/yui/build/layout
-@dirrm %%WWWDIR%%/include/javascript/yui/build/logger/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/logger/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/logger/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/logger
-@dirrm %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/menu/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/menu/blank
-@dirrm %%WWWDIR%%/include/javascript/yui/build/menu
-@dirrm %%WWWDIR%%/include/javascript/yui/build/paginator/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/paginator/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/paginator/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/paginator/blank
-@dirrm %%WWWDIR%%/include/javascript/yui/build/paginator
-@dirrm %%WWWDIR%%/include/javascript/yui/build/profiler
-@dirrm %%WWWDIR%%/include/javascript/yui/build/profilerviewer/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/profilerviewer/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/profilerviewer/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/profilerviewer
-@dirrm %%WWWDIR%%/include/javascript/yui/build/progressbar/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/progressbar/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/progressbar/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/progressbar
-@dirrm %%WWWDIR%%/include/javascript/yui/build/reset
-@dirrm %%WWWDIR%%/include/javascript/yui/build/reset-fonts
-@dirrm %%WWWDIR%%/include/javascript/yui/build/reset-fonts-grids
-@dirrm %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/resize/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/resize/blank
-@dirrm %%WWWDIR%%/include/javascript/yui/build/resize
-@dirrm %%WWWDIR%%/include/javascript/yui/build/selector
-@dirrm %%WWWDIR%%/include/javascript/yui/build/slider/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/slider/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/slider/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/slider
-@dirrm %%WWWDIR%%/include/javascript/yui/build/storage
-@dirrm %%WWWDIR%%/include/javascript/yui/build/stylesheet
-@dirrm %%WWWDIR%%/include/javascript/yui/build/swf
-@dirrm %%WWWDIR%%/include/javascript/yui/build/swfdetect
-@dirrm %%WWWDIR%%/include/javascript/yui/build/swfstore
-@dirrm %%WWWDIR%%/include/javascript/yui/build/tabview/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/tabview/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/tabview/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/tabview/blank
-@dirrm %%WWWDIR%%/include/javascript/yui/build/tabview
-@dirrm %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/treeview/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/treeview/blank
-@dirrm %%WWWDIR%%/include/javascript/yui/build/treeview
-@dirrm %%WWWDIR%%/include/javascript/yui/build/uploader/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/uploader
-@dirrm %%WWWDIR%%/include/javascript/yui/build/utilities
-@dirrm %%WWWDIR%%/include/javascript/yui/build/yahoo
-@dirrm %%WWWDIR%%/include/javascript/yui/build/yahoo-dom-event
-@dirrm %%WWWDIR%%/include/javascript/yui/build/yuiloader
-@dirrm %%WWWDIR%%/include/javascript/yui/build/yuiloader-dom-event
-@dirrm %%WWWDIR%%/include/javascript/yui/build/yuitest/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui/build/yuitest/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui/build/yuitest/assets
-@dirrm %%WWWDIR%%/include/javascript/yui/build/yuitest
-@dirrm %%WWWDIR%%/include/javascript/yui/build
-@dirrm %%WWWDIR%%/include/javascript/yui/ext
-@dirrm %%WWWDIR%%/include/javascript/yui
-@dirrm %%WWWDIR%%/include/javascript/yui3/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/anim
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/arraysort
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/async-queue
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/attribute
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/autocomplete/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/autocomplete/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/autocomplete/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/autocomplete/lang
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/autocomplete
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/base
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/cache
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/charts
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/classnamemanager
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/collection
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/compat
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/console/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/console/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/console/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/console/lang
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/console
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/cookie
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/cssbase
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/cssfonts
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/cssgrids
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/cssgrids-deprecated
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/cssreset
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dataschema
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/datasource
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/datatable/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/datatable/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/datatable/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/datatable/lang
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/datatable
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/datatype/lang
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/datatype
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dd
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dial/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dial/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dial/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dial/lang
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dial
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dom
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/dump
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/editor
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/escape
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/event
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/event-custom
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/event-gestures
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/event-simulate
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/event-valuechange
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/highlight
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/history
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/history-deprecated
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/imageloader
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/intl
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/io
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/json
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/jsonp
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/loader
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-flick/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-flick
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-focusmanager
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/node-menunav
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/oop
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/overlay/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/overlay/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/overlay/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/overlay
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/plugin
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/pluginhost
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/profiler
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/querystring
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/queue-promote
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/recordset
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/resize/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/resize/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/resize/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/resize
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/scrollview/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/scrollview/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/scrollview/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/scrollview
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/simpleyui
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio-light
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round-dark
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/slider
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/sortable
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/stylesheet
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/substitute
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/swf
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/swfdetect
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/tabview/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/tabview/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/tabview/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/tabview
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/test/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/test/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/test/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/test
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/text
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/transition
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/uploader/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/uploader
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/widget/assets/skins/sam
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/widget/assets/skins
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/widget/assets
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/widget
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/widget-anim
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/yql
-@dirrm %%WWWDIR%%/include/javascript/yui3/build/yui
-@dirrm %%WWWDIR%%/include/javascript/yui3/build
-@dirrm %%WWWDIR%%/include/javascript/yui3
-@dirrm %%WWWDIR%%/include/javascript
-@dirrm %%WWWDIR%%/include/language
-@dirrm %%WWWDIR%%/include/nusoap
-@dirrm %%WWWDIR%%/include/pclzip
-@dirrm %%WWWDIR%%/include/phpmailer/extras
-@dirrm %%WWWDIR%%/include/phpmailer/language
-@dirrm %%WWWDIR%%/include/phpmailer
-@dirrm %%WWWDIR%%/include/reCaptcha
-@dirrm %%WWWDIR%%/include/resource/Observers
-@dirrm %%WWWDIR%%/include/resource
-@dirrm %%WWWDIR%%/include/tcpdf/config/lang
-@dirrm %%WWWDIR%%/include/tcpdf/config
-@dirrm %%WWWDIR%%/include/tcpdf/fonts/utils/enc
-@dirrm %%WWWDIR%%/include/tcpdf/fonts/utils
-@dirrm %%WWWDIR%%/include/tcpdf/fonts
-@dirrm %%WWWDIR%%/include/tcpdf
-@dirrm %%WWWDIR%%/include/templates
-@dirrm %%WWWDIR%%/include/timezone
-@dirrm %%WWWDIR%%/include/utils
-@dirrm %%WWWDIR%%/include/ytree/TreeView/anim
-@dirrm %%WWWDIR%%/include/ytree/TreeView/css/check
-@dirrm %%WWWDIR%%/include/ytree/TreeView/css/default
-@dirrm %%WWWDIR%%/include/ytree/TreeView/css/folders
-@dirrm %%WWWDIR%%/include/ytree/TreeView/css/forecasts
-@dirrm %%WWWDIR%%/include/ytree/TreeView/css
-@dirrm %%WWWDIR%%/include/ytree/TreeView/img/check
-@dirrm %%WWWDIR%%/include/ytree/TreeView/img/default
-@dirrm %%WWWDIR%%/include/ytree/TreeView/img/folders
-@dirrm %%WWWDIR%%/include/ytree/TreeView/img
-@dirrm %%WWWDIR%%/include/ytree/TreeView
-@dirrm %%WWWDIR%%/include/ytree
-@dirrm %%WWWDIR%%/include
-@dirrm %%WWWDIR%%/install/data
-@dirrm %%WWWDIR%%/install/language
-@dirrm %%WWWDIR%%/install/seed_data
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/jssource/src_files/include/EditView
-@dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier/Printer
-@dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier
-@dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone
-@dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier
-@dirrm %%WWWDIR%%/jssource/src_files/include/MySugar/javascript
-@dirrm %%WWWDIR%%/jssource/src_files/include/MySugar
-@dirrm %%WWWDIR%%/jssource/src_files/include/SubPanel
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit/FlashCanvas
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit/js/Jit
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit/js
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarCharts
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarDependentDropdown/javascript
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarDependentDropdown
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarEmailAddress
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Address
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Collection
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Datetimecombo
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/File
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Time
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields
-@dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields
-@dirrm %%WWWDIR%%/jssource/src_files/include/connectors/formatters/default
-@dirrm %%WWWDIR%%/jssource/src_files/include/connectors/formatters
-@dirrm %%WWWDIR%%/jssource/src_files/include/connectors
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/phpjs
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/sugarwidgets
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/assets
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/anim
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/arraysort
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/async-queue
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/attribute
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/autocomplete/lang
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/autocomplete
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/base
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/cache
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/charts
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/classnamemanager
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/collection
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/compat
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/console/lang
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/console
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/cookie
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dataschema
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datasource
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datatable/lang
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datatable
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datatype/lang
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datatype
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dd
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dial/lang
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dial
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dom
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dump
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/editor
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/escape
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-simulate
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-valuechange
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/highlight
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history-deprecated
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/imageloader
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/intl
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/io
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/json
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/jsonp
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/loader
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-flick
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-focusmanager
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-menunav
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/oop
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/overlay
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/plugin
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/pluginhost
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/profiler
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/querystring
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/queue-promote
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/recordset
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/resize
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/scrollview
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/simpleyui
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/slider
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/sortable
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/stylesheet
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/substitute
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/swf
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/swfdetect
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/tabview
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/test
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/text
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/transition
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/uploader
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget-anim
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/yql
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/yui
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript/yui3
-@dirrm %%WWWDIR%%/jssource/src_files/include/javascript
-@dirrm %%WWWDIR%%/jssource/src_files/include/ytree/TreeView/anim
-@dirrm %%WWWDIR%%/jssource/src_files/include/ytree/TreeView
-@dirrm %%WWWDIR%%/jssource/src_files/include/ytree
-@dirrm %%WWWDIR%%/jssource/src_files/include
-@dirrm %%WWWDIR%%/jssource/src_files/install
-@dirrm %%WWWDIR%%/jssource/src_files/modules/ACLRoles
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Accounts
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Administration/javascript
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Administration
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Calendar
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Campaigns
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Connectors
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Contacts
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Currencies
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Documents
-@dirrm %%WWWDIR%%/jssource/src_files/modules/EAPM
-@dirrm %%WWWDIR%%/jssource/src_files/modules/EmailTemplates
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Home
-@dirrm %%WWWDIR%%/jssource/src_files/modules/InboundEmail
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Leads
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Meetings
-@dirrm %%WWWDIR%%/jssource/src_files/modules/MergeRecords
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Project
-@dirrm %%WWWDIR%%/jssource/src_files/modules/ProjectTask
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Schedulers
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Studio
-@dirrm %%WWWDIR%%/jssource/src_files/modules/UpgradeWizard
-@dirrm %%WWWDIR%%/jssource/src_files/modules/Users
-@dirrm %%WWWDIR%%/jssource/src_files/modules
-@dirrm %%WWWDIR%%/jssource/src_files/service/utils
-@dirrm %%WWWDIR%%/jssource/src_files/service
-@dirrm %%WWWDIR%%/jssource/src_files/themes/Sugar5/js
-@dirrm %%WWWDIR%%/jssource/src_files/themes/Sugar5
-@dirrm %%WWWDIR%%/jssource/src_files/themes/default/js
-@dirrm %%WWWDIR%%/jssource/src_files/themes/default
-@dirrm %%WWWDIR%%/jssource/src_files/themes
-@dirrm %%WWWDIR%%/jssource/src_files
-@dirrm %%WWWDIR%%/jssource
-@dirrm %%WWWDIR%%/log4php
-@dirrm %%WWWDIR%%/metadata
-@dirrm %%WWWDIR%%/modules/ACL/language
-@dirrm %%WWWDIR%%/modules/ACL/metadata
-@dirrm %%WWWDIR%%/modules/ACL
-@dirrm %%WWWDIR%%/modules/ACLActions/language
-@dirrm %%WWWDIR%%/modules/ACLActions/metadata
-@dirrm %%WWWDIR%%/modules/ACLActions
-@dirrm %%WWWDIR%%/modules/ACLRoles/language
-@dirrm %%WWWDIR%%/modules/ACLRoles/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/ACLRoles/metadata
-@dirrm %%WWWDIR%%/modules/ACLRoles/views
-@dirrm %%WWWDIR%%/modules/ACLRoles
-@dirrm %%WWWDIR%%/modules/Accounts/Dashlets/MyAccountsDashlet
-@dirrm %%WWWDIR%%/modules/Accounts/Dashlets
-@dirrm %%WWWDIR%%/modules/Accounts/language
-@dirrm %%WWWDIR%%/modules/Accounts/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Accounts/metadata
-@dirrm %%WWWDIR%%/modules/Accounts/tpls
-@dirrm %%WWWDIR%%/modules/Accounts/views
-@dirrm %%WWWDIR%%/modules/Accounts
-@dirrm %%WWWDIR%%/modules/Activities/language
-@dirrm %%WWWDIR%%/modules/Activities/metadata
-@dirrm %%WWWDIR%%/modules/Activities/views
-@dirrm %%WWWDIR%%/modules/Activities
-@dirrm %%WWWDIR%%/modules/Administration/javascript
-@dirrm %%WWWDIR%%/modules/Administration/language
-@dirrm %%WWWDIR%%/modules/Administration/metadata
-@dirrm %%WWWDIR%%/modules/Administration/templates
-@dirrm %%WWWDIR%%/modules/Administration/views
-@dirrm %%WWWDIR%%/modules/Administration
-@dirrm %%WWWDIR%%/modules/Audit/language
-@dirrm %%WWWDIR%%/modules/Audit
-@dirrm %%WWWDIR%%/modules/Bugs/Dashlets/MyBugsDashlet
-@dirrm %%WWWDIR%%/modules/Bugs/Dashlets
-@dirrm %%WWWDIR%%/modules/Bugs/language
-@dirrm %%WWWDIR%%/modules/Bugs/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Bugs/metadata
-@dirrm %%WWWDIR%%/modules/Bugs/tpls
-@dirrm %%WWWDIR%%/modules/Bugs/views
-@dirrm %%WWWDIR%%/modules/Bugs
-@dirrm %%WWWDIR%%/modules/Calendar/Dashlets/CalendarDashlet
-@dirrm %%WWWDIR%%/modules/Calendar/Dashlets
-@dirrm %%WWWDIR%%/modules/Calendar/language
-@dirrm %%WWWDIR%%/modules/Calendar/tpls
-@dirrm %%WWWDIR%%/modules/Calendar/views
-@dirrm %%WWWDIR%%/modules/Calendar
-@dirrm %%WWWDIR%%/modules/Calls/Dashlets/MyCallsDashlet
-@dirrm %%WWWDIR%%/modules/Calls/Dashlets
-@dirrm %%WWWDIR%%/modules/Calls/language
-@dirrm %%WWWDIR%%/modules/Calls/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Calls/metadata
-@dirrm %%WWWDIR%%/modules/Calls/tpls
-@dirrm %%WWWDIR%%/modules/Calls/views
-@dirrm %%WWWDIR%%/modules/Calls
-@dirrm %%WWWDIR%%/modules/CampaignLog/language
-@dirrm %%WWWDIR%%/modules/CampaignLog/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/CampaignLog/metadata
-@dirrm %%WWWDIR%%/modules/CampaignLog
-@dirrm %%WWWDIR%%/modules/CampaignTrackers/language
-@dirrm %%WWWDIR%%/modules/CampaignTrackers/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/CampaignTrackers/metadata
-@dirrm %%WWWDIR%%/modules/CampaignTrackers
-@dirrm %%WWWDIR%%/modules/Campaigns/Dashlets/TopCampaignsDashlet
-@dirrm %%WWWDIR%%/modules/Campaigns/Dashlets
-@dirrm %%WWWDIR%%/modules/Campaigns/language
-@dirrm %%WWWDIR%%/modules/Campaigns/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Campaigns/metadata
-@dirrm %%WWWDIR%%/modules/Campaigns/tpls
-@dirrm %%WWWDIR%%/modules/Campaigns/views
-@dirrm %%WWWDIR%%/modules/Campaigns
-@dirrm %%WWWDIR%%/modules/Cases/Dashlets/MyCasesDashlet
-@dirrm %%WWWDIR%%/modules/Cases/Dashlets
-@dirrm %%WWWDIR%%/modules/Cases/SugarFeeds
-@dirrm %%WWWDIR%%/modules/Cases/language
-@dirrm %%WWWDIR%%/modules/Cases/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Cases/metadata
-@dirrm %%WWWDIR%%/modules/Cases/tpls
-@dirrm %%WWWDIR%%/modules/Cases
-@dirrm %%WWWDIR%%/modules/Charts/Dashlets/CampaignROIChartDashlet
-@dirrm %%WWWDIR%%/modules/Charts/Dashlets/MyPipelineBySalesStageDashlet
-@dirrm %%WWWDIR%%/modules/Charts/Dashlets/OpportunitiesByLeadSourceByOutcomeDashlet
-@dirrm %%WWWDIR%%/modules/Charts/Dashlets/OpportunitiesByLeadSourceDashlet
-@dirrm %%WWWDIR%%/modules/Charts/Dashlets/OutcomeByMonthDashlet
-@dirrm %%WWWDIR%%/modules/Charts/Dashlets/PipelineBySalesStageDashlet
-@dirrm %%WWWDIR%%/modules/Charts/Dashlets
-@dirrm %%WWWDIR%%/modules/Charts/code
-@dirrm %%WWWDIR%%/modules/Charts/language
-@dirrm %%WWWDIR%%/modules/Charts
-@dirrm %%WWWDIR%%/modules/Configurator/language
-@dirrm %%WWWDIR%%/modules/Configurator/metadata
-@dirrm %%WWWDIR%%/modules/Configurator/tpls
-@dirrm %%WWWDIR%%/modules/Configurator/views
-@dirrm %%WWWDIR%%/modules/Configurator
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin/tpls
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/linkedin
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/twitter/tpls
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/twitter
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters/ext
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/formatters
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/images
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/language
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/tpls
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin/language
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/linkedin
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources/ext
-@dirrm %%WWWDIR%%/modules/Connectors/connectors/sources
-@dirrm %%WWWDIR%%/modules/Connectors/connectors
-@dirrm %%WWWDIR%%/modules/Connectors/language
-@dirrm %%WWWDIR%%/modules/Connectors/metadata
-@dirrm %%WWWDIR%%/modules/Connectors/tpls
-@dirrm %%WWWDIR%%/modules/Connectors/views
-@dirrm %%WWWDIR%%/modules/Connectors
-@dirrm %%WWWDIR%%/modules/Contacts/Dashlets/MyContactsDashlet
-@dirrm %%WWWDIR%%/modules/Contacts/Dashlets
-@dirrm %%WWWDIR%%/modules/Contacts/SugarFeeds
-@dirrm %%WWWDIR%%/modules/Contacts/language
-@dirrm %%WWWDIR%%/modules/Contacts/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Contacts/metadata
-@dirrm %%WWWDIR%%/modules/Contacts/tpls
-@dirrm %%WWWDIR%%/modules/Contacts/views
-@dirrm %%WWWDIR%%/modules/Contacts
-@dirrm %%WWWDIR%%/modules/Currencies/language
-@dirrm %%WWWDIR%%/modules/Currencies
-@dirrm %%WWWDIR%%/modules/DocumentRevisions/language
-@dirrm %%WWWDIR%%/modules/DocumentRevisions/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/DocumentRevisions/metadata
-@dirrm %%WWWDIR%%/modules/DocumentRevisions/subpanels
-@dirrm %%WWWDIR%%/modules/DocumentRevisions
-@dirrm %%WWWDIR%%/modules/Documents/Dashlets/MyDocumentsDashlet
-@dirrm %%WWWDIR%%/modules/Documents/Dashlets
-@dirrm %%WWWDIR%%/modules/Documents/language
-@dirrm %%WWWDIR%%/modules/Documents/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Documents/metadata
-@dirrm %%WWWDIR%%/modules/Documents/tpls
-@dirrm %%WWWDIR%%/modules/Documents/views
-@dirrm %%WWWDIR%%/modules/Documents
-@dirrm %%WWWDIR%%/modules/DynamicFields/language
-@dirrm %%WWWDIR%%/modules/DynamicFields/templates/Fields/Forms
-@dirrm %%WWWDIR%%/modules/DynamicFields/templates/Fields
-@dirrm %%WWWDIR%%/modules/DynamicFields/templates/Files
-@dirrm %%WWWDIR%%/modules/DynamicFields/templates
-@dirrm %%WWWDIR%%/modules/DynamicFields
-@dirrm %%WWWDIR%%/modules/EAPM/language
-@dirrm %%WWWDIR%%/modules/EAPM/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/EAPM/metadata
-@dirrm %%WWWDIR%%/modules/EAPM/tpls
-@dirrm %%WWWDIR%%/modules/EAPM/views
-@dirrm %%WWWDIR%%/modules/EAPM
-@dirrm %%WWWDIR%%/modules/EmailAddresses/language
-@dirrm %%WWWDIR%%/modules/EmailAddresses
-@dirrm %%WWWDIR%%/modules/EmailMan/language
-@dirrm %%WWWDIR%%/modules/EmailMan/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/EmailMan/metadata
-@dirrm %%WWWDIR%%/modules/EmailMan/subpanels
-@dirrm %%WWWDIR%%/modules/EmailMan/tpls
-@dirrm %%WWWDIR%%/modules/EmailMan/views
-@dirrm %%WWWDIR%%/modules/EmailMan
-@dirrm %%WWWDIR%%/modules/EmailMarketing/language
-@dirrm %%WWWDIR%%/modules/EmailMarketing/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/EmailMarketing/metadata
-@dirrm %%WWWDIR%%/modules/EmailMarketing/subpanels
-@dirrm %%WWWDIR%%/modules/EmailMarketing
-@dirrm %%WWWDIR%%/modules/EmailTemplates/language
-@dirrm %%WWWDIR%%/modules/EmailTemplates/metadata
-@dirrm %%WWWDIR%%/modules/EmailTemplates
-@dirrm %%WWWDIR%%/modules/EmailText
-@dirrm %%WWWDIR%%/modules/Emails/Dashlets/MyEmailsDashlet
-@dirrm %%WWWDIR%%/modules/Emails/Dashlets
-@dirrm %%WWWDIR%%/modules/Emails/images
-@dirrm %%WWWDIR%%/modules/Emails/javascript
-@dirrm %%WWWDIR%%/modules/Emails/language
-@dirrm %%WWWDIR%%/modules/Emails/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Emails/metadata
-@dirrm %%WWWDIR%%/modules/Emails/subpanels
-@dirrm %%WWWDIR%%/modules/Emails/templates
-@dirrm %%WWWDIR%%/modules/Emails/views
-@dirrm %%WWWDIR%%/modules/Emails
-@dirrm %%WWWDIR%%/modules/Employees/language
-@dirrm %%WWWDIR%%/modules/Employees/metadata
-@dirrm %%WWWDIR%%/modules/Employees/views
-@dirrm %%WWWDIR%%/modules/Employees
-@dirrm %%WWWDIR%%/modules/Groups/language
-@dirrm %%WWWDIR%%/modules/Groups
-@dirrm %%WWWDIR%%/modules/Help/language
-@dirrm %%WWWDIR%%/modules/Help
-@dirrm %%WWWDIR%%/modules/History/language
-@dirrm %%WWWDIR%%/modules/History/metadata
-@dirrm %%WWWDIR%%/modules/History
-@dirrm %%WWWDIR%%/modules/Home/Dashlets/ChartsDashlet
-@dirrm %%WWWDIR%%/modules/Home/Dashlets/InvadersDashlet/sprites
-@dirrm %%WWWDIR%%/modules/Home/Dashlets/InvadersDashlet
-@dirrm %%WWWDIR%%/modules/Home/Dashlets/JotPadDashlet
-@dirrm %%WWWDIR%%/modules/Home/Dashlets/RSSDashlet
-@dirrm %%WWWDIR%%/modules/Home/Dashlets/SugarNewsDashlet
-@dirrm %%WWWDIR%%/modules/Home/Dashlets/iFrameDashlet
-@dirrm %%WWWDIR%%/modules/Home/Dashlets
-@dirrm %%WWWDIR%%/modules/Home/language
-@dirrm %%WWWDIR%%/modules/Home/views
-@dirrm %%WWWDIR%%/modules/Home
-@dirrm %%WWWDIR%%/modules/Import/language
-@dirrm %%WWWDIR%%/modules/Import/maps
-@dirrm %%WWWDIR%%/modules/Import/sources
-@dirrm %%WWWDIR%%/modules/Import/tpls
-@dirrm %%WWWDIR%%/modules/Import/views
-@dirrm %%WWWDIR%%/modules/Import
-@dirrm %%WWWDIR%%/modules/InboundEmail/language
-@dirrm %%WWWDIR%%/modules/InboundEmail
-@dirrm %%WWWDIR%%/modules/LabelEditor/language
-@dirrm %%WWWDIR%%/modules/LabelEditor
-@dirrm %%WWWDIR%%/modules/Leads/Dashlets/MyLeadsDashlet
-@dirrm %%WWWDIR%%/modules/Leads/Dashlets
-@dirrm %%WWWDIR%%/modules/Leads/SugarFeeds
-@dirrm %%WWWDIR%%/modules/Leads/language
-@dirrm %%WWWDIR%%/modules/Leads/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Leads/metadata
-@dirrm %%WWWDIR%%/modules/Leads/tpls
-@dirrm %%WWWDIR%%/modules/Leads/views
-@dirrm %%WWWDIR%%/modules/Leads
-@dirrm %%WWWDIR%%/modules/MailMerge/language
-@dirrm %%WWWDIR%%/modules/MailMerge
-@dirrm %%WWWDIR%%/modules/Meetings/Dashlets/MyMeetingsDashlet
-@dirrm %%WWWDIR%%/modules/Meetings/Dashlets
-@dirrm %%WWWDIR%%/modules/Meetings/language
-@dirrm %%WWWDIR%%/modules/Meetings/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Meetings/metadata
-@dirrm %%WWWDIR%%/modules/Meetings/tpls
-@dirrm %%WWWDIR%%/modules/Meetings/views
-@dirrm %%WWWDIR%%/modules/Meetings
-@dirrm %%WWWDIR%%/modules/MergeRecords/language
-@dirrm %%WWWDIR%%/modules/MergeRecords
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/MB
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/Module
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/javascript
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/language
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/parsers/relationships
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/parsers/views
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/parsers
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/tpls/MBModule
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/tpls/MBPackage
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/tpls/Preview
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/tpls
-@dirrm %%WWWDIR%%/modules/ModuleBuilder/views
-@dirrm %%WWWDIR%%/modules/ModuleBuilder
-@dirrm %%WWWDIR%%/modules/MySettings/language
-@dirrm %%WWWDIR%%/modules/MySettings
-@dirrm %%WWWDIR%%/modules/Notes/Dashlets/MyNotesDashlet
-@dirrm %%WWWDIR%%/modules/Notes/Dashlets
-@dirrm %%WWWDIR%%/modules/Notes/language
-@dirrm %%WWWDIR%%/modules/Notes/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Notes/metadata
-@dirrm %%WWWDIR%%/modules/Notes/tpls
-@dirrm %%WWWDIR%%/modules/Notes
-@dirrm %%WWWDIR%%/modules/OAuthKeys/language
-@dirrm %%WWWDIR%%/modules/OAuthKeys/metadata
-@dirrm %%WWWDIR%%/modules/OAuthKeys
-@dirrm %%WWWDIR%%/modules/OAuthTokens/language
-@dirrm %%WWWDIR%%/modules/OAuthTokens/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/OAuthTokens/metadata
-@dirrm %%WWWDIR%%/modules/OAuthTokens/tpl
-@dirrm %%WWWDIR%%/modules/OAuthTokens/views
-@dirrm %%WWWDIR%%/modules/OAuthTokens
-@dirrm %%WWWDIR%%/modules/Opportunities/Dashlets/MyClosedOpportunitiesDashlet
-@dirrm %%WWWDIR%%/modules/Opportunities/Dashlets/MyOpportunitiesDashlet
-@dirrm %%WWWDIR%%/modules/Opportunities/Dashlets
-@dirrm %%WWWDIR%%/modules/Opportunities/SugarFeeds
-@dirrm %%WWWDIR%%/modules/Opportunities/language
-@dirrm %%WWWDIR%%/modules/Opportunities/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Opportunities/metadata
-@dirrm %%WWWDIR%%/modules/Opportunities/tpls
-@dirrm %%WWWDIR%%/modules/Opportunities/views
-@dirrm %%WWWDIR%%/modules/Opportunities
-@dirrm %%WWWDIR%%/modules/OptimisticLock/language
-@dirrm %%WWWDIR%%/modules/OptimisticLock
-@dirrm %%WWWDIR%%/modules/Project/language
-@dirrm %%WWWDIR%%/modules/Project/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Project/metadata
-@dirrm %%WWWDIR%%/modules/Project/tpls
-@dirrm %%WWWDIR%%/modules/Project/views
-@dirrm %%WWWDIR%%/modules/Project
-@dirrm %%WWWDIR%%/modules/ProjectTask/Dashlets/MyProjectTaskDashlet
-@dirrm %%WWWDIR%%/modules/ProjectTask/Dashlets
-@dirrm %%WWWDIR%%/modules/ProjectTask/language
-@dirrm %%WWWDIR%%/modules/ProjectTask/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/ProjectTask/metadata
-@dirrm %%WWWDIR%%/modules/ProjectTask/tpls
-@dirrm %%WWWDIR%%/modules/ProjectTask/views
-@dirrm %%WWWDIR%%/modules/ProjectTask
-@dirrm %%WWWDIR%%/modules/ProspectLists/language
-@dirrm %%WWWDIR%%/modules/ProspectLists/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/ProspectLists/metadata
-@dirrm %%WWWDIR%%/modules/ProspectLists
-@dirrm %%WWWDIR%%/modules/Prospects/language
-@dirrm %%WWWDIR%%/modules/Prospects/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Prospects/metadata
-@dirrm %%WWWDIR%%/modules/Prospects/tpls
-@dirrm %%WWWDIR%%/modules/Prospects/views
-@dirrm %%WWWDIR%%/modules/Prospects
-@dirrm %%WWWDIR%%/modules/Relationships/language
-@dirrm %%WWWDIR%%/modules/Relationships/views
-@dirrm %%WWWDIR%%/modules/Relationships
-@dirrm %%WWWDIR%%/modules/Releases/language
-@dirrm %%WWWDIR%%/modules/Releases
-@dirrm %%WWWDIR%%/modules/Roles/language
-@dirrm %%WWWDIR%%/modules/Roles/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Roles/metadata
-@dirrm %%WWWDIR%%/modules/Roles/views
-@dirrm %%WWWDIR%%/modules/Roles
-@dirrm %%WWWDIR%%/modules/SavedSearch/language
-@dirrm %%WWWDIR%%/modules/SavedSearch/metadata
-@dirrm %%WWWDIR%%/modules/SavedSearch
-@dirrm %%WWWDIR%%/modules/Schedulers/language
-@dirrm %%WWWDIR%%/modules/Schedulers/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Schedulers/metadata
-@dirrm %%WWWDIR%%/modules/Schedulers/views
-@dirrm %%WWWDIR%%/modules/Schedulers
-@dirrm %%WWWDIR%%/modules/SchedulersJobs/language
-@dirrm %%WWWDIR%%/modules/SchedulersJobs/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/SchedulersJobs/metadata
-@dirrm %%WWWDIR%%/modules/SchedulersJobs
-@dirrm %%WWWDIR%%/modules/Studio/DropDowns
-@dirrm %%WWWDIR%%/modules/Studio/TabGroups
-@dirrm %%WWWDIR%%/modules/Studio/language
-@dirrm %%WWWDIR%%/modules/Studio/parsers
-@dirrm %%WWWDIR%%/modules/Studio/wizards
-@dirrm %%WWWDIR%%/modules/Studio
-@dirrm %%WWWDIR%%/modules/SugarFeed/Dashlets/SugarFeedDashlet
-@dirrm %%WWWDIR%%/modules/SugarFeed/Dashlets
-@dirrm %%WWWDIR%%/modules/SugarFeed/language
-@dirrm %%WWWDIR%%/modules/SugarFeed/linkHandlers
-@dirrm %%WWWDIR%%/modules/SugarFeed/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/SugarFeed/metadata
-@dirrm %%WWWDIR%%/modules/SugarFeed/tpls
-@dirrm %%WWWDIR%%/modules/SugarFeed/views
-@dirrm %%WWWDIR%%/modules/SugarFeed
-@dirrm %%WWWDIR%%/modules/Tasks/Dashlets/MyTasksDashlet
-@dirrm %%WWWDIR%%/modules/Tasks/Dashlets
-@dirrm %%WWWDIR%%/modules/Tasks/language
-@dirrm %%WWWDIR%%/modules/Tasks/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Tasks/metadata
-@dirrm %%WWWDIR%%/modules/Tasks/tpls
-@dirrm %%WWWDIR%%/modules/Tasks/views
-@dirrm %%WWWDIR%%/modules/Tasks
-@dirrm %%WWWDIR%%/modules/Trackers/language
-@dirrm %%WWWDIR%%/modules/Trackers/monitor
-@dirrm %%WWWDIR%%/modules/Trackers/store
-@dirrm %%WWWDIR%%/modules/Trackers
-@dirrm %%WWWDIR%%/modules/UpgradeWizard/SugarMerge
-@dirrm %%WWWDIR%%/modules/UpgradeWizard/language
-@dirrm %%WWWDIR%%/modules/UpgradeWizard/tpls
-@dirrm %%WWWDIR%%/modules/UpgradeWizard
-@dirrm %%WWWDIR%%/modules/UserPreferences
-@dirrm %%WWWDIR%%/modules/Users/authentication/EmailAuthenticate
-@dirrm %%WWWDIR%%/modules/Users/authentication/LDAPAuthenticate/LDAPConfigs
-@dirrm %%WWWDIR%%/modules/Users/authentication/LDAPAuthenticate
-@dirrm %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin/saml
-@dirrm %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin
-@dirrm %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/xmlseclibs
-@dirrm %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib
-@dirrm %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate
-@dirrm %%WWWDIR%%/modules/Users/authentication/SugarAuthenticate
-@dirrm %%WWWDIR%%/modules/Users/authentication
-@dirrm %%WWWDIR%%/modules/Users/language
-@dirrm %%WWWDIR%%/modules/Users/metadata/subpanels
-@dirrm %%WWWDIR%%/modules/Users/metadata
-@dirrm %%WWWDIR%%/modules/Users/tpls
-@dirrm %%WWWDIR%%/modules/Users/views
-@dirrm %%WWWDIR%%/modules/Users
-@dirrm %%WWWDIR%%/modules/Versions/language
-@dirrm %%WWWDIR%%/modules/Versions
-@dirrm %%WWWDIR%%/modules/iCals
-@dirrm %%WWWDIR%%/modules/vCals
-@dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/service/core/REST
-@dirrm %%WWWDIR%%/service/core
-@dirrm %%WWWDIR%%/service/example
-@dirrm %%WWWDIR%%/service/utils
-@dirrm %%WWWDIR%%/service/v2
-@dirrm %%WWWDIR%%/service/v2_1
-@dirrm %%WWWDIR%%/service/v3
-@dirrm %%WWWDIR%%/service/v3_1
-@dirrm %%WWWDIR%%/service/v4
-@dirrm %%WWWDIR%%/service/v4_1
-@dirrm %%WWWDIR%%/service
-@dirrm %%WWWDIR%%/soap
-@dirrm %%WWWDIR%%/themes/Sugar5/css
-@dirrm %%WWWDIR%%/themes/Sugar5/images
-@dirrm %%WWWDIR%%/themes/Sugar5/js
-@dirrm %%WWWDIR%%/themes/Sugar5/tpls
-@dirrm %%WWWDIR%%/themes/Sugar5
-@dirrm %%WWWDIR%%/themes/default/css
-@dirrm %%WWWDIR%%/themes/default/font
-@dirrm %%WWWDIR%%/themes/default/images/SugarLogic
-@dirrm %%WWWDIR%%/themes/default/images
-@dirrm %%WWWDIR%%/themes/default/js
-@dirrm %%WWWDIR%%/themes/default/less
-@dirrm %%WWWDIR%%/themes/default
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/upload
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/ModuleInstall/PackageManager/metadata
+@dirrmtry %%WWWDIR%%/ModuleInstall/PackageManager/tpls
+@dirrmtry %%WWWDIR%%/ModuleInstall/PackageManager
+@dirrmtry %%WWWDIR%%/ModuleInstall
+@dirrmtry %%WWWDIR%%/XTemplate
+@dirrmtry %%WWWDIR%%/Zend/Crypt/DiffieHellman
+@dirrmtry %%WWWDIR%%/Zend/Crypt/Hmac
+@dirrmtry %%WWWDIR%%/Zend/Crypt/Math/BigInteger
+@dirrmtry %%WWWDIR%%/Zend/Crypt/Math
+@dirrmtry %%WWWDIR%%/Zend/Crypt/Rsa/Key
+@dirrmtry %%WWWDIR%%/Zend/Crypt/Rsa
+@dirrmtry %%WWWDIR%%/Zend/Crypt
+@dirrmtry %%WWWDIR%%/Zend/Gdata/App/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/App
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Books/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Books
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Calendar/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Calendar
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Contacts/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Contacts
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Docs
+@dirrmtry %%WWWDIR%%/Zend/Gdata/DublinCore/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/DublinCore
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Exif/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Exif
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Gapps/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Gapps
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Gbase/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Gbase
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Geo/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Geo
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Health/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Health
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Kind
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Media/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Media
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Photos/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Photos
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Spreadsheets/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/Spreadsheets
+@dirrmtry %%WWWDIR%%/Zend/Gdata/YouTube/Extension
+@dirrmtry %%WWWDIR%%/Zend/Gdata/YouTube
+@dirrmtry %%WWWDIR%%/Zend/Gdata
+@dirrmtry %%WWWDIR%%/Zend/Http/Client/Adapter
+@dirrmtry %%WWWDIR%%/Zend/Http/Client
+@dirrmtry %%WWWDIR%%/Zend/Http/Response
+@dirrmtry %%WWWDIR%%/Zend/Http
+@dirrmtry %%WWWDIR%%/Zend/Oauth/Config
+@dirrmtry %%WWWDIR%%/Zend/Oauth/Http
+@dirrmtry %%WWWDIR%%/Zend/Oauth/Signature
+@dirrmtry %%WWWDIR%%/Zend/Oauth/Token
+@dirrmtry %%WWWDIR%%/Zend/Oauth
+@dirrmtry %%WWWDIR%%/Zend/Uri
+@dirrmtry %%WWWDIR%%/Zend/Validate/Hostname
+@dirrmtry %%WWWDIR%%/Zend/Validate
+@dirrmtry %%WWWDIR%%/Zend
+@dirrmtry %%WWWDIR%%/cache/csv
+@dirrmtry %%WWWDIR%%/cache/feeds
+@dirrmtry %%WWWDIR%%/cache/images
+@dirrmtry %%WWWDIR%%/cache/import
+@dirrmtry %%WWWDIR%%/cache/include/javascript
+@dirrmtry %%WWWDIR%%/cache/include
+@dirrmtry %%WWWDIR%%/cache/layout
+@dirrmtry %%WWWDIR%%/cache/pdf
+@dirrmtry %%WWWDIR%%/cache/xml
+@dirrmtry %%WWWDIR%%/cache
+@dirrmtry %%WWWDIR%%/custom
+@dirrmtry %%WWWDIR%%/data/Relationships
+@dirrmtry %%WWWDIR%%/data
+@dirrmtry %%WWWDIR%%/examples
+@dirrmtry %%WWWDIR%%/include/Dashlets
+@dirrmtry %%WWWDIR%%/include/DetailView
+@dirrmtry %%WWWDIR%%/include/EditView
+@dirrmtry %%WWWDIR%%/include/GroupedTabs
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Builder
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/EntityLookup
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Filter
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/classes
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/messages
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Lexer
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier/standalone
+@dirrmtry %%WWWDIR%%/include/HTMLPurifier
+@dirrmtry %%WWWDIR%%/include/HTTP_WebDAV_Server/Tools
+@dirrmtry %%WWWDIR%%/include/HTTP_WebDAV_Server
+@dirrmtry %%WWWDIR%%/include/ListView
+@dirrmtry %%WWWDIR%%/include/Localization
+@dirrmtry %%WWWDIR%%/include/MVC/Controller
+@dirrmtry %%WWWDIR%%/include/MVC/View/tpls
+@dirrmtry %%WWWDIR%%/include/MVC/View/views
+@dirrmtry %%WWWDIR%%/include/MVC/View
+@dirrmtry %%WWWDIR%%/include/MVC
+@dirrmtry %%WWWDIR%%/include/MySugar/DashletsDialog
+@dirrmtry %%WWWDIR%%/include/MySugar/javascript
+@dirrmtry %%WWWDIR%%/include/MySugar/tpls
+@dirrmtry %%WWWDIR%%/include/MySugar
+@dirrmtry %%WWWDIR%%/include/OutboundEmail
+@dirrmtry %%WWWDIR%%/include/Pear/Crypt_Blowfish/Blowfish
+@dirrmtry %%WWWDIR%%/include/Pear/Crypt_Blowfish
+@dirrmtry %%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3
+@dirrmtry %%WWWDIR%%/include/Pear/XML_HTMLSax3
+@dirrmtry %%WWWDIR%%/include/Pear
+@dirrmtry %%WWWDIR%%/include/Popups/tpls
+@dirrmtry %%WWWDIR%%/include/Popups
+@dirrmtry %%WWWDIR%%/include/SearchForm/tpls
+@dirrmtry %%WWWDIR%%/include/SearchForm
+@dirrmtry %%WWWDIR%%/include/Smarty/internals
+@dirrmtry %%WWWDIR%%/include/Smarty/plugins
+@dirrmtry %%WWWDIR%%/include/Smarty
+@dirrmtry %%WWWDIR%%/include/SubPanel/tpls
+@dirrmtry %%WWWDIR%%/include/SubPanel
+@dirrmtry %%WWWDIR%%/include/SugarCache
+@dirrmtry %%WWWDIR%%/include/SugarCharts/Jit/FlashCanvas
+@dirrmtry %%WWWDIR%%/include/SugarCharts/Jit/css
+@dirrmtry %%WWWDIR%%/include/SugarCharts/Jit/js/Jit
+@dirrmtry %%WWWDIR%%/include/SugarCharts/Jit/js
+@dirrmtry %%WWWDIR%%/include/SugarCharts/Jit/tpls
+@dirrmtry %%WWWDIR%%/include/SugarCharts/Jit
+@dirrmtry %%WWWDIR%%/include/SugarCharts/swf
+@dirrmtry %%WWWDIR%%/include/SugarCharts
+@dirrmtry %%WWWDIR%%/include/SugarDependentDropdown/javascript
+@dirrmtry %%WWWDIR%%/include/SugarDependentDropdown/metadata
+@dirrmtry %%WWWDIR%%/include/SugarDependentDropdown
+@dirrmtry %%WWWDIR%%/include/SugarEmailAddress/templates
+@dirrmtry %%WWWDIR%%/include/SugarEmailAddress
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Address
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Assigned_user_name
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Base
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Bool
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Collection
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Currency
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Datetime
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Datetimecombo
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Download
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Enum
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/File
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Float
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Fullname
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Html
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Id
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Iframe
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Int
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Link
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Multienum
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Parent
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Password
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Phone
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Radioenum
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Readonly
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Relate
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Text
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Time
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/URL
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields/Username
+@dirrmtry %%WWWDIR%%/include/SugarFields/Fields
+@dirrmtry %%WWWDIR%%/include/SugarFields/Parsers/Rules
+@dirrmtry %%WWWDIR%%/include/SugarFields/Parsers
+@dirrmtry %%WWWDIR%%/include/SugarFields
+@dirrmtry %%WWWDIR%%/include/SugarFolders
+@dirrmtry %%WWWDIR%%/include/SugarHtml
+@dirrmtry %%WWWDIR%%/include/SugarLogger
+@dirrmtry %%WWWDIR%%/include/SugarObjects/forms
+@dirrmtry %%WWWDIR%%/include/SugarObjects/implements/assignable/language
+@dirrmtry %%WWWDIR%%/include/SugarObjects/implements/assignable
+@dirrmtry %%WWWDIR%%/include/SugarObjects/implements/team_security/language
+@dirrmtry %%WWWDIR%%/include/SugarObjects/implements/team_security
+@dirrmtry %%WWWDIR%%/include/SugarObjects/implements
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/basic/Dashlets/Dashlet
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/basic/Dashlets
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/basic/icons
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/basic/language
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/basic/metadata/subpanels
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/basic/metadata
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/basic
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/company/icons
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/company/language/application
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/company/language
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/company/metadata/subpanels
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/company/metadata
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/company
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/file/icons
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/file/language/application
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/file/language
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/file/metadata/subpanels
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/file/metadata
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/file/views
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/file
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/issue/icons
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/issue/language/application
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/issue/language
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/issue/metadata/subpanels
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/issue/metadata
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/issue
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/person/icons
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/person/language
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/person/metadata/subpanels
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/person/metadata
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/person
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/sale/icons
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/sale/language/application
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/sale/language
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/sale/metadata/subpanels
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/sale/metadata
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates/sale
+@dirrmtry %%WWWDIR%%/include/SugarObjects/templates
+@dirrmtry %%WWWDIR%%/include/SugarObjects
+@dirrmtry %%WWWDIR%%/include/SugarQueue
+@dirrmtry %%WWWDIR%%/include/SugarTheme
+@dirrmtry %%WWWDIR%%/include/SugarXHprof/xhprof_lib/display
+@dirrmtry %%WWWDIR%%/include/SugarXHprof/xhprof_lib/utils
+@dirrmtry %%WWWDIR%%/include/SugarXHprof/xhprof_lib
+@dirrmtry %%WWWDIR%%/include/SugarXHprof
+@dirrmtry %%WWWDIR%%/include/Sugarpdf/sugarpdf
+@dirrmtry %%WWWDIR%%/include/Sugarpdf
+@dirrmtry %%WWWDIR%%/include/TemplateHandler
+@dirrmtry %%WWWDIR%%/include/VarDefHandler
+@dirrmtry %%WWWDIR%%/include/connectors/filters/default
+@dirrmtry %%WWWDIR%%/include/connectors/filters
+@dirrmtry %%WWWDIR%%/include/connectors/formatters/default
+@dirrmtry %%WWWDIR%%/include/connectors/formatters/ext/rest/tpls
+@dirrmtry %%WWWDIR%%/include/connectors/formatters/ext/rest
+@dirrmtry %%WWWDIR%%/include/connectors/formatters/ext/soap/tpls
+@dirrmtry %%WWWDIR%%/include/connectors/formatters/ext/soap
+@dirrmtry %%WWWDIR%%/include/connectors/formatters/ext
+@dirrmtry %%WWWDIR%%/include/connectors/formatters
+@dirrmtry %%WWWDIR%%/include/connectors/sources/default
+@dirrmtry %%WWWDIR%%/include/connectors/sources/ext/eapm
+@dirrmtry %%WWWDIR%%/include/connectors/sources/ext/rest
+@dirrmtry %%WWWDIR%%/include/connectors/sources/ext/soap
+@dirrmtry %%WWWDIR%%/include/connectors/sources/ext
+@dirrmtry %%WWWDIR%%/include/connectors/sources/loc
+@dirrmtry %%WWWDIR%%/include/connectors/sources
+@dirrmtry %%WWWDIR%%/include/connectors/utils
+@dirrmtry %%WWWDIR%%/include/connectors
+@dirrmtry %%WWWDIR%%/include/contextMenus/menuDefs
+@dirrmtry %%WWWDIR%%/include/contextMenus
+@dirrmtry %%WWWDIR%%/include/controller
+@dirrmtry %%WWWDIR%%/include/database
+@dirrmtry %%WWWDIR%%/include/externalAPI/Base
+@dirrmtry %%WWWDIR%%/include/externalAPI
+@dirrmtry %%WWWDIR%%/include/fonts
+@dirrmtry %%WWWDIR%%/include/generic/SugarWidgets
+@dirrmtry %%WWWDIR%%/include/generic
+@dirrmtry %%WWWDIR%%/include/images/tour
+@dirrmtry %%WWWDIR%%/include/images
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/markitup/sets/default
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/markitup/sets
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/markitup/skins/simple/images
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/markitup/skins/simple
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/markitup/skins
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/markitup/templates
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/markitup
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/themes/base/images
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/themes/base
+@dirrmtry %%WWWDIR%%/include/javascript/jquery/themes
+@dirrmtry %%WWWDIR%%/include/javascript/jquery
+@dirrmtry %%WWWDIR%%/include/javascript/phpjs
+@dirrmtry %%WWWDIR%%/include/javascript/sugarwidgets
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes/adapter/jquery
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes/adapter/prototype
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes/adapter
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes/dom
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes/firebug
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes/html
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes/ui
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes/util
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/classes
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advhr
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advimage
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlink
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/advlist
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/autolink
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/autoresize
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/autosave/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/autosave
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/bbcode
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/contextmenu
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/directionality
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/emotions
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/example/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/example
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/example_dependency
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullpage
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/fullscreen
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/iespell
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins/clearlooks2
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups/skins
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/inlinepopups
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/insertdatetime
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/layer
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/legacyoutput
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/lists
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/media/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/media
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/nonbreaking
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/noneditable
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/pagebreak
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/paste
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/preview/jscripts
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/preview
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/print
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/save
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/searchreplace
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/spellchecker
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/style/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/style
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/tabfocus
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/table/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/table
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/template/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/template
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/visualchars
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/wordcount
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/css
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins/xhtmlxtras
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/plugins
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/js
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/default/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/default
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/highcontrast
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/o2k7/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins/o2k7
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced/skins
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/advanced
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/langs
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/default
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/o2k7/img
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins/o2k7
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/simple/skins
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes/simple
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/themes
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce/utils
+@dirrmtry %%WWWDIR%%/include/javascript/tiny_mce
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/animation
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/autocomplete/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/autocomplete/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/autocomplete/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/autocomplete
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/base
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/button/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/button/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/button/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/button
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/calendar/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/calendar/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/calendar/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/calendar/blank
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/calendar
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/carousel/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/carousel/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/carousel/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/carousel
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/charts/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/charts
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/colorpicker/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/colorpicker/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/colorpicker/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/colorpicker
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/connection
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/container/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/container/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/container/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/container
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/cookie
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/datasource
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/datatable/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/datatable/blank
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/datatable
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/datemath
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/dom
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/dragdrop
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/editor/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/editor/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/editor/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/editor
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/element
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/element-delegate
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/event
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/event-delegate
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/event-mouseenter
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/event-simulate
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/fonts
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/get
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/grids
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/history/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/history
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/imagecropper/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/imagecropper/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/imagecropper/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/imagecropper
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/imageloader
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/json
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/layout/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/layout/blank
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/layout
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/logger/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/logger/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/logger/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/logger
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/menu/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/menu/blank
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/menu
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/paginator/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/paginator/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/paginator/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/paginator/blank
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/paginator
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/profiler
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/profilerviewer/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/profilerviewer/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/profilerviewer/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/profilerviewer
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/progressbar/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/progressbar/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/progressbar/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/progressbar
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/reset
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/reset-fonts
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/reset-fonts-grids
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/resize/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/resize/blank
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/resize
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/selector
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/slider/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/slider/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/slider/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/slider
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/storage
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/stylesheet
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/swf
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/swfdetect
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/swfstore
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/tabview/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/tabview/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/tabview/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/tabview/blank
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/tabview
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/treeview/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/treeview/blank
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/treeview
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/uploader/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/uploader
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/utilities
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/yahoo
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/yahoo-dom-event
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/yuiloader
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/yuiloader-dom-event
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/yuitest/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/yuitest/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/yuitest/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build/yuitest
+@dirrmtry %%WWWDIR%%/include/javascript/yui/build
+@dirrmtry %%WWWDIR%%/include/javascript/yui/ext
+@dirrmtry %%WWWDIR%%/include/javascript/yui
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/anim
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/arraysort
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/async-queue
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/attribute
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/autocomplete/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/autocomplete/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/autocomplete/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/autocomplete/lang
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/autocomplete
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/base
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/cache
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/charts
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/classnamemanager
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/collection
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/compat
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/console/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/console/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/console/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/console/lang
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/console
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/cookie
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/cssbase
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/cssfonts
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/cssgrids
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/cssgrids-deprecated
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/cssreset
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dataschema
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/datasource
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/datatable/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/datatable/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/datatable/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/datatable/lang
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/datatable
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/datatype/lang
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/datatype
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dd
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dial/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dial/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dial/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dial/lang
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dial
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dom
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/dump
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/editor
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/escape
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/event
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/event-custom
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/event-gestures
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/event-simulate
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/event-valuechange
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/highlight
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/history
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/history-deprecated
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/imageloader
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/intl
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/io
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/json
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/jsonp
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/loader
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-flick/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-flick/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-flick
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-focusmanager
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-menunav/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/node-menunav
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/oop
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/overlay/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/overlay/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/overlay/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/overlay
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/plugin
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/pluginhost
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/profiler
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/querystring
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/queue-promote
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/recordset
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/resize/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/resize/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/resize/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/resize
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/scrollview/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/scrollview/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/scrollview/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/scrollview
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/simpleyui
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/audio-light
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/capsule-dark
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/round-dark
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins/sam-dark
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/slider
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/sortable
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/stylesheet
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/substitute
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/swf
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/swfdetect
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/tabview/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/tabview/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/tabview/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/tabview
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/test/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/test/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/test/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/test
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/text
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/transition
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/uploader/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/uploader
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/widget/assets/skins/sam
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/widget/assets/skins
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/widget/assets
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/widget
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/widget-anim
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/yql
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build/yui
+@dirrmtry %%WWWDIR%%/include/javascript/yui3/build
+@dirrmtry %%WWWDIR%%/include/javascript/yui3
+@dirrmtry %%WWWDIR%%/include/javascript
+@dirrmtry %%WWWDIR%%/include/language
+@dirrmtry %%WWWDIR%%/include/nusoap
+@dirrmtry %%WWWDIR%%/include/pclzip
+@dirrmtry %%WWWDIR%%/include/phpmailer/extras
+@dirrmtry %%WWWDIR%%/include/phpmailer/language
+@dirrmtry %%WWWDIR%%/include/phpmailer
+@dirrmtry %%WWWDIR%%/include/reCaptcha
+@dirrmtry %%WWWDIR%%/include/resource/Observers
+@dirrmtry %%WWWDIR%%/include/resource
+@dirrmtry %%WWWDIR%%/include/tcpdf/config/lang
+@dirrmtry %%WWWDIR%%/include/tcpdf/config
+@dirrmtry %%WWWDIR%%/include/tcpdf/fonts/utils/enc
+@dirrmtry %%WWWDIR%%/include/tcpdf/fonts/utils
+@dirrmtry %%WWWDIR%%/include/tcpdf/fonts
+@dirrmtry %%WWWDIR%%/include/tcpdf
+@dirrmtry %%WWWDIR%%/include/templates
+@dirrmtry %%WWWDIR%%/include/timezone
+@dirrmtry %%WWWDIR%%/include/utils
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/anim
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/css/check
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/css/default
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/css/folders
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/css/forecasts
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/css
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/img/check
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/img/default
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/img/folders
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView/img
+@dirrmtry %%WWWDIR%%/include/ytree/TreeView
+@dirrmtry %%WWWDIR%%/include/ytree
+@dirrmtry %%WWWDIR%%/include
+@dirrmtry %%WWWDIR%%/install/data
+@dirrmtry %%WWWDIR%%/install/language
+@dirrmtry %%WWWDIR%%/install/seed_data
+@dirrmtry %%WWWDIR%%/install
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/EditView
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier/Printer
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/HTMLPurifier
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/MySugar/javascript
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/MySugar
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SubPanel
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit/FlashCanvas
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit/js/Jit
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit/js
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarCharts
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarDependentDropdown/javascript
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarDependentDropdown
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarEmailAddress
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Address
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Collection
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Datetimecombo
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/File
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Time
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/SugarFields
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/connectors/formatters/default
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/connectors/formatters
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/connectors
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/phpjs
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/sugarwidgets
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/assets
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/anim
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/arraysort
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/async-queue
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/attribute
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/autocomplete/lang
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/autocomplete
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/base
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/cache
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/charts
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/classnamemanager
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/collection
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/compat
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/console/lang
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/console
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/cookie
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dataschema
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datasource
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datatable/lang
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datatable
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datatype/lang
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/datatype
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dd
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dial/lang
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dial
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dom
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/dump
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/editor
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/escape
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-custom
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-gestures
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-simulate
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/event-valuechange
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/highlight
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/history-deprecated
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/imageloader
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/intl
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/io
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/json
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/jsonp
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/loader
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-flick
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-focusmanager
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/node-menunav
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/oop
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/overlay
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/plugin
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/pluginhost
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/profiler
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/querystring
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/queue-promote
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/recordset
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/resize
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/scrollview
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/simpleyui
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/slider
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/sortable
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/stylesheet
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/substitute
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/swf
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/swfdetect
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/tabview
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/test
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/text
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/transition
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/uploader
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/widget-anim
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/yql
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/yui
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript/yui3
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/javascript
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/ytree/TreeView/anim
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/ytree/TreeView
+@dirrmtry %%WWWDIR%%/jssource/src_files/include/ytree
+@dirrmtry %%WWWDIR%%/jssource/src_files/include
+@dirrmtry %%WWWDIR%%/jssource/src_files/install
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/ACLRoles
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Accounts
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Administration/javascript
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Administration
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Calendar
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Campaigns
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Connectors
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Contacts
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Currencies
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Documents
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/EAPM
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/EmailTemplates
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Home
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/InboundEmail
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Leads
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Meetings
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/MergeRecords
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Project
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/ProjectTask
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Schedulers
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Studio
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/UpgradeWizard
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules/Users
+@dirrmtry %%WWWDIR%%/jssource/src_files/modules
+@dirrmtry %%WWWDIR%%/jssource/src_files/service/utils
+@dirrmtry %%WWWDIR%%/jssource/src_files/service
+@dirrmtry %%WWWDIR%%/jssource/src_files/themes/Sugar5/js
+@dirrmtry %%WWWDIR%%/jssource/src_files/themes/Sugar5
+@dirrmtry %%WWWDIR%%/jssource/src_files/themes/default/js
+@dirrmtry %%WWWDIR%%/jssource/src_files/themes/default
+@dirrmtry %%WWWDIR%%/jssource/src_files/themes
+@dirrmtry %%WWWDIR%%/jssource/src_files
+@dirrmtry %%WWWDIR%%/jssource
+@dirrmtry %%WWWDIR%%/log4php
+@dirrmtry %%WWWDIR%%/metadata
+@dirrmtry %%WWWDIR%%/modules/ACL/language
+@dirrmtry %%WWWDIR%%/modules/ACL/metadata
+@dirrmtry %%WWWDIR%%/modules/ACL
+@dirrmtry %%WWWDIR%%/modules/ACLActions/language
+@dirrmtry %%WWWDIR%%/modules/ACLActions/metadata
+@dirrmtry %%WWWDIR%%/modules/ACLActions
+@dirrmtry %%WWWDIR%%/modules/ACLRoles/language
+@dirrmtry %%WWWDIR%%/modules/ACLRoles/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/ACLRoles/metadata
+@dirrmtry %%WWWDIR%%/modules/ACLRoles/views
+@dirrmtry %%WWWDIR%%/modules/ACLRoles
+@dirrmtry %%WWWDIR%%/modules/Accounts/Dashlets/MyAccountsDashlet
+@dirrmtry %%WWWDIR%%/modules/Accounts/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Accounts/language
+@dirrmtry %%WWWDIR%%/modules/Accounts/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Accounts/metadata
+@dirrmtry %%WWWDIR%%/modules/Accounts/tpls
+@dirrmtry %%WWWDIR%%/modules/Accounts/views
+@dirrmtry %%WWWDIR%%/modules/Accounts
+@dirrmtry %%WWWDIR%%/modules/Activities/language
+@dirrmtry %%WWWDIR%%/modules/Activities/metadata
+@dirrmtry %%WWWDIR%%/modules/Activities/views
+@dirrmtry %%WWWDIR%%/modules/Activities
+@dirrmtry %%WWWDIR%%/modules/Administration/javascript
+@dirrmtry %%WWWDIR%%/modules/Administration/language
+@dirrmtry %%WWWDIR%%/modules/Administration/metadata
+@dirrmtry %%WWWDIR%%/modules/Administration/templates
+@dirrmtry %%WWWDIR%%/modules/Administration/views
+@dirrmtry %%WWWDIR%%/modules/Administration
+@dirrmtry %%WWWDIR%%/modules/Audit/language
+@dirrmtry %%WWWDIR%%/modules/Audit
+@dirrmtry %%WWWDIR%%/modules/Bugs/Dashlets/MyBugsDashlet
+@dirrmtry %%WWWDIR%%/modules/Bugs/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Bugs/language
+@dirrmtry %%WWWDIR%%/modules/Bugs/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Bugs/metadata
+@dirrmtry %%WWWDIR%%/modules/Bugs/tpls
+@dirrmtry %%WWWDIR%%/modules/Bugs/views
+@dirrmtry %%WWWDIR%%/modules/Bugs
+@dirrmtry %%WWWDIR%%/modules/Calendar/Dashlets/CalendarDashlet
+@dirrmtry %%WWWDIR%%/modules/Calendar/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Calendar/language
+@dirrmtry %%WWWDIR%%/modules/Calendar/tpls
+@dirrmtry %%WWWDIR%%/modules/Calendar/views
+@dirrmtry %%WWWDIR%%/modules/Calendar
+@dirrmtry %%WWWDIR%%/modules/Calls/Dashlets/MyCallsDashlet
+@dirrmtry %%WWWDIR%%/modules/Calls/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Calls/language
+@dirrmtry %%WWWDIR%%/modules/Calls/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Calls/metadata
+@dirrmtry %%WWWDIR%%/modules/Calls/tpls
+@dirrmtry %%WWWDIR%%/modules/Calls/views
+@dirrmtry %%WWWDIR%%/modules/Calls
+@dirrmtry %%WWWDIR%%/modules/CampaignLog/language
+@dirrmtry %%WWWDIR%%/modules/CampaignLog/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/CampaignLog/metadata
+@dirrmtry %%WWWDIR%%/modules/CampaignLog
+@dirrmtry %%WWWDIR%%/modules/CampaignTrackers/language
+@dirrmtry %%WWWDIR%%/modules/CampaignTrackers/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/CampaignTrackers/metadata
+@dirrmtry %%WWWDIR%%/modules/CampaignTrackers
+@dirrmtry %%WWWDIR%%/modules/Campaigns/Dashlets/TopCampaignsDashlet
+@dirrmtry %%WWWDIR%%/modules/Campaigns/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Campaigns/language
+@dirrmtry %%WWWDIR%%/modules/Campaigns/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Campaigns/metadata
+@dirrmtry %%WWWDIR%%/modules/Campaigns/tpls
+@dirrmtry %%WWWDIR%%/modules/Campaigns/views
+@dirrmtry %%WWWDIR%%/modules/Campaigns
+@dirrmtry %%WWWDIR%%/modules/Cases/Dashlets/MyCasesDashlet
+@dirrmtry %%WWWDIR%%/modules/Cases/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Cases/SugarFeeds
+@dirrmtry %%WWWDIR%%/modules/Cases/language
+@dirrmtry %%WWWDIR%%/modules/Cases/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Cases/metadata
+@dirrmtry %%WWWDIR%%/modules/Cases/tpls
+@dirrmtry %%WWWDIR%%/modules/Cases
+@dirrmtry %%WWWDIR%%/modules/Charts/Dashlets/CampaignROIChartDashlet
+@dirrmtry %%WWWDIR%%/modules/Charts/Dashlets/MyPipelineBySalesStageDashlet
+@dirrmtry %%WWWDIR%%/modules/Charts/Dashlets/OpportunitiesByLeadSourceByOutcomeDashlet
+@dirrmtry %%WWWDIR%%/modules/Charts/Dashlets/OpportunitiesByLeadSourceDashlet
+@dirrmtry %%WWWDIR%%/modules/Charts/Dashlets/OutcomeByMonthDashlet
+@dirrmtry %%WWWDIR%%/modules/Charts/Dashlets/PipelineBySalesStageDashlet
+@dirrmtry %%WWWDIR%%/modules/Charts/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Charts/code
+@dirrmtry %%WWWDIR%%/modules/Charts/language
+@dirrmtry %%WWWDIR%%/modules/Charts
+@dirrmtry %%WWWDIR%%/modules/Configurator/language
+@dirrmtry %%WWWDIR%%/modules/Configurator/metadata
+@dirrmtry %%WWWDIR%%/modules/Configurator/tpls
+@dirrmtry %%WWWDIR%%/modules/Configurator/views
+@dirrmtry %%WWWDIR%%/modules/Configurator
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/twitter/tpls
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest/twitter
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/formatters/ext/rest
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/formatters/ext
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/formatters
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/images
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/language
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview/tpls
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest/insideview
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/sources/ext/rest
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/sources/ext
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors/sources
+@dirrmtry %%WWWDIR%%/modules/Connectors/connectors
+@dirrmtry %%WWWDIR%%/modules/Connectors/language
+@dirrmtry %%WWWDIR%%/modules/Connectors/metadata
+@dirrmtry %%WWWDIR%%/modules/Connectors/tpls
+@dirrmtry %%WWWDIR%%/modules/Connectors/views
+@dirrmtry %%WWWDIR%%/modules/Connectors
+@dirrmtry %%WWWDIR%%/modules/Contacts/Dashlets/MyContactsDashlet
+@dirrmtry %%WWWDIR%%/modules/Contacts/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Contacts/SugarFeeds
+@dirrmtry %%WWWDIR%%/modules/Contacts/language
+@dirrmtry %%WWWDIR%%/modules/Contacts/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Contacts/metadata
+@dirrmtry %%WWWDIR%%/modules/Contacts/tpls
+@dirrmtry %%WWWDIR%%/modules/Contacts/views
+@dirrmtry %%WWWDIR%%/modules/Contacts
+@dirrmtry %%WWWDIR%%/modules/Currencies/language
+@dirrmtry %%WWWDIR%%/modules/Currencies
+@dirrmtry %%WWWDIR%%/modules/DocumentRevisions/language
+@dirrmtry %%WWWDIR%%/modules/DocumentRevisions/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/DocumentRevisions/metadata
+@dirrmtry %%WWWDIR%%/modules/DocumentRevisions/subpanels
+@dirrmtry %%WWWDIR%%/modules/DocumentRevisions
+@dirrmtry %%WWWDIR%%/modules/Documents/Dashlets/MyDocumentsDashlet
+@dirrmtry %%WWWDIR%%/modules/Documents/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Documents/language
+@dirrmtry %%WWWDIR%%/modules/Documents/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Documents/metadata
+@dirrmtry %%WWWDIR%%/modules/Documents/tpls
+@dirrmtry %%WWWDIR%%/modules/Documents/views
+@dirrmtry %%WWWDIR%%/modules/Documents
+@dirrmtry %%WWWDIR%%/modules/DynamicFields/language
+@dirrmtry %%WWWDIR%%/modules/DynamicFields/templates/Fields/Forms
+@dirrmtry %%WWWDIR%%/modules/DynamicFields/templates/Fields
+@dirrmtry %%WWWDIR%%/modules/DynamicFields/templates/Files
+@dirrmtry %%WWWDIR%%/modules/DynamicFields/templates
+@dirrmtry %%WWWDIR%%/modules/DynamicFields
+@dirrmtry %%WWWDIR%%/modules/EAPM/language
+@dirrmtry %%WWWDIR%%/modules/EAPM/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/EAPM/metadata
+@dirrmtry %%WWWDIR%%/modules/EAPM/tpls
+@dirrmtry %%WWWDIR%%/modules/EAPM/views
+@dirrmtry %%WWWDIR%%/modules/EAPM
+@dirrmtry %%WWWDIR%%/modules/EmailAddresses/language
+@dirrmtry %%WWWDIR%%/modules/EmailAddresses
+@dirrmtry %%WWWDIR%%/modules/EmailMan/language
+@dirrmtry %%WWWDIR%%/modules/EmailMan/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/EmailMan/metadata
+@dirrmtry %%WWWDIR%%/modules/EmailMan/subpanels
+@dirrmtry %%WWWDIR%%/modules/EmailMan/tpls
+@dirrmtry %%WWWDIR%%/modules/EmailMan/views
+@dirrmtry %%WWWDIR%%/modules/EmailMan
+@dirrmtry %%WWWDIR%%/modules/EmailMarketing/language
+@dirrmtry %%WWWDIR%%/modules/EmailMarketing/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/EmailMarketing/metadata
+@dirrmtry %%WWWDIR%%/modules/EmailMarketing/subpanels
+@dirrmtry %%WWWDIR%%/modules/EmailMarketing
+@dirrmtry %%WWWDIR%%/modules/EmailTemplates/language
+@dirrmtry %%WWWDIR%%/modules/EmailTemplates/metadata
+@dirrmtry %%WWWDIR%%/modules/EmailTemplates
+@dirrmtry %%WWWDIR%%/modules/EmailText
+@dirrmtry %%WWWDIR%%/modules/Emails/Dashlets/MyEmailsDashlet
+@dirrmtry %%WWWDIR%%/modules/Emails/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Emails/images
+@dirrmtry %%WWWDIR%%/modules/Emails/javascript
+@dirrmtry %%WWWDIR%%/modules/Emails/language
+@dirrmtry %%WWWDIR%%/modules/Emails/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Emails/metadata
+@dirrmtry %%WWWDIR%%/modules/Emails/subpanels
+@dirrmtry %%WWWDIR%%/modules/Emails/templates
+@dirrmtry %%WWWDIR%%/modules/Emails/views
+@dirrmtry %%WWWDIR%%/modules/Emails
+@dirrmtry %%WWWDIR%%/modules/Employees/language
+@dirrmtry %%WWWDIR%%/modules/Employees/metadata
+@dirrmtry %%WWWDIR%%/modules/Employees/views
+@dirrmtry %%WWWDIR%%/modules/Employees
+@dirrmtry %%WWWDIR%%/modules/Groups/language
+@dirrmtry %%WWWDIR%%/modules/Groups
+@dirrmtry %%WWWDIR%%/modules/Help/language
+@dirrmtry %%WWWDIR%%/modules/Help
+@dirrmtry %%WWWDIR%%/modules/History/language
+@dirrmtry %%WWWDIR%%/modules/History/metadata
+@dirrmtry %%WWWDIR%%/modules/History
+@dirrmtry %%WWWDIR%%/modules/Home/Dashlets/ChartsDashlet
+@dirrmtry %%WWWDIR%%/modules/Home/Dashlets/InvadersDashlet/sprites
+@dirrmtry %%WWWDIR%%/modules/Home/Dashlets/InvadersDashlet
+@dirrmtry %%WWWDIR%%/modules/Home/Dashlets/JotPadDashlet
+@dirrmtry %%WWWDIR%%/modules/Home/Dashlets/RSSDashlet
+@dirrmtry %%WWWDIR%%/modules/Home/Dashlets/SugarNewsDashlet
+@dirrmtry %%WWWDIR%%/modules/Home/Dashlets/iFrameDashlet
+@dirrmtry %%WWWDIR%%/modules/Home/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Home/language
+@dirrmtry %%WWWDIR%%/modules/Home/views
+@dirrmtry %%WWWDIR%%/modules/Home
+@dirrmtry %%WWWDIR%%/modules/Import/language
+@dirrmtry %%WWWDIR%%/modules/Import/maps
+@dirrmtry %%WWWDIR%%/modules/Import/sources
+@dirrmtry %%WWWDIR%%/modules/Import/tpls
+@dirrmtry %%WWWDIR%%/modules/Import/views
+@dirrmtry %%WWWDIR%%/modules/Import
+@dirrmtry %%WWWDIR%%/modules/InboundEmail/language
+@dirrmtry %%WWWDIR%%/modules/InboundEmail
+@dirrmtry %%WWWDIR%%/modules/LabelEditor/language
+@dirrmtry %%WWWDIR%%/modules/LabelEditor
+@dirrmtry %%WWWDIR%%/modules/Leads/Dashlets/MyLeadsDashlet
+@dirrmtry %%WWWDIR%%/modules/Leads/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Leads/SugarFeeds
+@dirrmtry %%WWWDIR%%/modules/Leads/language
+@dirrmtry %%WWWDIR%%/modules/Leads/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Leads/metadata
+@dirrmtry %%WWWDIR%%/modules/Leads/tpls
+@dirrmtry %%WWWDIR%%/modules/Leads/views
+@dirrmtry %%WWWDIR%%/modules/Leads
+@dirrmtry %%WWWDIR%%/modules/MailMerge/language
+@dirrmtry %%WWWDIR%%/modules/MailMerge
+@dirrmtry %%WWWDIR%%/modules/Meetings/Dashlets/MyMeetingsDashlet
+@dirrmtry %%WWWDIR%%/modules/Meetings/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Meetings/language
+@dirrmtry %%WWWDIR%%/modules/Meetings/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Meetings/metadata
+@dirrmtry %%WWWDIR%%/modules/Meetings/tpls
+@dirrmtry %%WWWDIR%%/modules/Meetings/views
+@dirrmtry %%WWWDIR%%/modules/Meetings
+@dirrmtry %%WWWDIR%%/modules/MergeRecords/language
+@dirrmtry %%WWWDIR%%/modules/MergeRecords
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/MB
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/Module
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/javascript
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/language
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/parsers/relationships
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/parsers/views
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/parsers
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/tpls/MBModule
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/tpls/MBPackage
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/tpls/Preview
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/tpls
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder/views
+@dirrmtry %%WWWDIR%%/modules/ModuleBuilder
+@dirrmtry %%WWWDIR%%/modules/MySettings/language
+@dirrmtry %%WWWDIR%%/modules/MySettings
+@dirrmtry %%WWWDIR%%/modules/Notes/Dashlets/MyNotesDashlet
+@dirrmtry %%WWWDIR%%/modules/Notes/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Notes/language
+@dirrmtry %%WWWDIR%%/modules/Notes/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Notes/metadata
+@dirrmtry %%WWWDIR%%/modules/Notes/tpls
+@dirrmtry %%WWWDIR%%/modules/Notes
+@dirrmtry %%WWWDIR%%/modules/OAuthKeys/language
+@dirrmtry %%WWWDIR%%/modules/OAuthKeys/metadata
+@dirrmtry %%WWWDIR%%/modules/OAuthKeys
+@dirrmtry %%WWWDIR%%/modules/OAuthTokens/language
+@dirrmtry %%WWWDIR%%/modules/OAuthTokens/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/OAuthTokens/metadata
+@dirrmtry %%WWWDIR%%/modules/OAuthTokens/tpl
+@dirrmtry %%WWWDIR%%/modules/OAuthTokens/views
+@dirrmtry %%WWWDIR%%/modules/OAuthTokens
+@dirrmtry %%WWWDIR%%/modules/Opportunities/Dashlets/MyClosedOpportunitiesDashlet
+@dirrmtry %%WWWDIR%%/modules/Opportunities/Dashlets/MyOpportunitiesDashlet
+@dirrmtry %%WWWDIR%%/modules/Opportunities/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Opportunities/SugarFeeds
+@dirrmtry %%WWWDIR%%/modules/Opportunities/language
+@dirrmtry %%WWWDIR%%/modules/Opportunities/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Opportunities/metadata
+@dirrmtry %%WWWDIR%%/modules/Opportunities/tpls
+@dirrmtry %%WWWDIR%%/modules/Opportunities/views
+@dirrmtry %%WWWDIR%%/modules/Opportunities
+@dirrmtry %%WWWDIR%%/modules/OptimisticLock/language
+@dirrmtry %%WWWDIR%%/modules/OptimisticLock
+@dirrmtry %%WWWDIR%%/modules/Project/language
+@dirrmtry %%WWWDIR%%/modules/Project/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Project/metadata
+@dirrmtry %%WWWDIR%%/modules/Project/tpls
+@dirrmtry %%WWWDIR%%/modules/Project/views
+@dirrmtry %%WWWDIR%%/modules/Project
+@dirrmtry %%WWWDIR%%/modules/ProjectTask/Dashlets/MyProjectTaskDashlet
+@dirrmtry %%WWWDIR%%/modules/ProjectTask/Dashlets
+@dirrmtry %%WWWDIR%%/modules/ProjectTask/language
+@dirrmtry %%WWWDIR%%/modules/ProjectTask/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/ProjectTask/metadata
+@dirrmtry %%WWWDIR%%/modules/ProjectTask/tpls
+@dirrmtry %%WWWDIR%%/modules/ProjectTask/views
+@dirrmtry %%WWWDIR%%/modules/ProjectTask
+@dirrmtry %%WWWDIR%%/modules/ProspectLists/language
+@dirrmtry %%WWWDIR%%/modules/ProspectLists/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/ProspectLists/metadata
+@dirrmtry %%WWWDIR%%/modules/ProspectLists
+@dirrmtry %%WWWDIR%%/modules/Prospects/language
+@dirrmtry %%WWWDIR%%/modules/Prospects/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Prospects/metadata
+@dirrmtry %%WWWDIR%%/modules/Prospects/tpls
+@dirrmtry %%WWWDIR%%/modules/Prospects/views
+@dirrmtry %%WWWDIR%%/modules/Prospects
+@dirrmtry %%WWWDIR%%/modules/Relationships/language
+@dirrmtry %%WWWDIR%%/modules/Relationships/views
+@dirrmtry %%WWWDIR%%/modules/Relationships
+@dirrmtry %%WWWDIR%%/modules/Releases/language
+@dirrmtry %%WWWDIR%%/modules/Releases
+@dirrmtry %%WWWDIR%%/modules/Roles/language
+@dirrmtry %%WWWDIR%%/modules/Roles/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Roles/metadata
+@dirrmtry %%WWWDIR%%/modules/Roles/views
+@dirrmtry %%WWWDIR%%/modules/Roles
+@dirrmtry %%WWWDIR%%/modules/SavedSearch/language
+@dirrmtry %%WWWDIR%%/modules/SavedSearch/metadata
+@dirrmtry %%WWWDIR%%/modules/SavedSearch
+@dirrmtry %%WWWDIR%%/modules/Schedulers/language
+@dirrmtry %%WWWDIR%%/modules/Schedulers/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Schedulers/metadata
+@dirrmtry %%WWWDIR%%/modules/Schedulers/views
+@dirrmtry %%WWWDIR%%/modules/Schedulers
+@dirrmtry %%WWWDIR%%/modules/SchedulersJobs/language
+@dirrmtry %%WWWDIR%%/modules/SchedulersJobs/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/SchedulersJobs/metadata
+@dirrmtry %%WWWDIR%%/modules/SchedulersJobs
+@dirrmtry %%WWWDIR%%/modules/Studio/DropDowns
+@dirrmtry %%WWWDIR%%/modules/Studio/TabGroups
+@dirrmtry %%WWWDIR%%/modules/Studio/language
+@dirrmtry %%WWWDIR%%/modules/Studio/parsers
+@dirrmtry %%WWWDIR%%/modules/Studio/wizards
+@dirrmtry %%WWWDIR%%/modules/Studio
+@dirrmtry %%WWWDIR%%/modules/SugarFeed/Dashlets/SugarFeedDashlet
+@dirrmtry %%WWWDIR%%/modules/SugarFeed/Dashlets
+@dirrmtry %%WWWDIR%%/modules/SugarFeed/language
+@dirrmtry %%WWWDIR%%/modules/SugarFeed/linkHandlers
+@dirrmtry %%WWWDIR%%/modules/SugarFeed/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/SugarFeed/metadata
+@dirrmtry %%WWWDIR%%/modules/SugarFeed/tpls
+@dirrmtry %%WWWDIR%%/modules/SugarFeed/views
+@dirrmtry %%WWWDIR%%/modules/SugarFeed
+@dirrmtry %%WWWDIR%%/modules/Tasks/Dashlets/MyTasksDashlet
+@dirrmtry %%WWWDIR%%/modules/Tasks/Dashlets
+@dirrmtry %%WWWDIR%%/modules/Tasks/language
+@dirrmtry %%WWWDIR%%/modules/Tasks/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Tasks/metadata
+@dirrmtry %%WWWDIR%%/modules/Tasks/tpls
+@dirrmtry %%WWWDIR%%/modules/Tasks/views
+@dirrmtry %%WWWDIR%%/modules/Tasks
+@dirrmtry %%WWWDIR%%/modules/Trackers/language
+@dirrmtry %%WWWDIR%%/modules/Trackers/monitor
+@dirrmtry %%WWWDIR%%/modules/Trackers/store
+@dirrmtry %%WWWDIR%%/modules/Trackers
+@dirrmtry %%WWWDIR%%/modules/UpgradeWizard/SugarMerge
+@dirrmtry %%WWWDIR%%/modules/UpgradeWizard/language
+@dirrmtry %%WWWDIR%%/modules/UpgradeWizard/tpls
+@dirrmtry %%WWWDIR%%/modules/UpgradeWizard
+@dirrmtry %%WWWDIR%%/modules/UserPreferences
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/EmailAuthenticate
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/LDAPAuthenticate/LDAPConfigs
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/LDAPAuthenticate
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin/saml
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/onelogin
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib/xmlseclibs
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate/lib
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/SAMLAuthenticate
+@dirrmtry %%WWWDIR%%/modules/Users/authentication/SugarAuthenticate
+@dirrmtry %%WWWDIR%%/modules/Users/authentication
+@dirrmtry %%WWWDIR%%/modules/Users/language
+@dirrmtry %%WWWDIR%%/modules/Users/metadata/subpanels
+@dirrmtry %%WWWDIR%%/modules/Users/metadata
+@dirrmtry %%WWWDIR%%/modules/Users/tpls
+@dirrmtry %%WWWDIR%%/modules/Users/views
+@dirrmtry %%WWWDIR%%/modules/Users
+@dirrmtry %%WWWDIR%%/modules/Versions/language
+@dirrmtry %%WWWDIR%%/modules/Versions
+@dirrmtry %%WWWDIR%%/modules/iCals
+@dirrmtry %%WWWDIR%%/modules/vCals
+@dirrmtry %%WWWDIR%%/modules
+@dirrmtry %%WWWDIR%%/service/core/REST
+@dirrmtry %%WWWDIR%%/service/core
+@dirrmtry %%WWWDIR%%/service/example
+@dirrmtry %%WWWDIR%%/service/utils
+@dirrmtry %%WWWDIR%%/service/v2
+@dirrmtry %%WWWDIR%%/service/v2_1
+@dirrmtry %%WWWDIR%%/service/v3
+@dirrmtry %%WWWDIR%%/service/v3_1
+@dirrmtry %%WWWDIR%%/service/v4
+@dirrmtry %%WWWDIR%%/service/v4_1
+@dirrmtry %%WWWDIR%%/service
+@dirrmtry %%WWWDIR%%/soap
+@dirrmtry %%WWWDIR%%/themes/Sugar5/css
+@dirrmtry %%WWWDIR%%/themes/Sugar5/images
+@dirrmtry %%WWWDIR%%/themes/Sugar5/js
+@dirrmtry %%WWWDIR%%/themes/Sugar5/tpls
+@dirrmtry %%WWWDIR%%/themes/Sugar5
+@dirrmtry %%WWWDIR%%/themes/default/css
+@dirrmtry %%WWWDIR%%/themes/default/font
+@dirrmtry %%WWWDIR%%/themes/default/images/SugarLogic
+@dirrmtry %%WWWDIR%%/themes/default/images
+@dirrmtry %%WWWDIR%%/themes/default/js
+@dirrmtry %%WWWDIR%%/themes/default/less
+@dirrmtry %%WWWDIR%%/themes/default
+@dirrmtry %%WWWDIR%%/themes
+@dirrmtry %%WWWDIR%%/upload
+@dirrmtry %%WWWDIR%%

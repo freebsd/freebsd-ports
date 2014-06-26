@@ -3,7 +3,7 @@
 
 PORTNAME=	giflib
 PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x
 PKGNAMESUFFIX=	${NOX11SUFFIX}${PKGNAMESUFFIX2}
@@ -14,8 +14,7 @@ COMMENT=	Tools and library routines for working with GIF images
 CONFLICTS=	libungif-[0-9]*
 PORTSCOUT=	limit:^4\.
 
-USES=		tar:bzip2 shebangfix
-USE_AUTOTOOLS=	libtool
+USES=		tar:bzip2 shebangfix libtool:oldver
 SHEBANG_FILES=	${WRKSRC}/util/gifburst
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

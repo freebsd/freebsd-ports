@@ -27,11 +27,11 @@ USE_GNOME+=	libglade2
 
 post-build:
 	@(cd ${WRKSRC}/avahi-discover-standalone; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-install:
 	@(cd ${WRKSRC}/avahi-discover-standalone; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 	${LN} -sf man/man1/bssh.1 ${STAGEDIR}${PREFIX}/man/man1/bvnc.1
 	${LN} -sf man/man1/bssh.1 ${STAGEDIR}${PREFIX}/man/man1/bshell.1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavahi-ui.so.0

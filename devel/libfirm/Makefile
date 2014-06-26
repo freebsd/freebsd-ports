@@ -3,6 +3,7 @@
 
 PORTNAME=	libfirm
 PORTVERSION=	1.21.0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	SF
 
@@ -15,9 +16,8 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 USE_AUTOTOOLS=	autoconf
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	DEBUG
 

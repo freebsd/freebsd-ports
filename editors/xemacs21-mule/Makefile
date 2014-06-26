@@ -43,7 +43,7 @@ XEMACS_VER=	${XEMACS_REL}.22
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext makeinfo
 USE_CSTD=	gnu89
 USE_XORG=	xpm xbitmaps xaw
 STRIP=

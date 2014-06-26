@@ -3,6 +3,7 @@
 
 PORTNAME=	recutils
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
@@ -11,7 +12,7 @@ COMMENT=	Tools and libraries to access human-editable, plain text databases
 
 LICENSE=	GPLv3
 
-USES=		charsetfix
+USES=		charsetfix libtool makeinfo
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

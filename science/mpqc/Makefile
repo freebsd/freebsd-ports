@@ -91,14 +91,14 @@ pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 
 do-build:
-	@cd ${WRKSRC} ; ${GMAKE}
+	@cd ${WRKSRC} ; ${MAKE_CMD}
 .if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/doc ; ${GMAKE}
+	@cd ${WRKSRC}/doc ; ${MAKE_CMD}
 .endif
 
 do-install:
-	(cd ${WRKSRC} ; ${GMAKE} install)
-	(cd ${WRKSRC} ; ${GMAKE} install_devel)
+	(cd ${WRKSRC} ; ${MAKE_CMD} install)
+	(cd ${WRKSRC} ; ${MAKE_CMD} install_devel)
 	${MKDIR} ${PREFIX}/share/mpqc/validate
 	cd ${WRKSRC}/src/bin/mpqc/validate/ ; ${TAR} -chf - . | \
 		${TAR} -xf - -C ${PREFIX}/share/mpqc/validate
@@ -124,6 +124,6 @@ do-install:
 	${SORT} -r ${WRKDIR}/dir.tmp | ${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
 
 validate:
-	cd ${WRKSRC}/src/bin/mpqc/validate ; ${GMAKE} check0 ; ${GMAKE} check0_run ; ${GMAKE} check0_chk
+	cd ${WRKSRC}/src/bin/mpqc/validate ; ${MAKE_CMD} check0 ; ${MAKE_CMD} check0_run ; ${MAKE_CMD} check0_chk
 
 .include <bsd.port.post.mk>

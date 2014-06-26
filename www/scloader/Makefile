@@ -3,12 +3,15 @@
 
 PORTNAME=	scloader
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	SF
 DISTNAME=	loader${PORTVERSION:C/\.//}
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Configurable web graber/spider
+
+LICENSE=	GPLv2
 
 USES=		dos2unix zip
 USE_JAVA=	yes
@@ -18,9 +21,13 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} %%JAVAJARDIR%%/scloader.jar
-PORTDOCS=	README history todo
 
 DOS2UNIX_REGEX=	.+\.[^j][^a][^r]$
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+PORTDOCS=	README history todo manual.html
+PORTEXAMPLES=	loader.cnf
 
 do-configure:
 		${SED} -e "s|%%JAVA%%|${LOCALBASE}/bin/java|" \
@@ -29,16 +36,13 @@ do-configure:
 
 do-install:
 		${INSTALL} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-		${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 		${INSTALL_DATA} ${WRKSRC}/scloader.jar ${STAGEDIR}${JAVAJARDIR}
-.ifndef	NOPORTDOCS
-		${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
+		@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in README history todo
 		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 		${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${STAGEDIR}${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/samples/loader.cnf ${STAGEDIR}${DOCSDIR}
-PORTDOCS+=	manual.html loader.cnf
-.endif
+		@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+		${INSTALL_DATA} ${WRKSRC}/samples/loader.cnf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

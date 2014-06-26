@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick & easy monitoring of logfiles and devices
 
 USE_GNOME=	gtk12
-USES=		gmake
+USES=		gmake makeinfo
 GNU_CONFIGURE=	yes
 
 MAN1=		xlogmaster.1

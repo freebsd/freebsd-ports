@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	More TCL commands
 
-USES=		gmake tcl
+USES=		gmake makeinfo tcl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_src$//}

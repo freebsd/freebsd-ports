@@ -10,6 +10,8 @@ DISTNAME=	solidircd-stable3.4.8
 MAINTAINER=	systemoperator@gmail.com
 COMMENT=	Solid Internet Relay Chat Daemon based on bahamut IRCd
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
 WRKSRC=		${WRKDIR}/solidircd-stable
 
 USES=		gmake

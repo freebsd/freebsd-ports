@@ -114,14 +114,14 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/xgnokii/xgnokii.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 .if ${PORT_OPTIONS:MDOCS}
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install -C ${WRKSRC}/Docs
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install -C ${WRKSRC}/Docs
 .else
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install -C ${WRKSRC}/Docs/man
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install -C ${WRKSRC}/Docs/man
 .endif
 	${INSTALL_DATA} ${WRKSRC}/Docs/sample/gnokiirc \
 		${STAGEDIR}${PREFIX}/etc/gnokiirc.sample
 .if ${PORT_OPTIONS:MSMSD}
-	@cd ${WRKSRC}/smsd && ${SETENV} ${MAKE_ENV} ${GMAKE} install
+	@cd ${WRKSRC}/smsd && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/README ${STAGEDIR}${PREFIX}/share/smsd

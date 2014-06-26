@@ -74,6 +74,7 @@ bin/qsmhook
 bin/sendmail
 bin/splogger
 %%SRS%%bin/srsfilter
+%%TLS%%bin/update_tmprsadh
 bin/tcp-env
 %%NO_LDAP%%boot/binm1
 %%NO_LDAP%%boot/binm1+df

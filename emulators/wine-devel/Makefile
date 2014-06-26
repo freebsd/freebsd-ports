@@ -92,7 +92,7 @@ PORTDATA=	l_intl.nls wine.inf
 .include <bsd.port.options.mk>
 
 pre-build:
-	cd ${WRKSRC} && ${GMAKE} depend
+	cd ${WRKSRC} && ${MAKE_CMD} depend
 
 post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \

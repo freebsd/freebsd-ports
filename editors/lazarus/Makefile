@@ -115,9 +115,9 @@ pre-build:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} registration lazutils codetools bigide starter lazbuild LCL_PLATFORM=${LCL_PLATFORM}
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} registration lazutils codetools bigide starter lazbuild LCL_PLATFORM=${LCL_PLATFORM}
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} tools LCL_PLATFORM=${LCL_PLATFORM}
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} tools LCL_PLATFORM=${LCL_PLATFORM}
 
 post-build:
 	@cd ${WRKSRC} && \

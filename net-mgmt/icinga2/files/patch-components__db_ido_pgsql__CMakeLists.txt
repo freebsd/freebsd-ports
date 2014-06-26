@@ -1,0 +1,9 @@
+--- components/db_ido_pgsql/CMakeLists.txt.orig	2014-06-16 23:27:15.000000000 +0000
++++ components/db_ido_pgsql/CMakeLists.txt	2014-06-16 23:29:03.000000000 +0000
+@@ -40,4 +40,6 @@
+       RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR}
+       LIBRARY DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/icinga2
+     )
++else()
++    message( FATAL_ERROR "You have selected PostgreSQL support, but PostgreSQL could not be found." )
+ endif()

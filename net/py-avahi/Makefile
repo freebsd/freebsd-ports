@@ -33,15 +33,15 @@ post-patch:
 	    	${WRKSRC}/avahi-python/avahi/ServiceTypeDatabase.py.in
 
 pre-build:
-	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 	    	Makefile ${MAKE_ARGS} clean
 
 post-build:
-	@cd ${WRKSRC}/service-type-database && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@cd ${WRKSRC}/service-type-database && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
-	@cd ${WRKSRC}/service-type-database && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@cd ${WRKSRC}/service-type-database && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} install
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})

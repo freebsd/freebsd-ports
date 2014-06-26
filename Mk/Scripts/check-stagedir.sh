@@ -29,7 +29,7 @@ parse_plist() {
 		# make all ports use @ignore instead of @comment.
 		comment=
 		if [ ${makeplist} -eq 0 -a -z "${line%%@comment *}" ]; then
-			line="${line#@comment }"
+			line="${line##*@comment }"
 			# Remove @comment so it can be parsed as a file,
 			# but later prepend it again to create a list of
 			# all files commented and uncommented.

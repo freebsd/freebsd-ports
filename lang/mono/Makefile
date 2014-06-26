@@ -3,7 +3,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -51,7 +51,7 @@ post-patch:
 
 tests: build
 	@${ECHO_MSG} "===> Running mono regression tests"
-	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} test)
 
 post-configure:

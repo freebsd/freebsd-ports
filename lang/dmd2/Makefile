@@ -69,9 +69,9 @@ post-patch:
 
 post-build:
 	cd ${WRKSRC}/../druntime && \
-		${SETENV} PATH=${WRKSRC}:${PATH} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
+		${SETENV} PATH=${WRKSRC}:${PATH} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
 	cd ${WRKSRC}/../phobos && \
-		${SETENV} PATH=${WRKSRC}:${PATH} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${BUILD}
+		${SETENV} PATH=${WRKSRC}:${PATH} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${BUILD}
 
 do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd.1

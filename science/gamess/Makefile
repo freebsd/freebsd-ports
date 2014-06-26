@@ -134,7 +134,7 @@ pre-build:
 		${WRKSRC}/tools/Makefile
 
 do-build:
-	(cd ${WRKSRC}; ${GMAKE})
+	(cd ${WRKSRC}; ${MAKE_CMD})
 
 do-install:
 	${MKDIR} ${PREFIX}/bin/gms

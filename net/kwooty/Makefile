@@ -19,7 +19,6 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build
 USES=		cmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g' \
 		${WRKSRC}/src/preferences/kwootysettings.kcfg

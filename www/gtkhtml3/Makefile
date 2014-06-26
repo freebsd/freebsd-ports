@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 USES=		gettext libtool:keepla pathfix pkgconfig gmake tar:bzip2
 USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage
-USE_GNOME=	gnomeprefix intlhack gconf2
+USE_GNOME=	gnomeprefix intlhack gconf2 gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -41,6 +41,8 @@ post-patch:
 	    	s|-DGDK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gtkhtml-editor-test[$$]|gtkhtml3-editor-test$$|' \
+		-e '/^gtkhtml_editor_test_LDADD =/s/=/= @GTKHTML_LIBS@/' \
+		-e 's/$$(GTHREAD_LIBS)/-lgthread-2.0/' \
 	    	${WRKSRC}/components/editor/Makefile.in
 	@${REINPLACE_CMD} -e 's|G_CONST_RETURN||g' \
 		${WRKSRC}/a11y/*.[ch]

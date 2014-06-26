@@ -3,7 +3,7 @@
 
 PORTNAME=	spatialite
 PORTVERSION=	4.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos \
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig
+USES=		gmake iconv pathfix pkgconfig libtool
 USE_SQLITE=	yes
 USE_GNOME=	libxml2
 

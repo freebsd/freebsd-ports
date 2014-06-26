@@ -9,6 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU version of Shogi
 
+USES=		makeinfo
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 

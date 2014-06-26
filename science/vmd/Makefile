@@ -78,15 +78,15 @@ post-patch:
 		-e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 
 do-build:
-	${SETENV} ${MAKE_ENV} ${GMAKE} bsd -C ${WRKSRC}/lib/tachyon/unix && ${MV} ${WRKSRC}/lib/tachyon/compile/bsd/tachyon ${WRKSRC}/lib/tachyon/tachyon_${VMD_ARCH}
-	${SETENV} ${MAKE_ENV} TCLLIB=-L${PREFIX}/lib/tcl8.5 TCLINC=-I${PREFIX}/include/tcl8.5 PLUGINDIR=${WRKSRC}/plugins ${GMAKE} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
-	${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.5 TK_INCLUDE_DIR=${PREFIX}/include/tk8.5 ${GMAKE} ${VMD_TARGET} -C ${WRKSRC}
-	${SETENV} ${MAKE_ENV} ${GMAKE} all -C ${WRKSRC}/src
-	${SETENV} ${MAKE_ENV} ${GMAKE} depend -C ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${GMAKE} surf -C ${WRKSRC}/lib/surf && ${MV} ${WRKSRC}/lib/surf/surf ${WRKSRC}/lib/surf/surf_${VMD_ARCH}
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC}/lib/stride && ${MV} ${WRKSRC}/lib/stride/stride ${WRKSRC}/lib/stride/stride_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} bsd -C ${WRKSRC}/lib/tachyon/unix && ${MV} ${WRKSRC}/lib/tachyon/compile/bsd/tachyon ${WRKSRC}/lib/tachyon/tachyon_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} TCLLIB=-L${PREFIX}/lib/tcl8.5 TCLINC=-I${PREFIX}/include/tcl8.5 PLUGINDIR=${WRKSRC}/plugins ${MAKE_CMD} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
+	${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.5 TK_INCLUDE_DIR=${PREFIX}/include/tk8.5 ${MAKE_CMD} ${VMD_TARGET} -C ${WRKSRC}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} all -C ${WRKSRC}/src
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} depend -C ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} surf -C ${WRKSRC}/lib/surf && ${MV} ${WRKSRC}/lib/surf/surf ${WRKSRC}/lib/surf/surf_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/lib/stride && ${MV} ${WRKSRC}/lib/stride/stride ${WRKSRC}/lib/stride/stride_${VMD_ARCH}
 
 do-install:
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC}/src install
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/src install
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/vmd
 
 .include <bsd.port.post.mk>

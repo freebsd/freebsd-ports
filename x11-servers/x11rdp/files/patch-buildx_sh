@@ -8,7 +8,7 @@
 +export CC=%%CC%%
 +export CXX=%%CXX%%
 +export CPP=%%CPP%%
-+export GMAKE=%%GMAKE%%
++export MAKE_CMD=%%MAKE_CMD%%
  
  print_help()
  {
@@ -18,8 +18,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xf86driproto"
@@ -29,8 +29,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping glproto"
@@ -40,8 +40,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping randrproto"
@@ -51,8 +51,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping renderproto"
@@ -62,8 +62,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping fixesproto"
@@ -73,8 +73,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping damageproto"
@@ -84,8 +84,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xcmiscproto"
@@ -95,8 +95,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xextproto"
@@ -106,8 +106,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xproto"
@@ -117,8 +117,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xtrans"
@@ -128,8 +128,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xf86miscproto"
@@ -139,8 +139,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xf86vidmodeproto"
@@ -150,8 +150,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xf86bigfontproto"
@@ -161,8 +161,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping scrnsaverproto"
@@ -172,8 +172,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping bigreqsproto"
@@ -183,8 +183,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping resourceproto"
@@ -194,8 +194,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping fontsproto"
@@ -205,8 +205,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping inputproto"
@@ -216,8 +216,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xf86dgaproto"
@@ -227,8 +227,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping videoproto"
@@ -238,8 +238,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping compositeproto"
@@ -249,8 +249,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping trapproto"
@@ -260,8 +260,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping recordproto"
@@ -271,8 +271,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xineramaproto"
@@ -282,8 +282,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping ice"
@@ -293,8 +293,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping sm"
@@ -304,8 +304,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xau"
@@ -315,8 +315,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping kbproto"
@@ -326,8 +326,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xdmcp"
@@ -348,8 +348,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
 -  echo "skipping x11"
@@ -363,8 +363,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xt"
@@ -374,8 +374,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping evieproto"
@@ -385,8 +385,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xkbfile"
@@ -396,8 +396,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping fontcacheproto"
@@ -407,8 +407,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping fontenc"
@@ -418,8 +418,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping freetype"
@@ -428,14 +428,14 @@
      exit 1
    fi
 -  make
-+  ${GMAKE}
++  ${MAKE_CMD}
    if ! test $? -eq 0
    then
      echo "error make xfont"
      exit 1
    fi
 -  make install
-+  ${GMAKE} install
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xfont"
@@ -445,8 +445,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xext"
@@ -456,8 +456,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xmu"
@@ -467,8 +467,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xkbui"
@@ -478,8 +478,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xxf86misc"
@@ -489,8 +489,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xxf86vm"
@@ -500,8 +500,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xpm"
@@ -511,8 +511,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xaw7"
@@ -522,8 +522,8 @@
    fi
 -  make
 -  make install
-+  ${GMAKE}
-+  ${GMAKE} install
++  ${MAKE_CMD}
++  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping libdrm"
@@ -548,14 +548,14 @@
      exit 1
    fi
 -  make
-+  ${GMAKE}
++  ${MAKE_CMD}
    if ! test $? -eq 0
    then
      echo "error make xorg-server"
      exit 1
    fi
 -  make install
-+#  ${GMAKE} install
++#  ${MAKE_CMD} install
    cd ..
  else
    echo "skipping xorg-server"
@@ -564,7 +564,7 @@
  cd xorg-server-X11R7.1-1.1.0/hw/rdp
  export X11RDPBASE=$PREFIXDIR
 -make
-+${GMAKE}
++${MAKE_CMD}
  if ! test $? -eq 0
  then
    echo "error make X11rdp"

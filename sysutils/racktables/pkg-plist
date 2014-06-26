@@ -107,6 +107,7 @@
 %%WWWDIR_REL%%/wwwroot/pix/node-collapsed.png
 %%WWWDIR_REL%%/wwwroot/pix/node-expanded-static.png
 %%WWWDIR_REL%%/wwwroot/pix/node-expanded.png
+%%WWWDIR_REL%%/wwwroot/pix/patch_cables.png
 %%WWWDIR_REL%%/wwwroot/pix/pencil-icon.png
 %%WWWDIR_REL%%/wwwroot/pix/pgadmin3-viewdata-grayscale.png
 %%WWWDIR_REL%%/wwwroot/pix/pgadmin3-viewdata.png

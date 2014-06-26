@@ -82,12 +82,12 @@ post-patch:
 do-configure:
 	${MKDIR} ${WRKSRC}/.build/native/debug/static/obj
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-	   ${GMAKE} setup ${CONF_ARGS}
+	   ${MAKE_CMD} setup ${CONF_ARGS}
 
 do-build:
 .for dd in ${DEMO_DIRS}
 	@${ECHO_MSG} "=== BUILD ${dd} ==="
-	cd ${WRKSRC}/demos/${dd} && ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC}/demos/${dd} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 .endfor
 
 do-install:

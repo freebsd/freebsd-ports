@@ -27,7 +27,7 @@ SUB_LIST=	LOCALBASE=${LOCALBASE}
 NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/gogoc-tsp/ && \
-	    ${GMAKE} platform=freebsd installdir=${PREFIX} install
+	    ${MAKE_CMD} platform=freebsd installdir=${PREFIX} install
 	${RM} ${PREFIX}/bin/gogoc.conf*
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}

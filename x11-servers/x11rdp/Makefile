@@ -33,10 +33,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%CC%%|${CC}|g" ${WRKSRC}/buildx.sh
 	@${REINPLACE_CMD} -e "s|%%CXX%%|${CXX}|g" ${WRKSRC}/buildx.sh
 	@${REINPLACE_CMD} -e "s|%%CPP%%|${CPP}|g" ${WRKSRC}/buildx.sh
-	@${REINPLACE_CMD} -e "s|%%GMAKE%%|${GMAKE}|g" ${WRKSRC}/buildx.sh
+	@${REINPLACE_CMD} -e "s|%%MAKE_CMD%%|${MAKE_CMD}|g" ${WRKSRC}/buildx.sh
 
 do-build:
-	@cd ${WRKSRC} && GNUMAKE=${GMAKE} ${SH} ${WRKSRC}/buildx.sh ${WRKSRC}/build_dir
+	@cd ${WRKSRC} && GNUMAKE=${MAKE_CMD} ${SH} ${WRKSRC}/buildx.sh ${WRKSRC}/build_dir
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build_dir/bin/X11rdp ${STAGEDIR}${PREFIX}/bin/

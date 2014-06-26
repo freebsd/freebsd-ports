@@ -23,7 +23,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|"/etc/fl0p"|"${DATADIR}"|' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e \
-		's|^GMAKE_OK|#GMAKE_OK|' ${WRKSRC}/Build
+		's|^MAKE_CMD_OK|#MAKE_CMD_OK|' ${WRKSRC}/Build
 	@${REINPLACE_CMD} -e \
 		'/^CC/s|\([[:blank:]]\)=|\1?=| ; \
 		 /^CFLAGS/s|\([[:blank:]]\)=|\1+=| ; \

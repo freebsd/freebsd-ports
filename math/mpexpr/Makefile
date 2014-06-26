@@ -36,6 +36,6 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/mpexpr.man ${STAGEDIR}${PREFIX}/man/mann/mpexpr.n
 
 regression-test: build
-	cd ${WRKSRC} && ${GMAKE} test
+	cd ${WRKSRC} && ${MAKE_CMD} test
 
 .include <bsd.port.mk>

@@ -3,13 +3,13 @@
 
 PORTNAME=	libgd
 PORTVERSION=	2.1.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://cdn.bitbucket.org/libgd/gd-libgd/downloads/
 
 MAINTAINER?=	dinoex@FreeBSD.org
-COMMENT?=	A graphics library for fast creation of images
+COMMENT?=	Graphics library for fast creation of images
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
@@ -18,11 +18,9 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	bazaar-1.*
 
-USES=		tar:xz pkgconfig shebangfix
+USES=		libtool:keepla pathfix pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_ENV=	PKG_CONFIG_LIBDIR=${LOCALBASE}/libdata/pkgconfig
-GNU_CONFIGURE_ARGS=
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	FONTCONFIG ICONV VPX XPM
@@ -40,7 +38,6 @@ XPM_CONFIGURE_OFF=	--with-xpm=no
 
 .include <bsd.port.options.mk>
 
-PKGCONFIGDIR?=	${LOCALBASE}/libdata/pkgconfig
 # force gdlib-config --ldflags
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -73,10 +70,6 @@ pre-configure:
 .if defined(GD_FONTS)
 	cd ${WRKFONTS} && ${SH} ${FILESDIR}/makefonts configure ${GD_FONTS}
 .endif
-	# force PKGCONFIGDIR
-	${REINPLACE_CMD} \
-		-e 's|^pkgconfigdir =.*|pkgconfigdir = ${PKGCONFIGDIR}|' \
-		${WRKSRC}/config/Makefile.in
 	# bump shlib version
 	${REINPLACE_CMD} \
 		-e 's|GDLIB_CURRENT=.*|GDLIB_CURRENT=5|' \

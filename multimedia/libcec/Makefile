@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcec
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	multimedia
 MASTER_SITES=	GH
 
@@ -15,14 +14,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pulse-Eight
-GH_COMMIT=	54be21e
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+GH_COMMIT=	81e3821
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}-repack
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
 PATHFIX_MAKEFILEIN=Makefile.am
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+
+post-patch:
+	${REINPLACE_CMD} 's;-Wno-psabi;;' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>

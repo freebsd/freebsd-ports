@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.chrisarndt.de/en/software/pylize/download/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	dryice@dryice.name
-COMMENT=	A presentation generation tool
+COMMENT=	Presentation generation tool
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/HTMLgen.py:${PORTSDIR}/www/py-HTMLgen \
@@ -21,18 +21,12 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/em.py:${PORTSDIR}/textproc/py-empy
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	2
-INSTALLS_EGGINFO=	yes
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/.b/b/}
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/pylize
-
-NO_STAGE=	yes
-post-install:
-	@${FIND} ${DATADIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+do-configure:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} configure.py)
 
 .include <bsd.port.mk>

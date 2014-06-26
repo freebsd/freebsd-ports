@@ -33,7 +33,7 @@ plist: build
 	@${ECHO} "===>  Rebuilding PLIST."
 	@${TOUCH} ${PLIST}
 	@${RM} ${PLIST}
-	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
 		prefix=${PLIST_TMP} \
 		mandir=${PLIST_TMP}/man \

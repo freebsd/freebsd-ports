@@ -3,7 +3,7 @@
 # Provide support to use the GNU make
 #
 # Feature:		gmake
-# Usage:		USES=gmake
+# Usage:		USES=gmake[:lite]
 #
 # MAINTAINER: portmgr@FreeBSD.org
 
@@ -11,11 +11,19 @@
 _INCLUDE_USES_GMAKE_MK=	yes
 
 .if defined(gmake_ARGS)
-IGNORE=	Incorrect 'USES+= gmake:${gmake_ARGS}' gmake takes no arguments
+.if ${gmake_ARGS} == lite
+_GMAKE_EXT=	-lite
+.else
+IGNORE=	Incorrect 'USES+= gmake:${gmake_ARGS}' gmake has only one valid argument: lite
+.endif
 .endif
 
-BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
-CONFIGURE_ENV+=		MAKE=${GMAKE}
-MAKE_CMD?=		${GMAKE}
+.if defined(DIET)
+_GMAKE_EXT=	-lite
+.endif
+
+BUILD_DEPENDS+=		gmake${_GMAKE_EXT}:${PORTSDIR}/devel/gmake${_GMAKE_EXT}
+CONFIGURE_ENV+=		MAKE=gmake${_GMAKE_EXT}
+MAKE_CMD?=		gmake${_GMAKE_EXT}
 
 .endif

@@ -3,7 +3,7 @@
 
 PORTNAME=	httest
 PORTVERSION=	2.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--enable-lua-module \
 		--with-ssl="${OPENSSLLIB}"
 CPPFLAGS+=	-I${LUA_INCDIR}
 GNU_CONFIGURE=	yes
-USES=		iconv lua
+USES=		iconv lua libtool
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 

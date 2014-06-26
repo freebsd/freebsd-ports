@@ -45,8 +45,7 @@ SRCDIR=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 WRKSRC=		${WRKDIR}/build
 PATCH_WRKSRC=	${SRCDIR}
 
-USE_BZIP2=	yes
-USES=		bison iconv gmake perl5
+USES=		bison gmake iconv makeinfo perl5 tar:bzip2
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes

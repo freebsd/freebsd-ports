@@ -16,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base
 
 CONFLICTS=	husky-fidoconf-devel-[0-9]*
 
+USES=		makeinfo
 USE_LDCONFIG=	yes
 MAKE_ARGS=	ADDCDEFS=-fPIC
 INSTALL_TARGET=	install install-man

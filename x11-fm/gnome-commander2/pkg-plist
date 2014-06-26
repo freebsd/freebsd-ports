@@ -9,6 +9,7 @@ lib/gnome-commander/plugins/libfileroller.a
 lib/gnome-commander/plugins/libfileroller.la
 lib/gnome-commander/plugins/libfileroller.so
 man/man1/gnome-commander.1.gz
+share/appdata/gnome-commander.appdata.xml
 share/applications/gnome-commander.desktop
 share/gnome/help/gnome-commander/C/gnome-commander.xml
 share/gnome/help/gnome-commander/C/legal.xml

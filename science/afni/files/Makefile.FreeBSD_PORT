@@ -68,8 +68,8 @@ LFLAGS = -s -L. -L${LOCALBASE}/lib
 
 MAKE   = gmake
 # Some build scripts pick up the wrong make, so Makefile.INCLUDE is edited
-# to use GMAKE
-GMAKE  = gmake
+# to use MAKE_CMD
+MAKE_CMD  = gmake
 
 PLUGIN_SUFFIX = so
 PLUGIN_LFLAGS = -shared

@@ -32,7 +32,7 @@ post-patch:
 	                ${WRKSRC}/protolib/unix/Makefile.freebsd
 
 do-build:
-	cd ${WRKSRC}/unix && ${GMAKE} -f Makefile.freebsd ${PORTNAME}
+	cd ${WRKSRC}/unix && ${MAKE_CMD} -f Makefile.freebsd ${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM}	${WRKSRC}/unix/mgen ${PREFIX}/bin

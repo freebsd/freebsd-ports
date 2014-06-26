@@ -42,7 +42,7 @@ post-patch:
 		\|cp -f.*$$(BINDIR)|s|cp -f|${INSTALL_SCRIPT}|; \
 		\|cp -f.*$$(MANDIR)|s|cp -f|${INSTALL_MAN}|; \
 		\|cp -f.*$$(LIBDIR)|s|cp -f|${INSTALL_DATA}|; }' \
-		-e 's|make -C|${GMAKE} -C|' \
+		-e 's|make -C|${MAKE_CMD} -C|' \
 			${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
 		${WRKSRC}/configure

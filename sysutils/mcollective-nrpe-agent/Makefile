@@ -4,7 +4,7 @@ PORTNAME=	mcollective-nrpe-agent
 PORTVERSION=	20130805
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	MCollective NRPE agent plugin
 
 RUN_DEPENDS=	mcollective>=2:${PORTSDIR}/sysutils/mcollective

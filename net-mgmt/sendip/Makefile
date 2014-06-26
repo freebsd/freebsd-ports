@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
-MAINTAINER=	joseph@randomnetworks.com
+MAINTAINER=	coco@executive-computing.de
 COMMENT=	SendIP is a commandline tool to allow sending arbitrary IP packets
 
 LICENSE=	GPLv2

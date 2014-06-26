@@ -3,6 +3,7 @@
 
 PORTNAME=	mozjpeg
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	horia@racoviceanu.com
@@ -15,7 +16,8 @@ GH_ACCOUNT=	mozilla
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	0c7449c
 
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtool libtoolize
+USES=		libtool:oldver
+USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 USE_LDCONFIG=	${PREFIX}/include/${PORTNAME} ${PREFIX}/lib/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${PREFIX}/share/doc/${PORTNAME} \

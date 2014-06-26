@@ -11,6 +11,7 @@ COMMENT=	Generate C parser given a grammar in BNF notation
 
 LICENSE=	GPLv2
 
+USES=		makeinfo
 GNU_CONFIGURE=	yes
 
 INFO=		bnf

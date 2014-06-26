@@ -66,7 +66,7 @@ MAKE_ARGS+=	COMPAT="${_COMPAT}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,prefix=/usr/local,prefix=${PREFIX},;\
-			      s,make,${GMAKE},'\
+			      s,make,${MAKE_CMD},'\
 		${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.post.mk>

@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Protocol Construction Set
 
+LICENSE=	BSD3CLAUSE
+
 PORTDOCS=	pcs.pdf
 PORTEXAMPLES=	*
 
@@ -19,18 +21,18 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs/Web && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs/Web && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/scripts && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/scripts && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

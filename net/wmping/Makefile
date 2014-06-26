@@ -14,18 +14,15 @@ USE_XORG=	xpm
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		wmping.1
-PLIST_FILES=	bin/wmping
 PORTDOCS=	BUGS CHANGES README TODO
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL} -c -s -m 4555 -o root -g wheel ${WRKSRC}/wmping ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmping.1 ${PREFIX}/man/man1
+	${INSTALL} -c -s -o root -g wheel ${WRKSRC}/wmping ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmping.1 ${STAGEDIR}${PREFIX}/man/man1
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

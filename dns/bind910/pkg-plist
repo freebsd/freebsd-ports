@@ -351,6 +351,8 @@ man/man3/lwres_string_parse.3.gz
 man/man5/named.conf.5.gz
 man/man5/rndc.conf.5.gz
 man/man8/ddns-confgen.8.gz
+%%PYTHON%%man/man8/dnssec-checkds.8.gz
+%%PYTHON%%man/man8/dnssec-coverage.8.gz
 man/man8/dnssec-dsfromkey.8.gz
 man/man8/dnssec-importkey.8.gz
 man/man8/dnssec-keyfromlabel.8.gz
@@ -377,6 +379,8 @@ man/man8/rndc-confgen.8.gz
 man/man8/rndc.8.gz
 sbin/arpaname
 sbin/ddns-confgen
+%%PYTHON%%sbin/dnssec-checkds
+%%PYTHON%%sbin/dnssec-coverage
 sbin/dnssec-dsfromkey
 sbin/dnssec-importkey
 sbin/dnssec-keyfromlabel

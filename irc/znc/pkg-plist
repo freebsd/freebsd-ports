@@ -93,9 +93,7 @@ man/man1/znc.1.gz
 %%PYTHON%%lib/znc/modpython.so
 %%PYTHON%%lib/znc/modpython/_znc_core.so
 %%PYTHON%%lib/znc/modpython/znc.py
-%%PYTHON%%lib/znc/modpython/znc.pyc
 %%PYTHON%%lib/znc/modpython/znc_core.py
-%%PYTHON%%lib/znc/modpython/znc_core.pyc
 %%TCL%%lib/znc/modtcl.so
 %%TCL%%share/znc/modtcl/binds.tcl
 %%TCL%%share/znc/modtcl/modtcl.tcl

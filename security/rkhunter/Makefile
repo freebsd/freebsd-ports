@@ -6,7 +6,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	sbz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rootkit detection tool
 
 LICENSE=	GPLv2

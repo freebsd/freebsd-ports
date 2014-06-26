@@ -13,6 +13,7 @@ COMMENT=	Big Brother Database
 
 USE_EMACS=	yes
 
+USES=		makeinfo
 ALL_TARGET=	bbdb info
 MAKE_ARGS=	MAKE="${MAKE} clean MAKEINFO=\"makeinfo --no-split\""
 BBDB_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

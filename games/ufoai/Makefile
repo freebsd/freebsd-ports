@@ -90,9 +90,9 @@ post-patch:
 		${WRKSRC}/src/client/renderer/r_image.c
 
 post-build:
-	@cd ${WRKSRC} && ${GMAKE} lang
+	@cd ${WRKSRC} && ${MAKE_CMD} lang
 .       if defined(WITH_UFORADIANT)
-		@cd ${WRKSRC} && ${GMAKE} uforadiant
+		@cd ${WRKSRC} && ${MAKE_CMD} uforadiant
 .	endif
 
 do-install:

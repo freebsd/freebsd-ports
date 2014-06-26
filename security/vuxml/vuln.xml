@@ -57,6 +57,131 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1c840eb9-fb32-11e3-866e-b499baab0cbe">
+    <topic>gnupg -- possible DoS using garbled compressed data packets</topic>
+    <affects>
+      <package>
+	<name>gnupg1</name>
+	<range><lt>1.4.17</lt></range>
+      </package>
+      <package>
+	<name>gnupg</name>
+	<range><lt>2.0.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Werner Koch reports:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000344.html">
+	  <p>This release includes a *security fix* to stop
+	    a possible DoS using garbled compressed data packets which can be used
+	    to put gpg into an infinite loop.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000344.html</url>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2014q2/000345.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-23</discovery>
+      <entry>2014-06-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6ad309d9-fb03-11e3-bebd-000c2980a9f3">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba36</name>
+	<range><lt>3.6.24</lt></range>
+      </package>
+      <package>
+	<name>samba4</name>
+	<range><lt>4.0.19</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><lt>4.1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The samba project reports:</p>
+	<blockquote cite="https://www.samba.org/samba/history/">
+	  <p>A malformed packet can cause the nmbd server to loop the CPU and
+	    prevent any further NetBIOS name service.</p>
+	  <p>Valid unicode path names stored on disk can cause smbd to
+	    crash if an authenticated client attempts to read them
+	    using a non-unicode request.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0244</cvename>
+      <cvename>CVE-2014-3493</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2014-0244</url>
+      <url>https://www.samba.org/samba/security/CVE-2014-3493</url>
+    </references>
+    <dates>
+      <discovery>2014-06-23</discovery>
+      <entry>2014-06-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c4892644-f8c6-11e3-9f45-6805ca0b3d42">
+    <topic>phpMyAdmin -- two XSS vulnerabilities due to unescaped db/table names</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.1.0</ge><lt>4.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-2.php">
+	  <p>Self-XSS due to unescaped HTML output in recent/favorite
+	    tables navigation.</p>
+
+	  <p>When marking a crafted database or table name as
+	    favorite or having it in recent tables, it is possible to
+	    trigger an XSS.</p>
+
+
+	  <p>This vulnerability can be triggered only by someone who
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    form.</p>
+
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-3.php">
+	  <p>Self-XSS due to unescaped HTML output in navigation items
+	    hiding feature.</p>
+
+	  <p>When hiding or unhiding a crafted table name in the
+	    navigation, it is possible to trigger an XSS.</p>
+
+	  <p>This vulnerability can be triggered only by someone who
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    form.</p>
+	</blockquote>
+    </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4348</cvename>
+      <cvename>CVE-2014-4349</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-2.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-3.php</url>
+    </references>
+    <dates>
+      <discovery>2014-06-20</discovery>
+      <entry>2014-06-20</entry>
+      <modified>2014-06-24</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="0981958a-f733-11e3-8276-071f1604ef8a">
     <topic>iodined -- authentication bypass</topic>
     <affects>

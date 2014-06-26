@@ -220,6 +220,6 @@ post-install:
 .endif
 
 regression-test: build
-	@cd ${WRKSRC} && ${GMAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} test
+	@cd ${WRKSRC} && ${MAKE_CMD} TESTOPTS=-j${MAKE_JOBS_NUMBER} test
 
 .include <bsd.port.post.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orc
-PORTVERSION=	0.4.19
-PORTREVISION=	2
+PORTVERSION=	0.4.21
 CATEGORIES=	devel
 MASTER_SITES= 	http://gstreamer.freedesktop.org/data/src/orc/
 
@@ -14,7 +13,7 @@ LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool:keepla pkgconfig
+USES=		gmake libtool:keepla pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--disable-gtk-doc

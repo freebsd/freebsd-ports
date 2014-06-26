@@ -12,6 +12,7 @@ COMMENT=	Network audio player
 
 LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 
+USES=		makeinfo
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

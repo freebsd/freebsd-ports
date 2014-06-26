@@ -1,8 +1,8 @@
-etc/gtic/areagroups.sample
-etc/gtic/areas.sample
-etc/gtic/config.sample
-etc/gtic/domains.sample
-etc/gtic/help.sample
-etc/gtic/users.sample
+@sample %%ETCDIR%%/areagroups.sample
+@sample %%ETCDIR%%/areas.sample
+@sample %%ETCDIR%%/config.sample
+@sample %%ETCDIR%%/domains.sample
+@sample %%ETCDIR%%/help.sample
+@sample %%ETCDIR%%/users.sample
 sbin/gtic
-@dirrm etc/gtic
+@dirrmtry %%ETCDIR%%

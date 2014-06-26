@@ -69,7 +69,7 @@
  shared_netcdf_attr:
  	$(RM) netcdf_attr.o
 -	$(MAKE) netcdf_attr.o CCMIN="${CCMIN} -fPIC"
-+	$(GMAKE) netcdf_attr.o CCMIN="${CCMIN} -fPIC"
++	$(MAKE_CMD) netcdf_attr.o CCMIN="${CCMIN} -fPIC"
  
  # same as .a, but build as a shared object
  libmrix.a:$(IMOBJS) imseq.h display.h xim.h bbox.h xutil.h
@@ -78,14 +78,14 @@
  f2c:
  	( cd f2cdir ;                                                         \
 -	  $(MAKE) f2c clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)' 'CCMIN=$(CCMIN)' \
-+	  $(GMAKE) f2c clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)' 'CCMIN=$(CCMIN)' \
++	  $(MAKE_CMD) f2c clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)' 'CCMIN=$(CCMIN)' \
  	        'RANLIB=$(RANLIB)' 'LDFLAGS=$(LDFLAGS)' 'IFLAGS=$(ISFLAGS)' ;  \
  	  $(MV) f2c .. ; )
  
  libf2c.a:
  	( cd f2cdir ;                                                        \
 -	  $(MAKE) libf2c.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)'            \
-+	  $(GMAKE) libf2c.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)'            \
++	  $(MAKE_CMD) libf2c.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)'            \
  	        'RANLIB=$(RANLIB)' 'LDFLAGS=$(LDFLAGS)' 'IFLAGS=$(ISFLAGS)' ; \
  	  $(MV) libf2c.a .. ; )
  
@@ -94,7 +94,7 @@
  libdl.a:dlcompat/dlfcn.h dlcompat/dlopen.c
  	( cd dlcompat ;              \
 -	  $(MAKE) libdl.a ;          \
-+	  $(GMAKE) libdl.a ;          \
++	  $(MAKE_CMD) libdl.a ;          \
  	  $(CP) libdl.a dlfcn.h .. ; \
            cd .. ;                    \
  	  $(RANLIB) libdl.a ;     )
@@ -103,7 +103,7 @@
  libcoxplot.a:coxplot.h
  	( cd coxplot ;                                                       \
 -	  $(MAKE) libcoxplot.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)'        \
-+	  $(GMAKE) libcoxplot.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)'        \
++	  $(MAKE_CMD) libcoxplot.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)'        \
  	        'RANLIB=$(RANLIB)' 'LDFLAGS=$(LDFLAGS)' 'IFLAGS=$(ISFLAGS)' ; \
  	  $(MV) libcoxplot.a .. ; )
  
@@ -112,14 +112,14 @@
  file_tool: ge4_header.o
  	( cd rickr ;                                                    \
 -	$(MAKE) file_tool 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'      \
-+	$(GMAKE) file_tool 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'      \
++	$(MAKE_CMD) file_tool 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'      \
  			'LFLAGS=$(LFLAGS)' 'LLIBS=$(LLIBS)' ;           \
  	$(MV) file_tool .. ; )
  
  Dimon: rickr/Dimon.c rickr/Imon.h rickr/realtime.c rickr/realtime.h
  	( cd rickr ; 							\
 -	$(MAKE) Dimon 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'        	\
-+	$(GMAKE) Dimon 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'        	\
++	$(MAKE_CMD) Dimon 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'        	\
  		  'LFLAGS=$(LFLAGS)' 'EXTRA_LIBS_2=$(EXTRA_LIBS_2)'	\
  		  'LGIFTI=$(LGIFTI)' ;					\
  	$(MV) Dimon .. ; )
@@ -127,14 +127,14 @@
  Imon: rickr/Imon.c rickr/Imon.h rickr/realtime.c rickr/realtime.h thd_iochan.o
  	( cd rickr ; 							\
 -	$(MAKE) Imon 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'        	\
-+	$(GMAKE) Imon 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'        	\
++	$(MAKE_CMD) Imon 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'        	\
  		  'LFLAGS=$(LFLAGS)' 'EXTRA_LIBS_2=$(EXTRA_LIBS_2)' ;	\
  	$(MV) Imon .. ; )
  
  serial_helper: rickr/serial_helper.c
  	( cd rickr ;                                                    \
 -	$(MAKE) serial_helper 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'  \
-+	$(GMAKE) serial_helper 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'  \
++	$(MAKE_CMD) serial_helper 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'  \
  		  'LFLAGS=$(LFLAGS)' 'EXTRA_LIBS_2=$(EXTRA_LIBS_2)' ;	\
  	$(MV) serial_helper .. ; )
  
@@ -143,7 +143,7 @@
  gtest:
  	( cd gifti ; 							\
 -	$(MAKE) gtest 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'         \
-+	$(GMAKE) gtest 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'         \
++	$(MAKE_CMD) gtest 'RM=$(RM)' 'CC=$(CC)' 'IFLAGS=$(ISFLAGS)'         \
  	                'LFLAGS=$(LFLAGS)' ;                            \
  	$(MV) gtest .. ; )
  
@@ -152,7 +152,7 @@
  libvolpack.a:
  	( cd volpack ;                                                       \
 -	  $(MAKE) libvolpack.a clean 'RM=$(RM)' 'CC=$(CCVOL)' 'AR=$(AR)'     \
-+	  $(GMAKE) libvolpack.a clean 'RM=$(RM)' 'CC=$(CCVOL)' 'AR=$(AR)'     \
++	  $(MAKE_CMD) libvolpack.a clean 'RM=$(RM)' 'CC=$(CCVOL)' 'AR=$(AR)'     \
  	        'RANLIB=$(RANLIB)' 'LDFLAGS=$(LDFLAGS)' 'IFLAGS=$(ISFLAGS)' ; \
  	  $(MV) libvolpack.a .. ; )
  
@@ -161,7 +161,7 @@
  qhull:
  	( cd qhulldir ;                                                  \
 -	  $(MAKE) qhull rbox qdelaunay clean \
-+	  $(GMAKE) qhull rbox qdelaunay clean \
++	  $(MAKE_CMD) qhull rbox qdelaunay clean \
  	        'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' ; \
  	  $(MV) qhull rbox qdelaunay .. ; )
  
@@ -170,7 +170,7 @@
  qhull.exe:
  	( cd qhulldir ;                                                  \
 -	  $(MAKE) qhull clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' ; \
-+	  $(GMAKE) qhull clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' ; \
++	  $(MAKE_CMD) qhull clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' ; \
  	  $(MV) qhull.exe .. ; )
  
  #######
@@ -178,21 +178,21 @@
  
  lib3DEdge.a:
 -	( cd 3DEdge/src ; $(MAKE) clean lib3DEdge.a 'RM=$(RM)' 'AR=$(AR)' 'RANLIB=$(RANLIB)' 'CC=$(CCFAST)' 'IFLAGS=$(ISFLAGS)' 'LFLAGS=$(LFLAGS)' ; $(MV) *.a ../.. ; )
-+	( cd 3DEdge/src ; $(GMAKE) clean lib3DEdge.a 'RM=$(RM)' 'AR=$(AR)' 'RANLIB=$(RANLIB)' 'CC=$(CCFAST)' 'IFLAGS=$(ISFLAGS)' 'LFLAGS=$(LFLAGS)' ; $(MV) *.a ../.. ; )
++	( cd 3DEdge/src ; $(MAKE_CMD) clean lib3DEdge.a 'RM=$(RM)' 'AR=$(AR)' 'RANLIB=$(RANLIB)' 'CC=$(CCFAST)' 'IFLAGS=$(ISFLAGS)' 'LFLAGS=$(LFLAGS)' ; $(MV) *.a ../.. ; )
  
  #######
  # Eispack and CDF library files - make them and move them up here
  
  eis_bakvec.o:
 -	( cd eispack/ ; $(MAKE) all 'CC=$(CCFAST)' 'CCSVD=$(CCSVD)' ; $(MV) *.o .. ; )
-+	( cd eispack/ ; $(GMAKE) all 'CC=$(CCFAST)' 'CCSVD=$(CCSVD)' ; $(MV) *.o .. ; )
++	( cd eispack/ ; $(MAKE_CMD) all 'CC=$(CCFAST)' 'CCSVD=$(CCSVD)' ; $(MV) *.o .. ; )
  
  #######
  # Ditto for NIML objects
  
  $(NIML_OBJS):niml.h
 -	( cd niml/ ; $(MAKE) all 'CC=$(CC)' ; $(MV) *.o .. ; )
-+	( cd niml/ ; $(GMAKE) all 'CC=$(CC)' ; $(MV) *.o .. ; )
++	( cd niml/ ; $(MAKE_CMD) all 'CC=$(CC)' ; $(MV) *.o .. ; )
  
  niml.h:niml/niml.h
  	$(CP) niml/niml.h .
@@ -201,7 +201,7 @@
            $(RM) config.cache config.log config.status ;   \
            chmod ugo+x ./configure ;                       \
 -          ./configure ; $(MAKE) libsrc/all ;              \
-+          ./configure ; $(GMAKE) libsrc/all ;              \
++          ./configure ; $(MAKE_CMD) libsrc/all ;              \
            $(CP) libsrc/netcdf.h  ../.. ;                  \
            $(MV) libsrc/attr.o    ../../netcdf_attr.o    ; \
            $(MV) libsrc/dim.o     ../../netcdf_dim.o     ; \
@@ -210,7 +210,7 @@
            $(MV) libsrc/var.o     ../../netcdf_var.o     ; \
            $(RM) config.cache config.log config.status ;   \
 -          $(MAKE) clean ; )
-+          $(GMAKE) clean ; )
++          $(MAKE_CMD) clean ; )
  
  #######
  # 27 Jul 2001 - for fun
@@ -218,7 +218,7 @@
  gifsicle:
  	( cd gifsicledir ;                                                  \
 -	  $(MAKE) gifsicle clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' ; \
-+	  $(GMAKE) gifsicle clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' ; \
++	  $(MAKE_CMD) gifsicle clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' ; \
  	  $(MV) gifsicle .. ; )
  
  #######
@@ -227,7 +227,7 @@
  mpeg_encode:
  	( cd mpeg_encodedir ;                                                                   \
 -	  $(MAKE) mpeg_encode clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' 'LLIBS=$(LLIBS)' ; \
-+	  $(GMAKE) mpeg_encode clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' 'LLIBS=$(LLIBS)' ; \
++	  $(MAKE_CMD) mpeg_encode clean 'RM=$(RM)' 'CC=$(CC)' 'LFLAGS=$(LFLAGS)' 'LLIBS=$(LLIBS)' ; \
  	  $(MV) mpeg_encode .. ; )
  
  #######
@@ -236,7 +236,7 @@
  	( cd mpegtoppm_dir ; chmod ugo+x ./configure ;                                         \
  	  ./configure --disable-sdl --disable-mlib --without-x --disable-dependency-tracking --disable-accel-detect ; \
 -	  $(MAKE) ; mv doc/sample2 ../mpegtoppm ; $(MAKE) clean ; )
-+	  $(GMAKE) ; mv doc/sample2 ../mpegtoppm ; $(GMAKE) clean ; )
++	  $(MAKE_CMD) ; mv doc/sample2 ../mpegtoppm ; $(MAKE_CMD) clean ; )
  
  #######
  # 11 Sep 2002 - for fun
@@ -246,8 +246,8 @@
            chmod ugo+x ./configure ; ./configure 'CC=$(CCMIN)' ; \
 -          $(MAKE) ; $(MV) cjpeg djpeg libjpeg.a .. ;            \
 -          $(MAKE) clean ; $(RM) Makefile )
-+          $(GMAKE) ; $(MV) cjpeg djpeg libjpeg.a .. ;            \
-+          $(GMAKE) clean ; $(RM) Makefile )
++          $(MAKE_CMD) ; $(MV) cjpeg djpeg libjpeg.a .. ;            \
++          $(MAKE_CMD) clean ; $(RM) Makefile )
  
  libXmHTML.a:
 -	( cd XmHTML ; make lib 'CC=$(CC)' 'II=$(IFLAGS)' ; \
@@ -262,7 +262,7 @@
  libfftw.a:
  	( cd fftw ;                                                    \
 -	  $(MAKE) libfftw.a clean 'RM=$(RM)' 'CC=$(CCFAST)' 'AR=$(AR)' \
-+	  $(GMAKE) libfftw.a clean 'RM=$(RM)' 'CC=$(CCFAST)' 'AR=$(AR)' \
++	  $(MAKE_CMD) libfftw.a clean 'RM=$(RM)' 'CC=$(CCFAST)' 'AR=$(AR)' \
  	        'RANLIB=$(RANLIB)' 'LDFLAGS=$(LDFLAGS)' 'IFLAGS=$(ISFLAGS)' ; \
  	  $(MV) libfftw.a .. ; )
  
@@ -271,7 +271,7 @@
  libclam.a:
  	( cd clamdir ;                                             \
 -	  $(MAKE) libclam.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)' \
-+	  $(GMAKE) libclam.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)' \
++	  $(MAKE_CMD) libclam.a clean 'RM=$(RM)' 'CC=$(CC)' 'AR=$(AR)' \
  	        'RANLIB=$(RANLIB)' 'IFLAGS=-I..' ;                 \
  	  $(MV) libclam.a .. ; )
  
@@ -280,14 +280,14 @@
  	( cd avovk ;	\
  	./@MakeLocalMake	;\
 -	$(MAKE) afni_all  ;	\
-+	$(GMAKE) afni_all  ;	\
++	$(MAKE_CMD) afni_all  ;	\
  	cd ../	;		)
  
  libsegtools.a: avovk/cluster_floatNOMASK.c avovk/thd_segtools_fNM.c
  	( cd avovk ;	\
  	./@MakeLocalMake	;\
 -	$(MAKE) libsegtools.a  ;	\
-+	$(GMAKE) libsegtools.a  ;	\
++	$(MAKE_CMD) libsegtools.a  ;	\
  	$(CP) libsegtools.a ../;	\
  	cd ../	;		)
  
@@ -296,14 +296,14 @@
  	( cd ptaylor ;	\
  	./@MakeLocalMake	;\
 -	$(MAKE) all  ;	\
-+	$(GMAKE) all  ;	\
++	$(MAKE_CMD) all  ;	\
  	cd ../	;		)
  
  libtracktools.a: ptaylor/libtracktools.a
  	( cd ptaylor ;	\
  	./@MakeLocalMake	;\
 -	$(MAKE) libtracktools.a  ;	\
-+	$(GMAKE) libtracktools.a  ;	\
++	$(MAKE_CMD) libtracktools.a  ;	\
  	$(CP) libtracktools.a ../;	\
  	cd ../	;		)
  
@@ -312,12 +312,12 @@
  	( cd SUMA ;	\
  	rm -f libSUMA.a	;\
 -	$(MAKE) -f $(SUMA_MAKEFILE_NAME) clean MarchingCubes.o libSUMA.a 'INSTALLDIR=$(INSTALLDIR)' \
-+	$(GMAKE) -f $(SUMA_MAKEFILE_NAME) clean MarchingCubes.o libSUMA.a 'INSTALLDIR=$(INSTALLDIR)' \
++	$(MAKE_CMD) -f $(SUMA_MAKEFILE_NAME) clean MarchingCubes.o libSUMA.a 'INSTALLDIR=$(INSTALLDIR)' \
  	'SUMA_INCLUDE_PATH=$(SUMA_INCLUDE_PATH)' \
  	'SUMA_BIN_ARCHIVE=$(SUMA_BIN_ARCHIVE)' \
  	'RANLIB=$(RANLIB)' \
 -        'MAKE=$(MAKE)'     \
-+        'MAKE=$(GMAKE)'     \
++        'MAKE=$(MAKE_CMD)'     \
  	'CC=$(CC)' 'RM=$(RM)' 'CEXTRA=$(CEXTRA)' 'MV=$(MV)' 'CP=$(CP)'	\
  	'TAR=$(TAR)' 'MKDIR=$(MKDIR)';	\
  	cd ../	;	\
@@ -326,7 +326,7 @@
  	( cd SUMA ;	\
  	rm -f libgts.a	;\
 -	$(MAKE) -f $(SUMA_MAKEFILE_NAME) libgts.a ;	\
-+	$(GMAKE) -f $(SUMA_MAKEFILE_NAME) libgts.a ;	\
++	$(MAKE_CMD) -f $(SUMA_MAKEFILE_NAME) libgts.a ;	\
  	cd ../	;	\
  	if [ ! -d $(INSTALLDIR) ]; then $(MKDIR) -p $(INSTALLDIR); echo WARNING: directory $(INSTALLDIR) has been created. ; fi	;\
  	$(CP) SUMA/libgts.a ${INSTALLDIR}; \
@@ -335,12 +335,12 @@
  	( cd SUMA ;	\
  	rm -f libGLws.a	;\
 -	$(MAKE) -f $(SUMA_MAKEFILE_NAME) libGLws.a 'INSTALLDIR=$(INSTALLDIR)' \
-+	$(GMAKE) -f $(SUMA_MAKEFILE_NAME) libGLws.a 'INSTALLDIR=$(INSTALLDIR)' \
++	$(MAKE_CMD) -f $(SUMA_MAKEFILE_NAME) libGLws.a 'INSTALLDIR=$(INSTALLDIR)' \
  	'SUMA_INCLUDE_PATH=$(SUMA_INCLUDE_PATH)' \
  	'SUMA_BIN_ARCHIVE=$(SUMA_BIN_ARCHIVE)' \
  	'RANLIB=$(RANLIB)' \
 -        'MAKE=$(MAKE)'     \
-+        'MAKE=$(GMAKE)'     \
++        'MAKE=$(MAKE_CMD)'     \
  	'CC=$(CC)' 'RM=$(RM)' 'CEXTRA=$(CEXTRA)' 'MV=$(MV)' 'CP=$(CP)'	\
  	'TAR=$(TAR)' 'MKDIR=$(MKDIR)';	\
  	cd ../	;	\
@@ -349,7 +349,7 @@
  suma_exec:libGLws.a libSUMA.a libmri.a xutil.o LiteClue.o parser.o parser_int.o libmrix.a libcoxplot.a libf2c.a
  	( cd SUMA ;	\
 -	$(MAKE) -f $(SUMA_MAKEFILE_NAME) testGL suma ScaleToMap CompareSurfaces \
-+	$(GMAKE) -f $(SUMA_MAKEFILE_NAME) testGL suma ScaleToMap CompareSurfaces \
++	$(MAKE_CMD) -f $(SUMA_MAKEFILE_NAME) testGL suma ScaleToMap CompareSurfaces \
  	MakeColorMap ROI2dataset 3dVol2Surf \
  	3dSurf2Vol SurfMeasures SurfFWHM \
  	ConvertSurface ConvertDset SurfClust IsoSurface \
@@ -358,7 +358,7 @@
  	'SUMA_GLIB_VER=$(SUMA_GLIB_VER)' \
  	'RANLIB=$(RANLIB)' \
 -        'MAKE=$(MAKE)'     \
-+        'MAKE=$(GMAKE)'     \
++        'MAKE=$(MAKE_CMD)'     \
  	'CC=$(CC)' 'RM=$(RM)' 'CEXTRA=$(CEXTRA)' 'MV=$(MV)' 'CP=$(CP)'		\
  	'TAR=$(TAR)' 'MKDIR=$(MKDIR)';	\
  	cd ../	;)
@@ -367,7 +367,7 @@
  suma_gts_progs: libgts.a
  	( cd SUMA ;	\
 -	$(MAKE) -f $(SUMA_MAKEFILE_NAME) SurfMesh 'INSTALLDIR=$(INSTALLDIR)' \
-+	$(GMAKE) -f $(SUMA_MAKEFILE_NAME) SurfMesh 'INSTALLDIR=$(INSTALLDIR)' \
++	$(MAKE_CMD) -f $(SUMA_MAKEFILE_NAME) SurfMesh 'INSTALLDIR=$(INSTALLDIR)' \
  	'SUMA_INCLUDE_PATH=$(SUMA_INCLUDE_PATH)' \
  	'SUMA_LINK_PATH=$(SUMA_LINK_PATH)' \
  	'SUMA_LINK_LIB=$(SUMA_LINK_LIB)' \
@@ -375,7 +375,7 @@
  	'SUMA_GLIB_VER=$(SUMA_GLIB_VER)' \
  	'RANLIB=$(RANLIB)' \
 -        'MAKE=$(MAKE)'     \
-+        'MAKE=$(GMAKE)'     \
++        'MAKE=$(MAKE_CMD)'     \
  	'CC=$(CC)' 'RM=$(RM)' 'CEXTRA=$(CEXTRA)' 'MV=$(MV)' 'CP=$(CP)'		\
  	'TAR=$(TAR)' 'MKDIR=$(MKDIR)';	\
  	cd ../	;)
@@ -384,7 +384,7 @@
  suma_all:libmri.a xutil.o LiteClue.o parser.o parser_int.o libmrix.a libcoxplot.a libf2c.a
  	( cd SUMA ;	\
 -	$(MAKE) -f $(SUMA_MAKEFILE_NAME) all 'INSTALLDIR=$(INSTALLDIR)' 'INSTALLDIR_SUMA=$(INSTALLDIR)' \
-+	$(GMAKE) -f $(SUMA_MAKEFILE_NAME) all 'INSTALLDIR=$(INSTALLDIR)' 'INSTALLDIR_SUMA=$(INSTALLDIR)' \
++	$(MAKE_CMD) -f $(SUMA_MAKEFILE_NAME) all 'INSTALLDIR=$(INSTALLDIR)' 'INSTALLDIR_SUMA=$(INSTALLDIR)' \
  	'SUMA_INCLUDE_PATH=$(SUMA_INCLUDE_PATH)' \
  	'SUMA_LINK_PATH=$(SUMA_LINK_PATH)' \
  	'SUMA_LINK_LIB=$(SUMA_LINK_LIB)' \
@@ -392,7 +392,7 @@
  	'SUMA_GLIB_VER=$(SUMA_GLIB_VER)' \
  	'RANLIB=$(RANLIB)' \
 -        'MAKE=$(MAKE)'     \
-+        'MAKE=$(GMAKE)'     \
++        'MAKE=$(MAKE_CMD)'     \
  	'CC=$(CC)' 'RM=$(RM)' 'CEXTRA=$(CEXTRA)' 'MV=$(MV)' 'CP=$(CP)'		\
  	'TAR=$(TAR)' 'MKDIR=$(MKDIR)';	\
  	cd ../	;)
@@ -401,7 +401,7 @@
  suma_anew:libmri.a xutil.o LiteClue.o parser.o parser_int.o libmrix.a libcoxplot.a libf2c.a
  	( cd SUMA ;	\
 -	$(MAKE) -f $(SUMA_MAKEFILE_NAME) anew 'INSTALLDIR=$(INSTALLDIR)' 'INSTALLDIR_SUMA=$(INSTALLDIR)' \
-+	$(GMAKE) -f $(SUMA_MAKEFILE_NAME) anew 'INSTALLDIR=$(INSTALLDIR)' 'INSTALLDIR_SUMA=$(INSTALLDIR)' \
++	$(MAKE_CMD) -f $(SUMA_MAKEFILE_NAME) anew 'INSTALLDIR=$(INSTALLDIR)' 'INSTALLDIR_SUMA=$(INSTALLDIR)' \
  	'SUMA_INCLUDE_PATH=$(SUMA_INCLUDE_PATH)' \
  	'SUMA_LINK_PATH=$(SUMA_LINK_PATH)' \
  	'SUMA_LINK_LIB=$(SUMA_LINK_LIB)' \
@@ -409,7 +409,7 @@
  	'SUMA_GLIB_VER=$(SUMA_GLIB_VER)' \
  	'RANLIB=$(RANLIB)' \
 -        'MAKE=$(MAKE)'     \
-+        'MAKE=$(GMAKE)'     \
++        'MAKE=$(MAKE_CMD)'     \
  	'CC=$(CC)' 'RM=$(RM)' 'CEXTRA=$(CEXTRA)' 'MV=$(MV)' 'CP=$(CP)'		\
  	'TAR=$(TAR)' 'MKDIR=$(MKDIR)';	\
  	cd ../	;)
@@ -418,7 +418,7 @@
     DriveSuma SurfDist SpharmReco SpharmDeco prompt_user SurfRetinoMap \
     ParseName 3dGenPriors 3dSeg SurfExtrema 3dinfill; \
 -	$(MAKE) -f $(SUMA_MAKEFILE_NAME) testGL suma MakeColorMap ROI2dataset \
-+	$(GMAKE) -f $(SUMA_MAKEFILE_NAME) testGL suma MakeColorMap ROI2dataset \
++	$(MAKE_CMD) -f $(SUMA_MAKEFILE_NAME) testGL suma MakeColorMap ROI2dataset \
     3dVol2Surf 3dSurf2Vol ScaleToMap SurfMeasures SurfFWHM \
  	MapIcosahedron CreateIcosahedron CompareSurfaces ConvertSurface ConvertDset \
  	SurfClust IsoSurface ConvexHull SurfaceMetrics SurfSmooth inspec \
@@ -427,7 +427,7 @@
  	'SUMA_GLIB_VER=$(SUMA_GLIB_VER)' \
  	'RANLIB=$(RANLIB)' \
 -        'MAKE=$(MAKE)'     \
-+        'MAKE=$(GMAKE)'     \
++        'MAKE=$(MAKE_CMD)'     \
  	'CC=$(CC)' 'RM=$(RM)' 'CEXTRA=$(CEXTRA)' 'MV=$(MV)' 'CP=$(CP)'\
  	'TAR=$(TAR)' 'MKDIR=$(MKDIR)';	\
  	cd ../	;)
@@ -435,7 +435,7 @@
  ####
  R_io.so:R_io.c libmri.a
  	( if which R >/dev/null ; then \
-+	export MAKE=${GMAKE} ;\
++	export MAKE=${MAKE_CMD} ;\
  	echo PKG_CPPFLAGS = $(INFLAGS)  > Makevars ;\
  	echo PKG_LIBS =  $(LFLAGS) $(LLIBS) >> Makevars ;\
  	R CMD SHLIB R_io.c ; \

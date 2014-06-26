@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
-USES=		gmake
+USES=		gmake makeinfo
 USE_AUTOTOOLS=	autoheader aclocal automake autoconf
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share

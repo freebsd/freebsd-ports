@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	t.kempka@web.de
 COMMENT=	Dockapp to run shell scripts and display the output
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 
 USE_XORG=	xpm

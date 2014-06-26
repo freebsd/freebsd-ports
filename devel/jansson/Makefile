@@ -3,6 +3,7 @@
 
 PORTNAME=	jansson
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.digip.org/jansson/releases/
 
@@ -11,7 +12,7 @@ COMMENT=	C library for encoding, decoding, and manipulating JSON data
 
 LICENSE=	MIT
 
-USES=		pathfix pkgconfig gmake tar:bzip2
+USES=		pathfix pkgconfig gmake tar:bzip2 libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

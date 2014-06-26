@@ -1,0 +1,20 @@
+--- ../luxrender-luxrays-7459cd8a9583/samples/smallluxgpu4/CMakeLists.txt.orig
++++ ../luxrender-luxrays-7459cd8a9583/samples/smallluxgpu4/CMakeLists.txt
+@@ -25,6 +25,8 @@
+ #
+ #############################################################################
+ 
++find_package(Threads)
++
+ set(SMALLLUXGPU_SRCS
+ 	smallluxgpu.cpp
+ 	displayfunc.cpp
+@@ -32,7 +34,7 @@ set(SMALLLUXGPU_SRCS
+ 
+ add_executable(slg4 ${SMALLLUXGPU_SRCS})
+ 
+-TARGET_LINK_LIBRARIES(slg4 smallluxgpu luxrays ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${GLUT_LIBRARY})
++TARGET_LINK_LIBRARIES(slg4 smallluxgpu luxrays ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${GLUT_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} -lexecinfo)
+ 
+ # This instructs FREEGLUT to emit a pragma for the static version
+ SET_TARGET_PROPERTIES(slg4 PROPERTIES COMPILE_DEFINITIONS FREEGLUT_STATIC)

@@ -272,7 +272,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 post-configure:
-	@cd ${WRKSRC} && ${GMAKE} menuselect.makeopts
+	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
 .if ${PORT_OPTIONS:MMYSQL}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts

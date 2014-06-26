@@ -13,6 +13,9 @@ COMMENT=	Application proxy toolkit which inherits the ideology of TIS fwtk
 
 LICENSE=	BSD
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 OPTIONS_DEFINE=	GUI
 GUI_DESC=	Install fw-watch GUI (require TCL/TK!)
 

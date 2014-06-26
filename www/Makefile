@@ -426,6 +426,7 @@
     SUBDIR += mediawiki119
     SUBDIR += mediawiki121
     SUBDIR += mediawiki122
+    SUBDIR += mediawiki123
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
@@ -523,7 +524,6 @@
     SUBDIR += mod_reproxy
     SUBDIR += mod_rivet
     SUBDIR += mod_rpaf2
-    SUBDIR += mod_ruby
     SUBDIR += mod_scgi
     SUBDIR += mod_security
     SUBDIR += mod_setenvifplus
@@ -1433,7 +1433,6 @@
     SUBDIR += php55-session
     SUBDIR += php55-tidy
     SUBDIR += phpbb
-    SUBDIR += phpbb-devel
     SUBDIR += phpbb3
     SUBDIR += phpgedview
     SUBDIR += phpgroupware
@@ -1443,7 +1442,6 @@
     SUBDIR += phprecipebook
     SUBDIR += phproxy
     SUBDIR += phpsysinfo
-    SUBDIR += phpsysinfo-dev
     SUBDIR += phpvirtualbox
     SUBDIR += phpwebapp
     SUBDIR += pivotx
@@ -1878,6 +1876,7 @@
     SUBDIR += rubygem-selenium-webdriver
     SUBDIR += rubygem-simple-rss
     SUBDIR += rubygem-sinatra
+    SUBDIR += rubygem-sinatra-contrib
     SUBDIR += rubygem-sinatra-r18n
     SUBDIR += rubygem-sinatra-respond_to
     SUBDIR += rubygem-taggable

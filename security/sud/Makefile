@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Execute processes with special privileges in a nosuid environment
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 GNU_CONFIGURE=	yes
 MAN1=		sud.1 suz.1 ilogin.1
 

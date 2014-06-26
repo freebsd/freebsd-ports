@@ -13,9 +13,9 @@ bin/mifare-desfire-write-ndef
 bin/mifare-ultralight-info
 include/freefare.h
 lib/libfreefare.a
-lib/libfreefare.la
 lib/libfreefare.so
 lib/libfreefare.so.0
+lib/libfreefare.so.0.0.0
 libdata/pkgconfig/libfreefare.pc
 man/man3/freefare.3.gz
 man/man3/freefare_error.3.gz

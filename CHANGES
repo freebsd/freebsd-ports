@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140623:
+AUTHOR: bapt@FreeBSD.org
+
+  IGNOREFILES is not supported anymore, it was an unsafe feature allowing to
+  use unchecked files downloaded from untrusted places to be used in the ports
+  tree.
+
 20140607:
 AUTHOR: mva@FreeBSD.org
 

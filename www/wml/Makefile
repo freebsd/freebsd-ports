@@ -43,6 +43,6 @@ post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 test:
-	@cd ${WRKSRC} && ${GMAKE} test
+	@cd ${WRKSRC} && ${MAKE_CMD} test
 
 .include <bsd.port.post.mk>

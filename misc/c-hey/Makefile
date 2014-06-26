@@ -10,6 +10,9 @@ DISTNAME=	c-hey2.1
 MAINTAINER=	philip.reynolds@gmail.com
 COMMENT=	Terminal based instant messaging utility
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 GNU_CONFIGURE=	yes
 
 MAN1=		c-hey.1

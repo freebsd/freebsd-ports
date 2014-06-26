@@ -1,0 +1,13 @@
+--- Makefile.orig	2014-06-24 11:56:55.409948485 +0800
++++ Makefile	2014-06-24 11:57:17.105948669 +0800
+@@ -8,8 +8,8 @@ $(NAME): $(NAME).c
+ 	$(CC) $(CFLAGS) -o $@ $?
+ 
+ install: $(NAME)
+-	$(INSTALL) -s $(NAME) $(PREFIX)/bin
+-	gzip -c $(NAME).1 >$(PREFIX)/man/man1/$(NAME).1.gz
++	$(INSTALL) -s $(NAME) $(DESTDIR)$(PREFIX)/bin
++	gzip -c $(NAME).1 > $(DESTDIR)$(PREFIX)/man/man1/$(NAME).1.gz
+ 
+ socketpipe.exe: socketpipe-win.c
+ 	cl -o socketpipe.exe -W3 -Ox socketpipe-win.c mswsock.lib Ws2_32.lib Kernel32.lib

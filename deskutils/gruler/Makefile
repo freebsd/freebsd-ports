@@ -3,20 +3,19 @@
 
 PORTNAME=	gruler
 PORTVERSION=	0.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Simple customizable GTK screen ruler
 
-USES=		pkgconfig
-USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
-USE_AUTOTOOLS=	libtool
+USES=		pkgconfig pathfix libtool
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix libgnomeui libglade2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=""||' ${WRKSRC}/configure
 

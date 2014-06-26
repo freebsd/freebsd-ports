@@ -1,10 +1,17 @@
 bin/jbgtopbm
+bin/jbgtopbm85
 bin/pbmtojbg
+bin/pbmtojbg85
 include/jbig.h
+include/jbig85.h
+include/jbig_ar.h
 lib/libjbig.a
 lib/libjbig.so
-lib/libjbig.so.1
+lib/libjbig.so.2
+lib/libjbig85.a
+lib/libjbig85.so
+lib/libjbig85.so.1
 man/man1/jbgtopbm.1.gz
 man/man1/pbmtojbg.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/jbig.doc
+%%PORTDOCS%%%%DOCSDIR%%/jbig.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -10,6 +10,9 @@ MASTER_SITES=	http://thekonst.net/download/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode menu- and window-driven IM interface
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 USES=		iconv gmake tar:bzip2
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

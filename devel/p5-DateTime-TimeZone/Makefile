@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	1.70
+PORTVERSION=	1.71
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +16,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Class-Load>0:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Class-Singleton>=1.03:${PORTSDIR}/devel/p5-Class-Singleton \
+		p5-List-AllUtils>0:${PORTSDIR}/devel/p5-List-AllUtils \
 		p5-Params-Validate>=0.72:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output

@@ -46,7 +46,7 @@ post-patch:
 		${WRKSRC}/caff/caff
 	@${REINPLACE_CMD} -e 's|/usr/bin/pinentry-gtk-2|${LOCALBASE}/bin/pinentry-gtk-2|' \
 		${WRKSRC}/caff/README.gpg-agent
-	@${REINPLACE_CMD} -e 's|[[:<:]]make|${GMAKE}|' \
+	@${REINPLACE_CMD} -e 's|[[:<:]]make|${MAKE_CMD}|' \
 			-e '/^all/s|pgpring/pgpring||' \
 		${WRKSRC}/gpgwrap/Makefile \
 		${WRKSRC}/keyanalyze/Makefile

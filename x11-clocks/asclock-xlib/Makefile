@@ -2,7 +2,7 @@
 
 PORTNAME=	asclock-xlib
 PORTVERSION=	2.0.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -16,11 +16,6 @@ WRKSRC=		${WRKDIR}/asclock-xlib
 USE_XORG=	xpm x11
 USES=		imake
 
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	YES
-HAS_CONFIGURE=	YES
-.endif
-
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -28,12 +23,10 @@ post-patch:
 	  ${MV} config.c config.c.tmp; \
 	  ${SED} -e s@/usr/local/@${PREFIX}/@ -e s@/usr/share/asclock@${PREFIX}/share/asclock@ < config.c.tmp > config.c )
 
-.if defined(BATCH)
 pre-configure:
 	@(cd ${WRKSRC}; \
 	  ${RM} -rf default_theme; \
 	  ${LN} -s themes/Orb default_theme)
-.endif
 
 post-install:
 .for i in Freeamp Newstone Orb Stone beats classic penguin shaped

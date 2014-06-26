@@ -3,7 +3,7 @@
 
 PORTNAME=	rubrica
 PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	BERLIOS
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
@@ -16,9 +16,9 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		desktop-file-utils gmake pathfix pkgconfig tar:bzip2
+USES=		desktop-file-utils gmake libtool pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
 USE_GNOME=	gconf2 gnomeprefix libglade2
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 
@@ -26,6 +26,7 @@ GCONF_SCHEMAS=	rubrica2.schemas
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		`pkg-config --libs gthread-2.0`
 
 PORTDOCS=	*
 

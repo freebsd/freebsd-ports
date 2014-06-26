@@ -64,7 +64,7 @@ post-configure:
 
 pre-build:
 .for file in liboevent.cmi
-	@cd ${WRKSRC} && ${GMAKE} ${file}
+	@cd ${WRKSRC} && ${MAKE_CMD} ${file}
 .endfor
 
 do-install:

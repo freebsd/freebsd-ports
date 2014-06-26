@@ -3,6 +3,7 @@
 
 PORTNAME=	dungeon
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/:source \
 		ftp://ftp.ifarchive.com/if-archive/games/source/:source \
@@ -22,9 +23,9 @@ MAINTAINER=	sailor@63bit.net
 COMMENT=	Text adventure which became Zork I-III
 
 NO_WRKSUBDIR=	yes
-MAN6=		dungeon.6
 
 PLIST_FILES=	bin/dungeon \
+		man/man6/dungeon.6.gz \
 		%%DATADIR%%/dundat \
 		%%PORTDOCS%%%%DOCSDIR%%/dungn32b.zip
 PLIST_DIRS=	%%DATADIR%%

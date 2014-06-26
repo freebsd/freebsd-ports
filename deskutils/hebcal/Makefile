@@ -9,6 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-c/${PORTVERSION}/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Hebrew Calendar calculator
 
+USES=		makeinfo
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/hebcal \

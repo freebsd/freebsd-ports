@@ -2,6 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	0.6.9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -43,7 +44,7 @@ USE_OPENSSL=	yes
 
 .if ${PORT_OPTIONS:MGPERF}
  CMAKE_ARGS+=	-DENABLE_GPERF_TOOLS=ON
- LIB_DEPENDS+=	profiler.1:${PORTSDIR}/devel/google-perftools
+ LIB_DEPENDS+=	libprofiler.so:${PORTSDIR}/devel/google-perftools
 .endif
 
 .if ${PORT_OPTIONS:MREDIRECTOR}

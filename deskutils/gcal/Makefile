@@ -10,10 +10,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU Gregorian calendar program
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-USES=		shebangfix
+USES=		charsetfix shebangfix makeinfo tar:xz
 SHEBANG_FILES=	misc/gcalltx/gcalltxp.in misc/gcalltx/gcalltx.pl
 
 INFO=		gcal

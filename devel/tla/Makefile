@@ -37,7 +37,7 @@ pre-patch:
 	${MKDIR} ${WRKSRC}
 
 test:
-	cd ${WRKSRC} ; ${GMAKE} test
+	cd ${WRKSRC} ; ${MAKE_CMD} test
 
 pre-install:
 	${RM} -rf ${ORIGWRKSRC}/docs-tla/PLUGIN \

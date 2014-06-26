@@ -6,16 +6,17 @@ PORTVERSION=	201303202227
 PORTREVISION=	2
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://bsd.e-shell.net/local/
-DISTFILES=	cloudcity-${PORTVERSION}.tar.gz
 PKGNAMEPREFIX=	kde4-style-
+DISTNAME=	cloudcity-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	A configurable KDE style
+COMMENT=	Configurable KDE4 style
+
+LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/cloudcity
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USES=		cmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

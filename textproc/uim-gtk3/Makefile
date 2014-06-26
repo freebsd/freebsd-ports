@@ -27,10 +27,10 @@ IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/uim && ${GMAKE} libuim-x-util.la libuim-counted-init.la)
-	(cd ${WRKSRC}/gtk3 && ${GMAKE})
+	(cd ${WRKSRC}/uim && ${MAKE_CMD} libuim-x-util.la libuim-counted-init.la)
+	(cd ${WRKSRC}/gtk3 && ${MAKE_CMD})
 
 do-install:
-	(cd ${WRKSRC}/gtk3 && ${GMAKE} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk3 && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
 
 .include "${MASTERDIR}/Makefile"

@@ -39,7 +39,6 @@ SHEBANG_FILES=	migemo migemo-client migemo-grep migemo-server
 
 SKKDIC_FILE=	SKK-JISYO.L-20110813
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.am.ruby19 \

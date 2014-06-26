@@ -20,7 +20,7 @@ RUN_DEPENDS=	${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich2
 
 USES=		fortran gmake
 MAKEFILE=	makefile
-MAKE_ARGS=	GMAKE=${GMAKE} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
+MAKE_ARGS=	GMAKE=${MAKE_CMD} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
 		BLAS_LIB="${BLAS_LIB}" LAPACK_LIB="${LAPACK_LIB}"
 
 MPIDIR=		${LOCALBASE}
@@ -71,7 +71,7 @@ regression-test:	build
 . endif
 	${LOCALBASE}/bin/mpd &
 	@(cd ${BUILD_WRKSRC}/examples;	\
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bsrunexamples clean)
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bsrunexamples clean)
 	${LOCALBASE}/bin/mpdallexit
 .endif
 

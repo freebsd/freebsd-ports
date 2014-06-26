@@ -3,6 +3,7 @@
 
 PORTNAME=	traff
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +21,6 @@ LIBS+=		-L${LOCALBASE}/lib -largp
 OPTIONS_DEFINE=		MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -42,10 +42,7 @@ post-configure:
 		${WRKSRC}/Makefile ${WRKSRC}/traff.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/traff ${PREFIX}/sbin
-.	if !exists(${PREFIX}/etc/traff.conf)
-		${INSTALL_DATA} ${WRKSRC}/traff.conf ${PREFIX}/etc
-.	endif
-	${INSTALL_DATA} ${WRKSRC}/traff.conf ${PREFIX}/etc/traff.conf.default
+	${INSTALL_PROGRAM} ${WRKSRC}/traff ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/traff.conf ${STAGEDIR}${PREFIX}/etc/traff.conf.sample
 
 .include <bsd.port.mk>

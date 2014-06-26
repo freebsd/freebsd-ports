@@ -24,6 +24,9 @@ USES=		gmake pkgconfig
 USE_SDL=	image mixer sdl ttf
 USE_GNOME=	glib20
 
+DEPRECATED=	Development ceased, use 3omns
+EXPIRATION_DATE=2014-08-26
+
 PORTDOCS=	AUTHORS README.md
 OPTIONS_DEFINE=	DOCS
 

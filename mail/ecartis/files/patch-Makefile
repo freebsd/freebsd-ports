@@ -1,0 +1,41 @@
+--- Makefile.dist	2006-08-13 03:50:15.000000000 -0500
++++ Makefile	2014-05-19 20:04:56.636909101 -0500
+@@ -6,8 +6,8 @@
+ # they should be set.  All of them are conditional on options set in this
+ # file, so it should be relatively easy to determine which branch is correct
+ 
+-BINDIR = ..
+-MODDIR = ../modules
++BINDIR = ${DESTDIR}${PREFIX}/ecartis
++MODDIR = ${BINDIR}/modules
+ 
+ # First things first we need to set up some various options since OS's aren't
+ # as nice about things are they could be.
+@@ -33,7 +33,7 @@
+ # Uncomment this if you are on a BSD system AND you want dynamic modules
+ # SunOS (4 and 5 both) also needs this setting.
+ #
+-#BSDMOD = 1
++BSDMOD = 1
+ 
+ # Uncomment this if you are compiling on OpenBSD with modules (BSDMOD = 1)
+ #OBSDMOD = 1
+@@ -120,7 +120,6 @@
+ ifdef BSDIMOD
+ CC=shlicc
+ else
+-CC=gcc
+ endif
+ 
+ # Warning-level flags.  Under SunOS (4 and 5), this NEEDS TO BE BLANK.
+@@ -129,9 +128,7 @@
+ #
+ # It appears that IRIX is also rather stupid, and may require this
+ # to be removed.
+-WFLAGS=-Wall -Werror
+-# Uncomment this to build with gdb symbols (comment above line)
+-#WFLAGS=-ggdb -Wall -Werror
++WFLAGS:=${CFLAGS}
+ 
+ # Now set up the initial command line.  SUNOS_5 makes this a bit wierd.
+ ifndef SUNOS_5

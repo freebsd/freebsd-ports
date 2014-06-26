@@ -3,19 +3,18 @@
 PORTNAME=	xkeyboard-config
 PORTVERSION=	2.11
 CATEGORIES=	x11
+MASTER_SITE_SUBDIR=	individual/${XORG_CAT}/${PORTNAME}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Keyboard Configuration Database
-MASTER_SITE_SUBDIR=	individual/${XORG_CAT}/${PORTNAME}
 
 LICENSE=	MIT
 
 BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
 XORG_CAT=	data
 
-USE_BZIP2=	yes
+USES=		gmake pathfix perl5 tar:bzip2
 USE_GNOME=	intlhack libxslt:build
-USES=		gmake pathfix perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
@@ -23,6 +22,10 @@ CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
 		--with-xkb-rules-symlink=xorg
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	ETERSOFT
+ETERSOFT_DESC=	Add pre-1918 Russian letters to typographic layout
+ETERSOFT_EXTRA_PATCHES=	${FILESDIR}/etersoft-patch-symbols-typo
 
 .include <bsd.port.options.mk>
 

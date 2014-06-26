@@ -14,21 +14,17 @@ COMMENT=	Display 802.11 status in the WindowMaker Dock
 
 USE_XORG=	xpm
 
-MAN1=		wmwave.1
-PLIST_FILES=	bin/wmwave
-
+PLIST_FILES=	bin/wmwave man/man1/wmwave.1.gz
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
 CFLAGS+=	-DWICACHE -I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib -lX11 -lXpm -lXext -lm
 
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/wmgeneral.c \
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmwave.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

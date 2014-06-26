@@ -22,7 +22,7 @@ DIST_SUBDIR=	tex
 
 CONFLICTS=	teTeX*
 
-USES=		gmake desthack
+USES=		desthack gmake makeinfo
 GNU_CONFIGURE=	yes
 
 INFO=		kpathsea web2c
@@ -44,7 +44,7 @@ post-configure:
 
 do-build:
 	@(cd ${WRKSRC}; unset `env|${GREP} ^TEX|${SED} -e s/=.*//`; \
-	    ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${ALL_TARGET})
+	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${ALL_TARGET})
 
 post-install:
 	@for i in kpsewhich dmp bibtex dvicopy dvitomp dvitype gftodvi gftopk \

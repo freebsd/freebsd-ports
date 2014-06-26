@@ -23,25 +23,26 @@ PLIST_FILES=	etc/pop3vscan.conf.sample \
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+DEPRECATED=	No longer maintained by upstream
+EXPIRATION_DATE=2014-08-24
+
 post-extract:
 	@${RM} ${WRKSRC}/ripmime/ripmime.a
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,g' ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e 's,#endif.*,#endif,g' ${WRKSRC}/*.h
-	@${REINPLACE_CMD} -e 's,make,${GMAKE},g' ${WRKSRC}/ripmime/build_tnef
+	@${REINPLACE_CMD} -e 's,make,${MAKE_CMD},g' ${WRKSRC}/ripmime/build_tnef
 	@${REINPLACE_CMD} -e 's,=4321,=_BYTE_ORDER -include /usr/include/machine/endian.h,g' \
 		${WRKSRC}/ripmime/tnef/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pop3vscan ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/pop3vscan.conf ${PREFIX}/etc/pop3vscan.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/pop3vscan.mail ${PREFIX}/etc/pop3vscan.mail.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/pop3vscan.sh ${PREFIX}/etc/rc.d/
+	${INSTALL_PROGRAM} ${WRKSRC}/pop3vscan ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/pop3vscan.conf ${STAGEDIR}${PREFIX}/etc/pop3vscan.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/pop3vscan.mail ${STAGEDIR}${PREFIX}/etc/pop3vscan.mail.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/pop3vscan.sh ${STAGEDIR}${PREFIX}/etc/rc.d/
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 
-USES=		libtool:oldver tar:bzip2
+USES=		libtool:oldver makeinfo tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"

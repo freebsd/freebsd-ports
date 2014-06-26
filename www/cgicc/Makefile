@@ -3,6 +3,7 @@
 
 PORTNAME=	cgicc
 PORTVERSION=	3.2.14
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
@@ -13,8 +14,8 @@ LICENSE=	LGPL3 # (or later)
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake pathfix
-USE_AUTOTOOLS=	libtool
+USES=		gmake pathfix libtool
+GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 USE_LDCONFIG=	yes

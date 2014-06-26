@@ -18,8 +18,6 @@ MAKE_ARGS=	PLATFORM=freebsd\
 MAKEFILE=	makefile
 ALL_TARGET=
 
-PLIST_FILES=	sbin/vblade sbin/vbladed
-MAN8=		vblade.8
+PLIST_FILES=	sbin/vblade sbin/vbladed man/man8/vblade.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

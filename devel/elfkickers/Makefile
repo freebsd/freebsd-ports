@@ -26,7 +26,7 @@ post-patch:
 
 do-build:
 .for f in ${ELFBINS}
-	@(cd ${WRKSRC}/$f; ${GMAKE})
+	@(cd ${WRKSRC}/$f; ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
 .endfor
 
 do-install:

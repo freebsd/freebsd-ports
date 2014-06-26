@@ -23,6 +23,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 test:
-	@cd ${WRKSRC} && ${GMAKE} check
+	@cd ${WRKSRC} && ${MAKE_CMD} check
 
 .include <bsd.port.mk>

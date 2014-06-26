@@ -31,13 +31,13 @@ post-patch:
 	${WRKSRC}/sql/pgpool-recovery/Makefile
 
 post-build:
-	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE}
+	@cd ${WRKSRC}/sql/pgpool-recovery && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${EXAMPLESDIR}
 
 post-install:
-	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE} DESTDIR=${STAGEDIR} ${INSTALL_TARGET}
+	@cd ${WRKSRC}/sql/pgpool-recovery && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} DESTDIR=${STAGEDIR} ${INSTALL_TARGET}
 	${INSTALL_DATA} ${WRKSRC}/sample/dist_def_pgbench.sql ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/replicate_def_pgbench.sql ${STAGEDIR}${DATADIR}
 .for f in pgpool_recovery pgpool_recovery_pitr pgpool_remote_start

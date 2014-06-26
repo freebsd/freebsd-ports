@@ -73,7 +73,7 @@ post-patch:
 pre-configure:
 	cd ${COCOALIB-GIAC} && \
 	./configure --with-libgmp=${LOCALBASE}/lib/libgmp.a --with-cxx=${CXX}&& \
-	${GMAKE} library && \
+	${MAKE_CMD} library && \
 	cd ${FLTKDEV-GIAC} && \
 	./configure --prefix=${FLTKDEV-GIAC} \
 	&& cd src && ${MAKE}

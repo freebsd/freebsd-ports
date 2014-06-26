@@ -116,15 +116,15 @@ post-patch:
 
 pre-build:
 .if ${LIBGDA5_SLAVE}==postgresql
-	cd ${WRKSRC}/providers/reuseable/postgres && ${GMAKE} libgda-postgres.la
+	cd ${WRKSRC}/providers/reuseable/postgres && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} libgda-postgres.la
 .endif
 
 .if ${LIBGDA5_SLAVE}==mysql
-	cd ${WRKSRC}/providers/reuseable/mysql && ${GMAKE} libgda-mysql.la
+	cd ${WRKSRC}/providers/reuseable/mysql && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} libgda-mysql.la
 .endif
 
 .if ${LIBGDA5_SLAVE}==ui
-	cd ${WRKSRC}/libgda && ${GMAKE} gda-enum-types.h
+	cd ${WRKSRC}/libgda && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} gda-enum-types.h
 .endif
 
 .if ${LIBGDA5_SLAVE}==no

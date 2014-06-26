@@ -46,7 +46,7 @@ do-install:
 
 .if !defined(BATCH)
 test:
-	cd ${WRKSRC} && ${MAKE_ENV} ${GMAKE} test  # Now type something!
+	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_CMD} test  # Now type something!
 .endif
 
 .include <bsd.port.mk>

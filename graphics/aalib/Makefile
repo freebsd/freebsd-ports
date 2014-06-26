@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	X11
 
-USES=		libtool:keepla ncurses
+USES=		libtool:keepla ncurses makeinfo
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

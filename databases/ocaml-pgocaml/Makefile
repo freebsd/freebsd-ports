@@ -25,6 +25,7 @@ USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 
 INSTALL_TARGET=	findlib_install
+ALL_TARGET=	depend all
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
@@ -33,8 +34,5 @@ NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's/-pp "camlp4o/-pp "camlp4o.byte/g' ${WRKSRC}/Makefile
 .endif
-
-pre-build:
-	cd ${WRKSRC}; ${GMAKE} depend
 
 .include <bsd.port.post.mk>

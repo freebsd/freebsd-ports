@@ -23,8 +23,6 @@ USE_PYDISTUTILS=yes
 USES=		twisted:run,web
 PORTDOCS=	CHANGELOG CREDITS README
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -37,15 +35,10 @@ RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/hellanzb.conf ]; then \
-		${ECHO} "Installing default configuration file."; \
-		${INSTALL_DATA} ${WRKSRC}/etc/hellanzb.conf.sample ${PREFIX}/etc/hellanzb.conf; \
-	fi
-
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

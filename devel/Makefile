@@ -148,8 +148,6 @@
     SUBDIR += bsdcflow
     SUBDIR += bufferpool
     SUBDIR += bug-buddy
-    SUBDIR += bugzilla40
-    SUBDIR += bugzilla42
     SUBDIR += bugzilla44
     SUBDIR += build
     SUBDIR += buildbot
@@ -583,6 +581,7 @@
     SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
+    SUBDIR += gmake-lite
     SUBDIR += gnatcoll
     SUBDIR += gnatpython
     SUBDIR += gnome-common
@@ -3759,6 +3758,7 @@
     SUBDIR += py-pbr
     SUBDIR += py-pefile
     SUBDIR += py-period
+    SUBDIR += py-phabricator
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
     SUBDIR += py-pip
@@ -4303,6 +4303,7 @@
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-igraph
+    SUBDIR += rubygem-inflecto
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
@@ -4398,6 +4399,7 @@
     SUBDIR += rubygem-require_all
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rr
+    SUBDIR += rubygem-rrd-ffi
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rspec
     SUBDIR += rubygem-rspec-core
@@ -4579,6 +4581,7 @@
     SUBDIR += swank-clojure
     SUBDIR += swig13
     SUBDIR += swig20
+    SUBDIR += swig30
     SUBDIR += synfig
     SUBDIR += sysconftool
     SUBDIR += sysfsutils
@@ -4652,6 +4655,7 @@
     SUBDIR += upslug
     SUBDIR += urjtag
     SUBDIR += ustl
+    SUBDIR += utf8cpp
     SUBDIR += uthash
     SUBDIR += valgrind
     SUBDIR += valgrind-devel

@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 HAS_CONFIGURE=	yes
 
 test: all
-	cd ${WRKSRC}/test && ${GMAKE} all test
+	cd ${WRKSRC}/test && ${MAKE_CMD} all test
 
 BINARIES=	bib2xml biblatex2xml copac2xml ebi2xml end2xml endx2xml \
 		isi2xml med2xml modsclean ris2xml wordbib2xml xml2ads \

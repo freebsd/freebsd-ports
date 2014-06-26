@@ -2,47 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	latexdiff
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES=	print perl5
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	support
+MASTER_SITES=	TEX_CTAN/support
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	Zeliboba@mail.ru
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Determine and mark up significant differences between latex files
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+LICENSE=	GPLv3
 
 USES=		perl5 zip
 USE_PERL5=	run
 NO_BUILD=	yes
 
-MAN1=		latexdiff.1 \
-		latexdiff-vc.1 \
-		latexrevise.1
-
-PLIST_FILES=	bin/latexdiff \
-		bin/latexdiff-fast \
-		bin/latexdiff-so \
-		bin/latexdiff-vc \
-		bin/latexdiff-wrap \
-		bin/latexrevise
-
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e "s,\/bin\/bash,${LOCALBASE}\/bin\/bash," \
-	${WRKSRC}/contrib/latexdiff-wrap
-
 do-install:
-	${MKDIR} ${PREFIX}/bin ${MANPREFIX}/man/man1
-	( cd ${WRKSRC} && ${INSTALL_SCRIPT} latexdiff-fast latexdiff-so \
-	latexdiff-vc latexrevise contrib/latexdiff-wrap ${PREFIX}/bin && \
-	${INSTALL_MAN} latexdiff.1 latexdiff-vc.1 latexrevise.1 \
-	${MANPREFIX}/man/man1 )
-	${LN} -s ${PREFIX}/bin/latexdiff-so ${PREFIX}/bin/latexdiff
-
-test:
-	( cd ${WRKSRC} && ${MAKE} test-so test-fast )
+.for i in latexdiff-fast latexdiff-so latexdiff-vc latexrevise
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
+.endfor
+.for m in latexdiff.1 latexdiff-vc.1 latexrevise.1
+	${INSTALL_MAN} ${WRKSRC}/${m} ${STAGEDIR}${MAN1PREFIX}/man/man1
+.endfor
+	${LN} -s latexdiff-so ${STAGEDIR}${PREFIX}/bin/latexdiff
 
 .include <bsd.port.mk>

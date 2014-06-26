@@ -3,6 +3,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.22.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	122
@@ -12,7 +13,7 @@ COMMENT=	The wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki119-[0-9]* mediawiki12[01]-[0-9]*
+CONFLICTS=	mediawiki119-[0-9]* mediawiki121-[0-9]* mediawiki123-[0-9]*
 
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom json
 WANT_PHP_WEB=	yes
@@ -21,7 +22,7 @@ MEDIAWIKIDIR?=	www/mediawiki
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
-OPTIONS_DEFAULT=MYSQL APC
+OPTIONS_DEFAULT=MYSQL
 
 MEMCACHED_DESC=	use memcached
 APC_DESC=	use pecl-APC(Mediawiki recommended)

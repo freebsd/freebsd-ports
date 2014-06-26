@@ -1,56 +1,20 @@
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -842,18 +841,6 @@
- 
- #############################################################################
- #############################################################################
--###########################      Find OpenGL       ##########################
--#############################################################################
--#############################################################################
--SET(OPENGL_LIBRARY ${CMAKE_ROOT}/Modules/FindOpenGL.cmake)
--INCLUDE(${CMAKE_ROOT}/Modules/FindOpenGL.cmake)
--
--MESSAGE(STATUS "OpenGL include directory: " ${OPENGL_INCLUDE_DIR})
--
--INCLUDE_DIRECTORIES(SYSTEM ${OPENGL_INCLUDE_DIR})
--
--#############################################################################
--#############################################################################
- ######################### wxWidgets LIBRARIES SETUP #########################
- #############################################################################
- #############################################################################
-@@ -864,6 +851,11 @@
- FIND_PACKAGE(wxWidgets)
- 
- IF(wxWidgets_FOUND)
-+	SET(OPENGL_LIBRARY ${CMAKE_ROOT}/Modules/FindOpenGL.cmake)
-+	INCLUDE(${CMAKE_ROOT}/Modules/FindOpenGL.cmake)
-+	MESSAGE(STATUS "OpenGL include directory: " ${OPENGL_INCLUDE_DIR})
-+	INCLUDE_DIRECTORIES(SYSTEM ${OPENGL_INCLUDE_DIR})
-+
- 	# Include wxWidgets macros
- 	INCLUDE(${wxWidgets_USE_FILE})
- 	MESSAGE( STATUS "wxWidgets include directory: " ${wxWidgets_INCLUDE_DIRS} )
-@@ -955,16 +947,14 @@
- 
- #############################################################################
- 
--#Install target
-+#Install targets
- IF(wxWidgets_FOUND)
--	INSTALL(TARGETS luxrender luxrenderwx luxconsole luxmerger
--      	  RUNTIME DESTINATION bin
--	)
--ELSE(wxWidgets_FOUND)
--	INSTALL(TARGETS luxrender luxconsole luxmerger
--      	  RUNTIME DESTINATION bin
--	)
-+	INSTALL(TARGETS luxrenderwx RUNTIME DESTINATION bin)
- ENDIF(wxWidgets_FOUND)
-+IF(QT4_FOUND)
-+	INSTALL(TARGETS luxrender RUNTIME DESTINATION bin)
-+ENDIF(QT4_FOUND)
-+INSTALL(TARGETS luxconsole luxmerger RUNTIME DESTINATION bin)
- 
- #Install API/Library
- INSTALL(FILES ${CMAKE_SOURCE_DIR}/core/api.h DESTINATION include/luxrender/)
+@@ -179,7 +179,7 @@ IF(NOT APPLE AND NOT WIN32)
+ 	STRING(REGEX MATCH "(x86_64-*)|(X86_64-*)|(AMD64-*)|(amd64-*)" _mach_x86_64 ${MACHINE})
+ 	IF (_mach_x86_64)
+ 		SET(ARCH_X86_64 1)
+-		SET(LIB_SUFFIX 64)
++		#SET(LIB_SUFFIX 64)
+ 		#jromang - Hack to avoid boost bug on x64  Ubuntu 8.10 and Fedora 10 (http://www.luxrender.net/mantis/view.php?id=433)
+ 		ADD_DEFINITIONS(-DBOOST_NO_INTRINSIC_INT64_T)
+ 	ENDIF (_mach_x86_64)
+@@ -298,7 +298,7 @@ ELSEIF(MSVC)
+ ELSE(APPLE)
+ 	# Dade - default compiler options
+ 	# Removed "-O3" from definitions in order to have CMake Release/Debug options to work
+-	ADD_DEFINITIONS(-msse2 -mfpmath=sse -ftree-vectorize -funroll-loops -Wall -fPIC -DHAVE_PTHREAD_H)
++	ADD_DEFINITIONS(-Wall -fPIC -DHAVE_PTHREAD_H)
+ 	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fvisibility=hidden -fvisibility-inlines-hidden")
+ 	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fvisibility=hidden -fvisibility-inlines-hidden")
+ 	# The QBVH accelerator needs to be compiled with much reduced optimizations

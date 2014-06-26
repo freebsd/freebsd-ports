@@ -12,6 +12,9 @@ DISTNAME=	Eterm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports korean
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
 
 USES=		perl5 gmake

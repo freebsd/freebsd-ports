@@ -84,6 +84,18 @@ $1 == "@fontsdir" {
 	next
 }
 
+$1 == "@dirrmtry" {
+	directory=substr($0, 11, length($0) - 10)
+	print "@comment begin " $0
+	if ($2 ~ /^\//) {
+		print "@unexec rmdir \"" directory "\" 2>/dev/null || true"
+	} else {
+		print "@unexec rmdir \"%D/" directory "\" 2>/dev/null || true"
+	}
+	print "@comment end " $0
+	next
+}
+
 # Print everything else as-is
 {
   print $0

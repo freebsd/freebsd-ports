@@ -141,7 +141,7 @@ post-build:
 .endif
 
 do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} MAKE=${GMAKE}	\
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} MAKE=${MAKE_CMD}	\
 	${AUTOTOOLS_VARS} ./autogen.sh --localstatedir=${LOCALSTATEDIR} \
 		--prefix=${LOCALSTATEDIR} --exec-prefix=${PREFIX} \
 		--libexecdir=${LIBEXECDIR} \

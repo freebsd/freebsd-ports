@@ -1,0 +1,26 @@
+Etersoft version of typographic keyboard layout.  It removes Yen symbol `¥'
+(can be easily inserted via "Compose Y =") and adds four letters of Russian
+orthography that were removed during the reform of 1917-1918.
+
+Original upstream bugzilla request:
+
+	http://bugs.etersoft.ru/show_bug.cgi?id=5466
+
+Description (in Russian) and the picture of keyboard layout:
+
+	http://kb.etersoft.ru/Типографская_раскладка_Etersoft
+
+--- symbols/typo.orig
++++ symbols/typo
+@@ -29,7 +29,10 @@
+     key <AD03> { [NoSymbol, NoSymbol, EuroSign] }; // "e"
+     key <AD04> { [NoSymbol, NoSymbol, registered] }; // "r"
+     key <AD05> { [NoSymbol, NoSymbol, trademark] }; // "t"
+-    key <AD06> { [NoSymbol, NoSymbol, yen] }; // "y"
++    key <AD06> { [NoSymbol, NoSymbol, U0463, U0462] };
++    key <AD07> { [NoSymbol, NoSymbol, U0475, U0474] };
++    key <AD08> { [NoSymbol, NoSymbol, U0456, U0406] };
++    key <AD09> { [NoSymbol, NoSymbol, U0473, U0472] };
+     key <AD10> { [NoSymbol, NoSymbol, acute, doubleacute] }; // "p"
+     key <AD11> { [NoSymbol, NoSymbol, bracketleft, braceleft] }; // [
+     key <AD12> { [NoSymbol, NoSymbol, bracketright, braceright] }; // ]

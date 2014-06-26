@@ -31,18 +31,18 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in \
 		${PATCHDIR}/extra-patch-gtk2_dict_Makefile.in
 
 do-build:
-	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy.la)
-	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy-utf8.la)
+	(cd ${WRKSRC}/uim && ${MAKE_CMD} libuim-anthy.la)
+	(cd ${WRKSRC}/uim && ${MAKE_CMD} libuim-anthy-utf8.la)
 .if !defined(WITHOUT_X11)
-	(cd ${WRKSRC}/gtk2/dict && ${GMAKE} uim-dict-gtk)
+	(cd ${WRKSRC}/gtk2/dict && ${MAKE_CMD} uim-dict-gtk)
 .endif
 
 do-install:
 	(cd ${WRKSRC}/uim && \
-	${GMAKE} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy.la install-uim_pluginLTLIBRARIES && \
-	${GMAKE} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy-utf8.la install-uim_pluginLTLIBRARIES)
+	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy.la install-uim_pluginLTLIBRARIES && \
+	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy-utf8.la install-uim_pluginLTLIBRARIES)
 .if !defined(WITHOUT_X11)
-	(cd ${WRKSRC}/gtk2/dict && ${GMAKE} DESTDIR=${STAGEDIR} bin_PROGRAMS=uim-dict-gtk install-binPROGRAMS install-uim_dict_uiDATA)
+	(cd ${WRKSRC}/gtk2/dict && ${MAKE_CMD} DESTDIR=${STAGEDIR} bin_PROGRAMS=uim-dict-gtk install-binPROGRAMS install-uim_dict_uiDATA)
 .endif
 
 .include "${MASTERDIR}/Makefile"

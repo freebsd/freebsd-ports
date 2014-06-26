@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -12,6 +12,7 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Alternate menu for the Xfce Desktop
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

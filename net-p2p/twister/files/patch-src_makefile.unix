@@ -1,0 +1,38 @@
+--- src/makefile.unix.orig	2014-06-20 21:38:49.000000000 +0200
++++ src/makefile.unix	2014-06-21 16:53:52.000000000 +0200
+@@ -63,7 +63,6 @@
+ LIBS+= \
+  -Wl,-B$(LMODE2) \
+    -l z \
+-   -l dl \
+    -l pthread
+ 
+ 
+@@ -105,7 +104,7 @@
+ 
+ # CXXFLAGS can be specified on the make command line, so we use xCXXFLAGS that only
+ # adds some defaults in front. Unfortunately, CXXFLAGS=... $(CXXFLAGS) does not work.
+-xCXXFLAGS=-O2 -pthread -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter \
++xCXXFLAGS= -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter \
+     $(DEBUGFLAGS) $(DEFS) $(HARDENING) $(CXXFLAGS)
+ 
+ # LDFLAGS can be specified on the make command line, so we use xLDFLAGS that only
+@@ -113,7 +112,6 @@
+ xLDFLAGS=$(LDHARDENING) $(LDFLAGS)
+ 
+ OBJS= \
+-    leveldb/libleveldb.a \
+     ../libtorrent/src/.libs/libtorrent-rasterbar.a \
+     obj/alert.o \
+     obj/version.o \
+@@ -169,9 +167,7 @@
+ # LevelDB support
+ #
+ MAKEOVERRIDES =
+-LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
+-DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
+-DEFS += $(addprefix -I,$(CURDIR)/leveldb/helpers)
++LIBS += -l leveldb -l memenv
+ leveldb/libleveldb.a:
+ 	@echo "Building LevelDB ..." && cd leveldb && $(MAKE) CC="$(CC)" CXX="$(CXX)" OPT="$(xCXXFLAGS)" libleveldb.a libmemenv.a && cd ..
+ 

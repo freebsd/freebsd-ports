@@ -10,10 +10,11 @@ MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
 		ftp://ftp.pasta.cs.uit.no/pub/IPv6/kame/misc/ \
 		ftp://ftp.ipv6.uni-leipzig.de/pub/ftp.kame.net/pub/kame/misc/
 DISTNAME=	${PORTNAME}
-IGNOREFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Test bind() semantics of IPv6 sockets
+
+BROKEN=		no distinfo provided
 
 USES=		tar:tgz
 

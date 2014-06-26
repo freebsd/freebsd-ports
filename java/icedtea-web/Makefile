@@ -110,9 +110,9 @@ post-install:
 
 .if ${PORT_OPTIONS:MTEST}
 test:	build
-	@(cd ${WRKSRC}; ${GMAKE} check)
+	@(cd ${WRKSRC}; ${MAKE_CMD} check)
 .if ${PORT_OPTIONS:MPLUGIN}
-	@(cd ${WRKSRC}; ${GMAKE} plugin-tests)
+	@(cd ${WRKSRC}; ${MAKE_CMD} plugin-tests)
 .endif
 .endif
 

@@ -4,6 +4,6 @@
  #define KIFACE_INSTANCE_NAME_AND_VERSION   "KIFACE_1"
  
 -#if defined(__linux__)
-+#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__DragonFly__)
   #define LIB_ENV_VAR    wxT( "LD_LIBRARY_PATH" )
  #elif defined(__WXMAC__)

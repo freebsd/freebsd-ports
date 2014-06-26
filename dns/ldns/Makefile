@@ -120,18 +120,18 @@ post-configure:
 
 post-build:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	 @(cd ${WRKSRC}/examples; ${GMAKE})
+	 @(cd ${WRKSRC}/examples; ${MAKE_CMD})
 .endif
 .if ${PORT_OPTIONS:MDRILL}
-	 @(cd ${WRKSRC}/drill; ${GMAKE})
+	 @(cd ${WRKSRC}/drill; ${MAKE_CMD})
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@(cd ${WRKSRC}/examples; ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/examples; ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 .if ${PORT_OPTIONS:MDRILL}
-	@(cd ${WRKSRC}/drill; ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/drill; ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 	${INSTALL_DATA} ${WRKSRC}/packaging/libldns.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 

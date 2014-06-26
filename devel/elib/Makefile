@@ -12,6 +12,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Collection of useful routines for Emacs lisp programs
 
+USES=		makeinfo
 # setupel filename
 PORT_SETUPEL=	elib-startup.el
 

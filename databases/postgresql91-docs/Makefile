@@ -30,7 +30,7 @@ BUILD_DEPENDS+=	onsgmls:${PORTSDIR}/textproc/opensp			\
 		${dbdir}/4.2:${PORTSDIR}/textproc/docbook-sgml
 
 do-build:
-	${GMAKE} -C ${WRKSRC} html
+	${MAKE_CMD} -C ${WRKSRC} html
 
 do-install:
 	@ $(MKDIR) ${STAGEDIR}${PGDOCSDIR}

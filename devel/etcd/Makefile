@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	etcd
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Highly-available key value store and service discovery
 
 LICENSE=	APACHE20
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	935d251
+GH_COMMIT=	367f873
 
 PLIST_FILES=	bin/bench \
 		bin/etcd

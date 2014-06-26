@@ -12,27 +12,17 @@ MAINTAINER=	tconfpy@tundraware.com
 COMMENT=	Python Configuration File Parser
 
 USE_PYTHON=	yes
-INSTALLS_EGGINFO=	yes
-PYDISTUTILS_PKGNAME=	tconfpy
-PYDISTUTILS_PKGVERSION=	0.0.0
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-MANCOMPRESSED=	yes
-MAN1=		test-tc.1
-MAN3=		tconfpy.3
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	READ-1ST.txt WHATSNEW.txt tconfpy-license.txt tconfpy.html tconfpy.pdf tconfpy.ps tconfpy.txt test-tc.html test-tc.pdf test-tc.ps test-tc.txt
 
-NO_STAGE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
-		${WRKSRC}/Makefile
-
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/test-tc.1.gz ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/tconfpy.3.gz ${STAGEDIR}${PREFIX}/man/man3/
 
 .include <bsd.port.mk>

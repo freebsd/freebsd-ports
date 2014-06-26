@@ -16,5 +16,4 @@ LICENSE=	BSD2CLAUSE
 PLIST_FILES=	bin/portsearch %%DATADIR%%/Makefile
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ DIST_SUBDIR=	exim
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Documentation for the Exim MTA in multiple formats
 
-USE_BZIP2=	yes
+USES=		makeinfo tar:bzip2
 NO_STAGE=	yes
 
 DOCFORMAT?=	html

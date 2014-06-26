@@ -13,7 +13,7 @@ BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
 		gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		bison gmake tar:bzip2
+USES=		bison gmake makeinfo tar:bzip2
 GNU_CONFIGURE=	yes
 # install flex header to its own dir to avoid conflict with system flex.
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex --disable-shared

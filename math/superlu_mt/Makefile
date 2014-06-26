@@ -91,8 +91,8 @@ post-patch:
 		${WRKSRC_SHARED}/make.inc
 
 do-build:
-	cd ${WRKSRC} ; ${GMAKE} LDFLAGS="${LDFLAGS}"
-	cd ${WRKSRC_SHARED} ; ${GMAKE} LDFLAGS="${LDFLAGS}"
+	cd ${WRKSRC} ; ${MAKE_CMD} LDFLAGS="${LDFLAGS}"
+	cd ${WRKSRC_SHARED} ; ${MAKE_CMD} LDFLAGS="${LDFLAGS}"
 	${RM} -rf ${WRKDIR}/tmp_static
 	${MKDIR} ${WRKDIR}/tmp_static
 	cd ${WRKDIR}/tmp_static
@@ -120,7 +120,7 @@ do-install:
 .endif
 
 regression-test: do-build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} testing)
-	@(cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} ${GMAKE} testing)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} testing)
+	@(cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} testing)
 
 .include <bsd.port.post.mk>

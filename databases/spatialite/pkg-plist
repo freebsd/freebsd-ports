@@ -17,8 +17,8 @@ include/spatialite/gg_mbr.h
 include/spatialite/gg_structs.h
 include/spatialite/spatialite.h
 lib/libspatialite.a
-lib/libspatialite.la
 lib/libspatialite.so
-lib/libspatialite.so.6
+lib/libspatialite.so.5
+lib/libspatialite.so.5.1.0
 libdata/pkgconfig/spatialite.pc
 @dirrm include/spatialite

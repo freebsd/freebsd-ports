@@ -3,7 +3,7 @@
 
 PORTNAME=	libdmtx
 PORTVERSION=	0.7.4
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,9 +12,9 @@ COMMENT=	Library for reading and writing Data Matrix barcodes
 
 LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 
-USE_BZIP2=	yes
-USE_LDCONFIG=	yes
+USES=		tar:bzip2 libtool
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^pkgconfigdir /s:(libdir):{prefix}/libdata:' \

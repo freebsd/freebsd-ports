@@ -109,66 +109,66 @@ PLIST_SUB+=	OVIMUnicode="@comment "
 
 do-build:
 .if ${PORT_OPTIONS:MOVIMArray}
-	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 .endif
 .if ${PORT_OPTIONS:MOVIMBig5}
-	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 .endif
 #.if ${PORT_OPTIONS:MOVIMBoshiamy}
-#	@(cd ${WRKSRC}/Modules/OVIMBoshiamy; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+#	@(cd ${WRKSRC}/Modules/OVIMBoshiamy; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 #.endif
 .if ${PORT_OPTIONS:MOVIMGeneric}
-	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 .endif
 .if ${PORT_OPTIONS:MOVIMPOJ_Holo}
-	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 .endif
 .if ${PORT_OPTIONS:MOVIMPhonetic}
-	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 .endif
 .if ${PORT_OPTIONS:MOVIMSpaceChewing}
-	@(cd ${WRKSRC}/Modules/OVIMSpaceChewing0.3; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} data all)
+	@(cd ${WRKSRC}/Modules/OVIMSpaceChewing0.3; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} data all)
 .endif
 .if ${PORT_OPTIONS:MOVIMRoman}
-	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 .endif
 .if ${PORT_OPTIONS:MOVIMTibetan}
-	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 .endif
 .if ${PORT_OPTIONS:MOVIMUnicode}
-	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all)
 .endif
 
 do-install:
 .if ${PORT_OPTIONS:MOVIMArray}
-	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 .if ${PORT_OPTIONS:MOVIMBig5}
-	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 #.if ${PORT_OPTIONS:MOVIMBoshiamy}
-#	@(cd ${WRKSRC}/Modules/OVIMBoshiamy; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+#	@(cd ${WRKSRC}/Modules/OVIMBoshiamy; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 #.endif
 .if ${PORT_OPTIONS:MOVIMGeneric}
-	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 .if ${PORT_OPTIONS:MOVIMPOJ_Holo}
-	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMPOJ-Holo; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 .if ${PORT_OPTIONS:MOVIMPhonetic}
-	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 .if ${PORT_OPTIONS:MOVIMRoman}
-	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 .if ${PORT_OPTIONS:MOVIMSpaceChewing}
-	@(cd ${WRKSRC}/Modules/OVIMSpaceChewing0.3; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMSpaceChewing0.3; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 .if ${PORT_OPTIONS:MOVIMTibetan}
-	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 .if ${PORT_OPTIONS:MOVIMUnicode}
-	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+	@(cd ${WRKSRC}/Modules/OVIMUnicode; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install)
 .endif
 
 .include <bsd.port.mk>

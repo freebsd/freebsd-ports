@@ -1,0 +1,36 @@
+--- pbmtools/pbmtojbg85.c	2014-03-27 14:47:15.000000000 -0400
++++ pbmtools/pbmtojbg85.c	2014-04-08 09:00:16.000000000 -0400
+@@ -71,8 +71,12 @@
+   if (c != EOF) {
+     ungetc(c, f);
+-    fscanf(f, "%lu", &i);
+-  }
++    if (fscanf(f, "%lu", &i) == 1)
++       return i;
++    else
++       fprintf(stderr, "%s: corrupt input", progname);
++  } else
++       fprintf(stderr, "%s: unexpected end of input", progname);
+ 
+-  return i;
++  return -1;
+ }
+
+--- pbmtools/pbmtojbg.c	2014-03-27 14:47:15.000000000 -0400
++++ pbmtools/pbmtojbg.c	2014-04-08 09:00:16.000000000 -0400
+@@ -87,8 +87,12 @@
+   if (c != EOF) {
+     ungetc(c, f);
+-    fscanf(f, "%lu", &i);
+-  }
++    if (fscanf(f, "%lu", &i) == 1)
++       return i;
++    else
++       fprintf(stderr, "%s: corrupt input", progname);
++  } else
++       fprintf(stderr, "%s: unexpected end of input", progname);
+ 
+-  return i;
++  return -1;
+ }
+ 

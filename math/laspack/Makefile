@@ -14,16 +14,16 @@ COMMENT=	Package for solving large sparse systems of linear equations
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
-MAKE_ENV+=	HOME=${STAGEDIR}${PREFIX}
+MAKE_ARGS=	HOME=${STAGEDIR}${PREFIX}
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+/usr/local+${LOCALBASE}+g' ${WRKSRC}/${MAKEFILE}
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${STAGEDIR}${DOCSDIR}
 
 .ifdef MAINTAINER_MODE
 regression-test:

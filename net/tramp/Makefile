@@ -40,13 +40,13 @@ PLIST_SUB+=	EMACS20_ONLY="@comment "
 
 pre-build:
 .if ${EMACS_PORT_NAME} == emacs20
-	(cd ${WRKSRC}/contrib; ${GMAKE})
+	(cd ${WRKSRC}/contrib; ${MAKE_CMD})
 .endif
 	${LN} -sf ../contrib/password.el ${WRKSRC}/lisp
 
 post-install:
 .if ${EMACS_PORT_NAME} == emacs20
-	(cd ${WRKSRC}/contrib; ${GMAKE} install)
+	(cd ${WRKSRC}/contrib; ${MAKE_CMD} install)
 .endif
 
 .include <bsd.port.post.mk>

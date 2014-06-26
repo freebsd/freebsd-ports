@@ -23,6 +23,5 @@ CONFLICTS=	trytond_analytic_purchase-2.[46].*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYEASYINSTALL_EGG=${DISTNAME}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
 
 .include <bsd.port.mk>

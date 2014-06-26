@@ -302,6 +302,8 @@ lib/liblwres.a
 %%SHARE_MAN%%man/man5/named.conf.5.gz
 %%SHARE_MAN%%man/man5/rndc.conf.5.gz
 %%SHARE_MAN%%man/man8/ddns-confgen.8.gz
+%%PYTHON%%%%SHARE_MAN%%man/man8/dnssec-checkds.8.gz
+%%PYTHON%%%%SHARE_MAN%%man/man8/dnssec-coverage.8.gz
 %%SHARE_MAN%%man/man8/dnssec-dsfromkey.8.gz
 %%SHARE_MAN%%man/man8/dnssec-importkey.8.gz
 %%SHARE_MAN%%man/man8/dnssec-keyfromlabel.8.gz
@@ -323,6 +325,8 @@ lib/liblwres.a
 %%SHARE_MAN%%man/man8/rndc.8.gz
 sbin/arpaname
 sbin/ddns-confgen
+%%PYTHON%%sbin/dnssec-checkds
+%%PYTHON%%sbin/dnssec-coverage
 sbin/dnssec-dsfromkey
 sbin/dnssec-importkey
 sbin/dnssec-keyfromlabel

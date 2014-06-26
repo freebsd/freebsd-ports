@@ -5,7 +5,7 @@ PORTVERSION=	0.9.17
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Tool for management and bundling Puppet modules
 
 LICENSE=	MIT

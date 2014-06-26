@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.4.3
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -20,7 +19,7 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-mpris2
-WANT_GNOME=	yes
+USE_GNOME=	glib20
 WANT_EFL=	yes
 WANT_SDL=	yes
 
@@ -28,7 +27,7 @@ PORTDOCS=	AUTHORS
 
 OPTIONS_DEFINE=	DBUS OSS4 SDLOUT ALSA CUE MP3 STATUSICON AOSD AOSDXCOMP \
 		ADPLUG VORBIS FLAC WAVPACK AAC SNDFILE MODPLUG JACK \
-		CDAUDIO SCROBBLER MMS GIO NLS RESAMPLE AMIDI GLSPECTRUM \
+		CDAUDIO SCROBBLER MMS NLS RESAMPLE AMIDI GLSPECTRUM \
 		NOTIFY BS2B FFAUDIO PULSE NEON SPEEDPITCH LIRC MP3FILEWRITER \
 		SID
 OPTIONS_DEFAULT=DBUS CUE MP3 STATUSICON AOSD AOSDXCOMP AAC CDAUDIO \
@@ -42,7 +41,6 @@ BS2B_DESC=	BS2B effect
 CDAUDIO_DESC=	CD audio input
 FFAUDIO_DESC=	FFAudio decoder
 GLSPECTRUM_DESC=OpenGL Spectrum Analyzer
-GIO_DESC=	GIO support
 OSS4_DESC=	Open Sound System 4
 PULSE_DESC=	PulseAudio support
 RESAMPLE_DESC=	Resample effect
@@ -308,21 +306,11 @@ PLIST_SUB+=	ALSAPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAMIDI}
-.if ${PORT_OPTIONS:MALSA}
-CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-alsa
-PLIST_SUB+=	AMIDIFPLUGIN="@comment "
-PLIST_SUB+=	AMIDIAPLUGIN=""
-.else
 LIB_DEPENDS+=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
-CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-flsyn
-PLIST_SUB+=	AMIDIFPLUGIN=""
-PLIST_SUB+=	AMIDIAPLUGIN="@comment "
-.endif
+CONFIGURE_ARGS+=--enable-amidiplug
 PLIST_SUB+=	AMIDIPLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-amidiplug
-PLIST_SUB+=	AMIDIFPLUGIN="@comment "
-PLIST_SUB+=	AMIDIAPLUGIN="@comment "
 PLIST_SUB+=	AMIDIPLUGIN="@comment "
 .endif
 
@@ -333,15 +321,6 @@ PLIST_SUB+=	BS2BPLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-bs2b
 PLIST_SUB+=	BS2BPLUGIN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGIO}
-USE_GNOME+=	glib20
-CONFIGURE_ARGS+=--enable-gio
-PLIST_SUB+=	GIOPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-gio
-PLIST_SUB+=	GIOPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}

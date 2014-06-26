@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rcpp
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,17 +12,6 @@ COMMENT=	Seamless R and C++ Integration
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=	cran:auto-plist shebangfix
-
-SHEBANG_LANG=	r
-r_OLD_CMD=	/usr/bin/r
-r_CMD=	${LOCALBASE}/bin/R
-SHEBANG_FILES=	inst/examples/ConvolveBenchmarks/buildAndRun.sh \
-		inst/examples/ConvolveBenchmarks/exampleRCode.r \
-		inst/examples/FastLM/*.r \
-		inst/examples/Misc/*.r \
-		inst/examples/RcppInline/*.r \
-		inst/examples/SugarPerformance/sugarBenchmarks.R \
-		inst/examples/functionCallback/newApiExample.r
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.4.3
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -25,9 +24,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--disable-chardet --with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
-OPTIONS_DEFINE=	DBUS GNOME ICONV NLS EXECINFO SSE2 CHARSET
-OPTIONS_DEFAULT=DBUS ICONV NLS EXECINFO SSE2 CHARSET
-CHARSET_DESC=	Build with automatic charset detection
+OPTIONS_DEFINE=	DBUS ICONV NLS EXECINFO SSE2
+OPTIONS_DEFAULT=DBUS ICONV NLS EXECINFO SSE2
 EXECINFO_DESC=	Build with libexecinfo support
 SSE2_DESC=	Build with SSE2 instruction set
 
@@ -44,11 +42,6 @@ PLIST_SUB+=	WITH_DBUS="@comment "
 
 .if  ${PORT_OPTIONS:MEXECINFO} || exists(${LOCALBASE}/lib/libexecinfo.so)
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-
-.if  ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	gconf2
-CONFIGURE_ARGS+=--enable-gconf
 .endif
 
 .if  ${PORT_OPTIONS:MICONV} || exists(${LOCALBASE}/lib/libiconv.so)
@@ -68,13 +61,6 @@ PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=--disable-sse2
 .endif
 
-.if  ${PORT_OPTIONS:MCHARSET}
-LIB_DEPENDS+=	libguess.so:${PORTSDIR}/textproc/libguess
-CONFIGURE_ARGS+=--enable-chardet
-.else
-CONFIGURE_ARGS+=--disable-chardet
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
@@ -87,12 +73,11 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audacious
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudcore.so.1.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudgui.so.1.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudcore.so.2.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudgui.so.2.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudtag.so.1.0.0
 .if ${PORT_OPTIONS:MDBUS}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audtool
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudclient.so.2.0.0
 .endif
 
 .include <bsd.port.mk>

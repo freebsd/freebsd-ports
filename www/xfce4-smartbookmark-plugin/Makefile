@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-smartbookmark-plugin
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -13,11 +13,11 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Query search engines from the Xfce panel
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
-USES=		pkgconfig gettext gmake
+USES=		pkgconfig gettext gmake libtool:keepla tar:bzip2
 USE_XFCE=	configenv libexo libmenu libutil panel
 USE_XORG=	ice
 

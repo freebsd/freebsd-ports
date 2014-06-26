@@ -1,0 +1,3 @@
+bin/moon-buggy
+man/man6/moon-buggy.6.gz
+@exec chmod 0555 %D/bin/moon-buggy

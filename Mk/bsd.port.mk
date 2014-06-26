@@ -122,7 +122,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${DISTDIR} (see below).  Also they will be fetched in this
 #				  subdirectory from FreeBSD mirror sites.
 # ALLFILES		- All of ${DISTFILES} and ${PATCHFILES}.
-# IGNOREFILES	- If set, don't perform checksum checks on these files.
 # NOFETCHFILES	- If set, don't download these files from the ${MASTER_SITES}
 #				  or ${MASTER_SITE_BACKUP} (but do from
 #				  ${MASTER_SITE_OVERRIDE})
@@ -1119,6 +1118,12 @@ SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 NOTPHONY?=
 PKG_ENV+=		PORTSDIR=${PORTSDIR}
+CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
+				XDG_CONFIG_HOME=${WRKDIR} \
+				HOME=${WRKDIR}
+MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
+				XDG_CONFIG_HOME=${WRKDIR} \
+				HOME=${WRKDIR}
 
 .if defined(FORCE_STAGE)
 .undef NO_STAGE
@@ -1586,8 +1591,7 @@ SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 PLIST_SUB_SED_MIN?=	2
 PLIST_SUB_SED?= ${PLIST_SUB:C/.*=.{1,${PLIST_SUB_SED_MIN}}$//g:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NPREFIX=*:NLOCALBASE=*:N*="":N*="@comment*:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
 
-PLIST_REINPLACE+=	dirrmtry stopdaemon rmtry
-PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir "%D/\1" 2>/dev/null || true!
+PLIST_REINPLACE+=	stopdaemon rmtry
 PLIST_REINPLACE_RMTRY=s!^@rmtry \(.*\)!@unexec rm -f %D/\1 2>/dev/null || true!
 PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1 forcestop 2>/dev/null || true!
 
@@ -2684,30 +2688,15 @@ patch-sites-default: patch-sites-DEFAULT
 master-sites: master-sites-DEFAULT
 patch-sites: patch-sites-DEFAULT
 
-.if defined(IGNOREFILES)
-.if !defined(CKSUMFILES)
-.  for _f in ${ALLFILES}
-.    if ! ${IGNOREFILES:M${_f}}
-CKSUMFILES+=	${_f}
-.   endif
-.  endfor
-.  undef _f
-.endif
-.else
 CKSUMFILES=		${ALLFILES}
-.endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if defined(DIST_SUBDIR)
 .if defined(CKSUMFILES) && ${CKSUMFILES}!=""
 _CKSUMFILES?=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 .endif
-.if defined(IGNOREFILES) && ${IGNOREFILES}!=""
-_IGNOREFILES?=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
-.endif
 .else
 _CKSUMFILES?=	${CKSUMFILES}
-_IGNOREFILES?=	${IGNOREFILES}
 .endif
 
 # This is what is actually going to be extracted, and is overridable
@@ -2925,12 +2914,9 @@ INFO_PATH?=	info
 .endif
 
 .if defined(INFO)
-#.if !exists(/usr/bin/install-info)
-#.if ${.CURDIR} != ${PORTSDIR}/print/texinfo
-#BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo
-#RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
-#.endif
-#.endif
+BUILD_DEPENDS+=	ginstall-info:${PORTSDIR}/print/texinfo-lite
+RUN_DEPENDS+=	ginstall-info:${PORTSDIR}/print/texinfo-lite
+
 . for D in ${INFO:H}
 RD:=	${D}
 .  if ${RD} != "."
@@ -4678,11 +4664,6 @@ makesum: check-checksum-algorithms
 			${ECHO_CMD} "SIZE ($$file) = `${STAT} -f \"%z\" $$file`" >> ${DISTINFO_FILE}; \
 		done \
 	)
-	@for file in ${_IGNOREFILES}; do \
-		for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-			${ECHO_CMD} "$$alg ($$file) = IGNORE" >> ${DISTINFO_FILE}; \
-		done; \
-	done
 .endif
 
 .if !target(checksum)
@@ -4710,13 +4691,6 @@ checksum: fetch check-checksum-algorithms
 					ignore="true"; \
 				fi; \
 				\
-				if [ "$$CKSUM" = "IGNORE" ]; then \
-					${ECHO_MSG} "=> $$alg Checksum for $$file is set to IGNORE in distinfo file even though"; \
-					${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
-					ignore="true"; \
-					OK=${FALSE}; \
-				fi; \
-				\
 				if [ $$ignore = "false" ]; then \
 					match="false"; \
 					for chksum in $$CKSUM; do \
@@ -4741,42 +4715,6 @@ checksum: fetch check-checksum-algorithms
 			if [ $$ignored = "true" ]; then \
 				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
 				OK="${FALSE}"; \
-			fi; \
-			\
-		done; \
-		\
-		for file in ${_IGNOREFILES}; do \
-			_file=$${file#${DIST_SUBDIR}/*};	\
-			ignored="true"; \
-			alreadymatched="false"; \
-			for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-				ignore="false"; \
-				eval alg_executable=\$$$$alg; \
-				\
-				if [ $$alg_executable != "NO" ]; then \
-					CKSUM=`file=$$_file; ${DISTINFO_DATA}`; \
-				else \
-					ignore="true"; \
-				fi; \
-				\
-				if [ $$ignore = "false" ]; then \
-					if [ -z "$$CKSUM" ]; then \
-						${ECHO_MSG} "=> No $$alg checksum for $$file recorded (expected IGNORE)"; \
-						OK="$$alreadymatched"; \
-					elif [ $$CKSUM != "IGNORE" ]; then \
-						${ECHO_MSG} "=> $$alg Checksum for $$file is not set to IGNORE in distinfo file even though"; \
-						${ECHO_MSG} "   the file is in the "'$$'"{IGNOREFILES} list."; \
-						OK="false"; \
-					else \
-						ignored="false"; \
-						alreadymatched="true"; \
-					fi; \
-				fi; \
-			done; \
-			\
-			if ( [ $$ignored = "true" ]) ; then \
-				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
-				OK="false"; \
 			fi; \
 			\
 		done; \
@@ -5717,18 +5655,18 @@ add-plist-info:
 # Process GNU INFO files at package install/deinstall time
 .for i in ${INFO}
 .if defined(NO_STAGE)
-	install-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
+	ginstall-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
 .endif
 .if !defined(WITH_PKGNG)
-	@${ECHO_CMD} "@unexec install-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
+	@${ECHO_CMD} "@unexec ginstall-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec [ \`info -d %D/${INFO_PATH}  --output - 2>/dev/null | grep -c '^*'\` -eq 1 ] && rm -f %D/${INFO_PATH}/dir || :"\
+	@${ECHO_CMD} "@unexec [ \`ginfo -d %D/${INFO_PATH}  --output - 2>/dev/null | grep -c '^*'\` -eq 1 ] && rm -f %D/${INFO_PATH}/dir || :"\
 		>> ${TMPPLIST}
 	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/::g >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
+	@${ECHO_CMD} "@exec ginstall-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 .else
-	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* 2>/dev/null | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
+	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
 .endif
 .endfor
 .if defined(INFO_SUBDIR)
@@ -5741,7 +5679,7 @@ add-plist-info:
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE})
-	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${INFO_PATH}" >> ${TMPPLIST}
 .endif
 .endif
 .endif

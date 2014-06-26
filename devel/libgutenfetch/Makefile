@@ -3,27 +3,24 @@
 
 PORTNAME=	libgutenfetch
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	Library that allows application developers to connect to PG
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake libtool tar:bzip2
 
 PLIST_FILES=	include/gutenfetch.h \
 		lib/libgutenfetch.a \
-		lib/libgutenfetch.la \
 		lib/libgutenfetch.so \
-		lib/libgutenfetch.so.0 \
+		lib/libgutenfetch.so.0.0.0 \
 		share/libgutenfetch/servers.txt \
 		man/man3/gutenfetch_duplicate_server.3.gz \
 		man/man3/gutenfetch_free_server.3.gz \

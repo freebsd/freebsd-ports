@@ -11,7 +11,6 @@
 %%XPI_XPIDIR%%/update.rdf
 %%XPI_XPIDIR%%/application.ini
 %%XPI_XPIDIR%%/defaults/preferences/pencil.js
-%%XPI_XPIDIR%%/application.ini.tpl
 %%XPI_XPIDIR%%/install.rdf.tpl.xml
 %%XPI_XPIDIR%%/platform/WINNT/chrome.manifest
 %%XPI_XPIDIR%%/chrome/icons/default/main-window.ico
@@ -213,7 +212,6 @@
 %%XPI_XPIDIR%%/content/pencil/stencil/iOS-Wireframe/Icons/ipad.png
 %%XPI_XPIDIR%%/content/pencil/stencil/iOS-Wireframe/Icons/lastTab.png
 %%XPI_XPIDIR%%/content/pencil/stencil/iOS-Wireframe/Icons/halfGraBlueButton.png
-%%XPI_XPIDIR%%/content/pencil/stencil/iOS-Wireframe/Icons/AlphaSearch.png
 %%XPI_XPIDIR%%/content/pencil/stencil/iOS-Wireframe/Icons/backButton.png
 %%XPI_XPIDIR%%/content/pencil/stencil/iOS-Wireframe/Icons/progress.png
 %%XPI_XPIDIR%%/content/pencil/stencil/iOS-Wireframe/Icons/redButton.png

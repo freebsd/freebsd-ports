@@ -22,7 +22,7 @@ MAKE_ENV=	MAKEINFOFLAGS=--no-split
 MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 USE_LDCONFIG=	yes
-USES=		fortran libtool pathfix
+USES=		fortran libtool makeinfo pathfix
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 INFO=		netcdf-f77 netcdf-f90

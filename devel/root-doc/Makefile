@@ -13,7 +13,7 @@ COMMENT=	HTML Documentation for Root framework
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/htmldoc
 PLIST=		${WRKDIR}/pkg-plist
-IGNOREFILES=	${DISTFILES}
+BROKEN=		no distinfo provided
 
 .ifdef NOPORTDOCS
 IGNORE=		This package contains only documentation

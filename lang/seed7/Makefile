@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20140601
+DISTVERSION=	05_20140615
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -42,8 +42,7 @@ PORTDOCS=	*
 MAKEFILE=	mk_freebsd.mk
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' \
-	    -e '/\.\/chkccomp/s|>>||' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/${MAKEFILE}
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} depend

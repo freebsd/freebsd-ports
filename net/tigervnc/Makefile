@@ -146,9 +146,9 @@ post-configure:
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
 
 post-build:
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} SHELL=${LOCALBASE}/bin/bash
+	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} SHELL=${LOCALBASE}/bin/bash
 
 post-install:
-	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install
+	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
 
 .include <bsd.port.post.mk>

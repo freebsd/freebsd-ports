@@ -3,43 +3,34 @@
 
 PORTNAME=	ecartis
 PORTVERSION=	1.0.0.s20060813
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://conducive.net/tarballs/ \
+MASTER_SITES=	ftp://ftp.ecartis.net/pub/ecartis/ \
 		http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s/-snap/}
 
 MAINTAINER=	jtrigg@spamcop.net
-COMMENT=	The Ecartis Listserver \ Mailing List Manager
+COMMENT=	The Ecartis Listserver / Mailing List Manager
 
 USES=		gmake
 
-NO_PACKAGE=	Requires ecartis uid
-IS_INTERACTIVE=	"Stops to ask to create ecartis user/group"
-WRKSRC=		${WRKDIR}/ecartis-1.0.0/src
+USERS=		ecartis
+GROUPS=		ecartis
 
-NO_STAGE=	yes
+WRKSRC=		${WRKDIR}/ecartis-1.0.0/src
+IDEST=		${STAGEDIR}${PREFIX}/${PORTNAME}
+
+SUB_FILES=	pkg-message
+PLIST_SUB+=	EC_USER=${USERS} EC_GROUP=${GROUPS}
+
 pre-patch:
 	@${CP} ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
 
 pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${MKDIR} ${PREFIX}/${PORTNAME}
-	@${CP} -R ${WRKDIR}/${PORTNAME}-1.0.0/* ${PREFIX}/ecartis
-	@${RM} -R ${PREFIX}/${PORTNAME}/src/
-	@${RM} -R ${PREFIX}/${PORTNAME}/debian/
-	@${RM} ${PREFIX}/${PORTNAME}/ecartis.dsp ${PREFIX}/${PORTNAME}/ecartis.dsw
-	@${CHOWN} -R ecartis:ecartis ${PREFIX}/${PORTNAME}/*
-
-post-install:
-	@${ECHO_MSG} "---------------------------------------------------"
-	@${ECHO_MSG} "- Thank You for installing the Ecartis Listserver -"
-	@${ECHO_MSG} "- package.  Please read the documentation located -"
-	@${ECHO_MSG} "- in ${PREFIX}/ecartis/, or online at:            -"
-	@${ECHO_MSG} "-                                                 -"
-	@${ECHO_MSG} "- http://www.ecartis.org/                         -"
-	@${ECHO_MSG} "-                                                 -"
-	@${ECHO_MSG} "- -The Ecartis Developers                         -"
-	@${ECHO_MSG} "---------------------------------------------------"
+	${MKDIR} ${IDEST}
+	cd ${WRKDIR}/${PORTNAME}-1.0.0 && ${FIND} * -print | \
+		${CPIO} -pdu --quiet ${IDEST}
+	${RM} -rf ${IDEST}/src/ ${IDEST}/debian ${IDEST}/ecartis.ds[pw]
 
 .include <bsd.port.mk>

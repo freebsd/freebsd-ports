@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pdftohtml
-PORTVERSION=	0.39
-PORTREVISION=	7
+PORTVERSION=	0.40a
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Experimental%20Versions/${PORTNAME}%20${PORTVERSION:S|a||} \
+		http://fossies.org/linux/www/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool for converting pdf-files into html
@@ -14,8 +14,6 @@ USES=		gmake
 USE_GHOSTSCRIPT_RUN=	yes
 
 PLIST_FILES=	bin/pdf-to-html
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \

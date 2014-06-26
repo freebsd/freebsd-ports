@@ -49,19 +49,18 @@ WITH_SSL_PORT?=		443
 AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
 
 # http://httpd.apache.org/docs/2.4/bind.html
-IPV4_MAPPED_CONFIGURE_OFF=	--disable-v4-mapped
-IPV4_MAPPED_CONFIGURE_ON=	--enable-v4-mapped
+IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 
 LUAJIT_LIB_DEPENDS=		luajit:${PORTSDIR}/lang/luajit
-LUA_CONFIGURE_OFF=		--without-lua
-LUA_CONFIGURE_ON=		--with-lua=${LOCALBASE}
+LUA_CONFIGURE_WITH=		lua
+LUA_USES=			lua
 
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
 SOCACHE_DC_LIB_DEPENDS=		distcache:${PORTSDIR}/security/distcache
 
-# Note: 
+# Note:
 # OpenSSL version (base/ports) depends how devel/apr1 was build
 #  apu-1-config --(includes|ldflags) and apr_rules.mk
 SSL_CFLAGS=			-I${OPENSSLINC}
@@ -116,7 +115,8 @@ MAKE_ENV+=	EXPR_COMPAT=yes \
 # here we do only OPTIONS fixups
 
 .if ${PORT_OPTIONS:MLUA}
-USES+=		lua:51
+CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" \
+		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 .endif
 
 .if ${PORT_OPTIONS:MPROXY_HTML} || ${PORT_OPTIONS:MXML2ENC}

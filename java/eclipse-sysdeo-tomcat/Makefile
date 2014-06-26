@@ -21,7 +21,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 do-install:
-	@${MKDIR} -p ${STAGEDIR}${PREFIX}/lib/eclipse
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eclipse/plugins
 	@${CP} -r ${WRKSRC}/com.sysdeo.eclipse.tomcat_${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/eclipse/plugins
 	@(cd ${WRKSRC}; ${FIND} -s com.sysdeo.eclipse.tomcat_${PORTVERSION} -not -type d) \
 		| ${SED} -ne 's,^,lib/eclipse/plugins/,p' >> ${TMPPLIST}

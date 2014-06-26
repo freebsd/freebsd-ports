@@ -17,13 +17,13 @@ PLIST=		${.CURDIR}/pkg-plist
 LIBGDA5_SLAVE=	ui
 
 do-build:
-	@cd ${WRKSRC}/libgda-ui && ${GMAKE}
-	@cd ${WRKSRC}/control-center && ${GMAKE}
-	@cd ${WRKSRC}/tools/browser && ${GMAKE}
+	@cd ${WRKSRC}/libgda-ui && ${SETENV} ${MAKE_ENV}  ${MAKE_CMD}
+	@cd ${WRKSRC}/control-center && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
+	@cd ${WRKSRC}/tools/browser && ${SETENV} ${MAKE_ENV}  ${MAKE_CMD}
 
 do-install:
-	@cd ${WRKSRC}/libgda-ui && DESTDIR=${STAGEDIR} ${GMAKE} install
-	@cd ${WRKSRC}/control-center && DESTDIR=${STAGEDIR} ${GMAKE} install
-	@cd ${WRKSRC}/tools/browser && DESTDIR=${STAGEDIR} ${GMAKE} install
+	@cd ${WRKSRC}/libgda-ui && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} install
+	@cd ${WRKSRC}/control-center && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} install
+	@cd ${WRKSRC}/tools/browser && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} install
 
 .include "${MASTERDIR}/Makefile"

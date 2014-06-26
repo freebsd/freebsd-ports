@@ -12,6 +12,8 @@ COMMENT=	Virtual Entity of Relevant Acronyms
 
 LICENSE=	GFDL
 
+USES=		makeinfo
+
 INFO=		vera
 
 do-build:

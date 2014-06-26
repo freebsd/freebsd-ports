@@ -16,6 +16,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		curl:${PORTSDIR}/ftp/curl \
 		greadlink:${PORTSDIR}/sysutils/coreutils
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	andreafabrizi
 GH_COMMIT=	3e5aef0
 GH_PROJECT=	Dropbox-Uploader
@@ -25,13 +26,10 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/dropShell.sh bin/dropbox_uploader.sh
 
-USE_GITHUB=	yes
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E -e 's,("darwin9"),\1 -o "$${OSTYPE:0:7}" == "freebsd" ,1' -i.bak ${WRKSRC}/dropShell.sh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/*.sh ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/*.sh ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

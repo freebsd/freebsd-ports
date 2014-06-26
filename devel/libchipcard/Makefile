@@ -3,7 +3,7 @@
 
 PORTNAME=	libchipcard
 PORTVERSION=	5.0.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=02&release=26&file=01&dummy=/
 
@@ -15,8 +15,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite \
 		libgwenhywfar.so:${PORTSDIR}/devel/gwenhywfar
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes
@@ -51,7 +50,7 @@ post-patch:
 
 post-build:
 .if ${PORT_OPTIONS:MDOXYGEN}
-	@cd ${WRKSRC} && ${GMAKE} srcdoc
+	@cd ${WRKSRC} && ${MAKE_CMD} srcdoc
 .endif
 
 post-install:

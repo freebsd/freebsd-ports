@@ -53,12 +53,12 @@ do-install:
 .endfor
 
 prtests:
-	${GMAKE} -C ${WRKSRC}/pr/tests
+	${MAKE_CMD} -C ${WRKSRC}/pr/tests
 	${LN} -sf libmy.so.1 ${WRKSRC}/pr/tests/dll/libmy.so
 	cd ${WRKSRC}/pr/tests && ../../../pr/tests/runtests.sh
 
 libtests:
-	${GMAKE} -C ${WRKSRC}/lib/tests
+	${MAKE_CMD} -C ${WRKSRC}/lib/tests
 	${WRKSRC}/lib/tests/string
 	${WRKSRC}/lib/tests/base64t
 	# The test below is commented out, because arena requires

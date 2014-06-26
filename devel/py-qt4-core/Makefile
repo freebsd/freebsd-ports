@@ -3,6 +3,7 @@
 
 PORTNAME=	core
 PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -17,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
+PYTHON_PY3K_PLIST_HACK=	yes
 USE_PYTHON=	yes
 USE_QT4=	corelib qmake_build moc_build
 
@@ -38,7 +40,7 @@ ARGS=		-b ${PREFIX}/bin \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MAPI)
 ARGS+=		--no-qsci-api
@@ -53,8 +55,16 @@ PLIST_SUB+=	API=""
 ARGS+=		--debug --trace
 .endif
 
+# Bug 180467: We need to remove the port_v${VERSION} directory that does not
+# correspond to the Python version being used to avoid failures in the
+# bytecompilation calls in post-install.
+PLIST_SUB+= PYTHON_MAJOR_VER="${PYTHON_MAJOR_VER}"
 post-patch:
+.if ${PYTHON_MAJOR_VER} == "2"
 	${RM} -rf ${WRKSRC}/pyuic/uic/port_v3
+.elif ${PYTHON_MAJOR_VER} == "3"
+	${RM} -rf ${WRKSRC}/pyuic/uic/port_v2
+.endif
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\
@@ -75,4 +85,4 @@ post-install:
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/py_compile.py\
 		`ls *.py */*.py */*/*.py`
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

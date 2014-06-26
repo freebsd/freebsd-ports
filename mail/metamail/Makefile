@@ -3,7 +3,7 @@
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
 		ftp://ftp.research.telcordia.com/pub/nsb/

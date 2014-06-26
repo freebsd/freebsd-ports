@@ -12,8 +12,11 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Object Oriented Input System
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USES=		pathfix gmake libtool
-USE_AUTOTOOLS=	aclocal:env autoheader:env automake:env autoconf:env libtoolize:env
+PATHFIX_MAKEFILEIN=	Makefile.am
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
+AUTOMAKE_ARGS=	--add-missing --copy --foreign
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes
 
@@ -23,13 +26,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} 's|^pkgconfigdir = .*|pkgconfigdir=$${prefix}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.am
-
-pre-configure:
-	@cd ${WRKSRC} && ./bootstrap
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libOIS.so
+	@${REINPLACE_CMD} '/_LDADD =/s/$$/ -lX11/' ${WRKSRC}/demos/Makefile.am
 
 .include <bsd.port.mk>

@@ -32,9 +32,6 @@ OPTIONS_RADIO_SPELL=	GTKSPELL LIBSEXY
 GTKSPELL_DESC=	Spell check support via gtkspell
 LIBSEXY_DESC=	Spell check support via libsexy
 
-.if defined(WITH_PYTHON)
-.endif
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
@@ -100,6 +97,8 @@ PLIST_SUB+=	TCL="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/common/*.[ch]
+	@${REINPLACE_CMD} '/xchat_LDADD =/s/$$/ -lgmodule-2.0/' \
+		${WRKSRC}/src/fe-gtk/Makefile.in
 
 # Create plugins directory even when no plugins are installed
 post-install:

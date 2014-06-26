@@ -1,4 +1,5 @@
 bin/logtool
+man/man1/logtool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/README

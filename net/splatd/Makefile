@@ -3,7 +3,7 @@
 
 PORTNAME=	splatd
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -20,19 +20,16 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	splat
 USE_RC_SUBR=	splatd
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
-MAN5=		splat.conf.5
-MAN8=		splatd.8
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/splat.conf ${PREFIX}/etc/splat.conf.sample
-	${MV} -f ${PREFIX}/bin/splatd ${PREFIX}/sbin/splatd
-	${INSTALL_MAN} ${WRKSRC}/docs/man/splat.conf.5 ${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/docs/man/splatd.8 ${MANPREFIX}/man/man8
+	${INSTALL_DATA} ${WRKSRC}/splat.conf ${STAGEDIR}${PREFIX}/etc/splat.conf.sample
+	${MV} -f ${STAGEDIR}${PREFIX}/bin/splatd ${STAGEDIR}${PREFIX}/sbin/splatd
+	${INSTALL_MAN} ${WRKSRC}/docs/man/splat.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/docs/man/splatd.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/xhtml
-	${INSTALL_MAN} ${WRKSRC}/docs/xhtml/* ${DOCSDIR}/xhtml
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/xhtml
+	${INSTALL_MAN} ${WRKSRC}/docs/xhtml/* ${STAGEDIR}${DOCSDIR}/xhtml
 .endif
 
 .include <bsd.port.mk>

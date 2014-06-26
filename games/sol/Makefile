@@ -23,7 +23,7 @@ USE_XORG=	xpm x11 xaw
 .include <bsd.port.pre.mk>
 
 pre-build:
-	cd ${WRKSRC} && ${GMAKE} readme.var
+	cd ${WRKSRC} && ${MAKE_CMD} readme.var
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sol ${STAGEDIR}${PREFIX}/bin

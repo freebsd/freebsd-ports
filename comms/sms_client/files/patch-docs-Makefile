@@ -1,0 +1,10 @@
+--- docs/Makefile.orig	2014-04-24 10:47:20.378314784 -0700
++++ docs/Makefile	2014-04-24 10:48:30.004552476 -0700
+@@ -20,7 +20,6 @@
+ 	$(CP) sms_client.man sms_client.$(MANEXT)
+ 
+ install: sms_client.$(MANEXT)
+-	$(INSTALL) -o $(SMSUSER) -g $(SMSGROUP) -m 755 -d $(MANDIR)/man$(MANEXT)
+ 	$(INSTALL) -o $(SMSUSER) -g $(SMSGROUP) -m 644 sms_client.$(MANEXT) $(MANDIR)/man$(MANEXT)
+ 
+ uninstall:

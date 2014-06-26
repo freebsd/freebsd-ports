@@ -35,7 +35,7 @@ post-patch:
 		${WRKSRC}/Makefile ${WRKSRC}/bdb/Makefile
 
 pre-build:
-	@cd ${WRKSRC} && test -f .depend || ${GMAKE} dep
+	@cd ${WRKSRC} && test -f .depend || ${MAKE_CMD} dep
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

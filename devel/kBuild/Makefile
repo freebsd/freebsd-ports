@@ -16,7 +16,7 @@ COMMENT=	Makefile framework
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 USE_AUTOTOOLS=	automake autoconf
-USES=		gmake
+USES=		gmake makeinfo
 
 CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 
@@ -62,7 +62,7 @@ run-autotools:
 do-configure:
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${KBUILD_ENV} ./kBuild/env.sh --full ${GMAKE} -f bootstrap.gmk
+	cd ${WRKSRC} && ${SETENV} ${KBUILD_ENV} ./kBuild/env.sh --full ${MAKE_CMD} -f bootstrap.gmk
 	cd ${WRKSRC} && ${RM} -rf out
 	cd ${WRKSRC} && ./kBuild/env.sh kmk
 	cd ${WRKSRC} && ./kBuild/env.sh kmk NIX_INSTALL_DIR=${PREFIX} BUILD_TYPE=release -C ${WRKSRC}

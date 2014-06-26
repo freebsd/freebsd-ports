@@ -27,7 +27,7 @@ EXTRACT_DEPENDS+=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 USES=		gmake
 USE_SDL=	image mixer net sdl
-MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
+MAKE_ARGS=	CC="${CC}" MAKE="${MAKE_CMD}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" \
 		X11_PATH="${LOCALBASE}"
 ALL_TARGET=	sdl

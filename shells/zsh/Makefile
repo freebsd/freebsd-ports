@@ -3,6 +3,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	5.0.5
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -23,8 +24,9 @@ ZSH_VER=	${PORTVERSION}
 USES=		iconv ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs
 
@@ -63,6 +65,7 @@ STATIC_CONFIGURE_ON=	--disable-dynamic
 STATIC_CONFIGURE_OFF=	--enable-dynamic
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
 MULTIBYTE_CONFIGURE_ENABLE=	multibyte
+DOCS_USES=		makeinfo
 
 .include <bsd.port.pre.mk>
 

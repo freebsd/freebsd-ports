@@ -15,5 +15,5 @@ test: ${_TEST_SEQ}
 
 do-test: build-depends build
 	@-(cd ${WRKSRC}/jdk/test; ${SETENV} PLATFORM=bsd ARCH=${ARCH} \
-	    ${MAKE_ENV} ${GMAKE} tests)
+	    ${MAKE_ENV} ${MAKE_CMD} tests)
 .endif

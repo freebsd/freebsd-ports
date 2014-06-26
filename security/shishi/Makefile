@@ -16,7 +16,7 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 
 USE_AUTOTOOLS=	libtool
 USE_PERL5=	build
-USES=		pathfix pkgconfig iconv perl5
+USES=		pathfix pkgconfig iconv perl5 makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-db-dir=/var/shishi

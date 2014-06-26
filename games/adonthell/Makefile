@@ -54,7 +54,7 @@ post-install:
 		&& ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} \
 			--with-adonthell-binary=${PREFIX}/bin/${PORTNAME} \
 			${CONFIGURE_TARGET}
-	cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${GMAKE}
-	cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${GMAKE} install
+	cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${MAKE_CMD}
+	cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${MAKE_CMD} install
 
 .include <bsd.port.post.mk>

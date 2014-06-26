@@ -12,7 +12,6 @@ COMMENT=	UPnP AV MediaServer
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
-MAN1=		mediatomb.1
 GNU_CONFIGURE=	yes
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -64,7 +63,6 @@ EXTERNAL_TRANSCODING_DESC=	external transcoding support
 ID3LIB_DESC=			id3lib support
 LIBEXTRACTOR_DESC=		libextractor support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
@@ -169,16 +167,7 @@ pre-install:
 		PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${MKDIR} -m ${MEDIATOMB_MASK} -p ${PREFIX}/etc/mediatomb
-	@${CHOWN} ${MEDIATOMB_USER}:${MEDIATOMB_GROUP} ${PREFIX}/etc/mediatomb
-	@${INSTALL} ${COPY} -o ${MEDIATOMB_USER} -g ${MEDIATOMB_GROUP} -m 640 ${WRKDIR}/config.xml.dist ${PREFIX}/etc/mediatomb/config.xml.dist
-	@if [ ! -f ${PREFIX}/etc/mediatomb/config.xml ]; then \
-		${CP} -p ${PREFIX}/etc/mediatomb/config.xml.dist ${PREFIX}/etc/mediatomb/config.xml ; \
-	fi
-	@${CHGRP} ${MEDIATOMB_GROUP} ${PREFIX}/bin/mediatomb
-	@${CHMOD} a-x ${PREFIX}/bin/mediatomb
-	@${CHMOD} g+x ${PREFIX}/bin/mediatomb
-	@${MKDIR} -m ${MEDIATOMB_MASK} -p ${MEDIATOMB_DIR}
-	@${CHOWN} ${MEDIATOMB_USER}:${MEDIATOMB_GROUP} ${MEDIATOMB_DIR}
+	@${MKDIR} -m ${MEDIATOMB_MASK} -p ${STAGEDIR}${PREFIX}/etc/mediatomb
+	@${INSTALL} ${COPY} ${WRKDIR}/config.xml.dist ${STAGEDIR}${PREFIX}/etc/mediatomb/config.xml.dist
 
 .include <bsd.port.post.mk>

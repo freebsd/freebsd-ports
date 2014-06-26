@@ -2,42 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	delegate
-PORTVERSION=	9.9.7
+PORTVERSION=	9.9.9
 CATEGORIES=	net www
-MASTER_SITES=	http://www.chifeng.name/dist/delegate/
+MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
-DEPRECATED=	Unmaintained interactive port
-EXPIRATION_DATE=2014-08-20
-
-IS_INTERACTIVE=	YES
-PORTDOCS=	HowToDG.html Manual.htm jpconv.htm tutor-jp.htm tutor-en.htm COPYRIGHT
-PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
+USES=		gmake
 SUB_FILES=	pkg-message
-SUB_LIST=	DOCSDIR=${DOCSDIR}
 
-# Strip breaks binary checksumming
-STRIP=
+PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
+PORTDOCS=	CHANGES COPYRIGHT DG9note.html HowToDG.html IPv6NOTE.txt \
+		Manual.htm jpconv.htm tutor-en.htm tutor-jp.htm
 
-MAKE_JOBS_UNSAFE=	yes
-
-NO_STAGE=	yes
 post-extract:
-	@cd ${WRKSRC} && ${MV} COPYRIGHT doc/
+	@${LN} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/DG9note.html \
+		${WRKSRC}/IPv6NOTE.txt ${WRKSRC}/doc
+
+post-patch:
+# Prevent "filesystem was touched prior to 'make install' phase" warning;
+# allow unattended (non-interactive) builds
+	@${REINPLACE_CMD} -e 's,"$$(XDG)",& DGROOT=${WRKDIR},' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E '/ADMIN/s,undef,admin@example.com, ; \
+		s,-F(esign|ver),& DGROOT=${WRKDIR},' ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/delegated ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/delegated ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/delegated.sh \
-	   ${PREFIX}/etc/rc.d/delegated.sh-dist
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/$f ${DOCSDIR}
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/etc/rc.d/delegated.sh-dist
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -53,12 +53,12 @@ post-patch:
 
 post-build:
 .for f in ${FUNCTIONS}
-	@cd ${WRKSRC}/sql/${f} && ${GMAKE}
+	@cd ${WRKSRC}/sql/${f} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 .endfor
 
 post-install:
 .for f in ${FUNCTIONS}
-	@cd ${WRKSRC}/sql/${f} && ${GMAKE} DESTDIR=${STAGEDIR}  ${INSTALL_TARGET}
+	@cd ${WRKSRC}/sql/${f} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} DESTDIR=${STAGEDIR}  ${INSTALL_TARGET}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/sample/dist_def_pgbench.sql ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/replicate_def_pgbench.sql ${STAGEDIR}${DATADIR}

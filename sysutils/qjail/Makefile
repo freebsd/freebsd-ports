@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -11,7 +11,6 @@ COMMENT=	Utility to quickly deploy and manage jails
 
 USES=		tar:bzip2
 NO_BUILD=	yes
-NEED_ROOT=	yes
 
 CONFLICTS_INSTALL=	qjail-2.* qjail-3.0 qjail-3.1 
 
@@ -26,11 +25,6 @@ do-install:
 .for i in qjail qjail-intro qjail-howto
 	${INSTALL_MAN}   ${WRKSRC}/${i}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 .endfor
-
-#	@${MKDIR}          ${STAGEDIR}${EXAMPLESDIR}
-#	${INSTALL_DATA}   ${WRKSRC}/jail-primer.html            \
-#		${STAGEDIR}${DOCSDIR}
-
 
 # note examples are mandatory. qjail will not function without them
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

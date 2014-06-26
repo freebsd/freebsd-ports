@@ -16,27 +16,26 @@ RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		curl:${PORTSDIR}/ftp/curl
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	gwhois
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/pattern
+PLIST_FILES=	bin/${PORTNAME} man/man1/gwhois.1.gz %%DATADIR%%/pattern
 PLIST_DIRS=	%%DATADIR%%
-MAN1=	${PORTNAME}.1
 PORTDOCS=	TODO README.RIPE
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/gwhois|${DATADIR}|g'\
 		${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
-	@${INSTALL} -d ${DATADIR}/
-	@${INSTALL_DATA} ${WRKSRC}/pattern ${DATADIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${INSTALL} -d ${STAGEDIR}${DATADIR}/
+	@${INSTALL_DATA} ${WRKSRC}/pattern ${STAGEDIR}${DATADIR}/
 .ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

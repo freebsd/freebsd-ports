@@ -39,9 +39,9 @@ include/libgearman-1.0/visibility.h
 include/libgearman-1.0/worker.h
 include/libgearman/gearman.h
 lib/libgearman.a
-lib/libgearman.la
 lib/libgearman.so
 lib/libgearman.so.7
+lib/libgearman.so.7.0.1
 libdata/pkgconfig/gearmand.pc
 man/man1/gearadmin.1.gz
 man/man1/gearman.1.gz

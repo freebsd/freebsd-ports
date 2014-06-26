@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIGAR - System Information Gatherer and Reporter
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/bindings/java/
 
 USES=		perl5

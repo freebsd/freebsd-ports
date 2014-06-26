@@ -15,28 +15,27 @@ USE_XORG=	x11 xmu xi
 USE_LDCONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
-NO_STAGE=	yes
 pre-build:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libgl2ps.so ${PREFIX}/lib
-	${LN} -s ${PREFIX}/lib/libgl2ps.so ${PREFIX}/lib/libgl2ps.so.1
-	${INSTALL_DATA} ${WRKSRC}/libgl2ps.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/gl2ps.h ${PREFIX}/include
+	${INSTALL_PROGRAM} ${WRKSRC}/libgl2ps.so ${STAGEDIR}${PREFIX}/lib
+	${LN} -s {PREFIX}/lib/libgl2ps.so ${STAGEDIR}${PREFIX}/lib/libgl2ps.so.1
+	${INSTALL_DATA} ${WRKSRC}/libgl2ps.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/gl2ps.h ${STAGEDIR}${PREFIX}/include
 
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/gl2psTest.c ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/gl2psTestSimple.c ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/gl2psTest.c ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/gl2psTestSimple.c ${STAGEDIR}${EXAMPLESDIR}
 	@${SED} -e 's|%%CC%%|${CC}|g; \
 		    s|%%RM%%|${RM}|g; \
 		    s|%%CFLAGS%%|${CFLAGS}|g; \
 		    s|%%LOCALBASE%%|${LOCALBASE}|g' \
-		<${FILESDIR}/Makefile.ex >${EXAMPLESDIR}/Makefile
+		<${FILESDIR}/Makefile.ex >${STAGEDIR}${EXAMPLESDIR}/Makefile
 
 .ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/gl2ps.pdf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/gl2ps.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

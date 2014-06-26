@@ -28,7 +28,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 OPTIONS_DEFINE=	EXAMPLES
 
 #regression-test: extract
-#	@PYTHON="${PYTHON_CMD}" ${GMAKE} -C ${WRKSRC} check
+#	@PYTHON="${PYTHON_CMD}" ${MAKE_CMD} -C ${WRKSRC} check
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

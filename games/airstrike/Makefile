@@ -44,7 +44,7 @@ post-patch:
 		${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g'
 
 do-build:
-	@(cd ${WRKSRC} && ${GMAKE} airstrike-sound)
+	@(cd ${WRKSRC} && ${MAKE_CMD} airstrike-sound)
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

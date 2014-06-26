@@ -13,7 +13,7 @@ DOCSDIR=	${PREFIX}/share/doc/gtkmm-3.0
 
 do-install:
 .for d in docs
-	@cd ${WRKSRC}/${d} && ${GMAKE} ${MAKE_ARGS} install
+	@cd ${WRKSRC}/${d} && ${MAKE_CMD} ${MAKE_ARGS} install
 .endfor
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"

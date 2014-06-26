@@ -17,7 +17,7 @@ RUN_DEPENDS=	${AUTOCONF_DEPENDS} \
 USE_AUTOTOOLS=	autoconf:env
 BUILD_VERSION=	1.14
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-USES=		perl5 tar:xz
+USES=		makeinfo perl5 tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"

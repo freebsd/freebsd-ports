@@ -45,7 +45,7 @@
  # added 20020604 edobbs
  # On BSD systems, may need to use /usr/local/include
 -#CFLAGS += -I/usr/local/include
-+CFLAGS += -I/usr/local/include
++CFLAGS += -I$(LOCALBASE)/include
  
  
  #

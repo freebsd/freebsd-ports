@@ -23,10 +23,6 @@ USE_PYDISTUTILS=yes
 USES=		desktop-file-utils
 INSTALLS_ICONS=	yes
 
-MAN1=		${PORTNAME}.1
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
@@ -43,6 +39,8 @@ post-patch:
 		-e 's|share/man|man|g' \
 		-e 's,distutils\.command\.install$$,setuptools\.command\.install,g' \
 		-e 's,distutils\.command\.install\.,setuptools\.command\.install\.,g' \
+		-e 's|%%STAGEDIR%%|"${STAGEDIR}"|' \
+		-e 's|%%PREFIX%%|"${PREFIX}"|' \
 		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

@@ -41,19 +41,16 @@ DOC_FILES=	CHANGELOG.txt applet.txt filetransfers.txt readme.txt antbuild.txt\
 SUB_FILES=	tn5250j
 SUB_LIST=	JYTHON_JAR=${JYTHON_JAR}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/tn5250j ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/build/tn5250j.jar ${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/tn5250j ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/build/tn5250j.jar ${STAGEDIR}${JAVAJARDIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${DOC_FILES}
-	${INSTALL_MAN} ${WRKSRC}/src/${d} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/src/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- ./configure.ac.orig	2014-04-27 19:59:06.000000000 +0200
-+++ ./configure.ac	2014-05-09 18:45:30.000000000 +0200
+--- ./configure.ac.orig	2014-06-24 15:08:41.000000000 +0200
++++ ./configure.ac	2014-06-25 13:28:18.000000000 +0200
 @@ -44,6 +44,7 @@
  gl_EARLY
  AC_PROG_GCC_TRADITIONAL
@@ -32,34 +32,34 @@
      AC_SUBST(DBILIBS)
    else
      AC_MSG_WARN([Skipping dbi plugin])
-@@ -274,22 +275,17 @@
- dnl Check for radius libraries
+@@ -275,15 +276,12 @@
  AS_IF([test "x$with_radius" != "xno"], [
    _SAVEDLIBS="$LIBS"
--  AC_CHECK_LIB(radiusclient,rc_read_config)
--  if test "$ac_cv_lib_radiusclient_rc_read_config" = "yes"; then
+   AC_CHECK_LIB(freeradius-client,rc_read_config)
+-  if test "$ac_cv_lib_freeradius_client_rc_read_config" = "yes"; then
 -    EXTRAS="$EXTRAS check_radius\$(EXEEXT)"
--  	RADIUSLIBS="-lradiusclient"
+-    RADIUSLIBS="-lfreeradius-client"
 -    AC_SUBST(RADIUSLIBS)
 -  else
 -    AC_CHECK_LIB(radiusclient-ng,rc_read_config)
 +    AC_CHECK_LIB(radiusclient-ng,rc_read_config,,,-L${LOCALBASE}/lib)
      if test "$ac_cv_lib_radiusclient_ng_rc_read_config" = "yes"; then
        EXTRAS="$EXTRAS check_radius\$(EXEEXT)"
--    	  RADIUSLIBS="-lradiusclient-ng"
-+      RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient-ng"
+       RADIUSLIBS="-lradiusclient-ng"
 +      RADIUSINCLUDE="-I${LOCALBSE}/include"
 +      AC_SUBST(RADIUSINCLUDE)
        AC_SUBST(RADIUSLIBS)
      else
-       AC_MSG_WARN([Skipping radius plugin])
-       AC_MSG_WARN([install radius libs to compile this plugin (see REQUIREMENTS).])
+       AC_CHECK_LIB(radiusclient,rc_read_config)
+@@ -296,7 +294,6 @@
+         AC_MSG_WARN([install radius libs to compile this plugin (see REQUIREMENTS).])
+       fi
      fi
 -  fi
    LIBS="$_SAVEDLIBS"
  ])
  
-@@ -298,12 +294,13 @@
+@@ -305,12 +302,13 @@
  dnl Check for LDAP libraries
  AS_IF([test "x$with_ldap" != "xno"], [
    _SAVEDLIBS="$LIBS"
@@ -77,7 +77,7 @@
      AC_CHECK_FUNCS(ldap_set_option)
      EXTRAS="$EXTRAS check_ldap\$(EXEEXT)"
    	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
-@@ -735,22 +732,10 @@
+@@ -740,22 +738,10 @@
  dnl 	ac_cv_ps_cols=8
  dnl 	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -103,7 +103,7 @@
  then
  	ac_cv_ps_varlist="[procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
  	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
-@@ -758,9 +743,8 @@
+@@ -763,9 +749,8 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -115,7 +115,7 @@
  elif ps -axwo 'stat uid pid ppid vsz rss pcpu ucomm command' 2>/dev/null | \
  	egrep -i ["^ *STAT +UID +PID +PPID +VSZ +RSS +%CPU +UCOMM +COMMAND"] > /dev/null
  then
-@@ -770,209 +754,6 @@
+@@ -775,209 +760,6 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -325,7 +325,7 @@
  else
  	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
  fi
-@@ -1371,6 +1152,8 @@
+@@ -1376,6 +1158,8 @@
  	AC_MSG_WARN([Get smbclient from Samba.org to monitor SMB shares])
  fi
  
@@ -334,7 +334,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  AC_ARG_WITH(snmpget_command,
              ACX_HELP_STRING([--with-snmpget-command=PATH],
-@@ -1401,7 +1184,10 @@
+@@ -1406,7 +1190,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -345,7 +345,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  AC_ARG_WITH(qstat_command,
-@@ -1426,7 +1212,10 @@
+@@ -1431,7 +1218,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -356,7 +356,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  AC_PATH_PROG(PATH_TO_FPING6,fping6)
  
-@@ -1447,6 +1236,7 @@
+@@ -1452,6 +1242,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -364,7 +364,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  AC_ARG_WITH(ssh_command,
-@@ -1514,32 +1304,12 @@
+@@ -1519,32 +1310,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  

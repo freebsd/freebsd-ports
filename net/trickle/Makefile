@@ -14,7 +14,7 @@ LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 OPTIONS_DEFINE=	DOCS
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

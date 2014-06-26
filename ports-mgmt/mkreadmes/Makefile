@@ -4,21 +4,19 @@
 PORTNAME=	mkreadmes
 DISTVERSION=	1.3
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	conrads@cox.net
-COMMENT=	A speedy substitute for "make readmes"
+COMMENT=	Speedy substitute for "make readmes"
 
-USE_BZIP2=	yes
-MAN1=		mkreadmes.1
-MANCOMPRESSED=	maybe
+USES=		tar:bzip2
 
-PLIST_FILES=	sbin/${PORTNAME}
+PLIST_FILES=	man/man1/mkreadmes.1.gz sbin/${PORTNAME}
 PORTDATA=	*
 
-NO_STAGE=	yes
-post-extract:
+post-patch:
+	${REINPLACE_CMD} -e 's|-o root -g wheel||g' ${WRKSRC}/Makefile
+
 # adjust definition of PREFIX in mkreadmes.h only if it differs from
 # the current setting of ${PREFIX}
 	@${EGREP} -q '^#define[[:space:]]+PREFIX[[:space:]]+"${PREFIX}"' \

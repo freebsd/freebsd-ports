@@ -27,10 +27,10 @@ post-patch:
 		${WRKSRC}/man/htick.1
 
 post-build:
-	@cd ${WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} all
+	@cd ${WRKSRC}/doc && ${MAKE_CMD} ${MAKE_ARGS} all
 
 post-install:
-	@cd ${WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} install
+	@cd ${WRKSRC}/doc && ${MAKE_CMD} ${MAKE_ARGS} install
 
 .include "${.CURDIR}/../husky-base-devel/Makefile.inc"
 .include <bsd.port.mk>

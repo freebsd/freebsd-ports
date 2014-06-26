@@ -2,9 +2,10 @@
 
 PORTNAME?=	alpine
 PORTVERSION=	2.11
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	http://patches.freeiz.com/alpine/release/src/
+DIST_SUBDIR=	alpine-${PORTVERSION}
 EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	mbeis@xs4all.nl
@@ -21,12 +22,11 @@ NOSPELL_DESC=	Use no default speller (overrides both)
 
 .if !defined(PICO_ALPINE_SLAVE)
 
-OPTIONS_DEFINE+=	PICO IPV6 LDAP PASSFILE CONS25 QUOTA MAILDIR SSL
+OPTIONS_DEFINE+=	PICO IPV6 LDAP PASSFILE CONS25 MAILDIR SSL
 OPTIONS_DEFAULT+=	PICO SSL
 PICO_DESC=	Build and install pico, the default editor
 PASSFILE_DESC=	Support for a stored password file (DANGEROUS)
 CONS25_DESC=	Add a patch to support color for default console
-QUOTA_DESC=	Add a patch for disk quota checking on IMAP
 MAILDIR_DESC=	Add a patch for maildir support
 .endif
 
@@ -113,24 +113,14 @@ ALPINE_PASSFILE?=	.alpine.pwd
 CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
 .endif
 
-.if ${PORT_OPTIONS:MQUOTA} || ${PORT_OPTIONS:MMAILDIR}
-PATCH_SITES=		ftp://ftp.cac.washington.edu/alpine/
-PATCH_SITE_SUBDIR=	dougb/alpine-${PORTVERSION}/
+.if ${PORT_OPTIONS:MMAILDIR}
+PATCH_SITES=		http://patches.freeiz.com/alpine/patches/alpine-2.11/
+PATCHFILES+=		maildir.patch.gz
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
 .endif
 
-.if ${PORT_OPTIONS:MQUOTA}
-PATCH_SITES=		ftp://ftp.cac.washington.edu/alpine/alpine-2.00/
-PATCHFILES+=	quota.patch.gz
-.endif
-
-.if ${PORT_OPTIONS:MMAILDIR}
-PATCH_SITES=		ftp://ftp.cac.washington.edu/alpine/alpine-2.00/
-PATCHFILES+=	maildir.patch.gz
-.endif
-
 .if ${PORT_OPTIONS:MCONS25}
-EXTRA_PATCHES=	${FILESDIR}/cons25-alpine_keymenu.c
+EXTRA_PATCHES=		${FILESDIR}/cons25-alpine_keymenu.c
 .endif
 
 pre-patch:

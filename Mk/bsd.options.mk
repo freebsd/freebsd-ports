@@ -467,7 +467,7 @@ CONFIGURE_ARGS+=	--disable-${iopt}
 .    endif
 .    if defined(${opt}_CONFIGURE_WITH)
 .      for iopt in ${${opt}_CONFIGURE_WITH}
-CONFIGURE_ARGS+=	--without-${iopt}
+CONFIGURE_ARGS+=	--without-${iopt:C/=.*//}
 .      endfor
 .    endif
 .    for configure in CONFIGURE CMAKE QMAKE

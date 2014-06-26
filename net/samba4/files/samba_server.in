@@ -33,7 +33,7 @@ samba_server_config_default="%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%"
 samba_server_config=${samba_server_config=${samba_server_config_default}}
 samba_server_configfile_arg=${samba_server_config:+--configfile="${samba_server_config}"}			#"
 #testparm_command="%%PREFIX%%/bin/samba-tool testparm --suppress-prompt --verbose ${samba_server_configfile_arg}"
-testparm_command="%%PREFIX%%/bin/testparm --suppress-prompt --verbose ${samba_server_configfile_arg}"
+testparm_command="%%PREFIX%%/bin/testparm --suppress-prompt --verbose ${samba_server_config}"
 smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
 
 # Custom commands

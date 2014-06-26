@@ -32,6 +32,7 @@ KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR="${KMODDIR:C,^/,,}"
 MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys" NO_XREF=yes
 
+STRIP_CMD+=	--strip-debug # do not strip kernel symbols
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_KMOD_POST_MK)

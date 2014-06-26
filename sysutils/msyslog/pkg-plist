@@ -14,13 +14,13 @@ man/man8/om_tcp.8.gz
 man/man8/om_udp.8.gz
 man/man8/peochk.8.gz
 man/man8/syslogd.8.gz
-%%MYSQL%%/man/man8/om_mysql.8.gz
-%%PGSQL%%/man/man8/om_pgsql.8.gz
-%%EXAMPLESDIR%%/im_mymodule.c
-%%EXAMPLESDIR%%/om_mymodule.c
-%%EXAMPLESDIR%%/syslog.conf.classic
-%%EXAMPLESDIR%%/syslog.conf.mysql
-%%EXAMPLESDIR%%/syslog.conf.peo
-%%EXAMPLESDIR%%/syslog.conf.pgsql
-%%EXAMPLESDIR%%/syslog.conf.regex
+%%MYSQL%%man/man8/om_mysql.8.gz
+%%PGSQL%%man/man8/om_pgsql.8.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/im_mymodule.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/om_mymodule.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf.classic
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf.mysql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf.peo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf.pgsql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf.regex
 @dirrm %%EXAMPLESDIR%%

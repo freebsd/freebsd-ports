@@ -13,7 +13,7 @@ COMMENT=	General purpose text retrieval Software
 
 LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 
-USES=		gmake
+USES=		gmake makeinfo
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all html
 

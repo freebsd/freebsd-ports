@@ -80,8 +80,8 @@ pre-build:
 	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 
 do-build:
-	cd ${WRKSRC} ; ${GMAKE} mumps
-	cd ${WRKSRC} ; ${GMAKE}
+	cd ${WRKSRC} ; ${MAKE_CMD} mumps
+	cd ${WRKSRC} ; ${MAKE_CMD}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sdpara ${PREFIX}/bin

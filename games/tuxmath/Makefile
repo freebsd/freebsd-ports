@@ -66,7 +66,7 @@ pre-configure:
 		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}")
 
 pre-build:
-	@(cd ${T4K_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@(cd ${T4K_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${_make_jobs} ${ALL_TARGET})
 
 post-install:

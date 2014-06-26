@@ -1,4 +1,4 @@
 sbin/iplog
-@unexec if cmp -s %D/etc/iplog.conf %D/etc/example-iplog.conf; then rm -f %D/etc/iplog.conf; fi
-etc/example-iplog.conf
-@exec test -f %B/iplog.conf || cp %B/%f %B/iplog.conf
+@sample etc/iplog.conf.sample
+man/man5/iplog.conf.5.gz
+man/man8/iplog.8.gz

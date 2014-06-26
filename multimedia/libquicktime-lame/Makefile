@@ -39,6 +39,6 @@ CONFIGURE_ARGS+=	--with-lame \
 
 NO_STAGE=	yes
 do-install:
-	@cd ${WRKSRC}/plugins/lame && ${GMAKE} install
+	@cd ${WRKSRC}/plugins/lame && ${MAKE_CMD} install
 
 .include "${MASTERDIR}/Makefile"

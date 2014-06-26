@@ -34,7 +34,7 @@ CFLAGS+=	-funroll-all-loops -ffast-math -fomit-frame-pointer -D_GNU_SOURCE -D_RE
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|make -f|${GMAKE} -f|g' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|make -f|${MAKE_CMD} -f|g' ${WRKSRC}/${MAKEFILE}
 	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' ${WRKSRC}/src/nlinternal.h
 
 post-install:

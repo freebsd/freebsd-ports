@@ -1,5 +1,5 @@
---- makefile.orig	2008-10-09 04:07:40.000000000 +0700
-+++ makefile	2013-11-18 19:44:05.000000000 +0700
+--- makefile.orig	2008-10-09 05:07:40.000000000 +0800
++++ makefile	2014-06-24 15:09:56.936151781 +0800
 @@ -3,14 +3,12 @@
  # see README for others
  PLATFORM=linux
@@ -17,13 +17,13 @@
  
  vblade: $O
  	${CC} -o vblade $O
-@@ -38,6 +36,6 @@
+@@ -38,6 +36,6 @@ clean :
  	rm -f $O vblade
  
  install : vblade vbladed
 -	install vblade ${sbindir}/
 -	install vbladed ${sbindir}/
 -	install vblade.8 ${mandir}/man8/
-+	${INSTALL_PROGRAM} vblade ${sbindir}/
-+	${INSTALL_SCRIPT} vbladed ${sbindir}/
-+	${INSTALL_MAN} vblade.8 ${mandir}/man8/
++	${INSTALL_PROGRAM} vblade $(DESTDIR)${sbindir}/
++	${INSTALL_SCRIPT} vbladed $(DESTDIR)${sbindir}/
++	${INSTALL_MAN} vblade.8 $(DESTDIR)${mandir}/man8/

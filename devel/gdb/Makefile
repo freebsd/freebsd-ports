@@ -101,9 +101,9 @@ do-install:
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-	(cd ${WRKSRC}/gdb; ${GMAKE} DESTDIR=${STAGEDIR} install-python )
+	(cd ${WRKSRC}/gdb; ${MAKE_CMD} DESTDIR=${STAGEDIR} install-python )
 	(cd ${WRKSRC}/gdb/data-directory ; \
-		${GMAKE} DESTDIR=${STAGEDIR} install-python )
+		${MAKE_CMD} DESTDIR=${STAGEDIR} install-python )
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}

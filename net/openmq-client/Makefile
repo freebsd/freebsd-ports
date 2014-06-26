@@ -11,5 +11,4 @@ PKGDEINSTALL=	unused_in_the_slave_port
 
 CLIENT_COMMENT=	(Client)
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

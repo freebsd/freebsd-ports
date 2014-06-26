@@ -18,8 +18,6 @@ INSTALLS_ICONS=	yes
 
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
@@ -33,8 +31,6 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-MANCOMPRESSED=	no
-MAN1=		gxmessage.1
 INFO=		${PORTNAME}
 
 .include <bsd.port.mk>

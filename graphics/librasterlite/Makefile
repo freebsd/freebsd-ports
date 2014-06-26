@@ -3,6 +3,7 @@
 
 PORTNAME=	librasterlite
 PORTVERSION=	1.1g
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/librasterlite-sources/
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
 		libfreexl.so:${PORTSDIR}/textproc/freexl
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv pkgconfig libtool
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

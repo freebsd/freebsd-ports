@@ -1,5 +1,3 @@
 bin/vortex
 bin/xpipes
-@unexec if cmp -s %D/etc/vortex.conf.sample %D/etc/vortex.conf; then rm -f %D/etc/vortex.conf; fi
-etc/vortex.conf.sample
-@exec if [ ! -f %D/etc/vortex.conf ]; then cp -p %D/%F %B/vortex.conf; fi
+@sample etc/vortex.conf.sample

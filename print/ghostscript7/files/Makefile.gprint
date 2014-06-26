@@ -29,7 +29,7 @@ post-configure-gprint:
 
 pre-build-gprint:
 	cd ${WRKSRC}/gimp-print-4.2.7 && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile
 	${LN} -sf ${WRKSRC}/gimp-print-4.2.7/src/ghost/*.[ch] \
 		${WRKSRC}/src
 	${MKDIR} ${WRKSRC}/gimp-print

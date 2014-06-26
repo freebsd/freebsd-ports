@@ -11,6 +11,7 @@ DIST_SUBDIR=	festival
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for Festival
 
+USES=		makeinfo
 NO_BUILD=	yes
 
 INFO=		festival

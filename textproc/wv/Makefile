@@ -3,7 +3,7 @@
 
 PORTNAME=	wv
 PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/
 
@@ -13,8 +13,8 @@ COMMENT=	A library and executables to access Microsoft Word files
 LIB_DEPENDS=	libwmf.so:${PORTSDIR}/graphics/libwmf
 
 USE_GNOME=	libgsf
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+USES=		gmake pkgconfig libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"

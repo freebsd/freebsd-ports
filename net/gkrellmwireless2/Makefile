@@ -14,9 +14,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/gkrellmwireless
-
 USE_XORG=	x11
 USES=		gmake pkgconfig
 
-NO_STAGE=	yes
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
+
 .include <bsd.port.mk>

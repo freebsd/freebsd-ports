@@ -2,67 +2,59 @@
 # $FreeBSD$
 
 PORTNAME=	luxrender
-PORTVERSION=	0.7.1
-PORTREVISION=	7
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://src.luxrender.net/lux/archive/ \
-		http://freebsd.nsu.ru/distfiles/luxrender/
-DISTNAME=	${HG_NODEID}
+MASTER_SITES=	http://src.luxrender.net/lux/get/ \
+		http://src.luxrender.net/luxrays/get/:lr
+DISTFILES=	v${PORTVERSION:S/.//g}${EXTRACT_SUFX} \
+		luxrender_v${PORTVERSION}${EXTRACT_SUFX}:lr
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Physically based and unbiased rendering system
 
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-11-18
-
 LICENSE=	GPLv3
 
-ONLY_FOR_ARCHS=	i386 amd64
-BROKEN=		does not build with boost-1.48.0
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libfreeimage.a:${PORTSDIR}/graphics/freeimage
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfreeimage.so:${PORTSDIR}/graphics/freeimage \
 		libpng15.so:${PORTSDIR}/graphics/png \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-
-HG_NODEID=	9206b3ba7011
-
-USE_BZIP2=	yes
-USES=		bison cmake
-WRKSRC=		${WRKDIR}/lux-${HG_NODEID}
-
-DESKTOP_ENTRIES="LuxRender" "${COMMENT}" \
-		"${PREFIX}/share/pixmaps/luxrender.svg" "${PORTNAME}" \
-		"Graphics;3DGraphics;" false
-
-OPTIONS_DEFINE=		QT4 WX
-OPTIONS_DEFAULT=	QT4
-
-QT4_DESC=		Qt4-enabled GUI executable
-WX_DESC=		wxWidgets-enabled GUI executable
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui
-PLIST_FILES+=	bin/luxrender
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+.if !exists(/usr/include/execinfo.h)
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
-.if ${PORT_OPTIONS:MWX}
-USE_WX=		2.8+
-PLIST_FILES+=	bin/luxrenderwx
-.endif
+USES=		bison cmake tar:bzip2
+USE_GL=		glut glew
+WRKSRC=		${WRKDIR}/luxrender-lux-${LUX_REV}
+LUXRAYS_WRKSRC=	${WRKDIR}/luxrender-luxrays-${LUXRAYS_REV}
+
+CMAKE_ARGS=	-DLUXRAYS_INCLUDE_DIRS:PATH="${LUXRAYS_WRKSRC}/include" \
+		-DLUXRAYS_LIBRARY:STRING="${LUXRAYS_WRKSRC}/lib/libluxrays.a" \
+		-DSLG_INCLUDE_DIRS:PATH="${LUXRAYS_WRKSRC}/include" \
+		-DSLG_LIBRARY:PATH="${LUXRAYS_WRKSRC}/lib/libsmallluxgpu.a" \
+		-DLUXRAYS_DISABLE_OPENCL:BOOL=ON
+
+LUX_REV=	d0b0e20c47cc
+LUXRAYS_REV=	7459cd8a9583
+
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=	X11
+
+X11_DESC=	Build GUI executable (Qt4-based)
+X11_USE=	QT4=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
+X11_PLIST_FILES=	bin/luxrender
 
 post-patch:
-# Prevent appending `64' suffix to `lib' directory on amd64, do not install
-# vendor .desktop file, disable build of Python extension for now
-	@${REINPLACE_CMD} -e '/LIB_SUFFIX 64/d ; /luxrender\.desktop/d ; \
-		89,95d ; 803,837d' ${WRKSRC}/CMakeLists.txt
-# Adjust for libpng 1.4 new API
-	@${REINPLACE_CMD} -e \
-		's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		-e 's|int_p_NULL|NULL|g' ${WRKSRC}/core/external/cimg.h
+	@${REINPLACE_CMD} -e 's/__APPLE__/__FreeBSD__/' \
+		${LUXRAYS_WRKSRC}/samples/smallluxgpu4/smallluxgpu.h \
+		${WRKSRC}/core/osfunc.h \
+		${WRKSRC}/shapes/mikktspace/weldmesh.c
+
+pre-configure:
+	cd ${LUXRAYS_WRKSRC} && ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} \
+		${CMAKE_ARGS} .
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${_MAKE_JOBS} ${MAKE_ARGS} -C ${LUXRAYS_WRKSRC}
 
 .include <bsd.port.mk>

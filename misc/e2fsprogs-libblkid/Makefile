@@ -22,10 +22,10 @@ PKGDIR=		${.CURDIR}
 
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/blkid/elfshared
-	cd ${WRKSRC}/util && ${GMAKE} subst
+	cd ${WRKSRC}/util && ${MAKE_CMD} subst
 
 post-build:
-	cd ${WRKSRC}/lib/uuid && ${GMAKE}
-	cd ${INSTALL_WRKSRC} && ${GMAKE} check
+	cd ${WRKSRC}/lib/uuid && ${MAKE_CMD}
+	cd ${INSTALL_WRKSRC} && ${MAKE_CMD} check
 
 .include "${MASTERDIR}/Makefile"

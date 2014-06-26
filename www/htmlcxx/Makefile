@@ -2,6 +2,7 @@
 
 PORTNAME=	htmlcxx
 PORTVERSION=	0.85
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	SF
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LGPL_V2
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-USES=		iconv
+USES=		iconv libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -16,8 +16,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator
 
-LICENSE=	GPLv2
-
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
@@ -59,6 +57,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCS=OFF
 .if defined(WITHOUT_TETGEN)
 CMAKE_ARGS+=	-DENABLE_TETGEN=OFF
 .else
+NO_CDROM=	Contact appropriate authors for commercial purposes if including Tetgen or Metis
 CMAKE_ARGS+=	-DENABLE_TETGEN=ON
 .endif
 
@@ -70,6 +69,7 @@ IGNORE=		requires that WITHOUT_METIS is not set if WITH_TAUCS is set
 .endif
 
 .if !defined(WITHOUT_METIS)
+NO_CDROM=	Contact appropriate authors for commercial purposes if including Tetgen or Metis
 CMAKE_ARGS+=	-DENABLE_METIS=ON
 .if defined(PORT_OPTIONS:MDOCS)
 IGNORE=		the license for Metis requires that its documentation is included

@@ -14,7 +14,7 @@ COMMENT=	Arcade style game with stereo sound for X Window System
 LICENSE=	GPLv2
 
 USES=		gmake
-MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
+MAKE_ARGS=	CC="${CC}" MAKE="${MAKE_CMD}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \
 		X11_PATH="${LOCALBASE}"
 USE_GCC=	any # doesn't start otherwise (UB?)

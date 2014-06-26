@@ -13,13 +13,14 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three TrueType fonts from Microsoft Windows(TM) 2000/XP
 
+BROKEN=		no distinfo provided
+
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 
 MSTTF_SIMHEI=	simhei.ttf
 MSTTF_SIMSUN=	simsun.ttc
 MSTTF_TAHOMA=	tahoma.ttf
 
-IGNOREFILES=	${MSTTF_SIMHEI} ${MSTTF_SIMSUN} ${MSTTF_TAHOMA}
 RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 
 NO_BUILD=	yes

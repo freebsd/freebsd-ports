@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2014-06-23 23:04:56.824141193 +0800
++++ Makefile.in	2014-06-23 23:05:12.570149447 +0800
+@@ -31,9 +31,9 @@ distclean: clean
+ 
+ install: simpleproxy
+ 	$(top_srcdir)/mkinstalldirs $(bindir)
+-	$(INSTALL)   simpleproxy $(bindir)
++	$(INSTALL)   simpleproxy $(DESTDIR)$(bindir)
+ 	$(top_srcdir)/mkinstalldirs $(mandir)/man1
+-	$(INSTALL)   simpleproxy.man $(mandir)/man1/simpleproxy.1
++	$(INSTALL)   simpleproxy.man $(DESTDIR)$(mandir)/man1/simpleproxy.1
+ 
+ simpleproxy: simpleproxy.o cfg.o Makefile
+ 	$(CC) $(CFLAGS) -o simpleproxy simpleproxy.o cfg.o $(LIBS)

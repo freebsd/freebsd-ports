@@ -14,7 +14,7 @@ COMMENT=	Handle external logins, send and receive faxes
 LICENSE=	GPLv2
 
 USE_CSTD=	gnu89
-USES=		perl5
+USES=		makeinfo perl5
 
 SUB_FILES=	pkg-message mgettycfg
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

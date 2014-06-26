@@ -31,14 +31,14 @@ post-patch::
 
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/uuid/elfshared
-	cd ${WRKSRC}/util && ${GMAKE} subst
+	cd ${WRKSRC}/util && ${MAKE_CMD} subst
 
 # ulimit guards against runaway tests
 # failure to launch uuidd is fine (one might be running, or we may lack
 # privileges); if it works, it'll quit after 50 seconds
 post-build:
-	cd ${WRKSRC}/misc && ${GMAKE} uuidgen uuidgen.1 uuidd uuidd.8
-	cd ${INSTALL_WRKSRC} && ( ulimit -t 5 && ${GMAKE} check )
+	cd ${WRKSRC}/misc && ${MAKE_CMD} uuidgen uuidgen.1 uuidd uuidd.8
+	cd ${INSTALL_WRKSRC} && ( ulimit -t 5 && ${MAKE_CMD} check )
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/misc/uuidgen ${STAGEDIR}${PREFIX}/bin/

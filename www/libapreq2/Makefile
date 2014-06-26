@@ -19,7 +19,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf libtool
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 
-MAKE_ENV+=     MAKE=${GMAKE} ## MakeMaker blows it without this
+MAKE_ENV+=     MAKE=${MAKE_CMD} ## MakeMaker blows it without this
 
 SHLIB_MAJOR=	11
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"

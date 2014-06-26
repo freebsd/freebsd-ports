@@ -7,12 +7,10 @@ include/liblnk/extern.h
 include/liblnk/features.h
 include/liblnk/types.h
 lib/liblnk.a
-lib/liblnk.la
 lib/liblnk.so
 lib/liblnk.so.1
 lib/liblnk.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pylnk.a
-%%PYTHON_SITELIBDIR%%/pylnk.la
 %%PYTHON_SITELIBDIR%%/pylnk.so
 libdata/pkgconfig/liblnk.pc
 man/man1/lnkinfo.1.gz

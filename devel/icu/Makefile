@@ -58,7 +58,7 @@ post-patch:
 
 iotest cintltst intltest:
 	# Performing the ${.TARGET} test
-	-${GMAKE} -C ${WRKSRC}/test
+	-${MAKE_CMD} -C ${WRKSRC}/test
 	cd ${WRKSRC}/test/${.TARGET} && ${SETENV} \
 	    LD_LIBRARY_PATH=${WRKSRC}/lib:${WRKSRC}/tools/ctestfw \
 	    ./${.TARGET}

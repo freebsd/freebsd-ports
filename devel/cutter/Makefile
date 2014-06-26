@@ -27,7 +27,7 @@ SOUP_DESC=	libsoup support
 LCOV_DESC=	Force dependency on lcov
 
 regression-test: build
-	@${SETENV} LC_ALL=C ${GMAKE} -C ${WRKSRC} check
+	@${SETENV} LC_ALL=C ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} check
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

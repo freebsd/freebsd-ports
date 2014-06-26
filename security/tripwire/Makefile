@@ -20,7 +20,6 @@ USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd \
 		DESTDIR=${STAGEDIR}
-IS_INTERACTIVE=	yes
 M4=		/usr/bin/m4
 
 # Tripwire database files are stored in TWDB.
@@ -119,12 +118,12 @@ install-config-files:
 .endif
 	@ cd ${WRKSRC} && ${LN} -sf install/install.cfg install/install.sh .
 .ifdef PACKAGE_BUILDING
-	@ cd ${WRKSRC} && DESTDIR=${STAGEDIR} PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} DO_NOT_CONFIG="yes" TW_PROMPT="false" ${GMAKE} install-data-hook
+	@ cd ${WRKSRC} && DESTDIR=${STAGEDIR} PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} DO_NOT_CONFIG="yes" TW_PROMPT="false" ${MAKE_CMD} install-data-hook
 .else
 .if ${PORT_OPTIONS:MSW_ONLY}
-	@ cd ${WRKSRC} && DESTDIR=${STAGEDIR} PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} DO_NOT_CONFIG="yes" TW_PROMPT="false" ${GMAKE} install-data-hook
+	@ cd ${WRKSRC} && DESTDIR=${STAGEDIR} PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} DO_NOT_CONFIG="yes" TW_PROMPT="false" ${MAKE_CMD} install-data-hook
 .else
-	@ cd ${WRKSRC} && DESTDIR=${STAGEDIR} PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} TW_PROMPT=${TW_PROMPT} ${GMAKE} install-data-hook
+	@ cd ${WRKSRC} && DESTDIR=${STAGEDIR} PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} TW_PROMPT=${TW_PROMPT} ${MAKE_CMD} install-data-hook
 .endif
 .endif
 

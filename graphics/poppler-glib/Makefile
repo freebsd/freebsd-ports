@@ -13,7 +13,7 @@ SLAVEPORT=	glib
 PLIST=		${.CURDIR}/pkg-plist
 
 pre-build:
-	@cd ${WRKSRC}/poppler && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@cd ${WRKSRC}/poppler && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} libpoppler-cairo.la
 
 .include "${MASTERDIR}/Makefile"

@@ -70,12 +70,12 @@ post-patch:
 post-build:
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===> Building docs"
-	@(cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} doc)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} doc)
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MTCL}
-	@(cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} install-tcl)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-tcl)
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/sqlite
 .endif
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -34,7 +34,7 @@ post-patch:
 		${REINPLACE_CMD} -e 's|share/man|man|'
 	@${REINPLACE_CMD} -e 's|path/to.*hgview.py|${PYTHON_SITELIBDIR}/hgext/hgview.py|' \
 		${WRKSRC}/README
-	@${REINPLACE_CMD} -e 's|'make'|'${GMAKE}'|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|'make'|'${MAKE_CMD}'|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
 		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
 		${WRKSRC}/setup.py

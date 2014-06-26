@@ -13,7 +13,7 @@ COMMENT=	SMTP plugin for MUAs
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig tar:bzip2
+USES=		makeinfo pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=	msmtp

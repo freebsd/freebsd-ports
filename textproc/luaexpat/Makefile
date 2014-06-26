@@ -14,7 +14,6 @@ COMMENT=	LuaExpat is a SAX XML parser based on the Expat library
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USES=		gmake lua:51
-USE_LUA=	5.1-5.2
 ALL_TARGET=	lib
 
 CFLAGS+=	-fPIC

@@ -27,7 +27,7 @@ post-patch:
 		${WRKSRC}/doc/Makefile
 
 do-build:
-	cd ${WRKSRC} && ${GMAKE} -C doc info html
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C doc info html
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${PREFIX}/${INFO_PATH}

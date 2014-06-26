@@ -18,7 +18,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 USES=	gmake
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	MAKE=${GMAKE}
+MAKE_ARGS=	MAKE=${MAKE_CMD}
 CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

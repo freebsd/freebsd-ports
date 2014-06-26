@@ -22,6 +22,7 @@ PLIST_SUB=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
 # how to make and install
 ALL_TARGET=	package
 INSTALL_TARGET=	install-package
+MAKE_ARGS+=	PACKAGEDIR="${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}"
 
 # RUN_DEPENDS port name's suffix is '-common'.
 HAS_COMMON_PORT=	YES
@@ -52,9 +53,8 @@ SEMIDOCDIR=	${EMACS_PACKAGESDIR}/lisp/semi
 
 xemacs-package: install
 	@${RM} -f ${.CURDIR}/${XEMACS_PKG_TARBALL}
-	@(cd ${LOCALBASE}/${EMACS_PACKAGESDIR} ;\
+	@(cd ${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR} ;\
 	  ${TAR} -zcf ${.CURDIR}/${XEMACS_PKG_TARBALL} ${XEMACS_PKG_CONTENTS} ;\
 	)
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

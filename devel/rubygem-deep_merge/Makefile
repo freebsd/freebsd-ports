@@ -5,7 +5,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Recursive hash merger
 
 LICENSE=	MIT

@@ -133,6 +133,6 @@ do-install:
 
 regression-test: build
 	${DO_MAKE_BUILD} -C ${WRKSRC} test
-	cd ${WRKSRC} && ${GMAKE} test
+	cd ${WRKSRC} && ${MAKE_CMD} test
 
 .include <bsd.port.mk>

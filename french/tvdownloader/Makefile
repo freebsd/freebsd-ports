@@ -19,9 +19,6 @@ RUN_DEPENDS=	msdl:${PORTSDIR}/multimedia/msdl	\
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto\
 		${PYTHON_SITELIBDIR}/mechanize/_mechanize.py:${PORTSDIR}/www/py-mechanize
 
-MECHA_VER=	0.2.5
-MECHA_EGG=	mechanize-${MECHA_VER}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
-
 USE_PYTHON=	yes
 USES=		shebangfix
 SHEBANG_FILES=	doc/installdox

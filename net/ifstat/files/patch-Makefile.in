@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2014-06-23 17:54:49.793422514 +0800
++++ Makefile.in	2014-06-23 17:56:06.824418432 +0800
+@@ -65,10 +65,10 @@ libifstat-config: libifstat-config.in
+ install: install-$(TARGET) install-@LIBTARGET@
+ 
+ install-$(TARGET): $(TARGET)
+-	$(INSTALL) -d -m 755 $(bindir)
+-	$(INSTALL) -s -m 755 $(TARGET) $(bindir)/$(TARGET)
+-	$(INSTALL) -d -m 755 $(mandir)/man1
+-	$(INSTALL) -m 644 ifstat.1 $(mandir)/man1/ifstat.1
++	$(INSTALL) -d -m 755 $(DESTDIR)$(bindir)
++	$(INSTALL) -s -m 755 $(TARGET) $(DESTDIR)$(bindir)/$(TARGET)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(mandir)/man1
++	$(INSTALL) -m 644 ifstat.1 $(DESTDIR)$(mandir)/man1/ifstat.1
+ 
+ install-$(LIBTARGET): $(LIBTARGET) libifstat-config
+ 	$(INSTALL) -d -m 755 $(bindir)

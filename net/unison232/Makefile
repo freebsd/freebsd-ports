@@ -60,7 +60,7 @@ post-patch:
 post-build:
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}
-	${GMAKE} -C ${WRKSRC} UISTYLE=text NAME=${PORTNAME}-text
+	${MAKE_CMD} -C ${WRKSRC} UISTYLE=text NAME=${PORTNAME}-text
 	@cd ${WRKSRC}/win32rc && ${LOCALBASE}/bin/icotool -x U.ico
 .endif
 

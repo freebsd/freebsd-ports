@@ -15,7 +15,7 @@ BUILD_DEPENDS=	latex-pgf>=0:${PORTSDIR}/print/latex-pgf \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		gmake tar:bzip2
+USES=		gmake makeinfo tar:bzip2
 USE_TEX=	latex dvipsk:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \

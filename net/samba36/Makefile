@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		${SAMBA_BASENAME}36
-PORTVERSION=		3.6.23
+PORTVERSION=		3.6.24
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -539,7 +539,7 @@ post-install:
 
 .if ${PORT_OPTIONS:MMAX_DEBUG}
 test:
-	(cd ${WRKSRC} && ${GMAKE} test_nss_modules test_pam_modules && ${GMAKE} test)
+	(cd ${WRKSRC} && ${MAKE_CMD} test_nss_modules test_pam_modules && ${MAKE_CMD} test)
 .endif
 # !SAMBA_SUBPORT
 .endif

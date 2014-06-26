@@ -36,7 +36,7 @@ NO_STAGE=	yes
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README manuf
 DISTFILES+=	manuf:2
-IGNOREFILES=	manuf
+BROKEN=		no distinfo provided for some of the distfiles
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -77,8 +77,8 @@ post-patch:
 			${WRKSRC}/conf/kismet.conf.in \
 			${WRKSRC}/conf/kismet_drone.conf
 	@${REINPLACE_CMD} -e "s/plugin-/plugin-[aps]/" \
-		-e "s/make/${GMAKE}/" \
-		-e "s/\$$(MAKE)/${GMAKE}/" \
+		-e "s/make/${MAKE_CMD}/" \
+		-e "s/\$$(MAKE)/${MAKE_CMD}/" \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s/CXXFLAGS/CPPFLAGS/" \
 		${WRKSRC}/plugin-alertsyslog/Makefile

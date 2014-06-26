@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS ChangeLog README
-PLIST_FILES=	bin/${PORTNAME} man/man1/afuse.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

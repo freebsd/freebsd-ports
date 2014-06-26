@@ -31,9 +31,9 @@ post-extract:
 do-build:
 	cd ${WRKDIR}/libtommath-0.33 && \
 	${SETENV} ${MAKE_ENV} ${MAKE} -f makefile  libtommath.a
-	cd ${WRKDIR}/lib &&  ${SETENV} ${MAKE_ENV} ${GMAKE} -f Makefile all
+	cd ${WRKDIR}/lib &&  ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile all
 	cd ${WRKDIR}/${PORTNAME}${MAJ_VER}${MIN_VER} &&  \
-		${SETENV} ${MAKE_ENV} ${GMAKE} -f Makefile all
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile all
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME}${MAJ_VER}${MIN_VER}/clit \

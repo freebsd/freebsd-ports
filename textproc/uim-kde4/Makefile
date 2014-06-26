@@ -31,9 +31,9 @@ IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/qt4/toolbar/build && ${SETENV} ${MAKE_ENV} ${GMAKE})
+	(cd ${WRKSRC}/qt4/toolbar/build && ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
 
 do-install:
-	(cd ${WRKSRC}/qt4/toolbar/build && ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/qt4/toolbar/build && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
 
 .include "${MASTERDIR}/Makefile"

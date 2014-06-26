@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-divand
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
-
-RUN_DEPENDS+=	${TARBALLS_DIR}/mapping.tar.gz:${PORTSDIR}/math/octave-forge-mapping
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	libcoverart
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://cloud.github.com/downloads/metabrainz/${PORTNAME}/
 

@@ -20,7 +20,7 @@ post-build:
 
 do-install:
 .  for d in docs examples
-	@cd ${WRKSRC}/${d} && ${GMAKE} ${MAKE_ARGS} install
+	@cd ${WRKSRC}/${d} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
 .  endfor
 
 

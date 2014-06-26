@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool:keepla
+USES=		libtool:keepla makeinfo
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 AUTOMAKE_ARGS=	-a -c
 LIBTOOLIZE_ARGS=-i -c

@@ -14,8 +14,7 @@ COMMENT=	X11 12,14,16-dot Kanji fonts
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
-RUN_DEPENDES=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USES=		perl5
 USE_PERL5=	build
@@ -23,13 +22,7 @@ USE_PERL5=	build
 FONTSDIR=	lib/X11/fonts/local
 USE_BZIP2=	yes
 ALL_TARGET=	bdf
-MAKE_ARGS=	PREFIX=${PREFIX}
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
-
-NO_STAGE=	yes
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 .include <bsd.port.mk>

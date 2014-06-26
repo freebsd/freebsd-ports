@@ -24,6 +24,7 @@
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/faq
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/imagelib/callouts
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/imagelib

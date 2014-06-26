@@ -6,6 +6,7 @@ include/tqslerrno.h
 include/tqsllib.h
 lib/libtqsllib.so
 man/man5/tqsl.5.gz
+share/TrustedQSL/ca-bundle.crt
 share/TrustedQSL/config.xml
 share/TrustedQSL/help/tqslapp/P12.bmp
 share/TrustedQSL/help/tqslapp/Pending.bmp
@@ -106,4 +107,3 @@ share/pixmaps/TrustedQSL.png
 @dirrm share/TrustedQSL/help/tqslapp
 @dirrm share/TrustedQSL/help
 @dirrm share/TrustedQSL
-@dirrmtry share/pixmaps

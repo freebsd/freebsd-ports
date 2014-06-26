@@ -243,7 +243,7 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} haddock ${HADDOCK_OPTS}
 .endif # STANDALONE
 .if defined(XMLDOCS)
-	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
+	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
 .endif # XMLDOCS
 .endif # DOCS
 .endif # target(do-build)

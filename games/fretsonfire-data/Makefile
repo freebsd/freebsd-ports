@@ -19,11 +19,10 @@ WRKSRC=		${WRKDIR}/Frets\ on\ Fire-${PORTVERSION}
 
 EXTRACT_AFTER_ARGS=	--exclude 'win32' "Frets on Fire-${PORTVERSION}/${PORTNAME}"
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}
 	@cd ${WRKSRC}/data && \
-		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${DATADIR}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/${DATADIR}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${DATADIR}/{}" \;
 
 .include <bsd.port.mk>

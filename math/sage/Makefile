@@ -17,6 +17,7 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		convert:${PORTSDIR}/graphics/ImageMagick \

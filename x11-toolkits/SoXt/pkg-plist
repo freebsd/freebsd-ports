@@ -24,7 +24,6 @@ include/Inventor/Xt/viewers/SoXtFullViewer.h
 include/Inventor/Xt/viewers/SoXtPlaneViewer.h
 include/Inventor/Xt/viewers/SoXtViewer.h
 include/Inventor/Xt/widgets/SoXtPopupMenu.h
-lib/libSoXt.la
 lib/libSoXt.so
 lib/libSoXt.so.20
 lib/libSoXt.so.20.3.0

@@ -3,6 +3,7 @@
 
 PORTNAME=	xml-security-c
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=santuario/c-library
@@ -19,8 +20,7 @@ LIB_DEPENDS+=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}
-USE_AUTOTOOLS=	libtool
-USES=	gmake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 

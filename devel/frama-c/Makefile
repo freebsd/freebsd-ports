@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--with-no-plugin
 post-patch:
 	@cd ${WRKSRC}/tests; ${MKDIR} aorai report wp wp_acsl wp_bts \
 	wp_engine wp_hoare wp_plugin wp_runtime wp_store wp_typed
-	@${REINPLACE_CMD} -e 's|@make |@${GMAKE} |' \
+	@${REINPLACE_CMD} -e 's|@make |@${MAKE_CMD} |' \
 			${WRKSRC}/src/aorai/Makefile.in
 	@${REINPLACE_CMD} \
 		-e 's|$$(CP)|${INSTALL_DATA}|' \
@@ -122,6 +122,6 @@ post-install:
 check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV:NCPP=*} \
 	CPP="${CPP} -C -I${WRKSRC}/share/libc -I." \
-	${GMAKE} ${MAKE_ARGS} oracles fulltests
+	${MAKE_CMD} ${MAKE_ARGS} oracles fulltests
 
 .include <bsd.port.mk>

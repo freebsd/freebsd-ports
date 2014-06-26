@@ -3,21 +3,20 @@
 
 PORTNAME=	xmlroff
 PORTVERSION=	0.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://xmlroff.org/download/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XSL formatter that produces PDF and PostScript
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack libgnomeprint libxslt \
+USES=		gmake libtool pkgconfig pathfix
+USE_GNOME=	libgnomeprint libxslt \
 		libxml2 gtk20 glib20 pango
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

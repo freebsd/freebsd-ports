@@ -12,6 +12,7 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Graphical tool for solving differential equations, etc
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_XORG=	xbitmaps x11 xproto
 CFLAGS+=	-w -Wno-return-type

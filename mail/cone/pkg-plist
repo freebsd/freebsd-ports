@@ -4,6 +4,9 @@ bin/mailtool
 sbin/cone-sysconftool
 etc/cone.dist
 libexec/cone
+man/man1/cone.1.gz
+man/man1/mailtool.1.gz
+man/man1/leaf.1.gz
 %%DATADIR%%/APPLICATION.PDF.filter
 %%DATADIR%%/IMAGE.GIF.filter
 %%DATADIR%%/IMAGE.JPEG.filter

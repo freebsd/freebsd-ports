@@ -3,7 +3,7 @@
 
 PORTNAME=	htmlcompressor
 PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}.jar
@@ -21,6 +21,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/htmlcompressor %%JAVAJARDIR%%/htmlcompressor.jar
 SUB_FILES=	htmlcompressor
+SUB_LIST+=	JAVA_VERSION=${JAVA_PORT_VERSION:R}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}

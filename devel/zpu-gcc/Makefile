@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:${PORTSDIR}/devel/zpu-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
-USES=		gettext gmake
+USES=		gettext gmake makeinfo
 MANDIRS=	${PREFIX}/zpu/man
 INFO=		zpuc/cpp zpuc/cppinternals zpuc/dir zpuc/gcc zpuc/gccinstal \
 		    zpuc/gccint
@@ -25,7 +25,7 @@ INFO=		zpuc/cpp zpuc/cppinternals zpuc/dir zpuc/gcc zpuc/gccinstal \
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%CC%%/${CC}/' ${WRKSRC}/build.sh
 	${CP}	${FILESDIR}/install.sh ${WRKSRC}
-	@${REINPLACE_CMD} -e 's/%%GMAKE%%/${GMAKE}/' ${WRKSRC}/build.sh \
+	@${REINPLACE_CMD} -e 's/%%MAKE_CMD%%/${MAKE_CMD}/' ${WRKSRC}/build.sh \
 		${WRKSRC}/install.sh
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/build.sh
 	@${REINPLACE_CMD} -e 's|%%DESTDIR%%|${STAGEDIR}|g' ${WRKSRC}/gcc/Makefile.in

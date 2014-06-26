@@ -4,7 +4,6 @@ bin/mysql-connector-c/perror
 include/mysql-connector-c/big_endian.h
 include/mysql-connector-c/byte_order_generic.h
 include/mysql-connector-c/byte_order_generic_x86.h
-include/mysql-connector-c/byte_order_generic_x86_64.h
 include/mysql-connector-c/decimal.h
 include/mysql-connector-c/errmsg.h
 include/mysql-connector-c/keycache.h
@@ -12,7 +11,6 @@ include/mysql-connector-c/little_endian.h
 include/mysql-connector-c/m_ctype.h
 include/mysql-connector-c/m_string.h
 include/mysql-connector-c/my_alloc.h
-include/mysql-connector-c/my_attribute.h
 include/mysql-connector-c/my_byteorder.h
 include/mysql-connector-c/my_compiler.h
 include/mysql-connector-c/my_config.h
@@ -36,6 +34,7 @@ include/mysql-connector-c/mysql/psi/mysql_file.h
 include/mysql-connector-c/mysql/psi/mysql_idle.h
 include/mysql-connector-c/mysql/psi/mysql_mdl.h
 include/mysql-connector-c/mysql/psi/mysql_memory.h
+include/mysql-connector-c/mysql/psi/mysql_ps.h
 include/mysql-connector-c/mysql/psi/mysql_socket.h
 include/mysql-connector-c/mysql/psi/mysql_sp.h
 include/mysql-connector-c/mysql/psi/mysql_stage.h

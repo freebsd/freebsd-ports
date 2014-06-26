@@ -1,3 +1,5 @@
+@owner %%EC_USER%%
+@group %%EC_GROUP%%
 ecartis/ecartis
 ecartis/banned
 ecartis/documentation/Makefile
@@ -65,10 +67,10 @@ ecartis/ecartis.cfg.dist
 ecartis/ecartis.aliases.dist
 @dirrm ecartis/lists/test/text
 @dirrm ecartis/lists/test
-@dirrm ecartis/lists
+@dirrmtry ecartis/lists
 @dirrm ecartis/templates
 @dirrm ecartis/scripts
-@dirrm ecartis/queue
+@dirrmtry ecartis/queue
 @dirrm ecartis/modules
 @dirrm ecartis/documentation
-@dirrm ecartis
+@dirrmtry ecartis

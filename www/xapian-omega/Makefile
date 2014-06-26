@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.2.17
+PORTVERSION=	1.2.18
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -28,7 +28,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		perl5 shebangfix tar:xz
+USES=		libtool perl5 shebangfix tar:xz
 
 MORE_PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PORTDOCS=	${MORE_PORTDOCS} cgiparams.html index.html omegascript.html \

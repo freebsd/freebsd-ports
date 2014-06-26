@@ -239,7 +239,6 @@ include/libexplain/waitpid.h
 include/libexplain/write.h
 include/libexplain/writev.h
 lib/libexplain.a
-lib/libexplain.la
 lib/libexplain.so
 lib/libexplain.so.55
 libdata/pkgconfig/libexplain.pc

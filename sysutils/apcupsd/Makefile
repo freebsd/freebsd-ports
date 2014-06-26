@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Set of programs for controlling APC UPS
 
-IGNOREFILES=	${PORTNAME}.pdf
+BROKEN=		no distinfo provided for some of the distfiles
 
 USE_RC_SUBR=	apcupsd
 SUB_FILES=	pkg-message

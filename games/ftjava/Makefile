@@ -15,13 +15,12 @@ EXTRACT_ONLY=	FTJavaV${PORTVERSION}.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Thrust PBEM Client
 
+BROKEN=		no distinfo provided for some of the distfiles
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-IGNOREFILES=	FTJava_Documentation.html faq.html FTJava_Linux.html
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	Images IncomingGames OutgoingGames Ships FTJava.jar \

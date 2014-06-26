@@ -25,7 +25,7 @@ NLS_CONFIGURE_ENABLE=nls
 NLS_USES=	gettext
 PORTDOCS=	*
 
-USES=		gmake shebangfix lua:51 libtool tar:bzip2
+USES=		gmake libtool lua:51 pathfix shebangfix tar:bzip2
 USE_BDB=	46+
 INVALID_BDB_VER=51
 GNU_CONFIGURE=	yes
@@ -57,7 +57,8 @@ CONFIGURE_ENV+=	LUA_CFLAGS=-I${LUA_INCDIR} \
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
-	${REINPLACE_CMD} -e '/^pkgconfigdir/s:/:data/:' \
+	${REINPLACE_CMD} \
+		-e '/_LDADD =/s/=/= @LTLIBINTL@/' \
 		-e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's/(hpux)/& || defined(__FreeBSD__)/' \
 		${WRKSRC}/misc/fts.?

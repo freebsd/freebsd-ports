@@ -2,7 +2,7 @@
 
 PORTNAME=	jbig2dec
 PORTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -13,9 +13,10 @@ COMMENT=	Decoder implementation of the JBIG2 image compression format
 
 LICENSE=	GPLv3
 
+USES=		tar:xz libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		tar:xz
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PNG TESTS
 OPTIONS_DEFAULT=	PNG
@@ -50,6 +51,8 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -E 's|SHA1_Final\( *([^,]+), *([^\)]+)\)|SHA1_Final(\2, \1)|' \
 		${WRKSRC}/jbig2dec.c ${WRKSRC}/sha1.c
+	@${REINPLACE_CMD} -e '1 s|${SETENV} python|${PYTHON_CMD}|' \
+		${WRKSRC}/test_jbig2dec.py
 
 test check regression-test:
 	${MAKE} -C ${WRKSRC} check-TESTS

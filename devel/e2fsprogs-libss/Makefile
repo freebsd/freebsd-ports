@@ -27,7 +27,7 @@ pre-build:
 	${REINPLACE_CMD} -f ${FILESDIR}/fix-ss_err.h.sed ss_err.h)
 
 post-build:
-	@(cd ${WRKSRC}/lib/ss && ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+	@(cd ${WRKSRC}/lib/ss && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 	${_MAKE_JOBS} ${MAKE_ARGS} all)
 
 .include "${MASTERDIR}/Makefile"

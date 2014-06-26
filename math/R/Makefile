@@ -72,7 +72,7 @@ OPTIONS_DEFAULT+=	ICU PCRE_PORT THREADS
 RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
 #now only used to build the R.1 manpage:
-USES+=			perl5
+USES+=			makeinfo perl5
 USE_PERL5=		build
 
 OPTIONS_DEFINE+=	GHOSTSCRIPT INFO_MANUALS JPEG LETTER_PAPER LIBR \

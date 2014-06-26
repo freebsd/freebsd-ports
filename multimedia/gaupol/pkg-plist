@@ -1,4 +1,5 @@
 bin/gaupol
+man/man1/gaupol.1.gz
 %%PYTHON_SITELIBDIR%%/aeidon/__init__.py
 %%PYTHON_SITELIBDIR%%/aeidon/__init__.pyc
 %%PYTHON_SITELIBDIR%%/aeidon/__init__.pyo

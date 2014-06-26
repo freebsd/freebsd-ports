@@ -90,10 +90,10 @@ pre-configure:
 MAKE_ENV+=	SCRATCH=${WRKSRC}/tmp
 
 do-build:
-	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE})
+	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
 
 do-install:
-	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install)
 	@${TAR} cf - -C ${WRKSRC}/tmpdoc/man .  | ${TAR} xf - -C ${PREFIX}/man
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/psi3

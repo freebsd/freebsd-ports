@@ -19,19 +19,14 @@ LIBNET_CONFIG=	${LOCALBASE}/bin/libnet11-config
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.9.0
 USE_GNOME=	glib20
 
-NO_STAGE=	yes
-
 do-build:
 	cd ${WRKSRC} && ${CC} -c vortex.c -I${LOCALBASE}/include
 	cd ${WRKSRC} && ${CC} -v -o vortex vortex.o -L${LOCALBASE}/lib ${LOCALBASE}/lib/libnids.a `${LIBNET_CONFIG} --libs` -lglib-2.0 -lgthread-2.0 -lpcap
 	cd ${WRKSRC} && ${CC} -o xpipes xpipes.c ${PTHREAD_LIBS}
 
 do-install:
-	${INSTALL_DATA}	${WRKSRC}/vortex.conf ${PREFIX}/etc/vortex.conf.sample
-	if [ ! -f ${PREFIX}/etc/vortex.conf ]; then \
-		${CP} -p ${PREFIX}/etc/vortex.conf.sample ${PREFIX}/etc/vortex.conf; \
-	fi
-	${INSTALL_PROGRAM} ${WRKSRC}/vortex ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/xpipes ${PREFIX}/bin
+	${INSTALL_DATA}	${WRKSRC}/vortex.conf ${STAGEDIR}${PREFIX}/etc/vortex.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/vortex ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xpipes ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

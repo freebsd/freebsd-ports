@@ -43,7 +43,7 @@ PLIST_DIRSTRY=	libexec/gimp/2.2/plug-ins \
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.am \
-		-exec ${REINPLACE_CMD} -e "s|; make|; ${GMAKE}|" {} \;
+		-exec ${REINPLACE_CMD} -e "s|; make|; ${MAKE_CMD}|" {} \;
 	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|" \
 		${WRKSRC}/configure.in
 

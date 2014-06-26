@@ -64,7 +64,7 @@ help:	pre-everything
 
 aclean:	all
 	@${ECHO} "Cleaning tests tree..."
-	-@(cd ${WRKSRC} && ${RM} -f ${RUN_RESULT} && ${GMAKE} clean)
+	-@(cd ${WRKSRC} && ${RM} -f ${RUN_RESULT} && ${MAKE_CMD} clean)
 
 rerun:	all
 .if defined(WITH_THRLIB)
@@ -75,7 +75,7 @@ rerun:	all
 .else
 	@${ECHO} "Running tests (against ${THRLIB}) ..."
 .endif
-	@(cd ${WRKSRC} && ${GMAKE} all) ${THEPIPE} ${RUN_RESULT}
+	@(cd ${WRKSRC} && ${MAKE_CMD} all) ${THEPIPE} ${RUN_RESULT}
 	@${ECHO} ""
 	@${ECHO} "Run output is stored into following files:"
 	@${ECHO} "  * short version: ${RUN_RESULT}"

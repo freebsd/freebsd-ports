@@ -13,7 +13,7 @@
   ### socket.1 in /usr/local/man/man1/socket.1
   ### Make sure the target directories exist before doing a "make install".
   
-! INSTALLBASE = ${PREFIX}
+! INSTALLBASE = ${DESTDIR}${PREFIX}
   INSTALLBINPATH = $(INSTALLBASE)/bin
   INSTALLBINMODE = 755
   INSTALLMANPATH = $(INSTALLBASE)/man

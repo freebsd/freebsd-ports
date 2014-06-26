@@ -21,7 +21,8 @@ DESCRIPTION
 
 	   -h	      Prints a multi-line help message and exits
 
-	   -n name    Search for name in the name field
+	   -n name    Search for name in the name field. This is the default
+	              if no flags are specified
 
 	   -p path    Search for path in the path field
 
@@ -41,6 +42,8 @@ DESCRIPTION
 
 	   -f file    Use an index file with the name "file," instead of
 		      /usr/ports/INDEX
+
+	   -e         Print the pkg-descr (long description) for each port found
 
      All searches are case-insensitive
 

@@ -9,9 +9,9 @@ bin/recsel
 bin/recset
 include/rec.h
 lib/librec.a
-lib/librec.la
 lib/librec.so
 lib/librec.so.1
+lib/librec.so.1.0.0
 man/man1/csv2rec.1.gz
 man/man1/rec2csv.1.gz
 man/man1/recdel.1.gz

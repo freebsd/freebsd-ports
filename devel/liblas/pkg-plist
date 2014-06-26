@@ -37,9 +37,9 @@ include/liblas/lasvariablerecord.hpp
 include/liblas/laswriter.hpp
 include/liblas/liblas.hpp
 lib/liblas.a
-lib/liblas.la
 lib/liblas.so
 lib/liblas.so.1
+lib/liblas.so.1.0.0
 @dirrm include/liblas/capi
 @dirrm include/liblas/detail
 @dirrm include/liblas

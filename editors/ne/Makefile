@@ -4,7 +4,7 @@
 PORTNAME=	ne
 PORTVERSION=	2.5
 CATEGORIES=	editors
-MASTER_SITES=	http://ne.dsi.unimi.it/
+MASTER_SITES=	http://ne.di.unimi.it/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice and powerful editor
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-USES=		gmake perl5
+USES=		gmake makeinfo perl5
 USE_PERL5=	build
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}

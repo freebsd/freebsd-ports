@@ -24,12 +24,7 @@ MANCOMPRESSED=	no
 PLIST_FILES=	bin/pfstat \
 		bin/pfstatd
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700048
-EXTRA_PATCHES=	${PATCHDIR}/pre41-patch-pf.c
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgd|-l$${LD_GD}|; s| -lttf||' \
@@ -38,9 +33,9 @@ post-patch:
 		${WRKSRC}/pfstat.[c8]
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pfstat ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/pfstatd/pfstatd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pfstat.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/pfstat ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pfstatd/pfstatd ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pfstat.8 ${STAGEDIR}/${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.8 ${STAGEDIR}/${PREFIX}/man/man8
 
 .include <bsd.port.post.mk>

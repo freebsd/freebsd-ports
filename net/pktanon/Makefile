@@ -18,9 +18,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${DATADIR}/profiles
-	(cd ${WRKSRC}/profiles/ && ${COPYTREE_SHARE} \* ${DATADIR}/profiles)
+	${MKDIR} ${STAGEDIR}${DATADIR}/profiles
+	(cd ${WRKSRC}/profiles/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/profiles)
 
 .include <bsd.port.mk>

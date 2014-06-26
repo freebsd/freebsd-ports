@@ -1383,6 +1383,7 @@ lib32/wine/fakedlls/msacm.dll16
 lib32/wine/fakedlls/msacm32.dll
 lib32/wine/fakedlls/msacm32.drv
 lib32/wine/fakedlls/msadp32.acm
+lib32/wine/fakedlls/msasn1.dll
 lib32/wine/fakedlls/mscat32.dll
 lib32/wine/fakedlls/mscms.dll
 lib32/wine/fakedlls/mscoree.dll
@@ -1811,6 +1812,7 @@ lib32/wine/libmlang.def
 lib32/wine/libmpr.def
 lib32/wine/libmprapi.def
 lib32/wine/libmsacm32.def
+lib32/wine/libmsasn1.def
 lib32/wine/libmscms.def
 lib32/wine/libmsdmo.def
 lib32/wine/libmshtml.def
@@ -1939,6 +1941,7 @@ lib32/wine/msacm.dll16.so
 lib32/wine/msacm32.dll.so
 lib32/wine/msacm32.drv.so
 lib32/wine/msadp32.acm.so
+lib32/wine/msasn1.dll.so
 lib32/wine/mscat32.dll.so
 lib32/wine/mscms.dll.so
 lib32/wine/mscoree.dll.so

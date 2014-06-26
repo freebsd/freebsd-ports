@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Component-Client-DNS-Recursive
-PORTVERSION=	1.06
+PORTVERSION=	1.08
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Recursive DNS client for POE
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Net-IP-Minimal>=0:${PORTSDIR}/net/p5-Net-IP-Minimal \

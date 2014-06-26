@@ -548,6 +548,7 @@
     SUBDIR += munin-node
     SUBDIR += muse
     SUBDIR += mybashburn
+    SUBDIR += n98-magerun
     SUBDIR += nagios-statd
     SUBDIR += namefix
     SUBDIR += nbosd
@@ -653,7 +654,6 @@
     SUBDIR += patchelf
     SUBDIR += pax-utils
     SUBDIR += pbimaker
-    SUBDIR += pc-sysinstall
     SUBDIR += pcbsd-utils
     SUBDIR += pcbsd-utils-qt4
     SUBDIR += pcfclock
@@ -904,7 +904,6 @@
     SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
-    SUBDIR += syslog-ng-devel
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng2
     SUBDIR += syslog-ng33
@@ -912,10 +911,10 @@
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
-    SUBDIR += sysupdate
     SUBDIR += sysvbanner
     SUBDIR += tai64nfrac
     SUBDIR += tarsnap
+    SUBDIR += tartarus
     SUBDIR += tbku
     SUBDIR += tclsyslog
     SUBDIR += tcplist

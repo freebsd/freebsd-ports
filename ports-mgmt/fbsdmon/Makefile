@@ -3,7 +3,7 @@
 
 PORTNAME=	fbsdmon
 PORTVERSION=	1.00
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	LOCAL/gblach/
 
@@ -22,8 +22,5 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly
 	${INSTALL_SCRIPT} ${WRKDIR}/600.fbsdmon \
 		${STAGEDIR}${PREFIX}/etc/periodic/weekly
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

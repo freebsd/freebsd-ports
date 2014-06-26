@@ -16,7 +16,7 @@ GH_ACCOUNT=	crees
 GH_COMMIT=	947dba4
 GH_TAGNAME=	947dba4
 
-USES=		pkgconfig pathfix libtool
+USES=		makeinfo pkgconfig pathfix libtool
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtoolize

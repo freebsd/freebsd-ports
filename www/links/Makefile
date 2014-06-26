@@ -36,6 +36,25 @@ OPTIONS_DEFAULT=	IPV6 UTF8 X11
 
 PLIST_FILES=	bin/links man/man1/links.1.gz
 
+DIRECTFB_LIB_DEPENDS=	libdirectfb.so:${PORTSDIR}/devel/directfb
+DIRECTFB_CONFIGURE_WITH=directfb
+
+IPV6_CONFIGURE_WITH=	ipv6
+
+SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_CONFIGURE_WITH=	svgalib
+
+THREADS_CFLAGS=	-DHAVE_PTHREADS
+THREADS_LDFLAGS=-pthread
+
+TRANS_EXTRA_PATCHES=	${FILESDIR}/extra-terminal.c.diff
+
+UTF8_CONFIGURE_ENABLE=	utf8
+
+X11_USE=	xorg=x11,xproto
+X11_CONFIGURE_WITH=	x
+X11_PLIST_FILES=	share/pixmaps/links.xpm
+
 .include <bsd.port.options.mk>
 
 #CIPHERSTRING must be a valid OpenSSL cipher string(see ciphers(1)):
@@ -50,24 +69,6 @@ CONFIGURE_ARGS+=	--enable-graphics
 CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 .endif
 
-DIRECTFB_LIB_DEPENDS=	libdirectfb.so:${PORTSDIR}/devel/directfb
-DIRECTFB_CONFIGURE_WITH=directfb
-
-IPV6_CONFIGURE_WITH=	ipv6
-
-SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
-SVGALIB_CONFIGURE_WITH=	svgalib
-
-THREADS_CFLAGS=	-DHAVE_PTHREADS
-THREADS_LDFLAGS=-pthread
-
-TRANS_EXTRA_PATCHES=	${FILESDIR}/extra-terminal.c.diff
-
-UTF8_CONFIGURE_WITH=	utf8
-
-X11_USE=	xorg=x11,proto
-X11_CONFIGURE_WITH=	x
-X11_PLIST_FILES=	share/pixmaps/links.xpm
 .if ${PORT_OPTIONS:MX11}
 DESKTOP_ENTRIES="links" \
 		"Lynx-like text WWW browser" \

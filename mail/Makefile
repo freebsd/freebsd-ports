@@ -354,7 +354,6 @@
     SUBDIR += p5-Email-Stuffer
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-Email-Valid-Loose
-    SUBDIR += p5-FuzzyOcr
     SUBDIR += p5-FuzzyOcr-devel
     SUBDIR += p5-GMail-IMAPD
     SUBDIR += p5-IMAP-Admin
@@ -622,7 +621,6 @@
     SUBDIR += rubygem-vmail
     SUBDIR += sa-stats
     SUBDIR += sa-utils
-    SUBDIR += sastatd
     SUBDIR += scam-backscatter
     SUBDIR += sccmilter
     SUBDIR += sendmail

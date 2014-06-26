@@ -16,6 +16,7 @@ LICENSE?=        GPLv2
 
 CONFLICTS=	libtool-fixed-[0-9]*
 
+USES+=		makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --disable-ltdl-install
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"

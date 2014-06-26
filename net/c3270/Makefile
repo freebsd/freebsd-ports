@@ -103,7 +103,7 @@ CONFIGURE_ARGS+=	--disable-trace
 .endif
 
 post-install:
-	@( cd ${WRKSRC} && ${GMAKE} ${MAKE_FLAGS} Makefile install.man )
+	@( cd ${WRKSRC} && ${MAKE_CMD} ${MAKE_FLAGS} Makefile install.man )
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html

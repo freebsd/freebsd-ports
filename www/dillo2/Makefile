@@ -72,7 +72,7 @@ HYPHENATION_LANGS?=	\
 IGNORE=	remove the invalid hyphenation language "${_l}" from HYPHENATION_LANGS
 .else
 DISTFILES+=	hyph-${_l}.pat.txt:hyphen
-IGNOREFILES+=	hyph-${_l}.pat.txt
+BROKEN=		no distinfo provided
 PLIST_FILES+=	libexec/dillo/hyphenation/${_l:C/-.*\$//}.pat
 .endif
 .endfor

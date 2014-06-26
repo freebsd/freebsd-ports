@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=	--enable-float --enable-type-prefix
 FFTW_SUFX=		s
 PKGNAMESUFFIX=		-float
 .else
+USES+=			makeinfo
 FFTW_SUFIX=
 INFO=			fftw
 .endif

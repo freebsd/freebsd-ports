@@ -9,6 +9,9 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple 'w'-like program; displays connection type and login shell PID
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/yawho

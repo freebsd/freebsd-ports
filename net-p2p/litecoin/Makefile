@@ -105,7 +105,7 @@ post-patch:
 
 regression-test:
 .if !${PORT_OPTIONS:MX11}
-	@${GMAKE} -C ${WRKSRC}/src -f makefile.unix USE_UPNP=${QMAKE_USE_UPNP} test_litecoin
+	@${MAKE_CMD} -C ${WRKSRC}/src -f makefile.unix USE_UPNP=${QMAKE_USE_UPNP} test_litecoin
 	(cd ${WRKSRC}/src ; ./test_litecoin)
 .endif
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlwrapp
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -22,9 +22,9 @@ OPTIONS_SUB=	yes
 XSLT_USE=	gnome=libxslt
 XSLT_CONFIGURE_ENABLE=	xslt
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig libtool
 USE_GNOME=	libxml2
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 

@@ -36,7 +36,7 @@ TEST_CONFIGURE_OFF=	--disable-tests
 
 .if ${PORT_OPTIONS:MTEST}
 post-build:
-	@cd ${WRKSRC}/src/test && ${GMAKE} check
+	@cd ${WRKSRC}/src/test && ${MAKE_CMD} check
 .endif
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libbinio.so:${PORTSDIR}/devel/libbinio
 
-USES=		pkgconfig libtool
+USES=		pkgconfig libtool makeinfo
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89

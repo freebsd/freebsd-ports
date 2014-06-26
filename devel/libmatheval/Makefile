@@ -17,7 +17,7 @@ LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LEXLIB=-lfl_pic MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
-USES=		libtool pathfix
+USES=		libtool makeinfo pathfix
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

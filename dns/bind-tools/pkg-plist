@@ -8,6 +8,8 @@ man/man1/dig.1.gz
 man/man1/host.1.gz
 man/man1/nslookup.1.gz
 man/man1/nsupdate.1.gz
+%%PYTHON%%man/man8/dnssec-checkds.8.gz
+%%PYTHON%%man/man8/dnssec-coverage.8.gz
 man/man8/dnssec-dsfromkey.8.gz
 man/man8/dnssec-importkey.8.gz
 man/man8/dnssec-keyfromlabel.8.gz
@@ -16,6 +18,8 @@ man/man8/dnssec-revoke.8.gz
 man/man8/dnssec-settime.8.gz
 man/man8/dnssec-signzone.8.gz
 man/man8/dnssec-verify.8.gz
+%%PYTHON%%sbin/dnssec-checkds
+%%PYTHON%%sbin/dnssec-coverage
 sbin/dnssec-dsfromkey
 sbin/dnssec-importkey
 sbin/dnssec-keyfromlabel

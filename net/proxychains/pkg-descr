@@ -1,5 +1,3 @@
-ProxyChains
-
 This program forces any tcp connection made by any given tcp client
 to follow through proxy (or proxy chain). It is a kind of proxifier.
 It acts like sockscap / permeo / eborder driver (intercepts TCP calls).

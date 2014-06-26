@@ -3,7 +3,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		6.4.0
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -25,8 +25,9 @@ CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		FRIBIDI CURL GDAL GEOS KML POSTGIS PHP PERL PYTHON \
-			WMS WFS WCS FASTCGI DEBUG CAIRO CAIRO_SVG
-OPTIONS_DEFAULT=	FRIBIDI GDAL GEOS
+			WMS WFS WCS FASTCGI DEBUG CAIRO CAIRO_SVG \
+			CLIENT_WMS CLIENT_WFS
+OPTIONS_DEFAULT=	FRIBIDI GDAL GEOS CLIENT_WMS CLIENT_WFS
 CAIRO_SVG_DESC=		Cairo SVG parser support
 GDAL_DESC=		GDAL library support
 FRIBIDI_DESC=		Fribidi library support
@@ -164,6 +165,18 @@ CMAKE_ARGS+=		-DCMAKE_BUILD_TYPE=Release
 
 PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
 			sortshp msencrypt tile4ms mapserv
+
+.if ${PORT_OPTIONS:MCLIENT_WMS}
+LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
+CMAKE_ARGS+=		-DWITH_CURL=1 -DGDAL=1 -DCLIENT_WMS=1
+.endif
+
+.if ${PORT_OPTIONS:MCLIENT_WFS}
+LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
+CMAKE_ARGS+=		-DWITH_CURL=1 -DGDAL=1 -DCLIENT_WFS=1
+.endif
 
 do-install:
 .for f in ${PROG_FILES}

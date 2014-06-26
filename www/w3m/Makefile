@@ -41,6 +41,7 @@ JAPANESE_CONFIGURE_ENABLE=	nls
 
 INLINE_IMAGE_USE=	gnome=gtk20
 INLINE_IMAGE_CONFIGURE_ON=	--with-imagelib=gtk2 --enable-image=fb,x11
+INLINE_IMAGE_CONFIGURE_OFF=	--enable-image=no
 
 KEY_LYNX_CONFIGURE_ON=	--with-keymap=lynx
 

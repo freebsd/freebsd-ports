@@ -49,7 +49,7 @@ do-build:
 	@${MKDIR} ${WRKSRC}/target
 	@${CP} ${DISTDIR}/snappy-${PORTVERSION:R}.tar.gz ${WRKSRC}/target/
 	cd ${WRKSRC} && ${SETENV} JAVA_HOME=${JAVA_HOME} \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/repository --offline test
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/repository --offline test
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/target/snappy-java-${PORTVERSION}.jar \

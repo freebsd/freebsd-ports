@@ -149,11 +149,11 @@ post-patch:
 
 pre-build:
 .if ${LIBGDA4_SLAVE}=="postgresql"
-	cd ${WRKSRC}/providers/reuseable/postgres && ${GMAKE} libgda-postgres.la
+	cd ${WRKSRC}/providers/reuseable/postgres && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} libgda-postgres.la
 .endif
 
 .if ${LIBGDA4_SLAVE}=="mysql"
-	cd ${WRKSRC}/providers/reuseable/mysql && ${GMAKE} libgda-mysql.la
+	cd ${WRKSRC}/providers/reuseable/mysql && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} libgda-mysql.la
 .endif
 
 .if ${LIBGDA4_SLAVE}=="no"

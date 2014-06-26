@@ -3,6 +3,7 @@
 
 PORTNAME=	libgaiagraphics
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 
-USES=		gmake iconv pathfix pkgconfig
+USES=		gmake iconv pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

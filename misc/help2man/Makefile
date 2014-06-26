@@ -16,7 +16,8 @@ OPTIONS_DEFINE=	NLS
 
 CFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-USES=		gmake perl5
+# keep gmake:lite has a dependency to avoid circular dependency
+USES=		gmake:lite perl5
 
 INFO=		${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \

@@ -132,7 +132,7 @@ do-build:
 	(cd ${WRKSRC}/phoenix/qt && ${MOC} -i -o platform.moc platform.moc.hpp)
 .endif
 .for d in . ananke
-	(cd ${WRKSRC}/${d} && ${GMAKE} ${MAKE_ENV})
+	(cd ${WRKSRC}/${d} && ${MAKE_CMD} ${MAKE_ENV})
 .endfor
 
 do-install:

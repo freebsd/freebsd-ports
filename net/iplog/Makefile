@@ -14,14 +14,9 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-MAN5=		iplog.conf.5
-MAN8=		iplog.8
 
 USE_RC_SUBR=	iplog
-SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 post-patch:
 .for FILE in example-iplog.conf iplog.8 iplog.conf.5 src/iplog.h
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${FILE}
@@ -29,19 +24,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc
-.if !exists(${PREFIX}/etc/iplog.conf)
-	${INSTALL_DATA} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc/iplog.conf
-.endif
-.if exists(${PREFIX}/etc/iplog.rules)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "============================================================================"
-	@${ECHO_MSG} "Hint:	iplog changed its configuration file from ${PREFIX}/etc/iplog.rules"
-	@${ECHO_MSG} "	to ${PREFIX}/etc/iplog.conf"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "See ${PREFIX}/etc/example-iplog.conf for an example"
-	@${ECHO_MSG} "============================================================================"
-.endif
-	@${MKDIR} /var/run/iplog
+	@${INSTALL_DATA} ${WRKSRC}/example-iplog.conf ${STAGEDIR}${PREFIX}/etc/iplog.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

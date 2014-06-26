@@ -29,6 +29,6 @@
 -make install
 +##../gcc/configure --target=zpu-elf --prefix=%%PREFIX%%/zpu --enable-languages=c,c++ --with-gnu-as --with-gnu-ld --with-newlib --disable-shared --enable-newlib -v --enable-checking=misc,tree,rtl,rtlflag,gc,gcac,fold  --disable-multilib --disable-threads --enable-sjlj-exceptions --enable-libstdcxx-allocator=malloc
 +../gcc/configure --target=zpu-elf --prefix=%%PREFIX%%/zpu --infodir=%%PREFIX%%/info/zpuc --enable-languages=c --with-gnu-as --with-gnu-ld --with-newlib --disable-shared --enable-newlib -v --enable-checking=misc,tree,rtl,rtlflag,gc,gcac,fold  --disable-multilib --disable-threads --enable-sjlj-exceptions --enable-libstdcxx-allocator=malloc
-+%%GMAKE%%
++%%MAKE_CMD%%
 +#gmake install
  

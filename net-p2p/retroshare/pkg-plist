@@ -1,4 +1,5 @@
 bin/RetroShare
+bin/retroshare-nogui
 lib/retroshare/extensions/libLinksCloud.so
 lib/retroshare/extensions/libLinksCloud.so.1
 lib/retroshare/extensions/libVOIP.so

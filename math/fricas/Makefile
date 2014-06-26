@@ -12,6 +12,7 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	A computer algebra system, forked from axiom
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/license/LICENSE.AXIOM
 
 BUILD_DEPENDS=	noweb:${PORTSDIR}/devel/noweb \
 		sbcl:${PORTSDIR}/lang/sbcl

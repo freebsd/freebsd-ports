@@ -27,11 +27,11 @@ UIM_SLAVE=	yes
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in
 
 do-build:
-	(cd ${WRKSRC}/uim && ${GMAKE} libuim-m17nlib.la)
+	(cd ${WRKSRC}/uim && ${MAKE_CMD} libuim-m17nlib.la)
 
 do-install:
 	(cd ${WRKSRC}/uim && \
-	${GMAKE} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-m17nlib.la install-uim_pluginLTLIBRARIES && \
+	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-m17nlib.la install-uim_pluginLTLIBRARIES && \
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/uim/pixmaps && \
 	DESTDIR="${STAGEDIR}" ${SH} ../pixmaps/uim-m17nlib-relink-icons)
 

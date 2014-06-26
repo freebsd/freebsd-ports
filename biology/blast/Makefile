@@ -11,9 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WU BLAST, a software package for sequence similarity searches
 
-# Distfiles change rapidly, but since they can only be downloaded from
-# the author, this is not a problem.
-IGNOREFILES=	${DISTFILES}
+BROKEN=		Mark as broken: no checksum provided
 
 DEPRECATED=    Rights to BLAST 2.0 (WU-BLAST) have been acquired by Advanced Biocomputing, LLC
 EXPIRATION_DATE=2014-09-04

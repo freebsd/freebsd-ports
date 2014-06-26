@@ -69,7 +69,7 @@ post-patch:
 .endif
 
 do-install:
-	@(cd ${WRKSRC} ; ${GMAKE} install)
+	@(cd ${WRKSRC} ; ${MAKE_CMD} install)
 
 post-install:
 	@${SED} -e 's,/usr/local,${PREFIX},g' ${DESCR}

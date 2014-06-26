@@ -261,7 +261,7 @@ post-install-script:
 		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 
 #post-build:
-#	@(cd ${WRKSRC} && ${GMAKE} binary-dist)
+#	@(cd ${WRKSRC} && ${MAKE_CMD} binary-dist)
 #
 #do-install:
 #	@${NONE}
@@ -289,7 +289,7 @@ pre-configure:
 	@${MKDIR} ${TMPDIR}
 .if empty(PORT_OPTIONS:MBOOT)
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS_BOOT})
-	@(cd ${BOOT_DIR} && PACKAGES='' ${GMAKE} install)
+	@(cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install)
 .endif
 
 # Defining with documentation:
