@@ -1,7 +1,6 @@
 bin/stdlogctl
 include/liblogging/stdlog.h
 lib/liblogging-stdlog.a
-lib/liblogging-stdlog.la
 lib/liblogging-stdlog.so
 lib/liblogging-stdlog.so.0
 lib/liblogging-stdlog.so.0.0.0

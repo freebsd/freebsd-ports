@@ -3,7 +3,7 @@
 
 PORTNAME=	liblogging
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/liblogging/
 
@@ -13,7 +13,7 @@ COMMENT=	Easy to use system logging library
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 
 CONFIGURE_ARGS+=	--disable-journal
 
