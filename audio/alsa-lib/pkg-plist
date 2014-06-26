@@ -152,9 +152,7 @@ share/alsa/ucm/SDP4430/record
 share/alsa/ucm/SDP4430/voice
 share/alsa/ucm/SDP4430/voiceCall
 share/alsa/ucm/tegraalc5632/tegraalc5632.conf
-@unexec if cmp -s %D/etc/asound.conf.sample %D/etc/asound.conf; then rm -f %D/etc/asound.conf; else echo "If permanently deleting this package, %D/etc/asound.conf must be removed manually."; fi
-etc/asound.conf.sample
-@exec [ -f %B/asound.conf ] || cp -p %B/%f %B/asound.conf
+@sample etc/asound.conf.sample
 @dirrm share/alsa/ucm/PandaBoardES
 @dirrm share/alsa/ucm/SDP4430
 @dirrm share/alsa/ucm/DAISY-I2S
