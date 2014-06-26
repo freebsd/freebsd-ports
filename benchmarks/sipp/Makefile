@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sipp/sipp/${PORTVERSION}
 DISTNAME=	${PORTNAME}-3.3beta2
 
-MAINTAINER=	tut@nhamon.com.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIP benchmarking and testing tool
 
 LICENSE=	GPLv2
