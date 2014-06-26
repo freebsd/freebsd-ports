@@ -1,4 +1,8 @@
 bin/mediatomb
+@exec chgrp %%MEDIATOMB_GROUP%% %D/bin/mediatomb
+@exec chmod a-x %D/bin/mediatomb
+@exec chmod g+x %D/bin/mediatomb
+man/man1/mediatomb.1.gz
 %%DATADIR%%/js/import.js
 %%DATADIR%%/js/playlists.js
 %%DATADIR%%/js/common.js
@@ -88,15 +92,17 @@ bin/mediatomb
 %%DATADIR%%/web/topright.html
 @owner %%MEDIATOMB_USER%%
 @group %%MEDIATOMB_GROUP%%
+@unexec if cmp -s %D/etc/mediatomb/config.xml.dist %D/etc/mediatomb/config.xml; then rm -f %D/etc/mediatomb/config.xml; fi
+@dirrmtry etc/mediatomb
+etc/mediatomb/config.xml.dist
 @exec mkdir -m %%MEDIATOMB_MASK%% -p %D/etc/mediatomb
 @exec chown %%MEDIATOMB_USER%%:%%MEDIATOMB_GROUP%% %D/etc/mediatomb
-@unexec if cmp -s %D/etc/mediatomb/config.xml.dist %D/etc/mediatomb/config.xml; then rm -f %D/etc/mediatomb/config.xml; fi
-etc/mediatomb/config.xml.dist
+@exec chown %%MEDIATOMB_USER%%:%%MEDIATOMB_GROUP%% %D/etc/mediatomb/config.xml.dist
+@exec chmod 640 %D/etc/mediatomb/config.xml.dist
 @exec [ -f %B/config.xml ] || cp -p %B/%f %B/config.xml
 @unexec rmdir %%MEDIATOMB_DIR%% 2>/dev/null 1>&2 || true
 @exec mkdir -m %%MEDIATOMB_MASK%% -p %%MEDIATOMB_DIR%%
 @exec chown %%MEDIATOMB_USER%%:%%MEDIATOMB_GROUP%% %%MEDIATOMB_DIR%%
-@dirrmtry etc/mediatomb
 @dirrm %%DATADIR%%/js
 @dirrm %%DATADIR%%/web/icons/nanotree/images
 @dirrm %%DATADIR%%/web/icons/nanotree
