@@ -15,6 +15,7 @@ USES=		tar:bzip2 libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfdir="\$${prefix}/libdata/pkgconfig"
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_SUB=	${OPTIONS_DEFINE}
@@ -39,9 +40,5 @@ post-patch:	.SILENT
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/asound.conf.sample ${STAGEDIR}${PREFIX}/etc
-	@if [ ! -f ${PREFIX}/etc/asound.conf ]; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/etc/asound.conf.sample \
-			${STAGEDIR}${PREFIX}/etc/asound.conf ; \
-	fi
 
 .include <bsd.port.mk>
