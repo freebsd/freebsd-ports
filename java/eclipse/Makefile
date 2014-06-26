@@ -53,7 +53,7 @@ GITCLONE=${DISTDIR}/eclipse/eclipse-gitclone/eclipse.platform.releng.aggregator
 MVN_LOCAL_REPO=	-Dmaven.repo.local=${WRKDIR}/eclipse-maven-repo-${PORTVERSION}/repository
 MVN_TEST_FLAG=	-Dmaven.test.skip=true
 MVN_OPTS+=	# a placeholder for MAVEN_OPTS environment variable
-		#in the following format: MAVEN_OPTS='-Xmx1792m'
+		# in the following format: MAVEN_OPTS='-Xmx1792m'
 MVN_SETTINGS+=	--offline
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86${ARCH:C/^i.86//:C/^amd/_/}
