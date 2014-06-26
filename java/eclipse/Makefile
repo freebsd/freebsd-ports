@@ -39,7 +39,7 @@ PLATFORM_DESC=		Platform only (no Java tools, no source or docs)
 
 OPTIONS_DEFAULT=	FULL_SDK
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 PATCH_DEPENDS+=	gpatch:${PORTSDIR}/devel/patch
@@ -123,4 +123,4 @@ post-install:
 distclean:
 	${RM} -rf ${DISTDIR}/eclipse
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
