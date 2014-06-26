@@ -11,6 +11,8 @@ DIST_SUBDIR=	emboss
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Collection of contributed EMBOSS applications
 
+BROKEN=		does not fetch
+
 LIB_DEPENDS=	libnucleus.so:${PORTSDIR}/biology/emboss
 
 PREFIX?=	${LOCALBASE}/emboss
