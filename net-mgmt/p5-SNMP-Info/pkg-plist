@@ -6,7 +6,6 @@
 %%SITE_PERL%%/SNMP/Info/CDP.pm
 %%SITE_PERL%%/SNMP/Info/CiscoAgg.pm
 %%SITE_PERL%%/SNMP/Info/CiscoConfig.pm
-%%SITE_PERL%%/SNMP/Info/CiscoImage.pm
 %%SITE_PERL%%/SNMP/Info/CiscoPortSecurity.pm
 %%SITE_PERL%%/SNMP/Info/CiscoPower.pm
 %%SITE_PERL%%/SNMP/Info/CiscoQOS.pm
@@ -66,6 +65,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Cisco.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/CiscoASA.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/CiscoFWSM.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/CiscoSwitch.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Contivity.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Dell.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Enterasys.pm
@@ -103,6 +103,7 @@
 %%SITE_PERL%%/SNMP/Info/RapidCity.pm
 %%SITE_PERL%%/SNMP/Info/SONMP.pm
 %%SITE_PERL%%/SNMP/Info/AMAP.pm
+%%SITE_PERL%%/SNMP/Info/MRO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Info/.packlist
 %%PERL5_MAN3%%/SNMP::Info.3.gz
 %%PERL5_MAN3%%/SNMP::Info::AMAP.3.gz
@@ -111,7 +112,6 @@
 %%PERL5_MAN3%%/SNMP::Info::Bridge.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CDP.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CiscoConfig.3.gz
-%%PERL5_MAN3%%/SNMP::Info::CiscoImage.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CiscoPortSecurity.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CiscoPower.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CiscoQOS.3.gz
@@ -128,6 +128,7 @@
 %%PERL5_MAN3%%/SNMP::Info::IPv6.3.gz
 %%PERL5_MAN3%%/SNMP::Info::LLDP.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer1.3.gz
+%%PERL5_MAN3%%/SNMP::Info::MRO.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer1::Allied.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer1::Asante.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer1::Bayhub.3.gz
@@ -170,6 +171,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Cisco.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::CiscoASA.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::CiscoFWSM.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer3::CiscoSwitch.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Contivity.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Dell.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Enterasys.3.gz
