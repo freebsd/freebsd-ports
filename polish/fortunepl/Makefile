@@ -12,7 +12,7 @@ PATCHFILES=	fortunes-pl_${PORTVERSION}.freebsd.pl \
 		fortunes-pl_${PORTVERSION}.filozofia
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lot of funny Polish fortune files
+COMMENT=	Lot of funny Polish fortune files
 
 STRCMD=		/usr/games/strfile
 WRKSRC=		${WRKDIR}/fortunes-pl-${PORTVERSION}.orig
@@ -28,7 +28,6 @@ FORTUNES=	7thguard advocacy apcoh argante bajki bok cnp cows \
 		teleturnieje testnaosobowosc wierszyki wieza-pilot zen \
 		znaki_zodiaku
 
-NO_STAGE=	yes
 pre-everything::
 .if !exists(${STRCMD})
 IGNORE=		need strfile command. Please install games distribution of base system
@@ -44,13 +43,12 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/games
-	@${MKDIR} ${PREFIX}/share/games/fortune
-	@${MKDIR} ${PREFIX}/share/games/fortune/pl
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune/pl
 .for FILE in ${FORTUNES}
-	@${ECHO_CMD} "Installing ${FILE} into ${PREFIX}/share/games/fortune/pl/"
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/share/games/fortune/pl
-	@${INSTALL_DATA} ${WRKSRC}/${FILE}.dat ${PREFIX}/share/games/fortune/pl
+	${INSTALL_DATA} ${WRKSRC}/${FILE} \
+		${STAGEDIR}${PREFIX}/share/games/fortune/pl
+	${INSTALL_DATA} ${WRKSRC}/${FILE}.dat \
+		${STAGEDIR}${PREFIX}/share/games/fortune/pl
 .endfor
 
 post-install:
