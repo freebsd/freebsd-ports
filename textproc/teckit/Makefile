@@ -3,6 +3,7 @@
 
 PORTNAME=	teckit
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/svn-view/teckit/TAGS/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -11,9 +12,10 @@ DISTNAME=	TECkit_${PORTVERSION:S|.|_|g}
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Toolkit for converting data between 8-bit legacy encodings and Unicode
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
