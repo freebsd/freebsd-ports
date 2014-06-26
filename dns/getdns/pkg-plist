@@ -3,11 +3,10 @@ include/getdns/getdns_extra.h
 %%LIBEV%%include/getdns/getdns_ext_libev.h
 %%LIBEVENT%%include/getdns/getdns_ext_libevent.h
 %%LIBUV%%include/getdns/getdns_ext_libuv.h
-lib/libgetdns-%%PORTVERSION%%.so
-lib/libgetdns-%%PORTVERSION%%.so.0
-lib/libgetdns-%%PORTVERSION%%.so.0.0.0
-lib/libgetdns.a
 lib/libgetdns.so
+lib/libgetdns.so.0
+lib/libgetdns.so.0.0.0
+lib/libgetdns.a
 %%LIBEV%%lib/libgetdns_ext_ev-%%PORTVERSION%%.so
 %%LIBEV%%lib/libgetdns_ext_ev-%%PORTVERSION%%.so.0
 %%LIBEV%%lib/libgetdns_ext_ev.a
@@ -98,7 +97,7 @@ man/man3/libgetdns.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/spec/getdns-0.5.tgz
+%%PORTDOCS%%%%DOCSDIR%%/spec/getdns-0.501.tgz
 %%PORTDOCS%%%%DOCSDIR%%/spec/index.html
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/spec
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
