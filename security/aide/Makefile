@@ -27,9 +27,6 @@ CONFIGURE_ARGS+=--with-mhash \
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		aide.1
-MAN5=		aide.conf.5
-
 SUB_FILES=	pkg-message
 
 post-install:
