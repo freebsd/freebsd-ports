@@ -1,4 +1,4 @@
+@sample etc/diskcheckd.conf.sample
+man/man5/diskcheckd.conf.5.gz
+man/man8/diskcheckd.8.gz
 sbin/diskcheckd
-@unexec if cmp -s %D/etc/diskcheckd.conf.sample %D/etc/diskcheckd.conf; then rm -f %D/etc/diskcheckd.conf; fi
-etc/diskcheckd.conf.sample
-@exec if [ ! -f %D/etc/diskcheckd.conf ]; then cp %D/%F %B/diskcheckd.conf; fi
