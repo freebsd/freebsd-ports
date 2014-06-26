@@ -15,7 +15,6 @@ LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
 CONFLICTS=	netcdf-ftn-[0-9]* netcdf3-ftn-[0-9]*
 
-USES=		makeinfo
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC -DgFortran
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -23,7 +22,7 @@ MAKE_ENV=	MAKEINFOFLAGS=--no-split
 MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 USE_LDCONFIG=	yes
-USES=		fortran libtool pathfix
+USES=		fortran libtool makeinfo pathfix
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 INFO=		netcdf-f77 netcdf-f90

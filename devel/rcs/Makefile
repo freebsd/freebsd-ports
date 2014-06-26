@@ -11,7 +11,7 @@ COMMENT=	Version control system
 
 LICENSE=	GPLv3
 
-USE_XZ=		yes
+USES=		makeinfo tar:xz
 GNU_CONFIGURE=	yes
 
 INFO=	rcs

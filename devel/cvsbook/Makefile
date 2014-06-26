@@ -33,7 +33,6 @@ NO_BUILD=	yes
 .if ${PORT_OPTIONS:MINFO}
 INFO=		cvsbook
 INFODIR=	${PREFIX}/${INFO_PATH}
-INSTALL_INFO?=	install-info
 .endif
 
 .if ${PORT_OPTIONS:MSINGLE_HTML}
@@ -86,7 +85,6 @@ do-install:
 .if ${PORT_OPTIONS:MINFO}
 	@${MKDIR} ${STAGEDIR}${INFODIR}
 	@${INSTALL_DATA} ${WRKSRC}/cvsbook.info* ${STAGEDIR}${INFODIR}
-	@${INSTALL_INFO} ${STAGEDIR}${INFODIR}/cvsbook.info ${STAGEDIR}${INFODIR}/dir
 .endif
 
 .include <bsd.port.mk>

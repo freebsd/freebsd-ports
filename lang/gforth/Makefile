@@ -20,7 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fno-reorder-blocks -fno-inline
 CONFIGURE_ENV+=	GFORTHHIST=${WRKSRC}
 MAKE_ENV+=	GFORTHHIST=${WRKSRC}
-USES=		gmake libtool
+USES=		gmake libtool makeinfo
 USE_GCC=	any
 USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named

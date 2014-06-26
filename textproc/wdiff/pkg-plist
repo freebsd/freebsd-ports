@@ -1,6 +1,4 @@
 bin/wdiff
-info/dir
-info/wdiff.info
 man/man1/wdiff.1.gz
 share/locale/af/LC_MESSAGES/wdiff-gnulib.mo
 share/locale/be/LC_MESSAGES/wdiff-gnulib.mo

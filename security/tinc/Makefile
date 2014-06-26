@@ -15,6 +15,7 @@ LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 LICENSE=	GPLv3
 
+USES=		makeinfo
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
