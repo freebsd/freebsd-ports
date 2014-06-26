@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Differences
-PORTVERSION=	0.610
+PORTVERSION=	0.620
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -17,6 +17,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Capture-Tiny>=0.24:${PORTSDIR}/devel/p5-Capture-Tiny
 
 PORTSCOUT=	skipv:0.4801
 
