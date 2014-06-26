@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Dict
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEILB
@@ -13,6 +13,8 @@ COMMENT=	Simple client API for the DICT protocol
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test-Differences>=0.620:${PORTSDIR}/devel/p5-Test-Differences
 
 USE_PERL5=	configure
 USES=		perl5
