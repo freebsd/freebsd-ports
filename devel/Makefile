@@ -4294,6 +4294,7 @@
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-igraph
+    SUBDIR += rubygem-inflecto
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
