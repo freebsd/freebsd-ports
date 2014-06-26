@@ -15,14 +15,16 @@ MAN1=		polipo.1
 USE_RC_SUBR=	polipo
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 .if defined(NO_PTEXINFO)
 ALL_TARGET=	polipo
 NOPORTDOCS=	yes
 .else
+USES=		makeinfo
 INFO=		polipo
 .endif
+
+.include <bsd.port.pre.mk>
 
 DOCSDIR=	${DATADIR}/www/doc
 PORTDOCS=	*
