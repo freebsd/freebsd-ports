@@ -1,0 +1,4 @@
+# stopgap to unbreak index
+# $FreeBSD$
+
+IGNORE=	Attempting to use removed plugin makefile
