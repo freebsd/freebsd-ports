@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:${PORTSDIR}/devel/zpu-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
-USES=		gettext gmake
+USES=		gettext gmake makeinfo
 MANDIRS=	${PREFIX}/zpu/man
 INFO=		zpuc/cpp zpuc/cppinternals zpuc/dir zpuc/gcc zpuc/gccinstal \
 		    zpuc/gccint

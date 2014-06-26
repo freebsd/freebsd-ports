@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 OPTIONS_DEFINE=	SDL
 
-USES=		gmake
+USES=		gmake makeinfo
 ALL_TARGET=	zgv info
 
 CPPFLAGS+=	-I${LOCALBASE}/include

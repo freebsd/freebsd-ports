@@ -18,7 +18,7 @@ CONFLICTS=	cfengine-3* cfengine-devel-*
 
 USE_RC_SUBR=	cfexecd cfservd
 
-USES=		libtool shebangfix
+USES=		libtool makeinfo shebangfix
 SHEBANG_FILES=	contrib/cfdoc
 
 WITH_BDB_VER?=	46

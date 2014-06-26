@@ -13,7 +13,7 @@ COMMENT=	Ncurses based, lynx style info documentation browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 ncurses
+USES=		makeinfo ncurses tar:bzip2
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I macros

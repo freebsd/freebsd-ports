@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-USES=		gmake perl5
+USES=		gmake makeinfo perl5
 USE_PERL5=	build
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}

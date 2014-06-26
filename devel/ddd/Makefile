@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergio@softshark.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
-USES=		gmake motif
+USES=		gmake makeinfo motif
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 

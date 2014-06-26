@@ -16,6 +16,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/sources
 
+USES=		makeinfo
 MAKE_ENV=	DEFINES="${CPPFLAGS}" ALL_LIBS="${LDFLAGS}" \
 		PREVIEWER="${PREVIEWER}"
 

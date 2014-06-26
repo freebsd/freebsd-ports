@@ -18,10 +18,9 @@ COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 CONFLICTS=	cvsnt-[12]* cvs-devel-[12]*
 LICENSE=	GPLv2
 
-USES=		uidfix
+USES=		makeinfo tar:xz uidfix
 PATCHDIR=	${WRKDIR}/call/cvs-build
 WRKSRC=		${WRKDIR}/call/cvs-build
-USE_XZ=		yes
 INFO=		cvs cvsclient
 
 # bsd.stage.makes sets the wrong value for DESTDIR

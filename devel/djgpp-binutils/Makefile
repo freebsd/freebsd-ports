@@ -18,8 +18,7 @@ TARGET=		i586-pc-msdosdjgpp
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
-USE_BZIP2=	yes
-USES=	gmake
+USES=		gmake makeinfo tar:bzip2
 GNU_CONFIGURE=	yes
 SRCDIR=		${WRKDIR}/binutils-${PORTVERSION}
 WRKSRC=		${WRKDIR}/build
