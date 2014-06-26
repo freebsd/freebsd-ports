@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://c.speedtest.net/mini/
 DISTNAME=	mini
 
-MAINTAINER=	tut@nhamon.com.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mini bandwidth speed test on your own server
 
 LICENSE=	MIT

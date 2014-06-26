@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 
-MAINTAINER=	tut@nhamon.com.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL Monitoring Tool
 
 RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
