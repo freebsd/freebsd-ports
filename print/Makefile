@@ -115,6 +115,7 @@
     SUBDIR += html2ps
     SUBDIR += hyperlatex
     SUBDIR += ifxetex
+    SUBDIR += indexinfo
     SUBDIR += it-acroread8
     SUBDIR += jabref
     SUBDIR += jadetex
