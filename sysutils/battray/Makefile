@@ -15,7 +15,4 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-MAN1=		battray.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
