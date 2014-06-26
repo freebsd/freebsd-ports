@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d1f5e12a-fd5a-11e3-a108-080027ef73ec">
+    <topic>LZO -- potential buffer overrun when processing malicious input data</topic>
+    <affects>
+      <package>
+	<name>lzo2</name>
+	<range><lt>2.07</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Markus Franz Xaver Johannes Oberhumer reports, in the package's NEWS file:</p>
+	<blockquote>
+	  <p>Fixed a potential integer overflow condition in the "safe"
+	    decompressor variants which could result in a possible buffer
+	    overrun when processing maliciously crafted compressed input
+	    data.</p>
+
+	  <p>As this issue only affects 32-bit systems and also can only happen
+	    if you use uncommonly huge buffer sizes where you have to decompress
+	    more than 16 MiB (2^24 bytes) compressed bytes within a single
+	    function call, the practical implications are limited.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.oberhumer.com/opensource/lzo/download/lzo-2.07.tar.gz</url>
+    </references>
+    <dates>
+      <discovery>2014-06-25</discovery>
+      <entry>2014-06-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1c840eb9-fb32-11e3-866e-b499baab0cbe">
     <topic>gnupg -- possible DoS using garbled compressed data packets</topic>
     <affects>
