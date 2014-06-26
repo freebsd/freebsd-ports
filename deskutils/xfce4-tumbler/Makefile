@@ -3,7 +3,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -14,12 +14,12 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Thumbnail service for Xfce desktop
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		pathfix pkgconfig gmake
-USE_BZIP2=	yes
+USES=		pathfix pkgconfig gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 intltool intlhack
 USE_LDCONFIG=	yes
