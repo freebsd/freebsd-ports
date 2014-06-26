@@ -1,5 +1,3 @@
-lib/thunarx-2/thunar-vcs-plugin.a
-lib/thunarx-2/thunar-vcs-plugin.la
 lib/thunarx-2/thunar-vcs-plugin.so
 %%GIT%%libexec/tvp-git-helper
 %%SVN%%libexec/tvp-svn-helper
