@@ -25,38 +25,20 @@ RUN_DEPENDS+=	curl>=7.24.0_2:${PORTSDIR}/ftp/curl
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-MAN1=		scamp.1
-
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PORTDOCS=	README CHANGE.LOG INSTALL Release.pdf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CLAMAV_DB=$${CLAMAV_DB:-""}|CLAMAV_DB=$${CLAMAV_DB:-\"/var/db/clamav\"}|g' ${WRKSRC}/${PORTNAME}.sh
 	@${REINPLACE_CMD} -e 's|CONFIG_DIR=$${CONFIG_DIR:-"/etc/scamp"}|CONFIG_DIR=$${CONFIG_DIR:-"${ETCDIR}"}|g' ${WRKSRC}/${PORTNAME}.sh
 
-post-install:
-	@if [ ! -d ${ETCDIR} ]; then \
-		${MKDIR} ${ETCDIR} ; \
-	fi
-
-	@${INSTALL_DATA} ${FILESDIR}/default.sample ${ETCDIR}
-
-	@if [ ! -f ${PREFIX}/etc/scamp/default ]; then \
-		${CP} -p ${PREFIX}/etc/scamp/default.sample ${PREFIX}/etc/scamp/default ; \
-	fi
-
 do-install:
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTNAME}.sh ${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_MAN} scamp.1 ${MANPREFIX}/man/man1
-
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README CHANGE.LOG INSTALL Release.pdf ${DOCSDIR}
-.endif
-
-	@${CAT} ${PKGMESSAGE}
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_MAN} scamp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/default.sample ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

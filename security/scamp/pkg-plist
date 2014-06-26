@@ -1,11 +1,4 @@
 bin/scamp.sh
-%%PORTDOCS%%%%DOCSDIR%%/CHANGE.LOG
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/Release.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/etc/scamp
-@unexec if cmp -s %D/etc/scamp/default.sample %D/etc/scamp/default; then rm -f %D/etc/scamp/default; fi
-etc/scamp/default.sample
-@exec if [ ! -f %D/etc/scamp/default ] ; then cp -p %D/%F %B/default; fi
+man/man1/scamp.1.gz
+@sample etc/scamp/default.sample
 @dirrmtry etc/scamp
