@@ -15,19 +15,17 @@ LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDLIBS=-lnetpbm
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^#include "ppmcmap.h"/d' ${WRKSRC}/ppmtoTbmp.c
+PORTDOCS=	README
 
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/^#include "ppmcmap\.h"/d' ${WRKSRC}/ppmtoTbmp.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ppmtoTbmp ${WRKSRC}/Tbmptopnm \
 		${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/q?.map ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

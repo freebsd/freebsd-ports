@@ -3,5 +3,3 @@ bin/Tbmptopnm
 %%DATADIR%%/q2.map
 %%DATADIR%%/q4.map
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
