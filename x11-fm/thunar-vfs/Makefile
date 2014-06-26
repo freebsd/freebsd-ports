@@ -3,7 +3,7 @@
 
 PORTNAME=	thunar-vfs
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/archive/${PORTNAME}/${PORTVERSION:R}
@@ -12,17 +12,20 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The virtual filesystem for Thunar
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgamin-1.so:${PORTSDIR}/devel/gamin
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 gdkpixbuf2 intltool intlhack
 USE_XFCE=	configenv libutil libexo
 USE_XORG=	x11
-USES=		gmake pathfix perl5 pkgconfig desktop-file-utils tar:bzip2
+USES=		gmake pathfix perl5 pkgconfig libtool desktop-file-utils \
+	tar:bzip2
 
 CONFIGURE_ARGS=	--disable-debug
 
