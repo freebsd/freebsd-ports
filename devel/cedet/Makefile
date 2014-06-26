@@ -14,7 +14,7 @@ COMMENT=	Collection of Emacs Development Environment Tools
 LICENSE=	GPLv2
 
 USE_EMACS=		yes
-USES=			gmake
+USES=			gmake makeinfo
 MAKE_JOBS_UNSAFE=	yes
 
 CEDET_LISPDIR=	${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

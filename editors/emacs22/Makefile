@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -59,7 +59,7 @@ MAKE_ENV=	LC_ALL=C
 
 INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 		efaq eintr elisp emacs-mime emacs erc eshell eudc \
-		flymake forms gnus idlwave info message mh-e newsticker \
+		flymake forms gnus idlwave message mh-e newsticker \
 		org pcl-cvs pgg rcirc reftex sc ses sieve smtpmail speedbar \
 		tramp url vip viper widget woman
 
@@ -83,5 +83,8 @@ pre-everything::
 
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
+
+post-install:
+	@${RM} -f ${STAGEDIR}${PREFIX}/info/info*
 
 .include <bsd.port.post.mk>

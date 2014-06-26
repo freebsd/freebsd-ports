@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An authoring and publishing environment for Emacs
 
 USE_EMACS=	yes
-USES=		gmake
+USES=		gmake makeinfo
 
 INFO=		muse
 

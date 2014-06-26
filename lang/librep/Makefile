@@ -20,7 +20,7 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 
 USE_CSTD=	gnu89
 
-USES=		gettext gmake libtool pathfix pkgconfig readline tar:xz shebangfix
+USES=		gettext gmake libtool makeinfo pathfix pkgconfig readline tar:xz shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal \
 		--with-stack-direction=-1
