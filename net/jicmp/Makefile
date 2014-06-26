@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	jicmp
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms/JICMP/stable-1.4/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Java native interface (JNI) to ICMP (ping)
 
 WRKSRC=		${WRKDIR}/jicmp-${PORTVERSION}
 
 USES=		libtool
 USE_JAVA=	yes
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.6+
 JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
