@@ -12,7 +12,7 @@ COMMENT=	Tools and libraries to access human-editable, plain text databases
 
 LICENSE=	GPLv3
 
-USES=		charsetfix libtool
+USES=		charsetfix libtool makeinfo
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

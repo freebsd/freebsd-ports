@@ -24,7 +24,7 @@ TK_CONFIGURE_WITH=tcl=${LOCALBASE}/lib/tcl8.4 tk=${LOCALBASE}/lib/tk8.4
 PGSQL_USE=	PGSQL=yes
 SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
-USES=		gmake iconv libtool pkgconfig shebangfix tar:xz
+USES=		gmake iconv libtool makeinfo pkgconfig shebangfix tar:xz
 USE_GNOME=	pango
 USE_SQLITE=	yes
 USE_XORG=	ice xi xmu
