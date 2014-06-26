@@ -2,72 +2,57 @@
 # $FreeBSD$
 
 PORTNAME=	srecord
-PORTVERSION=	1.59
-PORTREVISION=	1
+PORTVERSION=	1.64
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	abwang@gmail.com
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Collection of powerful tools for manipulating EPROM load files
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+BUILD_DEPENDS=	ps2pdf:${PORTSDIR}/print/ghostscript9 \
+		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
+		libtool:${PORTSDIR}/devel/libtool
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-MAKE_JOBS_UNSAFE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_AUTOTOOLS=	libtool
-STRIP=
+HEADER_DIRS=	input \
+		input/file \
+		input/filter \
+		input/filter/checksum \
+		input/filter/interval \
+		input/filter/message \
+		input/generator \
+		memory \
+		memory/walker \
+		output \
+		output/file \
+		quit
 
-PLIST_FILES=	bin/srec_cat \
-		bin/srec_cmp \
-		bin/srec_info
+post-build:
+	cd ${WRKSRC} && ${MAKE_CMD} libdir/pkgconfig/srecord.pc
 
-MAN1=	srec_cat.1 \
-	srec_cmp.1 \
-	srec_examples.1 \
-	srec_info.1 \
-	srec_input.1 \
-	srec_license.1
-MAN5=	srec_aomf.5 \
-	srec_ascii_hex.5 \
-	srec_atmel_generic.5 \
-	srec_binary.5 \
-	srec_brecord.5 \
-	srec_cosmac.5 \
-	srec_dec_binary.5 \
-	srec_emon52.5 \
-	srec_fairchild.5 \
-	srec_fastload.5 \
-	srec_formatted_binary.5 \
-	srec_fpc.5 \
-	srec_intel.5 \
-	srec_intel16.5 \
-	srec_mos_tech.5 \
-	srec_motorola.5 \
-	srec_needham.5 \
-	srec_os65v.5 \
-	srec_signetics.5 \
-	srec_spasm.5 \
-	srec_spectrum.5 \
-	srec_stewie.5 \
-	srec_tektronix.5 \
-	srec_tektronix_extended.5 \
-	srec_ti_tagged.5 \
-	srec_ti_tagged_16.5 \
-	srec_ti_txt.5 \
-	srec_vmem.5 \
-	srec_wilson.5
+pre-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${MKDIR} ${HEADER_DIRS:S,^,${STAGEDIR}${PREFIX}/include/${PORTNAME}/,}
 
-NO_STAGE=	yes
-do-install:
-	@${INSTALL_PROGRAM} ${PLIST_FILES:S,^,${WRKSRC}/,} ${PREFIX}/bin/
-	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man/man1/,} ${MAN1PREFIX}/man/man1/
-	@${INSTALL_MAN} ${MAN5:S,^,${WRKSRC}/man/man5/,} ${MAN5PREFIX}/man/man5/
+post-install:
+	chmod 644 ${STAGEDIR}${PREFIX}/lib/libsrecord.so.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsrecord.so.0
+	chmod 444 ${STAGEDIR}${PREFIX}/lib/libsrecord.so.0
+	${INSTALL_DATA} ${WRKSRC}/libdir/pkgconfig/srecord.pc \
+	    ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 test:
 	@cd ${WRKSRC} && ${MAKE} sure
+
+build-plist:
+	${RM} -f ${PLIST}
+	${MAKE} makeplist | \
+	    ${GREP} -v /you/have/to/check/what/makeplist/gives/you >> ${PLIST}
 
 .include <bsd.port.mk>
