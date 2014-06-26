@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for manipulating MSDOS files + support 1232KB , Unicode LFN
 
-USES=		gmake
+USES=		gmake makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xdf
 INFO=		mtools

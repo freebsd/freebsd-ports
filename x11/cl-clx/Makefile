@@ -7,14 +7,16 @@ PORTREVISION?=	1
 CATEGORIES=	x11 lisp
 MASTER_SITES=	http://common-lisp.net/~abridgewater/dist/clx/
 PKGNAMEPREFIX=	cl-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 client library for Common Lisp
 
 LICENSE=	MIT
 
+USES=		tar:tgz
+
 .if !defined(FASL_BUILD)
+USES+=		makeinfo
 USE_ASDF=	yes
 INFO=		clx
 PLIST_SUB=	ASDF_PATHNAME="${ASDF_PATHNAME:S,^${PREFIX}/,,}" \

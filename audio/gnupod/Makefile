@@ -8,7 +8,6 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.blinkenlights.ch/gnupod-dist/stable/
 MASTER_SITE_SUBDIR=	gnupod
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of Perl scripts for using an Apple iPod
@@ -23,7 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INFO=		gnupod
 
-USES=		perl5
+USES=		makeinfo perl5 tar:tgz
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
