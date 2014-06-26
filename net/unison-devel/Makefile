@@ -61,7 +61,7 @@ post-patch:
 post-build:
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}
-	@${MAKE_CMD} -C ${WRKSRC} UISTYLE=text NAME=unison-text
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} CFLAGS="" UISTYLE=text NAME=unison-text
 	@cd ${WRKSRC}/win32rc && ${LOCALBASE}/bin/icotool -x U.ico
 .endif
 
