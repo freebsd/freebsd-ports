@@ -3,7 +3,7 @@
 
 PORTNAME=	source-highlight
 PORTVERSION=	3.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	src-highlite
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USES=	gmake pathfix
+USES=		gmake pathfix libtool
 USE_LDCONFIG=	yes
 
 INFO=	source-highlight source-highlight-lib
