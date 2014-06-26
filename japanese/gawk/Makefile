@@ -16,6 +16,7 @@ COMMENT=	GNU awk + multi-byte extension
 
 LICENSE=	GPLv2
 
+USES=		makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bitops --enable-non-decimal-data
 MAKE_JOBS_UNSAFE=	yes

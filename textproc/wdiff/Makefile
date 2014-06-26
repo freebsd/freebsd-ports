@@ -13,9 +13,11 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 
-USES=		charsetfix
+USES=		charsetfix makeinfo
 
 OPTIONS_DEFINE=	NLS
+
+INFO=		wdiff
 
 .include <bsd.port.options.mk>
 

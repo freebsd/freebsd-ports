@@ -5,7 +5,6 @@ bin/pdf2brl
 bin/rtf2brl
 include/liblouisxml/liblouisxml.h
 include/liblouisxml/louisxml.h
-info/liblouisxml.info
 lib/liblouisxml.a
 lib/liblouisxml.so
 lib/liblouisxml.so.1

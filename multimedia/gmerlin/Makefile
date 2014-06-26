@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libgavl.so:${PORTSDIR}/multimedia/gavl \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gettext pathfix pkgconfig
+USES=		gettext makeinfo pathfix pkgconfig
 USE_GNOME=	gtk20 libxml2
 USE_XORG=	x11 xext xfixes xinerama xv
 USE_GL=		gl

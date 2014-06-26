@@ -45,6 +45,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
+USES+=		makeinfo
 INFO=		gauche-refe gauche-refj
 .endif
 

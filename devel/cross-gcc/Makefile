@@ -27,7 +27,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 BUILD_DEPENDS?=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
 RUN_DEPENDS?=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
 
-USES=		bison iconv gmake tar:bzip2
+USES=		bison iconv gmake makeinfo tar:bzip2
 STRIP=		#empty
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info

@@ -221,6 +221,7 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+USES+=		makeinfo
 .else
 MAKE_ARGS+=	NOPORTDOCS=1
 .endif
