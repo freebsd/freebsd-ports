@@ -2,6 +2,7 @@
 
 PORTNAME=	senna
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
@@ -12,7 +13,7 @@ COMMENT=	Embeddable Fulltext Search Engine
 
 GNU_CONFIGURE=	YES
 USE_GCC=	any
-USES=		gmake
+USES=		gmake libtool
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS=	--with-sennahome=${SENNA_HOME}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -34,7 +35,7 @@ BROKEN=		Does not compile on ${ARCH}
 
 .if ${PORT_OPTIONS:MMECAB}
 CONFIGURE_ARGS+=	--with-mecab
-LIB_DEPENDS+=	mecab:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	libmecab.so:${PORTSDIR}/japanese/mecab
 .else
 CONFIGURE_ARGS+=	--without-mecab
 .endif
