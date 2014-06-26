@@ -8,7 +8,7 @@ CATEGORIES=	lang math
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Interpreted language for scientific simulations
 
-USES=		tar:tgz
+USES=		makeinfo tar:tgz
 USE_XORG=	x11
 MAKE_ARGS=	Y_HOME=relocatable Y_DOCDIR=/dev/null
 
