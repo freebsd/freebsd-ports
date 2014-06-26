@@ -15,18 +15,13 @@ include/thunarx-2/thunarx/thunarx-renamer.h
 include/thunarx-2/thunarx/thunarx.h
 lib/Thunar/ThunarBulkRename
 lib/Thunar/thunar-sendto-email
-lib/libthunarx-2.la
 lib/libthunarx-2.so
 lib/libthunarx-2.so.0
-%%PLUGIN_APR%%lib/thunarx-2/thunar-apr.la
+lib/libthunarx-2.so.0.0.0
 %%PLUGIN_APR%%lib/thunarx-2/thunar-apr.so
-%%PLUGIN_SBR%%lib/thunarx-2/thunar-sbr.la
 %%PLUGIN_SBR%%lib/thunarx-2/thunar-sbr.so
-%%PLUGIN_UCA%%lib/thunarx-2/thunar-uca.la
 %%PLUGIN_UCA%%lib/thunarx-2/thunar-uca.so
-%%PLUGIN_WALL%%lib/thunarx-2/thunar-wallpaper-plugin.la
 %%PLUGIN_WALL%%lib/thunarx-2/thunar-wallpaper-plugin.so
-%%PLUGIN_TPA%%lib/xfce4/panel/plugins/libthunar-tpa.la
 %%PLUGIN_TPA%%lib/xfce4/panel/plugins/libthunar-tpa.so
 libdata/pkgconfig/thunarx-2.pc
 man/man1/Thunar.1.gz
@@ -35,8 +30,8 @@ share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
 share/applications/Thunar.desktop
 share/applications/thunar-settings.desktop
-%%WITH_DBUS%%share/dbus-1/services/org.xfce.FileManager.service
-%%WITH_DBUS%%share/dbus-1/services/org.xfce.Thunar.service
+share/dbus-1/services/org.xfce.FileManager.service
+share/dbus-1/services/org.xfce.Thunar.service
 %%DOCSDIR%%/README.gtkrc
 %%DOCSDIR%%/README.thunarrc
 %%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxFileInfo.html
@@ -148,12 +143,8 @@ share/pixmaps/Thunar/Thunar-about-logo.png
 %%NLS%%@dirrmtry share/locale/ug
 %%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/te
-%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/sr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES

@@ -3,7 +3,7 @@
 
 PORTNAME=	Thunar
 PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:tl}/${PORTVERSION:R}
@@ -12,7 +12,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce file manager
 
-LIB_DEPENDS=	libtumbler-1.so:${PORTSDIR}/deskutils/xfce4-tumbler
+LICENSE=	GPLv2 LGPL20
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
+
+LIB_DEPENDS=	libtumbler-1.so:${PORTSDIR}/deskutils/xfce4-tumbler \
+	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -20,12 +25,13 @@ USE_GNOME=	gtk20 intltool intlhack gdkpixbuf2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libmenu libutil
 USE_XORG=	sm x11
-USES=		desktop-file-utils gmake pathfix perl5 pkgconfig tar:bzip2
+USES=		desktop-file-utils gmake pathfix perl5 libtool pkgconfig \
+	tar:bzip2
 
-OPTIONS_DEFINE=	DBUS DOCS GVFS NLS NOTIFY STARTUP
+OPTIONS_DEFINE=	DOCS GVFS NLS NOTIFY STARTUP
 OPTIONS_GROUP=	PLUGINS
 OPTIONS_GROUP_PLUGINS=	PLUG_APR PLUG_SBR PLUG_TPA PLUG_UCA PLUG_WALL
-OPTIONS_DEFAULT=	DBUS GVFS NOTIFY PLUG_APR PLUG_SBR PLUG_UCA PLUG_WALL STARTUP
+OPTIONS_DEFAULT=	GVFS NOTIFY PLUG_APR PLUG_SBR PLUG_UCA PLUG_WALL STARTUP
 
 # Override NOTIFY_DESC
 NOTIFY_DESC=	Display notifications
@@ -37,18 +43,10 @@ PLUG_UCA_DESC=	User Customizable Actions plugin
 PLUG_WALL_DESC=	Wallpaper plugin
 
 CONFIGURE_ARGS+=--enable-gio-unix \
-		--disable-gudev
+		--disable-gudev \
+		--enable-dbus
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=--enable-dbus
-PLIST_SUB+=	WITH_DBUS=""
-.else
-CONFIGURE_ARGS+=--disable-dbus
-PLIST_SUB+=	WITH_DBUS="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
