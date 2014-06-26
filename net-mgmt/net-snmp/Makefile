@@ -205,7 +205,7 @@ CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 
 .include <bsd.port.pre.mk>
 
-.if defined(OPENSSL_PORT)
+.if defined(WITH_OPENSSL_PORT) || defined(OPENSSL_PORT)
 LDFLAGS+=	-lcrypto
 .endif
 
