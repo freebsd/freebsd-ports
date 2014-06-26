@@ -5,13 +5,13 @@ include/teckit/TECkit_Common.h
 include/teckit/TECkit_Compiler.h
 include/teckit/TECkit_Engine.h
 lib/libTECkit.a
-lib/libTECkit.la
 lib/libTECkit.so
 lib/libTECkit.so.0
+lib/libTECkit.so.0.0.0
 lib/libTECkit_Compiler.a
-lib/libTECkit_Compiler.la
 lib/libTECkit_Compiler.so
 lib/libTECkit_Compiler.so.0
+lib/libTECkit_Compiler.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSING.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
