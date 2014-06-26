@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/folks/Makefile 19746 2014-06-22 22:51:46Z gusi $
+#   $MCom: ports/trunk/net-im/folks/Makefile 19753 2014-06-25 05:44:07Z gusi $
 
 PORTNAME=	folks
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.7.1
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 

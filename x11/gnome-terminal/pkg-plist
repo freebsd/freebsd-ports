@@ -1,6 +1,5 @@
 bin/gnome-terminal
 lib/nautilus/extensions-3.0/libterminal-nautilus.a
-lib/nautilus/extensions-3.0/libterminal-nautilus.la
 lib/nautilus/extensions-3.0/libterminal-nautilus.so
 %%MIGRATION%%libexec/gnome-terminal-migration
 libexec/gnome-terminal-server
@@ -226,7 +225,6 @@ share/help/hu/gnome-terminal/app-fonts.page
 share/help/hu/gnome-terminal/app-fullscreen.page
 share/help/hu/gnome-terminal/app-terminal-sizes.page
 share/help/hu/gnome-terminal/app-zoom.page
-share/help/hu/gnome-terminal/figures/gnome-terminal.png
 share/help/hu/gnome-terminal/gs-execute-commands.page
 share/help/hu/gnome-terminal/gs-tabs.page
 share/help/hu/gnome-terminal/index.page
@@ -257,7 +255,6 @@ share/help/pt_BR/gnome-terminal/app-fonts.page
 share/help/pt_BR/gnome-terminal/app-fullscreen.page
 share/help/pt_BR/gnome-terminal/app-terminal-sizes.page
 share/help/pt_BR/gnome-terminal/app-zoom.page
-share/help/pt_BR/gnome-terminal/figures/gnome-terminal.png
 share/help/pt_BR/gnome-terminal/gs-execute-commands.page
 share/help/pt_BR/gnome-terminal/gs-tabs.page
 share/help/pt_BR/gnome-terminal/index.page

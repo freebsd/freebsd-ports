@@ -12,7 +12,7 @@ lib/girepository-1.0/Vte-%%VERSION%%.typelib
 lib/libvte2_90.la
 lib/libvte2_90.so
 lib/libvte2_90.so.9
-lib/libvte2_90.so.9.3600.2
+lib/libvte2_90.so.9.3600.3
 libdata/pkgconfig/vte-%%VERSION%%.pc
 share/doc/vte-2.90/VteReaper.html
 share/doc/vte-2.90/VteTerminal.html
@@ -148,8 +148,6 @@ share/locale/zh_TW/LC_MESSAGES/vte-2.90.mo
 @dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
-@dirrmtry share/locale/tg/LC_MESSAGES
-@dirrmtry share/locale/tg
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES

@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 19750 2014-06-24 20:14:50Z kwm $
 
 PORTNAME=	pango
-PORTVERSION=	1.36.2
+PORTVERSION=	1.36.5
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -17,7 +17,7 @@ USES=		tar:xz
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	fontconfig>=2.10.91:${PORTSDIR}/x11-fonts/fontconfig \
-		cairo>=1.12:${PORTSDIR}/graphics/cairo
+		cairo>=1.12.10,2:${PORTSDIR}/graphics/cairo
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
@@ -32,7 +32,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 VERSION=	1.8.0
-LIBVERSION=     0.3600.2
+LIBVERSION=     0.3600.5
 PLIST_SUB+=     VERSION=${VERSION} LIBVERSION=${LIBVERSION}
 
 FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf

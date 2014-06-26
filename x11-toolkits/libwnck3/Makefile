@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/libwnck3/Makefile 19593 2014-04-28 11:41:58Z gusi $
+#   $MCom: ports/trunk/x11-toolkits/libwnck3/Makefile 19752 2014-06-24 20:41:33Z kwm $
 
 PORTNAME=	libwnck
 PORTVERSION=	3.4.7
@@ -16,8 +16,6 @@ USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
-
 USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
 USE_GNOME=	gtk30 intlhack introspection:build referencehack
 USE_XORG=	xres x11
@@ -26,6 +24,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tools
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	STARTUP
+OPTIONS_DEFAULT=STARTUP
+STARTUP_DESC=	Startup notification support
+STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+STARTUP_CONFIGURE_ENABLE=	startup-notification
 
 .include <bsd.port.mk>
 

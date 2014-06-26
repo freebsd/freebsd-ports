@@ -1,8 +1,8 @@
 bin/empathy
 bin/empathy-accounts
 bin/empathy-debugger
-lib/empathy/libempathy-3.12.3.so
-lib/empathy/libempathy-gtk-3.12.3.so
+lib/empathy/libempathy-3.12.4.so
+lib/empathy/libempathy-gtk-3.12.4.so
 lib/empathy/libempathy-gtk.a
 lib/empathy/libempathy-gtk.la
 lib/empathy/libempathy-gtk.so
