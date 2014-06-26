@@ -3,7 +3,7 @@
 
 PORTNAME=	aria2
 PORTVERSION=	1.18.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -33,7 +33,7 @@ USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USES=		compiler:c++11-lib pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
