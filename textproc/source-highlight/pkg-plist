@@ -93,9 +93,9 @@ include/srchilite/verbosity.h
 include/srchilite/versions.h
 include/srchilite/wordtokenizer.h
 lib/libsource-highlight.a
-lib/libsource-highlight.la
 lib/libsource-highlight.so
 lib/libsource-highlight.so.4
+lib/libsource-highlight.so.4.0.0
 libdata/pkgconfig/source-highlight.pc
 man/man1/check-regexp.1.gz
 man/man1/source-highlight-settings.1.gz
