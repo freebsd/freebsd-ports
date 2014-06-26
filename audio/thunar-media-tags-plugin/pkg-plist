@@ -1,5 +1,3 @@
-lib/thunarx-2/thunar-media-tags-plugin.a
-lib/thunarx-2/thunar-media-tags-plugin.la
 lib/thunarx-2/thunar-media-tags-plugin.so
 share/locale/ar/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ast/LC_MESSAGES/thunar-media-tags-plugin.mo
