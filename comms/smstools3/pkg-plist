@@ -25,7 +25,14 @@ bin/unicode2sms
 %%DATADIR%%/smstest.php
 %%DATADIR%%/sql_demo
 %%DATADIR%%/unicode2sms
-@unexec if [ -f %D/etc/smsd.conf ] && cmp -s %D/etc/smsd.conf %D/etc/smsd.conf.sample; then rm -f %D/etc/smsd.conf; fi
-etc/smsd.conf.sample
-@exec if [ ! -f %D/etc/smsd.conf ] ; then cp -p %D/%F %B/smsd.conf; fi
+@sample etc/smsd.conf.sample
 @dirrm %%DATADIR%%
+@cwd /
+@owner %%SMSD_USER%%
+@group %%SMSD_GROUP%%
+@dirrmtry %%SPOOLDIR%%/incoming
+@dirrmtry %%SPOOLDIR%%/outgoing
+@dirrmtry %%SPOOLDIR%%/checked
+@dirrmtry %%LOGDIR%%
+@dirrmtry %%PIDDIR%%
+@dirrmtry %%SPOOLDIR%%

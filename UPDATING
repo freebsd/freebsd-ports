@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140626:
+  AFFECTS: users of comms/smstools3
+  AUTHOR: madpilot@FreeBSD.org
+
+  The smstools3 startup screen has been modified to allow smsd to
+  change uid/gid by itself. The rc options smsd_logfile, smsd_user
+  and smsd_group are not supported anymore, user, group and log
+  filename should be specified in the configuration file.
+
+  The sample configuration file has been updated to have defaults
+  equivalent to the old ones.
+
 20140624:
   AFFECTS: users of databases/p5-Bucardo
   AUTHOR: mat@FreeBSD.org

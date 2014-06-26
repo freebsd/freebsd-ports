@@ -10,12 +10,6 @@
 #
 # smsd_enable="YES"
 #
-# NOTE: to make smsd log to syslog specify:
-#
-# smsd_logfile="syslog"
-#
-# in rc.conf
-#
 . /etc/rc.subr
 
 name=smsd
@@ -25,13 +19,10 @@ load_rc_config ${name}
 : ${smsd_enable:=NO}
 : ${smsd_pidfile:="%%PIDDIR%%/smsd.pid"}
 : ${smsd_infofile:="%%PIDDIR%%/smsd.working"}
-: ${smsd_logfile:="%%LOGDIR%%/smsd.log"}
 : ${smsd_config:="%%PREFIX%%/etc/smsd.conf"}
-: ${smsd_user:=uucp}
-: ${smsd_group:=dialer}
 
 pidfile=${smsd_pidfile}
 command="%%PREFIX%%/bin/smsd"
-command_args="-c${smsd_config} -p${smsd_pidfile} -i${smsd_infofile} -l${smsd_logfile} -u${smsd_user} -g${smsd_group}"
+command_args="-c${smsd_config} -p${smsd_pidfile} -i${smsd_infofile}"
 
 run_rc_command "$1"
