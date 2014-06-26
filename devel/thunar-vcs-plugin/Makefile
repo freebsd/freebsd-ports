@@ -3,7 +3,7 @@
 
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.1.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -12,13 +12,11 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	Version Control System plugin for Thunar
 
-USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libexo libutil thunar
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake libtool tar:bzip2
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
