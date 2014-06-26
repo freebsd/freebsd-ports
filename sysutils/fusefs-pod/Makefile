@@ -12,14 +12,11 @@ DISTNAME=	fusepod-${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FUSE-based filesystem for iPod
 
-LIB_DEPENDS=	gpod.7:${PORTSDIR}/audio/libgpod\
-		tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libgpod.so:${PORTSDIR}/audio/libgpod\
+		libtag.so:${PORTSDIR}/audio/taglib
 
-USE_BZIP2=	yes
-USES=		fuse pkgconfig
+USES=		fuse pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-MAN1=		fusepod.1
-PLIST_FILES=	bin/fusepod
+PLIST_FILES=	bin/fusepod man/man1/fusepod.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
