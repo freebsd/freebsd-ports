@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USE_PYTHON=	2
 USE_TEX=	latex
-USES=		gmake
+USES=		gmake makeinfo
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \
 		--datadir=${PYTHON_SITELIBDIR} --python=${PYTHON_CMD}

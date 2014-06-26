@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake readline
+USES=		gmake makeinfo readline
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ansi \
