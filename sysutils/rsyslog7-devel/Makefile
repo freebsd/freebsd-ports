@@ -42,8 +42,7 @@ USES=		libtool pkgconfig
 .if ${PORT_OPTIONS:MDBI}
 LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ARGS+=--enable-libdbi
-PLIST_FILES+=	lib/rsyslog/omlibdbi.la \
-		lib/rsyslog/omlibdbi.so
+PLIST_FILES+=	lib/rsyslog/omlibdbi.so
 .else
 CONFIGURE_ARGS+=--disable-libdbi
 .endif
@@ -52,19 +51,15 @@ CONFIGURE_ARGS+=--disable-libdbi
 LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-gnutls
-PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.la \
-		lib/rsyslog/lmnsd_gtls.so
+PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.so
 .else
 CONFIGURE_ARGS+=--disable-gnutls
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=--enable-gssapi-krb5
-PLIST_FILES+=	lib/rsyslog/imgssapi.la \
-		lib/rsyslog/imgssapi.so \
-		lib/rsyslog/lmgssutil.la \
+PLIST_FILES+=	lib/rsyslog/imgssapi.so \
 		lib/rsyslog/lmgssutil.so \
-		lib/rsyslog/omgssapi.la \
 		lib/rsyslog/omgssapi.so
 .else
 CONFIGURE_ARGS+=--disable-gssapi-krb5
@@ -73,8 +68,7 @@ CONFIGURE_ARGS+=--disable-gssapi-krb5
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
-PLIST_FILES+=	lib/rsyslog/ommysql.so \
-					lib/rsyslog/ommysql.la
+PLIST_FILES+=	lib/rsyslog/ommysql.so
 .else
 CONFIGURE_ARGS+=--disable-mysql
 .endif
@@ -82,8 +76,7 @@ CONFIGURE_ARGS+=--disable-mysql
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-pgsql
-PLIST_FILES+=	lib/rsyslog/ompgsql.so \
-					lib/rsyslog/ompgsql.la
+PLIST_FILES+=	lib/rsyslog/ompgsql.so
 .else
 CONFIGURE_ARGS+=--disable-pgsql
 .endif
@@ -91,9 +84,7 @@ CONFIGURE_ARGS+=--disable-pgsql
 .if ${PORT_OPTIONS:MRELP}
 LIB_DEPENDS+=	librelp.so:${PORTSDIR}/devel/librelp
 CONFIGURE_ARGS+=--enable-relp
-PLIST_FILES+=	lib/rsyslog/imrelp.la \
-		lib/rsyslog/imrelp.so \
-		lib/rsyslog/omrelp.la \
+PLIST_FILES+=	lib/rsyslog/imrelp.so \
 		lib/rsyslog/omrelp.so
 .else
 CONFIGURE_ARGS+=--disable-relp
@@ -102,8 +93,7 @@ CONFIGURE_ARGS+=--disable-relp
 .if ${PORT_OPTIONS:MRFC3195}
 LIB_DEPENDS+=	liblogging.so:${PORTSDIR}/devel/liblogging
 CONFIGURE_ARGS+=--enable-rfc3195
-PLIST_FILES+=	lib/rsyslog/im3195.la \
-		lib/rsyslog/im3195.so
+PLIST_FILES+=	lib/rsyslog/im3195.so
 .else
 CONFIGURE_ARGS+=--disable-rfc3195
 .endif
@@ -111,8 +101,7 @@ CONFIGURE_ARGS+=--disable-rfc3195
 .if ${PORT_OPTIONS:MSNMP}
 LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--enable-snmp
-PLIST_FILES+=	lib/rsyslog/omsnmp.la \
-		lib/rsyslog/omsnmp.so
+PLIST_FILES+=	lib/rsyslog/omsnmp.so
 .else
 CONFIGURE_ARGS+=--disable-snmp
 .endif
