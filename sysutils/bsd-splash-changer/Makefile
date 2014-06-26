@@ -14,14 +14,10 @@ USE_RC_SUBR=	change_splash
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 
 do-install:
-	${MKDIR} ${DATADIR}
-
-post-install:
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
