@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.3.11
+PORTVERSION=	0.4.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -17,40 +17,45 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libass.so:${PORTSDIR}/multimedia/libass \
-		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+		libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
+		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
 BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	c6bb684
+GH_COMMIT=	49275b2
 
 WAF_VERSION=	1.7.16
 
-USES=		compiler:c11 desktop-file-utils gmake iconv lua pkgconfig
+USES=		compiler:c11 desktop-file-utils iconv lua pkgconfig
 USE_PYTHON_BUILD=	yes
 USE_XORG=	x11 xv xxf86vm
+USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+
+CPPFLAGS+=	-I.. -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man \
 		--lua=${LUA_VER_STR}fbsd \
 		--disable-debug-build \
+		--enable-libmpv-shared \
 		--disable-mpg123 \
 		--disable-alsa \
 		--disable-portaudio \
-		--disable-libguess \
 		--disable-pdf
 
-OPTIONS_DEFINE=		BS2B ENCA LADSPA LCMS2 LIRC
+OPTIONS_DEFINE=		BS2B ENCA LADSPA LCMS2 LIBGUESS LIRC
 OPTIONS_GROUP=		IN VO AO
-OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L QUVI SMB
+OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L QUVI SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
 OPTIONS_GROUP_AO=	JACK PULSEAUDIO
 
 BS2B_DESC=	Enable Bauer Stereophonic-to-Binaural DSP support
-DVDNAV_DESC=	Enable DVD navigation menus support
 ENCA_DESC=	Enable encoding detection support
+LIBGUESS_DESC=	Enable high-speed character set detection support
 QUVI_DESC=	Enable flash media stream support
 IN_DESC=	Input
 VO_DESC=	Video Output
@@ -68,14 +73,14 @@ LADSPA_CONFIGURE_ENABLE=	ladspa
 LCMS2_LIB_DEPENDS=		liblcms2.so:${PORTSDIR}/graphics/lcms2
 LCMS2_CONFIGURE_ENABLE=		lcms2
 
+LIBGUESS_LIB_DEPENDS=		libguess.so:${PORTSDIR}/textproc/libguess
+LIBGUESS_CONFIGURE_ENABLE=	libguess
+
 LIRC_LIB_DEPENDS=		liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=		lirc
 
 CDIO_LIB_DEPENDS=		libcdio.so:${PORTSDIR}/sysutils/libcdio
 CDIO_CONFIGURE_ENABLE=		cdda
-
-DVDNAV_LIB_DEPENDS=		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
-DVDNAV_CONFIGURE_ENABLE=	dvdnav
 
 LIBBLURAY_LIB_DEPENDS=		libbluray.so:${PORTSDIR}/multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	libbluray
@@ -119,6 +124,8 @@ post-extract:
 	@${CHMOD} +x ${WRKSRC}/waf
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
+		${WRKSRC}/wscript_build.py
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 
@@ -138,5 +145,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mpv
 	${INSTALL_DATA} ${WRKSRC}/etc/example.conf ${STAGEDIR}${PREFIX}/etc/mpv/mpv.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/etc/input.conf ${STAGEDIR}${PREFIX}/etc/mpv/input.conf.sample
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpv.so
 
 .include <bsd.port.mk>
