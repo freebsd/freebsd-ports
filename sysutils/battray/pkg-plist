@@ -17,6 +17,7 @@ bin/battray
 %%PYTHON_SITELIBDIR%%/battray/platforms/openbsd.py
 %%PYTHON_SITELIBDIR%%/battray/platforms/openbsd.pyc
 %%PYTHON_SITELIBDIR%%/battray/platforms/openbsd.pyo
+man/man1/battray.1.gz
 %%DATADIR%%/alert.wav
 %%DATADIR%%/icons/battery.png
 %%DATADIR%%/icons/charging.png
