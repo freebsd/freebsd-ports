@@ -11,8 +11,4 @@ COMMENT=	Manage intrusion attempts recorded in the system log
 
 USE_PYTHON=	yes
 
-MANCOMPRESSED=	yes
-MAN1=		abck.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
