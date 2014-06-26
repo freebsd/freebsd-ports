@@ -1,9 +1,7 @@
 bin/proxychains
 bin/proxyresolv
-@unexec if cmp -s %D/etc/proxychains.conf %D/etc/proxychains.conf.sample; then rm -f %D/etc/proxychains.conf; fi
-etc/proxychains.conf.sample
-@exec [ -f %D/etc/proxychains.conf ] || cp %D/etc/proxychains.conf.sample %D/etc/proxychains.conf
+@sample etc/proxychains.conf.sample
 lib/libproxychains.so.3
+lib/libproxychains.so.3.0.0
 lib/libproxychains.so
-lib/libproxychains.la
 lib/libproxychains.a
