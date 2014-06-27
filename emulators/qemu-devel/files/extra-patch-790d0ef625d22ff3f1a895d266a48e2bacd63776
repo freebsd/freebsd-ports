@@ -7299,7 +7299,7 @@ new file mode 100644
 index 0000000..85d3c41
 --- /dev/null
 +++ b/bsd-user/freebsd/os-ioctl-cmds.h
-@@ -0,0 +1,47 @@
+@@ -0,0 +1,49 @@
 +
 +/* sys/ttycom.h tty(4) */
 +IOCTL(TIOCSETD, IOC_W, MK_PTR(TYPE_INT))
@@ -7314,11 +7314,13 @@ index 0000000..85d3c41
 +IOCTL(TIOCSETA, IOC_W, MK_PTR(MK_STRUCT(STRUCT_termios)))
 +IOCTL(TIOCSETAW, IOC_W, MK_PTR(MK_STRUCT(STRUCT_termios)))
 +IOCTL(TIOCSETAF, IOC_W, MK_PTR(MK_STRUCT(STRUCT_termios)))
++IOCTL(TIOCPTMASTER, IOC_, TYPE_NULL)
 +IOCTL(TIOCOUTQ, IOC_R, MK_PTR(TYPE_INT))
 +IOCTL(TIOCSTI, IOC_W, MK_PTR(TYPE_CHAR))
 +IOCTL(TIOCNOTTY, IOC_, TYPE_NULL)
 +IOCTL(TIOCSTOP, IOC_, TYPE_NULL)
 +IOCTL(TIOCSTART, IOC_, TYPE_NULL)
++IOCTL(TIOCPKT, IOC_W, MK_PTR(TYPE_INT))
 +IOCTL(TIOCSCTTY, IOC_, TYPE_NULL)
 +IOCTL(TIOCDRAIN, IOC_, TYPE_NULL)
 +IOCTL(TIOCEXCL, IOC_, TYPE_NULL)
@@ -7739,7 +7741,7 @@ new file mode 100644
 index 0000000..07e60fe
 --- /dev/null
 +++ b/bsd-user/freebsd/os-misc.h
-@@ -0,0 +1,442 @@
+@@ -0,0 +1,441 @@
 +/*
 + *  miscellaneous FreeBSD system call shims
 + *
@@ -8167,8 +8169,7 @@ index 0000000..07e60fe
 +static inline abi_long do_freebsd_posix_openpt(abi_long flags)
 +{
 +
-+    qemu_log("qemu: Unsupported syscall posix_openpt()\n");
-+    return -TARGET_ENOSYS;
++    return get_errno(posix_openpt(flags));
 +}
 +
 +/* posix_fadvise(2) */
@@ -13325,6 +13326,11 @@ index 1edf412..ae2a4a3 100644
  { TARGET_FREEBSD_NR_truncate, "truncate", NULL, NULL, NULL },
  { TARGET_FREEBSD_NR_umask, "umask", "%s(%#o)", NULL, NULL },
  { TARGET_FREEBSD_NR_unlink, "unlink", "%s(\"%s\")", NULL, NULL },
+@@ -169,3 +231,4 @@
+ { TARGET_FREEBSD_NR_wait4, "wait4", NULL, NULL, NULL },
+ { TARGET_FREEBSD_NR_write, "write", "%s(%d,%#x,%d)", NULL, NULL },
+ { TARGET_FREEBSD_NR_writev, "writev", "%s(%d,%p,%#x)", NULL, NULL },
++{ TARGET_FREEBSD_NR_posix_openpt, "posix_openpt", "%s(%d)", NULL, NULL },
 diff --git a/bsd-user/freebsd/syscall_nr.h b/bsd-user/freebsd/syscall_nr.h
 index 36336ab..d849024 100644
 --- a/bsd-user/freebsd/syscall_nr.h
@@ -28235,7 +28241,7 @@ index a4d1583..35bf394 100644
 +        ret = do_freebsd_posix_fallocate(arg1, arg2, arg3);
 +        break;
 +
-+    case TARGET_FREEBSD_NR_posix_openpt: /* posix_fallocate(2) */
++    case TARGET_FREEBSD_NR_posix_openpt: /* posix_openpt(2) */
 +        ret = do_freebsd_posix_openpt(arg1);
 +        break;
 +
