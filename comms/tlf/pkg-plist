@@ -1,5 +1,6 @@
 bin/soundlog
 bin/tlf
+man/man1/tlf.1.gz
 %%DATADIR%%/arrlsections
 %%DATADIR%%/callmaster
 %%DATADIR%%/cty.dat
