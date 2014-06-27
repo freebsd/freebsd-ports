@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	crack
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Ruby Library of Simple JSON and XML Parsing
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-safe_yaml>=0.9.0:${PORTSDIR}/devel/rubygem-safe_yaml
+RUN_DEPENDS=	rubygem-safe_yaml>=1.0.0:${PORTSDIR}/devel/rubygem-safe_yaml
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
