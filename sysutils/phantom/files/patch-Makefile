@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jul  8 05:30:27 2005
-+++ Makefile	Wed Jan 25 11:27:25 2006
+--- Makefile.orig	2005-07-08 17:30:27.000000000 +0800
++++ Makefile	2014-06-27 23:13:45.387524232 +0800
 @@ -1,8 +1,8 @@
  VERSION=1.2
  
@@ -11,12 +11,12 @@
  
  OBJS=phantom.o
  
-@@ -12,7 +12,7 @@
+@@ -12,7 +12,7 @@ phantom: $(OBJS)
  	$(CC) -Wall -W $(OBJS) $(LDFLAGS) -o phantom
  
  install: phantom
 -	cp phantom $(DESTDIR)/usr/bin
-+	${INSTALL} -m 755 phantom ${PREFIX}/bin
++	${INSTALL} -m 755 phantom $(DESTDIR)${PREFIX}/bin
  
  clean:
  	rm -f $(OBJS) core phantom
