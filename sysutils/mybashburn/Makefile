@@ -3,7 +3,7 @@
 
 PORTNAME=	mybashburn
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -11,13 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses CD burning bash script
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		cdialog:${PORTSDIR}/devel/cdialog
-
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+		cdialog:${PORTSDIR}/devel/cdialog \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 NO_BUILD=	yes
-MAN1=		mybashburn.1
-MANCOMPRESSED=	yes
 PORTDOCS=	COPYING CREDITS ChangeLog FAQ FILES HOWTO INSTALL README TODO
 
 OPTIONS_DEFINE=	CDRDAO DVDTOOLS EJECT FLAC LAME MPG123 NORMALIZE SUDO VORBIS DOCS
@@ -28,7 +25,6 @@ EJECT_DESC=	Ejecting the CD/DVD drive
 NORMALIZE_DESC=	An audio file volume normalizer
 SUDO_DESC=	To allow non-privileged users to burn CD's
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCDRDAO}
@@ -66,15 +62,14 @@ post-patch:
 		${WRKSRC}/MyBashBurn.sh ${WRKSRC}/etc/mybashburnrc
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/man/mybashburn.1.gz ${MAN1PREFIX}/man/man1/
-	${INSTALL_SCRIPT} ${WRKSRC}/MyBashBurn.sh ${PREFIX}/bin/mybashburn
-	${INSTALL_DATA} ${WRKSRC}/etc/mybashburnrc ${PREFIX}/etc/mybashburnrc.sample
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "burning config convert lang menus misc" ${DATADIR}/)
-
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/man/mybashburn.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/MyBashBurn.sh ${STAGEDIR}${PREFIX}/bin/mybashburn
+	${INSTALL_DATA} ${WRKSRC}/etc/mybashburnrc ${STAGEDIR}${PREFIX}/etc/mybashburnrc.sample
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "burning config convert lang menus misc" ${STAGEDIR}${DATADIR}/)
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
