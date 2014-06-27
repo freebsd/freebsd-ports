@@ -2,16 +2,19 @@
 
 Fira has been installed.
 
-Make sure that the freetype module is loaded.  If it is not, add the following
-line to the "Modules" section of your X Windows configuration file:
+Fira has advanced Open Type typographic layout features and language support.
+Please refer to the Technical Documentation installed by this port or online at
 
-    Load "freetype"
-
-Add the following line to the "Files" section of X Windows configuration file:
-
-    FontPath "%%FONTDIR%%/"
-
-Note: your X Windows configuration file is typically /etc/X11/xorg.conf
+    http://dev.carrois.com/fira-3-1/
+ 
+For details about OpenType Layout Features see the OpenType Layout tag registry
+ 
+    http://www.microsoft.com/typography/otspec/featurelist.htm
+ 
+or
+ 
+    https://www.fontfont.com/staticcontent/downloads/FF_OT_User_Guide.pdf
+    http://en.wikipedia.org/wiki/List_of_typographic_features
 
 For Web Font please use www/fira-webfont port.
 
