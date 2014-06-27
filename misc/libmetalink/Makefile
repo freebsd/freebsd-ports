@@ -3,7 +3,7 @@
 
 PORTNAME=	libmetalink
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/ \
 		LOCAL/sunpoet
@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=EXPAT
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		pathfix tar:bzip2
+USES=		libtool pathfix tar:bzip2
 
 PORTEXAMPLES=	LibO_3.5.4_Win_x86_install_multi.msi.meta4 \
 		metalinkcat.c \
