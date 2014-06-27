@@ -4,9 +4,10 @@
 PORTNAME=	align
 PORTVERSION=	1.7.3
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/
+MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/ \
+		http://bitrote.org/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 COMMENT=	Text column alignment filter
 
 LICENSE=	GPLv2 # (or later)
