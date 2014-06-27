@@ -12,9 +12,8 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for Japanese pTeX and its tools
 
-USE_XZ=		yes
+USES=		tar:xz libtool:oldver
 USE_TEX=	texlive kpathsea
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/ptexenc
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
