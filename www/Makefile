@@ -1522,6 +1522,7 @@
     SUBDIR += py-django-pipeline12
     SUBDIR += py-django-piston
     SUBDIR += py-django-profiles
+    SUBDIR += py-django-redis
     SUBDIR += py-django-registration
     SUBDIR += py-django-registration-defaults
     SUBDIR += py-django-reversion
