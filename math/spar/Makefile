@@ -3,14 +3,14 @@
 
 PORTNAME=	spar
 PORTVERSION=	0.5.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math devel
 MASTER_SITES=	SF/${PORTNAME}/Spar/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A modular math parser
+COMMENT=	Modular math parser
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
