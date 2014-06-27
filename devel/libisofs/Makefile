@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libisofs
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.6
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
@@ -11,7 +11,7 @@ COMMENT=	Libburnia ISO9660 filesystem creation library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn
+LIB_DEPENDS=	libburn.so:${PORTSDIR}/devel/libburn
 
 GNU_CONFIGURE=	yes
 USES=		iconv
