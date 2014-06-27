@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	demjson
-PORTVERSION=	2.2
+PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://deron.meranda.us/python/demjson/dist/
