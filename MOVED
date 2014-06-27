@@ -6180,3 +6180,4 @@ textproc/uim-el-emacs22||2014-06-27|Removed: dependent on editors/emacs22
 textproc/yaml-mode.el-emacs21||2014-06-27|Removed: dependent on editors/emacs21
 www/emacs-w3m-emacs21||2014-06-27|Removed: dependent on editors/emacs21
 www/emacs-w3m-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+devel/ode-devel|devel/ode|2014-06-27|Has expired: Outdated by devel/ode

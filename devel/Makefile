@@ -1338,7 +1338,6 @@
     SUBDIR += ocamlweb
     SUBDIR += ocfpcsc
     SUBDIR += ode
-    SUBDIR += ode-devel
     SUBDIR += ois
     SUBDIR += okteta
     SUBDIR += omake
