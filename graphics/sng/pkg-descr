@@ -5,4 +5,4 @@ view and edit exotic PNG chunks not supported by graphics editors; also,
 since SNG is easy to generate from scripts, sng may be useful at the end
 of a pipeline that programmatically generates PNG images.
 
-WWW: http://sng.sourceforge.net/
+WWW: http://sng.sourceforge.net
