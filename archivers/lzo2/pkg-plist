@@ -13,7 +13,6 @@ include/lzo/lzodefs.h
 include/lzo/lzoutil.h
 @dirrm include/lzo
 lib/liblzo2.a
-lib/liblzo2.la
 lib/liblzo2.so
 lib/liblzo2.so.2
 lib/liblzo2.so.2.0.0
