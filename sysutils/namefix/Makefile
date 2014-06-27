@@ -29,7 +29,6 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
-NO_STAGE=	yes
 do-configure:
 .for bin in ${PORTNAME} ${PORTNAME}-cli
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/${bin}.in
@@ -39,19 +38,19 @@ do-configure:
 
 do-install:
 .for bin in ${PORTNAME} ${PORTNAME}-cli
-	${INSTALL_SCRIPT} ${WRKDIR}/${bin}.in ${PREFIX}/bin/${bin}
+	${INSTALL_SCRIPT} ${WRKDIR}/${bin}.in ${STAGEDIR}${PREFIX}/bin/${bin}
 .endfor
-	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 .for data in ${PORTNAME} ${PORTNAME}-cli
-	${INSTALL_SCRIPT} ${WRKSRC}/${data}.pl ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${data}.pl ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/mem.jpg ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/mem.jpg ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 .for dir in libs libs/cli libs/gui
-	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/*.pm ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/${dir}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/${dir}/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/${dir}
 .endfor
-	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/txt
-	${INSTALL_DATA} ${WRKSRC}/txt/*.txt ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/txt
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/txt
+	${INSTALL_DATA} ${WRKSRC}/txt/*.txt ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/txt
 
 .include <bsd.port.pre.mk>
 
