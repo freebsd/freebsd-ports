@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvdisaster
-PORTVERSION=	0.72.5
-PORTREVISION=	1
+PORTVERSION=	0.72.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dvdisaster.net/downloads/
 
@@ -16,8 +15,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 MAKEFILE=	GNUmakefile
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20 cairo
 GNU_CONFIGURE=	yes
 CONFIGURE_LOG=	configure.log
