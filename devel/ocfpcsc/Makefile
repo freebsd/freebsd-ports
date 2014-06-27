@@ -11,25 +11,28 @@ DISTNAME=	OCFPCSC1-${PORTVERSION}
 MAINTAINER=	saper@saper.info
 COMMENT=	Open Card Framework to PC/SC bridge
 
-LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+LICENSE=	IBMOCF
+LICENSE_NAME=	IBM OpenCard Framework
+LICENSE_FILE=	${FILESDIR}/IBMOCF
+LICENSE_PERMS=	dist-sell pkg-sell
+
+LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 
 USES=		gmake
-USE_JAVA=	1.2+
+USE_JAVA=	yes
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-fPIC
 
+OPTIONS_DEFINE=	DOCS EXAMPLES MOZILLA_PLUGIN
+OPTIONS_DEFAULT=MOZILLA_PLUGIN
+
+OPTIONS_SUB=	yes
+
 PORTEXAMPLES=	opencard.properties
 PORTDOCS=	README
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_MOZILLA_PLUGIN)
-PLIST_SUB+=	PLUGIN=""
-.else
-PLIST_SUB+=	PLUGIN="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' \
@@ -51,22 +54,18 @@ post-build:
 	(cd ${WRKSRC} && ${LD} -Bsymbolic -shared dummy.o -o libWINSCARD.so)
 
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/opencard.properties ${EXAMPLESDIR}
-.endif
-	@${INSTALL_DATA} ${WRKSRC}/libOCFPCSC1.so ${PREFIX}/lib/libOCFPCSC1.so.1
-	@${INSTALL_DATA} ${WRKSRC}/libWINSCARD.so ${PREFIX}/lib/libWINSCARD.so.1
-	@${LN} -fs ${PREFIX}/lib/libOCFPCSC1.so.1 ${PREFIX}/lib/libOCFPCSC1.so
-	@${LN} -fs ${PREFIX}/lib/libWINSCARD.so.1 ${PREFIX}/lib/libWINSCARD.so
-.if !defined (WITHOUT_MOZILLA_PLUGIN)
-	@${MKDIR} ${PREFIX}/lib/browser_plugins
-	@${LN} -fs ${PREFIX}/lib/libOCFPCSC1.so.1 ${PREFIX}/lib/browser_plugins/libOCFPCSC1.so
-	@${LN} -fs ${PREFIX}/lib/libWINSCARD.so.1 ${PREFIX}/lib/browser_plugins/libWINSCARD.so
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/opencard.properties ${STAGEDIR}${EXAMPLESDIR}/opencard.properties
+	${INSTALL_DATA} ${WRKSRC}/libOCFPCSC1.so ${STAGEDIR}${PREFIX}/lib/libOCFPCSC1.so.1
+	${INSTALL_DATA} ${WRKSRC}/libWINSCARD.so ${STAGEDIR}${PREFIX}/lib/libWINSCARD.so.1
+	${LN} -fs libOCFPCSC1.so.1 ${STAGEDIR}${PREFIX}/lib/libOCFPCSC1.so
+	${LN} -fs libWINSCARD.so.1 ${STAGEDIR}${PREFIX}/lib/libWINSCARD.so
+.if ${PORT_OPTIONS:MMOZILLA_PLUGIN}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/browser_plugins
+	@${LN} -fs ../../lib/libOCFPCSC1.so.1 ${STAGEDIR}${PREFIX}/lib/browser_plugins/libOCFPCSC1.so
+	@${LN} -fs ../../lib/libWINSCARD.so.1 ${STAGEDIR}${PREFIX}/lib/browser_plugins/libWINSCARD.so
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
