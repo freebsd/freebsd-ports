@@ -79,7 +79,9 @@
 %%DATADIR%%/Licences/gpl.txt
 %%DATADIR%%/Licences/lgpl.txt
 %%DATADIR%%/scripts_linux/Makefile
+@mode 4755
 %%DATADIR%%/scripts_linux/agent.sh
+@mode
 %%DATADIR%%/scripts_linux/colors.sh
 %%DATADIR%%/linuxAgent.sh
 %%DATADIR%%/linuxService.sh
