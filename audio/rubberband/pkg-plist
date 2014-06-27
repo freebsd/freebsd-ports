@@ -11,8 +11,8 @@ lib/vamp/vamp-rubberband.cat
 lib/vamp/vamp-rubberband.so
 libdata/pkgconfig/rubberband.pc
 share/ladspa/rdf/ladspa-rubberband.rdf
-@dirrm share/ladspa/rdf
-@dirrm share/ladspa
-@dirrm lib/vamp
-@dirrm lib/ladspa
+@dirrmtry share/ladspa/rdf
+@dirrmtry share/ladspa
+@dirrmtry lib/vamp
+@dirrmtry lib/ladspa
 @dirrm include/rubberband
