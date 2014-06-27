@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS README NEWS docs/*.pdf license/LICENSING.txt
 
