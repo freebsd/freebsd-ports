@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pygithub
-PORTVERSION=	1.24.1
+PORTVERSION=	1.25.0
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyGithub-${PORTVERSION}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Use the full Github API v3 with Python
+COMMENT=	Python library implementing the full GitHub API v3
 
 LICENSE=	LGPL3
 
