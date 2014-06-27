@@ -13,19 +13,19 @@ COMMENT=	Background browser and setter for X windows
 LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	atkmm:${PORTSDIR}/accessibility/atkmm \
-		glibmm:${PORTSDIR}/devel/glibmm \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		cairomm:${PORTSDIR}/graphics/cairomm \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		pangomm:${PORTSDIR}/x11-toolkits/pangomm
+LIB_DEPENDS=	libatkmm-1.6.so:${PORTSDIR}/accessibility/atkmm \
+		libglibmm-2.4.so:${PORTSDIR}/devel/glibmm \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libcairomm-1.0.so:${PORTSDIR}/graphics/cairomm \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libpangomm-1.4.so:${PORTSDIR}/x11-toolkits/pangomm
 RUN_DEPENDS=	gnome-icon-theme>0:${PORTSDIR}/misc/gnome-icon-theme \
 		hicolor-icon-theme>0:${PORTSDIR}/misc/hicolor-icon-theme
 
@@ -43,12 +43,9 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		nitrogen.1
-
 DESKTOP_ENTRIES="Nitrogen" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
 		"Graphics;Viewer;" true
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXINERAMA}
