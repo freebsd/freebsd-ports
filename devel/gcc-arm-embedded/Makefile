@@ -27,7 +27,7 @@ PDF_USE=		TEX=base:build,tex:build
 PDF_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 OPTIONS_SUB=		yes
 
-USES=		tar:bzip2 gmake bison iconv compiler
+USES=		bison compiler gmake iconv makeinfo tar:bzip2
 GNU_CONFIGURE=	yes
 
 BUILD_WRKSRC=	${WRKDIR}
