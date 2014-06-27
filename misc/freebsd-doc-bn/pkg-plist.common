@@ -1,6 +1,6 @@
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles
-%%DOCSDIR%%/%%DOCLANG_PREFIX%%
-@dirrm %%DOCSDIR%%/%%DOCLANG%%
+%%DOCSDIR%%/bn
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%
 @dirrmtry %%DOCSDIR%%
