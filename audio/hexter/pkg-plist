@@ -1,4 +1,3 @@
-lib/dssi/hexter.la
 lib/dssi/hexter.so
 lib/dssi/hexter/hexter_gtk
 %%DATADIR%%/dx7_roms.dx7
