@@ -230,7 +230,7 @@ do-fmtutil-$F:
 		${SETENV} PATH=${PATH}:${LOCALBASE}/bin \
 			TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
 			${LOCALBASE}/bin/fmtutil-sys --byfmt $$format \
-			--fmtdir ${STAGEDIR}${PREFIX}/${TEXMFDIR}-var/web2c; \
+			--fmtdir ${STAGEDIR}${PREFIX}/${TEXMFVARDIR}/web2c; \
 		done
 .endif
 	@${ECHO_CMD} "@exec exec < ${LOCALBASE}/${FMTUTIL_CNF} && " \
