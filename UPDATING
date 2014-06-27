@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140627:
+  AFFECTS: users of security/amavisd-milter
+  AUTHOR: delphij@FreeBSD.org
+
+  The default working directory of security/amavisd-milter have been
+  changed to /var/run/amavis/.  Users will have to adjust path to the
+  milter socket.
+
 20140427:
   AFFECTS: users of editors/emacs21 and editors/emacs22
   AUTHOR: ashish@FreeBSD.org
