@@ -3,6 +3,7 @@
 
 PORTNAME=	lzo2
 PORTVERSION=	2.07
+PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		LOCAL/mandree
