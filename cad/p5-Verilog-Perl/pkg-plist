@@ -2,6 +2,7 @@ bin/vhier
 bin/vpassert
 bin/vppreproc
 bin/vrename
+bin/vsplitmodule
 %%PERL5_MAN3%%/Verilog::EditFiles.3.gz
 %%PERL5_MAN3%%/Verilog::Getopt.3.gz
 %%PERL5_MAN3%%/Verilog::Language.3.gz
