@@ -3,7 +3,7 @@
 
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	04
@@ -14,8 +14,7 @@ COMMENT=	Abstraction library that sits between apps and visual plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=	libtool
-USES=		gettext pathfix pkgconfig
+USES=		gettext libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
