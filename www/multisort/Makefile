@@ -7,10 +7,14 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.xach.com/multisort/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	A small program to take multiple httpd logfiles into one
+
+LICENSE=	GPLv2
 
 PLIST_FILES=	bin/multisort
 
-NO_STAGE=	yes
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/multisort
+
 .include <bsd.port.mk>
