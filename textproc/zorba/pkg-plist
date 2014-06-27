@@ -464,3 +464,5 @@ share/cmake/Modules/zorba-%%FULLVERSION%%/ExternalModuleConfig.cmake.in
 @dirrm %%DATADIR%%/uris/core
 @dirrm %%DATADIR%%/uris
 @dirrm %%DATADIR%%
+@dirrmtry share/cmake/Modules
+@dirrmtry share/cmake
