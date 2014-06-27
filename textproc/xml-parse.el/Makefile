@@ -17,10 +17,6 @@ COMMENT=	Code to efficiently read/write XML data with Elisp
 
 USE_EMACS=	yes
 
-.if ${EMACS_PORT_NAME} != "emacs21"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
-
 NO_BUILD=	yes
 
 NO_STAGE=	yes

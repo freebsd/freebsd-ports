@@ -53,7 +53,7 @@ DEPPORT_SUFFIX=
 .else
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 .endif
-.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
+.if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
 PLIST=		${PKGDIR}/pkg-plist.emacs21
 .endif
 # depends on apel (case of xemacs-21.x or later)
