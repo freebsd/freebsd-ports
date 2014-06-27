@@ -13,13 +13,11 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Formats for Basic TeX Engines
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
+
 USE_TEX=	texlive web2c kpathsea texmf texhash fmtutil
 TEXHASHDIRS=	${TEXMFVARDIR}
 TEX_FORMATS=	amstex context cslatex eplain latex-bin \
 		metafont mex mltex mptopdf pdftex tex texsis
-
-NO_STAGE=	yes
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>
