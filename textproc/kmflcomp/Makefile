@@ -3,6 +3,7 @@
 
 PORTNAME=	kmflcomp
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION}:1 \
 		SF/kmfl/kmfl/Documentation:2 \
@@ -19,11 +20,13 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-USES=		iconv
+USES=		iconv libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/kmfl/${PORTNAME}
 DOCS=		${DISTDIR}/${DIST_SUBDIR}/KMFL-Compiler.sxw \
 		${WRKSRC}/AUTHORS \
@@ -32,7 +35,6 @@ DOCS=		${DISTDIR}/${DIST_SUBDIR}/KMFL-Compiler.sxw \
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^install-data-am: install-kmflcompdocDATA|install-data-am:|' \
 		${WRKSRC}/Makefile.in
@@ -42,10 +44,7 @@ post-patch:
 		${WRKSRC}/kmfl_compiler/kmfl_compiler.c
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} -v ${DOCS} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} -v ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
