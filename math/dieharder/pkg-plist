@@ -47,9 +47,9 @@ include/dieharder/sts_serial.h
 include/dieharder/tests.h
 include/dieharder/verbose.h
 lib/libdieharder.a
-lib/libdieharder.la
 lib/libdieharder.so
 lib/libdieharder.so.3
+lib/libdieharder.so.3.31.1
 man/man1/dieharder.1.gz
 man/man3/libdieharder.3.gz
 @dirrm include/dieharder
