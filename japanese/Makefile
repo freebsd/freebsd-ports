@@ -79,6 +79,7 @@
     SUBDIR += font-mplus
     SUBDIR += font-mplus-ipa
     SUBDIR += font-ricty
+    SUBDIR += font-ricty-discord
     SUBDIR += font-sazanami
     SUBDIR += font-shinonome
     SUBDIR += font-std
