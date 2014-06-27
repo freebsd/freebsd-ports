@@ -14,8 +14,6 @@ COMMENT=	Articulated rigid body dynamics library
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-CONFLICTS=	ode-devel-[0-9].*
-
 USES=		tar:bzip2 gmake libtool
 USE_GL=		yes
 GNU_CONFIGURE=	yes
