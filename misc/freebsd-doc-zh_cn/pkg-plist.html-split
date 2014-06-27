@@ -283,10 +283,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-maple.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-mathematica.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-matlab.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-oracle.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-biba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-bsdextended.html
