@@ -239,6 +239,10 @@ MAKE_ARGS+=	ARCH=x86_64
 MAKE_ARGS+=	ARCH=ppc
 .endif
 
+.if ${ARCH} == "powerpc64"
+MAKE_ARGS+=	ARCH=ppc64
+.endif
+
 .if ${ARCH} == "sparc64"
 CONFIGURE_ARGS+= --sparc_cpu=v9
 .endif
