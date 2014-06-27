@@ -3,6 +3,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -34,7 +35,7 @@ OPTIONS_RADIO_PTS=	TIMELIMIT RENAMED FLAGS ATIMES ACL
 
 # options provided upstream
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
-ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
+ZLIB_BASE_DESC=	Use zlib from base instead of bundled one (BROKEN)
 SSH_DESC=	Use SSH instead of RSH
 
 # options provided by patch (mutually exclusive)
@@ -46,7 +47,7 @@ ATIMES_DESC=	Preserve access times, adds --atimes
 ACL_DESC=	Add backward-compatibility for the --acls option
 
 # define default options
-OPTIONS_DEFAULT=SSH ZLIB_BASE FLAGS
+OPTIONS_DEFAULT=SSH FLAGS
 
 .include <bsd.port.options.mk>
 
