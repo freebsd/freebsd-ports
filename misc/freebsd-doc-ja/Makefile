@@ -12,5 +12,4 @@ PLIST=		${.CURDIR}/pkg-plist
 
 DOCLANG=	ja_JP.eucJP
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
