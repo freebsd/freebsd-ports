@@ -1,9 +1,7 @@
 bin/ffmpeg
 bin/ffprobe
 %%FFSERVER%%bin/ffserver
-%%FFSERVER%%@unexec if cmp -s %D/etc/ffserver.conf %D/etc/ffserver.conf-dist; then rm -f %D/etc/ffserver.conf; fi
-%%FFSERVER%%etc/ffserver.conf-dist
-%%FFSERVER%%@exec [ -f %B/ffserver.conf ] || cp %B/%f %B/ffserver.conf
+%%FFSERVER%%@sample etc/ffserver.conf.sample
 include/libavcodec/avcodec.h
 include/libavcodec/avfft.h
 include/libavcodec/dxva2.h
@@ -46,8 +44,10 @@ include/libavutil/common.h
 include/libavutil/cpu.h
 include/libavutil/crc.h
 include/libavutil/dict.h
+include/libavutil/downmix_info.h
 include/libavutil/error.h
 include/libavutil/eval.h
+include/libavutil/ffversion.h
 include/libavutil/fifo.h
 include/libavutil/file.h
 include/libavutil/frame.h
@@ -59,6 +59,7 @@ include/libavutil/intreadwrite.h
 include/libavutil/lfg.h
 include/libavutil/log.h
 include/libavutil/lzo.h
+include/libavutil/macros.h
 include/libavutil/mathematics.h
 include/libavutil/md5.h
 include/libavutil/mem.h
@@ -74,6 +75,7 @@ include/libavutil/ripemd.h
 include/libavutil/samplefmt.h
 include/libavutil/sha.h
 include/libavutil/sha512.h
+include/libavutil/stereo3d.h
 include/libavutil/time.h
 include/libavutil/timecode.h
 include/libavutil/timestamp.h
@@ -88,27 +90,27 @@ include/libswscale/version.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.55
-lib/libavcodec.so.55.39.101
+lib/libavcodec.so.55.52.102
 lib/libavdevice.a
 lib/libavdevice.so
 lib/libavdevice.so.55
-lib/libavdevice.so.55.5.100
+lib/libavdevice.so.55.10.100
 lib/libavfilter.a
 lib/libavfilter.so
-lib/libavfilter.so.3
-lib/libavfilter.so.3.90.100
+lib/libavfilter.so.4
+lib/libavfilter.so.4.2.100
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.55
-lib/libavformat.so.55.19.104
+lib/libavformat.so.55.33.100
 lib/libavresample.a
 lib/libavresample.so
 lib/libavresample.so.1
-lib/libavresample.so.1.1.0
+lib/libavresample.so.1.2.0
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.52
-lib/libavutil.so.52.48.101
+lib/libavutil.so.52.66.100
 lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.52
@@ -116,11 +118,11 @@ lib/libpostproc.so.52.3.100
 lib/libswresample.a
 lib/libswresample.so
 lib/libswresample.so.0
-lib/libswresample.so.0.17.104
+lib/libswresample.so.0.18.100
 lib/libswscale.a
 lib/libswscale.so
 lib/libswscale.so.2
-lib/libswscale.so.2.5.101
+lib/libswscale.so.2.5.102
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavdevice.pc
 libdata/pkgconfig/libavfilter.pc
@@ -134,14 +136,18 @@ man/man1/ffmpeg.1.gz
 man/man1/ffprobe.1.gz
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/README
-%%DATADIR%%/examples/decoding_encoding.c
-%%DATADIR%%/examples/demuxing.c
+%%DATADIR%%/examples/avcodec.c
+%%DATADIR%%/examples/avio_reading.c
+%%DATADIR%%/examples/demuxing_decoding.c
+%%DATADIR%%/examples/filter_audio.c
 %%DATADIR%%/examples/filtering_audio.c
 %%DATADIR%%/examples/filtering_video.c
 %%DATADIR%%/examples/metadata.c
 %%DATADIR%%/examples/muxing.c
+%%DATADIR%%/examples/remuxing.c
 %%DATADIR%%/examples/resampling_audio.c
 %%DATADIR%%/examples/scaling_video.c
+%%DATADIR%%/examples/transcode_aac.c
 %%DATADIR%%/ffprobe.xsd
 %%DATADIR%%/libvpx-1080p.ffpreset
 %%DATADIR%%/libvpx-1080p50_60.ffpreset
