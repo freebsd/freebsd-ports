@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpcre.pc:${PORTSDIR}/devel/pcre 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
 USE_BZIP2=	yes
