@@ -3,13 +3,13 @@
 
 PORTNAME=	dieharder
 PORTVERSION=	3.31.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/ LOCAL/bf
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A random number generator testsuite
+COMMENT=	Random number generator testsuite
 
 LICENSE=	GPLv2
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		dos2unix
+USES=		dos2unix libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
