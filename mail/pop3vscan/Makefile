@@ -13,8 +13,9 @@ COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
 USES=		gmake
+USE_GCC=	yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS}"
-SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
+SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd STAGEDIR=${STAGEDIR}
 
 PLIST_FILES=	etc/pop3vscan.conf.sample \
 		etc/pop3vscan.mail.sample \
@@ -23,13 +24,11 @@ PLIST_FILES=	etc/pop3vscan.conf.sample \
 
 SUB_FILES=	pkg-message
 
-DEPRECATED=	No longer maintained by upstream
-EXPIRATION_DATE=2014-08-24
-
 post-extract:
 	@${RM} ${WRKSRC}/ripmime/ripmime.a
 
 post-patch:
+	@${REINPLACE_CMD} -e "/CC/s,gcc,${CC},g" ${WRKSRC}/Makefile ${WRKSRC}/ripmime/Makefile ${WRKSRC}/ripmime/tnef/Makefile
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,g' ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e 's,#endif.*,#endif,g' ${WRKSRC}/*.h
 	@${REINPLACE_CMD} -e 's,make,${MAKE_CMD},g' ${WRKSRC}/ripmime/build_tnef
