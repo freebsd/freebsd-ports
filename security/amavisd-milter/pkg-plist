@@ -1,0 +1,8 @@
+@unexec if service amavisd-milter status | grep -q "amavisd-milter is running"; then service amavisd-milter stop; fi
+sbin/amavisd-milter
+man/man8/amavisd-milter.8.gz
+@mode 755
+@owner %%AMAVISUSER%%
+@group %%AMAVISGROUP%%
+@dirrmtry %%RUNDIR%%
+@exec install -d -o %%AMAVISUSER%% -g %%AMAVISGROUP%% -m 755 %%RUNDIR%%
