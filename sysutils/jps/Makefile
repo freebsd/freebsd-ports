@@ -12,10 +12,8 @@ COMMENT=	Wrapper to ps(1) that maps pids to jails
 BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN1=		jps.1
-MANCOMPRESSED=	yes
-USES=		perl5
-PLIST_FILES=	bin/jps
+USES=		perl5 shebangfix
+PLIST_FILES=	bin/jps man/man1/jps.1.gz
+SHEBANG_FILES=	jps.pl
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

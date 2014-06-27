@@ -1,0 +1,13 @@
+--- Makefile.orig	2014-06-27 11:33:54.689401738 +0800
++++ Makefile	2014-06-27 11:34:10.118431813 +0800
+@@ -40,8 +40,8 @@ clean:
+ 	${RM} -rf ${TARGETS}
+ 
+ install: all
+-	${INSTALL_BIN} ${PKG} ${PFX}/bin
+-	${INSTALL_MAN} ${PKG}.${MAN_SFX}.gz ${PFX}/${MAN_DIR}
++	${INSTALL_BIN} ${PKG} $(DESTDIR)${PFX}/bin
++	${INSTALL_MAN} ${PKG}.${MAN_SFX}.gz $(DESTDIR)${PFX}/${MAN_DIR}
+ 
+ deinstall:
+ 	${RM} -f ${PFX}/bin/${PKG}
