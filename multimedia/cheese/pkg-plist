@@ -3,7 +3,6 @@ include/cheese/cheese-avatar-chooser.h
 include/cheese/cheese-camera-device-monitor.h
 include/cheese/cheese-widget.h
 lib/libcheese-gtk.a
-lib/libcheese-gtk.la
 lib/libcheese-gtk.so
 lib/libcheese-gtk.so.18
 lib/libcheese-gtk.so.18.0.0

@@ -4,7 +4,7 @@
 
 PORTNAME=	cheese
 PORTVERSION=	2.32.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_
 LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
 		libhal.so:${PORTSDIR}/sysutils/hal
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_XORG=	xxf86vm
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver librsvg2 \
 		gnomedocutils gnomedesktop
