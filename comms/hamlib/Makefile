@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamlib@FreeBSD.org
 COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 LICENSE=	LGPL20
@@ -45,5 +45,9 @@ post-install:
 	${WRKSRC}/THANKS
 	@${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-stage:
+	${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
+	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod*
 
 .include <bsd.port.mk>
