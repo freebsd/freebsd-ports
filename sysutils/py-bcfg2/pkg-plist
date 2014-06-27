@@ -358,6 +358,14 @@ bin/bcfg2-server
 %%PYTHON_SITELIBDIR%%/Bcfg2/__init__.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/__init__.pyo
+man/man1/bcfg2.1.gz
+man/man5/bcfg2.conf.5.gz
+man/man8/bcfg2-admin.8.gz
+man/man8/bcfg2-build-reports.8.gz
+man/man8/bcfg2-info.8.gz
+man/man8/bcfg2-repo-validate.8.gz
+man/man8/bcfg2-reports.8.gz
+man/man8/bcfg2-server.8.gz
 %%DATADIR%%/Hostbase/repo/batchadd.tmpl
 %%DATADIR%%/Hostbase/repo/dhcpd.conf.head
 %%DATADIR%%/Hostbase/repo/dhcpd.tmpl

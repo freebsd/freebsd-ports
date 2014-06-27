@@ -22,7 +22,6 @@ OPTIONS_DEFINE=	CHEETAH GENSHI
 CHEETAH_DESC=	Support Cheetah Templates
 GENSHI_DESC=	Support Genshi Templates
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PYTHON=		yes
@@ -40,11 +39,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cheetah>0:${PORTSDIR}/devel/py-cheetah
 .if ${PORT_OPTIONS:MGENSHI}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Genshi>0:${PORTSDIR}/textproc/py-genshi
 .endif
-
-MAN1=	bcfg2.1
-MAN5=	bcfg2.conf.5
-MAN8=	bcfg2-admin.8 bcfg2-build-reports.8 bcfg2-repo-validate.8 \
-	bcfg2-server.8 bcfg2-info.8 bcfg2-reports.8
 
 PORTDOCS=	AUTHORS COPYRIGHT README
 
@@ -65,9 +59,9 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
