@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	kaiw27@gmail.com
 COMMENT=	GoFish Gopher Server
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GOPHERROOT?=	${PREFIX}/gopher
 GOPHERUSER?=	nobody
@@ -17,20 +19,8 @@ CONFIGURE_ARGS=	--with-gopherroot=${GOPHERROOT} \
 		--with-gopheruser=${GOPHERUSER}
 MAKE_ENV=	localstatedir=/var
 
-MAN1=		gofish.1 mkcache.1
-MAN5=		dotcache.5 gofish.5
-MLINKS=		gofish.1 gopherd.1
+post-patch:
+	${REINPLACE_CMD} -e '/$$(sysconfdir)\/gofish/s|.conf|.conf.sample|3' \
+		${WRKSRC}/Makefile.in
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-install:
-.for i in ${PREFIX}/etc/gofish.conf ${PREFIX}/etc/gofish-www.conf
-	if test -f ${i}.new; then \
-		${MV} ${i}.new ${i}.sample; \
-	else \
-		${CP} -p ${i} ${i}.sample; \
-	fi
-.endfor
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
