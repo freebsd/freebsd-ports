@@ -10,9 +10,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	Phantomblock generator (converts existing files to sparse files)
 
-ALL_TARGET=	all
+LICENSE=	GPLv2
 
+ALL_TARGET=	all
 PLIST_FILES=	bin/phantom
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
