@@ -1,4 +1,6 @@
 # stopgap to unbreak index
 # $FreeBSD$
 
-IGNORE=	Attempting to use removed plugin makefile
+BROKEN=	Attempting to use removed plugin makefile
+DEPRECATED=	Attempting to use removed plugin makefile
+EXPIRATION_DATE=	2014-07-27
