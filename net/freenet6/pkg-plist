@@ -1,5 +1,7 @@
 bin/gw6c
 bin/gw6c-freebsd.sh
 etc/freenet6/README
-etc/freenet6/gw6c.conf.sample
+@sample etc/freenet6/gw6c.conf.sample
+man/man5/gw6c.conf.5.gz
+man/man8/gw6c.8.gz
 @dirrmtry etc/freenet6
