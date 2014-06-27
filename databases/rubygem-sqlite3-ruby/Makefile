@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlite3-ruby
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

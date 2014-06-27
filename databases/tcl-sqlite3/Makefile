@@ -2,6 +2,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.8.5
+PORTREVISION=	1
 CATEGORIES=	databases tcl
 MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
 PKGNAMEPREFIX=	tcl-
