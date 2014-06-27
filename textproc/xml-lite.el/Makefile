@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple XML-editing for GNU Emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

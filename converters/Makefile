@@ -49,7 +49,6 @@
     SUBDIR += mimelib
     SUBDIR += mmencode
     SUBDIR += mpack
-    SUBDIR += mule-ucs
     SUBDIR += nomyso
     SUBDIR += o3read
     SUBDIR += osm2mp

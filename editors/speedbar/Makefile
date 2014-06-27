@@ -15,7 +15,6 @@ MAINTAINER=	dryice@dryice.name
 COMMENT=	Quick access to files and tags in an Emacs frame
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 USES=		gmake
 CONFLICTS=	cedet*

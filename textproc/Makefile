@@ -1476,8 +1476,6 @@
     SUBDIR += txt2tags
     SUBDIR += uim
     SUBDIR += uim-el
-    SUBDIR += uim-el-emacs21
-    SUBDIR += uim-el-emacs22
     SUBDIR += uim-el-xemacs21-mule
     SUBDIR += uim-gtk
     SUBDIR += uim-gtk3
@@ -1561,7 +1559,6 @@
     SUBDIR += yali
     SUBDIR += yamcha
     SUBDIR += yaml-mode.el
-    SUBDIR += yaml-mode.el-emacs21
     SUBDIR += yelp-tools
     SUBDIR += yelp-xsl
     SUBDIR += yi-aspell

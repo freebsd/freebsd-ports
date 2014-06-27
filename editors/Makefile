@@ -9,8 +9,6 @@
     SUBDIR += aee
     SUBDIR += aewan
     SUBDIR += apel
-    SUBDIR += apel-emacs21
-    SUBDIR += apel-emacs22
     SUBDIR += asedit
     SUBDIR += beav
     SUBDIR += biew
@@ -60,13 +58,9 @@
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs-nox11
-    SUBDIR += emacs21
-    SUBDIR += emacs22
     SUBDIR += emacs23
     SUBDIR += fb
     SUBDIR += flim
-    SUBDIR += flim-emacs21
-    SUBDIR += flim-emacs22
     SUBDIR += flim-xemacs21-mule
     SUBDIR += fpc-ide
     SUBDIR += fte
@@ -242,8 +236,6 @@
     SUBDIR += scribes
     SUBDIR += se
     SUBDIR += semi
-    SUBDIR += semi-emacs21
-    SUBDIR += semi-emacs22
     SUBDIR += semi-xemacs21-mule
     SUBDIR += setedit
     SUBDIR += slime

@@ -54,7 +54,6 @@
     SUBDIR += egg-canna
     SUBDIR += eijiro-fpw
     SUBDIR += elisa8x8
-    SUBDIR += emacs-emcws
     SUBDIR += epwutil
     SUBDIR += esecanna
     SUBDIR += esecanna-module-vje25
@@ -152,7 +151,6 @@
     SUBDIR += libtomoe-gtk
     SUBDIR += lipsf
     SUBDIR += lookup
-    SUBDIR += lookup-emacs21
     SUBDIR += lsd-fpw
     SUBDIR += lynx
     SUBDIR += lynx-current
@@ -168,8 +166,6 @@
     SUBDIR += mg
     SUBDIR += mh
     SUBDIR += migemo
-    SUBDIR += migemo-emacs21
-    SUBDIR += migemo-emacs22
     SUBDIR += migemo-emacs23
     SUBDIR += migemo-xemacs-devel-mule
     SUBDIR += mikachan-ttfonts
