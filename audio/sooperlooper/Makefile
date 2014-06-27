@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sooperlooper
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.2
 CATEGORIES=	audio
 MASTER_SITES=	http://essej.net/sooperlooper/
 
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	ladspa>0:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		liblo.so:${PORTSDIR}/audio/liblo \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12 \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		librubberband.so:${PORTSDIR}/audio/rubberband \
 		libvamp-sdk.so:${PORTSDIR}/audio/vamp-plugin-sdk \
@@ -28,6 +27,7 @@ USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-Wno-error=write-strings
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -37,7 +37,7 @@ OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 ALSA_CONFIGURE_ENV_OFF=	ac_cv_header_alsa_asoundlib_h=no
-WXGTK_USE=		WX=2.6+
+WXGTK_USE=		WX=3.0
 WXGTK_CONFIGURE_ON=	--with-wxconfig-path=${WX_CONFIG}
 WXGTK_CONFIGURE_OFF=	--without-gui
 
@@ -51,7 +51,10 @@ DESKTOP_ENTRIES="SooperLooper" "" "${DATADIR}/sl_logo.xpm" "slgui" \
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$OPT_FLAGS||'
+		's|$$OPT_FLAGS|$$CXXFLAGS| ; \
+		 /^CXXFLAGS/s|-g|$$CXXFLAGS| ; \
+		 s|-fo-merge-constants|| ; \
+		 s|-lpthread|-pthread|'
 
 post-install:
 .if ${PORT_OPTIONS:MWXGTK}
