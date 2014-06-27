@@ -19,7 +19,6 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/XenAPI.py \
 		%%PYTHON_SITELIBDIR%%/XenAPI.pyc \
 		%%PYTHON_SITELIBDIR%%/XenAPI.pyo
 
-NO_STAGE=	yes
 post-patch:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
@@ -29,6 +28,7 @@ do-build:
 	@${PYTHON_CMD} -O -m py_compile ${WRKSRC}/${DISTFILES}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.py* ${PYTHON_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.py* ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>
