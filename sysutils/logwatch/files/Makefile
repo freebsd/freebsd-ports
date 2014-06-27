@@ -19,29 +19,29 @@ logwatch:
 	@echo "reading the ./README file."
 
 install:
-	install -d ${PREFIX}/sbin
-	install -d ${ETCDIR}/html
-	install -d ${ETCDIR}/logfiles
-	install -d ${ETCDIR}/services
-	install -d ${ETCDIR}/defaults/html
-	install -d ${ETCDIR}/defaults/logfiles
-	install -d ${ETCDIR}/defaults/services
-	install -d ${LIBEXECDIR}
-	install -d ${SITE_PERL}
-	install -d ${CACHEDIR}
-	install -d ${MAN8DIR}
-	install -m 555 scripts/logwatch.pl ${PREFIX}/sbin
-	install -m 555 lib/Logwatch.pm ${SITE_PERL}
-	install -m 444 logwatch.8 ${MAN8DIR}
-	install -m 644 conf/logwatch.conf ${ETCDIR}/defaults
-	install -m 640 conf/ignore.conf ${ETCDIR}/defaults
-	install -m 444 conf/html/header.html ${ETCDIR}/defaults/html
-	install -m 444 conf/html/footer.html ${ETCDIR}/defaults/html
+	install -d $(DESTDIR)${PREFIX}/sbin
+	install -d $(DESTDIR)${ETCDIR}/html
+	install -d $(DESTDIR)${ETCDIR}/logfiles
+	install -d $(DESTDIR)${ETCDIR}/services
+	install -d $(DESTDIR)${ETCDIR}/defaults/html
+	install -d $(DESTDIR)${ETCDIR}/defaults/logfiles
+	install -d $(DESTDIR)${ETCDIR}/defaults/services
+	install -d $(DESTDIR)${LIBEXECDIR}
+	install -d $(DESTDIR)${SITE_PERL}
+	install -d $(DESTDIR)${CACHEDIR}
+	install -d $(DESTDIR)${MAN8DIR}
+	install -m 555 scripts/logwatch.pl $(DESTDIR)${PREFIX}/sbin
+	install -m 555 lib/Logwatch.pm $(DESTDIR)${SITE_PERL}
+	install -m 444 logwatch.8 $(DESTDIR)${MAN8DIR}
+	install -m 644 conf/logwatch.conf $(DESTDIR)${ETCDIR}/defaults
+	install -m 640 conf/ignore.conf $(DESTDIR)${ETCDIR}/defaults
+	install -m 444 conf/html/header.html $(DESTDIR)${ETCDIR}/defaults/html
+	install -m 444 conf/html/footer.html $(DESTDIR)${ETCDIR}/defaults/html
 .for etcdir in html logfiles services
-	mkdir -p ${ETCDIR}/defaults/${etcdir}
+	mkdir -p $(DESTDIR)${ETCDIR}/defaults/${etcdir}
 .endfor
 .for scriptdir in logfiles services shared
-	mkdir -p ${LIBEXECDIR}/defaults/${scriptdir}
+	mkdir -p $(DESTDIR)${LIBEXECDIR}/defaults/${scriptdir}
 .endfor
 .for logfile in \
 	autorpm \
@@ -88,7 +88,7 @@ install:
 	windows \
 	xferlog \
 	yum 
-	install -m 640 conf/logfiles/${logfile}.conf ${ETCDIR}/defaults/logfiles/${logfile}.conf
+	install -m 640 conf/logfiles/${logfile}.conf $(DESTDIR)${ETCDIR}/defaults/logfiles/${logfile}.conf
 .endfor
 .for service in \
 	afpd \
@@ -189,8 +189,8 @@ install:
 	zz-runtime \
 	zz-sys \
 	zz-zfs
-	install -m 444 scripts/services/${service} ${LIBEXECDIR}/defaults/services/${service}
-	install -m 444 conf/services/${service}.conf ${ETCDIR}/defaults/services/${service}.conf
+	install -m 444 scripts/services/${service} $(DESTDIR)${LIBEXECDIR}/defaults/services/${service}
+	install -m 444 conf/services/${service}.conf $(DESTDIR)${ETCDIR}/defaults/services/${service}.conf
 .endfor
 .for script in \
 	applybinddate \
@@ -211,12 +211,12 @@ install:
 	remove \
 	removeheaders \
 	removeservice 
-	install -m 555 scripts/shared/${script} ${LIBEXECDIR}/defaults/shared/${script}
+	install -m 555 scripts/shared/${script} $(DESTDIR)${LIBEXECDIR}/defaults/shared/${script}
 .endfor
 .for logfile in autorpm cron emerge samba up2date xferlog yum
-	mkdir -p ${LIBEXECDIR}/defaults/logfiles/${logfile}
-	install -m 555 scripts/logfiles/${logfile}/applydate ${LIBEXECDIR}/defaults/logfiles/${logfile}
+	mkdir -p $(DESTDIR)${LIBEXECDIR}/defaults/logfiles/${logfile}
+	install -m 555 scripts/logfiles/${logfile}/applydate $(DESTDIR)${LIBEXECDIR}/defaults/logfiles/${logfile}
 .endfor
 .for logfile in samba up2date xferlog 
-	install -m 555 scripts/logfiles/${logfile}/removeheaders ${LIBEXECDIR}/defaults/logfiles/${logfile}
+	install -m 555 scripts/logfiles/${logfile}/removeheaders $(DESTDIR)${LIBEXECDIR}/defaults/logfiles/${logfile}
 .endfor
