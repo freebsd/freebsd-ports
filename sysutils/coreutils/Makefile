@@ -6,9 +6,8 @@ PORTVERSION=	8.22
 PORTREVISION=	2
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 COMMENT=	Free Software Foundation core utilities
 
 LICENSE=	GPLv3
@@ -27,9 +26,8 @@ CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-USES=		gmake iconv perl5 charsetfix
+USES=		gmake iconv perl5 charsetfix tar:xz
 USE_PERL5=	build	# build - required for tests and man page generation
-USE_XZ=		yes
 USE_LDCONFIG=	yes
 
 INFO=		coreutils
