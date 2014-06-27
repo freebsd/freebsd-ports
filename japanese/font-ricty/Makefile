@@ -44,7 +44,7 @@ PORTDOCS=	README.md
 .if !defined(PKGNAMESUFFIX)
 PLIST_SUB+=	DISCORD="@comment " RICTY=""
 SUB_LIST+=	DISCORD=\# RICTY=""
-.elif ${PKGNAMESUFFIX:S,-,,} == "discord"
+.else
 PLIST_SUB+=	DISCORD="" RICTY="@comment "
 SUB_LIST+=	DISCORD="" RICTY=\#
 .endif
@@ -79,7 +79,7 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
-.elif ${PKGNAMESUFFIX:S,-,,} == "discord"
+.else
 	${INSTALL_DATA} ${WRKSRC}/RictyDiscord-*.ttf ${STAGEDIR}${DATADIR}
 	cd ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF && ${LN} -s -f \
 	    ../${LOCAL_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/RictyDiscord-*.ttf .
