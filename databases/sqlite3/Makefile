@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.4.3
+PORTVERSION=	3.8.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
-DISTNAME=	sqlite-autoconf-3080403
+DISTNAME=	sqlite-autoconf-3080500
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	sqlite34-[0-9]* sqlcipher-[0-9]*
 
-USES=		pathfix
+USES=		pathfix libtool:keepla
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
@@ -71,8 +71,8 @@ OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION
 
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
 		lib/libsqlite3.a lib/libsqlite3.la lib/libsqlite3.so \
-		lib/libsqlite3.so.8 libdata/pkgconfig/sqlite3.pc \
-		man/man1/sqlite3.1.gz
+		lib/libsqlite3.so.0 lib/libsqlite3.so.0.8.6 \
+		libdata/pkgconfig/sqlite3.pc man/man1/sqlite3.1.gz
 
 # The default numeric file permissions for newly created database files under unix.
 # If not specified, the default is 0644 which means that the files is globally
@@ -134,6 +134,6 @@ post-build:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsqlite3.so.8
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsqlite3.so.0.8.6
 
 .include <bsd.port.mk>
