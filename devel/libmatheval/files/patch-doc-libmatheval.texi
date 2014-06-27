@@ -1,8 +1,8 @@
---- doc/libmatheval.texi.orig	Sat Jul  3 13:51:10 2004
-+++ doc/libmatheval.texi	Sun Jul  4 21:45:25 2004
-@@ -9,6 +9,11 @@
- @include version.texi
- @syncodeindex fn cp
+--- ./doc/libmatheval.texi.orig	2013-08-14 20:22:08.000000000 +0000
++++ ./doc/libmatheval.texi	2014-06-27 22:45:08.000000000 +0000
+@@ -14,6 +14,11 @@
+ * libmatheval: (libmatheval).   library for evaluating symbolic expressions
+ @end direntry
  
 +@dircategory Programming & development tools
 +@direntry
@@ -12,3 +12,20 @@
  @ifnottex
  This file documents GNU @code{libmatheval} library.
  
+@@ -29,11 +34,11 @@
+ @end ifnottex
+ 
+ @titlepage
+-@title{GNU @code{libmatheval} manual}
+-@subtitle{Manual edition @value{EDITION}}
+-@subtitle{For GNU @code{libmatheval} version @value{VERSION}}
+-@subtitle{Last updated @value{UPDATED}}
+-@author{Aleksandar Samardzic}
++@title GNU @code{libmatheval} manual
++@subtitle Manual edition @value{EDITION}
++@subtitle For GNU @code{libmatheval} version @value{VERSION}
++@subtitle Last updated @value{UPDATED}
++@author Aleksandar Samardzic
+ 
+ @page
+ @vskip 0pt plus 1filll
