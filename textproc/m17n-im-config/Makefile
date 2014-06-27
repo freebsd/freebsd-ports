@@ -3,7 +3,7 @@
 
 PORTNAME=	m17n-im-config
 PORTVERSION=	0.9.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.m17n.org/common/im-config/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -11,15 +11,15 @@ MASTER_SITES=	http://www.m17n.org/common/im-config/ \
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	A GUI for per-user configuration of m17n-lib input methods
 
-LIB_DEPENDS=	m17n.4:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 intltool intlhack glib20
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 DESKTOP_ENTRIES="M17N-IM Configuration" \
 		"${COMMENT}" \
@@ -28,14 +28,13 @@ DESKTOP_ENTRIES="M17N-IM Configuration" \
 		"Settings;" \
 		true
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
+CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
