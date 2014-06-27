@@ -3,6 +3,7 @@
 
 PORTNAME=	mummer
 PORTVERSION=	3.23
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	SF
 DISTNAME=	MUMmer${PORTVERSION}
@@ -10,7 +11,7 @@ DISTNAME=	MUMmer${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular system for rapid whole genome alignment
 
-USES=		gmake
+USES=		gmake perl5
 
 PROGRAMS=	annotate combineMUMs delta-filter gaps \
 		mgaps mummer repeat-match show-aligns \
@@ -22,6 +23,13 @@ DOCUMENTS=	COPYRIGHT INSTALL LICENSE README
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+post-extract:
+	@${REINPLACE_CMD} -e 's,type perl,type ${LOCALBASE}/bin/perl,' ${WRKSRC}/scripts/Makefile
+.if (${OSVERSION} >= 1000024)
+	@${REINPLACE_CMD} -e 's,type gcc,type clang,' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,type g++,type clang++,' ${WRKSRC}/Makefile
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
