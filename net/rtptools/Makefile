@@ -12,16 +12,12 @@ COMMENT=	Set of tools to record, playback, and monitor RTPv2 data streams
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/rtpdump bin/rtpplay bin/rtpsend bin/rtptrans
-DOCFILES=	README ChangeLog.html rtptools.html
-PORTDOCS=	${DOCSFILES}
+PORTDOCS=	README ChangeLog.html rtptools.html
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
