@@ -144,8 +144,6 @@ etc/logwatch/defaults/services/zz-sys.conf
 etc/logwatch/defaults/services/zz-zfs.conf
 etc/logwatch/defaults/ignore.conf
 etc/logwatch/defaults/logwatch.conf
-%%PORTDOCS%%%%DOCSDIR%%/HOWTO-Customize-LogWatch
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%SITE_PERL%%/Logwatch.pm
 libexec/logwatch/defaults/logfiles/autorpm/applydate
 libexec/logwatch/defaults/logfiles/cron/applydate
@@ -273,6 +271,7 @@ libexec/logwatch/defaults/shared/onlyservice
 libexec/logwatch/defaults/shared/remove
 libexec/logwatch/defaults/shared/removeheaders
 libexec/logwatch/defaults/shared/removeservice
+man/man8/logwatch.8.gz
 sbin/logwatch.pl
 @exec mkdir -p %D/var/logwatch
 @dirrm var/logwatch
@@ -289,7 +288,6 @@ sbin/logwatch.pl
 @dirrm libexec/logwatch/defaults/logfiles
 @dirrm libexec/logwatch/defaults
 @dirrm libexec/logwatch
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/logwatch/defaults/services
 @dirrm etc/logwatch/defaults/logfiles
 @dirrm etc/logwatch/defaults/html
