@@ -62,6 +62,7 @@ bin/qmail-rspawn
 %%LDAP%%bin/qmail-secretary
 bin/qmail-send
 bin/qmail-showctl
+%%SPAMCONTROL%%bin/qmail-smtpam
 bin/qmail-smtpd
 bin/qmail-start
 bin/qmail-tcpok
@@ -170,6 +171,7 @@ man/man8/qmail-start.8.gz
 man/man8/qmail-tcpok.8.gz
 man/man8/qmail-tcpto.8.gz
 man/man8/splogger.8.gz
+%%SPAMCONTROL%%man/man8/qmail-smtpam.8.gz
 %%SPAMCONTROL%%man/man8/qmail-badloadertypes.8.gz
 %%SPAMCONTROL%%man/man8/qmail-badmimetypes.8.gz
 %%SPAMCONTROL%%man/man8/qmail-mfrules.8.gz

@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140626:
+  AFFECTS: users of mail/qmail-spamcontrol
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Spamcontrol has been updated to the 2.7 release.
+
+  It is advised to read the release notes as some features were removed and
+  others reworked.
+
+  http://www.fehcom.de/qmail/spamcontrol/RELEASE_27.spamcontrol
+
+  2.7 manual: http://www.fehcom.de/qmail/spamcontrol/README_spamcontrol.html
+
+20140626:
   AFFECTS: users of comms/smstools3
   AUTHOR: madpilot@FreeBSD.org
 
