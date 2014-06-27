@@ -15,8 +15,8 @@ MASTER_SITES=	SF \
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	A free and portable TrueType font rendering engine
 
-USES=		desthack
-USE_AUTOTOOLS=	libtool
+USES=		desthack libtool:oldver
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
@@ -25,8 +25,6 @@ PORTSCOUT=	limit:^1\.
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|LIBTOOL =.*|LIBTOOL = ${LIBTOOL}|'
 
 # Older versions of freetype installed include files in ${PREFIX}/include
 # this is a compatibility hack for now
