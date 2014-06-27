@@ -18,18 +18,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 	${CC} `${LIBNET_CONFIG} --defines --cflags` ${CFLAGS} \
 	vida.c funz.c dnshijacking.c ${LDFLAGS} -o ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/vida.1.gz ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/vida.1.gz ${STAGEDIR}${PREFIX}/man/man1/
 
-MAN1=		vida.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/vida
+PLIST_FILES=	bin/vida \
+		man/man1/vida.1.gz
 
 .include <bsd.port.mk>
