@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-kmfl-imengine
 PORTVERSION=	0.9.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
@@ -13,23 +13,24 @@ MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	SCIM KMFL IMEngine platform for Keyman (KMN) language keyboards
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		kmfl.0:${PORTSDIR}/textproc/libkmfl \
-		kmflcomp.0:${PORTSDIR}/textproc/kmflcomp \
-		png15:${PORTSDIR}/graphics/png
+		libkmfl.so:${PORTSDIR}/textproc/libkmfl \
+		libkmflcomp.so:${PORTSDIR}/textproc/kmflcomp \
+		libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
 		scim:${PORTSDIR}/textproc/scim
 
 USE_XORG=	x11 xkbfile xproto
-USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20 gtk20 intlhack
-USES=		gettext iconv pkgconfig
+USES=		gettext iconv pkgconfig libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-NO_STAGE=	yes
+INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/kmfl/${PORTNAME}
 PORTDOCS=	AUTHORS COPYING ChangeLog
 SUB_FILES=	pkg-message
@@ -67,12 +68,9 @@ post-patch:
 		${WRKSRC}/src/scim_kmfl_imengine.cpp
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 . endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
