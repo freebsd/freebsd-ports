@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.2.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://rene-ladan.nl/pub/distfiles/

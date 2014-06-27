@@ -3,7 +3,7 @@
 
 PORTNAME=	pure-sql3
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure

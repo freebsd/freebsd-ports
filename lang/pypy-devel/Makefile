@@ -3,6 +3,7 @@
 
 PORTNAME=	pypy
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 PKGNAMESUFFIX=	-devel
