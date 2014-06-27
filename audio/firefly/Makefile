@@ -23,7 +23,6 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -37,7 +36,10 @@ USE_RC_SUBR=	mt-daapd
 USERS=		${DAAPD_USER}
 GROUPS=		${DAAPD_GROUP}
 
-PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR}
+PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR} \
+		DAAPD_USER=${DAAPD_USER} \
+		DAAPD_GROUP=${DAAPD_GROUP} \
+		DATADIR=${DATADIR}
 
 USE_LDCONFIG=	yes
 
@@ -66,25 +68,17 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README AUTHORS COPYING CREDITS \
 	ChangeLog INSTALL NEWS TODO
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@[ -f ${PREFIX}/etc/mt-daapd.conf.sample ] || \
-		${INSTALL_DATA} ${WRKSRC}/contrib/mt-daapd.conf \
-		${PREFIX}/etc/mt-daapd.conf.sample
-	@${MKDIR} ${DAAPD_DBDIR}
-	@${MKDIR} ${DATADIR}
-	@${CHMOD} 0755 ${DAAPD_DBDIR}
-	@${CHMOD} 0755 ${DATADIR}
-	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DAAPD_DBDIR}
-	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DATADIR}
-
-	@${ECHO_MSG} "This port installs a sample configuration file in"
-	@${ECHO_MSG} "${LOCALBASE}/etc/mt-daapd.conf.sample"
-	@${ECHO_MSG} "You probably should move/copy this file to mt-daapd.conf"
-	@${ECHO_MSG} "and customize to fit your needs."
+	${INSTALL_DATA} ${WRKSRC}/contrib/mt-daapd.conf \
+		${STAGEDIR}${PREFIX}/etc/mt-daapd.conf.sample
+	@${MKDIR} ${STAGEDIR}${DAAPD_DBDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${CHMOD} 0755 ${STAGEDIR}${DAAPD_DBDIR}
+	@${CHMOD} 0755 ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
