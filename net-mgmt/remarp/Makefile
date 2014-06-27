@@ -18,7 +18,6 @@ NO_BUILD=	YES
 
 REMARP_SPOOL=	/var/spool/remarp
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|; \
 	s|use lib "\$$Bin/../lib";||' ${WRKSRC}/sbin/remarp.pl
@@ -28,11 +27,11 @@ pre-patch:
 	s|use lib "\$$Bin/../lib";||' ${WRKSRC}/lib/remarp/configure.pm
 
 do-install:
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/remarp
-	${MKDIR} ${REMARP_SPOOL}
-	${INSTALL_DATA} ${WRKSRC}/etc/remarp.conf ${PREFIX}/etc/remarp.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/lib/remarp/*.pm ${PREFIX}/${SITE_PERL_REL}/remarp
-	${INSTALL_SCRIPT} ${WRKSRC}/sbin/remarp.pl ${PREFIX}/sbin/remarp
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/remarp
+	${MKDIR} ${STAGEDIR}${REMARP_SPOOL}
+	${INSTALL_DATA} ${WRKSRC}/etc/remarp.conf ${STAGEDIR}${PREFIX}/etc/remarp.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/lib/remarp/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/remarp
+	${INSTALL_SCRIPT} ${WRKSRC}/sbin/remarp.pl ${STAGEDIR}${PREFIX}/sbin/remarp
 
 post-install:
 .if !defined(BATCH)
