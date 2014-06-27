@@ -9,7 +9,7 @@ MASTER_SITES=	http://people.redhat.com/jakub/prelink/
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	ELF prelinking utility to speed up dynamic linking
 
-LIB_DEPENDS=	argp:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 USES=		gmake tar:bzip2
@@ -22,9 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/execstack \
+		man/man8/execstack.8.gz \
+		man/man8/prelink.8.gz \
 		sbin/prelink
 
-MAN8=		execstack.8 prelink.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
