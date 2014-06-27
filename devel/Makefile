@@ -407,7 +407,6 @@
     SUBDIR += elfsh
     SUBDIR += elftoaout
     SUBDIR += elib
-    SUBDIR += elib-emacs21
     SUBDIR += entity
     SUBDIR += epm
     SUBDIR += epl.el

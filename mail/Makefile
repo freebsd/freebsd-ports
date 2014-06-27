@@ -41,7 +41,6 @@
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += c-sig
-    SUBDIR += c-sig-emacs21
     SUBDIR += cclient
     SUBDIR += chk4mail
     SUBDIR += claws-mail
@@ -731,8 +730,6 @@
     SUBDIR += vrfy
     SUBDIR += wanderlust
     SUBDIR += wanderlust-devel
-    SUBDIR += wanderlust-emacs21
-    SUBDIR += wanderlust-emacs22
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += websieve
     SUBDIR += whoson

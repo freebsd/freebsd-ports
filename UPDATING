@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140427:
+  AFFECTS: users of editors/emacs21 and editors/emacs22
+  AUTHOR: ashish@FreeBSD.org
+
+  editors/emacs21, and editors/emacs22 are removed as they were
+  unmaintained upstream for a while. Their dependent ports are removed
+  as well. Please switch to editors/emacs (Emacs 24 release), or
+  editors/emacs23 (Emacs 23 release), or editors/emacs-devel (Emacs
+  development branch) ports.
+
 20140626:
   AFFECTS: users of mail/qmail-spamcontrol
   AUTHOR: bdrewery@FreeBSD.org

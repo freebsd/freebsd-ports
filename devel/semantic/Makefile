@@ -15,7 +15,6 @@ MAINTAINER=	dryice@dryice.name
 COMMENT=	Lexer, parser-generator, and parser for Emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}

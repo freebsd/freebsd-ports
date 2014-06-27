@@ -6156,3 +6156,27 @@ print/pkg-texinfo|print/texinfo-minimal|2014-06-24|Has been renamed
 sysutils/pc-sysinstall|sysutils/pcbsd-utils|2014-06-24|Removed: pc-sysinstall is included in sysutils/pcbsd-utils
 print/texinfo-minimal|print/texinfo-lite|2014-06-24|Has been renamed
 devel/gmake-minimal|devel/gmake-lite|2014-06-24|Has been renamed
+converters/mule-ucs||2014-06-27|Removed: dependent on editors/emacs21
+devel/elib-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+editors/apel-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+editors/apel-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+editors/emacs21||2014-06-27|Removed: unmaintained upstream
+editors/emacs22||2014-06-27|Removed: unmaintained upstream
+editors/flim-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+editors/flim-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+editors/semi-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+editors/semi-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+irc/riece-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+japanese/emacs-emcws||2014-06-27|Removed: dependent on editors/emacs21
+japanese/lookup-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+japanese/migemo-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+japanese/migemo-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+mail/c-sig-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+mail/wanderlust-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+mail/wanderlust-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+math/emacs-calc||2014-06-27|Removed: dependent on editors/emacs21
+textproc/uim-el-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+textproc/uim-el-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+textproc/yaml-mode.el-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+www/emacs-w3m-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+www/emacs-w3m-emacs22||2014-06-27|Removed: dependent on editors/emacs22
