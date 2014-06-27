@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	qpsmtpd
-PORTVERSION=	0.84
-PORTREVISION=	6
+PORTVERSION=	0.93
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://smtpd.develooper.com/files/
+MASTER_SITES=	https://github.com/smtpd/qpsmtpd/archive/
 PKGNAMEPREFIX=	p5-
+DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	noc-ports@biglist.com
 COMMENT=	Flexible SMTP daemon written in Perl and featuring a plugin API
 
 BUILD_DEPENDS=	spamd:${PORTSDIR}/mail/spamassassin \
