@@ -3,14 +3,15 @@
 
 PORTNAME=	manck
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Manual page consistency checker
 
-MAN1=		manck.1
-MANCOMPRESSED=	yes
+USES=		perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	manck.pl
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
