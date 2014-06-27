@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-DependentModules
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-IO-Handle-Util>=0:${PORTSDIR}/devel/p5-IO-Handle-Util \
 		p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
 		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
-		p5-MetaCPAN-API>=0:${PORTSDIR}/devel/p5-MetaCPAN-API \
+		p5-MetaCPAN-Client>=0:${PORTSDIR}/devel/p5-MetaCPAN-Client \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-autodie>=0:${PORTSDIR}/devel/p5-autodie
 RUN_DEPENDS:=	${BUILD_DEPENDS}
