@@ -140,7 +140,7 @@ CHOSEN_COMPILER_TYPE=	gcc
 
 .if ${_COMPILER_ARGS:Mc++11-lang}
 .if !${COMPILER_FEATURES:Mc++11}
-.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 || ${ARCH} != i386) # clang not always supported on Tier-2
+.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
 USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc
