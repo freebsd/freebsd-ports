@@ -109,7 +109,7 @@ EOF
 
     user=pop3vscan
     group=mail
-    spooldir=/var/spool/pop3vscan
+    spooldir=${STAGEDIR}/var/spool/pop3vscan
     etcdir=${PREFIX:-$PKG_PREFIX}/etc
 
     echo ""
