@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.qsl.net/pg4i/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	A gtk psk31 client
 
 USES=		pkgconfig
