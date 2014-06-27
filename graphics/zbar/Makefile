@@ -12,7 +12,7 @@ COMMENT=	ZBar barcode reader
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -24,7 +24,6 @@ OPTIONS_DEFINE=	X11 IMAGEMAGICK V4L PYTHON GTK2 QT4
 OPTIONS_DEFAULT=	X11 IMAGEMAGICK
 V4L_DESC=	Build zbarcam video scanner
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -88,7 +87,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|^pkgconfigdir = .*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} '/^install-data-am: /s/install-dist_docDATA//' \
 		${WRKSRC}/Makefile.in
 .endif
