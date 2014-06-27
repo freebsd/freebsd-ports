@@ -98,8 +98,4 @@ post-patch:
 		${WRKSRC}/configure
 .endfor
 
-pre-build:
-	@${INSTALL_SCRIPT} ${LOCALBASE}/share/icu/52.1/mkinstalldirs \
-		${WRKSRC}
-
 .include <bsd.port.mk>
