@@ -1,0 +1,8 @@
+%%FONTSDIR%%/Hasklig-Black.otf
+%%FONTSDIR%%/Hasklig-Bold.otf
+%%FONTSDIR%%/Hasklig-ExtraLight.otf
+%%FONTSDIR%%/Hasklig-Light.otf
+%%FONTSDIR%%/Hasklig-Medium.otf
+%%FONTSDIR%%/Hasklig-Regular.otf
+%%FONTSDIR%%/Hasklig-Semibold.otf
+@fc %%FONTSDIR%%
