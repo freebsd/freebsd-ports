@@ -1,3 +1,5 @@
 sbin/morebalance
 etc/morebalance.conf.sample
+man/man1/morebalance.1.gz
+man/man5/morebalance.conf.5.gz
 share/locale/de/LC_MESSAGES/morebalance.mo
