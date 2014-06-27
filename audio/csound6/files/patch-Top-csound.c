@@ -4,8 +4,8 @@
  #include "cs_par_dispatch.h"
  #include "csound_orc_semantics.h"
  
--#if defined(linux) || defined(__HAIKU__)
-+#if defined(linux) || defined(__HAIKU__) || defined(__FreeBSD__)
+-#if defined(linux) || defined(__HAIKU__) || defined(EMSCRIPTEN)
++#if defined(linux) || defined(__HAIKU__) || defined(__FreeBSD__) || defined(EMSCRIPTEN)
  #define PTHREAD_SPINLOCK_INITIALIZER 0
  #endif
  
@@ -15,7 +15,7 @@
  #if defined(USE_OPENMP)
  #include <omp.h>
  #endif /* USE_OPENMP */
-@@ -899,7 +902,7 @@
+@@ -919,7 +922,7 @@
  
  #if defined(ANDROID) || (!defined(LINUX) && !defined(SGI) && \
                           !defined(__HAIKU__) && !defined(__BEOS__) && \
@@ -24,7 +24,7 @@
  static char *signal_to_string(int sig)
  {
      switch(sig) {
-@@ -3172,7 +3175,7 @@
+@@ -3420,7 +3423,7 @@
  /* ------------------------------------ */
  
  #if defined(HAVE_RDTSC)
@@ -33,7 +33,7 @@
  #undef HAVE_RDTSC
  #endif
  #endif
-@@ -3185,6 +3188,13 @@
+@@ -3433,6 +3436,13 @@
  static int getTimeResolution(void)
  {
  #if defined(HAVE_RDTSC)
@@ -47,7 +47,7 @@
      FILE    *f;
      char    buf[256];
  
-@@ -3220,9 +3230,14 @@
+@@ -3468,9 +3478,14 @@
        }
      }
      fclose(f);
