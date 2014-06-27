@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Jul 12 04:27:47 2005
-+++ Makefile.in	Tue Jul 12 09:40:39 2005
-@@ -8,7 +8,7 @@
+--- Makefile.in.orig	2005-07-12 10:27:47.000000000 +0800
++++ Makefile.in	2014-06-28 01:02:55.654057074 +0800
+@@ -8,7 +8,7 @@ BINDIR = @prefix@/bin
  MANDIR = @prefix@/man/man1
  
  DEFINES = -DHAVE_CONFIG_H ${VERSION}
@@ -9,7 +9,7 @@
  
  
  OBJS = rename.o fixtoken.o misc.o @LIBOBJS@
-@@ -16,7 +16,7 @@
+@@ -16,7 +16,7 @@ OBJS = rename.o fixtoken.o misc.o @LIBOB
  all: rename
  
  rename:	$(OBJS)
@@ -18,11 +18,15 @@
  	strip $@
  
  static:	$(OBJS)
-@@ -32,9 +32,11 @@
+@@ -30,11 +30,13 @@ clean-all:
+ 	rm -f core rename *.o config.status config.cache config.h config.log Makefile
+ 
  install:
- 	install -o root -g wheel -m 0755 -s rename $(BINDIR)
- 	install -o root -g wheel -m 0644 rename.1 $(MANDIR)
+-	install -o root -g wheel -m 0755 -s rename $(BINDIR)
+-	install -o root -g wheel -m 0644 rename.1 $(MANDIR)
 -	
++	install -o root -g wheel -m 0755 -s rename $(DESTDIR)$(BINDIR)
++	install -o root -g wheel -m 0644 rename.1 $(DESTDIR)$(MANDIR)
 +
  rename.o: rename.c rename.h
  regex.o: regex.c regex.h
