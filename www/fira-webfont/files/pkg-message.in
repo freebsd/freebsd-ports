@@ -1,39 +1,13 @@
 ===============================================================================
 
-Fira has been installed.
+Fira has been installed in %%WWWDIR%%
 
-Example HTML and CSS have been installed in %%WWWDIR%%
+Get started right away with the provided boilerplate HTML and CSS.
 
-Fira Technical Documentation is currently available only by downloading the
-"Fira Open Type" archive from:
+Fira has advanced Open Type typographic layout features and language support.
+Please refer to the Technical Documentation installed by this port or online at
 
-    https://www.mozilla.org/en-US/styleguide/products/firefox-os/typeface/
-
-Note: JavaScript must be enabled as box.com does not provide an URL for sharing
-
-Fira supports the following advanced Open Type typographic layout features:
-- Access All Alternates
-- Small Capitals
-- Small Capitals From Capitals
-- Contextual Alternates
-- Standard Ligatures
-- Discretionary Ligatures
-- Old Style Figures
-- Lining Figures
-- Proportional Figures
-- Tabular Figures
-- Slashed Zero
-- Numerators
-- Denominators
-- Fractions
-- Superscript
-- Subscript
-- Scientific Inferiors
-- Ordinals
-- Case-Sensitive Forms
-- Localized Forms
-- Mathematical Greek
-- Capital Spacing
+    http://dev.carrois.com/fira-3-1/
 
 For details about OpenType Layout Features see the OpenType Layout tag registry
 
@@ -45,10 +19,10 @@ or
     http://en.wikipedia.org/wiki/List_of_typographic_features
 
 The font-feature-settings CSS property allows control over advanced typographic
-features in OpenType fonts:
+features in OpenType fonts
 
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings
 
-For X11 Open Type and True Type font please use x11-fonts/fira port.
+For X11 Open Type font please use x11-fonts/fira port.
 
 ===============================================================================
