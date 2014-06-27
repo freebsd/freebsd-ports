@@ -70,8 +70,8 @@ addentries ()
 {
 	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0
 	do
-		make_xlfd $ENC Ricty-Regular.ttf ipa "Ricty" p medium
-		make_xlfd $ENC Ricty-Bold.ttf ipa "Ricty" p bold
+		%%RICTY%%make_xlfd $ENC Ricty-Regular.ttf ipa "Ricty" p medium
+		%%RICTY%%make_xlfd $ENC Ricty-Bold.ttf ipa "Ricty" p bold
 
 		%%DISCORD%%make_xlfd $ENC RictyDiscord-Regular.ttf ipa "Ricty Discord" p medium
 		%%DISCORD%%make_xlfd $ENC RictyDiscord-Bold.ttf ipa "Ricty Discord" p bold
