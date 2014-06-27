@@ -224,6 +224,14 @@ do-fmtutil-$F:
 			${LOCALBASE}/bin/fmtutil-sys --byfmt $$format; \
 		done
 	@${LOCALBASE}/bin/mktexlsr ${TEXMFVARDIR:S,^,${PREFIX}/,}
+.else
+	@${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}} | \
+		while read format dum; do \
+		${SETENV} PATH=${PATH}:${LOCALBASE}/bin \
+			TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
+			${LOCALBASE}/bin/fmtutil-sys --byfmt $$format \
+			--fmtdir ${STAGEDIR}${PREFIX}/${TEXMFDIR}-var/web2c; \
+		done
 .endif
 	@${ECHO_CMD} "@exec exec < ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"${RM} ${LOCALBASE}/${FMTUTIL_CNF} && " \
