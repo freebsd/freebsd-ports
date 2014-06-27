@@ -9,7 +9,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/article.txt

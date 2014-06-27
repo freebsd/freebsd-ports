@@ -1,15 +1,15 @@
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/imagelib/callouts
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/imagelib
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/books
-%%DOCSDIR%%/%%DOCLANG_PREFIX%%
-@dirrm %%DOCSDIR%%/%%DOCLANG%%
+%%DOCSDIR%%/mn
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/imagelib/callouts
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/imagelib
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books/handbook
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/books
+@dirrmtry %%DOCSDIR%%/%%DOCLANG%%
 @dirrmtry %%DOCSDIR%%

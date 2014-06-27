@@ -15,7 +15,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/custom-gcc/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
@@ -152,6 +151,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-adduser2.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-adduser3.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-boot-loader-menu.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-boot-options-menu.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-choose-mode.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-config-components.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-config-crashdump.png
@@ -180,6 +180,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-mainexit.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-netinstall-files.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-netinstall-mirrorselect.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-newboot-loader-menu.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-part-entire-part.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-part-guided-disk.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-part-guided-manual.png
