@@ -1,8 +1,8 @@
 include/libspectrum.h
 lib/libspectrum.a
-lib/libspectrum.la
 lib/libspectrum.so
-lib/libspectrum.so.9
+lib/libspectrum.so.8
+lib/libspectrum.so.8.1.0
 man/man3/libspectrum.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
