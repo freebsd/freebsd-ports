@@ -19,7 +19,6 @@ CONFLICTS=	cvsweb-3.*
 NO_BUILD=	yes
 USES=		perl5
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Specify where your repository belongs.
@@ -61,25 +60,17 @@ post-patch:
 		${WRKSRC}/cvsweb.conf
 
 do-install:
-	${MKDIR} ${PREFIX}/${CGIDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/cvsweb.cgi ${PREFIX}/${CGIDIR}/
-	${MKDIR} ${PREFIX}/etc/cvsweb
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${CGIDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/cvsweb.cgi ${STAGEDIR}${PREFIX}/${CGIDIR}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/cvsweb
 .for f in ${CONFFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/etc/cvsweb/${f}.dist
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/etc/cvsweb/${f}.dist
 .endfor
-	${MKDIR} ${PREFIX}/${ICONSDIR}/cvsweb
-	${INSTALL_DATA} ${WRKSRC}/icons/* ${PREFIX}/${ICONSDIR}/cvsweb/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ICONSDIR}/cvsweb
+	${INSTALL_DATA} ${WRKSRC}/icons/* ${STAGEDIR}${PREFIX}/${ICONSDIR}/cvsweb/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ChangeLog INSTALL README README.FreeBSD TODO TODO.FreeBSD
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-
-post-install:
-.if defined(PACKAGE_BUILDING)
-	${ECHO_CMD} "@unexec rmdir %D/${CGIDIR} %D/${ICONSDIR} 2>/dev/null || true" >> ${TMPPLIST}
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

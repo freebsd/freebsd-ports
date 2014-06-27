@@ -19,3 +19,5 @@ etc/cvsweb/cvsweb.conf-ruby.dist
 %%ICONSDIR%%/cvsweb/minitext.gif
 %%ICONSDIR%%/cvsweb/text.gif
 @dirrm %%ICONSDIR%%/cvsweb
+@dirrmtry %%CGIDIR%%
+@dirrmtry %%ICONSDIR%%
