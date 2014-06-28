@@ -6,9 +6,9 @@ bin/tpmtoken_objects
 bin/tpmtoken_protect
 bin/tpmtoken_setpasswd
 include/tpm_tools/tpm_unseal.h
-lib/libtpm_unseal.la
 lib/libtpm_unseal.so
 lib/libtpm_unseal.so.1
+lib/libtpm_unseal.so.1.0.0
 sbin/tpm_changeownerauth
 sbin/tpm_clear
 sbin/tpm_createek
