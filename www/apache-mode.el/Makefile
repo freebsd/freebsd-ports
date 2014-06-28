@@ -10,21 +10,20 @@ DISTNAME=	apache-mode.el
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	m.boyarov@bsd.by
-COMMENT=	[X]Emacs major mode for editing Apache configuration files
+MAINTAINER=	max.n.boyarov@gmail.com
+COMMENT=	Emacs major mode for editing Apache configuration files
+
+LICENSE=	GPLv2
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+PLIST_FILES=	${EMACSLISPDIR}/apache-mode.el
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
-XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${EMACSLISPDIR}
-	${MKDIR} ${XEMACSLISPDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${EMACSLISPDIR}/${PORTNAME}
-	${LN} -sf ${EMACSLISPDIR}/${PORTNAME} ${XEMACSLISPDIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${EMACSLISPDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${EMACSLISPDIR}/${PORTNAME}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
