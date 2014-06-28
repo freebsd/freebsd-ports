@@ -58,9 +58,6 @@
 %%PYTHON_SITELIBDIR%%/astroid/scoped_nodes.py
 %%PYTHON_SITELIBDIR%%/astroid/scoped_nodes.pyc
 %%PYTHON_SITELIBDIR%%/astroid/scoped_nodes.pyo
-%%PYTHON_SITELIBDIR%%/astroid/setup.py
-%%PYTHON_SITELIBDIR%%/astroid/setup.pyc
-%%PYTHON_SITELIBDIR%%/astroid/setup.pyo
 %%PYTHON_SITELIBDIR%%/astroid/test/data/MyPyPa-0.1.0-py2.5.egg
 %%PYTHON_SITELIBDIR%%/astroid/test/data/MyPyPa-0.1.0-py2.5.zip
 %%PYTHON_SITELIBDIR%%/astroid/test/data/SSL1/Connection1.py

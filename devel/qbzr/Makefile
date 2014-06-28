@@ -3,7 +3,7 @@
 
 PORTNAME=	qbzr
 PORTVERSION=	0.23.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/109906138/ \
 		http://www.c-s.li/ports/
@@ -21,9 +21,10 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PYTHON=	yes
-USE_QT4=	# empty
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_QT4=	# empty
 USES=		gettext
 INSTALLS_ICONS=	yes
 

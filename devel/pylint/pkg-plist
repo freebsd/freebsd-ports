@@ -108,9 +108,6 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.py
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyc
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyo
-%%PYTHON_SITELIBDIR%%/pylint/setup.py
-%%PYTHON_SITELIBDIR%%/pylint/setup.pyc
-%%PYTHON_SITELIBDIR%%/pylint/setup.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/data/__init__.py
 %%PYTHON_SITELIBDIR%%/pylint/test/data/classes_No_Name.dot
 %%PYTHON_SITELIBDIR%%/pylint/test/data/clientmodule_test.py

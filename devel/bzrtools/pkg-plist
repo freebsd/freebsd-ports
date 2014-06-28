@@ -64,9 +64,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/setup.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/setup.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/setup.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shelf.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shelf.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shelf.pyo

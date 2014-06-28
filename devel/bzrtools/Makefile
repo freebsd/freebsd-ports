@@ -3,6 +3,7 @@
 
 PORTNAME=	bzrtools
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpad.net/bzrtools/stable/${PORTVERSION}/+download/
 

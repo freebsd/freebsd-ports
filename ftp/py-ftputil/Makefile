@@ -3,6 +3,7 @@
 
 PORTNAME=	ftputil
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	ftp python
 MASTER_SITES=	# http://ftputil.sschwarzer.net/trac/attachment/wiki/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,13 +11,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level FTP client library
 
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOC_FILES=	README.html README.txt ftputil.html ftputil.txt ftputil_ru_utf8.txt
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -26,11 +25,9 @@ do-fetch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

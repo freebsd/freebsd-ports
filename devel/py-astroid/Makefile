@@ -2,6 +2,7 @@
 
 PORTNAME=	astroid
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://bitbucket.org/logilab/astroid/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,6 @@ WRKSRC=			${WRKDIR}/logilab-astroid-e003574ae51b
 MAKE_ENV=		NO_SETUPTOOLS=1
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	astroid
 
 .include <bsd.port.pre.mk>
 
