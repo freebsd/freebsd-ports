@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME interface to xcompmgr
 
 RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr

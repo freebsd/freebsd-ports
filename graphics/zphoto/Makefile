@@ -8,7 +8,7 @@ CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zooming photo album generator
 
 OPTIONS_DEFINE=	ZIP

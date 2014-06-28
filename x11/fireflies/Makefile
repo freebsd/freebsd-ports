@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of xscreensaver
 
 LIB_DEPENDS=	libgfx.so:${PORTSDIR}/graphics/libgfx

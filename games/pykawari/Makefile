@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/kawari/kawari/${PORTVERSION}
 DISTNAME=	kawari-${PORTVERSION:S/.//g}
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real kawari8 module for ninix-aya
 
 RUN_DEPENDS=	ninix:${PORTSDIR}/games/ninix-aya

@@ -7,7 +7,7 @@ PORTREVISION=	11
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bonnyswan.com/gtubeclock/downloads/
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nixie tube clock for GNOME
 
 USES=		pkgconfig
