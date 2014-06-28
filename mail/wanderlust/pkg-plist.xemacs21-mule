@@ -82,7 +82,7 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/auto-autoloads.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/auto-autoloads.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/bbdb-wl.el
-@unexec rm -f %D/%%EMACS_PACKAGESDIR%%/lisp/wl/bbdb-wl.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/bbdb-wl.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/custom-load.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/custom-load.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-access.el
@@ -160,7 +160,7 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/elsp-spamoracle.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elsp-spamoracle.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/im-wl.el
-@unexec rm -f %D/%%EMACS_PACKAGESDIR%%/lisp/wl/im-wl.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/im-wl.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/modb-entity.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/modb-entity.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/modb-legacy.el
@@ -264,3 +264,8 @@ share/wanderlust/ja.Emacs
 @dirrm share/examples/wanderlust/ja
 @dirrm share/examples/wanderlust
 @dirrm share/wanderlust
+@dirrmtry %%EMACS_PACKAGESDIR%%/etc
+@dirrmtry %%EMACS_PACKAGESDIR%%/info
+@dirrmtry %%EMACS_PACKAGESDIR%%/lisp
+@dirrmtry %%EMACS_PACKAGESDIR%%/pkginfo
+@dirrmtry %%EMACS_PACKAGESDIR%%

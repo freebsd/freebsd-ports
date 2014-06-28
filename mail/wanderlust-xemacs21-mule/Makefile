@@ -20,5 +20,4 @@ INSTALL_TARGET=	install-package
 UTILSDIR=	${EMACS_PACKAGESDIR}/lisp/wl
 STARTUPDIR=	${EMACS_PACKAGESDIR}/lisp/wl
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
