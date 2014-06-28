@@ -1,4 +1,3 @@
-%%PKGINFODIR%%/MANIFEST.w3m
 %%ICONDIR%%/antenna-up.png
 %%ICONDIR%%/antenna-up.xpm
 %%ICONDIR%%/back-disabled.png
@@ -52,9 +51,9 @@
 %%LISPDIR%%/mew-w3m.el
 @unexec rm -f %D/%%LISPDIR%%/mew-w3m.elc
 %%LISPDIR%%/mime-w3m.el
-@unexec rm -f %D/%%LISPDIR%%/mime-w3m.elc
+%%LISPDIR%%/mime-w3m.elc
 %%LISPDIR%%/octet.el
-@unexec rm -f %D/%%LISPDIR%%/octet.elc
+%%OCTET_VIEWER%%%%LISPDIR%%/octet.elc
 %%SHIMBUN%%%%LISPDIR%%/nnshimbun.el
 %%SHIMBUN%%%%LISPDIR%%/nnshimbun.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-2ch.el
@@ -81,6 +80,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-bbc.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-chise.el
+%%SHIMBUN%%%%LISPDIR%%/sb-chise.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-cgi-board.el
 %%SHIMBUN%%%%LISPDIR%%/sb-cgi-board.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet-jp.el
@@ -346,6 +347,7 @@
 %%LISPDIR%%/w3m-lnum.el
 %%LISPDIR%%/w3m-lnum.elc
 %%LISPDIR%%/w3m-load.el
+%%LISPDIR%%/w3m-load.elc
 %%LISPDIR%%/w3m-mail.el
 %%LISPDIR%%/w3m-mail.elc
 %%LISPDIR%%/w3m-namazu.el
@@ -365,7 +367,7 @@
 %%LISPDIR%%/w3m-tabmenu.el
 %%LISPDIR%%/w3m-tabmenu.elc
 %%LISPDIR%%/w3m-ucs.el
-@unexec rm -f %D/%%LISPDIR%%/w3m-ucs.elc
+%%LISPDIR%%/w3m-ucs.elc
 %%LISPDIR%%/w3m-util.el
 %%LISPDIR%%/w3m-util.elc
 %%LISPDIR%%/w3m-weather.el
@@ -378,4 +380,5 @@
 %%PORTDOCS%%@dirrm share/doc/emacs-w3m
 @dirrm %%ICONDIR%%
 @dirrmtry %%EMACS_PACKAGESDIR%%/etc/images
+@dirrmtry %%EMACS_PACKAGESDIR%%/etc
 @dirrm %%LISPDIR%%

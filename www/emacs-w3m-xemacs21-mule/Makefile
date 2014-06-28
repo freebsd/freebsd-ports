@@ -11,7 +11,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/texinfo/texinf
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aclocal.m4
 CONFIGURE_ARGS=		--with-xemacs=${EMACS_CMD} \
-			--with-packagedir=${PREFIX}/${EMACS_PACKAGESDIR}
+			--with-packagedir=${PREFIX}/${EMACS_PACKAGESDIR} \
+			--without-compress-install
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 LISPDIR=		${EMACS_PACKAGESDIR}/lisp/w3m
 ICONDIR=		${EMACS_PACKAGESDIR}/etc/images/w3m
@@ -24,7 +25,6 @@ INFO_PATH=		${INFODIR}
 PLIST=			${.CURDIR}/pkg-plist
 PLIST_SUB+=		PKGINFODIR=${PKGINFODIR} EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
 
-WITHOUT_OCTET_VIEWER=	yes
+OPTIONS_UNSET=	OCTET_VIEWER
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

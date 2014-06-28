@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.4.471.b.${SNAPDATE}
-PORTREVISION=	5
+PORTVERSION=	1.4.533.b.${SNAPDATE}
 CATEGORIES=	www elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nobutaka
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}-1.4.471-${SNAPDATE}
+DISTNAME=	${PORTNAME}-1.4.533-${SNAPDATE}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Simple front-end to w3m for emacs
@@ -19,13 +18,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_EMACS=	yes
 
-SNAPDATE=	20120306
+SNAPDATE=	20140622
 
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
 			--with-lispdir=${PREFIX}/${LISPDIR} \
-			--with-icondir=${PREFIX}/${ICONDIR}
+			--with-icondir=${PREFIX}/${ICONDIR} \
+			--without-compress-install
 LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/w3m
 ICONDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
 ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m
@@ -52,7 +52,6 @@ OPTIONS_DEFAULT=	DOCS OCTET_VIEWER SHIMBUN
 OCTET_VIEWER_DESC=	Octet stream viewer support
 SHIMBUN_DESC=	Build and/or install Shimbun
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MSHIMBUN}
@@ -103,6 +102,9 @@ RUN_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
 		wvHtml:${PORTSDIR}/textproc/wv \
 		xlhtml:${PORTSDIR}/textproc/xlhtml
+PLIST_SUB+=	OCTET_VIEWER=""
+.else
+PLIST_SUB+=	OCTET_VIEWER="@comment "
 .if ${EMACS_NAME} == "emacs" && ${EMACS_VER:C/\..*//} < 22
 RUN_DEPENDS+=	${MULE_UCS_ELISP_FILE}:${MULE_UCS_PORT}
 .endif
@@ -115,15 +117,14 @@ post-extract:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR_JA}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR_JA}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR_JA}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
