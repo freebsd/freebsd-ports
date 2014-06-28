@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2014-03-21 11:35:47.000000000 -0500
-+++ doc/Makefile.in	2014-03-21 18:19:16.000000000 -0500
-@@ -563,7 +563,7 @@
+--- doc/Makefile.in.orig	2014-06-26 15:34:58.000000000 -0400
++++ doc/Makefile.in	2014-06-28 09:44:31.000000000 -0400
+@@ -564,7 +564,7 @@
  
  # The rest of the Makefile is enabled only if we have asciidoc
  
