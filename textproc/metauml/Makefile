@@ -15,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}_lib_${PORTVERSION}.tgz lop-release.tgz
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A MetaPost library for typesetting UML diagrams
+COMMENT=	MetaPost library for typesetting UML diagrams
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/thrunk/License
@@ -29,22 +29,17 @@ MPDIR=		${TEXMFDIR}/metapost/${PORTNAME}
 
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}_lib
-EXAMPLES=	*.1 *.jpg *.mp lop lop.html lop.pdf lop.tex
+PORTDOCS=	${PORTNAME}_manual_${PORTVERSION}.pdf
+PORTEXAMPLES=	*.1 *.jpg *.mp lop lop.html lop.pdf lop.tex
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/${MPDIR}
-	${INSTALL_DATA} ${WRKSRC}/thrunk/*.mp ${PREFIX}/${MPDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}_manual_${PORTVERSION}.pdf ${DOCSDIR}
-	${MKDIR} ${EXAMPLESDIR}
-.for example in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKDIR}/${example} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${MPDIR}
+	${INSTALL_DATA} ${WRKSRC}/thrunk/*.mp ${STAGEDIR}${PREFIX}/${MPDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for example in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKDIR}/${example} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
-
-post-install:
-	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 
 .include <bsd.port.mk>
