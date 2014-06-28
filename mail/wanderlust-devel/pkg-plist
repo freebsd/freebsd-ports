@@ -7,7 +7,6 @@
 %%WL_LISPDIR%%/acap.el
 %%WL_LISPDIR%%/acap.elc
 %%WL_LISPDIR%%/bbdb-wl.el
-@unexec rm -f %D/%%WL_LISPDIR%%/bbdb-wl.elc
 %%WL_LISPDIR%%/elmo-access.el
 %%WL_LISPDIR%%/elmo-access.elc
 %%WL_LISPDIR%%/elmo-archive.el
@@ -81,7 +80,7 @@
 %%WL_LISPDIR%%/elsp-spamoracle.el
 %%WL_LISPDIR%%/elsp-spamoracle.elc
 %%WL_LISPDIR%%/im-wl.el
-@unexec rm -f %D/%%WL_LISPDIR%%/im-wl.elc
+%%WL_LISPDIR%%/im-wl.elc
 %%WL_LISPDIR%%/modb-entity.el
 %%WL_LISPDIR%%/modb-entity.elc
 %%WL_LISPDIR%%/modb-legacy.el
@@ -100,8 +99,6 @@
 %%WL_LISPDIR%%/slp.elc
 %%WL_LISPDIR%%/ssl.el
 %%WL_LISPDIR%%/ssl.elc
-%%WL_LISPDIR%%/utf7.el
-%%WL_LISPDIR%%/utf7.elc
 %%WL_LISPDIR%%/wl-acap.el
 %%WL_LISPDIR%%/wl-acap.elc
 %%WL_LISPDIR%%/wl-action.el
