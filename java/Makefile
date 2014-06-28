@@ -24,7 +24,6 @@
     SUBDIR += eclipse-cdt
     SUBDIR += eclipse-checkstyle
     SUBDIR += eclipse-datatools
-    SUBDIR += eclipse-devel
     SUBDIR += eclipse-drjava
     SUBDIR += eclipse-ecj
     SUBDIR += eclipse-emf
