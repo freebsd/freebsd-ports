@@ -24,8 +24,7 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomehack gtk20 glib20 gnomedesktop gnomevfs2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-maemo=no
