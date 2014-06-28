@@ -1,6 +1,7 @@
 bin/mman
 etc/rc.d/mman.sh.sample
 etc/mman.xml.dist
+man/man8/mman.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/filter.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
