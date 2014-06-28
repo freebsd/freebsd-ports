@@ -9,43 +9,37 @@ MASTER_SITES=	http://www.a-k-r.org/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/samidare|}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A web page update checker written in Ruby
+COMMENT=	Web page update checker written in Ruby
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/htree.rb:${PORTSDIR}/textproc/ruby-htree \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 
-USES=		gmake
+USES=	gmake
 USE_RUBY=	yes
 
-RUBY_REQUIRE=	Ruby >= 181
 RUBY_SHEBANG_FILES=	main.rb rb-link rb2rm rm2rb
 PORTDOCS=	README README.ja
 PORTEXAMPLES=	config.yml t.latest.html
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(RUBY_PROVIDED)
-IGNORE=		requires Ruby 1.8.1 or later
-.endif
-
 ALL_TARGET=	${PORTNAME}
-MAN1=	${PORTNAME}.1
+
+PLIST_FILES=	bin/samidare man/man1/samidare.1.gz
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-build:
 	@${REINPLACE_CMD} -e '1d' ${BUILD_WRKSRC}/${PORTNAME}
 	@cd ${BUILD_WRKSRC}; ${MV} ${PORTNAME}.man ${PORTNAME}.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_MAN} ${INSTALL_WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${INSTALL_WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${INSTALL_WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${INSTALL_WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${INSTALL_WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${INSTALL_WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
