@@ -3,7 +3,7 @@
 
 CATEGORIES=	japanese x11
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../x11/xlockmore
 

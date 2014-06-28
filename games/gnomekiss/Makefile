@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	games gnome
 MASTER_SITES=	http://devel.tlrmx.org/kiss/source/
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of Kisekae Set System
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
