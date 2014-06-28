@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-fuzzy-logic-toolkit
-PORTVERSION=	0.4.2
-PORTREVISION=	3
+PORTVERSION=	0.4.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
