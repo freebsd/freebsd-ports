@@ -12,6 +12,8 @@ DISTNAME=	RexxCURL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	External function package providing an interface to the cURL package
 
+BROKEN=		Fails to install/package with new rexx-regina
+
 OPTIONS_DEFINE=	DOCS
 
 BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
