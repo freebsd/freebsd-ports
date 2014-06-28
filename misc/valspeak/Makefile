@@ -11,10 +11,6 @@ COMMENT=	Filter that converts English text to valspeak
 
 CONFLICTS=	filters-2* talkfilters-2*
 
-RESTRICTED=     1986 software shared on the net.sources newsgroup \
-		with the intent to redistribute it, but without any \
-		license or author information clearly available.
-
 PLIST_FILES=	bin/valspeak
 ALL_TARGET=	valspeak
 MAKE_ARGS+=	CFLAGS=${CFLAGS:Q}
