@@ -549,6 +549,7 @@
 %%DATADIR%%/resources/testdata/echonest-replies/rock-music
 %%DATADIR%%/resources/testdata/enmfp-codegen-output.json
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/feed_with_nul_bytes.xml
+%%DATADIR%%/resources/testdata/feedparsertests/feeds/donate.html
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/http___feeds_feedburner_com_earth-touch_podcast_720p.xml
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/http___feeds_miroguide_com_miroguide_featured.xml
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/http___feeds_miroguide_com_miroguide_new.xml
