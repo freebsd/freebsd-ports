@@ -6,6 +6,38 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140627:
+  AFFECTS: Users of Java
+  AUTHOR: swills@FreeBSD.org
+
+  The default version of OpenJDK has been updated from 1.6 to 1.7. To update,
+  users of Java will need to rebuild all ports that depend on Java:
+
+  If you use pkg (regardless of if you build ports from source or install
+  binary packages):
+  # pkg set -o java/openjdk6:java/openjdk7
+
+  If you use portmaster to build ports from source:
+
+  # portmaster -o java/openjdk7 openjdk6
+  # portmaster -R -r openjdk
+
+  If you use portupgrade to build ports from source:
+
+  # portupgrade -fo java/openjdk7 java/openjdk6
+
+  If you use pkg to install prebuilt binary packages:
+
+  # pkg install -fR java/openjdk7
+
+  If you wish to keep the 1.6 version as default, add the following lines to
+  your /etc/make.conf file:
+
+  #
+  # Keep OpenJDK 1.6 as default version.
+  #
+  JAVA_PREFERRED_PORTS=JAVA_PORT_NATIVE_OPENJDK_JDK_1_6
+
+20140627:
   AFFECTS: users of security/amavisd-milter
   AUTHOR: delphij@FreeBSD.org
 
