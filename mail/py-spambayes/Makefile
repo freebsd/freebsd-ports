@@ -3,12 +3,13 @@
 
 PORTNAME=	spambayes
 PORTVERSION=	1.1b1
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	A Bayesian anti-spam filter written in Python
+COMMENT=	Bayesian anti-spam filter written in Python
 
 LICENSE=	PSFL
 
@@ -16,8 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_PKGNAMEPREFIX}dns>=2.0:${PORTSDIR}/dns/py-dns \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.2:${PORTSDIR}/devel/py-lockfile
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
 USE_RC_SUBR=	pyspamd
 
 LOCALSTATDIR?=	/var/db/spambayes
@@ -26,7 +29,9 @@ CACHEDIR?=	${LOCALSTATDIR}/cache
 
 PLIST_SUB+=	LOCALSTATDIR=${LOCALSTATDIR} \
 		DBDIR=${DBDIR} \
-		CACHEDIR=${CACHEDIR}
+		CACHEDIR=${CACHEDIR} \
+		RESETPREFIX=${PREFIX}
+
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PORTDOCS=	CHANGELOG.txt \
@@ -40,7 +45,6 @@ PORTDOCS=	CHANGELOG.txt \
 		utilities/ \
 		contrib/
 
-NO_STAGE=	yes
 post-extract:
 	@${CHMOD} -Rf u+w ${WRKSRC}
 
@@ -63,20 +67,24 @@ post-patch:
 		'/unknown_cache/s|pop3proxy-unknown-cache|${CACHEDIR}/pop3proxy-unknown-cache|' \
 		${WRKSRC}/spambayes/Options.py
 
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	@if [ -f ${WRKSRC}/${file} ]; then \
-		${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR} ; \
+		${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR} ; \
 	fi
 .endfor
-	@${MKDIR} ${DOCSDIR}/contrib
-	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${DOCSDIR}/contrib
-	@${MKDIR} ${DOCSDIR}/utilities
-	@${INSTALL_DATA} ${WRKSRC}/utilities/* ${DOCSDIR}/utilities
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/utilities
+	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${STAGEDIR}${DOCSDIR}/contrib
+	@${INSTALL_DATA} ${WRKSRC}/utilities/* ${STAGEDIR}${DOCSDIR}/utilities
 .endif
-	@${MKDIR} ${CACHEDIR}
-	@${MKDIR} ${DBDIR}
+	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-spam-cache
+	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-ham-cache
+	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-unknown-cache
+	@${MKDIR} ${STAGEDIR}${DBDIR}
 
 .include <bsd.port.mk>
