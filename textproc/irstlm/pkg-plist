@@ -48,4 +48,3 @@ include/shiftlm.h
 include/timer.h
 include/util.h
 lib/libirstlm.a
-lib/libirstlm.la
