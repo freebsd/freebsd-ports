@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.rsu.ru/~bushman/lookupd/ldap/downloads/
 MAINTAINER=	bushman@rsu.ru
 COMMENT=	The LDAP plugin for the lookupd daemon
 
+DEPRECATED=	Fails to build with new utmpx
+EXPIRATION_DATE=	2014-07-23
+
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lookupd:${PORTSDIR}/sysutils/lookupd
 
 USE_LDCONFIG=	yes
