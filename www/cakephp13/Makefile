@@ -26,7 +26,7 @@ NO_BUILD=	yes
 USES=		gettext
 USE_PHP=	session
 WANT_PHP_WEB=	yes
-DEFAULT_PHP_VER=5
+DEFAULT_VERSIONS=	php=5
 
 CAKE_CONF_FILES=	\
 		app/config/acl.ini.php \
@@ -44,7 +44,6 @@ MEMCACHE_DESC=	Memcached caching engine client
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WITH_PHP_CGI?=	/cgi-bin/php
@@ -138,49 +137,52 @@ post-patch:
 # Rename config files so we don't overwrite those in an existing installation
 	@for i in ${CAKE_CONF_FILES}; do \
 		if [ -f ${WRKSRC}/$$i ]; then \
-			${MV} ${WRKSRC}/$$i ${WRKSRC}/$$i.default; \
+			${MV} ${WRKSRC}/$$i ${WRKSRC}/$$i.sample; \
 		fi \
 	done
+	${MV} ${WRKSRC}/app/config/database.php.default \
+		${WRKSRC}/app/config/database.php.sample
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		".htaccess app cake index.php vendors" ${WWWDIR}
+		".htaccess app cake index.php vendors" ${STAGEDIR}${WWWDIR}
 
 .if ! ${PORT_OPTIONS:MPROD}
 # If installed in development mode, get rid of .htaccess files,
 # as noted by:
 # http://book.cakephp.org/view/42/The-Configuration-Class#CakePHP-Core-Configuration-Variables-44
-	@${FIND} ${WWWDIR} -type f -name .htaccess -exec ${RM} {} \;
+	@${FIND} ${STAGEDIR}${WWWDIR} -type f -name .htaccess -exec ${RM} {} \;
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -type f -name .htaccess -exec ${RM} {} \;' >> ${TMPPLIST}
 .endif
 
 # Get rid of the empty placeholder files
-	@${FIND} ${WWWDIR} -type f -name empty -size 0 -exec ${RM} {} \;
+	@${FIND} ${STAGEDIR}${WWWDIR} -type f -name empty -size 0 -exec ${RM} {} \;
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -type f -name empty -size 0 -exec ${RM} {} \;' >> ${TMPPLIST}
 
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 # Fix the permissions of the Cake console script
-	@${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}
+	@${CHMOD} 755 ${STAGEDIR}${WWWDIR}/${CAKE_CONSOLE}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
 
 post-install:
 	@for i in ${CAKE_CONF_FILES}; do \
 		if [ ! -f ${WWWDIR}/$$i -a -f ${WRKSRC}/$$i.default ]; then \
-			${INSTALL_DATA} ${WRKSRC}/$$i.default ${WWWDIR}/$$i; \
+			${INSTALL_DATA} ${WRKSRC}/$$i.default ${STAGEDIR}${WWWDIR}/$$i; \
 		fi \
 	done
 .if ${PORT_OPTIONS:MAP}
-	@if [ -d "${CONFDIR}" ]; then \
-	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/cakephp.conf; \
+	@${MKDIR} ${STAGEDIR}${CONFDIR}
+	@if [ -d "${STAGEDIR}${CONFDIR}" ]; then \
+	  ${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}/cakephp.conf; \
 	else \
 	  ${ECHO_MSG} "" ; \
 	  ${ECHO_MSG} "Please check your Apache 2.x installation -" ; \
@@ -190,11 +192,8 @@ post-install:
 	  ${FALSE} ; \
 	fi
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .if ${CGI_EXT} == "-cgi"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"Your CakePHP installation was configured to use the PHP CGI binary."
