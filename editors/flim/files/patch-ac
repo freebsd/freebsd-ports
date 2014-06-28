@@ -1,9 +1,11 @@
---- mime-en.texi.orig	Fri Feb 15 14:12:42 2002
-+++ mime-en.texi	Mon Aug 12 19:29:19 2002
-@@ -2,6 +2,10 @@
+--- ./mime-en.texi.orig	2002-10-08 15:50:05.000000000 +0000
++++ ./mime-en.texi	2014-06-28 06:58:47.000000000 +0000
+@@ -1,7 +1,11 @@
+ \input texinfo.tex
  @c Generated automatically from mime-en.sgml by sinfo 3.7.
  @setfilename mime-en.info
- @settitle{FLIM 1.14 Reference Manual about MIME Features}
+-@settitle{FLIM 1.14 Reference Manual about MIME Features}
++@settitle FLIM 1.14 Reference Manual about MIME Features
 +@dircategory The Emacs editor and associated tools 
 +@direntry 
 +* mime-en: (mime-en).		MIME features for GNU Emacs. (English)
