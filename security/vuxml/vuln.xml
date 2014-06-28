@@ -57,6 +57,60 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="17dfd984-feba-11e3-b938-5404a68ad561">
+    <topic>mencoder -- potential buffer overrun when processing malicious lzo compressed input</topic>
+    <affects>
+      <package>
+	<name>mencoder</name>
+	<range><lt>1.1.r20140418_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Niedermayer and Luca Barbato report in upstream ffmpeg:</p>
+	<blockquote>
+	  <p>avutil/lzo: Fix integer overflow</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=ccda51b14c0fcae2fad73a24872dce75a7964996</url>
+      <url>http://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=d6af26c55c1ea30f85a7d9edbc373f53be1743ee</url>
+      <cvename>CVE-2014-4610</cvename>
+    </references>
+    <dates>
+      <discovery>2014-06-24</discovery>
+      <entry>2014-06-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9ab3a22c-feb8-11e3-b938-5404a68ad561">
+    <topic>mplayer -- potential buffer overrun when processing malicious lzo compressed input</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<range><lt>1.1.r20140418_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Niedermayer and Luca Barbato report in upstream ffmpeg:</p>
+	<blockquote>
+	  <p>avutil/lzo: Fix integer overflow</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=ccda51b14c0fcae2fad73a24872dce75a7964996</url>
+      <url>http://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=d6af26c55c1ea30f85a7d9edbc373f53be1743ee</url>
+      <cvename>CVE-2014-4610</cvename>
+    </references>
+    <dates>
+      <discovery>2014-06-24</discovery>
+      <entry>2014-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1f5e12a-fd5a-11e3-a108-080027ef73ec">
     <topic>LZO -- potential buffer overrun when processing malicious input data</topic>
     <affects>
