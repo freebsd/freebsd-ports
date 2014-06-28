@@ -49,13 +49,13 @@ pre-install:
 	@${RM} -f ${PLIST}
 
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}
 	@cd ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/ideintf/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/ideintf/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}
 	@cd ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/synedit/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/synedit/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}
 	@cd ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%/${LCL_INTERFACE}/|' >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}
 
 .if ${PKGNAMESUFFIX} != "-lcl-units"
 	@${ECHO_CMD} "@dirrm %%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}

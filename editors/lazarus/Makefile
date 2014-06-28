@@ -3,7 +3,7 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	1.2.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|}
@@ -63,7 +63,7 @@ RUN_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
 
 USES+=	gettext iconv
 
-MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
+MAN1S=		lazarus-ide.1 lazbuild.1 startlazarus.1
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR="${PORTSDIR}"
 
@@ -136,6 +136,9 @@ pre-install:
 .	for FILE in bin/lazarus bin/lazbuild
 		@${ECHO_CMD} ${FILE} >> ${PLIST}
 .	endfor
+.	for m in ${MAN1S}
+		@${ECHO_CMD} man/man1/${m}.gz >> ${PLIST}
+.	endfor
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "%%DATADIR%%/docs" >> ${PLIST}
@@ -177,23 +180,23 @@ do-install:
 	@cd ${WRKDIR}/docs && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
-	@${LN} -s ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DATADIR}/docs
+	@${LN} -s ${DOCSDIR} ${STAGEDIR}${DATADIR}/docs
 .endif
 
 .if !defined(NOPORTEXAMPLES)
 	@cd ${WRKDIR}/examples && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${EXAMPLESDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${EXAMPLESDIR}/{}" \;
-	@${LN} -s ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
+	@${LN} -s ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
 .endif
 
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA}	${WRKSRC}/Makefile* ${WRKSRC}/fpmake*  ${STAGEDIR}${DATADIR}
-.for FILE in ${MAN1}
+.for FILE in ${MAN1S}
 	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
-	${LN} -s ${STAGEDIR}${DATADIR}/lazbuild ${STAGEDIR}${PREFIX}/bin/lazbuild
+	${LN} -s ${DATADIR}/lazbuild ${STAGEDIR}${PREFIX}/bin/lazbuild
 
 .else
 .include "${MASTERDIR}/Makefile.common"
