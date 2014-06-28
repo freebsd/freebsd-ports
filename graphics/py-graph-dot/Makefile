@@ -3,6 +3,7 @@
 
 PORTNAME=	graph-dot
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +16,20 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydot>=0:${PORTSDIR}/graphics/py-pydot \
 		${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:${PORTSDIR}/graphics/py-graph-core
 
 PROJECTHOST=	python-graph
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	python_graph_dot
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
+# post-stage and add-plist-post should not act as reference on how to fix
+# egg-based conflicts.
+# https://code.google.com/p/python-graph/issues/detail?id=121 contains the
+# report for this issue.
+post-stage:
+.for suffix in py pyc pyo
+	rm ${STAGEDIR}${PYTHON_SITELIBDIR}/pygraph/readwrite/__init__.${suffix}
+.endfor
+
+add-plist-post:
+	@${REINPLACE_CMD} -e "/readwrite\/__init__.py/d" ${TMPPLIST}
+	
 .include <bsd.port.mk>
