@@ -13,7 +13,7 @@ you update your ports collection, before attempting any port upgrades.
   changed to /var/run/amavis/.  Users will have to adjust path to the
   milter socket.
 
-20140427:
+20140627:
   AFFECTS: users of editors/emacs21 and editors/emacs22
   AUTHOR: ashish@FreeBSD.org
 
