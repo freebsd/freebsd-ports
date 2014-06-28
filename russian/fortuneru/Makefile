@@ -16,11 +16,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 STRCMD=		/usr/games/strfile
 
-NO_STAGE=	yes
 do-install:
 	@${SETENV} STRCMD=${STRCMD} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${MKDIR} ${PREFIX}/share/games/fortune/rus
-	${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/share/games/fortune/rus
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune/rus
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/games/fortune/rus
 
 pre-install:
 .if !exists(${STRCMD})
@@ -29,7 +28,7 @@ pre-install:
 .endif
 
 post-install:
-	@for fortune in ${PREFIX}/share/games/fortune/rus/* ; do \
+	@for fortune in ${STAGEDIR}${PREFIX}/share/games/fortune/rus/* ; do \
 		${STRCMD} $$fortune >/dev/null 2>/dev/null ; \
 		done
 	@${ECHO_MSG} ""
