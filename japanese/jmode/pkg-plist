@@ -1,4 +1,4 @@
 bin/jmode
-share/jmode/jmode-default.conf
-share/jmode/jmode-kana.conf
-@dirrm share/jmode
+%%DATADIR%%/jmode-default.conf
+%%DATADIR%%/jmode-kana.conf
+@dirrm %%DATADIR%%
