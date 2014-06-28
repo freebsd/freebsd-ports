@@ -13,7 +13,6 @@ info/wl-ja.info
 %%WL_LISPDIR%%/acap.el
 %%WL_LISPDIR%%/acap.elc
 %%WL_LISPDIR%%/bbdb-wl.el
-@unexec rm -f %D/%%WL_LISPDIR%%/bbdb-wl.elc
 %%WL_LISPDIR%%/elmo-access.el
 %%WL_LISPDIR%%/elmo-access.elc
 %%WL_LISPDIR%%/elmo-archive.el
@@ -87,7 +86,7 @@ info/wl-ja.info
 %%WL_LISPDIR%%/elsp-spamoracle.el
 %%WL_LISPDIR%%/elsp-spamoracle.elc
 %%WL_LISPDIR%%/im-wl.el
-@unexec rm -f %D/%%WL_LISPDIR%%/im-wl.elc
+%%WL_LISPDIR%%/im-wl.elc
 %%WL_LISPDIR%%/modb-entity.el
 %%WL_LISPDIR%%/modb-entity.elc
 %%WL_LISPDIR%%/modb-legacy.el
