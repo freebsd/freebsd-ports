@@ -225,11 +225,16 @@ do-fmtutil-$F:
 		done
 	@${LOCALBASE}/bin/mktexlsr ${TEXMFVARDIR:S,^,${PREFIX}/,}
 .else
+	@exec < ${LOCALBASE}/${FMTUTIL_CNF} && \
+		(${GREP} -v "\#$F\$$"; \
+			${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}}) \
+			> ${WRKDIR}/fmtutil.cnf
 	@${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}} | \
 		while read format dum; do \
-		${SETENV} PATH=${PATH}:${LOCALBASE}/bin \
+		${SETENV} PATH=${PATH}:${LOCALBASE}/bin:${STAGEDIR}/${PREFIX}/bin \
 			TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
 			${LOCALBASE}/bin/fmtutil-sys --byfmt $$format \
+			--cnffile ${WRKDIR}/fmtutil.cnf \
 			--fmtdir ${STAGEDIR}${PREFIX}/${TEXMFVARDIR}/web2c; \
 		done
 .endif
@@ -281,7 +286,7 @@ TEX_FORMAT_ALEPH_FILES=	\
 TEX_FORMAT_ALEPH_DIRS=	\
 	${TEXMFVARDIR}/web2c/aleph
 post-install-aleph:
-	${LN} -sf aleph ${PREFIX}/bin/lamed
+	${LN} -sf aleph ${STAGEDIR}${PREFIX}/bin/lamed
 
 TEX_FORMAT_AMSTEX?= \
 	"amstex pdftex - -translate-file=cp227.tcx *amstex.ini"
