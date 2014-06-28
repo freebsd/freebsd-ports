@@ -1,12 +1,17 @@
---- Makefile.in.orig	2012-03-07 00:42:29.000000000 +0900
-+++ Makefile.in	2012-03-07 00:42:39.000000000 +0900
-@@ -92,14 +92,6 @@
+--- Makefile.in.orig	2014-06-28 14:59:34.000000000 +0900
++++ Makefile.in	2014-06-28 15:02:17.000000000 +0900
+@@ -99,19 +99,6 @@
  	      $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/s$$p";\
  	    fi;\
  	  done;\
 -	  for p in `cd shimbun && echo *.el`; do\
 -	    echo "$(INSTALL_DATA) shimbun/$$p \"$(DESTDIR)$(lispdir)/$$p\"";\
 -	    $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/$$p";\
+-	    if test $(COMPRESS_INSTALL) = yes -a -n "$(GZIP_PROG)"\
+-		-a -f "shimbun/$$p"c; then\
+-		rm -f "$(DESTDIR)$(lispdir)/$$p".gz;\
+-		$(GZIP_PROG) -9n "$(DESTDIR)$(lispdir)/$$p";\
+-	    fi;\
 -	  done;\
 -	  for p in `cd shimbun && echo *.elc`; do\
 -	    echo "$(INSTALL_DATA) shimbun/$$p \"$(DESTDIR)$(lispdir)/$$p\"";\
