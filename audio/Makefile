@@ -617,6 +617,7 @@
     SUBDIR += py-xmms2
     SUBDIR += pytone
     SUBDIR += qjackctl
+    SUBDIR += qmidinet
     SUBDIR += qmpdclient
     SUBDIR += qsampler
     SUBDIR += qsynth
