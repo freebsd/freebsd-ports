@@ -251,6 +251,7 @@
     SUBDIR += cocaine-core
     SUBDIR += coccinelle
     SUBDIR += codeblocks
+    SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += colorgcc
     SUBDIR += colormake
