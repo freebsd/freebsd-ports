@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.21.81
-PORTREVISION=	1
+PORTVERSION=	3.21.83
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
 
 LICENSE=	GPLv3
@@ -21,13 +20,13 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate\
 		libboost_system.so:${PORTSDIR}/devel/boost-libs\
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
-USE_CXXSTD=	gnu++0x
 
+USE_CXXSTD=	gnu++0x
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig compiler:c++11-lib
+USES=		gmake pkgconfig compiler:c++11-lib perl5 shebangfix
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config" \
 		    EXTRA_LIBS="-lexecinfo"
-MAN1=		fldigi.1 fldigi-shell.1
+SHEBANG_FILES=	scripts/fldigi-shell
 
 OPTIONS_DEFINE=	NATIVE_OPT FLARQ OSS SNDFILE PORTAUDIO PULSEAUDIO HAMLIB NLS
 
@@ -67,7 +66,7 @@ CONFIGURE_ARGS+=--disable-oss
 .endif
 .if ${PORT_OPTIONS:MSNDFILE}
 CONFIGURE_ARGS+=--with-sndfile
-LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 .else
 CONFIGURE_ARGS+=--without-sndfile
 .endif
@@ -80,13 +79,13 @@ CONFIGURE_ARGS+=--without-portaudio
 .endif
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 CONFIGURE_ARGS+=--with-pulseaudio
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=--without-pulseaudio
 .endif
 .if ${PORT_OPTIONS:MHAMLIB}
 CONFIGURE_ARGS+=--with-hamlib
-LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
+LIB_DEPENDS+=	libhamlib.so:${PORTSDIR}/comms/hamlib
 .else
 CONFIGURE_ARGS+=--without-hamlib
 .endif
@@ -115,10 +114,8 @@ post-configure:
 	${RM} ${WRKSRC}/doc/*.1
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/guide.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>
