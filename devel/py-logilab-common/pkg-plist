@@ -84,9 +84,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/registry.py
 %%PYTHON_SITELIBDIR%%/logilab/common/registry.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/registry.pyo
-%%PYTHON_SITELIBDIR%%/logilab/common/setup.py
-%%PYTHON_SITELIBDIR%%/logilab/common/setup.pyc
-%%PYTHON_SITELIBDIR%%/logilab/common/setup.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.pyo
