@@ -9,8 +9,10 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	MySQL and SQLite Database Visualisation Tool
 
+LICENSE=	GPLv3
+
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PHP=	yes
 WANT_PHP_CLI=	yes
 
@@ -20,19 +22,14 @@ PORTEXAMPLES=	eg.png eg.sql sqlite-eg.sql
 
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/php|${LOCALBASE}/bin/php|' \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
