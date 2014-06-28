@@ -12,6 +12,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 
+USES=		makeinfo
 USE_EMACS=	yes
 
 OPTIONS_DEFINE=	CONTRIB
