@@ -12,6 +12,8 @@ DISTNAME=	IMDbPY-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Retrieve and manage the data of the IMDb movie database
 
+BROKEN=		Depends on conflicting py-sqlalchemy and py-sqlalchemy06
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.6.1:${PORTSDIR}/databases/py-sqlalchemy-migrate \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0:${PORTSDIR}/databases/py-sqlalchemy06 \
