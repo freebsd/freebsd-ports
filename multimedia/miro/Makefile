@@ -35,19 +35,15 @@ INSTALL_WRKSRC=	${WRKSRC}/linux
 
 USE_GNOME=	gconf2 gtk20
 USE_GSTREAMER=	python gconf
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig desktop-file-utils shared-mime-info
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_EGGINFO=	yes
 
-MANCOMPRESSED=	yes
-MAN1=		miro.1 miro.real.1
-
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .SILENT:
