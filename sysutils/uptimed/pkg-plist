@@ -2,9 +2,9 @@
 bin/uprecords
 etc/uptimed.conf-dist
 lib/libuptimed.a
-lib/libuptimed.la
 lib/libuptimed.so
 lib/libuptimed.so.0
+lib/libuptimed.so.0.0.0
 man/man1/uprecords.1.gz
 man/man8/uptimed.8.gz
 sbin/uptimed

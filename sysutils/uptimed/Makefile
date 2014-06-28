@@ -3,6 +3,7 @@
 
 PORTNAME=	uptimed
 PORTVERSION=	0.3.17
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/uptimed/releases/ \
 		http://www.predatorlabs.net/dl/
@@ -12,8 +13,7 @@ COMMENT=	Uptime daemon
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake libtool tar:bzip2
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--copy --force
 ACLOCAL_ARGS=	# empty
