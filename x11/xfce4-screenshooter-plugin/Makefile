@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/xfce4-screenshooter/${PORTVERSION:R}
@@ -13,14 +13,16 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Desktop Screenshot plugin for Xfce
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libmenu libutil panel
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake libtool tar:bzip2
 
 OPTIONS_DEFINE=	NLS
 

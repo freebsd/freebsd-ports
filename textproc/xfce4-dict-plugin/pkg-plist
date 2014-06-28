@@ -1,5 +1,4 @@
 bin/xfce4-dict
-lib/xfce4/panel/plugins/libxfce4dict.la
 lib/xfce4/panel/plugins/libxfce4dict.so
 man/man1/xfce4-dict.1.gz
 share/applications/xfce4-dict.desktop

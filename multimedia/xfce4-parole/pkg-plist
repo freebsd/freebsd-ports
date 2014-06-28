@@ -7,9 +7,7 @@ include/parole/parole-provider-player.h
 include/parole/parole-provider-plugin.h
 include/parole/parole-stream.h
 include/parole/parole.h
-lib/parole-0/parole-notify.la
 lib/parole-0/parole-notify.so
-lib/parole-0/tray-icon.la
 lib/parole-0/tray-icon.so
 share/applications/parole.desktop
 share/icons/hicolor/16x16/apps/parole-extension.png
