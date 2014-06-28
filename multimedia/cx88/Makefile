@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	cx88
-PORTVERSION=	1.4.9
-CATEGORIES=	multimedia kld
+PORTVERSION=	1.4.10
+CATEGORIES=	multimedia
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
 MAINTAINER=	jason.harmening@gmail.com
 COMMENT=	Drivers for Conexant CX23880/1/2/3/5/7/8-based TV/radio capture cards
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
+LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c
 BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml \
-		libtuner>=1.1.0:${PORTSDIR}/multimedia/libtuner
+		libtuner>=1.1.2:${PORTSDIR}/multimedia/libtuner
 
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
-MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/include/libtuner KMODDIR=${KMODDIR}
+MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/include/libtuner KMODDIR=${KMODDIR} PREFIX=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
-SSP_UNSAFE=	kernel module does not support ssp
+USES=		kmod pkgconfig
 
 OPTIONS_DEFINE=	DEBUG LINUX_COMPAT HAL
 
@@ -28,11 +29,10 @@ HAL_DESC=		Register Linux DVB devices with HAL
 
 OPTIONS_DEFAULT=	LINUX_COMPAT
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
-MAKE_ARGS+=	DIAGNOSTIC=0x7f
+MAKE_ARGS+=	DIAGNOSTIC=0x7f -DDEBUG
 .endif
 
 .if ${PORT_OPTIONS:MLINUX_COMPAT}
@@ -41,7 +41,7 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 MAKE_ARGS+=	-D WITH_LINUX_COMPAT
 .if ${PORT_OPTIONS:MHAL}
 LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal \
-		dbus-1:${PORTSDIR}/devel/dbus
+		libdbus-1.so:${PORTSDIR}/devel/dbus
 MAKE_ARGS+=	-D WITH_HAL
 .endif
 .endif
@@ -52,8 +52,7 @@ MAKE_ARGS+=	DEFAULT_XML_CONFIG="${EXAMPLESDIR}/cx88.xml.sample"
 IGNORE=	requires kernel support for DRIVER_MODULE_ORDERED macro (FreeBSD 8.3+, FreeBSD 9.0+)
 .endif
 
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		requires kernel source files
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|install cx88 |install -s cx88 |g' ${WRKSRC}/client/Makefile
 
 .include <bsd.port.mk>

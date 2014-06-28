@@ -1,7 +1,7 @@
 bin/cx88
 %%EXAMPLESDIR%%/cx88.xml.sample
-%%EXAMPLESDIR%%/remote.cpp
 %%EXAMPLESDIR%%/cx88_audio_enable.cpp
+%%EXAMPLESDIR%%/remote.cpp
 %%EXAMPLESDIR%%/cx88_mpeg_client.cpp
 %%EXAMPLESDIR%%/hd3k_analog_kbuf.cpp
 %%EXAMPLESDIR%%/tuner_config
