@@ -17,6 +17,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user-friendly graphical front end for the man system
 
+DEPRECATED=	Depends on expiring ghostview
+EXPIRATION_DATE=	2014-07-31
+
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview	\
 		man2html:${PORTSDIR}/textproc/man2html
