@@ -3,39 +3,46 @@
 
 PORTNAME=	middleman
 PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/middle-man/Source/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust proxy server
 
+OPTIONS_DEFINE=	SYSLOG DEBUG MTIME
+OPTIONS_DEFAULT=
+
+SYSLOG_DESC=	Enable syslog support
+DEBUG_DESC=		Enable debugging support
+MTIME_DESC=		Enable mtime support
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USES=		gmake
-MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 MAN8=		mman.8
 
-.if defined(WITH_SYSLOG)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--enable-syslog
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_MTIME)
+.if ${PORT_OPTIONS:MMTIME}
 CONFIGURE_ARGS+=	--enable-mtime
 .endif
 
 MMAN_CACHE=	/var/cache/mman
 PLIST_SUB+=	MMAN_CACHE=${MMAN_CACHE}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/usr/bin/mman|${PREFIX}/bin/mman|g ; \
@@ -44,17 +51,15 @@ post-patch:
 		${WRKSRC}/man/mman.8
 
 do-install:
-	@${MKDIR} ${MMAN_CACHE}
-	${INSTALL_MAN} ${WRKSRC}/man/mman.8 ${MANPREFIX}/man/man8
-	${INSTALL_PROGRAM} ${WRKSRC}/mman ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${MMAN_CACHE}
+	${INSTALL_MAN} ${WRKSRC}/man/mman.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/mman ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config.xml \
-		${PREFIX}/etc/mman.xml.dist
+		${STAGEDIR}${PREFIX}/etc/mman.xml.dist
 	${INSTALL_DATA} ${WRKSRC}/scripts/mman.init \
-		${PREFIX}/etc/rc.d/mman.sh.sample
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/scripts/filter.pl ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
-.endif
+		${STAGEDIR}${PREFIX}/etc/rc.d/mman.sh.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/scripts/filter.pl ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
