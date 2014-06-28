@@ -2,14 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	md5deep
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Program to compute various message digests recursively
 
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+GH_ACCOUNT=	jessek
+GH_PROJECT=	hashdeep
+GH_TAGNAME=	cd2ed7416685a5e83eb10bb659d6e9bec01244ae
+GH_COMMIT=	cd2ed74
+
+USE_GITHUB=	yes
+USE_AUTOTOOLS=	autoconf:env autoheader:env automake:env aclocal:env
 USES=		gmake
+GNU_CONFIGURE=	yes
+
+pre-configure:
+	(cd ${WRKSRC}; ${SH} bootstrap.sh)
 
 .include <bsd.port.mk>
