@@ -75,4 +75,5 @@ man/man5/fonts-conf.5.gz
 @dirrmtry etc/fonts/conf.d
 @dirrmtry etc/fonts/conf.avail
 @dirrmtry etc/fonts
-@unexec rm -rf /var/db/fontconfig 2>/dev/null || true
+@unexec rmdir /var/db/fontconfig/* 2>/dev/null || true
+@dirrmtry /var/db/fontconfig
