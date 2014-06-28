@@ -13,14 +13,14 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Calendar application for the Xfce Desktop
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gettext desktop-file-utils gmake
-USE_BZIP2=	yes
+USES=		pkgconfig gettext desktop-file-utils gmake tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu panel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
