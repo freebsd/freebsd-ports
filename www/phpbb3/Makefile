@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]* \
 		phpbb-[0-2]*
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PHP=	yes
 
 # The phpBB3 port supports a number of variables that may be tweaked at build
@@ -35,7 +35,6 @@ SUB_LIST=	PHPBBURL="${PHPBBURL}" \
 
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-NO_STAGE=	yes
 # Set custom variables:
 #
 PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
@@ -55,21 +54,15 @@ pre-everything::
 .endif
 
 do-install:
-	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${PHPBBDIR} "! -name config.php"
-	@ [ -f ${PREFIX}/${PHPBBDIR}/config.php ] || ${TOUCH} ${PREFIX}/${PHPBBDIR}/config.php
-	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPBBDIR}
-	@ ${CHMOD} -R 0755 ${PREFIX}/${PHPBBDIR}
+	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${PHPBBDIR} "! -name config.php"
+	@ ${TOUCH} ${STAGEDIR}${PREFIX}/${PHPBBDIR}/config.php.sample
+	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PHPBBDIR}
+	@ ${CHMOD} -R 0755 ${STAGEDIR}${PREFIX}/${PHPBBDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${PHPBBDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-
-.if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
-.endif
-.endif
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@ cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
