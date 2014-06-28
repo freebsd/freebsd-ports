@@ -10,6 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yahoo Messenger Client using GTK
 
+BROKEN=		Fails to configure
+DEPRECATED=	Broken, unmaintained, unstaged, gtk12, i386 only
+EXPIRATION_DATE=	2014-07-28
+
 USE_GNOME=	gtk12
 USES=		bison
 GNU_CONFIGURE=	yes
