@@ -11,6 +11,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/uim-el/uim.el
 %%PORTDOCS%%%%DOCSDIR_JA%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%EMACS_PACKAGESDIR%%/lisp/uim-el
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EMACS_PACKAGESDIR%%/lisp/uim-el
+@dirrmtry %%EMACS_PACKAGESDIR%%/lisp
+@dirrmtry %%EMACS_PACKAGESDIR%%
