@@ -14,7 +14,7 @@ COMMENT=	Emacs Code Browser
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake makeinfo
 USE_EMACS=	yes
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
