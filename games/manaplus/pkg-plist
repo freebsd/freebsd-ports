@@ -143,6 +143,8 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/graphics/gui/world.xml
 %%DATADIR%%/data/graphics/images/error.png
 %%DATADIR%%/data/graphics/images/login_wallpaper.png
+%%DATADIR%%/data/graphics/shaders/simple_frag.glsl
+%%DATADIR%%/data/graphics/shaders/simple_vertex.glsl
 %%DATADIR%%/data/graphics/sprites/arrow_down.png
 %%DATADIR%%/data/graphics/sprites/arrow_left.png
 %%DATADIR%%/data/graphics/sprites/arrow_right.png
@@ -578,6 +580,7 @@ share/pixmaps/manaplus.png
 @dirrm %%DATADIR%%/data/help/tips
 @dirrm %%DATADIR%%/data/help
 @dirrm %%DATADIR%%/data/graphics/sprites
+@dirrm %%DATADIR%%/data/graphics/shaders
 @dirrm %%DATADIR%%/data/graphics/images
 @dirrm %%DATADIR%%/data/graphics/gui
 @dirrm %%DATADIR%%/data/graphics/flags
