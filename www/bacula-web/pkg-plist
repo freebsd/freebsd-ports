@@ -1,4 +1,4 @@
-etc/bacula-web.conf.sample
+@sample etc/bacula-web.conf.sample
 www/bacula-web/CONTACT
 www/bacula-web/COPYING
 www/bacula-web/ChangeLog
@@ -221,3 +221,5 @@ www/bacula-web/tsmarty2c.php
 @dirrm www/bacula-web/external_packages/phplot
 @dirrm www/bacula-web/external_packages
 @dirrm www/bacula-web
+@unexec rmdir "/var/bacula-web/templates_c" >/dev/null 2>&1 || :
+@unexec rmdir "/var/bacula-web" >/dev/null 2>&1 || :

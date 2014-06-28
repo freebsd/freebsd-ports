@@ -22,7 +22,6 @@ OPTIONS_DEFAULT=	PGSQL
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -39,17 +38,15 @@ USE_PHP+=		mysql
 
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/www/bacula-web"
-	${MKDIR} ${PREFIX}/www/bacula-web
-	${CP} -R ${WRKSRC}/bacula-web/* ${PREFIX}/www/bacula-web
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/bacula-web
-	if [ -f ${PREFIX}/www/bacula-web/configs/bacula.conf ]; then \
-		${CP} ${PREFIX}/www/bacula-web/configs/bacula.conf ${PREFIX}/etc/bacula-web.conf.sample; \
-		${RM} -rf ${PREFIX}/www/bacula-web/configs; \
-	fi
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/bacula-web
+	${CP} -R ${WRKSRC}/bacula-web/* ${STAGEDIR}${PREFIX}/www/bacula-web
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/www/bacula-web
+	${MV} ${STAGEDIR}${PREFIX}/www/bacula-web/configs/bacula.conf ${STAGEDIR}${PREFIX}/etc/bacula-web.conf.sample; \
+	${RM} -rf ${STAGEDIR}${PREFIX}/www/bacula-web/configs; \
 
 	if [ ! -f /var/bacula-web/templates_c ]; then \
-		${MKDIR} /var/bacula-web/templates_c; \
-		${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/bacula-web/templates_c; \
+		${MKDIR} ${STAGEDIR}/var/bacula-web/templates_c; \
+		${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/var/bacula-web/templates_c; \
 	fi
 
 post-install:
