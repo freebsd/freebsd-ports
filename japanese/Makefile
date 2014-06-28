@@ -168,6 +168,7 @@
     SUBDIR += migemo
     SUBDIR += migemo-emacs23
     SUBDIR += migemo-xemacs-devel-mule
+    SUBDIR += migemo.el
     SUBDIR += mikachan-ttfonts
     SUBDIR += mime_pls
     SUBDIR += ming
