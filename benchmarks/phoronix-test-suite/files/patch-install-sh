@@ -1,6 +1,6 @@
---- install-sh.orig	2013-05-15 22:44:54.000000000 +0200
-+++ install-sh	2013-07-31 00:22:56.749475042 +0200
-@@ -47,19 +47,20 @@
+--- install-sh.orig	2014-04-02 04:01:50.000000000 +0200
++++ install-sh	2014-06-29 13:45:13.466462663 +0200
+@@ -47,16 +47,21 @@
  fi
  
  rm -rf $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
@@ -9,42 +9,44 @@
  mkdir -p $DESTDIR$INSTALL_PREFIX/bin/
 +if [ -z "$WITHOUT_X11" ]
 +then
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/appdata/
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/applications/
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/48x48/apps/
+-mkdir -p $DESTDIR$INSTALL_PREFIX/share/man/man1/
 +fi
- mkdir -p $DESTDIR$INSTALL_PREFIX/share/man/man1/
++mkdir -p $DESTDIR$INSTALL_PREFIX/man/man1/
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
--mkdir -p $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
 -mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/bash_completion.d/
- 
--cp CHANGE-LOG $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
--cp COPYING $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
--cp AUTHORS $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
 +if [ -n "$WITH_BASH_COMPLETIONS" ]
 +then
 +mkdir -p $DESTDIR$INSTALL_PREFIX/etc/bash_completion.d/
 +fi
  
- cd documentation/
- cp -r * $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
-@@ -67,10 +68,15 @@
+ cp CHANGE-LOG $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
+ cp COPYING $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
+@@ -67,12 +72,18 @@
+ cd ..
  rm -rf $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/man-pages/
  
- cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX/share/man/man1/
+-cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX/share/man/man1/
 -cp pts-core/static/bash_completion $DESTDIR$INSTALL_PREFIX/../etc/bash_completion.d/phoronix-test-suite
++cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX/man/man1/
 +if [ -n "$WITH_BASH_COMPLETIONS" ]
 +then
 +cp pts-core/static/bash_completion $DESTDIR$INSTALL_PREFIX/etc/bash_completion.d/phoronix-test-suite
 +fi
-+if [ -z "$WITHOUT_X11" ]; then
++if [ -z "$WITHOUT_X11" ]
++then
  cp pts-core/static/images/phoronix-test-suite.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/48x48/apps/phoronix-test-suite.png
  cp pts-core/static/phoronix-test-suite.desktop $DESTDIR$INSTALL_PREFIX/share/applications/
  cp pts-core/static/phoronix-test-suite-launcher.desktop $DESTDIR$INSTALL_PREFIX/share/applications/
+ cp pts-core/static/phoronix-test-suite.appdata.xml $DESTDIR$INSTALL_PREFIX/share/appdata/
 +fi
  
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts/etc/scripts/package-build-*
- cp -r pts-core/ $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
-@@ -81,12 +87,13 @@
+ cp -r pts-core $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
+@@ -83,12 +94,13 @@
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/images/openbenchmarking.png
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/images/%phoronix-test-suite.png
  
@@ -59,7 +61,7 @@
  # XDG MIME OpenBenchmarking support
  if [ "X$DESTDIR" = "X" ]
  then
-@@ -101,10 +108,10 @@
+@@ -103,10 +115,10 @@
  	cp pts-core/static/images/openbenchmarking.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
  
  fi
