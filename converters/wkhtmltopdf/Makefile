@@ -2,56 +2,56 @@
 # $FreeBSD$
 
 PORTNAME=	wkhtmltopdf
-PORTVERSION=	0.12.0
-PORTREVISION=	2
+PORTVERSION=	0.12.1
 CATEGORIES=	converters
-MASTER_SITES=	GH:wk \
-		http://github.com/${GH_ACCOUNT}/qt/archive/${WKQT_TAGNAME}.tar.gz?dummy=/:wkqt
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:wk \
-		wkhtmltopdf-qt-${PORTVERSION}.tar.gz:wkqt
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
+DISTNAME=	wkhtmltox-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	Convert HTML (or live webpages) to PDF or image files
+COMMENT=	Convert HTML (or live webpages) to PDF or image
 
 LICENSE=	LGPL3
 LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
-USE_GITHUB=		yes
-GH_ACCOUNT=		wkhtmltopdf
-GH_PROJECT=		wkhtmltopdf
-GH_COMMIT=		03c001d
-GH_TAGNAME=		0.12.0
-WKQT_TAGNAME=		wkhtmltopdf_0.12.0
+USE_BZIP2=	yes
 
-USES=			pkgconfig gmake perl5
+USES=			pkgconfig gmake perl5 iconv
 USE_XORG=		x11 xext xrender
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
 
-WRKSRC=		${WRKDIR}/qt-${WKQT_TAGNAME}
-INSTALL_WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+LIBVERSION=		0.12.0
 
-OPTIONS_DEFINE=	BUNDLED_LIBS
-BUNDLED_LIBS_DESC=	Use Qt-bundled jpeg, mng, png and tiff
+WRKSRC=			${WRKDIR}/wkhtmltox-${PORTVERSION}
+PATCH_WRKSRC=		${WRKSRC}/qt	
+CONFIGURE_WRKSRC=	${WRKSRC}/build/qt
+BUILD_WRKSRC=		${WRKSRC}/build/qt
+INSTALL_WRKSRC=		${WRKSRC}/build/app
 
-CONFIGURE_ARGS=	-prefix ${WRKDIR}/qt-wk \
-	-release -static -fast -exceptions -no-accessibility -no-stl \
-	-no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql -no-sql-sqlite \
-	-no-sql-sqlite2 -no-qt3support -xmlpatterns -no-phonon \
-	-no-phonon-backend -webkit -no-scripttools -no-mmx -no-3dnow -no-sse \
-	-no-sse2 -system-zlib \
-	-graphicssystem raster -opensource -confirm-license \
-	-nomake tools -nomake examples -nomake demos -nomake docs \
-	-nomake translations -no-opengl -no-dbus -no-multimedia -openssl \
-	-no-declarative -largefile -rpath -no-nis -no-cups -no-iconv -no-pch \
+CONFIGURE_SCRIPT=	../../qt/configure
+CONFIGURE_ARGS=	-prefix ${WRKSRC}/build/qt \
+	-opensource -confirm-license -fast -release -static \
+	-graphicssystem raster -webkit -exceptions -xmlpatterns -system-zlib \
+	-system-libpng -system-libjpeg -no-libmng -no-libtiff -no-stl \
+	-no-accessibility -no-qt3support -no-phonon -no-phonon-backend \
+	-no-opengl -no-declarative -no-script -no-scripttools \
+	-no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql \
+	-no-sql-sqlite -no-sql-sqlite2 -no-mmx -no-3dnow -no-sse -no-sse2 \
+	-no-multimedia -nomake demos -nomake docs -nomake examples \
+	-nomake tools -nomake tests -nomake translations -xrender -largefile \
+	-iconv -openssl -no-rpath -no-dbus -no-nis -no-cups -no-pch \
 	-no-gtkstyle -no-nas-sound -no-sm -no-xshape -no-xinerama -no-xcursor \
-	-no-xfixes -no-xrandr -no-mitshm -no-xinput -no-xkb -no-glib -no-openvg \
-	-no-opengl -no-xsync -no-audio-backend -no-sse3 -no-ssse3 -no-sse4.1 \
-	-no-sse4.2
+	-no-xfixes -no-xrandr -no-mitshm -no-xinput -no-xkb -no-glib \
+	-no-gstreamer -D ENABLE_VIDEO=0 -no-openvg -no-xsync \
+	-no-audio-backend -no-sse3 -no-ssse3 -no-sse4.1 -no-sse4.2 -no-avx \
+	-no-neon
 
 MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 
@@ -65,38 +65,27 @@ BROKEN=		fails to extract on FreeBSD 7.X
 BROKEN=		Does not link on powerpc
 .endif
 
-.if ${PORT_OPTIONS:MBUNDLED_LIBS}
-CONFIGURE_ARGS+=	-qt-libtiff -qt-libpng -qt-libmng -qt-libjpeg
-.else
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libmng.so:${PORTSDIR}/graphics/libmng \
-		libtiff.so:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=	-system-libtiff -system-libpng -system-libmng \
-			-system-libjpeg
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|/usr/X11R6/include|${LOCALBASE}/include/X11|g' \
 		-e 's|/usr/X11R6/lib|${LOCALBASE}/lib|g' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+		${PATCH_WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
-		${WRKSRC}/mkspecs/common/g++-base.conf
+		${PATCH_WRKSRC}/mkspecs/common/g++-base.conf
+	@${REINPLACE_CMD} -e "s|share/man|man|g" \
+		${WRKSRC}/src/image/image.pro \
+		${WRKSRC}/src/pdf/pdf.pro
+	@${MKDIR} ${WRKSRC}/build/app ${WRKSRC}/build/qt \
+		${WRKSRC}/build/wkhtmltox
 
 post-build:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
-		${MAKE_ARGS} ${INSTALL_TARGET} INSTALL_ROOT=
-
-	@cd ${INSTALL_WRKSRC} && ${WRKDIR}/qt-wk/bin/qmake && \
+	@cd ${WRKSRC}/build/app && ${SETENV} ${MAKE_ENV} \
+		../qt/bin/qmake ../../wkhtmltopdf.pro && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} \
 		${ALL_TARGET}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wkhtmltopdf \
-		${STAGEDIR}${PREFIX}/bin/wkhtmltoimage
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,21 +1,13 @@
 bin/wkhtmltopdf
 bin/wkhtmltoimage
-include/wkhtmltox/converter.hh
 include/wkhtmltox/dllbegin.inc
 include/wkhtmltox/dllend.inc
 include/wkhtmltox/image.h
-include/wkhtmltox/imageconverter.hh
-include/wkhtmltox/imagesettings.hh
-include/wkhtmltox/loadsettings.hh
-include/wkhtmltox/multipageloader.hh
 include/wkhtmltox/pdf.h
-include/wkhtmltox/pdfconverter.hh
-include/wkhtmltox/pdfsettings.hh
-include/wkhtmltox/settings.hh
-include/wkhtmltox/utilities.hh
-include/wkhtmltox/websettings.hh
 lib/libwkhtmltox.so
 lib/libwkhtmltox.so.0
 lib/libwkhtmltox.so.0.12
-lib/libwkhtmltox.so.0.12.0
+lib/libwkhtmltox.so.0.12.1
+man/man1/wkhtmltoimage.1.gz
+man/man1/wkhtmltopdf.1.gz
 @dirrm include/wkhtmltox
