@@ -54,6 +54,13 @@ AUTHOR: bapt@FreeBSD.org
 
   USE_DOS2UNIX is no longer supported, USES=dos2unix should be used instead
 
+20140525:
+AUTHOR: mat@FreeBSD.org
+
+  Add a USE_PERL5=fixpacklist to account for ports creating a .packlist file
+  referencing ${STAGEDIR} when not using USE_PERL5=configure or
+  USE_PERL5=modbuildtiny.
+
 20140505:
 AUTHOR: bapt@FreeBSD.org
 
