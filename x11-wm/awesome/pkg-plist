@@ -219,7 +219,6 @@ share/xsessions/awesome.desktop
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry etc/xdg/awesome
-@dirrmtry etc/xdg
 @dirrmtry man/de/man1
 @dirrmtry man/de/man5
 @dirrmtry man/de
