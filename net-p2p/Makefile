@@ -14,6 +14,7 @@
     SUBDIR += bnbt
     SUBDIR += btpd
     SUBDIR += btqueue
+    SUBDIR += btsync
     SUBDIR += cdonkey
     SUBDIR += cpuminer
     SUBDIR += createtorrent
