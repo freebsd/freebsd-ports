@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+logger="logger -t pgpool -p local0.info"
+psql=/usr/local/bin/psql
+
+/bin/sh <<EOF | ${logger} 2>&1
+
+$psql -t -c 'SELECT datname FROM pg_database WHERE NOT datistemplate AND datallowconn' template1 |
+while read i
+do
+ if [ "$i" != "" ];then
+   $psql -c "SELECT setval(oid, nextval(oid)) FROM pg_class WHERE relkind = 'S'" $i
+ fi
+done
+
+$psql -c 'select pg_switch_xlog()' template1
+
+EOF
