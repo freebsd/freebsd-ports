@@ -76,6 +76,13 @@ MAKEINFO=		makeinfo --no-split --no-validate
 MAKEINFO_EMACS=		${EMACS_CMD} -no-site-file -no-init-file -batch
 MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
+.if ! defined(EMACS_PACKAGESDIR) || ! defined(MANIFEST)
+INFO=		mime-ui-en
+.if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
+INFO+=		mime-ui-ja
+.endif
+.endif
+
 pre-build:
 .if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
 	@${MAKE} -C ${.CURDIR} pkg-el-copy
@@ -169,13 +176,11 @@ info-install:
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-en.info; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${LOCALBASE}/info ; \
-		install-info ${STAGEDIR}${LOCALBASE}/info/$${i} ${STAGEDIR}${LOCALBASE}/info/dir ; \
 	done)
 .if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-ja.info; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${LOCALBASE}/info ; \
-		install-info ${STAGEDIR}${LOCALBASE}/info/$${i} ${STAGEDIR}${LOCALBASE}/info/dir ; \
 	done)
 .endif
 
