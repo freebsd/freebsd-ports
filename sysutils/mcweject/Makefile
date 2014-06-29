@@ -2,15 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	mcweject
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Removable media eject
 
-CONFLICTS=	eject-[0-9]*
+LICENSE=	BSD3CLAUSE
+
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+
+CONFLICTS=	eject-[0-9]*
+
+USES=		tar:xz
+
+MAKE_ARGS+=	STAGEDIR=${STAGEDIR}
 
 .include <bsd.port.mk>

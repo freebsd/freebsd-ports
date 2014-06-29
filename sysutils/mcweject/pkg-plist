@@ -1,6 +1,4 @@
 man/man1/eject.1.gz
-@mode 4511
 sbin/eject
-@mode
 %%EXAMPLESDIR%%/eject.allow
 @dirrmtry %%EXAMPLESDIR%%
