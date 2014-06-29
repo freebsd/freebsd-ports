@@ -1,4 +1,2 @@
-SHA256 (wkhtmltopdf-0.12.0.tar.gz) = 47b35536ca60220c402113c9ceee9b1f68bd7ca0dc831e3242e26684a9fd4baf
-SIZE (wkhtmltopdf-0.12.0.tar.gz) = 135609
-SHA256 (wkhtmltopdf-qt-0.12.0.tar.gz) = 45c675a379478ec6bc4a5bae92264b92ba413a7b870615fac5f7868c304b992d
-SIZE (wkhtmltopdf-qt-0.12.0.tar.gz) = 173004829
+SHA256 (wkhtmltox-0.12.1.tar.bz2) = 383041db30d6e08b9a6f126193a9e120e2791ff99005c39b1d0adacd53e2faca
+SIZE (wkhtmltox-0.12.1.tar.bz2) = 36186476
