@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- sys/unix/Makefile.doc.orig	Fri Jan 14 13:49:48 2000
-+++ sys/unix/Makefile.doc	Mon Apr 19 14:29:46 2004
+--- sys/unix/Makefile.doc.orig	2000-01-14 12:49:48.000000000 -0800
++++ sys/unix/Makefile.doc	2014-06-28 23:11:38.000000000 -0700
 @@ -34,15 +34,15 @@
  
  
@@ -33,11 +31,11 @@ $FreeBSD$
 -	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
 -	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
 -	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
-+	-$(GAMEMANCREATE) $(MANDIR)$(MANEXT)/%%HACKNAME%%.$(MANEXT)
-+	-$(LEVMANCREATE) $(MANDIR)$(MANEXT)/lev_comp%%HACKEXT%%.$(MANEXT)
-+	-$(DGNMANCREATE) $(MANDIR)$(MANEXT)/dgn_comp%%HACKEXT%%.$(MANEXT)
-+	-$(RCVRMANCREATE) $(MANDIR)$(MANEXT)/recover%%HACKEXT%%.$(MANEXT)
-+	-$(DLBMANCREATE) $(MANDIR)$(MANEXT)/dlb%%HACKEXT%%.$(MANEXT)
++	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/%%HACKNAME%%.$(MANEXT)
++	-$(LEVMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/lev_comp%%HACKEXT%%.$(MANEXT)
++	-$(DGNMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/dgn_comp%%HACKEXT%%.$(MANEXT)
++	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/recover%%HACKEXT%%.$(MANEXT)
++	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/dlb%%HACKEXT%%.$(MANEXT)
  
  # manual creation for distribution
  DISTRIB = Guidebook.txt nethack.txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt
