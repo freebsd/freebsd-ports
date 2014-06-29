@@ -67,6 +67,8 @@ CFLAGS+=	-DHPMON
 .endif
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -78,8 +80,6 @@ pre-everything::
 	${ECHO_MSG} " important for you                                       " ; \
 	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
 	fi
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
