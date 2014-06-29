@@ -40,9 +40,9 @@ GRAPHICS=	# none
 .endif
 .endif
 
-.include <bsd.port.pre.mk>
-
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
 
 .include <bsd.port.options.mk>
 
