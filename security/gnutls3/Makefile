@@ -24,7 +24,7 @@ USE_LDCONFIG=	${PREFIX}/lib/gnutls3
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=		MAKEINFO="/usr/bin/makeinfo --no-split"
+CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--program-suffix=${GNUTLS_SUFFIX} \
 			--includedir="${PREFIX}/include/gnutls${GNUTLS_SUFFIX}" \
 			--libdir="${PREFIX}/lib/gnutls${GNUTLS_SUFFIX}" \
