@@ -13,9 +13,9 @@ COMMENT=	System monitor that renders text on desktop
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 CPPFLAGS+=	-I${LOCALBASE}/include
-MAN1=		torsmo.1
 
 PLIST_FILES=	bin/torsmo \
+		man/man1/torsmo.1.gz \
 		%%EXAMPLESDIR%%/torsmorc.sample
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	AUTHORS ChangeLog NEWS README
@@ -24,11 +24,10 @@ OPTIONS_DEFINE=	XFT DOUBLE_BUFFER DOCS
 OPTIONS_DEFAULT=	XFT DOUBLE_BUFFER
 DOUBLE_BUFFER_DESC=	Flicker-free operation support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT}
-LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS+=		libXft.so:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
 
@@ -38,10 +37,10 @@ CONFIGURE_ARGS+=	--disable-double-buffer
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/torsmorc.sample ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/torsmorc.sample ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
