@@ -104,6 +104,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/oracle.lev
 %%DATADIR%%/oracles
 %%DATADIR%%/orcus.lev
+%%DATADIR%%/perm
 %%DATADIR%%/pet_mark.xbm
 %%DATADIR%%/quest.dat
 @mode 664
@@ -125,7 +126,6 @@ bin/%%HACKNAME%%
 %%DATADIR%%/wizard3.lev
 %%DATADIR%%/wizhelp
 %%DATADIR%%/x11tiles
-%%DATADIR%%/perm
 @mode
 @owner
 @group
