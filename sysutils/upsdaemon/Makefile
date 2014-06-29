@@ -10,13 +10,8 @@ MASTER_SITES=	http://www.ederbs.org/pub/ \
 MAINTAINER=	freebsduser@paradisegreen.co.uk
 COMMENT=	Simple APC UPS Daemon
 
-MAN8=		upsdaemon.8
-MANCOMPRESSED=	no
+LICENSE=	BSD2CLAUSE
 
 USE_RC_SUBR=	upsdaemon
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

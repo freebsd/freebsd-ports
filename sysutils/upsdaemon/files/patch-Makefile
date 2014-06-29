@@ -1,0 +1,17 @@
+--- Makefile.orig	2014-06-30 00:03:09.754282546 +0800
++++ Makefile	2014-06-30 00:03:37.920281904 +0800
+@@ -36,10 +36,10 @@ all:    ./src/upsdaemon.c
+ 	${CC} ${CFLAGS} -o ./upsdaemon ./src/upsdaemon.c
+ 
+ install:
+-	${BSD_INSTALL_PROGRAM} ./upsdaemon ${SBINDIR}
+-	${BSD_INSTALL_MAN} ./doc/upsdaemon.8 ${MANDIR}
+-	mkdir -p ${SCRIPTDIR}
+-	(cd scripts; for i in *; do ${BSD_INSTALL_SCRIPT} $$i ${SCRIPTDIR}; done; exit 0;)
++	${BSD_INSTALL_PROGRAM} ./upsdaemon $(DESTDIR)${SBINDIR}
++	${BSD_INSTALL_MAN} ./doc/upsdaemon.8 $(DESTDIR)${MANDIR}
++	mkdir -p $(DESTDIR)${SCRIPTDIR}
++	(cd scripts; for i in *; do ${BSD_INSTALL_SCRIPT} $$i $(DESTDIR)${SCRIPTDIR}; done; exit 0;)
+ 
+ clean:
+ 	rm -f ./upsdaemon
