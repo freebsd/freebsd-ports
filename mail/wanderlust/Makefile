@@ -84,6 +84,7 @@ MAKE_ARGS+=	PACKAGEDIR=${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR} \
 		PIXMAPDIR=${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/etc/wl
 PLIST=		${PKGDIR}/pkg-plist.xemacs21-mule
 .else
+INFO=		wl wl-ja
 PLIST=		${PKGDIR}/pkg-plist.emacs
 MAKE_ARGS+=	INFODIR=${STAGEDIR}${INFODIR} \
 		PIXMAPDIR=${STAGEDIR}${PREFIX}/${EMACS_LIBDIR_WITH_VER}/etc/wl/icons
@@ -119,9 +120,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl
 .endif
 .endif
-.if !defined(EMACS_PACKAGESDIR)
-	${MAKE} install-info
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MAKE} install-docs
 .endif
@@ -132,10 +130,6 @@ post-install:
 .endif
 
 # local targets
-install-info:
-	install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl.info ${STAGEDIR}${INFODIR}/dir
-	install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl-ja.info ${STAGEDIR}${INFODIR}/dir
-
 install-docs:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTDOCDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTDOCDIR_JA}
