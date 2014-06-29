@@ -24,6 +24,7 @@ CONFLICTS=	teTeX*
 
 USES=		desthack gmake makeinfo
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=\$${${DESTDIRNAME}}${PREFIX}/share
 
 INFO=		kpathsea web2c
 MAKE_FLAGS=	fmts= all_mems=
