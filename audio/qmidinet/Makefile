@@ -10,6 +10,8 @@ COMMENT=	Sends and receives MIDI over the network using UDP multicast
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to configure
+
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
 # Perfectly compatible with qt5 as well; just needs a configure fiddle, and
