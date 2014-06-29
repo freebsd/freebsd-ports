@@ -10,8 +10,10 @@ MASTER_SITES=	SF \
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	Command-line utility for encrypting and decrypting files and streams
 
-USES=		gmake
-NO_STAGE=	yes
+LICENSE=		GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=			gmake
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -29,20 +31,15 @@ CONFIGURE_ARGS+=	--disable-nls
 
 GNU_CONFIGURE=	yes
 
-MAN1=	ccrypt.1 ccguess.1
-MLINKS=	ccrypt.1 ccencrypt.1 \
-	ccrypt.1 ccdecrypt.1 \
-	ccrypt.1 ccat.1
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtar|tar|g' ${WRKSRC}/configure
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .for i in ccrypt.html cypfaq01.txt
-	${INSTALL_DATA} ${WRKSRC}/doc/$i ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/$i ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
