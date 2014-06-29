@@ -3,7 +3,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.95.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/release
@@ -22,10 +22,10 @@ LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 RUN_DEPENDS=	libwraster>=${PORTVERSION}:${PORTSDIR}/x11-wm/libwraster \
 		${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 
-USES=		pathfix perl5 pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		libtool pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_XORG=	xft xinerama xmu xpm
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--enable-modelock \
 		--enable-xinerama --enable-usermenu \
 		--with-x
-CPPFLAGS+=	-DPREFIX=\\\"${PREFIX}\\\" -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ FAQ.I18N INSTALL \
 		INSTALL-WMAKER NEWS README README.definable-cursor TODO
@@ -50,14 +50,10 @@ NLS_CONFIGURE_ENABLE=	locale
 XRANDR_USE=	XORG=xrandr
 XRANDR_CONFIGURE_ENABLE=	xrandr
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 && ${OSVERSION} < 800000
-CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
-.endif
-.if ${OSVERSION} < 800000
-CPPFLAGS+=	-DHAVE_SYS_SELECT_H
-.endif
+post-patch:
+	@${REINPLACE_CMD} 's,PREFIX,"${PREFIX}",' \
+		${WRKSRC}/WINGs/wapplication.c ${WRKSRC}/WPrefs.app/Menu.c \
+		${WRKSRC}/WPrefs.app/Paths.c ${WRKSRC}/util/wmgenmenu.c
 
 post-install:
 	@${MKDIR} \
@@ -66,4 +62,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
