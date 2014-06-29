@@ -1265,7 +1265,6 @@
     SUBDIR += ruby-diff
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
-    SUBDIR += ruby-hikidoc
     SUBDIR += ruby-html-fillinform
     SUBDIR += ruby-html-template
     SUBDIR += ruby-htmlrepair
