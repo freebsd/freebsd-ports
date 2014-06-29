@@ -7,5 +7,4 @@ MAINTAINER=	glewis@FreeBSD.org
 
 PKGNAMESUFFIX=	-nox11
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
