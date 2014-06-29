@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/i-tu/Hasklig/releases/download/${PORTVERSION}/
 DISTNAME=	Hasklig-${PORTVERSION}
 
 MAINTAINER=	6yearold@gmail.com
-COMMENT=	A Haskell code font with monospaced ligatures
+COMMENT=	Haskell code font with monospaced ligatures
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
