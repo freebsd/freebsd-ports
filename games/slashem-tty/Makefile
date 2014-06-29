@@ -14,30 +14,30 @@ COMMENT=	Dungeon explorin', slashin', hackin' game
 USES=		gmake
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES+=	pkg-deinstall
-MAN6=		dgn_comp.6 dlb.6 lev_comp.6 recover.6 slashem.6
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([A-Z])./\1/g}
 MAKE_ENV+=	DATADIR="${DATADIR}"
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e \
 		"s@%%DATADIR%%@${DATADIR}@g" ${WRKSRC}/include/config.h
 
-pre-configure:
+do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
 post-install:
 	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} manpages)
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/slamfaq.txt ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/sample.slashemrc ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/slamfaq.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/sample.slashemrc ${STAGEDIR}${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
