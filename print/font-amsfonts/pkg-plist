@@ -679,5 +679,5 @@
 @dirrm %%FONTSDIR%%/doc/fonts/amsfonts
 @dirrm %%FONTSDIR%%/doc/fonts
 @dirrm %%FONTSDIR%%/doc
-@dirrm %%FONTSDIR%%
 @dirrmtry share/fonts
+@fc %%FONTSDIR%%
