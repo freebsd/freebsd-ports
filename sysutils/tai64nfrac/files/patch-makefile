@@ -1,5 +1,5 @@
---- Makefile	2003-03-10 03:33:41.000000000 +0100
-+++ Makefile.new	2012-09-02 14:58:41.920363626 +0200
+--- Makefile.orig	2003-03-10 10:33:41.000000000 +0800
++++ Makefile	2014-06-29 23:19:14.368465195 +0800
 @@ -4,10 +4,9 @@
  prefix		= /usr/local
  exec_prefix	= /usr/local
@@ -13,7 +13,7 @@
  CFLAGS		= -g -O
  LDFLAGS		=
  LIBS		=
-@@ -25,10 +24,8 @@
+@@ -25,10 +24,8 @@ tai64nfrac.1: tai64nfrac.pod
  	    --section=1 $< > $@
  
  install: tai64nfrac tai64nfrac.1
@@ -21,8 +21,8 @@
 -	cp tai64nfrac $(bindir)
 -	mkdir -p $(man1dir)
 -	cp tai64nfrac.1 $(man1dir)
-+	install -c -g 0 -o 0 -m 0555 tai64nfrac $(bindir)
-+	install -c -g 0 -o 0 -m 0444 tai64nfrac.1 $(mandir)
++	install -c -g 0 -o 0 -m 0555 tai64nfrac $(DESTDIR)$(bindir)
++	install -c -g 0 -o 0 -m 0444 tai64nfrac.1 $(DESTDIR)$(mandir)
  
  clean:
  	rm -f *.o tai64nfrac
