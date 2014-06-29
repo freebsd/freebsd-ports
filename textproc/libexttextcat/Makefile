@@ -1,19 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	libexttextcat
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://dev-www.libreoffice.org/src/libexttextcat/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Language guessing by N-Gram-Based Text Categorization
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_XZ=		yes
-USES=		gmake pathfix
+USES=		gmake libtool pathfix tar:xz
+INSTALL_TARGET=	install-strip
 
 MAKE_ARGS=	EXEEXT=x
 
