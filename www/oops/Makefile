@@ -11,6 +11,7 @@ MASTER_SITES=	http://oops-cache.org/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A caching web proxy server
 DEPRECATED=	Development stops long ago, domain has been expired
+EXPIRATION_DATE=	2014-08-31
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
