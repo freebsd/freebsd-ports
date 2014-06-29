@@ -7,15 +7,16 @@ include/libexttextcat/textcat.h
 include/libexttextcat/textcat_properties.h
 include/libexttextcat/utf8misc.h
 lib/libexttextcat-2.0.a
-lib/libexttextcat-2.0.la
 lib/libexttextcat-2.0.so
 lib/libexttextcat-2.0.so.0
+lib/libexttextcat-2.0.so.0.0.0
 libdata/pkgconfig/libexttextcat.pc
 share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/ab.lm
 %%DATADIR%%/ace.lm
 %%DATADIR%%/ada.lm
 %%DATADIR%%/af.lm
+%%DATADIR%%/ak.lm
 %%DATADIR%%/alt.lm
 %%DATADIR%%/am.lm
 %%DATADIR%%/ar.lm
@@ -37,6 +38,7 @@ share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/br.lm
 %%DATADIR%%/bs.lm
 %%DATADIR%%/ca.lm
+%%DATADIR%%/ckb.lm
 %%DATADIR%%/cs.lm
 %%DATADIR%%/cy.lm
 %%DATADIR%%/da.lm
@@ -44,6 +46,7 @@ share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/dv.lm
 %%DATADIR%%/ee.lm
 %%DATADIR%%/el.lm
+%%DATADIR%%/emk-Latn.lm
 %%DATADIR%%/en.lm
 %%DATADIR%%/eo.lm
 %%DATADIR%%/es.lm
@@ -84,6 +87,7 @@ share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/kl.lm
 %%DATADIR%%/km.lm
 %%DATADIR%%/kn.lm
+%%DATADIR%%/kng.lm
 %%DATADIR%%/ko.lm
 %%DATADIR%%/ktu.lm
 %%DATADIR%%/ky.lm
@@ -105,6 +109,7 @@ share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/mt.lm
 %%DATADIR%%/my.lm
 %%DATADIR%%/nb.lm
+%%DATADIR%%/nds.lm
 %%DATADIR%%/ne.lm
 %%DATADIR%%/nl.lm
 %%DATADIR%%/nn.lm
@@ -117,6 +122,7 @@ share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/pl.lm
 %%DATADIR%%/plt.lm
 %%DATADIR%%/pt.lm
+%%DATADIR%%/quz.lm
 %%DATADIR%%/qxa.lm
 %%DATADIR%%/rm.lm
 %%DATADIR%%/ro.lm
@@ -154,11 +160,14 @@ share/vala/vapi/libexttextcat.vapi
 %%DATADIR%%/ts.lm
 %%DATADIR%%/tt.lm
 %%DATADIR%%/ty.lm
+%%DATADIR%%/tzm-Latn.lm
 %%DATADIR%%/ug.lm
 %%DATADIR%%/uk.lm
 %%DATADIR%%/ur.lm
+%%DATADIR%%/uz-Cyrl.lm
 %%DATADIR%%/uz.lm
 %%DATADIR%%/ve.lm
+%%DATADIR%%/vep.lm
 %%DATADIR%%/vi.lm
 %%DATADIR%%/wa.lm
 %%DATADIR%%/xh.lm
