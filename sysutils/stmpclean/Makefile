@@ -9,11 +9,8 @@ MASTER_SITES=	http://shlang.com/stmpclean/
 MAINTAINER=	shalunov@shlang.com
 COMMENT=	Remove old files from temporary directories
 
-MAN8=		stmpclean.8
-MANCOMPRESSED=	no
-PLIST_FILES=	sbin/stmpclean
+PLIST_FILES=	sbin/stmpclean man/man8/stmpclean.8.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/-O6//g" ${WRKSRC}/Makefile
 
