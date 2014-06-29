@@ -3,7 +3,7 @@
 
 PORTNAME=	wmweather+
 PORTVERSION=	2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	SF/wmweatherplus/wmweather%2B/ \
 		SF/nemysisfreebsdp/misc/:icons
