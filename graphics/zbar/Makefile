@@ -3,7 +3,7 @@
 
 PORTNAME=	zbar
 PORTVERSION=	0.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		iconv gmake pkgconfig
+USES=		iconv libtool gmake pkgconfig
 
 CONFIGURE_ARGS=		--with-jpeg=yes
 
@@ -37,7 +37,6 @@ CONFIGURE_ARGS+=	--with-x=no --without-xshm --without-xv
 LIB_DEPENDS+=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--with-imagemagick=yes
 PLIST_SUB+=	IMAGEMAGICK=""
-MAN1=	zbarimg.1
 .else
 CONFIGURE_ARGS+=	--with-imagemagick=no
 PLIST_SUB+=	IMAGEMAGICK="@comment "
@@ -47,7 +46,6 @@ PLIST_SUB+=	IMAGEMAGICK="@comment "
 BUILD_DEPENDS+=	v4l_compat>=1.0.20101027:${PORTSDIR}/multimedia/v4l_compat
 CONFIGURE_ARGS+=	--enable-video=yes
 PLIST_SUB+=	V4L=""
-MAN1+=	zbarcam.1
 .else
 CONFIGURE_ARGS+=	--enable-video=no
 PLIST_SUB+=	V4L="@comment "
@@ -81,6 +79,7 @@ CONFIGURE_ARGS+=	--with-qt=no
 PLIST_SUB+=	QT4="@comment "
 .endif
 
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
