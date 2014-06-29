@@ -10,18 +10,16 @@ MAINTAINER=	tren@tundraware.com
 COMMENT=	A Powerful File And Directory Batch Renaming Tool
 
 USE_PYTHON=	yes
-
-MAN1=		tren.1
-MANCOMPRESSED=	yes
-
-PLIST_FILES=	bin/tren.py
+PLIST_FILES=	bin/tren.py man/man1/tren.1.gz
 PORTDOCS=	WHATSNEW.txt tren-license.txt tren.html tren.pdf tren.ps tren.rst
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
