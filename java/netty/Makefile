@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	netty
-PORTVERSION=	3.5.5
-DISTVERSIONSUFFIX=.Final-dist
+PORTVERSION=	3.9.2
+DISTVERSIONSUFFIX=	.Final-dist
 CATEGORIES=	java devel
-MASTER_SITES=	https://github.com/downloads/netty/netty/
+MASTER_SITES=	http://dl.bintray.com/netty/downloads/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Java NIO client server framework
@@ -24,21 +24,15 @@ PLIST_FILES=	%%JAVAJARDIR%%/netty-${PORTVERSION}.jar \
 		%%JAVAJARDIR%%/netty.jar
 
 PORTDATA=	*
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/jar/netty-${PORTVERSION}.Final.jar ${STAGEDIR}${JAVAJARDIR}/netty-${PORTVERSION}.jar
 	cd ${WRKSRC} && ${COPYTREE_SHARE} src ${STAGEDIR}${DATADIR}
-	cd ${STAGEDIR}${JAVAJARDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	${LN} -nfs netty-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/netty.jar
 
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
