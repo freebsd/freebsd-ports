@@ -1,9 +1,3 @@
-@unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl.info %D/info/dir
-info/wl.info
-@exec install-info --section="%%DIRSECTION%%" %D/info/wl.info %D/info/dir
-@unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl-ja.info %D/info/dir
-info/wl-ja.info
-@exec install-info --section="%%DIRSECTION%%" %D/info/wl-ja.info %D/info/dir
 %%PORTDOCS%%share/doc/ja/wanderlust/NEWS.ja
 %%PORTDOCS%%share/doc/ja/wanderlust/README.ja
 %%PORTDOCS%%share/doc/ja/wanderlust/wl-ja.texi
