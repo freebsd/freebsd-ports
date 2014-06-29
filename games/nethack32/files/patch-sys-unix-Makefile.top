@@ -1,5 +1,5 @@
---- sys/unix/Makefile.top.orig	Tue Dec 10 13:20:10 1996
-+++ sys/unix/Makefile.top	Sun Apr 11 23:25:22 2004
+--- sys/unix/Makefile.top.orig	1996-12-10 12:20:10.000000000 -0800
++++ sys/unix/Makefile.top	2014-06-28 16:26:54.000000000 -0700
 @@ -14,16 +14,16 @@
  # MAKE = make
  
@@ -28,12 +28,12 @@
  # instructions)
 -GAMEDIR  = /usr/games/lib/$(GAME)dir
 -SHELLDIR = /usr/games
-+GAMEDIR  = %%HACKDIR%%
++GAMEDIR  = ${PREFIX}/share/%%HACKNAME%%
 +SHELLDIR = ${PREFIX}/bin
  
  # per discussion in Install.X11
 -VARDATND = 
-+# VARDATND = 
++# VARDATND =
  # VARDATND = x11tiles pet_mark.xbm
 -# VARDATND = x11tiles pet_mark.xbm rip.xpm
 +VARDATND = x11tiles pet_mark.xbm rip.xpm
@@ -58,47 +58,87 @@
  
  dofiles:
  	target=`sed -n					\
-@@ -135,16 +137,18 @@
+@@ -135,66 +137,45 @@
  		-e '}' 					\
  	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
  	$(MAKE) dofiles-$${target-nodlb}
 -	cp src/$(GAME) $(GAMEDIR)
-+	cp src/nethack $(GAMEDIR)/$(GAME) 
-+	cp util/recover $(GAMEDIR)
- 	-rm -f $(SHELLDIR)/$(GAME)
+-	-rm -f $(SHELLDIR)/$(GAME)
++	cp src/nethack ${DESTDIR}$(GAMEDIR)/$(GAME)
++	cp util/recover ${DESTDIR}$(GAMEDIR)
++	-rm -f ${DESTDIR}$(SHELLDIR)/$(GAME)
  	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
  		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
  		< sys/unix/nethack.sh \
- 		> $(SHELLDIR)/$(GAME)
- # set up their permissions
+-		> $(SHELLDIR)/$(GAME)
+-# set up their permissions
 -	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) $(GAME) ; \
 -			$(CHGRP) $(GAMEGRP) $(GAME) )
-+	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) $(GAME) recover ; \
-+			$(CHGRP) $(GAMEGRP) $(GAME) recover )
- 	chmod $(GAMEPERM) $(GAMEDIR)/$(GAME)
-+	chmod $(GAMEPERM) $(GAMEDIR)/recover
- 	-$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(GAME)
- 	$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME)
- 	chmod $(EXEPERM) $(SHELLDIR)/$(GAME)
-@@ -164,7 +168,7 @@
- 			$(CHGRP) $(GAMEGRP) $(DAT) ; \
- 			chmod $(FILEPERM) $(DAT) )
+-	chmod $(GAMEPERM) $(GAMEDIR)/$(GAME)
+-	-$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(GAME)
+-	$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME)
+-	chmod $(EXEPERM) $(SHELLDIR)/$(GAME)
++		> ${DESTDIR}$(SHELLDIR)/$(GAME)
+ 
+ dofiles-dlb: check-dlb
+-	( cd dat ; cp nhdat $(DATNODLB) $(GAMEDIR) )
+-# set up their permissions
+-	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) nhdat $(DATNODLB) ; \
+-			$(CHGRP) $(GAMEGRP) nhdat $(DATNODLB) ; \
+-			chmod $(FILEPERM) nhdat $(DATNODLB) )
++	( cd dat ; cp nhdat $(DATNODLB) ${DESTDIR}$(GAMEDIR) )
+ 
+ dofiles-nodlb:
+ # copy over the game files
+-	( cd dat ; cp $(DAT) $(GAMEDIR) )
+-# set up their permissions
+-	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) $(DAT) ; \
+-			$(CHGRP) $(GAMEGRP) $(DAT) ; \
+-			chmod $(FILEPERM) $(DAT) )
++	( cd dat ; cp $(DAT) ${DESTDIR}$(GAMEDIR) )
  
 -update: $(GAME) $(VARDAT) dungeon spec_levs
 +update: $(GAME) recover $(VARDAT) dungeon spec_levs
  #	(don't yank the old version out from under people who're playing it)
- 	-mv $(GAMEDIR)/$(GAME) $(GAMEDIR)/$(GAME).old
+-	-mv $(GAMEDIR)/$(GAME) $(GAMEDIR)/$(GAME).old
++	-mv ${DESTDIR}$(GAMEDIR)/$(GAME) ${DESTDIR}$(GAMEDIR)/$(GAME).old
  #	quest.dat is also kept open and has the same problems over NFS
-@@ -180,10 +184,10 @@
+ #	(quest.dat may be inside nhdat if dlb is in use)
+-	-mv $(GAMEDIR)/quest.dat $(GAMEDIR)/quest.dat.old
+-	-mv $(GAMEDIR)/nhdat $(GAMEDIR)/nhdat.old
++	-mv ${DESTDIR}$(GAMEDIR)/quest.dat ${DESTDIR}$(GAMEDIR)/quest.dat.old
++	-mv ${DESTDIR}$(GAMEDIR)/nhdat ${DESTDIR}$(GAMEDIR)/nhdat.old
+ # set up new versions of the game files
+ 	( $(MAKE) dofiles )
+ # touch time-sensitive files
+-	-touch -c $(GAMEDIR)/bones* $(GAMEDIR)/?lock* $(GAMEDIR)/wizard*
+-	-touch -c $(GAMEDIR)/save/*
+-	touch $(GAMEDIR)/perm $(GAMEDIR)/record
++	-touch -c ${DESTDIR}$(GAMEDIR)/bones* ${DESTDIR}$(GAMEDIR)/?lock* ${DESTDIR}$(GAMEDIR)/wizard*
++	touch ${DESTDIR}$(GAMEDIR)/perm ${DESTDIR}$(GAMEDIR)/record
  # and a reminder
  	@echo You may also want to install the man pages via the doc Makefile.
  
 -install: $(GAME) $(VARDAT) dungeon spec_levs
 +install: $(GAME) recover $(VARDAT) dungeon spec_levs
  # set up the directories
- 	-mkdir $(SHELLDIR)
+-	-mkdir $(SHELLDIR)
 -	-rm -rf $(GAMEDIR)
-+	-rmdir $(GAMEDIR)
- 	-mkdir $(GAMEDIR) $(GAMEDIR)/save
- 	-$(CHOWN) $(GAMEUID) $(GAMEDIR) $(GAMEDIR)/save
- 	$(CHGRP) $(GAMEGRP) $(GAMEDIR) $(GAMEDIR)/save
+-	-mkdir $(GAMEDIR) $(GAMEDIR)/save
+-	-$(CHOWN) $(GAMEUID) $(GAMEDIR) $(GAMEDIR)/save
+-	$(CHGRP) $(GAMEGRP) $(GAMEDIR) $(GAMEDIR)/save
+-	chmod $(DIRPERM) $(GAMEDIR) $(GAMEDIR)/save
++	-mkdir ${DESTDIR}$(SHELLDIR)
++	-rmdir ${DESTDIR}$(GAMEDIR)
++	-mkdir ${DESTDIR}$(GAMEDIR) ${DESTDIR}$(GAMEDIR)
+ # set up the game files
+ 	( $(MAKE) dofiles )
+ # set up some additional files
+-	touch $(GAMEDIR)/perm $(GAMEDIR)/record $(GAMEDIR)/logfile
+-	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) perm record logfile ; \
+-			$(CHGRP) $(GAMEGRP) perm record logfile ; \
+-			chmod $(FILEPERM) perm record logfile )
++	touch ${DESTDIR}$(GAMEDIR)/perm ${DESTDIR}$(GAMEDIR)/record ${DESTDIR}$(GAMEDIR)/logfile
+ # and a reminder
+ 	@echo You may also want to reinstall the man pages via the doc Makefile.
+ 
