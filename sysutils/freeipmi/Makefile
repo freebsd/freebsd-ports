@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/
