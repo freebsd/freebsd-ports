@@ -3,6 +3,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	http://www.tdiary.org/download/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	Web-based diary system (like weblog) written in Ruby
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	rubygem-fastimage>=1.6.0:${PORTSDIR}/graphics/rubygem-fastimage \
-		hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
+		rubygem-hikidoc>=0:${PORTSDIR}/textproc/rubygem-hikidoc \
 		rubygem-multi_json>=1.8.4:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 

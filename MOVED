@@ -6181,3 +6181,4 @@ www/emacs-w3m-emacs21||2014-06-27|Removed: dependent on editors/emacs21
 www/emacs-w3m-emacs22||2014-06-27|Removed: dependent on editors/emacs22
 devel/ode-devel|devel/ode|2014-06-27|Has expired: Outdated by devel/ode
 java/eclipse-devel|java/eclipse|2014-06-29|Concentrate maintenance effort on newer java/eclipse
+textproc/ruby-hikidoc|textproc/rubygem-hikidoc|2014-06-29|Use textproc/rubygem-hikidoc instead
