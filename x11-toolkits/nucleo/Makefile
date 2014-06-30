@@ -3,7 +3,7 @@
 
 PORTNAME=	nucleo
 PORTVERSION=	0.7.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/nucleo/
 
@@ -17,8 +17,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-opencv
@@ -63,17 +62,13 @@ CONFIGURE_ARGS+=	--without-dns-sd
 QT_NONSTANDARD=		yes
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+.if ${ARCH} == "powerpc" && ${OPSYS} == FreeBSD && ${OSVERSION} > 900000
 BROKEN=		Does not compile on powerpc-9
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|-pthread|' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/nucleo
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
