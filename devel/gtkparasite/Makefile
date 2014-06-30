@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GTK+ UI debugging tool
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		pkgconfig
 USE_PYTHON=	yes
 USE_GNOME=	gtk20 pygtk2
@@ -22,15 +25,16 @@ PLIST_FILES=	lib/gtk-2.0/modules/libgtkparasite.a \
 		lib/gtk-2.0/modules/libgtkparasite.so
 USE_AUTOTOOLS=	autoconf automake libtool
 
-NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e '/.\/configure/d' ./autogen.sh \
 		&& ./autogen.sh
 
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/USAGE ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/USAGE ${STAGEDIR}/${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
