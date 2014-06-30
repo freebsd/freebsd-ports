@@ -1,7 +1,6 @@
 bin/doveadm
 bin/doveconf
 bin/dsync
-%%PORTDOCS%%%%ETCDIR%%/README
 include/dovecot/abspath.h
 include/dovecot/access-lookup.h
 include/dovecot/anvil-client.h
@@ -436,9 +435,6 @@ lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
 lib/dovecot/doveadm/lib10_doveadm_quota_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_quota_plugin.la
 lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
-%%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.a
-%%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.la
-%%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so
 lib/dovecot/doveadm/lib20_doveadm_fts_plugin.a
 lib/dovecot/doveadm/lib20_doveadm_fts_plugin.la
 lib/dovecot/doveadm/lib20_doveadm_fts_plugin.so
@@ -500,12 +496,6 @@ lib/dovecot/lib20_virtual_plugin.so
 lib/dovecot/lib20_zlib_plugin.a
 lib/dovecot/lib20_zlib_plugin.la
 lib/dovecot/lib20_zlib_plugin.so
-%%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.a
-%%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.la
-%%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.so
-%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.a
-%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.la
-%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.so
 lib/dovecot/lib21_fts_squat_plugin.a
 lib/dovecot/lib21_fts_squat_plugin.la
 lib/dovecot/lib21_fts_squat_plugin.so
@@ -542,9 +532,6 @@ lib/dovecot/libdovecot.a
 lib/dovecot/libdovecot.la
 lib/dovecot/libdovecot.so
 lib/dovecot/libdovecot.so.0
-%%SSL%%lib/dovecot/libssl_iostream_openssl.a
-%%SSL%%lib/dovecot/libssl_iostream_openssl.la
-%%SSL%%lib/dovecot/libssl_iostream_openssl.so
 libexec/dovecot/aggregator
 libexec/dovecot/anvil
 libexec/dovecot/auth
@@ -578,7 +565,6 @@ libexec/dovecot/script
 libexec/dovecot/script-login
 libexec/dovecot/ssl-params
 libexec/dovecot/stats
-%%LIBWRAP%%libexec/dovecot/tcpwrap
 libexec/dovecot/xml2text
 man/man1/deliver.1.gz
 man/man1/doveadm-altmove.1.gz
@@ -620,9 +606,24 @@ man/man1/dsync.1.gz
 man/man7/doveadm-search-query.7.gz
 sbin/dovecot
 share/aclocal/dovecot.m4
-%%PORTDOCS%%@dirrmtry %%ETCDIR%%
 @dirrm include/dovecot
 @dirrmtry lib/dovecot/auth
 @dirrm lib/dovecot/doveadm
 @dirrm lib/dovecot
 @dirrm libexec/dovecot
+%%PORTDOCS%%%%ETCDIR%%/README
+%%PORTDOCS%%@dirrmtry %%ETCDIR%%
+%%LIBWRAP%%libexec/dovecot/tcpwrap
+%%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.a
+%%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.la
+%%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so
+%%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.a
+%%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.la
+%%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.so
+%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.a
+%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.la
+%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.so
+%%SSL%%lib/dovecot/libssl_iostream_openssl.a
+%%SSL%%lib/dovecot/libssl_iostream_openssl.la
+%%SSL%%lib/dovecot/libssl_iostream_openssl.so
+@unexec echo "If you are removing dovecot2 permanently, you should 'rm -rf /var/db/dovecot' to clear out any remaining data."
