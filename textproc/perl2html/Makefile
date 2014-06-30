@@ -1,26 +1,28 @@
 # Created by: Martin Kammerhofer
 # $FreeBSD$
 
-PORTNAME=		perl2html
-PORTVERSION=		0.9.2
-PORTREVISION=		1
-CATEGORIES=		textproc www
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+PORTNAME=	perl2html
+PORTVERSION=	0.9.2
+PORTREVISION=	1
+CATEGORIES=	textproc www
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters
 
-MAINTAINER=		mkamm@gmx.net
+MAINTAINER=	mkamm@gmx.net
 COMMENT=	Perl sources to HTML converter
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	autoconf213
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
 
-MAN1=			perl2html.1
+.include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS NEWS README
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
