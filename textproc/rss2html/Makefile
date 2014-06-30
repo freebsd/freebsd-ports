@@ -7,29 +7,24 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.mcx2.org/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	RSS to HTML converter
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LICENSE=	GPLv2
+
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	"-I${LOCALBASE}/include" "-L${LOCALBASE}/lib"
 
-MAN1=	rss2html.1
-MANCOMPRESSED=	no
-
-PLIST_FILES=	bin/rss2html
+PLIST_FILES=	bin/rss2html man/man1/rss2html.1.gz
 PORTDOCS=	rss2html.links usage.example rss2html.template
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '16,20d' ${WRKSRC}/Makefile.acr
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
