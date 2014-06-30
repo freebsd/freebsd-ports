@@ -16,6 +16,7 @@ lib/libwnck-1.a
 lib/libwnck-1.la
 lib/libwnck-1.so
 lib/libwnck-1.so.22
+lib/libwnck-1.so.22.3.31
 libdata/pkgconfig/libwnck-1.0.pc
 lib/girepository-1.0/Wnck-1.0.typelib
 share/locale/am/LC_MESSAGES/libwnck.mo
