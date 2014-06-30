@@ -18,7 +18,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 GNU_CONFIGURE=	yes
-USES=		libtool:oldver pathfix tar:bzip2
+USES=		libtool:oldver pathfix readline tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 		--enable-pcre8 --enable-pcre16 --enable-pcre32 \
