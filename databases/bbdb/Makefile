@@ -26,13 +26,14 @@ MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD}
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
-	${MKDIR} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lisp/*.el ${WRKSRC}/lisp/*.elc ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/texinfo/bbdb.info ${PREFIX}/info
-	install-info --section=${DIRSECTION} --entry=${INFOENTRY} ${PREFIX}/info/bbdb.info ${PREFIX}/info/dir
+	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lisp/*.el ${WRKSRC}/lisp/*.elc ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_DATA} ${WRKSRC}/texinfo/bbdb.info ${STAGEDIR}${PREFIX}/info
+	install-info --section=${DIRSECTION} --entry=${INFOENTRY} ${STAGEDIR}${PREFIX}/info/bbdb.info ${STAGEDIR}${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.mk>
