@@ -1,5 +1,0 @@
-TracDuplicates is a plugin for trac that will allow to dupe a bug against
-another generating "Marked" comments like bugzilla does in both affected
-bugs.
-
-WWW: https://github.com/nmaier/TracDuplicates

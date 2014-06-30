@@ -1,8 +1,0 @@
-bin/sms
-bin/smsaddr
-%%DATADIR%%/README
-%%DATADIR%%/README.smsrc
-%%DATADIR%%/mimecut
-%%DATADIR%%/procmailrc
-%%DATADIR%%/sms-get
-@dirrm %%DATADIR%%
