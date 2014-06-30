@@ -111,7 +111,6 @@
     SUBDIR += elmo
     SUBDIR += elmo-devel
     SUBDIR += emh
-    SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
     SUBDIR += enma
     SUBDIR += eps
@@ -726,7 +725,6 @@
     SUBDIR += vrfy
     SUBDIR += wanderlust
     SUBDIR += wanderlust-devel
-    SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += websieve
     SUBDIR += whoson
     SUBDIR += wmbiff
