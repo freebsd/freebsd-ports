@@ -90,7 +90,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 
 
 # GNOME 3 components
 _USE_GNOME_ALL+= dconf gtk30 gtkhtml4 gtksourceview3 libgda5 libgda5-ui \
-		py3gobject3 pygobject3 vte3
+		libwnck3 py3gobject3 pygobject3 vte3
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
@@ -375,7 +375,10 @@ gnomedesktopsharp20_GNOME_DESKTOP_VERSION=2
 libwnck_LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
 libwnck_DETECT=		${LOCALBASE}/libdata/pkgconfig/libwnck-1.0.pc
 libwnck_USE_GNOME_IMPL=	gtk20
-libwnck_GNOME_DESKTOP_VERSION=2
+
+libwnck3_LIB_DEPENDS=	libwnck-3.so:${PORTSDIR}/x11-toolkits/libwnck3
+libwnck3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libwnck-3.0.pc
+libwnck3_USE_GNOME_IMPL=gtk30
 
 vte_LIB_DEPENDS=	libvte.so:${PORTSDIR}/x11-toolkits/vte
 vte_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte.pc
