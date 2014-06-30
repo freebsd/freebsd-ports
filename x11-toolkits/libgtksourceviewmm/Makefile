@@ -4,18 +4,16 @@
 
 PORTNAME=	libgtksourceviewmm
 PORTVERSION=	1.9.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ binding of GtkSourceView
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
-
-USES=		pkgconfig gmake tar:bzip2
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-USE_GNOME=	gtksourceview2 gnomeprefix gnomehack
+USE_GNOME=	gtkmm24 gtksourceview2 gnomeprefix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBAS}/lib

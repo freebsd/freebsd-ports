@@ -22,9 +22,9 @@ include/gtksourceviewmm-2.0/gtksourceviewmm/wrap_init.h
 lib/gtksourceviewmm-2.0/include/gtksourceviewmmconfig.h
 lib/gtksourceviewmm-2.0/proc/m4/convert.m4
 lib/gtksourceviewmm-2.0/proc/m4/convert_gtksourceviewmm.m4
-lib/libgtksourceviewmm-2.0.la
 lib/libgtksourceviewmm-2.0.so
 lib/libgtksourceviewmm-2.0.so.2
+lib/libgtksourceviewmm-2.0.so.2.0.0
 libdata/pkgconfig/gtksourceviewmm-2.0.pc
 @dirrm lib/gtksourceviewmm-2.0/proc/m4
 @dirrm lib/gtksourceviewmm-2.0/proc
