@@ -1,6 +1,6 @@
---- Makefile.orig	2013-06-11 09:27:39.000000000 +0200
-+++ Makefile	2014-02-23 12:02:08.000000000 +0100
-@@ -17,13 +17,13 @@ opt:
+--- Makefile.orig	2014-06-25 12:23:05.000000000 +0200
++++ Makefile	2014-06-28 20:36:14.000000000 +0200
+@@ -17,14 +17,14 @@ opt:
  	for p in $(PARTS); do ( cd src/$$p; $(MAKE) opt ); done
  
  install:
@@ -8,16 +8,17 @@
 -	mkdir -p "$(prefix)$(OCAMLFIND_MAN)"
 +	mkdir -p "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"
 +	mkdir -p "$(DESTDIR)$(prefix)$(OCAMLFIND_MAN)"
+ 	$(MAKE) install-config
  	for p in $(PARTS); do ( cd src/$$p; $(MAKE) install ); done
  	$(MAKE) install-meta
  	cd src/findlib; $(MAKE) install-num-top
- 	$(MAKE) install-config
--	cp tools/safe_camlp4 "$(prefix)$(OCAMLFIND_BIN)"
-+	${BSD_INSTALL_SCRIPT}  tools/safe_camlp4 "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"
+ 	if [ $(INSTALL_CAMLP4) -eq 1 ]; then \
+-		cp tools/safe_camlp4 "$(prefix)$(OCAMLFIND_BIN)"; \
++		${BSD_INSTALL_SCRIPT}  tools/safe_camlp4 "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"; \
+ 	fi
  	$(MAKE) install-doc
  
- uninstall:
-@@ -69,9 +69,9 @@ findlib.conf: findlib.conf.in 
+@@ -71,9 +71,9 @@ findlib.conf: findlib.conf.in
  
  .PHONY: install-doc
  install-doc:
@@ -30,7 +31,7 @@
  
  .PHONY: uninstall-doc
  uninstall-doc:
-@@ -84,7 +84,7 @@ uninstall-doc:
+@@ -86,7 +86,7 @@ uninstall-doc:
  
  .PHONY: install-meta
  install-meta:
@@ -39,7 +40,7 @@
  
  .PHONY: uninstall-meta
  uninstall-meta:
-@@ -92,9 +92,9 @@ uninstall-meta:
+@@ -94,9 +94,9 @@ uninstall-meta:
  
  .PHONY: install-config
  install-config:
