@@ -7,13 +7,13 @@
 
 PORTNAME=	dspam
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	# set later
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bayesian spam filter - development version
 
 PORTVER_MAJ=	3.10.1
@@ -44,7 +44,7 @@ OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL51 MYSQL55 PGSQL SQLITE2 SQLITE3
 
 OPTIONS_RADIO=	LDA
-OPTIONS_RADIO_LDA=	CYRUS21 CYRUS22 CYRUS23 CYRUS24 EXIM \
+OPTIONS_RADIO_LDA=	CYRUS23 CYRUS24 EXIM \
 		MAILDROP PROCMAIL SAFECAT SENDMAIL
 
 VERBOSE_DEBUG_DESC=	Debug in LOGDIR/dspam.debug
@@ -69,8 +69,6 @@ VIRT_USERS_DESC=	Virtual users (needs SQL back-end)
 LONG_USERNAMES_DESC=	Usernames longer that OS supports
 LARGE_SCALE_DESC=	File structure for large scale
 DOMAIN_SCALE_DESC=	File structure for multiple domains
-CYRUS21_DESC=	Cyrus's 2.1 deliver as LDA
-CYRUS22_DESC=	Cyrus's 2.2 deliver as LDA
 CYRUS23_DESC=	Cyrus's 2.3 deliver as LDA
 CYRUS24_DESC=	Cyrus's 2.4 deliver as LDA
 EXIM_DESC=	Exim as local delivery agent
@@ -86,8 +84,9 @@ WEBUI_DESC=	Install WebUI, pulls in Apache or see below
 OPTIONS_DEFAULT=	SYSLOG DEBUG DAEMON CLAMAV CLAMAV_LOCAL MYSQL55 \
 		PGSQL SQLITE3 HASH
 
-USES=		perl5
-USE_AUTOTOOLS=	libtool
+USES=		libtool perl5 shebangfix
+SHEBANG_FILES=	src/tools/dspam_logrotate src/tools/dspam_notify.in \
+		src/tools/dspam_train.in
 .ifdef(SNAP_DATE)
 USE_AUTOTOOLS+=	autoconf:env automake
 .endif
@@ -119,7 +118,6 @@ DSPAM_HOME_OWNER?=	${DSPAM_OWNER}
 DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
 DSPAM_HOME_MODE?=	0770
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--sysconfdir=${DSPAM_ETC}
@@ -130,7 +128,12 @@ CONFIGURE_ARGS+=	--with-dspam-home=${DSPAM_HOME}
 CONFIGURE_ARGS+=	--with-dspam-home-owner=${DSPAM_HOME_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-home-group=${DSPAM_HOME_GROUP}
 CONFIGURE_ARGS+=	--with-dspam-home-mode=${DSPAM_HOME_MODE}
-PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME}
+PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME} \
+		DSPAM_OWNER=${DSPAM_OWNER} \
+		DSPAM_GROUP=${DSPAM_GROUP} \
+		DSPAM_HOME_OWNER=${DSPAM_HOME_OWNER} \
+		DSPAM_HOME_GROUP=${DSPAM_HOME_GROUP} \
+		DSPAM_HOME_MODE=${DSPAM_HOME_MODE}
 
 CONFIGURE_ARGS+=	--with-dspam-owner=${DSPAM_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
@@ -196,7 +199,7 @@ CONFIGURE_ARGS+=	--with-pgsql-includes=${LOCALBASE}/include \
 		--with-pgsql-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	PGSQL=""
 #PKGNAMESUFFIX=	-pgsql
-_DBDRV_COUNT:= ${_DBDRV_COUNT}o
+_DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .	if ${PORT_OPTIONS:MPGSQL_LOCAL}
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 SUB_LIST+=	PGSQL=postgresql
@@ -222,7 +225,7 @@ _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 _DBDRV:=	${_DBDRV:S/sqlite_drv,//}
 .endif
 
-.if defined(USE_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3}
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	SQLITE=""
@@ -239,7 +242,7 @@ _DBDRV:=	${_DBDRV:S/hash_drv,//}
 PLIST_SUB+=	HASH="@comment "
 .endif
 
-.ifdef(WITH_MYSQL51)
+.if ${PORT_OPTIONS:MMYSQL51}
 WANT_MYSQL_VER=	51
 #PKGNAMESUFFIX=	-mysql51
 .elif ${PORT_OPTIONS:MMYSQL55}
@@ -247,7 +250,7 @@ WANT_MYSQL_VER=	55
 #PKGNAMESUFFIX=	-mysql55
 .endif
 
-.if defined(WITH_MYSQL51) || defined(WITH_MYSQL55)
+.if ${PORT_OPTIONS:MMYSQL51} || ${PORT_OPTIONS:MMYSQL55}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
@@ -306,16 +309,6 @@ CONFIGURE_ARGS+=	--enable-large-scale
 CONFIGURE_ARGS+=	--enable-domain-scale
 .endif
 
-.if ${PORT_OPTIONS:MCYRUS21}
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd2
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
-.endif
-
-.if ${PORT_OPTIONS:MCYRUS22}
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd22
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
-.endif
-
 .if ${PORT_OPTIONS:MCYRUS23}
 RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd23
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
@@ -326,10 +319,10 @@ RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd24
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 .endif
 
-.ifdef(WITH_EXIM_LDA)
-.	ifdef(WITH_MYSQL51) || (WITH_MYSQL55)
+.if ${PORT_OPTIONS:MEXIM}
+.	if ${PORT_OPTIONS:MMYSQL51} || ${PORT_OPTIONS:MMYSQL55}
 _EXIM_EXT=	-mysql
-.	elifdef(WITH_POSTGRESQL)
+.	elif ${PORT_OPTIONS:MPGSQL}
 _EXIM_EXT=	-postgresql
 .	endif
 RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim${_EXIM_EXT}
@@ -381,7 +374,7 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 .	else
 USE_APACHE_RUN=	22+
 .	endif
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS+=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS+=	p5-GD-Graph3d>=0:${PORTSDIR}/graphics/p5-GD-Graph3d
@@ -396,18 +389,6 @@ PLIST_SUB+=	WWWDIR=${WWWDIR_REL}
 PLIST_SUB+=	WebUI="@comment "
 _SED_SCRIPT+=	-e '/%%WebUI%%/D'
 .endif
-
-MAN1=	dspam.1 dspam_admin.1 dspam_clean.1 dspam_crc.1 dspam_dump.1 \
-	dspam_logrotate.1 dspam_merge.1 dspam_stats.1 dspam_train.1
-MAN3=	dspam_clearattributes.3 libdspam.3
-MLINKS=		libdspam.3 dspam_init.3
-MLINKS+=	libdspam.3 dspam_create.3
-MLINKS+=	libdspam.3 dspam_addattribute.3
-MLINKS+=	libdspam.3 dspam_attach.3
-MLINKS+=	libdspam.3 dspam_process.3
-MLINKS+=	libdspam.3 dspam_getsource.3
-MLINKS+=	libdspam.3 dspam_destroy.3
-MLINKS+=	libdspam.3 dspam_detach.3
 
 _DOCS=	CHANGELOG LICENSE README README.FreeBSD RELEASE.NOTES UPGRADING
 _DOCSL=	courier.txt exim.txt markov.txt mysql_drv.txt pgsql_drv.txt \
@@ -466,27 +447,30 @@ post-patch:
 		${WRKSRC}/src/tools/dspam_train.in ${WRKSRC}/src/tools/dspam_notify.in
 
 pre-configure:
-.if ${PORT_OPTIONS:MVIRT_USERS} && !(defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MVIRT_USERS} && !(${PORT_OPTIONS:MMYSQL51} || \
+	${PORT_OPTIONS:MMYSQL55} || \
 	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MHASH} )
 	@${ECHO_CMD} "You need MySQL, POSTGRESQL or HASH for virtual users."
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MPREF_EXT} && !( defined(USE_MYSQL) || \
-	${PORT_OPTIONS:MPGSQL} )
+.if ${PORT_OPTIONS:MPREF_EXT} && !(${PORT_OPTIONS:MMYSQL51} || \
+	${PORT_OPTIONS:MMYSQL55} || ${PORT_OPTIONS:MPGSQL} )
 	@${ECHO_CMD} "You need MySQL or Postgres for preferences extension"
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MDAEMON} && !( defined(USE_MYSQL) || \
+.if ${PORT_OPTIONS:MDAEMON} && !( ${PORT_OPTIONS:MMYSQL51} || \
+	${PORT_OPTIONS:MMYSQL55} || \
 	${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MHASH} )
 	@${ECHO_CMD} "You need MySQL, PostgreSQL or Hash for Daemon mode, because multithreading support is needed"
 	@${FALSE}
 .endif
-.if (defined(WITH_MYSQL51) && defined(WITH_MYSQL55))
+.if ${PORT_OPTIONS:MMYSQL51} && ${PORT_OPTIONS:MMYSQL55}
 	@${ECHO_CMD} "You can compile with only one MySQL version driver."
 	@${FALSE}
 .endif
-.if defined(WITH_EXTERNAL_LOOKUP) && !( defined(USE_MYSQL) || \
-	!defined(WITHOUT_POSTGRESQL) || defined(USE_SQLITE) )
+.if defined(WITH_EXTERNAL_LOOKUP) && !(${PORT_OPTIONS:MMYSQL51} || \
+	${PORT_OPTIONS:MMYSQL55} || ${PORT_OPTIONS:MPGSQL} ||
+	${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3} )
 	@${ECHO_CMD} "You need MySQL, Postgres or SQLITE for EXTERNAL_LOOKUP."
 	@${FALSE}
 .endif
@@ -498,7 +482,7 @@ pre-configure:
 	@${ECHO_CMD} "DOMAIN_SCALE and LARGE_SCALE are incopatible"
 	@${FALSE}
 .endif
-.if ${PORT_OPTIONS:MLIGHTHTTPD} && ! ${PORT_OPTIONS:MWEBUI}
+.if ${PORT_OPTIONS:MLIGHTTPD} && ! ${PORT_OPTIONS:MWEBUI}
 	@${ECHO_CMD} "There's no reason to depend on LightHTTPD if you're not using WebUI"
 	@${FALSE}
 .endif
@@ -512,36 +496,35 @@ pre-configure:
 post-install:
 	${CP} ${WRKSRC}/src/dspam.conf ${WRKSRC}/src/dspam.conf.sample
 	cd ${WRKSRC}/src/ && \
-		${INSTALL} -o ${DSPAM_OWNER} -g ${DSPAM_GROUP} -m 0640 \
-			dspam.conf.sample ${PREFIX}/etc
+		${INSTALL} dspam.conf.sample ${STAGEDIR}${PREFIX}/etc
 
 ########
 # stupid hack until I figure out where/how to patch
-	@${MKDIR} ${PREFIX}/libdata/pkgconfig
-	@${MV} ${PREFIX}/lib/pkgconfig/dspam.pc ${PREFIX}/libdata/pkgconfig/dspam.pc
-	${TEST} `ls -1 ${PREFIX}/lib/pkgconfig | wc -l` -eq 0 && \
-		${RM} -R ${PREFIX}/lib/pkgconfig || true
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/dspam.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/dspam.pc
+	${TEST} `ls -1 ${STAGEDIR}${PREFIX}/lib/pkgconfig | wc -l` -eq 0 && \
+		${RM} -R ${STAGEDIR}${PREFIX}/lib/pkgconfig || true
 
 #.ifndef NOPORTDATA
-.ifdef(USE_MYSQL)
-	@${MKDIR} ${EXAMPLESDIR}/mysql
+.if ${PORT_OPTIONS:MMYSQL51} || ${PORT_OPTIONS:MMYSQL55}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/mysql
 	cd  ${WRKSRC}/src/tools.mysql_drv && \
 		${INSTALL_DATA} mysql_objects-4.1.sql \
 			mysql_objects-space.sql \
 			mysql_objects-speed.sql \
 			purge-4.1.sql purge.sql \
 			virtual_user_aliases.sql \
-			virtual_users.sql ${EXAMPLESDIR}/mysql
+			virtual_users.sql ${STAGEDIR}${EXAMPLESDIR}/mysql
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
-	@${MKDIR} ${EXAMPLESDIR}/pgsql
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/pgsql
 	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
-		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/pgsql
+		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/pgsql
 .endif
-.ifdef(USE_SQLITE)
-	@${MKDIR} ${EXAMPLESDIR}/sqlite
+.if ${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sqlite
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
-		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/sqlite
+		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/sqlite
 .endif
 #.endif # NOPORTDATA
 
@@ -551,40 +534,39 @@ post-install:
 .	endfor
 	${MV} ${WRKSRC}/webui/cgi-bin/configure.pl ${WRKSRC}/webui/cgi-bin/configure.pl.sample
 	cd ${WRKSRC}/webui/cgi-bin && ${MKDIR} ${WWWDIR} && \
-		${INSTALL_SCRIPT} configure.pl.sample ${WWWDIR}/ && \
-		${INSTALL_SCRIPT} *.cgi ${WWWDIR} && \
-		${INSTALL_DATA} rgb.txt ${WWWDIR}/
+		${INSTALL_SCRIPT} configure.pl.sample ${STAGEDIR}${WWWDIR}/ && \
+		${INSTALL_SCRIPT} *.cgi ${STAGEDIR}${WWWDIR} && \
+		${INSTALL_DATA} rgb.txt ${STAGEDIR}${WWWDIR}/
 	cd ${WRKSRC}/webui/htdocs && \
-		${INSTALL_DATA} base.css dspam-logo-small.gif ${WWWDIR}/
+		${INSTALL_DATA} base.css dspam-logo-small.gif ${STAGEDIR}${WWWDIR}/
 	cd ${WRKSRC}/webui/cgi-bin && \
-		${INSTALL_DATA} default.prefs ${WWWDIR}/default.prefs.sample
+		${INSTALL_DATA} default.prefs ${STAGEDIR}${WWWDIR}/default.prefs.sample
 	cd ${WRKSRC}/webui/cgi-bin && \
-		${INSTALL_DATA} admins ${WWWDIR}/admins.sample
+		${INSTALL_DATA} admins ${STAGEDIR}${WWWDIR}/admins.sample
 	${MKDIR} ${WWWDIR}/templates && cd ${WRKSRC}/webui/cgi-bin/templates && \
-		${INSTALL_DATA} *.html ${WWWDIR}/templates/ && \
-		${INSTALL_SCRIPT} strings.pl ${WWWDIR}/templates/ &&
+		${INSTALL_DATA} *.html ${STAGEDIR}${WWWDIR}/templates/ && \
+		${INSTALL_SCRIPT} strings.pl ${STAGEDIR}${WWWDIR}/templates/ &&
 		for _dir in de es-es fr he pt-br ro; do \
-			${INSTALL_DATA} -d ${WWWDIR}/templates/$${_dir} && \
+			${INSTALL_DATA} -d ${STAGEDIR}${WWWDIR}/templates/$${_dir} && \
 			cd ${WRKSRC}/webui/cgi-bin/templates/$${_dir} && \
-				${INSTALL_DATA} *.html ${WWWDIR}/templates/$${_dir}; \
+				${INSTALL_DATA} *.html ${STAGEDIR}${WWWDIR}/templates/$${_dir}; \
 		done && \
 		for _dir in de es-es pt-br; do \
 			cd ${WRKSRC}/webui/cgi-bin/templates/$${_dir} && \
-				${INSTALL_SCRIPT} strings.pl ${WWWDIR}/templates/$${_dir}/; \
+				${INSTALL_SCRIPT} strings.pl ${STAGEDIR}${WWWDIR}/templates/$${_dir}/; \
 		done
 .endif
 
 	@${SED} ${_SED_SCRIPT} ${.CURDIR}/pkg-message > ${WRKSRC}/README.FreeBSD
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${_DOCSL} ${DOCSDIR}
-	@cd ${FILESDIR} && ${INSTALL_DATA} UPDATING ${DOCSDIR}/UPDATING
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${_DOCSL} ${STAGEDIR}${DOCSDIR}
+	@cd ${FILESDIR} && ${INSTALL_DATA} UPDATING ${STAGEDIR}${DOCSDIR}/UPDATING
 .endif
 
-	@${MKDIR} -m ${DSPAM_HOME_MODE} ${DSPAM_HOME}
-	@${CHOWN} ${DSPAM_HOME_OWNER}:${DSPAM_HOME_GROUP} ${DSPAM_HOME}
+	@${MKDIR} ${STAGEDIR}${DSPAM_HOME}
 .for _file in firstrun.txt firstspam.txt quarantinefull.txt
 	@if ! ${TEST} -e ${WRKSRC}/txt/${_file}.sample;\
 	then\
@@ -592,13 +574,11 @@ post-install:
 		${MV} ${_file} ${_file}.sample;\
 	fi
 	cd ${WRKSRC}/txt && \
-		${INSTALL_DATA} ${_file}.sample ${DSPAM_HOME}
+		${INSTALL_DATA} ${_file}.sample ${STAGEDIR}${DSPAM_HOME}
 .endfor
 
-	@${MKDIR} -m ${DSPAM_HOME_MODE} ${LOG_DIR}
-
 	@${CAT} ${WRKSRC}/README.FreeBSD
-	@${ECHO_CMD} "If you haven't defined NOPORTDOCS you can review this"
+	@${ECHO_CMD} "If you have set DOCS you can review this"
 	@${ECHO_CMD} "message in ${DOCSDIR}/README.FreeBSD"
 	@${ECHO_CMD}
 

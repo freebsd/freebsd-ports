@@ -15,8 +15,9 @@ bin/dspam_notify
 %%PGSQL%%bin/dspam_pg2int8
 bin/dspam_stats
 bin/dspam_train
-@unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
-etc/dspam.conf.sample
+@sample etc/dspam.conf.sample
+@exec chown %%DSPAM_OWNER%%:%%DSPAM_GROUP%% %D/%F
+@exec chmod 0640 %D/%F
 include/dspam/buffer.h
 include/dspam/config.h
 include/dspam/config_shared.h
@@ -32,25 +33,44 @@ include/dspam/read_config.h
 include/dspam/storage_driver.h
 include/dspam/tokenizer.h
 lib/libdspam.a
-lib/libdspam.la
 lib/libdspam.so
 lib/libdspam.so.7
+lib/libdspam.so.7.0.0
+man/man1/dspam.1.gz
+man/man1/dspam_admin.1.gz
+man/man1/dspam_clean.1.gz
+man/man1/dspam_crc.1.gz
+man/man1/dspam_dump.1.gz
+man/man1/dspam_logrotate.1.gz
+man/man1/dspam_merge.1.gz
+man/man1/dspam_stats.1.gz
+man/man1/dspam_train.1.gz
+man/man3/dspam_addattribute.3.gz
+man/man3/dspam_attach.3.gz
+man/man3/dspam_clearattributes.3.gz
+man/man3/dspam_create.3.gz
+man/man3/dspam_destroy.3.gz
+man/man3/dspam_detach.3.gz
+man/man3/dspam_getsource.3.gz
+man/man3/dspam_init.3.gz
+man/man3/dspam_process.3.gz
+man/man3/libdspam.3.gz
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.a
-%%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.la
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so.7
+%%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so.7.0.0
 %%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.a
-%%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.la
 %%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.so
 %%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.so.7
+%%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.so.7.0.0
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.a
-%%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.la
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so
 %%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so.7
+%%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so.7.0.0
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.a
-%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.la
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so
 %%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7
+%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7.0.0
 @dirrm lib/dspam
 libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
@@ -208,4 +228,8 @@ firstrun.txt.sample
 firstspam.txt.sample
 quarantinefull.txt.sample
 @cwd /
+@exec chown %%DSPAM_HOME_OWNER%%:%%DSPAM_HOME_GROUP%% %%DSPAM_HOME%%
+@exec chmod %%DSPAM_HOME_MODE%% %%DSPAM_HOME%%
 @dirrm %%DSPAM_HOME%%
+@exec chown %%DSPAM_HOME_OWNER%%:%%DSPAM_HOME_GROUP%% %%LOG_DIR%%
+@dirrmtry %%LOG_DIR%%
