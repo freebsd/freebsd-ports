@@ -15,93 +15,112 @@ bin/mahjongg
 bin/quadrapassel
 bin/sol
 bin/swell-foop
-@unexec [ -s %D/share/games/glines.Large.scores ] || rm -f %D/share/games/glines.Large.scores
-@unexec [ -s %D/share/games/glines.Medium.scores ] || rm -f %D/share/games/glines.Medium.scores
-@unexec [ -s %D/share/games/glines.Small.scores ] || rm -f %D/share/games/glines.Small.scores
-@unexec [ -s %D/share/games/gnibbles.1.0.scores ] || rm -f %D/share/games/gnibbles.1.0.scores
-@unexec [ -s %D/share/games/gnibbles.1.1.scores ] || rm -f %D/share/games/gnibbles.1.1.scores
-@unexec [ -s %D/share/games/gnibbles.2.0.scores ] || rm -f %D/share/games/gnibbles.2.0.scores
-@unexec [ -s %D/share/games/gnibbles.2.1.scores ] || rm -f %D/share/games/gnibbles.2.1.scores
-@unexec [ -s %D/share/games/gnibbles.3.0.scores ] || rm -f %D/share/games/gnibbles.3.0.scores
-@unexec [ -s %D/share/games/gnibbles.3.1.scores ] || rm -f %D/share/games/gnibbles.3.1.scores
-@unexec [ -s %D/share/games/gnibbles.4.0.scores ] || rm -f %D/share/games/gnibbles.4.0.scores
-@unexec [ -s %D/share/games/gnibbles.4.1.scores ] || rm -f %D/share/games/gnibbles.4.1.scores
-@unexec [ -s %D/share/games/gnobots2.classic_robots-safe.scores ] || rm -f %D/share/games/gnobots2.classic_robots-safe.scores
-@unexec [ -s %D/share/games/gnobots2.classic_robots-super-safe.scores ] || rm -f %D/share/games/gnobots2.classic_robots-super-safe.scores
-@unexec [ -s %D/share/games/gnobots2.classic_robots.scores ] || rm -f %D/share/games/gnobots2.classic_robots.scores
-@unexec [ -s %D/share/games/gnobots2.nightmare-safe.scores ] || rm -f %D/share/games/gnobots2.nightmare-safe.scores
-@unexec [ -s %D/share/games/gnobots2.nightmare-super-safe.scores ] || rm -f %D/share/games/gnobots2.nightmare-super-safe.scores
-@unexec [ -s %D/share/games/gnobots2.nightmare.scores ] || rm -f %D/share/games/gnobots2.nightmare.scores
-@unexec [ -s %D/share/games/gnobots2.robots2-safe.scores ] || rm -f %D/share/games/gnobots2.robots2-safe.scores
-@unexec [ -s %D/share/games/gnobots2.robots2-super-safe.scores ] || rm -f %D/share/games/gnobots2.robots2-super-safe.scores
-@unexec [ -s %D/share/games/gnobots2.robots2.scores ] || rm -f %D/share/games/gnobots2.robots2.scores
-@unexec [ -s %D/share/games/gnobots2.robots2_easy-safe.scores ] || rm -f %D/share/games/gnobots2.robots2_easy-safe.scores
-@unexec [ -s %D/share/games/gnobots2.robots2_easy-super-safe.scores ] || rm -f %D/share/games/gnobots2.robots2_easy-super-safe.scores
-@unexec [ -s %D/share/games/gnobots2.robots2_easy.scores ] || rm -f %D/share/games/gnobots2.robots2_easy.scores
-@unexec [ -s %D/share/games/gnobots2.robots_with_safe_teleport-safe.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport-safe.scores
-@unexec [ -s %D/share/games/gnobots2.robots_with_safe_teleport-super-safe.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport-super-safe.scores
-@unexec [ -s %D/share/games/gnobots2.robots_with_safe_teleport.scores ] || rm -f %D/share/games/gnobots2.robots_with_safe_teleport.scores
-@unexec [ -s %D/share/games/gnomine.Custom.scores ] || rm -f %D/share/games/gnomine.Custom.scores
-@unexec [ -s %D/share/games/gnomine.Large.scores ] || rm -f %D/share/games/gnomine.Large.scores
-@unexec [ -s %D/share/games/gnomine.Medium.scores ] || rm -f %D/share/games/gnomine.Medium.scores
-@unexec [ -s %D/share/games/gnomine.Small.scores ] || rm -f %D/share/games/gnomine.Small.scores
-@unexec [ -s %D/share/games/gnotravex.2x2.scores ] || rm -f %D/share/games/gnotravex.2x2.scores
-@unexec [ -s %D/share/games/gnotravex.3x3.scores ] || rm -f %D/share/games/gnotravex.3x3.scores
-@unexec [ -s %D/share/games/gnotravex.4x4.scores ] || rm -f %D/share/games/gnotravex.4x4.scores
-@unexec [ -s %D/share/games/gnotravex.5x5.scores ] || rm -f %D/share/games/gnotravex.5x5.scores
-@unexec [ -s %D/share/games/gnotravex.6x6.scores ] || rm -f %D/share/games/gnotravex.6x6.scores
-@unexec [ -s %D/share/games/gnotski.1.scores ] || rm -f %D/share/games/gnotski.1.scores
-@unexec [ -s %D/share/games/gnotski.10.scores ] || rm -f %D/share/games/gnotski.10.scores
-@unexec [ -s %D/share/games/gnotski.11.scores ] || rm -f %D/share/games/gnotski.11.scores
-@unexec [ -s %D/share/games/gnotski.12.scores ] || rm -f %D/share/games/gnotski.12.scores
-@unexec [ -s %D/share/games/gnotski.13.scores ] || rm -f %D/share/games/gnotski.13.scores
-@unexec [ -s %D/share/games/gnotski.14.scores ] || rm -f %D/share/games/gnotski.14.scores
-@unexec [ -s %D/share/games/gnotski.15.scores ] || rm -f %D/share/games/gnotski.15.scores
-@unexec [ -s %D/share/games/gnotski.16.scores ] || rm -f %D/share/games/gnotski.16.scores
-@unexec [ -s %D/share/games/gnotski.17.scores ] || rm -f %D/share/games/gnotski.17.scores
-@unexec [ -s %D/share/games/gnotski.18.scores ] || rm -f %D/share/games/gnotski.18.scores
-@unexec [ -s %D/share/games/gnotski.19.scores ] || rm -f %D/share/games/gnotski.19.scores
-@unexec [ -s %D/share/games/gnotski.2.scores ] || rm -f %D/share/games/gnotski.2.scores
-@unexec [ -s %D/share/games/gnotski.20.scores ] || rm -f %D/share/games/gnotski.20.scores
-@unexec [ -s %D/share/games/gnotski.21.scores ] || rm -f %D/share/games/gnotski.21.scores
-@unexec [ -s %D/share/games/gnotski.22.scores ] || rm -f %D/share/games/gnotski.22.scores
-@unexec [ -s %D/share/games/gnotski.23.scores ] || rm -f %D/share/games/gnotski.23.scores
-@unexec [ -s %D/share/games/gnotski.24.scores ] || rm -f %D/share/games/gnotski.24.scores
-@unexec [ -s %D/share/games/gnotski.25.scores ] || rm -f %D/share/games/gnotski.25.scores
-@unexec [ -s %D/share/games/gnotski.26.scores ] || rm -f %D/share/games/gnotski.26.scores
-@unexec [ -s %D/share/games/gnotski.27.scores ] || rm -f %D/share/games/gnotski.27.scores
-@unexec [ -s %D/share/games/gnotski.28.scores ] || rm -f %D/share/games/gnotski.28.scores
-@unexec [ -s %D/share/games/gnotski.29.scores ] || rm -f %D/share/games/gnotski.29.scores
-@unexec [ -s %D/share/games/gnotski.3.scores ] || rm -f %D/share/games/gnotski.3.scores
-@unexec [ -s %D/share/games/gnotski.30.scores ] || rm -f %D/share/games/gnotski.30.scores
-@unexec [ -s %D/share/games/gnotski.31.scores ] || rm -f %D/share/games/gnotski.31.scores
-@unexec [ -s %D/share/games/gnotski.32.scores ] || rm -f %D/share/games/gnotski.32.scores
-@unexec [ -s %D/share/games/gnotski.33.scores ] || rm -f %D/share/games/gnotski.33.scores
-@unexec [ -s %D/share/games/gnotski.34.scores ] || rm -f %D/share/games/gnotski.34.scores
-@unexec [ -s %D/share/games/gnotski.35.scores ] || rm -f %D/share/games/gnotski.35.scores
-@unexec [ -s %D/share/games/gnotski.36.scores ] || rm -f %D/share/games/gnotski.36.scores
-@unexec [ -s %D/share/games/gnotski.37.scores ] || rm -f %D/share/games/gnotski.37.scores
-@unexec [ -s %D/share/games/gnotski.4.scores ] || rm -f %D/share/games/gnotski.4.scores
-@unexec [ -s %D/share/games/gnotski.5.scores ] || rm -f %D/share/games/gnotski.5.scores
-@unexec [ -s %D/share/games/gnotski.6.scores ] || rm -f %D/share/games/gnotski.6.scores
-@unexec [ -s %D/share/games/gnotski.7.scores ] || rm -f %D/share/games/gnotski.7.scores
-@unexec [ -s %D/share/games/gnotski.8.scores ] || rm -f %D/share/games/gnotski.8.scores
-@unexec [ -s %D/share/games/gnotski.9.scores ] || rm -f %D/share/games/gnotski.9.scores
-@unexec [ -s %D/share/games/gtali.Colors.scores ] || rm -f %D/share/games/gtali.Colors.scores
-@unexec [ -s %D/share/games/gtali.Regular.scores ] || rm -f %D/share/games/gtali.Regular.scores
-@unexec [ -s %D/share/games/mahjongg.bridges.scores ] || rm -f %D/share/games/mahjongg.bridges.scores
-@unexec [ -s %D/share/games/mahjongg.cloud.scores ] || rm -f %D/share/games/mahjongg.cloud.scores
-@unexec [ -s %D/share/games/mahjongg.confounding.scores ] || rm -f %D/share/games/mahjongg.confounding.scores
-@unexec [ -s %D/share/games/mahjongg.difficult.scores ] || rm -f %D/share/games/mahjongg.difficult.scores
-@unexec [ -s %D/share/games/mahjongg.dragon.scores ] || rm -f %D/share/games/mahjongg.dragon.scores
-@unexec [ -s %D/share/games/mahjongg.easy.scores ] || rm -f %D/share/games/mahjongg.easy.scores
-@unexec [ -s %D/share/games/mahjongg.pyramid.scores ] || rm -f %D/share/games/mahjongg.pyramid.scores
-@unexec [ -s %D/share/games/mahjongg.tictactoe.scores ] || rm -f %D/share/games/mahjongg.tictactoe.scores
-@unexec [ -s %D/share/games/mahjongg.ziggurat.scores ] || rm -f %D/share/games/mahjongg.ziggurat.scores
-@unexec [ -s %D/share/games/quadrapassel.scores ] || rm -f %D/share/games/quadrapassel.scores
-@unexec [ -s %D/share/games/sweel-foop.Large.scores ] || rm -f %D/share/games/swell-foop.Large.scores
-@unexec [ -s %D/share/games/sweel-foop.Medium.scores ] || rm -f %D/share/games/swell-foop.Medium.scores
-@unexec [ -s %D/share/games/sweel-foop.Small.scores ] || rm -f %D/share/games/swell-foop.Small.scores
+man/man6/glchess.6.gz
+man/man6/glines.6.gz
+man/man6/gnect.6.gz
+man/man6/gnibbles.6.gz
+man/man6/gnobots2.6.gz
+man/man6/gnome-sudoku.6.gz
+man/man6/gnomine.6.gz
+man/man6/gnotravex.6.gz
+man/man6/gnotski.6.gz
+man/man6/gtali.6.gz
+man/man6/iagno.6.gz
+man/man6/mahjongg.6.gz
+man/man6/quadrapassel.6.gz
+man/man6/sol.6.gz
+@owner games
+@group games
+@mode 2775
+@exec mkdir -p %D/share/games
+@sample share/games/glines.Large.scores.sample
+@sample share/games/glines.Medium.scores.sample
+@sample share/games/glines.Small.scores.sample
+@sample share/games/gnibbles.1.0.scores.sample
+@sample share/games/gnibbles.1.1.scores.sample
+@sample share/games/gnibbles.2.0.scores.sample
+@sample share/games/gnibbles.2.1.scores.sample
+@sample share/games/gnibbles.3.0.scores.sample
+@sample share/games/gnibbles.3.1.scores.sample
+@sample share/games/gnibbles.4.0.scores.sample
+@sample share/games/gnibbles.4.1.scores.sample
+@sample share/games/gnobots2.classic_robots-safe.scores.sample
+@sample share/games/gnobots2.classic_robots-super-safe.scores.sample
+@sample share/games/gnobots2.classic_robots.scores.sample
+@sample share/games/gnobots2.nightmare-safe.scores.sample
+@sample share/games/gnobots2.nightmare-super-safe.scores.sample
+@sample share/games/gnobots2.nightmare.scores.sample
+@sample share/games/gnobots2.robots2-safe.scores.sample
+@sample share/games/gnobots2.robots2-super-safe.scores.sample
+@sample share/games/gnobots2.robots2.scores.sample
+@sample share/games/gnobots2.robots2_easy-safe.scores.sample
+@sample share/games/gnobots2.robots2_easy-super-safe.scores.sample
+@sample share/games/gnobots2.robots2_easy.scores.sample
+@sample share/games/gnobots2.robots_with_safe_teleport-safe.scores.sample
+@sample share/games/gnobots2.robots_with_safe_teleport-super-safe.scores.sample
+@sample share/games/gnobots2.robots_with_safe_teleport.scores.sample
+@sample share/games/gnomine.Custom.scores.sample
+@sample share/games/gnomine.Large.scores.sample
+@sample share/games/gnomine.Medium.scores.sample
+@sample share/games/gnomine.Small.scores.sample
+@sample share/games/gnotravex.2x2.scores.sample
+@sample share/games/gnotravex.3x3.scores.sample
+@sample share/games/gnotravex.4x4.scores.sample
+@sample share/games/gnotravex.5x5.scores.sample
+@sample share/games/gnotravex.6x6.scores.sample
+@sample share/games/gnotski.1.scores.sample
+@sample share/games/gnotski.10.scores.sample
+@sample share/games/gnotski.11.scores.sample
+@sample share/games/gnotski.12.scores.sample
+@sample share/games/gnotski.13.scores.sample
+@sample share/games/gnotski.14.scores.sample
+@sample share/games/gnotski.15.scores.sample
+@sample share/games/gnotski.16.scores.sample
+@sample share/games/gnotski.17.scores.sample
+@sample share/games/gnotski.18.scores.sample
+@sample share/games/gnotski.19.scores.sample
+@sample share/games/gnotski.2.scores.sample
+@sample share/games/gnotski.20.scores.sample
+@sample share/games/gnotski.21.scores.sample
+@sample share/games/gnotski.22.scores.sample
+@sample share/games/gnotski.23.scores.sample
+@sample share/games/gnotski.24.scores.sample
+@sample share/games/gnotski.25.scores.sample
+@sample share/games/gnotski.26.scores.sample
+@sample share/games/gnotski.27.scores.sample
+@sample share/games/gnotski.28.scores.sample
+@sample share/games/gnotski.29.scores.sample
+@sample share/games/gnotski.3.scores.sample
+@sample share/games/gnotski.30.scores.sample
+@sample share/games/gnotski.31.scores.sample
+@sample share/games/gnotski.32.scores.sample
+@sample share/games/gnotski.33.scores.sample
+@sample share/games/gnotski.34.scores.sample
+@sample share/games/gnotski.35.scores.sample
+@sample share/games/gnotski.36.scores.sample
+@sample share/games/gnotski.37.scores.sample
+@sample share/games/gnotski.4.scores.sample
+@sample share/games/gnotski.5.scores.sample
+@sample share/games/gnotski.6.scores.sample
+@sample share/games/gnotski.7.scores.sample
+@sample share/games/gnotski.8.scores.sample
+@sample share/games/gnotski.9.scores.sample
+@sample share/games/gtali.Colors.scores.sample
+@sample share/games/gtali.Regular.scores.sample
+@sample share/games/mahjongg.bridges.scores.sample
+@sample share/games/mahjongg.cloud.scores.sample
+@sample share/games/mahjongg.confounding.scores.sample
+@sample share/games/mahjongg.difficult.scores.sample
+@sample share/games/mahjongg.dragon.scores.sample
+@sample share/games/mahjongg.easy.scores.sample
+@sample share/games/mahjongg.pyramid.scores.sample
+@sample share/games/mahjongg.tictactoe.scores.sample
+@sample share/games/mahjongg.ziggurat.scores.sample
+@sample share/games/quadrapassel.scores.sample
+@owner
+@group
+@mode
+@exec mkdir -p %D/share/ggz/gnome-games
 lib/girepository-1.0/GnomeGamesSupport-1.0.typelib
 lib/gnome-games/ar-cards-renderer
 lib/gnome-games/libgames-support-gi.a
@@ -3168,8 +3187,6 @@ share/omf/swell-foop/swell-foop-sv.omf
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
 @dirrm %%PYTHON_SITELIBDIR%%/glchess
 @dirrm lib/gnome-games
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
