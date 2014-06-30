@@ -3,23 +3,18 @@
 
 PORTNAME=	cups-pstoraster
 PORTVERSION=	8.15.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_EASYSW}
-MASTER_SITE_SUBDIR=	ghostscript/${PORTVERSION}
+MASTER_SITES=	EASYSW/ghostscript/${PORTVERSION}
 DISTNAME=	espgs-${ESPGS_VER}-source
 DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Postscript interpreter for CUPS printing to non-PS printers
 
-LIB_DEPENDS=	cupsimage.2:${PORTSDIR}/print/cups-image
+LICENSE=	GPLv2
 
-.if defined(WITH_CJK)
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std \
-		${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-lib_cidfmap
-.endif
+LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups-image
 
 ESPGS_VER=	${PORTVERSION}
 GS_VERSION=	8.15
@@ -39,13 +34,12 @@ MAKE_ARGS=	CFLAGS_STANDARD="${CFLAGS} -DUPD_SIGNAL=0" \
 		DEVICE_DEVS="\$$(DD)cups.dev \$$(DD)pxlcolor.dev \$$(DD)pxlmono.dev"
 PLIST_SUB=	GS_VERSION="${GS_VERSION}"
 
-NO_STAGE=	yes
-pre-everything::
-.if !defined(WITH_CJK)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define WITH_CJK to enable Japanese PostScript documents processing"
-	@${ECHO_MSG} ""
-.endif
+OPTIONS_DEFINE=	CJK
+
+CJK_DESC=		Japanese PostScript documents processing
+CJK_RUN_DEPENDS=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std \
+			${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+CJK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-lib_cidfmap
 
 pre-configure:
 	${RM} -f ${WRKSRC}/ijs/config.guess ${WRKSRC}/ijs/missing ${WRKSRC}/ijs/config.sub ${WRKSRC}/ijs/install-sh ${WRKSRC}/ijs/ltmain.sh
@@ -54,6 +48,8 @@ pre-configure:
 post-patch:
 	${LN} -sf ${WRKSRC}/pstoraster/gdevcups.c ${WRKSRC}/src
 	${CAT} ${FILESDIR}/cups.contrib.mak >> ${WRKSRC}/src/contrib.mak
+	${FIND} ${WRKSRC} -name "*.mak" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's|$$(install_prefix)|$$(DESTDIR)$$(install_prefix)|g'
 .for file in pstopxl pstoraster
 	${REINPLACE_CMD} -e 's:@prefix@:${PREFIX}:g ; \
 		 s:@exec_prefix@:${PREFIX}:g ; \
@@ -72,5 +68,8 @@ post-patch:
 pre-build:
 	${MKDIR} ${WRKSRC}/bin
 	${MKDIR} ${WRKSRC}/obj
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/espgs
 
 .include <bsd.port.mk>
