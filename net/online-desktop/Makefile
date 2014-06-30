@@ -26,6 +26,9 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/desktop-data-engine:${PORTSDIR}/net/desktop-da
 		${LOCALBASE}/bin/purple-remote:${PORTSDIR}/net-im/libpurple \
 		${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 
+DEPRECATED=	Disappeared upstream, depends on expired ports
+EXPIRATION_DATE=2014-07-21
+
 USES=		gettext gmake libtool tar:bzip2
 USE_GNOME=	glib20 gconf2 pygnomedesktop
 GNU_CONFIGURE=	yes
