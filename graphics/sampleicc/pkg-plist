@@ -7,8 +7,10 @@ bin/extract_probe_data
 bin/flatten_AToB_tag
 bin/generate_device_codes
 bin/iccApplyNamedCmm
+bin/iccApplyProfiles
 bin/iccDumpProfile
 bin/iccGamutMapGirdle
+bin/iccGetBPCInfo
 bin/iccProfLibTest
 bin/iccRoundTrip
 bin/iccStripUnknownTags
@@ -46,12 +48,12 @@ include/SampleICC/Vetters.h
 include/SampleICC/icProfileHeader.h
 include/SampleICC/md5.h
 lib/libICC_utils.a
-lib/libICC_utils.la
 lib/libICC_utils.so
 lib/libICC_utils.so.2
+lib/libICC_utils.so.2.0.3
 lib/libSampleICC.a
-lib/libSampleICC.la
 lib/libSampleICC.so
 lib/libSampleICC.so.2
+lib/libSampleICC.so.2.0.3
 libdata/pkgconfig/sampleicc.pc
 @dirrm include/SampleICC
