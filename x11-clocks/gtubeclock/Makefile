@@ -10,10 +10,9 @@ MASTER_SITES=	http://www.bonnyswan.com/gtubeclock/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nixie tube clock for GNOME
 
-USES=		pkgconfig
+USES=		pkgconfig pathfix
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20 libgnomeui
+USE_GNOME=	gnomeprefix gtk20 libgnomeui
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
