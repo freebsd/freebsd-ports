@@ -9,15 +9,15 @@ MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Scim-bridge agent (server)
 
-LIB_DEPENDS=	scim-1.0.10:${PORTSDIR}/textproc/scim
-
-USES=		gettext gmake pkgconfig
-GNU_CONFIGURE=	yes
-
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/doc/LICENSE.GPL
 LICENSE_FILE_LGPL21=	${WRKSRC}/doc/LICENSE.LGPL
+
+LIB_DEPENDS=	libscim-1.0.so:${PORTSDIR}/textproc/scim
+
+USES=		gettext gmake pkgconfig
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 CXXFLAGS+=	${CPPFLAGS}
@@ -30,7 +30,6 @@ CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE} \
 
 PLIST_FILES=	bin/scim-bridge
 
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
