@@ -31,8 +31,8 @@
  	install -g $(GROUP) -o $(USER) $(HEADERS) $(DESTDIR)$(INCPATH)
  ifndef NODOCS
 -	install -g $(GROUP) -o $(USER) doc/crypt.pdf $(DESTDIR)$(DATAPATH)
-+	install -d -g $(GROUP) -o $(USER) $(DATAPATH)
-+	install -g $(GROUP) -o $(USER) doc/crypt.pdf $(DATAPATH)
++	install -d -g $(GROUP) -o $(USER) ${DESTDIR}$(DATAPATH)
++	install -g $(GROUP) -o $(USER) doc/crypt.pdf ${DESTDIR}$(DATAPATH)
  endif
  
  install_test: testprof/$(LIBTEST)
