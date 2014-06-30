@@ -3,7 +3,7 @@
 
 PORTNAME=	qslim
 PORTVERSION=	2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://mgarland.org/files/dist/ \
 		CENKES
@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgfx.so:${PORTSDIR}/graphics/libgfx \
-		libforms.so:${PORTSDIR}/x11-toolkits/xforms
+		libgfx.so:${PORTSDIR}/graphics/libgfx
 
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit
 BUILD_WRKSRC=		${WRKSRC}/mixkit/src
