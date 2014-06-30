@@ -157,6 +157,14 @@ parse_mtree() {
 		fi
 		unset MTREE_FILE GNOME_MTREE_FILE
 
+		# Add LOCALBASE
+		a=${LOCALBASE}
+		while :; do
+			echo ${a}
+			a=${a%/*}
+			[ -z "${a}" ] && break
+		done
+
 		# Add in PREFIX if this port wants it
 		if [ ${NO_PREFIX_RMDIR} -eq 0 ]; then
 			a=${PREFIX}
