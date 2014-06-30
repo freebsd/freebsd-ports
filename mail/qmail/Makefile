@@ -69,7 +69,6 @@ QMTPC_PATCH_DESC=		Send email using qmtp protocol
 QUOTATRASH_DESC=		Include the Trash in the quota
 RCDLINK_DESC=			Create rc.d/qmail symlink
 SENDERCHECK4_DESC=		LOOSE checks exclusively for RELAY clients
-SMTPAUTHUSER_DESC=		Create env SMTPAUTHUSER containing authuser
 SMTPEXECCHECK_DESC=		Smtp DOS/Windows executable detection
 SMTPEXTFORK_DESC=		Allow qmail-smtpd fork external progs
 SMTP_AUTH_PATCH_DESC=		Provide SMTP Authentication
@@ -230,7 +229,7 @@ OPTIONS_DEFINE+=TLS ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT CLEARTEXTPASSWD \
 		DASH_EXT DATA_COMPRESS EXTERNAL_TODO IGNOREVERISIGN \
 		QLDAP_CLUSTER QMQP_COMPRESS QUOTATRASH SMTPEXECCHECK \
 		AUTOMAILDIRMAKE AUTOHOMEDIRMAKE LDAP_DEBUG SMTPEXTFORK \
-		XF_QUITASAP SENDERCHECK4 ENHACELOGS GRTDELAY SMTPAUTHUSER SRS
+		XF_QUITASAP SENDERCHECK4 ENHACELOGS GRTDELAY SRS
 
 OPTIONS_DEFAULT+=	TLS DASH_EXT DATA_COMPRESS EXTERNAL_TODO QLDAP_CLUSTER \
 			QLDAP_CLUSTER QMQP_COMPRESS SMTPEXECCHECK \
@@ -583,7 +582,7 @@ PATCHFILES+=	tarpit.patch:tarpit
 . if defined(SLAVE_SPAMCONTROL)
 SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-2731.patch
 . else
-SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}_4.patch
+SMTPEXTFORK_PATCH=	smtpextfork-ldap-20060201_4.patch
 . endif
 
 MASTER_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/patches/:extfork \
@@ -604,7 +603,7 @@ PATCHFILES+=	qmail-ldap-1.03_qmail-smtpd_SENDERCHECK4.patch:sendercheck4
 PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:grtdelay \
 		${MASTER_SITE_LOCAL:S/$/:grtdelay/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:grtdelay
-PATCHFILES+=	qmail-ldap-${LDAP_PATCH_DATE}-grtdelay.patch:grtdelay
+PATCHFILES+=	qmail-ldap-20060201-grtdelay.patch:grtdelay
 DOCFILES_WRKSRC+=	README.GREETDELAY
 .endif
 
@@ -612,18 +611,7 @@ DOCFILES_WRKSRC+=	README.GREETDELAY
 PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:ldapenhacelog \
 		${MASTER_SITE_LOCAL:S/$/:ldapenhacelog/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:ldapenhacelog
-PATCHFILES+=	enhacelogging-ldap-${LDAP_PATCH_DATE}_4.patch:ldapenhacelog
-.endif
-
-.if defined(SLAVE_LDAP) && ${PORT_OPTIONS:MSMTPAUTHUSER}
-PATCH_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:smtpauthuser \
-		${MASTER_SITE_LOCAL:S/$/:smtpauthuser/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:smtpauthuser
-. if ${PORT_OPTIONS:MENHACELOGS}
-PATCHFILES+=	qmail-1.03-enhaceloggingSMTPAUTHUSER:smtpauthuser
-. else
-PATCHFILES+=	SMTPAUTHUSER.patch:smtpauthuser
-. endif
+PATCHFILES+=	enhacelogging-ldap-20120221.patch:ldapenhacelog
 .endif
 
 .if defined(SLAVE_SPAMCONTROL)
