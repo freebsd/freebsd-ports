@@ -433,6 +433,7 @@ lib/calibre/calibre/ebooks/oeb/polish/create.py
 lib/calibre/calibre/ebooks/oeb/polish/css.py
 lib/calibre/calibre/ebooks/oeb/polish/embed.py
 lib/calibre/calibre/ebooks/oeb/polish/errors.py
+lib/calibre/calibre/ebooks/oeb/polish/fonts.py
 lib/calibre/calibre/ebooks/oeb/polish/import_book.py
 lib/calibre/calibre/ebooks/oeb/polish/jacket.py
 lib/calibre/calibre/ebooks/oeb/polish/main.py
@@ -622,6 +623,7 @@ lib/calibre/calibre/gui2/actions/delete.py
 lib/calibre/calibre/gui2/actions/device.py
 lib/calibre/calibre/gui2/actions/edit_collections.py
 lib/calibre/calibre/gui2/actions/edit_metadata.py
+lib/calibre/calibre/gui2/actions/embed.py
 lib/calibre/calibre/gui2/actions/fetch_news.py
 lib/calibre/calibre/gui2/actions/help.py
 lib/calibre/calibre/gui2/actions/mark_books.py
@@ -1010,6 +1012,7 @@ lib/calibre/calibre/gui2/tweak_book/editor/canvas.py
 lib/calibre/calibre/gui2/tweak_book/editor/image.py
 lib/calibre/calibre/gui2/tweak_book/editor/insert_resource.py
 lib/calibre/calibre/gui2/tweak_book/editor/smart/__init__.py
+lib/calibre/calibre/gui2/tweak_book/editor/smart/css.py
 lib/calibre/calibre/gui2/tweak_book/editor/smart/html.py
 lib/calibre/calibre/gui2/tweak_book/editor/syntax/__init__.py
 lib/calibre/calibre/gui2/tweak_book/editor/syntax/base.py
@@ -1020,7 +1023,10 @@ lib/calibre/calibre/gui2/tweak_book/editor/themes.py
 lib/calibre/calibre/gui2/tweak_book/editor/widget.py
 lib/calibre/calibre/gui2/tweak_book/file_list.py
 lib/calibre/calibre/gui2/tweak_book/job.py
+lib/calibre/calibre/gui2/tweak_book/live_css.py
 lib/calibre/calibre/gui2/tweak_book/main.py
+lib/calibre/calibre/gui2/tweak_book/manage_fonts.py
+lib/calibre/calibre/gui2/tweak_book/polish.py
 lib/calibre/calibre/gui2/tweak_book/preferences.py
 lib/calibre/calibre/gui2/tweak_book/preview.py
 lib/calibre/calibre/gui2/tweak_book/save.py
@@ -1108,6 +1114,7 @@ lib/calibre/calibre/plugins/calibre_style.so
 lib/calibre/calibre/plugins/chm_extra.so
 lib/calibre/calibre/plugins/chmlib.so
 lib/calibre/calibre/plugins/freetype.so
+lib/calibre/calibre/plugins/html.so
 lib/calibre/calibre/plugins/hunspell.so
 lib/calibre/calibre/plugins/icu.so
 lib/calibre/calibre/plugins/lzx.so
@@ -1119,6 +1126,7 @@ lib/calibre/calibre/plugins/podofo.so
 lib/calibre/calibre/plugins/progress_indicator.so
 lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
+lib/calibre/calibre/plugins/tokenizer.so
 lib/calibre/calibre/plugins/unrar.so
 lib/calibre/calibre/plugins/woff.so
 lib/calibre/calibre/ptempfile.py
@@ -1422,6 +1430,26 @@ lib/calibre/routes/middleware.py
 lib/calibre/routes/route.py
 lib/calibre/routes/util.py
 lib/calibre/templite/__init__.py
+lib/calibre/tinycss/__init__.py
+lib/calibre/tinycss/color3.py
+lib/calibre/tinycss/css21.py
+lib/calibre/tinycss/decoding.py
+lib/calibre/tinycss/fonts3.py
+lib/calibre/tinycss/media3.py
+lib/calibre/tinycss/page3.py
+lib/calibre/tinycss/parsing.py
+lib/calibre/tinycss/tests/__init__.py
+lib/calibre/tinycss/tests/color3.py
+lib/calibre/tinycss/tests/css21.py
+lib/calibre/tinycss/tests/decoding.py
+lib/calibre/tinycss/tests/fonts3.py
+lib/calibre/tinycss/tests/main.py
+lib/calibre/tinycss/tests/media3.py
+lib/calibre/tinycss/tests/page3.py
+lib/calibre/tinycss/tests/tokenizing.py
+lib/calibre/tinycss/token_data.py
+lib/calibre/tinycss/tokenizer.py
+lib/calibre/tinycss/version.py
 %%PYTHON_SITELIBDIR%%/init_calibre.py
 share/appdata/calibre-ebook-edit.appdata.xml
 share/appdata/calibre-ebook-viewer.appdata.xml
@@ -1490,6 +1518,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/content_server/star-half.png
 %%DATADIR%%/content_server/star-off.png
 %%DATADIR%%/content_server/star-on.png
+%%DATADIR%%/csscolorparser.js
 %%DATADIR%%/default_tweaks.py
 %%DATADIR%%/dictionaries/en-GB/en-GB.aff
 %%DATADIR%%/dictionaries/en-GB/en-GB.dic
@@ -1990,8 +2019,6 @@ share/zsh/site-functions/_calibre
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/gnome/apps
-@dirrmtry share/gnome
 @dirrmtry share/desktop-directories
 @dirrmtry share/bash-completion
 @dirrmtry share/appdata
@@ -2073,6 +2100,8 @@ share/zsh/site-functions/_calibre
 @dirrm %%DATADIR%%/catalog
 @dirrm %%DATADIR%%
 @dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrm lib/calibre/tinycss/tests
+@dirrm lib/calibre/tinycss
 @dirrm lib/calibre/templite
 @dirrm lib/calibre/routes
 @dirrm lib/calibre/regex
