@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Xymon Base Module
 
 USES=		perl5

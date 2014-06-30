@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sequentially read Image::Magick object from a filehandle
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
