@@ -406,7 +406,6 @@
     SUBDIR += jpgraph2
     SUBDIR += jpgtn
     SUBDIR += jslice
-    SUBDIR += k3d
     SUBDIR += kamera-kde4
     SUBDIR += kcolorchooser
     SUBDIR += kcoloredit
