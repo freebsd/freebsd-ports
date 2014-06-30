@@ -10,7 +10,6 @@
     SUBDIR += bitcoin-daemon
     SUBDIR += bitflu
     SUBDIR += bitmessage
-    SUBDIR += bittyrant
     SUBDIR += bnbt
     SUBDIR += btpd
     SUBDIR += btqueue

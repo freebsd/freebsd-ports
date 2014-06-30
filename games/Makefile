@@ -917,7 +917,6 @@
     SUBDIR += sudoku-sensei
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
-    SUBDIR += sumwars
     SUBDIR += super_mario_bros_python
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
@@ -986,7 +985,6 @@
     SUBDIR += twitch
     SUBDIR += tycho
     SUBDIR += typespeed
-    SUBDIR += tyrquake
     SUBDIR += ufoai
     SUBDIR += ufoai-data
     SUBDIR += uhexen

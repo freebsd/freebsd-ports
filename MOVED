@@ -6183,3 +6183,27 @@ devel/ode-devel|devel/ode|2014-06-27|Has expired: Outdated by devel/ode
 java/eclipse-devel|java/eclipse|2014-06-29|Concentrate maintenance effort on newer java/eclipse
 textproc/ruby-hikidoc|textproc/rubygem-hikidoc|2014-06-29|Use textproc/rubygem-hikidoc instead
 textproc/metaf2xml|science/metaf2xml|2014-06-30|Moved to a more appropriate category on maintainer request
+www/trac-TracDuplicates||2014-06-30|Has expired: Broken for more than 5 months
+mail/hotwayd||2014-06-30|Has expired: Protocol changed, software unusable
+mail/ilohamail-devel||2014-06-30|Has expired: Upstream disappeared
+games/tyrquake||2014-06-30|Has expired: Broken for more than 5 months
+net/gkrellmqst||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+security/p5-Jifty-Plugin-OpenID||2014-06-30|Has expired: Broken for more than 5 months
+games/sumwars||2014-06-30|Has expired: Broken for more than 5 months
+audio/ruby-esound||2014-06-30|Has expired: Broken for more than 5 months
+x11-toolkits/py-pyqwt||2014-06-30|Has expired: Broken for more than 5 months
+net-im/ysm||2014-06-30|Has expired: Broken for more than 5 months
+net-mgmt/send||2014-06-30|Has expired: Broken for more than 5 months
+net/p5-Jifty-Plugin-Authentication-Ldap||2014-06-30|Has expired: Broken for more than 5 months
+net-p2p/bittyrant||2014-06-30|Has expired: Broken for more than 5 months
+sysutils/gkrellm||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+audio/gkrellmms||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+audio/gkrellmvolume||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+misc/gkrellmlaunch||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+misc/gkrellmfmonitor||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+misc/gkrellshoot||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+polish/sms2||2014-06-30|Has expired: sms2 is no longer being developed, consider using alternative software.
+x11-toolkits/py-wmdockapps||2014-06-30|Has expired: Crufty and nothing depends on this
+audio/tagger||2014-06-30|Has expired: Ancient, unmaintained
+www/mod_wsgi2|www/mod_wsgi3|2014-06-30|Has expired: No longer supported, please use www/mod_wsgi3 instead
+security/botan|security/botan110|2014-06-30|Has expired: Botan 1.8 have known bugs and is no longer supported upstream, migrate to security/botan110

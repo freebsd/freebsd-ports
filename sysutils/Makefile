@@ -317,7 +317,6 @@
     SUBDIR += gkleds2
     SUBDIR += gkrellfire
     SUBDIR += gkrellflynn
-    SUBDIR += gkrellm
     SUBDIR += gkrellm-trayicons
     SUBDIR += gkrellm2
     SUBDIR += gkrelltop

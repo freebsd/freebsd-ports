@@ -143,10 +143,7 @@
     SUBDIR += gkrellm-helium
     SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmbgchg2
-    SUBDIR += gkrellmfmonitor
-    SUBDIR += gkrellmlaunch
     SUBDIR += gkrellmlaunch2
-    SUBDIR += gkrellshoot
     SUBDIR += gkrellshoot2
     SUBDIR += gkrellweather2
     SUBDIR += gkx86info2

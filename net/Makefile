@@ -153,7 +153,6 @@
     SUBDIR += g2ipmsg
     SUBDIR += get_iplayer
     SUBDIR += gini
-    SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
     SUBDIR += glib-networking
@@ -517,7 +516,6 @@
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
     SUBDIR += p5-JavaScript-RPC
-    SUBDIR += p5-Jifty-Plugin-Authentication-Ldap
     SUBDIR += p5-MaxMind-DB-Common
     SUBDIR += p5-MaxMind-DB-Reader
     SUBDIR += p5-Net

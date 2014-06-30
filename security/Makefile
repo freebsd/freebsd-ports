@@ -37,7 +37,6 @@
     SUBDIR += binwalk
     SUBDIR += bioapi
     SUBDIR += blindelephant
-    SUBDIR += botan
     SUBDIR += botan110
     SUBDIR += bro
     SUBDIR += broccoli
@@ -560,7 +559,6 @@
     SUBDIR += p5-HTML-Email-Obfuscate
     SUBDIR += p5-IO-Async-SSL
     SUBDIR += p5-IO-Socket-SSL
-    SUBDIR += p5-Jifty-Plugin-OpenID
     SUBDIR += p5-MD5
     SUBDIR += p5-Mcrypt
     SUBDIR += p5-Module-Signature
