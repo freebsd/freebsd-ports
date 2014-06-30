@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based RSS/RDF/ATOM news aggregator
 
+LICENSE=	GPLv2
+
 USE_PHP=	gettext iconv mbstring session xml zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
