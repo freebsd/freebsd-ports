@@ -167,7 +167,6 @@
     SUBDIR += mh
     SUBDIR += migemo
     SUBDIR += migemo-emacs23
-    SUBDIR += migemo-xemacs-devel-mule
     SUBDIR += migemo.el
     SUBDIR += mikachan-ttfonts
     SUBDIR += mime_pls
@@ -317,7 +316,6 @@
     SUBDIR += wwasw-fpw
     SUBDIR += xdtp
     SUBDIR += xdvik
-    SUBDIR += xemacs21-canna
     SUBDIR += xgate
     SUBDIR += xjtext
     SUBDIR += xlockmore

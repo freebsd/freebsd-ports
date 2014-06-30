@@ -61,7 +61,6 @@
     SUBDIR += emacs23
     SUBDIR += fb
     SUBDIR += flim
-    SUBDIR += flim-xemacs21-mule
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += fxite
@@ -236,7 +235,6 @@
     SUBDIR += scribes
     SUBDIR += se
     SUBDIR += semi
-    SUBDIR += semi-xemacs21-mule
     SUBDIR += setedit
     SUBDIR += slime
     SUBDIR += softmaker-office
@@ -271,12 +269,6 @@
     SUBDIR += wordgrinder
     SUBDIR += xcoral
     SUBDIR += xed
-    SUBDIR += xemacs
-    SUBDIR += xemacs-devel
-    SUBDIR += xemacs-devel-mule
-    SUBDIR += xemacs-mule-packages
-    SUBDIR += xemacs-packages
-    SUBDIR += xemacs21-mule
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
     SUBDIR += yasnippet
