@@ -3,6 +3,7 @@
 
 PORTNAME=	gerbv
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		desktop-file-utils gmake pathfix pkgconfig
+USES=		desktop-file-utils gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--copy --force
