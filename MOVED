@@ -6207,3 +6207,4 @@ x11-toolkits/py-wmdockapps||2014-06-30|Has expired: Crufty and nothing depends o
 audio/tagger||2014-06-30|Has expired: Ancient, unmaintained
 www/mod_wsgi2|www/mod_wsgi3|2014-06-30|Has expired: No longer supported, please use www/mod_wsgi3 instead
 security/botan|security/botan110|2014-06-30|Has expired: Botan 1.8 have known bugs and is no longer supported upstream, migrate to security/botan110
+deskutils/checkrdf||2014-06-30|Removed: Abandonware, please consider using other software

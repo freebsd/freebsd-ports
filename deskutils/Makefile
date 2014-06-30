@@ -23,7 +23,6 @@
     SUBDIR += cdcat
     SUBDIR += charmap
     SUBDIR += charmtimetracker
-    SUBDIR += checkrdf
     SUBDIR += clipit
     SUBDIR += conduit
     SUBDIR += conkyemail
