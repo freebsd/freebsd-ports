@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enormous opening book (about 270 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
-RUN_DEPENDS=	rafty:${PORTSDIR}/games/crafty
+RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 DIST_SUBDIR=	crafty
 USES=		zip
