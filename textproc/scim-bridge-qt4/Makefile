@@ -11,17 +11,17 @@ PKGNAMESUFFIX=	-qt4
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Qt4 client for Scim-bridge
 
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/doc/LICENSE.GPL
+LICENSE_FILE_LGPL21=	${WRKSRC}/doc/LICENSE.LGPL
+
 RUN_DEPENDS=	scim-bridge:${PORTSDIR}/textproc/scim-bridge
 
 USE_QT4=	corelib gui moc_build
 QT_NONSTANDARD=	yes
 USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
-
-LICENSE=	GPLv2 LGPL21
-LICENSE_COMB=	dual
-LICENSE_FILE_GPLv2=	${WRKSRC}/doc/LICENSE.GPL
-LICENSE_FILE_LGPL21=	${WRKSRC}/doc/LICENSE.LGPL
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 CXXFLAGS+=	${CPPFLAGS}
@@ -32,7 +32,6 @@ CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE} \
 		--disable-qt3-immodule \
 		--enable-qt4-immodule
 
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
