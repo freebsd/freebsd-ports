@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		--with-gnu-ld --with-libwrap \
-		--with-ldflags="-lm -lkvm -ldevstat -lpkg -L${LOCALBASE}/lib"
+		--with-ldflags="-lm -lkvm -ldevstat -lpkg -L${LOCALBASE}/lib ${LCRYPTO}"
 SUB_FILES=	pkg-message
 
 .if defined(BATCH)
@@ -206,7 +206,9 @@ CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENSSL_PORT) || defined(OPENSSL_PORT)
-LDFLAGS+=	-lcrypto
+LCRYPTO=	-lcrypto
+.else
+LCRYPTO=
 .endif
 
 pre-everything::
