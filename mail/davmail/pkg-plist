@@ -1,7 +1,5 @@
 bin/davmail
-@unexec if cmp -s %D/etc/davmail.properties.sample %D/etc/davmail.properties; then rm -f %D/etc/davmail.properties ; fi
-etc/davmail.properties.sample
-@exec if [ ! -f %D/etc/davmail.properties ] ; then cp -p %D/%F %B/davmail.properties; fi
+@sample etc/davmail.properties.sample
 share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Info.plist
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/activation-1.1.1.jar
@@ -51,7 +49,7 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/lib/slf4j-log4j12-1.3.1.jar
 %%JAVASHAREDIR%%/davmail/lib/stax-api-1.0.1.jar
 %%JAVASHAREDIR%%/davmail/lib/stax2-api-3.1.1.jar
-%%JAVASHAREDIR%%/davmail/lib/winrun4j-0.4.4.jar
+%%JAVASHAREDIR%%/davmail/lib/winrun4j-0.4.5.jar
 %%JAVASHAREDIR%%/davmail/lib/woodstox-core-asl-4.1.2.jar
 %%JAVASHAREDIR%%/davmail/lib/xercesImpl-2.8.1.jar
 %%JAVASHAREDIR%%/davmail/version.txt
