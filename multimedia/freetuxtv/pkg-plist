@@ -5,9 +5,7 @@ include/libvlc-gtk/gtk-libvlc-instance.h
 include/libvlc-gtk/gtk-libvlc-media-player.h
 include/libvlc-gtk/gtk-libvlc-media.h
 lib/libdbevolution.a
-lib/libdbevolution.la
 lib/libvlc-gtk.a
-lib/libvlc-gtk.la
 share/applications/freetuxtv.desktop
 %%DATADIR%%/channels_groups.xml
 %%DATADIR%%/images/channels/100pourcentradio.png
