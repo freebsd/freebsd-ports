@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Encode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enhanced Chinese encodings with Simplified-Traditional auto-mapping
 
 USES=		perl5
