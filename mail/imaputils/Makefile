@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	imaputils
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://tsatsenko.ru/ports/distfiles/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Number of tools and scripts for use with IMAP servers
