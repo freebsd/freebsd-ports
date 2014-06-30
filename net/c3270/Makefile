@@ -98,13 +98,13 @@ CONFIGURE_ARGS+=	--disable-trace
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/c3270.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/c3270.1
+		${STAGEDIR}${MANPREFIX}/man/man1/c3270.1
 	@${INSTALL_MAN} ${WRKSRC}/x3270-script.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/x3270-script.1
+		${STAGEDIR}${MANPREFIX}/man/man1/x3270-script.1
 	@${INSTALL_MAN} ${WRKSRC}/x3270if.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/x3270if.1
+		${STAGEDIR}${MANPREFIX}/man/man1/x3270if.1
 	@${INSTALL_MAN} ${WRKSRC}/ibm_hosts.man \
-		${STAGEDIR}${MAN1PREFIX}/man/man5/ibm_hosts.5
+		${STAGEDIR}${MANPREFIX}/man/man5/ibm_hosts.5
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
