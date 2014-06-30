@@ -12,9 +12,11 @@ COMMENT=	Interpreter for big integer/multi-precision floating point arithmetic
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-PLIST_FILES=	bin/aribas
+PLIST_FILES=	bin/aribas man/man1/aribas.1.gz
 PORTDOCS=	README aribas.doc aribas.man aribas.tut
 PORTEXAMPLES=	README factor.ari pi.ari queens.ari
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d;' \
