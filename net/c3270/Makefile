@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	c3270
-PORTVERSION=	3.3.12ga13
+PORTVERSION=	3.3.14ga11
 CATEGORIES=	net
-MASTER_SITES=	http://x3270.bgp.nu/download/
+MASTER_SITES=	http://x3270.bgp.nu/download/03.03.14/
+MASTER_SITES_VER_PATH=	${PORTVERSION:C/(0[0-9]\.0[0-9])/}
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -12,20 +13,14 @@ COMMENT=	Full-screen curses-based remote login to IBM mainframes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
 
-# Conflict due to x3270if
-CONFLICTS=	x3270-*
-
 GNU_CONFIGURE=	yes
+
 USES=		iconv readline gmake
 USE_OPENSSL=	yes
+
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-
-MAN1=		c3270.1 \
-		x3270if.1 \
-		x3270-script.1
-MAN5=		ibm_hosts.5
-MANCOMPRESSED=	no
 
 # c3270's ./configure script supports these.
 # Within it all options except DBCS are enabled by default.
@@ -45,7 +40,6 @@ SCRIPT_DESC=		Include scripting support
 TN3270E_DESC=		Include TN3270-Extended support
 TRACE_DESC=		Include trace support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -103,12 +97,19 @@ CONFIGURE_ARGS+=	--disable-trace
 .endif
 
 post-install:
-	@( cd ${WRKSRC} && ${MAKE_CMD} ${MAKE_FLAGS} Makefile install.man )
+	@${INSTALL_MAN} ${WRKSRC}/c3270.man \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/c3270.1
+	@${INSTALL_MAN} ${WRKSRC}/x3270-script.man \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/x3270-script.1
+	@${INSTALL_MAN} ${WRKSRC}/x3270if.man \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/x3270if.1
+	@${INSTALL_MAN} ${WRKSRC}/ibm_hosts.man \
+		${STAGEDIR}${MAN1PREFIX}/man/man5/ibm_hosts.5
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for i in ${PORTDOCS}
-		@${INSTALL_DATA} ${WRKSRC}/html/${i} ${DOCSDIR}/${i}
+		@${INSTALL_DATA} ${WRKSRC}/html/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 	@${ECHO_MSG} "===> Extra Documentation installed in ${DOCSDIR}/html ."
 .endif
