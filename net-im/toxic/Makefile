@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxic
-PORTVERSION=	0.4.0.140611
+PORTVERSION=	0.4.2.140630
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,13 +19,15 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 USE_GITHUB=	yes
 GH_ACCOUNT=	tox
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	328e7f8
+GH_COMMIT=	a126f9c
 
 WRKSRC=		${WRKDIR}/Tox-${PORTNAME}-${GH_COMMIT}
+BUILD_WRKSRC=	${WRKSRC}/build
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
+MAKE_ENV=	USER_CFLAGS="${CFLAGS}" USER_LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
-USES=		ncurses:port pkgconfig
-USE_AUTOTOOLS=	autoconf aclocal
+USES=		ncurses:port gmake pkgconfig
 
 .include <bsd.port.pre.mk>
 
@@ -34,13 +36,11 @@ USE_BINUTILS=	yes
 LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 
-run-autotools:
-	cd ${CONFIGURE_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${AUTORECONF} -if
+pre-configure:
+	${REINPLACE_CMD} -e 's|PREFIX =|PREFIX?=|;s|$$(shell git rev-list HEAD --count)|${GH_COMMIT}|'	\
+		${BUILD_WRKSRC}/${MAKEFILE}
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/misc/toxic.conf ${STAGEDIR}${EXAMPLESDIR}
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/toxic
 
 .include <bsd.port.post.mk>
