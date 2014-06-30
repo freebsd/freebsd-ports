@@ -6209,3 +6209,5 @@ www/mod_wsgi2|www/mod_wsgi3|2014-06-30|Has expired: No longer supported, please 
 security/botan|security/botan110|2014-06-30|Has expired: Botan 1.8 have known bugs and is no longer supported upstream, migrate to security/botan110
 deskutils/checkrdf||2014-06-30|Removed: Abandonware, please consider using other software
 graphics/k3d||2014-06-30|Has expired: Broken for more than 5 months
+mail/cyrus-imapd2|mail/cyrus-imapd24|2014-06-30|Has expired: Cyrus IMAPd 2.1.X have been deprecated, consider using 2.4.X.
+mail/cyrus-imapd22|mail/cyrus-imapd24|2014-06-30|Has expired: No further releases of 2.2.X are planned, consider using 2.4.X.

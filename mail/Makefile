@@ -78,8 +78,6 @@
     SUBDIR += crm114
     SUBDIR += cucipop
     SUBDIR += cvsmail
-    SUBDIR += cyrus-imapd2
-    SUBDIR += cyrus-imapd22
     SUBDIR += cyrus-imapd23
     SUBDIR += cyrus-imapd24
     SUBDIR += cyrus2courier
