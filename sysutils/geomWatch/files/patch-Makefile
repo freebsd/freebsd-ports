@@ -1,0 +1,13 @@
+--- Makefile.orig	2014-06-27 09:35:09.376925204 +0800
++++ Makefile	2014-06-27 09:35:32.058892336 +0800
+@@ -51,8 +51,8 @@ geomWatch: ${FILES}
+ 	${CXX} ${OPTIONS} -o geomWatch geomWatch.cpp
+ 
+ install:
+-	install -s -o root -g wheel -m 755 geomWatch ${PREFIX}/sbin
+-	install -o root -g wheel -m 400 geomWatch.conf.sample ${PREFIX}/etc
++	install -s -o root -g wheel -m 755 geomWatch $(DESTDIR)${PREFIX}/sbin
++	install -o root -g wheel -m 400 geomWatch.conf.sample $(DESTDIR)${PREFIX}/etc
+ 
+ clean:
+ 	rm -f geomWatch

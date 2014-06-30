@@ -59,8 +59,6 @@ IGNOREVERISIGN_DESC=		Disallow dns wildchar matches on gtlds
 LDAP_DEBUG_DESC=		Possibility to log and debug imap/pop
 LOCALTIME_PATCH_DESC=		Emit dates in the local timezone
 MAILDIRQUOTA_PATCH_DESC=	Maildir++ support
-MOREIPME_DESC=			Add control files (more|not)ipme
-NEWLINE_DESC=			Smtpd accept bare line feeds
 OUTGOINGIP_PATCH_DESC=		Set the IP address to send messages
 PAM111421_DESC=			Smtpd allow email in case PAM failure
 QEXTRA_DESC=			Enable QUEUE_EXTRA copy feature
@@ -71,7 +69,6 @@ QMTPC_PATCH_DESC=		Send email using qmtp protocol
 QUOTATRASH_DESC=		Include the Trash in the quota
 RCDLINK_DESC=			Create rc.d/qmail symlink
 SENDERCHECK4_DESC=		LOOSE checks exclusively for RELAY clients
-SMTPAUTHUSER_DESC=		Create env SMTPAUTHUSER containing authuser
 SMTPEXECCHECK_DESC=		Smtp DOS/Windows executable detection
 SMTPEXTFORK_DESC=		Allow qmail-smtpd fork external progs
 SMTP_AUTH_PATCH_DESC=		Provide SMTP Authentication
@@ -79,7 +76,6 @@ SPF_PATCH_DESC=			Implement SPF checker
 SRS_DESC=			Sender Rewriting Scheme support
 TARPIT_PATCH_DESC=		Implement TARPIT functions
 TLS_DESC=			SMTP TLS support
-TLSREMOTE_DESC=			TLS support
 TLS_DEBUG_DESC=			Enable additional debug information
 XF_QUITASAP_DESC=		Close SMTP session ASAP (SMTPEXTFORK)
 
@@ -233,7 +229,7 @@ OPTIONS_DEFINE+=TLS ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT CLEARTEXTPASSWD \
 		DASH_EXT DATA_COMPRESS EXTERNAL_TODO IGNOREVERISIGN \
 		QLDAP_CLUSTER QMQP_COMPRESS QUOTATRASH SMTPEXECCHECK \
 		AUTOMAILDIRMAKE AUTOHOMEDIRMAKE LDAP_DEBUG SMTPEXTFORK \
-		XF_QUITASAP SENDERCHECK4 ENHACELOGS GRTDELAY SMTPAUTHUSER SRS
+		XF_QUITASAP SENDERCHECK4 ENHACELOGS GRTDELAY SRS
 
 OPTIONS_DEFAULT+=	TLS DASH_EXT DATA_COMPRESS EXTERNAL_TODO QLDAP_CLUSTER \
 			QLDAP_CLUSTER QMQP_COMPRESS SMTPEXECCHECK \
@@ -244,10 +240,10 @@ LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT CLEARTEXTPASSWD \
 		QLDAP_CLUSTER QMQP_COMPRESS QUOTATRASH SMTPEXECCHECK
 
 .elif defined(SLAVE_SPAMCONTROL)
-OPTIONS_DEFINE+=TLSREMOTE MOREIPME BIGTODO NEWLINE PAM111421 SMTPEXTFORK \
+OPTIONS_DEFINE+=PAM111421 SMTPEXTFORK \
 		XF_QUITASAP
 
-OPTIONS_DEFAULT+=	TLSREMOTE PAM111421
+OPTIONS_DEFAULT+=	PAM111421
 .endif
 
 OPTIONS_DEFINE+=QEXTRA
@@ -287,11 +283,12 @@ PKGMESSAGE_SUFFIX=	mysql
 
 .if defined(SLAVE_SPAMCONTROL)
 EXTRA_MAN8=	qmail-badloadertypes.8 qmail-badmimetypes.8 qmail-mfrules.8 \
-		qmail-recipients.8
+		qmail-recipients.8 qmail-smtpam.8
 ALL_TARGET+=	${EXTRA_MAN8}
 MMAN8+=		${EXTRA_MAN8}
 USES+=		perl5
 USE_PERL5=	patch build
+CFLAGS+=	-include /usr/include/errno.h
 .endif
 
 .if defined(SLAVE_LDAP)
@@ -358,14 +355,15 @@ DOCFILES_WRKDIR_doc+=	FILES.spamcontrol HISTORY.spamcontrol \
 			INSTALL.spamcontrol LICENSE.spamcontrol \
 			LOGGING.spamcontrol PROPOSAL.mav README.bigtodo \
 			README.bouncemaxbytes README.clamav README.djbdns \
-			README.doublebouncetrim README.mav README.moreipme \
+			README.mav \
 			README.qmailqueue README.recipients \
 			README.wildmat README_spamcontrol.html \
 			RELEASE_22.spamcontrol RELEASE_23.spamcontrol \
 			RELEASE_24.spamcontrol RELEASE_25.spamcontrol \
-			RELEASE_26.spamcontrol SMTPREPLY.spamcontrol \
+			RELEASE_26.spamcontrol RELEASE_27.spamcontrol \
+			SMTPREPLY.spamcontrol \
 			TODO.spamcontrol badloadertypes badmailfrom \
-			badmimetypes badrcptto
+			badmimetypes badrcptto smtpreplies
 SCRIPTS+=	qmail-alias2recipients qmail-pwd2recipients \
 		qmail-users2recipients qmail-vpopmail2recipients
 .endif
@@ -390,8 +388,8 @@ NO_PREFIX_RMDIR=yes
 
 .include <bsd.port.options.mk>
 
-# XXX Not needed with spamcontrol-2730
-.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && !defined(SLAVE_LDAP)
+.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && !defined(SLAVE_LDAP) \
+    && !defined(SLAVE_SPAMCONTROL)
 EXTRA_PATCHES+=			${FILESDIR}/extra-patch-amd64
 .endif
 
@@ -405,7 +403,7 @@ DOCSDIR=	${PREFIX}/doc
 SUB_LIST+=	MANPATH="@comment "
 . if defined(SLAVE_LDAP)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx-ldap
-. else
+. elif !defined(SLAVE_SPAMCONTROL)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
 . endif
 .else
@@ -474,7 +472,7 @@ PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 .if ${PORT_OPTIONS:MSPF_PATCH}
 . if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
 .  if defined(SLAVE_SPAMCONTROL)
-SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol-26
+SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol-27
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S/$/:spf_spamcontrol/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:spf_spamcontrol
 DISTFILES+=		${SPF_SPAMCONTROL_PATCH}:spf_spamcontrol
@@ -582,10 +580,9 @@ PATCHFILES+=	tarpit.patch:tarpit
 .if ${PORT_OPTIONS:MSMTPEXTFORK} && \
     ( defined(SLAVE_SPAMCONTROL) || defined(SLAVE_LDAP) )
 . if defined(SLAVE_SPAMCONTROL)
-SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-2519.patch
-CFLAGS+=		-Wno-return-type
+SMTPEXTFORK_PATCH=	smtpextfork-spamcontrol-2731.patch
 . else
-SMTPEXTFORK_PATCH=	smtpextfork-ldap-${LDAP_PATCH_DATE}_4.patch
+SMTPEXTFORK_PATCH=	smtpextfork-ldap-20060201_4.patch
 . endif
 
 MASTER_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/patches/:extfork \
@@ -606,7 +603,7 @@ PATCHFILES+=	qmail-ldap-1.03_qmail-smtpd_SENDERCHECK4.patch:sendercheck4
 PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:grtdelay \
 		${MASTER_SITE_LOCAL:S/$/:grtdelay/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:grtdelay
-PATCHFILES+=	qmail-ldap-${LDAP_PATCH_DATE}-grtdelay.patch:grtdelay
+PATCHFILES+=	qmail-ldap-20060201-grtdelay.patch:grtdelay
 DOCFILES_WRKSRC+=	README.GREETDELAY
 .endif
 
@@ -614,32 +611,21 @@ DOCFILES_WRKSRC+=	README.GREETDELAY
 PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:ldapenhacelog \
 		${MASTER_SITE_LOCAL:S/$/:ldapenhacelog/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:ldapenhacelog
-PATCHFILES+=	enhacelogging-ldap-${LDAP_PATCH_DATE}_4.patch:ldapenhacelog
-.endif
-
-.if defined(SLAVE_LDAP) && ${PORT_OPTIONS:MSMTPAUTHUSER}
-PATCH_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:smtpauthuser \
-		${MASTER_SITE_LOCAL:S/$/:smtpauthuser/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:smtpauthuser
-. if ${PORT_OPTIONS:MENHACELOGS}
-PATCHFILES+=	qmail-1.03-enhaceloggingSMTPAUTHUSER:smtpauthuser
-. else
-PATCHFILES+=	SMTPAUTHUSER.patch:smtpauthuser
-. endif
+PATCHFILES+=	enhacelogging-ldap-20120221.patch:ldapenhacelog
 .endif
 
 .if defined(SLAVE_SPAMCONTROL)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:ucspi_ssl/} \
-		http://www.superscript.com/ucspi-ssl/:ucspi_ssl \
-		http://dev.qmailrocks.org/downloads/qmailrocks_3.0-beta/:ucspi_ssl \
-		${MASTER_SITE_GENTOO:S/$/:ucspi_ssl/}
-MASTER_SITE_SUBDIR+=	garga/ucspi-ssl/:ucspi_ssl
-DISTFILES+=	ucspi-ssl-0.70.tar.gz:ucspi_ssl
+		http://www.fehcom.de/ipnet/ucspi-ssl/:ucspi_ssl
+MASTER_SITE_SUBDIR+=	bdrewery/ucspi-ssl/:ucspi_ssl
+UCSPI_SSL_VER=	0.94
+UCSPI_SSL_DIST=	ucspi-ssl-${UCSPI_SSL_VER}.tgz
+DISTFILES+=	${UCSPI_SSL_DIST}:ucspi_ssl
 
-MASTER_SITES+=	http://www.fehcom.de/qmail/spamcontrol/:ucspi_ssl_patch
-DISTFILES+=	ucspi-ssl-0.70_ucspitls-0.6.patch_:ucspi_ssl_patch
-
-UCSPISRC=	${WRKDIR}/host/superscript.com/net/ucspi-ssl-0.70
+UCSPISRC=	${WRKDIR}/host/superscript.com/net/ucspi-ssl-${UCSPI_SSL_VER}
+# XXX not yet, needs more cleanup
+#UCSPISRC!=	${MAKE} -C ${PORTSDIR}/sysutils/ucspi-ssl-tls -V WRKSRC
+#PATCH_DEPENDS+=	${UCSPISRC}/compile/ucspissl.a:${PORTSDIR}/sysutils/ucspi-ssl-tls:build
 .endif
 
 # Some default values, these can be modified by make command line
@@ -658,30 +644,6 @@ RCDLINK=	\#
 
 # Fill SELECTED_OPTIONS with options to write conf-spamcontrol
 .if defined(SLAVE_SPAMCONTROL)
-
-. if ${PORT_OPTIONS:MTLSREMOTE}
-SELECTED_OPTIONS+=	tlsremote=yes
-. else
-SELECTED_OPTIONS+=	tlsremote=no
-. endif
-
-. if ${PORT_OPTIONS:MMOREIPME}
-SELECTED_OPTIONS+=	moreipme=yes
-. else
-SELECTED_OPTIONS+=	moreipme=no
-. endif
-
-. if ${PORT_OPTIONS:MBIGTODO}
-SELECTED_OPTIONS+=	bigtodo=yes
-. else
-SELECTED_OPTIONS+=	bigtodo=no
-. endif
-
-. if ${PORT_OPTIONS:MNEWLINE}
-SELECTED_OPTIONS+=	newline=yes
-. else
-SELECTED_OPTIONS+=	newline=no
-. endif
 
 . if ${PORT_OPTIONS:MPAM111421}
 SELECTED_OPTIONS+=	pam111421=yes
@@ -718,7 +680,7 @@ pre-everything::
 post-extract:
 .if defined(SLAVE_SPAMCONTROL)
 	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${SPAMCONTROL_DIST}
-	@cd ${WRKDIR} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70.tar.gz
+	@cd ${WRKDIR} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${UCSPI_SSL_DIST}
 .endif
 
 # XXX - Move all the major patch applications to post-extract
@@ -748,13 +710,16 @@ post-patch:
 	  -e "s,MYSQL_LIBS=.*,MYSQL_LIBS=\`${LOCALBASE}/bin/mysql_config --libs\`," \
 		${WRKSRC}/Makefile
 .elif defined(SLAVE_SPAMCONTROL)
+.  if ${OSVERSION} < 900007
+# Prevent applying utmpx patch
+	@${ECHO_CMD} > ${WRKSRC}/qbiff.c.patch
+.  endif
 	@${ECHO_CMD} ${WRKDIR} > ${WRKSRC}/conf-qmail
 	@${ECHO_CMD} "# Generated by qmail-spamcontrol FreeBSD port" \
 		> ${WRKSRC}/conf-spamcontrol
 . for option in ${SELECTED_OPTIONS}
 	@${ECHO_CMD} ${option} >> ${WRKSRC}/conf-spamcontrol
 . endfor
-	@cd ${UCSPISRC}/src && ${PATCH} -p0 < ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70_ucspitls-0.6.patch_
 	@${ECHO_CMD} "${UCSPISRC}/compile" > ${WRKSRC}/conf-ucspissl
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${UCSPISRC}/src/conf-cc
 	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${UCSPISRC}/src/conf-ld
@@ -766,8 +731,6 @@ post-patch:
 	@cd ${UCSPISRC} && ${SETENV} ${MAKE_ENV} package/compile
 	@cd ${WRKSRC} && ./install_spamcontrol.sh
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
-	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-remote.c
-	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-tls_remote.c
 . if ${PORT_OPTIONS:MSPF_PATCH} && defined(SPF_SPAMCONTROL_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_SPAMCONTROL_PATCH}
 .  if ${PORT_OPTIONS:MEXTTODO_PATCH} && defined(EXTTODO_PATCH)
@@ -776,7 +739,6 @@ post-patch:
 . endif
 . if ${PORT_OPTIONS:MSMTPEXTFORK}
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SMTPEXTFORK_PATCH}
-	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-smtpextfork-qmail-smtpd.c
 .  if ${PORT_OPTIONS:MXF_QUITASAP}
 	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
 		${WRKSRC}/qmail-smtpd.c
@@ -797,6 +759,7 @@ post-patch:
 		${WRKSRC}/Makefile
 . if ${PORT_OPTIONS:MSMTPEXTFORK}
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SMTPEXTFORK_PATCH}
+#	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-smtpextfork-qmail-smtpd.c
 .  if ${PORT_OPTIONS:MXF_QUITASAP}
 	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
 		${WRKSRC}/qmail-smtpd.c

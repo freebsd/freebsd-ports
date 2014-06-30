@@ -3,6 +3,7 @@
 
 PORTNAME=	py2play
 PORTVERSION=	0.1.10
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.gna.org/slune/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,13 +21,9 @@ PYDISTUTILS_PKGNAME=	Py2Play
 EXAMPLESDIR=	${PREFIX}/share/examples/py-py2play
 
 post-install:
-.ifndef NOPORTEXAMPLES
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/startdemo ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

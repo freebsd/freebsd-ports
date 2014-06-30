@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Inline
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides inline support for template toolkit 2.x
 
 RUN_DEPENDS=	p5-Inline>=0.42:${PORTSDIR}/devel/p5-Inline \

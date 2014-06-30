@@ -4,7 +4,7 @@
 PORTNAME=	nethack
 PORTVERSION=	3.4.3
 PORTREVISION=	8
-CATEGORIES?=	games
+CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 EXTRACT_SUFX=	.tgz
@@ -20,18 +20,16 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gmake
-NO_STAGE=	yes
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
-PLIST_SUB=	HACKNAME="${HACKNAME}" \
-		HACKDIR="${HACKDIR}" \
-		HACKDOCSDIR="${HACKDOCSDIR}"
-
-MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
+PLIST_SUB=	HACKNAME="${HACKNAME}"
 
 # Configure these variables as you want them to be.
 HACKNAME?=	nethack
-HACKDIR?=	lib/${HACKNAME}
-HACKDOCSDIR?=	share/doc/${HACKNAME}
+HACKDIR?=	share/${HACKNAME}
+
+DATADIR=	${PREFIX}/${HACKDIR}
+DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .if !defined(PKGNAMESUFFIX)
 USE_XORG=	xaw xpm
@@ -69,6 +67,8 @@ CFLAGS+=	-DHPMON
 .endif
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -81,13 +81,13 @@ pre-everything::
 	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
 	fi
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.options.mk>
 
 post-patch:
-.for f in include/config.h sys/unix/Makefile.src sys/unix/Makefile.top
-	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g;s|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' ${WRKSRC}/${f}
+.for f in include/config.h sys/unix/Makefile.top
+	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g' \
+		-e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
+		${WRKSRC}/${f}
 .endfor
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
 .if defined(WITHOUT_SHELL)
@@ -97,14 +97,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/\* #define MAIL \*/|#define MAIL|' ${WRKSRC}/include/unixconf.h
 .endif
 
-pre-configure:
+do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
+pre-install:
+	@${CAT} ${FILESDIR}/pkg-deinstall.in | ${SED} \
+		-e 's|%%HACKDIR%%|${HACKDIR}|g' > ${PKGDEINSTALL}
+
 post-install:
-	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} manpages
+	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} manpages
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${PREFIX}/${HACKDOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/${HACKDOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

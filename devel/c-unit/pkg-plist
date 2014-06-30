@@ -1,3 +1,7 @@
+%%AUT%%include/CUnit/Automated.h
+%%BAS%%include/CUnit/Basic.h
+%%CON%%include/CUnit/Console.h
+%%CUR%%include/CUnit/CUCurses.h
 include/CUnit/CUError.h
 include/CUnit/CUnit.h
 include/CUnit/MyMem.h
@@ -5,20 +9,27 @@ include/CUnit/TestDB.h
 include/CUnit/TestRun.h
 include/CUnit/Util.h
 lib/libcunit.a
-lib/libcunit.la
 lib/libcunit.so
 lib/libcunit.so.1
-share/CUnit/CUnit-List.dtd
-share/CUnit/CUnit-List.xsl
-share/CUnit/CUnit-Run.dtd
-share/CUnit/CUnit-Run.xsl
-share/CUnit/Memory-Dump.dtd
-share/CUnit/Memory-Dump.xsl
-@dirrmtry share/examples/CUnit/Curses
-@dirrmtry share/examples/CUnit/Console
-@dirrmtry share/examples/CUnit/Basic
-@dirrmtry share/examples/CUnit/Automated
-@dirrmtry share/examples/CUnit
-@dirrmtry share/CUnit/Test
-@dirrm share/CUnit
-@dirrm include/CUnit
+lib/libcunit.so.1.0.1
+man/man3/CUnit.3.gz
+%%DATADIR%%/CUnit-List.dtd
+%%DATADIR%%/CUnit-List.xsl
+%%DATADIR%%/CUnit-Run.dtd
+%%DATADIR%%/CUnit-Run.xsl
+%%DATADIR%%/Memory-Dump.dtd
+%%DATADIR%%/Memory-Dump.xsl
+%%ITE%%%%DATADIR%%/Test/test_cunit
+%%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Automated/AutomatedTest
+%%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Automated/README
+%%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/BasicTest
+%%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/README
+%%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Console/ConsoleTest
+%%EXA%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Console/README
+@dirrmtry include/CUnit
+%%ITE%%@dirrmtry %%DATADIR%%/Test
+@dirrmtry %%DATADIR%%
+%%EXA%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Automated
+%%EXA%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Basic
+%%EXA%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/Console
+%%EXA%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

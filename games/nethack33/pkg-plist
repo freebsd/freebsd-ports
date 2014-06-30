@@ -1,12 +1,11 @@
 %%HACKLINK%%bin/nethack
+@mode 555
 bin/%%HACKNAME%%
+@owner games
+@group games
+@mode 02755
 %%DATADIR%%/%%HACKNAME%%
-@exec mkdir %D/%%DATADIR%%/save
-@exec chmod -R 775 %D/%%DATADIR%%
-@exec chmod 2755 %D/%%DATADIR%%/%%HACKNAME%%
-@exec chown games:games %D/%%DATADIR%%/save
-@dirrmtry %%DATADIR%%/save
-%%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
+@mode
 %%DATADIR%%/Arc-fila.lev
 %%DATADIR%%/Arc-filb.lev
 %%DATADIR%%/Arc-goal.lev
@@ -94,6 +93,9 @@ bin/%%HACKNAME%%
 %%DATADIR%%/history
 %%DATADIR%%/juiblex.lev
 %%DATADIR%%/knox.lev
+@mode 664
+%%DATADIR%%/logfile
+@mode
 %%DATADIR%%/license
 %%DATADIR%%/mapbg.xpm
 %%DATADIR%%/medusa-1.lev
@@ -108,9 +110,15 @@ bin/%%HACKNAME%%
 %%DATADIR%%/oracle.lev
 %%DATADIR%%/oracles
 %%DATADIR%%/orcus.lev
+%%DATADIR%%/perm
 %%DATADIR%%/pet_mark.xbm
 %%DATADIR%%/quest.dat
+@mode 664
+%%DATADIR%%/record
+@mode
+@mode 02755
 %%DATADIR%%/recover
+@mode
 %%DATADIR%%/rip.xpm
 %%DATADIR%%/rumors
 %%DATADIR%%/sanctum.lev
@@ -132,12 +140,18 @@ bin/%%HACKNAME%%
 %%DATADIR%%/wizard3.lev
 %%DATADIR%%/wizhelp
 %%DATADIR%%/x11tiles
-@mode 664
-%%DATADIR%%/perm
 @mode
-@unexec [ -s %D/%%DATADIR%%/logfile ] || rm -f %D/%%DATADIR%%/logfile
-@exec touch %D/%%DATADIR%%/logfile && chmod 664 %D/%%DATADIR%%/logfile
-@unexec [ -s %D/%%DATADIR%%/record ] || rm -f %D/%%DATADIR%%/record
-@exec touch %D/%%DATADIR%%/record && chmod 664 %D/%%DATADIR%%/record
+@owner
+@group
+man/man6/dgn_comp%%HACKEXT%%.6.gz
+man/man6/dlb%%HACKEXT%%.6.gz
+man/man6/lev_comp%%HACKEXT%%.6.gz
+man/man6/%%HACKNAME%%.6.gz
+man/man6/recover%%HACKEXT%%.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
+@exec mkdir %D/%%DATADIR%%/save
+@exec chown games:games %D/%%DATADIR%%/save
+@exec chmod 0775 %D/%%DATADIR%%/save
+@unexec rmdir %D/%%DATADIR%%/save
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

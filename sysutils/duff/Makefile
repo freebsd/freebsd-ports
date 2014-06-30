@@ -11,7 +11,7 @@ COMMENT=	Duplicate file finder
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

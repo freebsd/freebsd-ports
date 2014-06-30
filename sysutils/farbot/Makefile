@@ -21,13 +21,15 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	farb
 PYDISTUTILS_PKGVERSION=	0.1
 
-NO_STAGE=	yes
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/farbot.conf ${PREFIX}/etc/farbot.conf.sample
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/xhtml
-	${INSTALL_MAN} ${WRKSRC}/docs/xhtml/* ${DOCSDIR}/xhtml
+.include <bsd.port.options.mk>
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/farbot.conf ${STAGEDIR}${PREFIX}/etc/farbot.conf.sample
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/xhtml
+	${INSTALL_MAN} ${WRKSRC}/docs/xhtml/* ${STAGEDIR}${DOCSDIR}/xhtml
 .endif
 
 .include <bsd.port.mk>

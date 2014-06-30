@@ -3,6 +3,7 @@
 %%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmailsmtpd
 %%RCDLINK%%@exec /bin/ln -fs %D/rc %%LOCALBASE%%/etc/rc.d/qmailsmtpd
 %%RCDLINK%%@exec echo; echo "A %%LOCALBASE%%/etc/rc.d/qmailsmtpd symlink was created. To enable qmail at boot time you need to copy a script to %D/rc.  There are some examples at %D/boot" | /usr/bin/fmt; echo
+%%LDAP%%bin/auth_dovecot
 %%LDAP%%bin/auth_imap
 %%LDAP%%bin/auth_pop
 %%LDAP%%bin/auth_smtp
@@ -62,6 +63,7 @@ bin/qmail-rspawn
 %%LDAP%%bin/qmail-secretary
 bin/qmail-send
 bin/qmail-showctl
+%%SPAMCONTROL%%bin/qmail-smtpam
 bin/qmail-smtpd
 bin/qmail-start
 bin/qmail-tcpok
@@ -170,6 +172,7 @@ man/man8/qmail-start.8.gz
 man/man8/qmail-tcpok.8.gz
 man/man8/qmail-tcpto.8.gz
 man/man8/splogger.8.gz
+%%SPAMCONTROL%%man/man8/qmail-smtpam.8.gz
 %%SPAMCONTROL%%man/man8/qmail-badloadertypes.8.gz
 %%SPAMCONTROL%%man/man8/qmail-badmimetypes.8.gz
 %%SPAMCONTROL%%man/man8/qmail-mfrules.8.gz

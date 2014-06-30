@@ -12,10 +12,9 @@ MASTER_SITES=	SF \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement and extension for Tripwire
 
-LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmhash.so:${PORTSDIR}/security/mhash
 USES=		bison gmake
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 USE_AUTOTOOLS=	autoconf
@@ -28,36 +27,12 @@ CONFIGURE_ARGS+=--with-mhash \
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		aide.1
-MAN5=		aide.conf.5
-
 SUB_FILES=	pkg-message
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf.sample
-	@if [ ! -f ${PREFIX}/etc/aide.conf ]; then \
-		${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf ; \
+	@${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${STAGEDIR}${PREFIX}/etc/aide.conf.sample
+	@if [ ! -f ${STAGEDOIR}${PREFIX}/etc/aide.conf ]; then \
+		${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${STAGEDIR}${PREFIX}/etc/aide.conf ; \
 	fi
-	@if [ ! -d /var/db/aide/databases ]; then \
-		${MKDIR} /var/db/aide/databases; \
-		${CHOWN} root:wheel /var/db/aide ; \
-		${CHOWN} root:wheel /var/db/aide/databases ; \
-		${CHMOD} 0700 /var/db/aide ; \
-		${CHMOD} 0700 /var/db/aide/databases ; \
-	fi
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-.if defined(AIDE_FLOPPY)
-	@disklabel -w -B /dev/rfd0c fd1440
-	@newfs -u 0 -t 0 -i 196608 -m 0 -T minimum -o space /dev/rfd0c
-	@mount /dev/fd0c /mnt
-	@${CP} ${PREFIX}/bin/aide /mnt/aide
-	@${CP} -p /var/db/aide/aide.conf /mnt/aide.conf
-	@${CP} < /var/db/aide/databases/aide.db /mnt/aide.db
-	@${CHMOD} 555 /mnt/aide
-	@umount /mnt
-	@${ECHO} Do not forget to remove and write-protect the floppy.
-.endif
 
 .include <bsd.port.post.mk>

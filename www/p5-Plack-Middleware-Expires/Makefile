@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module mod_expires for Plack
 
 RUN_DEPENDS=	p5-Plack>=0.9937:${PORTSDIR}/www/p5-Plack \

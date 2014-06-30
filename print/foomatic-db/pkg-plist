@@ -246,6 +246,8 @@ share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C3503_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C4000_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C400SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C400_PS.ppd.gz
+share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C401SR_PS.ppd.gz
+share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C401_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C4501A_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C4501_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C4502A_PS.ppd.gz
@@ -578,6 +580,8 @@ share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C3503_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C4000_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C400SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C400_PS.ppd.gz
+share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C401SR_PS.ppd.gz
+share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C401_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C4501A_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C4501_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C4502A_PS.ppd.gz
@@ -1625,6 +1629,8 @@ share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C3503_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C4000_LD540C_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C400SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C400_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C401SR_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C401_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C4500_LD445c_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C4501_LD645C_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C4502A_PS.ppd.gz
@@ -2048,6 +2054,8 @@ share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C3503_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C4000_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C400SR_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C400_PS.ppd.gz
+share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C401SR_PS.ppd.gz
+share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C401_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C4500_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C4501A_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C4501_PS.ppd.gz
@@ -2525,6 +2533,8 @@ share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C2503Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C2503_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C3003_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C3503_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C401SR_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C401_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C4503_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C5503_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C6003_PS.ppd.gz
@@ -2935,6 +2945,8 @@ share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C3003_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C305_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C3502_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C3503_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C401SR_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C401_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C4502A_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C4502_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C4503_PS.ppd.gz
@@ -5153,6 +5165,8 @@ share/foomatic/db/source/printer/Gestetner-MP_C3503.xml
 share/foomatic/db/source/printer/Gestetner-MP_C400.xml
 share/foomatic/db/source/printer/Gestetner-MP_C4000.xml
 share/foomatic/db/source/printer/Gestetner-MP_C400SR.xml
+share/foomatic/db/source/printer/Gestetner-MP_C401.xml
+share/foomatic/db/source/printer/Gestetner-MP_C401SR.xml
 share/foomatic/db/source/printer/Gestetner-MP_C4501.xml
 share/foomatic/db/source/printer/Gestetner-MP_C4501A.xml
 share/foomatic/db/source/printer/Gestetner-MP_C4502.xml
@@ -5928,6 +5942,8 @@ share/foomatic/db/source/printer/Infotec-MP_C3503.xml
 share/foomatic/db/source/printer/Infotec-MP_C400.xml
 share/foomatic/db/source/printer/Infotec-MP_C4000.xml
 share/foomatic/db/source/printer/Infotec-MP_C400SR.xml
+share/foomatic/db/source/printer/Infotec-MP_C401.xml
+share/foomatic/db/source/printer/Infotec-MP_C401SR.xml
 share/foomatic/db/source/printer/Infotec-MP_C4501.xml
 share/foomatic/db/source/printer/Infotec-MP_C4501A.xml
 share/foomatic/db/source/printer/Infotec-MP_C4502.xml
@@ -6335,6 +6351,8 @@ share/foomatic/db/source/printer/Lanier-MP_C3503.xml
 share/foomatic/db/source/printer/Lanier-MP_C400.xml
 share/foomatic/db/source/printer/Lanier-MP_C4000_LD540C.xml
 share/foomatic/db/source/printer/Lanier-MP_C400SR.xml
+share/foomatic/db/source/printer/Lanier-MP_C401.xml
+share/foomatic/db/source/printer/Lanier-MP_C401SR.xml
 share/foomatic/db/source/printer/Lanier-MP_C4500_LD445c.xml
 share/foomatic/db/source/printer/Lanier-MP_C4501_LD645C.xml
 share/foomatic/db/source/printer/Lanier-MP_C4502.xml
@@ -6840,6 +6858,8 @@ share/foomatic/db/source/printer/NRG-MP_C3503.xml
 share/foomatic/db/source/printer/NRG-MP_C400.xml
 share/foomatic/db/source/printer/NRG-MP_C4000.xml
 share/foomatic/db/source/printer/NRG-MP_C400SR.xml
+share/foomatic/db/source/printer/NRG-MP_C401.xml
+share/foomatic/db/source/printer/NRG-MP_C401SR.xml
 share/foomatic/db/source/printer/NRG-MP_C4500.xml
 share/foomatic/db/source/printer/NRG-MP_C4501.xml
 share/foomatic/db/source/printer/NRG-MP_C4501A.xml
@@ -7359,6 +7379,8 @@ share/foomatic/db/source/printer/Ricoh-MP_C2503.xml
 share/foomatic/db/source/printer/Ricoh-MP_C2503Z.xml
 share/foomatic/db/source/printer/Ricoh-MP_C3003.xml
 share/foomatic/db/source/printer/Ricoh-MP_C3503.xml
+share/foomatic/db/source/printer/Ricoh-MP_C401.xml
+share/foomatic/db/source/printer/Ricoh-MP_C401SR.xml
 share/foomatic/db/source/printer/Ricoh-MP_C4503.xml
 share/foomatic/db/source/printer/Ricoh-MP_C5503.xml
 share/foomatic/db/source/printer/Ricoh-MP_C6003.xml
@@ -7707,6 +7729,8 @@ share/foomatic/db/source/printer/Savin-MP_C3003.xml
 share/foomatic/db/source/printer/Savin-MP_C305.xml
 share/foomatic/db/source/printer/Savin-MP_C3502.xml
 share/foomatic/db/source/printer/Savin-MP_C3503.xml
+share/foomatic/db/source/printer/Savin-MP_C401.xml
+share/foomatic/db/source/printer/Savin-MP_C401SR.xml
 share/foomatic/db/source/printer/Savin-MP_C4502.xml
 share/foomatic/db/source/printer/Savin-MP_C4502A.xml
 share/foomatic/db/source/printer/Savin-MP_C4503.xml
@@ -8170,100 +8194,100 @@ share/foomatic/xmlschema/driver.xsd
 share/foomatic/xmlschema/option.xsd
 share/foomatic/xmlschema/printer.xsd
 share/foomatic/xmlschema/types.xsd
-@dirrmtry share/foomatic/xmlschema
-@dirrmtry share/foomatic/db/source/printer
-@dirrmtry share/foomatic/db/source/opt
-@dirrmtry share/foomatic/db/source/driver
-@dirrmtry share/foomatic/db/source/PPD/Toshiba
-@dirrmtry share/foomatic/db/source/PPD/Sharp
-@dirrmtry share/foomatic/db/source/PPD/Savin/PXL
-@dirrmtry share/foomatic/db/source/PPD/Savin/PS
-@dirrmtry share/foomatic/db/source/PPD/Savin
-@dirrmtry share/foomatic/db/source/PPD/Samsung/PXL
-@dirrmtry share/foomatic/db/source/PPD/Samsung/PS
-@dirrmtry share/foomatic/db/source/PPD/Samsung
-@dirrmtry share/foomatic/db/source/PPD/Ricoh/PXL
-@dirrmtry share/foomatic/db/source/PPD/Ricoh/PS
-@dirrmtry share/foomatic/db/source/PPD/Ricoh
-@dirrmtry share/foomatic/db/source/PPD/Oki
-@dirrmtry share/foomatic/db/source/PPD/Oce/Others
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2110PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2110PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2105PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2105PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2100PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2100PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2090PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2090PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2070PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2070PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2065PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2065PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2060PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2060PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2055PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2055PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2050PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2050PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2045PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2045PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC5160PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC5160PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC5115PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC5115PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3114PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3114PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3113PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3113PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3094PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3094PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3093PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3093PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3074PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3074PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3073PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3073PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-8465PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-8465PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-8445PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-8445PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3165PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3165PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3155PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3155PS
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3145PS/1
-@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3145PS
-@dirrmtry share/foomatic/db/source/PPD/Oce
-@dirrmtry share/foomatic/db/source/PPD/NRG/PXL
-@dirrmtry share/foomatic/db/source/PPD/NRG/PS
-@dirrmtry share/foomatic/db/source/PPD/NRG
-@dirrmtry share/foomatic/db/source/PPD/Lexmark
-@dirrmtry share/foomatic/db/source/PPD/Lanier/PXL
-@dirrmtry share/foomatic/db/source/PPD/Lanier/PS
-@dirrmtry share/foomatic/db/source/PPD/Lanier
-@dirrmtry share/foomatic/db/source/PPD/Kyocera/pt
-@dirrmtry share/foomatic/db/source/PPD/Kyocera/it
-@dirrmtry share/foomatic/db/source/PPD/Kyocera/fr
-@dirrmtry share/foomatic/db/source/PPD/Kyocera/es
-@dirrmtry share/foomatic/db/source/PPD/Kyocera/en
-@dirrmtry share/foomatic/db/source/PPD/Kyocera/de
-@dirrmtry share/foomatic/db/source/PPD/Kyocera
-@dirrmtry share/foomatic/db/source/PPD/KONICA_MINOLTA
-@dirrmtry share/foomatic/db/source/PPD/Infotec/PXL
-@dirrmtry share/foomatic/db/source/PPD/Infotec/PS
-@dirrmtry share/foomatic/db/source/PPD/Infotec
-@dirrmtry share/foomatic/db/source/PPD/InfoPrint/PXL
-@dirrmtry share/foomatic/db/source/PPD/InfoPrint/PS
-@dirrmtry share/foomatic/db/source/PPD/InfoPrint
-@dirrmtry share/foomatic/db/source/PPD/HP
-@dirrmtry share/foomatic/db/source/PPD/Gestetner/PXL
-@dirrmtry share/foomatic/db/source/PPD/Gestetner/PS
-@dirrmtry share/foomatic/db/source/PPD/Gestetner
-@dirrmtry share/foomatic/db/source/PPD/Epson
-@dirrmtry share/foomatic/db/source/PPD/Brother
-@dirrmtry share/foomatic/db/source/PPD
-@dirrmtry share/foomatic/db/source
-@dirrmtry share/foomatic/db
-@dirrmtry share/foomatic
 @dirrmtry share/cups/model
 @dirrmtry share/cups
+@dirrmtry share/foomatic/db/source/PPD/Brother
+@dirrmtry share/foomatic/db/source/PPD/Epson
+@dirrmtry share/foomatic/db/source/PPD/Gestetner/PS
+@dirrmtry share/foomatic/db/source/PPD/Gestetner/PXL
+@dirrmtry share/foomatic/db/source/PPD/Gestetner
+@dirrmtry share/foomatic/db/source/PPD/HP
+@dirrmtry share/foomatic/db/source/PPD/InfoPrint/PS
+@dirrmtry share/foomatic/db/source/PPD/InfoPrint/PXL
+@dirrmtry share/foomatic/db/source/PPD/InfoPrint
+@dirrmtry share/foomatic/db/source/PPD/Infotec/PS
+@dirrmtry share/foomatic/db/source/PPD/Infotec/PXL
+@dirrmtry share/foomatic/db/source/PPD/Infotec
+@dirrmtry share/foomatic/db/source/PPD/KONICA_MINOLTA
+@dirrmtry share/foomatic/db/source/PPD/Kyocera/de
+@dirrmtry share/foomatic/db/source/PPD/Kyocera/en
+@dirrmtry share/foomatic/db/source/PPD/Kyocera/es
+@dirrmtry share/foomatic/db/source/PPD/Kyocera/fr
+@dirrmtry share/foomatic/db/source/PPD/Kyocera/it
+@dirrmtry share/foomatic/db/source/PPD/Kyocera/pt
+@dirrmtry share/foomatic/db/source/PPD/Kyocera
+@dirrmtry share/foomatic/db/source/PPD/Lanier/PS
+@dirrmtry share/foomatic/db/source/PPD/Lanier/PXL
+@dirrmtry share/foomatic/db/source/PPD/Lanier
+@dirrmtry share/foomatic/db/source/PPD/Lexmark
+@dirrmtry share/foomatic/db/source/PPD/NRG/PS
+@dirrmtry share/foomatic/db/source/PPD/NRG/PXL
+@dirrmtry share/foomatic/db/source/PPD/NRG
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3145PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3145PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3155PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3155PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3165PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-3165PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-8445PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-8445PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-8465PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-8465PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3073PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3073PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3074PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3074PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3093PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3093PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3094PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3094PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3113PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3113PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3114PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC3114PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC5115PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC5115PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC5160PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-PPC5160PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2045PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2045PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2050PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2050PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2055PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2055PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2060PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2060PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2065PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2065PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2070PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2070PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2090PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2090PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2100PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2100PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2105PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2105PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2110PS/1
+@dirrmtry share/foomatic/db/source/PPD/Oce/Oce-VarioPrint_2110PS
+@dirrmtry share/foomatic/db/source/PPD/Oce/Others
+@dirrmtry share/foomatic/db/source/PPD/Oce
+@dirrmtry share/foomatic/db/source/PPD/Oki
+@dirrmtry share/foomatic/db/source/PPD/Ricoh/PS
+@dirrmtry share/foomatic/db/source/PPD/Ricoh/PXL
+@dirrmtry share/foomatic/db/source/PPD/Ricoh
+@dirrmtry share/foomatic/db/source/PPD/Samsung/PS
+@dirrmtry share/foomatic/db/source/PPD/Samsung/PXL
+@dirrmtry share/foomatic/db/source/PPD/Samsung
+@dirrmtry share/foomatic/db/source/PPD/Savin/PS
+@dirrmtry share/foomatic/db/source/PPD/Savin/PXL
+@dirrmtry share/foomatic/db/source/PPD/Savin
+@dirrmtry share/foomatic/db/source/PPD/Sharp
+@dirrmtry share/foomatic/db/source/PPD/Toshiba
+@dirrmtry share/foomatic/db/source/PPD
+@dirrmtry share/foomatic/db/source/driver
+@dirrmtry share/foomatic/db/source/opt
+@dirrmtry share/foomatic/db/source/printer
+@dirrmtry share/foomatic/db/source
+@dirrmtry share/foomatic/db
+@dirrmtry share/foomatic/xmlschema
+@dirrmtry share/foomatic

@@ -412,8 +412,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 lib/libMagick++-6.%%QBIT%%%%HDRI%%.a
 lib/libMagick++-6.%%QBIT%%%%HDRI%%.la
 lib/libMagick++-6.%%QBIT%%%%HDRI%%.so
-lib/libMagick++-6.%%QBIT%%%%HDRI%%.so.4
-lib/libMagick++-6.%%QBIT%%%%HDRI%%.so.4.0.0
+lib/libMagick++-6.%%QBIT%%%%HDRI%%.so.5
+lib/libMagick++-6.%%QBIT%%%%HDRI%%.so.5.0.0
 lib/libMagickCore-6.%%QBIT%%%%HDRI%%.a
 lib/libMagickCore-6.%%QBIT%%%%HDRI%%.la
 lib/libMagickCore-6.%%QBIT%%%%HDRI%%.so

@@ -3,23 +3,19 @@
 
 PORTNAME=	neXtaw
 PORTVERSION=	0.15.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/neXtaw/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Athena Widgets with N*XTSTEP appearance
 
-USE_AUTOTOOLS=	libtool
-USE_XORG=	xmu x11 xext
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		libtool
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|version-info.*$$|version-info 8:0:0|g' \
-		${WRKSRC}/X11/neXtaw/Makefile.in
+USE_XORG=	xmu x11 xext
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

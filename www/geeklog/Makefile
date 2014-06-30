@@ -16,24 +16,20 @@ USE_MYSQL=	yes
 NO_BUILD=	yes
 USE_PHP=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL} -o ${WWWOWN} -g ${WWWGRP} -m 555 -d ${WWWDIR}
+	@${INSTALL} -o ${WWWOWN} -g ${WWWGRP} -m 555 -d ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC} && \
-		${COPYTREE_SHARE} \* ${WWWDIR} "! -name db-config.php \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR} "! -name db-config.php \
 			-or -name siteconfig.php")
-	@if [ ! -f ${WWWDIR}/db-config.php ]; then \
-		${INSTALL_DATA} ${WRKSRC}/db-config.php ${WWWDIR}/db-config.php; \
-	fi
-	@if [ ! -f ${WWWDIR}/public_html/siteconfig.php ]; then \
-		{INSTALL_DATA} ${WRKSRC}/public_html/siteconfig.php \
-			${WWWDIR}/public_html/siteconfig.php; \
-	fi
+	@${INSTALL_DATA} ${WRKSRC}/db-config.php ${STAGEDIR}${WWWDIR}/db-config.php.sample; 
+	@${INSTALL_DATA} ${WRKSRC}/public_html/siteconfig.php \
+			${STAGEDIR}${WWWDIR}/public_html/siteconfig.php.sample
+	@${RM} ${STAGEDIR}${WWWDIR}/public_html/siteconfig.php
 
 post-install:
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 .for i in db-config.php error.log siteconfig.php geeklog.rss
-	@${FIND} ${WWWDIR} -name ${i} | ${XARGS} ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${WWWDIR} -name ${i} | ${XARGS} ${CHMOD} 755
 .endfor
 	@${CAT} ${PKGMESSAGE}
 

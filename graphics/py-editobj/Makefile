@@ -3,6 +3,7 @@
 
 PORTNAME=	editobj
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/songwrite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

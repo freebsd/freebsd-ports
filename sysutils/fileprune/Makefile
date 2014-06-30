@@ -10,9 +10,6 @@ MASTER_SITES=	http://www.spinellis.gr/sw/unix/fileprune/ \
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Prune a file set according to a given age distribution
 
-MAN1=		fileprune.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/fileprune
+PLIST_FILES=	bin/fileprune man/man1/fileprune.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

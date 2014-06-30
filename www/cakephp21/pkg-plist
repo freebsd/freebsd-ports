@@ -1,26 +1,12 @@
 %%HTACCESS%%%%WWWDIR%%/.htaccess
 %%HTACCESS%%%%WWWDIR%%/app/.htaccess
-@unexec if cmp -s %D/%%WWWDIR%%/app/Config/acl.php.default %D/%%WWWDIR%%/app/Config/acl.php; then rm -f %D/%%WWWDIR%%/app/Config/acl.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/acl.php has not been removed"; fi
-%%WWWDIR%%/app/Config/acl.php.default
-@exec if [ ! -f %B/acl.php ]; then cp -p %B/acl.php.default %B/acl.php; else %%ECHO_MSG%% "===> Customized %B/acl.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/Config/acl.ini.php.default %D/%%WWWDIR%%/app/Config/acl.ini.php; then rm -f %D/%%WWWDIR%%/app/Config/acl.ini.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/acl.ini.php has not been removed"; fi
-%%WWWDIR%%/app/Config/acl.ini.php.default
-@exec if [ ! -f %B/acl.ini.php ]; then cp -p %B/acl.ini.php.default %B/acl.ini.php; else %%ECHO_MSG%% "===> Customized %B/acl.ini.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/Config/bootstrap.php.default %D/%%WWWDIR%%/app/Config/bootstrap.php; then rm -f %D/%%WWWDIR%%/app/Config/bootstrap.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/bootstrap.php has not been removed"; fi
-%%WWWDIR%%/app/Config/bootstrap.php.default
-@exec if [ ! -f %B/bootstrap.php ]; then cp -p %B/bootstrap.php.default %B/bootstrap.php; else %%ECHO_MSG%% "===> Customized %B/bootstrap.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/Config/core.php.default %D/%%WWWDIR%%/app/Config/core.php; then rm -f %D/%%WWWDIR%%/app/Config/core.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/core.php has not been removed"; fi
-%%WWWDIR%%/app/Config/core.php.default
-@exec if [ ! -f %B/core.php ]; then cp -p %B/core.php.default %B/core.php; else %%ECHO_MSG%% "===> Customized %B/core.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/Config/database.php.default %D/%%WWWDIR%%/app/Config/database.php; then rm -f %D/%%WWWDIR%%/app/Config/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/database.php has not been removed"; fi
-%%WWWDIR%%/app/Config/database.php.default
-@exec if [ ! -f %B/database.php ]; then cp -p %B/database.php.default %B/database.php; else %%ECHO_MSG%% "===> Customized %B/database.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/Config/email.php.default %D/%%WWWDIR%%/app/Config/email.php; then rm -f %D/%%WWWDIR%%/app/Config/email.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/email.php has not been removed"; fi
-%%WWWDIR%%/app/Config/email.php.default
-@exec if [ ! -f %B/email.php ]; then cp -p %B/email.php.default %B/email.php; else %%ECHO_MSG%% "===> Customized %B/email.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/Config/routes.php.default %D/%%WWWDIR%%/app/Config/routes.php; then rm -f %D/%%WWWDIR%%/app/Config/routes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/routes.php has not been removed"; fi
-%%WWWDIR%%/app/Config/routes.php.default
-@exec if [ ! -f %B/routes.php ]; then cp -p %B/routes.php.default %B/routes.php; else %%ECHO_MSG%% "===> Customized %B/routes.php has not been overwritten"; fi
+@sample %%WWWDIR%%/app/Config/acl.php.sample
+@sample %%WWWDIR%%/app/Config/acl.ini.php.sample
+@sample %%WWWDIR%%/app/Config/bootstrap.php.sample
+@sample %%WWWDIR%%/app/Config/core.php.sample
+@sample %%WWWDIR%%/app/Config/database.php.sample
+@sample %%WWWDIR%%/app/Config/email.php.sample
+@sample %%WWWDIR%%/app/Config/routes.php.sample
 %%WWWDIR%%/app/Config/Schema/db_acl.php
 %%WWWDIR%%/app/Config/Schema/db_acl.sql
 %%WWWDIR%%/app/Config/Schema/i18n.php

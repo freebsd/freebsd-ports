@@ -13,16 +13,15 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack vte libxml2
 USE_XFCE=	configenv libmenu
 USE_XORG=	x11
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake tar:bzip2
 
 CONFIGURE_ARGS=	--without-gnome-default-appsdir
 

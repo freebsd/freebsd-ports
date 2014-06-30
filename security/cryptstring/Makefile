@@ -6,8 +6,10 @@ PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crypto Strings for PHP
+
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 USE_PHP=	mcrypt mhash

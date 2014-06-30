@@ -10,11 +10,10 @@ MASTER_SITES=	http://wordnetcode.princeton.edu/${PORTVERSION}/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Dictionaries and thesauri with devel. libraries (C, TCL) and browsers
 
-USES=		tcl uidfix
+USES=		tcl uidfix tar:bzip2
 SCRIPTS_ENV+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
 MAKE_ENV+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION} STAGEDIR="${STAGEDIR}"
 PLIST_SUB+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
-USE_BZIP2=	yes
 REINPLACE_ARGS=	-i ""
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
@@ -24,8 +23,5 @@ post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/WordNet-2.1,${DATADIR},g' \
 	    ${WRKSRC}/src/wnb ${WRKSRC}/doc/man/*.?
 	${REINPLACE_CMD} -e 's,  *\\n,\\n,' ${WRKSRC}/include/wn.h
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rsync
-PORTVERSION=	3.1.0
-PORTREVISION=	3
+PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -19,6 +19,7 @@ COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3
 
+PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	rsyncd
 SUB_LIST=	NAME=rsyncd
@@ -31,11 +32,11 @@ PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 # define options
 OPTIONS_DEFINE=		DOCS POPT_PORT ZLIB_BASE SSH ICONV
 OPTIONS_RADIO=		PTS
-OPTIONS_RADIO_PTS=	TIMELIMIT RENAMED FLAGS RENFL ATIMES ACL
+OPTIONS_RADIO_PTS=	TIMELIMIT RENAMED FLAGS ATIMES ACL
 
 # options provided upstream
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
-ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
+ZLIB_BASE_DESC=	Use zlib from base instead of bundled one (BROKEN)
 SSH_DESC=	Use SSH instead of RSH
 
 # options provided by patch (mutually exclusive)
@@ -46,78 +47,34 @@ FLAGS_DESC=	File system flags support patch, adds --fileflags
 ATIMES_DESC=	Preserve access times, adds --atimes
 ACL_DESC=	Add backward-compatibility for the --acls option
 
-# The following unsupported patch has been provided by:
-# Dmitry Morozovsky <marck@rinet.ru>
-RENFL_DESC=	Renamed and flags options combined
-
 # define default options
-OPTIONS_DEFAULT=SSH ZLIB_BASE FLAGS
+OPTIONS_DEFAULT=SSH FLAGS
+
+ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
+TIMELIMIT_EXTRA_PATCHES=	${WRKSRC}/patches/time-limit.diff
+ATIMES_EXTRA_PATCHES=		${WRKSRC}/patches/atimes.diff
+FLAGS_EXTRA_PATCHES=		${WRKSRC}/patches/fileflags.diff \
+				${FILESDIR}/extrapatch-main.c
+RENAMED_EXTRA_PATCHES=		${WRKSRC}/patches/detect-renamed.diff
+ACL_EXTRA_PATCHES=		${WRKSRC}/patches/acls.diff
+
+ICONV_USES=	iconv
+ICONV_CPPFLAGS=	-I${LOCALBASE}/include
+ICONV_LDFLAGS=	-L${LOCALBASE}/lib
+ICONV_CONFIGURE_ENABLE=	iconv iconv-open
+
+POPT_PORT_LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+POPT_PORT_CPPFLAGS=	-I${LOCALBASE}/include
+POPT_PORT_LDFLAGS=	-L${LOCALBASE}/lib
+POPT_CONFIGURE_WITH=	included-popt
+
+SSH_CONFIGURE_ON=	--with-rsh=ssh
+SSH_CONFIGURE_OFF=	--with-rsh=rsh
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MZLIB_BASE}
-CONFIGURE_ARGS+=	--with-included-zlib=no
-.endif
-
-.if ${PORT_OPTIONS:MTIMELIMIT}
-PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
-.endif
-
-.if ${PORT_OPTIONS:MATIMES}
-PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
-.endif
-
-.if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MRENFL}
+.if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED}
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=--disable-iconv --disable-iconv-open
-.endif
-
-.if ${PORT_OPTIONS:MFLAGS}
-PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff \
-		${FILESDIR}/extrapatch-main.c
-.endif
-
-.if ${PORT_OPTIONS:MRENAMED}
-PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	${WRKSRC}/patches/detect-renamed.diff
-.endif
-
-.if ${PORT_OPTIONS:MRENFL}
-PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	\
-		${FILESDIR}/extrapatch-renamed-flags.diff \
-		${WRKSRC}/patches/fileflags.diff \
-		${FILESDIR}/extrapatch-main.c \
-		${WRKSRC}/patches/detect-renamed.diff
-.endif
-
-.if ${PORT_OPTIONS:MACL}
-PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
-.endif
-
-.if ${PORT_OPTIONS:MPOPT_PORT}
-LIB_DEPENDS+=	libpopt.so:${PORTSDIR}/devel/popt
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--with-included-popt
-.endif
-
-.if ${PORT_OPTIONS:MSSH}
-CONFIGURE_ARGS+=	--with-rsh=ssh
-.else
-CONFIGURE_ARGS+=	--with-rsh=rsh
 .endif
 
 .include <bsd.port.pre.mk>

@@ -253,6 +253,7 @@
     SUBDIR += cocaine-core
     SUBDIR += coccinelle
     SUBDIR += codeblocks
+    SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += colorgcc
     SUBDIR += colormake
@@ -409,7 +410,6 @@
     SUBDIR += elfsh
     SUBDIR += elftoaout
     SUBDIR += elib
-    SUBDIR += elib-emacs21
     SUBDIR += entity
     SUBDIR += epm
     SUBDIR += epl.el
@@ -1343,7 +1343,6 @@
     SUBDIR += ocamlweb
     SUBDIR += ocfpcsc
     SUBDIR += ode
-    SUBDIR += ode-devel
     SUBDIR += ois
     SUBDIR += okteta
     SUBDIR += omake

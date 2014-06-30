@@ -2,6 +2,7 @@
 
 PORTNAME=	cbsd
 PORTVERSION=	10.0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bsdstore.ru/downloads/ \
 		GH

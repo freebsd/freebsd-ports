@@ -1,29 +1,38 @@
-%%FONTDIR%%/FiraMono-Bold.ttf
-%%FONTDIR%%/FiraMono-Regular.ttf
-%%FONTDIR%%/FiraMonoOT-Bold.otf
-%%FONTDIR%%/FiraMonoOT-Regular.otf
-%%FONTDIR%%/FiraSans-Bold.ttf
-%%FONTDIR%%/FiraSans-BoldItalic.ttf
-%%FONTDIR%%/FiraSans-Light.ttf
-%%FONTDIR%%/FiraSans-LightItalic.ttf
-%%FONTDIR%%/FiraSans-Medium.ttf
-%%FONTDIR%%/FiraSans-MediumItalic.ttf
-%%FONTDIR%%/FiraSans-Regular.ttf
-%%FONTDIR%%/FiraSans-RegularItalic.ttf
-%%FONTDIR%%/FiraSansOT-Bold.otf
-%%FONTDIR%%/FiraSansOT-BoldItalic.otf
-%%FONTDIR%%/FiraSansOT-Light.otf
-%%FONTDIR%%/FiraSansOT-LightItalic.otf
-%%FONTDIR%%/FiraSansOT-Medium.otf
-%%FONTDIR%%/FiraSansOT-MediumItalic.otf
-%%FONTDIR%%/FiraSansOT-Regular.otf
-%%FONTDIR%%/FiraSansOT-RegularItalic.otf
+%%FONTDIR%%/FiraMono-Bold.otf
+%%FONTDIR%%/FiraMono-Medium.otf
+%%FONTDIR%%/FiraMono-Regular.otf
+%%FONTDIR%%/FiraSans-Bold.otf
+%%FONTDIR%%/FiraSans-BoldItalic.otf
+%%FONTDIR%%/FiraSans-Book.otf
+%%FONTDIR%%/FiraSans-BookItalic.otf
+%%FONTDIR%%/FiraSans-Eight.otf
+%%FONTDIR%%/FiraSans-EightItalic.otf
+%%FONTDIR%%/FiraSans-ExtraBold.otf
+%%FONTDIR%%/FiraSans-ExtraBoldItalic.otf
+%%FONTDIR%%/FiraSans-ExtraLight.otf
+%%FONTDIR%%/FiraSans-ExtraLightItalic.otf
+%%FONTDIR%%/FiraSans-Four.otf
+%%FONTDIR%%/FiraSans-FourItalic.otf
+%%FONTDIR%%/FiraSans-Hair.otf
+%%FONTDIR%%/FiraSans-HairItalic.otf
+%%FONTDIR%%/FiraSans-Heavy.otf
+%%FONTDIR%%/FiraSans-HeavyItalic.otf
+%%FONTDIR%%/FiraSans-Italic.otf
+%%FONTDIR%%/FiraSans-Light.otf
+%%FONTDIR%%/FiraSans-LightItalic.otf
+%%FONTDIR%%/FiraSans-Medium.otf
+%%FONTDIR%%/FiraSans-MediumItalic.otf
+%%FONTDIR%%/FiraSans-Regular.otf
+%%FONTDIR%%/FiraSans-SemiBold.otf
+%%FONTDIR%%/FiraSans-SemiBoldItalic.otf
+%%FONTDIR%%/FiraSans-Thin.otf
+%%FONTDIR%%/FiraSans-ThinItalic.otf
+%%FONTDIR%%/FiraSans-Two.otf
+%%FONTDIR%%/FiraSans-TwoItalic.otf
+%%FONTDIR%%/FiraSans-Ultra.otf
+%%FONTDIR%%/FiraSans-UltraItalic.otf
+%%FONTDIR%%/FiraSans-UltraLight.otf
+%%FONTDIR%%/FiraSans-UltraLightItalic.otf
 @exec fc-cache -s -v %D/%%FONTDIR%% 2>/dev/null || true
-@exec mkfontscale %D/%%FONTDIR%% 2>/dev/null || true
-@unexec mkfontscale %D/%%FONTDIR%% 2>/dev/null || true
-@unexec if [ -e %D/%%FONTDIR%%/fonts.scale -a "`stat -f '%%z' %D/%%FONTDIR%%/fonts.scale 2>/dev/null`" = '2' ]; then rm %D/%%FONTDIR%%/fonts.scale; fi
-@exec mkfontdir %D/%%FONTDIR%% 2>/dev/null || true
-@unexec mkfontdir %D/%%FONTDIR%% 2>/dev/null || true
-@unexec if [ -e %D/%%FONTDIR%%/fonts.dir -a "`stat -f '%%z' %D/%%FONTDIR%%/fonts.dir 2>/dev/null`" = '2' ]; then rm %D/%%FONTDIR%%/fonts.dir; fi
 @dirrm %%FONTDIR%%
 @unexec fc-cache -s -v %D/%%FONTDIR%% 2>/dev/null || true

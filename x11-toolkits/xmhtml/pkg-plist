@@ -12,7 +12,6 @@ include/XmHTML/resources.h
 include/XmHTML/tka.h
 include/XmHTML/toolkit.h
 lib/libXmHTML.a
-lib/libXmHTML.la
 lib/libXmHTML.so
 lib/libXmHTML.so.1
 %%PORTDOCS%%%%DOCSDIR%%/GPL.html

@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PLUGINS:S/$/:plugins/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast and lightweight PHP-powered discussion board
 
 BUILD_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
@@ -24,14 +24,13 @@ SUB_FILES=	pkg-message
 
 NO_BUILD=	yes
 USE_PHP=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
-OPTIONS_DEFINE=	LANGUAGE_PACK EXTRAS
+OPTIONS_DEFINE=		LANGUAGE_PACK EXTRAS
 OPTIONS_DEFAULT=	LANGUAGE_PACK EXTRAS
 LANGUAGE_PACK_DESC=	Install language packs
 EXTRAS_DESC=		Install all plugins available
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLANGUAGE_PACK}
@@ -111,25 +110,23 @@ PLIST_SUB+=	PLUGINS="@comment "
 .endif
 
 do-install:
-	@cd ${WRKSRC}/upload && ${COPYTREE_SHARE} . ${WWWDIR}
+	@cd ${WRKSRC}/upload && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .for i in ${LANGFILES}
-	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${WWWDIR}/lang -x '*/.DS_Store' -x '*/._.DS_Store'
+	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${STAGEDIR}${WWWDIR}/lang -x '*/.DS_Store' -x '*/._.DS_Store'
 .endfor
 
 .for i in ${PLUGINS}
-	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${WWWDIR}/plugins
+	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${STAGEDIR}${WWWDIR}/plugins
 .endfor
 
-.if !defined(NOPORTEXAMPLES)
-	@${INSTALL} -d ${EXAMPLESDIR}
-	cd ${WRKSRC}/extras && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
+	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
 
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+.for i in ${PORTEXAMPLES}
+	@${INSTALL_DATA} ${WRKSRC}/extras/${i} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
+
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

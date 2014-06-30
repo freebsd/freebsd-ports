@@ -3,6 +3,7 @@
 
 PORTNAME=	mercurial
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -14,10 +15,11 @@ LICENSE=	GPLv2
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
-OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS EXAMPLES NLS
+OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS EXAMPLES NLS FREEBSD
 OPTIONS_DEFAULT=DATA
 OPTIONS_SUB=	yes
 CA_BUNDLE_DESC=	Install CA Certificates
+FREEBSD_DESC=	Patches used internally by the FreeBSD Project
 
 CONTRIB_FILES=	bash_completion \
 		casesmash.py \
@@ -64,6 +66,10 @@ SUB_FILES=	pkg-message
 
 .if !${PORT_OPTIONS:MNLS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-setup.py
+.endif
+
+.if ${PORT_OPTIONS:MFREEBSD}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-authormapsuffix
 .endif
 
 post-install:

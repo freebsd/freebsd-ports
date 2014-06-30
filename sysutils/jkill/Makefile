@@ -10,12 +10,10 @@ PKGNAMEPREFIX=
 MAINTAINER=	pavel@ext.by
 COMMENT=	Shutdowns a running jail and all its processes
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	jkill.pl
 
-MAN1=		jkill.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/jkill
+PLIST_FILES=	bin/jkill man/man1/jkill.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

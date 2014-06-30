@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.zlib.net/pigz/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Parallel GZIP
 
 USES=		gmake

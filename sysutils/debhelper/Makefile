@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper programs for debian/rules
 
 MAKE_ENV+=	SITE_PERL_REL=${SITE_PERL_REL}

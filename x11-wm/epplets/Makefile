@@ -3,22 +3,22 @@
 
 PORTNAME=	epplets
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A collection of Enlightenment dock applications
+COMMENT=	Collection of Enlightenment dock applications
 
 BUILD_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16
 LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16 \
 		import:${PORTSDIR}/graphics/ImageMagick
 
+USES=		gmake libtool pkgconfig
 USE_XORG=	xext
 USE_GNOME=	esound
 USE_GL=		glut
-USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

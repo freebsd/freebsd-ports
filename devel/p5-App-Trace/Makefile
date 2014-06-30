@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Embedded debug statements, including call/return tracing
 
 RUN_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options

@@ -3,6 +3,7 @@
 
 PORTNAME=	do_sqlite3
 PORTVERSION=	0.10.13
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

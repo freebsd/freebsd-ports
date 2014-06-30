@@ -21,14 +21,13 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN3=		pcrs.3
 PLIST_FILES=	bin/pcrsed \
 		lib/libpcrs.a \
 		lib/libpcrs.so \
-		lib/libpcrs.so.0
+		lib/libpcrs.so.0 \
+		man/man3/pcrs.3.gz
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pcrsed ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pcrsed ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

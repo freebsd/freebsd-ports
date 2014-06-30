@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acpica
-PORTVERSION=	20140424
+PORTVERSION=	20140627
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL
@@ -12,7 +12,8 @@ DISTNAME=	${PORTNAME}-unix2-${PORTVERSION}
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD3CLAUSE GPLv2
+LICENSE_COMB=	dual
 
 USES=		bison gmake
 YACC=		${LOCALBASE}/bin/bison

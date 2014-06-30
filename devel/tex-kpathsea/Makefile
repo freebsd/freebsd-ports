@@ -12,8 +12,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Path searching library for TeX
 
-USE_XZ=		yes
-USES=		gmake
+USES=		gmake tar:xz
 USE_LDCONFIG=	yes
 USE_TEX=	texlive
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}

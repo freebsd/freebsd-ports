@@ -5,13 +5,7 @@
 actions: [file]
 post-install: |
   file=%D/%@
-  ginstall-info --quiet %D/%@ %D/info/dir
+  indexinfo ${file%/*}
 post-deinstall: |
   file=%D/%@
-  ginstall-info --quiet --delete %D/%@ %D/info/dir
-  if [ $(ginfo -d ${file%/*}  --output - 2>/dev/null | grep -c '^*') -eq 1 ]; then
-    rm -f ${file%/*}/dir
-  fi
-  if [ ${file%/*} != "%D/info" ]; then
-     rmdir ${file%/*} 2> /dev/null || true
-  fi
+  indexinfo ${file%/*}

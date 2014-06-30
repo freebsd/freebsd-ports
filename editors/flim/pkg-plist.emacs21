@@ -77,11 +77,5 @@
 %%PORTDOCS%%%%FLIMDOCDIR%%/README.ja
 %%PORTDOCS%%%%FLIMDOCDIR%%/VERSION
 %%PORTDOCS%%@dirrm %%FLIMDOCDIR%%
-@unexec install-info --delete %D/info/mime-en.info %D/info/dir
-info/mime-en.info
-@exec install-info %D/info/mime-en.info %D/info/dir
-@unexec install-info --delete %D/info/mime-ja.info %D/info/dir
-info/mime-ja.info
-@exec install-info %D/info/mime-ja.info %D/info/dir
 share/flim/%%FLIM_COOKIE%%
 @dirrmtry share/flim

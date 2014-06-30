@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	electric
-PORTVERSION=	9.04
-PORTREVISION=	1
+PORTVERSION=	9.05
 CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.staticfreesoft.com/:1 \
@@ -27,6 +26,7 @@ NO_BUILD=	yes
 SUB_LIST+=	LIBFILES="${LIBFILES}" \
 		JARFILE="${JARFILE}"
 SUB_FILES=	electric-ng
+PLIST_SUB+=	VERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	BSH 3D IRSIM DOCS
 BSH_DESC=	Enable embedded java interpreter via BSH

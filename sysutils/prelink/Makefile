@@ -3,18 +3,19 @@
 
 PORTNAME=	prelink
 PORTVERSION=	20111012
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.redhat.com/jakub/prelink/
 
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	ELF prelinking utility to speed up dynamic linking
 
-LIB_DEPENDS=	argp:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
-USES=		gmake tar:bzip2
+USES=		gmake tar:bzip2 libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize libtool
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-c -a
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -22,9 +23,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/execstack \
+		man/man8/execstack.8.gz \
+		man/man8/prelink.8.gz \
 		sbin/prelink
 
-MAN8=		execstack.8 prelink.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

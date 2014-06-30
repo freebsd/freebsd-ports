@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyphen
-PORTVERSION=	2.8.6
+PORTVERSION=	2.8.7
 PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/Hyphen/${PORTVERSION:R}/
@@ -13,18 +13,19 @@ COMMENT=	Library for high quality hyphenation and justification
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 GNU_CONFIGURE=	yes
-USES=	pathfix perl5 shebangfix
+USES=	libtool pathfix perl5 shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	substrings.pl
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 
 PLIST_FILES=	bin/substrings.pl \
 		include/hyphen.h \
 		lib/libhyphen.a \
-		lib/libhyphen.la \
 		lib/libhyphen.so \
-		lib/libhyphen.so.2 \
+		lib/libhyphen.so.0 \
+		lib/libhyphen.so.0.3.0 \
 		%%DATADIR%%/hyph_en_US.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
@@ -40,6 +41,5 @@ post-install:
 .for ALIAS in ${USALIASES}
 	${LN} -s hyph_en_US.dic ${STAGEDIR}${DATADIR}/hyph_${ALIAS}.dic
 .endfor
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhyphen.so.2
 
 .include <bsd.port.mk>

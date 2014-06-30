@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Search
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to the Odeum inverted index API
 
 LIB_DEPENDS=	libqdbm.so:${PORTSDIR}/databases/qdbm

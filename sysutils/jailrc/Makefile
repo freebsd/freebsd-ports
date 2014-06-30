@@ -12,16 +12,16 @@ COMMENT=	Improved jail startup/shutdown script
 
 NO_BUILD=	yes
 NO_INSTALL=	yes
-
 USE_RC_SUBR=	jailrc
-
 PORTDOCS=	*
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-		@${INSTALL_DATA} ${FILESDIR}/README ${DOCSDIR}/README
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/README ${STAGEDIR}${DOCSDIR}/README
 .endif
 
 .include <bsd.port.mk>

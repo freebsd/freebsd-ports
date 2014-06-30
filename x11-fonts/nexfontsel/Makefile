@@ -3,7 +3,7 @@
 
 PORTNAME=	nexfontsel
 PORTVERSION=	3.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/ \
 		${MASTER_SITE_LOCAL}
@@ -13,21 +13,18 @@ DISTNAME=	NeXFontSel-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NeXtaw based replacement for xfontsel
 
-LIB_DEPENDS=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
+LIB_DEPENDS=	libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
 
 USES=		imake
 USE_XORG=	xaw
 
-MAN1=		nexfontsel.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CDEBUG|XCOMM CDEBUG|g ; \
 		s|= XawClientLibs|= -lneXtaw -lXmu -lXt -lX11|g' ${WRKSRC}/Imakefile
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults
 	${INSTALL_DATA} ${WRKSRC}/NeXFontSel-ja.ad \
-		${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults/NeXFontSel
+		${STAGEDIR}${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults/NeXFontSel
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	smstools
 PORTVERSION=	3.1.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -56,7 +56,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 			-e 's|%%STAGEDIR%%|${STAGEDIR}|g' \
 		${WRKSRC}/Makefile ${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.h
-	@${REINPLACE_CMD} 's|/dev/ttyS0|${SMSTOOLS_DEFAULT_COMPORT}|g' \
+	@${REINPLACE_CMD} -e 's|/dev/ttyS0|${SMSTOOLS_DEFAULT_COMPORT}|g' \
+			-e 's|%%SMSD_USER%%|${SMSD_USER}|' \
+			-e 's|%%SMSD_GROUP%%|${SMSD_GROUP}|' \
 		${WRKSRC}/examples/smsd.conf.easy \
 		${WRKSRC}/examples/smsd.conf.full \
 		${WRKSRC}/examples/smsd.conf.non-root
@@ -64,7 +66,7 @@ post-patch:
 		${WRKSRC}/scripts/*
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/smsd
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/smsd
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@for file in `${FIND} ${WRKSRC}/scripts -type f ! -name 'README' ! -name '*.bak'`; do \
 		${INSTALL_SCRIPT} $$file ${STAGEDIR}${DATADIR}/; \

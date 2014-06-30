@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.primatelabs.ca/download/
 DISTNAME=	Geekbench21-Linux
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform benchmark suite
 
 NO_BUILD=	yes

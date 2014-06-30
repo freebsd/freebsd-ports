@@ -12,16 +12,12 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 
+USES=		makeinfo
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 OPTIONS_DEFINE=	CONTRIB
 CONTRIB_DESC=	Install extra packages. This can shadow versions already there.
 OPTIONS_SUB=	yes
-
-.if ${EMACS_PORT_NAME} != "emacs21"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/xml-parse.el:${PORTSDIR}/textproc/xml-parse.el
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/htmlize.el:${PORTSDIR}/textproc/htmlize.el

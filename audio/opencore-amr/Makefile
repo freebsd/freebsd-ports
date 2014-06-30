@@ -6,7 +6,7 @@ PORTVERSION=	0.1.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenCORE implementation of AMR Narrowband & Wideband speech codec
 
 LICENSE=	APACHE20

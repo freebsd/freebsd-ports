@@ -24,6 +24,7 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-TinyMocker>=0:${PORTSDIR}/devel/p5-Test-TinyMocker
 
 DEPRECATED=	Use devel/p5-MetaCPAN-Client instead
+EXPIRATION_DATE=2014-07-27
 
 USES=		perl5
 USE_PERL5=	modbuild

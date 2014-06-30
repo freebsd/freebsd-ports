@@ -3,7 +3,7 @@
 
 PORTNAME=	streamtranscoder
 PORTVERSION=	1.2.8
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	http://www.oddsock.org/tools/streamTranscoder/
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libmp3lame.so:${PORTSDIR}/audio/lame
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,9 +36,7 @@ post-patch:
 		${WRKSRC}/src/libtranscoder/transcurl.cpp
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

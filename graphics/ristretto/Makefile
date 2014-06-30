@@ -12,12 +12,14 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Image viewer with Xfce integration
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 
-USES=		pkgconfig gettext pathfix desktop-file-utils gmake
-USE_BZIP2=	yes
+USES=		pkgconfig gettext pathfix desktop-file-utils gmake tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack
 INSTALLS_ICONS=	yes

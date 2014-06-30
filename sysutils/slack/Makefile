@@ -3,6 +3,7 @@
 
 PORTNAME=	slack
 PORTVERSION=	0.15.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://www.sundell.net/~alan/projects/slack/
@@ -14,18 +15,15 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USES=		perl5 gmake
 
-MAN1=		slack-diff.1
-MAN5=		slack.conf.5
-MAN8=		slack.8
-
 PORTDOCS=	ChangeLog COPYING CREDITS FAQ GPL README TODO \
 		fixfiles-and-dirs.txt slack-intro
-
 MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} \
 		libexecdir=${PREFIX}/libexec mandir=${PREFIX}/man \
 		localstatedir=/var
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 pre-build:
 	${REINPLACE_CMD} -e '1s,^#!.*perl,#!${PERL},' ${WRKSRC}/test/gen_config_file
 	
@@ -35,18 +33,18 @@ post-build:
 	done
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/src/build/slack.conf ${PREFIX}/etc/slack.conf.sample
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CREDITS ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/GPL ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/fixfiles-and-dirs.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/slack-intro ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/src/build/slack.conf ${STAGEDIR}${PREFIX}/etc/slack.conf.sample
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CREDITS ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/FAQ ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/GPL ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/TODO ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/fixfiles-and-dirs.txt ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/slack-intro ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

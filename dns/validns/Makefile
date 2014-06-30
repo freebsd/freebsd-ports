@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	validns
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	dns security
 MASTER_SITES=	http://www.validns.net/download/
 
@@ -11,17 +11,22 @@ COMMENT=	High performance DNS/DNSSEC zone validator
 
 LICENSE=	BSD2CLAUSE
 
-OPTIONS_DEFINE=	DOCS
-
 LIB_DEPENDS=	libJudy.so:${PORTSDIR}/devel/judy
+
+USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=yes
 
 ALL_TARGET=
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
-OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	Changes README installation.mdwn notes.mdwn \
 		technical-notes.mdwn todo.mdwn usage.mdwn
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

@@ -2,52 +2,48 @@ bin/qpsmtpd
 bin/qpsmtpd-async
 bin/qpsmtpd-forkserver
 bin/qpsmtpd-prefork
-man/man1/%%AP_NAME%%-async.1.gz
-%%PERL5_MAN3%%/Apache::Qpsmtpd.3.gz
-%%PERL5_MAN3%%/Qpsmtpd.3.gz
-%%PERL5_MAN3%%/Qpsmtpd::Address.3.gz
-%%PERL5_MAN3%%/Qpsmtpd::Command.3.gz
-%%PERL5_MAN3%%/Qpsmtpd::ConfigServer.3.gz
-%%PERL5_MAN3%%/Qpsmtpd::Connection.3.gz
-%%PERL5_MAN3%%/Qpsmtpd::Constants.3.gz
-%%PERL5_MAN3%%/Qpsmtpd::DSN.3.gz
-%%PERL5_MAN3%%/Qpsmtpd::Postfix.3.gz
-%%PERL5_MAN3%%/Qpsmtpd::Transaction.3.gz
-%%DATADIR%%/plugins/async/check_earlytalker
+man/man1/qpsmtpd-async.1.gz
 %%DATADIR%%/plugins/async/dns_whitelist_soft
 %%DATADIR%%/plugins/async/dnsbl
+%%DATADIR%%/plugins/async/earlytalker
 %%DATADIR%%/plugins/async/queue/smtp-forward
-%%DATADIR%%/plugins/async/require_resolvable_fromhost
+%%DATADIR%%/plugins/async/resolvable_fromhost
 %%DATADIR%%/plugins/async/rhsbl
 %%DATADIR%%/plugins/async/uribl
+%%DATADIR%%/plugins/auth/auth_checkpassword
 %%DATADIR%%/plugins/auth/auth_cvm_unix_local
 %%DATADIR%%/plugins/auth/auth_flat_file
 %%DATADIR%%/plugins/auth/auth_ldap_bind
+%%DATADIR%%/plugins/auth/auth_vpopmail
 %%DATADIR%%/plugins/auth/auth_vpopmail_sql
+%%DATADIR%%/plugins/auth/auth_vpopmaild
 %%DATADIR%%/plugins/auth/authdeny
-%%DATADIR%%/plugins/check_badmailfrom
-%%DATADIR%%/plugins/check_badmailfromto
-%%DATADIR%%/plugins/check_badrcptto
-%%DATADIR%%/plugins/check_badrcptto_patterns
-%%DATADIR%%/plugins/check_basicheaders
-%%DATADIR%%/plugins/check_earlytalker
-%%DATADIR%%/plugins/check_loop
-%%DATADIR%%/plugins/check_norelay
-%%DATADIR%%/plugins/check_relay
-%%DATADIR%%/plugins/check_spamhelo
+%%DATADIR%%/plugins/badmailfrom
+%%DATADIR%%/plugins/badmailfromto
+%%DATADIR%%/plugins/badrcptto
+%%DATADIR%%/plugins/bogus_bounce
 %%DATADIR%%/plugins/connection_time
 %%DATADIR%%/plugins/content_log
 %%DATADIR%%/plugins/count_unrecognized_commands
+%%DATADIR%%/plugins/dkim
+%%DATADIR%%/plugins/dmarc
 %%DATADIR%%/plugins/dns_whitelist_soft
 %%DATADIR%%/plugins/dnsbl
 %%DATADIR%%/plugins/domainkeys
 %%DATADIR%%/plugins/dont_require_anglebrackets
+%%DATADIR%%/plugins/dspam
+%%DATADIR%%/plugins/earlytalker
+%%DATADIR%%/plugins/fcrdns
 %%DATADIR%%/plugins/greylisting
+%%DATADIR%%/plugins/headers
+%%DATADIR%%/plugins/helo
 %%DATADIR%%/plugins/help
 %%DATADIR%%/plugins/hosts_allow
 %%DATADIR%%/plugins/http_config
 %%DATADIR%%/plugins/ident/geoip
 %%DATADIR%%/plugins/ident/p0f
+%%DATADIR%%/plugins/karma
+%%DATADIR%%/plugins/karma_tool
 %%DATADIR%%/plugins/logging/adaptive
 %%DATADIR%%/plugins/logging/apache
 %%DATADIR%%/plugins/logging/connection_id
@@ -56,8 +52,11 @@ man/man1/%%AP_NAME%%-async.1.gz
 %%DATADIR%%/plugins/logging/syslog
 %%DATADIR%%/plugins/logging/transaction_id
 %%DATADIR%%/plugins/logging/warn
+%%DATADIR%%/plugins/loop
+%%DATADIR%%/plugins/naughty
 %%DATADIR%%/plugins/noop_counter
 %%DATADIR%%/plugins/parse_addr_withhelo
+%%DATADIR%%/plugins/qmail_deliverable
 %%DATADIR%%/plugins/queue/exim-bsmtp
 %%DATADIR%%/plugins/queue/maildir
 %%DATADIR%%/plugins/queue/postfix-queue
@@ -65,10 +64,12 @@ man/man1/%%AP_NAME%%-async.1.gz
 %%DATADIR%%/plugins/queue/smtp-forward
 %%DATADIR%%/plugins/quit_fortune
 %%DATADIR%%/plugins/random_error
+%%DATADIR%%/plugins/rcpt_map
 %%DATADIR%%/plugins/rcpt_ok
 %%DATADIR%%/plugins/rcpt_regexp
-%%DATADIR%%/plugins/relay_only
-%%DATADIR%%/plugins/require_resolvable_fromhost
+%%DATADIR%%/plugins/registry.txt
+%%DATADIR%%/plugins/relay
+%%DATADIR%%/plugins/resolvable_fromhost
 %%DATADIR%%/plugins/rhsbl
 %%DATADIR%%/plugins/sender_permitted_from
 %%DATADIR%%/plugins/spamassassin
@@ -84,25 +85,45 @@ man/man1/%%AP_NAME%%-async.1.gz
 %%DATADIR%%/plugins/virus/klez_filter
 %%DATADIR%%/plugins/virus/sophie
 %%DATADIR%%/plugins/virus/uvscan
+%%DATADIR%%/plugins/whitelist
+%%PERL5_MAN3%%/Apache::Qpsmtpd.3.gz
+%%PERL5_MAN3%%/Qpsmtpd.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Address.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Command.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::ConfigServer.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Connection.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Constants.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::DSN.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Postfix.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Transaction.3.gz
+%%PERL5_MAN3%%/UPGRADING.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.plugins
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/IP
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/badhelo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/badmailfrom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/badrcptto_patterns
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/badrcptto
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dkim/dkim_key_gen.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsbl_allow
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsbl_zones
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_auth_pw
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/invalid_resolvable_fromhost
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/log2sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logging
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/loglevel
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/norelayclients
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/public_suffix_list
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rcpthosts
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/relayclients
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/require_resolvable_fromhost
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rhsbl_zones
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/size_threshold
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtpauth-checkpassword
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_before_auth
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_ciphers
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/dkim
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd/.packlist
 %%SITE_PERL%%/Apache/Qpsmtpd.pm
 %%SITE_PERL%%/Danga/Client.pm
@@ -127,23 +148,22 @@ man/man1/%%AP_NAME%%-async.1.gz
 %%SITE_PERL%%/Qpsmtpd/TcpServer/Prefork.pm
 %%SITE_PERL%%/Qpsmtpd/Transaction.pm
 %%SITE_PERL%%/Qpsmtpd/Utils.pm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/Danga
+%%SITE_PERL%%/UPGRADING.pod
+@dirrmtry %%DATADIR%%
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/plugins/async
+@dirrmtry %%DATADIR%%/plugins/async/queue
+@dirrmtry %%DATADIR%%/plugins/auth
+@dirrmtry %%DATADIR%%/plugins/ident
+@dirrmtry %%DATADIR%%/plugins/logging
+@dirrmtry %%DATADIR%%/plugins/queue
+@dirrmtry %%DATADIR%%/plugins/virus
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd
 @dirrmtry %%SITE_PERL%%/Apache
-@dirrm %%SITE_PERL%%/Qpsmtpd/TcpServer
-@dirrm %%SITE_PERL%%/Qpsmtpd/SMTP
-@dirrm %%SITE_PERL%%/Qpsmtpd/Postfix
-@dirrm %%SITE_PERL%%/Qpsmtpd/Plugin/Async
-@dirrm %%SITE_PERL%%/Qpsmtpd/Plugin
-@dirrm %%SITE_PERL%%/Qpsmtpd
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/qpsmtpd
-@dirrm %%DATADIR%%/plugins/virus
-@dirrm %%DATADIR%%/plugins/queue
-@dirrm %%DATADIR%%/plugins/logging
-@dirrm %%DATADIR%%/plugins/ident
-@dirrm %%DATADIR%%/plugins/auth
-@dirrm %%DATADIR%%/plugins/async/queue
-@dirrm %%DATADIR%%/plugins/async
-@dirrm %%DATADIR%%/plugins/
-@dirrm %%DATADIR%%
+@dirrmtry %%SITE_PERL%%/Danga
+@dirrmtry %%SITE_PERL%%/Qpsmtpd
+@dirrmtry %%SITE_PERL%%/Qpsmtpd/Plugin
+@dirrmtry %%SITE_PERL%%/Qpsmtpd/Plugin/Async
+@dirrmtry %%SITE_PERL%%/Qpsmtpd/Postfix
+@dirrmtry %%SITE_PERL%%/Qpsmtpd/SMTP
+@dirrmtry %%SITE_PERL%%/Qpsmtpd/TcpServer

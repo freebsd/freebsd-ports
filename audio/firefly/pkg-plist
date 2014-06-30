@@ -1,7 +1,6 @@
-@unexec if cmp -s %D/etc/mt-daapd.conf.sample %D/etc/mt-daapd.conf; then rm -f %D/etc/mt-daapd.conf; fi
+@sample etc/mt-daapd.conf.sample
 bin/mt-daapd-ssc.sh
 bin/wavstreamer
-etc/mt-daapd.conf.sample
 lib/mt-daapd/plugins/out-daap.a
 lib/mt-daapd/plugins/out-daap.la
 lib/mt-daapd/plugins/out-daap.so
@@ -67,6 +66,8 @@ share/mt-daapd/admin-root/xiph-license.html
 share/mt-daapd/admin-root/xiph-license.txt
 share/mt-daapd/admin-root/zlib-license.html
 share/mt-daapd/admin-root/zlib-license.txt
+@exec chown %%DAAPD_USER%%:%%DAAPD_GROUP%% %%DAAPD_DBDIR%%
+@exec chown %%DAAPD_USER%%:%%DAAPD_GROUP%% %%DATADIR%%
 @dirrmtry share/mt-daapd/admin-root/lib-js/script.aculo.us
 @dirrmtry share/mt-daapd/admin-root/lib-js
 @dirrmtry share/mt-daapd/admin-root

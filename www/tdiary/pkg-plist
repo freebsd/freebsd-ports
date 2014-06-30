@@ -1,4 +1,7 @@
+bin/%%TDIARY_SCRIPT%%
+%%WWWDIR%%/Gruntfile.js
 %%WWWDIR%%/bin/tdiary
+%%WWWDIR%%/bower.json
 %%WWWDIR%%/data/.htaccess
 %%WWWDIR%%/dot.htaccess
 %%WWWDIR%%/index.fcgi
@@ -168,6 +171,7 @@
 %%WWWDIR%%/misc/theme_convert/Readme.rd
 %%WWWDIR%%/misc/theme_convert/append.rcss
 %%WWWDIR%%/misc/theme_convert/theme_convert.rb
+%%WWWDIR%%/package.json
 %%WWWDIR%%/plugin/00default.rb
 %%WWWDIR%%/plugin/05referer.rb
 %%WWWDIR%%/plugin/10spamfilter.rb
@@ -216,7 +220,6 @@
 %%WWWDIR%%/tdiary.conf.beginner
 %%WWWDIR%%/tdiary.conf.sample
 %%WWWDIR%%/tdiary.conf.sample-en
-%%WWWDIR%%/tdiary.gemspec
 %%WWWDIR%%/tdiary.rb
 %%WWWDIR%%/tdiary/admin.rb
 %%WWWDIR%%/tdiary/application.rb
@@ -1389,6 +1392,7 @@
 %%WWWDIR%%/theme/ocha/ocha_div_day.png
 %%WWWDIR%%/theme/ocha/ocha_h2.png
 %%WWWDIR%%/theme/ocha/ocha_panchor.png
+%%WWWDIR%%/theme/ogimage.png
 %%WWWDIR%%/theme/old-pavement/README
 %%WWWDIR%%/theme/old-pavement/old-pavement.css
 %%WWWDIR%%/theme/old-pavement/old-pavement_back.png
@@ -1893,7 +1897,6 @@
 %%WWWDIR%%/theme/zef/zef.css
 %%WWWDIR%%/update.fcgi
 %%WWWDIR%%/update.rb
-@exec mkdir -p %D/%%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/theme/zef
 @dirrm %%WWWDIR%%/theme/yukon
@@ -2280,3 +2283,5 @@
 @dirrm %%WWWDIR%%/data
 @dirrm %%WWWDIR%%/bin
 @dirrm %%WWWDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/tmp
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%

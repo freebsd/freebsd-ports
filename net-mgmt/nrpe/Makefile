@@ -12,8 +12,6 @@ COMMENT?=	Nagios Remote Plugin Executor
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-LATEST_LINK=	nrpe2
-
 CONFLICTS=	nrpe-ssl-2.*
 
 USES=		perl5

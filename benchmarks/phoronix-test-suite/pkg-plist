@@ -1,16 +1,16 @@
 bin/phoronix-test-suite
 %%BASH_COMPLETIONS%%etc/bash_completion.d/phoronix-test-suite
+%%X11%%share/appdata/phoronix-test-suite.appdata.xml
 %%X11%%share/applications/phoronix-test-suite.desktop
 %%X11%%share/applications/phoronix-test-suite-launcher.desktop
 %%X11%%share/icons/hicolor/48x48/apps/phoronix-test-suite.png
 %%X11%%share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
-%%X11%%share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-openbenchmarking.png
-%%X11%%share/mime/application/x-openbenchmarking.xml
 %%X11%%share/mime/packages/openbenchmarking-mime.xml
 %%DATADIR%%/pts-core/commands/analyze_all_runs.php
 %%DATADIR%%/pts-core/commands/analyze_batch.php
 %%DATADIR%%/pts-core/commands/analyze_image_delta.php
 %%DATADIR%%/pts-core/commands/auto_compare.php
+%%DATADIR%%/pts-core/commands/auto_sort_result_file.php
 %%DATADIR%%/pts-core/commands/batch_benchmark.php
 %%DATADIR%%/pts-core/commands/batch_install.php
 %%DATADIR%%/pts-core/commands/batch_run.php
@@ -23,6 +23,8 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/debug_run.php
 %%DATADIR%%/pts-core/commands/debug_self_test.php
 %%DATADIR%%/pts-core/commands/debug_test_download_links.php
+%%DATADIR%%/pts-core/commands/debug_websocket_client.php
+%%DATADIR%%/pts-core/commands/debug_websocket_server.php
 %%DATADIR%%/pts-core/commands/default_benchmark.php
 %%DATADIR%%/pts-core/commands/default_run.php
 %%DATADIR%%/pts-core/commands/detailed_system_info.php
@@ -33,9 +35,11 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/dump_openbenchmarking_indexes.php
 %%DATADIR%%/pts-core/commands/dump_phodevi_smart_cache.php
 %%DATADIR%%/pts-core/commands/dump_possible_options.php
+%%DATADIR%%/pts-core/commands/edit_result_file.php
 %%DATADIR%%/pts-core/commands/extract_from_result_file.php
 %%DATADIR%%/pts-core/commands/finish_run.php
 %%DATADIR%%/pts-core/commands/force_install.php
+%%DATADIR%%/pts-core/commands/gui.php
 %%DATADIR%%/pts-core/commands/help.php
 %%DATADIR%%/pts-core/commands/info.php
 %%DATADIR%%/pts-core/commands/install_dependencies.php
@@ -73,14 +77,19 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/remove_installed_test.php
 %%DATADIR%%/pts-core/commands/remove_result.php
 %%DATADIR%%/pts-core/commands/rename_identifier_in_result_file.php
+%%DATADIR%%/pts-core/commands/rename_result_file.php
 %%DATADIR%%/pts-core/commands/reorder_result_file.php
 %%DATADIR%%/pts-core/commands/result_file_to_csv.php
 %%DATADIR%%/pts-core/commands/result_file_to_pdf.php
 %%DATADIR%%/pts-core/commands/result_file_to_suite.php
 %%DATADIR%%/pts-core/commands/result_file_to_text.php
+%%DATADIR%%/pts-core/commands/run_random_tests.php
 %%DATADIR%%/pts-core/commands/run_test.php
 %%DATADIR%%/pts-core/commands/run_tests_in_suite.php
 %%DATADIR%%/pts-core/commands/show_result.php
+%%DATADIR%%/pts-core/commands/start_phoromatic_server.php
+%%DATADIR%%/pts-core/commands/start_remote_gui_server.php
+%%DATADIR%%/pts-core/commands/start_ws_server.php
 %%DATADIR%%/pts-core/commands/system_info.php
 %%DATADIR%%/pts-core/commands/system_sensors.php
 %%DATADIR%%/pts-core/commands/test_module.php
@@ -92,7 +101,6 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/validate_result_file.php
 %%DATADIR%%/pts-core/commands/validate_test_profile.php
 %%DATADIR%%/pts-core/commands/validate_test_suite.php
-%%DATADIR%%/pts-core/commands/webui.php
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-angstrom-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-arch-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-debian-packages.sh
@@ -137,6 +145,8 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/modules/graphics_override.php
 %%DATADIR%%/pts-core/modules/matisk.php
 %%DATADIR%%/pts-core/modules/phoromatic.php
+%%DATADIR%%/pts-core/modules/phoromatic_legacy.php
+%%DATADIR%%/pts-core/modules/pushover_net.php
 %%DATADIR%%/pts-core/modules/result_notifier.php
 %%DATADIR%%/pts-core/modules/system_monitor.php
 %%DATADIR%%/pts-core/modules/timed_screenshot.php
@@ -154,6 +164,8 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/client/display_modes/pts_basic_display_mode.php
 %%DATADIR%%/pts-core/objects/client/display_modes/pts_concise_display_mode.php
 %%DATADIR%%/pts-core/objects/client/display_modes/pts_display_mode_interface.php
+%%DATADIR%%/pts-core/objects/client/display_modes/pts_web_display_mode.php
+%%DATADIR%%/pts-core/objects/client/display_modes/pts_websocket_display_mode.php
 %%DATADIR%%/pts-core/objects/client/pts_argument_check.php
 %%DATADIR%%/pts-core/objects/client/pts_client.php
 %%DATADIR%%/pts-core/objects/client/pts_config.php
@@ -176,6 +188,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/client/pts_test_notes_manager.php
 %%DATADIR%%/pts-core/objects/client/pts_test_run_manager.php
 %%DATADIR%%/pts-core/objects/client/pts_tests.php
+%%DATADIR%%/pts-core/objects/client/pts_web_socket_server.php
 %%DATADIR%%/pts-core/objects/nye_Xml/nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/nye_XmlWriter.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_config_nye_XmlReader.php
@@ -206,6 +219,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_device_interface.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_device_property.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_sensor.php
+%%DATADIR%%/pts-core/objects/phodevi/phodevi_sensor_monitor.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_vfs.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_fanspeed.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_freq.php
@@ -232,6 +246,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v12.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v3.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v5.php
+%%DATADIR%%/pts-core/objects/phoromatic_server.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_BlockDiagramGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_CandleStickGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_DetailedSystemComponentTable.php
@@ -282,6 +297,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/pts_strings.php
 %%DATADIR%%/pts-core/objects/pts_svg_dom.php
 %%DATADIR%%/pts-core/objects/pts_svg_dom_gd.php
+%%DATADIR%%/pts-core/objects/pts_sys_graph.php
 %%DATADIR%%/pts-core/objects/pts_test_option.php
 %%DATADIR%%/pts-core/objects/pts_test_profile.php
 %%DATADIR%%/pts-core/objects/pts_test_profile_downloads_writer.php
@@ -302,14 +318,38 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/pts_types.php
 %%DATADIR%%/pts-core/objects/pts_user_io.php
 %%DATADIR%%/pts-core/objects/pts_validation.php
+%%DATADIR%%/pts-core/objects/pts_virtual_test_queue.php
 %%DATADIR%%/pts-core/objects/pts_virtual_test_suite.php
-%%DATADIR%%/pts-core/objects/pts_web.php
+%%DATADIR%%/pts-core/objects/pts_web_socket.php
+%%DATADIR%%/pts-core/objects/pts_web_socket_client.php
+%%DATADIR%%/pts-core/objects/pts_web_socket_user.php
+%%DATADIR%%/pts-core/objects/pts_webui.php
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/result-file.xsd
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/results-parser.xsd
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/test-profile-downloads.xsd
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/test-profile.xsd
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/test-suite.xsd
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/types.xsd
+%%DATADIR%%/pts-core/phoromatic/communication-resources/result_upload.php
+%%DATADIR%%/pts-core/phoromatic/communication-resources/start.php
+%%DATADIR%%/pts-core/phoromatic/communication-resources/update_system_status.php
+%%DATADIR%%/pts-core/phoromatic/pages/phoromatic_main.php
+%%DATADIR%%/pts-core/phoromatic/pages/phoromatic_r_add_test_details.php
+%%DATADIR%%/pts-core/phoromatic/pages/phoromatic_results.php
+%%DATADIR%%/pts-core/phoromatic/pages/phoromatic_schedules.php
+%%DATADIR%%/pts-core/phoromatic/pages/phoromatic_settings.php
+%%DATADIR%%/pts-core/phoromatic/pages/phoromatic_systems.php
+%%DATADIR%%/pts-core/phoromatic/pages/phoromatic_welcome.php
+%%DATADIR%%/pts-core/phoromatic/phoromatic_functions.php
+%%DATADIR%%/pts-core/phoromatic/public_html/event.php
+%%DATADIR%%/pts-core/phoromatic/public_html/favicon.ico
+%%DATADIR%%/pts-core/phoromatic/public_html/images/ob-white-logo.png
+%%DATADIR%%/pts-core/phoromatic/public_html/images/phoromatic_logo.png
+%%DATADIR%%/pts-core/phoromatic/public_html/images/pts-white-logo.png
+%%DATADIR%%/pts-core/phoromatic/public_html/index.php
+%%DATADIR%%/pts-core/phoromatic/public_html/phoromatic.css
+%%DATADIR%%/pts-core/phoromatic/public_html/phoromatic.js
+%%DATADIR%%/pts-core/phoromatic/public_html/phoromatic.php
 %%DATADIR%%/pts-core/phoronix-test-suite.php
 %%DATADIR%%/pts-core/pts-core.php
 %%DATADIR%%/pts-core/results-viewer/background-pattern.png
@@ -329,6 +369,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/static/examples/phoromatic-tracker-update-kernel
 %%DATADIR%%/pts-core/static/examples/update-kernel-from-ubuntu-daily-ppa
 %%DATADIR%%/pts-core/static/examples/update-ubuntu-aptitude-full
+%%DATADIR%%/pts-core/static/hhvm-server.hdf
 %%DATADIR%%/pts-core/static/images/phoronix-test-suite.png
 %%DATADIR%%/pts-core/static/images/ob-10x16.png
 %%DATADIR%%/pts-core/static/images/ob-fulltext-183x32.png
@@ -342,6 +383,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/static/images/pts-308x160-t.png
 %%DATADIR%%/pts-core/static/images/pts-308x160.png
 %%DATADIR%%/pts-core/static/images/pts-icon.png
+%%DATADIR%%/pts-core/static/phoronix-test-suite.appdata.xml
 %%DATADIR%%/pts-core/static/scripts/build-package-deb.php
 %%DATADIR%%/pts-core/static/scripts/build-package-rpm.php
 %%DATADIR%%/pts-core/static/scripts/root-access.sh
@@ -351,6 +393,36 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/static/xsl/pts-test-profile-viewer.xsl
 %%DATADIR%%/pts-core/static/xsl/pts-user-config-viewer.xsl
 %%DATADIR%%/pts-core/user-agreement.txt
+%%DATADIR%%/pts-core/web-interface/assets/background.png
+%%DATADIR%%/pts-core/web-interface/assets/pts-mobile-interface.css
+%%DATADIR%%/pts-core/web-interface/assets/pts-web-interface.css
+%%DATADIR%%/pts-core/web-interface/assets/pts-web-logo.png
+%%DATADIR%%/pts-core/web-interface/favicon.ico
+%%DATADIR%%/pts-core/web-interface/html/about.html
+%%DATADIR%%/pts-core/web-interface/html/benchmark.html
+%%DATADIR%%/pts-core/web-interface/html/early.html
+%%DATADIR%%/pts-core/web-interface/html/settings.html
+%%DATADIR%%/pts-core/web-interface/html/test_queue.html
+%%DATADIR%%/pts-core/web-interface/index.php
+%%DATADIR%%/pts-core/web-interface/js/pts-web-functions.js
+%%DATADIR%%/pts-core/web-interface/js/pts-web-interface.js
+%%DATADIR%%/pts-core/web-interface/js/pts-web-socket.js
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_component.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_intro.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_loader.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_main.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_result.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_results.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_search.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_system.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_test.php
+%%DATADIR%%/pts-core/web-interface/web-interfaces/pts_webui_tests.php
+man/man1/phoronix-test-suite.1.gz
+@dirrm %%DATADIR%%/pts-core/web-interface/web-interfaces
+@dirrm %%DATADIR%%/pts-core/web-interface/js
+@dirrm %%DATADIR%%/pts-core/web-interface/html
+@dirrm %%DATADIR%%/pts-core/web-interface/assets
+@dirrm %%DATADIR%%/pts-core/web-interface
 @dirrm %%DATADIR%%/pts-core/static/xsl
 @dirrm %%DATADIR%%/pts-core/static/scripts
 @dirrm %%DATADIR%%/pts-core/static/images
@@ -358,6 +430,11 @@ bin/phoronix-test-suite
 @dirrm %%DATADIR%%/pts-core/static/certificates
 @dirrm %%DATADIR%%/pts-core/static
 @dirrm %%DATADIR%%/pts-core/results-viewer
+@dirrm %%DATADIR%%/pts-core/phoromatic/public_html/images
+@dirrm %%DATADIR%%/pts-core/phoromatic/public_html
+@dirrm %%DATADIR%%/pts-core/phoromatic/pages
+@dirrm %%DATADIR%%/pts-core/phoromatic/communication-resources
+@dirrm %%DATADIR%%/pts-core/phoromatic
 @dirrm %%DATADIR%%/pts-core/openbenchmarking.org/schemas
 @dirrm %%DATADIR%%/pts-core/openbenchmarking.org
 @dirrm %%DATADIR%%/pts-core/objects/pts_Graph
@@ -379,7 +456,10 @@ bin/phoronix-test-suite
 @dirrm %%DATADIR%%/pts-core
 @dirrm %%DATADIR%%
 %%BASH_COMPLETIONS%%@dirrmtry etc/bash_completion.d
-%%X11%%@dirrmtry share/icons/hicolor/64x64/apps
+%%X11%%@dirrmtry share/appdata
+%%X11%%@dirrmtry share/icons/hicolor/48x48/apps
+%%X11%%@dirrmtry share/icons/hicolor/48x48
+%%X11%%@dirrmtry share/icons/hicolor/64x64/mimetypes
 %%X11%%@dirrmtry share/icons/hicolor/64x64
 %%X11%%@dirrmtry share/icons/hicolor
 %%X11%%@dirrmtry share/icons

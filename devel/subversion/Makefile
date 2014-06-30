@@ -1,6 +1,7 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
+PORTREVISION=	6
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
@@ -145,6 +146,8 @@ pre-configure:
 .endif
 
 post-configure:
+# Enable GNOME Keyring / KWallet support in main code, as it is harmless
+	@${REINPLACE_CMD} -E 's%.*#undef SVN_HAVE_(GNOME_KEYRING|KWALLET).*%#define SVN_HAVE_\1 1%' ${WRKSRC}/subversion/svn_private_config.h
 # ugly hack: save tools directory so we don't have to cleanup before installing
 	@${CP} -R ${WRKSRC}/tools ${WRKSRC}/tools.examples
 	@${CHMOD} -R a-st,o+rX ${WRKSRC}/tools.examples

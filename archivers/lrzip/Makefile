@@ -8,7 +8,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://ck.kolivas.org/apps/lrzip/ \
 		http://files.gslin.org/Software/
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Long Range ZIP or Lzma RZIP
 
 LICENSE=	GPLv2

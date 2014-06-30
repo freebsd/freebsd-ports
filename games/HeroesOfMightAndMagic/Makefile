@@ -16,7 +16,6 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Software is commercial
 NO_PACKAGE=	Software is commercial
-NO_STAGE=	yes # NO_PACKAGE does not go well with STAGEDIR and pkg_tools
 
 GAMESUBDIR=	games/Heroes3
 GAMEDIR=	${STAGEDIR}${PREFIX}/${GAMESUBDIR}

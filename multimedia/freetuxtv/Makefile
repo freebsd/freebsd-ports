@@ -3,7 +3,7 @@
 
 PORTNAME=	freetuxtv
 PORTVERSION=	0.6.5
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gmake iconv pathfix pkgconfig
+USES=		gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	gtk20 cairo
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender

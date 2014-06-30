@@ -6,7 +6,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	chinese
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool of Yahoo! Dict
 
 LICENSE=	GPLv3

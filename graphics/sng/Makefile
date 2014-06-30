@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	sng
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Compiler/decompiler for Scriptable Network Graphics
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb

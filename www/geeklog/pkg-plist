@@ -1,5 +1,9 @@
-@unexec if [ "`md5 -q %D/%%WWWDIR%%/db-config.php`" = "e152b8b4ebd7e8b5bf05c9466f618bfa" ]; then rm -f %D/%%WWWDIR%%/db-config.php; fi
-@unexec if [ "`md5 -q %D/%%WWWDIR%%/public_html/siteconfig.php`" = "a713c0e73d143db728d350010f7cf289" ]; then rm -f %D/%%WWWDIR%%/public_html/siteconfig.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/db-config.php %D/%%WWWDIR%%/db-config.php.sample; then rm -f %D/%%WWWDIR%%/db-config.php; fi
+%%WWWDIR%%/db-config.php.sample
+@exec cp -n %D/%F %B/db-config.php
+@unexec if cmp -s %D/%%WWWDIR%%/public_html/siteconfig.php %D/%%WWWDIR%%/public_html/siteconfig.php.sample; then rm -f %D/%%WWWDIR%%/public_html/siteconfig.php; fi
+%%WWWDIR%%/public_html/siteconfig.php.sample
+@exec cp -n %D/%F %B/siteconfig.php
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/backups/README
 %%WWWDIR%%/data/README

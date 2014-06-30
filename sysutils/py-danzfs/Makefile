@@ -14,15 +14,14 @@ LICENSE=	BSD
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_XZ=	yes
+USES=		tar:xz
 
 WRKSRC=	${WRKDIR}/danzfs
 
 EXAMPLESDIR=	${PREFIX}/share/examples/danzfs
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

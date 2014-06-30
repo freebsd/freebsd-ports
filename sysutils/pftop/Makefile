@@ -12,6 +12,10 @@ COMMENT=	Utility for real-time display of statistics for pf
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 1100000
+BROKEN=		Does not compile on HEAD
+.endif
+
 .if ${OSVERSION} < 900039
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
 CFLAGS+=	-DHAVE_ALTQ=1

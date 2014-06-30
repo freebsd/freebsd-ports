@@ -14,13 +14,8 @@ COMMENT=	Manage your projects or tasks within GNU Emacs
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 USE_GHOSTSCRIPT_RUN=	yes
 USE_TEX=	latex dvipsk
-
-.if ${EMACS_PORT_NAME} != "emacs21"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}a

@@ -3,28 +3,25 @@
 
 PORTNAME=	mail-notification
 DISTVERSION=	5.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
 
 MAINTAINER=	mwisnicki+freebsd@gmail.com
-COMMENT=	A mail notification for freedesktop.org-compliant system trays
-
-BROKEN=		Violates stagedir and fails to package
+COMMENT=	Mail notification for freedesktop.org-compliant system trays
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	gconf2 gnomeprefix gnomevfs2 libglade2 libgnomeui libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-JB_CONF_ARGS=	cc="${CC}" cflags="${CFLAGS}" cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" prefix="${STAGEDIR}${PREFIX}"
-JB_CONF_ENV=	jb_cppflags="${CPPFLAGS}" jb_ldflags="${LDFLAGS}"
+JB_CONF_ARGS=	cc="${CC}" cflags="${CFLAGS}" cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" prefix="${PREFIX}" destdir="${STAGEDIR}"
+JB_CONF_ENV=	${MAKE_ENV} jb_cppflags="${CPPFLAGS}" jb_ldflags="${LDFLAGS}"
 GCONF_SCHEMAS=	mail-notification.schemas
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -121,12 +118,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/jb ${WRKSRC}/jbsrc/jb.c
 
 do-configure:
-	cd ${WRKSRC} && ${JB_CONF_ENV} ./jb configure ${JB_CONF_ARGS}
+	cd ${WRKSRC} && ${SETENV} ${JB_CONF_ENV} \
+		./jb configure ${JB_CONF_ARGS}
 
 do-build:
-	cd ${WRKSRC} && ./jb build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./jb build
 
 do-install:
-	cd ${WRKSRC} && ./jb install
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./jb install
 
 .include <bsd.port.mk>

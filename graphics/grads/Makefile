@@ -14,8 +14,6 @@ EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The Grid Analysis and Display System
 
-BROKEN=		Fails to package
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
@@ -31,13 +29,11 @@ CONFIGURE_ARGS+=	--enable-dyn-supplibs \
 			--with-x
 
 OPTIONS_DEFINE=	HDF NETCDF DOCS EXAMPLES
-OPTIONS_DEFAULT=	HDF
+OPTIONS_DEFAULT=	NETCDF
 HDF_DESC=	Build hdf-support (only hdf OR netcdf is supported)
 NETCDF_DESC=	Build netcdf-support
 
-.if !defined(NOPORTDATA)
 PORTDATA=	*
-.endif
 
 .include <bsd.port.options.mk>
 
@@ -50,6 +46,7 @@ PORTEXAMPLES=	*
 .endif
 
 .if ${PORT_OPTIONS:MHDF}
+BROKEN=			Fails to package
 LIB_DEPENDS+=		libmfhdf.so:${PORTSDIR}/science/hdf
 CONFIGURE_ARGS+=	--with-hdf
 PLIST_SUB+=		NETCDF="@comment " HDF=""
@@ -70,10 +67,8 @@ post-configure:
 	${REINPLACE_CMD} -e "s:ludunits:ludunits2:" ${WRKSRC}/src/Makefile
 
 post-install:
-.if !defined(NOPORTDATA)
 	${MKDIR} "${STAGEDIR}${DATADIR}"
 	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . "${STAGEDIR}${DATADIR}"
-.endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} "${STAGEDIR}${EXAMPLESDIR}"
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . "${STAGEDIR}${EXAMPLESDIR}"

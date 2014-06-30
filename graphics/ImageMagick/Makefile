@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.8.9-3
-PORTREVISION=	2
+DISTVERSION=	6.8.9-4
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -34,7 +33,7 @@ COMMENT=	Image processing tools
 
 #LICENSE=	APACHE20
 
-# This port uses .la files, keep libtool:keepla!
+# This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		gmake libtool:keepla pathfix perl5 pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	www/source/examples.pl
 USE_AUTOTOOLS=	libltdl
@@ -377,9 +376,7 @@ INSTALL_TARGET=	install-strip install-docDATA install-data-html
 INSTALL_TARGET=	install-strip
 .endif
 
-# Test suite, requires installed ghostscript to pass
-
-.if defined(PACKAGE_BUILDING) || ${PORT_OPTIONS:MTESTS}
+.if ${PORT_OPTIONS:MTESTS}
 USE_GHOSTSCRIPT_BUILD=yes
 .endif
 

@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2012-01-25 09:30:23.000000000 -0500
-+++ Makefile.in	2014-06-08 10:41:32.558914398 -0400
++++ Makefile.in	2014-06-26 20:50:27.000000000 -0400
 @@ -8,6 +8,7 @@
  CPPFLAGS = @CPPFLAGS@
  CFLAGS	= @CFLAGS@
@@ -26,24 +26,24 @@
  	${F2PY} -c --quiet --noopt --debug -m w \
  	--f77flags="${FFLAGS}" --f90flags="${FFLAGS}" \
  	--fcompiler=${FCV} --f77exec=${FC} --f90exec=${FC} \
-@@ -102,8 +108,8 @@
+@@ -102,8 +108,9 @@
  	${CPPFLAGS} ${LDFLAGS} ${LIBS} \
  	only: $(F2PYONLY) : \
  	$(SRCS2F90) $(SRCS2F77) $(SRCS2C)
 -	${MKDIR} -p build/lib/WsprMod
  	${MV} w.so WsprMod/w.so
++	${PYTHON} setup.py install --prefix=${DESTDIR}${PREFIX}
 +#	${PYTHON} setup.py build_py  
  
  fmt: fmt.f90 fil1.f90 four2a.f peakup.f db.f sound.o 
  	$(FC) -o fmt fmt.f90 fil1.f90 four2a.f peakup.f db.f \
-@@ -140,9 +146,8 @@
+@@ -140,9 +147,7 @@
  	$(FC) -o wwv $(FFLAGS) $(LDFLAGS) $(OBJS6) -lportaudio -lsamplerate -lfftw3f
  
  install: WsprMod/w.so
 -	${RM} -rf build/
 -	${PYTHON} setup.py install
 -	${INSTALL} wspr ${PREFIX}/bin
-+	${PYTHON} setup.py install --prefix=${DESTDIR}${PREFIX}
 +	${INSTALL} wspr ${DESTDIR}${PREFIX}/bin
  
  deb: wspr.py WsprMod/w.so WsprMod/g.py WsprMod/__init__.py \

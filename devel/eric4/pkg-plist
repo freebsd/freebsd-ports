@@ -555,6 +555,7 @@ share/applications/eric4.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.SingleApplication.html
 %%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.Startup.html
 %%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.mimetypesExtension.html
 %%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.uic.html
 %%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.CommandOptionsDialog.html
 %%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.ProjectBrowserHelper.html
@@ -2554,6 +2555,8 @@ share/applications/eric4.desktop
 %%DATADIR%%/Utilities/Startup.pyc
 %%DATADIR%%/Utilities/__init__.py
 %%DATADIR%%/Utilities/__init__.pyc
+%%DATADIR%%/Utilities/mimetypesExtension.py
+%%DATADIR%%/Utilities/mimetypesExtension.pyc
 %%DATADIR%%/Utilities/uic.py
 %%DATADIR%%/Utilities/uic.pyc
 %%DATADIR%%/VCS/CommandOptionsDialog.py

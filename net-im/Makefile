@@ -175,7 +175,6 @@
     SUBDIR += venom
     SUBDIR += vqcc-gtk
     SUBDIR += yoono
-    SUBDIR += ysm
     SUBDIR += zephyr
 
 .include <bsd.port.subdir.mk>

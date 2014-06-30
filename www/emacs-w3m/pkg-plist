@@ -46,9 +46,9 @@
 %%LISPDIR%%/mew-w3m.el
 @unexec rm -f %D/%%LISPDIR%%/mew-w3m.elc
 %%LISPDIR%%/mime-w3m.el
-@unexec rm -f %D/%%LISPDIR%%/mime-w3m.elc
+%%LISPDIR%%/mime-w3m.elc
 %%LISPDIR%%/octet.el
-@unexec rm -f %D/%%LISPDIR%%/octet.elc
+%%OCTET_VIEWER%%%%LISPDIR%%/octet.elc
 %%SHIMBUN%%%%LISPDIR%%/nnshimbun.el
 %%SHIMBUN%%%%LISPDIR%%/nnshimbun.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-2ch.el
@@ -75,6 +75,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-bbc.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-bbdb-ml.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-chise.el
+%%SHIMBUN%%%%LISPDIR%%/sb-chise.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-cgi-board.el
 %%SHIMBUN%%%%LISPDIR%%/sb-cgi-board.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet-jp.el
@@ -340,6 +342,7 @@
 %%LISPDIR%%/w3m-lnum.el
 %%LISPDIR%%/w3m-lnum.elc
 %%LISPDIR%%/w3m-load.el
+%%LISPDIR%%/w3m-load.elc
 %%LISPDIR%%/w3m-mail.el
 %%LISPDIR%%/w3m-mail.elc
 %%LISPDIR%%/w3m-namazu.el

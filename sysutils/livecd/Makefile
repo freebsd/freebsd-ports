@@ -16,7 +16,6 @@ NO_BUILD=	yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|/usr/local/|${PREFIX}|' \
 		${WRKSRC}/Makefile

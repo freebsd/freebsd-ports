@@ -1,5 +1,8 @@
 bin/toxic
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toxic.conf
+man/man1/toxic.1-e.gz
+man/man1/toxic.1.gz
+man/man5/toxic.conf.5-e.gz
+man/man5/toxic.conf.5.gz
 %%DATADIR%%/DHTnodes
+%%DATADIR%%/toxic.conf.example
 @dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

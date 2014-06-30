@@ -15,11 +15,6 @@ MAINTAINER=	dryice@dryice.name
 COMMENT=	Lexer, parser-generator, and parser for Emacs
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
-
-.if ${EMACS_PORT_NAME} != "emacs21"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/eieio/eieio.el:${PORTSDIR}/devel/eieio${PORTNAMESUFFIX} \
 		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/speedbar/speedbar.el:${PORTSDIR}/editors/speedbar${PORTNAMESUFFIX}

@@ -15,9 +15,9 @@ LICENSE_NAME=	UNBIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept
 
-LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		zmq:${PORTSDIR}/net/libzmq2
+LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libzmq.so:${PORTSDIR}/net/libzmq2
 
 USES=		gmake
 USE_GITHUB=	yes
@@ -35,18 +35,17 @@ PLIST_DIRSTRY=	%%ETCDIR%%
 
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${ETCDIR} && \
-		${INSTALL} ${WRKSRC}/${PORTNAME}.ini ${ETCDIR}/${PORTNAME}.ini.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${ETCDIR} && \
+		${INSTALL} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${ETCDIR}/${PORTNAME}.ini.sample
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

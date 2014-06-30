@@ -3,6 +3,7 @@
 
 PORTNAME=	watchmen
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -25,16 +26,14 @@ EMAIL_DESC=	report problems by email
 
 POD2MAN?=	pod2man
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	\
-	bin/${PORTNAME}  \
-	etc/${PORTNAME}.conf.dist  \
-	%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen/.packlist
+PLIST_FILES=	bin/${PORTNAME} \
+		"@sample etc/${PORTNAME}.conf.sample" \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen/.packlist \
+		man/man1/${PORTNAME}.1.gz
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
@@ -51,6 +50,6 @@ RUN_DEPENDS+=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.dist ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.dist ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

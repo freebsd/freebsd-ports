@@ -1,4 +1,5 @@
 bin/nitrogen
+man/man1/nitrogen.1.gz
 share/icons/hicolor/128x128/apps/nitrogen.png
 share/icons/hicolor/16x16/actions/wallpaper-centered.png
 share/icons/hicolor/16x16/actions/wallpaper-scaled.png

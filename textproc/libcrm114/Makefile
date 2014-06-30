@@ -9,7 +9,7 @@ MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 MAINTAINER=	info@mschuette.name
 COMMENT=	CRM114 C-callable Library
 
-LIB_DEPENDS=	tre:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
 LICENSE=	LGPL3
 
@@ -32,5 +32,4 @@ PLIST_FILES=	lib/libcrm114.so \
 		share/doc/libcrm114/simple_demo.c
 PLIST_DIRS=	share/doc/libcrm114
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

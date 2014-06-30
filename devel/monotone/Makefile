@@ -3,6 +3,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
@@ -44,6 +45,7 @@ PLIST_FILES=	bin/mtn bin/mtn-cleanup bin/mtnopt \
 		"@dirrmtry share/zsh" \
 		"@dirrmtry etc/bash_completion.d" \
 		"@dirrm share/monotone/hooks" \
+		"@dirrmtry share/zsh/site-functions" \
 		"@dirrm share/monotone/scripts" \
 		"@dirrm share/monotone"
 .if !defined(NO_INSTALL_MANPAGES)

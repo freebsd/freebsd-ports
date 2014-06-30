@@ -86,6 +86,7 @@ lib/mlt/libmltxine.so
 lib/mlt/libmltxml.so
 libdata/pkgconfig/mlt++.pc
 libdata/pkgconfig/mlt-framework.pc
+man/man1/melt.1.gz
 %%FFMPEG%%%%DATADIR%%/avformat/consumer_avformat.yml
 %%FFMPEG%%%%DATADIR%%/avformat/producer_avformat.yml
 %%DATADIR%%/avsync/consumer_blipflash.yml

@@ -1,5 +1,5 @@
 #!/bin/sh
 # $FreeBSD$
-BASE="%%DATADIR%%"
-CLASSPATH="$BASE/lib/*"
-exec java -cp $BASE/davmail.jar:$CLASSPATH davmail.DavGateway $1
+exec %%PREFIX%%/bin/java \
+    -cp "%%DATADIR%%/davmail.jar:%%DATADIR%%/lib/*" \
+    davmail.DavGateway "$@"

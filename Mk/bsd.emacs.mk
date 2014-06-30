@@ -63,42 +63,8 @@ EMACS_PORT_NAME?=	emacs24
 
 EMACS_MASTERDIR_PKGFILES?=	NO
 
-# Emacs-21.x
-.if (${EMACS_PORT_NAME} == "emacs21")
-EMACS_NAME=		emacs
-EMACS_VER=		21.3
-EMACS_MAJOR_VER=	21
-EMACS_LIBDIR?=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
-EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs21
-EMACS_COMMON_PORT=	NO
-EMACS_HAS_MULE=		YES
-EMACS_NO_SUBDIRSEL=	NO
-.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
-DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
-PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
-.endif
-
-# Emacs-22.x
-.elif (${EMACS_PORT_NAME} == "emacs22")
-EMACS_NAME=		emacs
-EMACS_VER=		22.3
-EMACS_MAJOR_VER=	22
-EMACS_LIBDIR?=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
-EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs22
-EMACS_COMMON_PORT=	NO
-EMACS_HAS_MULE=		YES
-EMACS_NO_SUBDIRSEL=	NO
-.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
-DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
-PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
-.endif
-
 # Emacs-23.x
-.elif (${EMACS_PORT_NAME} == "emacs23")
+.if (${EMACS_PORT_NAME} == "emacs23")
 EMACS_NAME=		emacs
 EMACS_VER=		23.4
 EMACS_MAJOR_VER=	23
@@ -225,8 +191,7 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 check-makevars::
 	@${ECHO} "Makefile error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
-	@${ECHO} "	Emacs  family: emacs21 emacs22 emacs23 emacs24"
-	@${ECHO} "                     emacs-devel"
+	@${ECHO} "	Emacs  family: emacs23 emacs24 emacs-devel"
 	@${ECHO} "	XEmacs family: xemacs21 xemacs21-mule xemacs-devel"
 	@${ECHO} "	               xemacs-devel-mule xemacs-mule-xft"
 	@${FALSE}

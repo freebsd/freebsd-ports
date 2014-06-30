@@ -5,7 +5,7 @@
  #include <sys/stat.h>
  #include <fts.h>
 -#include <alloca.h>
-+#include <stdlib.h>
++#include <cstdlib>
  
  #include <unistd.h> /* We want strcpy */
  

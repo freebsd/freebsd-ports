@@ -3,7 +3,7 @@
 
 PORTNAME=	desktop-data-model
 PORTVERSION=	1.2.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -21,11 +21,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpcre.pc:${PORTSDIR}/devel/pcre 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomehack gtk20 glib20 gnomedesktop gnomevfs2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-maemo=no

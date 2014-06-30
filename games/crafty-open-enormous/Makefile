@@ -14,12 +14,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enormous opening book (about 270 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 DIST_SUBDIR=	crafty
 USES=		zip
 NO_WRKSUBDIR=	yes
 NO_PACKAGE=	Package is way too big
+LEGAL_PACKAGE=	
 CONFLICTS=	crafty-open-large-* crafty-open-medium-* crafty-open-default-*
 
 do-build:

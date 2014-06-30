@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	4.8.1
+PORTVERSION=	5.2.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
@@ -17,7 +17,6 @@ USE_PHP_BUILD=	yes
 WANT_PHP_CLI=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phoronix-test-suite
-MAN1=		phoronix-test-suite.1
 
 PORTDOCS=	*
 DOCFILES1=	CHANGE-LOG AUTHORS
@@ -29,16 +28,10 @@ OPTIONS_DEFAULT=	X11
 BASH_COMPLETIONS_DESC=	Install bash completions
 X11_DESC=		Install X11 icons and mimetypes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/xdg-mime:${PORTSDIR}/devel/xdg-utils \
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
-RUN_DEPENDS+=	${LOCALBASE}/bin/xdg-mime:${PORTSDIR}/devel/xdg-utils \
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
+USES+=		shared-mime-info
 PLIST_SUB+=	X11=""
 .else
 INSTALL_OPTS=	WITHOUT_X11=yes
@@ -53,7 +46,6 @@ PLIST_SUB+=	BASH_COMPLETIONS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/share/man/man1|/man/man1|g" ${WRKSRC}/install-sh
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
 				${WRKSRC}/phoronix-test-suite \
 				${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php \
@@ -65,7 +57,7 @@ post-patch:
 		${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml.bak
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_OPTS} ./install-sh ${PREFIX}
+	cd ${WRKSRC} && ${INSTALL_OPTS} DESTDIR=${STAGEDIR} ./install-sh ${PREFIX}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

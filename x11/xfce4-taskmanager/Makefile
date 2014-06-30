@@ -12,10 +12,10 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Task manager for the Xfce desktop
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20 cairo libwnck intltool intlhack
 
 CONFIGURE_ARGS=	--enable-wnck \

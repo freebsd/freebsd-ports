@@ -20,7 +20,6 @@
     SUBDIR += php_doc
     SUBDIR += qfaktury
     SUBDIR += qnapi
-    SUBDIR += sms2
     SUBDIR += tleenx2
     SUBDIR += trf
     SUBDIR += webalizer2

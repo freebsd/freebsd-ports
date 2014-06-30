@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	PHP extension for interfacing with memcached via libmemcached library
 
 LICENSE=	PHP30

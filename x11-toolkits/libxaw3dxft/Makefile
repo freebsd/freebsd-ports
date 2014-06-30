@@ -2,7 +2,7 @@
 
 PORTNAME=	libxaw3dxft
 DISTVERSION=	1.6.2c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/sf-xpaint/${PORTNAME}
 DISTNAME=	libXaw3dXft-${DISTVERSION}
@@ -12,9 +12,8 @@ COMMENT=	3D Xaw (Athena Widget Set) replacement with extended fonts
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		pkgconfig
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_XORG=	xft xmu xpm
 
@@ -26,8 +25,6 @@ DOCSDIR=	${LOCALBASE}/share/doc/libXaw3dXft
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} '/^pkgconfigdir/s:=.*:= ${PREFIX}/libdata/pkgconfig:'\
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} '/^typedef.*Pixel;/d' ${WRKSRC}/src/Xaw3dXft.c
 
 .include <bsd.port.mk>

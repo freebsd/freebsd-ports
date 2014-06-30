@@ -3,7 +3,7 @@
 
 PORTNAME=	openvanilla-modules
 PORTVERSION=	0.7.2.20070514
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	rafan
@@ -94,7 +94,7 @@ PLIST_SUB+=	OVIMUnicode="@comment "
 #DISTFILES+=	liu5.cin
 #NOFETCHFILES=	liu5.cin
 #EXTRACT_ONLY+=	openvanilla-${PORTVERSION}${EXTRACT_SUFX}
-#LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+#LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 #LDFLAGS+=	${LOCALBASE}/lib
 #.if !exists(${DISTDIR}/liu5.cin)
 #IGNORE=		need liu5.cin from a legal copy of LIU57 standard version CDROM to use Boshiamy input module. Please copy /UNIX/xcin2.5/liu5.cin from the CDROM to ${DISTDIR} and run make again

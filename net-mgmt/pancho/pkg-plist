@@ -1,5 +1,6 @@
 bin/pancho
-etc/pancho.conf.sample
+@sample etc/pancho.conf.sample
+man/man1/pancho.1.gz
 %%SITE_PERL%%/Pancho/Util.pm
 %%SITE_PERL%%/Pancho/Snmp.pm
 %%SITE_PERL%%/Pancho/Log.pm

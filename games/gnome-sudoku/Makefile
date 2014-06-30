@@ -1,9 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-sudoku/Makefile 19620 2014-05-12 08:22:17Z gusi $
+#   $MCom: ports/trunk/games/gnome-sudoku/Makefile 19760 2014-06-30 06:50:36Z gusi $
 
 PORTNAME=	gnome-sudoku
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.3
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

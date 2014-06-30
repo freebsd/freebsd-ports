@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for uploading images to http://imgur.com
 
 RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \

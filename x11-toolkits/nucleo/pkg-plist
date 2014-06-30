@@ -106,15 +106,11 @@ include/nucleo/utils/TimeUtils.H
 include/nucleo/xml/XmlParser.H
 include/nucleo/xml/XmlStructure.H
 include/nucleo/xml/XmlText.H
-lib/libNucleo.la
 lib/libNucleo.so
 lib/libNucleo.so.0
-@exec mkdir -p %D/lib/nucleo
-%%FFMPEG%%lib/nucleo/nPffmpeg.la
+lib/libNucleo.so.0.0.0
 %%FFMPEG%%lib/nucleo/nPffmpeg.so
-%%GD%%lib/nucleo/nPgd.la
 %%GD%%lib/nucleo/nPgd.so
-%%QT4%%lib/nucleo/nPqt.la
 %%QT4%%lib/nucleo/nPqt.so
 libdata/pkgconfig/nucleo.pc
 %%DATADIR%%/Info.plist.tmpl
@@ -133,7 +129,8 @@ libdata/pkgconfig/nucleo.pc
 %%DATADIR%%/plugin-list
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-@dirrmtry lib/nucleo
+@exec mkdir -p %D/lib/nucleo
+@dirrm lib/nucleo
 @dirrm include/nucleo/xml
 @dirrm include/nucleo/utils
 %%QT4%%@dirrm include/nucleo/plugins/qt

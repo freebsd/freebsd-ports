@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Verilog-Perl
-PORTVERSION=	3.400
+PORTVERSION=	3.404
 CATEGORIES=	cad perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +14,12 @@ BUILD_DEPENDS=	flex>=2.5.35:${PORTSDIR}/textproc/flex
 
 USES=		bison gmake perl5
 USE_PERL5=	configure
+USE_GCC=	any
+CONFIGURE_ENV=	CXX=${CXX}\
+		CPP=${CPP}\
+		CC=${CC}
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e '/EXE_FILES/ s/ vsplitmodule//' \
-		${WRKSRC}/Makefile.PL
-	@${REINPLACE_CMD} -e 's|make|gmake|g' ${WRKSRC}/Makefile.PL
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Verilog/Parser/*.so

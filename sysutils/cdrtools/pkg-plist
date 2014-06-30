@@ -73,12 +73,8 @@ man/man8/mkisofs.8.gz
 @dirrm lib/siconv
 %%RSCSI%%sbin/rscsi
 %%RSCSI%%@exec chmod u+s %B/%f
-@unexec if cmp -s %D/etc/cdrecord.sample %D/etc/cdrecord; then rm -f %D/etc/cdrecord; else echo "If permanently deleting this package, %D/etc/cdrecord must be removed manually."; fi
-etc/cdrecord.sample
-@exec [ -f %B/cdrecord ] || cp %B/%f %B/cdrecord
-%%RSCSI%%@unexec if cmp -s %D/etc/rscsi.sample %D/etc/rscsi; then rm -f %D/etc/rscsi; else echo "If permanently deleting this package, %D/etc/rscsi must be removed manually."; fi
-%%RSCSI%%etc/rscsi.sample
-%%RSCSI%%@exec [ -f %B/rscsi ] || cp %B/%f %B/rscsi
+@sample etc/cdrecord.sample
+%%RSCSI%%@sample etc/rscsi.sample
 %%RSCSI%%@unexec if pw usershow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, user \"rscsi\" and its homedirectory must be removed manually."; fi
 %%RSCSI%%@unexec if pw groupshow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, group \"rscsi\" must be removed manually."; fi
 %%RSCSI%%man/man1/rscsi.1.gz

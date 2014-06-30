@@ -2,4 +2,4 @@
 @unexec rm -f /var/run/quoted.pid
 bin/quoted
 etc/quotes
-etc/rc.d/quoted.sh
+man/man1/quoted.1.gz

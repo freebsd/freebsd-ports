@@ -3,6 +3,7 @@
 
 PORTNAME=	pypy
 DISTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/ https://bitbucket.org/pypy/pypy/downloads/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src

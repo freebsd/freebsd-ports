@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/rhino/GRhino/${PORTVERSION}
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GRhino Othello/Reversi Program
 
 USES=		gettext pkgconfig perl5

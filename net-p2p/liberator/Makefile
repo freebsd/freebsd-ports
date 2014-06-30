@@ -11,12 +11,10 @@ DISTNAME=	ofcp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line client to FreeNet Network
 
-MAKE_JOBS_UNSAFE= yes
-
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-
-USE_BZIP2=	yes
+USES=		tar:bzip2
+USE_OCAML=	yes
 ALL_TARGET=	all opt
+MAKE_JOBS_UNSAFE=yes
 
 DATA_FILES=	liber_mimetypes
 DOC_FILES=	COPYING FREESITE-HOWTO README TODO
@@ -26,7 +24,8 @@ LIB_FILES=      fcp.cma hlfi.cma asfi.cma fcp.cmxa hlfi.cmxa asfi.cmxa \
 		fcp.cmi hlfreenet.cmi asfreenet.cmi fieldset.cmi \
 		fstream.cmi
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; \
 		s|%%DATADIR%%|${DATADIR:S,^${PREFIX}/,,}|' \
@@ -39,26 +38,15 @@ do-configure:
 		${WRKSRC}/Makefile
 
 do-install:
-# bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/liber ${PREFIX}/bin/liber-real
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/liber
-# data
-	@${MKDIR} ${DATADIR}
-.for file in ${DATA_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
-.endfor
-# doc
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.for file in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
-# lib
-	@${MKDIR} ${PREFIX}/lib/ocaml
-.for file in ${LIB_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/ocaml
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/liber ${STAGEDIR}${PREFIX}/bin/liber-real
+	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/liber
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DATA_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ocaml
+	${INSTALL_DATA} ${LIB_FILES:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${PREFIX}/lib/ocaml
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NOSEYNICK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple way to write filesystems in Perl using FUSE
 
 RUN_DEPENDS=	p5-Fuse>=0:${PORTSDIR}/sysutils/p5-Fuse

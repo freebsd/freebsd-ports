@@ -3,6 +3,7 @@
 
 PORTNAME=	tartarus
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wertarbyte.de/tartarus/ \
    		http://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
@@ -13,7 +14,9 @@ COMMENT=	Wrappers around common unix tools for simplified backup solution
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
+	${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
 
 USES=		gmake perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/bin/*

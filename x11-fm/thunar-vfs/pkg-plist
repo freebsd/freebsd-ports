@@ -16,10 +16,9 @@ include/thunar-vfs-1/thunar-vfs/thunar-vfs-user.h
 include/thunar-vfs-1/thunar-vfs/thunar-vfs-util.h
 include/thunar-vfs-1/thunar-vfs/thunar-vfs-volume.h
 include/thunar-vfs-1/thunar-vfs/thunar-vfs.h
-lib/libthunar-vfs-1.a
-lib/libthunar-vfs-1.la
 lib/libthunar-vfs-1.so
-lib/libthunar-vfs-1.so.5
+lib/libthunar-vfs-1.so.2
+lib/libthunar-vfs-1.so.2.3.1
 lib/thunar-vfs-1/thunar-vfs-font-thumbnailer-1
 lib/thunar-vfs-1/thunar-vfs-mime-cleaner-1
 lib/thunar-vfs-1/thunar-vfs-pixbuf-thumbnailer-1

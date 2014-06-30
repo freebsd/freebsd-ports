@@ -1,0 +1,4 @@
+bin/sievelog
+@sample etc/sievelog.conf.example
+man/man1/sievelog.1.gz
+man/man5/sievelog.conf.5.gz

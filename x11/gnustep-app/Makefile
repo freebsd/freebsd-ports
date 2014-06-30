@@ -14,6 +14,7 @@ COMMENT=	Metaport for GNUstep applications
 
 NO_BUILD=	yes
 NO_INSTALL=	yes
+NO_MTREE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_GUI=	yes
@@ -109,5 +110,4 @@ USE_GNUSTEP_LOCAL_TOOLS+=	\
 USE_GNUSTEP_LOCAL_SERVICES+=	\
 	LaTeX:textproc/latex-service \
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

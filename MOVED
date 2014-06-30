@@ -1234,7 +1234,6 @@ www/tdiary-devel||2010-09-12|Removed
 multimedia/playd2|multimedia/playd|2010-09-13|Has expired: Use multimedia/playd instead
 mail/mailscanner-devel|mail/mailscanner|2010-09-14|Removed, mail/mailscanner is newer
 databases/sqlite-ext-inet||2010-09-14|Has expired: Please install databases/sqlite-ext-mobigroup instead
-devel/codeville||2010-09-14|Has expired: Dead project
 editors/koffice-kde4-l10n-fy||2010-09-14|Has expired
 editors/koffice-kde4-l10n-hne||2010-09-14|Has expired
 graphics/xaralx-devel||2010-09-14|Has expired: Does not compile with png-1.4 and latest version is from Aug 2006
@@ -6219,3 +6218,75 @@ print/pkg-texinfo|print/texinfo-minimal|2014-06-24|Has been renamed
 sysutils/pc-sysinstall|sysutils/pcbsd-utils|2014-06-24|Removed: pc-sysinstall is included in sysutils/pcbsd-utils
 print/texinfo-minimal|print/texinfo-lite|2014-06-24|Has been renamed
 devel/gmake-minimal|devel/gmake-lite|2014-06-24|Has been renamed
+converters/mule-ucs||2014-06-27|Removed: dependent on editors/emacs21
+devel/elib-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+editors/apel-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+editors/apel-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+editors/emacs21||2014-06-27|Removed: unmaintained upstream
+editors/emacs22||2014-06-27|Removed: unmaintained upstream
+editors/flim-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+editors/flim-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+editors/semi-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+editors/semi-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+irc/riece-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+japanese/emacs-emcws||2014-06-27|Removed: dependent on editors/emacs21
+japanese/lookup-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+japanese/migemo-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+japanese/migemo-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+mail/c-sig-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+mail/wanderlust-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+mail/wanderlust-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+math/emacs-calc||2014-06-27|Removed: dependent on editors/emacs21
+textproc/uim-el-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+textproc/uim-el-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+textproc/yaml-mode.el-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+www/emacs-w3m-emacs21||2014-06-27|Removed: dependent on editors/emacs21
+www/emacs-w3m-emacs22||2014-06-27|Removed: dependent on editors/emacs22
+devel/ode-devel|devel/ode|2014-06-27|Has expired: Outdated by devel/ode
+java/eclipse-devel|java/eclipse|2014-06-29|Concentrate maintenance effort on newer java/eclipse
+textproc/ruby-hikidoc|textproc/rubygem-hikidoc|2014-06-29|Use textproc/rubygem-hikidoc instead
+textproc/metaf2xml|science/metaf2xml|2014-06-30|Moved to a more appropriate category on maintainer request
+www/trac-TracDuplicates||2014-06-30|Has expired: Broken for more than 5 months
+mail/hotwayd||2014-06-30|Has expired: Protocol changed, software unusable
+mail/ilohamail-devel||2014-06-30|Has expired: Upstream disappeared
+games/tyrquake||2014-06-30|Has expired: Broken for more than 5 months
+net/gkrellmqst||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+security/p5-Jifty-Plugin-OpenID||2014-06-30|Has expired: Broken for more than 5 months
+games/sumwars||2014-06-30|Has expired: Broken for more than 5 months
+audio/ruby-esound||2014-06-30|Has expired: Broken for more than 5 months
+x11-toolkits/py-pyqwt||2014-06-30|Has expired: Broken for more than 5 months
+net-im/ysm||2014-06-30|Has expired: Broken for more than 5 months
+net-mgmt/send||2014-06-30|Has expired: Broken for more than 5 months
+net/p5-Jifty-Plugin-Authentication-Ldap||2014-06-30|Has expired: Broken for more than 5 months
+net-p2p/bittyrant||2014-06-30|Has expired: Broken for more than 5 months
+sysutils/gkrellm||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+audio/gkrellmms||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+audio/gkrellmvolume||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+misc/gkrellmlaunch||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+misc/gkrellmfmonitor||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+misc/gkrellshoot||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+polish/sms2||2014-06-30|Has expired: sms2 is no longer being developed, consider using alternative software.
+x11-toolkits/py-wmdockapps||2014-06-30|Has expired: Crufty and nothing depends on this
+audio/tagger||2014-06-30|Has expired: Ancient, unmaintained
+www/mod_wsgi2|www/mod_wsgi3|2014-06-30|Has expired: No longer supported, please use www/mod_wsgi3 instead
+security/botan|security/botan110|2014-06-30|Has expired: Botan 1.8 have known bugs and is no longer supported upstream, migrate to security/botan110
+deskutils/checkrdf||2014-06-30|Removed: Abandonware, please consider using other software
+graphics/k3d||2014-06-30|Has expired: Broken for more than 5 months
+mail/cyrus-imapd2|mail/cyrus-imapd24|2014-06-30|Has expired: Cyrus IMAPd 2.1.X have been deprecated, consider using 2.4.X.
+mail/cyrus-imapd22|mail/cyrus-imapd24|2014-06-30|Has expired: No further releases of 2.2.X are planned, consider using 2.4.X.
+editors/xemacs||2014-06-30|Removed: unmaintained upstream
+editors/xemacs-devel||2014-06-30|Removed: unmaintained upstream
+chinese/xemacs||2014-06-30|Removed: unmaintained upstream
+editors/flim-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+editors/semi-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+editors/xemacs-devel-mule||2014-06-30|Removed: depend on editors/xemacs-devel
+editors/xemacs-mule-packages||2014-06-30|Removed: depend on editors/xemacs
+editors/xemacs-packages||2014-06-30|Removed: depend on editors/xemacs
+editors/xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+japanese/migemo-xemacs-devel-mule||2014-06-30|Removed: depend on editors/xemacs-devel
+japanese/xemacs21-canna||2014-06-30|Removed: depend on editors/xemacs
+mail/emh-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+mail/wanderlust-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+textproc/dictem-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+textproc/uim-el-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+www/emacs-w3m-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs

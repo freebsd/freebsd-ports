@@ -5,6 +5,81 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140627:
+  AFFECTS: Users of Java
+  AUTHOR: swills@FreeBSD.org
+
+  The default version of OpenJDK has been updated from 1.6 to 1.7. To update,
+  users of Java will need to rebuild all ports that depend on Java:
+
+  If you use pkg (regardless of if you build ports from source or install
+  binary packages):
+  # pkg set -o java/openjdk6:java/openjdk7
+
+  If you use portmaster to build ports from source:
+
+  # portmaster -o java/openjdk7 openjdk6
+  # portmaster -R -r openjdk
+
+  If you use portupgrade to build ports from source:
+
+  # portupgrade -fo java/openjdk7 java/openjdk6
+
+  If you use pkg to install prebuilt binary packages:
+
+  # pkg install -fR java/openjdk7
+
+  If you wish to keep the 1.6 version as default, add the following lines to
+  your /etc/make.conf file:
+
+  #
+  # Keep OpenJDK 1.6 as default version.
+  #
+  JAVA_PREFERRED_PORTS=JAVA_PORT_NATIVE_OPENJDK_JDK_1_6
+
+20140627:
+  AFFECTS: users of security/amavisd-milter
+  AUTHOR: delphij@FreeBSD.org
+
+  The default working directory of security/amavisd-milter have been
+  changed to /var/run/amavis/.  Users will have to adjust path to the
+  milter socket.
+
+20140627:
+  AFFECTS: users of editors/emacs21 and editors/emacs22
+  AUTHOR: ashish@FreeBSD.org
+
+  editors/emacs21, and editors/emacs22 are removed as they were
+  unmaintained upstream for a while. Their dependent ports are removed
+  as well. Please switch to editors/emacs (Emacs 24 release), or
+  editors/emacs23 (Emacs 23 release), or editors/emacs-devel (Emacs
+  development branch) ports.
+
+20140626:
+  AFFECTS: users of mail/qmail-spamcontrol
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Spamcontrol has been updated to the 2.7 release.
+
+  It is advised to read the release notes as some features were removed and
+  others reworked.
+
+  http://www.fehcom.de/qmail/spamcontrol/RELEASE_27.spamcontrol
+
+  2.7 manual: http://www.fehcom.de/qmail/spamcontrol/README_spamcontrol.html
+
+20140626:
+  AFFECTS: users of comms/smstools3
+  AUTHOR: madpilot@FreeBSD.org
+
+  The smstools3 startup screen has been modified to allow smsd to
+  change uid/gid by itself. The rc options smsd_logfile, smsd_user
+  and smsd_group are not supported anymore, user, group and log
+  filename should be specified in the configuration file.
+
+  The sample configuration file has been updated to have defaults
+  equivalent to the old ones.
+
 20140624:
   AFFECTS: users of databases/p5-Bucardo
   AUTHOR: mat@FreeBSD.org

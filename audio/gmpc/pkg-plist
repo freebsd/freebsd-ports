@@ -750,12 +750,8 @@ share/locale/zh_TW/LC_MESSAGES/gmpc.mo
 man/man1/gmpc-remote.1.gz
 man/man1/gmpc.1.gz
 man/man1/gmpc-remote-stream.1.gz
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
 @dirrmtry share/locale/jv/LC_MESSAGES
 @dirrmtry share/locale/jv
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
 @dirrmtry share/icons/Humanity/scalable/apps
 @dirrmtry share/icons/Humanity/scalable
 @dirrmtry share/icons/Humanity/96x96/apps
@@ -777,12 +773,9 @@ man/man1/gmpc-remote-stream.1.gz
 @dirrmtry share/icons/Humanity/128x128/apps
 @dirrmtry share/icons/Humanity/128x128
 @dirrmtry share/icons/Humanity
-@dirrmtry share/icons
 @dirrmtry share/gnome/help/gmpc/C/Images
 @dirrmtry share/gnome/help/gmpc/C
 @dirrmtry share/gnome/help/gmpc
-@dirrmtry share/gnome/help
-@dirrmtry share/gnome
 @dirrm %%DATADIR%%/icons/hicolor/scalable/status
 @dirrm %%DATADIR%%/icons/hicolor/scalable/categories
 @dirrm %%DATADIR%%/icons/hicolor/scalable/apps

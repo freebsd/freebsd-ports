@@ -8,8 +8,10 @@ CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/ \
 		ftp://kucha.ru/pub/misc/oops/
 
-MAINTAINER=	marck@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A caching web proxy server
+DEPRECATED=	Development stops long ago, domain has been expired
+EXPIRATION_DATE=	2014-08-31
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
@@ -55,7 +57,6 @@ DB4_DESC=	Berkeley DB v4 storage
 MYSQL_DESC=	MySQL auth support
 PGSQL_DESC=	PostgreSQL auth support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGIGABASE}

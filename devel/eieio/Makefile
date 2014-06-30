@@ -15,11 +15,6 @@ MAINTAINER=	dryice@dryice.name
 COMMENT=	Enhanced Integration of Emacs Interpreted Objects
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
-
-.if ${EMACS_PORT_NAME} != "emacs21"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/speedbar/speedbar.el:${PORTSDIR}/editors/speedbar${PORTNAMESUFFIX}
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	refdb
 PORTVERSION=	0.9.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -70,7 +70,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 CONFIGURE_ARGS+=	--with-db-server=pgsql
 
 .elif ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 # If libdbi-drivers has been built without SQLite driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdsqlite.so)
 IGNORE=		rebuild databases/libdbi-drivers with SQLite support

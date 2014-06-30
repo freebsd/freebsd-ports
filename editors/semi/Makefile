@@ -54,7 +54,7 @@ DEPPORT_SUFFIX=
 .else
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 .endif
-.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22") || (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
+.if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
 PLIST=		${PKGDIR}/pkg-plist.emacs20
 .endif
 # depends on flim
@@ -76,9 +76,11 @@ MAKEINFO=		makeinfo --no-split --no-validate
 MAKEINFO_EMACS=		${EMACS_CMD} -no-site-file -no-init-file -batch
 MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
-pre-build:
-.if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} -C ${.CURDIR} pkg-el-copy
+.if ! defined(EMACS_PACKAGESDIR) || ! defined(MANIFEST)
+INFO=		mime-ui-en
+.if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
+INFO+=		mime-ui-ja
+.endif
 .endif
 
 post-build:
@@ -91,9 +93,6 @@ post-build:
 pre-install:
 .if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
 	@${MAKE} -C ${.CURDIR} mkdir-site-packages
-.endif
-.if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} -C ${.CURDIR} pkg-el-install
 .endif
 
 post-install:
@@ -141,18 +140,6 @@ info-build-by-emacs:
 	done)
 .endif
 
-pkg-el-copy:
-	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
-	${CP} ${FILESDIR}/_pkg.el ${WRKSRC}/_pkg.el ;\
-	fi)
-
-pkg-el-install:
-	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
-	${MKDIR} ${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
-	${INSTALL_DATA} ${FILESDIR}/_pkg.el \
-		${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
-	fi)
-
 mkdir-site-packages:
 	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \
 		${MKDIR} ${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/$${i} ; \
@@ -169,13 +156,11 @@ info-install:
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-en.info; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${LOCALBASE}/info ; \
-		install-info ${STAGEDIR}${LOCALBASE}/info/$${i} ${STAGEDIR}${LOCALBASE}/info/dir ; \
 	done)
 .if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-ja.info; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${STAGEDIR}${LOCALBASE}/info ; \
-		install-info ${STAGEDIR}${LOCALBASE}/info/$${i} ${STAGEDIR}${LOCALBASE}/info/dir ; \
 	done)
 .endif
 

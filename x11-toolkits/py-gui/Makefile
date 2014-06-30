@@ -10,18 +10,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyGUI-${PORTVERSION}-1
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	A cross-platform pythonic GUI API
+COMMENT=	Cross-platform pythonic GUI API
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/devel/pyrex
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_GNOME=	pygtk2
 
-PYDISTUTILS_PKGNAME=	PyGUI
-
-DOCSDIR=	share/doc/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	share/examples/${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 # A workaround for the problem that "make config" doesn't work
 # because _OPTIONSFILE is defined before bsd.python.mk is included.
@@ -32,7 +31,6 @@ WRKSRC=		${WRKDIR}/PyGUI-${PORTVERSION}
 OPTIONS_DEFINE=	OPENGL DOCS
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENGL}
@@ -49,13 +47,13 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/${DOCSDIR}
-	${TAR} -C ${WRKSRC}/Doc -cf - . | ${TAR} -C ${PREFIX}/${DOCSDIR} -xf -
-	${MKDIR} ${PREFIX}/${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${TAR} -C ${WRKSRC}/Doc -cf - . | ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${RM} -f ${WRKSRC}/Demos/BlobEdit/.gdb_history \
 		 ${WRKSRC}/Demos/BlobEdit/Makefile
 	${TAR} -C ${WRKSRC}/Demos -cf - . | \
-		${TAR} -C ${PREFIX}/${EXAMPLESDIR} -xf -
+		${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf -
 .endif
 
 .include <bsd.port.mk>

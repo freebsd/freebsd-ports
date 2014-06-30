@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	GH \
 		http://freebsd.cs.nctu.edu.tw/~gslin/files/
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to support atomic deploys
 
 AP_FAST_BUILD=	yes

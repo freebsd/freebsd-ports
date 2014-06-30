@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manage multiple plack apps with a directory of config files
 
 RUN_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \

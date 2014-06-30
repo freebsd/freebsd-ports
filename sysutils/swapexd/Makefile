@@ -11,9 +11,8 @@ COMMENT=	Tool for growing and shrinking on-disk swap space
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	sbin/${PORTNAME} etc/rc.d/swapexd
+PLIST_FILES=	sbin/${PORTNAME} etc/rc.d/swapexd "@sample etc/swapexd.conf.sample"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -24,18 +23,8 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/swapexd ${PREFIX}/etc/rc.d
-
-# Deal with config files -- would be a shame to have to make a pkg-plist this
-# small
-post-install:
-	${ECHO_CMD} '@unexec cmp -s %D/etc/${PORTNAME}.conf.sample %D/etc/${PORTNAME}.conf && rm -f %D/etc/${PORTNAME}.conf || true 2>/dev/null' >> ${TMPPLIST}
-	${ECHO_CMD} 'etc/${PORTNAME}.conf.sample' >> ${TMPPLIST}
-	${ECHO_CMD} '@exec [ -f %D/etc/${PORTNAME}.conf ] || cp -p %D/%F %B/${PORTNAME}.conf' >> ${TMPPLIST}
-	[ -f %D/etc/${PORTNAME}.conf ] \
-		|| ${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.sample \
-				${PREFIX}/etc/${PORTNAME}.conf
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/swapexd ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.post.mk>

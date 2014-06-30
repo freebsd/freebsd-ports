@@ -1,8 +1,6 @@
 bin/pygopherd
 etc/pygopherd/mime.types
-@unexec if cmp -s %D/etc/pygopherd/pygopherd.conf %D/etc/pygopherd/pygopherd.conf-dist; then rm -f %D/etc/pygopherd/pygopherd.conf; fi
-etc/pygopherd/pygopherd.conf-dist
-@exec [ -f %B/pygopherd.conf ] || cp %B/%f %B/pygopherd.conf
+@sample etc/pygopherd/pygopherd.conf.sample
 %%PYTHON_SITELIBDIR%%/pygopherd/GopherExceptions.py
 %%PYTHON_SITELIBDIR%%/pygopherd/GopherExceptions.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/GopherExceptions.pyo
@@ -132,6 +130,7 @@ etc/pygopherd/pygopherd.conf-dist
 %%PYTHON_SITELIBDIR%%/pygopherd/zipfile.py
 %%PYTHON_SITELIBDIR%%/pygopherd/zipfile.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/zipfile.pyo
+man/man8/pygopherd.8.gz
 @dirrm %%PYTHON_SITELIBDIR%%/pygopherd/handlers
 @dirrm %%PYTHON_SITELIBDIR%%/pygopherd/protocols
 @dirrm %%PYTHON_SITELIBDIR%%/pygopherd

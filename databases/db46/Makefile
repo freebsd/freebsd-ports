@@ -29,7 +29,7 @@ PATCH_DIST_STRIP=	-d .. -l
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.6
 
 DEPRECATED=	Please use databases/db5 or db6 for new installs.

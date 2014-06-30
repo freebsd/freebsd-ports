@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lbdb
-PORTVERSION=	0.37
+PORTVERSION=	0.39
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -20,11 +20,10 @@ GPG_DESC=	GNU Privacy Guard support
 
 WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc \
-			--libdir=${PREFIX}/libexec --enable-lbdb-dotlock
+GNU_CONFIGURE_PREFIX=	${STAGEDIR}${PREFIX}
+CONFIGURE_ARGS=	--enable-lbdb-dotlock --libdir=${STAGEDIR}${PREFIX}/libexec
 USES=		gmake perl5
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists (/usr/bin/getent)
@@ -61,10 +60,10 @@ PLIST_SUB+=	GETENT=""
 PLIST_SUB+=	GETENT="@comment "
 .endif
 
-MAN1=		nodelist2lbdb.1 lbdbq.1 lbdb-fetchaddr.1 lbdb_dotlock.1 \
-		mutt_ldap_query.1
-
 post-patch:
 	${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/m_muttalias.sh.in
+
+post-configure:
+	${REINPLACE_CMD} -e 's%mandir=.*%mandir=${STAGEDIR}${PREFIX}/man%' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

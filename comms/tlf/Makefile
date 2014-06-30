@@ -10,24 +10,23 @@ MASTER_SITES=	http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/ \
 MASTER_SITE_SUBDIR=	db
 DISTNAME=	tlf-0.9.31-2
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_AUTOTOOLS=	autoconf libtool aclocal automake
+USE_AUTOTOOLS=	autoconf aclocal automake
+USES=		libtool
 AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
-		--libdir="${LOCALBASE}/lib"
-LDFLAGS+=	${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	HAMLIB
 HAMLIB_DESC=	Use hamlib
 OPTION_DEFAULT=	HAMLIB
 
-MAN1=		tlf.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MHAMLIB}

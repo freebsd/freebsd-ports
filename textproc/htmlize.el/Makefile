@@ -14,7 +14,6 @@ MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

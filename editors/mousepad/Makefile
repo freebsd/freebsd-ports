@@ -11,9 +11,11 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Simple text editor for the Xfce Desktop
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=	desktop-file-utils gettext gmake pathfix pkgconfig perl5
+USES=	desktop-file-utils gettext gmake pathfix pkgconfig perl5 tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack gtksourceview2
 USE_XFCE=	configenv
 

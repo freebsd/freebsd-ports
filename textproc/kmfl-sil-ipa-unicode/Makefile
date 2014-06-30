@@ -3,7 +3,7 @@
 
 PORTNAME=	kmfl-sil-ipa-unicode
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12_Src\&filename=/:1 \
 		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12.pdf\&filename=/:2
@@ -22,34 +22,24 @@ WRKSRC=		${WRKDIR}/IPA12
 DOS2UNIX_FILES=	IPAUni12.kmn
 NO_BUILD=	yes
 
-DOCSDIR_REL=	share/doc/kmfl/${PORTNAME}
-DOCSDIR=	${PREFIX}/${DOCSDIR_REL}
+OPTIONS_DEFINE=	DOCS
+DOCSDIR=	share/doc/kmfl/${PORTNAME}
+DOCSLIST=	${WRKSRC}/welcome.htm \
+		${DISTDIR}/${DIST_SUBDIR}/IPA+Unicode+5.1_ver+1.2_KMN.pdf
+
 KMFL_DIR=	share/kmfl
 KMFL_ICONS_DIR=	share/kmfl/icons
 
 SUB_FILES=	pkg-message
-PORTDOCS=	*
-DOCSLIST=	${WRKSRC}/welcome.htm \
-		${DISTDIR}/${DIST_SUBDIR}/IPA+Unicode+5.1_ver+1.2_KMN.pdf
-PLIST_FILES=	${KMFL_DIR}/IPAUni12.kmn \
-		${KMFL_ICONS_DIR}/ipa.bmp \
-		${KMFL_ICONS_DIR}/sil.bmp
-PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
-		${KMFL_DIR}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${LOCALBASE}/${KMFL_DIR} ${LOCALBASE}/${KMFL_ICONS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${KMFL_DIR}
-	${INSTALL_DATA} ${WRKSRC}/*.bmp ${LOCALBASE}/${KMFL_ICONS_DIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${KMFL_DIR} ${STAGEDIR}${PREFIX}/${KMFL_ICONS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.kmn ${STAGEDIR}${PREFIX}/${KMFL_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.bmp ${STAGEDIR}${PREFIX}/${KMFL_ICONS_DIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DOCSDIR:S,/${PORTNAME},,} \
+		${STAGEDIR}${PREFIX}/${DOCSDIR}
 	for doc in ${DOCSLIST} ; do \
-		${INSTALL_DATA} $$doc ${DOCSDIR} ; \
+		${INSTALL_DATA} $$doc ${STAGEDIR}${PREFIX}/${DOCSDIR} ; \
 	done
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

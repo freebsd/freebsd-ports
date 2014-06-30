@@ -10,7 +10,7 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	mandree@FreeBSD.org
 # I allow all freebsd committer to do changes to this package without
 # my permission.
 COMMENT=	The Berkeley DB package, revision 4.8

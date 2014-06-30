@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, not functional, video OpenQuicktime (TM) player
 
-LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
+LIB_DEPENDS=	libopenquicktime.so:${PORTSDIR}/multimedia/openquicktime
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -21,21 +21,17 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/oqtplayer
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	readme
-.endif
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc -g|${CC}|g ; \
 		 s|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/oqtplayer ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/oqtplayer ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- sys/unix/Makefile.doc.orig	Sat Dec 30 05:08:31 2006
-+++ sys/unix/Makefile.doc	Fri Aug 17 23:19:06 2007
+--- sys/unix/Makefile.doc.orig	2006-12-30 05:08:31.000000000 -0800
++++ sys/unix/Makefile.doc	2014-06-28 23:55:59.000000000 -0700
 @@ -53,16 +53,16 @@
  #	tbl tmac.n Guidebook.mn | groff -Wall -Tdvi > Guidebook.dvi
  
@@ -25,11 +23,21 @@ $FreeBSD$
  FRGAMEMANCREATE = cp fr/$(GAME).6
  # manual installation for most SYSV-style systems
  # and for man files readable in less (eg dos DJGPP+GNU)
-@@ -79,7 +79,6 @@
- 	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
- 	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
- 	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
+@@ -74,12 +74,11 @@
+ # FRGAMEMANCREATE = groff -Wall -mtty-char -Tutf8 -man fr/$(GAME).6 >
+ 
+ manpages:
+-	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+-	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
+-	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+-	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+-	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
 -	-$(FRGAMEMANCREATE) $(FRMANDIR)/$(GAME).$(MANEXT)
++	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)/$(GAME).$(MANEXT)
++	-$(LEVMANCREATE) ${DESTDIR}$(MANDIR)/lev_comp.$(MANEXT)
++	-$(DGNMANCREATE) ${DESTDIR}$(MANDIR)/dgn_comp.$(MANEXT)
++	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)/recover.$(MANEXT)
++	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)/dlb.$(MANEXT)
  
  # manual creation for distribution
  DISTRIB = Guidebook.txt $(GAME).txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt

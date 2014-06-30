@@ -14,7 +14,6 @@ RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_TEX=	latex
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 LATEX_DIR=	${PREFIX}/share/texmf/tex/latex/hyperlatex
 HYPERLATEX_DIR=	${PREFIX}/share/hyperlatex

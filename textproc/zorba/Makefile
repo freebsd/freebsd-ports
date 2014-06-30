@@ -30,10 +30,12 @@ CONFLICTS=	xqilla-[0-9]*
 
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
-USES=		cmake:outsource iconv
-CXXFLAGS+=	-I${LOCALBASE}/include
+USE_CXXSTD=	c++11
+USES=		cmake:outsource iconv compiler:c++11-lib
+CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
-CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+    		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
@@ -41,7 +43,6 @@ PLIST_SUB+=	FULLVERSION=${PORTVERSION} \
 		MIDVERSION=${PORTVERSION:R} \
 		MINVERSION=${PORTVERSION:R:R}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHP}
@@ -112,7 +113,7 @@ post-patch:
 #	${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-install:
-	${LN} -sf libzorba_simplestore.so.${PORTVERSION} ${PREFIX}/lib/libzorba_simplestore.so.${PORTVERSION:R:R}
+	${LN} -sf libzorba_simplestore.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libzorba_simplestore.so.${PORTVERSION:R:R}
 
 test:	build
 	cd ${BUILD_WRKSRC} && ${MAKE} test

@@ -5,7 +5,7 @@
        packages = ['pygopherd', 'pygopherd.handlers', 'pygopherd.protocols'],
        scripts = ['bin/pygopherd'],
 -      data_files = [ ('/etc/pygopherd', ['conf/pygopherd.conf',
-+      data_files = [ ('%%PREFIX%%/etc/pygopherd', ['conf/pygopherd.conf-dist',
++      data_files = [ ('%%PREFIX%%/etc/pygopherd', ['conf/pygopherd.conf.sample',
                                           'conf/mime.types'] ) ],
        license = pygopherd.version.license
  )

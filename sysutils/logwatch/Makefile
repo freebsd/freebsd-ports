@@ -14,17 +14,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
-
-MAN8=		logwatch.8
-DOCS=		HOWTO-Customize-LogWatch License README
-
+SHEBANG_FILES=	scripts/logwatch.pl
+PORTDOCS=	HOWTO-Customize-LogWatch README
 NO_BUILD=	yes
-
 MAKE_ENV+=	SITE_PERL_REL=${SITE_PERL_REL}
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 pre-configure:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
@@ -45,10 +44,10 @@ post-patch:
 	${WRKSRC}/conf/logwatch.conf
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/HOWTO-Customize-LogWatch ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/HOWTO-Customize-LogWatch ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

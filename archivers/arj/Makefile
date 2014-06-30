@@ -21,6 +21,7 @@ MAKEFILE=	GNUmakefile
 MAKE_ARGS=	LOCALE="${LANGUAGE}"
 ALL_TARGET=	prepare all
 STRIP=		# empty
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-fPIC
 LANGUAGE?=	en

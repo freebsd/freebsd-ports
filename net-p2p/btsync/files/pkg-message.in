@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+net-p2p/%%PORTNAME%% includes an RC script:
+%%PREFIX%%/etc/rc.d/%%PORTNAME%%
+
+TO START BTSYNC ON BOOT:
+echo 'btsync_enable="YES"' >> /etc/rc.conf
+
+START MANUALLY:
+%%PREFIX%%/etc/rc.d/%%PORTNAME%% start
+
+Once started, visit the following to configure:
+http://localhost:8888/
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

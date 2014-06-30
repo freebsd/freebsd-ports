@@ -1,9 +1,9 @@
---- qmail-smtpd.c.orig	2009-12-23 15:20:45.000000000 -0200
-+++ qmail-smtpd.c	2009-12-23 15:23:40.000000000 -0200
-@@ -136,6 +136,27 @@
-   logs(s1,s2,s3,s4,s5,s6,s7);
-   return;
-   }
+--- qmail-smtpd.c.orig	2014-06-26 16:33:05.703716277 -0500
++++ qmail-smtpd.c	2014-06-26 16:40:11.516685934 -0500
+@@ -116,6 +116,28 @@ int seenhelo = 0;
+ char *badmailcond;
+ char *badhelocond;
+ 
 +void err_rbl(s1,s2,s3,s4,s5,s6,s7) char *s1, *s2, *s3, *s4, *s5, *s6, *s7; {
 +  char *rblmatch;
 +  stralloc rblmessage = {0};
@@ -22,32 +22,33 @@
 +  if (!stralloc_0(&new_s1)) die_nomem(); 
 +
 +  out(rblmessage.s); 
-+  logs(new_s1.s,s2,s3,s4,s5,s6,s7);
++  smtp_logg(new_s1.s,s2,s3,s4,s5,s6,s7);
 +  return;
 +  }
- void err_brcptto(s1,s2,s3,s4,s5,s6,s7) char *s1, *s2, *s3, *s4, *s5, *s6, *s7; {
-   out("550 sorry, your envelope recipient is in my badrcptto list (#5.7.1)\r\n");
-   logs(s1,s2,s3,s4,s5,s6,s7);
-@@ -282,6 +303,8 @@
++
+ void dohelo(arg) char *arg; 
+ {
+   if (!stralloc_copys(&helohost,arg)) die_nomem(); 
+@@ -183,6 +205,8 @@ int tarpitcount = 0;
+ int tarpitdelay = 0;
  
  char *auth;
- char *reqauth;
 +char *rbl2smtpd;
 +char *rblmatch;
- int smtpauth = 0;
+ int smtpauth = 0;	/* -1:Cert 0:none 1:login/plain 2:cram 3:login/plain/cram 11:must_login/plain 12:must_2 13:must_3 */
  int seenauth = 0;
  
-@@ -404,6 +427,9 @@
-   if (env_get("UCSPITLS")) starttls = 1;
-   if (starttls) reqttls = env_get("REQUIRETLS");
+@@ -344,6 +368,9 @@ void setup()
+     if (!stralloc_cats(&mailto," ")) die_nomem();
+   }
  
 +  rbl2smtpd = env_get("RBL2SMTPD");
 +  rblmatch = env_get("RBLMATCH");
 +
-   delivermailto = env_get("DELIVERTO");
-   if (delivermailto) {
-     if (!stralloc_cats(&mailto,delivermailto)) die_nomem();
-@@ -909,6 +935,10 @@
+   rblsmtpd = env_get("RBLSMTPD");
+   if (rblsmtpd) {
+     if (!stralloc_cats(&rblinfo,rblsmtpd)) die_nomem();
+@@ -909,6 +936,10 @@ void smtp_rcpt(arg) char *arg; {
        return; 
      }
  
@@ -57,4 +58,4 @@
 +    }
      if (tarpitcount && flagerrcpts >= tarpitcount) { 	/* Tarpitting et al. */
        if (tarpitdelay == 999) flagnotorious++;
-       err_rcpts("Reject::RCPT::Toomany_Rcptto:",protocol.s,remoteip,remotehost,helohost.s,mailfrom.s,addr.s); 
+       err_rcpts("Reject::RCPT::Toomany_Rcptto",protocol.s,remoteip,remotehost,helohost.s,mailfrom.s,addr.s); 

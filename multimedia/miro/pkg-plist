@@ -548,6 +548,7 @@
 %%DATADIR%%/resources/testdata/echonest-replies/no-releases
 %%DATADIR%%/resources/testdata/echonest-replies/rock-music
 %%DATADIR%%/resources/testdata/enmfp-codegen-output.json
+%%DATADIR%%/resources/testdata/feedparsertests/feeds/donate.html
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/feed_with_nul_bytes.xml
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/http___feeds_feedburner_com_earth-touch_podcast_720p.xml
 %%DATADIR%%/resources/testdata/feedparsertests/feeds/http___feeds_miroguide_com_miroguide_featured.xml
@@ -1575,6 +1576,8 @@ bin/echoprint-codegen
 bin/miro
 bin/miro-segmenter
 bin/miro.real
+man/man1/miro.1.gz
+man/man1/miro.real.1.gz
 share/applications/miro.desktop
 share/icons/hicolor/128x128/apps/miro.png
 share/icons/hicolor/24x24/apps/miro.png

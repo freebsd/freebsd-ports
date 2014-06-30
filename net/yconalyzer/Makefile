@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP Traffic Analyzer
 
 GNU_CONFIGURE=	yes

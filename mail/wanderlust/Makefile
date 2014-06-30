@@ -18,8 +18,11 @@ USE_EMACS=	yes
 
 CONFLICTS=	wanderlust-*-2.15.*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 EMACS_W3M_PORT_NAME?=	emacs-w3m
 EMACS_W3M_LISP_FILE?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3m/shimbun.el
@@ -34,10 +37,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIME
 
 .if (${EMACS_NAME} == "emacs") && (${EMACS_MAJOR_VER} == 23)
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/x-face-e21.el:${PORTSDIR}/mail/x-face-e21
-.endif
-
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-WL-MK ${PATCHDIR}/extra-patch-elmo:elmo-version.el
 .endif
 
 .if exists(${EMACS_W3M_LISP_FILE})
@@ -72,20 +71,14 @@ PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		WL_LISPDIR=${WL_LISPDIR} \
 		WL_ICONDIR=${WL_ICONDIR} \
 		SHIMBUN=${SHIMBUN}
-.if (${EMACS_PORT_NAME} == "emacs-devel")
-PLIST=		${PKGDIR}/pkg-plist.emacs22
-.else
-PLIST=		${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
-.endif
 WRK_STARTUP_FILE=	${WRKDIR}/wanderlust-startup.el
-MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD} \
-		LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
+MAKE_ARGS+=	EMACS=${EMACS_CMD} \
+		LISPDIR=${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
 		FLAGS="-batch -q -no-site-file -l ${WRK_STARTUP_FILE:C/\/\/*/\//g}"
-.if defined(EMACS_PACKAGESDIR)
-MAKE_ARGS+=	PACKAGEDIR=${PREFIX}/${EMACS_PACKAGESDIR}
-.else
-MAKE_ARGS+=	INFODIR=${INFODIR}
-.endif
+INFO=		wl wl-ja
+PLIST=		${PKGDIR}/pkg-plist.emacs
+MAKE_ARGS+=	INFODIR=${STAGEDIR}${INFODIR} \
+		PIXMAPDIR=${STAGEDIR}${PREFIX}/${EMACS_LIBDIR_WITH_VER}/etc/wl/icons
 
 post-extract:
 	@${CP} ${FILESDIR}/WL-CFG ${WRKSRC}
@@ -112,61 +105,54 @@ pre-build:
 post-install:
 .if !exists(${EMACS_W3M_LISP_FILE})
 .if defined(EMACS_PACKAGESDIR)
-	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/wl
+	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/lisp/wl
 .else
-	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl
+	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl
 .endif
 .endif
-.if !defined(EMACS_PACKAGESDIR)
-	@${MAKE} install-info
+.if ${PORT_OPTIONS:MDOCS}
+	${MAKE} install-docs
 .endif
-.if !defined(NOPORTDOCS)
-	@${MAKE} install-docs
-.endif
-	@${MAKE} install-samples
-	@${MAKE} install-utils
+	${MAKE} install-samples
+	${MAKE} install-utils
 .if defined(EMACS_PACKAGESDIR)
-	@${MAKE} install-manifest
+	${MAKE} install-manifest
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 # local targets
-install-info:
-	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl.info ${INFODIR}/dir
-	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl-ja.info ${INFODIR}/dir
-
 install-docs:
-	@${MKDIR} ${PREFIX}/${PORTDOCDIR}
-	@${MKDIR} ${PREFIX}/${PORTDOCDIR_JA}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTDOCDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTDOCDIR_JA}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${PORTDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/${PORTDOCDIR}
 .endfor
 .for i in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${PORTDOCDIR_JA}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/${PORTDOCDIR_JA}
 .endfor
 
 install-samples:
 .for l in ${SAMPLESLANG}
-	${MKDIR} ${PREFIX}/${SAMPLESDIR}/$l
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SAMPLESDIR}/$l
 	for i in ${SAMPLES} ; do \
-		${INSTALL_DATA} ${WRKSRC}/samples/$l/$$i ${PREFIX}/${SAMPLESDIR}/$l; \
+		${INSTALL_DATA} ${WRKSRC}/samples/$l/$$i ${STAGEDIR}${PREFIX}/${SAMPLESDIR}/$l; \
 	done
 .endfor
-	${MKDIR} ${PREFIX}/share/wanderlust
-	${INSTALL_DATA} ${WRKSRC}/etc/ja.Emacs ${PREFIX}/share/wanderlust
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/wanderlust
+	${INSTALL_DATA} ${WRKSRC}/etc/ja.Emacs ${STAGEDIR}${PREFIX}/share/wanderlust
 
 install-utils:
-	@${MKDIR} ${PREFIX}/${UTILSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${UTILSDIR}
 .for i in ${UTILS}
-	${INSTALL_DATA} ${WRKSRC}/utils/${i} ${PREFIX}/${UTILSDIR}
+	${INSTALL_DATA} ${WRKSRC}/utils/${i} ${STAGEDIR}${PREFIX}/${UTILSDIR}
 .endfor
-	@${MKDIR} ${PREFIX}/${STARTUPDIR}
-	@${INSTALL_DATA} ${WRKDIR}/wanderlust-startup.el ${PREFIX}/${STARTUPDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${STARTUPDIR}
+	${INSTALL_DATA} ${WRKDIR}/wanderlust-startup.el ${STAGEDIR}${PREFIX}/${STARTUPDIR}
 
 install-manifest:
-	@${CAT} ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME} | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
+	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
+	${CAT} ${PLIST} | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
 		${SED} -e "s!^%%EMACS_PACKAGESDIR%%!!" > ${WRKDIR}/${MANIFEST}
-	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} ${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
-	@${INSTALL_DATA} ${FILESDIR}/_pkg.el ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/wl
+	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} ${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
+	${INSTALL_DATA} ${FILESDIR}/_pkg.el ${STAGEDIR}${PREFIX}/${EMACS_PACKAGESDIR}/lisp/wl
 
 .include <bsd.port.post.mk>

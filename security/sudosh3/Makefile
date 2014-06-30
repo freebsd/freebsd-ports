@@ -13,6 +13,7 @@ CONFLICTS=		sudosh-*
 
 DEPRECATED=		Funcition replaced by sudo -s
 EXPIRATION_DATE=	2014-07-01
+BROKEN=			build error in relay.c
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 

@@ -25,7 +25,6 @@ CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]* \
 		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
 		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 NO_WRKSUBDIR=	YES
@@ -62,34 +61,32 @@ EXCLUDE_LIST=	doc/fonts/amsfonts/\* \
 		tex/texinfo/\*
 
 do-install:
-	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}
-	cd ${PREFIX}/${TEXMFDISTDIR} && \
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}
+	cd ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR} && \
 	    ${TAR} -x -z -U -f ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF_SRC} \
 	    ${EXCLUDE_LIST:S,^,--exclude ,g}
-	cd ${PREFIX}/${TEXMFDISTDIR} && \
+	cd ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR} && \
 	    ${PATCH} < ${FILESDIR}/extra-patch-latex.ltx && \
 	    ${RM} -f tex/latex/base/latex.ltx.orig
 	${INSTALL_DATA} ${FILESDIR}/cslatex.ini \
-	    ${PREFIX}/${TEXMFDISTDIR}/tex/cslatex/cslatex.ini
+	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/tex/cslatex/cslatex.ini
 	${INSTALL_DATA} ${FILESDIR}/csplain.ini \
-	    ${PREFIX}/${TEXMFDISTDIR}/tex/csplain/csplain.ini
+	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/tex/csplain/csplain.ini
 	${INSTALL_DATA} ${FILESDIR}/t1code.tex \
-	    ${PREFIX}/${TEXMFDISTDIR}/tex/csplain/t1code.tex
+	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/tex/csplain/t1code.tex
 .for T in doc/fonts fonts/afm/public fonts/map/dvips fonts/source/public \
     fonts/tfm/public fonts/type1/public tex/latex tex/plain
-	cd ${PREFIX}/${TEXMFDISTDIR}/${T} && \
+	cd ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/${T} && \
 		${LN} -s -f ${LOCALBASE}/share/fonts/amsfonts/${T}/amsfonts .
 .endfor
-	cd ${PREFIX}/${TEXMFDISTDIR}/dvips/pstricks && \
+	cd ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/dvips/pstricks && \
 		${PATCH} --quiet < ${WRKDIR}/PSTricks.patch && \
 		${RM} -f pst-text.pro.orig
 	( ${ECHO_CMD} '% ls-R -- filename database for kpathsea; do not change this line.'; \
 		${ECHO_CMD} './:'; \
 		${ECHO_CMD} 'ls-R'; \
-		${ECHO_CMD} '' ) > ${PREFIX}/${TEXMFDISTDIR}/ls-R
-	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}/xdvi
-	${TOUCH} ${PREFIX}/${TEXMFDISTDIR}/xdvi/XDvi
-	@if [ -x ${MKTEXLSR} ]; then \
-		${MKTEXLSR} ${LOCALBASE}/${TEXMFDISTDIR}; fi
+		${ECHO_CMD} '' ) > ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/ls-R
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/xdvi
+	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/xdvi/XDvi
 
 .include <bsd.port.post.mk>

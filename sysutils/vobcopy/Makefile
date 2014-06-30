@@ -19,14 +19,12 @@ CONFIGURE_ARGS=	--with-lfs --with-dvdread-libs=${LOCALBASE}
 
 ALL_TARGET=	${PORTNAME}
 
-MAN1=	vobcopy.1
-
-PLIST_FILES=	bin/vobcopy
+PLIST_FILES=	bin/vobcopy man/man1/vobcopy.1.gz
 PORTDOCS=	COPYING Changelog README TODO \
 		alternative_programs.txt
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -58,14 +56,14 @@ post-configure:
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/vobcopy ${PREFIX}/bin/vobcopy
+	@${INSTALL_PROGRAM} ${WRKSRC}/vobcopy ${STAGEDIR}${PREFIX}/bin/vobcopy
 	@${INSTALL_MAN} ${WRKSRC}/vobcopy.1${MAN1_SUFX} \
-		${MANPREFIX}/man/man1/vobcopy.1
+		${STAGEDIR}${MANPREFIX}/man/man1/vobcopy.1
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

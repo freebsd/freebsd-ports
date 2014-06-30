@@ -7,8 +7,11 @@ CATEGORIES=	news perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minimal NNTP server
+
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
 
 USES=		perl5
 USE_PERL5=	configure

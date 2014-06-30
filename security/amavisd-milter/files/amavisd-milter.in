@@ -25,12 +25,13 @@ load_rc_config $name
 # Set defaults
 : ${amavisd_milter_enable:="NO"}
 : ${amavisd_milter_user="%%AMAVISUSER%%"}
-: ${amavisd_milter_socket:="%%AMAVISDIR%%/amavisd-milter.sock"}
+: ${amavisd_milter_socket:="%%RUNDIR%%/amavisd-milter.sock"}
 : ${amavisd_milter_socket_perm:="0666"}
+: ${amavisd_am_pdp_socket:="%%AMAVISDIR%%/amavisd.sock"}
 
-pidfile="${amavisd_milter_pidfile:-%%AMAVISDIR%%/amavisd-milter.pid}"
+pidfile="${amavisd_milter_pidfile:-%%RUNDIR%%/amavisd-milter.pid}"
 command="%%PREFIX%%/sbin/amavisd-milter"
-command_args="-p ${pidfile} -s ${amavisd_milter_socket}"
+command_args="-p ${pidfile} -s ${amavisd_milter_socket} -S ${amavisd_am_pdp_socket}"
 required_files="%%PREFIX%%/etc/amavisd.conf"
 start_postcmd="amavisd_milter_postcmd"
 

@@ -181,9 +181,6 @@
     SUBDIR += eliom
     SUBDIR += elog
     SUBDIR += emacs-w3m
-    SUBDIR += emacs-w3m-emacs21
-    SUBDIR += emacs-w3m-emacs22
-    SUBDIR += emacs-w3m-xemacs21-mule
     SUBDIR += encode-explorer
     SUBDIR += entrans
     SUBDIR += ephemera
@@ -536,7 +533,6 @@
     SUBDIR += mod_vhs
     SUBDIR += mod_webkit
     SUBDIR += mod_whatkilledus
-    SUBDIR += mod_wsgi2
     SUBDIR += mod_wsgi3
     SUBDIR += mod_xml2enc
     SUBDIR += mod_xmlns
@@ -1522,6 +1518,7 @@
     SUBDIR += py-django-pipeline12
     SUBDIR += py-django-piston
     SUBDIR += py-django-profiles
+    SUBDIR += py-django-redis
     SUBDIR += py-django-registration
     SUBDIR += py-django-registration-defaults
     SUBDIR += py-django-reversion
@@ -1549,6 +1546,7 @@
     SUBDIR += py-feedfinder
     SUBDIR += py-feedgenerator
     SUBDIR += py-flask
+    SUBDIR += py-flask-admin
     SUBDIR += py-flask-cache
     SUBDIR += py-flask-flatpages
     SUBDIR += py-flask-uploads
@@ -1977,9 +1975,9 @@
     SUBDIR += tomcat-native
     SUBDIR += tomcat6
     SUBDIR += tomcat7
+    SUBDIR += tomcat8
     SUBDIR += trac
     SUBDIR += trac-OhlohWidgetsMacro
-    SUBDIR += trac-TracDuplicates
     SUBDIR += trac-TracGoogleAnalytics
     SUBDIR += trac-accountmanager
     SUBDIR += trac-advancedticketworkflow

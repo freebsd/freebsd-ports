@@ -3,7 +3,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.2.4
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig gettext
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_AUTOTOOLS=	autoconf
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -28,7 +28,6 @@ CFLAGS+=	-fPIC
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 USE_XORG=	xaw xv
 CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen --without-lame
-MAN1=		lqtplay.1
 
 OPTIONS_DEFINE=	ALSA DV FAAC FAAD FFMPEG GTK2 JPEG OPENGL OPTIMIZED_CFLAGS PNG \
 		SCHROEDINGER X264 DOCS
@@ -45,7 +44,6 @@ CONFIGURE_ARGS+=	--without-x --enable-gpl --without-doxygen
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -146,9 +144,9 @@ pre-configure:
 
 .if ${PORT_OPTIONS:MDOCS} && !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

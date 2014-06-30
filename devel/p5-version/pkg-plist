@@ -5,6 +5,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/version.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/version/Internals.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/version/regex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/version/vpp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/version/vxs.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/version

@@ -3,6 +3,7 @@
 
 PORTNAME=	pylint
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -19,10 +20,6 @@ USE_PYDISTUTILS=	yes
 
 OPTIONS_DEFINE=	GUI
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
-.endif
+GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
 .include <bsd.port.mk>

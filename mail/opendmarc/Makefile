@@ -3,6 +3,7 @@
 
 PORTNAME=	opendmarc
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
@@ -19,7 +20,7 @@ LICENSE_GROUPS_SENDMAIL=	FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		shebangfix
+USES=		libtool shebangfix
 SHEBANG_FILES=	reports/opendmarc-expire.in \
 		reports/opendmarc-import.in \
 		reports/opendmarc-params.in \

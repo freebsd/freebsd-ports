@@ -15,20 +15,16 @@ RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
 		p5-Time-Period>=0:${PORTSDIR}/devel/p5-Time-Period \
 		rsync:${PORTSDIR}/net/rsync
 
-MAN5=		dirvish.conf.5
-MAN8=		dirvish.8 dirvish-expire.8 dirvish-locate.8 dirvish-runall.8
+MAN5S=		dirvish.conf.5
+MAN8S=		dirvish.8 dirvish-expire.8 dirvish-locate.8 dirvish-runall.8
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
-MAN5=		dirvish.conf.5
-MAN8=		dirvish.8 dirvish-expire.8 dirvish-locate.8  dirvish-runall.8
-
 EXECUTABLES=	dirvish   dirvish-expire   dirvish-locate   dirvish-runall
 
-NO_STAGE=	yes
 do-patch:
 	@${SED} -e 's:%%CONFDIR%%:${PREFIX}/etc/dirvish:' -e 's:%%PERL%%:${PERL5}:' \
 		${FILESDIR}/header.pl > ${WRKDIR}/header.pl
@@ -38,17 +34,17 @@ do-patch:
 .endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/dirvish
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/dirvish
 .for _E in ${EXECUTABLES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${_E} ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/${_E} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-.for _M in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/${_M} ${PREFIX}/man/man5
+.for _M in ${MAN5S}
+	${INSTALL_MAN} ${WRKSRC}/${_M} ${STAGEDIR}${PREFIX}/man/man5
 .endfor
-.for _M in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/${_M} ${PREFIX}/man/man8
+.for _M in ${MAN8S}
+	${INSTALL_MAN} ${WRKSRC}/${_M} ${STAGEDIR}${PREFIX}/man/man8
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/master.conf.dist ${PREFIX}/etc/dirvish
-	${INSTALL_DATA} ${FILESDIR}/default.conf.dist ${PREFIX}/etc/dirvish
+	${INSTALL_DATA} ${FILESDIR}/master.conf.dist ${STAGEDIR}${PREFIX}/etc/dirvish
+	${INSTALL_DATA} ${FILESDIR}/default.conf.dist ${STAGEDIR}${PREFIX}/etc/dirvish
 
 .include <bsd.port.mk>

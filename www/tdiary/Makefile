@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES?=	www ruby
 MASTER_SITES=	http://www.tdiary.org/download/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Web-based diary system (like weblog) written in Ruby
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	rubygem-fastimage>=1.6.0:${PORTSDIR}/graphics/rubygem-fastimage \
-		hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
+		rubygem-hikidoc>=0:${PORTSDIR}/textproc/rubygem-hikidoc \
 		rubygem-multi_json>=1.8.4:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
@@ -41,6 +41,9 @@ HTML=	${DOCFILES:S/$/.html/}
 MD=	${DOCFILES:S/$/.md/}
 PORTDOCS=	ChangeLog doc.css ${HTML} ${MD}
 
+PLIST_SUB=	TDIARY_SCRIPT=${TDIARY_SCRIPT} \
+		WWWOWN=${WWWOWN} \
+		WWWGRP=${WWWGRP}
 SUB_FILES=	pkg-message tdiaryinst.rb
 SUB_LIST+=	TDIARY_LANG=${TDIARY_LANG} \
 		TDIARY_SCRIPT=${TDIARY_SCRIPT}
@@ -69,9 +72,10 @@ pre-patch:
 	@${RM} ${WRKSRC}/Procfile
 	@${RM} ${WRKSRC}/Rakefile
 	@${RM} ${WRKSRC}/config.ru
+	@${RM} ${WRKSRC}/tdiary.gemspec
 	@${RM} ${WRKSRC}/tmp/.gitkeep
 	@${RM} -rf ${WRKSRC}/.bundle
-	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.6.0.rc
+	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.6.2
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test
@@ -92,16 +96,14 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${TDIARY_SCRIPT} ${STAGEDIR}${PREFIX}/bin
 	@-${MKDIR} ${STAGEDIR}${WWWDIR}
 	${TAR} --exclude "doc" -C ${WRKSRC} -cf - . | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
-
-post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
-	@${ECHO_CMD} bin/${TDIARY_SCRIPT} >> ${TMPPLIST}
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-	@${CAT} ${PKGMESSAGE}
 
 x-generate-plist: stage
-	${FIND} ${STAGEDIR}${WWWDIR} -type f -o -type l | ${SORT} | ${SED} -e 's,${STAGEDIR}${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
+	${ECHO_CMD} bin/%%TDIARY_SCRIPT%% > pkg-plist.new
+	${FIND} ${STAGEDIR}${WWWDIR} -type f -o -type l | ${SORT} | ${SED} -e 's,${STAGEDIR}${WWWDIR},%%WWWDIR%%,g' >> pkg-plist.new
 	${FIND} ${STAGEDIR}${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${STAGEDIR}${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
+	${ECHO_CMD} @exec mkdir -p %D/%%WWWDIR%%/tmp >> pkg-plist.new
+	${ECHO_CMD} @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%% >> pkg-plist.new
 
 .include <bsd.port.mk>

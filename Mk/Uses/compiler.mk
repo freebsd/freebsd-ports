@@ -75,7 +75,9 @@ ALT_COMPILER_VERSION=	0
 ALT_COMPILER_TYPE=	none
 _ALTCCVERSION=	
 .if ${COMPILER_TYPE} == gcc && exists(/usr/bin/clang)
+.if ${ARCH} == amd64 || ${ARCH} == i386 # clang often non-default for a reason
 _ALTCCVERSION!=	/usr/bin/clang --version
+.endif
 .elif ${COMPILER_TYPE} == clang && exists(/usr/bin/gcc)
 _ALTCCVERSION!=	/usr/bin/gcc --version
 .endif
@@ -138,7 +140,7 @@ CHOSEN_COMPILER_TYPE=	gcc
 
 .if ${_COMPILER_ARGS:Mc++11-lang}
 .if !${COMPILER_FEATURES:Mc++11}
-.if defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc
+.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
 USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc
@@ -164,7 +166,7 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 
 .if ${_COMPILER_ARGS:Mc++0x}
 .if !${COMPILER_FEATURES:Mc++0x}
-.if defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc
+.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
 USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc
@@ -190,7 +192,7 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 
 .if ${_COMPILER_ARGS:Mc11}
 .if !${COMPILER_FEATURES:Mc11}
-.if defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc
+.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
 USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc

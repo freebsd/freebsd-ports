@@ -12,8 +12,6 @@ COMMENT=	Display command output on the whole screen like "top"
 USES=		perl5
 USE_PERL5=	build
 
-MAN1=		topless.1
-PLIST_FILES=	bin/topless
+PLIST_FILES=	bin/topless man/man1/topless.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

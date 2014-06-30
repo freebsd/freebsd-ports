@@ -1,12 +1,13 @@
-# Created by: Petr Rehor <prehor@gmail.com>
+# Created by: Petr Rehor <rx@rx.cz>
 # $FreeBSD$
 
 PORTNAME=	amavisd-milter
 PORTVERSION=	1.6.0
+PORTREVISION=	2
 CATEGORIES=	security mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	prehor@gmail.com
+MAINTAINER=	rx@rx.cz
 COMMENT=	Milter for amavisd-new
 
 RUN_DEPENDS=	amavisd:${PORTSDIR}/security/amavisd-new
@@ -24,24 +25,22 @@ RUN_DEPENDS=	amavisd:${PORTSDIR}/security/amavisd-new
 
 # Shared defaults with security/amavisd-new
 AMAVISUSER?=	vscan
+AMAVISGROUP?=	vscan
 AMAVISDIR?=	/var/amavis
 
+RUNDIR=		/var/run/amavis
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${AMAVISDIR} --with-working-dir=tmp
+CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-working-dir=tmp
 USE_RC_SUBR=	${PORTNAME}
 
-SUB_FILES=	pkg-message
 SUB_LIST=	AMAVISUSER=${AMAVISUSER} \
-		AMAVISDIR=${AMAVISDIR}
+		AMAVISGROUP=${AMAVISGROUP} \
+		AMAVISDIR=${AMAVISDIR} \
+		RUNDIR=${RUNDIR}
+PLIST_SUB=	${SUB_LIST}
 
 PORTDOCS=	AUTHORS CHANGES INSTALL LICENSE README TODO
-
-NO_STAGE=	yes
-PLIST_FILES=	sbin/amavisd-milter
-PLIST_SUB=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
-
-MAN8=		amavisd-milter.8
 
 .include <bsd.port.pre.mk>
 
@@ -72,12 +71,11 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL} -d -o ${AMAVISUSER} -g ${AMAVISGROUP} -m 755 ${STAGEDIR}${RUNDIR}
+	${INSTALL} -d -o ${AMAVISUSER} -g ${AMAVISGROUP} -m 750 ${STAGEDIR}${RUNDIR}/tmp
 
 .include <bsd.port.post.mk>

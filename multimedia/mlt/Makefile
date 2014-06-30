@@ -2,7 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	0.9.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -49,7 +49,6 @@ KDE4_DESC=	QImage extra formats support
 QT4_DESC=	Kdenlive titles and images support via QImage
 SOX_DESC=	SoX audio effects support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
@@ -191,16 +190,16 @@ pre-configure:
 		${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/melt.1 ${MANPREFIX}/man/man1/melt.1
+	${INSTALL_MAN} ${WRKSRC}/docs/melt.1 ${STAGEDIR}${MANPREFIX}/man/man1/melt.1
 	@${RM} -f ${WRKSRC}/docs/melt.1
 .if ${PORT_OPTIONS:MDOCS}
 . for f in ${PORTDOCS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 . for f in ${PORTEXAMPLES}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
 .endif
 

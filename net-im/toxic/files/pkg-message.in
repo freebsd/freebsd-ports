@@ -7,7 +7,7 @@
 	colour_theme:1;
   in your ~/.config/tox/toxic.conf
 
-  (more parameters available - see %%EXAMPLESDIR%%/toxic.conf )
+  (more parameters available - see %%DATADIR%%/toxic.conf.example )
 
   or try to define another TERM, e.g.:
 	TERM=vt100 toxic

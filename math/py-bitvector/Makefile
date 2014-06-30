@@ -3,6 +3,7 @@
 
 PORTNAME=	bitvector
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,21 +22,16 @@ PORTDOCS=	README BitVector-${PORTVERSION}.html
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/BitVector.py \
 		%%PYTHON_SITELIBDIR%%/BitVector.pyc \
-		%%PYTHON_SITELIBDIR%%/BitVector.pyo \
-		%%PYTHON_LIBDIR%%/site-packages/setup.py \
-		%%PYTHON_LIBDIR%%/site-packages/setup.pyc \
-		%%PYTHON_LIBDIR%%/site-packages/setup.pyo
+		%%PYTHON_SITELIBDIR%%/BitVector.pyo
 
 post-extract:
 	@${RM} -f ${WRKSRC}/test.py
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 regression-test:
 	@(cd ${WRKSRC}/TestBitVector && ${PYTHON_CMD} Test.py)

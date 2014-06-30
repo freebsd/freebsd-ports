@@ -13,13 +13,13 @@ COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
-MAKE_ARGS=	DESTDIR="${PREFIX}" LIBPATH="/lib" INCPATH="/include" \
-		DATAPATH="${DOCSDIR}/pdf"
+MAKE_ARGS=	DESTDIR="${STAGEDIR}" LIBPATH="${PREFIX}/lib" \
+		INCPATH="${PREFIX}/include" DATAPATH="${DOCSDIR}/pdf"
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	library
 
-CFLAGS+=	-I${PREFIX}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=	LIBTOMMATH
@@ -28,7 +28,6 @@ OPTIONS_MULTI_MATH=	LIBTOMMATH TOMSFASTMATH GMP
 LIBTOMMATH_DESC=	Use LibTomMath
 TOMSFASTMATH_DESC=	Use TomsFastMath
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBTOMMATH}

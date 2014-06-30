@@ -13,7 +13,10 @@ MASTER_SITE_SUBDIR=	roam/misc/cicquin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Look up users in the CenterICQ user database
 
-MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP}
+PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
 .include <bsd.port.mk>

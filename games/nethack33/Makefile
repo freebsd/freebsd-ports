@@ -4,7 +4,7 @@
 PORTNAME=	nethack33
 PORTVERSION=	3.3.1
 PORTREVISION=	10
-CATEGORIES?=	games
+CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${TRUEPORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
@@ -21,9 +21,6 @@ PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"
 MAKE_JOBS_UNSAFE=	yes
 TRUEPORTNAME=	nethack
-
-MAN6=		dgn_comp${HACKEXT}.6 dlb${HACKEXT}.6 lev_comp${HACKEXT}.6 \
-		${HACKNAME}.6 recover${HACKEXT}.6
 
 HACKEXT?=	33
 HACKNAME?=	${TRUEPORTNAME}${HACKEXT}
@@ -43,10 +40,9 @@ GRAPHICS=	# none
 .endif
 .endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
 
 .include <bsd.port.options.mk>
 
@@ -60,7 +56,7 @@ pre-everything::
 .if defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} " You cannot install nethack and ${PKGBASE} in parallel   "
-	@${ECHO_MSG} " But ${PKGBASE} read your prior nethack scores           "
+	@${ECHO_MSG} " But ${PKGBASE} reads your prior nethack scores           "
 	@${ECHO_MSG} " Don't forget to backup your nethack libdir if it's      "
 	@${ECHO_MSG} " important for you                                       "
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -79,8 +75,6 @@ post-patch:
 		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/include/config.h
 	@${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
-
-pre-configure:
 .for f in include/config.h sys/unix/Makefile.top sys/unix/Makefile.doc
 	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g' \
 		-e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
@@ -93,6 +87,8 @@ pre-configure:
 		-e 's|%%HACKEXT%%|${HACKEXT}|g' \
 		${WRKSRC}/doc/${f}
 .endfor
+
+do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
 pre-install:
@@ -101,12 +97,12 @@ pre-install:
 
 post-install:
 .if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}
-	@${LN} -s -f ${PREFIX}/bin/${HACKNAME} ${PREFIX}/bin/${HACKLINK}
+	@${LN} -s -f ${PREFIX}/bin/${HACKNAME} ${STAGEDIR}${PREFIX}/bin/${HACKLINK}
 .endif
-	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} manpages
+	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} manpages
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

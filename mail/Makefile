@@ -41,7 +41,6 @@
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += c-sig
-    SUBDIR += c-sig-emacs21
     SUBDIR += cclient
     SUBDIR += chk4mail
     SUBDIR += claws-mail
@@ -79,8 +78,6 @@
     SUBDIR += crm114
     SUBDIR += cucipop
     SUBDIR += cvsmail
-    SUBDIR += cyrus-imapd2
-    SUBDIR += cyrus-imapd22
     SUBDIR += cyrus-imapd23
     SUBDIR += cyrus-imapd24
     SUBDIR += cyrus2courier
@@ -114,7 +111,6 @@
     SUBDIR += elmo
     SUBDIR += elmo-devel
     SUBDIR += emh
-    SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
     SUBDIR += enma
     SUBDIR += eps
@@ -191,14 +187,12 @@
     SUBDIR += horde3-mimp
     SUBDIR += horde3-turba
     SUBDIR += horde3-vacation
-    SUBDIR += hotwayd
     SUBDIR += hs-email-validate
     SUBDIR += hs-mime
     SUBDIR += hs-mime-mail
     SUBDIR += hs-mime-types
     SUBDIR += ifile
     SUBDIR += ilohamail
-    SUBDIR += ilohamail-devel
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += imapfilter
@@ -734,9 +728,6 @@
     SUBDIR += vrfy
     SUBDIR += wanderlust
     SUBDIR += wanderlust-devel
-    SUBDIR += wanderlust-emacs21
-    SUBDIR += wanderlust-emacs22
-    SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += websieve
     SUBDIR += whoson
     SUBDIR += wmbiff

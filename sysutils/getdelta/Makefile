@@ -14,19 +14,18 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	astatutov@gmail.com
 COMMENT=	Script for reducing bandwidth load while upgrading ports disfiles
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	deltup>=0.4.4:${PORTSDIR}/sysutils/deltup \
 		wget:${PORTSDIR}/ftp/wget \
 		bash:${PORTSDIR}/shells/bash
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/getdelta.sh
 SUB_FILES=	pkg-message
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},; \
@@ -34,9 +33,6 @@ post-patch:
 		${WRKSRC}/getdelta.sh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/getdelta.sh ${PREFIX}/bin/getdelta.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/getdelta.sh ${STAGEDIR}${PREFIX}/bin/getdelta.sh
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
