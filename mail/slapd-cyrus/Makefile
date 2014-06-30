@@ -22,22 +22,16 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
-NO_STAGE=	yes
 
 PLIST_SUB=	SITE_PERL_REL=${SITE_PERL_REL} \
 		DOCS_DIR_REL=${DOCSDIR_REL}
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	slapd-cyrus.conf
-
-post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} -m 0444 ${WRKSRC}/t/etc/slapd.conf.dist \
-		${DOCSDIR}/slapd-cyrus.conf
-.endif
+PORTDOCS=	slapd-cyrus.conf.sample
 
 do-install:
-	${MKDIR} ${SITE_PERL}
-	cd ${WRKSRC}/lib && ${PAX} -r -w . ${SITE_PERL}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${SITE_PERL}
+	${INSTALL_DATA} -m 0444 ${WRKSRC}/t/etc/slapd.conf.dist \
+		${STAGEDIR}${DOCSDIR}/slapd-cyrus.conf.sample
+	cd ${WRKSRC}/lib && ${PAX} -r -w . ${STAGEDIR}${SITE_PERL}
 
 .include <bsd.port.mk>
