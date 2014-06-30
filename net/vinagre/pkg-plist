@@ -34,6 +34,7 @@ lib/vinagre-1/plugins/libvnc.so
 lib/vinagre-1/plugins/ssh.vinagre-plugin
 lib/vinagre-1/plugins/vnc.vinagre-plugin
 libdata/pkgconfig/vinagre-1.0.pc
+man/man1/vinagre.1.gz
 share/applications/vinagre-file.desktop
 share/applications/vinagre.desktop
 %%TELEPATHY%%share/dbus-1/services/org.freedesktop.Telepathy.Client.Vinagre.service
@@ -252,8 +253,6 @@ share/locale/uk/LC_MESSAGES/vinagre.mo
 share/locale/zh_CN/LC_MESSAGES/vinagre.mo
 share/locale/zh_HK/LC_MESSAGES/vinagre.mo
 share/locale/zh_TW/LC_MESSAGES/vinagre.mo
-share/mime/application/x-remote-connection.xml
-share/mime/application/x-vnc.xml
 share/mime/packages/vinagre-mime.xml
 share/omf/vinagre/vinagre-C.omf
 share/omf/vinagre/vinagre-ca.omf
@@ -326,10 +325,6 @@ share/vinagre-1/plugins/vnc/vnc.ui
 @dirrm lib/vinagre-1
 @dirrm include/vinagre-1.0/vinagre
 @dirrm include/vinagre-1.0
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES

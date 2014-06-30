@@ -10,24 +10,22 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	The game applications package for the GNOME 2 Desktop Environment
+COMMENT=	Game applications package for the GNOME 2 Desktop Environment
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
-		clutter-gtk-0.10:${PORTSDIR}/graphics/clutter-gtk \
-		clutter-glx-1.0:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
+		libclutter-gtk-0.10.so:${PORTSDIR}/graphics/clutter-gtk \
+		libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
 RUN_DEPENDS=	seed:${PORTSDIR}/devel/seed
 
 CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]* gnome-games-3.[0-9]*
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GL=		gl
-USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack librsvg2 desktopfileutils \
-		pygnomedesktop gnomedocutils
+USES=		desktop-file-utils pathfix gettext gmake pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix intlhack librsvg2 pygnomedesktop gnomedocutils
 USE_GSTREAMER=	vorbis ogg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sound=gstreamer \
@@ -41,18 +39,33 @@ GCONF_SCHEMAS=	aisleriot.schemas glchess.schemas glines.schemas \
 		gnotski.schemas gtali.schemas iagno.schemas lightsoff.schemas \
 		mahjongg.schemas quadrapassel.schemas swell-foop.schemas
 
-#DSC_FILES=	iagno/iagno-client.dsc gnect/data/gnect-client.dsc \
-#		gnibbles/gnibbles-client.dsc
+SCOREFILES=	glines.Large glines.Medium glines.Small gnibbles.1.0 \
+	gnibbles.1.1 gnibbles.2.0 gnibbles.2.1 gnibbles.3.0 gnibbles.3.1 \
+	gnibbles.4.0 gnibbles.4.1 gnobots2.classic_robots-safe \
+	gnobots2.classic_robots-super-safe gnobots2.classic_robots \
+	gnobots2.nightmare-safe gnobots2.nightmare-super-safe \
+	gnobots2.nightmare gnobots2.robots2-safe gnobots2.robots2-super-safe \
+	gnobots2.robots2 gnobots2.robots2_easy-safe \
+	gnobots2.robots2_easy-super-safe gnobots2.robots2_easy \
+	gnobots2.robots_with_safe_teleport-safe \
+	gnobots2.robots_with_safe_teleport-super-safe \
+	gnobots2.robots_with_safe_teleport gnomine.Custom \
+	gnomine.Large gnomine.Medium gnomine.Small gnotravex.2x2 \
+	gnotravex.3x3 gnotravex.4x4 gnotravex.5x5 gnotravex.6x6 gnotski.1 \
+	gnotski.10 gnotski.11 gnotski.12 gnotski.13 gnotski.14 gnotski.15 \
+	gnotski.16 gnotski.17 gnotski.18 gnotski.19 gnotski.2 gnotski.20 \
+	gnotski.21 gnotski.22 gnotski.23 gnotski.24 gnotski.25 gnotski.26 \
+	gnotski.27 gnotski.28 gnotski.29 gnotski.3 gnotski.30 gnotski.31 \
+	gnotski.32 gnotski.33 gnotski.34 gnotski.35 gnotski.36 gnotski.37 \
+	gnotski.4 gnotski.5 gnotski.6 gnotski.7 gnotski.8 gnotski.9 \
+	gtali.Colors gtali.Regular mahjongg.bridges mahjongg.cloud \
+	mahjongg.confounding mahjongg.difficult mahjongg.dragon mahjongg.easy \
+	mahjongg.pyramid mahjongg.tictactoe mahjongg.ziggurat quadrapassel
 
-MAN6=		glchess.6 glines.6 gnect.6 gnibbles.6 gnobots2.6 \
-		gnome-sudoku.6 gnomine.6 gnotravex.6 gnotski.6 \
-		gtali.6 iagno.6 mahjongg.6 quadrapassel.6 sol.6
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 .endif
 
 post-patch:
@@ -63,13 +76,10 @@ post-patch:
 		${WRKSRC}/libgames-support/Makefile.in
 
 post-install:
-	${MKDIR} ${PREFIX}/share/ggz/gnome-games
-	${CHGRP} games ${LOCALBASE}/share/games
-	${CHMOD} g=rwXs ${LOCALBASE}/share/games
-
-#.for dsc in ${DSC_FILES}
-#	${INSTALL_DATA} ${WRKSRC}/${dsc} ${PREFIX}/share/ggz/gnome-games/${dsc:T}
-#.endfor
-	@-update-desktop-database
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/ggz/gnome-games
+.for i in ${SCOREFILES}
+	${MV} ${STAGEDIR}${PREFIX}/share/games/${i}.scores \
+		${STAGEDIR}${PREFIX}/share/games/${i}.scores.sample
+.endfor
 
 .include <bsd.port.post.mk>
