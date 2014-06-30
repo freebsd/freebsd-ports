@@ -1,26 +1,26 @@
 # Created by: Klayton Monroe <klm@uidzero.org>
 # $FreeBSD$
 
-PORTNAME=		webjob
-PORTVERSION=		1.9.0
-CATEGORIES=		sysutils security
-MASTER_SITES=		SF
-EXTRACT_SUFX=		.tgz
+PORTNAME=	webjob
+PORTVERSION=	1.9.0
+PORTREVISION=	1
+CATEGORIES=	sysutils security
+MASTER_SITES=	SF
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		klm@uidzero.org
-COMMENT=		Download and execute a program over HTTP/HTTPS
+MAINTAINER=	klm@uidzero.org
+COMMENT=	Download and execute a program over HTTP/HTTPS
 
-USES=			perl5
-GNU_CONFIGURE=		yes
-USE_PERL5=		build
-MAN1=			webjob.1 xshar.1
+USES=		perl5 shebangfix
+SHEBANG_FILES=	tools/xshar/xshar
+GNU_CONFIGURE=	yes
+USE_PERL5=	build
 
 OPTIONS_DEFINE=	PAD_TOOLS DSV_TOOLS SSL
 OPTIONS_DEFAULT=	PAD_TOOLS DSV_TOOLS
 PAD_TOOLS_DESC=	install PaD tools
 DSV_TOOLS_DESC=	install DSV tools
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPAD_TOOLS}
@@ -50,6 +50,6 @@ CFLAGS+=		-static
 .endif
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/webjob
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/webjob
 
 .include <bsd.port.mk>

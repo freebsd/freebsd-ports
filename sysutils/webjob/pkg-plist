@@ -4,5 +4,7 @@
 %%PAD_TOOLS%%bin/pad-make-binary
 %%PAD_TOOLS%%bin/xshar
 bin/webjob
-etc/webjob-execute.cfg.sample
-etc/webjob-get-url.cfg.sample
+@sample etc/webjob-execute.cfg.sample
+@sample etc/webjob-get-url.cfg.sample
+man/man1/webjob.1.gz
+man/man1/xshar.1.gz
