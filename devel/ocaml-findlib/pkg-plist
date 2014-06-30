@@ -1,39 +1,47 @@
 bin/ocamlfind
 bin/safe_camlp4
-etc/findlib.conf
-lib/ocaml/site-lib/bigarray/META
-lib/ocaml/site-lib/camlp4/META
-lib/ocaml/site-lib/compiler-libs/META
-lib/ocaml/site-lib/dynlink/META
-lib/ocaml/site-lib/findlib/META
-lib/ocaml/site-lib/findlib/Makefile.config
-lib/ocaml/site-lib/findlib/findlib.a
-lib/ocaml/site-lib/findlib/findlib.cma
-lib/ocaml/site-lib/findlib/findlib.cmi
-lib/ocaml/site-lib/findlib/findlib.cmxa
-lib/ocaml/site-lib/findlib/findlib.mli
-lib/ocaml/site-lib/findlib/findlib_top.cma
-lib/ocaml/site-lib/findlib/fl_metascanner.cmi
-lib/ocaml/site-lib/findlib/fl_metascanner.mli
-lib/ocaml/site-lib/findlib/fl_metatoken.cmi
-lib/ocaml/site-lib/findlib/fl_package_base.cmi
-lib/ocaml/site-lib/findlib/fl_package_base.mli
-%%TOOLBOX%%lib/ocaml/site-lib/findlib/make_wizard
-%%TOOLBOX%%lib/ocaml/site-lib/findlib/make_wizard.pattern
-lib/ocaml/site-lib/findlib/topfind.cmi
-lib/ocaml/site-lib/findlib/topfind.mli
-lib/ocaml/site-lib/graphics/META
-%%TOOLBOX%%lib/ocaml/site-lib/labltk/META
-lib/ocaml/site-lib/num-top/META
-lib/ocaml/site-lib/num-top/num_top.cma
-lib/ocaml/site-lib/num-top/num_top.cmi
-lib/ocaml/site-lib/num-top/num_top_printers.cmi
-lib/ocaml/site-lib/num/META
-lib/ocaml/site-lib/ocamlbuild/META
-lib/ocaml/site-lib/stdlib/META
-lib/ocaml/site-lib/str/META
-lib/ocaml/site-lib/threads/META
-lib/ocaml/site-lib/unix/META
+%%ETCDIR%%.conf
+%%OCAML_SITELIBDIR%%/bigarray/META
+%%OCAML_SITELIBDIR%%/bytes/META
+%%OCAML_SITELIBDIR%%/bytes/bytes.a
+%%OCAML_SITELIBDIR%%/bytes/bytes.cma
+%%OCAML_SITELIBDIR%%/bytes/bytes.cmi
+%%OCAML_SITELIBDIR%%/bytes/bytes.cmx
+%%OCAML_SITELIBDIR%%/bytes/bytes.cmxa
+%%OCAML_SITELIBDIR%%/bytes/bytes.cmxs
+%%OCAML_SITELIBDIR%%/camlp4/META
+%%OCAML_SITELIBDIR%%/compiler-libs/META
+%%OCAML_SITELIBDIR%%/dynlink/META
+%%OCAML_SITELIBDIR%%/findlib/META
+%%OCAML_SITELIBDIR%%/findlib/Makefile.config
+%%OCAML_SITELIBDIR%%/findlib/findlib.a
+%%OCAML_SITELIBDIR%%/findlib/findlib.cma
+%%OCAML_SITELIBDIR%%/findlib/findlib.cmi
+%%OCAML_SITELIBDIR%%/findlib/findlib.cmxa
+%%OCAML_SITELIBDIR%%/findlib/findlib.cmxs
+%%OCAML_SITELIBDIR%%/findlib/findlib.mli
+%%OCAML_SITELIBDIR%%/findlib/findlib_top.cma
+%%OCAML_SITELIBDIR%%/findlib/fl_metascanner.cmi
+%%OCAML_SITELIBDIR%%/findlib/fl_metascanner.mli
+%%OCAML_SITELIBDIR%%/findlib/fl_metatoken.cmi
+%%OCAML_SITELIBDIR%%/findlib/fl_package_base.cmi
+%%OCAML_SITELIBDIR%%/findlib/fl_package_base.mli
+%%TOOLBOX%%%%OCAML_SITELIBDIR%%/findlib/make_wizard
+%%TOOLBOX%%%%OCAML_SITELIBDIR%%/findlib/make_wizard.pattern
+%%OCAML_SITELIBDIR%%/findlib/topfind.cmi
+%%OCAML_SITELIBDIR%%/findlib/topfind.mli
+%%OCAML_SITELIBDIR%%/graphics/META
+%%TOOLBOX%%%%OCAML_SITELIBDIR%%/labltk/META
+%%OCAML_SITELIBDIR%%/num-top/META
+%%OCAML_SITELIBDIR%%/num-top/num_top.cma
+%%OCAML_SITELIBDIR%%/num-top/num_top.cmi
+%%OCAML_SITELIBDIR%%/num-top/num_top_printers.cmi
+%%OCAML_SITELIBDIR%%/num/META
+%%OCAML_SITELIBDIR%%/ocamlbuild/META
+%%OCAML_SITELIBDIR%%/stdlib/META
+%%OCAML_SITELIBDIR%%/str/META
+%%OCAML_SITELIBDIR%%/threads/META
+%%OCAML_SITELIBDIR%%/unix/META
 lib/ocaml/topfind
 man/man1/ocamlfind.1.gz
 man/man5/META.5.gz
@@ -76,11 +84,13 @@ man/man5/site-lib.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/x400.html
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/x412.html
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/x464.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x468.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x471.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x475.html
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/x81.html
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/x89.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.dtd
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/TIMESTAMP
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/c1032.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Findlib.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Fl_metascanner.html
@@ -101,14 +111,13 @@ man/man5/site-lib.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Fl_metascanner.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Fl_package_base.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Topfind.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/c1024.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/p1022.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/p1030.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/p15.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/p679.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/p685.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/r17.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r681.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r775.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r964.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r687.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r783.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r972.html
 %%PORTDOCS%%%%DOCSDIR%%/src/findlib.dsl
 %%PORTDOCS%%%%DOCSDIR%%/src/findlib.sgml
 %%PORTDOCS%%%%DOCSDIR%%/src/findlib_conf.mod
@@ -121,24 +130,24 @@ man/man5/site-lib.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/src/findlib_reference.xml
 %%PORTDOCS%%%%DOCSDIR%%/src/findlib_sitelib.mod
 %%PORTDOCS%%%%DOCSDIR%%/src/findlib_topfind.mod
+@dirrm %%OCAML_SITELIBDIR%%/bigarray
+@dirrm %%OCAML_SITELIBDIR%%/bytes
+@dirrm %%OCAML_SITELIBDIR%%/camlp4
+@dirrm %%OCAML_SITELIBDIR%%/compiler-libs
+@dirrm %%OCAML_SITELIBDIR%%/dynlink
+@dirrm %%OCAML_SITELIBDIR%%/findlib
+@dirrm %%OCAML_SITELIBDIR%%/graphics
+%%TOOLBOX%%@dirrmtry %%OCAML_SITELIBDIR%%/labltk
+@dirrm %%OCAML_SITELIBDIR%%/num
+@dirrm %%OCAML_SITELIBDIR%%/num-top
+@dirrm %%OCAML_SITELIBDIR%%/ocamlbuild
+@dirrm %%OCAML_SITELIBDIR%%/stdlib
+@dirrm %%OCAML_SITELIBDIR%%/str
+@dirrm %%OCAML_SITELIBDIR%%/threads
+@dirrm %%OCAML_SITELIBDIR%%/unix
+@dirrmtry %%OCAML_SITELIBDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ref-html/lib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ref-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/src
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrmtry share/doc/ocaml
-@dirrm lib/ocaml/site-lib/unix
-@dirrm lib/ocaml/site-lib/threads
-@dirrm lib/ocaml/site-lib/str
-@dirrm lib/ocaml/site-lib/stdlib
-@dirrm lib/ocaml/site-lib/ocamlbuild
-@dirrm lib/ocaml/site-lib/num-top
-@dirrm lib/ocaml/site-lib/num
-@dirrm lib/ocaml/site-lib/graphics
-@dirrm lib/ocaml/site-lib/findlib
-@dirrm lib/ocaml/site-lib/dynlink
-@dirrm lib/ocaml/site-lib/camlp4
-@dirrm lib/ocaml/site-lib/compiler-libs
-@dirrm lib/ocaml/site-lib/bigarray
-%%TOOLBOX%%@dirrmtry lib/ocaml/site-lib/labltk
-@dirrmtry lib/ocaml/site-lib
