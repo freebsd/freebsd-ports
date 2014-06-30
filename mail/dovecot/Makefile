@@ -3,12 +3,12 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	1.2.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/ \
 		http://www.rename-it.nl/dovecot/${PORTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 LICENSE=	LGPL21 MIT
@@ -30,6 +30,8 @@ CONFLICTS=	dovecot2-2.[0-9].*
 
 USES=		iconv libtool:keepla
 USE_RC_SUBR=	dovecot
+
+PORTSCOUT=	limit:^1\.2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
