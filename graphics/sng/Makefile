@@ -6,7 +6,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	ports@robakdesign.com
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Compiler/decompiler for Scriptable Network Graphics
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
