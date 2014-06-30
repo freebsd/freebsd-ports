@@ -181,7 +181,6 @@
     SUBDIR += eliom
     SUBDIR += elog
     SUBDIR += emacs-w3m
-    SUBDIR += emacs-w3m-xemacs21-mule
     SUBDIR += encode-explorer
     SUBDIR += entrans
     SUBDIR += ephemera
