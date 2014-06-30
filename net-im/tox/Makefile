@@ -1,8 +1,8 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
 
-PORTNAME=	ProjectTox-Core
-PORTVERSION=	0.140611
+PORTNAME=	toxcore
+PORTVERSION=	0.140630
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,9 +19,9 @@ LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
-GH_PROJECT=	ProjectTox-Core
+GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	63f25f8
+GH_COMMIT=	8f7638d
 
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 AUTOMAKE_ARGS=	-a -c -f
