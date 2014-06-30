@@ -8,7 +8,7 @@ MASTER_SITES=	http://opensource.dynamoid.com/	\
 		http://files.gslin.org/~gslin/Software/
 PKGNAMEPREFIX=	pecl-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for the standard PHP serializer
 
 USE_PHP=	session

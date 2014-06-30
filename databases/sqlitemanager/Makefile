@@ -7,7 +7,7 @@ CATEGORIES=	databases www
 MASTER_SITES=	SF
 DISTNAME=	SQLiteManager-${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual web based tool to manage SQLite database
 
 DEFAULT_PHP_VER=53

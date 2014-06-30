@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based file system backed by Amazon S3
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \

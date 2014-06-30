@@ -6,7 +6,7 @@ PORTVERSION=	2.2.13
 CATEGORIES=	www
 MASTER_SITES=	SF/flatfrog/flatfrog/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A templating engine working in php
 
 NO_BUILD=	yes

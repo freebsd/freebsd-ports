@@ -7,7 +7,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	http://cloud.github.com/downloads/liquibase/liquibase/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-bin${EXTRACT_SUFX}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Change Management
 
 LICENSE=	APACHE20

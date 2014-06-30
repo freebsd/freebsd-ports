@@ -5,7 +5,7 @@ PORTNAME=	the_silver_searcher
 PORTVERSION=	0.22.0
 CATEGORIES=	textproc
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A code-searching tool similar to ack but faster
 
 LICENSE=	APACHE20
