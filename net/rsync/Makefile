@@ -50,7 +50,7 @@ ACL_DESC=	Add backward-compatibility for the --acls option
 # define default options
 OPTIONS_DEFAULT=SSH FLAGS
 
-ZLIB_BASE_CONFIGURE_ARGS=	--with-included-zlib=no
+ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
 TIMELIMIT_EXTRA_PATCHES=	${WRKSRC}/patches/time-limit.diff
 ATIMES_EXTRA_PATCHES=		${WRKSRC}/patches/atimes.diff
 FLAGS_EXTRA_PATCHES=		${WRKSRC}/patches/fileflags.diff \
