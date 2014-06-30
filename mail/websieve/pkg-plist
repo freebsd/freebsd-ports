@@ -1,5 +1,5 @@
 %%WWWDIR%%/websieve.pl
-etc/websieve/websieve.conf.sample
+@sample etc/websieve/websieve.conf.sample
 etc/websieve/funclib.pl
 @dirrmtry etc/websieve
 @dirrm %%WWWDIR%%
