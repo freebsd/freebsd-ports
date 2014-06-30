@@ -32,13 +32,9 @@ PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${RELDIR} \
 do-build:
 	${RM} -Rf ${WRKSRC}/docsrc
 
-pre-su-install:
+do-install:
 	${MKDIR} ${STAGEDIR}${INSTDIR}
 	${FIND} ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
-
-do-install:
-	@cd ${WRKSRC} && ${TAR} cpf - . | (cd ${STAGEDIR}${INSTDIR} && ${TAR} xpf -)
-
+	cd ${WRKSRC} && ${PAX} -rw . ${STAGEDIR}${INSTDIR}
 
 .include <bsd.port.mk>
