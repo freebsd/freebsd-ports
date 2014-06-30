@@ -1,4 +1,5 @@
 bin/gjiten
+man/man1/gjiten.1.gz
 share/application-registry/gjiten.desktop
 share/applications/gjiten.desktop
 %%DATADIR%%/dics/compdic
@@ -26,7 +27,3 @@ share/pixmaps/left_ptr_question.png
 @dirrmtry share/locale/de_CH
 @dirrmtry share/gnome/help/gjiten/C
 @dirrmtry share/gnome/help/gjiten
-@dirrmtry share/gnome/help
-@dirrmtry share/gnome
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
