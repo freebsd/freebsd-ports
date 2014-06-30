@@ -133,7 +133,6 @@
     SUBDIR += wenju
     SUBDIR += wordpress-zh_CN
     SUBDIR += wordpress-zh_TW
-    SUBDIR += xemacs21
     SUBDIR += xpdf
     SUBDIR += xsim
     SUBDIR += ydict

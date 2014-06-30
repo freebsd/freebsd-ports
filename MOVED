@@ -6211,3 +6211,19 @@ deskutils/checkrdf||2014-06-30|Removed: Abandonware, please consider using other
 graphics/k3d||2014-06-30|Has expired: Broken for more than 5 months
 mail/cyrus-imapd2|mail/cyrus-imapd24|2014-06-30|Has expired: Cyrus IMAPd 2.1.X have been deprecated, consider using 2.4.X.
 mail/cyrus-imapd22|mail/cyrus-imapd24|2014-06-30|Has expired: No further releases of 2.2.X are planned, consider using 2.4.X.
+editors/xemacs||2014-06-30|Removed: unmaintained upstream
+editors/xemacs-devel||2014-06-30|Removed: unmaintained upstream
+chinese/xemacs||2014-06-30|Removed: unmaintained upstream
+editors/flim-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+editors/semi-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+editors/xemacs-devel-mule||2014-06-30|Removed: depend on editors/xemacs-devel
+editors/xemacs-mule-packages||2014-06-30|Removed: depend on editors/xemacs
+editors/xemacs-packages||2014-06-30|Removed: depend on editors/xemacs
+editors/xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+japanese/migemo-xemacs-devel-mule||2014-06-30|Removed: depend on editors/xemacs-devel
+japanese/xemacs21-canna||2014-06-30|Removed: depend on editors/xemacs
+mail/emh-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+mail/wanderlust-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+textproc/dictem-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+textproc/uim-el-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+www/emacs-w3m-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs

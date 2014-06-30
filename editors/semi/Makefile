@@ -83,11 +83,6 @@ INFO+=		mime-ui-ja
 .endif
 .endif
 
-pre-build:
-.if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} -C ${.CURDIR} pkg-el-copy
-.endif
-
 post-build:
 .if defined(BUILD_INFO_BY_EMACS) && (${BUILD_INFO_BY_EMACS} == "YES")
 	@${MAKE} -C ${.CURDIR} info-build-by-emacs
@@ -98,9 +93,6 @@ post-build:
 pre-install:
 .if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
 	@${MAKE} -C ${.CURDIR} mkdir-site-packages
-.endif
-.if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} -C ${.CURDIR} pkg-el-install
 .endif
 
 post-install:
@@ -147,18 +139,6 @@ info-build-by-emacs:
 		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
 	done)
 .endif
-
-pkg-el-copy:
-	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
-	${CP} ${FILESDIR}/_pkg.el ${WRKSRC}/_pkg.el ;\
-	fi)
-
-pkg-el-install:
-	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
-	${MKDIR} ${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
-	${INSTALL_DATA} ${FILESDIR}/_pkg.el \
-		${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
-	fi)
 
 mkdir-site-packages:
 	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \

@@ -101,7 +101,6 @@
     SUBDIR += denature
     SUBDIR += dict
     SUBDIR += dictem
-    SUBDIR += dictem-xemacs21-mule
     SUBDIR += dictfmt
     SUBDIR += dictionary
     SUBDIR += diffmark
@@ -1475,7 +1474,6 @@
     SUBDIR += txt2tags
     SUBDIR += uim
     SUBDIR += uim-el
-    SUBDIR += uim-el-xemacs21-mule
     SUBDIR += uim-gtk
     SUBDIR += uim-gtk3
     SUBDIR += uim-kde4

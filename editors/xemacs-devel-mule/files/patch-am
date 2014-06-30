@@ -1,8 +1,0 @@
---- modules/common/Makefile.common~	Mon Sep  1 10:40:23 2003
-+++ modules/common/Makefile.common	Tue Sep  9 15:33:12 2003
-@@ -86,4 +86,4 @@
- extraclean: distclean
- 
- install: $(OBJECT_TO_BUILD)
--	$(INSTALL_PROGRAM) $< $(INSTALLPATH)
-+	$(INSTALL_PROGRAM) ${.ALLSRC} $(INSTALLPATH)
