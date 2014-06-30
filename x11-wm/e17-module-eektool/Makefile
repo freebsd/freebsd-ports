@@ -3,21 +3,22 @@
 
 PORTNAME=	eektool
 PORTVERSION=	20130510
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	An e17 module to execute shell command and display the output
+COMMENT=	e17 module to execute shell command and display the output
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
 DIST_SUBDIR=	e17
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig tar:bzip2
-USE_EFL=	edje libtool_hack modarch_hack
+CONFIGURE_ARGS=	--disable-static
+USES=		gmake libtool pkgconfig tar:bzip2
+USE_EFL=	edje modarch_hack
 
 OPTIONS_DEFINE=	NLS
 
