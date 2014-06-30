@@ -23,7 +23,7 @@ keygen_cmd="shibboleth_sp_keygen"
 
 shibboleth_sp_user=%%SHIBD_USER%%
 shibboleth_sp_group=%%SHIBD_GROUP%%
-www_group=%%WWWGROUP%%
+www_group=%%WWWGRP%%
 
 load_rc_config $name
 
