@@ -13,37 +13,35 @@ include/phat/phatvkeyboard.h
 include/phat/phathkeyboard.h
 include/phat/phatpad.h
 include/phat/phatknob.h
-lib/libphat.so.0
-lib/libphat.so
-lib/libphat.la
 lib/libphat.a
+lib/libphat.so
+lib/libphat.so.0
+lib/libphat.so.0.0.0
 libdata/pkgconfig/phat.pc
 %%DATADIR%%/pixmaps/knob.png
+%%PORTDOCS%%%%DOCSDIR%%/PhatFanSlider.html
+%%PORTDOCS%%%%DOCSDIR%%/PhatHFanSlider.html
+%%PORTDOCS%%%%DOCSDIR%%/PhatHKeyboard.html
+%%PORTDOCS%%%%DOCSDIR%%/PhatKeyboard.html
+%%PORTDOCS%%%%DOCSDIR%%/PhatSliderButton.html
+%%PORTDOCS%%%%DOCSDIR%%/PhatVFanSlider.html
+%%PORTDOCS%%%%DOCSDIR%%/PhatVKeyboard.html
+%%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/phat-PhatKnob.html
+%%PORTDOCS%%%%DOCSDIR%%/phat-PhatPad.html
+%%PORTDOCS%%%%DOCSDIR%%/phat.devhelp
+%%PORTDOCS%%%%DOCSDIR%%/phat.devhelp2
+%%PORTDOCS%%%%DOCSDIR%%/phat.html
+%%PORTDOCS%%%%DOCSDIR%%/phatwidgets.html
+%%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/up.png
+%%PORTDOCS%%%%DOCSDIR%%/use.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-share/gtk-doc/html/phat/PhatFanSlider.html
-share/gtk-doc/html/phat/PhatHFanSlider.html
-share/gtk-doc/html/phat/PhatHKeyboard.html
-share/gtk-doc/html/phat/PhatKeyboard.html
-share/gtk-doc/html/phat/PhatSliderButton.html
-share/gtk-doc/html/phat/PhatVFanSlider.html
-share/gtk-doc/html/phat/PhatVKeyboard.html
-share/gtk-doc/html/phat/home.png
-share/gtk-doc/html/phat/index.html
-share/gtk-doc/html/phat/index.sgml
-share/gtk-doc/html/phat/install.html
-share/gtk-doc/html/phat/left.png
-share/gtk-doc/html/phat/phat-PhatKnob.html
-share/gtk-doc/html/phat/phat-PhatPad.html
-share/gtk-doc/html/phat/phat.devhelp
-share/gtk-doc/html/phat/phat.devhelp2
-share/gtk-doc/html/phat/phat.html
-share/gtk-doc/html/phat/phatwidgets.html
-share/gtk-doc/html/phat/right.png
-share/gtk-doc/html/phat/style.css
-share/gtk-doc/html/phat/up.png
-share/gtk-doc/html/phat/use.html
-@dirrm share/gtk-doc/html/phat
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
 @dirrm include/phat
