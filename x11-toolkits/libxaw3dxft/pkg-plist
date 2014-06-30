@@ -1,7 +1,3 @@
-lib/libXaw3dxft.a
-lib/libXaw3dxft.la
-lib/libXaw3dxft.so
-lib/libXaw3dxft.so.8
 include/X11/Xaw3dxft/AllWidgets.h
 include/X11/Xaw3dxft/AsciiSink.h
 include/X11/Xaw3dxft/AsciiSinkP.h
@@ -78,5 +74,9 @@ include/X11/Xaw3dxft/VendorEP.h
 include/X11/Xaw3dxft/Xaw3dP.h
 include/X11/Xaw3dxft/Xaw3dXft.h
 include/X11/Xaw3dxft/XawImP.h
+lib/libXaw3dxft.a
+lib/libXaw3dxft.so
+lib/libXaw3dxft.so.8
+lib/libXaw3dxft.so.8.0.2
 libdata/pkgconfig/libxaw3dxft.pc
 @dirrm include/X11/Xaw3dxft
