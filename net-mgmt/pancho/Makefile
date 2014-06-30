@@ -18,20 +18,15 @@ WRKSRC=		${WRKDIR}/Pancho-${PORTVERSION}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		pancho.1
-
 DOCS=		README README.plugins Plugin.sample
 
-NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/lib/Pancho/Plugins/README ${WRKSRC}/README.plugins
 	@${MV} ${WRKSRC}/lib/Pancho/Plugins/Plugin.sample ${WRKSRC}/
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/samples/sample.conf ${PREFIX}/etc/pancho.conf.sample
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/samples/sample.conf ${STAGEDIR}${PREFIX}/etc/pancho.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
