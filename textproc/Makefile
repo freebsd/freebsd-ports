@@ -421,7 +421,6 @@
     SUBDIR += mathml-xsd
     SUBDIR += mdocml
     SUBDIR += meld
-    SUBDIR += metaf2xml
     SUBDIR += metauml
     SUBDIR += mgdiff
     SUBDIR += mguesser
