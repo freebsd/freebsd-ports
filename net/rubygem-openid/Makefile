@@ -3,14 +3,16 @@
 
 PORTNAME=	openid
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An OpenID library written in pure Ruby
+COMMENT=	OpenID library written in pure Ruby
 
-RUN_DEPENDS=	rubygem-yadis>=0.3.4:${PORTSDIR}/net/rubygem-yadis
+LICENSE=	APACHE20 RUBY
+LICENSE_COMB=	dual
 
 GEM_NAME=	${DISTNAME}
 
