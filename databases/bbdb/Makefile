@@ -17,10 +17,7 @@ USES=		makeinfo
 ALL_TARGET=	bbdb info
 MAKE_ARGS=	MAKE="${MAKE} clean MAKEINFO=\"makeinfo --no-split\""
 BBDB_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-DIRSECTION=	"The Emacs editor and associated tools"
-INFOENTRY=	"* BBDB: (bbdb).             The Insidious Big Brother Database."
-PLIST_SUB+=	BBDB_LISPDIR=${BBDB_LISPDIR} \
-		DIRSECTION=${DIRSECTION} INFOENTRY=${INFOENTRY}
+PLIST_SUB+=	BBDB_LISPDIR=${BBDB_LISPDIR}
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
@@ -28,12 +25,15 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD}
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MDOCS}
+INFO=	bbdb
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/lisp/*.el ${WRKSRC}/lisp/*.elc ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 .if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/texinfo/bbdb.info ${STAGEDIR}${PREFIX}/info
-	install-info --section=${DIRSECTION} --entry=${INFOENTRY} ${STAGEDIR}${PREFIX}/info/bbdb.info ${STAGEDIR}${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.mk>

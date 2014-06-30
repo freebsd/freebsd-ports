@@ -32,6 +32,3 @@
 %%BBDB_LISPDIR%%/bbdb-xemacs.el
 %%BBDB_LISPDIR%%/bbdb-xemacs.elc
 @dirrm %%BBDB_LISPDIR%%
-%%PORTDOCS%%@unexec install-info --delete --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/bbdb.info %D/info/dir
-%%PORTDOCS%%info/bbdb.info
-%%PORTDOCS%%@exec install-info --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/bbdb.info %D/info/dir
