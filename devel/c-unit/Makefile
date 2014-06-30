@@ -3,6 +3,7 @@
 
 PORTNAME=	c-unit
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,6 +18,9 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 USE_LDCONFIG=	yes
+
+DATADIR=	${PREFIX}/share/CUnit
+EXAMPLESDIR=	${PREFIX}/share/examples/CUnit
 
 AUTOMAKE_ARGS=	--add-missing
 LIBTOOLIZE_ARGS=--copy --force --install
