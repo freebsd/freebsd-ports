@@ -11,7 +11,7 @@ DISTNAME=	hping3-20051105
 MAINTAINER=	ecu@200ok.org
 COMMENT=	Network auditing tool
 
-LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	hping-[0-9]*
@@ -20,42 +20,31 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 
 PLIST_DIRS+=	lib/hping
-PLIST_FILES=	sbin/hping lib/hping/hpingstdlib.htcl
+PLIST_FILES=	sbin/hping lib/hping/hpingstdlib.htcl man/man8/hping.8.gz
 PORTDOCS=	AS-BACKDOOR HPING2-HOWTO.txt HPING2-IS-OPEN \
 		MORE-FUN-WITH-IPID SPOOFED_SCAN.txt APD.txt \
 		API.txt HPING3.txt
-MAN8=		hping.8
 
-EXAMPLES=	README apd.htcl apd2.htcl ciscoios.htcl ciscoios0.htcl \
+PORTEXAMPLES=	README apd.htcl apd2.htcl ciscoios.htcl ciscoios0.htcl \
 		cloner.htcl igrp.htcl isn-spectrogram.htcl nat-noise.htcl \
 		passivets.htcl ping.htcl raw.htcl show-tcpseq.htcl \
 		showled.htcl
 
-.if !defined(NOPORTDOCS)
-PLIST_DIRS+=	%%EXAMPLESDIR%%
-.for file in ${EXAMPLES}
-PLIST_FILES+=	%%EXAMPLESDIR%%/${file}
-.endfor
-.endif
-
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hping3 ${PREFIX}/sbin/hping
-	${INSTALL_MAN} ${WRKSRC}/docs/hping3.8 ${PREFIX}/man/man8/hping.8
-	${MKDIR} ${PREFIX}/lib/hping
-	${INSTALL_DATA} ${WRKSRC}/lib/hpingstdlib.htcl ${PREFIX}/lib/hping/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}
-.for i in ${EXAMPLES}
+	${INSTALL_PROGRAM} ${WRKSRC}/hping3 ${STAGEDIR}${PREFIX}/sbin/hping
+	${INSTALL_MAN} ${WRKSRC}/docs/hping3.8 ${STAGEDIR}${PREFIX}/man/man8/hping.8
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/hping
+	${INSTALL_DATA} ${WRKSRC}/lib/hpingstdlib.htcl ${STAGEDIR}${PREFIX}/lib/hping/
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTEXAMPLES}
 	${REINPLACE_CMD} -e \
 	's|hpingstdlib.htcl|${PREFIX}/lib/hping/hpingstdlib.htcl|' \
 		${WRKSRC}/lib/${i}
 .endfor
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/lib/|} ${EXAMPLESDIR}
-.endif
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/lib/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
