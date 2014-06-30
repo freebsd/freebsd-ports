@@ -34,7 +34,6 @@ GCONF_SCHEMAS=	gnome-shell.schemas
 
 MAN1=		gnome-shell.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/configure
