@@ -16,6 +16,5 @@ LICENSE=	GPLv2
 
 THEME=		Pearl
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../cursor-chameleon-white/files/Makefile.common"
 .include <bsd.port.mk>
