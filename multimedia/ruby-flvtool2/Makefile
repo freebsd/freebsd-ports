@@ -8,7 +8,7 @@ MASTER_SITES=	RUBYFORGE
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	ruby-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulation tool for Macromedia Flash Video files
 
 USES=		tar:tgz

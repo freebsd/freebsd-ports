@@ -6,7 +6,7 @@ PORTVERSION=	0.2.3
 PORTREVISION=	1
 CATEGORIES=	devel pear
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gearman client libraray for PHP
 
 BUILD_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:${PORTSDIR}/devel/pear

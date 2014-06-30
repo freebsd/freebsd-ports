@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/linux-diag/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System Utilities Based on Sysfs
 
 GNU_CONFIGURE=	yes

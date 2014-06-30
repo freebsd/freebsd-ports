@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network interface of Tokyo Cabinet
 
 BUILD_DEPENDS=	tokyocabinet>=1.4.20:${PORTSDIR}/databases/tokyocabinet

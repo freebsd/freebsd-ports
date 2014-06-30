@@ -5,7 +5,7 @@ PORTVERSION=	196
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common utilities for MySQL
 
 LICENSE=	BSD

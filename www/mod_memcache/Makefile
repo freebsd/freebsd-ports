@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache 2.2.x module to manage apr_memcache connections
 
 GNU_CONFIGURE=	yes

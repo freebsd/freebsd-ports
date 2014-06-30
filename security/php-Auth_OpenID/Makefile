@@ -8,7 +8,7 @@ MASTER_SITES=	http://openidenabled.com/files/php-openid/packages/
 PKGNAMEPREFIX=	php-
 DISTNAME=	php-openid-${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP OpenID library
 
 RUN_DEPENDS=	pear:${PORTSDIR}/devel/pear

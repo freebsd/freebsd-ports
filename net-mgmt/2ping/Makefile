@@ -5,7 +5,7 @@ PORTVERSION=	2.1.1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://www.finnie.org/software/2ping/
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bi-directional ping utility
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirror.facebook.net/facebook/flvtool++/
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for hinting and manipulating the metadata of FLV files
 
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs

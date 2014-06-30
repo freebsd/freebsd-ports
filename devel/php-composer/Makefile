@@ -11,7 +11,7 @@ DISTNAME=	composer
 EXTRACT_SUFX=	.phar
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dependency Manager for PHP
 
 LICENSE=	MIT

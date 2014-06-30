@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based RSS/RDF/ATOM news aggregator
 
 USE_PHP=	gettext iconv mbstring session xml zlib
