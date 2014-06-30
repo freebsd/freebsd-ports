@@ -3,7 +3,7 @@
 
 PORTNAME=	libredblack
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Library that provides the red-black balanced tree algorithm
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
