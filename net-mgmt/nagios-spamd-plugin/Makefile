@@ -22,7 +22,6 @@ PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 
 NAGIOS_PLUGIN_DIR=	libexec/nagios
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/check_spamd.pl
@@ -33,7 +32,7 @@ post-patch:
 		${WRKSRC}/check_spamd.pl
 
 do-install:
-	${MKDIR} ${PREFIX}/${NAGIOS_PLUGIN_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/check_spamd.pl ${PREFIX}/${NAGIOS_PLUGIN_DIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${NAGIOS_PLUGIN_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/check_spamd.pl ${STAGEDIR}${PREFIX}/${NAGIOS_PLUGIN_DIR}
 
 .include <bsd.port.mk>
