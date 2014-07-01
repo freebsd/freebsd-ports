@@ -243,7 +243,6 @@
     SUBDIR += php55-extensions
     SUBDIR += php_doc
     SUBDIR += picoc
-    SUBDIR += pike76
     SUBDIR += pike78
     SUBDIR += polyml
     SUBDIR += ptoc
