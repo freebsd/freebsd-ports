@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Free image processing system
 
+BROKEN=		Fails to package
 OPTIONS_DEFINE=	PYTHON DOCS
 OPTIONS_DEFAULT=
 PYTHON_DESC=	Create Python bindings
