@@ -15,7 +15,8 @@ COMMENT?=	Multithreaded SQL database (server)
 LICENSE=	GPLv2
 
 SLAVEDIRS=	databases/mysql55-client
-USES=		cmake shebangfix
+USES=		cmake readline shebangfix
+CXXFLAGS+=	${CPPFLAGS}
 NO_OPTIONS_SORT=yes
 
 OPTIONS_DEFINE=	SSL FASTMTX
@@ -77,9 +78,6 @@ MAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 
 		mysqltest.1 perror.1 replace.1 resolve_stack_dump.1 resolveip.1
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
-.else
-USES+=		readline
-CXXFLAGS+=	${CPPFLAGS}
 .endif
 
 post-patch:
