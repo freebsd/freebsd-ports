@@ -80,6 +80,8 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/mysql
+.else
+USES+=		readline
 .endif
 
 post-patch:
