@@ -4,18 +4,18 @@
 
 PORTNAME?=	clearlooks
 PORTVERSION=	0.6.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/clearlooks/clearlooks/clearlooks%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	GTK+ 2.x engine based on Bluecurve
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20
-USES=		pkgconfig
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pkgconfig tar:bzip2
+USE_GNOME=	gtk20
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -63,7 +63,6 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 .if ${PORTNAME} != "clearlooks"
 	@${REINPLACE_CMD} -e 's|gtkrc||' \
 		${WRKSRC}/themes/Clearlooks/gtk-2.0/Makefile.in
