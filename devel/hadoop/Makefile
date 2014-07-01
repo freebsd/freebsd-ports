@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/core/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	apache-
 DIST_SUBDIR=	hadoop
 
-MAINTAINER=	pfg@apache.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
