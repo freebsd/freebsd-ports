@@ -25,26 +25,15 @@
 %%OVERWRITE%%@unexec if test -e /usr/bin/lpr; then chmod -h 06555 /usr/bin/lpr; fi
 %%OVERWRITE%%@unexec if test -e /usr/bin/lprm; then chmod -h 06555 /usr/bin/lprm; fi
 %%OVERWRITE%%@unexec if test -e /usr/sbin/lpc; then chmod -h 02555 /usr/sbin/lpc; fi
-@unexec if cmp -s %D/etc/cups/cups-files.conf.sample %D/etc/cups/cups-files.conf; then rm -f %D/etc/cups/cups-files.conf; fi
-@comment %%ETCDIR%%/cups-files.conf.sample
-%%ETCDIR%%/cups-files.conf.sample
-@exec if test ! -f %D/etc/cups/cups-files.conf; then cp -p %D/etc/cups/cups-files.conf.sample %D/etc/cups/cups-files.conf; fi
-@unexec if cmp -s %D/etc/cups/cupsd.conf.sample %D/etc/cups/cupsd.conf; then rm -f %D/etc/cups/cupsd.conf; fi
-%%ETCDIR%%/cupsd.conf.sample
-@exec if test ! -f %D/etc/cups/cupsd.conf; then cp -p %D/etc/cups/cupsd.conf.sample %D/etc/cups/cupsd.conf; fi
-@unexec if cmp -s %D/etc/cups/mime.convs.sample %D/etc/cups/mime.convs; then rm -f %D/etc/cups/mime.convs; fi
-%%ETCDIR%%/mime.convs.sample
-@exec if test ! -f %D/etc/cups/mime.convs; then cp -p %D/etc/cups/mime.convs.sample %D/etc/cups/mime.convs; fi
-@unexec if cmp -s %D/etc/cups/mime.types.sample %D/etc/cups/mime.types; then rm -f %D/etc/cups/mime.types; fi
-%%ETCDIR%%/mime.types.sample
-@exec if test ! -f %D/etc/cups/mime.types; then cp -p %D/etc/cups/mime.types.sample %D/etc/cups/mime.types; fi
-@unexec if cmp -s %D/etc/cups/snmp.conf.sample %D/etc/cups/snmp.conf; then rm -f %D/etc/cups/snmp.conf; fi
-%%ETCDIR%%/snmp.conf.sample
-@exec if test ! -f %D/etc/cups/snmp.conf; then cp -p %D/etc/cups/snmp.conf.sample %D/etc/cups/snmp.conf; fi
+@sample %%ETCDIR%%/cups-files.conf.sample
+@sample %%ETCDIR%%/cupsd.conf.sample
+@sample %%ETCDIR%%/mime.convs.sample
+@sample %%ETCDIR%%/mime.types.sample
+@sample %%ETCDIR%%/snmp.conf.sample
 @exec chgrp cups %D/etc/cups
-%%WITH_PAMD%%@unexec if cmp -s %D/etc/pam.d/cups.default %D/etc/pam.d/cups; then rm -f %D/etc/pam.d/cups ; fi
-%%WITH_PAMD%%etc/pam.d/cups.default
-%%WITH_PAMD%%@exec if [ ! -f %D/etc/pam.d/cups ] ; then cp -p %D/%F %B/cups; fi
+%%PAM%%@unexec if cmp -s %D/etc/pam.d/cups.default %D/etc/pam.d/cups; then rm -f %D/etc/pam.d/cups ; fi
+%%PAM%%etc/pam.d/cups.default
+%%PAM%%@exec if [ ! -f %D/etc/pam.d/cups ] ; then cp -p %D/%F %B/cups; fi
 bin/cancel
 bin/cupstestdsc
 bin/cupstestppd
@@ -74,7 +63,6 @@ lib/libcupsmime.so
 lib/libcupsmime.so.1
 lib/libcupsppdc.so
 lib/libcupsppdc.so.1
-%%PHP%%lib/php/%%PHP_EXT_DIR%%/phpcups.so
 libexec/cups/backend/http
 libexec/cups/backend/https
 libexec/cups/backend/ipp
@@ -83,7 +71,7 @@ libexec/cups/backend/lpd
 libexec/cups/backend/snmp
 libexec/cups/backend/socket
 libexec/cups/backend/usb
-%%DNSSD%%libexec/cups/backend/dnssd
+%%AVAHI%%libexec/cups/backend/dnssd
 %%MDNSRESPONDER%%libexec/cups/backend/dnssd
 %%MDNSRESPONDER%%libexec/cups/backend/mdns
 libexec/cups/cgi-bin/admin.cgi
@@ -97,7 +85,7 @@ libexec/cups/daemon/cups-exec
 libexec/cups/daemon/cups-lpd
 libexec/cups/monitor/bcp
 libexec/cups/monitor/tbcp
-%%WITH_DBUS%%libexec/cups/notifier/dbus
+%%DBUS%%libexec/cups/notifier/dbus
 libexec/cups/notifier/mailto
 libexec/cups/notifier/rss
 man/man1/cancel.1.gz
@@ -764,6 +752,74 @@ sbin/ulpt-cupsd.sh
 %%DATADIR%%/templates/printer.tmpl
 %%DATADIR%%/templates/printers-header.tmpl
 %%DATADIR%%/templates/printers.tmpl
+%%DATADIR%%/templates/pt_BR/add-class.tmpl
+%%DATADIR%%/templates/pt_BR/add-printer.tmpl
+%%DATADIR%%/templates/pt_BR/add-rss-subscription.tmpl
+%%DATADIR%%/templates/pt_BR/admin.tmpl
+%%DATADIR%%/templates/pt_BR/choose-device.tmpl
+%%DATADIR%%/templates/pt_BR/choose-make.tmpl
+%%DATADIR%%/templates/pt_BR/choose-model.tmpl
+%%DATADIR%%/templates/pt_BR/choose-serial.tmpl
+%%DATADIR%%/templates/pt_BR/choose-uri.tmpl
+%%DATADIR%%/templates/pt_BR/class-added.tmpl
+%%DATADIR%%/templates/pt_BR/class-confirm.tmpl
+%%DATADIR%%/templates/pt_BR/class-deleted.tmpl
+%%DATADIR%%/templates/pt_BR/class-jobs-header.tmpl
+%%DATADIR%%/templates/pt_BR/class-modified.tmpl
+%%DATADIR%%/templates/pt_BR/class.tmpl
+%%DATADIR%%/templates/pt_BR/classes-header.tmpl
+%%DATADIR%%/templates/pt_BR/classes.tmpl
+%%DATADIR%%/templates/pt_BR/command.tmpl
+%%DATADIR%%/templates/pt_BR/edit-config.tmpl
+%%DATADIR%%/templates/pt_BR/error-op.tmpl
+%%DATADIR%%/templates/pt_BR/error.tmpl
+%%DATADIR%%/templates/pt_BR/header.tmpl
+%%DATADIR%%/templates/pt_BR/help-header.tmpl
+%%DATADIR%%/templates/pt_BR/job-cancel.tmpl
+%%DATADIR%%/templates/pt_BR/job-hold.tmpl
+%%DATADIR%%/templates/pt_BR/job-move.tmpl
+%%DATADIR%%/templates/pt_BR/job-moved.tmpl
+%%DATADIR%%/templates/pt_BR/job-release.tmpl
+%%DATADIR%%/templates/pt_BR/job-restart.tmpl
+%%DATADIR%%/templates/pt_BR/jobs-header.tmpl
+%%DATADIR%%/templates/pt_BR/jobs.tmpl
+%%DATADIR%%/templates/pt_BR/list-available-printers.tmpl
+%%DATADIR%%/templates/pt_BR/modify-class.tmpl
+%%DATADIR%%/templates/pt_BR/modify-printer.tmpl
+%%DATADIR%%/templates/pt_BR/norestart.tmpl
+%%DATADIR%%/templates/pt_BR/option-boolean.tmpl
+%%DATADIR%%/templates/pt_BR/option-conflict.tmpl
+%%DATADIR%%/templates/pt_BR/option-header.tmpl
+%%DATADIR%%/templates/pt_BR/option-pickmany.tmpl
+%%DATADIR%%/templates/pt_BR/option-pickone.tmpl
+%%DATADIR%%/templates/pt_BR/option-trailer.tmpl
+%%DATADIR%%/templates/pt_BR/pager.tmpl
+%%DATADIR%%/templates/pt_BR/printer-accept.tmpl
+%%DATADIR%%/templates/pt_BR/printer-added.tmpl
+%%DATADIR%%/templates/pt_BR/printer-configured.tmpl
+%%DATADIR%%/templates/pt_BR/printer-confirm.tmpl
+%%DATADIR%%/templates/pt_BR/printer-default.tmpl
+%%DATADIR%%/templates/pt_BR/printer-deleted.tmpl
+%%DATADIR%%/templates/pt_BR/printer-jobs-header.tmpl
+%%DATADIR%%/templates/pt_BR/printer-modified.tmpl
+%%DATADIR%%/templates/pt_BR/printer-purge.tmpl
+%%DATADIR%%/templates/pt_BR/printer-reject.tmpl
+%%DATADIR%%/templates/pt_BR/printer-start.tmpl
+%%DATADIR%%/templates/pt_BR/printer-stop.tmpl
+%%DATADIR%%/templates/pt_BR/printer.tmpl
+%%DATADIR%%/templates/pt_BR/printers-header.tmpl
+%%DATADIR%%/templates/pt_BR/printers.tmpl
+%%DATADIR%%/templates/pt_BR/restart.tmpl
+%%DATADIR%%/templates/pt_BR/samba-export.tmpl
+%%DATADIR%%/templates/pt_BR/samba-exported.tmpl
+%%DATADIR%%/templates/pt_BR/search.tmpl
+%%DATADIR%%/templates/pt_BR/set-printer-options-header.tmpl
+%%DATADIR%%/templates/pt_BR/set-printer-options-trailer.tmpl
+%%DATADIR%%/templates/pt_BR/subscription-added.tmpl
+%%DATADIR%%/templates/pt_BR/subscription-canceled.tmpl
+%%DATADIR%%/templates/pt_BR/test-page.tmpl
+%%DATADIR%%/templates/pt_BR/trailer.tmpl
+%%DATADIR%%/templates/pt_BR/users.tmpl
 %%DATADIR%%/templates/restart.tmpl
 %%DATADIR%%/templates/ru/add-class.tmpl
 %%DATADIR%%/templates/ru/add-printer.tmpl
@@ -845,6 +901,7 @@ sbin/ulpt-cupsd.sh
 %%DATADIR%%/templates/test-page.tmpl
 %%DATADIR%%/templates/trailer.tmpl
 %%DATADIR%%/templates/users.tmpl
+%%LIBUSB%%%%DATADIR%%/usb/org.cups.usb-quirks
 %%PORTDOCS%%%%DOCSDIR%%/ca/index.html
 %%PORTDOCS%%%%DOCSDIR%%/cs/index.html
 %%PORTDOCS%%%%DOCSDIR%%/cups-printable.css
@@ -954,14 +1011,15 @@ sbin/ulpt-cupsd.sh
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/it/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pt_BR/index.html
 %%PORTDOCS%%%%DOCSDIR%%/robots.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ulpt-cupsd.conf
 share/applications/cups.desktop
-%%WITH_ICONS%%share/icons/hicolor/128x128/apps/cups.png
-%%WITH_ICONS%%share/icons/hicolor/16x16/apps/cups.png
-%%WITH_ICONS%%share/icons/hicolor/32x32/apps/cups.png
-%%WITH_ICONS%%share/icons/hicolor/64x64/apps/cups.png
+%%ICONS%%share/icons/hicolor/128x128/apps/cups.png
+%%ICONS%%share/icons/hicolor/16x16/apps/cups.png
+%%ICONS%%share/icons/hicolor/32x32/apps/cups.png
+%%ICONS%%share/icons/hicolor/64x64/apps/cups.png
 share/locale/ca/cups_ca.po
 share/locale/cs/cups_cs.po
 share/locale/de/cups_de.po
@@ -969,6 +1027,7 @@ share/locale/es/cups_es.po
 share/locale/fr/cups_fr.po
 share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
+share/locale/pt_BR/cups_pt_BR.po
 share/locale/ru/cups_ru.po
 @unexec rmdir "/var/spool/cups/tmp" >/dev/null 2>&1 || :
 @unexec rmdir "/var/spool/cups" >/dev/null 2>&1 || :
@@ -977,32 +1036,34 @@ share/locale/ru/cups_ru.po
 @unexec rmdir "/var/log/cups" >/dev/null 2>&1 || :
 @unexec rmdir "/var/db/cups/rss" >/dev/null 2>&1 || :
 @unexec rmdir "/var/db/cups" >/dev/null 2>&1 || :
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor/16x16
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor/32x32
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor/64x64/apps
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor/64x64
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor/128x128/apps
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor/128x128
-%%WITH_ICONS%%@dirrmtry share/icons/hicolor
-%%WITH_ICONS%%@dirrmtry share/icons
+%%ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/16x16
+%%ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/32x32
+%%ICONS%%@dirrmtry share/icons/hicolor/64x64/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/64x64
+%%ICONS%%@dirrmtry share/icons/hicolor/128x128/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/128x128
+%%ICONS%%@dirrmtry share/icons/hicolor
+%%ICONS%%@dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pt_BR
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/it
-%%PORTDOCS%%@dirrm %%DATADIR%%/ipptool
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/es
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%LIBUSB%%@dirrm %%DATADIR%%/usb
 @dirrm %%DATADIR%%/templates/cs
 @dirrm %%DATADIR%%/templates/ca
 @dirrm %%DATADIR%%/templates/ru
+@dirrm %%DATADIR%%/templates/pt_BR
 @dirrm %%DATADIR%%/templates/ja
 @dirrm %%DATADIR%%/templates/it
 @dirrm %%DATADIR%%/templates/es
@@ -1015,6 +1076,7 @@ share/locale/ru/cups_ru.po
 @exec  mkdir -p %D/%%DATADIR%%/model
 @dirrmtry %%DATADIR%%/model
 @dirrm %%DATADIR%%/mime
+@dirrm %%DATADIR%%/ipptool
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/drv
 @dirrmtry %%DATADIR%%
@@ -1026,7 +1088,6 @@ share/locale/ru/cups_ru.po
 @dirrmtry libexec/cups/cgi-bin
 @dirrmtry libexec/cups/backend
 @dirrmtry libexec/cups
-%%PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
 @dirrmtry etc/cups/interfaces
 @dirrmtry etc/cups/ppd
 @dirrmtry etc/cups/ssl
