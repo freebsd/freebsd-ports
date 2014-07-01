@@ -15,5 +15,4 @@ INSTALL_WRKSRC=	${WRKSRC}/lib/packagekit-qt
 SLAVEPORT=	qt4
 PLIST=		${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

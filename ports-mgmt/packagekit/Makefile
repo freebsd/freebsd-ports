@@ -11,18 +11,15 @@ MASTER_SITES=	http://www.packagekit.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	DBUS packaging abstraction layer
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
-		ck-connector:${PORTSDIR}/sysutils/consolekit
-RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
-		${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
-		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
+BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
+		libck-connector.so:${PORTSDIR}/sysutils/consolekit
+RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USES=		gettext gmake iconv pkgconfig
-USE_GNOME=	glib20 intltool gnomehier
+USES=		gettext gmake iconv pkgconfig shared-mime-info
+USE_GNOME=	glib20 intltool gnomehier introspection
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
@@ -47,16 +44,16 @@ OPTIONS_DEFINE=	PORTS MANPAGES
 OPTIONS_DEFAULT=PORTS
 PORTS_DESC=Use portupgrade for management, dummy if disabled
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 . if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-MAN1=	pkcon.1 pkmon.1 pkgenpack.1 pk-debuginfo-install.1
+PLIST_SUB+=	MAN=''
 . else
 CONFIGURE_ARGS+=--disable-man-pages
+PLIST_SUB+=	MAN='@comment '
 . endif
 
 . if ${PORT_OPTIONS:MPORTS}
@@ -78,7 +75,7 @@ CONFIGURE_ARGS+=--disable-qt
 LIB_DEPENDS+=	packagekit-glib2:${PORTSDIR}/ports-mgmt/packagekit
 
 CONFIGURE_ARGS+=--enable-qt
-LIB_DEPENDS+=	cppunit-1.12:${PORTSDIR}/devel/cppunit
+LIB_DEPENDS+=	libcppunit-1.12.so:${PORTSDIR}/devel/cppunit
 USE_QT4+=	dbus gui xml sql moc_build
 #.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
@@ -97,8 +94,7 @@ post-patch:
 post-install:
 .if !defined(SLAVEPORT)
 	@${INSTALL_DATA} ${WRKSRC}/data/transactions.db \
-	    	${PREFIX}/share/PackageKit/transactions.db
-	@-update-mime-database ${PREFIX}/share/mime > /dev/null
+	    	${STAGEDIR}${PREFIX}/share/PackageKit/transactions.db
 .endif
 
 .include <bsd.port.mk>
