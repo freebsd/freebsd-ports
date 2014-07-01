@@ -9,8 +9,8 @@ MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
 		http://mirror.opensysadmin.com/bcfg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dhutty@allgoodbits.org
-COMMENT=	A configuration management system written in Python
+MAINTAINER=	python@FreeBSD.org
+COMMENT=	Configuration management system written in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gamin.py:${PORTSDIR}/devel/py-gamin
