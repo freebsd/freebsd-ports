@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Graphical user interface for VIPS
 
-BROKEN=		Uses obsolete MAN1
 OPTIONS_DEFINE=	DOCS
 LIB_DEPENDS=	libvips.so.38:${PORTSDIR}/graphics/vips \
 		libgoffice-*.so:${PORTSDIR}/devel/goffice \
@@ -33,8 +32,6 @@ SUB_FILES=	run-nip2.sh
 # Somehow vendor's configure misses these:
 MAKE_ENV+=	UPDATE_MIME_DATABASE=update-mime-database	\
 		UPDATE_DESKTOP_DATABASE=update-desktop-database
-
-MAN1=		nip2.1
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/run-nip2.sh \
