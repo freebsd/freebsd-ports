@@ -2,7 +2,7 @@
 
 PORTNAME=	guake
 PORTVERSION=	0.4.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://distfiles.gentoo.org/distfiles/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/
@@ -22,6 +22,9 @@ RUN_DEPENDS=	py${PYTHON_SUFFIX}-dbus>=0.84.0:${PORTSDIR}/devel/py-dbus \
 		py${PYTHON_SUFFIX}-vte>=0.26.2_1:${PORTSDIR}/x11-toolkits/py-vte \
 		py${PYTHON_SUFFIX}-xdg>=0.19:${PORTSDIR}/devel/py-xdg
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+
 #GH_ACCOUNT=	Guake
 #GH_TAGNAME=	${PORTVERSION:R}
 #GH_COMMIT=	88af26c
@@ -30,8 +33,8 @@ GNU_CONFIGURE=	yes
 
 INSTALLS_ICONS=	yes
 
-NLS_CONFIGURE_ON=	--localedir=${PREFIX}/share/locale
-NLS_CONFIGURE_OFF=	--disable-nls
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 OPTIONS_DEFINE=	MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
@@ -45,7 +48,7 @@ REINPLACE_FILES=	guake guake-prefs prefs.py
 #USE_GITHUB=	yes
 USE_GNOME=	gtk20 pygnome2
 USE_PYTHON=	2
-USES=	desktop-file-utils gmake pkgconfig
+USES=		desktop-file-utils gmake libtool pkgconfig
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 
@@ -55,11 +58,9 @@ WRKSRC=	${WRKDIR}/${DISTNAME}
 MAKE_ENV+=	man_MANS=""
 .endif
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-.else
-REINPLACE_ARGS=	-E -e 's,(USE_NLS=)yes,\1no,'
-REINPLACE_FILES=	../configure
+.if ! ${PORT_OPTIONS:MNLS}
+REINPLACE_ARGS+=	-e 's,\(USE_NLS=\)yes,\1no,'
+REINPLACE_FILES+=	../configure
 .endif
 
 post-patch:

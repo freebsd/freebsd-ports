@@ -24,7 +24,6 @@ bin/guake-prefs
 %%PYTHON_SITELIBDIR%%/guake/dbusiface.pyc
 %%PYTHON_SITELIBDIR%%/guake/dbusiface.pyo
 %%PYTHON_SITELIBDIR%%/guake/globalhotkeys.a
-%%PYTHON_SITELIBDIR%%/guake/globalhotkeys.la
 %%PYTHON_SITELIBDIR%%/guake/globalhotkeys.so
 %%PYTHON_SITELIBDIR%%/guake/globals.py
 %%PYTHON_SITELIBDIR%%/guake/globals.pyc
