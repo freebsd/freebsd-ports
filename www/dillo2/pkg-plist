@@ -24,6 +24,7 @@ libexec/dillo/dpi/hello/hello.filter.dpi
 libexec/dillo/dpi/https/https.filter.dpi
 libexec/dillo/dpi/vsource/vsource.filter.dpi
 libexec/dillo/hyphenation/.keep_me
+man/man1/dillo.1.gz
 @dirrmtry libexec/dillo/hyphenation
 @dirrm libexec/dillo/dpi/https
 @dirrm libexec/dillo/dpi/hello
