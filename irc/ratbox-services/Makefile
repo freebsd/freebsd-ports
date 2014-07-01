@@ -21,7 +21,7 @@ LOGDIR?=	/var/log
 RUNDIR?=	/var/run
 DBDIR?=		/var/db/${PORTNAME}
 PERL?=		${LOCALBASE}/bin/perl
-USES=		pkgconfig perl5
+USES=		libtool pkgconfig perl5
 SUB_FILES=	pkg-message pkg-install
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
@@ -30,7 +30,7 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--prefix=${PREFIX}		\
 		--sysconfdir=${PREFIX}/etc/	\
 		--with-logdir=${LOGDIR}		\
@@ -63,7 +63,6 @@ MEMOSERV_DESC=	memo services
 
 #----------------------------------------------------------------------
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MNICKSERV}
@@ -165,38 +164,27 @@ post-patch:
 			${WRKSRC}/tools/generate-schema.pl	\
 			${WRKSRC}/tools/dbupgrade.pl
 
-pre-su-install:
-	${MKDIR} ${DATADIR}/help
+pre-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/help
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL.mysql ${DOCSDIR}/INSTALL.mysql
-	${INSTALL_DATA} ${WRKSRC}/INSTALL.pgsql ${DOCSDIR}/INSTALL.pgsql
-	${INSTALL_DATA} ${WRKSRC}/INSTALL.sqlite ${DOCSDIR}/INSTALL.sqlite
-	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${DOCSDIR}/UPGRADING
-	${INSTALL_DATA} ${WRKSRC}/DBMOVE ${DOCSDIR}/DBMOVE
-.endif
+	${MKDIR} ${STAGEDIR}${DBDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.mysql ${STAGEDIR}${DOCSDIR}/INSTALL.mysql
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.pgsql ${STAGEDIR}${DOCSDIR}/INSTALL.pgsql
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.sqlite ${STAGEDIR}${DOCSDIR}/INSTALL.sqlite
+	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${STAGEDIR}${DOCSDIR}/UPGRADING
+	${INSTALL_DATA} ${WRKSRC}/DBMOVE ${STAGEDIR}${DOCSDIR}/DBMOVE
 
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 		(cd ${WRKSRC}/tools/ &&	\
-		${COPYTREE_SHARE} \* ${DATADIR} "! -name dbupgrade.pl.bak	\
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} "! -name dbupgrade.pl.bak	\
 						! -name dbupgrade.pl.orig	\
 						! -name generate-schema.pl.bak	\
 						! -name generate-schema.pl.orig")
 
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ratbox-services ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/ratbox-services.conf.sample
-
-	@if [ ! -f ${PREFIX}/etc/ratbox-services.conf ]; then \
-		${ECHO} "Installing default configuration file."; \
-		${CP} -p ${PREFIX}/etc/ratbox-services.conf.sample ${PREFIX}/etc/ratbox-services.conf ; \
-	fi
-
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
-
-#-----------------------------------------------------------------------
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ratbox-services ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${STAGEDIR}${PREFIX}/etc/ratbox-services.conf.sample
 
 .include <bsd.port.mk>
