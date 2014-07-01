@@ -3,6 +3,7 @@
 
 PORTNAME=	helma
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/ \
 		LOCAL/decke
@@ -10,6 +11,9 @@ DISTFILES=	helma-${PORTVERSION}.tar.gz helma-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A Web application framework for fast and efficient scripting
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKBASE}/licenses/license.txt
 
 WRKBASE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKBASE}
@@ -35,7 +39,6 @@ PLIST_SUB=	DBDIR="${DBDIR}" \
 OPTIONS_DEFINE=	MYSQL
 OPTIONS_SUB=	yes
 OPTIONS_DESC=	"Install MySQL Connector for Java"
-
 
 MYSQL_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
 
