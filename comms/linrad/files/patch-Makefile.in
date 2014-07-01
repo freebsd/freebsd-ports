@@ -1,44 +1,85 @@
---- Makefile.in.orig	2009-10-03 11:39:34.000000000 -0400
-+++ Makefile.in	2009-10-13 09:48:32.000000000 -0400
-@@ -1,7 +1,7 @@
+--- Makefile.in.orig	2014-03-20 18:05:17.000000000 -0700
++++ Makefile.in	2014-06-27 18:16:06.000000000 -0700
+@@ -23,7 +23,7 @@
  #
  # -----------     Compilers     ----------------
- # Use gcc to compile files for Linux. 
+ # Use gcc to compile files for Linux.
 -CC=gcc
 +CC?=gcc
- # Name the output files *.ol instead of *.o 
- # so we definitely know it is for Linux. 
- # (*.o files can be present by mistake) 
-@@ -15,10 +15,8 @@
- # so we definitely know it is for Windows.
- # (*.o files can be present by mistake) 
+ # Name the output files *.ol instead of *.o
+ # so we definitely know it is for Linux.
+ # (*.o files can be present by mistake)
+@@ -42,7 +42,7 @@
+ # (*.o files can be present by mistake)
  # Always use the same flags.
--CFL	= -g -O -DOSNUM=1 @X11@ -W -Wall -Wimplicit -Wreturn-type -Wformat \
---m32 -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
---Wparentheses -Wstrict-prototypes -Werror -ffast-math -Wundef \
---fomit-frame-pointer -c -o
-+CFL	= -O -DOSNUM=1 @X11@ -I%%LOCALBASE%%/include -m32 -ffast-math \
-+	-fomit-frame-pointer -c -o
+ # -Wconversion -Wno-sign-conversion -Wunreachable-code
+-CFL	= -g -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ -W -Wall \
++CFL	= -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ \
+ @PORTAUDIO32_INC@ -DCPU=@CPU@ -DLIBBLADERF_PRESENT=@LIBBLADERF32_OK@ \
+ -DSHM_INSTALLED=@LIBXEXT32_OK@ -DPERSEUSLIB_PRESENT=@PERSEUS32_OK@ -Wimplicit \
+ -DALSA_PRESENT=@ALSA32_OK@ -DPA_OK=@PORTAUDIO32_OK@ -DREALT=@PA_REALT32@ \
+@@ -51,9 +51,7 @@
+ -DLIBUSB1_PRESENT=@LIBUSB1_32_OK@ -DLIBFTDI_PRESENT=@LIBFTDI32_OK@ @DARWIN@ \
+ -DLIBUDEV_PRESENT=@LIBUDEV_32_OK@ -DPCIE9842_PRESENT=@LIBWD_DASK_32_OK@ \
+ -DLIBMIRISDR_PRESENT=@LIBMIRISDR32_OK@ -DSERVER=@MAKE_SERVER@ \
+--Wreturn-type -Wformat @M32@ -Wunused -Wcomment -Wchar-subscripts -Wshadow \
+--Wuninitialized -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
+--Wundef -fomit-frame-pointer -c -o
++@M32@ -ffast-math -fomit-frame-pointer -c -o
  
- CFW	= -g -O -DOSNUM=2 -W -Wall -Wimplicit -Wreturn-type -Wformat \
- -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
-@@ -646,7 +644,7 @@
- meter_graph.ol fonts.ol screensub.ol tx_graph.ol txssb.ol lxsys.ol 
+ CFLN	= -g -O2 -DOSNUM=1 -DMEMREF_T=int @X11_32_INC@ -W -Wall \
+ @PORTAUDIO32_INC@  -DCPU=@CPU@ -DLIBBLADERF_PRESENT=@LIBBLADERF32_OK@ \
+@@ -1217,7 +1215,7 @@
+ @LIBWD_DASK_32_LD@ \
+ @LIBBLADERF32_LD@ \
+ @LIBMIRISDR32_LD@ \
+--lpthread @LIBRT@ -lm -ldl  
++-lpthread @LIBRT@ -lm  
  
+ 	@echo " "
+ 	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
+@@ -1324,7 +1322,7 @@
+ @LIBWD_DASK_32_LD@ \
+ @LIBBLADERF32_LD@ \
+ @LIBMIRISDR32_LD@ \
+--lpthread @LIBRT@ -lm -ldl
++-lpthread @LIBRT@ -lm
  
--	${CC} -m32 -olinrad -lvgagl -lvga -lpthread -lm @ALSALIB@ -lrt \
-+	${CC} -m32 -olinrad -lvgagl -lvga -lpthread -lm @ALSALIB@ \
- -Wl,-Map,linrad.lmap,-warn-common \
- 	lmain.ol lvar.ol ui.ol lsetad.ol fft1.ol buf.ol radar.ol \
- mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
-@@ -703,8 +701,8 @@
+ 	@echo " "
+ 	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
+@@ -1407,7 +1405,7 @@
+ @LIBWD_DASK_32_LD@ \
+ @LIBBLADERF32_LD@ \
+ @LIBMIRISDR32_LD@ \
+--lpthread @LIBRT@ -lm -ldl  
++-lpthread @LIBRT@ -lm  
  
+ 	@echo " "
+ 	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
+@@ -1726,7 +1724,7 @@
+ @LIBWD_DASK_64_LD@ \
+ @LIBBLADERF64_LD@ \
+ @LIBMIRISDR64_LD@ \
+--lpthread @LIBRT@ -lm -ldl  
++-lpthread @LIBRT@ -lm  
  
+ 	@echo " "
+ 	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
+@@ -1821,7 +1819,7 @@
+ @LIBWD_DASK_64_LD@ \
+ @LIBBLADERF64_LD@ \
+ @LIBMIRISDR64_LD@ \
+--lpthread @LIBRT@ -lm -ldl
++-lpthread @LIBRT@ -lm
  
--	${CC} -m32 -oxlinrad -L/usr/X11R6/lib @SHMLIB@ -lX11 -lpthread \
---lm @ALSALIB@ -lrt -Wl,-Map,linrad.xmap,-warn-common \
-+	${CC} -m32 -oxlinrad -L%%LOCALBASE%%/lib  -L%%LOCALBASE%%/X11R6/lib @SHMLIB@ -lX11 -lpthread \
-+-lm @ALSALIB@ -Wl,-Map,linrad.xmap,-warn-common \
- xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol radar.ol \
- mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
- fftasm.ol baseb_graph.ol mix2.ol afc_graph.ol hwaredriver.ol \
+ 	@echo " "
+ 	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
+@@ -1905,7 +1903,7 @@
+ @LIBWD_DASK_64_LD@ \
+ @LIBBLADERF64_LD@ \
+ @LIBMIRISDR64_LD@ \
+--lpthread @LIBRT@ -lm -ldl
++-lpthread @LIBRT@ -lm
+ 
+ 	@echo " "
+ 	@echo "You may want to disable pulseaudio in Ubuntu with this command:"
