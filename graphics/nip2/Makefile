@@ -2,44 +2,60 @@
 # $FreeBSD$
 
 PORTNAME=	nip2
-PORTVERSION=	7.26.3
-PORTREVISION=	3
+PORTVERSION=	7.40.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Graphical user interface for VIPS
 
-LIB_DEPENDS=	libvips.so:${PORTSDIR}/graphics/vips	\
-		gsl:${PORTSDIR}/math/gsl	\
+OPTIONS_DEFINE=	DOCS
+LIB_DEPENDS=	libvips.so:${PORTSDIR}/graphics/vips \
+		libgoffice-*.so:${PORTSDIR}/devel/goffice \
+		libgsl.so:${PORTSDIR}/math/gsl \
+		libgvc.so:${PORTSDIR}/graphics/graphviz \
 		xml2:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
-USES=		bison gmake pkgconfig
+USES=		bison dos2unix gettext gmake pkgconfig
 USE_GNOME=	gnomemimedata glib20 gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ENV+=	XGETTEXT=${LOCALBASE}/bin/xgettext	\
+		LIBGVC_LIBS="-L${LOCALBASE}/lib/graphviz -lgvc"	\
+		LIBGVC_CFLAGS="-I${LOCALBASE}/include/graphviz"
+DOS2UNIX_GLOB=	*.def
+SUB_FILES=	run-nip2.sh
 # This port has no man-pages. It installs a number of HTML files,
 # which are available through the GUI's Help. For this reason, they
 # are always installed, regardless of the NOPORTDOCS setting.
-NO_STAGE=	yes
-# The PDF version of the documentation is another story:
-.if defined(NOPORTDOCS)
-EXTRACT_AFTER_ARGS=	--exclude nipguide --exclude pdf
-.endif
 # Somehow vendor's configure misses these:
 MAKE_ENV+=	UPDATE_MIME_DATABASE=update-mime-database	\
 		UPDATE_DESKTOP_DATABASE=update-desktop-database
 
 MAN1=		nip2.1
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 1000013
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-parser.h
-.endif
+post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/run-nip2.sh \
+	    ${STAGEDIR}/${PREFIX}/bin/
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|n_bytes|x_n_bytes|g' -e 's|text_size|x_text_size|g' \
-		${WRKSRC}/src/gtkitementry.c
+	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
+	    ${WRKSRC}/test/scripts/*
 
-.include <bsd.port.mk>
+test check: build
+	#
+	# Checks currently require ImageMagick's convert to be available
+	# and aren't enabled by default. They take a long time -- tail
+	# the log-file:
+	#	${WRKSRC}/test/test_all.sh.log
+	#
+	${GMAKE} -C ${WRKSRC} check
+
+.include <bsd.port.pre.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
+EXTRACT_AFTER_ARGS+=	--exclude nipguide.pdf --exclude pdf
+.endif
+
+.include <bsd.port.post.mk>
