@@ -6,7 +6,7 @@ include/stree/lst_structs.h
 include/stree/lst_algorithms.h
 include/stree/lst_timestamp.h
 @dirrm include/stree
+lib/libstree.so.0.0.0
 lib/libstree.so.0
 lib/libstree.so
-lib/libstree.la
 lib/libstree.a
