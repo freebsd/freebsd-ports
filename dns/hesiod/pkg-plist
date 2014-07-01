@@ -1,9 +1,9 @@
 bin/hesinfo
 include/hesiod.h
 lib/libhesiod.a
-lib/libhesiod.la
 lib/libhesiod.so
 lib/libhesiod.so.0
+lib/libhesiod.so.0.0.0
 libdata/pkgconfig/hesiod.pc
 man/man1/hesinfo.1.gz
 man/man3/hesiod.3.gz
