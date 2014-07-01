@@ -1,4 +1,6 @@
+bin/tcat
 bin/toast
+bin/untoast
 @exec ln -sf %f %B/tcat
 @exec ln -sf %f %B/untoast
 @rmtry bin/tcat
