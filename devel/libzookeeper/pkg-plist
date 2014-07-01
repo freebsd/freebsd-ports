@@ -2,13 +2,13 @@ bin/load_gen
 bin/cli_mt
 bin/cli_st
 lib/libzookeeper_mt.a
-lib/libzookeeper_st.a
-lib/libzookeeper_mt.la
 lib/libzookeeper_mt.so
 lib/libzookeeper_mt.so.2
-lib/libzookeeper_st.la
+lib/libzookeeper_mt.so.2.0.0
+lib/libzookeeper_st.a
 lib/libzookeeper_st.so
 lib/libzookeeper_st.so.2
+lib/libzookeeper_st.so.2.0.0
 include/zookeeper/proto.h
 include/zookeeper/recordio.h
 include/zookeeper/zookeeper.h
@@ -16,4 +16,3 @@ include/zookeeper/zookeeper.jute.h
 include/zookeeper/zookeeper_log.h
 include/zookeeper/zookeeper_version.h
 @dirrm include/zookeeper
-@dirrmtry include
