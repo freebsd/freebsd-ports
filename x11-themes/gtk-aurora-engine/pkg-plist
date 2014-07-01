@@ -1,4 +1,3 @@
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libaurora.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libaurora.so
 share/themes/Aurora/gtk-2.0/gtkrc
 share/themes/Aurora/metacity-1/close.png
@@ -21,7 +20,3 @@ share/themes/Aurora/metacity-1/restore_prelight.png
 @dirrm share/themes/Aurora/gtk-2.0
 @dirrm share/themes/Aurora/metacity-1
 @dirrm share/themes/Aurora
-@dirrm share/themes
-@dirrm lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@dirrm lib/gtk-2.0/%%GTK2_VERSION%%
-@dirrm lib/gtk-2.0
