@@ -3,6 +3,7 @@
 
 PORTNAME=	ta-lib
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel finance
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -12,8 +13,9 @@ COMMENT=	UNIX, POSIX Library for Technical Analysis
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
+USE_AUTOTOOLS=	libtoolize
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=yes
