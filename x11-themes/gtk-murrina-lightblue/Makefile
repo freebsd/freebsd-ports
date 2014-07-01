@@ -18,9 +18,8 @@ GTKRC_DIR=	${DISTNAME}/gtk-2.0
 USE_GNOME=	gtk20
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${LOCALBASE}/share/themes/MurrinaLightBlue/gtk-2.0
-	@${INSTALL_DATA} ${WRKDIR}/MurrinaLightBlue/gtk-2.0/gtkrc ${LOCALBASE}/share/themes/MurrinaLightBlue/gtk-2.0
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/MurrinaLightBlue/gtk-2.0
+	@${INSTALL_DATA} ${WRKDIR}/MurrinaLightBlue/gtk-2.0/gtkrc ${STAGEDIR}${PREFIX}/share/themes/MurrinaLightBlue/gtk-2.0
 
 .include <bsd.port.mk>
