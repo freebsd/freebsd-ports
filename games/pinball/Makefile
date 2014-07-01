@@ -12,7 +12,7 @@ COMMENT=	Emilia Pinball is a free pinball game
 
 LICENSE=	GPLv2
 
-USES=		gmake libtool:keepla
+USES=		gmake libtool:keepla # .la needed for plugin loading
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
