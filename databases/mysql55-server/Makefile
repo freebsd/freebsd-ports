@@ -79,6 +79,7 @@ MAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 .else
 USES+=		readline
+CXXFLAGS+=	${CPPFLAGS}
 .endif
 
 post-patch:
