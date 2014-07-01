@@ -3,7 +3,7 @@
 
 PORTNAME=	tkXwin
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 EXTRACT_SUFX=	.tgz
@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Tcl/Tk library to detect idle periods of an X session
 
-USES=		tk:84
 GNU_CONFIGURE=	yes
+USES=		libtool tk:84
 USE_XORG=	xt xscrnsaver
 USE_LDCONFIG=	yes
 

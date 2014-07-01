@@ -7,7 +7,7 @@
 -#CFLAGS_XSS	= -DHAVE_SHARED_XSS
 -#LIB_XSS	= -L/usr/X11R6/lib -lXss 
 +CFLAGS_XSS	= -DHAVE_SHARED_XSS
-+LIB_XSS	= -L/usr/X11R6/lib -lXss 
++LIB_XSS	= -L/usr/local/lib -lXss 
  
  
  SHELL = @SHELL@
