@@ -3,6 +3,7 @@
 
 PORTNAME=	pbc
 PORTVERSION=	0.5.14
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://crypto.stanford.edu/pbc/files/
 
@@ -10,10 +11,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of pairing-based cryptosystems
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
-USES=		bison
+USES=		bison libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

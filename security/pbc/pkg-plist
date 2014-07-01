@@ -24,7 +24,7 @@ include/pbc/pbc_test.h
 include/pbc/pbc_utils.h
 include/pbc/pbc_z.h
 lib/libpbc.a
-lib/libpbc.la
 lib/libpbc.so
 lib/libpbc.so.1
+lib/libpbc.so.1.0.0
 @dirrm include/pbc
