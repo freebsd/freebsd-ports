@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	dryice
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Readline wrapper
 
+USES=		readline
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS BUGS NEWS PLEA README TODO
