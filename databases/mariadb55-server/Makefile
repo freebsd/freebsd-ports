@@ -138,6 +138,8 @@ LIB_DEPENDS+=	libboost_system.so:${PORTSDIR}/devel/boost-libs
 .if ${PORT_OPTIONS:MMAXKEY}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my_compare.h
 .endif
+.else
+USES+=		readline
 .endif
 
 post-patch:

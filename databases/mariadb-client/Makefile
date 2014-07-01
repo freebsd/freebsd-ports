@@ -10,6 +10,7 @@ COMMENT=	Database client - drop-in replacement for MySQL
 MASTERDIR=	${.CURDIR}/../mariadb-server
 MARIADB_CLIENT_SLAVE=	yes
 
+USES+=		readline
 CONFIGURE_ARGS=	--without-server --with-libevent=no
 
 OPTIONS_DEFINE=		THREADSAFE
