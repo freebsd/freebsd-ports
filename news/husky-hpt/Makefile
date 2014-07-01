@@ -22,6 +22,7 @@ USES=		perl5
 MAKE_ARGS+=	PERL=0
 .endif
 
+USES+=		makeinfo
 MAN1=		hpt.1 hptlink.1 hpttree.1 txt2pkt.1
 MANCOMPRESSED=	yes
 INFO=		hpt

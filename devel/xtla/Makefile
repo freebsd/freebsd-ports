@@ -23,7 +23,7 @@ LISPDIR=	${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-emacs=${EMACS_NAME} --with-diff=gdiff --with-patch=gpatch
-USES=		gmake
+USES=		gmake makeinfo
 INFO=		xtla
 
 OPTIONS_DEFINE=	DOCS

@@ -13,6 +13,7 @@ COMMENT=	Scan for UUE in message base
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
+USES=		makeinfo
 MAN1=		hpucode.1
 MANCOMPRESSED=	yes
 INFO=		hpucode
