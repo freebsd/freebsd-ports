@@ -10,8 +10,7 @@ DISTNAME=	Korilla_Icons-v${PORTVERSION}
 
 COMMENT=	KDE Kool Gorilla iconset
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 WRKSRC=		"${WRKDIR}/Kool.Gorilla"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

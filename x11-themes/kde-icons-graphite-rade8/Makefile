@@ -8,8 +8,7 @@ DISTNAME=	Graphite-Rade8-${PORTVERSION}
 
 COMMENT=	KDE Mac OS X like iconset, most from rad-e8 design
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME:C|-${PORTVERSION}$||}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

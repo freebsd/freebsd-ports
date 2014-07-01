@@ -64,12 +64,12 @@ generate-install-scripts:
 # annotate dirs
 	@${CAT} ${WRKDIR}/dirs.list \
 		| ${SED} -E \
-			-e 's|^\.(.+)$$|${MKDIR} -m 755 ${PREFIX:Q}/share/icons/${PORT_SHAREDIR:S/"//g:Q}/\"\1\"|' \
+			-e 's|^\.(.+)$$|${MKDIR} -m 755 ${STAGEDIR}${PREFIX:Q}/share/icons/${PORT_SHAREDIR:S/"//g:Q}/\"\1\"|' \
 			> ${WRKDIR}/dirs.sh
 # annotate files
 	@${CAT} ${WRKDIR}/files.list \
 		| ${SED} -E \
-			-e 's|^\./(.+)$$|${INSTALL_DATA} ${WRKSRC:Q}/\"\1\" ${PREFIX:Q}/share/icons/${PORT_SHAREDIR:S/"//g:Q}/\"\1\"|' \
+			-e 's|^\./(.+)$$|${INSTALL_DATA} ${WRKSRC:Q}/\"\1\" ${STAGEDIR}${PREFIX:Q}/share/icons/${PORT_SHAREDIR:S/"//g:Q}/\"\1\"|' \
 			> ${WRKDIR}/files.sh
 
 # generate on the fly packaging lists based on aforementioned annotations
@@ -96,9 +96,6 @@ install-run-scripts:
 .endfor
 
 do-install: annotate-install generate-install-scripts generate-tmpplist install-run-scripts
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 

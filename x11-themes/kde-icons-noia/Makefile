@@ -13,5 +13,4 @@ COMMENT=	KDE Noia complete iconset
 WRKSRC=		"${WRKDIR}/noia_kde_${PORTVERSION:C/\.//}"
 PORT_SHAREDIR=	${PORTNAME}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.icons"
