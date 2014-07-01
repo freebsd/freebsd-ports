@@ -1,0 +1,13 @@
+--- Makefile.orig	2014-07-01 21:05:14.490108757 +0800
++++ Makefile	2014-07-01 21:05:33.578108694 +0800
+@@ -6,7 +6,7 @@ all: # Just need to create the compiled 
+ 	@python -OOOO -c"import py_compile;py_compile.compile('twander.py')"
+ 
+ install:
+-	${BSD_INSTALL_SCRIPT} ./twander.py   ${PREFIX}/bin
+-	${BSD_INSTALL_SCRIPT} ./twander.pyo  ${PREFIX}/bin
+-	${BSD_INSTALL_MAN}    ./twander.1.gz ${PREFIX}/man/man1
++	${BSD_INSTALL_SCRIPT} ./twander.py   $(DESTDIR)${PREFIX}/bin
++	${BSD_INSTALL_SCRIPT} ./twander.pyo  $(DESTDIR)${PREFIX}/bin
++	${BSD_INSTALL_MAN}    ./twander.1.gz $(DESTDIR)${PREFIX}/man/man1
+ 
