@@ -3,7 +3,7 @@
 
 PORTNAME=	augeas
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.augeas.net/
 
@@ -16,11 +16,12 @@ TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
 USE_GNOME=	libxml2
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	autoconf aclocal autoheader automake libtool
+USES=		gmake libtool pkgconfig readline
+USE_AUTOTOOLS=	autoconf aclocal autoheader automake libtoolize:env
 ACLOCAL_ARGS=	-I . -I gnulib/m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 LENSESDIR=	${PREFIX}/share/augeas/lenses
 
@@ -31,9 +32,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:%%LOCALBASE%%:${LOCALBASE}:' \
 		${WRKSRC}/lenses/puppet.aug \
 		${WRKSRC}/lenses/puppetfileserver.aug
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaugeas.so.18
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfa.so.5
 
 .include <bsd.port.mk>
