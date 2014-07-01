@@ -1,5 +1,3 @@
-lib/gtk-2.0/2.10.0/engines/libnimbus.a
-lib/gtk-2.0/2.10.0/engines/libnimbus.la
 lib/gtk-2.0/2.10.0/engines/libnimbus.so
 share/icons/nimbus/12x12/actions/add.png
 share/icons/nimbus/12x12/actions/gtk-add.png
