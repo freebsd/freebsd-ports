@@ -12,10 +12,10 @@ COMMENT=	Interactive post-processing tool for scanned pages
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		jbig:${PORTSDIR}/graphics/jbigkit \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libjbig.so:${PORTSDIR}/graphics/jbigkit \
+		libpng15.so:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake gettext iconv
@@ -35,8 +35,6 @@ OPTIONS_DEFAULT=
 HTML_DESC=	Install HTML Doxygen files
 LATEX_DESC=	Install LaTeX Doxygen files
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -51,18 +49,18 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/resources/icons/appicon-about.png \
-		${PREFIX}/share/pixmaps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .if ${PORT_OPTIONS:MHTML} || ${PORT_OPTIONS:MLATEX}
 	@cd ${WRKSRC} && doxygen .
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MHTML}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${DOCSDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MLATEX}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} latex ${DOCSDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} latex ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
