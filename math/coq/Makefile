@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=	DOCS IDE
 OPTIONS_SUB=		yes
 IDE_DESC=		Include desktop environment (coqide)
 IDE_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-IDE_RUN_DEPENDS=	${IDE_BUILD_DEPENDS
+IDE_RUN_DEPENDS:=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 IDE_CONFIGURE_OFF=	--coqide no
 DOCS_USE=		TEX=latex:build,dvipsk:build
 DOCS_BUILD_DEPENDS=	hevea:${PORTSDIR}/textproc/hevea \
