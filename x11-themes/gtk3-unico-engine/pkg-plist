@@ -1,5 +1,3 @@
-lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines/libunico.a
-lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines/libunico.la
 lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines/libunico.so
 @dirrmtry lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines
 @dirrmtry lib/gtk-3.0/%%GTK3_VERSION%%
