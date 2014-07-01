@@ -10,7 +10,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Graphical user interface for VIPS
 
 OPTIONS_DEFINE=	DOCS
-LIB_DEPENDS=	libvips.so:${PORTSDIR}/graphics/vips \
+LIB_DEPENDS=	libvips.so.38:${PORTSDIR}/graphics/vips \
 		libgoffice-*.so:${PORTSDIR}/devel/goffice \
 		libgsl.so:${PORTSDIR}/math/gsl \
 		libgvc.so:${PORTSDIR}/graphics/graphviz \
