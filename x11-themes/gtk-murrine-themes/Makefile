@@ -17,13 +17,12 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.la:${PO
 GTKRC_DIR=	${DISTNAME}/gtk-2.0
 USE_GNOME=	gtk20
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
-NO_STAGE=	yes
 do-install:
 	@(for theme in MurrinaCandy MurrinaCappuccino MurrinaEalm MurrinaNeoGraphite; do \
-		${MKDIR} ${LOCALBASE}/share/themes/$$theme/gtk-2.0; \
-		${INSTALL_DATA} ${WRKDIR}/$$theme/gtk-2.0/gtkrc ${LOCALBASE}/share/themes/$$theme/gtk-2.0; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/$$theme/gtk-2.0; \
+		${INSTALL_DATA} ${WRKDIR}/$$theme/gtk-2.0/gtkrc ${STAGEDIR}${PREFIX}/share/themes/$$theme/gtk-2.0; \
 	done);
 
 .include <bsd.port.mk>
