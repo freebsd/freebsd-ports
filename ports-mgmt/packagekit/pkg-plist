@@ -120,10 +120,10 @@ lib/polkit-1/extensions/libpackagekit-action-lookup.so
 libdata/pkgconfig/packagekit-glib2.pc
 libexec/packagekitd
 libexec/pk-command-not-found
-man/man1/pk-debuginfo-install.1.gz
-man/man1/pkcon.1.gz
-man/man1/pkgenpack.1.gz
-man/man1/pkmon.1.gz
+%%MAN%%man/man1/pk-debuginfo-install.1.gz
+%%MAN%%man/man1/pkcon.1.gz
+%%MAN%%man/man1/pkgenpack.1.gz
+%%MAN%%man/man1/pkmon.1.gz
 %%PORTS%%share/PackageKit/helpers/ports/portsBackend.rb
 %%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/enums.rb
 %%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/prints.rb
