@@ -3,14 +3,14 @@
 
 PORTNAME=	alltray
 PORTVERSION=	0.70
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Dock any application with no native tray icon
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -34,7 +34,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/gconf|${LOCALBASE}/etc/gconf|; \
 		/THEME_DIR1/ s|/usr/share/|${LOCALBASE}/share/themes/|' \
 		${WRKSRC}/src/gnome_theme.c
-	@${REINPLACE_CMD} -e 's|liballtray\.so\.0\.0\.0|liballtray.so.0|; \
-		s|/usr/lib|${PREFIX}/lib|' ${WRKSRC}/src/child.c
+	@${REINPLACE_CMD} 's|/usr/lib|${PREFIX}/lib|' ${WRKSRC}/src/child.c
 
 .include <bsd.port.mk>
