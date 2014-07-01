@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plexmediaserver
-PORTVERSION=	0.9.9.11.501
+PORTVERSION=	0.9.9.12.504
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.plexapp.com/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 PKGNAMESUFFIX=	-plexpass
@@ -12,7 +12,7 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	The Plex Media Server component
 
 USE_BZIP2=	yes
-PLEX_BUILD=	fd87a84
+PLEX_BUILD=	3e7f93c
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}
 
@@ -45,6 +45,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 post-patch:
 	# binaries don't come pre-stripped
 	${FIND} ${WRKSRC} -name '*.so' -exec ${STRIP_CMD} {} \;
+	${STRIP_CMD} ${WRKSRC}/Resources/rsync ${WRKSRC}/Resources/Python/bin/python
 
 do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} Resources ${STAGEDIR}/${SCRIPT_PATH})

@@ -1330,9 +1330,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.college_humor/URL/CollegeHumor/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/URL/Comedy Central/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV News/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/URL/Dailymotion/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.discovery/ServiceInfo.plist
@@ -1593,6 +1590,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvone/URL/TV One/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL/TVTropolis/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/URL/Tweakers/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL/Twitch.tv/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitlive/ServiceInfo.plist
@@ -2027,6 +2026,8 @@
 %%DATADIR%%/Resources/Profiles/Firefox.xml
 %%DATADIR%%/Resources/Profiles/Generic.xml
 %%DATADIR%%/Resources/Profiles/Internet Explorer.xml
+%%DATADIR%%/Resources/Profiles/Mystery 3.xml
+%%DATADIR%%/Resources/Profiles/Mystery 4.xml
 %%DATADIR%%/Resources/Profiles/Mystery.xml
 %%DATADIR%%/Resources/Profiles/Opera.xml
 %%DATADIR%%/Resources/Profiles/Panasonic Viera 3D TV.xml
@@ -3165,10 +3166,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/URL/Comedy Central
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.comedycentral
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV News
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/URL/Dailymotion
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion
@@ -3548,6 +3545,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL/TVTropolis
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/URL/Tweakers
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tweakers
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL/Twitch.tv
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv
