@@ -2,7 +2,7 @@
 
 PORTNAME=	varnish
 PORTVERSION=	3.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 
@@ -16,15 +16,16 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 CONFLICTS=	varnish-2.*
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool readline pkgconfig
 USE_PYTHON_BUILD=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX} --enable-tests
 CONFIGURE_ENV=	RST2MAN=true
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal libtool libtoolize automake autoconf
+USE_AUTOTOOLS=	aclocal libtoolize automake autoconf
 ACLOCAL_ARGS=	-I m4
 LIBTOOLFLAGS=	--copy --force --disable-static
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
+INSTALL_TARGET=	install-strip
 
 USE_RC_SUBR=	varnishd varnishlog varnishncsa
 SUB_FILES=	pkg-message
