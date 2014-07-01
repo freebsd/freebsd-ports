@@ -1,4 +1,3 @@
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libxfce.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libxfce.so
 share/themes/Xfce-4.0/gtk-2.0/gtkrc
 share/themes/Xfce-4.2/gtk-2.0/gtkrc
@@ -60,7 +59,3 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-4.0/gtk-2.0
 @dirrm share/themes/Xfce-4.0
 @dirrm share/themes/Xfce
-@dirrmtry share/themes
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
-@dirrmtry lib/gtk-2.0
