@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}-client
 COMMENT=	Firebird-2 database client
 
 MASTERDIR=	${.CURDIR}/../firebird21-server
+BROKEN=		Does not respect CC and hardcode gcc at some places
 
 PLIST=		${PKGDIR}/pkg-plist.client
 
