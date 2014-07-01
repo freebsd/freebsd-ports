@@ -4,6 +4,7 @@
 
 PORTNAME=	libgdamm
 PORTVERSION=	4.99.6
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,9 +16,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 LATEST_LINK=	libgdamm5
 
-USE_AUTOTOOLS=	libtool
-USE_XZ=		yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	libgda5 glibmm
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -25,7 +24,6 @@ CONFIGURE_ARGS=	--enable-static --disable-documentation
 
 OPTIONS_DEFINE=	BDB
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB} || exists(${LOCALBASE}/libdata/pkgconfig/libgda-bdb-5.0.pc)
