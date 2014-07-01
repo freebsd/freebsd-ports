@@ -301,10 +301,10 @@ lib/libhdfs.so
 lib/libhdfs.la
 @exec mkdir -p %D/%%DATADIR%%/webapps/secondary/WEB-INF
 @exec mkdir -p %D/%%DATADIR%%/contrib/hdfsproxy/logs
-@exec install -d -o %%HADOOP_USER%% -g %%HADOOP_GROUP%% -m 0755 %%HADOOP_LOGDIR%%
-@exec install -d -o %%HADOOP_USER%% -g %%HADOOP_GROUP%% -m 0755 %%HADOOP_RUNDIR%%
-@unexec rmdir %%HADOOP_RUNDIR%% 2>/dev/null || true
-@unexec rmdir %%HADOOP_LOGDIR%% 2>/dev/null || true
+@exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_LOGDIR%%
+@exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_RUNDIR%%
+@unexec rm -d %%HADOOP_RUNDIR%% 2>/dev/null || true
+@unexec rm -d %%HADOOP_LOGDIR%% 2>/dev/null || true
 @dirrm %%EXAMPLESDIR%%/conf
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/lib/native/Linux-i386-32

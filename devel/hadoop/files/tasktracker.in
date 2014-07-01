@@ -10,7 +10,7 @@
 #
 # tasktracker_enable (bool):     Set to NO by default.
 #                                Set it to YES to enable tasktracker.
-# tasktracker_user (str):        Set to %%HADOOP_USER%% by default.
+# tasktracker_user (str):        Set to %%MAPRED_USER%% by default.
 #                                Set to a valid user to change default 
 #                                tasktracker user.
 # tasktracker_java_home (str):	 Unset by default.
@@ -28,7 +28,7 @@ rcvar=tasktracker_enable
 load_rc_config "${name}"
 
 : ${tasktracker_enable:=NO}
-: ${tasktracker_user:=%%HADOOP_USER%%}
+: ${tasktracker_user:=%%MAPRED_USER%%}
 : ${tasktracker_group:=%%HADOOP_GROUP%%}
 
 command="%%DATADIR%%/bin/hadoop-daemon.sh"
