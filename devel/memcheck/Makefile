@@ -3,13 +3,14 @@
 
 PORTNAME=	memcheck
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://hald.dnsalias.net/projects/memcheck/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Memory Allocation Checker
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
