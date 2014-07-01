@@ -120,6 +120,10 @@ lib/polkit-1/extensions/libpackagekit-action-lookup.so
 libdata/pkgconfig/packagekit-glib2.pc
 libexec/packagekitd
 libexec/pk-command-not-found
+man/man1/pk-debuginfo-install.1.gz
+man/man1/pkcon.1.gz
+man/man1/pkgenpack.1.gz
+man/man1/pkmon.1.gz
 %%PORTS%%share/PackageKit/helpers/ports/portsBackend.rb
 %%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/enums.rb
 %%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/prints.rb
@@ -402,17 +406,12 @@ share/polkit-1/actions/org.freedesktop.packagekit.policy
 @exec mkdir -p /var/cache/PackageKit/downloads
 @unexec rmdir /var/cache/PackageKit/downloads 2>/dev/null || true
 @unexec rmdir /var/cache/PackageKit 2>/dev/null || true
-@unexec rmdir /var/cache 2>/dev/null || true
 @unexec rmdir /var/lib/PackageKit 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
-@dirrmtry share/locale/ne/LC_MESSAGES
-@dirrmtry share/locale/ne
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -442,5 +441,6 @@ share/polkit-1/actions/org.freedesktop.packagekit.policy
 @dirrmtry etc/PackageKit/events/pre-transaction.d
 @dirrmtry etc/PackageKit/events
 @dirrmtry etc/PackageKit
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@cwd /
+@comment /var/lib/PackageKit/transactions.db
+@cwd
