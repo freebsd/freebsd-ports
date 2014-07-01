@@ -31,12 +31,10 @@
 %%PYTHON_SITELIBDIR%%/glipper/keybinder/__init__.py
 %%PYTHON_SITELIBDIR%%/glipper/keybinder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glipper/keybinder/__init__.pyo
-%%PYTHON_SITELIBDIR%%/glipper/keybinder/_keybinder.la
 %%PYTHON_SITELIBDIR%%/glipper/keybinder/_keybinder.so
 %%PYTHON_SITELIBDIR%%/glipper/osutils/__init__.py
 %%PYTHON_SITELIBDIR%%/glipper/osutils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glipper/osutils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/glipper/osutils/_osutils.la
 %%PYTHON_SITELIBDIR%%/glipper/osutils/_osutils.so
 libdata/bonobo/servers/Glipper.server
 libdata/pkgconfig/glipper.pc

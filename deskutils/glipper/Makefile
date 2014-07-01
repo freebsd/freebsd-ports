@@ -3,15 +3,14 @@
 
 PORTNAME=	glipper
 PORTVERSION=	1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clipboard manager for the GNOME panel
 
-USE_BZIP2=	yes
-USES=		gettext gmake iconv pathfix pkgconfig
+USES=		gettext gmake iconv libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intltool pygnomedesktop pygnomeextras
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
