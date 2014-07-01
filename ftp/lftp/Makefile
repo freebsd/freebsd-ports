@@ -20,7 +20,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		iconv shebangfix
+USES=		iconv readline shebangfix
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
