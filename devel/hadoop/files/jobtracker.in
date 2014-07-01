@@ -8,9 +8,9 @@
 #
 # Add the following lines to /etc/rc.conf to enable this service:
 #
-# jobtracker_enable (bool):     Set to NO by default.
+# jobtracker_enable (bool):      Set to NO by default.
 #                                Set it to YES to enable jobtracker.
-# jobtracker_user (str):        Set to %%HADOOP_USER%% by default.
+# jobtracker_user (str):         Set to %%MAPRED_USER%% by default.
 #                                Set to a valid user to change default 
 #                                jobtracker user.
 # jobtracker_java_home (str):	 Unset by default.
@@ -28,7 +28,7 @@ rcvar=jobtracker_enable
 load_rc_config "${name}"
 
 : ${jobtracker_enable:=NO}
-: ${jobtracker_user:=%%HADOOP_USER%%}
+: ${jobtracker_user:=%%MAPRED_USER%%}
 : ${jobtracker_group:=%%HADOOP_GROUP%%}
 
 command="%%DATADIR%%/bin/hadoop-daemon.sh"

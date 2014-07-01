@@ -8,9 +8,9 @@
 #
 # Add the following lines to /etc/rc.conf to enable this service:
 #
-# datanode_enable (bool):     Set to NO by default.
+# datanode_enable (bool):        Set to NO by default.
 #                                Set it to YES to enable datanode.
-# datanode_user (str):        Set to %%HADOOP_USER%% by default.
+# datanode_user (str):           Set to %%HDFS_USER%% by default.
 #                                Set to a valid user to change default 
 #                                datanode user.
 # datanode_java_home (str):	 Unset by default.
@@ -28,7 +28,7 @@ rcvar=datanode_enable
 load_rc_config "${name}"
 
 : ${datanode_enable:=NO}
-: ${datanode_user:=%%HADOOP_USER%%}
+: ${datanode_user:=%%HDFS_USER%%}
 : ${datanode_group:=%%HADOOP_GROUP%%}
 
 command="%%DATADIR%%/bin/hadoop-daemon.sh"

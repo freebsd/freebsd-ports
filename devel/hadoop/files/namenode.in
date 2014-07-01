@@ -8,9 +8,9 @@
 #
 # Add the following lines to /etc/rc.conf to enable this service:
 #
-# namenode_enable (bool):     Set to NO by default.
+# namenode_enable (bool):        Set to NO by default.
 #                                Set it to YES to enable namenode.
-# namenode_user (str):        Set to %%HADOOP_USER%% by default.
+# namenode_user (str):           Set to %%HDFS_USER%% by default.
 #                                Set to a valid user to change default 
 #                                namenode user.
 # namenode_java_home (str):	 Unset by default.
@@ -28,7 +28,7 @@ rcvar=namenode_enable
 load_rc_config "${name}"
 
 : ${namenode_enable:=NO}
-: ${namenode_user:=%%HADOOP_USER%%}
+: ${namenode_user:=%%HDFS_USER%%}
 : ${namenode_group:=%%HADOOP_GROUP%%}
 
 command="%%DATADIR%%/bin/hadoop-daemon.sh"
