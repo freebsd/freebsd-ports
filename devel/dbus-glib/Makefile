@@ -11,7 +11,7 @@ MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib bindings for the D-BUS messaging system
 
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool:keepla pathfix pkgconfig
