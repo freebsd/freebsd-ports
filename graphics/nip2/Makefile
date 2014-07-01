@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Graphical user interface for VIPS
 
+BROKEN=		Uses obsolete MAN1
 OPTIONS_DEFINE=	DOCS
 LIB_DEPENDS=	libvips.so.38:${PORTSDIR}/graphics/vips \
 		libgoffice-*.so:${PORTSDIR}/devel/goffice \
