@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.5.4-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.5.5-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -21,18 +20,19 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBAS
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-OPTIONS_DEFINE=	BUFFEREVENTS BUFFREELISTS INSTR_DOWNLOADS \
+OPTIONS_DEFINE=	BUFFEREVENTS BUFFREELISTS INSTR_DOWNLOADS MEMPOOLS \
 		STATIC_TOR TCMALLOC THREADS TOR2WEB TRANSPARENT
 
 BUFFEREVENTS_DESC=	Use libevent's buffered IO
 BUFFREELISTS_DESC=	Freelists for buffer RAM
 INSTR_DOWNLOADS_DESC=	Instrument downloads for analysis
+MEMPOOLS_DESC=		Mempools for relay cells
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 TOR2WEB_DESC=		Faster but non-anonymous hidden services
 TRANSPARENT_DESC=	Transparent proxy support
 
-OPTIONS_DEFAULT=	BUFFREELISTS THREADS TRANSPARENT
+OPTIONS_DEFAULT=	THREADS TRANSPARENT
 
 USE_OPENSSL=	yes
 
@@ -71,6 +71,12 @@ CONFIGURE_ARGS+=	--disable-buf-freelists
 CONFIGURE_ARGS+=	--enable-instrument-downloads
 .else
 CONFIGURE_ARGS+=	--disable-instrument-downloads
+.endif
+
+.if ${PORT_OPTIONS:MMEMPOOLS}
+CONFIGURE_ARGS+=	--enable-mempools
+.else
+CONFIGURE_ARGS+=	--disable-mempools
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_TOR}
