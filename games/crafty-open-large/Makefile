@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The large opening book for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 DIST_SUBDIR=	crafty
 USES=		zip

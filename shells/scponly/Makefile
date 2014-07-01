@@ -49,7 +49,7 @@ UNISON_BUILD_DEPENDS=		unison:${PORTSDIR}/net/unison
 UNISON_CONFIGURE_ENABLE=	unison-compat
 WINSCP_CONFIGURE_ENABLE=	winscp-compat
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-patch:
 	@${ECHO_MSG} "In addition to knobs available from the OPTIONS dialog,"
