@@ -24,7 +24,8 @@ STATIC_DESC=	libmetis archive
 
 OPTIONS_DEFAULT=	SHARED STATIC
 
-NO_STAGE=	yes
+BINS=	cmpfillin gpmetis graphchk m2gmetis mpmetis ndmetis
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
@@ -104,6 +105,13 @@ do-build:
 	${MAKE_ARGS} ${ALL_TARGET_${o}}
 .endif
 .endfor
+.if ${PORT_OPTIONS:MSHARED}
+	@cd ${WRKSRC_SHARED}/programs; ${STRIP_CMD} ${BINS}
+	@cd ${WRKSRC_SHARED}/libmetis; ${STRIP_CMD} libmetis.so.*
+.endif
+.if ${PORT_OPTIONS:MSTATIC}
+	@cd ${WRKSRC_STATIC}/libmetis; ${STRIP_CMD} libmetis.a
+.endif
 
 check regression-test test: build
 	cd ${WRKSRC_SHARED}/graphs ; ../programs/gpmetis ./4elt.graph 5
@@ -121,8 +129,8 @@ do-install:
 PORTDOCS=	manual.pdf
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual/manual.pdf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual/manual.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
