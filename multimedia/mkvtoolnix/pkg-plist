@@ -189,23 +189,23 @@ man/zh_CN/man1/mkvextract.1.gz
 man/zh_CN/man1/mkvinfo.1.gz
 man/zh_CN/man1/mkvmerge.1.gz
 man/zh_CN/man1/mkvpropedit.1.gz
-share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
-share/locale/de/LC_MESSAGES/mkvtoolnix.mo
-share/locale/es/LC_MESSAGES/mkvtoolnix.mo
-share/locale/eu/LC_MESSAGES/mkvtoolnix.mo
-share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
-share/locale/it/LC_MESSAGES/mkvtoolnix.mo
-share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
-share/locale/lt/LC_MESSAGES/mkvtoolnix.mo
-share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
-share/locale/pl/LC_MESSAGES/mkvtoolnix.mo
-share/locale/pt/LC_MESSAGES/mkvtoolnix.mo
-share/locale/pt_BR/LC_MESSAGES/mkvtoolnix.mo
-share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
-share/locale/tr/LC_MESSAGES/mkvtoolnix.mo
-share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
-share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
-share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/de/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/es/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/eu/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/it/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/lt/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/pl/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/pt/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/pt_BR/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/tr/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
+%%WXGTK%%share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 @dirrmtry man/de/man1
 @dirrmtry man/de
 @dirrmtry man/zh_CN/man1
