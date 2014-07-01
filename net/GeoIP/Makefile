@@ -1,20 +1,22 @@
 # Created by: Yen-Ming Lee <leeym@leeym.com>
 # $FreeBSD$
 
-PORTNAME=		GeoIP
+PORTNAME=	GeoIP
 PORTVERSION=	1.4.8
-PORTREVISION=	5
-CATEGORIES=		net geography
+PORTREVISION=	6
+CATEGORIES=	net geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
-MAINTAINER=		adamw@FreeBSD.org
-COMMENT=		Find the country that any IP address or hostname originates from
+MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	Find the country that any IP address or hostname originates from
 
 GNU_CONFIGURE=	yes
-USES=			libtool:oldver
+USES=		libtool:oldver
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	aclocal automake libtool libtoolize autoconf
+AUTOMAKE_ARGS=	--add-missing
 
-SUB_FILES=		geoipupdate.sh
+SUB_FILES=	geoipupdate.sh
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/geoipupdate.sh ${STAGEDIR}${PREFIX}/bin
