@@ -314,6 +314,7 @@
     SUBDIR += ssgless
     SUBDIR += statsd
     SUBDIR += subcalc
+    SUBDIR += sx
     SUBDIR += sysmon
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
