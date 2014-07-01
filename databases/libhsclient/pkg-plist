@@ -13,6 +13,5 @@ include/handlersocket/util.hpp
 include/handlersocket/auto_ptrcontainer.hpp
 include/handlersocket/hstcpcli.hpp
 include/handlersocket/string_ref.hpp
-lib/libhsclient.la
 lib/libhsclient.a
 @dirrmtry include/handlersocket
