@@ -44,6 +44,7 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	56
 
+USES+=		perl5
 USE_PERL5=	run
 
 CONFLICTS_INSTALL=	mysql5.[0-57-9]-server-* mysql[0-46-9][0-9]-server-* percona[0-9][0-9]-server-* mariadb[0-9][0-9]-server-*
