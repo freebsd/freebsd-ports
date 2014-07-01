@@ -3,6 +3,7 @@
 
 PORTNAME=	libconfig
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://research.wand.net.nz/software/libconfig/ \
 		http://matt.peterson.org/FreeBSD/ports/
@@ -13,15 +14,15 @@ COMMENT=	C library for parsing config files
 
 CONFLICTS=	libconfig-[0-9]*
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	include/libconfig.h lib/libconfig.a lib/libconfig.la \
-		lib/libconfig.so lib/libconfig.so.1
+PLIST_FILES=	include/libconfig.h lib/libconfig.a \
+		lib/libconfig.so lib/libconfig.so.1 \
+		lib/libconfig.so.1.0.4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
