@@ -3,22 +3,23 @@
 
 PORTNAME=	hinversi
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/latest
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Reversi/Othello clone
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=	pathfix
-USE_AUTOTOOLS=	libtool
+USES=		libtool pathfix
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=	gettext
