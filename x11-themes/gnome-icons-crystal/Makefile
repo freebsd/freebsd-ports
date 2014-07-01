@@ -18,10 +18,9 @@ COMMENT=	Crystal SVG Icons for Gnome
 
 RESTRICTED=	${REASON}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/CfG-Crystal-SVG-${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|\(^Directories=.*\),,|\1,|' ${WRKSRC}/index.theme
 
