@@ -38,15 +38,13 @@ include/cc++/unix.h
 include/cc++/url.h
 include/cc++/xml.h
 include/cc++/zstream.h
-lib/libccext2-1.8.so
 lib/libccext2-1.8.so.0
+lib/libccext2-1.8.so.0.0.1
 lib/libccext2.a
-lib/libccext2.la
 lib/libccext2.so
-lib/libccgnu2-1.8.so
 lib/libccgnu2-1.8.so.0
+lib/libccgnu2-1.8.so.0.0.1
 lib/libccgnu2.a
-lib/libccgnu2.la
 lib/libccgnu2.so
 libdata/pkgconfig/libccext2.pc
 libdata/pkgconfig/libccgnu2.pc
