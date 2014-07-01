@@ -43,9 +43,9 @@
 %%PYTHON_SITELIBDIR%%/xcb/xc_misc.py
 %%PYTHON_SITELIBDIR%%/xcb/xc_misc.pyc
 %%PYTHON_SITELIBDIR%%/xcb/xc_misc.pyo
-%%PYTHON_SITELIBDIR%%/xcb/xcb.la
 %%PYTHON_SITELIBDIR%%/xcb/xcb.so
 %%PYTHON_SITELIBDIR%%/xcb/xcb.so.0
+%%PYTHON_SITELIBDIR%%/xcb/xcb.so.0.0.0
 %%PYTHON_SITELIBDIR%%/xcb/xevie.py
 %%PYTHON_SITELIBDIR%%/xcb/xevie.pyc
 %%PYTHON_SITELIBDIR%%/xcb/xevie.pyo
