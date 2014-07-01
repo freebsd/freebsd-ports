@@ -32,6 +32,7 @@ SUB_FILES=	run-nip2.sh
 # Somehow vendor's configure misses these:
 MAKE_ENV+=	UPDATE_MIME_DATABASE=update-mime-database	\
 		UPDATE_DESKTOP_DATABASE=update-desktop-database
+MANCOMPRESSED=	no
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/run-nip2.sh \
