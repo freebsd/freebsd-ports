@@ -3,6 +3,7 @@
 
 PORTNAME=	xfsprogs
 PORTVERSION=	2.9.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/ \
 		ftp://oss.sgi.com/projects/xfs/previous/cmd_tars/
@@ -12,10 +13,12 @@ EXTRACT_SUFX=	-1.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities and library to manipulate an XFS filesystem
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21 GPLv2
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		gettext gmake
-USE_AUTOTOOLS=	autoconf libtool:env
+USES=		gettext gmake libtool
+USE_AUTOTOOLS=	autoconf libtoolize
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \
 			LIBTOOL=${LIBTOOL} OPTIMIZER=" "
