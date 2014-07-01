@@ -20,9 +20,8 @@ GTKRC_DIR=	${DISTNAME}/gtk-2.0
 USE_GNOME=	gtk20
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${LOCALBASE}/share/themes/${GTKRC_DIR}
-	@${INSTALL_DATA} ${WRKDIR}/${GTKRC_DIR}/gtkrc ${LOCALBASE}/share/themes/${GTKRC_DIR}
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/themes/${GTKRC_DIR}
+	@${INSTALL_DATA} ${WRKDIR}/${GTKRC_DIR}/gtkrc ${STAGEDIR}${LOCALBASE}/share/themes/${GTKRC_DIR}
 
 .include <bsd.port.mk>
