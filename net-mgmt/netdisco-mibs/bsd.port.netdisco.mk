@@ -3,6 +3,7 @@ MIBDIRS=	allied \
 		arista \
 		aruba \
 		asante \
+		avaya \
 		cabletron \
 		cisco \
 		cyclades \
@@ -11,6 +12,7 @@ MIBDIRS=	allied \
 		extreme \
 		foundry \
 		hp \
+		ibm \
 		juniper \
 		mikrotik \
 		net-snmp \
@@ -18,4 +20,5 @@ MIBDIRS=	allied \
 		netscreen \
 		nortel \
 		packetfront \
+		pica8 \
 		rfc

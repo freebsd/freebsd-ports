@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco-mibs
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/netdisco/netdisco-mibs/${PORTVERSION}
 
@@ -12,15 +11,14 @@ COMMENT=	Mibs for use with ports-mgmt/netdisco (and snmp)
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 .include "bsd.port.netdisco.mk"
 
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
 .	for mibdir in ${MIBDIRS}
-		(cd ${DATADIR}/${mibdir} && ${GREP} 'DEFINITIONS ::= BEGIN' *.* | ${SED} 's/\(.*\..*\):[[:space:]]*\(.*\) DEFINITIONS.*$$/\2 \1/' > .index)
+		(cd ${STAGEDIR}${DATADIR}/${mibdir} && ${GREP} 'DEFINITIONS ::= BEGIN' *.* | ${SED} 's/\(.*\..*\):[[:space:]]*\(.*\) DEFINITIONS.*$$/\2 \1/' > .index)
 .	endfor
-	(cd ${DATADIR} && ${SH} ./mkindex)
+	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 644 mib_index.txt && ${SH} ./mkindex)
 
 .include <bsd.port.mk>

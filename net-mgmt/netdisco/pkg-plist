@@ -113,28 +113,17 @@ bin/port_control
 %%DOCSDIR%%/README-API-BACKEND
 %%DOCSDIR%%/README-API-SHARED
 %%DOCSDIR%%/UPGRADE
-@unexec d="%D/%%ETCDIR%%"; f="netdisco.conf"; if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
-%%ETCDIR%%/netdisco.conf.sample
-@exec if [ ! -f %%ETCDIR%%/netdisco.conf ] ; then cp -p %%ETCDIR%%/netdisco.conf.sample %%ETCDIR%%/netdisco.conf; fi
-@unexec d="%D/%%ETCDIR%%"; f="netdisco-topology.txt"; if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
-%%ETCDIR%%/netdisco-topology.txt.sample
-@exec if [ ! -f %%ETCDIR%%/netdisco-topology.txt ] ; then cp -p %%ETCDIR%%/netdisco-topology.txt.sample %%ETCDIR%%/netdisco-topology.txt; fi
-@unexec d="%D/%%ETCDIR%%"; f="netdisco.crontab"; if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
-%%ETCDIR%%/netdisco.crontab.sample
-@exec if [ ! -f %%ETCDIR%%/netdisco.crontab ] ; then cp -p %%ETCDIR%%/netdisco.crontab.sample %%ETCDIR%%/netdisco.crontab; fi
-@unexec d="%D/%%ETCDIR%%"; f="netdisco_apache.conf"; if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
-%%ETCDIR%%/netdisco_apache.conf.sample
-@exec if [ ! -f %%ETCDIR%%/netdisco_apache.conf ] ; then cp -p %%ETCDIR%%/netdisco_apache.conf.sample %%ETCDIR%%/netdisco_apache.conf; fi
-@unexec d="%D/%%ETCDIR%%"; f="netdisco_apache_dir.conf"; if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
-%%ETCDIR%%/netdisco_apache_dir.conf.sample
-@exec if [ ! -f %%ETCDIR%%/netdisco_apache_dir.conf ] ; then cp -p %%ETCDIR%%/netdisco_apache_dir.conf.sample %%ETCDIR%%/netdisco_apache_dir.conf; fi
-@unexec if [ -L %%APACHEETCDIR/Includes/netdisco_apache_dir.conf ] ; then rm %%APACHEETCDIR/Includes/netdisco_apache_dir.conf; fi
-@unexec if [ -L %%APACHEETCDIR/Includes/netdisco_apache.conf ] ; then rm %%APACHEETCDIR/Includes/netdisco_apache.conf; fi
-@dirrmtry %%WWWDIR%%/mason
-@dirrm %%WWWDIR%%/doc
-@dirrmtry %%WWWDIR%%
+@group %%NETDISCO_GROUP%%
+@sample %%ETCDIR%%/netdisco.conf.sample
+@sample %%ETCDIR%%/netdisco-topology.txt.sample
+@sample %%ETCDIR%%/netdisco.crontab.sample
+@sample %%ETCDIR%%/netdisco_apache.conf.sample
+@sample %%ETCDIR%%/netdisco_apache_dir.conf.sample
+@unexec if [ -L %%APACHEETCDIR%%/Includes/netdisco_apache_dir.conf ] ; then rm %%APACHEETCDIR%%/Includes/netdisco_apache_dir.conf; fi
+@unexec if [ -L %%APACHEETCDIR%%/Includes/netdisco_apache.conf ] ; then rm %%APACHEETCDIR%%/Includes/netdisco_apache.conf; fi
+%%WEBUI%%@dirrm %%WWWDIR%%/doc
+%%WEBUI%%@dirrmtry %%WWWDIR%%
 @dirrm %%DATADIR%%/sql
 @dirrmtry %%DATADIR%%
 @dirrmtry %%ETCDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/mason
