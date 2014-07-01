@@ -3,14 +3,14 @@
 
 PORTNAME=	wenju
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
