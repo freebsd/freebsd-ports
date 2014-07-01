@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		libtool motif tar:bzip2
+USES=		libtool makeinfo motif tar:bzip2
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-htmlbrowser=xdg-open --with-pdfviewer=xdg-open \
@@ -38,7 +38,7 @@ post-patch:
 		${WRKSRC}/src/bin/geomview/x11/Makefile.in
 
 post-build:
-	@(cd ${WRKSRC}/doc && /usr/bin/makeinfo --no-split --no-validate \
+	@(cd ${WRKSRC}/doc && makeinfo --no-split --no-validate \
 		-o geomview.info geomview.texi)
 
 post-install:

@@ -15,6 +15,7 @@ LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
 CONFLICTS=	husky-htick-devel-[0-9]*
 
+USES=		makeinfo
 MAN1=		htick.1
 INFO=		htick
 

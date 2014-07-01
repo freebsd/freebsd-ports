@@ -26,6 +26,7 @@ DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
 PLIST_SUB=	TARGET="${CONFIGURE_TARGET}"
 
 .if !defined(NOPORTDOCS)
+USES=		makeinfo
 INFO=		gauche-gl-refe gauche-gl-refj
 .endif
 

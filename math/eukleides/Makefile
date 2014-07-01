@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
+USES+=		makeinfo
 USE_TEX+=	pdftex:build
 PORTDOCS=	de.pdf fr.pdf
 INFO=		eukleides

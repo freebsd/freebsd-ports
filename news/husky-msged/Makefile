@@ -14,6 +14,7 @@ COMMENT=	Msged/TE (full-featured FTN mail reader)
 
 LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf
 
+USES=		makeinfo
 MAKE_ARGS=	MSGEDCFG="\\\"~/.msged\\\""
 
 INFO=		msged
