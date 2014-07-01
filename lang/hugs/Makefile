@@ -25,9 +25,7 @@ CONFIGURE_ARGS+=	--with-pthreads
 USE_GL=		glut
 USE_XORG=	sm ice xmu xi x11
 
-.if ${ARCH} == "ia64"
-BROKEN=		dumps core during build on ${ARCH}
-.endif
+BROKEN_ia64=	dumps core during build
 
 post-patch:
 	@${REINPLACE_CMD} 's/LIBS/LIBRARIES/' ${WRKSRC}/libraries/Makefile.in
