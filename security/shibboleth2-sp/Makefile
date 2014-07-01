@@ -3,7 +3,7 @@
 
 PORTNAME=	shibboleth-sp
 PORTVERSION=	2.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
@@ -39,7 +39,7 @@ PLIST_SUB+=	WITH_APACHE_22="@comment "
 PLIST_SUB+=	WITH_APACHE_24=""
 .endif
 
-SUB_LIST+=	SH=${SH}
+SUB_LIST+=	SH=${SH} WWWGRP=${WWWGRP}
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 SUB_LIST+=	SHIBD_USER=${USERS}
