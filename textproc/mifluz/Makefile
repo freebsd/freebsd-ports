@@ -3,6 +3,7 @@
 
 PORTNAME=	mifluz
 PORTVERSION=	0.25.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -12,8 +13,8 @@ COMMENT=	C++ library to build and query a full text inverted index
 LICENSE=	GPLv3
 
 USE_GCC=	any
-USES=		bison iconv makeinfo pathfix
-USE_AUTOTOOLS=	libtool
+USES=		bison iconv libtool makeinfo pathfix
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-unac
 USE_LDCONFIG=	yes
 
