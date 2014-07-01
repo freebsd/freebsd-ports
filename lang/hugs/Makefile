@@ -3,45 +3,31 @@
 
 PORTNAME=	hugs98
 PORTVERSION=	200609
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/2006-09/
 DISTNAME=	${PORTNAME}-plus-${HUGS_DATE}
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	An interpreter for the functional programming language Haskell 98
+COMMENT=	Interpreter for the functional programming language Haskell 98
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-#OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
 HUGS_DATE=	Sep2006
-USES=		bison gmake
-GNU_CONFIGURE=	yes
-#CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
-#CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
+USES=		bison gmake openal:al,alut
+USE_GCC=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-pthreads
+
+USE_GL=		glut
+USE_XORG=	sm ice xmu xi x11
 
 .if ${ARCH} == "ia64"
 BROKEN=		dumps core during build on ${ARCH}
 .endif
-
-.if !defined(WITHOUT_X11)
-USE_GL=	glut
-USE_XORG=	sm ice xmu xi x11
-PLIST_SUB+=	X11=""
-.else
-BROKEN=		not supported at the moment
-CONFIGURE_ARGS+=	--disable-hgl --disable-opengl --disable-alut --disable-glut --disable-x11
-PLIST_SUB+=	X11="@comment "
-.endif
-
-MAN1=		hugs.1
 
 post-patch:
 	@${REINPLACE_CMD} 's/LIBS/LIBRARIES/' ${WRKSRC}/libraries/Makefile.in
@@ -53,6 +39,8 @@ post-patch:
 		${WRKSRC}/packages/GLUT/configure \
 		${WRKSRC}/packages/X11/configure \
 		${WRKSRC}/packages/HGL/configure
+	@${REINPLACE_CMD} -e 's,"gcc","${CC}",g' \
+		${WRKSRC}/hsc2hs/Main.hs
 
 do-build:
 .	for dir in src libraries docs
@@ -64,4 +52,4 @@ do-install:
 	cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 .	endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

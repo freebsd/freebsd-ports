@@ -6,6 +6,17 @@ bin/runhugs
 lib/hugs/Credits
 lib/hugs/License
 lib/hugs/Readme
+lib/hugs/demos/ALUT/Basic/HelloWorld.hs
+lib/hugs/demos/ALUT/Basic/OpenALInfo.hs
+lib/hugs/demos/ALUT/Basic/PlayFile.hs
+lib/hugs/demos/ALUT/TestSuite/TestErrorStuff.hs
+lib/hugs/demos/ALUT/TestSuite/TestFileLoader.hs
+lib/hugs/demos/ALUT/TestSuite/TestMemoryLoader.hs
+lib/hugs/demos/ALUT/TestSuite/TestVersion.hs
+lib/hugs/demos/ALUT/TestSuite/TestWaveforms.hs
+lib/hugs/demos/ALUT/TestSuite/file1.wav
+lib/hugs/demos/ALUT/TestSuite/file2.au
+lib/hugs/demos/ALUT/TestSuite/file3.raw
 lib/hugs/demos/AnsiDemo.hs
 lib/hugs/demos/ArrayEx.hs
 lib/hugs/demos/Cabal/DefaultSetup.lhs
@@ -170,6 +181,7 @@ lib/hugs/demos/Makefile.in
 lib/hugs/demos/Matrix.hs
 lib/hugs/demos/Mersenne.hs
 lib/hugs/demos/Minsrand.hs
+lib/hugs/demos/OpenAL/test/TestDevice.hs
 lib/hugs/demos/Queens.hs
 lib/hugs/demos/Say.hs
 lib/hugs/demos/Stack.hs
@@ -428,7 +440,6 @@ lib/hugs/packages/HaXml/programs/Xtract/Main.hs
 lib/hugs/packages/HaXml/programs/Xtract/Paths_HaXml.hs
 lib/hugs/packages/HaXml/programs/XtractLazy/Main.hs
 lib/hugs/packages/HaXml/programs/XtractLazy/Paths_HaXml.hs
-lib/hugs/packages/X11/autogen/Paths_X11.hs
 lib/hugs/packages/base/Control/Applicative.hs
 lib/hugs/packages/base/Control/Arrow.hs
 lib/hugs/packages/base/Control/Concurrent.hs
@@ -734,44 +745,55 @@ lib/hugs/packages/xhtml/Text/XHtml/Table.hs
 lib/hugs/packages/xhtml/Text/XHtml/Transitional.hs
 lib/hugs/packages/xhtml/Text/XHtml/Transitional/Attributes.hs
 lib/hugs/packages/xhtml/Text/XHtml/Transitional/Elements.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Begin.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Begin.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Global.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Global.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Registration.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Registration.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Window.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Window.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Colormap.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Colormap.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Constants.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Debugging.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/DeviceControl.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/DeviceControl.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Extensions.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Extensions.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Fonts.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Fonts.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/GameMode.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/GameMode.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Initialization.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Initialization.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Menu.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Menu.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Objects.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Objects.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Overlay.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Overlay.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/QueryUtils.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/QueryUtils.so
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/State.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Types.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Window.hs
-%%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Window.so
-%%X11%%lib/hugs/packages/GLUT/LICENSE
-%%X11%%lib/hugs/packages/GLUT/Paths_GLUT.hs
+lib/hugs/packages/ALUT/LICENSE
+lib/hugs/packages/ALUT/Paths_ALUT.hs
+lib/hugs/packages/ALUT/Sound/ALUT.hs
+lib/hugs/packages/ALUT/Sound/ALUT/Config.hs
+lib/hugs/packages/ALUT/Sound/ALUT/Config.so
+lib/hugs/packages/ALUT/Sound/ALUT/Constants.hs
+lib/hugs/packages/ALUT/Sound/ALUT/Errors.hs
+lib/hugs/packages/ALUT/Sound/ALUT/Initialization.hs
+lib/hugs/packages/ALUT/Sound/ALUT/Loaders.hs
+lib/hugs/packages/ALUT/Sound/ALUT/Sleep.hs
+lib/hugs/packages/ALUT/Sound/ALUT/Version.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Begin.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Begin.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Global.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Global.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Registration.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Registration.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Window.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks/Window.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Colormap.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Colormap.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Constants.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Debugging.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/DeviceControl.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/DeviceControl.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Extensions.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Extensions.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Fonts.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Fonts.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/GameMode.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/GameMode.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Initialization.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Initialization.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Menu.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Menu.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Objects.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Objects.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Overlay.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Overlay.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/QueryUtils.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/QueryUtils.so
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/State.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Types.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Window.hs
+lib/hugs/packages/GLUT/Graphics/UI/GLUT/Window.so
+lib/hugs/packages/GLUT/LICENSE
+lib/hugs/packages/GLUT/Paths_GLUT.hs
 lib/hugs/packages/HUnit/LICENSE
 lib/hugs/packages/HUnit/Paths_HUnit.hs
 lib/hugs/packages/HUnit/Test/HUnit.lhs
@@ -812,139 +834,187 @@ lib/hugs/packages/HaXml/Text/XML/HaXml/XmlContent.hs
 lib/hugs/packages/HaXml/Text/XML/HaXml/Xtract/Combinators.hs
 lib/hugs/packages/HaXml/Text/XML/HaXml/Xtract/Lex.hs
 lib/hugs/packages/HaXml/Text/XML/HaXml/Xtract/Parse.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Antialiasing.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BasicTypes.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BeginEnd.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BeginEnd.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Bitmaps.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Bitmaps.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BlendingFactor.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BufferMode.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BufferObjects.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BufferObjects.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Capability.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Capability.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Clipping.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Clipping.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/ColorSum.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Colors.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Colors.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/ComparisonFunction.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/CoordTrans.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/CoordTrans.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/DataType.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/DisplayLists.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/DisplayLists.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/EdgeFlag.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Evaluators.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Evaluators.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Exception.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Extensions.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Extensions.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Face.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Feedback.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Feedback.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/FlushFinish.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/FlushFinish.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Fog.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Fog.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Framebuffer.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Framebuffer.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/GLboolean.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Hints.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Hints.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/IOState.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/LineSegments.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/LineSegments.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PeekPoke.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PerFragment.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PerFragment.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelData.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelFormat.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PointParameter.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PointParameter.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Points.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Points.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PolygonMode.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Polygons.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Polygons.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PrimitiveMode.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/QueryUtils.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/QueryUtils.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/RasterPos.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/RasterPos.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Rectangles.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Rectangles.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/RenderMode.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/RenderMode.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/SavingState.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/SavingState.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Selection.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Selection.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/StateVar.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/StringQueries.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/StringQueries.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Application.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Environments.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Environments.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Objects.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Objects.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Queries.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Queries.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Specification.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Specification.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/VertexArrays.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/VertexArrays.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/VertexSpec.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/VertexSpec.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Errors.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Initialization.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Initialization.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Matrix.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Matrix.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Mipmapping.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Mipmapping.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/NURBS.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/NURBS.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Quadrics.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Quadrics.so
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Tessellation.hs
-%%X11%%lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Tessellation.so
-%%X11%%lib/hugs/packages/OpenGL/LICENSE
-%%X11%%lib/hugs/packages/OpenGL/Paths_OpenGL.hs
+lib/hugs/packages/OpenAL/LICENSE
+lib/hugs/packages/OpenAL/Paths_OpenAL.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/ALboolean.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Attenuation.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Attenuation.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/BasicTypes.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Buffer.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Buffer.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/BufferInternal.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/BufferInternal.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Doppler.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Doppler.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Errors.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Errors.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Extensions.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Extensions.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Format.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Listener.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Listener.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/PeekPoke.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/QueryUtils.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/QueryUtils.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Source.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/Source.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/SourceState.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/String.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/AL/StringQueries.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/ALCboolean.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/BasicTypes.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Capture.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Capture.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Context.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Context.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Device.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Device.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Errors.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Errors.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Extensions.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/Extensions.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/QueryUtils.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/QueryUtils.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/ALC/String.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/Config.hs
+lib/hugs/packages/OpenAL/Sound/OpenAL/Config.so
+lib/hugs/packages/OpenAL/Sound/OpenAL/Constants.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Antialiasing.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BasicTypes.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BeginEnd.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BeginEnd.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Bitmaps.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Bitmaps.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BlendingFactor.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BufferMode.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BufferObjects.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/BufferObjects.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Capability.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Capability.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Clipping.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Clipping.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/ColorSum.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Colors.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Colors.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/ComparisonFunction.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/CoordTrans.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/CoordTrans.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/DataType.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/DisplayLists.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/DisplayLists.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/EdgeFlag.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Evaluators.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Evaluators.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Exception.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Extensions.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Extensions.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Face.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Feedback.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Feedback.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/FlushFinish.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/FlushFinish.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Fog.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Fog.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Framebuffer.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Framebuffer.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/GLboolean.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Hints.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Hints.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/IOState.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/LineSegments.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/LineSegments.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PeekPoke.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PerFragment.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PerFragment.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelData.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelFormat.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PointParameter.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PointParameter.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Points.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Points.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PolygonMode.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Polygons.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Polygons.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PrimitiveMode.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/QueryUtils.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/QueryUtils.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/RasterPos.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/RasterPos.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Rectangles.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Rectangles.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/RenderMode.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/RenderMode.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/SavingState.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/SavingState.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Selection.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Selection.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/StateVar.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/StringQueries.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/StringQueries.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Application.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Environments.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Environments.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Objects.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Objects.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Queries.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Queries.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Specification.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/Specification.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/VertexArrays.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/VertexArrays.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/VertexSpec.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/VertexSpec.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Errors.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Initialization.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Initialization.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Matrix.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Matrix.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Mipmapping.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Mipmapping.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/NURBS.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/NURBS.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Quadrics.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Quadrics.so
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Tessellation.hs
+lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Tessellation.so
+lib/hugs/packages/OpenGL/LICENSE
+lib/hugs/packages/OpenGL/Paths_OpenGL.hs
 lib/hugs/packages/QuickCheck/Debug/QuickCheck.hs
 lib/hugs/packages/QuickCheck/Debug/QuickCheck/Batch.hs
 lib/hugs/packages/QuickCheck/Debug/QuickCheck/Poly.hs
@@ -1008,6 +1078,32 @@ lib/hugs/packages/parsec/Text/ParserCombinators/Parsec/Perm.hs
 lib/hugs/packages/parsec/Text/ParserCombinators/Parsec/Pos.hs
 lib/hugs/packages/parsec/Text/ParserCombinators/Parsec/Prim.hs
 lib/hugs/packages/parsec/Text/ParserCombinators/Parsec/Token.hs
+lib/hugs/packages/X11/Graphics/X11.hs
+lib/hugs/packages/X11/Graphics/X11/Types.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Atom.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Atom.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Color.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Color.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Context.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Context.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Display.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Display.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Event.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Event.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Font.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Font.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Misc.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Misc.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Region.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Region.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Screen.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Screen.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Types.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Window.hs
+lib/hugs/packages/X11/Graphics/X11/Xlib/Window.so
+lib/hugs/packages/X11/LICENSE
+lib/hugs/packages/X11/Paths_X11.hs
 lib/hugs/programs/cpphs/Language/Preprocessor/Cpphs.hs
 lib/hugs/programs/cpphs/Language/Preprocessor/Cpphs/CppIfdef.hs
 lib/hugs/programs/cpphs/Language/Preprocessor/Cpphs/HashDefine.hs
@@ -1024,8 +1120,14 @@ lib/hugs/programs/cpphs/Paths_cpphs.hs
 lib/hugs/programs/cpphs/Text/ParserCombinators/HuttonMeijer.hs
 lib/hugs/programs/hsc2hs/Main.hs
 lib/hugs/programs/hsc2hs/Paths_hsc2hs.hs
+man/man1/hugs.1.gz
 share/hsc2hs-0.67/template-hsc.h
 @dirrm share/hsc2hs-0.67
+@dirrm lib/hugs/demos/ALUT/Basic
+@dirrm lib/hugs/demos/ALUT/TestSuite
+@dirrm lib/hugs/demos/ALUT
+@dirrm lib/hugs/demos/OpenAL/test
+@dirrm lib/hugs/demos/OpenAL
 @dirrm lib/hugs/demos/haskell-src
 @dirrm lib/hugs/demos/Cabal
 @dirrm lib/hugs/demos/GLUT/BOGLGP/Chapter01
@@ -1053,6 +1155,9 @@ share/hsc2hs-0.67/template-hsc.h
 @dirrm lib/hugs/docs
 @dirrm lib/hugs/include
 @dirrm lib/hugs/oldlib
+@dirrm lib/hugs/packages/ALUT/Sound/ALUT
+@dirrm lib/hugs/packages/ALUT/Sound
+@dirrm lib/hugs/packages/ALUT
 @dirrm lib/hugs/packages/Cabal/Distribution/Compat
 @dirrm lib/hugs/packages/Cabal/Distribution/PreProcess
 @dirrm lib/hugs/packages/Cabal/Distribution/Simple
@@ -1060,11 +1165,11 @@ share/hsc2hs-0.67/template-hsc.h
 @dirrm lib/hugs/packages/Cabal/Language/Haskell
 @dirrm lib/hugs/packages/Cabal/Language
 @dirrm lib/hugs/packages/Cabal
-%%X11%%@dirrm lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks
-%%X11%%@dirrm lib/hugs/packages/GLUT/Graphics/UI/GLUT
-%%X11%%@dirrm lib/hugs/packages/GLUT/Graphics/UI
-%%X11%%@dirrm lib/hugs/packages/GLUT/Graphics
-%%X11%%@dirrm lib/hugs/packages/GLUT
+@dirrm lib/hugs/packages/GLUT/Graphics/UI/GLUT/Callbacks
+@dirrm lib/hugs/packages/GLUT/Graphics/UI/GLUT
+@dirrm lib/hugs/packages/GLUT/Graphics/UI
+@dirrm lib/hugs/packages/GLUT/Graphics
+@dirrm lib/hugs/packages/GLUT
 @dirrm lib/hugs/packages/HGL/Graphics/HGL/X11
 @dirrm lib/hugs/packages/HGL/Graphics/HGL/Internals
 @dirrm lib/hugs/packages/HGL/Graphics/HGL/Draw
@@ -1090,20 +1195,24 @@ share/hsc2hs-0.67/template-hsc.h
 @dirrm lib/hugs/packages/HaXml/programs/XtractLazy
 @dirrm lib/hugs/packages/HaXml/programs
 @dirrm lib/hugs/packages/HaXml
-%%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles
-%%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing
-%%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL
-%%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU
-%%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL
-%%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering
-%%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics
-%%X11%%@dirrm lib/hugs/packages/OpenGL
+@dirrm lib/hugs/packages/OpenAL/Sound/OpenAL/AL
+@dirrm lib/hugs/packages/OpenAL/Sound/OpenAL/ALC
+@dirrm lib/hugs/packages/OpenAL/Sound/OpenAL
+@dirrm lib/hugs/packages/OpenAL/Sound
+@dirrm lib/hugs/packages/OpenAL
+@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles
+@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing
+@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL
+@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU
+@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL
+@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering
+@dirrm lib/hugs/packages/OpenGL/Graphics
+@dirrm lib/hugs/packages/OpenGL
 @dirrm lib/hugs/packages/QuickCheck/Debug/QuickCheck
 @dirrm lib/hugs/packages/QuickCheck/Debug
 @dirrm lib/hugs/packages/QuickCheck/Test/QuickCheck
 @dirrm lib/hugs/packages/QuickCheck/Test
 @dirrm lib/hugs/packages/QuickCheck
-@dirrm lib/hugs/packages/X11/autogen
 @dirrm lib/hugs/packages/X11
 @dirrm lib/hugs/packages/base/Text/Show
 @dirrm lib/hugs/packages/base/Text/Read
@@ -1183,6 +1292,9 @@ share/hsc2hs-0.67/template-hsc.h
 @dirrm lib/hugs/packages/xhtml/Text/XHtml
 @dirrm lib/hugs/packages/xhtml/Text
 @dirrm lib/hugs/packages/xhtml
+@dirrm lib/hugs/packages/X11/Graphics/X11/Xlib
+@dirrm lib/hugs/packages/X11/Graphics/X11
+@dirrm lib/hugs/packages/X11/Graphics
 @dirrm lib/hugs/packages
 @dirrm lib/hugs/programs/cpphs/Language/Preprocessor/Cpphs
 @dirrm lib/hugs/programs/cpphs/Language/Preprocessor
