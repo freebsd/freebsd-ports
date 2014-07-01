@@ -12,10 +12,8 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Spectrum analyser
 
-USES=		gmake motif
-USE_BZIP2=	yes
+USES=		gmake libtool motif tar:bzip2
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
