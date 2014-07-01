@@ -3,14 +3,14 @@
 
 PORTNAME=	xdelta
 PORTVERSION=	1.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Diff/patch utility for binary files
 
-USES=		libtool:keepla pkgconfig
+USES=		libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
