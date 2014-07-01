@@ -22,11 +22,10 @@ include/hippo-canvas-1/hippo/hippo-canvas.h
 include/hippo-canvas-1/hippo/hippo-event.h
 include/hippo-canvas-1/hippo/hippo-graphics.h
 lib/libhippocanvas-1.a
-lib/libhippocanvas-1.la
 lib/libhippocanvas-1.so
 lib/libhippocanvas-1.so.0
+lib/libhippocanvas-1.so.0.0.0
 %%PYTHON_SITELIBDIR%%/hippo.a
-%%PYTHON_SITELIBDIR%%/hippo.la
 %%PYTHON_SITELIBDIR%%/hippo.so
 libdata/pkgconfig/hippo-canvas-1.pc
 @dirrm %%PYTHON_SITELIBDIR%%
