@@ -1,4 +1,3 @@
-lib/xfce4/panel/plugins/libtime-out.la
 lib/xfce4/panel/plugins/libtime-out.so
 share/icons/hicolor/48x48/apps/xfce4-time-out-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-time-out-plugin.svg
