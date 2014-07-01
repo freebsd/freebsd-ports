@@ -2,6 +2,7 @@ include/girara/callbacks.h
 include/girara/commands.h
 include/girara/completion.h
 include/girara/config.h
+include/girara/css-definitions.h
 include/girara/datastructures.h
 include/girara/girara.h
 include/girara/input-history.h
@@ -11,6 +12,7 @@ include/girara/settings.h
 include/girara/shortcuts.h
 include/girara/statusbar.h
 include/girara/tabs.h
+include/girara/template.h
 include/girara/types.h
 include/girara/utils.h
 include/girara/version.h
