@@ -3,7 +3,7 @@
 
 PORTNAME=	rxvt
 PORTVERSION=	2.7.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES+=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -11,8 +11,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low memory usage xterm replacement that supports color
 
-USE_AUTOTOOLS=	libtool
-USES=		perl5
+USES=		libtool perl5
 USE_LDCONFIG=	yes
 USE_PERL5=	build patch
 USE_XORG=	xpm
@@ -135,9 +134,6 @@ CONFIGURE_ARGS+=	--enable-xterm-scroll
 post-patch:
 	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
 		${WRKSRC}/src/ptytty.c
-	@${REINPLACE_CMD} -e 's|--mode=compile|& --tag=CC|' \
-		-e 's|--mode=link|& --tag=CC|' \
-		${WRKSRC}/src/Makefile.in
 
 post-install:
 	@${CHMOD} 4711 ${STAGEDIR}${PREFIX}/bin/rxvt
