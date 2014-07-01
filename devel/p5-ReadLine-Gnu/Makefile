@@ -16,10 +16,11 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 USES=		perl5 readline
+CFLAGS+=	${CPPFLAGS}
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 
 test:	build
-	@(cd ${WRKSRC}; make test)
+	@(cd ${WRKSRC}; ${MAKE_CMD} test)
 
 .include <bsd.port.mk>
