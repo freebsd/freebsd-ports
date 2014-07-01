@@ -14,9 +14,9 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		smbclient:${PORTSDIR}/net/samba-libsmbclient \
-		cups:${PORTSDIR}/print/cups-base
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient \
+		libcups.so:${PORTSDIR}/print/cups-base
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.16
 
@@ -36,19 +36,10 @@ NO_PACKAGE=	must generate a fresh private key at install time
 
 SSH_KEYGEN?=	ssh-keygen
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=--disable-nls --localedir=/dev/null
-PLIST_SUB+=	NLS="@comment "
-.else
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.endif
+NLS_CONFIGURE_ENABLE=	nls
 
 # do not use default private key included with tarball
 post-patch:
@@ -61,6 +52,6 @@ post-patch:
 	@${RM} ${WRKSRC}/extres/xdg/*.bak
 
 post-install:
-	@${CHMOD} 440 ${PREFIX}/share/keys/server.id_dsa.key
+	@${CHMOD} 440 ${STAGEDIR}${PREFIX}/share/keys/server.id_dsa.key
 
 .include <bsd.port.mk>
