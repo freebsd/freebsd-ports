@@ -28,6 +28,8 @@ lib/qt4/plugins/script/libqrossqtsplugin.so
 lib/qt4/plugins/script/libqrossqtsplugin.so.0.1
 share/cmake/Modules/FindQrosscore.cmake
 share/leechcraft/cmake/FindQrosscore.cmake
+@dirrmtry share/cmake/Modules
+@dirrmtry share/cmake
 @dirrmtry share/leechcraft/cmake
 @dirrmtry share/leechcraft
 @dirrmtry lib/qt4/plugins/script
