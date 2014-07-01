@@ -12,7 +12,9 @@ MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/percona55-client
-USES=		bison cmake shebangfix
+USES=		bison cmake readline shebangfix
+
+CXXFLAGS+=	${CPPFLAGS}
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX
 OPTIONS_DEFAULT=	OPENSSL
@@ -80,8 +82,6 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/mysql
-.else
-USES+=		readline
 .endif
 
 post-patch:
