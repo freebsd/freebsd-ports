@@ -3,7 +3,7 @@
 
 PORTNAME=	rezlooks
 PORTVERSION=	0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	39179-rezlooks-${PORTVERSION}
@@ -14,18 +14,15 @@ COMMENT=	GTK+ 2.x engine based on Clearlooks
 WRKSRC=		${WRKDIR}/rezlooks-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	ANIMATION
-OPTIONS_DEFAULT=	ANIMATION
+OPTIONS_DEFAULT=ANIMATION
 ANIMATION_DESC=	Animation support
+ANIMATION_CONFIGURE_ENABLE=	animation
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MANIMATION}
-CONFIGURE_ARGS+=	--enable-animation
-.endif
+PLIST_FILES=	lib/gtk-2.0/%%GTK2_VERSION%%/engines/librezlooks.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
