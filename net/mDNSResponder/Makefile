@@ -29,7 +29,7 @@ EXTRA_SBIN=	dnsextd
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "arm"
+.if ${ARCH:C/^(...).*/\1/} == "arm"
 MAKE_ARGS+=	LD="${CC} -shared"
 .endif
 
