@@ -1,7 +1,7 @@
 include/scsi/smp_lib.h
+lib/libsmputils1.so.1.0.0
 lib/libsmputils1.so.1
 lib/libsmputils1.so
-lib/libsmputils1.la
 lib/libsmputils1.a
 bin/smp_conf_general
 bin/smp_conf_phy_event
