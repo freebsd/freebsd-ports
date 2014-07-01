@@ -15,7 +15,7 @@ COMMENT=	OpenSMTPD is a free MTA
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.so:${PORTSDIR}/devel/libevent
 
 OPTIONS_DEFINE=	CA_BUNDLE PAM SQLITE MYSQL PGSQL LDAP REDIS
 
@@ -58,7 +58,7 @@ LDAP_CONFIGURE_ON=	--with-experimental-ldap
 
 PAM_CONFIGURE_ON=	--with-pam --with-pam-service=smtpd
 
-REDIS_LIB_DEPENDS=	hiredis:${PORTSDIR}/databases/hiredis
+REDIS_LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
 REDIS_CONFIGURE_ON=	--with-experimental-redis
 
 .include <bsd.port.options.mk>
