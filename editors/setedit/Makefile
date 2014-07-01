@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-4
 MAINTAINER=	exile@chamber.ee
 COMMENT=	Programmer's editor with a nice Text User Interface (TUI)
 
-LIB_DEPENDS=	rhtv.2:${PORTSDIR}/devel/rhtvision
+LIB_DEPENDS=	librhtv.so:${PORTSDIR}/devel/rhtvision
 
 BROKEN=		Does not build
 MAKE_JOBS_UNSAFE=	yes
@@ -62,14 +62,14 @@ PLIST_FILES=	share/locale/es/LC_MESSAGES/setedit.mo \
 .endif
 
 .if ${PORT_OPTIONS:MAALIB}
-LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS+=	libaa.so:${PORTSDIR}/graphics/aalib
 CONFIGURE_ARGS+=	--with-aa
 .else
 CONFIGURE_ARGS+=	--without-aa
 .endif
 
 .if ${PORT_OPTIONS:MELECTRIC}
-LIB_DEPENDS+=	efence.0:${PORTSDIR}/devel/ElectricFence
+LIB_DEPENDS+=	libefence.so:${PORTSDIR}/devel/ElectricFence
 CONFIGURE_ARGS+=	--with-efence
 .endif
 

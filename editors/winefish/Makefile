@@ -12,8 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	LaTeX editor based on BlueFish
 
-LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell \
+		libpcre.so:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos \
 		gv:${PORTSDIR}/print/gv \
 		tidy:${PORTSDIR}/www/tidy-lib \
