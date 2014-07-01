@@ -8,12 +8,11 @@ DISTNAME=	Cezanne_packaged
 
 COMMENT=	KDE Cezanne iconset
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 WRKSRC=		${WRKDIR}/Cezanne
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 
 PLIST_FILE_PATTERN_EXTRA=	-v "buildset"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

@@ -11,5 +11,4 @@ COMMENT=	KDE SKY iconset
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
