@@ -13,7 +13,7 @@ COMMENT=	Mixed-signal circuit simulator derived from Spice and Cider
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake libtool readline
 
 DEBUG_CONFIGURE_ENABLE=	debug
 CONFIGURE_ARGS+=	--enable-xspice --with-readline=yes
