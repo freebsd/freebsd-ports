@@ -30,7 +30,6 @@ SNMP_DESC=	SNMP support
 
 OPTIONS_DEFAULT=INVENTORY
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MINVENTORY}
@@ -46,18 +45,18 @@ PLIST_SUB+=	SNMP="@comment "
 .endif
 
 do-install:
-	@${MKDIR} -m 0755 ${PREFIX}/${GLPIPLUGINDIR}
-	@${CP} -R ${WRKSRC}/fusioninventory ${PREFIX}/${GLPIPLUGINDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusioninventory
+	@${MKDIR} -m 0755 ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
+	@${CP} -R ${WRKSRC}/fusioninventory ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}/fusioninventory
 
 .if ${PORT_OPTIONS:MINVENTORY}
-	@${CP} -R ${WRKSRC}/fusinvinventory ${PREFIX}/${GLPIPLUGINDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvinventory
+	@${CP} -R ${WRKSRC}/fusinvinventory ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}/fusinvinventory
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
-	@${CP} -R ${WRKSRC}/fusinvsnmp ${PREFIX}/${GLPIPLUGINDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvsnmp
+	@${CP} -R ${WRKSRC}/fusinvsnmp ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}/fusinvsnmp
 .endif
 
 .include <bsd.port.post.mk>
