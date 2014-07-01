@@ -1192,7 +1192,7 @@ man/man8/ipropd-master.8.gz
 man/man8/ipropd-slave.8.gz
 man/man8/kadmin.8.gz
 man/man8/kadmind.8.gz
-man/man8/kcm.8.gz
+%%KCM%%man/man8/kcm.8.gz
 man/man8/kdc.8.gz
 man/man8/kdigest.8.gz
 man/man8/kerberos.8.gz
