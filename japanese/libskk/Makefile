@@ -3,6 +3,7 @@
 
 PORTNAME=	libskk
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	https://bitbucket.org/libskk/libskk/downloads/
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
 LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	intltool introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
