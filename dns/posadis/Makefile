@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domain Name Server (DNS) implementation
 
-LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib
+LIB_DEPENDS=	libposlib.so:${PORTSDIR}/devel/poslib
 
 USE_AUTOTOOLS=	autoconf libltdl libtool
 USE_LDCONFIG=	yes

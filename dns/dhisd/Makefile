@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
