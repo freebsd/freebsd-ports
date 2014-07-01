@@ -93,6 +93,7 @@ PYZOR_INITVAR=		Pyzor
 RAZOR_INITVAR=		Razor2
 RELAY_COUNTRY_INITVAR=	RelayCountry
 SPF_QUERY_INITVAR=	SPF
+UPDATE_AND_COMPILE_INITVAR=	Rule2XSBody
 
 DOCS=		CREDITS Changes INSTALL NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example 3.4.0-RELEASE-NOTES.txt
 DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
@@ -146,16 +147,13 @@ post-patch::
 	${REINPLACE_CMD} -e '/^CC =/d; \
 		s|@SSLCFLAGS@|& $${CFLAGS}|g' ${WRKSRC}/spamc/Makefile.in
 
-.for var in ${OPTIONS_GROUP_PLUGINS}
+.for var in ${OPTIONS_GROUP_PLUGINS} UPDATE_AND_COMPILE
 .  if ${PORT_OPTIONS:M${var}}
 	${REINPLACE_CMD} -e '/${${var}_INITVAR}/s/^\#.*loadplugin/loadplugin/' ${WRKSRC}/rules/*.pre
 .  else
 	${REINPLACE_CMD} -e '/${${var}_INITVAR}/s/^loadplugin/\# loadplugin/' ${WRKSRC}/rules/*.pre
 .  endif
 .endfor
-
-	# load pre-compiled rules
-	${REINPLACE_CMD} -e '/Rule2XSBody/s/^\# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
 
 	${FIND} ${WRKSRC} -name '*.orig' -or -name '*.bak' | ${XARGS} ${RM}
 
