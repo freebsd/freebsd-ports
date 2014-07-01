@@ -3,13 +3,13 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A highly configurable, next generation framework window manager
+COMMENT=	Highly configurable, next generation framework window manager
 
 LICENSE=	GPLv2
 
