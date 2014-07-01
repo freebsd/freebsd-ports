@@ -1,5 +1,6 @@
 bin/nip2
 bin/run-nip2.sh
+man/man1/nip2.1
 share/nip2/rc/ipgtkrc
 share/nip2/data/examples/logo/logo2.ws
 share/nip2/data/examples/overlays_and_blending/overlay_blend.ws
