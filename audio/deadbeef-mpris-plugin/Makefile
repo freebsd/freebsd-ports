@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef-mpris-plugin
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USES=		pkgconfig
+USES=		pkgconfig libtool
+INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/deadbeef-${PORTVERSION}
 
