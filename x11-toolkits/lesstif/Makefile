@@ -3,7 +3,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.95.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
@@ -16,20 +16,18 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 
 CONFLICTS?=	open-motif-*
 
-USES=		tar:bzip2
-USE_AUTOTOOLS=	automake:env autoconf libtool
+USES=		libtool tar:bzip2
 USE_XORG=	sm ice xt xp xext x11 xextproto xrender xft
 USE_LDCONFIG=	yes
-LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
-CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
-CONFIGURE_ARGS+=	--disable-maintainer-mode
-CFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-static --enable-shared --enable-production \
+		--disable-maintainer-mode \
+		--with-fontconfig-lib=${LOCALBASE}/lib \
+		--with-freetype-lib=${LOCALBASE}/lib
 
 post-patch:
-	${REINPLACE_CMD} \
-		-e 's|LT_HAVE_FREETYPE|FINDXFT_HAVE_FREETYPE|g' \
-		-e 's|LT_HAVE_XRENDER|FINDXFT_HAVE_XRENDER|g' \
-		${WRKSRC}/acinclude.m4
+	@${REINPLACE_CMD} 's,freetype/freetype.h,freetype.h,' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/scripts/autoconf/ac_find_motif.m4 \
