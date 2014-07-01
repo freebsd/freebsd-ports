@@ -3,6 +3,7 @@
 
 PORTNAME=	gsm
 PORTVERSION=	1.0.13
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
 		http://www.imagemagick.org/download/delegates/ffmpeg/ \
