@@ -2,13 +2,10 @@
 bin/mt-daapd-ssc.sh
 bin/wavstreamer
 lib/mt-daapd/plugins/out-daap.a
-lib/mt-daapd/plugins/out-daap.la
 lib/mt-daapd/plugins/out-daap.so
 lib/mt-daapd/plugins/rsp.a
-lib/mt-daapd/plugins/rsp.la
 lib/mt-daapd/plugins/rsp.so
 lib/mt-daapd/plugins/ssc-script.a
-lib/mt-daapd/plugins/ssc-script.la
 lib/mt-daapd/plugins/ssc-script.so
 sbin/mt-daapd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
