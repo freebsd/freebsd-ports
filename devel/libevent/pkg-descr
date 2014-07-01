@@ -14,4 +14,4 @@ having to redesign the applications.  As a result, Libevent allows for
 portable application development and provides the most scalable event
 notification mechanism available on an operating system.
 
-WWW: http://www.monkey.org/~provos/libevent/
+WWW: http://libevent.org/
