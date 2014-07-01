@@ -6227,3 +6227,8 @@ mail/wanderlust-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
 textproc/dictem-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
 textproc/uim-el-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
 www/emacs-w3m-xemacs21-mule||2014-06-30|Removed: depend on editors/xemacs
+security/sudosh3||2014-07-01|Has expired: Funcition replaced by sudo -s
+security/sudosh||2014-07-01|Has expired: Funcition replaced by sudo -s
+security/sudosh2||2014-07-01|Has expired: Funcition replaced by sudo -s
+lang/pike76|lang/pike78|2014-07-01|Has expired: Outdated: Users should switch to lang/pike78
+editors/gummi||2014-07-01|Has expired: Builds fine but the program itself is unusable
