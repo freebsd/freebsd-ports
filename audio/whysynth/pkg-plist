@@ -1,5 +1,3 @@
-lib/dssi/whysynth.a
-lib/dssi/whysynth.la
 lib/dssi/whysynth.so
 lib/dssi/whysynth/WhySynth_gtk
 %%DATADIR%%/current_default_patches.WhySynth
