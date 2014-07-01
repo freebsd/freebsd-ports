@@ -24,7 +24,6 @@ PLIST=		${MASTERDIR}/pkg-plist
 THEMES=		Escreen Eterm auto trans
 
 pre-configure:
-	@${REINPLACE_CMD} -e "s,echo aout,echo elf,g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s,@PERL@,${LOCALBASE}/bin/perl," ${WRKSRC}/utils/kEsetroot.in
 
 post-configure:
