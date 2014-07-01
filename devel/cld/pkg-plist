@@ -12,9 +12,9 @@ include/cld/ext_lang_enc.h
 include/cld/lang_enc.h
 include/cld/languages/proto/languages.pb.h
 include/cld/languages/public/languages.h
-lib/libcld.la
 lib/libcld.so
 lib/libcld.so.0
+lib/libcld.so.0.0.0
 libdata/pkgconfig/cld.pc
 @dirrm include/cld/languages/public
 @dirrm include/cld/languages/proto
