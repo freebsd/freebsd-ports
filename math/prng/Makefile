@@ -13,28 +13,29 @@ LICENSE=	GPLv2
 
 CFLAGS+=	-fgnu89-inline
 GNU_CONFIGURE=	yes
-INFO=	prng
+INFO=		prng
 PLIST_FILES=	include/prng.h lib/libprng.a
 PORTDOCS=	prng.dvi prng.pdf prng.ps prng.txt
 PORTEXAMPLES=	Makefile pairs.c tuples.c
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for _d in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/doc/${_d} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/${_d} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for _e in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${_e} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${_e} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
 check regression-test test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
