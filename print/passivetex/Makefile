@@ -41,25 +41,14 @@ CLASS_FILES=	dummyels.sty fotex.xmt fotex.sty \
 		mlnames.sty ucharacters.sty unicode.sty \
 		dummyels.sty nomulticol.sty
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 do-install:
-	@${MKDIR} -m 555 ${PREFIX}/${CLASSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${CLASS_FILES} ${PREFIX}/${CLASSDIR}
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/test && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${CLASSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${CLASS_FILES} ${STAGEDIR}${PREFIX}/${CLASSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/test && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
