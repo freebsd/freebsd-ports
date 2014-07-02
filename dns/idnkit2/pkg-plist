@@ -15,13 +15,13 @@ include/idn/resconf.h
 include/idn/result.h
 include/idn/version.h
 lib/libidnkit.a
-lib/libidnkit.la
 lib/libidnkit.so
 lib/libidnkit.so.2
+lib/libidnkit.so.2.0.3
 lib/libidnkitlite.a
-lib/libidnkitlite.la
 lib/libidnkitlite.so
 lib/libidnkitlite.so.2
+lib/libidnkitlite.so.2.0.3
 share/idnkit/map/ja.map
 share/idnkit/map/tr.map
 @dirrm share/idnkit/map
