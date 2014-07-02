@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	stockfish
-PORTVERSION=	4
+PORTVERSION=	5
 CATEGORIES=	games
-MASTER_SITES=	https://s3.amazonaws.com/stockfish/:src \
-		http://www.execve.net/sf/:src \
+MASTER_SITES=	http://stockfish.s3.amazonaws.com/:src \
 		http://cl.ly/3x333m0G173F/download/:book \
 		http://www.execve.net/sf/:book
-DISTNAME=	stockfish-${PORTVERSION:S/.//g}-win
-DISTFILES=	stockfish-${PORTVERSION:S/.//g}-win.zip:src \
+DISTNAME=	stockfish-${PORTVERSION}-src
+DISTFILES=	stockfish-${PORTVERSION}-src.zip:src \
 		stockfish-231-book.zip:book
 
 MAINTAINER=	execve@gmail.com
