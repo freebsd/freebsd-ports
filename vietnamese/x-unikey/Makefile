@@ -7,7 +7,7 @@ CATEGORIES=	vietnamese textproc
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	unikey/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	yerenkow@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vietnamese input method for X
 
 USE_BZIP2=	yes
