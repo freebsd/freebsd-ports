@@ -12,7 +12,7 @@ COMMENT=	vCard query utility for mutt
 RUN_DEPENDS=	libvc>=003:${PORTSDIR}/devel/libvc
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${PREFIX}/include \
 		-L${PREFIX}/lib
