@@ -17,11 +17,13 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig shebangfix tar:bzip2
 USE_GL=		glu
+SHEBANG_FILES=	docs/MacOSX/nBundle.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-opencv
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -61,8 +63,6 @@ CONFIGURE_ARGS+=	--without-dns-sd
 .if ${PORT_OPTIONS:MQT4}
 QT_NONSTANDARD=		yes
 .endif
-
-.include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc" && ${OPSYS} == FreeBSD && ${OSVERSION} > 900000
 BROKEN=		Does not compile on powerpc-9
