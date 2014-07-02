@@ -12,7 +12,7 @@ COMMENT=	Partial Extensible Provisioning Protocol to .br domains
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 
 OPTIONS_DEFINE=	READLINE
 OPTIONS_DEFAULT=READLINE
