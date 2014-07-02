@@ -50,18 +50,6 @@ datanode_init()
 	do
 		. ${f}
 	done
-	if [ -n "${datanode_log_dir}" ]
-	then
-		HADOOP_LOG_DIR=${datanode_log_dir}
-	fi		
-
-	if [ -n "${datanode_pid_dir}" ]
-	then
-		HADOOP_LOG_DIR=${datanode_pid_dir}
-	fi		
-
-	install -d -m 755 -o ${datanode_user} -g ${datanode_group} ${HADOOP_PID_DIR}
-	install -d -m 755 -o ${datanode_user} -g ${datanode_group} ${HADOOP_LOG_DIR}
 }
 
 datanode_stop ()

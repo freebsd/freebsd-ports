@@ -50,18 +50,6 @@ tasktracker_init()
 	do
 		. ${f}
 	done
-	if [ -n "${tasktracker_log_dir}" ]
-	then
-		HADOOP_LOG_DIR=${tasktracker_log_dir}
-	fi		
-
-	if [ -n "${tasktracker_pid_dir}" ]
-	then
-		HADOOP_LOG_DIR=${tasktracker_pid_dir}
-	fi		
-
-	install -d -m 755 -o ${tasktracker_user} -g ${tasktracker_group} ${HADOOP_PID_DIR}
-	install -d -m 755 -o ${tasktracker_user} -g ${tasktracker_group} ${HADOOP_LOG_DIR}
 }
 
 tasktracker_stop ()
