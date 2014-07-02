@@ -33,11 +33,10 @@ include/uatraits/forward.hpp
 include/uatraits/shared.hpp
 include/uatraits/shared_ptr.hpp
 lib/libuatraits.a
-lib/libuatraits.la
 lib/libuatraits.so
 lib/libuatraits.so.0
+lib/libuatraits.so.0.0.0
 %%PYTHON_SITELIBDIR%%/uatraits.a
-%%PYTHON_SITELIBDIR%%/uatraits.la
 %%PYTHON_SITELIBDIR%%/uatraits.so
 share/uatraits/browser.xml
 share/uatraits/browser.xsd
