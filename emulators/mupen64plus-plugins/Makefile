@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-plugins
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER?=	acm@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Third party plugins for Mupen64plus
 
 OPTIONS_DEFINE=	VIDEO_ARACHNOID VIDEO_GLIDE64 VIDEO_Z64 RSP_Z64

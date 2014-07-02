@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 PKGNAMESUFFIX?=	-core
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER?=	acm@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A fork of Mupen64 Nintendo 64 emulator
 
 #PROJECTHOST=	bsdistfiles

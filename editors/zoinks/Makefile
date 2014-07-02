@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	http://zoinks.mikelockwood.com/download/
 
-MAINTAINER=	mike@mikelockwood.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 programmer's editor and development environment
 
 .if defined(WITH_IMLIB)

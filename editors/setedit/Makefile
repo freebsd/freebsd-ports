@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix-devel/${PORTVERSION}%20r1244%20Tarball%20%28Source%29/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-4
 
-MAINTAINER=	exile@chamber.ee
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmer's editor with a nice Text User Interface (TUI)
 
 LIB_DEPENDS=	librhtv.so:${PORTSDIR}/devel/rhtvision
