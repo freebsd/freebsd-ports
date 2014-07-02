@@ -193,8 +193,8 @@ bin/hadoop
 %%DATADIR%%/lib/jersey-json-1.8.jar
 %%DATADIR%%/lib/jersey-server-1.8.jar
 %%DATADIR%%/lib/jets3t-0.6.1.jar
-%%DATADIR%%/lib/jetty-6.1.26.jar
-%%DATADIR%%/lib/jetty-util-6.1.26.jar
+%%DATADIR%%/lib/jetty-6.1.14.jar
+%%DATADIR%%/lib/jetty-util-6.1.14.jar
 %%DATADIR%%/lib/jsch-0.1.42.jar
 %%DATADIR%%/lib/junit-4.5.jar
 %%DATADIR%%/lib/kfs-0.2.2.jar
