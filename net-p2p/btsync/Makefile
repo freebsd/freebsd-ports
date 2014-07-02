@@ -16,8 +16,8 @@ LICENSE_PERMS=	auto-accept
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-ONLY_FOR_ARCHES=	amd64 i386
-ONLY_FOR_ARCHES_REASON=	It is a binary-only program. Source code not available.
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	It is a binary-only program. Source code not available.
 
 PLIST_SUB=	PORTNAME=${PORTNAME} USER=${USERS} GROUP=${GROUPS}
 SUB_LIST=	PORTNAME=${PORTNAME} USER=${USERS} GROUP=${GROUPS}
