@@ -6,5 +6,5 @@ bin/ephemera-replace
 bin/ephemera-generate
 etc/ephemera.css.sample
 etc/rc.d/ephemera
-@unexec if cmp -s %D/etc/ephemera.config %D/etc/ephemera.config.dist; then rm -f %D/etc/ephemera.config; fi
-etc/ephemera.config.dist
+@sample etc/ephemera.config.sample
+man/man8/ephemera.8.gz
