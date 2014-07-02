@@ -18,9 +18,10 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		sagasu.1
+OPTIONS_DEFINE= DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
@@ -29,10 +30,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/src/util.h
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS INSTALL NEWS README THANKS TODO
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
