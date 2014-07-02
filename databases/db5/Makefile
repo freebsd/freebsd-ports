@@ -3,6 +3,7 @@
 
 PORTNAME=	db5
 PORTVERSION=	5.3.28
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
