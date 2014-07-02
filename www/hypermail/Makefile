@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	www mail
 MASTER_SITES=	SF
 
-MAINTAINER=	dan@langille.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to generate a cross-referenced HTML mail archive
 
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm \

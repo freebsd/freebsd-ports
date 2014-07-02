@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.apsis.ch/pound/ \
 DISTNAME=	Pound-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 
 LICENSE=	GPLv3

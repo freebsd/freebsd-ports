@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	www devel
 MASTER_SITES=	http://cas.havoc.ru/download/
 
-MAINTAINER=	lunkov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Application Server, version 2
 
 BROKEN=		Fails to build

@@ -6,7 +6,7 @@ PORTVERSION=	1.6.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Statistic analyzer for daemons log files similar to SARG
 
 PORTDOCS=	COPYING INSTALL README README.DEV ChangeLog FAQ THANKS

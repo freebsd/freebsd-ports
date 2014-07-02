@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.bsdit.com/pub/ \
 		http://zikula.at/
 DISTNAME=	Zikula_Core-${PORTVERSION}.build20
 
-MAINTAINER=	amir.husaini@bsdit.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MVC web application framework (PHP/MySQL)
 
 WRKSRC=		${WRKDIR}/Zikula_Core-${PORTVERSION}

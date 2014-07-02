@@ -6,7 +6,7 @@ DISTVERSION=		1.5.1
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=		joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		Your Own URL Shortener
 
 LICENSE=		GPLv3

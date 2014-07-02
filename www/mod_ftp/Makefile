@@ -7,7 +7,7 @@ CATEGORIES=	www ftp
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=httpd/mod_ftp
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serve web-server's content via FTP
 
 

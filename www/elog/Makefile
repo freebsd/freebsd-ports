@@ -6,7 +6,7 @@ DISTVERSION=	2.9.2-1
 CATEGORIES=	www
 MASTER_SITES=	http://midas.psi.ch/elog/download/tar/
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and lightweight, extremely customizable weblog
 
 LICENSE=	GPLv3

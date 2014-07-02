@@ -6,7 +6,7 @@ PORTVERSION=	0.83
 CATEGORIES=	www
 MASTER_SITES=	http://www2.biglobe.ne.jp/%7Enir/soft/
 
-MAINTAINER=	yasuf@big.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An animated web counter
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

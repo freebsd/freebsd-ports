@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	www mail
 DIST_SUBDIR=	horde
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password changing module
 
 USE_HORDE=	base
