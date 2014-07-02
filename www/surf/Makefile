@@ -13,8 +13,6 @@ COMMENT=	Simple Web browser based on WebKit/Gtk+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	DOCS
-
 LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
@@ -22,9 +20,9 @@ USE_CSTD=	c99
 USE_GNOME=	gtk20
 USES=		pkgconfig
 
-MAN1=		surf.1
 PORTDOCS=	README
-PLIST_FILES=	bin/surf share/pixmaps/surf.png
+PLIST_FILES=	bin/surf share/pixmaps/surf.png man/man1/surf.1.gz
+OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Surf" "" "${PREFIX}/share/pixmaps/surf.png" "surf" "" true
 
@@ -33,7 +31,6 @@ CONFLICTS=	surf-1* # math/surf
 # Name conflicts with the math/surf port
 NO_LATEST_LINK=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::
@@ -55,11 +52,11 @@ post-patch:
 		 s|^\(CC\)|#\1|' ${WRKSRC}/config.mk
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/surf
-	(cd ${WRKSRC} && ${INSTALL_DATA} surf.png ${PREFIX}/share/pixmaps)
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/surf
+	(cd ${WRKSRC} && ${INSTALL_DATA} surf.png ${STAGEDIR}${PREFIX}/share/pixmaps)
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
