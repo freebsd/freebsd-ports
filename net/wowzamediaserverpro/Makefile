@@ -7,8 +7,11 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.wowzamedia.com/downloads/WowzaMediaServer-1-7-2/
 EXTRACT_SUFX=	.tar.bin
 
-MAINTAINER=	meritus@innervision.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commercial flash media server written in Java
+
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
 
 RESTRICTED=	Redistribution not allowed
 
