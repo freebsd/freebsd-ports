@@ -12,19 +12,21 @@ COMMENT=	Simple open-source static blog engine written in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} "installing additional examples to ${EXAMPLESDIR}"
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/sample/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/sample/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
