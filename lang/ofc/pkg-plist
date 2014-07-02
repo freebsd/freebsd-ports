@@ -102,9 +102,8 @@ include/ofc/config.h
 include/ofc/md5.h
 include/ofc/settings.h
 include/ofc/warning.h
-lib/libofc-0.8.so
 lib/libofc-0.8.so.1
+lib/libofc-0.8.so.1.0.0
 lib/libofc.a
-lib/libofc.la
 lib/libofc.so
 @dirrm include/ofc
