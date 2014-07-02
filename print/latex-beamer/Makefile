@@ -7,56 +7,29 @@ CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX class to create a beamer presentation
+COMMENT=	LaTeX class to create a beamer presentation
+
+OPTIONS_DEFINE=	DOCS
 
 RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/tex/latex/pgf/basiclayer/pgf.sty:${PORTSDIR}/print/latex-pgf
 
 USE_TEX=	latex
 NO_BUILD=	YES
-PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFDIR=	share/texmf
 TEXMFDIR_LSR=	${LOCALBASE}/${TEXMFDIR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME:S/^latex-//}
 
-CLASS_SUBDIRS=	base emulation emacs examples extensions lyx themes
+CLASS_SUBDIRS=	base emulation examples extensions themes
 DOC_SUBDIRS=	AUTHORS ChangeLog FILES INSTALL README TODO \
 		doc solutions
-
-NO_STAGE=	yes
-pre-install:
-	${RM} -f ${PLIST}
-	${TOUCH} ${PLIST}
-	cd ${WRKSRC} && ( \
-		${FIND} ${CLASS_SUBDIRS} -type f | \
-		${SED} -e "s%^%${CLASSDIR:S,^${PREFIX}/,,}/%"; \
-		${FIND} ${CLASS_SUBDIRS} -type d | \
-		${SORT} -r | ${SED} -e "s,^,@dirrm ${CLASSDIR:S,^${PREFIX}/,,}/,"; \
-	) >> ${PLIST}
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ( \
-		${FIND} ${DOC_SUBDIRS} -type f | \
-		${SED} -e "s%^%${DOCSDIR:S,^${PREFIX}/,,}/%"; \
-		${FIND} ${DOC_SUBDIRS} -type d | \
-		${SORT} -r | ${SED} -e "s%^%@dirrm ${DOCSDIR:S,^${PREFIX}/,,}/%"; \
-		${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}"; \
-	) >> ${PLIST}
-.endif
-	${ECHO_CMD} "@unexec ${MKTEXLSR} ${PREFIX}/${TEXMFDIR}" >> ${PLIST}
-	${ECHO_CMD} "@exec ${MKTEXLSR} ${PREFIX}/${TEXMFDIR}" >> ${PLIST}
+PORTDOCS=	*
 
 do-install:
-	${MKDIR} ${PREFIX}/${CLASSDIR}
-	( cd ${WRKSRC} && ${TAR} cf - ${CLASS_SUBDIRS} ) | \
-		( cd ${PREFIX}/${CLASSDIR} && ${TAR} xf - )
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	( cd ${WRKSRC} && ${TAR} cf - ${DOC_SUBDIRS} ) | \
-		( cd ${DOCSDIR} && ${TAR} xf - )
-.endif
-
-post-install:
-	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${CLASSDIR}
+	cd ${WRKSRC} ; for d in ${CLASS_SUBDIRS}; do ${PAX} -rw $$d ${STAGEDIR}${PREFIX}/${CLASSDIR} ; done
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} ; for d in ${DOC_SUBDIRS}; do ${PAX} -rw $$d ${STAGEDIR}${DOCSDIR} ; done
 
 .include <bsd.port.mk>
