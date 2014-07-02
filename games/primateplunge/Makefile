@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.aelius.com/primateplunge/
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Primate Plunge is an arcade game
 
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity

@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	${PORTNAME}-01092003
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD version of text-based Tetris game
 
 NO_WRKSUBDIR=	yes

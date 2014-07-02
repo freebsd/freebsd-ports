@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	dangerdeep-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Danger from the Deep data files
 
 USES=		zip

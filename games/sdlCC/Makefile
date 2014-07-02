@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://chinesecheckers.vegard2.no/ \
 		http://jcatki.no-ip.org/files/
 
-MAINTAINER=	frank@dynamical-systems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible Chinese checkers game using SDL
 
 USE_AUTOTOOLS=	libtool

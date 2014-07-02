@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Quake II client/server focusing on stability
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo

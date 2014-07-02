@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}src${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.shar.Z
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake II: Ground Zero (Rogue) official mission pack
 
 NO_WRKSUBDIR=	yes

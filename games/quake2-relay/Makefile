@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/danfe http://freebsd.nsu.ru/distfiles/
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	relay-${PORTVERSION}.src
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake II multi-view demo recording facility
 
 LICENSE=	GPLv2
