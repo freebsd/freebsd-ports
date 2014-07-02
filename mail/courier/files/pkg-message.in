@@ -1,58 +1,60 @@
-		RTFM before configuring and running Courier!!!
+	RTFM before configuring and running Courier!!!
 
-	Check and/or modify the following configuration files to
-	suit your needs:
+Check and/or modify the following configuration files to suit your needs:
 
-		%%PREFIX%%/etc/courier/courierd
-		%%PREFIX%%/etc/courier/esmtpd
-		%%PREFIX%%/etc/courier/esmtpd-msa
-		%%PREFIX%%/etc/courier/esmtpd-ssl
-%%WITHFAX%%		%%PREFIX%%/etc/courier/faxcoverpage.tr
-%%WITHFAX%%		%%PREFIX%%/etc/courier/faxnotifyrc
-%%WITHFAX%%		%%PREFIX%%/etc/courier/faxrc
-		%%PREFIX%%/etc/courier/imapd
-		%%PREFIX%%/etc/courier/imapd-ssl
-		%%PREFIX%%/etc/courier/ldapaddressbook
-%%WITHLDAP%%		%%PREFIX%%/etc/courier/ldapaliasrc
-		%%PREFIX%%/etc/courier/pop3d
-		%%PREFIX%%/etc/courier/pop3d-ssl
+	%%PREFIX%%/etc/courier/courierd
+	%%PREFIX%%/etc/courier/esmtpd
+	%%PREFIX%%/etc/courier/esmtpd-msa
+	%%PREFIX%%/etc/courier/esmtpd-ssl
+%%WITHFAX%%	%%PREFIX%%/etc/courier/faxcoverpage.tr
+%%WITHFAX%%	%%PREFIX%%/etc/courier/faxnotifyrc
+%%WITHFAX%%	%%PREFIX%%/etc/courier/faxrc
+	%%PREFIX%%/etc/courier/imapd
+	%%PREFIX%%/etc/courier/imapd-ssl
+	%%PREFIX%%/etc/courier/ldapaddressbook
+%%WITHLDAP%%	%%PREFIX%%/etc/courier/ldapaliasrc
+	%%PREFIX%%/etc/courier/pop3d
+	%%PREFIX%%/etc/courier/pop3d-ssl
 
-	Do not forget to update /etc/pam.d/ or /etc/pam.conf with
-	the contents of %%PREFIX%%/etc/courier/*.authpam.
+Do not forget to update /etc/pam.d/ or /etc/pam.conf with the contents of
+%%PREFIX%%/etc/courier/*.authpam.
 
-	To enable Courier-MTA to start at boot time,
-	set these variables in your /etc/rc.conf file:
+To enable Courier-MTA to start at boot time, set these variables in your
+/etc/rc.conf file:
 
-		courier_enable="YES"
-		sendmail_enable="NONE"
+	courier_enable="YES"
+	sendmail_enable="NONE"
 
-	Note: in newer OS versions you should change variables
-	used in /etc/rc.conf file, as NONE for sendmail_enable
-	is deprecated and will be not supported in future:
+Note: as in newer OS versions NONE for sendmail_enable is deprecated and
+will be not supported in future, use following instead:
 
-		courier_enable="YES"
-		sendmail_enable="NO"
-		sendmail_submit_enable="NO"
-		sendmail_outbound_enable="NO"
-		sendmail_msp_queue_enable="NO"
+	courier_enable="YES"
+	sendmail_enable="NO"
+	sendmail_submit_enable="NO"
+	sendmail_outbound_enable="NO"
+	sendmail_msp_queue_enable="NO"
 
-	Also, you will want to disable some Sendmail 
-	specific daily maintenance routines in your
-	/etc/periodic.conf file:
+Usually editing /etc/mail/mailer.conf is necessary, too, so it contains
+following lines:
 
-		daily_clean_hoststat_enable="NO"
-		daily_status_mail_rejects_enable="NO"
-		daily_status_include_submit_mailq="NO"
-		daily_submit_queuerun="NO"
+	sendmail	%%PREFIX%%/bin/sendmail
+	send-mail	%%PREFIX%%/bin/sendmail
+	mailq		%%PREFIX%%/bin/mailq
+	newaliases	%%PREFIX%%/sbin/makealiases
 
-	Documentation (if installed locally) is located in
-	%%DOCSDIR%%/ otherwise see
-	http://www.Courier-MTA.org/
+Also, you will want to disable some Sendmail specific daily maintenance
+routines in your /etc/periodic.conf file:
 
-	If you are planning to serve shared maildirs, then
-	you should create a cron job that runs at regular
-	intervals (once every few hours is fine) that
-	executes the following script to update the
-	shared folder index:
+	daily_clean_hoststat_enable="NO"
+	daily_status_mail_rejects_enable="NO"
+	daily_status_include_submit_mailq="NO"
+	daily_submit_queuerun="NO"
 
-		%%PREFIX%%/share/courier/sharedindexupdate
+Documentation (if installed locally) is located in %%DOCSDIR%%,
+otherwise see http://www.Courier-MTA.org/
+
+If you are planning to serve shared maildirs, then you should create a cron
+job that runs at regular intervals (once every few hours is fine) that
+executes the following script to update the shared folder index:
+
+	%%PREFIX%%/share/courier/sharedindexupdate
