@@ -3,7 +3,7 @@
 
 PORTNAME=	libsieve
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	GHC
 
@@ -17,8 +17,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	sodabrew
 
-USES=		bison gmake pathfix
+USES=		bison gmake libtool pathfix
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
