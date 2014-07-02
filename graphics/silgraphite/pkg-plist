@@ -1,8 +1,8 @@
 %%WITH_FREETYPE%%include/graphite/FreetypeFont.h
 %%WITH_FREETYPE%%lib/libgraphite-ft.a
-%%WITH_FREETYPE%%lib/libgraphite-ft.la
 %%WITH_FREETYPE%%lib/libgraphite-ft.so
 %%WITH_FREETYPE%%lib/libgraphite-ft.so.0
+%%WITH_FREETYPE%%lib/libgraphite-ft.so.0.0.0
 include/graphite/FileFont.h
 include/graphite/Font.h
 include/graphite/GrAppData.h
@@ -28,8 +28,8 @@ include/graphite/Segment.h
 include/graphite/SegmentAux.h
 include/graphite/SegmentPainter.h
 lib/libgraphite.a
-lib/libgraphite.la
 lib/libgraphite.so
 lib/libgraphite.so.3
+lib/libgraphite.so.3.0.0
 libdata/pkgconfig/silgraphite.pc
 @dirrm include/graphite
