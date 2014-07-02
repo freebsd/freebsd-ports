@@ -9,9 +9,11 @@ PKGNAMESUFFIX=	#
 MAINTAINER=	freebsd@troback.com
 COMMENT=	Nagios plugin for Bacula
 
-LIB_DEPENDS+=	bac:${PORTSDIR}/sysutils/bacula-client
-UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}
+LIB_DEPENDS+=	libbac.so:${PORTSDIR}/sysutils/bacula-client
 
+PLIST=		${.CURDIR}/pkg-plist
+PLIST_FILES=	libexec/nagios/check_bacula
+PLIST_DIRS=	libexec/nagios
 WITH_NAGIOS_CHECK_ONLY=	yes
 MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
 
@@ -23,5 +25,4 @@ CONFIGURE_ARGS=	--enable-client-only	\
 
 OPTIONS_DEFINE=	#
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
