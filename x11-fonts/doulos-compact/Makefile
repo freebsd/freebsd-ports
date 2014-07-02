@@ -13,7 +13,7 @@ MASTER_SITES=	LOCAL/bf
 .endif
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Doulos SIL TrueType font collection, compact variant
 
 LICENSE=	OFL11
@@ -26,6 +26,10 @@ INSTALLS_TTF=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}/${PORTNAME}-R.ttf
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt feat_set_tuned.xml
 
 SUB_LIST=	DIR="${FONTROOTDIR}/${FONTDIR}"
@@ -36,8 +40,10 @@ do-configure:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
-	(cd ${WRKSRC} ; ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR})
+	@(cd ${WRKSRC} ; ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR})
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
