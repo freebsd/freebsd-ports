@@ -2,7 +2,7 @@
 
 PORTNAME=	libass
 PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libfribidi.so:${PORTSDIR}/converters/fribidi
 
-USES=	pathfix pkgconfig tar:xz
+USES=		libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
