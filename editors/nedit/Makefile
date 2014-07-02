@@ -5,16 +5,10 @@ PORTNAME=	nedit
 PORTVERSION=	5.5
 PORTREVISION=	4
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.nedit.org/pub/NEdit/v5_5/ \
-		ftp://ftp.nedit.org/pub/NEdit/contrib/misc/ \
-		http://www.nedit.org/ftp/v5_5/ \
-		http://www.nedit.org/ftp/contrib/misc/
-MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/NEdit/v5_5/ \
-		ftp://ftp.nluug.nl/pub/editors/NEdit/contrib/misc/ \
-		ftp://cri.univ-tlse1.fr/pub/unix/nedit/NEdit/v5_5/ \
-		ftp://cri.univ-tlse1.fr/pub/unix/nedit/NEdit/contrib/misc/ \
-		http://www.nedit.org/ftp/v5_5/ \
-		http://www.nedit.org/ftp/contrib/misc/
+MASTER_SITES=	http://people.freebsd.org/~deischen/distfiles/ \
+		${MASTER_SITE_SOURCEFORGE} \
+		ftp://ftp.nluug.nl/pub/editors/NEdit/contrib/misc/
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 DISTFILES=	nedit-5.5-src.tar.bz2 nedit.app-defaults
 EXTRACT_ONLY=	nedit-5.5-src.tar.bz2
 
