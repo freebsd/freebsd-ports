@@ -3,7 +3,7 @@
 
 PORTNAME=	libapreq2
 PORTVERSION=	2.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
@@ -13,16 +13,13 @@ COMMENT=	Generic Apache2 Request Library
 
 LICENSE=	APACHE20
 
+USES=		gmake libtool
 USE_APACHE=	22+
-USES=		gmake
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf libtool
+USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 
 MAKE_ENV+=     MAKE=${MAKE_CMD} ## MakeMaker blows it without this
-
-SHLIB_MAJOR=	11
-PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 # www/p5-libapreq2
 .if defined (WITH_MODPERL2)
