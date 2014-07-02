@@ -17,7 +17,6 @@ COMMENT=	LaTeX package that draws dash-lines in array/tabular
 OPTIONS_DEFINE=	DOCS
 
 USE_TEX=	latex
-PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
@@ -28,7 +27,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	arydshln.dtx arydshln.ins arydshln.sty arydshln-man.tex
-DOC_FILES=	README arydshln-man.pdf
+PORTDOCS=	README arydshln-man.pdf
+PLIST_FILES=	${CLASS_FILES:S@^@${CLASSDIR}/@} \
+		"@exec ${MKTEXLSR}" \
+		"@unexec ${MKTEXLSR}"
+PLIST_DIRS=	${CLASSDIR}
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -36,21 +39,11 @@ do-extract:
 
 do-build:
 	cd ${WRKSRC} && ${YES_CMD} | ${TEX_BIN} arydshln.ins
-	(for F in ${CLASS_FILES}; do \
-			${ECHO_CMD} "${CLASSDIR}/$${F}"; \
-		done;\
-	${ECHO_CMD} "@dirrm ${CLASSDIR}" ) > ${PLIST}
-	(for F in ${DOC_FILES}; do \
-			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
-		done;\
-	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" ) >> ${PLIST}
-	${ECHO_CMD} "@exec ${MKTEXLSR}" >> ${PLIST}
-	${ECHO_CMD} "@unexec ${MKTEXLSR}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CLASSDIR}
 	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${STAGEDIR}${PREFIX}/${CLASSDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
