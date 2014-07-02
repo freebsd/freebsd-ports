@@ -38,7 +38,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES JYTHON JRUBY
 JYTHON_DESC=	Use Python to write verticles
 JRUBY_DESC=	Use Ruby to write verticles
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJYTHON}
@@ -60,18 +59,18 @@ post-patch:
 	@${REINPLACE_CMD} ${WRKSRC}/bin/${PORTNAME} ${WRKSRC}/conf/logging.properties
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for d in client conf lib
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR}
 .endfor
-	${MKDIR} ${DATADIR}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${DATADIR}/bin/${PORTNAME}
-	${LN} -s ${DATADIR}/bin/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${DATADIR}/bin/${PORTNAME}
+	${LN} -s ${DATADIR}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/api-docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+	cd ${WRKSRC}/api-docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MJRUBY}
 	@${CAT} ${PKGMESSAGE}
