@@ -25,7 +25,6 @@ PLIST_FILES=	${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}/${PORTNAME}-R.ttf
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt
 
 SUB_LIST=	DIR="${FONTROOTDIR}/${FONTDIR}"
