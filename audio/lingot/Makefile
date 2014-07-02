@@ -3,10 +3,9 @@
 
 PORTNAME=	lingot
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	LINGOT is a musical instrument tuner
@@ -14,35 +13,23 @@ COMMENT=	LINGOT is a musical instrument tuner
 LICENSE=	GPLv2
 
 USE_GNOME=	gtk20 libglade2
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 
+CONFIGURE_ENV=	DATADIRNAME="share"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	JACK ALSA
+OPTIONS_DEFINE=		DOCS
+OPTIONS_GROUP=		SOUND
+OPTIONS_GROUP_SOUND=	ALSA JACK
 OPTIONS_DEFAULT=	JACK
 
-.include <bsd.port.options.mk>
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+ALSA_CONFIGURE_ENABLE=	alsa
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-CONFIGURE_ARGS+=--enable-jack
-.else
-CONFIGURE_ARGS+=--disable-jack
-.endif
-
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-CONFIGURE_ARGS+=--enable-alsa
-.else
-CONFIGURE_ARGS+=--disable-alsa
-.endif
-
-.if ${OSVERSION} < 802502 || (${OSVERSION} > 900000 && ${OSVERSION} < 900027)
-EXTRA_PATCHES+=	${FILESDIR}/extra-lingot-config-scale.h
-.endif
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
+			libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+JACK_CONFIGURE_ENABLE=	jack
 
 .include <bsd.port.mk>
