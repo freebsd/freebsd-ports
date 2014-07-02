@@ -11,7 +11,7 @@ COMMENT=	Text-based contact management software
 
 LIB_DEPENDS=	libvc.so:${PORTSDIR}/devel/libvc
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${PREFIX}/include \
 		-L${PREFIX}/lib
@@ -23,6 +23,5 @@ post-install:
 .for DOC in AUTHORS ChangeLog NEWS README THANKS
 	${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}
 .endfor
-
 
 .include <bsd.port.mk>
