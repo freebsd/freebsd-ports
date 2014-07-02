@@ -10,16 +10,15 @@ MAINTAINER=	mkapachepw@tundraware.com
 COMMENT=	A Group & Password Management Tool For Apache
 
 USE_PYTHON=	yes
+OPTIONS_DEFINE=	DOCS
 
-MANCOMPRESSED=	yes
-MAN1=		mkapachepw.1
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in WHATSNEW.txt mkapachepw-license.txt mkapachepw.html mkapachepw.pdf mkapachepw.ps mkapachepw.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
