@@ -72,7 +72,6 @@
     SUBDIR += gnotepad+
     SUBDIR += gnuserv
     SUBDIR += gobby
-    SUBDIR += gummi
     SUBDIR += gwrite
     SUBDIR += heme
     SUBDIR += hexcurse

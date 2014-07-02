@@ -42,6 +42,7 @@ lib/varnish/libvarnishcompat.so
 lib/varnish/libvcl.so
 lib/varnish/libvgz.so
 lib/varnish/vmods/libvmod_std.so
+lib/libvarnishapi.so.1.0.0
 lib/libvarnishapi.so.1
 lib/libvarnishapi.so
 libdata/pkgconfig/varnishapi.pc

@@ -105,7 +105,7 @@ REMOVE_SUBDIRS+=liblock liblog
 MAN8=		makeuserdb.8 userdb.8 userdbpw.8 pw2userdb.8
 .if ${PKGNAMESUFFIX} == -usergdbm
 CONFLICTS+=	${PORTNAME}-userdb-0.*
-LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=--with-db=gdbm
 .elif ${PKGNAMESUFFIX} == -userdb
 CONFLICTS+=	${PORTNAME}-usergdbm-0.*

@@ -19,9 +19,8 @@ OPTIONS_DEFINE=	INSIGHT
 INSIGHT_DESC=	Tcl/Tk GUI (experimental!)
 
 CONFLICTS?=	gdb-[7-9]*
-USE_BZIP2=	yes
 USE_GCC=	any
-USES=		gettext iconv gmake
+USES=		gettext iconv gmake readline tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \

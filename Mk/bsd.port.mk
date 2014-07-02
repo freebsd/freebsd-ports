@@ -1506,8 +1506,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.kde4.mk"
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.pbi.mk"
-
 .if !defined(UID)
 UID!=	${ID} -u
 .endif

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dillo
-DISTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf/dillo/ \
 		TEX_CTAN:hyphen
@@ -17,13 +17,12 @@ COMMENT=	A fast, small graphical Web browser built upon fltk
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-MAN1=		dillo.1
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 CONFLICTS=	dillo-i18n-[0-9]* \
 		dillo-0*
@@ -36,7 +35,6 @@ COOKIES_DESC=		Cookie support
 HYPHENATION_DESC=	Hyphenation file(s) for HYPHENATION_LANGS
 SSL_DESC=		Experimental HTTPS support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOOKIES}
@@ -72,7 +70,6 @@ HYPHENATION_LANGS?=	\
 IGNORE=	remove the invalid hyphenation language "${_l}" from HYPHENATION_LANGS
 .else
 DISTFILES+=	hyph-${_l}.pat.txt:hyphen
-BROKEN=		no distinfo provided
 PLIST_FILES+=	libexec/dillo/hyphenation/${_l:C/-.*\$//}.pat
 .endif
 .endfor
@@ -118,19 +115,19 @@ post-patch:
 post-install:
 .for f in dillorc domainrc dpidrc keysrc
 . if !exists(${PREFIX}/etc/dillo/${f})
-	${INSTALL_DATA} ${PREFIX}/etc/dillo/${f}.dist ${PREFIX}/etc/dillo/${f}
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/dillo/${f}.dist ${STAGEDIR}${PREFIX}/etc/dillo/${f}
 . endif
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
-	@${MKDIR} ${PREFIX}/libexec/dillo/hyphenation
-	@${TOUCH} ${PREFIX}/libexec/dillo/hyphenation/.keep_me
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/dillo/hyphenation
+	@${TOUCH} ${STAGEDIR}${PREFIX}/libexec/dillo/hyphenation/.keep_me
 .if ${PORT_OPTIONS:MHYPHENATION}
 .for _l in ${HYPHENATION_LANGS}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/hyph-${_l}.pat.txt \
-	${PREFIX}/libexec/dillo/hyphenation/${_l:C/-.*\$//}.pat
+	${STAGEDIR}${PREFIX}/libexec/dillo/hyphenation/${_l:C/-.*\$//}.pat
 .endfor
 .endif
 

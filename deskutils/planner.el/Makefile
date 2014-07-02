@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PlannerMode is an organizer and day planner for Emacs
 
 USE_EMACS=	yes
-USES=	gmake
+USES=		gmake makeinfo
 
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/muse/muse.el:${PORTSDIR}/textproc/muse
 

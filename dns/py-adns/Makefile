@@ -12,7 +12,7 @@ DISTNAME=	adns-python-${PORTVERSION}
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Python Interface to adns, the asynchronous DNS library
 
-LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns
+LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
 
 PROJECTHOST=	adns-python
 USE_PYTHON=	yes

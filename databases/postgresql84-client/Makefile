@@ -15,5 +15,6 @@ BUILD_DIRS=	config src/include src/interfaces src/port \
 CLIENT_ONLY=	yes
 COMPONENT=	-client
 USE_LDCONFIG=	yes
+USES=		readline
 
 .include "${MASTERDIR}/Makefile"

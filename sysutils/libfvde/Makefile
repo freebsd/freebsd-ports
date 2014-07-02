@@ -3,7 +3,7 @@
 
 PORTNAME=	libfvde
 PORTVERSION=	20130305
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSLUVJYl9XRWhKSjg/
 DISTFILES=	${PORTNAME}-experimental-${PORTVERSION}${EXTRACT_SUFX}
@@ -13,8 +13,8 @@ COMMENT=	Library and tools for reading FileVault (FVDE) encrypted volumes
 
 LICENSE=	LGPL3
 
-USES=		pkgconfig
-USE_GNOME=	libxml2 gnomehack
+USES=		libtool pathfix pkgconfig
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

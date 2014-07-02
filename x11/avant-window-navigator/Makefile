@@ -3,7 +3,7 @@
 
 PORTNAME=	avant-window-navigator
 PORTVERSION=	0.3.2.1
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	x11
 MASTER_SITES=	http://launchpadlibrarian.net/26374006/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -13,18 +13,18 @@ COMMENT=	Dock-like navigation bar
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
-LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig gettext gmake
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 gtk20 pygtk2
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_XORG=	x11 xproto xcomposite xrender
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 AWN_DESKTOP?=	agnostic
 
@@ -58,6 +58,8 @@ CONFIGURE_ARGS+=	--without-gconf
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} '/^awn_applet_activation_LDADD =/s/=/= -lgmodule-2.0/' \
+		${WRKSRC}/awn-applet-activation/Makefile.in
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|' \
 		${WRKSRC}/awn-manager/awnManager.py.in \
 		${WRKSRC}/awn-manager/awnManager.py
@@ -69,5 +71,7 @@ post-patch:
 		${WRKSRC}/libawn/awn-config-client-gconf.c
 	@${REINPLACE_CMD} -e 's|glib/gutils.h>|glib.h>|g' \
 		${WRKSRC}/libawn/awn-config-client-gkeyfile.c
+	@${REINPLACE_CMD} '/^avant_window_navigator_LDADD =/s/=/= -ldbus-glib-1/' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

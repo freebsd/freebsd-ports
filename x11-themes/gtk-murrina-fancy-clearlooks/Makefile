@@ -11,19 +11,18 @@ DISTNAME=	MurrinaFancyClearlooks_v${PORTVERSION}
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Murrine fancy clearlooks themes pack
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.la:${PORTSDIR}/x11-themes/gtk-murrine-engine
-RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.la:${PORTSDIR}/x11-themes/gtk-murrine-engine
+BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.so:${PORTSDIR}/x11-themes/gtk-murrine-engine
+RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.so:${PORTSDIR}/x11-themes/gtk-murrine-engine
 
 WRKSRC=	${WRKDIR}/MurrinaFancyClearlooks
 USE_GNOME=	gtk20
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
 	@(cd ${WRKSRC} && for theme in *; do \
-		${MKDIR} ${LOCALBASE}/share/themes/$$theme/gtk-2.0; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/$$theme/gtk-2.0; \
 		cd ${WRKSRC}/$$theme/gtk-2.0/ && for file in *; do\
-			${INSTALL_DATA} ${WRKSRC}/$$theme/gtk-2.0/$$file ${LOCALBASE}/share/themes/$$theme/gtk-2.0; \
+			${INSTALL_DATA} ${WRKSRC}/$$theme/gtk-2.0/$$file ${STAGEDIR}${PREFIX}/share/themes/$$theme/gtk-2.0; \
 		done\
 	done;)
 

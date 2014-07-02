@@ -1,0 +1,34 @@
+--- configure.orig	2014-03-21 16:56:05.000000000 -0700
++++ configure	2014-06-27 20:23:16.000000000 -0700
+@@ -1883,11 +1883,6 @@
+ ELF32=""
+ ELF64=""
+ if test ${OS} != "Darwin"; then
+-  ldconfig /lib32 /lib64 /usr/lib32 /usr/lib64 /usr/lib32/lib /usr/local/lib \
+-  /usr/local32/lib /emul/ia32-linux/lib /emul/ia32-linux/usr/lib /usr/X11/lib \
+-  /usr/PCBSD/local/lib /usr/lib/i386-linux-gnu /usr/lib/x86_64-linux-gnu \
+-  /usr/X11R6/lib /opt/local/lib /usr/lib/arm-linux-gnueabihf \
+-  /usr/local/lib64
+   ELF64="-felf64"
+   LIBEXT="so"
+   S_OS_TYPE="OS_LINUX"
+@@ -1904,7 +1899,9 @@
+ fi
+ 
+ # Find out whether we have gcc
+-CC=gcc
++if test "${CC}" = ""; then
++  CC=gcc
++fi
+ # Extract the first word of "${CC} ", so it can be a program name with args.
+ set dummy ${CC} ; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+@@ -4318,7 +4315,7 @@
+ # Look for the libusb-1.0 package that we need for Perseus.
+ LIBUSB1_32_OK="0"
+ LIBUSB1_64_OK="0"
+-X=`./libfind1 libusb-1.0.${LIBEXT}`
++X=`./libfind1 libusb.${LIBEXT}`
+ LIBUSB1_32_INC=`./libfind2 1 "$X"`
+ LIBUSB1_64_INC=`./libfind2 2 "$X"`
+ Y=`./libfind2 0 "$X"`

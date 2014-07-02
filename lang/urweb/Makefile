@@ -3,6 +3,7 @@
 
 PORTNAME=	urweb
 PORTVERSION=	20120925
+PORTREVISION=	1
 CATEGORIES=	lang www
 MASTER_SITES=	http://www.impredicative.com/ur/
 EXTRACT_SUFX=	.tgz
@@ -10,15 +11,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Ultimate host for embedded domain-specific languages
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	mlton:${PORTSDIR}/lang/mlton
 
 CONFIGURE_ENV=	CCARGS="-I${LOCALBASE}/include"
 
-HAS_CONFIGURE=	yes
-USES=		gmake
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -28,7 +29,6 @@ OPTIONS_DEFAULT=ELISP PGSQL
 OPTIONS_EXCLUDE=NLS DOCS
 ELISP_DESC=	Install contributed Emacs Lisp
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MELISP}

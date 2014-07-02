@@ -20,14 +20,13 @@ include/libawn/awn-settings.h
 include/libawn/awn-title.h
 include/libawn/awn-vfs.h
 lib/libawn.a
-lib/libawn.la
 lib/libawn.so
 lib/libawn.so.0
+lib/libawn.so.0.0.1
 %%PYTHON_SITELIBDIR%%/awn/__init__.py
 %%PYTHON_SITELIBDIR%%/awn/__init__.pyc
 %%PYTHON_SITELIBDIR%%/awn/__init__.pyo
 %%PYTHON_SITELIBDIR%%/awn/awn.a
-%%PYTHON_SITELIBDIR%%/awn/awn.la
 %%PYTHON_SITELIBDIR%%/awn/awn.so
 libdata/pkgconfig/awn.pc
 share/applications/avant-window-navigator.desktop

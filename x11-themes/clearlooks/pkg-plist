@@ -1,4 +1,3 @@
-%%ENGINE%%lib/gtk-2.0/%%GTK2_VERSION%%/engines/libclearlooks.la
 %%ENGINE%%lib/gtk-2.0/%%GTK2_VERSION%%/engines/libclearlooks.so
 share/icons/Clearlooks/16x16/gtk/gtk-apply.png
 share/icons/Clearlooks/16x16/gtk/gtk-cancel.png
@@ -45,7 +44,6 @@ share/themes/Clearlooks/index.theme
 @dirrm share/themes/Clearlooks-DeepSky/gtk-2.0
 @dirrm share/themes/Clearlooks-DeepSky
 @dirrmtry share/themes/Clearlooks
-@dirrmtry share/themes
 @dirrm share/icons/Clearlooks/24x24/gtk
 @dirrm share/icons/Clearlooks/24x24
 @dirrm share/icons/Clearlooks/16x16/gtk

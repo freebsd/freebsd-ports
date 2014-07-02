@@ -5,12 +5,14 @@ PORTNAME=	hadoop
 PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITES=	${MASTER_SITE_APACHE} \
+		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
 MASTER_SITE_SUBDIR=	${PORTNAME}/core/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	apache-
 DIST_SUBDIR=	hadoop
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} jetty-6.1.14.zip:jetty
 
-MAINTAINER=	pfg@apache.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
@@ -20,7 +22,7 @@ BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.7+
 USE_ANT=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LDCONFIG=	yes
@@ -30,9 +32,10 @@ OPTIONS_DEFINE=	DOCS
 HADOOP_LOGDIR=	/var/log/${PORTNAME}
 HADOOP_RUNDIR=	/var/run/${PORTNAME}
 
-HADOOP_USER=	hadoop
+HDFS_USER=	hdfs
+MAPRED_USER=	mapred
 HADOOP_GROUP=	hadoop
-USERS=		${HADOOP_USER}
+USERS=		${HDFS_USER} ${MAPRED_USER}
 GROUPS=		${HADOOP_GROUP}
 
 SUB_FILES=	hadoop 000.java_home.env
@@ -41,9 +44,11 @@ USE_RC_SUBR=	tasktracker jobtracker datanode namenode secondarynamenode
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
 		HADOOP_LOGDIR="${HADOOP_LOGDIR}" \
 		HADOOP_RUNDIR="${HADOOP_RUNDIR}" \
-		HADOOP_USER="${HADOOP_USER}" \
+		HDFS_USER="${HDFS_USER}" \
+		MAPRED_USER="${MAPRED_USER}" \
 		HADOOP_GROUP="${HADOOP_GROUP}"
-SUB_LIST=	HADOOP_USER="${HADOOP_USER}" \
+SUB_LIST=	HDFS_USER="${HDFS_USER}" \
+		MAPRED_USER="${MAPRED_USER}" \
 		HADOOP_GROUP="${HADOOP_GROUP}" \
 		JAVA_HOME="${JAVA_HOME}"
 
@@ -90,6 +95,11 @@ post-patch:
 .for d in ${FIX_DOCS}
 	@${TOUCH} ${WRKSRC}/${d}/.empty
 .endfor
+# With jetty-6.1.26 tasktracker's threads hung with the following error:
+# org.mortbay.io.nio.SelectorManager$SelectSet@abdcc1c JVM BUG(s) - injecting delay 59 times
+# See https://issues.apache.org/jira/browse/MAPREDUCE-2386
+	${RM} ${WRKSRC}/lib/jetty-6.1.26.jar ${WRKSRC}/lib/jetty-util-6.1.26.jar
+	${CP} ${WRKDIR}/jetty-6.1.14/lib/jetty-6.1.14.jar ${WRKDIR}/jetty-6.1.14/lib/jetty-util-6.1.14.jar ${WRKSRC}/lib/
 
 post-build:
 	@cd ${WRKSRC} ;${ANT} FreeBSD-dist

@@ -1,15 +1,7 @@
-@unexec if cmp -s %D/%%ETCDIR%%/apps.properties.sample %D/%%ETCDIR%%/apps.properties; then rm -f %D/%%ETCDIR%%/apps.properties; fi
-%%ETCDIR%%/apps.properties.sample
-@exec if [ ! -f %D/%%ETCDIR%%/apps.properties ] ; then cp -p %D/%%ETCDIR%%/apps.properties.sample %D/%%ETCDIR%%/apps.properties; fi
-@unexec if cmp -s %D/%%ETCDIR%%/db.properties.sample %D/%%ETCDIR%%/db.properties; then rm -f %D/%%ETCDIR%%/db.properties; fi
-%%ETCDIR%%/db.properties.sample
-@exec if [ ! -f %D/%%ETCDIR%%/db.properties ] ; then cp -p %D/%%ETCDIR%%/db.properties.sample %D/%%ETCDIR%%/db.properties; fi
-@unexec if cmp -s %D/%%ETCDIR%%/helma.conf.sample %D/%%ETCDIR%%/helma.conf; then rm -f %D/%%ETCDIR%%/helma.conf; fi
-%%ETCDIR%%/helma.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/helma.conf ] ; then cp -p %D/%%ETCDIR%%/helma.conf.sample %D/%%ETCDIR%%/helma.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/server.properties.sample %D/%%ETCDIR%%/server.properties; then rm -f %D/%%ETCDIR%%/server.properties; fi
-%%ETCDIR%%/server.properties.sample
-@exec if [ ! -f %D/%%ETCDIR%%/server.properties ] ; then cp -p %D/%%ETCDIR%%/server.properties.sample %D/%%ETCDIR%%/server.properties; fi
+@sample %%ETCDIR%%/apps.properties.sample
+@sample %%ETCDIR%%/db.properties.sample
+@sample %%ETCDIR%%/helma.conf.sample
+@sample %%ETCDIR%%/server.properties.sample
 @unexec rm -rf "%%LOGDIR%%" 2> /dev/null || true
 @exec mkdir -p "%%LOGDIR%%" || true
 @exec chown -R %%HELMA_USER%%:%%HELMA_GROUP%% "%%LOGDIR%%"

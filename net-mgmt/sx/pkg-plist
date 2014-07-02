@@ -1,0 +1,54 @@
+bin/randgen
+bin/sxacl
+bin/sxcat
+bin/sxcp
+bin/sxinit
+bin/sxls
+bin/sxreport-client
+bin/sxrm
+bin/sxsim
+bin/sxvol
+%%SXSERVER%%%%ETCDIR%%/sxserver/errors/414.json
+%%SXSERVER%%%%ETCDIR%%/sxserver/errors/50x.json
+%%SXSERVER%%%%ETCDIR%%/sxserver/fastcgi_params
+%%SXSERVER%%%%ETCDIR%%/sxserver/sxhttpd.conf.default
+include/sx.h
+lib/libsx.so
+lib/libsx.so.0
+lib/libsx.so.0.0.0
+lib/sxclient/libsxf_aes256-12.so
+lib/sxclient/libsxf_aes256.so
+lib/sxclient/libsxf_attribs-11.so
+lib/sxclient/libsxf_attribs.so
+lib/sxclient/libsxf_null-11.so
+lib/sxclient/libsxf_null.so
+lib/sxclient/libsxf_zcomp-10.so
+lib/sxclient/libsxf_zcomp.so
+sbin/sx.fcgi
+sbin/sxadm
+%%SXSERVER%%sbin/sxhttpd
+sbin/sxreport-server
+%%SXSERVER%%sbin/sxserver
+%%SXSERVER%%sbin/sxsetup
+%%SXSERVER%%%%PORTDOCS%%%%DOCSDIR%%/logrotate.d/sxserver
+%%SXSERVER%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/logrotate.d
+%%SXSERVER%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%SXSERVER%%@dirrmtry %%ETCDIR%%/sxserver/errors
+%%SXSERVER%%@dirrmtry %%ETCDIR%%/sxserver
+%%SXSERVER%%@dirrmtry %%ETCDIR%%
+@dirrm lib/sxclient
+%%SXSERVER%%@dirrmtry sxserver/lib/sxserver
+%%SXSERVER%%@dirrmtry sxserver/lib
+%%SXSERVER%%@dirrmtry sxserver/log/sxserver
+%%SXSERVER%%@dirrmtry sxserver/log
+%%SXSERVER%%@dirrmtry sxserver/run/sxserver
+%%SXSERVER%%@dirrmtry sxserver/run
+%%SXSERVER%%@dirrmtry sxserver/sxserver
+%%SXSERVER%%@dirrmtry sxserver
+%%SXCLIENT%%@dirrmtry var/lib/sxserver
+%%SXCLIENT%%@dirrmtry var/lib
+%%SXCLIENT%%@dirrmtry var/log/sxserver
+%%SXCLIENT%%@dirrmtry var/log
+%%SXCLIENT%%@dirrmtry var/run/sxserver
+%%SXCLIENT%%@dirrmtry var/run
+%%SXCLIENT%%@dirrmtry var

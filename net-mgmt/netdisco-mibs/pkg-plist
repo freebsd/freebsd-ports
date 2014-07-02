@@ -296,7 +296,14 @@
 %%DATADIR%%/alcatel/timetra-port-mib.mib
 %%DATADIR%%/alcatel/.index
 %%DATADIR%%/apc/powernet.mib
+%%DATADIR%%/arista/ARISTA-CONFIG-COPY-MIB.txt
+%%DATADIR%%/arista/ARISTA-CONFIG-MAN-MIB.txt
+%%DATADIR%%/arista/ARISTA-ENTITY-SENSOR-MIB.txt
 %%DATADIR%%/arista/ARISTA-MAU-MIB.txt
+%%DATADIR%%/arista/ARISTA-PFC-MIB.txt
+%%DATADIR%%/arista/ARISTA-QOS-MIB.txt
+%%DATADIR%%/arista/ARISTA-QUEUE-MIB.txt
+%%DATADIR%%/arista/ARISTA-REDUNDANCY-MIB.txt
 %%DATADIR%%/arista/ARISTA-SW-IP-FORWARDING-MIB.txt
 %%DATADIR%%/arista/ARISTA-TEST-MIB.txt
 %%DATADIR%%/arista/ARISTA-ACL-MIB.txt
@@ -334,6 +341,9 @@
 %%DATADIR%%/asante/AsanteSwitchMIB.txt
 %%DATADIR%%/asante/ASANTE-AH1012-MIB.txt
 %%DATADIR%%/asante/.index
+%%DATADIR%%/avaya/46xxmib28.txt
+%%DATADIR%%/avaya/96xxmib31.txt
+%%DATADIR%%/avaya/.index
 %%DATADIR%%/bluecoat/BLUECOAT-SG-USAGE-MIB.txt
 %%DATADIR%%/bluecoat/BLUECOAT-SG-DISK-MIB.txt
 %%DATADIR%%/bluecoat/BLUECOAT-MIB.txt
@@ -562,6 +572,24 @@
 %%DATADIR%%/cisco/CISCO-VOICE-IF-MIB.my
 %%DATADIR%%/cisco/CISCO-VPDN-MGMT-EXT-MIB.my
 %%DATADIR%%/cisco/CISCO-ATM-SWITCH-FR-IWF-MIB.my
+%%DATADIR%%/cisco/CISCO-CBP-TC-MIB.my
+%%DATADIR%%/cisco/CISCO-DSG-IF-EXT-MIB.my
+%%DATADIR%%/cisco/CISCO-FABRICPATH-TOPOLOGY-MIB.my
+%%DATADIR%%/cisco/CISCO-HARDWARE-IP-VERIFY-MIB.my
+%%DATADIR%%/cisco/CISCO-IETF-MPLS-ID-STD-03-MIB.my
+%%DATADIR%%/cisco/CISCO-IETF-MPLS-TE-EXT-STD-03-MIB.my
+%%DATADIR%%/cisco/CISCO-LIVEDATA-MIB.my
+%%DATADIR%%/cisco/CISCO-MEDIATRACE-MIB.my
+%%DATADIR%%/cisco/CISCO-MPLS-LSR-EXT-STD-MIB.my
+%%DATADIR%%/cisco/CISCO-MPLS-TC-EXT-STD-MIB.my
+%%DATADIR%%/cisco/CISCO-NETFLOW-LITE-MIB.my
+%%DATADIR%%/cisco/CISCO-OTV-MIB.my
+%%DATADIR%%/cisco/CISCO-SWITCH-CEF-MIB.my
+%%DATADIR%%/cisco/CISCO-SWITCH-FABRIC-MIB.my
+%%DATADIR%%/cisco/CISCO-VDC-MIB.my
+%%DATADIR%%/cisco/CISCO-VPC-MIB.my
+%%DATADIR%%/cisco/DSG-IF-MIB.my
+%%DATADIR%%/cisco/IEEE8021-SECY-MIB.my
 %%DATADIR%%/cisco/CISCO-LWAPP-DOT11-CCX-CLIENT-MIB.my
 %%DATADIR%%/cisco/CISCO-ATM-ACCESS-LIST-MIB.my
 %%DATADIR%%/cisco/CISCO-WAN-CES-RSRC-PART-MIB.my
@@ -1993,7 +2021,6 @@
 %%DATADIR%%/hp/hpicfipv6raguard.mib
 %%DATADIR%%/hp/hpacmxlmemproc.mib
 %%DATADIR%%/hp/hptunnel.mib
-%%DATADIR%%/hp/ipx.mib
 %%DATADIR%%/hp/hpicfdcpower.mib
 %%DATADIR%%/hp/hpicflayer3vlan.mib
 %%DATADIR%%/hp/hpicfreload.mib
@@ -2246,6 +2273,8 @@
 %%DATADIR%%/huawei/h3c-nqa.mib
 %%DATADIR%%/huawei/huawei-cbqos.mib
 %%DATADIR%%/ianalist
+%%DATADIR%%/ibm/GbTOR-10G-L2L3.mib
+%%DATADIR%%/ibm/.index
 %%DATADIR%%/juniper/mib-jnx-vpls-ldp.txt
 %%DATADIR%%/juniper/mib-jnx-exp.txt
 %%DATADIR%%/juniper/mib-jnx-lsys-sp-flowgate.txt
@@ -2624,6 +2653,8 @@
 %%DATADIR%%/packetfront/PACKETFRONT-COPY-MIB.mib
 %%DATADIR%%/packetfront/PACKETFRONT-PRODUCTS-MIB.mib
 %%DATADIR%%/packetfront/.index
+%%DATADIR%%/pica8/pica_private_mib.my
+%%DATADIR%%/pica8/.index
 %%DATADIR%%/rad/ipmux24.mib
 %%DATADIR%%/rfc/BRIDGE-MIB.txt
 %%DATADIR%%/rfc/TN3270E-MIB.txt
@@ -2971,6 +3002,7 @@
 %%DATADIR%%/rfc/PPP-BRIDGE-NCP-MIB.txt
 %%DATADIR%%/rfc/RMON2-MIB.txt
 %%DATADIR%%/rfc/CLNS-MIB.txt
+%%DATADIR%%/rfc/ipx.mib
 %%DATADIR%%/rfc/savi.mib
 %%DATADIR%%/riverbed/RBT-MIB.txt
 %%DATADIR%%/riverbed/STEELHEAD-MIB.txt
@@ -3044,6 +3076,7 @@
 @dirrmtry %%DATADIR%%/arista
 @dirrmtry %%DATADIR%%/aruba
 @dirrmtry %%DATADIR%%/asante
+@dirrmtry %%DATADIR%%/avaya
 @dirrmtry %%DATADIR%%/bluecoat
 @dirrmtry %%DATADIR%%/bluesocket
 @dirrmtry %%DATADIR%%/cabletron
@@ -3063,6 +3096,7 @@
 @dirrmtry %%DATADIR%%/huawei
 @dirrmtry %%DATADIR%%/h3c
 @dirrmtry %%DATADIR%%/hp
+@dirrmtry %%DATADIR%%/ibm
 @dirrmtry %%DATADIR%%/juniper
 @dirrmtry %%DATADIR%%/lantronix
 @dirrmtry %%DATADIR%%/mikrotik
@@ -3071,6 +3105,7 @@
 @dirrmtry %%DATADIR%%/netscreen
 @dirrmtry %%DATADIR%%/nortel
 @dirrmtry %%DATADIR%%/packetfront
+@dirrmtry %%DATADIR%%/pica8
 @dirrmtry %%DATADIR%%/rad
 @dirrmtry %%DATADIR%%/rfc
 @dirrmtry %%DATADIR%%/riverbed

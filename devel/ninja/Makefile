@@ -24,7 +24,7 @@ PORTDOCS=	COPYING HACKING.md README manual.asciidoc
 
 do-build:
 	@(cd ${WRKSRC} && \
-		CXX=${CXX} CFLAGS="${CXXFLAGS}" ${PYTHON_CMD} bootstrap.py --verbose)
+		CXX="${CXX}" CFLAGS="${CXXFLAGS}" ${PYTHON_CMD} bootstrap.py --verbose)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${STAGEDIR}${PREFIX}/bin

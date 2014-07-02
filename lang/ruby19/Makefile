@@ -40,7 +40,6 @@ USE_AUTOTOOLS=	autoconf
 WRKSRC=		${WRKDIR}/${PORTNAME}-${RUBY_DISTVERSION}
 
 RUBY_VER=		1.9
-USE_BZIP2=		yes
 USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -49,9 +48,19 @@ MAKE_JOBS_UNSAFE=	yes
 
 NO_LATEST_LINK=	yes
 
-OPTIONS_DEFINE=	RDOC DEBUG
-RDOC_DESC=	Build and install Rdoc indexes
-DEBUG_DESC=	Compile-in debug info
+OPTIONS_DEFINE=		RDOC DEBUG
+OPTIONS_DEFAULT=	READLINE
+OPTIONS_RADIO=		EDIT
+OPTIONS_RADIO_EDIT=	LIBEDIT READLINE
+RDOC_DESC=		Build and install Rdoc indexes
+DEBUG_DESC=		Compile-in debug info
+EDIT_DESC=		Which line editing lib to use
+LIBEDIT_DESC=		Use libedit
+READLINE_DESC=		Use libreadline
+
+.include <bsd.port.options.mk>
+
+USES=		tar:bzip2
 
 .include <bsd.port.pre.mk>
 
@@ -79,6 +88,18 @@ CONFIGURE_ARGS+=	--disable-install-doc
 .endif
 
 CONFIGURE_ENV=	debugflags=
+
+.if ${PORT_OPTIONS:MLIBEDIT}
+BUILD_DEPENDS+=	libedit>=0:${PORTSDIR}/devel/libedit
+RUN_DEPENDS+=	libedit>=0:${PORTSDIR}/devel/libedit
+CONFIGURE_ARGS+=	--enable-libedit --with-libedit-prefix=${LOCALBASE}
+.endif
+
+.if ${PORT_OPTIONS:MREADLINE}
+BUILD_DEPENDS+=	readline>=0:${PORTSDIR}/devel/readline
+RUN_DEPENDS+=	readline>=0:${PORTSDIR}/devel/readline
+CONFIGURE_ARGS+=	--disable-libedit --with-readline-prefix=${LOCALBASE}
+.endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 MLINKS=		${RUBY_NAME}.1 ruby.1
@@ -157,8 +178,6 @@ pre-su-install:
 			${STAGEDIR}${RUBY_SITEARCHLIBDIR}	\
 			${STAGEDIR}${RUBY_VENDORARCHLIBDIR}
 
-	${SETENV} LC_TIME=C /bin/date > ${STAGEDIR}${RUBY_RIDIR}/created.rid
-	${SETENV} LC_TIME=C /bin/date > ${STAGEDIR}${RUBY_SITERIDIR}/created.rid
 	${TOUCH} ${STAGEDIR}${RUBY_EXAMPLESDIR}/.keep_me
 	${TOUCH} ${STAGEDIR}${RUBY_DOCDIR}/.keep_me
 	${TOUCH} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/.keep_me

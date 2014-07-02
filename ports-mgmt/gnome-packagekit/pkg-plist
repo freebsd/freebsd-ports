@@ -18,6 +18,16 @@ bin/gpk-update-viewer
 %%PYTHON_SITELIBDIR%%/packagekit/gtkwidgets.py
 %%PYTHON_SITELIBDIR%%/packagekit/gtkwidgets.pyc
 %%PYTHON_SITELIBDIR%%/packagekit/gtkwidgets.pyo
+man/man1/gpk-application.1.gz
+man/man1/gpk-backend-status.1.gz
+man/man1/gpk-install-local-file.1.gz
+man/man1/gpk-install-mime-type.1.gz
+man/man1/gpk-install-package-name.1.gz
+man/man1/gpk-install-provide-file.1.gz
+man/man1/gpk-prefs.1.gz
+man/man1/gpk-repo.1.gz
+man/man1/gpk-update-icon.1.gz
+man/man1/gpk-update-viewer.1.gz
 share/applications/gpk-application.desktop
 share/applications/gpk-install-catalog.desktop
 share/applications/gpk-install-file.desktop

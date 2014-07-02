@@ -10,5 +10,4 @@ COMMENT=	KDE Dark Glass iconset
 
 PLIST_FILE_PATTERN_EXTRA=	-v "^\./(buildset|README)"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

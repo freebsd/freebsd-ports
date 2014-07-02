@@ -45,6 +45,7 @@ lib/byobu/ec2_cost
 lib/byobu/entropy
 lib/byobu/fan_speed
 lib/byobu/hostname
+lib/byobu/include/colors
 lib/byobu/include/common
 lib/byobu/include/config.py
 lib/byobu/include/constants
@@ -129,6 +130,7 @@ share/applications/byobu.desktop
 %%DATADIR%%/profiles/bashrc
 %%DATADIR%%/profiles/byoburc
 %%DATADIR%%/profiles/common
+%%DATADIR%%/profiles/dircolors
 %%DATADIR%%/profiles/screenrc
 %%DATADIR%%/profiles/tmux
 %%DATADIR%%/profiles/tmuxrc
@@ -136,6 +138,7 @@ share/applications/byobu.desktop
 %%DATADIR%%/status/statusrc
 %%DATADIR%%/tests/byobu-time-notifications
 %%DATADIR%%/windows/common
+%%DATADIR%%/Z97-byobu.sh
 %%PORTDOCS%%%%DOCSDIR%%/help.screen.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.tmux.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

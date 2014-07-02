@@ -3,6 +3,7 @@
 
 PORTNAME=	ephemera
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -11,8 +12,4 @@ COMMENT=	Blog server
 
 RUN_DEPENDS=	munger:${PORTSDIR}/lang/munger
 
-MAN8=		ephemera.8
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

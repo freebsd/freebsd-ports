@@ -91,9 +91,9 @@ include/mifluz/unac.h
 include/mifluz/xa.h
 include/mifluz/xa_ext.h
 lib/libmifluz.a
-lib/libmifluz.la
 lib/libmifluz.so
 lib/libmifluz.so.0
+lib/libmifluz.so.0.0.25
 man/man1/htdb_dump.1.gz
 man/man1/htdb_load.1.gz
 man/man1/htdb_stat.1.gz

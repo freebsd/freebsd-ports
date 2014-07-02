@@ -3,6 +3,7 @@
 
 PORTNAME=	helma
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/ \
 		LOCAL/decke
@@ -10,6 +11,9 @@ DISTFILES=	helma-${PORTVERSION}.tar.gz helma-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A Web application framework for fast and efficient scripting
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKBASE}/licenses/license.txt
 
 WRKBASE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKBASE}
@@ -33,17 +37,12 @@ PLIST_SUB=	DBDIR="${DBDIR}" \
 		HELMA_GROUP="${HELMA_GROUP}"
 
 OPTIONS_DEFINE=	MYSQL
+OPTIONS_SUB=	yes
 OPTIONS_DESC=	"Install MySQL Connector for Java"
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+MYSQL_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
 
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|JAVA_HOME=/usr/lib/j2sdk1.5-sun|JAVA_HOME=${JAVA_HOME}|' \
@@ -77,41 +76,38 @@ post-patch:
 		${WRKBASE}/server.properties
 
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/helma.sh.in ${PREFIX}/bin/helma
+	${INSTALL_SCRIPT} ${FILESDIR}/helma.sh.in ${STAGEDIR}${PREFIX}/bin/helma
 
-	${MKDIR} ${WWWDIR} && \
-	(cd ${WRKBASE} && ${COPYTREE_SHARE} "apps modules" ${WWWDIR} \
+	${MKDIR} ${STAGEDIR}${WWWDIR} && \
+	(cd ${WRKBASE} && ${COPYTREE_SHARE} "apps modules" ${STAGEDIR}${WWWDIR} \
 		"! -name *.html ! -name helma-*.jar ! -name .jsdoc") && \
-	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${WWWDIR}
+	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${STAGEDIR}${WWWDIR}
 
-	${MKDIR} ${DATADIR} && \
-	(cd ${WRKBASE} && ${COPYTREE_SHARE} "lib launcher.jar" ${DATADIR} \
+	${MKDIR} ${STAGEDIR}${DATADIR} && \
+	(cd ${WRKBASE} && ${COPYTREE_SHARE} "lib launcher.jar" ${STAGEDIR}${DATADIR} \
 		"! -name *.html ! -name helma-*.jar ! -name .jsdoc")
 
-	${MKDIR} ${LOGDIR} && \
-	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${LOGDIR}
+	${MKDIR} ${STAGEDIR}${LOGDIR} && \
+	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${STAGEDIR}${LOGDIR}
 
-	${MKDIR} ${DBDIR} && \
-	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${DBDIR}
+	${MKDIR} ${STAGEDIR}${DBDIR} && \
+	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${STAGEDIR}${DBDIR}
 
-	${MKDIR} ${ETCDIR}; \
+	${MKDIR} ${STAGEDIR}${ETCDIR}; \
 	for f in apps.properties db.properties server.properties scripts/helma.conf; do \
-		${INSTALL_DATA} ${WRKBASE}/$$f ${ETCDIR}/$${f##*/}.sample; \
-		if [ ! -f ${ETCDIR}/$${f##*/} ]; then \
-		${CP} -p ${ETCDIR}/$${f##*/}.sample ${ETCDIR}/$${f##*/}; \
-		fi; \
+		${INSTALL_DATA} ${WRKBASE}/$$f ${STAGEDIR}${ETCDIR}/$${f##*/}.sample; \
 	done
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} && \
-	(cd ${WRKBASE} && ${COPYTREE_SHARE} "licenses license.txt README.txt" ${DOCSDIR})
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
+	(cd ${WRKBASE} && ${COPYTREE_SHARE} "licenses license.txt README.txt" ${STAGEDIR}${DOCSDIR})
 
-	${MKDIR} ${DOCSDIR}/docs/api/jala && \
-	(cd ${WRKBASE}/modules/jala/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/docs/api/jala)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs/api/jala && \
+	(cd ${WRKBASE}/modules/jala/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/docs/api/jala)
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-	${LN} -sf ${JAVALIBDIR}/mysql-connector-java.jar ${DATADIR}/lib/ext/mysql-connector-java.jar
+	${LN} -sf ${JAVALIBDIR}/mysql-connector-java.jar ${STAGEDIR}${DATADIR}/lib/ext/mysql-connector-java.jar
 .endif
 
 .include <bsd.port.post.mk>

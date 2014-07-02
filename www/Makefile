@@ -46,6 +46,7 @@
     SUBDIR += axis2
     SUBDIR += b2evolution
     SUBDIR += bacula-web
+    SUBDIR += baikal
     SUBDIR += bannerfilter
     SUBDIR += bblog
     SUBDIR += bigbluebutton

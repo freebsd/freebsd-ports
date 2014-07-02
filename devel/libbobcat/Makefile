@@ -15,6 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		yodl>=3.0:${PORTSDIR}/textproc/yodl
 
+USE_GCC=	yes
 USE_XORG=	x11
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
@@ -22,11 +23,10 @@ PORTDOCS=	*
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-USE_GCC=	4.7
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/bobcat-${PORTVERSION}
 
-USES=		shebangfix
+USES=		readline shebangfix
 
 SHEBANG_LANG=	icmake
 icmake_OLD_CMD=	/usr/bin/icmake
@@ -50,8 +50,8 @@ post-patch:
 		s|"/share/man"|"/man"| ; \
 		s|"-d"|"-Pp"| ; \
 		s|#define MANHTML|| ; \
-		s|g++|g++47| ; \
-		s|gcc|gcc47|' \
+		s|g++|${CXX}| ; \
+		s|gcc|${CC}|' \
 		${WRKSRC}/INSTALL.im
 	@${REINPLACE_CMD} -e 's|"-isystem tmp -Wall -O3"|"-isystem tmp ${LOCALBASE}/include -Wall ${CXXFLAGS}"|' \
 		${WRKSRC}/build

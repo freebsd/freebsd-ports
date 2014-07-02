@@ -1,22 +1,34 @@
+bin/cBlorb
+bin/dumb-frotz
+bin/dumb-git
+bin/dumb-glulxe
 bin/i7
 bin/inform6
 bin/ni
 man/man6/i7.6.gz
-%%DATADIR%%/Extensions/David Fisher/English.i7x
-%%DATADIR%%/Extensions/Emily Short/Glulx Entry Points.i7x
-%%DATADIR%%/Extensions/Emily Short/Plurality.i7x
+%%DATADIR%%/Extensions/Emily Short/Skeleton Keys.i7x
 %%DATADIR%%/Extensions/Emily Short/Punctuation Removal.i7x
 %%DATADIR%%/Extensions/Emily Short/Locksmith.i7x
 %%DATADIR%%/Extensions/Emily Short/Menus.i7x
+%%DATADIR%%/Extensions/Emily Short/Inanimate Listeners.i7x
 %%DATADIR%%/Extensions/Emily Short/Glulx Text Effects.i7x
-%%DATADIR%%/Extensions/Emily Short/Case Management.i7x
+%%DATADIR%%/Extensions/Emily Short/Glulx Entry Points.i7x
 %%DATADIR%%/Extensions/Emily Short/Complex Listing.i7x
 %%DATADIR%%/Extensions/Emily Short/Glulx Image Centering.i7x
 %%DATADIR%%/Extensions/Emily Short/Basic Help Menu.i7x
 %%DATADIR%%/Extensions/Emily Short/Basic Screen Effects.i7x
+%%DATADIR%%/Extensions/Graham Nelson/Unicode Full Character Names.i7x
+%%DATADIR%%/Extensions/Graham Nelson/Unicode Character Names.i7x
+%%DATADIR%%/Extensions/Graham Nelson/Standard Rules.i7x
 %%DATADIR%%/Extensions/Graham Nelson/Rideable Vehicles.i7x
 %%DATADIR%%/Extensions/Graham Nelson/Metric Units.i7x
-%%DATADIR%%/Extensions/Graham Nelson/Standard Rules.i7x
+%%DATADIR%%/Extensions/Graham Nelson/English Language.i7x
+%%DATADIR%%/Extensions/Graham Nelson/Approximate Metric Units.i7x
+%%DATADIR%%/Extensions/Reserved/Templates/Vorple/zvm.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Vorple/vorple.parchment.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Vorple/vorple.css
+%%DATADIR%%/Extensions/Reserved/Templates/Vorple/soundmanager2.swf
+%%DATADIR%%/Extensions/Reserved/Templates/Vorple/(manifest).txt
 %%DATADIR%%/Extensions/Reserved/Templates/Standard/index.html
 %%DATADIR%%/Extensions/Reserved/Templates/Standard/source.html
 %%DATADIR%%/Extensions/Reserved/Templates/Standard/play.html
@@ -31,35 +43,45 @@ man/man6/i7.6.gz
 %%DATADIR%%/Extensions/Reserved/Templates/Quixe/(manifest).txt
 %%DATADIR%%/Extensions/Reserved/Templates/Parchment/jquery.min.js
 %%DATADIR%%/Extensions/Reserved/Templates/Parchment/parchment.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Parchment/parchment.css
-%%DATADIR%%/Extensions/Reserved/Templates/Parchment/gnusto.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Parchment/zmachine.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/parchment.min.css
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/zvm.min.js
 %%DATADIR%%/Extensions/Reserved/Templates/Parchment/(manifest).txt
-%%DATADIR%%/Extensions/Reserved/IntroductionToIF.pdf
-%%DATADIR%%/Extensions/Reserved/WinExtensionFileModel.html
-%%DATADIR%%/Extensions/Reserved/WinExtensionsModel.html
+%%DATADIR%%/Extensions/Reserved/Languages/Swedish/flag.png
+%%DATADIR%%/Extensions/Reserved/Languages/Swedish/about.txt
+%%DATADIR%%/Extensions/Reserved/Languages/Spanish/flag.png
+%%DATADIR%%/Extensions/Reserved/Languages/Spanish/about.txt
+%%DATADIR%%/Extensions/Reserved/Languages/Italian/flag.png
+%%DATADIR%%/Extensions/Reserved/Languages/Italian/about.txt
+%%DATADIR%%/Extensions/Reserved/Languages/German/flag.png
+%%DATADIR%%/Extensions/Reserved/Languages/German/about.txt
+%%DATADIR%%/Extensions/Reserved/Languages/French/flag.png
+%%DATADIR%%/Extensions/Reserved/Languages/French/about.txt
+%%DATADIR%%/Extensions/Reserved/Languages/English/Syntax.preform
+%%DATADIR%%/Extensions/Reserved/Languages/English/flag.png
+%%DATADIR%%/Extensions/Reserved/Languages/English/about.txt
 %%DATADIR%%/Extensions/Reserved/definitions.html
-%%DATADIR%%/Extensions/Reserved/Small Cover.jpg
-%%DATADIR%%/Extensions/Reserved/ExtensionsModel.html
-%%DATADIR%%/Extensions/Reserved/CblorbModel.html
-%%DATADIR%%/Extensions/Reserved/Cover.jpg
-%%DATADIR%%/Extensions/Reserved/DefaultCover.jpg
-%%DATADIR%%/Extensions/Reserved/ExtensionFileModel.html
-%%DATADIR%%/Extensions/Reserved/Actions.i6t
+%%DATADIR%%/Extensions/Reserved/ZMachine.i6t
 %%DATADIR%%/Extensions/Reserved/WorldModel.i6t
+%%DATADIR%%/Extensions/Reserved/WinExtensionsModel.html
+%%DATADIR%%/Extensions/Reserved/WinExtensionFileModel.html
 %%DATADIR%%/Extensions/Reserved/Utilities.i6t
 %%DATADIR%%/Extensions/Reserved/UnicodeData.i6t
 %%DATADIR%%/Extensions/Reserved/Time.i6t
+%%DATADIR%%/Extensions/Reserved/Text.i6t
 %%DATADIR%%/Extensions/Reserved/Tests.i6t
 %%DATADIR%%/Extensions/Reserved/Tables.i6t
-%%DATADIR%%/Extensions/Reserved/Sort.i6t
 %%DATADIR%%/Extensions/Reserved/StoredAction.i6t
+%%DATADIR%%/Extensions/Reserved/Sort.i6t
+%%DATADIR%%/Extensions/Reserved/Small Cover.jpg
 %%DATADIR%%/Extensions/Reserved/Rulebooks.i6t
 %%DATADIR%%/Extensions/Reserved/Relations.i6t
 %%DATADIR%%/Extensions/Reserved/RelationKind.i6t
 %%DATADIR%%/Extensions/Reserved/RegExp.i6t
+%%DATADIR%%/Extensions/Reserved/RealNumber.i6t
 %%DATADIR%%/Extensions/Reserved/RTP.i6t
 %%DATADIR%%/Extensions/Reserved/Printing.i6t
+%%DATADIR%%/Extensions/Reserved/Postcard.pdf
+%%DATADIR%%/Extensions/Reserved/Postcard.html
 %%DATADIR%%/Extensions/Reserved/Parser.i6t
 %%DATADIR%%/Extensions/Reserved/Output.i6t
 %%DATADIR%%/Extensions/Reserved/OutOfWorld.i6t
@@ -78,29 +100,41 @@ man/man6/i7.6.gz
 %%DATADIR%%/Extensions/Reserved/ListWriter.i6t
 %%DATADIR%%/Extensions/Reserved/Light.i6t
 %%DATADIR%%/Extensions/Reserved/Language.i6t
+%%DATADIR%%/Extensions/Reserved/IntroductionToIF.pdf
 %%DATADIR%%/Extensions/Reserved/Introduction.i6t
-%%DATADIR%%/Extensions/Reserved/IndexedText.i6t
 %%DATADIR%%/Extensions/Reserved/Glulx.i6t
 %%DATADIR%%/Extensions/Reserved/Flex.i6t
 %%DATADIR%%/Extensions/Reserved/FileIO.i6t
 %%DATADIR%%/Extensions/Reserved/Figures.i6t
+%%DATADIR%%/Extensions/Reserved/ExtensionsModel.html
+%%DATADIR%%/Extensions/Reserved/ExtensionFileModel.html
 %%DATADIR%%/Extensions/Reserved/Definitions.i6t
+%%DATADIR%%/Extensions/Reserved/DefaultCover.jpg
+%%DATADIR%%/Extensions/Reserved/Cover.jpg
 %%DATADIR%%/Extensions/Reserved/Combinations.i6t
 %%DATADIR%%/Extensions/Reserved/Chronology.i6t
 %%DATADIR%%/Extensions/Reserved/Char.i6t
+%%DATADIR%%/Extensions/Reserved/CblorbModel.html
 %%DATADIR%%/Extensions/Reserved/BlockValues.i6t
 %%DATADIR%%/Extensions/Reserved/Activities.i6t
-%%DATADIR%%/Extensions/Reserved/ZMachine.i6t
+%%DATADIR%%/Extensions/Reserved/Actions.i6t
 %%DATADIR%%/Extensions/Eric Eve/Epistemology.i7x
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Vorple
 @dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Standard
 @dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Quixe
 @dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Parchment
 @dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Classic
 @dirrmtry %%DATADIR%%/Extensions/Reserved/Templates
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/Swedish
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/Spanish
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/Italian
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/German
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/French
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/English
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages
 @dirrmtry %%DATADIR%%/Extensions/Reserved
 @dirrmtry %%DATADIR%%/Extensions/Graham Nelson
 @dirrmtry %%DATADIR%%/Extensions/Eric Eve
 @dirrmtry %%DATADIR%%/Extensions/Emily Short
-@dirrmtry %%DATADIR%%/Extensions/David Fisher
 @dirrmtry %%DATADIR%%/Extensions
 @dirrmtry %%DATADIR%%

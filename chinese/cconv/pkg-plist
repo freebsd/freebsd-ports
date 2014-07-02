@@ -1,6 +1,6 @@
 bin/cconv
 include/cconv.h
 lib/libcconv.a
-lib/libcconv.la
 lib/libcconv.so
 lib/libcconv.so.0
+lib/libcconv.so.0.0.0

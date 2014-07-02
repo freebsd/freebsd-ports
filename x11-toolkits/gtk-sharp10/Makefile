@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.0.10
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 PKGNAMESUFFIX=	10
@@ -14,15 +14,13 @@ COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
-LATEST_LINK=	gtk-sharp10
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool mono pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
-USES=		gmake mono pathfix perl5 pkgconfig
 USE_PERL5=	run
 USE_GNOME=	gtkhtml3 vte librsvg2 libgnomecanvas \
 		libgnomeprintui libglade2 libgnomeui
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
-USE_AUTOTOOLS=	libtool
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' -o -name 'gapi-parser' | ${XARGS} \

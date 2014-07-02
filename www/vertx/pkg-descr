@@ -6,4 +6,4 @@ It is an event driven application framework that runs on the JVM
 Vert.x then exposes the API in Ruby, Java, Groovy, JavaScript and
 Python. So you choose what language you want to use.
 
-WWW:	http://vertx.io/
+WWW: http://vertx.io/

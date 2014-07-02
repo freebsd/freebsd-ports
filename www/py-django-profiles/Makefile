@@ -12,19 +12,22 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	A user-profile application for Django
 
+LICENSE=	BSD3CLAUSE
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

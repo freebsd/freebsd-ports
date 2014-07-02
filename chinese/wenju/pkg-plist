@@ -1,6 +1,5 @@
 bin/tim-config
 bin/wrap
-lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-tim.la
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-tim.so
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wenju.mo
 %%DATADIR%%/bxm.tim

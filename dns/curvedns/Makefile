@@ -11,7 +11,7 @@ DISTNAME=		curvedns-0.88-unstable
 MAINTAINER=		freebsd@dns-lab.com
 COMMENT=		Forwarder adding DNSCurve to an authoritative nameserver
 
-LIB_DEPENDS=		ev.4:${PORTSDIR}/devel/libev
+LIB_DEPENDS=		libev.so:${PORTSDIR}/devel/libev
 RUN_DEPENDS=		setuidgid:${PORTSDIR}/sysutils/daemontools
 BUILD_DEPENDS=		bash:${PORTSDIR}/shells/bash
 

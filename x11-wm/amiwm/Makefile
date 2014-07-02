@@ -13,15 +13,16 @@ COMMENT=	Window manager that makes your desktop look like an Amiga(TM)
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 ice sm xext xmu
-MAN1=		amiwm.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>  Copying documents to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	@${INSTALL_DATA} ${WRKSRC}/README.modules ${DOCSDIR}/README.modules
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
+	@${INSTALL_DATA} ${WRKSRC}/README.modules ${STAGEDIR}${DOCSDIR}/README.modules
 .endif
 
 .include <bsd.port.mk>

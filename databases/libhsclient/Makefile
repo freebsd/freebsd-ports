@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	libhsclient
-PORTVERSION=	1.0.6
-PORTREVISION=	${REVISION}
+DISTVERSION=	1.0.6-20110614
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~jnlin/distfiles/
-DISTNAME=	HandlerSocket-Plugin-for-MySQL-${PORTVERSION}-${REVISION}
+DISTNAME=	HandlerSocket-Plugin-for-MySQL-${DISTVERSION}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	Client Library of HandlerSocket Plugin
 
 WRKSRC=		${WRKDIR}/HandlerSocket-Plugin-for-MySQL
 
-REVISION=	20110614
-
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-handlersocket-server=no
 

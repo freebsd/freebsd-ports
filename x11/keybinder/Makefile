@@ -2,7 +2,7 @@
 
 PORTNAME=	keybinder
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	GENTOO/distfiles
 
@@ -12,13 +12,15 @@ COMMENT=	Library for registering keyboard shortcuts
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20 introspection:build
 USE_XORG=	x11 xext xrender
-USES=		gmake pkgconfig pathfix
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PYTHON LUA
-OPTIONS_DEFAULT=	PYTHON
+OPTIONS_DEFAULT=PYTHON
+OPTIONS_SUB=	yes
 
 # Override LUA description
 LUA_DESC=	Lua bindings
@@ -28,30 +30,15 @@ LUA_DESC=	Lua bindings
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	2
 USE_GNOME+=	pygtk2
-PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
 USES+=		lua:51
 CONFIGURE_ARGS+=	--with-lua-includes=${LUA_INCDIR}
-PLIST_SUB+=	LUA=""
 .else
 CONFIGURE_ARGS+=	--disable-lua
-PLIST_SUB+=	LUA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
-CONFIGURE_ARGS+=--enable-gtk-doc \
-	--with-html-dir=${PREFIX}/share/gtk-doc/html
-PLIST_SUB+=	DOCS=""
-.else
-CONFIGURE_ARGS+=--disable-gtk-doc-html \
-	--without-html-dir
-PLIST_SUB+=	DOCS="@comment "
 .endif
 
 post-install:

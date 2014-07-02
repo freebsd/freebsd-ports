@@ -23,28 +23,26 @@ NAME=		Clock
 
 LANG=		de fr pt sq sr sr@Latn sv
 
-NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} ${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${PATCH} ${WRKSRC}/Clock/__init__.py < ${FILESDIR}/Clock::__init__.py
 
 do-install:
-	@${MKDIR} ${DATADIR}/Displays/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/Displays/${NAME}
-	@${MKDIR} ${DATADIR}/Displays/${NAME}/gfx
-	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/Displays/${NAME}/gfx
-	${INSTALL_DATA} ${WRKSRC}/gfx/*.xcf ${DATADIR}/Displays/${NAME}/gfx
-	@${MKDIR} ${DATADIR}/Sensors/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.dat ${DATADIR}/Sensors/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/Sensors/${NAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/*.display ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${STAGEDIR}${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/*.xcf ${STAGEDIR}${DATADIR}/Displays/${NAME}/gfx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.dat ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${STAGEDIR}${DATADIR}/Sensors/${NAME}
 .for ii in ${LANG}
-	@${MKDIR} ${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/*.mo \
-		${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
+		${STAGEDIR}${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
 .endfor
 	@${LN} -s ${DATADIR}/Displays/${NAME}/README \
-		${DATADIR}/Sensors/${NAME}/README
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${DATADIR}/Sensors/${NAME}/README
 
 .include <bsd.port.mk>

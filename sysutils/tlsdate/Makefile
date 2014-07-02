@@ -18,8 +18,8 @@ GH_ACCOUNT=	ioerror
 GH_COMMIT=	44fa3b7
 GH_TAGNAME=	${GH_COMMIT}
 
-USE_AUTOTOOLS=	autoconf aclocal automake libtool
-USES=		pkgconfig
+USE_AUTOTOOLS=	autoconf aclocal automake libtoolize
+USES=		libtool pkgconfig
 
 OPTIONS_DEFINE=	DOCS
 

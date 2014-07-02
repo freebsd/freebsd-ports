@@ -701,53 +701,81 @@ bin/xyzcmd
 %%DATADIR%%/conf/main.xyz
 %%DATADIR%%/conf/plugins.xyz
 %%DATADIR%%/conf/vfs.xyz
+%%DATADIR%%/locale/ru/LC_MESSAGES/xyzcmd.mo
+%%DATADIR%%/locale/ru/LC_MESSAGES/xyzcmd.po
+%%DATADIR%%/locale/xyzcmd.pot
 %%DATADIR%%/plugins/__init__.py
 %%DATADIR%%/plugins/core/__init__.py
+%%DATADIR%%/plugins/core/__init__.pyc
 %%DATADIR%%/plugins/core/bindlist/__init__.py
+%%DATADIR%%/plugins/core/bindlist/__init__.pyc
 %%DATADIR%%/plugins/core/bindlist/main.py
+%%DATADIR%%/plugins/core/bindlist/main.pyc
 %%DATADIR%%/plugins/core/console/__init__.py
+%%DATADIR%%/plugins/core/console/__init__.pyc
 %%DATADIR%%/plugins/core/console/main.py
+%%DATADIR%%/plugins/core/console/main.pyc
 %%DATADIR%%/plugins/core/keycodes/__init__.py
+%%DATADIR%%/plugins/core/keycodes/__init__.pyc
 %%DATADIR%%/plugins/core/keycodes/main.py
+%%DATADIR%%/plugins/core/keycodes/main.pyc
 %%DATADIR%%/plugins/core/pluginlist/__init__.py
+%%DATADIR%%/plugins/core/pluginlist/__init__.pyc
 %%DATADIR%%/plugins/core/pluginlist/entry.py
+%%DATADIR%%/plugins/core/pluginlist/entry.pyc
 %%DATADIR%%/plugins/core/pluginlist/main.py
+%%DATADIR%%/plugins/core/pluginlist/main.pyc
 %%DATADIR%%/plugins/core/shell/__init__.py
 %%DATADIR%%/plugins/core/shell/bash.py
 %%DATADIR%%/plugins/core/shell/main.py
 %%DATADIR%%/plugins/fsrules/__init__.py
+%%DATADIR%%/plugins/fsrules/__init__.pyc
 %%DATADIR%%/plugins/fsrules/magic/__init__.py
+%%DATADIR%%/plugins/fsrules/magic/__init__.pyc
 %%DATADIR%%/plugins/fsrules/magic/main.py
+%%DATADIR%%/plugins/fsrules/magic/main.pyc
 %%DATADIR%%/plugins/misc/__init__.py
+%%DATADIR%%/plugins/misc/__init__.pyc
 %%DATADIR%%/plugins/misc/about/__init__.py
+%%DATADIR%%/plugins/misc/about/__init__.pyc
 %%DATADIR%%/plugins/misc/about/main.py
+%%DATADIR%%/plugins/misc/about/main.pyc
 %%DATADIR%%/plugins/misc/hello/__init__.py
 %%DATADIR%%/plugins/misc/hello/main.py
 %%DATADIR%%/plugins/misc/where/__init__.py
+%%DATADIR%%/plugins/misc/where/__init__.pyc
 %%DATADIR%%/plugins/misc/where/main.py
+%%DATADIR%%/plugins/misc/where/main.pyc
 %%DATADIR%%/plugins/ui/__init__.py
+%%DATADIR%%/plugins/ui/__init__.pyc
 %%DATADIR%%/plugins/ui/bookmarks/__init__.py
+%%DATADIR%%/plugins/ui/bookmarks/__init__.pyc
 %%DATADIR%%/plugins/ui/bookmarks/main.py
+%%DATADIR%%/plugins/ui/bookmarks/main.pyc
 %%DATADIR%%/plugins/ui/testinput/__init__.py
+%%DATADIR%%/plugins/ui/testinput/__init__.pyc
 %%DATADIR%%/plugins/ui/testinput/main.py
+%%DATADIR%%/plugins/ui/testinput/main.pyc
 %%DATADIR%%/plugins/vfs/__init__.py
+%%DATADIR%%/plugins/vfs/__init__.pyc
 %%DATADIR%%/plugins/vfs/fileinfo/__init__.py
+%%DATADIR%%/plugins/vfs/fileinfo/__init__.pyc
 %%DATADIR%%/plugins/vfs/fileinfo/main.py
+%%DATADIR%%/plugins/vfs/fileinfo/main.pyc
 %%DATADIR%%/plugins/vfs/vfsutils/__init__.py
+%%DATADIR%%/plugins/vfs/vfsutils/__init__.pyc
 %%DATADIR%%/plugins/vfs/vfsutils/box_copy.py
+%%DATADIR%%/plugins/vfs/vfsutils/box_copy.pyc
 %%DATADIR%%/plugins/vfs/vfsutils/main.py
+%%DATADIR%%/plugins/vfs/vfsutils/main.pyc
+share/man/man1/xyzcmd.1
 %%DATADIR%%/skins/glamour
 %%DATADIR%%/skins/grass
 %%DATADIR%%/skins/lighty
 %%DATADIR%%/skins/monochrome
 %%DATADIR%%/skins/seablue
-%%PYTHON_SITELIBDIR%%/libxyz/vfs/zip.py
-%%PYTHON_SITELIBDIR%%/libxyz/vfs/zip.pyc
-%%PYTHON_SITELIBDIR%%/libxyz/vfs/zip.pyo
+%%PORTDOCS%%%%DOCSDIR%%/api/libxyz.ui.entry.BlockEntries-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/libxyz.ui.panel.TabBar-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/libxyz.vfs.zip-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/libxyz.vfs.zip-pysrc.html
-%%PORTDOCS%%%%DOCSDIR%%/api/libxyz.vfs.zip.ZipVFSObject-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/plugins.core.complete-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/plugins.core.complete-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/plugins.core.complete.domain_base-module.html
@@ -766,7 +794,6 @@ bin/xyzcmd
 %%PORTDOCS%%%%DOCSDIR%%/api/plugins.core.complete.main-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/plugins.core.complete.main.CompleteWindow-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/plugins.core.complete.main.XYZPlugin-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/toc-libxyz.vfs.zip-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-plugins.core.complete-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-plugins.core.complete.domain_base-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/toc-plugins.core.complete.domain_binpath-module.html
@@ -780,6 +807,11 @@ bin/xyzcmd
 %%DATADIR%%/plugins/core/complete/domain_fs.py
 %%DATADIR%%/plugins/core/complete/domain_service.py
 %%DATADIR%%/plugins/core/complete/main.py
+@dirrmtry share/man/man1
+@dirrmtry share/man
+@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/ru
+@dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/plugins/vfs/vfsutils
 @dirrm %%DATADIR%%/plugins/vfs/fileinfo

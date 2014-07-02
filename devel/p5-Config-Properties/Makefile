@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Properties
-PORTVERSION=	1.75
+PORTVERSION=	1.77
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cmanley@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write property files
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure

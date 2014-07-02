@@ -1,4 +1,3 @@
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libequinox.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libequinox.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Equinox Evolution.crx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Equinox Evolution Dawn.crx
@@ -239,10 +238,6 @@ lib/gtk-2.0/%%GTK2_VERSION%%/engines/libequinox.so
 @dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0/apps
 @dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0
 @dirrm %%DATADIR%%/Equinox Evolution
-@dirrmtry %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
-@dirrmtry lib/gtk-2.0

@@ -9,7 +9,7 @@ MASTER_SITES=	https://codeload.github.com/slime/slime/legacy.tar.gz/v${PORTVERSI
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Superior Lisp Interaction Mode for Emacs
 
-USES=		gmake
+USES=		gmake makeinfo
 USE_EMACS=	yes
 
 SLIME_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/slime

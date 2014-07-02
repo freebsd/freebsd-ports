@@ -11,10 +11,9 @@ DISTNAME=	ICONS-Gartoon.Blue-SVG-v${PORTVERSION}
 
 COMMENT=	KDE Gartoon Blue SVG iconset
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 WRKSRC=		${WRKDIR}/Gartoon.Blue
 PORT_SHAREDIR?=	"${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

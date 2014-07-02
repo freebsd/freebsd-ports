@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
+USES+=	makeinfo
 INFO=	ess
 .endif
 

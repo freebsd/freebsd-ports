@@ -10,16 +10,15 @@ MASTER_SITES=	http://www.alarm-clock.pl/media/distfiles/
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Alarm Clock for the GNOME desktop
 
-LIB_DEPENDS=	unique-1:${PORTSDIR}/x11-toolkits/unique \
-		notify.4:${PORTSDIR}/devel/libnotify
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
+		libnotify.so:${PORTSDIR}/devel/libnotify
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gettext pathfix gmake pkgconfig
+USES=		gettext pathfix gmake pkgconfig tar:bzip2
 USE_GSTREAMER=	yes
 USE_GNOME=	gtk20
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	NLS
 

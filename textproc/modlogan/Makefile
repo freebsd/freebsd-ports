@@ -3,19 +3,19 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
 
 MAINTAINER=	netchild@FreeBSD.org
-COMMENT=	A modular log file analysis program
+COMMENT=	Modular log file analysis program
 
 LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns \
 		libgd.so:${PORTSDIR}/graphics/gd \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		gettext libtool:keepla
+USES=		gettext libtool
 
 # Please don't remove the comments, as soon as autoconf/libtool get's
 # updated in the ports collection the comments may be removed.

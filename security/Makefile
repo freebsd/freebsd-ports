@@ -966,9 +966,6 @@
     SUBDIR += sud
     SUBDIR += sudo
     SUBDIR += sudoscript
-    SUBDIR += sudosh
-    SUBDIR += sudosh2
-    SUBDIR += sudosh3
     SUBDIR += super
     SUBDIR += suricata
     SUBDIR += swatch

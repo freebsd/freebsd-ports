@@ -26,7 +26,6 @@ LIB_DEPENDS=	libagg.so:${PORTSDIR}/graphics/agg \
 
 CFLAGS+=	-fPIC
 #hack to get custom exactcode configure script to enable tiff support with
-NO_STAGE=	yes
 #broken headers on c++ in base system:
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/libpng15
 USE_BZIP2=	yes
@@ -71,14 +70,14 @@ post-patch:
 
 do-install:
 	@cd ${INSTALL_WRKSRC}/&&for i in ${BINS};do\
-		${INSTALL_PROGRAM} */$$i ${PREFIX}/bin/;done
+		${INSTALL_PROGRAM} */$$i ${STAGEDIR}${PREFIX}/bin/;done
 	@cd ${INSTALL_WRKSRC}/api/perl&&\
-		${MKDIR} ${PREFIX}/${SITE_PERL_REL}&&\
-		${INSTALL_PROGRAM} ExactImage.so ${PREFIX}/${SITE_PERL_REL}/&&\
-		${INSTALL_DATA} ExactImage.pm ${PREFIX}/${SITE_PERL_REL}/
+		${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}&&\
+		${INSTALL_PROGRAM} ExactImage.so ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/&&\
+		${INSTALL_DATA} ExactImage.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/
 	@cd ${INSTALL_WRKSRC}/api/python&&\
-		${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/&&\
-		${INSTALL_SCRIPT} ExactImage.py ${PYTHONPREFIX_SITELIBDIR}/&&\
-		${INSTALL_PROGRAM} _ExactImage.so ${PYTHONPREFIX_SITELIBDIR}/
+		${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/&&\
+		${INSTALL_SCRIPT} ExactImage.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/&&\
+		${INSTALL_PROGRAM} _ExactImage.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/
 
 .include <bsd.port.mk>

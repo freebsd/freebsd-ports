@@ -24,12 +24,11 @@ NO_BUILD=	YES
 
 PLIST_FILES=	bin/rfcdiff
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/${DISTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

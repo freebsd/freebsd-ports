@@ -3,6 +3,7 @@
 
 PORTNAME=	zookeeper
 PORTVERSION=	3.4.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/current
@@ -15,9 +16,9 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libcppunit.so:${PORTSDIR}/devel/cppunit
 
-USES=	gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=>	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/src/c
 

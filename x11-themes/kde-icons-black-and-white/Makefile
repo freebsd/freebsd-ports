@@ -10,5 +10,4 @@ COMMENT=	KDE Black And White iconset
 
 WRKSRC=		${WRKDIR}/"black and white"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

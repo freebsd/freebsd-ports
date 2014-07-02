@@ -2157,8 +2157,9 @@ include/vtk-%%VER2%%/vtkXMLUnstructuredGridWriter.h
 include/vtk-%%VER2%%/vtkXMLUtilities.h
 include/vtk-%%VER2%%/vtkXMLWriter.h
 include/vtk-%%VER2%%/vtkXMLWriterC.h
-include/vtk-%%VER2%%/vtkXOpenGLRenderWindow.h
-include/vtk-%%VER2%%/vtkXRenderWindowInteractor.h
+%%X11%%include/vtk-%%VER2%%/vtkXOpenGLRenderWindow.h
+%%X11%%include/vtk-%%VER2%%/vtkXRenderWindowInteractor.h
+%%OSMESA%%include/vtk-%%VER2%%/vtkOSOpenGLRenderWindow.h
 include/vtk-%%VER2%%/vtkXYPlotActor.h
 include/vtk-%%VER2%%/vtkXYPlotWidget.h
 include/vtk-%%VER2%%/vtkXYZMolReader.h

@@ -3,7 +3,7 @@
 
 PORTNAME=	whysynth
 PORTVERSION=	20120903
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://smbolton.com/whysynth/
 
@@ -21,9 +21,9 @@ LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig tar:bzip2 libtool
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

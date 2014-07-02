@@ -3,7 +3,7 @@
 
 PORTNAME=	firefly
 PORTVERSION=	1696
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://nightlies.fireflymediaserver.org/nightlies/svn-${PORTVERSION}/ \
 		http://www.magnesium.net/~mdf/distfiles/
@@ -28,6 +28,7 @@ LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-id3tag=${PREFIX} \
 			--enable-sqlite3 --enable-oggvorbis --enable-flac
+USES=		libtool
 
 DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd
@@ -52,7 +53,7 @@ JAPANESE_DESC=	Japanese support in ID3 tags
 
 .if ${PORT_OPTIONS:MJAPANESE}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_scan-mp3.c
-USES=		iconv
+USES+=		iconv
 CONFIGURE_ARGS+=	--enable-iconv
 .endif
 

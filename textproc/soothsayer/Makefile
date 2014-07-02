@@ -3,6 +3,7 @@
 
 PORTNAME=	soothsayer
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/presage/${PORTNAME}/${PORTVERSION}
 
@@ -13,15 +14,16 @@ LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_SQLITE=	3
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_path_PYTHON=no \
 		ac_cv_path_SWIG=no \
 		ac_cv_prog_HAVE_DOT=no \
 		ac_cv_prog_HAVE_DOXYGEN=no
 CONFIGURE_ARGS=	--disable-python-binding
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

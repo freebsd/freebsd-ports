@@ -613,8 +613,6 @@ include/client.h
 @dirrm %%DATADIR%%
 @dirrmtry %%DBDIR%%
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@unexec if cmp -s "%D/etc/ratbox-services.conf.sample" "%D/etc/ratbox-services.conf"; then rm -f %D/etc/ratbox-services.conf; fi
-etc/ratbox-services.conf.sample
-@exec if [ ! -f "%D/etc/ratbox-services.conf" ] ; then cp -p "%D/%F" "%B/ratbox-services.conf"; fi
+@sample etc/ratbox-services.conf.sample
 @unexec f="/var/log/ratbox-services.log"; if [ ! -s "$f" ]; then rm -f "$f"; fi
 @unexec f="/var/run/ratbox-services.pid"; if [ ! -s "$f" ]; then rm -f "$f"; fi

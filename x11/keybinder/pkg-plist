@@ -1,16 +1,28 @@
 include/keybinder.h
 lib/girepository-1.0/Keybinder-0.0.typelib
-lib/libkeybinder.la
 lib/libkeybinder.so
-lib/libkeybinder.so.1
-%%LUA%%%%LUA_MODLIBDIR%%/keybinder.la
+lib/libkeybinder.so.0
+lib/libkeybinder.so.0.1.0
 %%LUA%%%%LUA_MODLIBDIR%%/keybinder.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/_keybinder.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/_keybinder.so
 libdata/pkgconfig/keybinder.pc
+%%PORTDOCS%%%%DOCSDIR%%/annotation-glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
+%%PORTDOCS%%%%DOCSDIR%%/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/deprecated-api-index.html
+%%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/keybinder-keybinder.html
+%%PORTDOCS%%%%DOCSDIR%%/keybinder.devhelp2
+%%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/object-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/up.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.lua
@@ -21,24 +33,8 @@ libdata/pkgconfig/keybinder.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vexample.vala
 share/gir-1.0/Keybinder-0.0.gir
-%%DOCS%%share/gtk-doc/html/keybinder/annotation-glossary.html
-%%DOCS%%share/gtk-doc/html/keybinder/api-index-full.html
-%%DOCS%%share/gtk-doc/html/keybinder/ch01.html
-%%DOCS%%share/gtk-doc/html/keybinder/deprecated-api-index.html
-%%DOCS%%share/gtk-doc/html/keybinder/home.png
-%%DOCS%%share/gtk-doc/html/keybinder/index.html
-%%DOCS%%share/gtk-doc/html/keybinder/index.sgml
-%%DOCS%%share/gtk-doc/html/keybinder/keybinder-keybinder.html
-%%DOCS%%share/gtk-doc/html/keybinder/keybinder.devhelp2
-%%DOCS%%share/gtk-doc/html/keybinder/left.png
-%%DOCS%%share/gtk-doc/html/keybinder/object-tree.html
-%%DOCS%%share/gtk-doc/html/keybinder/right.png
-%%DOCS%%share/gtk-doc/html/keybinder/style.css
-%%DOCS%%share/gtk-doc/html/keybinder/up.png
-%%DOCS%%@dirrm share/gtk-doc/html/keybinder
-%%DOCS%%@dirrmtry share/gtk-doc/html
-%%DOCS%%@dirrmtry share/gtk-doc
 @dirrmtry share/gir-1.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/keybinder
 @dirrmtry lib/girepository-1.0

@@ -14,18 +14,18 @@ COMMENT=	Simple GTK+-2 HTML editor
 USES=		pathfix pkgconfig gmake
 USE_GNOME=	gnomeprefix gtksourceview gtkhtml3
 GNU_CONFIGURE=	yes
+OPTIONS_DEFINE= DOCS
 
-MAN1=		erwin.1
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|gtkhtml-3.6|gtkhtml-3.14|g" \
 		${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
