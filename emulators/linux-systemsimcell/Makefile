@@ -11,7 +11,7 @@ EXTRACT_SUFX=
 DISTFILES=	systemsim-cell-3.1-25.f9.${ARCH}.rpm \
 		sysroot_image-3.1-1.noarch.rpm
 
-MAINTAINER=	devel@stasyan.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System simulator for the Cell Broadband Processor
 
 NO_BUILD=	yes

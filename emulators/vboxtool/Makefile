@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	pierrejacques.mimifir@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides effective control of VirtualBox machines
 
 LICENSE=	GPLv3

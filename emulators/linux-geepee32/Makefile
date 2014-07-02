@@ -9,7 +9,7 @@ MASTER_SITES=	http://users.skynet.be/firefly/gp32/project/geepee32/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}_linux_sdl_${PORTVERSION}
 
-MAINTAINER=	arundel@h3c.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The only GP32 emulator for i386
 
 ONLY_FOR_ARCHS=	i386

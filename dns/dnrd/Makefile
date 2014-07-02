@@ -6,7 +6,7 @@ PORTVERSION=		2.20.3
 CATEGORIES=		dns
 MASTER_SITES=		SF
 
-MAINTAINER=		natanael.copa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		Proxy DNS daemon
 
 USES=		gmake
