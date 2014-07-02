@@ -2,7 +2,6 @@ bin/gnome-subtitles
 lib/gnome-subtitles/gnome-subtitles.exe
 lib/gnome-subtitles/gnome-subtitles.exe.config
 lib/gnome-subtitles/libgstreamer_playbin.so
-lib/gnome-subtitles/libgstreamer_playbin.la
 share/applications/gnome-subtitles.desktop
 share/gnome/help/gnome-subtitles/C/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/C/legal.xml
@@ -48,6 +47,8 @@ share/gnome/help/gnome-subtitles/sv/gnome-subtitles.xml
 %%NLS%%share/locale/gl/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnome-subtitles.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/gnome-subtitles.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gnome-subtitles.mo
 share/omf/gnome-subtitles/gnome-subtitles-C.omf
 share/omf/gnome-subtitles/gnome-subtitles-ca.omf
 share/omf/gnome-subtitles/gnome-subtitles-cs.omf
@@ -60,7 +61,8 @@ share/omf/gnome-subtitles/gnome-subtitles-oc.omf
 share/omf/gnome-subtitles/gnome-subtitles-ro.omf
 share/omf/gnome-subtitles/gnome-subtitles-sl.omf
 share/omf/gnome-subtitles/gnome-subtitles-sv.omf
-share/pixmaps/gnome-subtitles.png
+share/pixmaps/gnome-subtitles.svg
+man/man1/gnome-subtitles.1.gz
 @dirrmtry lib/gnome-subtitles
 @dirrmtry share/omf/gnome-subtitles
 @dirrmtry share/gnome/help/gnome-subtitles/C
@@ -76,11 +78,3 @@ share/pixmaps/gnome-subtitles.png
 @dirrmtry share/gnome/help/gnome-subtitles/sl
 @dirrmtry share/gnome/help/gnome-subtitles/sv
 @dirrmtry share/gnome/help/gnome-subtitles
-%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@latin
-%%NLS%%@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca@valencia
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/dz
