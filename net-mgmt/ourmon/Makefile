@@ -9,12 +9,15 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}281
 DISTNAME=	ourmon281
 
-MAINTAINER=	manos@cs.pdx.edu
-COMMENT=	A libpcap-based network monitoring and anomaly detection system
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Libpcap-based network monitoring and anomaly detection system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap \
 		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
+
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
 
 WRKSRC=			${WRKDIR}/mrourmon
 USES=			perl5
