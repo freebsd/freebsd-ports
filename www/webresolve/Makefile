@@ -11,13 +11,11 @@ MASTER_SITES=	http://siag.nu/pub/webresolve/ \
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Webresolve resolves IP addresses to host names in web log files
 
-HAS_CONFIGURE=	yes
+LICENSE=	GPLv2
 
+HAS_CONFIGURE=	yes
 ALL_TARGET=	webresolve
 
-MAN1=		webresolve.1 splitwr.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; s|\-g||' \
 		${WRKSRC}/configure
