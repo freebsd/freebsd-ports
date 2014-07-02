@@ -3,6 +3,7 @@
 
 PORTNAME=	bcfg2
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
 		http://mirror.opensysadmin.com/bcfg/
@@ -12,6 +13,8 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Configuration management system written in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile \
+		${PYTHON_PKGNAMEPREFIX}daemon>0:${PORTSDIR}/devel/py-daemon \
 		${PYTHON_SITELIBDIR}/gamin.py:${PORTSDIR}/devel/py-gamin
 
 OPTIONS_DEFINE=	CHEETAH GENSHI
