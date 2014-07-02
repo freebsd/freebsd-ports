@@ -20,16 +20,12 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in class.SkyTemplate.php class.SkyTemplate_withDaddy.php
-	${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
-	${MKDIR} ${DATADIR}/SkyTpl
-	${INSTALL_DATA} ${WRKSRC}/SkyTpl/* ${DATADIR}/SkyTpl
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/SkyTpl
+	${INSTALL_DATA} ${WRKSRC}/SkyTpl/* ${STAGEDIR}${DATADIR}/SkyTpl
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
