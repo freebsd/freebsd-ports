@@ -2,13 +2,13 @@ bin/mudmagic
 bin/mudmagic-bin
 man/man1/mudmagic.1.gz
 lib/libmudmagic.a
-lib/libmudmagic.la
 lib/libmudmagic.so
-lib/libmudmagic.so.1
+lib/libmudmagic.so.0
+lib/libmudmagic.so.0.1.9
 lib/mudmagic/libs/libmxp.a
-lib/mudmagic/libs/libmxp.la
 lib/mudmagic/libs/libmxp.so
-lib/mudmagic/libs/libmxp.so.1
+lib/mudmagic/libs/libmxp.so.0
+lib/mudmagic/libs/libmxp.so.0.1.9
 libdata/pkgconfig/mudmagic.pc
 share/applications/mudmagic.desktop
 %%DATADIR%%/doc/alias.html
