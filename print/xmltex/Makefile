@@ -3,7 +3,7 @@
 
 PORTNAME=		xmltex
 PORTVERSION=		1.9
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=		print
 MASTER_SITES=		ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 			${MASTER_SITE_TEX_CTAN}
@@ -12,21 +12,19 @@ DISTFILES=		${DOC_FILES} ${CLASS_FILES}
 DIST_SUBDIR=		${PORTNAME}
 
 MAINTAINER=		hrs@FreeBSD.org
-COMMENT=		A non-validating XML parser, written in TeX
+COMMENT=		non-validating XML parser, written in TeX
 
-LIB_DEPENDS=		png15:${PORTSDIR}/graphics/png
+OPTIONS_DEFINE=	DOCS
+
+LIB_DEPENDS=		libpng15.so:${PORTSDIR}/graphics/png
 
 USE_TEX=	tex
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR} WEB2CDIR=${WEB2CDIR}
 
 WRKSRC=		${WRKDIR}/base
 MAKE_ENV=	TEXMFCNF=${FILESDIR}:${LOCALBASE}/${TEXMFWEB2C}
 
-MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 TEXMFDIR=	share/texmf
 TEXMFDISTDIR=	share/texmf-dist
 TEXMFLOCALDIR=	share/texmf-local
@@ -56,16 +54,14 @@ post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-	${INSTALL_DATA} ${WEB2C_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${WEB2CDIR}
-	${MKDIR} -m 555 ${PREFIX}/${CLASSDIR}
-	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/${WEB2CDIR}
+	${INSTALL_DATA} ${WEB2C_FILES:S@^@${WRKSRC}/@} ${STAGEDIR}${PREFIX}/${WEB2CDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${CLASSDIR}
+	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${STAGEDIR}${PREFIX}/${CLASSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
 
 post-install:
-	${LN} -s -f ${LOCALBASE}/bin/latex ${PREFIX}/bin/xmltex
-	${MKTEXLSR}
+	${LN} -s -f ${LOCALBASE}/bin/latex ${STAGEDIR}${PREFIX}/bin/xmltex
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
