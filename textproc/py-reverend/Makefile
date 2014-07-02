@@ -14,21 +14,16 @@ COMMENT=	A simple Bayesian classifier written in Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Reverend
+OPTIONS_DEFINE=	EXAMPLES
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.if defined(WITHOUT_EXAMPLES)
-PORTEXAMPLES=	"@comment "
-.else
-PORTEXAMPLES=	""
-.endif
-PLIST_SUB=	PORTEXAMPLES=${PORTEXAMPLES}
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 post-install:
-.if !defined(WITHOUT_EXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
