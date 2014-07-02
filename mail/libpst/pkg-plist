@@ -10,9 +10,9 @@ include/libpst-4/libpst/lzfu.h
 include/libpst-4/libpst/timeconv.h
 include/libpst-4/libpst/vbuf.h
 lib/libpst.a
-lib/libpst.la
 lib/libpst.so
-lib/libpst.so.5
+lib/libpst.so.4
+lib/libpst.so.4.1.10
 libdata/pkgconfig/libpst.pc
 man/man1/lspst.1.gz
 man/man1/pst2dii.1.gz
