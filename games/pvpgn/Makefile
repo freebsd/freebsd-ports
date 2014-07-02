@@ -10,7 +10,7 @@ DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.2.tar.gz
 DIST_SUBDIR=	pvpgn
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	mek@mek.uz.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Blizzard Battle.net emulation software
 
 PKGINSTALL?=	${WRKDIR}/pkg-install

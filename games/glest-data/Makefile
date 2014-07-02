@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	glest-
 DISTNAME=	glest_${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	glest
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Glest data files
 
 USES=		dos2unix zip

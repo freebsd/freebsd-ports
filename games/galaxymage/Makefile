@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/tactics/
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source tactical and strategic RPG
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric \

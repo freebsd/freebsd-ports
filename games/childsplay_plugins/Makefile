@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/childsplay/childsplay-plugins/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bruno@tinkerbox.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Educative games for children
 
 BUILD_DEPENDS=	childsplay:${PORTSDIR}/games/childsplay

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nvg.unit.no/pub/pacman/
 DISTNAME=	pacman10
 
-MAINTAINER=	joerg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old action game
 
 NO_WRKSUBDIR=	Does not unpack into subdir.
