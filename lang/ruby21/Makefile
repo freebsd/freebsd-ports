@@ -56,7 +56,11 @@ EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
 
-USES=		tar:bzip2
+USES=		tar:bzip2 cpe
+
+CPE_VENDOR=	ruby-lang
+CPE_VERSION=	${RUBY_RELVERSION}
+CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 
 .include <bsd.port.pre.mk>
 
