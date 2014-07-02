@@ -13,9 +13,10 @@ COMMENT=	Tile matching game
 
 LICENSE=	GPLv3
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_GNOME=	gtk20 esound
-USE_AUTOTOOLS=	aclocal automake autoconf libtool
+USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
+GNU_CONFIGURE=	yes
 
 AUTOMAKE_ARGS=	--add-missing --copy
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
