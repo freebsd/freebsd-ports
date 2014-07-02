@@ -3,6 +3,7 @@
 
 PORTNAME=	tntnet
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.tntnet.org/download/
 
@@ -10,20 +11,19 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Webapplicationserver for C++
 
 LIB_DEPENDS=	libcxxtools.so:${PORTSDIR}/devel/cxxtools
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		iconv pkgconfig pathfix
+USES=		iconv libtool pathfix pkgconfig
 USE_CSTD=	gnu89
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
-CONFIGURE_ARGS+=	--localstatedir=/var
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--localstatedir=/var
 
 .if defined(WITH_GNUTLS)
-LDFLAGS+=	-lgnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--with-ssl=openssl
 .endif
