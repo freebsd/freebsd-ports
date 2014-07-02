@@ -1,3 +1,4 @@
+bin/xmltex
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual.xml
@@ -31,8 +32,6 @@
 %%CLASSDIR%%/portugeselatin1.xml
 %%CLASSDIR%%/englishutf16.xml
 %%CLASSDIR%%/englishutf8.xml
-@exec ln -s -f %D/bin/latex %D/bin/xmltex
-@unexec rm -f %D/bin/xmltex > /dev/null 2>&1 || true
 @dirrm %%CLASSDIR%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
