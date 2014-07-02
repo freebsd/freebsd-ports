@@ -3,7 +3,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	stardict
@@ -20,8 +20,9 @@ CONFIGURE_ARGS=	--disable-festival \
 		--disable-gucharmap \
 		--disable-espeak \
 		--disable-updateinfo
-LIBS=		-L${LOCALBASE}/lib
-USES=		tar:bzip2 gettext gmake pathfix pkgconfig
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 CONFIGURE_WRKSRC=	${WRKSRC}/dict
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
@@ -47,13 +48,14 @@ MAKE_ARGS+=	AUTOMAKE="${TRUE}" ACLOCAL="${TRUE}"
 
 post-patch:
 .if !${PORT_OPTIONS:MGNOME}
-	${REINPLACE_CMD} -e '/DATADIRNAME=lib/s,lib,share,' ${WRKSRC}/dict/m4/intltool.m4
-	${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
-	${REINPLACE_CMD} -e '/^GNOME_DOC_INIT/d' \
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
+	@${REINPLACE_CMD} -e '/^GNOME_DOC_INIT/d' \
 		-e '/^help\/Makefile/d' ${WRKSRC}/dict/configure.ac
 .endif
-	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
+	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
 		${WRKSRC}/dict/src/conf.cpp
+	@${REINPLACE_CMD} '/^stardict_LDADD =/s/$$/ -lgmodule-2.0/' \
+		${WRKSRC}/dict/src/Makefile.in
 
 pre-configure:
 	cd ${WRKSRC}/lib && \
