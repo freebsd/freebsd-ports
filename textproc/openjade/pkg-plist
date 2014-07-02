@@ -1,16 +1,16 @@
 bin/openjade
 lib/libogrove.a
-lib/libogrove.la
 lib/libogrove.so
 lib/libogrove.so.0
+lib/libogrove.so.0.0.1
 lib/libospgrove.a
-lib/libospgrove.la
 lib/libospgrove.so
 lib/libospgrove.so.0
+lib/libospgrove.so.0.0.1
 lib/libostyle.a
-lib/libostyle.la
 lib/libostyle.so
 lib/libostyle.so.0
+lib/libostyle.so.0.0.1
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG openjade/catalog
 @comment INSTALL_DATA: dsssl/README.jadetex %%DATADIR%%/README.jadetex
 @comment INSTALL_DATA: dsssl/builtins.dsl %%DATADIR%%/builtins.dsl

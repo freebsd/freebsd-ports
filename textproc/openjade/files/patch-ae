@@ -21,11 +21,3 @@ $FreeBSD$
  echo "$as_me:$LINENO: checking for gettext" >&5
  echo $ECHO_N "checking for gettext... $ECHO_C" >&6
  if test "${ac_cv_func_gettext+set}" = set; then
-@@ -9792,6 +9796,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
