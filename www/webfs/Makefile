@@ -7,7 +7,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	http://dl.bytesex.org/releases/webfs/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple http server for static content
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support

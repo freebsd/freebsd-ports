@@ -9,7 +9,7 @@ CATEGORIES=	www
 MASTER_SITE_SUBDIR=	horde
 DISTNAME=	horde-${PORTVERSION}
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common code-base used by Horde applications
 
 NO_STAGE=	yes

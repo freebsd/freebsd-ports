@@ -6,7 +6,7 @@ DISTVERSION=	0.9.3-5
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/0.9.3-5
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Based Desktop System
 
 NO_BUILD=	yes

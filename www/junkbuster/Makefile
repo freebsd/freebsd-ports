@@ -9,7 +9,7 @@ MASTER_SITES=	http://f2.org/download/
 DISTNAME=	ijb-zlib-11
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An HTTP proxy server that eliminates ads
 
 ALL_TARGET=	# yes, an empty target.

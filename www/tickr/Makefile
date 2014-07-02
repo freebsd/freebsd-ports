@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.newsrssticker.com/src/ \
 		LOCAL/nivit/
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News RSS Ticker
 
 LICENSE=	GPLv3

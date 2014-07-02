@@ -8,7 +8,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-current/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sdk
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive and innovative Ajax application framework
 
 LICENSE=	LGPL3 EPL

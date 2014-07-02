@@ -8,7 +8,7 @@ PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bookmark manager
 
 USE_HORDE=	base pkg-message

@@ -6,7 +6,7 @@ PORTVERSION=	1.8.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.dokeos.com/download/
 
-MAINTAINER=	filiperocha@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dokeos is an elearning and course management web application
 
 USE_PHP=	mysql session gd pcre zlib

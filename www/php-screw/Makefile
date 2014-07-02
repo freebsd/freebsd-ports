@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	php_screw-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP script encryption tool
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
