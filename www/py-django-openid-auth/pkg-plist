@@ -63,5 +63,3 @@
 @dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth/templates/openid
 @dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth/templates
 @dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%

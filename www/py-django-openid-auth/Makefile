@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	xenophon+fbsdports@irtnog.org
 COMMENT=	OpenID integration for django.contrib.auth
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3.1:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}openid>=2.2.5:${PORTSDIR}/security/py-openid
@@ -23,20 +23,21 @@ NO_WRKSUBDIR=	yes
 
 PORTDOCS=	*.txt *.html
 PORTEXAMPLES=	example_consumer
+OPTIONS_DEFINE= DOCS EXAMPLES
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.txt	${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/TODO.txt	${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/openid.html	${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/openid.txt	${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.txt	${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/TODO.txt	${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/openid.html	${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/openid.txt	${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/example_consumer
-	${INSTALL_MAN} ${WRKSRC}/example_consumer/* ${EXAMPLESDIR}/example_consumer
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/example_consumer
+	${INSTALL_MAN} ${WRKSRC}/example_consumer/* ${STAGEDIR}${EXAMPLESDIR}/example_consumer
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
