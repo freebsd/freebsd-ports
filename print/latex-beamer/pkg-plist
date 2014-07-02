@@ -156,3 +156,5 @@
 @dirrm %%TEXMFDIR%%/tex/latex/beamer/themes/theme/compatibility
 @dirrm %%TEXMFDIR%%/tex/latex/beamer/themes/theme
 @dirrm %%TEXMFDIR%%/tex/latex/beamer/themes
+@exec mktexlsr
+@unexec mktexlsr
