@@ -143,9 +143,9 @@ include/OpenSP/types.h
 include/OpenSP/xnew.h
 @dirrm include/OpenSP
 lib/libosp.a
-lib/libosp.la
 lib/libosp.so
 lib/libosp.so.5
+lib/libosp.so.5.0.0
 %%NLS%%share/locale/de/LC_MESSAGES/sp5.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/sp5.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sp5.mo
