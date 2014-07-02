@@ -10,6 +10,7 @@ MASTER_SITES=	http://oops-cache.org/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A caching web proxy server
+BROKEN=		Fails to stage
 DEPRECATED=	Development stops long ago, domain has been expired
 EXPIRATION_DATE=	2014-08-31
 
