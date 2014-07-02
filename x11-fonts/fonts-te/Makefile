@@ -8,7 +8,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://itachi.prudhvi.org/te_fonts/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Telugu fonts for te_IN.
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

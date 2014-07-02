@@ -8,7 +8,7 @@ MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=fil
 		LOCAL/bf
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doulos SIL TrueType font collection
 
 LICENSE=	OFL11

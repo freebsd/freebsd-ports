@@ -7,7 +7,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.tobiasjung.net/dl/
 DISTNAME=	${PORTNAME}-x11
 
-MAINTAINER=	manuel.giraud@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Profont - The ultimate programming font.
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

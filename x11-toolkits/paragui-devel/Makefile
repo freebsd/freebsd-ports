@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library(devel)
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
