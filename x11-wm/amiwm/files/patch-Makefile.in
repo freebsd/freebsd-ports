@@ -1,0 +1,64 @@
+--- Makefile.in.orig	2010-07-20 00:07:34.000000000 +0800
++++ Makefile.in	2014-07-02 09:42:52.170996007 +0800
+@@ -43,7 +43,7 @@ DISTFILES = README README.modules INSTAL
+ 
+ PACKAGENAME = amiwm
+ 
+-AMIWM_HOME = $(libdir)/amiwm
++AMIWM_HOME = $(libdir)/X11/amiwm
+ 
+ all : lib_all
+ 	@$(MAKE) local_all
+@@ -88,32 +88,32 @@ kbdlexer.c : kbdlexer.l
+ 	$(LEX) -t $< > kbdlexer.c
+ 
+ install : $(PROGS) $(MODULES) Xsession Xsession2 Xinitrc amiwm-init
+-	-mkdir -p $(AMIWM_HOME)
+-	$(INSTALL) $(STRIPFLAG) requestchoice $(AMIWM_HOME)/requestchoice
+-	$(INSTALL) $(STRIPFLAG) executecmd $(AMIWM_HOME)/executecmd
++	-mkdir -p $(DESTDIR)$(AMIWM_HOME)
++	$(INSTALL) $(STRIPFLAG) requestchoice $(DESTDIR)$(AMIWM_HOME)/requestchoice
++	$(INSTALL) $(STRIPFLAG) executecmd $(DESTDIR)$(AMIWM_HOME)/executecmd
+ 	for module in $(MODULES); do \
+ 	  if [ "$$module" = "$(srcdir)/Background" ]; then \
+-	    $(INSTALL) $$module $(AMIWM_HOME)/Background; \
++	    $(INSTALL) $$module $(DESTDIR)$(AMIWM_HOME)/Background; \
+ 	  else \
+-	    $(INSTALL) $(STRIPFLAG) $$module $(AMIWM_HOME)/$$module; \
++	    $(INSTALL) $(STRIPFLAG) $$module $(DESTDIR)$(AMIWM_HOME)/$$module; \
+ 	  fi; \
+ 	done
+-	$(INSTALL) -m 644 $(srcdir)/system.amiwmrc $(AMIWM_HOME)/system.amiwmrc
+-	$(INSTALL) -m 644 $(srcdir)/def_tool.info $(AMIWM_HOME)/def_tool.info
+-	$(INSTALL) -m 644 $(srcdir)/system.map $(AMIWM_HOME)/system.map
+-	$(INSTALL) -m 644 $(srcdir)/magicwb.map $(AMIWM_HOME)/magicwb.map
+-	$(INSTALL) -m 644 $(srcdir)/schwartz.map $(AMIWM_HOME)/schwartz.map
+-	$(INSTALL) -m 755 Xsession $(AMIWM_HOME)/Xsession
+-	$(INSTALL) -m 755 Xsession2 $(AMIWM_HOME)/Xsession2
+-	$(INSTALL) -m 755 Xinitrc $(AMIWM_HOME)/Xinitrc
+-	$(INSTALL) -m 755 $(srcdir)/amiwm-init $(AMIWM_HOME)/amiwm-init
+-	-mkdir -p $(bindir)
+-	$(INSTALL) $(STRIPFLAG) amiwm $(bindir)/amiwm
+-	$(INSTALL) $(STRIPFLAG) ppmtoinfo $(bindir)/ppmtoinfo
++	$(INSTALL) -m 644 $(srcdir)/system.amiwmrc $(DESTDIR)$(AMIWM_HOME)/system.amiwmrc
++	$(INSTALL) -m 644 $(srcdir)/def_tool.info $(DESTDIR)$(AMIWM_HOME)/def_tool.info
++	$(INSTALL) -m 644 $(srcdir)/system.map $(DESTDIR)$(AMIWM_HOME)/system.map
++	$(INSTALL) -m 644 $(srcdir)/magicwb.map $(DESTDIR)$(AMIWM_HOME)/magicwb.map
++	$(INSTALL) -m 644 $(srcdir)/schwartz.map $(DESTDIR)$(AMIWM_HOME)/schwartz.map
++	$(INSTALL) -m 755 Xsession $(DESTDIR)$(AMIWM_HOME)/Xsession
++	$(INSTALL) -m 755 Xsession2 $(DESTDIR)$(AMIWM_HOME)/Xsession2
++	$(INSTALL) -m 755 Xinitrc $(DESTDIR)$(AMIWM_HOME)/Xinitrc
++	$(INSTALL) -m 755 $(srcdir)/amiwm-init $(DESTDIR)$(AMIWM_HOME)/amiwm-init
++	-mkdir -p $(DESTDIR)$(bindir)
++	$(INSTALL) $(STRIPFLAG) amiwm $(DESTDIR)$(bindir)/amiwm
++	$(INSTALL) $(STRIPFLAG) ppmtoinfo $(DESTDIR)$(bindir)/ppmtoinfo
+ 	$(RM) $(bindir)/requestchoice
+-	$(LN_S) $(AMIWM_HOME)/requestchoice $(bindir)/requestchoice
+-	-mkdir -p $(mandir)/man1
+-	$(INSTALL) -m 644 $(srcdir)/amiwm.1 $(mandir)/man1/amiwm.1
++	$(LN_S) $(AMIWM_HOME)/requestchoice $(DESTDIR)$(bindir)/requestchoice
++	-mkdir -p $(DESTDIR)$(mandir)/man1
++	$(INSTALL) -m 644 $(srcdir)/amiwm.1 $(DESTDIR)$(mandir)/man1/amiwm.1
+ 
+ fs-install : Filesystem
+ 	$(INSTALL) $(STRIPFLAG) Filesystem $(AMIWM_HOME)/Filesystem
