@@ -19,13 +19,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE} --with-str=${LOCALBASE} \
 		--with-sa=${LOCALBASE} --with-var=${LOCALBASE}
 
-MAN8=		lmtp2nntp.8
-PLIST_FILES=	sbin/lmtp2nntp
+PLIST_FILES=	sbin/lmtp2nntp \
+		man/man8/lmtp2nntp.8.gz
 PORTDOCS=	INSTALL README
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Try to fix parallel builds (-jX)
@@ -35,8 +34,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 check: build
