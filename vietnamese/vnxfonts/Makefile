@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	Xfonts
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X fonts for displaying Vietnamese
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \

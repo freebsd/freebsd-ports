@@ -8,7 +8,7 @@ CATEGORIES=	vietnamese print
 MASTER_SITES=	http://www.fi.muni.cz/~thanh/download/
 DISTNAME=	vntex
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	teTeX Vietnamese language + font support
 
 USES=		zip
