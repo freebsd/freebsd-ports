@@ -27,6 +27,8 @@ LATEST_LINK=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 SLAVE_SPAMCONTROL=	yes
 
+BROKEN=		some patches are not applying properly yet still build
+
 # Local overrides
 MASTERDIR=	${.CURDIR}/../qmail
 PATCHDIR=	${.CURDIR}/files
