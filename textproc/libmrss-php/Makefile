@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 PKGNAMESUFFIX=	-php
 
-MAINTAINER=	rodrigo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP library for parsing, writing, and creating RSS
 
 LIB_DEPENDS=	mrss:${PORTSDIR}/textproc/libmrss

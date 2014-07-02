@@ -6,7 +6,7 @@ PORTVERSION=	0.33
 CATEGORIES=	textproc science
 MASTER_SITES=	http://chasen.org/~taku/software/yamcha/src/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Multipurpose CHunk Annotator
 
 BUILD_DEPENDS=	svm_learn:${PORTSDIR}/science/svmlight

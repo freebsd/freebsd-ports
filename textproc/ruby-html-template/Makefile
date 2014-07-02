@@ -8,7 +8,7 @@ MASTER_SITES=	http://shebang.jp/src/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby library to use HTML as a template file from CGI scripts
 
 BROKEN=		Not stage friendly, no more public distfiles

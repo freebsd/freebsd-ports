@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure language interface for libxml2 and libxslt
 
 LICENSE=	GPLv3 LGPL3

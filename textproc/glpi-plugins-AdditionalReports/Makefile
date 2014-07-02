@@ -9,7 +9,7 @@ MASTER_SITES=	https://forge.indepnet.net/attachments/download/136/ \
 PKGNAMEPREFIX=	glpi-plugins-
 DISTNAME=	glpi-reports-1.3.0
 
-MAINTAINER=	d.durieux@siprossii.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This plugin enables additional reports
 
 RUN_DEPENDS=	glpi>=0.72:${PORTSDIR}/www/glpi

@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source fulltext search engine and column store
 
 LICENSE=	LGPL21

@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://projects.netlab.jp/rast/archives/ \
 		http://dist.bsdlab.org/
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system using N-gram
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf

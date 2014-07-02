@@ -7,7 +7,7 @@ PORTREVISION=	16
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	vd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for keyword extraction
 
 USE_GNOME=	glib20 gtk20

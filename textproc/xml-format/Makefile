@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML beautifier
 
 LICENSE=	BSD

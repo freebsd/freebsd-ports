@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
 		SF/foursuite/4Suite/XML-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mike@skew.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of Python tools for XML processing
 
 USE_BZIP2=	yes
