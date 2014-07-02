@@ -1,6 +1,7 @@
 avr/bin/ar
 avr/bin/as
 avr/bin/ld
+avr/bin/ld.bfd
 avr/bin/nm
 avr/bin/objcopy
 avr/bin/objdump
@@ -56,11 +57,6 @@ avr/lib/ldscripts/avr6.xbn
 avr/lib/ldscripts/avr6.xn
 avr/lib/ldscripts/avr6.xr
 avr/lib/ldscripts/avr6.xu
-avr/lib/ldscripts/avrtiny10.x
-avr/lib/ldscripts/avrtiny10.xbn
-avr/lib/ldscripts/avrtiny10.xn
-avr/lib/ldscripts/avrtiny10.xr
-avr/lib/ldscripts/avrtiny10.xu
 avr/lib/ldscripts/avrxmega1.x
 avr/lib/ldscripts/avrxmega1.xbn
 avr/lib/ldscripts/avrxmega1.xn
@@ -100,8 +96,10 @@ bin/avr-addr2line
 bin/avr-ar
 bin/avr-as
 bin/avr-c++filt
+bin/avr-elfedit
 bin/avr-gprof
 bin/avr-ld
+bin/avr-ld.bfd
 bin/avr-nm
 bin/avr-objcopy
 bin/avr-objdump
@@ -110,6 +108,25 @@ bin/avr-readelf
 bin/avr-size
 bin/avr-strings
 bin/avr-strip
+man/man1/avr-addr2line.1.gz
+man/man1/avr-ar.1.gz
+man/man1/avr-as.1.gz
+man/man1/avr-c++filt.1.gz
+man/man1/avr-dlltool.1.gz
+man/man1/avr-elfedit.1.gz
+man/man1/avr-gprof.1.gz
+man/man1/avr-ld.1.gz
+man/man1/avr-nlmconv.1.gz
+man/man1/avr-nm.1.gz
+man/man1/avr-objcopy.1.gz
+man/man1/avr-objdump.1.gz
+man/man1/avr-ranlib.1.gz
+man/man1/avr-readelf.1.gz
+man/man1/avr-size.1.gz
+man/man1/avr-strings.1.gz
+man/man1/avr-strip.1.gz
+man/man1/avr-windmc.1.gz
+man/man1/avr-windres.1.gz
 @dirrm avr/lib/ldscripts
 @dirrm avr/lib
 @dirrm avr/bin
