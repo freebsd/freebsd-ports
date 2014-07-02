@@ -20,11 +20,11 @@ COMMENT=	Uniform random number generators of P. L'Ecuyer and his colleagues
 LICENSE=	GPLv3
 
 CLEANFILES=	${SRCS}
-LIB=	${PORTNAME}
+LIB=		${PORTNAME}
 LIBDIR =	${PREFIX}/lib
 MAKE_ENV+=	CLEANFILES="${CLEANFILES}" \
-	LIB="${LIB}" LIBDIR="${LIBDIR}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
-	SRCS="${SRCS}" SRCCONF="${SRCCONF}"
+		LIB="${LIB}" LIBDIR="${LIBDIR}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
+		SRCS="${SRCS}" SRCCONF="${SRCCONF}"
 NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	PROFILE
 PLIST_DIRS=	include/${PORTNAME}
@@ -36,7 +36,6 @@ SRCCONF=	/dev/null
 SRCS=	${DISTFILES:M*.c\:1:Nex1.c\:1:S|:1$||}
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || make(makesum)
@@ -69,15 +68,15 @@ post-extract:
 	@${ECHO_CMD} ".include <bsd.lib.mk>" > ${WRKSRC}/Makefile
 
 post-install:
-	@${MKDIR} ${PREFIX}/include/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 check regression-test test: build
