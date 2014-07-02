@@ -1,5 +1,5 @@
 #!/bin/sh
 # $FreeBSD$
-exec %%PREFIX%%/bin/java \
+exec %%LOCALBASE%%/bin/java \
     -cp "%%DATADIR%%/davmail.jar:%%DATADIR%%/lib/*" \
     davmail.DavGateway "$@"
