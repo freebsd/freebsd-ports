@@ -11,10 +11,13 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package for using UTF-8 as input encoding
+COMMENT=	LaTeX package for using UTF-8 as input encoding
+
+OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	*.pl
 USE_PERL5=	run
 USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR="${MKTEXLSR}" CLASSDIR=${CLASSDIR}
@@ -38,21 +41,15 @@ CONTRIB_FILES= UnicodeT.sfd autofe.sty c00enc.def c10enc.def		\
 	mkrhadas.fd mkromega.fd mkrrashi.fd t2dcmr.fd t2denc.def	\
 	tengwarDS.enc xscmr.fd xsenc.def
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${PLSCRIPTS:S@^@${WRKSRC}/@} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/${CLASSDIR}
+	${INSTALL_SCRIPT} ${PLSCRIPTS:S@^@${WRKSRC}/@} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/${CLASSDIR}
 	${INSTALL_DATA} \
 		${CLASS_FILES:S@^@${WRKSRC}/@} \
 		${CONTRIB_FILES:S@^@${WRKSRC}/contrib/@} \
-		${PREFIX}/${CLASSDIR}
-	${CP} -R ${WRKSRC}/data ${PREFIX}/${CLASSDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
-.endif
-
-post-install:
-	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
+		${STAGEDIR}${PREFIX}/${CLASSDIR}
+	${CP} -R ${WRKSRC}/data ${STAGEDIR}${PREFIX}/${CLASSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
