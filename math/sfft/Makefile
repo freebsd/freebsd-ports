@@ -41,7 +41,6 @@ SRCS=	common.cc computefourier-1.0-2.0.cc \
 	computefourier-3.0.cc fftw.cc filters.cc parameters.cc \
 	sfft.cc simulation.cc timer.cc utils.cc
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${ARCH:Mamd64} && !${MACHINE_CPU:Msse2}
@@ -115,11 +114,11 @@ check regression-test test: build
 	done ; done
 
 post-install:
-	@${MKDIR} ${PREFIX}/${HDIR}
-	@cd ${BUILD_WRKSRC}; ${INSTALL_DATA} ${HEADERS} ${PREFIX}/${HDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${HDIR}
+	@cd ${BUILD_WRKSRC}; ${INSTALL_DATA} ${HEADERS} ${STAGEDIR}${PREFIX}/${HDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${_DISTDIR}/${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${_DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
