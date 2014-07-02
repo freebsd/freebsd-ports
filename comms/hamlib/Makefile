@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
-MAINTAINER=	hamlib@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 LICENSE=	LGPL20
