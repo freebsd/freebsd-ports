@@ -18,13 +18,15 @@ USE_PYDISTUTILS=yes
 
 PORTEXAMPLES=	example.py asyn_example.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}${PKGNAMESUFFIX}
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.py ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/asyn_example.py ${EXAMPLESDIR}/
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example.py ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/asyn_example.py ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
