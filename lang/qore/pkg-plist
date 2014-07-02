@@ -76,9 +76,9 @@ include/qore/support.h
 include/qore/QoreHttpClientObject.h
 include/qore/QoreSocketObject.h
 include/qore/qlist
-lib/libqore.la
 lib/libqore.so
-lib/libqore.so.16
+lib/libqore.so.5
+lib/libqore.so.5.11.0
 lib/qore-modules/%%PORTVERSION%%/CsvUtil.qm
 lib/qore-modules/%%PORTVERSION%%/HttpServer.qm
 lib/qore-modules/%%PORTVERSION%%/MailMessage.qm
