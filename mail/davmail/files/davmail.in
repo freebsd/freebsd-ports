@@ -27,7 +27,7 @@ start_cmd="${name}_start"
 
 davmail_procname()
 {
-	JAVAVM_DRYRUN=yes "%%PREFIX%%/bin/java" | \
+	JAVAVM_DRYRUN=yes "%%LOCALBASE%%/bin/java" | \
 	    /usr/bin/awk -F= '{if ($1=="JAVAVM_PROG") print $2}' 2> /dev/null
 }
 
@@ -37,7 +37,7 @@ required_files=${davmail_config}
 
 davmail_daemon()
 {
-	%%PREFIX%%/bin/java \
+	%%LOCALBASE%%/bin/java \
 	    -cp "%%DATADIR%%/davmail.jar:%%DATADIR%%/lib/*" \
 	    davmail.DavGateway "${davmail_config}" & echo -n $! > ${pidfile}
 }
