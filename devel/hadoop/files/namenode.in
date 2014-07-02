@@ -50,18 +50,6 @@ namenode_init()
 	do
 		. ${f}
 	done
-	if [ -n "${namenode_log_dir}" ]
-	then
-		HADOOP_LOG_DIR=${namenode_log_dir}
-	fi		
-
-	if [ -n "${namenode_pid_dir}" ]
-	then
-		HADOOP_LOG_DIR=${namenode_pid_dir}
-	fi		
-
-	install -d -m 755 -o ${namenode_user} -g ${namenode_group} ${HADOOP_PID_DIR}
-	install -d -m 755 -o ${namenode_user} -g ${namenode_group} ${HADOOP_LOG_DIR}
 }
 
 namenode_stop ()

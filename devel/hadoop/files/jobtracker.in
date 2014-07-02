@@ -50,18 +50,6 @@ jobtracker_init()
 	do
 		. ${f}
 	done
-	if [ -n "${jobtracker_log_dir}" ]
-	then
-		HADOOP_LOG_DIR=${jobtracker_log_dir}
-	fi		
-
-	if [ -n "${jobtracker_pid_dir}" ]
-	then
-		HADOOP_LOG_DIR=${jobtracker_pid_dir}
-	fi		
-
-	install -d -m 755 -o ${jobtracker_user} -g ${jobtracker_group} ${HADOOP_PID_DIR}
-	install -d -m 755 -o ${jobtracker_user} -g ${jobtracker_group} ${HADOOP_LOG_DIR}
 }
 
 jobtracker_stop ()

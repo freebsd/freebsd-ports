@@ -50,18 +50,6 @@ secondarynamenode_init()
 	do
 		. ${f}
 	done
-	if [ -n "${secondarynamenode_log_dir}" ]
-	then
-		HADOOP_LOG_DIR=${secondarynamenode_log_dir}
-	fi		
-
-	if [ -n "${secondarynamenode_pid_dir}" ]
-	then
-		HADOOP_LOG_DIR=${secondarynamenode_pid_dir}
-	fi		
-
-	install -d -m 755 -o ${secondarynamenode_user} -g ${secondarynamenode_group} ${HADOOP_PID_DIR}
-	install -d -m 755 -o ${secondarynamenode_user} -g ${secondarynamenode_group} ${HADOOP_LOG_DIR}
 }
 
 secondarynamenode_stop ()
