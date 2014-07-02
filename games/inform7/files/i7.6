@@ -1,4 +1,4 @@
-.\" Copyright (c) 2010-2013 Andy Kosela <akosela@andykosela.com>
+.\" Copyright (c) 2010-2014 Andy Kosela <akosela@andykosela.com>
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -25,7 +25,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd May 3, 2013
+.Dd June 30, 2014
 .Dt I7 6
 .Os
 .Sh NAME
@@ -35,14 +35,14 @@
 .Nm
 .Ar story.ni
 .Nm
-.Op Fl 8g
+.Op Fl g
 .Ar story.ni
 .Nm
 .Op Fl r
-.Ar story.scr story.z5
+.Ar story.scr story
 .Nm
 .Op Fl w
-.Ar story.key story.z5
+.Ar story.key story
 .Nm
 .Op Fl h
 .Pp
@@ -79,8 +79,6 @@ interactive fiction stories.
 The following command line arguments are supported:
 .Bl -tag -width Fl
 .It Fl
-create Z-code v5 release.
-.It Fl 8
 create Z-code v8 release.
 .It Fl g
 create Glulx release.
@@ -96,12 +94,12 @@ The most basic use of Inform7 for FreeBSD is:
 
 $ i7 story.ni
 
-which compiles your source story file into a Z-code v5 release.
+which compiles your source story file into a Z-code v8 release.
 
 If you have a transcript file from game, you can use the -r option to
-replay it in story.z5
+replay it in story.z8
 
-$ i7 -r story.scr story.z5
+$ i7 -r story.scr story.z8
 
 You will receive three files.
 story.$$.scr - new transcript file
@@ -122,7 +120,7 @@ SCORE
 A walkthrough file can be very short, meant just to test some sequence
 of commands within your story, or it can be a full solution walkthrough.
 
-$ i7 -w story.key story.z5
+$ i7 -w story.key story.z8
 
 Once again you will receive three files.
 story.$$.scr - new transcript file
@@ -140,7 +138,7 @@ Directory where Inform extensions are stored.
 language and compilers
 .An Andy Kosela <akosela@andykosela.com> -- CLI edition for FreeBSD
 .Sh CONTRIBUTORS
-.An Adam Thornton, Emily Short, David Fisher
+.An Adam Thornton, Emily Short, Eric Eve
 .Sh THANKS TO
 Will Crowther and Don Woods for creating the original Adventure, Infocom
 for the Z-machine standard and memorable titles like Zork, Graham Nelson
