@@ -1,6 +1,9 @@
 bin/afm2tfm
 bin/dvips
 bin/odvips
+man/man1/afm2tfm.1.gz
+man/man1/dvips.1.gz
+man/man1/odvips.1.gz
 %%TEXMFDIR%%/dvips/base/color.pro
 %%TEXMFDIR%%/dvips/base/crop.pro
 %%TEXMFDIR%%/dvips/base/finclude.pro
@@ -9,4 +12,3 @@ bin/odvips
 %%TEXMFDIR%%/dvips/base/tex.pro
 %%TEXMFDIR%%/dvips/base/texc.pro
 %%TEXMFDIR%%/dvips/base/texps.pro
-%%TEXMFCONFIGDIR%%/dvips/config/config.ps

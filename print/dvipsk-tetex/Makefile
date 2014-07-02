@@ -2,7 +2,7 @@
 
 PORTNAME=	dvipsk-tetex
 PORTVERSION=	5.95a
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -13,10 +13,11 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert a TeX DVI file to PostScript
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		wwwcore.1:${PORTSDIR}/www/libwww \
-		t1.5:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libwwwcore.so:${PORTSDIR}/www/libwww \
+		libt1.so:${PORTSDIR}/devel/t1lib
 
+USES=		desthack
 USE_TEX=	base texmf
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
@@ -49,8 +50,6 @@ CONFLICTS=	*-teTeX-[0-9]* \
 		tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
 		tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
 
-MAN1=		dvips.1 afm2tfm.1
-MLINKS=		dvips.1 odvips.1
 INFO=		dvips
 
 .if defined(WITH_LETTERSIZE)
@@ -89,13 +88,9 @@ PKGINSTALL_SUB=	PAPERSIZE=${PAPERSIZE} \
 # dvipsk is not compatible with -funroll-loops on 5.x
 CFLAGS:=	${CFLAGS:N-funroll-loops}
 
-NO_STAGE=	yes
 pre-build:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0755 ${PKGINSTALL}
-
-post-install:
-	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
