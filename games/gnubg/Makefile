@@ -29,9 +29,9 @@ CONFIGURE_ENV=	ac_cv_path_ARTSC_CONFIG=no ac_cv_path_LIBART_CONFIG=no
 
 INSTALLS_ICONS=	yes
 USE_GNOME=	libxml2
-USES=		gmake pathfix shebangfix
+USES=		gmake libtool pathfix shebangfix
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libtool automake
+USE_AUTOTOOLS=	automake libtoolize
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.options.mk>
