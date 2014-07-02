@@ -3,7 +3,7 @@
 
 PORTNAME=	uatraits
 PORTVERSION=	20130430
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel www
 MASTER_SITES=	http://people.freebsd.org/~demon/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
