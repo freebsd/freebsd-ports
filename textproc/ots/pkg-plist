@@ -1,8 +1,9 @@
 bin/ots
 include/libots-1/ots/libots.h
-lib/libots-1.la
+lib/libots-1.a
 lib/libots-1.so
-lib/libots-1.so.5
+lib/libots-1.so.0
+lib/libots-1.so.0.5.0
 libdata/pkgconfig/libots-1.pc
 %%DATADIR%%/bg.xml
 %%DATADIR%%/ca.xml

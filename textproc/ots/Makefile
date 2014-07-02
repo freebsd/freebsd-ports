@@ -3,30 +3,28 @@
 
 PORTNAME=	ots
 PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Text Summarizer
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
+USES=		gettext libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile.am
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
-USES=		gettext pkgconfig
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-shared
-MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 MAKE_JOBS_UNSAFE=yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
-
-post-build:
-	@${REINPLACE_CMD} -e '/old_library/d' ${WRKSRC}/src/libots-1.la
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e '\|doc/Makefile|d' ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
