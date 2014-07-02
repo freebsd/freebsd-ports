@@ -17,7 +17,7 @@ DISTFILES=	wqy-bitmapsong-pcf-1.0.0-RC1.tar.gz:bitmapfont \
 		wqy-microhei-lite-0.2.0-beta.tar.gz:microheilite \
 		wqy-microhei-0.2.0-beta.tar.gz:microhei
 
-MAINTAINER=	intron@intron.ac
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU GPL-licensed font set covering CJK and other Unicode characters
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \

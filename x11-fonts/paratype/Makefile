@@ -9,7 +9,7 @@ MASTER_SITES=	http://paratype.0xdc.ru/
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
 DISTFILES=	PTSansOFL-2.004.zip PTSerifOFL-1.000.zip PTMonoOFL-1.002_1.zip
 
-MAINTAINER=	littlesavage@rambler.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ParaType font collection for the languages of Russia
 
 LICENSE=	OFL11
