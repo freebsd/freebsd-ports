@@ -18,9 +18,9 @@ include/sary/str.h
 include/sary/text.h
 include/sary/writer.h
 lib/libsary.a
-lib/libsary.la
 lib/libsary.so
 lib/libsary.so.10
+lib/libsary.so.10.0.0
 libdata/pkgconfig/sary.pc
 man/man1/mksary.1.gz
 man/man1/sary.1.gz
