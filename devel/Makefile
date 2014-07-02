@@ -3788,6 +3788,7 @@
     SUBDIR += py-pyke
     SUBDIR += py-pylib
     SUBDIR += py-pymarc
+    SUBDIR += py-pympler
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
     SUBDIR += py-pytemplate
