@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
 DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
 
-MAINTAINER=	PFA03027@nifty.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code converter for any of Mule's code
 
 MAN1=		coco.1 m2ps.1
