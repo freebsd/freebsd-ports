@@ -7,7 +7,7 @@ CATEGORIES=	japanese devel java
 MASTER_SITES=	#
 DISTFILES=	flex_sdk_2_hf1.zip flex_sdk_2_ja.zip
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Flex SDK (with Japanese language)
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper

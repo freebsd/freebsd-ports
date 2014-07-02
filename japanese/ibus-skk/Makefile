@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://cloud.github.com/downloads/ueno/ibus-skk/
 
-MAINTAINER=	hiroto.kagotani@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese SKK input engine for IBus
 
 RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:${PORTSDIR}/japanese/skk-jisyo

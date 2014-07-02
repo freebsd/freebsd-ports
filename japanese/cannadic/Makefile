@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
-MAINTAINER=	toga@puyo.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A canna dictionary containing a lot of words
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/canna-server

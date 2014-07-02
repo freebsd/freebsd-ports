@@ -8,7 +8,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.ongs.co.jp/software/xdtp/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ozawa@ongs.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML document transfer program
 
 LICENSE=	BSD

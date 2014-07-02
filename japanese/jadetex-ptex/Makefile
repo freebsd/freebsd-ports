@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	-ptex
 DISTNAME=	jadetex-${PORTVERSION}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pTeX backend for Jade, for typesetting SGML documents
 
 BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex

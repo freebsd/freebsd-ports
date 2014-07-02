@@ -13,7 +13,7 @@ PATCH_SITES=	http://takeno.iee.niit.ac.jp/~shige/TeX/latex2html/data/
 PATCHFILES=	l2h-2002-2-1+jp${JP_VERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ixtl@utmc.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese LaTeX2HTML with JA patch
 
 BUILD_DEPENDS=	platex:${PORTSDIR}/japanese/ptex \

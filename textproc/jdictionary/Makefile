@@ -8,7 +8,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	SF/jdictionary/jDictionary/jDictionary%20version%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,}
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform independent, plugin based dictionary
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
