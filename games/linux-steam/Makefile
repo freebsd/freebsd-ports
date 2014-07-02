@@ -10,7 +10,7 @@ DISTNAME=	hldsupdatetool.bin
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	chris@easymac.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half Life and Source dedicated server using steam
 
 BUILD_DEPENDS=	${LINUX_BASE_PORT}
