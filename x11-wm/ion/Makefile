@@ -3,7 +3,7 @@
 
 PORTNAME=	ion
 PORTVERSION=	20020207
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/archives/
 
@@ -12,10 +12,7 @@ COMMENT=	A window manager with a text-editorish, keyboard friendly interface
 
 CONFLICTS=	ion-2-*
 
-MAN1=		ion.1x
-
 USE_XORG=	x11
 USES=		gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
