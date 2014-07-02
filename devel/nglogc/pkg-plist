@@ -13,9 +13,9 @@ include/nglogc/nflf_logtrace.h
 include/nglogc/ringbuffer.h
 include/nglogc/types.h
 lib/libnglogc.a
-lib/libnglogc.la
 lib/libnglogc.so
 lib/libnglogc.so.0
+lib/libnglogc.so.0.0.0
 man/man3/logc_changeLogLevel.3.gz
 man/man3/logc_defines.3.gz
 man/man3/logc_log.3.gz
