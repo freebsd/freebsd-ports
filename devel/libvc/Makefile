@@ -3,16 +3,14 @@
 
 PORTNAME=	libvc
 PORTVERSION=	003
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/rolo/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	vCard library
 
-USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
-USES=		bison
+USES=		bison libtool tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
