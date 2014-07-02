@@ -3,7 +3,7 @@
 
 PORTNAME=	dbf
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}.berlios
 DISTFILES=	${PORTNAME}-core-${PORTVERSION}.src.zip \
@@ -17,7 +17,7 @@ OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}
 
-USES=		pathfix zip
+USES=		libtool pathfix zip
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_DOC_TO_MAN=""
