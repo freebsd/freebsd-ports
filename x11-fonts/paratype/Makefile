@@ -17,7 +17,6 @@ LICENSE=	OFL11
 INSTALLS_TTF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_TGZ=	yes
 USES=		zip
 XORG_CAT=	font
 
@@ -27,15 +26,11 @@ PLIST_SUB=	FONTDIR="${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}"
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR="${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}"
 
-NO_STAGE=	yes
 do-configure:
 	@${DO_NADA}
 
 do-install:
-	@${MKDIR} ${FONTROOTDIR}/${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTROOTDIR}/${FONTDIR}/
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	@${MKDIR} ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}/
 
 .include <bsd.port.mk>
