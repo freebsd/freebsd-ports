@@ -38,3 +38,5 @@ share/gscmxx/i18n/italian
 @dirrm share/gscmxx
 @dirrm share/pixmaps/gscmxx/groups
 @dirrm share/pixmaps/gscmxx
+%%PERL5_MAN3%%/SCMxx.3.gz
+man/man1/gscmxx.1.gz
