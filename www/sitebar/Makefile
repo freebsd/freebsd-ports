@@ -10,22 +10,21 @@ DISTNAME=	SiteBar-${PORTVERSION}
 MAINTAINER=	gunter@six-two.net
 COMMENT=	The Bookmark Server for Personal and Team Use
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PHP=	mysql pcre
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/www/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC} && \
-		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
+		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \;
 	@cd ${WRKSRC} && \
-		${FIND} . ! -type d -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	@${FIND} ${DATADIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+		${FIND} . ! -type d -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
+	@${FIND} ${STAGEDIR}${DATADIR} ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
