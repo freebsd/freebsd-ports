@@ -3,7 +3,7 @@
 
 PORTNAME=	silgraphite
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 
@@ -13,7 +13,7 @@ COMMENT=	Font engine for complex non-Roman writing systems
 OPTIONS_DEFINE=	FREETYPE
 OPTIONS_DEFAULT=	FREETYPE
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-xft --without-pangographite
