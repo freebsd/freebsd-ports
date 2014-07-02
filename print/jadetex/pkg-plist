@@ -1,5 +1,7 @@
 bin/jadetex
 bin/pdfjadetex
+man/man1/jadetex.1.gz
+man/man1/pdfjadetex.1.gz
 share/texmf/tex/jadetex/dsssl.def
 share/texmf/tex/jadetex/jadetex.ltx
 share/texmf/web2c/jadetex.fmt
