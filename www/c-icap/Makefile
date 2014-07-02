@@ -3,7 +3,7 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.3.x/
@@ -15,6 +15,8 @@ COMMENT=	ICAP server implementation
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	c-icap
 
@@ -33,8 +35,7 @@ CICAP_GID=	959
 USERS=		${CICAP_USER}
 GROUPS=		${CICAP_GROUP}
 
-CONFIGURE_ARGS+=	--enable-static \
-			--sysconfdir="${PREFIX}/etc/c-icap" \
+CONFIGURE_ARGS+=	--sysconfdir="${PREFIX}/etc/c-icap" \
 			--localstatedir=/var
 
 .include <bsd.port.options.mk>
@@ -62,8 +63,6 @@ USE_OPENLDAP=	YES
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
@@ -113,10 +112,4 @@ post-patch:
 		${WRKSRC}/include/c-icap-conf.h.in
 .endif
 
-post-install:
-	@${CP} -np ${STAGEDIR}${PREFIX}/etc/c-icap/c-icap.conf.default \
-		${STAGEDIR}${PREFIX}/etc/c-icap/c-icap.conf || ${TRUE}
-	@${CP} -np ${STAGEDIR}${PREFIX}/etc/c-icap/c-icap.magic.default \
-		${STAGEDIR}${PREFIX}/etc/c-icap/c-icap.magic || ${TRUE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
