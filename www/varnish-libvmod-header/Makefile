@@ -3,6 +3,7 @@
 
 PORTNAME=	libvmod-header
 DISTVERSION=	0.3-5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://anders.fupp.net/distfiles/
 PKGNAMEPREFIX=	varnish-
@@ -17,23 +18,14 @@ LICENSE=	BSD
 BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 
-USE_AUTOTOOLS=	aclocal libtool libtoolize autoheader automake autoconf
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
+USE_AUTOTOOLS=	aclocal libtoolize autoheader automake autoconf
 ACLOCAL_ARGS=	-I m4
-LIBTOOLFLAGS=	--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+CONFIGURE_ARGS=	--disable-static
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
-
-MAN3=		vmod_header.3
+PLIST_FILES=	man/man3/vmod_header.3.gz lib/varnish/vmods/libvmod_header.so
 WRKSRC=		${WRKDIR}/${PORTNAME}-master
 
-.include <bsd.port.pre.mk>
-
-post-install:
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
