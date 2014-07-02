@@ -3,6 +3,7 @@
 
 PORTNAME=	scew
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH/${PORTNAME}/
 
@@ -14,12 +15,14 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SCEW_EXAMPLES=	print stream write
+
+BROKEN_powerpc=	Does not compile on powerpc
 
 post-install:
 .for ex in ${SCEW_EXAMPLES}
@@ -32,10 +35,4 @@ regression-test: build
 	cd ${WRKSRC}/tests && ${MAKE_CMD} check
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
