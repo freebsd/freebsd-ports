@@ -3,6 +3,7 @@
 
 PORTNAME=	talkfilters
 PORTVERSION=	2.3.8
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hyperrealm.com/talkfilters/ \
 		CRITICAL
@@ -14,6 +15,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	jive* chef* filters-*
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
