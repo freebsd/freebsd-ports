@@ -1,25 +1,3 @@
-PLIST=	${WRKDIR}/pkg-plist
-
-.if ${PKGNAMESUFFIX} == "-bat"
-.if defined(WITH_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.else
-CONFIGURE_ARGS+=	--with-openssl="no"
-.endif
-.endif
-
-pre-everything::
-.if ${PKGNAMESUFFIX} == "-bat"
-	@${ECHO_MSG} "===> Building bat the GUI interface for Bacula."
-.endif
-.if ${PKGNAMEPREFIX} == "nagios-check_"
-	@${ECHO_MSG} "===> Building nagios check only."
-.endif
-.if ${PKGNAMESUFFIX} == "-client-static"
-	@${ECHO_MSG} "===> Building static version of fd."
-.endif
-
 post-patch:
 # Change $(ECHO) to echo in some Makefile.in files
 	@${REINPLACE_CMD} -e 's|$$(ECHO)|echo|g' ${WRKSRC}/src/filed/Makefile.in \
@@ -27,37 +5,23 @@ post-patch:
 
 post-build:
 .if ${PKGNAMEPREFIX} == "nagios-check_"
-	${MAKE} -C ${WRKSRC}/examples/nagios/check_bacula
-.endif
-
-pre-install:
-	@${RM} -f ${PLIST}
-.if ${PKGNAMESUFFIX} == "-bat"
-	@${ECHO_CMD} "etc/bacula/bat.conf.sample" >> ${PLIST}
-	@${ECHO_CMD} "sbin/bat" >> ${PLIST}
-.endif
-.if ${PKGNAMEPREFIX} == "nagios-check_"
-	@${ECHO_CMD} "libexec/nagios/check_bacula" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry libexec/nagios" >> ${PLIST}
-.endif
-.if ${PKGNAMESUFFIX} == "-client-static"
-	@${ECHO_CMD} "sbin/bacula-fd-static" >> ${PLIST}
-	@${ECHO_CMD} "sbin/bconsole-static" >> ${PLIST}
+	${MAKE_CMD} -C ${WRKSRC}/examples/nagios/check_bacula
 .endif
 
 do-install:
 .if ${PKGNAMESUFFIX} == "-bat"
 # Install config files and preserve existing ones
-	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${PREFIX}/etc/bacula/bat.conf.sample
-	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${PREFIX}/man/man1/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${STAGEDIR}${PREFIX}/etc/bacula/bat.conf.sample
+	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${STAGEDIR}${PREFIX}/sbin
 .endif
 .if ${PKGNAMEPREFIX} == "nagios-check_"
-	@${MKDIR} ${PREFIX}/libexec/nagios
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/nagios/check_bacula/check_bacula \
-	${PREFIX}/libexec/nagios
+	${STAGEDIR}${PREFIX}/libexec/nagios
 .endif
 .if ${PKGNAMESUFFIX} == "-client-static"
-	${INSTALL_PROGRAM} ${WRKSRC}/src/filed/static-bacula-fd ${PREFIX}/sbin/bacula-fd-static
-	${INSTALL_PROGRAM} ${WRKSRC}/src/console/static-bconsole ${PREFIX}/sbin/bconsole-static
+	${INSTALL_PROGRAM} ${WRKSRC}/src/filed/static-bacula-fd ${STAGEDIR}${PREFIX}/sbin/bacula-fd-static
+	${INSTALL_PROGRAM} ${WRKSRC}/src/console/static-bconsole ${STAGEDIR}${PREFIX}/sbin/bconsole-static
 .endif
