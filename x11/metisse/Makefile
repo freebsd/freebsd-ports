@@ -14,6 +14,11 @@ LICENSE=	GPLv3
 
 CONFLICTS=	fvwm-1.* fvwm-2.5.*
 
+BROKEN=		does not configure
+
+EXPIRATION_DATE=	2014-08-30
+DEPRECATED=	Broken and not staged
+
 LIB_DEPENDS=	Nucleo:${PORTSDIR}/x11-toolkits/nucleo \
 		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
