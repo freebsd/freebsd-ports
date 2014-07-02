@@ -8,7 +8,7 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.sepia.dti.ne.jp/inoue/software/xyaku/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General dictionary/search engine front-end for X
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk

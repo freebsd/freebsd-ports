@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	makejvf-${PORTVERSION}-fkr
 DIST_SUBDIR=    makejvf
 
-MAINTAINER=	inagaki@tg.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Virtual Font file maker
 
 INSTALL_TARGET=	install-all

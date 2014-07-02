@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0 \
 		jis-tfm${EXTRACT_SUFX}:1 \
 		jis-pl${EXTRACT_SUFX}:1
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New document class files for pLaTeX
 
 USES=		zip

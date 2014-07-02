@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	platex-
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	latex
 
-MAINTAINER=	yokota@res.otaru-uc.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	pLaTeX package that literally provides Japanese option to babel
 
 USE_TEX=	latex ptex

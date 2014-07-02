@@ -8,7 +8,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old version of ASCII Japanese pLaTeX (based on LaTeX 2.09)
 
 USE_TEX=	tetex ptex

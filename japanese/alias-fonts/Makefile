@@ -8,7 +8,7 @@ CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	koma2@lovepeers.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A meta-port which setups Japanese fonts
 
 RUN_DEPENDS=	\

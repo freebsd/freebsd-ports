@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese devel
 MASTER_SITES=	http://classic.guesswork.jp/download/files/
 
-MAINTAINER=	smatsui@karashi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP lightweight framework
 
 RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2

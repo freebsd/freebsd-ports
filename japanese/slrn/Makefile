@@ -13,7 +13,7 @@ PATCH_SITES=	${MASTER_SITE_PORTS_JP} \
 PATCHFILES=	${PORTNAME}-${PORTVERSION}jp0.pat.gz
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	koma2@lovepeers.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Newsreader based on the S-Lang library
 
 LICENSE=	GPLv2

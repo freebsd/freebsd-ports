@@ -7,7 +7,7 @@ CATEGORIES=	japanese textproc ruby
 MASTER_SITES=	ftp://ftp.namazu.org/pub/namazu/ruby/
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client of the "Namazu" full-text search engine written in Ruby
 
 BROKEN=	not staged
