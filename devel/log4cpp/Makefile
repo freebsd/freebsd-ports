@@ -3,14 +3,14 @@
 
 PORTNAME=	log4cpp
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}.x%20%28new%29/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Library of C++ classes for flexible logging
 
-USES=		gmake pathfix
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
 USE_LDCONFIG=	yes
