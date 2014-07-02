@@ -409,9 +409,9 @@ share/fonts/cm-super/afm/sfxc2488.afm
 share/fonts/cm-super/afm/sfxc2986.afm
 share/fonts/cm-super/afm/sfxc3583.afm
 @dirrm share/fonts/cm-super/afm
-%%PLIST_X11%%share/fonts/cm-super/type1/Fontmap
-%%PLIST_X11%%share/fonts/cm-super/type1/fonts.dir
-%%PLIST_X11%%share/fonts/cm-super/type1/fonts.scale
+%%X11%%share/fonts/cm-super/type1/Fontmap
+%%X11%%share/fonts/cm-super/type1/fonts.dir
+%%X11%%share/fonts/cm-super/type1/fonts.scale
 share/fonts/cm-super/type1/isflb8.pfb
 share/fonts/cm-super/type1/isfli8.pfb
 share/fonts/cm-super/type1/isflo8.pfb
