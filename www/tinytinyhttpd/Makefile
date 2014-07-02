@@ -15,16 +15,18 @@ HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/tthttpd
 SUB_FILES=	example.conf
 PORTDOCS=	README example.conf ChangeLog
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tthttpd ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tthttpd ${STAGEDIR}${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/example.conf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/example.conf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
