@@ -1,5 +1,5 @@
---- Makefile.orig	2008-06-23 22:43:54.000000000 +0200
-+++ Makefile	2008-07-01 18:00:25.000000000 +0200
+--- Makefile.orig	2014-07-02 11:08:31.459626724 +0800
++++ Makefile	2014-07-02 11:11:50.634611079 +0800
 @@ -1,7 +1,7 @@
  #!/usr/bin/make -f
  .PHONY: all install uninstall dist correctpermissions install-doc uninstall-doc
@@ -9,27 +9,26 @@
  docdir?=$(prefix)/share/doc/fvwm-crystal/
  addondir?=$(prefix)/share/fvwm-crystal/addons
  
-@@ -10,15 +10,15 @@
- all:
- 	@echo "There is nothing to compile."
+@@ -12,13 +12,13 @@ all:
  
--install: uninstall correctpath
-+install: uninstall install-doc correctpath
+ install: uninstall correctpath
  	@echo Installing fvwm-crystal $(RELEASE) to $(prefix)
- 	mkdir -p $(prefix)/bin $(prefix)/share/fvwm-crystal/fvwm 
+-	mkdir -p $(prefix)/bin $(prefix)/share/fvwm-crystal/fvwm 
++	mkdir -p $(DESTDIR)$(prefix)/bin $(DESTDIR)$(prefix)/share/fvwm-crystal/fvwm 
  
- 	install -m 755 bin/fvwm-crystal.apps bin/fvwm-crystal.wallpaper bin/fvwm-crystal bin/fvwm-crystal.generate-menu bin/fvwm-crystal.infoline bin/fvwm-crystal.mplayer-wrapper $(prefix)/bin
+-	install -m 755 bin/fvwm-crystal.apps bin/fvwm-crystal.wallpaper bin/fvwm-crystal bin/fvwm-crystal.generate-menu bin/fvwm-crystal.infoline bin/fvwm-crystal.mplayer-wrapper $(prefix)/bin
 -	cp -d -r fvwm/* $(prefix)/share/fvwm-crystal/fvwm/
-+	cp -r fvwm/* $(prefix)/share/fvwm-crystal/fvwm/
++	install -m 755 bin/fvwm-crystal.apps bin/fvwm-crystal.wallpaper bin/fvwm-crystal bin/fvwm-crystal.generate-menu bin/fvwm-crystal.infoline bin/fvwm-crystal.mplayer-wrapper $(DESTDIR)$(prefix)/bin
++	cp -r fvwm/* $(DESTDIR)$(prefix)/share/fvwm-crystal/fvwm/
  
 -	mkdir -p $(prefix)/share/man/man1
 -	cp -d -r man/* $(prefix)/share/man/man1
-+	mkdir -p $(prefix)/man/man1
-+	cp -r man/* $(prefix)/man/man1
++	mkdir -p $(DESTDIR)$(prefix)/man/man1
++	cp -r man/* $(DESTDIR)$(prefix)/man/man1
  
  uninstall:
  	@echo "Uninstalling previously installed fvwm-crystal"
-@@ -40,7 +40,7 @@
+@@ -40,7 +40,7 @@ dist-minimal:
  	mkdir -p "fvwm-crystal-minimal-$(RELEASE)"
  	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm"
  	# Copy basic files
@@ -38,7 +37,7 @@
  	cp -r fvwm/config fvwm-crystal-minimal-$(RELEASE)/fvwm/
  	# Copy addons/
  	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/addons"
-@@ -190,8 +190,8 @@
+@@ -190,15 +190,15 @@ dist-minimal:
  
  # It is needed to adjust some path inside fvwm-crystal.generate-menu since this file must know the install path
  correctpath:
@@ -49,10 +48,14 @@
  
  uninstall-doc:
  	-rm -rf $(docdir)
-@@ -200,5 +200,5 @@
+ 	-rm -rf $(addondir)
+ 
  install-doc:
- 	mkdir -p $(addondir) $(docdir)
- 	install -m 644 addons/* $(addondir)
+-	mkdir -p $(addondir) $(docdir)
+-	install -m 644 addons/* $(addondir)
 -	install -m 644 AUTHORS COPYING NEWS ChangeLog README INSTALL $(docdir)
-+	install -m 644 AUTHORS NEWS ChangeLog README INSTALL $(docdir)
- 	install -m 644 doc/* $(docdir)
+-	install -m 644 doc/* $(docdir)
++	mkdir -p $(DESTDIR)$(addondir) $(DESTDIR)$(docdir)
++	install -m 644 addons/* $(DESTDIR)$(addondir)
++	install -m 644 AUTHORS NEWS ChangeLog README INSTALL $(DESTDIR)$(docdir)
++	install -m 644 doc/* $(DESTDIR)$(docdir)

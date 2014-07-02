@@ -4,6 +4,12 @@ bin/fvwm-crystal.generate-menu
 bin/fvwm-crystal.infoline
 bin/fvwm-crystal.mplayer-wrapper
 bin/fvwm-crystal.wallpaper
+man/man1/ApplicationDatabase.1.gz
+man/man1/CrystalRoxHOWTO.1.gz
+man/man1/FVWMCrystalFAQ.1.gz
+man/man1/KeyboardBindings.1.gz
+man/man1/MouseBindings.1.gz
+man/man1/Tips.1.gz
 %%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~doom3~DOOM_III
 %%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~quake3~Quake_III_Arena
 %%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~quake4~Quake_IV
