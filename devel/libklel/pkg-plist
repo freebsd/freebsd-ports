@@ -2,9 +2,9 @@ bin/klel-expr
 include/klel-pstdint.h
 include/klel.h
 lib/libklel.a
-lib/libklel.la
 lib/libklel.so
-lib/libklel.so.2
+lib/libklel.so.1
+lib/libklel.so.1.1.0
 man/man1/klel-expr.1.gz
 man/man3/klelapi.3.gz
 man/man3/klellang.3.gz
