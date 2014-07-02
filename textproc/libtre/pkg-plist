@@ -3,9 +3,9 @@ include/tre/regex.h
 include/tre/tre.h
 include/tre/tre-config.h
 lib/libtre.a
-lib/libtre.la
 lib/libtre.so
 lib/libtre.so.5
+lib/libtre.so.5.0.0
 libdata/pkgconfig/tre.pc
 man/man1/tre_agrep.1.gz
 %%NLS%%share/locale/fi/LC_MESSAGES/tre.mo
