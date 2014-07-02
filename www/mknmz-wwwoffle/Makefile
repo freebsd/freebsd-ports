@@ -16,16 +16,16 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/mknmz:${PORTSDIR}/databases/namazu2
 USES=		perl5
 HAS_CONFIGURE=	yes
 
-MAN1=		mknmz-wwwoffle.1
 PORTDOCS=	AUTHORS COPYING INSTALL INSTALL.ja NEWS README README.ja THANKS
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-post-build:
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
 post-install:
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for a in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${a} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
