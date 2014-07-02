@@ -3,7 +3,7 @@
 
 PORTNAME=	openjade
 PORTVERSION=	1.3.3p1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.3.3
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
@@ -14,8 +14,8 @@ COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 LIB_DEPENDS=	libosp.so:${PORTSDIR}/textproc/opensp
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+USES=		gettext gmake libtool perl5
 USE_LDCONFIG=	yes
-USES=		gettext gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${DATADIR}
@@ -29,7 +29,6 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 DATADIR=	${PREFIX}/share/sgml/openjade
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<iostream.h>|<iostream>|' ${WRKSRC}/style/MultiLineInlineNote.cxx
 
 post-install:
@@ -41,13 +40,4 @@ post-install:
 			"${WRKSRC}", $$3, "${STAGEDIR}${PREFIX}", $$4}' | \
 		${SH}
 
-.include <bsd.port.pre.mk>
-
-# This port cannot be CFLAGS safe, using optimizations such as
-# 'march=-mpentium -Os' produces core dumps with certain input files
-# Therefore, we'd better remove all machine optimizations and any -O
-# other than -O{0,1,}. Idea taken from palm/prc-tools-gcc.
-CPPFLAGS:=	-O ${CFLAGS:N-O*:N-m*}
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
