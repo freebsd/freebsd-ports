@@ -26,6 +26,7 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="0.4"
+OPTIONS_SUB=	yes
 
 OPTIONS_SINGLE=	GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3
@@ -39,22 +40,13 @@ CONFIGURE_ARGS=	--disable-scrollkeeper \
 	--disable-nls \
 	--enable-vala \
 	--without-omf-dir \
-	--without-help-dir
+	--without-help-dir \
+	--enable-gtk
 
-.include <bsd.port.options.mk>
+GTK2_USE=		GNOME=gtk20
+GTK2_CONFIGURE_ON=	--with-gtk=2
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=--enable-gtk --with-gtk=2
-PLIST_SUB+=	GTK2=""
-PLIST_SUB+=	GTK3="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gtk30
-CONFIGURE_ARGS+=--enable-gtk --with-gtk=3
-PLIST_SUB+=	GTK2="@comment "
-PLIST_SUB+=	GTK3=""
-.endif
+GTK3_USE=		GNOME=gtk30
+GTK3_CONFIGURE_ON=	--with-gtk=3
 
 .include <bsd.port.mk>
