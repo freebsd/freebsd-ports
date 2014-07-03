@@ -20,14 +20,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_DIRE=	${INSTALL} -d -m 0755 -o ${WWWOWN} -g ${WWWGRP}
 INSTALL_FILE=	${INSTALL} -m 0644 -o ${WWWOWN} -g ${WWWGRP}
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} -d ${WRKSRC} -name CVS -type d -exec ${RM} -R "{}" \;
 
 do-install:
 	${INSTALL_DIRE} ${PREFIX}/${PHPWEBFTPDIR}
-	@cd ${WRKSRC} && \
-		${FIND} * -type d -exec ${INSTALL_DIRE} "${PREFIX}/${PHPWEBFTPDIR}/{}" \; && \
+	(cd ${WRKSRC} && \
+		${FIND} * -type d -exec ${INSTALL_DIRE} "${STAGEDIR}${PREFIX}/${PHPWEBFTPDIR}/{}" \; && \
 		${FIND} -E * -type f -iregex ".*\.(php|html|css|gif|js)" \
-			-exec ${INSTALL_FILE} "{}" "${PREFIX}/${PHPWEBFTPDIR}/{}" \;
+			-exec ${INSTALL_FILE} "{}" "${STAGEDIR}${PREFIX}/${PHPWEBFTPDIR}/{}" \;)
 .include <bsd.port.mk>
