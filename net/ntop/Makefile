@@ -23,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 DBDIR?=		/var/db
 
 USES=		gmake libtool
-USE_AUTOTOOLS=	libtool automake autoconf
+USE_AUTOTOOLS=	automake autoconf libtoolize
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
@@ -84,5 +84,8 @@ pre-configure:
 
 pre-install:
 	@cd ${WRKSRC} && ${MAKE_CMD} dnetter
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ntop/plugins/*.so
 
 .include <bsd.port.mk>
