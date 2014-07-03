@@ -3,6 +3,7 @@
 
 PORTNAME=	quilt
 PORTVERSION=	0.61
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		formail:${PORTSDIR}/mail/procmail
 
-USES=		gmake perl5
+USES=		desthack gmake perl5
 
 OPTIONS_DEFINE=	RPMBUILD DOCS NLS
 OPTIONS_SUB=	yes
@@ -32,17 +33,15 @@ CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 		--without-getopt \
 		--with-patch=${LOCALBASE}/bin/gpatch
 
-MAN1=		guards.1 quilt.1
 PORTDOCS=	README README.MAIL quilt.pdf
 
-RPMBUILD_BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RPMBUILD_RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+RPMBUILD_BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm4
+RPMBUILD_RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm4
 RPMBUILD_CONFIGURE_OFF=	--without-rpmbuild
 
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/sbin/sendmail)
