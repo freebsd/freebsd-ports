@@ -174,6 +174,7 @@
     SUBDIR += sigrok-cli
     SUBDIR += silo
     SUBDIR += simlib
+    SUBDIR += simsmith
     SUBDIR += step
     SUBDIR += svmlight
     SUBDIR += szip
