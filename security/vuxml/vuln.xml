@@ -57,6 +57,47 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e6a7636a-02d0-11e4-88b6-080027671656">
+    <topic>dbus -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><lt>1.8.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon McVittie reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/dbus/2014-July/016235.html">
+	  <p>Alban Crequy at Collabora Ltd. discovered a bug in dbus-daemon's
+	    support for file descriptor passing. A malicious process could
+	    force system services or user applications to be disconnected
+	    from the D-Bus system bus by sending them a message containing
+	    a file descriptor, then causing that file descriptor to exceed
+	    the kernel's maximum recursion depth (itself introduced to fix
+	    a DoS) before dbus-daemon forwards the message to the victim
+	    process. Most services and applications exit when disconnected
+	    from the system bus, leading to a denial of service.</p>
+	  <p>Additionally, Alban discovered that bug fd.o#79694, a bug
+	    previously reported by Alejandro Martínez Suárez which was n
+	    believed to be security flaw, could be used for a similar denial
+	    of service, by causing dbus-daemon to attempt to forward invalid
+	    file descriptors to a victim process when file descriptors become
+	    associated with the wrong message.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3532</cvename>
+      <cvename>CVE-2014-3533</cvename>
+      <url>http://lists.freedesktop.org/archives/dbus/2014-July/016235.html</url>
+    </references>
+    <dates>
+      <discovery>2014-07-02</discovery>
+      <entry>2014-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="17dfd984-feba-11e3-b938-5404a68ad561">
     <topic>mencoder -- potential buffer overrun when processing malicious lzo compressed input</topic>
     <affects>
