@@ -1,7 +1,7 @@
-lib/libnfs.la
 lib/libnfs.a
 lib/libnfs.so
 lib/libnfs.so.1
+lib/libnfs.so.1.0.3
 include/nfsc/libnfs-raw-mount.h
 include/nfsc/libnfs-raw-nfs.h
 include/nfsc/libnfs-raw-portmap.h
