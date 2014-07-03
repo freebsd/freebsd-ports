@@ -63,11 +63,11 @@ post-patch:
 # library
 _ilm_libcxx=${COMPILER_FEATURES:Mlib*c++}
 pre-configure:
-	@${OBJDUMP} -j .dynstr -p ${LOCALBASE}/lib/libImath.so \
+	@${OBJDUMP} -p ${LOCALBASE}/lib/libImath.so \
 	| ${EGREP} -q '^[[:space:]]*NEEDED[[:space:]]+${_ilm_libcxx:C/\+/\\+/g}\.' \
-	|| {	${ECHO_CMD} "*** Your ilmbase package uses a non-default C++ standard library. ***" ; \
-		${ECHO_CMD} "*** Please recompile and reinstall ilmbase with the default       ***" ; \
-		${ECHO_CMD} "*** C++ compiler before trying to build OpenEXR.  Aborting.       ***" ; \
+	|| {	${ECHO_CMD} "*** Your ilmbase package uses a different C++ standard library than ***" ; \
+		${ECHO_CMD} "*** OpenEXR would. Please recompile and reinstall ilmbase with the  ***" ; \
+		${ECHO_CMD} "*** same C++ std. library before trying to build OpenEXR.  Abort.   ***" ; \
 		exit 1; }
 
 
