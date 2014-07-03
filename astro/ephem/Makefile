@@ -3,6 +3,7 @@
 
 PORTNAME=	ephem
 PORTVERSION=	4.28
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -17,14 +18,13 @@ ALL_TARGET=
 CFLAGS+=	-Wno-implicit -Wno-return-type
 
 do-install:
-	-cd ${WRKSRC}; \
-	${INSTALL_PROGRAM} ephem ${STAGEDIR}${PREFIX}/bin; \
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/ephem; \
-	${INSTALL_DATA} Man.txt ${STAGEDIR}${PREFIX}/share/ephem/; \
-	[ ! -f ${PREFIX}/share/ephem/ephem.db ] && ${INSTALL_DATA} ephem.db ${STAGEDIR}${PREFIX}/share/ephem/; \
-	[ ! -f ${PREFIX}/share/ephem/ephem.cfg ] && ${INSTALL_DATA} ephem.cfg ${STAGEDIR}${PREFIX}/share/ephem/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/ephem ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Man.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ephem.cfg ${STAGEDIR}${DATADIR}/ephem.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/ephem.db ${STAGEDIR}${DATADIR}/ephem.db.sample
 
 post-install:
-	@${ECHO_MSG} Don\'t forget to edit ${PREFIX}/share/ephem/ephem.cfg!
+	@${ECHO_MSG} "Don't forget to edit ${PREFIX}/share/ephem/ephem.cfg!"
 
 .include <bsd.port.mk>

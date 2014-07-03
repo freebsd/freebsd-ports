@@ -1,5 +1,5 @@
 bin/ephem
-share/ephem/Man.txt
-share/ephem/ephem.cfg
-share/ephem/ephem.db
-@dirrm share/ephem
+%%DATADIR%%/Man.txt
+@sample %%DATADIR%%/ephem.cfg.sample
+@sample %%DATADIR%%/ephem.db.sample
+@dirrm %%DATADIR%%
