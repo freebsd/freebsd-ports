@@ -12,8 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		highlight:${PORTSDIR}/textproc/highlight \
-		spamassassin:${PORTSDIR}/mail/spamassassin
+		highlight:${PORTSDIR}/textproc/highlight
 LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
@@ -21,8 +20,7 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight \
-		spamassassin:${PORTSDIR}/mail/spamassassin
+RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
 
 USES=		desktop-file-utils bison gettext gmake libtool:keepla \
 		pathfix perl5 pkgconfig tar:xz
@@ -110,14 +108,6 @@ post-patch:
 		-e 's|-Wl,--no-undefined||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
-#	@${REINPLACE_CMD} '/^evolution_alarm_notify_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/calendar/gui/alarm-notify/Makefile.in
-	@${REINPLACE_CMD} '/^evolution_settings_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/capplet/Makefile.in
-	@${REINPLACE_CMD} '/^evolution_backup_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/plugins/backup-restore/Makefile.in
-	@${REINPLACE_CMD} '/^evolution_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/shell/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c

@@ -6296,3 +6296,73 @@ security/sudosh2||2014-07-01|Has expired: Funcition replaced by sudo -s
 lang/pike76|lang/pike78|2014-07-01|Has expired: Outdated: Users should switch to lang/pike78
 editors/gummi||2014-07-01|Has expired: Builds fine but the program itself is unusable
 archivers/rpm|archivers/rpm4|2014-07-03|rpm3 is long EOLed, rpm4 is the default rpm archivers for most of linux distributions
+devel/bug-buddy||%DATE%|removed.
+sysutils/tracker-gnome/||%DATE%|removed, it is outdated
+sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
+sysutils/tracker-client|sysutils/tracker|%DATE%|moved
+x11/gnome2||%DATE%|removed in flavor of GNOME 3
+x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
+x11/gnome2-fifth-toe||%DATE%|removed
+x11/gnome2-power-tools||%DATE%|removed
+editors/gnome2-office||%DATE%|removed
+misc/gnome2-reference||%DATE%|removed
+devel/gnome2-hacker-tools||%DATE%|removed
+accessibility/accerciser3|accessibility/accerciser|%DATE%|moved
+accessibility/mousetweaks3|accessibility/mousetweaks|%DATE%|moved
+accessibility/orca3|accessibility/orca|%DATE%|moved
+archivers/file-roller3|archivers/file-roller|%DATE%|moved
+audio/rhythmbox3|audio/rhythmbox|%DATE%|moved
+databases/evolution-data-server3|databases/evolution-data-server|%DATE%|moved
+deskutils/gucharmap3|deskutils/gucharmap|%DATE%|moved
+devel/anjuta3|devel/anjuta|%DATE%|moved
+devel/devhelp3|devel/devhelp|%DATE%|moved
+devel/seed3|devel/seed|%DATE%|moved
+editors/gedit3|editors/gedit|%DATE%|moved
+editors/gedit-plugins3|editors/gedit-plugins|%DATE%|moved
+editors/ghex3|editors/ghex|%DATE%|moved
+games/gnome-games3|games/gnome-games|%DATE%|moved
+graphics/eog3|graphics/eog|%DATE%|moved
+graphics/eog-plugins3|graphics/eog-plugins|%DATE%|moved
+graphics/evince3|graphics/evince|%DATE%|moved
+mail/evolution-exchange3|mail/evolution-exchange|%DATE%|moved
+mail/evolution-mapi3|mail/evolution-mapi|%DATE%|moved
+math/gcacltool3|math/gcalctool|%DATE%|moved
+misc/gnome-devel-docs3|misc/gnome-devel-docs|%DATE%|moved
+misc/gnome-user-docs3|misc/gnome-user-docs|%DATE%|moved
+multimedia/cheese3|multimedia/cheese|%DATE%|moved
+multimedia/totem3|multimedia/totem|%DATE%|moved
+net/gnome-nettool3|net/gnome-nettool%DATE%|moved
+net/gtk-vnc3|net/gtk-vnc|%DATE%|moved
+net/vinagre3|net/vinagre|%DATE%|moved
+net/vino3|net/vino|%DATE%|moved
+net-im/empathy3|net-im/empathy|%DATE%|moved
+net-im/folks04|net-im/folks|%DATE%|moved
+net-im/telepathy-farsight|net-im/telepathy-farstream|%DATE%|replaced
+security/gnome-keyring3|security/gnome-keyring|%DATE%|moved
+security/seahorse3|security/seahorse|%DATE%|moved
+security/seahorse-plugins||%DATE%|removed
+sysutils/brasero3|sysutils/brasero|%DATE%|moved
+sysutils/gconf-editor3|sysutils/gconf-editor|%DATE%|moved
+sysutils/gnome-control-center3|sysutils/gnome-control-center|%DATE%|moved
+sysutils/gnome-power-manager3|sysutils/gnome-power-manager|%DATE%|moved
+sysutils/gnome-system-monitor3|sysutils/gnome-system-monitor|%DATE%|moved
+www/epiphany3|www/epiphany|%DATE%|moved
+www/epiphany-extensions3|www/epiphany-extensions|%DATE%|moved
+x11/gdm3|x11/gdm|%DATE%|moved
+x11/gnome-desktop3|x11/gnome-desktop|%DATE%|moved
+x11/gnome-menus3|x11/gnome-menus|%DATE%|moved
+x11/gnome-panel3|x11/gnome-panel|%DATE%|moved
+x11/gnome-screensaver3|x11/gnome-screensaver|%DATE%|moved
+x11/gnome-session3|x11/gnome-session|%DATE%|moved
+x11/gnome-terminal3|x11/gnome-terminal|%DATE%|moved
+x11/yelp3|x11/yelp|%DATE%|moved
+x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
+x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
+x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
+multimedia/libgnome-media-profiles||%DATE%|removed
+math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
+www/epiphany-extensions||2014-13-03|Development has ceased
+x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
+deskutils/gnome-music|audio/gnome-music|2014-02-04|Makes more sense to have in under audio/
+deskutils/gnome-search-tool||2014-04-25|removed
+mail/california|deskutils/california|2014-05-24|Does not belong under mail/

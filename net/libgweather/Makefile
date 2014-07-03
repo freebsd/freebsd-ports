@@ -28,7 +28,4 @@ GLIB_SCHEMAS=	org.gnome.GWeather.enums.xml \
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
-post-patch:
-	@${REINPLACE_CMD} '/noinst_PROGRAMS/,+1 d' ${WRKSRC}/libgweather/Makefile.in
-
 .include <bsd.port.mk>

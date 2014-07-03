@@ -25,8 +25,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdl-3.so.*
 
-post-patch:
-	@${REINPLACE_CMD} '/^test_dock_LDADD =/s/$$/ $$(GDL_DEPENDENCIES_LIBS)/' \
-		${WRKSRC}/gdl/Makefile.in
-
 .include <bsd.port.mk>

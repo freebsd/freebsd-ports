@@ -27,7 +27,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|make -C|${MAKE_CMD} -C|g' \
+	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/tests/Makefile.in
 

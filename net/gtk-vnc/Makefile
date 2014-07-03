@@ -32,8 +32,4 @@ MAKE_JOBS_UNSAFE=	yes
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.0
 
-post-patch:
-	@${REINPLACE_CMD} '/LDADD/s/GTK_CFLAGS/GTK_LIBS/' \
-		${WRKSRC}/examples/Makefile.in
-
 .include <bsd.port.mk>

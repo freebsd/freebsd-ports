@@ -43,7 +43,7 @@ post-patch:
 .endif
 
 pre-build:
-	cd ${WRKSRC}/extensions && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+	cd ${WRKSRC}/extensions && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 	    	${MAKE_FLAGS} Makefile ${MAKE_ARGS} all
 	${CP} ${WRKSRC}/extensions/Seed.js ${WRKSRC}/extensions/Seed.js.sav
 	${CP} ${FILESDIR}/Seed.js ${WRKSRC}/extensions/Seed.js
