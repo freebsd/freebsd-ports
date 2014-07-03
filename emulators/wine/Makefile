@@ -48,11 +48,12 @@ SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
 USE_BZIP2=	yes
 USE_GL=		glu
 USE_XORG=	xcomposite xcursor xi xpm xrandr xrender
+OPTIONS_SUB=	yes
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	CUPS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER GECKO MONO
+OPTIONS_DEFINE=	CUPS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER GECKO MONO DOCS
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
 LIBXSLT_DESC=	Use libxslt (only used by msxml3.dll)
 WINEMAKER_DESC=	Fully support winemaker (requires Perl)
@@ -66,66 +67,32 @@ PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
 PORTSCOUT=	limitw:1,even
 
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_CONFIGURE_WITH=	cups
+
+DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_WITH=	gnutls
+
+HAL_LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal
+HAL_CONFIGURE_WITH=	hal
+
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap
+
+LIBXSLT_LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
+LIBXSLT_CONFIGURE_WITH=	xslt
+
+OPENAL_CONFIGURE_WITH=	openal
+
+WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
+
+GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko
+
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
+
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MCUPS}
-CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-.else
-CONFIGURE_ARGS+=	--without-cups
-.endif
-
-.if ${PORT_OPTIONS:MDOSBOX}
-RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=	--with-gnutls
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
-.else
-CONFIGURE_ARGS+=	--without-gnutls
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-CONFIGURE_ARGS+=	--with-hal
-LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
-.else
-CONFIGURE_ARGS+=	--without-hal
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=	--with-ldap
-USE_OPENLDAP=	yes
-.else
-CONFIGURE_ARGS+=	--without-ldap
-.endif
-
-.if ${PORT_OPTIONS:MLIBXSLT}
-CONFIGURE_ARGS+=	--with-xslt
-LIB_DEPENDS+=	libxslt.so:${PORTSDIR}/textproc/libxslt
-.else
-CONFIGURE_ARGS+=	--without-xslt
-.endif
-
-.if ${PORT_OPTIONS:MOPENAL}
-CONFIGURE_ARGS+=	--with-openal
-PLIST_SUB+=		OPENAL=""
-.else
-CONFIGURE_ARGS+=	--without-openal
-PLIST_SUB+=		OPENAL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWINEMAKER}
-RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
-.endif
-
-.if ${PORT_OPTIONS:MGECKO}
-RUN_DEPENDS+=	${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko
-.endif
-
-.if ${PORT_OPTIONS:MMONO}
-RUN_DEPENDS+=	${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
-.endif
 
 .if ${OSVERSION} < 800000
 IGNORE=		lacks required sound support on FreeBSD before 8.0
@@ -138,15 +105,11 @@ post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
 	          ${STAGEDIR}${WINELIBDIR}/libwine.so.1
 	@${LN} -sf libwine.so.1 ${STAGEDIR}/${WINELIBDIR}/libwine.so
-.if !defined(NOPORTDOCS)
 	-@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
 	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
-.endif
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
