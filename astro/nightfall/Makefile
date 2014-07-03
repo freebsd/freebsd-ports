@@ -35,16 +35,13 @@ PGPLOT_CONFIGURE_ON=	--with-pgplot-include=${LOCALBASE}/include \
 			--with-pgplot-lib=${LOCALBASE}/lib
 PGPLOT_CONFIGURE_OFF=	--with-gnuplot
 PGPLOT_LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
+PGPLOT_RUN_DEPENDS_OFF=	gnuplot:${PORTSDIR}/math/gnuplot
 PGPLOT_USES=		fortran
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MGNOMEUI}
+.if ${PORT_OPTIONS:MGNOME}
 INSTALLS_OMF=	yes
-.endif
-
-.if ! ${PORT_OPTIONS:MPGPLOT}
-RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 .endif
 
 post-patch:

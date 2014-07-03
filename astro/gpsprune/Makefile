@@ -27,11 +27,7 @@ PLIST_FILES=	bin/gpsprune ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
 OPTIONS_DEFINE=	JAVA3D
 JAVA3D_DESC=	Support for 3D view of track
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJAVA3D}
-RUN_DEPENDS+=	java3d>=1.5.2:${PORTSDIR}/java/java3d
-.endif
+JAVA3D_RUN_DEPENDS=	java3d>=1.5.2:${PORTSDIR}/java/java3d
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/

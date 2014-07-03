@@ -45,8 +45,6 @@ DOCS=		Bugs ChangeLog Coding Configuration Developer-Guide \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O ||g ; \
 		 s|/usr/include|${LOCALBASE}/include|g ; \
@@ -74,12 +72,10 @@ do-install:
 .for _DATA in ${DATA}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${_DATA} ${STAGEDIR}${DATADIR}/${_DATA}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 .for _DOC in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${_DOC} ${STAGEDIR}${DOCSDIR}/${_DOC}
 .endfor
-.endif
 
 .include <bsd.port.mk>
