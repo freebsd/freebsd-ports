@@ -1,10 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/geary/Makefile 19607 2014-05-05 07:42:42Z gusi $
+#   $MCom: ports/trunk/mail/geary/Makefile 19761 2014-07-02 15:48:39Z gusi $
 
 PORTNAME=	geary
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

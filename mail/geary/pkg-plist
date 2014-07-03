@@ -97,6 +97,18 @@ share/gnome/help/geary/es/search.page
 share/gnome/help/geary/es/shortcuts.page
 share/gnome/help/geary/es/star.page
 share/gnome/help/geary/es/write.page
+share/gnome/help/geary/it/accounts.page
+share/gnome/help/geary/it/archive.page
+share/gnome/help/geary/it/bugs.page
+share/gnome/help/geary/it/index.page
+share/gnome/help/geary/it/label.page
+share/gnome/help/geary/it/limits.page
+share/gnome/help/geary/it/overview.page
+share/gnome/help/geary/it/preferences.page
+share/gnome/help/geary/it/search.page
+share/gnome/help/geary/it/shortcuts.page
+share/gnome/help/geary/it/star.page
+share/gnome/help/geary/it/write.page
 share/icons/hicolor/16x16/apps/geary.png
 share/icons/hicolor/24x24/apps/geary.png
 share/icons/hicolor/256x256/apps/geary.png
@@ -149,6 +161,7 @@ share/locale/zh_CN/LC_MESSAGES/geary.mo
 share/locale/zh_TW/LC_MESSAGES/geary.mo
 @dirrm share/icons/hicolor/512x512/apps
 @dirrm share/icons/hicolor/512x512
+@dirrm share/gnome/help/geary/it
 @dirrm share/gnome/help/geary/es
 @dirrm share/gnome/help/geary/el
 @dirrm share/gnome/help/geary/C/figures

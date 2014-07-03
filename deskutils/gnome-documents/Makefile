@@ -32,6 +32,7 @@ GLIB_SCHEMAS=	org.gnome.Documents.enums.xml \
 		org.gnome.documents.gschema.xml
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GCC=	yes
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack \
 		introspection:build libxml2
 GNU_CONFIGURE=	yes

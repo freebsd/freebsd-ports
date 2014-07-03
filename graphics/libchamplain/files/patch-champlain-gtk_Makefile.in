@@ -1,6 +1,6 @@
---- champlain-gtk/Makefile.in.orig	2012-06-02 20:46:55.000000000 -0500
-+++ champlain-gtk/Makefile.in	2012-06-02 20:56:23.000000000 -0500
-@@ -124,8 +124,8 @@
+--- champlain-gtk/Makefile.in.orig	2014-07-02 09:20:14.564390009 +0000
++++ champlain-gtk/Makefile.in	2014-07-02 09:22:14.312426331 +0000
+@@ -141,8 +141,8 @@
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  libchamplain_gtk_@CHAMPLAIN_API_VERSION@_la_DEPENDENCIES =  \
@@ -11,7 +11,7 @@
  am__objects_1 =
  am__objects_2 = gtk-champlain-embed.lo
  am_libchamplain_gtk_@CHAMPLAIN_API_VERSION@_la_OBJECTS =  \
-@@ -388,15 +388,15 @@
+@@ -405,15 +405,15 @@
  	$(libchamplain_gtk_sources_built)
  
  libchamplain_gtk_@CHAMPLAIN_API_VERSION@_la_LIBADD = \
@@ -30,13 +30,3 @@
  lib_LTLIBRARIES = libchamplain-gtk-@CHAMPLAIN_API_VERSION@.la
  libchamplain_gtkdir = $(includedir)/libchamplain-gtk-@CHAMPLAIN_API_VERSION@/champlain-gtk
  libchamplain_gtk_HEADERS = $(libchamplain_gtk_headers_public)
-@@ -420,8 +420,8 @@
- @HAVE_INTROSPECTION_TRUE@	--include-uninstalled=$(top_builddir)/champlain/Champlain-@CHAMPLAIN_API_VERSION@.gir
- 
- @HAVE_INTROSPECTION_TRUE@GtkChamplain_@CHAMPLAIN_API_VERSION_NORM@_gir_CFLAGS = \
--@HAVE_INTROSPECTION_TRUE@	$(SOUP_CFLAGS) $(GTK_CFLAGS) $(DEPS_CFLAGS) \
- @HAVE_INTROSPECTION_TRUE@	-I$(top_srcdir) -I$(top_builddir)\
-+@HAVE_INTROSPECTION_TRUE@	$(SOUP_CFLAGS) $(GTK_CFLAGS) $(DEPS_CFLAGS) \
- @HAVE_INTROSPECTION_TRUE@	-DCHAMPLAIN_COMPILATION -DCHAMPLAIN_GTK_COMPILATION
- 
- @HAVE_INTROSPECTION_TRUE@girdir = $(datadir)/gir-1.0

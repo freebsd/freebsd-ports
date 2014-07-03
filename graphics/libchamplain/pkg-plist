@@ -43,15 +43,13 @@ include/libchamplain-gtk-%%VERSION%%/champlain-gtk/gtk-champlain-embed.h
 lib/girepository-1.0/Champlain-%%VERSION%%.typelib
 lib/girepository-1.0/GtkChamplain-%%VERSION%%.typelib
 lib/libchamplain-%%VERSION%%.a
-lib/libchamplain-%%VERSION%%.la
 lib/libchamplain-%%VERSION%%.so
 lib/libchamplain-%%VERSION%%.so.0
-lib/libchamplain-%%VERSION%%.so.0.4.2
+lib/libchamplain-%%VERSION%%.so.0.4.3
 lib/libchamplain-gtk-%%VERSION%%.a
-lib/libchamplain-gtk-%%VERSION%%.la
 lib/libchamplain-gtk-%%VERSION%%.so
 lib/libchamplain-gtk-%%VERSION%%.so.0
-lib/libchamplain-gtk-%%VERSION%%.so.0.4.2
+lib/libchamplain-gtk-%%VERSION%%.so.0.4.3
 libdata/pkgconfig/champlain-%%VERSION%%.pc
 libdata/pkgconfig/champlain-gtk-%%VERSION%%.pc
 share/gir-1.0/Champlain-%%VERSION%%.gir

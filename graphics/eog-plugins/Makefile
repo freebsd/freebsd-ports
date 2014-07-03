@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/graphics/eog-plugins/Makefile 19511 2014-04-14 21:44:49Z gusi $
+#   $MCom: ports/trunk/graphics/eog-plugins/Makefile 19762 2014-07-02 18:26:14Z gusi $
 
 PORTNAME=	eog-plugins
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,10 +19,11 @@ LIB_DEPENDS=	libgdata.so.13:${PORTSDIR}/devel/libgdata \
 RUN_DEPENDS=	eog:${PORTSDIR}/graphics/eog
 
 USE_GNOME=	gnomeprefix intlhack gtk30
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.eog.plugins.exif-display.gschema.xml
 
@@ -59,8 +61,5 @@ post-patch:
 	@${REINPLACE_CMD} '/^DEFAULT_PLUGINS=/,/^$$/ s/map//' \
 		${WRKSRC}/configure
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eog/plugins/lib*.so
 
 .include <bsd.port.mk>

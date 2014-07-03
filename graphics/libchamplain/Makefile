@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/libchamplain/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/graphics/libchamplain/Makefile 19762 2014-07-02 18:26:14Z gusi $
 
 PORTNAME=	libchamplain
-PORTVERSION=	0.12.7
+PORTVERSION=	0.12.8
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,7 @@ COMMENT=	C library aimed to provide a Gtk+ widget to display rasterized maps and
 LIB_DEPENDS=	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 gnomehier introspection:build
 USE_GL=		gl
 USE_SQLITE=	3
@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-gtk-doc-html=no
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=0.12
 
@@ -29,8 +30,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|DOC_MODULE = libchamplain|DOC_MODULE = libchamplain-gtk3|g' \
 		${WRKSRC}/docs/reference/Makefile.in \
 		${WRKSRC}/docs/reference-gtk/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libchamplain*.so*
 
 .include <bsd.port.mk>
