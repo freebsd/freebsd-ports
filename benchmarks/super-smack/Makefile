@@ -5,7 +5,7 @@ PORTNAME=	super-smack
 PORTVERSION=	1.3
 PORTREVISION=	2
 CATEGORIES=	benchmarks databases
-MASTER_SITES=	http://vegan.net/tony/supersmack/
+MASTER_SITES=	GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking, stress testing, and load generation tool for Databases
@@ -16,39 +16,23 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	README TUTORIAL
 
-OPTIONS_MULTI=	DB
+OPTIONS_DEFINE=		DOCS
+OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
 
-PGSQL_DESC=	Enable PostgreSQL support
-MYSQL_DESC=	Enable MySQL support
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_ON=	--with-mysql \
+			--with-mysql-include=${LOCALBASE}/include/mysql \
+			--with-mysql-lib=${LOCALBASE}/lib/mysql
 
-NO_STAGE=	yes
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ON=	--with-pgsql \
+			--with-pgsql-include=${LOCALBASE}/include \
+			--with-pgsql-lib=${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql \
-		--with-mysql-include=${LOCALBASE}/include/mysql \
-		--with-mysql-lib=${LOCALBASE}/lib/mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-CONFIGURE_ARGS+=--with-pgsql \
-		--with-pgsql-include=${LOCALBASE}/include \
-		--with-pgsql-lib=${LOCALBASE}/lib
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
