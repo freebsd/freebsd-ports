@@ -24,6 +24,8 @@ PYDISTUTILS_PKGNAME=	PyPanel
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/freetype-config|${LOCALBASE}/bin/freetype-config|; \
@@ -40,9 +42,7 @@ post-patch:
 		${WRKSRC}/pypanelrc
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -18,6 +18,8 @@ USE_GNOME=	gtk20
 
 PORTDOCS=	ChangeLog NEWS TODO LICENSE CONTRIBUTORS copyright config.example
 
+OPTIONS_DEFINE=	DOCS
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning! This port contains some adults only content."
@@ -26,11 +28,9 @@ pre-everything::
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/hot-babe.1 ${STAGEDIR}${PREFIX}/man/man1
-.ifndef (NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
