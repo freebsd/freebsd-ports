@@ -38,6 +38,8 @@ DOCS=		A_Lire.txt Readme.txt
 PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY}			\
 		UNAMES=${OPSYS} HOMARDPG=${HOMARDPG} ASTER_TOOLS=${ASTER_TOOLS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -69,17 +71,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ASTER_TOOLS}/
 	${LN} -fs ${HOMARDDIR}/homard ${STAGEDIR}${ASTER_TOOLS}/
 	${LN} -fs ${HOMARDDIR}/aster_homard_py ${STAGEDIR}${ASTER_TOOLS}/
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/Linux64/CAS_TESTS && ${COPYTREE_SHARE} .	\
 		${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.post.mk>
