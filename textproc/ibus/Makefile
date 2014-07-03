@@ -28,6 +28,7 @@ USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+OPTIONS_SUB=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-tests
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -49,116 +50,56 @@ DCONF_DESC=	Use dconf for configuration
 XIM_DESC=	Install XIM server
 ENGINE_DESC=	Install ibus simple engine
 
+ISOCODES_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+ISOCODES_RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/misc/iso-codes
+ISOCODES_CONFIGURE_OFF=	--disable-iso-codes-check
+
+NLS_USES=		gettext
+NLS_CONFIGURE_WITH=	nls
+
+GTK2_USE=		GNOME=gtk20
+GTK2_CONFIGURE_ENABLE=	gtk2
+
+GTK3_USE=		GNOME=gtk30
+GTK3_CONFIGURE_ENABLE=	gtk3 libnotify
+GTK3_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+
+VALA_BUILD_DEPENDS=	vala-vapigen>=0.16:${PORTSDIR}/lang/vala-vapigen
+VALA_CONFIGURE_ENABLE=	vala
+
+GINTRO_BUILD_DEPENDS=	gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+GINTRO_RUN_DEPENDS=	gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+GINTRO_CONFIGURE_ON=	--enable-introspection=yes
+GINTRO_CONFIGURE_OFF=	--enable-introspection=no
+
+PYTHON_LIB_USE=			GNOME=pygtk2
+PYTHON_LIB_CONFIGURE_ENABLE=	python-library
+
+GCONF_USE=		GNOME=gconf2
+GCONF_CONFIGURE_ENABLE=	gconf
+
+DCONF_USE=		GNOME=dconf,gconf2
+DCONF_CONFIGURE_ENABLE=	dconf
+
+DOCS_CONFIGURE_ENABLE=	gtk-doc-html
+DOCS_CONFIGURE_ON=	--with-html-dir=${PREFIX}/share/doc
+
+XIM_CONFIGURE_ENABLE=	xim
+
+ENGINE_CONFIGURE_ENABLE=	engine
+
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
 USE_GCC=	yes
 .endif
 
-.if ${PORT_OPTIONS:MISOCODES}
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-RUN_DEPENDS+=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/misc/iso-codes
-.else
-CONFIGURE_ARGS+=	--disable-iso-codes-check
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-CONFIGURE_ARGS+=	--enable-gtk2
-USE_GNOME+=	gtk20
-PLIST_SUB+=	GTK2=""
-.else
-CONFIGURE_ARGS+=	--disable-gtk2
-PLIST_SUB+=	GTK2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGTK3}
-# libnotify is used by the GTK3 UI module
-CONFIGURE_ARGS+=	--enable-gtk3 --enable-libnotify
-USE_GNOME+=	gtk30
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-PLIST_SUB+=	GTK3=""
-.else
-CONFIGURE_ARGS+=	--disable-gtk3 --disable-libnotify
-PLIST_SUB+=	GTK3="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVALA}
-CONFIGURE_ARGS+=	--enable-vala
-BUILD_DEPENDS+=	vala-vapigen>=0.16:${PORTSDIR}/lang/vala-vapigen
-PLIST_SUB+=	VALA=""
-.else
-CONFIGURE_ARGS+=	--disable-vala
-PLIST_SUB+=	VALA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGINTRO}
-BUILD_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
-RUN_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
-CONFIGURE_ARGS+=	--enable-introspection=yes
-PLIST_SUB+=		GINTRO=""
-.else
-CONFIGURE_ARGS+=	--enable-introspection=no
-PLIST_SUB+=		GINTRO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON_LIB}
-CONFIGURE_ARGS+=	--enable-python-library
-PLIST_SUB+=		PYTHON_LIB=""
-USE_GNOME+=	pygtk2
-.else
-CONFIGURE_ARGS+=	--disable-python-library
-PLIST_SUB+=		PYTHON_LIB="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MGCONF}
-CONFIGURE_ARGS+=	--enable-gconf
-PLIST_SUB+=		GCONF=""
 GCONF_SCHEMAS=	ibus.schemas
-USE_GNOME+=		gconf2
-.else
-CONFIGURE_ARGS+=	--disable-gconf
-PLIST_SUB+=		GCONF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDCONF}
-CONFIGURE_ARGS+=	--enable-dconf
-PLIST_SUB+=		DCONF=""
 GLIB_SCHEMAS=	org.freedesktop.ibus.gschema.xml
-# gconf2 required for gsettings-schema-convert
-USE_GNOME+=		dconf gconf2
-.else
-CONFIGURE_ARGS+=	--disable-dconf
-PLIST_SUB+=		DCONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
-.else
-CONFIGURE_ARGS+=	--disable-gtk-doc-html
-.endif
-
-.if ${PORT_OPTIONS:MXIM}
-CONFIGURE_ARGS+=	--enable-xim
-PLIST_SUB+=		XIM=""
-.else
-CONFIGURE_ARGS+=	--disable-xim
-PLIST_SUB+=		XIM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MENGINE}
-CONFIGURE_ARGS+=	--enable-engine
-PLIST_SUB+=		ENGINE=""
-.else
-CONFIGURE_ARGS+=	--disable-engine
-PLIST_SUB+=		ENGINE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MENGINE} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MGCONF} || ${PORT_OPTIONS:MDCONF}
