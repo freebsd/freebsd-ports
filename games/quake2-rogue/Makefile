@@ -19,7 +19,6 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	%%Q2DIR%%/${PORTNAME}/game.so
 PLIST_DIRS=	%%Q2DIR%%/${PORTNAME}
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && uncompress -c ${DISTDIR}/${DISTFILES} | \
@@ -33,13 +32,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' ${WRKSRC}/q_shared.[ch]
 
 do-install:
-	@${MKDIR} ${Q2DIR}/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${Q2DIR}/${PORTNAME}
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${Q2DIR}/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${STAGEDIR}${Q2DIR}/${PORTNAME}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>
