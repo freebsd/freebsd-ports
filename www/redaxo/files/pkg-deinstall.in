@@ -14,7 +14,7 @@ if [ -z "${BATCH}" ]; then
 	echo ""
 	echo "For an upgrade, use REDAXOs built-in export functions for exporting all"
 	echo "your data to a safe place outside of the ports installation directory,"
-	echo "then delete the port, install the new version, and reimport youri data."
+	echo "then delete the port, install the new version, and reimport your data."
 	echo ""
 	echo "========================================================================="
 	echo ""
