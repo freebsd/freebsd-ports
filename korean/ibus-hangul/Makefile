@@ -2,6 +2,7 @@
 
 PORTNAME=	ibus-hangul
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,10 +18,9 @@ PROJECTHOST=	ibus
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool
 USE_GNOME=	intltool pygobject3
 USE_PYTHON=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	NLS
