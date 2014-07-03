@@ -6,7 +6,6 @@ PORTVERSION=	0.6.2
 PORTREVISION=	4
 CATEGORIES=	ftp
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Uploads files or directories to a ftpserver with support of resuming
@@ -15,20 +14,20 @@ PORTDOCS=	ABOUT-NLS COPYING ChangeLog INSTALL TODO
 PORTEXAMPLES=	USAGE.examples USAGE.resumehandling USAGE.urlhandling \
 		passwordfile wputrc
 
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	TLS NLS DOCS EXAMPLES
-OPTIONS_DEFAULT=	TLS
+OPTIONS_DEFAULT=TLS
 OPTIONS_SUB=	yes
 
 TLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 TLS_CONFIGURE_WITH=	ssl
-NLS_USES+=		gettext iconv
-NLS_CONFIGURE_ON=	--enable-nls \
-			--with-libintl-prefix=${LOCALBASE} \
-			${ICONV_CONFIGURE_ARG}
-NLS_CONFIGURE_OFF=	--disable-nls --without-libiconv-prefix
+NLS_USES=		gettext iconv
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_WITH=	libintl-prefix=${LOCALBASE}
+NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
