@@ -28,8 +28,6 @@ SHEBANG_FILES=	llgal.in
 USE_PERL5=	run fixpacklist
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX," ${WRKSRC}/Makefile
 
@@ -41,11 +39,10 @@ post-configure:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/llgal.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/llgalrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
-.if ${PORT_OPTIONS:MDOCS}
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/llgalrc ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} examples ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
