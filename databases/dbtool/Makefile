@@ -33,12 +33,14 @@ REINPLACE_ARGS=	-i ""
 SH2BASH=	samples/account-db/accdb
 UB2PFX=		samples/locate/locate samples/locate/updatedb
 
+.include <bsd.port.options.mk>
+
 post-patch:
 .for file in dbtool.cc engine.cc engine.h
 	@${REINPLACE_CMD} -e "s,stdin,input,g" ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e "s,==,=,g" ${WRKSRC}/configure
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MEXAMPLES}
 .for file in ${SH2BASH}
 	@${REINPLACE_CMD} -e "s|/bin/sh|${LOCALBASE}/bin/bash|" ${WRKSRC}/${file}
 .endfor

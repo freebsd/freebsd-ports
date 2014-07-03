@@ -29,7 +29,8 @@ INSTALL_TARGET=	bindir=${STAGEDIR}${PREFIX}/bin install
 post-extract:
 	${CP} -p ${WRKSRC}/support-files/install.sql ${WRKSRC}/examples/
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 PORTDOCS=	AUTHORS ChangeLog README doc
 PORTEXAMPLES=	crawler install.sql
 
@@ -45,7 +46,6 @@ post-install:
 .for f in ${PORTEXAMPLES}
 	cd ${WRKSRC}/examples; ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 install-functions:
 	mysql -u root -p -f mysql < ${EXAMPLESDIR}/install.sql

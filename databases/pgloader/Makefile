@@ -15,6 +15,8 @@ USE_PYTHON=	yes
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/share/python-support,${PYTHON_SITELIBDIR},' ${WRKSRC}/pgloader/options.py
 
@@ -25,15 +27,11 @@ do-install:
 	@cd ${WRKSRC}/pgloader && ${COPYTREE_SHARE} \* ${STAGEDIR}${PYTHON_SITELIBDIR}/pgloader/
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/pgloader/reformat
 	@cd ${WRKSRC}/reformat && ${COPYTREE_SHARE} \* ${STAGEDIR}${PYTHON_SITELIBDIR}/pgloader/reformat/
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/BUGS.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TODO.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/pgloader.1.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

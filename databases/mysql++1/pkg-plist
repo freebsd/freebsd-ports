@@ -338,26 +338,26 @@ lib/libmysqlpp.so.4
 %%PORTDOCS%%%%DOCSDIR%%/userman/html/ar01s06.html
 %%PORTDOCS%%%%DOCSDIR%%/userman/html/ar01s07.html
 %%PORTDOCS%%%%DOCSDIR%%/userman/html/index.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/cgi_image.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom1.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom2.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom3.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom4.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom5.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/dbinfo.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/fieldinf1.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/load_file.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/resetdb.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple1.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/updel.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/util.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/util.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi_image.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom1.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom2.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom3.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom4.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom5.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbinfo.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fieldinf1.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/load_file.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resetdb.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple1.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/updel.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/util.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/util.h
 @dirrm include/mysql++
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/refman/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/refman
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/userman/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/userman
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

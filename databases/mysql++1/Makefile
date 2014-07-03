@@ -20,8 +20,9 @@ USE_LDCONFIG=	yes
 
 CONFLICTS=	${PORTNAME}*-2.*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/userman/html ${STAGEDIR}${DOCSDIR}/refman/html
 	@${INSTALL_DATA} ${WRKSRC}/doc/userman/html/* ${STAGEDIR}${DOCSDIR}/userman/html
 	@${INSTALL_DATA} ${WRKSRC}/doc/refman/html/* ${STAGEDIR}${DOCSDIR}/refman/html
@@ -36,6 +37,5 @@ post-install:
 		${SED} -e "s|-lmysqlpp|-L${PREFIX}/lib -L${LOCALBASE}/lib/mysql -lmysqlpp|" \
 		> ${STAGEDIR}${EXAMPLESDIR}/Makefile
 	@${RM} -f ${STAGEDIR}${EXAMPLESDIR}/Makefile.temp
-.endif
 
 .include <bsd.port.mk>

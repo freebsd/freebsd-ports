@@ -19,9 +19,14 @@ LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+OPTIONS_DEFINE=	DOCS THREADS EXAMPLES
+OPTIONS_DEFAULT=THREADS
+
 .if defined(TDS_VERSION)
 TDS_SUF="=${TDS_VERSION}"
 .else
+
+.include <bsd.port.options.mk>
 
 pre-build:
 	@V=`${PKG_INFO} | ${SED} -ne 's/^freetds-0.\(..\).*/\1/p'` ; \
@@ -34,7 +39,7 @@ pre-build:
 
 MAKE_ENV+=	SYBASE=${LOCALBASE}
 
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 BUILDARGS=	-D WANT_THREADS -U WANT_BULKCOPY -D HAVE_FREETDS${TDS_SUF}
 .else
 BUILDARGS=	-U WANT_BULKCOPY -D HAVE_FREETDS${TDS_SUF}
@@ -46,10 +51,8 @@ do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build)
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -cf - -C ${WRKSRC}/examples . | ${TAR} -xf - -C ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -cf - -C ${WRKDIR}/${PORTNAME} . | ${TAR} -xf - -C ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

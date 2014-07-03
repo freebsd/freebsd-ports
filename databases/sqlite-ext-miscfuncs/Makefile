@@ -35,6 +35,8 @@ PORTDOCS=	README
 
 CFLAGS+=	-I${PREFIX}/include -fPIC -lm -shared
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${SRCFILE} -o ${LIBFILE}
 
@@ -43,9 +45,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE} ${STAGEDIR}${INST_DIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	@${CP} ${WRKDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
