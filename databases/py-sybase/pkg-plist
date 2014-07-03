@@ -50,26 +50,26 @@
 %%PORTDOCS%%%%DOCSDIR%%/icons/previous.png
 %%PORTDOCS%%%%DOCSDIR%%/icons/up.gif
 %%PORTDOCS%%%%DOCSDIR%%/icons/up.png
-%%PORTDOCS%%share/examples/sybase/README
-%%PORTDOCS%%share/examples/sybase/array_bind.py
-%%PORTDOCS%%share/examples/sybase/array_bind.sql
-%%PORTDOCS%%share/examples/sybase/bulkcopy.py
-%%PORTDOCS%%share/examples/sybase/bulkcopy.sql
-%%PORTDOCS%%share/examples/sybase/cursor_sel.py
-%%PORTDOCS%%share/examples/sybase/cursor_upd.py
-%%PORTDOCS%%share/examples/sybase/cursor_upd.sql
-%%PORTDOCS%%share/examples/sybase/diag_example.py
-%%PORTDOCS%%share/examples/sybase/dynamic_cur.py
-%%PORTDOCS%%share/examples/sybase/dynamic_ins.py
-%%PORTDOCS%%share/examples/sybase/dynamic_ins.sql
-%%PORTDOCS%%share/examples/sybase/example.py
-%%PORTDOCS%%share/examples/sybase/mult_text.py
-%%PORTDOCS%%share/examples/sybase/mult_text.sql
-%%PORTDOCS%%share/examples/sybase/params.py
-%%PORTDOCS%%share/examples/sybase/rpc.py
-%%PORTDOCS%%share/examples/sybase/rpc.sql
-%%PORTDOCS%%share/examples/sybase/timeout.py
-%%PORTDOCS%%share/examples/sybase/timeout.readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/array_bind.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/array_bind.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bulkcopy.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bulkcopy.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cursor_sel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cursor_upd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cursor_upd.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diag_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_cur.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_ins.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_ins.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mult_text.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mult_text.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/params.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpc.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpc.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout.readme
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm share/examples/sybase
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

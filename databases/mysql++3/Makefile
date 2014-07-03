@@ -23,16 +23,14 @@ CONFLICTS=	${PORTNAME}*-1.*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-.ifndef(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} pdf ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-.endif
-.ifndef(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.h ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cpp ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

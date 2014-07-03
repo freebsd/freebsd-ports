@@ -10,8 +10,10 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/2575/ \
 MAINTAINER=	pea@raveland.org
 COMMENT=	PostgreSQL log analyzer
 
-NO_BUILD =	Yes
+NO_BUILD=	Yes
 USE_PHP=	gd pcre
+
+OPTIONS_DEFINE=	DOCS
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/bin/php,${LOCALBASE}/bin/php,g;' \
@@ -25,12 +27,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/include
 	${INSTALL_DATA} ${WRKSRC}/version.php ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/include && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/include/
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS	${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog 	${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/THANKS 	${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/rpm-specific/sources/pgfouine-tutorial.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
