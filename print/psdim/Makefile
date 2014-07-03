@@ -8,14 +8,15 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/psdim/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utility that calculates the optimal placement of the pages for n-up printing
+COMMENT=	Calculates the optimal placement of the pages for n-up printing
+
+LICENSE=	GPLv2
 
 USE_GHOSTSCRIPT=yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-MAN1=		psdim.1
+PLIST_FILES=	bin/psdim man/man1/psdim.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
