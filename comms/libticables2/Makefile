@@ -2,7 +2,7 @@
 
 PORTNAME=	libticables2
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.17
 
@@ -11,10 +11,9 @@ COMMENT=	TI calculator link cables library
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
