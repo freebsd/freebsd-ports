@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cmanley@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write property files
 
 USES=		perl5
