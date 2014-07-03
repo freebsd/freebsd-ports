@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -23,6 +22,7 @@ USE_PHP=	json session
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
+USES=		tar:tgz
 CONFIGURE_ARGS+=--with-libmemcached-dir=${LOCALBASE} \
 		--disable-memcached-sasl
 
