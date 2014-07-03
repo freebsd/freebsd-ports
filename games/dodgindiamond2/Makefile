@@ -15,9 +15,13 @@ USE_SDL=		sdl image mixer
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--localstatedir=/var/games
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|COPYING||g' ${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} '/install-data-am:/s/install-docsDATA//' \
 		${WRKSRC}/Makefile.in
 .endif
