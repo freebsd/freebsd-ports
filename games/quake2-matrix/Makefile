@@ -18,23 +18,20 @@ ALL_TARGET=	release
 
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
-NO_STAGE=	yes
-.include "${.CURDIR}/../quake2-data/Makefile.include"
+OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../quake2-data/Makefile.include"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' \
 		${BUILD_WRKSRC}/q_shared.[ch]
 
 do-install:
-	${MKDIR} ${Q2DIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${Q2DIR}/${PORTNAME}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/matrix/game.so \
-		${Q2DIR}/${PORTNAME}
-	cd ${WRKSRC} && ${INSTALL_DATA} *.cfg *.ini *.pak ${Q2DIR}/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
+		${STAGEDIR}${Q2DIR}/${PORTNAME}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.cfg *.ini *.pak ${STAGEDIR}${Q2DIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
