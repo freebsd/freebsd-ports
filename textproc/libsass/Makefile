@@ -3,7 +3,7 @@
 
 PORTNAME=	libsass
 PORTVERSION=	1.0.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -21,9 +21,9 @@ INSTALL_TARGET=	install-strip
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 
+USES=		libtool pathfix
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix
 
 .include <bsd.port.mk>
