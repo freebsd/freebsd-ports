@@ -3,7 +3,7 @@
 
 PORTNAME=	tiemu3
 PORTVERSION=	3.03
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gtktiemu/tiemu-linux/TIEmu%20${DISTVERSION}
 DISTNAME=	tiemu-${DISTVERSION}
@@ -16,8 +16,8 @@ LIB_DEPENDS=	libticalcs2.so:${PORTSDIR}/comms/libticalcs2 \
 		libticables2.so:${PORTSDIR}/comms/libticables2 \
 		libtifiles2.so:${PORTSDIR}/devel/libtifiles2
 
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pkgconfig
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_SDL=	sdl
 
