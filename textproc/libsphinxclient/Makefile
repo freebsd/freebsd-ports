@@ -3,6 +3,7 @@
 
 PORTNAME=	libsphinxclient
 DISTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}-release
@@ -10,25 +11,17 @@ DISTNAME=	sphinx-${PORTVERSION}-release
 MAINTAINER=	mephius@gmail.com
 COMMENT=	Sphinx Full-Text Search Engine C++ client library
 
-LICENSE=	GPLv2
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC_SUBDIR=	api/libsphinxclient
 
+USES=		libtool
 USE_LDCONFIG=	yes
-
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CC=${CC}
-SUB_LIST+=	PORTNAME=${PORTNAME}
-
-do-install:
-	${INSTALL_LIB} ${WRKSRC}/.libs/libsphinxclient-0.0.1.so ${STAGEDIR}${PREFIX}/lib/libsphinxclient-0.0.1.so
-	${INSTALL_DATA} ${WRKSRC}/libsphinxclient.la ${STAGEDIR}${PREFIX}/lib/libsphinxclient.la
-	${INSTALL_DATA} ${WRKSRC}/.libs/libsphinxclient.a ${STAGEDIR}${PREFIX}/lib/libsphinxclient.a
-	${INSTALL_DATA} ${WRKSRC}/sphinxclient.h ${STAGEDIR}${PREFIX}/include/sphinxclient.h
-	${LN} -s libsphinxclient-0.0.1.so ${STAGEDIR}${PREFIX}/lib/libsphinxclient.so.0
-	${LN} -s libsphinxclient-0.0.1.so ${STAGEDIR}${PREFIX}/lib/libsphinxclient.so
+post-install:
+	${LN} -s libsphinxclient-0.0.1.so ${STAGEDIR}${PREFIX}/lib/libsphinxclient-0.0.1.so.0
 
 .include <bsd.port.mk>
