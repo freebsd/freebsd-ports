@@ -23,9 +23,9 @@ include/lt_inttypes.h
 include/rt_protocol.h
 include/wandio.h
 lib/libpacketdump.a
-lib/libpacketdump.la
 lib/libpacketdump.so
 lib/libpacketdump.so.3
+lib/libpacketdump.so.3.0.19
 lib/libpacketdump/eth_0.so
 lib/libpacketdump/eth_2048.so
 lib/libpacketdump/eth_2054.so
@@ -70,13 +70,13 @@ lib/libpacketdump/ospf2_4.so
 lib/libpacketdump/ospf2_5.so
 lib/libpacketdump/ppp_33.so
 lib/libtrace.a
-lib/libtrace.la
 lib/libtrace.so
 lib/libtrace.so.3
+lib/libtrace.so.3.0.19
 lib/libwandio.a
-lib/libwandio.la
 lib/libwandio.so
 lib/libwandio.so.1
+lib/libwandio.so.1.0.0
 man/man1/traceanon.1.gz
 man/man1/traceconvert.1.gz
 man/man1/tracediff.1.gz
