@@ -35,14 +35,12 @@ CONFIGURE_ARGS=	--disable-dbus
 DOCS=		AUTHORS ChangeLog NEWS README TODO
 MAN1=		gnote.1
 
-.if !defined(WITHOUT_APPLET)
-LIB_DEPENDS+=	libpanelappletmm-2.6.so:${PORTSDIR}/x11-toolkits/libpanelappletmm
-CONFIGURE_ARGS+=--enable-applet
-PLIST_SUB+=	APPLET=""
-.else
-CONFIGURE_ARGS+=--disable-applet
-PLIST_SUB+=	APPLET="@comment "
-.endif
+OPTIONS_DEFINE=	DOCS APPLET
+OPTIONS_DEFAULT=APPLET
+OPTIONS_SUB=	yes
+
+APPLET_LIB_DEPENDS=	libpanelappletmm-2.6.so:${PORTSDIR}/x11-toolkits/libpanelappletmm
+APPLET_CONFIGURE_ENABLE=applet
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
@@ -50,12 +48,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include/boost|${LOCALBASE}/include/boost|g' \
 		${WRKSRC}/configure
 
-.ifndef (NOPORTDOCS)
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

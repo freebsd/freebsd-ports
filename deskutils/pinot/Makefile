@@ -54,18 +54,13 @@ USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_LANG=	bash
 SHEBANG_FILES=	scripts/bash/*.sh
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug=yes
-.endif
+OPTIONS_DEFINE=	DEBUG CHMLIB DOCS
+OPTIONS_SUB=	yes
 
-.if defined(WITH_CHMLIB)
-CONFIGURE_ARGS+=	--enable-chmlib=yes
-LIB_DEPENDS+=	libchm.so:${PORTSDIR}/misc/chmlib
-PLIST_SUB+=	CHMLIB=""
-.else
-CONFIGURE_ARGS+=	--disable-chmlib
-PLIST_SUB+=	CHMLIB="@comment "
-.endif
+DEBUG_CONFIGURE_ENABLE=	debug-yes
+
+CHMLIB_CONFIGURE_ENABLE=	chmlib=yes
+CHMLIB_LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
 
 INSTALLS_ICONS=	yes
 
@@ -99,9 +94,7 @@ pre-configure:
 
 post-install:
 	${TOUCH} ${STAGEDIR}${DATADIR}/stopwords/.empty_file
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
