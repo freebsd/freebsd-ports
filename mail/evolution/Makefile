@@ -110,7 +110,7 @@ post-patch:
 		-e 's|-Wl,--no-undefined||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
-	@${REINPLACE_CMD} '/^evolution_alarm_notify_LDADD =/s/=/= -lgthread-2.0/' \
+#	@${REINPLACE_CMD} '/^evolution_alarm_notify_LDADD =/s/=/= -lgthread-2.0/' \
 		${WRKSRC}/calendar/gui/alarm-notify/Makefile.in
 	@${REINPLACE_CMD} '/^evolution_settings_LDADD =/s/=/= -lgthread-2.0/' \
 		${WRKSRC}/capplet/Makefile.in
