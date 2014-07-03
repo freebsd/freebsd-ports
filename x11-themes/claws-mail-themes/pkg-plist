@@ -3607,6 +3607,7 @@ share/claws-mail/themes/elementary/anonymous.png
 share/claws-mail/themes/elementary/book.png
 share/claws-mail/themes/elementary/category.png
 share/claws-mail/themes/elementary/check_spelling.png
+share/claws-mail/themes/elementary/claws_mail_compose_logo.png
 share/claws-mail/themes/elementary/claws_mail_icon.png
 share/claws-mail/themes/elementary/clip.png
 share/claws-mail/themes/elementary/clip_gpg_signed.png
@@ -3639,6 +3640,7 @@ share/claws-mail/themes/elementary/edit_extern.png
 share/claws-mail/themes/elementary/error.png
 share/claws-mail/themes/elementary/exec.png
 share/claws-mail/themes/elementary/forwarded.png
+share/claws-mail/themes/elementary/forwared_replied.png
 share/claws-mail/themes/elementary/go_folders.png
 share/claws-mail/themes/elementary/gpg_signed.png
 share/claws-mail/themes/elementary/group.png
