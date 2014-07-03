@@ -1,18 +1,17 @@
-@unexec if cmp -s %D/etc/login_duo.conf.sample %D/etc/login_duo.conf; then rm -f %D/etc/login_duo.conf; fi
-etc/login_duo.conf.sample
-@exec if [ ! -f %D/etc/login_duo.conf ] ; then cp -p %D/%F %B/login_duo.conf; fi
-@unexec if cmp -s %D/etc/pam_duo.conf.sample %D/etc/pam_duo.conf; then rm -f %D/etc/pam_duo.conf; fi
-etc/pam_duo.conf.sample
-@exec if [ ! -f %D/etc/pam_duo.conf ] ; then cp -p %D/%F %B/pam_duo.conf; fi
+@mode 600
+@owner sshd
+@sample etc/login_duo.conf.sample
+@owner
+@sample etc/pam_duo.conf.sample
+@mode
 include/duo/duo.h
 include/duo/util.h
+lib/libduo.so.3.0.0
 lib/libduo.so.3
 lib/libduo.so
-lib/libduo.la
 lib/libduo.a
 libdata/pkgconfig/libduo.pc
 lib/security/pam_duo.so
-lib/security/pam_duo.la
 man/man3/duo.3.gz
 man/man8/login_duo.8.gz
 man/man8/pam_duo.8.gz
