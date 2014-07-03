@@ -39,4 +39,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/CREDITS ${STAGEDIR}${PREFIX}/share/doc/sol
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/sol
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
