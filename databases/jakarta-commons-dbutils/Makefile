@@ -42,6 +42,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/dist/LICENSE.txt \
 		${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
-.endif
 
 .include <bsd.port.mk>
