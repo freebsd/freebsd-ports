@@ -163,7 +163,6 @@
     SUBDIR += quazip
     SUBDIR += rar
     SUBDIR += rox-archive
-    SUBDIR += rpm
     SUBDIR += rpm2cpio
     SUBDIR += rpm4
     SUBDIR += rpm5
