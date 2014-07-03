@@ -3,7 +3,7 @@
 
 PORTNAME=	adgali
 PORTVERSION=	0.2.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games devel
 MASTER_SITES=	http://adgali.apiou.org/download/
 
@@ -20,9 +20,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
+USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 USE_XORG=	xpm

@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	pavelivolkov@googlemail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf

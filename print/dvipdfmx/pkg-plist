@@ -1,6 +1,7 @@
 bin/dvipdfmx
 bin/ebb-dvipdfmx
 bin/extractbb
+man/man1/extractbb.1.gz
 %%DVIPDFMXDIR%%/dvipdfmx.cfg
 @dirrm %%DVIPDFMXDIR%%
 %%FONTMAPDIR%%/cid-x.map

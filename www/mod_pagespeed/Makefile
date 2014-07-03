@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	swills
 DISTNAME=	mod_pagespeed_source_${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module that automatically optimizes web pages
 
 BROKEN=		Does not link

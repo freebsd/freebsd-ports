@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	pat
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	q3freeze${PORTVERSION:S/.//}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Freeze Tag
 
 WRKSRC=		${WRKDIR}/freeze

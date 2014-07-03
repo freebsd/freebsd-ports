@@ -3,19 +3,18 @@
 
 PORTNAME=	bacula
 PKGNAMESUFFIX=	-bat
-PORTREVISION=	4
+PORTREVISION=	5
 
 COMMENT=	Network backup solution (GUI)
 
-LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		bac:${PORTSDIR}/sysutils/bacula-client
+LIB_DEPENDS+=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
+		libbac.so:${PORTSDIR}/sysutils/bacula-client
 
 USES=		pkgconfig
 USE_QT4=	qmake_build uic_build moc_build rcc_build
 WITH_BAT=	yes
 
-MAN1=		bat.1
-
+PLIST=		${.CURDIR}/pkg-plist
 MAKE_ENV+=	MAKEOBJDIRPREFIX=/
 
 MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
@@ -29,5 +28,4 @@ CONFIGURE_ARGS+=	--enable-bat \
 OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

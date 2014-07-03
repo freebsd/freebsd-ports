@@ -57,9 +57,9 @@ lib/libMousCore.so
 %%FAAD%%lib/mous/libFaadDecoder.so
 %%FLAC%%lib/mous/libFlacDecoder.so
 %%LAME%%lib/mous/libLameEncoder.so
-%%MAC4%%lib/mous/libMac4Decoder.so
-%%MAC%%lib/mous/libMacDecoder.so
-%%OGG%%lib/mous/libOggDecoder.so
+%%MAC4DECODER%%lib/mous/libMac4Decoder.so
+%%MACDECODER%%lib/mous/libMacDecoder.so
+%%VORBIS%%lib/mous/libOggDecoder.so
 %%MPG123%%lib/mous/libMpg123Decoder.so
 %%OSS%%lib/mous/libOssRenderer.so
 %%TAGLIB%%lib/mous/libTagLibParser.so

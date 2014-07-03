@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	astro java devel graphics geography
 MASTER_SITES=	http://openmap.bbn.com/src/
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java toolkit for manipulating and displaying geographic data
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper

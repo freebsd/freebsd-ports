@@ -8,7 +8,7 @@ MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web application server using dRuby and ERB2
 
 BROKEN=		not staged

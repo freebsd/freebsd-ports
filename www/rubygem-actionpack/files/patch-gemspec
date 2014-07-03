@@ -1,7 +1,7 @@
---- actionpack-3.2.17.gemspec.orig	2014-02-19 02:23:41.415999759 +0000
-+++ actionpack-3.2.17.gemspec	2014-02-19 02:24:09.604998016 +0000
-@@ -134,7 +134,7 @@
-   version_requirements: &id008 !ruby/object:Gem::Requirement 
+--- actionpack-3.2.19.gemspec.orig	2014-07-02 19:24:30.502461548 +0000
++++ actionpack-3.2.19.gemspec	2014-07-02 19:24:31.347461949 +0000
+@@ -133,7 +133,7 @@
+   requirement: &id008 !ruby/object:Gem::Requirement 
      none: false
      requirements: 
 -    - - ~>

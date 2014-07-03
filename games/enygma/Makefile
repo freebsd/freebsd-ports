@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/enigma/
 DISTNAME=	enigma-${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gennerate@zonnet.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based puzzle game
 
 GNU_CONFIGURE=	yes

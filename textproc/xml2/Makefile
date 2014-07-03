@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://download.ofb.net/gale/ \
 		http://www.it.ca/~paul/src/
 
-MAINTAINER=	paul+ports@it.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert between XML and a line-oriented format similar to XPath
 
 LICENSE=	GPLv2

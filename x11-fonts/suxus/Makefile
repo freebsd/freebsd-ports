@@ -9,7 +9,7 @@ MASTER_SITES=	http://oldhome.schmorp.de/marc/data/ \
 DISTFILES=	${PORTNAME}-iso-8859-1.bdf.gz fonts.alias
 DIST_SUBDIR=	suxus
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An x11 font designed to be small yet easily read
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \

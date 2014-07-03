@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yappi
-PORTVERSION=	0.82
+PORTVERSION=	0.92
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,12 +19,8 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-post-patch:
-	${RM} ${WRKSRC}/ez_setup.py
-	${RM} ${WRKSRC}/distribute_setup.py
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

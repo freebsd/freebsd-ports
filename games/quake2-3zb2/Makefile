@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:prog \
 		${PORTNAME}src${PORTVERSION:S/0.//}${EXTRACT_SUFX}:prog
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3rd Zigock II bots for Quake II
 
 USES=		dos2unix zip

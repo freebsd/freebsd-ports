@@ -1,4 +1,5 @@
 bin/mkapachepw.py
+man/man1/mkapachepw.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
 %%PORTDOCS%%%%DOCSDIR%%/mkapachepw-license.txt
 %%PORTDOCS%%%%DOCSDIR%%/mkapachepw.html

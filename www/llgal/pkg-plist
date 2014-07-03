@@ -4,6 +4,8 @@ bin/llgal
 %%SITE_PERL%%/Llgal/Templates.pm
 %%SITE_PERL%%/Llgal/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Llgal/.packlist
+man/man1/llgal.1.gz
+man/man5/llgalrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/dynamic_comments_in_slides/README
 %%PORTDOCS%%%%DOCSDIR%%/examples/dynamic_comments_in_slides/add_comment.php
 %%PORTDOCS%%%%DOCSDIR%%/examples/dynamic_comments_in_slides/slidetemplate.html

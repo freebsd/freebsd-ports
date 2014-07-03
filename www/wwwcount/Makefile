@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.muquit.com/muquit/software/Count/src/wwwcount2.5/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	michael@ranner.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access counter, clock and date for WWW pages
 
 DEPRECATED=	Ancient interactive port

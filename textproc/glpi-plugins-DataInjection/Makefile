@@ -9,7 +9,7 @@ MASTER_SITES=	https://forge.indepnet.net/attachments/download/497/ \
 PKGNAMEPREFIX=	glpi-plugins-
 DISTNAME=	glpi-datainjection-1.7.2
 
-MAINTAINER=	d.durieux@siprossii.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This glpi plugin allows data import into GLPI using CSV files
 
 RUN_DEPENDS=	glpi>=0.72:${PORTSDIR}/www/glpi

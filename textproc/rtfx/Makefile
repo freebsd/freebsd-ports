@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://memberwebs.com/stef/software/rtfx/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RTF to XML converter
 
 LIB_DEPENDS=	mba:${PORTSDIR}/devel/libmba \

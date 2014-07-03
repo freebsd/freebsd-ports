@@ -9,7 +9,7 @@ DISTVERSIONSUFFIX=_Rel
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.gro.clinux.org/skyeye/
 
-MAINTAINER=	iamayan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Environment simulates typical ARM-base embedded computer systems
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \

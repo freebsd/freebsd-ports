@@ -3,7 +3,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libgavl.so:${PORTSDIR}/multimedia/gavl \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gettext makeinfo pathfix pkgconfig
+USES=		gettext libtool makeinfo pathfix pkgconfig
 USE_GNOME=	gtk20 libxml2
 USE_XORG=	x11 xext xfixes xinerama xv
 USE_GL=		gl
@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 INSTALL_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs gtk+-x11-2.0`
 
 INFO=		gmerlin
 

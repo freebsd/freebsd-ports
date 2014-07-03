@@ -7,7 +7,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcecodepro.adobe
 DISTNAME=	SourceCodePro_FontsOnly-${PORTVERSION}
 
-MAINTAINER=	masaki@club.kyutech.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of fonts by Adobe designed for coders
 
 LICENSE=	OFL11

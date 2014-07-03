@@ -8,8 +8,11 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
 DISTNAME=	dvips576
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert a TeX DVI file to PostScript
+
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
 
 CONFLICTS=	*teTeX*
 

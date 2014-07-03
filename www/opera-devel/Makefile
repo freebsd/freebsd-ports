@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${OPERA_NEXT}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser (Next version)
 IGNORE=		Development version is not currently active. Use www/opera instead of
 

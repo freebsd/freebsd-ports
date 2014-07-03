@@ -8,7 +8,7 @@ MASTER_SITES=	http://osp.jsmart.web.id/orangesmoothie/downloads/
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	osp-Quake3-${PORTVERSION}_full
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: OSP Tourney DM/CA/CTF
 
 USES=		zip

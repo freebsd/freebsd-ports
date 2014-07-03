@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.berlios.de/winefish/ \
 		http://nivi.interfree.it/distfiles/winefish/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX editor based on BlueFish
 
 LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell \

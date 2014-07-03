@@ -3,7 +3,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 DIST_SUBDIR=	apsfilter
@@ -88,7 +88,7 @@ _DEPENDS_COMPRESS= \
 		cabextract:${PORTSDIR}/archivers/cabextract \
 		lha:${PORTSDIR}/archivers/lha \
 		rar:${PORTSDIR}/archivers/rar \
-		rpm:${PORTSDIR}/archivers/rpm \
+		rpm:${PORTSDIR}/archivers/rpm4 \
 		unarj:${PORTSDIR}/archivers/unarj \
 		unzip:${PORTSDIR}/archivers/unzip \
 		zoo:${PORTSDIR}/archivers/zoo

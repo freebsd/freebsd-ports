@@ -12,10 +12,8 @@ MAINTAINER=	user@unknown.nu
 COMMENT=	An extremely small web server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN8=		micro_httpd.8
-PLIST_FILES=	sbin/micro_httpd
+PLIST_FILES=	sbin/micro_httpd man/man8/micro_httpd.8.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s:/usr/local/sbin:${PREFIX}/sbin:g; \
 		s:/usr/local/man/man8:${MAN8PREFIX}/man/man8:g; \

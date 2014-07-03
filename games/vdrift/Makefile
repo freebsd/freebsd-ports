@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DATE_VERSION}
 DISTNAME=	${PORTNAME}-${DATE_VERSION}-src
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source driving simulation
 
 BROKEN=		Fails to build

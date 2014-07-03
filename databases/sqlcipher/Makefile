@@ -2,6 +2,7 @@
 
 PORTNAME=	sqlcipher
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	jsa@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-USES=		pathfix tcl:85,build
+USES=		libtool pathfix tcl:85,build
 
 GH_ACCOUNT=	sqlcipher
 GH_TAGNAME=	v${PORTVERSION}

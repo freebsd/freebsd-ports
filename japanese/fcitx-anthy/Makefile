@@ -7,7 +7,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anthy support for Fcitx
 
 LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \

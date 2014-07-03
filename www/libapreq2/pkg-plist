@@ -9,9 +9,9 @@ include/apreq2/apreq_parser.h
 include/apreq2/apreq_util.h
 include/apreq2/apreq_version.h
 lib/libapreq2.a
-lib/libapreq2.la
 lib/libapreq2.so
-lib/libapreq2.so.%%SHLIB_MAJOR%%
+lib/libapreq2.so.3
+lib/libapreq2.so.3.8.0
 %%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request.3.gz
 %%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::Apache2.3.gz
 %%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::CGI.3.gz
@@ -51,7 +51,6 @@ lib/libapreq2.so.%%SHLIB_MAJOR%%
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.so
 %%APACHEMODDIR%%/mod_apreq2.a
-%%APACHEMODDIR%%/mod_apreq2.la
 %%APACHEMODDIR%%/mod_apreq2.so
 %%WITH_MODPERL2%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2
 %%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser

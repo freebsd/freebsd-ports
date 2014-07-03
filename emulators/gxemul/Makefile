@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://gxemul.sourceforge.net/src/ \
 		http://gavare.se/gxemul/src/
 
-MAINTAINER=	imp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instruction-level machine emulator
 
 OPTIONS_DEFINE=	X11 DOCS

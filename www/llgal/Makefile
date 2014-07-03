@@ -23,13 +23,10 @@ RUN_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 		p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
-USES=		gettext perl5 gmake tar:bzip2
-
-MAN1=		llgal.1
-MAN5=		llgalrc.5
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USES=		gettext perl5 gmake tar:bzip2 shebangfix
+SHEBANG_FILES=	llgal.in
+USE_PERL5=	run fixpacklist
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX," ${WRKSRC}/Makefile
@@ -40,13 +37,12 @@ post-configure:
 	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install//' ${WRKSRC}/lib/Makefile
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/llgal.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/llgalrc.5 ${MAN5PREFIX}/man/man5
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/llgalrc ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} examples ${DOCSDIR})
-.endif
+	${INSTALL_DATA} ${WRKSRC}/llgal.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/llgalrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 
-.include <bsd.port.post.mk>
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/llgalrc ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} examples ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>

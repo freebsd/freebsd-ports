@@ -12,7 +12,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	hrs
 PATCHFILES=	psgml-symbol-conflict-050503.diff.gz
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Major mode for editing SGML and XML documents for Emacs
 
 SUB_FILES=	${PSGML_STARTUPEL}

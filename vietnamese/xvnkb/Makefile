@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	vietnamese
 MASTER_SITES=	SF
 
-MAINTAINER=	chinhngt@sectorb.msk.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Vietnamese input method for X-Window
 
 USE_GNOME=	gtk20

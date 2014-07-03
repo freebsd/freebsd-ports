@@ -22,23 +22,12 @@
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %D/etc/courier/webadmin/added
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %D/etc/courier/webadmin/removed
 @unexec rm -f %D/etc/courier/*.dat 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/courierd %D/etc/courier/courierd.dist && rm -f %D/etc/courier/courierd 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/esmtpd-msa %D/etc/courier/esmtpd-msa.dist && rm -f %D/etc/courier/esmtpd-msa 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/esmtpd-ssl %D/etc/courier/esmtpd-ssl.dist && rm -f %D/etc/courier/esmtpd-ssl 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/esmtpd %D/etc/courier/esmtpd.dist && rm -f %D/etc/courier/esmtpd 2>/dev/null || true
-%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxcoverpage.tr %D/etc/courier/faxcoverpage.tr.dist && rm -f %D/etc/courier/faxcoverpage.tr 2>/dev/null || true
-%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxnotifyrc %D/etc/courier/faxnotifyrc.dist && rm -f %D/etc/courier/faxnotifyrc 2>/dev/null || true
-%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxrc %D/etc/courier/faxrc.dist && rm -f %D/etc/courier/faxrc 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/imapd-ssl %D/etc/courier/imapd-ssl.dist && rm -f %D/etc/courier/imapd-ssl 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/imapd %D/etc/courier/imapd.dist && rm -f %D/etc/courier/imapd 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/ldapaddressbook %D/etc/courier/ldapaddressbook.dist && rm -f %D/etc/courier/ldapaddressbook 2>/dev/null || true
-%%WITHLDAP%%@unexec cmp -s %D/etc/courier/ldapaliasrc %D/etc/courier/ldapaliasrc.dist && rm -f %D/etc/courier/ldapaliasrc 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/pop3d-ssl %D/etc/courier/pop3d-ssl.dist && rm -f %D/etc/courier/pop3d-ssl 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/pop3d %D/etc/courier/pop3d.dist && rm -f %D/etc/courier/pop3d 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/sqwebmaild %D/etc/courier/sqwebmaild.dist && rm -f %D/etc/courier/sqwebmaild 2>/dev/null || true
-@unexec cmp -s %D/etc/courier/webmlmrc %D/etc/courier/webmlmrc.dist && rm -f %D/etc/courier/webmlmrc 2>/dev/null || true
 bin/addcr
+@owner %%MAILOWN%%
+@group %%MAILGRP%%
 bin/cancelmsg
+@owner
+@group
 bin/courier-config
 bin/couriermlm
 bin/couriertls
@@ -63,7 +52,13 @@ bin/sendmail
 bin/testmxlookup
 bin/webmlmd
 bin/webmlmd.rc
+etc/courier/aliases/system
+%%WITHSYSTEMALIASES%%@exec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
+%%WITHEMPTYALIASES%%@exec true > %D/etc/courier/aliases/system
+@unexec cmp -s %D/etc/courier/courierd %D/etc/courier/courierd.dist && rm -f %D/etc/courier/courierd 2>/dev/null || true
 etc/courier/courierd.dist
+@exec [ -f %D/etc/courier/courierd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/courierd.dist
+@comment etc/courier/courierd
 etc/courier/crontab
 etc/courier/dsndelayed.txt
 etc/courier/dsndelivered.txt
@@ -76,19 +71,49 @@ etc/courier/dsnsubjectwarn.txt
 etc/courier/enablefiltering
 etc/courier/esmtp.authpam
 etc/courier/esmtpauthclient
+@unexec cmp -s %D/etc/courier/esmtpd-msa %D/etc/courier/esmtpd-msa.dist && rm -f %D/etc/courier/esmtpd-msa 2>/dev/null || true
 etc/courier/esmtpd-msa.dist
+@exec [ -f %D/etc/courier/esmtpd-msa.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-msa.dist
+@comment etc/courier/esmtpd-msa
+@unexec cmp -s %D/etc/courier/esmtpd-ssl %D/etc/courier/esmtpd-ssl.dist && rm -f %D/etc/courier/esmtpd-ssl 2>/dev/null || true
 etc/courier/esmtpd-ssl.dist
+@exec [ -f %D/etc/courier/esmtpd-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-ssl.dist
+@comment etc/courier/esmtpd-ssl
 etc/courier/esmtpd.cnf
+@unexec cmp -s %D/etc/courier/esmtpd %D/etc/courier/esmtpd.dist && rm -f %D/etc/courier/esmtpd 2>/dev/null || true
 etc/courier/esmtpd.dist
+@exec [ -f %D/etc/courier/esmtpd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd.dist
+@comment etc/courier/esmtpd
+%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxcoverpage.tr %D/etc/courier/faxcoverpage.tr.dist && rm -f %D/etc/courier/faxcoverpage.tr 2>/dev/null || true
 %%WITHFAX%%etc/courier/faxcoverpage.tr.dist
+%%WITHFAX%%@exec [ -f %D/etc/courier/faxcoverpage.tr.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxcoverpage.tr.dist
+%%WITHFAX%%@comment etc/courier/faxcoverpage.tr
+%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxnotifyrc %D/etc/courier/faxnotifyrc.dist && rm -f %D/etc/courier/faxnotifyrc 2>/dev/null || true
 %%WITHFAX%%etc/courier/faxnotifyrc.dist
+%%WITHFAX%%@exec [ -f %D/etc/courier/faxnotifyrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxnotifyrc.dist
+%%WITHFAX%%@comment etc/courier/faxnotifyrc
+%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxrc %D/etc/courier/faxrc.dist && rm -f %D/etc/courier/faxrc 2>/dev/null || true
 %%WITHFAX%%etc/courier/faxrc.dist
+%%WITHFAX%%@exec [ -f %D/etc/courier/faxrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxrc.dist
+%%WITHFAX%%@comment etc/courier/faxrc
+@unexec cmp -s %D/etc/courier/imapd-ssl %D/etc/courier/imapd-ssl.dist && rm -f %D/etc/courier/imapd-ssl 2>/dev/null || true
 etc/courier/imapd-ssl.dist
+@exec [ -f %D/etc/courier/imapd-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/imapd-ssl.dist
+@comment etc/courier/imapd-ssl
 etc/courier/imapd.authpam
 etc/courier/imapd.cnf
+@unexec cmp -s %D/etc/courier/imapd %D/etc/courier/imapd.dist && rm -f %D/etc/courier/imapd 2>/dev/null || true
 etc/courier/imapd.dist
+@exec [ -f %D/etc/courier/imapd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/imapd.dist
+@comment etc/courier/imapd
+@unexec cmp -s %D/etc/courier/ldapaddressbook %D/etc/courier/ldapaddressbook.dist && rm -f %D/etc/courier/ldapaddressbook 2>/dev/null || true
 etc/courier/ldapaddressbook.dist
+@exec [ -f %D/etc/courier/ldapaddressbook.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/ldapaddressbook.dist
+@comment etc/courier/ldapaddressbook
+%%WITHLDAP%%@unexec cmp -s %D/etc/courier/ldapaliasrc %D/etc/courier/ldapaliasrc.dist && rm -f %D/etc/courier/ldapaliasrc 2>/dev/null || true
 %%WITHLDAP%%etc/courier/ldapaliasrc.dist
+%%WITHLDAP%%@exec [ -f %D/etc/courier/ldapaliasrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/ldapaliasrc.dist
+%%WITHLDAP%%@comment etc/courier/ldapaliasrc
 etc/courier/locallowercase
 etc/courier/maildrop
 etc/courier/maildropfilter
@@ -97,37 +122,31 @@ etc/courier/module.esmtp
 %%WITHFAX%%etc/courier/module.fax
 etc/courier/module.local
 %%WITHUUCP%%etc/courier/module.uucp
+@unexec cmp -s %D/etc/courier/pop3d-ssl %D/etc/courier/pop3d-ssl.dist && rm -f %D/etc/courier/pop3d-ssl 2>/dev/null || true
 etc/courier/pop3d-ssl.dist
+@exec [ -f %D/etc/courier/pop3d-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d-ssl.dist
+@comment etc/courier/pop3d-ssl
 etc/courier/pop3d.authpam
 etc/courier/pop3d.cnf
+@unexec cmp -s %D/etc/courier/pop3d %D/etc/courier/pop3d.dist && rm -f %D/etc/courier/pop3d 2>/dev/null || true
 etc/courier/pop3d.dist
+@exec [ -f %D/etc/courier/pop3d.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d.dist
+@comment etc/courier/pop3d
 etc/courier/quotawarnmsg.example
 etc/courier/rfcerr2045.txt
 etc/courier/rfcerr2046.txt
 etc/courier/rfcerr2047.txt
 etc/courier/rfcerrheader.txt
 etc/courier/smtpaccess/default
+@unexec cmp -s %D/etc/courier/sqwebmaild %D/etc/courier/sqwebmaild.dist && rm -f %D/etc/courier/sqwebmaild 2>/dev/null || true
 etc/courier/sqwebmaild.dist
-etc/courier/webmail.authpam
-etc/courier/webmlmrc.dist
-%%WITHSYSTEMALIASES%%@exec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
-%%WITHEMPTYALIASES%%@exec true > %D/etc/courier/aliases/system
-@unexec rm -f %D/etc/courier/aliases/system
-@exec [ -f %D/etc/courier/courierd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/courierd.dist
-@exec [ -f %D/etc/courier/esmtpd-msa.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-msa.dist
-@exec [ -f %D/etc/courier/esmtpd-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-ssl.dist
-@exec [ -f %D/etc/courier/esmtpd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd.dist
-%%WITHFAX%%@exec [ -f %D/etc/courier/faxcoverpage.tr.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxcoverpage.tr.dist
-%%WITHFAX%%@exec [ -f %D/etc/courier/faxnotifyrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxnotifyrc.dist
-%%WITHFAX%%@exec [ -f %D/etc/courier/faxrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxrc.dist
-@exec [ -f %D/etc/courier/imapd-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/imapd-ssl.dist
-@exec [ -f %D/etc/courier/imapd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/imapd.dist
-@exec [ -f %D/etc/courier/ldapaddressbook.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/ldapaddressbook.dist
-%%WITHLDAP%%@exec [ -f %D/etc/courier/ldapaliasrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/ldapaliasrc.dist
-@exec [ -f %D/etc/courier/pop3d-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d-ssl.dist
-@exec [ -f %D/etc/courier/pop3d.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d.dist
 @exec [ -f %D/etc/courier/sqwebmaild.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/sqwebmaild.dist
+@comment etc/courier/sqwebmaild
+etc/courier/webmail.authpam
+@unexec cmp -s %D/etc/courier/webmlmrc %D/etc/courier/webmlmrc.dist && rm -f %D/etc/courier/webmlmrc 2>/dev/null || true
+etc/courier/webmlmrc.dist
 @exec [ -f %D/etc/courier/webmlmrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/webmlmrc.dist
+@comment etc/courier/webmlmrc
 @dirrmtry etc/courier/aliasdir
 @dirrmtry etc/courier/aliases
 @dirrmtry etc/courier/esmtpacceptmailfor.dir
@@ -149,14 +168,24 @@ libexec/courier/courierpop3d
 libexec/courier/courierpop3login
 libexec/courier/imaplogin
 libexec/courier/makedatprog
+@owner %%MAILOWN%%
+@group %%MAILGRP%%
 libexec/courier/modules/dsn/courierdsn
+@dirrm libexec/courier/modules/dsn
 libexec/courier/modules/esmtp/addcr
 libexec/courier/modules/esmtp/courieresmtp
 libexec/courier/modules/esmtp/courieresmtpd
+@dirrm libexec/courier/modules/esmtp
 %%WITHFAX%%libexec/courier/modules/fax/courierfax
+%%WITHFAX%%@dirrm libexec/courier/modules/fax
 libexec/courier/modules/local/courierdeliver
 libexec/courier/modules/local/courierlocal
+@dirrm libexec/courier/modules/local
 %%WITHUUCP%%libexec/courier/modules/uucp/courieruucp
+%%WITHUUCP%%@dirrm libexec/courier/modules/uucp
+@dirrm libexec/courier/modules
+@owner
+@group
 libexec/courier/pcpd
 libexec/courier/sqwebmaild
 libexec/courier/sqwebpasswd
@@ -165,17 +194,66 @@ libexec/courier/submitmkdir
 libexec/courier/webmail/webadmin
 libexec/courier/webmail/webmail
 libexec/courier/webmail/webmlm
-libexec/filters/dupfilter
-libexec/filters/perlfilter
-%%WITHUUCP%%@dirrm libexec/courier/modules/uucp
-@dirrm libexec/courier/modules/local
-%%WITHFAX%%@dirrm libexec/courier/modules/fax
-@dirrm libexec/courier/modules/esmtp
-@dirrm libexec/courier/modules/dsn
-@dirrm libexec/courier/modules
 @dirrm libexec/courier/webmail
 @dirrm libexec/courier
+libexec/filters/dupfilter
+libexec/filters/perlfilter
 @dirrmtry libexec/filters
+man/man1/cancelmsg.1.gz
+man/man1/couriermlm.1.gz
+man/man1/couriertcpd.1.gz
+man/man1/couriertls.1.gz
+man/man1/dot-forward.1.gz
+man/man1/dotforward.1.gz
+man/man1/lockmail.1.gz
+man/man1/mailbot.1.gz
+man/man1/maildiracl.1.gz
+man/man1/maildirkw.1.gz
+man/man1/maildirmake.1.gz
+man/man1/maildrop.1.gz
+man/man1/mailq.1.gz
+man/man1/makedat.1.gz
+man/man1/makemime.1.gz
+man/man1/mimegpg.1.gz
+man/man1/preline.1.gz
+man/man1/reformail.1.gz
+man/man1/reformime.1.gz
+man/man1/rmail.1.gz
+man/man1/sendmail.1.gz
+man/man1/testmxlookup.1.gz
+man/man1/webmlmd.1.gz
+man/man5/dot-courier.5.gz
+man/man5/maildir.5.gz
+man/man7/localmailfilter.7.gz
+man/man7/maildirquota.7.gz
+man/man7/maildropex.7.gz
+man/man7/maildropfilter.7.gz
+man/man7/maildropgdbm.7.gz
+man/man8/aliaslookup.8.gz
+man/man8/courier.8.gz
+man/man8/courierfilter.8.gz
+man/man8/courierldapaliasd.8.gz
+man/man8/courierperlfilter.8.gz
+man/man8/courierpop3d.8.gz
+man/man8/courierpop3login.8.gz
+man/man8/deliverquota.8.gz
+man/man8/dupfilter.8.gz
+man/man8/esmtpd-msa.8.gz
+man/man8/esmtpd.8.gz
+man/man8/filterctl.8.gz
+man/man8/imapd.8.gz
+man/man8/makeacceptmailfor.8.gz
+man/man8/makealiases.8.gz
+man/man8/makehosteddomains.8.gz
+man/man8/makepercentrelay.8.gz
+man/man8/makesmtpaccess-msa.8.gz
+man/man8/makesmtpaccess.8.gz
+man/man8/mkesmtpdcert.8.gz
+man/man8/mkimapdcert.8.gz
+man/man8/mkpop3dcert.8.gz
+man/man8/pop3d-ssl.8.gz
+man/man8/pop3d.8.gz
+man/man8/submit.8.gz
 sbin/aliaslookup
 sbin/courier
 sbin/courieresmtpd
@@ -560,39 +638,51 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/webmlmd.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/bin/cancelmsg
-@exec chown %%BINOWN%%:mail %D/bin/maildrop
-@exec chown %%BINOWN%%:%%MAILGRP%% %D/bin/mailq
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier
-@exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/aliases
-@exec chown %%BINOWN%%:%%BINGRP%% %D/etc/courier/courierd.dist
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/*.txt
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/esmtpauthclient
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.*
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascombine
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascreate
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliasexp
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/courierd
-@exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/*
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submit
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submitmkdir
-@exec chown %%MAILOWN%%:%%MAILGRP%% %D/sbin/showmodules
-@exec chmod 0555 %D/libexec/courier
-@exec chmod 0555 %D/libexec/courier/modules
-@exec chmod 0555 %D/libexec/courier/modules/dsn
-@exec chmod 0555 %D/libexec/courier/modules/esmtp
-%%WITHFAX%%@exec chmod 0555 %D/libexec/courier/modules/fax
-@exec chmod 0555 %D/libexec/courier/modules/local
-%%WITHUUCP%%@exec chmod 0555 %D/libexec/courier/modules/uucp
-@exec chmod 0555 %D/libexec/courier/webmail
-@exec chmod 0555 %D/libexec/filters
-@exec chmod 0555 %D/share/courier
-@exec chmod 0555 %D/share/courier/couriermlm
-@exec chmod 0555 %D/share/courier/courierwebadmin
-%%WITHFAX%%@exec chmod 0555 %D/share/courier/faxmail
-@exec chmod 0555 %D/share/courier/sqwebmail
-@exec chmod 0555 %D/share/courier/sqwebmail/html
-@exec chmod 0555 %D/share/courier/sqwebmail/html/en-us
-@exec chmod 0555 %D/share/courier/sqwebmail/images
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/bin/cancelmsg
+@comment @exec chown %%BINOWN%%:mail %D/bin/maildrop
+@comment @exec chown %%BINOWN%%:%%MAILGRP%% %D/bin/mailq
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier
+@comment @exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/aliases
+@comment @exec chown %%BINOWN%%:%%BINGRP%% %D/etc/courier/courierd.dist
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/*.txt
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/esmtpauthclient
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.*
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascombine
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascreate
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliasexp
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/courierd
+@comment @exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/*
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submit
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submitmkdir
+@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/sbin/showmodules
+@comment @exec chmod 0555 %D/libexec/courier
+@comment @exec chmod 0555 %D/libexec/courier/modules
+@comment @exec chmod 0555 %D/libexec/courier/modules/dsn
+@comment @exec chmod 0555 %D/libexec/courier/modules/esmtp
+@comment %%WITHFAX%%@exec chmod 0555 %D/libexec/courier/modules/fax
+@comment @exec chmod 0555 %D/libexec/courier/modules/local
+@comment %%WITHUUCP%%@exec chmod 0555 %D/libexec/courier/modules/uucp
+@comment @exec chmod 0555 %D/libexec/courier/webmail
+@comment @exec chmod 0555 %D/libexec/filters
+@comment @exec chmod 0555 %D/share/courier
+@comment @exec chmod 0555 %D/share/courier/couriermlm
+@comment @exec chmod 0555 %D/share/courier/courierwebadmin
+@comment %%WITHFAX%%@exec chmod 0555 %D/share/courier/faxmail
+@comment @exec chmod 0555 %D/share/courier/sqwebmail
+@comment @exec chmod 0555 %D/share/courier/sqwebmail/html
+@comment @exec chmod 0555 %D/share/courier/sqwebmail/html/en-us
+@comment @exec chmod 0555 %D/share/courier/sqwebmail/images
 @unexec echo y | crontab -u %%CACHEOWN%% -r 2>/dev/null || true
 @unexec rm -rf %%CALENDIR%% %%CACHEDIR%% 2>/dev/null || true
+@dirrmtry %%CALENDIR%%/localcache
+@dirrmtry %%CALENDIR%%/private
+@dirrmtry %%CALENDIR%%/public
+@dirrmtry %%CALENDIR%%
+@dirrmtry %%LOCALSTATEDIR%%/allfilters
+@dirrmtry %%LOCALSTATEDIR%%/filters
+@dirrmtry %%LOCALSTATEDIR%%/msgq
+@dirrmtry %%LOCALSTATEDIR%%/msgs
+@dirrmtry %%LOCALSTATEDIR%%/tmp
+@dirrmtry %%LOCALSTATEDIR%%/track
+@dirrmtry %%LOCALSTATEDIR%%
+@dirrmtry %%CACHEDIR%%

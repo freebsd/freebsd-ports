@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerPC architecture emulator
 
 LICENSE=	GPLv2

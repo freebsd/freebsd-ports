@@ -12,7 +12,7 @@ DISTFILES=	lemmatizer2-2.0.1.tar.gz \
 		eng-src-morph.tar.gz  \
 		ger-src-morph.tar.gz
 
-MAINTAINER=	reki@reki.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Russian / German / English lemmatizer library
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre

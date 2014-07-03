@@ -8,7 +8,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 		http://www.trunix.org/projeler/checkdns/
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domain name server analysis and reporting tool
 
 

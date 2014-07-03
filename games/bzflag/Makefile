@@ -2,7 +2,7 @@
 
 PORTNAME=	bzflag
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
 
@@ -12,10 +12,10 @@ COMMENT=	Multiplayer 3D tank battle game
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2
+USES=		libtool tar:bzip2
 USE_GL=		glew
 USE_SDL=	sdl
 

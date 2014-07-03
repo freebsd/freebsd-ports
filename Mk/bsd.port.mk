@@ -1134,6 +1134,11 @@ MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
+.if defined(NO_STAGE)
+DEPRECATED?=		Not staged. See http://lists.freebsd.org/pipermail/freebsd-ports-announce/2014-May/000080.html
+EXPIRATION_DATE?=	2014-08-31
+.endif
+
 .if defined(X_BUILD_FOR)
 .if defined(NO_STAGE)
 IGNORE=	Cross building is only compatible with stagified ports

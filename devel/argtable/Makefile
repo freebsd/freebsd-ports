@@ -3,6 +3,7 @@
 
 PORTNAME=	argtable
 PORTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
@@ -12,7 +13,9 @@ COMMENT=	ANSI C library for parsing GNU style command line arguments
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 post-patch:

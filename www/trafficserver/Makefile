@@ -3,7 +3,7 @@
 
 PORTNAME=	trafficserver
 PORTVERSION=	4.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -20,9 +20,10 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
 		libluajit-${LUA_VER}.so:${PORTSDIR}/lang/luajit
 
-USE_AUTOTOOLS=	autoconf automake libtool aclocal
 GNU_CONFIGURE=	yes
-USES=		pkgconfig tcl gmake perl5 tar:bzip2 lua:51
+USES=		gmake libtool lua:51 perl5 pkgconfig tar:bzip2 tcl
+USE_AUTOTOOLS=	aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 USE_OPENSSL=	yes
 USE_SQLITE=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -47,7 +48,6 @@ CONFIGURE_ARGS=	--with-libxml2=${LOCALBASE} \
 		--with-user=${USERS} \
 		--with-group=${GROUPS}
 
-ACLOCAL_ARGS=	-I build
 OPTIONS_DEFINE=	WCCP INTERIM
 OPTIONS_RADIO=	MEMMAN
 OPTIONS_RADIO_MEMMAN=	ALLOCATORS FREELISTS RECLAIM

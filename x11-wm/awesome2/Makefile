@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 DISTNAME=	awesome-${PORTVERSION}
 
-MAINTAINER=	ntarmos@cs.uoi.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiling window manager initially based on a dwm code rewriting
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \

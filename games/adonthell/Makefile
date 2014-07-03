@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX} \
 	   	wastesedge-src-${WEDGE_VERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	rodrigo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free role playing game
 
 LICENSE=	GPLv2

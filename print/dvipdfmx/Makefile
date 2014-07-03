@@ -16,13 +16,13 @@ COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		paper:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libpaper.so:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 
 USE_TEX=	tetex base texmf
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 
 PLIST_SUB=	DVIPDFMXDIR=${DVIPDFMXDIR} \
 		FONTMAPDIR=${FONTMAPDIR} \
@@ -31,20 +31,16 @@ PLIST_SUB=	DVIPDFMXDIR=${DVIPDFMXDIR} \
 		MKTEXLSR=${MKTEXLSR} \
 		ADOBECMAPDIR=${ADOBECMAPDIR}
 
-MAN1=		extractbb.1
-
 DVIPDFMXDIR=	${TEXMFDIR}/dvipdfmx
 FONTMAPDIR=	${TEXMFDIR}/fonts/map/dvipdfmx
 GLYPHMAPDIR=	${TEXMFDIR}/fonts/map/glyphlist
 FONTCMAPDIR=	${TEXMFDIR}/fonts/cmap
-ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
+ADOBECMAPDIR=	${PREFIX}/share/fonts/adobe-cmaps
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${LOCALBASE}/${FONTCMAPDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTCMAPDIR}
 	${LN} -s -f ${ADOBECMAPDIR} \
-		${LOCALBASE}/${FONTCMAPDIR}/adobe-cmaps
-	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
+		${STAGEDIR}${PREFIX}/${FONTCMAPDIR}/adobe-cmaps
 
 .include <bsd.port.mk>

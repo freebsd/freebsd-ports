@@ -971,6 +971,7 @@
     SUBDIR += libdap
     SUBDIR += libdasm
     SUBDIR += libdatrie
+    SUBDIR += libdbusmenu
     SUBDIR += libdbusmenu-qt
     SUBDIR += libdevq
     SUBDIR += libdfui
@@ -2795,6 +2796,7 @@
     SUBDIR += p5-Term-Animation
     SUBDIR += p5-Term-CallEditor
     SUBDIR += p5-Term-Clui
+    SUBDIR += p5-Term-EditLine
     SUBDIR += p5-Term-Encoding
     SUBDIR += p5-Term-Menus
     SUBDIR += p5-Term-ProgressBar
@@ -3793,6 +3795,7 @@
     SUBDIR += py-pyke
     SUBDIR += py-pylib
     SUBDIR += py-pymarc
+    SUBDIR += py-pympler
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
     SUBDIR += py-pytemplate

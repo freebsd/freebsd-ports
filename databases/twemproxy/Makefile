@@ -21,7 +21,6 @@ PLIST_FILES=	sbin/nutcracker \
 		man/man8/nutcracker.8.gz \
 		etc/nutcracker.yml.sample
 
-USE_GCC=	yes
 HAS_CONFIGURE=	yes
 
 do-install:

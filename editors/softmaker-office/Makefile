@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://www.softmaker.net/down/
 DISTFILES=	ofb06trial.tgz
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Word/Excel OpenDocument and OpenOffice.org editor
 
 BROKEN=		Checksum and size mismatch

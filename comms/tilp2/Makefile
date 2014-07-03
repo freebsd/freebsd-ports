@@ -16,8 +16,7 @@ LIB_DEPENDS=	libticables2.so:${PORTSDIR}/comms/libticables2	\
 		libticalcs2.so:${PORTSDIR}/comms/libticalcs2	\
 		libticonv.so:${PORTSDIR}/converters/libticonv
 
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
-USE_BZIP2=	yes
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info tar:bzip2
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS

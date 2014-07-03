@@ -19,7 +19,6 @@ RESTRICTED=	No commercial use
 WRKSRC=		${WRKDIR}/festival
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 FHOME=		${PREFIX}/share/festival
 
@@ -34,7 +33,7 @@ post-extract:
 	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 do-install:
-	${MKDIR} ${FHOME}
-	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
+	${MKDIR} ${STAGEDIR}${FHOME}
+	cd ${WRKSRC} && ${CP} -pPR * ${STAGEDIR}${FHOME}
 
 .include <bsd.port.post.mk>

@@ -2,14 +2,14 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	11.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 PKGNAMESUFFIX=	11
 
 MAINTAINER=	flo@FreeBSD.org
-COMMENT=	An Open Source PBX and telephony toolkit
+COMMENT=	Open Source PBX and telephony toolkit
 
 LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex \
 		libnewt.so:${PORTSDIR}/devel/newt \

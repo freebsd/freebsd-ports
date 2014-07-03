@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		${MASTER_SITE_GENTOO:S|$|distfiles/|}
 DISTNAME=	${PORTNAME}-7.66-linux20130827
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alien Arena (native version)
 
 RUN_DEPENDS=	${DATADIR}/data1/default.cfg:${PORTSDIR}/games/alienarena-data

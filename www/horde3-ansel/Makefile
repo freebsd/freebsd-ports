@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image gallery
 
 USE_HORDE=	base pkg-message

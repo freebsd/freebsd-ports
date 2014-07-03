@@ -9,7 +9,7 @@ MASTER_SITES=	http://paratype.0xdc.ru/
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
 DISTFILES=	PTSansOFL-2.004.zip PTSerifOFL-1.000.zip PTMonoOFL-1.002_1.zip
 
-MAINTAINER=	littlesavage@rambler.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ParaType font collection for the languages of Russia
 
 LICENSE=	OFL11
@@ -17,7 +17,6 @@ LICENSE=	OFL11
 INSTALLS_TTF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_TGZ=	yes
 USES=		zip
 XORG_CAT=	font
 
@@ -27,15 +26,11 @@ PLIST_SUB=	FONTDIR="${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}"
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR="${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}"
 
-NO_STAGE=	yes
 do-configure:
 	@${DO_NADA}
 
 do-install:
-	@${MKDIR} ${FONTROOTDIR}/${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTROOTDIR}/${FONTDIR}/
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	@${MKDIR} ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}/
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	libtextcat
 PORTVERSION=	2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://software.wise-guys.nl/download/
 
@@ -13,17 +13,13 @@ COMMENT=	Language guessing by N-Gram-Based Text Categorization
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
+USES=		libtool
 USE_LDCONFIG=	yes
 
-PORTDOCS=	LICENSE README TODO
+OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if exists(${PREFIX}/lib/libtextcat.a)
-CONFLICTS_INSTALL=	libexttextcat*
-.endif
+PORTDOCS=	README TODO
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/textcat.h ${STAGEDIR}${PREFIX}/include/
@@ -32,10 +28,8 @@ post-install:
 	(cd ${WRKSRC}/langclass/LM &&		\
 	${FIND} . -name "*.lm" -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/LM/{}" \;)
 	${INSTALL_DATA} ${WRKSRC}/langclass/conf.txt "${STAGEDIR}${DATADIR}"
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 regression-test:
 	(cd ${WRKSRC}/langclass/ &&		\
@@ -44,4 +38,4 @@ regression-test:
 	../src/testtextcat conf.txt < $$t ;	\
 	done)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -27,10 +27,9 @@ include/lttoolbox-%%APVER%%/lttoolbox/tmx_compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/trans_exe.h
 include/lttoolbox-%%APVER%%/lttoolbox/transducer.h
 include/lttoolbox-%%APVER%%/lttoolbox/xml_parse_util.h
-lib/liblttoolbox3-%%APVER%%.so
 lib/liblttoolbox3-%%APVER%%.so.0
+lib/liblttoolbox3-%%APVER%%.so.0.0.0
 lib/liblttoolbox3.a
-lib/liblttoolbox3.la
 lib/liblttoolbox3.so
 libdata/pkgconfig/lttoolbox-%%APVER%%.pc
 %%DATADIR%%/dix.dtd

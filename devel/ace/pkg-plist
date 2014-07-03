@@ -1107,6 +1107,7 @@ include/ace/config-macosx-mountainlion.h
 include/ace/config-macosx-panther.h
 include/ace/config-macosx-snowleopard.h
 include/ace/config-macosx-tiger.h
+include/ace/config-macosx-yosemite.h
 include/ace/config-macosx.h
 include/ace/config-macros.h
 include/ace/config-netbsd.h
@@ -1142,6 +1143,9 @@ include/ace/config-win32-interix.h
 include/ace/config-win32-mingw.h
 include/ace/config-win32-mingw64.h
 include/ace/config-win32-msvc-10.h
+include/ace/config-win32-msvc-11.h
+include/ace/config-win32-msvc-12.h
+include/ace/config-win32-msvc-14.h
 include/ace/config-win32-msvc-7.h
 include/ace/config-win32-msvc-8.h
 include/ace/config-win32-msvc-9.h
@@ -1423,6 +1427,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/config/vc11.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc11nmake.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/vc12nmake.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/vc14nmake.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/vc71.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc8.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc8nmake.mpb
@@ -1512,6 +1517,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/include/makeinclude/platform_macosx_panther.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_snowleopard.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_tiger.GNU
+%%DATADIR%%/include/makeinclude/platform_macosx_yosemite.GNU
 %%DATADIR%%/include/makeinclude/platform_macros.GNU
 %%DATADIR%%/include/makeinclude/platform_mingw32.GNU
 %%DATADIR%%/include/makeinclude/platform_netbsd.GNU

@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 
-MAINTAINER=	marius@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp

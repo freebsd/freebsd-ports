@@ -25,8 +25,8 @@ LDCONFIG_LIB32=	${LDCONFIG} -32
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCH=	i386 amd64
-ONLY_FOR_ARCH_REASON= FreeBSD 4.x did not support this architecture
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON= FreeBSD 4.x did not support this architecture
 
 COMPAT4X_ARCH=	${ARCH}
 COMPAT4X_OSVERSION=	5.3

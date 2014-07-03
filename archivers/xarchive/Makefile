@@ -3,7 +3,7 @@
 
 PORTNAME=	xarchive
 DISTVERSION=	0.2.8-6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	archivers
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -33,7 +33,7 @@ DEB_RUN_DEPENDS+=	dpkg-deb:${PORTSDIR}/archivers/dpkg
 RAR_RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar \
 		unrar:${PORTSDIR}/archivers/unrar
 RPM_RUN_DEPENDS+=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
-		rpm:${PORTSDIR}/archivers/rpm
+		rpm:${PORTSDIR}/archivers/rpm4
 ZIP_RUN_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 

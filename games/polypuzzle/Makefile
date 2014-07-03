@@ -8,7 +8,7 @@ CATEGORIES=	games tcl tk
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/games/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tessellation puzzle game
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84

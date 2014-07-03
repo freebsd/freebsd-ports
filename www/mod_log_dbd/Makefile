@@ -8,7 +8,7 @@ CATEGORIES=	www databases
 MASTER_SITES=	http://bfoz.net/projects/${PORTNAME}/release/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	bfoz@bfoz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uses APR DBD to store Apache access logs in a database
 
 

@@ -3,7 +3,6 @@ info/openocd.info
 info/openocd.info-1
 info/openocd.info-2
 lib/libopenocd.a
-lib/libopenocd.la
 lib/openocd/OpenULINK/ulink_firmware.hex
 share/openocd/contrib/libdcc/README
 share/openocd/contrib/libdcc/dcc_stdio.c

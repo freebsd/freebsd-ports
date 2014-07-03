@@ -9,7 +9,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the ATK interfaces for GNOME widgets
 
 DEPRECATED=	gnome-panel 2.x will be updated in the GNOME 3 import 

@@ -8,7 +8,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	http://cloud.github.com/downloads/joerussbowman/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility classes to make working with Google App Engine easier
 
 RUN_DEPENDS=	google-appengine>=1.2.4_1:${PORTSDIR}/www/google-appengine

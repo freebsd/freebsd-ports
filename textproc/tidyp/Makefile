@@ -3,6 +3,7 @@
 
 PORTNAME=	tidyp
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://cloud.github.com/downloads/petdance/tidyp/ \
 		LOCAL/sunpoet
@@ -11,6 +12,8 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and program to validate and fix HTML
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ACCESS ASIAN DEBUG UTF16
@@ -22,10 +25,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		include/${PORTNAME}/platform.h \
 		include/${PORTNAME}/tidyp.h \
 		include/${PORTNAME}/tidypenum.h \
-		lib/lib${PORTNAME}-${PORTVERSION}.so \
 		lib/lib${PORTNAME}-${PORTVERSION}.so.0 \
+		lib/lib${PORTNAME}-${PORTVERSION}.so.0.0.0 \
 		lib/lib${PORTNAME}.a \
-		lib/lib${PORTNAME}.la \
 		lib/lib${PORTNAME}.so
 PLIST_DIRS=	include/${PORTNAME}
 

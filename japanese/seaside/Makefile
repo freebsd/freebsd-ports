@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://swikis.ddo.jp/SeasideJ/
 DISTNAME=	Seaside-JPatched${DISTVERSION}
 EXTRACT_ONLY=	Seaside-JPatched${DISTVERSION}.zip
 
-MAINTAINER=	mutoh@openedu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Seaside: squeak based WWW application framework with Japanized patch
 
 RUN_DEPENDS=	squeak:${PORTSDIR}/lang/squeak

@@ -12,7 +12,7 @@ DISTFILES=	${CTF_DATA}:data \
 		${CTF_SRC}:src
 DIST_SUBDIR=	quake2lnx
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake II CTF (Capture The Flag) mod
 
 USES=		dos2unix zip:infozip

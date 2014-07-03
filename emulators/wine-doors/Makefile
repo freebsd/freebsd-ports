@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.wine-doors.org/releases/
 
-MAINTAINER=	eg@fbsd.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows application management for the GNOME Desktop
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \

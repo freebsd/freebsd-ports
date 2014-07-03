@@ -3,11 +3,11 @@
 
 PORTNAME=	gscmxx
 PORTVERSION=	0.4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
-MAINTAINER=	svmohr@rm6.net
+MAINTAINER=	svmohr@gmail.com
 COMMENT=	Graphical frontend for scmxx
 
 RUN_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
@@ -21,8 +21,8 @@ USES=		perl5
 USE_PERL5=	configure
 
 USE_GNOME=	gtk12
-MAN1=		gscmxx.1
-MAN3=		SCMxx.3
 
-NO_STAGE=	yes
+do-install:
+	cd ${WRKSRC} && make install PREFIX='${STAGEDIR}${PREFIX}'
+
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/circus-linux/src/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Circus Linux!" is a clone of the Atari 2600 game "Circus Atari"
 
 USE_SDL=	image mixer sdl

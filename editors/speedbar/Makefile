@@ -11,9 +11,10 @@ MASTER_SITES=	SF/cedet/${PORTNAME}/1.4beta4 \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick access to files and tags in an Emacs frame
 
+BROKEN=		Fails to build
 USE_EMACS=	yes
 
 USES=		gmake

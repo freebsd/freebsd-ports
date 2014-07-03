@@ -3,9 +3,13 @@
 
 PORTNAME=	sysbench
 PORTVERSION=	0.4.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks databases
-MASTER_SITES=	SF
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+#		Project gone from sourceforge, both site and downloads
+#		Something exists on launchpad (https://code.launchpad.net/sysbench)
+#		maybe the port swould be switched there, however there are no
+#		direct downloads
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular, cross-platform, and multi-threaded benchmark tool
@@ -13,7 +17,9 @@ COMMENT=	Modular, cross-platform, and multi-threaded benchmark tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
+USE_AUTOTOOLS=	libtoolize aclocal autoconf
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sysbench
 PORTDOCS=	manual.html

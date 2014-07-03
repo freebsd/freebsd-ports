@@ -2,6 +2,7 @@
 
 PORTNAME=	deco
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://hartlich.com/deco/download/:site1 \
 		http://hartlich.com/deco/archive/download/:site2
@@ -19,7 +20,7 @@ RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 		dpkg:${PORTSDIR}/archivers/dpkg \
 		lzop:${PORTSDIR}/archivers/lzop \
 		7z:${PORTSDIR}/archivers/p7zip \
-		rpm:${PORTSDIR}/archivers/rpm \
+		rpm:${PORTSDIR}/archivers/rpm4 \
 		rzip:${PORTSDIR}/archivers/rzip \
 		unace:${PORTSDIR}/archivers/unace \
 		unrar:${PORTSDIR}/archivers/unrar \

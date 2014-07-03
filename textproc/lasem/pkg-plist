@@ -31,9 +31,9 @@ include/lasem-0.4/lsmtypes.h
 include/lasem-0.4/lsmutils.h
 lib/girepository-1.0/Lasem-0.4.typelib
 lib/liblasem-0.4.a
-lib/liblasem-0.4.la
 lib/liblasem-0.4.so
 lib/liblasem-0.4.so.4
+lib/liblasem-0.4.so.4.0.1
 libdata/pkgconfig/lasem-0.4.pc
 share/gir-1.0/Lasem-0.4.gir
 share/locale/de/LC_MESSAGES/lasem-0.4.mo

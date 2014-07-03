@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
 DISTFILES=	avp_git_20090911.tar.gz avp_data_a03.tar.gz
 
-MAINTAINER=	devel@stasyan.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aliens versus predator unofficial port from icculus.org
 
 USE_SDL=	mixer sdl

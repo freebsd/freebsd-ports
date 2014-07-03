@@ -3,7 +3,7 @@
 
 PORTNAME=	libmrss
 PORTVERSION=	0.19.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 
@@ -14,10 +14,10 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libnxml.so:${PORTSDIR}/textproc/libnxml
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USES=	pathfix pkgconfig
 
 .include <bsd.port.mk>

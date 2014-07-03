@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	squidstats-r${PORTVERSION}
 
-MAINTAINER=	adrian@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of simple statistical analysis bits for Squid
 
 RUN_DEPENDS=	p5-Config-IniFiles>=2.39:${PORTSDIR}/devel/p5-Config-IniFiles \

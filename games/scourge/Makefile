@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/.src/}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2

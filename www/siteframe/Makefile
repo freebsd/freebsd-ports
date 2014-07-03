@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.broadpool.net/pub/siteframe/
 
-MAINTAINER=	glen@broadpool.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web community content management system in PHP5 and MySQL
 
 RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2

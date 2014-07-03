@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pysycache-
 DISTFILES=	#
 DIST_SUBDIR=	pysycache
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pysycache themes support
 
 RUN_DEPENDS=	pysycache.py:${PORTSDIR}/games/pysycache

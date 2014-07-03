@@ -8,7 +8,7 @@ CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/slune/
 DISTNAME=	Slune-${PORTVERSION}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D game. includes racing, car-crashing, and lots of action
 
 RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \

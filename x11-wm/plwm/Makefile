@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm python
 MASTER_SITES=	SF
 
-MAINTAINER=	mwm@mired.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manager construction kit
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib

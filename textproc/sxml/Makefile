@@ -6,7 +6,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.MysticWALL.COM/download/
 
-MAINTAINER=	kouichi@MysticWALL.COM
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skimpy XML parsing and grafting library for C language
 
 GNU_CONFIGURE=	yes

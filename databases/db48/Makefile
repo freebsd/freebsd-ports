@@ -3,7 +3,7 @@
 
 PORTNAME=	db48
 PORTVERSION=	4.8.30.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=

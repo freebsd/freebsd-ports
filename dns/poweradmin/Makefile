@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME} \
 		https://www.poweradmin.org/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	eg@fbsd.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of PHP-scripts to manage PowerDNS over the web
 
 USE_PHP=	gettext session mcrypt

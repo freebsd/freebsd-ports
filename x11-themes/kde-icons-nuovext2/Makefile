@@ -11,5 +11,4 @@ COMMENT=	KDE nuoveXT 2 iconset
 BROKEN=		Unfetchable
 PLIST_FILE_PATTERN_EXTRA=	-v "(^\./(AUTHORS|COPYING|DONATE|INSTALL|README)$$)|\.DS_Store"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

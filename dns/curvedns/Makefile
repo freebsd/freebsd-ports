@@ -8,7 +8,7 @@ CATEGORIES=		dns
 MASTER_SITES=		http://curvedns.on2it.net/releases/
 DISTNAME=		curvedns-0.88-unstable
 
-MAINTAINER=		freebsd@dns-lab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		Forwarder adding DNSCurve to an authoritative nameserver
 
 LIB_DEPENDS=		libev.so:${PORTSDIR}/devel/libev

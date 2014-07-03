@@ -7,7 +7,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
 DISTNAME=	Komodo-IDE-${PORTVERSION}-61234-linux-libcpp6-x86
 
-MAINTAINER=	dereckson@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
 CONFLICTS=	komodo-edit-*
