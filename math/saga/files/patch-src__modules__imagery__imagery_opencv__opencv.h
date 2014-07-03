@@ -1,5 +1,5 @@
---- src/modules_images/modules_opencv/opencv/opencv.h.orig	2013-12-03 19:17:30.000000000 -0500
-+++ src/modules_images/modules_opencv/opencv/opencv.h	2013-12-03 19:19:37.000000000 -0500
+--- src/modules/imagery/imagery_opencv/opencv.h.orig	2014-01-14 11:27:53.000000000 +0100
++++ src/modules/imagery/imagery_opencv/opencv.h	2014-01-14 11:28:44.000000000 +0100
 @@ -73,7 +73,8 @@
  #include "MLB_Interface.h"
  

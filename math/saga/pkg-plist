@@ -1,5 +1,31 @@
 bin/saga_cmd
 bin/saga_gui
+include/saga/saga_core/saga_api/api_core.h
+include/saga/saga_core/saga_api/compatibility.h
+include/saga/saga_core/saga_api/data_manager.h
+include/saga/saga_core/saga_api/dataobject.h
+include/saga/saga_core/saga_api/geo_tools.h
+include/saga/saga_core/saga_api/grid.h
+include/saga/saga_core/saga_api/grid_pyramid.h
+include/saga/saga_core/saga_api/mat_tools.h
+include/saga/saga_core/saga_api/metadata.h
+include/saga/saga_core/saga_api/module.h
+include/saga/saga_core/saga_api/module_library.h
+include/saga/saga_core/saga_api/parameters.h
+include/saga/saga_core/saga_api/pointcloud.h
+include/saga/saga_core/saga_api/saga_api.h
+include/saga/saga_core/saga_api/shapes.h
+include/saga/saga_core/saga_api/table.h
+include/saga/saga_core/saga_api/table_dbase.h
+include/saga/saga_core/saga_api/table_value.h
+include/saga/saga_core/saga_api/tin.h
+include/saga/saga_core/saga_gdi/3d_view.h
+include/saga/saga_core/saga_gdi/3d_view_tools.h
+include/saga/saga_core/saga_gdi/saga_gdi.h
+include/saga/saga_core/saga_gdi/sgdi_core.h
+include/saga/saga_core/saga_gdi/sgdi_diagram.h
+include/saga/saga_core/saga_gdi/sgdi_dialog.h
+include/saga/saga_core/saga_gdi/sgdi_helper.h
 lib/libsaga_api-%%PORTVERSION%%.so
 lib/libsaga_api.so
 lib/libsaga_gdi-%%PORTVERSION%%.so
@@ -11,15 +37,16 @@ lib/libsaga_gdi.so
 %%PYTHON_SITELIBDIR%%/saga_api.pyc
 %%PYTHON_SITELIBDIR%%/saga_api.pyo
 lib/saga/libclimate_tools.so
-lib/saga/libcontrib_a_perego.so
+lib/saga/libcontrib_perego.so
+lib/saga/libdb_odbc.so
+%%PGSQL%%lib/saga/libdb_pgsql.so
 lib/saga/libdocs_html.so
 lib/saga/libdocs_pdf.so
 lib/saga/libgarden_3d_viewer.so
+lib/saga/libgarden_fractals.so
+lib/saga/libgarden_games.so
+lib/saga/libgarden_learn_to_program.so
 lib/saga/libgarden_webservices.so
-lib/saga/libgeostatistics_grid.so
-lib/saga/libgeostatistics_kriging.so
-lib/saga/libgeostatistics_points.so
-lib/saga/libgeostatistics_regression.so
 lib/saga/libgrid_analysis.so
 lib/saga/libgrid_calculus.so
 lib/saga/libgrid_calculus_bsl.so
@@ -28,32 +55,28 @@ lib/saga/libgrid_gridding.so
 lib/saga/libgrid_spline.so
 lib/saga/libgrid_tools.so
 lib/saga/libgrid_visualisation.so
-lib/saga/libihacres.so
 lib/saga/libimagery_classification.so
+lib/saga/libimagery_opencv.so
 lib/saga/libimagery_rga.so
 lib/saga/libimagery_segmentation.so
 lib/saga/libimagery_svm.so
 lib/saga/libimagery_tools.so
+%%VIGRA%%lib/saga/libimagery_vigra.so
 lib/saga/libio_esri_e00.so
 lib/saga/libio_gdal.so
 lib/saga/libio_gps.so
 lib/saga/libio_grid.so
 lib/saga/libio_grid_grib2.so
 lib/saga/libio_grid_image.so
-lib/saga/libio_odbc.so
-lib/saga/libio_pgsql.so
 lib/saga/libio_shapes.so
 lib/saga/libio_shapes_dxf.so
 lib/saga/libio_shapes_las.so
 lib/saga/libio_table.so
-lib/saga/liblectures_introduction.so
-lib/saga/libopencv.so
+lib/saga/libio_virtual.so
 lib/saga/libpj_georeference.so
 lib/saga/libpj_proj4.so
 lib/saga/libpointcloud_tools.so
 lib/saga/libpointcloud_viewer.so
-lib/saga/librecreations_fractals.so
-lib/saga/librecreations_games.so
 lib/saga/libshapes_grid.so
 lib/saga/libshapes_lines.so
 lib/saga/libshapes_points.so
@@ -65,6 +88,11 @@ lib/saga/libsim_ecosystems_hugget.so
 lib/saga/libsim_erosion.so
 lib/saga/libsim_fire_spreading.so
 lib/saga/libsim_hydrology.so
+lib/saga/libsim_ihacres.so
+lib/saga/libstatistics_grid.so
+lib/saga/libstatistics_kriging.so
+lib/saga/libstatistics_points.so
+lib/saga/libstatistics_regression.so
 lib/saga/libta_channels.so
 lib/saga/libta_compound.so
 lib/saga/libta_hydrology.so
@@ -72,14 +100,26 @@ lib/saga/libta_lighting.so
 lib/saga/libta_morphometry.so
 lib/saga/libta_preprocessor.so
 lib/saga/libta_profiles.so
+lib/saga/libta_slope_stability.so
 lib/saga/libtable_calculus.so
 lib/saga/libtable_tools.so
 lib/saga/libtin_tools.so
 lib/saga/libtin_viewer.so
-%%VIGRA%%lib/saga/libvigra.so
 man/man1/saga_cmd.1.gz
 man/man1/saga_gui.1.gz
+share/applications/saga.desktop
+share/pixmaps/saga.png
+%%DATADIR%%/saga.ger.txt
+%%DATADIR%%/saga.lng.txt
 %%DATADIR%%/saga.png
+%%DATADIR%%/saga_prj.dic
+%%DATADIR%%/saga_prj.srs
 %%DATADIR%%/saga_tip.txt
-@dirrmtry %%DATADIR%%
+@dirrmtry include/saga/saga_core/saga_api
+@dirrmtry include/saga/saga_core/saga_gdi
+@dirrmtry include/saga/saga_core
+@dirrmtry include/saga
 @dirrmtry lib/saga
+@dirrmtry %%DATADIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

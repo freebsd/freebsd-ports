@@ -1,9 +1,9 @@
---- src/modules_images/modules_opencv/opencv/opencv_nnet.h.orig	2014-03-17 15:06:15.000000000 +0100
-+++ src/modules_images/modules_opencv/opencv/opencv_nnet.h	2014-03-17 15:18:58.000000000 +0100
-@@ -64,8 +64,8 @@
+--- src/modules/imagery/imagery_opencv/opencv_nnet.cpp.orig	2013-10-24 19:04:27.000000000 +0200
++++ src/modules/imagery/imagery_opencv/opencv_nnet.cpp	2013-10-24 19:06:05.000000000 +0200
+@@ -60,8 +60,8 @@
  
  //---------------------------------------------------------
- #include "MLB_Interface.h"
+ #include "opencv_nnet.h"
 -#include "opencv\cxcore.h"
 -#include "opencv\ml.h"
 +#include <opencv/cxcore.h>
