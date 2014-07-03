@@ -3,14 +3,14 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8.28.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 PKGNAMESUFFIX=	18
 
 MAINTAINER=	flo@FreeBSD.org
-COMMENT=	An Open Source PBX and telephony toolkit
+COMMENT=	Open Source PBX and telephony toolkit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
