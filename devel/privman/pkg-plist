@@ -9,9 +9,9 @@ etc/privman/privman.conf
 include/msghdr.h
 include/privman.h
 lib/libprivman.a
-lib/libprivman.la
 lib/libprivman.so
-lib/libprivman.so.2
+lib/libprivman.so.1
+lib/libprivman.so.1.1.3
 man/man3/priv_bind.3.gz
 man/man3/priv_custom.3.gz
 man/man3/priv_daemon.3.gz
