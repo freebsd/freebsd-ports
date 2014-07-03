@@ -27,14 +27,14 @@ RPM_DESC=	RPM archive support
 ZIP_DESC=	ZIP archive support
 
 7ZIP_RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
-ARJ_RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
-ACE_RUN_DEPENDS+=	unace:${PORTSDIR}/archivers/unace
-DEB_RUN_DEPENDS+=	dpkg-deb:${PORTSDIR}/archivers/dpkg
-RAR_RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar \
+ARJ_RUN_DEPENDS=	arj:${PORTSDIR}/archivers/arj
+ACE_RUN_DEPENDS=	unace:${PORTSDIR}/archivers/unace
+DEB_RUN_DEPENDS=	dpkg-deb:${PORTSDIR}/archivers/dpkg
+RAR_RUN_DEPENDS=	rar:${PORTSDIR}/archivers/rar \
 		unrar:${PORTSDIR}/archivers/unrar
-RPM_RUN_DEPENDS+=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
+RPM_RUN_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
 		rpm:${PORTSDIR}/archivers/rpm4
-ZIP_RUN_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
+ZIP_RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 
 .include <bsd.port.mk>

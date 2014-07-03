@@ -20,11 +20,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET=	install-exec install-pkgincludeHEADERS
-.endif
+DOCS_INSTALL_TARGET_OFF=	install-exec install-pkgincludeHEADERS
 
 post-build:
 .if !defined(WITHOUT_CHECKS)
@@ -35,17 +31,13 @@ post-build:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblzo2.so.2
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,doc/,,' NEWS README
 .for i in AUTHORS BUGS COPYING NEWS README THANKS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKSRC}/examples/[a-z]*.[ch] ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>

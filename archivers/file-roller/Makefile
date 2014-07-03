@@ -25,6 +25,7 @@ USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk20 gconf2
 GNOME_DESKTOP_VERSION=2
 USE_XORG=	sm
 GNU_CONFIGURE=	yes
+OPTIONS_SUB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-packagekit
@@ -37,15 +38,8 @@ NAUTILUS_DESC=	Enable Nautilus extension
 
 OPTIONS_DEFAULT=NAUTILUS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNAUTILUS}
-USE_GNOME+=	nautilus2
-PLIST_SUB+=	NAUTILUS=""
-.else
-PLIST_SUB+=	NAUTILUS="@comment "
-CONFIGURE_ARGS+=--disable-nautilus-actions
-.endif
+NAUTILUS_USE=	GNOME=nautilus2
+NAUTILUS_CONFIGURE_OFF=	--disable-nautilus-actions
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -53,11 +47,9 @@ post-patch:
 		${WRKSRC}/src/fr-command-zip.c
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

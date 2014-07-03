@@ -22,14 +22,7 @@ MAN1_JA=	lha-ac.1
 PLIST_FILES+=	${__MANPAGES}
 
 OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--disable-multibyte-filename
-.else
-CONFIGURE_ARGS+=	--enable-multibyte-filename=auto
-.endif
+NLS_CONFIGURE_ENABLE=	multibyte-filename=auto
 
 do-install:
 	-${MKDIR} ${STAGEDIR}${PREFIX}/man/ja/man1

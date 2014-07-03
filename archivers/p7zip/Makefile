@@ -24,8 +24,6 @@ CFLAGS_ia64=	-fPIC
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${SED} -e 's!g\+\+!${CXX}!' \
 	       -e 's!gcc!${CC}!' \

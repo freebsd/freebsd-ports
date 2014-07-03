@@ -30,28 +30,28 @@ share/locale/tr/LC_MESSAGES/squeeze.mo
 share/locale/uk/LC_MESSAGES/squeeze.mo
 share/pixmaps/squeeze/archive-add.png
 share/pixmaps/squeeze/archive-extract.png
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/LSQArchive.html
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/LSQArchiveCommand.html
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/archiving.html
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/home.png
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/index.html
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/index.sgml
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/ix01.html
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/left.png
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze-LSQArchiveSupport.html
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze-libsqueeze.html
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze.devhelp
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze.devhelp2
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze.html
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/right.png
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/style.css
-%%GTKDOC%%share/gtk-doc/html/libsqueeze/up.png
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/LSQArchive.html
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/LSQArchiveCommand.html
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/archiving.html
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/home.png
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/index.html
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/index.sgml
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/ix01.html
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/left.png
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/libsqueeze-LSQArchiveSupport.html
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/libsqueeze-libsqueeze.html
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/libsqueeze.devhelp
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/libsqueeze.devhelp2
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/libsqueeze.html
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/right.png
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/style.css
+%%PORTDOCS%%share/gtk-doc/html/libsqueeze/up.png
 share/icons/hicolor/16x16/apps/squeeze.png
 share/icons/hicolor/48x48/apps/squeeze.png
 share/icons/hicolor/scalable/apps/squeeze.svg
 share/applications/squeeze.desktop
 @dirrmtry share/pixmaps/squeeze
-%%GTKDOC%%@dirrm share/gtk-doc/html/libsqueeze
+%%PORTDOCS%%@dirrm share/gtk-doc/html/libsqueeze
 @dirrmtry libexec/thunar-archive-plugin
 @dirrmtry include/libsqueeze-0.2/libsqueeze
 @dirrmtry include/libsqueeze-0.2
