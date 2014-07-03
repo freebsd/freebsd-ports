@@ -132,8 +132,8 @@ _USE_TETEX_PTEX=	ptex:${PORTSDIR}/japanese/ptex
 _USE_TEX_PTEX=		ptex:${PORTSDIR}/japanese/tex-ptex
 
 _USE_TEX_WEB2C=		weave:${PORTSDIR}/devel/tex-web2c
-_USE_TEX_KPATHSEA=	kpathsea:${PORTSDIR}/devel/tex-kpathsea
-_USE_TEX_PTEXENC=	ptexenc:${PORTSDIR}/print/tex-ptexenc
+_USE_TEX_KPATHSEA=	libkpathsea.so:${PORTSDIR}/devel/tex-kpathsea
+_USE_TEX_PTEXENC=	libptexenc.so:${PORTSDIR}/print/tex-ptexenc
 _USE_TEX_FORMATS=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt:${PORTSDIR}/print/tex-formats
 _USE_TEX_ALEPH=		aleph:${PORTSDIR}/print/tex-aleph
 _USE_TEX_LUATEX=	luatex:${PORTSDIR}/print/tex-luatex
