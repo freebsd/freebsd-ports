@@ -18,7 +18,6 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample \
 		man/man8/bftpd.8.gz
-MAN8=		bftpd.8
 PORTDOCS=	en pl sk
 
 .include <bsd.port.pre.mk>

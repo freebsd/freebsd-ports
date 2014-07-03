@@ -33,23 +33,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DBUS NLS
 OPTIONS_DEFAULT=DBUS NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CONFIGURE_WITH=	dbus
 
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
-CONFIGURE_ARGS+=	--with-dbus
-.else
-CONFIGURE_ARGS+=	--without-dbus
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-locales
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-locales
 
 .if !defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--disable-manualupdatecheck

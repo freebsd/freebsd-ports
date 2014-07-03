@@ -17,9 +17,9 @@ USE_QT4=	gui network corelib uic_build moc_build rcc_build
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.if defined(NOPORTDOCS)
-INSTALL_TARGET=install_lang install_icon install_icon2 install_target
-.endif
+OPTIONS_DEFINE=	DOCS
+
+DOCS_INSTALL_TARGET_OFF=	install_lang install_icon install_icon2 install_target
 
 DESKTOP_ENTRIES=	"Scythia" \
 			"Small ftp client unpretentious" \

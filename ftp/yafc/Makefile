@@ -29,42 +29,25 @@ PLIST_FILES=	bin/yafc \
 		info/yafc.info \
 		man/man1/yafc.1.gz
 
-.include <bsd.port.options.mk>
+NLS_USES=		gettext
+NLS_USE=		GNOME=intltool
+NLS_CONFIGURE_WITH=	gettext=${LOCALBASE}
+NLS_PLIST_FILES=	share/locale/de/LC_MESSAGES/yafc.mo \
+			share/locale/sv/LC_MESSAGES/yafc.mo
 
-.if ${PORT_OPTIONS:MNLS}
-USE_GNOME+=	intltool
-USES+=		gettext
-CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE}
-PLIST_FILES+=	share/locale/de/LC_MESSAGES/yafc.mo \
-		share/locale/sv/LC_MESSAGES/yafc.mo
-.else
-CONFIGURE_ARGS+=	--without-gettext
-.endif
+READLINE_USES=		readline
+READLINE_CONFIGURE_WITH=readline
 
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=		readline
-.else
-CONFIGURE_ARGS+=	--without-readline
-.endif
+SSH_LIB_DEPENDS=	libssh.so:${PORTSDIR}/security/libssh
+SSH_CONFIGURE_OFF=	--without-ssh
 
-.if ${PORT_OPTIONS:MSSH}
-LIB_DEPENDS+=	libssh.so:${PORTSDIR}/security/libssh
-.else
-CONFIGURE_ARGS+=	--without-ssh
-.endif
-
-.if ${PORT_OPTIONS:MBASH}
-CONFIGURE_ARGS+=	--with-bash-completion=yes
-PLIST_FILES+=		etc/bash_completion.d/yafc
-PLIST_DIRSTRY=		etc/bash_completion.d
-.else
-CONFIGURE_ARGS+=	--with-bash-completion=no
-.endif
+BASH_CONFIGURE_ON=	--with-bash-completion=yes
+BASH_PLIST_FILES=	etc/bash_completion.d/yafc
+BASH_PLIST_DIRSTRY=	etc/bash_completion.d
+BASH_CONFIGURE_OFF=	--with-bash-completion=no
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
