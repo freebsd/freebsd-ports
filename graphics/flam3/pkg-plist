@@ -5,7 +5,6 @@ bin/flam3-convert
 include/flam3.h
 include/isaac.h
 include/isaacs.h
-lib/libflam3.la
 lib/libflam3.a
 libdata/pkgconfig/flam3.pc
 share/flam3/flam3-palettes.xml
