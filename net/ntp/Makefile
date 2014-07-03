@@ -22,35 +22,27 @@ SHEBANG_FILES=	${WRKSRC}/scripts/ntptrace.in ${WRKSRC}/scripts/ntp-wait.in
 perl_OLD_CMD=	@PATH_PERL@
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake
+OPTIONS_SUB=	yes
 
 .include "Makefile.inc"
 
+NTPSNMPD_PLIST_FILES=	bin/ntpsnmpd
+NTPSNMPD_BUILD_DEPENDS=	${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
+NTPSNMPD_RUN_DEPENDS=	${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
+NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
+
+SSL_USE=		OPENSSL=yes
+SSL_CONFIGURE_OFF=	--without-crypto
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+NTP_SIGND_CONFIGURE_ENABLE=	ntp-signd
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNTPSNMPD}
-PLIST_FILES+=		bin/ntpsnmpd
-BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-.else
-CONFIGURE_ARGS+=	--without-ntpsnmpd
-.endif
-
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
-PLIST_SUB+=		SSL=""
-.else
-CONFIGURE_ARGS+=        --without-crypto
-PLIST_SUB+=             SSL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=        --enable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MNTP_SIGND}
-CONFIGURE_ARGS+=        --enable-ntp-signd
 .endif
 
 .for D in ${NTP_DRIVERS}
@@ -68,11 +60,9 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
