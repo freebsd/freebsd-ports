@@ -26,4 +26,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/share/doc/xroads
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
