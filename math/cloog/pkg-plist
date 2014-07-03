@@ -71,16 +71,14 @@ include/isl/vertices.h
 lib/cloog-isl/cloog-isl-config.cmake
 lib/isl/isl-config.cmake
 lib/libcloog-isl.a
-lib/libcloog-isl.la
 lib/libcloog-isl.so
-lib/libcloog-isl.so.0
 lib/libcloog-isl.so.4
+lib/libcloog-isl.so.4.0.0
 lib/libisl.a
-lib/libisl.la
 lib/libisl.so
-lib/libisl.so.0
-lib/libisl.so.12
-lib/libisl.so.12-gdb.py
+lib/libisl.so.10
+lib/libisl.so.10.2.1
+lib/libisl.so.10.2.1-gdb.py
 libdata/pkgconfig/cloog-isl.pc
 libdata/pkgconfig/isl.pc
 @dirrmtry lib/isl
