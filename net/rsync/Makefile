@@ -36,7 +36,7 @@ OPTIONS_RADIO_PTS=	TIMELIMIT RENAMED FLAGS ATIMES ACL
 
 # options provided upstream
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
-ZLIB_BASE_DESC=	Use zlib from base instead of bundled one (BROKEN)
+ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
 SSH_DESC=	Use SSH instead of RSH
 
 # options provided by patch (mutually exclusive)
