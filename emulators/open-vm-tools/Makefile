@@ -3,7 +3,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		5
+PORTREVISION=		6
 PORTEPOCH=		1
 CATEGORIES=		emulators
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-9.4.x
@@ -42,7 +42,7 @@ ICU_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
-USES=			pkgconfig kmod
+USES=			pkgconfig kmod libtool
 USE_GNOME=		glib20
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-Wno-deprecated-declarations
