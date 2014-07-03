@@ -10,20 +10,16 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The sound conversion application for the GNOME environment
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
-
 LICENSE=	GPLv3
 
-USES=		gettext gmake
-NO_STAGE=	yes
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
+
+USES=		gettext gmake desktop-file-utils
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnome2
-
 MAKE_ENV=	MAKE=${LOCALBASE}/bin/gmake
-
 INSTALLS_ICONS=	yes
-MAN1=	soundconverter.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@GMSGFMT@|${LOCALBASE}/bin/msgfmt|; \
