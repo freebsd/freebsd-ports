@@ -16,7 +16,7 @@ LICENSE=	MIT
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 
-OPTIONS_DEFINE=		SENDFILE OPENSSL
+OPTIONS_DEFINE=		SENDFILE OPENSSL EXAMPLES
 OPTIONS_DEFAULT=	SENDFILE OPENSSL
 SENDFILE_DESC=		Enable sendfile(2) support
 OPENSSL_DESC=		Enable FTP over SSL/TLS (RFC4217)
@@ -24,23 +24,14 @@ OPENSSL_DESC=		Enable FTP over SSL/TLS (RFC4217)
 # Workaround ports infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSENDFILE}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysendfile>0:${PORTSDIR}/net/py-pysendfile
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl
-.endif
+SENDFILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysendfile>0:${PORTSDIR}/net/py-pysendfile
+OPENSSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/demo/ ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 test: build
 	${TOUCH} ${WRKSRC}/test/__init__.py
