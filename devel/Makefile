@@ -3900,6 +3900,7 @@
     SUBDIR += py-ua_parser
     SUBDIR += py-ujson
     SUBDIR += py-uncompyle2
+    SUBDIR += py-unipath
     SUBDIR += py-unittest2
     SUBDIR += py-unittestplus
     SUBDIR += py-urlimport
