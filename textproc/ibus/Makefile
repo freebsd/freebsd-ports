@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -22,16 +22,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
+USES=		compiler gmake libtool pathfix pkgconfig
 USE_GNOME=	pygobject3
 USE_PYTHON=	yes
-
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig compiler
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS+=	--disable-tests
+INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--disable-tests
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	ISOCODES NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DOC XIM ENGINE
+OPTIONS_DEFINE=	ISOCODES NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DOCS XIM ENGINE
 OPTIONS_RADIO=	CONFIG
 OPTIONS_RADIO_CONFIG=	GCONF DCONF
 OPTIONS_DEFAULT=	ISOCODES NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DCONF XIM ENGINE
@@ -44,11 +46,8 @@ GINTRO_DESC=	Install GObject Introspection data
 PYTHON_LIB_DESC=	Install ibus Python libraries
 GCONF_DESC=	Use GConf for configuration
 DCONF_DESC=	Use dconf for configuration
-DOC_DESC=	Install HTML documents
 XIM_DESC=	Install XIM server
 ENGINE_DESC=	Install ibus simple engine
-
-.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
@@ -140,12 +139,10 @@ CONFIGURE_ARGS+=	--disable-dconf
 PLIST_SUB+=		DCONF="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDOC}
-CONFIGURE_ARGS+=	--enable-gtk-doc-html
-PLIST_SUB+=		DOC=""
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--enable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
 .else
 CONFIGURE_ARGS+=	--disable-gtk-doc-html
-PLIST_SUB+=		DOC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXIM}
@@ -176,7 +173,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-xigrabkeycode
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c
 
 post-install:
