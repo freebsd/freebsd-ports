@@ -3,6 +3,7 @@
 
 PORTNAME=	gss
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libshishi.so:${PORTSDIR}/security/shishi
 
 CONFLICTS=	heimdal-[0-9]*
 
-USES=		pathfix pkgconfig perl5
+USES=		libtool pathfix pkgconfig perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kerberos5
