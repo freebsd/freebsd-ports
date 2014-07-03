@@ -15,15 +15,16 @@ LICENSE=	GPLv2
 
 USES=		gmake
 MAKE_ARGS=	MODE=release OBJ_DIR=. OUT_DIR=. Q2MODULE=game.so \
-		QUAKE2_DIR="${Q2DIR}" BIN_DIR="${PREFIX}/bin" \
+		QUAKE2_DIR="${STAGEDIR}${Q2DIR}" BIN_DIR="${STAGEDIR}${PREFIX}/bin" \
 		CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}"
 
 WRKSRC=		${WRKDIR}/relay-${PORTVERSION}
 PORTDOCS=	FAQ README
 
+ED?=	/bin/ed
+
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.options.mk>
 
@@ -44,11 +45,7 @@ post-patch: .SILENT
 	${ECHO_CMD} -e '9t7\n10d\nwq' | ${ED} -s ${WRKSRC}/common/net.c
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-
-ED?=	/bin/ed
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
