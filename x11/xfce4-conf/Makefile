@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-conf
 PORTVERSION=	4.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfconf-${PORTVERSION}
@@ -16,13 +16,12 @@ BUILD_DEPENDS=	p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_XFCE=	configenv libutil
 USE_XORG=	x11
-USES=		gmake pathfix pkgconfig perl5
+USES=		gmake libtool pathfix pkgconfig perl5 tar:bzip2
 
 OPTIONS_DEFINE=		DOCS PERL NLS
 
