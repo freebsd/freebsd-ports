@@ -33,7 +33,6 @@ Q2_DEMO=	q2-314-demo-x86.exe
 Q2_SRC=		q2src${PORTVERSION:S/.//}.shar.Z
 Q2_UPDATE=	q2-${PORTVERSION}-x86-full.exe
 
-NO_STAGE=	yes
 .include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
 
@@ -82,19 +81,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' ${WRKSRC}/q_shared.[ch]
 
 do-install:
-	@${MKDIR} ${DATADIR}/baseq2
-	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${DATADIR}/baseq2
-	${CP} -a ${WRKSRC}/baseq2/* ${DATADIR}/baseq2
+	@${MKDIR} ${STAGEDIR}${DATADIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${STAGEDIR}${DATADIR}/baseq2
+	${CP} -a ${WRKSRC}/baseq2/* ${STAGEDIR}${DATADIR}/baseq2
 .if ${PORT_OPTIONS:MMANUAL}
-	@${MKDIR} ${DOCSDIR}
-	${CP} -a ${WRKSRC}/DOCS ${DOCSDIR}/manual
-.endif
-
-post-install:
-.if ! ${PORT_OPTIONS:MSHAREWARE}
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -a ${WRKSRC}/DOCS ${STAGEDIR}${DOCSDIR}/manual
 .endif
 
 .include <bsd.port.mk>
