@@ -34,7 +34,7 @@ post-patch:
 		${WRKSRC}/man1/*
 	${MV} ${WRKSRC}/README ${WRKSRC}/DOCS/readme.unix
 
-.if ${SLAVE_PORT} == "no"
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/p7zip
 .for BINARY in 7z 7za 7zr 7zCon.sfx
