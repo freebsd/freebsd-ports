@@ -21,11 +21,11 @@ SHEBANG_FILES=	dnsmax.pl
 PLIST_FILES=	bin/dnsmax-perl
 PORTDOCS=	LICENSE INSTALL README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/dnsmax.pl ${STAGEDIR}${PREFIX}/bin/dnsmax-perl
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${DISTNAME} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
