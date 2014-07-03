@@ -2,7 +2,7 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${SPAMCONTROL_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES+=	http://www.fehcom.de/qmail/spamcontrol/:spamcontrol \
 		${MASTER_SITE_LOCAL:S/$/:spamcontrol/}
@@ -26,8 +26,6 @@ SPAMCONTROL_VERSION=	2731
 LATEST_LINK=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 SLAVE_SPAMCONTROL=	yes
-
-BROKEN=		some patches are not applying properly yet still build
 
 # Local overrides
 MASTERDIR=	${.CURDIR}/../qmail
