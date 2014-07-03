@@ -15,8 +15,6 @@ USE_TEX=	latex
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 do-build:
 	(cd ${WRKSRC} \
 		&& ${CXX} ${CXXFLAGS} -DPP3DATA=\"${DATADIR}\" pp3.cc -o pp3)

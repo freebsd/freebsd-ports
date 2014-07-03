@@ -53,7 +53,7 @@ share/applications/starplot.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/parfiles/hyades.par
 %%PORTDOCS%%%%DOCSDIR%%/html/parfiles/scocen.par
 %%PORTDOCS%%%%DOCSDIR%%/html/starplot.css
-%%EXAMPLESDIR%%/example.spec
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.spec
 share/locale/en@boldquot/LC_MESSAGES/starplot.mo
 share/locale/en@quot/LC_MESSAGES/starplot.mo
 share/locale/es/LC_MESSAGES/starplot.mo
@@ -61,7 +61,7 @@ share/pixmaps/starplot32x32.xpm
 %%DATADIR%%/sample.stars
 %%DATADIR%%/test.stars
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/parfiles
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
