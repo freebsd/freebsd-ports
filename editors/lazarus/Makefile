@@ -140,21 +140,17 @@ pre-install:
 		@${ECHO_CMD} man/man1/${m}.gz >> ${PLIST}
 .	endfor
 
-.if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "%%DATADIR%%/docs" >> ${PLIST}
 	@cd ${WRKDIR}/docs && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DOCSDIR%%/|' >> ${PLIST} && \
 			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DOCSDIR%%/|' >> ${PLIST}
 	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >> ${PLIST}
-.endif
 
-.if !defined(NOPORTEXAMPLES)
 	@${ECHO_CMD} "%%DATADIR%%/examples" >> ${PLIST}
 	@cd ${WRKDIR}/examples && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%EXAMPLESDIR%%/|' >> ${PLIST} && \
 			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%EXAMPLESDIR%%/|' >> ${PLIST}
 	@${ECHO_CMD} "@dirrm %%EXAMPLESDIR%%" >> ${PLIST}
-.endif
 
 	@cd ${WRKSRC} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
@@ -176,19 +172,15 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${STAGEDIR}${DATADIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
 	@cd ${WRKDIR}/docs && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
 	@${LN} -s ${DOCSDIR} ${STAGEDIR}${DATADIR}/docs
-.endif
 
-.if !defined(NOPORTEXAMPLES)
 	@cd ${WRKDIR}/examples && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${EXAMPLESDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${EXAMPLESDIR}/{}" \;
 	@${LN} -s ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
-.endif
 
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
