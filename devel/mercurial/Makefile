@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -11,6 +10,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, lightweight source control management system
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
