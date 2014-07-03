@@ -16,25 +16,22 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegakigtk/recognizer.py:${PORTSDIR}/japanese/py-tegaki-gtk
 
+OPTIONS_DEFINE=	DOCS
+
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}_recognize
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
 		${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
