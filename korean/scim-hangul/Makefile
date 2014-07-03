@@ -3,6 +3,7 @@
 
 PORTNAME=	scim-hangul
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul \
 		libscim-1.0.so:${PORTSDIR}/textproc/scim
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool:keepla pkgconfig
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	NLS
