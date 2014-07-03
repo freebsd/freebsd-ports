@@ -1,7 +1,7 @@
 lib/libsage.a
-lib/libsage.la
 lib/libsage.so
 lib/libsage.so.2
+lib/libsage.so.2.0.0
 include/sage/sage.h
 include/sage/utility.h
 include/sage/sage_fptr.h

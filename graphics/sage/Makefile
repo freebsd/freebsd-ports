@@ -3,7 +3,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28OpenGL%20helper%20lib%29/${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	OpenGL extension library
 CONFIGURE_ARGS=	--program-transform-name=
 GNU_CONFIGURE=	yes
 USE_GL=		yes
-USES=	pathfix
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 
