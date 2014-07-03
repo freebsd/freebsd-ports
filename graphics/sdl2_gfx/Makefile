@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl2_gfx
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/
 MASTER_SITE_SUBDIR=	SDL2_gfx
@@ -14,7 +14,7 @@ COMMENT=	SDL graphics drawing primitives and other support functions
 
 LICENSE=	ZLIB
 
-USES=		pathfix gmake libtool
+USES=		pathfix gmake libtool:oldver
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
