@@ -1,6 +1,2 @@
 %%PERL5_MAN3%%/Readonly.3.gz
 %%SITE_PERL%%/Readonly.pm
-%%SITE_PERL%%/Readonly/Array.pm
-%%SITE_PERL%%/Readonly/Hash.pm
-%%SITE_PERL%%/Readonly/Scalar.pm
-@dirrmtry %%SITE_PERL%%/Readonly
