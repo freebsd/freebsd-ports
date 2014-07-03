@@ -1,5 +1,3 @@
-lib/gtk-%%GTKVER%%/immodules/im-hangul.a
-lib/gtk-%%GTKVER%%/immodules/im-hangul.la
 lib/gtk-%%GTKVER%%/immodules/im-hangul.so
 %%GTK2%%%%NLS%%share/locale/ko/LC_MESSAGES/im-hangul.mo
 %%GTK2%%@exec %D/bin/gtk-query-immodules-2.0 --update-cache
