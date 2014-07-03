@@ -969,6 +969,7 @@
     SUBDIR += libdap
     SUBDIR += libdasm
     SUBDIR += libdatrie
+    SUBDIR += libdbusmenu
     SUBDIR += libdbusmenu-qt
     SUBDIR += libdevq
     SUBDIR += libdfui
