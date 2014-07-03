@@ -25,8 +25,6 @@ PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${ECHO_MSG} -n ">> Install JAR file in ${STAGEDIR}${JAVAJARDIR}..."
 	@${INSTALL_DATA} ${WRKSRC}/jars/tar.jar ${STAGEDIR}${JAVAJARDIR}/

@@ -20,9 +20,9 @@ USES=		libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-NLS_USES+=	gettext
-NLS_CPPFLAGS+=	-I${LOCALBASE}/include
-NLS_LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+NLS_USES=	gettext
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib -lintl
 NLS_CONFIGURE_ARGS=	nls
 
 .include <bsd.port.mk>

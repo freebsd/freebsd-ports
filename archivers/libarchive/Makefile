@@ -78,31 +78,19 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-.include <bsd.port.options.mk>
+LIBXML2_USE=		GNOME=libxml2
+LIBXML2_CONFIGURE_WITH=	xml2
+LIBXML2_CFLAGS=		-DHAVE_BSDXML_H=1
+LIBXML2_LDFLAGS=	-lbsdxml
 
-.if ${PORT_OPTIONS:MLIBXML2}
-USE_GNOME+=	libxml2
-CONFIGURE_ARGS+=	--with-xml2
-.else
-CFLAGS+=	-DHAVE_BSDXML_H=1
-LDFLAGS+=	-lbsdxml
-CONFIGURE_ARGS+=	--without-xml2
-.endif
+LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO_CONFIGURE_WITH=	lzo2
 
-.if ${PORT_OPTIONS:MLZO}
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
-CONFIGURE_ARGS+=	--with-lzo2
-.else
-CONFIGURE_ARGS+=	--without-lzo2
-.endif
-
-.if ${PORT_OPTIONS:MNETTLE}
-LIB_DEPENDS+=	nettle:${PORTSDIR}/security/nettle
-CONFIGURE_ARGS+=	--without-openssl --with-nettle
-.else
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-openssl --without-nettle
-.endif
+NETTLE_LIB_DEPENDS=	nettle:${PORTSDIR}/security/nettle
+NETTLE_CONFIGURE_WITH=	nettle
+NETTLE_CONFIGURE_ON=	--without-openssl
+NETTLE_USE_OFF=		OPENSSL=yes
+NETTLE_CONFIGURE_OFF=	--with-openssl
 
 check:
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)

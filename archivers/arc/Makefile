@@ -13,18 +13,16 @@ LICENSE=	GPLv2
 
 CONFLICTS=	php5-arcanist-*
 
+OPTIONS_DEFINE=	DOCS
+
 PLIST_FILES=	bin/arc bin/marc man/man1/arc.1.gz
 PORTDOCS=	Arc521.doc
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arc ${WRKSRC}/marc\
 		${STAGEDIR}/${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/arc.1 ${STAGEDIR}/${PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Arc521.doc ${STAGEDIR}/${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

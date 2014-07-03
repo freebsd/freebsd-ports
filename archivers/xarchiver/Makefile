@@ -22,20 +22,16 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=		gettext
+NLS_CPPFLAGS+=	-I${LOCALBASE}/include
+NLS_LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if !empty(PORT_OPTIONS:MNLS)
-USES+=		gettext
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
 .endif
 .if empty(PORT_OPTIONS:MNLS)

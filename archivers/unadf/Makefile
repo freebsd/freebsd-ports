@@ -43,6 +43,8 @@ FAQSIMGS=	FAQ/image/adf_dir.gif FAQ/image/adf_file.gif
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 # XXX: work around an issue with automake-1.13 erroring out on a
 #      non-existent m4 directory before libtoolize creates it
 pre-configure::

@@ -21,18 +21,12 @@ OPTIONS_DEFINE=	RSYNCABLE DOCS
 OPTIONS_DEFAULT=	RSYNCABLE
 RSYNCABLE_DESC=	Include --rsyncable patch
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRSYNCABLE}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-gzip-rsyncable.diff
-.endif
+RSYNCABLE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-gzip-rsyncable.diff
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
