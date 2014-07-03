@@ -1323,18 +1323,18 @@ man/man3/x509.3.gz
 man/man5/config.5.gz
 man/man5/x509v3_config.5.gz
 man/man7/des_modes.7.gz
-openssl/misc/CA.pl
-openssl/misc/CA.sh
-openssl/misc/c_hash
-openssl/misc/c_info
-openssl/misc/c_issuer
-openssl/misc/c_name
-openssl/misc/tsget
-openssl/openssl.cnf.sample
+%%OPENSSLDIR%%/misc/CA.pl
+%%OPENSSLDIR%%/misc/CA.sh
+%%OPENSSLDIR%%/misc/c_hash
+%%OPENSSLDIR%%/misc/c_info
+%%OPENSSLDIR%%/misc/c_issuer
+%%OPENSSLDIR%%/misc/c_name
+%%OPENSSLDIR%%/misc/tsget
+%%OPENSSLDIR%%/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 @dirrm include/openssl
-@dirrmtry openssl/certs
-@dirrm openssl/misc
-@dirrmtry openssl/private
-@dirrm openssl
+@dirrmtry %%OPENSSLDIR%%/certs
+@dirrm %%OPENSSLDIR%%/misc
+@dirrmtry %%OPENSSLDIR%%/private
+@dirrm %%OPENSSLDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
