@@ -17,7 +17,7 @@ LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		compiler:features gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-ilmbasetest --enable-imfexamples
 USE_LDCONFIG=	yes
@@ -58,6 +58,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(datadir)/doc/OpenEXR-@OPENEXR_VERSION@||' \
 		-e 's|$$(EXTRA_DIST)||' \
 		${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/Makefile.in
+
+# too many reports about compileration failures, so sanity check C++
+# library
+_ilm_libcxx=${COMPILER_FEATURES:Mlib*c++}
+pre-configure:
+	@${OBJDUMP} -j .dynstr -p ${LOCALBASE}/lib/libImath.so \
+	| ${EGREP} -q '^[[:space:]]*NEEDED[[:space:]]+${_ilm_libcxx:C/\+/\\+/g}\.' \
+	|| {	${ECHO_CMD} "*** Your ilmbase package uses a non-default C++ standard library. ***" ; \
+		${ECHO_CMD} "*** Please recompile and reinstall ilmbase with the default       ***" ; \
+		${ECHO_CMD} "*** C++ compiler before trying to build OpenEXR.  Aborting.       ***" ; \
+		exit 1; }
+
 
 .if ! ${PORT_OPTIONS:MEXAMPLES}
 EXTRA_PATCHES+=${FILESDIR}/extra-patch-IlmImfExamples__Makefile.in
