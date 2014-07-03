@@ -19,14 +19,14 @@ USE_PYDISTUTILS=	yes
 PORTDOCS=	README.txt \
 		TODO.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 # docs
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 # permission safeness
 	@${CHMOD} -R ${SHAREMODE} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/coil/*

@@ -19,10 +19,14 @@ USES=		pkgconfig gettext gmake
 
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README ChangeLog
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
 		${WRKSRC}/configure
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|$${prefix}/share/doc/gnome_js_common|${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
 .else

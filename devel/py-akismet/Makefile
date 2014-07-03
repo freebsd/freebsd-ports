@@ -21,10 +21,10 @@ PYDISTUTILS_PKGNAME=	akismet
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

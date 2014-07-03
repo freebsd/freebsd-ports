@@ -23,22 +23,20 @@ USE_LDCONFIG=	yes
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	pytest.py
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-extract:
 	${LN} -s ${WRKDIR}/${SHAPELIB} ${WRKDIR}/shapelib
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

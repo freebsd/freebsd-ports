@@ -21,14 +21,12 @@ USE_PERL5=	configure
 PORTDOCS=	Changes
 PORTEXAMPLES=	check_installed script-covered
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}/
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
