@@ -3,7 +3,7 @@
 
 PORTNAME=	torsocks
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	GOOGLE_CODE \
 		http://tor.reactor-xg.kiev.ua/files/
@@ -13,15 +13,11 @@ COMMENT=	Most SOCKS-friendly applications way with Tor
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	libtool aclocal autoconf libtoolize
+USE_AUTOTOOLS=	aclocal autoconf libtoolize
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
-USES=		gmake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
-
-MAN1=		torsocks.1 usewithtor.1
-MAN5=		torsocks.conf.5
-MAN8=		torsocks.8
 
 SUB_FILES=	pkg-message
 
@@ -41,7 +37,6 @@ OPTIONS_DEFAULT=	DOCS DEFAULT
 
 PORTDOCS=	INSTALL README TODO ChangeLog
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOCKSDNS}
@@ -106,12 +101,11 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.sample ${PREFIX}/etc
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.sample ${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

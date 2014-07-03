@@ -18,8 +18,8 @@ post-extract:
 	-@${FIND} ${WRKSRC}/ -type d -name '.svn' | ${XARGS} ${RM} -rf
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>

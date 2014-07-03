@@ -3,6 +3,7 @@
 
 PORTNAME=	libarms
 PORTVERSION=	5.01
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	https://dev.smf.jp/dl/ \
 		http://dev.smf.jp/dl/
@@ -10,9 +11,9 @@ MASTER_SITES=	https://dev.smf.jp/dl/ \
 MAINTAINER=	shigeru@iij.ad.jp
 COMMENT=	SMFv2/ARMS client library for C
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

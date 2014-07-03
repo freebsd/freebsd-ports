@@ -28,19 +28,13 @@ BOOST_RUN_DEPENDS=	${BOOST_BUILD_DEPENDS}
 BOOST_CONFIGURE_ON=	--with-boost=${LOCALBASE}
 BOOST_CONFIGURE_OFF=	--without-boost
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| -lstdc++||' ${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/guide.pdf ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${WRKSRC}/examples/example*.cpp ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>

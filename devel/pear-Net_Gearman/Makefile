@@ -9,6 +9,8 @@ CATEGORIES=	devel pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gearman client libraray for PHP
 
+LICENSE=	BSD2CLAUSE
+
 BUILD_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:${PORTSDIR}/devel/pear
 

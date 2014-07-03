@@ -1,0 +1,10 @@
+--- ./data/Makefile.in.orig	2013-11-17 13:45:58.000000000 +0000
++++ ./data/Makefile.in	2014-04-02 20:44:06.000000000 +0000
+@@ -371,7 +371,6 @@
+ top_srcdir = @top_srcdir@
+ NULL = 
+ SUBDIRS = \
+-	apport \
+ 	icons \
+ 	themes \
+ 	$(NULL)

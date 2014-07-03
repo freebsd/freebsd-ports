@@ -17,8 +17,9 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent \
 		libdnet.so:${PORTSDIR}/net/libdnet \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
+USES=		libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE}
 

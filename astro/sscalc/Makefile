@@ -11,8 +11,6 @@ COMMENT=	Sunrise and sunset time calculator
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 pre-fetch:
 .if !defined(LAT)
 	@${ECHO_MSG} "Type \"make LAT=<nnn.nn> LON=<nnn.nn>\" to hardwire your site"
@@ -23,10 +21,8 @@ pre-fetch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/sscalc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/sscalc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/cities.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

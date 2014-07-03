@@ -25,15 +25,10 @@ USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_LDCONFIG=	yes
 MAKE_JOB_SAFE=	yes
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB=	GTKDOC=""
-.else
-PLIST_SUB=	GTKDOC="@comment "
-.endif
 
 post-patch:
 # Needed to remove gtk-doc installation

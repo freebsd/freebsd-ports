@@ -18,6 +18,7 @@ PLIST_FILES=	libexec/tnftpd \
 PORTDOCS=	ChangeLog NEWS README THANKS COPYING
 PORTEXAMPLES=	ftpd.conf ftpusers
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
@@ -33,17 +34,13 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/ftpd.conf.man ${STAGEDIR}${PREFIX}/man/man5/ftpd.conf.5
 	${INSTALL_MAN} ${WRKSRC}/src/ftpusers.man ${STAGEDIR}${PREFIX}/man/man5/ftpusers.5
 	${INSTALL_MAN} ${WRKSRC}/src/tnftpd.man ${STAGEDIR}${PREFIX}/man/man8/tnftpd.8
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

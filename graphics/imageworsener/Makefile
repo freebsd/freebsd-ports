@@ -3,7 +3,7 @@
 
 PORTNAME=	imageworsener
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/imageworsener/ \
 		LOCAL/sunpoet
@@ -19,6 +19,7 @@ OPTIONS_DEFAULT=JPEG PNG WEBP
 CONFIGURE_ARGS=	--with-zlib-include-dir=${INCLUDEDIR} \
 		--with-zlib-lib-dir=${LIBDIR}
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -33,6 +34,6 @@ WEBP_CONFIGURE_ON=	--with-webp-include-dir=${LOCALBASE}/include --with-webp-lib-
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
 post-build:
-	@${STRIP_CMD} ${WRKSRC}/.libs/libimageworsener.so.2
+	@${STRIP_CMD} ${WRKSRC}/.libs/libimageworsener.so
 
 .include <bsd.port.mk>

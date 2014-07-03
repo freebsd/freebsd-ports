@@ -9,6 +9,9 @@ MASTER_SITES=	LOCAL/dd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dereference a symbolic link and print the name of the target
 
+DEPRECATED=	All features implemented in the base system since FreeBSD 8.3
+EXPIRATION_DATE=	2014-08-03
+
 PLIST_FILES=	bin/readlink \
 		man/man1/readlink.1.gz
 

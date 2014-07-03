@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	1.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/ \
 		http://www.math.jussieu.fr/~han/xcas/sources/v2/
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 NO_CDROM=	French documentation is for non-commercial use only
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake libtool:keepla shebangfix
+USES=		desktop-file-utils gettext gmake libtool shebangfix
 USE_GL=		gl
 USE_XORG=	x11 xcursor xft xi
 USE_TEX=	latex:build dvipsk:build

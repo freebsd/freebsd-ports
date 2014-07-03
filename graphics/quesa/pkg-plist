@@ -23,27 +23,7 @@ include/quesa/QuesaTransform.h
 include/quesa/QuesaView.h
 include/quesa/QuesaViewer.h
 lib/libquesa.a
-lib/libquesa.la
 lib/libquesa.so
 lib/libquesa.so.0
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/1.tga
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/2.tga
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/3.tga
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/4.tga
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/5.tga
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/6.tga
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Images/Quesa.tga
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Models/F15.3dmf
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Models/F18.3dmf
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Models/PodRacer.3dmf
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/Models/QuesaLogo.3dmf
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/cameratest
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/dumpgroup
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/geomtest
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/importtest
-%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/bin/lighttest
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/bin
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Models
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/Images
-%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+lib/libquesa.so.0.0.0
 @dirrm include/quesa

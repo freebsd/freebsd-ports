@@ -25,4 +25,6 @@ PORTDOCS=		BUGS COPYING LICENSE NEWS PROJECTS README README.1ST \
 			THANKS TODO elf-to-mem.txt filter.txt loader.txt selinux.txt
 DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
 
+OPTIONS_DEFINE=		DOCS
+
 .include <bsd.port.mk>

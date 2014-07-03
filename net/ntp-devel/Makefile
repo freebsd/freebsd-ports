@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p445
+PORTVERSION=	4.2.7p446
 CATEGORIES=	net ipv6
-PKGNAMESUFFIX=	-devel
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ntp-dev/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/ntp-dev/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	cy@FreeBSD.org
@@ -16,6 +16,7 @@ COMMENT=	The Network Time Protocol Distribution
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake
 AUTOMAKE_ARGS=	--add-missing
+OPTIONS_SUB=	yes
 USES=		pathfix perl5 shebangfix libtool
 LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
@@ -23,35 +24,22 @@ NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace
 
 .include "Makefile.inc"
 
-.include <bsd.port.options.mk>
+SSL_USE=		OPENSSL=yes
+SSL_CONFIGURE_OFF=	--without-crypto
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+NTP_SIGND_CONFIGURE_ENABLE=	ntp-signd
+
+NTPSNMPD_PLIST_FILES=	sbin/ntpsnmpd
+NTPSNMPD_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
+
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
-PLIST_SUB+=		SSL=""
-.else
-CONFIGURE_ARGS+=	--without-crypto
-PLIST_SUB+=		SSL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MNTP_SIGND}
-CONFIGURE_ARGS+=	--enable-ntp-signd
-.endif
-
-.if ${PORT_OPTIONS:MNTPSNMPD}
-PLIST_FILES+=		sbin/ntpsnmpd
-PLIST_SUB+=		NTPSNMPD=""
-BUILD_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-LIB_DEPENDS=		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS+=		${LOCALBASE}/include/net-snmp/net-snmp-config.h:${PORTSDIR}/net-mgmt/net-snmp
-.else
-CONFIGURE_ARGS+=	--without-ntpsnmpd
-PLIST_SUB+=		NTPSNMPD="@comment "
 .endif
 
 .for D in ${NTP_DRIVERS}
@@ -64,8 +52,6 @@ CONFIGURE_ARGS+=	--enable-${D}
 BROKEN=		Fails to compile when MX4200 is enabled.
 .endif
  
-.include <bsd.port.pre.mk>
-
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}4
 
 pre-everything::
@@ -84,12 +70,10 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${STAGEDIR}${DOCSDIR}
-.endif
 	@cd ${STAGEDIR}${PREFIX}; \
 		${ECHO_CMD} ${NTP_SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
 

@@ -8,7 +8,9 @@ CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A DVI to text/plain translator
+COMMENT=	DVI to text/plain translator
+
+LICENSE=	GPLv2
 
 USE_TEX=	latex
 USES=		gmake

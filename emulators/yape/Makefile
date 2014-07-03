@@ -19,6 +19,8 @@ ALL_TARGET=	yape
 PLIST_FILES=	bin/yape
 PORTDOCS=	README.SDL
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt)" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
@@ -32,9 +34,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yape ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.SDL ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

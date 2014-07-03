@@ -28,9 +28,9 @@ SUB_LIST+=	BINDGRAPH_USER=${BINDGRAPH_USER} BINDGRAPH_GROUP=${BINDGRAPH_GROUP}
 PLIST_SUB=	CGIDIR=${CGIDIR:S,${PREFIX}/,,}
 
 DOCS=		README ChangeLog
-.if !defined(NOPORTDOCS)
 PORTDOCS=	${DOCS}
-.endif
+
+OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -50,12 +50,10 @@ do-install:
 	@${CHOWN} -R ${BINDGRAPH_USER}:${BINDGRAPH_GROUP} ${STAGEDIR}${DATADIR}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.pl ${STAGEDIR}${PREFIX}/sbin/
 	@${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.cgi ${STAGEDIR}${CGIDIR}/
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for f in ${DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}/; \
 	done
-.endif
 
 post-install:
 	@${ECHO_MSG} ""

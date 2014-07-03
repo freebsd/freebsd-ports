@@ -1,8 +1,8 @@
 include/libarms.h
 lib/libarms.a
-lib/libarms.la
 lib/libarms.so
 lib/libarms.so.0
+lib/libarms.so.0.0.1
 %%DOCSDIR%%/doc/.buildinfo
 %%DOCSDIR%%/doc/_images/libarms-pull.png
 %%DOCSDIR%%/doc/_images/libarms-push.png

@@ -129,6 +129,7 @@
     SUBDIR += pekwm
     SUBDIR += phluid
     SUBDIR += piewm
+    SUBDIR += plank
     SUBDIR += plwm
     SUBDIR += pwm
     SUBDIR += qlwm

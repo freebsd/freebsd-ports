@@ -8,14 +8,14 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Full-screen, console-based Python debugger
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:${PORTSDIR}/textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}urwid>0:${PORTSDIR}/devel/py-urwid
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}urwid>=0:${PORTSDIR}/devel/py-urwid
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
+USE_PYDISTUTILS=yes
+USE_PYTHON=	yes
 
 .include <bsd.port.mk>

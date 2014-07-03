@@ -20,6 +20,8 @@ CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		${ICONV_CONFIGURE_ARG}
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include "${.CURDIR}/Makefile.common"
 
 
@@ -27,13 +29,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.css ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/en
 	${INSTALL_DATA} ${WRKSRC}/doc/en/*.html ${STAGEDIR}${DOCSDIR}/en
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
 	${INSTALL_DATA} ${WRKSRC}/doc/ja/*.html ${STAGEDIR}${DOCSDIR}/ja
-.endif
 
 .include <bsd.port.mk>

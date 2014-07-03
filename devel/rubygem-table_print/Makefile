@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	table_print
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	kvedulv@kvedulv.de
 COMMENT=	Turn objects into formatted columns
 
 LICENSE=	MIT

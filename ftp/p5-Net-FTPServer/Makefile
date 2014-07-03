@@ -31,8 +31,6 @@ PORTEXAMPLES=	ftpd.conf
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
 		-e "s,/usr/sbin,${PREFIX}/sbin," \

@@ -52,7 +52,7 @@ include/libmal/MAL31UserConfig.h
 include/libmal/ag-md5.h
 include/libmal/libmal.h
 lib/libmal.a
-lib/libmal.la
 lib/libmal.so
 lib/libmal.so.1
+lib/libmal.so.1.0.1
 @dirrm include/libmal

@@ -40,6 +40,7 @@ RESERVED_PORT_CFLAGS=	-DRESVPORT
 # Substitutions for pkg-plist
 PLIST_SUB+=	SPEC_ROOT=${SPEC_ROOT}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

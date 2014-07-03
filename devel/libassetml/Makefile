@@ -11,7 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to share image and audio files between projects
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 USES=		gettext gmake libtool:keepla makeinfo pkgconfig
 USE_GNOME=	gnomehack gnomeprefix glib20 libxml2

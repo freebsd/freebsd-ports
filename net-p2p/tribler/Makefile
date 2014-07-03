@@ -20,8 +20,8 @@ LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2 \
-		vlc:${PORTSDIR}/multimedia/vlc
+LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2 \
+		libvlc.so:${PORTSDIR}/multimedia/vlc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>0:${PORTSDIR}/security/py-m2crypto \
@@ -45,8 +45,6 @@ TRIBLER_DIR=	${PYTHONPREFIX_SITELIBDIR}/tribler
 
 APSW_DISTNAME=	apsw-3.7.14.1-r1
 APSW_DISTFILE=	${APSW_DISTNAME}.zip
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -82,13 +80,11 @@ post-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}/usr/share/tribler
 
 post-install:
-	(cd ${WRKDIR}/usr/bin \
-		&& ${INSTALL_SCRIPT} tribler ${PREFIX}/bin)
+	${INSTALL_SCRIPT} ${WRKDIR}/usr/bin/tribler ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKDIR}/usr/share/tribler/Tribler/SwiftEngine \
-		&& ${INSTALL_PROGRAM} swift ${PREFIX}/libexec)
-	@${MKDIR} ${TRIBLER_DIR}
-	@${LN} -sf ${PREFIX}/libexec/swift ${TRIBLER_DIR}
-	@${MKDIR} ${TRIBLER_DIR}/Tribler
+		&& ${INSTALL_PROGRAM} swift ${STAGEDIR}${PREFIX}/libexec)
+	@${MKDIR} ${STAGEDIR}${TRIBLER_DIR}/Tribler
+	@${LN} -sf ${PREFIX}/libexec/swift ${STAGEDIR}${TRIBLER_DIR}
 	@(${TAR} -C ${WRKDIR}/usr/share/tribler/Tribler \
 		--exclude "Build" \
 		--exclude "LGPL-2.1.txt" \
@@ -97,22 +93,18 @@ post-install:
 		--exclude "readme.txt" \
 		--exclude "*LICENSE*.txt" \
 		--exclude "*.orig" \
-		-cf - . | ${TAR} -C ${TRIBLER_DIR}/Tribler -xf -)
-	@${FIND} ${TRIBLER_DIR}/Tribler -print0 | \
-		${XARGS} -0 ${CHOWN} ${SHAREOWN}
-	@${FIND} ${TRIBLER_DIR}/Tribler -type f -print0 | \
+		-cf - . | ${TAR} -C ${STAGEDIR}${TRIBLER_DIR}/Tribler -xf -)
+	@${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	@${FIND} ${TRIBLER_DIR}/Tribler -type d -print0 | \
+	@${FIND} ${STAGEDIR}${TRIBLER_DIR}/Tribler -type d -print0 | \
 		${XARGS} -0 ${CHMOD} a+rx
-	@${MKDIR} ${DESKTOPDIR}
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	(cd ${WRKDIR}/usr/share/applications \
-		&& ${INSTALL_DATA} tribler.desktop ${DESKTOPDIR})
+		&& ${INSTALL_DATA} tribler.desktop ${STAGEDIR}${DESKTOPDIR})
 	(cd ${WRKDIR}/usr/share/pixmaps \
-		&& ${INSTALL_DATA} tribler.xpm ${PREFIX}/share/pixmaps)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+		&& ${INSTALL_DATA} tribler.xpm ${STAGEDIR}${PREFIX}/share/pixmaps)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/usr/share/tribler/Tribler \
-		&& ${INSTALL_DATA} *LICENSE*.txt readme.txt ${DOCSDIR})
-.endif
+		&& ${INSTALL_DATA} *LICENSE*.txt readme.txt ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

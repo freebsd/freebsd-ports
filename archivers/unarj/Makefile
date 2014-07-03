@@ -15,6 +15,8 @@ COMMENT=	Allows files to be extracted from ARJ archives
 PLIST_FILES=	bin/unarj
 PORTDOCS=	unarj.txt technote.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${CP} ${FILESDIR}/sanitize.c ${WRKSRC}
 

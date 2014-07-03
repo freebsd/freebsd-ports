@@ -3,6 +3,7 @@
 
 PORTNAME=	imhangul
 PORTVERSION=	${GTKVER}.1.1
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	GOOGLE_CODE
 
@@ -11,11 +12,10 @@ COMMENT=	GTK+ Hangul input module
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	hangul:${PORTSDIR}/korean/libhangul
+LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	GTK3 NLS
 

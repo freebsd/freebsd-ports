@@ -23,36 +23,25 @@ CTF_DESC=	Capture The Flag mod source
 ROGUE_DESC=	Ground Zero (Rogue) mission pack source
 XATRIX_DESC=	Reckoning (Xatrix) mission pack source
 
+OPTIONS_SUB=	yes
+
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCTF}
-PLIST_SUB+=	CTF=""
-.else
-PLIST_SUB+=	CTF="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MROGUE}
 DISTFILES+=	roguesrc320.shar.Z:id
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_rogue_g__local.h \
 		${FILESDIR}/extra-patch-src_rogue_q__shared.c
 ROGUE_OFF=	454
-PLIST_SUB+=	ROGUE=""
-.else
-PLIST_SUB+=	ROGUE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXATRIX}
 DISTFILES+=	xatrixsrc320.shar.Z:id
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_xatrix_q__shared.c
 XATRIX_OFF=	441
-PLIST_SUB+=	XATRIX=""
-.else
-PLIST_SUB+=	XATRIX="@comment "
 .endif
 
 post-extract:
@@ -72,13 +61,13 @@ pre-install:
 		${XARGS} -0 ${RM}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/src/game ${DATADIR}
-	${INSTALL_DATA} ${FILESDIR}/Makefile.game ${DATADIR}/game/Makefile
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/src/game ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/Makefile.game ${STAGEDIR}${DATADIR}/game/Makefile
 .for f in ctf rogue xatrix
 .   if ${PORT_OPTIONS:M${f:tu}}
-	${CP} -R ${WRKSRC}/src/${f} ${DATADIR}
-	${INSTALL_DATA} ${FILESDIR}/Makefile.${f} ${DATADIR}/${f}/Makefile
+	${CP} -R ${WRKSRC}/src/${f} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/Makefile.${f} ${STAGEDIR}${DATADIR}/${f}/Makefile
 .   endif
 .endfor
 

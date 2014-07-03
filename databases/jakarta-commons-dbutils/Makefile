@@ -23,9 +23,9 @@ ALL_TARGET=	dist
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	LICENSE.txt api
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/build.xml
@@ -35,7 +35,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/dist/commons-dbutils-1.1.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
-.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/dist/docs && ${FIND} api \
@@ -43,6 +42,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/dist/LICENSE.txt \
 		${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
-.endif
 
 .include <bsd.port.mk>

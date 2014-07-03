@@ -17,57 +17,30 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=	--disable-wingdi
 
 OPTIONS_DEFINE=	GNOME GUI NLS RANDR VIDMODE
-OPTIONS_DEFAULT=	RANDR
+OPTIONS_DEFAULT=RANDR
+OPTIONS_SUB=	yes
 
 GNOME_DESC=	GNOME clock support
 GUI_DESC=	Tray icon
 RANDR_DESC=	Support RANDR for changing colors
 VIDMODE_DESC=	Support VIDMODE for changing colors (NVIDIA)
 
-.include <bsd.port.options.mk>
+NLS_USES=		gettext iconv
+NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG} \
+			--with-libintl-prefix=${LOCALBASE}
+NLS_CONFIGURE_OFF=	--disable-nls
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv
-CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG} \
-                --with-libintl-prefix=${LOCALBASE}
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
+RANDR_USE=		XORG=xrandr
+RANDR_CONFIGURE_ENABLE=	randr
 
-.if ${PORT_OPTIONS:MRANDR}
-CONFIGURE_ARGS+=--enable-randr
-USE_XORG=	xrandr
-.else
-CONFIGURE_ARGS+=--disable-randr
-.endif
+VIDMODE_CONFIGURE_ENABLE=	vidmode
 
-.if ${PORT_OPTIONS:MVIDMODE}
-CONFIGURE_ARGS+=--enable-vidmode
-.else
-CONFIGURE_ARGS+=--disable-vidmode
-.endif
+GUI_USE=		PYTHON=yes
+GUI_CONFIGURE_ENABLE=	gui
+GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>0:${PORTSDIR}/x11-toolkits/py-gtk2 \
+			${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
 
-.if ${PORT_OPTIONS:MGUI}
-USE_PYTHON=	yes
-CONFIGURE_ARGS+=--enable-gui
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>0:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
-PLIST_SUB+=	GUI=""
-.else
-CONFIGURE_ARGS+=--disable-gui
-PLIST_SUB+=	GUI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGNOME}
-CONFIGURE_ARGS+=--enable-gnome-clock
-BUILD_DEPENDS+=	glib>0:${PORTSDIR}/devel/glib20 \
-		gconf2>0:${PORTSDIR}/devel/gconf2
-RUN_DEPENDS+=	glib>0:${PORTSDIR}/devel/glib20 \
-		gconf2>0:${PORTSDIR}/devel/gconf2
-.else
-CONFIGURE_ARGS+=--disable-gnome-clock
-.endif
+GNOME_CONFIGURE_ENABLE=	gnome-clock
+GNOME_USE=		GNOME=glib20,gconf2
 
 .include <bsd.port.mk>

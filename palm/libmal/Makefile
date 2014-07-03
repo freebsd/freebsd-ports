@@ -3,17 +3,18 @@
 
 PORTNAME=	libmal
 PORTVERSION=	0.44.1
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://www.jlogday.com/code/libmal/
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A library encapsulating malsync
+COMMENT=	Library encapsulating malsync
 
 LICENSE=	MPL
 
-LIB_DEPENDS=	libpisock.so.9:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	libpisock.so:${PORTSDIR}/palm/pilot-link
 
-USES=	gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pilot-prefix=${LOCALBASE}
 USE_LDCONFIG=	YES

@@ -16,8 +16,6 @@ WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 pre-build:
 	${ECHO} "${CC}" >${WRKSRC}/src/conf-cc
 	${ECHO} "${CPPFLAGS} ${CFLAGS}" >${WRKSRC}/src/conf-cflags
@@ -28,11 +26,9 @@ do-install:
 		${INSTALL_PROGRAM} ftpcopy ftpls ${STAGEDIR}${PREFIX}/bin && \
 		${INSTALL_MAN} *.1 ${STAGEDIR}${PREFIX}/man/man1 && \
 		${INSTALL_SCRIPT} ftpcp ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
 	cd ${WRKSRC}/compile && \
 		${INSTALL_DATA} ChangeLog NEWS \
 			README THANKS ftpcopy.html ftpls.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+--- ./Makefile.in.orig	2005-04-30 11:19:40.000000000 -0400
++++ ./Makefile.in	2014-07-03 10:20:34.000000000 -0400
+@@ -379,8 +379,8 @@
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(SMACKS_DIR) $(DATADIR)
+-	cp -rp $(srcdir)/smacks/* $(SMACKS_DIR)
++	$(mkinstalldirs) $(DESTDIR)$(SMACKS_DIR) $(DESTDIR)$(DATADIR)
++	cp -rp $(srcdir)/smacks/* $(DESTDIR)$(SMACKS_DIR)
+ 
+ dist-hook:
+ 	mkdir -p $(distdir)/smacks

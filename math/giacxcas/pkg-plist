@@ -71,7 +71,6 @@ include/giac/usual.h
 include/giac/vecteur.h
 include/giac/vector.h
 lib/libgiac.a
-lib/libgiac.la
 lib/libgiac.so
 lib/libgiac.so.0
 lib/libgiac.so.0.0.0

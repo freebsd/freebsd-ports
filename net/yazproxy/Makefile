@@ -3,6 +3,7 @@
 
 PORTNAME=	yazproxy
 PORTVERSION=	1.3.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazproxy/
 
@@ -11,6 +12,7 @@ COMMENT=	A powerful general purpose Z39.50/SRW/SRU proxy
 
 LIB_DEPENDS=	libyazpp.so:${PORTSDIR}/net/yaz++
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --with-yazpp=${LOCALBASE}/bin
 USE_LDCONFIG=	yes

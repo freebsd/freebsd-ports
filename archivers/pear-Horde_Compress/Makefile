@@ -17,11 +17,8 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util \
 		Horde_Stream_Filter
 
+ZLIP_USE=	PHP=zlib
+
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MZLIB}
-USE_PHP+=	zlib
-.endif
-
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

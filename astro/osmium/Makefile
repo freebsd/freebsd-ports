@@ -35,13 +35,10 @@ OPTIONS_DEFINE=	JAVASCRIPT DOXYGEN DOCS
 OPTIONS_DEFAULT=JAVASCRIPT
 JAVASCRIPT_DESC=Enable javascript support
 
+JAVASCRIPT_LIB_DEPENDS=	libv8.so:${PORTSDIR}/lang/v8 \
+			libshp.so:${PORTSDIR}/devel/shapelib \
+			libicuuc.so:${PORTSDIR}/devel/icu
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJAVASCRIPT}
-LIB_DEPENDS+=	libv8.so:${PORTSDIR}/lang/v8 \
-		libshp.so:${PORTSDIR}/devel/shapelib \
-		libicuuc.so:${PORTSDIR}/devel/icu
-.endif
 
 .if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen

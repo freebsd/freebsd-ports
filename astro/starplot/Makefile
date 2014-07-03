@@ -10,15 +10,13 @@ MASTER_SITES=	http://starplot.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3-dimensional viewer for star charts
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		gmake pathfix gettext pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \

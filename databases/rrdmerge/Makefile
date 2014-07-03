@@ -24,12 +24,12 @@ PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}tree
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rrdmerge ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/rrdmergetree ${STAGEDIR}${PREFIX}/bin
-.ifndef(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/README.rst ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}
-.endif
 
 .include <bsd.port.mk>
