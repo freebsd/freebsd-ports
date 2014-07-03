@@ -35,7 +35,7 @@ pre-configure:
 		${WRKSRC}/tvdownloader.sh
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
 		${WRKSRC}/tvdownload.desktop
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 	${REINPLACE_CMD} -e 's|%%DOC%%|#|' ${WRKSRC}/Makefile
 .else
 	${REINPLACE_CMD} -e 's|%%DOC%%||' ${WRKSRC}/Makefile
