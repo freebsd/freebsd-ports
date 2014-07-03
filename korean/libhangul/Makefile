@@ -3,7 +3,7 @@
 
 PORTNAME=	libhangul
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_DEFAULT=NLS
 OPTIONS_SUB=	NLS
 USE_LDCONFIG=	yes
-USES=		iconv pkgconfig
+USES=		iconv libtool pkgconfig
 
 .include <bsd.port.options.mk>
 
