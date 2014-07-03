@@ -25,10 +25,10 @@ DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
 OPTIONS_DEFINE=	ROUTES DOCS
 OPTIONS_DEFAULT=	ROUTES
+OPTIONS_SUB=	yes
 
 ROUTES_DESC=	Install routes for DM and CTF maps (recommended)
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.options.mk>
 
@@ -43,9 +43,6 @@ ROUTES=		base_pk chflm2130_pk chfxmap0109_pk citycl_pk cmbbstr_pk \
 .for f in ${ROUTES}
 DISTFILES+=	${f}${EXTRACT_SUFX}:routes
 .endfor
-PLIST_SUB+=	ROUTES=""
-.else
-PLIST_SUB+=	ROUTES="@comment "
 .endif
 
 post-extract:
@@ -57,26 +54,21 @@ post-extract:
 
 do-install:
 .for f in chctf chdtm
-	@${MKDIR} ${Q2DIR}/${PORTNAME}/${f}
-	${INSTALL_DATA} ${WRKSRC}/3zb2/${f}/* ${Q2DIR}/${PORTNAME}/${f}
+	@${MKDIR} ${STAGEDIR}${Q2DIR}/${PORTNAME}/${f}
+	${INSTALL_DATA} ${WRKSRC}/3zb2/${f}/* ${STAGEDIR}${Q2DIR}/${PORTNAME}/${f}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${Q2DIR}/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${STAGEDIR}${Q2DIR}/${PORTNAME}
 	cd ${WRKSRC}/3zb2 && ${INSTALL_DATA} *.cfg 3ZBMaps.lst pak6.pak \
-		${Q2DIR}/${PORTNAME}
+		${STAGEDIR}${Q2DIR}/${PORTNAME}
 .if ${PORT_OPTIONS:MROUTES}
-	${INSTALL_DATA} ${WRKSRC}/*.chn ${Q2DIR}/${PORTNAME}/chdtm
-	${INSTALL_DATA} ${WRKSRC}/*.chf ${Q2DIR}/${PORTNAME}/chctf
+	${INSTALL_DATA} ${WRKSRC}/*.chn ${STAGEDIR}${Q2DIR}/${PORTNAME}/chdtm
+	${INSTALL_DATA} ${WRKSRC}/*.chf ${STAGEDIR}${Q2DIR}/${PORTNAME}/chctf
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/3zb2 && ${CP} -a *.txt "User Guide" ${DOCSDIR}
-	@${FIND} ${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/3zb2 && ${CP} -a *.txt "User Guide" ${STAGEDIR}${DOCSDIR}
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 .endif
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
