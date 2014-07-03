@@ -1,0 +1,76 @@
+bin/plank
+include/plank/plank.h
+lib/libplank.so
+lib/libplank.so.0
+lib/libplank.so.0.0.0
+libdata/pkgconfig/plank.pc
+man/man1/plank.1.gz
+share/applications/plank.desktop
+share/icons/hicolor/128x128/apps/plank.svg
+share/icons/hicolor/16x16/apps/plank.svg
+share/icons/hicolor/22x22/apps/plank.svg
+share/icons/hicolor/24x24/apps/plank.svg
+share/icons/hicolor/32x32/apps/plank.svg
+share/icons/hicolor/48x48/apps/plank.svg
+share/icons/hicolor/64x64/apps/plank.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/de/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/el/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/es/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/et/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/he/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/id/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/it/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/sma/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/plank.mo
+%%DATADIR%%/themes/Default/dock.theme
+%%DATADIR%%/themes/Matte/dock.theme
+%%DATADIR%%/themes/Transparent/dock.theme
+share/vala/vapi/plank.deps
+share/vala/vapi/plank.vapi
+@dirrm %%DATADIR%%/themes/Transparent
+@dirrm %%DATADIR%%/themes/Matte
+@dirrm %%DATADIR%%/themes/Default
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/sma/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sma
+@dirrm include/plank
