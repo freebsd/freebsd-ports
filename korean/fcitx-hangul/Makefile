@@ -13,16 +13,14 @@ COMMENT=	Hangul support for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
-		hangul:${PORTSDIR}/korean/libhangul
+LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
+		libhangul.so:${PORTSDIR}/korean/libhangul
 
-USE_XZ=		yes
-USES=		cmake gettext pkgconfig
+USES=		cmake gettext pkgconfig tar:xz
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
