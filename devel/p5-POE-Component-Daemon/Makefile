@@ -19,6 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 PORTDOCS=	*
 
 post-install:
@@ -29,11 +31,9 @@ post-install:
 		${INSTALL_SCRIPT} $${i} ${STAGEDIR}${EXAMPLESDIR}; \
 	done
 
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for i in ${WRKSRC}/eg/*.png ${WRKSRC}/eg/*.dot; do \
 		${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
 
 .include <bsd.port.mk>

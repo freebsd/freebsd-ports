@@ -18,6 +18,8 @@ WRKSRC=		${WRKDIR}/prog/${DISTNAME}
 
 DOCS=		package/CHANGES package/README package/THANKS doc/*.html
 
+OPTIONS_DEFINE=	DOCS
+
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-compile/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-compile/conf-ld
@@ -32,9 +34,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/library/* ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

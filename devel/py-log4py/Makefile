@@ -15,10 +15,10 @@ LICENSE=	MIT
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

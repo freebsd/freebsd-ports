@@ -19,15 +19,13 @@ PYDISTUTILS_PKGNAME=	py_${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py_${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py_${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
 	@${TRUE}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

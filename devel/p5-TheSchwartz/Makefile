@@ -19,12 +19,12 @@ USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	extras/check_schwartz extras/thetop
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/extras/check_schwartz ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/extras/thetop ${STAGEDIR}${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

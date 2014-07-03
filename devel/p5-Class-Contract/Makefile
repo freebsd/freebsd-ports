@@ -14,14 +14,14 @@ USES=		perl5 dos2unix
 USE_PERL5=	configure
 PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
+OPTIONS_DEFINE=	EXAMPLES
+
 pre-configure:
 	${MKDIR} ${WRKSRC}/examples
 	${MV} ${WRKSRC}/demo.pl ${WRKSRC}/examples
 
 post-install:
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

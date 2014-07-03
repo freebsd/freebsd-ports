@@ -57,9 +57,9 @@ lib/liblog4cpp.so.5
 lib/liblog4cpp.so.5.0.6
 libdata/pkgconfig/log4cpp.pc
 share/aclocal/log4cpp.m4
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/default.css
-%%PORTDOCS%%%%DOCSDIR%%/sflogo.png
+@comment %%PORTDOCS%%%%DOCSDIR%%/index.html
+@comment %%PORTDOCS%%%%DOCSDIR%%/default.css
+@comment %%PORTDOCS%%%%DOCSDIR%%/sflogo.png
 @dirrm include/log4cpp/threading
 @dirrm include/log4cpp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@comment %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -17,13 +17,13 @@ COMMENT=	Extremely memory-efficient hash_map implementation
 GNU_CONFIGURE=	yes
 USE_GCC=	4.8+
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e \
 		's|^pkgconfigdir = .*|pkgconfigdir = ${LOCALBASE}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e \
 		's|^docdir = .*|docdir = ${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
@@ -38,4 +38,4 @@ regression-test: check
 check: build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,13 +19,11 @@ USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE NOTICE README.txt doc
-.endif
 
 SCALA_HOME=	share/scala
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SCALA_HOME}/lib
@@ -34,10 +32,8 @@ do-install:
 	cd ${INSTALL_WRKSRC}/src/examples \
 	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/\{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${EXAMPLESDIR}/\{} \;
-.if !defined(NOPORTDOCS)
 	cd ${INSTALL_WRKSRC} \
 	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
 	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

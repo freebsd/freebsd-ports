@@ -19,6 +19,8 @@ MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	run
 DOS2UNIX_REGEX=	.*\.*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${JAVA_PORT_VERSION} == 1.7
@@ -42,9 +44,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/luajava-1.1.jar ${STAGEDIR}${JAVAJARDIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-.endif
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.post.mk>

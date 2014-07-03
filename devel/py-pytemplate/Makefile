@@ -20,12 +20,12 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-pytemplate
 
 EXAMPLES=	daemonexample.py example.py threadexample.py
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
