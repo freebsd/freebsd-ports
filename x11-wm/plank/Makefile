@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 gdkpixbuf2 libxml2 libwnck3
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
+OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE=	NLS DBUSMENU
 DBUSMENU_DESC=	DBusMenu protocol
@@ -30,23 +31,10 @@ CONFIGURE_ARGS=	--enable-gee-0.8 \
 	--disable-benchmark \
 	--disable-headless-tests
 
-.include <bsd.port.options.mk>
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDBUSMENU}
-# Need GTK3 support
-LIB_DEPENDS+=	libdbusmenu-gtk3.so:${PORTSDIR}/devel/libdbusmenu
-CONFIGURE_ARGS+=--enable-dbusmenu
-.else
-CONFIGURE_ARGS+=--disable-dbusmenu
-.endif
+DBUSMENU_LIB_DEPENDS=		libdbusmenu-gtk3.so:${PORTSDIR}/devel/libdbusmenu
+DBUSMENU_CONFIGURE_ENABLE=	dbusmenu
 
 .include <bsd.port.mk>
