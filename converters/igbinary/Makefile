@@ -4,16 +4,19 @@
 PORTNAME=	igbinary
 PORTVERSION=	1.1.1
 CATEGORIES=	converters
-MASTER_SITES=	http://opensource.dynamoid.com/	\
-		http://files.gslin.org/~gslin/Software/
+MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
+DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Replacement for the standard PHP serializer
+
+LICENSE=	BSD3CLAUSE
 
 USE_PHP=	session
 USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+USE_PHPIZE=	yes
+USES=		tar:tgz
 
 .include <bsd.port.mk>
