@@ -28,6 +28,8 @@ SUB_FILES=	pkg-deinstall
 SUB_LIST=	VARDIR="${VARDIR}"
 PLIST_SUB=	VARDIR="${VARDIR_REL}"
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${MV} ${WRKSRC}/doc/nethack.6 ${WRKSRC}/doc/${PORTNAME}.6
 
@@ -40,9 +42,7 @@ post-install:
 			*) ${MV} $$fn unnethack_$$fn ;; \
 		esac; \
 	done
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${FILESDIR}/sample.unnethackrc ${STAGEDIR}${DOCSDIR}
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

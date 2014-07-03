@@ -22,15 +22,15 @@ PLIST_FILES=	%%DATADIR%%/doom2.wad
 PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	ChangeLog NEWS README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doom2.wad ${STAGEDIR}${DATADIR}
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
