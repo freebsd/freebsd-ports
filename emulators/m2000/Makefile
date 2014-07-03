@@ -46,6 +46,8 @@ USE_XORG=	x11 xi
 SUB_FILES=	m2000.sh
 PORTDOCS=	M2000.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${MKDIR} ${WRKDIR}/tapeconv
 	${UNZIP_CMD} ${DISTDIR}/${DIST_SUBDIR}/tapeconv.zip -d ${WRKDIR}/tapeconv
@@ -62,10 +64,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/P2000ROM.bin ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/Default.fnt ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/BASIC.bin ${STAGEDIR}${DATADIR}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/M2000.txt ${STAGEDIR}${DOCSDIR}
-.endif
 .for f in ${M2000TAPES}
 	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${f}.gz > ${WRKDIR}/${f}
 	@${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${DATADIR}
