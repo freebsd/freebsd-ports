@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redaxo
-PORTVERSION=	4.5.1
+PORTVERSION=	4.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.redaxo.org/files/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
@@ -31,6 +31,12 @@ MYSQLS_USE=	MYSQL=server
 APACHE_USE=	APACHE_RUN=22
 
 GD_USE=	PHP=gd
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAPACHE}
+WANT_PHP_MOD=	yes
+.endif
 
 do-extract:
 	@${INSTALL} -d ${WRKDIR}
