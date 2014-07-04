@@ -18,11 +18,11 @@ USE_GNOME=	gnomevfs2
 PLIST_FILES=	bin/gnomevfs-mount
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gnomevfs-mount ${STAGEDIR}${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
