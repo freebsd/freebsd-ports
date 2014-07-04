@@ -17,11 +17,11 @@ USES=		imake
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/READMEj ${STAGEDIR}${DOCSDIR})
 	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/README ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

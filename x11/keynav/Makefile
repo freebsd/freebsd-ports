@@ -20,13 +20,11 @@ USE_XORG=	xtst x11 xinerama
 PLIST_FILES=	bin/keynav
 PORTEXAMPLES=	keynavrc
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynav ${STAGEDIR}${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/keynavrc ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
