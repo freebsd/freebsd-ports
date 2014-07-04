@@ -18,10 +18,10 @@ USE_PERL5=	configure
 
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${CP} -R ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>

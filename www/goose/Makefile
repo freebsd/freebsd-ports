@@ -22,24 +22,24 @@ USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}
 POD2MAN?=	pod2man
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		-e "s|%%DATADIR%%|${DATADIR}|g" \
 		-e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
 		-e "s|/usr/local/bin/url_handler.sh|${LOCALBASE}/urlview|" \
 		${WRKSRC}/goose
 
 do-build:
-	@cd ${WRKSRC} && ${POD2MAN} goose > goose.1
+	cd ${WRKSRC} && ${POD2MAN} goose > goose.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/goose ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/GoogleSearch.wsdl ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/goose.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/goose.conf.example ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

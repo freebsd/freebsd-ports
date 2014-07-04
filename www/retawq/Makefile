@@ -26,30 +26,31 @@ PORTDOCS=	*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--set-tls=1
-.elif defined(WITH_OPENSSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--set-tls=2
-LDFLAGS+=	-lssl -lcrypto
-.endif
+OPTIONS_DEFINE=	DOCS
+OPTIONS_RADIO=	BACKEND
+BACKEND_DESC=	SSL Backend
+OPTIONS_RADIO_BACKEND=	OPENSSL GNUTLS
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ON=	--set-tls=1
+
+OPENSSL_USE=		OPENSSL=yes
+OPENSSL_CONFIGURE_ON=	--set-tls=2
+OPENSSL_LDFLAGS=	-lssl -lcrypto
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|_IN_H 0|_IN_H 1|g ; \
+	${REINPLACE_CMD} -e 's|_IN_H 0|_IN_H 1|g ; \
 		 s|_SOCKET_H 0|_SOCKET_H 1|g' ${WRKSRC}/.config
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/retawq ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/retawq ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .for lang in de es fr pt_BR
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
-	@${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo \
+	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docu/*.html ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/docu/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

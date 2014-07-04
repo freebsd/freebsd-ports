@@ -17,14 +17,13 @@ COMMENT=	A Python library for the generation of HTML documents
 USE_PYTHON=	2
 NO_BUILD=	yes
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|python |${PYTHON_CMD} |' ${WRKSRC}/Makefile
 
-.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC} -cf - README html image | \
@@ -32,6 +31,5 @@ post-install:
 	@${CHOWN} -R ${BINOWN}:${BINGRP} ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${STAGEDIR}${DOCSDIR} -type d -exec ${CHMOD} 0555 {} \;
 	@${FIND} ${STAGEDIR}${DOCSDIR} -type f -exec ${CHMOD} 0444 {} \;
-.endif
 
 .include <bsd.port.mk>

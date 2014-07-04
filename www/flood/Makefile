@@ -27,6 +27,8 @@ EX_DATA=	flood.dtd relative-averages-time.awk round-robin-dynamic.xml \
 		round-robin-relative-reports.xml round-robin-ssl.xml \
 		round-robin-timed.xml round-robin.xml
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flood ${STAGEDIR}${PREFIX}/bin/flood
 
@@ -38,11 +40,9 @@ post-install:
 .for f in ${EX_DATA}
 	@${INSTALL_DATA} ${WRKSRC}/examples/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docbook
 	@${INSTALL_DATA} ${WRKSRC}/docs/README ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/docbook/[Mf]* ${STAGEDIR}${DOCSDIR}/docbook
-.endif
 
 ANONCVS=	cvs -d :pserver:anoncvs@cvs.apache.org:/home/cvspublic
 

@@ -1,20 +1,20 @@
 %%PERL5_MAN3%%/CGI::XMLApplication.3.gz
 %%SITE_PERL%%/CGI/XMLApplication.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/XMLApplication/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex2_finish.xsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/ex2_form.xsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example1.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example1.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/example3.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example3.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/example4.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example4.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/minimal.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/minimal.xsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/minimalapp.pm
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex2_finish.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex2_form.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minimal.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minimal.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minimalapp.pm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/XMLApplication
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI

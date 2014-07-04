@@ -17,12 +17,14 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
                 pkgdatadir="${DATADIR}"
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
-.endif
+
+.include <bsd.port.options.mk>
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -E 's/^(install-data-am:) install-docDATA(.*)/\1\2/' \
 		${WRKSRC}/Makefile.in
 .for p in pod prog-bin conf filter-bin filters html
