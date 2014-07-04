@@ -17,12 +17,12 @@ COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
+		gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 CONFLICTS_INSTALL=	apache-hadoop2-2*
 
-USES=		gmake
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_ANT=	yes
