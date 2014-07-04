@@ -24,12 +24,12 @@ RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/e
 EMACS_NO_BUILD_DEPENDS=	YES
 NO_BUILD=	YES
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/elscreen.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 .include <bsd.port.post.mk>

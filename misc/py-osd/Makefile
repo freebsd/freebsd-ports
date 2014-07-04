@@ -22,15 +22,15 @@ PYDISTUTILS_AUTOPLIST=	yes
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.old README README.daemon pyosd.html
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
