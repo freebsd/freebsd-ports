@@ -23,16 +23,14 @@ PORTEXAMPLES=	*
 
 RESTRICTED=	No commercial use
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/demo/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.endif
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

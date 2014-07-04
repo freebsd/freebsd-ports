@@ -38,6 +38,8 @@ EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 PORTDOCS=	ChangeLog README ToDo
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
@@ -45,15 +47,11 @@ BROKEN=	Does not build on ${ARCH} (Needs to link against shared libraries)
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 	(cd ${WRKSRC}/demo/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_MODEXAMPLESDIR})
-.endif
-.if !defined(PORT_OPTIONS:MDOCS)
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

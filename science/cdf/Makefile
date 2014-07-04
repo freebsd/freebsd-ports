@@ -30,6 +30,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DEFS=		B C K
 PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -45,14 +47,10 @@ pre-configure:
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/libcdf.so ${STAGEDIR}${PREFIX}/lib/libcdf.so.0
 	${LN} -sf libcdf.so.0 ${STAGEDIR}${PREFIX}/lib/libcdf.so
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 regression-test:
 	(cd ${BUILD_WRKSRC} ;	\
