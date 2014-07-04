@@ -11,7 +11,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A toolkit for for processing natural language morphologies
 
 USES=		pkgconfig shebangfix libtool
-USE_GNOME=	glib20
+USE_GNOME=	glib20 libxml2
 USE_GCC=	yes
 USE_PYTHON=	2
 GNU_CONFIGURE=	yes
