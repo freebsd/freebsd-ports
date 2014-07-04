@@ -25,22 +25,20 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	Changes FAQ README
 PORTEXAMPLES=	popread proc2ma
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/var/spool/mail|/var/mail|g' \
 		${WRKSRC}/lib/Mail/Audit.pm
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${PORTEXAMPLES}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${i}  ${STAGEDIR}${EXAMPLESDIR}/${i}
 .endfor
-.endif
 
 .include <bsd.port.mk>

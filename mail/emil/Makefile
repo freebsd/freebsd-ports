@@ -18,8 +18,12 @@ COMMENT=	Mail format/encoding converter
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=byacc
 
-.if defined(NOPORTDOCS)
-MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
+MAKE_ENV=	NOPORTDOCS=yes
 .endif
 
 .include <bsd.port.mk>
