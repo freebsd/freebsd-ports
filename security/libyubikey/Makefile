@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libyubikey
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	security devel
 MASTER_SITES=	http://opensource.yubico.com/yubico-c/releases/
 
@@ -12,14 +12,15 @@ LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USES=		libtool
 
 PLIST_FILES=	bin/modhex \
 		bin/ykgenerate \
 		bin/ykparse \
 		include/yubikey.h \
-		lib/libyubikey.la \
 		lib/libyubikey.so \
-		lib/libyubikey.so.1 \
+		lib/libyubikey.so.0 \
+		lib/libyubikey.so.0.1.6 \
 		man/man1/modhex.1.gz \
 		man/man1/ykgenerate.1.gz \
 		man/man1/ykparse.1.gz
