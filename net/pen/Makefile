@@ -33,6 +33,6 @@ CONFIGURE_ARGS+=	--with-fd_setsize=${WITH_FDSETSIZE}
 KQUEUE_CONFIGURE_ON=	--with-kqueue
 KQUEUE_CONFIGURE_OFF=	--with-poll
 
-DOCS_MAKE_ARGS=	-DNOPORTDOCS
+DOCS_MAKE_ARGS_OFF=	-DNOPORTDOCS
 
 .include <bsd.port.mk>
