@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Photorealistic rendering system
 
-LICENSE=	BSD GPLv2
+LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
