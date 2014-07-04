@@ -26,6 +26,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	NVIDIA_Texture_Tools_README.txt ChangeLog
 
+ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 # see src/nvcore/nvcore.h
+
 OPTIONS_DEFINE=	COMPRESSUI DOCS
 
 COMPRESSUI_DESC=Build compressor UI (requires Qt4)
