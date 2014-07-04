@@ -9,18 +9,20 @@ MASTER_SITES=	${MASTER_SITE_APACHE} \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
 MASTER_SITE_SUBDIR=	${PORTNAME}/core/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	apache-
-DIST_SUBDIR=	hadoop
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} jetty-6.1.14.zip:jetty
+DIST_SUBDIR=	hadoop
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
-		gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+CONFLICTS_INSTALL=	apache-hadoop2-2*
+
+USES=		gmake
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_ANT=	yes
