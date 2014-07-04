@@ -25,7 +25,7 @@ command_args='--config %%ETCDIR%% start namenode'
 stop_cmd=namenode_stop
 
 namenode_stop () {
-  su -m ${namenode_user} -c "${command} --config ${HADOOP_CONF_DIR} stop namenode"
+  su -m ${namenode_user} -c "${command} --config %%ETCDIR%% stop namenode"
 }
 
 run_rc_command "$1"

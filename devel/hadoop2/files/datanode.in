@@ -25,7 +25,7 @@ command_args='--config %%ETCDIR%% start datanode'
 stop_cmd=datanode_stop
 
 datanode_stop () {
-  su -m ${datanode_user} -c "${command} --config ${HADOOP_CONF_DIR} stop datanode"
+  su -m ${datanode_user} -c "${command} --config %%ETCDIR%% stop datanode"
 }
 
 run_rc_command "$1"
