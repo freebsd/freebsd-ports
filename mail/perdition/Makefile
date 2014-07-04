@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail net security
 MASTER_SITES=	http://horms.net/projects/perdition/download/${PORTVERSION}/
 
-MAINTAINER=	thomas@bsdunix.ch
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	POP3 & IMAP4 proxy that can map users to multiple backend servers
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \

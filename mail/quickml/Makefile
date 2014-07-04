@@ -7,7 +7,7 @@ PORTREVISION=	13
 CATEGORIES=	mail
 MASTER_SITES=	http://0xcc.net/quickml/
 
-MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	An easy-to-use mailing list system
 
 LICENSE=	GPLv2

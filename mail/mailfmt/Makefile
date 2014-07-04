@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tundraware.com/Software/mailfmt/
 
-MAINTAINER=	tundra@tundraware.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Remove leading quotations from mail/news and wrap lines to fixed width
 
 USE_PYTHON=	yes

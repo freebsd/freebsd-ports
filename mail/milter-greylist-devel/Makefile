@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
 PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Easy-to-use greylist milter for sendmail and postfix (development)
 
 LICENSE=	BSD

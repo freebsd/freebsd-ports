@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.firestuff.org/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
-MAINTAINER=	dean@odyssey.apana.org.au
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Callback-based interface for parsing MIME-encoded messages
 
 USE_BZIP2=	yes

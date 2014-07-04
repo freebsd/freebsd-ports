@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	masaki@club.kyutech.ac.jp
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Amavisd-new log parser
 
 LICENSE=	MIT

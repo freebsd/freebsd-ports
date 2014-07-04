@@ -13,7 +13,7 @@ DISTNAME=	exim-${DISTDOCFORMAT}-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2:exim,local
 DIST_SUBDIR=	exim
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USES=		makeinfo tar:bzip2

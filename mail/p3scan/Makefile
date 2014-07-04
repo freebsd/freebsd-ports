@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	mail net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre

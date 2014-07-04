@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 EXTRACT_SUFX=	.tgz
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \

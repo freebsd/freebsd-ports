@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://rcmail-thunderbird-labels.googlecode.com/files/
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER=	moiseev@mezonplus.ru
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Thunderbird Labels plugin for RoundCube webmail
 
 LICENSE=	GPLv2

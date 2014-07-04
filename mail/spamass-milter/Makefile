@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin
 
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin

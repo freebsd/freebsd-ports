@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/old/
 PKGNAMEPREFIX=	postfix-
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A postfix firewall policy daemon
 
 LICENSE=	BSD

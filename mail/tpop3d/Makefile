@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	tpop3d
 
-MAINTAINER=	boris@tagnet.ru
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL, PgSQL etc auth
 
 USE_OPENSSL=	yes

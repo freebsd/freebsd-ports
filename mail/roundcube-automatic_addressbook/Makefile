@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://code.crapouillou.net/attachments/download/19/
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER=	anes@anes.su
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Roundcube webmail automatic addressbook plugin
 
 LICENSE=	GPLv3

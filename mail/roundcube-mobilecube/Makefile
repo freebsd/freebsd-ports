@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${THEME_VERSION}%20Beta/Build%20%23${THEME_BUILD}/
 PKGNAMEPREFIX=	roundcube-
 DISTNAME=	MobileCubeBeta%23${THEME_BUILD}
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
 
 RUN_DEPENDS=	roundcube>=0.3:${PORTSDIR}/mail/roundcube

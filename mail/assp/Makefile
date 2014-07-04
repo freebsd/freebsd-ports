@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
 DISTNAME=	${PORTNAME:tu}_${PORTVERSION}_Install
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Anti-Spam SMTP Proxy
 
 USES=		perl5 zip

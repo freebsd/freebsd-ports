@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.firestuff.org/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
-MAINTAINER=	dean@odyssey.apana.org.au
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Testing software configured to work with DSBL/DSBL-compliant services
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \

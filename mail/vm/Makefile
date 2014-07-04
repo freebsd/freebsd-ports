@@ -9,7 +9,7 @@ MASTER_SITES=	https://launchpad.net/${PORTNAME}/8.1.x/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jhein@symmetricom.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A mail reader running inside Emacs or XEmacs
 
 GNU_CONFIGURE=	yes

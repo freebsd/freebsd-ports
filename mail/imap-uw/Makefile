@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	-uw
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
 LICENSE=	APACHE20

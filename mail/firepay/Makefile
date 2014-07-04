@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
-MAINTAINER=	dean@odyssey.apana.org.au
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Implementation of the HashCash/MIME specification
 
 USE_BZIP2=	yes

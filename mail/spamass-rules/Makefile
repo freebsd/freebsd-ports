@@ -5,7 +5,7 @@ PORTVERSION=	20120817
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.eu/stuff/
 
-MAINTAINER=	michael@ranner.eu
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Custom rulesets for SpamAssassin
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin

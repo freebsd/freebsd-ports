@@ -6,7 +6,7 @@ PORTVERSION=	3.2
 CATEGORIES=	mail www
 MASTER_SITES=	https://systemausfall.org/toolforge/ezmlm-web/download/ezmlm-web-3.2/
 
-MAINTAINER=	hans@nordhaug.priv.no
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Manage ezmlm-idx mailing lists through the web (using CGI)
 
 RUN_DEPENDS=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \

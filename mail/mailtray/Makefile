@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	martin@arp242.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Display email status in tray
 
 USE_GNOME=	pygtk2
