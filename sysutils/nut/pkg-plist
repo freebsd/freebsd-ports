@@ -17,6 +17,7 @@
 %%ETCDIR%%/upsd.users.sample
 %%ETCDIR%%/upsmon.conf.sample
 %%ETCDIR%%/upssched.conf.sample
+%%NUT_USB%%etc/devd/nut-usb.conf
 @stopdaemon nut_upsmon
 @stopdaemon nut_upslog
 @stopdaemon nut
@@ -246,9 +247,10 @@ sbin/upssched
 @exec chown %%NUT_USER%%:%%NUT_GROUP%% %%STATEDIR%%
 @exec chmod 750 %%STATEDIR%%
 @unexec test -d %%STATEDIR%% && rmdir %%STATEDIR%%
-@dirrmtry %%CGIDIR%%
+%%NUT_CGI%%@dirrmtry %%CGIDIR%%
 @dirrmtry %%ETCDIR%%
-@dirrmtry %%WWWDIR%%
-@dirrmtry etc/bash_completion.d
+%%NUT_CGI%%@dirrmtry www/cgi-bin/nut
+%%NUT_CGI%%@dirrmtry www/cgi-bin
+%%BASH%%@dirrmtry etc/bash_completion.d
 @dirrmtry libexec/nut
-@dirrmtry www/cgi-bin
+@dirrmtry %%WWWDIR%%
