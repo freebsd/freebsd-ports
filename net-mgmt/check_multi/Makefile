@@ -23,12 +23,12 @@ PLUGIN_DIR=	libexec/nagios
 
 SHEBANG_FILES=	check_multi
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
 	-${MKDIR} ${STAGEDIR}${PREFIX}/${PLUGIN_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/check_multi ${STAGEDIR}${PREFIX}/${PLUGIN_DIR}/
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/contrib -cf - . | ${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf -
-.endif
 
 .include <bsd.port.mk>

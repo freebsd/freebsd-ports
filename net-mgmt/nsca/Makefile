@@ -29,6 +29,8 @@ USES=		perl5
 CONFIGURE_ARGS=	--prefix=${PREFIX} --localstatedir=/var/spool/nagios
 DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
+OPTIONS_DEFINE=	DOCS
+
 .if !defined(_BUILDING_NSCA_CLIENT)
 USE_RC_SUBR=	nsca
 PLIST_SUB+=	SERVER=""
@@ -61,10 +63,8 @@ do-install:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
