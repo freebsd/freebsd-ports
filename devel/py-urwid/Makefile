@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	urwid
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://excess.org/urwid/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -16,8 +16,8 @@ LICENSE=	LGPL21
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	EXAMPLES
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 PORTEXAMPLES=	bigtext.py \
@@ -36,17 +36,9 @@ PORTEXAMPLES=	bigtext.py \
 		treesample.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.include <bsd.port.options.mk>
-
-post-patch:
-# disable setuptools for now
-	@${REINPLACE_CMD} 's/setuptools/do_not_use_&/g' ${WRKSRC}/setup.py
-
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/)
-.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m urwid.tests
