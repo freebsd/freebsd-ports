@@ -21,6 +21,8 @@ USES=		pkgconfig gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ctrlproxy
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ctrlproxy-admin
@@ -30,12 +32,10 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy_config.5 ${STAGEDIR}${MANPREFIX}/man/man5
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/help.txt ${STAGEDIR}${DATADIR}/help.txt
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS HACKING NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/user-guide.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
