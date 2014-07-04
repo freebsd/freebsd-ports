@@ -641,6 +641,7 @@
     SUBDIR += hachoir-parser
     SUBDIR += hachoir-regex
     SUBDIR += hadoop
+    SUBDIR += hadoop2
     SUBDIR += hapy
     SUBDIR += hcs12mem
     SUBDIR += hexcompare
