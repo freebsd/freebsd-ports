@@ -21,6 +21,8 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 USES=		perl5
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}/scripts
@@ -34,11 +36,9 @@ do-install:
 .	for i in churrasco.exe dnstun.exe nc.exe
 		${INSTALL_SCRIPT} ${WRKSRC}/apps/${i} ${STAGEDIR}${ETCDIR}/apps
 .	endfor
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for i in sqlninja-howto.html sqlninja.conf.example
 		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .	endfor
-.endif
 
 .include <bsd.port.mk>

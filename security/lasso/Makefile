@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 
-OPTIONS_DEFINE=	PERL PHP PYTHON
+OPTIONS_DEFINE=	PERL PHP PYTHON DOCS
 
 .include <bsd.port.options.mk>
 
@@ -60,8 +60,5 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 
 post-install:
 	${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
-.ifdef(NOPORTDOCS)
-	${RM} -rf ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

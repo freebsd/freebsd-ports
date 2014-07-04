@@ -20,6 +20,8 @@ DISTVERSIONSUFFIX=	.${BUILD}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
+#OPTIONS_DEFINE=	DOCS
+
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == -devel
 CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-[234].* \
 		libfwbuilder-[234].* libfwbuilder-devel-[234].*
@@ -60,9 +62,7 @@ MAKE_ENV=	INSTALL_ROOT=${STAGEDIR}
 USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -81,7 +81,7 @@ post-install:
 	@${ECHO} please make sure to backup your fwbuilder database files
 	@${ECHO} prior to invoking fwbuilder for the first time.
 
-.if defined(NOPORTDOCS)
-BROKEN=		NOPORTDOCS is incomplete in this port
+.if empty(PORT_OPTIONS:MDOCS)
+BROKEN=		DOCS must be enabled in this port
 .endif
 .include <bsd.port.post.mk>

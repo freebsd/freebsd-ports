@@ -19,18 +19,18 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_CDROM=	Do not sell for profit
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
-	@${CP} ${DISTDIR}/mindterm-ssh.html ${WRKSRC}
-	@${MV} ${WRKSRC}/mindtermfull.jar ${WRKSRC}/mindterm.jar
+	${CP} ${DISTDIR}/mindterm-ssh.html ${WRKSRC}
+	${MV} ${WRKSRC}/mindtermfull.jar ${WRKSRC}/mindterm.jar
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/java/mindterm
-	@${INSTALL_DATA} ${WRKSRC}/mindterm.jar ${STAGEDIR}${PREFIX}/share/java/mindterm/
-.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/mindterm.jar ${STAGEDIR}${PREFIX}/share/java/mindterm/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DOC in CHANGES FAQ FEATURES PLATFORMS TODO mindterm-ssh.html
-	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
