@@ -15,6 +15,8 @@ USES=		bison gmake
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \
 		primes.spl reverse.spl shakesbeer.spl
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 .for f in . examples
 	${REINPLACE_CMD} -e 's,= gcc,?= gcc,' -e 's,^CCFLAGS.*,CFLAGS += -Wall,' \
@@ -25,9 +27,7 @@ post-patch:
 
 do-install:
 	${TAR} -C ${WRKSRC}/spl -cf - . | ${TAR} -C ${STAGEDIR}${PREFIX} -xf -
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${ALL_EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
