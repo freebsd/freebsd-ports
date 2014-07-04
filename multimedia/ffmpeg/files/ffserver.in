@@ -19,7 +19,8 @@ ffserver_enable="${ffserver_enable-NO}"
 name=ffserver
 rcvar=ffserver_enable
 
-command="%%PREFIX%%/bin/${name} &"
+command="%%PREFIX%%/bin/${name}"
+command_args="&"
 required_files=%%PREFIX%%/etc/ffserver.conf
 
 load_rc_config ${name}
