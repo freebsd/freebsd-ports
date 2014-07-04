@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Delimited
-PORTVERSION=	2.00
+PORTVERSION=	2.11
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for parsing delimited text files
 
-USES=		perl5
+LICENSE=	ART20
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
