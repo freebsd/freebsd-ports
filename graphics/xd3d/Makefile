@@ -26,6 +26,8 @@ LICENSE=	GPLv2
 # - FFLAGS		:	fortran compiler's flags (-O by default).
 #--------------------------------------------------------------------------
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .if !defined(WITHOUT_IMAGEMAGICK)
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
@@ -76,15 +78,11 @@ pre-configure:
 		${WRKSRC}/RULES
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for FILE in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 . endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -Rp ${WRKSRC}/Examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.post.mk>

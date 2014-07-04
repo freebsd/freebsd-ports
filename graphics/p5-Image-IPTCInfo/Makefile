@@ -14,13 +14,13 @@ USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	demo.pl
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${RM} -f ${WRKSRC}/._*
 
-.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demo_images/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

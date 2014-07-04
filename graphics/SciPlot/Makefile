@@ -26,6 +26,8 @@ PORTDOCS=	README SciPlot.html SciPlotDemo.html SciPlotProg.html
 EXDATA=		data.txt
 EXBINS=		realtime sciplot
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${INCLUDES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
@@ -34,14 +36,10 @@ do-install:
 	${LN} -sf ${LIBNAME}.so.0 ${STAGEDIR}${PREFIX}/lib/${LIBNAME}.so
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${EXDATA:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${EXBINS:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

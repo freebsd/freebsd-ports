@@ -20,7 +20,7 @@ PORTEXAMPLES=	*
 NO_BUILD=	yes
 NO_INSTALL_MANPAGES=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|python2.4|${PYTHON_VERSION}|' \
@@ -33,13 +33,9 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 	@(cd ${WRKSRC}/${PORTNAME}/ && \
 	     ${COPYTREE_SHARE} \* ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME})
-.if !defined(NOPORTDOCS)
 	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 -d ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

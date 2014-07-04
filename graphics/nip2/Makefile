@@ -28,7 +28,7 @@ DOS2UNIX_GLOB=	*.def
 SUB_FILES=	run-nip2.sh
 # This port has no man-pages. It installs a number of HTML files,
 # which are available through the GUI's Help. For this reason, they
-# are always installed, regardless of the NOPORTDOCS setting.
+# are always installed, regardless of the DOCS setting.
 # Somehow vendor's configure misses these:
 MAKE_ENV+=	UPDATE_MIME_DATABASE=update-mime-database	\
 		UPDATE_DESKTOP_DATABASE=update-desktop-database
@@ -51,10 +51,10 @@ test check: build
 	#
 	${GMAKE} -C ${WRKSRC} check
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 EXTRACT_AFTER_ARGS+=	--exclude nipguide.pdf --exclude pdf
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -35,6 +35,8 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	README
 DOCS_JA=	ChangeLog.ja	README.ja
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -48,7 +50,6 @@ post-patch:
 	${RUBY} -i -pe 'gsub %r|\.\./|, "tgif/"' ${WRKSRC}/extconf.rb ${WRKSRC}/*.c
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja
 	${INSTALL_DATA} ${WRKSRC}/examples/test??.rb ${RUBY_MODEXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/test??_ja.rb ${RUBY_MODEXAMPLESDIR}/ja/
@@ -59,6 +60,5 @@ post-install:
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

@@ -22,10 +22,13 @@ CONFIGURE_ENV=	AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--disable-documentation
+OPTIONS_DEFINE=	DOCS
 
-.else
+DOCS_CONFIGURE_ARGS_OFF=	--disable-documentation
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
 post-configure:
 	@${TOUCH} -f ${WRKSRC}/docs/reference/html/index.html
 .endif

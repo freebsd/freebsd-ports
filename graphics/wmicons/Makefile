@@ -26,6 +26,8 @@ PORTDOCS=	*
 WRKSRC=		${WRKDIR}/WindowMaker-extra-0.1
 WMICONDIR=	${STAGEDIR}${PREFIX}/share/WindowMaker/Pixmaps
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${MKDIR} ${WRKDIR}/isiconpack4
 	${TAR} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/isiconpack4.tgz \
@@ -52,7 +54,6 @@ post-install:
 	cd ${WRKDIR}/vf_tif; \
 	${INSTALL_DATA} *.tif ${WMICONDIR}
 
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/IconFest-1.2/README \
 		${STAGEDIR}${DOCSDIR}/README.IconFest
@@ -70,6 +71,5 @@ post-install:
 		${STAGEDIR}${DOCSDIR}/README.vf_png
 	${INSTALL_DATA} ${WRKDIR}/vf_tif/README \
 		${STAGEDIR}${DOCSDIR}/README.vf_tif
-.endif
 
 .include <bsd.port.mk>
