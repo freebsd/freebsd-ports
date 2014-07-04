@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE
 # Since the 0.12 serie is for gEdit 3+, it should not be a big problem for now.
 DISTNAME=	${PORTNAME}-${PORTVERSION}_beta5
 
-MAINTAINER=	romain@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Vala Toys for gEdit
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala

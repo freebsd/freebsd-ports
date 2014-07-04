@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Collection of miscellaneous Ruby modules
 
 BROKEN=		not staged

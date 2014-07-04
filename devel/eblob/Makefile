@@ -6,7 +6,7 @@ PORTVERSION=	0.18.2
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Append-only low-level I/O library
 
 LICENSE=	GPLv2

@@ -8,7 +8,7 @@ CATEGORIES=		devel
 MASTER_SITES=		# none
 DISTFILES=		# none
 
-MAINTAINER=		tphilipp@potion-studios.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain meta port
 
 RUN_DEPENDS=		psp-gdb:${PORTSDIR}/devel/psptoolchain-gdb \

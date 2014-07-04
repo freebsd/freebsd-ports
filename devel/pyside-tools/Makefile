@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.pyside.org/files/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Utilities for creating PySide applications
 
 LICENSE=	BSD GPLv2

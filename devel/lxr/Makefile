@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Source code indexer and cross-referencer
 
 BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \

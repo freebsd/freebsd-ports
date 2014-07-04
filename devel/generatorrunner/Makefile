@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pyside.org/files/
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Tool to create binding generators for C++ and Qt libraries
 
 LICENSE=	GPLv2

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Enables the ObjectTeams paradigm to the Ruby language
 
 BROKEN=	not staged

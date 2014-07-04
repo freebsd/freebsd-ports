@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.netsurf-browser.org/projects/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	unobe@cpan.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Library useful when writing parsers (formerly a part of NetSurf)
 
 USES=		gmake

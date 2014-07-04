@@ -9,7 +9,7 @@ MASTER_SITES=	http://google-gdata.googlecode.com/files/:1 \
 DISTNAME=	libgoogle-data-mono-${PORTVERSION}
 DISTFILES=	libgoogle-data-mono-${PORTVERSION}${EXTRACT_SUFX}:1 zlib-${ZLIB_VERSION}${EXTRACT_SUFX}:2
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	.NET library for the Google Data API
 
 BUILD_DEPENDS=	gmcs:${PORTSDIR}/lang/mono

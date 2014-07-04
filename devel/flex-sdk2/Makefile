@@ -8,7 +8,7 @@ MASTER_SITES=	#
 DISTFILES=	flex_sdk_2_194515.zip
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Adobe Flex SDK
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper

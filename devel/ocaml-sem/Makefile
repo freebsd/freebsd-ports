@@ -10,7 +10,7 @@ MASTER_SITES=	http://ocaml-sem.sourceforge.net/files/ \
 
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	argentoff@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	POSIX semaphores for OCaml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \

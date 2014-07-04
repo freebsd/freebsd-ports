@@ -7,7 +7,7 @@ CATEGORIES=	devel science math
 MASTER_SITES=	ftp://root.cern.ch/root/
 DISTNAME=	html${PORTVERSION:S/.//}
 
-MAINTAINER=	simon@lang-clan.de
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	HTML Documentation for Root framework
 
 NO_BUILD=	yes

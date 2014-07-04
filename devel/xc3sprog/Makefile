@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://FreeBSD.czest.pl/~wkoszek/ports/
 
-MAINTAINER=	wkoszek@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Free programmer for Xilinx Spartan S3E Starter Kit
 
 LIB_DEPENDS=	ftdi:${PORTSDIR}/devel/libftdi

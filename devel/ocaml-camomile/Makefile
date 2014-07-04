@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	michael.grunewald@laposte.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Comprehensive Unicode library for objective caml language
 
 USES=		gmake tar:bzip2

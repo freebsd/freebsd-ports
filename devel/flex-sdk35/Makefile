@@ -8,7 +8,7 @@ MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex3/
 DISTFILES=	flex_sdk_${PORTVERSION}_mpl.zip
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Adobe Flex SDK
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper

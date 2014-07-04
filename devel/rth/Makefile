@@ -7,7 +7,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	SF/${PORTNAME}/Release%20${PORTVERSION}/Release%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	jsi@jules.de
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Web-based requirement, test, and bugtracking system
 
 USES=		zip

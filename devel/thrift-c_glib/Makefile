@@ -6,7 +6,7 @@ PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	komarov@valerka.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	C glib interface to Thrift
 
 PKGNAMESUFFIX=	-c_glib

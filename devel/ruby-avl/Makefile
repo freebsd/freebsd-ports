@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	AVL tree class for Ruby
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavl.a:${PORTSDIR}/devel/libavl
