@@ -6,10 +6,6 @@ PORTVERSION=	1.01
 CATEGORIES=	math science
 MASTER_SITES=	http://www.ann.jussieu.fr/hecht/ftp/bamg/
 DISTFILES=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX}
-.ifndef(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}.pdf
-EXTRACT_ONLY=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Bidimensional Anisotropic Mesh Generator
@@ -32,6 +28,11 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	${PORTNAME}.pdf
+EXTRACT_ONLY=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX}
+.endif
+
 .pre-configure:
 HOSTTYPE=	${UNAME} -s
 MAKE_ENV=	HOSTTYPE=${${HOSTTYPE}}
@@ -44,8 +45,10 @@ post-install:
 .for bin in ${BINS}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${bin}
 .endfor
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.pdf ${STAGEDIR}${DOCSDIR}
+.endif
 .for exdir in ${EXDIRS}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${exdir}
 	@${INSTALL_DATA} ${WRKSRC}/examples/${exdir}/* ${STAGEDIR}${EXAMPLESDIR}/${exdir}
