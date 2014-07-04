@@ -29,16 +29,16 @@ PLIST_DIRS=	include/gai
 PORTDOCS=	*
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|sdl-config --|${SDL_CONFIG} --|g; \
 		s|/usr/X11R6|${LOCALBASE}|g" ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/docs && \
 	${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
 	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
-.endif
 .for dir in docking examples templates
 	cd ${WRKSRC} && \
 	${FIND} ${dir} -type d -exec ${MKDIR} "${STAGEDIR}${EXAMPLESDIR}/{}" \; && \
