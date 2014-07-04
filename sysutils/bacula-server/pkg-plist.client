@@ -2,33 +2,25 @@
 @group bacula
 @sample %%ETCDIR%%/bconsole.conf.sample
 @group wheel
+lib/libbac.la
 lib/libbac.so
 lib/libbac.so.5
 lib/libbac.so.5.0.2
+lib/libbaccfg.la
 lib/libbaccfg.so
 lib/libbaccfg.so.5
 lib/libbaccfg.so.5.0.2
+lib/libbacfind.la
 lib/libbacfind.so
 lib/libbacfind.so.5
 lib/libbacfind.so.5.0.2
+lib/libbacpy.la
 lib/libbacpy.so
 lib/libbacpy.so.5
 lib/libbacpy.so.5.0.2
 lib/bpipe-fd.so
-man/man8/bacula-dir.8.gz
 man/man8/bacula-fd.8.gz
-man/man8/bacula-sd.8.gz
-man/man8/bacula.8.gz
 man/man8/bconsole.8.gz
-man/man8/bcopy.8.gz
-man/man8/bextract.8.gz
-man/man8/bls.8.gz
-man/man8/bregex.8.gz
-man/man8/bscan.8.gz
-man/man8/btape.8.gz
-man/man8/btraceback.8.gz
-man/man8/bwild.8.gz
-man/man8/dbcheck.8.gz
 sbin/bacula-fd
 @group bacula
 sbin/bconsole

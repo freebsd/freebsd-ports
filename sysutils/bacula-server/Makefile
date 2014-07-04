@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	5.2.12
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -12,7 +12,7 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	dan@langille.org
 COMMENT?=	Network backup solution (server)
 
-USES+=		libtool
+USES+=		libtool:keepla
 
 LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
@@ -48,7 +48,7 @@ USE_RC_SUBR?=	bacula-dir bacula-sd
 .if defined(WITH_CLIENT_ONLY)
 SUB_FILES+=	pkg-install.client pkg-deinstall.client pkg-message.client
 .else
-SUB_FILES+=	pkg-install.server pkg-deinstall.server pkg-message.server
+SUB_FILES+=	pkg-message.server
 .endif
 
 MANCOMPRESSED=	yes
@@ -98,10 +98,6 @@ SUB_LIST=	BACULA_USER=${BACULA_USER} \
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-# overridden if client install
-PKGDEINSTALL=	${FILESDIR}/pkg-deinstall.server
-PKGINSTALL=	${FILESDIR}/pkg-install.server
-
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
@@ -146,7 +142,7 @@ MP8+=	bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 \
 MP1+=	bsmtp.1 bacula-tray-monitor.1 bacula-bwxconsole.1
 .endif
 
-MAKE_ENV+=	MO8="${MAN8}" MAN1="${MP1}"
+MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
 #	This port does not install docs.  See bacula-docs for that
