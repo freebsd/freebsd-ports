@@ -6,7 +6,6 @@ PKGNAMESUFFIX=	-monitor
 COMMENT=	The Exim monitor for the Exim MTA
 
 MASTERDIR=	${.CURDIR}/../exim
-PKGDIR=		${.CURDIR}
 
 EXIMON_ONLY=	yes
 
@@ -15,5 +14,4 @@ EXIMON_ONLY=	yes
 #
 #RUN_DEPENDS=	${LOCALBASE}/sbin/exim:${PORTSDIR}/mail/exim
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

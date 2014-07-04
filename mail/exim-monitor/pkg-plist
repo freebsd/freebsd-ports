@@ -1,6 +1,0 @@
-@unexec if cmp -s %D/etc/exim/configure %D/etc/exim/configure.default; then rm -f %D/etc/exim/configure; fi
-etc/exim/configure.default
-@exec [ -f %B/configure ] || cp %B/%f %B/configure
-@unexec rmdir %B 2>/dev/null || true
-sbin/eximon
-sbin/eximon.bin

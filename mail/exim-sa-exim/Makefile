@@ -8,5 +8,4 @@ PORTVERSION?=	${EXIM_VERSION}+${SA_EXIM_VERSION}
 
 WITH_SA_EXIM=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
