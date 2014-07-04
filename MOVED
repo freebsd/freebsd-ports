@@ -6233,3 +6233,5 @@ security/sudosh2||2014-07-01|Has expired: Funcition replaced by sudo -s
 lang/pike76|lang/pike78|2014-07-01|Has expired: Outdated: Users should switch to lang/pike78
 editors/gummi||2014-07-01|Has expired: Builds fine but the program itself is unusable
 archivers/rpm|archivers/rpm4|2014-07-03|rpm3 is long EOLed, rpm4 is the default rpm archivers for most of linux distributions
+x11-clocks/wmitime||2014-07-04|Has expired
+x11/xorg-edit||2014-07-04|Has expired: Depends on older version of wxGTK
