@@ -11,7 +11,7 @@ DIST_SUBDIR=	cmigemo
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	C implementation of Migemo Japanese incremental search tool
 
-.if !defined(MASTERDIR)
+.if !defined(PKGNAMESUFFIX)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE_MIT.txt
 
@@ -37,7 +37,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-default-src
 
 .include <bsd.port.options.mk>
 
-.if !defined(MASTERDIR) && ${PORT_OPTIONS:MDOCS}
+.if !defined(PKGNAMESUFFIX) && ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=gcc-install-doc
 .endif
 
