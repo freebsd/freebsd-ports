@@ -3,7 +3,7 @@
 
 PORTNAME=	spatialite
 PORTVERSION=	4.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}

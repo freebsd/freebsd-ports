@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlite-ext-mobigroup
 PORTVERSION=	3.7.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://mobigroup.ru/debian/pool-squeeze/main/s/sqlite3/

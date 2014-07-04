@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/sqlite3-ocaml/downloads/
 PKGNAMEPREFIX=	ocaml-
