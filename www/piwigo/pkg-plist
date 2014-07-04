@@ -845,6 +845,7 @@
 %%WWWDIR%%/language/en_GB/common.lang.php
 %%WWWDIR%%/language/en_GB/en_GB.jpg
 %%WWWDIR%%/language/en_GB/index.php
+%%WWWDIR%%/language/en_GB/install.lang.php
 %%WWWDIR%%/language/en_GB/iso.txt
 %%WWWDIR%%/language/en_UK/about.html
 %%WWWDIR%%/language/en_UK/admin.lang.php
@@ -1034,6 +1035,13 @@
 %%WWWDIR%%/language/gl_ES/help/cat_perm.html
 %%WWWDIR%%/language/gl_ES/help/configuration.html
 %%WWWDIR%%/language/gl_ES/help/extend_for_templates.html
+%%WWWDIR%%/language/gl_ES/help/group_list.html
+%%WWWDIR%%/language/gl_ES/help/help_add_photos.html
+%%WWWDIR%%/language/gl_ES/help/help_groups.html
+%%WWWDIR%%/language/gl_ES/help/help_misc.html
+%%WWWDIR%%/language/gl_ES/help/help_permissions.html
+%%WWWDIR%%/language/gl_ES/help/help_virtual_links.html
+%%WWWDIR%%/language/gl_ES/help/history.html
 %%WWWDIR%%/language/gl_ES/install.lang.php
 %%WWWDIR%%/language/gl_ES/iso.txt
 %%WWWDIR%%/language/gl_ES/upgrade.lang.php
@@ -1201,6 +1209,7 @@
 %%WWWDIR%%/language/km_KH/index.php
 %%WWWDIR%%/language/km_KH/iso.txt
 %%WWWDIR%%/language/km_KH/km_KH.jpg
+%%WWWDIR%%/language/km_KH/upgrade.lang.php
 %%WWWDIR%%/language/kn_IN/about.html
 %%WWWDIR%%/language/kn_IN/admin.lang.php
 %%WWWDIR%%/language/kn_IN/common.lang.php
@@ -1708,6 +1717,10 @@
 %%WWWDIR%%/language/zh_TW/iso.txt
 %%WWWDIR%%/language/zh_TW/upgrade.lang.php
 %%WWWDIR%%/language/zh_TW/zh_TW.jpg
+%%WWWDIR%%/local/config/index.php
+%%WWWDIR%%/local/css/index.php
+%%WWWDIR%%/local/index.php
+%%WWWDIR%%/local/language/index.php
 %%WWWDIR%%/local.sample/config/index.php
 %%WWWDIR%%/local.sample/css/index.php
 %%WWWDIR%%/local.sample/index.php
@@ -1940,6 +1953,8 @@
 %%WWWDIR%%/plugins/admin_multi_view/language/ja_JP/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/ka_GE/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/ka_GE/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/km_KH/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/km_KH/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/kn_IN/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/lt_LT/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/lv_LV/description.txt
@@ -1960,6 +1975,7 @@
 %%WWWDIR%%/plugins/admin_multi_view/language/ro_RO/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/ru_RU/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/ru_RU/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/sh_RS/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/sk_SK/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/sk_SK/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/sl_SI/description.txt
@@ -2076,6 +2092,7 @@
 %%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU/description.txt
 %%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/sh_RS/plugin.lang.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK/description.txt
 %%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK/plugin.lang.php
@@ -2155,6 +2172,8 @@
 %%WWWDIR%%/plugins/language_switch/language/ja_JP/index.php
 %%WWWDIR%%/plugins/language_switch/language/ka_GE/description.txt
 %%WWWDIR%%/plugins/language_switch/language/ka_GE/index.php
+%%WWWDIR%%/plugins/language_switch/language/km_KH/description.txt
+%%WWWDIR%%/plugins/language_switch/language/km_KH/index.php
 %%WWWDIR%%/plugins/language_switch/language/kn_IN/description.txt
 %%WWWDIR%%/plugins/language_switch/language/lt_LT/description.txt
 %%WWWDIR%%/plugins/language_switch/language/lv_LV/description.txt
@@ -2658,11 +2677,15 @@
 %%WWWDIR%%/themes/elegant/language/fr_CA/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/fr_FR/index.php
 %%WWWDIR%%/themes/elegant/language/fr_FR/theme.lang.php
+%%WWWDIR%%/themes/elegant/language/he_IL/index.php
+%%WWWDIR%%/themes/elegant/language/he_IL/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/hu_HU/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/index.php
 %%WWWDIR%%/themes/elegant/language/it_IT/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/ja_JP/index.php
 %%WWWDIR%%/themes/elegant/language/ja_JP/theme.lang.php
+%%WWWDIR%%/themes/elegant/language/km_KH/index.php
+%%WWWDIR%%/themes/elegant/language/km_KH/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/kn_IN/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/ko_KR/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/lt_LT/theme.lang.php
@@ -2679,6 +2702,8 @@
 %%WWWDIR%%/themes/elegant/language/ru_RU/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/sk_SK/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/sl_SI/theme.lang.php
+%%WWWDIR%%/themes/elegant/language/sr_RS/index.php
+%%WWWDIR%%/themes/elegant/language/sr_RS/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/sv_SE/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/ta_IN/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/th_TH/theme.lang.php
@@ -2721,6 +2746,10 @@
 %%WWWDIR%%/themes/smartpocket/js/thumb.arrange.js
 %%WWWDIR%%/themes/smartpocket/language/bg_BG/index.php
 %%WWWDIR%%/themes/smartpocket/language/bg_BG/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/br_FR/index.php
+%%WWWDIR%%/themes/smartpocket/language/br_FR/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/ca_ES/index.php
+%%WWWDIR%%/themes/smartpocket/language/ca_ES/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/cs_CZ/index.php
 %%WWWDIR%%/themes/smartpocket/language/cs_CZ/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/da_DK/index.php
@@ -2745,8 +2774,12 @@
 %%WWWDIR%%/themes/smartpocket/language/fr_CA/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/fr_FR/index.php
 %%WWWDIR%%/themes/smartpocket/language/fr_FR/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/he_IL/index.php
+%%WWWDIR%%/themes/smartpocket/language/he_IL/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/it_IT/index.php
 %%WWWDIR%%/themes/smartpocket/language/it_IT/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/km_KH/index.php
+%%WWWDIR%%/themes/smartpocket/language/km_KH/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/lt_LT/index.php
 %%WWWDIR%%/themes/smartpocket/language/lt_LT/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/lv_LV/index.php
@@ -2757,16 +2790,28 @@
 %%WWWDIR%%/themes/smartpocket/language/nb_NO/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/nl_NL/index.php
 %%WWWDIR%%/themes/smartpocket/language/nl_NL/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/nn_NO/index.php
+%%WWWDIR%%/themes/smartpocket/language/nn_NO/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/pl_PL/index.php
 %%WWWDIR%%/themes/smartpocket/language/pl_PL/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/pt_BR/index.php
 %%WWWDIR%%/themes/smartpocket/language/pt_BR/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/pt_PT/index.php
 %%WWWDIR%%/themes/smartpocket/language/pt_PT/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/ro_RO/index.php
+%%WWWDIR%%/themes/smartpocket/language/ro_RO/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/ru_RU/index.php
 %%WWWDIR%%/themes/smartpocket/language/ru_RU/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/sh_RS/index.php
+%%WWWDIR%%/themes/smartpocket/language/sh_RS/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/sk_SK/index.php
 %%WWWDIR%%/themes/smartpocket/language/sk_SK/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/sl_SI/index.php
+%%WWWDIR%%/themes/smartpocket/language/sl_SI/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/sr_RS/index.php
+%%WWWDIR%%/themes/smartpocket/language/sr_RS/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/sv_SE/index.php
+%%WWWDIR%%/themes/smartpocket/language/sv_SE/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/ta_IN/index.php
 %%WWWDIR%%/themes/smartpocket/language/ta_IN/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/tr_TR/index.php
@@ -2823,348 +2868,158 @@
 @mode
 @owner root
 @group wheel
-@dirrm %%WWWDIR%%/themes/smartpocket/template
-@dirrm %%WWWDIR%%/themes/smartpocket/language/zh_HK
-@dirrm %%WWWDIR%%/themes/smartpocket/language/zh_CN
-@dirrm %%WWWDIR%%/themes/smartpocket/language/vi_VN
-@dirrm %%WWWDIR%%/themes/smartpocket/language/uk_UA
-@dirrm %%WWWDIR%%/themes/smartpocket/language/tr_TR
-@dirrm %%WWWDIR%%/themes/smartpocket/language/ta_IN
-@dirrm %%WWWDIR%%/themes/smartpocket/language/sk_SK
-@dirrm %%WWWDIR%%/themes/smartpocket/language/ru_RU
-@dirrm %%WWWDIR%%/themes/smartpocket/language/pt_PT
-@dirrm %%WWWDIR%%/themes/smartpocket/language/pt_BR
-@dirrm %%WWWDIR%%/themes/smartpocket/language/pl_PL
-@dirrm %%WWWDIR%%/themes/smartpocket/language/nl_NL
-@dirrm %%WWWDIR%%/themes/smartpocket/language/nb_NO
-@dirrm %%WWWDIR%%/themes/smartpocket/language/mn_MN
-@dirrm %%WWWDIR%%/themes/smartpocket/language/lv_LV
-@dirrm %%WWWDIR%%/themes/smartpocket/language/lt_LT
-@dirrm %%WWWDIR%%/themes/smartpocket/language/it_IT
-@dirrm %%WWWDIR%%/themes/smartpocket/language/fr_FR
-@dirrm %%WWWDIR%%/themes/smartpocket/language/fr_CA
-@dirrm %%WWWDIR%%/themes/smartpocket/language/fi_FI
-@dirrm %%WWWDIR%%/themes/smartpocket/language/fa_IR
-@dirrm %%WWWDIR%%/themes/smartpocket/language/et_EE
-@dirrm %%WWWDIR%%/themes/smartpocket/language/es_ES
-@dirrm %%WWWDIR%%/themes/smartpocket/language/eo_EO
-@dirrm %%WWWDIR%%/themes/smartpocket/language/en_UK
-@dirrm %%WWWDIR%%/themes/smartpocket/language/el_GR
-@dirrm %%WWWDIR%%/themes/smartpocket/language/de_DE
-@dirrm %%WWWDIR%%/themes/smartpocket/language/da_DK
-@dirrm %%WWWDIR%%/themes/smartpocket/language/cs_CZ
-@dirrm %%WWWDIR%%/themes/smartpocket/language/bg_BG
-@dirrm %%WWWDIR%%/themes/smartpocket/language
-@dirrm %%WWWDIR%%/themes/smartpocket/js
-@dirrm %%WWWDIR%%/themes/smartpocket/images
-@dirrm %%WWWDIR%%/themes/smartpocket/admin
-@dirrm %%WWWDIR%%/themes/smartpocket
-@dirrm %%WWWDIR%%/themes/elegant/language/zh_TW
-@dirrm %%WWWDIR%%/themes/elegant/language/zh_HK
-@dirrm %%WWWDIR%%/themes/elegant/language/zh_CN
-@dirrm %%WWWDIR%%/themes/elegant/language/vi_VN
-@dirrm %%WWWDIR%%/themes/elegant/language/uk_UA
-@dirrm %%WWWDIR%%/themes/elegant/language/tr_TR
-@dirrm %%WWWDIR%%/themes/elegant/language/th_TH
-@dirrm %%WWWDIR%%/themes/elegant/language/ta_IN
-@dirrm %%WWWDIR%%/themes/elegant/language/sv_SE
-@dirrm %%WWWDIR%%/themes/elegant/language/sl_SI
-@dirrm %%WWWDIR%%/themes/elegant/language/sk_SK
-@dirrm %%WWWDIR%%/themes/elegant/language/ru_RU
-@dirrm %%WWWDIR%%/themes/elegant/language/ro_RO
-@dirrm %%WWWDIR%%/themes/elegant/language/pt_PT
-@dirrm %%WWWDIR%%/themes/elegant/language/pt_BR
-@dirrm %%WWWDIR%%/themes/elegant/language/pl_PL
-@dirrm %%WWWDIR%%/themes/elegant/language/nn_NO
-@dirrm %%WWWDIR%%/themes/elegant/language/nl_NL
-@dirrm %%WWWDIR%%/themes/elegant/language/nb_NO
-@dirrm %%WWWDIR%%/themes/elegant/language/mn_MN
-@dirrm %%WWWDIR%%/themes/elegant/language/lv_LV
-@dirrm %%WWWDIR%%/themes/elegant/language/lt_LT
-@dirrm %%WWWDIR%%/themes/elegant/language/ko_KR
-@dirrm %%WWWDIR%%/themes/elegant/language/kn_IN
-@dirrm %%WWWDIR%%/themes/elegant/language/ja_JP
-@dirrm %%WWWDIR%%/themes/elegant/language/it_IT
-@dirrm %%WWWDIR%%/themes/elegant/language/hu_HU
-@dirrm %%WWWDIR%%/themes/elegant/language/fr_FR
-@dirrm %%WWWDIR%%/themes/elegant/language/fr_CA
-@dirrm %%WWWDIR%%/themes/elegant/language/fi_FI
-@dirrm %%WWWDIR%%/themes/elegant/language/fa_IR
-@dirrm %%WWWDIR%%/themes/elegant/language/et_EE
-@dirrm %%WWWDIR%%/themes/elegant/language/es_ES
-@dirrm %%WWWDIR%%/themes/elegant/language/eo_EO
-@dirrm %%WWWDIR%%/themes/elegant/language/en_UK
-@dirrm %%WWWDIR%%/themes/elegant/language/el_GR
-@dirrm %%WWWDIR%%/themes/elegant/language/de_DE
-@dirrm %%WWWDIR%%/themes/elegant/language/da_DK
-@dirrm %%WWWDIR%%/themes/elegant/language/cs_CZ
-@dirrm %%WWWDIR%%/themes/elegant/language/ca_ES
-@dirrm %%WWWDIR%%/themes/elegant/language/br_FR
-@dirrm %%WWWDIR%%/themes/elegant/language/bg_BG
-@dirrm %%WWWDIR%%/themes/elegant/language/ar_SA
-@dirrm %%WWWDIR%%/themes/elegant/language
-@dirrm %%WWWDIR%%/themes/elegant/icon
-@dirrm %%WWWDIR%%/themes/elegant/admin
-@dirrm %%WWWDIR%%/themes/elegant
-@dirrm %%WWWDIR%%/themes/default/watermarks
-@dirrm %%WWWDIR%%/themes/default/template/mail/text/plain
-@dirrm %%WWWDIR%%/themes/default/template/mail/text/html
-@dirrm %%WWWDIR%%/themes/default/template/mail/text
-@dirrm %%WWWDIR%%/themes/default/template/mail
-@dirrm %%WWWDIR%%/themes/default/template/include
-@dirrm %%WWWDIR%%/themes/default/template
-@dirrm %%WWWDIR%%/themes/default/s26
-@dirrm %%WWWDIR%%/themes/default/js/ui/theme/images
-@dirrm %%WWWDIR%%/themes/default/js/ui/theme
-@dirrm %%WWWDIR%%/themes/default/js/ui/minified
-@dirrm %%WWWDIR%%/themes/default/js/ui/i18n
-@dirrm %%WWWDIR%%/themes/default/js/ui
-@dirrm %%WWWDIR%%/themes/default/js/plugins/datatables/images
-@dirrm %%WWWDIR%%/themes/default/js/plugins/datatables/css
-@dirrm %%WWWDIR%%/themes/default/js/plugins/datatables
-@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style2/images
-@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style2
-@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6
-@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images
-@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1
-@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox
-@dirrm %%WWWDIR%%/themes/default/js/plugins
-@dirrm %%WWWDIR%%/themes/default/js
-@dirrm %%WWWDIR%%/themes/default/images
-@dirrm %%WWWDIR%%/themes/default/icon/mimetypes
-@dirrm %%WWWDIR%%/themes/default/icon
-@dirrm %%WWWDIR%%/themes/default
-@dirrm %%WWWDIR%%/themes/dark/images
-@dirrm %%WWWDIR%%/themes/dark
-@dirrm %%WWWDIR%%/themes/clear
-@dirrm %%WWWDIR%%/themes/Sylvia/images
-@dirrm %%WWWDIR%%/themes/Sylvia/icon/mimetypes
-@dirrm %%WWWDIR%%/themes/Sylvia/icon
-@dirrm %%WWWDIR%%/themes/Sylvia
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/template-extension/yoga/local
-@dirrm %%WWWDIR%%/template-extension/yoga
-@dirrm %%WWWDIR%%/template-extension/distributed/samples
-@dirrm %%WWWDIR%%/template-extension/distributed
-@dirrmtry %%WWWDIR%%/template-extension
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/language
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@mode 777
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
-@dirrm %%WWWDIR%%/plugins/language_switch/language/zh_TW
-@dirrm %%WWWDIR%%/plugins/language_switch/language/zh_HK
-@dirrm %%WWWDIR%%/plugins/language_switch/language/zh_CN
-@dirrm %%WWWDIR%%/plugins/language_switch/language/vi_VN
-@dirrm %%WWWDIR%%/plugins/language_switch/language/uk_UA
-@dirrm %%WWWDIR%%/plugins/language_switch/language/tr_TR
-@dirrm %%WWWDIR%%/plugins/language_switch/language/th_TH
-@dirrm %%WWWDIR%%/plugins/language_switch/language/ta_IN
-@dirrm %%WWWDIR%%/plugins/language_switch/language/sv_SE
-@dirrm %%WWWDIR%%/plugins/language_switch/language/sr_RS
-@dirrm %%WWWDIR%%/plugins/language_switch/language/sl_SI
-@dirrm %%WWWDIR%%/plugins/language_switch/language/sk_SK
-@dirrm %%WWWDIR%%/plugins/language_switch/language/sh_RS
-@dirrm %%WWWDIR%%/plugins/language_switch/language/ru_RU
-@dirrm %%WWWDIR%%/plugins/language_switch/language/ro_RO
-@dirrm %%WWWDIR%%/plugins/language_switch/language/pt_PT
-@dirrm %%WWWDIR%%/plugins/language_switch/language/pt_BR
-@dirrm %%WWWDIR%%/plugins/language_switch/language/pl_PL
-@dirrm %%WWWDIR%%/plugins/language_switch/language/nn_NO
-@dirrm %%WWWDIR%%/plugins/language_switch/language/nl_NL
-@dirrm %%WWWDIR%%/plugins/language_switch/language/nb_NO
-@dirrm %%WWWDIR%%/plugins/language_switch/language/mn_MN
-@dirrm %%WWWDIR%%/plugins/language_switch/language/lv_LV
-@dirrm %%WWWDIR%%/plugins/language_switch/language/lt_LT
-@dirrm %%WWWDIR%%/plugins/language_switch/language/kn_IN
-@dirrm %%WWWDIR%%/plugins/language_switch/language/ka_GE
-@dirrm %%WWWDIR%%/plugins/language_switch/language/ja_JP
-@dirrm %%WWWDIR%%/plugins/language_switch/language/it_IT
-@dirrm %%WWWDIR%%/plugins/language_switch/language/hu_HU
-@dirrm %%WWWDIR%%/plugins/language_switch/language/hr_HR
-@dirrm %%WWWDIR%%/plugins/language_switch/language/he_IL
-@dirrm %%WWWDIR%%/plugins/language_switch/language/gl_ES
-@dirrm %%WWWDIR%%/plugins/language_switch/language/fr_FR
-@dirrm %%WWWDIR%%/plugins/language_switch/language/fr_CA
-@dirrm %%WWWDIR%%/plugins/language_switch/language/fi_FI
-@dirrm %%WWWDIR%%/plugins/language_switch/language/fa_IR
-@dirrm %%WWWDIR%%/plugins/language_switch/language/et_EE
-@dirrm %%WWWDIR%%/plugins/language_switch/language/es_ES
-@dirrm %%WWWDIR%%/plugins/language_switch/language/eo_EO
-@dirrm %%WWWDIR%%/plugins/language_switch/language/en_UK
-@dirrm %%WWWDIR%%/plugins/language_switch/language/el_GR
-@dirrm %%WWWDIR%%/plugins/language_switch/language/de_DE
-@dirrm %%WWWDIR%%/plugins/language_switch/language/da_DK
-@dirrm %%WWWDIR%%/plugins/language_switch/language/cs_CZ
-@dirrm %%WWWDIR%%/plugins/language_switch/language/ca_ES
-@dirrm %%WWWDIR%%/plugins/language_switch/language/br_FR
-@dirrm %%WWWDIR%%/plugins/language_switch/language/bg_BG
-@dirrm %%WWWDIR%%/plugins/language_switch/language/ar_SA
-@dirrm %%WWWDIR%%/plugins/language_switch/language/af_ZA
-@dirrm %%WWWDIR%%/plugins/language_switch/language
-@dirrm %%WWWDIR%%/plugins/language_switch
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/zh_TW
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/zh_HK
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/zh_CN
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/vi_VN
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/uk_UA
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/tr_TR
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/th_TH
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ta_IN
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sv_SE
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sr_RS
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sl_SI
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ro_RO
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/pt_PT
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/pt_BR
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/pl_PL
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/nn_NO
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/nl_NL
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/nb_NO
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/lv_LV
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/lt_LT
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ko_KR
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/kn_IN
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ka_GE
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ja_JP
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/it_IT
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/hu_HU
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/hr_HR
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/he_IL
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/gl_ES
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fr_FR
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fr_CA
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fi_FI
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fa_IR
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/et_EE
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/es_ES
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/eo_EO
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/en_UK
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/el_GR
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/de_DE
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/da_DK
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/cs_CZ
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ca_ES
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/br_FR
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/bg_BG
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ar_SA
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/zh_TW
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/zh_HK
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/zh_CN
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/vi_VN
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/uk_UA
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/tr_TR
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/th_TH
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ta_IN
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sv_SE
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sr_RS
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sl_SI
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sk_SK
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ru_RU
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ro_RO
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/pt_PT
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/pt_BR
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/pl_PL
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/nn_NO
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/nl_NL
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/nb_NO
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/mn_MN
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/lv_LV
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/lt_LT
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/kn_IN
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ka_GE
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ja_JP
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/it_IT
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/hu_HU
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/hr_HR
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/he_IL
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/gl_ES
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fr_FR
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fr_CA
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fi_FI
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fa_IR
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/et_EE
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/es_ES
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/eo_EO
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/en_UK
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/el_GR
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/de_DE
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/da_DK
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/cs_CZ
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ca_ES
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/br_FR
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/bg_BG
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ar_SA
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/af_ZA
-@dirrm %%WWWDIR%%/plugins/admin_multi_view/language
-@dirrm %%WWWDIR%%/plugins/admin_multi_view
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/template
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/zh_TW
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/zh_HK
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/zh_CN
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/uk_UA
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/tr_TR
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/th_TH
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ta_IN
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sv_SE
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sr_RS
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sl_SI
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sk_SK
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sh_RS
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ru_RU
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ro_RO
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/pt_PT
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/pt_BR
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/pl_PL
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/nn_NO
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/nl_NL
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/nb_NO
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/mn_MN
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/lv_LV
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/lt_LT
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/kn_IN
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ka_GE
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ja_JP
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/it_IT
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/hu_HU
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/hr_HR
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/he_IL
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/gl_ES
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fr_FR
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fr_CA
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fi_FI
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fa_IR
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/et_EE
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/es_ES
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/eo_EO
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/en_UK
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/el_GR
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/de_DE
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/da_DK
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/cs_CZ
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ca_ES
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/br_FR
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/bg_BG
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ar_SA
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/af_ZA
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/include
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/xml
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/stex
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/php
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/javascript
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/htmlmixed
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/haskell
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/diff
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/css
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/clike
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/lib
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror
-@dirrm %%WWWDIR%%/plugins/LocalFilesEditor
-@dirrmtry %%WWWDIR%%/plugins
+@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% -m 777 %D/%%WWWDIR%%/_data
+@dirrm %%WWWDIR%%/_data
+@mode
+@owner root
+@group wheel
+@dirrm %%WWWDIR%%/admin/include/uploadify
+@dirrm %%WWWDIR%%/admin/include
+@dirrm %%WWWDIR%%/admin/themes/clear/icon
+@dirrm %%WWWDIR%%/admin/themes/clear/images
+@dirrm %%WWWDIR%%/admin/themes/clear
+@dirrm %%WWWDIR%%/admin/themes/default/fontello/css
+@dirrm %%WWWDIR%%/admin/themes/default/fontello/font
+@dirrm %%WWWDIR%%/admin/themes/default/fontello
+@dirrm %%WWWDIR%%/admin/themes/default/icon
+@dirrm %%WWWDIR%%/admin/themes/default/images
+@dirrm %%WWWDIR%%/admin/themes/default/js
+@dirrm %%WWWDIR%%/admin/themes/default/template/include
+@dirrm %%WWWDIR%%/admin/themes/default/template
+@dirrm %%WWWDIR%%/admin/themes/default
+@dirrm %%WWWDIR%%/admin/themes/roma/icon
+@dirrm %%WWWDIR%%/admin/themes/roma/images
+@dirrm %%WWWDIR%%/admin/themes/roma
+@dirrm %%WWWDIR%%/admin/themes
+@dirrm %%WWWDIR%%/admin
+@dirrm %%WWWDIR%%/doc
+@dirrmtry %%WWWDIR%%/galleries
+@dirrm %%WWWDIR%%/include/dblayer
+@dirrm %%WWWDIR%%/include/php_compat
+@dirrm %%WWWDIR%%/include/phpmailer
+@dirrm %%WWWDIR%%/include/smarty/libs/plugins
+@dirrm %%WWWDIR%%/include/smarty/libs/sysplugins
+@dirrm %%WWWDIR%%/include/smarty/libs
+@dirrm %%WWWDIR%%/include/smarty
+@dirrm %%WWWDIR%%/include/ws_functions
+@dirrm %%WWWDIR%%/include/ws_protocols
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%/install/db
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/language/af_ZA/help
+@dirrm %%WWWDIR%%/language/af_ZA
+@dirrm %%WWWDIR%%/language/ar_MA
+@dirrm %%WWWDIR%%/language/ar_SA/help
+@dirrm %%WWWDIR%%/language/ar_SA
+@dirrm %%WWWDIR%%/language/az_AZ
+@dirrm %%WWWDIR%%/language/bg_BG/help
+@dirrm %%WWWDIR%%/language/bg_BG
+@dirrm %%WWWDIR%%/language/bn_IN
+@dirrm %%WWWDIR%%/language/br_FR
+@dirrm %%WWWDIR%%/language/ca_ES/help
+@dirrm %%WWWDIR%%/language/ca_ES
+@dirrm %%WWWDIR%%/language/cs_CZ/help
+@dirrm %%WWWDIR%%/language/cs_CZ
+@dirrm %%WWWDIR%%/language/da_DK/help
+@dirrm %%WWWDIR%%/language/da_DK
+@dirrm %%WWWDIR%%/language/de_DE/help
+@dirrm %%WWWDIR%%/language/de_DE
+@dirrm %%WWWDIR%%/language/dv_MV
+@dirrm %%WWWDIR%%/language/el_GR/help
+@dirrm %%WWWDIR%%/language/el_GR
+@dirrm %%WWWDIR%%/language/en_GB
+@dirrm %%WWWDIR%%/language/en_UK/help
+@dirrm %%WWWDIR%%/language/en_UK
+@dirrm %%WWWDIR%%/language/en_US
+@dirrm %%WWWDIR%%/language/eo_EO/help
+@dirrm %%WWWDIR%%/language/eo_EO
+@dirrm %%WWWDIR%%/language/es_AR
+@dirrm %%WWWDIR%%/language/es_ES/help
+@dirrm %%WWWDIR%%/language/es_ES
+@dirrm %%WWWDIR%%/language/et_EE/help
+@dirrm %%WWWDIR%%/language/et_EE
+@dirrm %%WWWDIR%%/language/fa_IR/help
+@dirrm %%WWWDIR%%/language/fa_IR
+@dirrm %%WWWDIR%%/language/fi_FI
+@dirrm %%WWWDIR%%/language/fr_CA/help
+@dirrm %%WWWDIR%%/language/fr_CA
+@dirrm %%WWWDIR%%/language/fr_FR/help
+@dirrm %%WWWDIR%%/language/fr_FR
+@dirrm %%WWWDIR%%/language/ga_IE
+@dirrm %%WWWDIR%%/language/gl_ES/help
+@dirrm %%WWWDIR%%/language/gl_ES
+@dirrm %%WWWDIR%%/language/he_IL/help
+@dirrm %%WWWDIR%%/language/he_IL
+@dirrm %%WWWDIR%%/language/hr_HR/help
+@dirrm %%WWWDIR%%/language/hr_HR
+@dirrm %%WWWDIR%%/language/hu_HU/help
+@dirrm %%WWWDIR%%/language/hu_HU
+@dirrm %%WWWDIR%%/language/id_ID
+@dirrm %%WWWDIR%%/language/is_IS
+@dirrm %%WWWDIR%%/language/it_IT/help
+@dirrm %%WWWDIR%%/language/it_IT
+@dirrm %%WWWDIR%%/language/ja_JP/help
+@dirrm %%WWWDIR%%/language/ja_JP
+@dirrm %%WWWDIR%%/language/ka_GE/help
+@dirrm %%WWWDIR%%/language/ka_GE
+@dirrm %%WWWDIR%%/language/km_KH
+@dirrm %%WWWDIR%%/language/kn_IN
+@dirrm %%WWWDIR%%/language/ko_KR
+@dirrm %%WWWDIR%%/language/kok_IN
+@dirrm %%WWWDIR%%/language/lb_LU
+@dirrm %%WWWDIR%%/language/lt_LT/help
+@dirrm %%WWWDIR%%/language/lt_LT
+@dirrm %%WWWDIR%%/language/lv_LV/help
+@dirrm %%WWWDIR%%/language/lv_LV
+@dirrm %%WWWDIR%%/language/mk_MK
+@dirrm %%WWWDIR%%/language/mn_MN
+@dirrm %%WWWDIR%%/language/ms_MY
+@dirrm %%WWWDIR%%/language/nb_NO/help
+@dirrm %%WWWDIR%%/language/nb_NO
+@dirrm %%WWWDIR%%/language/nl_NL/help
+@dirrm %%WWWDIR%%/language/nl_NL
+@dirrm %%WWWDIR%%/language/nn_NO/help
+@dirrm %%WWWDIR%%/language/nn_NO
+@dirrm %%WWWDIR%%/language/pl_PL/help
+@dirrm %%WWWDIR%%/language/pl_PL
+@dirrm %%WWWDIR%%/language/pt_BR/help
+@dirrm %%WWWDIR%%/language/pt_BR
+@dirrm %%WWWDIR%%/language/pt_PT/help
+@dirrm %%WWWDIR%%/language/pt_PT
+@dirrm %%WWWDIR%%/language/ro_RO/help
+@dirrm %%WWWDIR%%/language/ro_RO
+@dirrm %%WWWDIR%%/language/ru_RU/help
+@dirrm %%WWWDIR%%/language/ru_RU
+@dirrm %%WWWDIR%%/language/sh_RS/help
+@dirrm %%WWWDIR%%/language/sh_RS
+@dirrm %%WWWDIR%%/language/sk_SK/help
+@dirrm %%WWWDIR%%/language/sk_SK
+@dirrm %%WWWDIR%%/language/sl_SI/help
+@dirrm %%WWWDIR%%/language/sl_SI
+@dirrm %%WWWDIR%%/language/sr_RS
+@dirrm %%WWWDIR%%/language/sv_SE/help
+@dirrm %%WWWDIR%%/language/sv_SE
+@dirrm %%WWWDIR%%/language/ta_IN
+@dirrm %%WWWDIR%%/language/th_TH/help
+@dirrm %%WWWDIR%%/language/th_TH
+@dirrm %%WWWDIR%%/language/tr_TR/help
+@dirrm %%WWWDIR%%/language/tr_TR
+@dirrm %%WWWDIR%%/language/uk_UA/help
+@dirrm %%WWWDIR%%/language/uk_UA
+@dirrm %%WWWDIR%%/language/vi_VN/help
+@dirrm %%WWWDIR%%/language/vi_VN
+@dirrm %%WWWDIR%%/language/zh_CN/help
+@dirrm %%WWWDIR%%/language/zh_CN
+@dirrm %%WWWDIR%%/language/zh_HK/help
+@dirrm %%WWWDIR%%/language/zh_HK
+@dirrm %%WWWDIR%%/language/zh_TW/help
+@dirrm %%WWWDIR%%/language/zh_TW
+@dirrm %%WWWDIR%%/language
 @mode
 @owner root
 @group wheel
@@ -3174,160 +3029,367 @@
 @dirrmtry %%WWWDIR%%/local/config
 @dirrmtry %%WWWDIR%%/local
 @exec if [ ! -d %D/%%WWWDIR%%/local/config ]; then cp -a %D/%%WWWDIR%%/local.sample/ %D/%%WWWDIR%%/local/ ; fi
-@dirrm %%WWWDIR%%/local.sample/language
-@dirrm %%WWWDIR%%/local.sample/css
 @dirrm %%WWWDIR%%/local.sample/config
+@dirrm %%WWWDIR%%/local.sample/css
+@dirrm %%WWWDIR%%/local.sample/language
 @dirrm %%WWWDIR%%/local.sample
-@dirrm %%WWWDIR%%/language/zh_TW/help
-@dirrm %%WWWDIR%%/language/zh_TW
-@dirrm %%WWWDIR%%/language/zh_HK/help
-@dirrm %%WWWDIR%%/language/zh_HK
-@dirrm %%WWWDIR%%/language/zh_CN/help
-@dirrm %%WWWDIR%%/language/zh_CN
-@dirrm %%WWWDIR%%/language/vi_VN/help
-@dirrm %%WWWDIR%%/language/vi_VN
-@dirrm %%WWWDIR%%/language/uk_UA/help
-@dirrm %%WWWDIR%%/language/uk_UA
-@dirrm %%WWWDIR%%/language/tr_TR/help
-@dirrm %%WWWDIR%%/language/tr_TR
-@dirrm %%WWWDIR%%/language/th_TH/help
-@dirrm %%WWWDIR%%/language/th_TH
-@dirrm %%WWWDIR%%/language/ta_IN
-@dirrm %%WWWDIR%%/language/sv_SE/help
-@dirrm %%WWWDIR%%/language/sv_SE
-@dirrm %%WWWDIR%%/language/sr_RS
-@dirrm %%WWWDIR%%/language/sl_SI/help
-@dirrm %%WWWDIR%%/language/sl_SI
-@dirrm %%WWWDIR%%/language/sk_SK/help
-@dirrm %%WWWDIR%%/language/sk_SK
-@dirrm %%WWWDIR%%/language/sh_RS/help
-@dirrm %%WWWDIR%%/language/sh_RS
-@dirrm %%WWWDIR%%/language/ru_RU/help
-@dirrm %%WWWDIR%%/language/ru_RU
-@dirrm %%WWWDIR%%/language/ro_RO/help
-@dirrm %%WWWDIR%%/language/ro_RO
-@dirrm %%WWWDIR%%/language/pt_PT/help
-@dirrm %%WWWDIR%%/language/pt_PT
-@dirrm %%WWWDIR%%/language/pt_BR/help
-@dirrm %%WWWDIR%%/language/pt_BR
-@dirrm %%WWWDIR%%/language/pl_PL/help
-@dirrm %%WWWDIR%%/language/pl_PL
-@dirrm %%WWWDIR%%/language/nn_NO/help
-@dirrm %%WWWDIR%%/language/nn_NO
-@dirrm %%WWWDIR%%/language/nl_NL/help
-@dirrm %%WWWDIR%%/language/nl_NL
-@dirrm %%WWWDIR%%/language/nb_NO/help
-@dirrm %%WWWDIR%%/language/nb_NO
-@dirrm %%WWWDIR%%/language/ms_MY
-@dirrm %%WWWDIR%%/language/mn_MN
-@dirrm %%WWWDIR%%/language/mk_MK
-@dirrm %%WWWDIR%%/language/lv_LV/help
-@dirrm %%WWWDIR%%/language/lv_LV
-@dirrm %%WWWDIR%%/language/lt_LT/help
-@dirrm %%WWWDIR%%/language/lt_LT
-@dirrm %%WWWDIR%%/language/lb_LU
-@dirrm %%WWWDIR%%/language/kok_IN
-@dirrm %%WWWDIR%%/language/ko_KR
-@dirrm %%WWWDIR%%/language/kn_IN
-@dirrm %%WWWDIR%%/language/km_KH
-@dirrm %%WWWDIR%%/language/ka_GE/help
-@dirrm %%WWWDIR%%/language/ka_GE
-@dirrm %%WWWDIR%%/language/ja_JP/help
-@dirrm %%WWWDIR%%/language/ja_JP
-@dirrm %%WWWDIR%%/language/it_IT/help
-@dirrm %%WWWDIR%%/language/it_IT
-@dirrm %%WWWDIR%%/language/is_IS
-@dirrm %%WWWDIR%%/language/id_ID
-@dirrm %%WWWDIR%%/language/hu_HU/help
-@dirrm %%WWWDIR%%/language/hu_HU
-@dirrm %%WWWDIR%%/language/hr_HR/help
-@dirrm %%WWWDIR%%/language/hr_HR
-@dirrm %%WWWDIR%%/language/he_IL/help
-@dirrm %%WWWDIR%%/language/he_IL
-@dirrm %%WWWDIR%%/language/gl_ES/help
-@dirrm %%WWWDIR%%/language/gl_ES
-@dirrm %%WWWDIR%%/language/ga_IE
-@dirrm %%WWWDIR%%/language/fr_FR/help
-@dirrm %%WWWDIR%%/language/fr_FR
-@dirrm %%WWWDIR%%/language/fr_CA/help
-@dirrm %%WWWDIR%%/language/fr_CA
-@dirrm %%WWWDIR%%/language/fi_FI
-@dirrm %%WWWDIR%%/language/fa_IR/help
-@dirrm %%WWWDIR%%/language/fa_IR
-@dirrm %%WWWDIR%%/language/et_EE/help
-@dirrm %%WWWDIR%%/language/et_EE
-@dirrm %%WWWDIR%%/language/es_ES/help
-@dirrm %%WWWDIR%%/language/es_ES
-@dirrm %%WWWDIR%%/language/es_AR
-@dirrm %%WWWDIR%%/language/eo_EO/help
-@dirrm %%WWWDIR%%/language/eo_EO
-@dirrm %%WWWDIR%%/language/en_US
-@dirrm %%WWWDIR%%/language/en_UK/help
-@dirrm %%WWWDIR%%/language/en_UK
-@dirrm %%WWWDIR%%/language/en_GB
-@dirrm %%WWWDIR%%/language/el_GR/help
-@dirrm %%WWWDIR%%/language/el_GR
-@dirrm %%WWWDIR%%/language/dv_MV
-@dirrm %%WWWDIR%%/language/de_DE/help
-@dirrm %%WWWDIR%%/language/de_DE
-@dirrm %%WWWDIR%%/language/da_DK/help
-@dirrm %%WWWDIR%%/language/da_DK
-@dirrm %%WWWDIR%%/language/cs_CZ/help
-@dirrm %%WWWDIR%%/language/cs_CZ
-@dirrm %%WWWDIR%%/language/ca_ES/help
-@dirrm %%WWWDIR%%/language/ca_ES
-@dirrm %%WWWDIR%%/language/br_FR
-@dirrm %%WWWDIR%%/language/bn_IN
-@dirrm %%WWWDIR%%/language/bg_BG/help
-@dirrm %%WWWDIR%%/language/bg_BG
-@dirrm %%WWWDIR%%/language/az_AZ
-@dirrm %%WWWDIR%%/language/ar_SA/help
-@dirrm %%WWWDIR%%/language/ar_SA
-@dirrm %%WWWDIR%%/language/ar_MA
-@dirrm %%WWWDIR%%/language/af_ZA/help
-@dirrm %%WWWDIR%%/language/af_ZA
-@dirrm %%WWWDIR%%/language
-@dirrm %%WWWDIR%%/install/db
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/include/ws_protocols
-@dirrm %%WWWDIR%%/include/ws_functions
-@dirrm %%WWWDIR%%/include/smarty/libs/sysplugins
-@dirrm %%WWWDIR%%/include/smarty/libs/plugins
-@dirrm %%WWWDIR%%/include/smarty/libs
-@dirrm %%WWWDIR%%/include/smarty
-@dirrm %%WWWDIR%%/include/phpmailer
-@dirrm %%WWWDIR%%/include/php_compat
-@dirrm %%WWWDIR%%/include/dblayer
-@dirrm %%WWWDIR%%/include
-@dirrmtry %%WWWDIR%%/galleries
-@dirrm %%WWWDIR%%/doc
-@dirrm %%WWWDIR%%/admin/themes/roma/images
-@dirrm %%WWWDIR%%/admin/themes/roma/icon
-@dirrm %%WWWDIR%%/admin/themes/roma
-@dirrm %%WWWDIR%%/admin/themes/default/template/include
-@dirrm %%WWWDIR%%/admin/themes/default/template
-@dirrm %%WWWDIR%%/admin/themes/default/js
-@dirrm %%WWWDIR%%/admin/themes/default/images
-@dirrm %%WWWDIR%%/admin/themes/default/icon
-@dirrm %%WWWDIR%%/admin/themes/default/fontello/font
-@dirrm %%WWWDIR%%/admin/themes/default/fontello/css
-@dirrm %%WWWDIR%%/admin/themes/default/fontello
-@dirrm %%WWWDIR%%/admin/themes/default
-@dirrm %%WWWDIR%%/admin/themes/clear/images
-@dirrm %%WWWDIR%%/admin/themes/clear/icon
-@dirrm %%WWWDIR%%/admin/themes/clear
-@dirrm %%WWWDIR%%/admin/themes
-@dirrm %%WWWDIR%%/admin/include/uploadify
-@dirrm %%WWWDIR%%/admin/include
-@dirrm %%WWWDIR%%/admin
-@mode 777
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
-@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% -m 777 %D/%%WWWDIR%%/_data
-@dirrm %%WWWDIR%%/_data
-@mode
-@owner root
-@group wheel
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/lib
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/clike
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/css
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/diff
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/haskell
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/htmlmixed
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/javascript
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/php
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/stex
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode/xml
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror/mode
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/codemirror
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/include
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/af_ZA
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ar_SA
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/bg_BG
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/br_FR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ca_ES
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/cs_CZ
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/da_DK
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/de_DE
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/el_GR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/en_UK
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/eo_EO
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/es_ES
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/et_EE
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fa_IR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fi_FI
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fr_CA
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fr_FR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/gl_ES
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/he_IL
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/hr_HR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/hu_HU
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/it_IT
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ja_JP
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ka_GE
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/kn_IN
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/lt_LT
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/lv_LV
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/mn_MN
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/nb_NO
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/nl_NL
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/nn_NO
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/pl_PL
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/pt_BR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/pt_PT
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ro_RO
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ru_RU
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sh_RS
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sk_SK
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sl_SI
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sr_RS
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sv_SE
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ta_IN
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/th_TH
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/tr_TR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/uk_UA
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/zh_CN
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/zh_HK
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/zh_TW
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/template
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/af_ZA
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ar_SA
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/bg_BG
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/br_FR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ca_ES
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/cs_CZ
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/da_DK
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/de_DE
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/el_GR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/en_UK
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/eo_EO
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/es_ES
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/et_EE
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fa_IR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fi_FI
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fr_CA
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fr_FR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/gl_ES
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/he_IL
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/hr_HR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/hu_HU
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/it_IT
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ja_JP
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ka_GE
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/km_KH
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/kn_IN
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/lt_LT
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/lv_LV
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/mn_MN
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/nb_NO
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/nl_NL
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/nn_NO
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/pl_PL
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/pt_BR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/pt_PT
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ro_RO
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ru_RU
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sh_RS
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sk_SK
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sl_SI
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sr_RS
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sv_SE
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ta_IN
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/th_TH
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/tr_TR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/uk_UA
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/zh_CN
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/zh_HK
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/zh_TW
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language
+@dirrm %%WWWDIR%%/plugins/admin_multi_view
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ar_SA
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/bg_BG
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/br_FR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ca_ES
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/cs_CZ
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/da_DK
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/de_DE
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/el_GR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/en_UK
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/eo_EO
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/es_ES
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/et_EE
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fa_IR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fi_FI
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fr_CA
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fr_FR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/gl_ES
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/he_IL
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/hr_HR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/hu_HU
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/it_IT
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ja_JP
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ka_GE
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/kn_IN
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ko_KR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/lt_LT
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/lv_LV
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/nb_NO
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/nl_NL
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/nn_NO
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/pl_PL
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/pt_BR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/pt_PT
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ro_RO
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sh_RS
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sl_SI
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sr_RS
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sv_SE
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ta_IN
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/th_TH
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/tr_TR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/uk_UA
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/zh_CN
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/zh_HK
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/zh_TW
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade
+@dirrm %%WWWDIR%%/plugins/language_switch/language/af_ZA
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ar_SA
+@dirrm %%WWWDIR%%/plugins/language_switch/language/bg_BG
+@dirrm %%WWWDIR%%/plugins/language_switch/language/br_FR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ca_ES
+@dirrm %%WWWDIR%%/plugins/language_switch/language/cs_CZ
+@dirrm %%WWWDIR%%/plugins/language_switch/language/da_DK
+@dirrm %%WWWDIR%%/plugins/language_switch/language/de_DE
+@dirrm %%WWWDIR%%/plugins/language_switch/language/el_GR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/en_UK
+@dirrm %%WWWDIR%%/plugins/language_switch/language/eo_EO
+@dirrm %%WWWDIR%%/plugins/language_switch/language/es_ES
+@dirrm %%WWWDIR%%/plugins/language_switch/language/et_EE
+@dirrm %%WWWDIR%%/plugins/language_switch/language/fa_IR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/fi_FI
+@dirrm %%WWWDIR%%/plugins/language_switch/language/fr_CA
+@dirrm %%WWWDIR%%/plugins/language_switch/language/fr_FR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/gl_ES
+@dirrm %%WWWDIR%%/plugins/language_switch/language/he_IL
+@dirrm %%WWWDIR%%/plugins/language_switch/language/hr_HR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/hu_HU
+@dirrm %%WWWDIR%%/plugins/language_switch/language/it_IT
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ja_JP
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ka_GE
+@dirrm %%WWWDIR%%/plugins/language_switch/language/km_KH
+@dirrm %%WWWDIR%%/plugins/language_switch/language/kn_IN
+@dirrm %%WWWDIR%%/plugins/language_switch/language/lt_LT
+@dirrm %%WWWDIR%%/plugins/language_switch/language/lv_LV
+@dirrm %%WWWDIR%%/plugins/language_switch/language/mn_MN
+@dirrm %%WWWDIR%%/plugins/language_switch/language/nb_NO
+@dirrm %%WWWDIR%%/plugins/language_switch/language/nl_NL
+@dirrm %%WWWDIR%%/plugins/language_switch/language/nn_NO
+@dirrm %%WWWDIR%%/plugins/language_switch/language/pl_PL
+@dirrm %%WWWDIR%%/plugins/language_switch/language/pt_BR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/pt_PT
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ro_RO
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ru_RU
+@dirrm %%WWWDIR%%/plugins/language_switch/language/sh_RS
+@dirrm %%WWWDIR%%/plugins/language_switch/language/sk_SK
+@dirrm %%WWWDIR%%/plugins/language_switch/language/sl_SI
+@dirrm %%WWWDIR%%/plugins/language_switch/language/sr_RS
+@dirrm %%WWWDIR%%/plugins/language_switch/language/sv_SE
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ta_IN
+@dirrm %%WWWDIR%%/plugins/language_switch/language/th_TH
+@dirrm %%WWWDIR%%/plugins/language_switch/language/tr_TR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/uk_UA
+@dirrm %%WWWDIR%%/plugins/language_switch/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/language_switch/language/zh_CN
+@dirrm %%WWWDIR%%/plugins/language_switch/language/zh_HK
+@dirrm %%WWWDIR%%/plugins/language_switch/language/zh_TW
+@dirrm %%WWWDIR%%/plugins/language_switch/language
+@dirrm %%WWWDIR%%/plugins/language_switch
+@dirrmtry %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/template-extension/distributed/samples
+@dirrm %%WWWDIR%%/template-extension/distributed
+@dirrm %%WWWDIR%%/template-extension/yoga/local
+@dirrm %%WWWDIR%%/template-extension/yoga
+@dirrmtry %%WWWDIR%%/template-extension
+@dirrm %%WWWDIR%%/themes/Sylvia/icon/mimetypes
+@dirrm %%WWWDIR%%/themes/Sylvia/icon
+@dirrm %%WWWDIR%%/themes/Sylvia/images
+@dirrm %%WWWDIR%%/themes/Sylvia
+@dirrm %%WWWDIR%%/themes/clear
+@dirrm %%WWWDIR%%/themes/dark/images
+@dirrm %%WWWDIR%%/themes/dark
+@dirrm %%WWWDIR%%/themes/default/icon/mimetypes
+@dirrm %%WWWDIR%%/themes/default/icon
+@dirrm %%WWWDIR%%/themes/default/images
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images/ie6
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1/images
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style1
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style2/images
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox/style2
+@dirrm %%WWWDIR%%/themes/default/js/plugins/colorbox
+@dirrm %%WWWDIR%%/themes/default/js/plugins/datatables/css
+@dirrm %%WWWDIR%%/themes/default/js/plugins/datatables/images
+@dirrm %%WWWDIR%%/themes/default/js/plugins/datatables
+@dirrm %%WWWDIR%%/themes/default/js/plugins
+@dirrm %%WWWDIR%%/themes/default/js/ui/i18n
+@dirrm %%WWWDIR%%/themes/default/js/ui/minified
+@dirrm %%WWWDIR%%/themes/default/js/ui/theme/images
+@dirrm %%WWWDIR%%/themes/default/js/ui/theme
+@dirrm %%WWWDIR%%/themes/default/js/ui
+@dirrm %%WWWDIR%%/themes/default/js
+@dirrm %%WWWDIR%%/themes/default/s26
+@dirrm %%WWWDIR%%/themes/default/template/include
+@dirrm %%WWWDIR%%/themes/default/template/mail/text/html
+@dirrm %%WWWDIR%%/themes/default/template/mail/text/plain
+@dirrm %%WWWDIR%%/themes/default/template/mail/text
+@dirrm %%WWWDIR%%/themes/default/template/mail
+@dirrm %%WWWDIR%%/themes/default/template
+@dirrm %%WWWDIR%%/themes/default/watermarks
+@dirrm %%WWWDIR%%/themes/default
+@dirrm %%WWWDIR%%/themes/elegant/admin
+@dirrm %%WWWDIR%%/themes/elegant/icon
+@dirrm %%WWWDIR%%/themes/elegant/language/ar_SA
+@dirrm %%WWWDIR%%/themes/elegant/language/bg_BG
+@dirrm %%WWWDIR%%/themes/elegant/language/br_FR
+@dirrm %%WWWDIR%%/themes/elegant/language/ca_ES
+@dirrm %%WWWDIR%%/themes/elegant/language/cs_CZ
+@dirrm %%WWWDIR%%/themes/elegant/language/da_DK
+@dirrm %%WWWDIR%%/themes/elegant/language/de_DE
+@dirrm %%WWWDIR%%/themes/elegant/language/el_GR
+@dirrm %%WWWDIR%%/themes/elegant/language/en_UK
+@dirrm %%WWWDIR%%/themes/elegant/language/eo_EO
+@dirrm %%WWWDIR%%/themes/elegant/language/es_ES
+@dirrm %%WWWDIR%%/themes/elegant/language/et_EE
+@dirrm %%WWWDIR%%/themes/elegant/language/fa_IR
+@dirrm %%WWWDIR%%/themes/elegant/language/fi_FI
+@dirrm %%WWWDIR%%/themes/elegant/language/fr_CA
+@dirrm %%WWWDIR%%/themes/elegant/language/fr_FR
+@dirrm %%WWWDIR%%/themes/elegant/language/he_IL
+@dirrm %%WWWDIR%%/themes/elegant/language/hu_HU
+@dirrm %%WWWDIR%%/themes/elegant/language/it_IT
+@dirrm %%WWWDIR%%/themes/elegant/language/ja_JP
+@dirrm %%WWWDIR%%/themes/elegant/language/km_KH
+@dirrm %%WWWDIR%%/themes/elegant/language/kn_IN
+@dirrm %%WWWDIR%%/themes/elegant/language/ko_KR
+@dirrm %%WWWDIR%%/themes/elegant/language/lt_LT
+@dirrm %%WWWDIR%%/themes/elegant/language/lv_LV
+@dirrm %%WWWDIR%%/themes/elegant/language/mn_MN
+@dirrm %%WWWDIR%%/themes/elegant/language/nb_NO
+@dirrm %%WWWDIR%%/themes/elegant/language/nl_NL
+@dirrm %%WWWDIR%%/themes/elegant/language/nn_NO
+@dirrm %%WWWDIR%%/themes/elegant/language/pl_PL
+@dirrm %%WWWDIR%%/themes/elegant/language/pt_BR
+@dirrm %%WWWDIR%%/themes/elegant/language/pt_PT
+@dirrm %%WWWDIR%%/themes/elegant/language/ro_RO
+@dirrm %%WWWDIR%%/themes/elegant/language/ru_RU
+@dirrm %%WWWDIR%%/themes/elegant/language/sk_SK
+@dirrm %%WWWDIR%%/themes/elegant/language/sl_SI
+@dirrm %%WWWDIR%%/themes/elegant/language/sr_RS
+@dirrm %%WWWDIR%%/themes/elegant/language/sv_SE
+@dirrm %%WWWDIR%%/themes/elegant/language/ta_IN
+@dirrm %%WWWDIR%%/themes/elegant/language/th_TH
+@dirrm %%WWWDIR%%/themes/elegant/language/tr_TR
+@dirrm %%WWWDIR%%/themes/elegant/language/uk_UA
+@dirrm %%WWWDIR%%/themes/elegant/language/vi_VN
+@dirrm %%WWWDIR%%/themes/elegant/language/zh_CN
+@dirrm %%WWWDIR%%/themes/elegant/language/zh_HK
+@dirrm %%WWWDIR%%/themes/elegant/language/zh_TW
+@dirrm %%WWWDIR%%/themes/elegant/language
+@dirrm %%WWWDIR%%/themes/elegant
+@dirrm %%WWWDIR%%/themes/smartpocket/admin
+@dirrm %%WWWDIR%%/themes/smartpocket/images
+@dirrm %%WWWDIR%%/themes/smartpocket/js
+@dirrm %%WWWDIR%%/themes/smartpocket/language/bg_BG
+@dirrm %%WWWDIR%%/themes/smartpocket/language/br_FR
+@dirrm %%WWWDIR%%/themes/smartpocket/language/ca_ES
+@dirrm %%WWWDIR%%/themes/smartpocket/language/cs_CZ
+@dirrm %%WWWDIR%%/themes/smartpocket/language/da_DK
+@dirrm %%WWWDIR%%/themes/smartpocket/language/de_DE
+@dirrm %%WWWDIR%%/themes/smartpocket/language/el_GR
+@dirrm %%WWWDIR%%/themes/smartpocket/language/en_UK
+@dirrm %%WWWDIR%%/themes/smartpocket/language/eo_EO
+@dirrm %%WWWDIR%%/themes/smartpocket/language/es_ES
+@dirrm %%WWWDIR%%/themes/smartpocket/language/et_EE
+@dirrm %%WWWDIR%%/themes/smartpocket/language/fa_IR
+@dirrm %%WWWDIR%%/themes/smartpocket/language/fi_FI
+@dirrm %%WWWDIR%%/themes/smartpocket/language/fr_CA
+@dirrm %%WWWDIR%%/themes/smartpocket/language/fr_FR
+@dirrm %%WWWDIR%%/themes/smartpocket/language/he_IL
+@dirrm %%WWWDIR%%/themes/smartpocket/language/it_IT
+@dirrm %%WWWDIR%%/themes/smartpocket/language/km_KH
+@dirrm %%WWWDIR%%/themes/smartpocket/language/lt_LT
+@dirrm %%WWWDIR%%/themes/smartpocket/language/lv_LV
+@dirrm %%WWWDIR%%/themes/smartpocket/language/mn_MN
+@dirrm %%WWWDIR%%/themes/smartpocket/language/nb_NO
+@dirrm %%WWWDIR%%/themes/smartpocket/language/nl_NL
+@dirrm %%WWWDIR%%/themes/smartpocket/language/nn_NO
+@dirrm %%WWWDIR%%/themes/smartpocket/language/pl_PL
+@dirrm %%WWWDIR%%/themes/smartpocket/language/pt_BR
+@dirrm %%WWWDIR%%/themes/smartpocket/language/pt_PT
+@dirrm %%WWWDIR%%/themes/smartpocket/language/ro_RO
+@dirrm %%WWWDIR%%/themes/smartpocket/language/ru_RU
+@dirrm %%WWWDIR%%/themes/smartpocket/language/sh_RS
+@dirrm %%WWWDIR%%/themes/smartpocket/language/sk_SK
+@dirrm %%WWWDIR%%/themes/smartpocket/language/sl_SI
+@dirrm %%WWWDIR%%/themes/smartpocket/language/sr_RS
+@dirrm %%WWWDIR%%/themes/smartpocket/language/sv_SE
+@dirrm %%WWWDIR%%/themes/smartpocket/language/ta_IN
+@dirrm %%WWWDIR%%/themes/smartpocket/language/tr_TR
+@dirrm %%WWWDIR%%/themes/smartpocket/language/uk_UA
+@dirrm %%WWWDIR%%/themes/smartpocket/language/vi_VN
+@dirrm %%WWWDIR%%/themes/smartpocket/language/zh_CN
+@dirrm %%WWWDIR%%/themes/smartpocket/language/zh_HK
+@dirrm %%WWWDIR%%/themes/smartpocket/language
+@dirrm %%WWWDIR%%/themes/smartpocket/template
+@dirrm %%WWWDIR%%/themes/smartpocket
+@dirrm %%WWWDIR%%/themes
 @dirrmtry %%WWWDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/language
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
