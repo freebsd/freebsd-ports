@@ -53,5 +53,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/contrib/examples/* ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/contrib/doubledouble/* ${STAGEDIR}${EXAMPLESDIR}/doubledouble
 
-.endif
 .include <bsd.port.post.mk>
