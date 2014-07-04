@@ -22,6 +22,8 @@ EXAMPLES=	arr.pas bgidemo.pas ccall.pas coord.txt dos.h dos.pas \
 		vibrkinp.pas vibrkinp.txt vibrtabl.pas war2.pas war2.txt \
 		xy2.txt xy2orig.txt
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 pre-build:
 	@${LN} -sf makefile.bsd ${WRKSRC}/Makefile
 	@${LN} -sf makefile.bsd ${WRKSRC}/Xbgi/Makefile
@@ -44,9 +46,7 @@ do-install:
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Readme.htm ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

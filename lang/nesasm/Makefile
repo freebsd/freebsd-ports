@@ -11,8 +11,10 @@ DISTNAME=	nbasic_2004_03_14
 MAINTAINER=	ninjin@kth.se
 COMMENT=	The nesasm assembler is a 6502 assembler with specific NES support
 
-WRKSRC=	${WRKDIR}/nbasic_2004_03_14/source/${PORTNAME}/source/
+WRKSRC=		${WRKDIR}/nbasic_2004_03_14/source/${PORTNAME}/source/
 USES=		zip
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/^CC/s/=/?=/' \
@@ -21,11 +23,9 @@ post-patch:	.SILENT
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nesasm ${STAGEDIR}${PREFIX}/bin
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}../documentation/*.txt ${STAGEDIR}${DOCSDIR}
 	# The next install will overwrite readme.txt with a newer readme.txt
 	${INSTALL_DATA} ${WRKSRC}../readme.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

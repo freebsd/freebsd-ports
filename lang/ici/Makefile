@@ -16,6 +16,8 @@ ALL_TARGET=	all ici.h
 ICIHDRS=	ici.h icistr-setup.h
 ICIDOCS=	doc/ici.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ici ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libici4.a ${STAGEDIR}${PREFIX}/lib
@@ -29,11 +31,9 @@ do-install:
 .for f in ${ICIHDRS}
 	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${PREFIX}/include
 .endfor
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ici4
 .for f in ${ICIDOCS}
 	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${PREFIX}/share/doc/ici4
 .endfor
-.endif
 
 .include <bsd.port.mk>

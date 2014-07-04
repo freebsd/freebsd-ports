@@ -18,14 +18,16 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
-.endif
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's| -lrt||g' ${WRKSRC}/src/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	${REINPLACE_CMD} -e 's|libHX_Documentation.pdf||' \
 	   ${WRKSRC}/doc/Makefile.in ${WRKSRC}/doc/Makefile.am
 .endif
