@@ -519,7 +519,7 @@ post-install:
 		${INSTALL_DATA} admins ${STAGEDIR}${WWWDIR}/admins.sample
 	${MKDIR} ${STAGEDIR}${WWWDIR}/templates && cd ${WRKSRC}/webui/cgi-bin/templates && \
 		${INSTALL_DATA} *.html ${STAGEDIR}${WWWDIR}/templates/ && \
-		${INSTALL_SCRIPT} strings.pl ${STAGEDIR}${WWWDIR}/templates/ &&
+		${INSTALL_SCRIPT} strings.pl ${STAGEDIR}${WWWDIR}/templates/ && \
 		for _dir in de es-es fr he pt-br ro; do \
 			${INSTALL_DATA} -d ${STAGEDIR}${WWWDIR}/templates/$${_dir} && \
 			cd ${WRKSRC}/webui/cgi-bin/templates/$${_dir} && \
