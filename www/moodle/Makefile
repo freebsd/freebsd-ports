@@ -12,6 +12,9 @@ COMMENT=	Course management system based on social constructionism
 
 CONFLICTS=	moodle-2.*.*
 
+DEPRECATED=	Upstream support ended
+EXPIRATION_DATE=2014-08-04
+
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype
 WRKSRC=		${WRKDIR}/moodle
 
