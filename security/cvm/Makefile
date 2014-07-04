@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	tarkhil@over.ru
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Credential Validation Modules
 
 LIB_DEPENDS=	bg.2:${PORTSDIR}/devel/bglibs

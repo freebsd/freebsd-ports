@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/1.%20${PORTNAME}-devel/${PORTVERSION} \
 
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	marcel.prisi@virtua.ch
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Distributed OpenSSL session caching tools - development version
 
 CONFLICTS=	distcache-1.4*

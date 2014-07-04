@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://s89813419.onlinehome.us/ \
 		http://www.cs.cmu.edu/~dpelleg/download/
 
-MAINTAINER=	daniel+hunch@pelleg.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Scan httpd log files for vulnerability probes, mail admins
 
 DEPRECATED=	Likely unused interactive port

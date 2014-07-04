@@ -8,7 +8,7 @@ CATEGORIES=	security sysutils
 MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 MASTER_SITE_SUBDIR=	termlog
 
-MAINTAINER=	csjp@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Monitor or log multiple system terminals synchronously
 
 DEPRECATED=	Fails to build with new utmpx

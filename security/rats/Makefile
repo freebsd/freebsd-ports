@@ -7,7 +7,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	https://www.fortify.com/downloads2/public/ \
 				http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Source code auditing tool
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

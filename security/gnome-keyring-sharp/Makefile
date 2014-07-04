@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTNAME}/
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Fully managed implementation of gnome-keyring
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus \

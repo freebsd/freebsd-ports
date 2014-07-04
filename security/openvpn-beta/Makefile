@@ -8,7 +8,7 @@ CATEGORIES=	security net
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 PKGNAMESUFFIX=	-beta
 
-MAINTAINER=	ecrist@secure-computing.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LICENSE=	GPLv2

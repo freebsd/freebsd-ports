@@ -6,7 +6,7 @@ PORTVERSION=	1.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.nta-monitor.com/tools/ike-scan/download/
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	VPN scanner and identifier
 
 GNU_CONFIGURE=	yes

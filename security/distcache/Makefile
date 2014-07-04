@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/2.%20${PORTNAME}-stable/${PORTVERSION} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
 
 
-MAINTAINER=	marcel.prisi@virtua.ch
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Distributed OpenSSL session caching tools
 
 CONFLICTS=	distcache-devel-*

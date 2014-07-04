@@ -6,7 +6,7 @@ DISTVERSION=		0.02beta5
 CATEGORIES=		security sysutils
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.02beta5
 
-MAINTAINER=		dominik@karczmarski.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=		File system checksum checker
 
 HAS_CONFIGURE=		yes

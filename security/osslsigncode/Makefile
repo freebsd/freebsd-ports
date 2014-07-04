@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	security devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	snb@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	OpenSSL-based signcode utility
 
 PLIST_FILES=	bin/osslsigncode

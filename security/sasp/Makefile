@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~ahze/distfiles/
 MASTER_SITE_SUBDIR=	ahze
 
-MAINTAINER=	sviat@OpenGEEKS.it
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A tool that permits to use a gateway whatever IP we have
 
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.lysator.liu.se/fsh/ \
 		http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Fast remote command execution
 
 USE_PYTHON=	yes

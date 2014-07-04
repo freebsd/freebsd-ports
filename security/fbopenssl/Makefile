@@ -5,7 +5,7 @@ PORTVERSION=	0.0.4
 CATEGORIES=	security
 MASTER_SITES=	SF/modgssapache/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	GSS-API and SPNEGO extensions for OpenSSL
 
 LICENSE=	GPLv2

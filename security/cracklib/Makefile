@@ -10,7 +10,7 @@ CATEGORIES+=	python
 MASTER_SITES=	SF \
 		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}
 
-MAINTAINER=	sbz@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT?=	Password-checking library
 
 LICENSE=	LGPL21

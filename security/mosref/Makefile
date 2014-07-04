@@ -7,7 +7,7 @@ CATEGORIES=	security lang scheme
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/2.0-beta3
 DISTNAME=		${PORTNAME}-2.0-beta3
 
-MAINTAINER=	pjdelport@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Secure remote execution framework using a compact Scheme-influenced VM
 
 USES=		gmake

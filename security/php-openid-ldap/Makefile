@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.openid-ldap.org/releases/
 PKGNAMEPREFIX=	php${PHP_VER}-
 EXTRACT_SUFX=	-noarc.tar.gz
 
-MAINTAINER=	xenophon+freebsd@irtnog.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	PHP-based OpenID identity provider using LDAP as backend
 
 LICENSE=	GPLv2
