@@ -59,7 +59,7 @@ OPTIONS_SUB=	yes
 
 DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
-CHMLIB_CONFIGURE_ON=	--enbale-chmlib=yes
+CHMLIB_CONFIGURE_ON=	--enable-chmlib=yes
 CHMLIB_CONFIGURE_OFF=	--disable-chmlib
 CHMLIB_LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
 
