@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extmail/ \
 		http://mirror3.extmail.net/dist/
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A high performance webmail system
 
 RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog

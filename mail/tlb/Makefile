@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/tlb/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	The List Batcher, a general purpose mail list delivery engine
 
 RUN_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \

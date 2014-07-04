@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/phpmailer/phpmailer%20for%20php4/PHPMailer%20v${PORTVERSION}%20for%20PHP4
 DISTNAME=	PHPMailer_v${DISTVERSION}
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Full Featured Email Transfer Class for PHP4
 
 CONFLICTS=	phpmailer-5*

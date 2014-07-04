@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	mail python
 MASTER_SITES=	http://code.arp242.net/spamdb-curses/downloads/
 
-MAINTAINER=	martin@arp242.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Curses interface for OpenBSD spamd spam database (spamdb)
 
 LICENSE=	MIT

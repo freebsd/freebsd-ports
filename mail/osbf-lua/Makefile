@@ -6,7 +6,7 @@ PORTVERSION=	2.0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
 
-MAINTAINER=	ricardo.katz@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	This tool is used as classifier for mails, primarily as Anti Spam
 
 USES=		gmake lua:51

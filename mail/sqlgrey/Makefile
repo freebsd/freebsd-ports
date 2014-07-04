@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.8%20%28stable%29
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Greylisting policy server for Postfix using an SQL backend
 
 RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spmfilter.org/attachments/download/58/
 
-MAINTAINER=	ast@treibsand.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Spamassassin plugin for spmfilter
 
 BROKEN=		Does not build with last version of spmfilter

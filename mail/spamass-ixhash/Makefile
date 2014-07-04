@@ -9,7 +9,7 @@ MASTER_SITES=	SF/ixhash/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	spamass-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	michael@ranner.eu
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	The iXhash plugin for SpamAssassin
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin \

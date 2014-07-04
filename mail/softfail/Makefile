@@ -10,7 +10,7 @@ MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/ 
 MASTER_SITE_SUBDIR=	jmelo/${PORTNAME}
 DISTNAME=	${PORTNAME}_fbsdbrasil-${PORTVERSION}
 
-MAINTAINER=	eksffa@freebsdbrasil.com.br
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Enhanced greylisting system for qmail w/ SMTPEXTFORK patch
 
 LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2

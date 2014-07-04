@@ -8,7 +8,7 @@ CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 RUN_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \

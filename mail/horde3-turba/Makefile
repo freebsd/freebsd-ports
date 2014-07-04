@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=
 PORTREVISION=	1
 CATEGORIES=	mail www
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Contact management application
 
 USE_HORDE=	base

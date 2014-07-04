@@ -7,7 +7,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail www
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Mobile webmail system
 
 #-----------------------------------------------------------------------

@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A mailing list manager
 
 USES=		shebangfix perl5

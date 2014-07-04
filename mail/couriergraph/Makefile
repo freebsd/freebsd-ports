@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/couriergraph/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A RRDtool frontend for Courier statistics
 
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
