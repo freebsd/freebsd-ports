@@ -17,9 +17,9 @@ COMMENT=	SQLite backed FUSE file system
 USES=		fuse
 USE_SQLITE=	3
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	README
-.endif
 
 PLIST_FILES=	bin/sqlfs
 
@@ -33,11 +33,9 @@ do-build:
 		-o sqlfs)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sqlfs ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/sqlfs ${STAGEDIR}${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

@@ -36,6 +36,8 @@ USE_RC_SUBR=	condor
 PORTEXAMPLES=	*
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -53,9 +55,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/condor_config ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${STAGEDIR}${ETCDIR}
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if defined(NOPORTEXAMPLES)
-	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

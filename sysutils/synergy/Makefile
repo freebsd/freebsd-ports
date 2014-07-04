@@ -28,6 +28,8 @@ PLIST_FILES=    bin/synergyc bin/synergyd bin/synergys bin/syntool \
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-extract:
 	cd ${WRKSRC}/ext/
 	${MKDIR} ${WRKSRC}/ext/cryptopp562
@@ -41,11 +43,9 @@ do-install:
 		${STAGEDIR}${MANPREFIX}/man/man1/synergyc.1
 	${INSTALL_MAN} ${WRKSRC}/doc/synergys.man \
 		${STAGEDIR}${MANPREFIX}/man/man1/synergys.1
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

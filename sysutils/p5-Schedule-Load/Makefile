@@ -23,11 +23,11 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/init.d
 	${INSTALL_SCRIPT} ${WRKSRC}/init.d/* ${STAGEDIR}${EXAMPLESDIR}/init.d
-.endif
 
 .include <bsd.port.mk>

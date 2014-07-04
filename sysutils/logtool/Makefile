@@ -18,8 +18,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		CHANGES CREDITS README TODO doc/logtool.txt
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
-	cd ${WRKSRC}/src && ${MAKE_CMD} INCLUDES="${CPPFLAGS}"
+	(cd ${WRKSRC}/src && ${MAKE_CMD} INCLUDES="${CPPFLAGS}")
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/logtool ${STAGEDIR}${PREFIX}/bin
@@ -28,10 +30,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
 	@${RM} ${STAGEDIR}${EXAMPLESDIR}/logtool.conf.in
 	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}/scripts
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 	@${SED} -e 's!PREFIX!${PREFIX}!' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 .include <bsd.port.mk>
