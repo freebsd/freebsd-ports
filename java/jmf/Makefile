@@ -20,9 +20,9 @@ WRKSRC=		${WRKDIR}/JMF-${PORTVERSION}
 
 RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -47,9 +47,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/jm* ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${WRKSRC}/lib/jmf.properties \
 		${STAGEDIR}${JAVAJARDIR}/
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.post.mk>

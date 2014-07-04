@@ -15,9 +15,9 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGES LICENSE README
-.if !defined(NOPORTDOCS)
 PORTDOCS+=	javadoc
-.endif
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type dir | ${XARGS} ${RM} -rf
