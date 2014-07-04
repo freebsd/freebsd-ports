@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_yubico
-PORTVERSION=	2.14
-PORTREVISION=	2
+PORTVERSION=	2.16
 CATEGORIES=	security
 MASTER_SITES=	http://opensource.yubico.com/yubico-pam/releases/
 
@@ -15,10 +14,10 @@ LIB_DEPENDS=	libykclient.so:${PORTSDIR}/security/ykclient \
 		libyubikey.so:${PORTSDIR}/security/libyubikey
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		libtool pkgconfig
 
-PLIST_FILES=	lib/security/pam_yubico.la \
-		lib/security/pam_yubico.so
+PLIST_FILES=	lib/security/pam_yubico.so \
+		man/man8/pam_yubico.8.gz
 PLIST_DIRS=	lib/security
 SUB_FILES=	pkg-message
 PORTDOCS=	*
