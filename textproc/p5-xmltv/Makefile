@@ -51,7 +51,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_EXTRA_PATCHES=	${FILESDIR}/extra-noportdocs-patch-Makefile.PL
+DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-noportdocs-patch-Makefile.PL
 
 PORTDOCS=	COPYING \
 		QuickStart \
