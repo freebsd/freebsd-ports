@@ -39,10 +39,10 @@
 %%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r4
 %%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/transport-filter.pl
 %%EXIM%%%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%DAEMON%%etc/periodic/daily/150.exim-tidydb
-%%DAEMON%%etc/periodic/daily/460.exim-mail-rejects
-%%DAEMON%%@dirrmtry etc/periodic/daily
-%%DAEMON%%@dirrmtry etc/periodic
+%%EXIMDAEMON%%etc/periodic/daily/150.exim-tidydb
+%%EXIMDAEMON%%etc/periodic/daily/460.exim-mail-rejects
+%%EXIMDAEMON%%@dirrmtry etc/periodic/daily
+%%EXIMDAEMON%%@dirrmtry etc/periodic
 @sample %%ETCDIR%%/configure.sample
 %%SA_EXIM%%@sample %%ETCDIR%%/sa-exim.conf.sample
 @dirrmtry %%ETCDIR%%
