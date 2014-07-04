@@ -24,7 +24,8 @@ EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 FENGOFFICE_DIR=		www/${PORTNAME}
 FENGOFFICE_WWWDIR=	${PREFIX}/${FENGOFFICE_DIR}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 pre-extract:
 	@${MKDIR} ${WRKDIR}/${PORTNAME}
 
@@ -39,19 +40,15 @@ pre-install:
 		${FIND} . -type f | ${SORT} | ${SED} -e 's|^|www/fengoffice/|' -e 's|\./||g' >> ${PLIST} && \
 			${FIND} . -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm www/fengoffice|' -e 's|\.||g' >> ${PLIST}
 
-.	if !defined(NOPORTDOCS)
-		@${ECHO_CMD} "%%PORTDOCS%%%%DOCSDIR%%/README" >> ${PLIST}
-		@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
-.	endif
+	@${ECHO_CMD} "%%PORTDOCS%%%%DOCSDIR%%/README" >> ${PLIST}
+	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${FENGOFFICE_WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${FENGOFFICE_WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${FENGOFFICE_WWWDIR}
-.if !defined (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${FENGOFFICE_WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FENGOFFICE_WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${FENGOFFICE_WWWDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs/README ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
