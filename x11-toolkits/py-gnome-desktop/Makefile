@@ -18,15 +18,13 @@ COMMENT=	Python bindings used by modules in the GNOME Desktop
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
-BUILD_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy \
-		metacity<2.34.0:${PORTSDIR}/x11-wm/metacity
+BUILD_DEPENDS=	metacity<2.34.0:${PORTSDIR}/x11-wm/metacity
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 		libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser \
 		libgnome-media-profiles.so:${PORTSDIR}/audio/gnome-media \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libbrasero-media.so:${PORTSDIR}/sysutils/brasero \
 		libevdocument.so:${PORTSDIR}/graphics/evince
-RUN_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 
 USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_PYTHON=	2
