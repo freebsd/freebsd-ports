@@ -2,6 +2,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	20140213
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/weechat-devel/ \
 		${MASTER_SITE_LOCAL}
@@ -15,7 +16,8 @@ COMMENT=	Lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 CONFLICTS=	weechat-0.3*
 
@@ -23,9 +25,6 @@ USE_LDCONFIG=	yes
 USES=		cmake iconv ncurses
 CMAKE_ARGS+=	-DENABLE_GUILE=no
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 GITDESC=	v0.4.3-14-gc324610
 GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
@@ -37,7 +36,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GITREV}
 
 OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE DEBUG ASPELL \
 		GNUTLS NLS DOCS ICON MANPAGES
-OPTIONS_DEFAULTS=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE DEBUG ASPELL \
+OPTIONS_DEFAULT=RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE DEBUG ASPELL \
 		GNUTLS ICON MANPAGES
 
 BACKTRACE_DESC=	Provide crash backtraces
@@ -68,7 +67,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MASPELL}
-BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL=""
 .else
 CMAKE_ARGS+=	-DENABLE_ASPELL=no

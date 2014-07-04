@@ -3,7 +3,7 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.60.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/aspell
 
@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR}	\
 		--enable-curses=ncursesw \
 		--enable-static
 
-USES=		gmake iconv perl5 shebangfix
+USES=		gmake iconv libtool perl5 shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/aspell-import
 

@@ -4,6 +4,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
 
@@ -13,8 +14,7 @@ COMMENT=	Mail reader for the GNOME desktop
 BUILD_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring \
 		itstool:${PORTSDIR}/textproc/itstool \
 		yelp-tools>=0:${PORTSDIR}/textproc/yelp-tools
-LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell \
-		libpcre.so:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libesmtp.so:${PORTSDIR}/mail/libesmtp \
 		libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3

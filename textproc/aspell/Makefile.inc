@@ -8,8 +8,7 @@ PORTVERSION?=	${DISTVERSION:tl:C/cvs/0_/:C/pt_../p/:C/[0-9]?-?[a-z]+-//g:C/([0-9
 
 LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 
-USES+=		gmake
-USE_BZIP2=	yes
+USES+=		gmake tar:bzip2
 HAS_CONFIGURE=	yes
 
 PLIST_SUB=	VER=${VER}
