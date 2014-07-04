@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanfm
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/PCManFM/
 
@@ -29,22 +28,15 @@ OPTIONS_SUB=	yes
 DEBUG_CONFIGURE_ENABLE=	debug
 
 NLS_USES=	gettext
-
-.include <bsd.port.options.mk>
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e '/pcmanfm.conf/ d' ${WRKSRC}/data/Makefile.am
-
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|src po|src|' \
-		${WRKSRC}/Makefile.am
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/
 	${INSTALL_DATA} ${WRKSRC}/data/pcmanfm.conf \
 		${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/default/pcmanfm.conf.sample
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
