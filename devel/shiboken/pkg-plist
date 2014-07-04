@@ -25,6 +25,7 @@ lib/libshiboken-%%PYTHON_VERSION%%.so
 lib/libshiboken-%%PYTHON_VERSION%%.so.1
 lib/libshiboken-%%PYTHON_VERSION%%.so.%%PORTVERSION%%
 libdata/pkgconfig/shiboken.pc
+%%PYTHON_SITELIBDIR%%/shiboken.so
 %%PORTDOCS%%%%DOCSDIR%%/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/codeinjectionsemantics.doctree
 %%PORTDOCS%%%%DOCSDIR%%/.doctrees/commandlineoptions.doctree
@@ -68,8 +69,6 @@ libdata/pkgconfig/shiboken.pc
 %%PORTDOCS%%%%DOCSDIR%%/_static/fakebar.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/logo_indt.jpg
-%%PORTDOCS%%%%DOCSDIR%%/_static/logo_openbossa.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/logo_python.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_static/logo_qt.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
