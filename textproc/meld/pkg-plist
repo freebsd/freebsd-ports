@@ -256,13 +256,9 @@ share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
 share/omf/meld/meld-fr.omf
 @dirrm share/omf/meld
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrmtry share/icons/HighContrast/scalable/apps
 @dirrmtry share/icons/HighContrast/scalable
 @dirrmtry share/icons/HighContrast
