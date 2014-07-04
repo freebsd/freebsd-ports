@@ -28,4 +28,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/manuals/language/elan.ps \
 		${STAGEDIR}${DOCSDIR}/elan-language.ps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
