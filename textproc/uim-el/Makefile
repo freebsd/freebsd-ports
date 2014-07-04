@@ -18,6 +18,8 @@ CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
 
 RUN_DEPENDS=	uim-el-agent:${PORTSDIR}/textproc/uim
 
+OPTIONS_DEFINE=	DOCS
+
 USE_BZIP2=	yes
 USE_PERL5=	build
 USE_GNOME=	intltool
@@ -36,12 +38,10 @@ LIBS+=		-L${LOCALBASE}/lib
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim-el
 PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 
-.if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
 	${INSTALL_DATA} ${WRKSRC}/emacs/README ${STAGEDIR}${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/emacs/README.ja ${STAGEDIR}${DOCSDIR_JA}/README.ja
-.endif
 
 .include <bsd.port.mk>

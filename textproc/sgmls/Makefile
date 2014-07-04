@@ -18,22 +18,22 @@ INSTALL_TARGET=	install install.man
 PROGS=		sgmls sgmlsasp rast
 PKGDOCS=	ChangeLog INSTALL LICENSE NEWS README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
 
 post-build:
 .for file in ${PROGS}
-	@${STRIP_CMD} ${WRKSRC}/${file}
+	${STRIP_CMD} ${WRKSRC}/${file}
 .endfor
-	@cd ${WRKSRC} && ${MAKE} test
+	cd ${WRKSRC} && ${MAKE} test
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PKGDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

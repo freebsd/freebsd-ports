@@ -18,10 +18,10 @@ TEST_DEPENDS=	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pl ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

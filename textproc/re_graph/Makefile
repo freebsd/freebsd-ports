@@ -22,16 +22,14 @@ USE_PERL5=	run
 
 PLIST_FILES=	bin/re_graph
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/re_graph.pl ${STAGEDIR}${PREFIX}/bin/re_graph
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/re_graph.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tut* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
