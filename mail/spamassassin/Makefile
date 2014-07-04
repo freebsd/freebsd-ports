@@ -44,26 +44,26 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 		LOCALSTATEDIR="${DBDIR}/spamassassin" \
 		BUILD_SPAMC=yes
 
-OPTIONS_DEFINE=	AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
-OPTIONS_GROUP=	DATABASE PLUGINS
+OPTIONS_DEFINE=		AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
+OPTIONS_GROUP=		DATABASE PLUGINS
 OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
 OPTIONS_GROUP_PLUGINS=	DCC DKIM PYZOR RAZOR RELAY_COUNTRY SPF_QUERY
-OPTIONS_DEFAULT=AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
+OPTIONS_DEFAULT=	AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
 
-AS_ROOT_DESC=			Run spamd as root (recommended)
-GNUPG_DESC=			Install GnuPG (for sa-update, optional)
-SSL_DESC=			Build spamd/spamc with SSL support
-UPDATE_AND_COMPILE_DESC=	Download and compile rulesets (recommended)
+AS_ROOT_DESC=		Run spamd as root (recommended)
+GNUPG_DESC=		Install GnuPG (for sa-update, optional)
+SSL_DESC=		Build spamd/spamc with SSL support
+UPDATE_AND_COMPILE_DESC=Download and compile rulesets (recommended)
 
 DATABASE_DESC=		Optional user-config/bayes database backends
 
 PLUGINS_DESC=		Optional SpamAssassin plugins
-DCC_DESC=		Add DCC support (mail/dcc-dccd)
-DKIM_DESC=		DKIM/DomainKeys Identified Mail (mail/p5-Mail-DKIM)
-PYZOR_DESC=		Add Pyzor support (mail/pyzor)
-RAZOR_DESC=		Add Vipul's Razor support (mail/razor-agents)
-RELAY_COUNTRY_DESC=	Relay country support (net/p5-Geo-IP)
-SPF_QUERY_DESC=		Add SPF query support (mail/p5-Mail-SPF)
+DCC_DESC=		DCC digest list support (mail/dcc-dccd)
+DKIM_DESC=		Verify DKIM records (mail/p5-Mail-DKIM)
+PYZOR_DESC=		Pyzor digest list support (mail/pyzor)
+RAZOR_DESC=		Vipul's Razor digest list support (mail/razor-agents)
+RELAY_COUNTRY_DESC=	Location-based scoring (net/p5-Geo-IP)
+SPF_QUERY_DESC=		Verify SPF records (mail/p5-Mail-SPF)
 
 SUB_FILES=	pkg-message
 PLIST_SUB+=	USER=${USERS} GROUP=${GROUPS}
