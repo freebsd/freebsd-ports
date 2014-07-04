@@ -7,8 +7,8 @@ PORTSCOUT=	ignore
 
 .include "${PARENTDIR}/Makefile"
 
-.if defined(NOPORTDOCS)
-IGNORE=		This port installs documents, but you have selected NOPORTDOCS
+.if empty(PORT_OPTIONS:MDOCS)
+IGNORE=		This port installs documents, but you have deselected DOCS
 .endif
 
 .if !defined(DOCSDIR)
