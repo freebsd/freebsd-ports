@@ -7,10 +7,6 @@ PORTSCOUT=	ignore
 
 .include "${PARENTDIR}/Makefile"
 
-.if empty(PORT_OPTIONS:MDOCS)
-IGNORE=		This port installs documents, but you have deselected DOCS
-.endif
-
 .if !defined(DOCSDIR)
 DOCSDIR:=	${PREFIX}/share/doc/${PORTNAME}
 .endif
