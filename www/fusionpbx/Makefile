@@ -3,6 +3,7 @@
 
 PORTNAME=	fusionpbx
 DISTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fusionpbx.com/downloads/ \
 		${MASTER_SITE_GOOGLE_CODE}

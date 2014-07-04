@@ -3,7 +3,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	2.0.${SNAPDATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://svn-master.apache.org/snapshots/apr/
 DISTNAME=	${PORTNAME}_${SNAPDATE}

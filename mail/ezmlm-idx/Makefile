@@ -3,7 +3,7 @@
 
 PORTNAME=	ezmlm-idx
 PORTVERSION=	7.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ezmlm.org/archive/${PORTVERSION}/ \
 		http://ezmlm.sericyb.com.au/archive/${PORTVERSION}/

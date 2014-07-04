@@ -3,6 +3,7 @@
 
 PORTNAME=	newlisp
 PORTVERSION=	10.5.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 PKGNAMESUFFIX=	-devel
