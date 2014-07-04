@@ -8,7 +8,7 @@ CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to FITS Formatted Files
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy \
