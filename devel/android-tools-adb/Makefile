@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	android-tools-adb
-PORTVERSION=	4.3
-PORTREVISION=	1
+DISTVERSION=	4.4.4_r1
 CATEGORIES=	devel
 DISTNAME=	android-platform_system_core-${GH_COMMIT}
 
@@ -14,8 +13,8 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	android
 GH_PROJECT=	platform_system_core
-GH_TAGNAME=	android-4.3_r2.1
-GH_COMMIT=	9cbdf50
+GH_TAGNAME=	android-${DISTVERSION}
+GH_COMMIT=	c33036b
 
 USES=		gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}/adb
