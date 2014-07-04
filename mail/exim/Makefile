@@ -461,10 +461,10 @@ SEDLIST+=	-e 's,^\# (WITH_OLD_DEMIME=),\1,'
 
 .if !defined(EXIMON_ONLY) && ${PORT_OPTIONS:MDAEMON}
 USE_RC_SUBR=	exim
-PLIST_SUB+=	DAEMON=""
+PLIST_SUB+=	EXIMDAEMON=""
 SUB_LIST+=	LOGDIR="${LOGDIR}"
 .else
-PLIST_SUB+=	DAEMON="@comment "
+PLIST_SUB+=	EXIMDAEMON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -564,9 +564,9 @@ post-build:
 .if !defined(EXIMON_ONLY)
 post-install:
 .if ${PORT_OPTIONS:MDAEMON}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 .for script in ${DAILY_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${STAGEDIR}${PREFIX}/etc/periodic/daily/${script}
+	${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${STAGEDIR}${PREFIX}/etc/periodic/daily/${script}
 .endfor
 .endif
 .if ${PORT_OPTIONS:MSO_1024}
