@@ -25,7 +25,7 @@ command_args='--config %%ETCDIR%% start secondarynamenode'
 stop_cmd=secondarynamenode_stop
 
 secondarynamenode_stop () {
-  su -m ${secondarynamenode_user} -c "${command} --config ${HADOOP_CONF_DIR} stop secondarynamenode"
+  su -m ${secondarynamenode_user} -c "${command} --config %%ETCDIR%% stop secondarynamenode"
 }
 
 run_rc_command "$1"

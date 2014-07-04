@@ -25,7 +25,7 @@ command_args='--config %%ETCDIR%% start resourcemanager'
 stop_cmd=resourcemanager_stop
 
 resourcemanager_stop () {
-  su -m ${resourcemanager_user} -c "${command} --config ${HADOOP_CONF_DIR} stop resourcemanager"
+  su -m ${resourcemanager_user} -c "${command} --config %%ETCDIR%% stop resourcemanager"
 }
 
 run_rc_command "$1"

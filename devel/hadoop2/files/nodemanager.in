@@ -25,7 +25,7 @@ command_args='--config %%ETCDIR%% start nodemanager'
 stop_cmd=nodemanager_stop
 
 nodemanager_stop () {
-  su -m ${nodemanager_user} -c "${command} --config ${HADOOP_CONF_DIR} stop nodemanager"
+  su -m ${nodemanager_user} -c "${command} --config %%ETCDIR%% stop nodemanager"
 }
 
 run_rc_command "$1"

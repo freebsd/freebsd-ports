@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: historyserver
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# historyserver_enable (bool):      Set to NO by default.
+#                                   Set it to YES to enable resourcemanager.
+
+. /etc/rc.subr
+
+name=historyserver
+rcvar=historyserver_enable
+
+load_rc_config "${name}"
+
+: ${historyserver_enable:=NO}
+: ${historyserver_user:=%%MAPRED_USER%%}
+
+command="%%PREFIX%%/sbin/mr-jobhistory-daemon.sh"
+command_args='--config %%ETCDIR%% start historyserver'
+
+stop_cmd=historyserver_stop
+
+historyserver_stop () {
+  su -m ${historyserver_user} -c "${command} --config %%ETCDIR%% stop historyserver"
+}
+
+run_rc_command "$1"
