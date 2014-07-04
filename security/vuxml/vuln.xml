@@ -463,8 +463,16 @@ Notes:
 	<range><lt>24.6.0,1</lt></range>
       </package>
       <package>
+	<name>seamonkey</name>
+	<range><lt>2.26.1</lt></range>
+      </package>
+      <package>
 	<name>linux-firefox</name>
 	<range><lt>30.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.26.1</lt></range>
       </package>
       <package>
 	<name>linux-thunderbird</name>
