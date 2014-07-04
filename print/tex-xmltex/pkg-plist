@@ -43,6 +43,7 @@
 @dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex/xmlplay
 @dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base
 @dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex
+@dirrm %%TEXMFDISTDIR%%/doc/otherformats
 @dirrm %%TEXMFDISTDIR%%/tex/xmltex/xmlplay
 @dirrm %%TEXMFDISTDIR%%/tex/xmltex/passivetex
 @dirrm %%TEXMFDISTDIR%%/tex/xmltex/config

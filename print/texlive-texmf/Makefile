@@ -175,5 +175,11 @@ do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/$$D/doc && \
 		${TOUCH} ${STAGEDIR}${PREFIX}/$$D/doc/.keep_me; \
 	done
+	${RM} -f ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/ls-R \
+		${STAGEDIR}${PREFIX}/${TEXMFDIR}/ls-R \
+		${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/scripts/checkcites/checkcites.lua \
+		${STAGEDIR}${PREFIX}/${TEXMFDIR}/scripts/texdoc/texdoc.tlu \
+		${STAGEDIR}${PREFIX}/${TEXMFDIR}/scripts/texlive/rungs.tlu \
+		${STAGEDIR}${PREFIX}/${TEXMFDIR}/scripts/texlive/tlmgr.pl
 
 .include <bsd.port.mk>

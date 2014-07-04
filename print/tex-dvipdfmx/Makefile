@@ -3,7 +3,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20120420
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -33,7 +33,7 @@ EXTRACT_FILES= \
 	texk/dvipdfmx \
 	texk/kpathsea
 EXTRACT_AFTER_ARGS_TEXMF= \
-	| ${TAR} -xf - -C ${PREFIX}/share \
+	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 	--strip-components 1 --no-same-permission --no-same-owner \
 	${EXCLUDE_FILES_TEXMF:S,^,--exclude ${DISTNAME_TEXMF}/,} \
 	${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
@@ -60,20 +60,18 @@ CONFIGURE_ARGS= --with-paper \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+= 	-lpaper -L${LOCALBASE}/lib
 
-NO_MANCOMPRESS=	yes
-MAN1=	dvipdfm.1 dvipdft.1 ebb.1 extractbb.1
-
-NO_STAGE=	yes
-pre-su-install:
+pre-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
-	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}/fonts/map/dvipdfmx \
-		${PREFIX}/${TEXMFDIR}/fonts/map/dvipdfmx/updmap
-	${TOUCH} ${PREFIX}/${TEXMFDISTDIR}/fonts/map/dvipdfmx/.keep_me \
-		${PREFIX}/${TEXMFDIR}/fonts/map/dvipdfmx/updmap/.keep_me
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/map/dvipdfmx \
+		${STAGEDIR}${PREFIX}/${TEXMFDIR}/fonts/map/dvipdfmx/updmap
+	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/map/dvipdfmx/.keep_me \
+		${STAGEDIR}${PREFIX}/${TEXMFDIR}/fonts/map/dvipdfmx/updmap/.keep_me
 
 post-install:
 	${LN} -f -s ${LOCALBASE}/share/fonts/adobe-cmaps \
-		${PREFIX}/${TEXMFDIR}/fonts/cmap/adobe-cmaps
+		${STAGEDIR}${PREFIX}/${TEXMFDIR}/fonts/cmap/adobe-cmaps
+	${RM} -f ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/map/glyphlist/glyphlist.txt \
+		${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/map/glyphlist/pdfglyphlist.txt
 
 .include <bsd.port.mk>

@@ -3,6 +3,10 @@ bin/dvipdfmx
 bin/dvipdft
 bin/ebb
 bin/extractbb
+man/man1/dvipdfm.1.gz
+man/man1/dvipdft.1.gz
+man/man1/ebb.1.gz
+man/man1/extractbb.1.gz
 %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-ec.map
 %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-texnansi.map
 %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-rm.map

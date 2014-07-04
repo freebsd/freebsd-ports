@@ -33,7 +33,7 @@ EXTRACT_FILES= \
 	libs/harfbuzz \
 	texk/web2c
 EXTRACT_AFTER_ARGS_TEXMF= \
-	| ${TAR} -xf - -C ${PREFIX}/share \
+	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
 DISTNAME_TEXMF=	texlive-20120701-texmf
@@ -79,14 +79,14 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	xetex
 
-NO_STAGE=	yes
 pre-configure:
 	for D in libs/harfbuzz libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
 	done
 
-pre-su-install:
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-20120701-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
 
