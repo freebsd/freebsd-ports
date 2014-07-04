@@ -55,6 +55,22 @@ IGNORE=		You cannot select both SA_KAS and SO_1024 options
 .endif
 .endif
 
+# OCSP is supported for openssl only
+.if ${PORT_OPTIONS:MOCSP}
+.if ! ${PORT_OPTIONS:MTLS}
+IGNORE=	You cannot enable OCSP stapling without TLS support
+.elif ${PORT_OPTIONS:MGNUTLS}
+IGNORE=	You cannot enable OCSP stapling with gnutls
+.endif
+.endif
+
+# DMARC implies SPF
+.if ${PORT_OPTIONS:MOCSP}
+.if ! ${PORT_OPTIONS:MSPF} || ! ${PORT_OPTIONS:MDKIM}
+IGNORE=	You cannot enable DMARC without SPF and DKIM support
+.endif
+.endif
+
 .if ${PORT_OPTIONS:MSA_EXIM} || defined(FETCH_ALL)
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 		SF/sa-exim/sa-exim/${SA_EXIM_VERSION}:sa_exim
@@ -178,6 +194,18 @@ SEDLIST+=	-e 's,^\# (EXPAND_LISTMATCH_RHS=),\1,'
 
 .if ${PORT_OPTIONS:MDCC}
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DCC=),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MOCSP}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_OCSP=),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MDMARC}
+LIB_DEPENDS+=	libopendmarc.so:${PORTSDIR}/mail/opendmarc
+SEDLIST+= -e 's,XX_DMARC_LIBS_XX,-lopendmarc,' \
+		-e 's,^\# (EXPERIMENTAL_DMARC=),\1,'
+.else
+SEDLIST+= -e 's,XX_DMARC_LIBS_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MXCLIENT}
@@ -418,6 +446,14 @@ SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,`pkg-config --static --libs sqlite3`,' \
 .else
 SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,,' \
 		-e 's,XX_SQLITE_FLAGS_XX,,'
+.endif
+
+.if ${PORT_OPTIONS:MREDIS}
+LIB_DEPENDS+=	libhiredis.so:${PORTSDIR}/databases/hiredis
+SEDLIST+=	-e 's,XX_REDIS_LIBS_XX,-lhiredis,' \
+		-e 's,^\# (LOOKUP_REDIS=),\1,'
+.else
+SEDLIST+=	-e 's,XX_REDIS_LIBS_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MLMTP}

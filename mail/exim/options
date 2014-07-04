@@ -12,6 +12,7 @@ OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
 			DEBUG \
 			DISABLE_D_OPT \
 			DKIM \
+			DMARC \
 			DNSDB \
 			DSEARCH \
 			EMBEDDED_PERL \
@@ -27,12 +28,14 @@ OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
 			MBX \
 			MYSQL \
 			NIS \
+			OCSP \
 			OLD_DEMIME \
 			OPENLDAP \
 			PAM \
 			PASSWD \
 			PGSQL \
 			READLINE \
+			REDIS \
 			SASLAUTHD \
 			SA_EXIM \
 			SO_1024 \
@@ -85,6 +88,7 @@ DAEMON_DESC=		Install scripts to run as a daemon
 DCC_DESC=		Enable DCC at ACL support via dccifd
 DISABLE_D_OPT_DESC=	Disable macros overrides using option -D
 DKIM_DESC=		Enable support for DKIM
+DMARC_DESC=		Enable DMARC support
 DNSDB_DESC=		Enable DNS-style lookups
 DSEARCH_DESC=		Enable directory-list lookups
 EMBEDDED_PERL_DESC=	Enable embedded Perl interpreter
@@ -101,10 +105,12 @@ MYSQL_DESC=		Link against libmysqlclient library
 NIS_DESC=		Enable NIS-style lookups
 OLD_DEMIME_DESC=	Enable old, deprecated "demime" ACL
 OPENLDAP_DESC=		Link against libldap
+OCSP_DESC=		Enable OCSP stapling
 PAM_DESC=		Enable PAM authentication mechanisms
 PASSWD_DESC=		Enable /etc/passwd lookups
 PGSQL_DESC=		Link against libpq
 READLINE_DESC=		Enable readline(3) library
+REDIS_DESC=		Enable redis lookup
 SASLAUTHD_DESC=		Enable use of Cyrus SASL auth daemon
 SA_EXIM_DESC=		SA-Exim support
 SO_1024_DESC=		Build with Spamooborona-1024 local scan
