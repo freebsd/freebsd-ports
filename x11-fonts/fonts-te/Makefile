@@ -9,34 +9,25 @@ MASTER_SITES=	http://itachi.prudhvi.org/te_fonts/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Telugu fonts for te_IN.
+COMMENT=	Telugu fonts for te_IN
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 NO_BUILD=	yes
 PORTDOCS=	MANUAL.PDF
 PKGMESSAGE=	${PKGDIR}/pkg-message
 FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 PLIST_SUB=	FONTSDIR=${FONTSDIR:S|^${PREFIX}/||}
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Pothana2000.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/vemana.ttf ${FONTSDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Pothana2000.ttf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/vemana.ttf ${STAGEDIR}${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-
-post-install:
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
-	@${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
