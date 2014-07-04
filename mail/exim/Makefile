@@ -38,6 +38,30 @@ MAKE_JOBS_UNSAFE=	yes
 .endif
 
 .include "options"
+
+OPTIONS_SUB=	yes
+
+AUTH_SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+BDB_USE=	bdb=yes
+DMARC_LIB_DEPENDS=	libopendmarc.so:${PORTSDIR}/mail/opendmarc
+EMBEDDED_PERL_USES=	perl5
+EXIMON_USE=	xorg=x11,xaw,xt
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+ICONV_USES=	iconv:lib,build
+KAS_BUILD_DEPENDS=	libspamtest>=0:${PORTSDIR}/mail/libspamtest
+KAS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-kas
+MYSQL_USE=	mysql=yes
+OPENLDAP_USE=	openldap=yes
+PGSQL_USE=	pgsql=yes
+REDIS_LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
+SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/spamassassin
+SO_1024_LDFLAGS=	-lz
+SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
+SQLITE_USE=	sqlite=yes
+SQLITE_USES=	pkgconfig
+XCLIENT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xclient
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSA_EXIM}
@@ -83,17 +107,9 @@ MASTER_SITES+=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/:so_1024
 DISTFILES+=	spamooborona1024-src-${SO_1024_VERSION}.tar.gz:so_1024
 .endif
 
-.if ${PORT_OPTIONS:MSO_1024}
-LDFLAGS+=	-lz
-PLIST_SUB+=	SO_1024=""
-.else
-PLIST_SUB+=	SO_1024="@comment "
-.endif
-
 EXIM_VERSION=	4.82.1
 SA_EXIM_VERSION=4.2
 SO_1024_VERSION=3.2
-
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
 .if !defined(EXIMON_ONLY)
@@ -109,18 +125,15 @@ CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}-4.*
 .if ${PORT_OPTIONS:MEXIMON}
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-monitor-4.*
 .endif
+PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 .else # !EXIMON_ONLY
 PLIST_SUB+=	EXIM="@comment "
 PORT_OPTIONS+=	EXIMON
+NO_INSTALL_MANPAGES=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
+EXIM_INSTALL_ARG+=	"eximon" "eximon.bin"
 .endif # !EXIMON_ONLY
 
-.if ${PORT_OPTIONS:MEXIMON}
-USE_XORG=	x11 xaw xt
-.endif
-
-.if defined(EXIMON_ONLY)
-NO_INSTALL_MANPAGES=	yes
-.endif
 
 PORTDOC_BASE=	ACKNOWLEDGMENTS NOTICE README.UPDATING
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
@@ -131,16 +144,7 @@ PORT_EXAMPLES=	convert4r3 convert4r4 transport-filter.pl
 
 DAILY_SCRIPTS=	150.exim-tidydb 460.exim-mail-rejects
 
-.if !defined(EXIMON_ONLY)
-PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
-.else
-PKGMESSAGE=	${WRKDIR}/pkg-message
-.endif
-
 MAKE_ENV+=	OSTYPE="${OPSYS}" ARCHTYPE="${ARCH}" DUMMY_LDFLAGS="${DUMMY_LDFLAGS}"
-.if defined(EXIMON_ONLY)
-EXIM_INSTALL_ARG+=	"eximon" "eximon.bin"
-.endif
 
 EXIM_USER?=	mailnull
 EXIM_GROUP?=	mail
@@ -164,6 +168,16 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%EXIM_USER%%,${EXIM_USER},g' \
 		-e 's,%%EXIM_GROUP%%,${EXIM_GROUP},g' \
 		-e 's,%%LOGDIR%%,${LOGDIR},g'
+
+SEDLIST+=	-e 's,XX_CFLAGS_XX,${CFLAGS:S/,/\\,/g},' \
+		-e 's,XX_PREFIX_XX,${PREFIX:S/,/\\,/g},' \
+		-e 's,XX_LOCALBASE_XX,${LOCALBASE:S/,/\\,/g},' \
+		-e 's,XX_LOG_FILE_PATH_XX,${LOG_FILE_PATH:S/,/\\,/g},' \
+		-e 's,XX_CONFIG_FILE_PATH_XX,${CONFIG_FILE_PATH:S/,/\\,/g},' \
+		-e 's,XX_ALT_CONFIG_PREFIX_XX,${ALT_CONFIG_PREFIX:S/,/\\,/g},' \
+		-e 's,XX_EXIM_USER_XX,${EXIM_USER:S/,/\\,/g},' \
+		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP:S/,/\\,/g},' \
+		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET:S/,/\\,/g},'
 
 PLIST_SUB+=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 		EXIM_USER=${EXIM_USER} \
@@ -201,35 +215,17 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_OCSP=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MDMARC}
-LIB_DEPENDS+=	libopendmarc.so:${PORTSDIR}/mail/opendmarc
 SEDLIST+= -e 's,XX_DMARC_LIBS_XX,-L${LOCALBASE}/lib -lopendmarc,' \
 		-e 's,^\# (EXPERIMENTAL_DMARC=),\1,'
 .else
 SEDLIST+= -e 's,XX_DMARC_LIBS_XX,,'
 .endif
 
-.if ${PORT_OPTIONS:MXCLIENT}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-xclient
-.endif
-
-.if ${PORT_OPTIONS:MKAS}
-BUILD_DEPENDS+=	libspamtest>=0:${PORTSDIR}/mail/libspamtest
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-kas
-.endif
 
 .if ${PORT_OPTIONS:MWISHLIST}
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
 .endif
 
-SEDLIST+=	-e 's,XX_CFLAGS_XX,${CFLAGS:S/,/\\,/g},' \
-		-e 's,XX_PREFIX_XX,${PREFIX:S/,/\\,/g},' \
-		-e 's,XX_LOCALBASE_XX,${LOCALBASE:S/,/\\,/g},' \
-		-e 's,XX_LOG_FILE_PATH_XX,${LOG_FILE_PATH:S/,/\\,/g},' \
-		-e 's,XX_CONFIG_FILE_PATH_XX,${CONFIG_FILE_PATH:S/,/\\,/g},' \
-		-e 's,XX_ALT_CONFIG_PREFIX_XX,${ALT_CONFIG_PREFIX:S/,/\\,/g},' \
-		-e 's,XX_EXIM_USER_XX,${EXIM_USER:S/,/\\,/g},' \
-		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP:S/,/\\,/g},' \
-		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MFIXED_NEVER_USERS}
 SEDLIST+=	-e 's,^(FIXED_NEVER_USERS=).*,\1${WITH_FIXED_NEVER_USERS:S/,/\\,/g},'
@@ -237,25 +233,20 @@ SEDLIST+=	-e 's,^(FIXED_NEVER_USERS=).*,\1${WITH_FIXED_NEVER_USERS:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MEXIMON}
 SEDLIST+=	-e 's,^\# (EXIM_MONITOR=),\1,'
-PLIST_SUB+=	EXIMON=""
-.else
-PLIST_SUB+=	EXIMON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTLS}
 SEDLIST+=	-e 's,^\# (SUPPORT_TLS=),\1,'
 .if ! ${PORT_OPTIONS:MGNUTLS}
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
 SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lssl[[:space:]]),\1,'
 .else
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 SEDLIST+=	-e 's,^\# (USE_GNUTLS=),\1,'
 SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lgnutls[[:space:]]),\1,'
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MEMBEDDED_PERL}
-USES+=		perl5
 SEDLIST+=	-e 's,^\# (EXIM_PERL=),\1,'
 .endif
 
@@ -267,17 +258,10 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
 SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib ${ICONV_LIB},' \
 		-e 's,^\# (HAVE_ICONV=),\1,'
 .else
 SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,,'
-.endif
-
-.if ${PORT_OPTIONS:MLDAP} || defined(LDAP_LIB_TYPE) \
-	|| ${PORT_OPTIONS:MOPENLDAP1} || defined(WITH_OPENLDAP2) \
-	|| ${PORT_OPTIONS:MOPENLDAP20} || defined(WITH_OPENLDAP21)
-BROKEN=		deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER
 .endif
 
 .if ${PORT_OPTIONS:MOPENLDAP_VER} && ${WITH_OPENLDAP_VER:tl} != "auto"
@@ -285,7 +269,6 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 
 .if ${PORT_OPTIONS:MOPENLDAP}
-USE_OPENLDAP=	yes
 LDAP_LIB_TYPE=	OPENLDAP2
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -llber -lldap,' \
 		-e 's,XX_LDAP_INCLUDE_XX,-I${LOCALBASE:S/,/\\,/g}/include,' \
@@ -296,18 +279,7 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 		-e 's,^(LDAP_LIB_TYPE=),\# \1,'
 .endif
 
-.if defined(DB_LIB_VERSION)
-BROKEN=		deprecated option DB_LIB_VERSION used, use WITH_BDB_VER
-.endif
-
-.if ${PORT_OPTIONS:MBDB_VER}
-.if ${WITH_BDB_VER} > 1
-WITH_BDB=	yes
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MBDB}
-USE_BDB=	yes
 INVALID_BDB_VER=	2 3
 DB_LIBS=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 DB_INCLUDES=	-I${BDB_INCLUDE_DIR}
@@ -320,12 +292,6 @@ SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS:S/,/\\,/g},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MMYSQL}
-.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER:tl} == "auto"
-IGNORE=		WITH_MYSQL_VER set to "${WITH_MYSQL_VER}" is no longer supported.
-IGNORE+=	Just don't set WITH_MYSQL_VER if you want to use system-default version
-.else
-USE_MYSQL=	yes
-.endif
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib/mysql -lmysqlclient,' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${LOCALBASE:S/,/\\,/g}/include/mysql,' \
 		-e 's,^\# (LOOKUP_MYSQL=),\1,'
@@ -334,7 +300,6 @@ SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MSASLAUTHD}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 SASLAUTHD_SOCKET?=	/var/run/saslauthd/mux
 SEDLIST+=	-e 's,^\# (CYRUS_SASLAUTHD_SOCKET=).*,\1${SASLAUTHD_SOCKET:S/,/\\,/g},'
 .endif
@@ -363,7 +328,6 @@ SEDLIST+=	-e 's,^\# (AUTH_SPA=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MAUTH_SASL}
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 SEDLIST+=	-e 's,^\# (AUTH_CYRUS_SASL=),\1,' \
 		-e 's,^\# (AUTH_LIBS=.*-lsasl2),\1,'
 .endif
@@ -387,7 +351,6 @@ SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
 SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -lpq,' \
 		-e 's,XX_PGSQL_INCLUDE_XX,-I${LOCALBASE:S/,/\\,/g}/include/pgsql,' \
 		-e 's,^\# (LOOKUP_PGSQL=),\1,'
@@ -438,8 +401,6 @@ SEDLIST+=	-e 's,^\# (LOOKUP_PASSWD=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
-USES+=		pkgconfig
 SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,`pkg-config --static --libs sqlite3`,' \
 		-e 's,XX_SQLITE_FLAGS_XX,`pkg-config --cflags sqlite3`,' \
 		-e 's,^\# (LOOKUP_SQLITE=),\1,'
@@ -449,7 +410,6 @@ SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,,' \
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-LIB_DEPENDS+=	libhiredis.so:${PORTSDIR}/databases/hiredis
 SEDLIST+=	-e 's,XX_REDIS_LIBS_XX,-L${LOCALBASE}/lib -lhiredis,' \
 		-e 's,^\# (LOOKUP_REDIS=),\1,' \
 		-e 's,^\# (EXPERIMENTAL_REDIS=),\1,'
@@ -466,7 +426,6 @@ SEDLIST+=	-e 's,^(ALT_CONFIG_PREFIX=),\# \1,'
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
-LIB_DEPENDS+=	libspf2.so:${PORTSDIR}/mail/libspf2
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
 		-e 's,XX_SPF_LIBS_XX,-L${LOCALBASE}/lib -lspf2 ${PTHREAD_LIBS:S/,/\\,/g},' \
 		-e 's,^\# (EXPERIMENTAL_SPF=),\1,'
@@ -486,13 +445,6 @@ SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DEXPERIMENTAL_SRS,' \
 .else
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,,' \
 		-e 's,XX_SRS_LIBS_XX,,'
-.endif
-
-.if ${PORT_OPTIONS:MSA_EXIM}
-RUN_DEPENDS+=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/spamassassin
-PLIST_SUB+=	SA_EXIM=""
-.else
-PLIST_SUB+=	SA_EXIM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
@@ -525,12 +477,6 @@ SEDLIST+=	-e 's,^\# (DISABLE_D_OPTION=),\1,'
 .if defined(WHITELIST_D_MACROS)
 SEDLIST+=	-e 's,^\# (WHITELIST_D_MACROS=).*$$,\1${WHITELIST_D_MACROS:S/,/\\,/g},'
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MSUID}
-PLIST_SUB+=	EXIM_SUID=""
-.else
-PLIST_SUB+=	EXIM_SUID="@comment "
 .endif
 
 .if defined(TRUSTED_CONFIG_LIST)
@@ -623,9 +569,11 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${STAGEDIR}${PREFIX}/etc/periodic/daily/${script}
 .endfor
 .endif
-
+.if ${PORT_OPTIONS:MSO_1024}
+	@${MKDIR} -m 750 ${STAGEDIR}var/spool/spamooborona
+.endif
+	@${MKDIR} -m 750 ${STAGEDIR}${LOGDIR}
 	@${INSTALL_MAN} ${WRKSRC}/doc/exim.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
-
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${STAGEDIR}${DOCSDIR}
@@ -644,13 +592,6 @@ post-install:
 .if ${PORT_OPTIONS:MSA_EXIM}
 	@${INSTALL_DATA} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf \
 		${STAGEDIR}${PREFIX}/etc/exim/sa-exim.conf.sample
-.endif
-	@${MKDIR} -m 750 ${STAGEDIR}${LOGDIR}
-
-.if ${PORT_OPTIONS:MSO_1024}
-.if !exists(${STAGEDIR}var/spool/spamooborona)
-	@${MKDIR} -m 750 ${STAGEDIR}var/spool/spamooborona
-.endif
 .endif
 
 .endif # ! defined(EXIMON_ONLY)
