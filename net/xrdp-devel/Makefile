@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdp
 PORTVERSION=	0.7.0.b20130912
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	GH
@@ -15,12 +15,12 @@ COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_XORG=	x11 xfixes
-USE_AUTOTOOLS=	autoconf:env automake:env libtool
+USE_AUTOTOOLS=	autoconf:env automake:env libtoolize
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
-USE_LDCONFIG=	${STAGEDIR}${PREFIX}/lib/xrdp
+USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp
@@ -96,11 +96,6 @@ pre-configure:
 	@cd ${WRKSRC} && ./bootstrap
 
 post-install:
-.for f in sesman.ini startwm.sh xrdp.ini
-	@if [ ! -f ${STAGEDIR}${PREFIX}/etc/xrdp/$f ]; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/etc/xrdp/$f.sample ${STAGEDIR}${PREFIX}/etc/xrdp/$f ; \
-	fi
-.endfor
 .for f in ${KEYMAP_FILES}
 	${INSTALL_DATA} ${FILESDIR}/$f ${STAGEDIR}${PREFIX}/etc/xrdp
 .endfor
