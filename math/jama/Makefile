@@ -6,9 +6,6 @@ PORTVERSION=	1.2.5
 CATEGORIES=	math devel
 MASTER_SITES=	http://math.nist.gov/tnt/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
-.ifndef NOPORTDOCS
-DISTFILES=${DISTNAME}${EXTRACT_SUFX} jama102doc.zip
-.endif
 DIST_SUBDIR=	tnt
 EXTRACT_ONLY=
 
@@ -20,6 +17,14 @@ RUN_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
 
 USES=		zip
 NO_BUILD=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES=${DISTNAME}${EXTRACT_SUFX} jama102doc.zip
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tnt

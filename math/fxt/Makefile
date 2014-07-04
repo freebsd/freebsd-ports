@@ -15,7 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		gmake
 MAKEFILE=	makefile
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -26,14 +26,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|sinl|sin|g' ${WRKSRC}/src/fht/hartleyshift.h
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/00*.txt ${STAGEDIR}${DOCSDIR}/
-.endif
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
-.endif
 
 plist:
 	@truncate -s0 pkg-plist
@@ -68,4 +64,4 @@ plist:
 		's,^${DOCSDIR}(.*),%%PORTDOCS%%@dirrm %%DOCSDIR%%\1,' \
 		>> pkg-plist
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

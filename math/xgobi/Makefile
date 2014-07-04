@@ -25,6 +25,8 @@ USE_XORG=	xbitmaps xaw
 PROGRAMS=	xgvis xgobi
 MANDIR=		${WRKSRC}/manpages
 
+OPTIONS_DEFINE=	DOCS
+
 # The distfile is a shar file.  It also does not extract cleanly.
 # 3 files extract to current directory so use post-extract to move
 # them to proper locations.
@@ -46,7 +48,6 @@ do-install:
 	${INSTALL_MAN} ${MANDIR}/${file}.1 ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/XGobi.ex ${STAGEDIR}${PREFIX}/lib/X11/app-defaults
-.if !defined(NOPORTDOCS)
 	 @${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	 @ cd ${WRKSRC}; \
 	   for dir in data_*; do \
@@ -56,6 +57,5 @@ do-install:
 			${INSTALL_DATA} $${file} ${STAGEDIR}${EXAMPLESDIR}/$${dir}; \
 		done \
 	   done
-.endif
 
 .include <bsd.port.mk>

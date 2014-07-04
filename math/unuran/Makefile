@@ -26,17 +26,17 @@ USE_LDCONFIG=	yes
 INFO=		unuran
 PORTDOCS=	unuran.pdf unuran.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e '/UNURANFULLCHECK=true make check/s/make/${MAKE_CMD}/' \
 		${WRKSRC}/Makefile.in
 
-.ifndef(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DD in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${DD} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .ifdef(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--enable-check-struct --enable-logging

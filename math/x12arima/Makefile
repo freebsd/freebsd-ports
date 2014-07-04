@@ -18,13 +18,17 @@ MAKEFILE=	makefile.lnx
 
 PLIST_FILES=	bin/x12a
 
-.ifndef(NOPORTDOCS) || make(makesum)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS} || make(makesum)
 DISTFILES+=	docsv03.tar.gz
 .endif
 
-.ifndef(NOPORTDOCS)
 PORTDOCS=	ReleaseNotesVersion03.pdf qref03unix.pdf x12adocV03.pdf
 
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/docs && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})

@@ -18,20 +18,18 @@ RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit
 USE_TEX=	latex
 USES=		bison gettext iconv gmake tar:bzip2
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 USES+=		makeinfo
 USE_TEX+=	pdftex:build
-PORTDOCS=	de.pdf fr.pdf
 INFO=		eukleides
 .endif
 
-.ifndef NOPORTEXAMPLES
+PORTDOCS=	de.pdf fr.pdf
 PORTEXAMPLES=	greenwich.euk sundial.euk vonkoch.euk
-.endif
 
 post-patch:
 	@${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -45,19 +43,17 @@ post-patch:
 		 -e "s|%%DOCSDIR%%|${STAGEDIR}${DOCSDIR}|g"
 	@${GREP} -lFR "gcc" ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e "s|gcc|${CC}|g"
-.if defined(${PORT_OPTIONS:MDOCS})
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install:/ s/install_doc//g' \
 		 -e '/^all:/ s/doc//g' ${WRKSRC}/Makefile
 .endif
 
-.ifdef NOPORTEXAMPLES
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -e 's/install_exm$$//g' ${WRKSRC}/Makefile
 .endif
 
 pre-install:
-.ifndef NOPORTEXAMPLES
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 post-install:
 	for i in euktoeps euktopdf euktotex; do \
