@@ -19,12 +19,8 @@ USES=		zip
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
+NO_BUILD=	yes
 
-MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
-FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
-
-NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}/
 	@${MV} ${WRKDIR}/kaputaunicode.ttf ${WRKSRC}/kaputa.ttf
@@ -33,9 +29,7 @@ do-build:
 	@cd ${WRKSRC}/ && ${MKFONTSCL_CMD} && ${MKFONTDIR_CMD}
 
 do-install:
-	@${INSTALL} -d ${FONTSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/* ${FONTSDIR}/
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${FCCACHE_CMD} ${FONTSDIR}
+	@${INSTALL} -d ${STAGEDIR}${FONTSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>
