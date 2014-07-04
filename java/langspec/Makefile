@@ -14,9 +14,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PORTDOCS=	*
 
-.if defined(NOPORTDOCS)
-IGNORE=		installs *only* documentation, unset NOPORTDOCS
-.endif
+OPTIONS_SET_FORCE=	DOCS
 
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."

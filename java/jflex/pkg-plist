@@ -1,72 +1,72 @@
 bin/jflex
 %%JAVAJARDIR%%/JFlex.jar
-%%EXAMPLESDIR%%/binary/Makefile
-%%EXAMPLESDIR%%/binary/README
-%%EXAMPLESDIR%%/binary/StraightStreamReader.java
-%%EXAMPLESDIR%%/binary/binary.flex
-@dirrm %%EXAMPLESDIR%%/binary
-%%EXAMPLESDIR%%/byaccj/Makefile
-%%EXAMPLESDIR%%/byaccj/README
-%%EXAMPLESDIR%%/byaccj/calc.flex
-%%EXAMPLESDIR%%/byaccj/calc.y
-@dirrm %%EXAMPLESDIR%%/byaccj
-%%EXAMPLESDIR%%/cup/Main.java
-%%EXAMPLESDIR%%/cup/Makefile
-%%EXAMPLESDIR%%/cup/README
-%%EXAMPLESDIR%%/cup/lcalc.flex
-%%EXAMPLESDIR%%/cup/output.good
-%%EXAMPLESDIR%%/cup/test.txt
-%%EXAMPLESDIR%%/cup/ycalc.cup
-@dirrm %%EXAMPLESDIR%%/cup
-%%EXAMPLESDIR%%/interpreter/AST.java
-%%EXAMPLESDIR%%/interpreter/Main.java
-%%EXAMPLESDIR%%/interpreter/Makefile
-%%EXAMPLESDIR%%/interpreter/README
-%%EXAMPLESDIR%%/interpreter/STEfun.java
-%%EXAMPLESDIR%%/interpreter/STEvar.java
-%%EXAMPLESDIR%%/interpreter/SymTab.java
-%%EXAMPLESDIR%%/interpreter/SymtabEntry.java
-%%EXAMPLESDIR%%/interpreter/Tboolexp.java
-%%EXAMPLESDIR%%/interpreter/Tdekl.java
-%%EXAMPLESDIR%%/interpreter/Tdekllist.java
-%%EXAMPLESDIR%%/interpreter/Texp.java
-%%EXAMPLESDIR%%/interpreter/Texpinfix.java
-%%EXAMPLESDIR%%/interpreter/Texplist.java
-%%EXAMPLESDIR%%/interpreter/Tfun.java
-%%EXAMPLESDIR%%/interpreter/Tident.java
-%%EXAMPLESDIR%%/interpreter/Tifthenelse.java
-%%EXAMPLESDIR%%/interpreter/Tnumber.java
-%%EXAMPLESDIR%%/interpreter/Tparlist.java
-%%EXAMPLESDIR%%/interpreter/Tprogram.java
-%%EXAMPLESDIR%%/interpreter/Tuminus.java
-%%EXAMPLESDIR%%/interpreter/build.xml
-%%EXAMPLESDIR%%/interpreter/example.as
-%%EXAMPLESDIR%%/interpreter/parser.cup
-%%EXAMPLESDIR%%/interpreter/scanner.flex
-@dirrm %%EXAMPLESDIR%%/interpreter
-%%EXAMPLESDIR%%/java/JavaParser.java
-%%EXAMPLESDIR%%/java/JavaSymbol.java
-%%EXAMPLESDIR%%/java/Makefile
-%%EXAMPLESDIR%%/java/README
-%%EXAMPLESDIR%%/java/TestLexer.java
-%%EXAMPLESDIR%%/java/build.xml
-%%EXAMPLESDIR%%/java/java.flex
-%%EXAMPLESDIR%%/java/java12.cup
-%%EXAMPLESDIR%%/java/lexer-output.good
-%%EXAMPLESDIR%%/java/unicode.flex
-@dirrm %%EXAMPLESDIR%%/java
-%%EXAMPLESDIR%%/simple/Makefile
-%%EXAMPLESDIR%%/simple/README
-%%EXAMPLESDIR%%/simple/Utility.java
-%%EXAMPLESDIR%%/simple/Yytoken.java
-%%EXAMPLESDIR%%/simple/output.good
-%%EXAMPLESDIR%%/simple/simple.flex
-%%EXAMPLESDIR%%/simple/test.txt
-@dirrm %%EXAMPLESDIR%%/simple
-%%EXAMPLESDIR%%/standalone/Makefile
-%%EXAMPLESDIR%%/standalone/README
-%%EXAMPLESDIR%%/standalone/build.xml
-%%EXAMPLESDIR%%/standalone/sample.inp
-%%EXAMPLESDIR%%/standalone/standalone.flex
-@dirrm %%EXAMPLESDIR%%/standalone
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary/StraightStreamReader.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary/binary.flex
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/binary
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/byaccj/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/byaccj/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/byaccj/calc.flex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/byaccj/calc.y
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/byaccj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/Main.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/lcalc.flex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/output.good
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/test.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cup/ycalc.cup
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cup
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/AST.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Main.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/STEfun.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/STEvar.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/SymTab.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/SymtabEntry.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tboolexp.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tdekl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tdekllist.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Texp.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Texpinfix.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Texplist.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tfun.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tident.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tifthenelse.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tnumber.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tparlist.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tprogram.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/Tuminus.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/example.as
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/parser.cup
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter/scanner.flex
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/interpreter
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/JavaParser.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/JavaSymbol.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/TestLexer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/java.flex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/java12.cup
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/lexer-output.good
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/unicode.flex
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/Utility.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/Yytoken.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/output.good
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.flex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/test.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/sample.inp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/standalone/standalone.flex
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/standalone
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
