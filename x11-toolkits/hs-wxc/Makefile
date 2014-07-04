@@ -17,7 +17,7 @@ USE_WX=		3.0
 WX_COMPS=	wx
 WX_UNICODE=	yes
 
-NOPORTDOCS=	yes
+OPTIONS_EXCLUDE=DOCS
 
 post-patch::
 	@${REINPLACE_CMD} 's|"wx-config"|"wxgtk2u-2.9-config"| ; \
