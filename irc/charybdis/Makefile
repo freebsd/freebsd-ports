@@ -2,7 +2,7 @@
 
 PORTNAME=	charybdis
 PORTVERSION=	3.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc net
 MASTER_SITES=	http://www.stack.nl/~jilles/irc/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -26,7 +26,7 @@ MASTER_SITES:=	${MASTER_SITES} \
 PORTDOCS=	charybdis-oper-guide.pdf
 
 USE_AUTOTOOLS=	autoconf
-USES=		pathfix
+USES=		libtool pathfix
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 USERS=		ircd
