@@ -17,9 +17,9 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:${PORTSDIR}/net/dgd
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
@@ -41,10 +41,8 @@ do-install:
 		-e "s:%%DATADIR%%:${DATADIR}:" > \
 		${STAGEDIR}${PREFIX}/etc/rc.d/dgd-kernel.sh.sample
 	@${CHMOD} a+x ${STAGEDIR}${PREFIX}/etc/rc.d/dgd-kernel.sh.sample
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/kernellib && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
-.endif
 
 post-install:
 	@# Need a temporary directory for certain files

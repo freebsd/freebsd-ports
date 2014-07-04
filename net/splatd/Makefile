@@ -21,15 +21,15 @@ PYDISTUTILS_PKGNAME=	splat
 USE_RC_SUBR=	splatd
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/splat.conf ${STAGEDIR}${PREFIX}/etc/splat.conf.sample
 	${MV} -f ${STAGEDIR}${PREFIX}/bin/splatd ${STAGEDIR}${PREFIX}/sbin/splatd
 	${INSTALL_MAN} ${WRKSRC}/docs/man/splat.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/docs/man/splatd.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/xhtml
 	${INSTALL_MAN} ${WRKSRC}/docs/xhtml/* ${STAGEDIR}${DOCSDIR}/xhtml
-.endif
 
 .include <bsd.port.mk>

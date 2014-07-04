@@ -21,6 +21,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ARGS=	-cp ${JAVALIBDIR}/junit.jar -Dlibdir=${JAVALIBDIR} -Dnoget=""
 MAKE_ENV+=	LANG=C
@@ -31,7 +33,9 @@ ALL_TARGET=	dist
 ALL_TARGET=	compile test jar dist
 .endif
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	LICENSE.txt NOTICE.txt api
 ALL_TARGET+=	javadoc
 .endif
@@ -42,7 +46,7 @@ do-install:
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 	@${ECHO_MSG} " [DONE]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/dist/docs && ${FIND} api \

@@ -17,14 +17,14 @@ PORTDOCS=	COPYING CREDITS ChangeLog INSTALL README TODO
 EXAMPLES=	alarm.sh sntoprc.EXAMPLE
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sntop
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for example in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${example} ${STAGEDIR}${EXAMPLESDIR}

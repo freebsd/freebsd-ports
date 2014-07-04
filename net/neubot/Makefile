@@ -33,14 +33,14 @@ SUB_FILES=	pkg_message
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 PKGMESSAGE=	${WRKDIR}/pkg_message
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${RM} -rf ${STAGEDIR}${LSTATEDIR}
 	(cd ${STAGEDIR}${PREFIX} \
 	&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 	-d ${PREFIX} -f ${DATADIR:S;${PREFIX}/;;})
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

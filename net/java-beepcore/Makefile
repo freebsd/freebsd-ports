@@ -18,6 +18,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/beep*.jar ${STAGEDIR}${JAVAJARDIR}
 	cd ${WRKSRC}/example \
@@ -26,9 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/example.jar ${STAGEDIR}${EXAMPLESDIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/*.htm ${STAGEDIR}${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/*.htm ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
