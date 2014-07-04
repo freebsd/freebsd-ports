@@ -18,6 +18,8 @@ NO_BUILD=	yes
 
 JAVAVM=		${LOCALBASE}/bin/java
 
+OPTIONS_DEFINE=	DOCS
+
 DOC_FILES=	AUTHORS COPYING COPYING.LIB NEWS README \
 		TODO
 PORTDOCS=	${DOC_FILES}
@@ -37,11 +39,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/xnap.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME:tl}.jar
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl}
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
