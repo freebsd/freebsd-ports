@@ -20,14 +20,14 @@ PLIST_FILES=	bin/netrik \
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} "s/#include <ncursesw\//#include </" \
 		${WRKSRC}/*.c
-.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} "s/install-data-am: install-docDATA/install-data-am:/" \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s/install-docDATA install-man/install-man/" \
 		${WRKSRC}/doc/Makefile.in
-.endif
 
 .include <bsd.port.mk>

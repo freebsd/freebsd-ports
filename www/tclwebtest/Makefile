@@ -19,7 +19,7 @@ NO_BUILD=	YES
 LIBDIR=		lib/tclwebtest${PORTVERSION}
 PLIST_SUB+=	LIBDIR="${LIBDIR}"
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
@@ -36,11 +36,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tclwebtest ${STAGEDIR}${PREFIX}/bin/tclwebtest
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${ECHO} "Installing docs"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
-	@${TAR} -C ${WRKSRC} -c -f - ChangeLog README TODO index.html generate_docs.test | ${TAR} -C ${STAGEDIR}${DOCSDIR} -x -f -
-	@${TAR} -C ${WRKSRC}/doc -c -f - . | ${TAR} -C ${STAGEDIR}${DOCSDIR}/doc -x -f -
-.endif
+	${TAR} -C ${WRKSRC} -c -f - ChangeLog README TODO index.html generate_docs.test | ${TAR} -C ${STAGEDIR}${DOCSDIR} -x -f -
+	${TAR} -C ${WRKSRC}/doc -c -f - . | ${TAR} -C ${STAGEDIR}${DOCSDIR}/doc -x -f -
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

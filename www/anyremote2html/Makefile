@@ -16,10 +16,9 @@ USE_PYTHON_RUN=	yes
 
 PORTDOCS=	ChangeLog README COPYING AUTHORS
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/${PORTNAME}
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/doc\/${PORTNAME}/d' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>

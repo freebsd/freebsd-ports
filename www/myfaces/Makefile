@@ -15,10 +15,10 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-.if !defined(NOPORTDOCS)
 PORTDOCS=	javadoc tlddoc LICENSE.txt NOTICE.txt
-.endif
 JAR_FILES=	myfaces-all.jar myfaces-api.jar myfaces-impl.jar tomahawk.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		${JAR_FILES:S|^|%%DATADIR%%/|}
@@ -33,9 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${jarfile} ${STAGEDIR}${DATADIR}/${jarfile}
 .endfor
 
-.if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
 	cd ${WRKSRC} && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-.endif
 
 .include <bsd.port.post.mk>

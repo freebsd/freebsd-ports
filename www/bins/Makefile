@@ -37,6 +37,8 @@ DOC_EXTS=	html sgml xml
 
 MAN1=	bins-edit-gui.1 bins.1 bins_edit.1
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch::
 # perl PREFIX safeness
 	@${FIND} ${WRKSRC} -type f | \
@@ -52,14 +54,12 @@ do-install:
 
 post-install:
 .for file in ${BINS_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ext in ${DOC_EXTS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -70,7 +70,7 @@ post-install:
 WITH_I18N=	yes
 
 post-patch::
-	@${REINPLACE_CMD} -e 's,read dummy,,' ${WRKSRC}/install.sh
+	${REINPLACE_CMD} -e 's,read dummy,,' ${WRKSRC}/install.sh
 .endif
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-install.sh

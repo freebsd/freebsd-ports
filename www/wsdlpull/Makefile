@@ -18,21 +18,21 @@ USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@${REINPLACE_CMD} -e '/-O2 -Wall/d' ${WRKSRC}/configure
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} -e '/-O2 -Wall/d' ${WRKSRC}/configure
+	${REINPLACE_CMD} \
 		-e '/SUBDIRS = / s| docs||' \
 		-e '/^install-data-am:/ s| install-docsDATA||' \
 			${WRKSRC}/Makefile.in
 # Do not install wsdlpull-config.1 for the absence of wsdlpull-config
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e '/^man_MANS = / s| wsdlpull-config.1||' \
 			${WRKSRC}/man/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} README wsdlpull.html ${STAGEDIR}${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} README wsdlpull.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
