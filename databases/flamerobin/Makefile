@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	The GUI administration tool for firebird database
 
 USE_FIREBIRD=	yes

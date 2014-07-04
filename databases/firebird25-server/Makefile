@@ -10,7 +10,7 @@ PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
 DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.26540-0
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
 
 CONFLICTS?=	${PORTNAME}20-client-* \

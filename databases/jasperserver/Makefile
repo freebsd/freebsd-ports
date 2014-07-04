@@ -15,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip \
 		FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Open Source Java Reporting Library
 
 LICENSE=	GPLv3 MIT APACHE20

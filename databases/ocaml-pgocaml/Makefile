@@ -9,7 +9,7 @@ MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/850/
 PKGNAMEPREFIX=	ocaml-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tcrimi@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	OCaml interface to PostgreSQL
 
 BROKEN=		Fails to build

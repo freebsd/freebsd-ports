@@ -6,7 +6,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://sources.redhat.com/rhdb/tools/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Utility to format PostgreSQL heap, index, etc into human-readable form
 
 FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch

@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/MySQLDumper/
 DISTNAME=	MySQLDumper${PORTVERSION}
 
-MAINTAINER=	marekholienka@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Tool for backing up MySQL databases
 
 LICENSE=	GPLv2
