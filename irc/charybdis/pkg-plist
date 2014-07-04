@@ -13,7 +13,6 @@ etc/charybdis/example.conf
 etc/charybdis/ircd.motd.sample
 @exec [ -f %D/ircd.motd ] || cp -p %D/%F %B/ircd.motd
 %%ETCDIR%%/reference.conf
-lib/libratbox.la
 lib/libratbox.so
 libdata/pkgconfig/libratbox.pc
 man/man8/ircd.8.gz
