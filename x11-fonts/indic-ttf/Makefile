@@ -36,17 +36,10 @@ PUNJABI_DESC=		PUNJABI font set
 TAMIL_DESC=		TAMIL font set
 TELUGU_DESC=		TELUGU font set
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 FONTSNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTSNAME}
 
 CONFAVAILDIR?=	${PREFIX}/etc/fonts/conf.avail
-
-MKFONTSCALE?=	${LOCALBASE}/bin/mkfontscale
-MKFONTSDIR?=	${LOCALBASE}/bin/mkfontdir
-FCCACHE?=	${LOCALBASE}/bin/fc-cache -f -v
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR:S|${PREFIX}/||} \
 		CONFAVAILDIR=${CONFAVAILDIR:S|${PREFIX}/||} \
@@ -55,6 +48,8 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR:S|${PREFIX}/||} \
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR=${FONTSDIR} \
 		CONFAVAILDIR=${CONFAVAILDIR}
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBENGALI}
 FONTS=		bengali
@@ -126,24 +121,15 @@ do-install: install-fonts install-conf
 install-fonts:
 
 .for f in ${FONTS}
-	${MKDIR} ${FONTSDIR}/${f}
-	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/*.ttf ${FONTSDIR}/${f}
-	${INSTALL_DATA} ${WRKSRC}/debian/ttf-${f}${PKGNAMESUFFIX}.copyright ${FONTSDIR}/${f}
-	${MKFONTSCALE} ${FONTSDIR}/${f} 2>/dev/null || ${TRUE}
-	${MKFONTSDIR} ${FONTSDIR}/${f} 2>/dev/null || ${TRUE}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/*.ttf ${STAGEDIR}${FONTSDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/debian/ttf-${f}${PKGNAMESUFFIX}.copyright ${STAGEDIR}${FONTSDIR}/${f}
 .endfor
 
 install-conf:
-	${MKDIR} ${CONFAVAILDIR}
+	${MKDIR} ${STAGEDIR}${CONFAVAILDIR}
 .for f in ${FONTS}
-	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/90-ttf-${f}${PKGNAMESUFFIX}.conf ${CONFAVAILDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/90-ttf-${f}${PKGNAMESUFFIX}.conf ${STAGEDIR}${CONFAVAILDIR}/
 .endfor
-
-post-install:
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${FCCACHE} ${FONTSDIR}
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
