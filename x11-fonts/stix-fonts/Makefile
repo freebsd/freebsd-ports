@@ -35,9 +35,9 @@ MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE=	${LOCALBASE}/bin/fc-cache -f -v
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	"STIX Font ${PORTVERSION}-webfonts Release Documentation.pdf"
-.endif
 
 do-build:
 	${MKDIR} ${WRKDIR}/build
@@ -51,9 +51,7 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTDIR}
 	cd ${WRKDIR}/build && ${INSTALL_DATA} fonts.dir fonts.scale *.woff ${STAGEDIR}${FONTDIR}
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
