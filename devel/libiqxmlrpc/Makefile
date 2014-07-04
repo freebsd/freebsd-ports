@@ -27,11 +27,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
-PORTDATA=	*
 PORTDOCS=	*
 
 post-patch:
 	${REINPLACE_CMD} -e 's,lib/pkgconfig,libdata/pkgconfig,' ${WRKSRC}/libiqxmlrpc/CMakeLists.txt
-	${REINPLACE_CMD} -e 's,share/doc/libiqxmlrpc-$${Libiqxmlrpc_VERSION},share/libiqxmlrpc,' ${WRKSRC}/doc/CMakeLists.txt
+	${REINPLACE_CMD} -e 's,share/doc/libiqxmlrpc-$${Libiqxmlrpc_VERSION},${DOCSDIR_REL},' ${WRKSRC}/doc/CMakeLists.txt
 
 .include <bsd.port.mk>
