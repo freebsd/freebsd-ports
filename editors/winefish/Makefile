@@ -3,7 +3,7 @@
 
 PORTNAME=	winefish
 DISTVERSION=	1.3.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	editors print
 MASTER_SITES=	http://download.berlios.de/winefish/ \
 		http://nivi.interfree.it/distfiles/winefish/

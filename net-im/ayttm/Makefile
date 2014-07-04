@@ -3,7 +3,7 @@
 
 PORTNAME=	ayttm
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libgpgme.so:${PORTSDIR}/security/gpgme \
-		libpspell.so:${PORTSDIR}/textproc/aspell \
 		libenchant.so:${PORTSDIR}/textproc/enchant
 
 OPTIONS_DEFINE=	ESOUND YAHOO

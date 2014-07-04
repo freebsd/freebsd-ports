@@ -9,18 +9,7 @@
  then
    CXXFLAGS="$CXXFLAGS -fno-exceptions"
  fi
-@@ -8101,6 +8101,10 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ltmain"
-+save_CC="$CC"
-+CC="$CXX"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
-+CC="$save_CC"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -18179,7 +18183,7 @@
+@@ -18179,7 +18179,7 @@
    CURSES_LIB=-lncurses
  
  cat >>confdefs.h <<\_ACEOF
@@ -29,7 +18,7 @@
  _ACEOF
  
  else
-@@ -18366,8 +18370,8 @@
+@@ -18366,8 +18366,8 @@
       if test "$enable_wide_curses" != "no"
       then
  
