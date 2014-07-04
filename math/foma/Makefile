@@ -12,7 +12,6 @@ COMMENT=	A toolkit for constructing finite-state automata and transducers
 LICENSE=	GPLv2
 
 USES=		bison gmake
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 do-install:
