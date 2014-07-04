@@ -18,9 +18,9 @@ JAVA_VERSION=	1.6+
 
 SUB_FILES=	pipe.sh
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=*
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pipe.sh ${STAGEDIR}${PREFIX}/bin/pipe
@@ -29,11 +29,9 @@ do-install:
 		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \;
 	cd ${WRKSRC} && \
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
-.if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/Docs && \
 		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/javadoc/{} \;
 	cd ${WRKSRC}/Docs && \
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/javadoc/{} \;
-.endif
 
 .include <bsd.port.mk>
