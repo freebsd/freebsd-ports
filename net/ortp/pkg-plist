@@ -12,9 +12,9 @@ include/ortp/stun.h
 include/ortp/stun_udp.h
 include/ortp/telephonyevents.h
 lib/libortp.a
-lib/libortp.la
 lib/libortp.so
 lib/libortp.so.5
+lib/libortp.so.5.0.0
 libdata/pkgconfig/ortp.pc
 %%PORTDOCS%%%%DOCSDIR%%/book1.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
