@@ -163,6 +163,7 @@
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += hexcalc
+    SUBDIR += hfst
     SUBDIR += hs-Agda
     SUBDIR += hs-NumInstances
     SUBDIR += hs-categories
