@@ -23,6 +23,8 @@ PLIST_SUB=	PHAMMDIR=${PHAMMDIR}
 
 PORTDOCS=	CHANGELOG INSTALL README LICENSE THANKS
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 do-install:
@@ -35,11 +37,9 @@ do-install:
 	${EGREP} -v '(examples|cfg|schema|debian|server)'` ; do \
 		${CP} -Rv $$d ${STAGEDIR}${PREFIX}/${PHAMMDIR}; \
 	done;
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

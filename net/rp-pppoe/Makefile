@@ -85,9 +85,7 @@ do-install:
 .endfor
 
 # Documentation
-.ifndef (NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-.endif # NOPORTDOCS
 
 .include <bsd.port.mk>
