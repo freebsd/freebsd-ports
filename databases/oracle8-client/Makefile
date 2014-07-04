@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fjoe
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Oracle 8 client
 
 USE_BZIP2=	yes

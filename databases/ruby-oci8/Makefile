@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${DISTVERSION:S/rc/-rc/}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	numisemis@yahoo.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Ruby interface to Oracle OCI8
 
 BROKEN=		Does not configure

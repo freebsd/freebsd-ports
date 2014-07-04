@@ -13,7 +13,7 @@ DISTFILES=	${ISQL_JAR}:isql \
 		${BSF_JAR}:bsf
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	stefan.schmidt@stadtbuch.de
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	JDBC 2.x compliant database front end
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper \

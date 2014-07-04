@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pgsql@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Powerful GUI PostgreSQL database administration tool and toolkit
 
 DEPRECATED=	not maintained upstreams for ten years

@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-mono
 DISTNAME=	${PORTNAME}-${REALVERSION}${PKGNAMESUFFIX}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	pneumann@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Database engine for storing object into files
 
 USES=		mono

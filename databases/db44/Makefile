@@ -9,7 +9,7 @@ PKGNAMESUFFIX?=
 DISTNAME=	db-4.4.20
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix

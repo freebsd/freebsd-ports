@@ -12,7 +12,7 @@ DIST_SUBDIR=	bdb
 
 DEPRECATED=	Please use databases/db5 or db6 for new installs.
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix

@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://home.fnal.gov/~dbox/oracle/odbc/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Oracle Open Source ODBC driver
 
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC

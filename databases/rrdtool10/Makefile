@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/rrdtool-1.0.x/
 PKGNAMESUFFIX=	10
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
 MAKE_ENV=	PERL=${PERL}

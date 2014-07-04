@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.frontbase.com/download/Download_${PORTVERSION}/FreeBSD5
 MASTER_SITES+=	http://www.frontbase.com/download/WO5Plugin/UnixLinux/:plugin
 DISTFILES=	FrontBase-${PORTVERSION}-FreeBSD5.tar:db
 
-MAINTAINER=	mjs@bur.st
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Frontbase SQL Database Server
 
 LICENSE=	FrontBase
