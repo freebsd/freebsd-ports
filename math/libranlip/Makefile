@@ -38,8 +38,10 @@ test: build
 	@(cd ${WRKSRC}/examples && ./${_prog})
 .endfor
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 700000
 BROKEN=		fails to build
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
