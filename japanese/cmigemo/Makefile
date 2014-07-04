@@ -24,8 +24,10 @@ INSTALL_TARGET=	gcc-install
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PORTDOCS=	README_j.txt
+
 .endif
 
+OPTIONS_DEFINE+=DOCS
 USES+=		iconv:build,wchar_t gmake zip
 
 HAS_CONFIGURE=	yes
@@ -33,7 +35,9 @@ CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-default-src
 
-.if !defined(MASTERDIR) && !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if !defined(MASTERDIR) && ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=gcc-install-doc
 .endif
 

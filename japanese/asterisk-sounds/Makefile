@@ -22,6 +22,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@-${MKDIR} ${STAGEDIR}${ASTERISKDIR}/ja
 	for gsm in ${WRKDIR}/ja/*.gsm; do \
@@ -31,9 +33,7 @@ do-install:
 	for digitgsm in ${WRKDIR}/ja/digits/*.gsm; do \
 		${INSTALL_DATA} "$$digitgsm" ${STAGEDIR}${ASTERISKDIR}/ja/digits ; \
 	done
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
 	@cd ${WRKDIR}/ja && ${INSTALL_DATA} README.txt ${STAGEDIR}${DOCSDIR}/ja
-.endif
 
 .include <bsd.port.mk>
