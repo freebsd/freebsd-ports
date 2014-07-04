@@ -7,10 +7,9 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with Apache ZooKeeper
 
 LICENSE=	PHP301
@@ -20,9 +19,10 @@ LIB_DEPENDS=	libzookeeper_mt.so:${PORTSDIR}/devel/libzookeeper
 USE_PHP=	session
 USE_PHP_BUILD=	session
 USE_PHPEXT=	yes
+USES=		tar:tgz
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/zookeeper-api.php ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/zookeeper-api.php ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
