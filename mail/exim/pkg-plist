@@ -1,6 +1,6 @@
-%%EXIM_SUID%%@mode 4755
+%%SUID%%@mode 4755
 %%EXIM%%sbin/exim
-%%EXIM_SUID%%@mode
+%%SUID%%@mode
 %%EXIM%%sbin/exim_checkaccess
 %%EXIM%%sbin/exim_dbmbuild
 %%EXIM%%sbin/exim_dumpdb
