@@ -22,6 +22,7 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS X11
+OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
 
