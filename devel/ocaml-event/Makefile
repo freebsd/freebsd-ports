@@ -13,7 +13,7 @@ MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	Ocaml wrapper for the libevent API
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 ALL_TARGET=	all allopt
 USES=		gmake
