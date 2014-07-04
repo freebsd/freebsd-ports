@@ -27,26 +27,24 @@ JAVA_VERSION=	1.6+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 USE_ANT=	yes
 ALL_TARGET=	jar
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	docs
-.endif
+DOCS_ALL_TARGET=${ALL_TARGET} docs
 
 PLIST_FILES+=	%%DATADIR%%/jaxup-xupdater.jar bin/jaxup-xupdater \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
 PLIST_DIRS=	%%DATADIR%%
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE.txt api index.html jaxup_files xupdate-wd.html xupdate-wd_files
-.endif
 
 .include <bsd.port.pre.mk>
 
 UTIL_CLASSPATH_JARS=	jaxen-full saxpath xercesImpl
 UTIL_CLASSPATH!=	${ECHO_CMD} ${UTIL_CLASSPATH_JARS:S,^,${JAVALIBDIR}/,:S,$,.jar,} | ${TR} " " ":"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.[4-5] -maxdepth 1 -name api -type d 2>/dev/null || ${ECHO_CMD}) | ${TAIL} -n 1
 .if ${JDK_API} != ""
 MAKE_ARGS+=	-Dj2se.apidocs="${JDK_API}"
@@ -58,9 +56,9 @@ MAKE_ARGS+=	-Djaxen.apidocs="${JAXEN_API}"
 .endif
 
 post-extract:
-	@${CP} ${FILESDIR}/build.xml ${WRKSRC}/
-	@${CP} ${FILESDIR}/DOMXUpdater.java ${WRKDIR}/
-	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; s,%%DATADIR%%,${DATADIR},g' \
+	${CP} ${FILESDIR}/build.xml ${WRKSRC}/
+	${CP} ${FILESDIR}/DOMXUpdater.java ${WRKDIR}/
+	${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; s,%%DATADIR%%,${DATADIR},g' \
 	  ${FILESDIR}/jaxup-xupdater.sh >${WRKDIR}/jaxup-xupdater
 
 post-build:
@@ -72,20 +70,20 @@ post-build:
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/build/lib/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/
+	${INSTALL_DATA} ${WRKSRC}/build/lib/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} ">> Installing utility scripts and classes..."
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/jaxup-xupdater.jar ${STAGEDIR}${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/jaxup-xupdater ${STAGEDIR}${PREFIX}/bin/
 	@${ECHO_MSG} "  [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/build/docs \
+	cd ${WRKSRC}/build/docs \
 	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 

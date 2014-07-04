@@ -24,9 +24,9 @@ bin/stxview.pl
 %%PORTDOCS%%%%DOCSDIR%%/STX.html
 %%PORTDOCS%%%%DOCSDIR%%/TrAXref.html
 %%PORTDOCS%%%%DOCSDIR%%/TrAXref.pod
-%%PORTDOCS%%%%EXAMPLESDIR%%/stx-filter.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tester.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stx-filter.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tester.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

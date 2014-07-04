@@ -29,12 +29,12 @@ NO_BUILD=	yes
 
 CONFLICTS=	saxon-6.*
 
+OPTIONS_DEFINE=	DOCS
+
 JARFILES=	saxon9-sql.jar saxon9.jar saxon9-xpath.jar saxon9-dom.jar \
 		saxon9-xqj.jar saxon9-s9api.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon bin/saxon-xquery
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 .include <bsd.port.options.mk>
 
@@ -61,17 +61,17 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 .for file in ${JARFILES}
 	@${ECHO_MSG} -n " ${file}"
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${JAVAJARDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${JAVAJARDIR}/
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}/..."
-	@cd ${WRKSRC}/samples/ \
+	cd ${WRKSRC}/samples/ \
 	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
-	@cd ${WRKSRC}/doc/ \
+	cd ${WRKSRC}/doc/ \
 	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
@@ -79,15 +79,15 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing scripts in ${PREFIX}/bin..."
 .for scriptfile in saxon saxon-xquery
 	@${ECHO_MSG} -n " ${scriptfile}"
-	@${INSTALL_SCRIPT} ${WRKSRC}/saxon.sh ${STAGEDIR}${PREFIX}/bin/${scriptfile}
+	${INSTALL_SCRIPT} ${WRKSRC}/saxon.sh ${STAGEDIR}${PREFIX}/bin/${scriptfile}
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${FIND} -s ${WRKSRC}/samples -not -type d | \
+	${FIND} -s ${WRKSRC}/samples -not -type d | \
 		${SED} -ne 's,^${WRKSRC}/samples,${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${WRKSRC}/samples -type d | \
+	${FIND} -s -d ${WRKSRC}/samples -type d | \
 		${SED} -ne 's,^${WRKSRC}/samples,@dirrm ${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 .endif
 

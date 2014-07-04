@@ -14,12 +14,11 @@ COMMENT=	Light-weight XML encoding library for Java
 USE_JAVA=	yes
 USE_ANT=	yes
 
-.if defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 ALL_TARGET=	jar
-.else
-ALL_TARGET=	jar javadoc
+DOCS_ALL_TARGET=${ALL_TARGET} javadoc
 PORTDOCS=	*
-.endif
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
@@ -38,7 +37,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
 	@cd ${WRKSRC}/build/javadoc/ \
 	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \

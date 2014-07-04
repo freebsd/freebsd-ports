@@ -49,9 +49,10 @@ USE_PERL5=	configure
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
-.ifdef(NOPORTDOCS)
-EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-patch-Makefile.PL
-.else
+OPTIONS_DEFINE=	DOCS
+
+DOCS_EXTRA_PATCHES=	${FILESDIR}/extra-noportdocs-patch-Makefile.PL
+
 PORTDOCS=	COPYING \
 		QuickStart \
 		README \
@@ -59,7 +60,6 @@ PORTDOCS=	COPYING \
 		README.win32 \
 		tv_check_doc.html \
 		tv_check_doc.jpg
-.endif
 
 # idea taken from devel/cvsweb port
 # Specify these directories in relative paths to ${PREFIX}.

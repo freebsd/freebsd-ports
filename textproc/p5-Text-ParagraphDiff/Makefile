@@ -23,13 +23,13 @@ SCRIPTS=	tdiff
 EXAMPLES=	diff.html new.txt old.txt
 EXAMPLESDIR=	${PREFIX}/share/examples/p5-Text-ParagraphDiff
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/bin && \
 	${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && \
 	${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
