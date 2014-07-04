@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	3.108
+PORTVERSION=	3.110
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://dev.carrois.com/wordpress/downloads/${PORTNAME}_3_1/ \
+MASTER_SITES=	http://www.carrois.com/wordpress/downloads/${PORTNAME}_3_1/ \
 		SF/horia/${CATEGORIES}/${PORTNAME}/
 DISTNAME=	${PORTNAME:S|f|F|}Fonts${PORTVERSION:S|.||}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -39,24 +39,16 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 EXAMPLES_DESC=	UFO source files
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME:S|f|F|}*${PORTVERSION:S|.||}/OTF/${PORTNAME:S|f|F|}*.otf \
 		${STAGEDIR}${FONTDIR}
-
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${CP} ${DISTDIR}/Version_Report.rtf ${WRKSRC}/
-	@${CP} ${WRKDIR}/${PORTNAME:S|f|F|}PDF${PORTVERSION:S|.||}/${PORTNAME:S|f|F|}*.pdf ${WRKSRC}/
+	${CP} ${DISTDIR}/Version_Report.rtf ${WRKSRC}/
+	${CP} ${WRKDIR}/${PORTNAME:S|f|F|}PDF${PORTVERSION:S|.||}/${PORTNAME:S|f|F|}*.pdf ${WRKSRC}/
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKDIR}/${PORTNAME:S|f|F|}UFO_beta${PORTVERSION:S|.||} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>
