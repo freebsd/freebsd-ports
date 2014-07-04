@@ -249,8 +249,7 @@ sbin/upssched
 @unexec test -d %%STATEDIR%% && rmdir %%STATEDIR%%
 %%NUT_CGI%%@dirrmtry %%CGIDIR%%
 @dirrmtry %%ETCDIR%%
-%%NUT_CGI%%@dirrmtry www/cgi-bin/nut
 %%NUT_CGI%%@dirrmtry www/cgi-bin
 %%BASH%%@dirrmtry etc/bash_completion.d
 @dirrmtry libexec/nut
-@dirrmtry %%WWWDIR%%
+%%NUT_CGI%%@dirrmtry %%WWWDIR%%
