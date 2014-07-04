@@ -15,6 +15,8 @@ USE_XORG=	x11 xmu xi
 USE_LDCONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
+OPTIONS_DEFINE=	DOCS
+
 pre-build:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
@@ -33,9 +35,7 @@ do-install:
 		    s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		<${FILESDIR}/Makefile.ex >${STAGEDIR}${EXAMPLESDIR}/Makefile
 
-.ifndef (NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/gl2ps.pdf ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
