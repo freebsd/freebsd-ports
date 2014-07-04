@@ -43,23 +43,15 @@ PLIST_SUB=	TEXMFDIR=${TEXMFDIR} TEXMFCONFIGDIR=${TEXMFDIR}-config
 CONFLICTS_INSTALL=	xdvi-[0-9]* xdvi-*-[0-9]* *-xdvi-[0-9]* \
 			xdvik-[0-9]* ja-xdvik-*-[0-9]*
 
-MAN1=		xdvi.1
-
 PORTDOCS=	BUGS CHANGES INSTALL README README.CVS README.coding \
 		README.config README.cross README.distro README.hacking \
 		README.layout README.xdvik README_maintainer TODO
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${DISTNAME} && \
-		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

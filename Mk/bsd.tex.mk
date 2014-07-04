@@ -178,7 +178,9 @@ ${_C}_DEPENDS+=	${TEX_${_C}_DEPENDS:O:u}
 .PHONY:	do-texhash
 do-texhash:
 . if !empty(USE_TEX:Mtexhash-bootstrap)
+.if defined(NO_STAGE)
 	@${LOCALBASE}/bin/mktexlsr ${TEXHASHDIRS:S,^,${PREFIX}/,}
+.endif
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/mktexlsr " \
 		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
 	@for D in ${TEXHASHDIRS}; do \
@@ -209,6 +211,9 @@ post-install-script: do-texhash
 . for F in ${TEX_FORMATS}
 do-fmtutil: do-fmtutil-$F post-install-$F
 do-fmtutil-$F:
+.if !defined(NO_STAGE)
+	@${ECHO_CMD} "@fmtutil ${TEX_FORMAT_${F:tu}_FILES:S@^@${LOCALBASE}/@}" >> ${TMPPLIST}
+.endif
 .if defined(NO_STAGE)
 	@${TEST} -n '${TEX_FORMAT_${F:tu}}'
 	@${TEST} -r ${LOCALBASE}/${FMTUTIL_CNF}
@@ -224,19 +229,6 @@ do-fmtutil-$F:
 			${LOCALBASE}/bin/fmtutil-sys --byfmt $$format; \
 		done
 	@${LOCALBASE}/bin/mktexlsr ${TEXMFVARDIR:S,^,${PREFIX}/,}
-.else
-	@exec < ${LOCALBASE}/${FMTUTIL_CNF} && \
-		(${GREP} -v "\#$F\$$"; \
-			${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}}) \
-			> ${WRKDIR}/fmtutil.cnf
-	@${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}} | \
-		while read format dum; do \
-		${SETENV} PATH=${PATH}:${LOCALBASE}/bin:${STAGEDIR}/${PREFIX}/bin \
-			TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
-			${LOCALBASE}/bin/fmtutil-sys --byfmt $$format \
-			--cnffile ${WRKDIR}/fmtutil.cnf \
-			--fmtdir ${STAGEDIR}${PREFIX}/${TEXMFVARDIR}/web2c; \
-		done
 .endif
 	@${ECHO_CMD} "@exec exec < ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"${RM} ${LOCALBASE}/${FMTUTIL_CNF} && " \
@@ -247,15 +239,20 @@ do-fmtutil-$F:
 		"${RM} ${LOCALBASE}/${FMTUTIL_CNF} && " \
 		"${GREP} -v \"\#$F\$$\" " \
 		"> ${LOCALBASE}/${FMTUTIL_CNF}" >> ${TMPPLIST}
+.if defined(NO_STAGE)
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_FILES}
 _PLIST_DIRSTRY+=${TEX_FORMAT_${F:tu}_DIRS}
+.endif
+_PLIST_FILES+=	${TEX_FORMAT_${F:tu}_BIN}
 . endfor
 post-install-script: do-fmtutil
 
 PLIST_FILES=	${_PLIST_FILES:O:u}
-PLIST_DIRSTRY=	${_PLIST_DIRSTRY:O:u} \
-		${TEXMFVARDIR}/web2c \
+PLIST_DIRSTRY=	${_PLIST_DIRSTRY:O:u} 
+.if defined(NO_STAGE)
+PLIST_DIRSTRY=	${TEXMFVARDIR}/web2c \
 		${TEXMFVARDIR}
+.endif
 .endif
 
 .if !empty(USE_TEX:Mupdmap)
@@ -281,7 +278,8 @@ TEX_FORMAT_ALEPH_FILES=	\
 	${TEXMFVARDIR}/web2c/aleph/aleph.log \
 	${TEXMFVARDIR}/web2c/aleph/aleph.fmt \
 	${TEXMFVARDIR}/web2c/aleph/lamed.log \
-	${TEXMFVARDIR}/web2c/aleph/lamed.fmt \
+	${TEXMFVARDIR}/web2c/aleph/lamed.fmt
+TEX_FORMAT_ALEPH_BIN=	\
 	bin/lamed
 TEX_FORMAT_ALEPH_DIRS=	\
 	${TEXMFVARDIR}/web2c/aleph
@@ -292,7 +290,8 @@ TEX_FORMAT_AMSTEX?= \
 	"amstex pdftex - -translate-file=cp227.tcx *amstex.ini"
 TEX_FORMAT_AMSTEX_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/amstex.log \
-	${TEXMFVARDIR}/web2c/pdftex/amstex.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/amstex.fmt
+TEX_FORMAT_AMSTEX_BIN= \
 	bin/amstex
 TEX_FORMAT_AMSTEX_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
@@ -320,7 +319,8 @@ TEX_FORMAT_CSLATEX_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/cslatex.log \
 	${TEXMFVARDIR}/web2c/pdftex/cslatex.fmt \
 	${TEXMFVARDIR}/web2c/pdftex/pdfcslatex.log \
-	${TEXMFVARDIR}/web2c/pdftex/pdfcslatex.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/pdfcslatex.fmt
+TEX_FORMAT_CSLATEX_BIN= \
 	bin/cslatex \
 	bin/pdfcslatex
 TEX_FORMAT_CSLATEX_DIRS= \
@@ -333,7 +333,8 @@ TEX_FORMAT_EPLAIN?= \
 	"eplain pdftex language.dat -translate-file=cp227.tcx *eplain.ini"
 TEX_FORMAT_EPLAIN_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/eplain.log \
-	${TEXMFVARDIR}/web2c/pdftex/eplain.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/eplain.fmt
+TEX_FORMAT_EPLAIN_BIN= \
 	bin/eplain
 TEX_FORMAT_EPLAIN_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
@@ -347,7 +348,8 @@ TEX_FORMAT_JADETEX_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/jadetex.log \
 	${TEXMFVARDIR}/web2c/pdftex/jadetex.fmt \
 	${TEXMFVARDIR}/web2c/pdftex/pdfjadetex.log \
-	${TEXMFVARDIR}/web2c/pdftex/pdfjadetex.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/pdfjadetex.fmt
+TEX_FORMAT_JADETEX_BIN= \
 	bin/jadetex \
 	bin/pdfjadetex
 TEX_FORMAT_JADETEX_DIRS= \
@@ -363,7 +365,8 @@ TEX_FORMAT_LATEX-BIN_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/latex.log \
 	${TEXMFVARDIR}/web2c/pdftex/latex.fmt \
 	${TEXMFVARDIR}/web2c/pdftex/pdflatex.log \
-	${TEXMFVARDIR}/web2c/pdftex/pdflatex.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/pdflatex.fmt
+TEX_FORMAT_LATEX-BIN_BIN= \
 	bin/latex \
 	bin/pdflatex
 TEX_FORMAT_LATEX-BIN_DIRS= \
@@ -385,7 +388,8 @@ TEX_FORMAT_LUATEX_FILES= \
 	${TEXMFVARDIR}/web2c/luatex/luatex.log \
 	${TEXMFVARDIR}/web2c/luatex/luatex.fmt \
 	${TEXMFVARDIR}/web2c/luatex/lualatex.log \
-	${TEXMFVARDIR}/web2c/luatex/lualatex.fmt \
+	${TEXMFVARDIR}/web2c/luatex/lualatex.fmt
+TEX_FORMAT_LUATEX_BIN= \
 	bin/dviluatex \
 	bin/dvilualatex \
 	bin/lualatex
@@ -416,7 +420,8 @@ TEX_FORMAT_MEX_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/pdfmex.log \
 	${TEXMFVARDIR}/web2c/pdftex/pdfmex.fmt \
 	${TEXMFVARDIR}/web2c/pdftex/utf8mex.log \
-	${TEXMFVARDIR}/web2c/pdftex/utf8mex.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/utf8mex.fmt
+TEX_FORMAT_MEX_BIN= \
 	bin/mex \
 	bin/pdfmex \
 	bin/utf8mex
@@ -434,7 +439,8 @@ TEX_FORMAT_MLTEX_FILES=	\
 	${TEXMFVARDIR}/web2c/pdftex/mllatex.log \
 	${TEXMFVARDIR}/web2c/pdftex/mllatex.fmt \
 	${TEXMFVARDIR}/web2c/pdftex/mltex.log \
-	${TEXMFVARDIR}/web2c/pdftex/mltex.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/mltex.fmt
+TEX_FORMAT_MLTEX_BIN= \
 	bin/mltex \
 	bin/mllatex
 TEX_FORMAT_MLTEX_DIRS= \
@@ -463,7 +469,8 @@ TEX_FORMAT_PDFTEX_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/etex.log \
 	${TEXMFVARDIR}/web2c/pdftex/etex.fmt \
 	${TEXMFVARDIR}/web2c/pdftex/pdfetex.log \
-	${TEXMFVARDIR}/web2c/pdftex/pdfetex.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/pdfetex.fmt
+TEX_FORMAT_PDFTEX_BIN= \
 	bin/pdfetex
 TEX_FORMAT_PDFTEX_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
@@ -480,7 +487,8 @@ TEX_FORMAT_PTEX_FILES= \
 	${TEXMFVARDIR}/web2c/eptex/ptex.log \
 	${TEXMFVARDIR}/web2c/eptex/ptex.fmt \
 	${TEXMFVARDIR}/web2c/eptex/platex.log \
-	${TEXMFVARDIR}/web2c/eptex/platex.fmt \
+	${TEXMFVARDIR}/web2c/eptex/platex.fmt
+TEX_FORMAT_PTEX_BIN= \
 	bin/platex
 TEX_FORMAT_PTEX_DIRS= \
 	${TEXMFVARDIR}/web2c/ptex \
@@ -502,7 +510,8 @@ TEX_FORMAT_TEXSIS?= \
 	"texsis pdftex - -translate-file=cp227.tcx texsis.ini"
 TEX_FORMAT_TEXSIS_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/texsis.log \
-	${TEXMFVARDIR}/web2c/pdftex/texsis.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/texsis.fmt
+TEX_FORMAT_TEXSIS_BIN= \
 	bin/texsis
 TEX_FORMAT_TEXSIS_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
@@ -519,7 +528,8 @@ TEX_FORMAT_UPTEX_FILES=	\
 	${TEXMFVARDIR}/web2c/uptex/uptex.log \
 	${TEXMFVARDIR}/web2c/uptex/uptex.fmt \
 	${TEXMFVARDIR}/web2c/euptex/uplatex.log \
-	${TEXMFVARDIR}/web2c/euptex/uplatex.fmt \
+	${TEXMFVARDIR}/web2c/euptex/uplatex.fmt
+TEX_FORMAT_UPTEX_BIN= \
 	bin/uplatex
 TEX_FORMAT_UPTEX_DIRS=	\
 	${TEXMFVARDIR}/web2c/euptex \
@@ -537,7 +547,8 @@ TEX_FORMAT_XETEX_FILES=	\
 	${TEXMFVARDIR}/web2c/xetex/xelatex.log \
 	${TEXMFVARDIR}/web2c/xetex/xelatex.fmt \
 	${TEXMFVARDIR}/web2c/xetex/cont-en.log \
-	${TEXMFVARDIR}/web2c/xetex/cont-en.fmt \
+	${TEXMFVARDIR}/web2c/xetex/cont-en.fmt
+TEX_FORMAT_XETEX_BIN=	\
 	bin/xelatex
 TEX_FORMAT_XETEX_DIRS=	\
 	${TEXMFVARDIR}/web2c/xetex
@@ -551,7 +562,8 @@ TEX_FORMAT_XMLTEX_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/xmltex.log \
 	${TEXMFVARDIR}/web2c/pdftex/xmltex.fmt \
 	${TEXMFVARDIR}/web2c/pdftex/pdfxmltex.log \
-	${TEXMFVARDIR}/web2c/pdftex/pdfxmltex.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/pdfxmltex.fmt
+TEX_FORMAT_XMLTEX_BIN= \
 	bin/xmltex \
 	bin/pdfxmltex
 TEX_FORMAT_XMLTEX_DIRS= \

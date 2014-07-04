@@ -25,7 +25,7 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
 USE_TEX=	texlive web2c kpathsea ptexenc texhash-bootstrap
-USES=		gmake pkgconfig perl5 tar:xz
+USES=		gmake pkgconfig perl5 shebangfix tar:xz
 USE_AUTOTOOLS=	autoconf
 USE_GHOSTSCRIPT=yes
 USE_PERL5=	run
@@ -97,6 +97,20 @@ CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/ptexenc
 PLIST_SUB=	INSTALL_DATA="${INSTALL_DATA}"
 
+SHEBANG_FILES=	texk/texlive/linked_scripts/*/*.pl \
+		texk/texlive/linked_scripts/findhyph/findhyph \
+		texk/texlive/linked_scripts/de-macro/de-macro \
+		texk/texlive/linked_scripts/uptex/convbkmk.rb \
+		texk/texlive/linked_scripts/accfonts/vpl2vpl \
+		texk/texlive/linked_scripts/exceltex/exceltex \
+		texk/texlive/linked_scripts/texdirflatten/texdirflatten \
+		texk/texlive/linked_scripts/bibexport/bibexport.sh \
+		texk/texlive/linked_scripts/urlbst/urlbst \
+		texk/texlive/linked_scripts/accfonts/mkt1font \
+		texk/texlive/linked_scripts/splitindex/perl/splitindex.pl \
+		texk/texlive/linked_scripts/accfonts/vpl2ovp \
+		texk/texlive/linked_scripts/installfont/installfont-tl
+
 INFO=	dvipng
 
 post-patch:
@@ -109,8 +123,11 @@ post-patch:
 post-install-fmtutil:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFCONFIGDIR}/web2c
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFCONFIGDIR}/web2c/.keep_me
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFVARDIR}
 	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/${TEXMFDIR}/web2c/fmtutil.cnf \
 		${STAGEDIR}${PREFIX}/${FMTUTIL_CNF}
+	${CHMOD} 644 ${STAGEDIR}${PREFIX}/${TEXMFDIR}/web2c/fmtutil.cnf
 
 post-install: post-install-fmtutil
 .ORDER: post-install-fmtutil do-texhash

@@ -1,5 +1,7 @@
 bin/afm2tfm
 bin/dvips
+man/man1/afm2tfm.1.gz
+man/man1/dvips.1.gz
 %%TEXMFDISTDIR%%/fonts/map/dvips/gfsneohellenic/gfsneohellenic.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/adfsymbols/ArrowsADF.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/adfsymbols/BulletsADF.map

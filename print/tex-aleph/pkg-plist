@@ -8,6 +8,10 @@ bin/otp2ocp
 bin/outocp
 bin/mkocp
 bin/mkofm
+bin/ofm2opl
+bin/opl2ofm
+bin/ovf2ovp
+bin/ovp2ovf
 %%TEXMFDISTDIR%%/tex/plain/config/aleph.ini
 %%TEXMFDISTDIR%%/doc/aleph/base/readme.txt
 %%TEXMFDISTDIR%%/doc/aleph/base/News

@@ -2,7 +2,7 @@
 
 PORTNAME=	luatex
 PORTVERSION=	0.70.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -31,7 +31,7 @@ EXTRACT_FILES=	\
 	libs/obsdcompat \
 	libs/xpdf \
 	texk/web2c
-EXTRACT_AFTER_ARGS_TEXMF=| ${TAR} -xf - -C ${PREFIX}/share \
+EXTRACT_AFTER_ARGS_TEXMF=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
 DISTVERSION_TEXMF=20120701
@@ -86,14 +86,13 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	luatex
 
-NO_STAGE=	yes
 pre-configure:
 	for D in libs/obsdcompat libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
 	done
 
-pre-su-install:
+pre-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
 
