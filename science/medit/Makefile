@@ -34,7 +34,11 @@ LIBTARBALL=	library.${LIBVERSION}${EXTRACT_SUFX}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-. if !defined(NOPORTEXAMPLES)
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
+. if ${PORT_OPTIONS:MEXAMPLES} || make(makesum)
 DISTFILES+=	meshes.tar.gz
 EXTRACT_ONLY+=	meshes.tar.gz
 MESHES=		DEFAULT.medit ozark.gis part.bb part.mesh thepart.mesh
@@ -55,7 +59,7 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${MESHES:S|^|${WRKSRC}/INRIA.dir/|} ${STAGEDIR}${EXAMPLESDIR}
 .endif
