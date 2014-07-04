@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE  \
 		http://16degrees.com.au/${PORTNAME}/
 
-MAINTAINER=	gavin@16degrees.com.au
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	One-Time Password System (OTP) alternative to OPIE or S/Key
 
 LICENSE=	APACHE20

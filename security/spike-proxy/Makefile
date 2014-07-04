@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.immunitysec.com/downloads/
 DISTNAME=	SP${PORTVERSION:tl:C/\.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Tool for looking for vulnerabilities in web applications
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl

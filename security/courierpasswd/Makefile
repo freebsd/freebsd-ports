@@ -6,7 +6,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/
 
-MAINTAINER=	andrew@arda.homeunix.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	User authentication and password changing utility
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base

@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://openpgp.nominet.org.uk/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	OpenPGP SDK
 
 BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg

@@ -6,7 +6,7 @@ PORTVERSION=	4.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	jos@catnook.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	File integrity verification program
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -8,7 +8,7 @@ CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
 USE_RC_SUBR=	YES

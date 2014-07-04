@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.phenoelit-us.org/hp/
 DISTNAME=	libPJL-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Printer Job Language library and tool
 
 NO_WRKSUBDIR=	yes

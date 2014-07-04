@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	The Shmoo client/server host integrity checker
 
 OPTIONS_DEFINE=	OSIRISMD OSIRISD PRINTDB CLI

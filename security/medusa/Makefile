@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 
 OPTIONS_DEFINE=	SVN PGSQL DOCS

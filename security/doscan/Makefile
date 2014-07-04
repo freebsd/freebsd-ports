@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre

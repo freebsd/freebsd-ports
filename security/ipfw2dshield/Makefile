@@ -6,7 +6,7 @@ PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.dynamical-systems.org/ipfw/
 
-MAINTAINER=	frank@dynamical-systems.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	DShield client for ipfw logs
 
 PORTDOCS=	CHANGES README.html README.txt

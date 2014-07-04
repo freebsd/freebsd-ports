@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Console password management application based on gpg(me)
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
