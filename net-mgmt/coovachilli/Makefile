@@ -25,13 +25,13 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	coovachilli
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_MAN} ${FILESDIR}/main.conf.sample ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_MAN} ${FILESDIR}/pf.conf.sample ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_MAN} ${FILESDIR}/ipfw-config.sample ${STAGEDIR}/${EXAMPLESDIR}
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
