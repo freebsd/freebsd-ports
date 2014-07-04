@@ -30,6 +30,8 @@ MAN1=		${PORTNAME}.1
 
 LINGUAS=	`${LS} ${WRKSRC}/po/*.mo | ${XARGS} ${BASENAME} -s .mo`
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/${PORTNAME}.1.gz
 
@@ -53,11 +55,9 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/po/$${l}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/$${l}/LC_MESSAGES/${PORTNAME}.mo; \
 	done
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CHANGES DISCLAIMER README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

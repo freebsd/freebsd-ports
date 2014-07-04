@@ -20,6 +20,8 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PORTDOCS=	README LICENSE ChangeLog
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -37,11 +39,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}_lite
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .       for i in ${PORTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .       endfor
-.endif
 
 .include <bsd.port.post.mk>

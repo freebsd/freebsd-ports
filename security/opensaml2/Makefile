@@ -24,13 +24,17 @@ CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} \
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
 		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    ${WRKSRC}/configure
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.in
 .endif
 
