@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/rel_2.0
 
-MAINTAINER=	novator24@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	C++ test coverage analyzer
 
 WRKSRC=	        ${WRKDIR}

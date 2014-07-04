@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 
 TGTARCH=	arm
 TGTABI=		eabi

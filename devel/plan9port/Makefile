@@ -7,7 +7,7 @@ CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Port of many Plan 9 programs to Unix-like operating systems
 
 LICENSE=	LUCENT

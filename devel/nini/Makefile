@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	nini/Nini/${PORTVERSION}
 DISTNAME=	Nini-${PORTVERSION}
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	NET configuration library
 
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono

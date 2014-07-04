@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
-MAINTAINER=	waitman@waitman.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	C++ 2.4 Driver for MongoDB
 
 LICENSE=	APACHE20

@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gazpacho/0.7
 
-MAINTAINER=	gustavofukao@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	GUI builder for the GTK+ toolkit
 
 RUN_DEPENDS=	${LOCALBASE}/bin/kiwi-i18n:${PORTSDIR}/x11-toolkits/py-kiwi

@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GeSHi%20${PORTVERSION}
 PKGNAMEPREFIX=	php5-
 DISTNAME=	GeSHi-${PORTVERSION}
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Native PHP syntax highlighting engine
 
 WRKSRC=		${WRKDIR}/geshi

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/p/publib/
 DISTNAME=	publib_${PORTVERSION}.orig
 
-MAINTAINER=	never@nevermind.kiev.ua
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Publib is a library of C functions for various purposes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

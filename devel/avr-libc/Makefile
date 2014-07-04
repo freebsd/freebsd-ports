@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	joerg@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	C and math library for the Atmel AVR controller family
 
 LICENSE=	BSD

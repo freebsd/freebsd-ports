@@ -8,7 +8,7 @@ MASTER_SITES=	# empty
 PKGNAMEPREFIX=	node-
 DISTFILES=	# empty
 
-MAINTAINER=	komarov@valerka.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Node.js bindings for the Apache Thrift RPC system
 
 RUN_DEPENDS=		node:${PORTSDIR}/www/node

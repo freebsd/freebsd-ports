@@ -9,7 +9,7 @@ MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}-qt${QT4_VERSION:R}+${PORTVERSION}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Python bindings for the Qt applications and UI framework
 
 LICENSE=	LGPL21

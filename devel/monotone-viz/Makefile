@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://oandrieu.nerim.net/monotone-viz/
 
-MAINTAINER=	lapo@lapo.it
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Visual interface for Monotone VCS with revision graphs
 
 LICENSE=	GPLv2

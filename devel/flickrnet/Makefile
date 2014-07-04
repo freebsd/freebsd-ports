@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://romain.blogreen.org/distfiles/
 DISTNAME=	FlickrNet${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}-Src-48055
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Flickr .Net API Library
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono

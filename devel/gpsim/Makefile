@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Software simulator for Microchip PIC microcontrollers
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \

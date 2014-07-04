@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/sunpoet
 DISTNAME=	${PORTNAME}-${PORTVERSION}.${SNAPSHOT}
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Lightweight JS unit testing using the V8 engine
 
 LICENSE=	APACHE20

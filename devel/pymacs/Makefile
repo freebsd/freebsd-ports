@@ -6,7 +6,7 @@ PORTVERSION=	0.25
 CATEGORIES=	devel editors python elisp
 MASTER_SITES=	http://github.com/pinard/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 
-MAINTAINER=	mwm@mired.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Python package for scripting emacs
 
 USE_PYTHON=	yes
