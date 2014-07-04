@@ -41,23 +41,22 @@ USES=		gmake
 
 DOCS=		README doc/arpackpp.ps.gz doc/bugs.txt doc/structure.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${FIND} ${WRKSRC}/include -name "*.orig" -delete
 	@${FIND} ${WRKSRC}/examples -name "*.orig" -delete
-.if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g"	\
 		-e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/Makefile.inc
 	@${FIND} ${WRKSRC}/examples -name Makefile |	\
 	${XARGS} ${REINPLACE_CMD} -e "s|../../../Makefile.inc|../../Makefile.inc|" \
 				-e 's|$$(ARPACKPP_DIR)/examples|${EXAMPLESDIR}|'
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ARPACK++
 	@for inc in `${LS} ${WRKSRC}/include` ; do \
 		${INSTALL_DATA} ${WRKSRC}/include/$$inc ${STAGEDIR}${PREFIX}/include/ARPACK++; \
 	done
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
@@ -68,7 +67,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/Makefile.inc ${STAGEDIR}${EXAMPLESDIR}
 	@${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.endif
 
 .if defined(MAINTAINER_MODE)
 test:	install

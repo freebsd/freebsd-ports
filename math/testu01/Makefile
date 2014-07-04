@@ -26,19 +26,23 @@ CFLAGS+=	-fPIC
 PLIST_SUB=	PORTNAME="${PORTNAME}"
 CONFLICTS=	emboss-[0-9]*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|return|& (0)|' ${WRKSRC}/testu01/fftc.c
-.ifdef(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e  '/^SUBDIRS \=/s/ doc / /' ${WRKSRC}/Makefile.in
 	@${FIND} -X ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} \
 	-e '/^install-data-am\: /s/install-docDATA//'
 .endif
-.ifdef(NOPORTEXAMPLES)
+.if empty(PORT_OPTIONS:MEXAMPLES)
 	@${REINPLACE_CMD} -e  '/^SUBDIRS \=/s/ examples / /' ${WRKSRC}/Makefile.in
 .endif
 
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/testu01.pdf ${STAGEDIR}${DOCSDIR}

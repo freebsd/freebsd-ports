@@ -22,8 +22,12 @@ USES=		libtool gmake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 pre-configure:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e "s|src html eg config|src config|"		\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-docDATA install-examplesDATA||"	\

@@ -20,7 +20,7 @@ HEADERS=	blas_dense_proto.h blas_enum.h blas_extended.h \
 		blas_extended_private.h blas_extended_proto.h blas_fpu.h \
 		blas_malloc.h f2c-bridge.h
 MAKE_ENV=	EXTRA_LIBS="-lm" LINKER="${CC}" M4="${M4}" RANLIB="${RANLIB}"
-OPTIONS_DEFINE=	SHARED STATIC
+OPTIONS_DEFINE=	SHARED STATIC DOCS
 OPTIONS_DEFAULT=	SHARED
 SHARED_DESC=	Build a shared library and PIC archive
 STATIC_DESC=	Build a non-PIC archive
@@ -45,9 +45,7 @@ PICFLAG=	-fPIC
 PICFLAG=	-fpic
 .endif
 
-.ifndef(NOPORTDOCS)
 PORTDOCS=	report.ps
-.endif
 
 .if ${PORT_OPTIONS:MSHARED}
 PLIST_FILES+=	lib/libxblas_pic.a lib/libxblas.so lib/libxblas.so.${SHLIB_MAJOR}
@@ -97,7 +95,7 @@ do-install:
 .if ${PORT_OPTIONS:MSTATIC}
 	@${INSTALL_DATA} ${WRKSRC}_STATIC/libxblas.a ${STAGEDIR}${PREFIX}/lib
 .endif
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/report.ps ${STAGEDIR}${DOCSDIR}
 .endif

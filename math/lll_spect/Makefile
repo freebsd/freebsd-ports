@@ -23,6 +23,8 @@ NO_WRKSUBDIR=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-extract:
 .for _file in lll_spect lll_search
 	@${CP} ${_DISTDIR}/${_file}.C ${WRKDIR}
@@ -38,10 +40,8 @@ do-install:
 .for _file in lll_spect lll_search
 	${INSTALL_PROGRAM} ${WRKDIR}/${_file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${_DISTDIR}/examples.txt ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 test: build
 	@${WRKSRC}/lll_spect "${WRKSRC}/output_spect" 17 16907 2147483647

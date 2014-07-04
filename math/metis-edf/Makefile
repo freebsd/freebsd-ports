@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME:C|-edf||}-${PORTVERSION:R}
 
 DOCS=		CHANGES Doc/manual.ps
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 
@@ -27,17 +29,13 @@ MACHINEARCH=	${ARCH}
 USE_LDCONFIG=	yes
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for df in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${df} ${STAGEDIR}${DOCSDIR}
 . endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Graphs/* ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/Graphs/mtest ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 regression-test:
 	(cd ${WRKSRC}/Graphs && LD_LIBRARY_PATH=${WRKSRC} ./mtest 4elt.graph || ${TRUE})

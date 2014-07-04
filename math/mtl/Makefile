@@ -22,6 +22,8 @@ USES=		perl5
 USE_PERL5=	build
 WRKSRC =	${WRKDIR}/${DISTNAME:R}
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e '/gnu\*)/,/;;/{/CXX=/d; /CXX_OPTIMIZE_FLAGS=/d; \
 	s/CXXFLAGS="/&$$ac_cv_env_CXXFLAGS_value /; }' \
@@ -44,7 +46,6 @@ fulltest: build
 CXXFLAGS+=	-fpermissive
 .endif
 
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 
 post-install:

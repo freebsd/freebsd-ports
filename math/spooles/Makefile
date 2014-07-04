@@ -11,11 +11,6 @@ PKGNAMESUFFIX=	-mpich
 .endif
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-.ifndef NOPORTDOCS
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} AllInOne.ps.gz Eigen.ps.gz \
-	 	Install.ps.gz LinSol.ps.gz Ordering.ps.gz \
-		PP99.ps.gz ReferenceManual.ps.gz
-.endif
 DIST_SUBDIR=	spooles
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -40,6 +35,12 @@ CONFLICTS=	spooles-mpich-2*
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} AllInOne.ps.gz Eigen.ps.gz \
+	 	Install.ps.gz LinSol.ps.gz Ordering.ps.gz \
+		PP99.ps.gz ReferenceManual.ps.gz
+.endif
+
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
 .else
@@ -47,6 +48,8 @@ PICFLAG?=	-fpic
 .endif
 
 .SILENT:
+
+OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 .if !defined(WITH_MPI)
