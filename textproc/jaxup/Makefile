@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	DOCS
 
 USE_ANT=	yes
 ALL_TARGET=	jar
-DOCS_ALL_TARGET=${ALL_TARGET} docs
+DOCS_ALL_TARGET=docs
 
 PLIST_FILES+=	%%DATADIR%%/jaxup-xupdater.jar bin/jaxup-xupdater \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
