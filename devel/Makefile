@@ -147,7 +147,6 @@
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
     SUBDIR += bufferpool
-    SUBDIR += bug-buddy
     SUBDIR += bugzilla44
     SUBDIR += build
     SUBDIR += buildbot

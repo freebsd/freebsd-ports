@@ -170,7 +170,6 @@
     SUBDIR += libdvdnav
     SUBDIR += libdvdread
     SUBDIR += libfame
-    SUBDIR += libgnome-media-profiles
     SUBDIR += libkate
     SUBDIR += libmatroska
     SUBDIR += libmediaart

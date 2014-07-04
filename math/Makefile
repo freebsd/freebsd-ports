@@ -133,7 +133,6 @@
     SUBDIR += galculator
     SUBDIR += gambit
     SUBDIR += gap
-    SUBDIR += gcalctool
     SUBDIR += gdcalc
     SUBDIR += geg
     SUBDIR += geogebra-i18n
