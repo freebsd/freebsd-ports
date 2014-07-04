@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-PORTVERSION=	1.5.8
-PORTREVISION=	2
+PORTVERSION=	1.5.9
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -72,6 +71,10 @@ LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
 USES+=	fortran
 . endif
 
+. if defined(WITH_XSHM)
+USE_XORG+=	xext
+. endif
+
 DOCBASE=	README.txt
 PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros		\
@@ -118,6 +121,11 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|#CIMG_LAPACK_CFLAGS|CIMG_LAPACK_CFLAGS|'	\
 		-e 's|#CIMG_LAPACK_LDFLAGS|CIMG_LAPACK_LDFLAGS|'	\
 		-e 's|-lblas -llapack|${LAPACK_LIB}|'			\
+		${BUILD_WRKSRC}/Makefile
+. endif
+. if defined(WITH_XSHM)
+	${REINPLACE_CMD} -e 's|CIMG_XSHM_CFLAGS = #|CIMG_XSHM_CFLAGS =|'	\
+		-e 's|CIMG_XSHM_LDFLAGS = #|CIMG_XSHM_LDFLAGS =|'		\
 		${BUILD_WRKSRC}/Makefile
 . endif
 	${REINPLACE_CMD} -e 's|-pedantic|${CFLAGS}|'			\
