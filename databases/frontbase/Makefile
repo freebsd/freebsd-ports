@@ -24,6 +24,8 @@ SUB_FILES+=	pkg-message
 
 ONLY_FOR_ARCHS=	i386
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 # Binary is built for 5.X :
 LIB_DEPENDS+=	libc.so.5:${PORTSDIR}/misc/compat5x
@@ -47,10 +49,8 @@ do-install:
 .endfor
 	@(cd ${WRKSRC}/FrontBase/bin && ${COPYTREE_BIN} \* \
 		${PREFIX}/FrontBase/bin/)
-.if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}/FrontBase/Documentation && \
 		${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
 	@(cd ${WRKSRC}/FrontBase/include && ${CP} -R * \
 		${PREFIX}/include)
 	@(cd ${WRKSRC}/FrontBase/lib && ${CP} -R * \

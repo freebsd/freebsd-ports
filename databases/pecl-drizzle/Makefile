@@ -22,24 +22,15 @@ DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 NO_STAGE=	yes
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 PORTDOCS=	README EXPERIMENTAL ChangeLog CREDITS
-
-post-install::
-		@${MKDIR} ${DOCSDIR}
-		@cd ${WRKSRC} && ${INSTALL} ${PORTDOCS} ${DOCSDIR}
-.else
-PORTDOCS=
-.endif
-
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	drizzle.php
 
-post-install::
+post-install:
+		@${MKDIR} ${DOCSDIR}
+		@cd ${WRKSRC} && ${INSTALL} ${PORTDOCS} ${DOCSDIR}
 		@${MKDIR} ${EXAMPLESDIR}
 		@cd ${WRKSRC} && ${INSTALL} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.else
-PORTEXAMPLES=
-.endif
 
 .include <bsd.port.mk>

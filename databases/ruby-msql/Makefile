@@ -29,11 +29,12 @@ DOCS_EN=	readme.en.txt doc/en/*
 DOCS_JA=	readme.ja.txt
 
 NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-configure:
 	${ECHO_CMD} '#define INST_DIR "${LOCALBASE}"' >> ${WRKSRC}/site.h
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
@@ -45,6 +46,5 @@ post-install:
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 
 .include <bsd.port.mk>
