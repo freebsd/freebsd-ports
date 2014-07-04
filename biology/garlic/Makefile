@@ -18,38 +18,36 @@ USES=		gmake
 USE_XORG=	x11
 ALL_TARGET=	# empty
 
-.if defined(WITH_OPTIMIZED_FLAGS)
+OPTIONS_DEFINE=	DOCS EXAMPLES OPTIMIZED_CFLAGS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 .if (${ARCH} == "i386")
 CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ;\
 	s|%%CC%%|${CC}|g ; \
 	s|%%CFLAGS%%|${CFLAGS}|g'  ${WRKSRC}/Makefile
-.if !defined(WITH_OPTIMIZED_FLAGS)
-	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-.endif
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/garlic       ${PREFIX}/bin
-	${INSTALL_DATA}    ${WRKSRC}/.garlicrc    ${DATADIR}
-	${INSTALL_DATA}    ${WRKSRC}/residues.pdb ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA}    ${WRKSRC}/*.pdb        ${EXAMPLESDIR}
-	@${INSTALL_DATA}    ${WRKSRC}/*.script     ${EXAMPLESDIR}
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${WRKDIR}/doc
-	@(cd ${WRKDIR}/doc ; ${TAR} xfz ${DISTDIR}/${DISTNAME}-doc${EXTRACT_SUFX} )
-	@${TAR} -C ${WRKDIR}/doc/${DISTNAME} -cf - .  | \
-		${TAR} -C ${DOCSDIR} -xf -
-	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.endif
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/garlic       ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA}    ${WRKSRC}/.garlicrc    ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA}    ${WRKSRC}/residues.pdb ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}    ${WRKSRC}/*.pdb        ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}    ${WRKSRC}/*.script     ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${WRKDIR}/doc
+	(cd ${WRKDIR}/doc ; ${TAR} xfz ${DISTDIR}/${DISTNAME}-doc${EXTRACT_SUFX} )
+	${TAR} -C ${WRKDIR}/doc/${DISTNAME} -cf - .  | \
+		${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
+	${FIND} ${STAGEDIR}${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${FIND} ${STAGEDIR}${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>

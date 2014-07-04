@@ -95,7 +95,9 @@ ALL_TARGET=	firebird_basic libfbembed libfbclient embed_isql embed_gpre \
 USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql-fb qli
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 FB_DOCS_FILES=	WhatsNew README.* Firebird* ReleaseNotes.pdf ambiguity.txt \
 		ods11-index-structure.html
@@ -104,6 +106,8 @@ FB_DOCS_DIRS=	sql.extensions license upgrade
 .endif
 
 MAKE_ENV+=	FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
+
+OPTIONS_DEFINE=	DOCS
 
 NO_STAGE=	yes
 post-extract:
@@ -215,7 +219,7 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/*.msg ${DATADIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${FB_DOCS_DIRS:S!^!${DOCSDIR}/!}
 	@${INSTALL_DATA} ${FB_DOCS_FILES:S!^!${WRKSRC}/doc/!} ${DOCSDIR}

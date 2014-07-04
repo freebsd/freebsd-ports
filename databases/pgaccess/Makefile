@@ -24,6 +24,8 @@ TCLVERSION?=	8.4
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
 PGACCESSDIR=	${PREFIX}/share/postgresql/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin,${PREFIX}/bin,g ; " ${WRKSRC}/lib/mainlib.tcl
@@ -47,12 +49,10 @@ do-install:
 .for targetfile in pgaccess pgmonitor
 	${INSTALL_SCRIPT} ${WRKDIR}/${targetfile}.sh ${PREFIX}/bin/${targetfile}
 .endfor
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ; \
 	 cd ${WRKSRC}/doc/html ;\
 	 ${TAR} cf - * | \
 	 ( cd ${DOCSDIR}; ${TAR} xf - ) ; \
 	 ${CHOWN} -R 0:0 ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

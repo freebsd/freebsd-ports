@@ -29,6 +29,8 @@ MSQLDATA=	directory.mm dll_os2.mm install.mm lex.mm libinstall.mm \
 DOCS=		README RELEASE_NOTES BUGS doc/License doc/Manual \
 		doc/Perl doc/acl.txt
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 post-patch:
 		cd ${FILESDIR}; \
@@ -58,12 +60,10 @@ post-install:
 	    ${INSTALL_SCRIPT} ${WRKSRC}/src/makegen/${i} ${DATADIR}/makegen
 .endfor
 	    ${INSTALL_SCRIPT} ${WRKSRC}/src/site.mm ${DATADIR}/makegen
-.if !defined(NOPORTDOCS)
 	    ${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	    ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.pre.mk>
 

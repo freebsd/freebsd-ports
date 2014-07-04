@@ -29,12 +29,16 @@ CONFIGURE_ARGS=		--enable-compat185 --enable-dump185 \
 			--libdir=${PREFIX}/lib/${PORTNAME} \
 			--bindir=${PREFIX}/bin/${PORTNAME}
 INSTALL_TARGET=		install_include install_lib install_utilities
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_INSTALL_TARGET=	${INSTALL_TARGET} install_docs docdir=${DOCSDIR}
 PORTDOCS=		*
-.endif
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 pre-patch:
 	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
@@ -49,7 +53,7 @@ post-install:
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
 	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBVER}.so
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${RMDIR} ${DOCSDIR}/ref/splash 2>/dev/null || :
 .endif
 	cd ${PREFIX}/bin/${PORTNAME} ; \

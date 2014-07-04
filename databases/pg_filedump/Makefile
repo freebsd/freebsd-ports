@@ -14,7 +14,6 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-8.4.0
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 BROKEN=		Does not compile
@@ -25,11 +24,9 @@ post-patch:
 	${REINPLACE_CMD} -e "s|8.4.0|${PG84VER}|" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pg_filedump ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.pg_filedump ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/pg_filedump ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.pg_filedump ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
