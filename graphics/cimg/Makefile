@@ -33,7 +33,11 @@ MAKE_ENV=	X11PATH=${LOCALBASE} LOCALBASE=${LOCALBASE}
 CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 USES+=		gmake
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:${PORTSDIR}/graphics/libboard
@@ -83,7 +87,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 . if !defined(WITHOUT_LAPACK)
 .  if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -100,7 +104,7 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -llapack -lblas
 .endif
 
 pre-configure:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|make|${MAKE_CMD}|' ${BUILD_WRKSRC}/Makefile
 .else
 	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
@@ -121,13 +125,13 @@ pre-configure:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/CImg.h ${STAGEDIR}${PREFIX}/include
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_PROGRAM} ${PROGS:C|^|${BUILD_WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCBASE:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${STAGEDIR}${EXAMPLESDIR} && ${MAKE_CMD} clean)

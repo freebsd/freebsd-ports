@@ -41,15 +41,13 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's| -r %F||' \
 		${WRKSRC}/gqview.desktop
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's|doc$$||' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gqview.png ${STAGEDIR}${PREFIX}/share/pixmaps
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -17,7 +17,8 @@ USES=		perl5
 USE_PERL5=	modbuild
 USE_EFL=	imlib2
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 PORTDOCS=	CHANGES
 EXAMPLES=	examples/benchmark.pl examples/benchmark.txt examples/maeda.pl
 
@@ -28,6 +29,5 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.endif
 
 .include <bsd.port.mk>

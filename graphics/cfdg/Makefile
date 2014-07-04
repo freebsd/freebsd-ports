@@ -24,15 +24,13 @@ USES=		gmake
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/cfdg
 
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
-.endif
+
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cfdg ${STAGEDIR}${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/input/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
