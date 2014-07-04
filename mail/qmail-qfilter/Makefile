@@ -17,6 +17,8 @@ BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 
 DOCS=		NEWS README TODO
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-configure:
 	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${STAGEDIR}${MANPREFIX}/man" > ${WRKSRC}/conf-man
@@ -28,9 +30,7 @@ do-configure:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} samples/* ${STAGEDIR}${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

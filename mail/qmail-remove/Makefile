@@ -16,6 +16,8 @@ PORTDOCS=	INSTALL LICENSE README
 USES=		shebangfix
 SHEBANG_FILES=	populate.pl
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@(cd ${WRKSRC} ;\
 	${ECHO_MSG} "Compiling ${PORTNAME}:" ; \
@@ -26,11 +28,9 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/populate.pl \
 	${STAGEDIR}${PREFIX}/bin/populate-qmail-queue.pl
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

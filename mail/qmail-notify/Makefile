@@ -15,6 +15,8 @@ CFLAGS+=	-DHAVE_SRANDOM
 DOCS=		NEWS README TODO
 EXAMPLES=	cron.hourly message.txt
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-configure:
 	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
@@ -24,9 +26,7 @@ do-install:
 	cd ${WRKSRC} && ./installer
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

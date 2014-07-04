@@ -1,9 +1,9 @@
 %%PERL5_MAN3%%/POE::Component::Client::POP3.3.gz
 %%SITE_PERL%%/POE/Component/Client/POP3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/POP3/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/term.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/test.perl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/term.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.perl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/POP3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component

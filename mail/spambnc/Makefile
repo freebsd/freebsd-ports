@@ -25,7 +25,11 @@ PLIST=		${WRKDIR}/.pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 MASTER_SITES+=	http://www.spambouncer.org/configure/:upg
 DISTFILES+=	upgrading.shtml:upg
 PORTDOCS=	documentation.html upgrading.html loglevels.txt
@@ -48,7 +52,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
 	${RM} -rf ${STAGEDIR}${DATADIR}/docs
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickstart.shtml \
 		${STAGEDIR}${DOCSDIR}/documentation.html
