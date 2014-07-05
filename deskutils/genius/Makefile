@@ -17,7 +17,7 @@ LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
-		shared-mime-info tar:xz
+		readline shared-mime-info tar:xz
 USE_GNOME=	gnomedocutils gnomeprefix gtksourceview2 gnomevfs2 vte
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
