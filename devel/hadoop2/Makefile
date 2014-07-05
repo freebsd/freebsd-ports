@@ -44,7 +44,7 @@ USERS=          ${HDFS_USER} ${MAPRED_USER}
 GROUPS=         ${HADOOP_GROUP}
 
 SUB_FILES=	hadoop-layout.sh
-USE_RC_SUBR=    resourcemanager nodemanager datanode namenode secondarynamenode
+USE_RC_SUBR=    historyserver nodemanager resourcemanager webappproxyserver datanode namenode secondarynamenode
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
 		HADOOP_LOGDIR="${HADOOP_LOGDIR}" \
