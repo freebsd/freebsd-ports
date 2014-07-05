@@ -24,5 +24,6 @@ USES=		gmake pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lm
 
 .include <bsd.port.mk>
