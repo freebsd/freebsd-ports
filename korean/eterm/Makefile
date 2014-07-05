@@ -28,6 +28,8 @@ LIBS+=		-L${LOCALBASE}/lib
 MAN1=		Eterm.1
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
@@ -40,7 +42,7 @@ pre-patch:
 		${WRKSRC}/libmej/debug.c ${WRKSRC}/libmej/strings.c
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes \
 		${WRKSRC}/doc/Eterm_reference.html \

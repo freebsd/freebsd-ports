@@ -28,17 +28,12 @@ PLIST_SUB+=	MKTEXLSR=${MKTEXLSR} \
 		UPDMAP_SYS=${UPDMAP_SYS}
 DOCS=		COPYING LICENSE MANIFEST
 
-NO_STAGE=	yes
-do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
-	(cd ${WRKDIR}/fonts/ && ${COPYTREE_SHARE} \* ${TEXMF_FONTS})
-	(cd ${WRKDIR}/tex/ && ${COPYTREE_SHARE} \* ${TEXMF_TEX})
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${MKTEXLSR}
-	${UPDMAP_SYS} --enable Map=kotex-base.map
+do-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/fonts && ${COPYTREE_SHARE} . ${STAGEDIR}${TEXMF_FONTS})
+	(cd ${WRKDIR}/tex && ${COPYTREE_SHARE} . ${STAGEDIR}${TEXMF_TEX})
 
 .include <bsd.port.mk>
