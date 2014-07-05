@@ -34,11 +34,11 @@ start_precmd="nut_prestart"
 stop_postcmd="nut_poststop"
 
 nut_prestart() {
-	${nut_prefix}/libexec/nut/upsdrvctl start
+	${nut_prefix}/sbin/upsdrvctl start
 }
 
 nut_poststop() {
-	${nut_prefix}/libexec/nut/upsdrvctl stop
+	${nut_prefix}/sbin/upsdrvctl stop
 }
 
 extra_commands=reload
