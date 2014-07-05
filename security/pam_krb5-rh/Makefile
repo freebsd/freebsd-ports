@@ -3,6 +3,7 @@
 
 PORTNAME=	pam_krb5
 DISTVERSION=	2.4.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -16,26 +17,19 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	pam_krb5-4.*
 
-USES=		iconv
+USES=		iconv libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG} --without-afs \
-		--with-libintl-prefix=${LOCALBASE} --with-krb4=no \
-		--without-keyutils
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--without-afs --without-keyutils --without-krb4
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-LDFLAGS+=	-lintl
-USES+=		gettext
-.else
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=--disable-nls
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_LIBS=	-lintl
+NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/security|libdir)|g' ${WRKSRC}/src/Makefile.in
