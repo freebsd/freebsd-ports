@@ -34,7 +34,8 @@ PLIST_SUB+=	TEXHASH=${TEXHASH}
 DOCS=		ChangLog INSTALL LICENSE VERSION manifest.txt news-0.1.0.txt \
 		news-0.1.1.txt
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@${MKDIR} ${WRKDIR}/build
 	@${CC} ${CFLAGS} -o ${WRKDIR}/build/hbibtex \
@@ -46,36 +47,31 @@ do-build:
 	@${RM} -rf ${WRKDIR}/latex/utf/unfonts
 
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	@${MKDIR} ${KOTEX_DOC}
-	(cd ${WRKDIR}/doc/ && ${COPYTREE_SHARE} \* ${KOTEX_DOC})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${KOTEX_DOC}
+	(cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${KOTEX_DOC})
 
-	@${MKDIR} ${KOTEX_BIBTEX}
-	(cd ${WRKDIR}/bibtex/ && ${COPYTREE_SHARE} \* ${KOTEX_BIBTEX})
+	@${MKDIR} ${STAGEDIR}${KOTEX_BIBTEX}
+	(cd ${WRKDIR}/bibtex && ${COPYTREE_SHARE} . ${STAGEDIR}${KOTEX_BIBTEX})
 
-	@${MKDIR} ${KOTEX_LATEX}
-	(cd ${WRKDIR}/latex/ && ${COPYTREE_SHARE} \* ${KOTEX_LATEX})
+	@${MKDIR} ${STAGEDIR}${KOTEX_LATEX}
+	(cd ${WRKDIR}/latex && ${COPYTREE_SHARE} . ${STAGEDIR}${KOTEX_LATEX})
 
-	@${MKDIR} ${KOTEX_MKIDX}
-	(cd ${WRKDIR}/makeindex/ && ${COPYTREE_SHARE} \* ${KOTEX_MKIDX})
+	@${MKDIR} ${STAGEDIR}${KOTEX_MKIDX}
+	(cd ${WRKDIR}/makeindex && ${COPYTREE_SHARE} . ${STAGEDIR}${KOTEX_MKIDX})
 
-	@${MKDIR} ${KOTEX_PLAIN}
-	(cd ${WRKDIR}/plain/ && ${COPYTREE_SHARE} \* ${KOTEX_PLAIN})
+	@${MKDIR} ${STAGEDIR}${KOTEX_PLAIN}
+	(cd ${WRKDIR}/plain && ${COPYTREE_SHARE} . ${STAGEDIR}${KOTEX_PLAIN})
 
-	@${MKDIR} ${KOTEX_SFD}
-	(cd ${WRKDIR}/sfd/ && ${COPYTREE_SHARE} \* ${KOTEX_SFD})
+	@${MKDIR} ${STAGEDIR}${KOTEX_SFD}
+	(cd ${WRKDIR}/sfd && ${COPYTREE_SHARE} . ${STAGEDIR}${KOTEX_SFD})
 
-	@${MKDIR} ${KOTEX_UTIL}
-	@${INSTALL_SCRIPT} ${WRKDIR}/util/*.pl ${KOTEX_UTIL}
-	@${INSTALL_PROGRAM} ${WRKDIR}/build/* ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${KOTEX_UTIL}
+	@${INSTALL_SCRIPT} ${WRKDIR}/util/*.pl ${STAGEDIR}${KOTEX_UTIL}
+	@${INSTALL_PROGRAM} ${WRKDIR}/build/* ${STAGEDIR}${PREFIX}/bin
 
 	@${CHMOD} a+x ${WRKDIR}/util/*.pl
-	@${INSTALL_SCRIPT} ${WRKDIR}/util/*.pl ${PREFIX}/bin
-
-post-install:
-	${TEXHASH}
+	@${INSTALL_SCRIPT} ${WRKDIR}/util/*.pl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

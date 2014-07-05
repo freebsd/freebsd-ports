@@ -27,18 +27,12 @@ UPDMAP_SYS=	${PREFIX}/bin/updmap-sys
 PLIST_SUB+=	MKTEXLSR=${MKTEXLSR} \
 		UPDMAP_SYS=${UPDMAP_SYS}
 
-NO_STAGE=	yes
-do-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKDIR}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
-	(cd ${WRKDIR}/fonts/ && ${COPYTREE_SHARE} \* ${TEXMF_FONTS})
-	(cd ${WRKDIR}/tex/ && ${COPYTREE_SHARE} \* ${TEXMF_TEX})
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${MKTEXLSR}
-	${UPDMAP_SYS} --enable Map=kotex-extra-hlfont.map
-	${UPDMAP_SYS} --enable Map=kotex-extra.map
+do-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKDIR}/fonts && ${COPYTREE_SHARE} . ${STAGEDIR}${TEXMF_FONTS})
+	(cd ${WRKDIR}/tex && ${COPYTREE_SHARE} . ${STAGEDIR}${TEXMF_TEX})
 
 .include <bsd.port.mk>
