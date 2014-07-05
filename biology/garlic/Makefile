@@ -6,9 +6,6 @@ PORTVERSION=	1.6
 CATEGORIES=	biology
 MASTER_SITES=	http://www.zucic.org/sources/garlic-${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${DISTNAME}-doc${EXTRACT_SUFX}
-.endif
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
@@ -21,6 +18,10 @@ ALL_TARGET=	# empty
 OPTIONS_DEFINE=	DOCS EXAMPLES OPTIMIZED_CFLAGS
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	${DISTNAME}-doc${EXTRACT_SUFX}
+.endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
