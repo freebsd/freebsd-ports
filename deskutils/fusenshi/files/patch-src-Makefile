@@ -1,0 +1,19 @@
+--- src/Makefile.orig	2014-07-05 00:11:32.020240534 +0800
++++ src/Makefile	2014-07-05 00:12:26.524236990 +0800
+@@ -98,12 +98,12 @@ build: ${OBJ}
+ 	${CXX} ${CXXFLAGS} -o ${<:.cpp=.o} -c $<
+ 
+ install:
+-	install -c -m 755 ${TARGET} ${PREFIX}/bin/
+-	install -d -m 755 ${PACKAGE_DATA_DIR}/${TARGET}/pixmaps
++	install -c -m 755 ${TARGET} $(DESTDIR)${PREFIX}/bin/
++	install -d -m 755 $(DESTDIR)${PACKAGE_DATA_DIR}/${TARGET}/pixmaps
+ 	install -c -m 644 ../pixmaps/${TARGET}.xpm \
+-		${PACKAGE_DATA_DIR}/${TARGET}/pixmaps/
++		$(DESTDIR)${PACKAGE_DATA_DIR}/${TARGET}/pixmaps/
+ 	install -c -m 644 ../pixmaps/${TARGET}_small.xpm \
+-		${PACKAGE_DATA_DIR}/${TARGET}/pixmaps/
++		$(DESTDIR)${PACKAGE_DATA_DIR}/${TARGET}/pixmaps/
+ 
+ clean:
+ 	rm -f ${OBJ}

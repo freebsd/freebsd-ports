@@ -24,8 +24,7 @@ MAKE_ARGS+=	WITHOUT_SSL=yes
 LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .endif
 
-NO_STAGE=	yes
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/fusenshi
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fusenshi
 
 .include <bsd.port.mk>
