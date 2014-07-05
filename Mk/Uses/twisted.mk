@@ -67,7 +67,6 @@ web2_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web2/__init__.py:${PORTSDIR}/www/py-t
 web_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb
 words_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
 
-
 .for component in ${_TWISTED_ARGS}
 .  if ${_TWISTED_COMPONENTS:M${component}}==""
 IGNORE=	cannot install unknown twisted component ${component}
