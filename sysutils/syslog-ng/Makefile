@@ -3,13 +3,16 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.5.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	A powerful syslogd replacement
+COMMENT=	Powerful syslogd replacement
+
+LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -33,9 +36,7 @@ JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
 REDIS_DESC=		Build with Redis support
 
-LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
-
-USES=		gmake pkgconfig pathfix
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
@@ -47,6 +48,8 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-debug \
 		--datadir=${PREFIX}/share/syslog-ng/
 
+BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSYS_SSL} || ${PORT_OPTIONS:MPORTS_SSL}
@@ -54,19 +57,13 @@ USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--enable-ssl
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
 			OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
-PLIST_FILES+=		lib/syslog-ng/libafsocket-tls.la lib/syslog-ng/libafsocket-tls.so
+PLIST_FILES+=		lib/syslog-ng/libafsocket-tls.so
 .else
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
 .if ${PORT_OPTIONS:MPORTS_SSL}
 WITH_OPENSSL_PORT=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: gcc core dump
 .endif
 
 .if ${PORT_OPTIONS:MTCP_WRAPPERS}
@@ -102,7 +99,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 CONFIGURE_ARGS+=	--enable-geoip
 LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
 CONFIGURE_ENV+=		GEOIP_LIBS="-lGeoIP"
-PLIST_FILES+=		lib/syslog-ng/libtfgeoip.la lib/syslog-ng/libtfgeoip.so
+PLIST_FILES+=		lib/syslog-ng/libtfgeoip.so
 .else
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
@@ -110,7 +107,7 @@ CONFIGURE_ARGS+=	--disable-geoip
 .if ${PORT_OPTIONS:MREDIS}
 CONFIGURE_ARGS+=        --enable-redis
 LIB_DEPENDS+=           libhiredis.so:${PORTSDIR}/databases/hiredis
-PLIST_FILES+=           lib/syslog-ng/libredis.so lib/syslog-ng/libredis.la
+PLIST_FILES+=           lib/syslog-ng/libredis.so
 .else
 CONFIGURE_ARGS+=        --disable-redis
 .endif
@@ -119,7 +116,7 @@ CONFIGURE_ARGS+=        --disable-redis
 .if ${PORT_OPTIONS:MSMTP}
 CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
 LIB_DEPENDS+=		libesmtp.so:${PORTSDIR}/mail/libesmtp
-PLIST_FILES+=		lib/syslog-ng/libafsmtp.la lib/syslog-ng/libafsmtp.so
+PLIST_FILES+=		lib/syslog-ng/libafsmtp.so
 .else
 CONFIGURE_ARGS+=	--disable-smtp
 .endif
@@ -128,7 +125,7 @@ CONFIGURE_ARGS+=	--disable-smtp
 LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
-PLIST_FILES+=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
+PLIST_FILES+=		lib/syslog-ng/libafsql.so
 .else
 CONFIGURE_ARGS+=	--disable-sql
 .endif
@@ -136,7 +133,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .if ${PORT_OPTIONS:MJSON}
 LIB_DEPENDS+=		libjson.so:${PORTSDIR}/devel/json-c
 CONFIGURE_ARGS+=	--enable-json
-PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.la lib/syslog-ng/libjson-plugin.so
+PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 .else
 CONFIGURE_ARGS+=        --disable-json
 .endif
@@ -165,4 +162,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/scl/scl.conf.dist ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/lib/ivykis/src/include/iv*.h ${STAGEDIR}${PREFIX}/include/syslog-ng/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
