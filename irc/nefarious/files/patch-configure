@@ -1,11 +1,20 @@
---- configure.orig	2009-07-31 23:06:12.000000000 -0300
-+++ configure	2009-07-31 23:06:29.000000000 -0300
-@@ -10364,7 +10364,7 @@
+--- configure.orig	2008-08-04 02:56:02.000000000 +0000
++++ configure
+@@ -10364,7 +10364,7 @@ fi
  
    test -n "$BASH" && break
  done
 -test -n "$BASH" || BASH="/bin/bash"
-+test -n "$BASH" || BASH="/usr/local/bin/bash"
++test -n "$BASH" || BASH="@PREFIX@/bin/bash"
  
  
  { echo "$as_me:$LINENO: checking for posix non-blocking" >&5
+@@ -10783,7 +10783,7 @@ echo "${ECHO_T}OpenBSD ($host) found." >
+ 	OSDEP_C=os_openbsd.c
+ 	;;
+ 
+-    *-*bsd*)
++    *-*bsd*|*-dragonfly*)
+ 	{ echo "$as_me:$LINENO: result: Generic BSD ($host) found." >&5
+ echo "${ECHO_T}Generic BSD ($host) found." >&6; }
+ 	CFLAGS="-Wno-long-long $CFLAGS"
