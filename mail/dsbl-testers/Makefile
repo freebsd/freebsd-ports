@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.firestuff.org/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
-MAINTAINER= ports@FreeBSD.org
-COMMENT=	Testing software configured to work with DSBL/DSBL-compliant services
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Testing software for DSBL/DSBL-compliant services
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
 		${LOCALBASE}/include/firedns.h:${PORTSDIR}/dns/firedns
@@ -20,11 +20,12 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=	auth-relaytest.1 formmailtest.1 getcookie.1 httptest.1 \
-	relaytest.1 socks4test.1 socks5test.1 spamtrap.1
-MAN5=	dsbl.conf.5
+MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
+MPG1=	auth-relaytest.1 formmailtest.1 getcookie.1 httptest.1 \
+	relaytest.1 socks4test.1 socks5test.1 spamtrap.1
+MPG5=	dsbl.conf.5
+
 post-patch:
 	@-${RM} ${WRKSRC}/firemake/*.orig
 	@-${RM} ${WRKSRC}/firedns/firemake/*.orig
@@ -38,10 +39,11 @@ LOCAL_CONF_FILES=	conf/dsbl.conf
 
 do-install:
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} ${BINARY_FILES} ${PREFIX}/bin && \
-		${INSTALL_DATA} ${LOCAL_CONF_FILES} ${PREFIX}/etc
+		${INSTALL_PROGRAM} ${BINARY_FILES} \
+			${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_DATA} ${LOCAL_CONF_FILES} ${STAGEDIR}${PREFIX}/etc
 	cd ${WRKSRC}/man && \
-		${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
-		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5
+		${INSTALL_MAN} ${MPG1} ${STAGEDIR}${MAN1PREFIX}/man/man1 && \
+		${INSTALL_MAN} ${MPG5} ${STAGEDIR}${MAN5PREFIX}/man/man5
 
 .include <bsd.port.mk>
