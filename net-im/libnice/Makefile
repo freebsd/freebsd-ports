@@ -14,6 +14,7 @@ USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GETIFADDRS
 LDFLAGS+=	-L${LOCALBASE}/lib
 
