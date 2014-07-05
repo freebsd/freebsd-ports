@@ -3,7 +3,7 @@
 
 PORTNAME=	flyspray
 PORTVERSION=	0.9.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://flyspray.org/
 
@@ -21,13 +21,13 @@ NO_WRKSUBDIR=	yes
 
 DOS2UNIX_REGEX=	.php
 
-OPTIONS_DEFINE=	GRAPHVIZ MYSQL MYSQLI POSTGRES
+OPTIONS_DEFINE=	GRAPHVIZ MYSQL MYSQLI PGSQL
 OPTIONS_DEFAULT=	MYSQLI
 
 MYSQLI_DESC=	Use MySQLi Database Interface
-POSTGRES_DESC=	Use PostgreSQL Database Interface
 
 FLYSPRAYDIR=	${PREFIX}/share/${PORTNAME}
+FSINSTALLDIR=	${STAGEDIR}${FLYSPRAYDIR}
 ATTACHMENTDIR=	${DBDIR}/${PORTNAME}/attachments
 DBDIR=		/var/db
 
@@ -52,25 +52,12 @@ SUB_LIST+=	FLYSPRAYDIR="${FLYSPRAYDIR}" \
 		CHMOD="${CHMOD}" \
 		WWWGRP="${WWWGRP}" \
 		WWWOWN="${WWWOWN}"
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQLI}
-USE_PHP+=	mysqli
-.endif
-
-.if ${PORT_OPTIONS:MPOSTGRES}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MGRAPHVIZ}
-RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
-.endif
+MYSQL_USE=	PHP=mysql
+MYSQLI_USE=	PHP=mysqli
+PGSQL_USE=	PHP=pgsql
+GRAPHVIZ_RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 
 post-patch:
 	@${CP} ${PKGDIR}/files/README.FreeBSD ${WRKSRC}/docs/
@@ -83,27 +70,17 @@ post-patch:
 	@${RM} ${WRKSRC}/includes/fix.inc.php.bak
 
 do-install:
-	${MKDIR} ${FLYSPRAYDIR}
-	${CHMOD} 755 ${FLYSPRAYDIR}
+	${MKDIR} ${FSINSTALLDIR}
 	${CP} ${WRKSRC}/setup/upgrade/${PORTVERSION}/flyspray.conf.php ${WRKSRC}/flyspray.conf.php-dist
-	${TOUCH} ${FLYSPRAYDIR}/flyspray.conf.php
+	${TOUCH} ${FSINSTALLDIR}/flyspray.conf.php
 	cd ${WRKSRC} && \
 		${TAR} cf - ${FLYSPRAY_FILES} | \
-		(cd ${FLYSPRAYDIR} && ${TAR} -xf -)
-	${LN} -s ${ATTACHMENTDIR} ${FLYSPRAYDIR}/attachments
-	${LN} -s ${PREFIX}/share/adodb ${FLYSPRAYDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/cache ${FLYSPRAYDIR}/flyspray.conf.php
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-post-install: install-doc
-	@${CAT} ${PKGMESSAGE}
-
-install-doc:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+		(cd ${FSINSTALLDIR} && ${TAR} -xf -)
+	${LN} -sf ${ATTACHMENTDIR} ${FSINSTALLDIR}/attachments
+	${LN} -sf ${PREFIX}/share/adodb ${FSINSTALLDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
