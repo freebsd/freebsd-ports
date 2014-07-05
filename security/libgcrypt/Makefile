@@ -3,7 +3,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,9 +32,6 @@ PORTDOCS=	*
 
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
-
-.elif ${ARCH} == "armv6"
-USE_GCC=	any
 
 .elif ${ARCH} == "i386"
 .if (${OSVERSION} < 900033)
