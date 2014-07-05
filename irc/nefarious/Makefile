@@ -12,41 +12,46 @@ COMMENT=	IRC server used by evilnet based off of Undernet\'s ircu
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 PLIST_SUB+=	INSTALL_PREFIX=${INSTALL_PREFIX:S/${PREFIX}\///}
-MAN8=		ircd.8
 
-.if defined(WITH_OPENSSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-ssl
-.endif
+OPTIONS_DEFINE=	SSL CHROOT
+CHROOT_DESC=	Chroot the irc daemon within INSTALL_PREFIX
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+SSL_CONFIGURE_ENABLE=	ssl
 
-.if !defined(INSTALL_PREFIX)
+.include <bsd.port.options.mk>
+
+.if defined(NEFARIUS_INSTALL_PREFIX)
+INSTALL_PREFIX=${NEFARIUS_INSTALL_PREFIX}
+.else
 INSTALL_PREFIX=${PREFIX}/${PORTNAME}
 .endif
 
-.if defined(WITH_CHROOT)
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=	yes
+.endif
+
+.if ${PORT_OPTIONS:MCHROOT}
 CONFIGURE_ARGS+=	--with-chroot=${INSTALL_PREFIX}
 .endif
 
-.if defined(DOMAIN)
-CONFIGURE_ARGS+=	--with-domain=${DOMAIN}
+.if defined(NEFARIOUS_DOMAIN)
+CONFIGURE_ARGS+=	--with-domain=${NEFARIOUS_DOMAIN}
 .endif
 
-CONFIGURE_ARGS+=	--prefix=${INSTALL_PREFIX} --mandir=${MANPREFIX}/man --infodir=${PREFIX}/${INFO_PATH}
+CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${INSTALL_PREFIX} \
+			--mandir=${STAGEDIR}${MANPREFIX}/man
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' ${WRKSRC}/configure
 
 pre-configure:
-	@${ECHO_CMD} ""
+	@${ECHO_CMD}
 	@${ECHO_CMD} "User configurable options for ${PORTNAME}:"
-	@${ECHO_CMD} "INSTALL_PREFIX	-	Where to install all Nefarious files (default: PREFIX/Nefarious)"
-	@${ECHO_CMD} "WITH_OPENSSL	-	Compile with SSL support"
-	@${ECHO_CMD} "WITH_CHROOT	-	chroot the ircd within INSTALL_PREFIX"
-	@${ECHO_CMD} "DOMAIN		-	Domain to use for IRCd"
-	@${ECHO_CMD} ""
-	@sleep 5
+	@${ECHO_CMD} "NEFARIOUS_INSTALL_PREFIX - Install location for Nefarious (default: ${PREFIX}/Nefarious)"
+	@${ECHO_CMD} "NEFARIOUS_DOMAIN         - Domain to use for IRCd"
+	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

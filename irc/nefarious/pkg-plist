@@ -1,3 +1,4 @@
+man/man8/ircd.8.gz
 %%INSTALL_PREFIX%%/bin/ircd
 %%INSTALL_PREFIX%%/bin/chkconf
 %%INSTALL_PREFIX%%/lib/example.conf
