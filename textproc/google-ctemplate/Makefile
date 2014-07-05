@@ -3,7 +3,7 @@
 
 PORTNAME=	google-ctemplate
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	ctemplate
@@ -15,7 +15,8 @@ COMMENT=	Simple but powerful template language for C++
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig shebangfix
+SHEBANG_FILES=	src/template-converter
 USE_LDCONFIG=	yes
 
 BROKEN_powerpc=	Does not compile on powerpc
