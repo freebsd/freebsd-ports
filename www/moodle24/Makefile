@@ -10,6 +10,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Course management system based on social constructionism
 
+DEPRECATED=	Upstream support ended
+EXPIRATION_DATE=2014-10-05
+
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
