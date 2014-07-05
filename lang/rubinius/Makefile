@@ -2,9 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	rubinius
-PORTVERSION=	2.2.9
+PORTVERSION=	2.2.10
 CATEGORIES=	lang
-MASTER_SITES=	http://releases.rubini.us/
+MASTER_SITES=	http://releases.rubini.us/:source \
+		RG:gems
+DISTFILES=	redcard-1.1.0.gem:gems \
+		rubinius-bridge-1.0.8.gem:gems \
+		daedalus-core-0.0.3.gem:gems \
+		${DISTNAME}${EXTRACT_SUFX}:source
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	LLVM based ruby language implementation
@@ -31,8 +37,7 @@ CONFIGURE_ARGS=	-P "${PREFIX}" \
 		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius" \
 		--stagingdir "${STAGEDIR}${PREFIX}" --with-execinfo
 
-USE_BZIP2=	yes
-USES=		perl5 gmake
+USES=		perl5 gmake tar:bzip2
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_PERL5=	build
@@ -68,6 +73,11 @@ F_ARCH=		x86_64
 .elif ${ARCH} == "i386"
 F_ARCH=		x86
 .endif
+
+post-extract:
+.for DF in ${DISTFILES}
+	@${LN} -s ${DISTDIR}/${DF:C/:gems//g} ${WRKSRC}/vendor/cache/
+.endfor
 
 post-patch:
 	@${GREP} -Rl '#!.*ruby$$'  ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -e '/^#!.*ruby$$/s/ruby$$/${RUBY_NAME}/g'
