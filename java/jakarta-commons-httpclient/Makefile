@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A package implementing the client side of the HTTP standard
+COMMENT=	Package implementing the client side of the HTTP standard
 
 LICENSE=	APACHE20
 

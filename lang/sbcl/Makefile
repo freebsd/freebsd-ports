@@ -10,7 +10,7 @@ DISTFILES=	\
 	${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A Common Lisp development system derived from the CMU CL system
+COMMENT=	Common Lisp development system derived from the CMU CL system
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 

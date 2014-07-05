@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://cdn.bitbucket.org/dereckson/${PORTNAME}/downloads/
 
 MAINTAINER=	dereckson@gmail.com
-COMMENT=	An esoteric language
+COMMENT=	Esoteric language
 
 PLIST_FILES=	bin/malbolge
 OPTIONS_DEFINE=	DOCS

@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-server
 DISTNAME=	Canna${PORTVERSION:S/.//g}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A Kana-to-Kanji conversion system, binary part
+COMMENT=	Kana-to-Kanji conversion system, binary part
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

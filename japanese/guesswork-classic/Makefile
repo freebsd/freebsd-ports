@@ -8,7 +8,7 @@ CATEGORIES=	japanese devel
 MASTER_SITES=	http://classic.guesswork.jp/download/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PHP lightweight framework
+COMMENT=	PHP lightweight framework
 
 RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
 

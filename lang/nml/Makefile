@@ -9,7 +9,7 @@ MASTER_SITES=	http://ropas.snu.ac.kr/n/ \
 		http://ropas.kaist.ac.kr/n/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dialect/harmony of Standard ML of New Jersey and Objective Caml
+COMMENT=	Dialect/harmony of Standard ML of New Jersey and Objective Caml
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.92
 

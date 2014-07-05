@@ -11,7 +11,7 @@ DISTFILES=	platex-otf-${PORTVERSION}${EXTRACT_SUFX} \
 		platex-otf-manual-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A pLaTeX package for OpenType font support
+COMMENT=	pLaTeX package for OpenType font support
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		mktexlsr:${PORTSDIR}/japanese/ptex \

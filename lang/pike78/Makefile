@@ -10,7 +10,7 @@ MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 DISTNAME=	Pike-v${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A dynamic programming language with a syntax similar to C++
+COMMENT=	Dynamic programming language with a syntax similar to C++
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \

@@ -11,7 +11,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A meta port to install Free Pascal units
+COMMENT=	Meta port to install Free Pascal units
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	java-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-v${PORTVERSION:S|.||}-20050516-sources
 
 MAINTAINER=	eg@fbsd.lt
-COMMENT=	An LALR parser generator in Java
+COMMENT=	LALR parser generator in Java
 
 USE_JAVA=	yes
 USE_ANT=	yes

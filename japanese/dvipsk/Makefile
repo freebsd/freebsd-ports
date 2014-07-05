@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${TETEX_SRC}${EXTRACT_SUFX} \
 		dvipsk-${PORTVERSION}-p1.7a.tar.gz
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A DVI to PostScript translator + Japanese patch
+COMMENT=	DVI to PostScript translator + Japanese patch
 
 BUILD_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
 RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex

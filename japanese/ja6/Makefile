@@ -9,7 +9,7 @@ MASTER_SITES=	http://members.tripod.com/~so_o2/ \
 DISTVERSIONSUFFIX=	-bin
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A Japanese Symbols Trainer
+COMMENT=	Japanese Symbols Trainer
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64

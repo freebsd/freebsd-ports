@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	An implementation of Python Interpreter in Pure Java
+COMMENT=	Implementation of Python Interpreter in Pure Java
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

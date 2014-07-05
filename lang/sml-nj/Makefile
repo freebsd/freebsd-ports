@@ -17,7 +17,7 @@ DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
 EXTRACT_ONLY=	config.tar.Z
 
 MAINTAINER=	joemann@beefree.free.de
-COMMENT=	A popular functional language from Bell Labs
+COMMENT=	Popular functional language from Bell Labs
 
 BROKEN=		Fails to build
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.t3x.org/files/
 DISTNAME=	t3x-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A compiler for the minimum procedural language T3X
+COMMENT=	Compiler for the minimum procedural language T3X
 
 ONLY_FOR_ARCHS=	i386
 

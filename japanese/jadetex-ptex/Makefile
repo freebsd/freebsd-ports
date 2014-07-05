@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-ptex
 DISTNAME=	jadetex-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A pTeX backend for Jade, for typesetting SGML documents
+COMMENT=	PTeX backend for Jade, for typesetting SGML documents
 
 BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png

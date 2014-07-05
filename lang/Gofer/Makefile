@@ -9,7 +9,7 @@ MASTER_SITES=	http://web.cecs.pdx.edu/~mpj/goferarc/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A lazy functional language
+COMMENT=	Lazy functional language
 
 WRKSRC=		${WRKDIR}/src
 

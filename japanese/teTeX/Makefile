@@ -9,7 +9,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A meta port for teTeX suite for Japanese (including pTeX and JTeX)
+COMMENT=	Meta port for teTeX suite for Japanese (including pTeX and JTeX)
 
 USE_TEX=	base texmf dvipsk ptex
 .if !defined(WITHOUT_X11)

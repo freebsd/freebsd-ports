@@ -7,7 +7,7 @@ CATEGORIES=	japanese converters perl5
 MASTER_SITES=	CPAN
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A Perl5 module to handle Japanese character encodings
+COMMENT=	Perl5 module to handle Japanese character encodings
 
 USES=		perl5
 USE_PERL5=	configure

@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.gentleware.com/ \
 DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A popular UML CASE tool
+COMMENT=	Popular UML CASE tool
 
 USES=		zip
 USE_JAVA=	yes

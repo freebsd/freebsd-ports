@@ -11,7 +11,7 @@ DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A visual database query tool for Eclipse
+COMMENT=	Visual database query tool for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef

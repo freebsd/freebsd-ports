@@ -4,7 +4,7 @@
 CATEGORIES=	korean
 PKGNAMESUFFIX=	-server
 
-COMMENT=	A Japanese/Chinese/Korean input method (Korean server)
+COMMENT=	Japanese/Chinese/Korean input method (Korean server)
 
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-server
 PKGDIR=		${.CURDIR}

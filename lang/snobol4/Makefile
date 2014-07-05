@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ultimate.com/snobol/
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A port of Macro SNOBOL4, supports full SNOBOL4 plus SPITBOL
+COMMENT=	Port of Macro SNOBOL4, supports full SNOBOL4 plus SPITBOL
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

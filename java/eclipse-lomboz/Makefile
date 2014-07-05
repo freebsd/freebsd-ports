@@ -13,7 +13,7 @@ DISTNAME=	lomboz-emf-gef-jem-${PORTVERSION:S/.r/RC/}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A J2EE developer tool build as a plugin for the eclipse platform
+COMMENT=	J2EE developer tool build as a plugin for the eclipse platform
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 

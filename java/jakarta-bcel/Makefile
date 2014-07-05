@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
 PKGNAMEPREFIX=	jakarta-
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	A library for generating Java bytecode
+COMMENT=	Library for generating Java bytecode
 
 NO_BUILD=	yes
 USE_JAVA=	yes

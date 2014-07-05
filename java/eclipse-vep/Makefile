@@ -13,7 +13,7 @@ DISTNAME=	VE-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A framework for creating GUI builders for Eclipse
+COMMENT=	Framework for creating GUI builders for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf \

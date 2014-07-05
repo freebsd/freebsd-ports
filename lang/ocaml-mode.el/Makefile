@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	ocaml-mode-3.01
 
 MAINTAINER=	michael.grunewald@laposte.net
-COMMENT=	An EMACS mode for editing OCaml programs
+COMMENT=	EMACS mode for editing OCaml programs
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
