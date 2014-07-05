@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	nip2
-PORTVERSION=	7.40.1
+PORTVERSION=	7.40.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS
 
 OPTIONS_DEFINE=	DOCS
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libvips.so.38:${PORTSDIR}/graphics/vips \
 		libgoffice-*.so:${PORTSDIR}/devel/goffice \
 		libgsl.so:${PORTSDIR}/math/gsl \
 		libgvc.so:${PORTSDIR}/graphics/graphviz \
-		xml2:${PORTSDIR}/textproc/libxml2
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
 USES=		bison dos2unix gettext gmake pkgconfig
