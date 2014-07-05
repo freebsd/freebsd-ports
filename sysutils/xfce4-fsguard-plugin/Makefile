@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-fsguard-plugin
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -13,12 +13,12 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Panel plugin which displays free space of mountpoint
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 USE_XORG=	x11
-USES=		pkgconfig gmake
 
 OPTIONS_DEFINE= NLS
 
