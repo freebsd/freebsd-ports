@@ -17,7 +17,12 @@ LDFLAGS+=	-L${PREFIX}/lib
 
 DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	${CP} ${FILESDIR}/dhisd.sh ${WRKSRC}/dhisd.sh
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e "s^__PREFIX__^${PREFIX}^g" \
@@ -46,7 +51,7 @@ post-install:
 	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/dhisd.sh ${PREFIX}/etc/rc.d/dhisd.sh
 	@${ECHO_CMD} "etc/rc.d/dhisd.sh" >> ${TMPPLIST}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing documentation in ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 	@${CHMOD} 755 ${DOCSDIR}
@@ -63,7 +68,7 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} "For more information, see the following site:"
 	@${ECHO} "http://www.dhis.org/dhis/r5/"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} ""
 	@${ECHO} "or the files in ${DOCSDIR}"
 	@${ECHO} "Read INSTALL and INSTALL.bsd at least for the setup information of dhisd."

@@ -16,7 +16,12 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README THANKS TODO
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/main.c \
 		${WRKSRC}/INSTALL ${WRKSRC}/README ${WRKSRC}/checkdns.conf-dist
@@ -27,7 +32,7 @@ post-install:
 		${CP} -p ${PREFIX}/etc/checkdns.conf-dist ${PREFIX}/etc/checkdns.conf ; \
 	fi
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/$f ${DOCSDIR}
