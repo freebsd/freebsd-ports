@@ -3,6 +3,7 @@
 
 PORTNAME=	pdsh
 PORTVERSION=	2.28
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -11,9 +12,9 @@ COMMENT=	Parallel Distributed Shell
 
 LICENSE=	GPLv2
 
-USES=		perl5
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+# :keepla because port uses lt_dlopen
+USES=		libtool:keepla perl5 tar:bzip2
 USE_PERL5=	build
 
 OPTIONS_DEFINE=		SSH DSHGROUPS NETGROUP READLINE RSH
