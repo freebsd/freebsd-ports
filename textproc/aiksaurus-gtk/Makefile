@@ -1,12 +1,12 @@
 # $FreeBSD$
 
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc deskutils
 PKGNAMESUFFIX=	-gtk
 
-COMMENT=	A GTK+2 front-end for Aiksaurus, a thesaurus
+COMMENT=	GTK+2 front-end for Aiksaurus, a thesaurus
 
-LIB_DEPENDS=	Aiksaurus-1.2.0:${PORTSDIR}/textproc/aiksaurus
+LIB_DEPENDS=	libAiksaurus.so:${PORTSDIR}/textproc/aiksaurus
 
 MASTERDIR=	${.CURDIR}/../aiksaurus
 PKGDIR=		${.CURDIR}

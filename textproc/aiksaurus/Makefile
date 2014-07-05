@@ -3,24 +3,23 @@
 
 PORTNAME=	aiksaurus
 PORTVERSION=	1.2.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER?=	gnome@FreeBSD.org
-COMMENT?=	A set of libraries and applications which provide a thesaurus
+COMMENT?=	Set of libraries and applications which provide a thesaurus
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pathfix pkgconfig
 USE_CSTD=	gnu89
-USES=		pathfix gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^gaiksaurus_LDADD =/s/$$/ $$(GTK_LIBS)/' \
+		${WRKSRC}/gtk/src/Makefile.in
 
 .include <bsd.port.mk>
