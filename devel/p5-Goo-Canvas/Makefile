@@ -3,7 +3,7 @@
 
 PORTNAME=	Goo-Canvas
 PORTVERSION=	0.06
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,13 +18,16 @@ BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 		p5-ExtUtils-PkgConfig>=1:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
-LIB_DEPENDS=	libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
+LIB_DEPENDS=	libgoocanvas.so:${PORTSDIR}/graphics/goocanvas \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
-USE_GNOME=	gdkpixbuf
+USE_GNOME=	gdkpixbuf pango gtk20
 USE_PERL5=	configure build run
+USE_XORG=	xrender
 USES=		perl5
 
 MAKE_JOBS_UNSAFE=	yes
