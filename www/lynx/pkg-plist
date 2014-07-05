@@ -1,8 +1,6 @@
 bin/lynx
 @sample etc/lynx.cfg.sample
-etc/lynx.cfg
 @sample etc/lynx.lss.sample
-etc/lynx.lss
 man/man1/lynx.1.gz
 @exec mkdir -p %D/%%PORTDOCS%%/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
