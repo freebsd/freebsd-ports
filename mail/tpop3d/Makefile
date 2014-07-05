@@ -3,16 +3,17 @@
 
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	tpop3d
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL, PgSQL etc auth
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 CONFIGURE_ARGS=	--enable-auth-other \
 		--enable-tcp-wrappers \
 		--enable-tls \
@@ -31,8 +32,18 @@ MBOXINDICES_DESC=	Save Mbox indices
 DRAC_DESC=		DRAC RFC for POP-before-SMTP relaying
 FIX_PERLAUTH_DESC=	Only try it if perl-auth coredumps
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+DRAC_CONFIGURE_ENABLE=		drac
+MAILDIR_CONFIGURE_ENABLE=	mbox-maildir
+PERLAUTH_CONFIGURE_ENABLE=	auth-perl
+FLATAUTH_CONFIGURE_ENABLE=	auth-flatfile
+GDBMAUTH_CONFIGURE_ENABLE=	auth-gdbm
+PASSWDAUTH_CONFIGURE_ENABLE=	auth-passwd
+MBOXINDICES_CONFIGURE_ENABLE=	mbox-bsd-save-indices
+
+DRAC_BUILD_DEPENDS=		${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+GDBMAUTH_LIB_DEPENDS=		gdbm:${PORTSDIR}/databases/gdbm
+
+.include <bsd.port.options.mk>
 
 # MySQL authentication
 .if ${PORT_OPTIONS:MMYSQL}
@@ -58,34 +69,6 @@ CONFIGURE_ARGS+=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
 # Perl authentication
 .if ${PORT_OPTIONS:MPERLAUTH}
 USES+=			perl5
-CONFIGURE_ARGS+=	--enable-auth-perl
-.endif
-
-.if ${PORT_OPTIONS:MFLATAUTH}
-CONFIGURE_ARGS+=	--enable-auth-flatfile
-.endif
-
-.if ${PORT_OPTIONS:MGDBMAUTH}
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=	--enable-auth-gdbm
-.endif
-
-.if ${PORT_OPTIONS:MPASSWDAUTH}
-CONFIGURE_ARGS+=	--enable-auth-passwd
-.endif
-
-.if ${PORT_OPTIONS:MMAILDIR}
-CONFIGURE_ARGS+=	--enable-mbox-maildir
-.endif
-
-.if ${PORT_OPTIONS:MMBOXINDICES}
-CONFIGURE_ARGS+=	--enable-mbox-bsd-save-indices
-.endif
-
-.if ${PORT_OPTIONS:MDRAC}
-CONFIGURE_ARGS+=	--enable-drac
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
-LDFLAGS+=		-L${LOCALBASE}/lib
 .endif
 
 .if ${PORT_OPTIONS:MFIX_PERLAUTH}
@@ -93,14 +76,10 @@ EXTRA_PATCHES+=${PATCHDIR}/extra-patch-auth_perl.c
 .endif
 
 USE_RC_SUBR=	tpop3d
-DEFAULT_CONFIG=	${PREFIX}/etc/tpop3d.conf.dist
+DEFAULT_CONFIG=	${PREFIX}/etc/tpop3d.conf.sample
 
-MAN5=		tpop3d.conf.5
-MAN8=		tpop3d.8
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	CHANGES CREDITS FAQ HACKING INSTALL PORTABILITY \
        		README README.POP-before-SMTP README.auth_mysql TODO
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's,^CFLAGS =, CFLAGS = \@CFLAGS\@,' \
@@ -108,15 +87,15 @@ post-patch:
 	@${REINPLACE_CMD} 's,/etc/tpop3d,${PREFIX}/etc/tpop3d,g' \
 		${WRKSRC}/tpop3d.conf.5 ${WRKSRC}/tpop3d.8
 
-post-install:
-	${INSTALL_DATA} ${FILESDIR}/tpop3d.conf.dist ${DEFAULT_CONFIG}
-	@if [ ! -f ${PREFIX}/etc/tpop3d.conf ]; then			\
-		${INSTALL_DATA} ${FILESDIR}/tpop3d.conf.dist 		\
-			${PREFIX}/etc/tpop3d.conf ;			\
-	fi
+do-install:
+	${INSTALL_DATA} ${FILESDIR}/tpop3d.conf.dist \
+		${STAGEDIR}${DEFAULT_CONFIG}
+	${INSTALL_MAN} ${WRKSRC}/tpop3d.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/tpop3d.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/tpop3d ${STAGEDIR}${PREFIX}/sbin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
