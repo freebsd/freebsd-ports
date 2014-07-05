@@ -12,7 +12,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Python bindings for libevent
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 PROJECTHOST=	pyevent
 USE_PYTHON=	yes
