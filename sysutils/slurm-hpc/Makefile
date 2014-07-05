@@ -3,7 +3,7 @@
 
 PORTNAME=	slurm
 PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
@@ -21,11 +21,10 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		librrd.so:${PORTSDIR}/databases/rrdtool \
 		libhdf5.so:${PORTSDIR}/science/hdf5
 
-USE_BZIP2=	yes
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USES=		gmake libtool perl5 tar:bzip2
+USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USES=		perl5 gmake
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL GTK2
 
