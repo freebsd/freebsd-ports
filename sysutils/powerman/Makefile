@@ -3,7 +3,7 @@
 
 PORTNAME=	powerman
 PORTVERSION=	2.3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -12,9 +12,9 @@ COMMENT=	Tool for doing remote power control
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		perl5
+USES=		libtool perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-httppower --localstatedir=${DESTDIR}/var \
