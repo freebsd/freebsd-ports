@@ -15,7 +15,7 @@ COMMENT=	OpenSMTPD is a free MTA
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libevent-1.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 OPTIONS_DEFINE=	CA_BUNDLE PAM SQLITE MYSQL PGSQL LDAP REDIS
 
