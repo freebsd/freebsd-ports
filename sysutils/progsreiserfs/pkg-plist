@@ -19,15 +19,13 @@ include/reiserfs/reiserfs.h
 include/reiserfs/segment.h
 include/reiserfs/tools.h
 include/reiserfs/tree.h
-lib/libdal-0.3.so
 lib/libdal-0.3.so.0
+lib/libdal-0.3.so.0.0.1
 lib/libdal.a
-lib/libdal.la
 lib/libdal.so
-lib/libreiserfs-0.3.so
 lib/libreiserfs-0.3.so.0
+lib/libreiserfs-0.3.so.0.0.1
 lib/libreiserfs.a
-lib/libreiserfs.la
 lib/libreiserfs.so
 man/man8/cpfs.reiserfs.8.gz
 man/man8/mkfs.reiserfs.8.gz
