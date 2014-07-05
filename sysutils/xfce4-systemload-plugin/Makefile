@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-systemload-plugin
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -17,23 +17,16 @@ LICENSE=	BSD
 LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
-USES=	pkgconfig gmake
 
 OPTIONS_DEFINE= NLS
-OPTIONS_DEFAULT=        NLS
+OPTIONS_DEFAULT=NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 .include <bsd.port.mk>
