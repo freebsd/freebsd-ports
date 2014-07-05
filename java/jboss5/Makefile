@@ -57,6 +57,8 @@ SUB_LIST=	APP_HOME=${DATADIR} \
 		STOP_TIMEOUT=${STOP_TIMEOUT} \
 		USER=${USER}
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
@@ -76,7 +78,7 @@ do-install:
 	(cd ${JBOSSOUTPUT}/client && ${FIND} jboss-remoting.jar jboss-serialization.jar |\
 		${CPIO} -pdmu -R ${USER}:${GROUP} ${DATADIR}/common/lib)
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${PID_FILE}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${JBOSSOUTPUT}/docs \
 		&& ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
 		&& ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;

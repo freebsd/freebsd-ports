@@ -36,7 +36,11 @@ DISTFILES+=	${PORTNAME}CE-${PORTVERSION}${EXTRACT_SUFX} \
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 PLIST_FILES+=	%%DATADIR%%/docs %%DATADIR%%/examples
 .endif
@@ -62,7 +66,7 @@ do-install:
 	cd ${WRKSRC}/ \
 	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
 	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${LN} -s ${DOCSDIR} ${DATADIR}/docs
 	cd ${WRKSRC}/docs/ \
@@ -82,7 +86,7 @@ post-install:
 	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}/bin" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${FIND} -s ${WRKSRC}/examples -not -type d \
 	  | ${SED} -ne 's,^${WRKSRC}/examples,${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${FIND} -s -d ${WRKSRC}/examples -type d \
