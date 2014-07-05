@@ -1286,9 +1286,6 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/widgetTest.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/widgetTest.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxpdemo.ico
-%%PYTHON_SITELIBDIR%%/wxversion.py
-%%PYTHON_SITELIBDIR%%/wxversion.pyc
-%%PYTHON_SITELIBDIR%%/wxversion.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/snippets
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it/LC_MESSAGES
