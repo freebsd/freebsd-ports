@@ -21,11 +21,10 @@ NO_BUILD=	yes
 
 TTF=		ukai.ttc uming.ttc
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/ukai.ttc ${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/uming.ttc ${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/ukai.ttc ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/uming.ttc ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
