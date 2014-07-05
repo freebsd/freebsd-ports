@@ -19,6 +19,8 @@ COMMENT=	Bayesian spam filter - development version
 PORTVER_MAJ=	3.10.1
 #SNAP_DATE=	.r1
 
+MAKE_JOBS_UNSAFE=	yes
+
 #MIN_OPTIONS_VER=	${PORTNAME}-${PKGNAMESUFFIX}-3.10.0.
 
 .ifdef(SNAP_DATE)
@@ -505,7 +507,6 @@ post-install:
 	${TEST} `ls -1 ${STAGEDIR}${PREFIX}/lib/pkgconfig | wc -l` -eq 0 && \
 		${RM} -R ${STAGEDIR}${PREFIX}/lib/pkgconfig || true
 
-#.ifndef NOPORTDATA
 .if ${PORT_OPTIONS:MMYSQL51} || ${PORT_OPTIONS:MMYSQL55}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/mysql
 	cd  ${WRKSRC}/src/tools.mysql_drv && \
@@ -526,7 +527,6 @@ post-install:
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
 		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/sqlite
 .endif
-#.endif # NOPORTDATA
 
 .if ${PORT_OPTIONS:MWEBUI}
 .	for I in admin.cgi admingraph.cgi configure.pl dspam.cgi graph.cgi templates/strings.pl
