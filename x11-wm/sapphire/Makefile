@@ -17,8 +17,11 @@ USES=		gmake
 REINPLACE_ARGS=	-i '' -e
 CC=		${CXX}
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
-post-extract:
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/data.inst
@@ -36,7 +39,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/menu/default ${PREFIX}/share/sapphire/menu/default.orig
 	@${MKDIR} ${PREFIX}/share/sapphire/themes
 	${INSTALL_DATA} ${WRKSRC}/data/themes/*.theme ${PREFIX}/share/sapphire/themes
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
