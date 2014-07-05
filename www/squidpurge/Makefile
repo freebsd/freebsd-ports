@@ -18,8 +18,9 @@ WRKSRC=		${WRKDIR}/purge
 
 PLIST_FILES=	sbin/purge
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's/= g++/= ${CXX}/g' ${WRKSRC}/Makefile
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/purge ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/purge ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
