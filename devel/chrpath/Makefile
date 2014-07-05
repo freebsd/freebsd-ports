@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
-USES=		fmake
+USES=		gmake
 
 PLIST_FILES=	bin/chrpath man/man1/chrpath.1.gz
 
