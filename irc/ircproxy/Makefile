@@ -12,11 +12,11 @@ COMMENT=	IRC proxy/bouncer daemon
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	cares:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 CFLAGS+=	-I${LOCALBASE}/include
 
 USERS=		ircproxyd
@@ -30,28 +30,15 @@ OPTIONS_DEFAULT=	SSL MEMDEBUG FDDEBUG
 MEMDEBUG_DESC=	Enable memory debugging
 FDDEBUG_DESC=	Enable file descriptor debugging
 
+MEMDEBUG_CONFIGURE_ENABLE=	memdebug
+FDDEBUG_CONFIGURE_ENABLE=	fddebug
+IPV6_CONFIGURE_ENABLE=		ipv6
+SSL_CONFIGURE_ENABLE=		ssl
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=		yes
-.else
-CONFIGURE_ARGS+=	--disable-ssl
-.endif
-
-.if ! ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MMEMDEBUG}
-CONFIGURE_ARGS+=	--enable-memdebug
-.else
-CONFIGURE_ARGS+=	--disable-memdebug
-.endif
-
-.if ${PORT_OPTIONS:MFDDEBUG}
-CONFIGURE_ARGS+=	--enable-fddebug
-.else
-CONFIGURE_ARGS+=	--disable-fddebug
 .endif
 
 post-patch:
