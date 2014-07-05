@@ -30,6 +30,8 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/sbin/httpfs.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/libexec/httpfs-config.sh
 MAKE_ENV+=	HADOOP_PROTOC_PATH=${LOCALBASE}/bin/protoc
 
+MANUAL_PACKAGE_BUILD=	maven fetches files during build
+
 HADOOP_DIST=	${WRKSRC}/hadoop-dist/target/hadoop-${PORTVERSION}
 
 HADOOP_LOGDIR=  /var/log/hadoop
