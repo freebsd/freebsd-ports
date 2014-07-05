@@ -4,5 +4,4 @@
 DOCFORMAT=	pdf
 MASTERDIR=	${.CURDIR}/../exim-doc-html
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

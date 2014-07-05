@@ -2,32 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	exim
-PORTVERSION=	4.71
+PORTVERSION=	4.82.1
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/} \
-		${MASTER_SITE_LOCAL:S/$/:local/} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	exim4/:exim dryice/:local
+MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
+MASTER_SITE_SUBDIR=	exim4/:exim
 PKGNAMESUFFIX=	-doc-${DOCFORMAT}
 DISTNAME=	exim-${DISTDOCFORMAT}-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tar.bz2:exim,local
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:exim
 DIST_SUBDIR=	exim
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Documentation for the Exim MTA in multiple formats
 
-USES=		makeinfo tar:bzip2
-NO_STAGE=	yes
+USES=		tar:bzip2
 
 DOCFORMAT?=	html
 DISTDOCFORMAT?=	${DOCFORMAT}
+AVAILABLE_FORMATS=	html \
+					pdf \
+					postscript
+NO_BUILD=	yes
 
-.if ${DOCFORMAT} == "info"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-MAKEINFO=	${LOCALBASE}/bin/makeinfo
+.if make(makesum) && !defined(FETCH_ALL)
+.error "You forgot to define FETCH_ALL to create the sane distinfo"
 .endif
 
-.if !defined(NOPORTDOCS)
+.if defined(FETCH_ALL)
+. for _df in ${AVAILABLE_FORMATS}
+.  if ${_df} != ${DOCFORMAT}
+DISTFILES+=	exim-${_df}-${PORTVERSION}${EXTRACT_SUFX}:exim
+.  endif
+. endfor
+.endif
+
 .if ${DOCFORMAT} == "html"
 PORTDOCS=	html
 .elif ${DOCFORMAT} == "pdf"
@@ -35,46 +42,25 @@ PORTDOCS=	*.pdf
 .elif ${DOCFORMAT} == "postscript"
 PORTDOCS=	*.ps
 .elif ${DOCFORMAT} == "info"
-PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
+IGNORE=	exim no longer provides documentation in info format
 .else
 pre-everything::
 	@ ${ECHO} 'ERROR: invalid value for DOCFORMAT: "${DOCFORMAT}"'
-	@ ${ECHO} 'Possible values are "html", "pdf", "postscript" and "info".'
+	@ ${ECHO} 'Possible values are "html", "pdf", and "postscript".'
 	@ ${FALSE}
-.endif
-.endif
-
-do-build:
-.if ${DOCFORMAT} == "info"
-	@ cd ${WRKSRC}/doc; \
-		${MAKEINFO} --no-split --output exim.info spec.texinfo; \
-		${MAKEINFO} --no-split --output exim_filter.info filter.texinfo
-.else
-	@ ${DO_NADA}
 .endif
 
 do-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
 .if ${DOCFORMAT} == "html"
 	${TAR} -C ${WRKSRC}/doc -cf - html | \
-		${TAR} --unlink -C ${DOCSDIR} -xf -
+		${TAR} --unlink -C ${STAGEDIR}${DOCSDIR} -xf -
 .elif ${DOCFORMAT} == "pdf"
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
 .elif ${DOCFORMAT} == "postscript"
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCSDIR}
-.elif ${DOCFORMAT} == "info"
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/exim.info ${PREFIX}/info
-	@ install-info --section="Exim" \
-		--entry "* User guide: (exim).           Exim manual" \
-		${PREFIX}/info/exim.info ${PREFIX}/info/dir
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/exim_filter.info ${PREFIX}/info
-	@ install-info --section="Exim" \
-		--entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
-		${PREFIX}/info/exim_filter.info ${PREFIX}/info/dir
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${STAGEDIR}${DOCSDIR}
 .else
 	@${FALSE}
-.endif
 .endif
 
 .include <bsd.port.mk>
