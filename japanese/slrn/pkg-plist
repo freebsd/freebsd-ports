@@ -1,5 +1,6 @@
 bin/slrn
 bin/slrnpull
+man/ja/man1/slrn.1.gz
 share/slrn/color.sl
 share/slrn/ispell.sl
 share/slrn/nn.sl

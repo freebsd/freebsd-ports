@@ -28,10 +28,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JDOCSRC=	${WRKDIR}/${PORTNAME}-doc-j0.9.5.6-0
 
 MANLANG=	'' ja
-MAN1=		slrn.1
 
 # Tentatively improve inner makefiles in attempt to fix parallel builds
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-mkdir|mkdir -p| ; \
 		/DOT_O_DEPS/s|$$| $$(OBJDIR)|' \
@@ -40,7 +38,8 @@ post-patch:
 		${WRKSRC}/autoconf/Makefile.in
 
 post-install:
-	${INSTALL_MAN} ${JDOCSRC}/slrn.1 ${MANPREFIX}/man/ja/man1
-	${CP} -a ${JDOCSRC} ${PREFIX}/share/doc/slrn/ja
+	${INSTALL_MAN} ${JDOCSRC}/slrn.1 \
+		${STAGEDIR}${MANPREFIX}/man/ja/man1
+	${CP} -a ${JDOCSRC} ${STAGEDIR}${PREFIX}/share/doc/slrn/ja
 
 .include <bsd.port.mk>
