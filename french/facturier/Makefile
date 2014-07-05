@@ -46,7 +46,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 TRASHFILES=	lib/Conf.pm~ cgi-bin/.articlemodif.cgi.swp lib/.Conf.pm.swp	\
 		html/UNGI/Editfacturemaj.pm.back html/temp/log_facture.gif.back
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Vous pouvez définir trois variables :"
@@ -102,7 +107,7 @@ do-install:
 		${ECHO_CMD} "Include ${ETCDIR}" >> ${APACHE_CONF} ; \
 	fi)
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
