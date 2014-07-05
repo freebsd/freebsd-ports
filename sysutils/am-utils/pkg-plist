@@ -3,9 +3,9 @@ bin/pawd
 etc/amd.conf-sample
 etc/lostaltmail.conf-sample
 lib/libamu.a
-lib/libamu.la
 lib/libamu.so
 lib/libamu.so.4
+lib/libamu.so.4.0.0
 man/man1/expn.1.gz
 man/man1/pawd.1.gz
 man/man5/amd.conf.5.gz
