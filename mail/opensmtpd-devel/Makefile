@@ -3,7 +3,7 @@
 
 PORTNAME=	opensmtpd
 PORTVERSION=	201405202105
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -22,8 +22,8 @@ LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 OPENSMTPD_SNAPSHOT_VER=	p1
 
 OPTIONS_DEFINE=	CA_BUNDLE PAM SQLITE MYSQL PGSQL LDAP REDIS
-
-OPTIONS_DEFAULT=	CA_BUNDLE PAM
+OPTIONS_DEFAULT=CA_BUNDLE PAM
+OPTIONS_SUB=	yes
 
 CA_BUNDLE_DESC=	Install CA bundle for OpenSSL
 
@@ -36,13 +36,8 @@ SUB_FILES=	pkg-install pkg-deinstall
 
 CONFLICTS_INSTALL=	postfix-[0-9]* sendmail-[0-9]* opensmtpd-[0-9]*
 
-MAN8=		makemap.8 newaliases.8 sendmail.8 smtpctl.8 smtpd.8
-MAN5=		smtpd.conf.5 aliases.5 forward.5
-
 USERS=		_smtpd _smtpq
 GROUPS=		_smtpd
-
-OPTIONS_SUB=		MYSQL SQLITE PGSQL LDAP REDIS
 
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
