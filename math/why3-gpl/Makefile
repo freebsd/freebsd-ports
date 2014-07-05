@@ -3,6 +3,7 @@
 
 PORTNAME=	why3
 PORTVERSION=	2014
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://downloads.dragonlace.net/src/ \
 		LOCAL/marino

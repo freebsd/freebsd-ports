@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_sql_sqlite
+PORTREVISION=	3
 CATEGORIES=	databases ftp
 PKGNAMEPREFIX=	proftpd-
 

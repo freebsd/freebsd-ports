@@ -3,6 +3,7 @@
 
 PORTNAME=	why3
 PORTVERSION=	0.83
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/33490/ \
 		http://pkgs.fedoraproject.org/repo/pkgs/why3/${FEDORA}/

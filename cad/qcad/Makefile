@@ -3,6 +3,7 @@
 
 PORTNAME=	qcad
 PORTVERSION=	3.5.1.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/	\
 		https://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/
