@@ -10,7 +10,8 @@ MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM table based Chinese input methods
 
-BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
+BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
+		scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 RUN_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 
 USES=		pkgconfig gmake
