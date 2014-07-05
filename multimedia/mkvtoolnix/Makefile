@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	6.9.1
-PORTREVISION=	1
+PORTVERSION=	7.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
@@ -31,10 +30,11 @@ CONFIGURE_ARGS=	--disable-qt \
 		--with-boost=${LOCALBASE} \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \
-		--with-boost-regex=boost_regex
+		--with-boost-regex=boost_regex \
+		--without-curl
 
-OPTIONS_DEFINE=	WXGTK FLAC CURL
-OPTIONS_DEFAULT=WXGTK FLAC 
+OPTIONS_DEFINE=	WXGTK FLAC
+OPTIONS_DEFAULT=WXGTK FLAC
 
 BROKEN_sparc64=	Does not install on sparc64
 
@@ -48,8 +48,6 @@ WX_CONF_ARGS=	absolute
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 FLAC_CONFIGURE_WITH=	flac
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-CURL_CONFIGURE_WITH=	curl
 .if defined(BATCH)
 MAKE_ENV+=	V=1
 .endif
