@@ -845,10 +845,10 @@ share/groff/site-tmac/mdoc.local
 @dirrmtry share/groff
 @dirrmtry %%DOCSDIR%%/pdf
 @dirrmtry %%DOCSDIR%%/html/mom
-@dirrmtry %%DOCSDIR%%/html/img
+%%HTMLDOCS%%@dirrmtry %%DOCSDIR%%/html/img
 @dirrmtry %%DOCSDIR%%/html
 @dirrmtry %%EXAMPLESDIR%%/mom
-@dirrmtry %%EXAMPLESDIR%%/img
+%%HTMLDOCS%%@dirrmtry %%EXAMPLESDIR%%/img
 @dirrmtry %%EXAMPLESDIR%%/hdtbl
 @dirrmtry %%EXAMPLESDIR%%/chem/122
 @dirrmtry %%EXAMPLESDIR%%/chem
