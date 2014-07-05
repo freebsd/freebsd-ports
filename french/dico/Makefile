@@ -28,6 +28,8 @@ REINPLACE_SUB=	PREFIX=${PREFIX}
 # Post-patch
 #
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -42,8 +44,10 @@ pre-configure:
 # Post-install
 #
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${RM} -rf ${DOCSDIR}
 .endif
 
