@@ -3,21 +3,19 @@
 
 PORTNAME=	wxglade
 PORTVERSION=	0.6.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWidgets written in Python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 USE_PYTHON=	yes
-# This can be set back to 2.6+ once this port moves to version 0.6.9,
-# cf. PR185230.
-USE_WX=		2.8+
+USE_WX=		3.0+
 WX_COMPS=	python
 
 DESKTOP_ENTRIES="wxGlade" "" "${PYTHON_SITELIBDIR}/wxglade/icons/icon.xpm" \
