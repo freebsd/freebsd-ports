@@ -3,7 +3,7 @@
 
 PORTNAME=	lineak-defaultplugin
 PORTVERSION=	0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	SF/lineak/lineak_defaultplugin/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak
@@ -13,21 +13,16 @@ COMMENT=	Default plugins for lineakd
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	lineak:${PORTSDIR}/sysutils/lineakd
+LIB_DEPENDS=	liblineak.so:${PORTSDIR}/sysutils/lineakd
 
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
+USES=		gmake libtool
 USE_XORG=	x11 xext xt xtst xfixes
-USES=		gmake
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	kde_cv_prog_cxx_fno_check_new=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--program-prefix=''
 
-PLIST_FILES=	lib/lineakd/plugins/defaultplugin.a \
-		lib/lineakd/plugins/defaultplugin.la \
-		lib/lineakd/plugins/defaultplugin.so \
-		lib/lineakd/plugins/mediadetectplugin.a \
-		lib/lineakd/plugins/mediadetectplugin.la \
+PLIST_FILES=	lib/lineakd/plugins/defaultplugin.so \
 		lib/lineakd/plugins/mediadetectplugin.so \
 		man/man1/lineak_defaultplugin.1.gz \
 		etc/media-detect.conf

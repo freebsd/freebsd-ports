@@ -3,7 +3,7 @@
 
 PORTNAME=	lineakd
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lineak/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak
@@ -11,14 +11,13 @@ DIST_SUBDIR=	lineak
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lineakd is a daemon which enables special keys on internet keyboards
 
-USES=		gmake
+USES=		gmake libtool
+USE_LDCONFIG=	yes
 USE_XORG=	x11 xext xt
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	kde_cv_prog_cxx_fno_check_new=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
-
-CONFIGURE_ARGS+=--program-prefix=''
 
 DOCS=		README TODO AUTHORS
 
