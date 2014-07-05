@@ -26,7 +26,11 @@ DATADIR=	${PREFIX}/share/sndcs
 
 PYDISTUTILS_PKGNAME=	sndcs
 
-.if defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-setup.py
 .endif
 
