@@ -6,9 +6,9 @@ bin/xorrisofs
 include/libisoburn/libisoburn.h
 include/libisoburn/xorriso.h
 lib/libisoburn.a
-lib/libisoburn.la
 lib/libisoburn.so
 lib/libisoburn.so.1
+lib/libisoburn.so.1.91.0
 libdata/pkgconfig/libisoburn-1.pc
 man/man1/xorrecord.1.gz
 man/man1/xorriso.1.gz

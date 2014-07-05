@@ -3,6 +3,7 @@
 
 PORTNAME=	xorriso
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
@@ -18,9 +19,8 @@ RUN_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \
 		libisofs>=1.1.2:${PORTSDIR}/devel/libisofs
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig iconv gmake
+USES=		gmake iconv libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-WANT_GNOME=	yes
 
 INFO=		xorrecord xorriso xorrisofs
 
