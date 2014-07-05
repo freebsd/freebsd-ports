@@ -6,4 +6,4 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd /usr
 lib/pam_pgsql.so
-lib/pam_pgsql.la
+@cwd
