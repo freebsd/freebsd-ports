@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aegisub
-PORTVERSION=	2.1.9
-PORTREVISION=	2
+PORTVERSION=	3.1.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
@@ -16,44 +15,70 @@ COMMENT=	Cross-platform subtitle editor
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-
-OPTIONS_DEFINE=	DEBUG PROFILE GCOV EFENCE ASS ALSA OPENAL PORTAUDIO PULSEAUDIO \
-		FFMPEG HUNSPELL LUA DOCS
-OPTIONS_DEFAULT=	ASS PULSEAUDIO FFMPEG HUNSPELL LUA
-GCOV_DESC=	GCOV (require profiling)
-EFENCE_DESC=	Electric Fence (require profiling)
-ASS_DESC=	libASS subtitle provider
-HUNSPELL_DESC=	Spell checking via Hunspell
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libicui18n.so:${PORTSDIR}/devel/icu \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libass.so:${PORTSDIR}/multimedia/libass
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FFMS
 GH_PROJECT=	ffms2
 GH_TAGNAME=	${FFMS_VERSION}
-GH_COMMIT=	ec0ef9c
+GH_COMMIT=	6b0e4a2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		desktop-file-utils gettext gmake pkgconfig
+USES=		compiler:c++11-lib desktop-file-utils gmake gettext iconv \
+		pkgconfig tar:xz
 USE_GNOME=	intltool
-USE_WX=		2.8
-WX_COMPS=	wx contrib
+USE_WX=		3.0
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_GL=		glu
-USE_GCC=	any
+USE_CSTD=	c99
+USE_LUA=	5.1+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gcc-prec --without-lua50
+CONFIGURE_ARGS=	--disable-compiler-flags \
+		--disable-update-checker \
+		--without-libc++ \
+		--disable-gcc-prec
 INSTALLS_ICONS=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lz
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+
+OPTIONS_DEFINE=		ALSA DOCS FFMPEG FFTW HUNSPELL OPENAL \
+			PORTAUDIO PULSEAUDIO
+OPTIONS_DEFAULT=	FFMPEG FFTW HUNSPELL PULSEAUDIO
+
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_OFF=	--without-alsa
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_CONFIGURE_ENV=	FFMS2_CFLAGS="${FFMS_CFLAGS}" \
+			FFMS2_LIBS="${FFMS_LIBS}"
+FFMPEG_CONFIGURE_OFF=	--without-ffms2
+FFMPEG_CPPFLAGS=	${FFMS_CFLAGS}
+FFTW_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+FFTW_CONFIGURE_OFF=	--without-fftw3
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+HUNSPELL_CONFIGURE_OFF=	--without-hunspell
+OPENAL_USES=		openal
+OPENAL_CONFIGURE_OFF=	--without-openal
+PORTAUDIO_BUILD_DEPENDS=\
+			portaudio2>0:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_CFLAGS=	-isystem ${LOCALBASE}/include/portaudio2
+PORTAUDIO_LDFLAGS=	-L${LOCALBASE}/lib/portaudio2
+PORTAUDIO_CONFIGURE_OFF=\
+			--without-portaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=\
+			--without-libpulse
 
 FFMS_NAME=	ffms2
-FFMS_VERSION=	2.19
+FFMS_VERSION=	2.19.1
 FFMS_DISTNAME=	${FFMS_NAME}-${FFMS_VERSION}
 FFMS_DISTFILE=	${FFMS_DISTNAME}.tar.gz
 FFMS_WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
@@ -61,116 +86,29 @@ FFMS_CFLAGS=	-I${FFMS_WRKSRC}/include
 FFMS_LIBS=	${FFMS_WRKSRC}/src/core/.libs/libffms2.a \
 		$$(pkg-config --libs libavcodec libavformat libswscale libavutil libavresample)
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug --enable-debug-exceptions
-.endif
-
-.if ${PORT_OPTIONS:MGCOV}
-CONFIGURE_ARGS+=	--enable-gcov
-LDFLAGS+=	-fprofile-arcs
-WITH_PROFILE=	yes
-.endif
-
-.if ${PORT_OPTIONS:MEFENCE}
-LIB_DEPENDS+=	libefence.so:${PORTSDIR}/devel/ElectricFence
-CONFIGURE_ARGS+=	--enable-efence
-WITH_PROFILE=	yes
-.endif
-
-.if ${PORT_OPTIONS:MPROFILE}
-CONFIGURE_ARGS+=	--enable-profile
-.endif
-
-.if ${PORT_OPTIONS:MASS}
-LIB_DEPENDS+=	libass.so:${PORTSDIR}/multimedia/libass
+.if ${COMPILER_TYPE} == "gcc"
+USE_CXXSTD=	gnu++11
 .else
-CONFIGURE_ARGS+=	--without-libass
-.endif
-
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-.else
-CONFIGURE_ARGS+=	--without-alsa
-.endif
-
-.if ${PORT_OPTIONS:MOPENAL}
-USES+=		openal
-.else
-CONFIGURE_ARGS+=	--without-openal
-.endif
-
-.if ${PORT_OPTIONS:MPORTAUDIO}
-BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-CONFIGURE_ENV+=	PORTAUDIO_LIBS="${LOCALBASE}/lib/portaudio2/libportaudio.so"
-.else
-CONFIGURE_ARGS+=	--without-portaudio
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-.else
-CONFIGURE_ARGS+=	--without-pulseaudio
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ENV+=	FFMS_CFLAGS="${FFMS_CFLAGS}" FFMS_LIBS="${FFMS_LIBS}"
-CONFIGURE_ARGS+=	--with-provider-video=ffmpegsource \
-			--with-provider-audio=ffmpegsource
-CPPFLAGS+=	${FFMS_CFLAGS}
-.else
-CONFIGURE_ARGS+=	--without-ffms
-.endif
-
-.if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
-.else
-CONFIGURE_ARGS+=	--without-hunspell
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-USES+=		lua:51
-CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" \
-		LUA_LDFLAGS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-CPPFLAGS+=	-I${LUA_INCDIR}
-.else
-CONFIGURE_ARGS+=	--without-lua
+USE_CXXSTD=	c++11
+CXXFLAGS+=	-Wno-c++11-narrowing
 .endif
 
 post-patch:
-.for i in configure
 	@${REINPLACE_CMD} -e \
-		'/opt_flag/s|-O2|| ; \
-		 /ICONV_LIBS/s|-liconv||' ${WRKSRC}/${i}
-.endfor
-.for i in automation/Makefile.in
+		's| -O3||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|@HAVE_AUTOMATION_TRUE@|| ; \
-		 s|@HAVE_AUTOMATION_FALSE@|#| ; \
-		 s|@HAVE_AUTO4_LUA_TRUE@|| ; \
-		 s|@HAVE_AUTO4_LUA_FALSE@|#| ; \
-		 s|@HAVE_AUTO3_LUA_TRUE@|#| ; \
-		 s|@HAVE_AUTO3_LUA_FALSE|| ; \
-		 /^install-data-am/s|: install|: # install|' ${WRKSRC}/${i}
-.endfor
-.for i in src/Makefile.in src/libauto3/Makefile.in
+		's|".*build/|"./build/|' ${WRKSRC}/build/version.sh
 	@${REINPLACE_CMD} -e \
-		's|@HAVE_AUTO3_LUA_TRUE@|#| ; \
-		 s|@HAVE_AUTO3_LUA_FALSE@||' ${WRKSRC}/${i}
-.endfor
-.for i in src/audio_player_portaudio.h
-	@${REINPLACE_CMD} -e \
-		's|<portaudio\.h>|<portaudio2/portaudio.h>|' ${WRKSRC}/${i}
-.endfor
+		'/iconv_t/s|^|//|' \
+		${WRKSRC}/libaegisub/include/libaegisub/charset_conv.h
 
 pre-configure:
 .if ${PORT_OPTIONS:MFFMPEG}
 	@(cd ${FFMS_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./configure \
-		--disable-shared --disable-silent-rules CC="${CC}" \
-		CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}")
+		--disable-shared CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}")
 .endif
 
 pre-build:
@@ -181,8 +119,9 @@ pre-build:
 .endif
 
 post-install:
-	@(cd ${WRKSRC}/automation && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
-		install-nobase_automationDATA install-nobase_share_docDATA)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/automation/v4-docs
+	(cd ${WRKSRC}/automation/v4-docs && ${INSTALL_DATA} * \
+		${STAGEDIR}${DOCSDIR}/automation/v4-docs)
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/aegisub-*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
