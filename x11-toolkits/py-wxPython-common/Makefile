@@ -1,4 +1,6 @@
 # $FreeBSD$
+
+PORTREVISION=		1
 WITH_WXVERSION_ONLY=	yes
 
 MASTERDIR=	${.CURDIR}/../py-wxPython30
