@@ -4,4 +4,4 @@ to send tests to servers based on spam that you receive. If those
 tests succeed, the results will reach the DSBL host in question,
 and the relay will be listed.
 
-WWW:	http://ares.penguinhosting.net/~ian/
+WWW: http://ares.penguinhosting.net/~ian/
