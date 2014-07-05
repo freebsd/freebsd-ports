@@ -45,12 +45,17 @@ BUILD_WRKSRC=	${WRKSRC}/src
 MAKE_ENV=	BOOST_INCLUDE_PATH=${LOCALBASE}/include	\
 		BOOST_LIB_PATH=${LOCALBASE}/lib		\
 		BDB_INCLUDE_PATH=${BDB_INCLUDE_DIR}	\
-		BDB_LIB_PATH=${BDB_LIB_DIR}
+		BDB_LIB_PATH=${BDB_LIB_DIR}		\
+		ICONV_LIB="${ICONV_LIB}"
 
 PLIST_FILES=	bin/twisterd
 PORTDOCS=	README.md
 
 .include <bsd.port.options.mk>
+
+.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1000000)
+WITH_OPENSSL_PORT=	yes
+.endif
 
 pre-configure:
 	(cd ${CONFIGURE_WRKSRC} && ./autotool.sh)
