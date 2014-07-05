@@ -34,7 +34,12 @@ MAN5=		awesome2rc.5
 PORTDOCS=	AUTHORS LICENSE README STYLE UPGRADE
 PORTEXAMPLES=	awesomerc
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's, "$$(DESTDIR)$$(docdir)";,;,g' \
 			  -e 's,\([[:space:]]\)install-docDATA ,\1,g' \
@@ -58,14 +63,14 @@ post-configure:
 		${WRKSRC}/Makefile
 
 post-install:
-.	if !defined(NOPORTDOCS)
+.	if ${PORT_OPTIONS:MDOCS}
 		@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
 		@${MKDIR} ${DOCSDIR}
 .		for doc in ${PORTDOCS}
 			${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .		endfor
 .	endif
-.	if !defined(NOPORTEXAMPLES)
+.	if ${PORT_OPTIONS:MEXAMPLES}
 		@${ECHO_MSG} "installing example config file to ${EXAMPLESDIR}"
 		@${MKDIR} ${EXAMPLESDIR}
 .		for example in ${PORTEXAMPLES}
