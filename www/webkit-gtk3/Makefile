@@ -26,7 +26,6 @@ RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
-USE_AUTOTOOLS=	automake14
 USES=		bison gettext gmake libtool:keepla perl5 pkgconfig \
 		shebangfix tar:xz
 USE_RUBY=	yes
