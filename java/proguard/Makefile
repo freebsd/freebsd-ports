@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.1$//}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Java class file shrinker, optimizer, and obfuscator
+COMMENT=	Java class file shrinker, optimizer, and obfuscator
 
 LICENSE=	GPLv2
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A C like scripting language used in Enlightenment
+COMMENT=	C like scripting language used in Enlightenment
 
 LICENSE=	BSD
 

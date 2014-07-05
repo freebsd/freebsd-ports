@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An embeddable scripting language
+COMMENT=	Embeddable scripting language
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libxml2.so:${PORTSDIR}/textproc/libxml2

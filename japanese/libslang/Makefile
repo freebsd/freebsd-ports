@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.emaillab.org/mutt/tools/ \
 DISTNAME=	slang-${VERSION}jp${JP_VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library permits a programmer to develop software
+COMMENT=	Library permits a programmer to develop software
 
 CONFLICTS=	libslang2-[0-9]* libslang-1.*[^j]*
 

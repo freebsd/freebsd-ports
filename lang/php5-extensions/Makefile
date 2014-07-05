@@ -10,7 +10,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A "meta-port" to install PHP extensions
+COMMENT=	"meta-port" to install PHP extensions
 
 USE_PHP=	yes
 PHP_DEFAULT=	5.4

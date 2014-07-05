@@ -8,7 +8,7 @@ MASTER_SITES=	http://maude.cs.uiuc.edu/versions/${PORTVERSION}/
 DISTNAME=	Maude-${PORTVERSION}
 
 MAINTAINER=	joemann@beefree.free.de
-COMMENT=	A high-performance reflective language
+COMMENT=	High-performance reflective language
 
 LIB_DEPENDS=	bdd:${PORTSDIR}/science/buddy \
 		tecla:${PORTSDIR}/devel/libtecla \

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	rexx-
 DISTNAME=	regutil126
 
 MAINTAINER=	bob@eager.cx
-COMMENT=	An implementation of IBM's RexxUtil function library for Regina
+COMMENT=	Implementation of IBM's RexxUtil function library for Regina
 
 BUILD_DEPENDS=	${LOCALBASE}/include/rexxsaa.h:${PORTSDIR}/lang/rexx-regina
 

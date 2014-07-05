@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-dict
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dictionary set for the prime
+COMMENT=	Dictionary set for the prime
 
 USE_RUBY=	yes
 

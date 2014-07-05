@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.phpcompiler.org/src/archive/
 
 MAINTAINER=	eg@fbsd.lt
-COMMENT=	A compiler for the PHP language
+COMMENT=	Compiler for the PHP language
 
 USES=	gmake
 GNU_CONFIGURE=	yes

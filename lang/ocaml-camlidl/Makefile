@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A stub code generator for using C/C++ libraries from ocaml
+COMMENT=	Stub code generator for using C/C++ libraries from ocaml
 
 USE_OCAML=	yes
 

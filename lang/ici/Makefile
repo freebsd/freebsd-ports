@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://atrn.org/ici/distfiles
 
 MAINTAINER=	atrn@zeta.org.au
-COMMENT=	An interpretive language with C's feel and high level data types
+COMMENT=	Interpretive language with C's feel and high level data types
 
 MAKEFILE=	Makefile.bsd
 

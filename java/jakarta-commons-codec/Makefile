@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	An implementations of common encoders and decoders
+COMMENT=	Implementations of common encoders and decoders
 
 LICENSE=	APACHE20
 

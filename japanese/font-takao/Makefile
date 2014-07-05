@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	ja-font-
 DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	An improved IPA Japanese fonts
+COMMENT=	Improved IPA Japanese fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 

@@ -8,7 +8,7 @@ MASTER_SITES=	SF \
 		ftp://ftp.scsh.net/pub/scsh/0.6/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Unix shell embedded into Scheme, with access to all Posix calls
+COMMENT=	Unix shell embedded into Scheme, with access to all Posix calls
 
 CONFLICTS=	scheme48-[0-9]*
 

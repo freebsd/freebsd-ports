@@ -8,7 +8,7 @@ MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An implementation of Ruby Interpreter in Pure Java
+COMMENT=	Implementation of Ruby Interpreter in Pure Java
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www-2.cs.cmu.edu/~twelf/dist/ http://www.cs.cmu.edu/~twelf/
 DISTNAME=	twelf-1-5R1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A meta-logical framework for deductive systems
+COMMENT=	Meta-logical framework for deductive systems
 
 .if defined(WITH_MLTON)
 RUN_DEPENDS=	mlton:${PORTSDIR}/lang/mlton

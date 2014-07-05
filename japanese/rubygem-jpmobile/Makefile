@@ -7,7 +7,7 @@ CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A Rails plugin for Japanese mobile-phones
+COMMENT=	Rails plugin for Japanese mobile-phones
 
 LICENSE=	MIT
 
