@@ -1,7 +1,7 @@
 bin/gtk-gnutella
 man/man1/gtk-gnutella.1.gz
 share/applications/gtk-gnutella.desktop
-%%DATADIR%%/%%ARCH%%-freebsd/gtk-gnutella.nm
+%%DATADIR%%/%%ARCH%%-%%OPSYS%%/gtk-gnutella.nm
 %%DATADIR%%/bogons.txt
 %%DATADIR%%/el/FAQ
 %%DATADIR%%/en/FAQ
@@ -92,5 +92,5 @@ share/pixmaps/gtk-gnutella.svg
 @dirrm %%DATADIR%%/fr
 @dirrm %%DATADIR%%/en
 @dirrm %%DATADIR%%/el
-@dirrm %%DATADIR%%/%%ARCH%%-freebsd
+@dirrm %%DATADIR%%/%%ARCH%%-%%OPSYS%%
 @dirrm %%DATADIR%%
