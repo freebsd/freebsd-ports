@@ -8,22 +8,25 @@ CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER= 	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
+USES=		perl5
 USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/racoon2
 CONFIGURE_ENV=	YACC=/usr/bin/yacc
 
 OPTIONS_DEFINE=	KINK DOCS
 KINK_DESC=	Enable KINK support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+PLIST_SUB+=	PFX=${PREFIX}
 
 pre-configure:
 .if ${PORT_OPTIONS:MKINK}
@@ -34,7 +37,6 @@ PLIST_SUB+=	KINK="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-kinkd
 MAKE_ENV=	WITH_KINK=yes
-MAN8+=		kinkd.8
 PLIST_SUB+=	KINK=""
 .endif
 .else
@@ -52,23 +54,26 @@ PORTDOCS+=	kinkd-install.ja.txt kinkd-state-txn.obj
 .endif
 .endif
 
-MAN8+=		spmd.8 spmdctl.8 pskgen.8 iked.8
-
 post-patch:
 .if ${PORT_OPTIONS:MDOCS}
 .for FILE in ${PORTDOCS}
-	@${REINPLACE_CMD} -e 's|/usr/local/racoon2|${LOCALBASE}|' ${WRKSRC}/doc/${FILE}
+	@${REINPLACE_CMD} -e 's|/usr/local/racoon2|${PREFIX}|' ${WRKSRC}/doc/${FILE}
 .endfor
 .endif
 
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e '/INSTALL/s|\$$([a-z].*dir)|${STAGEDIR}&|'
+	@${REINPLACE_CMD} -e '1s|/usr/bin/perl|${PERL}|' ${WRKSRC}/pskgen/pskgen
+	@${REINPLACE_CMD} -e '/^prefix=/s|/usr/local|${STAGEDIR}${PREFIX}|;/\/var\/run\/racoon2/d' ${WRKSRC}/samples/Makefile
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.jp ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.jp ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 	@if [ -z `/sbin/sysctl -a | ${GREP} -q ipsec && echo ipsec` ]; then \
