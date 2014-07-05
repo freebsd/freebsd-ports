@@ -40,7 +40,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/favicon.png
 %%PORTDOCS%%%%DOCSDIR%%/footer.html
 %%PORTDOCS%%%%DOCSDIR%%/header.html
-%%PORTDOCS%%%%DOCSDIR%%/header2.html
 %%PORTDOCS%%%%DOCSDIR%%/header_reference.html
 %%PORTDOCS%%%%DOCSDIR%%/img/CImgLogo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/CImg_flyer.jpg
