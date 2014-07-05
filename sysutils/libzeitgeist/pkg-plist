@@ -16,51 +16,47 @@ include/zeitgeist-1.0/zeitgeist-timerange.h
 include/zeitgeist-1.0/zeitgeist-timestamp.h
 include/zeitgeist-1.0/zeitgeist.h
 lib/libzeitgeist-1.0.a
-lib/libzeitgeist-1.0.la
 lib/libzeitgeist-1.0.so
-lib/libzeitgeist-1.0.so.2
+lib/libzeitgeist-1.0.so.1
+lib/libzeitgeist-1.0.so.1.1.4
 libdata/pkgconfig/zeitgeist-1.0.pc
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/MAINTAINERS
-%%DOCSDIR%%/README
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistDataSource.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistDataSourceRegistry.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistEvent.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistIndex.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistLog.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistMonitor.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistResultSet.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistSubject.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ZeitgeistTimeRange.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/annotation-glossary.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/api-index-full.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ch01.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ch02.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ch03.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/ch04.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/home.png
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/index.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/index.sgml
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/left.png
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/object-tree.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/right.png
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/style.css
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/up.png
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/zeitgeist-1.0-Enumerations.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/zeitgeist-1.0-Interpretation-Ontology.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/zeitgeist-1.0-Manifestation-Ontology.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/zeitgeist-1.0-Mimetype-mapping-and-URI-comprehension.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/zeitgeist-1.0-Symbol-comprehension.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/zeitgeist-1.0-Timestamp-handling.html
-%%DOCS%%share/gtk-doc/html/zeitgeist-1.0/zeitgeist-1.0.devhelp2
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistDataSource.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistDataSourceRegistry.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistEvent.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistIndex.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistLog.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistMonitor.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistResultSet.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistSubject.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ZeitgeistTimeRange.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/annotation-glossary.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/api-index-full.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ch01.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ch02.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ch03.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/ch04.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/home.png
+%%PORTDOCS%%share/doc/zeitgeist-1.0/index.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/index.sgml
+%%PORTDOCS%%share/doc/zeitgeist-1.0/left.png
+%%PORTDOCS%%share/doc/zeitgeist-1.0/object-tree.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/right.png
+%%PORTDOCS%%share/doc/zeitgeist-1.0/style.css
+%%PORTDOCS%%share/doc/zeitgeist-1.0/up.png
+%%PORTDOCS%%share/doc/zeitgeist-1.0/zeitgeist-1.0-Enumerations.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/zeitgeist-1.0-Interpretation-Ontology.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/zeitgeist-1.0-Manifestation-Ontology.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/zeitgeist-1.0-Mimetype-mapping-and-URI-comprehension.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/zeitgeist-1.0-Symbol-comprehension.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/zeitgeist-1.0-Timestamp-handling.html
+%%PORTDOCS%%share/doc/zeitgeist-1.0/zeitgeist-1.0.devhelp2
 share/vala/vapi/zeitgeist-1.0.deps
 share/vala/vapi/zeitgeist-1.0.vapi
-@comment @dirrmtry share/vala/vapi
-@comment @dirrmtry share/vala
-%%DOCS%%@dirrm share/gtk-doc/html/zeitgeist-1.0
-%%DOCS%%@dirrmtry share/gtk-doc/html
-%%DOCS%%@dirrmtry share/gtk-doc
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/doc/zeitgeist-1.0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/zeitgeist-1.0
