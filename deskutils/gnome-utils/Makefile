@@ -36,7 +36,7 @@ DOCS_DESC=	Build Gnome Documents (pulls in tracker)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-RUN_DEPENDS+=	gnome-documents>=0:${PORTSDIR}/deskutils/gnome-documents
+#RUN_DEPENDS+=	gnome-documents>=0:${PORTSDIR}/deskutils/gnome-documents
 .endif
 
 .include <bsd.port.mk>
