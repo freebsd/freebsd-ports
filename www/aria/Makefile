@@ -14,6 +14,7 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	NLS DOCS
 
+BROKEN=		Hangs during build on 10-STABLE / 11-CURRENT
 USE_GNOME=	gtk12
 USE_OPENSSL=	yes
 USES=		gmake tar:bzip2
