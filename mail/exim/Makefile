@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -17,7 +17,8 @@ COMMENT?=	High performance MTA for Unix systems on the Internet
 
 LICENSE=	GPLv2
 
-USES=	tar:bzip2
+USES=	tar:bzip2 perl5
+USE_PERL5=	run
 
 # Exim build system is job unsafe atm
 MAKE_JOBS_UNSAFE=	yes
@@ -44,7 +45,7 @@ OPTIONS_SUB=	yes
 AUTH_SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 BDB_USE=	bdb=yes
 DMARC_LIB_DEPENDS=	libopendmarc.so:${PORTSDIR}/mail/opendmarc
-EMBEDDED_PERL_USES=	perl5
+EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USE=	xorg=x11,xaw,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 ICONV_USES=	iconv:lib,build
@@ -63,21 +64,6 @@ SQLITE_USES=	pkgconfig
 XCLIENT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xclient
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSA_EXIM}
-.if ${PORT_OPTIONS:MKAS}
-IGNORE=		You cannot select both SA_EXIM and KAS options
-.endif
-.if ${PORT_OPTIONS:MSO_1024}
-IGNORE=		You cannot select both SA_EXIM and SO_1024 options
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MKAS}
-.if ${PORT_OPTIONS:MSO_1024}
-IGNORE=		You cannot select both SA_KAS and SO_1024 options
-.endif
-.endif
 
 # OCSP is supported for openssl only
 .if ${PORT_OPTIONS:MOCSP}
