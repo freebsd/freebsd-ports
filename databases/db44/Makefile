@@ -32,7 +32,7 @@ INSTALL_TARGET=		install_include install_lib install_utilities
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_INSTALL_TARGET=	${INSTALL_TARGET} install_docs docdir=${DOCSDIR}
+DOCS_INSTALL_TARGET=	install_docs docdir=${DOCSDIR}
 PORTDOCS=		*
 
 NO_STAGE=	yes
