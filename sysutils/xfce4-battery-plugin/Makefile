@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-battery-plugin
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -17,11 +17,11 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
-INSTALLS_ICONS=	yes
-USES=	pkgconfig gmake
 
 OPTIONS_DEFINE= NLS
 OPTIONS_DEFAULT=        NLS
