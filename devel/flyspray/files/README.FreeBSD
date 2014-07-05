@@ -61,10 +61,7 @@ You can upgrade from a previous version of Flyspray by doing the following:
    package.
 
 3) load http://yourserver.example.com/flyspray/setup/upgrade.php in your
-   browser and follow the instructions.  If upgrading from 0.9.9beta2,
-   manually change the value of "fs_ver" in the {dbprefix}prefs table of
-   your Flyspray DB to "0.9.9 dev".  You can do this using the folowing SQL
-   command:
+   browser and follow the instructions.
 
 sql> update flyspray_prefs set pref_value = "0.9.9 dev" where pref_name = "fs_ver";
 
