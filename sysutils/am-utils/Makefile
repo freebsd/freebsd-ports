@@ -3,6 +3,7 @@
 
 PORTNAME=	am-utils
 PORTVERSION=	6.1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
@@ -20,12 +21,12 @@ OPTIONS_DEFINE=	OPENLDAP DOCS
 OPTIONS_DEFAULT=OPENLDAP
 OPENLDAP_DESC=	OpenLDAP support
 
-USES=		makeinfo
-
-USE_AUTOTOOLS=	libtool
+USES=		libtool makeinfo
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
+MAKE_ENV=	MAKEINFOFLAGS=--no-split
 
 INFO=		am-utils
 DOCS=		AUTHORS BUGS FAQ NEWS README.attrcache
