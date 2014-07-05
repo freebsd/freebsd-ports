@@ -133,9 +133,9 @@ include/hfst/parsers/pmatch_utils.h
 include/hfst/parsers/xre_utils.h
 lib/libhfst.a
 lib/libhfst.so
-lib/libhfst.so.36
-lib/libhfst.so.36.0.0
-lib/pkgconfig/hfst.pc
+lib/libhfst.so.37
+lib/libhfst.so.37.0.0
+libdata/pkgconfig/hfst.pc
 %%PYTHON_SITELIBDIR%%/hfst_tagger_compute_data_statistics.py
 %%PYTHON_SITELIBDIR%%/hfst_tagger_compute_data_statistics.pyc
 %%PYTHON_SITELIBDIR%%/hfst_tagger_compute_data_statistics.pyo
@@ -192,4 +192,4 @@ share/aclocal/hfst.m4
 @dirrm include/hfst/implementations
 @dirrm include/hfst/parsers
 @dirrm include/hfst
-@dirrmtry lib/pkgconfig
+@dirrmtry libdata/pkgconfig
