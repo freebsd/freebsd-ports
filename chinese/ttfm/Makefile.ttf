@@ -7,10 +7,11 @@
 # The variable(s) for installing TrueType fonts.
 # TTF		- Name(s) of font file(s) installed in FONTSDIR. Mandatory.
 #
-# The variable(s) to change the behavior of installing TrueType fonts.
-# WITH_GS	- Add Ghostscript support
-# WITHOUT_X11	- Remove X Window support
-#
+
+OPTIONS_DEFINE+=	GHOSTSCRIPT X11
+OPTIONS_DEFAULT+=	X11
+
+.include <bsd.port.options.mk>
 
 FONTSDIR?=	${PREFIX}/share/fonts/TrueType
 FONTSDIR_REL=	${FONTSDIR:S,^${PREFIX}/,,}
@@ -20,12 +21,12 @@ XFONTSDIR?=	${LOCALBASE}/lib/X11/fonts/TrueType
 XFONTSDIR_REL=	${XFONTSDIR:S,${LOCALBASE}/,,}
 PLIST_SUB+=	XFONTSDIR=${XFONTSDIR_REL}
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 RUN_DEPENDS+=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 _TTF_MODULES=	xttfm
 .endif
 
-.if defined(WITH_GS)
+.if ${PORT_OPTIONS:MGHOSTSCRIPT}
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 _TTF_MODULES+=	gscjk
 .endif
@@ -37,12 +38,12 @@ RUN_DEPENDS+=	${PREFIX}/bin/ttfm.sh:${PORTSDIR}/chinese/ttfm
 check-makefile: check-makefile-ttf
 check-makefile-ttf:
 .if !defined(_TTF_MODULES)
-	@${ECHO_CMD} "Makefile warning: You choose neither X11 nor GS. Only font files themselves are installed"
+	@${ECHO_CMD} "Makefile warning: You choose neither X11 nor GHOSTSCRIPT. Only font files themselves are installed"
 .else
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "You may use the following options:"
-	@${ECHO_CMD} "	WITH_GS		- if you want Ghostscript support"
-	@${ECHO_CMD} "	WITHOUT_X11	- if you DON'T want X Window support"
+	@${ECHO_CMD} "	${OPTIONS_NAME}_SET=GHOSTSCRIPT		- if you want Ghostscript support"
+	@${ECHO_CMD} "	${OPTIONS_NAME}_UNSET=X11	- if you DON'T want X Window support"
 	@${ECHO_CMD} ""
 .endif
 .if !defined(TTF)
@@ -57,19 +58,19 @@ do-install-ttf:
 .endif
 .for module in ${_TTF_MODULES}
 .	for ttf in ${TTF}
-		${PREFIX}/bin/ttfm.sh --add ${module} ${FONTSDIR}/${ttf}
+		${PREFIX}/bin/ttfm.sh --add ${module} ${STAGEDIR}${FONTSDIR}/${ttf}
 .	endfor
 .endfor
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	@${ECHO_MSG} "===>  Running fc-cache"
-	-@${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR}
+	-@${LOCALBASE}/bin/fc-cache -f -v ${STAGEDIR}${XFONTSDIR}
 .endif
 
 add-plist-post: add-plist-ttf
 add-plist-ttf:
 .for module in ${_TTF_MODULES}
 .	for ttf in ${TTF}
-		@${ECHO_CMD} "@unexec %D/bin/ttfm.sh --remove ${module} ${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
+		@${ECHO_CMD} "@unexec %D/bin/ttfm.sh --remove ${module} ${STAGEDIR}${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
 .	endfor
 .endfor
 .for ttf in ${TTF}
@@ -77,15 +78,15 @@ add-plist-ttf:
 .endfor
 .for module in ${_TTF_MODULES}
 .	for ttf in ${TTF}
-		@${ECHO_CMD} "@exec %D/bin/ttfm.sh --add ${module} ${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
+		@${ECHO_CMD} "@exec %D/bin/ttfm.sh --add ${module} ${STAGEDIR}${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
 .	endfor
 .endfor
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec find ${XFONTSDIR} -size -3c -delete || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir ${XFONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${XFONTSDIR}" >> ${TMPPLIST}
 .endif
-	@${ECHO_CMD} "@unexec rmdir ${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/fonts 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${FONTSDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry share/fonts" >> ${TMPPLIST}
 

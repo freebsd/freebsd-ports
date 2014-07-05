@@ -22,7 +22,6 @@ LGJ_FONT_DESC=	Patch for Taiwan horn
 
 TTF=		fireflysung.ttf
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLGJ_FONT}
@@ -48,9 +47,9 @@ post-extract:
 .endif
 
 do-install:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${TTF} ${FONTSDIR}
-	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${TTF} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${STAGEDIR}${FONTSDIR}
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${LOCALBASE}/etc/fonts/local.conf
 .endif

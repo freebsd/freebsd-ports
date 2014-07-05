@@ -18,11 +18,10 @@ WRKSRC=		${WRKDIR}/texmf/fonts/truetype/cwTeX
 
 TTF=		bbttf.ttf fttf.ttf kttf.ttf mttf.ttf rttf.ttf
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for i in ${TTF}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${FONTSDIR}
 .endfor
 
 .include <bsd.port.pre.mk>
