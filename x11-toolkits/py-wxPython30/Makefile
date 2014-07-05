@@ -25,8 +25,8 @@ PKGNAMESUFFIX=	-common
 PYTHON_PY3K_PLIST_HACK=	yes
 
 do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/wxversion
-	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/wxversion
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PYTHON_SITELIBDIR} -f ${WRKSRC}/wxversion
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${PYTHON_SITELIBDIR} -f ${WRKSRC}/wxversion
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
