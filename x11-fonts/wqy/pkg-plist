@@ -10,4 +10,5 @@
 %%FONTSDIR%%/wqy-zenhei.ttc
 %%FONTSDIR%%/wqy-microhei-lite.ttc
 %%FONTSDIR%%/wqy-microhei.ttc
+@fcfontsdir %%FONTSDIR%%
 @dirrm %%FONTSDIR%%
