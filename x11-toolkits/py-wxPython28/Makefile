@@ -3,14 +3,14 @@
 
 PORTNAME=	wxPython
 PORTVERSION=	2.8.12.1
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/wxpython/wxPython/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	28
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings for the wxWidgets/GTK GUI toolkit
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
@@ -18,11 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
 
 DIST_SUBDIR=	python
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 
 PYDISTUTILS_BUILDARGS=	\
 			WX_CONFIG="${WX_CONFIG}" \
@@ -37,7 +36,6 @@ WXPORT=		gtk2
 
 CONFIGURE_ARGS+=	--enable-aui
 
-NO_STAGE=	yes
 post-extract:
 # only keep the scripts we need
 	@${RM} ${WRKSRC}/scripts/*.py
@@ -58,7 +56,7 @@ pre-configure:
 post-build:
 # Shared amongst ansi/unicode installations
 .if defined(WITH_COMMON_ONLY)
-. for dir in demo wxversion
+. for dir in demo
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/${dir}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/${dir}
 . endfor
@@ -79,7 +77,8 @@ PYDISTUTILS_BUILDARGS+=	\
 			INSTALL_MULTIVERSION=1
 .else
 ## These are shared
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxversion.py:${PORTSDIR}/x11-toolkits/py-wxPython28-common
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}wxPython28-common>0:${PORTSDIR}/x11-toolkits/py-wxPython28-common \
+		${PYTHON_SITELIBDIR}/wxversion.py:${PORTSDIR}/x11-toolkits/py-wxPython-common
 
 PYDISTUTILS_BUILDARGS+=	\
 			NO_HEADERS=1 \
@@ -114,43 +113,32 @@ PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS} ${PYDISTUTILS_BUILDARGS}
 .if defined(WITH_COMMON_ONLY)
 do-install:
 # DEMO
-	@${MKDIR} ${DEMO_DIR}
-	@cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${DEMO_DIR}
+	@${MKDIR} ${STAGEDIR}${DEMO_DIR}
+	cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${DEMO_DIR}
 # header files
-	@${MKDIR} ${PREFIX}/include/wx-${WX_VERSION}/wx/wxPython/i_files
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/wx-${WX_VERSION}/wx/wxPython/i_files
 .for glob in *.i *.py
-	@${INSTALL_DATA} ${WRKSRC}/src/${glob} \
-		${PREFIX}/include/wx-${WX_VERSION}/wx/wxPython/i_files
+	${INSTALL_DATA} ${WRKSRC}/src/${glob} \
+		${STAGEDIR}${PREFIX}/include/wx-${WX_VERSION}/wx/wxPython/i_files
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/include/wx/wxPython/*.h \
-		${PREFIX}/include/wx-${WX_VERSION}/wx/wxPython
+	${INSTALL_DATA} ${WRKSRC}/include/wx/wxPython/*.h \
+		${STAGEDIR}${PREFIX}/include/wx-${WX_VERSION}/wx/wxPython
 # scripts
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/bin
-## wxversion
-	@${MKDIR} ${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}
-# wxversion script
-	@${INSTALL_DATA} ${WRKSRC}/wxversion/* \
-		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 .endif # defined(WITH_COMMON_ONLY)
 
 post-install:
 .if !defined(WITH_COMMON_ONLY)
+	@${ECHO_CMD} "@unexec ${REINPLACE_CMD} -i '' -e '\,${WX_PYTHON_DIR}$$,d' ${PYTHON_SITELIBDIR}/wx.pth 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec echo ${WX_PYTHON_DIR} >> ${PYTHON_SITELIBDIR}/wx.pth 2>/dev/null || true" >> ${TMPPLIST}
 # fix installation permissions
 	${CHMOD} -R a+rX \
-		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}
+		${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}
 # Remove unwanted .egg-info
-	${RM} -rf ${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxPython_common-*.egg-info
-	${RM} -rf ${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}/*.egg-info
-.endif
-##
-# wxversion wxPython available list
-##
-.if !defined(WITH_COMMON_ONLY)
-# add ansi/unicode to the available list
-	@${ECHO_CMD} ${WX_PYTHON_DIR} >> \
-		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wx.pth
-	@${CHMOD} ${SHAREMODE} \
-		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wx.pth
+	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxPython_common-*.egg-info
+	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wx.pth
+	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxversion*
+	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}/*.egg-info
 .endif
 
 .include <bsd.port.post.mk>

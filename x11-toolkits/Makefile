@@ -200,9 +200,11 @@
     SUBDIR += py-traitsgui
     SUBDIR += py-vte
     SUBDIR += py-wax
+    SUBDIR += py-wxPython-common
     SUBDIR += py-wxPython28
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython28-unicode
+    SUBDIR += py-wxPython30
     SUBDIR += py-xlib
     SUBDIR += qt4-declarative
     SUBDIR += qt4-gui
