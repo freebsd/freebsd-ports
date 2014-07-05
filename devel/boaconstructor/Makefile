@@ -3,7 +3,7 @@
 
 PORTNAME=	boaconstructor
 PORTVERSION=	0.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel python
 #MASTER_SITES=	SF/boa-constructor/Boa-Constructor/${PORTVERSION}-alpha
 MASTER_SITES=	SF/boa-constructor/Boa-Constructor/${PORTVERSION}-beta
@@ -16,8 +16,7 @@ WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
 
 USES=		gettext zip
 USE_PYTHON=	yes
-USE_WX=		2.8
-WX_UNICODE=	yes
+USE_WX=		3.0+
 WX_COMPS=	python
 DATADIR=	${PREFIX}/share/Boa
 
