@@ -2,6 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.2.1
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		${MASTER_SITE_LOCAL}
@@ -43,9 +44,8 @@ CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
-USE_PYTHON=	2.7+
-USE_WX=		2.6+
-WX_UNICODE=	yes
+USE_PYTHON=	yes
+USE_WX=		3.0+
 USE_QT4=	gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_LDCONFIG=	yes
