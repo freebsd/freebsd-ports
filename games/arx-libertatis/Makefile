@@ -18,6 +18,7 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
+BROKEN=		On 10-STABLE / 11-CURRENT causes c++ to use 100+GB of memory
 USES=		tar:xz cmake openal
 USE_SDL=	sdl
 USE_GL=		gl glu
