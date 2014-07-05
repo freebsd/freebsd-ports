@@ -34,7 +34,7 @@ lib/cmake/PySide-%%PORTVERSION%%/PySideConfig-%%PYTHON_VERSION%%.cmake
 lib/cmake/PySide-%%PORTVERSION%%/PySideConfig.cmake
 lib/cmake/PySide-%%PORTVERSION%%/PySideConfigVersion.cmake
 lib/libpyside-%%PYTHON_VERSION%%.so
-lib/libpyside-%%PYTHON_VERSION%%.so.1.1
+lib/libpyside-%%PYTHON_VERSION%%.so.1.2
 lib/libpyside-%%PYTHON_VERSION%%.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide/QtCore.so
 %%PYTHON_SITELIBDIR%%/PySide/QtDeclarative.so
@@ -53,6 +53,7 @@ lib/libpyside-%%PYTHON_VERSION%%.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide/QtXml.so
 %%PYTHON_SITELIBDIR%%/PySide/QtXmlPatterns.so
 %%PYTHON_SITELIBDIR%%/PySide/__init__.py
+%%PYTHON_SITELIBDIR%%/PySide/_utils.py
 %%PYTHON_SITELIBDIR%%/PySide/phonon.so
 libdata/pkgconfig/pyside.pc
 share/PySide/typesystems/typesystem_core.xml
