@@ -19,7 +19,7 @@
 -CFLAGS=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings \
 -			-Wstrict-prototypes -Wnested-externs -Winline -Werror -g -Wcast-align \
 -			-DSENDIP_LIBS=\"$(LIBDIR)\"
-+CFLAGS+=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings -Wno-empty-body -Wno-constant-conversion \
++CFLAGS+=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings \
 +			-Wstrict-prototypes -Wnested-externs -Winline -Werror -Wcast-align \
 +			-DSENDIP_LIBS=\"${LIBDIR}\"
  #-Wcast-align causes problems on solaris, but not serious ones
