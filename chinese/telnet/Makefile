@@ -11,7 +11,6 @@ DISTFILES=	# none
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	8bit compatible telnet client for Chinese input
 
-MAN1=		zh-telnet.1
 PLIST_FILES=	bin/zh-telnet man/man1/zh-telnet.1.gz
 
 .include <bsd.port.pre.mk>
