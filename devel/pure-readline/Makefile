@@ -7,13 +7,13 @@ CATEGORIES=	devel
 MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Readline interface for the Pure language
 
 LICENSE=	BSD GPLv3
 LICENSE_COMB=	dual
 
-USES=		pure
+USES=		pure readline
 
 PLIST_FILES=	lib/pure/readline.pure \
 		lib/pure/readline.so
