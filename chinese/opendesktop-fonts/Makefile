@@ -17,7 +17,6 @@ NO_BUILD=	yes
 
 TTF=		odokai-ExtB.ttf odokai.ttf odosung-ExtB.ttf odosung.ttc
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
@@ -36,11 +35,11 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-install:
-	${MKDIR} ${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for i in ${TTF}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${FONTSDIR}
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${FONTSDIR}
+	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${STAGEDIR}${FONTSDIR}
 .if !defined(WITHOUT_X11)
 	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${LOCALBASE}/etc/fonts/local.conf
 .endif
