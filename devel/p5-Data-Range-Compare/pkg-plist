@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Range/Compare/.packlist
 %%SITE_PERL%%/Data/Range/Compare.pm
 %%SITE_PERL%%/Data/Range/Compare.pod
 %%SITE_PERL%%/Data/Range/Compare/Cookbook.pod
@@ -6,16 +5,17 @@
 %%SITE_PERL%%/Data/Range/Compare/Cookbook/Recipe_DateTime.pod
 %%SITE_PERL%%/Data/Range/Compare/Cookbook/Recipe_a_to_z.pod
 %%SITE_PERL%%/Data/Range/Compare/Cookbook/Recipe_subclass_a_to_z.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Range/Compare/.packlist
 %%PERL5_MAN3%%/Data::Range::Compare.3.gz
 %%PERL5_MAN3%%/Data::Range::Compare::Cookbook.3.gz
 %%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Instance_and_Constants.3.gz
 %%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_DateTime.3.gz
 %%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_a_to_z.3.gz
 %%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_subclass_a_to_z.3.gz
-@dirrmtry %%SITE_PERL%%/Data/Range/Compare/Cookbook
-@dirrmtry %%SITE_PERL%%/Data/Range/Compare
-@dirrmtry %%SITE_PERL%%/Data/Range
-@dirrmtry %%SITE_PERL%%/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Range/Compare
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Range/Compare
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Range
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrm %%SITE_PERL%%/Data/Range/Compare/Cookbook
+@dirrm %%SITE_PERL%%/Data/Range/Compare
+@dirrmtry %%SITE_PERL%%/Data/Range
+@dirrmtry %%SITE_PERL%%/Data
