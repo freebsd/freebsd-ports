@@ -9,7 +9,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_static-${DISTVERSION}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 CONFLICTS=	skype-devel-[0-9]*
