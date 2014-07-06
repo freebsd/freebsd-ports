@@ -3,7 +3,7 @@
 
 PORTNAME=	imdbpy
 PORTVERSION=	4.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	SF/${PORTNAME}/IMDbPY/${PORTVERSION:S/.2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,32 +12,24 @@ DISTNAME=	IMDbPY-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Retrieve and manage the data of the IMDb movie database
 
-BROKEN=		Depends on conflicting py-sqlalchemy and py-sqlalchemy06
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.6.1:${PORTSDIR}/databases/py-sqlalchemy-migrate \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0:${PORTSDIR}/databases/py-sqlalchemy06 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_PKGNAMEPREFIX}sqlobject>=0:${PORTSDIR}/databases/py-sqlobject
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	2
+USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-
-.include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/bin/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>

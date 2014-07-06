@@ -38,22 +38,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyico16x16.ico
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyico32x32.ico
 %%PORTDOCS%%%%DOCSDIR%%/imdbpywin.bmp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_character.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_company.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_first_character.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_first_company.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_first_movie.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_first_person.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_keyword.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_movie.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_person.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_top_bottom_movies.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imdbpy2sql.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/search_character.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/search_company.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/search_keyword.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/search_movie.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/search_person.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/goodies
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
