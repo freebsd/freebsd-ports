@@ -1721,5 +1721,5 @@ jboss-as-7.1.1.Final/domain/configuration/application-users.properties
 @dirrm jboss-as-7.1.1.Final/bundles/javax
 @dirrm jboss-as-7.1.1.Final/bundles
 @dirrm jboss-as-7.1.1.Final
-@user root
+@owner root
 @group wheel
