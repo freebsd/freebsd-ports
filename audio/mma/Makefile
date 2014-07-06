@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/
 DISTFILES=	${PORTNAME}-bin-${PORTVERSION}.tar.gz
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Musical MIDI Accompaniment generator
 
 USES=		shebangfix

@@ -8,7 +8,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	astrometry.net-${PORTVERSION}
 
-MAINTAINER=	dereckson@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Describes an astronomical image
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \

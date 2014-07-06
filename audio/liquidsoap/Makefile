@@ -8,7 +8,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	SF/savonet/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 
-MAINTAINER=	i@levsha.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The audio stream generator of the Savonet project
 
 LICENSE=	GPLv2

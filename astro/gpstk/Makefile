@@ -7,7 +7,7 @@ CATEGORIES=	astro devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	jhein@symmetricom.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for developing GPS applications
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
