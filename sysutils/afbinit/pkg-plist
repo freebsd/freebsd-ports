@@ -1,4 +1,5 @@
 sbin/afbinit
+man/man8/afbinit.8.gz
 %%DATADIR%%/afb.ucode
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
