@@ -1,3 +1,4 @@
-SHA256 (apcupsd-3.14.10.tar.gz) = 0707b5ec9916fbde9e44eb8d18037c8d8f75dfd6aeef51aba5487e189eef2032
-SIZE (apcupsd-3.14.10.tar.gz) = 1336852
-SHA256 (apcupsd.pdf) = IGNORE
+SHA256 (apcupsd-3.14.12.tar.gz) = 1b4f703cb19cfdf44daf173dc8394cafd30fee0b30a0c75a7d19db622454a440
+SIZE (apcupsd-3.14.12.tar.gz) = 2014699
+SHA256 (apcupsd.pdf) = 9cfc69eb6cad27b702c888c3dd4e6a585463ac326f119a0ac7b317786d86c15c
+SIZE (apcupsd.pdf) = 1170356
