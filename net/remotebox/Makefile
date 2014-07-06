@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	remotebox
-PORTVERSION=	1.7
+PORTVERSION=	1.8.1
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${PORTVERSION}
@@ -23,10 +23,6 @@ USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|docs/remotebox|share/doc/remotebox/remotebox|'  ${WRKSRC}/remotebox
@@ -50,10 +46,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/applications
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/remotebox.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/changelog.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

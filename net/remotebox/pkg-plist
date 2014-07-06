@@ -1,8 +1,8 @@
 bin/remotebox
 share/applications/remotebox.desktop
-share/pixmaps/remotebox.png
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/remotebox.pdf
+share/pixmaps/remotebox.png
 %%DATADIR%%/icons/add_host_iface_16px.png
 %%DATADIR%%/icons/arrow_down_10px.png
 %%DATADIR%%/icons/arrow_right_10px.png
@@ -77,6 +77,11 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/icons/os/Linux_64.png
 %%DATADIR%%/icons/os/Linux_Other.png
 %%DATADIR%%/icons/os/MacOS.png
+%%DATADIR%%/icons/os/MacOS106.png
+%%DATADIR%%/icons/os/MacOS106_64.png
+%%DATADIR%%/icons/os/MacOS107_64.png
+%%DATADIR%%/icons/os/MacOS108_64.png
+%%DATADIR%%/icons/os/MacOS109_64.png
 %%DATADIR%%/icons/os/MacOS_64.png
 %%DATADIR%%/icons/os/Mandriva.png
 %%DATADIR%%/icons/os/Mandriva_64.png
@@ -127,8 +132,7 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/icons/os/WindowsMe.png
 %%DATADIR%%/icons/os/WindowsNT.png
 %%DATADIR%%/icons/os/WindowsNT4.png
-%%DATADIR%%/icons/os/WindowsOther.png
-%%DATADIR%%/icons/os/WindowsOther_64.png
+%%DATADIR%%/icons/os/WindowsNT_64.png
 %%DATADIR%%/icons/os/WindowsVista.png
 %%DATADIR%%/icons/os/WindowsVista_64.png
 %%DATADIR%%/icons/os/WindowsXP.png
@@ -158,6 +162,8 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/icons/sf_settings_16px.png
 %%DATADIR%%/icons/show_logs_16px.png
 %%DATADIR%%/icons/show_snapshot_details_22px.png
+%%DATADIR%%/icons/snapshot_offline_16px.png
+%%DATADIR%%/icons/snapshot_online_16px.png
 %%DATADIR%%/icons/sound_16px.png
 %%DATADIR%%/icons/state_aborted_16px.png
 %%DATADIR%%/icons/state_paused_16px.png
@@ -174,8 +180,14 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/icons/usb_remove_16px.png
 %%DATADIR%%/icons/vm_add_16px.png
 %%DATADIR%%/icons/vm_clone_16px.png
+%%DATADIR%%/icons/vm_clone_22px.png
 %%DATADIR%%/icons/vm_discard_16px.png
 %%DATADIR%%/icons/vm_discard_32px.png
+%%DATADIR%%/icons/vm_group_16px.png
+%%DATADIR%%/icons/vm_group_expand_16px.png
+%%DATADIR%%/icons/vm_group_name_16px.png
+%%DATADIR%%/icons/vm_group_remove_16px.png
+%%DATADIR%%/icons/vm_group_shrink_16px.png
 %%DATADIR%%/icons/vm_new_16px.png
 %%DATADIR%%/icons/vm_new_32px.png
 %%DATADIR%%/icons/vm_pause_16px.png
@@ -209,8 +221,8 @@ share/pixmaps/remotebox.png
 %%DATADIR%%/remotebox.xml
 %%DATADIR%%/vboxService.pm
 %%DATADIR%%/vboxserializers.pl
-@dirrm %%DATADIR%%/icons/os
-@dirrm %%DATADIR%%/icons/gueststatus
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/icons/gueststatus
+@dirrmtry %%DATADIR%%/icons/os
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%
