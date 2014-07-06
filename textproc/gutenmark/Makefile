@@ -14,7 +14,8 @@ COMMENT=	Attractively formatting Project Gutenberg texts
 WRKSRC=		${WRKDIR}/GutenMark-source
 
 USES=		gmake
-USE_WX=		2.8
+USE_WX=		3.0
+WX_UNICODE=	yes
 ALL_TARGET=	default
 
 PLIST_FILES=	bin/GutenMark bin/GutenSplit bin/GUItenMark \
