@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.6.17-66.0
+DISTVERSION=	5.6.19-67.0
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-${DISTVERSION}/source/tarball/
 PKGNAMESUFFIX?=	56-server
-DISTNAME=	percona-server-5.6.17-66.0
+DISTNAME=	percona-server-${DISTVERSION}
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -15,9 +15,12 @@ COMMENT?=	Multithreaded SQL database (server)
 SLAVEDIRS=	databases/percona56-client
 USES=		bison cmake shebangfix
 
-OPTIONS_DEFINE=	OPENSSL FASTMTX
-OPTIONS_DEFAULT=	OPENSSL
+OPTIONS_DEFINE=	OPENSSL FASTMTX INNODBMEMCACHED
+OPTIONS_DEFAULT=	OPENSSL INNODBMEMCACHED
+OPTIONS_SUB=    yes
 FASTMTX_DESC=	Replace mutexes with spinlocks
+INNODBMEMCACHED_DESC= InnoDB Memcached plugin
+INNODBMEMCACHED_CMAKE_ON=-DWITH_INNODB_MEMCACHED=1
 
 DATADIR=	${PREFIX}/share/mysql
 
