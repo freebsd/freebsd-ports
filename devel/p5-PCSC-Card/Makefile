@@ -11,7 +11,7 @@ DISTNAME=	pcsc-perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings for the PC/SC Lite Framework
 
-LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 
 USE_BZIP2=	yes
 USES=		perl5 pkgconfig
