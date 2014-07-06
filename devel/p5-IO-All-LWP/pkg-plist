@@ -1,15 +1,15 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/LWP/.packlist
 %%SITE_PERL%%/IO/All/FTP.pm
 %%SITE_PERL%%/IO/All/HTTP.pm
 %%SITE_PERL%%/IO/All/HTTPS.pm
 %%SITE_PERL%%/IO/All/LWP.pm
 %%SITE_PERL%%/IO/All/iocp.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/LWP/.packlist
 %%PERL5_MAN3%%/IO::All::FTP.3.gz
 %%PERL5_MAN3%%/IO::All::HTTP.3.gz
 %%PERL5_MAN3%%/IO::All::HTTPS.3.gz
 %%PERL5_MAN3%%/IO::All::LWP.3.gz
-@dirrmtry %%SITE_PERL%%/IO/All
-@dirrmtry %%SITE_PERL%%/IO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/LWP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/LWP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry %%SITE_PERL%%/IO/All
+@dirrmtry %%SITE_PERL%%/IO
