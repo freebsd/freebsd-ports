@@ -71,18 +71,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/using_the_view_class.html
 %%PORTDOCS%%%%DOCSDIR%%/view-model.cwk
 %%PORTDOCS%%%%DOCSDIR%%/view-model.jpg
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/blobedit.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob.tiff
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob_app.icns
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob_file.icns
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Samples/asdf.blob
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Samples/frown.blob
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Samples/line.blob
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Samples/smile.blob
-%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/setup.py
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BlobEdit/Resources
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BlobEdit/Samples
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BlobEdit
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob.tiff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob_app.icns
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob_file.icns
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/Samples/asdf.blob
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/Samples/frown.blob
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/Samples/line.blob
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/Samples/smile.blob
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/blobedit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlobEdit/setup.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/BlobEdit
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ToDo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
