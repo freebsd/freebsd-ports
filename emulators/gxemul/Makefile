@@ -18,9 +18,9 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	build
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		gxemul.1
 PORTDOCS=	*
-PLIST_FILES=	bin/gxemul
+PLIST_FILES=	bin/gxemul \
+		man/man1/gxemul.1.gz
 
 USE_GCC=	yes
 
@@ -28,14 +28,8 @@ USE_GCC=	yes
 # a virtual VGA adaptor.
 CONFLICTS=	svgalib-[0-9]*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11
-.else
-CONFIGURE_ARGS+=--disable-x
-.endif
+X11_USE=	xorg=x11
+X11_CONFIGURE_OFF=--disable-x
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
@@ -44,15 +38,12 @@ post-patch:
 		 s|-f[a-zA-Z-]+||g' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gxemul ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/man/gxemul.1 ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} -p ${DOCSDIR}/components
-	${MKDIR} -p ${DOCSDIR}/machines
-	${INSTALL_DATA} ${WRKSRC}/doc/components/* ${DOCSDIR}/components
-	${INSTALL_DATA} ${WRKSRC}/doc/machines/* ${DOCSDIR}/machines
-	${INSTALL_DATA} `find ${WRKSRC}/doc/ -type f -depth 1` ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/gxemul ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/man/gxemul.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/components \
+		${STAGEDIR}${DOCSDIR}/machines
+	${INSTALL_DATA} ${WRKSRC}/doc/components/* ${STAGEDIR}${DOCSDIR}/components
+	${INSTALL_DATA} ${WRKSRC}/doc/machines/* ${STAGEDIR}${DOCSDIR}/machines
+	${INSTALL_DATA} `find ${WRKSRC}/doc/ -type f -depth 1` ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
