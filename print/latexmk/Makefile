@@ -11,8 +11,6 @@ COMMENT=	Tool to completely automate generating output from LaTeX documents
 
 LICENSE=	GPLv2 # (or later)
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
@@ -20,28 +18,25 @@ USES=		perl5 zip
 USE_PERL5=	run
 USE_TEX=	latex
 
-MAN1=		latexmk.1
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/latexmk
+PLIST_FILES=	bin/latexmk man/man1/latexmk.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} latexmk.pl ${PREFIX}/bin/latexmk)
-	(cd ${WRKSRC} && ${INSTALL_MAN} latexmk.1 ${MANPREFIX}/man/man1)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} latexmk.pl \
+		${STAGEDIR}${PREFIX}/bin/latexmk)
+	(cd ${WRKSRC} && ${INSTALL_MAN} latexmk.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in CHANGES INSTALL README latexmk.pdf latexmk.ps latexmk.txt
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} example_rcfiles ${EXAMPLESDIR})
-	@(cd ${WRKSRC} && ${COPYTREE_BIN} extra-scripts ${EXAMPLESDIR})
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} example_rcfiles \
+		${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_BIN} extra-scripts \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
