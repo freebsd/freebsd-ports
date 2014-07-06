@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	libpo6
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://hyperdex.org/src/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	POSIX wrappers for C++
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=	pathfix
+USES=	gmake pathfix
 
 .include <bsd.port.mk>
