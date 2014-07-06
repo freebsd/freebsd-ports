@@ -8,7 +8,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	http://launchpadlibrarian.net/26637583/
 DISTNAME=	pyjama-0.3.0.1_all
 
-MAINTAINER=	ktullavik@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Frontend to the Jamendo music network
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \

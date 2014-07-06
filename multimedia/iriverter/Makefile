@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	multimedia java
 MASTER_SITES=	SF
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Cross-platform frontend to mencoder
 
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder

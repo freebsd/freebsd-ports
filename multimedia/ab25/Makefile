@@ -6,7 +6,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Utility for ARIB STD-B25 ECM handling in MPEG2-TS stream
 
 LICENSE=	ISCL

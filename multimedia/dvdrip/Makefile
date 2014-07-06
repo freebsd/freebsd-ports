@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN \
 		http://www.exit1.org/dvdrip/dist/
 MASTER_SITE_SUBDIR=	CPAN:JRED
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Perl Gtk+ based dvd-ripper
 
 BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
