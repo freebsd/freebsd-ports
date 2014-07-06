@@ -1,16 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Rad/.packlist
 %%SITE_PERL%%/App/Rad.pm
 %%SITE_PERL%%/App/Rad/Config.pm
 %%SITE_PERL%%/App/Rad/Exclude.pm
 %%SITE_PERL%%/App/Rad/Help.pm
 %%SITE_PERL%%/App/Rad/Include.pm
 %%SITE_PERL%%/App/Rad/Plugin.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Rad/.packlist
 %%PERL5_MAN3%%/App::Rad.3.gz
 %%PERL5_MAN3%%/App::Rad::Exclude.3.gz
 %%PERL5_MAN3%%/App::Rad::Help.3.gz
 %%PERL5_MAN3%%/App::Rad::Include.3.gz
 %%PERL5_MAN3%%/App::Rad::Plugin.3.gz
-@dirrmtry %%SITE_PERL%%/App/Rad
-@dirrmtry %%SITE_PERL%%/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Rad
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Rad
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrm %%SITE_PERL%%/App/Rad
+@dirrmtry %%SITE_PERL%%/App
