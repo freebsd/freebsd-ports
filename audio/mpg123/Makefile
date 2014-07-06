@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpg123
-PORTVERSION=	1.19.0
-PORTREVISION=	1
+PORTVERSION=	1.20.1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -39,6 +38,8 @@ WITH_CPU=	i486
 .endif
 .elif ${ARCH} == "amd64"
 WITH_CPU=	x86-64
+.elif ${ARCH} == "arm"
+WITH_CPU=	arm_nofpu
 .endif
 
 .if defined(WITH_CPU)
