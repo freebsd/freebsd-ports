@@ -12,13 +12,9 @@ MAKE_ARGS=	DOC_MODULE=libxml2 EXAMPLES_DIR=${EXAMPLESDIR}
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLES=	testHTML.c testSAX.c testXPath.c xmllint.c
-PLIST_FILES=	${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
-PLIST_DIRS=	%%EXAMPLESDIR%%
-.endif
+EXAMPLES_PLIST_FILES=	${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
+EXAMPLES_PLIST_DIRS=	%%EXAMPLESDIR%%
 
 do-install:
 .for d in . doc doc/examples
