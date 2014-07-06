@@ -28,7 +28,4 @@ share/hyperlatex/siteinit.hlx
 share/hyperlatex/tabularx.hlx
 share/texmf/tex/latex/hyperlatex/hyperlatex.sty
 @dirrmtry share/texmf/tex/latex/hyperlatex
-@dirrmtry share/texmf/tex/latex
-@dirrmtry share/texmf/tex
-@dirrmtry share/texmf
 @dirrmtry share/hyperlatex

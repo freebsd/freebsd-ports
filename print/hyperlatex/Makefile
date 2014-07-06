@@ -18,7 +18,6 @@ USE_EMACS=	yes
 LATEX_DIR=	${PREFIX}/share/texmf/tex/latex/hyperlatex
 HYPERLATEX_DIR=	${PREFIX}/share/hyperlatex
 
-NO_STAGE=	yes
 do-configure:
 	@(cd ${WRKSRC} && \
 	${REINPLACE_CMD} -e 's|http://www.cs.uu.nl/\\~{}otfried/img/||' hlx/siteinit.hlx && \
@@ -29,13 +28,15 @@ do-build:
 	cd ${WRKSRC}/hlx; emacs -batch -q -no-site-file -l hyperlatex.el -f hyperlatex-compile
 
 do-install:
-	${MKDIR} ${HYPERLATEX_DIR}
-	${MKDIR} ${LATEX_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/hyperlatex ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/ps2image ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/normalize-eps.awk ${PREFIX}/bin/normalize-eps
-	${INSTALL_DATA} ${WRKSRC}/etc/hyperlatex.sty ${LATEX_DIR}
+	@${MKDIR} ${STAGEDIR}${HYPERLATEX_DIR}
+	@${MKDIR} ${STAGEDIR}${LATEX_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/hyperlatex ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/ps2image ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/normalize-eps.awk \
+		${STAGEDIR}${PREFIX}/bin/normalize-eps
+	${INSTALL_DATA} ${WRKSRC}/etc/hyperlatex.sty ${STAGEDIR}${LATEX_DIR}
 	cd ${WRKSRC}/hlx; for f in *.el *.elc *.hlx *.xbm *.awk ; do \
-	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${HYPERLATEX_DIR}; fi; done
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f \
+	    ${STAGEDIR}${HYPERLATEX_DIR}; fi; done
 
 .include <bsd.port.mk>
