@@ -45,7 +45,8 @@ BOOK_DESC=	Include (default) opening book
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-OPT+=		-DINLINE32
+# The i386 assembly is currently broken - disable for this version
+#OPT+=		-DINLINE32
 .elif ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
