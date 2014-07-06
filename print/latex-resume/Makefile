@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.cls
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A resume class for LaTeX
+COMMENT=	Resume class for LaTeX
 
 USE_TEX=	latex
 NO_BUILD=	yes
@@ -30,12 +30,9 @@ CLASS_FILES=	${DISTFILES}
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${CLASSDIR}
-	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}
-
-post-install:
-	@${MKTEXLSR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${CLASSDIR}
+	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} \
+		${STAGEDIR}${PREFIX}/${CLASSDIR}
 
 .include <bsd.port.mk>
