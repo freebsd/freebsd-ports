@@ -18,12 +18,14 @@ LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm \
 CONFLICTS=	ortp-[0-9]*
 
 USE_GNOME=	glib20 intlhack
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig readline:port
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure oRTP/configure mediastreamer2/configure
 CONFIGURE_ARGS=	--disable-ipv6 --disable-manual --disable-ewarning \
 		--disable-strict --disable-video --disable-external-ortp \
-		--with-osip=${LOCALBASE} --with-gsm=${LOCALBASE}
+		--with-osip=${LOCALBASE} --with-gsm=${LOCALBASE} \
+		--with-readline=${LOCALBASE}
+CONFIGURE_ENV+=	ac_cv_lib_readline_readline=yes
 MAKE_ENV=	SUBDIRS="${SUBDIRS}"
 USE_LDCONFIG=	yes
 
@@ -31,16 +33,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+NLS_CONFIGURE_ENABLE=	nls
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if defined(LINPHONE_GUI)
@@ -49,16 +49,12 @@ RUN_DEPENDS+=	linphone-base>=${PORTVERSION}:${PORTSDIR}/net/linphone-base
 DESCR=		${PKGDIR}/pkg-descr.gui
 PLIST=		${PKGDIR}/pkg-plist.gui
 USE_GNOME+=	libglade2
-MAN1=		linphone.1
 SUBDIRS=	pixmaps gtk-glade
 .else
 PKGNAMESUFFIX=	-base
 CONFIGURE_ARGS+=	--enable-gtk_ui=no
-MAN1=		linphonec.1 linphonecsh.1 sipomatic.1
 SUBDIRS=	po oRTP mediastreamer2 coreapi console
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
@@ -77,19 +73,25 @@ post-patch:
 
 post-install:
 .if defined(LINPHONE_GUI)
-	@${LN} -sf linphone-3 ${PREFIX}/bin/linphone
-	${INSTALL_MAN} ${WRKSRC}/share/C/linphone.1 ${MANPREFIX}/man/man1
+	cd ${STAGEDIR}${PREFIX}/bin && \
+		${LN} -sf linphone-3 linphone
+	${INSTALL_MAN} ${WRKSRC}/share/C/linphone.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/share/linphone.desktop \
-		${PREFIX}/share/applications
+		${STAGEDIR}${PREFIX}/share/applications
 .else
-	${INSTALL_MAN} ${WRKSRC}/share/C/linphonec.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/share/C/linphonecsh.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/share/C/sipomatic.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/share/linphone.pc ${PREFIX}/libdata/pkgconfig
-	@${MKDIR} ${DATADIR}/sounds
-	${INSTALL_DATA} ${WRKSRC}/share/*.wav ${DATADIR}/sounds
-	@${MKDIR} ${DATADIR}/sounds/rings
-	${INSTALL_DATA} ${WRKSRC}/share/rings/*.wav ${DATADIR}/sounds/rings
+	@${MKDIR} ${STAGEDIR}${DATADIR}/sounds/rings
+	${INSTALL_MAN} \
+		${WRKSRC}/share/C/linphonec.1 \
+		${WRKSRC}/share/C/linphonecsh.1 \
+		${WRKSRC}/share/C/sipomatic.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/share/linphone.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/share/*.wav \
+		${STAGEDIR}${DATADIR}/sounds
+	${INSTALL_DATA} ${WRKSRC}/share/rings/*.wav \
+		${STAGEDIR}${DATADIR}/sounds/rings
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
