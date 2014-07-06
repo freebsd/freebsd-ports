@@ -3,7 +3,7 @@
 
 PORTNAME=	obapps
 PORTVERSION=	0.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/ \
 		SF/nemysisfreebsdp/:icons
@@ -19,7 +19,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>=0:${PORTSDIR}/x11-toolkits/py-xlib
 
 USE_PYTHON=	yes
-USE_WX=		2.8+
+USE_WX=		3.0+
 WX_COMPS=	python:run
 USE_PYDISTUTILS=yes
 
