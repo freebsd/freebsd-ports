@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://arton.cunst.net/xcheckers/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Checkers game for X11
 
 USES=		imake
