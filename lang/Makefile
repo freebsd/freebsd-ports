@@ -284,6 +284,7 @@
     SUBDIR += runawk
     SUBDIR += rust
     SUBDIR += s9fes
+    SUBDIR += sagittarius-scheme
     SUBDIR += sather-specification
     SUBDIR += sather-tutorial
     SUBDIR += sbcl
