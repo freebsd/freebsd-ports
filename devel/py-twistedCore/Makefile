@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedCore
-PORTVERSION=	13.2.0
+PORTVERSION=	14.0.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Core/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
@@ -22,15 +22,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 #   Twisted, but the user should feel free to install x11-toolits/py-gnome
 #   separately if desired.
 
-USE_BZIP2=	yes
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
-REINPLACE_ARGS=	-i ''
-
-MAN1=		manhole.1 pyhtmlizer.1 tap2deb.1 tap2rpm.1 tapconvert.1 trial.1 twistd.1
-
-post-install:
-	cd ${WRKSRC}/doc/man/ && ${INSTALL_MAN} ${MAN1} ${STAGEDIR}${MANPREFIX}/man/man1/
+PYDISTUTILS_AUTOPLIST=	yes
+USES=		tar:bzip2
 
 .include <bsd.port.mk>
