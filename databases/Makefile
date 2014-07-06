@@ -133,6 +133,7 @@
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb
+    SUBDIR += leofs
     SUBDIR += leveldb
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
