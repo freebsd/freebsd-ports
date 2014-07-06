@@ -6,7 +6,7 @@ PORTVERSION=	0.7.0
 PORTREVISION=	2
 CATEGORIES=	audio
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-source, social, and smart music player
 
 LICENSE=	GPLv3

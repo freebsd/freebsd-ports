@@ -8,7 +8,7 @@ CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	hashiz@meridiani.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OSS plugin for ALSA (Linux Fedora 10)
 
 ONLY_FOR_ARCHS=	i386 amd64

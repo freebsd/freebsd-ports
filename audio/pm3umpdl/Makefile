@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	vvelox@vvelox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Loading a M3U file into musicpd
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mpc:${PORTSDIR}/audio/musicpc

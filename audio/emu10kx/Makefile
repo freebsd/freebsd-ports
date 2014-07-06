@@ -7,7 +7,7 @@ CATEGORIES=	audio kld
 MASTER_SITES=	http://chibis.persons.gfk.ru/audigy/emu10kx/
 DISTNAME=	${PORTNAME}-2005-10-21
 
-MAINTAINER=	michaels@sdf.lonestar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SBLive!, Audigy, and Audigy2 driver for FreeBSD
 
 USE_BZIP2=	yes
