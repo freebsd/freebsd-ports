@@ -3,13 +3,9 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}:src_sf \
-		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
-		http://apcupsd.sourceforge.net/manual/:doc_sf \
-		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:doc_bk
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src_sf,src_bk
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Set of programs for controlling APC UPS
@@ -46,7 +42,7 @@ TEST_DRV_DESC=		Compile TEST driver
 GAPCMON_DESC=		Build GTK GUI front-end
 MODBUS_DESC=		Compile with MODBUS driver
 
-PORTDOCS=	${PORTNAME}.pdf
+#PORTDOCS=	${PORTNAME}.pdf
 
 APCSMART_DRV_CONFIGURE_ENABLE=	apcsmart
 APCDUMB_DRV_CONFIGURE_ENABLE=	dumb
@@ -74,10 +70,6 @@ TEST_DRV_CONFIGURE_ENABLE=	test
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS} || make(makesum)
-DISTFILES+=	${PORTNAME}.pdf:doc_sf,doc_bk
-.endif
-
 pre-configure:
 .if ${PORT_OPTIONS:MCLIENT_ONLY} && ( ${PORT_OPTIONS:MAPCSMART_DRV} || \
 	${PORT_OPTIONS:MAPCDUMB_DRV} || ${PORT_OPTIONS:MPCNET_DRV} || \
@@ -97,9 +89,5 @@ post-install:
 			${MV} ${STAGEDIR}${ETCDIR}/$$na ${STAGEDIR}${ETCDIR}/$$na.sample; \
 		fi \
 	done
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.pdf ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
