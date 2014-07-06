@@ -1,29 +1,29 @@
 bin/medusa
-lib/medusa/modules/telnet.mod
-lib/medusa/modules/smbnt.mod
-lib/medusa/modules/http.mod
-lib/medusa/modules/ssh.mod
-lib/medusa/modules/mssql.mod
-lib/medusa/modules/pop3.mod
-lib/medusa/modules/mysql.mod
-lib/medusa/modules/pcanywhere.mod
-lib/medusa/modules/ftp.mod
-lib/medusa/modules/imap.mod
-lib/medusa/modules/nntp.mod
-lib/medusa/modules/rsh.mod
-lib/medusa/modules/rexec.mod
-lib/medusa/modules/wrapper.mod
-lib/medusa/modules/rlogin.mod
-lib/medusa/modules/vnc.mod
-%%POSTGRESQL%%lib/medusa/modules/postgres.mod
 lib/medusa/modules/cvs.mod
-lib/medusa/modules/vmauthd.mod
-lib/medusa/modules/snmp.mod
+lib/medusa/modules/ftp.mod
+lib/medusa/modules/http.mod
+lib/medusa/modules/imap.mod
+lib/medusa/modules/mssql.mod
+lib/medusa/modules/mysql.mod
+lib/medusa/modules/nntp.mod
+lib/medusa/modules/pcanywhere.mod
+%%PGSQL%%lib/medusa/modules/postgres.mod
+lib/medusa/modules/pop3.mod
+lib/medusa/modules/rexec.mod
+lib/medusa/modules/rlogin.mod
+lib/medusa/modules/rsh.mod
+lib/medusa/modules/smbnt.mod
 lib/medusa/modules/smtp-vrfy.mod
 lib/medusa/modules/smtp.mod
+lib/medusa/modules/snmp.mod
+lib/medusa/modules/ssh.mod
 %%SVN%%lib/medusa/modules/svn.mod
+lib/medusa/modules/telnet.mod
+lib/medusa/modules/vmauthd.mod
+lib/medusa/modules/vnc.mod
 lib/medusa/modules/web-form.mod
-share/zsh/site-functions/_medusa
+lib/medusa/modules/wrapper.mod
+man/man1/medusa.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/medusa-afp.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-compare.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-cvs.html
@@ -52,8 +52,9 @@ share/zsh/site-functions/_medusa
 %%PORTDOCS%%%%DOCSDIR%%/medusa-web-form.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-wrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa.html
-@unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true
+share/zsh/site-functions/_medusa
+@dirrmtry lib/medusa/modules
+@dirrmtry lib/medusa
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry share/zsh/site-functions
 @dirrmtry share/zsh
-@dirrm lib/medusa/modules
-@dirrm lib/medusa
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
