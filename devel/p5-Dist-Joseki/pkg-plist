@@ -1,6 +1,5 @@
 bin/dist
 bin/distfind
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Joseki/.packlist
 %%SITE_PERL%%/Dist/Joseki.pm
 %%SITE_PERL%%/Dist/Joseki/Base.pm
 %%SITE_PERL%%/Dist/Joseki/Cmd.pm
@@ -18,7 +17,7 @@ bin/distfind
 %%SITE_PERL%%/Dist/Joseki/DistType/ModuleBuild.pm
 %%SITE_PERL%%/Dist/Joseki/Find.pm
 %%SITE_PERL%%/Dist/Joseki/Version.pm
-man/man1/distfind.1.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Joseki/.packlist
 %%PERL5_MAN3%%/Dist::Joseki.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Base.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Cmd.3.gz
@@ -36,10 +35,11 @@ man/man1/distfind.1.gz
 %%PERL5_MAN3%%/Dist::Joseki::DistType::ModuleBuild.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Find.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Version.3.gz
-@dirrmtry %%SITE_PERL%%/Dist/Joseki/DistType
-@dirrmtry %%SITE_PERL%%/Dist/Joseki/Command
-@dirrmtry %%SITE_PERL%%/Dist/Joseki/Cmd
-@dirrmtry %%SITE_PERL%%/Dist/Joseki
-@dirrmtry %%SITE_PERL%%/Dist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Joseki
+man/man1/distfind.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Joseki
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist
+@dirrm %%SITE_PERL%%/Dist/Joseki/DistType
+@dirrm %%SITE_PERL%%/Dist/Joseki/Command
+@dirrm %%SITE_PERL%%/Dist/Joseki/Cmd
+@dirrm %%SITE_PERL%%/Dist/Joseki
+@dirrmtry %%SITE_PERL%%/Dist
