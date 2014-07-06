@@ -3,7 +3,7 @@
 
 PORTNAME=	vboxtool
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -24,7 +24,6 @@ GROUPS=		vboxusers
 
 SAMPLESDIR=	${PREFIX}/share/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|!/bin/bash|!/usr/bin/env bash|' \
 		-e 's|/etc/|${PREFIX}&|g' \
@@ -32,18 +31,10 @@ post-patch:
 		${WRKSRC}/script/vboxtoolinit
 
 do-install:
-	@if  [ ! -f ${PREFIX}/etc/${PORTNAME} ]; then \
-		${MKDIR}  	${PREFIX}/etc/${PORTNAME};\
-	fi
-	${MKDIR}  	${EXAMPLESDIR}
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/vboxtool.conf ]; then \
-		${INSTALL_DATA} 	${FILESDIR}/vboxtool.conf	${PREFIX}/etc/${PORTNAME}/vboxtool.conf;\
-	fi
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/machines.conf ]; then \
-		${INSTALL_DATA} 	${FILESDIR}/machines.conf	${PREFIX}/etc/${PORTNAME}/machines.conf;\
-	fi
-	${INSTALL_SCRIPT} -m 0750	${WRKSRC}/script/vboxtool		${PREFIX}/bin/vboxtool
-	${INSTALL_SCRIPT} -m 0750	${WRKSRC}/script/vboxtoolinit		${PREFIX}/etc/rc.d/vboxtoolinit
-	${INSTALL_DATA} 	${FILESDIR}/machines.conf	${EXAMPLESDIR}/machines.conf
-	${INSTALL_DATA} 	${FILESDIR}/vboxtool.conf	${EXAMPLESDIR}/vboxtool.conf
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/vboxtool.conf ${STAGEDIR}${ETCDIR}/vboxtool.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/machines.conf ${STAGEDIR}${ETCDIR}/machines.conf.sample
+	${INSTALL_SCRIPT} -m 0750 ${WRKSRC}/script/vboxtool ${STAGEDIR}${PREFIX}/bin/vboxtool
+	${INSTALL_SCRIPT} -m 0750 ${WRKSRC}/script/vboxtoolinit ${STAGEDIR}${PREFIX}/etc/rc.d/vboxtoolinit
+
 .include <bsd.port.mk>
