@@ -3,7 +3,7 @@
 
 PORTNAME=	pam-pgsql
 PORTVERSION=	0.7.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7/
 
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libmhash.so:${PORTSDIR}/security/mhash \
 USES=		libtool
 USE_PGSQL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir=/usr/lib
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS

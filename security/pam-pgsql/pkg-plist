@@ -1,9 +1,7 @@
+lib/pam_pgsql.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/sample.sql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd /usr
-lib/pam_pgsql.so
-@cwd
