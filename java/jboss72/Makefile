@@ -39,7 +39,6 @@ SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		APP_HOME=${PREFIX}/${DISTNAME}
 PLIST_SUB=	APP_HOME=${DISTNAME}
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "To build you should have at least 2Gb of Ram (Or build will fail with java OOM Exception)"
@@ -54,15 +53,6 @@ do-build:
 	cd ${WRKSRC} && ./build.sh -Dmaven.test.skip=true -DskipTests
 
 do-install:
-	${MKDIR} ${PREFIX}/${DISTNAME} && cd ${JBOSSOUTPUT} && ${FIND} . | ${CPIO} -pdmu -R ${USER}:${GROUP} ${PREFIX}/${DISTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DISTNAME} && cd ${JBOSSOUTPUT} && ${FIND} . | ${CPIO} -pdmu -R ${USER}:${GROUP} ${STAGEDIR}${PREFIX}/${DISTNAME}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-IGNORE=	does not work without base xz
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

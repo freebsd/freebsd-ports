@@ -1,3 +1,5 @@
+@user www
+@group www
 %%APP_HOME%%/docs/schema/jboss-as-web_1_1.xsd
 %%APP_HOME%%/docs/schema/service-ref_4_2.dtd
 %%APP_HOME%%/docs/schema/web-jsptaglibrary_1_1.dtd
@@ -1613,3 +1615,5 @@
 @dirrm %%APP_HOME%%/docs/schema
 @dirrm %%APP_HOME%%/docs
 @dirrm %%APP_HOME%%
+@user root
+@group wheel
