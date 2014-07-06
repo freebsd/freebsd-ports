@@ -1,8 +1,6 @@
-%%EXAMPLESDIR%%/simple_example
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BS/Event/.packlist
 %%SITE_PERL%%/BS/Event.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BS/Event/.packlist
 %%PERL5_MAN3%%/BS::Event.3.gz
-@dirrmtry %%SITE_PERL%%/BS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BS/Event
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BS/Event
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BS
-@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/BS
