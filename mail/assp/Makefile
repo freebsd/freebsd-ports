@@ -2,20 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	assp
-PORTVERSION=	1.9.9.13257
+PORTVERSION=	1.9.9.14158
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
 DISTNAME=	${PORTNAME:tu}_${PORTVERSION}_Install
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Anti-Spam SMTP Proxy
 
-USES=		perl5 zip
+RUN_DEPENDS=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Parser>=3.69:${PORTSDIR}/www/p5-HTML-Parser
+
+USES=		perl5 zip:infozip
 NO_BUILD=	yes
 USE_PERL5=	run
-
-MAN8=		assp.8 assplog.8
 
 ASSP_USER=	assp
 ASSP_GROUP=	assp
@@ -24,9 +26,10 @@ GROUPS=		${ASSP_GROUP}
 ASSP_HOME=	/var/db/assp
 ASSP_LOG=	/var/log/assp
 
-PLIST_SUB=	ASSP_HOME="${ASSP_HOME}" ASSP_LOG="${ASSP_LOG}"
+PLIST_SUB=	ASSP_HOME="${ASSP_HOME}" ASSP_LOG="${ASSP_LOG}" \
+		ASSP_USER="${ASSP_USER}" ASSP_GROUP="${ASSP_GROUP}"
 
-SUB_FILES=	510.assp assp.8 assplog.8 assplog.pl pkg-install
+SUB_FILES=	510.assp assp.8 assplog.8 assplog.pl
 SUB_LIST=	ASSP_USER="${ASSP_USER}" ASSP_GROUP="${ASSP_GROUP}" \
 		ASSP_HOME="${ASSP_HOME}" ASSP_LOG="${ASSP_LOG}" \
 		DATADIR="${DATADIR}" PERL="${PERL}"
@@ -53,14 +56,9 @@ IPV6_DESC=	IPv6 sockets support
 
 OPTIONS_DEFAULT=	EMVALID SPF SRS SEND FBACKW CLAMAV DNSBL MATCHRE SENDERB MIMEMOD SSL IPV6
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ASSP_1.9.9_13227_install/${PORTNAME:tu}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ASSP_1.9.9_14158_install/${PORTNAME:tu}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-RUN_DEPENDS+=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww \
-		p5-HTML-Parser>=3.69:${PORTSDIR}/www/p5-HTML-Parser
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMVALID}
 RUN_DEPENDS+=	p5-Email-Valid>=0.190:${PORTSDIR}/mail/p5-Email-Valid
@@ -99,6 +97,7 @@ RUN_DEPENDS+=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS
 
 .if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-Tie-DBI>=1.05:${PORTSDIR}/databases/p5-Tie-DBI
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MMATCHRE}
@@ -127,28 +126,28 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/assp.pl ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/rebuildspamdb.pl ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/stat.pl ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/images \
+		${STAGEDIR}${DATADIR}/logs ${STAGEDIR}${DATADIR}/reports
+	${INSTALL_SCRIPT} ${WRKSRC}/assp.pl ${STAGEDIR}${DATADIR}
+	(cd ${STAGEDIR} && ${LN} -sf ${DATADIR}/assp.pl ${STAGEDIR}${PREFIX}/sbin/assp)
+	${INSTALL_SCRIPT} ${WRKSRC}/rebuildspamdb.pl ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/stat.pl ${STAGEDIR}${DATADIR}
 
 	( cd ${WRKSRC} && ${COPYTREE_SHARE} "files images reports" \
-		${DATADIR}/ "! -name '*.orig' ! -name '*.bak'" )
+		${STAGEDIR}${DATADIR}/ "! -name '*.orig' ! -name '*.bak'" )
 
-	${INSTALL_SCRIPT} ${WRKDIR}/assplog.pl ${PREFIX}/sbin/assplog
+	${INSTALL_SCRIPT} ${WRKDIR}/assplog.pl ${STAGEDIR}${PREFIX}/sbin/assplog
 
-	${INSTALL_MAN} ${WRKDIR}/assp.8 ${MAN8PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKDIR}/assplog.8 ${MAN8PREFIX}/man/man8
-
-	${MKDIR} ${PREFIX}/etc/periodic/daily
-	${INSTALL_SCRIPT} ${WRKDIR}/510.assp ${PREFIX}/etc/periodic/daily/
+	${INSTALL_MAN} ${WRKDIR}/assp.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKDIR}/assplog.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/510.assp ${STAGEDIR}${PREFIX}/etc/periodic/daily/
+	${MKDIR} ${STAGEDIR}${ASSP_HOME}
+	${MKDIR} ${STAGEDIR}${ASSP_LOG}
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.htm ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.htm ${STAGEDIR}${DOCSDIR}
 .endif
 
-post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
