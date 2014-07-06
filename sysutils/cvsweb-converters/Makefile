@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://mitglied.multimania.de/mkamm/distfiles/ \
 		http://www.student.tugraz.at/kammerhofer/distfiles/
 
-MAINTAINER=	mkamm@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create hyperlinks to cvsweb from cvs[up] output or FreeBSD commitlogs
 
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \

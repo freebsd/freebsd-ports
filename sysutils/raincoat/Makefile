@@ -7,7 +7,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		SF/xbox-linux/Other/Raincoat
 EXTRACT_SUFX=		.tbz2
 
-MAINTAINER=		ed@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		BIOS flash utility for the Microsoft Xbox
 
 # Xbox is i386

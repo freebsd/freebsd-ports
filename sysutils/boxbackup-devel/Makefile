@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	${CLIENT_OR_SERVER}-devel
 DISTNAME=	${PORTNAME}-${SVNVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	james@netinertia.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source, completely automatic on-line backup system for Unix
 
 LICENSE=	BSD GPLv2

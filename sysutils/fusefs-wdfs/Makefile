@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://noedler.de/projekte/wdfs/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount remote WedDAV directories with Fuse
 
 LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29

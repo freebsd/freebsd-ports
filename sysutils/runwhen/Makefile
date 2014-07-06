@@ -6,7 +6,7 @@ PORTVERSION=	2003.10.31
 CATEGORIES=	sysutils
 MASTER_SITES=	http://code.dogmap.org./${PORTNAME}/releases/
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for running commands at particular times
 
 BUILD_DEPENDS=	${LOCALBASE}/include/skalibs:${PORTSDIR}/devel/skalibs

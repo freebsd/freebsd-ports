@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.menet.umn.edu/~hokan/
 
-MAINTAINER=	hokan@me.umn.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print news items
 
 NO_STAGE=	yes

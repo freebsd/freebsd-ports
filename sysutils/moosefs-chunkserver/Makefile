@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-chunkserver
 NO_STAGE=	yes
 .include "${.CURDIR}/../moosefs-master/bsd.port.moosefs.mk"
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Storing files data and synchronizing it among themselves
 
 DISTINFO_FILE=	${.CURDIR}/../moosefs-master/distinfo

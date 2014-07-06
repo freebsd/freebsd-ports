@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.txz
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-${PORTVERSION}.diff.gz
 
-MAINTAINER=	dteske@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to configure various aspects of FreeBSD
 
 LICENSE=	BSD

@@ -8,7 +8,7 @@ MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
 DISTNAME=	ganglia-${PORTVERSION}
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core

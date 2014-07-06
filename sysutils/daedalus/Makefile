@@ -6,7 +6,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.insidesystems.net/daedalus/
 
-MAINTAINER=	kelley@insidesystems.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible process monitor/restart daemon written in ruby
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

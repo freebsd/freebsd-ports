@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uses a hardware tick counter to compensate for deviant system clock
 
 LIB_DEPENDS=	tai.1:${PORTSDIR}/devel/libtai
