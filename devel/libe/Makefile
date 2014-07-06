@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libe
-PORTVERSION=	0.3.2
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://hyperdex.org/src/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	High-performance datastructures and utilities for C++
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:${PORTSDIR}/devel/libpo6
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	amd64
