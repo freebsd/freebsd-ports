@@ -15,9 +15,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
 DOCSDIR=	lib/${PORTNAME}
-USES=		gmake
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
