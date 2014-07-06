@@ -21,12 +21,11 @@ NO_BUILD=	yes
 SHAREMODE=	644
 XFONTDIR=	${LOCALBASE}/lib/X11/fonts/local
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${XFONTDIR}
+	@${MKDIR} ${STAGEDIR}${XFONTDIR}
 .for i in ${FONTFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${XFONTDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${XFONTDIR}
 .endfor
-	@cd ${XFONTDIR} ; mkfontdir
+	@cd ${STAGEDIR}${XFONTDIR} ; mkfontdir
 
 .include <bsd.port.mk>
