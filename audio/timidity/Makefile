@@ -11,7 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI to PCM software synthesizer
 
-CONFLICTS=	timidity++-2.13.*
+CONFLICTS=	timidity++-2.*
 
 TIINS=		goemon.tgz
 INSTALL_TARGET=	install.all
