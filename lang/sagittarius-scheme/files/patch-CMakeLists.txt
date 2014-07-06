@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -494,9 +494,9 @@
+   CONFIGURE_FILE(cmake/sagittarius.pc.in
+     ${PROJECT_BINARY_DIR}/sagittarius-${SAGITTARIUS_VERSION}.pc @ONLY)
+   INSTALL(FILES ${PROJECT_BINARY_DIR}/sagittarius.pc
+-    DESTINATION lib/pkgconfig)
++    DESTINATION libdata/pkgconfig)
+   INSTALL(FILES ${PROJECT_BINARY_DIR}/sagittarius-${SAGITTARIUS_VERSION}.pc
+-    DESTINATION lib/pkgconfig)
++    DESTINATION libdata/pkgconfig)
+ ENDIF()
+ 
+ # config, package so on
