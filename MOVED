@@ -6237,4 +6237,4 @@ x11-clocks/wmitime||2014-07-04|Has expired
 x11/xorg-edit||2014-07-04|Has expired: Depends on older version of wxGTK
 net/ttbudget||2014-07-06|Has expired: does not build, mastersite disapperead, not staged
 sysutil/psgconf||2014-07-06|Removed: abandonware
-print/texinfo-lite/print/indexinfo|2014-07-06|Replaced by indexinfo to handle info page index
+print/texinfo-lite|print/indexinfo|2014-07-06|Replaced by indexinfo to handle info page index
