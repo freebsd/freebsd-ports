@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	xmpppy-
 DISTNAME=	yahoo-transport-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Yahoo! transport for Jabber
 
 OPTIONS_DEFINE=	EJABBERD

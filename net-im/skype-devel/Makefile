@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	skype_static-${DISTVERSION}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	P2P VoIP software, development version
 
 CONFLICTS=	skype-[0-9]*

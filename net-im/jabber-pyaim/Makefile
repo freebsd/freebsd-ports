@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}-t-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	takeda@takeda.tk
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Python AIM-Transport for Jabber
 
 PROJECTHOST=	pyaimt
