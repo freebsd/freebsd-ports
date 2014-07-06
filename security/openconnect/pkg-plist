@@ -1,8 +1,7 @@
 sbin/openconnect
 include/openconnect.h
-lib/libopenconnect.a
-lib/libopenconnect.la
 lib/libopenconnect.so
 lib/libopenconnect.so.2
+lib/libopenconnect.so.2.2.0
 libdata/pkgconfig/openconnect.pc
 man/man8/openconnect.8.gz
