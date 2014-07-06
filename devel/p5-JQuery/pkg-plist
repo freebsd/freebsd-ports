@@ -1,15 +1,3 @@
-%%PERL5_MAN3%%/JQuery.3.gz
-%%PERL5_MAN3%%/JQuery::Accordion.3.gz
-%%PERL5_MAN3%%/JQuery::CSS.3.gz
-%%PERL5_MAN3%%/JQuery::ClickMenu.3.gz
-%%PERL5_MAN3%%/JQuery::Demo.3.gz
-%%PERL5_MAN3%%/JQuery::Form.3.gz
-%%PERL5_MAN3%%/JQuery::Heartbeat.3.gz
-%%PERL5_MAN3%%/JQuery::Splitter.3.gz
-%%PERL5_MAN3%%/JQuery::TableSorter.3.gz
-%%PERL5_MAN3%%/JQuery::Tabs.3.gz
-%%PERL5_MAN3%%/JQuery::Taconite.3.gz
-%%PERL5_MAN3%%/JQuery::Treeview.3.gz
 %%SITE_PERL%%/JQuery.pm
 %%SITE_PERL%%/JQuery/Accordion.pm
 %%SITE_PERL%%/JQuery/CSS.pm
@@ -157,6 +145,18 @@
 %%SITE_PERL%%/JQuery/jquery_js/plugins/validate/jquery.validate.js
 %%SITE_PERL%%/JQuery/jquery_js/plugins/validate/jquery.validate.pack.js
 %%SITE_PERL%%/JQuery/jquery_js/plugins/window/window.js
+%%PERL5_MAN3%%/JQuery.3.gz
+%%PERL5_MAN3%%/JQuery::Accordion.3.gz
+%%PERL5_MAN3%%/JQuery::CSS.3.gz
+%%PERL5_MAN3%%/JQuery::ClickMenu.3.gz
+%%PERL5_MAN3%%/JQuery::Demo.3.gz
+%%PERL5_MAN3%%/JQuery::Form.3.gz
+%%PERL5_MAN3%%/JQuery::Heartbeat.3.gz
+%%PERL5_MAN3%%/JQuery::Splitter.3.gz
+%%PERL5_MAN3%%/JQuery::TableSorter.3.gz
+%%PERL5_MAN3%%/JQuery::Tabs.3.gz
+%%PERL5_MAN3%%/JQuery::Taconite.3.gz
+%%PERL5_MAN3%%/JQuery::Treeview.3.gz
 @dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/window
 @dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/validate
 @dirrmtry %%SITE_PERL%%/JQuery/jquery_js/plugins/treeview/images/red
