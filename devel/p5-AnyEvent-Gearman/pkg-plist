@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Gearman/.packlist
 %%SITE_PERL%%/AnyEvent/Gearman.pm
 %%SITE_PERL%%/AnyEvent/Gearman/Client.pm
 %%SITE_PERL%%/AnyEvent/Gearman/Client/Connection.pm
@@ -9,6 +8,7 @@
 %%SITE_PERL%%/AnyEvent/Gearman/Types.pm
 %%SITE_PERL%%/AnyEvent/Gearman/Worker.pm
 %%SITE_PERL%%/AnyEvent/Gearman/Worker/Connection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Gearman/.packlist
 %%PERL5_MAN3%%/AnyEvent::Gearman.3.gz
 %%PERL5_MAN3%%/AnyEvent::Gearman::Client.3.gz
 %%PERL5_MAN3%%/AnyEvent::Gearman::Client::Connection.3.gz
@@ -19,9 +19,9 @@
 %%PERL5_MAN3%%/AnyEvent::Gearman::Types.3.gz
 %%PERL5_MAN3%%/AnyEvent::Gearman::Worker.3.gz
 %%PERL5_MAN3%%/AnyEvent::Gearman::Worker::Connection.3.gz
-@dirrmtry %%SITE_PERL%%/AnyEvent/Gearman/Worker
-@dirrmtry %%SITE_PERL%%/AnyEvent/Gearman/Client
-@dirrmtry %%SITE_PERL%%/AnyEvent/Gearman
-@dirrmtry %%SITE_PERL%%/AnyEvent
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Gearman
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Gearman
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrm %%SITE_PERL%%/AnyEvent/Gearman/Worker
+@dirrm %%SITE_PERL%%/AnyEvent/Gearman/Client
+@dirrm %%SITE_PERL%%/AnyEvent/Gearman
+@dirrmtry %%SITE_PERL%%/AnyEvent
