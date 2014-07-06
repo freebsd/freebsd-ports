@@ -3,7 +3,7 @@
 
 PORTNAME=	oath-toolkit
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -11,8 +11,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library, tools, and PAM module for OATH authentication
 
-USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PSKC DOCS
@@ -31,9 +32,9 @@ DOCS=		AUTHORS ChangeLog NEWS README
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} 's|@HTML_DIR@|${DOCSDIR}|' \
-		${WRKSRC}/liboath/gtk-doc/Makefile.in \
-		${WRKSRC}/libpskc/gtk-doc/Makefile.in
+	@${REINPLACE_CMD} '/^Makefile.gdoc:/s,$$(top_builddir)/configure,,' \
+		${WRKSRC}/liboath/man/Makefile.in \
+		${WRKSRC}/libpskc/man/Makefile.in
 
 post-install:
 .for f in ${DOCS}
