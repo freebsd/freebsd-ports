@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	singledispatch
-PORTVERSION=	3.4.0.2
-PORTREVISION=	1
+PORTVERSION=	3.4.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	provides single-dispatch generic functions
+COMMENT=	Provides single-dispatch generic functions
 
 LICENSE=	MIT
 
