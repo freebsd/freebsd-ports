@@ -1195,7 +1195,6 @@
     SUBDIR += tshark
     SUBDIR += tshark-lite
     SUBDIR += tsocks
-    SUBDIR += ttbudget
     SUBDIR += ttlscan
     SUBDIR += tucan
     SUBDIR += turnserver
