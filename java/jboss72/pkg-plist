@@ -1,4 +1,4 @@
-@user www
+@owner www
 @group www
 %%APP_HOME%%/docs/schema/jboss-as-web_1_1.xsd
 %%APP_HOME%%/docs/schema/service-ref_4_2.dtd
@@ -1615,5 +1615,5 @@
 @dirrm %%APP_HOME%%/docs/schema
 @dirrm %%APP_HOME%%/docs
 @dirrm %%APP_HOME%%
-@user root
+@owner root
 @group wheel
