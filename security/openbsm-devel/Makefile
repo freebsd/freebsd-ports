@@ -3,7 +3,7 @@
 
 PORTNAME=	openbsm
 DISTVERSION=	1.2-alpha3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/ \
     		http://mirrors.rit.edu/zi/
@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 CONFLICTS=	openbsm-1.[0-9]*
 
 GNU_CONFIGURE=	yes
+USES=		libtool
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	auditdistd
