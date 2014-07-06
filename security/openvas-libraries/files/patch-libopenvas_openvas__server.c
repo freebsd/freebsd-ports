@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- libopenvas/openvas_server.c.orig
 +++ libopenvas/openvas_server.c
 @@ -32,6 +32,8 @@

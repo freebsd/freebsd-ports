@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-plugins
 PORTVERSION=	1.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/588/
 
@@ -19,17 +19,13 @@ RUN_DEPENDS=	openvasd:${PORTSDIR}/security/openvas-server \
 		${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils \
 		${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 
-USES=		pkgconfig
-GNU_CONFIGURE=	yes
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-CPPFLAGS+=	"`${LIBNET_CONFIG} --cflags`"
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../openvas-libraries/Makefile.common"
-
-#.if ${ARCH} != "i386"
-#BROKEN=		does not compile
-#.endif
+USES=		libtool pkgconfig
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var
+CPPFLAGS+=	"`${LIBNET_CONFIG} --cflags`" -I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
@@ -37,4 +33,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
 		${WRKSRC}/plugins/3com_hub/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

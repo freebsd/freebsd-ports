@@ -30,12 +30,12 @@ include/openvas/store.h
 include/openvas/system.h
 include/openvas/www_funcs.h
 lib/libopenvas.a
-lib/libopenvas.la
 lib/libopenvas.so
 lib/libopenvas.so.2
+lib/libopenvas.so.2.0.3
 lib/libopenvas_hg.a
-lib/libopenvas_hg.la
 lib/libopenvas_hg.so
 lib/libopenvas_hg.so.2
+lib/libopenvas_hg.so.2.0.3
 man/man1/libopenvas-config.1.gz
 @dirrm include/openvas

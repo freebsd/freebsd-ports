@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- openvas-libraries.tmpl.in.orig
 +++ openvas-libraries.tmpl.in
 @@ -61,7 +61,8 @@
