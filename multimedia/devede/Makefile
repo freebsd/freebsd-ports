@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Create video DVDs, VCDs, sVCDs, or CVDs from any number of video files
 
 RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \

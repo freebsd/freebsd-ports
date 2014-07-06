@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.gna.org/clive/1.0.x/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Video extraction utility for YouTube, GoogleVideo, and others
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:${PORTSDIR}/www/py-urlgrabber

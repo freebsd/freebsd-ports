@@ -8,7 +8,7 @@ CATEGORIES=	multimedia audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.1
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.r,rc,}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Tuner for streaming internet radio and TV
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \

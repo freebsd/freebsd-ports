@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 DISTFILES=	spigot.1.7.tar.gz
 
-MAINTAINER=	james@cs.uwm.edu
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Video spigot for Windows library
 
 # binary package
