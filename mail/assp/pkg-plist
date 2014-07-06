@@ -2,10 +2,13 @@ etc/periodic/daily/510.assp
 sbin/assp
 sbin/assplog
 %%DATADIR%%/assp.pl
+@owner %%ASSP_USER%%
+@group %%ASSP_GROUP%%
 %%DATADIR%%/files/URIBLCCTLDS.txt
 %%DATADIR%%/files/blackaddresses.txt
 %%DATADIR%%/files/blackdomains.txt
 %%DATADIR%%/files/blackre.txt
+%%DATADIR%%/files/blacksenderbase.txt
 %%DATADIR%%/files/blockreportlist.txt
 %%DATADIR%%/files/bombdatare.txt
 %%DATADIR%%/files/bombheaderre.txt
@@ -17,11 +20,13 @@ sbin/assplog
 %%DATADIR%%/files/deny.txt
 %%DATADIR%%/files/denyalways.txt
 %%DATADIR%%/files/dnsbls.txt
+%%DATADIR%%/files/dnsrws.txt
 %%DATADIR%%/files/droplist.txt
 %%DATADIR%%/files/groups.txt
 %%DATADIR%%/files/invalidhelo.txt
 %%DATADIR%%/files/invalidptr.txt
 %%DATADIR%%/files/ipnp.txt
+%%DATADIR%%/files/ipnpexclude.txt
 %%DATADIR%%/files/noblocking.txt
 %%DATADIR%%/files/nodelay.txt
 %%DATADIR%%/files/nodelayhelosre.txt
@@ -34,16 +39,20 @@ sbin/assplog
 %%DATADIR%%/files/preheaderre.txt
 %%DATADIR%%/files/rcptreplrules.txt
 %%DATADIR%%/files/redre.txt
+%%DATADIR%%/files/samesubjectskip.txt
 %%DATADIR%%/files/strictspf.txt
 %%DATADIR%%/files/subjectre.txt
 %%DATADIR%%/files/suspiciousre.txt
 %%DATADIR%%/files/suspiciousvirus.txt
 %%DATADIR%%/files/tlds-alpha-by-domain.txt
-%%DATADIR%%/files/uriblwhite.txt
 %%DATADIR%%/files/uriblserviceprovider.txt
+%%DATADIR%%/files/uriblwhite.txt
+%%DATADIR%%/files/validhelo.txt
 %%DATADIR%%/files/validptr.txt
 %%DATADIR%%/files/whiteptr.txt
-%%DATADIR%%/files/whiteorg.txt
+%%DATADIR%%/files/whitesenderbase.txt
+@owner
+@group
 %%DATADIR%%/images/assp.css
 %%DATADIR%%/images/blockreport.css
 %%DATADIR%%/images/blockreport.gif
@@ -77,6 +86,7 @@ sbin/assplog
 %%DATADIR%%/reports/notspamreport.txt
 %%DATADIR%%/reports/npremovereport.txt
 %%DATADIR%%/reports/npreport.txt
+%%DATADIR%%/reports/persblackreport.txt
 %%DATADIR%%/reports/redremovereport.txt
 %%DATADIR%%/reports/redreport.txt
 %%DATADIR%%/reports/slremovereport.txt
@@ -89,18 +99,31 @@ sbin/assplog
 %%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/reports
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/files
-@dirrm %%DATADIR%%
+man/man8/assp.8.gz
+man/man8/assplog.8.gz
+@dirrmtry %%DATADIR%%/reports
+@dirrmtry %%DATADIR%%/logs
+@dirrmtry %%DATADIR%%/images
+@dirrmtry %%DATADIR%%/files
+@dirrmtry %%DATADIR%%
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
-@unexec rm -f %%ASSP_HOME%%/logs
-@unexec rm -f %%ASSP_HOME%%/reports
-@unexec rm -f %%ASSP_HOME%%/images
+@exec ln -sf %D/%%DATADIR%%/files %%ASSP_HOME%%/
 @unexec rm -f %%ASSP_HOME%%/files
-@unexec rmdir %%ASSP_HOME%% 2>/dev/null || true
+@exec ln -sf %D/%%DATADIR%%/images %%ASSP_HOME%%/
+@unexec rm -f %%ASSP_HOME%%/images
+@exec ln -sf %D/%%DATADIR%%/rebuildspamdb.pl %%ASSP_HOME%%/
+@unexec rm -f %%ASSP_HOME%%/rebuildspamdb.pl
+@exec ln -sf %D/%%DATADIR%%/reports %%ASSP_HOME%%/
+@unexec rm -f %%ASSP_HOME%%/reports
+@exec ln -sf %%ASSP_LOG%% %%ASSP_HOME%%/logs
+@unexec rm -f %%ASSP_HOME%%/logs
+@cwd /
+@owner %%ASSP_USER%%
+@group %%ASSP_GROUP%%
+@mode 750
+@dirrmtry %%ASSP_LOG%%
+@dirrmtry %%ASSP_HOME%%
 @unexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi
-@unexec rmdir %%ASSP_LOG%% 2>/dev/null || true
 @unexec if [ -d %%ASSP_LOG%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_LOG%% directory."; fi
 @unexec echo "If you are deinstalling ASSP completely, delete the ASSP user and group."
