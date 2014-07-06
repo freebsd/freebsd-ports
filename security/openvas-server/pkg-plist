@@ -16,26 +16,34 @@ man/man8/openvas-adduser.8.gz
 man/man8/openvas-mkcert.8.gz
 man/man8/openvas-rmuser.8.gz
 man/man8/openvasd.8.gz
-openvas/lib/openvas/openvas-services
 sbin/openvas-adduser
 sbin/openvas-mkcert
 sbin/openvas-rmuser
 sbin/openvasd
-@dirrmtry openvas/run
-@dirrmtry openvas/log/openvas
-@dirrmtry openvas/log
-@dirrmtry openvas/lib/openvas/users
-@dirrmtry openvas/lib/openvas/tmp
-@dirrmtry openvas/lib/openvas/private/CA
-@dirrmtry openvas/lib/openvas/private
-@dirrmtry openvas/lib/openvas/logs
-@dirrmtry openvas/lib/openvas/jobs
-@dirrmtry openvas/lib/openvas/CA
-@dirrmtry openvas/lib/openvas
-@dirrmtry openvas/lib
-@dirrmtry openvas/cache/openvas
-@dirrmtry openvas/cache
-@dirrmtry openvas
-@dirrmtry include/openvas
+@exec mkdir -p %D/etc/openvas
+@exec install -d -m 700 %D/etc/openvas/gnupg
 @dirrmtry etc/openvas/gnupg
 @dirrmtry etc/openvas
+@cwd /var
+@exec mkdir -p %D/cache/openvas
+lib/openvas/openvas-services
+@exec mkdir -p %D/lib/openvas/CA
+@exec mkdir -p %D/lib/openvas/jobs
+@exec mkdir -p %D/lib/openvas/logs
+@exec install -d -m 700 %D/lib/openvas/private
+@exec install -d -m 700 %D/lib/openvas/private/CA
+@exec mkdir -p %D/lib/openvas/tmp
+@exec mkdir -p %D/lib/openvas/users
+@exec mkdir -p %D/log/openvas
+@dirrmtry log/openvas
+@dirrmtry lib/openvas/users
+@dirrmtry lib/openvas/tmp
+@dirrmtry lib/openvas/private/CA
+@dirrmtry lib/openvas/private
+@dirrmtry lib/openvas/logs
+@dirrmtry lib/openvas/jobs
+@dirrmtry lib/openvas/CA
+@dirrmtry lib/openvas
+@dirrmtry lib
+@dirrmtry cache/openvas
+@cwd %%RESETPREFIX%%

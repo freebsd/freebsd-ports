@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-libraries
 PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/600/
 
@@ -13,12 +13,14 @@ COMMENT=	Libraries for OpenVAS
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		pkgconfig
 GNU_CONFIGURE=	yes
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 MAKE_JOBS_UNSAFE=	yes
 
-.include "${.CURDIR}/Makefile.common"
+CONFIGURE_ARGS=	--localstatedir=/var
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
