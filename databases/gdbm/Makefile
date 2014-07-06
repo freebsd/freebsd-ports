@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		gmake libtool:keepla
+USES=		libtool:keepla
 
 MAKE_JOBS_UNSAFE=	yes
 
