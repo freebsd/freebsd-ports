@@ -1,3 +1,5 @@
+@owner www
+@group www
 jboss-as-7.1.1.Final/bundles/javax/servlet/api/v25/jbosgi-http-api-1.0.5.jar
 jboss-as-7.1.1.Final/bundles/org/jboss/osgi/logging/main/jboss-osgi-logging-1.0.0.jar
 jboss-as-7.1.1.Final/bundles/org/jboss/as/osgi/configadmin/main/jboss-as-osgi-configadmin-7.1.1.Final.jar
@@ -1719,3 +1721,5 @@ jboss-as-7.1.1.Final/domain/configuration/application-users.properties
 @dirrm jboss-as-7.1.1.Final/bundles/javax
 @dirrm jboss-as-7.1.1.Final/bundles
 @dirrm jboss-as-7.1.1.Final
+@user root
+@group wheel
