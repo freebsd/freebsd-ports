@@ -39,32 +39,19 @@ PKGNAMESUFFIX=	-nox11
 USE_XORG=	xpm
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		ploticus.1
-MAN3=		libploticus.3
-MANCOMPRESSED=	no
-.endif
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${BUILD_WRKSRC}/Makefile ${BUILD_WRKSRC}/mkapi
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/pl ${PREFIX}/bin/ploticus
-	@${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/pl ${STAGEDIR}${PREFIX}/bin/ploticus
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/prefabs && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/man/man1/pl.1 ${MANPREFIX}/man/man1/ploticus.1
-	${INSTALL_MAN} ${WRKSRC}/man/man3/${MAN3} ${MANPREFIX}/man/man3
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/pl.1 ${STAGEDIR}${MANPREFIX}/man/man1/ploticus.1
+	${INSTALL_MAN} ${WRKSRC}/man/man3/libploticus.3 ${STAGEDIR}${MANPREFIX}/man/man3
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/pltestsuite && ${FIND} . \! -name "*.orig" | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-.endif
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
