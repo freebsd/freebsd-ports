@@ -1,2 +1,6 @@
 SHA256 (hadoop/hadoop-2.4.1-src.tar.gz) = 09f897738e9d34bceb7e7d4494bbc75e363fb32993f56dc5a6de8aab3419b990
 SIZE (hadoop/hadoop-2.4.1-src.tar.gz) = 15417097
+SHA256 (hadoop/FreeBSD-hadoop2-2.4.1-maven-repository.tar.gz) = b4698f60eff9aca6fa2e9792bc6d0d6745fa7c7e909c6fdd0c8f85daf1f0deea
+SIZE (hadoop/FreeBSD-hadoop2-2.4.1-maven-repository.tar.gz) = 71669612
+SHA256 (hadoop/apache-tomcat-6.0.36.tar.gz) = bc1be532d48a239a6945b028bf8f253087d3405f6522229226c484bf8ae4d45e
+SIZE (hadoop/apache-tomcat-6.0.36.tar.gz) = 6780936
