@@ -8,7 +8,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.3
 DISTNAME=	${PORTNAME}-1.3rc2
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISP management software
 
 RUN_DEPENDS=	p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced\

@@ -8,7 +8,7 @@ MASTER_SITES=	#
 DISTNAME=	nls_agnt_262592
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	numbski@hksilver.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VERITAS Backup Exec (tm) UNIX Agent
 
 DOWNLOAD_URL=	http://www.symantec.com/business/support/index?page=content&id=TECH28248

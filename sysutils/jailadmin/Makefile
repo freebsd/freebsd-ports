@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://subwiki.honeypot.net/pub/Freebsd/JailAdmin/
 DISTNAME=	jailadmin-${PORTVERSION}
 
-MAINTAINER=	kirk@strauser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system for managing a set of named jails
 
 USES=		perl5

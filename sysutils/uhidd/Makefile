@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE \
 		http://people.freebsd.org/~kaiw/distfiles/
 
-MAINTAINER=	kaiwang27@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland USB HID device driver using libusb20
 
 LICENSE=	BSD2CLAUSE

@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.opennet.ru/dev/fsbackup/src/
 DISTNAME=	fsbackup-1.2pl1
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File system backup and synchronization utility
 
 RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net

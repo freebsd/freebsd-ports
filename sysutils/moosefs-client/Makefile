@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-client
 NO_STAGE=	yes
 .include "${.CURDIR}/../moosefs-master/bsd.port.moosefs.mk"
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moosefs client tools
 
 DISTINFO_FILE=	${.CURDIR}/../moosefs-master/distinfo

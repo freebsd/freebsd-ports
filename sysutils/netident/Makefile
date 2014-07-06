@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.pl
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	vvelox@vvelox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for helping identify what network a machine is on
 
 RUN_DEPENDS=	p5-IO-Interface>=0:${PORTSDIR}/net/p5-IO-Interface \

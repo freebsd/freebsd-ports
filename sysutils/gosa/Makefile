@@ -9,7 +9,7 @@ CATEGORIES=	sysutils www
 MASTER_SITES=	http://oss.gonicus.de/pub/gosa/ \
 		http://oss.gonicus.de/pub/gosa/archive/
 
-MAINTAINER=	dsh@wizard.volgograd.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Based LDAP Administration Program
 
 RUN_DEPENDS=	p5-Crypt-SmbHash>=0.12:${PORTSDIR}/security/p5-Crypt-SmbHash \

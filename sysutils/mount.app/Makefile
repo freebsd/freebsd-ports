@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	SF
 
-MAINTAINER=	nm@web.am
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windowmaker application, Resembles wmmount with extra functionality
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker

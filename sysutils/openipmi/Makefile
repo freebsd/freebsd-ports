@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library
 DISTNAME=	OpenIPMI-${PORTVERSION}
 
-MAINTAINER=	alex.deiter@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complex IPMI management software
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

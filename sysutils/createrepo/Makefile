@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://createrepo.baseurl.org/download/
 
-MAINTAINER=	afb@rpm5.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates a common metadata repository
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlitecachec.py:${PORTSDIR}/devel/py-yum-metadata-parser \

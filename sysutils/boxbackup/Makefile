@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	james@netinertia.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source, completely automatic on-line backup system for Unix
 
 LICENSE=	BSD GPLv2

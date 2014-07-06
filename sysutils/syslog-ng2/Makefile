@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	ivan.lago@ifom.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
 DEPRECATED=	Fails to build with new utmpx

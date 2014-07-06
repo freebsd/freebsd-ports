@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www-stud.ims.uni-stuttgart.de/~voegelas/pcfclock/
 
-MAINTAINER=	frank@dynamical-systems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland access to the pcfclock device
 
 USE_RC_SUBR=	pcfdate

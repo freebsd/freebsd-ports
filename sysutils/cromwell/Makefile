@@ -18,7 +18,7 @@ PATCHFILES=		cromwell-ufs.diff cromwell-kenv.diff cromwell-gcc4.diff
 PATCHFILES+=		cromwell-gcc4-2.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	rink@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux (and FreeBSD :-) BIOS images for the Microsoft Xbox
 
 SUB_FILES=	pkg-message
