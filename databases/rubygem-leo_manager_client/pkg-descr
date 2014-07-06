@@ -1,0 +1,5 @@
+LeoFS is a highly scalable, fault-tolerant distributed file system
+for the Web. This library allows any Ruby application to communicate
+with LeoFS manager.
+
+WWW: http://leo-project.net/
