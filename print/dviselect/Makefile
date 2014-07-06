@@ -15,8 +15,10 @@ COMMENT=	Extract pages from DVI files
 
 SCRIPTS_ENV=	CFLAGS="${CFLAGS}"
 
-MAN1=		dviselect.1
-PLIST_FILES=	bin/dviselect
+PLIST_FILES=	bin/dviselect man/man1/dviselect.1.gz
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dviselect ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dviselect.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
 .include <bsd.port.mk>
