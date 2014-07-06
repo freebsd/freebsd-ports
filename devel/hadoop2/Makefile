@@ -5,11 +5,14 @@ PORTNAME=	hadoop
 PORTVERSION=	2.4.1
 PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITES=	${MASTER_SITE_APACHE} \
+		LOCAL/demon/:maven \
+		http://people.freebsd.org/~demon/:maven \
+		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat
 MASTER_SITE_SUBDIR=${PORTNAME}/common/stable
 PKGNAMEPREFIX=	apache-
 PKGNAMESUFFIX=	2
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat
 DIST_SUBDIR=	hadoop
 
 MAINTAINER=	demon@FreeBSD.org
@@ -17,7 +20,7 @@ COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven3 \
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
 		cmake:${PORTSDIR}/devel/cmake \
 		protoc:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -30,9 +33,9 @@ JAVA_VERSION=	1.7+
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/sbin/httpfs.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/libexec/httpfs-config.sh
 MAKE_ENV+=	HADOOP_PROTOC_PATH=${LOCALBASE}/bin/protoc
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
-MANUAL_PACKAGE_BUILD=	maven fetches files during build
-
+TOMCAT_VERSION=	6.0.36
 HADOOP_DIST=	${WRKSRC}/hadoop-dist/target/hadoop-${PORTVERSION}
 
 HADOOP_LOGDIR=  /var/log/hadoop
@@ -61,13 +64,12 @@ SUB_LIST=	HDFS_USER="${HDFS_USER}" \
 		HADOOP_RUNDIR="${HADOOP_RUNDIR}"
 
 post-patch:
-	${MKDIR} ${WRKDIR}/m2
-	${CP} ${FILESDIR}/settings.xml ${WRKDIR}
-	${REINPLACE_CMD} -e "s|WORK|${WRKDIR}|" ${WRKDIR}/settings.xml
 	${REINPLACE_CMD} -e "s#/bin/bash#${LOCALBASE}/bin/bash#" ${WRKSRC}/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/DefaultContainerExecutor.java ${WRKSRC}/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/MRJobConfig.java ${WRKSRC}/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/launcher/ContainerLaunch.java ${WRKSRC}/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/Shell.java
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/mvn -gs "${WRKDIR}/settings.xml" clean package -Pdist,native -DskipTests
+	${MKDIR} ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/apache-tomcat-${TOMCAT_VERSION}.tar.gz ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads/
+	cd ${WRKSRC} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -Pdist,native -DskipTests
 
 post-build:
 	${RM} ${HADOOP_DIST}/etc/hadoop/*.cmd
