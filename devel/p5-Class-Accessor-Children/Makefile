@@ -10,9 +10,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automated child-class/accessor generation
 
-RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
