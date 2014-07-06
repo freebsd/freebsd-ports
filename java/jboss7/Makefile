@@ -24,11 +24,8 @@ GROUP=		www
 DIST_SUBDIR=	${DISTNAME}
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	${MKDIR} ${PREFIX}/${DISTNAME} && cd ${WRKSRC} && ${FIND} . |\
-		${CPIO} -pdmu -R ${USER}:${GROUP} ${PREFIX}/${DISTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DISTNAME} && cd ${WRKSRC} && ${FIND} . |\
+		${CPIO} -pdmu -R ${USER}:${GROUP} ${STAGEDIR}${PREFIX}/${DISTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
