@@ -37,6 +37,7 @@
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.svg
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.ttf
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.woff
+%%WWWDIR%%/admin/assets/js/category.js
 %%WWWDIR%%/admin/assets/js/record.js
 %%WWWDIR%%/admin/assets/js/uploadcheck.js
 %%WWWDIR%%/admin/assets/js/user.js
@@ -585,6 +586,7 @@
 %%WWWDIR%%/admin/editor/plugins/style/css/props.css
 %%WWWDIR%%/admin/editor/plugins/style/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/style/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/style/readme.txt
 %%WWWDIR%%/admin/editor/plugins/style/js/props.js
 %%WWWDIR%%/admin/editor/plugins/style/langs/cs_dlg.js
 %%WWWDIR%%/admin/editor/plugins/style/langs/de_dlg.js
@@ -628,6 +630,9 @@
 %%WWWDIR%%/admin/editor/plugins/template/langs/de_dlg.js
 %%WWWDIR%%/admin/editor/plugins/template/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/template/template.htm
+%%WWWDIR%%/admin/editor/plugins/visualblocks/css/visualblocks.css
+%%WWWDIR%%/admin/editor/plugins/visualblocks/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/visualblocks/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/visualchars/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/visualchars/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/wordcount/editor_plugin.js
@@ -1153,16 +1158,16 @@
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/XcacheClassLoader.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/composer.json
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/phpunit.xml.dist
-%%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt/AES.php
-%%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt/DES.php
-%%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt/Hash.php
-%%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt/RC4.php
-%%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt/RSA.php
-%%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt/Random.php
-%%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt/Rijndael.php
-%%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt/TripleDES.php
+%%WWWDIR%%/inc/libs/phpseclib/Crypt/AES.php
+%%WWWDIR%%/inc/libs/phpseclib/Crypt/DES.php
+%%WWWDIR%%/inc/libs/phpseclib/Crypt/Hash.php
+%%WWWDIR%%/inc/libs/phpseclib/Crypt/RC4.php
+%%WWWDIR%%/inc/libs/phpseclib/Crypt/RSA.php
+%%WWWDIR%%/inc/libs/phpseclib/Crypt/Random.php
+%%WWWDIR%%/inc/libs/phpseclib/Crypt/Rijndael.php
+%%WWWDIR%%/inc/libs/phpseclib/Crypt/TripleDES.php
 %%WWWDIR%%/inc/libs/tcpdf/LICENSE.TXT
-%%WWWDIR%%/inc/libs/tcpdf/encodings_maps.php
+%%WWWDIR%%/inc/libs/tcpdf/README.TXT
 %%WWWDIR%%/inc/libs/tcpdf/fonts/almohanad.ctg.z
 %%WWWDIR%%/inc/libs/tcpdf/fonts/almohanad.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/almohanad.z
@@ -1190,11 +1195,22 @@
 %%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_ag15.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_aj16.php
 %%WWWDIR%%/inc/libs/tcpdf/fonts/uni2cid_ak12.php
-%%WWWDIR%%/inc/libs/tcpdf/htmlcolors.php
+%%WWWDIR%%/inc/libs/tcpdf/include/barcodes/datamatrix.php
+%%WWWDIR%%/inc/libs/tcpdf/include/barcodes/pdf417.php
+%%WWWDIR%%/inc/libs/tcpdf/include/barcodes/qrcode.php
+%%WWWDIR%%/inc/libs/tcpdf/include/sRGB.icc
+%%WWWDIR%%/inc/libs/tcpdf/include/tcpdf_colors.php
+%%WWWDIR%%/inc/libs/tcpdf/include/tcpdf_filters.php
+%%WWWDIR%%/inc/libs/tcpdf/include/tcpdf_font_data.php
+%%WWWDIR%%/inc/libs/tcpdf/include/tcpdf_fonts.php
+%%WWWDIR%%/inc/libs/tcpdf/include/tcpdf_images.php
+%%WWWDIR%%/inc/libs/tcpdf/include/tcpdf_static.php
 %%WWWDIR%%/inc/libs/tcpdf/tcpdf.php
-%%WWWDIR%%/inc/libs/tcpdf/tcpdf_filters.php
+%%WWWDIR%%/inc/libs/tcpdf/tcpdf_autoconfig.php
+%%WWWDIR%%/inc/libs/tcpdf/tcpdf_barcodes_1d.php
+%%WWWDIR%%/inc/libs/tcpdf/tcpdf_barcodes_2d.php
+%%WWWDIR%%/inc/libs/tcpdf/tcpdf_import.php
 %%WWWDIR%%/inc/libs/tcpdf/tcpdf_parser.php
-%%WWWDIR%%/inc/libs/tcpdf/unicode_data.php
 %%WWWDIR%%/inc/libs/twitteroauth/OAuth.php
 %%WWWDIR%%/inc/libs/twitteroauth/twitteroauth.php
 %%WWWDIR%%/index.php
@@ -1288,9 +1304,10 @@
 @dirrm %%WWWDIR%%/lang
 @dirrm %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/inc/libs/twitteroauth
+@dirrm %%WWWDIR%%/inc/libs/tcpdf/include/barcodes
+@dirrm %%WWWDIR%%/inc/libs/tcpdf/include
 @dirrm %%WWWDIR%%/inc/libs/tcpdf/fonts
 @dirrm %%WWWDIR%%/inc/libs/tcpdf
-@dirrm %%WWWDIR%%/inc/libs/phpseclib/Crypt/Crypt
 @dirrm %%WWWDIR%%/inc/libs/phpseclib/Crypt
 @dirrm %%WWWDIR%%/inc/libs/phpseclib
 @dirrm %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/php5.4
@@ -1429,6 +1446,8 @@
 @dirrm %%WWWDIR%%/admin/editor/plugins/xhtmlxtras
 @dirrm %%WWWDIR%%/admin/editor/plugins/wordcount
 @dirrm %%WWWDIR%%/admin/editor/plugins/visualchars
+@dirrm %%WWWDIR%%/admin/editor/plugins/visualblocks/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/visualblocks
 @dirrm %%WWWDIR%%/admin/editor/plugins/template/langs
 @dirrm %%WWWDIR%%/admin/editor/plugins/template/js
 @dirrm %%WWWDIR%%/admin/editor/plugins/template/css
