@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${BZR_SRC_REV}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mr
@@ -13,8 +13,7 @@ DIST_SUBDIR=		${PORTNAME}
 MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
 
-BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \
-		bzr:${PORTSDIR}/devel/bzr \
+BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
 		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/bzrlib/plugins/bzrtools/bzrtools.py:${PORTSDIR}/devel/bzrtools
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
@@ -25,7 +24,7 @@ DOCVERSION=	1.1
 LIBVERSION=	1.0
 
 USE_GL=		glew glu
-USE_WX=		2.8
+USE_WX=		3.0
 WX_UNICODE=	yes
 USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
 USE_PYTHON=	yes
