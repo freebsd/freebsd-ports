@@ -26,7 +26,8 @@ CLASS_FILES=	ifluatex.dtx ifluatex.sty
 
 DOC_FILES=	ifluatex.pdf
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}
@@ -35,14 +36,10 @@ do-build:
 	cd ${WRKSRC} && ${TEX_BIN} ifluatex.dtx
 
 do-install:
-	${MKDIR} ${PREFIX}/${CLASSDIR}
-	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
-.endif
-
-post-install:
-	@${MKTEXLSR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${CLASSDIR}
+	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} \
+		${STAGEDIR}${PREFIX}/${CLASSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
