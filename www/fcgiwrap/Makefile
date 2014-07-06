@@ -3,8 +3,10 @@
 PORTNAME=	fcgiwrap
 PORTVERSION=	1.1.0
 CATEGORIES=	www
+MASTER_SITES=	GH \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Simple FastCGI wrapper for CGI scripts
 
 LICENSE=	MIT
