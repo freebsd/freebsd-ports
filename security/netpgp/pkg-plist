@@ -3,13 +3,13 @@ bin/netpgpkeys
 bin/netpgpverify
 include/netpgp.h
 lib/libnetpgp.a
-lib/libnetpgp.la
 lib/libnetpgp.so
 lib/libnetpgp.so.0
-lib/libmj.la
+lib/libnetpgp.so.0.0.0
+lib/libmj.a
 lib/libmj.so
 lib/libmj.so.0
-lib/libmj.a
+lib/libmj.so.0.0.0
 man/man1/netpgp.1.gz
 man/man1/netpgpkeys.1.gz
 man/man1/netpgpverify.1.gz

@@ -10,6 +10,7 @@ COMMENT=	PGP signing, verification, encryption, and decryption program
 
 LICENSE=	BSD
 
+USES=		libtool
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
