@@ -862,6 +862,7 @@
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-familia
     SUBDIR += rubygem-jdbc-mysql
+    SUBDIR += rubygem-leo_manager_client
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-mysql
