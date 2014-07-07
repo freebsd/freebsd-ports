@@ -3,7 +3,7 @@
 
 PORTNAME=	hadoop
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
 		LOCAL/demon/:maven \
@@ -39,17 +39,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 TOMCAT_VERSION=	6.0.36
 HADOOP_DIST=	${WRKSRC}/hadoop-dist/target/hadoop-${PORTVERSION}
 
-HADOOP_LOGDIR=  /var/log/hadoop
-HADOOP_RUNDIR=  /var/run/hadoop
+HADOOP_LOGDIR=	/var/log/hadoop
+HADOOP_RUNDIR=	/var/run/hadoop
 
-HDFS_USER=      hdfs
-MAPRED_USER=    mapred
-HADOOP_GROUP=   hadoop
-USERS=          ${HDFS_USER} ${MAPRED_USER}
-GROUPS=         ${HADOOP_GROUP}
+HDFS_USER=	hdfs
+MAPRED_USER=	mapred
+HADOOP_GROUP=	hadoop
+USERS=		${HDFS_USER} ${MAPRED_USER}
+GROUPS=		${HADOOP_GROUP}
 
 SUB_FILES=	hadoop-layout.sh
-USE_RC_SUBR=    historyserver nodemanager resourcemanager webappproxyserver datanode namenode secondarynamenode
+USE_RC_SUBR=	historyserver nodemanager resourcemanager webappproxyserver datanode namenode secondarynamenode
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
 		HADOOP_LOGDIR="${HADOOP_LOGDIR}" \
@@ -74,6 +74,7 @@ do-build:
 
 post-build:
 	${RM} ${HADOOP_DIST}/etc/hadoop/*.cmd
+	${MV} ${HADOOP_DIST}/bin/rcc ${HADOOP_DIST}/bin/hadoop-rcc
 # With jetty-6.1.26 tasktracker's threads hung with the following error:
 # org.mortbay.io.nio.SelectorManager$SelectSet@abdcc1c JVM BUG(s) - injecting delay 59 times
 # See https://issues.apache.org/jira/browse/MAPREDUCE-2386
@@ -83,7 +84,7 @@ post-build:
 .endfor
 
 do-install:
-	cd ${HADOOP_DIST}/bin && ${INSTALL_SCRIPT} hadoop hdfs mapred rcc yarn ${STAGEDIR}${PREFIX}/bin/
+	cd ${HADOOP_DIST}/bin && ${INSTALL_SCRIPT} hadoop hdfs mapred hadoop-rcc yarn ${STAGEDIR}${PREFIX}/bin/
 	cd ${HADOOP_DIST} && ${COPYTREE_BIN} "libexec sbin" ${STAGEDIR}${PREFIX}/ "! -name *.cmd"
 	cd ${HADOOP_DIST}/include && ${INSTALL_DATA} *h ${STAGEDIR}${PREFIX}/include/
 	cd ${HADOOP_DIST}/lib/native && ${INSTALL_DATA} *.a ${STAGEDIR}${PREFIX}/lib/
