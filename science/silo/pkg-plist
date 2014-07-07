@@ -7,8 +7,7 @@ include/ioperf.h
 include/pmpio.h
 include/silo.h
 include/silo.inc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/Silo.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/Silo.so
-lib/libsilo%%SUFX_HDF5%%.la
 lib/libsilo%%SUFX_HDF5%%.so
 lib/libsilo%%SUFX_HDF5%%.so.0
+lib/libsilo%%SUFX_HDF5%%.so.0.0.0
