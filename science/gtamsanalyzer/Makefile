@@ -20,8 +20,9 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/Source
 
-NO_STAGE=	yes
 post-patch:
 	${RM} "${WRKSRC}/obj"
+	@${REINPLACE_CMD} '/^GNUSTEP_INSTALLATION_DIR/ s|=|=$$(DESTDIR)|' \
+		${WRKSRC}/GNUmakefile
 
 .include <bsd.port.mk>
