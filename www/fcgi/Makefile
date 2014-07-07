@@ -3,6 +3,7 @@
 
 PORTNAME=	fcgi
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/ \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
