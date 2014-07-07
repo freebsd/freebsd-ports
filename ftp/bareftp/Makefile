@@ -3,11 +3,12 @@
 
 PORTNAME=	bareftp
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Ftp client made in C sharp
+COMMENT=	FTP client made in C sharp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" \
@@ -16,18 +17,14 @@ CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" \
 		--includedir="${LOCALBASE}/include"
 
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pkgconfig
 USE_GNOME=	gtksharp20 gnomesharp20
 
 USE_LDCONFIG=	yes
 
-
-MAN1=		bareftp.1
-
 OPTIONS_DEFINE=	GNOMEKEYRING NLS
-OPTIONS_DEFAULT=	GNOMEKEYRING
+OPTIONS_DEFAULT=GNOMEKEYRING
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOMEKEYRING}
