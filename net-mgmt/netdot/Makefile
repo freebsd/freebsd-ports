@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	netdot
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netdot.uoregon.edu/pub/dists/
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	An open source tool to organize and maintain network information
+COMMENT=	Open source tool to organize and maintain network information
 
 LICENSE=	GPLv2
 
@@ -20,14 +20,13 @@ RUN_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
 		p5-SQL-Translator>=0.07:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-Class-DBI>=3.0.17:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-Class-DBI-AbstractSearch>=0:${PORTSDIR}/databases/p5-Class-DBI-AbstractSearch \
-		p5-DBIx-DataSource>=0:${PORTSDIR}/databases/p5-DBIx-DataSource \
 		p5-SNMP-Info>=2.06:${PORTSDIR}/net-mgmt/p5-SNMP-Info \
 		p5-HTML-Mason>=1.31:${PORTSDIR}/www/p5-HTML-Mason \
 		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager \
 		p5-Net-IRR>=0:${PORTSDIR}/net/p5-Net-IRR \
-		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-NetAddr-IP>=4.042:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Net-Patricia>=1.20:${PORTSDIR}/net/p5-Net-Patricia \
 		p5-Net-Appliance-Session>=3.113.610:${PORTSDIR}/net/p5-Net-Appliance-Session \
 		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
@@ -51,13 +50,11 @@ SUB_LIST=	WWWDIR="${WWWDIR}"	\
 		CHOWN="${CHOWN}"	\
 		CHMOD="${CHMOD}"
 
-PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 INSTALL_TARGET=	install		\
 	PREFIX=${WWWDIR}	\
+	STAGEDIR=${STAGEDIR}${WWWDIR}	\
 	APACHEUSER=${WWWOWN}	\
 	APACHEGROUP=${WWWGRP}
 
@@ -67,17 +64,16 @@ post-patch:
 
 post-install:
 .for f in export/bind export/dhcpd export/ethers export/rancid export/smokeping export/sysmon htdocs/img/graphs lib/Netdot/Manual tmp/sessions/locks htdocs/masondata/cache
-		@${TOUCH} ${WWWDIR}/${f}/.keep-me
+		@${TOUCH} ${STAGEDIR}${WWWDIR}/${f}/.keep-me
 .endfor
 .for f in initdb
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${WWWDIR}/bin/${f}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${WWWDIR}/bin/${f}
 .endfor
-	${MKDIR} ${WWWDIR}/upgrade
+	${MKDIR} ${STAGEDIR}${WWWDIR}/upgrade
 .for f in Makefile updatedb upgrade-tasks
-	${INSTALL_SCRIPT} ${WRKSRC}/upgrade/${f} ${WWWDIR}/upgrade/${f}
+	${INSTALL_SCRIPT} ${WRKSRC}/upgrade/${f} ${STAGEDIR}${WWWDIR}/upgrade/${f}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/netdot.cron ${WWWDIR}/etc/netdot.cron
-	${INSTALL_DATA} ${WRKSRC}/etc/default_data ${WWWDIR}/etc/default_data
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/netdot.cron ${STAGEDIR}${WWWDIR}/etc/netdot.cron
+	${INSTALL_DATA} ${WRKSRC}/etc/default_data ${STAGEDIR}${WWWDIR}/etc/default_data
 
 .include <bsd.port.post.mk>
