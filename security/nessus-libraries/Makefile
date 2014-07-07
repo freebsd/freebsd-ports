@@ -6,7 +6,7 @@
 
 PORTNAME=	nessus-libraries
 PORTVERSION=	2.2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -20,14 +20,14 @@ COMMENT=	Libraries for Nessus, the security scanner
 
 LICENSE=	LGPL20
 
-WRKSRC=		${WRKDIR}/nessus-libraries
-USES=		bison
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cipher
 .if defined(WITH_NESSUS_BPF_SHARE)
 CONFIGURE_ARGS+=	--enable-bpf-sharing
 .endif
+USES=		bison libtool
 USE_LDCONFIG=	YES
+WRKSRC=		${WRKDIR}/nessus-libraries
 
 .if ! defined(NESSUS_CLIENT_ONLY)
 pre-everything::
