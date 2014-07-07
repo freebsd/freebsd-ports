@@ -12,7 +12,11 @@ COMMENT=	Feature-rich command-line todo list manager
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+OPTIONS_DEFINE=GNUTLS
+OPTIONS_DEFAULT=GNUTLS
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_GnuTLS=TRUE
 
 WRKSRC=		${WRKDIR}/task-${PORTVERSION}
 
