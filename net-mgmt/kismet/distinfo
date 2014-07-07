@@ -1,3 +1,4 @@
 SHA256 (kismet/kismet-2013-03-R1b.tar.xz) = 636d4d7ef8c67ae6ee8d8e1635f5115700eecb9fa4c208afaee30238db527c2c
 SIZE (kismet/kismet-2013-03-R1b.tar.xz) = 699968
-SHA256 (kismet/manuf) = IGNORE
+SHA256 (kismet/manuf) = 42dcb7c3a677cfd23d0c08d30b9cd8abc8a57237ea2f7b90014eb4ea98446140
+SIZE (kismet/manuf) = 1393916
