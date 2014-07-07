@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	C/FORTRAN library for drawing graphs on a variety of display devices
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -24,8 +24,6 @@ SHEBANG_FILES=	makehtml maketex
 SUFFIXES=	flib clib bin
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
@@ -34,9 +32,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 EXTRA_PATCHES +=	${FILESDIR}/drivers_64bit_patch
 .endif
 
-.ifndef(NOPORTDATA)
 PORTDATA=	grfont.dat
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 DOCS=	cpg/cpgplot.doc pgplot-routines.tex pgplot.doc pgplot.html \
@@ -68,24 +64,22 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC}; \
-	${INSTALL_PROGRAM} pgxwin_server pgdisp ${PREFIX}/bin; \
-	${INSTALL_LIB} *.a *.so.5* ${PREFIX}/lib; \
-	${INSTALL_DATA} cpgplot.h ${PREFIX}/include
+	${INSTALL_PROGRAM} pgxwin_server pgdisp ${STAGEDIR}${PREFIX}/bin; \
+	${INSTALL_LIB} *.a *.so.5* ${STAGEDIR}${PREFIX}/lib; \
+	${INSTALL_DATA} cpgplot.h ${STAGEDIR}${PREFIX}/include
 .for f in libcpgplot.so libpgplot.so
-	@${LN} -sf ${f}.5 ${PREFIX}/lib/${f}
+	@${LN} -sf ${f}.5 ${STAGEDIR}${PREFIX}/lib/${f}
 .endfor
-.ifndef(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDATA} ${DATADIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDATA} ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}; ${CP} pgdispd/aaaread.me readme.pgdisp; \
-	${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .if defined(MAINTAINER_MODE) && !defined(BATCH)
