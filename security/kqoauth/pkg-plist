@@ -1,0 +1,18 @@
+include/QtKOAuth/QtKOAuth
+include/QtKOAuth/kqoauthglobals.h
+include/QtKOAuth/kqoauthmanager.h
+include/QtKOAuth/kqoauthrequest.h
+include/QtKOAuth/kqoauthrequest_1.h
+include/QtKOAuth/kqoauthrequest_xauth.h
+lib/libkqoauth.prl
+lib/libkqoauth.so
+lib/libkqoauth.so.0
+lib/libkqoauth.so.0.97
+lib/libkqoauth.so.0.97.0
+%%QT_PREFIX%%/%%QT_MKSPECDIR%%/features/kqoauth.prf
+libdata/pkgconfig/kqoauth.pc
+@dirrm include/QtKOAuth
+@dirrmtry %%QT_PREFIX%%/%%QT_MKSPECDIR%%/features
+@dirrmtry %%QT_PREFIX%%/%%QT_MKSPECDIR%%
+@dirrmtry %%QT_PREFIX%%/%%QT_DATADIR%%
+
