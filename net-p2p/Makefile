@@ -46,7 +46,6 @@
     SUBDIR += libktorrent
     SUBDIR += libpdtp
     SUBDIR += libtorrent
-    SUBDIR += libtorrent-devel
     SUBDIR += libtorrent-rasterbar
     SUBDIR += libtorrent-rasterbar-python
     SUBDIR += linux-jigdo
@@ -84,7 +83,6 @@
     SUBDIR += retroshare
     SUBDIR += rtgui
     SUBDIR += rtorrent
-    SUBDIR += rtorrent-devel
     SUBDIR += shx
     SUBDIR += solidcoin
     SUBDIR += squall

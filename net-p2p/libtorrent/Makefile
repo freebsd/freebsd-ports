@@ -1,24 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.13.2
-PORTREVISION=	3
+PORTVERSION=	0.13.4
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	flz/libtorrent
+MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	BitTorrent Library written in C++
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	BitTorrent Library written in C++
 
-LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
+LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
 
-CONFLICTS?=	libtorrent-devel-[0-9]* \
-		rblibtorrent-[0-9]* \
+CONFLICTS=	rblibtorrent-[0-9]* \
 		rblibtorrent-devel-[0-9]*
 
-USE_AUTOTOOLS=	libtool
-USES=	pathfix pkgconfig
+USES=		compiler:c++11-lang libtool pathfix pkgconfig
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -37,6 +32,13 @@ CONFIGURE_ENV=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/inc
 .endif
 
 CONFIGURE_ARGS+=	--disable-debug
+
+# Disable amd64 atomic ops on i386 when using gcc
+# undefined reference to __sync_add_and_fetch_8
+# undefined reference to __sync_fetch_and_and_8
+.if ${ARCH} == "i386" && ${COMPILER_TYPE} == "gcc"
+CONFIGURE_ARGS+=	--disable-instrumentation
+.endif
 
 # Workaround to build on >= 10.x
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
