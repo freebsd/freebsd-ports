@@ -10,8 +10,8 @@ MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data analysis and scientific plotting
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
+		libmuparser.so:${PORTSDIR}/math/muparser \
 		libpng15.so:${PORTSDIR}/graphics/png
 # use bundled modified libraries
 # 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
