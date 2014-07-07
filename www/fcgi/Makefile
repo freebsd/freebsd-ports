@@ -3,7 +3,7 @@
 
 PORTNAME=	fcgi
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/ \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
@@ -33,7 +33,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	@${RM} ${STAGEDIR}${DOCSDIR}/*.[13]
+	@${RM} -f ${STAGEDIR}${DOCSDIR}/*.[13]
 .endif
 
 .include <bsd.port.mk>
