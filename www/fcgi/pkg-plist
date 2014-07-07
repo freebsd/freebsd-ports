@@ -19,5 +19,30 @@ man/man3/FCGI_Accept.3.gz
 man/man3/FCGI_Finish.3.gz
 man/man3/FCGI_SetExitStatus.3.gz
 man/man3/FCGI_StartFilterData.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ap_guida.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ap_guide.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/apaman.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch1inta1.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch1intra.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch1intro.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch2c.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch3perl.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/ch4tcl.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/cover.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-prog-guide/covera.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-whitepaper/fastcgi.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-whitepaper/img00001.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-whitepaper/img00002.gif
+%%PORTDOCS%%%%DOCSDIR%%/fastcgi-whitepaper/img00003.gif
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-devel-kit.htm
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-java.htm
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-perf.htm
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-perl.htm
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-spec.html
+%%PORTDOCS%%%%DOCSDIR%%/fcgi-tcl.htm
+%%PORTDOCS%%%%DOCSDIR%%/omi-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/www5-api-workshop.html
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/fastcgi-prog-guide
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/fastcgi-whitepaper
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

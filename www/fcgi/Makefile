@@ -3,7 +3,7 @@
 
 PORTNAME=	fcgi
 PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/ \
 		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
@@ -18,8 +18,6 @@ USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
-
-PORTDOCS=	*.htm *.html *.gif fastcgi-prog-guide/* fastcgi-whitepaper/*
 
 OPTIONS_DEFINE=	DOCS
 
