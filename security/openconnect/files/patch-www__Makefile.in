@@ -1,10 +1,11 @@
---- ./www/Makefile.am.orig	2012-07-05 04:16:45.000000000 -0400
-+++ ./www/Makefile.am	2012-07-08 14:00:23.000000000 -0400
-@@ -29,6 +29,6 @@
+--- www/Makefile.in.orig
++++ www/Makefile.in
+@@ -724,7 +724,7 @@
  	cd $(top_builddir) && $(SHELL) ./config.status openconnect.8
  
  openconnect.8.inc: $(top_builddir)/openconnect.8
 -	groff -t -K UTF-8 -mandoc -Txhtml $? | sed -e '1,/<body>/d' -e '/<\/body>/,$$d' > $@
 +	groff -t -mandoc -Thtml $^ | sed -e '1,/<body>/d' -e '/<\/body>/,$$d' > $@
  
- EXTRA_DIST = $(patsubst %.html,%.xml,$(ALL_PAGES)) $(srcdir)/menu1.xml $(srcdir)/menu2*.xml $(srcdir)/html.py
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
