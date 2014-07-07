@@ -33,7 +33,6 @@ WRKSRC_PROFILE =	${WRKSRC}_PROFILE
 WRKSRC_SHARED=		${WRKSRC}_SHARED
 WRKSRC_STATIC=		${WRKSRC}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if make(makesum) || ${PORT_OPTIONS:MDOCS}
@@ -119,17 +118,17 @@ test-${o:tl}: build-${o:tl}
 .endif
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
 .if ${PORT_OPTIONS:MSTATIC}
-	@${INSTALL_DATA} ${WRKSRC}/lib/libcblas.a ${PREFIX}/lib
+	@${INSTALL_LIB} ${WRKSRC}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib
 .endif
 .if ${PORT_OPTIONS:MSHARED}
-	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib/libcblas.a ${PREFIX}/lib/libcblas_pic.a
-	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib/libcblas.so.${SVERSION} ${PREFIX}/lib
-	@${LN} -sf libcblas.so.${SVERSION} ${PREFIX}/lib/libcblas.so
+	@${INSTALL_LIB} ${WRKSRC_SHARED}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib/libcblas_pic.a
+	@${INSTALL_LIB} ${WRKSRC_SHARED}/lib/libcblas.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf libcblas.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/libcblas.so
 .endif
 .if ${PORT_OPTIONS:MPROFILE}
-	@${INSTALL_DATA} ${WRKSRC_PROFILE}/lib/libcblas.a ${PREFIX}/lib/libcblas_p.a
+	@${INSTALL_LIB} ${WRKSRC_PROFILE}/lib/libcblas.a ${STAGEDIR}${PREFIX}/lib/libcblas_p.a
 .endif
 
 .include <bsd.port.mk>

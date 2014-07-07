@@ -11,6 +11,7 @@ MAINTAINER=	bf@FreeBSD.org
 COMMENT=	NIST Sparse Basic Linear Algebra Subprograms (BLAS)
 
 USES=		dos2unix zip
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 HEADERS=	blas_enum.h blas_sparse.h blas_sparse_proto.h
@@ -28,7 +29,6 @@ PLIST_FILES=	${HEADERS:S|^|${HDIR}/|} lib/libspblas.a lib/libspblas.so \
 SHLIB_MAJOR=	1
 SRCS=		nist_spblas.cc
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROFILE}
@@ -62,15 +62,15 @@ post-extract:
 		${WRKSRC}/Makefile
 
 post-install:
-	@${MKDIR} ${PREFIX}/${HDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${HEADERS} ${PREFIX}/${HDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${HDIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${HEADERS} ${STAGEDIR}${PREFIX}/${HDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${_DISTDIR}/${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
