@@ -1,7 +1,7 @@
 bin/hadoop
 bin/hdfs
 bin/mapred
-bin/rcc
+bin/hadoop-rcc
 bin/yarn
 include/Pipes.hh
 include/SerialUtils.hh
