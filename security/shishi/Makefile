@@ -2,7 +2,7 @@
 
 PORTNAME=	shishi
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -14,13 +14,13 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 
-USE_AUTOTOOLS=	libtool
-USE_PERL5=	build
-USES=		pathfix pkgconfig iconv perl5 makeinfo
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--with-db-dir=/var/shishi
+USES=		iconv libtool makeinfo pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
+USE_PERL5=	build
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-db-dir=/var/shishi
+MAKE_ENV=	MAKEINFOFLAGS=--no-split
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -32,8 +32,7 @@ INFO=		shishi
 SUB_FILES=	pkg-message
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ARGS=	LD_LIBRARY_PATH="${STAGEDIR}${PREFIX}/lib:${LOCALBASE}/lib:/usr/lib"
+LIBS+=		-L${LOCALBASE}/lib
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/shishi.info*
@@ -46,10 +45,5 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e '/^AM_CPPFLAGS/s:-I[^ ]*/gl ::g' \
 		${WRKSRC}/examples/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libshishi.so \
-		${STAGEDIR}${PREFIX}/lib/libshisa.so \
-		${STAGEDIR}${PREFIX}/lib/security/pam_shishi.so
 
 .include <bsd.port.mk>
