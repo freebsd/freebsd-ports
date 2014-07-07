@@ -1,11 +1,14 @@
 bin/ptkei
 %%DATADIR%%/COPYING
+%%DATADIR%%/TkColorNames
 %%DATADIR%%/TkOption
 %%DATADIR%%/TkOption.w32
 %%DATADIR%%/TkOption.x11
+%%DATADIR%%/TkOption_orig
 %%DATADIR%%/connect.emp
 %%DATADIR%%/doc/BUGS
 %%DATADIR%%/doc/CREDITS
+%%DATADIR%%/doc/CREDITS2
 %%DATADIR%%/doc/README.html
 %%DATADIR%%/doc/TIPS.html
 %%DATADIR%%/doc/TODO
@@ -74,6 +77,8 @@ bin/ptkei
 %%DATADIR%%/src/empText.pyc
 %%DATADIR%%/src/empTk.py
 %%DATADIR%%/src/empTk.pyc
+%%DATADIR%%/src/emps.py
+%%DATADIR%%/src/emps.pyc
 %%DATADIR%%/start.emp
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%/scripts
