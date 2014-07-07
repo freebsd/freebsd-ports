@@ -1,8 +1,9 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
+
 PORTNAME=	beecrypt
 PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 PATCHFILES=	mpntrbits.patch
@@ -11,9 +12,10 @@ PATCH_SITES=	http://sourceforge.net/p/beecrypt/patches/_discuss/thread/bff89ba1/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	BeeCrypt is an open source cryptography library
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--without-java
+CONFIGURE_ARGS=	--without-java --without-python
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	OPENMP
@@ -22,7 +24,6 @@ OPENMP_CONFIGURE_ENABLE=	openmp
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 .if ${PORT_OPTIONS:MOPENMP}
 	@${ECHO_MSG} "Configuring for OpenMP support"
 	@${ECHO_MSG} "Any ports depending on beecrypt must be configured for OpenMP too."
@@ -37,6 +38,7 @@ CPPFLAGS+=	-DOPTIMIZE_${o:tu}
 .endfor
 
 regression-test test check: build
-	${MAKE} -C ${WRKSRC} check
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
