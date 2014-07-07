@@ -29,7 +29,7 @@ BROKEN=		Fails to build
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
 		libhdf5.so:${PORTSDIR}/science/hdf5
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DH5_USE_16_API
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
