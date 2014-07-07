@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	6.0.3
-PORTREVISION=	1
+PORTVERSION=	6.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -10,6 +9,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Personal cloud which runs on your own server
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING-AGPL
 
 USES=		tar:bzip2
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \

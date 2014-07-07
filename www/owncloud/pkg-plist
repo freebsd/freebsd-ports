@@ -416,13 +416,11 @@
 %%WWWDIR%%/3rdparty/css/chosen/chosen-sprite.png
 %%WWWDIR%%/3rdparty/css/chosen/chosen.css
 %%WWWDIR%%/3rdparty/doctrine/common/.gitmodules
-%%WWWDIR%%/3rdparty/doctrine/common/.travis.yml
 %%WWWDIR%%/3rdparty/doctrine/common/LICENSE
 %%WWWDIR%%/3rdparty/doctrine/common/README.md
 %%WWWDIR%%/3rdparty/doctrine/common/UPGRADE_TO_2_1
 %%WWWDIR%%/3rdparty/doctrine/common/UPGRADE_TO_2_2
 %%WWWDIR%%/3rdparty/doctrine/common/build.properties
-%%WWWDIR%%/3rdparty/doctrine/common/build.xml
 %%WWWDIR%%/3rdparty/doctrine/common/composer.json
 %%WWWDIR%%/3rdparty/doctrine/common/lib/Doctrine/Common/Annotations/Annotation.php
 %%WWWDIR%%/3rdparty/doctrine/common/lib/Doctrine/Common/Annotations/Annotation/Attribute.php
@@ -625,7 +623,6 @@
 %%WWWDIR%%/3rdparty/doctrine/common/tests/NativePhpunitTask.php
 %%WWWDIR%%/3rdparty/doctrine/common/tests/README.markdown
 %%WWWDIR%%/3rdparty/doctrine/dbal/.gitmodules
-%%WWWDIR%%/3rdparty/doctrine/dbal/.travis.yml
 %%WWWDIR%%/3rdparty/doctrine/dbal/LICENSE
 %%WWWDIR%%/3rdparty/doctrine/dbal/README.md
 %%WWWDIR%%/3rdparty/doctrine/dbal/UPGRADE
@@ -633,7 +630,6 @@
 %%WWWDIR%%/3rdparty/doctrine/dbal/bin/doctrine-dbal.php
 %%WWWDIR%%/3rdparty/doctrine/dbal/bin/doctrine.php
 %%WWWDIR%%/3rdparty/doctrine/dbal/build.properties
-%%WWWDIR%%/3rdparty/doctrine/dbal/build.xml
 %%WWWDIR%%/3rdparty/doctrine/dbal/composer.json
 %%WWWDIR%%/3rdparty/doctrine/dbal/docs/design/AZURE_FEDERATIONS.md
 %%WWWDIR%%/3rdparty/doctrine/dbal/docs/design/SHARDING.md
@@ -1997,7 +1993,6 @@
 %%WWWDIR%%/apps/calendar/templates/part.showevent.php
 %%WWWDIR%%/apps/calendar/templates/settings.php
 %%WWWDIR%%/apps/calendar/tests/calendar.php
-%%WWWDIR%%/apps/contacts/.travis.yml
 %%WWWDIR%%/apps/contacts/COPYING-README
 %%WWWDIR%%/apps/contacts/Changelog
 %%WWWDIR%%/apps/contacts/README.md
@@ -6219,6 +6214,8 @@
 %%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-3.png
 %%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-4.png
 %%WWWDIR%%/core/doc/admin/_images/edit_encrypted_file.png
+%%WWWDIR%%/core/doc/admin/_images/install-wizard-advanced.png
+%%WWWDIR%%/core/doc/admin/_images/install-wizard.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-advanced-1-connection.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-advanced-2-directory.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-advanced-3-attributes.png
@@ -6299,6 +6296,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_source.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_ucs.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_windows.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/installation_wizard.txt
 %%WWWDIR%%/core/doc/admin/_sources/issues/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/backup.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/index.txt
@@ -6401,6 +6399,7 @@
 %%WWWDIR%%/core/doc/admin/installation/installation_source.html
 %%WWWDIR%%/core/doc/admin/installation/installation_ucs.html
 %%WWWDIR%%/core/doc/admin/installation/installation_windows.html
+%%WWWDIR%%/core/doc/admin/installation/installation_wizard.html
 %%WWWDIR%%/core/doc/admin/issues/index.html
 %%WWWDIR%%/core/doc/admin/maintenance/backup.html
 %%WWWDIR%%/core/doc/admin/maintenance/index.html
@@ -8148,6 +8147,7 @@
 %%WWWDIR%%/lib/private/connector/sabre/auth.php
 %%WWWDIR%%/lib/private/connector/sabre/directory.php
 %%WWWDIR%%/lib/private/connector/sabre/exception/entitytoolarge.php
+%%WWWDIR%%/lib/private/connector/sabre/exception/filelocked.php
 %%WWWDIR%%/lib/private/connector/sabre/exception/unsupportedmediatype.php
 %%WWWDIR%%/lib/private/connector/sabre/exceptionloggerplugin.php
 %%WWWDIR%%/lib/private/connector/sabre/file.php
@@ -8183,6 +8183,7 @@
 %%WWWDIR%%/lib/private/files.php
 %%WWWDIR%%/lib/private/files/cache/backgroundwatcher.php
 %%WWWDIR%%/lib/private/files/cache/cache.php
+%%WWWDIR%%/lib/private/files/cache/changepropagator.php
 %%WWWDIR%%/lib/private/files/cache/homecache.php
 %%WWWDIR%%/lib/private/files/cache/legacy.php
 %%WWWDIR%%/lib/private/files/cache/permissions.php
@@ -8368,6 +8369,7 @@
 %%WWWDIR%%/lib/public/files/folder.php
 %%WWWDIR%%/lib/public/files/invalidcontentexception.php
 %%WWWDIR%%/lib/public/files/invalidpathexception.php
+%%WWWDIR%%/lib/public/files/locknotacquiredexception.php
 %%WWWDIR%%/lib/public/files/node.php
 %%WWWDIR%%/lib/public/files/notenoughspaceexception.php
 %%WWWDIR%%/lib/public/files/notfoundexception.php
