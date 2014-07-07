@@ -51,8 +51,8 @@ include/sodium/randombytes_sysrandom.h
 include/sodium/utils.h
 include/sodium/version.h
 lib/libsodium.a
-lib/libsodium.la
 lib/libsodium.so
-lib/libsodium.so.9
+lib/libsodium.so.4
+lib/libsodium.so.4.5.0
 libdata/pkgconfig/libsodium.pc
 @dirrmtry include/sodium
