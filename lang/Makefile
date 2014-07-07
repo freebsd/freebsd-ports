@@ -296,7 +296,6 @@
     SUBDIR += sdcc
     SUBDIR += sdcc-devel
     SUBDIR += see
-    SUBDIR += see-devel
     SUBDIR += seed7
     SUBDIR += siod
     SUBDIR += sisc

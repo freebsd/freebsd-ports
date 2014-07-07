@@ -2,68 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	see
-PORTVERSION=	2.0.1131
-PORTREVISION=	1
+PORTVERSION=	3.1.1424
 CATEGORIES=	lang devel
-MASTER_SITES=	http://www.powerband.net.au/~david.leonard/ \
-		http://freshmeat.net/redir/see/45974/url_tgz/
+MASTER_SITES=	http://download.openpkg.org/components/cache/see/ \
+		http://lil.fr.distfiles.macports.org/see/ \
+		ftp://ftp7.freebsd.org/sites/distfiles.macports.org/see/ \
+		ftp://ftp.mirrorservice.org/sites/distfiles.macports.org/see/ \
+		ftp://kuiper.mirrorservice.org/sites/distfiles.macports.org/see/ \
+		ftp://copernicus.mirrorservice.org/sites/distfiles.macports.org/see/ \
+		ftp://ftp2.uk.i-scream.org/sites/distfiles.macports.org/see/ \
+		ftp://mirror.csclub.uwaterloo.ca/MacPorts/mpdistfiles/see/
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
 
-OPTIONS_DEFINE=	GC OPTIMIZED_CFLAGS SEE_DEBUG THREADS DOCS
-OPTIONS_DEFAULT=	GC THREADS
+OPTIONS_DEFINE=	GC SEE_DEBUG DOCS
+OPTIONS_DEFAULT=	GC
 GC_DESC=	Use Boehm-Weiser garbage collection package
 SEE_DEBUG_DESC=	Internal SEE library debugging
 
 CONFLICTS=	see-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_LDCONFIG=	yes
-USES=		perl5
+USES=		libtool pathfix perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
+CFLAGS+=	-O3 -fomit-frame-pointer
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMULTIPLE_THREADS}
-CFLAGS+=	-DMULTIPLE_THREADS
-.endif
-
-.if ! ${PORT_OPTIONS:MSEE_DEBUG}
-CFLAGS+=	-DNDEBUG
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -fomit-frame-pointer
-.endif
-
-.if ${PORT_OPTIONS:MGC}
-LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
-.else
-CONFIGURE_ARGS+=	--without-boehm-gc
-.if ! ${PORT_OPTIONS:MTHREADS}
-PTHREAD_CFLAGS=
-PTHREAD_LIBS=
-.endif
-.endif
+SEE_DEBUG_CFLAGS_OFF=	-DNDEBUG
+GC_LIB_DEPENDS=		libgc.so:${PORTSDIR}/devel/boehm-gc
+GC_CONFIGURE_WITH=	boehm-gc
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|PACKAGE_BUGREPORT='leonard@users|PACKAGE_BUGREPORT='leonard\\\@users|" \
 		${WRKSRC}/configure
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in doc/USAGE.html AUTHORS NEWS README TODO COPYING
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
