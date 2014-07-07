@@ -16,32 +16,17 @@ RUN_DEPENDS=	gutenprint-base>0:${PORTSDIR}/print/gutenprint-base
 
 OPTIONS_DEFINE=		CUPS GIMP IJS FOOMATIC
 OPTIONS_DEFAULT=	IJS
-CUPS_DESC=			GutenPrint (gimp-print) Cups Drivers
-GIMP_DESC=			GIMP Gutenprint printing plugin
-IJS_DESC=			IJS GhostScript Drivers
+CUPS_DESC=		GutenPrint (gimp-print) Cups Drivers
+GIMP_DESC=		GIMP Gutenprint printing plugin
+IJS_DESC=		IJS GhostScript Drivers
 FOOMATIC_DESC=		Foomatic data files
+CUPS_RUN_DEPENDS=	gutenprint-cups>0:${PORTSDIR}/print/gutenprint-cups
+GIMP_RUN_DEPENDS=	gimp-gutenprint>0:${PORTSDIR}/print/gimp-gutenprint
+IJS_RUN_DEPENDS=	gutenprint-ijs>0:${PORTSDIR}/print/gutenprint-ijs
+FOOMATIC_RUN_DEPENDS+=	gutenprint-foomatic>0:${PORTSDIR}/print/gutenprint-foomatic
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MCUPS}
-RUN_DEPENDS+=	gutenprint-cups>0:${PORTSDIR}/print/gutenprint-cups
-.endif
-
-.if ${PORT_OPTIONS:MGIMP}
-RUN_DEPENDS+=	gimp-gutenprint>0:${PORTSDIR}/print/gimp-gutenprint
-.endif
-
-.if ${PORT_OPTIONS:MIJS}
-RUN_DEPENDS+=	gutenprint-ijs>0:${PORTSDIR}/print/gutenprint-ijs
-.endif
-
-.if ${PORT_OPTIONS:MFOOMATIC}
-RUN_DEPENDS+=	gutenprint-foomatic>0:${PORTSDIR}/print/gutenprint-foomatic
-.endif
-
 do-install:	# empty
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
