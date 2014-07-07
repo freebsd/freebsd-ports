@@ -1480,6 +1480,7 @@ lib32/wine/fakedlls/olethk32.dll
 lib32/wine/fakedlls/oleview.exe
 lib32/wine/fakedlls/openal32.dll
 lib32/wine/fakedlls/opengl32.dll
+lib32/wine/fakedlls/packager.dll
 lib32/wine/fakedlls/pdh.dll
 lib32/wine/fakedlls/photometadatahandler.dll
 lib32/wine/fakedlls/pidgen.dll
@@ -2038,6 +2039,7 @@ lib32/wine/olethk32.dll.so
 lib32/wine/oleview.exe.so
 lib32/wine/openal32.dll.so
 lib32/wine/opengl32.dll.so
+lib32/wine/packager.dll.so
 lib32/wine/pdh.dll.so
 lib32/wine/photometadatahandler.dll.so
 lib32/wine/pidgen.dll.so
