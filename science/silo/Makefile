@@ -4,7 +4,7 @@
 PORTNAME=	silo
 PORTVERSION=	4.9.1
 DISTVERSIONSUFFIX=	-bsd
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
 
@@ -21,9 +21,10 @@ OPTIONS_DEFAULT=	QT4
 
 OPTIONS_SUB=	yes
 
-USES=		gmake readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool readline
 USE_LDCONFIG=	yes
 
 FORTRAN_CONFIGURE_ENABLE=	fortran
