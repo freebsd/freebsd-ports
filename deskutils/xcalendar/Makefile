@@ -17,8 +17,5 @@ USES=		imake gmake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 MAKE_ENV=	FILESDIR=${FILESDIR}
 ALL_TARGET=	all XCal-uj.ad xcalendar-uj.hlp xcalendar-uj.man
-MAN1=		xcalendar.1
-MANLANG=	"" ja
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
