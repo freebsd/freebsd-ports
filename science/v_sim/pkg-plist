@@ -1,12 +1,12 @@
 bin/v_sim
 lib/libv_sim-3.a
-lib/libv_sim-3.la
 lib/libv_sim-3.so
 lib/libv_sim-3.so.7
+lib/libv_sim-3.so.7.0.0
 %%BABEL%%lib/v_sim/plug-ins/libobloader.a
-%%BABEL%%lib/v_sim/plug-ins/libobloader.la
 %%BABEL%%lib/v_sim/plug-ins/libobloader.so
 %%BABEL%%lib/v_sim/plug-ins/libobloader.so.7
+%%BABEL%%lib/v_sim/plug-ins/libobloader.so.7.0.0
 %%PORTDOCS%%man/man1/v_sim.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.en
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.fr

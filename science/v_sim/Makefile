@@ -3,7 +3,7 @@
 
 PORTNAME=	v_sim
 PORTVERSION=	3.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
@@ -15,7 +15,7 @@ LICENSE_NAME=	CeCILL
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		fortran gmake pkgconfig tar:bzip2
+USES=		fortran gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	gtk20 cairo
 USE_GL=		yes
 GNU_CONFIGURE=	yes
@@ -24,6 +24,7 @@ CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS NLS EXAMPLES
 
