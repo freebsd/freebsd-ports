@@ -13,7 +13,7 @@ COMMENT=	ECDSA cryptographic signature library (pure python)
 
 LICENSE=	MIT
 
-USE_PYTHON=	2
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
