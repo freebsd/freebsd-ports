@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Mar 29 17:18:06 1996
-+++ Makefile	Fri Mar 29 17:22:06 1996
+--- Makefile.orig	2014-07-07 21:24:49.187066431 +0800
++++ Makefile	2014-07-07 21:24:52.234066984 +0800
 @@ -3,7 +3,7 @@
  
  # ----------------------------------------------------------------------------
@@ -9,16 +9,17 @@
  # For testing:
  # CC = gcc
  # For Sun's and other non-at-least-pseudo-ANSI-C platforms:
-@@ -12,7 +12,7 @@
+@@ -12,20 +12,21 @@ CC = cc
  
  # ----------------------------------------------------------------------------
  # For SGI's:
--CFLAGS = -g -cckr  -DXMOSAIC -DNEED_GETOPT_H
+-CFLAGS = -g -cckr  -DXMOSAIC
 +# CFLAGS = -g -cckr  -DXMOSAIC -DNEED_GETOPT_H
  # For testing:
- # CFLAGS = -g -Wall -DXMOSAIC -DNEED_GETOPT_H
+-# CFLAGS = -g -Wall -DXMOSAIC
++# CFLAGS = -g -Wall -DXMOSAIC -DNEED_GETOPT_H
  # For HP's:
-@@ -20,12 +20,13 @@
+ # CFLAGS = -g -DXMOSAIC -I/usr/include/Motif1.1 -I/usr/include/X11R4
  # For everyone else:
  # CFLAGS = -g -DXMOSAIC
  # ----------------------------------------------------------------------------
@@ -34,7 +35,7 @@
  # ----------------------------------------------------------------------------
  
  # You shouldn't need to edit below here.
-@@ -55,3 +56,10 @@
+@@ -55,3 +56,10 @@ $(OBJS): HTMLparse.h
  
  clean:
  	-rm $(EXETARGET) $(OBJS) $(LIBTARGET) $(DOCTARGET)
@@ -42,6 +43,6 @@
 +PREFIX?=	/usr/local
 +
 +install: all
-+	install -c -s $(EXETARGET) $(PREFIX)/bin
++	install -c -s $(EXETARGET) $(DESTDIR)$(PREFIX)/bin
 +	gzip -c < html2latex.1 > html2latex.1.gz
-+	install -c html2latex.1.gz $(PREFIX)/man/man1
++	install -c html2latex.1.gz $(DESTDIR)$(PREFIX)/man/man1
