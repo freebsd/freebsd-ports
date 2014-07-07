@@ -3,7 +3,7 @@
 
 PORTNAME=	xe-guest-utilities
 PORTVERSION=	6.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${GIT_ACCOUNT}/${GIT_PROJECT}/tarball/${GIT_VERSION}/
 DISTNAME=	${GIT_ACCOUNT}-${GIT_PROJECT}-${GIT_VERSION}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	xen-tools>0:${PORTSDIR}/sysutils/xen-tools
 
 GIT_ACCOUNT=	felderado
 GIT_PROJECT=	freebsd-xen-tools-scripts
-GIT_VERSION=	5a355c9
+GIT_VERSION=	8cc7fe1
 GITSRC=		${WRKDIR}/${GIT_ACCOUNT}-${GIT_PROJECT}-${GIT_VERSION}/src/
 
 USES=		gmake
