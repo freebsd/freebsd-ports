@@ -2,12 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	respond
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
 
 MAINTAINER=	j.witteveen@gmail.com
 COMMENT=	A response automator for logged events
+
+LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	joukewitteveen
+GH_COMMIT=	ebd9de3
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
