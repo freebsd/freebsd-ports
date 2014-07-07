@@ -1,5 +1,9 @@
 bin/gpass
 bin/gpass-convert
+man/man1/gpass-convert.1.gz
+man/man1/gpass-convert.ja.1.gz
+man/man1/gpass.1.gz
+man/man1/gpass.ja.1.gz
 share/applications/gpass.desktop
 share/pixmaps/gpass-icon.png
 %%DATADIR%%/attribute-editor.glade
@@ -13,5 +17,3 @@ share/pixmaps/gpass-icon.png
 %%DATADIR%%/welcome.glade
 %%DATADIR%%/window.glade
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
