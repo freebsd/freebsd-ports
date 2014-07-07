@@ -12,6 +12,11 @@ COMMENT=	Manage your credit institute accounts using openhbci
 LIB_DEPENDS=	libopenhbci.so:${PORTSDIR}/finance/openhbci
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/aqmoney man/man1/aqmoney.1.gz
+PLIST_FILES=	bin/aqmoney \
+		man/man1/aqmoney.1.gz
+
+post-patch:
+	${FIND} ${WRKSRC}/src -name "*.cpp" -o -name "*.h" | ${XARGS} \
+		${REINPLACE_CMD} -e 's|class HBCI::SimpleConfig;|namespace HBCI{class SimpleConfig;}|'
 
 .include <bsd.port.mk>
