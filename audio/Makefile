@@ -399,7 +399,6 @@
     SUBDIR += libworkman
     SUBDIR += libxmp
     SUBDIR += lingot
-    SUBDIR += linnya
     SUBDIR += linux-f10-alsa-lib
     SUBDIR += linux-f10-alsa-plugins-oss
     SUBDIR += linux-f10-arts
