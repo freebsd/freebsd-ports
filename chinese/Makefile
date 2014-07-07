@@ -112,6 +112,7 @@
     SUBDIR += phpbb3-tw
     SUBDIR += pine4
     SUBDIR += py-cconv
+    SUBDIR += pyzy
     SUBDIR += qe
     SUBDIR += qt4-codecs-cn
     SUBDIR += qt4-codecs-tw
