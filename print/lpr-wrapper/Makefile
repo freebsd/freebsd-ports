@@ -10,23 +10,18 @@ MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user level printer frontend
 
-USE_GHOSTSCRIPT_RUN=	yes
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		ppdfilt:${PORTSDIR}/print/libppd \
+		psdim:${PORTSDIR}/print/psdim \
+		mpage:${PORTSDIR}/print/mpage \
+		pstops:${PORTSDIR}/print/psutils
 
+USES=		shebangfix
+SHEBANG_FILES=	lpr-wrapper.in lpr-wrapper-cups.in lpr-wrapper-features
+USE_GHOSTSCRIPT_RUN=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS+=	ppdfilt:${PORTSDIR}/print/libppd
-RUN_DEPENDS+=	psdim:${PORTSDIR}/print/psdim
-RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
-RUN_DEPENDS+=	pstops:${PORTSDIR}/print/psutils
-
 PLIST_FILES=	bin/lpr-wrapper bin/lpr-wrapper-cups bin/lpr-wrapper-features
-
-NO_STAGE=	yes
-post-build:
-	${REINPLACE_CMD} -e 's|#!/bin/bash|#!/usr/bin/env bash|' \
-		${WRKSRC}/lpr-wrapper ${WRKSRC}/lpr-wrapper-cups \
-		${WRKSRC}/lpr-wrapper-features
 
 .include <bsd.port.mk>
