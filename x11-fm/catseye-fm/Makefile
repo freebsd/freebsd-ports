@@ -8,7 +8,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://catseye-fm.sourceforge.net/downloads/ \
 		http://catseye-fm-temp.sourceforge.net/downloads/
 
-MAINTAINER=	port@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clear, fast, powerful file browser using gtk+2.0
 
 USES=		pkgconfig
