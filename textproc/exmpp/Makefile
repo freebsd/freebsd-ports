@@ -38,6 +38,9 @@ CONFIGURE_ARGS+=	--enable-documentation
 .endif
 
 NO_STAGE=	yes
+
+MAKE_JOBS_UNSAFE=	yes
+
 pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} -ivf
 

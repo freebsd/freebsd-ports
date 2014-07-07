@@ -13,5 +13,8 @@ COMMENT=	Parser combinators for ATS language
 ATS_CTRB=	parcomb
 
 NO_STAGE=	yes
+
+MAKE_JOBS_UNSAFE=	yes
+
 .include "${.CURDIR}/../../lang/ats/bsd.ats.mk"
 .include <bsd.port.mk>
