@@ -1,8 +1,6 @@
-bmon is an interface bandwidth monitor using the curses library.
-It's able to compute and draw three types of diagrams (overview,
-graphical, and detailed). The overview diagram is a list of all
-interfaces including the rx/tx rates of each interface. The
-graphical diagram is a bar graph in ASCII. All diagrams are
-continously updated.
+bmon is a monitoring and debugging tool to capture networking related statistics
+and prepare them visually in a human friendly way. It features various output
+methods including an interactive curses user interface and a programmable text
+output for scripting.
 
-WWW: http://people.suug.ch/~tgr/bmon/
+WWW: https://github.com/tgraf/bmon
