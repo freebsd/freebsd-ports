@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A front-end for ssh which can open multiple xterms
+COMMENT=	Front-end for ssh which can open multiple xterms
 
 USE_GNOME=	gtk12
 
@@ -17,7 +17,8 @@ ALL_TARGET=	ssh-gui
 PLIST_FILES=	bin/ssh-gui
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if !exists(/usr/bin/ssh) && !exists(${LOCALBASE}/bin/ssh)
@@ -30,12 +31,8 @@ post-patch:
 		${BUILD_WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-
-post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
