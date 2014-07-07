@@ -9,8 +9,8 @@ MASTER_SITES=	https://launchpad.net/${PORTNAME}/8.1.x/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= ports@FreeBSD.org
-COMMENT=	A mail reader running inside Emacs or XEmacs
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mail reader running inside Emacs or XEmacs
 
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
@@ -23,4 +23,7 @@ MAKE_ARGS=	prefix=${PREFIX} \
 INFO=		vm vm-pcrisis
 
 NO_STAGE=	yes
+
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
