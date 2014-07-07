@@ -3,19 +3,20 @@
 
 PORTNAME=	parano
 PORTVERSION=	0.3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Gnome program to deal with hashfiles
+COMMENT=	Gnome program to deal with hashfiles
 
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
-USES=		gettext gmake
+USES=		desktop-file-utils gettext gmake shared-mime-info
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-update-mime-database
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
