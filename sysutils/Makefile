@@ -733,6 +733,7 @@
     SUBDIR += py-halite
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
+    SUBDIR += py-ploy
     SUBDIR += py-plumbum
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
