@@ -625,6 +625,7 @@
     SUBDIR += sdpara
     SUBDIR += sedumi
     SUBDIR += sfft
+    SUBDIR += sfst
     SUBDIR += simd-viterbi
     SUBDIR += slatec
     SUBDIR += slgrace
