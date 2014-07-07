@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A program showing where new mail has been placed
+COMMENT=	Program showing where new mail has been placed
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

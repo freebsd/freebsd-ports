@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	A Python implementation of the munkres algorithm
+COMMENT=	Python implementation of the munkres algorithm
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

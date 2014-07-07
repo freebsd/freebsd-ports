@@ -9,7 +9,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF
 
 MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	A computer algebra system, forked from axiom
+COMMENT=	Computer algebra system, forked from axiom
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.AXIOM

@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}-x/${PORTNAME}-090400/${PORTVERSION}
 DISTNAME=	GDialog-090400-25
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Project X addon to read Siemens Gigaset M740AV video recordings
+COMMENT=	Project X addon to read Siemens Gigaset M740AV video recordings
 
 LICENSE=	GPLv2
 

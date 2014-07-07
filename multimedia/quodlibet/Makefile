@@ -7,7 +7,7 @@ CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://bitbucket.org/lazka/${PORTNAME}-files/raw/default/releases/
 
 MAINTAINER=	johnson.peter@gmail.com
-COMMENT=	A GTK+-based audio player written in Python
+COMMENT=	GTK+-based audio player written in Python
 
 LICENSE=	GPLv2
 

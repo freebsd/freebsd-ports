@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSIO
 		http://ftp.heikorichter.name/pub/videolan/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	decke@FreeBSD.org
-COMMENT=	A free implementation of the DVB Common Scrambling Algorithm
+COMMENT=	Free implementation of the DVB Common Scrambling Algorithm
 
 LICENSE=	GPLv2
 

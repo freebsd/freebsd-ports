@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.grigna.com/diego/linux/countrycodes/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	An ISO 3166 country code finder
+COMMENT=	ISO 3166 country code finder
 
 LICENSE=	GPLv2
 

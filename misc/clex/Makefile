@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.clex.sk/download/
 DISTNAME=	clex-4.6.patch6
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A command line file manager
+COMMENT=	Command line file manager
 
 LICENSE=	GPLv2
 

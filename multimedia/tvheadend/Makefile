@@ -10,7 +10,7 @@ DISTNAME=	decke-${PORTNAME}-8a8c1a8
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} dvb-scan-tables-20130714.tar.gz
 
 MAINTAINER=	decke@FreeBSD.org
-COMMENT=	A TV streaming server supporting DVB, IPTV and V4L
+COMMENT=	TV streaming server supporting DVB, IPTV and V4L
 
 LICENSE=	GPLv3
 

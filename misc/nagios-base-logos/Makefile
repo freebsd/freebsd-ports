@@ -8,7 +8,7 @@ MASTER_SITES=	SF/nagios/OldFiles
 DISTNAME=	imagepak-base
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A collection of basic OS and device logos for Nagios
+COMMENT=	Collection of basic OS and device logos for Nagios
 
 NO_BUILD=yes
 

@@ -7,7 +7,7 @@ CATEGORIES=	mail devel
 MASTER_SITES=	http://cryp.to/librfc2822/
 
 MAINTAINER=	ismail@EnderUNIX.org
-COMMENT=	A complete parser for RFC822 addresses
+COMMENT=	Complete parser for RFC822 addresses
 
 GNU_CONFIGURE=	yes
 

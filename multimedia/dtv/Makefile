@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A client/server based TV capture/display program
+COMMENT=	Client/server based TV capture/display program
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

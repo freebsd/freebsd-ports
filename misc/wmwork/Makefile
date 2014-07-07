@@ -10,7 +10,7 @@ MASTER_SITES=	http://people.debian.org/~godisch/wmwork/ \
 MASTER_SITE_SUBDIR=	xride
 
 MAINTAINER=	xride@FreeBSD.org
-COMMENT=	A dockapp that keeps track of time you have spent on something
+COMMENT=	Dockapp that keeps track of time you have spent on something
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

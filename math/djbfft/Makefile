@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://cr.yp.to/djbfft/
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	An extremely fast library for floating-point convolution
+COMMENT=	Extremely fast library for floating-point convolution
 
 LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 

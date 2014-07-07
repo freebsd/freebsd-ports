@@ -7,7 +7,7 @@ CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple to use module for generating RGC compliant MIME mail
+COMMENT=	Simple to use module for generating RGC compliant MIME mail
 
 RUN_DEPENDS=	rubygem-mime-types>=1.13.1:${PORTSDIR}/misc/rubygem-mime-types
 

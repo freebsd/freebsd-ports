@@ -7,7 +7,7 @@ CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	hhyou@cs.nctu.edu.tw
-COMMENT=	A Vim interface to Gmail
+COMMENT=	Vim interface to Gmail
 
 RUN_DEPENDS=	rubygem-mail>=2.2.12:${PORTSDIR}/mail/rubygem-mail \
 		rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline \

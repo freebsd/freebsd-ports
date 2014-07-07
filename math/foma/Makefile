@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A toolkit for constructing finite-state automata and transducers
+COMMENT=	Toolkit for constructing finite-state automata and transducers
 
 LICENSE=	GPLv2
 

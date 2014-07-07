@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for handling uncompressed video and audio data
+COMMENT=	Library for handling uncompressed video and audio data
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

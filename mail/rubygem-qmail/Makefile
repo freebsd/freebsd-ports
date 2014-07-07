@@ -7,7 +7,7 @@ CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Ruby qmail library
+COMMENT=	Ruby qmail library
 
 RUN_DEPENDS=	rubygem-rspec>=1.2.9:${PORTSDIR}/devel/rubygem-rspec
 

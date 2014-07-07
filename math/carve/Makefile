@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A fast, robust constructive solid geometry library
+COMMENT=	Fast, robust constructive solid geometry library
 
 LICENSE=	GPLv2
 

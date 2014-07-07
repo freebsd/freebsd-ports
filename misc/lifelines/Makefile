@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	matt@gsicomp.on.ca
-COMMENT=	An advanced genealogical system
+COMMENT=	Advanced genealogical system
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

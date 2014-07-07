@@ -7,7 +7,7 @@ CATEGORIES=	misc devel
 MASTER_SITES=	SF/deltup/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	An advanced delta creator, patcher, and library
+COMMENT=	Advanced delta creator, patcher, and library
 
 USES=		gmake
 USE_LDCONFIG=	yes

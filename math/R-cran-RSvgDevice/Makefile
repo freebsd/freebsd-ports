@@ -7,7 +7,7 @@ CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT=	A R SVG graphics device
+COMMENT=	R SVG graphics device
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

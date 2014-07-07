@@ -12,7 +12,7 @@ DISTNAME=	numru-units-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	murashin@gfd-dennou.org
-COMMENT=	A class to handle units of physical quantities for Ruby
+COMMENT=	Class to handle units of physical quantities for Ruby
 
 OPTIONS_DEFINE=	DOCS
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://${PORTNAME}.sourceforge.net/dist/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\./_/g}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A Propositional Logic sentence shell/interpreter
+COMMENT=	Propositional Logic sentence shell/interpreter
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 

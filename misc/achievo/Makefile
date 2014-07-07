@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.achievo.org/files/ \
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
 MAINTAINER=	kevin@caomhin.demon.co.uk
-COMMENT=	A flexible web-based resource management tool
+COMMENT=	Flexible web-based resource management tool
 
 USE_PHP=	yes
 WANT_PHP_MOD=	yes

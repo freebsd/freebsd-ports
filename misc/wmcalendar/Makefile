@@ -8,7 +8,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES=	SF
 
 MAINTAINER=	xride@FreeBSD.org
-COMMENT=	A dockable calendar with interface to iCalendar based calendars
+COMMENT=	Dockable calendar with interface to iCalendar based calendars
 
 LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
 

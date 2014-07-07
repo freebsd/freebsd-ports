@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-${EMACS_NAME}
 DISTNAME=	color-theme-${PORTVERSION}
 
 MAINTAINER=	dsh@vlink.ru
-COMMENT=	An Emacs-Lisp package with more than 50 color themes
+COMMENT=	Emacs-Lisp package with more than 50 color themes
 
 USE_EMACS=	yes
 PORTDOCS=	AUTHORS BUGS COPYING ChangeLog README

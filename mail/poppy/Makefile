@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.cnpbagwell.com/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A client to perform simple tasks with a POP3/IMAP server
+COMMENT=	Client to perform simple tasks with a POP3/IMAP server
 
 USES=		shebangfix
 NO_BUILD=	yes

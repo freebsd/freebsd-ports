@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.mml.org.ua/LIST/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
 
 MAINTAINER=	gmarco@gufi.org
-COMMENT=	A minimalistic mailing list manager
+COMMENT=	Minimalistic mailing list manager
 
 USES=		shebangfix perl5
 USE_PERL5=	run

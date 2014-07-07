@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_v${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A set of scripts to use gpg with Pine
+COMMENT=	Set of scripts to use gpg with Pine
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 

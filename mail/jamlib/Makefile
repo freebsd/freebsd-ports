@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A JAM subroutine library
+COMMENT=	JAM subroutine library
 
 USES=		libtool
 GNU_CONFIGURE=	yes

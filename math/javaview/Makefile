@@ -10,7 +10,7 @@ DISTFILES=	javaview.zip jv_models.zip jv_tutor.zip
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A 3D viewer and a mathematical visualization software
+COMMENT=	3D viewer and a mathematical visualization software
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

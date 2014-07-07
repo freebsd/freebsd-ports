@@ -14,7 +14,7 @@ DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
 EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	A fast implementation of Basic Linear Algebra Subprograms
+COMMENT=	Fast implementation of Basic Linear Algebra Subprograms
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/00License.txt

@@ -9,7 +9,7 @@ MASTER_SITES=	http://metromap.antex.ru/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A simple application for finding paths in different subways maps
+COMMENT=	Simple application for finding paths in different subways maps
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

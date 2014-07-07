@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://intara.arrowdodger.ru/
 
 MAINTAINER=	6yearold@gmail.com
-COMMENT=	A Decision Procedure for Bitvectors and Arrays
+COMMENT=	Decision Procedure for Bitvectors and Arrays
 
 LICENSE=	MIT
 

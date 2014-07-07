@@ -10,7 +10,7 @@ MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ \
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	gmarco@gufi.org
-COMMENT=	A free spreadsheet with graphical user interface
+COMMENT=	Free spreadsheet with graphical user interface
 
 PLIST_FILES=	bin/abs
 USE_XORG=	x11 xpm xaw

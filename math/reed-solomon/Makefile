@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.ka9q.net/code/fec/
 
 MAINTAINER=	freebsduser@paradisegreen.co.uk
-COMMENT=	A Reed-Solomon CODEC library
+COMMENT=	Reed-Solomon CODEC library
 
 GNU_CONFIGURE=	yes
 USES=		gmake

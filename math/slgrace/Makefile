@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${SLANG_VER}/modules/grace/ \
 MASTER_SITE_SUBDIR=	garga/slgrace/
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A SLang module to plot graphs with grace
+COMMENT=	SLang module to plot graphs with grace
 
 LICENSE=	GPLv2
 

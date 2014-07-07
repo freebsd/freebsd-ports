@@ -8,7 +8,7 @@ CATEGORIES=	mail net-mgmt
 MASTER_SITES=	http://www.inter7.com/qmailmrtg7/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A program to create mrtg graphs for qmail activity
+COMMENT=	Program to create mrtg graphs for qmail activity
 
 LICENSE=	GPLv2
 
