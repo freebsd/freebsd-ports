@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	games
 MASTER_SITES=	http://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
 DISTFILES=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Epic tactical turn-based roguelike adventure
