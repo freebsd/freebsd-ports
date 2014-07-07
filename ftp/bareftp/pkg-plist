@@ -1,6 +1,5 @@
 bin/bareftp
 lib/bareftp/libsftppty.a
-lib/bareftp/libsftppty.la
 lib/bareftp/libsftppty.so
 libexec/bareftp/bareFTP.Common.Utils.dll
 libexec/bareftp/bareFTP.Connection.dll
@@ -15,6 +14,7 @@ libexec/bareftp/bareFTP.Protocol.Sftp.dll
 libexec/bareftp/bareFTP.Protocol.dll
 libexec/bareftp/bareFTP.SftpPty.dll
 libexec/bareftp/bareftp.exe
+man/man1/bareftp.1.gz
 share/applications/bareftp.desktop
 share/icons/hicolor/16x16/apps/bareftp.png
 share/icons/hicolor/22x22/apps/bareftp.png
