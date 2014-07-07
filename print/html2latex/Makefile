@@ -11,9 +11,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Convert HTML document into LaTeX
 
-MAN1=		html2latex.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/html2latex
+PLIST_FILES=	bin/html2latex man/man1/html2latex.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
