@@ -23,7 +23,8 @@ USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}" MOC="${MOC}"
 CONFIGURE_ARGS=	--with-pthread=yes --with-coin=${LOCALBASE} \
-		--with-qt=${QT_LIBDIR}
+		--with-qt=${QT_LIBDIR} \
+		--enable-debug=no
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${QT_INCDIR}/Qt -I${QT_INCDIR} -I${LOCALBASE}/include
