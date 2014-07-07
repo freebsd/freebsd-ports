@@ -28,7 +28,6 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 UNIQUENAME=	${PKGBASE}
 
 CONFLICTS=	vtk-4*
-USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	xt
 USES=		cmake:outsource
@@ -98,6 +97,7 @@ CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 PLIST_SUB+=	X11="@comment " \
 		OSMESA=""
 .else
+USE_GL=		gl
 PLIST_SUB+=	X11="" \
 		OSMESA="@comment "
 .endif
