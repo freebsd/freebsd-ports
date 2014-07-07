@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	phpmustache
-PORTVERSION=	2.4.0
+PORTVERSION=	2.6.0
 CATEGORIES=	www
 MASTER_SITES=	GH
 
-MAINTAINER=	spolyack@collaborativefusion.com
+MAINTAINER=	steve.polyack@intermedix.com
 COMMENT=	PHP5 code for Mustache
 
 LICENSE=	MIT
@@ -14,27 +14,23 @@ LICENSE=	MIT
 USE_GITHUB=	yes
 GH_ACCOUNT=	bobthecow
 GH_PROJECT=	mustache.php
-GH_TAGNAME=	v2.4.0
-GH_COMMIT=	8433da6
+GH_TAGNAME=	v2.6.0
+GH_COMMIT=	152c315
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 do-build:
 	@${WRKSRC}/bin/build_bootstrap.php
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/mustache.php ${DATADIR}
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/test/fixtures/examples/* ${EXAMPLESDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/mustache.php ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/test/fixtures/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
