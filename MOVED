@@ -6241,3 +6241,5 @@ print/texinfo-lite|print/indexinfo|2014-07-06|Replaced by indexinfo to handle in
 audio/linnya||2014-07-07|Deprecated upstream
 databases/slony1|databases/slony1v2|2014-07-07|Unsupported: consider using slony1 v2 instead
 lang/see-devel|lang/see|2014-07-07|lang/see is up to date no need for see-devel
+net-p2p/libtorrent-devel||2014-07-07|libtorrent port has newer version, use that instead
+net-p2p/rtorrent-devel||2014-07-07|rtorrent port has newer version, use that instead
