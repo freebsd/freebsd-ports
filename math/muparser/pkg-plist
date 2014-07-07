@@ -12,7 +12,9 @@ include/muParserTemplateMagic.h
 include/muParserTest.h
 include/muParserToken.h
 include/muParserTokenReader.h
-lib/libmuparser.a
+lib/libmuparser.so
+lib/libmuparser.so.2
+lib/libmuparser.so.2.2.3
 libdata/pkgconfig/muparser.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/api.png
 %%PORTDOCS%%%%DOCSDIR%%/images/api_dark.png
@@ -89,20 +91,12 @@ libdata/pkgconfig/muparser.pc
 %%PORTDOCS%%%%DOCSDIR%%/sources/mup_version_meta.html
 %%PORTDOCS%%%%DOCSDIR%%/sources/navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/style/formate.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/example1
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/example1.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/Readme.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/example2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/muparser32.dll
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/muparser64.dll
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/muparserd32.dll
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/muparserd64.dll
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/style
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/script
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.cpp
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/misc
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/script
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/sources
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/style
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	muparser
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.3
 CATEGORIES=	math devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}
@@ -12,38 +12,43 @@ COMMENT=	Mathematical expressions parser library written in C++
 
 LICENSE=	MIT
 
-USES=	pathfix gmake zip
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-shared=no
-.if defined(NOPORTEXAMPLES)
-CONFIGURE_ARGS+=	--enable-samples=no
-.endif
-.if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
-.endif
+ALL_TARGET=	lib
 
-NO_STAGE=	yes
+DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR}
+
+EXAMPLES_CONFIGURE_ENABLE=	samples
+EXAMPLES_ALL_TARGET=	samples
+
+GNU_CONFIGURE=	yes
+
+# otherwise it fails to build when the EXAMPLES option is ON
+MAKE_JOBS_UNSAFE=yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USE_LDCONFIG=	yes
+USES=	pathfix zip
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
 
-# taken from audio/taglib
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CXXFLAGS|LDFLAGS) = ,\1 ?= ,g' \
 		${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} && \
-	cd ${WRKSRC}/docs/html && \
-	${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR} && \
-	cd ${WRKSRC}/samples && \
-	${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs/html && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/samples/example1 && \
+	${INSTALL_PROGRAM} example1 ${STAGEDIR}${EXAMPLESDIR} && \
+	${INSTALL_DATA} example1.cpp ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.post.mk>
