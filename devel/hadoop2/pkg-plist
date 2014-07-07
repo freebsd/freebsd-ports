@@ -97,8 +97,8 @@ lib/libhdfs.so.0
 %%DATADIR%%/common/lib/jersey-server-1.9.jar
 %%DATADIR%%/common/lib/jets3t-0.9.0.jar
 %%DATADIR%%/common/lib/jettison-1.1.jar
-%%DATADIR%%/common/lib/jetty-6.1.26.jar
-%%DATADIR%%/common/lib/jetty-util-6.1.26.jar
+%%DATADIR%%/common/lib/jetty-6.1.14.jar
+%%DATADIR%%/common/lib/jetty-util-6.1.14.jar
 %%DATADIR%%/common/lib/jsch-0.1.42.jar
 %%DATADIR%%/common/lib/jsp-api-2.1.jar
 %%DATADIR%%/common/lib/jsr305-1.3.9.jar
@@ -137,8 +137,8 @@ lib/libhdfs.so.0
 %%DATADIR%%/hdfs/lib/jasper-runtime-5.5.23.jar
 %%DATADIR%%/hdfs/lib/jersey-core-1.9.jar
 %%DATADIR%%/hdfs/lib/jersey-server-1.9.jar
-%%DATADIR%%/hdfs/lib/jetty-6.1.26.jar
-%%DATADIR%%/hdfs/lib/jetty-util-6.1.26.jar
+%%DATADIR%%/hdfs/lib/jetty-6.1.14.jar
+%%DATADIR%%/hdfs/lib/jetty-util-6.1.14.jar
 %%DATADIR%%/hdfs/lib/jsp-api-2.1.jar
 %%DATADIR%%/hdfs/lib/jsr305-1.3.9.jar
 %%DATADIR%%/hdfs/lib/log4j-1.2.17.jar
@@ -510,8 +510,8 @@ sbin/yarn-daemons.sh
 %%DATADIR%%/tools/lib/jersey-server-1.9.jar
 %%DATADIR%%/tools/lib/jets3t-0.9.0.jar
 %%DATADIR%%/tools/lib/jettison-1.1.jar
-%%DATADIR%%/tools/lib/jetty-6.1.26.jar
-%%DATADIR%%/tools/lib/jetty-util-6.1.26.jar
+%%DATADIR%%/tools/lib/jetty-6.1.14.jar
+%%DATADIR%%/tools/lib/jetty-util-6.1.14.jar
 %%DATADIR%%/tools/lib/jsch-0.1.42.jar
 %%DATADIR%%/tools/lib/jsp-api-2.1.jar
 %%DATADIR%%/tools/lib/jsr305-1.3.9.jar
@@ -582,8 +582,8 @@ sbin/yarn-daemons.sh
 %%DATADIR%%/yarn/lib/jersey-json-1.9.jar
 %%DATADIR%%/yarn/lib/jersey-server-1.9.jar
 %%DATADIR%%/yarn/lib/jettison-1.1.jar
-%%DATADIR%%/yarn/lib/jetty-6.1.26.jar
-%%DATADIR%%/yarn/lib/jetty-util-6.1.26.jar
+%%DATADIR%%/yarn/lib/jetty-6.1.14.jar
+%%DATADIR%%/yarn/lib/jetty-util-6.1.14.jar
 %%DATADIR%%/yarn/lib/jline-0.9.94.jar
 %%DATADIR%%/yarn/lib/jsr305-1.3.9.jar
 %%DATADIR%%/yarn/lib/leveldbjni-all-1.8.jar

@@ -4,3 +4,5 @@ SHA256 (hadoop/FreeBSD-hadoop2-2.4.1-maven-repository.tar.gz) = b4698f60eff9aca6
 SIZE (hadoop/FreeBSD-hadoop2-2.4.1-maven-repository.tar.gz) = 71669612
 SHA256 (hadoop/apache-tomcat-6.0.36.tar.gz) = bc1be532d48a239a6945b028bf8f253087d3405f6522229226c484bf8ae4d45e
 SIZE (hadoop/apache-tomcat-6.0.36.tar.gz) = 6780936
+SHA256 (hadoop/jetty-6.1.14.zip) = ce8a9cf74c7f3a0099438f33b3adcef07d82347d3d67359da2116660e1571187
+SIZE (hadoop/jetty-6.1.14.zip) = 24903728

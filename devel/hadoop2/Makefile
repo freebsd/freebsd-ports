@@ -8,11 +8,12 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
 		LOCAL/demon/:maven \
 		http://people.freebsd.org/~demon/:maven \
-		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat
+		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat \
+		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
 MASTER_SITE_SUBDIR=${PORTNAME}/common/stable
 PKGNAMEPREFIX=	apache-
 PKGNAMESUFFIX=	2
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat jetty-6.1.14.zip:jetty
 DIST_SUBDIR=	hadoop
 
 MAINTAINER=	demon@FreeBSD.org
@@ -73,6 +74,13 @@ do-build:
 
 post-build:
 	${RM} ${HADOOP_DIST}/etc/hadoop/*.cmd
+# With jetty-6.1.26 tasktracker's threads hung with the following error:
+# org.mortbay.io.nio.SelectorManager$SelectSet@abdcc1c JVM BUG(s) - injecting delay 59 times
+# See https://issues.apache.org/jira/browse/MAPREDUCE-2386
+.for dir in share/hadoop/common/lib share/hadoop/hdfs/lib share/hadoop/yarn/lib share/hadoop/tools/lib
+	${RM} ${HADOOP_DIST}/${dir}/jetty-util-6.1.26.jar ${HADOOP_DIST}/${dir}/jetty-6.1.26.jar
+	${CP} ${WRKDIR}/jetty-6.1.14/lib/jetty-6.1.14.jar ${WRKDIR}/jetty-6.1.14/lib/jetty-util-6.1.14.jar ${HADOOP_DIST}/${dir}/
+.endfor
 
 do-install:
 	cd ${HADOOP_DIST}/bin && ${INSTALL_SCRIPT} hadoop hdfs mapred rcc yarn ${STAGEDIR}${PREFIX}/bin/
