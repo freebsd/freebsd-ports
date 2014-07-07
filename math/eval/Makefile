@@ -11,7 +11,7 @@ DISTNAME=	Eval${PORTVERSION}
 EXTRACT_SUFX=	.lha
 
 MAINTAINER=	slaven@rezic.de
-COMMENT=	A full featured floating point expression evaluator
+COMMENT=	Full featured floating point expression evaluator
 
 USES=		lha
 

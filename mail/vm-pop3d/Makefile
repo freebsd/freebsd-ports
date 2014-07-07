@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
 MASTER_SITE_SUBDIR=	system/mail/pop
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A virtual POP3 server
+COMMENT=	Virtual POP3 server
 
 GNU_CONFIGURE=	yes
 

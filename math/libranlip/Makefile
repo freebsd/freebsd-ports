@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/bf \
 		http://www.deakin.edu.au/~gleb/
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A random variate generator for Lipschitz-continuous densities
+COMMENT=	Random variate generator for Lipschitz-continuous densities
 
 USES=		libtool
 GNU_CONFIGURE=	yes

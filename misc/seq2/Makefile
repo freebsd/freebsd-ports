@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A clone of the UNIX(tm) program called seq
+COMMENT=	Clone of the UNIX(tm) program called seq
 
 LICENSE=	GPLv2
 

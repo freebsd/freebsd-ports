@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 
 MAINTAINER=	rossiya@gmail.com
-COMMENT=	A C++ class SSE library for scientific computing
+COMMENT=	C++ class SSE library for scientific computing
 
 LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack \
 		libblas.so:${PORTSDIR}/math/blas

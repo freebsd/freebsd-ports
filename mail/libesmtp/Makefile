@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for posting electronic mail
+COMMENT=	Library for posting electronic mail
 
 LICENSE=	LGPL21
 

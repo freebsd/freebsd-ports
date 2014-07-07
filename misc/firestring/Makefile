@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.firestuff.org/projects/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
 MAINTAINER=	dean@odyssey.apana.org.au
-COMMENT=	A library to make string handling easier in C
+COMMENT=	Library to make string handling easier in C
 
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes

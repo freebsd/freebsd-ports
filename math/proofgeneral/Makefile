@@ -11,7 +11,7 @@ DISTNAME=	ProofGeneral-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beyert@cs.ucr.edu
-COMMENT=	A generic interface for proof assistants
+COMMENT=	Generic interface for proof assistants
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

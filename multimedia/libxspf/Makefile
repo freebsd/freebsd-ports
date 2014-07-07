@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/libspiff/Sources/${PORTVERSION}
 
 MAINTAINER=	ed@FreeBSD.org
-COMMENT=	An XSPF parsing library
+COMMENT=	XSPF parsing library
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 

@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.jedrea.com/chmlib/
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
+COMMENT=	Library for dealing with Microsoft ITSS/CHM format files
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes

@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.informatik.uni-koeln.de/abacus/
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A Branch-And-CUt System
+COMMENT=	Branch-And-CUt System
 
 LICENSE=	GPLv2
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.pureftpd.org/pub/qscan/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/qscan/
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	A mail filter for Qmail that scans messages with ClamAV
+COMMENT=	Mail filter for Qmail that scans messages with ClamAV
 
 RUN_DEPENDS=	clamdscan:${PORTSDIR}/security/clamav \
 		ripmime:${PORTSDIR}/mail/ripmime

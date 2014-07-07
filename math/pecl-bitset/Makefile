@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PECL extension for manipulating bitsets
+COMMENT=	PECL extension for manipulating bitsets
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

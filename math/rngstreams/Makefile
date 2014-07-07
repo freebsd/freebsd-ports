@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/software/RngStreams/
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A C implementation of a high-quality uniform random number generator
+COMMENT=	C implementation of a high-quality uniform random number generator
 
 USES=		libtool
 GNU_CONFIGURE=	yes

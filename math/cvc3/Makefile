@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	An automatic theorem prover for the SMT problem
+COMMENT=	Automatic theorem prover for the SMT problem
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 

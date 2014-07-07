@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 #MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A wxWidgets GUI for the computer algebra system maxima
+COMMENT=	WxWidgets GUI for the computer algebra system maxima
 
 LICENSE=	GPLv2
 

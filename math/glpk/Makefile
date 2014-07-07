@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A GNU Linear Programming Kit
+COMMENT=	GNU Linear Programming Kit
 
 LICENSE=	GPLv3
 

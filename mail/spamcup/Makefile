@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for automatic spam reporting via Spamcop.net
+COMMENT=	Tool for automatic spam reporting via Spamcop.net
 
 LICENSE=	GPLv1
 

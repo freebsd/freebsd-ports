@@ -15,7 +15,7 @@ PATCHFILES=	${PORTNAME}_${PORTVERSION}-5.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A user-friendly graphical front end for the man system
+COMMENT=	User-friendly graphical front end for the man system
 
 DEPRECATED=	Depends on expiring ghostview
 EXPIRATION_DATE=	2014-07-31

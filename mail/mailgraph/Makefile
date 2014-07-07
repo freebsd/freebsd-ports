@@ -9,7 +9,7 @@ MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 		http://mailgraph.schweikert.ch/pub/old/
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A RRDtool frontend for Postfix statistics
+COMMENT=	RRDtool frontend for Postfix statistics
 
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail

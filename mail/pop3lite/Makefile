@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A flexible, modular RFC-compliant POP3 daemon
+COMMENT=	Flexible, modular RFC-compliant POP3 daemon
 
 USE_AUTOTOOLS=	libtool libltdl
 USE_GNOME=	glib12

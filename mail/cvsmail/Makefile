@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/pgollucci
 DISTNAME=	mailutils-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small program to add cvsweb links to FreeBSD commit messages
+COMMENT=	Small program to add cvsweb links to FreeBSD commit messages
 
 DIST_SUBDIR=	${PORTNAME}
 ALL_TARGET=	cvsmail

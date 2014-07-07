@@ -9,7 +9,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A utility port that creates the GNOME directory tree
+COMMENT=	Utility port that creates the GNOME directory tree
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist

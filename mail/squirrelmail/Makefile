@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	A webmail system which accesses mail over IMAP
+COMMENT=	Webmail system which accesses mail over IMAP
 
 LICENSE=	GPLv2
 

@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.c
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A vbs-attachment filter for Sendmail Milter
+COMMENT=	Vbs-attachment filter for Sendmail Milter
 
 LICENSE=	GPLv2
 

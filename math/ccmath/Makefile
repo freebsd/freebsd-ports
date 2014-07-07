@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	A mathematics library with many different functions
+COMMENT=	Mathematics library with many different functions
 
 LICENSE=	LGPL20
 

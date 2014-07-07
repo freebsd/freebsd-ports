@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A tool to help merge one file to another interactively
+COMMENT=	Tool to help merge one file to another interactively
 
 USE_BZIP2=	yes
 

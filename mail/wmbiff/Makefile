@@ -8,7 +8,7 @@ CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	An xbiff-like Window Maker dock app
+COMMENT=	xbiff-like Window Maker dock app
 
 LICENSE=	GPLv2
 

@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://audiopreview.codealpha.net/files/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A command-line tool to play previews of audio and video files
+COMMENT=	Command-line tool to play previews of audio and video files
 
 USES=		gmake pkgconfig
 USE_GSTREAMER=	core

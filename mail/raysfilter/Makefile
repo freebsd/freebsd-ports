@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=dinoex
 DISTNAME=	rays-filter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A configurable filter for Sendmail Milter
+COMMENT=	Configurable filter for Sendmail Milter
 
 CTARGETS+=	rays-filter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}

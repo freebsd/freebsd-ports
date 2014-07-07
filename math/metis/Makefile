@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A package for unstructured graph partitioning
+COMMENT=	Package for unstructured graph partitioning
 
 LICENSE=	APACHE20
 

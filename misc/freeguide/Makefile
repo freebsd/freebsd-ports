@@ -8,7 +8,7 @@ CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}-tv/${PORTNAME}-source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An interactive TV guide which will create personalized TV listings
+COMMENT=	Interactive TV guide which will create personalized TV listings
 
 RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
 

@@ -8,7 +8,7 @@ CATEGORIES+=	math
 MASTER_SITES=	http://pessimization.com/software/orpie/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fullscreen RPN calculator for the console
+COMMENT=	Fullscreen RPN calculator for the console
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl

@@ -15,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	A library of routines for performing sparse factorization
+COMMENT=	Library of routines for performing sparse factorization
 
 USES=		fortran
 

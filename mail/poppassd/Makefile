@@ -10,7 +10,7 @@ DISTNAME=	pwserve-4
 EXTRACT_SUFX=
 
 MAINTAINER=	tedm@ipinc.net
-COMMENT=	A server to allow users to change their password from within Eudora
+COMMENT=	Server to allow users to change their password from within Eudora
 
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=

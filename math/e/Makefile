@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.softnet.tuc.gr/~apdim/projects/e/
 
 MAINTAINER=	snowy@netphile.de
-COMMENT=	A tiny expression evaluator
+COMMENT=	Tiny expression evaluator
 
 MAKEFILE=	makefile
 ALL_TARGET=	e

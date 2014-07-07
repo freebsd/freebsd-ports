@@ -8,7 +8,7 @@ CATEGORIES=	misc print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	A collection of makefile and scripts for LaTeX documents
+COMMENT=	Collection of makefile and scripts for LaTeX documents
 
 BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 RUN_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo

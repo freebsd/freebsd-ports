@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	dinoex
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A Sendmail LibMilter filter to block spam
+COMMENT=	Sendmail LibMilter filter to block spam
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

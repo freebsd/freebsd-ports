@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A scanner for open SMTP relays
+COMMENT=	Scanner for open SMTP relays
 
 OPTIONS_DEFINE=	DOCS GUI
 

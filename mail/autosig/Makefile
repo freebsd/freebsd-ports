@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.irendi.com/~msharpe/
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	A random .signature generator with header file included
+COMMENT=	Random .signature generator with header file included
 
 MAKEFILE=	makefile
 PLIST_FILES=	bin/autosig

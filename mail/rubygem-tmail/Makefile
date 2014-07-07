@@ -7,7 +7,7 @@ CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby
+COMMENT=	RFC2822/MIME compliant mail manipulating library for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

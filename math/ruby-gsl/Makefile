@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A Ruby extension library for GSL (GNU Scientific Library)
+COMMENT=	Ruby extension library for GSL (GNU Scientific Library)
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 

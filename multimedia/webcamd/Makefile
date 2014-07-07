@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
-COMMENT=	A port of Linux USB webcam and DVB drivers into userspace
+COMMENT=	Port of Linux USB webcam and DVB drivers into userspace
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
 		cuse4bsd-kmod>=0.1.31:${PORTSDIR}/multimedia/cuse4bsd-kmod

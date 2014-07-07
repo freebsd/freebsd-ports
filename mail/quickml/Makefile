@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://0xcc.net/quickml/
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	An easy-to-use mailing list system
+COMMENT=	Easy-to-use mailing list system
 
 LICENSE=	GPLv2
 

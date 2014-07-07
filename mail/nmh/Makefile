@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	nmh
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	A cleaned up MH mailer suite
+COMMENT=	Cleaned up MH mailer suite
 
 LICENSE=	BSD3CLAUSE
 

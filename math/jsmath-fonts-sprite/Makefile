@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A sprite fonts pack for jsMath
+COMMENT=	Sprite fonts pack for jsMath
 
 USES=		zip
 NO_BUILD=	yes

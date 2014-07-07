@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://linalg.org/ LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A library for dense linear algebra over word-size finite fields
+COMMENT=	Library for dense linear algebra over word-size finite fields
 
 LICENSE=	LGPL20
 

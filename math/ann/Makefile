@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.cs.umd.edu/~mount/ANN/Files/1.1.2/
 DISTNAME=	ann_1.1.2
 
 MAINTAINER=	tzhuan@csie.org
-COMMENT=	A Library for Approximate Nearest Neighbor Searching
+COMMENT=	Library for Approximate Nearest Neighbor Searching
 
 WRKSRC=		${WRKDIR}/ann_1.1.2
 USE_LDCONFIG=	yes

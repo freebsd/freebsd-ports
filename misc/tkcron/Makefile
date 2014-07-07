@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.tcl.tk/pub/tcl/mirror/ftp.procplace.com/sorted/packages-
 EXTRACT_SUFX=	.tcl.gz
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	A frontend to crontab
+COMMENT=	Frontend to crontab
 
 USES=		tk:85,run
 

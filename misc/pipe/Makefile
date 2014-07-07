@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}2/Pipe%202/PIPE2%20V${PORTVERSION}
 DISTNAME=	pipe25_rc5
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for creating and analysing Petri nets
+COMMENT=	Tool for creating and analysing Petri nets
 
 USES=		zip
 NO_BUILD=	yes

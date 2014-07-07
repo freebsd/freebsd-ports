@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	pool/main/v/vacation/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mcdouga9@egr.msu.edu
-COMMENT=	A email autoresponder, similar to vacation from sendmail
+COMMENT=	Email autoresponder, similar to vacation from sendmail
 
 USE_BDB=	yes
 

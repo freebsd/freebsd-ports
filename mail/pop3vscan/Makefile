@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
+COMMENT=	Transparent POP3-Proxy with virus-scanning capabilities
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 

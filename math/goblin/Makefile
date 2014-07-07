@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}.${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A Graph Object Library for Network Programming Problems
+COMMENT=	Graph Object Library for Network Programming Problems
 
 CONFLICTS=	glpk-*
 

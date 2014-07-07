@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A raster fonts pack for jsmath
+COMMENT=	Raster fonts pack for jsmath
 
 USES=		zip
 NO_BUILD=	yes

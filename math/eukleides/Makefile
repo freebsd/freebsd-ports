@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.eukleides.org/files/
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	A Euclidean geometry drawing language
+COMMENT=	Euclidean geometry drawing language
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

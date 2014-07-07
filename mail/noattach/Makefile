@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An attachment filter for Sendmail Milter
+COMMENT=	Attachment filter for Sendmail Milter
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	noattach
