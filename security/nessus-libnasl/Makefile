@@ -3,7 +3,7 @@
 
 PORTNAME=	nessus-libnasl
 PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -20,10 +20,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnessus.so:${PORTSDIR}/security/nessus-libraries
 
-WRKSRC=		${WRKDIR}/libnasl
-USE_AUTOTOOLS=	libtool
-USES=		bison
 GNU_CONFIGURE=	yes
+USES=		bison libtool
 USE_LDCONFIG=	YES
+WRKSRC=		${WRKDIR}/libnasl
 
 .include <bsd.port.mk>

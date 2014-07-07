@@ -8,7 +8,7 @@ MASTER_SITES=	http://atmail.org/download/
 DISTNAME=	atmailopen
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	An Open Source Webmail Client
 
 USE_PHP=	mysql pcre session

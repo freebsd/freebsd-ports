@@ -20,7 +20,7 @@ CONFLICTS=	gnome-games-*
 USES=		gmake
 USE_XORG=	xpm x11 xaw
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} readme.var
@@ -35,10 +35,8 @@ do-install:
 	@${CHMOD} 2755 ${STAGEDIR}${PREFIX}/bin/sol
 	@${CHMOD} 770 ${STAGEDIR}${PREFIX}/share/sol
 	@${CHMOD} 660 ${STAGEDIR}${PREFIX}/share/sol/sol.score
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/sol
 	${INSTALL_DATA} ${WRKSRC}/CREDITS ${STAGEDIR}${PREFIX}/share/doc/sol
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/sol
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

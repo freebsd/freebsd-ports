@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extman/%SUBDIR%/ \
 		http://mirror3.extmail.net/dist/%SUBDIR%/
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Web interface to manage Virtual Accounts
 
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD

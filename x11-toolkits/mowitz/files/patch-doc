@@ -4,7 +4,7 @@
  
 -SUBDIRS = Mowitz examples doc
 +SUBDIRS = Mowitz examples
-+.ifndef NOPORTDOCS
++.ifdef PORTDOCS
 +SUBDIRS+= doc
 +.endif
  

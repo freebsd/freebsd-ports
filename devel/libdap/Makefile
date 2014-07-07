@@ -22,6 +22,6 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_LDCONFIG=	yes
-USES=		charsetfix gmake pathfix libtool
+USES=		charsetfix gmake libtool pathfix
 
 .include <bsd.port.mk>

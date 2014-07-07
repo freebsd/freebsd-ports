@@ -2,21 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.7.2
+PORTVERSION=	2.8.8.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://lynx.isc.org/current/
+MASTER_SITES=	http://lynx.isc.org/current/ \
+		http://bitrote.org/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Non-graphical, text-based World-Wide Web client
 
-CONFLICTS=	lynx-2.8.[8-9]*
+LICENSE=	GPLv2
+
+CONFLICTS=	lynx-2.8.[8-9]d*
 
 USES=		tar:bzip2
 USE_OPENSSL=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}2-8-7
+WRKSRC=		${WRKDIR}/${PORTNAME}2-8-8
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \

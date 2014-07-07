@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A multi-threaded functional programming language
+COMMENT=	Multi-threaded functional programming language
 
 USES=		gmake
 USE_LDCONFIG=	yes

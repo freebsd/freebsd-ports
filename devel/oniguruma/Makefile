@@ -11,7 +11,7 @@ DISTFILES=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}:onig \
 DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -4,10 +4,10 @@
 CATEGORIES=	palm python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}synce-
 
-MAINTAINER=	webmaster@kibab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for libRAPI2
 
-LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
+LIB_DEPENDS=	librapi.so:${PORTSDIR}/palm/synce-librapi2
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
 MASTERDIR=	${.CURDIR}/../synce-librapi2

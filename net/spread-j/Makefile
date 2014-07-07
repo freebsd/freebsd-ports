@@ -18,25 +18,30 @@ USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 PKGMESSAGE=	${WRKSRC}/../license.txt
 
+OPTIONS_DEFINE=	DOCS
+
 ANT?=		${LOCALBASE}/bin/ant
-.if defined(NOPORTDOCS)
-ANT_TARGET=	jar
-.else
-ANT_TARGET=	javadocs jar
-PORTDOCS+=	java
-.endif
 ANT_PARAMS+=	-Dlib.dir=${STAGEDIR}${JAVAJARDIR} -Djavadoc.destdir=docs -Dversion=${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}/java
 PLIST_SUB+=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}"
 
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
+ANT_TARGET=	jar
+.else
+ANT_TARGET=	javadocs jar
+PORTDOCS+=	java
+.endif
+
 do-build:
-	@cd ${WRKSRC} && \
+	cd ${WRKSRC} && \
 		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT} ${ANT_TARGET} ${ANT_PARAMS}
 
 do-install:
-	@cd ${WRKSRC} && ${ANT} install ${ANT_PARAMS}
-.if !defined(NOPORTDOCS)
+	cd ${WRKSRC} && ${ANT} install ${ANT_PARAMS}
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${EXAMPLESDIR}/java
 	${INSTALL_DATA} ${WRKSRC}/recThread.java ${STAGEDIR}${EXAMPLESDIR}/java
 	${INSTALL_DATA} ${WRKSRC}/Flooder.java ${STAGEDIR}${EXAMPLESDIR}/java

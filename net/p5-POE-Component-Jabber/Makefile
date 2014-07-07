@@ -27,11 +27,11 @@ CONFIGURE_ARGS=	</dev/null
 
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>

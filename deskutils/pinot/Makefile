@@ -3,7 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.06
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	GOOGLE_CODE
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -57,9 +57,10 @@ SHEBANG_FILES=	scripts/bash/*.sh
 OPTIONS_DEFINE=	DEBUG CHMLIB DOCS
 OPTIONS_SUB=	yes
 
-DEBUG_CONFIGURE_ENABLE=	debug-yes
+DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
-CHMLIB_CONFIGURE_ENABLE=	chmlib=yes
+CHMLIB_CONFIGURE_ON=	--enable-chmlib=yes
+CHMLIB_CONFIGURE_OFF=	--disable-chmlib
 CHMLIB_LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
 
 INSTALLS_ICONS=	yes

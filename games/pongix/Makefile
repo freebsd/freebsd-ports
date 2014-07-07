@@ -16,23 +16,18 @@ USES=		gmake
 USE_SDL=	sdl image net
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
+LDFLAGS+=	-lm -L${LOCALBASE}/lib ${PTHREAD}
+PORTDOCS=	AUTHORS ChangeLog README
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}/src && \
-		${INSTALL_PROGRAM} pongix  ${PREFIX}/bin
-	@cd ${WRKSRC}/data && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-			${FIND} -E * -type f -iregex ".*\.(jpg|bmp)" \
-				-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && \
-	${INSTALL_DATA} AUTHORS ChangeLog README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/src && \
+		${INSTALL_PROGRAM} pongix ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/data && ${FIND} * -type d \
+		-exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
+		${FIND} -E * -type f -iregex ".*\.(jpg|bmp)" \
+		-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+	cd ${WRKSRC} && ${INSTALL_DATA} \
+		AUTHORS ChangeLog README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

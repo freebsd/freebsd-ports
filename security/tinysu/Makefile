@@ -6,7 +6,7 @@ PORTVERSION=	0.9
 CATEGORIES=	security
 MASTER_SITES=	http://peff.net/tinysu/
 
-MAINTAINER=	zakj@nox.cx
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A featureless replacement for su and sudo
 
 PLIST_FILES=	bin/tinysu

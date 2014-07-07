@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bibtex2html
-PORTVERSION=	1.97
+PORTVERSION=	1.98
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/bibtex2html/
 

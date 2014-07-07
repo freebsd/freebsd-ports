@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.qrivy.net/~michael/blua/bioapi/ \
 		http://shapeshifter.se/pub/bioapi/
 
-MAINTAINER=	fli@shapeshifter.se
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	BioAPI library implementation
 
 USE_AUTOTOOLS=	libtool

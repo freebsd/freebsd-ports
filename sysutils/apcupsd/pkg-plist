@@ -2,20 +2,16 @@ sbin/apcupsd
 sbin/apcaccess
 sbin/apctest
 sbin/smtp
-@unexec if cmp -s %D/%%ETCDIR%%/apcupsd.conf.sample %D/%%ETCDIR%%/apcupsd.conf; then rm -f %D/%%ETCDIR%%/apcupsd.conf; fi
-%%ETCDIR%%/apcupsd.conf.sample
+@sample %%ETCDIR%%/apcupsd.conf.sample
 %%ETCDIR%%/apccontrol
 %%ETCDIR%%/changeme
 %%ETCDIR%%/commfailure
 %%ETCDIR%%/commok
 %%ETCDIR%%/onbattery
 %%ETCDIR%%/offbattery
-%%CGI%%@unexec if cmp -s %D/%%ETCDIR%%/apcupsd.css.sample %D/%%ETCDIR%%/apcupsd.css; then rm -f %D/%%ETCDIR%%/apcupsd.css; fi
-%%CGI%%%%ETCDIR%%/apcupsd.css.sample
-%%CGI%%@unexec if cmp -s %D/%%ETCDIR%%/hosts.conf.sample %D/%%ETCDIR%%/hosts.conf; then rm -f %D/%%ETCDIR%%/hosts.conf; fi
-%%CGI%%%%ETCDIR%%/hosts.conf.sample
-%%CGI%%@unexec if cmp -s %D/%%ETCDIR%%/multimon.conf.sample %D/%%ETCDIR%%/multimon.conf; then rm -f %D/%%ETCDIR%%/multimon.conf; fi
-%%CGI%%%%ETCDIR%%/multimon.conf.sample
+%%CGI%%@sample %%ETCDIR%%/apcupsd.css.sample
+%%CGI%%@sample %%ETCDIR%%/hosts.conf.sample
+%%CGI%%@sample %%ETCDIR%%/multimon.conf.sample
 %%CGI%%%%ETCDIR%%/cgi/multimon.cgi
 %%CGI%%%%ETCDIR%%/cgi/upsfstats.cgi
 %%CGI%%%%ETCDIR%%/cgi/upsimage.cgi
@@ -29,4 +25,9 @@ sbin/smtp
 %%GAPCMON%%share/pixmaps/onbatt.png
 %%GAPCMON%%share/pixmaps/online.png
 %%GAPCMON%%share/pixmaps/unplugged.png
+man/man5/apcupsd.conf.5.gz
+man/man8/apcaccess.8.gz
+man/man8/apccontrol.8.gz
+man/man8/apctest.8.gz
+man/man8/apcupsd.8.gz
 @dirrmtry %%ETCDIR%%

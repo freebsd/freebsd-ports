@@ -1,0 +1,48 @@
+--- Makefile.orig	2014-07-07 21:24:49.187066431 +0800
++++ Makefile	2014-07-07 21:24:52.234066984 +0800
+@@ -3,7 +3,7 @@
+ 
+ # ----------------------------------------------------------------------------
+ # For normal machines with normal compilers:
+-CC = cc
++# CC = cc
+ # For testing:
+ # CC = gcc
+ # For Sun's and other non-at-least-pseudo-ANSI-C platforms:
+@@ -12,20 +12,21 @@ CC = cc
+ 
+ # ----------------------------------------------------------------------------
+ # For SGI's:
+-CFLAGS = -g -cckr  -DXMOSAIC
++# CFLAGS = -g -cckr  -DXMOSAIC -DNEED_GETOPT_H
+ # For testing:
+-# CFLAGS = -g -Wall -DXMOSAIC
++# CFLAGS = -g -Wall -DXMOSAIC -DNEED_GETOPT_H
+ # For HP's:
+ # CFLAGS = -g -DXMOSAIC -I/usr/include/Motif1.1 -I/usr/include/X11R4
+ # For everyone else:
+ # CFLAGS = -g -DXMOSAIC
+ # ----------------------------------------------------------------------------
++CFLAGS+= -DXMOSAIC
+ 
+ # ----------------------------------------------------------------------------
+ # For SGI's:
+-RANLIB = /bin/true
++# RANLIB = /bin/true
+ # For everyone else:
+-# RANLIB = ranlib
++RANLIB = ranlib
+ # ----------------------------------------------------------------------------
+ 
+ # You shouldn't need to edit below here.
+@@ -55,3 +56,10 @@ $(OBJS): HTMLparse.h
+ 
+ clean:
+ 	-rm $(EXETARGET) $(OBJS) $(LIBTARGET) $(DOCTARGET)
++
++PREFIX?=	/usr/local
++
++install: all
++	install -c -s $(EXETARGET) $(DESTDIR)$(PREFIX)/bin
++	gzip -c < html2latex.1 > html2latex.1.gz
++	install -c html2latex.1.gz $(DESTDIR)$(PREFIX)/man/man1

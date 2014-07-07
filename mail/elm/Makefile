@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://instinct.org/elm/files/tarballs/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	toasty@dragondata.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A once-popular mail user agent, version 2.5.x
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell

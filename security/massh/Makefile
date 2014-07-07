@@ -9,7 +9,7 @@ MASTER_SITES=	http://m.a.tt/er/
 DISTNAME=	massh
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sklauder@trimind.de
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Parallel ssh command execution and file transfer on multiple hosts
 
 LICENSE=	GPLv3

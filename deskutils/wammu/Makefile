@@ -3,7 +3,7 @@
 
 PORTNAME=		wammu
 PORTVERSION=		0.36
-PORTREVISION=	6
+PORTREVISION=		7
 CATEGORIES=		deskutils
 MASTER_SITES=		http://dl.cihar.com/wammu/v0/ \
 			http://dl.cihar.com.nyud.net/wammu/v0/
@@ -18,8 +18,7 @@ LIB_DEPENDS+=		libGammu.so:${PORTSDIR}/comms/gammu
 USES=			gettext pkgconfig
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-USE_WX=			2.6+
+USE_WX=			3.0+
 WX_COMPS=		python:lib
-WX_UNICODE=		yes
 
 .include <bsd.port.mk>

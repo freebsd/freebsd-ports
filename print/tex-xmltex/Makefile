@@ -12,10 +12,10 @@ EXTRACT_ONLY=
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Non-validating XML parser, written in TeX
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_TEX=	texlive texmf pdftex fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR}
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${PREFIX}/share \
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES= \
@@ -26,7 +26,6 @@ NO_WRKSRC=	yes
 NO_BUILD=	yes
 TEX_FORMATS=	xmltex
 
-NO_STAGE=	yes
 do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS}

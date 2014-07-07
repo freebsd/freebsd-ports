@@ -20,13 +20,13 @@ STRIP=
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/feather ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/feather.yaml.dist ${STAGEDIR}${PREFIX}/etc
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/feather.yaml.dist ${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 x-generate-tarball:
 	${SETENV} ${FETCH_ENV} ${FETCH_BINARY} -m -o ${PORTNAME}.tar.gz \

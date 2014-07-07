@@ -16,19 +16,17 @@ COMMENT=	The perfect monospaced bitmap programming fonts, TTF version
 LICENSE=	MIT
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USES=		zip
 NO_WRKSUBDIR=	yes
-INSTALLDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
-
-NO_STAGE=	yes
-do-build:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontscale
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontdir
+FONTDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+NO_BUILD=	yes
+PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 
 do-install:
-	@${MKDIR} ${INSTALLDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} fonts.dir fonts.scale *.ttf ${INSTALLDIR}
+	@${MKDIR} ${STAGEDIR}${FONTDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>

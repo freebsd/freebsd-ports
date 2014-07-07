@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwww
-PORTVERSION=	6.06
+PORTVERSION=	6.07
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN/LWP
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Authen-NTLM>=1.02:${PORTSDIR}/security/p5-Authen-NTLM \
-		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
 		p5-File-Listing>=6:${PORTSDIR}/sysutils/p5-File-Listing \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \

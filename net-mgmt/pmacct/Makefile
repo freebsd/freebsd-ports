@@ -3,7 +3,7 @@
 
 PORTNAME=	pmacct
 DISTVERSION=	0.14.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/ \
 		http://mirrors.rit.edu/zi/
@@ -21,15 +21,13 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 PORTSCOUT=	skipv:0.15.0
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE THREADS MMAP LAYER2 IPV6 SHARED DEBUG \
-		MONGO GEOIP
+		MONGO GEOIP DOCS
 OPTIONS_DEFAULT=MMAP LAYER2 IPV6 SHARED
 
 SQLITE_DESC=	Enable SQLite support
 MMAP_DESC=	Enable mmap(2) support
 LAYER2_DESC=	Enable Layer-2 support: MAC addresses and VLANs
 SHARED_DESC=	Enable shared objects
-
-.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
@@ -113,17 +111,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 .for i in ChangeLog FAQS README TOOLS CONFIG-KEYS KNOWN-BUGS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sql/* ${STAGEDIR}${DATADIR}
 

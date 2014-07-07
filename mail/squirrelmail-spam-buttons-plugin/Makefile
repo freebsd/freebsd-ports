@@ -15,16 +15,14 @@ USE_SM_COMPAT=	yes
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 
 post-extract:
 	@${MV} ${WRKSRC}/${_SMSRCDIR}/config_example.php ${WRKSRC}/${_SMSRCDIR}/config.sample.php
 	@${RM} ${WRKSRC}/${_SMSRCDIR}/README
-.ifdef NOPORTDOCS
-	@${RM} -R ${WRKSRC}/${_SMSRCDIR}/docs
-.else
 	@${MV} ${WRKSRC}/${_SMSRCDIR}/docs ${WRKSRC}/${_SMSRCDIR}/doc
-.endif
 
 .include <bsd.port.post.mk>

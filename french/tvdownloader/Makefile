@@ -24,6 +24,10 @@ USES=		shebangfix
 SHEBANG_FILES=	doc/installdox
 ALL_TARGET=	build
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|@python|${PYTHON_CMD}|'	\
 		${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
@@ -31,7 +35,7 @@ pre-configure:
 		${WRKSRC}/tvdownloader.sh
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
 		${WRKSRC}/tvdownload.desktop
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	${REINPLACE_CMD} -e 's|%%DOC%%|#|' ${WRKSRC}/Makefile
 .else
 	${REINPLACE_CMD} -e 's|%%DOC%%||' ${WRKSRC}/Makefile

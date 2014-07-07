@@ -34,6 +34,10 @@ INSTALL_TARGET=		install_include install_lib install_utilities
 INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=		*
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 pre-patch:
 	${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g; s,/usr/bin/objformat \|\| echo aout,/usr/bin/objformat || echo elf,' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
@@ -48,7 +52,7 @@ post-install:
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib
 	${LN} -s -f ${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib/${i}-${BDBVER}.so
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${RMDIR} ${DOCSDIR}/ref/splash 2>/dev/null || :
 .endif
 	cd ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ; \

@@ -31,9 +31,11 @@ lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/handlersocket.so
+%%INNODBMEMCACHED%%lib/mysql/plugin/innodb_engine.so
 lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/libfnv1a_udf.so
 lib/mysql/plugin/libfnv_udf.so
+%%INNODBMEMCACHED%%lib/mysql/plugin/libmemcached.so
 lib/mysql/plugin/libmurmur_udf.so
 lib/mysql/plugin/mypluglib.so
 lib/mysql/plugin/qa_auth_client.so

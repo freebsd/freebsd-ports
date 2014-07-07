@@ -17,17 +17,15 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
-.endif
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
-.if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/apidocs && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \;
 	cd ${WRKSRC}/apidocs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-.endif
 
 .include <bsd.port.mk>

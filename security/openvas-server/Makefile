@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-server
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/593/
 
@@ -17,8 +17,10 @@ GNU_CONFIGURE=	yes
 USES=		gettext pkgconfig
 USE_RC_SUBR=	openvasd
 
-.include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
+CONFIGURE_ARGS=	--localstatedir=/var
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lgcrypt
 
-LDFLAGS+=	-lgcrypt
+PLIST_SUB=	RESETPREFIX=${PREFIX}
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/razorbacktm/Dispatcher
 PKGNAMEPREFIX=	razorback-
 DIST_SUBDIR=	razorback
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - Dispatcher
 
 LICENSE=	GPLv2

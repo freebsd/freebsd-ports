@@ -19,7 +19,7 @@ AP_FAST_BUILD=	yes
 SRC_FILE=	${PORTNAME}.c sha2.c
 AP_EXTRAS=	-DAPACHE22
 
-OPTIONS_DEFINE=	QUERY_SEP
+OPTIONS_DEFINE=	QUERY_SEP DOCS EXAMPLES
 QUERY_SEP_DESC=	Experimental TKTAuthQuerySeparator directive
 OPTIONS_DEFAULT=QUERY_SEP
 
@@ -37,7 +37,6 @@ post-build:
 
 post-install:
 	cd ${WRKSRC}/../doc; ${MAKE} ${.TARGET:S/post-//}
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/cgi/Apache ${STAGEDIR}${EXAMPLESDIR}/conf
 .for i in cgi/AuthTktConfig.pm cgi/Apache/AuthTkt.pm cgi/tkt.css \
 	conf/02_auth_tkt.conf conf/auth_tkt_cgi.conf
@@ -46,10 +45,7 @@ post-install:
 .for i in logout.cgi login.cgi
 	${INSTALL_SCRIPT} ${WRKSRC}/../cgi/${i} ${STAGEDIR}${EXAMPLESDIR}/cgi/${i}
 .endfor
-.endif
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@
 
 PORTNAME=	hgreviewboard
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://bitbucket.org/ccaughie/hgreviewboard/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +21,10 @@ WRKSRC=		${WRKDIR}/ccaughie-hgreviewboard-e461a0baf62d
 USE_PYTHON=	yes
 
 NO_BUILD=	yes
+
+post-patch:
+	${SED} -i '' -e 's/import simplejson/import json as simplejson/' \
+		${WRKSRC}/reviewboard.py
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/reviewboard

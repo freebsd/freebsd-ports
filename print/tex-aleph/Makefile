@@ -2,7 +2,7 @@
 
 PORTNAME=	aleph
 PORTVERSION=	0.0.r.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -24,7 +24,7 @@ EXTRACT_FILES=	\
 	libs/obsdcompat \
 	libs/xpdf \
 	texk/web2c
-EXTRACT_AFTER_ARGS_TEXMF=| ${TAR} -xf - -C ${PREFIX}/share \
+EXTRACT_AFTER_ARGS_TEXMF=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
 DISTVERSION_TEXLIVE=	20120701
@@ -75,7 +75,6 @@ MLINKS=	aleph.1 lamed.1 \
 	dvitype.1 odvitype.1 \
 	tangle.1 otangle.1
 
-NO_STAGE=	yes
 pre-configure:
 	for D in libs/obsdcompat libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
@@ -85,5 +84,8 @@ pre-configure:
 pre-su-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXLIVE}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
+
+post-install:
+	${RM} -f ${STAGEDIR}${PREFIX}/man/man1/*
 
 .include <bsd.port.mk>

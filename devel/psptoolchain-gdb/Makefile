@@ -8,7 +8,7 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/
 PKGNAMEPREFIX=		psptoolchain-
 
-MAINTAINER=		tphilipp@potion-studios.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 BUILD_DEPENDS=		${LOCALBASE}/psp/sdk/lib/libpspsdk.a:${PORTSDIR}/devel/psptoolchain-pspsdk-stage2

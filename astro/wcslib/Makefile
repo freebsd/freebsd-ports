@@ -7,11 +7,11 @@ PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing/generating FITS headers
 
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2 gmake
+USES=		tar:bzip2 gmake fortran
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes

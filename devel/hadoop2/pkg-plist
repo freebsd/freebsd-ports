@@ -1,0 +1,676 @@
+bin/hadoop
+bin/hdfs
+bin/mapred
+bin/hadoop-rcc
+bin/yarn
+include/Pipes.hh
+include/SerialUtils.hh
+include/StringUtils.hh
+include/TemplateFactory.hh
+include/hdfs.h
+lib/libhadoop.a
+lib/libhadoop.so
+lib/libhadoop.so.1
+lib/libhadooppipes.a
+lib/libhadooputils.a
+lib/libhdfs.a
+lib/libhdfs.so
+lib/libhdfs.so.0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/capacity-scheduler.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/configuration.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/container-executor.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/core-site.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/hadoop-env.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/hadoop-metrics.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/hadoop-metrics2.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/hadoop-policy.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/hdfs-site.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/httpfs-env.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/httpfs-log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/httpfs-signature.secret
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/httpfs-site.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mapred-env.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mapred-queues.xml.template
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mapred-site.xml.template
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/slaves
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/ssl-client.xml.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/ssl-server.xml.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/yarn-env.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/yarn-site.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core-default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/distcp-default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hdfs-default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpfs-default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapred-default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yarn-default.xml
+%%DATADIR%%/common/hadoop-common-2.4.1-tests.jar
+%%DATADIR%%/common/hadoop-common-2.4.1.jar
+%%DATADIR%%/common/hadoop-nfs-2.4.1.jar
+%%DATADIR%%/common/jdiff/hadoop-core_0.20.0.xml
+%%DATADIR%%/common/jdiff/hadoop-core_0.21.0.xml
+%%DATADIR%%/common/jdiff/hadoop-core_0.22.0.xml
+%%DATADIR%%/common/jdiff/hadoop_0.17.0.xml
+%%DATADIR%%/common/jdiff/hadoop_0.18.1.xml
+%%DATADIR%%/common/jdiff/hadoop_0.18.2.xml
+%%DATADIR%%/common/jdiff/hadoop_0.18.3.xml
+%%DATADIR%%/common/jdiff/hadoop_0.19.0.xml
+%%DATADIR%%/common/jdiff/hadoop_0.19.1.xml
+%%DATADIR%%/common/jdiff/hadoop_0.19.2.xml
+%%DATADIR%%/common/jdiff/hadoop_0.20.0.xml
+%%DATADIR%%/common/jdiff/hadoop_0.20.1.xml
+%%DATADIR%%/common/jdiff/hadoop_0.20.2.xml
+%%DATADIR%%/common/lib/activation-1.1.jar
+%%DATADIR%%/common/lib/asm-3.2.jar
+%%DATADIR%%/common/lib/avro-1.7.4.jar
+%%DATADIR%%/common/lib/commons-beanutils-1.7.0.jar
+%%DATADIR%%/common/lib/commons-beanutils-core-1.8.0.jar
+%%DATADIR%%/common/lib/commons-cli-1.2.jar
+%%DATADIR%%/common/lib/commons-codec-1.4.jar
+%%DATADIR%%/common/lib/commons-collections-3.2.1.jar
+%%DATADIR%%/common/lib/commons-compress-1.4.1.jar
+%%DATADIR%%/common/lib/commons-configuration-1.6.jar
+%%DATADIR%%/common/lib/commons-digester-1.8.jar
+%%DATADIR%%/common/lib/commons-el-1.0.jar
+%%DATADIR%%/common/lib/commons-httpclient-3.1.jar
+%%DATADIR%%/common/lib/commons-io-2.4.jar
+%%DATADIR%%/common/lib/commons-lang-2.6.jar
+%%DATADIR%%/common/lib/commons-logging-1.1.3.jar
+%%DATADIR%%/common/lib/commons-math3-3.1.1.jar
+%%DATADIR%%/common/lib/commons-net-3.1.jar
+%%DATADIR%%/common/lib/guava-11.0.2.jar
+%%DATADIR%%/common/lib/hadoop-annotations-2.4.1.jar
+%%DATADIR%%/common/lib/hadoop-auth-2.4.1.jar
+%%DATADIR%%/common/lib/httpclient-4.2.5.jar
+%%DATADIR%%/common/lib/httpcore-4.2.5.jar
+%%DATADIR%%/common/lib/jackson-core-asl-1.8.8.jar
+%%DATADIR%%/common/lib/jackson-jaxrs-1.8.8.jar
+%%DATADIR%%/common/lib/jackson-mapper-asl-1.8.8.jar
+%%DATADIR%%/common/lib/jackson-xc-1.8.8.jar
+%%DATADIR%%/common/lib/jasper-compiler-5.5.23.jar
+%%DATADIR%%/common/lib/jasper-runtime-5.5.23.jar
+%%DATADIR%%/common/lib/java-xmlbuilder-0.4.jar
+%%DATADIR%%/common/lib/jaxb-api-2.2.2.jar
+%%DATADIR%%/common/lib/jaxb-impl-2.2.3-1.jar
+%%DATADIR%%/common/lib/jersey-core-1.9.jar
+%%DATADIR%%/common/lib/jersey-json-1.9.jar
+%%DATADIR%%/common/lib/jersey-server-1.9.jar
+%%DATADIR%%/common/lib/jets3t-0.9.0.jar
+%%DATADIR%%/common/lib/jettison-1.1.jar
+%%DATADIR%%/common/lib/jetty-6.1.14.jar
+%%DATADIR%%/common/lib/jetty-util-6.1.14.jar
+%%DATADIR%%/common/lib/jsch-0.1.42.jar
+%%DATADIR%%/common/lib/jsp-api-2.1.jar
+%%DATADIR%%/common/lib/jsr305-1.3.9.jar
+%%DATADIR%%/common/lib/junit-4.8.2.jar
+%%DATADIR%%/common/lib/log4j-1.2.17.jar
+%%DATADIR%%/common/lib/mockito-all-1.8.5.jar
+%%DATADIR%%/common/lib/netty-3.6.2.Final.jar
+%%DATADIR%%/common/lib/paranamer-2.3.jar
+%%DATADIR%%/common/lib/protobuf-java-2.5.0.jar
+%%DATADIR%%/common/lib/servlet-api-2.5.jar
+%%DATADIR%%/common/lib/slf4j-api-1.7.5.jar
+%%DATADIR%%/common/lib/slf4j-log4j12-1.7.5.jar
+%%DATADIR%%/common/lib/snappy-java-1.0.4.1.jar
+%%DATADIR%%/common/lib/stax-api-1.0-2.jar
+%%DATADIR%%/common/lib/xmlenc-0.52.jar
+%%DATADIR%%/common/lib/xz-1.0.jar
+%%DATADIR%%/common/lib/zookeeper-3.4.5.jar
+%%DATADIR%%/common/templates/core-site.xml
+%%DATADIR%%/hdfs/hadoop-hdfs-2.4.1-tests.jar
+%%DATADIR%%/hdfs/hadoop-hdfs-2.4.1.jar
+%%DATADIR%%/hdfs/hadoop-hdfs-nfs-2.4.1.jar
+%%DATADIR%%/hdfs/jdiff/hadoop-hdfs_0.20.0.xml
+%%DATADIR%%/hdfs/jdiff/hadoop-hdfs_0.21.0.xml
+%%DATADIR%%/hdfs/jdiff/hadoop-hdfs_0.22.0.xml
+%%DATADIR%%/hdfs/lib/asm-3.2.jar
+%%DATADIR%%/hdfs/lib/commons-cli-1.2.jar
+%%DATADIR%%/hdfs/lib/commons-codec-1.4.jar
+%%DATADIR%%/hdfs/lib/commons-daemon-1.0.13.jar
+%%DATADIR%%/hdfs/lib/commons-el-1.0.jar
+%%DATADIR%%/hdfs/lib/commons-io-2.4.jar
+%%DATADIR%%/hdfs/lib/commons-lang-2.6.jar
+%%DATADIR%%/hdfs/lib/commons-logging-1.1.3.jar
+%%DATADIR%%/hdfs/lib/guava-11.0.2.jar
+%%DATADIR%%/hdfs/lib/jackson-core-asl-1.8.8.jar
+%%DATADIR%%/hdfs/lib/jackson-mapper-asl-1.8.8.jar
+%%DATADIR%%/hdfs/lib/jasper-runtime-5.5.23.jar
+%%DATADIR%%/hdfs/lib/jersey-core-1.9.jar
+%%DATADIR%%/hdfs/lib/jersey-server-1.9.jar
+%%DATADIR%%/hdfs/lib/jetty-6.1.14.jar
+%%DATADIR%%/hdfs/lib/jetty-util-6.1.14.jar
+%%DATADIR%%/hdfs/lib/jsp-api-2.1.jar
+%%DATADIR%%/hdfs/lib/jsr305-1.3.9.jar
+%%DATADIR%%/hdfs/lib/log4j-1.2.17.jar
+%%DATADIR%%/hdfs/lib/netty-3.6.2.Final.jar
+%%DATADIR%%/hdfs/lib/protobuf-java-2.5.0.jar
+%%DATADIR%%/hdfs/lib/servlet-api-2.5.jar
+%%DATADIR%%/hdfs/lib/xmlenc-0.52.jar
+%%DATADIR%%/hdfs/templates/hdfs-site.xml
+%%DATADIR%%/hdfs/webapps/datanode/WEB-INF/web.xml
+%%DATADIR%%/hdfs/webapps/datanode/index.html
+%%DATADIR%%/hdfs/webapps/datanode/robots.txt
+%%DATADIR%%/hdfs/webapps/hdfs/WEB-INF/web.xml
+%%DATADIR%%/hdfs/webapps/hdfs/decommission.xsl
+%%DATADIR%%/hdfs/webapps/hdfs/dfs-dust.js
+%%DATADIR%%/hdfs/webapps/hdfs/dfsclusterhealth.xsl
+%%DATADIR%%/hdfs/webapps/hdfs/dfsclusterhealth_utils.xsl
+%%DATADIR%%/hdfs/webapps/hdfs/dfshealth.html
+%%DATADIR%%/hdfs/webapps/hdfs/dfshealth.js
+%%DATADIR%%/hdfs/webapps/hdfs/explorer.html
+%%DATADIR%%/hdfs/webapps/hdfs/explorer.js
+%%DATADIR%%/hdfs/webapps/hdfs/index.html
+%%DATADIR%%/hdfs/webapps/journal/WEB-INF/web.xml
+%%DATADIR%%/hdfs/webapps/journal/index.html
+%%DATADIR%%/hdfs/webapps/secondary/WEB-INF/web.xml
+%%DATADIR%%/hdfs/webapps/secondary/index.html
+%%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/css/bootstrap.min.css
+%%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/fonts/glyphicons-halflings-regular.eot
+%%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/fonts/glyphicons-halflings-regular.svg
+%%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/fonts/glyphicons-halflings-regular.ttf
+%%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/fonts/glyphicons-halflings-regular.woff
+%%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/js/bootstrap.min.js
+%%DATADIR%%/hdfs/webapps/static/dust-full-2.0.0.min.js
+%%DATADIR%%/hdfs/webapps/static/dust-helpers-1.1.1.min.js
+%%DATADIR%%/hdfs/webapps/static/hadoop.css
+%%DATADIR%%/hdfs/webapps/static/jquery-1.10.2.min.js
+%%DATADIR%%/httpfs/tomcat/LICENSE
+%%DATADIR%%/httpfs/tomcat/NOTICE
+%%DATADIR%%/httpfs/tomcat/RELEASE-NOTES
+%%DATADIR%%/httpfs/tomcat/RUNNING.txt
+%%DATADIR%%/httpfs/tomcat/bin/bootstrap.jar
+%%DATADIR%%/httpfs/tomcat/bin/catalina-tasks.xml
+%%DATADIR%%/httpfs/tomcat/bin/catalina.bat
+%%DATADIR%%/httpfs/tomcat/bin/catalina.sh
+%%DATADIR%%/httpfs/tomcat/bin/commons-daemon-native.tar.gz
+%%DATADIR%%/httpfs/tomcat/bin/commons-daemon.jar
+%%DATADIR%%/httpfs/tomcat/bin/cpappend.bat
+%%DATADIR%%/httpfs/tomcat/bin/digest.bat
+%%DATADIR%%/httpfs/tomcat/bin/digest.sh
+%%DATADIR%%/httpfs/tomcat/bin/setclasspath.bat
+%%DATADIR%%/httpfs/tomcat/bin/setclasspath.sh
+%%DATADIR%%/httpfs/tomcat/bin/shutdown.bat
+%%DATADIR%%/httpfs/tomcat/bin/shutdown.sh
+%%DATADIR%%/httpfs/tomcat/bin/startup.bat
+%%DATADIR%%/httpfs/tomcat/bin/startup.sh
+%%DATADIR%%/httpfs/tomcat/bin/tomcat-juli.jar
+%%DATADIR%%/httpfs/tomcat/bin/tomcat-native.tar.gz
+%%DATADIR%%/httpfs/tomcat/bin/tool-wrapper.bat
+%%DATADIR%%/httpfs/tomcat/bin/tool-wrapper.sh
+%%DATADIR%%/httpfs/tomcat/bin/version.bat
+%%DATADIR%%/httpfs/tomcat/bin/version.sh
+%%DATADIR%%/httpfs/tomcat/conf/catalina.policy
+%%DATADIR%%/httpfs/tomcat/conf/catalina.properties
+%%DATADIR%%/httpfs/tomcat/conf/context.xml
+%%DATADIR%%/httpfs/tomcat/conf/logging.properties
+%%DATADIR%%/httpfs/tomcat/conf/server.xml
+%%DATADIR%%/httpfs/tomcat/conf/ssl-server.xml
+%%DATADIR%%/httpfs/tomcat/conf/tomcat-users.xml
+%%DATADIR%%/httpfs/tomcat/conf/web.xml
+%%DATADIR%%/httpfs/tomcat/lib/annotations-api.jar
+%%DATADIR%%/httpfs/tomcat/lib/catalina-ant.jar
+%%DATADIR%%/httpfs/tomcat/lib/catalina-ha.jar
+%%DATADIR%%/httpfs/tomcat/lib/catalina-tribes.jar
+%%DATADIR%%/httpfs/tomcat/lib/catalina.jar
+%%DATADIR%%/httpfs/tomcat/lib/ecj-3.7.2.jar
+%%DATADIR%%/httpfs/tomcat/lib/el-api.jar
+%%DATADIR%%/httpfs/tomcat/lib/jasper-el.jar
+%%DATADIR%%/httpfs/tomcat/lib/jasper.jar
+%%DATADIR%%/httpfs/tomcat/lib/jsp-api.jar
+%%DATADIR%%/httpfs/tomcat/lib/servlet-api.jar
+%%DATADIR%%/httpfs/tomcat/lib/tomcat-coyote.jar
+%%DATADIR%%/httpfs/tomcat/lib/tomcat-dbcp.jar
+%%DATADIR%%/httpfs/tomcat/lib/tomcat-i18n-es.jar
+%%DATADIR%%/httpfs/tomcat/lib/tomcat-i18n-fr.jar
+%%DATADIR%%/httpfs/tomcat/lib/tomcat-i18n-ja.jar
+%%DATADIR%%/httpfs/tomcat/temp/safeToDelete.tmp
+%%DATADIR%%/httpfs/tomcat/webapps/ROOT/WEB-INF/web.xml
+%%DATADIR%%/httpfs/tomcat/webapps/ROOT/index.html
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/default-log4j.properties
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/httpfs-default.xml
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/httpfs.properties
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$1.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$2.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$3.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$4.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$5.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$6.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$FILE_TYPE.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$HttpFSDataInputStream.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$HttpFSDataOutputStream.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem$Operation.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSFileSystem.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSKerberosAuthenticator$DelegationTokenOperation.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSKerberosAuthenticator.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSPseudoAuthenticator.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpFSUtils.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client/HttpsFSFileSystem.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/CheckUploadContentTypeFilter.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSAppend.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSConcat.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSContentSummary.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSCreate.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSDelete.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSFileChecksum.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSFileStatus.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSHomeDir.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSListStatus.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSMkdirs.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSOpen.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSRename.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSSetOwner.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSSetPermission.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSSetReplication.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations$FSSetTimes.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/FSOperations.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSAuthenticationFilter.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSExceptionProvider.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSKerberosAuthenticationHandler$1.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSKerberosAuthenticationHandler.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$AccessTimeParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$BlockSizeParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$DataParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$DestinationParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$DoAsParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$FilterParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$GroupParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$LenParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$ModifiedTimeParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$OffsetParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$OperationParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$OverwriteParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$OwnerParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$PermissionParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$RecursiveParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$ReplicationParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider$SourcesParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSParametersProvider.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSReleaseFilter.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSServer$1.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSServer.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server/HttpFSServerWebApp.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/lang/RunnableCallable.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/lang/XException$ERROR.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/lang/XException.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/server/BaseService.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/server/Server$Status.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/server/Server.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/server/ServerException$ERROR.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/server/ServerException.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/server/Service.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/server/ServiceException.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/DelegationTokenIdentifier.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/DelegationTokenManager.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/DelegationTokenManagerException$ERROR.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/DelegationTokenManagerException.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/FileSystemAccess$FileSystemExecutor.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/FileSystemAccess.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/FileSystemAccessException$ERROR.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/FileSystemAccessException.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/Groups.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/Instrumentation$Cron.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/Instrumentation$Variable.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/Instrumentation.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/ProxyUser.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/Scheduler.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/hadoop/FileSystemAccessService$1.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/hadoop/FileSystemAccessService$2.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/hadoop/FileSystemAccessService$3.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/hadoop/FileSystemAccessService$4.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/hadoop/FileSystemAccessService$CachedFileSystem.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/hadoop/FileSystemAccessService$FileSystemCachePurger.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/hadoop/FileSystemAccessService.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService$1.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService$2.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService$3.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService$Cron.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService$Sampler.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService$SamplersRunnable.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService$Timer.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService$VariableHolder.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation/InstrumentationService.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/scheduler/SchedulerService$1.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/scheduler/SchedulerService.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/security/DelegationTokenManagerService$DelegationTokenSecretManager.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/security/DelegationTokenManagerService.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/security/GroupsService.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/security/ProxyUserService$ERROR.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/security/ProxyUserService.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/servlet/FileSystemReleaseFilter.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/servlet/HostnameFilter.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/servlet/MDCFilter.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/servlet/ServerWebApp.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/util/Check.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/util/ConfigurationUtils.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/BooleanParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/ByteParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/EnumParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/ExceptionProvider.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/InputStreamEntity.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/IntegerParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/JSONMapProvider.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/JSONProvider.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/LongParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/Param.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/Parameters.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/ParametersProvider.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/ShortParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/StringParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/UserProvider$1.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/UserProvider$UserParam.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs/UserProvider.class
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/activation-1.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/asm-3.2.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/avro-1.7.4.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-beanutils-1.7.0.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-beanutils-core-1.8.0.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-cli-1.2.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-codec-1.4.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-collections-3.2.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-compress-1.4.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-configuration-1.6.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-daemon-1.0.13.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-digester-1.8.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-io-2.4.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-lang-2.6.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-logging-1.1.3.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-math3-3.1.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/commons-net-3.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/guava-11.0.2.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/hadoop-annotations-2.4.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/hadoop-auth-2.4.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/hadoop-common-2.4.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/hadoop-hdfs-2.4.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/httpclient-4.2.5.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/httpcore-4.2.5.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jackson-core-asl-1.8.8.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jackson-jaxrs-1.8.8.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jackson-mapper-asl-1.8.8.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jackson-xc-1.8.8.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jaxb-api-2.2.2.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jaxb-impl-2.2.3-1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jersey-core-1.9.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jersey-json-1.9.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jersey-server-1.9.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jettison-1.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jsch-0.1.42.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/json-simple-1.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/jsr305-1.3.9.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/log4j-1.2.17.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/paranamer-2.3.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/protobuf-java-2.5.0.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/slf4j-api-1.7.5.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/slf4j-log4j12-1.7.5.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/snappy-java-1.0.4.1.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/xmlenc-0.52.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/xz-1.0.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib/zookeeper-3.4.5.jar
+%%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/web.xml
+libexec/hadoop-config.sh
+libexec/hadoop-layout.sh
+libexec/hdfs-config.sh
+libexec/httpfs-config.sh
+libexec/mapred-config.sh
+libexec/yarn-config.sh
+%%DATADIR%%/mapreduce/hadoop-mapreduce-client-app-2.4.1.jar
+%%DATADIR%%/mapreduce/hadoop-mapreduce-client-common-2.4.1.jar
+%%DATADIR%%/mapreduce/hadoop-mapreduce-client-core-2.4.1.jar
+%%DATADIR%%/mapreduce/hadoop-mapreduce-client-hs-2.4.1.jar
+%%DATADIR%%/mapreduce/hadoop-mapreduce-client-hs-plugins-2.4.1.jar
+%%DATADIR%%/mapreduce/hadoop-mapreduce-client-jobclient-2.4.1-tests.jar
+%%DATADIR%%/mapreduce/hadoop-mapreduce-client-jobclient-2.4.1.jar
+%%DATADIR%%/mapreduce/hadoop-mapreduce-client-shuffle-2.4.1.jar
+%%DATADIR%%/mapreduce/hadoop-mapreduce-examples-2.4.1.jar
+%%DATADIR%%/mapreduce/lib-examples/hsqldb-2.0.0.jar
+%%DATADIR%%/mapreduce/lib/aopalliance-1.0.jar
+%%DATADIR%%/mapreduce/lib/asm-3.2.jar
+%%DATADIR%%/mapreduce/lib/avro-1.7.4.jar
+%%DATADIR%%/mapreduce/lib/commons-compress-1.4.1.jar
+%%DATADIR%%/mapreduce/lib/commons-io-2.4.jar
+%%DATADIR%%/mapreduce/lib/guice-3.0.jar
+%%DATADIR%%/mapreduce/lib/guice-servlet-3.0.jar
+%%DATADIR%%/mapreduce/lib/hadoop-annotations-2.4.1.jar
+%%DATADIR%%/mapreduce/lib/hamcrest-core-1.1.jar
+%%DATADIR%%/mapreduce/lib/jackson-core-asl-1.8.8.jar
+%%DATADIR%%/mapreduce/lib/jackson-mapper-asl-1.8.8.jar
+%%DATADIR%%/mapreduce/lib/javax.inject-1.jar
+%%DATADIR%%/mapreduce/lib/jersey-core-1.9.jar
+%%DATADIR%%/mapreduce/lib/jersey-guice-1.9.jar
+%%DATADIR%%/mapreduce/lib/jersey-server-1.9.jar
+%%DATADIR%%/mapreduce/lib/junit-4.10.jar
+%%DATADIR%%/mapreduce/lib/log4j-1.2.17.jar
+%%DATADIR%%/mapreduce/lib/netty-3.6.2.Final.jar
+%%DATADIR%%/mapreduce/lib/paranamer-2.3.jar
+%%DATADIR%%/mapreduce/lib/protobuf-java-2.5.0.jar
+%%DATADIR%%/mapreduce/lib/snappy-java-1.0.4.1.jar
+%%DATADIR%%/mapreduce/lib/xz-1.0.jar
+sbin/distribute-exclude.sh
+sbin/hadoop-daemon.sh
+sbin/hadoop-daemons.sh
+sbin/hdfs-config.sh
+sbin/httpfs.sh
+sbin/mr-jobhistory-daemon.sh
+sbin/refresh-namenodes.sh
+sbin/slaves.sh
+sbin/start-all.sh
+sbin/start-balancer.sh
+sbin/start-dfs.sh
+sbin/start-secure-dns.sh
+sbin/start-yarn.sh
+sbin/stop-all.sh
+sbin/stop-balancer.sh
+sbin/stop-dfs.sh
+sbin/stop-secure-dns.sh
+sbin/stop-yarn.sh
+sbin/yarn-daemon.sh
+sbin/yarn-daemons.sh
+%%DATADIR%%/tools/lib/activation-1.1.jar
+%%DATADIR%%/tools/lib/asm-3.2.jar
+%%DATADIR%%/tools/lib/avro-1.7.4.jar
+%%DATADIR%%/tools/lib/commons-beanutils-1.7.0.jar
+%%DATADIR%%/tools/lib/commons-beanutils-core-1.8.0.jar
+%%DATADIR%%/tools/lib/commons-cli-1.2.jar
+%%DATADIR%%/tools/lib/commons-codec-1.4.jar
+%%DATADIR%%/tools/lib/commons-collections-3.2.1.jar
+%%DATADIR%%/tools/lib/commons-compress-1.4.1.jar
+%%DATADIR%%/tools/lib/commons-configuration-1.6.jar
+%%DATADIR%%/tools/lib/commons-digester-1.8.jar
+%%DATADIR%%/tools/lib/commons-el-1.0.jar
+%%DATADIR%%/tools/lib/commons-httpclient-3.1.jar
+%%DATADIR%%/tools/lib/commons-io-2.4.jar
+%%DATADIR%%/tools/lib/commons-lang-2.6.jar
+%%DATADIR%%/tools/lib/commons-logging-1.1.3.jar
+%%DATADIR%%/tools/lib/commons-math3-3.1.1.jar
+%%DATADIR%%/tools/lib/commons-net-3.1.jar
+%%DATADIR%%/tools/lib/guava-11.0.2.jar
+%%DATADIR%%/tools/lib/hadoop-archives-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-auth-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-datajoin-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-distcp-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-extras-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-gridmix-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-openstack-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-rumen-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-sls-2.4.1.jar
+%%DATADIR%%/tools/lib/hadoop-streaming-2.4.1.jar
+%%DATADIR%%/tools/lib/hamcrest-core-1.1.jar
+%%DATADIR%%/tools/lib/httpclient-4.2.5.jar
+%%DATADIR%%/tools/lib/httpcore-4.2.5.jar
+%%DATADIR%%/tools/lib/jackson-core-asl-1.8.8.jar
+%%DATADIR%%/tools/lib/jackson-jaxrs-1.8.8.jar
+%%DATADIR%%/tools/lib/jackson-mapper-asl-1.8.8.jar
+%%DATADIR%%/tools/lib/jackson-xc-1.8.8.jar
+%%DATADIR%%/tools/lib/jasper-compiler-5.5.23.jar
+%%DATADIR%%/tools/lib/jasper-runtime-5.5.23.jar
+%%DATADIR%%/tools/lib/java-xmlbuilder-0.4.jar
+%%DATADIR%%/tools/lib/jaxb-api-2.2.2.jar
+%%DATADIR%%/tools/lib/jaxb-impl-2.2.3-1.jar
+%%DATADIR%%/tools/lib/jersey-core-1.9.jar
+%%DATADIR%%/tools/lib/jersey-json-1.9.jar
+%%DATADIR%%/tools/lib/jersey-server-1.9.jar
+%%DATADIR%%/tools/lib/jets3t-0.9.0.jar
+%%DATADIR%%/tools/lib/jettison-1.1.jar
+%%DATADIR%%/tools/lib/jetty-6.1.14.jar
+%%DATADIR%%/tools/lib/jetty-util-6.1.14.jar
+%%DATADIR%%/tools/lib/jsch-0.1.42.jar
+%%DATADIR%%/tools/lib/jsp-api-2.1.jar
+%%DATADIR%%/tools/lib/jsr305-1.3.9.jar
+%%DATADIR%%/tools/lib/junit-4.10.jar
+%%DATADIR%%/tools/lib/log4j-1.2.17.jar
+%%DATADIR%%/tools/lib/metrics-core-3.0.0.jar
+%%DATADIR%%/tools/lib/paranamer-2.3.jar
+%%DATADIR%%/tools/lib/protobuf-java-2.5.0.jar
+%%DATADIR%%/tools/lib/servlet-api-2.5.jar
+%%DATADIR%%/tools/lib/snappy-java-1.0.4.1.jar
+%%DATADIR%%/tools/lib/stax-api-1.0-2.jar
+%%DATADIR%%/tools/lib/xmlenc-0.52.jar
+%%DATADIR%%/tools/lib/xz-1.0.jar
+%%DATADIR%%/tools/lib/zookeeper-3.4.5.jar
+%%DATADIR%%/tools/sls/bin/rumen2sls.sh
+%%DATADIR%%/tools/sls/bin/slsrun.sh
+%%DATADIR%%/tools/sls/html/css/bootstrap-responsive.min.css
+%%DATADIR%%/tools/sls/html/css/bootstrap.min.css
+%%DATADIR%%/tools/sls/html/js/thirdparty/bootstrap.min.js
+%%DATADIR%%/tools/sls/html/js/thirdparty/d3-LICENSE
+%%DATADIR%%/tools/sls/html/js/thirdparty/d3.v3.js
+%%DATADIR%%/tools/sls/html/js/thirdparty/jquery.js
+%%DATADIR%%/tools/sls/html/showSimulationTrace.html
+%%DATADIR%%/tools/sls/html/simulate.html.template
+%%DATADIR%%/tools/sls/html/simulate.info.html.template
+%%DATADIR%%/tools/sls/html/track.html.template
+%%DATADIR%%/tools/sls/sample-conf/capacity-scheduler.xml
+%%DATADIR%%/tools/sls/sample-conf/fair-scheduler.xml
+%%DATADIR%%/tools/sls/sample-conf/log4j.properties
+%%DATADIR%%/tools/sls/sample-conf/sls-runner.xml
+%%DATADIR%%/tools/sls/sample-conf/yarn-site.xml
+%%DATADIR%%/tools/sls/sample-data/2jobs2min-rumen-jh.json
+%%DATADIR%%/yarn/hadoop-yarn-api-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-applications-distributedshell-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-applications-unmanaged-am-launcher-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-client-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-common-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-server-applicationhistoryservice-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-server-common-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-server-nodemanager-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-server-resourcemanager-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-server-tests-2.4.1.jar
+%%DATADIR%%/yarn/hadoop-yarn-server-web-proxy-2.4.1.jar
+%%DATADIR%%/yarn/lib/activation-1.1.jar
+%%DATADIR%%/yarn/lib/aopalliance-1.0.jar
+%%DATADIR%%/yarn/lib/asm-3.2.jar
+%%DATADIR%%/yarn/lib/commons-cli-1.2.jar
+%%DATADIR%%/yarn/lib/commons-codec-1.4.jar
+%%DATADIR%%/yarn/lib/commons-collections-3.2.1.jar
+%%DATADIR%%/yarn/lib/commons-compress-1.4.1.jar
+%%DATADIR%%/yarn/lib/commons-httpclient-3.1.jar
+%%DATADIR%%/yarn/lib/commons-io-2.4.jar
+%%DATADIR%%/yarn/lib/commons-lang-2.6.jar
+%%DATADIR%%/yarn/lib/commons-logging-1.1.3.jar
+%%DATADIR%%/yarn/lib/guava-11.0.2.jar
+%%DATADIR%%/yarn/lib/guice-3.0.jar
+%%DATADIR%%/yarn/lib/guice-servlet-3.0.jar
+%%DATADIR%%/yarn/lib/jackson-core-asl-1.8.8.jar
+%%DATADIR%%/yarn/lib/jackson-jaxrs-1.8.8.jar
+%%DATADIR%%/yarn/lib/jackson-mapper-asl-1.8.8.jar
+%%DATADIR%%/yarn/lib/jackson-xc-1.8.8.jar
+%%DATADIR%%/yarn/lib/javax.inject-1.jar
+%%DATADIR%%/yarn/lib/jaxb-api-2.2.2.jar
+%%DATADIR%%/yarn/lib/jaxb-impl-2.2.3-1.jar
+%%DATADIR%%/yarn/lib/jersey-client-1.9.jar
+%%DATADIR%%/yarn/lib/jersey-core-1.9.jar
+%%DATADIR%%/yarn/lib/jersey-guice-1.9.jar
+%%DATADIR%%/yarn/lib/jersey-json-1.9.jar
+%%DATADIR%%/yarn/lib/jersey-server-1.9.jar
+%%DATADIR%%/yarn/lib/jettison-1.1.jar
+%%DATADIR%%/yarn/lib/jetty-6.1.14.jar
+%%DATADIR%%/yarn/lib/jetty-util-6.1.14.jar
+%%DATADIR%%/yarn/lib/jline-0.9.94.jar
+%%DATADIR%%/yarn/lib/jsr305-1.3.9.jar
+%%DATADIR%%/yarn/lib/leveldbjni-all-1.8.jar
+%%DATADIR%%/yarn/lib/log4j-1.2.17.jar
+%%DATADIR%%/yarn/lib/protobuf-java-2.5.0.jar
+%%DATADIR%%/yarn/lib/servlet-api-2.5.jar
+%%DATADIR%%/yarn/lib/stax-api-1.0-2.jar
+%%DATADIR%%/yarn/lib/xz-1.0.jar
+%%DATADIR%%/yarn/lib/zookeeper-3.4.5.jar
+%%DATADIR%%/yarn/test/hadoop-yarn-server-tests-2.4.1-tests.jar
+@exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_LOGDIR%%
+@exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_RUNDIR%%
+@unexec rm -d %%HADOOP_RUNDIR%% 2>/dev/null || true
+@unexec rm -d %%HADOOP_LOGDIR%% 2>/dev/null || true
+@dirrm %%EXAMPLESDIR%%/conf
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/common/jdiff
+@dirrm %%DATADIR%%/common/lib
+@dirrm %%DATADIR%%/common/templates
+@dirrm %%DATADIR%%/common
+@dirrm %%DATADIR%%/hdfs/jdiff
+@dirrm %%DATADIR%%/hdfs/lib
+@dirrm %%DATADIR%%/hdfs/templates
+@dirrm %%DATADIR%%/hdfs/webapps/datanode/WEB-INF
+@dirrm %%DATADIR%%/hdfs/webapps/datanode
+@dirrm %%DATADIR%%/hdfs/webapps/hdfs/WEB-INF
+@dirrm %%DATADIR%%/hdfs/webapps/hdfs
+@dirrm %%DATADIR%%/hdfs/webapps/journal/WEB-INF
+@dirrm %%DATADIR%%/hdfs/webapps/journal
+@dirrm %%DATADIR%%/hdfs/webapps/secondary/WEB-INF
+@dirrm %%DATADIR%%/hdfs/webapps/secondary
+@dirrm %%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/css
+@dirrm %%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/fonts
+@dirrm %%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2/js
+@dirrm %%DATADIR%%/hdfs/webapps/static/bootstrap-3.0.2
+@dirrm %%DATADIR%%/hdfs/webapps/static
+@dirrm %%DATADIR%%/hdfs/webapps
+@dirrm %%DATADIR%%/hdfs
+@dirrm %%DATADIR%%/httpfs/tomcat/bin
+@dirrm %%DATADIR%%/httpfs/tomcat/conf
+@dirrm %%DATADIR%%/httpfs/tomcat/lib
+@dirrm %%DATADIR%%/httpfs/tomcat/logs
+@dirrm %%DATADIR%%/httpfs/tomcat/temp
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/ROOT/WEB-INF
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/ROOT
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/META-INF
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/client
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http/server
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs/http
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/fs
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/lang
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/server
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/hadoop
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/instrumentation
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/scheduler
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service/security
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/service
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/servlet
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/util
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib/wsrs
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop/lib
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache/hadoop
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org/apache
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes/org
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/classes
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF/lib
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs/WEB-INF
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps/webhdfs
+@dirrm %%DATADIR%%/httpfs/tomcat/webapps
+@dirrm %%DATADIR%%/httpfs/tomcat/work
+@dirrm %%DATADIR%%/httpfs/tomcat
+@dirrm %%DATADIR%%/httpfs
+@dirrm %%DATADIR%%/mapreduce/lib
+@dirrm %%DATADIR%%/mapreduce/lib-examples
+@dirrm %%DATADIR%%/mapreduce
+@dirrm %%DATADIR%%/tools/lib
+@dirrm %%DATADIR%%/tools/sls/bin
+@dirrm %%DATADIR%%/tools/sls/html/css
+@dirrm %%DATADIR%%/tools/sls/html/js/thirdparty
+@dirrm %%DATADIR%%/tools/sls/html/js
+@dirrm %%DATADIR%%/tools/sls/html
+@dirrm %%DATADIR%%/tools/sls/sample-conf
+@dirrm %%DATADIR%%/tools/sls/sample-data
+@dirrm %%DATADIR%%/tools/sls
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/yarn/lib
+@dirrm %%DATADIR%%/yarn/test
+@dirrm %%DATADIR%%/yarn
+@dirrm %%DATADIR%%
+@dirrmtry %%ETCDIR%%

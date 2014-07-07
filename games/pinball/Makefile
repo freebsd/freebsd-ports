@@ -19,6 +19,8 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-debug
 
+OPTIONS_DEFINE=	DOCS
+
 .if defined(WITH_ALLEGRO)
 BROKEN=		support with Allegro is (temporarily?) broken as of version 0.3.1
 LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
@@ -40,11 +42,9 @@ pre-configure:
 		${REINPLACE_CMD} -e 's,^dnl,# dnl,;/echo.*RANLIB/,+1d'
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

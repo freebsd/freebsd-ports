@@ -37,6 +37,8 @@ DOCS=		CHANGES \
 DOCS_UTIL=	README \
 		TODO
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${SED} -e 's:"\.\./\.\./ming\.h":<ming.h>:g' \
 		${WRKSRC}/ming.h > ${WRKSRC}/mingpp.h
@@ -74,7 +76,6 @@ post-install:
 .for f in ${UTILS}
 	${INSTALL_PROGRAM} ${WRKSRC}/../util/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ming/utils
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/../${f} ${STAGEDIR}${PREFIX}/share/doc/ming/
@@ -82,6 +83,5 @@ post-install:
 .for f in ${DOCS_UTIL}
 	${INSTALL_DATA} ${WRKSRC}/../util/${f} ${STAGEDIR}${PREFIX}/share/doc/ming/utils/
 .endfor
-.endif
 
 .include <bsd.port.mk>

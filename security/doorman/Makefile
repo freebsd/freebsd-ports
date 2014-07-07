@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lupe@lupe-christoph.de
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Port knocking implementation, both daemon and client
 
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof

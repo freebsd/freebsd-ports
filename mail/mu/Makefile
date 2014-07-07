@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://mu0.googlecode.com/files/
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Mail searching frontend for Xapian
 
 LICENSE=	GPLv3

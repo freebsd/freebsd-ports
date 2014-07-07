@@ -20,6 +20,8 @@ PLIST=		${WRKDIR}/pkg-plist
 
 PORTDOCS=	README INSTALL COPYING AUTHORS HACKING THANKS
 
+OPTIONS_DEFINE=	DOCS
+
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
 		${SED} -e 's|^|${ENTRANS}/|' > ${PLIST} \
@@ -34,12 +36,10 @@ do-install:
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${ENTRANS}
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/${ENTRANS}
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${ENTRANS}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

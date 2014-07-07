@@ -23,6 +23,8 @@ USE_PYDISTUTILS=	yes
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/code/reposadolib/reposadocommon.py
@@ -30,10 +32,8 @@ post-patch:
 		${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR} && \
 		${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

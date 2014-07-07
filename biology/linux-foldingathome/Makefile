@@ -19,7 +19,6 @@ PLIST_FILES=	share/${PORTNAME}/${DISTNAME}${EXTRACT_SUFX} \
 		bin/FoldingAtHome
 PLIST_DIRS=	share/${PORTNAME}
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}
@@ -29,12 +28,12 @@ do-build:
 	${CHMOD} 755 ${WRKSRC}/${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${REINPLACE_CMD} -e "s|DATADIR|${DATADIR}|" ${SCRIPTDIR}/FoldingAtHome \
 		| ${REINPLACE_CMD} -e "s|BINNAME|${DISTNAME}${EXTRACT_SUFX}|" \
-		> ${PREFIX}/bin/FoldingAtHome
-	${CHMOD} 755 ${PREFIX}/bin/FoldingAtHome
-	${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/${DISTNAME}${EXTRACT_SUFX} ${DATADIR}/
+		> ${STAGEDIR}${PREFIX}/bin/FoldingAtHome
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/FoldingAtHome
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} ${WRKSRC}/${DISTNAME}${EXTRACT_SUFX} ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

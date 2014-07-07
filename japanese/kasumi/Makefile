@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/41436
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A dictionary management tool for anthy
+COMMENT=	Dictionary management tool for anthy
 
 USES=		gmake pkgconfig
 USE_GNOME=	gnomehier gtk20

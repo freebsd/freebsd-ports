@@ -11,7 +11,7 @@ DISTNAME=	j${PORTVERSION}_linux32
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A general purpose programming language
+COMMENT=	General purpose programming language
 
 LICENSE=	JSoftware
 LICENSE_NAME=	JSoftware End User License Agreement

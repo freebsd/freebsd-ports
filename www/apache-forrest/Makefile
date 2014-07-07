@@ -2,38 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=		apache-forrest
-PORTVERSION=		0.8
-PORTREVISION=		3
+PORTVERSION=		0.9
+PORTREVISION=		0
 CATEGORIES=		www java
-MASTER_SITES=		${MASTER_SITE_APACHE} \
-			http://mirror.tomato.it/apache/forrest/ \
-			http://mirrors.publicshout.org/apache/forrest/ \
-			http://mirror.nohup.it/apache/forrest/ \
-			ftp://mirror.nohup.it/apache/forrest/
+MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	forrest
+DISTFILES=		${PORTNAME}-${PORTVERSION}-sources.tar.gz \
+			${PORTNAME}-${PORTVERSION}-dependencies.tar.gz
 
 MAINTAINER=		nivit@FreeBSD.org
-COMMENT=		A tool for rapid development of small sites
+COMMENT=		Tool for rapid development of small sites
 
-USE_JAVA=		yes
-JAVA_VERSION=		1.6
+ANT=			${STAGEDIR}${DATADIR}/tools/ant/bin/ant
+ANT_TARGET=		local-deploy
 
-REPLACE_FILES=		${WRKSRC}/bin/forrest ${WRKSRC}/tools/ant/bin/ant
+IGNORE_FILES=		KEYS README.txt .gitignore *.bak *.bat \
+			*.orig forrest ant index.html
+IGNORE_FILES:=		${IGNORE_FILES:@f@-and ! -name ${f}@}
+INSTALL_WRKSRC=		${WRKSRC}/build
+
+JAVA_VERSION=		1.6+
 
 NO_BUILD=		Yes
 
-INSTALL_WRKSRC=		${WRKSRC}/build
-LINK_OPTS?=		-sf
+PLUGINSDIR=		${DATADIR}/plugins/org.apache.forrest.plugin.output.pdf
 
-FIND_ARGS1=		-type d \! -empty
-FIND_ARGS2=		\! -type d -and -perm -a+x -and \! -name "*.orig" -and \! -name "*.bak"
-FIND_ARGS3=		\! -type d -and \! -perm -a+x -and \! -name "*.bat" -and \! -name "*.orig" -and \! -name "LICENSE.txt" -and \! -name "KEYS" -and \! -name "NOTICE.txt" -and \! -name "*.license.txt"
+REPLACE_FILES=		${WRKSRC}/bin/forrest ${WRKSRC}/tools/ant/bin/ant
 
-ANT=		${DATADIR}/tools/ant/bin/ant
-ANT_TARGET=	local-deploy
-PLUGINSDIR=	${DATADIR}/plugins/org.apache.forrest.plugin.output.pdf
+SUB_FILES=		pkg-message
+SUB_LIST=		PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
+USE_JAVA=		yes
+
 post-patch:
 	@for FILE in ${REPLACE_FILES}; do \
 		${REINPLACE_CMD} -e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
@@ -41,31 +41,15 @@ post-patch:
 	done;
 
 do-install:
-# Script and data
 	@cd ${WRKSRC}; \
-	DIRS=$$(${FIND} . ${FIND_ARGS1}); \
-	for DIR in $${DIRS}; do \
-		${MKDIR} ${DATADIR}/$${DIR}; \
-	done; \
-	FILES=$$(${FIND} . ${FIND_ARGS2} ); \
-	for FILE in $${FILES}; do \
-		${INSTALL_SCRIPT} $${FILE} ${DATADIR}/$${FILE}; \
-	done; \
-	FILES=$$(${FIND} . ${FIND_ARGS3}); \
-	for FILE in $${FILES}; do \
-		${INSTALL_DATA} $${FILE} ${DATADIR}/$${FILE}; \
-	done;
-
-# Links to executables
-	@cd ${WRKSRC}; \
-	FILES=$$(${FIND} bin ${FIND_ARGS2} ); \
-	for FILE in $${FILES}; do \
-		${LN} ${LINK_OPTS} ${DATADIR}/$${FILE} ${PREFIX}/$${FILE}; \
-	done;
+	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} '${IGNORE_FILES:[2..-1]}'
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/forrest ${STAGEDIR}${DATADIR}/bin/forrest
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/ant/bin/ant ${STAGEDIR}${DATADIR}/tools/ant/bin/ant
+	@${LN} -sf ../${DATADIR_REL}/bin/forrest ${STAGEDIR}${PREFIX}/bin/forrest
 
 post-install:
-	@cd ${PLUGINSDIR}; \
-	${SETENV} FORREST_HOME=${DATADIR} ${ANT} ${ANT_TARGET}; \
+	@cd ${STAGEDIR}${PLUGINSDIR}; \
+	${SETENV} FORREST_HOME=${STAGEDIR}${DATADIR} ${ANT} ${ANT_TARGET}; \
 	${SED} -e "/%%DATADIR%%/s//${DATADIR:S/\//\\\//g}/g" \
 		-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" ${PKGMESSAGE};
 

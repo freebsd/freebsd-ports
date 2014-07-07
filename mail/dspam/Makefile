@@ -7,7 +7,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	SF \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -519,7 +519,7 @@ post-install:
 		${INSTALL_DATA} admins ${STAGEDIR}${WWWDIR}/admins.sample
 	${MKDIR} ${STAGEDIR}${WWWDIR}/templates && cd ${WRKSRC}/webui/cgi-bin/templates && \
 		${INSTALL_DATA} *.html ${STAGEDIR}${WWWDIR}/templates/ && \
-		${INSTALL_SCRIPT} strings.pl ${STAGEDIR}${WWWDIR}/templates/ &&
+		${INSTALL_SCRIPT} strings.pl ${STAGEDIR}${WWWDIR}/templates/ && \
 		for _dir in de es-es fr he pt-br ro; do \
 			${INSTALL_DATA} -d ${STAGEDIR}${WWWDIR}/templates/$${_dir} && \
 			cd ${WRKSRC}/webui/cgi-bin/templates/$${_dir} && \

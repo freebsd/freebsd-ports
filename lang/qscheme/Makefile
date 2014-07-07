@@ -8,7 +8,7 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	A small and fast Scheme interpreter
+COMMENT=	Small and fast Scheme interpreter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\
 		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre \

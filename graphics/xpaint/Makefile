@@ -23,10 +23,10 @@ RUN_DEPENDS=	psselect:${PORTSDIR}/print/psutils \
 		bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	xft xmu xpm
-USE_AUTOTOOLS=	libtool
 USE_GHOSTSCRIPT_RUN=yes
 GNU_CONFIGURE=	yes
-USES=		shebangfix tar:bzip2
+USES=		libtool shebangfix tar:bzip2
+USE_AUTOTOOLS=	libtoolize
 SHEBANG_FILES=	share/bin/imgmerge share/bin/xpaint_ocr
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \

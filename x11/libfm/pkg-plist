@@ -1,8 +1,6 @@
 bin/libfm-pref-apps
 bin/lxshortcut
-@unexec if cmp -s %D/etc/xdg/libfm/libfm.conf %D/etc/xdg/libfm/libfm.conf.sample; then rm -f %D/etc/xdg/libfm/libfm.conf; fi
-etc/xdg/libfm/libfm.conf.sample
-@exec if [ ! -f %D/etc/xdg/libfm/libfm.conf ] ; then cp -p %D/%F %B/libfm.conf; fi
+@sample etc/xdg/libfm/libfm.conf.sample
 include/libfm
 include/libfm-%%MAJORVER%%/fm-actions.h
 include/libfm-%%MAJORVER%%/fm-app-chooser-combo-box.h
@@ -73,18 +71,18 @@ include/libfm-%%MAJORVER%%/fm-utils.h
 include/libfm-%%MAJORVER%%/fm-version.h
 include/libfm-%%MAJORVER%%/fm-xml-file.h
 include/libfm-%%MAJORVER%%/fm.h
-lib/libfm-extra.a
+%%STATIC%%lib/libfm-extra.a
 lib/libfm-extra.so
 lib/libfm-extra.so.%%VER%%
-lib/libfm-extra.so.%%VER%%.0.0
-lib/libfm-gtk.a
+lib/libfm-extra.so.%%VER%%.0.1
+%%STATIC%%lib/libfm-gtk.a
 lib/libfm-gtk.so
 lib/libfm-gtk.so.%%VER%%
-lib/libfm-gtk.so.%%VER%%.0.0
-lib/libfm.a
+lib/libfm-gtk.so.%%VER%%.0.1
+%%STATIC%%lib/libfm.a
 lib/libfm.so
 lib/libfm.so.%%VER%%
-lib/libfm.so.%%VER%%.0.0
+lib/libfm.so.%%VER%%.0.1
 lib/libfm/modules/gtk-fileprop-x-desktop.so
 lib/libfm/modules/gtk-fileprop-x-shortcut.so
 lib/libfm/modules/gtk-menu-actions.so

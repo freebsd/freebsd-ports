@@ -7,11 +7,11 @@ CATEGORIES?=	palm
 MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
 PKGNAMEPREFIX?=	synce-
 
-MAINTAINER=	webmaster@kibab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Remote Replication Agent Connection protocol library
 
-LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce \
-		rapi.2:${PORTSDIR}/palm/synce-librapi2
+LIB_DEPENDS+=	libsynce.so:${PORTSDIR}/palm/synce-libsynce \
+		librapi.so:${PORTSDIR}/palm/synce-librapi2
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
 RUN_DEPENDS+=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
 

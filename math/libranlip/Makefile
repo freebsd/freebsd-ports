@@ -22,25 +22,23 @@ PORTDOCS=	ranlip.ps
 PORTEXAMPLES=	makefile ranliptest.cpp ranliptestproc.cpp
 TESTPROGS=	static_example static_example2 static_example3 shared_example
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/ranlip.ps ${STAGEDIR}${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for _file in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${_file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 test: build
 	@(cd ${WRKSRC}/examples; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} all)
 .for _prog in ${TESTPROGS}
 	@(cd ${WRKSRC}/examples && ./${_prog})
 .endfor
+
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
 BROKEN=		fails to build

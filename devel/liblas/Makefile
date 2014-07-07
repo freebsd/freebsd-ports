@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	liblas
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
-MASTER_SITES=	http://trac.liblas.org/raw-attachment/wiki/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+MASTER_SITES=	https://github.com/libLAS/libLAS/archive/
+DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library For Reading And Writing LAS-Format Data
 
-USES=		gmake libtool
+BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
+
+USES=		cmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/liblas-src-${PORTVERSION}
+WRKSRC=		${WRKDIR}/libLAS-${PORTVERSION}
 
 .include <bsd.port.mk>

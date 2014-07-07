@@ -9,7 +9,7 @@ MASTER_SITES=		ftp://sources.redhat.com/pub/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=		psptoolchain-
 
-MAINTAINER=		tphilipp@potion-studios.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 PSP_GCC_STAGE_PREFIX=	psp/stage1

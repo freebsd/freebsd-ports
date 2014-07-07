@@ -7,7 +7,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cloud.github.com/downloads/etolabo/kumofs/
 MASTER_SITE_SUBDIR=	kuriyama
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Scalable and highly available distributed key-value store
 
 LIB_DEPENDS=	libmsgpack.so:${PORTSDIR}/devel/msgpack \

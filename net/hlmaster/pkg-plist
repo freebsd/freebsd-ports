@@ -4,8 +4,8 @@ man/man1/hlmaster.filter.1.gz
 man/man1/hlmaster.gameserver.1.gz
 man/man1/hlmaster.list.1.gz
 %%PORTDOCS%%share/doc/hlmaster/README
-%%PORTDOCS%%share/examples/hlmaster/filter.list
-%%PORTDOCS%%share/examples/hlmaster/server.list
-%%PORTDOCS%%share/examples/hlmaster/woncomm.lst
-%%PORTDOCS%%@dirrm share/examples/hlmaster
+%%PORTEXAMPLES%%share/examples/hlmaster/filter.list
+%%PORTEXAMPLES%%share/examples/hlmaster/server.list
+%%PORTEXAMPLES%%share/examples/hlmaster/woncomm.lst
+%%PORTEXAMPLES%%@dirrm share/examples/hlmaster
 %%PORTDOCS%%@dirrm share/doc/hlmaster

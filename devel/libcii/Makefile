@@ -26,6 +26,8 @@ SAMPLES=	double calc ids	mpcalc wf xref cref iref kref \
 		idents words basename dirname
 I386_SAMPLES=	sort spin sieve
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
@@ -75,7 +77,6 @@ do-install:
 .  endfor
 .endif
 ##
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cii
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cii/examples
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cii/src
@@ -84,6 +85,5 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${PREFIX}/share/doc/cii/examples
 	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/share/doc/cii/src
-.endif
 
 .include <bsd.port.post.mk>

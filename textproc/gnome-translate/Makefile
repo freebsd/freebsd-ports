@@ -3,13 +3,13 @@
 
 PORTNAME=		gnome-translate
 PORTVERSION=		0.99
-PORTREVISION=	15
+PORTREVISION=		16
 CATEGORIES=		textproc
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	libtranslate
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A natural language translator
+COMMENT=		Natural language translator
 
 LIB_DEPENDS=		libtranslate.so:${PORTSDIR}/textproc/libtranslate
 

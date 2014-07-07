@@ -21,7 +21,7 @@ command=%%PREFIX%%/sbin/${name}
 start_precmd=${name}_prestart
 
 pkcsslotd_prestart () {
-	[ -f %%PREFIX%%/var/lib/opencryptoki/pk_config_data ] || \
+	[ -f /var/lib/opencryptoki/pk_config_data ] || \
 		%%PREFIX%%/sbin/pkcs11_startup
 }
 

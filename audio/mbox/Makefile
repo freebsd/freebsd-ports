@@ -3,7 +3,7 @@
 
 PORTNAME=	mbox
 PORTVERSION=	0.7.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mbox.wz.cz/src/ CENKES
 
@@ -21,8 +21,7 @@ USES=		tar:bzip2
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
-USE_WX=		2.8
-WX_UNICODE=	yes
+USE_WX=		3.0+
 WX_COMPS=	python
 
 .include <bsd.port.mk>

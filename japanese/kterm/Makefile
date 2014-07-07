@@ -32,7 +32,7 @@ PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	An xterm variant with Japanese support
+COMMENT=	Xterm variant with Japanese support
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

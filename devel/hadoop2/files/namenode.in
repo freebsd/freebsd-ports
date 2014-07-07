@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: namenode
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# namenode_enable (bool):        Set to NO by default.
+#                                Set it to YES to enable namenode.
+
+. /etc/rc.subr
+
+name=namenode
+rcvar=namenode_enable
+
+load_rc_config "${name}"
+
+: ${namenode_enable:=NO}
+: ${namenode_user:=%%HDFS_USER%%}
+
+command="%%PREFIX%%/sbin/hadoop-daemon.sh"
+command_args='--config %%ETCDIR%% start namenode'
+
+stop_cmd=namenode_stop
+
+namenode_stop () {
+  su -m ${namenode_user} -c "${command} --config %%ETCDIR%% stop namenode"
+}
+
+run_rc_command "$1"

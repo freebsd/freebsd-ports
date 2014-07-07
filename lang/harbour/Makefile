@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 
 MAINTAINER=	m.tsatsenko@gmail.com
-COMMENT=	An open source Clipper-compatible compiler
+COMMENT=	Open source Clipper-compatible compiler
 
 LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2\
 		libpcre.so:${PORTSDIR}/devel/pcre

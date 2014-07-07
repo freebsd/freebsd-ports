@@ -24,12 +24,12 @@ USES=		pkgconfig
 PORTDOCS=	README COPYING
 PLIST_FILES=	bin/pngcomp bin/pngnq man/man1/pngnq.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

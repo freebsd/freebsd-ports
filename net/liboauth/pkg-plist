@@ -1,7 +1,7 @@
 include/oauth.h
-lib/liboauth.so.8
+lib/liboauth.so.0.8.7
+lib/liboauth.so.0
 lib/liboauth.so
-lib/liboauth.la
 lib/liboauth.a
 libdata/pkgconfig/oauth.pc
 man/man3/oauth.3.gz

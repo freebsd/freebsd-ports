@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000
@@ -47,7 +49,7 @@ post-patch:
 		s,libusb_strerror(ret),ret," ${WRKSRC}/configure \
 			${WRKSRC}/src/hotplug_libusb.c
 	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/src/spy/Makefile.in
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/^install-data-am: / s|install-docDATA||' ${WRKSRC}/doc/Makefile.in
 .endif
 

@@ -15,7 +15,7 @@ PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A natural language translation library
+COMMENT=		Natural language translation library
 
 USES=			gmake pathfix pkgconfig
 USE_GNOME=		glib20 intlhack

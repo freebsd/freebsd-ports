@@ -8,7 +8,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/IlohaMail-stable/${PORTVERSION}
 DISTNAME=	IlohaMail-${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	IlohaMail is a lightweight multilingual webmail program
 
 NO_BUILD=	yes

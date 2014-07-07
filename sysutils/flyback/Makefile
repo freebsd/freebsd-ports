@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A backup frontend like Apple's Time Machine
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync

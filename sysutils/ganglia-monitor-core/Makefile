@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-${CLUSTER}
 .endif
 DISTNAME=	ganglia-${PORTVERSION}
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \

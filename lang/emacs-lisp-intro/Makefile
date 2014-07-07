@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
-COMMENT=	An introduction to Emacs Lisp programming
+COMMENT=	Introduction to Emacs Lisp programming
 
 USE_AUTOTOOLS=	autoconf213
 INFO=		emacs-lisp-intro

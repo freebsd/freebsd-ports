@@ -3,7 +3,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -42,7 +42,7 @@ OPTIONS_SUB=		yes
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--disable-alsa --disable-alsamixer
 CDDB_LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
-CDDB_CONFIGURE_ARGS=	--disable-cddb
+CDDB_CONFIGURE_OFF=	--disable-cddb
 CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 CDIO_CONFIGURE_OFF=	--disable-libcdio
 ESOUND_USE=		gnome=esound

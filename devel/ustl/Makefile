@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.0
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Codespace-frugal STL implementation
 
 USE=		gmake tar:bzip2

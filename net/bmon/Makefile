@@ -2,44 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	bmon
-PORTVERSION=	2.1.0
-PORTREVISION=	5
+PORTVERSION=	3.3
 CATEGORIES=	net
-MASTER_SITES=	http://people.suug.ch/~tgr/bmon/files/
 
-MAINTAINER=	nistor@snickers.org
-COMMENT=	Portable bandwidth monitor and rate estimator
+MAINTAINER=	michelle@sorbs.net
+COMMENT=	Human-readable bandwidth monitor and rate estimator
 
-OPTIONS_DEFINE=		DBI RRDTOOL
-OPTIONS_DEFAULT=	DBI
-DBI_DESC=	LibDBI output module for rsyslog
-RRDTOOL_DESC=	Usage graphs support
+LICENSE=	MIT
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--disable-asound
-MAKEFILE=	GNUmakefile
+LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse
 
-PLIST_FILES=	sbin/bmon man/man1/bmon.1.gz
+CONFLICTS_INSTALL=	bmon-*
 
-.include <bsd.port.options.mk>
+USE_GITHUB=	yes
+GH_ACCOUNT=	tgraf
+GH_COMMIT=	ad62e66
+GH_TAGNAME=	v${PORTVERSION}
 
-.if ${PORT_OPTIONS:MRRDTOOL}
-BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
-.else
-CONFIGURE_ARGS+=--disable-rrd
-.endif
-
-.if ${PORT_OPTIONS:MDBI}
-LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
-.else
-CONFIGURE_ARGS+=--disable-dbi
-.endif
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/bmon ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/man/bmon.1 ${STAGEDIR}${PREFIX}/man/man1/bmon.1
+USES=		ncurses pkgconfig:build
+USE_AUTOTOOLS=	libtoolize autoheader automake aclocal
+AUTOMAKE_ARGS+=	--add-missing
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

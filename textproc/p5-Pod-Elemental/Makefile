@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Elemental
-PORTVERSION=	0.103000
+PORTVERSION=	0.103001
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +14,8 @@ COMMENT=	Treating a Pod document as a tree of elements
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mixin-Linewise>0:${PORTSDIR}/devel/p5-Mixin-Linewise \
+BUILD_DEPENDS=	p5-Class-Load>0:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Mixin-Linewise>0:${PORTSDIR}/devel/p5-Mixin-Linewise \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Moose-Autobox>=0.10:${PORTSDIR}/devel/p5-Moose-Autobox \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \

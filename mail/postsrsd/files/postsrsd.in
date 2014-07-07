@@ -1,0 +1,91 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: postsrsd
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Define these postsrsd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/postsrsd
+#
+# postsrsd_enable (bool):   Set to "NO" by default.
+#                             Set it to "YES" to enable dkim-milter
+# postsrsd_uid (str):       Set username to run postsrsd.
+# postsrsd_secret (str):    Secret file file. See postsrsd(8)
+# postsrsd_domain (str):    Local domain name: rewrite to originate from this domain
+# postsrsd_flags (str):     Flags passed to start command.
+
+. /etc/rc.subr
+
+name="postsrsd"
+rcvar=postsrsd_enable
+
+start_precmd="postsrsd_prepcmd"
+stop_postcmd="postsrsd_postcmd"
+command="%%PREFIX%%/sbin/postsrsd"
+_piddir="/var/run/postsrsd"
+pidfile="${_piddir}/${name}.pid"
+
+load_rc_config $name
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${postsrsd_enable="NO"}
+: ${postsrsd_domain=`/bin/hostname`}
+: ${postsrsd_uid="mailnull"}
+: ${postsrsd_secret="%%PREFIX%%/etc/postsrsd.secret"}
+: ${postsrsd_forward_port="10001"}
+: ${postsrsd_reverse_port="10002"}
+: ${postsrsd_idle_timeout="1800"}
+: ${postsrsd_exclude_domains=""}
+
+# Options other than above can be set with $postsrsd_flags.
+# see postsrsd documentation for detail.
+
+if [ "x${postsrsd_uid}" != "x" ];then
+    _uid_prefix="-u"
+fi
+if [ "x${postsrsd_domain}" != "x" ];then
+    postsrsd_domain="-d ${postsrsd_domain}"
+fi
+if [ "x${postsrsd_secret}" != "x" ];then
+    postsrsd_secret="-s ${postsrsd_secret}"
+fi
+if [ "x${postsrsd_forward_port}" != "x" ];then
+    postsrsd_forward_port="-f ${postsrsd_forward_port}"
+fi
+if [ "x${postsrsd_reverse_port}" != "x" ];then
+    postsrsd_reverse_port="-r ${postsrsd_reverse_port}"
+fi
+if [ "x${postsrsd_idle_timeout}" != "x" ];then
+    postsrsd_idle_timeout="-t ${postsrsd_idle_timeout}"
+fi
+if [ "x${postsrsd_exclude_domains}" != "x" ];then
+    postsrsd_exclude_domains="-X ${postsrsd_exclude_domains}"
+fi
+
+command_args=" -D ${_uid_prefix} ${postsrsd_uid} -p ${pidfile} ${postsrsd_domain} ${postsrsd_secret} ${postsrsd_forward_port} ${postsrsd_reverse_port} ${postsrsd_idle_timeout} ${postsrsd_exclude_domains} ${postsrsd_flags}"
+
+postsrsd_prepcmd ()
+{
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
+    fi
+    if [ -n "${postsrsd_uid}" ] ; then
+	chown ${postsrsd_uid} ${_piddir}
+    fi
+}
+
+postsrsd_postcmd()
+{
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+run_rc_command "$1"

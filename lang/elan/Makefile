@@ -18,16 +18,14 @@ USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liberts.so.1.0.7
-.if !defined (NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manuals/compiler/comp.ps \
 		${STAGEDIR}${DOCSDIR}/elan-compiler.ps
 	${INSTALL_DATA} ${WRKSRC}/manuals/language/elan.ps \
 		${STAGEDIR}${DOCSDIR}/elan-language.ps
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

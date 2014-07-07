@@ -8,7 +8,7 @@ CATEGORIES=	japanese converters perl5
 MASTER_SITES=	CPAN
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A Perl5 module defining Microsoft compatible encodings for Japanese
+COMMENT=	Perl5 module defining Microsoft compatible encodings for Japanese
 
 USES=		perl5
 USE_PERL5=	configure

@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=	gap
 DISTNAME=	GSPdf-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Postscript and Pdf Viewer for GNUstep
+COMMENT=	Postscript and Pdf Viewer for GNUstep
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
@@ -18,5 +18,4 @@ USE_GHOSTSCRIPT=	yes
 
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

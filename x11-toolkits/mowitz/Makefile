@@ -19,4 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xawm=Xaw3d
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+DOCS_MAKE_ENV=	PORTDOCS=yes
+
 .include <bsd.port.mk>

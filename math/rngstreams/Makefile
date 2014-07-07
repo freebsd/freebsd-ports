@@ -22,19 +22,17 @@ PLIST_FILES=	lib/librngstreams.a \
 PORTDOCS=	rngstreams.txt
 PORTEXAMPLES=	example1.c
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DD in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${DD} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.ifndef(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for EE in ${PORTEXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/examples/${EE} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 regression-test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check)

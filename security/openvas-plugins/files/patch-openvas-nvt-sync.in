@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- openvas-nvt-sync.in.orig
 +++ openvas-nvt-sync.in
 @@ -1,4 +1,4 @@

@@ -18,11 +18,11 @@ USES=		zip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

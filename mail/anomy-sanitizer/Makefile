@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	http://mailtools.anomy.net/dist/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Sanitize and clean incoming/outgoing mail
 
 USES=		perl5

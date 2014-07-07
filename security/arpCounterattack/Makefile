@@ -8,7 +8,7 @@ MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
 		http://bk.macroblock.net/${PORTNAME}/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	spawk@acm.poly.edu
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Detects and remedies ARP attacks
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet

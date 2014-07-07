@@ -16,9 +16,7 @@ JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	dist
 
-.ifndef(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-.endif
+OPTIONS_DEFINE=	DOCS
 
 JAVADOC_WRKSRC=	${WRKSRC}/build/javadoc
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
@@ -38,24 +36,30 @@ PORTDOCS=	${DOC_FILES} \
 PLIST_FILES=	\
 		%%JAVAJARDIR%%/${PORTNAME:tl}.jar
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	javadoc
+.endif
+
 pre-build:
 # use our build.xml
-	@${CP} ${FILESDIR}/build.xml ${WRKSRC}
+	${CP} ${FILESDIR}/build.xml ${WRKSRC}
 
 do-install:
 # jar
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/dist/lib/${PORTNAME:tl}.jar \
+	${INSTALL_DATA} ${WRKSRC}/dist/lib/${PORTNAME:tl}.jar \
 		${STAGEDIR}${JAVAJARDIR}/
 # docs
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${STAGEDIR}${DOCSDIR}
 . endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/javadoc
 # line taken from textproc/xerces-j maintained by hq@FreeBSD.org
-	@cd ${JAVADOC_WRKSRC} && \
+	cd ${JAVADOC_WRKSRC} && \
 		${FIND} . -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/javadoc/{}" \; && \
 		${FIND} . -not -type d -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/javadoc/{}" \;
 .endif

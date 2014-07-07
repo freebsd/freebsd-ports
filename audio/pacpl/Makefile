@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
 USES=		shebangfix perl5

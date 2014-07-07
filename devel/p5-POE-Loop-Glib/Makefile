@@ -21,11 +21,11 @@ PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
-.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

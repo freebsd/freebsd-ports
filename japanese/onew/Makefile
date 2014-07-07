@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 DISTNAME=	jvim2.0r+${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A library for Japanese Input Methods
+COMMENT=	Library for Japanese Input Methods
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=

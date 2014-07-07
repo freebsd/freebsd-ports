@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@thepentagon.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Simple application for managing personal data
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto

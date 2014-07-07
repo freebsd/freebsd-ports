@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel databases
 MASTER_SITES=	GH GHC
 
-MAINTAINER=	vg@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Mysql replication client library, embeddable into your C++ application
 
 LICENSE=	GPLv3

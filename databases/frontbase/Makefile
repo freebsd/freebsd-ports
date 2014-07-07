@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.frontbase.com/download/Download_${PORTVERSION}/FreeBSD5
 MASTER_SITES+=	http://www.frontbase.com/download/WO5Plugin/UnixLinux/:plugin
 DISTFILES=	FrontBase-${PORTVERSION}-FreeBSD5.tar:db
 
-MAINTAINER=	mjs@bur.st
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Frontbase SQL Database Server
 
 LICENSE=	FrontBase
@@ -23,6 +23,8 @@ USE_LDCONFIG=	yes
 SUB_FILES+=	pkg-message
 
 ONLY_FOR_ARCHS=	i386
+
+OPTIONS_DEFINE=	DOCS
 
 NO_STAGE=	yes
 # Binary is built for 5.X :
@@ -47,10 +49,8 @@ do-install:
 .endfor
 	@(cd ${WRKSRC}/FrontBase/bin && ${COPYTREE_BIN} \* \
 		${PREFIX}/FrontBase/bin/)
-.if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}/FrontBase/Documentation && \
 		${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
 	@(cd ${WRKSRC}/FrontBase/include && ${CP} -R * \
 		${PREFIX}/include)
 	@(cd ${WRKSRC}/FrontBase/lib && ${CP} -R * \

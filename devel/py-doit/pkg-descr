@@ -1,0 +1,11 @@
+doit comes from the idea of bringing the power of build-tools to execute
+any kind of task.
+
+A task describes some computation to be done (actions), and contains some
+extra meta-data. Actions:
+
+  * can be external programs (executed as shell commands) or python
+    functions.
+  * a single task may define more than one action.
+
+WWW: http://pydoit.org

@@ -11,7 +11,7 @@ DISTNAME=	uml2-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A framework creating UML diagrams in Eclipse
+COMMENT=	Framework creating UML diagrams in Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf

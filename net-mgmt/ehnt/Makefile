@@ -18,6 +18,8 @@ PLIST_DIRS+=	share/ehnt
 PORTDOCS=	README
 STPREFIX=	${STAGEDIR}${PREFIX}
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${TOUCH} ${WRKSRC}/asnc.txt
 
@@ -29,9 +31,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/ehntserv.8 ${STPREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/asnc.txt ${STAGEDIR}${DATADIR}/
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

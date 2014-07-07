@@ -22,6 +22,8 @@ USES=		lua:51 gmake pkgconfig
 CFLAGS+=    `pkgconf --cflags lua-${LUA_VER}`
 LDFLAGS+=   -shared  `pkgconf --libs lua-${LUA_VER}`
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
 	@${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile
@@ -31,9 +33,7 @@ post-extract:
 	@${REINPLACE_CMD} -e 's/prefix/PREFIX/g' ${WRKSRC}/src/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}/${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	owncloud-csync
 PORTVERSION=	0.91.4
+PORTREVISION=	1
 CATEGORIES=	net kde
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 DISTNAME=	ocsync-${PORTVERSION}

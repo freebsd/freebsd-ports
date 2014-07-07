@@ -17,19 +17,19 @@ PORTDOCS=	BUGS CHANGES EXAMPLES README
 PLIST_FILES=	bin/mussh
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!/usr/bin/env bash,g" \
+	${REINPLACE_CMD} -e "s,^#!/bin/bash,#!/usr/bin/env bash,g" \
 			  -e "s,seq 1 ,jot 1 ,g" \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

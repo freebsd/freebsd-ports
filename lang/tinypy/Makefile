@@ -7,7 +7,7 @@ CATEGORIES=	lang python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	saper@saper.info
-COMMENT=	A minimalist implementation of python in 64k of code
+COMMENT=	Minimalist implementation of python in 64k of code
 
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi

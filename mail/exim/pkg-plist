@@ -1,53 +1,64 @@
-sbin/exim
-sbin/exim-%%EXIM_VERSION%%
-sbin/exim_checkaccess
-sbin/exim_dbmbuild
-sbin/exim_dumpdb
-sbin/exim_fixdb
-sbin/exim_lock
-sbin/exim_tidydb
-sbin/exicyclog
-sbin/exigrep
-sbin/eximstats
-sbin/exinext
-sbin/exipick
-sbin/exiqgrep
-sbin/exiqsumm
-sbin/exiwhat
+%%SUID%%@mode 4755
+%%EXIM%%sbin/exim
+%%SUID%%@mode
+%%EXIM%%sbin/exim_checkaccess
+%%EXIM%%sbin/exim_dbmbuild
+%%EXIM%%sbin/exim_dumpdb
+%%EXIM%%sbin/exim_fixdb
+%%EXIM%%sbin/exim_lock
+%%EXIM%%sbin/exim_tidydb
+%%EXIM%%sbin/exicyclog
+%%EXIM%%sbin/exigrep
+%%EXIM%%sbin/eximstats
+%%EXIM%%sbin/exinext
+%%EXIM%%sbin/exipick
+%%EXIM%%sbin/exiqgrep
+%%EXIM%%sbin/exiqsumm
+%%EXIM%%sbin/exiwhat
+%%EXIM%%man/man8/exim.8.gz
 %%EXIMON%%sbin/eximon
 %%EXIMON%%sbin/eximon.bin
-%%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGMENTS
-%%PORTDOCS%%%%DOCSDIR%%/NOTICE
-%%PORTDOCS%%%%DOCSDIR%%/README.UPDATING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Exim3.upgrade
-%%PORTDOCS%%%%DOCSDIR%%/Exim4.upgrade
-%%PORTDOCS%%%%DOCSDIR%%/NewStuff
-%%PORTDOCS%%%%DOCSDIR%%/OptionLists.txt
-%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES
-%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES.clamd
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.SIEVE
-%%PORTDOCS%%%%DOCSDIR%%/dbm.discuss.txt
-%%PORTDOCS%%%%DOCSDIR%%/experimental-spec.txt
-%%PORTDOCS%%%%DOCSDIR%%/filter.txt
-%%PORTDOCS%%%%DOCSDIR%%/spec.txt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r3
-%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r4
-%%PORTDOCS%%%%EXAMPLESDIR%%/transport-filter.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%DAEMON%%etc/periodic/daily/150.exim-tidydb
-%%DAEMON%%etc/periodic/daily/460.exim-mail-rejects
-%%DAEMON%%@dirrmtry etc/periodic/daily
-%%DAEMON%%@dirrmtry etc/periodic
-@unexec if cmp -s %D/etc/exim/configure %D/etc/exim/configure.default; then rm -f %D/etc/exim/configure; fi
-etc/exim/configure.default
-@exec [ -f %B/configure ] || cp %B/%f %B/configure
-%%SA_EXIM%%@unexec if cmp -s %D/etc/exim/sa-exim.conf %D/etc/exim/sa-exim.conf.default; then rm -f %D/etc/exim/sa-exim.conf; fi
-%%SA_EXIM%%etc/exim/sa-exim.conf.default
-%%SA_EXIM%%@exec [ -f %B/sa-exim.conf ] || cp %B/%f %B/sa-exim.conf
-@unexec rmdir %B 2> /dev/null || true
-@unexec rmdir %%LOGDIR%% 2> /dev/null || true
-%%SO_1024%%@exec [ ! -d /var/spool/spamooborona ] && mkdir -m 750 /var/spool/spamooborona && chown %%EXIM_USER%%:%%EXIM_GROUP%% /var/spool/spamooborona || true
-%%SO_1024%%@unexec rmdir /var/spool/spamooborona 2> /dev/null || true
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGMENTS
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/NOTICE
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/README.UPDATING
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/Exim3.upgrade
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/Exim4.upgrade
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/NewStuff
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/OptionLists.txt
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES.clamd
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/README.SIEVE
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/dbm.discuss.txt
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/experimental-spec.txt
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/filter.txt
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/spec.txt
+%%EXIM%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r3
+%%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r4
+%%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/transport-filter.pl
+%%EXIM%%%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%EXIMDAEMON%%etc/periodic/daily/150.exim-tidydb
+%%EXIMDAEMON%%etc/periodic/daily/460.exim-mail-rejects
+%%EXIMDAEMON%%@dirrmtry etc/periodic/daily
+%%EXIMDAEMON%%@dirrmtry etc/periodic
+@sample %%ETCDIR%%/configure.sample
+%%SA_EXIM%%@sample %%ETCDIR%%/sa-exim.conf.sample
+@dirrmtry %%ETCDIR%%
+%%EXIM%%@owner %%EXIM_USER%%
+%%EXIM%%@group %%EXIM_GROUP%%
+%%EXIM%%@cwd /
+%%EXIM%%@dirrmtry %%LOGDIR%%
+%%EXIM%%@cwd %%RESETPREFIX%%
+%%EXIM%%@owner root
+%%EXIM%%@group wheel
+%%EXIM%%@exec install -d -o %%EXIM_USER%% -g %%EXIM_GROUP%% /%%LOGDIR%%
+%%SO_1024%%@owner %%EXIM_USER%%
+%%SO_1024%%@group %%EXIM_GROUP%%
+%%SO_1024%%@cwd /
+%%SO_1024%%@dirrmtry var/spool/spamooborona
+%%SO_1024%%@cwd %%RESETPREFIX%%
+%%SO_1024%%@owner root
+%%SO_1024%%@group wheel
+%%SO_1024%%@exec install -d -o %%EXIM_USER%% -g %%EXIM_GROUP%% /var/spool/spamooborona

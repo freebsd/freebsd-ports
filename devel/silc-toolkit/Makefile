@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	toolkit/sources
 PKGNAMESUFFIX=	-toolkit
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	nevans@talkpoint.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network toolkit
 
 CONFLICTS=	silc-client-1.1.* silc-irssi-client-1.1.*

@@ -8,7 +8,7 @@ CATEGORIES=		databases devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
 
-MAINTAINER=		vd@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=		GNATS, the GNU Problem Report Management System
 
 GNU_CONFIGURE=		yes
@@ -77,6 +77,8 @@ PLIST_SUB+=		SERVER=""
 CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-client-4.*
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 pre-everything::
 .if !defined(PACKAGE_BUILDING) && !defined(WANT_FREEFALL_CFG)
@@ -114,12 +116,10 @@ post-install:
 		|| ${CP} ${PREFIX}/etc/gnats/$${conf}.default ${PREFIX}/etc/gnats/$${conf}; \
 	done
 .endif
-.ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
 	@for doc in ${DOCFILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DOCSDIR}; \
 	done
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

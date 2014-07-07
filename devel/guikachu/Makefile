@@ -8,7 +8,7 @@ PORTEPOCH=	3
 CATEGORIES=	devel palm gnome
 MASTER_SITES=	http://cactus.rulez.org/projects/guikachu/download/
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Resource editor for PalmOS(tm) systems
 
 LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \

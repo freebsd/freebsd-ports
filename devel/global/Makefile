@@ -20,11 +20,11 @@ DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
 post-patch:
 	${REINPLACE_CMD} -E 's,^(gtags_DATA = )AUTHORS .* THANKS( \\$$),\1\2,' ${WRKSRC}/Makefile.in
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:

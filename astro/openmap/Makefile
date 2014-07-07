@@ -22,6 +22,8 @@ MAKE_ARGS+=	-Dopenmap.home=${WRKSRC} \
 
 SUB_FILES=	openmap.sh
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 do-configure:

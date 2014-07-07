@@ -8,7 +8,7 @@ MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT=	A Just-In-Time Compiler for Lua
+COMMENT=	Just-In-Time Compiler for Lua
 
 WRKSRC=		${WRKDIR}/LuaJIT-${DISTVERSION}
 USES=		gmake

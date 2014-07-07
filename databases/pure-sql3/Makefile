@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Pure language binding to the SQLite3 library
 
 LICENSE=	BSD

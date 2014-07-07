@@ -3,7 +3,7 @@
 
 PORTNAME=	opencryptoki
 PORTVERSION=	2.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -17,36 +17,24 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
 
-USES=		gmake
-USE_BZIP2=	YES
-USE_LDCONFIG=	YES
-USE_AUTOTOOLS=	autoconf libtool automake
-HAS_CONFIGURE=	YES
+USES=		gmake libtool tar:bzip2
+USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
+USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
+AUTOMAKE_ARGS=	-a -c -f
 CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 		--disable-crtok --disable-aeptok \
 		--disable-ccatok --disable-bcomtok \
 		--disable-pkcscca_migrate \
-		--libdir=${PREFIX}/lib \
-		--sbindir=${PREFIX}/sbin \
-		--localstatedir=${PREFIX}/var \
+		--localstatedir=/var \
 		--with-pkcs11user=${USERS} \
 		--with-pkcs11group=${GROUPS}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_RC_SUBR=	pkcsslotd
+PLIST_SUB=	RESETPREFIX=${PREFIX}
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 USERS=		_pkcs11
 GROUPS=		_pkcs11
-
-run-autotools:	run-autotools-autoreconf
-
-run-autotools-autoreconf:
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
-
-post-install:
-	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s opencryptoki/libopencryptoki* .
-	${MKDIR} ${STAGEDIR}${PREFIX}/var/lib/opencryptoki/swtok \
-	    ${STAGEDIR}${PREFIX}/var/lib/opencryptoki/tpm
 
 .include <bsd.port.mk>

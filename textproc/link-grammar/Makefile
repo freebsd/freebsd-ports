@@ -2,14 +2,14 @@
 
 PORTNAME=	link-grammar
 PORTVERSION=	4.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Grammar checking library
 
-LIB_DEPENDS=	libpspell.so:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 
 OPTIONS_DEFINE=	DOCS
 

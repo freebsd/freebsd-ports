@@ -9,7 +9,7 @@ MASTER_SITES=	SF/razorbacktm/Nuggets
 PKGNAMEPREFIX=	razorback-
 DIST_SUBDIR=	razorback
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - Virus Total Detection
 
 LICENSE=	GPLv2

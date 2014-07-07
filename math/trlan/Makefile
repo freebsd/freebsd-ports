@@ -21,15 +21,12 @@ ALL_TARGET=	lib
 
 PLIST_FILES=	lib/libtrlan.a lib/libtrlan.so lib/libtrlan.so.1
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
-.ifndef(NOPORTDOCS)
 PORTDOCS=	trlan-ug.pdf
-.endif
-
-.ifndef(NOPORTEXAMPLES)
 PORTEXAMPLES=	Makefile README dense.f90 simple.f90 simple77.f simplec.c
-.endif
 
 .if ${ARCH} == sparc64
 PICFLAG=	-fPIC
@@ -66,15 +63,11 @@ do-build:
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/libtrlan.* ${STAGEDIR}${PREFIX}/lib
 	@${LN} -sf libtrlan.so.1 ${STAGEDIR}${PREFIX}/lib/libtrlan.so
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-.ifndef(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/SUN && ${INSTALL_DATA} ${PORTEXAMPLES} \
 	${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .if defined(MAINTAINER_MODE)
 

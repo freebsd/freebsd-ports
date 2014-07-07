@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}106
 DIST_SUBDIR=	teTeX
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A TeX package that supports drawing pictures
+COMMENT=	TeX package that supports drawing pictures
 
 USES=		zip
 USE_TEX=	latex
@@ -41,18 +41,14 @@ DOC_FILES=	README changes.txt install.txt doc/coil.mps \
 		doc/mfpdoc.sty doc/mfpguide.pdf doc/mfpguide.tex \
 		doc/mfpic-doc.pdf doc/mfpic-doc.tex
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR} && ${YES_CMD} | ${TEX_BIN} mfpic.ins
 
 do-install:
 	cd ${WRKDIR} && \
-		${INSTALL_DATA} ${CLASS_FILES} ${PREFIX}/${CLASSDIR} && \
-		${INSTALL_DATA} ${MP_FILES} ${PREFIX}/${MPDIR} && \
-		${INSTALL_DATA} ${MF_FILES} ${PREFIX}/${MFDIR} && \
-		${INSTALL_DATA} ${DOC_FILES} ${PREFIX}/${DDIR}
-
-post-install:
-	@${MKTEXLSR} ${LOCALBASE}/${TEXMFDIR}
+		${INSTALL_DATA} ${CLASS_FILES} ${STAGEDIR}${PREFIX}/${CLASSDIR} && \
+		${INSTALL_DATA} ${MP_FILES} ${STAGEDIR}${PREFIX}/${MPDIR} && \
+		${INSTALL_DATA} ${MF_FILES} ${STAGEDIR}${PREFIX}/${MFDIR} && \
+		${INSTALL_DATA} ${DOC_FILES} ${STAGEDIR}${PREFIX}/${DDIR}
 
 .include <bsd.port.mk>

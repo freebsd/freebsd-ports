@@ -33,22 +33,6 @@ diff -u ../html2latex-0.9c.old/HTMLparse.h ./HTMLparse.h
    } mark_t;
  
  /* amperstand escapes */
-diff -u ../html2latex-0.9c.old/Makefile ./Makefile
---- ../html2latex-0.9c.old/Makefile	Fri Mar 19 05:02:36 1993
-+++ ./Makefile	Fri Mar 29 16:40:56 1996
-@@ -12,9 +12,9 @@
- 
- # ----------------------------------------------------------------------------
- # For SGI's:
--CFLAGS = -g -cckr  -DXMOSAIC
-+CFLAGS = -g -cckr  -DXMOSAIC -DNEED_GETOPT_H
- # For testing:
--# CFLAGS = -g -Wall -DXMOSAIC
-+# CFLAGS = -g -Wall -DXMOSAIC -DNEED_GETOPT_H
- # For HP's:
- # CFLAGS = -g -DXMOSAIC -I/usr/include/Motif1.1 -I/usr/include/X11R4
- # For everyone else:
-Only in .: diff
 diff -u ../html2latex-0.9c.old/html2latex.c ./html2latex.c
 --- ../html2latex-0.9c.old/html2latex.c	Wed Jun 16 05:55:10 1993
 +++ ./html2latex.c	Fri Mar 29 16:41:17 1996

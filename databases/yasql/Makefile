@@ -45,6 +45,8 @@ MAN1=		yasql.1
 
 PORTDOCS=	README yasql.html
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
@@ -66,10 +68,8 @@ pre-install:
 
 post-install:
 	${MV} ${PREFIX}/etc/yasql.conf ${PREFIX}/etc/yasql.conf.sample
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
 	@if [ -f ${PREFIX}/etc/yasql.conf.precious ] ; then \
 		${MV} ${PREFIX}/etc/yasql.conf.precious ${PREFIX}/etc/yasql.conf ; \
 	else \

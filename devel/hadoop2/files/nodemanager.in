@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nodemanager
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# nodemanager_enable (bool):        Set to NO by default.
+#                                   Set it to YES to enable resourcemanager.
+
+. /etc/rc.subr
+
+name=nodemanager
+rcvar=nodemanager_enable
+
+load_rc_config "${name}"
+
+: ${nodemanager_enable:=NO}
+: ${nodemanager_user:=%%MAPRED_USER%%}
+
+command="%%PREFIX%%/sbin/yarn-daemon.sh"
+command_args='--config %%ETCDIR%% start nodemanager'
+
+stop_cmd=nodemanager_stop
+
+nodemanager_stop () {
+  su -m ${nodemanager_user} -c "${command} --config %%ETCDIR%% stop nodemanager"
+}
+
+run_rc_command "$1"

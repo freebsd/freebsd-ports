@@ -6,7 +6,7 @@ PORTVERSION=	1.4.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTVERSION}/+download/
 
-MAINTAINER=	rodrigo@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Non-linear video editor
 
 LICENSE=	GPLv3

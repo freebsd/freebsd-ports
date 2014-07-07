@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: datanode
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# datanode_enable (bool):        Set to NO by default.
+#                                Set it to YES to enable datanode.
+
+. /etc/rc.subr
+
+name=datanode
+rcvar=datanode_enable
+
+load_rc_config "${name}"
+
+: ${datanode_enable:=NO}
+: ${datanode_user:=%%HDFS_USER%%}
+
+command="%%PREFIX%%/sbin/hadoop-daemon.sh"
+command_args='--config %%ETCDIR%% start datanode'
+
+stop_cmd=datanode_stop
+
+datanode_stop () {
+  su -m ${datanode_user} -c "${command} --config %%ETCDIR%% stop datanode"
+}
+
+run_rc_command "$1"

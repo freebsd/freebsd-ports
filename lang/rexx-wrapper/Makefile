@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	rexx-
 DISTNAME=	RexxWrapper-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool that wraps Rexx source or tokenised code into an executable
+COMMENT=	Tool that wraps Rexx source or tokenised code into an executable
 
 BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina

@@ -15,37 +15,28 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USES=		gmake
 MAKEFILE=	GNUmakefile
-.if !defined(WITHOUT_OPENSSL)
-MAKE_ENV=	USE_SSL=no
-.endif
-MAKE_ENV+=	LDLIBS="-lssl -lcrypto" USE_DIET=no
 
-PLIST_FILES=	sbin/webfsd
+PLIST_FILES=	sbin/webfsd man/man1/webfsd.1
 
-MAN1=		webfsd.1
+OPTIONS_DEFINE=		OPENSSL
+OPENSSL_MAKE_ENV=	LDLIBS="-lssl -lcrypto" USE_DIET=no
+OPENSSL_MAKE_ENV_OFF=	USE_SSL=no
+
 MIMEFILE?=	${LOCALBASE}/etc/mime.types
 
 USE_RC_SUBR=	webfsd
 
-NO_STAGE=	yes
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "==========================================="
-	@${ECHO_CMD} "This package supports the following option:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} " -DWITHOUT_SSL   - omit SSL support"
-	@${ECHO_CMD} "==========================================="
-	@${ECHO_CMD} ""
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/webfsd.man
-.if defined(WITHOUT_OPENSSL)
+.if empty(PORT_OPTIONS:MOPENSSL)
 	@${REINPLACE_CMD} -e 's|USE_SSL      := yes|USE_SSL      := no|' ${WRKSRC}/Make.config
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/webfsd.man ${PREFIX}/man/man1/webfsd.1
+	${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/webfsd.man ${STAGEDIR}${PREFIX}/man/man1/webfsd.1
 
 .include <bsd.port.mk>

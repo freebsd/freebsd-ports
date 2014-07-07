@@ -3,11 +3,11 @@
 
 PORTNAME=	libopensync-plugin-evolution2
 PORTVERSION=	0.22
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
-MAINTAINER=	webmaster@kibab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evolution 2 plugin for the OpenSync framework
 
 LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022

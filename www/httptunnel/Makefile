@@ -12,19 +12,15 @@ MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunnel a TCP/IP connection through a HTTP/TCP/IP connection
 
+OPTIONS_DEFINE=	DEBUG
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
-.if defined(ENABLE_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
-.endif
-MAN1=		hts.1 htc.1
+DEBUG_CONFIGURE_ENABLE=	debug
 
 USE_RC_SUBR=	hts htc
 
-PLIST_FILES=	bin/hts bin/htc
-
-NO_STAGE=	yes
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+PLIST_FILES=	bin/hts bin/htc \
+		man/man1/hts.1.gz man/man1/htc.1.gz
 
 .include <bsd.port.mk>

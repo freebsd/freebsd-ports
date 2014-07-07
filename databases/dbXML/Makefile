@@ -7,7 +7,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME:tl}-core/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 DISTNAME=	dbXML-${PORTVERSION}
 
-MAINTAINER=	rws@procopia.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Java Native XML Database
 
 USE_JAVA=	1.5+

@@ -28,7 +28,3 @@
 @@ -223,4 +223,4 @@
          print "GLPixmap: Set viewport to", width, height ###
          self.init_context()
- 
--    
-\ No newline at end of file
-+    

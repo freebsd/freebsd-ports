@@ -133,6 +133,8 @@
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb
+    SUBDIR += leo_center
+    SUBDIR += leofs
     SUBDIR += leveldb
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
@@ -862,6 +864,7 @@
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-familia
     SUBDIR += rubygem-jdbc-mysql
+    SUBDIR += rubygem-leo_manager_client
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-mysql
@@ -879,7 +882,6 @@
     SUBDIR += sfcgal
     SUBDIR += sharedance
     SUBDIR += skytools
-    SUBDIR += slony1
     SUBDIR += slony1v2
     SUBDIR += soci
     SUBDIR += spatialite

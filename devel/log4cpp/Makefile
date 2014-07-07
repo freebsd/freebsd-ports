@@ -16,13 +16,10 @@ CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 # doxygen build is BROKEN atm
 #.if exists (${LOCALBASE}/bin/doxygen) || !defined (NOPORTDOCS)
 #BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 #.else
-NOPORTDOCS=		true
 CONFIGURE_ARGS+=	--disable-doxygen
 #.endif
 
@@ -39,4 +36,4 @@ CONFIGURE_ARGS+=	--disable-doxygen
 post-patch:
 	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

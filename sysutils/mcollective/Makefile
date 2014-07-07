@@ -24,6 +24,8 @@ SCRIPTS=	mco
 
 SUB_LIST+=	RUBY=${RUBY}
 
+OPTIONS_DEFINE=	DOCS
+
 do-patch:
 	@${REINPLACE_CMD} -e "s|/etc/mcollective|${ETCDIR}|" \
 	    ${WRKSRC}/bin/mcollectived \
@@ -50,9 +52,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/client.cfg.dist ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/server.cfg.dist ${STAGEDIR}${ETCDIR}
 
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

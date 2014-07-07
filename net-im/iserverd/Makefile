@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://iserverd.khstu.ru/download/
 
-MAINTAINER=	danfocus@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Groupware ICQ server clone
 
 USE_PGSQL=	YES

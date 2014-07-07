@@ -2,12 +2,8 @@ bin/nessus
 bin/nessus-fetch
 bin/nessus-mkcert-client
 bin/nessus-mkrand
-@unexec if cmp -s %D/etc/nessus/nessusd.conf.dist %D/etc/nessus/nessusd.conf; then rm -f %D/etc/nessus/nessusd.conf 2> /dev/null; fi || true
-@unexec if cmp -s %D/etc/nessus/nessusd.rules.dist %D/etc/nessus/nessusd.rules; then rm -f %D/etc/nessus/nessusd.rules 2> /dev/null; fi || true
-etc/nessus/nessusd.conf.dist
-etc/nessus/nessusd.rules.dist
-@exec if [ ! -f %D/etc/nessus/nessusd.conf ]; then cp -p %D/etc/nessus/nessusd.conf.dist %D/etc/nessus/nessusd.conf; fi
-@exec if [ ! -f %D/etc/nessus/nessusd.rules ]; then cp -p %D/etc/nessus/nessusd.rules.dist %D/etc/nessus/nessusd.rules; fi
+@sample etc/nessus/nessusd.conf.sample
+@sample etc/nessus/nessusd.rules.sample
 include/nessus/config.h
 include/nessus/includes.h
 include/nessus/nessus-devel.h

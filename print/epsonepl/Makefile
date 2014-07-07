@@ -12,20 +12,21 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Printer filter for EPSON EPL-5700L etc
 
+LIB_DEPENDS=	libijs.so:${PORTSDIR}/print/libijs
+
+USES=		uidfix
 USE_GHOSTSCRIPT_RUN=	yes
 
-LIB_DEPENDS=	ijs.1:${PORTSDIR}/print/libijs
-
 MAKEFILE=	${FILESDIR}/Makefile
+SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${LS} ijs* | ${GREP} -v ${PORTNAME} | ${XARGS} ${RM}
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf.sample ${PREFIX}/etc
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.apsfilter ${DATADIR}
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#' ${PKGMESSAGE}
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf.sample \
+		${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.apsfilter ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

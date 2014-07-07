@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.jeenyus.net/linux/software/fwipe/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	djb-style file wiping utility
 
 ALL_TARGET=	it

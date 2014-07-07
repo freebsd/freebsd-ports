@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/ENMA/${PORTVERSION}
 
-MAINTAINER=	umq@ueo.co.jp
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Sender authentication milter supporting SPF and Sender ID
 
 LICENSE=	BSD

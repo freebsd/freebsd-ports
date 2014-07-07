@@ -23,12 +23,12 @@ INSTALL_TARGET=	install install-data distdir
 
 PORTDOCS=	*.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

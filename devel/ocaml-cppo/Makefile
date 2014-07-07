@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://martin.jambon.free.fr/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	michael.grunewald@laposte.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Simple preprocessor for OCaml
 
 USES=		gmake

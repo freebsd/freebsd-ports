@@ -17,12 +17,12 @@ LICENSE=	MIT
 PLIST_FILES=	bin/simpleirc man/man1/simpleirc.1.gz
 PORTDOCS=	README LICENSE
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

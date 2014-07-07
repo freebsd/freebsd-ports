@@ -23,9 +23,13 @@ USE_LDCONFIG=	yes
 
 EXAMPLES=	ft_samp.c gdc_pie_samp.c gdc_samp1.c gdc_samp2.c
 
-OPTIONS_DEFINE=	DOCS EXAMPLES PROFILE
-OPTIONS_DEFAULT=PROFILE
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.if defined(NO_PROFILE)
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
+.endif
 
 post-patch:
 	${REINPLACE_CMD} \

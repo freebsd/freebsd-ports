@@ -19,7 +19,11 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	DOXYGEN=""
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 .else
 CONFIGURE_ARGS=	--docdir=/dev/null

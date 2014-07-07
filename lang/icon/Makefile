@@ -20,6 +20,8 @@ ICONDIR=	${PREFIX}/lib/${PORTNAME}
 BINS=		icont iconx
 BINXS=		colrbook colrpick fontpick palette vib wevents xgamma
 
+OPTIONS_DEFINE=	DOCS
+
 .if defined(WITHOUT_X11)
 CONFIG_CMD=	Configure
 PLIST_SUB=	WITHOUT_X11="@comment "
@@ -64,10 +66,8 @@ do-install:
 .endfor
 	@${LN} -sf ${ICONDIR}/bin/vib ${STAGEDIR}${PREFIX}/bin/vib
 .endif
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .if defined(MAINTAINER_MODE)
 test:	install

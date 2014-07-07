@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	js
 DISTNAME=	js-${DISTVERSION}
 
 MAINTAINER=	citric@cubicone.tmetic.com
-COMMENT=	A standalone JavaScript interpreter from the Mozilla project
+COMMENT=	Standalone JavaScript interpreter from the Mozilla project
 
 LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
 

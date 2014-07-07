@@ -1,5 +1,6 @@
 bin/linphone
 bin/linphone-3
+man/man1/libphone.1.gz
 share/applications/linphone.desktop
 %%DATADIR%%/COPYING
 %%DATADIR%%/about.glade

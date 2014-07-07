@@ -273,10 +273,10 @@
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Yacas.pm
 %%SITE_PERL%%/Syntax/Highlight/Engine/Kate/Yacc_Bison.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine/Kate/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/hlansi.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/hlhtml.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/regen.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hlansi.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hlhtml.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regen.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine/Kate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/Engine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight

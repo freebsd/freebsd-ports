@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.adaptec.com/raid/u160raid/unix/ \
 DISTNAME=	u160raid_sm_v304_fbsd411
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptec ASR RAID Management Software
 
 LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x

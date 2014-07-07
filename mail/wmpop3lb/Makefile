@@ -9,7 +9,7 @@ MASTER_SITES=	http://lbj.free.fr/wmpop3/ \
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	otaviof@gmail.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	WindowMaker dock app for multi POP3 accounts mailbox checking
 
 USES=		gmake

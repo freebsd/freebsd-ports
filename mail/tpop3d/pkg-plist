@@ -1,4 +1,4 @@
+@sample etc/tpop3d.conf.sample
+man/man5/tpop3d.conf.5.gz
+man/man8/tpop3d.8.gz
 sbin/tpop3d
-@unexec if cmp -s %D/etc/tpop3d.conf.dist %D/etc/tpop3d.conf; then rm -f %D/etc/tpop3d.conf; fi
-etc/tpop3d.conf.dist
-@exec if [ ! -f %D/etc/tpop3d.conf ]; then cp %D/etc/%f %D/etc/tpop3d.conf; fi

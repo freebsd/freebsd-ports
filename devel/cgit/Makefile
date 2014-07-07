@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	cgit
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
-		GOOGLE_CODE:git
+		https://www.kernel.org/pub/software/scm/git/:git
 DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
 		git-${GIT_VERSION}.tar.gz:git
 
@@ -12,9 +12,10 @@ MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Hyperfast web frontend for Git repositories
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PROJECTHOST=	git-core
-GIT_VERSION=	1.9.0
+GIT_VERSION=	2.0.0
 USES=		gmake iconv shebangfix tar:bzip2
 SHEBANG_FILES=	filters/html-converters/resources/markdown.pl
 
@@ -39,8 +40,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/git/Makefile
 
 post-install:
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc.5.txt ${STAGEDIR}/${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc.5.txt ${STAGEDIR}${DOCSDIR}/
 	@${STRIP_CMD} ${STAGEDIR}${WWWDIR}/cgit.cgi
 
 .include <bsd.port.mk>

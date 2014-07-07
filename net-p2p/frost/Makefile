@@ -22,6 +22,9 @@ PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
+
 JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 JAR_FILE=	frost.jar
@@ -73,12 +76,10 @@ post-patch:
 
 do-install:
 # docs
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 # jars
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${JAR_DIR}
 .for jar in ${JAR_FILES}

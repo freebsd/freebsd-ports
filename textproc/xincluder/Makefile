@@ -21,32 +21,30 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 SUFFIXES=	-sax -dom -jdom
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar bin/xincluder ${SUFFIXES:S,^,bin/xincluder,}
-.if !defined(NOPORTDOCS)
 PORTDOCS=	apidoc index.html
-.endif
 SUB_FILES=	xincluder.sh
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing scripts in ${PREFIX}/bin..."
 	@${ECHO_MSG} -n " xincluder"
-	@${INSTALL_SCRIPT} ${WRKDIR}/xincluder.sh ${STAGEDIR}${PREFIX}/bin/xincluder
+	${INSTALL_SCRIPT} ${WRKDIR}/xincluder.sh ${STAGEDIR}${PREFIX}/bin/xincluder
 .for suffix in ${SUFFIXES}
 	@${ECHO_MSG} -n " xincluder${suffix}"
-	@${LN} -s xincluder ${STAGEDIR}${PREFIX}/bin/xincluder${suffix}
+	${LN} -s xincluder ${STAGEDIR}${PREFIX}/bin/xincluder${suffix}
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC} \
+	cd ${WRKSRC} \
 	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
-.endif
 
 .include <bsd.port.mk>

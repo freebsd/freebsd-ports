@@ -7,7 +7,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	http://ocsigen.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	jaapb@kerguelen.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Function derivation library
 
 USE_OCAML=		yes

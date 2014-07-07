@@ -23,9 +23,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/streamanalyze ${STAGEDIR}${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

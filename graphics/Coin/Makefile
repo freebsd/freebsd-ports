@@ -22,7 +22,7 @@ USE_XORG=	xt x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\
 		--enable-3ds-import --enable-sound	\
-		--enable-javascript-api
+		--enable-javascript-api --enable-debug=no
 USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
 

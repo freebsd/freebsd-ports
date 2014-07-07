@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of administration scripts
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

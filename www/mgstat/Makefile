@@ -17,10 +17,10 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	Copyright README USAGE
 PLIST_FILES=	bin/mgstat
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

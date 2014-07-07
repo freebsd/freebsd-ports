@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- openvasd/Makefile.orig
 +++ openvasd/Makefile
 @@ -38,92 +38,92 @@

@@ -28,16 +28,14 @@ MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lgfortran/& $${LDFLAGS}/' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc && ${FIND} -s ${WRKSRC}/doc/* | ${SED} -e 's#${WRKSRC}/doc/##' | ${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${STAGEDIR}${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
 	cd ${WRKSRC}/demos && ${FIND} -s ${WRKSRC}/demos/* | ${SED} -e 's#${WRKSRC}/demos/##' | ${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.pre.mk>
 

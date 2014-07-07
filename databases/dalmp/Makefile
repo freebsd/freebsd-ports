@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dalmp
-PORTVERSION=	2.1
+PORTVERSION= 	3.0.2
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	nbari@dalmp.com
 COMMENT=	Database Abstraction Layer for MySQL using PHP
@@ -12,9 +11,13 @@ COMMENT=	Database Abstraction Layer for MySQL using PHP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	nbari
+GH_PROJECT=	${PORTNAME:tu}
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	72abf0c
 
-DEFAULT_VERSIONS=php=5
+USES=	tar:bzip2
 
 NO_BUILD=	yes
 USE_PHP=	pcre mysql mysqli session memcache sqlite3 curl

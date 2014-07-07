@@ -14,26 +14,17 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir	\
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
+NO_BUILD=	yes
 
-MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
-FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
-
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC}/&&${MV} TibMachUni-${DISTVERSION}.ttf tmu.ttf
 
-do-build:
-	@cd ${WRKSRC}/ && ${MKFONTSCL_CMD} && ${MKFONTDIR_CMD}
-
 do-install:
-	@${INSTALL} -d ${FONTSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/[ft]* ${FONTSDIR}/
-	@${ECHO_MSG} "===> Running fc-cache"
-	-${FCCACHE_CMD} ${FONTSDIR}
+	@${INSTALL} -d ${STAGEDIR}${FONTSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/tmu.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>

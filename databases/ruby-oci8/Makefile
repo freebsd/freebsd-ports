@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${DISTVERSION:S/rc/-rc/}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	numisemis@yahoo.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Ruby interface to Oracle OCI8
 
 BROKEN=		Does not configure
@@ -30,12 +30,13 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	ChangeLog README
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

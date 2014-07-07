@@ -9,7 +9,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A meta-port which setups Japanese fonts
+COMMENT=	Meta-port which setups Japanese fonts
 
 RUN_DEPENDS=	\
 		${FONTSDIR}/jpnhn4-iso.pcf.gz:${PORTSDIR}/japanese/elisa8x8 \

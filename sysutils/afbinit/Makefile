@@ -21,14 +21,13 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=		marius@FreeBSD.org
 COMMENT=		Sun AFB aka Sun Elite 3D microcode firmware loader
 
+OPTIONS_DEFINE=		DOCS
+
 ONLY_FOR_ARCHS=		sparc64
 USE_RC_SUBR=		afbinit
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-MAN8=			afbinit.8
-
-NO_STAGE=	yes
 post-patch:
 .for i in afbinit.c debian/afbinit.8
 	@${REINPLACE_CMD} -E -e 's|\/usr\/lib|${DATADIR}|g; \
@@ -43,16 +42,11 @@ do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o afbinit afbinit.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/afbinit ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/debian/afbinit.8 ${PREFIX}/man/man8
-	@${INSTALL} -d ${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/afb-ucode/afb.ucode ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/afb-ucode/README ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${WRKDIR}/pkg-message
+	@${INSTALL_PROGRAM} ${WRKSRC}/afbinit ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL_MAN} ${WRKSRC}/debian/afbinit.8 ${STAGEDIR}${PREFIX}/man/man8
+	@${INSTALL} -d ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKDIR}/afb-ucode/afb.ucode ${STAGEDIR}${DATADIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/afb-ucode/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

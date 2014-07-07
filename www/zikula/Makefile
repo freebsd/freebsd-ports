@@ -22,17 +22,13 @@ IGNORE_WITH_MYSQL=	41 50
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${WWWDIR}
-		@cd ${WRKSRC} && \
-		${FIND} . -type d -exec ${MKDIR} ${WWWDIR}/{} \; \
-		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
-	@cd ${WRKSRC} && \
-		${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${WWWDIR}/{} \; \
-		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && \
+		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${WWWDIR}/{} \; \
+		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;)
+	(cd ${WRKSRC} && \
+		${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${STAGEDIR}${WWWDIR}/{} \; \
+		-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/{} \;)
 
 .include <bsd.port.mk>

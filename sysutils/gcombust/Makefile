@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.symnds.com/software/misc/ \
 		http://www.egr.msu.edu/~mcdouga9/
 
-MAINTAINER=	mcdouga9@msu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ frontend for mkisofs and cdrecord
 
 LICENSE=	GPLv2

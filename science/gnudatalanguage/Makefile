@@ -52,6 +52,8 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
+OPTIONS_DEFINE=	EXAMPLES
+
 .if defined(BUILD_PYTHON_MODULE)
 CATEGORIES+=	python
 CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=YES -DOPENMP:BOOL=NO
@@ -134,10 +136,8 @@ do-install:
 
 .if !defined(BUILD_PYTHON_MODULE)
 post-stage:
-. if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/testsuite
 	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/testsuite/)
-. endif
 .endif
 
 .if defined(MAINTAINER_MODE)

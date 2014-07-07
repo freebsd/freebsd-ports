@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.insidesystems.net/rsyncmanager/
 
-MAINTAINER=	kelley@insidesystems.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible rsync resource manager daemon written in ruby
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync

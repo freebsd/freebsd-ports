@@ -24,11 +24,10 @@ NO_BUILD=	yes
 
 TTF=		TW-Kai-98_1.ttf TW-Sung-98_1.ttf
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for f in ${TTF}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${f} ${FONTSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${f} ${STAGEDIR}${FONTSDIR}
 .endfor
 
 post-install:

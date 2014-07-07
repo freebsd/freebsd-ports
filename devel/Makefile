@@ -642,6 +642,7 @@
     SUBDIR += hachoir-parser
     SUBDIR += hachoir-regex
     SUBDIR += hadoop
+    SUBDIR += hadoop2
     SUBDIR += hapy
     SUBDIR += hcs12mem
     SUBDIR += hexcompare
@@ -3625,6 +3626,7 @@
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
     SUBDIR += py-dogpile.core
+    SUBDIR += py-doit
     SUBDIR += py-durus
     SUBDIR += py-dynrules
     SUBDIR += py-eggtestinfo
@@ -3708,6 +3710,7 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython
+    SUBDIR += py-lazy
     SUBDIR += py-levenshtein
     SUBDIR += py-liblarch
     SUBDIR += py-libplist

@@ -19,11 +19,11 @@ INSTALL_TARGET=	pure_install
 SCRIPTS_ENV=	PERL=${PERL}
 USES=		fortran perl5
 
-.if !defined(NOPORTEXAMPLES)
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE test* ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .if defined(MAINTAINER_MODE) && !defined(BATCH)
 check regression-test test: build

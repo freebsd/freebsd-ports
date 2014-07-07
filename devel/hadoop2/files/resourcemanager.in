@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: resourcemanager
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# resourcemanager_enable (bool):        Set to NO by default.
+#                                       Set it to YES to enable resourcemanager.
+
+. /etc/rc.subr
+
+name=resourcemanager
+rcvar=resourcemanager_enable
+
+load_rc_config "${name}"
+
+: ${resourcemanager_enable:=NO}
+: ${resourcemanager_user:=%%MAPRED_USER%%}
+
+command="%%PREFIX%%/sbin/yarn-daemon.sh"
+command_args='--config %%ETCDIR%% start resourcemanager'
+
+stop_cmd=resourcemanager_stop
+
+resourcemanager_stop () {
+  su -m ${resourcemanager_user} -c "${command} --config %%ETCDIR%% stop resourcemanager"
+}
+
+run_rc_command "$1"

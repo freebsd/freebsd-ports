@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	mjt@cltn.org
-COMMENT=	A Fast R6RS Scheme interpreter
+COMMENT=	Fast R6RS Scheme interpreter
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libonig.so:${PORTSDIR}/devel/oniguruma5

@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-unstable-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development release of port bluefish
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libaspell.so:${PORTSDIR}/textproc/aspell
 
 IGNORE=		the devel release are currently suspended, install www/bluefish, new release is 2.0
 

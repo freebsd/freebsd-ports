@@ -18,6 +18,8 @@ MAKE_ARGS=	CWEBINPUTS="${DATADIR}" \
 		LINKFLAGS="" \
 		CC="${CC}"
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cweb.1
 
@@ -32,9 +34,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/texmf/tex/generic/misc
 	${INSTALL_DATA} ${WRKSRC}/cwebmac.tex \
 		${STAGEDIR}${PREFIX}/share/texmf/tex/generic/misc
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/cwebman.tex ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

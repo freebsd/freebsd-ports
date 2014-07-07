@@ -2,7 +2,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.992
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -31,7 +31,7 @@ EXTRACT_FILES= \
 	texk/lcdf-typetools \
 	texk/kpathsea
 EXTRACT_AFTER_ARGS_TEXMF= \
-	| ${TAR} -xf - -C ${PREFIX}/share \
+	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 	--strip-components 1 --no-same-permission --no-same-owner \
 	${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
 DISTVERSION_TEXMF=	20120701
@@ -56,16 +56,13 @@ CONFIGURE_ARGS= --with-paper \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+= 	-lpaper -L${LOCALBASE}/lib
 
-NO_MANCOMPRESS=	yes
-MAN1=	afm2tfm.1 dvips.1
 INFO=	dvips
 
-NO_STAGE=	yes
-pre-su-install:
+pre-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/texlive-${DISTVERSION_TEXMF}-source/texk/lcdf-typetools/7t.enc ${PREFIX}/${TEXMFDISTDIR}/fonts/enc/dvips/base/7t.enc
+	${INSTALL_DATA} ${WRKDIR}/texlive-${DISTVERSION_TEXMF}-source/texk/lcdf-typetools/7t.enc ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/enc/dvips/base/7t.enc
 
 .include <bsd.port.mk>

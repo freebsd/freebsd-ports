@@ -8,7 +8,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A canna dictionary containing a lot of words
+COMMENT=	Canna dictionary containing a lot of words
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/canna-server
 BUILD_DEPENDS=	crxdic:${PORTSDIR}/japanese/canna-server

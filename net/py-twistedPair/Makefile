@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedPair
-PORTVERSION=	13.2.0
+PORTVERSION=	14.0.0
 CATEGORIES=	net devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Pair/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
@@ -17,9 +17,9 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
+PYDISTUTILS_AUTOPLIST=	yes
+USES=		tar:bzip2
 
 .include <bsd.port.mk>

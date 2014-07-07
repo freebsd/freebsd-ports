@@ -6,7 +6,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} http://thegaul.org/src/
 
-MAINTAINER=	sacchi@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detect which filesystem type a device/partition contains
 
 GNU_CONFIGURE=	yes

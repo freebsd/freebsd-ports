@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
 
 RUN_DEPENDS=	roundcube>=0.2:${PORTSDIR}/mail/roundcube

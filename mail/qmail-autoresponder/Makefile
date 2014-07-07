@@ -22,6 +22,8 @@ DOCS=		NEWS README TODO procedure.txt schema.mysql
 
 ALL_TARGET=	${PROGS}
 
+OPTIONS_DEFINE=	DOCS
+
 do-configure:
 	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"		> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${STAGEDIR}${MANPREFIX}/man"	> ${WRKSRC}/conf-man
@@ -31,9 +33,7 @@ do-configure:
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PROGS} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/qmail-autoresponder.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

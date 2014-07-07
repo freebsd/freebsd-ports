@@ -10,7 +10,7 @@ DISTFILES=		BaseVisualWorks.tar.gz \
 EXTRACT_ONLY=
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A high performance Smalltalk environment
+COMMENT=		High performance Smalltalk environment
 
 DIST_SUBDIR=		${SUBDIR}
 SUBDIR=			vwnc${PORTVERSION}

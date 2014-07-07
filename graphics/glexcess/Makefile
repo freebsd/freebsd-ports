@@ -16,6 +16,8 @@ USE_GL=		glut
 MAKE_ARGS=	'CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -pipe -s -O2' \
 		'LDFLAGS=-L${LOCALBASE}/lib -lGL -lGLU -lglut'
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/scene*.cpp
 	@${REINPLACE_CMD} -e 's|k_InitGL(GLvoid)|k_InitGL(void)|' ${WRKSRC}/scene12.cpp
@@ -26,9 +28,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glxs ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/data/*.raw ${STAGEDIR}${DATADIR}
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -50,8 +50,7 @@ PORTABILITY_DESC=	Use the PATH variable at run-time
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_BZIP2=	yes
-USES=		iconv perl5 pkgconfig
+USES=		iconv perl5 pkgconfig tar:bzip2
 USE_GNOME=	glib20 libxml2
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
@@ -68,7 +67,7 @@ MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	ARCH="${ARCH}"
+PLIST_SUB=	ARCH="${ARCH}" OPSYS="${OPSYS:tl}"
 
 .include <bsd.port.options.mk>
 

@@ -5,7 +5,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2805/
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Web-based administration tool for pgpool-II
 
 RUN_DEPENDS=	pgpool:${PORTSDIR}/databases/pgpool-II

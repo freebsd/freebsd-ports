@@ -21,6 +21,8 @@ ALL_TARGET=	elc
 
 FLIM_COOKIE=   flim-${EMACS_PORT_NAME}-1.14.FreeBSD-packages
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
@@ -37,9 +39,7 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bbdb-to-lsdb.el ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA}	${WRKSRC}/README ${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

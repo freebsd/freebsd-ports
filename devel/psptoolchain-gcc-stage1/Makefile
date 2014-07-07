@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	releases/${DISTNAME}/
 PKGNAMEPREFIX=		psptoolchain-
 PKGNAMESUFFIX?=		-stage1
 
-MAINTAINER=		tphilipp@potion-studios.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 ONLY_FOR_ARCHS=		amd64 i386

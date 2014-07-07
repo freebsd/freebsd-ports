@@ -14,7 +14,7 @@ COMMENT=	Libevent extension for PHP
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes

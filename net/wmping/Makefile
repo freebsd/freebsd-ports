@@ -16,14 +16,14 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	BUGS CHANGES README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL} -c -s -o root -g wheel ${WRKSRC}/wmping ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmping.1 ${STAGEDIR}${PREFIX}/man/man1
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

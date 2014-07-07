@@ -26,11 +26,9 @@ post-patch:
 
 post-install:
 	${LN} -sf tcpdump2xplot.pl ${STAGEDIR}${PREFIX}/bin/tcpdump2xplot
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

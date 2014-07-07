@@ -8,7 +8,7 @@ MASTER_SITES=	http://moby.cs.uchicago.edu/downloads/ \
 		ftp://mirror.free.de/http/moby.cs.uchicago.edu/downloads/
 DISTFILES=	asdlGen.tar.gz
 
-MAINTAINER=	joemann@beefree.free.de
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Interoperable serializers for C,C++,Haskell,Icon,Java,ML
 
 BUILD_DEPENDS=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel

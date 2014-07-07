@@ -25,6 +25,8 @@ PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/ibus.el \
 		libexec/ibus-el-agent
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@cd ${WRKSRC} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
 		-f batch-byte-compile ibus.el
@@ -37,10 +39,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/ibus-el-agent \
 		${STAGEDIR}${PREFIX}/libexec
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && \
 		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

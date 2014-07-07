@@ -18,6 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure patch
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/scripts
 	@${MV} ${WRKSRC}/stx*.pl ${WRKSRC}/scripts
@@ -29,13 +31,11 @@ post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 
 post-install:
-.ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing additional documentation for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

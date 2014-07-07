@@ -16,11 +16,11 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 USE_XORG=	x11 xext xmu
 ALL_TARGET=	depend wm2
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wm2 ${STAGEDIR}${PREFIX}/bin
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

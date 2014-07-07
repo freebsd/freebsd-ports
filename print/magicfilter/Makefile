@@ -19,15 +19,10 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--filterdir=${PREFIX}/libexec/magicfilter \
 			--use-fifo
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
-MAN5=		magicfilter.5
-MAN8=		magicfilter.8
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libmagic.so)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

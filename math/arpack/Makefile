@@ -7,9 +7,6 @@ PORTREVISION=	12
 CATEGORIES=	math
 MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
-.ifndef NOPORTDOCS
-DISTFILES+=	ug.ps.gz
-.endif
 DIST_SUBDIR=	arpack
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
 
@@ -70,7 +67,13 @@ SVDTESTS=	ssvd dsvd
 SYMTESTS=	ssdrv1 ssdrv2 ssdrv3 ssdrv4 ssdrv5 ssdrv6 \
 		dsdrv1 dsdrv2 dsdrv3 dsdrv4 dsdrv5 dsdrv6
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	ug.ps.gz
+.endif
 
 .if exists(${LOCALBASE}/lib/libatlas.so)
 WITH_BLAS?=	atlas
@@ -150,7 +153,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libarpack.a ${STAGEDIR}${PREFIX}/lib
 	@${INSTALL_DATA} -s ${WRKSRC}_SHARED/libarpack.so.1 ${STAGEDIR}${PREFIX}/lib
 	@${LN} -sf libarpack.so.1 ${STAGEDIR}${PREFIX}/lib/libarpack.so
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/DOCUMENTS/ex-*.doc.gz ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ug.ps.gz ${STAGEDIR}${DOCSDIR}

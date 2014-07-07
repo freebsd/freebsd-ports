@@ -6,5 +6,4 @@ MASTERDIR=	${.CURDIR}/../exim
 
 WITH_PGSQL=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

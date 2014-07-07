@@ -3,7 +3,7 @@
 
 PORTNAME=	ekg2
 PORTVERSION=	0.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
@@ -35,6 +35,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib -lintl -pthread
 CFLAGS+=		-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	ASPELL GPG GSM GTK2 NLS PERL PYTHON SQLITE UNICODE XOSD
+OPTIONS_DEFAULT=ASPELL
 OPTIONS_SUB=	yes
 
 ASPELL_DESC=	Enable spell checking support
@@ -46,8 +47,6 @@ PYTHON_DESC=	Enable python plugin
 SQLITE_DESC=	Enable sqlite plugin
 UNICODE_DESC=	Enable unicode (experimental)
 XOSD_DESC=	Enable xosd plugin
-
-OPTIONS_DEFAULT=ASPELL
 
 ASPELL_CONFIGURE_ON=	--with-aspell
 ASPELL_CONFIGURE_OFF=	--without-aspell

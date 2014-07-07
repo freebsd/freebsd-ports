@@ -1,0 +1,3 @@
+sbin/postsrsd
+man/man8/postsrsd.8.gz
+etc/postsrsd.secret

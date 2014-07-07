@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.0.0
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -72,6 +72,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-target_siginfo
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-arm-signal
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-getvfsbyname
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-kernproc
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-freebsd-target_os_stack.h
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-arm-target_arch_thread.h
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-sparc64-target_arch_cpu.h
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsd-user-trapsig
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-21927cffcc7bcacbb953155f778200846df9f60e
 .endif
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib

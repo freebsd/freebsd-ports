@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	3.108
+PORTVERSION=	3.110
 CATEGORIES=	www
-MASTER_SITES=	http://dev.carrois.com/wordpress/downloads/${PORTNAME}_3_1/ \
+MASTER_SITES=	http://www.carrois.com/wordpress/downloads/${PORTNAME}_3_1/ \
 		SF/horia/${CATEGORIES}/${PORTNAME}${PKGNAMESUFFIX}/ \
 		SF/horia/${CATEGORIES}/${PORTNAME}${PKGNAMESUFFIX}/:bp
 PKGNAMESUFFIX=	-webfont
@@ -37,8 +37,6 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 EXAMPLES_DESC=	UFO source files
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 .for b in index.html fira.css
@@ -46,18 +44,15 @@ do-install:
 	${WRKDIR}/${PORTNAME:S|f|F|}Boilerplate${PORTVERSION:S|.||}/${b} \
 		${STAGEDIR}${WWWDIR}
 .endfor
-
 .for w in eot ttf woff
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/${w}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME:S|f|F|}*${PORTVERSION:S|.||}/WEB/${PORTNAME:S|f|F|}*.${w} \
 		${STAGEDIR}${WWWDIR}/${w}/
 .endfor
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${CP} ${DISTDIR}/Version_Report.rtf ${WRKSRC}/
-	@${CP} ${WRKDIR}/${PORTNAME:S|f|F|}PDF${PORTVERSION:S|.||}/${PORTNAME:S|f|F|}*.pdf ${WRKSRC}/
+	${CP} ${DISTDIR}/Version_Report.rtf ${WRKSRC}/
+	${CP} ${WRKDIR}/${PORTNAME:S|f|F|}PDF${PORTVERSION:S|.||}/${PORTNAME:S|f|F|}*.pdf ${WRKSRC}/
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKDIR}/${PORTNAME:S|f|F|}UFO_beta${PORTVERSION:S|.||} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})

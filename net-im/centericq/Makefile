@@ -7,7 +7,7 @@ PORTREVISION=	16
 CATEGORIES=	net-im
 MASTER_SITES=	http://thekonst.net/download/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	A text mode menu- and window-driven IM interface
 
 DEPRECATED=	Fails to build with new utmpx

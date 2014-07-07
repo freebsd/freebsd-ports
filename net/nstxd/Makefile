@@ -24,12 +24,12 @@ SUB_FILES=	pkg-message
 ALL_TARGET=	nstxd
 INSTALL_TARGET=	nstxd
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nstxd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/nstxd.8 ${STAGEDIR}${PREFIX}/man/man8/
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-.endif	#NOPORTDOCS
 
 .include <bsd.port.mk>

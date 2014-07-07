@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://java.net/projects/opengrok/downloads/download/
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference engine
 
 LICENSE=	CDDL APACHE20

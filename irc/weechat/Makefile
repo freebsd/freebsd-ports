@@ -3,7 +3,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/ \
 		http://perturb.me.uk/distfiles/weechat/:mandocs \
@@ -16,15 +16,15 @@ COMMENT=	Lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+
 CONFLICTS=	weechat-devel-0.*
 
 USE_LDCONFIG=	yes
 USES=		cmake iconv ncurses
 CMAKE_ARGS+=	-DENABLE_GUILE=no
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE ASPELL \
 		GNUTLS NLS ICON MANPAGES DOCS
@@ -58,7 +58,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MASPELL}
-BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL=""
 .else
 CMAKE_ARGS+=	-DENABLE_ASPELL=no

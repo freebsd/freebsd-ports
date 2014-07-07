@@ -10,9 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module for natively copying Perl data structures
 
-USES=		perl5
-USE_PERL5=	configure
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
+USE_PERL5=	configure
+USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

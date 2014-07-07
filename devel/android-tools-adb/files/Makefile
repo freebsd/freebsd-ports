@@ -15,10 +15,8 @@ SRCS+= transport_local.c
 SRCS+= transport_usb.c
 SRCS+= usb_libusb.c
 SRCS+= usb_vendors.c
-SRCS+= utils.c
 
 VPATH+= ../libcutils
-SRCS+= abort_socket.c
 SRCS+= socket_inaddr_any_server.c
 SRCS+= socket_local_client.c
 SRCS+= socket_local_server.c

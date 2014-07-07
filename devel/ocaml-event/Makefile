@@ -9,11 +9,11 @@ MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	michael.grunewald@laposte.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Ocaml wrapper for the libevent API
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 ALL_TARGET=	all allopt
 USES=		gmake

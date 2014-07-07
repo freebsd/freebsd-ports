@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-PORTVERSION=	1.5.8
-PORTREVISION=	2
+PORTVERSION=	1.5.9
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -33,7 +33,11 @@ MAKE_ENV=	X11PATH=${LOCALBASE} LOCALBASE=${LOCALBASE}
 CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 USES+=		gmake
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:${PORTSDIR}/graphics/libboard
@@ -68,6 +72,10 @@ LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
 USES+=	fortran
 . endif
 
+. if defined(WITH_XSHM)
+USE_XORG+=	xext
+. endif
+
 DOCBASE=	README.txt
 PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros		\
@@ -83,7 +91,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 . if !defined(WITHOUT_LAPACK)
 .  if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -100,7 +108,7 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -llapack -lblas
 .endif
 
 pre-configure:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|make|${MAKE_CMD}|' ${BUILD_WRKSRC}/Makefile
 .else
 	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
@@ -116,18 +124,23 @@ pre-configure:
 		-e 's|-lblas -llapack|${LAPACK_LIB}|'			\
 		${BUILD_WRKSRC}/Makefile
 . endif
+. if defined(WITH_XSHM)
+	${REINPLACE_CMD} -e 's|CIMG_XSHM_CFLAGS = #|CIMG_XSHM_CFLAGS =|'	\
+		-e 's|CIMG_XSHM_LDFLAGS = #|CIMG_XSHM_LDFLAGS =|'		\
+		${BUILD_WRKSRC}/Makefile
+. endif
 	${REINPLACE_CMD} -e 's|-pedantic|${CFLAGS}|'			\
 		-e 's|-lpthread|${PTHREAD_LIBS}|' ${BUILD_WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/CImg.h ${STAGEDIR}${PREFIX}/include
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_PROGRAM} ${PROGS:C|^|${BUILD_WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCBASE:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${STAGEDIR}${EXAMPLESDIR} && ${MAKE_CMD} clean)

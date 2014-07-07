@@ -8,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://download.ofb.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
 
-MAINTAINER=	jason-fbsd-ports-gale@shalott.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Secure instant messaging system
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \

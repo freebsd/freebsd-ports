@@ -16,8 +16,8 @@ BUILD_DEPENDS=	p5-List-MoreUtils>=0.28:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Warnings>=0:${PORTSDIR}/devel/p5-Test-Warnings
 
-USES=		perl5
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.pre.mk>
 

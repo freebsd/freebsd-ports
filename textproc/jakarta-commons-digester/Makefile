@@ -31,10 +31,11 @@ ALL_TARGET=	dist
 
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
-.if !defined(NOPORTDOCS)
+
+OPTIONS_DEFINE=	DOCS
+
 OTHERDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
 PORTDOCS=	api ${OTHERDOCS}
-.endif
 
 COMMONS_BEANUTILS_API=	${LOCALBASE}/share/doc/commons-beanutils
 COMMONS_COLLECTIONS_API=${LOCALBASE}/share/doc/commons-collections/apidocs
@@ -67,7 +68,7 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
 	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${WRKSRC}/dist/docs \
 	  && ${FIND} api -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \

@@ -3,6 +3,7 @@
 
 PORTNAME=	eukleides
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.eukleides.org/files/
 
@@ -17,21 +18,20 @@ RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit
 
 USE_TEX=	latex
 USES=		bison gettext iconv gmake tar:bzip2
+INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 USES+=		makeinfo
 USE_TEX+=	pdftex:build
-PORTDOCS=	de.pdf fr.pdf
 INFO=		eukleides
 .endif
 
-.ifndef NOPORTEXAMPLES
+PORTDOCS=	de.pdf fr.pdf
 PORTEXAMPLES=	greenwich.euk sundial.euk vonkoch.euk
-.endif
 
 post-patch:
 	@${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -39,25 +39,23 @@ post-patch:
 	@${GREP} -lR "ginstall-info" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|ginstall-info|install-info|g'
 	@${GREP} -lR "%%[[:alpha:]]\+%%" ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
-		 -e "s|%%PREFIX%%|${STAGEDIR}${PREFIX}|g" \
+		 -e "s|%%PREFIX%%|${PREFIX}|g" \
 		 -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		 -e "s|%%EXAMPLESDIR%%|${STAGEDIR}${EXAMPLESDIR}|g" \
-		 -e "s|%%DOCSDIR%%|${STAGEDIR}${DOCSDIR}|g"
+		 -e "s|%%EXAMPLESDIR%%|\$${PREFIX}/${EXAMPLESDIR_REL}|g" \
+		 -e "s|%%DOCSDIR%%|\$${PREFIX}/${DOCSDIR_REL}|g"
 	@${GREP} -lFR "gcc" ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e "s|gcc|${CC}|g"
-.if defined(${PORT_OPTIONS:MDOCS})
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install:/ s/install_doc//g' \
 		 -e '/^all:/ s/doc//g' ${WRKSRC}/Makefile
 .endif
 
-.ifdef NOPORTEXAMPLES
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -e 's/install_exm$$//g' ${WRKSRC}/Makefile
 .endif
 
 pre-install:
-.ifndef NOPORTEXAMPLES
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 post-install:
 	for i in euktoeps euktopdf euktotex; do \

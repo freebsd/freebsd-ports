@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Frontend to MiMMS (Multimedia Stream ripper)
 
 RUN_DEPENDS=	mimms:${PORTSDIR}/multimedia/mimms

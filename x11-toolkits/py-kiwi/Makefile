@@ -24,12 +24,17 @@ USE_XZ=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 

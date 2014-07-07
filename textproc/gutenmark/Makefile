@@ -3,7 +3,7 @@
 
 PORTNAME=	gutenmark
 PORTVERSION=	20090510
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sandroid.org/GutenMark/wasftp.GutenMark/SoftwareSnapshots/
 DISTNAME=	GutenMark_source_dev-${PORTVERSION}
@@ -14,7 +14,8 @@ COMMENT=	Attractively formatting Project Gutenberg texts
 WRKSRC=		${WRKDIR}/GutenMark-source
 
 USES=		gmake
-USE_WX=		2.8
+USE_WX=		3.0
+WX_UNICODE=	yes
 ALL_TARGET=	default
 
 PLIST_FILES=	bin/GutenMark bin/GutenSplit bin/GUItenMark \

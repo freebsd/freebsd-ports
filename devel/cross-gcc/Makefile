@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.11/
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	kientzle@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	GCC for cross-target development
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \

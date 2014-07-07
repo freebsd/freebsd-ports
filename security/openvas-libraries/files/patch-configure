@@ -1,44 +1,5 @@
-
-$FreeBSD$
-
 --- configure.orig
 +++ configure
-@@ -8282,7 +8282,7 @@
-     *) objformat=elf ;;
-     esac
-   fi
--  version_type=freebsd-$objformat
-+  version_type=freebsd-elf
-   case $version_type in
-     freebsd-elf*)
-       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
-@@ -12192,7 +12192,7 @@
-     *) objformat=elf ;;
-     esac
-   fi
--  version_type=freebsd-$objformat
-+  version_type=freebsd-elf
-   case $version_type in
-     freebsd-elf*)
-       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
-@@ -14764,7 +14764,7 @@
-     *) objformat=elf ;;
-     esac
-   fi
--  version_type=freebsd-$objformat
-+  version_type=freebsd-elf
-   case $version_type in
-     freebsd-elf*)
-       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
-@@ -17343,7 +17343,7 @@
-     *) objformat=elf ;;
-     esac
-   fi
--  version_type=freebsd-$objformat
-+  version_type=freebsd-elf
-   case $version_type in
-     freebsd-elf*)
-       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
 @@ -19078,7 +19078,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else

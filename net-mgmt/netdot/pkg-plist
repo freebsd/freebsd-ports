@@ -173,8 +173,8 @@
 %%WWWDIR%%/htdocs/management/vlan_tasks.html
 %%WWWDIR%%/htdocs/management/zone.html
 %%WWWDIR%%/htdocs/management/zone_tasks.html
-%%WWWDIR%%/htdocs/masondata/obj/.__obj_create_marker
 %%WWWDIR%%/htdocs/masondata/cache/.keep-me
+%%WWWDIR%%/htdocs/masondata/obj/.__obj_create_marker
 %%WWWDIR%%/htdocs/menu_admin.mhtml
 %%WWWDIR%%/htdocs/menu_user.mhtml
 %%WWWDIR%%/htdocs/reports/addr_poll_stats.html 
@@ -232,8 +232,10 @@
 %%WWWDIR%%/lib/Netdot/Exporter/Rancid.pm
 %%WWWDIR%%/lib/Netdot/Exporter/Smokeping.pm
 %%WWWDIR%%/lib/Netdot/Exporter/Sysmon.pm
+%%WWWDIR%%/lib/Netdot/FakeSNMPSession.pm
 %%WWWDIR%%/lib/Netdot/LDAP.pm
 %%WWWDIR%%/lib/Netdot/IPVisual.pm
+%%WWWDIR%%/lib/Netdot/Krb5.pm
 %%WWWDIR%%/lib/Netdot/Manual/.keep-me
 %%WWWDIR%%/lib/Netdot/Mason.pm
 %%WWWDIR%%/lib/Netdot/Meta.pm
@@ -243,6 +245,7 @@
 %%WWWDIR%%/lib/Netdot/Model.pm
 %%WWWDIR%%/lib/Netdot/Model/AccessRight.pm
 %%WWWDIR%%/lib/Netdot/Model/ArpCacheEntry.pm
+%%WWWDIR%%/lib/Netdot/Model/ASN.pm
 %%WWWDIR%%/lib/Netdot/Model/Asset.pm
 %%WWWDIR%%/lib/Netdot/Model/BackboneCable.pm
 %%WWWDIR%%/lib/Netdot/Model/CableStrand.pm
@@ -316,57 +319,58 @@
 %%WWWDIR%%/upgrade/updatedb
 %%WWWDIR%%/upgrade/upgrade-tasks
 %%WWWDIR%%/var/pollstats.rrd
-@dirrm %%WWWDIR%%/bin
-@dirrm %%WWWDIR%%/doc/manual
-@dirrm %%WWWDIR%%/doc
-@dirrm %%WWWDIR%%/htdocs/cable_plant
-@dirrm %%WWWDIR%%/htdocs/css
-@dirrm %%WWWDIR%%/htdocs/generic
-@dirrm %%WWWDIR%%/htdocs/help
-@dirrm %%WWWDIR%%/htdocs/img/graphs
-@dirrm %%WWWDIR%%/htdocs/img
-@dirrm %%WWWDIR%%/htdocs/java_script
-@dirrm %%WWWDIR%%/htdocs/management
-@dirrm %%WWWDIR%%/htdocs/contacts
-@dirrm %%WWWDIR%%/htdocs/operations
-@dirrm %%WWWDIR%%/htdocs/reports
-@dirrm %%WWWDIR%%/htdocs/export
-@dirrm %%WWWDIR%%/htdocs/user_management
-@dirrm %%WWWDIR%%/htdocs/user_help
-@dirrm %%WWWDIR%%/htdocs/rest
-@dirrm %%WWWDIR%%/lib/Netdot/Manual
-@dirrm %%WWWDIR%%/lib/Netdot/Meta/Table
-@dirrm %%WWWDIR%%/lib/Netdot/Meta
-@dirrm %%WWWDIR%%/lib/Netdot/Model/Plugins
-@dirrm %%WWWDIR%%/lib/Netdot/Model/Device/CLI
-@dirrm %%WWWDIR%%/lib/Netdot/Model/Device
-@dirrm %%WWWDIR%%/lib/Netdot/Model
-@dirrm %%WWWDIR%%/lib/Netdot/UI
-@dirrm %%WWWDIR%%/lib/Netdot/Util
-@dirrm %%WWWDIR%%/lib/Netdot/Exporter
-@dirrm %%WWWDIR%%/lib/Netdot
-@dirrm %%WWWDIR%%/lib
+@dirrmtry %%WWWDIR%%/bin
+@dirrmtry %%WWWDIR%%/doc/manual
+@dirrmtry %%WWWDIR%%/doc
+@dirrmtry %%WWWDIR%%/htdocs/cable_plant
+@dirrmtry %%WWWDIR%%/htdocs/css
+@dirrmtry %%WWWDIR%%/htdocs/generic
+@dirrmtry %%WWWDIR%%/htdocs/help
+@dirrmtry %%WWWDIR%%/htdocs/img/graphs
+@dirrmtry %%WWWDIR%%/htdocs/img
+@dirrmtry %%WWWDIR%%/htdocs/java_script
+@dirrmtry %%WWWDIR%%/htdocs/management
+@dirrmtry %%WWWDIR%%/htdocs/contacts
+@dirrmtry %%WWWDIR%%/htdocs/operations
+@dirrmtry %%WWWDIR%%/htdocs/reports
+@dirrmtry %%WWWDIR%%/htdocs/export
+@dirrmtry %%WWWDIR%%/htdocs/user_management
+@dirrmtry %%WWWDIR%%/htdocs/user_help
+@dirrmtry %%WWWDIR%%/htdocs/rest
+@dirrmtry %%WWWDIR%%/lib/Netdot/Manual
+@dirrmtry %%WWWDIR%%/lib/Netdot/Meta/Table
+@dirrmtry %%WWWDIR%%/lib/Netdot/Meta
+@dirrmtry %%WWWDIR%%/lib/Netdot/Model/Plugins
+@dirrmtry %%WWWDIR%%/lib/Netdot/Model/Device/CLI
+@dirrmtry %%WWWDIR%%/lib/Netdot/Model/Device
+@dirrmtry %%WWWDIR%%/lib/Netdot/Model
+@dirrmtry %%WWWDIR%%/lib/Netdot/UI
+@dirrmtry %%WWWDIR%%/lib/Netdot/Util
+@dirrmtry %%WWWDIR%%/lib/Netdot/Exporter
+@dirrmtry %%WWWDIR%%/lib/Netdot
+@dirrmtry %%WWWDIR%%/lib
 @dirrmtry %%WWWDIR%%/etc
-@dirrm %%WWWDIR%%/import
-@dirrm %%WWWDIR%%/export/docs
-@dirrm %%WWWDIR%%/export/nagios
-@dirrm %%WWWDIR%%/export/sysmon
-@dirrm %%WWWDIR%%/export/rancid
-@dirrm %%WWWDIR%%/export/cacti
-@dirrm %%WWWDIR%%/export/ethers
-@dirrm %%WWWDIR%%/export/bind
-@dirrm %%WWWDIR%%/export/dhcpd
-@dirrm %%WWWDIR%%/export/smokeping
-@dirrm %%WWWDIR%%/export
-@dirrmtry %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/import
+@dirrmtry %%WWWDIR%%/export/docs
+@dirrmtry %%WWWDIR%%/export/nagios
+@dirrmtry %%WWWDIR%%/export/sysmon
+@dirrmtry %%WWWDIR%%/export/rancid
+@dirrmtry %%WWWDIR%%/export/cacti
+@dirrmtry %%WWWDIR%%/export/ethers
+@dirrmtry %%WWWDIR%%/export/bind
+@dirrmtry %%WWWDIR%%/export/dhcpd
+@dirrmtry %%WWWDIR%%/export/smokeping
+@dirrmtry %%WWWDIR%%/export
+@dirrmtry %%WWWDIR%%/htdocs/masondata/obj
+@unexec rm -rf %D/%%WWWDIR%%/htdocs/masondata/obj 2> /dev/null || true
+@dirrmtry %%WWWDIR%%/htdocs/masondata/cache
+@dirrmtry %%WWWDIR%%/htdocs/masondata
+@dirrmtry %%WWWDIR%%/htdocs
+@dirrmtry %%WWWDIR%%/tmp/sessions/locks
+@dirrmtry %%WWWDIR%%/tmp/sessions
 @unexec rm -rf %D/%%WWWDIR%%/tmp/sessions 2> /dev/null || true
 @dirrmtry %%WWWDIR%%/tmp
-@unexec rm -rf %D/%%WWWDIR%%/htdocs/masondata/obj 2> /dev/null || true
-@dirrm %%WWWDIR%%/htdocs/masondata/cache
-@dirrm %%WWWDIR%%/htdocs/masondata
-@dirrm %%WWWDIR%%/htdocs
-@dirrm %%WWWDIR%%/upgrade
-@dirrm %%WWWDIR%%/var
-@dirrmtry %%WWWDIR%%/tmp
+@dirrmtry %%WWWDIR%%/upgrade
+@dirrmtry %%WWWDIR%%/var
 @dirrmtry %%WWWDIR%%
 @unexec if [ -d %%WWWDIR%% ]; then echo "===>  There are files/directories remaining under %D/%%WWWDIR%%. If you wish to deinstall netdot completely, inspect this directory for any files you may want to keep and then remove it."; fi

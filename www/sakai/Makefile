@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sakai
-PORTVERSION=	2.9.3
+PORTVERSION=	10.0
 CATEGORIES=	www java
 MASTER_SITES=	http://source.sakaiproject.org/release/${PORTVERSION}/artifacts/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
@@ -12,10 +12,10 @@ COMMENT=	Online Collaboration and Learning Environment
 
 LICENSE=	ECLv2
 LICENSE_NAME=	Educational Community License version 2
-LICENSE_FILE=	${WRKDIR}/ECLv2.txt
+LICENSE_FILE=	${WRKDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -23,9 +23,9 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 SYSTEM_DIR=	common components licenses shared webapps
-TOMCAT_DIR=	${PREFIX}/apache-tomcat-6.0
+TOMCAT_DIR=	${PREFIX}/apache-tomcat-7.0
 PLIST_SUB+=	TOMCAT_DIR=${TOMCAT_DIR:S|^${PREFIX}/||} \
-	SAKAI_VER="${PORTVERSION}"
+		SAKAI_VER="${PORTVERSION}"
 
 post-extract:
 	@cd ${WRKSRC}/webapps && `${LS} -1 |${SED} 's/.war//' >> ${WRKSRC}/list`

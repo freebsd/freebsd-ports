@@ -7,7 +7,7 @@ CATEGORIES=		devel
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-2.1
 DISTNAME=		libds-2.1
 
-MAINTAINER=		kingofgib@users.sourceforge.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=		ANSI Generic Data Structures Library
 
 USE_LDCONFIG=		yes

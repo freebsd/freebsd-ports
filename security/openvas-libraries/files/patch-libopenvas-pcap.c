@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- libopenvas/pcap.c.orig
 +++ libopenvas/pcap.c
 @@ -16,9 +16,7 @@

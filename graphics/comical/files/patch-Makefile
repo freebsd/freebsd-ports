@@ -1,0 +1,9 @@
+--- Makefile.orig	2006-03-05 03:27:10.000000000 +0000
++++ Makefile
+@@ -1,5 +1,5 @@
+ CC = `wx-config --cxx`
+-LDFLAGS = `wx-config --libs` -Lunrar -lunrar -Lunzip -lminiunzip
++LDFLAGS = `wx-config --libs` -Lunrar -lunrar -Lunzip -lminiunzip -lz
+ INSTALL = install
+ INSTALL_PROGRAM = $(INSTALL)
+ prefix = /usr/local

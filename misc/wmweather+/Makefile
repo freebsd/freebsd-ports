@@ -29,6 +29,7 @@ WRKSRC=		${WRKDIR}/wmweather+-${PORTVERSION}
 USES=		iconv
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 CONFIGURE_ARGS+=	--with-libwraster=${LOCALBASE} \
 			--with-libpcre=${LOCALBASE} \
 			--with-libcurl=${LOCALBASE} \

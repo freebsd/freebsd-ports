@@ -10,27 +10,27 @@ MASTER_SITES=	SF
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Free, object-oriented XML-RPC implementation written in C++
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-.endif
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=
+
+DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_CMAKE_ARGS_OFF=	-Dbuild_docs=off
 
 LICENSE=	BSD
 
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
 USES=		cmake
-.if defined(NOPORTDOCS)
-CMAKE_ARGS=	-Dbuild_docs=off
-.endif
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
-PORTDATA=	*
+PORTDOCS=	*
 
 post-patch:
 	${REINPLACE_CMD} -e 's,lib/pkgconfig,libdata/pkgconfig,' ${WRKSRC}/libiqxmlrpc/CMakeLists.txt
-	${REINPLACE_CMD} -e 's,share/doc/libiqxmlrpc-$${Libiqxmlrpc_VERSION},share/libiqxmlrpc,' ${WRKSRC}/doc/CMakeLists.txt
+	${REINPLACE_CMD} -e 's,share/doc/libiqxmlrpc-$${Libiqxmlrpc_VERSION},${DOCSDIR_REL},' ${WRKSRC}/doc/CMakeLists.txt
 
 .include <bsd.port.mk>

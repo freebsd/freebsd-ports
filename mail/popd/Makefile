@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
-MAINTAINER=	ian@freislich.nom.za
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Very fast, highly configurable POP3 server (fully RFC1939 compliant)
 
 MAN5=	popd.conf.5

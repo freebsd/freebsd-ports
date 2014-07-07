@@ -6,7 +6,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	oz@nixil.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Highly configurable, secure, auto reply software
 
 MAN1=		rom.1

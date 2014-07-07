@@ -16,6 +16,8 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USES=		gmake
 
+OPTIONS_DEFINE=	DOCS
+
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 post-patch:
@@ -31,9 +33,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gspoof ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}/pixmap
 	${INSTALL_DATA} ${WRKSRC}/pixmap/icon.png ${STAGEDIR}${DATADIR}/pixmap
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.semprixd.com/shares/ports/
 
-MAINTAINER=	semprix@gmx.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
 USES=		dos2unix

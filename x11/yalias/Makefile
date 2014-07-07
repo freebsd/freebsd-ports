@@ -17,10 +17,10 @@ USE_GNOME=	gtk20
 ALL_TARGET=	yalias
 MAKE_ARGS=	prefix=${PREFIX} YALIASDIR=${DATADIR}
 
-.ifndef(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

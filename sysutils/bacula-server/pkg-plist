@@ -3,12 +3,15 @@
 @sample %%ETCDIR%%/bacula-dir.conf.sample
 @group wheel
 @sample %%ETCDIR%%/bacula-sd.conf.sample
+lib/libbaccats.la
 lib/libbaccats.so
 lib/libbaccats.so.5
 lib/libbaccats.so.5.0.2
+lib/libbaccats-%%DBTYPE%%.la
 lib/libbaccats-%%DBTYPE%%.so
 lib/libbaccats-%%DBTYPE%%.so.5
 lib/libbaccats-%%DBTYPE%%.so.5.0.2
+lib/libbacsql.la
 lib/libbacsql.so
 lib/libbacsql.so.5
 lib/libbacsql.so.5.0.2
@@ -16,10 +19,8 @@ man/man1/bacula-bwxconsole.1.gz
 man/man1/bacula-tray-monitor.1.gz
 man/man1/bsmtp.1.gz
 man/man8/bacula-dir.8.gz
-man/man8/bacula-fd.8.gz
 man/man8/bacula-sd.8.gz
 man/man8/bacula.8.gz
-man/man8/bconsole.8.gz
 man/man8/bcopy.8.gz
 man/man8/bextract.8.gz
 man/man8/bls.8.gz
@@ -76,7 +77,3 @@ sbin/dbcheck
 %%DATADIR%%/update_%%DBTYPE%%_tables
 @owner root
 @group wheel
-@dirrm %%DATADIR%%
-@exec mkdir -p %%BACULA_DIR%%
-@dirrmtry %%BACULA_DIR%%
-@dirrmtry %%ETCDIR%%

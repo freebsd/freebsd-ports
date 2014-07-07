@@ -21,13 +21,13 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PORTDOCS=	Changes README
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 	${INSTALL} ${WRKSRC}/bin/check_memcached ${STAGEDIR}${PREFIX}/libexec/nagios/check_memcached
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
 
 .include <bsd.port.mk>

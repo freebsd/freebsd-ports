@@ -51,6 +51,8 @@ MAKE_ENV+=	ORDERINGSF=-Dmetis
 
 PLIST_SUB+=	MUMPSVERSION=${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
@@ -120,13 +122,10 @@ do-install:
 .ifndef WITH_MPI
 	${INSTALL_DATA} ${WRKSRC}/libseq/libmpiseq.a ${STAGEDIR}${PREFIX}/lib
 .endif
-.ifndef NOPORTDOCS
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.ps ${STAGEDIR}${DOCSDIR}
 	${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/userguide_${PORTVERSION}.ps
-.endif
-.ifndef NOPORTEXAMPLES
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 . for ex in Makefile README *.c *.F input_simpletest_*
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
@@ -134,7 +133,6 @@ do-install:
 . for ex in c_example *simpletest
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
-.endif
 
 regression-test:
 .if defined (WITH_MPI) && defined(MAINTAINER_MODE)

@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pgsql@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Powerful GUI PostgreSQL database administration tool and toolkit
 
 DEPRECATED=	not maintained upstreams for ten years
@@ -23,6 +23,8 @@ USE_PGSQL=	server:extract
 TCLVERSION?=	8.4
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
 PGACCESSDIR=	${PREFIX}/share/postgresql/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS
 
 NO_STAGE=	yes
 post-patch:
@@ -47,12 +49,10 @@ do-install:
 .for targetfile in pgaccess pgmonitor
 	${INSTALL_SCRIPT} ${WRKDIR}/${targetfile}.sh ${PREFIX}/bin/${targetfile}
 .endfor
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ; \
 	 cd ${WRKSRC}/doc/html ;\
 	 ${TAR} cf - * | \
 	 ( cd ${DOCSDIR}; ${TAR} xf - ) ; \
 	 ${CHOWN} -R 0:0 ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

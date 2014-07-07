@@ -8,5 +8,4 @@ WITHOUT_X11=	yes
 
 MASTERDIR=	${.CURDIR}/../../math/ploticus
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

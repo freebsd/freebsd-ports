@@ -15,14 +15,12 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 DOCS=		INSTALLATION doc/README doc/filters.example
 SHAREDOCS=	referers.regexp useragents.regexp
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/share && ${INSTALL_DATA} ${SHAREDOCS} ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

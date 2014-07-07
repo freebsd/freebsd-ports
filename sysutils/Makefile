@@ -712,7 +712,6 @@
     SUBDIR += procenv
     SUBDIR += procmap
     SUBDIR += progsreiserfs
-    SUBDIR += psgconf
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack
@@ -732,6 +731,7 @@
     SUBDIR += py-bcfg2
     SUBDIR += py-danzfs
     SUBDIR += py-drmaa
+    SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
     SUBDIR += py-glances

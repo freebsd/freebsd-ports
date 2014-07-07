@@ -59,6 +59,9 @@ libdata/pkgconfig/linphone.pc
 libdata/pkgconfig/mediastreamer.pc
 libdata/pkgconfig/ortp.pc
 libexec/mediastream
+man/man1/linphonec.1.gz
+man/man1/linphonecsh.1.gz
+man/man1/sipomatic.1.gz
 %%DATADIR%%/sounds/hello16000.wav
 %%DATADIR%%/sounds/hello8000.wav
 %%DATADIR%%/sounds/ringback.wav

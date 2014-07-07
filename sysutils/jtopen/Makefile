@@ -13,7 +13,7 @@ COMMENT=	JTOpen is a Java library to access OS/400 or i5/OS system
 LICENSE=	IBMPL10
 LICENSE_NAME=	IBM Public License 1.0
 LICENSE_FILE=	${FILESDIR}/IBMPL10
-LICENSE_PERMS=	dist-sell pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		zip
 NO_WRKSUBDIR=	yes

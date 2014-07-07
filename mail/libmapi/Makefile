@@ -3,7 +3,7 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://tracker.openchange.org/attachments/download/${DOWNLOADCODE}/
 DISTNAME=	openchange-${PORTVERSION}-${CODENAME}

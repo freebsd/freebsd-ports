@@ -417,8 +417,7 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDIR%%/scripts/texlive/tlmgr.pl
 %%TEXMFDIR%%/web2c/fmtutil.cnf
 %%TEXMFCONFIGDIR%%/web2c/.keep_me
-@exec %%INSTALL_DATA%% %D/%%TEXMFDIR%%/web2c/fmtutil.cnf %D/%%FMTUTIL_CNF%%
-@unexec /bin/rm -f %D/%%FMTUTIL_CNF%%
+%%FMTUTIL_CNF%%
 @dirrmtry %%TEXMFCONFIGDIR%%/web2c
 @dirrmtry %%TEXMFCONFIGDIR%%
 @dirrmtry %%TEXMFDISTDIR%%/scripts/accfonts

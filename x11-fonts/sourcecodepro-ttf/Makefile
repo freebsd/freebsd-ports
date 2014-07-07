@@ -13,7 +13,8 @@ COMMENT=	A set of fonts by Adobe designed for coders
 LICENSE=	OFL11
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USES=		zip
 USE_XORG=	x11
@@ -26,24 +27,11 @@ SUB_LIST=	FONTDIR=${FONTDIR}
 
 FONTNAME=	SourceCodePro
 FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-INSTDAT=		fonts.dir fonts.scale
-
-MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
-
-NO_STAGE=	yes
-do-build:
-	cd ${WRKSRC}/TTF/ && ${MKFONTSCL_CMD}
-	cd ${WRKSRC}/TTF/ && ${MKFONTDIR_CMD}
+NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTDIR}
 	cd ${WRKSRC}/TTF/ &&	\
-	${INSTALL_DATA} ${INSTDAT} *.ttf ${FONTDIR}
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>

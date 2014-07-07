@@ -9,7 +9,7 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	incubator/log4net/${PORTVERSION}
 DISTNAME=	incubating-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Port for .NET of the Apache Logging Services project
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -44,13 +44,11 @@ PLIST_DIRS+=		%%DATADIR%%/lib \
 			%%DATADIR%%/bin \
 			%%DATADIR%%
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if !defined(NOPORTEXAMPLES)
+PORTDOCS=	*
+
 PORTEXAMPLES=	*
-.endif
 
 do-install:
 	@-${MKDIR} ${STAGEDIR}${DATADIR}/lib
@@ -62,17 +60,13 @@ do-install:
 		-e "s:%%JAVAJARDIR%%:${JAVAJARDIR}:" ${WRKSRC}/bin/${PORTNAME}2
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}2 ${STAGEDIR}${DATADIR}/bin/${PORTNAME}
 	${LN} -sf ${DATADIR}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
 	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in LICENSE* README*
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
-.endif
-.if !defined(NOPORTEXAMPLES)
 	@-${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 	@cd ${WRKSRC}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>

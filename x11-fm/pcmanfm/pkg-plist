@@ -1,7 +1,5 @@
 bin/pcmanfm
-@unexec if cmp -s %D/etc/xdg/pcmanfm/default/pcmanfm.conf %D/etc/xdg/pcmanfm/default/pcmanfm.conf.sample; then rm -f %D/etc/xdg/pcmanfm/default/pcmanfm.conf; fi
-etc/xdg/pcmanfm/default/pcmanfm.conf.sample
-@exec if [ ! -f %D/etc/xdg/pcmanfm/default/pcmanfm.conf ] ; then cp -p %D/%F %B/pcmanfm.conf; fi
+@sample etc/xdg/pcmanfm/default/pcmanfm.conf.sample
 include/pcmanfm-modules.h
 man/man1/pcmanfm.1.gz
 share/applications/pcmanfm-desktop-pref.desktop
@@ -65,10 +63,12 @@ share/applications/pcmanfm.desktop
 %%DATADIR%%/ui/connect.ui
 %%DATADIR%%/ui/desktop-pref.ui
 %%DATADIR%%/ui/pref.ui
+%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lg
+%%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tt_RU
 @dirrmtry %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fo
 @dirrmtry lib/pcmanfm
 @dirrmtry etc/xdg/pcmanfm/default
 @dirrmtry etc/xdg/pcmanfm

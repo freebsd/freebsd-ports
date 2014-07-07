@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://download.macromedia.com/pub/labs/flex_compiler_shell/
 DISTNAME=	flex_compiler_shell_012307
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Adobe Flex Compiler Shell
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \

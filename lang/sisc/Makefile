@@ -8,7 +8,7 @@ CATEGORIES=	lang scheme java
 MASTER_SITES=	SF/${PORTNAME}/SISC/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An extensible Java-based Scheme interpreter
+COMMENT=	Extensible Java-based Scheme interpreter
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

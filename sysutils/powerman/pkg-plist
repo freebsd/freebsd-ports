@@ -55,9 +55,9 @@ bin/powerman
 %%ETCDIR%%/wti.dev
 include/libpowerman.h
 lib/libpowerman.a
-lib/libpowerman.la
 lib/libpowerman.so
 lib/libpowerman.so.0
+lib/libpowerman.so.0.0.0
 lib/stonith/plugins/external/powerman
 libdata/pkgconfig/libpowerman.pc
 sbin/httppower

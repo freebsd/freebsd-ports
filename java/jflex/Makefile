@@ -22,11 +22,11 @@ BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	jar
 MAKE_ENV+=	CLASSPATH="${JAVALIBDIR}/junit.jar"
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 SUB_FILES=	jflex.sh
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-extract:
 	${MKDIR} ${WRKSRC}/tools
@@ -36,10 +36,8 @@ post-extract:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jflex.sh ${STAGEDIR}${PREFIX}/bin/jflex
 	${INSTALL_DATA} ${WRKSRC}/lib/JFlex.jar ${STAGEDIR}${JAVAJARDIR}/JFlex.jar
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-.endif
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for EXAMPLE in binary byaccj cup interpreter java simple standalone
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${EXAMPLE}

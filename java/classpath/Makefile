@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	A GNU project to create a free Java class library
+COMMENT=	GNU project to create a free Java class library
 
 LICENSE=	GPLv2
 

@@ -8,7 +8,7 @@ CATEGORIES=	devel tcl
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	dan@rucci.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	C++ library that persistently stores graph like data
 
 LIB_DEPENDS=	mk4.0:${PORTSDIR}/databases/metakit \

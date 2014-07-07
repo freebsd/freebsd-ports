@@ -10,7 +10,7 @@ DISTNAME=	comiccron-${PORTVERSION}.pl
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	vvelox@vvelox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cron like tool that performs a single pass on a cronfile
 
 RUN_DEPENDS=	p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron \

@@ -27,6 +27,8 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 FIND_DATA=	lib
 FIND_DOCS=	docs
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	for FILE in ${REPLACE_FILES}; do \
 	    ${REINPLACE_CMD} -e "/%%DATADIR%%/s//${DATADIR:S/\//\\\//g}/g" $${FILE} ;\
@@ -36,9 +38,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${DATADIR}/${FIND_DATA}
 	cd ${WRKSRC} && ${FIND} ${FIND_DATA} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/${FIND_DOCS} && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-.endif
 
 .include <bsd.port.mk>

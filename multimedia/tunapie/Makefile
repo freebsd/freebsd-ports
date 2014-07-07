@@ -3,12 +3,12 @@
 
 PORTNAME=	tunapie
 PORTVERSION=	2.1.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.1
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.r,rc,}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Tuner for streaming internet radio and TV
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USE_WX=	2.6+
+USE_WX=		3.0+
 WX_COMPS=	python:run
 
 OPTIONS_DEFINE=	ADULT AMAROK TOTEM VLC XINE

@@ -1,5 +1,5 @@
 Index: makefile.in
-@@ -388,7 +388,9 @@
+@@ -433,7 +433,9 @@
  	else \
  		cp $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
  	fi'
@@ -10,7 +10,7 @@ Index: makefile.in
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
  		$(SYSCONFDIR)/lynx.tmp | \
-@@ -396,9 +398,11 @@
+@@ -441,9 +443,11 @@
  	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
  	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
@@ -24,7 +24,7 @@ Index: makefile.in
  
  LYHelp.h : help_files.sed $(srcdir)/LYHelp.hin
  	@echo Creating $@
-@@ -420,17 +424,17 @@
+@@ -465,17 +469,17 @@
  	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(SYSCONFDIR)
@@ -37,8 +37,8 @@ Index: makefile.in
  
  uninstall ::
  @MSG_DIR_MAKE@	cd $(PO_DIR) && $(MAKE_RECUR) uninstall
- 	-rm -f $(BINDIR)/lynx$x
- 	-rm -f $(MANDIR)/lynx.1
+ 	-rm -f $(BINDIR)/$(binary_PROG)
+ 	-rm -f $(MANDIR)/$(actual_PROG).1
 -	-rm -f $(SYSCONFDIR)/lynx.cfg
 -	-rm -f $(SYSCONFDIR)/lynx.lss
 +	-rm -f $(SYSCONFDIR)/lynx.cfg.sample

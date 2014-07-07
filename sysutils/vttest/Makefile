@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vttest
-PORTVERSION=	2013.08.18
+PORTVERSION=	2014.03.05
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://invisible-island.net/vttest/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,,g}

@@ -30,16 +30,16 @@ CFLAGS+=	-fPIC
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/NTL
 	${INSTALL_DATA} ${WRKSRC}/../include/NTL/* ${STAGEDIR}${PREFIX}/include/NTL/
 	${INSTALL_DATA} ${WRKSRC}/ntl.a ${STAGEDIR}${PREFIX}/lib/libntl.a
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \

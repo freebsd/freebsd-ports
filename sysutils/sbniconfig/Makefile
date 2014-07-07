@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 DISTFILES=	# none
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configurator for Granch SBNI12-xx adapters
 
 NO_WRKSUBDIR=	yes

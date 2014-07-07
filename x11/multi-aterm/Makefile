@@ -16,24 +16,13 @@ CONFIGURE_ARGS=--with-xpm=${LOCALBASE}
 
 DOCS=		AUTHORS ChangeLog INSTALL TODO
 
-.if defined(WITH_UTMP)
-CONFIGURE_ARGS+=	--enable-utmp
-.endif
+OPTIONS_DEFINE=	DOCS UTMP WTMP
 
-.if defined(WITH_WTMP)
-CONFIGURE_ARGS+=	--enable-wtmp
-.endif
+UTMP_CONFIGURE_ON=	--enable-utmp
+WTMP_CONFIGURE_ON=	--enable-wtmp
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can specify the following options:"
-	@${ECHO_MSG} "WITH_UTMP=yes - enable utmp support"
-	@${ECHO_MSG} "WITH_WTMP=yes - enable wtmp support"
-
-.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -88,6 +88,8 @@ CONTRIBS=	\
 	scripts/staticmathjax/README.org \
 	scripts/staticmathjax/README.txt \
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i .pv 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/Makefile
@@ -107,10 +109,8 @@ post-install:
 .for i in ${CONTRIBS}
 	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/$$(dirname ${i})
 .endfor
-.if !defined(NOPORTDOCS)
 .for i in org.pdf orgcard.pdf orgguide.pdf
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

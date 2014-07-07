@@ -4,37 +4,35 @@
 PORTNAME=	fcgi
 PORTVERSION=	2.4.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.fastcgi.com/dist/
+MASTER_SITES=	http://www.fastcgi.com/dist/ \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-devkit
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	FastCGI Development Kit
 
-USE_AUTOTOOLS=	libtool
+LICENSE_FILE=	LICENSE.TERMS
+
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		cgi-fcgi.1
-MAN3=		FCGI_Accept.3 FCGI_Finish.3 FCGI_SetExitStatus.3 \
-		FCGI_StartFilterData.3
+PORTDOCS=	*.htm *.html *.gif fastcgi-prog-guide/* fastcgi-whitepaper/*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.for y in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/doc/${y} ${MANPREFIX}/man/man1
-.endfor
-.for x in ${MAN3}
-	@${INSTALL_MAN} ${WRKSRC}/doc/${x} ${MANPREFIX}/man/man3
-.endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.htm* ${WRKSRC}/doc/*.gif \
-		${DOCSDIR}
-.for i in fastcgi-prog-guide fastcgi-whitepaper
-	@${MKDIR} ${DOCSDIR}/${i}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${i}/* ${DOCSDIR}/$i
-.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfcgi.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfcgi++.so.0.0.0
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${STAGEDIR}${MANPREFIX}/man/man3
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	@${RM} ${STAGEDIR}${DOCSDIR}/*.[13]
 .endif
 
 .include <bsd.port.mk>

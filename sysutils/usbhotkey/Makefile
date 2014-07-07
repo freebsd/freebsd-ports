@@ -6,7 +6,7 @@ PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to remap USB keyboards under X11
 
 LICENSE=	GPLv2

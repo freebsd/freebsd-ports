@@ -428,7 +428,6 @@
     SUBDIR += xorg-apps
     SUBDIR += xorg-cf-files
     SUBDIR += xorg-docs
-    SUBDIR += xorg-edit
     SUBDIR += xorg-libraries
     SUBDIR += xorg-minimal
     SUBDIR += xplsprinters

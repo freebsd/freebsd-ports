@@ -19,14 +19,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin|${PREFIX}/bin|g' ${WRKSRC}/qgmailnotifier.pro
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

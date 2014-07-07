@@ -7,7 +7,7 @@ CATEGORIES=	mail dns
 MASTER_SITES=	http://www.nuclearelephant.com/projects/rabl/sources/ \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Reactive Autonomous Blackhole List server
 
 GNU_CONFIGURE=		yes

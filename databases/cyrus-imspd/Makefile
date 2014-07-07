@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 USE_RC_SUBR=	imspd
 DOCSDIR=	${PREFIX}/share/doc/imspd
 
+OPTIONS_DEFINE=	DOCS
+
 NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e "s|<sasl.h>|<sasl2/sasl.h>|" \
@@ -35,7 +37,6 @@ post-install:
 		${MKDIR} /var/imsp
 		${INSTALL_DATA} ${WRKSRC}/imsp/options.sample \
 			/var/imsp/options.dist
-.if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/notes/Setup-instructions \
 				${WRKSRC}/notes/option.registry \
@@ -43,7 +44,6 @@ post-install:
 				${WRKSRC}/notes/imsp.implementation \
 				${WRKSRC}/notes/imsp.implementation.updates \
 			${DOCSDIR}
-.endif
 		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

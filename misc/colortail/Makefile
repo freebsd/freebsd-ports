@@ -13,12 +13,12 @@ LICENCE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/colortail ${STAGEDIR}${PREFIX}/bin
 
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example-conf/conf* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

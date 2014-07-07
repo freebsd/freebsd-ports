@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-DESTDIR=	${PREFIX}
-BINDIR=	/bin
+DESTDIR=
+BINDIR=	${PREFIX}/bin
 
 CFLAGS+=	-I${LOCALBASE}/include/ijs
 LDADD=	-L${LOCALBASE}/lib -lijs

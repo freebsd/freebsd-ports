@@ -6,7 +6,7 @@ PORTVERSION=	1.1.b1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dancingfortune.com/projects/archivesmtp/files/
 
-MAINTAINER=	contact@dancingfortune.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	SMTP mail archiver
 
 CFLAGS+=	${PTHREAD_CFLAGS}

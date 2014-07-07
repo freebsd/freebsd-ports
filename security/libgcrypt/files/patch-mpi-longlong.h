@@ -1,5 +1,42 @@
---- ./mpi/longlong.h.orig	2010-02-22 19:04:43.000000000 +0900
-+++ ./mpi/longlong.h	2010-11-01 18:25:34.000000000 +0900
+--- ./mpi/longlong.h.orig	2013-07-25 09:10:04.000000000 +0000
++++ ./mpi/longlong.h	2014-06-09 18:53:59.000000000 +0000
+@@ -188,8 +188,8 @@
+ #define add_ssaaaa(sh, sl, ah, al, bh, bl) \
+   __asm__ ("adds %1, %4, %5\n"                                          \
+ 	   "adc  %0, %2, %3"                                            \
+-	   : "=r" ((USItype)(sh)),                                      \
+-	     "=&r" ((USItype)(sl))                                      \
++	   : "=r" ((sh)),                                               \
++	     "=&r" ((sl))                                               \
+ 	   : "%r" ((USItype)(ah)),                                      \
+ 	     "rI" ((USItype)(bh)),                                      \
+ 	     "%r" ((USItype)(al)),                                      \
+@@ -197,8 +197,8 @@
+ #define sub_ddmmss(sh, sl, ah, al, bh, bl) \
+   __asm__ ("subs %1, %4, %5\n"                                          \
+ 	   "sbc  %0, %2, %3"                                            \
+-	   : "=r" ((USItype)(sh)),                                      \
+-	     "=&r" ((USItype)(sl))                                      \
++	   : "=r" ((sh)),                                               \
++	     "=&r" ((sl))                                               \
+ 	   : "r" ((USItype)(ah)),                                       \
+ 	     "rI" ((USItype)(bh)),                                      \
+ 	     "r" ((USItype)(al)),                                       \
+@@ -225,10 +225,10 @@
+ 	   : "r0", "r1", "r2")
+ #else
+ #define umul_ppmm(xh, xl, a, b)                                         \
+-  __asm__ ("%@ Inlined umul_ppmm\n"                                     \
+-	   "umull %r1, %r0, %r2, %r3"                                   \
+-		   : "=&r" ((USItype)(xh)),                             \
+-		     "=r" ((USItype)(xl))                               \
++  __asm__ (                                                             \
++	   "umull %1, %0, %2, %3"                                       \
++		   : "=&r" ((xh)),                                      \
++		     "=r" ((xl))                                        \
+ 		   : "r" ((USItype)(a)),                                \
+ 		     "r" ((USItype)(b))                                 \
+ 		   : "r0", "r1")
 @@ -437,8 +437,8 @@
  #define add_ssaaaa(sh, sl, ah, al, bh, bl) \
    __asm__ ("addl %5,%1\n"                                               \

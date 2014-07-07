@@ -7,7 +7,7 @@ CATEGORIES=	security mail
 MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/ \
 		LOCAL/ade
 
-MAINTAINER=	andrew@arda.homeunix.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	User authentication and password changing daemon utility
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base

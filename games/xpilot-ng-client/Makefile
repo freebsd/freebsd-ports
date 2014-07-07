@@ -7,5 +7,4 @@ COMMENT=	Enhanced version of XPilot (client program)
 
 MASTERDIR=	${.CURDIR}/../xpilot-ng-server
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

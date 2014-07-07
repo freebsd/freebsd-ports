@@ -15,10 +15,10 @@ COMMENT=	Simple Document Format - "author-friendly" mark-up system
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

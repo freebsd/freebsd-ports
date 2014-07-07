@@ -32,10 +32,4 @@ lib/libcppdb.so.0.3.1
 %%SQLITE3%%lib/libcppdb_sqlite3.so
 %%SQLITE3%%lib/libcppdb_sqlite3.so.0
 %%SQLITE3%%lib/libcppdb_sqlite3.so.0.3.1
-share/licenses/cppdb-0.3.1/BSL
-share/licenses/cppdb-0.3.1/LICENSE
-share/licenses/cppdb-0.3.1/MIT
-share/licenses/cppdb-0.3.1/catalog.mk
-@dirrm share/licenses/cppdb-0.3.1
-@dirrm share/licenses
 @dirrm include/cppdb

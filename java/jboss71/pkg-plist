@@ -1,3 +1,5 @@
+@owner www
+@group www
 jboss-as-7.1.3.Final/LICENSE.txt
 jboss-as-7.1.3.Final/README.txt
 jboss-as-7.1.3.Final/appclient/configuration/appclient.xml
@@ -1456,3 +1458,5 @@ jboss-as-7.1.3.Final/welcome-content/noredirect.html
 @dirrm jboss-as-7.1.3.Final/appclient/configuration
 @dirrm jboss-as-7.1.3.Final/appclient
 @dirrm jboss-as-7.1.3.Final
+@owner root
+@group wheel

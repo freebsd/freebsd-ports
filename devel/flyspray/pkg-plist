@@ -7,7 +7,11 @@
 %%DATADIR%%/header.php
 %%DATADIR%%/htaccess.dist
 %%DATADIR%%/flyspray.conf.php-dist
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%DATADIR%%/flyspray.conf.php
+@owner
+@group
 %%DATADIR%%/includes/.htaccess
 %%DATADIR%%/includes/class.backend.php
 %%DATADIR%%/includes/class.database.php

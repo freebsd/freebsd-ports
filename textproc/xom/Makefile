@@ -20,27 +20,22 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/XOM
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
-.if !defined(NOPORTDOCS)
 PORTDOCS=	overview.html apidocs
-PLIST_FILES+=	%%EXAMPLESDIR%%/xom-samples.jar
-PLIST_DIRS=	%%EXAMPLESDIR%%
-.endif
+PORTEXAMPLES=	xom-samples.jar
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/xom-samples.jar ${STAGEDIR}${EXAMPLESDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs
-	@cd ${WRKSRC}/ && ${FIND} ${PORTDOCS} \
+	cd ${WRKSRC}/ && ${FIND} ${PORTDOCS} \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
-.endif
 
 .include <bsd.port.mk>

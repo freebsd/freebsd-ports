@@ -8,7 +8,7 @@ MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
 DISTNAME=	samhain_signed-${PORTVERSION}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	The Samhain Intrusion Detection System
 
 LICENSE=	GPLv2

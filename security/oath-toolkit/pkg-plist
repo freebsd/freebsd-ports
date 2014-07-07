@@ -10,14 +10,13 @@ include/liboath/oath.h
 %%PSKC%%include/pskc/pskc.h
 %%PSKC%%include/pskc/version.h
 lib/liboath.a
-lib/liboath.la
 lib/liboath.so
-lib/liboath.so.1
+lib/liboath.so.0
+lib/liboath.so.0.1.3
 %%PSKC%%lib/libpskc.a
-%%PSKC%%lib/libpskc.la
 %%PSKC%%lib/libpskc.so
 %%PSKC%%lib/libpskc.so.0
-lib/security/pam_oath.la
+%%PSKC%%lib/libpskc.so.0.0.1
 lib/security/pam_oath.so
 libdata/pkgconfig/liboath.pc
 %%PSKC%%libdata/pkgconfig/libpskc.pc

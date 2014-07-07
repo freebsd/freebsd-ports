@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: secondarynamenode
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# secondarynamenode_enable (bool):     Set to NO by default.
+#                                Set it to YES to enable secondarynamenode.
+
+. /etc/rc.subr
+
+name=secondarynamenode
+rcvar=secondarynamenode_enable
+
+load_rc_config "${name}"
+
+: ${secondarynamenode_enable:=NO}
+: ${secondarynamenode_user:=%%HDFS_USER%%}
+
+command="%%PREFIX%%/sbin/hadoop-daemon.sh"
+command_args='--config %%ETCDIR%% start secondarynamenode'
+
+stop_cmd=secondarynamenode_stop
+
+secondarynamenode_stop () {
+  su -m ${secondarynamenode_user} -c "${command} --config %%ETCDIR%% stop secondarynamenode"
+}
+
+run_rc_command "$1"

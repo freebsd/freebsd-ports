@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF/osace/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	cykyc@yahoo.com
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Asynchronous TCP and UDP port scanner
 
 LICENSE=	GPLv2

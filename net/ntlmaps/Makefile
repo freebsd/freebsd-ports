@@ -15,6 +15,8 @@ USES=		dos2unix
 
 DOCS=		COPYING Install.txt changelog.txt readme.txt research.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 	    's,^#! /usr/bin/python,#!${PYTHON_CMD},' ${WRKSRC}/main.py
@@ -25,12 +27,10 @@ do-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/ntlmaps
 	${INSTALL_DATA} ${WRKSRC}/*.py* \

@@ -8,7 +8,7 @@ MASTER_SITES=	https://java.net/projects/javamail/downloads/download/source/
 DISTNAME=	javaxmail-${PORTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Reference Implementation of JSR 919
+COMMENT=	Reference Implementation of JSR 919
 
 LICENSE=	GPLv2 CDDL
 LICENSE_COMB=	dual

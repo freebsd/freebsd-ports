@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://sources.redhat.com/pub/${PORTNAME}-win32/
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	${PORTNAME}-w32-${PORTVERSION:S/./-/g}-release
 
-MAINTAINER=	ed@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	POSIX threads library for Windows compiled with MinGW32
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \

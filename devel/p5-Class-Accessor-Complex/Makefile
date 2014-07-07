@@ -11,13 +11,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Arrays, hashes, booleans, integers, sets, and more
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Accessor-Installer>=0:${PORTSDIR}/devel/p5-Class-Accessor-Installer \
 		p5-Data-Miscellany>=0:${PORTSDIR}/devel/p5-Data-Miscellany \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Class-Accessor-Installer>=0:${PORTSDIR}/devel/p5-Class-Accessor-Installer
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>

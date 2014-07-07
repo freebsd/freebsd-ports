@@ -21,6 +21,8 @@ NO_CDROM=	${NO_PACKAGE}
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${CP} ${FILESDIR}/oconv.c ${WRKSRC}/
 	@${CP} ${FILESDIR}/Makefile.bin ${WRKSRC}/Makefile
@@ -48,10 +50,8 @@ do-install:
 		${STAGEDIR}${DATADIR}/lpmud/ACCESS.ALLOW.example
 	${MV} ${STAGEDIR}${DATADIR}/lpmud/ACCESS.DENY \
 		${STAGEDIR}${DATADIR}/lpmud/ACCESS.DENY.example
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 post-install:
 	# Need a temporary directory for certain files

@@ -1,15 +1,13 @@
-@unexec if cmp -s %D/etc/softhsm.conf %D/etc/softhsm.conf.sample; then rm -f %D/etc/softhsm.conf; else echo If permanently deleting this package, %D/etc/softhsm.conf must be removed manually; fi
 bin/softhsm
 bin/softhsm-keyconv
-lib/softhsm/libsofthsm.a
-lib/softhsm/libsofthsm.la
-lib/softhsm/libsofthsm.so
 @sample etc/softhsm.conf.sample
+lib/softhsm/libsofthsm.a
+lib/softhsm/libsofthsm.so
 @dirrm lib/softhsm
-@exec install -d -o root -g wheel -m 700 %D/var/lib/softhsm
 man/man1/softhsm-keyconv.1.gz
 man/man1/softhsm.1.gz
 man/man5/softhsm.conf.5.gz
-@dirrm var/lib/softhsm
-@dirrmtry var/lib
-@dirrmtry var
+@exec mkdir -p /var/lib
+@exec install -d -o root -g wheel -m 700 /var/lib/softhsm
+@unexec rmdir /var/lib/softhsm 2>/dev/null || true
+@unexec rmdir /var/lib 2>/dev/null || true

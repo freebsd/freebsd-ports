@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Perl implementation that hides a valuable port on your server
 
 NO_WRKSUBDIR=	yes

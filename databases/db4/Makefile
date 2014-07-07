@@ -12,7 +12,7 @@ DIST_SUBDIR=	bdb
 
 DEPRECATED=	Please use databases/db5 or db6 for new installs.
 
-MAINTAINER=	mandree@FreeBSD.org
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
@@ -24,7 +24,11 @@ CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 \
 		--includedir=${PREFIX}/include/db4
 USE_LDCONFIG=	yes
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install install_docs
 PORTDOCS=	*
 .endif
@@ -32,7 +36,7 @@ PORTDOCS=	*
 # the db install_docs target installs an empty directory, kill it
 NO_STAGE=	yes
 # (it's not packaged and it's not needed):
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${RMDIR} ${PREFIX}/share/doc/db4/ref/splash
 .endif

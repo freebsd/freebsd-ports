@@ -1,6 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Unique/.packlist
 %%SITE_PERL%%/Array/Unique.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Unique/.packlist
 %%PERL5_MAN3%%/Array::Unique.3.gz
-@dirrmtry %%SITE_PERL%%/Array
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Unique
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Unique
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
+@dirrmtry %%SITE_PERL%%/Array

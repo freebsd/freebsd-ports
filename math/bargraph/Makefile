@@ -22,17 +22,15 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 SHEBANG_FILES=	bargraph.pl
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bargraph.pl ${STAGEDIR}${PREFIX}/bin/bargraph
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
-.if !defined (NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} ${WRKSRC}/samples/*.perf  ${WRKSRC}/samples/*.png ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

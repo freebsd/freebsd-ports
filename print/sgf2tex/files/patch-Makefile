@@ -1,0 +1,58 @@
+--- Makefile.orig	2001-06-18 12:04:35.000000000 +0800
++++ Makefile	2014-07-07 15:16:57.375590865 +0800
+@@ -14,12 +14,18 @@ VERSION=3.3
+ # TEXHASH is MakeTeXls-R for WEB2C Unix distribution, texhash for TETEX, blank
+ # for NTEX.
+ 
+-MFDIR=/usr/share/texmf/fonts/source/public/GOOE
+-TFMDIR=/usr/share/texmf/fonts/tfm/public/GOOE
+-TEXINPUTS=/usr/share/texmf/tex/GOOE
+-MANDIR=/usr/man/man1/
+-BINDIR=/usr/local/bin/
++MFDIR=${PREFIX}/share/texmf/fonts/source/public/GOOE
++TFMDIR=${PREFIX}/share/texmf/fonts/tfm/public/GOOE
++TEXINPUTS=${PREFIX}/share/texmf/tex/generic/GOOE
++MANDIR=${PREFIX}/man/man1/
++BINDIR=${PREFIX}/bin/
++.if exists(${LOCALBASE}/bin/MakeTeXls-R)
++TEXHASH=MakeTeXls-R
++.elif exists(${LOCALBASE}/bin/texhash)
+ TEXHASH=texhash
++.else
++TEXHASH=
++.endif
+ 
+ # PKFONTS may be left undefined for the initial installation. If you are
+ # reinstalling fonts for which you have made modifications to the metafont
+@@ -45,21 +51,23 @@ TEXHASH=texhash
+ 
+ .SUFFIXES : .mf .tfm .300pk .360pk .432pk .600pk .720pk .864pk .300gf .360gf .432gf .600gf .720gf .864gf
+ 
++all: sgfsplit manual.dvi
++
+ sgfsplit: sgfsplit.c
+ 	cc -g -o sgfsplit sgfsplit.c
+ 
+ manual.dvi: manual.tex
+-	tex manual
++	${TEX_BIN} manual
+ 
+ install: sgfsplit 
+-	rm -f $(PKFONTS)
+-	install -m 0644 *.mf $(MFDIR)
+-	install -m 0644 *.tfm $(TFMDIR)
+-	install -m 0755 sgf2tex sgfsplit $(BINDIR)
+-	install -m 0644 sgf2tex.1 sgfsplit.1 $(MANDIR)
+-	install -m 0644 gooemacs.tex gotcmacs.tex $(TEXINPUTS)
++	#rm -f $(PKFONTS)
++	mkdir -p $(DESTDIR)$(MFDIR) && install -c -m 0644 *.mf $(DESTDIR)$(MFDIR)
++	mkdir -p $(DESTDIR)$(TFMDIR) && install -c -m 0644 *.tfm $(DESTDIR)$(TFMDIR)
++	install -c -m 0755 sgf2tex sgfsplit $(DESTDIR)$(BINDIR)
++	install -c -m 0644 sgf2tex.1 sgfsplit.1 $(DESTDIR)$(MANDIR)
++	mkdir -p $(DESTDIR)$(TEXINPUTS) && install -c -m 0644 gooemacs.tex gotcmacs.tex $(DESTDIR)$(TEXINPUTS)
+ 	$(TEXHASH)
+-	tex manual
++	install -c -m 0644 manual.dvi $(DESTDIR)${TEXINPUTS}/manual.dvi
+ 
+ # The preferred method of installation is just to copy the metafont
+ # sources and tfm files into appropriated directories in MakeTeXPK's

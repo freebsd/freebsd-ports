@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
-MAINTAINER=	michael@ranner.eu
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Packet filter and firewall log analyzer
 
 USES=		gettext

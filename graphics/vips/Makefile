@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	vips
-PORTVERSION=	7.40.2
+PORTVERSION=	7.40.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Free image processing system
 
 BROKEN=		Fails to package

@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 		http://users.netleader.com.au/~rob/
 
-MAINTAINER=	freebsd@deathbeforedecaf.net
+MAINTAINER= ports@FreeBSD.org
 COMMENT=	Summarise ipfw logs by counting and sorting the fields
 
 PLIST_FILES=	bin/ipfwcount

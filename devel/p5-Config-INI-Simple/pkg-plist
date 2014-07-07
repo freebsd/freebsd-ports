@@ -1,7 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI/Simple/.packlist
 %%SITE_PERL%%/Config/INI/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI/Simple/.packlist
 %%PERL5_MAN3%%/Config::INI::Simple.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI/Simple
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
 @dirrmtry %%SITE_PERL%%/Config/INI

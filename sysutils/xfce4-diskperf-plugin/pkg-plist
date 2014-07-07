@@ -1,5 +1,4 @@
 lib/xfce4/panel/plugins/libdiskperf.so
-lib/xfce4/panel/plugins/libdiskperf.la
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-diskperf-plugin.mo

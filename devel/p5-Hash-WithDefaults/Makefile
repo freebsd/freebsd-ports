@@ -2,15 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	Hash-WithDefaults
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:JENDA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class for hashes with key-casing requirements supporting defaults
 
-USES=		perl5
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>

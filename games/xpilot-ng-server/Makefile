@@ -13,7 +13,7 @@ COMMENT?=	Enhanced version of XPilot (server program)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 
@@ -29,31 +29,31 @@ DESCR=		${PKGDIR}/pkg-descr${PKGFILESUFFIX}
 PLIST=		${PKGDIR}/pkg-plist${PKGFILESUFFIX}
 
 .if ${PKGNAMESUFFIX} == "-server"
-MAN6=		xpilot-ng-server.6
-
 CONFIGURE_ARGS+=--disable-replay \
 		--disable-xp-mapedit \
 		--disable-x11-client \
 		--disable-sdl-client
 .else		# client
-MAN6=		xpilot-ng-replay.6 \
-		xpilot-ng-x11.6 \
-		xpilot-ng-xp-mapedit.6
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-I${LOCALBASE}/include
-
-OPTIONS_DEFINE=	SDL SOUND
-OPTIONS_DEFAULT=	SDL
-SOUND_DESC=	Enable sound support
 
 DESKTOP_ENTRIES=	"Xpilot-ng X11" "Xpilot game client program" \
 			"" "xpilot-ng-x11" "Game;ArcadeGame;" false \
 			"Xpilot-ng Map Editor" "Xpilot Map Editor" \
 			"" "xpilot-ng-xp-mapedit" "Game;ArcadeGame;" false
+
+OPTIONS_DEFINE=	SDL SOUND
+OPTIONS_DEFAULT=	SDL
+OPTIONS_SUB=	yes
+
+SOUND_DESC=	Enable sound support
+SOUND_CONFIGURE_ENABLE=	sound
+SOUND_USES=	openal:al,alut
+
+SDL_CONFIGURE_ENABLE=	sdl-client
+SDL_USE=	SDL=image,sdl,ttf GL=yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PKGNAMESUFFIX} == "-server"
@@ -68,25 +68,8 @@ post-patch:
 		${WRKSRC}/lib/Makefile.in
 .else		# client
 .if ${PORT_OPTIONS:MSDL}
-USE_SDL=	image sdl ttf
-USE_GL=		yes
-PLIST_SUB+=	SDL=""
-MAN6+=		xpilot-ng-sdl.6
 DESKTOP_ENTRIES+=	"Xpilot-ng SDL" "Xpilot game client program" \
 			"" "xpilot-ng-sdl" "Game;ArcadeGame;" false
-.else
-CONFIGURE_ARGS+=--disable-sdl-client
-PLIST_SUB+=	SDL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSOUND}
-USES+=		openal:al,alut
-CONFIGURE_ARGS+=--enable-sound
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-PLIST_SUB+=	SOUND=""
-.else
-PLIST_SUB+=	SOUND="@comment "
 .endif
 
 post-patch:

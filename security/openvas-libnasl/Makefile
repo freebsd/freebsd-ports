@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-libnasl
 PORTVERSION=	2.0.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/561/
 
@@ -19,11 +19,11 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libtasn1.so:${PORTSDIR}/security/libtasn1
 
 GNU_CONFIGURE=	yes
+USES=		bison iconv libtool pkgconfig
 USE_LDCONFIG=	yes
-USES=		bison iconv pkgconfig
 
-.include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
-
-LDFLAGS+=	-lgcrypt
+CONFIGURE_ARGS=	--localstatedir=/var
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lgcrypt
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ COMMENT=	Lightweight malloc debugger
 LICENSE=	MIT
 
 BUILD_DEPENDS=	mk-configure>=0.24:${PORTSDIR}/devel/mk-configure
-LIB_DEPENDS=	Judy:${PORTSDIR}/devel/judy
+LIB_DEPENDS=	libJudy.so:${PORTSDIR}/devel/judy
 RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk \
 		${LOCALBASE}/bin/pipestatus:${PORTSDIR}/devel/pipestatus
 

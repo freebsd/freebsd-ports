@@ -27,6 +27,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-${SVN_COMMIT}
 PORTDOCS=	*
 
 SVN_COMMIT=	r2704
+
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64")
@@ -37,11 +40,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|{OPENGL_glu_LIBRARY}|{OPENGL_glu_LIBRARY} -lcompat|g" ${WRKSRC}/Demos/AllBulletDemos/CMakeLists.txt
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pdf ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/BulletLicense.txt ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}/${DOCSDIR}/CHANGELOG
-.endif
 
 .include <bsd.port.post.mk>
