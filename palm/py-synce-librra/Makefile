@@ -4,10 +4,10 @@
 CATEGORIES=	palm python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}synce-
 
-MAINTAINER=	webmaster@kibab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the SynCE RRA library
 
-LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-librra
+LIB_DEPENDS=	librra.so:${PORTSDIR}/palm/synce-librra
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
 MASTERDIR=	${.CURDIR}/../synce-librra

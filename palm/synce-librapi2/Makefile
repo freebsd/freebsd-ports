@@ -7,10 +7,10 @@ CATEGORIES?=	palm
 MASTER_SITES=	SF/synce/SynCE/${PORTVERSION}
 PKGNAMEPREFIX?=	synce-
 
-MAINTAINER=	webmaster@kibab.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Utilities/libraries to make RAPI calls on WinCE devices
 
-LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
+LIB_DEPENDS+=	libsynce.so:${PORTSDIR}/palm/synce-libsynce
 
 CONFLICTS=	popular-[0-9]*
 
