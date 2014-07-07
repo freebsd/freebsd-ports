@@ -21,22 +21,17 @@ USES=		gmake tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		kismet.1 kismet_drone.1
-MAN5=		kismet.conf.5 kismet_drone.conf.5
-
 OPTIONS_DEFINE=		PCRE PLUGINS SETUID
 OPTIONS_DEFAULT=	PCRE PLUGINS SETUID
 SETUID_DESC=		Use privilege separation
 
 WRKSRC=	${WRKDIR}/${DISTNAME:S/a$$//}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README manuf
 DISTFILES+=	manuf:2
-BROKEN=		no distinfo provided for some of the distfiles
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -45,22 +40,22 @@ PORTEXAMPLES=	*
 
 .if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=--enable-pcre
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=--disable-pcre
 .endif
 
 .if ${PORT_OPTIONS:MSETUID}
 GROUPS =	kismet
-CONFIGURE_ARGS+=--with-suidgroup=${GROUPS}
+CONFIGURE_ARGS+=--with-suidgroup=wheel
 INSTALL_TARGET =	suidinstall
-PLIST_SUB+=	SUID=""
+PLIST_SUB+=	SUID="" SUIDGROUP="${GROUPS}"
 PKGMESSAGE=	${WRKDIR}/suid_pkg-message
 SUB_FILES+=	suid_pkg-message
 .else
 INSTALL_TARGET =	install
 CONFIGURE_ARGS+=--without-suidgroup
-PLIST_SUB+=	SUID="@comment "
+PLIST_SUB+=	SUID="@comment " SUIDGROUP=""
 .endif
 
 .if ${PORT_OPTIONS:MPLUGINS}
@@ -86,19 +81,22 @@ post-patch:
 		${REINPLACE_CMD} -E \
 		'/C(XX)?FLAGS[[:blank:]]*\+=/s/ -g / /'
 
+post-build:
+	@cd ${WRKSRC}; ${STRIP_CMD} kismet_client kismet_drone kismet_server */*.so
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manuf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manuf ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ruby/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ruby/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/conf/kismet.conf \
-		${PREFIX}/etc/kismet.conf.sample
+		${STAGEDIR}${PREFIX}/etc/kismet.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/conf/kismet_drone.conf \
-		${PREFIX}/etc/kismet_drone.conf.sample
+		${STAGEDIR}${PREFIX}/etc/kismet_drone.conf.sample
 
 .include <bsd.port.mk>
