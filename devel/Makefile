@@ -3704,6 +3704,7 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython
+    SUBDIR += py-lazy
     SUBDIR += py-levenshtein
     SUBDIR += py-liblarch
     SUBDIR += py-libplist
