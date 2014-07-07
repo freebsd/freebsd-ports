@@ -18,15 +18,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-MAN1=		${PORTNAME}.1
-
 PORTDOCS=	README COPYING BUGS CREDITS NEWS
-.ifdef NOPORTDOCS
-_SED_NODOCS=	-e '/^data_files.append.*docfiles/s|.*||'
-.endif
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/^directory.*man1/s|=.*|= "man/man1"|' \
