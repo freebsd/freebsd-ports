@@ -3,6 +3,7 @@
 
 PORTNAME=	super
 PORTVERSION=	3.30.0
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/ \
 		http://www.ucolick.org/~will/RUE/super/
@@ -16,30 +17,19 @@ LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
 
-MAN1=		super.1 setuid.1
-MAN5=		super.5
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-patch:
-	@${REINPLACE_CMD} 's|\.\/mkdir_p -p755|mkdir -p -m 755|g' \
+	@${REINPLACE_CMD} -e 's|\.\/mkdir_p -p755|mkdir -p -m 755|g' \
+		-e '/sysconfdir/ s|super\.tab|&.sample|' \
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/super ${PREFIX}/bin/setuid
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/sample.tab ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/sample.cdmount ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/barebones.tab ${EXAMPLESDIR}
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/super ${STAGEDIR}${PREFIX}/bin/setuid
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/sample.tab ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/sample.cdmount ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
