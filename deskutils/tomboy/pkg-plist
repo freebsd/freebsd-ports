@@ -1,5 +1,6 @@
 bin/tomboy
 %%APPLET%%bin/tomboy-panel
+etc/gconf/schemas/tomboy.schemas
 lib/tomboy/Tomboy.exe
 lib/tomboy/Tomboy.exe.config
 lib/tomboy/Tomboy.exe.mdb
@@ -9,8 +10,8 @@ lib/tomboy/addins/Backlinks.dll
 lib/tomboy/addins/Backlinks.dll.mdb
 lib/tomboy/addins/Bugzilla.dll
 lib/tomboy/addins/Bugzilla.dll.mdb
-lib/tomboy/addins/Evolution.dll
-lib/tomboy/addins/Evolution.dll.mdb
+%%EVOLUTION%%lib/tomboy/addins/Evolution.dll
+%%EVOLUTION%%lib/tomboy/addins/Evolution.dll.mdb
 lib/tomboy/addins/ExportToHtml.dll
 lib/tomboy/addins/ExportToHtml.dll.mdb
 lib/tomboy/addins/FileSystemSyncService.dll
@@ -42,6 +43,7 @@ lib/tomboy/libtomboy.la
 lib/tomboy/libtomboy.so
 %%APPLET%%libdata/bonobo/servers/GNOME_TomboyApplet.server
 libdata/pkgconfig/tomboy-addins.pc
+man/man1/tomboy.1.gz
 share/applications/tomboy.desktop
 share/dbus-1/services/org.gnome.Tomboy.service
 share/gnome/help/tomboy/C/addins-desktop.page
@@ -49,7 +51,6 @@ share/gnome/help/tomboy/C/addins-formatting.page
 share/gnome/help/tomboy/C/addins-sync.page
 share/gnome/help/tomboy/C/addins-tools.page
 share/gnome/help/tomboy/C/addins.page
-share/gnome/help/tomboy/C/advanced.page
 share/gnome/help/tomboy/C/create-note.page
 share/gnome/help/tomboy/C/create-notebook.page
 share/gnome/help/tomboy/C/delete-notes.page
@@ -78,7 +79,6 @@ share/gnome/help/tomboy/C/introduction.page
 share/gnome/help/tomboy/C/legal.xml
 share/gnome/help/tomboy/C/note-edit-prefs.page
 share/gnome/help/tomboy/C/prefs.page
-share/gnome/help/tomboy/C/problems.page
 share/gnome/help/tomboy/C/search.page
 share/gnome/help/tomboy/C/sync-setup.page
 share/gnome/help/tomboy/C/sync.page
@@ -88,7 +88,6 @@ share/gnome/help/tomboy/ca/addins-formatting.page
 share/gnome/help/tomboy/ca/addins-sync.page
 share/gnome/help/tomboy/ca/addins-tools.page
 share/gnome/help/tomboy/ca/addins.page
-share/gnome/help/tomboy/ca/advanced.page
 share/gnome/help/tomboy/ca/create-note.page
 share/gnome/help/tomboy/ca/create-notebook.page
 share/gnome/help/tomboy/ca/delete-notes.page
@@ -117,7 +116,6 @@ share/gnome/help/tomboy/ca/introduction.page
 share/gnome/help/tomboy/ca/legal.xml
 share/gnome/help/tomboy/ca/note-edit-prefs.page
 share/gnome/help/tomboy/ca/prefs.page
-share/gnome/help/tomboy/ca/problems.page
 share/gnome/help/tomboy/ca/search.page
 share/gnome/help/tomboy/ca/sync-setup.page
 share/gnome/help/tomboy/ca/sync.page
@@ -127,7 +125,6 @@ share/gnome/help/tomboy/cs/addins-formatting.page
 share/gnome/help/tomboy/cs/addins-sync.page
 share/gnome/help/tomboy/cs/addins-tools.page
 share/gnome/help/tomboy/cs/addins.page
-share/gnome/help/tomboy/cs/advanced.page
 share/gnome/help/tomboy/cs/create-note.page
 share/gnome/help/tomboy/cs/create-notebook.page
 share/gnome/help/tomboy/cs/delete-notes.page
@@ -156,7 +153,6 @@ share/gnome/help/tomboy/cs/introduction.page
 share/gnome/help/tomboy/cs/legal.xml
 share/gnome/help/tomboy/cs/note-edit-prefs.page
 share/gnome/help/tomboy/cs/prefs.page
-share/gnome/help/tomboy/cs/problems.page
 share/gnome/help/tomboy/cs/search.page
 share/gnome/help/tomboy/cs/sync-setup.page
 share/gnome/help/tomboy/cs/sync.page
@@ -166,7 +162,6 @@ share/gnome/help/tomboy/de/addins-formatting.page
 share/gnome/help/tomboy/de/addins-sync.page
 share/gnome/help/tomboy/de/addins-tools.page
 share/gnome/help/tomboy/de/addins.page
-share/gnome/help/tomboy/de/advanced.page
 share/gnome/help/tomboy/de/create-note.page
 share/gnome/help/tomboy/de/create-notebook.page
 share/gnome/help/tomboy/de/delete-notes.page
@@ -195,7 +190,6 @@ share/gnome/help/tomboy/de/introduction.page
 share/gnome/help/tomboy/de/legal.xml
 share/gnome/help/tomboy/de/note-edit-prefs.page
 share/gnome/help/tomboy/de/prefs.page
-share/gnome/help/tomboy/de/problems.page
 share/gnome/help/tomboy/de/search.page
 share/gnome/help/tomboy/de/sync-setup.page
 share/gnome/help/tomboy/de/sync.page
@@ -205,7 +199,6 @@ share/gnome/help/tomboy/el/addins-formatting.page
 share/gnome/help/tomboy/el/addins-sync.page
 share/gnome/help/tomboy/el/addins-tools.page
 share/gnome/help/tomboy/el/addins.page
-share/gnome/help/tomboy/el/advanced.page
 share/gnome/help/tomboy/el/create-note.page
 share/gnome/help/tomboy/el/create-notebook.page
 share/gnome/help/tomboy/el/delete-notes.page
@@ -234,7 +227,6 @@ share/gnome/help/tomboy/el/introduction.page
 share/gnome/help/tomboy/el/legal.xml
 share/gnome/help/tomboy/el/note-edit-prefs.page
 share/gnome/help/tomboy/el/prefs.page
-share/gnome/help/tomboy/el/problems.page
 share/gnome/help/tomboy/el/search.page
 share/gnome/help/tomboy/el/sync-setup.page
 share/gnome/help/tomboy/el/sync.page
@@ -244,7 +236,6 @@ share/gnome/help/tomboy/en_GB/addins-formatting.page
 share/gnome/help/tomboy/en_GB/addins-sync.page
 share/gnome/help/tomboy/en_GB/addins-tools.page
 share/gnome/help/tomboy/en_GB/addins.page
-share/gnome/help/tomboy/en_GB/advanced.page
 share/gnome/help/tomboy/en_GB/create-note.page
 share/gnome/help/tomboy/en_GB/create-notebook.page
 share/gnome/help/tomboy/en_GB/delete-notes.page
@@ -273,7 +264,6 @@ share/gnome/help/tomboy/en_GB/introduction.page
 share/gnome/help/tomboy/en_GB/legal.xml
 share/gnome/help/tomboy/en_GB/note-edit-prefs.page
 share/gnome/help/tomboy/en_GB/prefs.page
-share/gnome/help/tomboy/en_GB/problems.page
 share/gnome/help/tomboy/en_GB/search.page
 share/gnome/help/tomboy/en_GB/sync-setup.page
 share/gnome/help/tomboy/en_GB/sync.page
@@ -283,7 +273,6 @@ share/gnome/help/tomboy/es/addins-formatting.page
 share/gnome/help/tomboy/es/addins-sync.page
 share/gnome/help/tomboy/es/addins-tools.page
 share/gnome/help/tomboy/es/addins.page
-share/gnome/help/tomboy/es/advanced.page
 share/gnome/help/tomboy/es/create-note.page
 share/gnome/help/tomboy/es/create-notebook.page
 share/gnome/help/tomboy/es/delete-notes.page
@@ -312,7 +301,6 @@ share/gnome/help/tomboy/es/introduction.page
 share/gnome/help/tomboy/es/legal.xml
 share/gnome/help/tomboy/es/note-edit-prefs.page
 share/gnome/help/tomboy/es/prefs.page
-share/gnome/help/tomboy/es/problems.page
 share/gnome/help/tomboy/es/search.page
 share/gnome/help/tomboy/es/sync-setup.page
 share/gnome/help/tomboy/es/sync.page
@@ -322,7 +310,6 @@ share/gnome/help/tomboy/eu/addins-formatting.page
 share/gnome/help/tomboy/eu/addins-sync.page
 share/gnome/help/tomboy/eu/addins-tools.page
 share/gnome/help/tomboy/eu/addins.page
-share/gnome/help/tomboy/eu/advanced.page
 share/gnome/help/tomboy/eu/create-note.page
 share/gnome/help/tomboy/eu/create-notebook.page
 share/gnome/help/tomboy/eu/delete-notes.page
@@ -351,7 +338,6 @@ share/gnome/help/tomboy/eu/introduction.page
 share/gnome/help/tomboy/eu/legal.xml
 share/gnome/help/tomboy/eu/note-edit-prefs.page
 share/gnome/help/tomboy/eu/prefs.page
-share/gnome/help/tomboy/eu/problems.page
 share/gnome/help/tomboy/eu/search.page
 share/gnome/help/tomboy/eu/sync-setup.page
 share/gnome/help/tomboy/eu/sync.page
@@ -361,7 +347,6 @@ share/gnome/help/tomboy/fr/addins-formatting.page
 share/gnome/help/tomboy/fr/addins-sync.page
 share/gnome/help/tomboy/fr/addins-tools.page
 share/gnome/help/tomboy/fr/addins.page
-share/gnome/help/tomboy/fr/advanced.page
 share/gnome/help/tomboy/fr/create-note.page
 share/gnome/help/tomboy/fr/create-notebook.page
 share/gnome/help/tomboy/fr/delete-notes.page
@@ -390,7 +375,6 @@ share/gnome/help/tomboy/fr/introduction.page
 share/gnome/help/tomboy/fr/legal.xml
 share/gnome/help/tomboy/fr/note-edit-prefs.page
 share/gnome/help/tomboy/fr/prefs.page
-share/gnome/help/tomboy/fr/problems.page
 share/gnome/help/tomboy/fr/search.page
 share/gnome/help/tomboy/fr/sync-setup.page
 share/gnome/help/tomboy/fr/sync.page
@@ -400,7 +384,6 @@ share/gnome/help/tomboy/gl/addins-formatting.page
 share/gnome/help/tomboy/gl/addins-sync.page
 share/gnome/help/tomboy/gl/addins-tools.page
 share/gnome/help/tomboy/gl/addins.page
-share/gnome/help/tomboy/gl/advanced.page
 share/gnome/help/tomboy/gl/create-note.page
 share/gnome/help/tomboy/gl/create-notebook.page
 share/gnome/help/tomboy/gl/delete-notes.page
@@ -429,7 +412,6 @@ share/gnome/help/tomboy/gl/introduction.page
 share/gnome/help/tomboy/gl/legal.xml
 share/gnome/help/tomboy/gl/note-edit-prefs.page
 share/gnome/help/tomboy/gl/prefs.page
-share/gnome/help/tomboy/gl/problems.page
 share/gnome/help/tomboy/gl/search.page
 share/gnome/help/tomboy/gl/sync-setup.page
 share/gnome/help/tomboy/gl/sync.page
@@ -439,7 +421,6 @@ share/gnome/help/tomboy/hu/addins-formatting.page
 share/gnome/help/tomboy/hu/addins-sync.page
 share/gnome/help/tomboy/hu/addins-tools.page
 share/gnome/help/tomboy/hu/addins.page
-share/gnome/help/tomboy/hu/advanced.page
 share/gnome/help/tomboy/hu/create-note.page
 share/gnome/help/tomboy/hu/create-notebook.page
 share/gnome/help/tomboy/hu/delete-notes.page
@@ -468,7 +449,6 @@ share/gnome/help/tomboy/hu/introduction.page
 share/gnome/help/tomboy/hu/legal.xml
 share/gnome/help/tomboy/hu/note-edit-prefs.page
 share/gnome/help/tomboy/hu/prefs.page
-share/gnome/help/tomboy/hu/problems.page
 share/gnome/help/tomboy/hu/search.page
 share/gnome/help/tomboy/hu/sync-setup.page
 share/gnome/help/tomboy/hu/sync.page
@@ -478,7 +458,6 @@ share/gnome/help/tomboy/it/addins-formatting.page
 share/gnome/help/tomboy/it/addins-sync.page
 share/gnome/help/tomboy/it/addins-tools.page
 share/gnome/help/tomboy/it/addins.page
-share/gnome/help/tomboy/it/advanced.page
 share/gnome/help/tomboy/it/create-note.page
 share/gnome/help/tomboy/it/create-notebook.page
 share/gnome/help/tomboy/it/delete-notes.page
@@ -507,7 +486,6 @@ share/gnome/help/tomboy/it/introduction.page
 share/gnome/help/tomboy/it/legal.xml
 share/gnome/help/tomboy/it/note-edit-prefs.page
 share/gnome/help/tomboy/it/prefs.page
-share/gnome/help/tomboy/it/problems.page
 share/gnome/help/tomboy/it/search.page
 share/gnome/help/tomboy/it/sync-setup.page
 share/gnome/help/tomboy/it/sync.page
@@ -517,7 +495,6 @@ share/gnome/help/tomboy/lt/addins-formatting.page
 share/gnome/help/tomboy/lt/addins-sync.page
 share/gnome/help/tomboy/lt/addins-tools.page
 share/gnome/help/tomboy/lt/addins.page
-share/gnome/help/tomboy/lt/advanced.page
 share/gnome/help/tomboy/lt/create-note.page
 share/gnome/help/tomboy/lt/create-notebook.page
 share/gnome/help/tomboy/lt/delete-notes.page
@@ -546,7 +523,6 @@ share/gnome/help/tomboy/lt/introduction.page
 share/gnome/help/tomboy/lt/legal.xml
 share/gnome/help/tomboy/lt/note-edit-prefs.page
 share/gnome/help/tomboy/lt/prefs.page
-share/gnome/help/tomboy/lt/problems.page
 share/gnome/help/tomboy/lt/search.page
 share/gnome/help/tomboy/lt/sync-setup.page
 share/gnome/help/tomboy/lt/sync.page
@@ -556,7 +532,6 @@ share/gnome/help/tomboy/lv/addins-formatting.page
 share/gnome/help/tomboy/lv/addins-sync.page
 share/gnome/help/tomboy/lv/addins-tools.page
 share/gnome/help/tomboy/lv/addins.page
-share/gnome/help/tomboy/lv/advanced.page
 share/gnome/help/tomboy/lv/create-note.page
 share/gnome/help/tomboy/lv/create-notebook.page
 share/gnome/help/tomboy/lv/delete-notes.page
@@ -585,7 +560,6 @@ share/gnome/help/tomboy/lv/introduction.page
 share/gnome/help/tomboy/lv/legal.xml
 share/gnome/help/tomboy/lv/note-edit-prefs.page
 share/gnome/help/tomboy/lv/prefs.page
-share/gnome/help/tomboy/lv/problems.page
 share/gnome/help/tomboy/lv/search.page
 share/gnome/help/tomboy/lv/sync-setup.page
 share/gnome/help/tomboy/lv/sync.page
@@ -595,7 +569,6 @@ share/gnome/help/tomboy/oc/addins-formatting.page
 share/gnome/help/tomboy/oc/addins-sync.page
 share/gnome/help/tomboy/oc/addins-tools.page
 share/gnome/help/tomboy/oc/addins.page
-share/gnome/help/tomboy/oc/advanced.page
 share/gnome/help/tomboy/oc/create-note.page
 share/gnome/help/tomboy/oc/create-notebook.page
 share/gnome/help/tomboy/oc/delete-notes.page
@@ -624,7 +597,6 @@ share/gnome/help/tomboy/oc/introduction.page
 share/gnome/help/tomboy/oc/legal.xml
 share/gnome/help/tomboy/oc/note-edit-prefs.page
 share/gnome/help/tomboy/oc/prefs.page
-share/gnome/help/tomboy/oc/problems.page
 share/gnome/help/tomboy/oc/search.page
 share/gnome/help/tomboy/oc/sync-setup.page
 share/gnome/help/tomboy/oc/sync.page
@@ -634,7 +606,6 @@ share/gnome/help/tomboy/pl/addins-formatting.page
 share/gnome/help/tomboy/pl/addins-sync.page
 share/gnome/help/tomboy/pl/addins-tools.page
 share/gnome/help/tomboy/pl/addins.page
-share/gnome/help/tomboy/pl/advanced.page
 share/gnome/help/tomboy/pl/create-note.page
 share/gnome/help/tomboy/pl/create-notebook.page
 share/gnome/help/tomboy/pl/delete-notes.page
@@ -663,7 +634,6 @@ share/gnome/help/tomboy/pl/introduction.page
 share/gnome/help/tomboy/pl/legal.xml
 share/gnome/help/tomboy/pl/note-edit-prefs.page
 share/gnome/help/tomboy/pl/prefs.page
-share/gnome/help/tomboy/pl/problems.page
 share/gnome/help/tomboy/pl/search.page
 share/gnome/help/tomboy/pl/sync-setup.page
 share/gnome/help/tomboy/pl/sync.page
@@ -673,7 +643,6 @@ share/gnome/help/tomboy/pt_BR/addins-formatting.page
 share/gnome/help/tomboy/pt_BR/addins-sync.page
 share/gnome/help/tomboy/pt_BR/addins-tools.page
 share/gnome/help/tomboy/pt_BR/addins.page
-share/gnome/help/tomboy/pt_BR/advanced.page
 share/gnome/help/tomboy/pt_BR/create-note.page
 share/gnome/help/tomboy/pt_BR/create-notebook.page
 share/gnome/help/tomboy/pt_BR/delete-notes.page
@@ -702,7 +671,6 @@ share/gnome/help/tomboy/pt_BR/introduction.page
 share/gnome/help/tomboy/pt_BR/legal.xml
 share/gnome/help/tomboy/pt_BR/note-edit-prefs.page
 share/gnome/help/tomboy/pt_BR/prefs.page
-share/gnome/help/tomboy/pt_BR/problems.page
 share/gnome/help/tomboy/pt_BR/search.page
 share/gnome/help/tomboy/pt_BR/sync-setup.page
 share/gnome/help/tomboy/pt_BR/sync.page
@@ -712,7 +680,6 @@ share/gnome/help/tomboy/ru/addins-formatting.page
 share/gnome/help/tomboy/ru/addins-sync.page
 share/gnome/help/tomboy/ru/addins-tools.page
 share/gnome/help/tomboy/ru/addins.page
-share/gnome/help/tomboy/ru/advanced.page
 share/gnome/help/tomboy/ru/create-note.page
 share/gnome/help/tomboy/ru/create-notebook.page
 share/gnome/help/tomboy/ru/delete-notes.page
@@ -741,7 +708,6 @@ share/gnome/help/tomboy/ru/introduction.page
 share/gnome/help/tomboy/ru/legal.xml
 share/gnome/help/tomboy/ru/note-edit-prefs.page
 share/gnome/help/tomboy/ru/prefs.page
-share/gnome/help/tomboy/ru/problems.page
 share/gnome/help/tomboy/ru/search.page
 share/gnome/help/tomboy/ru/sync-setup.page
 share/gnome/help/tomboy/ru/sync.page
@@ -751,7 +717,6 @@ share/gnome/help/tomboy/sl/addins-formatting.page
 share/gnome/help/tomboy/sl/addins-sync.page
 share/gnome/help/tomboy/sl/addins-tools.page
 share/gnome/help/tomboy/sl/addins.page
-share/gnome/help/tomboy/sl/advanced.page
 share/gnome/help/tomboy/sl/create-note.page
 share/gnome/help/tomboy/sl/create-notebook.page
 share/gnome/help/tomboy/sl/delete-notes.page
@@ -780,7 +745,6 @@ share/gnome/help/tomboy/sl/introduction.page
 share/gnome/help/tomboy/sl/legal.xml
 share/gnome/help/tomboy/sl/note-edit-prefs.page
 share/gnome/help/tomboy/sl/prefs.page
-share/gnome/help/tomboy/sl/problems.page
 share/gnome/help/tomboy/sl/search.page
 share/gnome/help/tomboy/sl/sync-setup.page
 share/gnome/help/tomboy/sl/sync.page
@@ -790,7 +754,6 @@ share/gnome/help/tomboy/sv/addins-formatting.page
 share/gnome/help/tomboy/sv/addins-sync.page
 share/gnome/help/tomboy/sv/addins-tools.page
 share/gnome/help/tomboy/sv/addins.page
-share/gnome/help/tomboy/sv/advanced.page
 share/gnome/help/tomboy/sv/create-note.page
 share/gnome/help/tomboy/sv/create-notebook.page
 share/gnome/help/tomboy/sv/delete-notes.page
@@ -819,7 +782,6 @@ share/gnome/help/tomboy/sv/introduction.page
 share/gnome/help/tomboy/sv/legal.xml
 share/gnome/help/tomboy/sv/note-edit-prefs.page
 share/gnome/help/tomboy/sv/prefs.page
-share/gnome/help/tomboy/sv/problems.page
 share/gnome/help/tomboy/sv/search.page
 share/gnome/help/tomboy/sv/sync-setup.page
 share/gnome/help/tomboy/sv/sync.page
@@ -829,7 +791,6 @@ share/gnome/help/tomboy/uk/addins-formatting.page
 share/gnome/help/tomboy/uk/addins-sync.page
 share/gnome/help/tomboy/uk/addins-tools.page
 share/gnome/help/tomboy/uk/addins.page
-share/gnome/help/tomboy/uk/advanced.page
 share/gnome/help/tomboy/uk/create-note.page
 share/gnome/help/tomboy/uk/create-notebook.page
 share/gnome/help/tomboy/uk/delete-notes.page
@@ -858,7 +819,6 @@ share/gnome/help/tomboy/uk/introduction.page
 share/gnome/help/tomboy/uk/legal.xml
 share/gnome/help/tomboy/uk/note-edit-prefs.page
 share/gnome/help/tomboy/uk/prefs.page
-share/gnome/help/tomboy/uk/problems.page
 share/gnome/help/tomboy/uk/search.page
 share/gnome/help/tomboy/uk/sync-setup.page
 share/gnome/help/tomboy/uk/sync.page
@@ -868,7 +828,6 @@ share/gnome/help/tomboy/vi/addins-formatting.page
 share/gnome/help/tomboy/vi/addins-sync.page
 share/gnome/help/tomboy/vi/addins-tools.page
 share/gnome/help/tomboy/vi/addins.page
-share/gnome/help/tomboy/vi/advanced.page
 share/gnome/help/tomboy/vi/create-note.page
 share/gnome/help/tomboy/vi/create-notebook.page
 share/gnome/help/tomboy/vi/delete-notes.page
@@ -897,7 +856,6 @@ share/gnome/help/tomboy/vi/introduction.page
 share/gnome/help/tomboy/vi/legal.xml
 share/gnome/help/tomboy/vi/note-edit-prefs.page
 share/gnome/help/tomboy/vi/prefs.page
-share/gnome/help/tomboy/vi/problems.page
 share/gnome/help/tomboy/vi/search.page
 share/gnome/help/tomboy/vi/sync-setup.page
 share/gnome/help/tomboy/vi/sync.page
@@ -907,7 +865,6 @@ share/gnome/help/tomboy/zh_CN/addins-formatting.page
 share/gnome/help/tomboy/zh_CN/addins-sync.page
 share/gnome/help/tomboy/zh_CN/addins-tools.page
 share/gnome/help/tomboy/zh_CN/addins.page
-share/gnome/help/tomboy/zh_CN/advanced.page
 share/gnome/help/tomboy/zh_CN/create-note.page
 share/gnome/help/tomboy/zh_CN/create-notebook.page
 share/gnome/help/tomboy/zh_CN/delete-notes.page
@@ -936,7 +893,6 @@ share/gnome/help/tomboy/zh_CN/introduction.page
 share/gnome/help/tomboy/zh_CN/legal.xml
 share/gnome/help/tomboy/zh_CN/note-edit-prefs.page
 share/gnome/help/tomboy/zh_CN/prefs.page
-share/gnome/help/tomboy/zh_CN/problems.page
 share/gnome/help/tomboy/zh_CN/search.page
 share/gnome/help/tomboy/zh_CN/sync-setup.page
 share/gnome/help/tomboy/zh_CN/sync.page
@@ -1068,6 +1024,7 @@ share/mime/packages/tomboy.xml
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/mime/application
 @dirrm share/gnome/help/tomboy/zh_CN/figures
 @dirrm share/gnome/help/tomboy/zh_CN
 @dirrm share/gnome/help/tomboy/vi/figures
@@ -1115,7 +1072,5 @@ share/mime/packages/tomboy.xml
 @dirrm share/gnome/help/tomboy/C/figures
 @dirrm share/gnome/help/tomboy/C
 @dirrm share/gnome/help/tomboy
-%%APPLET%%@dirrmtry libdata/bonobo/servers
-%%APPLET%%@dirrmtry libdata/bonobo
 @dirrmtry lib/tomboy/addins
 @dirrmtry lib/tomboy
