@@ -1,13 +1,13 @@
 @stopdaemon munged
-include/munge.h
+bin/munge
 bin/remunge
 bin/unmunge
-bin/munge
-lib/libmunge.la
-lib/libmunge.so.2
+include/munge.h
 lib/libmunge.a
 lib/libmunge.so
-sbin/munged
+lib/libmunge.so.2
+lib/libmunge.so.2.0.0
+libdata/pkgconfig/munge.pc
 man/man1/munge.1.gz
 man/man1/remunge.1.gz
 man/man1/unmunge.1.gz
@@ -28,6 +28,14 @@ man/man3/munge_enum_str_to_int.3.gz
 man/man3/munge_strerror.3.gz
 man/man7/munge.7.gz
 man/man8/munged.8.gz
-@unexec rm %D/var/run/munge 2>&1 >/dev/null || true
-@unexec rm %D/var/log/munge 2>&1 >/dev/null || true
-@unexec rm %D/var/lib/munge 2>&1 >/dev/null || true
+sbin/munged
+@cwd /var
+@exec mkdir -p %D/lib
+@exec mkdir -p -m 711 %D/lib/munge
+@exec mkdir -p -m 700 %D/log/munge
+@exec mkdir -p %D/run/munge
+@dirrmtry run/munge
+@dirrmtry log/munge
+@dirrmtry lib/munge
+@dirrmtry lib
+@cwd %%RESETPREFIX%%
