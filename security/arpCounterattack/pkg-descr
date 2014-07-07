@@ -11,5 +11,3 @@ and corrective gratuitous ARP reply can be sent from an Ethernet interface
 other than the one that the attack was seen on.
 
 WWW: http://acm.poly.edu/wiki/ARP_Counterattack
-
--Boris Kochergin <spawk@acm.poly.edu>
