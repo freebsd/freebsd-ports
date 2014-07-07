@@ -25,6 +25,7 @@
     SUBDIR += congruity
     SUBDIR += conserver
     SUBDIR += conserver-com
+    SUBDIR += cqrlog
     SUBDIR += cutecom
     SUBDIR += cwdaemon
     SUBDIR += dabstick-radio
