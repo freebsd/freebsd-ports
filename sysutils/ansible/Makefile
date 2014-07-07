@@ -3,6 +3,7 @@
 
 PORTNAME=	ansible
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	SF/lifanov-ports-distfiles/sysutils/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
@@ -47,7 +48,7 @@ PLIST_FILES+=	man/man1/ansible-doc.1.gz \
 		man/man1/ansible-pull.1.gz \
 		man/man1/ansible-vault.1.gz \
 		man/man1/ansible.1.gz \
-		${DESKTOPDIR}/${PORTNAME}.desktop \
+		${DESKTOPDIR:S,^${PREFIX}/,,}/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
 
 PORTEXAMPLES=	ansible.cfg hosts
