@@ -7,26 +7,23 @@ CATEGORIES=	devel science math
 MASTER_SITES=	ftp://root.cern.ch/root/
 DISTNAME=	html${PORTVERSION:S/.//}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Documentation for Root framework
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/htmldoc
 PLIST=		${WRKDIR}/pkg-plist
-BROKEN=		no distinfo provided
 
-.ifdef NOPORTDOCS
-IGNORE=		This package contains only documentation
-.endif
-
-NO_STAGE=	yes
 pre-install:
-	cd ${WRKSRC} && ${FIND} . \( -type f -or -type l \) -exec ${ECHO_CMD} "%%DOCSDIR%%/{}" \; > ${PLIST}
-	cd ${WRKSRC} && ${FIND} -d . -mindepth 1 -type d -exec ${ECHO_CMD} "@dirrm %%DOCSDIR%%/{}" \; >> ${PLIST}
-	${ECHO_CMD} "@dirrm %%DOCSDIR%%" >> ${PLIST}
+	cd ${WRKSRC} && ${FIND} . \( -type f -or -type l \) -exec ${ECHO_CMD} \
+		"%%DOCSDIR%%/{}" \; > ${PLIST}.tmp
+	cd ${WRKSRC} && ${FIND} -d . -mindepth 1 -type d -exec ${ECHO_CMD} \
+		"@dirrm %%DOCSDIR%%/{}" \; >> ${PLIST}.tmp
+	${ECHO_CMD} "@dirrm %%DOCSDIR%%" >> ${PLIST}.tmp
+	${SED} -e "s/\/\.\//\//" ${PLIST}.tmp > ${PLIST}
 
 do-install:
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
