@@ -1,8 +1,10 @@
 bin/setuid
 bin/super
-%%PORTEXAMPLES%%@unexec if cmp -s %D/etc/super.tab %D/%%EXAMPLESDIR%%/barebones.tab; then rm -f %D/etc/super.tab; fi
+@sample etc/super.tab.sample
+man/man1/setuid.1.gz
+man/man1/super.1.gz
+man/man5/super.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/barebones.tab
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.cdmount
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.tab
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
