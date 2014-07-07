@@ -2,35 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	flpsed
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	print
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	WYSIWYG Postscript annotator
 
-LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LICENSE=	GPLv3
+
+LIB_DEPENDS+=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
 USE_GHOSTSCRIPT=yes
-USES=		gmake
-
-PLIST_FILES=	bin/flpsed
-MAN1=		flpsed.1
+USES=		desktop-file-utils gmake
+PLIST_DIRSTRY=	share/icons
+PLIST_FILES=	bin/flpsed \
+		man/man1/flpsed.1.gz \
+		share/applications/flpsed.desktop \
+		share/icons/flpsed.png \
+		share/icons/flpsed.svg
 PORTDOCS=	README
 
-NO_STAGE=	yes
 post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} \
 	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"
 
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/flpsed ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/flpsed.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/flpsed ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/flpsed.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/flpsed.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
+	${INSTALL_DATA} ${WRKSRC}/flpsed.png ${WRKSRC}/flpsed.svg ${STAGEDIR}${PREFIX}/share/icons
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
