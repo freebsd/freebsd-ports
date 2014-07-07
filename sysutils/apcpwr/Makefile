@@ -3,6 +3,7 @@
 
 PORTNAME=		apcpwr
 PORTVERSION=		1.3
+PORTREVISION=		1
 CATEGORIES=		sysutils net
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jwd
@@ -12,13 +13,16 @@ COMMENT=	Control APC 9211 MasterSwitchs via snmp
 
 RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp
 
-PLIST_FILES=	bin/apcpwr etc/apcpwr.conf.dist
-MAN8=		apcpwr.8
+USES=		shebangfix
+SHEBANG_FILES=	apcpwr.pl
 
-NO_STAGE=	yes
-post-install:
-	@ ${ECHO}
-	@ ${SED} -e "s:%%PREFIX%%:${PREFIX}:g" pkg-message | fmt
-	@ ${ECHO}
+SUB_FILES=	pkg-message
+
+PLIST_FILES=	bin/apcpwr etc/apcpwr.conf.dist man/man8/apcpwr.8.gz
+
+do-install:
+	${INSTALL} -m 4555 ${WRKSRC}/apcpwr ${STAGEDIR}${PREFIX}/bin
+	${INSTALL} -m 600 ${WRKSRC}/apcpwr.conf.dist ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/apcpwr.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
