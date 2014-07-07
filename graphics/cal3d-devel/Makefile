@@ -3,7 +3,7 @@
 
 PORTNAME=	cal3d
 PORTVERSION=	20060720
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	acm/${PORTNAME}
@@ -15,10 +15,9 @@ COMMENT=	Skeletal based 3D character animation library written in C++ (devel)
 
 CONFLICTS=	cal3d-[0-9]*
 
-USE_BZIP2=	yes
-USES=		pkgconfig
+USES=		pkgconfig libtool tar:bzip2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake autoheader libtool
+USE_AUTOTOOLS=	automake autoheader libtoolize
 AUTOMAKE_ARGS=	--add-missing
 
 post-patch:
