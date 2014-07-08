@@ -2,7 +2,7 @@
 
 PORTNAME=	apache22
 PORTVERSION=	2.2.27
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -50,8 +50,7 @@ WITH_SSL_PORT?=		443
 AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
 
 # http://httpd.apache.org/docs/2.2/bind.html
-IPV4_MAPPED_CONFIGURE_OFF=	--disable-v4-mapped
-IPV4_MAPPED_CONFIGURE_ON=	--enable-v4-mapped
+IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 SSL_CFLAGS=			-I${OPENSSLINC}
@@ -71,10 +70,6 @@ ETC_SUBDIRS=		Includes envvars.d extra modules.d
 SUB_LIST+=	RELOAD_CMD=graceful
 .else
 SUB_LIST+=	RELOAD_CMD=hrestart
-.endif
-
-.if ! ${PORT_OPTIONS:MDOCS}
-MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 APR_CONFIG?=		${LOCALBASE}/bin/apr-1-config
@@ -129,6 +124,12 @@ IGNORE=		suEXEC UserDir patch requires mod_suexec.\
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
+pre-everything::
+	@${CAT}	${FILESDIR}/HEADS_UP
+.if !defined(BATCH) || !defined(PORT_BUILDING)
+	@/bin/sleep 5
+.endif
+
 post-extract:
 # remove possible leftover .svn directories in the sources
 	@${FIND} ${WRKSRC} -type d -name .svn -print | ${XARGS} ${RM} -rf
@@ -173,7 +174,13 @@ post-install:
 	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
 	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
 	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${ETCDIR}/modules.d/
+# place for module configuration samples
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/modules.d
+	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${EXAMPLESDIR}/modules.d
 
+# supress warnings about all the non binary files
+	-@${STRIP_CMD} ${STAGEDIR}/usr/local/sbin/* \
+		${STAGEDIR}/usr/local/libexec/apache22/*.so 2>/dev/null
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
 	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
 .endif
