@@ -5,8 +5,7 @@ PORTNAME=	q2pro
 PORTVERSION=	${SVN_REV}
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alepulver
+MASTER_SITES=	LOCAL/alepulver
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake II engine modification compatible with R1Q2
@@ -18,7 +17,7 @@ ALL_TARGET=	#
 SVN_REV=	142
 
 MAKE_ENV=	LIBDIR="${LIBDIR}"
-PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S|${PREFIX}/||}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 OPTIONS_DEFINE=		GAME GL SOFT UI
@@ -35,7 +34,6 @@ GL_DESC=	Build OpenGL render
 SOFT_DESC=	Build software render
 UI_DESC=	Build user interface (for client menus)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
@@ -61,9 +59,9 @@ PLIST_SUB+=	GAME="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGL}
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng.so:${PORTSDIR}/graphics/png
 USE_GL=		gl
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
 ALL_TARGET+=	ref_newgl
 PLIST_SUB+=	GL=""
 .else
@@ -90,28 +88,34 @@ MAKE_ENV+=	USE_X86_ASM=yes
 
 post-patch:
 # Resolve name collision with jpeg-8
-	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
 		${WRKSRC}/ref_shared/r_images.c
 
 do-install:
-	@${MKDIR} ${LIBDIR}/baseq2
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/baseq2
 .if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/q2pro ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/q2pro \
+		${STAGEDIR}${PREFIX}/bin
 .endif
 .if ${PORT_OPTIONS:MDEDICATED}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/q2proded ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/q2proded \
+		${STAGEDIR}${PREFIX}/bin
 .endif
 .if ${PORT_OPTIONS:MGAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/game.so ${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/game.so \
+		${STAGEDIR}${LIBDIR}/baseq2
 .endif
 .if ${PORT_OPTIONS:MGL}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ref_newgl.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ref_newgl.so \
+		${STAGEDIR}${LIBDIR}
 .endif
 .if ${PORT_OPTIONS:MSOFT}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ref_soft.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ref_soft.so \
+		${STAGEDIR}${LIBDIR}
 .endif
 .if ${PORT_OPTIONS:MUI}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ui.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/ui.so \
+		${STAGEDIR}${LIBDIR}
 .endif
 
 generate-distfile:
