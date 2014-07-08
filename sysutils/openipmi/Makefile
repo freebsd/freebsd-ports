@@ -11,22 +11,17 @@ DISTNAME=	OpenIPMI-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complex IPMI management software
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool
+USE_AUTOTOOLS=	autoconf autoheader automake aclocal
 
 AUTOMAKE_ARGS+=	--add-missing --copy --foreign
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		ipmi_ui.1 openipmicmd.1 openipmigui.1 \
-		openipmish.1 rmcp_ping.1 solterm.1
-MAN7=		ipmi_cmdlang.7 openipmi_conparms.7
-MAN8=		ipmilan.8
 
 OPTIONS_DEFINE=	SSL SNMP PERL PYTHON TCL TKINTER TRACE GDBM
 OPTIONS_RADIO=	GLIB
@@ -42,7 +37,6 @@ GDBM_DESC=	Local SDR caching on startup
 GLIB12_DESC=	Simply OS handler for glib 1.2
 GLIB20_DESC=	Simply OS handler for glib 2.0
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libgdbm.so.3)
@@ -51,7 +45,7 @@ PORT_OPTIONS+=	GDBM
 
 .if ${PORT_OPTIONS:MSNMP}
 PORT_OPTIONS+=		SSL
-LIB_DEPENDS+=		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-ucdsnmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-ucdsnmp=no
@@ -87,20 +81,13 @@ PLIST_SUB+=		PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-WITH_SWIG=		yes
 USE_PYTHON=		yes
-CONFIGURE_ARGS+=	--with-python
+CONFIGURE_ARGS+=	--with-python --with-swig
+BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 PLIST_SUB+=		PYTHON=""
 .else
-CONFIGURE_ARGS+=	--with-python=no
+CONFIGURE_ARGS+=	--with-python=no --with-swig=no
 PLIST_SUB+=		PYTHON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSWIG}
-BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
-CONFIGURE_ARGS+=	--with-swig
-.else
-CONFIGURE_ARGS+=	--with-swig=no
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
@@ -115,11 +102,11 @@ PLIST_SUB+=		TCL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTRACE}
-LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
 .endif
 
 .if ${PORT_OPTIONS:MGLIB12}

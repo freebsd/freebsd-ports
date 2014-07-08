@@ -57,56 +57,62 @@ include/OpenIPMI/mxp.h
 include/OpenIPMI/os_handler.h
 include/OpenIPMI/selector.h
 lib/libIPMIlanserv.a
-lib/libIPMIlanserv.la
 lib/libIPMIlanserv.so
 lib/libIPMIlanserv.so.0
+lib/libIPMIlanserv.so.0.0.1
 lib/libOpenIPMI.a
-lib/libOpenIPMI.la
 lib/libOpenIPMI.so
 lib/libOpenIPMI.so.0
+lib/libOpenIPMI.so.0.0.5
 lib/libOpenIPMIcmdlang.a
-lib/libOpenIPMIcmdlang.la
 lib/libOpenIPMIcmdlang.so
 lib/libOpenIPMIcmdlang.so.0
+lib/libOpenIPMIcmdlang.so.0.0.5
 lib/libOpenIPMIposix.a
-lib/libOpenIPMIposix.la
 lib/libOpenIPMIposix.so
 lib/libOpenIPMIposix.so.0
+lib/libOpenIPMIposix.so.0.0.1
 lib/libOpenIPMIpthread.a
-lib/libOpenIPMIpthread.la
 lib/libOpenIPMIpthread.so
 lib/libOpenIPMIpthread.so.0
+lib/libOpenIPMIpthread.so.0.0.1
 lib/libOpenIPMIui.a
-lib/libOpenIPMIui.la
 lib/libOpenIPMIui.so
 lib/libOpenIPMIui.so.1
+lib/libOpenIPMIui.so.1.0.1
 lib/libOpenIPMIutils.a
-lib/libOpenIPMIutils.la
 lib/libOpenIPMIutils.so
 lib/libOpenIPMIutils.so.0
+lib/libOpenIPMIutils.so.0.0.1
 libdata/pkgconfig/OpenIPMI.pc
 libdata/pkgconfig/OpenIPMIcmdlang.pc
 libdata/pkgconfig/OpenIPMIposix.pc
 libdata/pkgconfig/OpenIPMIpthread.pc
 libdata/pkgconfig/OpenIPMIui.pc
 libdata/pkgconfig/OpenIPMIutils.pc
+man/man1/ipmi_ui.1.gz
+man/man1/openipmicmd.1.gz
+man/man1/openipmigui.1.gz
+man/man1/openipmish.1.gz
+man/man1/rmcp_ping.1.gz
+man/man1/solterm.1.gz
+man/man7/ipmi_cmdlang.7.gz
+man/man7/openipmi_conparms.7.gz
+man/man8/ipmilan.8.gz
 @dirrmtry include/OpenIPMI/internal
 @dirrmtry include/OpenIPMI
 %%GLIB12%%@comment files list for GLIB12
 %%GLIB12%%lib/libOpenIPMIglib12.a
-%%GLIB12%%lib/libOpenIPMIglib12.la
 %%GLIB12%%lib/libOpenIPMIglib12.so
 %%GLIB12%%lib/libOpenIPMIglib12.so.0
 %%GLIB12%%libdata/pkgconfig/OpenIPMIglib12.pc
 %%GLIB20%%@comment files list for GLIB20
 %%GLIB20%%lib/libOpenIPMIglib.a
-%%GLIB20%%lib/libOpenIPMIglib.la
 %%GLIB20%%lib/libOpenIPMIglib.so
 %%GLIB20%%lib/libOpenIPMIglib.so.0
 %%GLIB20%%libdata/pkgconfig/OpenIPMIglib.pc
 %%TCL%%@comment files list for TCL
 %%TCL%%lib/libOpenIPMItcl.a
-%%TCL%%lib/libOpenIPMItcl.la
 %%TCL%%lib/libOpenIPMItcl.so
 %%TCL%%lib/libOpenIPMItcl.so.0
 %%TCL%%libdata/pkgconfig/OpenIPMItcl.pc
@@ -119,7 +125,6 @@ libdata/pkgconfig/OpenIPMIutils.pc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.pyo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_OpenIPMI.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_OpenIPMI.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_OpenIPMI.so
 %%TKINTER%%@comment files list for TKINTER
 %%TKINTER%%bin/openipmigui
