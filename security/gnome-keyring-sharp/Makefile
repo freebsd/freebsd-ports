@@ -3,11 +3,11 @@
 
 PORTNAME=	gnome-keyring-sharp
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTNAME}/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully managed implementation of gnome-keyring
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus \
@@ -15,9 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/deve
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack gtksharp20
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	gtksharp20
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
