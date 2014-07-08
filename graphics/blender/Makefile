@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.70a
-PORTREVISION=	2
+PORTVERSION=	2.71
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 USE_XORG=	x11 xext xmu
 USE_GL=		glew
 USES=		cmake:outsource compiler:features shebangfix
-USE_PYTHON=	3.3
+USE_PYTHON=	3.4
 CMAKE_ARGS+=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF
 
@@ -33,8 +32,8 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 
 SUB_FILES=	blender blenderplayer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.70
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.71
 
 .include "${.CURDIR}/Makefile.options"
 
@@ -222,6 +221,16 @@ CMAKE_ARGS+=	-DWITH_SDL:BOOL=OFF
 USE_GCC=	yes
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|md;mud;ud;d|dm;dmu;du;d|' \
+		${WRKSRC}/build_files/cmake/Modules/FindPythonLibsUnix.cmake
+
+post-build:
+	@(cd ${WRKSRC}/doc/manpage && \
+		${PYTHON_CMD} blender.1.py \
+			${INSTALL_WRKSRC}/bin/blender \
+			${INSTALL_WRKSRC}/bin/${PORTNAME}.1)
+
 # We ignore MAKE_ARGS, since those would set DESTDIR for make stage,
 # which in turn would cause make install to install everything in a
 # wrong location
@@ -282,10 +291,8 @@ post-install:
 	@${ECHO} @dirrm ${DATADIR_REL}/datafiles >> ${TMPPLIST}
 	@${ECHO} @dirrm ${DATADIR_REL} >> ${TMPPLIST}
 
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/bin/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${ECHO} man/man1/${PORTNAME}.1.gz >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.post.mk>
