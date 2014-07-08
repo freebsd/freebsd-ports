@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	RedHat\'s database-enabled e-commerce server
+COMMENT=	RedHat's database-enabled e-commerce server
 
 RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
