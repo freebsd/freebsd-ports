@@ -265,6 +265,11 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/vecir.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/vecprim.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/version.h
 lib/gcc/%%GCC_TARG%%/libgcc_s_dw2-1.dll
+man/man1/%%PKGNAMEPREFIX%%cpp.1.gz
+man/man1/%%PKGNAMEPREFIX%%g++.1.gz
+man/man1/%%PKGNAMEPREFIX%%gcc.1.gz
+man/man1/%%PKGNAMEPREFIX%%gcov.1.gz
+man/man1/%%PKGNAMEPREFIX%%gfortran.1.gz
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/cc1
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/cc1obj
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/cc1objplus
@@ -979,3 +984,5 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/gengtype
 @dirrm %%GCC_TARG%%/share/gcc-%%GCC_REV%%/python
 @dirrm %%GCC_TARG%%/share/gcc-%%GCC_REV%%
 @dirrmtry %%GCC_TARG%%/share
+@dirrmtry %%GCC_TARG%%/info
+@dirrmtry %%GCC_TARG%%/include
