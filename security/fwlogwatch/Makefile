@@ -7,21 +7,18 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet filter and firewall log analyzer
 
-USES=		gettext
-USE_BZIP2=	yes
+USES=		gettext tar:bzip2
 MAKE_ENV=	MKDIR="${MKDIR}"
 INSTALL_TARGET=	install install-config install-i18n
 
-MAN8=	fwlogwatch.8
-
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e "s,/etc,${PREFIX}/etc,g" ${WRKSRC}/${MAN8}
+	@${REINPLACE_CMD} -e "s,/etc,${PREFIX}/etc,g" ${WRKSRC}/fwlogwatch.8
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/fwlogwatch.sh.sample ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${FILESDIR}/fwlogwatch.sh.sample \
+		${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
