@@ -12,21 +12,18 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	-uw
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	libc-client4.so:${PORTSDIR}/mail/cclient
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
 
 MAKE_JOBS_UNSAFE=	yes
-
-MAN1=		dmail.1 mailutil.1 tmail.1
-MAN8=		ipopd.8 imapd.8
 
 ALL_TARGET=	bsf
 
@@ -40,7 +37,6 @@ SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
 DRAC_DESC=		Dynamically open MTA for relaying
 NETSCAPE_BRAIN_DAMAGE_DESC=	See Makefile for documentation
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDRAC}
@@ -80,22 +76,22 @@ pre-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec/
-	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${PREFIX}/libexec/
-	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${PREFIX}/libexec/
+	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${STAGEDIR}${PREFIX}/libexec/
+	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${STAGEDIR}${PREFIX}/libexec/
+	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g mail -m 2711 \
-		${WRKSRC}/mlock/mlock ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKSRC}/mtest/mtest ${PREFIX}/bin/mboxtest
+		${WRKSRC}/mlock/mlock ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/mtest/mtest ${STAGEDIR}${PREFIX}/bin/mboxtest
 	${INSTALL_MAN} \
-		${WRKSRC}/src/imapd/imapd.8 ${PREFIX}/man/man8/imapd.8
+		${WRKSRC}/src/imapd/imapd.8 ${STAGEDIR}${PREFIX}/man/man8/imapd.8
 	${INSTALL_MAN} \
-		${WRKSRC}/src/ipopd/ipopd.8 ${PREFIX}/man/man8/ipopd.8
-	${INSTALL_PROGRAM} ${WRKSRC}/dmail/dmail ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/mailutil/mailutil ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tmail/tmail ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/src/dmail/dmail.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${PREFIX}/man/man1/
+		${WRKSRC}/src/ipopd/ipopd.8 ${STAGEDIR}${PREFIX}/man/man8/ipopd.8
+	${INSTALL_PROGRAM} ${WRKSRC}/dmail/dmail ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/mailutil/mailutil ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tmail/tmail ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/src/dmail/dmail.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
@@ -119,9 +115,9 @@ post-install:
 	@${ECHO} "================================================================================"
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} -m 0755 -p ${DOCSDIR}
+	${MKDIR} -m 0755 -p ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/docs -cf - . | \
-		(umask 022; ${TAR} -C ${DOCSDIR} -xf -)
+		(umask 022; ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -)
 .endif
 
 cert:
