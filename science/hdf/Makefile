@@ -3,7 +3,7 @@
 
 PORTNAME=	hdf
 DISTVERSION=	4.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF/releases/%SUBDIR%/
@@ -17,12 +17,12 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	netcdf-*
 
-USES=		fortran
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}" \
 		--enable-shared
+INSTALL_TARGET=	install-strip
+USES=		fortran libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 BROKEN_powerpc=	Does not compile on powerpc
@@ -36,6 +36,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/gr_chunk.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
 
 check regression-test test: build
-	${MAKE} -C ${WRKSRC}/hdf/test check
+	@(cd ${WRKSRC}/hdf/test && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
