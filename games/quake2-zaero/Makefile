@@ -1,4 +1,4 @@
-# Created by: alepulver
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	zaero
@@ -10,23 +10,22 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-src-${PORTVERSION}-2${EXTRACT_SUFX}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II Zaero Mission Pack
 
 USES=		dos2unix zip
 DOS2UNIX_FILES=	*.[ch]
 NO_WRKSUBDIR=	yes
 
-OPTIONS_DEFINE=	DEMO DM DOCS
-DEMO_DESC=	Demo version of the game data
-DM_DESC=	Deathmatch maps
-
-OPTIONS_SUB=	yes
-
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
-.include "${.CURDIR}/../quake2-data/Makefile.include"
+OPTIONS_DEFINE=	DEMO DM_MAPS DOCS
+OPTIONS_SUB=	yes
 
+DEMO_DESC=	Demo version of the game data
+DM_MAPS_DESC=	Install deathmatch maps
+
+.include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEMO}
@@ -35,7 +34,7 @@ DISTFILES+=	zaerodemo${EXTRACT_SUFX}
 SUB_FILES+=	pkg-message
 .endif
 
-.if ${PORT_OPTIONS:MDM}
+.if ${PORT_OPTIONS:MDM_MAPS}
 DISTFILES+=	zaerodm${EXTRACT_SUFX}
 .endif
 
@@ -51,15 +50,15 @@ do-install:
 .if ${PORT_OPTIONS:MDEMO}
 	${INSTALL_DATA} ${WRKSRC}/zaero/pak0.pak ${STAGEDIR}${Q2DIR}/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${Q2DIR}/${PORTNAME}/sprites
-	${INSTALL_DATA} ${WRKSRC}/zaero/sprites/* ${STAGEDIR}${Q2DIR}/${PORTNAME}/sprites
+	${INSTALL_DATA} ${WRKSRC}/zaero/sprites/* \
+		${STAGEDIR}${Q2DIR}/${PORTNAME}/sprites
 .endif
 	${INSTALL_DATA} ${WRKSRC}/pak1.pak ${STAGEDIR}${Q2DIR}/${PORTNAME}
-.if ${PORT_OPTIONS:MDM}
-	${INSTALL_DATA} ${WRKSRC}/zaero/pak2.pak ${STAGEDIR}${Q2DIR}/${PORTNAME}
+.if ${PORT_OPTIONS:MDM_MAPS}
+	${INSTALL_DATA} ${WRKSRC}/zaero/pak2.pak \
+		${STAGEDIR}${Q2DIR}/${PORTNAME}
 .endif
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/changelog.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
