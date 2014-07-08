@@ -7,29 +7,25 @@ PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+
 PORTDOCS=	README
-MAN1=		doscan.1
+PLIST_FILES=	bin/doscan man/man1/doscan.1.gz
 
-PLIST_FILES=	bin/doscan
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|ony o|on yo|' \
 	    ${WRKSRC}/doc/doscan.1
 
 post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
