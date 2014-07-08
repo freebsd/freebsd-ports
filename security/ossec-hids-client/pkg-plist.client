@@ -1,3 +1,4 @@
+@group ossec
 %%PORTNAME%%/active-response/bin/disable-account.sh
 %%PORTNAME%%/active-response/bin/firewall-drop.sh
 %%PORTNAME%%/active-response/bin/host-deny.sh
@@ -27,7 +28,9 @@
 %%PORTNAME%%/etc/shared/win_applications_rcl.txt
 @sample %%PORTNAME%%/etc/ossec.conf.sample
 %%PORTNAME%%/etc/internal_options.conf
+@owner ossec
 %%PORTNAME%%/logs/ossec.log
+@owner
 %%PORTNAME%%/agentless/main.exp
 %%PORTNAME%%/agentless/sshlogin.exp
 %%PORTNAME%%/agentless/ssh_asa-fwsmconfig_diff
@@ -49,11 +52,15 @@
 @dirrmtry %%PORTNAME%%/var
 @dirrmtry %%PORTNAME%%/queue/syscheck
 @dirrmtry %%PORTNAME%%/queue/rids
+@owner ossec
 @dirrmtry %%PORTNAME%%/queue/ossec
 @dirrmtry %%PORTNAME%%/queue/diff
+@owner
 @dirrmtry %%PORTNAME%%/queue/alerts
 @dirrmtry %%PORTNAME%%/queue
 @dirrmtry %%PORTNAME%%/logs
 @dirrmtry %%PORTNAME%%/bin
+@owner ossec
 @dirrmtry %%PORTNAME%%/.ssh
+@owner
 @dirrmtry %%PORTNAME%%
