@@ -11,18 +11,16 @@ DISTFILES=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}:onig \
 DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
 NO_LATEST_LINK=	yes
 CONFLICTS_INSTALL=	oniguruma-4.*
-
 GNU_CONFIGURE=	yes
 DOCS=		HISTORY README doc/*
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 post-patch:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/ruby187p248-oniguruma.patch \
 		${WRKSRC}/ruby187.patch
@@ -32,16 +30,12 @@ post-configure:
 		${FILESDIR}/onig-config > ${WRKSRC}/onig-config
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/onig-config ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/onig-config ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
