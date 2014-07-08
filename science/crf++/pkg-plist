@@ -1,7 +1,7 @@
 bin/crf_learn
 bin/crf_test
 include/crfpp.h
-lib/libcrfpp.so.0
-lib/libcrfpp.so
 lib/libcrfpp.a
-lib/libcrfpp.la
+lib/libcrfpp.so
+lib/libcrfpp.so.0
+lib/libcrfpp.so.0.0.0
