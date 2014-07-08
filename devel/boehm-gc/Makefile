@@ -21,7 +21,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:${PORTSDIR}/devel/libatomic_ops
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix
+USES=		libtool pathfix pkgconfig
 USE_AUTOTOOLS=	aclocal autoconf libtoolize
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
