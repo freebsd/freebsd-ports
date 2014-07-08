@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2014-07-08 02:30:39.000000000 +0000
++++ Makefile.in	2014-07-08 02:33:45.000000000 +0000
+@@ -463,10 +463,10 @@
+ 	mv -f $(DESTDIR)$(SETTINGS_FILE).tmp $(DESTDIR)$(SETTINGS_FILE)
+ 
+ 	PATH="$(DESTDIR)$(bindir):$(FVWM_BINDIR):$$PATH"; \
+-	$(DESTDIR)$(bindir)/fvwm-themes-config --site --reset
++	# $(DESTDIR)$(bindir)/fvwm-themes-config --site --reset
+ 
+ 	if test "$(BUILD_MENUS)" = "yes"; then \
+-		$(DESTDIR)$(bindir)/fvwm-themes-menuapp --site --build-menus --remove-popup; \
++		#$(DESTDIR)$(bindir)/fvwm-themes-menuapp --site --build-menus --remove-popup; \
+ 	fi
+ 
+ 	if test "$(GNOME_ICONS)" = "yes"; then \
