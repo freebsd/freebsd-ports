@@ -6,9 +6,9 @@ include/oglappth/ogl_objects.h
 include/oglappth/ogl_camera.h
 include/oglappth/ogl_lights.h
 include/oglappth/transparent.h
-lib/liboglappth.so.2
-lib/liboglappth.so
-lib/liboglappth.la
 lib/liboglappth.a
+lib/liboglappth.so
+lib/liboglappth.so.2
+lib/liboglappth.so.2.0.1
 libdata/pkgconfig/liboglappth.pc
 @dirrm include/oglappth
