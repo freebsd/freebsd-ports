@@ -8,46 +8,27 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	nini/Nini/${PORTVERSION}
 DISTNAME=	Nini-${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NET configuration library
 
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
-
-USES=		zip
+USES=		mono zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Nini
-
 NINI_VERSION=	${PORTVERSION:C/([0-9]*\.[0-9]*).*/\1/}
-
 SUB_FILES=	${PORTNAME}.pc
 SUB_LIST+=	PORTVERSION=${PORTVERSION} \
 		NINI_VERSION=${NINI_VERSION}
-
 PLIST_SUB+=	NINI_VERSION=${NINI_VERSION}
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if !defined (NOPORTDOCS)
-PORTDOCS=	*
-.endif
-.if !defined (NOPORTEXAMPLES)
-PORTEXAMPLES=	*
-.endif
-
-NO_STAGE=	yes
 do-install:
-	@(cd ${INSTALL_WRKSRC}/Bin/Mono/1.1/Release && ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil -root ${PREFIX}/lib/ -gacdir ${PREFIX}/lib -package ${PORTNAME}-${NINI_VERSION} -i Nini.dll)
-	@${INSTALL_DATA} ${WRKDIR}/nini.pc ${PREFIX}/libdata/pkgconfig/nini-${NINI_VERSION}.pc
+	@(cd ${INSTALL_WRKSRC}/Bin/Mono/1.1/Release && ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil -root ${STAGEDIR}${PREFIX}/lib/ -gacdir ${STAGEDIR}${PREFIX}/lib -package ${PORTNAME}-${NINI_VERSION} -i Nini.dll)
+	@${INSTALL_DATA} ${WRKDIR}/nini.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/nini-${NINI_VERSION}.pc
 
-.if !defined (NOPORTEXAMPLES)
-	@${ECHO_CMD} "Installing examples..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/Examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
-
-.if !defined (NOPORTDOCS)
-	@${ECHO_CMD} "Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/Docs/ && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/Examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/Docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
