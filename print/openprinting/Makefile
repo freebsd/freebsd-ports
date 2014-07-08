@@ -3,7 +3,7 @@
 
 PORTNAME=	openprinting
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=\
@@ -16,25 +16,14 @@ COMMENT=	Sun's implementation of the OpenPrinting API (PAPI)
 
 WRKSRC=		${WRKDIR}/papi-${PORTVERSION}_beta
 
-USE_BZIP2=	yes
-USES=		gettext iconv gmake
-
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/libexec
-
+USES=		gettext gmake iconv libtool tar:bzip2
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
-
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtool
-ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS+=	-a -c
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lintl
-
-# Really disable building static libraries; the package does not use
-# its own libtool, and we have to tell it to stop.
-# Static libraries are not very useful in this package.
-MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 
 # TODO: Get mod_ipp to actually work; Sun's example seems to be broken
 # under both Apache 1.3/2.0, this could be a papi issue; does not build
@@ -58,7 +47,7 @@ CONFIGURE_ARGS+=--without-apache
 .endif
 
 .if defined(WITH_PSM_CUPS)
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-cups
@@ -76,38 +65,35 @@ PLIST_FILES+=\
 	include/ipp-listener.h \
 	lib/libpapi-common.so \
 	lib/libpapi-common.so.0 \
-	lib/libpapi-common.la \
+	lib/libpapi-common.so.0.0.0 \
 	lib/libpapi.so \
 	lib/libpapi.so.0 \
-	lib/libpapi.la \
+	lib/libpapi.so.0.0.0 \
 	lib/libipp-core.so \
 	lib/libipp-core.so.0 \
-	lib/libipp-core.la \
+	lib/libipp-core.so.0.0.0 \
 	lib/libipp-listener.so \
 	lib/libipp-listener.so.0 \
-	lib/libipp-listener.la \
+	lib/libipp-listener.so.0.0.0 \
 	libexec/psm-lpd.so \
-	libexec/psm-lpd.la \
 	libexec/psm-ipp.so \
-	libexec/psm-ipp.la \
 	libexec/lpd-port \
 	man/man5/psm-ipp.5.gz
 
 .if defined(WITH_PSM_CUPS)
-PLIST_FILES+=\
-	libexec/psm-cups.so \
-	libexec/psm-cups.la
+PLIST_FILES+=	libexec/psm-cups.so
 .endif
 
 .if defined(WITH_MOD_IPP)
-PLIST_FILES+=\
-	lib/mod_ipp.so \
-	lib/mod_ipp.la
+PLIST_FILES+=	lib/mod_ipp.so
 .endif
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} '/^LIBS =/s,$$, ../libpapi-common/libpapi-common.la @LIBS@,' \
+		${WRKSRC}/source/bsd-sysv-commands/Makefile.in \
+		${WRKSRC}/source/examples/Makefile.in
+	@${REINPLACE_CMD} -e 's/-ldl//' -e 's/-lnsl//' \
+		${WRKSRC}/source/libpapi-cups/Makefile.in \
+		${WRKSRC}/source/libpapi-dynamic/Makefile.in
 
-pre-configure:
-	cd ${WRKSRC}; ./autogen.sh
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
