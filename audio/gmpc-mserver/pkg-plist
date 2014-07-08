@@ -1,4 +1,3 @@
-lib/gmpc/plugins/gmpcmserverplugin.la
 lib/gmpc/plugins/gmpcmserverplugin.so
 share/gmpc/plugins/gmpc-mserver/gmpc-mserver.png
 @dirrmtry lib/gmpc/plugins
