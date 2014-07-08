@@ -6,6 +6,12 @@ bin/fvwm-themes-root
 bin/fvwm-themes-script
 bin/fvwm-themes-start
 bin/fvwm-themes-xrdb
+man/man1/fvwm-themes-config.1.gz
+man/man1/fvwm-themes-menuapp.1.gz
+man/man1/fvwm-themes-com.1.gz
+man/man1/fvwm-themes-images.1.gz
+man/man1/fvwm-themes-start.1.gz
+man/man1/fvwm-themes-root.1.gz
 share/fvwm/FvwmApplet-APMMon
 share/fvwm/FvwmApplet-Day
 share/fvwm/FvwmApplet-DayClock
@@ -282,9 +288,6 @@ share/fvwm/sounds/iconify.au
 share/fvwm/sounds/new_desk.au
 share/fvwm/sounds/new_page.au
 share/fvwm/sounds/windowshade.au
-share/fvwm/themes-rc
-share/fvwm/themes-rc-2
-share/fvwm/themes-rc-3
 share/fvwm/themes/afterstep/README
 share/fvwm/themes/afterstep/background
 share/fvwm/themes/afterstep/buttons
@@ -614,7 +617,6 @@ share/fvwm/themes/celticbow/images/button/spin_in.xpm
 share/fvwm/themes/celticbow/images/decor/knots.png
 share/fvwm/themes/celticbow/theme-name.cfg
 share/fvwm/themes/celticbow/windowlook
-share/fvwm/themes/current/theme.cfg
 share/fvwm/themes/default/README
 share/fvwm/themes/default/background
 share/fvwm/themes/default/background.cfg
@@ -1543,7 +1545,6 @@ share/fvwm/themes/unsafe/menustyle.cfg
 @dirrm share/fvwm/themes/default/images/background
 @dirrm share/fvwm/themes/default/images
 @dirrm share/fvwm/themes/default
-@dirrm share/fvwm/themes/current
 @dirrm share/fvwm/themes/celticbow/images/decor
 @dirrm share/fvwm/themes/celticbow/images/button
 @dirrm share/fvwm/themes/celticbow/images/background
@@ -1615,4 +1616,3 @@ share/fvwm/themes/unsafe/menustyle.cfg
 @dirrm share/fvwm/images/32x32
 @dirrm share/fvwm/images/16x16-kde
 @dirrm share/fvwm/images
-@dirrmtry share/fvwm
