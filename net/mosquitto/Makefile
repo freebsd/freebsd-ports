@@ -14,6 +14,11 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
+OPTIONS_DEFAULT=PYTHON
+OPTIONS_DEFINE=	PYTHON
+
+PYTHON_DESC=	Build python driver
+
 USES=		cmake
 USE_PYTHON=	2
 NOCONFIGURE=	yes
@@ -24,16 +29,23 @@ USE_LDCONFIG=	yes
 
 USERS=		nobody
 
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPYTHON}
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER} NOPYTHON=""
+.else
+PLIST_SUB=	NOPYTHON="@comment "
+.endif
 
 post-patch:
 	${MV} ${WRKSRC}/mosquitto.conf ${WRKSRC}/mosquitto.conf.example
 
 post-install:
+.if ${PORT_OPTIONS:MPYTHON}
 	cd ${WRKSRC}/lib/python ; \
 	${PYTHON_CMD} ${WRKSRC}/lib/python/setup.py build ; \
 	${PYTHON_CMD} ${WRKSRC}/lib/python/setup.py install --prefix=${PREFIX} --root=${STAGEDIR}
-
+.endif
 	# Compress Man Pages
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man8/mosquitto.8
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man7/mqtt.7
