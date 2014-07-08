@@ -1,5 +1,4 @@
-@unexec if cmp -s %D/%%ETCDIR%%/amavis-logwatch.conf.sample %D/%%ETCDIR%%/amavis-logwatch.conf; then rm -f %D/%%ETCDIR%%/amavis-logwatch.conf; fi
 %%ETCDIR%%/amavis-logwatch.conf.sample
-@exec if [ ! -f %B/amavis-logwatch.conf ] ; then cp -p %B/%f %B/amavis-logwatch.conf; fi
+man/man1/amavis-logwatch.1.gz
 @dirrmtry %%ETCDIR%%
 bin/amavis-logwatch
