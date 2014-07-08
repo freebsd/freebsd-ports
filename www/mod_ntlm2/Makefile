@@ -20,5 +20,9 @@ SAMBA_PORT?=	net/samba36
 USE_APACHE=	22
 MAKE_ENV=	APXS=${APXS}
 
-NO_STAGE=	yes
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+	${APXS} -i -n 'ntlm' -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} ${WRKSRC}/mod_ntlm.la
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_ntlm.so
+
 .include <bsd.port.mk>
