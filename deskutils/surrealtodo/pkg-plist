@@ -1,3 +1,5 @@
+@owner %%OWNER%%
+@group %%GROUP%%
 %%WWWDIR%%/README.txt
 %%WWWDIR%%/ajax.php
 %%WWWDIR%%/compile_translation.sh
@@ -318,6 +320,8 @@
 %%WWWDIR%%/theme/dusk_to_dawn/styles.css
 %%WWWDIR%%/theme/theme_instructions.txt
 %%WWWDIR%%/todo.class.php
+@owner
+@group
 @dirrm %%WWWDIR%%/theme/dusk_to_dawn/jquery/images
 @dirrm %%WWWDIR%%/theme/dusk_to_dawn/jquery
 @dirrm %%WWWDIR%%/theme/dusk_to_dawn/images/trash
