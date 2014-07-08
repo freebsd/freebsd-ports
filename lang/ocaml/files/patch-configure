@@ -1,6 +1,6 @@
---- configure.orig	2013-08-23 06:22:36.000000000 +0000
-+++ configure
-@@ -545,9 +545,10 @@ if test $withsharedlibs = "yes"; then
+--- configure.orig	2014-05-08 09:28:26.000000000 +0200
++++ configure	2014-05-08 09:31:54.000000000 +0200
+@@ -545,9 +545,10 @@
        mksharedlib="$flexlink"
        mkmaindll="$flexlink -maindll"
        shared_libraries_supported=true;;
@@ -13,7 +13,7 @@
        bytecclinkopts="$bytecclinkopts -Wl,-E"
        byteccrpath="-Wl,-rpath,"
        mksharedlibrpath="-Wl,-rpath,"
-@@ -557,7 +558,7 @@ if test $withsharedlibs = "yes"; then
+@@ -557,7 +558,7 @@
        case "$bytecc" in
          gcc*)
            sharedcccompopts="-fPIC"
@@ -22,7 +22,7 @@
            byteccrpath="-Wl,-rpath,"
            mksharedlibrpath="-Wl,-rpath,"
            shared_libraries_supported=true;;
-@@ -573,11 +574,11 @@ if test $withsharedlibs = "yes"; then
+@@ -573,11 +574,11 @@
          gcc*)
            sharedcccompopts="-fPIC"
            if sh ./solaris-ld; then
@@ -36,7 +36,7 @@
              bytecclinkopts="$bytecclinkopts -Wl,-E"
              natdynlinkopts="-Wl,-E"
              byteccrpath="-Wl,-rpath,"
-@@ -601,12 +602,12 @@ if test $withsharedlibs = "yes"; then
+@@ -601,12 +602,12 @@
        mksharedlibrpath="-rpath "
        shared_libraries_supported=true;;
      i[3456]86-*-darwin[89].*)
@@ -51,7 +51,7 @@
        bytecccompopts="$dl_defs $bytecccompopts"
        dl_needs_underscore=false
        shared_libraries_supported=true;;
-@@ -616,7 +617,7 @@ if test $withsharedlibs = "yes"; then
+@@ -616,7 +617,7 @@
        shared_libraries_supported=false;;
      *-*-openbsd*)
        sharedcccompopts="-fPIC"
@@ -60,7 +60,7 @@
        bytecclinkopts="$bytecclinkopts -Wl,-E"
        natdynlinkopts="-Wl,-E"
        byteccrpath="-Wl,-rpath,"
-@@ -651,6 +652,8 @@ if test $withsharedlibs = "yes"; then
+@@ -651,12 +652,15 @@
      x86_64-*-kfreebsd*)           natdynlink=true;;
      i[345]86-*-freebsd*)          natdynlink=true;;
      x86_64-*-freebsd*)            natdynlink=true;;
@@ -69,7 +69,14 @@
      i[345]86-*-openbsd*)          natdynlink=true;;
      x86_64-*-openbsd*)            natdynlink=true;;
      i[345]86-*-netbsd*)           natdynlink=true;;
-@@ -680,6 +683,7 @@ case "$host" in
+     x86_64-*-netbsd*)             natdynlink=true;;
+     i386-*-gnu0.3)                natdynlink=true;;
+     arm*-*-linux*)                natdynlink=true;;
++    arm*-*-freebsd*)              natdynlink=true;;
+   esac
+ fi
+ 
+@@ -680,6 +684,7 @@
    sparc*-*-gnu*)                arch=sparc; system=gnu;;
    i[3456]86-*-linux*)           arch=i386; system=linux_`sh ./runtest elf.c`;;
    i[3456]86-*-*bsd*)            arch=i386; system=bsd_`sh ./runtest elf.c`;;
@@ -77,7 +84,7 @@
    i[3456]86-*-nextstep*)        arch=i386; system=nextstep;;
    i[3456]86-*-solaris*)         if $arch64; then
                                    arch=amd64; system=solaris
-@@ -695,6 +699,7 @@ case "$host" in
+@@ -695,6 +700,7 @@
                                  fi;;
    i[3456]86-*-gnu*)             arch=i386; system=gnu;;
    powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
@@ -85,7 +92,14 @@
    powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
    powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
-@@ -714,6 +719,7 @@ case "$host" in
+@@ -708,12 +714,14 @@
+   armv5te*-*-linux-gnueabi)     arch=arm; model=armv5te; system=linux_eabi;;
+   armv5*-*-linux-gnueabi)       arch=arm; model=armv5; system=linux_eabi;;
+   arm*-*-linux-gnueabi)         arch=arm; system=linux_eabi;;
++  armv6*-*-freebsd*)            arch=arm; model=armv6; system=freebsd;;
+   x86_64-*-linux*)              arch=amd64; system=linux;;
+   x86_64-*-gnu*)                arch=amd64; system=gnu;;
+   x86_64-*-freebsd*)            arch=amd64; system=freebsd;;
    x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
    x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
    x86_64-*-darwin*)             arch=amd64; system=macosx;;
@@ -93,7 +107,7 @@
  esac
  
  # Some platforms exist both in 32-bit and 64-bit variants, not distinguished
-@@ -734,7 +740,7 @@ else
+@@ -734,7 +742,7 @@
  fi
  
  nativecccompopts=''
@@ -102,7 +116,16 @@
  # FIXME the naming of nativecclinkopts is broken: these are options for
  # ld (for shared libs), not for cc
  nativeccrpath="$byteccrpath"
-@@ -803,6 +809,8 @@ case "$arch,$model,$system" in
+@@ -766,6 +774,8 @@
+                     aspp='gcc -m64 -c';;
+   amd64,*,*)        as='as'
+                     aspp='gcc -c';;
++  arm,*,freebsd*)   as='cc -c';
++                    aspp='cc -c';;
+   arm,*,*)          as='as';
+                     aspp='gcc -c';;
+   i386,*,solaris)   as='as'
+@@ -803,6 +813,8 @@
    amd64,*,linux) profiling='prof';;
    amd64,*,gnu) profiling='prof';;
    arm,*,linux*) profiling='prof';;
@@ -111,7 +134,7 @@
    *) profiling='noprof';;
  esac
  
-@@ -1204,7 +1212,7 @@ if test "$pthread_wanted" = "yes"; then
+@@ -1204,7 +1216,7 @@
    case "$host" in
      *-*-solaris*)  pthread_link="-lpthread -lposix4"
                     pthread_caml_link="-cclib -lpthread -cclib -lposix4";;
@@ -120,7 +143,7 @@
                     pthread_caml_link="-cclib -pthread";;
      *-*-openbsd*)  pthread_link="-pthread"
                     pthread_caml_link="-cclib -pthread";;
-@@ -1218,7 +1226,7 @@ if test "$pthread_wanted" = "yes"; then
+@@ -1218,7 +1230,7 @@
      bytecccompopts="$bytecccompopts -D_REENTRANT"
      nativecccompopts="$nativecccompopts -D_REENTRANT"
      case "$host" in
@@ -129,7 +152,7 @@
            bytecccompopts="$bytecccompopts -D_THREAD_SAFE"
            nativecccompopts="$nativecccompopts -D_THREAD_SAFE";;
        *-*-openbsd*)
-@@ -1388,7 +1396,6 @@ if test "$x11_include" = "not found"; th
+@@ -1388,7 +1400,6 @@
          x11_libs="-L$dir"
          case "$host" in
            *-kfreebsd*-gnu) x11_link="-L$dir -lX11";;
@@ -137,7 +160,7 @@
            *) x11_link="-L$dir -lX11";;
          esac
        fi
-@@ -1514,7 +1521,7 @@ if test $has_tk = true; then
+@@ -1514,7 +1525,7 @@
                     Tcl_DoOneEvent
    then
      case "$host" in
@@ -146,7 +169,7 @@
        *) tk_libs="-L/usr/pkg/lib $tk_libs $tk_x11_libs -ltk$tkmaj$tkmin -ltcl$tclmaj$tclmin -lpthread $tkauxlibs";;
      esac
    else
-@@ -1528,14 +1535,14 @@ if test $has_tk = true; then
+@@ -1528,14 +1539,14 @@
      echo "Tcl/Tk libraries found."
    elif sh ./hasgot -L/sw/lib $tk_libs $tk_x11_libs $tkauxlibs Tk_SetGrid; then
      case "$host" in
@@ -163,7 +186,7 @@
        *) tk_libs="-L/usr/pkg/lib $tk_libs";;
      esac
      echo "Tcl/Tk libraries found."
-@@ -1564,10 +1571,10 @@ fi
+@@ -1564,10 +1575,10 @@
  # Look for BFD library
  
  if ./hasgot -i bfd.h && \

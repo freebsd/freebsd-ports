@@ -4,7 +4,7 @@
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 PORTNAME=	ocaml
 PORTVERSION=	4.01.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ \
 		${MASTER_SITE_GENTOO}
@@ -63,6 +63,12 @@ PORTDOCS=	htmlman ${DOCSDISTNAME}-refman.ps.gz ${DOCSDISTNAME}-refman.pdf
 PLIST_SUB+=	DOC="@comment "
 .endif
 
+.if ${ARCH} == armv6
+CONFIGURE_ARGS+= -as "${AS} ${ASFLAGS} -mfpu=softvfp -meabi=5"
+.else
+CONFIGURE_ARGS+= -as "${AS} ${ASFLAGS}"
+.endif
+
 .if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
 THR_CPP=	${PTHREAD_CFLAGS}
@@ -107,7 +113,7 @@ CONFIGURE_ARGS+=-no-tk
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manfiles"
 
-OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/}
+OCAML_ARCH= ${ARCH:S/x86_64/amd64/:S/powerpc/power/:S/armv6/arm/}
 
 .if defined(NO_PROFILE) || ${OCAML_ARCH} == power || ${OPSYS} == DragonFly
 PLIST_SUB+=	PROF="@comment "
