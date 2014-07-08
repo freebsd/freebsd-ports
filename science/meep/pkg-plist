@@ -5,8 +5,6 @@ include/meep/mympi.hpp
 include/meep/vec.hpp
 %%NOMPI%%lib/libmeep.a
 %%MPI%%lib/libmeep_mpi.a
-%%NOMPI%%lib/libmeep.la
-%%MPI%%lib/libmeep_mpi.la
 %%NOMPI%%libdata/pkgconfig/meep.pc
 %%MPI%%libdata/pkgconfig/meep_mpi.pc
 %%DATADIR%%/casimir.scm
