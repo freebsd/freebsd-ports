@@ -2,9 +2,9 @@ include/libps/pslib-mp.h
 include/libps/pslib.h
 include/libps/psversion.h
 lib/libps.a
-lib/libps.la
 lib/libps.so
-lib/libps.so.4
+lib/libps.so.0
+lib/libps.so.0.4.5
 libdata/pkgconfig/libps.pc
 man/man3/PS_add_bookmark.3.gz
 man/man3/PS_add_kerning.3.gz
