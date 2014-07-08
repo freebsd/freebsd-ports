@@ -137,7 +137,6 @@
     SUBDIR += qwit
     SUBDIR += qwit-devel
     SUBDIR += qxmpp
-    SUBDIR += qxmpp-leechcraft
     SUBDIR += ramblercontacts
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
