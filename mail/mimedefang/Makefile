@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.74
+PORTVERSION=	2.75
 CATEGORIES=	mail
-MASTER_SITES=	http://www.mimedefang.org/static/
+MASTER_SITES=	http://www.mimedefang.org/static/ \
+		http://fossies.org/linux/misc/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Milter based anti-spam and anti-virus filtering program
@@ -23,12 +24,14 @@ OPTIONS_DEFINE=	CLAMAV EXAMPLES DOCS
 OPTIONS_DEFAULT=	CLAMAV
 CLAMAV_DESC=	Enable Clamav
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	script/mimedefang-util
+perl_OLD_CMD=	perl
 GNU_CONFIGURE=	yes
 
 MAILUSER?=		mailnull
 SPOOLDIR?=		/var/spool/MIMEDefang
-QUARANTINEDIR?=	/var/spool/MD-Quarantine
+QUARANTINEDIR?=		/var/spool/MD-Quarantine
 
 CONFIGURE_ENV+=		PERL=${PERL}
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
@@ -39,17 +42,14 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-ipheader \
 			--prefix=${PREFIX}
 
-MAN1=	mimedefang-util.1
-MAN5=	mimedefang-filter.5
-MAN7=	mimedefang-notify.7 mimedefang-protocol.7
-MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
-	md-mx-ctrl.8 watch-mimedefang.8 watch-multiple-mimedefangs.8
-
 SUB_FILES=	pkg-message
+
+PLIST_SUB+=	MAIL_USER="${MAILUSER}" \
+		MIMEDEFANG_RUNDIR="${SPOOLDIR}" \
+		MIMEDEFANG_QUARANTINEDIR="${QUARANTINEDIR}"
 
 CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !exists( /usr/include/libmilter/mfapi.h )
@@ -77,24 +77,15 @@ pre-install:
 
 post-install:
 	@${REINPLACE_CMD} -e 's,%%CHMOD%%,${CHMOD},g' ${WRKSRC}/examples/init-script
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${PREFIX}/etc/rc.d/mimedefang
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${STAGEDIR}${PREFIX}/etc/rc.d/mimedefang
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}/
 .endif
-.for f in ${CONFIG_FILES}
-	@if [ ! -f ${ETCDIR}/${f} ]; then \
-		${CP} -p ${ETCDIR}/${f}.example ${ETCDIR}/${f} ; \
-	fi
-.endfor
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/ && ${INSTALL_DATA} stream-by-domain-filter \
-		suggested-minimum-filter-for-windows-clients README ${EXAMPLESDIR}/
+		suggested-minimum-filter-for-windows-clients README ${STAGEDIR}${EXAMPLESDIR}/
 .endif
-	@[ -d ${SPOOLDIR} ] && ${CHGRP} ${MAILUSER} ${SPOOLDIR}
-	@[ -d ${QUARANTINEDIR} ] && ${CHGRP} ${MAILUSER} ${QUARANTINEDIR}
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
