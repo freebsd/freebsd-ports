@@ -1,7 +1,5 @@
 bin/checkdns
-@unexec if cmp -s %D/etc/checkdns.conf-dist %D/etc/checkdns.conf; then rm -f %D/etc/checkdns.conf; fi
 etc/checkdns.conf-dist
-@exec if [ ! -f %D/etc/checkdns.conf ] ; then cp -p %D/%F %B/checkdns.conf; fi
 %%DATADIR%%/checkdns.css
 %%DATADIR%%/lang/english
 %%DATADIR%%/lang/spanish

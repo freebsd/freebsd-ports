@@ -11,14 +11,11 @@ MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domain name server analysis and reporting tool
 
-
 SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README THANKS TODO
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 
@@ -27,18 +24,18 @@ post-patch:
 		${WRKSRC}/INSTALL ${WRKSRC}/README ${WRKSRC}/checkdns.conf-dist
 	@${REINPLACE_CMD} -e 's|CC = gcc|CC = ${CC} -include string.h|' ${WRKSRC}/Makefile
 
-post-install:
-	@if [ ! -f ${PREFIX}/etc/checkdns.conf ]; then \
-		${CP} -p ${PREFIX}/etc/checkdns.conf-dist ${PREFIX}/etc/checkdns.conf ; \
-	fi
-
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/checkdns ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/checkdns.conf-dist ${STAGEDIR}${PREFIX}/etc/
+	${MKDIR} ${STAGEDIR}${DATADIR}/lang
+	${INSTALL_DATA} ${WRKSRC}/checkdns.css ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lang/* ${STAGEDIR}${DATADIR}/lang
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/$f ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
