@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL Extension for Interface the MCVE/Monetra API
 
-LIB_DEPENDS=	monetra.7:${PORTSDIR}/devel/libmonetra
+LIB_DEPENDS=	libmonetra.so:${PORTSDIR}/devel/libmonetra
 
 LICENSE=	PHP30
 
