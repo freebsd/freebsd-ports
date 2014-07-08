@@ -3,13 +3,13 @@ include/ctl.h
 include/ctlgeom-types.h
 include/ctlgeom.h
 lib/libctl.a
-lib/libctl.la
 lib/libctl.so
 lib/libctl.so.5
+lib/libctl.so.5.0.1
 lib/libctlgeom.a
-lib/libctlgeom.la
 lib/libctlgeom.so
 lib/libctlgeom.so.5
+lib/libctlgeom.so.5.0.1
 man/man1/gen-ctl-io.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/advanced-user.html
 %%PORTDOCS%%%%DOCSDIR%%/basic-user.html
