@@ -14,8 +14,6 @@ LICENSE=	BSD2CLAUSE
 
 CONFLICTS=	ptpd2-devel.*
 
-LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
-
 ETCDIR=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
 
 USES=	gmake
@@ -26,7 +24,11 @@ PORTDOCS=	*
 
 USE_RC_SUBR=	ptpd2
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS SNMP
+OPTIONS_DEFAULT=DOCS SNMP
+
+SNMP_CONFIGURE_ENABLE=	snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
 .include <bsd.port.options.mk>
 
