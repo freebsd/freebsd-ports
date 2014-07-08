@@ -35,13 +35,13 @@ include/nutscan-ip.h
 include/parseconf.h
 include/upsclient.h
 lib/libnutclient.a
-lib/libnutclient.la
 lib/libnutclient.so
 lib/libnutclient.so.0
+lib/libnutclient.so.0.0.0
 lib/libupsclient.a
-lib/libupsclient.la
 lib/libupsclient.so
 lib/libupsclient.so.4
+lib/libupsclient.so.4.0.0
 libdata/pkgconfig/libnutclient.pc
 libdata/pkgconfig/libnutscan.pc
 libdata/pkgconfig/libupsclient.pc
@@ -83,6 +83,7 @@ libdata/pkgconfig/libupsclient.pc
 %%NUT_SERIAL%%libexec/nut/oldmge-shut
 %%NUT_SERIAL%%libexec/nut/oneac
 %%NUT_SERIAL%%libexec/nut/optiups
+%%NUT_IPMIPSU%%libexec/nut/nut-ipmipsu
 %%NUT_SERIAL%%libexec/nut/powercom
 %%NUT_PDU%%libexec/nut/powerman-pdu
 %%NUT_SERIAL%%libexec/nut/powerpanel
@@ -238,6 +239,7 @@ man/man8/upssched.8.gz
 %%NUT_USB%%man/man8/usbhid-ups.8.gz
 %%NUT_SNMP%%man/man8/snmp-ups.8.gz
 %%NUT_NEON%%man/man8/netxml-ups.8.gz
+%%NUT_IPMIPSU%%man/man8/nut-ipmipsu.8.gz
 %%NUT_PDU%%man/man8/powerman-pdu.8.gz
 sbin/upsd
 sbin/upsdrvctl

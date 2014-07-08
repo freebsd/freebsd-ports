@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -15,7 +15,7 @@ COMMENT=	Network UPS Tools
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig libtool
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
@@ -23,8 +23,10 @@ STATEDIR?=	/var/db/nut
 PLIST_SUB+=	NUT_USER=${NUT_USER}
 PLIST_SUB+=	NUT_GROUP=${NUT_GROUP}
 
-OPTIONS_DEFINE=	SERIAL USB SNMP NEON PDU CGI BASH
 OPTIONS_DEFAULT=SERIAL USB SNMP NEON
+OPTIONS_DEFINE=	${OPTIONS_DEFAULT} PDU CGI BASH AVAHI OPENSSL
+OPTIONS_SINGLE=	IPMI
+OPTIONS_SINGLE_IPMI=	IPMI_OFF IPMIPSU FREEIPMI
 
 SERIAL_DESC=	SERIAL support
 USB_DESC=	USB support
@@ -33,6 +35,10 @@ NEON_DESC=	NEON XML/HTTP support
 PDU_DESC=	Powerman PDU support
 CGI_DESC=	Web CGI interface
 BASH_DESC=	Bash Completion support
+AVAHI_DESC=	Avahi support
+IPMI_OFF_DESC=	No IPMI support
+FREEIPMI_DESC=	freeipmi support
+IPMIPSU_DESC=	Use nut-ipmipsu support (experimental)
 
 USE_RC_SUBR=	nut nut_upsmon nut_upslog
 SUB_LIST+=	STATEDIR=${STATEDIR}
@@ -121,6 +127,38 @@ RUN_DEPENDS+=	${LOCALBASE}/share/bash-completion/bash_completion.sh:${PORTSDIR}/
 PLIST_SUB+=	BASH=""
 .else
 PLIST_SUB+=	BASH="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MAVAHI}
+BUILD_DEPENDS+=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:${PORTSDIR}/net/avahi-header
+RUN_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avaha-app
+CONFIGURE_ARGS+=	--with-avahi
+.else
+CONFIGURE_ARGS+=	--without-avahi
+.endif
+
+.if ${PORT_OPTIONS:MFREEIPMI}
+LIB_DEPENDS+=	libfreeipmi.so:${PORTSDIR}/sysutils/freeipmi
+CONFIGURE_ARGS+=	--with-freeipmi
+PLIST_SUB+=	NUT_FREEIPMI=""
+.else
+CONFIGURE_ARGS+=	--without-freeipmi
+PLIST_SUB+=	NUT_FREEIPMI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MIPMIPSU}
+CONFIGURE_ARGS+=	--with-ipmi
+PLIST_SUB+=	NUT_IPMIPSU=""
+.else
+CONFIGURE_ARGS+=	--without-ipmi
+PLIST_SUB+=	NUT_IPMIPSU="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-openssl
+.else
+CONFIGURE_ARGS+=	--without-openssl --without-ssl
 .endif
 
 pre-install:
