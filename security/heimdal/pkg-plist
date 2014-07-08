@@ -115,6 +115,7 @@ lib/libheimbase.so.1.0.0
 %%SQLITE%%lib/libheimsqlite.so.0.0.0
 lib/libhdb.a
 lib/libhdb.so
+lib/libhdb.so.9
 lib/libhdb.so.9.2.0
 lib/libheimntlm.a
 lib/libheimntlm.so
