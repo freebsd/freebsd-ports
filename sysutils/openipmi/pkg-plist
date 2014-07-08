@@ -105,16 +105,19 @@ man/man8/ipmilan.8.gz
 %%GLIB12%%lib/libOpenIPMIglib12.a
 %%GLIB12%%lib/libOpenIPMIglib12.so
 %%GLIB12%%lib/libOpenIPMIglib12.so.0
+%%GLIB12%%lib/libOpenIPMIglib12.so.0.0.1
 %%GLIB12%%libdata/pkgconfig/OpenIPMIglib12.pc
 %%GLIB20%%@comment files list for GLIB20
 %%GLIB20%%lib/libOpenIPMIglib.a
 %%GLIB20%%lib/libOpenIPMIglib.so
 %%GLIB20%%lib/libOpenIPMIglib.so.0
+%%GLIB20%%lib/libOpenIPMIglib.so.0.0.1
 %%GLIB20%%libdata/pkgconfig/OpenIPMIglib.pc
 %%TCL%%@comment files list for TCL
 %%TCL%%lib/libOpenIPMItcl.a
 %%TCL%%lib/libOpenIPMItcl.so
 %%TCL%%lib/libOpenIPMItcl.so.0
+%%TCL%%lib/libOpenIPMItcl.so.0.0.1
 %%TCL%%libdata/pkgconfig/OpenIPMItcl.pc
 %%PERL%%@comment files list for PERL
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/OpenIPMI.pm
