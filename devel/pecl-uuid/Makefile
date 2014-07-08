@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	UUID extension
 
-LIB_DEPENDS=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 CONFIGURE_ARGS=	--with-uuid=${LOCALBASE} CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 PHP_MODNAME=	${PORTNAME}
