@@ -1,5 +1,7 @@
 bin/ike-scan
 bin/psk-crack
+man/man1/ike-scan.1.gz
+man/man1/psk-crack.1.gz
 %%DATADIR%%/ike-backoff-patterns
 %%DATADIR%%/ike-vendor-ids
 %%DATADIR%%/psk-crack-dictionary
