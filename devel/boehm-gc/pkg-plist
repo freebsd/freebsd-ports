@@ -2,10 +2,10 @@ include/gc.h
 include/gc/cord.h
 include/gc/gc.h
 include/gc/gc_allocator.h
-include/gc/gc_amiga_redirects.h
 include/gc/gc_backptr.h
 include/gc/gc_config_macros.h
 include/gc/gc_cpp.h
+include/gc/gc_disclaim.h
 include/gc/gc_gcj.h
 include/gc/gc_inline.h
 include/gc/gc_mark.h
@@ -13,16 +13,18 @@ include/gc/gc_pthread_redirects.h
 include/gc/gc_tiny_fl.h
 include/gc/gc_typed.h
 include/gc/gc_version.h
+include/gc/javaxfc.h
 include/gc/leak_detector.h
-include/gc/new_gc_alloc.h
 include/gc/weakpointer.h
 include/gc_cpp.h
 lib/libcord.so
 lib/libcord.so.1
+lib/libcord.so.1.0.3
 lib/libgc.so
 lib/libgc.so.1
+lib/libgc.so.1.0.3
 lib/libgccpp.so
 lib/libgccpp.so.1
+lib/libgccpp.so.1.0.3
 libdata/pkgconfig/bdw-gc.pc
 man/man3/gc.3.gz
-@dirrmtry include/gc
