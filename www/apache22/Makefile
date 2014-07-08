@@ -179,8 +179,8 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${EXAMPLESDIR}/modules.d
 
 # supress warnings about all the non binary files
-	-@${STRIP_CMD} ${STAGEDIR}/usr/local/sbin/* \
-		${STAGEDIR}/usr/local/libexec/apache22/*.so 2>/dev/null
+	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* \
+		${STAGEDIR}${PREFIX}/libexec/apache22/*.so 2>/dev/null
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
 	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
 .endif
