@@ -1,0 +1,11 @@
+bin/sidfquery
+etc/enma.conf.sample
+lib/libsauth.a
+lib/libsauth.la
+lib/libsauth.so
+lib/libsauth.so.0
+libexec/enma
+man/ja_JP.UTF-8/man1/enma.1.gz
+man/man1/enma.1.gz
+@dirrmtry man/ja_JP.UTF-8/man1
+@dirrmtry man/ja_JP.UTF-8
