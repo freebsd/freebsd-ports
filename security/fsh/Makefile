@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.lysator.liu.se/fsh/ \
 		http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast remote command execution
 
 USE_PYTHON=	yes
@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 
 INFO=	fsh
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^[^#]/s/FCNTL/fcntl/g' ${WRKSRC}/fshcompat.py
 
@@ -25,6 +24,6 @@ post-build:
 	${PYTHON_CMD} -c 'import py_compile; py_compile.main()' ${WRKSRC}/*.py
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/*.pyc ${PREFIX}/share/fsh
+	${INSTALL_DATA} ${WRKSRC}/*.pyc ${STAGEDIR}${PREFIX}/share/fsh
 
 .include <bsd.port.mk>
