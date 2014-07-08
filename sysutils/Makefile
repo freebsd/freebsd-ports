@@ -83,6 +83,7 @@
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
     SUBDIR += bsdmoted
+    SUBDIR += bsdploy
     SUBDIR += bsdstats
     SUBDIR += bubblemon-dockapp
     SUBDIR += bulk_extractor
