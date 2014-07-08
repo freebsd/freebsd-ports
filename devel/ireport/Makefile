@@ -50,9 +50,6 @@ CLSSPTH=	ant-1.7.1 antlr-2.7.6 asm-attrs asm barbecue-1.5-beta1 \
 		saaj-api-1.3 slf4j-api slf4j-log4j12 spring \
 		sqleonardo-2009.03.rc1 swingx-2007_10_07 xml-apis-ext xml-apis
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 # Remark: HSQLDB and Oracle's dependencies already registered by databases/jasperreports
 .if exists(${JAVALIBDIR}/classes12.zip)
 WITH_ORACLE8=	yes
@@ -86,9 +83,9 @@ pre-configure:
 		${WRKSRC}/platform9/lib/nbexec
 
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
-	${CHMOD} ${BINMODE} ${DATADIR}/bin/startup.sh
-	${LN} -sf ${DATADIR}/bin/startup.sh ${PREFIX}/bin/iReport
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/bin/startup.sh
+	${LN} -sf ${DATADIR}/bin/startup.sh ${STAGEDIR}${PREFIX}/bin/iReport
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
