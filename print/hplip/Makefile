@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.14.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -22,10 +22,12 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
+INSTALL_TARGET=	install-strip
+USES=		dos2unix libtool pkgconfig shebangfix
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygobject
-USES=		dos2unix pkgconfig shebangfix
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
@@ -42,9 +44,7 @@ CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
 		--with-drvdir=${PREFIX}/libexec/cups/driver \
 		--enable-libusb01_build
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
-USE_LDCONFIG=	yes
+LIBS+=		-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 DOS2UNIX_REGEX=.+\.(c|cpp|h|py)$
@@ -77,11 +77,6 @@ FILES4FIX=	Makefile.in \
 		ui4/devmgr5.py
 
 PYTHON_SITELIBDIR_REL=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
-STRIP_FILES=	lib/libhpip.so.0 \
-		lib/libhpmud.so.0 \
-		${PYTHON_SITELIBDIR_REL}/pcardext.so \
-		${PYTHON_SITELIBDIR_REL}/hpmudext.so \
-		${PYTHON_SITELIBDIR_REL}/cupsext.so
 
 OPTIONS_DEFINE=	QT FAX SNMP SCAN XSANE DOCS
 OPTIONS_DEFAULT=	QT
@@ -116,14 +111,10 @@ DOCS_CONFIGURE_ENABLE=	doc-build
 . if ${PORT_OPTIONS:MXSANE}
 RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
 . endif
-
-STRIP_FILES+=	${PYTHON_SITELIBDIR_REL}/scanext.so \
-		lib/sane/libsane-hpaio.so.1
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
-		-e 's|-ldld||g; s|-ldl||g' \
+	${REINPLACE_CMD} -e 's|-ldld||g; s|-ldl||g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
@@ -161,7 +152,6 @@ post-install:
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hp
 	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
-	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 	${LN} -sf ${LOCALBASE}/bin/foomatic-rip ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip-hplip
 
 .include <bsd.port.mk>

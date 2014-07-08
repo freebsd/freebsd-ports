@@ -39,23 +39,19 @@ bin/hpijs
 %%FAX%%etc/cups/pstotiff.types
 @sample etc/hp/hplip.conf.sample
 %%QT%%etc/xdg/autostart/hplip-systray.desktop
-lib/libhpip.la
 lib/libhpip.so
 lib/libhpip.so.0
-lib/libhpmud.la
+lib/libhpip.so.0.0.1
 lib/libhpmud.so
 lib/libhpmud.so.0
-%%PYTHON_SITELIBDIR%%/cupsext.la
+lib/libhpmud.so.0.0.6
 %%PYTHON_SITELIBDIR%%/cupsext.so
-%%PYTHON_SITELIBDIR%%/hpmudext.la
 %%PYTHON_SITELIBDIR%%/hpmudext.so
-%%PYTHON_SITELIBDIR%%/pcardext.la
 %%PYTHON_SITELIBDIR%%/pcardext.so
-%%SCAN%%%%PYTHON_SITELIBDIR%%/scanext.la
 %%SCAN%%%%PYTHON_SITELIBDIR%%/scanext.so
-%%SCAN%%lib/sane/libsane-hpaio.la
 %%SCAN%%lib/sane/libsane-hpaio.so
 %%SCAN%%lib/sane/libsane-hpaio.so.1
+%%SCAN%%lib/sane/libsane-hpaio.so.1.0.0
 libexec/cups/backend/hp
 %%FAX%%libexec/cups/backend/hpfax
 libexec/cups/driver/hpcups.drv
