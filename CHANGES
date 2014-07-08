@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140708:
+AUTHOR: mva@FreeBSD.org
+
+  Support for installations based on the easy_install setup.py target has
+  been removed from the Ports framework for Python software. The
+  PYEASYINSTALL_* knobs and support for USE_PYDISTUTILS=easy_install have
+  been removed.
+
 20140623:
 AUTHOR: bapt@FreeBSD.org
 
