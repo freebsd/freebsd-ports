@@ -1,6 +1,5 @@
 %%CONFAVAILDIR%%/85-wqy.conf
 %%CONFDDIR%%/85-wqy.conf
-%%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/wenquanyi_10pt.pcf
 %%FONTSDIR%%/wenquanyi_11pt.pcf
 %%FONTSDIR%%/wenquanyi_12pt.pcf
@@ -10,5 +9,4 @@
 %%FONTSDIR%%/wqy-zenhei.ttc
 %%FONTSDIR%%/wqy-microhei-lite.ttc
 %%FONTSDIR%%/wqy-microhei.ttc
-@fcfontsdir %%FONTSDIR%%
 @dirrm %%FONTSDIR%%
