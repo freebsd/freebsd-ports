@@ -1,4 +1,3 @@
-lib/gmpc/plugins/shoutplugin.la
 lib/gmpc/plugins/shoutplugin.so
 share/locale/bs/LC_MESSAGES/gmpc-shout.mo
 share/locale/de/LC_MESSAGES/gmpc-shout.mo
