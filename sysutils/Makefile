@@ -735,6 +735,7 @@
     SUBDIR += py-nagiosplugin
     SUBDIR += py-ploy
     SUBDIR += py-ploy_ansible
+    SUBDIR += py-ploy_ec2
     SUBDIR += py-ploy_ezjail
     SUBDIR += py-ploy_fabric
     SUBDIR += py-plumbum
