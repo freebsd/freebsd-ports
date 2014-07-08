@@ -15,7 +15,8 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libapr-1.so.0.5.1:${PORTSDIR}/devel/apr1 \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-CONFLICTS_INSTALL=	caudium14-1.* apache22-*
+CONFLICTS_INSTALL=	caudium14-1.* \
+			apache-*-2.2.* apache22-*
 
 USE_APACHE=	common24
 USES=		tar:bzip2 iconv perl5 libtool cpe
