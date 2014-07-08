@@ -66,7 +66,6 @@ share/atomix/themes/default/wall-vertical-leftx.png
 share/atomix/themes/default/wall-vertical-rightx.png
 share/atomix/themes/default/wall-vertical-top-end.png
 share/atomix/themes/default/wall-vertical.png
-@unexec [ -s %D/share/games/atomix.scores ] || rm -f %D/share/games/atomix.scores
 share/gnome-2.0/ui/atomix-ui.xml
 share/pixmaps/atomix-icon.png
 share/locale/am/LC_MESSAGES/atomix.mo
@@ -128,5 +127,3 @@ share/locale/zh_TW/LC_MESSAGES/atomix.mo
 @dirrm share/atomix/themes
 @dirrm share/atomix/level
 @dirrm share/atomix
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
