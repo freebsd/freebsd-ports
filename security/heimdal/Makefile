@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -37,9 +37,10 @@ PKINIT_CONFIGURE_ENABLE=	pk-init
 CRACKLIB_BUILD_DEPENDS=		${PREFIX}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 
 USES=		gettext libtool pathfix pkgconfig
+USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=	--with-libintl=${LOCALBASE} \
 			--with-readline=${DESTDIR}/usr \
