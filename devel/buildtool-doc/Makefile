@@ -16,20 +16,15 @@ BUILD_DEPENDS=	${BUILDTOOL}:${PORTSDIR}/devel/buildtool \
 		${DOCBOOK_XML}:${PORTSDIR}/textproc/docbook-xml \
 		${DOCBOOK_XSL}:${PORTSDIR}/textproc/docbook-xsl
 
-.if defined(NOPORTDOCS)
-IGNORE=		contains only documentation
-.endif
-
 BUILDTOOL=	${LOCALBASE}/bin/buildtool
-CONFIGURE_ARGS=	--prefix=${PREFIX} --dir-doc=${DOCSDIR} \
-		--dir-html=${DOCSDIR}
+CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --dir-doc=${STAGEDIR}${DOCSDIR} \
+		--dir-html=${STAGEDIR}${DOCSDIR}
 
 DOCBOOK_XML=	${LOCALBASE}/share/xml/docbook/4.2
 DOCBOOK_XSL=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl
 
 DOCS=		CHANGES COPYING PEOPLE README README.bt
 
-NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && \
 		CATALOG_FILE=${LOCALBASE}/share/xml/catalog.ports \
