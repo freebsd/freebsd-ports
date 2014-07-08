@@ -1,4 +1,3 @@
-lib/gmpc/plugins/alarmplugin.la
 lib/gmpc/plugins/alarmplugin.so
 share/locale/bg/LC_MESSAGES/gmpc-alarm.mo
 share/locale/bs/LC_MESSAGES/gmpc-alarm.mo
