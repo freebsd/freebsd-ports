@@ -3,12 +3,12 @@
 
 PORTNAME=	interchange
 PORTVERSION=	5.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	RedHat's database-enabled e-commerce server
+COMMENT=	RedHat\'s database-enabled e-commerce server
 
 RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
@@ -31,17 +31,26 @@ USE_RC_SUBR=	interchange
 
 INTERCH_PREFIX=	${PREFIX}/interchange
 
-CONFIGURE_ARGS=	INTERCHANGE_USER=interch \
-		force=1
-MAKE_ARGS=	INSTALLARCHLIB=${INTERCH_PREFIX} \
-		INSTALLPRIVLIB=${INTERCH_PREFIX}/lib \
-		INSTALLMAN1DIR=${PREFIX}/man/man1 \
-		NOCPANINSTALL=1
+# Basically the parts of CONFIGURE_ARGS that interest us without
+# Uses/perl5.mk's overriding of PREFIX, INSTALLARCHLIB and INSTALLPRIVLIB,
+# since we install into a custom location.
+INTERCH_CONFIGURE_ARGS=	INSTALLDIRS=site \
+			INTERCHANGE_USER=interch \
+			PREFIX=${INTERCH_PREFIX} \
+			force=1
+MAKE_ARGS=		NOCPANINSTALL=1
 
 pre-install:
 # This directory must exist before the installation happens, otherwise _uid (a
 # file) will be copied to a file called ${STAGEDIR}${INTERCH_PREFIX}.
 	${MKDIR} ${STAGEDIR}${INTERCH_PREFIX}
+
+do-configure:
+# The same as the do-configure stage in Uses/perl5.mk, except we use
+# INTERCH_CONFIGURE_ARGS instead of CONFIGURE_ARGS.
+	@cd ${CONFIGURE_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} \
+		${PERL5} ./${CONFIGURE_SCRIPT} ${INTERCH_CONFIGURE_ARGS}
 
 post-install:
 # This directory has to be created here for check-plist to pass, otherwise it
