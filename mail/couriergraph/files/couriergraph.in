@@ -23,7 +23,7 @@ stop_postcmd=stop_postcmd
 
 stop_postcmd()
 {
-    rm -f $pidfile
+	rm -f $pidfile
 }
 
 couriergraph_enable=${couriergraph_enable:-"NO"}
