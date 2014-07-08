@@ -3,6 +3,7 @@
 
 PORTNAME=		pam_krb5
 PORTVERSION=		4.6
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
 			http://archives.eyrie.org/software/ARCHIVE/pam-krb5/
@@ -29,7 +30,7 @@ HEIMDAL_DESC=		Link against Heimdal Kerberos
 KRB5_DIR?=		${HEIMDAL_HOME}
 .endif
 .elif ${PORT_OPTIONS:MMIT}
-LIB_DEPENDS=		libkrb5.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
 .if defined(KRB5_HOME)
 KRB5_DIR?=		${KRB5_HOME}
 .endif
