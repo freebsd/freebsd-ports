@@ -13,7 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL extension that wraps libshape
 
-LIB_DEPENDS=	shp:${PORTSDIR}/devel/shapelib
+LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
