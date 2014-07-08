@@ -16,13 +16,13 @@ USE_XORG=	xxf86dga xext xxf86vm x11
 ALL_TARGET=	release
 
 MAKE_ENV=	DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}"
-PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S|${PREFIX}/||}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 PORTDOCS=	Q2P_readme.txt Ogg_readme.txt
 
-OPTIONS_DEFINE=		CLIENT CTF DEDICATED GAME GLX OPTIMIZED_CFLAGS OSS \
-			SDL SDLGL DOCS
+OPTIONS_DEFINE=	CLIENT CTF DEDICATED GAME GLX OPTIMIZED_CFLAGS OSS \
+		SDL SDLGL DOCS
 OPTIONS_DEFAULT=	CLIENT DEDICATED GLX OPTIMIZED_CFLAGS OSS SDL SDLGL
 
 CLIENT_DESC=	Build client
@@ -33,13 +33,12 @@ GLX_DESC=	Build OpenGL renderer
 SDL_DESC=	Sound support via SDL
 SDLGL_DESC=	Build SDL OpenGL renderer
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 USE_GL=		glu
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
 .endif
 
 .if ${PORT_OPTIONS:MSDL} || ${PORT_OPTIONS:MSDLGL}
@@ -47,7 +46,7 @@ USE_SDL=	sdl
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	BUILD_Q2P=YES
 PLIST_SUB+=	CLIENT=""
 Q2BIN+=		${PORTNAME}
@@ -109,32 +108,32 @@ PLIST_SUB+=	SDL="@comment "
 
 post-patch:
 # Resolve name collision with jpeg-8
-	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
 		${WRKSRC}/ref_gl/gl_image.c
 
 do-install:
 .for bin in ${Q2BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${LIBDIR}/baseq2
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/baseq2
 .for ref in ${Q2REF}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/vid_${ref}.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/vid_${ref}.so ${STAGEDIR}${LIBDIR}
 .endfor
 .for snd in ${Q2SND}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/snd_${snd}.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/snd_${snd}.so ${STAGEDIR}${LIBDIR}
 .endfor
 .if ${PORT_OPTIONS:MCTF}
-	@${MKDIR} ${LIBDIR}/ctf
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/ctf/game.so ${LIBDIR}/ctf
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/ctf
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/ctf/game.so \
+		${STAGEDIR}${LIBDIR}/ctf
 .endif
 .if ${PORT_OPTIONS:MGAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so \
+		${STAGEDIR}${LIBDIR}/baseq2
 .endif
-	${INSTALL_DATA} ${WRKSRC}/data/baseq2/* ${LIBDIR}/baseq2
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/data/baseq2/* ${STAGEDIR}${LIBDIR}/baseq2
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>

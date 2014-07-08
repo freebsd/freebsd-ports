@@ -9,7 +9,7 @@
  MARCH=     $(shell uname -m)
  OP_SYSTEM= $(shell uname -sr)
  
-@@ -27,75 +27,75 @@
+@@ -27,75 +27,75 @@ BUILD_RELEASE_DIR:=build_release
  # verbose compilation       #
  # process.                  #
  #===========================#
@@ -100,7 +100,7 @@
  ifeq ($(OSTYPE),freebsd)
  CD_API=cd_freebsd.c
  endif
-@@ -107,22 +107,19 @@
+@@ -107,22 +107,19 @@ endif
  # Enable XMMS/Audacious     #
  # support. Only one of them #
  # at same time.             #
@@ -127,7 +127,7 @@
  
  
  CLIENT_DIR=$(MOUNT_DIR)/client
-@@ -133,24 +130,24 @@
+@@ -133,24 +130,24 @@ UNIX_DIR=$(MOUNT_DIR)/unix
  GAME_DIR=$(MOUNT_DIR)/game
  CTF_DIR=$(MOUNT_DIR)/ctf
  
@@ -161,28 +161,26 @@
 +GAME_NAME=game.$(SHLIB_EXT)
  
  BASE_CFLAGS+=-I$(LOCALBASE)/include \
-             -I$(LOCALBASE)/include \
-@@ -168,15 +165,14 @@
+             -I$(X11BASE)/include \
+@@ -168,15 +165,11 @@ RELEASE_CFLAGS+=$(BASE_CFLAGS) \
  
  ifeq ($(strip $(OPTIMIZE)),YES)
   RELEASE_CFLAGS+=-O3 \
 -                 -march=$(MARCH) \
                   -funroll-loops \
                   -fstrength-reduce \
--                 -fexpensive-optimizations \
+                  -fexpensive-optimizations \
 -                 -falign-loops=2 \
-+                 -fexpensive-optimizations -fomit-frame-pointer -ffast-math
-+ifeq ($(ARCH),i386)
-+ RELEASE_CFLAGS+=-falign-loops=2 \
-                  -falign-jumps=2 \
-                  -falign-functions=2
+-                 -falign-jumps=2 \
+-                 -falign-functions=2
 -else
 - RELEASE_CFLAGS+=-O2
-+endif
++                 -fomit-frame-pointer \
++                 -ffast-math
  endif
  
  ifeq ($(strip $(STRIP)),YES)
-@@ -263,7 +259,7 @@
+@@ -263,7 +256,7 @@ ifeq ($(strip $(BUILD_Q2P)),YES)
  endif
  
  ifeq ($(strip $(BUILD_DEDICATED)),YES)
@@ -191,7 +189,7 @@
   DED_CFLAGS += -DDEDICATED_ONLY
  endif
  
-@@ -292,11 +288,11 @@
+@@ -292,11 +285,11 @@ ifeq ($(strip $(BUILD_SDLGL)),YES)
  endif
  	
  ifeq ($(strip $(BUILD_GAME)),YES)
@@ -205,7 +203,7 @@
  endif
  
  all:
-@@ -585,7 +581,7 @@
+@@ -585,7 +578,7 @@ $(BUILDDIR)/ded/sh_unix.o  $(BUILDDIR)/d
  $(BUILDDIR)/ded/q_shared.o $(BUILDDIR)/ded/pmove.o \
  $(BUILDDIR)/ded/cl_null.o  $(BUILDDIR)/ded/cd_null.o
  
@@ -214,7 +212,7 @@
  	@echo
  	@echo "**Built Q2P dedicated client with cflags:"
  	@echo "$(CC) $(CC_VERSION)";
-@@ -709,7 +705,7 @@
+@@ -709,7 +702,7 @@ $(BUILDDIR)/game/m_parasite.o $(BUILDDIR
  $(BUILDDIR)/game/m_tank.o     $(BUILDDIR)/game/p_hud.o       $(BUILDDIR)/game/p_trail.o \
  $(BUILDDIR)/game/p_view.o     $(BUILDDIR)/game/p_weapon.o    $(BUILDDIR)/game/m_flash.o
  
@@ -223,7 +221,7 @@
  	@echo
  	@echo "**Built $@ with cflags:"
  	@echo "$(CC) $(CC_VERSION) $(CFLAGS)";
-@@ -784,7 +780,7 @@
+@@ -784,7 +777,7 @@ $(BUILDDIR)/ctf/m_move.o    $(BUILDDIR)/
  $(BUILDDIR)/ctf/p_menu.o    $(BUILDDIR)/ctf/p_trail.o  $(BUILDDIR)/ctf/p_view.o \
  $(BUILDDIR)/ctf/p_weapon.o  $(BUILDDIR)/ctf/q_shared.o
  
@@ -232,7 +230,7 @@
  	@echo
  	@echo "**Built $@ with cflags:"
  	@echo "$(CC) $(CC_VERSION) $(CFLAGS)";
-@@ -935,4 +931,4 @@
+@@ -935,4 +928,4 @@ bz2:
  	@tar cjvf $(Q2P_VERSION_BZ2)-$(OSTYPE)-$(DATE).tar.bz2 $(BINDIR)
  	@printf ".... Done.\n"
  	
