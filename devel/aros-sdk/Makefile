@@ -12,7 +12,6 @@ COMMENT=	The Software development kit (SDK) for the AROS Operating System
 
 USES=		gmake tar:bzip2
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LD!=		${CC} -print-prog-name=ld
@@ -49,38 +48,35 @@ do-build:
 	@cd ${WRKSRC}/tools/collect-aros; ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
 do-install:
-	@${MKDIR} ${AROS_SDK_PATH}
-	@${MKDIR} ${AROS_SDK_PATH}/bin
-	@${MKDIR} ${AROS_SDK_PATH}/${ARCH}-aros/bin
-	@${MKDIR} ${AROS_SDK_PATH}/${ARCH}-aros/include
-	@${MKDIR} ${AROS_SDK_PATH}/${ARCH}-aros/lib/gcc-lib
-	@${CP} ${WRKSRC}/tools/collect-aros/collect-aros ${AROS_SDK_PATH}/${ARCH}-aros/lib/gcc-lib/
-	@${CP} ${WRKSRC}/scripts/specs.in ${AROS_SDK_PATH}/${ARCH}-aros/lib/gcc-lib/specs
-	@${CP} ${WRKSRC}/scripts/aros-gcc.in ${AROS_SDK_PATH}/${ARCH}-aros/bin/gcc
-	@${CHMOD} a+x ${AROS_SDK_PATH}/${ARCH}-aros/bin/gcc
-	@${CP} ${WRKSRC}/scripts/aros-ld.in ${AROS_SDK_PATH}/${ARCH}-aros/bin/ld
-	@${CHMOD} a+x ${AROS_SDK_PATH}/${ARCH}-aros/bin/ld
-	@${CP} ${WRKSRC}/scripts/aros-strip.in ${AROS_SDK_PATH}/${ARCH}-aros/bin/strip
-	@${CHMOD} a+x ${AROS_SDK_PATH}/${ARCH}-aros/bin/strip
-	@${LN} -sf ${AS}      ${AROS_SDK_PATH}/${ARCH}-aros/bin/as
-	@${LN} -sf ${AR}      ${AROS_SDK_PATH}/${ARCH}-aros/bin/ar
-	@${LN} -sf ${NM}      ${AROS_SDK_PATH}/${ARCH}-aros/bin/nm
-	@${LN} -sf ${OBJCOPY} ${AROS_SDK_PATH}/${ARCH}-aros/bin/objcopy
-	@${LN} -sf ${OBJDUMP} ${AROS_SDK_PATH}/${ARCH}-aros/bin/objdump
-	@${LN} -sf ${RANLIB}  ${AROS_SDK_PATH}/${ARCH}-aros/bin/ranlib
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/gcc     ${AROS_SDK_PATH}/bin/${ARCH}-aros-gcc
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/ld      ${AROS_SDK_PATH}/bin/${ARCH}-aros-ld
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/ar      ${AROS_SDK_PATH}/bin/${ARCH}-aros-ar
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/as      ${AROS_SDK_PATH}/bin/${ARCH}-aros-as
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/nm      ${AROS_SDK_PATH}/bin/${ARCH}-aros-nm
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/objcopy ${AROS_SDK_PATH}/bin/${ARCH}-aros-objcopy
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/objdump ${AROS_SDK_PATH}/bin/${ARCH}-aros-objdump
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/ranlib  ${AROS_SDK_PATH}/bin/${ARCH}-aros-ranlib
-	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/strip   ${AROS_SDK_PATH}/bin/${ARCH}-aros-strip
-	@${CP} -pR ${WRKSRC}/${ARCH}/lib/*     ${AROS_SDK_PATH}/${ARCH}-aros/lib/
-	@${CP} -pR ${WRKSRC}/${ARCH}/include/* ${AROS_SDK_PATH}/${ARCH}-aros/include/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${AROS_SDK_PATH}
+	@${MKDIR} ${STAGEDIR}${AROS_SDK_PATH}/bin
+	@${MKDIR} ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin
+	@${MKDIR} ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/include
+	@${MKDIR} ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/lib/gcc-lib
+	@${CP} ${WRKSRC}/tools/collect-aros/collect-aros ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/lib/gcc-lib/
+	@${CP} ${WRKSRC}/scripts/specs.in ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/lib/gcc-lib/specs
+	@${CP} ${WRKSRC}/scripts/aros-gcc.in ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/gcc
+	@${CHMOD} a+x ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/gcc
+	@${CP} ${WRKSRC}/scripts/aros-ld.in ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/ld
+	@${CHMOD} a+x ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/ld
+	@${CP} ${WRKSRC}/scripts/aros-strip.in ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/strip
+	@${CHMOD} a+x ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/strip
+	@${LN} -sf ${AS}      ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/as
+	@${LN} -sf ${AR}      ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/ar
+	@${LN} -sf ${NM}      ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/nm
+	@${LN} -sf ${OBJCOPY} ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/objcopy
+	@${LN} -sf ${OBJDUMP} ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/objdump
+	@${LN} -sf ${RANLIB}  ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/bin/ranlib
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/gcc     ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-gcc
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/ld      ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-ld
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/ar      ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-ar
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/as      ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-as
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/nm      ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-nm
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/objcopy ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-objcopy
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/objdump ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-objdump
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/ranlib  ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-ranlib
+	@${LN} -sf ${AROS_SDK_PATH}/${ARCH}-aros/bin/strip   ${STAGEDIR}${AROS_SDK_PATH}/bin/${ARCH}-aros-strip
+	@${CP} -pR ${WRKSRC}/${ARCH}/lib/*     ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/lib/
+	@${CP} -pR ${WRKSRC}/${ARCH}/include/* ${STAGEDIR}${AROS_SDK_PATH}/${ARCH}-aros/include/
 
 .include <bsd.port.post.mk>
