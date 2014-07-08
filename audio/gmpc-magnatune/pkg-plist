@@ -1,4 +1,3 @@
-lib/gmpc/plugins/magnatuneplugin.la
 lib/gmpc/plugins/magnatuneplugin.so
 share/gmpc/plugins/magnatune/magnatune.png
 @dirrmtry share/gmpc/plugins/magnatune
