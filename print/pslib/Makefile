@@ -3,12 +3,12 @@
 
 PORTNAME=	pslib
 PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A C-library for generating multi page PostScript documents
+COMMENT=	C-library for generating multi page PostScript documents
 
 LICENSE=	GPLv2
 
@@ -16,12 +16,13 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		pathfix pkgconfig gettext gmake
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	intlhack
-USE_AUTOTOOLS=	libtool
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	EXAMPLES MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES NLS
