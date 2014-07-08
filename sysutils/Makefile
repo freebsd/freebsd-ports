@@ -734,6 +734,7 @@
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
     SUBDIR += py-ploy
+    SUBDIR += py-ploy_ansible
     SUBDIR += py-plumbum
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
