@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:R} \
 		--with-lualib=${LUA_LIBDIR}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env
-#USES=		gmake libtool lua
 USES=		gmake lua
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION:R}
