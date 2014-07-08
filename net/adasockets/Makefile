@@ -3,6 +3,7 @@
 
 PORTNAME=	adasockets
 PORTVERSION=	1.8.11
+PORTREISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rfc1149.net/download/adasockets/
 
@@ -12,7 +13,7 @@ COMMENT=	IPv4 socket library for Ada (TCP, UDP, and multicast)
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-USES=		ada gmake
+USES=		ada gmake libtool
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-doc --disable-shared
 

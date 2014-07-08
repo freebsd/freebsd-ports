@@ -14,7 +14,6 @@ include/adasockets/sockets-utils.ads
 include/adasockets/sockets.adb
 include/adasockets/sockets.ads
 lib/adasockets/libadasockets.a
-lib/adasockets/libadasockets.la
 lib/adasockets/sockets-constants.ali
 lib/adasockets/sockets-link.ali
 lib/adasockets/sockets-multicast.ali
