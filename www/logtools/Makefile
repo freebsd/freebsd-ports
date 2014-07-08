@@ -3,23 +3,29 @@
 
 PORTNAME=	logtools
 PORTVERSION=	0.13d
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.coker.com.au/logtools/ \
   		LOCAL/chinsan/logtools/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tools to deal with CLF files (Common Log File format)
 
-PLIST_FILES=	bin/clfmerge \
-		bin/clfsplit \
-		bin/clfdomainsplit \
-		bin/logprn \
-		bin/funnel \
-		etc/clfdomainsplit.cfg
+LICENSE=	GPLv2
 
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
-MAN1=		clfmerge.1 logprn.1 funnel.1 clfsplit.1 clfdomainsplit.1
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-O2 -g|| ; \
+		 s|-lstdc++|| ; \
+		 s| \($${prefix}\)| $${DESTDIR}\1|g ; \
+		 s| \(@mandir@\)| $${DESTDIR}\1|g ; \
+		 s|.cfg |.cfg.sample | ; \
+		 s| \(@sysconfdir@\)| $${DESTDIR}\1|g' ${WRKSRC}/Makefile.in
+
+post-build:
+	@${LN} -sf clfdomainsplit.cfg ${WRKSRC}/clfdomainsplit.cfg.sample
+
 .include <bsd.port.mk>
