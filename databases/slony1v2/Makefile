@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slony1v2
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/2.2/source/
 DISTNAME=	slony1-${PORTVERSION}
@@ -16,10 +16,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 GNU_CONFIGURE=	yes
-USES=		bison gmake
+USES=		bison gmake shebangfix tar:bzip2
 USE_PGSQL=	yes
-USE_BZIP2=	yes
 USE_RC_SUBR=	slon
+SHEBANG_FILES=	tools/altperl/slonik_restart_node.pl
 
 SUB_FILES=	pkg-message slon-mkservice.sh
 SUB_LIST+=	NAME=slon
@@ -79,6 +79,10 @@ post-patch:
 	done
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/slon
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/slonik
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/slony_logshipper
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/*.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/adminguide
 .for _file in ${DOCS}
