@@ -35,5 +35,3 @@ etc/mosquitto/aclfile.example
 @dirrmtry share/man/man3
 @dirrmtry share/man/man1
 @dirrmtry share/man
-%%NOPYTHON%% @dirrmtry %%PYTHON_SITELIBDIR%%
-%%NOPYTHON%% @dirrmtry %%PYTHON_LIBDIR%%
