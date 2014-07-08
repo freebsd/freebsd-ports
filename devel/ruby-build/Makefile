@@ -1,16 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-build
-PORTVERSION=	20140509
+PORTVERSION=	20140524
 CATEGORIES=	devel ruby
 
 MAINTAINER=	fmb@onibox.net
 COMMENT=	Compile and install different ruby versions
 
-LICENSE=	RUBY-BUILD
-LICENSE_NAME=	Sam Stephenson
-LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	MIT
 
 RUN_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		curl:${PORTSDIR}/ftp/curl \
@@ -23,7 +20,7 @@ RBENV_RUN_DEPENDS=	rbenv:${PORTSDIR}/devel/rbenv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sstephenson
-GH_COMMIT=	6da6908
+GH_COMMIT=	273be04
 GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
