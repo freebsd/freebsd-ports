@@ -3,7 +3,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.15.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-bft=${LOCALBASE}	\
 		--with-hdf5=${LOCALBASE}	\
 		--with-cgns=${LOCALBASE}	\
 		--with-med=${LOCALBASE}
-CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
 
 .if defined(WITH_LAM)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/liblam.a:${PORTSDIR}/net/lam
