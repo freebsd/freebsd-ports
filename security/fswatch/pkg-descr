@@ -2,10 +2,10 @@ fswatch:
 - is a utility to guard changes in a file system.
 
 - is composed of three simple programs: fswbuild, fswcmp, fswshow. fswbuild
-  builds a file system information database. fswcmp compairs two database files
+  builds a file system information database. fswcmp compares two database files
   and returns what changes a in file system have been introduced. fswshow shows
   contents of database file. a file information database is platform
-  independend.
+  independent.
 
 - can collect the following information about files (and directories): inode,
   links, uid, gid, mode, size, flags, ctime, checksum (sha1) ; and can show

@@ -1,32 +1,25 @@
 # Created by: dominik karczmarski <dominik@karczmarski.com>
 # $FreeBSD$
 
-PORTNAME=		fswatch
-DISTVERSION=		0.02beta5
-CATEGORIES=		security sysutils
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.02beta5
+PORTNAME=	fswatch
+DISTVERSION=	0.02beta5
+CATEGORIES=	security sysutils
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.02beta5
 
-MAINTAINER= ports@FreeBSD.org
-COMMENT=		File system checksum checker
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	File system checksum checker
 
-HAS_CONFIGURE=		yes
-SUB_FILES=		pkg-message
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--enable-regex \
+		--enable-stflags
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.b/beta/}/
+SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--enable-regex \
-			--enable-stflags
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.b/beta/}/
 
-PLIST_FILES=	bin/fswbuild bin/fswcmp bin/fswshow \
-		bin/fswconf etc/fswatch.conf.sample
-
-MAN1=	fswbuild.1 fswcmp.1 fswshow.1 fswconf.1
-MAN5=	fswatch.conf.5
-MAN7=	fswatch.7
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
+post-patch:
+	@${REINPLACE_CMD} '/INSTALL/ s|prefix)|DESTDIR)$$(&|' \
+		${WRKSRC}/examples/Makefile.in
 
 .include <bsd.port.mk>
