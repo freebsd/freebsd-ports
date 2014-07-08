@@ -739,13 +739,13 @@ include/vortex.h
 %%PYTHON_SITELIBDIR%%/ncs/cs_plot_probes.pyc
 %%PYTHON_SITELIBDIR%%/ncs/cs_plot_probes.pyo
 lib/libsaturne.a
-lib/libsaturne.la
 lib/libsaturne.so
 lib/libsaturne.so.0
+lib/libsaturne.so.0.0.0
 lib/libsyrcs.a
-lib/libsyrcs.la
 lib/libsyrcs.so
 lib/libsyrcs.so.0
+lib/libsyrcs.so.0.0.0
 man/man1/code_saturne.1.gz
 man/man1/cs_solver.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
