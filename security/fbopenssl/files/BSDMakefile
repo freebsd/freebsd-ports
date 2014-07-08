@@ -31,6 +31,6 @@ FILES=	include/asn1help.h \
 FILESDIR?=	${PREFIX}/include/fbopenssl	
 
 beforeinstall:
-	install -m 0755 -d ${PREFIX}/include/fbopenssl
+	install -m 0755 -d ${DESTDIR}${PREFIX}/include/fbopenssl
 
 .include <bsd.lib.mk>

@@ -5,11 +5,12 @@ PORTVERSION=	0.0.4
 CATEGORIES=	security
 MASTER_SITES=	SF/modgssapache/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GSS-API and SPNEGO extensions for OpenSSL
 
 LICENSE=	GPLv2
 
+USES=		uidfix
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 MAKEFILE=	BSDMakefile
@@ -19,16 +20,11 @@ PORTDOCS=	readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/BSDMakefile ${WRKSRC}
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
