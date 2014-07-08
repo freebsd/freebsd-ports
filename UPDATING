@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140709:
+  AFFECTS: users of security/pam-pgsql
+  AUTHOR: tijl@FreeBSD.org
+
+  The pam_pgsql.so module is now installed in PREFIX/lib (/usr/local/lib)
+  instead of /usr/lib.
+
 20140627:
   AFFECTS: Users of Java
   AUTHOR: swills@FreeBSD.org
