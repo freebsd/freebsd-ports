@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Icculus.org version of the original Quake II
 
 LICENSE=	GPLv2
@@ -21,7 +21,7 @@ WANT_SDL=	yes
 ALL_TARGET=	build_release
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+PLIST_SUB+=	LIBDIR="${LIBDIR:S|${PREFIX}/||}"
 
 OPTIONS_DEFINE=		X11 GLX EYECANDY SOFTSDL SDLGL SDLCLIENT AA CLIENT \
 			SERVER GAME CTF RETEXTURE JOYSTICK REDBLUE IPV6 \
@@ -46,7 +46,6 @@ RETEXTURE_DESC=		Retextured graphics support
 JOYSTICK_DESC=		Joystick support
 REDBLUE_DESC=		Enable 3D glasses rendering
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ###                       #
@@ -206,29 +205,32 @@ post-patch: .SILENT
 
 do-install:
 .for tgt in ${EXE_TARGETS}
-	${INSTALL_PROGRAM} ${WRKSRC}/release/${tgt} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/release/${tgt} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${MKDIR} ${LIBDIR}/baseq2
 .for tgt in ${REF_TARGETS}
-	${INSTALL_PROGRAM} ${WRKSRC}/release/ref_${tgt}.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/release/ref_${tgt}.so \
+		${STAGEDIR}${LIBDIR}
 .endfor
 .if ${PORT_OPTIONS:MCTF}
 	@${MKDIR} ${LIBDIR}/ctf
-	${INSTALL_PROGRAM} ${WRKSRC}/release/ctf/game.so ${LIBDIR}/ctf
+	${INSTALL_PROGRAM} ${WRKSRC}/release/ctf/game.so \
+		${STAGEDIR}${LIBDIR}/ctf
 .endif
 .if ${PORT_OPTIONS:MEYECANDY}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/maxpak.pak ${LIBDIR}/baseq2
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/maxpak.pak \
+		${STAGEDIR}${LIBDIR}/baseq2
 .endif
 .if ${PORT_OPTIONS:MGAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/release/game.so ${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/release/game.so \
+		${STAGEDIR}${LIBDIR}/baseq2
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/docs/README ${DOCSDIR}/README.320
-	${INSTALL_DATA} ${WRKSRC}/src/docs/joystick.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/docs/quake2.3dfxgl ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/docs/README \
+		${STAGEDIR}${DOCSDIR}/README.320
+	${INSTALL_DATA} ${WRKSRC}/src/docs/joystick.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/docs/quake2.3dfxgl ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>
