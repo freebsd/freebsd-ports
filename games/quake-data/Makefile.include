@@ -5,13 +5,13 @@ Q1PKGNAMEPREFIX?=	quake-
 Q1DIR?=		${LOCALBASE}/share/quake
 
 .if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == ${Q1PKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
-.  error include before <bsd.port.options.mk> if using Q1PKGNAMEPREFIX
+IGNORE=	is using Q1PKGNAMEPREFIX, but <bsd.port.options.mk> included too early
 .endif
 
 MAKE_ENV+=	Q1DIR="${Q1DIR}"
-PLIST_SUB+=	Q1DIR="${Q1DIR:S/${LOCALBASE}\///}"
+PLIST_SUB+=	Q1DIR="${Q1DIR:S|${LOCALBASE}/||}"
 SUB_LIST+=	Q1DIR="${Q1DIR}"
 
-.if ${PORTNAME} != "data"
+.if ${PORTNAME} != data
 RUN_DEPENDS+=	${Q1DIR}/id1/pak0.pak:${PORTSDIR}/games/quake-data
 .endif

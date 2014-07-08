@@ -48,7 +48,7 @@
 Q2PKGNAMEPREFIX?=	quake2-
 Q2DIR?=		${LOCALBASE}/share/quake2
 
-.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == "${Q2PKGNAMEPREFIX}" && defined(OPTIONSMKINCLUDED)
+.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == ${Q2PKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
 IGNORE=	is using Q2PKGNAMEPREFIX, but <bsd.port.options.mk> included too early
 .endif
 
@@ -56,6 +56,7 @@ MAKE_ENV+=	Q2DIR="${Q2DIR}"
 PLIST_SUB+=	Q2DIR="${Q2DIR:S|${LOCALBASE}/||}"
 SUB_LIST+=	Q2DIR="${Q2DIR}"
 
-.if ${PORTNAME} != "data"
+.if ${PORTNAME} != data
+# Not depending on the particular .pak file since they are OPTIONS-dependent
 RUN_DEPENDS+=	${Q2DIR}:${PORTSDIR}/games/quake2-data
 .endif
