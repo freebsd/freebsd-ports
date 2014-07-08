@@ -15,12 +15,9 @@ COMMENT=	Loading a M3U file into musicpd
 RUN_DEPENDS=	${LOCALBASE}/bin/mpc:${PORTSDIR}/audio/musicpc
 
 USES=		perl5
-NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 
-MAN1=		${PORTNAME}.1
-
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 post-extract:
 	@${CP} -v ${DISTDIR}/${DISTNAME} ${WRKSRC}
@@ -31,7 +28,9 @@ do-build:
 	user guide" ${WRKSRC}/${DISTNAME} ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	@${INSTALL_DATA} -v ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_DATA} -v ${WRKSRC}/${DISTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
