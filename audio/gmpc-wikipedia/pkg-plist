@@ -1,4 +1,3 @@
-lib/gmpc/plugins/wikiplugin.la
 lib/gmpc/plugins/wikiplugin.so
 share/gmpc/plugins/wikipedia/wikipedia.png
 @dirrmtry share/gmpc/plugins/wikipedia
