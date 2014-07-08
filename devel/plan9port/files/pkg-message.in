@@ -4,8 +4,13 @@ for sh/bash, adjust for tcsh as appropriate):
 	PLAN9=%%PREFIX%%/plan9; export PLAN9
 	PATH=$PATH:$PLAN9/bin; export PATH
 
-This port can install a default plumbing file if you want.  Just go to the
-port's directory and type (being your normal user):
+You can also install a default plumbing file if you want:
+
+	$ mkdir -p ${HOME}/lib
+	$ %%PREFIX%%/plan9/plumb/initial.plumbing ${HOME}/lib/plumbing
+
+When installing from the port (as your normal user), you can simply type
+(while in the port directory) to do the same:
 
 	make install-user
 
