@@ -14,14 +14,11 @@ COMMENT=	Direct solver package for saddle-point (KKT) matrices
 USES=		fortran
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_UNSAFE=yes
-
 CFLAGS+=	-DUSE_FORTRAN_BLAS -DUSE_FORTRAN_LAPACK
 LDFLAGS+=	-L${LOCALBASE}/lib ${LAPACK} ${BLAS} -lm
 PLIST_FILES=	include/kktdirect.h lib/libkktdirect.a lib/libkktdirect_pic.a \
 		lib/libkktdirect.so lib/libkktdirect.so.0
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -39,27 +36,22 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK =	-llapack
 .elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
 BLAS =		-lgoto2p
 LAPACK =	-lgoto2p
 .elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
 LAPACK =	-lalapack -lptcblas
 .endif
 
-.ifndef(NOPORTDOCS)
 PORTDOCS=	kktdirect.pdf
-.endif
-
-.ifndef(NOPORTEXAMPLES)
 PORTEXAMPLES=	kktsolve.cpp
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -70,40 +62,34 @@ post-patch:
 	-e 's@ranlib@${RANLIB}@' \
 		${WRKSRC}/Makefile
 
-do-build: build-dynamic build-static
+pre-build:
+	${CP} -a ${WRKSRC} ${WRKSRC}_shared
 
-.ORDER: build-dynamic build-static
-
-build-dynamic: patch
-	@cd ${WRKSRC};  ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} PICFLAG="${PICFLAG}" clean libkktdirect.a ; \
-	${CXX} ${CXXFLAGS} -shared -Wl,-x -Wl,-soname,libkktdirect.so.0 \
+do-build:
+	@cd ${WRKSRC}_shared; ${DO_MAKE_BUILD} PICFLAG="${PICFLAG}" libkktdirect.a; \
+	${CXX} ${CXXFLAGS} -shared -Wl,-soname,libkktdirect.so.0 \
 	-o ${WRKDIR}/libkktdirect.so.0 -Wl,--whole-archive libkktdirect.a \
-	-Wl,--no-whole-archive -Wl,--as-needed ${LDFLAGS} ; \
+	-Wl,--no-whole-archive -Wl,--as-needed ${LDFLAGS}; \
 	${CP} -af libkktdirect.a ${WRKDIR}/libkktdirect_pic.a
-
-build-static: patch
-	@cd ${WRKSRC};  ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} PICFLAG="" clean libkktdirect.a ; \
+	@cd ${WRKSRC}; ${DO_MAKE_BUILD} PICFLAG="" libkktdirect.a; \
 	${CP} -af libkktdirect.a ${WRKDIR}
 
 check regression-test test: build
-	@cd ${WRKSRC};  ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} PICFLAG="" stokes ; \
+	@cd ${WRKSRC}; ${DO_MAKE_BUILD} PICFLAG="" stokes ; \
 	./stokes 3
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/kktdirect.h ${PREFIX}/include
-	@cd ${WRKDIR}; ${INSTALL_DATA} libkktdirect.a libkktdirect_pic.a \
-	libkktdirect.so.0 ${PREFIX}/lib
-	@${LN} -sf libkktdirect.so.0 ${PREFIX}/lib/libkktdirect.so
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/kktdirect.h ${STAGEDIR}${PREFIX}/include
+	@cd ${WRKDIR}; ${INSTALL_LIB} libkktdirect.a libkktdirect_pic.a \
+	libkktdirect.so.0 ${STAGEDIR}${PREFIX}/lib
+	@cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libkktdirect.so.0 libkktdirect.so
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-.ifndef(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
