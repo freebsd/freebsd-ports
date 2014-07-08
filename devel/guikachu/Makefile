@@ -8,13 +8,13 @@ PORTEPOCH=	3
 CATEGORIES=	devel palm gnome
 MASTER_SITES=	http://cactus.rulez.org/projects/guikachu/download/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resource editor for PalmOS(tm) systems
 
-LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \
-		gnomevfsmm-2.6.1:${PORTSDIR}/devel/gnome-vfsmm
+LIB_DEPENDS=	libgnomeuimm-2.6.so:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \
+		libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig shared-mime-info desktop-file-utils
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -22,13 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	guikachu-form-editor.schemas guikachu-interface.schemas \
 		guikachu-mainwin.schemas
-
-#XXX mime vs mime-info
-NO_STAGE=	yes
-#post-patch:
-#	@${REINPLACE_CMD} -e '/mime_packagedir/s|(mimedir)|(prefix)/share/mime|' \
-#		-e '/(UPDATE_MIME)/s|(mimedir)|(prefix)/share/mime|' \
-#		${WRKSRC}/data/Makefile.in
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gwin32.h>|glib.h>|g' \
