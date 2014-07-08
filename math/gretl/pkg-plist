@@ -199,6 +199,7 @@ lib/libgretl-1.0.la
 lib/libgretl-1.0.so
 lib/libgretl-1.0.so.8
 libdata/pkgconfig/gretl.pc
+man/man1/gretl.1.gz
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%%%DATADIR%%/COPYING
 %%DATADIR%%/data/data10-1.gdt
