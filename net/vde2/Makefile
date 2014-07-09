@@ -3,6 +3,7 @@
 
 PORTNAME=	vde2
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/vde/${PORTNAME}/${PORTVERSION}
 
@@ -14,8 +15,9 @@ LICENSE_COMB=	multi
 
 CONFLICTS=	vde-[0-9]*
 
-USES=		gmake pathfix
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix
 USE_LDCONFIG=	yes
 MAKE_ENV=	V=1
 MAKE_JOBS_UNSAFE=yes
