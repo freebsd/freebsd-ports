@@ -29,11 +29,10 @@ SKY_DESC=	Sky move mouse theme
 SPORTS_DESC=	Sports move mouse theme
 VEHICLE_DESC=	Vehicle move mouse theme
 WORLD_DESC=	World move mouse theme
-AFRICA_DESC=		Africa activity theme
+AFRICA_DESC=	Africa activity theme
 
 OPTIONS_DEFAULT=	ANIMALS EARTH FOOD PLANTS SKY SPORTS VEHICLE WORLD AFRICA
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANIMALS}
@@ -137,7 +136,7 @@ do-extract:
 
 do-install:
 	@cd ${WRKSRC} && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
 
 .include <bsd.port.mk>
