@@ -13,11 +13,9 @@ COMMENT=	SSTP Bottle client
 
 RUN_DEPENDS=	${PYXML}
 
-PLIST_SUB=	VERSION=${PORTVERSION}
-
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USES=		gmake
+PLIST_SUB=	VERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
