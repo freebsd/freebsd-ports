@@ -3436,6 +3436,7 @@
     SUBDIR += pmd
     SUBDIR += pmk
     SUBDIR += poco
+    SUBDIR += poco-devel
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
