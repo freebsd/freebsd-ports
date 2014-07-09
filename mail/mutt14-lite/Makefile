@@ -11,5 +11,4 @@ CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mut
 
 MUTT_LITE=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
