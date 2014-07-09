@@ -4,7 +4,6 @@ bin/vncpasswd
 bin/vncserver
 %%VIEWER%%bin/vncviewer
 bin/x0vncserver
-lib/xorg/modules/extensions/libvnc.la
 lib/xorg/modules/extensions/libvnc.so
 man/man1/vncpasswd.1.gz
 man/man1/x0vncserver.1.gz
