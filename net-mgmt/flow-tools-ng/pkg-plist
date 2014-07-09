@@ -22,23 +22,23 @@ bin/flow-split
 bin/flow-stat
 bin/flow-tag
 bin/flow-xlate
-etc/flow-tools/asn.sym
-etc/flow-tools/filter.cfg
-etc/flow-tools/ip-prot.sym
-etc/flow-tools/ip-type.sym
-etc/flow-tools/map.cfg
-etc/flow-tools/mask.cfg
-etc/flow-tools/stat.cfg
-etc/flow-tools/tag.cfg
-etc/flow-tools/tag.sym
-etc/flow-tools/tcp-port.sym
-etc/flow-tools/xlate.cfg
+%%ETCDIR%%/asn.sym
+%%ETCDIR%%/filter.cfg
+%%ETCDIR%%/ip-prot.sym
+%%ETCDIR%%/ip-type.sym
+%%ETCDIR%%/map.cfg
+%%ETCDIR%%/mask.cfg
+%%ETCDIR%%/stat.cfg
+%%ETCDIR%%/tag.cfg
+%%ETCDIR%%/tag.sym
+%%ETCDIR%%/tcp-port.sym
+%%ETCDIR%%/xlate.cfg
 include/ftlib.h
 include/ftqueue.h
 lib/libft.a
-lib/libft.la
 lib/libft.so
 lib/libft.so.0
+lib/libft.so.0.0.0
 man/man1/flow-capture.1.gz
 man/man1/flow-cat.1.gz
 man/man1/flow-dscan.1.gz
@@ -70,4 +70,17 @@ man/man1/flow-rpt2rrd.1.gz
 %%DATADIR%%/gprot
 %%DATADIR%%/gserv
 @dirrmtry %%DATADIR%%
-@dirrmtry etc/flow-tools
+@dirrmtry %%ETCDIR%%
+@cwd /var
+@exec install -d -o flowtools -g flowtools -m 1700 %D/db/flows
+@exec install -d -o flowtools -g flowtools -m 700 %D/run/flow-capture
+@owner flowtools
+@group flowtools
+@mode 700
+@dirrmtry run/flow-capture
+@mode 1700
+@dirrmtry db/flows
+@owner
+@group
+@mode
+@cwd %%RESETPREFIX%%
