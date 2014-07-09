@@ -74,7 +74,3 @@ share/pixmaps/sudoku.png
 @dirrm share/gnome-sudoku
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
