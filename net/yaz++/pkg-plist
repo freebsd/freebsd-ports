@@ -17,13 +17,13 @@ include/yazpp/z-query.h
 include/yazpp/z-server.h
 include/yazpp/zoom.h
 lib/libyazpp.a
-lib/libyazpp.la
 lib/libyazpp.so
 lib/libyazpp.so.6
+lib/libyazpp.so.6.0.0
 lib/libzoompp.a
-lib/libzoompp.la
 lib/libzoompp.so
 lib/libzoompp.so.6
+lib/libzoompp.so.6.0.0
 man/man1/yazpp-config.1.gz
 share/aclocal/yazpp.m4
 share/doc/yazpp/api.html
