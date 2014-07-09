@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl bindings for Yet Another JSON Library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
 
