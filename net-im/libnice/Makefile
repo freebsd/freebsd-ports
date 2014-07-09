@@ -32,10 +32,12 @@ CONFIGURE_ARGS+=--disable-gupnp
 
 .if defined(LIBNICE_SLAVE)
 . if ${LIBNICE_SLAVE}==gstreamer010
+USES+=		gmake
 USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=--without-gstreamer --with-gstreamer-0.10
 . endif
 . if ${LIBNICE_SLAVE}==gstreamer1
+USES+=		gmake
 USE_GSTREAMER1=	yes
 CONFIGURE_ARGS+=--with-gstreamer --without-gstreamer-0.10
 . endif

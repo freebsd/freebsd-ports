@@ -11,6 +11,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A graphical performance meter
 
 USE_XORG=	xpm
+USES=		gmake
 GNU_CONFIGURE=	yes
 MAN1=		xosview.1
 

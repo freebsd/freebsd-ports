@@ -38,13 +38,6 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-USE_LINUX_APPS+=xorglibs
-.else
-USE_LINUX_APPS+=dri
-.endif
-
 .if ${PORT_OPTIONS:MVIDEO}
 RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
 USE_LINUX_APPS+=libv4l
