@@ -3,7 +3,7 @@
 
 PORTNAME=	mydns-ng
 PORTVERSION=	1.2.8.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns databases
 MASTER_SITES=	SF/${PORTNAME}/mydns/${PORTVERSION}
 DISTNAME=	mydns-${PORTVERSION}
@@ -14,28 +14,18 @@ COMMENT=	Next Generation DNS Server for sql based DNS services
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
 USES=		iconv
-
 USE_RC_SUBR=	mydns
-
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
 INFO=		mydns
-MAN5=		mydns.conf.5
-MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydnsptrconvert.8 mydns-conf.8
-
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
-OPTIONS_DEFINE=		PGSQL ALIAS SSL NLS
+OPTIONS_DEFINE=		DOCS PGSQL ALIAS SSL NLS
 OPTIONS_DEFAULT=	ALIAS
 ALIAS_DESC=	Server side aliasas
+ALIAS_CONFIGURE_ENABLE=	alias
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MALIAS}
-CONFIGURE_ARGS+=--enable-alias
-.endif
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=yes
@@ -68,17 +58,14 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/contrib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/contrib/*.php ${DOCSDIR}/contrib/
-	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pl ${DOCSDIR}/contrib/
-	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pm ${DOCSDIR}/contrib/
-	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/
-.endif
-	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/*.php ${STAGEDIR}${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pl ${STAGEDIR}${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pm ${STAGEDIR}${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${STAGEDIR}${DOCSDIR}/contrib/
+	@${STAGEDIR}${PREFIX}/sbin/mydns --dump-config > ${STAGEDIR}${PREFIX}/etc/mydns.conf.sample
 
 .include <bsd.port.mk>

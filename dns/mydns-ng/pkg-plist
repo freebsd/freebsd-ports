@@ -3,7 +3,14 @@ bin/mydnscheck
 bin/mydnsexport
 bin/mydnsimport
 bin/mydnsptrconvert
-etc/mydns.conf.sample
+@sample etc/mydns.conf.sample
+man/man5/mydns.conf.5.gz
+man/man8/mydns.8.gz
+man/man8/mydnscheck.8.gz
+man/man8/mydnsexport.8.gz
+man/man8/mydnsimport.8.gz
+man/man8/mydnsptrconvert.8.gz
+man/man8/mydns-conf.8.gz
 sbin/mydns
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
