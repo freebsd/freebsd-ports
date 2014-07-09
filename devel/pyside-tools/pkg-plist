@@ -27,6 +27,9 @@ bin/pyside-uic
 %%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins/phonon.py
 %%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins/qtdeclarative.py
 %%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins/qtwebkit.py
+man/man1/pyside-lupdate.1.gz
+man/man1/pyside-rcc.1.gz
+man/man1/pyside-uic.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins
 @dirrm %%PYTHON_SITELIBDIR%%/pysideuic/port_v2
 @dirrm %%PYTHON_SITELIBDIR%%/pysideuic/Compiler
