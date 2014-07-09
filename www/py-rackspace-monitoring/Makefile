@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rackspace-monitoring
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +11,15 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python client library for Rackspace Cloud Monitoring
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcloud>=0.12.4:${PORTSDIR}/net/py-libcloud
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcloud>=0.14:${PORTSDIR}/net/py-libcloud
 
-# Python3 ready
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
