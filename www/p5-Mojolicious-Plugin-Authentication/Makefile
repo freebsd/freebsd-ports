@@ -3,6 +3,7 @@
 
 PORTNAME=	Mojolicious-Plugin-Authentication
 PORTVERSION=	1.26
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +19,8 @@ RUN_DEPENDS=	p5-Mojolicious>=0:${PORTSDIR}/www/p5-Mojolicious
 
 USES=	perl5
 USE_PERL5=	configure
+
+post-patch:
+	@${RM} ${WRKSRC}/README.pod
 
 .include <bsd.port.mk>
