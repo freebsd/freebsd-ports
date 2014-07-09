@@ -1,5 +1,3 @@
-%%DATADIR%%/msg_parser.awk
-%%DATADIR%%/tag_dll.awk
 bin/addrinfo
 bin/localinfo
 bin/sip-date
@@ -120,13 +118,13 @@ include/sofia-sip-1.12/sofia-sip/url.h
 include/sofia-sip-1.12/sofia-sip/url_tag.h
 include/sofia-sip-1.12/sofia-sip/url_tag_class.h
 lib/libsofia-sip-ua-glib.a
-lib/libsofia-sip-ua-glib.la
 lib/libsofia-sip-ua-glib.so
 lib/libsofia-sip-ua-glib.so.3
+lib/libsofia-sip-ua-glib.so.3.0.0
 lib/libsofia-sip-ua.a
-lib/libsofia-sip-ua.la
 lib/libsofia-sip-ua.so
-lib/libsofia-sip-ua.so.6
+lib/libsofia-sip-ua.so.0
+lib/libsofia-sip-ua.so.0.6.0
 libdata/pkgconfig/sofia-sip-ua-glib.pc
 libdata/pkgconfig/sofia-sip-ua.pc
 man/man1/addrinfo.1.gz
@@ -135,6 +133,8 @@ man/man1/sip-date.1.gz
 man/man1/sip-dig.1.gz
 man/man1/sip-options.1.gz
 man/man1/stunc.1.gz
+%%DATADIR%%/msg_parser.awk
+%%DATADIR%%/tag_dll.awk
 @dirrm include/sofia-sip-1.12/sofia-resolv
 @dirrm include/sofia-sip-1.12/sofia-sip
 @dirrm include/sofia-sip-1.12
