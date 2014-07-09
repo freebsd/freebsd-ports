@@ -207,13 +207,13 @@ do-install:
 .for tgt in ${EXE_TARGETS}
 	${INSTALL_PROGRAM} ${WRKSRC}/release/${tgt} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${LIBDIR}/baseq2
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/baseq2
 .for tgt in ${REF_TARGETS}
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ref_${tgt}.so \
 		${STAGEDIR}${LIBDIR}
 .endfor
 .if ${PORT_OPTIONS:MCTF}
-	@${MKDIR} ${LIBDIR}/ctf
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/ctf
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ctf/game.so \
 		${STAGEDIR}${LIBDIR}/ctf
 .endif

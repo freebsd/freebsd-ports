@@ -1,4 +1,4 @@
-# Created by: alepulver
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	matrix
@@ -8,7 +8,7 @@ MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/mods/
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	Matrix-v${PORTVERSION}.fixed.Linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Matrix modification for Quake II
 
 USES=		gmake tar:bzip2
@@ -30,7 +30,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${Q2DIR}/${PORTNAME}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/matrix/game.so \
 		${STAGEDIR}${Q2DIR}/${PORTNAME}
-	cd ${WRKSRC} && ${INSTALL_DATA} *.cfg *.ini *.pak ${STAGEDIR}${Q2DIR}/${PORTNAME}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.cfg *.ini *.pak \
+		${STAGEDIR}${Q2DIR}/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 
