@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/mars-${PORTVERSION}
 
 OPTIONS_DEFINE=	DEBUG OPENGL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -50,14 +49,11 @@ pre-install:
 		${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/data && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-	@${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mars ${PREFIX}/libexec/mars
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+	@${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/mars ${STAGEDIR}${PREFIX}/libexec/mars
 
 .include <bsd.port.mk>
