@@ -3,7 +3,7 @@
 
 PORTNAME=	gnomesudoku
 PORTVERSION=	0.6.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/gnome-sudoku/gnome-sudoku/${PORTVERSION}
 DISTNAME=	gnome-sudoku-${PORTVERSION}
@@ -18,14 +18,12 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USES=		pathfix display
 USE_GNOME=	gnomeprefix pygnome2 pygnomedesktop
-
 PYDISTUTILS_PKGNAME=	gnome-sudoku
-
-NO_STAGE=	yes
-
+INSTALLS_EGGINFO=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
 		${WRKSRC}/tools/gsudoku_distutils.py
+
 .include <bsd.port.mk>
