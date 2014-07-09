@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	xml-format
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	XML beautifier
-
-LICENSE=	BSD
-
-MAN1=		xml-format.1
 
 MAKE_ENV+=	DATADIR=${DATADIR}
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Config ${STAGEDIR}${DATADIR}
+
 .include <bsd.port.mk>
