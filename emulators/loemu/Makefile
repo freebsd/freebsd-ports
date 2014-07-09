@@ -3,7 +3,7 @@
 
 PORTNAME=	loemu
 PORTVERSION=	0.3.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators python
 MASTER_SITES=	http://loemu.pegueroles.com/dists/
 
@@ -15,30 +15,19 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
 
 USES=		gettext
-USE_PYTHON=		yes
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-NO_BUILD=		yes
+NO_BUILD=	yes
+INSTALLS_EGGINFO=	yes
 
 OPTIONS_DEFINE=	MAME SNES9X ZSNES
 OPTIONS_DEFAULT=	MAME SNES9X
 MAME_DESC=	Install mame emulator
 SNES9X_DESC=	Install snes9x emulator
 ZSNES_DESC=	Install zsnes emulator
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMAME}
-RUN_DEPENDS+=	mame:${PORTSDIR}/emulators/mame
-.endif
-
-.if ${PORT_OPTIONS:MSNES9X}
-RUN_DEPENDS+=	snes9x:${PORTSDIR}/emulators/snes9x
-.endif
-
-.if ${PORT_OPTIONS:MZSNES}
-RUN_DEPENDS+=	zsnes:${PORTSDIR}/emulators/zsnes
-.endif
+MAME_RUN_DEPENDS=	mame:${PORTSDIR}/emulators/mame
+SNES9X_RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
+ZSNES_RUN_DEPENDS=	zsnes:${PORTSDIR}/emulators/zsnes
 
 post-patch:
 .for DIRE in config loemu scripts
