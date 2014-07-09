@@ -11,17 +11,23 @@ DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (Gnome frontend)
 
-LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		wget:${PORTSDIR}/ftp/wget
 
-USE_GNOME=	gnomehack gnomeprefix intlhack libglade2 libgnome
-USES=		gettext gmake
+USE_GNOME=	gnomehier libglade2 libgnome
+USES=		gettext gmake pathfix
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's/^GMSGFMT = @GMSGFMT@/GMSGFMT = msgfmt/' ${WRKSRC}/po/Makefile.in.in
+	@${REINPLACE_CMD} -e \
+		'/^Icon/s|=\(.*\)|=${PREFIX}/share/pixmaps/\1|' \
+		${WRKSRC}/data/qalculate-gtk.desktop.in
+	@${REINPLACE_CMD} -e \
+		's/^GMSGFMT = @GMSGFMT@/GMSGFMT = msgfmt/' \
+		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>
