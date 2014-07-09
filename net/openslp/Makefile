@@ -3,15 +3,16 @@
 
 PORTNAME=	openslp
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/OpenSLP/${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open-source implementation of the Service Location Protocol
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \
