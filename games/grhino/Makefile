@@ -19,7 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALLS_OMF=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
