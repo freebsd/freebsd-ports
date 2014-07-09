@@ -418,6 +418,7 @@
     SUBDIR += etcd
     SUBDIR += etcdctl
     SUBDIR += etl
+    SUBDIR += euca2ools
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
     SUBDIR += exercisix
