@@ -3,24 +3,21 @@
 
 PORTNAME=	glchess
 PORTVERSION=	1.0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D OpenGL based chess game
 
-RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
 
+USES=		desktop-file-utils shared-mime-info
 USE_GNOME=	gconf2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
+INSTALLS_EGGINFO=	yes
 GCONF_SCHEMAS=	glchess.schemas
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
@@ -47,17 +44,13 @@ post-build:
 
 post-install:
 	@(for lang in `${MAKE} -f ${WRKSRC}/Makefile -V LANGUAGES` ; do \
-		${MKDIR} ${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \
 		${INSTALL_DATA} ${WRKSRC}/po/$$lang.mo \
-		${PREFIX}/share/locale/$$lang/LC_MESSAGES/glchess.mo ; \
+		${STAGEDIR}${PREFIX}/share/locale/$$lang/LC_MESSAGES/glchess.mo ; \
 	done)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ChangeLog README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif #NOPORTDOCS
-	@-update-mime-database ${PREFIX}/share/mime
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
