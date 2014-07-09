@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTVERSION=	2.5.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -13,14 +12,16 @@ COMMENT=	YAF is Yet Another Flowmeter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	fixbuf:${PORTSDIR}/net/libfixbuf \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/net/libfixbuf \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig perl5
-USE_GNOME=	glib20 gnomehack
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix perl5 pkgconfig
+USE_AUTOTOOLS=	libltdl
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-CONFIOGURE_ARGS+=	--disable-doxygen
+CONFIGURE_ARGS=	--disable-doxygen-doc --enable-applabel --enable-plugins
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
@@ -28,7 +29,9 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 CONFIGURE_ARGS+=	--with-dag=${LOCALBASE}
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+post-install:
+.for f in dhcp_fingerprints.conf yafApplabelRules.conf yafDPIRules.conf
+	${MV} ${STAGEDIR}${PREFIX}/etc/$f ${STAGEDIR}${PREFIX}/etc/$f.sample
+.endfor
 
 .include <bsd.port.mk>
