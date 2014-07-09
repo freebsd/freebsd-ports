@@ -1,0 +1,54 @@
+--- Makefile.in.orig	2014-07-09 21:58:54.032018344 +0800
++++ Makefile.in	2014-07-09 22:00:26.873012030 +0800
+@@ -70,23 +70,23 @@ install: install_dirs install_progs inst
+ 	@echo Installation of klondike is complete.
+ 
+ install_dirs:
+-	test -d $(BINDIR) || $(MKDIR_P) $(BINDIR)
+-	test -d $(LIBDIR) || $(MKDIR_P) $(LIBDIR)
+-	test -d $(LIBDIR)/CARDS || $(MKDIR_P) $(LIBDIR)/CARDS
+-	test -d $(LIBDIR)/SCORES || $(MKDIR_P) $(LIBDIR)/SCORES
++	test -d $(DESTDIR)$(BINDIR) || $(MKDIR_P) $(DESTDIR)$(BINDIR)
++	test -d $(DESTDIR)$(LIBDIR) || $(MKDIR_P) $(DESTDIR)$(LIBDIR)
++	test -d $(DESTDIR)$(LIBDIR)/CARDS || $(MKDIR_P) $(DESTDIR)$(LIBDIR)/CARDS
++	test -d $(DESTDIR)$(LIBDIR)/SCORES || $(MKDIR_P) $(DESTDIR)$(LIBDIR)/SCORES
+ 
+ install_progs:
+ 	@for i in $(TCL_FILES); \
+ 	do \
+-		$(MY_INSTALL_PROGRAM) $$i $(LIBDIR); \
++		$(MY_INSTALL_PROGRAM) $$i $(DESTDIR)$(LIBDIR); \
+ 	done
+-	mv $(LIBDIR)/klondike $(BINDIR)
++	mv $(DESTDIR)$(LIBDIR)/klondike $(DESTDIR)$(BINDIR)
+ 
+ install_bitmaps:
+-	$(INSTALL_DATA) $(BITMAP_FILES) $(LIBDIR)/CARDS
++	$(INSTALL_DATA) $(BITMAP_FILES) $(DESTDIR)$(LIBDIR)/CARDS
+ 
+ install_release:
+-	$(INSTALL_DATA) release $(LIBDIR)
++	$(INSTALL_DATA) release $(DESTDIR)$(LIBDIR)
+ 
+ #
+ # To mitigate the effects of a world-writable directory,
+@@ -95,15 +95,15 @@ install_release:
+ # you may need to chane its permission.
+ #
+ install_scores:
+-	test -d $(LIBDIR)/SCORES || $(MKDIR_P) $(LIBDIR)/scores
+-	test $(enable_scoring) = yes && chmod 0733 $(LIBDIR)/SCORES
++	test -d $(DESTDIR)$(LIBDIR)/SCORES || $(MKDIR_P) $(DESTDIR)$(LIBDIR)/scores
++	test $(enable_scoring) = yes && chmod 0733 $(DESTDIR)$(LIBDIR)/SCORES
+ 
+ # to be like normal X programs
+ install.man: install_man
+ 
+ install_man:
+-	test -d $(MANDIR) || $(MKDIR_P)  $(MANDIR)
+-	$(INSTALL_DATA) klondike.man $(MANDIR)/klondike.$(MANEXT)
++	test -d $(DESTDIR)$(MANDIR) || $(MKDIR_P)  $(DESTDIR)$(MANDIR)
++	$(INSTALL_DATA) klondike.man $(DESTDIR)$(MANDIR)/klondike.$(MANEXT)
+ 
+ 
+ #
