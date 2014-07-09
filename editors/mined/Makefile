@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mined
-PORTVERSION=	2014.24
+PORTVERSION=	2014.24.2
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/download/
 
