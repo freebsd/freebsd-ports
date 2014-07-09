@@ -15,9 +15,9 @@ COMMENT=	Standard client library for many popular cloud providers
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_BZIP2=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=			tar:bzip2
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 post-extract:
