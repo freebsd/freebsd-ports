@@ -20,7 +20,7 @@ MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
 MAKE_ENV=	LIBDIR="${LIBDIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
-PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S,${PREFIX}/,,}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 OPTIONS_DEFINE=	CLIENT DEDICATED GAME OPTIMIZED_CFLAGS
@@ -30,7 +30,6 @@ CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
 GAME_DESC=	Build main game (default mod)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
@@ -71,10 +70,12 @@ post-patch:
 		${WRKSRC}/unix/unix_snd_main.c
 
 do-install:
-	${INSTALL_PROGRAM} ${EGL_BIN:S,^,${WRKSRC}/release/,} ${PREFIX}/bin
-	@${MKDIR} ${LIBDIR}/baseq2
-	${INSTALL_PROGRAM} ${WRKSRC}/release/baseq2/*.so ${LIBDIR}/baseq2
-	${INSTALL_DATA} ${DISTDIR}/egl.pkz ${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${EGL_BIN:S,^,${WRKSRC}/release/,} \
+		${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/release/baseq2/*.so \
+		${STAGEDIR}${LIBDIR}/baseq2
+	${INSTALL_DATA} ${DISTDIR}/egl.pkz ${STAGEDIR}${LIBDIR}/baseq2
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>

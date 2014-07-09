@@ -1,3 +1,12 @@
-Enhanced, OpenGL-only Quake II engine.
+Enhanced, OpenGL-only Quake II engine.  It brings plethora of improvements
+over the original, including, but not limited to:
+
+  - Optimized rendering backend, support for new textures and shaders
+  - Framerate decoupling: your video framerate can be infinite while your
+    network framerate is 30
+  - R1Q2 protocol version 35 supported on the client-side
+  - Improved console (highly customizable, better tab autocompletion)
+  - Various improvements in crosshairs, HUD, particles and decals
+  - Optimized virtual file system, new supported file formats, etc.
 
 WWW: http://bfeared.com/library/quake/archive/quakedev/egl/
