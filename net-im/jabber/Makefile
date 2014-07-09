@@ -3,7 +3,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	14
+PORTREVISION=	15
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/%SUBDIR%/
@@ -24,9 +24,10 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 
 OPTIONS_DEFINE= IPV6 MYSQL PGSQL
 
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gettext gmake iconv libtool pkgconfig
 USE_RC_SUBR=	jabber
-USES=		gettext gmake iconv pkgconfig
-USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${JABBER_ETCDIR} \
 		--includedir=${PREFIX}/include/jabber \
@@ -40,17 +41,18 @@ LDFLAGS+=	$$(pth-config --ldflags) \
 		-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
-SUB_LIST=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
-		JABBER_GROUP=${JABBER_GROUP} JABBER_GID=${JABBER_GID} \
+SUB_LIST=	JABBER_USER=${JABBER_USER} \
+		JABBER_GROUP=${JABBER_GROUP} \
 		JABBER_ETCDIR="${JABBER_ETCDIR}" \
 		JABBER_LOGDIR="${JABBER_LOGDIR}" \
 		JABBER_SPOOLDIR="${JABBER_SPOOLDIR}" \
 		JABBER_RUNDIR="${JABBER_RUNDIR}"
 
+USERS=		${JABBER_USER}
+GROUPS=		${JABBER_GROUP}
+
 JABBER_USER=	jabber
-JABBER_UID=	93
-JABBER_GROUP=	${JABBER_USER}
-JABBER_GID=	${JABBER_UID}
+JABBER_GROUP=	jabber
 JABBER_ETCDIR=	"${PREFIX}/etc"
 JABBER_RUNDIR=	"/var/run/jabberd"
 JABBER_SPOOLDIR="/var/spool/jabberd"

@@ -1,37 +1,29 @@
 bin/jabberd14
 bin/xdbfiletool
-etc/jabber.xml.sample
+@sample etc/jabber.xml.sample
 include/jabber/jabberd.h
 include/jabber/jabberdlib.h
 include/jabber/platform-settings
-lib/jabber/libjabberd.a
-lib/jabber/libjabberd.la
 lib/jabber/libjabberd.so
 lib/jabber/libjabberd.so.2
-lib/jabber/libjabberddialback.a
-lib/jabber/libjabberddialback.la
+lib/jabber/libjabberd.so.2.0.0
 lib/jabber/libjabberddialback.so
-lib/jabber/libjabberddialback.so.2
-lib/jabber/libjabberddnsrv.a
-lib/jabber/libjabberddnsrv.la
+lib/jabber/libjabberddialback.so.2.0.0
 lib/jabber/libjabberddnsrv.so
 lib/jabber/libjabberddnsrv.so.2
-lib/jabber/libjabberdpthsock.a
-lib/jabber/libjabberdpthsock.la
+lib/jabber/libjabberddnsrv.so.2.0.0
 lib/jabber/libjabberdpthsock.so
 lib/jabber/libjabberdpthsock.so.2
-lib/jabber/libjabberdsm.a
-lib/jabber/libjabberdsm.la
+lib/jabber/libjabberdpthsock.so.2.0.0
 lib/jabber/libjabberdsm.so
 lib/jabber/libjabberdsm.so.2
-lib/jabber/libjabberdxdbfile.a
-lib/jabber/libjabberdxdbfile.la
+lib/jabber/libjabberdsm.so.2.0.0
 lib/jabber/libjabberdxdbfile.so
 lib/jabber/libjabberdxdbfile.so.2
-lib/jabber/libjabberdxdbsql.a
-lib/jabber/libjabberdxdbsql.la
+lib/jabber/libjabberdxdbfile.so.2.0.0
 lib/jabber/libjabberdxdbsql.so
 lib/jabber/libjabberdxdbsql.so.2
+lib/jabber/libjabberdxdbsql.so.2.0.0
 man/man5/jabber.xml.5.gz
 man/man8/jabberd14.8.gz
 share/locale/de/LC_MESSAGES/jabberd14.mo
@@ -53,6 +45,5 @@ share/locale/nl/LC_MESSAGES/jabberd14.mo
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/mysql.sql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry /var/spool/jabberd
 @dirrmtry lib/jabber
 @dirrmtry include/jabber
