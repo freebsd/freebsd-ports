@@ -5,7 +5,7 @@
     while(compressor!=NULL)
     {
 -      printf("%lu =>",(unsigned int)compressor);
-+      printf("%lu =>",(unsigned intptr_t)compressor);
++      printf("%lu =>",(unsigned)(intptr_t)compressor);
        printf("%s\n",compressor->GetName());
        compressor=compressor->next;
     }
