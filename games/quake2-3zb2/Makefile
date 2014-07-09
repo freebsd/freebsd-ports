@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:prog \
 		${PORTNAME}src${PORTVERSION:S/0.//}${EXTRACT_SUFX}:prog
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3rd Zigock II bots for Quake II
 
 USES=		dos2unix zip
@@ -55,20 +55,22 @@ post-extract:
 do-install:
 .for f in chctf chdtm
 	@${MKDIR} ${STAGEDIR}${Q2DIR}/${PORTNAME}/${f}
-	${INSTALL_DATA} ${WRKSRC}/3zb2/${f}/* ${STAGEDIR}${Q2DIR}/${PORTNAME}/${f}
+	${INSTALL_DATA} ${WRKSRC}/3zb2/${f}/* \
+		${STAGEDIR}${Q2DIR}/${PORTNAME}/${f}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${STAGEDIR}${Q2DIR}/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/game.so \
+		${STAGEDIR}${Q2DIR}/${PORTNAME}
 	cd ${WRKSRC}/3zb2 && ${INSTALL_DATA} *.cfg 3ZBMaps.lst pak6.pak \
 		${STAGEDIR}${Q2DIR}/${PORTNAME}
 .if ${PORT_OPTIONS:MROUTES}
 	${INSTALL_DATA} ${WRKSRC}/*.chn ${STAGEDIR}${Q2DIR}/${PORTNAME}/chdtm
 	${INSTALL_DATA} ${WRKSRC}/*.chf ${STAGEDIR}${Q2DIR}/${PORTNAME}/chctf
 .endif
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/3zb2 && ${CP} -a *.txt "User Guide" ${STAGEDIR}${DOCSDIR}
-	@${FIND} ${STAGEDIR}${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${STAGEDIR}${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-.endif
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>

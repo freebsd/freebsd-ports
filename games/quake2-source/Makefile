@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:icc
 DIST_SUBDIR=	quake2lnx
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II game source
 
 NO_BUILD=	yes
@@ -46,19 +46,19 @@ XATRIX_OFF=	441
 
 post-extract:
 .for f in rogue xatrix
-.   if ${PORT_OPTIONS:M${f:tu}}
+.  if ${PORT_OPTIONS:M${f:tu}}
 	@${MKDIR} ${WRKSRC}/src/${f}
 	@(cd ${WRKSRC}/src/${f} && ${GUNZIP_CMD} -c \
 		${DISTDIR}/${DIST_SUBDIR}/${f}src320.shar.Z > \
 		${f}src320.shar && \
 		${TAIL} +${${f:tu}_OFF} ${f}src320.shar | ${SH})
-.   endif
+.  endif
 .endfor
 
 pre-install:
-	@${FIND} -E ${WRKSRC} -type f \
-		-iregex "(Makefile|.*\.(def|dsp|orig|shar))" -print0 | \
-		${XARGS} -0 ${RM}
+	@${FIND} -E ${WRKSRC} -type f -iregex \
+		"(Makefile|.*\.(def|dsp|orig|shar))" -print0 | \
+			${XARGS} -0 ${RM}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

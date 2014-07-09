@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:data,src \
 		Lights-Bots${EXTRACT_SUFX}:src
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Lights modification for Quake II
+COMMENT=	Lights and weapon effects modification for Quake II
 
 USES=		gmake tar:bzip2
 NO_WRKSUBDIR=	yes
