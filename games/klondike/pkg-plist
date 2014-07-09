@@ -1,4 +1,5 @@
 bin/klondike
+man/man6/klondike.6.gz
 share/games/klondike/klondikeMenus.tcl
 share/games/klondike/klondikeRules.tcl
 share/games/klondike/klondikeScore.tcl
