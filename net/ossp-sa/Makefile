@@ -3,22 +3,24 @@
 
 PORTNAME=	sa
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An abstraction library for the Unix socket API
+COMMENT=	Abstraction library for the Unix socket API
 
-LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
+LIB_DEPENDS=	libex.so:${PORTSDIR}/devel/ossp-ex
 
-USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
+USES=		gmake libtool pathfix
 USE_LDCONFIG=	yes
 
-check:	build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+regression-test check: build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
