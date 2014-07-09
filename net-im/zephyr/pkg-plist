@@ -12,8 +12,9 @@ include/zephyr/mit-copyright.h
 include/zephyr/zephyr.h
 include/zephyr/zephyr_err.h
 lib/libzephyr.a
-lib/libzephyr.so.4.0
-lib/libzephyr.la
+lib/libzephyr.so
+lib/libzephyr.so.4
+lib/libzephyr.so.4.0.0
 sbin/zshutdown_notify
 sbin/zephyrd
 sbin/zhm

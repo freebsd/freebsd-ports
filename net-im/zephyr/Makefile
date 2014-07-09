@@ -3,6 +3,7 @@
 
 PORTNAME=	zephyr
 DISTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://zephyr.1ts.org/export/2642/distribution/
 
@@ -11,10 +12,11 @@ COMMENT=	Enterprise-scale distributed messaging system
 
 LICENSE=	MIT
 
-USES=		iconv
 GNU_CONFIGURE=	yes
+USES=		iconv libtool
 USE_RC_SUBR=	zhm
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
