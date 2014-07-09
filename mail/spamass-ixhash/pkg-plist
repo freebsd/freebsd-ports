@@ -1,0 +1,8 @@
+@sample etc/mail/spamassassin/iXhash.cf.sample
+etc/mail/spamassassin/iXhash.pm
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WHERE_ARE_THE_OTHER_FILES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
