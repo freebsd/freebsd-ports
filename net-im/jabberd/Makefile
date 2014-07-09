@@ -3,7 +3,7 @@
 
 PORTNAME=	jabberd
 DISTVERSION=	2.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}
@@ -25,12 +25,13 @@ OPTIONS_DEFAULT=MYSQL DEBUG GSASL
 OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		compiler:c11 iconv libtool perl5 tar:xz
 USE_PERL5=	run
 USE_OPENSSL=	yes
-USES=		iconv perl5 compiler:c11 tar:xz
 USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
-CONFIGURE_ARGS+=	--localstatedir=/var \
+CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
 		--enable-ssl --enable-mio=poll \
 		--disable-tests \
@@ -71,7 +72,6 @@ PGSQL_CONFIGURE_ENABLE=	pgsql
 
 SQLITE_CONFIGURE_ENABLE=sqlite
 SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
-SQLITE_CFLAGS=		${PTHREAD_CFLAGS}
 
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ENABLE=	mysql
@@ -141,8 +141,6 @@ SUB_LIST+=	REQUIRE="LOGIN"
 REQUIRES_DESC=	Add backend requires to startup script
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"-lsqlite3|"-lsqlite3 ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|g' \
 		${WRKSRC}/tools/jabberd.in
 .if ${PORT_OPTIONS:MCYRUS}
