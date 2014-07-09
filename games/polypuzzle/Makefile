@@ -15,7 +15,7 @@ USES= 		tk:84,run
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-OPTIONS_DEFINE= DOCS
+OPTIONS_DEFINE=	DOCS
 DOC_FILES=	About Bugs Changelog Install Instructions Links Math Readme \
 		Thanks Todo
 DATA_FILES=	menus pieces.3x20 pieces.783 pieces.bonus pieces.colours \
