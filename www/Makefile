@@ -1668,6 +1668,7 @@
     SUBDIR += py-qt4-webkit
     SUBDIR += py-rackspace-monitoring
     SUBDIR += py-recaptcha
+    SUBDIR += py-requestbuilder
     SUBDIR += py-requests
     SUBDIR += py-requests-oauth-hook
     SUBDIR += py-requests-oauthlib
