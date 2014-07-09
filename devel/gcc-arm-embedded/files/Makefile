@@ -8,7 +8,13 @@ PKGVERSION=	GNU Tools for ARM Embedded Processors
 BUILD_PREFIX=	${WRKDIR}/build
 DOC_PREFIX=	${INTERIM_PREFIX}/${DOCS_SUFFIX}
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+.if ${PORT_OPTIONS:MPURE}
+WORLD_LIB=${INTERIM_WORLD}
+.else
+WORLD_LIB=${LOCALBASE}
+.endif
+
+LDFLAGS+=	-L${WORLD_LIB}/lib
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error
@@ -16,6 +22,21 @@ CXXFLAGS+=	-Wno-error
 .endif
 
 MISC_DOCS=	license.txt readme.txt release.txt
+
+.if ${PORT_OPTIONS:MPURE}
+PREREQUISITES=		expat \
+			zlib \
+			libelf \
+			gmp \
+			mpfr \
+			mpc \
+			isl \
+			cloog
+ISL_CHECK_VERSION=
+.else
+PREREQUISITES=
+ISL_CHECK_VERSION=	--disable-isl-version-check
+.endif
 
 ALL_BUILD=	build-binutils \
 		build-gcc-first \
@@ -30,9 +51,141 @@ ALL_BUILD=	build-binutils \
 		strip-binaries \
 		strip-target-libraries
 
-.PHONY: ${ALL_BUILD}
+.PHONY: ${PREREQUISITES} ${ALL_BUILD}
 
-all: ${ALL_BUILD}
+all: ${PREREQUISITES} ${ALL_BUILD}
+
+expat:
+	@${ECHO_MSG} "====>  Build expat (log file: ${WRKDIR}/expat.log)"
+	@${RM} -rf ${BUILD_PREFIX}/expat > ${WRKDIR}/expat.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/expat >> ${WRKDIR}/expat.log 2>&1
+	@${ECHO_MSG} "=====>  Configure"
+	@cd ${BUILD_PREFIX}/expat && \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/expat-${BUNDLED_VERSION_EXPAT}/configure \
+	 --prefix=${INTERIM_WORLD} \
+	 --disable-shared \
+	 --disable-nls >> ${WRKDIR}/expat.log 2>&1
+	@${ECHO_MSG} "=====>  Build"
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/expat all >> ${WRKDIR}/expat.log 2>&1
+	@${ECHO_MSG} "=====>  Install into intermediate directory"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/expat install >> ${WRKDIR}/expat.log 2>&1
+
+zlib:
+	@${ECHO_MSG} "====>  Build zlib (log file: ${WRKDIR}/zlib.log)"
+	@${RM} -rf ${BUILD_PREFIX}/zlib > ${WRKDIR}/zlib.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/zlib >> ${WRKDIR}/zlib.log 2>&1
+	@${ECHO_MSG} "=====>  Copy to build dir"
+	@${TAR} -cf - -C ${SRC_DIR}/zlib-${BUNDLED_VERSION_ZLIB} . | ${TAR} -xf - -C ${BUILD_PREFIX}/zlib >> ${WRKDIR}/zlib.log 2>&1
+	@${ECHO_MSG} "=====>  Patch"
+	@cd ${BUILD_PREFIX}/zlib && \
+	 ${PATCH} -p1 < ${SRC_DIR}/zlib-${BUNDLED_VERSION_ZLIB}.patch >> ${WRKDIR}/zlib.log 2>&1
+	@${ECHO_MSG} "=====>  Configure"
+	@cd ${BUILD_PREFIX}/zlib && \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ./configure \
+	 --static \
+	 --prefix=${INTERIM_WORLD} >> ${WRKDIR}/zlib.log 2>&1
+	@${ECHO_MSG} "=====>  Build"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/zlib >> ${WRKDIR}/zlib.log 2>&1
+	@${ECHO_MSG} "=====>  Install into intermediate directory"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/zlib install >> ${WRKDIR}/zlib.log 2>&1
+
+libelf:
+	@${ECHO_MSG} "====>  Build libelf (log file: ${WRKDIR}/libelf.log)"
+	@${RM} -rf ${BUILD_PREFIX}/libelf > ${WRKDIR}/libelf.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/libelf >> ${WRKDIR}/libelf.log 2>&1
+	@${ECHO_MSG} "=====>  Configure"
+	@cd ${BUILD_PREFIX}/libelf && \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/libelf-${BUNDLED_VERSION_LIBELF}/configure \
+	 --prefix=${INTERIM_WORLD} \
+	 --disable-shared \
+	 --disable-nls >> ${WRKDIR}/libelf.log 2>&1
+	@${ECHO_MSG} "=====>  Build"
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/libelf all >> ${WRKDIR}/libelf.log 2>&1
+	@${ECHO_MSG} "=====>  Install into intermediate directory"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/libelf install >> ${WRKDIR}/libelf.log 2>&1
+
+gmp:
+	@${ECHO_MSG} "====>  Build gmp (log file: ${WRKDIR}/gmp.log)"
+	@${RM} -rf ${BUILD_PREFIX}/gmp > ${WRKDIR}/gmp.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/gmp >> ${WRKDIR}/gmp.log 2>&1
+	@${ECHO_MSG} "=====>  Configure"
+	@cd ${BUILD_PREFIX}/gmp && \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gmp-${BUNDLED_VERSION_GMP}/configure \
+	 --prefix=${INTERIM_WORLD} \
+	 --enable-cxx \
+	 --disable-shared \
+	 --disable-nls >> ${WRKDIR}/gmp.log 2>&1
+	@${ECHO_MSG} "=====>  Build"
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gmp all >> ${WRKDIR}/gmp.log 2>&1
+	@${ECHO_MSG} "=====>  Install into intermediate directory"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gmp install >> ${WRKDIR}/gmp.log 2>&1
+
+mpfr:
+	@${ECHO_MSG} "====>  Build mpfr (log file: ${WRKDIR}/mpfr.log)"
+	@${RM} -rf ${BUILD_PREFIX}/mpfr > ${WRKDIR}/mpfr.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/mpfr >> ${WRKDIR}/mpfr.log 2>&1
+	@${ECHO_MSG} "=====>  Configure"
+	@cd ${BUILD_PREFIX}/mpfr && \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/mpfr-${BUNDLED_VERSION_MPFR}/configure \
+	 --prefix=${INTERIM_WORLD} \
+	 --with-gmp=${INTERIM_WORLD} \
+	 --disable-shared \
+	 --disable-nls >> ${WRKDIR}/mpfr.log 2>&1
+	@${ECHO_MSG} "=====>  Build"
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/mpfr all >> ${WRKDIR}/mpfr.log 2>&1
+	@${ECHO_MSG} "=====>  Install into intermediate directory"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/mpfr install >> ${WRKDIR}/mpfr.log 2>&1
+
+mpc:
+	@${ECHO_MSG} "====>  Build mpc (log file: ${WRKDIR}/mpc.log)"
+	@${RM} -rf ${BUILD_PREFIX}/mpc > ${WRKDIR}/mpc.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/mpc >> ${WRKDIR}/mpc.log 2>&1
+	@${ECHO_MSG} "=====>  Configure"
+	@cd ${BUILD_PREFIX}/mpc && \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/mpc-${BUNDLED_VERSION_MPC}/configure \
+	 --prefix=${INTERIM_WORLD} \
+	 --with-gmp=${INTERIM_WORLD} \
+	 --with-mpfr=${INTERIM_WORLD} \
+	 --disable-shared \
+	 --disable-nls >> ${WRKDIR}/mpc.log 2>&1
+	@${ECHO_MSG} "=====>  Build"
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/mpc all >> ${WRKDIR}/mpc.log 2>&1
+	@${ECHO_MSG} "=====>  Install into intermediate directory"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/mpc install >> ${WRKDIR}/mpc.log 2>&1
+
+isl:
+	@${ECHO_MSG} "====>  Build isl (log file: ${WRKDIR}/isl.log)"
+	@${RM} -rf ${BUILD_PREFIX}/isl > ${WRKDIR}/isl.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/isl >> ${WRKDIR}/isl.log 2>&1
+	@${ECHO_MSG} "=====>  Configure"
+	@cd ${BUILD_PREFIX}/isl && \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/isl-${BUNDLED_VERSION_ISL}/configure \
+	 --prefix=${INTERIM_WORLD} \
+	 --with-gmp-prefix=${INTERIM_WORLD} \
+	 --disable-shared \
+	 --disable-nls >> ${WRKDIR}/isl.log 2>&1
+	@${ECHO_MSG} "=====>  Build"
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/isl all >> ${WRKDIR}/isl.log 2>&1
+	@${ECHO_MSG} "=====>  Install into intermediate directory"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/isl install >> ${WRKDIR}/isl.log 2>&1
+
+cloog:
+	@${ECHO_MSG} "====>  Build cloog (log file: ${WRKDIR}/cloog.log)"
+	@${RM} -rf ${BUILD_PREFIX}/cloog > ${WRKDIR}/cloog.log 2>&1
+	@${MKDIR} ${BUILD_PREFIX}/cloog >> ${WRKDIR}/cloog.log 2>&1
+	@${ECHO_MSG} "=====>  Configure"
+	@cd ${BUILD_PREFIX}/cloog && \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/cloog-${BUNDLED_VERSION_CLOOG}/configure \
+	 --prefix=${INTERIM_WORLD} \
+	 --with-bits=gmp \
+	 --with-gmp-prefix=${INTERIM_WORLD} \
+	 --with-isl-prefix=${INTERIM_WORLD} \
+	 --disable-shared \
+	 --disable-nls >> ${WRKDIR}/cloog.log 2>&1
+	@${ECHO_MSG} "=====>  Build"
+	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/cloog all >> ${WRKDIR}/cloog.log 2>&1
+	@${ECHO_MSG} "=====>  Install into intermediate directory"
+	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/cloog install >> ${WRKDIR}/cloog.log 2>&1
 
 build-binutils:
 	@${ECHO_MSG} "====>  Build binutils (log file: ${WRKDIR}/binutils.log)"
@@ -87,13 +240,13 @@ build-gcc-first:
 	 --htmldir=${DOC_PREFIX}/html \
 	 --pdfdir=${DOC_PREFIX}/pdf \
 	 --libexecdir=${INTERIM_PREFIX}/lib \
-	 --with-gmp=${LOCALBASE} \
-	 --with-mpfr=${LOCALBASE} \
-	 --with-mpc=${LOCALBASE} \
-	 --with-isl=${LOCALBASE} \
-	 --disable-isl-version-check \
-	 --with-cloog=${LOCALBASE} \
-	 --with-libelf=${LOCALBASE} \
+	 --with-gmp=${WORLD_LIB} \
+	 --with-mpfr=${WORLD_LIB} \
+	 --with-mpc=${WORLD_LIB} \
+	 --with-isl=${WORLD_LIB} \
+	 ${ISL_CHECK_VERSION} \
+	 --with-cloog=${WORLD_LIB} \
+	 --with-libelf=${WORLD_LIB} \
 	 --enable-languages=c \
 	 --disable-decimal-float \
 	 --disable-libffi \
@@ -207,13 +360,13 @@ build-gcc-final:
 	 --htmldir=${DOC_PREFIX}/html \
 	 --pdfdir=${DOC_PREFIX}/pdf \
 	 --libexecdir=${INTERIM_PREFIX}/lib \
-	 --with-gmp=${LOCALBASE} \
-	 --with-mpfr=${LOCALBASE} \
-	 --with-mpc=${LOCALBASE} \
-	 --with-isl=${LOCALBASE} \
-	 --disable-isl-version-check \
-	 --with-cloog=${LOCALBASE} \
-	 --with-libelf=${LOCALBASE} \
+	 --with-gmp=${WORLD_LIB} \
+	 --with-mpfr=${WORLD_LIB} \
+	 --with-mpc=${WORLD_LIB} \
+	 --with-isl=${WORLD_LIB} \
+	 ${ISL_CHECK_VERSION} \
+	 --with-cloog=${WORLD_LIB} \
+	 --with-libelf=${WORLD_LIB} \
 	 --enable-languages=c,c++ \
 	 --enable-plugins \
 	 --disable-decimal-float \
@@ -268,7 +421,7 @@ build-gcc-plugins:
 	   src_files=$$(${FIND} $${plugin_dir} -name \*.c -or -name \*.cc) && \
 	   ${ECHO_MSG} "=====>  Build plugin $${plugin_name} from $${src_files}" && \
 	   ${ECHO_MSG} "Build plugin $${plugin_name} from $${src_files}" >> ${WRKDIR}/gcc-plugins.log && \
-	   ${CXX} ${CXXFLAGS} ${CPPFLAGS} -fPIC -fno-rtti -O2 -shared -I$${plugin_target_dir}/include -I${LOCALBASE}/include $${src_files} \
+	   ${CXX} ${CXXFLAGS} ${CPPFLAGS} -fPIC -fno-rtti -O2 -shared -I$${plugin_target_dir}/include -I${WORLD_LIB}/include $${src_files} \
 	    -o $${plugin_target_dir}/$${plugin_name}.so >> ${WRKDIR}/gcc-plugins.log 2>&1 ; \
 	 done
 
@@ -287,13 +440,13 @@ build-libstdcxx:
 	 --mandir=${DOC_PREFIX}/man \
 	 --htmldir=${DOC_PREFIX}/html \
 	 --pdfdir=${DOC_PREFIX}/pdf \
-	 --with-gmp=${LOCALBASE} \
-	 --with-mpfr=${LOCALBASE} \
-	 --with-mpc=${LOCALBASE} \
-	 --with-isl=${LOCALBASE} \
-	 --disable-isl-version-check \
-	 --with-cloog=${LOCALBASE} \
-	 --with-libelf=${LOCALBASE} \
+	 --with-gmp=${WORLD_LIB} \
+	 --with-mpfr=${WORLD_LIB} \
+	 --with-mpc=${WORLD_LIB} \
+	 --with-isl=${WORLD_LIB} \
+	 ${ISL_CHECK_VERSION} \
+	 --with-cloog=${WORLD_LIB} \
+	 --with-libelf=${WORLD_LIB} \
 	 --enable-languages=c,c++ \
 	 --disable-decimal-float \
 	 --disable-libffi \
@@ -345,7 +498,7 @@ build-gdb:
 	 --disable-nls \
 	 --disable-sim \
 	 --with-libexpat \
-	 --with-libexpat-prefix=${LOCALBASE} \
+	 --with-libexpat-prefix=${WORLD_LIB} \
 	 --with-python=no \
 	 --with-system-gdbinit=${INTERIM_PREFIX}/xxxx/${TARGET}/lib/gdbinit \
 	 --with-lzma=no \
