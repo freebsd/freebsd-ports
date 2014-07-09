@@ -594,10 +594,6 @@ sbin/yarn-daemons.sh
 %%DATADIR%%/yarn/lib/xz-1.0.jar
 %%DATADIR%%/yarn/lib/zookeeper-3.4.5.jar
 %%DATADIR%%/yarn/test/hadoop-yarn-server-tests-2.4.1-tests.jar
-@exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_LOGDIR%%
-@exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_RUNDIR%%
-@unexec rm -d %%HADOOP_RUNDIR%% 2>/dev/null || true
-@unexec rm -d %%HADOOP_LOGDIR%% 2>/dev/null || true
 @dirrm %%EXAMPLESDIR%%/conf
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/common/jdiff
@@ -674,3 +670,11 @@ sbin/yarn-daemons.sh
 @dirrm %%DATADIR%%/yarn
 @dirrm %%DATADIR%%
 @dirrmtry %%ETCDIR%%
+@cwd /
+@group %%HADOOP_GROUP%%
+@mode 0775
+@dirrmtry %%HADOOP_LOGDIR%%
+@dirrmtry %%HADOOP_RUNDIR%%
+@cwd %%RESETPREFIX%%
+@group
+@mode
