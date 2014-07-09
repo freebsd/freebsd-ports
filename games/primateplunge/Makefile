@@ -15,18 +15,14 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer
 PRIMATEDIR=	sounds graphics
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/src/primateplunge ${PREFIX}/bin/primateplunge
+	@${INSTALL_PROGRAM} ${STRIP} ${WRKSRC}/src/primateplunge ${STAGEDIR}${PREFIX}/bin/primateplunge
 	@cd ${WRKSRC} && \
-		${FIND}	${PRIMATEDIR} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-		${FIND} -E ${PRIMATEDIR} -type f -iregex ".*\.(bmp|wav|mid)" -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/AUTHORS ${WRKSRC}/TIPS ${DOCSDIR}
-.endif
+		${FIND}	${PRIMATEDIR} -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
+		${FIND} -E ${PRIMATEDIR} -type f -iregex ".*\.(bmp|wav|mid)" -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/AUTHORS ${WRKSRC}/TIPS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
