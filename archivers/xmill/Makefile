@@ -10,16 +10,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient compressor for XML
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKEFILE=	makefile
 
 USES=		dos2unix zip
-DOS2UNIX_FILES=	${MAKEFILE} XMill/BZlib.cpp
-
-PLIST_FILES=	bin/xcmill bin/xdemill bin/xmilltest bin/xmillexample \
-		bin/xmillinspect bin/ppmzip
+DOS2UNIX_FILES=	${MAKEFILE} XMill/*.cpp
+MAKEFILE=	makefile
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+PLIST_FILES=	bin/xcmill bin/xdemill bin/xmilltest bin/xmillexample \
+		bin/xmillinspect bin/ppmzip
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -30,11 +29,11 @@ post-patch:
 
 do-install:
 .for p in ${PLIST_FILES:T}
-	${INSTALL_PROGRAM} ${WRKSRC}/unix/${p} ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/unix && ${INSTALL_PROGRAM} ${p} ${STAGEDIR}${PREFIX}/bin)
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/documentation/* ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/documentation && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
