@@ -15,9 +15,9 @@ include/meanwhile/mw_srvc_resolve.h
 include/meanwhile/mw_srvc_store.h
 include/meanwhile/mw_st_list.h
 lib/libmeanwhile.a
-lib/libmeanwhile.la
 lib/libmeanwhile.so
 lib/libmeanwhile.so.1
+lib/libmeanwhile.so.1.0.2
 libdata/pkgconfig/meanwhile.pc
 %%DOCSDIR%%/samples/README
 %%DOCSDIR%%/samples/build
