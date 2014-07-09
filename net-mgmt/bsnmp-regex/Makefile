@@ -3,6 +3,7 @@
 
 PORTNAME=	bsnmp-regex
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://thewalter.net/stef/software/bsnmp-regex/
 
@@ -13,12 +14,14 @@ LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
+INSTALL_TARGET=	install-strip
+USES=		libtool
 
 OPTIONS_DEFINE=	DEBUG PCRE
 PCRE_DESC=	Use PCRE instead of the default regex library
 
 PLIST_FILES=	bin/sockin lib/snmp_regex.so lib/snmp_regex.so.0 \
-		lib/snmp_regex.a lib/snmp_regex.la man/man1/sockin.1.gz \
+		lib/snmp_regex.so.0.0.0 lib/snmp_regex.a man/man1/sockin.1.gz \
 		man/man5/bsnmp-regex.conf.5.gz \
 		man/man8/bsnmp-regex.8.gz
 
@@ -31,7 +34,7 @@ CONFIGURE_ARGS+=--disable-debug
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
