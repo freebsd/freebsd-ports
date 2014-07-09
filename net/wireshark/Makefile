@@ -76,7 +76,6 @@ CONFIGURE_ARGS+=	--enable-wireshark=no \
 .endif
 
 GNU_CONFIGURE=	yes
-LIBTOOLFILES=	configure wiretap/configure
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if ${PORT_OPTIONS:MIPV6}
