@@ -1,22 +1,19 @@
-# Created by: Joe Barbish <fbsd_user@a1poweruser.com>
+# Created by: Joe Barbish <joeb1@a1poweruser.com>
 # $FreeBSD$
 
 PORTNAME=	ppars
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.dshield.org/clients/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	fbsd_user@a1poweruser.com
+MAINTAINER=	joeb1@a1poweruser.com
 COMMENT=	Proactive Probing Abuse Reporting System
 
 RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:bzip2
+NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-SUB_FILES=	pkg-message
 SHEBANG_FILES=	*.pl
 
 do-install:
