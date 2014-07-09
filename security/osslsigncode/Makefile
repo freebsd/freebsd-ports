@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	osslsigncode
-PORTVERSION=	1.3
-PORTREVISION=	3
+PORTVERSION=	1.6
 CATEGORIES=	security devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	OpenSSL-based signcode utility
 
 PLIST_FILES=	bin/osslsigncode
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-USES=		gmake
 USE_OPENSSL=	yes
 
-.if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-.endif
+OPTIONS_DEFINE=		CURL GSF
+OPTIONS_DEFAULT=	CURL GSF
+CURL_CONFIGURE_WITH=	curl
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+GSF_DESC?=		GSF support (enables signing of e.g. MSI files)
+GSF_CONFIGURE_WITH=	gsf
+GSF_LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
