@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libssh2.so:${PORTSDIR}/security/libssh2
+BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
+RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
 
 OPTIONS_DEFINE=	DOCS NLS QEMU
 OPTIONS_DEFINE_amd64=	BHYVE
@@ -46,9 +48,9 @@ CONFIGURE_ARGS=	--without-sasl \
 		--without-hal \
 		--without-udev \
 		--without-netcf \
-		--without-network \
 		--without-sysctl \
 		--without-lxc \
+		--without-uml \
 		--with-ssh2
 
 # workaround to override pkg-config calls
@@ -79,6 +81,10 @@ STRIP_FILES=	libvirt.so.${SHLIB_VER} \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} >= 1000000
+OPTIONS_DEFAULT_amd64=	BHYVE
+.endif
+
 #work around an options bug (thanks mat@)
 .if ${ARCH} != amd64
 PLIST_SUB+=	BHYVE="@comment "
@@ -103,15 +109,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|qemu.conf$$|qemu.conf.sample|' \
 		${WRKSRC}/src/Makefile.in
 
+	@${REINPLACE_CMD} -e 's|cp $$(DESTDIR)|cp -f $$(DESTDIR)|' \
+		${WRKSRC}/src/Makefile.in
+
 post-install:
-	@for configuration in libvirt libvirtd ${QEMU_CONFIG}; do \
-	if [ ! -e "${STAGEDIR}${ETCDIR}/$${configuration}.conf" ]; then \
-			${ECHO_MSG} "	Installing local configuration file: ${STAGEDIR}${ETCDIR}/$${configuration}.conf"; \
-			${CP} ${STAGEDIR}${ETCDIR}/$${configuration}.conf.sample ${STAGEDIR}${ETCDIR}/$${configuration}.conf; \
-		else \
-			${ECHO_MSG} "	Preserving local configuration file: ${STAGEDIR}${ETCDIR}/$${configuration}.conf"; \
-	fi; \
-	done
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}

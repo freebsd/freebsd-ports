@@ -8,16 +8,12 @@ man/man1/virt-xml-validate.1.gz
 man/man1/virt-host-validate.1.gz
 man/man8/libvirtd.8.gz
 man/man8/virtlockd.8.gz
-@unexec if cmp -s %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; then rm -f %D/%%ETCDIR%%/libvirtd.conf; fi
-%%ETCDIR%%/libvirtd.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/libvirtd.conf ] ; then cp -p %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/libvirt.conf.sample %D/%%ETCDIR%%/libvirt.conf; then rm -f %D/%%ETCDIR%%/libvirt.conf; fi
-%%ETCDIR%%/libvirt.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/libvirt.conf ] ; then cp -p %D/%%ETCDIR%%/libvirt.conf.sample %D/%%ETCDIR%%/libvirt.conf; fi
+@sample %%ETCDIR%%/libvirt.conf.sample
+@sample %%ETCDIR%%/libvirtd.conf.sample
+%%QEMU%%@sample %%ETCDIR%%/qemu.conf.sample
 %%ETCDIR%%/virtlockd.conf
-%%QEMU%%@unexec if cmp -s %D/%%ETCDIR%%/qemu.conf.sample %D/%%ETCDIR%%/qemu.conf; then rm -f %D/%%ETCDIR%%/qemu.conf; fi
-%%QEMU%%%%ETCDIR%%/qemu.conf.sample
-%%QEMU%%@exec if [ ! -f %D/%%ETCDIR%%/qemu.conf ] ; then cp -p %D/%%ETCDIR%%/qemu.conf.sample %D/%%ETCDIR%%/qemu.conf; fi
+%%ETCDIR%%/qemu/networks/default.xml
+%%ETCDIR%%/qemu/networks/autostart/default.xml
 %%QEMU%%%%ETCDIR%%/qemu-lockd.conf
 etc/logrotate.d/libvirtd
 etc/logrotate.d/libvirtd.lxc
@@ -39,14 +35,18 @@ lib/libvirt.la
 lib/libvirt.so
 lib/libvirt.so.%%SHLIB_VER%%
 libdata/pkgconfig/libvirt.pc
-libexec/libvirt_iohelper
+libdata/pkgconfig/libvirt-lxc.pc
+libdata/pkgconfig/libvirt-qemu.pc
 libexec/libvirt-guests.sh
+libexec/libvirt_iohelper
+libexec/libvirt_leaseshelper
 sbin/libvirtd
 sbin/virtlockd
 share/augeas/lenses/libvirt_lockd.aug
 share/augeas/lenses/libvirtd.aug
 share/augeas/lenses/virtlockd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
+%%QEMU%%share/augeas/lenses/tests/test_libvirt_lockd.aug
 share/augeas/lenses/tests/test_libvirtd.aug
 share/augeas/lenses/tests/test_virtlockd.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirtd_qemu.aug
@@ -189,6 +189,7 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/schemas/nodedev.rng
 %%DATADIR%%/schemas/nwfilter.rng
 %%DATADIR%%/schemas/secret.rng
+%%DATADIR%%/schemas/storagecommon.rng
 %%DATADIR%%/schemas/storagepool.rng
 %%DATADIR%%/schemas/storagevol.rng
 %%NLS%%share/locale/af/LC_MESSAGES/libvirt.mo
@@ -270,6 +271,8 @@ share/gtk-doc/html/libvirt/up.png
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.la
 %%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.la
 %%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.so
+lib/libvirt/connection-driver/libvirt_driver_network.so
+lib/libvirt/connection-driver/libvirt_driver_network.la
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_secret.la
 lib/libvirt/connection-driver/libvirt_driver_storage.so
@@ -326,7 +329,12 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.la
 %%NLS%%@dirrmtry share/locale/bo
 %%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/as
+@dirrmtry %%ETCDIR%%/qemu/networks/autostart
+@dirrmtry %%ETCDIR%%/qemu/networks
+@dirrmtry %%ETCDIR%%/qemu
 @dirrm %%ETCDIR%%
+@dirrmtry var/run/libvirt/network
+%%QEMU%%@dirrmtry var/run/libvirt/qemu
 @dirrmtry var/run/libvirt/lockd
 @dirrmtry var/run/libvirt
 @dirrmtry var/run
@@ -339,9 +347,15 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.la
 @dirrmtry var/lib/libvirt/lockd
 @dirrmtry var/lib/libvirt/images
 @dirrmtry var/lib/libvirt/boot
+@dirrmtry var/lib/libvirt/dnsmasq
 @dirrmtry var/lib/libvirt/filesystems
+@dirrmtry var/lib/libvirt/network
+%%QEMU%%@dirrmtry var/lib/libvirt/qemu/channel/target
+%%QEMU%%@dirrmtry var/lib/libvirt/qemu/channel
+%%QEMU%%@dirrmtry var/lib/libvirt/qemu
 @dirrmtry var/lib/libvirt
 @dirrmtry var/lib
+%%QEMU%%@dirrmtry var/cache/libvirt/qemu
 @dirrmtry var/cache/libvirt
 @dirrmtry var/cache
 @dirrmtry var
