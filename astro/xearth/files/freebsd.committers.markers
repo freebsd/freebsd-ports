@@ -52,7 +52,7 @@
  22.1957,	113.549,	"vs"				# Macau, Macau SAR
  47.921386,	106.910153,	"ganbold"			# Ulaanbaatar, Mongolia
  3.167,		101.700,	"ariff"				# Kuala Lumpur, Malaysia
- 3.130,		101.669,	"miwi"				# (CORE) Kuala Lumpur, Malaysia
+ 3.130,		101.669,	"miwi"				# Kuala Lumpur, Malaysia
  55.033,	82.917,		"danfe,fjoe"			# Novosibirsk, Russia
  13.6325,	78.4552,	"jkoshy"			# Rishi Valley, India
  28.599623,	77.314412	"ashish"			# Delhi, India
@@ -64,7 +64,7 @@
  55.702594,	37.784919,	"zont"				# Moscow, Russia
  55.795636,	37.691646,	"marck"				# Moscow, Russia
  55.869236,	37.680909,	"amdmi3"			# Moscow, Russia
- 55.709525,	37.654288,	"glebius"			# Moscow, Russia
+ 55.709525,	37.654288,	"glebius"			# (CORE) Moscow, Russia
  55.8,		37.6,		"ache,bsam,demon,maxim,rik,skv,vsevolod,yar"	# Moscow, Russia
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
  55.750799,	37.565689,	"krion"				# Moscow, Russia
@@ -192,14 +192,14 @@
  48.912,	2.256,		"mich"		align=left	# La Garenne-Colombes, France
  48.818344,	2.245696,	"roberto"	align=left	# Meudon, France
  48.836,	2.242,		"blackend"	align=left	# Boulogne-Billancourt, France
- 48.844,	2.213,		"bapt"				# Saint Cloud, France
+ 48.844,	2.213,		"bapt"				# (CORE) Saint Cloud, France
  46.75984,	1.738281,	"stephane"			# Orleans, France
  51.33046,	1.41088,	"matthew"			# Ramsgate, UK
  51.29870,	1.07005,	"tdb"				# Canterbury, United Kingdom
  52.20360,	0.14134,	"rsm"				# Cambridge, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
- 52.21065,	0.09235,	"rwatson"			# Cambridge, UK
+ 52.21065,	0.09235,	"rwatson"			# (CORE) Cambridge, UK
  52.116761,	0.056618,	"dmlb"				# Cambridge, UK
  51.5,		0.0,		" dfr"				# London, UK
  51.53,		-0.18,		"n_hibma"	align=above	# London, UK
@@ -240,7 +240,7 @@
  40.660,	-73.950,	"eadler"			# West Hempstead, NY, USA
  40.75,		-73.97,		"sahil"				# New York, NY, USA 
  40.86004,	-73.98038,	"jkim"				# Leonia, NJ, USA
- 43,		-75,		"gnn"				# New York, NY, USA
+ 43,		-75,		"gnn"				# (CORE) New York, NY, USA
  45.366,	-75.193,	"db"				# Ottawa, ON, Canada
  45.3991,	-75.6942,	"jake"				# Ottawa, ON, Canada
  42.26785,	-76.28954,	"pat"				# Ithaca, NY, USA
@@ -260,18 +260,18 @@
  40.441667,	-80,		"rvb"				# Pittsburgh, PA, US
  43.55,		-80.25,		"rmacklem"			# Guelph, ON, Canada
  37.23,		-80.41,		"mikeh"				# Blacksburg, VA, USA
- 43.48,		-80.54,		"emaste"			# Waterloo, ON, Canada
+ 43.48,		-80.54,		"emaste"			# (CORE) Waterloo, ON, Canada
  36.294167,	-82.4725,	"jsa"				# Jonesborough, TN, USA
  34.827667,	-82.553759,	"laszlof"			# Easley, SC, USA
  42.28,		-83.75,		"rees"				# Ann Arbor, MI, USA
  33.817888,	-84.485421,	"ahze"				# Smyrna, GA, USA
  39.1361,	-84.5030,	"cokane"			# Cincinnati, OH, USA
- 33.916601,	-84.641075,	"jhb"				# (CORE) Marietta, GA, USA
+ 33.916601,	-84.641075,	"jhb"				# Marietta, GA, USA
  35.555301,	-86.054649,	"rnoland"			# Manchester, TN, USA
  39.978436,	-86.11805,	"scf"				# Carmel, IN, USA
  34.81095,	-86.70977,	"steve"				# Huntsville, AL, USA
  43.039,	-87.906,	"silby"				# Milwaukee, WI, USA
- 48.400,	-89.233,	"tabthorpe"			# (CORE) Thunder Bay, ON, Canada
+ 48.400,	-89.233,	"tabthorpe"			# Thunder Bay, ON, Canada
  43.19,		-89.38,		"jlemon"			# Madison, WI, USA
  43.02,		-89.41,		"feld"				# Madison, WI, USA
  43.063,	-89.452,	"nwhitehorn"			# Madison, WI, USA
