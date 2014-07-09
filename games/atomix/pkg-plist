@@ -122,7 +122,6 @@ share/locale/wa/LC_MESSAGES/atomix.mo
 share/locale/zh_CN/LC_MESSAGES/atomix.mo
 share/locale/zh_HK/LC_MESSAGES/atomix.mo
 share/locale/zh_TW/LC_MESSAGES/atomix.mo
-@dirrmtry share/games
 @dirrm share/atomix/themes/default
 @dirrm share/atomix/themes
 @dirrm share/atomix/level
