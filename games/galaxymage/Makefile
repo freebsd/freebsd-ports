@@ -17,38 +17,33 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric 
 USE_PYTHON=	yes
 USES=		gettext twisted
 NO_BUILD=	yes
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-configure:
 	@${REINPLACE_CMD} -e 's@%%DATADIR%%@${DATADIR}@g' ${WRKSRC}/GalaxyMage.py ${WRKSRC}/src/Resources.py
 	@${REINPLACE_CMD} -e 's@%%LOCALBASE%%@${LOCALBASE}@g' ${WRKSRC}/src/Translate.py
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/GalaxyMage.py ${PREFIX}/bin/GalaxyMage
-	@${MKDIR} ${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/GalaxyMage.py ${STAGEDIR}${PREFIX}/bin/GalaxyMage
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for DIRE in src data
 	@cd ${WRKSRC}/${DIRE} && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 		${FIND} -E * -type f -iregex ".*\.(py|pyc|txt|TXT|ogg|wav|png|ttf|conf)" -exec ${INSTALL_DATA} "{}" \
-			"${DATADIR}/{}" \;
+			"${STAGEDIR}${DATADIR}/{}" \;
 .endfor
 
 .for FILE in de en fr nl sp
-	@${MKDIR} ${PREFIX}/share/locale/${FILE}/LC_MESSAGES && \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${FILE}/LC_MESSAGES && \
 		${INSTALL_DATA} ${WRKSRC}/locale/${FILE}/LC_MESSAGES/* \
-			${PREFIX}/share/locale/${FILE}/LC_MESSAGES
+			${STAGEDIR}${PREFIX}/share/locale/${FILE}/LC_MESSAGES
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/doc && \
-		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
 		${FIND} -E * -type f -iregex ".*\.(html|css|txt|png)" -exec ${INSTALL_DATA} "{}" \
-			"${DOCSDIR}/{}" \;
-	@${INSTALL_DATA} ${WRKSRC}/CREDITS.txt ${WRKSRC}/README.txt ${DOCSDIR}
-.endif
+			"${STAGEDIR}${DOCSDIR}/{}" \;
+	@${INSTALL_DATA} ${WRKSRC}/CREDITS.txt ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
+
 .include <bsd.port.mk>
