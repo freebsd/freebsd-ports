@@ -19,6 +19,7 @@ AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ARGS=	--enable-ILU \
 		--disable-allegro --disable-directx8 --disable-directx9 \
 		--without-libsquish
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USE_GCC=	any
 
