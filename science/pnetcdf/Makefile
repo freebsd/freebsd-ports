@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.5.0
 CATEGORIES=	science parallel
 MASTER_SITES=	http://cucis.ece.northwestern.edu/projects/PnetCDF/Release/ \
 		LOCAL/sunpoet
@@ -20,10 +19,12 @@ OPTIONS_DEFAULT=OPENMPI
 CONFLICTS=	hdf-4.*
 
 CFLAGS+=	-fPIC -DPIC
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	M4FLAGS=""
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-USES=		fortran gmake tar:bzip2
+USE_PERL5=	build
+USES=		fortran gmake perl5 tar:bzip2
 
 PORTDOCS=	COPYRIGHT INSTALL README
 
@@ -31,6 +32,9 @@ MPICH2_CONFIGURE_ON=	--with-mpi=${LOCALBASE}
 MPICH2_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
 OPENMPI_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi
 OPENMPI_LIB_DEPENDS=	libmpi.so:${PORTSDIR}/net/openmpi
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e '/$$(INSTALL.*$$(...DIR)/ s|$$(...DIR)|$$(DESTDIR)&|'
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
