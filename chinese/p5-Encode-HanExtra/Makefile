@@ -10,8 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Extra sets of Chinese encodings
 
+LICENSE=	MIT
+
 USES=		perl5
 USE_PERL5=	configure
-
 
 .include <bsd.port.mk>
