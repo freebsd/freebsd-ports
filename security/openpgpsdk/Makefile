@@ -7,11 +7,11 @@ CATEGORIES=	security
 MASTER_SITES=	http://openpgp.nominet.org.uk/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenPGP SDK
 
 BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
-LIB_DEPENDS=	cunit.1:${PORTSDIR}/devel/cunit
+LIB_DEPENDS=	libcunit.so:${PORTSDIR}/devel/cunit
 
 USES=		perl5
 HAS_CONFIGURE=	yes
@@ -19,9 +19,13 @@ CONFIGURE_ARGS=	--without-idea --with-cunit=${LOCALBASE}
 
 PLIST_FILES=	bin/openpgp lib/libops.a
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} 's|-Werror -W -g|${CFLAGS}|' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.template -exec ${REINPLACE_CMD} \
+		's|-Werror -g|${CFLAGS}|; /^LDFLAGS/ s|-g|${LDFLAGS}|' {} \;
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/openpgp ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/lib/libops.a ${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/openpgp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/lib/libops.a ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
