@@ -3,18 +3,16 @@
 
 PORTNAME=	mailtray
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display email status in tray
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
+INSTALLS_EGGINFO=	yes
 
-MAN1=		mailtray.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
