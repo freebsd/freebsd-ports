@@ -1,5 +1,5 @@
-etc/siproxd.conf.example
-etc/siproxd_passwd.cfg
+@sample etc/siproxd.conf.sample
+@sample etc/siproxd_passwd.cfg.sample
 lib/siproxd/plugin_defaulttarget.la
 lib/siproxd/plugin_defaulttarget.so
 lib/siproxd/plugin_demo.la

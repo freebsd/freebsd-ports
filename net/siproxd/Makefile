@@ -3,7 +3,7 @@
 
 PORTNAME=	siproxd
 PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -12,19 +12,19 @@ COMMENT=	Proxy/masquerading daemon for the SIP protocol
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libosip2.so:${PORTSDIR}/net/libosip
+LIB_DEPENDS=	libosip2.so:${PORTSDIR}/net/libosip2
 
+# :keepla because port uses lt_dlopen
 USES=		libtool:keepla
 USE_RC_SUBR=	siproxd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doc --disable-static --with-libosip-prefix=${PREFIX}
+INSTALL_TARGET=	install-strip
 
 PORTDOCS1=	AUTHORS ChangeLog README RELNOTES
 PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
 		sample_cfg_budgetone.txt sample_cfg_x-lite.txt
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-lgnugetopt,,g ; 24600d ; 23998s,doc/Makefile ,,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -43,12 +43,9 @@ post-install:
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${CP} ${WRKSRC}/doc/siproxd.conf.example ${STAGEDIR}${PREFIX}/etc
-	${CP} ${WRKSRC}/doc/siproxd_passwd.cfg ${STAGEDIR}${PREFIX}/etc
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_defaulttarget.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_demo.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_fix_bogus_via.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_logcall.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/siproxd/plugin_shortdial.so
+	${INSTALL_DATA} ${WRKSRC}/doc/siproxd.conf.example \
+		${STAGEDIR}${PREFIX}/etc/siproxd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/siproxd_passwd.cfg \
+		${STAGEDIR}${PREFIX}/etc/siproxd_passwd.cfg.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
