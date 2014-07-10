@@ -2,14 +2,15 @@
 
 PORTNAME=	rtorrent
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++
 
-BUILD_DEPENDS=	libtorrent=0.13.4:${PORTSDIR}/net-p2p/libtorrent
-RUN_DEPENDS=	libtorrent=0.13.4:${PORTSDIR}/net-p2p/libtorrent
+BUILD_DEPENDS=	libtorrent=0.13.4_1:${PORTSDIR}/net-p2p/libtorrent
+RUN_DEPENDS=	libtorrent=0.13.4_1:${PORTSDIR}/net-p2p/libtorrent
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
