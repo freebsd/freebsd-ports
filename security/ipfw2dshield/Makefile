@@ -6,21 +6,22 @@ PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.dynamical-systems.org/ipfw/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DShield client for ipfw logs
 
 PORTDOCS=	CHANGES README.html README.txt
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/ipfw2dshield
+	@${REINPLACE_CMD} -E -e '/^(CC|CFLAGS|prefix)/ s|=|?=|' \
+		-e 's|bindir)|DESTDIR)$$(&|' \
+		${WRKSRC}/ipaddr/Makefile \
+		${WRKSRC}/strpdate/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
