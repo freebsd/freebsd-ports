@@ -3,7 +3,7 @@
 
 PORTNAME=	net6
 PORTVERSION=	1.3.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel
 MASTER_SITES=	http://releases.0x539.de/net6/
 
@@ -15,8 +15,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 
-USES=		pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NLS
