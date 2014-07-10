@@ -33,27 +33,14 @@ CONFIGURE_ARGS=	--cc=${CC} --ccflags="${CFLAGS}" --cxx=${CXX} --link=${CXX} \
 CONFIGURE_SCRIPT=	Configure.pl
 INSTALL_TARGET=	install-dev
 MAKE_JOBS_UNSAFE=	yes
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		bison gmake perl5
-
-MAN1=		ops2c.1 \
-		parrot.1 \
-		parrot-nqp.1 \
-		parrot-prove.1 \
-		parrot_config.1 \
-		parrot_nci_thunk_gen.1 \
-		parrotbug.1 \
-		pbc_to_exe.1 \
-		plumage.1 \
-		winxed.1
+USES=		bison gmake perl5 tar:bzip2
 
 PARROT_SHARE_DIR=	share/doc/${PORTNAME}/${PORTVERSION}
 PARROT_DOCS=		${PARROT_SHARE_DIR}
 PLIST_SUB+=	PARROT_VER="${PORTVERSION}" \
 		PARROT_DOCS="${PARROT_DOCS}"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 .include <bsd.port.pre.mk>
 
