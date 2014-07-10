@@ -1415,13 +1415,8 @@
     SUBDIR += srilm
     SUBDIR += ss-hunspell
     SUBDIR += ssddiff
-    SUBDIR += stardict-BritannicaConcise
-    SUBDIR += stardict-MerrianWebster
-    SUBDIR += stardict-OxfordCollocation
     SUBDIR += stardict-dict-fa_IR
     SUBDIR += stardict-dictd_mova
-    SUBDIR += stardict-longman
-    SUBDIR += stardict-oald
     SUBDIR += stardict-quick
     SUBDIR += stardict-rptts
     SUBDIR += stardict3
