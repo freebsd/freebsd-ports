@@ -1,9 +1,9 @@
 include/zmq.h
 include/zmq_utils.h
 lib/libzmq.a
-lib/libzmq.la
 lib/libzmq.so
 lib/libzmq.so.3
+lib/libzmq.so.3.0.0
 libdata/pkgconfig/libzmq.pc
 man/man3/zmq_bind.3.gz
 man/man3/zmq_close.3.gz
