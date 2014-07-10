@@ -3,6 +3,7 @@
 
 PORTNAME=	libpeak
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/peak/${PORTNAME}/${PORTVERSION}
 
@@ -11,7 +12,7 @@ COMMENT=	Parallel Events and Asynchronous tasKing Library
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

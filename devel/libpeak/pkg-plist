@@ -17,6 +17,6 @@ include/peak/tz.h
 include/peak/version.h
 @dirrm include/peak
 lib/libpeak.a
-lib/libpeak.la
 lib/libpeak.so
-lib/libpeak.so.1
+lib/libpeak.so.0
+lib/libpeak.so.0.1.0
