@@ -13,6 +13,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lloyd
 GH_COMMIT=	66cb08c
 
+CFLAGS+=	-g -O0
+
 USE_LDCONFIG=	yes
 USES=		cmake:outsource
 
@@ -21,5 +23,7 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -e "s,share/pkgconfig,libdata/pkgconfig,g" \
 		${WRKSRC}/src/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|include/yajl|include|' \
+		${WRKSRC}/src/yajl.pc.cmake
 
 .include <bsd.port.mk>
