@@ -7,7 +7,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	http://ocsigen.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Function derivation library
 
 USE_OCAML=		yes
@@ -17,5 +17,4 @@ USE_OCAML_LDCONFIG=	yes
 
 USES=		gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
