@@ -589,6 +589,16 @@ lib/parrot/%%PARROT_VER%%/tools/myconfig
 %%PARROT_DOCS%%/TODO
 %%DATADIR%%/%%PARROT_VER%%/MANIFEST
 %%DATADIR%%/%%PARROT_VER%%/MANIFEST.dev
+man/man1/ops2c.1.gz
+man/man1/parrot-nqp.1.gz
+man/man1/parrot-prove.1.gz
+man/man1/parrot.1.gz
+man/man1/parrot_config.1.gz
+man/man1/parrot_nci_thunk_gen.1.gz
+man/man1/parrotbug.1.gz
+man/man1/pbc_to_exe.1.gz
+man/man1/plumage.1.gz
+man/man1/winxed.1.gz
 src/parrot/%%PARROT_VER%%/config_lib.pir
 src/parrot/%%PARROT_VER%%/pmc/addrregistry.dump
 src/parrot/%%PARROT_VER%%/pmc/alarm.dump
