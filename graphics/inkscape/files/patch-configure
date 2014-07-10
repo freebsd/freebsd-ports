@@ -1,5 +1,5 @@
---- configure.orig	2013-10-16 22:37:30.000000000 +0200
-+++ configure	2013-10-16 22:37:37.000000000 +0200
+--- configure.orig	2014-07-10 22:35:29.000000000 +0200
++++ configure	2014-07-10 22:46:14.000000000 +0200
 @@ -7498,7 +7498,7 @@
  	cc_vers_all=`expr $cc_vers_major '*' 1000000 + $cc_vers_minor '*' 1000 + $cc_vers_patch`
  
@@ -9,3 +9,19 @@
  	fi
  fi
  
+@@ -8961,10 +8961,11 @@
+ 			#include <stdio.h>
+ 			extern unsigned GC_version;
+ 			int main(void){
+-				unsigned min = ((6 << 16) | (4 << 8) | 0);
+-				printf("%d.%d.%d ",GC_version >> 16, (GC_version >> 8) & 0xFF, GC_version & 0xFF);
+-				if (GC_version>=min) return 0;
+-				return 1;
++				printf("%d.%d.%d ", GC_VERSION_MAJOR, GC_VERSION_MINOR, GC_VERSION_MICRO);
++				if (GC_VERSION_MAJOR >= 6 && GC_VERSION_MINOR >= 4)
++				  return 0;
++				else
++				  return 1;
+ 			}
+ _ACEOF
+ if ac_fn_cxx_try_run "$LINENO"; then :
