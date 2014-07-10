@@ -3,18 +3,15 @@
 
 PORTNAME=	opendpi
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	fernando@netfilter.com.br
-COMMENT=	An open source deep packet inspection engine
+COMMENT=	Open source deep packet inspection engine
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on powerpc or sparc64: includes i386 assembler
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
