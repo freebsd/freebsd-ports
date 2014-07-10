@@ -57,6 +57,8 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 SUB_FILES=	pkg-message
 
+CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
+
 FIX_POD=apps/cms.pod \
 	apps/smime.pod \
 	ssl/SSL_COMP_add_compression_method.pod \
