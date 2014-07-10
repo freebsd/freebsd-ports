@@ -6244,3 +6244,8 @@ lang/see-devel|lang/see|2014-07-07|lang/see is up to date no need for see-devel
 net-p2p/libtorrent-devel||2014-07-07|libtorrent port has newer version, use that instead
 net-p2p/rtorrent-devel||2014-07-07|rtorrent port has newer version, use that instead
 net-im/qxmpp-leechcraft|net-im/qxmpp|2014-07-09|Removed:qxmpp-leechcraft is now merged into qxmpp
+textproc/stardict-BritannicaConcise||2014-07-10|Removed due to possible copyright infringement
+textproc/stardict-MerrianWebster||2014-07-10|Removed due to possible copyright infringement
+textproc/stardict-OxfordCollocation||2014-07-10|Removed due to possible copyright infringement
+textproc/stardict-longman||2014-07-10|Removed due to possible copyright infringement
+textproc/stardict-oald||2014-07-10|Removed due to possible copyright infringement
