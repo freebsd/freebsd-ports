@@ -1,0 +1,11 @@
+Wraps the best JSON installed, falling back on an internal simplejson.
+
+Features:
+
+    * Loads whichever is the fastest JSON module installed
+    * Falls back on built in pure-python simplejson, just in case.
+    * Proper API (loads(), dumps())
+    * Verndorizable
+    * Supports Python 2.5-3.2 out of the box
+
+WWW: https://github.com/kennethreitz/omnijson
