@@ -1,3 +1,5 @@
 bin/barcode
 include/barcode.h
 lib/libbarcode.a
+man/man1/barcode.1.gz
+man/man3/barcode.3.gz

@@ -1,0 +1,25 @@
+--- Makefile.in.orig	2014-07-10 15:58:37.780551347 +0800
++++ Makefile.in	2014-07-10 15:59:12.327554896 +0800
+@@ -63,14 +63,14 @@ $(INFO): doc/doc.$(TARGET)
+ 	cd doc && $(MAKE) 
+ 
+ install:
+-	$(INSTALL) -d $(BINDIR) $(INCDIR) $(LIBDIR) $(MAN1DIR) \
+-		$(MAN3DIR) $(INFODIR)
+-	$(INSTALL) -c $(TARGET) $(BINDIR)
+-	$(INSTALL) -c -m 0644 $(HEADER) $(INCDIR)
+-	$(INSTALL) -c -m 0644  $(LIBRARY) $(LIBDIR)
+-	$(INSTALL) -c -m 0644  $(MAN1) $(MAN1DIR)
+-	$(INSTALL) -c -m 0644  $(MAN3) $(MAN3DIR)
+-	$(INSTALL) -c -m 0644  $(INFO) $(INFODIR)
++	$(INSTALL) -d $(DESTDIR)$(BINDIR) $(DESTDIR)$(INCDIR) $(DESTDIR)$(LIBDIR) $(DESTDIR)$(MAN1DIR) \
++		$(DESTDIR)$(MAN3DIR) $(DESTDIR)$(INFODIR)
++	$(INSTALL) -c $(TARGET) $(DESTDIR)$(BINDIR)
++	$(INSTALL) -c -m 0644 $(HEADER) $(DESTDIR)$(INCDIR)
++	$(INSTALL) -c -m 0644  $(LIBRARY) $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -c -m 0644  $(MAN1) $(DESTDIR)$(MAN1DIR)
++	$(INSTALL) -c -m 0644  $(MAN3) $(DESTDIR)$(MAN3DIR)
++	$(INSTALL) -c -m 0644  $(INFO) $(DESTDIR)$(INFODIR)
+ 
+ uninstall:
+ 	$(RM) -f $(BINDIR)/$(TARGET)
