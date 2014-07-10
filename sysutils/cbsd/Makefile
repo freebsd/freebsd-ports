@@ -2,10 +2,8 @@
 
 PORTNAME=	cbsd
 PORTVERSION=	10.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.bsdstore.ru/downloads/ \
-		GH
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Yet another FreeBSD Jail Management Utility
@@ -15,11 +13,11 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		sudo:${PORTSDIR}/security/sudo \
 		sqlite3:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2 \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
-GH_PROJECT=	cbsd
 GH_COMMIT=	01f481c
 
 USE_RC_SUBR=	cbsdd cbsdrsyncd
@@ -35,7 +33,7 @@ USERS=	${PORTNAME}
 GROUPS=	${PORTNAME}
 
 .if ${OSVERSION} < 901000
-IGNORE=	does not work on FreeBSD < 9.1
+IGNORE=	does not support FreeBSD versions < 9.1
 .endif
 
 .if ${OSVERSION} < 902001
