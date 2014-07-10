@@ -3,9 +3,9 @@ include/netembryo/url.h
 include/netembryo/wsocket.h
 include/netembryo/wsocket-internal.h
 lib/libnetembryo.a
-lib/libnetembryo.la
 lib/libnetembryo.so
 lib/libnetembryo.so.9
+lib/libnetembryo.so.9.0.0
 libdata/pkgconfig/libnetembryo.pc
 libdata/pkgconfig/libnetembryo-sctp.pc
 @dirrm include/netembryo
