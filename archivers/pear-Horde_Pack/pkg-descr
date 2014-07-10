@@ -1,0 +1,4 @@
+Horde replacement for serialize()/json_encode() that will automatically use the
+most efficient serialization available based on the input.
+
+WWW: http://pear.horde.org
