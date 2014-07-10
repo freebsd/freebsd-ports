@@ -3,6 +3,7 @@
 
 PORTNAME=	libfixbuf
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
@@ -13,11 +14,9 @@ COMMENT=	Library for using the IP Flow Information Export protocol
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
