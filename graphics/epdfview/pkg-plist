@@ -36,7 +36,7 @@ share/applications/epdfview.desktop
 @dirrmtry %%DATADIR%%/pixmaps
 @dirrmtry %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%
-@dirrmtry %%NLS%%share/locale/nl_NL/LC_MESSAGES
-@dirrmtry %%NLS%%share/locale/nl_NL
-@dirrmtry %%NLS%%share/locale/he_IL/LC_MESSAGES
-@dirrmtry %%NLS%%share/locale/he_IL
+%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl_NL
+%%NLS%%@dirrmtry share/locale/he_IL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/he_IL
