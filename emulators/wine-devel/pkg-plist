@@ -2179,6 +2179,7 @@ share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
+%%COMPHOLIO%%%%X11%%%%DATADIR%%/fonts/arial.ttf
 %%X11%%%%DATADIR%%/fonts/coue1255.fon
 %%X11%%%%DATADIR%%/fonts/coue1256.fon
 %%X11%%%%DATADIR%%/fonts/coue1257.fon
