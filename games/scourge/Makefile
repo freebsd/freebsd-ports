@@ -30,13 +30,7 @@ PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DEBUG
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
+DEBUG_CONFIGURE_ENABLE=	debug
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GLvoid|void|g' ${WRKSRC}/src/sdlhandler.cpp ${WRKSRC}/src/sdlhandler.h
@@ -45,9 +39,6 @@ pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} -i
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
