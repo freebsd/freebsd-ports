@@ -4,7 +4,6 @@ bin/tortf
 include/rtfcomp/errors.h
 include/rtfcomp/rtfcomp.h
 lib/librtfcomp.a
-lib/librtfcomp.la
 lib/librtfcomp.so
 lib/librtfcomp.so.0
 lib/librtfcomp.so.0.0.0
