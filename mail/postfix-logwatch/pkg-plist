@@ -1,5 +1,4 @@
-@unexec if cmp -s %D/%%ETCDIR%%/postfix-logwatch.conf.sample %D/%%ETCDIR%%/postfix-logwatch.conf; then rm -f %D/%%ETCDIR%%/postfix-logwatch.conf; fi
-%%ETCDIR%%/postfix-logwatch.conf.sample
-@exec if [ ! -f %B/postfix-logwatch.conf ] ; then cp -p %B/%f %B/postfix-logwatch.conf; fi
+@sample %%ETCDIR%%/postfix-logwatch.conf.sample
 @dirrmtry %%ETCDIR%%
 bin/postfix-logwatch
+man/man1/postfix-logwatch.1.gz
