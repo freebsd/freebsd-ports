@@ -3,6 +3,7 @@
 
 PORTNAME=	Horde_Core
 PORTVERSION=	2.12.4
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
@@ -32,18 +33,21 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Compress_Fast \
 		Horde_Controller \
 		Horde_Css_Parser \
+		Horde_CssMinify \
 		Horde_Data \
 		Horde_Date \
 		Horde_Exception \
 		Horde_Group \
 		Horde_History \
 		Horde_Injector \
+		Horde_JavascriptMinify \
 		Horde_Lock \
 		Horde_Log \
 		Horde_LoginTasks \
 		Horde_Mime \
 		Horde_Mime_Viewer \
 		Horde_Notification \
+		Horde_Pack \
 		Horde_Perms \
 		Horde_Prefs \
 		Horde_Secret \
