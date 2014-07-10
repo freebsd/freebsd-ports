@@ -31,8 +31,8 @@ CONFIGURE_ARGS=	--with-gfortran \
 		--without-hdf5
 CONFIGURE_ENV=	ac_cv_search_pthread_join="${PTHREAD_LIBS}" \
 	BLAS_LIBS="${BLAS_LIBS}" LAPACK_LIBS="${LAPACK_LIBS}"
-# prevert from creating $HOME/.Scilab during build
-MAKE_ENV=	HOME=/dev/null
+MAKE_ENV=	LANG=en_US.UTF-8 \
+		LC_ALL=en_US.UTF-8
 
 OPTIONS_DEFINE=	ATLAS FFTW GUI HELP NLS MATIO OCAML PVM TK UMFPACK
 OPTIONS_DEFAULT=	FFTW GUI HELP
