@@ -10,11 +10,11 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	The OCRopus(tm) open source document analysis and OCR system
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		iulib.0:${PORTSDIR}/graphics/iulib \
-		gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libiulib.so:${PORTSDIR}/graphics/iulib \
+		libgsl.so:${PORTSDIR}/math/gsl
 
 WRKSRC=		${WRKDIR}/ocropus-0.4/ocropus
 
@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	--without-fst --without-tesseract --with-iulib=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}
@@ -41,7 +40,7 @@ CONFIGURE_ARGS+=--without-SDL
 .endif
 
 .if ${PORT_OPTIONS:MLEPTONICA}
-LIB_DEPENDS+=	lept:${PORTSDIR}/graphics/leptonica
+LIB_DEPENDS+=	liblept.so:${PORTSDIR}/graphics/leptonica
 .else
 CONFIGURE_ARGS+=--without-leptonica
 .endif
