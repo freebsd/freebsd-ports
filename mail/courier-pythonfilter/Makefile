@@ -20,11 +20,16 @@ MAILUID=	465
 MAILGID=	465
 
 LOCALSTATEDIR=	/var/spool/courier
-SCRIPTSDIR=	${PREFIX}/libexec/filters
+PYSCRIPTSDIR=	${PREFIX}/libexec/filters
+
+PLIST_SUB+=	MAILOWN="${MAILOWN}" MAILGRP="${MAILGRP}" \
+		MAILUID="${MAILUID}" MAILGID="${MAILGID}" \
+		LOCALSTATEDIR="${LOCALSTATEDIR}"
+SUB_LIST+=	${PLIST_SUB}
 
 OPTIONS_DEFINE=	DEBUG NODUPLICATES LOCALSENDERS SPAMASSASSIN AUTO_WHITELIST WHITELIST_RELAY WHITELIST_AUTH \
 		WHITELIST_BLOCK WHITELIST_DNSWL WHITELIST_DNSWL DELIVEREDTO PRIVATEADDR SPFCHECK NOSUCCESSDSN \
-		COMEAGAIN GREYLIST DIALBACK RATELIMIT ATTACHMENTS QUOTA
+		COMEAGAIN GREYLIST DIALBACK RATELIMIT ATTACHMENTS QUOTA WHITELIST_SPF
 
 DEBUG_DESC=	debug module
 NODUPLICATES_DESC=	noduplicates module
@@ -37,7 +42,7 @@ WHITELIST_RELAY_DESC=	whitelist_relayclients module
 WHITELIST_AUTH_DESC=	whitelist_auth module
 WHITELIST_BLOCK_DESC=	whitelist_block module
 WHITELIST_DNSWL_DESC=	whitelist_dnswl module
-WHITELIST_SP_DESC=	Fwhitelist_spf module
+WHITELIST_SP_DESC=	whitelist_spf module
 DELIVEREDTO_DESC=	deliveredto module
 PRIVATEADDR_DESC=	privateaddr module
 SPFCHECK_DESC=	spfcheck module
@@ -55,10 +60,9 @@ RG1_DESC=	ClamAV Filter Option
 
 OPTIONS_DEFAULT=	DEBUG WHITELIST_RELAY WHITELIST_AUTH
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-PYDISTUTILS_INSTALLARGS:=${PYDISTUTILS_INSTALLARGS} --install-scripts=${SCRIPTSDIR}
+PYDISTUTILS_INSTALLARGS:=${PYDISTUTILS_INSTALLARGS} --install-scripts=${PYSCRIPTSDIR}
 
 .if ${PORT_OPTIONS:MCLAMAV_CLAMD} && ! ${PORT_OPTIONS:MCLAMAV_LIB}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pyclamd.py:${PORTSDIR}/security/py-pyclamd
@@ -143,9 +147,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pythonfilter
 
 post-install:
-	${MKDIR} ${LOCALSTATEDIR}/pythonfilter
-	${CHOWN} ${MAILOWN}:${MAILGRP} ${LOCALSTATEDIR}/pythonfilter
-	@if [ ! -f ${PREFIX}/etc/pythonfilter.conf ]; then cp -p ${PREFIX}/etc/pythonfilter.conf.sample ${PREFIX}/etc/pythonfilter.conf; fi
-	@if [ ! -f ${PREFIX}/etc/pythonfilter-modules.conf ]; then cp -p ${PREFIX}/etc/pythonfilter-modules.conf.sample ${PREFIX}/etc/pythonfilter-modules.conf; fi
+	@${MKDIR} ${STAGEDIR}${LOCALSTATEDIR}/pythonfilter
 
 .include <bsd.port.post.mk>

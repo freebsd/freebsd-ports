@@ -1,9 +1,5 @@
-@unexec if cmp -s %D/etc/pythonfilter.conf %D/etc/pythonfilter.conf.sample; then rm -f %D/etc/pythonfilter.conf; fi
-etc/pythonfilter.conf.sample
-@exec if [ ! -f %D/etc/pythonfilter.conf ]; then cp -p %D/etc/pythonfilter.conf.sample %D/etc/pythonfilter.conf; fi
-@unexec if cmp -s %D/etc/pythonfilter-modules.conf %D/etc/pythonfilter-modules.conf.sample; then rm -f %D/etc/pythonfilter-modules.conf; fi
-etc/pythonfilter-modules.conf.sample
-@exec if [ ! -f %D/etc/pythonfilter-modules.conf ]; then cp -p %D/etc/pythonfilter-modules.conf.sample %D/etc/pythonfilter-modules.conf; fi
+@sample etc/pythonfilter.conf.sample
+@sample etc/pythonfilter-modules.conf.sample
 libexec/filters/pythonfilter
 libexec/filters/pythonfilter-quarantine
 %%PYTHON_SITELIBDIR%%/courier/__init__.py
@@ -102,5 +98,17 @@ libexec/filters/pythonfilter-quarantine
 %%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_spf.py
 %%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_spf.pyc
 %%PYTHON_SITELIBDIR%%/pythonfilter/whitelist_spf.pyo
+%%PYTHON_SITELIBDIR%%/courier_pythonfilter-1.6-py2.7.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/courier_pythonfilter-1.6-py2.7.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/courier_pythonfilter-1.6-py2.7.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/courier_pythonfilter-1.6-py2.7.egg-info/top_level.txt
+@owner courier
+@group courier
+@dirrmtry %%LOCALSTATEDIR%%/pythonfilter
+@group courier
+@owner courier
+@dirrmtry %%LOCALSTATEDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/courier
 @dirrm %%PYTHON_SITELIBDIR%%/pythonfilter
+@dirrm %%PYTHON_SITELIBDIR%%/courier_pythonfilter-1.6-py2.7.egg-info
+@dirrmtry libexec/filters
