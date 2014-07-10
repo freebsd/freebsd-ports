@@ -15,7 +15,6 @@ USE_OCAML=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -31,12 +30,6 @@ post-extract:
 		-e "s,^\(OCAMLLIB=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "/^install/,/^$$/s,\([ \t]*\)cp,\1${INSTALL_DATA},g" \
 		${WRKSRC}/lib/Makefile
-
-pre-install:
-.if !exists(${PREFIX}/lib/ocaml)
-	${MKDIR} ${PREFIX}/lib/ocaml
-	@${ECHO_CMD} "@dirrm lib/ocaml" >> ${TMPPLIST}
-.endif
 
 test:
 	@${ECHO_CMD} "Testing IDL library"
