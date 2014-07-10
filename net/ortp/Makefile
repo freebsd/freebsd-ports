@@ -2,25 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	ortp
-PORTVERSION=	0.13.0
-PORTREVISION=	2
+PORTVERSION=	0.23.0
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	linphone/ortp/sources
+MASTER_SITES=	SAVANNAH/linphone/ortp
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Real-time Transport Protocol (RTP) stack
 
-USES=		libtool pathfix pkgconfig
-USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--disable-silent-rules --disable-strict
+CPPFLAGS+=	-DHAVE_DEV_RANDOM
 INSTALL_TARGET=	install-strip
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
