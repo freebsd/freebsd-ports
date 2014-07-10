@@ -3,24 +3,21 @@
 
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source scep server
 
+CONFLICTS_INSTALL=	nss-3.*
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
 USE_APACHE=	22+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 PLIST_DIRSTRY=	www/cgi-bin
 
@@ -34,41 +31,33 @@ CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \
 CONF_DIR=	${PREFIX}/etc/${PORTNAME}
 LOCAL_CONF_FILES=	openscep.cnf openscep.ldif openscep.schema slapd.conf
 
-SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_FILES=	pkg-message
 SUB_LIST=	CONF_DIR="${CONF_DIR}" CONF_FILES="${LOCAL_CONF_FILES}"
-
-MAN1=		derdump.1 \
-		scep.1 \
-		scepclient.1 \
-		scepconf.1 \
-		sceplist.1 \
-		scepxid.1
-MAN5=		openscep.cnf.5
-MAN8=		cafingerprint.8 \
-		createcrl.8 \
-		crl2ldap.8 \
-		dn2xid.8 \
-		scepd.8 \
-		scepgrant.8 \
-		scepreject.8 \
-		updatecrl.8
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^subdirs=/ s|libltdl||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/ s|libltdl||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^\(install-data-am:\) install-data-local$$|\1|' \
 		${WRKSRC}/ldap/Makefile.in ${WRKSRC}/openssl/Makefile.in
+	@${REINPLACE_CMD} 's,sbindir),DESTDIR)$$(&,' \
+		${WRKSRC}/openssl/Makefile.in
+	@${REINPLACE_CMD} -E -e 's,(bin|sbin)dir},DESTDIR}$${&,'  \
+		-e 's,-o \$$\(USER\) -g \$$\(GROUP\),,' \
+		${WRKSRC}/scep/Makefile.in \
+		${WRKSRC}/scepd/Makefile.in
+	@${REINPLACE_CMD} -E 's,(CGIINSTALLDIR|PKICLIENTEXE)),DESTDIR)$$(&,' \
+		${WRKSRC}/cgi-bin/Makefile.in
+	@${REINPLACE_CMD} 's|HTMLINSTALLDIR)|DESTDIR)$$(&|' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/doc/Makefile.in \
+		${WRKSRC}/html/Makefile.in
 
 post-install:
-	${MKDIR} ${CONF_DIR}
-	${INSTALL_DATA} ${WRKSRC}/openssl/openscep.cnf ${CONF_DIR}/openscep.cnf.default
+	@${MKDIR} ${STAGEDIR}${CONF_DIR}
+	${INSTALL_DATA} ${WRKSRC}/openssl/openscep.cnf \
+		${STAGEDIR}${CONF_DIR}/openscep.cnf.sample
 .for f in openscep.ldif openscep.schema slapd.conf
-	${INSTALL_DATA} ${WRKSRC}/ldap/${f} ${CONF_DIR}/${f}.default
+	${INSTALL_DATA} ${WRKSRC}/ldap/${f} ${STAGEDIR}${CONF_DIR}/${f}.sample
 .endfor
-	${CHOWN} www:www ${PREFIX}/www/cgi-bin/openscep/*
-	${CHOWN} www:www ${PREFIX}/www/cgi-bin/pkiclient.exe
-	${CHOWN} www:www ${PREFIX}/etc/openscep/*
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
