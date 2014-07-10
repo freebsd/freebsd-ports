@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	trociny@FreeBSD.org
-COMMENT=	A bsnmpd module that implements parts of UCD-SNMP-MIB
+COMMENT=	bsnmpd module that implements parts of UCD-SNMP-MIB
 
 LICENSE=	BSD
 

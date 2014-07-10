@@ -9,7 +9,7 @@ MASTER_SITES=	http://sid.rstack.org/arp-sk/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool designed to manipulate ARP tables of all kinds of equipment
+COMMENT=	Tool designed to manipulate ARP tables of all kinds of equipment
 
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 

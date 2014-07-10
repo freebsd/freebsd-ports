@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	A Direct Connect client shared library
+COMMENT=	Direct Connect client shared library
 
 LICENSE=	GPLv3
 

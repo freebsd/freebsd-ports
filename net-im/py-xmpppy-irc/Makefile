@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	irc-transport-${PORTVERSION}
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	An xmpp to irc transport
+COMMENT=	Xmpp to irc transport
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
 		${PYTHON_PKGNAMEPREFIX}irc>0:${PORTSDIR}/irc/py-irc

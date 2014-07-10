@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A (C)SLIP/PPP emulator for users with shell accounts
+COMMENT=	(C)SLIP/PPP emulator for users with shell accounts
 
 BROKEN=		Does not build
 

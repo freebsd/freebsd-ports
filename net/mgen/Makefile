@@ -11,7 +11,7 @@ DISTNAME=	src-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmohacsi@bsd.hu
-COMMENT=	An IP network performance tests and measurements
+COMMENT=	IP network performance tests and measurements
 
 # Dumps core on 64-bit architectures. This was reported to the upstream
 # author, who promised to fix it in one of the next releases.

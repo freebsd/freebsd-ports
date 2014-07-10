@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A minimal NNTP server
+COMMENT=	Minimal NNTP server
 
 DEPRECATED=	Unmaintained interactive port
 EXPIRATION_DATE=2014-08-20

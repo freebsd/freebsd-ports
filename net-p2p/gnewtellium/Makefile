@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
 MAINTAINER=	5u623l20@gmail.com
-COMMENT=	A gnutella client
+COMMENT=	Gnutella client
 
 PORTSCOUT=	skipv:0.05	# older than current one
 

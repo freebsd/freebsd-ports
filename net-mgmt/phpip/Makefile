@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/4.3.2%20-%20No%20Upgrade%20Support
 DISTNAME=	${PORTNAME}-4.3.2-build-${SNAPSHOT}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A complete IPv4 IPAM (IP address management) suite
+COMMENT=	Complete IPv4 IPAM (IP address management) suite
 
 SNAPSHOT=	200611081420
 NO_BUILD=	yes

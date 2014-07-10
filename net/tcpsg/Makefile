@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A simple TCP port forwarder
+COMMENT=	Simple TCP port forwarder
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/tcpsg.c

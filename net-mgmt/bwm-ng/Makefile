@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.gropp.org/bwm-ng/
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	A small and simple bandwidth monitor
+COMMENT=	Small and simple bandwidth monitor
 
 LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 

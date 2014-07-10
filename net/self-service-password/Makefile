@@ -9,7 +9,7 @@ MASTER_SITES=	http://tools.ltb-project.org/attachments/download/497/
 DISTNAME=	ltb-project-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@bsdserwis.com
-COMMENT=	A set of PHP-scripts to change LDAP password over the web
+COMMENT=	Set of PHP-scripts to change LDAP password over the web
 
 LICENSE=	GPLv2
 

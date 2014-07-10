@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Perl implementation of a finger client
+COMMENT=	Perl implementation of a finger client
 
 USES=		perl5
 USE_PERL5=	configure

@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	frank@dynamical-systems.org
-COMMENT=	A proxy/masquerading daemon for the SIP protocol
+COMMENT=	Proxy/masquerading daemon for the SIP protocol
 
 LICENSE=	GPLv2
 

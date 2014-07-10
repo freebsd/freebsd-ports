@@ -6,7 +6,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An implementation of the AMQP protocol for RabbitMQ clients
+COMMENT=	Implementation of the AMQP protocol for RabbitMQ clients
 
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.4:${PORTSDIR}/devel/rubygem-eventmachine
 

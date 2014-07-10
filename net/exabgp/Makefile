@@ -9,7 +9,7 @@ MASTER_SITES=	GH GHC \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A BGP engine and route injector
+COMMENT=	BGP engine and route injector
 
 LICENSE=	BSD
 

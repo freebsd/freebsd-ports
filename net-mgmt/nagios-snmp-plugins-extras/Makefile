@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
-COMMENT=	A set of Nagios plugins written in Perl to check devices with SNMP
+COMMENT=	Set of Nagios plugins written in Perl to check devices with SNMP
 
 NO_BUILD=	yes
 USES=		perl5

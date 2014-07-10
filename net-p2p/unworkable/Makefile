@@ -7,7 +7,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	A Free BitTorrent Implementation
+COMMENT=	Free BitTorrent Implementation
 
 LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 

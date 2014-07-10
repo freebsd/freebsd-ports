@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A proxy that authenticates the user using the NTLM protocol
+COMMENT=	Proxy that authenticates the user using the NTLM protocol
 
 USE_PYTHON=	yes
 USES=		dos2unix

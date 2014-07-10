@@ -8,7 +8,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	http://fugu.gale.org/dist/
 
 MAINTAINER=	5u623l20@gmail.com
-COMMENT=	A graphical client for the Gale instant messaging system
+COMMENT=	Graphical client for the Gale instant messaging system
 
 LICENSE=	GPLv2
 

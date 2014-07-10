@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A load balancer for simple TCP based protocols
+COMMENT=	Load balancer for simple TCP based protocols
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

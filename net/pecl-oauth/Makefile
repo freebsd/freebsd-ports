@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A Php Interface to the OAuth Protocol
+COMMENT=	Php Interface to the OAuth Protocol
 
 BUILD_DEPENDS=	${LOCALBASE}/include/curl/curl.h:${PORTSDIR}/ftp/curl
 

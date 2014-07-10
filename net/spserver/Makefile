@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A TCP server framework library written in C++ based on libevent
+COMMENT=	TCP server framework library written in C++ based on libevent
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 

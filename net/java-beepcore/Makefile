@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	java-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An implementation of BEEP core and BEEP mapping for TCP in Java
+COMMENT=	Implementation of BEEP core and BEEP mapping for TCP in Java
 
 RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
 

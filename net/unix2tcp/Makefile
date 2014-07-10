@@ -8,7 +8,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://ahriman.bucharest.roedu.net/unix2tcp/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A connection forwarder that converts Unix sockets into TCP sockets
+COMMENT=	Connection forwarder that converts Unix sockets into TCP sockets
 
 CFLAGS+=	-DHAVE_CONFIG_H -I.
 GNU_CONFIGURE=	yes

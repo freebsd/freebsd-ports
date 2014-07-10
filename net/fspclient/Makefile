@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	A ftp-like client for the FSP service
+COMMENT=	Ftp-like client for the FSP service
 
 USES=		tar:bzip2 scons
 MAKE_ARGS=	prefix=${PREFIX}

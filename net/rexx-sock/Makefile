@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	rexx-
 DISTNAME=	RxSock-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A function package for Rexx programmers to create sockets
+COMMENT=	Function package for Rexx programmers to create sockets
 
 BUILD_DEPENDS=	rexx-regina>=3.3_1:${PORTSDIR}/lang/rexx-regina
 RUN_DEPENDS=	rexx-regina>=3.3_1:${PORTSDIR}/lang/rexx-regina

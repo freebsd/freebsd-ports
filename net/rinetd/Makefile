@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	rinetd
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A simple TCP port redirector
+COMMENT=	Simple TCP port redirector
 
 LICENSE=	GPLv2
 

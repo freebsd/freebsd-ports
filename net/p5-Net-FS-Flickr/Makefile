@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
-COMMENT=	A Perl interface for store and retrieve files on Flickr
+COMMENT=	Perl interface for store and retrieve files on Flickr
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Acme-Steganography-Image-Png>=0:${PORTSDIR}/graphics/p5-Acme-Steganography-Image-Png \

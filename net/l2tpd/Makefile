@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/L2TPd/${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
-COMMENT=	An implementation of the layer two tunneling protocol
+COMMENT=	Implementation of the layer two tunneling protocol
 
 USES=	compiler:nestedfct
 

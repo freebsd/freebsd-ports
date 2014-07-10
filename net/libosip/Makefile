@@ -8,7 +8,7 @@ MASTER_SITES=	GNU/osip
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A low layer of SIP implementation
+COMMENT=	Low layer of SIP implementation
 
 CONFLICTS=	libosip2-2*
 

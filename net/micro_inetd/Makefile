@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.acme.com/software/micro_inetd/
 DISTNAME=	${PORTNAME}_29jun2005
 
 MAINTAINER=	pankov_p@mail.ru
-COMMENT=	A inetd-like program intended for temporarily usage
+COMMENT=	inetd-like program intended for temporarily usage
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/micro_inetd man/man1/micro_inetd.1.gz

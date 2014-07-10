@@ -9,7 +9,7 @@ MASTER_SITES=	SF/pythonjabberbot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	A simple Jabber Bot for Python
+COMMENT=	Simple Jabber Bot for Python
 
 LICENSE=	GPLv3
 

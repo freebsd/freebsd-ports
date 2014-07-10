@@ -8,7 +8,7 @@ MASTER_SITES=	http://offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	A single-server inetd
+COMMENT=	Single-server inetd
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/onenetd \

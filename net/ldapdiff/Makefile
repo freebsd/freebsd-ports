@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A utility for patching LDAP directories using LDIF files
+COMMENT=	Utility for patching LDAP directories using LDIF files
 
 USES=		iconv
 USE_OPENLDAP=	yes

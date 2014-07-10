@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library for writing a preforking server like Apache
+COMMENT=	Ruby library for writing a preforking server like Apache
 
 USE_RUBY=	yes
 

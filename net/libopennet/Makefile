@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/libopennet/ \
 		http://www.cs.nctu.edu.tw/~gslin/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for opening files over a network
+COMMENT=	Library for opening files over a network
 
 GNU_CONFIGURE=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

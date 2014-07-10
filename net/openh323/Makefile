@@ -11,7 +11,7 @@ EXTRACT_SUFX=	-tar.gz
 DIST_SUBDIR=	openh323
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A H323 Video Conferencing library
+COMMENT=	H323 Video Conferencing library
 
 LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib
 

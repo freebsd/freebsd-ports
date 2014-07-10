@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.dinoex.de/pub/tinyldap/
 DISTNAME=	${PORTNAME}-${SNAPSHOT}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A small LDAP implementation
+COMMENT=	Small LDAP implementation
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/${LIBOWFAT_PORT}
 

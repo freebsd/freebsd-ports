@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.pl
 EXTRACT_SUFX=
 
 MAINTAINER=	ports@thepentagon.org
-COMMENT=	A perl script for downloading nzb files
+COMMENT=	Perl script for downloading nzb files
 
 RUN_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \

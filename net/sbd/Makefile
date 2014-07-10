@@ -8,7 +8,7 @@ MASTER_SITES=	http://tigerteam.se/dl/sbd/ \
 		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A netcat clone with more features and crypto
+COMMENT=	Netcat clone with more features and crypto
 
 ALL_TARGET=	unix
 

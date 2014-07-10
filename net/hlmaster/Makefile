@@ -7,7 +7,7 @@ CATEGORIES=	net games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Half-Life game master server daemon
+COMMENT=	Half-Life game master server daemon
 
 GNU_CONFIGURE=	yes
 

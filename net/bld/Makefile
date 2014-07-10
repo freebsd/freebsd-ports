@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.online.redhate.org/bld/ \
 		http://olivier.beyssac.googlepages.com/
 
 MAINTAINER=	obld@r14.freenix.org
-COMMENT=	A blacklisting daemon
+COMMENT=	Blacklisting daemon
 
 USE_RC_SUBR=	bld
 MANCOMPRESSED=	yes

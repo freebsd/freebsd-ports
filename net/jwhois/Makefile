@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=An improved WHOIS client capable of selecting server to query
+COMMENT=AImproved WHOIS client capable of selecting server to query
 
 LICENSE=	GPLv3
 

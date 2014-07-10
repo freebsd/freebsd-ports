@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=system/network
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A system for tracking machines with dynamic IP addresses
+COMMENT=	System for tracking machines with dynamic IP addresses
 
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 

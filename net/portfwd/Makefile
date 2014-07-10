@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Port Forwarding Daemon
+COMMENT=	Port Forwarding Daemon
 
 LICENSE=	GPLv2
 

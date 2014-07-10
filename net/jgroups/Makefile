@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Java toolkit for reliable multicast communication
+COMMENT=	Java toolkit for reliable multicast communication
 
 LICENSE=	LGPL21
 

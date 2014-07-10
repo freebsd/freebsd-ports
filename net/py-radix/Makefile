@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lerik@nolink.net
-COMMENT=	A Python radix-tree implementation
+COMMENT=	Python radix-tree implementation
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
