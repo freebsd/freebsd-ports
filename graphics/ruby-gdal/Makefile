@@ -14,7 +14,7 @@ COMMENT=	Ruby binding for GDAL
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:${PORTSDIR}/devel/swig30
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
 LIBTOOLFILES=	# empty
@@ -26,7 +26,7 @@ USES=		gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/ruby
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|2.0|' ${WRKSRC}/../SWIGmake.base
+	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|3.0|' ${WRKSRC}/../SWIGmake.base
 	@${REINPLACE_CMD} -e 's|Config::CONFIG|Rb&|g' ${WRKSRC}/RubyMakefile.mk
 
 do-configure:
