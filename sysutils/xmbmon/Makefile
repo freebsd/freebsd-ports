@@ -3,7 +3,7 @@
 
 PORTNAME=	xmbmon
 PORTVERSION=	205
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -19,6 +19,7 @@ PATCHFILES+=	${PORTNAME}${PORTVERSION}_fflush.patch
 
 ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
+BINMODE=	4555
 
 PORTDOCS=	ChangeLog ChangeLog.jp ReadMe ReadMe.jp ReadMe.tech
 
