@@ -7,15 +7,11 @@ CATEGORIES=	devel
 MASTER_SITES=	http://martin.jambon.free.fr/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple preprocessor for OCaml
 
 USES=		gmake
 USE_OCAML=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
