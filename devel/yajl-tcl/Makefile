@@ -17,7 +17,7 @@ GH_ACCOUNT=	flightaware
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	803e33a
 
-USES+=		tcl:85+
+USES+=		pkgconfig tcl:85+
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--exec-prefix=${PREFIX}
