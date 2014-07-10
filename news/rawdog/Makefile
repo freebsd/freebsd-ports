@@ -8,7 +8,7 @@ MASTER_SITES=	http://offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	A simple RSS aggregator
+COMMENT=	Simple RSS aggregator
 
 LICENSE=	GPLv2
 

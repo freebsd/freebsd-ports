@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs
 DIST_SUBDIR=	mpich
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A portable implementation of MPI-1 and MPI-2
+COMMENT=	Portable implementation of MPI-1 and MPI-2
 
 LICENSE=	MPICH
 LICENSE_NAME=	MPICH

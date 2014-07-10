@@ -8,7 +8,7 @@ CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.linuks.mine.nu/dockapps/
 
 MAINTAINER=	xride@FreeBSD.org
-COMMENT=	A host availability monitor intended for the WindowMaker dock
+COMMENT=	Host availability monitor intended for the WindowMaker dock
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

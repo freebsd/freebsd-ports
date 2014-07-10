@@ -9,7 +9,7 @@ DISTNAME=	${PKGNAME}-REL
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A comprehensive newsfeeding and newsreading software package
+COMMENT=	Comprehensive newsfeeding and newsreading software package
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 

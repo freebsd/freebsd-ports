@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/NapShare%20V${PORTVERSION}/Linux
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK based Gnutella client
+COMMENT=	GTK based Gnutella client
 
 USES=		gmake
 USE_GNOME=	gtk12

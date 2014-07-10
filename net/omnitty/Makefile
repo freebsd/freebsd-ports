@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A curses-based SSH multiplexer
+COMMENT=	Curses-based SSH multiplexer
 
 LIB_DEPENDS=	librote.so:${PORTSDIR}/devel/rote
 

@@ -8,7 +8,7 @@ CATEGORIES=	net audio
 MASTER_SITES=	http://rink.nu/downloads/projects/
 
 MAINTAINER=	rink@FreeBSD.org
-COMMENT=	A lightweight daemon for answering FreeDB queries
+COMMENT=	Lightweight daemon for answering FreeDB queries
 
 USES=		perl5
 USE_PERL5=	run

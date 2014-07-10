@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.laurentconstantin.com/common/netw/${PORTNAME}/download/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_html.tgz
 
 MAINTAINER=	jmohacsi@bsd.hu
-COMMENT=	A graphical front end for netwox
+COMMENT=	Graphical front end for netwox
 
 BUILD_DEPENDS=	netwox:${PORTSDIR}/net-mgmt/netwox \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84 \

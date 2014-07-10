@@ -12,7 +12,7 @@ DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library to create I/O pipes for TCP socket tunneling
+COMMENT=	Ruby library to create I/O pipes for TCP socket tunneling
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	devel-logger

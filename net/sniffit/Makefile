@@ -14,7 +14,7 @@ PATCHFILES=	sniffit_0.3.7.beta-10.diff.gz:patches
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	A packet sniffer program. For educational use
+COMMENT=	Packet sniffer program. For educational use
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=

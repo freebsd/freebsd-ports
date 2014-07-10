@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
+COMMENT=	Web-interface based binary newsgrabber in python, with nzb support
 
 LICENSE=	GPLv2 GPLv3 PSFL CHERRYPY CONFIGOBJ FEEDPARSER GNTP JSON KRONOS LISTQUOTE MSGFMT PYNEWSLEECHER RARFILE RSSLIB SSMTPLIB
 LICENSE_COMB=	multi

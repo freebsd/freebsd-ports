@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	IPy-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Python module for handling IPv4 and IPv6 Addresses and Networks
+COMMENT=	Python module for handling IPv4 and IPv6 Addresses and Networks
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

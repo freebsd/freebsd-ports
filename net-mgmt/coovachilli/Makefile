@@ -11,7 +11,7 @@ MASTER_SITES=	http://ap.coova.org/chilli/ \
 DISTNAME=	coova-chilli-${PORTVERSION}
 
 MAINTAINER=	venture37@geeklan.co.uk
-COMMENT=	An access controller for wired & wireless clients
+COMMENT=	Access controller for wired & wireless clients
 
 CONFLICTS=	chillispot-[0-9]*
 #if __FreeBSD__ >= 10.0

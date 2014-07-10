@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A library for writing networked servers & clients
+COMMENT=	Library for writing networked servers & clients
 
 USE_BZIP2=	yes
 

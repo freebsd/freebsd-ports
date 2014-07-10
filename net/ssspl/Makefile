@@ -9,7 +9,7 @@ DISTNAME=	sss
 EXTRACT_SUFX=	.pl
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	A Simple Socks Server for Perl
+COMMENT=	Simple Socks Server for Perl
 
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww

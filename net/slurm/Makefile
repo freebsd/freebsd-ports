@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.wormulon.net/files/slurm/ \
 		http://www.raisdorf.net/files/slurm/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A generic network load monitor
+COMMENT=	Generic network load monitor
 
 LDFLAGS+=	-lncurses
 

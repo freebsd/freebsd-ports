@@ -8,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://thekonst.net/download/
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	A text mode menu- and window-driven IM interface
+COMMENT=	Text mode menu- and window-driven IM interface
 
 DEPRECATED=	Fails to build with new utmpx
 EXPIRATION_DATE=	2014-07-23

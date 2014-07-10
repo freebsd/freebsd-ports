@@ -9,7 +9,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://www.bnet.pl/~jajcus/apinger/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	An IP device monitoring tool
+COMMENT=	IP device monitoring tool
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	apinger

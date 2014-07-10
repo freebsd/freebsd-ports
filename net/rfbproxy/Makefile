@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	pphillips@experts-exchange.com
-COMMENT=	A simple tool for recording VNC sessions
+COMMENT=	Simple tool for recording VNC sessions
 
 GNU_CONFIGURE=	yes
 

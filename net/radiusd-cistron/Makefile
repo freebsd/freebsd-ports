@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.radius.cistron.nl/pub/radius/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A RADIUS-compliant remote authentication and accounting server
+COMMENT=	RADIUS-compliant remote authentication and accounting server
 
 CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
 

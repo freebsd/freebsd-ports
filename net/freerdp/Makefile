@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-beta+2013071101
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A free implementation of Remote Desktop Protocol
+COMMENT=	Free implementation of Remote Desktop Protocol
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

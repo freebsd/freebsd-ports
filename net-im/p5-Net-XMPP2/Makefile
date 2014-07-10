@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	An implementation of the XMPP Protocol
+COMMENT=	Implementation of the XMPP Protocol
 
 BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \

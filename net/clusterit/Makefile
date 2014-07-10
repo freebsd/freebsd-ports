@@ -7,7 +7,7 @@ CATEGORIES=	net devel parallel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A collection of clustering tools
+COMMENT=	Collection of clustering tools
 
 GNU_CONFIGURE=	yes
 

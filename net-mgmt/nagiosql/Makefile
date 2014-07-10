@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//g}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}_SP2
 
 MAINTAINER=	chris@smartt.com
-COMMENT=	A web based administration tool for Nagios
+COMMENT=	Web based administration tool for Nagios
 
 LICENSE=	GPLv2
 

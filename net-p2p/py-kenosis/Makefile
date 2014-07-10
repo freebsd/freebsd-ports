@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	5u623l20@gmail.com
-COMMENT=	A fully-distributed p2p RPC system built on top of XMLRPC
+COMMENT=	Fully-distributed p2p RPC system built on top of XMLRPC
 
 LICENSE=	MIT
 

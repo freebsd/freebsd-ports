@@ -9,7 +9,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/Verlihub/${DISTVERSION}
 
 MAINTAINER=	me@skylord.ru
-COMMENT=	A Direct Connect protocol server (Hub)
+COMMENT=	Direct Connect protocol server (Hub)
 
 # XXX: Actually, bash isn't required for building,
 # but otherwise configure script would pick the wrong path

@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
 		LOCAL/bms
 
 MAINTAINER=	saper@saper.info
-COMMENT=	A library to access SMI MIB information
+COMMENT=	Library to access SMI MIB information
 
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

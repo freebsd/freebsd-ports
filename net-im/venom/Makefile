@@ -6,7 +6,7 @@ PORTVERSION=	0.2.0.140630
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A cross-platform GUI for Tox written in Vala using GTK+
+COMMENT=	Cross-platform GUI for Tox written in Vala using GTK+
 
 LICENSE=	GPLv3
 

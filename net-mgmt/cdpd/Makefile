@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://snar.spb.ru/prog/cdpd/
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	A daemon to send CDP/LLDP announces over ethernet
+COMMENT=	Daemon to send CDP/LLDP announces over ethernet
 
 GNU_CONFIGURE=	yes
 EXTRACT_SUFX=	.tgz

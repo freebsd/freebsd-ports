@@ -9,7 +9,7 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	t.kempka@web.de
-COMMENT=	A multiping host checker dockapp
+COMMENT=	Multiping host checker dockapp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

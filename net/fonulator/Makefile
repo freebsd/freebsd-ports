@@ -8,7 +8,7 @@ CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://support.red-fone.com/fonulator/
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	A foneBRIDGE configuration utility
+COMMENT=	FoneBRIDGE configuration utility
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${LIBNET_CPPFLAGS}

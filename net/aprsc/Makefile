@@ -9,7 +9,7 @@ MASTER_SITES=	http://he.fi/aprsc/down/ \
 MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	toyokun@gmail.com
-COMMENT=	A plain APRS-IS server
+COMMENT=	Plain APRS-IS server
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

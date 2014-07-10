@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	quagga-re
 PKGNAMESUFFIX=	-re
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	A branch of popular quagga software pointed at stability
+COMMENT=	Branch of popular quagga software pointed at stability
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

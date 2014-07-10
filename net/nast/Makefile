@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A packet sniffer
+COMMENT=	Packet sniffer
 
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING

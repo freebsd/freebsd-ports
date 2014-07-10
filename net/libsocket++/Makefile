@@ -9,7 +9,7 @@ MASTER_SITES=	http://src.linuxhacker.at/socket++/
 DISTNAME=	socket++-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	A C++ wrapper library to the sockets
+COMMENT=	C++ wrapper library to the sockets
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING

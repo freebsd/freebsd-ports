@@ -8,7 +8,7 @@ MASTER_SITES=	SF/emacs-jabber/emacs-jabber%20beta%20versions/${PORTVERSION}
 DISTNAME=		emacs-jabber-${PORTVERSION}
 
 MAINTAINER=	max.n.boyarov@gmail.com
-COMMENT=	A minimal jabber client for [X]Emacs
+COMMENT=	Minimal jabber client for [X]Emacs
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gnutls-cli:${PORTSDIR}/security/gnutls
 

@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lightweight UPnP (TM) A/V Media Server
+COMMENT=	Lightweight UPnP (TM) A/V Media Server
 
 LIB_DEPENDS=	upnp.9:${PORTSDIR}/devel/upnp
 

@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.freebsd-support.de/misc/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A curses based network interface monitoring tool
+COMMENT=	Curses based network interface monitoring tool
 
 PLIST_FILES=	bin/nifmon man/man8/nifmon.8.gz
 

@@ -8,7 +8,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.kvaleberg.org/pub/
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A program to fetch news from and post news to a remote NNTP server
+COMMENT=	Program to fetch news from and post news to a remote NNTP server
 
 LICENSE=	GPLv2
 

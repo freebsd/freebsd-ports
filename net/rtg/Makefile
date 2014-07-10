@@ -9,7 +9,7 @@ MASTER_SITES=	SF \
 		ftp://ftpmirror.uk/freebsd-ports/rtg/
 
 MAINTAINER=	freebsd-ports@dan.me.uk
-COMMENT=	A flexible, high-performance SNMP statistics monitoring system
+COMMENT=	Flexible, high-performance SNMP statistics monitoring system
 
 LICENSE=	GPLv2
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://xisp.hellug.gr/release/
 PATCH_SITES=	http://www.ml-search.com/xisp/distfiles/
 
 MAINTAINER=	tm@onepost.net
-COMMENT=	A user-friendly X interface to pppd/chat
+COMMENT=	User-friendly X interface to pppd/chat
 
 LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
 

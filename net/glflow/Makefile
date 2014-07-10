@@ -10,7 +10,7 @@ DISTNAME=	glFlow-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A NetFlow tool for detecting DoS attacks
+COMMENT=	NetFlow tool for detecting DoS attacks
 
 PLIST_FILES=	bin/glflow
 PORTDOCS=	README

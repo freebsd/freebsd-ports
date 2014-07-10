@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.pwo.de/pub/pwo/mrtg/${PORTNAME}/
 
 MAINTAINER=	sanpei@FreeBSD.org
-COMMENT=	A Round Trip Time and Packet Loss Probe for MRTG
+COMMENT=	Round Trip Time and Packet Loss Probe for MRTG
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 

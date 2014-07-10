@@ -6,7 +6,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A Simple Wrapper Class for the Nmap Utility
+COMMENT=	Simple Wrapper Class for the Nmap Utility
 
 LICENSE=	LGPL3
 

@@ -7,7 +7,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jadawin@FreeBSD.org
-COMMENT=	A web based front end for rTorrent
+COMMENT=	Web based front end for rTorrent
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 

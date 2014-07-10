@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://zsync.moria.org.uk/download/
 
 MAINTAINER=	lippe@FreeBSD.org
-COMMENT=	A file transfer program
+COMMENT=	File transfer program
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

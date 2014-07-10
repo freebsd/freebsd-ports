@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	saper@saper.info
-COMMENT=	A 5250 terminal emulator for the AS/400 written in Java
+COMMENT=	5250 terminal emulator for the AS/400 written in Java
 
 BUILD_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
 		${JYTHON_JAR}:${PORTSDIR}/lang/jython \

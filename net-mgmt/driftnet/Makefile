@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ex-parrot.com/~chris/driftnet/ \
 		http://www.vanheusden.com/mirrors/
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A Tool to grab images out of (your) TCP connections
+COMMENT=	Tool to grab images out of (your) TCP connections
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

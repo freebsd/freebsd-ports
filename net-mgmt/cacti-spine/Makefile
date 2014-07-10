@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	A multithreaded poller for Cacti written in C
+COMMENT=	Multithreaded poller for Cacti written in C
 
 LICENSE=	GPLv2
 

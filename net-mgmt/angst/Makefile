@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-0.4.tar.gz \
 		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/angst:}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An active sniffer
+COMMENT=	Active sniffer
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 

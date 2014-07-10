@@ -6,7 +6,7 @@ PORTVERSION=	0.4.2.140630
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A console client for Tox
+COMMENT=	Console client for Tox
 
 LICENSE=	GPLv3
 

@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
 		http://titan.oxeo.com/mirror/sysmon.org/
 
 MAINTAINER=	mk@oxeo.com
-COMMENT=	A network tool designed for high performance and accurate monitoring
+COMMENT=	Network tool designed for high performance and accurate monitoring
 
 DOCS=		Changes.html binaries.html config.html docs.html index.html \
 		jclient.jpg net-example.png sysmon.conf.man.html sysmon.jpg \

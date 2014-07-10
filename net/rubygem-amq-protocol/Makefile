@@ -7,7 +7,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	An AMQP serialization library for Ruby
+COMMENT=	AMQP serialization library for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
