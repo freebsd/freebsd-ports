@@ -5,14 +5,33 @@ bin/scepconf
 bin/scepkey
 bin/sceplist
 bin/scepxid
-etc/openscep/openscep.cnf.default
-etc/openscep/openscep.ldif.default
-etc/openscep/openscep.schema.default
-etc/openscep/slapd.conf.default
+@owner www
+@group www
+@sample etc/openscep/openscep.cnf.sample
+@sample etc/openscep/openscep.ldif.sample
+@sample etc/openscep/openscep.schema.sample
+@sample etc/openscep/slapd.conf.sample
+@owner
+@group
 lib/libscep.a
-lib/libscep.la
 lib/libscep.so
 lib/libscep.so.4
+lib/libscep.so.4.0.22
+man/man1/derdump.1.gz
+man/man1/scep.1.gz
+man/man1/scepclient.1.gz
+man/man1/scepconf.1.gz
+man/man1/sceplist.1.gz
+man/man1/scepxid.1.gz
+man/man5/openscep.cnf.5.gz
+man/man8/cafingerprint.8.gz
+man/man8/createcrl.8.gz
+man/man8/crl2ldap.8.gz
+man/man8/dn2xid.8.gz
+man/man8/scepd.8.gz
+man/man8/scepgrant.8.gz
+man/man8/scepreject.8.gz
+man/man8/updatecrl.8.gz
 sbin/cafingerprint
 sbin/createcrl
 sbin/crl2ldap
@@ -22,6 +41,8 @@ sbin/scepd
 sbin/scepgrant
 sbin/scepreject
 sbin/updatecrl
+@owner www
+@group www
 www/cgi-bin/openscep/add.pl
 www/cgi-bin/openscep/crl.pl
 www/cgi-bin/openscep/granted.pl
@@ -30,6 +51,8 @@ www/cgi-bin/openscep/pending.pl
 www/cgi-bin/openscep/rejected.pl
 www/cgi-bin/openscep/revoked.pl
 www/cgi-bin/pkiclient.exe
+@owner
+@group
 www/openscep/COPYING
 www/openscep/ChangeLog
 www/openscep/INSTALL
