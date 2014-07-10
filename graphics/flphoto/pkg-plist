@@ -1,4 +1,6 @@
 bin/flphoto
+man/man1/flphoto.1.gz
+man/man5/album.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/about.html
 %%PORTDOCS%%%%DOCSDIR%%/albums.html
