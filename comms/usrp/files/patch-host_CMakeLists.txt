@@ -1,46 +1,11 @@
---- host/CMakeLists.txt.orig	2012-07-30 14:09:48.000000000 -0500
-+++ host/CMakeLists.txt	2012-10-27 14:24:27.000000000 -0500
-@@ -40,6 +40,7 @@
- SET(LIB_SUFFIX ${LIB_SUFFIX} CACHE STRING "lib directory suffix")
- SET(RUNTIME_DIR bin)
- SET(LIBRARY_DIR lib${LIB_SUFFIX})
-+SET(PKGCONF_DIR libdata${LIB_SUFFIX})
- SET(INCLUDE_DIR include)
- SET(PKG_DATA_DIR share/uhd)
- IF(NOT DEFINED PKG_LIB_DIR)
-@@ -186,6 +187,7 @@
- ########################################################################
- # Install Package Docs
- ########################################################################
-+IF(ENABLE_DOXYGEN)
- INSTALL(FILES
-     ${CMAKE_CURRENT_SOURCE_DIR}/README.txt
-     ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt
-@@ -193,6 +195,7 @@
-     DESTINATION ${PKG_DOC_DIR}
-     COMPONENT readme
- )
-+ENDIF(ENABLE_DOXYGEN)
- 
- ########################################################################
- # Register top level components
-@@ -205,7 +208,9 @@
- ########################################################################
- # Add the subdirectories
- ########################################################################
--ADD_SUBDIRECTORY(docs)
-+IF(ENABLE_DOXYGEN)
-+    ADD_SUBDIRECTORY(docs)
-+ENDIF(ENABLE_DOXYGEN)
- 
- IF(ENABLE_EXAMPLES)
-     ADD_SUBDIRECTORY(examples)
-@@ -256,7 +261,7 @@
+--- host/CMakeLists.txt.orig	2014-07-10 00:22:32.824756011 -0400
++++ host/CMakeLists.txt	2014-07-10 00:24:10.487748148 -0400
+@@ -256,7 +256,7 @@
  
  INSTALL(
      FILES ${CMAKE_CURRENT_BINARY_DIR}/uhd.pc
 -    DESTINATION ${LIBRARY_DIR}/pkgconfig
-+    DESTINATION ${PKGCONF_DIR}/pkgconfig
++    DESTINATION libdata/pkgconfig
      COMPONENT libraries
  )
  

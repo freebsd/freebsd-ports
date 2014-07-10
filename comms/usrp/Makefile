@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adrian
 DISTNAME=	Ettus-USRP-3.4.3
 
-MAINTAINER=	adrian@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ettus Research USRP driver framework
 
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
@@ -18,12 +18,14 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boos
 		orcc:${PORTSDIR}/devel/orc \
 		sdcc:${PORTSDIR}/lang/sdcc
 
-USES=			cmake:outsource dos2unix gmake pkgconfig
+USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix
+COMPILER_FEATURES=	libc++
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
+MAKE_JOBS_UNSAFE=	yes
 
 # for excruciating debug use this -db
-CMAKE_ARGS=	--debug-output --trace
+#CMAKE_ARGS+=	--debug-output --trace
 DOCSDIR=	share/doc/uhd
 WRKSRC=		${WRKDIR}/EttusResearch-UHD-Mirror-6047010
 
@@ -32,7 +34,6 @@ OPTIONS_DEFAULT=	USRP1 USRP2
 USRP1_DESC=	Build Ettus USRP1 firmware
 USRP2_DESC=	Build Ettus USRP2 firmware
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
@@ -62,51 +63,50 @@ PLIST_SUB+=	PUSRP2=""
 PLIST_SUB+=	PUSRP2="@comment "
 .endif
 
-do-build:
-# build host component
-	(export PATH=${LOCALBASE}/zpu/bin:${PATH};cd ${CONFIGURE_WRKSRC}&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
+CONFIGURE_WRKSRC=	${WRKSRC}/host
+CMAKE_SOURCE_PATH=	${WRKSRC}/host
+
+# usrp1 and usrp2 should be ports of their own
+
+post-build:
 # build usrp firmware
-#	(export PATH=${LOCALBASE}/zpu/bin:${PATH};\
-#	cd ${WRKSRC}/images && ${MAKE_CMD} -f Makefile images)
+	(export PATH=${LOCALBASE}/zpu/bin:${PATH};\
+	cd ${WRKSRC}/images && ${GMAKE} -f Makefile images)
 
 .if	USRP1
-	(cd ${WRKSRC}/images && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile images_usrp1)
+	(cd ${WRKSRC}/images && ${GMAKE} -f Makefile images_usrp1)
 .endif
 .if	USRP2
+#firmware/fx2/build
 	(export PATH=${LOCALBASE}/zpu/bin:${PATH};\
-	cd ${WRKSRC}/images && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile images_usrp2)
+	cd ${WRKSRC}/images && ${GMAKE} -f Makefile images_usrp2)
 .endif
 
 do-install:
 # install host component
+# hack the install prefix now
+	@${REINPLACE_CMD} -e "s|/usr/local|${STAGEDIR}${PREFIX}|g" \
+		${CONFIGURE_WRKSRC}/cmake_install.cmake
 	cd ${CONFIGURE_WRKSRC} && ${MAKE} install
 # install usrp firmware
-	${MKDIR} ${PREFIX}/share/uhd
-	${MKDIR} ${PREFIX}/share/uhd/images
-
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/uhd
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/uhd/images
 .if USRP2
 .for f in usrp_n200_fw.bin usrp2_fw.bin \
 		usrp_n210_fw.bin
-	${INSTALL_DATA} ${WRKSRC}/images/images/${f} ${PREFIX}/share/uhd/images/$f
+	${INSTALL_DATA} ${WRKSRC}/images/images/${f} ${STAGEDIR}${PREFIX}/share/uhd/images/$f
 .endfor
 .endif
-
 .if USRP1
 .for f in usrp1_fw.ihx usrp1_fpga.rbf usrp1_fpga_4rx.rbf usrp_b100_fw.ihx
-	${INSTALL_DATA} ${WRKSRC}/images/images/${f} ${PREFIX}/share/uhd/images/$f
+	${INSTALL_DATA} ${WRKSRC}/images/images/${f} ${STAGEDIR}${PREFIX}/share/uhd/images/$f
 .endfor
-	${MKDIR} ${PREFIX}/share/uhd/fpga/usrp1/rev2
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/uhd/fpga/usrp1/rev2
 	${INSTALL_DATA}	${WRKSRC}/fpga/usrp1/rbf/rev2/*.rbf \
-		${PREFIX}/share/uhd/fpga/usrp1/rev2
-	${MKDIR} ${PREFIX}/share/uhd/fpga/usrp1/rev4
+		${STAGEDIR}${PREFIX}/share/uhd/fpga/usrp1/rev2
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/uhd/fpga/usrp1/rev4
 	${INSTALL_DATA}	${WRKSRC}/fpga/usrp1/rbf/rev4/*.rbf \
-		${PREFIX}/share/uhd/fpga/usrp1/rev4
-.endif
-
-post-install:
-	${ECHO_MSG} fpga and firmware installed in /usr/local/share/uhd
-.if HAVEDOCS
-	${ECHO_MSG} docs installed in /usr/local/share/doc/uhd
+		${STAGEDIR}${PREFIX}/share/uhd/fpga/usrp1/rev4
 .endif
 
 .include <bsd.port.post.mk>
