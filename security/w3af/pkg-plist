@@ -1579,6 +1579,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/doc/api/public/toc.html
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/doc/api/public/trees.html
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/doc/manual.tex
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/man/man1/halberd.1
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/scripts/halberd
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/setup.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/setup.pyc

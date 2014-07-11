@@ -8,47 +8,37 @@ CATEGORIES=	security python www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}%20${DISTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Application Attack and Audit Framework
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	tidy:${PORTSDIR}/www/py-utidy
+LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/py-utidy
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
-		${PYTHON_SITELIBDIR}/SOAPpy:${PORTSDIR}/net/py-soappy \
+		${PYTHON_PKGNAMEPREFIX}soappy>=0:${PORTSDIR}/net/py-soappy \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
+		${PYTHON_PKGNAMEPREFIX}fpconst>0:${PORTSDIR}/math/py-fpconst \
 		nltk>0:${PORTSDIR}/textproc/nltk \
-		${PYTHON_SITELIBDIR}/numpy/__init__.py:${PORTSDIR}/math/py-numpy \
-		${PYTHON_SITELIBDIR}/pyPdf/pdf.py:${PORTSDIR}/print/py-pdf \
-		${PYTHON_SITELIBDIR}/scapy/main.py:${PORTSDIR}/net/scapy \
-		${PYTHON_SITELIBDIR}/wordnet.py:${PORTSDIR}/textproc/py-wordnet \
-		${PYTHON_SITELIBDIR}/yaml/loader.py:${PORTSDIR}/devel/py-yaml
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pdf>0:${PORTSDIR}/print/py-pdf \
+		scapy>0:${PORTSDIR}/net/scapy \
+		${PYTHON_PKGNAMEPREFIX}wordnet>0:${PORTSDIR}/textproc/py-wordnet \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN1PREFIX=	${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/plugins/discovery/oHalberd/
-MAN1=		halberd.1
-MANCOMPRESSED=	no
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		gettext
-USE_BZIP2=	yes
+USES=		gettext tar:bzip2
 USE_PYTHON=	yes
 
 OPTIONS_DEFINE=	GUI
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+GUI_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>0:${PORTSDIR}/graphics/py-graphviz
+GUI_USE=	GNOME=pygtk2
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/pygraphviz/graphviz.py:${PORTSDIR}/graphics/py-graphviz \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
-PLIST_SUB+=	GUI=""
-.else
-PLIST_SUB+=	GUI="@comment "
-.endif
 
 do-patch:
 .for f in SOAPpy fpconst-0.7.2 nltk nltk_contrib pyPdf scapy yaml
@@ -82,11 +72,14 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/
-	@(cd ${WRKDIR}/build && ${COPYTREE_SHARE} \* ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/)
-	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_console.sh ${PREFIX}/bin/w3af_console
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+	@(cd ${WRKDIR}/build && ${COPYTREE_SHARE} \* \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME})
+	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_console.sh \
+		${STAGEDIR}${PREFIX}/bin/w3af_console
 .if ${PORT_OPTIONS:MGUI}
-	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_gui.sh ${PREFIX}/bin/w3af_gui
+	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_gui.sh \
+		${STAGEDIR}${PREFIX}/bin/w3af_gui
 .endif
 
 .include <bsd.port.mk>
