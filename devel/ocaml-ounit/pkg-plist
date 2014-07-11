@@ -1,8 +1,15 @@
-lib/ocaml/site-lib/oUnit/oUnit.a
-lib/ocaml/site-lib/oUnit/oUnit.cmxa
-lib/ocaml/site-lib/oUnit/oUnit.cma
-lib/ocaml/site-lib/oUnit/oUnit.cmi
-lib/ocaml/site-lib/oUnit/oUnit.mli
-lib/ocaml/site-lib/oUnit/META
-@dirrm lib/ocaml/site-lib/oUnit
-@unexec ocamlfind remove oUnit 2> /dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/OUnit.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index_attributes.html
+%%PORTDOCS%%%%DOCSDIR%%/index_class_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/index_exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/index_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/index_module_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_modules.html
+%%PORTDOCS%%%%DOCSDIR%%/index_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_values.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/type_OUnit.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
