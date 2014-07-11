@@ -8,38 +8,23 @@ MASTER_SITES=	SF/razorbacktm/Nuggets
 PKGNAMEPREFIX=	razorback-
 DIST_SUBDIR=	razorback
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - File System Monitor
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	razorback_api.2:${PORTSDIR}/security/razorback-api \
-		fam.0:${PORTSDIR}/devel/fam
+LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
+		libfam.so:${PORTSDIR}/devel/fam
 
-USES=		pkgconfig
-
-OPTIONS_DEFINE=	DEBUG ASSERT
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
+USES=		libtool pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !empty(PORT_OPTIONS:MDEBUG)
-CONFIGURE_ARGS+=--enable-debug
-.endif
+OPTIONS_DEFINE=	DEBUG ASSERT
 
-.if !empty(PORT_OPTIONS:MASSERT)
-CONFIGURE_ARGS+=--enable-assert
-.endif
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/razorback/fsMonitor.conf ]; then \
-		${CP} -p ${PREFIX}/etc/razorback/fsMonitor.conf.sample ${PREFIX}/etc/razorback/fsMonitor.conf ; \
-	fi
+ASSERT_CONFIGURE_ENABLE=	assert
+DEBUG_CONFIGURE_ENABLE=	debug
 
 .include <bsd.port.mk>
