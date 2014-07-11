@@ -1,10 +1,6 @@
-@unexec if cmp -s %D/etc/razorback/swf_scanner.conf %D/etc/razorback/swf_scanner.conf.sample; then rm -f %D/etc/razorback/swf_scanner.conf; fi
-etc/razorback/swf_scanner.conf.sample
-@exec if [ ! -f %D/etc/razorback/swf_scanner.conf ] ; then cp -p %D/%F %B/swf_scanner.conf; fi
-@dirrmtry etc/razorback
+@sample etc/razorback/swf_scanner.conf.sample
 lib/razorback/swfScanner.so.2.0.0
 lib/razorback/swfScanner.so.2
 lib/razorback/swfScanner.so
-lib/razorback/swfScanner.la
 lib/razorback/swfScanner.a
 @dirrmtry lib/razorback
