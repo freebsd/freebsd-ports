@@ -1,11 +1,17 @@
 %%CLI%%sbin/osiris
 %%PRINTDB%%bin/printdb
 %%OSIRISD%%sbin/osirisd
+%%OSIRISMD%%@owner osiris
+%%OSIRISMD%%@group osiris
 %%OSIRISMD%%sbin/osirismd
+%%OSIRISMD%%@owner
+%%OSIRISMD%%@group
 %%OSIRISD%%etc/rc.d/osirisd.sh
 %%OSIRISMD%%etc/rc.d/osirismd.sh
 @exec mkdir -p %D/osiris
 @exec chown osiris:osiris %D/osiris
+%%OSIRISMD%%@owner osiris
+%%OSIRISMD%%@group osiris
 %%OSIRISMD%%osiris/configs/default.aix
 %%OSIRISMD%%osiris/configs/default.bsdos
 %%OSIRISMD%%osiris/configs/default.darwin
@@ -21,5 +27,7 @@
 %%OSIRISMD%%osiris/configs/default.windowsserver2003
 %%OSIRISMD%%osiris/configs/default.windowsxp
 %%OSIRISMD%%osiris/configs/default.wrt54g
+%%OSIRISMD%%@owner
+%%OSIRISMD%%@group
 %%OSIRISMD%%@dirrm osiris/configs
 @dirrm osiris
