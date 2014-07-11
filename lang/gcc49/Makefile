@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc49
-PORTVERSION=	4.9.1.s20140702
+PORTVERSION=	4.9.1.s20140709
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -134,7 +134,8 @@ full-regression-test: build
 .endif
 
 post-install:
-	${RM} -f ${STAGEDIR}${TARGLIB}/*.la
+	${FIND} ${STAGEDIR}${TARGLIB} ${STAGEDIR}${LIBEXEC} \
+	        -name '*.la' | ${XARGS} ${RM}
 	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
 	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
 	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
