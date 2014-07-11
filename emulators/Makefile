@@ -107,6 +107,7 @@
     SUBDIR += pcemu
     SUBDIR += pcsxr
     SUBDIR += pearpc
+    SUBDIR += pipelight
     SUBDIR += psim-freebsd
     SUBDIR += q4wine
     SUBDIR += qemu
