@@ -1,9 +1,0 @@
-%%OCAML_SITELIBDIR%%/xstrp4/META
-%%OCAML_SITELIBDIR%%/xstrp4/xstrp4.cma
-%%OCAML_SITELIBDIR%%/xstrp4/xstrp4_here.cmi
-%%OCAML_SITELIBDIR%%/xstrp4/xstrp4_here_lexer.cmi
-%%OCAML_SITELIBDIR%%/xstrp4/xstrp4_here_types.cmi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.file
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.ml
-@dirrmtry %%OCAML_SITELIBDIR%%/xstrp4
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
