@@ -3,6 +3,7 @@
 
 PORTNAME=	Geo-GDAL
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \

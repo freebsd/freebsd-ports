@@ -86,8 +86,8 @@ include/thinplatespline.h
 include/vrtdataset.h
 lib/gdalplugins/.keepme
 lib/libgdal.a
-lib/libgdal.la
 lib/libgdal.so
-lib/libgdal.so.19
+lib/libgdal.so.1
+lib/libgdal.so.%%PORTVERSION%%
 libdata/pkgconfig/gdal.pc
 @dirrm lib/gdalplugins
