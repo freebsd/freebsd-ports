@@ -96,6 +96,7 @@
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
     SUBDIR += fortune-mod-culmea-culmilor
+    SUBDIR += fortune-mod-epictetus
     SUBDIR += fortune-mod-ferengi_rules_of_acquisition
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortuneit
