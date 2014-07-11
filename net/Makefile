@@ -360,6 +360,7 @@
     SUBDIR += mad_fcl
     SUBDIR += mcast-tools
     SUBDIR += mediaproxy
+    SUBDIR += mediastreamer
     SUBDIR += mediatomb
     SUBDIR += mgen
     SUBDIR += micro_inetd
