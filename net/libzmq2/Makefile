@@ -3,7 +3,7 @@
 
 PORTNAME=	libzmq2
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -13,9 +13,10 @@ COMMENT=	ZeroMQ core library (Version 2)
 
 LICENSE=	LGPL3
 
-USES=		pathfix
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix
+USE_LDCONFIG=	yes
 
 CONFLICTS=	libzmq[^2]-[0-9]*
 
@@ -28,10 +29,8 @@ DEBUG_CONFIGURE_ON=	--enable-debug
 WITH_DEBUG=	yes
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e '9s|$$| -pthread|' ${WRKSRC}/src/libzmq.pc.in
-
 regression-test: build
-	cd ${WRKSRC} && ${MAKE} check
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>

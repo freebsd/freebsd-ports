@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Quality Tetrahedral Mesh Generator and Delaunay Triangulator
+COMMENT=	Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
 LICENSE_FILE=	${WRKDIR}/LICENSE
 

@@ -8,7 +8,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	SF
 
 MAINTAINER=	sumikawa@FreeBSD.org
-COMMENT=	A ping-like program that uses TCP and/or HTTP
+COMMENT=	Ping-like program that uses TCP and/or HTTP
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libidn.so:${PORTSDIR}/dns/libidn

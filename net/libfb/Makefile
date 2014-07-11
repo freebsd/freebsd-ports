@@ -7,7 +7,7 @@ CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://support.red-fone.com/downloads/fonulator/
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	A foneBRIDGE configuration library
+COMMENT=	FoneBRIDGE configuration library
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 

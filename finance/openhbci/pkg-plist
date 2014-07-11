@@ -30,10 +30,10 @@ include/openhbci/inetaddress.h
 include/openhbci/init_plugins.h
 include/openhbci/interactor.h
 include/openhbci/interactorcb.h
-include/openhbci/limit.h
-include/openhbci/listwrappers.h
 include/openhbci/job.h
 include/openhbci/libloader.h
+include/openhbci/limit.h
+include/openhbci/listwrappers.h
 include/openhbci/loader.h
 include/openhbci/medium.h
 include/openhbci/mediumplugin.h
@@ -42,10 +42,10 @@ include/openhbci/mediumpluginlist.h
 include/openhbci/mediumrdhbase.h
 include/openhbci/messagequeue.h
 include/openhbci/outbox.h
-include/openhbci/outboxjob.h
-include/openhbci/outboxjobs.h
-include/openhbci/outboxjobkeys.h
 include/openhbci/outboxaccjobs.h
+include/openhbci/outboxjob.h
+include/openhbci/outboxjobkeys.h
+include/openhbci/outboxjobs.h
 include/openhbci/outboxstojobs.h
 include/openhbci/parser.h
 include/openhbci/plugin.h
@@ -67,13 +67,13 @@ include/openhbci/user.h
 include/openhbci/userparams.h
 include/openhbci/value.h
 lib/libopenhbci.a
-lib/libopenhbci.la
 lib/libopenhbci.so
 lib/libopenhbci.so.14
-lib/openhbci/plugins/14/media/rdhfile.so.0
-lib/openhbci/plugins/14/media/rdhfile.so
-lib/openhbci/plugins/14/media/rdhfile.la
+lib/libopenhbci.so.14.0.2
 lib/openhbci/plugins/14/media/rdhfile.a
+lib/openhbci/plugins/14/media/rdhfile.so
+lib/openhbci/plugins/14/media/rdhfile.so.0
+lib/openhbci/plugins/14/media/rdhfile.so.0.0.0
 share/aclocal/openhbci.m4
 @dirrm lib/openhbci/plugins/14/media
 @dirrm lib/openhbci/plugins/14

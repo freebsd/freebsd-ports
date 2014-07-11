@@ -14,9 +14,12 @@ COMMENT=	Fast scatter/gather TCP port scanner
 
 WRKSRC=		${WRKDIR}/strobe
 ALL_TARGET=	strobe
-MAN1=		strobe.1
 
-PLIST_FILES=	bin/strobe lib/strobe.services
+PLIST_FILES=	bin/strobe lib/strobe.services man/man1/strobe.1.gz
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/strobe ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/strobe.services ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/strobe.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
 .include <bsd.port.mk>

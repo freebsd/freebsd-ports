@@ -7,7 +7,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A webmail system which access POP3 and IMAP mail servers
+COMMENT=	Webmail system which access POP3 and IMAP mail servers
 
 OPTIONS_DEFINE=	DOCS
 

@@ -3,47 +3,36 @@
 
 PORTNAME=	iXhash
 PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/ixhash/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	spamass-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= ports@FreeBSD.org
-COMMENT=	The iXhash plugin for SpamAssassin
+MAINTAINER=	michael@ranner.eu
+COMMENT=	Plugin for SpamAssassin supporting iXhash
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin \
 		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS
 
-LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
-SUB_FILES=	pkg-message
+OPTIONS_DEFINE=	DOCS
 NO_BUILD=	yes
-SPAMASS_CONF=	etc/mail/spamassassin
-SPAMASS_FILES=	iXhash.cf iXhash.pm
-INSTALL_DIR=	${PREFIX}/${SPAMASS_CONF}
 
-PORTDOCS=	CHANGELOG LICENSE WHERE_ARE_THE_OTHER_FILES INSTALL README
-PLIST_FILES=	${SPAMASS_CONF}/iXhash.cf.sample ${SPAMASS_CONF}/iXhash.pm
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/etc/mail,${LOCALBASE}/etc/mail," \
 		${WRKSRC}/iXhash/iXhash.cf
 
 do-install:
-	@${MKDIR} ${INSTALL_DIR}
-	${INSTALL_DATA} ${WRKSRC}/iXhash/iXhash.cf ${INSTALL_DIR}/iXhash.cf.sample
-	${INSTALL_DATA} ${WRKSRC}/iXhash/iXhash.pm ${INSTALL_DIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-.	for i in ${PORTDOCS}
-		@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
-.	endfor
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail/spamassassin
+	${INSTALL_DATA} ${WRKSRC}/iXhash/iXhash.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/iXhash.cf.sample
+	${INSTALL_DATA} ${WRKSRC}/iXhash/iXhash.pm ${STAGEDIR}${PREFIX}/etc/mail/spamassassin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in CHANGELOG LICENSE WHERE_ARE_THE_OTHER_FILES INSTALL README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 .include <bsd.port.mk>

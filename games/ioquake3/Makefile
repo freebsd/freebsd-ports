@@ -48,7 +48,6 @@ GAMELIBS_DESC=	Build game libraries
 .if ${IOQ3:MOPUS}
 OPTIONS_DEFINE+=	OPUS
 OPTIONS_DEFAULT+=	OPUS
-OPUS_DESC=	Opus audio codec support
 .endif
 
 MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \

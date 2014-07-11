@@ -7,7 +7,7 @@ CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A media player based on BMP and XMMS
+COMMENT=	Media player based on BMP and XMMS
 
 LICENSE=	GPLv3
 

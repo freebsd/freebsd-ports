@@ -4,10 +4,10 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/addons/tome-addon-dev.teaa
 %%DATADIR%%/game/addons/tome-items-vault.teaa
 %%DATADIR%%/game/addons/tome-stone-wardens.teaa
-%%DATADIR%%/game/engines/te4-1.2.2.teae
+%%DATADIR%%/game/engines/te4-%%PORTVERSION%%.teae
 %%DATADIR%%/game/loader/init.lua
 %%DATADIR%%/game/loader/pre-init.lua
-%%DATADIR%%/game/modules/boot-te4-1.2.2.team
+%%DATADIR%%/game/modules/boot-te4-%%PORTVERSION%%.team
 %%DATADIR%%/game/modules/example/class/Actor.lua
 %%DATADIR%%/game/modules/example/class/Game.lua
 %%DATADIR%%/game/modules/example/class/Grid.lua
@@ -56,9 +56,9 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/modules/example_realtime/dialogs/Quit.lua
 %%DATADIR%%/game/modules/example_realtime/init.lua
 %%DATADIR%%/game/modules/example_realtime/load.lua
-%%DATADIR%%/game/modules/tome-1.2.2-gfx.team
-%%DATADIR%%/game/modules/tome-1.2.2-music.team
-%%DATADIR%%/game/modules/tome-1.2.2.team
+%%DATADIR%%/game/modules/tome-%%PORTVERSION%%-gfx.team
+%%DATADIR%%/game/modules/tome-%%PORTVERSION%%-music.team
+%%DATADIR%%/game/modules/tome-%%PORTVERSION%%.team
 %%DATADIR%%/game/profile-thread/Client.lua
 %%DATADIR%%/game/profile-thread/UserChat.lua
 %%DATADIR%%/game/profile-thread/init.lua

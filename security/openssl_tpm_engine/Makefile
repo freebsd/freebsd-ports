@@ -3,19 +3,20 @@
 
 PORTNAME=	openssl_tpm_engine
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/trousers/OpenSSL%20TPM%20Engine/${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSSL TPM engine
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:${PORTSDIR}/security/trousers
-LIB_DEPENDS=	tspi:${PORTSDIR}/security/trousers
+LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
 
-USES=	gmake
-USE_AUTOTOOLS=	autoconf libtool
+USES=		gmake libtool
+USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -24,19 +25,12 @@ SUB_FILES=	pkg-message
 PORTEXAMPLES=	openssl.cnf.sample
 
 OPTIONS_DEFINE=	EXAMPLES
-OPTIONS_DEFAULT=EXAMPLES
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/openssl.cnf.sample
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/openssl.cnf.sample ${EXAMPLESDIR}
-.endif
-	@${CAT}	${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/openssl.cnf.sample ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

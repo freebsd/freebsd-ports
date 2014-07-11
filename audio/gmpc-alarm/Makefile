@@ -3,7 +3,7 @@
 
 PORTNAME=	gmpc-alarm
 PORTVERSION=	11.8.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
@@ -16,6 +16,6 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool
-USES=		gmake gettext pathfix pkgconfig
+USES=		gmake gettext libtool pathfix pkgconfig
 
 .include <bsd.port.mk>

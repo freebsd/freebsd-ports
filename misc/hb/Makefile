@@ -7,7 +7,7 @@ CATEGORIES=	misc python
 MASTER_SITES=	http://www.tundraware.com/Software/hb/
 
 MAINTAINER=	tundra@tundraware.com
-COMMENT=	A simple, but complete budget management in Python
+COMMENT=	Simple, but complete budget management in Python
 
 USE_PYTHON=	yes
 

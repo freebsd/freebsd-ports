@@ -3,7 +3,9 @@ include/urweb/config.h
 include/urweb/queue.h
 include/urweb/request.h
 include/urweb/types.h
+include/urweb/types_cpp.h
 include/urweb/urweb.h
+include/urweb/urweb_cpp.h
 lib/liburweb.a
 lib/liburweb.so
 lib/liburweb.so.0
@@ -28,6 +30,8 @@ lib/urweb/js/urweb.js
 lib/urweb/ur/basis.urs
 lib/urweb/ur/char.ur
 lib/urweb/ur/char.urs
+lib/urweb/ur/datetime.ur
+lib/urweb/ur/datetime.urs
 lib/urweb/ur/list.ur
 lib/urweb/ur/list.urs
 lib/urweb/ur/listPair.ur

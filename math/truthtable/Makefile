@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A Truth Tables generator (written in Java)
+COMMENT=	Truth Tables generator (written in Java)
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

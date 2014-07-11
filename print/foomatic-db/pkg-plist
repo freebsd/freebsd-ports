@@ -3254,6 +3254,7 @@ share/foomatic/db/source/driver/bjc600.xml
 share/foomatic/db/source/driver/bjc800.xml
 share/foomatic/db/source/driver/bjc800j.xml
 share/foomatic/db/source/driver/bjc880j.xml
+share/foomatic/db/source/driver/brlaser.xml
 share/foomatic/db/source/driver/c2050.xml
 share/foomatic/db/source/driver/c2070.xml
 share/foomatic/db/source/driver/c2esp.xml
@@ -3828,7 +3829,9 @@ share/foomatic/db/source/printer/Brother-DCP-1200.xml
 share/foomatic/db/source/printer/Brother-DCP-7010.xml
 share/foomatic/db/source/printer/Brother-DCP-7020.xml
 share/foomatic/db/source/printer/Brother-DCP-7025.xml
+share/foomatic/db/source/printer/Brother-DCP-7030.xml
 share/foomatic/db/source/printer/Brother-DCP-7045N.xml
+share/foomatic/db/source/printer/Brother-DCP-7065DN.xml
 share/foomatic/db/source/printer/Brother-DCP-8020.xml
 share/foomatic/db/source/printer/Brother-DCP-8025D.xml
 share/foomatic/db/source/printer/Brother-DCP-8040.xml
@@ -3871,6 +3874,7 @@ share/foomatic/db/source/printer/Brother-HL-2060.xml
 share/foomatic/db/source/printer/Brother-HL-2070N.xml
 share/foomatic/db/source/printer/Brother-HL-2135.xml
 share/foomatic/db/source/printer/Brother-HL-2140.xml
+share/foomatic/db/source/printer/Brother-HL-2142.xml
 share/foomatic/db/source/printer/Brother-HL-2170W.xml
 share/foomatic/db/source/printer/Brother-HL-2400CeN.xml
 share/foomatic/db/source/printer/Brother-HL-2460.xml

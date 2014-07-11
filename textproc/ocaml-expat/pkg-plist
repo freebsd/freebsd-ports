@@ -1,0 +1,24 @@
+%%OCAML_SITELIBDIR%%/expat/META
+%%OCAML_SITELIBDIR%%/expat/dllmlexpat.so
+%%OCAML_SITELIBDIR%%/expat/expat.a
+%%OCAML_SITELIBDIR%%/expat/expat.cma
+%%OCAML_SITELIBDIR%%/expat/expat.cmi
+%%OCAML_SITELIBDIR%%/expat/expat.cmxa
+%%OCAML_SITELIBDIR%%/expat/expat.mli
+%%OCAML_SITELIBDIR%%/expat/libmlexpat.a
+%%PORTDOCS%%%%DOCSDIR%%/Expat.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index_attributes.html
+%%PORTDOCS%%%%DOCSDIR%%/index_class_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/index_exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/index_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/index_module_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_modules.html
+%%PORTDOCS%%%%DOCSDIR%%/index_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index_values.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/type_Expat.html
+@dirrmtry %%OCAML_SITELIBDIR%%/expat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

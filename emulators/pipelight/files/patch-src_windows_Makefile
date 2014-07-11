@@ -1,0 +1,18 @@
+--- src/windows/Makefile.orig	2014-07-08 12:59:29.874833483 -0400
++++ src/windows/Makefile	2014-07-08 12:59:41.826832843 -0400
+@@ -11,7 +11,7 @@
+ all: pluginloader$(suffix).exe
+ 
+ ifeq ($(wildcard pluginloader$(suffix).exe),)
+-commit=$(shell git log --pretty=format:'%H' -n 1 || echo "prebuilt")
++commit=DISTVERSION
+ 
+ ../../pluginloader-$(commit).tar.gz:
+ 	$(downloader) "../../pluginloader-$(commit).tar.gz"     "http://repos.fds-team.de/pluginloader/$(commit)/pluginloader.tar.gz"
+@@ -67,4 +67,4 @@
+ clean:
+ 	rm -f *.exe *.exe.so *.o
+ 
+-endif
+\ No newline at end of file
++endif

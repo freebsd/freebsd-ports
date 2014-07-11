@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	hello
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A utility for saying hello to the world and reading email
+COMMENT=	Utility for saying hello to the world and reading email
 
 USES=		charsetfix perl5
 USE_PERL5=	build

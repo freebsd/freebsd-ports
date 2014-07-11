@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -30,10 +29,12 @@ post-patch:
 		${WRKSRC}/src/Configuration.cs
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/openvpn-admin ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/openvpn-admin.desktop ${PREFIX}/share/applications/
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/openvpn-admin.exe ${PREFIX}/lib/${PORTNAME}
-	${MKDIR} ${PREFIX}/etc/openvpn
+	${INSTALL_SCRIPT} ${WRKSRC}/openvpn-admin ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/openvpn-admin.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/openvpn-admin.exe \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openvpn
 
 .include <bsd.port.post.mk>

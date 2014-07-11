@@ -41,9 +41,6 @@ SUBCLIPSEFILES=	features/${SUBCLIPSE}_${PORTVERSION} \
 		plugins/com.sun.jna_3.0.9 \
 		plugins/org.tmatesoft.svnkit_1.3.0.5847
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-extract:
 .for f in ${SUBCLIPSEFILES}
 	cd ${WRKSRC} \
@@ -54,9 +51,9 @@ post-extract:
 do-install:
 .for f in ${SUBCLIPSEFILES}
 	@cd ${WRKSRC} \
-	  && ${MKDIR} ${ECLIPSE}/${f} \
-	  && ${FIND} ${f} -type d -exec ${MKDIR} ${ECLIPSE}/{} \; \
-	  && ${FIND} ${f} -type f -exec ${INSTALL_DATA} {} ${ECLIPSE}/{} \;
+	  && ${MKDIR} ${STAGEDIR}${ECLIPSE}/${f} \
+	  && ${FIND} ${f} -type d -exec ${MKDIR} ${STAGEDIR}${ECLIPSE}/{} \; \
+	  && ${FIND} ${f} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${ECLIPSE}/{} \;
 .endfor
 
 post-install:
@@ -67,4 +64,4 @@ post-install:
 	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

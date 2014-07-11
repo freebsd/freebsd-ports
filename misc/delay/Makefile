@@ -8,7 +8,7 @@ MASTER_SITES=	http://onegeek.org/~tom/software/delay/dl/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/ 
 
 MAINTAINER=	gmarco@gufi.org
-COMMENT=	A delay program with feedback to the user
+COMMENT=	Delay program with feedback to the user
 
 GNU_CONFIGURE=	yes
 

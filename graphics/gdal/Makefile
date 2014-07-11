@@ -3,7 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.11.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -24,15 +24,17 @@ PCRE_DESC=	Regular expression support for SQLite
 
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
-		--with-libz=/usr --with-liblzma=yes --with-threads=yes
+		--enable-static=yes \
+		--with-liblzma=yes --with-libz=/usr --with-threads=yes \
+		--without-libtool
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE} -pthread
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USES=		gmake
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 PORTDATA=	*
 
 SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal graphics/ruby-gdal
@@ -131,8 +133,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/GNUmakefile
 
 post-install:
+	${INSTALL_LIB} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/gdalplugins/.keepme
 	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${STAGEDIR}${DATADIR}/
-	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libgdal.so.19
+	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libgdal.so.${PORTVERSION}
 
 .include <bsd.port.mk>

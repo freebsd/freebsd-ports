@@ -14,5 +14,4 @@ COMMENT=	HTTP authentication plugin for Redmine
 GITREV=		df98baf
 REDMINE_PLUGIN_NAME=	redmine_http_auth
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../www/redmine/bsd.redmine.mk"

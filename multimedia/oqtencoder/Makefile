@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple encoder using OpenQuicktime (TM)
+COMMENT=	Simple encoder using OpenQuicktime (TM)
 
 LIB_DEPENDS=	libopenquicktime.so:${PORTSDIR}/multimedia/openquicktime
 

@@ -9,7 +9,7 @@ DISTNAME=	atmailopen
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	An Open Source Webmail Client
+COMMENT=	Open Source Webmail Client
 
 USE_PHP=	mysql pcre session
 WRKSRC=		${WRKDIR}/${DISTNAME}

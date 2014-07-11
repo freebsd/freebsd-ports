@@ -9,7 +9,7 @@ MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A network monitoring daemon
+COMMENT=	Network monitoring daemon
 
 USE_RC_SUBR=	nefu
 GNU_CONFIGURE=		yes

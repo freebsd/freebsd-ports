@@ -84,6 +84,7 @@
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
     SUBDIR += bsdmoted
+    SUBDIR += bsdploy
     SUBDIR += bsdstats
     SUBDIR += bubblemon-dockapp
     SUBDIR += bulk_extractor
@@ -738,6 +739,11 @@
     SUBDIR += py-halite
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
+    SUBDIR += py-ploy
+    SUBDIR += py-ploy_ansible
+    SUBDIR += py-ploy_ec2
+    SUBDIR += py-ploy_ezjail
+    SUBDIR += py-ploy_fabric
     SUBDIR += py-plumbum
     SUBDIR += py-psutil
     SUBDIR += py-psutil121

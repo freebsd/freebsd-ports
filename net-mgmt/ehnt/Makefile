@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	marck@FreeBSD.org
-COMMENT=	A simple Cisco NetFlow data collector
+COMMENT=	Simple Cisco NetFlow data collector
 
 PLIST_FILES=	bin/ehnt etc/rc.d/ehntserv.sh.sample \
 		man/man1/ehnt.1.gz man/man8/ehntserv.8.gz \

@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.inet.no/pub/socks/old/
 
 MAINTAINER=	anders@FreeBSD.org
-COMMENT=	A circuit-level firewall/proxy
+COMMENT=	Circuit-level firewall/proxy
 
 CONFLICTS=	socks5-[0-9]*
 

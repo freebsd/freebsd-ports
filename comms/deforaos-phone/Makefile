@@ -3,7 +3,7 @@
 
 PORTNAME=	phone
 PORTVERSION=	0.3.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.defora.org/os/download/download/4296/
 PKGNAMEPREFIX=	deforaos-

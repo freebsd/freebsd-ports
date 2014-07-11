@@ -16,17 +16,12 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		fvwm2:${PORTSDIR}/x11-wm/fvwm2
 RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2
 
-USE_BZIP2=	yes
 USE_XORG=	xpm
 USES=		perl5 gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
-MAN1=		fvwm-themes-config.1 fvwm-themes-menuapp.1 fvwm-themes-com.1 \
-		fvwm-themes-images.1 fvwm-themes-start.1 fvwm-themes-root.1
-
-NO_STAGE=	yes
 post-install:
 	@cd ${WRKDIR}/${PORTNAME}-extra-${PORTVERSION} && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/fvwm/themes
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/share/fvwm/themes
 
 .include <bsd.port.mk>

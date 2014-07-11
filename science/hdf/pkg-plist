@@ -82,14 +82,14 @@ include/tbbt.h
 include/vattr.h
 include/vg.h
 lib/libdf.a
-lib/libdf.la
 lib/libdf.so
 lib/libdf.so.2
+lib/libdf.so.2.0.0
 lib/libhdf4.settings
 lib/libmfhdf.a
-lib/libmfhdf.la
 lib/libmfhdf.so
 lib/libmfhdf.so.3
+lib/libmfhdf.so.3.0.0
 man/man1/hdf.1.gz
 man/man1/hdfunpac.1.gz 
 man/man1/ncdump.1.gz 

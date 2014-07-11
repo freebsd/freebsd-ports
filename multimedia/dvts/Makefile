@@ -13,7 +13,7 @@ PATCHFILES=	dvts-patch-20030805
 PATCH_DIST_STRIP=	-p4
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An implementation of Digital Video Transport System
+COMMENT=	Implementation of Digital Video Transport System
 
 CONFLICTS=	gdvrecv-[0-9]*
 

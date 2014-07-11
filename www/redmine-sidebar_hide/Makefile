@@ -16,6 +16,4 @@ GH_COMMIT=	cfc7314
 
 REDMINE_PLUGIN_NAME=	sidebar_hide
 
-NO_STAGE=	yes
-
 .include "${.CURDIR}/../../www/redmine/bsd.redmine.mk"

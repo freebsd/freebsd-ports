@@ -11,7 +11,7 @@ MASTER_SITES=	http://download.gna.org/apolicy/%SUBDIR%/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER?=	chifeng@gmail.com
-COMMENT=	An ACL system for Postfix, as a policy daemon
+COMMENT=	ACL system for Postfix, as a policy daemon
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf \
 		${PYTHON_SITELIBDIR}/IPy.py:${PORTSDIR}/net-mgmt/py-ipy

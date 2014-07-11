@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.libsdl.org/extras/win32/cygwin/
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	${PORTNAME}-devel
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DirectX header files for use with MinGW
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
@@ -17,11 +17,11 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/mingw32/include
 .for f in d3dtypes.h ddraw.h dinput.h directx.h dsound.h
 	${INSTALL_DATA} ${WRKSRC}/include/w32api/$f \
-	    ${LOCALBASE}/mingw32/include/
+	    ${STAGEDIR}${PREFIX}/mingw32/include/
 .endfor
 
 .include <bsd.port.mk>

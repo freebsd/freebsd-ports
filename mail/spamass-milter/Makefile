@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	bmah@FreeBSD.org
 COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin
 
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin
@@ -21,7 +21,6 @@ ADDAUTH_PATCH_DESC=	Bypass checks for SMTP AUTH connections
 REJECTTEXT_PATCH_DESC=	Customize SMTP reject message
 SENDMAIL_PORT_DESC=	Build against sendmail port
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ORIG_ARGS=	fd:mMp:P:r:u:D:i:b:B:e:x
@@ -66,8 +65,6 @@ GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
 
-MAN1=		spamass-milter.1
-
 pre-patch:
 .if ${ORIG_ARGS} != ${NEW_ARGS}
 	@${SED} -e 's|%NEW_ARGS%|${NEW_ARGS}|' ${FILESDIR}/extra-patch-options > ${WRKDIR}/extra-patch-options
@@ -82,13 +79,12 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/activation.txt ${DOCSDIR}/activation.txt
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/activation.txt ${STAGEDIR}${DOCSDIR}/activation.txt
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 

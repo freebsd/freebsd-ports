@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/source
 DISTNAME=	${PORTNAME}-2.1c1
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	An open source command-line RTMP client
+COMMENT=	Open source command-line RTMP client
 
 USES=		gmake
 ALL_TARGET=	posix

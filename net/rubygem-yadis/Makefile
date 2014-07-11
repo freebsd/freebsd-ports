@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Yadis Service discovery library written in pure Ruby
+COMMENT=	Yadis Service discovery library written in pure Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

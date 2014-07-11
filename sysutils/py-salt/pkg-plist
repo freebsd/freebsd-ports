@@ -154,6 +154,8 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/grains/__init__.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/core.py
 %%PYTHON_SITELIBDIR%%/salt/grains/core.pyc
+%%PYTHON_SITELIBDIR%%/salt/grains/external_ip.py
+%%PYTHON_SITELIBDIR%%/salt/grains/external_ip.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/extra.py
 %%PYTHON_SITELIBDIR%%/salt/grains/extra.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/junos.py

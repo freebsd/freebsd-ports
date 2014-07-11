@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.ka9q.net/code/fec/
 
 MAINTAINER=	freebsduser@paradisegreen.co.uk
-COMMENT=	A fast Viterbi CODEC library
+COMMENT=	Fast Viterbi CODEC library
 
 GNU_CONFIGURE=	yes
 USES=		gmake

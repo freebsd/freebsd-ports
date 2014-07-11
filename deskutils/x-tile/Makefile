@@ -17,8 +17,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	X_Tile
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>

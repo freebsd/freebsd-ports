@@ -1,0 +1,15 @@
+--- lib/Makefile.orig	2014-07-10 23:17:16.801237680 +0800
++++ lib/Makefile	2014-07-10 23:17:43.641231560 +0800
+@@ -9,9 +9,9 @@ CAMLJAVALIB=$(OCAMLLIB)/camljava
+ all: jni.cma jni.cmxa javaclasses
+ 
+ install:
+-	mkdir -p $(CAMLJAVALIB)
+-	install  -o root -g wheel -m 444 jni.cma jni.cmi jni.cmxa jni.a libcamljni.a jni.mli $(CAMLJAVALIB)
+-	jar cf $(CAMLJAVALIB)/camljava.jar fr/inria/caml/camljava/*.class
++	mkdir -p $(DESTDIR)$(CAMLJAVALIB)
++	install  -o root -g wheel -m 444 jni.cma jni.cmi jni.cmxa jni.a libcamljni.a jni.mli $(DESTDIR)$(CAMLJAVALIB)
++	jar cf $(DESTDIR)$(CAMLJAVALIB)/camljava.jar fr/inria/caml/camljava/*.class
+ 
+ jni.cma: jni.cmo libcamljni.a
+ 	$(OCAMLC) -linkall -a -o jni.cma -custom jni.cmo \

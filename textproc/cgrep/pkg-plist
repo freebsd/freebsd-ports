@@ -1,0 +1,3 @@
+bin/cgrep
+%%DATADIR%%/cgreprc
+@dirrm %%DATADIR%%

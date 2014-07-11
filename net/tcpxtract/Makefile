@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A tool for extracting files from network traffic
+COMMENT=	Tool for extracting files from network traffic
 
 GNU_CONFIGURE=	yes
 

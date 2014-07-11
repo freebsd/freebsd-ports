@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/gambit/${PORTNAME}13/${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A library of tools for doing computation in game theory
+COMMENT=	Library of tools for doing computation in game theory
 
 LICENSE=	GPLv2
 

@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p ipv6 security
 MASTER_SITES=	GNU
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	An anonymous, distributed, reputation-based network
+COMMENT=	Anonymous, distributed, reputation-based network
 
 LICENSE=	GPLv3
 

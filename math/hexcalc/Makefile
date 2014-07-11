@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jhs@berklix.com
-COMMENT=	A multi-radix calculator for x11
+COMMENT=	Multi-radix calculator for x11
 
 # XORG_CAT=	app
 # USE_IMAKE=	yes

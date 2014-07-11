@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://sources.redhat.com/pub/${PORTNAME}-win32/
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	${PORTNAME}-w32-${PORTVERSION:S/./-/g}-release
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX threads library for Windows compiled with MinGW32
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
@@ -16,18 +16,19 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 
 USES=		gmake
 
-NO_STAGE=	yes
 do-build:
 	@${MAKE_CMD} -C ${WRKSRC} CROSS=${PKGNAMEPREFIX} GC
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/mingw32/include
+	@${MKDIR} ${STAGEDIR}${PREFIX}/mingw32/lib
 .for f in pthread.h sched.h semaphore.h
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/mingw32/include/$f
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${PREFIX}/mingw32/include/$f
 .endfor
 
 .for f in libpthreadGC2.a pthreadGC2.dll
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/mingw32/lib/$f
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${PREFIX}/mingw32/lib/$f
 .endfor
-	${LN} -sf libpthreadGC2.a ${PREFIX}/mingw32/lib/libpthread.a
+	${LN} -sf libpthreadGC2.a ${STAGEDIR}${PREFIX}/mingw32/lib/libpthread.a
 
 .include <bsd.port.mk>

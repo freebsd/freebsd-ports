@@ -3,7 +3,7 @@
 
 PORTNAME=	gmpc-wikipedia
 PORTVERSION=	11.8.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
@@ -18,6 +18,6 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool glib20 gtk20
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pkgconfig
 
 .include <bsd.port.mk>

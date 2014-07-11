@@ -8,20 +8,19 @@ MASTER_SITES=	LOCAL/danfe http://freebsd.nsu.ru/distfiles/
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	relay-${PORTVERSION}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II multi-view demo recording facility
 
 LICENSE=	GPLv2
 
 USES=		gmake
 MAKE_ARGS=	MODE=release OBJ_DIR=. OUT_DIR=. Q2MODULE=game.so \
-		QUAKE2_DIR="${STAGEDIR}${Q2DIR}" BIN_DIR="${STAGEDIR}${PREFIX}/bin" \
+		QUAKE2_DIR="${STAGEDIR}${Q2DIR}" \
+		BIN_DIR="${STAGEDIR}${PREFIX}/bin" \
 		CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}"
 
 WRKSRC=		${WRKDIR}/relay-${PORTVERSION}
 PORTDOCS=	FAQ README
-
-ED?=	/bin/ed
 
 OPTIONS_DEFINE=	DOCS
 
@@ -47,5 +46,7 @@ post-patch: .SILENT
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+ED?=	/bin/ed
 
 .include <bsd.port.mk>

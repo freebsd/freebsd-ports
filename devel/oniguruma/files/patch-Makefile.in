@@ -1,6 +1,27 @@
---- Makefile.in.orig	2006-11-08 08:45:50.000000000 +0300
-+++ Makefile.in	2009-02-12 18:37:58.000000000 +0300
-@@ -214,6 +214,9 @@
+--- Makefile.in.orig	2006-11-08 13:45:50.000000000 +0800
++++ Makefile.in	2014-07-08 21:29:18.562095970 +0800
+@@ -146,13 +146,13 @@ make_enc_dir:
+ 	test -d enc || mkdir enc
+ 
+ install: all
+-	test -d $(libdir) || mkdir $(libdir)
+-	test -d $(includedir) || mkdir $(includedir)
+-	$(INSTALL) -m 644 $(libname) $(libdir)/$(libname)
+-	$(RANLIB)  $(libdir)/$(libname)
+-	$(INSTALL) -m 644 $(srcdir)/oniguruma.h  $(includedir)/oniguruma.h
+-	$(INSTALL) -m 644 $(srcdir)/onigposix.h  $(includedir)/onigposix.h
+-	$(INSTALL) -m 644 $(srcdir)/oniggnu.h    $(includedir)/oniggnu.h
++	test -d $(DESTDIR)$(libdir) || mkdir $(DESTDIR)$(libdir)
++	test -d $(DESTDIR)$(includedir) || mkdir $(DESTDIR)$(includedir)
++	$(INSTALL) -m 644 $(libname) $(DESTDIR)$(libdir)/$(libname)
++	$(RANLIB)  $(DESTDIR)$(libdir)/$(libname)
++	$(INSTALL) -m 644 $(srcdir)/oniguruma.h  $(DESTDIR)$(includedir)/oniguruma.h
++	$(INSTALL) -m 644 $(srcdir)/onigposix.h  $(DESTDIR)$(includedir)/onigposix.h
++	$(INSTALL) -m 644 $(srcdir)/oniggnu.h    $(DESTDIR)$(includedir)/oniggnu.h
+ 
+ uninstall:
+ 	-rm -f $(libdir)/$(libname)
+@@ -214,6 +214,9 @@ distclean: clean
  185: cpruby
  	patch -d $(RUBYDIR) -p0 < $(srcdir)/ruby185.patch
  

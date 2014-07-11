@@ -1,0 +1,6 @@
+Cgrep is a grep tool suitable for searching in large code repositories. It
+supports 30 programming languages and searches that go beyond the simple
+pattern matching. It enables context-aware filtering and semantic searches
+through wildcard and combinators.
+
+WWW: http://awgn.github.io/cgrep/

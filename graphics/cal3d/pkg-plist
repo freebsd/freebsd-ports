@@ -43,10 +43,9 @@ include/cal3d/submesh.h
 include/cal3d/tinyxml.h
 include/cal3d/transform.h
 include/cal3d/vector.h
-lib/libcal3d.so.12
-lib/libcal3d.a
-lib/libcal3d.la
 lib/libcal3d.so
+lib/libcal3d.so.12
+lib/libcal3d.so.12.0.0
 libdata/pkgconfig/cal3d.pc
 man/man1/cal3d_converter.1.gz
 @dirrm include/cal3d

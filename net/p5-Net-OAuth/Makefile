@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	An implementation of the OAuth protocol
+COMMENT=	Implementation of the OAuth protocol
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0.31:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0.06:${PORTSDIR}/devel/p5-Class-Data-Inheritable \

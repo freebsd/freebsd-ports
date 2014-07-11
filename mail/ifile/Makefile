@@ -7,7 +7,7 @@ CATEGORIES=	mail textproc
 MASTER_SITES=	http://people.csail.mit.edu/jrennie/ifile/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An application of machine learning to e-mail filtering
+COMMENT=	Application of machine learning to e-mail filtering
 
 USES=		gmake
 GNU_CONFIGURE=	yes

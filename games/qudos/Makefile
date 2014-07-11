@@ -5,20 +5,19 @@ PORTNAME=	qudos
 PORTVERSION=	0.40.1
 PORTREVISION=	15
 CATEGORIES=	games
-MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
+MASTER_SITES=	http://www.bfeared.com/library/quake/archive/quakedev/qudos/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		QuDos-${PORTVERSION}.pk3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced OpenGL-only Quake II engine
 
 USES=		gmake tar:bzip2
-
 MAKE_ENV=	WITH_DATADIR=YES WITH_LIBDIR=YES WITH_XMMS=NO \
-		DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}"
-PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" VER="${PORTVERSION}"
+		DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}" BUILD_ARTS_SND=NO
+PLIST_SUB=	LIBDIR="${LIBDIR:S,${PREFIX}/,,}" VER="${PORTVERSION}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 MOD_LIST=	3ZB2 CTF JABOT ROGUE XATRIX ZAERO
@@ -51,9 +50,6 @@ SDLGL_DESC=	Build SDL OpenGL renderer
 XATRIX_DESC=	Build The Reckoning (Xatrix) mission pack
 ZAERO_DESC=	Build Zaero mission pack
 
-MAKE_ENV+=	BUILD_ARTS_SND=NO
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for mod in ${MOD_LIST}
@@ -68,8 +64,8 @@ PLIST_SUB+=	${mod}="@comment "
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
 USE_GL=		glu
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 .endif
 
 .if ${PORT_OPTIONS:MSDL} || ${PORT_OPTIONS:MSDLGL}
@@ -77,7 +73,7 @@ USE_SDL=	sdl
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	BUILD_QUAKE2=YES
 PLIST_SUB+=	CLIENT=""
 Q2BIN+=		${PORTNAME}
@@ -176,8 +172,11 @@ MAKE_ENV+=	WITH_X86_ASM=NO
 
 post-patch:
 # Resolve name collision with jpeg-8
-	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
 		${WRKSRC}/src/ref_gl/gl_image.c
+# Remove controversial options unsupported by modern compilers (e.g. Clang)
+	@${REINPLACE_CMD} -e 's|-falign-loops=2 -falign-jumps=2 ||' \
+		${WRKSRC}/src/ref_gl/Makefile ${WRKSRC}/Makefile
 
 post-build:
 .for bin in ${Q2BIN}
@@ -186,30 +185,32 @@ post-build:
 
 do-install:
 .for bin in ${Q2BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${LIBDIR}/baseq2
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/baseq2
 .for ref in ${Q2REF}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/ref_q2${ref}.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/ref_q2${ref}.so \
+		${STAGEDIR}${LIBDIR}
 .endfor
 .for snd in ${Q2SND}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/snd_${snd}.so ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/snd_${snd}.so ${STAGEDIR}${LIBDIR}
 .endfor
 .if ${PORT_OPTIONS:MGAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so \
+		${STAGEDIR}${LIBDIR}/baseq2
 .endif
 .for mod in ${MOD_LIST:tl}
 .if ${PORT_OPTIONS:M${mod:tu}}
-	@${MKDIR} ${LIBDIR}/${mod}
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${mod}/game.so ${LIBDIR}/${mod}
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/${mod}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${mod}/game.so \
+		${STAGEDIR}${LIBDIR}/${mod}
 .endif
 .endfor
-	${INSTALL_DATA} ${_DISTDIR}/QuDos-${PORTVERSION}.pk3 ${LIBDIR}/baseq2
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/QuDos-${PORTVERSION}.pk3 \
+		${STAGEDIR}${LIBDIR}/baseq2
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/QuDos.txt \
-		${WRKSRC}/docs/Ogg_readme.txt ${DOCSDIR}
-.endif
+		${WRKSRC}/docs/Ogg_readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	10
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C library for creating IP packets
+COMMENT=	C library for creating IP packets
 
 CFLAGS+=	-fPIC
 

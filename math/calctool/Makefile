@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/nsayer
 DISTNAME=	calctool-2.4pl13
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multi-GUI (terminal, X, XView) calculator program
+COMMENT=	Multi-GUI (terminal, X, XView) calculator program
 
 USE_LDCONFIG=	yes
 

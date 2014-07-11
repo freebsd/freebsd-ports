@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ptkei
-PORTVERSION=	1.18.1
-PORTREVISION=	4
+PORTVERSION=	2.00.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.lfmm.org/ptkei/
+MASTER_SITES=	SF/ptkei2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Python/Tk graphical client for Wolfpack Empire servers
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \

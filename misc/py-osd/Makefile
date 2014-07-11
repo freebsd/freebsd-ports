@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyosd-${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	A python wrapper for osd, for displaying text on your X display
+COMMENT=	Python wrapper for osd, for displaying text on your X display
 
 LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
 RUN_DEPENDS=	${LOCALBASE}/bin/twistd:${PORTSDIR}/devel/py-twisted

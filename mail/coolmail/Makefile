@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=system/mail/biffs
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	udo.schweigert@siemens.com
-COMMENT=	A Xbiff like mail tool with animated 3D graphics
+COMMENT=	Xbiff like mail tool with animated 3D graphics
 
 PLIST_FILES=	bin/coolmail \
 		man/man1/coolmail.1.gz

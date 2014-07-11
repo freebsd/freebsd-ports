@@ -4,8 +4,7 @@
 PORTNAME=	aestats
 PORTVERSION=	5.39
 CATEGORIES=	games
-MASTER_SITES=	ftp://download:download@download.hugelaser.com/aeons.poweredbylasers.com/${PORTNAME}/ \
-		http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org

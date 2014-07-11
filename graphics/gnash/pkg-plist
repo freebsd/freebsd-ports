@@ -203,7 +203,6 @@ lib/gnash/libgnashbase.so
 lib/gnash/libgnashcore-%%GNASHVER%%.so
 lib/gnash/libgnashcore.so
 lib/gnash/libgnashdevice-%%GNASHVER%%.so
-lib/gnash/libgnashdevice.la
 lib/gnash/libgnashdevice.so
 lib/gnash/libgnashmedia-%%GNASHVER%%.so
 lib/gnash/libgnashmedia.so

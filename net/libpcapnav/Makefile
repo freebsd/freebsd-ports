@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A libpcap wrapper library
+COMMENT=	libpcap wrapper library
 
 USES=		libtool
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}

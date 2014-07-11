@@ -8,7 +8,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 
 MAINTAINER=	jmohacsi@bsd.hu
-COMMENT=	A simple TCP session re-engineering tool
+COMMENT=	Simple TCP session re-engineering tool
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes

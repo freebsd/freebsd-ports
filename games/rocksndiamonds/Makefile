@@ -3,6 +3,7 @@
 
 PORTNAME=	rocksndiamonds
 PORTVERSION=	3.3.1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
 		http://www.artsoft.org/RELEASES/rocksndiamonds/levels/:levels_artsoft \

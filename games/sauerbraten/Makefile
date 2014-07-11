@@ -11,12 +11,11 @@ DISTNAME=	${PORTNAME}_2013_02_03_collect_edition_linux
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
 
-LICENSE_COMB=	multi
 LICENSE=	MIT ZLIB
+LICENSE_COMB=	multi
 
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 CONFIGURE_ENV=	ACLOCAL=true AUTOCONF=true AUTOMAKE=true
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
@@ -35,8 +34,6 @@ DEDICATED_DESC=	Build dedicated server
 MASTER_DESC=	Build master server
 
 SUB_FILES=	sauer_client sauer_master sauer_server pkg-message
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -73,25 +70,20 @@ post-patch:
 
 do-install:
 .for f in ${SAUER_BIN}
-	${INSTALL_SCRIPT} ${WRKDIR}/sauer_${f} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/sauer_${f} ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/sauer_${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/sauer_${f} ${STAGEDIR}${PREFIX}/libexec
 .endfor
 .if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 post-install:
 .for f in ${SAUER_BIN}
 	@${ECHO_CMD} bin/sauer_${f} >> ${TMPPLIST}
 	@${ECHO_CMD} libexec/sauer_${f} >> ${TMPPLIST}
 .endfor
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>

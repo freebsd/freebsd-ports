@@ -8,23 +8,19 @@ CATEGORIES=	devel
 MASTER_SITES=	http://romain.blogreen.org/distfiles/
 DISTNAME=	FlickrNet${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}-Src-48055
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flickr .Net API Library
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
-
-USES=		gmake zip
+USES=		gmake zip mono
 WRKSRC=		${WRKDIR}/FlickrNet
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/gmcs -t:library -out:FlickrNet.dll -r:System.Data -r:System.Web -r:System.Drawing *.cs
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/mono/flickrnet
-	cd ${WRKSRC} && ${INSTALL_DATA} FlickrNet.dll ${PREFIX}/lib/mono/flickrnet
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/mono/flickrnet
+	cd ${WRKSRC} && ${INSTALL_DATA} FlickrNet.dll ${STAGEDIR}${PREFIX}/lib/mono/flickrnet
 	cd ${WRKSRC} && ${SED} -e 's|@prefix@|${PREFIX}|' < flickrnet.pc.in > flickrnet.pc
-	cd ${WRKSRC} && ${INSTALL_DATA} flickrnet.pc ${PREFIX}/libdata/pkgconfig
+	cd ${WRKSRC} && ${INSTALL_DATA} flickrnet.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>

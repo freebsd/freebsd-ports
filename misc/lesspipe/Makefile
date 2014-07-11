@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 
 MAINTAINER=	slaven@rezic.de
-COMMENT=	A preprocessor for less
+COMMENT=	Preprocessor for less
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

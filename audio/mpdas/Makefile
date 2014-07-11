@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpdas
-PORTVERSION=	0.3.0
-PORTREVISION=	5
+PORTVERSION=	0.3.1
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
@@ -13,7 +12,7 @@ COMMENT=	MPD AudioScrobbler written in C++ supporting the latest protocol
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libmpd.so:${PORTSDIR}/audio/libmpd
 
-USES=		pkgconfig tar:bzip2
+USES=		pkgconfig
 
 USE_RC_SUBR=	mpdas
 

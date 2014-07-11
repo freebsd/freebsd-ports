@@ -3,7 +3,7 @@
 
 PORTNAME=	openipmi
 PORTVERSION=	2.0.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library
 DISTNAME=	OpenIPMI-${PORTVERSION}
@@ -11,24 +11,18 @@ DISTNAME=	OpenIPMI-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complex IPMI management software
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libpopt.so:${PORTSDIR}/devel/popt
 
-USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool
 
-AUTOMAKE_ARGS+=	--add-missing --copy --foreign
-ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		ipmi_ui.1 openipmicmd.1 openipmigui.1 \
-		openipmish.1 rmcp_ping.1 solterm.1
-MAN7=		ipmi_cmdlang.7 openipmi_conparms.7
-MAN8=		ipmilan.8
-
-OPTIONS_DEFINE=	SSL SNMP PERL PYTHON TCL TKINTER TRACE GDBM
+OPTIONS_DEFINE=	SSL SNMP PERL PYTHON TCL TKINTER GDBM
 OPTIONS_RADIO=	GLIB
 OPTIONS_RADIO_GLIB=	GLIB12 GLIB20
 SSL_DESC=	IPMI 2.0 RMCP+ encryption and authentication
@@ -37,12 +31,10 @@ PERL_DESC=	Perl interface for OpenIPMI library
 PYTHON_DESC=	Python interface for OpenIPMI library
 TCL_DESC=	TCL interface for OpenIPMI library
 TKINTER_DESC=	GUI for OpenIPMI, written in Python
-TRACE_DESC=	Enable backtrace inspecting
 GDBM_DESC=	Local SDR caching on startup
 GLIB12_DESC=	Simply OS handler for glib 1.2
 GLIB20_DESC=	Simply OS handler for glib 2.0
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libgdbm.so.3)
@@ -51,7 +43,7 @@ PORT_OPTIONS+=	GDBM
 
 .if ${PORT_OPTIONS:MSNMP}
 PORT_OPTIONS+=		SSL
-LIB_DEPENDS+=		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-ucdsnmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-ucdsnmp=no
@@ -87,20 +79,13 @@ PLIST_SUB+=		PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-WITH_SWIG=		yes
 USE_PYTHON=		yes
-CONFIGURE_ARGS+=	--with-python
+CONFIGURE_ARGS+=	--with-python --with-swig
+BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 PLIST_SUB+=		PYTHON=""
 .else
-CONFIGURE_ARGS+=	--with-python=no
+CONFIGURE_ARGS+=	--with-python=no --with-swig=no
 PLIST_SUB+=		PYTHON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSWIG}
-BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
-CONFIGURE_ARGS+=	--with-swig
-.else
-CONFIGURE_ARGS+=	--with-swig=no
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
@@ -114,12 +99,8 @@ CONFIGURE_ARGS+=	--with-tcl=no
 PLIST_SUB+=		TCL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTRACE}
-LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
-.endif
-
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
 .endif
 
 .if ${PORT_OPTIONS:MGLIB12}
@@ -139,5 +120,9 @@ PLIST_SUB+=		GLIB20=""
 CONFIGURE_ARGS+=	--with-glib=no
 PLIST_SUB+=		GLIB20="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} '/libOpenIPMIutils_la_LIBADD =/s/$$/ -lexecinfo/' \
+		${WRKSRC}/utils/Makefile.in
 
 .include <bsd.port.mk>

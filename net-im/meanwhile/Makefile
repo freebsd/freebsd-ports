@@ -3,23 +3,23 @@
 
 PORTNAME=	meanwhile
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open Source implementation of the Lotus Sametime protocol
 
-USE_AUTOTOOLS=	libtool
-USES=		pkgconfig gmake pathfix
+USES=		gmake libtool pathfix pkgconfig
+USE_GCC=	any
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	any
 CONFIGURE_ARGS=	--enable-doxygen=no \
 		--with-gmp-prefix=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-doc-${PORTVERSION}
 

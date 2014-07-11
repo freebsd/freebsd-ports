@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2012-12-12 23:55:46.000000000 +0100
-+++ CMakeLists.txt	2013-02-24 15:50:09.000000000 +0100
+--- CMakeLists.txt.orig	2014-06-15 18:53:10.000000000 +0200
++++ CMakeLists.txt	2014-07-08 16:13:02.647407659 +0200
 @@ -16,6 +16,11 @@
  SET(PODOFO_SOVERSION "${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
  SET(PODOFO_LIBVERSION "${PODOFO_SOVERSION}")
@@ -12,7 +12,7 @@
  
  #
  # Main includes
-@@ -326,6 +331,7 @@
+@@ -340,6 +345,7 @@
  	MESSAGE("Libidn not found. AES-256 Encryption support will be disabled")
  ENDIF(LIBIDN_FOUND)
  
@@ -20,7 +20,7 @@
  FIND_PACKAGE(LIBJPEG)
  
  IF(LIBJPEG_FOUND)
-@@ -335,7 +341,9 @@
+@@ -349,7 +355,9 @@
  ELSE(LIBJPEG_FOUND)
    MESSAGE("Libjpeg not found. JPEG support will be disabled")
  ENDIF(LIBJPEG_FOUND)
@@ -30,7 +30,7 @@
  FIND_PACKAGE(TIFF)
  
  IF(TIFF_FOUND)
-@@ -345,7 +353,9 @@
+@@ -359,7 +367,9 @@
  ELSE(TIFF_FOUND)
    MESSAGE("Libtiff not found. TIFF support will be disabled")
  ENDIF(TIFF_FOUND)
@@ -40,42 +40,43 @@
  FIND_PACKAGE(PNG)
  
  IF(PNG_FOUND)
-@@ -355,8 +365,10 @@
+@@ -369,9 +379,11 @@
  ELSE(PNG_FOUND)
    MESSAGE("LibPng not found. PNG support will be disabled")
  ENDIF(PNG_FOUND)
 +ENDIF(WANT_PNG)
  
+ IF(NOT PODOFO_BUILD_LIB_ONLY)
  
 +IF(WANT_CppUnit)
  FIND_PACKAGE(CppUnit)
  
  IF(CppUnit_FOUND)
-@@ -366,6 +378,7 @@
+@@ -381,6 +393,7 @@
  ELSE(CppUnit_FOUND)
    MESSAGE("Cppunit not found. No unit tests will be built.")
  ENDIF(CppUnit_FOUND)
 +ENDIF(WANT_CppUnit)
  
- FIND_PACKAGE(OpenSSL)
+ ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
  
-@@ -425,6 +438,7 @@
- 	ENDIF(NOT WIN32)
+@@ -443,6 +456,7 @@
  ENDIF(DEFINED JPEG_RUNTIME_COMPATIBLE)
  
+ IF(NOT PODOFO_BUILD_LIB_ONLY)
 +IF(WANT_LUA)
  FIND_PACKAGE(LUA)
  IF(LUA_FOUND)
  	# If we have lua, we can build podofoimpose.
-@@ -436,6 +450,7 @@
+@@ -454,6 +468,7 @@
  ELSE(LUA_FOUND)
  	MESSAGE("Lua not found - PoDoFoImpose and PoDoFoColor will be built without Lua support")
  ENDIF(LUA_FOUND)
 +ENDIF(WANT_LUA)
+ ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
  
  
- # Check if we should build a multithreaded version of PoDoFo
-@@ -463,9 +478,6 @@
+@@ -482,9 +497,6 @@
  ENDIF(WANT_BOOST)
  
  INCLUDE_DIRECTORIES(
@@ -85,7 +86,7 @@
      ${FREETYPE_INCLUDE_DIR}
      ${ZLIB_INCLUDE_DIR}
      ${EXTRA_INCLUDES}
-@@ -505,7 +517,7 @@
+@@ -524,7 +536,7 @@
  #
  # Setup directories we will need
  #

@@ -9,7 +9,7 @@ MASTER_SITES=	http://shounen.ru/soft/avinfo/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}unix
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A utility for displaying AVI header information
+COMMENT=	Utility for displaying AVI header information
 
 USES=		bison gmake
 

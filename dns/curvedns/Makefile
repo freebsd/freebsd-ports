@@ -1,14 +1,20 @@
 # Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
 # $FreeBSD$
 
-PORTNAME=		curvedns
-PORTVERSION=		0.88.b
-PORTREVISION=		3
-CATEGORIES=		dns
-DISTNAME=		curvedns-0.88-unstable
+PORTNAME=	curvedns
+PORTVERSION=	0.88.b
+PORTREVISION=	5
+CATEGORIES=	dns
+DISTNAME=	curvedns-0.88-unstable
 
 MAINTAINER=	vsevolod@FreeBSD.org
-COMMENT=		Forwarder adding DNSCurve to an authoritative nameserver
+COMMENT=	Forwarder adding DNSCurve to an authoritative nameserver
+
+LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
+		libsodium.so:${PORTSDIR}/security/libsodium \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
@@ -17,22 +23,15 @@ GH_COMMIT=	a88e27e
 
 ALL_TARGET=	targets
 
-LIB_DEPENDS=		libev.so:${PORTSDIR}/devel/libev \
-					libsodium.so:${PORTSDIR}/security/libsodium
-RUN_DEPENDS=		setuidgid:${PORTSDIR}/sysutils/daemontools
-BUILD_DEPENDS=		bash:${PORTSDIR}/shells/bash
-
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USERS=			bind
-GROUPS=			bind
-CURVE_UID=		53
-CURVE_GID=		53
+USERS=		bind
+GROUPS=		bind
+CURVE_UID=	53
+CURVE_GID=	53
 
-SUB_FILES=		pkg-message
-
-.include <bsd.port.pre.mk>
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/curvedns ${WRKSRC}/curvedns-keygen ${STAGEDIR}${PREFIX}/bin/
@@ -41,6 +40,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/curvedns-log-run ${STAGEDIR}${PREFIX}/etc/curvedns/log/run.sample
 	${ECHO_CMD} ${CURVE_UID} > ${STAGEDIR}${PREFIX}/etc/curvedns/env/UID
 	${ECHO_CMD} ${CURVE_GID} > ${STAGEDIR}${PREFIX}/etc/curvedns/env/GID
-	${CHMOD} 0700 ${STAGEDIR}${PREFIX}/etc/curvedns/env
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

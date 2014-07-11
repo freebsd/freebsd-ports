@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	james/${PORTNAME}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Java parser for e-mail message streams
+COMMENT=	Java parser for e-mail message streams
 
 LICENSE=	APACHE20
 

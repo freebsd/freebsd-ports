@@ -1,4 +1,3 @@
-lib/gmpc/plugins/lastfmplugin.la
 lib/gmpc/plugins/lastfmplugin.so
 share/locale/bg/LC_MESSAGES/gmpc-lastfm.mo
 share/locale/bs/LC_MESSAGES/gmpc-lastfm.mo

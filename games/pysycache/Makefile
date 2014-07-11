@@ -16,11 +16,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 USES=		zip
 USE_PYTHON=	yes
 NO_BUILD=	yes
-
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/datas.py ${WRKSRC}/datas.py \
 		${WRKSRC}/datasclass.py ${WRKSRC}/pysybuttons.py ${WRKSRC}/pysyclick.py ${WRKSRC}/pysymove.py \
@@ -30,29 +29,23 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/pysycache.py ${PREFIX}/bin/pysycache.py
+	@${INSTALL_SCRIPT} ${WRKSRC}/pysycache.py ${STAGEDIR}${PREFIX}/bin/pysycache.py
 	@${RM} ${WRKSRC}/pysycache.py
 .for DIRE in fonts help images sounds themes-buttons themes-click themes-move
-	@${MKDIR} ${DATADIR}/${DIRE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/${DIRE}/{}" \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/${DIRE}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \; && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
 .endfor
 .for FILE in *.py *.pyc *.txt *.png
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DATADIR}
 .endfor
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in AUTHORS ChangeLog NEWS README
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@cd ${WRKSRC}/doc/pysycache && \
-		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
-.endif
-
-	@${CAT} ${PKGMESSAGE}
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
 
 .include <bsd.port.mk>

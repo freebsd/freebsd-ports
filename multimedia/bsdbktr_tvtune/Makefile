@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://mina.naguib.ca/dist/
 
 MAINTAINER=	mina.website@naguib.ca
-COMMENT=	A console Brooktree (bktr) TV tuner
+COMMENT=	Console Brooktree (bktr) TV tuner
 
 ONLY_FOR_ARCHS=	alpha i386
 PLIST_FILES=	bin/bsdbktr_tvtune

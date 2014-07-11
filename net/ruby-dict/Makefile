@@ -10,7 +10,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A client-side implementation of the DICT protocol in Ruby
+COMMENT=	Client-side implementation of the DICT protocol in Ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

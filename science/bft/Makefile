@@ -3,6 +3,7 @@
 
 PORTNAME=	bft
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -14,9 +15,10 @@ LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		zip
+USES=		libtool zip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 TESTSBIN=	bft_test bft_mem_usage_test bft_printf_test
 

@@ -18,7 +18,6 @@ __strtol_internal(__const char *__restrict __nptr, char **__restrict __endptr,
  * if we do so.  Instead, copy only mtime field from FreeBSD's ``struct
  * stat'' into proper place of provided Linux' ``struct stat'' buffer.
  */
-
 struct __linux_stat {
 	char pad0[0x40];
 	struct timespec __st_mtim;

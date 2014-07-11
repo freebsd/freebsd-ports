@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/weekly/
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	A tool for extracting portions of pcap files
+COMMENT=	Tool for extracting portions of pcap files
 
 PLIST_FILES=	sbin/tcpslice \
 		man/man1/tcpslice.1.gz

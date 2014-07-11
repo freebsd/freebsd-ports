@@ -3,7 +3,7 @@
 
 PORTNAME=	maelstrom
 PORTVERSION=	3.0.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://slouken.libsdl.org/projects/Maelstrom/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

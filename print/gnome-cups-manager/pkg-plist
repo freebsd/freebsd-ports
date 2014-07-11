@@ -8,9 +8,9 @@ include/libgnomecups-1/libgnomecups/gnome-cups-ui-init.h
 include/libgnomecups-1/libgnomecups/gnome-cups-ui-print.h
 include/libgnomecups-1/libgnomecups/gnome-cups-ui-util.h
 lib/libgnomecupsui-1.0.a
-lib/libgnomecupsui-1.0.la
 lib/libgnomecupsui-1.0.so
 lib/libgnomecupsui-1.0.so.1
+lib/libgnomecupsui-1.0.so.1.0.0
 libdata/bonobo/servers/Gnome_CupsManager.server
 libdata/pkgconfig/libgnomecupsui-1.0.pc
 sbin/gnome-cups-switch
@@ -68,7 +68,6 @@ share/pixmaps/gnome-cups-manager/printer-tray-normal.png
 share/pixmaps/gnome-cups-manager/printer-tray-stopped.png
 @dirrm share/pixmaps/gnome-cups-manager
 @dirrm %%DATADIR%%
-@unexec rmdir %D/sbin 2>/dev/null || /usr/bin/true
 @dirrmtry include/libgnomecups-1/libgnomecups
 @dirrmtry include/libgnomecups-1
 @dirrmtry share/locale/xh/LC_MESSAGES

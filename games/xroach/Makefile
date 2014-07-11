@@ -5,13 +5,11 @@ PORTNAME=	xroach
 PORTVERSION=	4.4
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_BACKUP}
+MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Cockroaches hide under your windows
-
-BROKEN=		no distinfo
 
 USE_XORG=	x11
 PLIST_FILES=	bin/xroach man/man6/xroach.6.gz

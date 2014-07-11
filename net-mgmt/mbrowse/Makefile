@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	eg@fbsd.lt
-COMMENT=	An SNMP MIB Browser for X
+COMMENT=	SNMP MIB Browser for X
 
 LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 

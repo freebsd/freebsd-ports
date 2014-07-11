@@ -65,13 +65,13 @@ include/volume_io/volume.h
 include/volume_io/volume_cache.h
 include/voxel_loop.h
 lib/libminc2.a
-lib/libminc2.la
 lib/libminc2.so
-lib/libminc2.so.2
+lib/libminc2.so.1
+lib/libminc2.so.1.1.2
 lib/libvolume_io2.a
-lib/libvolume_io2.la
 lib/libvolume_io2.so
-lib/libvolume_io2.so.2
+lib/libvolume_io2.so.1
+lib/libvolume_io2.so.1.1.2
 man/man1/dcm2mnc.1.gz
 man/man1/ecattominc.1.gz
 man/man1/invert_raw_image.1.gz

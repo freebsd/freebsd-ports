@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_Aug13
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
-COMMENT=	A simple STUN (RFC 3489) server and client
+COMMENT=	Simple STUN (RFC 3489) server and client
 
 USES=		gmake
 USE_RC_SUBR=	stund

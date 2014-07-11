@@ -1,4 +1,3 @@
-lib/gmpc/plugins/discogsplugin.la
 lib/gmpc/plugins/discogsplugin.so
 share/locale/bs/LC_MESSAGES/gmpc-discogs.mo
 share/locale/de/LC_MESSAGES/gmpc-discogs.mo

@@ -1,15 +1,15 @@
 # Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
-PORTNAME=		squirrelmail-plugins
+PORTNAME=	squirrelmail-plugins
 PORTVERSION=	1.0
 PORTREVISION=	2
-CATEGORIES=		mail www
+CATEGORIES=	mail www
 MASTER_SITES=	# none
-DISTFILES=		# none
+DISTFILES=	# none
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A "meta-port" to install SquirrelMail plugins
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	"meta-port" to install SquirrelMail plugins
 
 NO_BUILD=	yes
 NO_MTREE=	yes

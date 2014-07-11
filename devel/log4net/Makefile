@@ -9,37 +9,25 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	incubator/log4net/${PORTVERSION}
 DISTNAME=	incubating-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port for .NET of the Apache Logging Services project
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		mono zip
 NO_BUILD=	yes
-
 SUB_FILES=	log4net.pc
 SUB_LIST+=	PORTVERSION=${PORTVERSION}
+OPTIONS_DEFINE= DOCS EAMPLES
 
-.if !defined (NOPORTDOCS)
-PORTDOCS=	*
-.endif
-.if !defined (NOPORTEXAMPLES)
-PORTEXAMPLES=	*
-.endif
-
-NO_STAGE=	yes
 do-install:
-	@(cd ${INSTALL_WRKSRC}/bin/mono/2.0/release && ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil /root ${PREFIX}/lib/ /gacdir ${PREFIX}/lib /package 2.0 /i log4net.dll)
-	${INSTALL_DATA} ${WRKDIR}/log4net.pc ${PREFIX}/libdata/pkgconfig/log4net.pc
-.if !defined (NOPORTDOCS)
-	@${ECHO_CMD} "Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
-.if !defined (NOPORTEXAMPLES)
+	@(cd ${INSTALL_WRKSRC}/bin/mono/2.0/release && ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil /root ${STAGEDIR}${PREFIX}/lib/ /gacdir ${STAGEDIR}${PREFIX}/lib /package 2.0 /i log4net.dll)
+	${INSTALL_DATA} ${WRKDIR}/log4net.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/log4net.pc
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	@${ECHO_CMD} "Installing examples..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

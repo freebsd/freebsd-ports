@@ -1,14 +1,13 @@
-# Created by: alepulver
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	psychomod
 PORTVERSION=	3.1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alepulver
+MASTER_SITES=	LOCAL/alepulver
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Psychomod modification for Quake II
 
 USES=		gmake tar:bzip2
@@ -17,6 +16,8 @@ BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	release
 
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
+
+OPTIONS_DEFINE=	DOCS
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
@@ -28,7 +29,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${Q2DIR}/${PORTNAME}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/psychomod/game.so \
 		${STAGEDIR}${Q2DIR}/${PORTNAME}
-	cd ${WRKSRC} && ${INSTALL_DATA} *.cfg pak0.pak ${STAGEDIR}${Q2DIR}/${PORTNAME}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.cfg pak0.pak \
+		${STAGEDIR}${Q2DIR}/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 

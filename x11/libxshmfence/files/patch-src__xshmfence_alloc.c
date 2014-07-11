@@ -1,8 +1,11 @@
---- src/xshmfence_alloc.c	2013-11-20 17:13:08.000000000 -0500
-+++ src/xshmfence_alloc.c	2013-12-09 16:06:17.000000000 -0500
-@@ -41,11 +41,15 @@
+--- src/xshmfence_alloc.c.orig	2013-11-20 17:13:08.000000000 -0500
++++ src/xshmfence_alloc.c	2014-07-08 16:39:18.000000000 -0400
+@@ -39,10 +39,14 @@
+ xshmfence_alloc_shm(void)
+ {
  	char	template[] = SHMDIR "/shmfd-XXXXXX";
- 	int	fd;
+-	int	fd;
++	int	fd = -1;
  
 -#ifdef O_TMPFILE
 +#if defined(O_CLOEXEC)
@@ -10,11 +13,7 @@
 +	fd = mkostemp(template, O_CLOEXEC);
 +#elif defined(O_TMPFILE)
  	fd = open(SHMDIR, O_TMPFILE|O_RDWR|O_CLOEXEC|O_EXCL, 0666);
--	if (fd < 0)
- #endif
-+	if (fd < 0)
-         {
 +#endif
-             fd = mkstemp(template);
-             if (fd < 0)
- 		return fd;
+ 	if (fd < 0)
+ #endif
+         {

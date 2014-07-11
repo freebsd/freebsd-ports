@@ -3,7 +3,7 @@
 
 PORTNAME=	dirac
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-codec/Dirac-${PORTVERSION}
 
@@ -11,7 +11,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Open source video codec from the BBC
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix
+USES=		gmake libtool:oldver pathfix shebangfix
+SHEBANG_FILES=	${WRKSRC}/tests/create_dirac_testfile.pl
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-mmx

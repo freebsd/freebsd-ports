@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PHP extension for CVS pserver client
+COMMENT=	PHP extension for CVS pserver client
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

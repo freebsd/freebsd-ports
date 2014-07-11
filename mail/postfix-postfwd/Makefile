@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.${PORTNAME}.org/old/
 PKGNAMEPREFIX=	postfix-
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	A postfix firewall policy daemon
+COMMENT=	Postfix firewall policy daemon
 
 LICENSE=	BSD
 

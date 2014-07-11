@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/algebra/Kant/Kash_3/ \
 DISTFILES=	${PORTNAME:tu}-${ELFTYPE}-i686-${PORTVERSION:S|.|-|g}.tar.bz2
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A computer algebra system for computing in algebraic number fields
+COMMENT=	Computer algebra system for computing in algebraic number fields
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 

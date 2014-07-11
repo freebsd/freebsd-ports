@@ -1,0 +1,13 @@
+--- tkrat/Makefile.in.orig	2014-07-05 02:33:47.024291586 +0600
++++ tkrat/Makefile.in	2014-07-05 02:34:16.376307317 +0600
+@@ -13,8 +13,8 @@
+    exec_prefix = @exec_prefix@
+        MAN_DIR = @mandir@
+        BIN_DIR = @bindir@
+-      DATA_DIR = @datadir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
+-       LIB_DIR = @libdir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
++      DATA_DIR = @datadir@/tkrat
++       LIB_DIR = @libdir@/tkrat
+     sysconfdir = @sysconfdir@
+ 
+        INSTALL = @INSTALL@

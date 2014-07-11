@@ -354,6 +354,7 @@ OPENMPI_DESC?=		Parallel processing support via Open MPI
 OPENRAW_DESC?=		RAW camera format support
 OPENSSL_DESC?=		SSL/TLS support via OpenSSL
 OPTIMIZED_CFLAGS_DESC?=	Use extra compiler optimizations
+OPUS_DESC?=		Opus audio codec support
 ORACLE_DESC?=		Oracle database support
 ORACLE_JDBC_DESC?=	JDBC connection to Oracle databases
 OSD_DESC?=		On-screen display support

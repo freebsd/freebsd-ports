@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=kris
 DISTNAME=	netpipes-4.2-export
 
 MAINTAINER=	doconnor@gsoft.com.au
-COMMENT=	A group of shell utilities to connect programs to sockets
+COMMENT=	Group of shell utilities to connect programs to sockets
 
 CONFLICTS=	timelimit-[0-9]*
 

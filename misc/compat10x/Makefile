@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A convenience package to install the compat10x libraries
+COMMENT=	Convenience package to install the compat10x libraries
 
 LICENSE=	BSD2CLAUSE
 

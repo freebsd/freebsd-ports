@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=apps/financial/spreadsheet
 EXTRACT_ONLY=
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	A Commercial Spreadsheet
+COMMENT=	Commercial Spreadsheet
 
 NO_PACKAGE=	"nothing to build. commercial software"
 

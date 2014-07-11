@@ -6,8 +6,10 @@ etc/minetest.conf.example
 man/man6/minetest.6.gz
 man/man6/minetestserver.6.gz
 share/applications/minetest.desktop
+share/appdata/minetest.appdata.xml
 share/icons/hicolor/scalable/apps/minetest-icon.svg
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry share/appdata

@@ -1,4 +1,5 @@
 bin/mailtray
+man/man1/mailtray.1.gz
 %%DATADIR%%/alert.wav
 %%DATADIR%%/mailtrayrc_default.py
 %%DATADIR%%/icons/disconnect.png

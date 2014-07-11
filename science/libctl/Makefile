@@ -3,28 +3,21 @@
 
 PORTNAME=	libctl
 PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science math
 MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Control Language Library
 
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
-USES=		fortran
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
+USES=		fortran libtool
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		does not build
-.endif
-
-.if ${ARCH} == i386 && ${OSVERSION} < 901000
-BROKEN=		does not link due to libtool not respecting CC
-.endif
+BROKEN_sparc64=	does not build
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -32,4 +25,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

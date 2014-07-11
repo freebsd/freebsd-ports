@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	A mailing list manager
+COMMENT=	Mailing list manager
 
 USES=		shebangfix perl5
 

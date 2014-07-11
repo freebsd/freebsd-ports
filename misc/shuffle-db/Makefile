@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/rebuild_db/1.0-rc1
 DISTNAME=	rebuild_db-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	An iPod shuffle database builder
+COMMENT=	IPod shuffle database builder
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

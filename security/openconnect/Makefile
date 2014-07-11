@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
 		--without-stoken
 USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
+USE_PYTHON_BUILD=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	PROXY GNUTLS

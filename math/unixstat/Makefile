@@ -10,7 +10,7 @@ DISTNAME=	stat
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A statistics package designed for use with the Unix shell
+COMMENT=	Statistics package designed for use with the Unix shell
 
 RESTRICTED=	License does not allow mass redistribution.
 

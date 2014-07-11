@@ -11,9 +11,9 @@ etc/openslp/slp.spi.default
 @dirrm etc/openslp
 include/slp.h
 lib/libslp.a
-lib/libslp.la
 lib/libslp.so
 lib/libslp.so.1
+lib/libslp.so.1.0.1
 sbin/slpd
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1766.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2165.txt

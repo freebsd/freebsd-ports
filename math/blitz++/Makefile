@@ -9,7 +9,7 @@ MASTER_SITES=	SF/blitz/blitz/Blitz%2B%2B%20${PORTVERSION}
 DISTNAME=	blitz-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A C++ class library for scientific computing
+COMMENT=	C++ class library for scientific computing
 
 .ifndef NOPORTDOCS
 BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \

@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.enderunix.org/netustad/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Web based admin tool that manages network services
+COMMENT=	Web based admin tool that manages network services
 
 USE_RC_SUBR=	${PORTNAME}
 USES=		gettext

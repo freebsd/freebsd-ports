@@ -9,7 +9,7 @@ DISTVERSION=	${PORTVERSION:S/.//}
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	A popular programmable MUD client, with macro support and more
+COMMENT=	Popular programmable MUD client, with macro support and more
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink --datadir=${PREFIX}/lib

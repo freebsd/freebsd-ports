@@ -419,6 +419,7 @@
     SUBDIR += etcd
     SUBDIR += etcdctl
     SUBDIR += etl
+    SUBDIR += euca2ools
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
     SUBDIR += exercisix
@@ -3439,6 +3440,7 @@
     SUBDIR += pmd
     SUBDIR += pmk
     SUBDIR += poco
+    SUBDIR += poco-devel
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
@@ -3750,6 +3752,7 @@
     SUBDIR += py-ode
     SUBDIR += py-odfpy
     SUBDIR += py-olefileio_pl
+    SUBDIR += py-omnijson
     SUBDIR += py-omniorb
     SUBDIR += py-optik
     SUBDIR += py-orbit

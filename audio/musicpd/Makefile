@@ -45,7 +45,6 @@ ADPLUG_DESC=	AdPlug support
 FLUIDSYNTH_DESC=FludSynth support (MIDI files)
 GME_DESC=	GME support (video game music files)
 LAME_DESC=	Support for MP3 Icecast Streams
-OPUS_DESC=	Opus decoder
 SIDPLAY2_DESC=	Sidplay support (C64 mono and stereo files)
 TREMOR_DESC=	Tremor decoder (not with SHOUTCAST; use VORBIS)
 TWOLAME_DESC=	TwoLAME support (mp2)

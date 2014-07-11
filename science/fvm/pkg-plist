@@ -28,11 +28,11 @@ include/fvm_trace.h
 include/fvm_triangulate.h
 include/fvm_writer.h
 lib/libfvm.a
-lib/libfvm.la
 lib/libfvm.so
 lib/libfvm.so.0
+lib/libfvm.so.0.0.0
 lib/libfvm_coupl.a
-lib/libfvm_coupl.la
 lib/libfvm_coupl.so
 lib/libfvm_coupl.so.0
+lib/libfvm_coupl.so.0.0.0
 man/man1/fvm-config.1.gz

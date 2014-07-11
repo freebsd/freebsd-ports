@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:CORNELIUS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Client Module For BBS Systems
+COMMENT=	Client Module For BBS Systems
 
 BUILD_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
 RUN_DEPENDS:=	${BUILD_DEPENDS}

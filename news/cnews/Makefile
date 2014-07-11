@@ -31,7 +31,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 		c-news-patch-pgpverify-1.12-perl4
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An news server
+COMMENT=	News server
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

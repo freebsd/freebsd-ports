@@ -3,7 +3,7 @@
 
 PORTNAME=	nessus-plugins
 PORTVERSION=	2.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -26,12 +26,7 @@ WRKSRC=		${WRKDIR}/nessus-plugins
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fetchcmd=wget
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} 's/-o $$(installuser)//' ${WRKSRC}/Makefile
 
-post-install:
-	@${ECHO} "================================================================================"
-	@${ECHO} "Use ${PREFIX}/sbin/nessus-update-plugins to update your plugin"
-	@${ECHO} "collection."
-	@${ECHO} "================================================================================"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

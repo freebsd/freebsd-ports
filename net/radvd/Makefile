@@ -7,7 +7,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A Linux/BSD IPv6 router advertisement daemon
+COMMENT=	Linux/BSD IPv6 router advertisement daemon
 
 LIB_DEPENDS=	libdaemon.so:${PORTSDIR}/devel/libdaemon
 

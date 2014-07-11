@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Mar  8 20:36:02 2006
-+++ Makefile	Sat Oct 21 20:44:00 2006
+--- Makefile.orig	2006-03-08 20:36:02.000000000 +0100
++++ Makefile	2014-07-08 21:18:54.475126894 +0200
 @@ -2,10 +2,10 @@
  # $Id: Makefile,v 1.76 2006/03/08 19:36:02 bw Exp $
  
@@ -21,9 +21,9 @@
  #LIBS = -L/usr/local/lib -lcrypt -lz -lintl
 +CC ?= gcc
 +CFLAGS += -DHAVE_ZLIB -DHAVE_GETTEXT -I${LOCALBASE}/include \
-+	-DINSTALL_DIR=\"${INSTALL_DIR}\" \
-+	-DCONF_DIR=\"${CONF_DIR}\" \
-+	-DLOCALE_DIR=\"${LOCALE_DIR}\"
++	-DINSTALL_DIR=\"${PREFIX}\" \
++	-DCONF_DIR=\"${PREFIX}/etc\" \
++	-DLOCALE_DIR=\"${PREFIX}\"
 +LIBS = -L${LOCALBASE}/lib -lcrypt -lz -lintl
  
  # You might want to add -DSHORT_NAMES to CFLAGS if you only intend to analyze
@@ -47,7 +47,7 @@
 +INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
 +INSTALL_SCRIPT = ${BSD_INSTALL_SCRIPT}
 +INSTALL_DATA = ${BSD_INSTALL_DATA}
-+INSTALL_DIR = ${PREFIX}
++INSTALL_DIR = ${DESTDIR}${PREFIX}
 +CONF_DIR = ${INSTALL_DIR}/etc
 +LOCALE_DIR = ${INSTALL_DIR}
  

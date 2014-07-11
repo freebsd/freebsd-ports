@@ -8,7 +8,7 @@ MASTER_SITES=	BERLIOS
 DISTNAME=	Netspoc-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Network Security Policy Compiler
+COMMENT=	Network Security Policy Compiler
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

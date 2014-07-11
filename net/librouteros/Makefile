@@ -3,7 +3,7 @@
 
 PORTNAME=	librouteros
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://verplant.org/librouteros/files/
 
@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -26,12 +27,8 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

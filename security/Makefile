@@ -240,6 +240,7 @@
     SUBDIR += knock
     SUBDIR += knocker
     SUBDIR += kpcli
+    SUBDIR += kqoauth
     SUBDIR += krb5
     SUBDIR += krb5-appl
     SUBDIR += krb5-maint

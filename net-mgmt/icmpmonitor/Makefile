@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multiple host icmp monitoring tool
+COMMENT=	Multiple host icmp monitoring tool
 
 GNU_CONFIGURE=	YES
 

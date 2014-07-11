@@ -8,45 +8,33 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port knocking implementation, both daemon and client
 
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 PATCH_STRIP=	-p1
 
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	installdirs install-exec install-data
 
-MAN1=	knock.1
-MAN5=	knockcf.5 doormand.cf.5 guestlist.5
-MAN8=	doormand.8
-
-GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message doormand.cf.EXAMPLE
 USE_RC_SUBR=	doorman
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
 		${WRKSRC}/doormand.c
 
 post-install:
-	${RM} -f ${PREFIX}/etc/doormand/ipf_add
-	${INSTALL_SCRIPT} ${FILESDIR}/ipf_add.atend ${PREFIX}/etc/doormand/ipf_add.atend
-	${INSTALL_SCRIPT} ${FILESDIR}/ipf_add.before_block ${PREFIX}/etc/doormand/ipf_add.before_block
-	${INSTALL_SCRIPT} ${FILESDIR}/ipf_delete ${PREFIX}/etc/doormand/ipf_delete
-	${INSTALL_DATA} ${WRKDIR}/doormand.cf.EXAMPLE ${PREFIX}/etc/doormand/doormand.cf.EXAMPLE
-	@for man in ${MAN1}; do \
-		${INSTALL_MAN} -C ${WRKSRC}/$$man ${PREFIX}/man/man1; \
-	done
-	@for man in ${MAN5}; do \
-		${INSTALL_MAN} -C ${WRKSRC}/$$man ${PREFIX}/man/man5; \
-	done
-	@for man in ${MAN8}; do \
-		${INSTALL_MAN} -C ${WRKSRC}/$$man ${PREFIX}/man/man8; \
-	done
-	@${CAT} ${PKGMESSAGE}
+	${RM} -f ${STAGEDIR}${PREFIX}/etc/doormand/ipf_add
+	(cd ${FILESDIR} && ${INSTALL_SCRIPT} ipf_add.atend ipf_delete \
+		ipf_add.before_block ${STAGEDIR}${PREFIX}/etc/doormand)
+	${INSTALL_DATA} ${WRKDIR}/doormand.cf.EXAMPLE \
+		${STAGEDIR}${PREFIX}/etc/doormand
+	${INSTALL_MAN} -C ${WRKSRC}/knock.1 ${STAGEDIR}${PREFIX}/man/man1
+	(cd ${WRKSRC} && ${INSTALL_MAN} -C knockcf.5 doormand.cf.5 guestlist.5 \
+		${STAGEDIR}${PREFIX}/man/man5)
+	${INSTALL_MAN} -C ${WRKSRC}/doormand.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>

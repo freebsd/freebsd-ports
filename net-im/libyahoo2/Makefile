@@ -8,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C library that handles the new Yahoo! Messenger protocol
+COMMENT=	C library that handles the new Yahoo! Messenger protocol
 
 USES=		tar:bzip2 libtool pathfix
 USE_GNOME=	glib20

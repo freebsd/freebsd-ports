@@ -7,7 +7,7 @@ CATEGORIES=	math rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	murashin@gfd-dennou.org
-COMMENT=	A class to handle units of physical quantities for Ruby
+COMMENT=	Class to handle units of physical quantities for Ruby
 
 USE_RUBY=	yes
 USE_RAKE=	yes

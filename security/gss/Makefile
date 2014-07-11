@@ -3,7 +3,7 @@
 
 PORTNAME=	gss
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -18,6 +18,7 @@ USES=		libtool pathfix pkgconfig perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kerberos5
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
@@ -34,16 +35,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 post-configure:
 	@cd ${WRKSRC}/doc && ${TOUCH} Makefile*
 
-pre-install:
-	@${MKDIR} ${PREFIX}/${INFO_PATH}
-
-.include <bsd.port.options.mk>
-
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgss.so
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

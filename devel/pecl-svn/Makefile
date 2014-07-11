@@ -14,7 +14,7 @@ COMMENT=	PECL extension to the libsvn library
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion16
+LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion16
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

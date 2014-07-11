@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A pure-ruby growl notifier
+COMMENT=	Pure-ruby growl notifier
 
 USE_RUBY=	yes
 NO_BUILD=	yes

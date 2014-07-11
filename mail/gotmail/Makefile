@@ -8,7 +8,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A script to fetch mail from a Hotmail or MSN mailbox
+COMMENT=	Script to fetch mail from a Hotmail or MSN mailbox
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \

@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-release-${VERSION_DATE}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Architecture for Highly Concurrent Server Applications
+COMMENT=	Architecture for Highly Concurrent Server Applications
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

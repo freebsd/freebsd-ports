@@ -519,7 +519,6 @@
 %%WORLD%%%%DATADIR%%/themes-move/world/514.dfg
 %%WORLD%%%%DATADIR%%/themes-move/world/00093.dfg
 %%AFRICA%%@dirrm %%DATADIR%%/themes-click/africa
-@dirrmtry %%DATADIR%%/themes-click
 %%ANIMALS%%@dirrm %%DATADIR%%/themes-move/animals/cache
 %%ANIMALS%%@dirrm %%DATADIR%%/themes-move/animals
 %%EARTH%%@dirrm %%DATADIR%%/themes-move/earth/cache
@@ -536,4 +535,3 @@
 %%VEHICLE%%@dirrm %%DATADIR%%/themes-move/vehicle
 %%WORLD%%@dirrm %%DATADIR%%/themes-move/world/cache
 %%WORLD%%@dirrm %%DATADIR%%/themes-move/world
-@dirrmtry %%DATADIR%%/themes-move

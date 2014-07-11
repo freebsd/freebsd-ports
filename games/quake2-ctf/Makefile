@@ -4,15 +4,13 @@
 PORTNAME=	ctf
 PORTVERSION=	1.52
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|:data|} \
+MASTER_SITES=	IDSOFTWARE/quake2/ctf/:data \
 		http://offload1.icculus.org/quake2/files/:src
-MASTER_SITE_SUBDIR=	quake2/ctf/:data
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
-DISTFILES=	${CTF_DATA}:data \
-		${CTF_SRC}:src
+DISTFILES=	${CTF_DATA}:data ${CTF_SRC}:src
 DIST_SUBDIR=	quake2lnx
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II CTF (Capture The Flag) mod
 
 USES=		dos2unix zip:infozip
@@ -46,10 +44,8 @@ do-install:
 .for f in *.cfg *.pak
 	${INSTALL_DATA} ${WRKDIR}/ctf/${f} ${STAGEDIR}${Q2DIR}/ctf
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/ctf/readme.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

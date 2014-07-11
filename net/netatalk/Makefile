@@ -3,6 +3,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	SF
@@ -12,12 +13,11 @@ COMMENT=	File server for Mac OS X
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USE_AUTOTOOLS=	libtool
+USES=		gmake iconv libtool perl5 tar:bzip2
 USE_BDB=	46+
-USE_BZIP2=	yes
-USES=		iconv gmake perl5
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-D_IPP_PRIVATE_STRUCTURES
+INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	netatalk
 
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
@@ -34,7 +34,8 @@ KRB5_DESC=	Kerberos V UAM
 ZEROCONF_DESC=	Zeroconf (Bonjour) support
 SENDFILE_DESC=	sendfile support
 
-FILES=		AppleVolumes.default AppleVolumes.system afpd.conf netatalk.conf
+FILES=		AppleVolumes.default AppleVolumes.system afp_ldap.conf \
+		afpd.conf netatalk.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
 		binheader nadheader
 
@@ -124,12 +125,10 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${STAGEDIR}${PREFIX}/bin/macusers
 .for i in ${FILES}
-	[ -f ${STAGEDIR}${PREFIX}/etc/${i} ] || \
-		${INSTALL_DATA} -c ${STAGEDIR}${PREFIX}/etc/${i}.dist ${STAGEDIR}${PREFIX}/etc/${i}
+	${MV} ${STAGEDIR}${PREFIX}/etc/${i} ${STAGEDIR}${PREFIX}/etc/${i}.sample
 .endfor
 .for i in ${LINKS}
-	( cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf megatron ${i} )
+	${LN} -sf megatron ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

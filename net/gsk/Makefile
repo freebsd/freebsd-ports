@@ -8,7 +8,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C library for writing servers
+COMMENT=	C library for writing servers
 
 USES=		pathfix pkgconfig libtool
 USE_GNOME=	glib20

@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	kaffeine/current
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A xine-base multimedia player
+COMMENT=	Xine-base multimedia player
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/ca.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine

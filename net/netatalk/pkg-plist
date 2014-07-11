@@ -12,20 +12,13 @@ bin/dbd
 %%APPLETALK%%bin/getzones
 bin/macusers
 bin/megatron
-@exec cd %B && ln -s megatron hqx2bin
-@exec cd %B && ln -s megatron macbinary
-@exec cd %B && ln -s megatron nadheader
-@exec cd %B && ln -s megatron single2bin
-@exec cd %B && ln -s megatron unbin
-@exec cd %B && ln -s megatron unhex
-@exec cd %B && ln -s megatron unsingle
-@unexec rm -f %B/hqx2bin
-@unexec rm -f %B/macbinary
-@unexec rm -f %B/nadheader
-@unexec rm -f %B/single2bin
-@unexec rm -f %B/unbin
-@unexec rm -f %B/unhex
-@unexec rm -f %B/unsingle
+bin/hqx2bin
+bin/macbinary
+bin/nadheader
+bin/single2bin
+bin/unbin
+bin/unhex
+bin/unsingle
 %%APPLETALK%%bin/nbplkup
 %%APPLETALK%%bin/nbprgstr
 %%APPLETALK%%bin/nbpunrgstr
@@ -35,56 +28,33 @@ bin/netatalk-config
 %%APPLETALK%%bin/psorder
 %%APPLETALK%%bin/showppd
 bin/uniconv
-@unexec if cmp -s %D/etc/AppleVolumes.default %D/etc/AppleVolumes.default.dist; then rm -f %D/etc/AppleVolumes.default; fi
-etc/AppleVolumes.default.dist
-@exec [ ! -f %B/AppleVolumes.default ] && cp %B/%f %B/AppleVolumes.default
-@unexec if cmp -s %D/etc/AppleVolumes.system %D/etc/AppleVolumes.system.dist; then rm -f %D/etc/AppleVolumes.system; fi
-etc/AppleVolumes.system.dist
-@exec [ ! -f %B/AppleVolumes.system ] && cp %B/%f %B/AppleVolumes.system
-@unexec if cmp -s %D/etc/afpd.conf %D/etc/afpd.conf.dist; then rm -f %D/etc/afpd.conf; fi
-etc/afpd.conf.dist
-@exec [ ! -f %B/afpd.conf ] && cp %B/%f %B/afpd.conf
-@unexec if cmp -s %D/etc/afp_ldap.conf %D/etc/afp_ldap.conf.dist; then rm -f %D/etc/afp_ldap.conf; fi
-etc/afp_ldap.conf.dist
-@exec [ ! -f %B/afp_ldap.conf ] && cp %B/%f %B/afp_ldap.conf
-%%APPLETALK%%@unexec if cmp -s %D/etc/atalkd.conf %D/etc/atalkd.conf.dist; then rm -f %D/etc/atalkd.conf; fi
-%%APPLETALK%%etc/atalkd.conf.dist
-%%APPLETALK%%@exec [ ! -f %B/atalkd.conf ] && cp %B/%f %B/atalkd.conf
-@unexec if cmp -s %D/etc/netatalk.conf %D/etc/netatalk.conf.dist; then rm -f %D/etc/netatalk.conf; fi
-etc/netatalk.conf.dist
-@exec [ ! -f %B/netatalk.conf ] && cp %B/%f %B/netatalk.conf
-@unexec if cmp -s %D/etc/papd.conf %D/etc/papd.conf.dist; then rm -f %D/etc/papd.conf; fi
-%%APPLETALK%%etc/papd.conf.dist
-%%APPLETALK%%@exec [ ! -f %B/papd.conf ] && cp %B/%f %B/papd.conf
+@sample etc/AppleVolumes.default.sample
+@sample etc/AppleVolumes.system.sample
+@sample etc/afpd.conf.sample
+@sample etc/afp_ldap.conf.sample
+%%APPLETALK%%@sample etc/atalkd.conf.sample
+@sample etc/netatalk.conf.sample
+%%APPLETALK%%@sample etc/papd.conf.sample
 libexec/netatalk-uams/uams_clrtxt.so
 libexec/netatalk-uams/uams_dhx.so
 libexec/netatalk-uams/uams_dhx2.so
 %%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.a
-%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.la
 %%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.so
 libexec/netatalk-uams/uams_dhx2_passwd.a
-libexec/netatalk-uams/uams_dhx2_passwd.la
 libexec/netatalk-uams/uams_dhx2_passwd.so
 %%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.a
-%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.la
 %%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.so
 libexec/netatalk-uams/uams_dhx_passwd.a
-libexec/netatalk-uams/uams_dhx_passwd.la
 libexec/netatalk-uams/uams_dhx_passwd.so
 %%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.a
-%%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.la
 %%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.so
 libexec/netatalk-uams/uams_guest.a
-libexec/netatalk-uams/uams_guest.la
 libexec/netatalk-uams/uams_guest.so
 %%NETATALKPAM%%libexec/netatalk-uams/uams_pam.a
-%%NETATALKPAM%%libexec/netatalk-uams/uams_pam.la
 %%NETATALKPAM%%libexec/netatalk-uams/uams_pam.so
 libexec/netatalk-uams/uams_passwd.a
-libexec/netatalk-uams/uams_passwd.la
 libexec/netatalk-uams/uams_passwd.so
 libexec/netatalk-uams/uams_randnum.a
-libexec/netatalk-uams/uams_randnum.la
 libexec/netatalk-uams/uams_randnum.so
 include/atalk/acl.h
 include/atalk/adouble.h
@@ -128,7 +98,6 @@ include/netatalk/ddp_var.h
 include/netatalk/endian.h
 include/netatalk/phase2.h
 lib/libatalk.a
-lib/libatalk.la
 %%APPLETALK%%libexec/etc2ps.sh
 %%APPLETALK%%libexec/ifmpap
 %%APPLETALK%%libexec/ifmpaprev

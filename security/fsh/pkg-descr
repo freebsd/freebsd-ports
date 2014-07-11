@@ -9,6 +9,6 @@ repository locally.
 
 The solution: reuse the secure tunnel once it has been
 established. fsh is a drop-in rsh-compatible replacement for ssh that
-automatically resuses ssh tunnels.
+automatically reuses ssh tunnels.
 
 WWW: http://www.lysator.liu.se/fsh/

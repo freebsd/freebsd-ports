@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc410
-PORTVERSION=	4.10.0.s20140629
+PORTVERSION=	4.10.0.s20140706
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -32,7 +32,7 @@ DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
-USES=		gmake iconv perl5 tar:bzip2 makeinfo
+USES=		gmake iconv makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
@@ -134,7 +134,8 @@ full-regression-test: build
 .endif
 
 post-install:
-	${RM} -f ${STAGEDIR}${TARGLIB}/*.la
+	${FIND} ${STAGEDIR}${TARGLIB} ${STAGEDIR}${LIBEXEC} \
+	        -name '*.la' | ${XARGS} ${RM}
 	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
 	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
 	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1

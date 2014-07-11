@@ -10,7 +10,7 @@ MASTER_SITES=	http://openwebmail.acatysmoof.com/download/%SUBDIR%/ \
 MASTER_SITE_SUBDIR?=	release
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A webmail system designed to manage big mail folder files efficiently
+COMMENT=	Webmail system designed to manage big mail folder files efficiently
 
 RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 

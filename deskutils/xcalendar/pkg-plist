@@ -8,6 +8,8 @@ lib/X11/xcalendar/qmark.xbm
 lib/X11/xcalendar/quit.xbm
 lib/X11/xcalendar/rarrow.xbm
 lib/X11/xcalendar/xcalendar.hlp
+man/ja/man1/xcalendar.1.gz
+man/man1/xcalendar.1.gz
 @dirrm lib/X11/xcalendar
 @dirrm lib/X11/ja_JP.eucJP/xcalendar
 @dirrmtry lib/X11/ja_JP.eucJP/app-defaults

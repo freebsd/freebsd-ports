@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A portable CVS repository synchronization utility
+COMMENT=	Portable CVS repository synchronization utility
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/COPYRIGHT

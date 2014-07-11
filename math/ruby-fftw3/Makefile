@@ -13,7 +13,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	murashin@gfd-dennou.org
-COMMENT=	A Ruby interface to the FFTW ver.3
+COMMENT=	Ruby interface to the FFTW ver.3
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

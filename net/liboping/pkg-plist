@@ -1,9 +1,9 @@
 bin/oping
 include/oping.h
-lib/liboping.la
 lib/liboping.a
 lib/liboping.so
 lib/liboping.so.0
+lib/liboping.so.0.0.3
 man/man3/liboping.3.gz
 man/man3/ping_construct.3.gz
 man/man3/ping_get_error.3.gz

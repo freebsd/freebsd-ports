@@ -1,4 +1,3 @@
-lib/gmpc/plugins/lyricwikiplugin.la
 lib/gmpc/plugins/lyricwikiplugin.so
 share/locale/bg/LC_MESSAGES/gmpc-lyricwiki.mo
 share/locale/bs/LC_MESSAGES/gmpc-lyricwiki.mo

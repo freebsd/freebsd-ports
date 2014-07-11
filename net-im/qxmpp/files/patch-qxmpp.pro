@@ -1,20 +1,34 @@
---- qxmpp.pro.orig	2012-01-07 22:29:59.855639988 +0000
-+++ qxmpp.pro	2012-01-07 22:30:28.846689409 +0000
-@@ -3,8 +3,6 @@ include(qxmpp.pri)
- TEMPLATE = subdirs
+--- ./qxmpp.pro.orig	2014-07-02 00:55:44.879359720 +0400
++++ ./qxmpp.pro	2014-07-02 00:56:27.297356491 +0400
+@@ -6,29 +6,19 @@
  
- SUBDIRS = src \
--          tests \
--          examples \
-           doc
+ android {
+ } else {
+-    SUBDIRS += tests examples doc
+-    INSTALLS += htmldocs
++    SUBDIRS += tests examples
+ }
  
  CONFIG += ordered
-@@ -24,7 +22,7 @@ dist.depends = docs
  
- # Install rules
- htmldocs.files = doc/html
--htmldocs.path = $$[QT_INSTALL_PREFIX]/share/doc/qxmpp
-+htmldocs.path = %%DOCSDIR%%
- htmldocs.CONFIG += no_check_exist directory
+-# Documentation generation
+-docs.commands = cd doc/ && $(QMAKE) && $(MAKE) docs
+-
+ # Source distribution
+ QXMPP_ARCHIVE = qxmpp-$$QXMPP_VERSION
+ dist.commands = \
+     $(DEL_FILE) -r $$QXMPP_ARCHIVE && \
+     $(MKDIR) $$QXMPP_ARCHIVE && \
+     git archive master | tar -x -C $$QXMPP_ARCHIVE && \
+-    $(COPY_DIR) doc/html $$QXMPP_ARCHIVE/doc && \
+     tar czf $${QXMPP_ARCHIVE}.tar.gz $$QXMPP_ARCHIVE && \
+     $(DEL_FILE) -r $$QXMPP_ARCHIVE
+-dist.depends = docs
  
- QMAKE_EXTRA_TARGETS += dist docs
+-# Install rules
+-htmldocs.files = doc/html
+-htmldocs.path = $$PREFIX/share/doc/qxmpp
+-htmldocs.CONFIG += no_check_exist directory
+ 
+-QMAKE_EXTRA_TARGETS += dist docs
++QMAKE_EXTRA_TARGETS += dist

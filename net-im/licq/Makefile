@@ -7,7 +7,7 @@ CATEGORIES=	net-im
 PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A popular ICQ-compatible plugin-based program
+COMMENT=	Popular ICQ-compatible plugin-based program
 
 LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cmartin.tk/${PORTNAME}/ \
 		http://romain.blogreen.org/distfiles/
 
 MAINTAINER=	mono@FreeBSD.org
-COMMENT=	A simple feed reader for GNOME
+COMMENT=	Simple feed reader for GNOME
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
 RUN_DEPENDS:=	${BUILD_DEPENDS}

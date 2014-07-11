@@ -9,7 +9,7 @@ MASTER_SITES=	http://prosody.im/downloads/source/ \
 				http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A simple extensible XMPP server written in Lua
+COMMENT=	Simple extensible XMPP server written in Lua
 
 LICENSE=	MIT
 

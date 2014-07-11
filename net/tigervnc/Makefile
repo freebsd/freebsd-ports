@@ -3,7 +3,7 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net x11-servers
 MASTER_SITES=	SF:tigervnc
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
@@ -26,9 +26,9 @@ CONFLICTS=	tridiavnc-[0-9]* \
 		tightvnc-[0-9]* \
 		vnc-[0-9]*
 
-USES=		cmake gmake pkgconfig
+USES=		cmake gmake libtool pkgconfig
 USE_GL=		gl
-USE_AUTOTOOLS+=	autoconf:env automake:env libtool:env
+USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

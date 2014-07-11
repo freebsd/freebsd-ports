@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+    GAMES=${PKG_PREFIX}/share/games
+    SCORES=${GAMES}/atomix.scores
+    if [ -f ${SCORES} ]; then
+        if [ ! -s ${SCORES} ]; then
+            rm -f ${SCORES}
+            rmdir ${GAMES} > /dev/null 2>&1 || :
+        fi
+    fi
+fi

@@ -3,6 +3,7 @@
 
 PORTNAME=	typo3
 PORTVERSION=	6.2.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 PKGNAMESUFFIX=	-lts
@@ -24,9 +25,6 @@ TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
-
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
-		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX}
 
@@ -62,5 +60,32 @@ do-install:
 	${LN} -fs typo3_src/index.php ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${PORTNAME}-${TYPO3RELEASE}/index.php
 	${LN} -fs typo3_src/typo3 ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${PORTNAME}-${TYPO3RELEASE}/typo3
 	${CP} ${WRKDIR}/${TYPO3SRC}/_.htaccess ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${PORTNAME}-${TYPO3RELEASE}/.htaccess
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${PORTNAME}-${TYPO3RELEASE}/*" | \
+		${SORT} >> ${TMPPLIST}
+	@${ECHO_CMD} -e "@owner ${WWWOWN}\n@group ${WWWGRP}" >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${TYPO3SRC}/typo3/ext/*" | \
+		${SORT} >> ${TMPPLIST}
+	@${ECHO_CMD} -e "@owner root\n@group wheel" >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} * \( -type f -or -type l \) \
+		-not \( -path "${TYPO3WWW}/${PORTNAME}-${TYPO3RELEASE}/*" -or \
+		-path "${TYPO3WWW}/${TYPO3SRC}/typo3/ext/*" \) | \
+		${SORT} >> ${TMPPLIST}
+	@${ECHO_CMD} -e "@owner ${WWWOWN}\n@group ${WWWGRP}" >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} -d * -type d -regex "${TYPO3WWW}/${PORTNAME}-${TYPO3RELEASE}/*.*" | \
+		${SORT} | ${SED} -ne 's#^#@dirrmtry #p' >> ${TMPPLIST}
+	@${ECHO_CMD} -e "@owner ${WWWOWN}\n@group ${WWWGRP}" >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} -d * -type d -regex "${TYPO3WWW}/${TYPO3SRC}/typo3/ext/*.*" | \
+		${SORT} | ${SED} -ne 's#^#@dirrmtry #p' >> ${TMPPLIST}
+	@${ECHO_CMD} -e "@owner root\n@group wheel" >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d \
+		-path "${TYPO3WWW}/*" \
+		-not \( -regex "${TYPO3WWW}/${PORTNAME}-${TYPO3RELEASE}/*.*" -or \
+		-regex "${TYPO3WWW}/${TYPO3SRC}/typo3/ext/*.*" \) | \
+		${SORT} | ${SED} -ne 's#^#@dirrmtry #p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -27,6 +27,7 @@
     SUBDIR += ccl
     SUBDIR += cdent
     SUBDIR += cduce
+    SUBDIR += ceylon
     SUBDIR += cfortran
     SUBDIR += chicken
     SUBDIR += cint

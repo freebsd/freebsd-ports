@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://dl.fefe.de/ http://dl.mteege.de/fefe/
 
 MAINTAINER=	matthias@mteege.de
-COMMENT=	A fast file copy tool for LANs
+COMMENT=	Fast file copy tool for LANs
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 

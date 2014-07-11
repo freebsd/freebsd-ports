@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://forge.imag.fr/frs/download.php/133/ LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A C++ library for computer algebra
+COMMENT=	C++ library for computer algebra
 
 LICENSE=	CeCILL-Bv1
 LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] B license, version 1

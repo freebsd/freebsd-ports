@@ -1,8 +1,0 @@
-%%DATADIR%%/description.txt
-%%DATADIR%%/maplist.cfg
-%%DATADIR%%/motd.cfg
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%DATADIR%%/vm/qagame.qvm
-@dirrm %%DATADIR%%/vm
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

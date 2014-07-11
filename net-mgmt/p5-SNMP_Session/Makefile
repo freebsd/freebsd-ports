@@ -10,7 +10,7 @@ PROJECTHOST=	snmp-session
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A perl5 module providing rudimentary access to SNMPv1 and v2 agents
+COMMENT=	Perl5 module providing rudimentary access to SNMPv1 and v2 agents
 
 USES=		perl5
 USE_PERL5=	configure

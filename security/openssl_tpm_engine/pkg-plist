@@ -1,7 +1,6 @@
 bin/create_tpm_key
-lib/openssl/engines/libtpm.a
-lib/openssl/engines/libtpm.la
 lib/openssl/engines/libtpm.so
 lib/openssl/engines/libtpm.so.0
+lib/openssl/engines/libtpm.so.0.0.0
 @dirrm lib/openssl/engines
 @dirrm lib/openssl

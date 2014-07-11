@@ -15,7 +15,7 @@ MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
 
 MAINTAINER=	chalpin@cs.wisc.edu
-COMMENT=	A Markov based SpamFilter
+COMMENT=	Markov based SpamFilter
 
 LICENSE=	GPLv2
 

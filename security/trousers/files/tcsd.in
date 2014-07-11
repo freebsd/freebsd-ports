@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: tcsd
-# REQUIRE: SERVER tpmd
+# REQUIRE: SERVERS tpmd
 # BEFORE:  named hastd kerberos
 # KEYWORD: shutdown
 #

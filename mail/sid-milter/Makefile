@@ -6,7 +6,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/SenderID%20Milter/${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An sid and spf milter for Sendmail
+COMMENT=	sid and spf milter for Sendmail
 
 RESTRICTED=	May incorporate intellectual property, possible patent issues
 

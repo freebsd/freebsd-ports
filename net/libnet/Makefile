@@ -10,7 +10,7 @@ MASTER_SITES=	SF/libnet-dev
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C library for creating IP packets
+COMMENT=	C library for creating IP packets
 
 LATEST_LINK=	${PORTNAME}${SHORT_VER}
 

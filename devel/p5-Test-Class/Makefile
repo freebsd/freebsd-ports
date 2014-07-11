@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Class
-PORTVERSION=	0.43
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Test::Class - Easily create test classes in an xUnit style
+COMMENT=	Easily create test classes in an xUnit style
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -3,29 +3,32 @@ case $2 in
 POST-DEINSTALL)
     echo
     echo "The cbsd package has been deleted."
-    echo "If you're *not* upgrading and won't be using it any longer, you may want to"
-    echo "check some files in the system which could modify by cbsd and remove this"
-    echo "changes for complete deinstall. Specifically:"
     echo
-    echo "1) follow records in the /var/cron/tabs/root file:"
-    echo "* * * * * /usr/bin/lockf -s -t0 \$workdir/ftmp/periodic_minutes \\"
-    echo "/usr/sbin/periodic minutes > /dev/null 2>&1"
-    echo "0 * * * * /usr/bin/lockf -s -t0 \$workdir/ftmp/periodic_hourly \\"
-    echo "/usr/sbin/periodic hourly > /dev/null 2>&1"
+    echo "If you are *not* upgrading this package, you may want to"
+    echo "remove the following to complete the deinstallation process:"
     echo
-    echo "2) follow record in the /etc/periodic.conf file:"
-    echo "local_periodic=\"/usr/local/etc/periodic \$workdir/etc/periodic\""
+    echo "1) Records in /var/cron/tabs/root"
     echo
-    echo "3) follow records in the /etc/rc.conf file:"
-    echo "cbsdrsyncd_enable=\"YES\""
-    echo "cbsdrsyncd_flags=\"--config=\$workdir/etc/rsyncd.conf\""
-    echo "cbsdd_enable=\"YES\""
-    echo "devfs_load_rulesets=\"YES\""
-    echo "cbsd_workdir=\"\$workdir\""
-    echo "rcshutdown_timeout=\"900\""
-    echo "sshd_flags=\"-oPort=22222\""
+    echo "  * * * * * /usr/bin/lockf -s -t0 \$workdir/ftmp/periodic_minutes \\"
+    echo "  /usr/sbin/periodic minutes > /dev/null 2>&1"
+    echo "  0 * * * * /usr/bin/lockf -s -t0 \$workdir/ftmp/periodic_hourly \\"
+    echo "  /usr/sbin/periodic hourly > /dev/null 2>&1"
     echo
-    echo "4) /usr/local/etc/sudoers.d/cbsd_sudoers file"
+    echo "2) Records in /etc/periodic.conf"
+    echo
+    echo "  local_periodic=\"/usr/local/etc/periodic \$workdir/etc/periodic\""
+    echo
+    echo "3) Records in /etc/rc.conf"
+    echo
+    echo "  cbsdrsyncd_enable=\"YES\""
+    echo "  cbsdrsyncd_flags=\"--config=\$workdir/etc/rsyncd.conf\""
+    echo "  cbsdd_enable=\"YES\""
+    echo "  devfs_load_rulesets=\"YES\""
+    echo "  cbsd_workdir=\"\$workdir\""
+    echo "  rcshutdown_timeout=\"900\""
+    echo "  sshd_flags=\"-oPort=22222\""
+    echo
+    echo "4) Remove /usr/local/etc/sudoers.d/cbsd_sudoers"
     echo
   ;;
 esac

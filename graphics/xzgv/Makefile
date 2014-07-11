@@ -15,11 +15,7 @@ BUILD_DEPENDS=  gawk:${PORTSDIR}/lang/gawk
 USES=		gmake pkgconfig
 USE_GNOME=	imlib gdkpixbuf gtk20
 
-MAN1=		xzgv.1
-PLIST_FILES=	bin/xzgv
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/xzgv man/man1/xzgv.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
@@ -27,7 +23,7 @@ post-patch:
 		 s|^PREFIX|#PREFIX|g' ${WRKSRC}/config.mk
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xzgv ${LOCALBASE}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/xzgv.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xzgv ${STAGEDIR}${LOCALBASE}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/xzgv.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

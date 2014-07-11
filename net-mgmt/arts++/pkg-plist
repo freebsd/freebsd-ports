@@ -91,9 +91,9 @@ include/Ipv4PrefixPatricia.hh
 include/artslocal.h
 include/caida_t.h
 lib/libArts.a
-lib/libArts.la
 lib/libArts.so
 lib/libArts.so.0
+lib/libArts.so.0.0.0
 man/manl/artsportagg.l.gz
 man/manl/artsports.l.gz
 man/manl/artsprotos.l.gz

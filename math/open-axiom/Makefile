@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	A computer algebra system
+COMMENT=	Computer algebra system
 
 BUILD_DEPENDS=	sbcl:${PORTSDIR}/lang/sbcl \
 		noweb:${PORTSDIR}/devel/noweb

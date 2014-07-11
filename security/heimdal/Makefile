@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -36,11 +36,11 @@ DIGEST_CONFIGURE_ENABLE=	digest
 PKINIT_CONFIGURE_ENABLE=	pk-init
 CRACKLIB_BUILD_DEPENDS=		${PREFIX}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 
-USE_AUTOTOOLS=	autoconf autoheader libtool
-USE_OPENSSL=	yes
-USES=		gettext pathfix pkgconfig
-GNU_CONFIGURE=	yes
+USES=		gettext libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=	--with-libintl=${LOCALBASE} \
 			--with-readline=${DESTDIR}/usr \
@@ -53,10 +53,6 @@ INFO=		heimdal hx509
 PLIST=		${WRKDIR}/PLIST
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
 
 .if ${PORT_OPTIONS:MBDB}
 USE_BDB=		yes
@@ -107,6 +103,8 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|$$ac_cv_header_fnmatch_h|yes|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^kgetcred_LDADD =/s/$$/ $$(LIB_libintl)/' \
+		${WRKSRC}/kuser/Makefile.in
 	@${REINPLACE_CMD} -e 's|@LDFLAGS@|@LDFLAGS@ \$$\(PTHREADS_LIBADD\)|g' \
 		${WRKSRC}/lib/ipc/Makefile.in
 

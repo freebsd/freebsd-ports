@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockapp that monitors your friends list at LiveJournal.com
+COMMENT=	Dockapp that monitors your friends list at LiveJournal.com
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 

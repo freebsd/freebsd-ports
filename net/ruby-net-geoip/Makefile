@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Ruby extension that wraps around libGeoIP
+COMMENT=	Ruby extension that wraps around libGeoIP
 
 BUILD_DEPENDS=	GeoIP>=1.4.6:${PORTSDIR}/net/GeoIP
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP

@@ -1,4 +1,3 @@
-lib/gmpc/plugins/albumviewplugin.la
 lib/gmpc/plugins/albumviewplugin.so
 %%DATADIR%%/icons/Humanity/128x128/apps/albumview.png
 %%DATADIR%%/icons/Humanity/16x16/apps/albumview.png

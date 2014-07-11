@@ -1,69 +1,31 @@
---- config/Makefile.SH.orig	2010-01-09 17:59:48.000000000 +0000
-+++ config/Makefile.SH	2011-09-21 17:55:47.000000000 +0000
-@@ -216,9 +216,11 @@
- INCLUDEDIR= "\$(DESTDIR)$includedir"
- LIBDIR    = "\$(DESTDIR)$libdir"
- BINDIR    = "\$(DESTDIR)$bindir"
--MANDIR    = "\$(DESTDIR)$mandir"
-+MANDIR    = "\$(DESTDIR)\${PREFIX}/man/man1"
- EMACSDIR  = "\$(DESTDIR)$emacsdir"
--DATADIR   = "\$(DESTDIR)$datadir"
-+ALLDIR    = \${PREFIX}/share/doc/pari
-+READMEDIR = "\$(ALLDIR)"
-+DATADIR   = "\$(ALLDIR)"
+--- config/Makefile.SH.orig	2010-01-09 12:59:48.000000000 -0500
++++ config/Makefile.SH	2014-07-08 04:15:24.000000000 -0400
+@@ -208,7 +208,6 @@
+ MV = mv -f
+ LN = $ln_s
+ CP_F = cp -f
+-STRIP      = strip
+ STRIPFLAGS =
+ 
+ # Change these installation directories to suit your needs.
+@@ -221,9 +220,9 @@
+ DATADIR   = "\$(DESTDIR)$datadir"
  SYSDATADIR= "\$(DESTDIR)$sysdatadir"
  
- EXDIR     = \$(DATADIR)/examples
-@@ -316,7 +318,7 @@
- .headers: $HEADERS
- 	@touch \$@
+-EXDIR     = \$(DATADIR)/examples
++EXDIR     = \$(DESTDIR)/\$(PREFIX)/share/examples/pari
+ MISCDIR   = \$(DATADIR)/misc
+-DOCDIR    = \$(DATADIR)/doc
++DOCDIR    = \$(DESTDIR)/\$(PREFIX)/share/doc/pari
  
--install: install-lib-$dft install-include install-bin install-man install-misc install-doc install-examples install-cfg install-data
-+install: install-lib-$dft install-include install-bin install-man install-misc install-doc install-examples install-cfg install-data install-top
- 
- install-include:
- 	-mkdir -p \$(INCLUDEDIR)/pari
-@@ -367,6 +369,17 @@
- 	\$(INSTALL_DATA) $misc/pari.xpm  \$(MISCDIR)
- 	\$(INSTALL_PROGRAM) $misc/xgp    \$(MISCDIR)
- 
-+install-top::
-+	-mkdir -p \$(READMEDIR)
-+	\$(INSTALL_DATA) $TOP/AUTHORS      \$(READMEDIR)
-+	\$(INSTALL_DATA) $TOP/CHANGES      \$(READMEDIR)
-+	\$(INSTALL_DATA) $TOP/CHANGES-2.2  \$(READMEDIR)
-+	\$(INSTALL_DATA) $TOP/COMPAT       \$(READMEDIR)
-+	\$(INSTALL_DATA) $TOP/COPYING      \$(READMEDIR)
-+	\$(INSTALL_DATA) $TOP/MACHINES     \$(READMEDIR)
-+	\$(INSTALL_DATA) $TOP/NEW          \$(READMEDIR)
-+	\$(INSTALL_DATA) $TOP/README       \$(READMEDIR)
-+
- install-cfg::
- 	-mkdir -p \$(SYSDATADIR)
- 	-\$(INSTALL_DATA) pari.cfg \$(SYSDATADIR)
-@@ -377,7 +390,7 @@
+ INSTALL = $cfg/install
+ INSTALL_PROGRAM = \$(INSTALL)
+@@ -377,7 +376,7 @@
  
  install-doc::
  	-mkdir -p \$(BINDIR) \$(DOCDIR)
 -	-cd $doc; \$(MAKE) all
-+#	-cd $doc; \$(MAKE) all
++	#-cd $doc; \$(MAKE) all
  	-\$(INSTALL_PROGRAM) $doc/gphelp    \$(BINDIR)
  	-\$(INSTALL_DATA) $doc/Makefile     \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/translations \$(DOCDIR)
-@@ -395,11 +408,11 @@
- 	-\$(INSTALL_DATA) $doc/usersch4.tex \$(DOCDIR)
- 	-\$(INSTALL_DATA) $doc/usersch5.tex \$(DOCDIR)
- 	-\$(INSTALL_DATA) $doc/paricfg.tex  \$(DOCDIR)
--	-\$(INSTALL_DATA) $doc/libpari.dvi    \$(DOCDIR)
--	-\$(INSTALL_DATA) $doc/users.dvi    \$(DOCDIR)
--	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(DOCDIR)
--	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(DOCDIR)
--	-\$(INSTALL_DATA) $doc/refcard.ps   \$(DOCDIR)
-+#	-\$(INSTALL_DATA) $doc/libpari.dvi    \$(DOCDIR)
-+#	-\$(INSTALL_DATA) $doc/users.dvi    \$(DOCDIR)
-+#	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(DOCDIR)
-+#	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(DOCDIR)
-+#	-\$(INSTALL_DATA) $doc/refcard.ps   \$(DOCDIR)
- 
- install-examples:
- 	-mkdir -p \$(EXDIR)

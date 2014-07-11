@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.marcuscom.com/downloads/gone/
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	A terminal locking utility with many improvements over lock(1)
+COMMENT=	Terminal locking utility with many improvements over lock(1)
 
 PLIST_FILES=	bin/gone man/man1/gone.1.gz
 GNU_CONFIGURE=	yes

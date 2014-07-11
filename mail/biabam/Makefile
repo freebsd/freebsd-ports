@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A command-line attachment mailer
+COMMENT=	Command-line attachment mailer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

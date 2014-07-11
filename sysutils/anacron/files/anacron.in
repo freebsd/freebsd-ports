@@ -19,5 +19,6 @@ rcvar=anacron_enable
 
 load_rc_config $name
 : ${anacron_enable:=NO}
+command="%%PREFIX%%/sbin/anacron"
 
 run_rc_command "$1"

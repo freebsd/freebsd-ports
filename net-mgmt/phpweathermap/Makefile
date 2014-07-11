@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.network-weathermap.com/files/
 DISTNAME=	php-weathermap-${PORTVERSION}
 
 MAINTAINER=	hhyou@cs.nctu.edu.tw
-COMMENT=	A network visualisation tool with web editor
+COMMENT=	Network visualisation tool with web editor
 
 LICENSE=	GPLv2
 

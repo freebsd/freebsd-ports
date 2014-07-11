@@ -1,0 +1,37 @@
+--- Makefile.orig	2014-04-13 05:14:38.000000000 -0700
++++ Makefile	2014-07-01 04:04:04.000000000 -0700
+@@ -1,11 +1,12 @@
+ CC=lazbuild
+ ST=strip
+-datadir  = $(DESTDIR)/usr/share/cqrlog
+-bindir   = $(DESTDIR)/usr/bin
+-sharedir = $(DESTDIR)/usr/share
++datadir  = $(DESTDIR)${PREFIX}/share/cqrlog
++bindir   = $(DESTDIR)${PREFIX}/bin
++sharedir = $(DESTDIR)${PREFIX}/share
++mandir   = $(DESTDIR)${PREFIX}
+ 
+ cqrlog: src/cqrlog.lpi
+-	$(CC) --ws=gtk2 src/cqrlog.lpi
++	$(CC) --pcp=. --ws=gtk2 src/cqrlog.lpi
+ 	$(ST) src/cqrlog
+ 	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
+ 
+@@ -29,7 +30,7 @@
+ 	install -d -v         $(sharedir)/pixmaps/cqrlog
+ 	install -d -v         $(sharedir)/icons
+ 	install -d -v         $(sharedir)/applications
+-	install -d -v         $(sharedir)/man/man1
++	install -d -v         $(mandir)/man/man1
+ 	install    -v -m 0755 src/cqrlog $(bindir)
+ 	install    -v -m 0755 tools/cqrlog-apparmor-fix $(datadir)/cqrlog-apparmor-fix
+ 	install    -v -m 0644 ctyfiles/* $(datadir)/ctyfiles/
+@@ -46,7 +47,7 @@
+ 	install    -v -m 0644 images/cqrlog.png $(sharedir)/pixmaps/cqrlog/cqrlog.png
+ 	install    -v -m 0644 images/cqrlog.png $(sharedir)/icons/cqrlog.png  
+ 	install    -v -m 0644 src/changelog.html $(datadir)/changelog.html
+-	install    -v -m 0644 tools/cqrlog.1.gz $(sharedir)/man/man1/cqrlog.1.gz
++	install    -v -m 0644 tools/cqrlog.1.gz $(mandir)/man/man1/cqrlog.1.gz
+ deb:
+ 	dpkg-buildpackage -rfakeroot -i -I
+ deb_src:

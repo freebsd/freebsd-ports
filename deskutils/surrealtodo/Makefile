@@ -20,12 +20,12 @@ WWWGRP=		${WWWOWN}
 PKGMESSAGE=	${WRKDIR}/${PORTNAME}/pkg-message
 SUB_FILES=	pkg-message
 PLIST_DIRSTRY=	%%WWWDIR%%
+PLIST_SUB=	OWNER="${WWWOWN}" GROUP="${WWWGRP}"
 
 OPTIONS_DEFINE=	PGSQL APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
 LIGHTTPD_DESC=	Use Lighttpd webserver
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPOSTGRE}
@@ -39,11 +39,7 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@${CP} -r ${WRKDIR}/${PORTNAME}_v${PORTVERSION}/* ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@${CP} -r ${WRKDIR}/${PORTNAME}_v${PORTVERSION}/* ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	EXAMPLES
+EXAMPLES_CMAKE_OFF=	-DOPTION_BUILD_EXAMPLES:BOOL=OFF
 
 USE_XORG=	xft
 USE_GL=		glu
@@ -30,21 +31,11 @@ CMAKE_ARGS+=	-DOPTION_BUILD_SHARED_LIBS:BOOL=ON \
 		-DOPTION_PREFIX_INCLUDE:PATH=${PREFIX}/include/fltk-devel \
 		-DOPTION_PREFIX_LIB:PATH=${PREFIX}/lib/fltk-devel
 
-SNAPSHOT_VERS=	10217
+SNAPSHOT_VERS=	10218
 PORTEXAMPLES=	*
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
 
 PORTSCOUT=	limit:1.3.*
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-CMAKE_ARGS+=	-DOPTION_BUILD_EXAMPLES:BOOL=ON
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-CMAKE_ARGS+=	-DOPTION_BUILD_EXAMPLES:BOOL=OFF
-.endif
 
 post-install:
 	${LN} -sf fltk-devel/libfltk.so ${STAGEDIR}${PREFIX}/lib/libfltk-devel.so

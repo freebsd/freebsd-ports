@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://adju.st/dist/exact/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program that implements POP Before SMTP Relay Authentication
+COMMENT=	Program that implements POP Before SMTP Relay Authentication
 
 MAILUSER?=	mailnull
 MAILGROUP?=	mailnull

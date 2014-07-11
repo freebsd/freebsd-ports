@@ -78,8 +78,8 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  for ${PYTHON_PKGNAMEPREFIX}.
 #
 # PYTHON_VERSION	- Version of the python binary in your ${PATH}, in the
-#					  format "python2.0". Set this in your makefile in case you
-#					  want to build extensions with an older binary.
+#					  format "python2.0". Set this in your makefile in case
+#					  you want to build extensions with an older binary.
 #					  default: depends on the version of your python binary
 #
 # PYTHON_VER		- Version of the python binary in your ${PATH}, in the
@@ -90,12 +90,12 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  the format "python2.7".
 #
 # PYTHON2_DEFAULT_VERSION
-#					- Version of the default python2 binary in your ${PATH}, in
-#					  the format "python2.7".
+#					- Version of the default python2 binary in your ${PATH},
+#					  in the format "python2.7".
 #
 # PYTHON3_DEFAULT_VERSION
-#					- Version of the default python3 binary in your ${PATH}, in
-#					  the format "python3.2".
+#					- Version of the default python3 binary in your ${PATH},
+#					  in the format "python3.2".
 #
 # PYTHON_MAJOR_VER	- Python version major number. 2 for python-2.x,
 #					  3 for python-3.x and so on.
@@ -154,16 +154,17 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  default: setup.py
 #
 # PYDISTUTILS_AUTOPLIST
-#					- Automatically generates the packaging list for a port that uses
-#                                         distutils or setuptools (easy_install) when defined.
-#                                         requires: USE_PYDISTUTILS
+#					- Automatically generates the packaging list for a port
+#					  that uses distutils when defined.
+#					  requires: USE_PYDISTUTILS
 #
 # PYTHON_PY3K_PLIST_HACK
-#					- Automatically generates Python 3.x compatible __pycache__ entries
-#                                         from a Python 2.x packaging list when defined. Use this for ports that
-#                                         do *not* use standard Python packaging mechanisms such as distutils
-#                                         or setuptools, and support *both* Python 2.x and 3.x. Not needed when
-#                                         PYDISTUTILS_AUTOPLIST is defined.
+#					- Automatically generates Python 3.x compatible
+#					  __pycache__ entries from a Python 2.x packaging list
+#					  when defined. Use this for ports that do *not* use
+#					  standard Python packaging mechanisms such as distutils,
+#					  and support *both* Python 2.x and 3.x. Not needed when
+#					  PYDISTUTILS_AUTOPLIST is defined.
 #
 # PYDISTUTILS_PKGNAME
 #					- Internal name in the distutils for egg-info.
@@ -204,17 +205,6 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYDISTUTILS_NOEGGINFO
 #					- Skip an egg-info entry from plist when defined.
 #
-# PYEASYINSTALL_EGG
-#					- Canonical directory name for easy_install egg packages.
-#					  default: ${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
-#
-# PYEASYINSTALL_OSARCH
-#					- Platform identifier for easy_install.
-#					  default: -${OPSYS:tl}-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}-${ARCH}
-#							   if PYEASYINSTALL_ARCHDEP is defined.
-#
-# PYEASYINSTALL_CMD - Full file path to easy_install command.
-#					  default: ${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 
 _PYTHON_PORTBRANCH=		2.7
 _PYTHON_ALLBRANCHES=	2.7 3.4 3.3 3.2	# preferred first
@@ -483,69 +473,6 @@ BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX}
 .endif
 
-# setuptools support
-.if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
-
-PYDISTUTILS_BUILD_TARGET?=		bdist_egg
-PYDISTUTILS_INSTALL_TARGET?=	easy_install
-PYDISTUTILS_INSTALLARGS?=		-O 1 -N -S ${PYTHON_SITELIBDIR} \
-								-d ${PYEASYINSTALL_SITELIBDIR} \
-								-s ${PYEASYINSTALL_BINDIR} \
-								${WRKSRC}/dist/${PYEASYINSTALL_EGG}
-.if !defined(NO_STAGE)
-MAKE_ENV+=			PYTHONUSERBASE=${STAGEDIR}${PYTHONBASE}
-PYDISTUTILS_INSTALLARGS:=	-m -q --user ${PYDISTUTILS_INSTALLARGS}
-.endif
-
-.if ${PREFIX} != ${LOCALBASE} || !defined(NO_STAGE)
-MAKE_ENV+=						PYTHONPATH=${PYEASYINSTALL_SITELIBDIR}
-.endif
-
-.if defined(PYEASYINSTALL_ARCHDEP)
-PYEASYINSTALL_OSARCH?=			-${OPSYS:tl}-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}-${ARCH}
-MAKE_ENV+=						_PYTHON_HOST_PLATFORM=${PYEASYINSTALL_OSARCH}
-.endif
-PYEASYINSTALL_EGG?=				${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
-PYEASYINSTALL_CMD?=				${LOCALBASE}/bin/easy_install-${PYTHON_VER}
-PYEASYINSTALL_BINDIR?=			${PREFIX}/bin
-PYEASYINSTALL_SITELIBDIR?=		${PYTHONPREFIX_SITELIBDIR}
-
-PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG}
-
-pre-install: pre-install-easyinstall
-pre-install-easyinstall:
-.if defined(NO_STAGE)
-	@${MKDIR} ${PYEASYINSTALL_SITELIBDIR}
-.else
-	@${MKDIR} ${STAGEDIR}${PYEASYINSTALL_SITELIBDIR}
-.endif
-
-add-plist-post: add-plist-easyinstall
-add-plist-easyinstall:
-	@# Easiest to fake pyeasyinstall, or it complains about paths
-	@${ECHO_CMD} "@unexec ${REINPLACE_CMD} -i '' \
-			-e '\,^\./${PYEASYINSTALL_EGG}$$,d' \
-			${PYEASYINSTALL_SITELIBDIR}/easy-install.pth" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${PRINTF} '1a\n./${PYEASYINSTALL_EGG}\n.\nw\nq\n' | \
-			/bin/ed ${PYEASYINSTALL_SITELIBDIR}/easy-install.pth" \
-		>> ${TMPPLIST}
-
-.if !defined(NO_STAGE)
-.if !target(stage-python-compileall)
-stage-python-compileall:
-	(cd ${STAGEDIR}${PREFIX} && \
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} && \
-	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-.endif
-
-post-install: stage-python-compileall
-.endif
-
-.endif		# defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
-
 # distutils support
 PYSETUP?=				setup.py
 PYDISTUTILS_SETUP?=	-c \
@@ -555,7 +482,7 @@ PYDISTUTILS_SETUP?=	-c \
 PYDISTUTILS_CONFIGUREARGS?=
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
-.if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} != "easy_install"
+.if defined(USE_PYDISTUTILS)
 . if !defined(PYDISTUTILS_INSTALLNOSINGLE)
 PYDISTUTILS_INSTALLARGS+=	--single-version-externally-managed
 . endif
@@ -574,10 +501,8 @@ PYDISTUTILS_EGGINFODIR?=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 add-plist-egginfo:
 .if !defined(PYDISTUTILS_NOEGGINFO) && \
 	!defined(PYDISTUTILS_AUTOPLIST) && \
-	(defined(INSTALLS_EGGINFO) ||	\
-		(defined(USE_PYDISTUTILS) && \
-		 ${USE_PYDISTUTILS} != "easy_install")) && \
-	 defined(PYTHON_REL)
+	defined(INSTALLS_EGGINFO) && \
+	defined(PYTHON_REL)
 . for egginfo in ${PYDISTUTILS_EGGINFO}
 	if [ -d "${PYDISTUTILS_EGGINFODIR}/${egginfo}" ]; then \
 		${LS} ${PYDISTUTILS_EGGINFODIR}/${egginfo} | while read f; do \
@@ -730,18 +655,5 @@ do-install:
 
 add-plist-post: add-plist-egginfo
 
-.if defined(PYEASYINSTALL_ARCHDEP)
-.if !target(easyinstall-setopt)
-easyinstall-setopt:
-	@(cd ${BUILD_WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-platlib -s lib.${PYEASYINSTALL_OSARCH:S/^-//}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-temp -s temp.${PYEASYINSTALL_OSARCH:S/^-//}-${PYTHON_VER}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist_egg -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//})
-.endif		# !target(eayinstall-setopt)
-
-pre-build: easyinstall-setopt
-.endif		# defined(PYEASYINSTALL_ARCHDEP)
 .endif		# defined(USE_PYDISTUTILS)
-
 .endif		# defined(_POSTMKINCLUDED) && !defined(Python_Post_Include)

@@ -1,0 +1,12 @@
+--- Data/ODBC/testsuite/Makefile.orig	2014-04-30 11:19:31.000000000 -0700
++++ Data/ODBC/testsuite/Makefile	2014-04-30 11:20:13.000000000 -0700
+@@ -20,9 +20,6 @@
+ # Note:                                                                                          #
+ #  Do not change linking order or move this line up, these libs have to be linked in this order. #
+ ##################################################################################################
+-ifneq ($(OSNAME),Darwin)
+-SYSLIBS += -lltdl
+-endif
+ ifneq ($(OSNAME),FreeBSD)
+ SYSLIBS += -ldl
+ endif

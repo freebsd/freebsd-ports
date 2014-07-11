@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A simple network library built upon Glib-2
+COMMENT=	Simple network library built upon Glib-2
 
 USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20

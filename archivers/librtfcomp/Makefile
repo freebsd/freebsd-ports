@@ -3,7 +3,7 @@
 
 PORTNAME=	librtfcomp
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/SynCE/${PORTNAME}
 
@@ -13,8 +13,8 @@ COMMENT?=	Library for handling compressed RTF documents
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla
 USE_LDCONFIG=	yes
+USES=		libtool
 
 SLAVEDIRS=	archivers/py-librtfcomp
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=--disable-python-bindings
 
 post-patch:
 	@${REINPLACE_CMD} -e '/VISIBILITY=/ s| -fvisibility=hidden||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$(top_builddir)/src/librtfcomp.la|${LOCALBASE}/lib/librtfcomp.la|g' ${WRKSRC}/python/Makefile.in
+	@${REINPLACE_CMD} -e 's|[^ ]*/src/librtfcomp\.la||' ${WRKSRC}/python/Makefile.in
 
 post-install:
 .if !defined(SLAVEPORT)

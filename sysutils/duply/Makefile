@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	duply
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	1.7.4
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.6.x/
+MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.7.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 

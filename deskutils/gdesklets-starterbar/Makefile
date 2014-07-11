@@ -24,32 +24,30 @@ NAME=		StarterBar
 
 LANG=		ca cs de en_CA en_GB es fr hr nl pt pt_BR sq sr sr@Latn sv
 
-NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} ${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${DATADIR}/Displays/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/Displays/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}
-	@${MKDIR} ${DATADIR}/Displays/${NAME}/gfx
-	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/Displays/${NAME}/gfx
-	@${MKDIR} ${DATADIR}/Sensors/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/${NAME}/ChangeLog ${DATADIR}/Sensors/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.desktop ${DATADIR}/Sensors/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/Sensors/${NAME}
-	@${CP} ${WRKSRC}/${NAME}/.order ${DATADIR}/Sensors/${NAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/*.display ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${STAGEDIR}${DATADIR}/Displays/${NAME}/gfx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/${NAME}/ChangeLog ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.desktop ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	@${CP} ${WRKSRC}/${NAME}/.order ${STAGEDIR}${DATADIR}/Sensors/${NAME}
 .for ii in ${LANG}
-	@${MKDIR} ${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/*.mo \
-		${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
+		${STAGEDIR}${DATADIR}/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
 .endfor
 	@${LN} -s ${DATADIR}/Displays/${NAME}/README \
-		${DATADIR}/Sensors/${NAME}/README
+		${STAGEDIR}${DATADIR}/Sensors/${NAME}/README
 
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/Sensors/${NAME}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/Sensors/${NAME}
-	@${CAT} ${PKGMESSAGE}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${DATADIR}/Sensors/${NAME} -f ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${DATADIR}/Sensors/${NAME} -f ${STAGEDIR}${DATADIR}/Sensors/${NAME}
 
 .include <bsd.port.mk>

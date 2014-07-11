@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://cloud.github.com/downloads/alexkay/${PORTNAME}/
 
 MAINTAINER=	alexander@kojevnikov.com
-COMMENT=	An applet that will display Xmonad log information
+COMMENT=	Applet that will display Xmonad log information
 
 INSTALLS_ICONS=	yes
 USES=		gmake pkgconfig pathfix

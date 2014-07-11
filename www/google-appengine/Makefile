@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.6
 PORTREVISION=	0
 CATEGORIES=	www devel python
-MASTER_SITES=	https://commondatastorage.googleapis.com/appengine-sdks/featured/
+MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -13,8 +13,6 @@ COMMENT=	Development tools for Google App Engine (SDK)
 
 LICENSE=	APACHE20 BSD3CLAUSE GPLv2 LGPL21 MIT MPL PSFL
 LICENSE_COMB=	multi
-
-BROKEN=		Unfetchable
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging \

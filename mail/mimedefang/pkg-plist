@@ -6,6 +6,16 @@ bin/md-mx-ctrl
 bin/watch-mimedefang
 bin/watch-multiple-mimedefangs.tcl
 etc/rc.d/mimedefang
+man/man1/mimedefang-util.1.gz
+man/man5/mimedefang-filter.5.gz
+man/man7/mimedefang-notify.7.gz
+man/man7/mimedefang-protocol.7.gz
+man/man8/md-mx-ctrl.8.gz
+man/man8/mimedefang-multiplexor.8.gz
+man/man8/mimedefang.8.gz
+man/man8/mimedefang.pl.8.gz
+man/man8/watch-mimedefang.8.gz
+man/man8/watch-multiple-mimedefangs.8.gz
 @unexec if cmp -s %D/%%ETCDIR%%/mimedefang-ip-key %D/%%ETCDIR%%/mimedefang-ip-key.example; then rm -f %D/%%ETCDIR%%/mimedefang-ip-key; fi
 %%ETCDIR%%/mimedefang-ip-key.example
 @exec [ -f %B/mimedefang-ip-key ] || cp -p %D/%F %B/mimedefang-ip-key
@@ -15,6 +25,10 @@ etc/rc.d/mimedefang
 @unexec if cmp -s %D/%%ETCDIR%%/sa-mimedefang.cf %D/%%ETCDIR%%/sa-mimedefang.cf.example; then rm -f %D/%%ETCDIR%%/sa-mimedefang.cf; fi
 %%ETCDIR%%/sa-mimedefang.cf.example
 @exec [ -f %B/sa-mimedefang.cf ] || cp -p %D/%F %B/sa-mimedefang.cf
+@exec [ -d %%MIMEDEFANG_RUNDIR%% ] || mkdir -p %%MIMEDEFANG_RUNDIR%%
+@exec chgrp %%MAIL_USER%% %%MIMEDEFANG_RUNDIR%%
+@exec [ -d %%MIMEDEFANG_QUARANTINEDIR%% ] || mkdir -p %%MIMEDEFANG_QUARANTINEDIR%%
+@exec chgrp %%MAIL_USER%% %%MIMEDEFANG_QUARANTINEDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.SPAMASSASSIN
 %%PORTDOCS%%%%DOCSDIR%%/README.SOPHIE

@@ -8,7 +8,7 @@ CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	An X11-based presentation tool
+COMMENT=	X11-based presentation tool
 
 LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
 		libmng.so:${PORTSDIR}/graphics/libmng

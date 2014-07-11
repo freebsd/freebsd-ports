@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.4
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -75,7 +75,6 @@ GME_DESC=	Game Music Emu (libgme) support
 GOOM_DESC=	Goom visualisation plugin
 KATE_DESC=	Kate codec support
 LIBSSH2_DESC=	SCP/SFTP support via libssh2
-OPUS_DESC=	Opus audio format
 REALRTSP_DESC=	Real RTSP access module
 RUNROOT_DESC=	Enable running as root
 SIDPLAY_DESC=	C64 sid demux support

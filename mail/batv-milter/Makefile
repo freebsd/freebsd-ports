@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	umq@ueo.co.jp
-COMMENT=	A milter for BATV (Bounce Address Tag Validation)
+COMMENT=	Milter for BATV (Bounce Address Tag Validation)
 
 USE_RC_SUBR=	milter-batv
 USE_OPENSSL=	TRUE

@@ -2,6 +2,7 @@
 
 PORTNAME=	sofia-sip
 PORTVERSION=	1.12.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -10,9 +11,10 @@ COMMENT=	Open-source SIP User-Agent library
 
 LICENSE=	LGPL21
 
-# Looks like GNU make(1) is needed for parallel (-jX) builds to work
-USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+# Looks like GNU make(1) is needed for parallel (-jX) builds to work
+USES=		gmake libtool pathfix pkgconfig
 USE_OPENSSL=	yes
 USE_GNOME=	glib20
 

@@ -17,7 +17,5 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAN1=		gnomekiss.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

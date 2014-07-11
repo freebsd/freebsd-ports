@@ -2,6 +2,7 @@
 
 PORTNAME=	libzmq3
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -11,7 +12,11 @@ COMMENT=	ZeroMQ core library (Version 3)
 
 LICENSE=	LGPL3
 
-USES=		pathfix
+CONFLICTS=	zmq-[0-9]* libzmq[^3]-[0-9]*
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG PGM
@@ -28,11 +33,8 @@ PGM_USES=		pkgconfig
 WITH_DEBUG=	yes
 .endif
 
-GNU_CONFIGURE=	yes
-
-CONFLICTS=	zmq-[0-9]* libzmq[^3]-[0-9]*
-
 regression-test: build
-	cd ${WRKSRC} && ${MAKE}	check
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>

@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	procmail-lib
 DISTNAME=	procmail-lib-2009.1202
 
 MAINTAINER=	pclin@FreeBSD.org
-COMMENT=	A collection of procmail plug-in modules
+COMMENT=	Collection of procmail plug-in modules
 
 LICENSE=	GPLv2
 

@@ -24,12 +24,7 @@ MAKE_JOB_SAFE=	yes
 SUB_FILES=	pkg-message
 PKG_MESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-# triggers internal error in system gcc
 USE_GCC=	yes
-.endif
 
 # unsafe workaround because FreeBSD lacks logl and expl
 # see "BUGS" in `man 3 math`
@@ -37,4 +32,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|expl|exp|g' ${WRKSRC}/apps/snp_store/snp_store.h
 	@${REINPLACE_CMD} -e 's|logl|log|g' ${WRKSRC}/apps/snp_store/snp_store.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

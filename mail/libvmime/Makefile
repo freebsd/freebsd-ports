@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/vmime/vmime/0.9
 
 MAINTAINER=	delphij@FreeBSD.org
-COMMENT=	An all-in-one Internet mail library
+COMMENT=	All-in-one Internet mail library
 
 LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 LIB_DEPENDS+=	libgsasl.so:${PORTSDIR}/security/gsasl

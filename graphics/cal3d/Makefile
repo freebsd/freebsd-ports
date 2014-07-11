@@ -3,7 +3,7 @@
 
 PORTNAME=	cal3d
 PORTVERSION=	0.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.gna.org/cal3d/sources/
 DIST_SUBDIR=	${PORTNAME}
@@ -13,9 +13,9 @@ COMMENT=	Skeletal based 3D character animation library written in C++
 
 CONFLICTS=	cal3d-devel-[0-9]*
 
-USES=		pkgconfig
+USES=		pkgconfig libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake autoheader libtool
+USE_AUTOTOOLS=	automake autoheader
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 AUTOTOOLSFILES=	aclocal.m4

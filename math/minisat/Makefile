@@ -7,7 +7,7 @@ CATEGORIES=	math devel
 MASTER_SITES=	http://highsecure.ru/distfiles/
 
 MAINTAINER=	vsevolod@FreeBSD.org
-COMMENT=	A minimalistic, open-source SAT solver
+COMMENT=	Minimalistic, open-source SAT solver
 
 USES=	gmake
 USE_LDCONFIG=	yes

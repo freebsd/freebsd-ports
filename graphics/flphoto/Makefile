@@ -11,44 +11,36 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic image management and display program
 
-LIB_DEPENDS=	gphoto2:${PORTSDIR}/graphics/libgphoto2 \
-		fltk:${PORTSDIR}/x11-toolkits/fltk \
-		png15:${PORTSDIR}/graphics/png
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_XORG=	xinerama
 GNU_CONFIGURE=	yes
+OPTIONS_DEFINE=	DOCS
+BROKEN_powerpc=	Does not install on powerpc
 
-MAN1=		flphoto.1
-MAN5=		album.5
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@OPTIM@|-DHAVE_CONFIG_H|g' ${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/flphoto ${PREFIX}/bin/flphoto
-	${INSTALL_MAN} ${WRKSRC}/doc/flphoto.man ${MANPREFIX}/man/man1/flphoto.1
-	${INSTALL_MAN} ${WRKSRC}/doc/album.man ${MAN5PREFIX}/man/man5/album.5
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.jpg ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/flphoto ${STAGEDIR}${PREFIX}/bin/flphoto
+	${INSTALL_MAN} ${WRKSRC}/doc/flphoto.man ${STAGEDIR}${MANPREFIX}/man/man1/flphoto.1
+	${INSTALL_MAN} ${WRKSRC}/doc/album.man ${STAGEDIR}${MAN5PREFIX}/man/man5/album.5
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.jpg ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${STAGEDIR}${DOCSDIR}
 .for lang in de en_CA en_GB es fr it nl pt
-	@${MKDIR} ${PREFIX}/share/locale/${lang}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.po \
-		${PREFIX}/share/locale/${lang}/flphoto_${lang}
+		${STAGEDIR}${PREFIX}/share/locale/${lang}/flphoto_${lang}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not install on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
