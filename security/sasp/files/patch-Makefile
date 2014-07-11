@@ -6,6 +6,6 @@
 +	${CC} `${LIBNET_CONFIG} --cflags` -o sasp sasp.c -lpcap `${LIBNET_CONFIG} --libs`
  install:
 -	install -o root -m 555 sasp /usr/local/sbin
-+	${BSD_INSTALL_PROGRAM} sasp ${PREFIX}/sbin
++	${BSD_INSTALL_PROGRAM} sasp ${DESTDIR}${PREFIX}/sbin
  clean:
  	rm -rf *.o
