@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-dateutil-${PORTVERSION}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Provides powerful extensions to the standard datetime module
 
 LICENSE=	BSD3CLAUSE
