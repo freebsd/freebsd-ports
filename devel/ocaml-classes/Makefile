@@ -13,9 +13,9 @@ COMMENT=	Ocaml Object interface for ocaml's standard library modules
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
+USE_OCAML=	yes
+USE_OCAML_FINDLIB=	yes
+USE_OCAMLFIND_PLIST=	yes
 MAKE_ENV=	INSTALL="${INSTALL_DATA}"
 
 .include <bsd.port.mk>
