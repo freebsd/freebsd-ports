@@ -25,7 +25,7 @@ USES=	cpe
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
 .if ${ISCVERSION:M*-*}
-CPE_UPDATE=	${ISCVERSION:C/.*-//}
+CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
