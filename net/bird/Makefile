@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	bird
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
