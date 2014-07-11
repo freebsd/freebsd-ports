@@ -5,8 +5,8 @@
 include/statgrab.h
 lib/libstatgrab.a
 lib/libstatgrab.so
-lib/libstatgrab.so.9
-lib/libstatgrab.so.9.0.0
+lib/libstatgrab.so.10
+lib/libstatgrab.so.10.0.0
 libdata/pkgconfig/libstatgrab.pc
 %%TOOLS%%man/man1/saidar.1.gz
 %%TOOLS%%man/man1/statgrab-make-mrtg-config.1.gz
@@ -115,3 +115,10 @@ man/man3/sg_vector_create.3.gz
 man/man3/sg_vector_free.3.gz
 man/man3/sg_vector_resize.3.gz
 man/man3/statgrab.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LGPL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PLATFORMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
