@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	emf
-PORTVERSION=	2.7.2
+PORTVERSION=	2.9.2
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/modeling/emf/emf/downloads/drops/,}
-MASTER_SITE_SUBDIR=${PORTVERSION}/R201201300943
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/,}
+MASTER_SITE_SUBDIR=modeling/emf/emf/downloads/drops/${PORTVERSION}/R201402031126
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	emf-xsd-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
