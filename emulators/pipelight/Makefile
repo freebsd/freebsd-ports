@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract \
-		${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/wine-devel \
 		${LOCALBASE}/bin/flock:${PORTSDIR}/sysutils/flock \
 		${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg
 
@@ -27,8 +26,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/wine-devel
+RUN_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/wine-devel
 .elif ${ARCH} == "amd64"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/i386-wine-devel
+RUN_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/i386-wine-devel
 .endif
 
 WRKSRC=		${WRKDIR}/mmueller2012-pipelight-e2362eb15df6
