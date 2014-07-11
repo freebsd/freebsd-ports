@@ -1,0 +1,34 @@
+
+---------------------------------------------------------------
+
+Default autopsy configuration file is /usr/local/lib/autopsy/conf.pl
+
+---------------------------------------------------------------
+
+The NIST National Software Reference Library (NSRL) contains
+hash values of known good and bad files.
+   http://www.nsrl.nist.gov
+
+If you have a copy of the NSRL, you may add support in Autopsy by
+adding the path to the NSRLFile.txt to the "NSRLDB" configuration
+entry:
+   NSRLDB = /path/to/NSRLFile.txt
+
+The index file NSRLFile.txt-md5.idx must be in the same directory.
+If it does not exist it may be created with the TSK hfind command:
+   hfind -i nsrl-md5 /path/to/NSRLFile.txt
+
+---------------------------------------------------------------
+
+Autopsy saves configuration files, audit logs, and output to the
+Evidence Locker directory. You MUST specify this with the LOCKDIR
+configuration entry before running Autopsy:
+   LOCKDIR = /path/to/locker
+
+---------------------------------------------------------------
+
+WARNING: The cross-platform version of Autopsy is no longer actively
+         developed. This port is retained mainly to allow users with
+         saved data to migrate to another forensic tool.
+
+---------------------------------------------------------------
