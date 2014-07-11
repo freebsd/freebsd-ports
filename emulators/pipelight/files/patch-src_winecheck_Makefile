@@ -1,0 +1,18 @@
+--- src/winecheck/Makefile.orig	2014-07-08 13:07:29.409800544 -0400
++++ src/winecheck/Makefile	2014-07-08 13:07:37.139799764 -0400
+@@ -10,7 +10,7 @@
+ all: winecheck$(suffix).exe
+ 
+ ifeq ($(wildcard winecheck$(suffix).exe),)
+-commit=$(shell git log --pretty=format:'%H' -n 1 || echo "prebuilt")
++commit=DISTVERSION
+ 
+ ../../pluginloader-$(commit).tar.gz:
+ 	$(downloader) "../../pluginloader-$(commit).tar.gz"     "http://repos.fds-team.de/pluginloader/$(commit)/pluginloader.tar.gz"
+@@ -52,4 +52,4 @@
+ clean:
+ 	rm -f *.exe *.exe.so *.o
+ 
+-endif
+\ No newline at end of file
++endif
