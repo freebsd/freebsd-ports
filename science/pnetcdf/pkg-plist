@@ -2,6 +2,8 @@ bin/ncmpidiff
 bin/ncmpidump
 bin/ncmpigen
 bin/ncmpivalid
+bin/pnetcdf_version
+include/pnetcdf
 include/pnetcdf.h
 include/pnetcdf.inc
 include/pnetcdf.mod
@@ -13,3 +15,4 @@ man/man1/ncmpivalid.1.gz
 man/man3/pnetcdf.3.gz
 man/man3/pnetcdf_f77.3.gz
 man/man3/pnetcdf_f90.3.gz
+man/man1/pnetcdf_version.1.gz
