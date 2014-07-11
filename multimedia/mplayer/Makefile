@@ -27,7 +27,6 @@ BLURAY_DESC?=	BluRay support
 ENCA_DESC?=	Charset conversion via enca
 LZO_DESC?=	External liblzo support
 OCFLAGS_DESC?=	Use optimized compiler flags
-OPUS_DESC?=	Opus decoding with libopus
 OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
 REAL_DESC?=	Enable realplayer plugin
 RTC_DESC?=	Add support for kernel real time clock

@@ -45,7 +45,6 @@ ILBC_DESC=	iLBC audio codec
 L16_DESC=	L16 audio codec
 MENU_DESC=	Interactive menu
 OPENGLES_DESC=	OpenGL ES video output
-OPUS_DESC=	Opus audio codec
 PLC_DESC=	Packet Loss Concealment
 PRESENCE_DESC=	Presence module
 SRTP_DESC=	Secure RTP module [broken]

@@ -20,7 +20,6 @@ OPTIONS_DEFAULT=GIF IPV6 OCFLAGS RTCPU WIN32 X264 XVID
 BLURAY_DESC?=	BluRay support
 LZO_DESC?=	Enable external liblzo library
 OCFLAGS_DESC?=	Use optimized compiler flags
-OPUS_DESC?=	Opus decoding with libopus
 OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
 REAL_DESC?=	Enable realplayer plugin
 RTCPU_DESC?=	Use runtime CPU detection on supported archs
