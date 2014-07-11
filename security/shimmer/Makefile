@@ -3,31 +3,28 @@
 
 PORTNAME=	shimmer
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 DISTNAME=	${PORTNAME}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl implementation that hides a valuable port on your server
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	shimmer shimmerd
 
 PLIST_FILES=	bin/shimmer \
 		bin/shimmerd \
 		etc/shimmer.conf
 
-NO_STAGE=	yes
 do-install:
-.if !defined(WITHOUT_CLIENT)
-	${INSTALL_SCRIPT} ${WRKSRC}/shimmer ${PREFIX}/bin/shimmer
-.endif
-.if !defined(WITHOUT_SERVER)
-	${INSTALL_SCRIPT} ${WRKSRC}/shimmerd ${PREFIX}/bin/shimmerd
-	${INSTALL_DATA} ${WRKSRC}/shimmer.conf ${PREFIX}/etc/shimmer.conf
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/shimmer ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/shimmerd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/shimmer.conf ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
