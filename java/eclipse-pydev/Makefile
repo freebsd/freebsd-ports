@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pydev
-PORTVERSION=	2.8.2
+PORTVERSION=	3.5.0
 PORTREVISION=	0
 CATEGORIES=	java devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/PyDev%20${PORTVERSION}/
@@ -14,11 +14,9 @@ COMMENT=	Eclipse plugin for Python and Jython development
 
 LICENSE=	EPL
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 BUNDLES_INFO=	${PREFIX}/lib/eclipse/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
-
-DISTDATE=	2013090511
 
 JYTHON_DESC=	Use Jython as Python interpreter
 
