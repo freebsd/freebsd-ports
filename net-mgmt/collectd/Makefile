@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 

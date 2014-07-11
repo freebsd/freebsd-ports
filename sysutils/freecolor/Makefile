@@ -3,6 +3,7 @@
 
 PORTNAME=	freecolor
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rkeene.org/files/oss/freecolor/
 
