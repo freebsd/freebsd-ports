@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Discovery-based unittest extension
 
 LICENSE=	LGPL21
