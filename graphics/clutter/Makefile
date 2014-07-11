@@ -4,6 +4,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	1.18.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libcogl.so:${PORTSDIR}/graphics/cogl
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango \
 		introspection:build
 USE_GL=		gl
@@ -28,8 +29,6 @@ CONFIGURE_ARGS=	--with-x --enable-conformance=no \
 
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libclutter-1.0.so.0
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

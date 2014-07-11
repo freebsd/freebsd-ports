@@ -25,11 +25,8 @@ include/eog-%%VERSION%%/eog/eog-window.h
 include/eog-3.0/eog/eog-window-activatable.h
 lib/eog/girepository-1.0/Eog-3.0.typelib
 lib/eog/plugins/fullscreen.plugin
-lib/eog/plugins/libfullscreen.la
 lib/eog/plugins/libfullscreen.so
-lib/eog/plugins/libreload.la
 lib/eog/plugins/libreload.so
-%%EXIF%%lib/eog/plugins/libstatusbar-date.la
 %%EXIF%%lib/eog/plugins/libstatusbar-date.so
 lib/eog/plugins/reload.plugin
 %%EXIF%%lib/eog/plugins/statusbar-date.plugin

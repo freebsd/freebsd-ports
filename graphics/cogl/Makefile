@@ -3,7 +3,7 @@
 #  $MCom: ports-experimental/trunk/graphics/cogl/Makefile 19235 2014-03-23 07:26:21Z kwm $
 
 PORTNAME=	cogl
-PORTVERSION=	1.18.0
+PORTVERSION=	1.18.2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -15,15 +15,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	clutter-1.6.[0-9]*
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango introspection:build
 USE_GL=		gl
-USE_XORG=	x11 xfixes xdamage xcomposite xi xrandr
+USE_XORG=	x11 xfixes xdamage xcomposite xi
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-x
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+PLIST_SUB=	LIBVER=20 LIBVERSION=20.2.0
 
 .include <bsd.port.mk>

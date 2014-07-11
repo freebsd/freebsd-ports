@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/security/gnome-keyring/Makefile 19662 2014-05-13 21:00:02Z gusi $
+#   $MCom: ports/trunk/security/gnome-keyring/Makefile 19769 2014-07-08 07:47:36Z kwm $
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	3.12.2
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,20 +24,14 @@ LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 RUN_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
 
 USE_GNOME=	gnomeprefix gtk30 intlhack libxslt:build
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib" \
-		--with-root-certs=${LOCALBASE}/share/certs
+CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.gnome.crypto.cache.gschema.xml
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|make --version|${GMAKE} --version|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|gnome-keyring-module|gnome-keyring.module|g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>

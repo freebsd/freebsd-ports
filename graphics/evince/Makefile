@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack introspection:build
 USE_LDCONFIG=	yes
@@ -29,6 +29,7 @@ USE_XORG=	ice
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-xps --enable-introspection
 
 GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
@@ -112,13 +113,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
 		${WRKSRC}/help/reference/libdocument/Makefile.in \
 		${WRKSRC}/help/reference/libview/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libevdocument3.so.4
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evince/4/backends/lib*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libevview3.so.3
-.if ${PORT_OPTIONS:MNAUTILUS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libevince-properties-page.so
-.endif
 
 .include <bsd.port.mk>

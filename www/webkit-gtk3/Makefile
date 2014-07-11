@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19697 2014-05-26 12:27:28Z kwm $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19771 2014-07-10 12:17:43Z kwm $
 
 PORTNAME=	webkit
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3
@@ -26,7 +26,7 @@ RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
-USES=		bison gettext libtool:keepla perl5 pkgconfig \
+USES=		bison gettext gmake libtool:keepla perl5 pkgconfig \
 		shebangfix tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes

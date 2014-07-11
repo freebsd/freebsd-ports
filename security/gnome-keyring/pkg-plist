@@ -5,17 +5,11 @@ etc/xdg/autostart/gnome-keyring-gpg.desktop
 etc/xdg/autostart/gnome-keyring-pkcs11.desktop
 etc/xdg/autostart/gnome-keyring-secrets.desktop
 etc/xdg/autostart/gnome-keyring-ssh.desktop
-lib/gnome-keyring/devel/gkm-gnome2-store-standalone.la
 lib/gnome-keyring/devel/gkm-gnome2-store-standalone.so
-lib/gnome-keyring/devel/gkm-secret-store-standalone.la
 lib/gnome-keyring/devel/gkm-secret-store-standalone.so
-lib/gnome-keyring/devel/gkm-ssh-store-standalone.la
 lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
-lib/gnome-keyring/devel/gkm-xdg-store-standalone.la
 lib/gnome-keyring/devel/gkm-xdg-store-standalone.so
-lib/pam_gnome_keyring.la
 lib/pam_gnome_keyring.so
-lib/pkcs11/gnome-keyring-pkcs11.la
 lib/pkcs11/gnome-keyring-pkcs11.so
 man/man1/gnome-keyring-3.1.gz
 man/man1/gnome-keyring-daemon.1.gz
@@ -118,8 +112,6 @@ share/p11-kit/modules/gnome-keyring.module
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
-@dirrmtry share/locale/tg/LC_MESSAGES
-@dirrmtry share/locale/tg
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES

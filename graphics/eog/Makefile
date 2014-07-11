@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/eog/Makefile 19640 2014-05-13 06:01:37Z gusi $
+#   $MCom: ports/trunk/graphics/eog/Makefile 19763 2014-07-05 18:51:35Z kwm $
 
 PORTNAME=	eog
 PORTVERSION=	3.12.2
@@ -21,7 +21,7 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 
 USE_GNOME=	gnomeprefix intlhack librsvg2 gtk30 gnomedesktop3 \
 		introspection:build
-USES=		desktop-file-utils gettext gmake pathfix \
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

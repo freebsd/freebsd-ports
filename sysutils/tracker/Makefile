@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/tracker/Makefile 19616 2014-05-09 09:31:40Z gusi $
+#    $MCom: ports/trunk/sysutils/tracker/Makefile 19772 2014-07-10 17:47:06Z gusi $
 
 PORTNAME=	tracker
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -100,7 +100,7 @@ LIB_DEPENDS+=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
 		libgxps.so:${PORTSDIR}/graphics/libgxps \
 		libgsf-1.so:${PORTSDIR}/devel/libgsf \
 		libexempi.so:${PORTSDIR}/textproc/exempi \
-		libwv-1.2.so:${PORTSDIR}/textproc/wv
+		libwv.so:${PORTSDIR}/textproc/wv
 CONFIGURE_ARGS+=	--enable-libgxps --enable-poppler \
 			--enable-libxml2 --enable-exif \
 			--enable-libgsf --enable-abiword \

@@ -30,15 +30,15 @@ include/tracker-%%TRACKER_VER%%/libtracker-sparql/tracker-version.h
 lib/libtracker-control-%%TRACKER_VER%%.la
 lib/libtracker-control-%%TRACKER_VER%%.so
 lib/libtracker-control-%%TRACKER_VER%%.so.0
-lib/libtracker-control-%%TRACKER_VER%%.so.0.0.1
+lib/libtracker-control-%%TRACKER_VER%%.so.0.0.2
 lib/libtracker-miner-%%TRACKER_VER%%.la
 lib/libtracker-miner-%%TRACKER_VER%%.so
 lib/libtracker-miner-%%TRACKER_VER%%.so.0
-lib/libtracker-miner-%%TRACKER_VER%%.so.0.0.1
+lib/libtracker-miner-%%TRACKER_VER%%.so.0.0.2
 lib/libtracker-sparql-%%TRACKER_VER%%.la
 lib/libtracker-sparql-%%TRACKER_VER%%.so
 lib/libtracker-sparql-%%TRACKER_VER%%.so.0
-lib/libtracker-sparql-%%TRACKER_VER%%.so.0.0.1
+lib/libtracker-sparql-%%TRACKER_VER%%.so.0.0.2
 lib/girepository-%%TRACKER_VER%%/Tracker-1.0.typelib
 lib/girepository-%%TRACKER_VER%%/TrackerControl-1.0.typelib
 lib/girepository-%%TRACKER_VER%%/TrackerMiner-1.0.typelib
@@ -444,10 +444,10 @@ share/vala/vapi/tracker-sparql-%%TRACKER_VER%%.vapi
 @dirrm %%DATADIR%%/ontologies
 @dirrm %%DATADIR%%/miners
 @dirrm %%DATADIR%%/languages
-@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/extract-rules
 @dirrm %%DATADIR%%-tests
 @dirrm %%DATADIR%%
+@dirrmtry share/icons
 @dirrm share/doc/libtracker-sparql
 @dirrm share/doc/libtracker-miner
 @dirrm share/doc/libtracker-control
