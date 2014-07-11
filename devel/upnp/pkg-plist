@@ -16,16 +16,16 @@ include/upnp/upnpdebug.h
 include/upnp/UpnpString.h
 include/upnp/upnptools.h
 lib/libixml.a
-lib/libixml.la
 lib/libixml.so
 lib/libixml.so.2
+lib/libixml.so.2.0.8
 lib/libthreadutil.a
-lib/libthreadutil.la
 lib/libthreadutil.so
 lib/libthreadutil.so.6
+lib/libthreadutil.so.6.0.4
 lib/libupnp.a
-lib/libupnp.la
 lib/libupnp.so
-lib/libupnp.so.9
+lib/libupnp.so.6
+lib/libupnp.so.6.3.3
 libdata/pkgconfig/libupnp.pc
 @dirrm include/upnp
