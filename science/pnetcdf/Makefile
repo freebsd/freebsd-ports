@@ -3,6 +3,7 @@
 
 PORTNAME=	pnetcdf
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://cucis.ece.northwestern.edu/projects/PnetCDF/Release/ \
 		LOCAL/sunpoet
@@ -19,8 +20,6 @@ OPTIONS_DEFAULT=OPENMPI
 CONFLICTS=	hdf-4.*
 
 CFLAGS+=	-fPIC -DPIC
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	M4FLAGS=""
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_PERL5=	build
