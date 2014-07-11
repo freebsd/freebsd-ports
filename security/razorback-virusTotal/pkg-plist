@@ -1,10 +1,6 @@
-@unexec if cmp -s %D/etc/razorback/virustotal.conf %D/etc/razorback/virustotal.conf.sample; then rm -f %D/etc/razorback/virustotal.conf; fi
-etc/razorback/virustotal.conf.sample
-@exec if [ ! -f %D/etc/razorback/virustotal.conf ] ; then cp -p %D/%F %B/virustotal.conf; fi
-@dirrmtry etc/razorback
+@sample etc/razorback/virustotal.conf.sample
 lib/razorback/virusTotal.so.2.0.0
 lib/razorback/virusTotal.so.2
 lib/razorback/virusTotal.so
-lib/razorback/virusTotal.la
 lib/razorback/virusTotal.a
 @dirrmtry lib/razorback
