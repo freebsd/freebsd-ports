@@ -6,42 +6,29 @@ PORTVERSION=	0.0.2
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://ocaml-sem.sourceforge.net/files/ \
-		SF/ocaml-${PORTNAME}/${PORTNAME}/${PORTVERSION}		
-
+		SF/ocaml-${PORTNAME}/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX semaphores for OCaml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-
+USES=		gmake tar:bzip2
+USE_OCAML=	yes
+USE_OCAML_LDCONFIG=	yes
+USE_OCAML_FINDLIB=	yes
 MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/sem" \
 		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=	all
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 .if !defined(WITH_CUSTOM)
 MAKE_ENV+=	NO_CUSTOM=y
 .endif
-ALL_TARGET=	all
 
-PORTDOCS=	html README
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-USES=		gmake tar:bzip2
-
-PKGDEINSTALL=	${PKGINSTALL}
-
-NO_STAGE=	yes
 post-install:
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/sem -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/sem" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove sem 2>/dev/null || true" >> ${TMPPLIST}
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
-	${CP} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
+	${CP} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
