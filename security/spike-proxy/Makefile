@@ -8,30 +8,29 @@ MASTER_SITES=	http://www.immunitysec.com/downloads/
 DISTNAME=	SP${PORTVERSION:tl:C/\.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= ports@FreeBSD.org
-COMMENT=	Tool for looking for vulnerabilities in web applications
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tool looking for vulnerabilities in web applications
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
 
-WRKSRC=		${WRKDIR}/spkproxy
+USES=		shebangfix
+SHEBANG_FILES=	*.py
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} "s|\#\!/usr/bin/python|\#\!${LOCALBASE}/bin/python|" ${WRKSRC}/*.py
+WRKSRC=		${WRKDIR}/spkproxy
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${RM} -rf ${WRKSRC}/*.bak
-	${CP} -Rp ${WRKSRC}/* ${DATADIR}/
-	${SED} "s|DATADIR|${DATADIR}|" ${SCRIPTDIR}/spkproxy.sh > ${PREFIX}/bin/spkproxy.sh
-	@${CHMOD} 755 ${PREFIX}/bin/spkproxy.sh
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for f in WHYGPL.txt TODO.txt SpikeUsage.txt README.txt CHANGELOG.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${CP} -Rp ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+	${SED} "s|DATADIR|${DATADIR}|" ${SCRIPTDIR}/spkproxy.sh > \
+		${STAGEDIR}${PREFIX}/bin/spkproxy.sh
+	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/spkproxy.sh
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} WHYGPL.txt TODO.txt SpikeUsage.txt \
+		README.txt CHANGELOG.txt ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
