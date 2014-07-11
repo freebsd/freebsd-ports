@@ -1,13 +1,9 @@
-@unexec if cmp -s %D/etc/razorback/yara.conf %D/etc/razorback/yara.conf.sample; then rm -f %D/etc/razorback/yara.conf; fi
-etc/razorback/yara.conf.sample
-@exec if [ ! -f %D/etc/razorback/yara.conf ]; then cp -p %D/%F %B/yara.conf; fi
+@sample etc/razorback/yara.conf.sample
 etc/razorback/yara/banker.rules
 etc/razorback/yara/packer.rules
 @dirrmtry etc/razorback/yara
-@dirrmtry etc/razorback
 lib/razorback/yaraNugget.so.2.0.0
 lib/razorback/yaraNugget.so.2
 lib/razorback/yaraNugget.so
-lib/razorback/yaraNugget.la
 lib/razorback/yaraNugget.a
 @dirrmtry lib/razorback
