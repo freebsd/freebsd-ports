@@ -42,7 +42,6 @@ OPTIONS_DEFAULT=	BZIP2 FREETYPE FREI0R GNUTLS OPENCV SCHROEDINGER \
 
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 ILBC_DESC=	iLBC en/decoding via libilbc
-OPUS_DESC=	Opus decoding with libopus
 X11GRAB_DESC=	X11 grabbing
 
 ALSA_LIB_DEPENDS=		libasound.so:${PORTSDIR}/audio/alsa-lib
