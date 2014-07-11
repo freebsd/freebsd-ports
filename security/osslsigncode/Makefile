@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osslsigncode
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	security devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
