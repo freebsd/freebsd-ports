@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	CoinMP
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.6
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Optimization library with support for COIN-OR CLP, CBC, and CGL
 
 LICENSE=	CPL
@@ -16,10 +16,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	clp-[0-9]*
 
-USES=	pkgconfig tar:tgz
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+USES=	libtool pkgconfig tar:tgz
 USE_LDCONFIG=	yes
-USE_GCC=	any
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 OPTIONS_DEFINE=	DEBUG DOCS
@@ -51,11 +51,6 @@ post-patch::
 		${WRKSRC}/Data/Sample/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(DESTDIR)$$(addlibsdir)|$$(addlibsdir)|g' \
 		${WRKSRC}/CoinMP/Makefile.in
-
-pre-build:
-.for dir in Cbc Cgl Clp CoinMP CoinUtils Osi
-	${CP} ${LTMAIN} ${WRKSRC}/${dir}
-.endfor
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/share/coin/doc ${STAGEDIR}${DOCSDIR}

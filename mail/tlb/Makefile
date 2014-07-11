@@ -6,10 +6,11 @@ PORTVERSION=	0.11a
 CATEGORIES=	mail perl5
 MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/tlb/ \
 		http://www.freenix.no/~anders/ \
-		ftp://totem.fix.no/pub/mirrors/misc/
+		ftp://totem.fix.no/pub/mirrors/misc/ \
+		http://ports.toco-domains.de/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	The List Batcher, a general purpose mail list delivery engine
 
 RUN_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
@@ -26,20 +27,20 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	${FIXPREFIX}
 perl_OLD_CMD=	/usr/local/bin/perl5
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 pre-patch:
 .for f in ${FIXPREFIX}
 	@${REINPLACE_CMD} -i '' -e 's@/usr/lib/sendmail@/usr/sbin/sendmail@' ${WRKSRC}/${f}
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tlb ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/mungelist ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/share/doc/tlb
+	${INSTALL_SCRIPT} ${WRKSRC}/tlb ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mungelist ${STAGEDIR}${PREFIX}/bin
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/tlb
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
