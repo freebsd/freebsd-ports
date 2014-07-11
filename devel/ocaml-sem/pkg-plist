@@ -1,0 +1,25 @@
+%%OCAML_SITELIBDIR%%/sem/META
+%%OCAML_SITELIBDIR%%/sem/dllsem_stubs.so
+%%OCAML_SITELIBDIR%%/sem/libsem_stubs.a
+%%OCAML_SITELIBDIR%%/sem/sem.a
+%%OCAML_SITELIBDIR%%/sem/sem.cma
+%%OCAML_SITELIBDIR%%/sem/sem.cmi
+%%OCAML_SITELIBDIR%%/sem/sem.cmxa
+%%OCAML_SITELIBDIR%%/sem/sem.mli
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/html/Sem.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_attributes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_class_types.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_module_types.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_modules.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_types.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index_values.html
+%%PORTDOCS%%%%DOCSDIR%%/html/style.css
+%%PORTDOCS%%%%DOCSDIR%%/html/type_Sem.html
+@dirrmtry %%OCAML_SITELIBDIR%%/sem
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
