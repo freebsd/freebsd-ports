@@ -1,6 +1,3 @@
 bin/masterNugget
 bin/masterNugget_safed
-@unexec if cmp -s %D/etc/razorback/master_nugget.conf %D/etc/razorback/master_nugget.conf.sample; then rm -f %D/etc/razorback/master_nugget.conf; fi
-etc/razorback/master_nugget.conf.sample
-@exec if [ ! -f %D/etc/razorback/master_nugget.conf ]; then cp %D/%F %B/master_nugget.conf; fi
-@dirrmtry etc/razorback
+@sample etc/razorback/master_nugget.conf.sample
