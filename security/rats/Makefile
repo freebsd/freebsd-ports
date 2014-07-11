@@ -5,12 +5,12 @@ PORTNAME=	rats
 PORTVERSION=	2.3
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.fortify.com/downloads2/public/ \
-				http://redundancy.redundancy.org/mirror/
+		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code auditing tool
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -20,12 +20,14 @@ CONFIGURE_ARGS+=--with-expat-lib=${LOCALBASE}/lib \
 
 ALL_TARGET=	${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -E '/^CFLAGS/! s,(BIN|LIB|MAN|SHARE)DIR),DESTDIR)$$(&,g' \
+		${WRKSRC}/Makefile.in
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-MAN1=		rats.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
