@@ -63,6 +63,7 @@
     SUBDIR += cbedic
     SUBDIR += cdif
     SUBDIR += cdiff
+    SUBDIR += cgrep
     SUBDIR += chm2pdf
     SUBDIR += chpp
     SUBDIR += cl-meta
