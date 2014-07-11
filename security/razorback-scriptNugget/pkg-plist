@@ -1,11 +1,7 @@
-@unexec if cmp -s %D/etc/razorback/scriptNugget.conf %D/etc/razorback/scriptNugget.conf.sample; then rm -f %D/etc/razorback/scriptNugget.conf; fi
-etc/razorback/scriptNugget.conf.sample
-@exec if [ ! -f %D/etc/razorback/scriptNugget.conf ] ; then cp -p %D/%F %B/scriptNugget.conf; fi
-@dirrmtry etc/razorback
+@sample etc/razorback/scriptNugget.conf.sample
 lib/razorback/scriptNugget.so.2.0.0
 lib/razorback/scriptNugget.so.2
 lib/razorback/scriptNugget.so
-lib/razorback/scriptNugget.la
 lib/razorback/scriptNugget.a
 @dirrmtry lib/razorback
 libexec/razorback/scriptNugget/test.rb
