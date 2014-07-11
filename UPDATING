@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140710:
+  AFFECTS: users of lang/rust
+  AUTHOR: robak@FreeBSD.org
+
+  The lang/rust port was updated to 0.11 and is now only working on FreeBSD
+  versions 10 and 11 - the 9.x support has been removed by upstream.
+
 20140709:
   AFFECTS: users of security/pam-pgsql
   AUTHOR: tijl@FreeBSD.org
