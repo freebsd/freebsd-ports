@@ -1243,7 +1243,7 @@ WITH_PKGNG?=	yes
 .endif
 
 .if !defined(WITH_PKGNG) && !defined(NO_WARNING_PKG_INSTALL_EOL)
-WARNING+=	"pkg_install EOL is scheduled for 2014-09-01. Please consider migrating to pkgng"
+WARNING+=	"pkg_install EOL is scheduled for 2014-09-01. Please migrate to pkgng"
 WARNING+=	"http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/"
 WARNING+=	"If you do not want to see this message again set NO_WARNING_PKG_INSTALL_EOL=yes in your make.conf"
 .endif
@@ -4195,7 +4195,7 @@ fix-plist-sequence: ${TMPPLIST}
 	@cd ${.CURDIR} && { ${MAKE} pretty-print-config | fold -sw 120 | ${SED} -e 's/^/@comment OPTIONS:/'; } >> ${TMPPLIST}
 	@${AWK} -f ${KEYWORDS}/pkg_install.awk ${TMPPLIST} > ${TMPPLIST}.keyword && \
 	    ${MV} -f ${TMPPLIST}.keyword ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo pkg_install EOL is scheduled for 2014-09-01. Please consider migrating to pkgng" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec echo pkg_install EOL is scheduled for 2014-09-01. Please migrate to pkgng" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/" >> ${TMPPLIST}
 .endif
 .endif
