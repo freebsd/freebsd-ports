@@ -6,7 +6,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User authentication and password changing utility
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
@@ -21,12 +21,10 @@ MINUID?=	100
 
 CONFIGURE_ARGS+=	--with-minuid=${MINUID}
 
-MAN8=		courierpasswd.8
+PLIST_FILES=	sbin/courierpasswd man/man8/courierpasswd.8.gz
+PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL NEWS README
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 pre-fetch:
 	@${ECHO} ""
@@ -41,16 +39,11 @@ pre-fetch:
 	@${ECHO} "#############################################################"
 	@${ECHO} ""
 
+post-patch:
+	@${REINPLACE_CMD} '/chown root/d' ${WRKSRC}/Makefile.in
+
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
