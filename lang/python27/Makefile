@@ -22,9 +22,13 @@ MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
 
 INSTALL_TARGET=	altinstall
 
-USES=		readline tar:xz
+USES=		readline tar:xz cpe
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
+
+CPE_VENDOR=	python
+CPE_PRODUCT=	${CPE_VENDOR}
+CPE_VERSION=	${PORTVERSION}
 
 PYTHON_VERSION=		python2.7
 PYTHON_NO_DEPENDS=	yes
@@ -272,10 +276,9 @@ post-install:
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/${PYTHON_VERSION}.1
 
-.if !defined(NOPORTDATA)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | (cd ${STAGEDIR}${DATADIR}; ${TAR} --no-same-owner -xf -))
-.endif
+
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
 		(cd ${STAGEDIR}${EXAMPLESDIR}; ${TAR} --no-same-owner -xf -))
