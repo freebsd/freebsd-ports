@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	GH
 
-MAINTAINER=	fmb@onibox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage multiple versions of ruby
 
 LICENSE=	RBENV
