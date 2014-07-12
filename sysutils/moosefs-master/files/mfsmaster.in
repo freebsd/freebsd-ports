@@ -8,9 +8,14 @@
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable mfsmaster:
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable mfsmaster:
 #
-# mfsmaster_enable="YES"
+# mfsmaster_enable (bool):   Set to NO by default.
+#                            Set it to YES to enable mfsmaster.
+# mfsmaster_config (path):   Set to %%PREFIX%%/etc/mfs/mfsmaster.cfg
+#                            by default.
+# mfsmaster_flags (str):     Set to ""  by default.
+#                            Extra flags passed to mfsmaster.
 #
 
 . /etc/rc.subr
@@ -18,18 +23,13 @@
 name=mfsmaster
 rcvar=mfsmaster_enable
 
-command=%%PREFIX%%/sbin/${name}
-
-stop_postcmd=stop_postcmd
-
-stop_postcmd()
-{
-  rm -f $pidfile
-}
-
-# set defaults
-mfsmaster_enable=${mfsmaster_enable:-"NO"}
-mfsmaster_flags=${mfsmaster_flags:-"-c %%PREFIX%%/etc/mfsmaster.cfg"}
-
 load_rc_config $name
+
+: ${mfsmaster_enable=NO}
+: ${mfsmaster_config=%%PREFIX%%/etc/mfs/mfsmaster.cfg}
+
+extra_commands=reload
+command=%%PREFIX%%/sbin/${name}
+command_args="-c ${mfsmaster_config}"
+
 run_rc_command "$1"
