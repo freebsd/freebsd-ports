@@ -21,8 +21,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/CFLAG/CFLAGS/' -e 's/make/$$(MAKE)/' \
 		${WRKSRC}/Makefile
@@ -31,9 +29,7 @@ post-patch:
 		${WRKSRC}/Makefile ${WRKSRC}/hzconvert/Makefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ChangeLog Readme TODO Thanks Version ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
