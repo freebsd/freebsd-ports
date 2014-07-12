@@ -1,0 +1,4 @@
+
+First issue "rehash" command to enable the qchroot script (if using csh).
+Then issue "man qchroot" to read about qchroot usage.
+
