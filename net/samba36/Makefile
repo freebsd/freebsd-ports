@@ -80,7 +80,7 @@ CONFIGURE_ENV+=		ac_cv_header_sys_mount_h=yes
 # XXX: readdir test fails on ZFS, bringing unusable replacement code
 CONFIGURE_ENV+=		libreplace_cv_READDIR_NEEDED=no
 # Let process generate meaningful backtrace on a core dump
-LIB_DEPENDS+=		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 # tdb
 BUILD_DEPENDS+=		tdb>=1.2.6:${PORTSDIR}/databases/tdb
 RUN_DEPENDS+=		tdb>=1.2.6:${PORTSDIR}/databases/tdb
@@ -164,7 +164,7 @@ SAMBA_WANT_LDAP=	yes
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=		cups:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
 SUB_LIST+=		CUPS=""
 .else
@@ -175,7 +175,7 @@ SUB_LIST+=		CUPS="@comment "
 .if ${PORT_OPTIONS:MMAX_DEBUG}
 CPPFLAGS+=		-g
 LDFLAGS+=		-g
-LIB_DEPENDS+=		dmalloc:${PORTSDIR}/devel/dmalloc
+LIB_DEPENDS+=		libdmalloc.so:${PORTSDIR}/devel/dmalloc
 CONFIGURE_ARGS+=	--enable-debug
 #			--enable-socket-wrapper --enable-nss-wrapper \
 #			--enable-developer --enable-krb5developer \
@@ -249,7 +249,7 @@ CONFIGURE_ARGS+=	--disable-fam
 CONFIGURE_ARGS+=	--with-acl-support
 .	if ${OSVERSION} > 800000
 WANT_EXP_MODULES+=	vfs_zfsacl
-LIB_DEPENDS+=		sunacl:${PORTSDIR}/sysutils/libsunacl
+LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 .	endif
 .else
 CONFIGURE_ARGS+=	--without-acl-support
@@ -276,7 +276,7 @@ PLIST_SUB+=		SMBPASS="@comment "
 .	if ! ${PORT_OPTIONS:MADS}
 IGNORE=			dynamic DNS updates require ADS support. Disable DNSUPDATE support
 .	endif
-LIB_DEPENDS+=		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS+=		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 CONFIGURE_ARGS+=	--with-dnsupdate
 .else
 CONFIGURE_ARGS+=	--without-dnsupdate
@@ -285,7 +285,7 @@ CONFIGURE_ARGS+=	--without-dnsupdate
 .if ${PORT_OPTIONS:MAVAHI}
 CPPFLAGS+=		`pkg-config --cflags avahi-client`
 CONFIGURE_ENV+=		DNSSD_LIBS="`pkg-config --libs avahi-client`"
-LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-avahi
 .else
 CONFIGURE_ARGS+=	--disable-avahi
@@ -298,7 +298,7 @@ CONFIGURE_ARGS+=	--disable-pthreadpool
 .endif
 
 .if ${PORT_OPTIONS:MPOPT}
-LIB_DEPENDS+=		popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS+=		libpopt.so:${PORTSDIR}/devel/popt
 CONFIGURE_ARGS+=	--without-included-popt
 .else
 CONFIGURE_ARGS+=	--with-included-popt
@@ -332,7 +332,7 @@ CONFIGURE_ARGS+=	--with-krb5="${HEIMDAL_HOME}"
 .elif exists(/usr/lib/libkrb5.so) && exists(/usr/bin/krb5-config)
 CONFIGURE_ARGS+=	--with-krb5="/usr"
 .else
-LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=		libkrb5.so:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=	--with-krb5="${LOCALBASE}"
 .endif
 .else
