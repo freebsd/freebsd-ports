@@ -38,11 +38,13 @@ pre-install:
 
 post-install:
 .for FILE in mfsmaster mfsexports mfsmetalogger mfstopology
-	@if [ ! -f ${PREFIX}/etc/${FILE}.cfg ]; then \
-		${CP} ${PREFIX}/etc/mfs/${FILE}.cfg.dist ${PREFIX}/etc/${FILE}.cfg ; \
+	@if [ ! -f ${PREFIX}/etc/mfs/${FILE}.cfg ]; then \
+		${CP} ${PREFIX}/etc/mfs/${FILE}.cfg.dist ${PREFIX}/etc/mfs/${FILE}.cfg ; \
 	fi
 .endfor
-
+	@if [ ! -f ${MFS_WORDIR}/mfs/metadata.mfs ]; then \
+		${CP} ${MFS_WORKDIR}/mfs/metadata.mfs.empty ${MFS_WORKDIR}/mfs/metadata.mfs ; \
+	fi
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${CAT} ${PKGMESSAGE}
 

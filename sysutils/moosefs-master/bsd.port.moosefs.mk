@@ -1,5 +1,5 @@
 PORTVERSION=	1.6.27
-PORTREVISION?=	0
+PORTREVISION?=	1
 MASTER_SITES=	http://www.moosefs.org/tl_files/mfscode/ \
 		http://ports.quxingwen.com/dist/mfs/
 
