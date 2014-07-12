@@ -3,6 +3,7 @@
 
 PORTNAME=	libressl
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	LibreSSL
@@ -17,6 +18,8 @@ CONFLICTS?=	openssl-*
 GNU_CONFIGURE=	yes
 USES=	libtool
 USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
 
 test: build
 	cd ${WRKSRC} && ${MAKE} check
