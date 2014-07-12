@@ -30,24 +30,23 @@ DATA_FILES=	${WRKSRC}/src/VisualBoyAdvance.cfg
 PROG_FILES=	${WRKSRC}/src/sdl/VisualBoyAdvance
 PORTDOCS=	AUTHORS NEWS README ChangeLog
 
-OPTIONS_DEFINE=	GTK2 PROFILING DOCS
+OPTIONS_DEFINE=	DOCS GTK2 PROFILING
 OPTIONS_SUB=	yes
 PROFILING_DESC=	Enable profiling
 
 GTK2_CONFIGURE_ON=	--enable-gtk=2.4
+GTK2_LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24
 PROFILING_CONFIGURE_ENABLE=	profiling
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+BROKEN_ia64=	Runaway cc1plus process
+BROKEN_powerpc=	Runaway cc1plus process
+BROKEN_sparc64=	Runaway cc1plus process
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=	glademm-2.4:${PORTSDIR}/devel/libglademm24
-PROG_FILES+=	${WRKSRC}/src/gtk/gvba
+PROG_FILES+=		${WRKSRC}/src/gtk/gvba
 GTK2_DATA_FILES=	${WRKSRC}/src/gtk/vba.glade
-.endif
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Runaway cc1plus process
 .endif
 
 post-patch:
@@ -57,19 +56,14 @@ post-patch:
 		s|^|#include <sys/types.h>|; H; x; }' ${WRKSRC}/src/expr.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${PROG_FILES} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PROG_FILES} ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MGTK2}
-	@${MKDIR} ${PREFIX}/share/VisualBoyAdvance
-	${INSTALL_DATA} ${GTK2_DATA_FILES} ${PREFIX}/share/VisualBoyAdvance
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/VisualBoyAdvance
+	${INSTALL_DATA} ${GTK2_DATA_FILES} ${STAGEDIR}${PREFIX}/share/VisualBoyAdvance
 .endif
 	${SED} -e 's|filter=0|filter=1|' ${DATA_FILES} > ${DATA_FILES}-default
-	${INSTALL_DATA} ${DATA_FILES}-default ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${INSTALL_DATA} ${DATA_FILES}-default ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
