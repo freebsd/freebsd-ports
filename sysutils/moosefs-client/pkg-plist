@@ -1,24 +1,41 @@
-bin/mfsmakesnapshot
+bin/mfsappendchunks
 bin/mfscheckfile
+bin/mfsdeleattr
 bin/mfsdirinfo
 bin/mfsfileinfo
 bin/mfsfilerepair
+bin/mfsgeteattr
 bin/mfsgetgoal
 bin/mfsgettrashtime
+bin/mfsmakesnapshot
+bin/mfsmount
 bin/mfsrgetgoal
 bin/mfsrgettrashtime
 bin/mfsrsetgoal
 bin/mfsrsettrashtime
+bin/mfsseteattr
 bin/mfssetgoal
 bin/mfssettrashtime
-bin/mfsgeteattr
-bin/mfsseteattr
-bin/mfsdeleattr
-bin/mfsappendchunks
-bin/mfsmount
-bin/mfstools
 bin/mfssnapshot
-@unexec if cmp -s %D/etc/mfs/mfsmount.cfg.dist %D/etc/mfsmount.cfg; then rm -f %D/etc/mfsmount.cfg; fi
-etc/mfs/mfsmount.cfg.dist
-@exec  if [ ! -f %D/etc/mfsmount.cfg ]; then /bin/cp %D/%F %D/etc/mfsmount.cfg; fi
-@dirrm etc/mfs
+bin/mfstools
+@sample etc/mfs/mfsmount.cfg.sample
+man/man1/mfsappendchunks.1.gz
+man/man1/mfscheckfile.1.gz
+man/man1/mfsdeleattr.1.gz
+man/man1/mfsdirinfo.1.gz
+man/man1/mfsfileinfo.1.gz
+man/man1/mfsfilerepair.1.gz
+man/man1/mfsgeteattr.1.gz
+man/man1/mfsgetgoal.1.gz
+man/man1/mfsgettrashtime.1.gz
+man/man1/mfsmakesnapshot.1.gz
+man/man1/mfsrgetgoal.1.gz
+man/man1/mfsrgettrashtime.1.gz
+man/man1/mfsrsetgoal.1.gz
+man/man1/mfsrsettrashtime.1.gz
+man/man1/mfsseteattr.1.gz
+man/man1/mfssetgoal.1.gz
+man/man1/mfssettrashtime.1.gz
+man/man1/mfstools.1.gz
+man/man8/mfsmount.8.gz
+@dirrmtry etc/mfs

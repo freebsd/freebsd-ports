@@ -8,9 +8,14 @@
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf or or /etc/rc.conf to enable mfschunkserver:
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable mfschunkserver:
 #
-# mfschunkserver_enable="YES"
+# mfschunkserver_enable (bool):   Set to NO by default.
+#                                 Set it to YES to enable mfschunkserver.
+# mfschunkserver_config (path):   Set to %%PREFIX%%/etc/mfs/mfschunkserver.cfg
+#                                 by default.
+# mfschunkserver_flags (str):     Set to ""  by default.
+#                                 Extra flags passed to mfschunkserver.
 #
 
 . /etc/rc.subr
@@ -18,18 +23,13 @@
 name=mfschunkserver
 rcvar=mfschunkserver_enable
 
-command=%%PREFIX%%/sbin/${name}
-
-stop_postcmd=stop_postcmd
-
-stop_postcmd()
-{
-  rm -f $pidfile
-}
-
-# set defaults
-mfschunkserver_enable=${mfschunkserver_enable:-"NO"}
-mfschunkserver_flags=${mfschunkserver_flags:-"-c %%PREFIX%%/etc/mfschunkserver.cfg"}
-
 load_rc_config $name
+
+: ${mfschunkserver_enable=NO}
+: ${mfschunkserver_config=%%PREFIX%%/etc/mfs/mfschunkserver.cfg}
+
+extra_commands=reload
+command=%%PREFIX%%/sbin/${name}
+command_args="-c ${mfschunkserver_config}"
+
 run_rc_command "$1"

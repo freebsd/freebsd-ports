@@ -1,36 +1,35 @@
 #!/bin/sh
-
+#
 # $FreeBSD$
 #
+
 # PROVIDE: mfsmetalogger
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
+
 #
-# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
-# to enable this service:
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable mfsmetalogger:
 #
 # mfsmetalogger_enable (bool):   Set to NO by default.
-#               Set it to YES to enable doormand.
-# mfsmetalogger_config (path):   Set to %%PREFIX%%/etc/mfsmetalogger.cfg
-#               by default.
+#                                Set it to YES to enable mfsmetalogger.
+# mfsmetalogger_config (path):   Set to %%PREFIX%%/etc/mfs/mfsmetalogger.cfg
+#                                by default.
+# mfsmetalogger_flags (str):     Set to "" by default.
+#                                Extra flags passed to mfsmetalogger.
 #
 
 . /etc/rc.subr
 
-name="mfsmetalogger"
+name=mfsmetalogger
 rcvar=mfsmetalogger_enable
-
-command=%%PREFIX%%/sbin/${name}
-#pidfile=/var/run/${name}.pid
-config_file=%%PREFIX%%/etc/${name}.cfg
 
 load_rc_config $name
 
-: ${mfsmetalogger_enable="NO"}
-: ${mfsmetalogger_config="%%PREFIX%%/etcaster"}
+: ${mfsmetalogger_enable=NO}
+: ${mfsmetalogger_config=%%PREFIX%%/etc/mfs/mfsmetalogger.cfg}
 
-#command_args="-p $pidfile -f $doormand_config"
-command_args="-c $config_file"
+extra_commands=reload
+command=%%PREFIX%%/sbin/${name}
+command_args="-c ${mfsmetalogger_config}"
 
 run_rc_command "$1"
-
