@@ -4,7 +4,7 @@ PORTNAME=	ruby-build
 PORTVERSION=	20140524
 CATEGORIES=	devel ruby
 
-MAINTAINER=	fmb@onibox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile and install different ruby versions
 
 LICENSE=	MIT
