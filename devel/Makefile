@@ -938,6 +938,7 @@
     SUBDIR += libIDL
     SUBDIR += libPropList
     SUBDIR += libafterbase
+    SUBDIR += libantlr3c
     SUBDIR += libarena
     SUBDIR += libassa
     SUBDIR += libassetml
