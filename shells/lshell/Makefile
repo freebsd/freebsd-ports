@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9.15/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell environment to limited sets of commands to user's
 
+LICENSE=	GPLv3
+
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
 
