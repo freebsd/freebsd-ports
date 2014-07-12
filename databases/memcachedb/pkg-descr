@@ -1,10 +1,8 @@
-Memcachedb is a distributed storage system designed for persistent. We
-simplely hacked from memcached and tugela. But neither of them.
-Memcachedb is not a cache solution, it is a persistent solution for
-high-frequency writing and reading. It conforms to memcache protocol
-(not completed, see below), so any memcached client can have
-connectivity with memcachedb. Memcachedb uses Berkeley DB as a storing
-backend, so lots of features including transaction and replication are
-supported.
+MemcacheDB is a distributed storage system designed for persistence.
+It is not a cache solution, but a persistent storage engine for fast and
+reliable key-value based object storage and retrieval. It conforms to
+memcache protocol (not complete), so any memcached client can connect to
+it. MemcacheDB uses Berkeley DB as a storing backend, so lots of
+features including transaction and replication are supported. 
 
-WWW:	http://code.google.com/p/memcachedb/
+WWW: http://code.google.com/p/memcachedb/
