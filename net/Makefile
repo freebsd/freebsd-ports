@@ -1206,6 +1206,7 @@
     SUBDIR += udptunnel
     SUBDIR += udpxy
     SUBDIR += udt
+    SUBDIR += uget
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison
