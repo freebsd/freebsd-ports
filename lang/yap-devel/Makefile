@@ -3,7 +3,7 @@
 
 PORTNAME=	yap
 PORTVERSION=	6.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 PKGNAMESUFFIX=	-devel
@@ -17,11 +17,10 @@ LICENSE_COMB=	dual
 CONFLICTS=	yap-6.2.*
 
 OPTIONS_DEFINE=	DOCS MYDDAS
+OPTIONS_SUB=	yes
 MYDDAS_DESC=	Enable MySQL support
 
-OPTIONS_SUB=	yes
-
-DOCS_USE=		TEX=base,texmf,latex
+DOCS_USE=		TEX=formats:build,dvipsk:build,texlive
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html \
 			${LOCALBASE}/bin/texi2pdf:${PORTSDIR}/print/texinfo
 
