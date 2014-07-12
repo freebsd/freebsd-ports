@@ -20,18 +20,17 @@ USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RUBY_WITHOUT_SUFFIX%%,${RUBY_WITHOUT_SUFFIX},g'
 
-NO_STAGE=	yes
 pre-install:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${PORTNAME}.sh >${WRKDIR}/${PORTNAME}.sh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/daedalus.rb ${PREFIX}/bin/daedalus.rb
-	${MKDIR} ${PREFIX}/etc/daedalus
-	${INSTALL_DATA} ${WRKSRC}/examples/daedalus.xml ${PREFIX}/etc/daedalus/daedalus.xml.sample
-	${INSTALL_DATA} ${WRKSRC}/examples/templates.xml ${PREFIX}/etc/daedalus/templates.xml.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/${PORTNAME}.sh
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/daedalus.rb ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/daedalus.xml \
+		${STAGEDIR}${ETCDIR}/daedalus.xml.sample
+	${INSTALL_DATA} ${WRKSRC}/examples/templates.xml \
+		${STAGEDIR}${ETCDIR}/templates.xml.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/etc/rc.d/${PORTNAME}.sh
 
 .include <bsd.port.mk>
