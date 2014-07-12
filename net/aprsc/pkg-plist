@@ -7,9 +7,7 @@ etc/aprsc/web/aprsc-joulukissa.jpg
 etc/aprsc/web/excanvas.min.js
 etc/aprsc/web/jquery.flot.min.js
 etc/aprsc/web/jquery.flot.selection.min.js
-@unexec if cmp -s %D/etc/aprsc/aprsc.conf %D/etc/aprsc/aprsc.conf.example ; then rm -f %D/etc/aprsc/aprsc.conf ; fi
-etc/aprsc/aprsc.conf.example
-@exec if [ ! -f %D/etc/aprsc/aprsc.conf ]; then cp -p %D/%F %B/aprsc/aprscs.conf; fi
+@sample etc/aprsc/aprsc.conf.sample
 man/man8/aprsc.8.gz
 sbin/aprsc
 sbin/aprsc_munin

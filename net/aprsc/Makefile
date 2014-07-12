@@ -2,7 +2,7 @@
 
 PORTNAME=	aprsc
 PORTVERSION=	2.0.14
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	.g28c5a6a
 CATEGORIES=	net hamradio
 MASTER_SITES=	http://he.fi/aprsc/down/ \
@@ -23,7 +23,8 @@ MAKEFILE=	GNUmakefile
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
-USES=		perl5 gmake
+USES=		perl5 gmake shebangfix
+SHEBANG_FILES=	aprsc_munin
 
 CONFIGURE_ARGS=	--with-openssl
 
