@@ -3,7 +3,7 @@
 
 PORTNAME=	jailkit
 PORTVERSION=	2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
@@ -11,11 +11,11 @@ MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities to limit user account
 
+LICENSE=	BSD3CLAUSE
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHONINTERPRETER=${PYTHON_CMD}
 USE_PYTHON=	2
-
-SHELLS=		/etc/shells
 
 PORTDOCS=	COPYRIGHT README.txt
 
