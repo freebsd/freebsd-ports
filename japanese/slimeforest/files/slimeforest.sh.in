@@ -1,0 +1,13 @@
+#!/bin/sh
+cd ${HOME}
+if [ ! -d .slimeforest ]; then
+	mkdir .slimeforest
+	cd .slimeforest
+	mkdir playerdata
+	for f in images jad.wad maps exec.ver playerdata/data.ver sfd.wad
+	do
+		ln -sf %%DATADIR%%/${f} ${f}
+	done
+fi
+cd ${HOME}/.slimeforest
+%%DATADIR%%/jquest
