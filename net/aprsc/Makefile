@@ -24,4 +24,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 USES=		perl5 gmake
 
+CONFIGURE_ARGS=	--with-openssl
+
 .include <bsd.port.mk>
