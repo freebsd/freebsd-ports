@@ -1,0 +1,46 @@
+--- configure.orig	2014-06-29 05:47:03.653220480 +0600
++++ configure	2014-06-29 05:52:37.044197079 +0600
+@@ -10721,7 +10721,7 @@
+ 
+ # Checks for header files.
+ $ac_includes_default
+-for ac_header in sys/types.h netinet/in.h arpa/nameser.h netdb.h resolv.h
++for ac_header in sys/types.h netinet/in.h arpa/nameser.h netdb.h resolv.h netinet/tcp.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "#ifdef HAVE_SYS_TYPES_H
+@@ -10736,6 +10736,10 @@
+ #ifdef HAVE_NETDB_H
+ #  include <netdb.h>
+ #endif
++#ifdef HAVE_NETINET_TCP_H
++#include <netinet/tcp.h>
++#endif
++
+ "
+ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+   cat >>confdefs.h <<_ACEOF
+@@ -10818,23 +10822,6 @@
+ done
+ 
+ 
+-for ac_header in netinet/tcp.h
+-do :
+-  ac_fn_c_check_header_compile "$LINENO" "netinet/tcp.h" "ac_cv_header_netinet_tcp_h" "#ifdef HAVE_NETINET_TCP_H
+-#include <netinet/tcp.h>
+-#endif
+-
+-"
+-if test "x$ac_cv_header_netinet_tcp_h" = x""yes; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define HAVE_NETINET_TCP_H 1
+-_ACEOF
+-
+-fi
+-
+-done
+-
+-
+ for ac_header in sys/socket.h socket.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
