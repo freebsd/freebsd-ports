@@ -123,7 +123,8 @@ mysql_prestart()
 		eval `/usr/bin/limits ${mysql_limits_args:-"-e -U $mysql_user"}` 2>/dev/null
 	else
 		return 0
-	fi}
+	fi
+}
 
 mysql_poststart()
 {
