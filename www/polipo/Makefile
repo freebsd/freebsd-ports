@@ -8,21 +8,14 @@ MASTER_SITES=	http://freehaven.net/~chrisd/polipo/ \
 		http://www.sax.de/~frank/polipo4bsd/files/
 
 MAINTAINER=	frank@pinky.sax.de
-COMMENT=	A small and fast caching web proxy
+COMMENT=	Small and fast caching web proxy
 
-MAN1=		polipo.1
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RC_SUBR=	polipo
 
-NO_STAGE=	yes
-
-.if defined(NO_PTEXINFO)
-ALL_TARGET=	polipo
-NOPORTDOCS=	yes
-.else
-USES=		makeinfo
 INFO=		polipo
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +26,7 @@ SUB_FILES=	pkg-message pkg-install pkg-deinstall 400.polipo
 SUB_LIST+=	USER=${PUSER} GROUP=${PGRP} DESTDIR=${DESTDIR} PCONFIGDIR=${PCONFIGDIR} \
 		PCACHEDIR=${PCACHEDIR} PPIDDIR=${PPIDDIR} PPIDFILE=${PPIDFILE} \
 		PLOGFILE=${PLOGFILE}
+PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 # polipo installation options, propagated to install scripts
 PUSER?=		polipo
@@ -44,30 +38,19 @@ PPIDFILE=	${PPIDDIR}polipo.pid
 PLOGFILE?=	/var/log/polipo
 MAKE_ENV+=	DISK_CACHE_ROOT=${PCACHEDIR}
 
-pre-install: apply-slist
-	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/polipo ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/etc/periodic/daily/
-	${INSTALL_SCRIPT} ${WRKDIR}/400.polipo ${PREFIX}/etc/periodic/daily/
-	${INSTALL_MAN} ${WRKSRC}/polipo.man ${PREFIX}/man/man1/polipo.1
-	${MKDIR} ${PCONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/config.sample ${PCONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/forbidden.sample ${PCONFIGDIR}
-	${CHGRP} -R ${PGRP} ${PCONFIGDIR}
-.if !defined(NO_PTEXINFO)
-	${INSTALL_DATA} ${WRKSRC}/polipo.info ${PREFIX}/info/
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/localindex.html ${DATADIR}/www/index.html
-	${CHGRP} -R ${PGRP} ${DATADIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/polipo ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily/
+	${INSTALL_SCRIPT} ${WRKDIR}/400.polipo ${STAGEDIR}${PREFIX}/etc/periodic/daily/
+	${INSTALL_MAN} ${WRKSRC}/polipo.man ${STAGEDIR}${PREFIX}/man/man1/polipo.1
+	${MKDIR} ${STAGEDIR}${PCONFIGDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.sample ${WRKSRC}/forbidden.sample ${STAGEDIR}${PCONFIGDIR}
+	${INSTALL_DATA} ${WRKSRC}/polipo.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/localindex.html ${STAGEDIR}${DATADIR}/www/index.html
 
 post-install:
-	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PCACHEDIR}
 
 .include <bsd.port.post.mk>

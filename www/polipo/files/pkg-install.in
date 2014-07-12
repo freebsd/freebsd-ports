@@ -46,7 +46,7 @@ elif [ "$2" = "POST-INSTALL" ]; then
 	if [ ! -d "%%DESTDIR%%$POLIPOCACHE" ]; then
 		mkdir -p "%%DESTDIR%%$POLIPOCACHE" || exit 1
 		chown "$POLIPOUSER:$POLIPOGROUP" "%%DESTDIR%%$POLIPOCACHE" || exit 1
-		chmod 0770 "%%DESTDIR%%$POLIPOCACHE" || exit 1
+		chmod ug=rwx,o= "%%DESTDIR%%$POLIPOCACHE" || exit 1
 	fi
 
 	if [ ! -d "%%DESTDIR%%$PPIDDIR" ]; then
@@ -58,14 +58,25 @@ elif [ "$2" = "POST-INSTALL" ]; then
 	if [ ! -f "%%DESTDIR%%$POLIPOLOG" ]; then
 		touch "%%DESTDIR%%$POLIPOLOG" || exit 1
 		chown "$POLIPOUSER" "%%DESTDIR%%$POLIPOLOG" || exit 1
-		chmod 0640 "%%DESTDIR%%$POLIPOLOG" || exit 1
+		chmod u=rw,g=r,o= "%%DESTDIR%%$POLIPOLOG" || exit 1
 	fi
-
 
 	if ! fgrep "${POLIPOLOG}" "%%DESTDIR%%/etc/newsyslog.conf" 2>/dev/null 1>&2; then
-	echo "${POLIPOLOG}		${POLIPOUSER}:		640  3     100	*     J     $POLIPOPID 30" >> "%%DESTDIR%%/etc/newsyslog.conf" || exit 1
+	    echo "Add a line to /etc/newsyslog.conf (or /usr/local/etc/newsyslog.d/polipo if"
+	    echo "supported on your system) to enable automatic log file rotation:"
+	    echo
+	    echo "${POLIPOLOG} ${POLIPOUSER}: 640 3 100 * J ${POLIPOPID} 30"
+	    echo
 	fi
 
+fi
+
+OSVER=`uname -r | sed -e 's/\..*//'`
+if [ ${OSVER} = "8" -o ${OSVER} = "9" ]; then
+    CACHEPARENT=`dirname ${POLIPOCACHE}`
+    echo "You will need to manually run:"
+    echo "  chmod o+x %%DESTDIR%%$CACHEPARENT"
+    echo "to ensure the cache is useable."
 fi
 
 exit 0
