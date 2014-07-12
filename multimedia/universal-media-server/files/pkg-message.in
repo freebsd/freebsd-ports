@@ -1,0 +1,36 @@
+
+Universal Media Server (UMS) can be enabled with the following way:
+
+  sysrc   %%RCNAME%%_enable=YES
+  service %%RCNAME%% start
+
+For more configuration options, see the file:
+
+  /usr/local/etc/rc.d/%%RCNAME%%
+
+The UMS profile directory, where exists UMS.conf, is located at:
+
+  %%UMS_PROFILE_PATH%%/
+
+Log files are located at:
+
+  %%UMS_LOG_DIR%%/UMS.log
+  %%UMS_PROFILE_PATH%%/debug.log
+
+NOTE: None of the following transcoders are installed by default
+ffmpeg, mplayer, vlc, mencoder
+
+These missing transcoders each have a lot of dependancies of their 
+own. That is why they are not included by default with UMS.
+UMS will automatically detect any missing transcoder once it has
+been installed. Either from the ports tree or pkgng.
+
+NOTE: Mencoder is license restricted and therefore NOT available 
+from pkgng. It can be installed from the ports tree instead.
+
+To install all missing transcoders: (beware, many dependancies)
+
+  pkg install ffmpeg mplayer vlc
+  cd /usr/ports/multimedia/mencoder && BATCH=YES make install
+  service %%RCNAME%% restart
+

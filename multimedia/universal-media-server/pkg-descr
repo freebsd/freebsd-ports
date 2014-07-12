@@ -1,0 +1,15 @@
+Universal Media Server (UMS) is a feature-rich DLNA/UPnP home media
+server, with good support for client devices.
+
+A popular fork / successor of PS3 Media Server. UMS is Java-based. 
+The program streams or transcodes with little or no configuration.
+
+Powered by MEncoder, FFmpeg, tsMuxeR, AviSynth, MediaInfo and more,
+which combine to offer support for a wide range of media formats.
+
+See also: http://www.universalmediaserver.com/
+
+NOTE: Missing transcoder dependancies can be installed seperately.
+See files/pkg-message.in for more information.
+
+WWW: http://sourceforge.net/projects/unimediaserver/
