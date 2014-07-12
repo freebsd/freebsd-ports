@@ -2,7 +2,7 @@
 
 PORTNAME=		${SAMBA_BASENAME}36
 PORTVERSION=		3.6.24
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba samba/stable samba/pre
@@ -357,6 +357,8 @@ post-patch:
 		    ${WRKSRC}/Makefile.in
 		@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		    ${WRKSRC}/configure.in ${WRKSRC}/m4/aclocal.m4
+		@${REINPLACE_CMD} -e '1s|%%PREFIX%%|${PREFIX}|g' \
+		    ${WRKSRC}/script/findsmb.in
 ###
 ### end of common part
 ###
