@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	2.1
+PORTVERSION=	14.7.0
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/smplayer/SMTube/2.0/
+MASTER_SITES=	SF/smplayer/SMTube/${PORTVERSION}/
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	SMPlayer YouTube browser
@@ -14,7 +14,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/smplayer:${PORTSDIR}/multimedia/smplayer
 USES=		gmake tar:bzip2
 ALL_TARGET=	#empty
 USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
-QMAKE_ARGS+=	QMAKE_CXXFLAGS_RELEASE=""
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	*

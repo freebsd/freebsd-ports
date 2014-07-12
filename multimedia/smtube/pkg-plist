@@ -14,6 +14,7 @@ share/icons/hicolor/64x64/apps/smtube.png
 %%DATADIR%%/translations/smtube_el.qm
 %%DATADIR%%/translations/smtube_et.qm
 %%DATADIR%%/translations/smtube_en.qm
+%%DATADIR%%/translations/smtube_en_GB.qm
 %%DATADIR%%/translations/smtube_es.qm
 %%DATADIR%%/translations/smtube_eu.qm
 %%DATADIR%%/translations/smtube_fi.qm
@@ -35,6 +36,8 @@ share/icons/hicolor/64x64/apps/smtube.png
 %%DATADIR%%/translations/smtube_pt.qm
 %%DATADIR%%/translations/smtube_pt_BR.qm
 %%DATADIR%%/translations/smtube_ru_RU.qm
+%%DATADIR%%/translations/smtube_sk.qm
+%%DATADIR%%/translations/smtube_sq_AL.qm
 %%DATADIR%%/translations/smtube_sr.qm
 %%DATADIR%%/translations/smtube_sv.qm
 %%DATADIR%%/translations/smtube_tr.qm
