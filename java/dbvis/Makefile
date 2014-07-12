@@ -3,7 +3,7 @@
 
 PORTNAME=	dbvis
 PORTVERSION=	9.1.6
-CATEGORIES=	databases java
+CATEGORIES=	java databases
 MASTER_SITES=	http://www.dbvis.com/product_download/${PORTNAME}-${PORTVERSION}/media/
 DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/g}
 
