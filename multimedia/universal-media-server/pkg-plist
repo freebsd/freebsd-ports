@@ -1,0 +1,150 @@
+%%PORTDOCS%%%%DOCSDIR%%/applications.html
+%%PORTDOCS%%%%DOCSDIR%%/avisynth.html
+%%PORTDOCS%%%%DOCSDIR%%/coreavc.html
+%%PORTDOCS%%%%DOCSDIR%%/css/style.css
+%%PORTDOCS%%%%DOCSDIR%%/general_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/images/autonegotiation.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/btn_donateCC_LG.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/coreavc1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/coreavc2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/coreavc3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/netzwerkverbindungen.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/pms-eng-general.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/pms-eng-general1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/pms-eng-status1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/pms-eng-status2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/pms-engines1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/pms-engines2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/pms-searching.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/ps3-browsing.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/ps3-server.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/ps3screen.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/setupwin1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/setupwin2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/setupwin3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/setupwin4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/ssdp.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/topology_ps3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/links.html
+%%PORTDOCS%%%%DOCSDIR%%/navigation_share.html
+%%PORTDOCS%%%%DOCSDIR%%/networking.html
+%%PORTDOCS%%%%DOCSDIR%%/plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/transcoding.html
+%%PORTDOCS%%%%DOCSDIR%%/videolan.html
+%%DATADIR%%/CHANGELOG.txt
+%%DATADIR%%/DummyInput.ass
+%%DATADIR%%/INSTALL.txt
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/README.txt
+%%DATADIR%%/UMS.conf
+%%DATADIR%%/UMS.sh
+%%DATADIR%%/VirtualFolders.conf
+%%DATADIR%%/WEB.conf
+%%DATADIR%%/linux/tsMuxeR-new
+%%DATADIR%%/logback.headless.xml
+%%DATADIR%%/logback.xml
+%%DATADIR%%/plugins/README.md
+%%DATADIR%%/plugins/README.txt
+%%DATADIR%%/renderers/AirPlayer.conf
+%%DATADIR%%/renderers/Android.conf
+%%DATADIR%%/renderers/BlackBerryPlayBook-KalemSoftMP.conf
+%%DATADIR%%/renderers/Bravia4500.conf
+%%DATADIR%%/renderers/Bravia5500.conf
+%%DATADIR%%/renderers/BraviaBX305.conf
+%%DATADIR%%/renderers/BraviaEX.conf
+%%DATADIR%%/renderers/BraviaEX620.conf
+%%DATADIR%%/renderers/BraviaHX.conf
+%%DATADIR%%/renderers/BraviaW.conf
+%%DATADIR%%/renderers/CambridgeAudioAzur752BD.conf
+%%DATADIR%%/renderers/Chromecast.conf
+%%DATADIR%%/renderers/Chromecast_Avia.conf
+%%DATADIR%%/renderers/DLinkDSM510.conf
+%%DATADIR%%/renderers/DirecTVHR.conf
+%%DATADIR%%/renderers/FreeboxHD.conf
+%%DATADIR%%/renderers/FreecomMusicPal.conf
+%%DATADIR%%/renderers/Kuro.conf
+%%DATADIR%%/renderers/LG-LA6200.conf
+%%DATADIR%%/renderers/LG-LA644V.conf
+%%DATADIR%%/renderers/LG-LM620.conf
+%%DATADIR%%/renderers/LGST600.conf
+%%DATADIR%%/renderers/N900.conf
+%%DATADIR%%/renderers/NetgearNeoTV.conf
+%%DATADIR%%/renderers/OPPOBDP83.conf
+%%DATADIR%%/renderers/OPPOBDP93.conf
+%%DATADIR%%/renderers/OnkyoTX-NR717.conf
+%%DATADIR%%/renderers/PS3.conf
+%%DATADIR%%/renderers/Panasonic.conf
+%%DATADIR%%/renderers/PanasonicTX-L32V10E.conf
+%%DATADIR%%/renderers/Philips.conf
+%%DATADIR%%/renderers/PhilipsPFL.conf
+%%DATADIR%%/renderers/PopcornHour.conf
+%%DATADIR%%/renderers/README.txt
+%%DATADIR%%/renderers/Realtek.conf
+%%DATADIR%%/renderers/SMP-N100.conf
+%%DATADIR%%/renderers/Samsung-SMT-G7400.conf
+%%DATADIR%%/renderers/SamsungAllShare-D7000.conf
+%%DATADIR%%/renderers/SamsungAllShare.conf
+%%DATADIR%%/renderers/SamsungMobile.conf
+%%DATADIR%%/renderers/SamsungWiseLink.conf
+%%DATADIR%%/renderers/SharpAquos.conf
+%%DATADIR%%/renderers/Showtime3.conf
+%%DATADIR%%/renderers/Showtime4.conf
+%%DATADIR%%/renderers/SonyBluray.conf
+%%DATADIR%%/renderers/SonyHomeTheatreSystem.conf
+%%DATADIR%%/renderers/SonySTR-5800ES.conf
+%%DATADIR%%/renderers/SonyXperia.conf
+%%DATADIR%%/renderers/Streamium.conf
+%%DATADIR%%/renderers/TelstraTbox.conf
+%%DATADIR%%/renderers/VideoWebTV.conf
+%%DATADIR%%/renderers/VizioSmartTV.conf
+%%DATADIR%%/renderers/WDTVLive.conf
+%%DATADIR%%/renderers/WMP.conf
+%%DATADIR%%/renderers/XBMC.conf
+%%DATADIR%%/renderers/XBOX360.conf
+%%DATADIR%%/renderers/YamahaRXA1010.conf
+%%DATADIR%%/renderers/YamahaRXV3900.conf
+%%DATADIR%%/renderers/YamahaRXV671.conf
+%%DATADIR%%/renderers/iPad-iPhone.conf
+%%DATADIR%%/ums.jar
+%%DATADIR%%/web/background-blank.jpg
+%%DATADIR%%/web/background.jpg
+%%DATADIR%%/web/download.png
+%%DATADIR%%/web/favicon.ico
+%%DATADIR%%/web/flowplayer.min.js
+%%DATADIR%%/web/functional.css
+%%DATADIR%%/web/jquery.min.js
+%%DATADIR%%/web/jquery.ums.js
+%%DATADIR%%/web/logo.png
+%%DATADIR%%/web/menu-background-content.png
+%%DATADIR%%/web/menu-left-content.png
+%%DATADIR%%/web/reset.css
+%%DATADIR%%/web/web.css
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/css
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/linux
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/renderers
+@dirrmtry %%DATADIR%%/web
+@dirrmtry %%DATADIR%%
+
+@comment - Added manually
+@owner ums
+@group ums
+
+@exec mkdir -p %%UMS_PROFILE_PATH%%
+%%UMS_PROFILE_PATH%%/UMS.conf.sample
+%%UMS_PROFILE_PATH%%/WEB.conf.sample
+@dirrmtry %%UMS_PROFILE_PATH%%
+
+@exec mkdir -p %%UMS_PID_DIR%%
+@dirrmtry %%UMS_PID_DIR%%
+
+@exec mkdir -p %%UMS_LOG_DIR%%
+@dirrmtry %%UMS_LOG_DIR%%
+
+@owner
+@group

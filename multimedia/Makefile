@@ -347,6 +347,7 @@
     SUBDIR += umph
     SUBDIR += umplayer
     SUBDIR += umr
+    SUBDIR += universal-media-server
     SUBDIR += v4l-utils
     SUBDIR += v4l_compat
     SUBDIR += vamps
