@@ -19,8 +19,8 @@ include/papiStdEventDefs.h
 lib/libpapi.a
 lib/libpapi.so
 lib/libpapi.so.5
-lib/libpapi.so.5.2.0
-lib/libpapi.so.5.2.0.0
+lib/libpapi.so.5.3.0
+lib/libpapi.so.5.3.0.0
 man/man1/papi_avail.1.gz
 man/man1/papi_clockres.1.gz
 man/man1/papi_command_line.1.gz
@@ -29,6 +29,7 @@ man/man1/papi_cost.1.gz
 man/man1/papi_decode.1.gz
 man/man1/papi_error_codes.1.gz
 man/man1/papi_event_chooser.1.gz
+man/man1/papi_hybrid_native_avail.1.gz
 man/man1/papi_mem_info.1.gz
 man/man1/papi_multiplex_cost.1.gz
 man/man1/papi_native_avail.1.gz
@@ -212,6 +213,7 @@ man/man3/PAPI_thread_init.3.gz
 man/man3/PAPI_unlock.3.gz
 man/man3/PAPI_unregister_thread.3.gz
 man/man3/PAPI_write.3.gz
+%%DATADIR%%/ctests/Makefile
 %%DATADIR%%/ctests/all_events
 %%DATADIR%%/ctests/all_events.c
 %%DATADIR%%/ctests/all_native_events
@@ -223,6 +225,7 @@ man/man3/PAPI_write.3.gz
 %%DATADIR%%/ctests/attach3
 %%DATADIR%%/ctests/attach3.c
 %%DATADIR%%/ctests/attach_target
+%%DATADIR%%/ctests/attach_target.c
 %%DATADIR%%/ctests/branches
 %%DATADIR%%/ctests/branches.c
 %%DATADIR%%/ctests/burn
@@ -245,6 +248,7 @@ man/man3/PAPI_write.3.gz
 %%DATADIR%%/ctests/cpi.c
 %%DATADIR%%/ctests/cycle_ratio
 %%DATADIR%%/ctests/cycle_ratio.c
+%%DATADIR%%/ctests/data_range
 %%DATADIR%%/ctests/data_range.c
 %%DATADIR%%/ctests/derived
 %%DATADIR%%/ctests/derived.c
@@ -254,6 +258,7 @@ man/man3/PAPI_write.3.gz
 %%DATADIR%%/ctests/disable_component.c
 %%DATADIR%%/ctests/dmem_info
 %%DATADIR%%/ctests/dmem_info.c
+%%DATADIR%%/ctests/earprofile
 %%DATADIR%%/ctests/earprofile.c
 %%DATADIR%%/ctests/eventname
 %%DATADIR%%/ctests/eventname.c
@@ -353,6 +358,7 @@ man/man3/PAPI_write.3.gz
 %%DATADIR%%/ctests/overflow_twoevents
 %%DATADIR%%/ctests/overflow_twoevents.c
 %%DATADIR%%/ctests/overflow_values.c
+%%DATADIR%%/ctests/p4_lst_ins
 %%DATADIR%%/ctests/p4_lst_ins.c
 %%DATADIR%%/ctests/papi_1.c
 %%DATADIR%%/ctests/pernode.c
@@ -415,8 +421,11 @@ man/man3/PAPI_write.3.gz
 %%DATADIR%%/ctests/zero_omp.c
 %%DATADIR%%/ctests/zero_pthreads
 %%DATADIR%%/ctests/zero_pthreads.c
+%%DATADIR%%/ctests/zero_shmem
 %%DATADIR%%/ctests/zero_shmem.c
+%%DATADIR%%/ctests/zero_smp
 %%DATADIR%%/ctests/zero_smp.c
+%%DATADIR%%/ftests/Makefile
 %%DATADIR%%/ftests/accum.F
 %%DATADIR%%/ftests/avail.F
 %%DATADIR%%/ftests/case1.F
@@ -433,7 +442,6 @@ man/man3/PAPI_write.3.gz
 %%DATADIR%%/ftests/fmatrixpapi2.F
 %%DATADIR%%/ftests/fmultiplex1.F
 %%DATADIR%%/ftests/fmultiplex2.F
-%%DATADIR%%/ftests/ftests_util.F
 %%DATADIR%%/ftests/highlevel.F
 %%DATADIR%%/ftests/johnmay2.F
 %%DATADIR%%/ftests/nineth.F
@@ -445,9 +453,13 @@ man/man3/PAPI_write.3.gz
 %%DATADIR%%/run_tests.sh
 %%DATADIR%%/run_tests_exclude.txt
 %%DATADIR%%/run_tests_exclude_cuda.txt
+%%DATADIR%%/testlib/Makefile
 %%DATADIR%%/testlib/clockcore.c
 %%DATADIR%%/testlib/do_loops.c
 %%DATADIR%%/testlib/dummy.c
+%%DATADIR%%/testlib/fpapi_test.h
+%%DATADIR%%/testlib/ftests_util.F
+%%DATADIR%%/testlib/libtestlib.a
 %%DATADIR%%/testlib/papi_test.h
 %%DATADIR%%/testlib/test_utils.c
 %%DATADIR%%/testlib/test_utils.h
