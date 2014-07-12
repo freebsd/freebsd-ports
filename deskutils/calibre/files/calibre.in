@@ -14,6 +14,8 @@
 #				Default is 8080
 # calibre_user (string):	user that calibre_server runs as
 #				Default is calibre
+# calibre_home (string):	home directory for calibre_server
+#				Default is the home directory of calibre_user
 # calibre_username (string):	username for calibre authentication
 #				Default is calibre
 # calibre_password (string):	If set then access is restricted
@@ -38,7 +40,7 @@ load_rc_config $name
 
 pidfile=/var/run/${name}/${name}.pid
 command=/usr/local/bin/calibre-server
-command_interpreter=python2.7
+command_interpreter=python2
 required_dirs=${calibre_library}
 
 start_cmd=${name}_start
@@ -57,9 +59,11 @@ calibre_start()
 		command_args="${command_args} --password=${calibre_password}"
 	fi
 	if [ ! -z "${calibre_url_prefix}" ]; then
-		command_args="${command_args} --url_prefx=${calibre_url_prefix}"
+		command_args="${command_args} --url-prefx=${calibre_url_prefix}"
 	fi
 
+	calibre_home=${calibre_home:-$(getent passwd ${calibre_user} | awk -F: '{print $6}')}
+	HOME=${calibre_home:-/nonexistent}
 	/usr/sbin/daemon -f -u ${calibre_user} -p ${pidfile} ${command} ${command_args} --with-library ${calibre_library}
 }
 

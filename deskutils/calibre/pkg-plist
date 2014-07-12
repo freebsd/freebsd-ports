@@ -1026,6 +1026,7 @@ lib/calibre/calibre/gui2/tweak_book/job.py
 lib/calibre/calibre/gui2/tweak_book/live_css.py
 lib/calibre/calibre/gui2/tweak_book/main.py
 lib/calibre/calibre/gui2/tweak_book/manage_fonts.py
+lib/calibre/calibre/gui2/tweak_book/plugin.py
 lib/calibre/calibre/gui2/tweak_book/polish.py
 lib/calibre/calibre/gui2/tweak_book/preferences.py
 lib/calibre/calibre/gui2/tweak_book/preview.py
@@ -1767,7 +1768,9 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/localization/stats.pickle
 %%DATADIR%%/metadata_sqlite.sql
 %%DATADIR%%/mime.types
-%%DATADIR%%/quick_start.epub
+%%DATADIR%%/quick_start/deu.epub
+%%DATADIR%%/quick_start/eng.epub
+%%DATADIR%%/quick_start/fra.epub
 %%DATADIR%%/scripts.pickle
 %%DATADIR%%/template-functions.json
 %%DATADIR%%/templates/book_details.css
@@ -1978,7 +1981,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata.js
 %%DATADIR%%/viewer/mathjax/jax/output/SVG/jax.js
 %%DATADIR%%/viewer/referencing.js
-share/bash-completion/calibre
+share/bash-completion/completions/calibre
 share/gnome/apps/calibre-ebook-edit.desktop
 share/gnome/apps/calibre-ebook-viewer.desktop
 share/gnome/apps/calibre-gui.desktop
@@ -2007,7 +2010,6 @@ share/mime/application/x-sony-bbeb.xml
 share/mime/application/x-topaz-ebook.xml
 share/mime/packages/calibre-mimetypes.xml
 share/mime/text/lrs.xml
-share/zsh/site-functions/_calibre
 @dirrmtry share/mime/text
 @dirrmtry share/mime/packages
 @dirrmtry share/mime/application
@@ -2075,6 +2077,7 @@ share/zsh/site-functions/_calibre
 @dirrm %%DATADIR%%/viewer/hyphenate
 @dirrm %%DATADIR%%/viewer
 @dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/quick_start
 @dirrm %%DATADIR%%/localization/pykakasi
 @dirrm %%DATADIR%%/localization
 @dirrm %%DATADIR%%/jacket
