@@ -19,7 +19,7 @@ NO_BUILD=	yes
 SEARCHDIR?=	www/search
 PLIST_SUB+=	SEARCHDIR=${SEARCHDIR}
 
-SAMBA_PORT?=	net/samba36
+SAMBA_PORT?=	net/samba41
 
 #todo
 # user and group for crawler, nginx

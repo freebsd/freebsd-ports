@@ -261,8 +261,8 @@ basic_auth+=	SASL
 libexec+=	basic_sasl_auth
 .endif
 .if ${PORT_OPTIONS:MAUTH_SMB}
-BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba36
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba36
+BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba41
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba41
 basic_auth+=	SMB
 external_acl+=	wbinfo_group
 libexec+=	basic_smb_auth basic_smb_auth.sh \

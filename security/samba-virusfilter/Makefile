@@ -16,7 +16,7 @@ USES=		tar:bzip2 gmake
 ALL_TARGET=			# should empty
 CONFIGURE_ARGS=	--with-samba-source=`cd ${PORTSDIR}/net/${SAMBA_PORT}; ${MAKE} -VWRKSRC` \
 	--with-clamd=${PREFIX}/sbin/clamd --with-savdid=${PREFIX}/bin/savdid
-SAMBA_PORT?=	samba36
+SAMBA_PORT?=	samba41
 USE_AUTOTOOLS=	autoconf autoheader # for net/${SAMBA_PORT} configure
 MAKE_ARGS=	SAMBA_DATADIR=${PREFIX}
 

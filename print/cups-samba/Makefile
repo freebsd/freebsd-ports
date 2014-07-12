@@ -15,7 +15,7 @@ COMMENT=	The Common UNIX Printing System:  MS Windows client drivers
 RUN_DEPENDS=	smbspool:${PORTSDIR}/${SAMBA_PORT} \
 		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
-SAMBA_PORT?=	net/samba36
+SAMBA_PORT?=	net/samba41
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -109,7 +109,7 @@ _DEPENDS_FIG2DEV= \
 _DEPENDS_HTML2PS= \
 		html2ps:${PORTSDIR}/print/html2ps
 _DEPENDS_ATALK=	pap:${PORTSDIR}/net/netatalk
-_DEPENDS_SAMBA= smbclient:${PORTSDIR}/net/samba36
+_DEPENDS_SAMBA= smbclient:${PORTSDIR}/net/samba41
 _DEPENDS_MP3=	mpg321:${PORTSDIR}/audio/mpg321
 _DEPENDS_OGG=	ogg123:${PORTSDIR}/audio/vorbis-tools
 _DEPENDS_WAV=	wavplay:${PORTSDIR}/audio/wavplay

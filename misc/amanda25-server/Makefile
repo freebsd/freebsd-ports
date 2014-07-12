@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP}
 USE_LDCONFIG=	yes
 
-SAMBA_PORT?=	net/samba36
+SAMBA_PORT?=	net/samba41
 
 OPTIONS_DEFINE=	GNUTAR SSH
 OPTIONS_DEFAULT=	SSH

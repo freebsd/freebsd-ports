@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT}
 .endif
 
 ALL_TARGET=	smb_auth
-SAMBA_PORT?=	net/samba36
+SAMBA_PORT?=	net/samba41
 
 OPTIONS_DEFINE=	DOCS
 

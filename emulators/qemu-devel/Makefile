@@ -225,7 +225,7 @@ CONFIGURE_ARGS+=	--static
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
+RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba41
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
