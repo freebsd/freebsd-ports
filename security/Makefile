@@ -272,6 +272,7 @@
     SUBDIR += libpreludedb
     SUBDIR += libpwquality
     SUBDIR += libpwstor
+    SUBDIR += libressl
     SUBDIR += libscrypt
     SUBDIR += libsecret
     SUBDIR += libsectok
