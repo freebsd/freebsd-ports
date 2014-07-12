@@ -48,9 +48,6 @@ PLIST_FILES=	${PLIST_EXECS} ${PLIST_DATA}
 PLIST_DIRS=	lib/nonpareil
 PORTDOCS=	CREDITS DEBUGGING README TODO
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%CFLAGS%%|${CFLAGS}| ; \
@@ -61,13 +58,11 @@ post-patch:
 		's|<stdint.h>|<inttypes.h>|g' ${WRKSRC}/src/*.[cly]
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	-${CHOWN} ${BINOWN}:${BINGRP} ${PLIST_FILES:S|^|${PREFIX}/|}
-	-${TOUCH} ${PLIST_FILES:S|^|${PREFIX}/|}
-	-${CHMOD} ${SHAREMODE} ${PLIST_DATA:S|^|${PREFIX}/|}
-	-${CHMOD} ${BINMODE} ${PLIST_EXECS:S|^|${PREFIX}/|}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	-${CHOWN} ${BINOWN}:${BINGRP} ${PLIST_FILES:S|^|${STAGEDIR}${PREFIX}/|}
+	-${TOUCH} ${PLIST_FILES:S|^|${STAGEDIR}${PREFIX}/|}
+	-${CHMOD} ${SHAREMODE} ${PLIST_DATA:S|^|${STAGEDIR}${PREFIX}/|}
+	-${CHMOD} ${BINMODE} ${PLIST_EXECS:S|^|${STAGEDIR}${PREFIX}/|}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
