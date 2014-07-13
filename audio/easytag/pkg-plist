@@ -1,6 +1,5 @@
 bin/easytag
 man/man1/easytag.1.gz
-share/appdata/easytag.appdata.xml
 share/applications/easytag.desktop
 share/icons/hicolor/128x128/apps/easytag.png
 share/icons/hicolor/16x16/apps/easytag.png
@@ -45,7 +44,6 @@ share/icons/hicolor/scalable/apps/easytag.svg
 %%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
-@dirrmtry share/appdata
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/64x64/apps
