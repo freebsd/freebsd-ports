@@ -13,7 +13,7 @@ COMMENT=	A 3D filesystem browser
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
 USE_GL=		glut
 USE_SDL=	image sdl
@@ -31,8 +31,6 @@ LDFLAGS+=	`${LOCALBASE}/bin/pkgconf --libs SDL_image gl` \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
 do-build:
 	(cd ${BUILD_WRKSRC} && ${CC} ${CPPFLAGS} ${CFLAGS} ${PORTNAME}.c \
 		-o ${PORTNAME} ${LDFLAGS})
@@ -42,4 +40,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
