@@ -17,7 +17,7 @@ USES=		gmake tar:bzip2 libtool
 USE_GCC=	any
 
 HAS_CONFIGURE=	yes
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--target="psp" \
 		--enable-install-libbfd \
