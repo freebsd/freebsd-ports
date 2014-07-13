@@ -12,6 +12,28 @@ Wingz3/pkginfo/LINUX/AP.list
 Wingz3/license/LINUX/lmutil
 Wingz3/license/LINUX/lmgrd
 Wingz3/license/LINUX/iisclmd
+Wingz3/lib/libc5/libstdc++.so.27.1.4
+Wingz3/lib/libc5/libstdc++.so.27
+Wingz3/lib/libc5/libm.so.5.0.6
+Wingz3/lib/libc5/libm.so.5
+Wingz3/lib/libc5/libg++.so.27.1.4
+Wingz3/lib/libc5/libg++.so.27
+Wingz3/lib/libc5/libc.so.5.3.12
+Wingz3/lib/libc5/libc.so.5
+Wingz3/lib/libc5/libXt.so.6.0
+Wingz3/lib/libc5/libXt.so.6
+Wingz3/lib/libc5/libXpm.so.4.9
+Wingz3/lib/libc5/libXpm.so.4
+Wingz3/lib/libc5/libXmu.so.6.0
+Wingz3/lib/libc5/libXmu.so.6
+Wingz3/lib/libc5/libXext.so.6.3
+Wingz3/lib/libc5/libXext.so.6
+Wingz3/lib/libc5/libX11.so.6.1
+Wingz3/lib/libc5/libX11.so.6
+Wingz3/lib/libc5/libSM.so.6.0
+Wingz3/lib/libc5/libSM.so.6
+Wingz3/lib/libc5/libICE.so.6.3
+Wingz3/lib/libc5/libICE.so.6
 Wingz3/lib/fonts/3034a___.pfb
 Wingz3/lib/fonts/3034a___.afm
 Wingz3/lib/fonts/3033a___.pfb
@@ -284,6 +306,7 @@ Wingz3/Boundins/array/LINUX/array
 @dirrm Wingz3/lib/fonts
 @dirrm Wingz3/lib/LINUX
 @dirrm Wingz3/lib/.hpfonts
+@dirrm Wingz3/lib/libc5
 @dirrm Wingz3/lib
 @dirrm Wingz3/incl
 @dirrm Wingz3/etc
@@ -318,3 +341,9 @@ Wingz3/Boundins/array/LINUX/array
 @dirrm Wingz3/Boundins/array
 @dirrm Wingz3/Boundins
 @dirrm Wingz3
+@cwd %%LINUXBASE%%
+lib/ld-linux.so.1
+lib/ld-linux.so.1.9.5
+lib/ld.so
+lib/ld.so.1.9.5
+lib/libdl.so.1.9.5
