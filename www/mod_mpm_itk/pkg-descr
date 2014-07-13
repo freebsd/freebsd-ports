@@ -1,0 +1,6 @@
+apache2-mpm-itk (just mpm-itk for short) is an MPM (Multi-Processing Module)
+for the Apache web server. mpm-itk allows you to run each of your vhost
+under a separate uid and gid - in short, the scripts and configuration files
+for one vhost no longer have to be readable for all the other vhosts.
+
+WWW: http://mpm-itk.sesse.net/
