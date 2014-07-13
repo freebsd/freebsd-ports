@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved NQ engine with ZQuake and FuhQuake graphical effects
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/src
 
@@ -38,7 +38,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 ALL_TARGET+=	glx
 PLIST_SUB+=	GLX=""
 .else

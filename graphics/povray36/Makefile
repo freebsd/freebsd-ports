@@ -18,9 +18,9 @@ COMMENT=	Persistence of Vision Ray Tracer
 .if defined(WITH_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	x11
 USES=		gmake tar:bzip2
@@ -31,7 +31,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "i386")
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 .endif
 
 .if defined(WITH_OPTIMIZED_FLAGS)

@@ -15,12 +15,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>=0:${PORTSDIR}/devel/p5-Devel-CheckLib
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		gif:${PORTSDIR}/graphics/giflib \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		t1:${PORTSDIR}/devel/t1lib \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libgif.so:${PORTSDIR}/graphics/giflib \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libt1.so:${PORTSDIR}/devel/t1lib \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 TEST_DEPENDS=	p5-CPAN-Meta>=0:${PORTSDIR}/devel/p5-CPAN-Meta \
 		p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 

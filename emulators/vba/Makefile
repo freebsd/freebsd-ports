@@ -14,7 +14,7 @@ COMMENT=	Open source Gameboy Advance emulator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		gettext gmake
 GNU_CONFIGURE=	yes

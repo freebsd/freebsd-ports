@@ -12,8 +12,8 @@ COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_DEFINE=	ESOUND DOCS EXAMPLES
 

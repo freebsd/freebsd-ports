@@ -11,9 +11,9 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -30,7 +30,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "i386")
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 .endif
 
 .if defined(WITH_OPTIMIZED_FLAGS)

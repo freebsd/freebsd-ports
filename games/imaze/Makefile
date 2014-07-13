@@ -53,7 +53,7 @@ TOOLKIT=	motif
 .endif
 
 .if ${PORT_OPTIONS:MXVIEW}
-LIB_DEPENDS+=	xview:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS+=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 TOOLKIT=	xview
 .endif
 

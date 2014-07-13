@@ -12,14 +12,14 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strategy game featuring tactical combat
 
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		curl:${PORTSDIR}/ftp/curl \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		xvidcore.4:${PORTSDIR}/multimedia/xvid \
-		mxml:${PORTSDIR}/textproc/mxml
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libxvidcore.so:${PORTSDIR}/multimedia/xvid \
+		libmxml.so:${PORTSDIR}/textproc/mxml
 BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mxml
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:${PORTSDIR}/games/ufoai-data
 
