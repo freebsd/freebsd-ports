@@ -10,7 +10,7 @@ DISTNAME=	vanessa_adt-${PORTVERSION}
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Library that provides ADTs (queues, dynamic arrays, and more)
 
-LIB_DEPENDS=	vanessa_logger:${PORTSDIR}/devel/libvanessa_logger
+LIB_DEPENDS=	libvanessa_logger.so:${PORTSDIR}/devel/libvanessa_logger
 
 USE_LDCONFIG=	yes
 

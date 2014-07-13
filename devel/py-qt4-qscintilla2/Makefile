@@ -12,7 +12,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for QScintilla2 (PyQt4), QSci module
 
-LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT_VERSION}:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui

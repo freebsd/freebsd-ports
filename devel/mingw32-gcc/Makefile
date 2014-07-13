@@ -15,9 +15,9 @@ COMMENT=	FSF gcc-4 for Windows cross-development
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		mingwm10.dll:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		mpfr:${PORTSDIR}/math/mpfr \
-		mpc:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libmpfr.so:${PORTSDIR}/math/mpfr \
+		libmpc.so:${PORTSDIR}/math/mpc
 
 GCCVERSION=	4.7.2
 

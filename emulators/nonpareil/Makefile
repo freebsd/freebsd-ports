@@ -13,7 +13,7 @@ COMMENT=	Simulator for many HP calculators
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		bison pkgconfig scons
 USE_GNOME=	gtk20 libxml2

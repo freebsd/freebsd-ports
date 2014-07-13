@@ -11,7 +11,7 @@ DISTNAME=	omniNotify-2-latest
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 
-LIB_DEPENDS=	omniORB4.1:${PORTSDIR}/devel/omniORB
+LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # parts of omniORB4 source tree is required to build
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch

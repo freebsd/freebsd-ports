@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Master System and Game Gear emulator for X
 
-LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libc.so.5:${PORTSDIR}/misc/compat5x
 
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386

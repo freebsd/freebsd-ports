@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing arbitrary C/C++-style configuration files
 
-LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
+LIB_DEPENDS=	libex.so:${PORTSDIR}/devel/ossp-ex
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
