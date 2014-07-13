@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mp3-utils/mp3info
 DISTNAME=	${PORTNAME}-${PORTVERSION}a
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to manipulate ID3 tags for MP3 files
 
 LICENSE=	GPLv2
