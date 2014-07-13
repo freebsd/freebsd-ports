@@ -10,7 +10,7 @@ MASTER_SITES=	http://prime.sourceforge.jp/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PRedictive Input Method Editor(PRIME)
 
-LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
+LIB_DEPENDS=	libsary.so:${PORTSDIR}/textproc/sary
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/sary.so:${PORTSDIR}/textproc/ruby-sary \
 		${LOCALBASE}/share/emacs/site-lisp/init-suikyo.el:${PORTSDIR}/japanese/suikyo \
 		${LOCALBASE}/share/prime/dict/prime-dict:${PORTSDIR}/japanese/prime-dict

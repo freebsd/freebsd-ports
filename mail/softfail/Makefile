@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_fbsdbrasil-${PORTVERSION}
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Enhanced greylisting system for qmail w/ SMTPEXTFORK patch
 
-LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS+=	libspf2.so:${PORTSDIR}/mail/libspf2
 
 SUB_FILES=	pkg-message
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}

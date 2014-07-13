@@ -25,12 +25,12 @@ LICENSE_COMB=		multi
 BUILD_DEPENDS=		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 			cmake:${PORTSDIR}/devel/cmake \
 			v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
-			ffi:${PORTSDIR}/devel/libffi \
-			asound:${PORTSDIR}/audio/alsa-lib \
-			pulse-simple:${PORTSDIR}/audio/pulseaudio \
-			gstreamer:${PORTSDIR}/multimedia/gstreamer \
-			v4l2:${PORTSDIR}/multimedia/libv4l
+LIB_DEPENDS=		libaudio.so:${PORTSDIR}/audio/nas \
+			libffi.so:${PORTSDIR}/devel/libffi \
+			libasound.so:${PORTSDIR}/audio/alsa-lib \
+			libpulse-simple.so:${PORTSDIR}/audio/pulseaudio \
+			libgstreamer.so:${PORTSDIR}/multimedia/gstreamer \
+			libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 ##################################################
 VM_VERSION=		${PORTVERSION}.${SVNVERSION}

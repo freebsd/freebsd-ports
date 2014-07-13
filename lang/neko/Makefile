@@ -10,7 +10,7 @@ MASTER_SITES=	http://nekovm.org/_media/
 MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	The Neko Programming Language
 
-LIB_DEPENDS=	gc-threaded.1:${PORTSDIR}/devel/boehm-gc-threaded
+LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
 
 ONLY_FOR_ARCHS=	i386 amd64
 

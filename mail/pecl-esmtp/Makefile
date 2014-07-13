@@ -13,7 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL ESMTP client extension
 
-LIB_DEPENDS=	esmtp:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

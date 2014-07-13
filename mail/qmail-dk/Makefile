@@ -12,7 +12,7 @@ DIST_SUBDIR=	qmail
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	DomainKeys implementation for qmail
 
-LIB_DEPENDS+=	domainkeys:${PORTSDIR}/mail/libdomainkeys
+LIB_DEPENDS+=	libdomainkeys.so:${PORTSDIR}/mail/libdomainkeys
 
 PATCH_SITES=	${MASTER_SITE_QMAIL}
 PATCHFILES=	qmail-1.03-dk-0.54.patch

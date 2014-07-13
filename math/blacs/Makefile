@@ -35,7 +35,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-openmpi.diff
 .else
-LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
 .endif
 

@@ -13,7 +13,7 @@ COMMENT=	XML document transfer program
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
+LIB_DEPENDS=	libglibmm-2.4.so:${PORTSDIR}/devel/glibmm
 
 USES=		pkgconfig
 USE_LDCONFIG=	yes

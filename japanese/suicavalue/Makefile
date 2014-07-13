@@ -13,7 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Utility to print a statement of Suica
 
-LIB_DEPENDS=	pasori.1:${PORTSDIR}/devel/libpasori
+LIB_DEPENDS=	libpasori.so:${PORTSDIR}/devel/libpasori
 
 PLIST_FILES=	bin/SuicaValue
 

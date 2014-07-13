@@ -15,7 +15,7 @@ PATCHFILES=	${PORTNAME}${PORTVERSION}jp1.7.patch.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical toolkit for Japanized TCL, version 8.0
 
-LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
+LIB_DEPENDS=	libtcl80jp.so:${PORTSDIR}/japanese/tcl80
 
 VERSION=	${PORTVERSION:R}
 TOPDIR=		${WRKDIR}/${DISTNAME}

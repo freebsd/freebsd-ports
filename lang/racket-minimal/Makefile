@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--enable-shared --enable-pthread \
 MANUAL_PACKAGE_BUILD=	i386 requires kern.maxdsiz="640M" to build
 .endif
 
-LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 
 .if ${PORT_OPTIONS:MRACKET_PLACES}
 CONFIGURE_ARGS+=	--enable-places

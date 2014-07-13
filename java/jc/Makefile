@@ -13,7 +13,7 @@ COMMENT=	JVM that converts class files to C source and compiles them with GCC
 BROKEN=		Fails to build
 
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 NO_PACKAGE=	Takes too many resources to build
 

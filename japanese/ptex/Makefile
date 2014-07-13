@@ -19,9 +19,9 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX which supports teTeX distribution
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		wwwcore.1:${PORTSDIR}/www/libwww \
-		t1.5:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libwwwcore.so:${PORTSDIR}/www/libwww \
+		libt1.so:${PORTSDIR}/devel/t1lib
 
 CONFLICTS_INSTALL= \
 		texlive-[0-9]* tex-web2c-[0-9]* \

@@ -18,7 +18,7 @@ INSTALL_SLIB=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS+=	libc.so.5:${PORTSDIR}/misc/compat5x
 DISTFILES+=	NConvert-x86-unknown-FreeBSD6.x.tgz
 WRKSRC_NC=	${WRKDIR}/NConvert
 

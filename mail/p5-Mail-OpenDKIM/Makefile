@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	opendkim>=2.5.0:${PORTSDIR}/mail/opendkim
-LIB_DEPENDS=	opendkim:${PORTSDIR}/mail/opendkim
+LIB_DEPENDS=	libopendkim.so:${PORTSDIR}/mail/opendkim
 RUN_DEPENDS=	opendkim>=2.5.0:${PORTSDIR}/mail/opendkim \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error
 

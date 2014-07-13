@@ -13,8 +13,8 @@ COMMENT=	Vector-based 2D animation software package
 BROKEN=		Fails to compile
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
-LIB_DEPENDS=	synfig.0:${PORTSDIR}/devel/synfig \
-		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libsynfig.so:${PORTSDIR}/devel/synfig \
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_GNOME=	gnomehack gtk20
 USES=		gettext gmake

@@ -13,7 +13,7 @@ COMMENT=	MeCab library module for Ruby
 LICENSE=	BSD GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
