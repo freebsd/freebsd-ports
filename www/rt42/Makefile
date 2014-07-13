@@ -2,7 +2,7 @@
 
 PORTNAME=	rt
 DISTVERSION=	4.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	42
@@ -55,7 +55,8 @@ RUN_DEPENDS+=	${CLI_DEPS}        \
 		${USERLOGO_DEPS}   \
 		${HTML_DOC_DEPS}
 
-USES+=		perl5
+USES=		cpe perl5
+CPE_VENDOR=	best_practical
 USE_AUTOTOOLS=	autoconf
 
 RT_LAYOUT=	FreeBSD
