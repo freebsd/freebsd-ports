@@ -35,6 +35,7 @@ OPTIONS_SUB=	yes
 PROFILING_DESC=	Enable profiling
 
 GTK2_CONFIGURE_ON=	--enable-gtk=2.4
+GTK2_USES=		pkgconfig
 PROFILING_CONFIGURE_ENABLE=	profiling
 
 NO_STAGE=	yes
