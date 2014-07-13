@@ -55,4 +55,4 @@ share/images/nowebcamCIF.jpg
 %%NLS%%share/locale/ru/LC_MESSAGES/mediastreamer.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/mediastreamer.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mediastreamer.mo
-@dirrmtry include/mediastreamer2
+@dirrm include/mediastreamer2
