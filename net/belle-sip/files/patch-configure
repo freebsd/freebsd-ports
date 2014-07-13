@@ -27,7 +27,7 @@
  
  if test $ANTLR = "no" ; then
 -antlr_java_prefixes="$antlr_prefix/share/java /usr/local/share/java /usr/share/java /opt/local/share/java"
-+antlr_java_prefixes="/usr/obj/ports/usr/home/tijl/projects/freebsd/ports/head/net/belle-sip/work"
++antlr_java_prefixes="%%WRKDIR%%"
  
  	for antlr_java_prefix in $antlr_java_prefixes
  	do
