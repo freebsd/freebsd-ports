@@ -2,7 +2,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	4.0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		SF/requesttracker/
@@ -59,8 +59,9 @@ RUN_DEPENDS+=	${CORE_DEPS}       \
 		${USERLOGO_DEPS}   \
 		${HTML_DOC_DEPS}
 
-USES+=		perl5
+USES=		cpe perl5
 USE_AUTOTOOLS=	autoconf
+CPE_VENDOR=	bestpractical
 
 RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
 RT_LAYOUT=	FreeBSD
