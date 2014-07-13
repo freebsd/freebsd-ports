@@ -686,6 +686,8 @@ lib/webmin/virtual-server/help/config_quotas.html
 lib/webmin/virtual-server/help/config_quotas.nl.html
 lib/webmin/virtual-server/help/config_reseller_modules.html
 lib/webmin/virtual-server/help/config_reseller_modules.nl.html
+lib/webmin/virtual-server/help/config_reseller_post_command.html
+lib/webmin/virtual-server/help/config_reseller_pre_command.html
 lib/webmin/virtual-server/help/config_reseller_theme.html
 lib/webmin/virtual-server/help/config_reseller_theme.nl.html
 lib/webmin/virtual-server/help/config_reseller_unix.html
@@ -1826,6 +1828,7 @@ lib/webmin/virtual-server/newfeatures-gpl/4.05/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.06/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.07/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.08/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.09/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
@@ -1979,6 +1982,7 @@ lib/webmin/virtual-server/wizard-lib.pl
 lib/webmin/virtual-server/wizard.cgi
 lib/webmin/virtual-server/writelogs.pl
 @dirrm lib/webmin/virtual-server/scripts
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.09
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/4.08
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/4.07
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/4.06
