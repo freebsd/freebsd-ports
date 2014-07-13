@@ -11,9 +11,9 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	C++ library that persistently stores graph like data
 
-LIB_DEPENDS=	mk4.0:${PORTSDIR}/databases/metakit \
-		tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND} \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libmk4.so:${PORTSDIR}/databases/metakit \
+		libtcl${TCLVND}.so:${PORTSDIR}/lang/tcl${TCLVND} \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
 

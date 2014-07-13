@@ -15,7 +15,7 @@ BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils \
 		gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29 \
+LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29 \
 		libgpgme.so:${PORTSDIR}/security/gpgme
 
 CONFLICTS=	gd-2.*
