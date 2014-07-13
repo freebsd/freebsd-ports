@@ -564,6 +564,7 @@
     SUBDIR += lprof-devel
     SUBDIR += lua-gd
     SUBDIR += luminance
+    SUBDIR += luminance-qt5
     SUBDIR += luxrays
     SUBDIR += luxrender
     SUBDIR += mahotas
