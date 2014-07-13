@@ -14,6 +14,9 @@ COMMENT=	PHP application to administer LDAP over the web
 
 LICENSE=	GPLv2
 
+USES=		cpe
+CPE_VENDOR=	deon_george
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session xml iconv hash
