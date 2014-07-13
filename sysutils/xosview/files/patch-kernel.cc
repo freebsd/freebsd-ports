@@ -8,13 +8,14 @@
  #include <devstat.h>
  #include <stdlib.h>	/*  For malloc().  */
  void DevStat_Init();
-@@ -83,6 +84,10 @@
+@@ -83,6 +84,11 @@
  #else
  #include <sys/dkstat.h>
  #endif
 +#if defined(XOSVIEW_FREEBSD) && (__FreeBSD_version >= 700000)
 +#include <sys/resource.h>
 +#include <sys/sysctl.h>
++#include <stdlib.h>
 +#endif
  
  #ifdef HAVE_SWAPCTL
