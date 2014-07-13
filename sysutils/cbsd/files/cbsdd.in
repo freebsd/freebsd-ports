@@ -20,28 +20,28 @@ export NO_CBSD_HISTORY=yes
 globalconf=${cbsd_globalconf:-"${workdir}/cbsd.conf"}
 
 if [ ! -f ${globalconf} ]; then
-    echo "cbsd: no such ${globalconf}";
-    exit 1
+	echo "cbsd: no such ${globalconf}";
+	exit 1
 fi
 
 if [ ! -f ${inventory} ]; then
-    echo "cbsd: no such ${inventory}";
-    exit 1
+	echo "cbsd: no such ${inventory}";
+	exit 1
 fi
 
 if [ ! -f ${mdtools} ]; then
-    echo "cbsd: no such ${mdtools}";
-    exit 1
+	echo "cbsd: no such ${mdtools}";
+	exit 1
 fi
 
 if [ ! -f ${subr} ]; then
-    echo "cbsd: no such ${subr}";
-    exit 1
+	echo "cbsd: no such ${subr}";
+	exit 1
 fi
 
 if [ ! -f ${localcbsdconf} ]; then
-    echo "cbsd: no such ${localcbsdconf}";
-    exit 1
+	echo "cbsd: no such ${localcbsdconf}";
+	exit 1
 fi
 
 . ${globalconf}
@@ -53,25 +53,32 @@ fi
 
 start_precmd=${name}_prestart
 stop_precmd=${name}_prestop
+stop_cmd=${name}_stop
 
-command="${sbindir}/cbsdd"
+command="${toolsdir}/cbsdd"
 pidfile="/var/run/$name.pid"
+command_args="&"
 
 cbsdd_prestart() {
-    find ${ftmpdir} -depth 1 -maxdepth 1 -type f -exec rm -f {} \;
-    %%PREFIX%%/bin/cbsd sysinv mode=update
-    %%PREFIX%%/bin/cbsd netinv
+	/usr/bin/find ${ftmpdir} -depth 1 -maxdepth 1 -type f -exec rm -f {} \;
+	%%PREFIX%%/bin/cbsd sysinv mode=update
+	%%PREFIX%%/bin/cbsd netinv
 
-    . ${inventory}
+	. ${inventory}
 
-    [ -n "$nat_enable" ] && %%PREFIX%%/bin/cbsd naton
-    /usr/sbin/daemon ${rcddir}/jails-astart start
+	[ -n "$nat_enable" ] && %%PREFIX%%/bin/cbsd naton
+	/usr/sbin/daemon ${rcddir}/jails-astart start
 }
 
 cbsdd_prestop()
 {
-    ${rcddir}/jails-astart stop
-    [ -n "${nat_enable}" ] && %%PREFIX%%/bin/cbsd natoff
+	${rcddir}/jails-astart stop
+	[ -n "${nat_enable}" ] && %%PREFIX%%/bin/cbsd natoff
+}
+
+cbsdd_stop()
+{
+	[ -f "${pidfile}" ] && kill -9 $( cat ${pidfile} )
 }
 
 run_rc_command "$1"
