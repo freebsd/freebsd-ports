@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
 LICENSE=	GPLv2
