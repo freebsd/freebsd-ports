@@ -1,0 +1,108 @@
+--- man/nginx.8.orig 2013-11-22 08:47:33.000000000 +0100
++++ man/nginx.8	2014-01-17 04:06:57.811820154 +0100
+@@ -1,6 +1,8 @@
+ .\"
+ .\" Copyright (C) 2010 Sergey A. Osokin
++.\" Copyright (C) 2014 Jim Ohlstein
+ .\" Copyright (C) Nginx, Inc.
++.\" Copyright (C) Taobao, Inc.
+ .\" All rights reserved.
+ .\"
+ .\" Redistribution and use in source and binary forms, with or without
+@@ -25,7 +27,7 @@
+ .\" SUCH DAMAGE.
+ .\"
+ .\"
+-.Dd March 6, 2012
++.Dd January 16, 2014
+ .Dt NGINX 8
+ .Os
+ .Sh NAME
+@@ -35,7 +35,7 @@
+ .Nd "HTTP and reverse proxy server, mail proxy server"
+ .Sh SYNOPSIS
+ .Nm
+-.Op Fl ?hqtVv
++.Op Fl ?dhlmqtVv
+ .Op Fl c Ar file
+ .Op Fl g Ar directives
+ .Op Fl p Ar prefix
+@@ -46,6 +48,13 @@
+ It is known for its high performance, stability, rich feature set, simple
+ configuration, and low resource consumption.
+ .Pp
++Tengine (pronounced
++.Dq T engine )
++is a fork of 
++.Nm
++by Taobao in 2011. It supports dynamic shared objects (DSO's) 
++and has other enhanced features.
++.Pp
+ The options are as follows:
+ .Bl -tag -width ".Fl d Ar directives"
+ .It Fl ?\& , h
+@@ -53,11 +62,22 @@
+ .It Fl c Ar file
+ Use an alternative configuration
+ .Ar file .
++.It Fl d
++Dump the contents of the configuration file, including the 
++contents of 'included' files.
+ .It Fl g Ar directives
+ Set global configuration directives.
+ See
+ .Sx EXAMPLES
+ for details.
++.It Fl l
++Show all supported directives then exit.
++.It Fl m
++Show all compiled-in modules then exit. 
++Tengine supports DSO modules since 1.4.0.
++The tag 'static' means static module.
++The tag 'shared' means dynamic shared module which is also 
++attached with major and minor version of this modules.
+ .It Fl p Ar prefix
+ Set the prefix path.
+ The default value is
+@@ -113,10 +133,6 @@
+ Shut down gracefully.
+ .It Dv SIGUSR1
+ Reopen log files.
+-.It Dv SIGUSR2
+-Upgrade the
+-.Nm
+-executable on the fly.
+ .It Dv SIGWINCH
+ Shut down worker processes gracefully.
+ .El
+@@ -183,14 +199,20 @@
+ .\"Xr nginx.conf 5
+ .\"Pp
+ Documentation at
+-.Pa http://nginx.org/en/docs/ .
++.Pa http://nginx.org/en/docs/ 
++and 
++.Pa http://tengine.taobao.org/documentation.html .
+ .Pp
+ For questions and technical support, please refer to
+-.Pa http://nginx.org/en/support.html .
++.Pa http://nginx.org/en/support.html 
++and 
++.Pa http://tengine.taobao.org/ .
+ .Sh HISTORY
+ Development of
+ .Nm
+ started in 2002, with the first public release on October 4, 2004.
++.Pp
++Tengine was open sourced in 2011.
+ .Sh AUTHORS
+ .An -nosplit
+ .An Igor Sysoev Aq igor@sysoev.ru .
+@@ -199,4 +221,6 @@
+ .An Sergey A. Osokin Aq osa@FreeBSD.org.ru
+ as a result of compiling many
+ .Nm
+-documents from all over the world.
++documents from all over the world. Tengine specific
++portions added by 
++.An Jim Ohlstein Aq jim@ohlste.in
