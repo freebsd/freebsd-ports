@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	DOCS
 
 PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
 
-BROKEN=		Does not build
 USE_MYSQL=	41+
 USES=		tcl
 TCL_NODOT=	tcl${TCL_VER:S/.//}
