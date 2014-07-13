@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-LIB_DEPENDS+=		tcl84:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS+=		libtcl84.so:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tcl
 .else
 CONFIGURE_ARGS+=	--without-tcl

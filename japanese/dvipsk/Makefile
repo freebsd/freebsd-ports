@@ -21,9 +21,9 @@ COMMENT=	DVI to PostScript translator + Japanese patch
 
 BUILD_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
 RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		wwwcore.1:${PORTSDIR}/www/libwww \
-		t1.5:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libwwwcore.so:${PORTSDIR}/www/libwww \
+		libt1.so:${PORTSDIR}/devel/t1lib
 
 PATCH_WRKSRC=	${WRKDIR}/${TETEX_SRC}/texk
 EXTRA_PATCHES=	${WRKDIR}/dvipsk-${PORTVERSION}-p1.7a.diff

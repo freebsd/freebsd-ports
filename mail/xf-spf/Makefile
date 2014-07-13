@@ -10,7 +10,7 @@ MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	SPF checker for Qmail's SMTPEXTFORK patch
 
-LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS+=	libspf2.so:${PORTSDIR}/mail/libspf2
 
 USES=		qmail
 USE_BZIP2=	yes

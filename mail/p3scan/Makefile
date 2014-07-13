@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTNAME}-${PORTVERSIO
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Transparent POP3-Proxy with virus-scanning capabilities
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 PLIST_FILES=	etc/p3scan/p3scan.conf.sample etc/p3scan/p3scan.mail.sample \
 		sbin/p3scan

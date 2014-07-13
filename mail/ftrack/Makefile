@@ -15,7 +15,7 @@ COMMENT=	FTN Messages tracker
 
 BROKEN=		Does not compile
 
-LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
+LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi
 
 USES=		perl5 gmake zip
 ALL_TARGET=	ftrack

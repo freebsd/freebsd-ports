@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${PKGNUM}-${OPSYS:tl}-${ARCH}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Graph drawing/visualization system
 
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS=	libc.so.4:${PORTSDIR}/misc/compat4x
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386

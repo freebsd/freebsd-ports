@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PTeX backend for Jade, for typesetting SGML documents
 
 BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

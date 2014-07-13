@@ -50,7 +50,7 @@ BUILD_DEPENDS+=	p5-PGPLOT>=0:${PORTSDIR}/graphics/p5-PGPLOT
 .endif
 
 .if ${PORT_OPTIONS:MPLPLOT}
-LIB_DEPENDS+=	plplotd:${PORTSDIR}/math/plplot
+LIB_DEPENDS+=	libplplotd.so:${PORTSDIR}/math/plplot
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
@@ -60,7 +60,7 @@ USE_GL=		yes
 .endif
 
 .if ${PORT_OPTIONS:MGD}
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 .endif
 
 .if ${PORT_OPTIONS:MF77}
@@ -68,19 +68,19 @@ BUILD_DEPENDS+=	p5-ExtUtils-F77>=0:${PORTSDIR}/lang/p5-ExtUtils-F77
 .endif
 
 .if ${PORT_OPTIONS:MFFTW}
-LIB_DEPENDS+=	fftw:${PORTSDIR}/math/fftw
+LIB_DEPENDS+=	libfftw.so:${PORTSDIR}/math/fftw
 .endif
 
 .if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
 .endif
 
 .if ${PORT_OPTIONS:MHDF}
-LIB_DEPENDS+=	df:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=	libdf.so:${PORTSDIR}/science/hdf
 .endif
 
 .if ${PORT_OPTIONS:MPROJ}
-LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
+LIB_DEPENDS+=	libproj.so:${PORTSDIR}/graphics/proj
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}

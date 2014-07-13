@@ -12,8 +12,8 @@ MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Barcode library for KDE
 
 
-LIB_DEPENDS=	dmtx.0:${PORTSDIR}/graphics/libdmtx \
-		qrencode.3:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS=	libdmtx.so:${PORTSDIR}/graphics/libdmtx \
+		libqrencode.so:${PORTSDIR}/graphics/libqrencode
 
 USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 USES=		cmake

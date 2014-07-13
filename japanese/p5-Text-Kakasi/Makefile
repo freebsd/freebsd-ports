@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kakasi library module for Perl5
 
-LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
+LIB_DEPENDS=	libkakasi.so:${PORTSDIR}/japanese/kakasi
 
 USES=		perl5
 USE_PERL5=	configure

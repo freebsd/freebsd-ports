@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ANSI Common Lisp implementation
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake perl5
@@ -64,7 +64,7 @@ PLIST_SUB+=	SOCKETS="@comment "
 
 .if ${PORT_OPTIONS:MDFFI}
 CONFIGURE_ARGS+=--with-dffi=system
-LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 .else
 CONFIGURE_ARGS+=--with-dffi=no
 .endif

@@ -16,7 +16,7 @@ COMMENT=	GNUstep interface to the GUILE scheme interpreter
 
 BROKEN=		Does not build
 
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
 
 LICENSE=	GPLv2
 
