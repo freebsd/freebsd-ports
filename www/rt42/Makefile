@@ -56,7 +56,7 @@ RUN_DEPENDS+=	${CLI_DEPS}        \
 		${HTML_DOC_DEPS}
 
 USES=		cpe perl5
-CPE_VENDOR=	best_practical
+CPE_VENDOR=	bestpractical
 USE_AUTOTOOLS=	autoconf
 
 RT_LAYOUT=	FreeBSD
