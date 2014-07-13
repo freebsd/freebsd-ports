@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
 USES=		cpe
 CPE_VENDOR=	oracle
-CPRE_PRODUCT=	mysql_connector_j
+CPE_PRODUCT=	mysql_connector_j
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
