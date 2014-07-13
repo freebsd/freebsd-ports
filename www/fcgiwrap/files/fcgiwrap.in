@@ -96,7 +96,7 @@ if [ -n "$2" ]; then
 		eval fcgiwrap_fib="\${fcgiwrap_${profile}_fib:-${fcgiwrap_fib}}"
 		eval fcgiwrap_user="\${fcgiwrap_${profile}_user:-${fcgiwrap_user}}"
 		eval fcgiwrap_socket="\${fcgiwrap_${profile}_socket:?}"
-		eval fcgiwrap_flags="\${fcgiwrap_${profile}_flags:-${fciwrap_flags}}"
+		eval fcgiwrap_flags="\${fcgiwrap_${profile}_flags:-${fcgiwrap_flags}}"
 	else
 		echo "$0: extra argument ignored"
 	fi
@@ -117,6 +117,10 @@ else
 	fi
 fi
 
-command_args="-f -p ${pidfile} ${procname} -s ${fcgiwrap_socket}"
+# run_rc_command would send ${name}_flags as parameters to $command (daemon)
+# This ensures they are actually passed to fcgiwrap instead.
+actual_fcgiwrap_flags="${fcgiwrap_flags}"
+fcgiwrap_flags=""
+command_args="-f -p ${pidfile} ${procname} -s ${fcgiwrap_socket} ${actual_fcgiwrap_flags}"
 
 run_rc_command "$1"
