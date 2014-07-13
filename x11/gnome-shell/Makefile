@@ -12,10 +12,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Next generation GNOME desktop shell
 
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		mutter-private.0:${PORTSDIR}/x11-wm/mutter \
-		clutter-glx-1.0:${PORTSDIR}/graphics/clutter \
-		gjs-gi:${PORTSDIR}/lang/gjs
+LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
+		libmutter-private.so:${PORTSDIR}/x11-wm/mutter \
+		libclutter-glx-1.so:${PORTSDIR}/graphics/clutter \
+		libgjs-gi.so:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
     		glxinfo:${PORTSDIR}/graphics/mesa-demos
 

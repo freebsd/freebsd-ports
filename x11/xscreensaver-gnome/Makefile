@@ -12,8 +12,8 @@ DISTNAME=	xscreensaver-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat (for GNOME users)
 
-LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libgle.so:${PORTSDIR}/graphics/gle \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 #CONFLICTS?=	xscreensaver-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
