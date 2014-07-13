@@ -15,7 +15,7 @@ COMMENT=	Ninix-aya is a compatible with desktop mascot program "Ukagaka"
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet \
 		${PYNUMPY} \

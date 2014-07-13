@@ -17,7 +17,7 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11

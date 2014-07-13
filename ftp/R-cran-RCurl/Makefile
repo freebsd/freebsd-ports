@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	curl-config:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	R-cran-bitops>0:${PORTSDIR}/devel/R-cran-bitops
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=	cran:auto-plist
 

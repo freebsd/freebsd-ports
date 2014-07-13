@@ -36,9 +36,9 @@ post-patch:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBITMAP_IMAGES}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiffxx.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiffxx.so:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	 --with-jpeg=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	 --with-jpeg=no --with-png=no -with-tiff=no

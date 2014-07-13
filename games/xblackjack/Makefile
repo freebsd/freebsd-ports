@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11/Motif blackjack game
 
-LIB_DEPENDS=	Xm:${PORTSDIR}/x11-toolkits/lesstif
+LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/lesstif
 
 USES=		imake
 USE_XORG=	x11 xext xp xt xmu

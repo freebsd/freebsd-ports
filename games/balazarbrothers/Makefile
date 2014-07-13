@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Balazar Brother is a free software 3D puzzle game
 
-LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
+LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer \
 		${PYTHON_SITELIBDIR}/soya/__init__.py:${PORTSDIR}/graphics/py-soya3d \

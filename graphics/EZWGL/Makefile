@@ -11,8 +11,8 @@ DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The EZ Widget and Graphics Library
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11 xext
 USE_LDCONFIG=	yes

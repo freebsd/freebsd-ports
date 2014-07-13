@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}-full${EXTRACT_SUFX}?format=raw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface for NetHack 3.4.3 forked from Falcon's Eye
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 

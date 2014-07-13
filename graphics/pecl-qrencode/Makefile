@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	PECL extension for generate qrcode
 
-LIB_DEPENDS=	qrencode.3:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
