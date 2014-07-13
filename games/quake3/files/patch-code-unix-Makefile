@@ -40,7 +40,7 @@
        NEWPGCC=/loki/global/ppc/bin/gcc
        CC=$(NEWPGCC)
 -      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -fomit-frame-pointer -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
-+      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -fomit-frame-pointer -pipe -ffast-math -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
      else
        #NEWPGCC=/usr/local/gcc-2.95.2/bin/gcc # bk001205
        #NEWPGCC=/loki/global/x86/bin/gcc
@@ -49,10 +49,10 @@
  # NOTE: the -fomit-frame-pointer option leads to an unstable binary on my test box if it was built on the main box
  #   but building on the Mdk 7.2 baseline seems to work
 -      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -fomit-frame-pointer -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
-+      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -fomit-frame-pointer -pipe -ffast-math -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
  # TTimo: use this for building on P3 gcc 2.95.3 libc2.2 for all targets (experimental! -fomit-fram-pointer removed)
 -#      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
-+#      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++#      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -pipe -ffast-math -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
      endif
    endif
  
@@ -95,11 +95,10 @@
 -GL_CFLAGS = -I$(MESADIR)/include -I/usr/X11R6/include
 +ifdef OPTIMIZED_CFLAGS
 +  ifeq ($(ARCH),i386)
-+RELEASE_CFLAGS+=-O2 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++RELEASE_CFLAGS+=-O2 -fomit-frame-pointer -pipe -ffast-math -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
 +  else
 +RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
-+  endif
-+endif
++  endif+endif
  
 -DEBUG_CFLAGS=$(BASE_CFLAGS) -g  -Wall -Werror
 -ifeq ($(ARCH),axp)
