@@ -7,13 +7,13 @@ have issues starting depending on the modules you are using.
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                       H E A D S - U P
-2014-07-11:
-  The default version will change from www/apache22 to www/apache24,
+2014-07-13:
+  The default version was changed from www/apache22 to www/apache24,
   pre-build apache modules will also reflect this!
 
   In case ports are build by yourself and apache22 is required
   use the following command to keep apache22 as default
 
-  echo "APACHE_DEFAULT=2.2" >> /etc/make.conf
+  echo "DEFAULT_VERSIONS+=apache=2.2" >> /etc/make.conf
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
