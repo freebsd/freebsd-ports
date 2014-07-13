@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	2.12-20140507
-PORTREVISION=	1
+DISTVERSION=	2.12-20140709
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -29,9 +28,12 @@ CONFLICTS_INSTALL=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* postfix2
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix cpe
 SHEBANG_LANG=	perl
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
+
+CPE_VENDOR=	postfix
+CPE_PRODUCT=	postfix
 
 USE_SUBMAKE=	yes
 USE_PERL5=	build
@@ -116,6 +118,7 @@ SUB_FILES+=	pkg-install pkg-message
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
+			-DDEF_META_DIR=\\\"${DAEMONDIR}\\\" \
 			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
 			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
 			-DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" \
@@ -175,6 +178,7 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
+BROKEN=			At the moment, SPF support is unavailable for ${PORTNAME}-${DISTVERSION}
 LIB_DEPENDS+=		libspf2.so:${PORTSDIR}/mail/libspf2
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	mm
@@ -189,7 +193,6 @@ PLIST_SUB+=		SPF="@comment "
 
 .if ${PORT_OPTIONS:MBDB}
 USE_BDB=		yes
-INVALID_BDB_VER=	6
 POSTFIX_CCARGS+=	-I${BDB_INCLUDE_DIR}
 POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 .endif
@@ -326,6 +329,7 @@ do-install:
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \
+		meta_directory=${DAEMONDIR} \
 		html_directory=${READMEDIR} \
 		mailq_path=${PREFIX}/bin/mailq \
 		manpage_directory=${MANPREFIX}/man \

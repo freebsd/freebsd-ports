@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$FreeBSD: /tmp/pcvs/ports/mail/postfix-current/files/pkg-install.in,v 1.4 2011-12-21 22:45:17 sahil Exp $
+#	$FreeBSD$
 #
 
 # If the POSTFIX_DEFAULT_MTA environment variable is set to YES, it
@@ -61,11 +61,11 @@ if [ "$2" = "POST-INSTALL" ]; then
 	for file in $SAMPLES
 	do
 		if [ ! -f ${ETCDIR}/$file ]; then
-                	cp ${DAEMONDIR}/$file ${ETCDIR}/
+                	cp ${DAEMONDIR}/$file.proto ${ETCDIR}/$file
 		fi
 	done
 
-        cmp ${DAEMONDIR}/main.cf ${ETCDIR}/main.cf >/dev/null 2>&1 \
+        cmp ${DAEMONDIR}/main.cf.proto ${ETCDIR}/main.cf >/dev/null 2>&1 \
 	 && POSTARG="set-permissions" \
 	 || POSTARG="upgrade-package"
 
@@ -73,6 +73,7 @@ if [ "$2" = "POST-INSTALL" ]; then
 	 daemon_directory=${DAEMONDIR} \
 	 html_directory=${READMEDIR} \
 	 readme_directory=${READMEDIR} \
+ 	 meta_directory=${DAEMONDIR} \
 	 ${POSTARG}
 fi
 

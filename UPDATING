@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140713:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: sahil@FreeBSD.org
+
+  This is a significant update; so, please carefully review the
+  RELEASE_NOTES to identify which incompatible changes impact your
+  environment. Of particular note are changes to the Postfix
+  build/install procedure.
+
+  Please backup main.cf, master.cf and any other important files
+  associated with your Postfix setup before updating.
+
+20140713:
   AFFECTS: users of www/apache22
   AUTHOR: ohauer@FreeBSD.org
 
