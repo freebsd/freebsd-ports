@@ -3,6 +3,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.3.7
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -12,6 +13,10 @@ COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL-LICENSE.TXT
+
+USES=		cpe
+CPE_VENDOR=	postfix_admin_project
+CPE_PRODUCT=	postfix_admin
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
