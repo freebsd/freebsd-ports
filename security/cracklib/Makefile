@@ -20,6 +20,7 @@ DICTFILE=	${DICTPATH}/pw_dict
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-default-dict=${DICTPATH}
 USE_LDCONFIG=	yes
+USES=		gettext
 
 .if defined(PYTHON_SLAVEPORT)
 USE_PYTHON=	yes
