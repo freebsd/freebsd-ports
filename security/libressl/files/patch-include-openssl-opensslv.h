@@ -1,12 +1,11 @@
---- include/openssl/opensslv.h.orig	2014-07-12 21:41:27.634267326 +0100
-+++ include/openssl/opensslv.h	2014-07-12 21:42:21.944270045 +0100
-@@ -2,7 +2,8 @@
- #ifndef HEADER_OPENSSLV_H
+--- include/openssl/opensslv.h.orig	2014-07-13 11:51:17.000000000 +0100
++++ include/openssl/opensslv.h	2014-07-13 15:23:36.254124697 +0100
+@@ -3,7 +3,7 @@
  #define HEADER_OPENSSLV_H
  
+ #define LIBRESSL_VERSION_NUMBER	0x20000000L
 -#define OPENSSL_VERSION_NUMBER	0x20000000L
 +#define OPENSSL_VERSION_NUMBER	0x1000107fL
-+#define LIBRESSL_VERSION_NUMBER	0x20000000L
  #define OPENSSL_VERSION_TEXT	"LibreSSL 2.0"
  #define OPENSSL_VERSION_PTEXT	" part of " OPENSSL_VERSION_TEXT
  
