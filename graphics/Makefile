@@ -864,6 +864,7 @@
     SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
+    SUBDIR += py-stltools
     SUBDIR += py-wand
     SUBDIR += py-webcolors
     SUBDIR += py3-cairo
