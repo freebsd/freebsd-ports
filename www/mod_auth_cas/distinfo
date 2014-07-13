@@ -1,4 +1,2 @@
-SHA256 (apache2/mod_auth_cas/1.0.9.1/mod_auth_cas.c) = ddff1d54d2824842b6abacc882c6105a9d006964b7e3b367c1e77c8e5b0a92c1
-SIZE (apache2/mod_auth_cas/1.0.9.1/mod_auth_cas.c) = 81903
-SHA256 (apache2/mod_auth_cas/1.0.9.1/mod_auth_cas.h) = 99518b262b1bc28c1d7d51e9e2cc8510b9c733b29b6d7af99fed145dcdc1af96
-SIZE (apache2/mod_auth_cas/1.0.9.1/mod_auth_cas.h) = 7630
+SHA256 (mod_auth_cas-1.0.9.1.tar.gz) = db1d473628bf699c438450afcee4912f4f44db8a2c676f8f6de7f20bdba8de91
+SIZE (mod_auth_cas-1.0.9.1.tar.gz) = 73178
