@@ -487,7 +487,6 @@
     SUBDIR += mpiosh
     SUBDIR += mps
     SUBDIR += msilbc
-    SUBDIR += muine
     SUBDIR += mumble
     SUBDIR += murmur
     SUBDIR += muse

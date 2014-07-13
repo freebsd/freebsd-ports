@@ -1,9 +1,0 @@
---- ./src/muine.exe.config.in.orig	2009-09-13 10:53:58.000000000 -0400
-+++ ./src/muine.exe.config.in	2012-04-04 21:29:45.000000000 -0400
-@@ -3,6 +3,5 @@
-   <dllmap dll="libgtk-2.0-0.dll" target="libgtk-x11-2.0.so.0"/>
-   <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
-   <dllmap dll="libgnomevfs-2-0.dll" target="libgnomevfs-2.so.0"/>
--  <dllmap dll="musicbrainz" target="libmusicbrainz.so.4"/>
-   <dllmap dll="libmuine" target="@pkglibdir@/libmuine.so"/>
- </configuration>
