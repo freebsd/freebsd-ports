@@ -1,0 +1,44 @@
+--- configure.orig
++++ configure
+@@ -15655,10 +15655,10 @@
+ resolv_h_hav_res_ndestroy=no
+ LIBS_save=$LIBS
+ 
+-LIBS="$LIBS -lresolv"
+ 
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
++#include <netinet/in.h>
+ #include <resolv.h>
+ int
+ main ()
+@@ -15683,7 +15683,8 @@
+     conftest$ac_exeext conftest.$ac_ext
+ 
+ ac_fn_c_check_decl "$LINENO" "res_ndestroy
+-		" "ac_cv_have_decl_res_ndestroy___" "#include <resolv.h>
++		" "ac_cv_have_decl_res_ndestroy___" "#include <netinet/in.h>
++#include <resolv.h>
+ "
+ if test "x$ac_cv_have_decl_res_ndestroy___" = xyes; then :
+   resolv_h_hav_res_ndestroy=yes
+@@ -15748,17 +15749,11 @@
+ 
+ 
+ if test $ANTLR = "no" ; then
+-antlr_java_prefixes="$antlr_prefix/share/java /usr/local/share/java /usr/share/java /opt/local/share/java"
++antlr_java_prefixes="/usr/obj/ports/usr/home/tijl/projects/freebsd/ports/head/net/belle-sip/work"
+ 
+ 	for antlr_java_prefix in $antlr_java_prefixes
+ 	do
+-		antlr_jar=$antlr_java_prefix/antlr.jar
+-		if test -f $antlr_jar ; then
+-			break
+-		else
+-			antlr_jar=no
+-		fi
+-		antlr_jar=$antlr_java_prefix/antlr3.jar
++		antlr_jar=$antlr_java_prefix/antlr-complete.jar
+ 		if test -f $antlr_jar ; then
+ 			break
+ 		else

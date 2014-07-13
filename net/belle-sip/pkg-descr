@@ -1,0 +1,17 @@
+Belle-sip is a SIP (RFC3261) implementation written in C, with an object
+oriented API.
+
+* RFC3261 compliant implementation of SIP parser, writer, transactions and
+  dialog layers
+* http client api
+* support of client TLS certificate
+* fully asynchronous transport layer (UDP, TCP, TLS)
+* fully asynchronous DNS resolution with SRV
+* full dual-stack IPv6 support
+* SIP transaction state machines with lastest corrections (RFC6026)
+* automatic management of request refreshes with network disconnection
+  resiliency thanks to the "refresher" object
+* supported platforms: Linux, Mac OSX, windows XP+, iOS, Android,
+  Blackberry 10
+
+WWW: http://www.linphone.org/

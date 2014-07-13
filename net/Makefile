@@ -44,6 +44,7 @@
     SUBDIR += bcusdk-eibd
     SUBDIR += beacon
     SUBDIR += beanstalkd
+    SUBDIR += belle-sip
     SUBDIR += bindtest
     SUBDIR += binkd
     SUBDIR += bird
@@ -346,7 +347,6 @@
     SUBDIR += linc-reference
     SUBDIR += linknx
     SUBDIR += linphone
-    SUBDIR += linphone-base
     SUBDIR += linux-f10-nss_ldap
     SUBDIR += linux-f10-openldap
     SUBDIR += linuxigd
