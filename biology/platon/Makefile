@@ -2,10 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	platon
-PORTVERSION=	2013.12.12
-PORTREVISION=	1
+PORTVERSION=	2014.07.13
 CATEGORIES=	biology
-MASTER_SITES=	http://www.cryst.chem.uu.nl/spek/xraysoft/unix/
+# Please note that the upstream vendor does not perform any discernible
+# versioning. Therefore, the distfile has to be hosted elsewhere in order
+# to prevent breakage due to distinfo becoming outdated unexpectedly. For the
+# latest upstream version, please see
+# http://www.cryst.chem.uu.nl/spek/xraysoft/unix/
+MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 DISTNAME=	platon
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,8 +22,6 @@ RESTRICTED=	free for academic, US$ 5000 for commercial users
 
 USES=		fortran
 USE_XORG=	x11
-
-BROKEN=		No distinfo provided
 
 SAMPLES=	azt.dat bucky.spf c476.spf c540.cart3d check.def cubane.spf \
 		cyto.spf ml.pdb s810c.cif s913a.res sucrose.spf
