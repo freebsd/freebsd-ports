@@ -4,6 +4,7 @@
 
 PORTNAME=	mysql-connector-java
 PORTVERSION=	5.1.31
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
@@ -14,6 +15,10 @@ COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
+
+USES=		cpe
+CPE_VENDOR=	oracle
+CPRE_PRODUCT=	mysql_connector_j
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
