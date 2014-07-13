@@ -1956,6 +1956,7 @@
     SUBDIR += tdom
     SUBDIR += template_
     SUBDIR += templatelite
+    SUBDIR += tengine
     SUBDIR += testlink
     SUBDIR += textpattern
     SUBDIR += thttpd
