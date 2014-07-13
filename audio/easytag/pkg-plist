@@ -24,6 +24,7 @@ share/icons/hicolor/scalable/apps/easytag.svg
 %%NLS%%share/locale/id/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/it/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/easytag.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/easytag.mo
