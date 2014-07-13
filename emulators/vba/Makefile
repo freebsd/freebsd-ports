@@ -36,6 +36,7 @@ PROFILING_DESC=	Enable profiling
 
 GTK2_CONFIGURE_ON=	--enable-gtk=2.4
 GTK2_LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24
+GTK2_USES=		pkgconfig
 PROFILING_CONFIGURE_ENABLE=	profiling
 
 BROKEN_ia64=	Runaway cc1plus process
