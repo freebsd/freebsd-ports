@@ -20,7 +20,7 @@ DISTNAME=	Eiffel${PORTVERSION:S/.//}_gpl_64493-freebsd-${EIFFEL_ARCH}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete Integrated Development Environment for Eiffel
 
-LIB_DEPENDS=	c.6:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS=	libc.so.6:${PORTSDIR}/misc/compat6x
 
 USE_GNOME=	gtk20
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ DIST_SUBDIR=	KDE/kdevelop/${KDEVELOP_VERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP support for KDevelop
 
-LIB_DEPENDS=	kdevplatforminterfaces:${PORTSDIR}/devel/kdevplatform
+LIB_DEPENDS=	libkdevplatforminterfaces.so:${PORTSDIR}/devel/kdevplatform
 BUILD_DEPENDS=	${KDE4_PREFIX}/bin/kdev-pg-qt:${PORTSDIR}/devel/kdevelop-pg-qt
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
