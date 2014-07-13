@@ -1,0 +1,8 @@
+@mode 500
+@group cbsd
+@owner cbsd
+bin/cbsd
+@owner
+@group
+@mode
+man/man8/cbsd.8.gz
