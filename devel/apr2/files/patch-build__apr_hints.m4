@@ -9,7 +9,7 @@
 -        else
 -            os_version=000000
 -        fi
-+        osversion="${900010}"
++        osversion=%%OSVERSION%%
          # 502102 is when libc_r switched to libpthread (aka libkse).
          if test $os_version -ge "502102"; then
            apr_cv_pthreads_cflags="none"

@@ -12,6 +12,7 @@ include/apr-2/apr_dbm.h
 include/apr-2/apr_dso.h
 include/apr-2/apr_env.h
 include/apr-2/apr_errno.h
+include/apr-2/apr_escape.h
 include/apr-2/apr_file_info.h
 include/apr-2/apr_file_io.h
 include/apr-2/apr_fnmatch.h
@@ -43,6 +44,7 @@ include/apr-2/apr_sdbm.h
 include/apr-2/apr_sha1.h
 include/apr-2/apr_shm.h
 include/apr-2/apr_signal.h
+include/apr-2/apr_skiplist.h
 include/apr-2/apr_strings.h
 include/apr-2/apr_strmatch.h
 include/apr-2/apr_tables.h
@@ -63,42 +65,43 @@ include/apr-2/apu.h
 include/apr-2/apu_errno.h
 include/apr-2/apu_version.h
 include/apr-2/apu_want.h
+lib/apr-2/.keep.me
+%%NSS%%lib/apr-2/apr_crypto_nss-2.so
+%%NSS%%lib/apr-2/apr_crypto_nss.a
+%%NSS%%lib/apr-2/apr_crypto_nss.so
+%%SSL%%lib/apr-2/apr_crypto_openssl-2.so
+%%SSL%%lib/apr-2/apr_crypto_openssl.a
+%%SSL%%lib/apr-2/apr_crypto_openssl.so
 %%MYSQL%%lib/apr-2/apr_dbd_mysql-2.so
 %%MYSQL%%lib/apr-2/apr_dbd_mysql.a
-%%MYSQL%%lib/apr-2/apr_dbd_mysql.la
 %%MYSQL%%lib/apr-2/apr_dbd_mysql.so
 %%PGSQL%%lib/apr-2/apr_dbd_pgsql-2.so
 %%PGSQL%%lib/apr-2/apr_dbd_pgsql.a
-%%PGSQL%%lib/apr-2/apr_dbd_pgsql.la
 %%PGSQL%%lib/apr-2/apr_dbd_pgsql.so
-%%SQLITE3%%lib/apr-2/apr_dbd_sqlite3-2.so
-%%SQLITE3%%lib/apr-2/apr_dbd_sqlite3.a
-%%SQLITE3%%lib/apr-2/apr_dbd_sqlite3.la
-%%SQLITE3%%lib/apr-2/apr_dbd_sqlite3.so
+%%SQLITE%%lib/apr-2/apr_dbd_sqlite3-2.so
+%%SQLITE%%lib/apr-2/apr_dbd_sqlite3.a
+%%SQLITE%%lib/apr-2/apr_dbd_sqlite3.so
 %%BDB%%lib/apr-2/apr_dbm_db-2.so
 %%BDB%%lib/apr-2/apr_dbm_db.a
-%%BDB%%lib/apr-2/apr_dbm_db.la
 %%BDB%%lib/apr-2/apr_dbm_db.so
 %%GDBM%%lib/apr-2/apr_dbm_gdbm-2.so
 %%GDBM%%lib/apr-2/apr_dbm_gdbm.a
-%%GDBM%%lib/apr-2/apr_dbm_gdbm.la
 %%GDBM%%lib/apr-2/apr_dbm_gdbm.so
 %%NDBM%%lib/apr-2/apr_dbm_ndbm-2.so
 %%NDBM%%lib/apr-2/apr_dbm_ndbm.a
-%%NDBM%%lib/apr-2/apr_dbm_ndbm.la
 %%NDBM%%lib/apr-2/apr_dbm_ndbm.so
 lib/apr.exp
 lib/libapr-2.a
-lib/libapr-2.la
 lib/libapr-2.so
 lib/libapr-2.so.%%SHLIB_MAJOR%%
+lib/libapr-2.so.%%SHLIB_MAJOR%%.%%SHLIB_MAJOR%%.%%SHLIB_MAJOR%%
 libdata/pkgconfig/apr-2.pc
 %%DATADIR%%/build-2/apr_rules.mk
 %%DATADIR%%/build-2/libtool
 %%DATADIR%%/build-2/make_exports.awk
 %%DATADIR%%/build-2/make_var_export.awk
 %%DATADIR%%/build-2/mkdir.sh
+@dirrm include/apr-2
+@dirrm lib/apr-2
 @dirrm %%DATADIR%%/build-2
 @dirrm %%DATADIR%%
-%%EXTRAS%%@dirrm lib/apr-2
-@dirrm include/apr-2
