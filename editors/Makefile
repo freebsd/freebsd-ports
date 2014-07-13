@@ -216,7 +216,6 @@
     SUBDIR += nedit
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
-    SUBDIR += nxml
     SUBDIR += omegaT
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel

@@ -6249,3 +6249,4 @@ textproc/stardict-MerrianWebster||2014-07-10|Removed due to possible copyright i
 textproc/stardict-OxfordCollocation||2014-07-10|Removed due to possible copyright infringement
 textproc/stardict-longman||2014-07-10|Removed due to possible copyright infringement
 textproc/stardict-oald||2014-07-10|Removed due to possible copyright infringement
+editors/nxml||2014-07-13|Needs recently removed emacs21 or emacs22
