@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
-LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
+LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf
 
 CONFLICTS=	dynamips-[0-9]* dynamips-community-[0-9]*
 LICENSE=	GPLv2

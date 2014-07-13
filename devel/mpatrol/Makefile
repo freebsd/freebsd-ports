@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Dynamic memory debugging and profiling library
 
-LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
+LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build/unix
 

@@ -12,7 +12,7 @@ COMMENT=	Atari ST emulator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 
 OPTIONS_DEFINE=	DOCS
