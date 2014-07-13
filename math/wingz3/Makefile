@@ -19,7 +19,7 @@ COMMENT=	Commercial Spreadsheet
 
 NO_PACKAGE=	Commercial software with nothing to build - install from port
 
-ONLY_FOR_ARCHS=	i386 amd64
+IA32_BINARY_PORT=yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 SUB_FILES=	Wingz3
