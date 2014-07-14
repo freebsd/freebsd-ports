@@ -1,7 +1,9 @@
 bin/paexec
 bin/paexec_reorder
+bin/pareorder
 man/man1/paexec.1.gz
 man/man1/paexec_reorder.1.gz
+man/man1/pareorder.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
