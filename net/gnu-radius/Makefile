@@ -3,7 +3,7 @@
 
 PORTNAME=	gnu-radius
 PORTVERSION=	1.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
@@ -13,11 +13,12 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GNU RADIUS server
 
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
-USES=		gmake
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool
 USE_RC_SUBR=	radiusd
 USE_SUBMAKE=	yes
-USE_AUTOTOOLS=	libltdl libtool
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -36,9 +37,6 @@ OPTIONS_DEFAULT=MYSQL
 CLIENT_DESC=	Build client
 EMACS_DESC=	Install Emacs dotfiles
 
-CONFIG_FILES=	access.deny client.conf clients config dictionary \
-		hints huntgroups naslist nastypes realms \
-		sqlserver users
 EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
 		filter.rw hints-0.96 jetstream.rw nt.rw pam.conf radius.php
 
@@ -114,7 +112,6 @@ post-patch:
 		${WRKSRC}/include/radiusd.h
 	${REINPLACE_CMD} -e 's|int getline|ssize_t getline|' \
 	    ${WRKSRC}/radtest/input.l ${WRKSRC}/radtest/input.c
-	${REINPLACE_CMD}  -e '889s,], || 1 ],' ${WRKSRC}/raddb/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -123,9 +120,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex_file} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
 .endif
-.for conf_file in ${CONFIG_FILES}
-	@test -f ${PREFIX}/etc/raddb/${conf_file} || ${CP} -p \
-	${STAGEDIR}${PREFIX}/etc/raddb/${conf_file}-dist ${STAGEDIR}${PREFIX}/etc/raddb/${conf_file}
-.endfor
 
 .include <bsd.port.mk>
