@@ -4,6 +4,7 @@
 
 PORTNAME=	gstreamer1-libav
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
@@ -31,8 +32,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if ${COMPILER_TYPE} == "gcc"
-CFLAGS+=	-fno-force-addr
+.if ${COMPILER_TYPE} == clang && ${ARCH} == i386
+CFLAGS+=	-mstack-alignment=16 -mstackrealign
 .endif
 
 post-patch:
