@@ -2,9 +2,11 @@ bin/ettercap
 %%DESKTOP%%bin/ettercap-pkexec
 bin/etterfilter
 bin/etterlog
-@unexec if cmp -s %D/etc/etter.conf.sample %D/etc/etter.conf; then rm -f %D/etc/etter.conf; else echo "If permanently deleting this package, %D/etc/etter.conf must be removed manually."; fi
-etc/etter.conf.sample
-@exec [ -f %B/etter.conf ] || cp %B/%f %B/etter.conf
+@sample etc/etter.conf.sample
+%%ETCDIR%%/etter.conf
+%%ETCDIR%%/etter.dns
+%%ETCDIR%%/etter.mdns
+%%ETCDIR%%/etter.nbns
 %%PLUGINS%%lib/ettercap/ec_arp_cop.so
 %%PLUGINS%%lib/ettercap/ec_autoadd.so
 %%PLUGINS%%lib/ettercap/ec_chk_poison.so
@@ -84,3 +86,4 @@ man/man8/etterlog.8.gz
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PLUGINS%%@dirrm lib/ettercap
+@dirrm %%ETCDIR%%
