@@ -32,13 +32,13 @@ include/libcmis-c-%%MAJVER%%/libcmis-c/session.h
 include/libcmis-c-%%MAJVER%%/libcmis-c/types.h
 include/libcmis-c-%%MAJVER%%/libcmis-c/vectors.h
 lib/libcmis-%%MAJVER%%.a
-lib/libcmis-%%MAJVER%%.la
 lib/libcmis-%%MAJVER%%.so
 lib/libcmis-%%MAJVER%%.so.4
+lib/libcmis-%%MAJVER%%.so.4.0.1
 lib/libcmis-c-%%MAJVER%%.a
-lib/libcmis-c-%%MAJVER%%.la
 lib/libcmis-c-%%MAJVER%%.so
 lib/libcmis-c-%%MAJVER%%.so.4
+lib/libcmis-c-%%MAJVER%%.so.4.0.1
 libdata/pkgconfig/libcmis-%%MAJVER%%.pc
 libdata/pkgconfig/libcmis-c-%%MAJVER%%.pc
 @dirrm include/libcmis-c-%%MAJVER%%/libcmis-c
