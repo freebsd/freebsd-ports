@@ -2,24 +2,12 @@ bin/smokeinfo
 bin/smokeping
 bin/smokeping_cgi
 bin/tSmoke
-@unexec if cmp -s %D/etc/smokeping/basepage.html %D/etc/smokeping/basepage.html.dist; then rm -f %D/etc/smokeping/basepage.html; fi
-etc/smokeping/basepage.html.dist
-@exec [ -f %B/basepage.html ] || cp %B/%f %B/basepage.html
-@unexec if cmp -s %D/etc/smokeping/config %D/etc/smokeping/config.dist; then rm -f %D/etc/smokeping/config; fi
-etc/smokeping/config.dist
-@exec [ -f %B/config ] || cp %B/%f %B/config
-@unexec if cmp -s %D/etc/smokeping/smokemail %D/etc/smokeping/smokemail.dist; then rm -f %D/etc/smokeping/smokemail; fi
-etc/smokeping/smokemail.dist
-@exec [ -f %B/smokemail ] || cp %B/%f %B/smokemail
-@unexec if cmp -s %D/etc/smokeping/tmail %D/etc/smokeping/tmail.dist; then rm -f %D/etc/smokeping/tmail; fi
-etc/smokeping/tmail.dist
-@exec [ -f %B/tmail ] || cp %B/%f %B/tmail
-@unexec if cmp -s %D/etc/smokeping/smokeping_secrets %D/etc/smokeping/smokeping_secrets.dist; then rm -f %D/etc/smokeping/smokeping_secrets; fi
-etc/smokeping/smokeping_secrets.dist
-@exec [ -f %B/smokeping_secrets ] || cp %B/%f %B/smokeping_secrets
-@unexec if cmp -s %D/smokeping/htdocs/smokeping.fcgi %D/smokeping/htdocs/smokeping.fcgi.dist; then rm -f %D/smokeping/htdocs/smokeping.fcgi; fi
-smokeping/htdocs/smokeping.fcgi.dist
-@exec [ -f %B/smokeping.fcgi ] || cp %B/%f %B/smokeping.fcgi
+@sample smokeping/htdocs/smokeping.fcgi.sample
+@sample %%ETCDIR%%/basepage.html.sample
+@sample %%ETCDIR%%/config.sample
+@sample %%ETCDIR%%/smokemail.sample
+@sample %%ETCDIR%%/tmail.sample
+@sample %%ETCDIR%%/smokeping_secrets.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.echoping
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.fping-instances
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.multiple-probes
@@ -107,20 +95,81 @@ smokeping/lib/Smokeping/sorters/Max.pm
 smokeping/lib/Smokeping/sorters/Median.pm
 smokeping/lib/Smokeping/sorters/StdDev.pm
 smokeping/lib/Smokeping/sorters/base.pm
-@dirrmtry etc/smokeping
-@exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
-@unexec rm -rf %D/smokeping/htdocs/img 2>/dev/null || true
-@exec mkdir -p %D/var/smokeping
-@exec chown smokeping:smokeping %D/var/smokeping
-@dirrmtry var/smokeping
-@dirrmtry var
+man/man1/smokeping.1.gz
+man/man1/smokeping_cgi.1.gz
+man/man1/tSmoke.1.gz
+man/man3/Smokeping_matchers_Avgratio.3.gz
+man/man3/Smokeping_matchers_CheckLatency.3.gz
+man/man3/Smokeping_matchers_CheckLoss.3.gz
+man/man3/Smokeping_matchers_ExpLoss.3.gz
+man/man3/Smokeping_matchers_Median.3.gz
+man/man3/Smokeping_matchers_Medratio.3.gz
+man/man3/Smokeping_matchers_base.3.gz
+man/man3/Smokeping_probes_AnotherDNS.3.gz
+man/man3/Smokeping_probes_AnotherSSH.3.gz
+man/man3/Smokeping_probes_CiscoRTTMonDNS.3.gz
+man/man3/Smokeping_probes_CiscoRTTMonEchoICMP.3.gz
+man/man3/Smokeping_probes_CiscoRTTMonTcpConnect.3.gz
+man/man3/Smokeping_probes_Curl.3.gz
+man/man3/Smokeping_probes_DNS.3.gz
+man/man3/Smokeping_probes_DismanPing.3.gz
+man/man3/Smokeping_probes_EchoPing.3.gz
+man/man3/Smokeping_probes_EchoPingChargen.3.gz
+man/man3/Smokeping_probes_EchoPingDNS.3.gz
+man/man3/Smokeping_probes_EchoPingDiscard.3.gz
+man/man3/Smokeping_probes_EchoPingHttp.3.gz
+man/man3/Smokeping_probes_EchoPingHttps.3.gz
+man/man3/Smokeping_probes_EchoPingIcp.3.gz
+man/man3/Smokeping_probes_EchoPingLDAP.3.gz
+man/man3/Smokeping_probes_EchoPingPlugin.3.gz
+man/man3/Smokeping_probes_EchoPingSmtp.3.gz
+man/man3/Smokeping_probes_EchoPingWhois.3.gz
+man/man3/Smokeping_probes_FPing.3.gz
+man/man3/Smokeping_probes_FPing6.3.gz
+man/man3/Smokeping_probes_FTPtransfer.3.gz
+man/man3/Smokeping_probes_IOSPing.3.gz
+man/man3/Smokeping_probes_LDAP.3.gz
+man/man3/Smokeping_probes_NFSping.3.gz
+man/man3/Smokeping_probes_OpenSSHJunOSPing.3.gz
+man/man3/Smokeping_probes_Radius.3.gz
+man/man3/Smokeping_probes_RemoteFPing.3.gz
+man/man3/Smokeping_probes_SSH.3.gz
+man/man3/Smokeping_probes_SendEmail.3.gz
+man/man3/Smokeping_probes_SipSak.3.gz
+man/man3/Smokeping_probes_TCPPing.3.gz
+man/man3/Smokeping_probes_TacacsPlus.3.gz
+man/man3/Smokeping_probes_TelnetIOSPing.3.gz
+man/man3/Smokeping_probes_TelnetJunOSPing.3.gz
+man/man3/Smokeping_probes_WebProxyFilter.3.gz
+man/man3/Smokeping_probes_base.3.gz
+man/man3/Smokeping_probes_basefork.3.gz
+man/man3/Smokeping_probes_basevars.3.gz
+man/man3/Smokeping_probes_passwordchecker.3.gz
+man/man3/Smokeping_probes_skel.3.gz
+man/man3/Smokeping_sorters_Loss.3.gz
+man/man3/Smokeping_sorters_Max.3.gz
+man/man3/Smokeping_sorters_Median.3.gz
+man/man3/Smokeping_sorters_StdDev.3.gz
+man/man3/Smokeping_sorters_base.3.gz
+man/man5/smokeping_config.5.gz
+man/man5/smokeping_examples.5.gz
+man/man7/smokeping_extend.7.gz
+man/man7/smokeping_install.7.gz
+man/man7/smokeping_master_slave.7.gz
+man/man7/smokeping_upgrade.7.gz
+@dirrm etc/smokeping
+@dirrm var/smokeping
+@dirrm var
 @dirrm smokeping/lib/Smokeping/sorters
 @dirrm smokeping/lib/Smokeping/probes
 @dirrm smokeping/lib/Smokeping/matchers
 @dirrm smokeping/lib/Smokeping
 @dirrm smokeping/lib
+@dirrm smokeping/htdocs/img
 @dirrm smokeping/htdocs/cropper/lib
 @dirrm smokeping/htdocs/cropper
 @dirrm smokeping/htdocs
+@dirrm smokeping
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry smokeping
+@exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
+@exec mkdir -p %D/var/smokeping; chown smokeping:smokeping %D/var/smokeping

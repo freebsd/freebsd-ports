@@ -1,4 +1,6 @@
 #!/bin/sh
+# Created by: Sean McAfee <smcafee@collaborativefusion.com>
+
 # $FreeBSD$
 
 # PROVIDE: smokeping
@@ -14,66 +16,34 @@
 #
 # smokeping_flags="<set as needed>"
 
-smokeping_enable=${smokeping_enable-"NO"}
-smokeping_pidfile=${smokeping_pidfile-"%%PREFIX%%/var/smokeping/smokeping.pid"}
-smokeping_logfile=${smokeping_logfile-"/var/log/smokeping.log"}
-smokeping_user=${smokeping_user-"%%USERS%%"}
-smokeping_group=${smokeping_group-"%%GROUPS%%"}
 
 . /etc/rc.subr
 
-name="smokeping"
-rcvar="smokeping_enable"
+name=smokeping
+
+rcvar=smokeping_enable
+
 load_rc_config $name
-command="/usr/local/bin/smokeping"
+
+: ${smokeping_enable:=NO}
+: ${smokeping_pidfile="%%PREFIX%%/var/smokeping/smokeping.pid"}
+: ${smokeping_logfile=/var/log/smokeping.log}
+: ${smokeping_user="%%USERS%%"}
+: ${smokeping_group="%%GROUPS%%"}
+
+command=%%PREFIX%%/bin/smokeping
 command_args="--logfile=${smokeping_logfile}"
 pidfile="${smokeping_pidfile}"
+command_interpreter=%%PREFIX%%/bin/perl
 
-extra_commands="reload"
-reload_cmd="smokeping_reloadcmd"
-start_precmd="smokeping_startprecmd"
-stop_cmd="smokeping_stopcmd"
-status_cmd="smokeping_statuscmd"
-
-smokeping_reloadcmd()
-{
-	$command --reload
-}
-
-smokeping_statuscmd()
-{
-	if [ ! -e $pidfile ];
-	then
-		echo "pidfile does not exist. $name is not running?";
-		exit 1;
-	fi
-
-	if pgrep -F $pidfile >/dev/null;
-	then
-		echo "$name is running.";
-	else
-		echo "$name is not running.";
-		exit 1;
-	fi
-}
-
-smokeping_stopcmd()
-{
-	if pgrep -F $pidfile >/dev/null; 
-	then
-		kill $sig_stop `cat $pidfile`;
-		wait_for_pids `cat $pidfile`;
-	else
-		echo "$name is not running.";
-		exit 1;
-	fi
-}
+extra_commands=reload
+reload_cmd="${command} --reload"
 
 smokeping_startprecmd()
 {
-	if [ ! -e $smokeping_logfile ];
+	if [ ! -e ${smokeping_logfile} ];
 	then
-		install -o %%USERS%% -g %%GROUPS%% /dev/null $smokeping_logfile || echo "ERROR: Could not initialize logfile at $smokeping_logfile.";
+		install -o %%USERS%% -g %%GROUPS%% /dev/null ${smokeping_logfile} || echo "ERROR: Could not initialize logfile at ${smokeping_logfile}.";
 	fi
 }
 
