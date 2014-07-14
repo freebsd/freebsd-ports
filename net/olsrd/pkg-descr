@@ -6,4 +6,3 @@ networks. The protocol is pro-active, table driven and utilizes a
 technique called multipoint relaying for message flooding.
 
 WWW: http://www.olsr.org/
-
