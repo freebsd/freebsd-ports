@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140714:
+  AFFECTS: users of net/linphone-base
+  AUTHOR: tijl@FreeBSD.org
+
+  Linphone has been updated to version 3.7.0 and the linphone-base port
+  has been split into separate components.  You must first delete the
+  linphone-base package before you can update ports that depend on it.
+
+  pkg del -f linphone-base
+    or
+  pkg_delete -f linphone-base\*
+
 20140713:
   AFFECTS: users of mail/postfix-current
   AUTHOR: sahil@FreeBSD.org

@@ -12,6 +12,8 @@ COMMENT=	Real-time Transport Protocol (RTP) library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+CONFLICTS_INSTALL=	linphone-base-[0-9]*
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-strict
 CPPFLAGS+=	-DHAVE_DEV_RANDOM

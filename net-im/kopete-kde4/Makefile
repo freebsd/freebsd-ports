@@ -2,7 +2,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -14,8 +14,8 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libqca.so:${PORTSDIR}/devel/qca \
 		libotr.so.5:${PORTSDIR}/security/libotr \
 		libgadu.so:${PORTSDIR}/polish/libgadu \
-		libortp.so:${PORTSDIR}/net/linphone-base \
-		libmediastreamer.so:${PORTSDIR}/net/linphone-base \
+		libortp.so:${PORTSDIR}/net/ortp \
+		libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
 		libspeex.so:${PORTSDIR}/audio/speex \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libmeanwhile.so:${PORTSDIR}/net-im/meanwhile \
