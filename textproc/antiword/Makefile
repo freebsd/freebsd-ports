@@ -3,7 +3,7 @@
 
 PORTNAME=	antiword
 PORTVERSION=	0.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
@@ -11,6 +11,9 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	An application for displaying Microsoft(R) Word documents
 
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:${PORTSDIR}/print/gsfonts
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	kantiword Unix-only/fontinfo.pl
@@ -23,11 +26,8 @@ PORTDOCS=	COPYING ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
 CFLAGS+=	-DNDEBUG
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
-		-e 's,/usr/local,${PREFIX},g' \
-		-e 's,/usr/share,${PREFIX}/share,g'
-	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS)/d' ${WRKSRC}/${MAKEFILE}
-	@${TOUCH} ${WRKSRC}/fontinfo.h
+	@${REINPLACE_CMD} -E 's,/usr/share,${PREFIX}/share,g; s,fonts2,fonts,' ${WRKSRC}/Unix-only/fontinfo.pl
+	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS)/d; s,/usr/share,${PREFIX}/share,g' ${WRKSRC}/${MAKEFILE}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/Docs/antiword.1 ${STAGEDIR}${MANPREFIX}/man/man1
