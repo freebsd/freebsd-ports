@@ -30,13 +30,13 @@ IGNORE=		cannot build OpenCV and gavl plugins simultaneously
 PORTREVISION=	3
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=	-plugins-opencv
-LIB_DEPENDS+=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS+=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
 FREI0R_PLUGINS=	facebl0r facedetect
 .elif defined(BUILDING_FREI0R_GAVL)
 PORTREVISION=	2
 COMMENT=	Frei0r gavl plugins
 PKGNAMESUFFIX=	-plugins-gavl
-LIB_DEPENDS+=	gavl.1:${PORTSDIR}/multimedia/gavl
+LIB_DEPENDS+=	libgavl.so:${PORTSDIR}/multimedia/gavl
 FREI0R_PLUGINS=	rgbparade scale0tilt vectorscope
 .else
 
