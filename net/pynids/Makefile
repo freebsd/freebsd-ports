@@ -3,7 +3,7 @@
 
 PORTNAME=	pynids
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	http://jon.oberheide.org/pynids/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

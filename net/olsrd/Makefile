@@ -3,6 +3,7 @@
 
 PORTNAME=	olsrd
 DISTVERSION=	0.6.6.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.6/ \
 		http://ftp2.za.freebsd.org/pub/mesh/pc/protocols/olsr/
@@ -13,7 +14,7 @@ COMMENT=	OLSR routing daemon
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 .if defined(WITH_MULTI_IF)
-BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+LIB_DEPENDS+=	libnet.so:${PORTSDIR}/net/libnet
 .endif
 
 USES=		bison gmake tar:bzip2

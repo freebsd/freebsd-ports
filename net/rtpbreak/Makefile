@@ -3,7 +3,7 @@
 
 PORTNAME=	rtpbreak
 PORTVERSION=	1.3a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://dallachiesa.com/code/rtpbreak/
 EXTRACT_SUFX=	.tgz
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Detects, reconstructs, and analyzes any RTP session
 
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 CFLAGS+=	-I${LOCALBASE}/include/libnet11
 LIBS+=		-L${LOCALBASE}/lib/libnet11 -lpcap -lnet

@@ -3,6 +3,7 @@
 
 PORTNAME=	arping
 PORTVERSION=	2.14
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 
@@ -11,7 +12,7 @@ COMMENT=	ARP level "ping" utility
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include \

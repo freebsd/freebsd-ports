@@ -3,6 +3,7 @@
 
 PORTNAME=	ettercap
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
 

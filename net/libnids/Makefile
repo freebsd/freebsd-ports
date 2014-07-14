@@ -3,14 +3,14 @@
 
 PORTNAME=	libnids
 PORTVERSION=	1.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	Network monitoring library with TCP/IP reassembly
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 LICENSE=	GPLv2
 
