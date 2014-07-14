@@ -16,6 +16,12 @@ you update your ports collection, before attempting any port upgrades.
   <http://docs.oracle.com/cd/E17076_04/html/upgrading/upgrade_process.html>
   <http://docs.oracle.com/cd/E17076_04/html/installation/upgrade_61_toc.html>
 
+  Also, you must rebuild all applications that link to db6. To do so:
+  If you use portmaster:
+        portmaster -w -r db6-
+  If you use portupgrade:
+        portupgrade -fr databases/db6
+
 20140714:
   AFFECTS: users of net/linphone-base
   AUTHOR: tijl@FreeBSD.org
