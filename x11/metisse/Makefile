@@ -19,8 +19,8 @@ BROKEN=		does not configure
 EXPIRATION_DATE=	2014-08-30
 DEPRECATED=	Broken and not staged
 
-LIB_DEPENDS=	Nucleo:${PORTSDIR}/x11-toolkits/nucleo \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libNucleo.so:${PORTSDIR}/x11-toolkits/nucleo \
+		libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
 USE_BZIP2=	yes
@@ -71,15 +71,15 @@ USE_GNOME+=	atspi
 .endif
 
 .if ${PORT_OPTIONS:MSTROKE}
-LIB_DEPENDS+=	stroke:${PORTSDIR}/devel/libstroke
+LIB_DEPENDS+=	libstroke.so:${PORTSDIR}/devel/libstroke
 .endif
 
 .if ${PORT_OPTIONS:MRPLAY}
-LIB_DEPENDS+=	rplay:${PORTSDIR}/audio/rplay
+LIB_DEPENDS+=	librplay.so:${PORTSDIR}/audio/rplay
 .endif
 
 .if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	libfribidi.so:${PORTSDIR}/converters/fribidi
 .endif
 
 .if ${HAVE_GNOME:Mglib20} || ${PORT_OPTIONS:MGLIB}
