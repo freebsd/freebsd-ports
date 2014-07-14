@@ -3,6 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -26,16 +27,57 @@ CONFLICTS_INSTALL=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 
 USE_RC_SUBR=	radiusd
 
-USES=		gmake tar:bzip2 shebangfix
+USES=		gmake libtool shebangfix tar:bzip2
 SHEBANG_FILES=	scripts/radsqlrelay src/modules/rlm_counter/rad_counter
-USE_AUTOTOOLS=	libltdl libtool autoconf
+USE_AUTOTOOLS=	libltdl libtoolize aclocal autoconf autoheader
 USE_OPENSSL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
+CONFIGURE_ARGS=	--libdir=${PREFIX}/${FREERADIUS_LIBDIR} \
+		--localstatedir=/var \
+		--disable-ltdl-install \
+		--with-system-libltdl \
+		--with-logdir=${LOGDIR} \
+		--with-openssl-includes=${OPENSSLINC} \
+		--without-rlm_eap_ikev2 \
+		--without-rlm_eap_tnc \
+		--without-rlm_eap2 \
+		--without-rlm_opendirectory \
+		--without-rlm_sql_db2 \
+		--without-rlm_sql_iodbc \
+		--without-rlm_sql_sqlite \
+		--without-rlm_sql_sybase \
+		--with-vmps
+
+# if we're installing, place sample configs into ${EXAMPLESDIR}
+MAKE_ARGS=	raddbdir="${EXAMPLESDIR}/raddb" R=${STAGEDIR}
+
+SUB_FILES=	pkg-install pkg-message
+SUB_LIST=	RADIUS_USER="${RADIUS_USER}" \
+		RADIUS_GROUP="${RADIUS_GROUP}" \
+		RADDB_WORK="${WRKSRC}/raddb" \
+		RADDB="${PREFIX}/etc/raddb" \
+		LOGDIR="${LOGDIR}" \
+		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}" \
+		REQUIRE="${_REQUIRE}"
+
 PLIST_SUB=	PORTVERSION=${DISTVERSION} LIBVER=0${PORTVERSION:C/\./0/g}
+FREERADIUS_LIBDIR=	lib/freeradius-${PORTVERSION}
+PLIST_SUB+=	LIBDIR="${FREERADIUS_LIBDIR}"
+USE_LDCONFIG=	${PREFIX}/${FREERADIUS_LIBDIR}
+
+# User and group to use if USER option is chosen
+RADIUS_USER=	freeradius
+RADIUS_GROUP=	freeradius
+
+USERS=		${RADIUS_USER}
+GROUPS=		${RADIUS_GROUP}
+
+# Default requirements for rc script
+_REQUIRE=	NETWORKING SERVERS
 
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
 		PGSQL UNIXODBC FIREBIRD PERL PYTHON OCI8 RUBY DHCP \
@@ -57,30 +99,13 @@ SSL_PORT_DESC=		Use OpenSSL from the ports collection
 
 .include <bsd.port.options.mk>
 
-# Default requirements for rc script
-_REQUIRE=	NETWORKING SERVERS
-
 .if ${PORT_OPTIONS:MUSER}
 SUB_LIST+=	RUN_AS_USER="yes"
 .else
 SUB_LIST+=	RUN_AS_USER="no"
 .endif
 
-# User and group to use if USER option is chosen
-RADIUS_USER=	freeradius
-RADIUS_GROUP=	freeradius
-
-USERS=		${RADIUS_USER}
-GROUPS=		${RADIUS_GROUP}
-
-CONFIGURE_ARGS+=--with-system-libtool --with-system-libltdl \
-		--disable-ltdl-install
-
-.if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MKERBEROS)
-${UNIQUENAME}_SET+=	KERBEROS
-.endif
-
-.if ${PORT_OPTIONS:MKERBEROS}
+.if ${PORT_OPTIONS:MKERBEROS} || ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL_PORT}
 LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/heimdal
@@ -263,25 +288,6 @@ CONFIGURE_ARGS+=--with-udpfromto
 WITH_OPENSSL_PORT=yes
 .endif
 
-.include <bsd.port.pre.mk>
-
-# if we're installing, place sample configs into ${EXAMPLESDIR}
-MAKE_ARGS+=	raddbdir="${EXAMPLESDIR}/raddb" R=${STAGEDIR}
-
-.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
-BROKEN=		Does not build on sparc64-6
-.endif
-
-FREERADIUS_LIBDIR=	lib/freeradius-${PORTVERSION}
-PLIST_SUB+=	LIBDIR="${FREERADIUS_LIBDIR}"
-USE_LDCONFIG=	${PREFIX}/${FREERADIUS_LIBDIR}
-
-CONFIGURE_ARGS+=--quiet \
-		--prefix=${PREFIX} \
-		--libdir=${PREFIX}/${FREERADIUS_LIBDIR} \
-		--localstatedir=/var \
-		--with-system-libtool
-
 .if empty(PORT_OPTIONS:MDOCS)
 CONFIGURE_ARGS+=--without-docdir
 PLIST_SUB+=	PORTDOCS="@comment "
@@ -291,35 +297,14 @@ CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
 PLIST_SUB+=	PORTDOCS=""
 SUB_LIST+=	PORTDOCS=""
 .endif
-CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
-		--with-openssl-includes=${OPENSSLINC}
+
+.include <bsd.port.pre.mk>
+
 # This conditionality avoids -L/usr/lib in the radiusd build step when
 # building with base system OpenSSL
 .if ${OPENSSLLIB} != "/usr/lib"
 CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
 .endif
-CONFIGURE_ARGS+=--without-rlm_eap_ikev2 \
-		--without-rlm_eap_tnc \
-		--without-rlm_eap2 \
-		--without-rlm_opendirectory \
-		--without-rlm_sql_db2 \
-		--without-rlm_sql_iodbc \
-		--without-rlm_sql_sqlite \
-		--without-rlm_sql_sybase \
-		--with-vmps
-
-.if ${ARCH} == amd64
-CONFIGURE_ARGS+=	--with-pic
-.endif
-
-SUB_FILES+=	pkg-install pkg-message
-SUB_LIST+=	RADIUS_USER="${RADIUS_USER}" \
-		RADIUS_GROUP="${RADIUS_GROUP}" \
-		RADDB_WORK="${WRKSRC}/raddb" \
-		RADDB="${PREFIX}/etc/raddb" \
-		LOGDIR="${LOGDIR}" \
-		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}"
-SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 post-patch:
 # never try to find execinfo.h (needed until we can enable/disable backtrace
