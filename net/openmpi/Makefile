@@ -5,6 +5,7 @@
 
 PORTNAME=	openmpi
 DISTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.8/downloads/
 
@@ -18,7 +19,9 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 CONFLICTS=	openmpi-devel-1.7.*
 
 HAS_CONFIGURE=	yes
-USES=		fortran gmake pkgconfig tar:bzip2
+INSTALL_TARGET=	install-strip
+# :keepla because port uses lt_dlopen
+USES=		fortran gmake libtool:keepla pkgconfig tar:bzip2
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
@@ -72,10 +75,6 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 VT_CONFIGURE_OFF=	--enable-contrib-no-build=vt --disable-vt
 VT_USE=			JAVA=yes
 
-.include <bsd.port.pre.mk>
+BROKEN_sparc64=		Does not compile on sparc64
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
