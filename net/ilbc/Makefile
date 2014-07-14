@@ -3,6 +3,7 @@
 
 PORTNAME=	ilbc
 DISTVERSION=	rfc3951
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://simon.morlat.free.fr/download/1.2.x/source/
 
@@ -11,8 +12,9 @@ COMMENT=	Internet Low Bit Rate codec (RFC3951)
 
 CONFLICTS=	libilbc-[0-9]*
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
