@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USES=		gmake
 USE_OPENSSL=	yes

@@ -12,7 +12,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the OpenQuicktime library
 
 BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
-LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
+LIB_DEPENDS=	libopenquicktime.so:${PORTSDIR}/multimedia/openquicktime
 RUN_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 
 MAKE_JOBS_UNSAFE=	yes

@@ -11,7 +11,7 @@ COMMENT=	Ncurses based password database client
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	kpass:${PORTSDIR}/security/libkpass
+LIB_DEPENDS=	libkpass.so:${PORTSDIR}/security/libkpass
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

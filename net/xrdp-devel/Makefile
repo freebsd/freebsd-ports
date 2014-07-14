@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFLICTS=	xrdp-[0-9]*
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 # xrdp v0.7 is not compatible with current net/freerdp (1.0.2)
 #BUILD_DEPENDS+=	freerdp>=1.0.2:${PORTSDIR}/net/freerdp
 #CONFIGURE_ARGS+=	--enable-freerdp1

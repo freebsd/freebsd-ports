@@ -15,7 +15,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		gnome-doc-tool:${PORTSDIR}/textproc/gnome-doc-utils \
 		nspr>=4.8:${PORTSDIR}/devel/nspr
-LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
+LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
 		libsword.so:${PORTSDIR}/misc/sword
 
 USE_PYTHON_BUILD=	yes

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.shapeshifter.se/pub/pam_bsdbioapi/
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	PAM module for BioAPI
 
-LIB_DEPENDS=	bioapi100.0:${PORTSDIR}/security/bioapi
+LIB_DEPENDS=	libbioapi100.so:${PORTSDIR}/security/bioapi
 
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message

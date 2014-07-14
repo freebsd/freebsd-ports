@@ -12,7 +12,7 @@ COMMENT=	Interface to GSL for the Objective Caml language
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		${OCAMLC_DEPEND}
 RUN_DEPENDS=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib

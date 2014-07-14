@@ -14,10 +14,10 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
-LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
-		confuse:${PORTSDIR}/devel/libconfuse \
-		pcre:${PORTSDIR}/devel/pcre \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libconfuse.so:${PORTSDIR}/devel/libconfuse \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
@@ -67,7 +67,7 @@ USE_RC_SUBR=	gmond
 .if ${PORT_OPTIONS:MGMETAD}
 USE_RC_SUBR+=	gmetad
 
-LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=
 SUB_LIST+=	GMETAD=

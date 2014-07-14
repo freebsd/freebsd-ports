@@ -11,7 +11,7 @@ DISTNAME=	museek+-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SoulSeek client with separate terminal and Qt based interface
 
-LIB_DEPENDS=	xml\\+\\+:${PORTSDIR}/textproc/libxml++26
+LIB_DEPENDS=	libxml++.so:${PORTSDIR}/textproc/libxml++26
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 USES=		fam pkgconfig scons
@@ -41,7 +41,7 @@ MAKE_ARGS+=	QSA=no
 
 .if ${PORT_OPTIONS:MVORBIS}
 MAKE_ARGS+=	VORBIS=yes
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .else
 MAKE_ARGS+=	VORBIS=no
 .endif

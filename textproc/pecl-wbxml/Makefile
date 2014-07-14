@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	A PECL extension that provides WBXML conversion capabilities
 
-LIB_DEPENDS=	wbxml2.0:${PORTSDIR}/textproc/wbxml2
+LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
 
 CONFIGURE_ARGS=	--with-wbxml=${LOCALBASE} \
 		--with-libexpat-dir=${LOCALBASE}

@@ -11,7 +11,7 @@ DISTNAME=	Krb5-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Kerberos 5
 
-LIB_DEPENDS=	krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS=	libkrb5.so:${PORTSDIR}/security/krb5
 
 USES=		perl5
 USE_PERL5=	configure

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FTN file ticker
 
-LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
+LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf
 
 CONFLICTS=	husky-htick-devel-[0-9]*
 

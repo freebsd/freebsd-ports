@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows X-Faces from slrn in X11 terminal emulator
 
-LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
+LIB_DEPENDS=	libcompface.so:${PORTSDIR}/mail/faces
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	slrnface

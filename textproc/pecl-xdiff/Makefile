@@ -14,7 +14,7 @@ COMMENT=	A PECL extension to create/apply binary and text patches
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	xdiff.0:${PORTSDIR}/textproc/libxdiff
+LIB_DEPENDS=	libxdiff.so:${PORTSDIR}/textproc/libxdiff
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

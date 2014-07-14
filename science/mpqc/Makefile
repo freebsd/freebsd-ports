@@ -28,25 +28,25 @@ BUILD_DEPENDS+=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 .if defined(WITH_MPICH)
-LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
 .endif
-LIB_DEPENDS+=	int.1:${PORTSDIR}/science/libint
+LIB_DEPENDS+=	libint.so:${PORTSDIR}/science/libint
 .if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if defined(WITH_ICC)

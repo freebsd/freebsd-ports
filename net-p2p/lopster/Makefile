@@ -25,14 +25,14 @@ OPTIONS_DEFAULT=	FLAC OGG ZLIB
 
 # --with-flac is on by default
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=		FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=		libFLAC.so:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=	--without-flac
 .endif
 
 # --with-ogg is on by default
 .if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=		ogg:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=		libogg.so:${PORTSDIR}/audio/libogg
 .else
 CONFIGURE_ARGS+=	--without-ogg
 .endif

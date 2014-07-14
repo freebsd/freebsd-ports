@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Networking simulator
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS=	libtk84.so:${PORTSDIR}/x11-toolkits/tk84
 
 USE_XORG=	xpm
 USES=		gmake

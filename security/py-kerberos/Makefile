@@ -13,8 +13,8 @@ COMMENT=		Kerberos bindings for python
 
 LICENSE=		APACHE20
 
-BUILD_DEPENDS=		krb5-config:${PORTSDIR}/security/krb5
-LIB_DEPENDS=		krb5support.0:${PORTSDIR}/security/krb5
+BUILD_DEPENDS=		libkrb5-config.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

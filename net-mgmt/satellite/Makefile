@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=system/network
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for tracking machines with dynamic IP addresses
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

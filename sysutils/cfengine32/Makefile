@@ -20,7 +20,7 @@ CONFLICTS=	cfengine-[2]* cfengine-3.[345]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		libtool
 WITH_BDB_VER?=	47

@@ -13,7 +13,7 @@ MAINTAINER=	reki@reki.ru
 COMMENT=	Perl interface module to CTPP2 library
 
 BUILD_DEPENDS=	ctpp2>=2.5.1:${PORTSDIR}/textproc/ctpp2
-LIB_DEPENDS=	ctpp2:${PORTSDIR}/textproc/ctpp2
+LIB_DEPENDS=	libctpp2.so:${PORTSDIR}/textproc/ctpp2
 
 USES=		perl5
 USE_PERL5=	configure

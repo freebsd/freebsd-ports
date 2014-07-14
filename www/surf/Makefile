@@ -13,7 +13,7 @@ COMMENT=	Simple Web browser based on WebKit/Gtk+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_CSTD=	c99

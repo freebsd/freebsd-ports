@@ -12,8 +12,8 @@ COMMENT=	KDE professional quality non-linear video editing suite
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	mlt:${PORTSDIR}/multimedia/mlt \
-		qjson:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libmlt.so:${PORTSDIR}/multimedia/mlt \
+		libqjson.so:${PORTSDIR}/devel/qjson
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4

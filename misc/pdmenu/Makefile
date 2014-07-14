@@ -14,7 +14,7 @@ COMMENT=	Simple console menu program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

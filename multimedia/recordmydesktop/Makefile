@@ -9,8 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Record desktop sessions to an Ogg-Theora-Vorbis file
 
-LIB_DEPENDS=	theora.0:${PORTSDIR}/multimedia/libtheora \
-		jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libjack.so:${PORTSDIR}/audio/jack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-oss=yes \

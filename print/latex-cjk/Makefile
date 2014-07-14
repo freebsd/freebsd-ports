@@ -18,7 +18,7 @@ RUN_DEPENDS=	zh-arphicttf>=0:${PORTSDIR}/chinese/arphicttf \
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${LOCALBASE}/share/ttf2pt1/maps/cugb.map:${PORTSDIR}/chinese/ttf2pt1 \
 		ttf2pt1:${PORTSDIR}/print/ttf2pt1
-LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 
 USES=		gmake
 USE_TEX=	tetex latex

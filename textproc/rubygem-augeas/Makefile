@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.augeas.net/ruby/
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for Augeas
 
-LIB_DEPENDS=	augeas:${PORTSDIR}/textproc/augeas
+LIB_DEPENDS=	libaugeas.so:${PORTSDIR}/textproc/augeas
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

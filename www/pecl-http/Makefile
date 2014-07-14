@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Extended HTTP Support
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

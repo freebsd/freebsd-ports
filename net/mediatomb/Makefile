@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 MAINTAINER=	leo@mediatomb.cc
 COMMENT=	UPnP AV MediaServer
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	${PTHREAD_LIBS}

@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ bindings for the GNOME print support library
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USES=		pkgconfig gmake tar:bzip2

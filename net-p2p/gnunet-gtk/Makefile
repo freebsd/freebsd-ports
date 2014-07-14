@@ -14,8 +14,8 @@ BROKEN=		Does not fetch
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gladeui-1:${PORTSDIR}/devel/glade3 \
-		gnunetutil:${PORTSDIR}/net-p2p/gnunet
+LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3 \
+		libgnunetutil.so:${PORTSDIR}/net-p2p/gnunet
 
 INSTALLS_ICONS =	yes
 USE_AUTOTOOLS=		libltdl libtool

@@ -12,10 +12,10 @@ COMMENT=	A toolbox to build shallow-transfer machine translation systems
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		xslt:${PORTSDIR}/textproc/libxslt \
-		lttoolbox3:${PORTSDIR}/textproc/lttoolbox \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libxslt.so:${PORTSDIR}/textproc/libxslt \
+		liblttoolbox3.so:${PORTSDIR}/textproc/lttoolbox \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 APVER=	3.2
 APREV=	0

@@ -11,8 +11,8 @@ MASTER_SITE_SUBDIR=	libcdio
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
-LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb \
-		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb \
+		libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

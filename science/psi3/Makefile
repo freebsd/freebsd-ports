@@ -30,13 +30,13 @@ WITH_BLAS?=	reference
 .endif
 
 . if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lgoto2p
 LAPACK=		-lgoto2p
 .elif ${WITH_BLAS} == atlas

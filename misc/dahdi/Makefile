@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-freebsd-complete-${DAHDI_VERSION}+${DAHDI_TOOLS_VERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	DAHDI userland utilities and libraries
 
-LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
+LIB_DEPENDS=	libnewt.so:${PORTSDIR}/devel/newt
 
 DAHDI_VERSION=		2.4.0-rc5
 DAHDI_TOOLS_VERSION=	2.4.0-rc1

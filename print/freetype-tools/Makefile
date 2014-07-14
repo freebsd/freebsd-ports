@@ -16,7 +16,7 @@ DISTNAME=	freetype-${PORTVERSION}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Tools for FreeType 1
 
-LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 RUN_DEPENDS=	t1asm:${PORTSDIR}/print/t1utils
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 

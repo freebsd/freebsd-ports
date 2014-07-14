@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HUTIter library for use in the ELMER FEM package
 
-LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack
+LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack
 
 USES=		fortran
 
@@ -23,12 +23,12 @@ NO_STAGE=	yes
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif

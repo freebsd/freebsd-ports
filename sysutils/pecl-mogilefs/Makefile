@@ -13,7 +13,7 @@ COMMENT=	PHP client library to communicate with the MogileFS storage
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
 
 USE_PHP=	yes
 USE_PHP_BUILD=	spl

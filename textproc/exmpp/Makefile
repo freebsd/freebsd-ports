@@ -13,7 +13,7 @@ COMMENT=	Fast and scalable library for XMPP written in Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes

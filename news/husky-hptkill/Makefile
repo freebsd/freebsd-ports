@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Area killing utility
 
-LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
+LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf
 
 MAN1=		hptkill.1
 MANCOMPRESSED=	yes

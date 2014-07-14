@@ -14,9 +14,9 @@ PKGNAMESUFFIX=	-${CODA_SUITE}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
-LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
-		rpc2.9:${PORTSDIR}/devel/rpc2 \
-		rvmlwp.3:${PORTSDIR}/devel/rvm
+LIB_DEPENDS=	liblwp.so:${PORTSDIR}/devel/lwp \
+		librpc2.so:${PORTSDIR}/devel/rpc2 \
+		librvmlwp.so:${PORTSDIR}/devel/rvm
 
 USES=		pkgconfig gmake
 GNU_CONFIGURE=	yes

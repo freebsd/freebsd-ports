@@ -11,7 +11,7 @@ COMMENT=	Search binary images for embedded files and executable code
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 PLIST_FILES=	bin/binwalk \
 		etc/binwalk/extract.conf \

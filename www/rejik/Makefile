@@ -15,7 +15,7 @@ COMMENT=	A squid redirector used for blocking unwanted content
 
 BROKEN=		Fails to checksum
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 
 PLIST_SUB=	INSTALL_DIR=${INSTALL_DIR}

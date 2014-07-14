@@ -35,12 +35,12 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif

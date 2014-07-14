@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby ZeroMQ gem
 
-LIB_DEPENDS=	zmq:${PORTSDIR}/net/libzmq2
+LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq2
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

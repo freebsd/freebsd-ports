@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Fix message base
 
-LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
+LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi
 
 MAN1=		hptsqfix.1
 MANCOMPRESSED=	yes

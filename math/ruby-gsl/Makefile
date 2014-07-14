@@ -15,7 +15,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby extension library for GSL (GNU Scientific Library)
 
-LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

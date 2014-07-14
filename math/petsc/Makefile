@@ -50,7 +50,7 @@ PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
 .if !defined(WITHOUT_UMFPACK)
 UMFPACK_LIBS=	umfpack.so,cholmod.so,colamd.so,amd.so,suitesparseconfig.so
 L=${LOCALBASE}/lib/lib
-LIB_DEPENDS+=		umfpack:${PORTSDIR}/math/suitesparse
+LIB_DEPENDS+=		libumfpack.so:${PORTSDIR}/math/suitesparse
 CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
 			--with-umfpack-lib="[${UMFPACK_LIBS:C/^/${L}/:C/,/, ${L}/g}]"
 .endif

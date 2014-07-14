@@ -14,7 +14,7 @@ LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] B license, version 1
 LICENSE_FILE=	${WRKSRC}/Licence_CeCILL-B_V1-en.txt
 LICENSE_PERMS=	auto-accept
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS =	--with-gmp="${LOCALBASE}"

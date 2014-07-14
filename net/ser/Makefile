@@ -59,7 +59,7 @@ MAKE_ENV+=	PA=pa
 
 .if !defined(WITHOUT_RADIUS)
 PLIST_SUB+=	RADIUS=""
-LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
+LIB_DEPENDS+=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
 .else
 PLIST_SUB+=	RADIUS="@comment "
 MAKE_ENV+=	RADIUS="auth_radius group_radius uri_radius avp_radius"

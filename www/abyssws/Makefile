@@ -24,7 +24,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700043
-LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS+=	libc.so.6:${PORTSDIR}/misc/compat6x
 .endif
 
 pre-install:

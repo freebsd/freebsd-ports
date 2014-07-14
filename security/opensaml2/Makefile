@@ -11,10 +11,10 @@ DISTNAME=	opensaml-${PORTVERSION}
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Open source implementation of SAML2
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		log4shib.1:${PORTSDIR}/devel/log4shib \
-		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
-		xmltooling.6:${PORTSDIR}/devel/xmltooling
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		liblog4shib.so:${PORTSDIR}/devel/log4shib \
+		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
+		libxmltooling.so:${PORTSDIR}/devel/xmltooling
 
 BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
 

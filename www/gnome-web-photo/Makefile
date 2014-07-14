@@ -13,7 +13,7 @@ COMMENT=	Tool to generate full-size image files and thumbnails
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
 USE_XZ=		yes
 USE_GNOME=	gconf2 gnomeprefix

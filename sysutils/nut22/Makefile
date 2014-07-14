@@ -59,7 +59,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-group=${NUT_GROUP}
 
 .if ${PORT_OPTIONS:MCGI}
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 MAN5+=		hosts.conf.5 upsset.conf.5 upsstats.html.5
 MAN8+=		upsset.cgi.8 upsstats.cgi.8 upsimage.cgi.8
 CGIDIR?=	${PREFIX}/www/cgi-bin/${PORTNAME}
@@ -102,7 +102,7 @@ PLIST_SUB+=	NUT_USB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
-LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-snmp
 MAN8+=		snmp-ups.8
 PLIST_SUB+=	NUT_SNMP=""
@@ -112,7 +112,7 @@ PLIST_SUB+=	NUT_SNMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
 CONFIGURE_ARGS+=	--with-neonxml
 MAN8+=		netxml-ups.8
 PLIST_SUB+=	NUT_NEON=""
@@ -125,7 +125,7 @@ PLIST_SUB+=	NUT_NEON="@comment "
 . if ! ${PORT_OPTIONS:MUSB}
 BROKEN=		HAL is only usable with USB support enabled. Run 'make config' again!
 . endif
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=	--with-hal
 #MAN8+=
 PLIST_SUB+=	NUT_HAL=""
