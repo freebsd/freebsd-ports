@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenMCU hosts a conference call for H323 Video Conferencing users
 
-LIB_DEPENDS=	libh323_r.so${PORTSDIR}/net/openh323
+LIB_DEPENDS=	libh323_r.so:${PORTSDIR}/net/openh323
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
