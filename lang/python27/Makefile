@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python27
-PORTVERSION=	2.7.6
-PORTREVISION=	4
+PORTVERSION=	2.7.8
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -46,9 +45,6 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
-PLATFORMS=	plat-freebsd6 plat-freebsd7 plat-freebsd8 plat-freebsd9 \
-		plat-freebsd10 plat-freebsd11
-
 BIN_SCRIPTS=	2to3 idle pydoc smtpd.py
 BIN_FILES=	python python-shared python-config python-shared-config \
 		${BIN_SCRIPTS}
@@ -57,34 +53,36 @@ BINLINKS_SUB_TMPL=	-e 's,smtpd,smtpd%%VERSION%%,' \
 			-e 's,(idle|pydoc|python-shared|python),\1%%VERSION%%,'
 BINLINKS_SUB_PYTHON_VER=	${BINLINKS_SUB_TMPL:S/%%VERSION%%/${PYTHON_VER}/g}
 
-OPTIONS_DEFINE=		THREADS SEM PTH PYMALLOC IPV6 FPECTL EXAMPLES NLS
-OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
+OPTIONS_DEFINE=		EXAMPLES FPECTL IPV6 NLS PTH PYMALLOC SEM THREADS
+OPTIONS_DEFAULT=	IPV6 PYMALLOC SEM THREADS UCS4
 
-OPTIONS_SINGLE=		UCS
-OPTIONS_SINGLE_UCS=	UCS2 UCS4
+OPTIONS_SINGLE=		UNICODE
+OPTIONS_SINGLE_UNICODE=	UCS2 UCS4
 
 NLS_DESC=	Enable Gettext support for the locale module
+UCS2_DESC=	Enable UCS2 Unicode Strings
+UCS4_DESC=	Enable UCS4 Unicode Strings
+
+FPECTL_CONFIGURE_ON=	--with-fpectl
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+# Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
+# to break in Python 2.7, or preprocessor complaints in Python >= 3.3
+# Upstream Issue: http://bugs.python.org/issue6299
+NLS_USES=		gettext
+NLS_CPPFLAGS=		-I${LOCALBASE}/include
+NLS_LIBS=		-L${LOCALBASE}/lib -lintl
+NLS_CONFIGURE_ENV_OFF=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
+
+PYMALLOC_CONFIGURE_WITH=	pymalloc
+
+SEM_CONFIGURE_ENV=	ac_cv_posix_semaphores_enabled=yes
+SEM_CONFIGURE_ENV_OFF=	ac_cv_posix_semaphores_enabled=no
+
+UCS2_CONFIGURE_ON=	--enable-unicode=ucs2
+UCS4_CONFIGURE_ON=	--enable-unicode=ucs4
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lintl
-.else
-CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MSEM}
-SEM_MSG=	""
-.else
-SEM_MSG=	"@comment "
-.endif
-
-SUB_FILES=	pkg-message
-SUB_LIST=	SEM=${SEM_MSG}
 
 .if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
@@ -105,18 +103,6 @@ LDFLAGS+=		${PTHREAD_LIBS}
 .else
 PLIST_SUB+=	THREADS="@comment "
 CONFIGURE_ARGS+=	--without-threads
-.endif
-
-.if ${PORT_OPTIONS:MUCS4}
-CONFIGURE_ARGS+=	--enable-unicode=ucs4
-.endif
-
-.if ${PORT_OPTIONS:MUCS2}
-CONFIGURE_ARGS+=	--enable-unicode=ucs2
-.endif
-
-.if empty(PORT_OPTIONS:MPYMALLOC)
-CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
 .if ${ARCH} == i386
@@ -144,16 +130,6 @@ WITHOUT_NIS?=	detected
 PLIST_SUB+=	NO_NIS=""
 .endif
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MFPECTL}
-CONFIGURE_ARGS+=	--with-fpectl
-.endif
-
 CONFIGURE_ENV+=	OPT="${_PTH_CPPFLAGS}"
 
 post-extract:
@@ -163,12 +139,6 @@ post-extract:
 	${CHMOD} -R og=u-w ${PYTHON_WRKSRC}/Tools ${PYTHON_WRKSRC}/Demo
 
 pre-patch:
-	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
-		${PATCH_WRKSRC}/Lib/plat-freebsd9
-	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
-		${PATCH_WRKSRC}/Lib/plat-freebsd10
-	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
-		${PATCH_WRKSRC}/Lib/plat-freebsd11
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 	${LN} ${PATCH_WRKSRC}/Lib/smtpd.py ${PATCH_WRKSRC}/Tools/scripts/
 .for script in ${BIN_SCRIPTS}
@@ -230,15 +200,6 @@ pre-build:
 	${LN} -f lib${PYTHON_VERSION}.so lib${PYTHON_VERSION}.so.1; \
 	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
 
-pre-su-install:
-.for platform in ${PLATFORMS}
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/${platform}
-.for file in IN.py regen
-	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/${file} \
-		${STAGEDIR}${PYTHONPREFIX_LIBDIR}/${platform}/
-.endfor
-.endfor
-
 pre-install:
 	${CAT} ${PLIST_TEMPLATE} | ${AWK} '{ print $$0; } \
 	/LIBDIR.*\.py$$/ && \
@@ -283,6 +244,7 @@ post-install:
 	@(cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
 		(cd ${STAGEDIR}${EXAMPLESDIR}; ${TAR} --no-same-owner -xf -))
 
-	@${CAT} ${PKGMESSAGE}
+regression-test: build
+	@cd ${WRKSRC} && ${MAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} buildbottest
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
