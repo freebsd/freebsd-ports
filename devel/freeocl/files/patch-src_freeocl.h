@@ -1,10 +1,11 @@
---- src/freeocl.h.orig	2013-11-15 21:18:17.000000000 +0100
-+++ src/freeocl.h	2013-11-15 21:24:32.000000000 +0100
-@@ -26,6 +26,7 @@
+--- src/freeocl.h.orig	2012-09-02 19:00:41.000000000 +0200
++++ src/freeocl.h	2014-07-04 08:42:48.000000000 +0200
+@@ -26,6 +26,8 @@
  #include "dispatch.h"
  #include <iostream>
  #include <deque>
 +#include <sys/types.h>
++#include <xmmintrin.h>
  
  #ifdef DEBUG_UTILS
  #define MSG(X)	std::cout << #X << std::endl
