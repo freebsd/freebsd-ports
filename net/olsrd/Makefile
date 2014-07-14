@@ -13,10 +13,6 @@ COMMENT=	OLSR routing daemon
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-.if defined(WITH_MULTI_IF)
-LIB_DEPENDS+=	libnet.so:${PORTSDIR}/net/libnet
-.endif
-
 USES=		bison gmake tar:bzip2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	olsrd
@@ -24,26 +20,21 @@ USE_RC_SUBR=	olsrd
 ALL_TARGET=	build_all
 INSTALL_TARGET=	install_all
 
-.if defined(WITH_MULTI_IF)
-MAKE_ARGS+=	LIBNET=1
-.endif
+OPTIONS_DEFINE=	MULTI_IF
+MULTI_IF_DESC=	IPv6 multiple interface support
+
+MULTI_IF_LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+MULTI_IF_MAKE_ARGS=	LIBNET=1
+
 .if defined(PREFIX)
 MAKE_ARGS+=	PREFIX=${PREFIX}
 .endif
-MAKE_ARGS+=     STAGEDIR=${STAGEDIR}
+MAKE_ARGS+=	STAGEDIR=${STAGEDIR}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
-.endif
-
-.if !defined(WITH_MULTI_IF)
-pre-everything::
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	" To enable IPv4 multiple interface support make with"
-	@${ECHO_MSG}	" WITH_MULTI_IF defined"
-	@${ECHO_MSG}	""
 .endif
 
 post-patch:
