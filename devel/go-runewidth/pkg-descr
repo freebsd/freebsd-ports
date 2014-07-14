@@ -1,0 +1,5 @@
+Go-runewidth provides functions to get the fixed width of a character
+or string.
+
+Author: Yasuhiro Matsumoto
+WWW: https://github.com/mattn/go-runewidth

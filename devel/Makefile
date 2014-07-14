@@ -597,6 +597,7 @@
     SUBDIR += go-flags
     SUBDIR += go-json-rest
     SUBDIR += go-pretty
+    SUBDIR += go-runewidth
     SUBDIR += go-sql-driver
     SUBDIR += gob2
     SUBDIR += gobject-introspection
