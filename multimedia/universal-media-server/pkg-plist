@@ -85,6 +85,7 @@
 %%DATADIR%%/renderers/Realtek.conf
 %%DATADIR%%/renderers/SMP-N100.conf
 %%DATADIR%%/renderers/Samsung-SMT-G7400.conf
+%%DATADIR%%/renderers/SamsungAllShare-CD.conf
 %%DATADIR%%/renderers/SamsungAllShare-D7000.conf
 %%DATADIR%%/renderers/SamsungAllShare.conf
 %%DATADIR%%/renderers/SamsungMobile.conf
@@ -111,16 +112,20 @@
 %%DATADIR%%/ums.jar
 %%DATADIR%%/web/background-blank.jpg
 %%DATADIR%%/web/background.jpg
+%%DATADIR%%/web/button-search.png
 %%DATADIR%%/web/download.png
 %%DATADIR%%/web/favicon.ico
 %%DATADIR%%/web/flowplayer.min.js
 %%DATADIR%%/web/functional.css
+%%DATADIR%%/web/inputbackground-search.png
 %%DATADIR%%/web/jquery.min.js
 %%DATADIR%%/web/jquery.ums.js
 %%DATADIR%%/web/logo.png
 %%DATADIR%%/web/menu-background-content.png
 %%DATADIR%%/web/menu-left-content.png
 %%DATADIR%%/web/reset.css
+%%DATADIR%%/web/web-narrow.css
+%%DATADIR%%/web/web-wide.css
 %%DATADIR%%/web/web.css
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/css
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images

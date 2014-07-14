@@ -18,19 +18,21 @@ Log files are located at:
   %%UMS_PROFILE_PATH%%/debug.log
 
 NOTE: None of the following transcoders are installed by default
-ffmpeg, mplayer, vlc, mencoder
+ffmpeg, mplayer, vlc, mencoder, linux-tsmuxer
 
 These missing transcoders each have a lot of dependancies of their 
 own. That is why they are not included by default with UMS.
 UMS will automatically detect any missing transcoder once it has
 been installed. Either from the ports tree or pkgng.
 
-NOTE: Mencoder is license restricted and therefore NOT available 
-from pkgng. It can be installed from the ports tree instead.
+NOTE: 'mencoder' is license restricted and therefore NOT available 
+from pkgng. But it can be installed from the ports tree instead.
+
+NOTE: 'tsmuxer' requires the kernel module 'linux.ko' to be loaded.
 
 To install all missing transcoders: (beware, many dependancies)
 
-  pkg install ffmpeg mplayer vlc
+  pkg install ffmpeg mplayer vlc linux-tsmuxer
+  sysrc linux_enable=YES && kldload linux.ko
   cd /usr/ports/multimedia/mencoder && BATCH=YES make install
   service %%RCNAME%% restart
-
