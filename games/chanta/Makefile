@@ -15,27 +15,23 @@ USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
+OPTIONS_DEFINE=	DOCS
 
 CHANTADIRS=	data ima
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lSDL |`sdl-config --libs` |g' ${WRKSRC}/src/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|^CXXFLAGS|^CXXFLAGS?|g' ${WRKSRC}/src/${MAKEFILE}
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/src && \
-		${INSTALL_PROGRAM} chanta  ${PREFIX}/bin && \
-			${FIND} ${CHANTADIRS} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
+		${INSTALL_PROGRAM} chanta  ${STAGEDIR}${PREFIX}/bin && \
+			${FIND} ${CHANTADIRS} -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 				${FIND} -E ${CHANTADIRS} -type f -iregex ".*\.(png|dat)" \
-					-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+					-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && \
-		${INSTALL_DATA} AUTHORS ChangeLog README ${DOCSDIR}
-.endif
+		${INSTALL_DATA} AUTHORS ChangeLog README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
