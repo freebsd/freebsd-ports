@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140714:
+  AFFECTS: users of databases/db6
+  AUTHOR:  mandree@FreeBSD.org
+
+  Oracle Berkeley DB 6 has been upgraded to version 6.1.19.  Since the
+  previous 6.0 version, the log file format has changed in 6.1.
+  Depending on applications used, you may need to take action BEFORE you
+  upgrade.  For details, please see the online upgrade manual at
+  <http://docs.oracle.com/cd/E17076_04/html/upgrading/upgrade_process.html>
+  <http://docs.oracle.com/cd/E17076_04/html/installation/upgrade_61_toc.html>
+
+20140714:
   AFFECTS: users of net/linphone-base
   AUTHOR: tijl@FreeBSD.org
 
