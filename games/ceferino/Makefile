@@ -20,7 +20,6 @@ CEFEDIRS=	ima music levels sounds
 
 OPTIONS_DEFINE=	NLS DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -40,22 +39,18 @@ post-configure:
 
 do-install:
 	@cd ${WRKSRC}/src && \
-		${INSTALL_PROGRAM} ceferino ceferinoeditor ceferinosetup ${PREFIX}/bin
+		${INSTALL_PROGRAM} ceferino ceferinoeditor ceferinosetup ${STAGEDIR}${PREFIX}/bin
 	@cd ${WRKSRC}/data && \
-		${FIND} ${CEFEDIRS} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+		${FIND} ${CEFEDIRS} -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
+		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
 .if defined(FLAG_NLS)
 .for f in es ca fr
-	${MKDIR} ${PREFIX}/share/locale/${f}/LC_MESSAGES && \
-		${INSTALL_DATA} ${WRKSRC}/po/${f}.gmo ${PREFIX}/share/locale/${f}/LC_MESSAGES/${PORTNAME}.mo
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES && \
+		${INSTALL_DATA} ${WRKSRC}/po/${f}.gmo ${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 .endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && \
-		${INSTALL_DATA} AUTHORS ChangeLog README ${DOCSDIR}
-.endif
+		${INSTALL_DATA} AUTHORS ChangeLog README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
