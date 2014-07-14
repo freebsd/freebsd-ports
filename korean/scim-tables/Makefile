@@ -16,13 +16,4 @@ RUN_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gmake
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
-	@${ECHO}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
