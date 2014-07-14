@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gprolog
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.4
 CATEGORIES=	lang
-# MASTER_SITES=	http://www.gprolog.org/
-MASTER_SITES=	http://gprolog.univ-paris1.fr/old_versions/
+MASTER_SITES=	http://www.gprolog.org/
 
 MAINTAINER=	nsmoot@make.sh
 COMMENT=	Free Prolog compiler
+
+LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -19,6 +20,7 @@ USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}"
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB+=	GPROLOG_VER=${PORTVERSION}
 
@@ -26,7 +28,6 @@ OPTIONS_DEFINE=	FD
 OPTIONS_DEFAULT=FD
 FD_DESC=	Enable finite domain constraint solver
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -50,5 +51,10 @@ PKGNAMESUFFIX=	-nofd
 .else
 PLIST_SUB+=	FD=""
 .endif
+
+post-configure:
+	${REINPLACE_CMD} -E 's|^(INSTALL_PROGRAM *= *install +-s +-m) 555|\1 755|g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E 's|^(INSTALL_DATA *= *install +-m) 444|\1 644|g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's|$$(LN_S) $$(INSTALL_DIR)/bin|$$(LN_S) ../${PORTNAME}-${PORTVERSION}/bin|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
