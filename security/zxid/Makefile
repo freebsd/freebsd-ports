@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Open Source IdM for the Masses - SAML SSO
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 MAKE_JOBS_UNSAFE=	yes
 

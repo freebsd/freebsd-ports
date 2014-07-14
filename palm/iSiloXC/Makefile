@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}BSD
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts documents from text/html files or URLs to iSilo format
 
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS=	libc.so.4:${PORTSDIR}/misc/compat4x
 
 USES=		zip
 NO_BUILD=	yes

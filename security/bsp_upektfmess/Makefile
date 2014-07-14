@@ -12,7 +12,7 @@ DISTNAME=	TFMESS_BSP_FreeBSD_1.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UPEK TouchChip TFM/ESS Fingerprint BSP
 
-LIB_DEPENDS=	bioapi100.0:${PORTSDIR}/security/bioapi
+LIB_DEPENDS=	libbioapi100.so:${PORTSDIR}/security/bioapi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext
 
 PLIST_FILES=	lib/libtfmessbsp.so

@@ -12,8 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tools to configure workstations
 
-LIB_DEPENDS=	oobs-1:${PORTSDIR}/devel/liboobs \
-		polkit-gtk-1:${PORTSDIR}/sysutils/polkit-gnome
+LIB_DEPENDS=	liboobs-1.so:${PORTSDIR}/devel/liboobs \
+		libpolkit-gtk-1.so:${PORTSDIR}/sysutils/polkit-gnome
 
 INSTALLS_ICONS=	yes
 USES=		gettext gmake pathfix pkgconfig tar:bzip2

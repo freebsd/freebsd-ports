@@ -10,8 +10,7 @@ MASTER_SITES=	http://ilk.uvt.nl/downloads/pub/software/
 MAINTAINER=	yuri@tsoft.com
 COMMENT=	Tilburg Memory Based Learner
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
-
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig

@@ -10,7 +10,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	CLI for Web Based Enterprise Management by SBLIM
 
 BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES

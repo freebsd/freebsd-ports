@@ -22,9 +22,9 @@ MANUALVER=	7.1.1
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
 MANUALFILE=	sdpa.${MANUALVER}.manual.${MANDATE}.pdf
 GNU_CONFIGURE=	yes
-LIB_DEPENDS+=	spooles:${PORTSDIR}/math/spooles \
-		gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr
+LIB_DEPENDS+=	libspooles.so:${PORTSDIR}/math/spooles \
+		libgmp.so:${PORTSDIR}/math/gmp \
+		libmpfr.so:${PORTSDIR}/math/mpfr
 
 CONFIGURE_ARGS+= --with-system-spooles
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/spooles

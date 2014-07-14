@@ -61,12 +61,12 @@ PGSQL_DESC=	PostgreSQL auth support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGIGABASE}
-LIB_DEPENDS+=	gigabase_r.2:${PORTSDIR}/databases/gigabase
+LIB_DEPENDS+=	libgigabase_r.so:${PORTSDIR}/databases/gigabase
 CONFIGURE_ARGS+=	--without-DB
 .endif
 
 .if ${PORT_OPTIONS:MDB4}
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+LIB_DEPENDS+=	libdb4.so:${PORTSDIR}/databases/db4
 CONFIGURE_ARGS+=	--without-GB
 .endif
 
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--with-PGSQL=${PREFIX}/pgsql
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-regexp=pcre
 .endif
 

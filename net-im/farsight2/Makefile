@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.freedesktop.org/software/farstream/releases/farsight2/ 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of GStreamer modules and libraries for videoconferencing
 
-LIB_DEPENDS=	nice:${PORTSDIR}/net-im/libnice
+LIB_DEPENDS=	libnice.so:${PORTSDIR}/net-im/libnice
 
 CONFLICTS=	farstream-[0-9]*
 

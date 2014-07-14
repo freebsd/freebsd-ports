@@ -11,7 +11,7 @@ COMMENT=	Open source Bible study tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	clucene-core:${PORTSDIR}/textproc/clucene \
+LIB_DEPENDS=	libclucene-core.so:${PORTSDIR}/textproc/clucene \
 		libsword.so:${PORTSDIR}/misc/sword
 
 USES=		cmake:outsource

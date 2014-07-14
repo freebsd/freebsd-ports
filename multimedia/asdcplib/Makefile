@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.cinecert.com/asdcplib/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Open source implementation of SMPTE and the MXF Interop format
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat=${LOCALBASE}

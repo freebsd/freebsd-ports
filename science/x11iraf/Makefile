@@ -13,7 +13,7 @@ COMMENT=	Provides graphical tools to work with IRAF
 
 CONFLICTS=	xterm-[0-9]*
 
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS=	libc.so.4:${PORTSDIR}/misc/compat4x
 
 NO_BUILD=	yes
 

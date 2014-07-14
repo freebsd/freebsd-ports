@@ -9,8 +9,8 @@ MASTER_SITES=	http://memberwebs.com/stef/software/rtfx/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RTF to XML converter
 
-LIB_DEPENDS=	mba:${PORTSDIR}/devel/libmba \
-		domc:${PORTSDIR}/textproc/domc
+LIB_DEPENDS=	libmba.so:${PORTSDIR}/devel/libmba \
+		libdomc.so:${PORTSDIR}/textproc/domc
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --datarootdir=${PREFIX}

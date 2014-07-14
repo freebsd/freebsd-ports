@@ -15,11 +15,11 @@ BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c \
 		obabel:${PORTSDIR}/science/openbabel \
 		ld:${PORTSDIR}/devel/binutils
 RUN_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
-LIB_DEPENDS=	mpqc:${PORTSDIR}/science/mpqc \
-		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		ghemical:${PORTSDIR}/science/libghemical \
-		oglappth:${PORTSDIR}/science/liboglappth \
-		mopac7:${PORTSDIR}/biology/mopac
+LIB_DEPENDS=	libmpqc.so:${PORTSDIR}/science/mpqc \
+		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
+		libghemical.so:${PORTSDIR}/science/libghemical \
+		liboglappth.so:${PORTSDIR}/science/liboglappth \
+		libmopac7.so:${PORTSDIR}/biology/mopac
 
 USES=		fortran gettext gmake pkgconfig
 USE_GNOME=	glib20 gtk20 libglade2

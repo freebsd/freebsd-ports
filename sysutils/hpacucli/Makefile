@@ -10,8 +10,8 @@ MASTER_SITES=	LOCAL/brooks
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HP configuration utility for Smart Array RAID cards
 
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x \
-		c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libc.so.4:${PORTSDIR}/misc/compat4x \
+		libc.so.5:${PORTSDIR}/misc/compat5x
 
 USES=		tar:bzip2
 NO_BUILD=	yes

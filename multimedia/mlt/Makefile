@@ -56,7 +56,7 @@ BROKEN=		does not compile on sparc64 (invokes i386 asm)
 .endif
 
 .if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	dv:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=--enable-dv
 PLIST_SUB+=	DV=""
 .else
@@ -66,7 +66,7 @@ PLIST_SUB+=	DV="@comment "
 
 .if ${PORT_OPTIONS:MFFMPEG} || ${PORT_OPTIONS:MVDPAU}
 FFMPEG_SUFX=
-LIB_DEPENDS+=	avformat${FFMPEG_SUFX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
+LIB_DEPENDS+=	libavformat${FFMPEG_SUFX}.so:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
 CONFIGURE_ARGS+=--enable-avformat --avformat-swscale \
 		--avformat-suffix="${FFMPEG_SUFX}"
 PLIST_SUB+=	FFMPEG=""
@@ -85,7 +85,7 @@ PLIST_SUB+=	FREI0R="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
 USE_GNOME+=	gdkpixbuf2 gtk20 pango
 CONFIGURE_ARGS+=--enable-gtk2
 PLIST_SUB+=	GTK2=""

@@ -11,7 +11,7 @@ MASTER_SITES=	http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSIO
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
 
-LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

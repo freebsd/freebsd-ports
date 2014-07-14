@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--enable-msdav
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
 CFLAGS+=		"-I${LOCALBASE}/include"
 CPPFLAGS+=		"-I${LOCALBASE}/include"
 LDFLAGS+=		"-L${LOCALBASE}/lib"

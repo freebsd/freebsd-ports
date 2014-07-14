@@ -10,13 +10,13 @@ MASTER_SITES=	https://www.prelude-ids.org/attachments/download/287/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework library for access to Prelude NIDS database
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error:${PORTSDIR}/security/libgpg-error \
-		prelude:${PORTSDIR}/security/libprelude \
-		nettle:${PORTSDIR}/security/nettle \
-		p11-kit:${PORTSDIR}/security/p11-kit
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
+		libprelude.so:${PORTSDIR}/security/libprelude \
+		libnettle.so:${PORTSDIR}/security/nettle \
+		libp11-kit.so:${PORTSDIR}/security/p11-kit
 
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
@@ -79,7 +79,7 @@ PLIST_SUB+=		WITH_PGSQL="@comment "
 USE_SQLITE=		yes
 CONFIGURE_ARGS+=	--with-sqlite3
 PLIST_SUB+=		WITH_SQLITE=""
-LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 .else
 CONFIGURE_ARGS+=	--without-sqlite3
 PLIST_SUB+=		WITH_SQLITE="@comment "

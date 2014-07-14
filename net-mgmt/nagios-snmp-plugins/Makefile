@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.softwareforge.de/releases/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios
 
-LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
 USES=			gmake perl5
 GNU_CONFIGURE=		yes

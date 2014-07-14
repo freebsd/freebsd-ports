@@ -11,10 +11,10 @@ MASTER_SITES=		ftp://ftp.berlios.de/pub/macroscope/ \
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		User and IP traffic management with Web interface
 
-LIB_DEPENDS=		lzo2:${PORTSDIR}/archivers/lzo2 \
-			odbc:${PORTSDIR}/databases/unixODBC \
-			pcap:${PORTSDIR}/net/libpcap \
-			gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
+			libodbc.so:${PORTSDIR}/databases/unixODBC \
+			libpcap.so:${PORTSDIR}/net/libpcap \
+			libgd.so:${PORTSDIR}/graphics/gd
 
 USE_RC_SUBR=		${PORTNAME}
 USES=			cmake dos2unix tar:bzip2

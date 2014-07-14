@@ -31,7 +31,7 @@ DOCS_TARBALL=	xalan_c-${PORTVERSION}-docs-html-nograf${EXTRACT_SUFX}
 # we need the _extracted_ xerces-c3 port sources to build this one
 # (installed version of port is enough)
 XERCESC_LIB_VER?=	3
-LIB_DEPENDS+=	xerces-c.${XERCESC_LIB_VER}:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS+=	libxerces-c.${XERCESC_LIB_VER}.so:${PORTSDIR}/textproc/xerces-c3
 XERCESCROOT?=	${LOCALBASE}
 
 USE_LDCONFIG=	yes

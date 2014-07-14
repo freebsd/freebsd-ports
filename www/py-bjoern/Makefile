@@ -12,7 +12,7 @@ COMMENT=	Fast Python WSGI server
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes

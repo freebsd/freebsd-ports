@@ -12,9 +12,9 @@ COMMENT=	C++ Application Server, version 2
 
 BROKEN=		Fails to build
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		pcre:${PORTSDIR}/devel/pcre       \
-		ctpp2:${PORTSDIR}/textproc/ctpp2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libpcre.so:${PORTSDIR}/devel/pcre       \
+		libctpp2.so:${PORTSDIR}/textproc/ctpp2
 
 USES=		cmake iconv
 USE_LDCONFIG=	yes
@@ -82,7 +82,7 @@ PLIST_SUB+=	APACHE2X_MODULE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBUILD_CURL_XMLRPC_CLIENT}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 CMAKE_ARGS+=	-DBUILD_CURL_XMLRPC_CLIENT=ON
 PLIST_SUB+=	CURL_XMLRPC_CLIENT=""
 .else

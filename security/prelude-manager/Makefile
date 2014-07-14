@@ -10,14 +10,14 @@ MASTER_SITES=	https://www.prelude-ids.org/attachments/download/243/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error:${PORTSDIR}/security/libgpg-error \
-		prelude:${PORTSDIR}/security/libprelude \
-		preludedb:${PORTSDIR}/security/libpreludedb \
-		nettle:${PORTSDIR}/security/nettle \
-		p11-kit:${PORTSDIR}/security/p11-kit
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
+		libprelude.so:${PORTSDIR}/security/libprelude \
+		libpreludedb.so:${PORTSDIR}/security/libpreludedb \
+		libnettle.so:${PORTSDIR}/security/nettle \
+		libp11-kit.so:${PORTSDIR}/security/p11-kit
 
 USES=		pkgconfig gettext iconv gmake
 USE_AUTOTOOLS=	libltdl

@@ -15,7 +15,7 @@ COMMENT=	SCIM OpenVanilla input method (IM)/output filter (OF) framework
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim	\
 		${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	libltdl
 WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM

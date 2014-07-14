@@ -20,10 +20,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \
 		${LOCALBASE}/libdata/pkgconfig/ddm-1.pc:${PORTSDIR}/net/desktop-data-model \
 		${LOCALBASE}/libdata/pkgconfig/gnome-python-2.0.pc:${PORTSDIR}/x11-toolkits/py-gnome2 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
-LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
-		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		hippocanvas-1.0:${PORTSDIR}/x11-toolkits/hippo-canvas
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libhippocanvas-1.so:${PORTSDIR}/x11-toolkits/hippo-canvas
 RUN_DEPENDS=	${LOCALBASE}/libexec/desktop-data-engine:${PORTSDIR}/net/desktop-data-model \
 		${LOCALBASE}/libdata/pkgconfig/gnome-python-2.0.pc:${PORTSDIR}/x11-toolkits/py-gnome2 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus

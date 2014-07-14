@@ -13,10 +13,10 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		pkg-config:${PORTSDIR}/devel/pkgconf
-LIB_DEPENDS=	a52:${PORTSDIR}/audio/liba52 \
-		ao:${PORTSDIR}/audio/libao \
-		mad:${PORTSDIR}/audio/libmad \
-		avutil:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52 \
+		libao.so:${PORTSDIR}/audio/libao \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

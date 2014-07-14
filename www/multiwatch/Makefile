@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.lighttpd.net/multiwatch/releases-1.x/
 MAINTAINER=	chris+freebsd@chrullrich.net
 COMMENT=	Spawn-fcgi helper for forking multiple workers
 
-LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
 
 GNU_CONFIGURE=	yes
 

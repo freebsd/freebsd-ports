@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	tim@SPYDERWEB.COM.AU
 COMMENT=	Powerful GUI MUD client written in TCL
 
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 USES=		gmake

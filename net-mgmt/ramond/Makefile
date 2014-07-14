@@ -23,7 +23,7 @@ PORTDOCS=	README
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|g' ${WRKSRC}/Makefile

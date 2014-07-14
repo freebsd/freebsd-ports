@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptec ASR RAID Management Software
 
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS+=	libc.so.4:${PORTSDIR}/misc/compat4x
 
 ONLY_FOR_ARCHS=	i386
 

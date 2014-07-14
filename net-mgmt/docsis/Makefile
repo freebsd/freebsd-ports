@@ -11,7 +11,7 @@ MAINTAINER=	jflemer@alum.rpi.edu
 COMMENT=	DOCSIS(tm) binary configuration file encoder/decoder
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distf
 MAINTAINER?=	samm@os2.kiev.ua
 COMMENT=	Desktop Organizer Software for the Palm Pilot
 
-LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	libpisock.so:${PORTSDIR}/palm/pilot-link
 
 USE_GCC=	any
 USES=		pkgconfig gmake

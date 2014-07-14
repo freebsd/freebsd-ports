@@ -11,8 +11,8 @@ COMMENT=	Video4Linux utilities
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat \
 		libv4l>=0.8.8:${PORTSDIR}/multimedia/libv4l
-LIB_DEPENDS=	v4l2.0:${PORTSDIR}/multimedia/libv4l \
-		argp.0:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l \
+		libargp.so:${PORTSDIR}/devel/argp-standalone
 
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DPREFIX=\\\"${PREFIX}\\\"" \
 		LIBDIR="${PREFIX}/lib" LDFLAGS="-L${LOCALBASE}/lib -largp"

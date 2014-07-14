@@ -15,7 +15,7 @@ DISTFILES=	lemmatizer2-2.0.1.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Russian / German / English lemmatizer library
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		cmake
 

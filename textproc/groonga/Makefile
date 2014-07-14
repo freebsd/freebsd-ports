@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--disable-document
 
 .if ${PORT_OPTIONS:MMECAB} || exists(${LOCALBASE}/lib/libmecab.so)
 CONFIGURE_ARGS+=	--with-mecab
-LIB_DEPENDS+=	mecab:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	libmecab.so:${PORTSDIR}/japanese/mecab
 PLIST_SUB+=	MECAB=""
 .else
 CONFIGURE_ARGS+=	--without-mecab
@@ -55,9 +55,9 @@ PLIST_SUB+=	MECAB="@comment "
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} \
 			--with-message-pack=${LOCALBASE} \
 			--enable-zeromq
-LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent \
-		msgpack:${PORTSDIR}/devel/msgpack \
-		zmq:${PORTSDIR}/net/libzmq2
+LIB_DEPENDS+=	libevent-1.4.so:${PORTSDIR}/devel/libevent \
+		libmsgpack.so:${PORTSDIR}/devel/msgpack \
+		libzmq.so:${PORTSDIR}/net/libzmq2
 PLIST_SUB+=	SUGGEST=""
 .else
 CONFIGURE_ARGS+=	--without-libevent \

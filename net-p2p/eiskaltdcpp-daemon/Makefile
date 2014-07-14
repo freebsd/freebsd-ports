@@ -13,7 +13,7 @@ COMMENT=	EiskaltDC++ Direct Connect client daemon
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS+=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
+LIB_DEPENDS+=	libeiskaltdcpp.so:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
 BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
 PROJECTHOST=	eiskaltdc
@@ -50,7 +50,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMLRPC}
-LIB_DEPENDS+=	xmlrpc++:${PORTSDIR}/net/xmlrpc-c-devel
+LIB_DEPENDS+=	libxmlrpc++.so:${PORTSDIR}/net/xmlrpc-c-devel
 CMAKE_ARGS+=	-DXMLRPC_DAEMON:BOOL=ON
 .else
 CMAKE_ARGS+=	-DXMLRPC_DAEMON:BOOL=OFF

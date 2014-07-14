@@ -11,7 +11,7 @@ COMMENT=	GTK2 (bootable) CD ISO Image editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	iniparser:${PORTSDIR}/devel/iniparser
+LIB_DEPENDS=	libiniparser.so:${PORTSDIR}/devel/iniparser
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USES=		desktop-file-utils gettext gmake pkgconfig tar:bzip2

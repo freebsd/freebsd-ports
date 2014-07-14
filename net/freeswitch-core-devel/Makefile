@@ -30,10 +30,10 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch SoftSwitch Port
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libodbc.so:${PORTSDIR}/databases/unixODBC
 
 CONFLICTS=	freeswitch-core-[0-9]*
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
@@ -198,17 +198,17 @@ PLIST_SUB+=	${opt}="@comment "
 .if ${PORT_OPTIONS:MMODFREETDM}
 CONFIGURE_ARGS+=	--with-libpri=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
-LIB_DEPENDS+=	pri:${PORTSDIR}/misc/libpri
+LIB_DEPENDS+=	libpri.so:${PORTSDIR}/misc/libpri
 RUN_DEPENDS+=	${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
 .endif
 
 .if ${PORT_OPTIONS:MMODSHOUT}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if ${PORT_OPTIONS:MMODPERL}
 USE_BDB=	42+
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 .endif
 
 .if ${PORT_OPTIONS:MMODERLANGEVENT}
@@ -242,7 +242,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa \
 .endif
 
 .if ${PORT_OPTIONS:MMODVLC}
-LIB_DEPENDS+=	vlc:/${PORTSDIR}/multimedia/vlc
+LIB_DEPENDS+=	libvlc.so:${PORTSDIR}/multimedia/vlc
 RUN_DEPENDS+=	vlc:/${PORTSDIR}/multimedia/vlc
 .endif
 

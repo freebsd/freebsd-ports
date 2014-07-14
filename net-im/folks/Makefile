@@ -12,8 +12,8 @@ COMMENT=	library to aggregates people from multiple sources
 
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 IGNORE=		Doesn't build currently, missing components
 CONFLICTS=	folks-0.4.[0-9]*

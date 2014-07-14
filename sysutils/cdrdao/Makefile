@@ -16,9 +16,9 @@ USE_BZIP2=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-MP3OGG_LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao \
-			mad.2:${PORTSDIR}/audio/libmad \
-			vorbis.4:${PORTSDIR}/audio/libvorbis
+MP3OGG_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
+			libmad.so:${PORTSDIR}/audio/libmad \
+			libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 OPTIONS_DEFINE=	DOCS
 
@@ -27,14 +27,14 @@ USES+=			pkgconfig
 USE_GNOME=		gnomehier
 GCONF_SCHEMAS=		gcdmaster.schemas
 LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS} \
-			gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
+			libgnomeuimm-2.6.so:${PORTSDIR}/x11-toolkits/libgnomeuimm26
 RUN_DEPENDS+=		${LOCALBASE}/bin/cdrdao:${PORTSDIR}/sysutils/cdrdao \
 			${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
 CONFIGURE_ARGS+=	--with-lame=no
 .else
 CONFIGURE_ARGS+=	--with-xdao=no
 .if defined(WITH_TOC2MP3)
-LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=		libmp3lame.so:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--with-lame-include=${LOCALBASE}/include \
 			--with-lame-lib=${LOCALBASE}/lib
 PLIST_SUB+=		TOC2MP3=""

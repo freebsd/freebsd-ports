@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-tls_src
 MAINTAINER=	jesusr@FreeBSD.org
 COMMENT=	Fast and configurable SIP proxy with TLS support
 
-LIB_DEPENDS=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
+LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-tls
 

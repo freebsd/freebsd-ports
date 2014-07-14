@@ -11,7 +11,7 @@ DISTNAME=	privoxy-${PORTVERSION}-stable-src
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 

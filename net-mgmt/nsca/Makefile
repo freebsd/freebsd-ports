@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 #.if !defined(_BUILDING_NSCA_CLIENT)
 #RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios
 #.endif
-LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt
 
 .if !defined(_BUILDING_NSCA_CLIENT)
 CONFLICTS=	nsca-2.7.* nsca27-*

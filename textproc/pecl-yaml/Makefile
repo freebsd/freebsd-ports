@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	YAML-1.1 parser and emitter
 
-LIB_DEPENDS=	yaml:${PORTSDIR}/textproc/libyaml
+LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes

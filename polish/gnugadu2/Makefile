@@ -11,7 +11,7 @@ DISTNAME=	gg2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gadu-Gadu IM network client
 
-LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
+LIB_DEPENDS=	libgadu.so:${PORTSDIR}/polish/libgadu \
 		libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
 GNU_CONFIGURE=	yes

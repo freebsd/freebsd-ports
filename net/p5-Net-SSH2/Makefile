@@ -13,7 +13,7 @@ COMMENT=	Support for the SSH 2 protocol via libSSH2
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	ssh2.1:${PORTSDIR}/security/libssh2
+LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 
 USES=	perl5
 USE_PERL5=	configure

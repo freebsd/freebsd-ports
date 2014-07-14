@@ -12,7 +12,7 @@ COMMENT=	CGI search application built on Xapian
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core10
+LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core10
 
 USES=		perl5
 GNU_CONFIGURE=	yes

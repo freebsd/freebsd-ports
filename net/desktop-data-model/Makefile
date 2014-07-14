@@ -18,11 +18,11 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpcre.pc:${PORTSDIR}/devel/pcre 
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
 		${LOCALBASE}/libdata/pkgconfig/sqlite3.pc:${PORTSDIR}/databases/sqlite3 \
 		${LOCALBASE}/libdata/pkgconfig/loudmouth-1.0.pc:${PORTSDIR}/net-im/loudmouth
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
+		libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
 
 USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomehack gtk20 glib20 gnomedesktop gnomevfs2

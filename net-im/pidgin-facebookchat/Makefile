@@ -13,7 +13,7 @@ COMMENT=	Facebook Chat for Pidgin
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	json-glib-1.0.0:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 

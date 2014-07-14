@@ -13,7 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	wmoran@collaborativefusion.com
 COMMENT=	PECL extension to cracklib
 
-LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
+LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
 
 USE_PHP=	yes
 USE_PHPIZE=	yes

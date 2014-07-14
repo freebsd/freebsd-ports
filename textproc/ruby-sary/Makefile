@@ -13,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Ruby interface to the Sary library
 
-LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
+LIB_DEPENDS=	libsary.so:${PORTSDIR}/textproc/sary
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
