@@ -1,6 +1,8 @@
 @unexec if cmp -s %D/etc/tinyproxy.conf.sample %D/etc/tinyproxy.conf; then rm -f %D/etc/tinyproxy.conf; fi
 etc/tinyproxy.conf.sample
 @exec if [ ! -f %D/etc/tinyproxy.conf ] ; then cp -p %D/%F %B/tinyproxy.conf; fi
+man/man5/tinyproxy.conf.5.gz
+man/man8/tinyproxy.8.gz
 sbin/tinyproxy
 %%DATADIR%%/debug.html
 %%DATADIR%%/default.html
