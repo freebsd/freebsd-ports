@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wheel
-PORTVERSION=	0.21.0
-PORTREVISION=	1
+PORTVERSION=	0.24.0
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,30 +13,19 @@ COMMENT=	Built-package format for Python
 
 LICENSE=	MIT
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=	yes
-# Python 3 ready
-USE_PYTHON=	yes
-
 OPTIONS_DEFINE=	PIP SIGNATURE
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+
 PIP_DESC=	Use pip to install wheels
+PIP_RUN_DEPENDS=	pip:${PORTSDIR}/devel/py-pip
+PYDISTUTILS_AUTOPLIST=	yes
+
 SIGNATURE_DESC=	Enable digital signature of wheels
+SIGNATURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dirspec>=13.05:${PORTSDIR}/devel/py-dirspec \
+			${PYTHON_PKGNAMEPREFIX}keyring>=1.3:${PORTSDIR}/security/py-keyring \
+			${PYTHON_PKGNAMEPREFIX}xdg>=0.25:${PORTSDIR}/devel/py-xdg
 
-.include <bsd.port.options.mk>
+USE_PYDISTUTILS=	yes
+USE_PYTHON=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MPIP}
-RUN_DEPENDS+=	pip:${PORTSDIR}/devel/py-pip
-.endif
-
-.if ${PORT_OPTIONS:MSIGNATURE}
-.	if ${PYTHON_REL} < 270
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>=1.1:${PORTSDIR}/devel/py-argparse
-.	endif
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dirspec>=13.05:${PORTSDIR}/devel/py-dirspec \
-		${PYTHON_PKGNAMEPREFIX}keyring>=1.3:${PORTSDIR}/security/py-keyring
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
