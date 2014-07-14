@@ -1,7 +1,7 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	-mpi
 
 MAINTAINER=	ports@FreeBSD.org

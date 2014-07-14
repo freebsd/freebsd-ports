@@ -3,7 +3,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.3-p0
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/

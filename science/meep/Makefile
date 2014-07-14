@@ -3,7 +3,7 @@
 
 PORTNAME=	meep
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/meep/
 
