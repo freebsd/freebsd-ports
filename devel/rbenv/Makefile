@@ -6,13 +6,10 @@ PORTREVISION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	GH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Manage multiple versions of ruby
 
-LICENSE=	RBENV
-LICENSE_NAME=	Sam Stephenson
-LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	MIT
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
