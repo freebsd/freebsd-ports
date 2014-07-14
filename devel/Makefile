@@ -594,6 +594,7 @@
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
+    SUBDIR += go-flags
     SUBDIR += go-json-rest
     SUBDIR += go-pretty
     SUBDIR += go-sql-driver
