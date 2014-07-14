@@ -2,7 +2,7 @@
 
 PORTNAME=	libcmis
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net devel
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -17,9 +17,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-werror --with-boost=${LOCALBASE} --without-man
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
