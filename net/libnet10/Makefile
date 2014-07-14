@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for creating IP packets
 
+DEPRECATED=	Superseded by net/libnet
+EXPIRATION_DATE=2014-08-31
+
 CFLAGS+=	-fPIC
 
 USE_AUTOTOOLS=	autoconf
