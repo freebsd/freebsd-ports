@@ -6252,3 +6252,4 @@ textproc/stardict-oald||2014-07-10|Removed due to possible copyright infringemen
 editors/nxml||2014-07-13|Needs recently removed emacs21 or emacs22
 graphics/py-stl|graphics/py-stltools|2014-07-13|Upstream project has been renamed
 audio/muine||2014-07-13|Has expired: Fails to build/run since August 2013
+x11-themes/kde4-windeco-nitrogen||2014-07-14|Has expired: Merged with the Oxygen windeco included with KDE4

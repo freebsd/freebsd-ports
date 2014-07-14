@@ -126,7 +126,6 @@
     SUBDIR += kde4-wallpapers-freebsd
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
-    SUBDIR += kde4-windeco-nitrogen
     SUBDIR += kdeartwork4
     SUBDIR += linux-f10-hicolor-icon-theme
     SUBDIR += linux-f10-qtcurve-gtk2
