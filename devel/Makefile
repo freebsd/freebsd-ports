@@ -3695,6 +3695,7 @@
     SUBDIR += py-isodate
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
+    SUBDIR += py-jaraco.timing
     SUBDIR += py-jaraco.util
     SUBDIR += py-jcc
     SUBDIR += py-jdcal
