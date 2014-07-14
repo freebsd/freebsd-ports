@@ -2,7 +2,15 @@
 %%HASH%%bin/csscompress
 %%HASH%%bin/cssclean
 %%HASH%%bin/cssconvert
+@owner %%DSPAM_OWNER%%
+@group %%DSPAM_GROUP%%
+@mode %%DSPAM_MODE%%
 bin/dspam
+@exec chown %%DSPAM_OWNER%%:%%DSPAM_GROUP%% %D/%F
+@exec chmod %%DSPAM_MODE%% %D/%F
+@mode
+@group wheel
+@owner root
 bin/dspamc
 bin/dspam_2sql
 bin/dspam_admin
