@@ -1,0 +1,8 @@
+This module parses the most common forms of ISO 8601 date strings
+(e.g. 2007-01-14T20:34:22+00:00) into datetime objects.
+
+You can parse full date + times, or just the date. In both cases a datetime
+instance is returned but with missing times defaulting to 0, and missing
+days / months defaulting to 1.
+
+WWW: https://bitbucket.org/micktwomey/pyiso8601

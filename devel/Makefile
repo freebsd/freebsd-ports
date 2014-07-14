@@ -3688,6 +3688,7 @@
     SUBDIR += py-interface
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
+    SUBDIR += py-iso8601
     SUBDIR += py-isodate
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
