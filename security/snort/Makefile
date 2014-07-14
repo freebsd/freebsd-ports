@@ -3,6 +3,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.9.6.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
@@ -15,11 +16,10 @@ COMMENT=	Lightweight network intrusion detection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq \
-		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
-RUN_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq \
-		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libnet.so:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq
+RUN_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq
 
 OPTIONS_DEFINE=		IPV6 MPLS GRE TARGETBASED ZLIB NORMALIZER REACT \
 			PERFPROFILE FLEXRESP3 LRGPCAP SOURCEFIRE NONETHER \

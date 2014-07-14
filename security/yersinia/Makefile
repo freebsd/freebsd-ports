@@ -3,7 +3,7 @@
 
 PORTNAME=	yersinia
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.yersinia.net/download/
 

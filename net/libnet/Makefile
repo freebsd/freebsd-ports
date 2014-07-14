@@ -3,7 +3,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/libnet-dev
@@ -12,14 +12,12 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for creating IP packets
 
-LATEST_LINK=	${PORTNAME}${SHORT_VER}
-
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CFLAGS+=	-fPIC
 USE_CSTD=	gnu89
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-link-layer=${LIBNET_LINK}
+INSTALL_TARGET=	install-strip
 
 SHORT_VER=	11
 SHORT_NAME=	${PORTNAME}${SHORT_VER}
@@ -60,8 +58,7 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${STAGEDIR}${PREFIX}/bin/${SHORT_NAME}-config
 	@cd ${STAGEDIR}${PREFIX}/lib && \
-		${LN} -sf ${SHORT_NAME}/libnet.so libnet-${PORTVERSION}.so.8 && \
-		${LN} -sf libnet-${PORTVERSION}.so.8 libnet-${PORTVERSION}.so
+		${LN} -sf ${SHORT_NAME}/libnet-${PORTVERSION}.so.1
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/

@@ -3,21 +3,22 @@
 
 PORTNAME=	fonulator
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://support.red-fone.com/fonulator/
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FoneBRIDGE configuration utility
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.a:${PORTSDIR}/devel/argtable\
+		${LOCALBASE}/lib/libfb.a:${PORTSDIR}/net/libfb
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${LIBNET_CPPFLAGS}
 LDFLAGS+=	${LIBNET_LIBS:N-l*}
 CONFIGURE_ARGS=	--disable-shared
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet\
-		${LOCALBASE}/lib/libargtable2.a:${PORTSDIR}/devel/argtable\
-		${LOCALBASE}/lib/libfb.a:${PORTSDIR}/net/libfb
 LIBNET_CONFIG=	${LOCALBASE}/bin/libnet11-config
 
 PLIST_FILES=	bin/fonulator \
