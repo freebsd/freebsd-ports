@@ -15,9 +15,15 @@ bin/dspam_notify
 %%PGSQL%%bin/dspam_pg2int8
 bin/dspam_stats
 bin/dspam_train
+@mode 0640
+@owner %%DSPAM_OWNER%%
+@group %%DSPAM_GROUP%%
 @sample etc/dspam.conf.sample
 @exec chown %%DSPAM_OWNER%%:%%DSPAM_GROUP%% %D/%F
 @exec chmod 0640 %D/%F
+@group wheel
+@owner root
+@mode
 include/dspam/buffer.h
 include/dspam/config.h
 include/dspam/config_shared.h
@@ -228,8 +234,14 @@ firstrun.txt.sample
 firstspam.txt.sample
 quarantinefull.txt.sample
 @cwd /
+@owner %%DSPAM_HOME_OWNER%%
+@group %%DSPAM_HOME_GROUP%%
+@mode %%DSPAM_HOME_MODE%%
+@dirrm %%DSPAM_HOME%%
+@mode
 @exec chown %%DSPAM_HOME_OWNER%%:%%DSPAM_HOME_GROUP%% %%DSPAM_HOME%%
 @exec chmod %%DSPAM_HOME_MODE%% %%DSPAM_HOME%%
-@dirrm %%DSPAM_HOME%%
 @exec chown %%DSPAM_HOME_OWNER%%:%%DSPAM_HOME_GROUP%% %%LOG_DIR%%
 @dirrmtry %%LOG_DIR%%
+@group wheel
+@owner root
