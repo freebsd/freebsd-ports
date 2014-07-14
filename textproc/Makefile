@@ -1093,6 +1093,7 @@
     SUBDIR += pecl-xdiff
     SUBDIR += pecl-xslcache
     SUBDIR += pecl-yaml
+    SUBDIR += peco
     SUBDIR += perl2html
     SUBDIR += permute
     SUBDIR += php5-ctype
