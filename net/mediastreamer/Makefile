@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/ortp
 
+CONFLICTS_INSTALL=	linphone-base-[0-9]*
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-glx --disable-pulseaudio \
 		--disable-silent-rules --disable-strict \

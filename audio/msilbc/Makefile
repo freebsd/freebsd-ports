@@ -2,15 +2,15 @@
 
 PORTNAME=	msilbc
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Mediastreamer plugin for the iLBC audio codec
 
-LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/linphone-base \
-		libmediastreamer.so:${PORTSDIR}/net/linphone-base \
+LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/ortp \
+		libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
 		libilbc.so:${PORTSDIR}/net/ilbc
 
 USES=		libtool pkgconfig
