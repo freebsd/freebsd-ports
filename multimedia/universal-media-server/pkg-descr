@@ -7,9 +7,15 @@ The program streams or transcodes with little or no configuration.
 Powered by MEncoder, FFmpeg, tsMuxeR, AviSynth, MediaInfo and more,
 which combine to offer support for a wide range of media formats.
 
+
+IMPORTANT NOTE:
+
+All the missing transcoder dependancies CAN be installed seperately.
+NOT needed to re-build this port from scratch to select options.
+
+Please read: 'files/pkg-message.in' in the port directory for more
+information about how to best install these missing dependancies.
+
+
 See also: http://www.universalmediaserver.com/
-
-NOTE: Missing transcoder dependancies can be installed seperately.
-See files/pkg-message.in for more information.
-
 WWW: http://sourceforge.net/projects/unimediaserver/
