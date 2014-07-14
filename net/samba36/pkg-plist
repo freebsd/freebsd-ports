@@ -34,191 +34,191 @@ sbin/nmbd
 %%WINBIND%%lib/nss_wins.so.1
 %%WINBIND%%lib/pam_winbind.so
 %%SMBPASS%%lib/pam_smbpass.so
-%%EXAMPLESDIR%%/%%SAMBA_CONFIG%%.sample
-%%EXAMPLESDIR%%/LDAP/README
-%%EXAMPLESDIR%%/LDAP/convertSambaAccount
-%%EXAMPLESDIR%%/LDAP/get_next_oid
-%%EXAMPLESDIR%%/LDAP/ol-schema-migrate.pl
-%%EXAMPLESDIR%%/LDAP/samba-nds.schema
-%%EXAMPLESDIR%%/LDAP/samba-schema-FDS.ldif
-%%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x.README
-%%EXAMPLESDIR%%/LDAP/samba-schema.IBMSecureWay
-%%EXAMPLESDIR%%/LDAP/samba.ldif
-%%EXAMPLESDIR%%/LDAP/samba.schema
-%%EXAMPLESDIR%%/LDAP/samba.schema.at.IBM-DS
-%%EXAMPLESDIR%%/LDAP/samba.schema.oc.IBM-DS
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/VFS/Makefile.in
-%%EXAMPLESDIR%%/VFS/README
-%%EXAMPLESDIR%%/VFS/autogen.sh
-%%EXAMPLESDIR%%/VFS/config.guess
-%%EXAMPLESDIR%%/VFS/config.sub
-%%EXAMPLESDIR%%/VFS/configure
-%%EXAMPLESDIR%%/VFS/configure.in
-%%EXAMPLESDIR%%/VFS/install-sh
-%%EXAMPLESDIR%%/VFS/module_config.h.in
-%%EXAMPLESDIR%%/VFS/shadow_copy_test.c
-%%EXAMPLESDIR%%/VFS/skel_opaque.c
-%%EXAMPLESDIR%%/VFS/skel_transparent.c
-%%EXAMPLESDIR%%/ad-bench/README
-%%EXAMPLESDIR%%/ad-bench/ad-bench.sh
-%%EXAMPLESDIR%%/ad-bench/settings.sh
-%%EXAMPLESDIR%%/ad-bench/test_utils.sh
-%%EXAMPLESDIR%%/ad-bench/time_group.sh
-%%EXAMPLESDIR%%/ad-bench/time_join.sh
-%%EXAMPLESDIR%%/ad-bench/time_kinit.sh
-%%EXAMPLESDIR%%/ad-bench/time_ldap.sh
-%%EXAMPLESDIR%%/ad-bench/time_user.sh
-%%EXAMPLESDIR%%/ad-bench/utils.sh
-%%EXAMPLESDIR%%/auth/Makefile
-%%EXAMPLESDIR%%/auth/auth_skel.c
-%%EXAMPLESDIR%%/auth/crackcheck/Makefile
-%%EXAMPLESDIR%%/auth/crackcheck/crackcheck.c
-%%EXAMPLESDIR%%/autofs/auto.smb
-%%EXAMPLESDIR%%/bind9-patches/0001-leave-the-question-section-in-update-responses.patch
-%%EXAMPLESDIR%%/bind9-patches/0002-prevent-a-valgrind-uninitialised-memory-warning.patch
-%%EXAMPLESDIR%%/bind9-patches/0003-don-t-compress-TSIG-names.patch
-%%EXAMPLESDIR%%/bind9-patches/0004-If-tkey-gssapi-initialisation-fails-then-heck-for-th.patch
-%%EXAMPLESDIR%%/bind9-patches/0005-windows-doesn-t-return-valid-GSSAPI-sequence-numbers.patch
-%%EXAMPLESDIR%%/bind9-patches/README
-%%EXAMPLESDIR%%/dce-dfs/README
-%%EXAMPLESDIR%%/dce-dfs/smb.conf
-%%EXAMPLESDIR%%/logon/genlogon/genlogon.pl
-%%EXAMPLESDIR%%/logon/mklogon/mklogon.conf
-%%EXAMPLESDIR%%/logon/mklogon/mklogon.pl
-%%EXAMPLESDIR%%/logon/ntlogon/README
-%%EXAMPLESDIR%%/logon/ntlogon/ntlogon.conf
-%%EXAMPLESDIR%%/logon/ntlogon/ntlogon.py
-%%EXAMPLESDIR%%/misc/adssearch.pl
-%%EXAMPLESDIR%%/misc/check_multiple_LDAP_entries.pl
-%%EXAMPLESDIR%%/misc/cldap.pl
-%%EXAMPLESDIR%%/misc/extra_smbstatus
-%%EXAMPLESDIR%%/misc/swat.pl
-%%EXAMPLESDIR%%/misc/wall.perl
-%%EXAMPLESDIR%%/nss/nss_winbind.c
-%%EXAMPLESDIR%%/nss/nss_winbind.h
-%%EXAMPLESDIR%%/nss/wbtest.c
-%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/README
-%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/kdc-pdc
-%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-mature
-%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-migration
-%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-sync
-%%EXAMPLESDIR%%/pam_winbind/pam_winbind.conf
-%%EXAMPLESDIR%%/pcap2nbench/COPYING
-%%EXAMPLESDIR%%/pcap2nbench/Makefile
-%%EXAMPLESDIR%%/pcap2nbench/README
-%%EXAMPLESDIR%%/pcap2nbench/closerequest.cpp
-%%EXAMPLESDIR%%/pcap2nbench/closerequest.hpp
-%%EXAMPLESDIR%%/pcap2nbench/ethernet.cpp
-%%EXAMPLESDIR%%/pcap2nbench/ethernet.hpp
-%%EXAMPLESDIR%%/pcap2nbench/ip.cpp
-%%EXAMPLESDIR%%/pcap2nbench/ip.hpp
-%%EXAMPLESDIR%%/pcap2nbench/main.cpp
-%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxrequest.cpp
-%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxrequest.hpp
-%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxresponse.cpp
-%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxresponse.hpp
-%%EXAMPLESDIR%%/pcap2nbench/readandxrequest.cpp
-%%EXAMPLESDIR%%/pcap2nbench/readandxrequest.hpp
-%%EXAMPLESDIR%%/pcap2nbench/readandxresponse.hpp
-%%EXAMPLESDIR%%/pcap2nbench/smb.cpp
-%%EXAMPLESDIR%%/pcap2nbench/smb.hpp
-%%EXAMPLESDIR%%/pcap2nbench/tcp.cpp
-%%EXAMPLESDIR%%/pcap2nbench/tcp.hpp
-%%EXAMPLESDIR%%/pcap2nbench/writeandxrequest.cpp
-%%EXAMPLESDIR%%/pcap2nbench/writeandxrequest.hpp
-%%EXAMPLESDIR%%/pdb/Makefile
-%%EXAMPLESDIR%%/pdb/README
-%%EXAMPLESDIR%%/pdb/test.c
-%%EXAMPLESDIR%%/perfcounter/Makefile
-%%EXAMPLESDIR%%/perfcounter/perf.h
-%%EXAMPLESDIR%%/perfcounter/perf_writer.c
-%%EXAMPLESDIR%%/perfcounter/perf_writer_cpu.c
-%%EXAMPLESDIR%%/perfcounter/perf_writer_disk.c
-%%EXAMPLESDIR%%/perfcounter/perf_writer_mem.c
-%%EXAMPLESDIR%%/perfcounter/perf_writer_process.c
-%%EXAMPLESDIR%%/perfcounter/perf_writer_util.c
-%%EXAMPLESDIR%%/perfcounter/perfcountd.init
-%%EXAMPLESDIR%%/printer-accounting/README
-%%EXAMPLESDIR%%/printer-accounting/acct-all
-%%EXAMPLESDIR%%/printer-accounting/acct-sum
-%%EXAMPLESDIR%%/printer-accounting/hp5-redir
-%%EXAMPLESDIR%%/printer-accounting/lp-acct
-%%EXAMPLESDIR%%/printer-accounting/printcap
-%%EXAMPLESDIR%%/printing/VampireDriversFunctions
-%%EXAMPLESDIR%%/printing/prtpub.c
-%%EXAMPLESDIR%%/printing/readme.prtpub
-%%EXAMPLESDIR%%/printing/smbprint
-%%EXAMPLESDIR%%/printing/smbprint.sysv
-%%EXAMPLESDIR%%/scripts/debugging/linux/backtrace
-%%EXAMPLESDIR%%/scripts/debugging/solaris/README
-%%EXAMPLESDIR%%/scripts/debugging/solaris/solaris-oops.sh
-%%EXAMPLESDIR%%/scripts/eventlog/parselog.pl
-%%EXAMPLESDIR%%/scripts/idmap/README
-%%EXAMPLESDIR%%/scripts/idmap/idmap_nis.sh
-%%EXAMPLESDIR%%/scripts/mount/mount.smbfs
-%%EXAMPLESDIR%%/scripts/printing/cups/smbaddprinter.pl
-%%EXAMPLESDIR%%/scripts/printing/cups/smbdelprinter.pl
-%%EXAMPLESDIR%%/scripts/shares/perl/modify_samba_config.pl
-%%EXAMPLESDIR%%/scripts/shares/python/SambaConfig.py
-%%EXAMPLESDIR%%/scripts/shares/python/SambaParm.py
-%%EXAMPLESDIR%%/scripts/shares/python/generate_parm_table.py
-%%EXAMPLESDIR%%/scripts/shares/python/modify_samba_config.py
-%%EXAMPLESDIR%%/scripts/shares/python/smbparm.py
-%%EXAMPLESDIR%%/scripts/users_and_groups/adduserstogroups.pl
-%%EXAMPLESDIR%%/scripts/users_and_groups/createdomobj.pl
-%%EXAMPLESDIR%%/scripts/wins_hook/README
-%%EXAMPLESDIR%%/scripts/wins_hook/dns_update
-%%EXAMPLESDIR%%/smb.conf.default
-%%EXAMPLESDIR%%/tridge/README
-%%EXAMPLESDIR%%/tridge/smb.conf
-%%EXAMPLESDIR%%/tridge/smb.conf.WinNT
-%%EXAMPLESDIR%%/tridge/smb.conf.fjall
-%%EXAMPLESDIR%%/tridge/smb.conf.lapland
-%%EXAMPLESDIR%%/tridge/smb.conf.vittjokk
-%%EXAMPLESDIR%%/validchars/msdos70.out
-%%EXAMPLESDIR%%/validchars/nwdos70.out
-%%EXAMPLESDIR%%/validchars/readme
-%%EXAMPLESDIR%%/validchars/validchr.c
-%%EXAMPLESDIR%%/validchars/validchr.com
-@dirrm %%EXAMPLESDIR%%/validchars
-@dirrm %%EXAMPLESDIR%%/tridge
-@dirrm %%EXAMPLESDIR%%/scripts/wins_hook
-@dirrm %%EXAMPLESDIR%%/scripts/users_and_groups
-@dirrm %%EXAMPLESDIR%%/scripts/shares/python
-@dirrm %%EXAMPLESDIR%%/scripts/shares/perl
-@dirrm %%EXAMPLESDIR%%/scripts/shares
-@dirrm %%EXAMPLESDIR%%/scripts/printing/cups
-@dirrm %%EXAMPLESDIR%%/scripts/printing
-@dirrm %%EXAMPLESDIR%%/scripts/mount
-@dirrm %%EXAMPLESDIR%%/scripts/idmap
-@dirrm %%EXAMPLESDIR%%/scripts/eventlog
-@dirrm %%EXAMPLESDIR%%/scripts/debugging/solaris
-@dirrm %%EXAMPLESDIR%%/scripts/debugging/linux
-@dirrm %%EXAMPLESDIR%%/scripts/debugging
-@dirrm %%EXAMPLESDIR%%/scripts
-@dirrm %%EXAMPLESDIR%%/printing
-@dirrm %%EXAMPLESDIR%%/printer-accounting
-@dirrm %%EXAMPLESDIR%%/perfcounter
-@dirrm %%EXAMPLESDIR%%/pdb
-@dirrm %%EXAMPLESDIR%%/pcap2nbench
-@dirrm %%EXAMPLESDIR%%/pam_winbind
-%%SMBPASS%%@dirrm %%EXAMPLESDIR%%/pam_smbpass
-@dirrm %%EXAMPLESDIR%%/nss
-@dirrm %%EXAMPLESDIR%%/misc
-@dirrm %%EXAMPLESDIR%%/logon/ntlogon
-@dirrm %%EXAMPLESDIR%%/logon/mklogon
-@dirrm %%EXAMPLESDIR%%/logon/genlogon
-@dirrm %%EXAMPLESDIR%%/logon
-@dirrm %%EXAMPLESDIR%%/dce-dfs
-@dirrm %%EXAMPLESDIR%%/bind9-patches
-@dirrm %%EXAMPLESDIR%%/autofs
-@dirrm %%EXAMPLESDIR%%/auth/crackcheck
-@dirrm %%EXAMPLESDIR%%/auth
-@dirrm %%EXAMPLESDIR%%/ad-bench
-@dirrm %%EXAMPLESDIR%%/VFS
-@dirrm %%EXAMPLESDIR%%/LDAP
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%SAMBA_CONFIG%%.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/convertSambaAccount
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/get_next_oid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/ol-schema-migrate.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/samba-nds.schema
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/samba-schema-FDS.ldif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x.README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/samba-schema.IBMSecureWay
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/samba.ldif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/samba.schema
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/samba.schema.at.IBM-DS
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LDAP/samba.schema.oc.IBM-DS
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/autogen.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/config.guess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/config.sub
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/configure
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/configure.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/install-sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/module_config.h.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/shadow_copy_test.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/skel_opaque.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VFS/skel_transparent.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/ad-bench.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/settings.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/test_utils.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/time_group.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/time_join.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/time_kinit.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/time_ldap.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/time_user.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ad-bench/utils.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/auth_skel.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/crackcheck/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/crackcheck/crackcheck.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autofs/auto.smb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bind9-patches/0001-leave-the-question-section-in-update-responses.patch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bind9-patches/0002-prevent-a-valgrind-uninitialised-memory-warning.patch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bind9-patches/0003-don-t-compress-TSIG-names.patch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bind9-patches/0004-If-tkey-gssapi-initialisation-fails-then-heck-for-th.patch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bind9-patches/0005-windows-doesn-t-return-valid-GSSAPI-sequence-numbers.patch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bind9-patches/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dce-dfs/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dce-dfs/smb.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logon/genlogon/genlogon.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logon/mklogon/mklogon.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logon/mklogon/mklogon.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logon/ntlogon/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logon/ntlogon/ntlogon.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logon/ntlogon/ntlogon.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/adssearch.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/check_multiple_LDAP_entries.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/cldap.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/extra_smbstatus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/swat.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/wall.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nss/nss_winbind.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nss/nss_winbind.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nss/wbtest.c
+%%PORTEXAMPLES%%%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/README
+%%PORTEXAMPLES%%%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/kdc-pdc
+%%PORTEXAMPLES%%%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-mature
+%%PORTEXAMPLES%%%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-migration
+%%PORTEXAMPLES%%%%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-sync
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pam_winbind/pam_winbind.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/COPYING
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/closerequest.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/closerequest.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/ethernet.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/ethernet.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/ip.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/ip.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/main.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxrequest.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxrequest.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxresponse.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxresponse.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/readandxrequest.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/readandxrequest.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/readandxresponse.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/smb.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/smb.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/tcp.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/tcp.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/writeandxrequest.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2nbench/writeandxrequest.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdb/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdb/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdb/test.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/perf.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/perf_writer.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/perf_writer_cpu.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/perf_writer_disk.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/perf_writer_mem.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/perf_writer_process.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/perf_writer_util.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perfcounter/perfcountd.init
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printer-accounting/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printer-accounting/acct-all
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printer-accounting/acct-sum
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printer-accounting/hp5-redir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printer-accounting/lp-acct
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printer-accounting/printcap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printing/VampireDriversFunctions
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printing/prtpub.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printing/readme.prtpub
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printing/smbprint
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printing/smbprint.sysv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/debugging/linux/backtrace
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/debugging/solaris/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/debugging/solaris/solaris-oops.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/eventlog/parselog.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/idmap/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/idmap/idmap_nis.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/mount/mount.smbfs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/printing/cups/smbaddprinter.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/printing/cups/smbdelprinter.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shares/perl/modify_samba_config.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shares/python/SambaConfig.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shares/python/SambaParm.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shares/python/generate_parm_table.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shares/python/modify_samba_config.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shares/python/smbparm.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/users_and_groups/adduserstogroups.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/users_and_groups/createdomobj.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/wins_hook/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/wins_hook/dns_update
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smb.conf.default
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tridge/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tridge/smb.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tridge/smb.conf.WinNT
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tridge/smb.conf.fjall
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tridge/smb.conf.lapland
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tridge/smb.conf.vittjokk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validchars/msdos70.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validchars/nwdos70.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validchars/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validchars/validchr.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/validchars/validchr.com
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/validchars
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tridge
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/wins_hook
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/users_and_groups
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/shares/python
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/shares/perl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/shares
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/printing/cups
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/printing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/mount
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/idmap
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/eventlog
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/debugging/solaris
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/debugging/linux
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/debugging
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/printing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/printer-accounting
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perfcounter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pdb
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pcap2nbench
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pam_winbind
+%%PORTEXAMPLES%%%%SMBPASS%%@dirrm %%EXAMPLESDIR%%/pam_smbpass
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nss
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logon/ntlogon
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logon/mklogon
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logon/genlogon
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logon
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dce-dfs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bind9-patches
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autofs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/auth/crackcheck
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/auth
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ad-bench
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VFS
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/LDAP
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS.txt
 %%PORTDOCS%%%%DOCSDIR%%/Manifest
