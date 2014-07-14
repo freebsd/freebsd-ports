@@ -3,6 +3,7 @@
 
 PORTNAME=	libeXosip2
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/exosip
 PKGNAMESUFFIX=	-legacy
@@ -16,12 +17,14 @@ LIB_DEPENDS=	libosip2.so:${PORTSDIR}/net/libosip
 
 CONFLICTS_INSTALL=	libeXosip2-[0-9]*
 
+DEPRECATED=	Superseded by net/libexosip2
+EXPIRATION_DATE=2014-08-31
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-tools --disable-debug --disable-trace
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
-SHLIB_VER=	9
-
-PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

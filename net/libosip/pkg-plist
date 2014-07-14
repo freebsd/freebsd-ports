@@ -42,13 +42,13 @@ include/osipparser2/osip_port.h
 include/osipparser2/osip_uri.h
 include/osipparser2/sdp_message.h
 lib/libosip2.a
-lib/libosip2.la
 lib/libosip2.so
-lib/libosip2.so.9
+lib/libosip2.so.7
+lib/libosip2.so.7.2.0
 lib/libosipparser2.a
-lib/libosipparser2.la
 lib/libosipparser2.so
-lib/libosipparser2.so.9
+lib/libosipparser2.so.7
+lib/libosipparser2.so.7.2.0
 libdata/pkgconfig/libosip2.pc
 @dirrm include/osipparser2/headers
 @dirrm include/osipparser2
