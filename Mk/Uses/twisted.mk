@@ -7,7 +7,7 @@
 # Valid ARGS:
 #				build	Adds twisted and any additional component as build
 #						dependency to the port
-#				run		Adds twisted and any additional component as build
+#				run	Adds twisted and any additional component as run
 #						dependency to the port
 #				comp	Adds the specified twisted component to as build or
 #						run dependency to the ports
