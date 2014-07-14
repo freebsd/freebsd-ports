@@ -1,4 +1,3 @@
-@group ossec
 %%PORTNAME%%/active-response/bin/disable-account.sh
 %%PORTNAME%%/active-response/bin/firewall-drop.sh
 %%PORTNAME%%/active-response/bin/host-deny.sh
@@ -15,8 +14,11 @@
 %%PORTNAME%%/bin/ossec-control
 %%PORTNAME%%/bin/ossec-execd
 %%PORTNAME%%/bin/ossec-logcollector
+%%PORTNAME%%/bin/ossec-lua
+%%PORTNAME%%/bin/ossec-luac
 %%PORTNAME%%/bin/ossec-syscheckd
 %%PORTNAME%%/bin/util.sh
+@group ossec
 %%PORTNAME%%/etc/shared/cis_debian_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel5_linux_rcl.txt
