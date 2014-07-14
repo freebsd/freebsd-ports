@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/bin/__init__.py
@@ -12,9 +14,7 @@
 %%WWWDIR%%/bin/yuicompressor-2.3.5.jar
 %%WWWDIR%%/clean.py
 %%WWWDIR%%/compile.py
-@unexec if cmp -s %D/www/qwebirc/config.py.example %D/www/qwebirc/config.py; then rm -f %D/www/qwebirc/config.py; fi
-%%WWWDIR%%/config.py.example
-@exec if [ ! -f %D/www/qwebirc/config.py ] ; then cp -p %D/%F %B/config.py; fi
+@sample %%WWWDIR%%/config.py.sample
 %%WWWDIR%%/css/colours.css
 %%WWWDIR%%/css/dialogs.css
 %%WWWDIR%%/css/mochaui.css
@@ -159,6 +159,8 @@
 %%WWWDIR%%/static/sound/soundmanager2.swf
 %%WWWDIR%%/static/sound/soundmanager2_flash9.swf
 %%WWWDIR%%/twisted/plugins/webirc.py
+@group
+@owner
 @dirrm %%WWWDIR%%/twisted/plugins
 @dirrm %%WWWDIR%%/twisted
 @dirrm %%WWWDIR%%/static/sound
