@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	heroku
-PORTVERSION=	3.7.3
+PORTVERSION=	3.9.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
