@@ -1,3 +1,15 @@
+@stopdaemon backuppc
+@unexec if cmp -s %D/%%ETCDIR%%/config.pl %D/%%ETCDIR%%/config.pl.sample; then rm -f %D/%%ETCDIR%%/config.pl; fi
+@unexec if cmp -s %D/%%ETCDIR%%/hosts %D/%%ETCDIR%%/hosts.sample; then rm -f %D/%%ETCDIR%%/hosts; fi
+@rmtry %%ETCDIR%%/config.pl.sample
+@rmtry %%ETCDIR%%/hosts.sample
+@mode 0555
+@stopdaemon backuppc
+@unexec if cmp -s %D/%%ETCDIR%%/config.pl %D/%%ETCDIR%%/config.pl.sample; then rm -f %D/%%ETCDIR%%/config.pl; fi
+@unexec if cmp -s %D/%%ETCDIR%%/hosts %D/%%ETCDIR%%/hosts.sample; then rm -f %D/%%ETCDIR%%/hosts; fi
+@rmtry %%ETCDIR%%/config.pl.sample
+@rmtry %%ETCDIR%%/hosts.sample
+@mode 0555
 bin/BackupPC
 bin/BackupPC_archive
 bin/BackupPC_archiveHost
@@ -16,6 +28,7 @@ bin/BackupPC_tarPCCopy
 bin/BackupPC_trashClean
 bin/BackupPC_zcat
 bin/BackupPC_zipCreate
+@mode 0444
 lib/BackupPC/Attrib.pm
 lib/BackupPC/CGI/AdminOptions.pm
 lib/BackupPC/CGI/Archive.pm
@@ -72,6 +85,10 @@ lib/BackupPC/Xfer/Tar.pm
 lib/BackupPC/Zip/FileMember.pm
 lib/Net/FTP/AutoReconnect.pm
 lib/Net/FTP/RetrHandle.pm
+man/man1/backuppc.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/BackupPC.html
+%%PORTDOCS%%%%DOCSDIR%%/BackupPC.pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%WWWDIR%%/0000000.gif
 %%WWWDIR%%/0000011.gif
 %%WWWDIR%%/0001000.gif
@@ -117,30 +134,50 @@ lib/Net/FTP/RetrHandle.pm
 %%WWWDIR%%/icon-symlink.png
 %%WWWDIR%%/logo.gif
 %%WWWDIR%%/sorttable.js
-%%BPC_CGIDIR%%/BackupPC_Admin
-@rmtry %%ETCDIR%%/hosts.sample
-%%ETCDIR%%/config.pl.sample
-@dirrmtry %%BPC_CGIDIR%%
-@dirrmtry %%WWWDIR%%
-@dirrmtry share/doc/backuppc
-@dirrmtry lib/Net/FTP
-@dirrmtry lib/Net
-@dirrm lib/BackupPC/Zip
-@dirrm lib/BackupPC/Xfer
-@dirrm lib/BackupPC/Storage
-@dirrm lib/BackupPC/Lang
-@dirrm lib/BackupPC/Config
+@owner backuppc
+@group backuppc
+@mode 04554
+%%CGIDIR%%/BackupPC_Admin
+@owner
+@group
+@mode
 @dirrm lib/BackupPC/CGI
+@dirrm lib/BackupPC/Config
+@dirrm lib/BackupPC/Lang
+@dirrm lib/BackupPC/Storage
+@dirrm lib/BackupPC/Xfer
+@dirrm lib/BackupPC/Zip
 @dirrm lib/BackupPC
-@unexec echo
-@unexec echo "If you are permanently removing BackupPC, you should manually delete:"
-@unexec echo
-@unexec echo "	- the backuppc user/group:	pw userdel backuppc"
-@unexec rmdir %D/%%ETCDIR%% 2>/dev/null || echo "	- BackupPC configuration:	rm -r %D/%%ETCDIR%%"
-@dirrmtry %%BPC_DATADIR%%/cpool
-@dirrmtry %%BPC_DATADIR%%/pc
-@dirrmtry %%BPC_DATADIR%%/pool
-@dirrmtry %%BPC_DATADIR%%/trash
-@unexec rmdir %%BPC_DATADIR%% 2>/dev/null || echo "	- BackupPC data directory:	rm -r %%BPC_DATADIR%%"
-@unexec rmdir /var/log/BackupPC 2>/dev/null || echo "	- BackupPC logs directory:	rm -r /var/log/BackupPC"
-@unexec echo
+@dirrm lib/Net/FTP
+@dirrm lib/Net
+@dirrmtry %%WWWDIR%%
+@dirrmtry %%CGIDIR%%
+@exec install -d -o backuppc -g backuppc -m 0750 /var/log/BackupPC
+@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC
+@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/cpool
+@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/pc
+@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/pool
+@exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/trash
+@dirrmtry /var/log/BackupPC 
+@dirrmtry /var/db/BackupPC/cpool
+@dirrmtry /var/db/BackupPC/pc
+@dirrmtry /var/db/BackupPC/pool
+@dirrmtry /var/db/BackupPC/trash
+@dirrmtry /var/db/BackupPC
+@owner backuppc
+@group backuppc
+@dirrmtry %%ETCDIR%%
+@mode 0640
+libexec/backuppc/config.pl.pre-%%DISTVERSION%%
+@exec if [ -s %D/%F -a ! -f %D/%%ETCDIR%%/%f ]; then cp -p %D/%F %D/%%ETCDIR%%/; fi
+libexec/backuppc/config.pl
+@exec if [ ! -f %D/%%ETCDIR%%/%f ]; then cp -p %D/%F %D/%%ETCDIR%%/config.pl.sample; fi
+@exec cp -p %D/%F %D/%%ETCDIR%%/
+@mode 0644
+libexec/backuppc/hosts
+@exec if [ ! -f %D/%%ETCDIR%%/%f ]; then cp -p %D/%F %D/%%ETCDIR%%/hosts.sample; fi
+@exec cp -p %D/%F %D/%%ETCDIR%%/
+@owner
+@group
+@mode
+@dirrm libexec/backuppc
