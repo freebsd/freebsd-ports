@@ -599,6 +599,7 @@
     SUBDIR += go-pretty
     SUBDIR += go-runewidth
     SUBDIR += go-sql-driver
+    SUBDIR += go-termbox
     SUBDIR += gob2
     SUBDIR += gobject-introspection
     SUBDIR += goffice
