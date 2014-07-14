@@ -8,11 +8,12 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	An application to display Microsoft(tm) Word files
+COMMENT=	An application for displaying Microsoft(R) Word documents
 
 LICENSE=	GPLv2
 
-USES=	gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	kantiword Unix-only/fontinfo.pl
 MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	global_install
 
@@ -27,7 +28,6 @@ post-patch:
 		-e 's,/usr/share,${PREFIX}/share,g'
 	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS)/d' ${WRKSRC}/${MAKEFILE}
 	@${TOUCH} ${WRKSRC}/fontinfo.h
-	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' ${WRKSRC}/Unix-only/fontinfo.pl
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/Docs/antiword.1 ${STAGEDIR}${MANPREFIX}/man/man1
