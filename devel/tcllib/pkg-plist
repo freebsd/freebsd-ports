@@ -690,6 +690,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/comm_wire.tcllib.n.gz
 %%MAN%%man/mann/connect.tcllib.n.gz
 %%MAN%%man/mann/constants.tcllib.n.gz
+%%MAN%%man/mann/container.tcllib.n.gz
 %%MAN%%man/mann/control.tcllib.n.gz
 %%MAN%%man/mann/copyops.tcllib.n.gz
 %%MAN%%man/mann/core.tcllib.n.gz
@@ -743,8 +744,14 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/encode.tcllib.n.gz
 %%MAN%%man/mann/events.tcllib.n.gz
 %%MAN%%man/mann/expander.tcllib.n.gz
+%%MAN%%man/mann/export.tcllib.n.gz
 %%MAN%%man/mann/export_docidx.tcllib.n.gz
 %%MAN%%man/mann/export_doctoc.tcllib.n.gz
+%%MAN%%man/mann/export_html.tcllib.n.gz
+%%MAN%%man/mann/export_json.tcllib.n.gz
+%%MAN%%man/mann/export_nroff.tcllib.n.gz
+%%MAN%%man/mann/export_text.tcllib.n.gz
+%%MAN%%man/mann/export_wiki.tcllib.n.gz
 %%MAN%%man/mann/fa.tcllib.n.gz
 %%MAN%%man/mann/facade.tcllib.n.gz
 %%MAN%%man/mann/faop.tcllib.n.gz
@@ -793,11 +800,14 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/imap4.tcllib.n.gz
 %%MAN%%man/mann/imei.tcllib.n.gz
 %%MAN%%man/mann/imenu.tcllib.n.gz
+%%MAN%%man/mann/import.tcllib.n.gz
 %%MAN%%man/mann/import_docidx.tcllib.n.gz
 %%MAN%%man/mann/import_doctoc.tcllib.n.gz
+%%MAN%%man/mann/import_json.tcllib.n.gz
 %%MAN%%man/mann/ini.tcllib.n.gz
 %%MAN%%man/mann/interp.tcllib.n.gz
 %%MAN%%man/mann/interpolate.tcllib.n.gz
+%%MAN%%man/mann/introduction.tcllib.n.gz
 %%MAN%%man/mann/ip.tcllib.n.gz
 %%MAN%%man/mann/ipager.tcllib.n.gz
 %%MAN%%man/mann/irc.tcllib.n.gz
@@ -844,6 +854,10 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/montecarlo.tcllib.n.gz
 %%MAN%%man/mann/mpexpand.tcllib.n.gz
 %%MAN%%man/mann/msgcat.tcllib.n.gz
+%%MAN%%man/mann/msgcat_c.tcllib.n.gz
+%%MAN%%man/mann/msgcat_de.tcllib.n.gz
+%%MAN%%man/mann/msgcat_en.tcllib.n.gz
+%%MAN%%man/mann/msgcat_fr.tcllib.n.gz
 %%MAN%%man/mann/multi.tcllib.n.gz
 %%MAN%%man/mann/multiop.tcllib.n.gz
 %%MAN%%man/mann/multiplexer.tcllib.n.gz
@@ -878,6 +892,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/page_util_norm_peg.tcllib.n.gz
 %%MAN%%man/mann/page_util_peg.tcllib.n.gz
 %%MAN%%man/mann/page_util_quote.tcllib.n.gz
+%%MAN%%man/mann/parse.tcllib.n.gz
 %%MAN%%man/mann/peg.tcllib.n.gz
 %%MAN%%man/mann/peg_interp.tcllib.n.gz
 %%MAN%%man/mann/picoirc.tcllib.n.gz
@@ -977,6 +992,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/struct_set.tcllib.n.gz
 %%MAN%%man/mann/struct_tree.tcllib.n.gz
 %%MAN%%man/mann/struct_tree1.tcllib.n.gz
+%%MAN%%man/mann/structure.tcllib.n.gz
 %%MAN%%man/mann/sum.tcllib.n.gz
 %%MAN%%man/mann/switched.tcllib.n.gz
 %%MAN%%man/mann/symdiff.tcllib.n.gz
