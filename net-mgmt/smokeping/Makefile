@@ -3,6 +3,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.6.9
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -10,7 +11,9 @@ MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Latency logging and graphing system
 
-LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
 BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
@@ -31,69 +34,6 @@ CONFIGURE_ARGS+=	\
 HTDOCSDIR=	${PREFIX}/smokeping/htdocs
 
 USE_RC_SUBR=	smokeping
-
-MAN1=		smokeping.1 \
-		smokeping_cgi.1 \
-		tSmoke.1
-MAN3=		Smokeping_matchers_Avgratio.3 \
-		Smokeping_matchers_CheckLatency.3 \
-		Smokeping_matchers_CheckLoss.3 \
-		Smokeping_matchers_ExpLoss.3 \
-		Smokeping_matchers_Median.3 \
-		Smokeping_matchers_Medratio.3 \
-		Smokeping_matchers_base.3 \
-		Smokeping_probes_AnotherDNS.3 \
-		Smokeping_probes_AnotherSSH.3 \
-		Smokeping_probes_CiscoRTTMonDNS.3 \
-		Smokeping_probes_CiscoRTTMonEchoICMP.3 \
-		Smokeping_probes_CiscoRTTMonTcpConnect.3 \
-		Smokeping_probes_Curl.3 \
-		Smokeping_probes_DNS.3 \
-		Smokeping_probes_DismanPing.3 \
-		Smokeping_probes_EchoPing.3 \
-		Smokeping_probes_EchoPingChargen.3 \
-		Smokeping_probes_EchoPingDNS.3 \
-		Smokeping_probes_EchoPingDiscard.3 \
-		Smokeping_probes_EchoPingHttp.3 \
-		Smokeping_probes_EchoPingHttps.3 \
-		Smokeping_probes_EchoPingIcp.3 \
-		Smokeping_probes_EchoPingLDAP.3 \
-		Smokeping_probes_EchoPingPlugin.3 \
-		Smokeping_probes_EchoPingSmtp.3 \
-		Smokeping_probes_EchoPingWhois.3 \
-		Smokeping_probes_FPing.3 \
-		Smokeping_probes_FPing6.3 \
-		Smokeping_probes_FTPtransfer.3 \
-		Smokeping_probes_IOSPing.3 \
-		Smokeping_probes_LDAP.3 \
-		Smokeping_probes_NFSping.3 \
-		Smokeping_probes_OpenSSHJunOSPing.3 \
-		Smokeping_probes_Radius.3 \
-		Smokeping_probes_RemoteFPing.3 \
-		Smokeping_probes_SendEmail.3 \
-		Smokeping_probes_SSH.3 \
-		Smokeping_probes_SipSak.3 \
-		Smokeping_probes_TCPPing.3 \
-		Smokeping_probes_TacacsPlus.3 \
-		Smokeping_probes_TelnetIOSPing.3 \
-		Smokeping_probes_TelnetJunOSPing.3 \
-		Smokeping_probes_WebProxyFilter.3 \
-		Smokeping_probes_base.3 \
-		Smokeping_probes_basefork.3 \
-		Smokeping_probes_basevars.3 \
-		Smokeping_probes_passwordchecker.3 \
-		Smokeping_probes_skel.3 \
-		Smokeping_sorters_Loss.3 \
-		Smokeping_sorters_Max.3 \
-		Smokeping_sorters_Median.3 \
-		Smokeping_sorters_StdDev.3 \
-		Smokeping_sorters_base.3
-MAN5=		smokeping_config.5 \
-		smokeping_examples.5
-MAN7=		smokeping_extend.7 \
-		smokeping_install.7 \
-		smokeping_master_slave.7 \
-		smokeping_upgrade.7
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
@@ -116,7 +56,6 @@ DNS_DESC=	Support for AnotherDNS probes
 OPTIONS_DEFINE=	ECHOPING CURL RADIUS TELNET DNS FPING LDAP LDAPSSL
 OPTIONS_DEFAULT=	FPING
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFPING}
@@ -165,14 +104,14 @@ post-patch:
 		${WRKSRC}/bin/tSmoke
 
 post-install:
-.for FILE in basepage.html config smokemail tmail
-	[ -f ${ETCDIR}/${FILE} ] || ${CP} ${ETCDIR}/${FILE}.dist ${ETCDIR}/${FILE}
+.for FILE in basepage.html config smokemail smokeping_secrets tmail
+	${MV} ${STAGEDIR}/${ETCDIR}/${FILE}.dist ${STAGEDIR}/${ETCDIR}/${FILE}.sample
 .endfor
-	[ -f ${PREFIX}/smokeping/htdocs/smokeping.fcgi ] || ${CP} ${PREFIX}/smokeping/htdocs/smokeping.fcgi.dist ${PREFIX}/smokeping/htdocs/smokeping.fcgi
-	${MKDIR} ${PREFIX}/smokeping/htdocs/img
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs
-	${MKDIR} ${PREFIX}/var/smokeping
-	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/var/smokeping
+	${MV} ${STAGEDIR}/${PREFIX}/smokeping/htdocs/smokeping.fcgi.dist ${STAGEDIR}/${PREFIX}/smokeping/htdocs/smokeping.fcgi.sample
+
+	${MKDIR} ${STAGEDIR}/${PREFIX}/smokeping/htdocs/img
+	${MKDIR} ${STAGEDIR}/${PREFIX}/var/smokeping
+
 .if !defined(BATCH)
 	${CAT} ${PKGMESSAGE}
 .endif
