@@ -25,11 +25,12 @@ USE_LDCONFIG=	yes
 
 CONFLICTS=	spandsp-[0-9]*
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOCS
+DOCS_DESC=	Build and install documentation (requires doxygen)
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 CONFIGURE_ARGS+=--enable-doc
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
@@ -42,7 +43,7 @@ CONFIGURE_ARGS+=--disable-doc
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspandsp.so.2
 
-.if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "-type d -or -mindepth 1")
