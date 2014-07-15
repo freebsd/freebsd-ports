@@ -9,9 +9,9 @@ etc/radiusclient/radiusclient.conf
 etc/radiusclient/servers
 include/freeradius-client.h
 lib/libfreeradius-client.a
-lib/libfreeradius-client.la
 lib/libfreeradius-client.so
 lib/libfreeradius-client.so.2
+lib/libfreeradius-client.so.2.0.0
 sbin/login.radius
 sbin/radacct
 sbin/radembedded
