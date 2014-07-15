@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-MAT
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +15,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-List-UtilsBy>=0:${PORTSDIR}/devel/p5-List-UtilsBy
+		p5-List-UtilsBy>=0:${PORTSDIR}/devel/p5-List-UtilsBy \
+		p5-Struct-Dumb>=0:${PORTSDIR}/devel/p5-Struct-Dumb
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
