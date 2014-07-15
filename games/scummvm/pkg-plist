@@ -8,7 +8,7 @@ share/applications/scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/man/man6/scummvm.6
+share/man/man6/scummvm.6.gz
 share/pixmaps/scummvm.xpm
 %%DATADIR%%/drascula.dat
 %%DATADIR%%/hugo.dat
