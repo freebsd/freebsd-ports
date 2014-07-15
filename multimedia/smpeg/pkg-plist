@@ -11,10 +11,10 @@ include/smpeg/MPEGstream.h
 include/smpeg/MPEGsystem.h
 include/smpeg/MPEGvideo.h
 include/smpeg/smpeg.h
+lib/libsmpeg-0.4.so.0
+lib/libsmpeg-0.4.so.0.1.3
 lib/libsmpeg.a
-lib/libsmpeg.la
 lib/libsmpeg.so
-lib/libsmpeg.so.1
 share/aclocal/smpeg.m4
 man/man1/gtv.1.gz
 man/man1/plaympeg.1.gz

@@ -11,10 +11,10 @@ include/smpeg2/MPEGstream.h
 include/smpeg2/MPEGsystem.h
 include/smpeg2/MPEGvideo.h
 include/smpeg2/smpeg.h
+lib/libsmpeg2-2.0.so.0
+lib/libsmpeg2-2.0.so.0.0.0
 lib/libsmpeg2.a
 lib/libsmpeg2.so
-lib/libsmpeg2.so.0
-lib/libsmpeg2.so.0.0.0
 %%PLAYMPEG%%man/man1/plaympeg.1.gz
 share/aclocal/smpeg2.m4
 @dirrm include/smpeg2

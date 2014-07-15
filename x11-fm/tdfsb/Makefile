@@ -3,12 +3,12 @@
 
 PORTNAME=	tdfsb
 PORTVERSION=	0.0.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.determinate.net/webdata/data/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3D filesystem browser
+COMMENT=	3D filesystem browser
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
