@@ -3,7 +3,7 @@
 
 PORTNAME=	libquvi
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
@@ -24,8 +24,9 @@ PORTSCOUT=	limit:0.4.[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		iconv libtool lua pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USES=		iconv lua pathfix pkgconfig tar:xz
 
 PROJECTHOST=	quvi
 
