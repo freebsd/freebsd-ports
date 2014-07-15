@@ -16,7 +16,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fon
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig \
 		xorg-fonts-truetype>=0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 
-OPTIONS_DEFINE=		IPTVPATCH TTXPATCH STB0899_SIGNAL
+OPTIONS_DEFINE=		IPTVPATCH TTXPATCH STB0899_SIGNAL DOCS NLS
 IPTVPATCH_DESC=		Stops EIT scans on IPTV channels
 TTXPATCH_DESC=		Support patches for teletext subtitle plugin
 DVBPATCH_DESC=		DVB audio patch for some countries
