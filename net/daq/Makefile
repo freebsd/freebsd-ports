@@ -3,6 +3,7 @@
 
 PORTNAME=	daq
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
@@ -18,12 +19,12 @@ LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
 BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		bison gmake libtool
 USE_LDCONFIG=	yes
-USES=		bison gmake
-USE_AUTOTOOLS=	libtool
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
