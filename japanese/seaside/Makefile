@@ -24,11 +24,10 @@ FILES_TO_INSTALL=	Seaside-JPatched${DISTVERSION}.image \
 PLIST_SUB=	DATADIR=lib/squeak \
 		SEASIDEVERSION=${DISTVERSION}
 
-NO_STAGE=	yes
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/squeak
 .for f in ${FILES_TO_INSTALL}
-	(cd ${WRKDIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)
+	(cd ${WRKDIR} && ${INSTALL_DATA} ${f} ${STAGEDIR}${PREFIX}/lib/squeak/)
 .endfor
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
