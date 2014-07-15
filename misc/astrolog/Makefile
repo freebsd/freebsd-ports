@@ -35,7 +35,7 @@ NO_WRKSUBDIR=	yes
 
 PORTDOCS=	helpfile.540 readme.541 changes.txt
 
-OPTIONS_DEFINE=	X11
+OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=X11
 
 .include <bsd.port.options.mk>

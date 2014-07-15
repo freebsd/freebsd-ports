@@ -17,6 +17,8 @@ CONFIGURE_ARGS+=--with-etcdir=${ETCDIR}
 USES=		desthack
 USE_RC_SUBR=	logsurfer
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-install:
