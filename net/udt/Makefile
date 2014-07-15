@@ -20,6 +20,8 @@ USE_LDCONFIG=	yes
 UDT_APPS=	appclient appserver recvfile sendfile test
 USES=		uidfix
 
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	# Building sample applications:
 .for a in ${UDT_APPS}

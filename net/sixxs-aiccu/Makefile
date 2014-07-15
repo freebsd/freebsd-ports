@@ -27,8 +27,8 @@ WRKSRC=		${WRKDIR}/aiccu
 BUILD_WRKSRC=	${WRKDIR}/aiccu/unix-console
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	LOG_DAEMON
-LOG_DAEMON_DESC=	log to LOG_DAEMON instead to LOG_LOCAL7
+OPTIONS_DEFINE=	LOG_DAEMON DOCS
+LOG_DAEMON_DESC=Log to LOG_DAEMON instead to LOG_LOCAL7
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -51,10 +51,8 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix-console/aiccu ${STAGEDIR}${PREFIX}/sbin/sixxs-aiccu
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/README ${STAGEDIR}${DOCSDIR}/
-.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/aiccu.conf ${STAGEDIR}${PREFIX}/etc/aiccu.conf.sample
 
 .include <bsd.port.mk>

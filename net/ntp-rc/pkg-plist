@@ -213,13 +213,13 @@ man/man1/ntp-keygen.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/sntp.html
 %%PORTDOCS%%%%DOCSDIR%%/tickadj.html
 %%PORTDOCS%%%%DOCSDIR%%/xleave.html
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/baldwin.conf
-%%EXAMPLESDIR%%/beauregard.conf
-%%EXAMPLESDIR%%/grundoon.conf
-%%EXAMPLESDIR%%/malarky.conf
-%%EXAMPLESDIR%%/pogo.conf
-%%EXAMPLESDIR%%/rackety.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/baldwin.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beauregard.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grundoon.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/malarky.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pogo.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rackety.conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pic
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
@@ -229,4 +229,4 @@ man/man1/ntp-keygen.1.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/description_files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
