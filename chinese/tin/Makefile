@@ -7,8 +7,6 @@ CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		Fails to patch
-
 EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 		${.CURDIR}/files/patch-cook.c \
 		${.CURDIR}/files/patch-mail.c \
