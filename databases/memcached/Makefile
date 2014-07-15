@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.17
-PORTREVISION=	2
+PORTVERSION=	1.4.20
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -21,11 +20,15 @@ CONFLICTS=	memcached-1.2*
 
 # Dtrace option disabled until it is fixed upstream
 OPTIONS_DEFINE=	SASL DOCS
+
 DTRACE_DESC=	Enable dtrace probes
 SASL_DESC=	Enable SASL Authentication
 
 USE_RC_SUBR=	memcached
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+
+USES=		shebangfix
+SHEBANG_FILES=	scripts/memcached-tool
 
 USE_CSTD=	c99
 GNU_CONFIGURE=	yes
@@ -44,7 +47,7 @@ CFLAGS+=	-fstack-protector \
 		-I${LOCALBASE}/include/event2/compat \
 		-I${LOCALBASE}/include
 
-DTRACE_COFNIGURE_ENABLE=	dtrace
+DTRACE_CONFIGURE_ENABLE=	dtrace
 
 SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 SASL_CONFIGURE_ENABLE=	sasl
@@ -71,7 +74,6 @@ post-install:
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-
 
 regression-test: test
 test: build
