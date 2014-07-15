@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	frogatto
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	games
-MASTER_SITES=	GH
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Old-school 2D classic adventure platformer game
@@ -17,52 +15,48 @@ NO_PACKAGE=	Package will be 144M, set FORCE_PACKAGE if you really want it
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	frogatto
-GH_PROGECT=	frogatto
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	64c84bf
+GH_COMMIT=	58bd7c6
 
-USES=		gmake
+USES=		gmake pkgconfig
 ALL_TARGET=	game server
 USE_GL=		glew
 USE_SDL=	image mixer ttf
 
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-server
 
-NO_STAGE=	yes
 post-patch:
-# Sanitize Makefile: honor CC/CXX and C[XX]FLAGS, trim `-mt' suffix from boost
-# libraries, remove superfluous libraries when linking server executable (add
-# missing -pthread instead), etc.
-	@${REINPLACE_CMD} -E -e 's,= (ccache )?gcc,:= $$(CC) $$(CFLAGS),' \
-		-e 's,= (ccache )?g\+\+,:= $$(CXX) $$(CXXFLAGS),' \
-		-e 's, -O2,, ; s, -g,, ; s, -L/usr/lib,, ; s, -L/sw/lib,,' \
-		-e '/server/s,`.*mixer,-L${LOCALBASE}/lib ${PTHREAD_LIBS},' \
-		-e 's,-mt,,g' -e 's,-lpng,-lpng15,g' ${WRKSRC}/Makefile
+	@${ECHO_CMD} >> ${WRKSRC}/src/difficulty.hpp
+	@${REINPLACE_CMD} -e 's,%lu,%u,' ${WRKSRC}/src/server.cpp
+	@${REINPLACE_CMD} -e 's,__linux__,__${OPSYS}__,' \
+		${WRKSRC}/src/clipboard.cpp
 # Point to the right location where to look for resources on FreeBSD
 	@${REINPLACE_CMD} -e 's,HAVE_CONFIG_H,__FreeBSD__,' \
 		-e 's,DATADIR,"${DATADIR}",' ${WRKSRC}/src/filesystem.cpp
-	@${REINPLACE_CMD} -E 's,(music|sounds)/,${DATADIR}/&,' \
+	@${REINPLACE_CMD} -e 's,itor->second,"${DATADIR}/" + &,' \
 		${WRKSRC}/src/sound.cpp
 	@${REINPLACE_CMD} -e '/\/locale\//s,\.,${PREFIX}/share,' \
 		${WRKSRC}/src/i18n.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/game ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/server ${PREFIX}/bin/${PORTNAME}-server
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "data images music sounds" \
-		${DATADIR}
-	cd ${WRKSRC}/locale && ${MV} hu_HU hu && ${MV} ms_MY ms
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "locale" ${PREFIX}/share
-# Fix permissions on DATADIR after COPYTREE_SHARE (cpio(1) defaults to 700
-# if target directory (${DATADIR}) does not exist)
-	@${CHMOD} 755 ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/game ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/server \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-server
+	cd ${WRKSRC}/modules/frogatto/locale && \
+		${MV} hu_HU hu && ${MV} ms_MY ms
+	cd ${WRKSRC}/modules/frogatto && ${COPYTREE_SHARE} \
+		locale ${STAGEDIR}${PREFIX}/share
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "data images music modules utils" \
+		${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.ttf *.cfg ${STAGEDIR}${DATADIR}
 # Dynamically generate part of the PLIST for NLS files and game resources
-# (lots of them)
-	@${FIND} ${PREFIX}/share/locale -name ${PORTNAME}.mo | \
-		${SED} 's,^${PREFIX}/,,' | ${SORT} >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -not -type d | \
-		${SED} 's,^${PREFIX}/,,' | ${SORT} >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' | ${SORT} -r >> ${TMPPLIST}
+# (really lots of them)
+	@${FIND} ${STAGEDIR}${PREFIX}/share/locale -name ${PORTNAME}.mo | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' | ${SORT} >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -not -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' | ${SORT} >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' | \
+			${SORT} -r >> ${TMPPLIST}
 
 .include <bsd.port.mk>

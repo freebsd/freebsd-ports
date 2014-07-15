@@ -1,0 +1,47 @@
+--- Makefile.orig
++++ Makefile
+@@ -22,7 +22,7 @@
+ #                     found in PATH), this option has no effect.
+ #
+ 
+-OPTIMIZE=yes
++OPTIMIZE=no
+ CCACHE?=ccache
+ USE_CCACHE?=$(shell which $(CCACHE) 2>&1 > /dev/null && echo yes)
+ ifneq ($(USE_CCACHE),yes)
+@@ -34,14 +34,14 @@ BASE_CXXFLAGS += -O2
+ endif
+ 
+ # Initial compiler options, used before CXXFLAGS and CPPFLAGS.
+-BASE_CXXFLAGS += -g -fno-inline-functions -fthreadsafe-statics -Wnon-virtual-dtor -Werror -Wignored-qualifiers -Wformat -Wswitch
++BASE_CXXFLAGS += -fno-inline-functions -fthreadsafe-statics -Wnon-virtual-dtor -Werror -Wformat -Wswitch
+ 
+ # Compiler include options, used after CXXFLAGS and CPPFLAGS.
+-INC := $(shell pkg-config --cflags x11 sdl glu glew SDL_image libpng zlib)
++INC := $(shell pkg-config --cflags x11 sdl glu glew SDL_image libpng)
+ 
+ # Linker library options.
+ LIBS := $(shell pkg-config --libs x11 ) -lSDLmain \
+-	$(shell pkg-config --libs sdl glu glew SDL_image libpng zlib) -lSDL_ttf -lSDL_mixer
++	$(shell pkg-config --libs sdl glu glew SDL_image libpng) -lSDL_ttf -lSDL_mixer
+ 
+ include Makefile.common
+ 
+@@ -60,7 +60,7 @@ game: $(objects)
+ 	$(CCACHE) $(CXX) \
+ 		$(BASE_CXXFLAGS) $(LDFLAGS) $(CXXFLAGS) $(CPPFLAGS) $(INC) \
+ 		$(objects) -o game \
+-		$(LIBS) -lboost_regex-mt -lboost_system-mt -lpthread -fthreadsafe-statics
++		$(LIBS) -lboost_regex -lboost_system -lpthread -fthreadsafe-statics
+ 
+ # pull in dependency info for *existing* .o files
+ -include $(objects:.o=.d)
+@@ -69,7 +69,7 @@ server: $(server_objects)
+ 	$(CCACHE) $(CXX) \
+ 		$(BASE_CXXFLAGS) $(LDFLAGS) $(CXXFLAGS) $(CPPFLAGS) \
+ 		$(server_objects) -o server \
+-		$(LIBS) -lboost_regex-mt -lboost_system-mt -lboost_thread-mt -lboost_iostreams-mt
++		$(LIBS) -lboost_regex -lboost_system -lboost_thread -lboost_iostreams
+ 
+ clean:
+ 	rm -f *.o *.d game
