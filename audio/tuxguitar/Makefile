@@ -38,6 +38,8 @@ NOCCACHE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}/TuxGuitar
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 PLUGINS=	ascii browser-ftp compat converter fluidsynth gervill gtp \
 		jsa lilypond midi musicxml oss pdf ptb tef tray tuner

@@ -23,7 +23,7 @@ RESTRICTED=	author requests no distribution except from their site
 PORTDOCS=	README_unix.txt
 PLIST_FILES=	bin/baudline
 
-OPTIONS_DEFINE=		MPG123
+OPTIONS_DEFINE=		MPG123 DOCS
 OPTIONS_DEFAULT=	MPG123
 
 MMPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
