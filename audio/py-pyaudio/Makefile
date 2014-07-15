@@ -10,8 +10,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Portaudio toolkit bindings for Python
 
-OPTIONS_DEFINE=	DOCS
-
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio2
 
 USE_PYTHON=		yes

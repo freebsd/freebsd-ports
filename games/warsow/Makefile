@@ -30,7 +30,7 @@ PLIST_FILES=	%%DATADIR%%/basewsw/game_${ARCH}.so \
 		%%DATADIR%%/libs/angelwrap_${ARCH}.so
 PLIST_DIRS=	%%DATADIR%%/basewsw %%DATADIR%%/libs %%DATADIR%%
 
-OPTIONS_DEFINE=	CLIENT SERVER FTLIB REF_GL QF OPENAL IRC CIN TV_SRV
+OPTIONS_DEFINE=	CLIENT SERVER FTLIB REF_GL QF OPENAL IRC CIN TV_SRV DOCS
 OPTIONS_DEFAULT=	CLIENT SERVER FTLIB REF_GL QF OPENAL IRC CIN TV_SRV
 
 CLIENT_DESC=	Build game client
@@ -44,7 +44,6 @@ CIN_DESC=	Build Cinematics playback module
 TV_SRV_DESC=	Build Warsow TV server
 
 PORTDOCS=	*.rtf *.doc sourcecode_quickstart.txt
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

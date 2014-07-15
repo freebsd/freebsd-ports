@@ -34,8 +34,6 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	OPENAL SDL_MIXER
 SDL_MIXER_DESC=	SDL_mixer sound backend
 
-OPTIONS_DEFINE=	OPENAL SDL_MIXER
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}

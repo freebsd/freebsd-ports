@@ -10,8 +10,6 @@ MASTER_SITES=	SF
 MAINTAINER=	sperber@FreeBSD.org
 COMMENT=	Graph-based SSA intermediate representation library for compilers
 
-OPTIONS_DEFINE=	DEBUG
-
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
