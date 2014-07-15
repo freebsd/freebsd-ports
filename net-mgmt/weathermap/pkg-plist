@@ -1,10 +1,10 @@
 bin/weathermap
-%%EXAMPLESDIR%%/weathermap.conf
-%%EXAMPLESDIR%%/weathermap.html
-%%EXAMPLESDIR%%/weathermap.png
-%%EXAMPLESDIR%%/overlib_mini.js
-%%EXAMPLESDIR%%/weathermap-background.png
-%%EXAMPLESDIR%%/weathermap-overlib.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/overlib_mini.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap-background.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/weathermap-overlib.html
 @sample etc/weathermap/weathermap.conf.sample
 @dirrmtry etc/weathermap
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
