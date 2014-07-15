@@ -5,7 +5,7 @@
 # while updating this port!
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.4205
+PORTVERSION=	0.4206
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
