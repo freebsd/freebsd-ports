@@ -105,10 +105,8 @@ libexec/filters/pythonfilter-quarantine
 @owner courier
 @group courier
 @dirrmtry %%LOCALSTATEDIR%%/pythonfilter
-@group courier
-@owner courier
-@dirrmtry %%LOCALSTATEDIR%%
+@group
+@owner
 @dirrm %%PYTHON_SITELIBDIR%%/courier
 @dirrm %%PYTHON_SITELIBDIR%%/pythonfilter
 @dirrm %%PYTHON_SITELIBDIR%%/courier_pythonfilter-1.6-py2.7.egg-info
-@dirrmtry libexec/filters
