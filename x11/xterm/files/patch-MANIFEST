@@ -1,8 +1,0 @@
---- ./MANIFEST.orig	2014-06-28 16:34:28.000000000 +0200
-+++ ./MANIFEST	2014-07-15 09:09:15.487622345 +0200
-@@ -1,4 +1,4 @@
--MANIFEST for xterm-309, version xterm-309
-+MANIFEST for xterm-310, version xterm-310
- --------------------------------------------------------------------------------
- MANIFEST                        this file
- 256colres.h                     resource-definitions for 256-color mode
