@@ -3,6 +3,7 @@
 
 PORTNAME=	libantlr3c
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.antlr3.org/download/C/
 

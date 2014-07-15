@@ -1,6 +1,14 @@
 --- configure.orig	2014-06-29 05:47:03.653220480 +0600
 +++ configure	2014-06-29 05:52:37.044197079 +0600
-@@ -10721,7 +10721,7 @@
+@@ -10657,7 +10657,6 @@
+  ;;
+ esac
+ 
+-CFLAGS="$CCFLAGS64 $CPPCMNTFLAGS $OPTIMFLAGS $DEBUGFLAGS $WARNFLAGS"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $CFLAGS" >&5
+ $as_echo "$CFLAGS" >&6; }
+ 
+@@ -10721,7 +10720,7 @@
  
  # Checks for header files.
  $ac_includes_default
@@ -9,7 +17,7 @@
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_c_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "#ifdef HAVE_SYS_TYPES_H
-@@ -10736,6 +10736,10 @@
+@@ -10736,6 +10735,10 @@
  #ifdef HAVE_NETDB_H
  #  include <netdb.h>
  #endif
@@ -20,7 +28,7 @@
  "
  if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
    cat >>confdefs.h <<_ACEOF
-@@ -10818,23 +10822,6 @@
+@@ -10818,23 +10821,6 @@
  done
  
  

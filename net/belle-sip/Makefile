@@ -2,6 +2,7 @@
 
 PORTNAME=	belle-sip
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/${PORTNAME}/:source1 \
 		http://www.antlr3.org/download/:source2
