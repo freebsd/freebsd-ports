@@ -6254,3 +6254,6 @@ graphics/py-stl|graphics/py-stltools|2014-07-13|Upstream project has been rename
 audio/muine||2014-07-13|Has expired: Fails to build/run since August 2013
 x11-themes/kde4-windeco-nitrogen||2014-07-14|Has expired: Merged with the Oxygen windeco included with KDE4
 net/linphone-base||2014-07-14|Split into separate components
+databases/py-simplecouchdb||2014-07-15|Has expired: Obsolete, abandoned
+audio/xmms-bonk||2014-07-15|Has expired: Obsolete experimental codec, use audio/flac or audio/wavpack
+audio/bonk||2014-07-15|Has expired: Obsolete experimental codec, use audio/flac or audio/wavpack
