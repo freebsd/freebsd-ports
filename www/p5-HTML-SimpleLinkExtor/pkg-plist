@@ -4,8 +4,6 @@ bin/linktractor
 %%SITE_PERL%%/auto/HTML/SimpleLinkExtor/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SimpleLinkExtor/.packlist
 man/man1/linktractor.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SimpleLinkExtor
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/auto/HTML/SimpleLinkExtor
 @dirrmtry %%SITE_PERL%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SimpleLinkExtor
