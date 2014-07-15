@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mosquitto
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
 
@@ -55,5 +55,10 @@ post-install:
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man1/mosquitto_sub.1
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man1/mosquitto_pub.1
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man1/mosquitto_passwd.1
+	# Adjust configuration files
+	${MV} ${STAGEDIR}${PREFIX}/etc/mosquitto/mosquitto.conf.example ${STAGEDIR}${PREFIX}/etc/mosquitto/mosquitto.conf.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/mosquitto/pwfile.example ${STAGEDIR}${PREFIX}/etc/mosquitto/pwfile.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/mosquitto/pskfile.example ${STAGEDIR}${PREFIX}/etc/mosquitto/pskfile.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/mosquitto/aclfile.example ${STAGEDIR}${PREFIX}/etc/mosquitto/aclfile.sample
 
 .include <bsd.port.mk>
