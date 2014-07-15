@@ -17,6 +17,8 @@ COMMENT=	Routines for performing multithreaded sparse factorization
 
 USES=		fortran gmake
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)

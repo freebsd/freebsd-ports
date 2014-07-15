@@ -22,6 +22,8 @@ ALL_TARGET=	xppaut
 post-build:
 	${RM} -f ${WRKSRC}/ode/._*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MDOCS}

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Graph manipulation library for OCaml
 
-OPTIONS_DEFINE=	GUI
+OPTIONS_DEFINE=	GUI DOCS
 OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 GUI_DESC=		Include GUI user programs: viewer and editor

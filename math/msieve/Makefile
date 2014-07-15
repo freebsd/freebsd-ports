@@ -23,7 +23,7 @@ PLIST_FILES=	bin/msieve lib/libmsieve.a ${HEADERS:S|^|include/msieve/|}
 PLIST_DIRS=	include/msieve
 PORTDOCS=	Changes Readme Readme.nfs Readme.qs
 
-OPTIONS_DEFINE=		OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=		OPTIMIZED_CFLAGS DOCS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.options.mk>

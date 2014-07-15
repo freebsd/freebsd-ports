@@ -20,7 +20,7 @@ CONFLICTS=	arpack-[0-9]*
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS =	--disable-mpi --with-blas="${BLAS}" \
+CONFIGURE_ARGS=	--disable-mpi --with-blas="${BLAS}" \
 			--with-lapack="${LAPACK}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -31,6 +31,8 @@ PLIST_FILES=	lib/libarpack.a \
 		libdata/pkgconfig/arpack.pc
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 

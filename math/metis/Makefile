@@ -15,7 +15,7 @@ CONFLICTS=	metis4-4* metis-edf-[0-9]*
 
 USES=		cmake
 
-OPTIONS_DEFINE =	OPENMP SHARED STATIC
+OPTIONS_DEFINE=	OPENMP SHARED STATIC DOCS
 
 OPENMP_DESC=	multithreading via OpenMP
 #PROFILE_DESC=	profiling libraries
