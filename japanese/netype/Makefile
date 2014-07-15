@@ -19,5 +19,4 @@ COMMENT=	Network Type Trainer client program
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
