@@ -38,6 +38,8 @@ PORTDOCS=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
 
 INFO=		gforth vmgen
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 || ${ARCH} == powerpc

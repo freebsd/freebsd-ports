@@ -33,7 +33,7 @@ DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
 		manual_frame.html newLISPdoc.html \
 		newlisp_index.html newlisp_manual.html \
 
-OPTIONS_DEFINE=	GMP GSL MYSQL PGSQL SQLITE GUISERV
+OPTIONS_DEFINE=	GMP GSL MYSQL PGSQL SQLITE GUISERV DOCS EXAMPLES
 GSL_DESC=	GSL (GNU Scientific Library)
 GUISERV_DESC=	Install GUI server (in Java)
 
