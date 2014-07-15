@@ -20,14 +20,11 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
-USES=		cmake pkgconfig shared-mime-info
-USE_BZIP2=	yes
+USES=		cmake pkgconfig shared-mime-info tar:bzip2
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 
 # Keep in sync with multimedia/mlt, possibly.
 FFMPEG_SUFX=
-
-MAN1=		kdenlive.1 kdenlive_render.1
 
 OPTIONS_DEFINE=	DVDWIZARD FREI0R LADSPA NLS SCREENCAST XINE
 OPTIONS_DEFAULT=DVDWIZARD FREI0R LADSPA SCREENCAST XINE
@@ -37,7 +34,6 @@ SCREENCAST_DESC=Screen capture support via recordMyDesktop
 #V4L_DESC=	Webcam support via Video 4 Linux
 XINE_DESC=	DVD preview support via xine
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVDWIZARD}
