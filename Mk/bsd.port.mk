@@ -853,7 +853,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_TARGET
 #				- The name of target to call when GNU_CONFIGURE is
 #				  defined.
-#				  Default: ${ARCH}-portbld-freebsd${OSREL}
+#				  Default: ${ARCH}-portbld-${OPSYS:tl}${OSREL}
 # GNU_CONFIGURE_PREFIX
 #				- The directory passed as prefix to the configure script if
 #				  GNU_CONFIGURE is set.
@@ -2754,7 +2754,7 @@ LATEST_LINK?=		${PKGBASE}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
-CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET?=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_TARGET:=	${CONFIGURE_TARGET:S/--build=//}
 CONFIGURE_LOG?=		config.log
 
