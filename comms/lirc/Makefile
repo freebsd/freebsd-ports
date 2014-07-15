@@ -28,7 +28,7 @@ CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	MINIMAL DEBUG UARTLIRC
+OPTIONS_DEFINE=	MINIMAL DEBUG UARTLIRC DOCS EXAMPLES
 
 MINIMAL_DESC=	Build with minmal dependencies
 UARTLIRC_DESC=	Install serial LIRC driver
