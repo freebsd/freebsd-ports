@@ -12,7 +12,7 @@ LICENSE=	BSD
 
 USE_CABAL=	network
 
-LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
