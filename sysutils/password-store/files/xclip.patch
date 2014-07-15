@@ -1,5 +1,5 @@
 diff --git a/README b/README
-index 8bee02a..fb011aa 100644
+index 1cc01b9..10f841d 100644
 --- a/README
 +++ b/README
 @@ -19,8 +19,6 @@ Depends on:
@@ -12,7 +12,7 @@ index 8bee02a..fb011aa 100644
    http://sourceforge.net/projects/pwgen/
  - tree >= 1.7.0
 diff --git a/man/pass.1 b/man/pass.1
-index 42d9aec..6608de2 100644
+index 8ac8ecf..9301122 100644
 --- a/man/pass.1
 +++ b/man/pass.1
 @@ -86,12 +86,8 @@ List names of passwords inside the tree that match \fIpass-names\fP by using the
@@ -167,7 +167,7 @@ index b658398..0ab3e43 100644
  }
  _pass_complete_entries_helper () {
 diff --git a/src/password-store.sh b/src/password-store.sh
-index 460aa63..587317a 100755
+index cfc25cc..06ddeb2 100755
 --- a/src/password-store.sh
 +++ b/src/password-store.sh
 @@ -12,8 +12,6 @@ which gpg2 &>/dev/null && GPG="gpg2"
@@ -211,9 +211,9 @@ index 460aa63..587317a 100755
 -	echo "Copied $2 to clipboard. Will clear in $CLIP_TIME seconds."
 -}
  tmpdir() {
+ 	[[ -n $SECURE_TMPDIR ]] && return
  	local warn=1
- 	[[ $1 == "nowarn" ]] && warn=0
-@@ -222,9 +193,8 @@ cmd_usage() {
+@@ -232,9 +203,8 @@ cmd_usage() {
  	        List passwords.
  	    $PROGRAM find pass-names...
  	    	List passwords that match pass-names.
@@ -225,7 +225,7 @@ index 460aa63..587317a 100755
  	    $PROGRAM grep search-string
  	        Search for password files containing search-string when decrypted.
  	    $PROGRAM insert [--echo,-e | --multiline,-m] [--force,-f] pass-name
-@@ -233,9 +203,8 @@ cmd_usage() {
+@@ -243,9 +213,8 @@ cmd_usage() {
  	        overwriting existing password unless forced.
  	    $PROGRAM edit pass-name
  	        Insert a new password or edit an existing password using ${EDITOR:-vi}.
@@ -236,7 +236,7 @@ index 460aa63..587317a 100755
  	        Prompt before overwriting existing password unless forced.
  	        Optionally replace only the first line of an existing file with a new password.
  	    $PROGRAM rm [--recursive,-r] [--force,-f] pass-name
-@@ -294,28 +263,11 @@ cmd_init() {
+@@ -304,28 +273,11 @@ cmd_init() {
  }
  
  cmd_show() {
@@ -265,7 +265,7 @@ index 460aa63..587317a 100755
  	elif [[ -d $PREFIX/$path ]]; then
  		if [[ -z $path ]]; then
  			echo "Password Store"
-@@ -434,19 +386,18 @@ cmd_edit() {
+@@ -438,19 +390,18 @@ cmd_edit() {
  }
  
  cmd_generate() {
@@ -288,7 +288,7 @@ index 460aa63..587317a 100755
  	local path="$1"
  	local length="$2"
  	check_sneaky_paths "$path"
-@@ -474,11 +425,7 @@ cmd_generate() {
+@@ -478,11 +429,7 @@ cmd_generate() {
  	[[ $inplace -eq 1 ]] && verb="Replace"
  	git_add_file "$passfile" "$verb generated password for ${path}."
  
