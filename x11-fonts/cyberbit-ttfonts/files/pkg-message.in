@@ -1,0 +1,10 @@
+You can start using the font(s) by following these instructions:
+
+Eiter type the following in an X terminal:
+	xset fp+ %%FONTDIR%%
+	xset fp rehash
+
+Or, more permanently, add the following line to the "Files" section of your
+X.Org configuration file:
+	FontPath "%%FONTDIR%%/"
+and make sure you have the "freetype" module loaded, then restart X.
