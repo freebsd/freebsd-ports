@@ -25,7 +25,9 @@ SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
 EXAMPLEFILES=	bip.conf bip.vim
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
 
 post-install:
 	@cd ${WRKSRC} && ${INSTALL} bip.1 ${STAGEDIR}${PREFIX}/man/man1
@@ -47,4 +49,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
