@@ -18,7 +18,7 @@ USES=		perl5 shebangfix
 NO_BUILD=	yes
 SHEBANG_FILES=	weathermap
 
-OPTIONS_DEFINE=	WGET
+OPTIONS_DEFINE=	WGET DOCS EXAMPLES
 WGET_DESC=	WGET support
 
 PORTDOCS=	README LICENSE INSTALL
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWGET}
 RUN_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
@@ -50,4 +50,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
