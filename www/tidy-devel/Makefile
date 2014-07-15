@@ -40,6 +40,8 @@ DESCR=		${.CURDIR}/pkg-descr
 
 BIN2STRIP=	tidy tab2space
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

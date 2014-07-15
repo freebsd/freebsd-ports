@@ -1,6 +1,6 @@
 lib/php/%%PHP_EXT_DIR%%/eaccelerator.so
 @dirrmtry lib/php/%%PHP_EXT_DIR%%
-%%EXAMPLESDIR%%/control.php
-%%EXAMPLESDIR%%/dasm.php
-%%EXAMPLESDIR%%/eaccelerator.ini
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/control.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dasm.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eaccelerator.ini
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

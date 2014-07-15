@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-gtk2 \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--with-icon-path=${PREFIX}/share/pixmaps
 
-OPTIONS_DEFINE=	DEBUG NLS TIDY WEBLINT
+OPTIONS_DEFINE=	DEBUG NLS TIDY WEBLINT DOCS
 
 DEBUG_DESC=	Enable debugging output
 TIDY_DESC=	Include Tidy HTML cleanup program

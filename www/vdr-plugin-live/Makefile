@@ -24,6 +24,8 @@ MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I${WRKSRC}"
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 USES=		compiler:features
 
+OPTIONS_DEFINE=	DOCS
+
 .include	"${.CURDIR}/../../multimedia/vdr/Makefile.plugins"
 
 .include <bsd.port.pre.mk>

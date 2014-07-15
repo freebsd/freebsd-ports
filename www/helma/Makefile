@@ -36,9 +36,9 @@ PLIST_SUB=	DBDIR="${DBDIR}" \
 		HELMA_USER="${HELMA_USER}" \
 		HELMA_GROUP="${HELMA_GROUP}"
 
-OPTIONS_DEFINE=	MYSQL
+OPTIONS_DEFINE=	MYSQL DOCS
 OPTIONS_SUB=	yes
-OPTIONS_DESC=	"Install MySQL Connector for Java"
+OPTIONS_DESC=	Install MySQL Connector for Java
 
 MYSQL_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
 
