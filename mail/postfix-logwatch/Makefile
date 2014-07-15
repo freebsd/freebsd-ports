@@ -22,12 +22,12 @@ USE_PERL5=	run
 NO_BUILD=	yes
 SHEBANG_FILES=	${PORTNAME}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e '\
-		s!/usr/local/etc!${ETCDIR}! \
-		' ${PORTNAME} ${PORTNAME}.1 README
+	@(cd ${WRKSRC} && \
+		${REINPLACE_CMD} -e 's!/usr/local/etc!${ETCDIR}' \
+		${PORTNAME} ${PORTNAME}.1 README)
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
@@ -36,16 +36,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 
 post-install:
-	@if [ ! -f ${ETCDIR}/${PORTNAME}.conf ]; then \
-		${CP} -p ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf; \
-	fi
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-.endif
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

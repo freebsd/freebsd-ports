@@ -15,6 +15,8 @@ CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 DOCSFILES=	AUTHORS THANKS INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

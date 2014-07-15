@@ -18,6 +18,8 @@ BINFILES=	mf-reset mf-start mf-stop mf-archive mf-analyze mf-memory
 DOCSFILES=	rays-filter.html install.html configure.html operate.html \
 		utilities.html GNU-public-licence.txt copyright.txt README
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

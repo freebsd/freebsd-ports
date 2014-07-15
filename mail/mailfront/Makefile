@@ -12,7 +12,7 @@ COMMENT=	Mail server network protocol front-ends
 
 LIB_DEPENDS=	libcvm-v2client.so:${PORTSDIR}/security/cvm
 
-OPTIONS_DEFINE=	LUA
+OPTIONS_DEFINE=	LUA DOCS
 
 OPTIONS_DEFAULT=LUA
 OPTIONS_SUB=	yes

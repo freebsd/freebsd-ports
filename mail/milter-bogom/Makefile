@@ -26,6 +26,8 @@ PLIST_FILES=	sbin/bogom \
 
 PORTDOCS=	README CHANGELOG
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
