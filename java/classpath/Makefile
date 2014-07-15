@@ -36,7 +36,7 @@ INFO=		cp-hacking cp-tools cp-vmintegration
 
 CONFLICTS=	sablevm-classpath-1.13 sablevm-classpath-1.13_[1-9]
 
-OPTIONS_DEFINE=	CAIRO ECJ GCONF GJDOC GMP GTK2 QT4
+OPTIONS_DEFINE=	CAIRO ECJ GCONF GJDOC GMP GTK2 QT4 EXAMPLES
 OPTIONS_DEFAULT=GMP GJDOC GTK2
 CAIRO_DESC=	Use Gtk+ Cairo based Graphics2D
 ECJ_DESC=	Embed ECJ as com.sun.tools.javac

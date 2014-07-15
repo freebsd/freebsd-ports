@@ -13,7 +13,7 @@ COMMENT=	Python YAML parser
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	LIBYAML
+OPTIONS_DEFINE=	LIBYAML EXAMPLES
 LIBYAML_DESC=	Use textproc/libyaml for faster parsing
 
 USE_PYTHON=		yes

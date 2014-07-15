@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		gmake tar:bzip2
 
-OPTIONS_DEFINE=	GNUPLOT
+OPTIONS_DEFINE=	GNUPLOT EXAMPLES
 GNUPLOT_DESC=	Support for plotting graphs
 
 .include <bsd.port.options.mk>
