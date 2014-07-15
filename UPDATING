@@ -16,7 +16,17 @@ you update your ports collection, before attempting any port upgrades.
   <http://docs.oracle.com/cd/E17076_04/html/upgrading/upgrade_process.html>
   <http://docs.oracle.com/cd/E17076_04/html/installation/upgrade_61_toc.html>
 
-  Also, you must rebuild all applications that link to db6. To do so:
+  Note: if you've got Apache installed and depending on db6, you may
+  need to upgrade it separately BEFORE upgrading other ports.
+
+  Note: some GNOME-related ports, for instance, evolution-data-server,
+  are broken and cannot be compiled if their older version is installed
+  and it depends on the previous db6 version.  For these ports, deinstall
+  them with pkg_delete -f or pkg delete -f before trying to upgrade them.
+
+  After that, you must rebuild all applications that link to db6 because
+  the shared library name has changed with the upgrade.  To do that:
+
   If you use portmaster:
         portmaster -w -r db6-
   If you use portupgrade:
