@@ -28,6 +28,8 @@ INSTALLS_ICONS=	yes
 
 MAKE_JOBS_UNSAFE=yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000024

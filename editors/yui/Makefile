@@ -18,6 +18,8 @@ MAKE_ENV+=	LIBPATH=${PREFIX}/lib
 
 BROKEN_sparc64=	Does not compile on sparc64
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${LN} -sf help_eng.html ${STAGEDIR}${PREFIX}/lib/yui/yhelp.html
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -21,6 +21,8 @@ ALL_TARGET=	release
 
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' ${BUILD_WRKSRC}/q_shared.c
 	@${REINPLACE_CMD} -e 's/<malloc\.h>/<stdlib.h>/' \

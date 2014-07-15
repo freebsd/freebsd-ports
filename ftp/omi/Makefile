@@ -15,6 +15,8 @@ COMMENT=	"mirror" subtrees of FTP servers
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	freebsd
 
+OPTIONS_DEFINE=	DOCS
+
 pre-patch:
 	${REINPLACE_CMD} -E -e "s@^(OPTFLAGS).*@\1=${CFLAGS}@" \
 		${WRKSRC}/Makefile

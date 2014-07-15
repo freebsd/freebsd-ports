@@ -15,6 +15,8 @@ USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	HAVE_GETOPT=1
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${RM} ${WRKSRC}/src/lib/getopt.h
 	@${REINPLACE_CMD} -e '1,/^LDFLAG/d' ${WRKSRC}/src/Makefile.config

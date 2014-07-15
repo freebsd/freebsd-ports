@@ -17,6 +17,8 @@ USE_PYTHON=	yes
 
 SUB_FILES=	thudboard
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|file:.*/docs|file://${DOCSDIR}|' \
 		${WRKDIR}/thud.py

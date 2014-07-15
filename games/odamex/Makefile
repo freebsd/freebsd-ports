@@ -15,7 +15,7 @@ USE_SDL=	sdl mixer
 USES=		cmake dos2unix
 DOS2UNIX_FILES=	CMakeLists.txt odalaunch/CMakeLists.txt common/d_main.cpp
 
-OPTIONS_DEFINE=	LAUNCHER
+OPTIONS_DEFINE=	LAUNCHER DOCS
 
 LAUNCHER_DESC=	Enable GUI launcher program
 

@@ -16,6 +16,8 @@ USE_XORG=	x11 xext
 
 DESKTOP_ENTRIES="XDigger" "" "" "${PORTNAME}" "" ""
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/configure.h
 

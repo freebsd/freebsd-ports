@@ -27,6 +27,8 @@ PYDISTUTILS_PKGNAME=	GNS3
 
 DESKTOP_ENTRIES=	"GNS3" "${COMMENT}" "" "${PORTNAME}" "System;Emulator;" true
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' -e 's|/share/man|/man|g' ${WRKSRC}/setup.py
 
