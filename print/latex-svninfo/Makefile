@@ -27,6 +27,8 @@ CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME}
 CLASS_FILES=	svninfo.sty svninfo.cfg
 PORTDOCS=	README svninfo.dvi
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 do-build:
